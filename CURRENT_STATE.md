@@ -26,6 +26,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
 - **Best day to climb scores saved areas**: a saved crag, or a saved region where crag climbs are at least half of what it holds, is scored at its own location beside your saved crag climbs; tapping it opens the area. See `docs/features/conditions.md`.
+- **Crag map section is TRAIL TO THE CRAG**: on sport/trad/bouldering/aid/top-rope routes the map section (was ROUTE TRACK) says the GPX line is the walk from parking to the base of the crag (on to this climb if it sits apart), invites *Add the trail*, and the submit sheet says where to start and stop recording. Crags carry no waypoints: the pin editor there is *Parking spot* only.
 - **Listed areas in the Menu**: a *Listed areas · N* tile under Yours; the My listed areas sheet became a full screen with search first (home state pre-set), one-tap suggestions from your own crag climbs and saved areas, This weekend / Next weekend date presets, and an ended window flagged on its card. See `docs/features/partners.md`.
 - **No ⚑ Flag button on the route page's section headings**: `SL`/`CardHead` show only the confidence level now; flagging stays on a locked field's pencil and on the *Add or fix info* sheet's rows (`ClimbMatchCore.jsx`).
 - **Base of the climb sits under the route map**: the check-in card moved from far down Overview to right under ROUTE TRACK; check-in spots are drawn on the map as ringed Base pins; *How far am I from the base?* gives a live distance and direction to the start, and the route's location note once you are there (`lib/baseCheckin.js` `baseGuide`).
@@ -41,7 +42,8 @@ Newest first. Keep about 15 lines; older entries live in the PRs and the commit 
 - **Area page order**: areas/climbs list → *Don’t see a climb?* → suggested climbs → nearby peaks → Top contributors → Discussion. Discussion now renders on areas with no coordinate (Florida’s Artificial Boulders); *Partners here*’s dates/types control is a real card button (it had no style at all).
 - **RACK is rack-only, every state** — ~400 WA + ~140 other-state routes re-homed (ice axe, crampons, helmet, boots out of `detailed_rack`/`pro_needs`/`rack` into `what_to_bring`), `DISC_RACK` stripped to protection and ropes, `routeRackFor` splits every source and `rackLeftovers` feeds GEAR & ESSENTIALS; `audit:rack-items`.
 - **Objectives chips** Alpine is the left-most discipline chip; Mountaineering and Aid are their own chips instead of folding into Alpine and Trad (`lib/ListsManager.jsx`).
-- **PR8** `Pill` extracted to `src/components/Pill.tsx` (four consumers, the three earlier `.tsx` components, and core itself, which imports it back).
+- **PR9** `ActionIcon` extracted to `src/components/ActionIcon.tsx` (fifteen consumers plus core itself, which imports it back; `check:field-renders` now imports the file).
+- **#2472** `Pill` extracted to `src/components/Pill.tsx` (four consumers, the three earlier `.tsx` components, and core itself, which imports it back).
 - **#2468** `CountUp` extracted to `src/components/CountUp.tsx` (three consumers plus core itself, which imports it back).
 - **#2466** `Lbl` extracted to `src/components/Lbl.tsx` (ten consumers plus core itself, which imports it back).
 - **#2463** `TrustBadge` extracted to `src/components/TrustBadge.tsx` (five consumers plus core itself, which imports it back).

@@ -1,4 +1,5 @@
-import { ActionIcon, trustTier } from "../../ClimbMatchCore.jsx";
+import { trustTier } from "../../ClimbMatchCore.jsx";
+import ActionIcon from "./ActionIcon.tsx";
 import Pill from "./Pill.tsx";
 
 export interface TrustBadgeProps {
