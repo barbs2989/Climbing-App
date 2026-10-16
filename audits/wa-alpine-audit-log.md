@@ -32667,3 +32667,17 @@ matches both SummitPost and the peak's own area row; Little Tahoma's East Should
 Garrison, August 29 1894) and elevation (11138) both match Wikipedia/PeakVisor exactly.
 
 Pass 7 continues next run after `wa_little_tahoma_east_shoulder`.
+
+## 2026-10-16 (follow-up run) — DB unreachable, no batch run
+
+A run later the same day as batch 419 found the live Supabase project unreachable: both raw
+REST calls (curl, with `apikey`/`Authorization: Bearer` set to the configured
+`sb_publishable_...` key) and the official `@supabase/supabase-js` client hung with zero bytes
+received on every real data endpoint tried (`/rest/v1/routes`, `/rest/v1/areas`, even a
+nonexistent table name), from 20s up to 75s, across multiple retries. The one request that *did*
+return — `GET /rest/v1/` with no table, instantly, 401 "Secret API key required" — comes from a
+gateway-level key-format pre-check that doesn't touch Postgres, which is consistent with the
+project's database/compute being paused or otherwise down rather than a network-policy block
+(TLS handshake completed against a genuine `*.supabase.co` cert each time). No batch was picked;
+`wa-alpine-audit-progress.json` was left untouched. Next run should retry from
+`wa_little_tahoma_east_shoulder` as before — nothing to redo, nothing skipped.
