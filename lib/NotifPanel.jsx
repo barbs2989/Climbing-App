@@ -3,7 +3,8 @@
 import { clickable } from "./clickable";
 import { useState } from "react";
 import { useProfilesByIds } from "./db";
-import { Av, C, CLIMBERS, SL, SwipeRow, notifTarget, pubName, vScore } from "../ClimbMatchCore.jsx";
+import { C, CLIMBERS, SL, SwipeRow, notifTarget, pubName, vScore } from "../ClimbMatchCore.jsx";
+import Av from "../src/components/Av.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import { POP_CLOSE } from "./popupChrome.js";
 
