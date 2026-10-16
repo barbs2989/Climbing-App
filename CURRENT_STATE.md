@@ -26,6 +26,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Profile tabs** The Profile screen splits under its header into Profile · Activity · Review (admins): one long scroll became three short views; jumps into a section open its tab.
 - **`npm run lint` + `npm run type-check`** (tooling, no screen changes): ESLint (`eslint.config.js`) holds unused variables, `any` and hook dependency arrays at zero for new code, in the build; findings already in the code are held in `eslint-suppressions.json`, which only shrinks. TypeScript strict gained `noUnusedParameters`. Run both before finalizing any feature.
 - **Best day to climb scores saved areas**: a saved crag, or a saved region where crag climbs are at least half of what it holds, is scored at its own location beside your saved crag climbs; tapping it opens the area. See `docs/features/conditions.md`.
 - **Emergency & rescue is the climb's own county**: the Safety tab card names the county the climb sits in (Castleton Tower → Grand County, Utah) and shows only that county's sheriff line, not every Utah county; it has an Edit pencil into *Add or fix info*; every route-page pencil crashed the screen since #2467 (`openFix` called itself) and is fixed (`lib/rescueCounty.js`).

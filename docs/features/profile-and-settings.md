@@ -6,7 +6,7 @@
 profile can also open as `FullProfile` and `Resume` overlays from anywhere (partner rows, crews, leaderboards).
 
 ## 1. What it does today
-- **Profile (`me`)**: your header, trust score, verification, vouches, photo strip, availability and a link into edit.
+- **Profile (`me`)**: your header (trust score, verification, photo strip, résumé and public-profile buttons) stays on top; under it, tabs (`meTab`, read as `meTabOn`): **Profile** (At a glance, availability, speed, certifications, vouches you’ve given, Edit profile) · **Activity** (Year in Climbing banner, Your Logbook, sends by grade, Belay & Catch Record, reports you’ve filed) · **Review** (admins only: the eight safety and catalog queues). A catch notification opens Activity, Home’s availability gap opens Profile, and the admin banner and the Menu card (when items wait) open Review. Walks reach a tab with `?mt=` (overlay scaffold).
 - **Edit profile**: `lib/EditProfileScreen.jsx` over the `editDraft` state; `saveEdit` writes the draft back (see 2).
   Includes the owner-only zip code (feeds partner search distance; others never see it).
 - **Résumé** (`Resume`): courses and training, plus an **Experience** list of notable climbs, most recent first, with a star for
