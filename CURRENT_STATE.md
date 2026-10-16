@@ -26,6 +26,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Profile photo sticks**: "Change photo" saves the avatar as soon as it uploads, so Cancel or a greyed Save (no username yet, every new account) no longer loses it; the editor says why Save is greyed. See `docs/features/profile-and-settings.md`.
 - **Menu lists your groups**: under *Yours*, a *Your groups* section shows up to five of the groups you are in, newest post first, with each one's new-post count. A tap opens that group, and *See all ›* appears past five. See `docs/features/profile-and-settings.md`.
 - **Crag route Overview: LOCATION, GEAR & SAFETY and CONDITIONS are their own sections**, moved out of the top ROUTE FACTS card — Location above Getting there, the other two under the Rack; each missing fact has its own + Add.
 - **Route page: PAIRS WELL WITH takes a full section header**: the rule and 30px gap every other route-page section has, so it no longer sits tight under the "Got beta?" box.
