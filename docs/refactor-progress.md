@@ -87,7 +87,12 @@ file must move it, or `check:feature-docs` fails; the stitch (`movedAsParentText
 behind an exported function (`ElevChart`, PR10); a seam TypeScript infers wrongly from JS is typed on the JS side with
 JSDoc (`useFollowMe`'s options, the `POP_*` styles, `EMOJI_ICON`), never cast in the component; a boolean cannot narrow
 its source, so derive the narrowed value (`track`, `pk`) and a type predicate for a JS test (`placed` over
-`wpPlaced()`); a 100+ line body is moved by a GENERATOR with asserted substitutions, never retyped; a module-level
+`wpPlaced()`); ESLint is a build guard since #2487 and a ratchet (`eslint-suppressions.json` records legacy counts per
+file and rule): a new `.tsx` must be CLEAN — no `any` (Leaflet's type is the one declared `LeafletAny` in
+`src/types/leaflet-global.d.ts`), no empty block (say why the error is swallowed), and an effect that keys on a
+signature by design carries a per-line `exhaustive-deps` disable WITH THE REASON — and when a move removes legacy
+findings from core, run `npx eslint . --prune-suppressions` so the baseline goes down (PR13); a 100+ line body is
+moved by a GENERATOR with asserted substitutions, never retyped; a module-level
 helper in a component must not share a name with one in core, or the stitched core will not PARSE (`escHtml`, PR13);
 before adding an export to core, check the export list by BUILDING — a duplicate name fails esbuild, not `tsc`; guard
 infrastructure must know `.tsx` (PR13 taught `check:injection-anchors`' path test and `check:popup-chrome`'s spread
