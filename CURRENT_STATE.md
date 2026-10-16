@@ -26,6 +26,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Crag route Overview: LOCATION, GEAR & SAFETY and CONDITIONS are their own sections**, moved out of the top ROUTE FACTS card — Location above Getting there, the other two under the Rack; each missing fact has its own + Add.
 - **Route edits: an empty field fills at once, two climbers agreeing change a filled one** (0325): the database approves the edit itself; the edit sheet shows other climbers' waiting suggestions with an Agree button; anything else still waits for the owner. Area edits are still held.
 - **Best day on Home again + Menu tiles**: Home shows the Best day to climb tile right under Jump back in (it also stays in the Menu). The Menu's Plan & log adds **Downloads** (scrolls Home to the pinned/downloaded states card, `#pinned-downloads`) and **Hire a guide** (Partners in guides mode).
 - Route page: the duplicate *+ Add start location* button on Safety is gone; start of climb is filed from Add or fix info and the log form, shown on Overview.
