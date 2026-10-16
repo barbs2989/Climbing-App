@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
 - **Route edits: an empty field fills at once, two climbers agreeing change a filled one** (0325): the database approves the edit itself; the edit sheet shows other climbers' waiting suggestions with an Agree button; anything else still waits for the owner. Area edits are still held.
+- Route page: the *Brought different gear? Suggest a gear update* box sits directly under the RACK card (alpine GEAR section, before ROPEWORK and GEAR & ESSENTIALS; crag Overview, under its RACK card) instead of at the end of the gear section or the page.
 - **Best day on Home again + Menu tiles**: Home shows the Best day to climb tile right under Jump back in (it also stays in the Menu). The Menu's Plan & log adds **Downloads** (scrolls Home to the pinned/downloaded states card, `#pinned-downloads`) and **Hire a guide** (Partners in guides mode).
 - Route page: the duplicate *+ Add start location* button on Safety is gone; start of climb is filed from Add or fix info and the log form, shown on Overview.
 - **Profile tabs** The Profile screen splits under its header into Profile · Activity · Review (admins): one long scroll became three short views; jumps into a section open its tab.
