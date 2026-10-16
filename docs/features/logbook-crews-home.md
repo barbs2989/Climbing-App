@@ -53,6 +53,9 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 4. **Messaging**: `sendCrewMessage`/`fetchCrewMessages`/`fetchOlderCrewMessages`, `sendDirectMessage`/`fetchMyDirectMessages`, read markers via `markCrewRead`/`fetchCrewLastReads`/`markMessageAsRead`.
 5. **Pinned states** follow the account (0187): `pinnedStates` state in `App`, saved by `savePinnedStates` (`profiles.pinned_states`). Offline downloads stay on the device
    (`downloadedStates`, `dlLoaded`, `lib/offline.js`: `downloadStateOffline`, `removeStateOffline`, `packRouteOffline`).
+5a. **Saved areas and peaks** follow the account (0322): one `bookmarks` list in `App` feeds the area page's Save button, Logbook › Saved's ✕, the Home and Menu tiles, so they always agree.
+   `toggleBookmark` writes `saveAreaRow`/`removeAreaRow` (`saved_areas`, owner-only) and toasts only after the write; a failure restores the list. `useMySavedAreas` is copied into `bookmarks`;
+   `lib/offline.js` (`saveAreaIds`, `savedAreaIds`, `savedAreasSynced`) is the offline mirror, and a device's pre-0322 saves are uploaded the first time the account is read there.
 6. **Logs**: a log can name partners (`saveLogPartnerNames`, `useMyLogPartnerNames`); tagged climbers answer with `respondToLogTag` (RPC `respond_to_log_tag`, `useLogTagsForMe`).
 7. **Vouches**: `giveVouch`, `updateVouch`, `revokeVouch`; read with `useClimberVouches`, `useUserVouches`.
 
@@ -75,7 +78,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 
 ## 4. Data
 - **Supabase tables read/written in `lib/db.js`**: `objectives`, `climb_logs`, `climb_log_partner_names`, `crews`, `crew_members`, `crew_day_acks`,
-  `crew_email_invites`, `crew_listings`, `crew_reads`, `crews_messages`, `messages`, `vouches`, `user_lists`, `user_itineraries`, `saved_searches`, `profiles` (`pinned_states`).
+  `crew_email_invites`, `crew_listings`, `crew_reads`, `crews_messages`, `messages`, `vouches`, `user_lists`, `user_itineraries`, `saved_searches`, `saved_areas`, `profiles` (`pinned_states`).
 - **RPCs**: `add_crew_gear_item`, `assign_crew_gear`, `remove_crew_gear_item`, `claim_my_crew_email_invites`, `share_crew_itinerary`, `log_tags_for_me`, `respond_to_log_tag`, `route_logged_with`, `state_trip_reports`.
 - **Migrations**: 0031 objectives, 0036 crews, 0037/00400/00540/00730/0121 climb logs, 0038/0238 vouches, 00420 messaging, 0075 crew locked day, 0086/0227 invite rules,
   0187 pinned states, 0199 itineraries, 0209 crew gear, 0286/0287/0289/0291 `assign_crew_gear` and gear claims, 0092 `user_lists`,
@@ -98,6 +101,7 @@ Notes: `docs/guards/social-and-crews.md`, `contributions-and-logbook.md`, `hones
 (Matched by name; not re-run.)
 
 ## 7. Last significant change
+Saved areas sync (0322): an area or peak unsaved in Logbook › Saved on one device is unsaved on its area page everywhere.
 Real climbers, batch 4 (0314): a real crew's safety questionnaire and safety-ready marks persist; alignment is computed server-side from owner-only answers and every flag is anonymous. Real climbers, batch 3: crew roster, plan, nudge and invite chips name members by `pubFirst`; the invite list treats a real friend as real (server trust, sorted by it); Home's unread line, past crews and the itinerary message use public names; `FriendsFeed` and FriendsList's activity include real friends' shared logs (`realFriendFeed`) with real kudos (`giveKudos` + log target); MyAscents never matches a real log's typed partner name to an example climber.
 #2441 / #2443 / Step 7 (0302): a crew has one place, a route or an area; `crewPlace()` is the one resolver for every surface that names a crew; area crews
 (crag sessions) are started from the area page, the Crews tab and a past crew, found under "My climbs & areas" / By Area, and listed on a crag route's Partners sub-tab. Before that

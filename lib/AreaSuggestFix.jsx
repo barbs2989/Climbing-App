@@ -1,10 +1,10 @@
 // "Suggest an edit" for an AREA — the area page's answer to the route page's SuggestFix.
 //
-// Seven fields (lib/areaFields.js); each row shows the current value, the pending cluster if
-// one exists, and an input. One contributions row per changed field (area_id, route_id null,
-// kind 'field'); the database applies it (0304): a fill of an EMPTY field goes live at once, a
-// change to a filled one waits for three climbers. That rule is stated to the climber in the
-// same words the route editor uses.
+// Seven fields (lib/areaFields.js); each row shows the current value, the climber's own edit
+// still awaiting review if there is one, and an input. One contributions row per changed field
+// (area_id, route_id null, kind 'field'). Every edit is HELD for the owner (0319), like a route
+// edit; on approval the database writes the areas column. The sheet says so in the route
+// editor's words.
 //
 // `onSubmit(edits)` is App's: it owns the session, the login prompt and the toasts, so this
 // sheet never claims a write it could not make (check:claims). It resolves to true when the
@@ -12,12 +12,12 @@
 // then renders its fields with nothing to submit to.
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { AREA_EDIT_FIELDS, ASPECTS, MONTH_ABBR, areaEditClusters, AREA_EDIT_NEED, monthsLabel } from "./areaFields";
+import { AREA_EDIT_FIELDS, ASPECTS, MONTH_ABBR, myPendingAreaEdits, monthsLabel } from "./areaFields";
 import { ROCK_OPTIONS } from "./rockType";
 import { POP_CLOSE } from "./popupChrome.js";
 import { BTN, CHIP } from "./buttonStyles.js";
 
-export default function AreaSuggestFix({ area, field, rows, C, onClose, onSubmit }) {
+export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, onSubmit }) {
   const scrollRef = useRef(null);
   const [vals, setVals] = useState({});
   const [busy, setBusy] = useState(false);
@@ -78,19 +78,19 @@ export default function AreaSuggestFix({ area, field, rows, C, onClose, onSubmit
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 16px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}><div style={{ fontSize: 16, fontWeight: 700, color: C.text }}>{sent ? "Thanks for contributing" : "Suggest an edit"}</div><button onClick={onClose} aria-label="Close" style={POP_CLOSE}>{"✕"}</button></div>
       {sent ? <div style={{ padding: 16 }}>
         <div style={{ fontSize: 40, textAlign: "center", marginBottom: 8 }}>{"✓"}</div>
-        <div style={{ textAlign: "center", fontWeight: 700, fontSize: 15, color: C.text, marginBottom: 12 }}>{"Thanks — " + sent.n + " " + (sent.n === 1 ? "edit" : "edits") + " sent"}</div>
-        <div style={{ background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 11, padding: "11px 13px", fontSize: 12.5, color: C.text, lineHeight: 1.55, marginBottom: 12 }}>{sent.allEmpty ? "These all filled in right away and credited you — thanks for helping the next party." : "Blank fields fill in right away and credit you; changes to existing values stay a suggestion until " + AREA_EDIT_NEED + " climbers agree — then the area updates for everyone."}</div>
+        <div style={{ textAlign: "center", fontWeight: 700, fontSize: 15, color: C.text, marginBottom: 12 }}>{sent.n === 1 ? "Sent for review" : sent.n + " edits sent for review"}</div>
+        <div style={{ background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 11, padding: "11px 13px", fontSize: 12.5, color: C.text, lineHeight: 1.55, marginBottom: 12 }}>{"Every edit is checked before it shows. You’ll be told when it’s checked, and it credits you once it’s live."}</div>
         <button onClick={onClose} style={{ ...BTN, width: "100%", background: C.blueSolid, color: "#fff", border: "none" }}>Done</button>
       </div> : <div ref={scrollRef} style={{ minHeight: 0, padding: 16, overflowY: "auto", overscrollBehavior: "contain", flex: 1 }}>
-        <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55, background: C.card, border: "1px solid " + C.border, borderRadius: 11, padding: "10px 12px", marginBottom: 12 }}>{"Spotted something wrong or missing about "}<b>{a.name || "this area"}</b>{"? Fill in any fields below — leave the rest blank. Empty fields fill in right away; changes to existing values go to review until " + AREA_EDIT_NEED + " climbers agree."}</div>
+        <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55, background: C.card, border: "1px solid " + C.border, borderRadius: 11, padding: "10px 12px", marginBottom: 12 }}>{"Spotted something wrong or missing about "}<b>{a.name || "this area"}</b>{"? Fill in any fields below — leave the rest blank. Every edit is checked before it shows on the page."}</div>
         {AREA_EDIT_FIELDS.map(f => {
           const cur = f.cur(a);
-          const pend = areaEditClusters(rows, f.k).filter(c => !c.approved && c.n < AREA_EDIT_NEED)[0];
+          const pend = myPendingAreaEdits(rows, myId).filter(r => r.field === f.k).sort((x, y) => String(y.created_at).localeCompare(String(x.created_at)))[0];
           const v = vals[f.k];
           return <div key={f.k} id={"af-section-" + f.k} style={{ marginBottom: 14, scrollMarginTop: 8 }}>
             <div style={lbl}>{f.label}</div>
-            <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 6 }}>{cur ? <>{"Now: "}<span style={{ color: C.textSub }}>{cur.length > 140 ? cur.slice(0, 140) + "…" : cur}</span></> : "Not on file yet — this fills in right away."}</div>
-            {pend ? <div style={{ fontSize: 11.5, color: C.text, background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 8, padding: "6px 9px", marginBottom: 6 }}>{pend.n + " of " + AREA_EDIT_NEED + " suggested: "}<b>{f.type === "months" ? monthsLabel(pend.value) : String(pend.value)}</b></div> : null}
+            <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 6 }}>{cur ? <>{"Now: "}<span style={{ color: C.textSub }}>{cur.length > 140 ? cur.slice(0, 140) + "…" : cur}</span></> : "Not on file yet."}</div>
+            {pend ? <div style={{ fontSize: 11.5, color: C.text, background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 8, padding: "6px 9px", marginBottom: 6 }}>{"Awaiting review: "}<b>{f.type === "months" ? monthsLabel(pend.value) : String(pend.value)}</b></div> : null}
             {f.type === "long" ? <textarea value={v || ""} onChange={e => set(f.k, e.target.value)} rows={3} maxLength={f.max} placeholder={f.hint} aria-label={f.label} style={{ ...input, resize: "vertical", minHeight: 76 }} /> : null}
             {f.type === "text" ? <><input value={v || ""} onChange={e => set(f.k, e.target.value)} maxLength={f.max} placeholder={f.hint} aria-label={f.label} style={input} list={"af-opts-" + f.k} />{f.k === "rock" ? <datalist id={"af-opts-" + f.k}>{ROCK_OPTIONS.map(o => <option key={o} value={o} />)}</datalist> : null}</> : null}
             {f.type === "int" ? <input value={v || ""} onChange={e => set(f.k, e.target.value)} inputMode="numeric" placeholder={f.hint} aria-label={f.label + " (minutes)"} style={input} /> : null}

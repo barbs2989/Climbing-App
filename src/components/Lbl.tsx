@@ -1,4 +1,5 @@
-import { ActionIcon, EMOJI_ICON } from "../../ClimbMatchCore.jsx";
+import { EMOJI_ICON } from "../../ClimbMatchCore.jsx";
+import ActionIcon from "./ActionIcon.tsx";
 
 export interface LblProps {
   /** The label text. A leading emoji that `EMOJI_ICON` knows is drawn as the matching `ActionIcon`; anything else renders as-is. */

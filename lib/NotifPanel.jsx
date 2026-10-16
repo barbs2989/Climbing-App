@@ -3,7 +3,8 @@
 import { clickable } from "./clickable";
 import { useState } from "react";
 import { useProfilesByIds } from "./db";
-import { ActionIcon, Av, C, CLIMBERS, SL, SwipeRow, notifTarget, pubName, vScore } from "../ClimbMatchCore.jsx";
+import { Av, C, CLIMBERS, SL, SwipeRow, notifTarget, pubName, vScore } from "../ClimbMatchCore.jsx";
+import ActionIcon from "../src/components/ActionIcon.tsx";
 import { POP_CLOSE } from "./popupChrome.js";
 
 export default function NotifPanel({requests,requestsUnavailable,notifs,onAccept,onDecline,onOpenProfile,onGo,onClose,onDismiss,onClearAll,archived,onRestore}){const [archOpen,setArchOpen]=useState(false);
