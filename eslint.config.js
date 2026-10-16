@@ -18,7 +18,12 @@ const unused = { args: "after-used", ignoreRestSiblings: true, varsIgnorePattern
 
 export default tseslint.config(
   { linterOptions: { reportUnusedDisableDirectives: "error" } },
-  { ignores: ["dist/**", "node_modules/**", ".claude/**", "scripts/**", "supabase/**", "audits/**", "catalog/**", "research/**", "research-data/**", "enrichment-wip/**", "gear-research/**", "public/**", "docs/**"] },
+  // The guard scratch files come LAST: `npm run build` runs every guard concurrently, and ESLint scanning `.`
+  // beside a guard that has just created and removed its scratch directory died on it
+  // (`ENOENT: scandir .cm-apsec-…`, two deploys in a row, 2026-10-16). check:approach-section,
+  // check:match-percent and check:trailhead-directions make `.cm-*`, check:waypoint-placement `.wpplace-*`,
+  // and the core-bundling guards `.core-entry-*.jsx` / `.trusttierprobe-*.mjs` in the checkout root.
+  { ignores: ["dist/**", "node_modules/**", ".claude/**", "scripts/**", "supabase/**", "audits/**", "catalog/**", "research/**", "research-data/**", "enrichment-wip/**", "gear-research/**", "public/**", "docs/**", ".cm-*/**", ".wpplace-*/**", ".core-entry-*.jsx", ".trusttierprobe-*.mjs"] },
   {
     files: ["**/*.{js,jsx,mjs}"],
     languageOptions: { ecmaVersion: "latest", sourceType: "module", globals: { ...globals.browser }, parserOptions: { ecmaFeatures: { jsx: true } } },

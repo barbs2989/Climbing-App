@@ -278,6 +278,11 @@ name their inputs, `assertCovered()` for the ones that walk the tree.
   typescript-eslint `strict`), and `react-hooks/rules-of-hooks` + `exhaustive-deps`, all errors.
   `react/jsx-uses-vars` is on only so a component used solely in JSX does not read as unused —
   without it the first count was 643 unused variables, 386 of them false.
+  - **It must ignore the guards' scratch files** (2026-10-16): `npm run build` runs every guard concurrently, and ESLint
+    scanning `.` died with `ENOENT: scandir .cm-apsec-…` when `check:approach-section` removed its scratch directory
+    mid-scan — two deploys in a row failed on it (c50e07f8, 6f000593), neither of which touched lint. `.cm-*/**`,
+    `.wpplace-*/**`, `.core-entry-*.jsx` and `.trusttierprobe-*.mjs` are now in the config's `ignores`. A guard that
+    adds a new scratch name in the checkout root has to add it there too, or the race comes back.
   - **Legacy findings are a ratchet.** On the day it landed, 257 unused variables and 148
     incomplete hook dependency arrays already sat in 24 files (mostly the three big JSX files).
     Fixing the dependency arrays in `App` is a behaviour change per effect (a missing dep added to
