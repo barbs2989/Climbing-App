@@ -610,6 +610,9 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       "useEffect(function(){window.__overlays=[" + names + "];" +
       "var p=new URLSearchParams(location.search);var t=p.get('zt');var z=p.get('z');" +
       "if(t)setTab(t);" +
+      // `?mt=<profile|activity|review>` picks the Profile screen's tab, so a walk can reach the sections
+      // that left its default view (the catch record, the logbook and the Year in Climbing banner live on Activity).
+      "var mt=p.get('mt');if(mt)setMeTab(mt);" +
       // `?zr=1` opens the route detail screen and nothing else. check:overflow reached it by
       // driving the UI — select a state, tap Routes, tap the first row — and that drill-in did
       // not complete under the scaffold config, so the richest layout in the app, and the one
