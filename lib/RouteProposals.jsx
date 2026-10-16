@@ -30,7 +30,10 @@ import { C } from "../ClimbMatchCore";
 const EXTRA_KEYS = [
   ["rockStyle", "Rock style"], ["rock", "Rock"], ["protRating", "Protection"],
   ["crux", "Crux"], ["landing", "Landing"], ["pads", "Pads"], ["startType", "Start"],
+  // 0326: the seven route-page fields the form asks for since then. The three lists render below.
+  ["ffa", "First free ascent"], ["fwa", "First winter ascent"], ["highPointFt", "High point (ft)"], ["sun", "Sun"],
 ];
+const LIST_KEYS = [["altNames", "Also known as"], ["variations", "Variations"], ["proTips", "Pro tips"]];
 
 function Row({ label, children }) {
   if (children === null || children === undefined || children === "") return null;
@@ -136,6 +139,7 @@ export function RouteProposalQueue() {
           <Row label="Hazards">{Array.isArray(v.haz) && v.haz.length ? v.haz.join(", ") : null}</Row>
           <Row label="Beta">{v.beta}</Row>
           {EXTRA_KEYS.map(function (p) { return <Row key={p[0]} label={p[1]}>{v[p[0]]}</Row>; })}
+          {LIST_KEYS.map(function (p) { return <Row key={p[0]} label={p[1]}>{Array.isArray(v[p[0]]) && v[p[0]].length ? v[p[0]].join(p[0] === "proTips" ? " · " : ", ") : null}</Row>; })}
           <Row label="Climbed it">{v.climbed ? "yes" : null}</Row>
           <Row label="Photos">{v.photoCount ? v.photoCount + " offered (not stored)" : null}</Row>
           <Row label="Submitted">{r.created_at ? String(r.created_at).slice(0, 10) : null}</Row>
