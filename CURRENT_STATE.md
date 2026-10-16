@@ -17,6 +17,7 @@ database tables · connections to other areas · the guards that protect it · k
 | Profile & settings | [docs/features/profile-and-settings.md](docs/features/profile-and-settings.md) | Profile, résumé, trust/verification, photos, units/date/visibility/notification settings |
 | Route quality control | [docs/features/route-quality-control.md](docs/features/route-quality-control.md) | Held edits and owner review, per-field confidence and locks, strikes and contribution standing, flags, notices |
 | Logbook, crews & Home | [docs/features/logbook-crews-home.md](docs/features/logbook-crews-home.md) | Objectives, logged climbs, crews and their Ready state, messaging, the Home dashboard |
+| App shell & layout | [docs/features/app-shell-and-layout.md](docs/features/app-shell-and-layout.md) | The app column, the primary nav (bottom bar on phones, left sidebar on desktop), the boot placeholder |
 | Ranks | [docs/features/ranks.md](docs/features/ranks.md) | Leaderboards tab: scopes, climbing types, boards, how each metric is scored (`leaderboard()`), the table, your standing |
 
 Not yet documented here (add a doc when you next work in one): Groups, moderation/safety,
@@ -26,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Desktop layout, phase 1**: at 1024px and wider the bottom tab bar becomes a fixed left sidebar and the column widens from 520 to 720px, the two centred together. Phones are unchanged. See `docs/features/app-shell-and-layout.md`.
 - **Quick log**: the route page offers *✓ Quick log* beside *Full log* — pick a style or outcome, the date, an optional rating, save. The rest can be added later from the logbook. A crew quick log no longer writes two `climb_logs` rows. See `docs/features/logbook-crews-home.md`.
 - **Route edits: an empty field fills at once, two climbers agreeing change a filled one** (0325): the database approves the edit itself; the edit sheet shows other climbers' waiting suggestions with an Agree button; anything else still waits for the owner. Area edits are still held.
 - Route page: the *Brought different gear? Suggest a gear update* box sits directly under the RACK card (alpine GEAR section, before ROPEWORK and GEAR & ESSENTIALS; crag Overview, under its RACK card) instead of at the end of the gear section or the page.
