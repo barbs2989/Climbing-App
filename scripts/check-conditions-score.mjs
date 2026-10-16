@@ -20,7 +20,7 @@
 //      when the fetch failed, and is gated to crag disciplines only — never alpine, scrambling,
 //      mountaineering, ice or mixed (a user decision, 2026-10-07).
 //   5. ROCK — a MAPPED rock type says "(mapped)" wherever it renders.
-//   6. HOME — the Best day tile is the same score, under the same gate.
+//   6. HOME + MENU — the Best day tile is the same score, under the same gate.
 //   7. CAPS AND INPUTS — rain, still-wet rock, wet sandstone, dew point and smoke CAP the stars with
 //      a named reason; drizzle counts; hours already gone are not offered; drying scales with the
 //      rain that fell; local time survives DST; prefs reach the score and live in ONE store that
@@ -158,14 +158,14 @@ console.log("check:conditions-score");
   else fail(`${sites.length} place(s) render routeRock but only ${marked} say "(mapped)"`);
 }
 
-// 6. MENU — the "Best day to climb" tile (moved off Home) (lib/BestDayTile.jsx) is the SAME score over the saved crag
+// 6. HOME + MENU — the "Best day to climb" tile (lib/BestDayTile.jsx), on Home under Jump back in and in the Menu, is the SAME score over the saved crag
 //    climbs, so its number and the Conditions tab's must come from one function, under one gate.
 {
   const tile = fs.readFileSync(path.join(ROOT, "lib/BestDayTile.jsx"), "utf8");
   const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
   const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
-  if (/<BestDayTile ids=\{wishlist\} areaIds=\{bookmarks\} routeById=\{routeById\} onOpenArea=/.test(app) && /\{bestDayOpen&&<div[\s\S]{0,260}aria-label="Best day to climb"[\s\S]{0,1200}<BestDayTile/.test(app) && /\["calendar","Best day to climb",\(\)=>setBestDayOpen\(true\)\]/.test(app) && (app.match(/<BestDayTile\b/g) || []).length === 1) ok("the Best day tile is opened from the Menu (Plan & log), over the saved climbs and saved areas, and no longer sits on Home");
-  else fail("the Best day tile is no longer reachable from the Menu over the saved climbs, or is mounted on Home again");
+  if (/<BestDayTile ids=\{wishlist\} areaIds=\{bookmarks\} routeById=\{routeById\} onOpenArea=/.test(app) && /\{bestDayOpen&&<div[\s\S]{0,260}aria-label="Best day to climb"[\s\S]{0,1200}<BestDayTile/.test(app) && /\["calendar","Best day to climb",\(\)=>setBestDayOpen\(true\)\]/.test(app) && /\{"Jump back in"\}[\s\S]{0,3000}<BestDayTile ids=\{wishlist\} areaIds=\{bookmarks\}[\s\S]{0,800}<\/Suspense><div id="pinned-downloads">/.test(app) && (app.match(/<BestDayTile\b/g) || []).length === 2) ok("the Best day tile sits on Home under Jump back in and opens from the Menu (Plan & log), over the saved climbs and saved areas");
+  else fail("the Best day tile is no longer on Home under Jump back in AND in the Menu over the saved climbs (owner 2026-10-15: both)");
   // With no saved crag climb or crag area the tile says how to get one, and prints no number: it rates nothing.
   const empty = (tile.match(/if \(!located\.length\) return [^\n]*/) || [""])[0];
   if (/scoreForecast\(/.test(tile) && /CRAG_SCORE_DISCIPLINES\.includes\(catOf\(r\)\)/.test(tile) && /Save a sport, trad, top-rope or bouldering climb/.test(empty) && /onClick=\{onExplore\}/.test(empty) && !/toFixed|stars/.test(empty)) ok("the tile scores with scoreForecast, crag climbs only, and with none saved shows how to save one, with no number");
