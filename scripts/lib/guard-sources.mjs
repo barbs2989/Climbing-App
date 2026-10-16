@@ -140,6 +140,7 @@ export const MOVED = {
     "src/components/Lbl.tsx",
     "src/components/CountUp.tsx",
     "src/components/Pill.tsx",
+    "src/components/ActionIcon.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
