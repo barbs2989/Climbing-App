@@ -18,9 +18,10 @@ database tables · connections to other areas · the guards that protect it · k
 | Route quality control | [docs/features/route-quality-control.md](docs/features/route-quality-control.md) | Held edits and owner review, per-field confidence and locks, strikes and contribution standing, flags, notices |
 | Logbook, crews & Home | [docs/features/logbook-crews-home.md](docs/features/logbook-crews-home.md) | Objectives, logged climbs, crews and their Ready state, messaging, the Home dashboard |
 | App shell & layout | [docs/features/app-shell-and-layout.md](docs/features/app-shell-and-layout.md) | The app column, the primary nav (bottom bar on phones, left sidebar on desktop), the boot placeholder |
+| Groups | [docs/features/groups.md](docs/features/groups.md) | Groups screen: who may change privacy and host events, Discover search, explore by state |
 | Ranks | [docs/features/ranks.md](docs/features/ranks.md) | Leaderboards tab: scopes, climbing types, boards, how each metric is scored (`leaderboard()`), the table, your standing |
 
-Not yet documented here (add a doc when you next work in one): Groups, moderation/safety,
+Not yet documented here (add a doc when you next work in one): moderation/safety,
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
@@ -28,10 +29,12 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
 - **Partners › By route: Recently viewed is shorter**: it lists the 3 newest climbs, with a "Show N more" toggle for the rest (up to 5). See `docs/features/partners.md`.
+- **Groups Discover: explore by STATE, search finds states and About text**: one chip per state or province (home first, then where you listed partner areas), combinable with the search box; "Washington" now finds "Seattle, WA". New groups default to moderator-hosted events. See `docs/features/groups.md`.
 - **Rock type reads plainly**: the Rock tile, the Conditions card and the fix form no longer add "(mapped)" to a crag's rock type taken from the bedrock map. See `docs/features/conditions.md`.
 - **Climb lists show the pitch count**: every climb row in the Climbs area browser reads e.g. "Trad · 5 pitches" beside its discipline (none on boulders or climbs with no count). See `docs/features/maps-and-area-browser.md`.
 - **Crag map is headed CRAG MAP**: on sport/trad/bouldering/aid/top-rope routes the map section (was TRAIL TO THE CRAG, before that ROUTE TRACK) is a location map, where the crag is and where to park, and says it is not a track of the climb. A shared walk-in line is still drawn and described when one exists.
 - **Desktop layout, phase 1**: at 1024px and wider the bottom tab bar becomes a fixed left sidebar and the column widens from 520 to 720px, the two centred together. Phones are unchanged. See `docs/features/app-shell-and-layout.md`.
+- **Route page foot**: on crag routes, sun, season and crowds now sit above *More on <crag>*, so that list ends the Overview right above Top contributors and the Discussion.
 - **Profile photo sticks**: "Change photo" saves the avatar as soon as it uploads, so Cancel or a greyed Save (no username yet, every new account) no longer loses it; the editor says why Save is greyed. See `docs/features/profile-and-settings.md`.
 - **Menu lists your groups**: under *Yours*, a *Your groups* section shows up to five of the groups you are in, newest post first, with each one's new-post count. A tap opens that group, and *See all ›* appears past five. See `docs/features/profile-and-settings.md`.
 - **Crag route Overview: LOCATION, GEAR & SAFETY and CONDITIONS are their own sections**, moved out of the top ROUTE FACTS card — Location above Getting there, the other two under the Rack; each missing fact has its own + Add.
