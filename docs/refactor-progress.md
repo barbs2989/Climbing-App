@@ -46,6 +46,7 @@ extraction.** No guard reads this file; keeping it true is on the author.
 |---|---|---|---|
 | PR1 | `RiskBadge` | `ClimbMatchCore.jsx` | the smoke test for the pipeline; consumer `lib/SafetyTab.jsx`; `Pill` got its JSDoc seam |
 | PR1 | _infrastructure_ | — | `src/components/`, `tsconfig.json`, `check:types`, TS-aware guards, `measure-guard-reach` |
+| PR17 | `MessageRow`, `TypingIndicator` | `ClimbMatchCore.jsx` | the chat bubble (one 3.3 KB line, moved by SCRIPT) and the "… is typing" line — one job family, one consumer (`ClimbMatch.jsx`), core never rendered either — no cycle; the bubble reads `C`/`photoAlt`/`relTime` from core, the report helpers from `lib/reportBus` and `clickable` from `lib/clickable` directly, and `Av` from its own folder; the message shape is typed as `ChatMessage`; no guard, probe or feature doc names them |
 | PR16 | `ScreenSkeleton`, `OverlaySkeleton` | `ClimbMatchCore.jsx` | the two loading placeholders a lazy screen / overlay shows while its chunk arrives — one job family, one consumer (`ClimbMatch.jsx`, 12 + 10 uses), core never rendered either — no cycle; both take the palette as a prop (`C: typeof Palette`, a type-only import of core's `C`); their `//` comments moved with them as the JSDoc; no guard, probe or feature doc names them |
 | PR15 | `ChatComposer` | `ClimbMatchCore.jsx` | the DM/crew message composer (one 3.2 KB line, moved by SCRIPT); one consumer (`ClimbMatch.jsx`), core never rendered it — no cycle; reads `C`, `photoAlt`, `PhotoAltField` at render time; `PhotoAltField`'s seam typed on the JS side with a JSDoc `@param` (it destructures five props, the composer passes three); the only logic touch is the `typeof rd.result === "string"` check the FileReader type demands; no guard, probe or feature doc names it |
 | PR14 | `SwipeRow` | `ClimbMatchCore.jsx` | the swipe-left-to-act row; 3 consumers (`ClimbMatch.jsx`, `lib/Inbox.jsx`, `lib/NotifPanel.jsx`), core never rendered it — no cycle; reads `C` only; its comment block moved with it as the JSDoc; touch handlers typed `TouchEvent<HTMLDivElement>`; no guard, probe or feature doc names it |
@@ -69,7 +70,7 @@ the pipeline. Then the `App` render tree in `ClimbMatch.jsx`, which has **no inn
 every piece lifted out of it needs its props enumerated from the ~100 `useState` hooks it closes over.
 Take the leaves first (a card, a row, a header strip), never a whole tab in one PR.
 
-Last session stopped at: **PR16 — `ScreenSkeleton` + `OverlaySkeleton`** (two one-liners of one job family in one PR; the live-leaf list below is what remains, minus these two). A census of every component still defined in core (2026-10-16,
+Last session stopped at: **PR17 — `MessageRow` + `TypingIndicator`** (the chat family, one consumer; the live-leaf list below is what remains, minus these two). A census of every component still defined in core (2026-10-16,
 `node` over core's top-level `function X(`/`const X=` with a JSX body; `<X` uses per file; guards naming each) found
 **75**. Thirteen are declared SEED-ONLY by `check:seed-only-surfaces` and render for nobody once `VITE_USE_DB=true`:
 `OverviewMap` (20 KB), `Guides` (25 KB), `GuideDashboard` (18 KB), `RouteFinder` (14 KB), `GuideApply`, `QuickMatch`,
@@ -78,10 +79,10 @@ about 130 KB of core that no climber reaches. **Do not extract them**: moving de
 clean-up. Deleting them is a product decision (CLAUDE.md: polish only, features need approval), so it is PROPOSED to the
 owner here, not done. Two more have NO consumer at all (`RSL`, `GH`) — confirm with a grep for a non-JSX use, then they
 can go in a polish PR. The LIVE leaves to extract next, smallest first, none named by a guard: `Hr`, `Stars`, `Bar`
-(one guard comment), `TypingIndicator`, `ShareExportRow`, `CardHead` (62 uses:
+(one guard comment), `ShareExportRow`, `CardHead` (62 uses:
 `RouteDetail.jsx` 49, `AlpineConditionsCard.jsx` 12), `TopContribBadge`, `PhotoAltField`, `PullToRefresh`,
 `ReactionPicker`, `PhotoDescribeBox`, `RetryReminder`, `PlaceMatches`, `SectionJumps`, `MiniCalendar`, `SunCorrect`,
-`StartLocationForm`, `AreaRegionSelect`, `TopContributors`, `MessageRow`. Then the guarded panels (`TrustBreakdown`,
+`StartLocationForm`, `AreaRegionSelect`, `TopContributors`. Then the guarded panels (`TrustBreakdown`,
 `ReportStats`, `PhotoStrip`, `ItineraryEditor`, `RealClimberRow`, …) — read every guard named first. Conventions that
 held through PR5–PR15: a parent that still uses what it extracted imports the new file back (the stitch drops that
 import; the component reads the parent's exports at render time only); a component another extracted component renders
