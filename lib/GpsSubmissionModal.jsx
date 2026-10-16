@@ -14,7 +14,7 @@ const C = {
   border: '#333'
 }
 
-export default function GpsSubmissionModal({ routeId, routeName, onClose, onSuccess }) {
+export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, onSuccess }) {
   const [tab, setTab] = useState('paste') // 'paste', 'upload', 'devices'
   const [coordinates, setCoordinates] = useState('')
   const [deviceType, setDeviceType] = useState('Garmin')
@@ -276,8 +276,10 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
     <div style={{...styles.overlay}} onClick={onClose}>
       <div style={{...styles.modal}} onClick={(e) => e.stopPropagation()}>
         <div style={{...styles.header}}>
-          <h2 style={{...styles.heading}}>Submit GPS Track</h2>
+          <h2 style={{...styles.heading}}>{crag ? 'Add the trail to the crag' : 'Submit GPS Track'}</h2>
           <p style={{...styles.subheading}}>{routeName}</p>
+          {/* A crag climb summits nothing, so its track is the walk in: say where to start and stop the recording. */}
+          {crag && <p style={{...styles.textSmall, color: C.text70, margin: '6px 0 0'}}>Record from where you park to the base of the crag, or on to this climb if it sits away from the main wall. Stop at the base: the climb itself is not part of it.</p>}
           <button aria-label="Close" style={POP_CLOSE} onClick={onClose}>✕</button>
         </div>
 

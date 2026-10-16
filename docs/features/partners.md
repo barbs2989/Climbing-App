@@ -50,7 +50,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 | File | What lives there |
 |---|---|
 | `lib/PartnerSearch.jsx` | `PartnerSearch` (modes incl. Near my areas and listing-based By Area, filters, near/objective/area/browse lists, example cards, route picker, `initialArea` deep link) |
-| `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas sheet (add/edit/remove a listing, `windowText`) |
+| `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas screen (add/edit/remove a listing, `windowText`): a full-screen view in the 520px column, search first (pre-set to the home state via `useMyHomeStatePaths`), one-tap suggestions from the climber's own crag climbs and saved areas (`suggestIds`, a wall offered as its crag), date presets This weekend / Next weekend / Pick dates, an ended window flagged on its card |
 | `ClimbMatch.jsx` | `partnersMode` state and mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder`, `DbGuides`/`Guides`, `MyPartnerAreas`; `myAreasOpen`, `openMyAreas`, `onFindPartnersInArea`, `ME.matchObjectiveIds` |
 | `ClimbMatchCore.jsx` | `compat`, `CMAX_*`/`COMPAT_*`, `CMAX_AREA`, `areaPathsOverlap`, `CRAG_CATS`, `RealClimberRow`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf`, `PARTNER_NUMBERS` (also read by `lib/Help.jsx`) |
 | `lib/db.js` | `PARTNER_COLS`, `useDiscoverableProfiles`, `useProfileSearch`, `useMyZip`, `usePartnersNear`, `usePartnersByObjective`, `usePartnerSignals`, `useMatchObjectivesOfUsers`, `useVerifiedUsers`, `useMyPartnerAreas`, `savePartnerArea`, `removePartnerArea`, `usePartnersInArea`, `usePartnersForMyAreas`, `usePartnerAreaCounts`, `usePartnerAreasOfUsers`, zip save/delete |
@@ -75,6 +75,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 - **Social**: `friendState`/`onConnect` (connections), `mutuals`/`onShowMutuals`, `blocked` (block list), message button.
 - **Route page**: `initialClimb` + `onConsumeInitial` open By Route preselected; `useRecentRouteIds` supplies recent picks. `initialArea` + `onConsumeInitialArea`
   open By Area on an area (from the area page's "See all", a crag route's Partners sub-tab, a Logbook crag row — all through App's `onFindPartnersInArea`).
+- **Menu**: the *Yours* group has a **Listed areas · N** tile (`openMyAreas`; signed out it asks to sign in).
 - **Area page / crews pane**: `PartnersHereCard` (`docs/features/maps-and-area-browser.md`) and the crews pane both open the My listed areas sheet (`openMyAreas`).
 - **Siblings in the tab**: `CrewFinder` (crews), `DbGuides`/`Guides` (guides).
 
