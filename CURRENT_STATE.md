@@ -55,7 +55,8 @@ Newest first. Keep about 15 lines; older entries live in the PRs and the commit 
 - **Area page order**: areas/climbs list → *Don’t see a climb?* → suggested climbs → nearby peaks → Top contributors → Discussion. Discussion now renders on areas with no coordinate (Florida’s Artificial Boulders); *Partners here*’s dates/types control is a real card button (it had no style at all).
 - **RACK is rack-only, every state** — ~400 WA + ~140 other-state routes re-homed (ice axe, crampons, helmet, boots out of `detailed_rack`/`pro_needs`/`rack` into `what_to_bring`), `DISC_RACK` stripped to protection and ropes, `routeRackFor` splits every source and `rackLeftovers` feeds GEAR & ESSENTIALS; `audit:rack-items`.
 - **Objectives chips** Alpine is the left-most discipline chip; Mountaineering and Aid are their own chips instead of folding into Alpine and Trad (`lib/ListsManager.jsx`).
-- **PR14** `SwipeRow` extracted to `src/components/SwipeRow.tsx` (three consumers; core never rendered it, so no import back).
+- **PR15** `ChatComposer` extracted to `src/components/ChatComposer.tsx` (one consumer; core never rendered it, so no import back).
+- **#2501** `SwipeRow` extracted to `src/components/SwipeRow.tsx` (three consumers; core never rendered it, so no import back).
 - **#2495** `GPXMap` extracted to `src/components/GPXMap.tsx` (three consumers; core never rendered it, so no import back; Leaflet's `window.L` declared once in `src/types/`).
 - **#2490** `Av` extracted to `src/components/Av.tsx` (fifteen consumers plus core itself, which imports it back).
 - **#2489** `DiscIcon` extracted to `src/components/DiscIcon.tsx` (thirteen consumers plus core itself, which imports it back).

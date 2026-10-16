@@ -146,6 +146,7 @@ export const MOVED = {
     "src/components/Av.tsx",
     "src/components/GPXMap.tsx",
     "src/components/SwipeRow.tsx",
+    "src/components/ChatComposer.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
