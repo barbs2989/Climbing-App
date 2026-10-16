@@ -26,6 +26,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Comments and group feeds are live** (0326): a comment, reply, edit, delete or reaction another climber makes on a route, area or group post, and a post, edit, pin, delete or reaction in your groups, now appears on your screen within about a second, with no reload. `useComments` and `useGroupFeed` became `useLiveQuery` (`lib/live.js`, Supabase Realtime under the same RLS). See `docs/features/route-page.md`.
 - **Route page: PAIRS WELL WITH takes a full section header**: the rule and 30px gap every other route-page section has, so it no longer sits tight under the "Got beta?" box.
 - **Quick log**: the route page offers *✓ Quick log* beside *Full log* — pick a style or outcome, the date, an optional rating, save. The rest can be added later from the logbook. A crew quick log no longer writes two `climb_logs` rows. See `docs/features/logbook-crews-home.md`.
 - **Route edits: an empty field fills at once, two climbers agreeing change a filled one** (0325): the database approves the edit itself; the edit sheet shows other climbers' waiting suggestions with an Agree button; anything else still waits for the owner. Area edits are still held.
@@ -87,7 +88,6 @@ Newest first. Keep about 15 lines; older entries live in the PRs and the commit 
 - **#2395** Crews: vouching for past crews, honest Archive/Clear, serialised gear writes (0291).
 - **#2390** Conditions audit: visibility units, DST-aware clocks, chart pinning, touch targets.
 - **#2352** Alpine conditions: fog hours, snowfall and snow level, stream flow, report freshness.
-- **#2336** Plan card is Full Trip Time; glaciated alpine routes keep glacier conditions.
 
 ## Keeping this current
 

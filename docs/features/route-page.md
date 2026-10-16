@@ -25,7 +25,8 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 5. **Sub-tabs** are rendered by `RouteDetail.jsx` off its `tab` state. Overview carries the consensus (`buildConsensus` over `route.activity`), hazard flags, route breakdown, approach/descent, social chips (`useRoutePairings`, `useRouteLoggedWith`). `FireNearRoute` is the first section of Safety on every route. A start of climb is filed from the *Start of climb* section of Add or fix info (or the log form) and shown as START OF CLIMB on Overview; Safety has no start-location button (removed 2026-10-15 as a duplicate).
 6. **Planner.** Time estimates come from `scarfHrs(...)` (Naismith-style approach by fitness tier and pack weight) and `techHrs(...)` (pitch-by-pitch climbing, exponential slowdown by grade); `lib/planTimes.js` (`planTimes`, `realPitches`) assembles the stage totals. A route's stored legs win over computed ones (`check:return-leg`).
 7. **Glacier terrain.** Alpine routes whose terrain read says glacier get the glacier conditions card plus the rock-weather flags (#2336).
-8. **Photos.** `submitRoutePhoto` writes a `contributions` row of kind `photo`; `reportPhoto` reports one; `lib/PhotoReports.jsx` holds the moderation queue; `lib/photoPrivacy.js` / `lib/photoEvidence.js` support gating.
+8. **Comments are live.** `useComments` (lib/db.js) is a `useLiveQuery` (`lib/live.js`): it subscribes over Supabase Realtime to `comments` and `comment_reactions`, and a row another climber inserts, edits, deletes or reacts to on any target this page holds (the route, its sub-tabs, pitches, photos, an area, a group post) refetches the comments, so the thread fills in without a reload (0326 put the tables in the `supabase_realtime` publication). The refetch goes through the same query and RLS as a reload.
+9. **Photos.** `submitRoutePhoto` writes a `contributions` row of kind `photo`; `reportPhoto` reports one; `lib/PhotoReports.jsx` holds the moderation queue; `lib/photoPrivacy.js` / `lib/photoEvidence.js` support gating.
 
 ## 3. Files
 
@@ -37,6 +38,8 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `src/components/GPXMap.tsx` | `GPXMap` — the route map: track, pins, one shared popup card, derived trailhead, base check-ins (extracted from core, PR13) |
 | `src/components/ElevChart.tsx` | `ElevChart` — the elevation profile under the route map (extracted from core, PR10) |
 | `lib/db.js` | `useAreaRoutes`, `fetchRouteRow`, `dbRouteToCamel`, `useRouteContributions`, `useRouteDifficultyRatings`, `useMyRouteRating`, `useRouteStarSummary`, `setRouteRating`, `submitRoutePhoto`, `reportPhoto`, `submitContribution` |
+| `lib/live.js` | `useLiveQuery` — React Query plus a Realtime subscription that refetches when a held row changes |
+| `lib/liveMatch.js` | `liveChangeTouches`, `inFilter` — the pure half of the live subscription |
 | `lib/planTimes.js` | `planTimes`, `realPitches` |
 | `lib/rack.js` | `routeRackFor`, `rackLeftovers`, `isRackEntry`, `isNonRackGear`, `DISC_RACK` — what the RACK card prints (rack only) and what moves to GEAR & ESSENTIALS |
 | `lib/baseCheckin.js` | `acquireBaseFix`, `clusterBasePoints`, `baseCheckinMessage`, `baseGuide`, `bearingDeg`: the base check-in's GPS rules and the find-the-base readout |
@@ -72,12 +75,15 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 `check:bare` (route with no enrichment, every discipline x sub-tab), `check:field-renders`, `check:token-boxes`, `check:pitch-split`, `check:approach-section`, `check:approach-overlay`, `check:trailhead-directions`, `check:trailhead-direction-shape`, `check:access-checked-line`, `check:fire`, `check:summit-briefing`, `check:photo-contract`, `check:crew-gear`, `check:camping`, `check:correction-readers`, `check:return-leg`, `check:write-readers` (rating writes refresh both cached readers), `check:schema`, `check:rls`, `check:migration-replay`, `check:ui`, `check:zero`, `check:overflow`. Notes: `docs/guards/route-page.md`. `audit:rack-items` (hand-run: no rack column files non-rack gear).
 
 ## 7. Last significant change
+Comments are live (0326): `useComments` refetches when another climber writes, edits, deletes or reacts to a comment on this page (`useLiveQuery` in `lib/live.js`). Probe: `scripts/oneoff/probe-live-comments-group-posts.mjs`.
 Real climbers, batch 3: comment authors are public names (`publicNameOf`, comments select `show_name`); @mention chips, matching and insertion use `mentionName`/`mentionToken`; TOP CONTRIBUTORS names real contributors by `pubName` and opens their profile; "viewing now" broadcasts your public name and opens a real viewer's own profile; Share → Send to a partner names real friends publicly without a client-made score.
 The *Brought different gear? Suggest a gear update* box (`gearUpdateBox` in `RouteDetail`, opens the rack edit) sits directly under the RACK card on every roped route: `RouteGearCheck` draws it via `afterRack`, between RACK and ROPEWORK, and crag Overview draws it under `CragRack`. Bouldering has none.
 
 The RACK card is rack-only: `detailed_rack`/`pro_needs`/`rack` re-homed on ~400 WA routes (ice axe, crampons, helmet, boots moved to `what_to_bring`), `DISC_RACK` stripped to protection and ropes, and `routeRackFor` splits every source (`rackLeftovers` to GEAR & ESSENTIALS). Before that: #2407 — header stars persist, count once per climber and feed the route rating (0294). Full history is in the PRs and the commit log for the files above.
 
 ## 8. Known gaps / open decisions
+
+- Live comments: Realtime applies RLS to an UPDATE, so a comment a moderator takes down is never SENT to other readers; it leaves their screen at the next refetch (refocus, reload, a write), not the instant it is removed.
 
 - `SAR_BY_COUNTY` holds 3 Utah counties (Grand, Utah, Salt Lake), each checked against the agency's own page on 2026-10-15; every other county shows 911 guidance only until a climber adds its line through the pencil. Emergency contacts are per ROUTE, so a climber's edit on one Castleton line does not reach its neighbours.
 
