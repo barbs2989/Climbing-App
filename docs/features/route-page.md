@@ -73,6 +73,8 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 
 ## 7. Last significant change
 Real climbers, batch 3: comment authors are public names (`publicNameOf`, comments select `show_name`); @mention chips, matching and insertion use `mentionName`/`mentionToken`; TOP CONTRIBUTORS names real contributors by `pubName` and opens their profile; "viewing now" broadcasts your public name and opens a real viewer's own profile; Share → Send to a partner names real friends publicly without a client-made score.
+The *Brought different gear? Suggest a gear update* box (`gearUpdateBox` in `RouteDetail`, opens the rack edit) sits directly under the RACK card on every roped route: `RouteGearCheck` draws it via `afterRack`, between RACK and ROPEWORK, and crag Overview draws it under `CragRack`. Bouldering has none.
+
 The RACK card is rack-only: `detailed_rack`/`pro_needs`/`rack` re-homed on ~400 WA routes (ice axe, crampons, helmet, boots moved to `what_to_bring`), `DISC_RACK` stripped to protection and ropes, and `routeRackFor` splits every source (`rackLeftovers` to GEAR & ESSENTIALS). Before that: #2407 — header stars persist, count once per climber and feed the route rating (0294). Full history is in the PRs and the commit log for the files above.
 
 ## 8. Known gaps / open decisions
