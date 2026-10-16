@@ -26,6 +26,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Crag route Overview: LOCATION, GEAR & SAFETY and CONDITIONS are their own sections**, moved out of the top ROUTE FACTS card — Location above Getting there, the other two under the Rack; each missing fact has its own + Add.
 - **Route page: PAIRS WELL WITH takes a full section header**: the rule and 30px gap every other route-page section has, so it no longer sits tight under the "Got beta?" box.
 - **Quick log**: the route page offers *✓ Quick log* beside *Full log* — pick a style or outcome, the date, an optional rating, save. The rest can be added later from the logbook. A crew quick log no longer writes two `climb_logs` rows. See `docs/features/logbook-crews-home.md`.
 - **Route edits: an empty field fills at once, two climbers agreeing change a filled one** (0325): the database approves the edit itself; the edit sheet shows other climbers' waiting suggestions with an Agree button; anything else still waits for the owner. Area edits are still held.

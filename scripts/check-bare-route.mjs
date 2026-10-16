@@ -340,7 +340,13 @@ for (const d of [...CRAG, "alpine"]) {
     const stray = FACT_LABELS.filter((l) => !(WANT || []).includes(l) && sg.includes(l));
     if (missing.length) fail(`bare ${d} route: these discipline facts are not shown as "Not on file yet" placeholders: ${missing.join(", ")}`);
     else if (stray.length) fail(`bare ${d} route: ROUTE FACTS prints rows that are not this discipline's facts and have no value (${stray.join(", ")})`);
-    else if (!t.includes("Add what you know")) fail(`bare ${d} route: placeholders render with no link to fill them`);
+    // Since 2026-10-15 each placeholder sits in its own section (LOCATION, GEAR & SAFETY, CONDITIONS) and
+    // carries its OWN "+ Add" — the page-wide "Add what you know" text also belongs to other cards, so
+    // finding it proved nothing. The control must be the segment right after the placeholder.
+    else if ((WANT || []).some((l) => sg[sg.indexOf(l) + 2] !== "+ Add")) fail(`bare ${d} route: a "Not on file yet" placeholder has no + Add beside it`);
+    else if (!["LOCATION", "GEAR &amp; SAFETY", "CONDITIONS"].every((h) => sg.includes(h))) fail(`ANCHOR LOST: ${d} overview lacks a LOCATION / GEAR & SAFETY / CONDITIONS section heading`);
+    else if ([["Location", "LOCATION"], [d === "bouldering" ? "Landing" : "Anchor", "GEAR &amp; SAFETY"], ["Rock quality", "CONDITIONS"]].some(([l, h]) => sg.indexOf(l) < sg.indexOf(h)))
+      fail(`bare ${d} route: a fact renders outside its section (Location under LOCATION, Anchor under GEAR & SAFETY, Rock quality under CONDITIONS)`);
     else ok(`bare ${d} route: every ${d} fact shows as a fillable "Not on file yet" placeholder, and nothing else`);
     if (t.includes("Season TBD")) fail(`bare ${d} route: header strap says "Season TBD" — a crag route states a season only when it has one`);
   }
