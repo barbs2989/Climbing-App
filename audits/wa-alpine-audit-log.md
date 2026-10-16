@@ -32496,3 +32496,73 @@ Next Door, Independence Route, Northwest Face) have FA-credit or FA-year items f
 review, none contradicted by any source found.
 
 Pass 7 continues next run after `wa_liberty_bell_nw_face`.
+
+## Batch 417 — 2026-10-16 (pass 7)
+
+**Liberty Crack.** Confirmed error: `high_point_ft` stores 7,746 ft — 26 ft *above* Liberty Bell's
+actual 7,720 ft summit, which Wikipedia, SummitPost and a local news piece all agree on, which the
+area's own row (`wa_liberty_bell.elevation_ft`) already stores, and which this route's own free
+sibling (Liberty Crack (Free), same line, same approach distance/gain) already carries correctly.
+Liberty Crack (aid) was the lone outlier among all 8 Liberty-Bell-area routes checked across this
+batch and the two prior ones. Fixed: 7746 → 7720. FA (Steve Marts, Don McPherson & Fred Stanley,
+July 1965) confirmed exactly via Wikipedia/SummitPost/Mountain Project (exact dates July 16–18 not
+stored, so nothing to contradict there).
+
+**Liberty Cap via Liberty Ridge, Liberty Cap via Ptarmigan Ridge.** Both store `high_point_ft`
+14,112 — the older, pre-glacier-melt figure that still circulates in a Wikimedia Commons caption —
+contradicting Liberty Cap's own area row, which already holds 14,097, in line with the Aug 2025
+Gilbertson-team resurvey (14,094.9 ft NAVD88; Liberty Cap has lost ~26 ft since 2007 to glacier
+melt, per the same team's Rainier work that previously justified this project's own Columbia
+Crest/SW Rim correction). Fixed both routes: 14112 → 14097, matching the peak's own row rather than
+re-deriving a fresh survey figure. FAs confirmed exactly: Liberty Ridge (Ome Daiber, Arnie Campbell
+& Jim Borrow, Sept 28–Oct 1, 1935) — the date range matches the AAC's own 1936 account title
+verbatim — and Ptarmigan Ridge (Wolf Bauer & Jack Hossack, September 8, 1935), confirmed by The
+Mountaineers' own historical record of the route. One item flagged, not fixed: sources split hard
+on the Liberty Ridge third climber's first name — the AAC's primary 1936 journal account and a
+Mountaineers institutional blog post both say "Will H. Borrow, Jr.", while Molenaar's guidebook and
+the LA Mountaineers' North American Classic Climbs database both say "Jim/J. Borrow" — a real
+primary-source-vs-guidebook conflict, not a clear-cut error either way.
+
+**Liberty Crack (Free).** Confirmed error: the `fa` field dates the current bolted free variation
+(Mikey Schaefer, Shanjean Lee, Blake Herrington & Nathan Hadley) to 2016, but Mountain Project dates
+that specific four-person variation to 2017 — and the row's *own* `data_quality.gaps` field already
+distinguishes a separate, undated-in-our-row 2016 Herrington/Hadley redpoint of the original aid
+line (no Schaefer/Lee) from the 2017 four-person team reworking the deteriorated slab pitch into
+the new bolted variation. The `fa` field had fused the 2017 team with the 2016 date. Fixed: year
+only, 2016 → 2017.
+
+**Thin Red Line.** Confirmed error: the `fa` field credits the September 2008 FFA to "Kate
+Rutherford & Mikey Schaefer," but Mountain Project and SummitPost both credit this FFA to Schaefer
+alone, with no second climber named anywhere found. Rutherford's real, well-documented FA with
+Schaefer is a completely unrelated 2011 Patagonia climb — the "Washington Route" on Fitz Roy — a
+plausible source of a name/string collision ("Washington" + "Schaefer") somewhere upstream. Fixed:
+removed "Kate Rutherford & " from the credit, leaving Schaefer alone. The underlying 1967 aid FA
+(Jim Madsen & Kim Schmitz) is independently confirmed and untouched.
+
+**Sidewinder (Southwest Corner).** FA (Pete Doorish & Leigh Nason, 1969; variation by Bryan Burdo,
+1991) and even the route's existence under this name could not be corroborated by any source
+reachable this run — Mountain Project itself returned a DNS failure through this environment's
+proxy for every direct-fetch attempt, and general web search surfaced no page describing a route by
+this name on Liberty Bell at all. Flagged for human review rather than touched; nothing found
+contradicts the row, the lookup just came up empty everywhere searchable from here.
+
+**Overexposure, Serpentine Crack, Liberty Traverse.** Overexposure's FA (Ron Burgner & Don
+McPherson, 1966) is confirmed by Mountain Project, with no second independent source found (noted,
+not flagged as an error — single-source corroboration, same as several routes in recent batches).
+Serpentine Crack and Liberty Traverse both carry no FA claim, so there is nothing to contradict;
+both routes' elevation/gain figures are consistent with Liberty Bell's own 7,720 ft summit.
+
+**Lichtenberg Mountain — Southeast Slopes Scramble.** No FA claimed (scramble route, consistent
+with other Class 2 routes in this catalog). The row's own `data_quality.gaps` already documents a
+prior-pass prominence correction (1,124 ft vs. a stale 1,207 ft) — not this batch's work, just
+confirmed still self-consistent.
+
+**Confirmed errors this batch: 5** (Liberty Crack's elevation outlier; both Liberty Cap routes'
+stale pre-resurvey elevation; Liberty Crack (Free)'s variation-year fa error; Thin Red Line's
+fabricated second FFA credit) — SQL in `audits/sql/2026-10-16-batch-417.sql`, each statement guarded
+on the current wrong value and pre-flighted with `check:sql`. 2 items flagged for human review
+(Liberty Ridge's third-climber-name source conflict; Sidewinder's wholly unconfirmable FA/route
+identity). 3 routes clean outright (Serpentine Crack, Liberty Traverse, Lichtenberg Mountain SE
+Route).
+
+Pass 7 continues next run after `wa_lichtenberg_mountain_se_route`.
