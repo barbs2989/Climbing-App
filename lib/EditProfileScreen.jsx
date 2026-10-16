@@ -3,14 +3,14 @@
 import { DISC_LABELS as DL } from "./discLabels";
 import { USE_DB } from "./supabase";
 import { POP_REMOVE } from "./popupChrome.js";
-import { removeProfileAvatar, uploadProfilePhoto } from "./db";
+import { removeProfileAvatar, saveProfileAvatar, uploadProfilePhoto } from "./db";
 import { useState } from "react";
 import { C, DOW, US_CITIES, US_ST, CA_PROV, hasVulgarity, SKILLS, SKILL_GROUPS, PROFILE_GRADES, CLIMB_ROLES, BELAY_DEVICES, BELAY_LEVELS, certExpiryInfo, profileGradeRows, roleLabel } from "../ClimbMatchCore.jsx";
 import Av from "../src/components/Av.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
 import Lbl from "../src/components/Lbl.tsx";
 
-export default function EditProfileScreen({draft,setDraft,onSave,onCancel,uid,zipNow,zipReady,ecNow,ecReady}){
+export default function EditProfileScreen({draft,setDraft,onSave,onCancel,onAvatarChange,uid,zipNow,zipReady,ecNow,ecReady}){
   /* The avatar used to be `set("avatar",URL.createObjectURL(f))`, and saveEdit PATCHes that
      straight into `profiles.avatar` — so the column held a blob: URL, an in-memory handle that
      resolves to nothing after a reload and to nothing for any other climber. Measured on the
@@ -38,7 +38,7 @@ export default function EditProfileScreen({draft,setDraft,onSave,onCancel,uid,zi
        upload path says on the way in. */
     if(!USE_DB){setAvaPreview("");set("avatar","");return;}
     setAvaBusy(true);
-    removeProfileAvatar(uid,avaPreview||draft.avatar).then(function(){setAvaBusy(false);setAvaPreview("");set("avatar","");})
+    removeProfileAvatar(uid,avaPreview||draft.avatar).then(function(){setAvaBusy(false);setAvaPreview("");set("avatar","");if(onAvatarChange)onAvatarChange("");})
       .catch(function(err){setAvaBusy(false);setAvaErr((err&&err.message)||"Couldn’t remove that photo. Check your connection and try again.");});};
   const [ncert,setNcert]=useState("");const [nexp,setNexp]=useState("");const [nskill,setNskill]=useState("");
   const toggleDisc=k=>setDraft(d=>({...d,disciplines:d.disciplines.includes(k)?d.disciplines.filter(x=>x!==k):[...d.disciplines,k]}));
@@ -48,7 +48,8 @@ export default function EditProfileScreen({draft,setDraft,onSave,onCancel,uid,zi
   const uErr=draft.username.trim().length<3?"Username must be at least 3 characters.":hasVulgarity(draft.username)?"Please choose a different username.":"";
   const nErr=draft.name.trim().length<1;
   const ok=!uErr&&!nErr;
-  const uShow=uTouched&&uErr;
+  /* An EMPTY username shows its reason at once: every new account has none, and a greyed Save with nothing saying why read as a broken editor. */
+  const uShow=(uTouched||!draft.username.trim())&&uErr;
   const lbl={fontSize:12,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:5,marginTop:14};
   const inp={width:"100%",padding:"10px 12px",borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:14,boxSizing:"border-box"};
   return (<div style={{position:"fixed",inset:0,background:C.bg,zIndex:1100,overflowY:"auto",overscrollBehavior:"contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
@@ -57,7 +58,7 @@ export default function EditProfileScreen({draft,setDraft,onSave,onCancel,uid,zi
       <button disabled={!ok} onClick={onSave} style={{background:ok?C.blueSolid:C.card,color:ok?"#fff":C.textMuted,border:"1px solid "+(ok?C.blue:C.border),borderRadius:8,padding:"6px 16px",fontSize:13,fontWeight:700,cursor:ok?"pointer":"not-allowed"}}>Save</button>
     </div>
     <div style={{maxWidth:560,margin:"0 auto",padding:"4px 16px 44px"}}>
-      <div style={{display:"flex",alignItems:"center",gap:14,marginTop:10,marginBottom:2}}><div style={{flexShrink:0}}><Av src={avaPreview||draft.avatar} size={72}/></div><div style={{minWidth:0}}><label style={{display:"inline-flex",alignItems:"center",gap:6,padding:"8px 13px",borderRadius:9,border:"1px solid "+C.blueDim,background:avaBusy?C.card:C.blueBg,color:avaBusy?C.textMuted:C.blue,fontSize:13,fontWeight:700,cursor:avaBusy?"default":"pointer"}}>{avaBusy?"Uploading…":"Change photo"}<input type="file" accept="image/*" disabled={avaBusy} onChange={e=>{const f=e.target.files&&e.target.files[0];e.target.value="";if(!f)return;const local=URL.createObjectURL(f);setAvaErr("");setAvaPreview(local);/* Seed mode has no storage to upload to, so the handle is all there is — and nothing persists there anyway. */if(!USE_DB){set("avatar",local);return;}setAvaBusy(true);uploadProfilePhoto(f).then(function(url){setAvaBusy(false);set("avatar",url);/* Drop the local handle once the real one is in the draft, so what you are looking at is the image that was actually stored rather than a copy that dies with the tab. */setAvaPreview("");}).catch(function(err){setAvaBusy(false);setAvaPreview("");setAvaErr((err&&err.message)||"Couldn’t upload that photo. Check your connection and try again.");});}} className="cm-file-input"/></label>{(avaPreview||draft.avatar)?<button onClick={removeAva} disabled={avaBusy} style={{marginLeft:8,padding:"8px 13px",borderRadius:9,border:"1px solid "+C.border,background:"transparent",color:avaBusy?C.textMuted:C.textSub,fontSize:13,fontWeight:700,cursor:avaBusy?"default":"pointer"}}>{"Remove photo"}</button>:null}<div style={{fontSize:11.5,color:C.textMuted,marginTop:6,lineHeight:1.5}}>This is the photo other climbers see when searching for partners.</div>{avaErr?<div role="alert" style={{fontSize:11.5,color:C.red,marginTop:5,lineHeight:1.45}}>{avaErr}</div>:null}</div></div><div style={lbl}>Display name</div>
+      <div style={{display:"flex",alignItems:"center",gap:14,marginTop:10,marginBottom:2}}><div style={{flexShrink:0}}><Av src={avaPreview||draft.avatar} size={72}/></div><div style={{minWidth:0}}><label style={{display:"inline-flex",alignItems:"center",gap:6,padding:"8px 13px",borderRadius:9,border:"1px solid "+C.blueDim,background:avaBusy?C.card:C.blueBg,color:avaBusy?C.textMuted:C.blue,fontSize:13,fontWeight:700,cursor:avaBusy?"default":"pointer"}}>{avaBusy?"Uploading…":"Change photo"}<input type="file" accept="image/*" disabled={avaBusy} onChange={e=>{const f=e.target.files&&e.target.files[0];e.target.value="";if(!f)return;const local=URL.createObjectURL(f);setAvaErr("");setAvaPreview(local);/* Seed mode has no storage to upload to, so the handle is all there is — and nothing persists there anyway. */if(!USE_DB){set("avatar",local);return;}/* The upload is SAVED here, not at Save: Cancel dropped it, and Save is disabled for a climber with no username yet (every new account). saveProfileAvatar says why. */setAvaBusy(true);uploadProfilePhoto(f).then(function(url){return saveProfileAvatar(uid,url).then(function(){return url;});}).then(function(url){setAvaBusy(false);set("avatar",url);if(onAvatarChange)onAvatarChange(url);/* Drop the local handle once the real one is in the draft, so what you are looking at is the image that was actually stored rather than a copy that dies with the tab. */setAvaPreview("");}).catch(function(err){setAvaBusy(false);setAvaPreview("");setAvaErr((err&&err.message)||"Couldn’t upload that photo. Check your connection and try again.");});}} className="cm-file-input"/></label>{(avaPreview||draft.avatar)?<button onClick={removeAva} disabled={avaBusy} style={{marginLeft:8,padding:"8px 13px",borderRadius:9,border:"1px solid "+C.border,background:"transparent",color:avaBusy?C.textMuted:C.textSub,fontSize:13,fontWeight:700,cursor:avaBusy?"default":"pointer"}}>{"Remove photo"}</button>:null}<div style={{fontSize:11.5,color:C.textMuted,marginTop:6,lineHeight:1.5}}>This is the photo other climbers see when searching for partners.</div>{avaErr?<div role="alert" style={{fontSize:11.5,color:C.red,marginTop:5,lineHeight:1.45}}>{avaErr}</div>:null}</div></div><div style={lbl}>Display name</div>
       <input aria-label="Your name" value={draft.name} onChange={e=>set("name",e.target.value)} placeholder="Your name" style={inp}/>
       {nErr?<div style={{fontSize:12,color:C.red,marginTop:4}}>Name cannot be empty.</div>:null}
       <div style={lbl}>Username</div>
