@@ -253,8 +253,10 @@ for (const [key, expr] of nrPairs) {
   // broken the moment AddRoute started converting with a helper. Rather than loosen the rule to
   // "anything with parentheses", each allowed helper is named here AND its definition is checked
   // to actually produce an array — so the allowance cannot rot into a hole. `linesOf` splits a
-  // textarea into one entry per line, which is how whatToBring/watchOut/objHaz are read back.
-  const ARRAY_HELPERS = ["linesOf"];
+  // textarea into one entry per line, which is how whatToBring/watchOut/objHaz are read back;
+  // `commaOf` splits a comma list, which is how altNames/variations are read back (0327) — the
+  // same split routeForDetail's CONV applies to an edit of either.
+  const ARRAY_HELPERS = ["linesOf", "commaOf"];
   const helperOk = ARRAY_HELPERS.filter((h) => {
     const def = CORE.match(new RegExp("(?:const|function)\\s+" + h + "\\s*=?\\s*(?:function)?\\s*\\([^)]*\\)\\s*\\{[^}]{0,300}"));
     return def && /\.split\(|\.filter\(|\.map\(|\[\]/.test(def[0]);
