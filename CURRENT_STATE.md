@@ -26,6 +26,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Best day on Home again + Menu tiles**: Home shows the Best day to climb tile right under Jump back in (it also stays in the Menu). The Menu's Plan & log adds **Downloads** (scrolls Home to the pinned/downloaded states card, `#pinned-downloads`) and **Hire a guide** (Partners in guides mode).
 - **Profile tabs** The Profile screen splits under its header into Profile · Activity · Review (admins): one long scroll became three short views; jumps into a section open its tab.
 - **Résumé past climbs: style fits the discipline**: *Add a past climb* on the résumé offered Lead / Follow / Sent / Summit / Top rope / Solo for every discipline; it now lists Mountain Project's styles for the chosen discipline (`RESUME_STYLES`) — a scramble offers Summit / Completed / Solo, a boulder Send / Flash.
 - **`npm run lint` + `npm run type-check`** (tooling, no screen changes): ESLint (`eslint.config.js`) holds unused variables, `any` and hook dependency arrays at zero for new code, in the build; findings already in the code are held in `eslint-suppressions.json`, which only shrinks. TypeScript strict gained `noUnusedParameters`. Run both before finalizing any feature.
