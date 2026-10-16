@@ -2,7 +2,7 @@
 // components — everything that used to sit above App in ClimbMatch.jsx (see
 // CLAUDE.md). Mechanically extracted; module-level bindings that App reassigns
 // are written through __set_* shims because ESM import bindings are read-only.
-import { useState, useEffect, useRef, useMemo, useCallback, useLayoutEffect, useContext, Suspense, lazy, memo } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback, useLayoutEffect, useContext, Suspense, lazy } from "react";
 import { ConfidenceCtx, headKey, ConfChip } from "./lib/confidence.jsx";
 import { createPortal } from "react-dom";
 import { HERO_BG, HERO_SHEEN } from "./lib/ScreenHero";
