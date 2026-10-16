@@ -30,7 +30,7 @@ import { C } from "../ClimbMatchCore";
 const EXTRA_KEYS = [
   ["rockStyle", "Rock style"], ["rock", "Rock"], ["protRating", "Protection"],
   ["crux", "Crux"], ["landing", "Landing"], ["pads", "Pads"], ["startType", "Start"],
-  // 0326: the seven route-page fields the form asks for since then. The three lists render below.
+  // 0327: the seven route-page fields the form asks for since then. The three lists render below.
   ["ffa", "First free ascent"], ["fwa", "First winter ascent"], ["highPointFt", "High point (ft)"], ["sun", "Sun"],
 ];
 const LIST_KEYS = [["altNames", "Also known as"], ["variations", "Variations"], ["proTips", "Pro tips"]];

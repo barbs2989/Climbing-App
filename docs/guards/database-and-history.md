@@ -1056,11 +1056,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       head**, so it injected the forbidden shape while claiming to be innocent; and an
       outside-the-form decoy that included `u1` tripped the older file-wide rule instead, saying
       nothing about the new one. **A case that fails for its own reasons proves nothing.**
-    - **2026-10-15, rule 4 fired on purpose and the fix was a NEW DEFINITION, 0326.** 0317 made
+    - **2026-10-15, rule 4 fired on purpose and the fix was a NEW DEFINITION, 0327.** 0317 made
       seven more columns editable on the route page (`ffa`, `fwa`, `alt_names`, `variations`,
       `high_point_ft`, `sun`, `pro_tips`); offering them in `lib/AddRoute.jsx`'s `FIELDS` without
       a migration fails rule 4 against 0157, which is the point — the form must not ask what
-      approval drops. 0326 was **generated from 0157's body by INSERTION** (the generator refuses
+      approval drops. 0327 was **generated from 0157's body by INSERTION** (the generator refuses
       a file whose column count and value count disagree: 58 and 58) and restates 0171's
       `set search_path` in the definition. A trap met: `String.prototype.replace` reads `$$` in
       its replacement as ONE `$`, so the first generated file lost the dollar-quote and

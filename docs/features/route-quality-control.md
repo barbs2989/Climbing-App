@@ -89,7 +89,7 @@ empty field fills at once and two climbers who agree are enough to change one (0
   every other column is either editable or declared with a reason. The log form offers "⚑ Something
   on this route page is wrong?", which opens the flag sheet through `openFlag` (`lib/reportBus.js`).
 
-- **Add-a-climb asks for the same seven** (`lib/AddRoute.jsx`, 0326): first free / first winter
+- **Add-a-climb asks for the same seven** (`lib/AddRoute.jsx`, 0327): first free / first winter
   ascent, other names, variations, sun and pro tips in group 8, the high point in the numeric row
   (in the climber's units, stored in feet like gain); `approve_new_route` writes all seven, and
   the owner's proposal queue (`lib/RouteProposals.jsx`) shows them. `check:add-route-fields` and

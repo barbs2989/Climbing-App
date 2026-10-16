@@ -1,4 +1,4 @@
--- 0326 — approval writes the seven columns add-a-climb now asks for.
+-- 0327 — approval writes the seven columns add-a-climb now asks for.
 --
 -- 0317 made seven more route columns editable from the route page: ffa, fwa, alt_names,
 -- variations, high_point_ft, sun, pro_tips. The add-a-climb form did not ask for them, and
@@ -226,6 +226,6 @@ revoke all on function approve_new_route(uuid, numeric) from public, anon;
 grant execute on function approve_new_route(uuid, numeric) to authenticated;
 
 comment on function approve_new_route(uuid, numeric) is
-  'Admin-only. Turns a pending new_route contribution into a row in routes, minting the id as area_id || ''_'' || route_slug(name) and refusing when (area_id, name) already exists. Returns the new route id. Writes every column the proposal can fill (0157''s set plus ffa, fwa, alt_names, variations, high_point_ft, sun, pro_tips since 0326). `routes` itself stays ungranted.';
+  'Admin-only. Turns a pending new_route contribution into a row in routes, minting the id as area_id || ''_'' || route_slug(name) and refusing when (area_id, name) already exists. Returns the new route id. Writes every column the proposal can fill (0157''s set plus ffa, fwa, alt_names, variations, high_point_ft, sun, pro_tips since 0327). `routes` itself stays ungranted.';
 
 -- Confirm:  select count(*) from pg_proc where proname = 'approve_new_route';   -- 1
