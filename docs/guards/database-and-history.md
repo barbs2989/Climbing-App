@@ -714,6 +714,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       moved, 256 areas created, 110 emptied lists deleted, no grade changed, and 40 random moves were checked
       against the live pages, all agreeing. The pin miss that let one through: an area with no pin above it
       ("Beale Springs Wall") read as "not near". **An unpinned area is not a far one.**
+      After the apply, `check:generic-area-names` caught a new "CT Bouldering". decide.mjs had called
+      `genericAreaName(name, [])` with no ancestors, so the "discipline words beside the state" rule never fired. The
+      climbs whose source chain began at the STATE (17) were the risky class: **0323** puts AL's 7 back on Horse
+      Pens 40 Routes (0320 had re-created the source's "Temp HP40" bin under Alabama) and files CT's Babyface/Warm-Up
+      Slab under our Coney Rock Preserve, deleting the copy and "CT Bouldering". **Pass the ancestors, and treat
+      a chain anchored at a state as unsure.**
     - **Pickledish's last holding bin — 0321** (2026-10-15). The source's "temp holding" > WW / BW > "Section 3
       (edit later)": WW's page says "eastern end of SMW formation", so Crumbly Slab joins Spring Morning Wall. BW is
       its own undeveloped buttress, so it stays, lifted under Pickledish, with The Bad on it. Three placeholders are
