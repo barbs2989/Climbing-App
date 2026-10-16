@@ -14,6 +14,8 @@ import { spawn } from "node:child_process";
 import { createFixture, sessionForStorage, STORAGE_KEY } from "../lib/ui-fixture.mjs";
 import { openFromMenu } from "../lib/menu-screens.mjs";
 import { requireServiceKey, SUPABASE_URL, headers } from "../lib/supabase-env.mjs";
+import { assertQuietBox } from "../lib/quiet-box.mjs";
+assertQuietBox("probe-profile-photos-stick.mjs");
 
 const port = 5391, base = `http://127.0.0.1:${port}/Climbing-App/`;
 const log = (...a) => console.log(...a);
