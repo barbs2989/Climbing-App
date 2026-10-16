@@ -125,6 +125,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `gain`, `pitchCount`); the app's `M` renames it to the camelCase route PROPERTY and
     `dbRouteToCamel` renames the column to that property, so neither map gives the column. This
     table is the one place the column is stated, which is why a guard has to hold it to the form.
+- **`check:contrib-shapes`**, on AddRoute's LOCAL path (`_nr`, the seed-shaped row handed to
+  `onAddRoute` with no CONV and no `dbRouteToCamel` between it and the readers), accepts a field as
+  array-shaped only when the expression holds an array literal or calls a helper named in its
+  `ARRAY_HELPERS`, each of which it re-checks is defined with a `.split`/`.map`/`.filter`. **The
+  allowance is a named list on purpose**, so it cannot rot into "anything with parentheses".
+  2026-10-16: `commaOf` joined `linesOf` there — the comma split `altNames`/`variations` use on
+  both paths (0327). The trap: the guard passed locally in a batch whose exit code was `tail`'s,
+  and only CI's build job surfaced the FAIL. A guard piped to `tail -1` reports nothing.
 - **`check:consensus-clustering`** asserts that three climbers who agree can actually be **counted**
   as agreeing. **Since 2026-10-15 (0307–0309, the owner's route quality control) the merge no
   longer applies a value on agreement**: every field edit is held `pending` until the owner
