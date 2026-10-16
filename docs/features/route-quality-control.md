@@ -67,10 +67,10 @@ empty field fills at once and two climbers who agree are enough to change one (0
 - **The level on the page** (`lib/confidence.jsx`): App provides `ConfidenceCtx` ({levels, routeId,
   onFlag}) around `RouteDetail`; the shared heading components `SL` and `CardHead` (core) map their
   text to a form key through `headKey` / `HEAD_KEYS` and render `ConfChip` (High · locked / Medium /
-  Low — no ⚑ Flag button on the headings, removed from the route page's scroll view 2026-10-15); `ConfidenceLegend` explains the three levels once under the
+  Low, with a ⚑ Flag button — the only place it renders); `ConfidenceLegend` explains the three levels once under the
   verification note. Every pencil on the page goes through `openFix` in `RouteDetail.jsx`: a HIGH
   field's pencil opens the flag sheet instead of the editor. In `SuggestFix` each field row shows its
-  chip and a HIGH row cannot be opened.
+  chip (no ⚑ Flag button there, owner 2026-10-15) and a HIGH row cannot be opened.
 - **The flag sheet** (`lib/FlagRouteInfo.jsx`, `FlagRouteSheet`, mounted by App beside the appeal
   sheet): a note of 5–1000 characters on one field or the whole route → `fileRouteFlag`; refusals show
   the database's sentence.
