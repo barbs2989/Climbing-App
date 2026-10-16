@@ -32627,3 +32627,43 @@ Face/West Rib, both Lincoln Peak routes, and Little Annapurna's Northeast Face a
 Buttress, the latter two simply having nothing to contradict).
 
 Pass 7 continues next run after `wa_little_annapurna_northwest_buttress`.
+
+## Batch 419 — 2026-10-16 (pass 7)
+
+Eight routes: Little Annapurna's remaining two routes (South Face, North Slopes — stored under
+id `wa_little_annapurna_south_slopes`), Little Big Chief Mountain's Southwest Face, Little Mac
+Spire's Southwest Route, all three Little Sister (Twin Sisters Range) routes (North Face,
+Southeast Ridge, West Face), and Little Tahoma's East Shoulder.
+
+**2 confirmed errors fixed** — SQL in `audits/sql/2026-10-16-batch-419.sql`, pre-flighted with
+`check:sql`. Little Sister's North Face and West Face both carried `high_point_ft` 6526, which
+matches no external source and contradicts the peak's own area row (`areas.id = wa_little_sister`,
+`elevation_ft` 6600 — matching SummitPost's Twin Sisters Range table) and its own sibling route,
+Southeast Ridge, which already had 6600 correct. Fixed both to 6600.
+
+**4 items flagged for human review, not fixed:**
+- Little Annapurna's route id `wa_..._south_slopes` stores `name` "North Slopes" — the id and
+  name contradict each other on their face, and the route's own approach/permit content (Aasgard
+  Pass, Enchantment core zone) matches the peak's actual north-side standard route, suggesting
+  the *id* is the one mislabeled. Not touched: renaming an id is an identity change outside this
+  audit's scope (and the kind of edit `docs/codebase/route-identity.md` warns against doing
+  casually), not a fact correction.
+- Little Mac Spire's Southwest Route `high_point_ft` (7680, matching Wikipedia/Beckey) contradicts
+  the peak's own area row (7736, matching Peakbagger) — external sources themselves split on this
+  peak's elevation, so left alone rather than guessing which figure to trust.
+- The same route's `fa` ("1969") may conflate the peak's overall first ascent (south face, 1969)
+  with this specific southwest-arête line, which AAC Publications describes as a separate,
+  apparently later climb by Williamson & Huffman. Could not pin an exact date for that climb or
+  confirm the DB's "Southwest Route" is the same line as AAC's "Southwest Arete," so flagged
+  rather than changed.
+- Little Sister West Face's `fa` (Darin Berdinka, June 21 2013) could not be corroborated by any
+  source found this run — not contradicted either, just unverifiable with what's reachable.
+
+**5 routes clean:** Little Annapurna's South Face FA (Fukushima & Campbell, 1969) independently
+confirmed via The Mountaineers' own club history, elevation (8485) matching Wikipedia/PeakVisor
+exactly; Little Big Chief Mountain's Southwest Face stores no checkable claims, and the peak's
+own elevation (7225) matches Wikipedia exactly; Little Sister's Southeast Ridge elevation (6600)
+matches both SummitPost and the peak's own area row; Little Tahoma's East Shoulder FA (Flett &
+Garrison, August 29 1894) and elevation (11138) both match Wikipedia/PeakVisor exactly.
+
+Pass 7 continues next run after `wa_little_tahoma_east_shoulder`.

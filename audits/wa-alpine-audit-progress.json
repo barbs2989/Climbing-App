@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_little_annapurna_northwest_buttress",
+  "last_processed_id": "wa_little_tahoma_east_shoulder",
   "total_in_scope_last_count": 739,
   "total_wa_alpine_or_mountaineering_tagged": 833,
-  "pass_note": "Batch 418: Lichtenberg Mountain (SE Ridge, West Face, West Face/West Rib), Lincoln Peak (Wilkes-Booth NW Face, X Couloir), Little Annapurna (Boola Boola Buttress, Northeast Face, Northwest Buttress). Next run continues after wa_little_annapurna_northwest_buttress.",
+  "pass_note": "Batch 419: Little Annapurna's remaining two routes (South Face, North Slopes -- stored as id wa_..._south_slopes), Little Big Chief Mountain's Southwest Face, Little Mac Spire's Southwest Route, all three Little Sister routes (North Face, Southeast Ridge, West Face), and Little Tahoma's East Shoulder. Next run continues after wa_little_tahoma_east_shoulder.",
   "batches": [
     {
       "batch_number": 1,
@@ -8348,6 +8348,25 @@
       "flagged_for_human_review": 1,
       "clean": 6,
       "note": "Batch 418: Lichtenberg Mountain's remaining three routes (Southeast Ridge, West Face, West Face/West Rib), Lincoln Peak's two routes (Wilkes-Booth NW Face, X Couloir/Standard), and Little Annapurna's first three routes (Boola Boola Buttress, Northeast Face, Northwest Buttress). 1 confirmed error fixed (see audits/sql/2026-10-16-batch-418.sql): West Face's grade/grade_num (5.9+ / 9) and its own overview text both contradict the only documented ascent -- Alex Bertulis' AAC Publications account (1995 AAJ) of climbing the then-unclimbed face with his son Nik, rated (II, 5.8) with a 5.8 crux move on pitch three -- no source found supports a 5.9. 1 item flagged for human review: Boola Boola Buttress is filed under Little Annapurna, but a 2005 CascadeClimbers trip report describes it as 'hidden below the Dragontail plateau, across from Little Annapurna' -- suggestive it may actually belong under Dragontail Peak, but no source states its official parent outright, so left unmoved per the area-identity rule (read the catalog, don't guess). 6 routes clean: Southeast Ridge and West Face/West Rib both had their FA dates independently confirmed to the day -- Jim Brisbine's trip reports place them at Sept 20-21 1975 and Oct 21 1978 respectively, exactly matching this app's own prose, descent included; both Lincoln Peak routes' fa fields matched independent sources (AAC Publications for Wilkes-Booth, Lemke Climbs for X Couloir); and Little Annapurna's Northeast Face (5.8) and Northwest Buttress (5.7) carry grades no source confirmed or contradicted, so left as is."
+    },
+    {
+      "batch_number": 419,
+      "date": "2026-10-16",
+      "route_ids": [
+        "wa_little_annapurna_south_face",
+        "wa_little_annapurna_south_slopes",
+        "wa_little_big_chief_mountain_southwest_face",
+        "wa_little_mac_spire_southwest_route",
+        "wa_little_sister_north_face",
+        "wa_little_sister_southeast_ridge",
+        "wa_little_sister_west_face",
+        "wa_little_tahoma_east_shoulder"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 4,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-10-16-batch-419.sql",
+      "note": "2 confirmed errors fixed (see audits/sql/2026-10-16-batch-419.sql): Little Sister's North Face and West Face both carried high_point_ft 6526, which matches no source and contradicts the peak's own area row (6600, matching SummitPost's Twin Sisters Range table) and its own sibling route Southeast Ridge, which already had 6600 correct -- fixed both to 6600. 4 items flagged for human review: Little Annapurna's route id wa_..._south_slopes stores name 'North Slopes', and its approach/permit content (Aasgard Pass, Enchantment core) matches the peak's actual north-side standard route, so either the id or the name is mislabeled -- not touched, since fixing an id is an identity change outside this audit's scope, not a fact correction; Little Mac Spire's Southwest Route high_point_ft (7680, matching Wikipedia/Beckey) contradicts the peak's own area row (7736, matching Peakbagger) -- sources themselves split on this peak's elevation, so left alone rather than guessing which figure to trust; the same route's fa ('1969') may conflate the peak's overall first ascent (south face, 1969) with this specific southwest-arete line, which AAC Publications describes as a separate, apparently later climb by Williamson & Huffman -- could not pin an exact date or confirm the two are the same route, so flagged rather than changed; and Little Sister West Face's fa (Darin Berdinka, June 21 2013) could not be corroborated by any source found this run (not contradicted either, just unverifiable). 5 routes clean: Little Annapurna's South Face FA (Fukushima & Campbell, 1969) independently confirmed via The Mountaineers' own club history, and its elevation (8485) matches Wikipedia/PeakVisor exactly; Little Big Chief Mountain's Southwest Face stores no checkable claims, and the peak's own elevation (7225) matches Wikipedia exactly; Little Sister's Southeast Ridge elevation (6600) matches both SummitPost and the peak's own area row; and Little Tahoma's East Shoulder FA (Flett & Garrison, Aug 29 1894) and elevation (11138) both match Wikipedia/PeakVisor exactly."
     }
   ]
 }
