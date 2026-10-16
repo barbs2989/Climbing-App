@@ -19,7 +19,7 @@
 //      for EVERY factor in WEIGHTS, says "not measured" for a missing one, refuses to show stars
 //      when the fetch failed, and is gated to crag disciplines only — never alpine, scrambling,
 //      mountaineering, ice or mixed (a user decision, 2026-10-07).
-//   5. ROCK — a MAPPED rock type says "(mapped)" wherever it renders.
+//   5. ROCK — a route's own rock outranks its crag's, and no rock type is labelled "(mapped)" (owner, 2026-10-15).
 //   6. HOME + MENU — the Best day tile is the same score, under the same gate.
 //   7. CAPS AND INPUTS — rain, still-wet rock, wet sandstone, dew point and smoke CAP the stars with
 //      a named reason; drizzle counts; hours already gone are not offered; drying scales with the
@@ -153,9 +153,9 @@ console.log("check:conditions-score");
   else fail(`routeRock precedence is wrong: ${JSON.stringify(r)} / ${JSON.stringify(own)}`);
   const src = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
   const sites = src.match(/routeRock\(route\)/g) || [];
-  const marked = (src.match(/basis==="mapped"\?/g) || []).length;
-  if (sites.length && marked >= sites.length) ok(`${sites.length} place(s) render a rock type, and each marks a mapped one`);
-  else fail(`${sites.length} place(s) render routeRock but only ${marked} say "(mapped)"`);
+  const marked = (src.match(/\(mapped\)/g) || []).length;
+  if (sites.length && !marked) ok(`${sites.length} place(s) render a rock type, and none labels it "(mapped)"`);
+  else fail(`${marked} place(s) in RouteDetail.jsx still say "(mapped)" — the owner removed that qualifier 2026-10-15`);
 }
 
 // 6. HOME + MENU — the "Best day to climb" tile (lib/BestDayTile.jsx), on Home under Jump back in and in the Menu, is the SAME score over the saved crag

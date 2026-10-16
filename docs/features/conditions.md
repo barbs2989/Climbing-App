@@ -34,7 +34,7 @@
 
 ## 4. Data
 - **External, called from the browser:** Open-Meteo forecast, air-quality and archive APIs; `api.weather.gov` (points, alerts); `waterservices.usgs.gov` (site list and `iv` flow, parameters 00060/00065).
-- **Supabase:** `areas.rock`, `areas.rock_basis` (migration 0248; 'stated' or 'mapped', read by the Rock tile and the score); `areas` aspect (0249); `profile_condition_prefs` (migration 0290: one owner-only row per climber, `prefs jsonb` with keys rain, temp{all,sport,trad,toprope,bouldering,alpine,ice}, wind, rhMax, sun, aq, window).
+- **Supabase:** `areas.rock`, `areas.rock_basis` (migration 0248; 'stated' or 'mapped', read by the Rock tile and the score; both render the same, with no "(mapped)" label since 2026-10-15); `areas` aspect (0249); `profile_condition_prefs` (migration 0290: one owner-only row per climber, `prefs jsonb` with keys rain, temp{all,sport,trad,toprope,bouldering,alpine,ice}, wind, rhMax, sun, aq, window).
 - **Not stored:** forecasts, scores and flags are computed per view and cached only in memory; nothing is written to the DB. The `conditions` tab's consensus is derived, not stored.
 
 ## 5. Connections

@@ -73,7 +73,7 @@ const WANT = { bouldering: ["Location", "Landing", "Crash pads", "Start", "Aspec
 const FOREIGN = { bouldering: ["Bolts", "Anchor", "Protection", "Fixed gear"], sport: ["Landing", "Crash pads", "Start", "Fixed gear"],
   trad: ["Landing", "Crash pads", "Start", "Bolts"], toprope: ["Landing", "Crash pads", "Start", "Bolts", "Protection", "Fixed gear"],
   aid: ["Landing", "Crash pads", "Start", "Bolts", "Protection"] };
-const SECTIONS = ["GETTING THERE", "APPROACH", "DESCENT", "ROUTE TRACK", "TRAIL TO THE CRAG", "ROUTE FACTS", "LOCATION", "GEAR & SAFETY", "CONDITIONS", "CLIMATE & SEASON", "ROUTE BREAKDOWN", "ACCESS & REGULATIONS", "RACK", "CRAG", "PARKING"];
+const SECTIONS = ["GETTING THERE", "APPROACH", "DESCENT", "ROUTE TRACK", "CRAG MAP", "ROUTE FACTS", "LOCATION", "GEAR & SAFETY", "CONDITIONS", "CLIMATE & SEASON", "ROUTE BREAKDOWN", "ACCESS & REGULATIONS", "RACK", "CRAG", "PARKING"];
 
 const stub = { from: () => ({ select: (sel) => ({ eq: (_c, id) => ({ maybeSingle: async () => { const r = await get(`select=${encodeURIComponent(sel)}&id=eq.${encodeURIComponent(id)}`); return { data: r[0] || null, error: null }; } }) }) }) };
 const fetchRouteArea = new Function("supabase", FRA + "; return fetchRouteArea;")(stub);
