@@ -46,6 +46,7 @@ extraction.** No guard reads this file; keeping it true is on the author.
 |---|---|---|---|
 | PR1 | `RiskBadge` | `ClimbMatchCore.jsx` | the smoke test for the pipeline; consumer `lib/SafetyTab.jsx`; `Pill` got its JSDoc seam |
 | PR1 | _infrastructure_ | — | `src/components/`, `tsconfig.json`, `check:types`, TS-aware guards, `measure-guard-reach` |
+| PR9 | `ActionIcon` | `ClimbMatchCore.jsx` | the line-icon set (6 KB of SVG, moved verbatim by script); 15 consumers (`ClimbMatch.jsx`, `RouteDetail.jsx`, 10 `lib/` files, 3 `.tsx` components via `./ActionIcon.tsx`) AND core itself (13 uses), so core imports it back; `EnrichmentPanels.jsx`, `lib/FireMap.jsx` and `lib/FireNearRoute.jsx` take it as a PROP and did not change; `check:field-renders` imported it from core by path and now imports the `.tsx`; the if-chain body is unchanged — add an icon by adding a case |
 | PR8 | `Pill` | `ClimbMatchCore.jsx` | the rounded tag every badge is drawn with; its JSDoc `@param` seam became the interface; consumers `ClimbMatch.jsx`, `RouteDetail.jsx`, `lib/SafetyTab.jsx`, `lib/TripReport.jsx`, the three earlier `.tsx` components (now `./Pill.tsx`, not through core) AND core itself (7 uses), so core imports it back; `lib/PartnerSearch.jsx` imported it and never rendered it — import dropped; `lib/DbAreaBrowser.jsx` keeps a LOCAL copy (pre-existing duplicate, not touched) |
 | PR7 | `CountUp` | `ClimbMatchCore.jsx` | the animated counter; consumers `ClimbMatch.jsx`, `RouteDetail.jsx`, `lib/Leaderboards.jsx` AND core itself (one use), so core imports it back; it reads NOTHING from core (only React), so there is no seam to type; five guards and nine probes name it only in comments ("never assert on a CountUp number under SSR"), one probe matches a call site in `RouteDetail.jsx`, which did not move |
 | PR6 | `Lbl` | `ClimbMatchCore.jsx` | the emoji-to-icon label; ten consumers (`ClimbMatch.jsx`, `RouteDetail.jsx`, eight `lib/` files) AND core itself (20 uses), so core imports it back; the seam is typed on the JS side with a JSDoc `@type {Record<string, string>}` on `EMOJI_ICON`, not a cast; `check:control-names` and `check:popup-chrome` match `<Lbl` at the CALL SITES, which did not move |
@@ -61,7 +62,11 @@ the pipeline. Then the `App` render tree in `ClimbMatch.jsx`, which has **no inn
 every piece lifted out of it needs its props enumerated from the ~100 `useState` hooks it closes over.
 Take the leaves first (a card, a row, a header strip), never a whole tab in one PR.
 
-Last session stopped at: **PR8 — `Pill`.** (**Grep for the definition before starting a candidate**: the
+Last session stopped at: **PR9 — `ActionIcon`.** Core band 2's small components and primitives are ALL out
+(`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`, `ActionIcon`). What remains in
+band 2 is larger: `ProvenancePanel`, `RouteGearCheck`, `ElevChart`, `GPXMap`, `DiscIcon`, `Av` — census each
+(definition span, `<Name` uses per file, every guard and `scripts/oneoff` probe naming it, and any guard that
+IMPORTS it by path, as `check:field-renders` did `ActionIcon`) before choosing. Previously here: **PR8 — `Pill`.** (**Grep for the definition before starting a candidate**: the
 PR4 hand-off named `HelpDot`, which #2430 had already deleted.) One candidate is left in core band 2 by the
 same census (top-level definition; `<Name` uses per file; guards and `scripts/oneoff` probes naming it):
 `ActionIcon` (6 KB of SVG paths, ~80 uses across 19 files). Its guards, already read: `check:field-renders`
