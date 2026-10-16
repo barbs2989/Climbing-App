@@ -45,7 +45,8 @@ Newest first. Keep about 15 lines; older entries live in the PRs and the commit 
 - **Area page order**: areas/climbs list → *Don’t see a climb?* → suggested climbs → nearby peaks → Top contributors → Discussion. Discussion now renders on areas with no coordinate (Florida’s Artificial Boulders); *Partners here*’s dates/types control is a real card button (it had no style at all).
 - **RACK is rack-only, every state** — ~400 WA + ~140 other-state routes re-homed (ice axe, crampons, helmet, boots out of `detailed_rack`/`pro_needs`/`rack` into `what_to_bring`), `DISC_RACK` stripped to protection and ropes, `routeRackFor` splits every source and `rackLeftovers` feeds GEAR & ESSENTIALS; `audit:rack-items`.
 - **Objectives chips** Alpine is the left-most discipline chip; Mountaineering and Aid are their own chips instead of folding into Alpine and Trad (`lib/ListsManager.jsx`).
-- **PR9** `ActionIcon` extracted to `src/components/ActionIcon.tsx` (fifteen consumers plus core itself, which imports it back; `check:field-renders` now imports the file).
+- **PR10** `ElevChart` extracted to `src/components/ElevChart.tsx` (one consumer; core never rendered it, so no import back); CLAUDE.md's band-2 list brought up to date.
+- **#2478** `ActionIcon` extracted to `src/components/ActionIcon.tsx` (fifteen consumers plus core itself, which imports it back; `check:field-renders` now imports the file).
 - **#2472** `Pill` extracted to `src/components/Pill.tsx` (four consumers, the three earlier `.tsx` components, and core itself, which imports it back).
 - **#2468** `CountUp` extracted to `src/components/CountUp.tsx` (three consumers plus core itself, which imports it back).
 - **#2466** `Lbl` extracted to `src/components/Lbl.tsx` (ten consumers plus core itself, which imports it back).
