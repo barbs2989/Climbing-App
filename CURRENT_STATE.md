@@ -26,6 +26,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Quick log**: the route page offers *✓ Quick log* beside *Full log* — pick a style or outcome, the date, an optional rating, save. The rest can be added later from the logbook. A crew quick log no longer writes two `climb_logs` rows. See `docs/features/logbook-crews-home.md`.
 - **Profile tabs** The Profile screen splits under its header into Profile · Activity · Review (admins): one long scroll became three short views; jumps into a section open its tab.
 - **`npm run lint` + `npm run type-check`** (tooling, no screen changes): ESLint (`eslint.config.js`) holds unused variables, `any` and hook dependency arrays at zero for new code, in the build; findings already in the code are held in `eslint-suppressions.json`, which only shrinks. TypeScript strict gained `noUnusedParameters`. Run both before finalizing any feature.
 - **Best day to climb scores saved areas**: a saved crag, or a saved region where crag climbs are at least half of what it holds, is scored at its own location beside your saved crag climbs; tapping it opens the area. See `docs/features/conditions.md`.
