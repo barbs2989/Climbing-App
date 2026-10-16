@@ -97,7 +97,7 @@ const CASES = [
     find: ' && Date.parse(String(a.date).slice(0, 10) + "T12:00:00Z") >= cut', repl: "",
     expect: "fail", expectText: "from the last 60 days, newest first" },
   { name: "16. the alpine tick list loses Turned around", file: CORE,
-    find: 'if(c==="alpine")return ["Summit","Turned around"].concat(TICKTYPES.roped);', repl: 'if(c==="alpine")return ["Summit"].concat(TICKTYPES.roped);',
+    find: 'if(c==="alpine"||c==="ice"||c==="mixed")return ["Summit","Turned around"].concat(TICKTYPES.roped);', repl: 'if(c==="alpine"||c==="ice"||c==="mixed")return ["Summit"].concat(TICKTYPES.roped);',
     expect: "fail", expectText: "can log a Summit AND a Turned around" },
   { name: "17. a zone named after its forecasting centre is printed", file: AVY,
     find: "const base = { zone: zoneName(p),", repl: "const base = { zone: p.name || null,",

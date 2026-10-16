@@ -5,7 +5,8 @@ import { USE_DB } from "./supabase";
 import { POP_REMOVE } from "./popupChrome.js";
 import { removeProfileAvatar, uploadProfilePhoto } from "./db";
 import { useState } from "react";
-import { Av, C, DOW, US_CITIES, US_ST, CA_PROV, hasVulgarity, SKILLS, SKILL_GROUPS, PROFILE_GRADES, CLIMB_ROLES, BELAY_DEVICES, BELAY_LEVELS, certExpiryInfo, profileGradeRows, roleLabel } from "../ClimbMatchCore.jsx";
+import { C, DOW, US_CITIES, US_ST, CA_PROV, hasVulgarity, SKILLS, SKILL_GROUPS, PROFILE_GRADES, CLIMB_ROLES, BELAY_DEVICES, BELAY_LEVELS, certExpiryInfo, profileGradeRows, roleLabel } from "../ClimbMatchCore.jsx";
+import Av from "../src/components/Av.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
 import Lbl from "../src/components/Lbl.tsx";
 

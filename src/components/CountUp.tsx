@@ -36,9 +36,10 @@ export default function CountUp({ value, dur, style }: CountUpProps) {
         if (raf) cancelAnimationFrame(raf);
       };
     },
-    // Re-animate only when the VALUE changes, as the JS original did; `dur` and the derived
-    // `clean`/`target` are read at that moment and are deliberately not dependencies.
-    [value],
+    // Re-animate when the number it counts to changes. `clean` and `target` are primitives derived
+    // from `value`, so this runs exactly when the value's NUMBER changes ("12 ft" → "12 ft" does not
+    // restart it); `dur` is a constant at every call site.
+    [clean, target, dur],
   );
   if (!clean || !m) return <span style={style}>{s}</span>;
   const idx = m.index ?? 0;
