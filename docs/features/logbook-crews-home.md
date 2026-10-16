@@ -11,6 +11,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   Home already shows it (#2408).
 - **Logbook > Completed**: `MyAscents` (`lib/MyAscents.jsx`) lists logged climbs (`climb_logs`); `LogAscent` is the logging form,
   `TripReport` the opened trip report, `LogTagConfirmations` lets a tagged partner confirm or decline being named on a log.
+- **Quick log** (`QuickLog`, `ClimbMatchCore.jsx`; App state `quickLogFor`): the short way to log — style/outcome (no default, so nothing claims an onsight by accident), date, optional rating. The route page offers it beside *Full log* (`logRow` in `RouteDetail.jsx`, `onLog(route,"quick")`), and a crew card opens it for sport/trad/bouldering crews (`openCrewLog`). It saves a normal `climb_logs` row through `syncLogToDb`; *Add more details* opens `LogAscent` pre-filled with what was picked, and the log can be filled in later from Completed.
   `TripReport` shows ONLY what the reporter entered, in the form's own seven sections and order (The climb, Getting there, On the route,
   Hazards, The descent, The write-up, Climbed with — plus the recorded track); a section with nothing in it is not drawn, and no
   route fact (grade, gain, distance, the route's GPS line) stands in for the reporter's. The reporter's own track is read
@@ -40,7 +41,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 - **Crew safety check** (`SafetyTab`, 0314): the pre-climb questionnaire and "mark me safety-ready" are stored per crew for real crews (`saveCrewSafetyAnswers`, `markCrewSafetyReady`) in `crew_safety_answers`, readable by their owner alone. The crew's Team Alignment comes from `crew_alignment()` (`useCrewAlignment` → `alignmentFromServer`): counts per risk level and per flag, never anyone's answers, as the questionnaire promises. Flags are anonymous on every path (`alignmentFromCounts`). The crew card's per-member "reviewed the safety plan" mark reads `crew_ready_ids()` (`useCrewReadyIds`). Example crews keep the local path.
 - **Float plans**: `FloatPlans` (`lib/FloatPlans.jsx`) lists plans for `activeCrews`; the plan text is stored on the crew (`createCrew({floatPlan})`).
 - **Home (`today`)**: greeting; **Finish setting up** checklist (`gaps`, shows 2 until `showSetupAll`); alerts; **Unfinished business** (`unfinishedOpen`);
-  **Best day to climb** (`BestDayTile`); **Jump back in** tiles; **Recent condition reports**; recent friend activity; the pinned/downloaded states card.
+  **Jump back in** tiles; **Best day to climb** (`BestDayTile`, also a Menu tile); **Recent condition reports**; recent friend activity; the pinned/downloaded states card (`#pinned-downloads`, which the Menu's Downloads tile scrolls to).
 
 ## 2. How it works
 1. `App` reads server state through React Query hooks in `lib/db.js`: `useMyObjectives`, `useUserLogs`, `useMyCrews`, `useMyItineraries`,
