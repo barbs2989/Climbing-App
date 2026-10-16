@@ -18,15 +18,17 @@ database tables · connections to other areas · the guards that protect it · k
 | Route quality control | [docs/features/route-quality-control.md](docs/features/route-quality-control.md) | Held edits and owner review, per-field confidence and locks, strikes and contribution standing, flags, notices |
 | Logbook, crews & Home | [docs/features/logbook-crews-home.md](docs/features/logbook-crews-home.md) | Objectives, logged climbs, crews and their Ready state, messaging, the Home dashboard |
 | App shell & layout | [docs/features/app-shell-and-layout.md](docs/features/app-shell-and-layout.md) | The app column, the primary nav (bottom bar on phones, left sidebar on desktop), the boot placeholder |
+| Groups | [docs/features/groups.md](docs/features/groups.md) | Groups screen: who may change privacy and host events, Discover search, explore by state |
 | Ranks | [docs/features/ranks.md](docs/features/ranks.md) | Leaderboards tab: scopes, climbing types, boards, how each metric is scored (`leaderboard()`), the table, your standing |
 
-Not yet documented here (add a doc when you next work in one): Groups, moderation/safety,
+Not yet documented here (add a doc when you next work in one): moderation/safety,
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Groups Discover: explore by STATE, search finds states and About text**: one chip per state or province (home first, then where you listed partner areas), combinable with the search box; "Washington" now finds "Seattle, WA". New groups default to moderator-hosted events. See `docs/features/groups.md`.
 - **Desktop layout, phase 1**: at 1024px and wider the bottom tab bar becomes a fixed left sidebar and the column widens from 520 to 720px, the two centred together. Phones are unchanged. See `docs/features/app-shell-and-layout.md`.
 - **Profile photo sticks**: "Change photo" saves the avatar as soon as it uploads, so Cancel or a greyed Save (no username yet, every new account) no longer loses it; the editor says why Save is greyed. See `docs/features/profile-and-settings.md`.
 - **Menu lists your groups**: under *Yours*, a *Your groups* section shows up to five of the groups you are in, newest post first, with each one's new-post count. A tap opens that group, and *See all ›* appears past five. See `docs/features/profile-and-settings.md`.
