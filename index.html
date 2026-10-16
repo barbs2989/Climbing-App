@@ -200,6 +200,15 @@
       #cm-boot .b-body { flex: 1; padding: 14px; display: flex; flex-direction: column; gap: 11px; }
       #cm-boot .b-card { background: #1c2330; border: 1px solid #30363d; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 9px; }
       #cm-boot .b-line { height: 11px; border-radius: 6px; }
+      /* Wide screens: the same shell lib/wideLayout.js draws (1024px, 232px sidebar + 28px gap + 720px column, the pair centred), so the nav does not jump from the bottom to the left when React mounts. */
+      @media (min-width: 1024px) {
+        #cm-boot { max-width: 720px; margin-left: calc(max(0px, calc(50vw - 490px)) + 260px); margin-right: auto; }
+        #cm-boot .b-nav { position: fixed; top: 0; bottom: 0; left: max(0px, calc(50vw - 490px)); width: 232px; box-sizing: border-box; flex-direction: column; gap: 2px; padding: 74px 12px 20px; background: #0d1117; border-top: none; border-right: 1px solid #30363d; }
+        #cm-boot .b-nav div { flex: none; flex-direction: row; gap: 14px; padding: 10px 12px; font-size: 15.5px; border-top: none; border-radius: 12px; }
+        #cm-boot .b-nav div:first-child { background: #0d2044; }
+        #cm-boot .b-nav b { margin: 0; }
+        #cm-boot .b-mark { display: none; }
+      }
     </style>
   </head>
   <body style="margin:0;background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
