@@ -8,7 +8,7 @@
 //   - the chart's headline is the SUM OF ITS BARS, and a remainder the bars do not show is
 //     said in words ("+N not typed") rather than hidden in the headline;
 //   - the grade spread names how many climbs it left out ("12 of 15 list a grade").
-import { AREA_EDIT_FIELDS, MONTH_ABBR, monthsLabel, areaEditClusters, AREA_EDIT_NEED } from "./areaFields";
+import { AREA_EDIT_FIELDS, MONTH_ABBR, monthsLabel, myPendingAreaEdits } from "./areaFields";
 import { DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
 import { EditIconButton } from "./areaChrome";
@@ -137,28 +137,22 @@ export function GradeSpread({ stats, C }) {
   </div>;
 }
 
-// ── Pending edits banner ──
-// One line per cluster that has not reached the threshold: "1 of 3 suggested Rock: limestone".
-// Applied rows are 'approved' (0304) and never show here.
-export function PendingAreaEdits({ area, rows, C, myId, onAgree }) {
-  const items = [];
-  for (const f of AREA_EDIT_FIELDS) {
-    for (const cl of areaEditClusters(rows, f.k)) {
-      if (cl.approved || cl.n >= AREA_EDIT_NEED) continue;
-      const cur = f.cur(area);
-      const shown = f.type === "months" ? monthsLabel(cl.value) : f.type === "int" ? String(cl.value) + " min" : String(cl.value);
-      if (cur && f.type !== "months" && String(cl.value).trim().toLowerCase() === cur.toLowerCase()) continue;
-      items.push({ f, cl, shown });
-    }
-  }
-  if (!items.length) return null;
+// ── Awaiting review ──
+// The caller's OWN edits that the owner has not checked yet (0319): "Awaiting review: Rock —
+// limestone". Other climbers' pending rows are not shown; approved rows are already in the
+// columns and rejected ones reach the climber through their notices.
+export function PendingAreaEdits({ rows, C, myId }) {
+  const mine = myPendingAreaEdits(rows, myId);
+  if (!mine.length) return null;
+  const latest = new Map();
+  for (const r of mine) { const f = AREA_EDIT_FIELDS.find(x => x.k === r.field); if (!f) continue; if (!latest.has(r.field) || r.created_at > latest.get(r.field).created_at) latest.set(r.field, r); }
+  if (!latest.size) return null;
   return <div style={{ background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 11, padding: "9px 11px", marginBottom: 12 }}>
-    {items.map(({ f, cl, shown }) => {
-      const mine = myId && cl.who.includes(myId);
-      return <div key={f.k + cl.key} style={{ display: "flex", alignItems: "center", gap: 8, minHeight: 32 }}>
-        <span style={{ flex: 1, fontSize: 12, color: C.text, lineHeight: 1.4, minWidth: 0 }}>{cl.n + " of " + AREA_EDIT_NEED + " suggested " + f.label.toLowerCase() + ": "}<b style={{ overflowWrap: "anywhere" }}>{shown}</b></span>
-        {mine ? <span style={{ flexShrink: 0, fontSize: 11, color: C.textMuted }}>You suggested this</span>
-          : onAgree ? <button onClick={() => onAgree(f.k, cl.value)} style={{ flexShrink: 0, minHeight: 32, padding: "0 10px", borderRadius: 8, border: "1px solid " + C.amber, background: "transparent", color: C.text, fontSize: 11.5, fontWeight: 700, cursor: "pointer" }}>I see this too</button> : null}
+    {[...latest.values()].map(r => {
+      const f = AREA_EDIT_FIELDS.find(x => x.k === r.field);
+      const shown = f.type === "months" ? monthsLabel(r.value) : f.type === "int" ? String(r.value) + " min" : String(r.value);
+      return <div key={r.id || r.field} style={{ fontSize: 12, color: C.text, lineHeight: 1.4, minHeight: 24, display: "flex", alignItems: "center" }}>
+        <span style={{ minWidth: 0 }}>{"Awaiting review: " + f.label.toLowerCase() + " — "}<b style={{ overflowWrap: "anywhere" }}>{shown}</b></span>
       </div>;
     })}
   </div>;
