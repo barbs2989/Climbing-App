@@ -1,16 +1,34 @@
 # Route quality control
 
-How climber edits to route pages are held, checked, locked and flagged. Decided by the owner on
-2026-10-15: route data is safety data, so accuracy comes before speed.
+How climber edits to route pages are held, agreed, checked, locked and flagged. Decided by the owner on
+2026-10-15: route data is safety data, so accuracy comes before speed — and, later the same day, that an
+empty field fills at once and two climbers who agree are enough to change one (0325).
 
 ## 1. What it does today
 
-- **Every field edit is held for review — on routes and, since 0319, on areas.** An area edit (About, Walk in, Walk-in time, Drive & park, Rock, Faces, Season; `lib/areaFields.js`) is a `contributions` row with `area_id` and no `route_id`; the same queue, approve/reject functions, notices and strikes apply. One difference: an approved AREA value is written to its `areas` column by `apply_approved_area_field` (there is no client overlay for area pages), and area rows get no confidence lock.
-- **Every field edit is held for review.** A climber's edit on the route page's "Add or fix info"
-  sheet is written to `contributions` (kind `field`) with status `pending` and shows nowhere until
-  the owner approves it. The sheet says "Sent for review — you’ll be told when it’s checked" and
-  shows the climber's own pending value as "Awaiting review". Other climbers' pending suggestions
-  are not shown on the page; they are the owner's to weigh.
+- **Area edits are held for review (0319)** — route edits follow the 0325 rule below. An area edit (About, Walk in, Walk-in time, Drive & park, Rock, Faces, Season; `lib/areaFields.js`) is a `contributions` row with `area_id` and no `route_id`; the same queue, approve/reject functions, notices and strikes apply. One difference: an approved AREA value is written to its `areas` column by `apply_approved_area_field` (there is no client overlay for area pages), and area rows get no confidence lock.
+- **A route edit goes live by itself in two cases (0325).** A climber's edit on the route page's
+  "Add or fix info" sheet is written to `contributions` (kind `field`). The database decides at
+  insert (`trg_contribution_vote` → `contribution_consensus`):
+  - **The field is empty** (`route_field_is_empty`: its column is empty and no edit to it was ever
+    approved) → the row is born `approved`, review note *Added to an empty field*. The page shows it
+    on the next read.
+  - **A second, different climber sends the same value** as a waiting edit (`_edit_value_norm`:
+    case-, whitespace- and trailing-full-stop-blind, a numeric string equals its number, no
+    tolerance on numbers — stricter than `sameEditValue`) → both rows become `approved`, review note
+    *Agreed by 2 climbers*, and the first climber gets a "Your route edit is live" notice. One
+    account can never agree with itself.
+  - **Otherwise** the row stays `pending`: the owner can still approve it alone from the queue.
+  Auto-applied rows keep `reviewed_by` NULL (the owner's approvals set it) and do **not** raise the
+  field to high — only the owner's check locks a field. A field a climber filled stops reading as
+  "empty → low". Area edits are unchanged: still held (0319).
+- **Other climbers' waiting suggestions are shown in the edit sheet**, each with an **Agree**
+  button that sends the value verbatim — Google Maps' "Check the facts" model; that tap is the
+  second climber, so it goes live at once. The climber's own waiting value reads "You suggested: …
+  — it goes live when a second climber sends the same, or once ClimbMatch checks it". The toast
+  after a submit says what the database decided: "Added — it’s on the page now", "You and another
+  climber agree — it’s on the page now", or "Sent — it goes live when a second climber agrees, or
+  once ClimbMatch checks it".
 - **Approved edits reach the page**, as the owner applied them (`applied_value` when the owner
   adjusted the value, else `value`), through the same client-side overlay the page always used.
   An approved field becomes **high confidence**. A `grade` approval also writes `routes.grade`
@@ -116,6 +134,7 @@ ask for the seven new fields (approve_new_route would need the columns too).
 | `supabase/migrations/0308_field_confidence_and_edit_guards.sql` | `route_field_level`, `route_field_confidence_map`, `can_contribute_fields`, `can_flag`, `guard_field_contribution` |
 | `scripts/check-editable-coverage.mjs` | the guard that keeps every rendered column editable or explained |
 | `supabase/migrations/0317_seven_more_editable_fields.sql` | the seven field rows |
+| `supabase/migrations/0325_two_climbers_agree_or_an_empty_field.sql` | `_edit_value_norm`, `route_field_is_empty`, `contribution_consensus` (trigger `trg_contribution_vote`), the consensus exit in `guard_contribution_status`, the grade write-back on insert |
 | `supabase/migrations/0309_field_contribution_review.sql` | `approve_field_contribution`, `reject_field_contribution`, `set_contribution_standing`, `set_route_field_confidence`, `file_route_flag`, `resolve_route_flag`, `apply_agreed_grade`, `file_appeal`, `decide_appeal` |
 
 ## 4. Data
@@ -148,7 +167,9 @@ ask for the seven new fields (approve_new_route would need the columns too).
 
 ## 7. Last significant change
 
-Steps 2–5: the owner's three queues, the climber's standing notice, the confidence chips and the flag sheet on the route page, per-pitch editing and the rappel-table editor. Step 1 shipped
+0325 (2026-10-15): an empty route field fills on the first edit, and two climbers who send the same
+value change a filled one without the owner; the edit sheet shows other climbers' waiting
+suggestions with an Agree button. Before that, steps 2–5: the owner's three queues, the climber's standing notice, the confidence chips and the flag sheet on the route page, per-pitch editing and the rappel-table editor. Step 1 shipped
 the hold-for-review gate, the computed confidence rule with the server-side lock, strikes and
 standing, flags, and notices (0307–0309). The page chips follow.
 
