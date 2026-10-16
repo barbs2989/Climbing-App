@@ -373,6 +373,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     about the run looked wrong; it was caught only by diffing the parsed set against `pg_policy` on
     the live database — **79 parsed against 114 live**. Now 122 = 114 public + 8 `storage.objects`,
     with **zero** live-but-unparsed. Re-run that diff after any change to the parsing.
+  - **Rule 4 — every permissive WRITE policy asks who is calling (2026-10-15).** The owner asked
+    that a signed-in climber can insert, update and delete only their own rows. "Their own" is not
+    always a `user_id` column (a crew's organizer edits its members, a group's managers approve a
+    join), so the rule is the part that holds for all of them: an INSERT/UPDATE/DELETE/ALL policy
+    must contain `auth.uid()`/`auth.jwt()`/`auth.role()`, or call a helper whose **latest**
+    definition reads one (`is_group_manager`, `is_admin`, ...). Permissive policies OR together, so
+    one `with check (true)` defeats every careful policy beside it. RESTRICTIVE policies are skipped
+    (they only narrow), and SELECT is not judged: the public reads (`routes`, `areas`, `reviews`,
+    `contributions`, `objectives`, `crew_members`, `vouches`, ...) are deliberate. Audited live the
+    same day: 75/75 public tables RLS-on, 144 permissive write policies, every one bound; the only
+    write policies without a direct `auth.uid()` are the group-manager ones, whose helpers read it.
+    Parsed set re-diffed against `pg_policy`: identical (one name differs only by Postgres's 63-char
+    identifier truncation). Injections 7 (`with check (true)`) and 8 (strip a helper's
+    `auth.uid()`) both fire; a restrictive `with check (true)` correctly does not.
   - A dropped table takes its policies with it, or the guard keeps checking policies on tables
     nobody can fix (measured: `account_links` kept two after #1141 removed account linking).
   - Fails **closed** three ways — zero tables, zero policies or zero definer functions parsed are
@@ -382,7 +396,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     PostgREST does not expose `pg_catalog`, and this repo's rule is that CI never holds privileged
     credentials. Catching the shape where it is *written* is better than catching it in the
     database a day later anyway.
-  - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
+  - Injection-tested 8/8, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
 - **`check:catalog-duplicates`** asks whether the catalog can gain a **duplicate route** again, and
   whether one already has. Built 2026-09-25 after `import-route-grades --create-areas` filed MP's

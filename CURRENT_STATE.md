@@ -25,6 +25,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **RLS reviewed live, and every write policy must ask who is calling**: all 75 public tables have row level security on; every permissive insert/update/delete policy binds `auth.uid()` (directly or through a group/admin helper). `check:rls` rule 4 now fails the build on a write policy that does not.
 - **Saved areas and peaks follow the account** (0322): Save area / Save peak and Logbook › Saved's ✕ write `saved_areas`, so unsaving on one device unsaves the area page on every device; the device list stays as the offline copy, and earlier device-only saves upload on first sign-in there.
 - **A group's members are for its members** (0318): a climber who is not in a group sees its member count, never who is in it — no roster, no Moderators strip, no "N of your friends are in this group". RLS no longer lets anyone read a public group's roster; the count comes from `group_member_counts()` (numbers only). The Menu's **Wildfire map** tile is gone; the fire map still opens from an area page and a route's Safety tab.
 - **Crag map section is TRAIL TO THE CRAG**: on sport/trad/bouldering/aid/top-rope routes the map section (was ROUTE TRACK) says the GPX line is the walk from parking to the base of the crag (on to this climb if it sits apart), invites *Add the trail*, and the submit sheet says where to start and stop recording. Crags carry no waypoints: the pin editor there is *Parking spot* only.
