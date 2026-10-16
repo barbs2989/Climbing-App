@@ -28,7 +28,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   Street / Satellite / Topo / snow base layers (`BaseLayerToggle`), a live location dot, and a place search box
   ("Go to a town, county or zip/postal code") covering the US and Canada (provinces, towns, US zip, Canadian postal codes).
 - **Objectives panel** (`ObjectivesPanel`): wishlisted routes under the current area.
-- **Route page map** (`GPXMap`, `ClimbMatchCore.jsx`): track + waypoints + peak coordinate on the same base layers; a line
+- **Route page map** (`GPXMap`, `src/components/GPXMap.tsx`): track + waypoints + peak coordinate on the same base layers; a line
   drawn between waypoints carries a "sketch" caveat rather than posing as GPS.
 
 ## 2. How it works
@@ -64,7 +64,8 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `lib/db.js` | `useAreaClimbStats`, `useAreaContributions`, `useArea`, `useAreaRoutes`, `useAreaChildren`, `useNearbyAreas`, `useNearbyPeaks`, `useSubtreeRoutes`, `useSubtreeRouteCount`, `useAreaSearch`, `useStates`, `useCountries`, `useAreaPath` |
 | `lib/search.js` | `SEARCH_FORMS`, `searchNorm`, `searchCanon`, `searchMatches` |
 | `lib/offlineTiles.js` | `saveRouteMapOffline`, `removeRouteMapOffline`, `routeMapLines` |
-| `ClimbMatchCore.jsx` | `GPXMap`, `OverviewMap` (seed/overview map), lazy `DbAreaBrowser` import |
+| `src/components/GPXMap.tsx` | `GPXMap` — the route page map (extracted from core, PR13) |
+| `ClimbMatchCore.jsx` | `OverviewMap` (seed/overview map), lazy `DbAreaBrowser` import |
 | `RouteDetail.jsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`, `BaseLayerToggle`) for the route and waypoint-picker maps |
 
 ## 4. Data

@@ -33,7 +33,8 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 |---|---|
 | `RouteDetail.jsx` | The page: sub-tabs, `CRAG_CATS` (imported from core since 0300), `showPlan`, `cragOnly`, header stars UI, planner, photos tab and `photoLightbox`, edit pencils, `DiffRadar`, the crag Partners sub-tab (`usePartnersInArea`, `areaPartners`) |
 | `ClimbMatch.jsx` | `openRoute`, `selRoute`, `myStars`/`myRateQ`, route memo that merges `_contribFields`/`_pendingEdits`/`_contribAgreed` |
-| `ClimbMatchCore.jsx` | `scarfHrs`, `techHrs`, `buildConsensus`, `catOf`, `GPXMap` |
+| `ClimbMatchCore.jsx` | `scarfHrs`, `techHrs`, `buildConsensus`, `catOf`, `wpPlaced`, `WP_STYLE` |
+| `src/components/GPXMap.tsx` | `GPXMap` — the route map: track, pins, one shared popup card, derived trailhead, base check-ins (extracted from core, PR13) |
 | `src/components/ElevChart.tsx` | `ElevChart` — the elevation profile under the route map (extracted from core, PR10) |
 | `lib/db.js` | `useAreaRoutes`, `fetchRouteRow`, `dbRouteToCamel`, `useRouteContributions`, `useRouteDifficultyRatings`, `useMyRouteRating`, `useRouteStarSummary`, `setRouteRating`, `submitRoutePhoto`, `reportPhoto`, `submitContribution` |
 | `lib/planTimes.js` | `planTimes`, `realPitches` |
