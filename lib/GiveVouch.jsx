@@ -4,7 +4,8 @@ import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
 import { useRouteSearch } from "./db";
 import { useState } from "react";
-import { ActionIcon, C, ME, ROUTES, SKILLS, SKILL_GROUPS, VOUCH_RATINGS, VOUCH_RATINGS_RETIRED, areaPathNames, fuzzyMatchAny, mtnOf, shortDate } from "../ClimbMatchCore.jsx";
+import { C, ME, ROUTES, SKILLS, SKILL_GROUPS, VOUCH_RATINGS, VOUCH_RATINGS_RETIRED, areaPathNames, fuzzyMatchAny, mtnOf, shortDate } from "../ClimbMatchCore.jsx";
+import ActionIcon from "../src/components/ActionIcon.tsx";
 import DiscBadges from "../src/components/DiscBadges.tsx";
 import { POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
 
