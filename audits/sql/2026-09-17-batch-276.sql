@@ -1,0 +1,61 @@
+-- WA alpine audit batch 276 (pass 5)
+-- Routes checked: wa_mount_index_north_peak_traverse, wa_mount_index_northeast_buttress,
+-- wa_mount_johnson_standard, wa_mount_lago_south_slope_south_face,
+-- wa_mount_larrabee_south_ridge, wa_mount_logan_fremont_glacier, wa_mount_logan_r1,
+-- wa_mount_logan_r2
+
+-- wa_mount_index_northeast_buttress: this row's own facts (FA "July 1929, credited to
+-- Lionel Chute and Victor Kaartinen", grade 5.7, 12 pitches, ~1,600 ft, and a pitch_detail
+-- describing "4th to low 5th class... sustained brush-and-tree climbing on vegetated,
+-- sometimes rotten rock through the North Face bowl area... consistently slower and
+-- wetter than expected") all match, in detail, the single well-documented classic line on
+-- Mount Index's North Peak -- which every independent source found (Wikipedia's Mount
+-- Index article, a Mountain Project route-description snippet quoting "Grade III, 5.7...
+-- vertical dirt, somewhat rotten rock, and thick brush," a Cascadeclimbers.com trip-report
+-- titled "Mount Index, North Peak - North Face," and a formal Mountaineers.org course
+-- listed as "Mt Index North Peak/N Face") calls the "North Face" (or "North Face Route").
+-- No source found anywhere names a distinct "Northeast Buttress" route on Mount Index's
+-- North Peak, or on any peak of Mount Index at all -- the only other "buttress" feature
+-- documented on this massif is the unrelated, much harder "Norwegian Buttress"(es) on a
+-- different aspect. This looks like a route mis-named at import/enrichment time (plausibly
+-- auto-labeled from the row's own "aspect: NE" field rather than from the actual
+-- documented route name), not a second, genuinely distinct climb. Corrected name/face to
+-- match every external source, and aspect from NE to N to match (the North Face's own
+-- described "north rib"/"north face bowl" is a north-facing feature, not northeast-facing,
+-- per every source -- confirmed both by the Wikipedia summary and by this row's OWN sibling
+-- route wa_mount_index_north_peak_traverse, whose overview independently describes "the
+-- historic North Face line up the North Peak" using the same terminology).
+--
+-- The route's `id` (wa_mount_index_northeast_buttress) still encodes the old, incorrect
+-- name -- left untouched. Renaming a route's primary key is outside this audit's scope and
+-- risks breaking references elsewhere (contributions, bookmarks, corrections), the same
+-- call made for the wa_mount_fury_east_mongo_ridge id/content mismatch in batch 275. A
+-- human may want to re-key this row (or add an alias) separately.
+UPDATE routes SET name = 'North Face', face = 'North Face', aspect = 'N'
+WHERE id = 'wa_mount_index_northeast_buttress'
+  AND name = 'Northeast Buttress' AND face = 'Northeast Buttress' AND aspect = 'NE';
+
+-- No further UPDATEs this batch. Three additional issues found and left for human review
+-- rather than a targeted UPDATE -- see wa-alpine-audit-log.md for the full write-up of all
+-- three (all on Mount Logan, where the peak is reached by two documented trailheads --
+-- Colonial Creek/Thunder Creek Trail, open year-round, and the much shorter Easy Pass
+-- Trailhead, inside SR-20's winter closure gate -- and this row's own approach/beta/road
+-- fields disagree about which one this specific route actually starts from, which in turn
+-- makes it impossible to say with confidence what gain_ft/loss_ft SHOULD read without
+-- inventing a number CLAUDE.md's own audit:gain guidance explicitly warns against):
+--   wa_mount_logan_r1 (Banded Glacier) -- `approach` field describes only the long
+--     Colonial Creek/Thunder Creek entry (9mi+3mi from 1,060 ft), while `beta` and `road`
+--     both treat the much shorter Easy Pass Trailhead (3,700 ft, per road.driveNote calling
+--     Thunder Creek "a longer, year-round-accessible ALTERNATE") as primary. gain_ft=7,027
+--     is BELOW the minimum possible net rise (8,027 ft) if the route truly starts at
+--     Colonial Creek's 1,060 ft, but is roughly consistent with an Easy-Pass-Trailhead
+--     start. loss_ft=13,000 is also hard to reconcile with either single interpretation.
+--   wa_mount_logan_r2 (Douglas Glacier) -- gain_ft=7,000 against loss_ft=1,500 for a route
+--     whose own descent_text says it either reverses the ascent or exits via the
+--     Banded-Douglas col to Fisher Creek basin -- neither description supports a loss anywhere
+--     near that low; a same-trailhead round trip should have loss roughly comparable to
+--     gain, not 21% of it.
+--   wa_mount_logan_fremont_glacier -- aspect is stored as "SW"; WebSearch found the named
+--     Fremont Glacier landform itself described as facing southeast in one source and
+--     southwest in another (the search engine itself flagged this as a source discrepancy),
+--     so left as-is pending a source that resolves the conflict.
