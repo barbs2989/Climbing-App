@@ -77,6 +77,8 @@ The *Brought different gear? Suggest a gear update* box (`gearUpdateBox` in `Rou
 
 The RACK card is rack-only: `detailed_rack`/`pro_needs`/`rack` re-homed on ~400 WA routes (ice axe, crampons, helmet, boots moved to `what_to_bring`), `DISC_RACK` stripped to protection and ropes, and `routeRackFor` splits every source (`rackLeftovers` to GEAR & ESSENTIALS). Before that: #2407 — header stars persist, count once per climber and feed the route rating (0294). Full history is in the PRs and the commit log for the files above.
 
+The foot of Overview, in order: on crag routes ASPECT & SUN, SEASONAL GUIDANCE and CROWDS (`AspectSunPanel`, `SeasonalGuidancePanel`, `CrowdsPanel`, mounted in `ClimbMatch.jsx` and handed to `RouteDetail` as `cragPanels`), then PAIRS WELL WITH (not on crags), *Quick log* / *Full log*, *More on <peak or crag>*, Top contributors and the Discussion. *More on* is the last thing before Top contributors; do not mount anything between them. There is no wide "Save to your objectives" button or trip pack on the page (#2368); the top-right Save is the one save control.
+
 ## 8. Known gaps / open decisions
 
 - `SAR_BY_COUNTY` holds 3 Utah counties (Grand, Utah, Salt Lake), each checked against the agency's own page on 2026-10-15; every other county shows 911 guidance only until a climber adds its line through the pencil. Emergency contacts are per ROUTE, so a climber's edit on one Castleton line does not reach its neighbours.
