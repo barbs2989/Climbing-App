@@ -25,6 +25,8 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **A group's members are for its members** (0318): a climber who is not in a group sees its member count, never who is in it — no roster, no Moderators strip, no "N of your friends are in this group". RLS no longer lets anyone read a public group's roster; the count comes from `group_member_counts()` (numbers only). The Menu's **Wildfire map** tile is gone; the fire map still opens from an area page and a route's Safety tab.
+
 - **Route quality control, steps 2–5**: seven more editable fields + `check:editable-coverage` (0317), a flag link on the log form; per-pitch "Edit this pitch", pitch reordering, the rappel-table editor (`rappelDetail`); the owner's queues in the Me tab (held edits with clusters and diffs, flags, contributor standing), the climber's standing notice on the edit sheet, confidence chips (High · locked / Medium / Low) with a ⚑ Flag on every editable section, and the flag sheet (`lib/RouteQualityQueues.jsx`, `lib/confidence.jsx`, `lib/FlagRouteInfo.jsx`).
 - **Area pages** (0304): ABOUT, AREA FACTS, CLIMBS HERE (climbs per discipline, over the subtree) + GRADE SPREAD, GETTING THERE, TOP RATED, and **Suggest an edit** on crags/peaks/walls — seven fields, applied by trigger, counted by Ranks (`lib/AreaPageSections.jsx`, `lib/AreaSuggestFix.jsx`, `lib/areaFields.js`).
 - **Crag parking can be added and edited**: on sport/trad/bouldering/aid/top-rope routes, *Add parking* used to open a text-only section with no pin. It now opens the pin editor (map + lat/lng, the Trailhead type shown as *Parking*), and a parking pin already on file gets an edit pencil.
