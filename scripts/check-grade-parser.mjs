@@ -221,6 +221,35 @@ for (const [rel, needle, what] of [
   }
 }
 
+/* RANKS' ONE GRADE SCALE (0323). The server ranks real climbers with rank_grade() in SQL and the
+   signed-out board with rankGrade() in lib/rankGrade.js. Two copies of the same conversion tables
+   is the five-parsers shape again, so the tables are compared here: the NEWEST migration that
+   defines rank_grade() against the JS module, number for number. */
+{
+  const migDir = path.join(ROOT, "supabase", "migrations");
+  const defs = fs.readdirSync(migDir).filter(f => /\.sql$/.test(f)).sort()
+    .filter(f => /create\s+or\s+replace\s+function\s+(public\.)?rank_grade\s*\(/i.test(fs.readFileSync(path.join(migDir, f), "utf8")));
+  if (!defs.length) { console.error("check:grade-parser FAILED — no migration defines rank_grade() any more; Ranks would weigh grades unconverted."); process.exit(1); }
+  const sql = fs.readFileSync(path.join(migDir, defs[defs.length - 1]), "utf8");
+  const sqlTable = sys => { const m = sql.match(new RegExp("p_system\\s*=\\s*'" + sys + "'\\s+then\\s+t\\s*:=\\s*array\\[([^\\]]+)\\]")); return m ? m[1].split(",").map(Number) : null; };
+  const js = fs.readFileSync(path.join(ROOT, "lib", "rankGrade.js"), "utf8");
+  const jsTable = sys => { const m = js.match(new RegExp("\\b" + sys + ":\\s*\\{\\s*off:\\s*\\d+,\\s*t:\\s*\\[([^\\]]+)\\]")); return m ? m[1].split(",").map(Number) : null; };
+  for (const sys of ["v", "wi", "m"]) {
+    const a = sqlTable(sys), b = jsTable(sys);
+    if (!a || !b) { console.error(`check:grade-parser FAILED — could not read the '${sys}' table from ${a ? "lib/rankGrade.js" : defs[defs.length - 1]}.`); process.exit(1); }
+    if (a.join(",") !== b.join(",")) {
+      console.error(`check:grade-parser FAILED — the Ranks '${sys}' grade table differs between ${defs[defs.length - 1]} and lib/rankGrade.js:`);
+      console.error(`  SQL ${a.join(",")}\n  JS  ${b.join(",")}`);
+      console.error("  The demo board and the real one would score the same climb differently. Change both.");
+      process.exit(1);
+    }
+  }
+  const { rankGrade } = await import(pathToFileURL(path.join(ROOT, "lib", "rankGrade.js")).href);
+  for (const [sys, n, want] of [["yds", 10, 10], ["v", 5, 12.5], ["v", -1, 9.5], ["wi", 3.5, 8.25], ["m", 8, 12.25], ["class", 3, 0], ["yds", null, 0]]) {
+    if (rankGrade(sys, n) !== want) { console.error(`check:grade-parser FAILED — rankGrade("${sys}", ${n}) is ${rankGrade(sys, n)}, not ${want} (scripts/oneoff/probe-ranks-0323.sql verified ${want} in SQL).`); process.exit(1); }
+  }
+}
+
 const importers = files.filter(f => /from\s+["'][^"']*lib\/grade(?:\.js)?["']/.test(fs.readFileSync(f, "utf8"))).length;
 console.log(`check:grade-parser: ok — one parser and one display chain in ${SOURCE_OF_TRUTH}, ${importers} importer(s), ${ran} display cases, ${files.length} files scanned, ${RENDER_FILES.length} rendering.`);
 
@@ -229,4 +258,5 @@ console.log(`check:grade-parser: ok — one parser and one display chain in ${SO
       -> fails naming that file and line.
    2. `const gradeNumX = function (g, s) { return 1; }` in any scanned file -> fails.
    3. Rename lib/grade.js's export -> fails with "no longer exports gradeNumFrom".
-   4. Add every directory to SKIP -> fails with "the walk is broken" rather than passing. */
+   4. Add every directory to SKIP -> fails with "the walk is broken" rather than passing.
+   5. Change one number in lib/rankGrade.js's `wi` table -> fails naming the 'wi' table and both rows. */
