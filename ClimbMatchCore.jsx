@@ -27,7 +27,7 @@ import { useRoutePresence } from "./lib/presence";
 import AuthModal from "./lib/AuthModal";
 import { PeakMetadataPanel, SeasonalGuidancePanel, CrowdsPanel, PartnerRequirementsPanel, splitParagraphs, monthRank, seasonWindowMonths } from "./EnrichmentPanels";
 import { renderToStaticMarkup } from "react-dom/server";
-import { loadLeaflet, applyBaseLayer, baseTileLayer, fitZoomToLayer, layerSharpZoom, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel } from "./lib/mapKit";
+import { loadLeaflet, applyBaseLayer, layerSharpZoom, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel } from "./lib/mapKit";
 import { shortGrade, gradeDetail, displayGrade, gradeSources } from "./lib/grade";
 import { useRecentRouteIds } from "./lib/recent";
 import { POP_BACK, POP_CLOSE, POP_CLOSE_MEDIA, POP_REMOVE, POP_CHIP_X } from "./lib/popupChrome.js";
@@ -1688,151 +1688,6 @@ function notifIcon(n){var s=((((n&&n.text)||"")+" "+((n&&n.tab)||""))).toLowerCa
 
 
 
-function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,derivedTrailhead,baseSpots}){
-  const mapDiv=useRef(null),mapRef=useRef(null),tileRef=useRef(null);
-  /* Keyed by the waypoint's index in the ORIGINAL `waypoints` array — the same index the
-     list below the map renders — so tapping a row can open that row's own pin. Pins with no
-     coordinate are never added here, and the list is what tells the climber so; a row that
-     silently did nothing was indistinguishable from a broken map. */
-  const markersRef=useRef({}),openPinsRef=useRef(null);
-  const [ready,setReady]=useState(false),[mapFail,setMapFail]=useState(false),[locatedOnce,setLocatedOnce]=useState(false),[fullscreen,setFullscreen]=useState(false);const boundsRef=useRef(null);
-  /* Counts map builds. `ready` turns true once and stays true, so a layer drawn AFTER the build (the
-     base check-ins below) needs this to know a rebuild — fullscreen, a new route — wiped it. */
-  const [mapGen,setMapGen]=useState(0);
-  const [baseLayer,setBaseLayer]=useState("sat");
-  const wc=WP_COLORS;
-  const ep=endpointLabels||{startLabel:"Start",startColor:C.green,finishLabel:"Finish",finishColor:C.red};
-  const hasPts=pts&&pts.length>=2;
-  const wpPts=(waypoints||[]).filter(w=>wpPlaced(w));
-  const hasWpLine=!hasPts&&wpPts.length>=2;
-  const hasPeak=!hasPts&&!(waypoints&&waypoints.length)&&peakCoord&&peakCoord.lat!=null;
-  /* The point the Snow layer lists satellite passes for: the peak, else the track's start, else the first placed pin. */
-  const snowAt=(()=>{if(peakCoord&&peakCoord.lat!=null)return {lat:peakCoord.lat,lng:peakCoord.lng};if(hasPts)return {lat:pts[0][0],lng:pts[0][1]};const w=(waypoints||[]).find(wpPlaced);return w?{lat:w.lat,lng:w.lng}:null;})();
-  /* The derived trailhead is part of the signature: the effect is what draws it, and without it in
-     here a route whose only change is that coordinate would keep the previous route's map. */
-  const dtSig=derivedTrailhead&&derivedTrailhead.lat!=null?("t"+derivedTrailhead.lat+","+derivedTrailhead.lng):"";
-  const sig=(hasPts?(pts.length+":"+pts[0][0]+","+pts[0][1]):((waypoints&&waypoints.length)?("w"+waypoints.length):(hasPeak?("p"+peakCoord.lat+","+peakCoord.lng):"none")))+dtSig;
-  useEffect(()=>{let cancelled=false;const init=()=>{if(cancelled||!mapDiv.current||mapRef.current||!window.L)return;const L=window.L;const map=L.map(mapDiv.current,{attributionControl:false});if(map.zoomControl)map.zoomControl.getContainer().style.marginTop="46px";tileRef.current=baseTileLayer(L,baseLayer).addTo(map);let b=null;
-    /* ONE POPUP FOR EVERY PIN, and it lists every pin within a fingertip of the one tapped.
-       Each pin used to carry its own popup AND a tooltip — on two layers, the icon and a hit
-       circle under it — and Leaflet opens a bound tooltip on CLICK as well as hover, so a tap
-       put two boxes on screen saying the same thing. Worse, pins are 20px icons and the map
-       opens fitted to the whole route, so two real places close together were drawn on top of
-       each other: Forbidden Peak's West Ridge opens with its notch 6px from the summit, the
-       notch covered it, and tapping the summit opened the notch. The summit could not be
-       reached at all. Measured 2026-10-01 (`scripts/oneoff/audit-overlapping-map-pins.mjs`):
-       458 of 1,069 routes with pins open with two of them overlapping, 358 with one more than
-       half covered. So a tap gathers every pin drawn within PIN_TAP_PX of the tapped one AT THE
-       CURRENT ZOOM and shows them in one card, tapped pin first: every pin is reachable at every
-       zoom, and nothing moves a coordinate that is correct. The autopan padding keeps the card
-       clear of the layer buttons along the top and the Me button along the bottom, which it
-       used to open underneath. */
-    const PIN_TAP_PX=22,pins=[];
-    const pinPopup=L.popup({minWidth:150,maxWidth:260,maxHeight:280,autoPanPaddingTopLeft:[12,58],autoPanPaddingBottomRight:[12,52]});
-    const openPins=(p,z)=>{const zz=z!=null?z:map.getZoom();const at=map.project(p.ll,zz);const near=[p,...pins.filter(q=>q!==p&&map.project(q.ll,zz).distanceTo(at)<PIN_TAP_PX)];
-      const html=near.length===1?p.html:'<div style="font-size:11.5px;opacity:0.75;margin-bottom:6px">'+near.length+' waypoints here — zoom in to separate them</div>'+near.map((q,i)=>'<div style="'+(i?'border-top:1px solid rgba(127,127,127,0.35);margin-top:8px;padding-top:8px':'')+'">'+q.html+'</div>').join("");
-      pinPopup.setLatLng(p.ll).setContent(html).openOn(map);};
-    /* `layers` are every Leaflet layer that draws this one pin; they all open the same card. */
-    const addPin=(layers,ll,html)=>{const p={ll:L.latLng(ll),html};pins.push(p);layers.forEach(m=>m.on("click",()=>openPins(p)).addTo(map));return p;};
-    const pinHead=(name,type)=>'<div style="font-weight:700;margin-bottom:2px">'+name+'</div>'+(type?'<div style="font-size:11.5px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;opacity:0.7">'+type+'</div>':"");
-    openPinsRef.current=openPins;
-    if(hasPts){const ll=pts.map(p=>[p[0],p[1]]);const line=L.polyline(ll,{color:C.blue,weight:4,opacity:0.9}).addTo(map);b=line.getBounds();const nearWp=(pt)=>(waypoints||[]).some(w=>wpPlaced(w)&&Math.hypot(pt[0]-w.lat,pt[1]-w.lng)<0.0015);
-    // A generic Start/Finish dot is only worth drawing when no NAMED waypoint already says
-    // what that end of the track is. The proximity test alone was not enough: Mount Olympus'
-    // Blue Glacier standard route has a recorded track that stops ~0.9 km short of the
-    // summit — well outside the 0.0015° window — so the map drew a "Finish" pin beside the
-    // "Summit" pin and the mountain appeared to have two summits. A named waypoint is
-    // strictly more informative than "Finish", and the dashed connector below still shows
-    // that the track runs out before it.
-    const hasWpType=(...ts)=>(waypoints||[]).some(w=>wpPlaced(w)&&ts.indexOf(String(w.type))>=0);
-    /* The track endpoints follow the legend too WHEN THEY NAME A LEGEND TYPE. On an alpine route
-       endpointLabels is literally {startLabel:"Trailhead", finishLabel:"Summit"}, so these are the
-       same two types the legend lists and drawing them as bare dots was the same mismatch. A
-       non-alpine route labels them "Start"/"Finish", which are positions on a GPS track rather than
-       waypoint types — those keep a plain dot, because giving them a Trailhead glyph would assert a
-       type nobody recorded. */
-    if(!nearWp(ll[0])&&!hasWpType("Trailhead"))addPin([WP_STYLE[ep.startLabel]?L.marker(ll[0],{icon:wpDivIcon(L,ep.startLabel),keyboard:false}):L.circleMarker(ll[0],{radius:6,color:"#ffffff",weight:2,fillColor:ep.startColor,fillOpacity:1,bubblingMouseEvents:false})],ll[0],'<div style="font-size:13px;line-height:1.45">'+pinHead(ep.startLabel)+'<div style="font-size:12px;opacity:0.8;margin-top:3px">Where the recorded GPS track starts</div></div>');
-    if(!nearWp(ll[ll.length-1])&&!hasWpType("Summit","Topout"))addPin([WP_STYLE[ep.finishLabel]?L.marker(ll[ll.length-1],{icon:wpDivIcon(L,ep.finishLabel),keyboard:false}):L.circleMarker(ll[ll.length-1],{radius:6,color:"#ffffff",weight:2,fillColor:ep.finishColor,fillOpacity:1,bubblingMouseEvents:false})],ll[ll.length-1],'<div style="font-size:13px;line-height:1.45">'+pinHead(ep.finishLabel)+'<div style="font-size:12px;opacity:0.8;margin-top:3px">Where the recorded GPS track ends</div></div>');
-    // A named Trailhead/Summit can sit a little past where the recorded GPS track starts/stops
-    // (the recorder often starts the track after leaving the car, or loses lock near an exposed
-    // summit) without being wrong data. Rather than leave it as a stray dot, draw a short dashed
-    // connector out to it — but only within CONNECT_DEG, so a genuinely different real-world
-    // location (a different trailhead entirely) still reads as visually separate, not "connected".
-    const CONNECT_DEG=0.02;const connect=(trackPt,wp,color)=>{if(!wpPlaced(wp))return;const d=Math.hypot(trackPt[0]-wp.lat,trackPt[1]-wp.lng);if(d>0.0015&&d<=CONNECT_DEG)L.polyline([trackPt,[wp.lat,wp.lng]],{color,weight:2,opacity:0.6,dashArray:"3,7"}).addTo(map);};
-    connect(ll[0],(waypoints||[]).find(w=>wpPlaced(w)&&wpIs(w,"Trailhead")),wc.Trailhead);
-    connect(ll[ll.length-1],(waypoints||[]).find(w=>wpPlaced(w)&&(wpIs(w,"Summit")||wpIs(w,"Topout"))),wc.Summit);
-    }else if(hasWpLine){const ordered=[...wpPts].sort((a,b2)=>(a.distMi??0)-(b2.distMi??0));const ll=ordered.map(w=>[w.lat,w.lng]);const line=L.polyline(ll,{color:C.blue,weight:3,opacity:0.7,dashArray:"7,7"}).addTo(map);line.bindTooltip("Approximate line — connects known waypoints, not a recorded track",{direction:"top",sticky:true});b=line.getBounds();}markersRef.current={};(waypoints||[]).forEach((wp,wi)=>{if(!wpPlaced(wp))return;
-    // Waypoints carried a hover tooltip and nothing else, so on a phone — which is what this
-    // app is built for — tapping one did nothing at all, on every route. A tooltip is a
-    // pointer affordance; a popup is what opens on tap. The icon is also under a comfortable
-    // touch target, so a transparent 14px circle sits underneath it purely to catch the tap.
-    // Both open the ONE shared card (see openPins above) — no tooltip, which a tap opened too.
-    const esc=t=>String(t==null?"":t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-    const bits=[];
-    if(wp.elevFt!=null||wp.elev!=null)bits.push(uElev(wp.elevFt!=null?wp.elevFt:wp.elev));
-    if(wp.distMi!=null)bits.push(uDistMi(wp.distMi)+" from start");
-    const html='<div style="font-size:13px;line-height:1.45">'
-      +pinHead(esc(wp.name||wp.type||"Waypoint"),wp.type?esc(wp.type):"")
-      +(bits.length?'<div style="font-size:12px;opacity:0.8;margin-top:3px">'+esc(bits.join(" · "))+'</div>':"")
-      +(wp.anchorType?'<div style="font-size:12px;margin-top:4px">'+esc(wp.anchorType)+'</div>':"")
-      +(wp.note?'<div style="font-size:12px;margin-top:4px">'+esc(wp.note)+'</div>':"")
-      +'</div>';
-    const hit=L.circleMarker([wp.lat,wp.lng],{radius:14,stroke:false,fillOpacity:0,interactive:true,bubblingMouseEvents:false});
-    const mk=L.marker([wp.lat,wp.lng],{icon:wpDivIcon(L,wpType(wp)),keyboard:false});
-    markersRef.current[wi]=addPin([hit,mk],[wp.lat,wp.lng],html);
-    if(!b){b=L.latLngBounds([[wp.lat,wp.lng]]);}else{b.extend([wp.lat,wp.lng]);}});
-    /* THE START POINT THE DIRECTIONS BUTTON USES, when it lives only in approach_logistics and so
-       has no waypoint marker of its own. Drawn through `wpDivIcon` with derived=true — hollow and
-       dashed, carrying the Trailhead glyph and colour — rather than as a bare circleMarker: a
-       colour-only dot is a mystery the legend cannot explain, which is the defect #1194 removed
-       everywhere else on this map. The hollow form is the language for "the app worked this out",
-       so it cannot read as an N+1st pin somebody surveyed: the WAYPOINTS list below still shows N
-       rows and this is deliberately not the N+1st.
-       Gated on the map already having real content, so the 10 routes that draw NO map keep drawing
-       none — there the button and the map do not contradict each other and there is nothing to fix.
-       Extending `b` is safe for the same reason: where `b` is empty this never runs, so the
-       `hasPeak` empty-state fallback below is untouched. */
-    if((hasPts||wpPts.length>0)&&derivedTrailhead&&derivedTrailhead.lat!=null&&derivedTrailhead.lng!=null){
-      const dt=derivedTrailhead,dll=[dt.lat,dt.lng];
-      const dEsc=t=>String(t==null?"":t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-      const dHtml='<div style="font-size:13px;line-height:1.45">'
-        +pinHead(dEsc(dt.name||"Trailhead"),"Trailhead")
-        +'<div style="font-size:12px;opacity:0.8;margin-top:4px">Where the Directions button sends you. Recorded in this route&#8217;s approach logistics rather than as a waypoint, so it is not in the list below.</div></div>';
-      addPin([L.marker(dll,{icon:wpDivIcon(L,"Trailhead",22,null,true),keyboard:false})],dll,dHtml);
-      if(!b){b=L.latLngBounds([dll]);}else{b.extend(dll);}
-    }
-    if(b&&b.isValid()){map.fitBounds(b.pad(0.25),{maxZoom:layerSharpZoom(baseLayer)});}else if(hasPeak){L.marker([peakCoord.lat,peakCoord.lng],{icon:wpDivIcon(L,"Summit",24,null,true),keyboard:false}).addTo(map).bindTooltip(peakCoord.name||"Peak location",{direction:"top"});map.setView([peakCoord.lat,peakCoord.lng],12);}else{map.setView([39.5,-98.5],4);}fitZoomToLayer(map,baseLayer);boundsRef.current=b;mapRef.current=map;setReady(true);setMapGen(g=>g+1);setTimeout(()=>{try{map.invalidateSize();}catch(e){}},150);};loadLeaflet(init,()=>setMapFail(true));const ft=setTimeout(()=>{if(!cancelled&&!mapRef.current)setMapFail(true);},9000);return ()=>{cancelled=true;clearTimeout(ft);if(mapRef.current){try{mapRef.current.remove();}catch(e){}mapRef.current=null;tileRef.current=null;openPinsRef.current=null;}};},[sig,fullscreen]);
-  /* The base layer is swapped IN PLACE rather than rebuilding the map (it used to sit in the deps above).
-     The Snow layer's day stepper changes it once per tap, and a rebuild re-fitted the route every time. */
-  useEffect(()=>{if(!mapRef.current)return;applyBaseLayer(mapRef.current,tileRef,baseLayer);},[baseLayer]);
-  const me=useFollowMe(mapRef,{C,zoom:16,onFix:(f,first)=>{if(first)setLocatedOnce(true);}}),locate=me.locate,geoErr=me.err;
-  useEffect(()=>{if(!mapRef.current)return;const t=setTimeout(()=>{try{mapRef.current.invalidateSize();}catch(e){}},220);return ()=>clearTimeout(t);},[fullscreen]);
-  /* Tapping a waypoint row below the map pans to that pin and opens its popup. `focusWp`
-     carries a nonce as well as the index so that tapping the SAME row twice re-fires — an
-     index alone is unchanged on the second tap and the effect would not run, which reads as
-     the row having stopped working. `ready` is a dependency because a tap can land before
-     Leaflet has finished loading, and the markers do not exist until it has. */
-  useEffect(()=>{if(!focusWp||focusWp.i==null)return;const map=mapRef.current;if(!map)return;const p=markersRef.current[focusWp.i];if(!p||!openPinsRef.current)return;try{const z=Math.max(map.getZoom()||0,14);map.setView(p.ll,z,{animate:true});openPinsRef.current(p,z);}catch(e){}},[focusWp,ready]);
-  /* WHERE CLIMBERS CHECKED IN AT THE BASE (0188), drawn on the map they are looking at. The spots
-     used to be a coordinate pair in a card elsewhere on the page, so a climber standing at the crag
-     had to copy numbers into another app to see where the start was. A spot is a cluster of on-site
-     GPS check-ins, so it is drawn as a Base pin with a RING — the ring says "climbers stood here",
-     which a surveyed Base waypoint does not. Drawn in its own layer after the map is built, because
-     check-ins arrive later than the route; it does not refit the view, except where the map had
-     nothing but the peak/crag coordinate to show. Keyed on the spots' content, so a refetch that
-     returns the same points redraws nothing. */
-  const baseSig=(baseSpots||[]).map(function(b){return b.lat.toFixed(6)+","+b.lng.toFixed(6)+":"+b.n+(b.mine?"m":"");}).join("|");
-  useEffect(()=>{const map=mapRef.current;if(!mapGen||!map||!window.L||!baseSig)return;const L=window.L;const grp=L.layerGroup().addTo(map);
-    (baseSpots||[]).forEach(function(b,i){const html='<div style="font-size:13px;line-height:1.45"><div style="font-weight:700;margin-bottom:2px">'+(i===0?"Base of the climb":"Another reported base")+'</div><div style="font-size:11.5px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;opacity:0.7">Climber check-in</div><div style="font-size:12px;opacity:0.8;margin-top:3px">Checked in on-site by '+b.n+' climber'+(b.n!==1?"s":"")+(b.mine?", including you":"")+'</div></div>';
-      L.circleMarker([b.lat,b.lng],{radius:14,stroke:false,fillOpacity:0,interactive:true,bubblingMouseEvents:false}).addTo(grp).bindPopup(html);
-      L.marker([b.lat,b.lng],{icon:wpDivIcon(L,"Base",i===0?24:20,true),keyboard:false,zIndexOffset:i===0?500:0}).addTo(grp).bindPopup(html);});
-    if(!boundsRef.current&&hasPeak){try{const fb=L.latLngBounds([[peakCoord.lat,peakCoord.lng]]);(baseSpots||[]).forEach(function(b){fb.extend([b.lat,b.lng]);});map.fitBounds(fb.pad(0.4),{maxZoom:Math.min(17,layerSharpZoom(baseLayer))});}catch(e){}}
-    return ()=>{try{grp.remove();}catch(e){}};},[mapGen,baseSig]);
-  if(!hasPts&&!(waypoints&&waypoints.length)&&!hasPeak)return null;
-  const resetView=()=>{const map=mapRef.current;if(!map)return;me.release();if(boundsRef.current&&boundsRef.current.isValid())map.fitBounds(boundsRef.current.pad(0.25),{maxZoom:layerSharpZoom(baseLayer)});else if(hasPeak)map.setView([peakCoord.lat,peakCoord.lng],12);else map.setView([39.5,-98.5],4);};
-  const mapUI=<div style={fullscreen?{position:"fixed",inset:0,zIndex:9700,background:C.bg,padding:12,display:"flex",flexDirection:"column"}:{position:"relative"}} role={fullscreen?"dialog":undefined} aria-modal={fullscreen?"true":undefined} aria-label={fullscreen?"Route map":undefined}>{fullscreen?<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:9}}><span style={{fontSize:14,fontWeight:700,color:C.text}}>Route map</span><button onClick={()=>setFullscreen(false)} aria-label="Close full-screen map" style={POP_CLOSE}>✕</button></div>:null}<div style={{position:"relative",flex:fullscreen?1:"none"}}><div ref={mapDiv} style={{height:fullscreen?"100%":300,borderRadius:9,border:`1px solid ${C.border}`,overflow:"hidden",background:"#0a0f1a"}}/>{!ready?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",color:C.textMuted,fontSize:12,pointerEvents:"none",textAlign:"center",padding:16}}>{mapFail?"Map couldn’t load — see waypoints below.":"Loading map…"}</div>:null}<BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={snowAt}/>{fullscreen?null:<button onClick={()=>setFullscreen(true)} aria-label="Full screen" title="Full screen" style={Object.assign({},POP_CLOSE_MEDIA,{position:"absolute",top:10,right:10,zIndex:1000})}>⤢</button>}{locatedOnce?<button onClick={resetView} style={{position:"absolute",bottom:26,left:10,zIndex:1000,background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>↺ Reset view</button>:null}<button onClick={locate} style={{position:"absolute",bottom:26,right:10,zIndex:1000,background:C.blueSolid,color:"#ffffff",border:"none",borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>{<Lbl s={"📍 "+locateLabel(me,"Me")}/>}</button></div>{geoErr?<div style={{fontSize:11.5,color:C.amber,marginTop:6}}>{geoErr}</div>:null}<div style={{padding:"7px 2px 0",display:"flex",gap:5,flexWrap:"wrap"}}>{/* A legend describes THE MAP ABOVE IT, so it lists only the types this route actually uses. It used to print all of WP_STYLE unconditionally, which was already listing types the map did not draw; at 13 styled types that becomes a wall of pills that is mostly about other routes. Normalise before comparing — a raw "lake" must light the Water row. */Object.keys(WP_STYLE).filter(function(k){return (waypoints||[]).some(function(w){return wpType(w)===k;});}).map(k=><span key={k} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,padding:"3px 8px",borderRadius:999,background:C.surface,border:"1px solid "+C.border,whiteSpace:"nowrap"}}><span aria-hidden="true" style={{color:WP_STYLE[k].color,fontSize:12.5,lineHeight:1}}>{WP_STYLE[k].glyph}</span><span style={{color:C.textSub}}>{k}</span></span>)}</div></div>;
-  return fullscreen?createPortal(mapUI,document.body):<div>{mapUI}</div>;
-}
 
 
 
@@ -4236,4 +4091,4 @@ export function __set__cbBatch(v){_cbBatch=v;}
 function OverlaySkeleton({C,label}){return createPortal(<div role="status" aria-live="polite" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.45)",zIndex:300,display:"flex",alignItems:"center",justifyContent:"center"}}><div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"12px 18px",color:C.textMuted,fontSize:13}}>{label}</div></div>,document.body);}
 function ScreenSkeleton({C,label}){const bar=(w,h,m)=><div style={{width:w,height:h,borderRadius:8,background:C.surface,marginBottom:m,animation:"cmPulse 1.2s ease-in-out infinite"}}/>;return <div role="status" aria-live="polite" style={{padding:"4px 0 20px"}}><style>{"@keyframes cmPulse{0%,100%{opacity:.55}50%{opacity:1}}@media (prefers-reduced-motion:reduce){[style*=cmPulse]{animation:none!important}}"}</style><div style={{color:C.textMuted,fontSize:13,marginBottom:12}}>{label}</div>{bar("60%",18,14)}{[0,1,2,3].map(k=><div key={k} style={{display:"flex",gap:10,alignItems:"center",marginBottom:12}}><div style={{width:40,height:40,borderRadius:20,background:C.surface,flexShrink:0,animation:"cmPulse 1.2s ease-in-out infinite"}}/><div style={{flex:1}}>{bar("70%",12,6)}{bar("45%",10,0)}</div></div>)}</div>;}
 export {ROAD_STATUS,ROAD_VEHICLE,ROAD_ISSUES,ROAD_LEGACY,ROAD_LABEL,isRoadTag,roadReportOf};
-export {CRAG_CATS,CMAX_AREA,areaPathsOverlap,crewPlace,placeTrip,placeCap,placeLabel,placeSub,placeMatchesLog,rapSummary,rappelReportsOf,shareOrCopy,localYmd,weekendEndYmd,printSheet,itinShareText,itinSheetHtml,ShareExportRow,SharedListView,climbsAPeak,photoAlt,photoAltsOf,PhotoAltField,PhotoDescribeBox,PHOTO_ALT_MAX,crewAllConfirmed,crewChatReaders,crewChatParticipantLine,uLenUnit,uLenN,uLenIn,groupEventsEmptyLine,nextMeetup,pubNameRow,groupMemberFromRow,mentionToken,floatPlanState,uTempU,uTempIn,uElevN,uElevIn,uElevUnit,uDistMiN,uDistMiIn,uDistMiUnit,uMassN,uMassIn,uMassUnit,itinDraftVal,itinStoreVal,uTemp,uTempN,uTempDelta,uWind,uWindN,uPrecip,uSnowfall,trustGapLabels,normEditStr,SET_FIELDS,climberLine,wpType,wpIs,trailheadPoint,DbAreaBrowser,DbGuides,DbGuideApply,DbGuideDashboard,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ1,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,VOUCH_BOOST,MY_STARS,RESPONSE_RATES,__set_MY_PACE,paceOf,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,vScore,trustContributions,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,uApproxDist,uDistMiUnitLong,ROUTE_LENGTHS,routeLengthLabel,routeAscentFt,gainCoversWholeOuting,gainBelowOwnPins,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,suggestDiscSlots,TRIP,tripOf,SKILLS,SKILL_GROUPS,VOUCH_RATINGS,VOUCH_RATINGS_RETIRED,VOUCH_RATING_LABEL,vouchRated,vouchAvg,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,RichEditor,caretToEnd,useRichTextareas,gpxDownload,buildGpx,WP_TYPES,WP_SINGLE_TYPES,WP_STYLE,WP_COLORS,wpColor,wpGlyph,MAX_WAYPOINTS,MAX_BIVY,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,GUIDES,GPHOTOS,GLANGS,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,trustOf,compat,CMAX_DISC,CMAX_GRADE,CMAX_OBJ,CMAX_VERIF,CMAX_PACE,CMAX_AVAIL,COMPAT_BASE,COMPAT_TOP,COMPAT_MAX,compatUnknown,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,parseHrsRange,fmtHrsRange,mapFitToPace,paceVariants,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,CREW_ARCHIVE_GRACE_DAYS,isReady,isArchivedCrew,REPLY_LINES,DISC_TO_REPLY_POOL,replyPoolFor,pickReplyCategory,pickReplyLine,pickImageReplyLine,daysUntil,futLabel,ChatComposer,TypingIndicator,MessageRow,Stars,YDSL,VL,SL,RSL,ROUTE_GAP,MeH,GH,Hr,Bar,EMOJI_ICON,notifIcon,GPXMap,AspectSunPanel,ReportStats,PARTNER_NUMBERS,EmergencyRescueCard,StartLocationForm,CatchLedger,SpeedProfile,SpeedCompat,VouchCard,PhotoStrip,ticksFor,seedIdentity,TickList,LogCatch,QuickLog,FriendsFeed,pubName,pubFirst,cById,GROUPS,REACTIONS,reactionCounts,groupMentionMatch,extractMentionIds,mutualsFor,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,trustFactors,TrustBreakdown,FullProfile,BADWORDS,hasVulgarity,GuideDashboard,ReportModal,ConnectModal,CrewInviteModal,LoginScreen,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AVAIL_FILTER_OPTS,availFits,AreaRegionSelect,analyzeAlignment,alignmentFromServer,Questionnaire,FloatPlan,inArea,_lev,_tol,fuzzyMatch,fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,routeLoc,routeLocText,PROFILE_GRADES,CLIMB_ROLES,profileGradeRows,roleLabel,BELAY_DEVICES,BELAY_LEVELS,belayLabel,certExpiryInfo,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_ALPS,ADDR_CLS,ADDR_GRADES,gradeGroups,ADDR_STYLE,ADDR_HAZ,ADDR_COMMIT,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,TIME_PRESETS,ItineraryEditor,WaypointMapPicker,Contributions,SunCorrect,SearchSplit,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,CA_PROV,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,TopContribBadge,unfinishedRoutes,routeCompleted,RetryReminder,TopContributors,AreaView,crewMax,_discIconCache,getDiscIconMarkup,OverviewMap,GUIDE_REVIEWS,GMETA,gm,GuideApply,revTime,AvailCal,OPEN_CREWS,Guides,DbClimbPicker,PlaceMatches,LogRoutePicker,Resume,AscentPyramid,Challenges,haptic,SwipeRow,MiniCalendar,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,AreaTree,COMMENTS,Comments,ClassicClimbs,GettingThere,PullToRefresh,ReactionPicker,crewInCrew,crewSize,crewAskedToJoin,notifTarget,_cbBatch,_cbTimer,_toastT,_celebTimer,DB_UID,RealClimberRow,haveMyLoc,lbRowName,seedHistoryFor,ScreenSkeleton,DbAreaPicker,hoursNum,listShareText,listSheetHtml,OverlaySkeleton,HELP_FEATS};
+export {wpDivIcon,CRAG_CATS,CMAX_AREA,areaPathsOverlap,crewPlace,placeTrip,placeCap,placeLabel,placeSub,placeMatchesLog,rapSummary,rappelReportsOf,shareOrCopy,localYmd,weekendEndYmd,printSheet,itinShareText,itinSheetHtml,ShareExportRow,SharedListView,climbsAPeak,photoAlt,photoAltsOf,PhotoAltField,PhotoDescribeBox,PHOTO_ALT_MAX,crewAllConfirmed,crewChatReaders,crewChatParticipantLine,uLenUnit,uLenN,uLenIn,groupEventsEmptyLine,nextMeetup,pubNameRow,groupMemberFromRow,mentionToken,floatPlanState,uTempU,uTempIn,uElevN,uElevIn,uElevUnit,uDistMiN,uDistMiIn,uDistMiUnit,uMassN,uMassIn,uMassUnit,itinDraftVal,itinStoreVal,uTemp,uTempN,uTempDelta,uWind,uWindN,uPrecip,uSnowfall,trustGapLabels,normEditStr,SET_FIELDS,climberLine,wpType,wpIs,trailheadPoint,DbAreaBrowser,DbGuides,DbGuideApply,DbGuideDashboard,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ1,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,VOUCH_BOOST,MY_STARS,RESPONSE_RATES,__set_MY_PACE,paceOf,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,vScore,trustContributions,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,uApproxDist,uDistMiUnitLong,ROUTE_LENGTHS,routeLengthLabel,routeAscentFt,gainCoversWholeOuting,gainBelowOwnPins,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,suggestDiscSlots,TRIP,tripOf,SKILLS,SKILL_GROUPS,VOUCH_RATINGS,VOUCH_RATINGS_RETIRED,VOUCH_RATING_LABEL,vouchRated,vouchAvg,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,RichEditor,caretToEnd,useRichTextareas,gpxDownload,buildGpx,WP_TYPES,WP_SINGLE_TYPES,WP_STYLE,WP_COLORS,wpColor,wpGlyph,MAX_WAYPOINTS,MAX_BIVY,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,GUIDES,GPHOTOS,GLANGS,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,trustOf,compat,CMAX_DISC,CMAX_GRADE,CMAX_OBJ,CMAX_VERIF,CMAX_PACE,CMAX_AVAIL,COMPAT_BASE,COMPAT_TOP,COMPAT_MAX,compatUnknown,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,parseHrsRange,fmtHrsRange,mapFitToPace,paceVariants,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,CREW_ARCHIVE_GRACE_DAYS,isReady,isArchivedCrew,REPLY_LINES,DISC_TO_REPLY_POOL,replyPoolFor,pickReplyCategory,pickReplyLine,pickImageReplyLine,daysUntil,futLabel,ChatComposer,TypingIndicator,MessageRow,Stars,YDSL,VL,SL,RSL,ROUTE_GAP,MeH,GH,Hr,Bar,EMOJI_ICON,notifIcon,AspectSunPanel,ReportStats,PARTNER_NUMBERS,EmergencyRescueCard,StartLocationForm,CatchLedger,SpeedProfile,SpeedCompat,VouchCard,PhotoStrip,ticksFor,seedIdentity,TickList,LogCatch,QuickLog,FriendsFeed,pubName,pubFirst,cById,GROUPS,REACTIONS,reactionCounts,groupMentionMatch,extractMentionIds,mutualsFor,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,trustFactors,TrustBreakdown,FullProfile,BADWORDS,hasVulgarity,GuideDashboard,ReportModal,ConnectModal,CrewInviteModal,LoginScreen,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AVAIL_FILTER_OPTS,availFits,AreaRegionSelect,analyzeAlignment,alignmentFromServer,Questionnaire,FloatPlan,inArea,_lev,_tol,fuzzyMatch,fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,routeLoc,routeLocText,PROFILE_GRADES,CLIMB_ROLES,profileGradeRows,roleLabel,BELAY_DEVICES,BELAY_LEVELS,belayLabel,certExpiryInfo,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_ALPS,ADDR_CLS,ADDR_GRADES,gradeGroups,ADDR_STYLE,ADDR_HAZ,ADDR_COMMIT,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,TIME_PRESETS,ItineraryEditor,WaypointMapPicker,Contributions,SunCorrect,SearchSplit,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,CA_PROV,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,TopContribBadge,unfinishedRoutes,routeCompleted,RetryReminder,TopContributors,AreaView,crewMax,_discIconCache,getDiscIconMarkup,OverviewMap,GUIDE_REVIEWS,GMETA,gm,GuideApply,revTime,AvailCal,OPEN_CREWS,Guides,DbClimbPicker,PlaceMatches,LogRoutePicker,Resume,AscentPyramid,Challenges,haptic,SwipeRow,MiniCalendar,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,AreaTree,COMMENTS,Comments,ClassicClimbs,GettingThere,PullToRefresh,ReactionPicker,crewInCrew,crewSize,crewAskedToJoin,notifTarget,_cbBatch,_cbTimer,_toastT,_celebTimer,DB_UID,RealClimberRow,haveMyLoc,lbRowName,seedHistoryFor,ScreenSkeleton,DbAreaPicker,hoursNum,listShareText,listSheetHtml,OverlaySkeleton,HELP_FEATS};
