@@ -13,6 +13,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 - Crag routes show `CragLocationCard` (crag + parking coordinates, Google/Apple Maps). Its *Add parking*, *Add the pin* and the pencil on a parking pin open the `waypoints` pin editor (map picker + lat/lng). That editor is offered on every crag discipline. On a crag it is labelled *Parking spot* and its only type is the parking pin (`WP_TYPES_CRAG`; a crag climb carries no waypoints), and the stored `Trailhead` type is shown as *Parking* (`wpTypeLbl`). `trailheadPoint()` reads that pin before the crag-wide `areas.parking_*` pin.
 - **Base of the climb** (`BaseCheckinPanel`, 0188) sits directly under the route map (ROUTE TRACK on the alpine Plan, TRAIL TO THE CRAG on crag Overview). A climber standing at the start taps *I’m at the base — check in*; the phone takes a steady GPS fix and `check_in_at_route_base()` decides whether it is at this climb (within 500 m of a crag, 5 km of a peak, or 600 m of a Base/Start pin). Accepted check-ins are stored per ROUTE, one per climber, and clustered into spots (`clusterBasePoints`). Those spots are drawn ON the map as ringed Base pins (`GPXMap`'s `baseSpots`), and *How far am I from the base?* gives a live distance and compass direction from the phone to the most-confirmed spot, else the route's own Base/Start pin, else (crags only) the crag's coordinate, labelled as such (`baseGuide` in `lib/baseCheckin.js`). Inside GPS error it says you are there and shows the route's `location` note, which is what tells neighbouring lines apart.
 - On a crag route the map section is headed **TRAIL TO THE CRAG** (alpine family: ROUTE TRACK). Its GPX line is the walk from parking to the base of the crag, on to this climb's start when it sits apart from the main wall; the climb itself is not part of it. The empty state is *No trail to the crag yet* → *Add the trail*, which opens `GpsSubmissionModal` with `crag` set (heading *Add the trail to the crag*, and where to start and stop recording).
+- Safety tab: **EMERGENCY & RESCUE** (`EmergencyRescueCard`) names the COUNTY the climb is in (the route's `emergency.county`, else `useCountyAt` on `climbPoint`'s coordinate — the FCC census-area lookup, cached per ~100 m cell in localStorage) and shows only that county's verified non-emergency dispatch line from `SAR_BY_COUNTY` (`sarFor`); a county with no verified number shows 911 guidance and none. Its Edit pencil opens *Add or fix info* at the `emergency` field (`setAutoFix(id+"#emergency")`).
 - Photos tab: route photos, lightbox, likes, report. Its `TopoDrawer` is exported for the log form (`lib/LogAscent.jsx`), so a topo can be drawn while logging a climb. A line can be named (`topo_lines.label`, optional); the name is the line's chip in `TopoPhotoModal` and a caption on `TopoThumb`.
 
 ## 2. How it works
@@ -38,6 +39,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `lib/planTimes.js` | `planTimes`, `realPitches` |
 | `lib/rack.js` | `routeRackFor`, `rackLeftovers`, `isRackEntry`, `isNonRackGear`, `DISC_RACK` — what the RACK card prints (rack only) and what moves to GEAR & ESSENTIALS |
 | `lib/baseCheckin.js` | `acquireBaseFix`, `clusterBasePoints`, `baseCheckinMessage`, `baseGuide`, `bearingDeg`: the base check-in's GPS rules and the find-the-base readout |
+| `lib/rescueCounty.js` | `useCountyAt`, `countyAt`, `climbPoint`, `sarFor`, `SAR_BY_COUNTY` — the Safety tab's county and its dispatch line |
 | `lib/FireNearRoute.jsx` | Nearby-fire panel (Safety tab) |
 | `lib/PhotoReports.jsx` | Photo report queue |
 | `EnrichmentPanels.jsx` | Panels for enriched route columns |
@@ -73,6 +75,8 @@ Real climbers, batch 3: comment authors are public names (`publicNameOf`, commen
 The RACK card is rack-only: `detailed_rack`/`pro_needs`/`rack` re-homed on ~400 WA routes (ice axe, crampons, helmet, boots moved to `what_to_bring`), `DISC_RACK` stripped to protection and ropes, and `routeRackFor` splits every source (`rackLeftovers` to GEAR & ESSENTIALS). Before that: #2407 — header stars persist, count once per climber and feed the route rating (0294). Full history is in the PRs and the commit log for the files above.
 
 ## 8. Known gaps / open decisions
+
+- `SAR_BY_COUNTY` holds 3 Utah counties (Grand, Utah, Salt Lake), each checked against the agency's own page on 2026-10-15; every other county shows 911 guidance only until a climber adds its line through the pencil. Emergency contacts are per ROUTE, so a climber's edit on one Castleton line does not reach its neighbours.
 
 - A base check-in at a CRAG is judged against the crag's coordinate (500 m), so the server cannot tell which of two neighbouring lines a climber stood under; a spot is trustworthy only as far as several climbers agree on it. The find-the-base readout says so by handing over to the `location` note inside GPS error.
 
