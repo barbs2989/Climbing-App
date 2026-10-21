@@ -93,7 +93,7 @@ if (!/wpPlaced\(/.test(rd)) fail("RouteDetail never calls wpPlaced().");
      construction, so nothing about what is asserted changes. */
   const parsed = [];
   for (const [label, src] of [["ClimbMatchCore.jsx", core], ["RouteDetail.jsx", rd]]) {
-    try { parsed.push([label, src, parse(src, { sourceType: "module", plugins: ["jsx"] })]); }
+    try { parsed.push([label, src, parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] })]); }
     catch (e) { fail(`could not parse ${label} to look for placement tests (${String(e.message).slice(0, 80)})`); }
   }
   /* Section 1c's rule, run in the same pass rather than a second one. */

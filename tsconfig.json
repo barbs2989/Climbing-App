@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", "module": "ESNext", "moduleResolution": "bundler", "jsx": "react-jsx",
+    "strict": true, "noEmit": true, "allowImportingTsExtensions": true, "isolatedModules": true, "skipLibCheck": true, "esModuleInterop": true,
+    "allowJs": true, "checkJs": false, "resolveJsonModule": true, "noUnusedLocals": true, "noUnusedParameters": true, "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src/**/*"]
+}

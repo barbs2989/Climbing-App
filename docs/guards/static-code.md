@@ -8,6 +8,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   an enclosing scope — the bug that blank-screened production in #317 and #359.
   It runs inside `npm run build`, so it gates CI too. Keep
   `scripts/undefined-refs-baseline.json` empty.
+  - **TypeScript (2026-10-15):** it parses with the `typescript` plugin and skips an identifier whose
+    nearest enclosing TS node is a *type* (`Record<K,V>`, `: RiskBadgeProps`) — erased before anything
+    runs, so never a ReferenceError; `check:types` answers whether it resolves. An identifier inside
+    `x as T`, `x!` or `x satisfies T` is still checked: those wrap a value, and a bare unbound name
+    there is a real runtime read.
 - **`check:boot`** compares the inline boot placeholder in `index.html` (the app
   shell painted while the bundle loads) against the real `NAV` array. It is a
   hand-copy, so a renamed or reordered tab would otherwise flicker stale chrome
@@ -310,6 +315,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **`check:popup-chrome`** asserts that **every close and back control in the app looks the same** —
   styled by `POP_CLOSE` / `POP_CLOSE_MEDIA` / `POP_BACK` / `POP_BACK_MEDIA` from `lib/popupChrome.js`. Static, so it
   sits in `npm run build`. Reported 2026-09-24 as *"sloppy"* and *"not consistent with popups"*.
+  - **A spread is the same token** (2026-10-16, PR13 of the component extraction): `style={{...POP_CLOSE_MEDIA, position:"absolute"}}`
+    is recognised for close and remove controls as it already was for back ones. In strict TypeScript `Object.assign({}, POP_CLOSE_MEDIA,
+    {position:"absolute"})` infers `position: string`, which `CSSProperties` rejects, so a `.tsx` consumer writes the spread; the guard
+    reading only the `Object.assign` shape flagged `GPXMap.tsx`'s full-screen toggle as styled on its own.
   - **Measured before the fix: 8+ close looks and 6 back looks across ~73 popup dismiss controls**
     — a bare muted `×` at 22px with no visible hit area, 36px circles and squares in three fills,
     32px and 34px variants, a bordered 16px `×`; back as a zero-padding blue text link or a bordered
@@ -540,6 +549,23 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     useful to a reader than a placeholder. The failure message says so.
   - Fails **closed** on a pattern that parses fewer than 80 paths: a doc scan matching nothing
     prints the same clean result as a correct one.
+- **`check:feature-docs`** asserts that the area docs in `docs/features/` (indexed by
+  `CURRENT_STATE.md`) still describe code that exists: every row of a doc's **Files** table names a
+  real file (or real migration numbers), every backticked identifier in that row occurs as a whole
+  word in that file, every backticked path in the doc exists (a bare name resolves against the root,
+  `lib/` and the docs folders), and the index and the folder agree in both directions. Static,
+  milliseconds, in `npm run build`.
+  - **It exists because the owner asked for these docs to stay current ALL the time** (2026-10-15),
+    and the next session TRUSTS them — a doc naming a renamed function is worse than no doc. It
+    catches the rename/move/delete half. **It cannot tell whether a description is still TRUE**;
+    that half is the CLAUDE.md rule that a PR changing an area edits its doc in the same PR.
+  - **Its first run found a stale line in CLAUDE.md itself**: `DiffRadar` was listed as a
+    `ClimbMatchCore.jsx` component; it lives in `RouteDetail.jsx`. The route-page doc had copied it.
+  - Injection-tested (renamed symbol, a doc dropped from the index, a missing file in a Files
+    table, a renamed Files heading) — all four fail, the clean tree passes. Fails **closed** under
+    40 parsed symbols or 4 docs.
+  - **Wildcards and expressions are skipped on purpose** (`CMAX_*`, `profile.zip`): only a plain
+    identifier is checked, so a doc can still describe a family of names in prose.
 - **`check:injection-anchors`** asks whether every **injection case still LANDS**. A suite is the
   PROOF that a guard can fail, so a case whose anchor no longer occurs in its target file proves
   nothing: the harness reports *"edit never landed"* or `HARNESS BUG`, **nothing runs
@@ -548,6 +574,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   so it sits in `npm run build`, at **0.86x `check:policy-claims`** taken back to back on one box,
   best of two. **Quoted as a ratio because the clock here is fiction**: that reading was taken at
   load average 446 on 4 cores, where this file already records a profile being off by 4x.
+  - **A suite may name a `.tsx` file** (2026-10-16, PR13): `PATHISH` did not know the extension, so a `{core, rd, gpx}` map entry
+    pointing at `src/components/GPXMap.tsx` was dropped from the suite's targets and its case read as ROTTED although the anchor
+    was there. The component extraction moves code into `.tsx`; every path test in a guard has to accept it.
   - **NEVER RUN `npm run build` WHILE AN INJECTION SUITE IS IN FLIGHT — this gate made a third
     kind of overlap fatal.** This file already forbids **committing** mid-suite (#1190 shipped
     whichever revert happened to be live) and forbids **two runs of one suite** overlapping. This

@@ -49,7 +49,7 @@ import url from "url";
 import { appSources } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "..");
-const files = appSources(ROOT, "check:popup-chrome").filter(f => f.endsWith(".jsx"));
+const files = appSources(ROOT, "check:popup-chrome").filter(f => /\.[jt]sx$/.test(f));
 
 // End of an opening tag, skipping quoted strings and {…} expressions (a style object or an
 // arrow function in onClick holds ">" characters that are not the tag's end).
@@ -80,8 +80,8 @@ function* buttons(src) {
 
 const LONE_CLOSE = /^\s*(?:✕|×|\{\s*"(?:✕|×)"\s*\})\s*</;
 const BACK_LABEL = /^\s*(?:←|\{\s*"←|\{\s*<Lbl\s+s=\{\s*"←|<span[^>]*>\s*\{\s*"←")/;
-const USES_CLOSE = /style=\{\s*(?:POP_CLOSE(?:_MEDIA)?\b|Object\.assign\(\s*\{\s*\}\s*,\s*POP_CLOSE(?:_MEDIA)?\b)/;
-const USES_REMOVE = /style=\{\s*(?:POP_REMOVE(?:_MEDIA)?\b|Object\.assign\(\s*\{\s*\}\s*,\s*POP_REMOVE(?:_MEDIA)?\b)/;
+const USES_CLOSE = /style=\{\s*(?:POP_CLOSE(?:_MEDIA)?\b|Object\.assign\(\s*\{\s*\}\s*,\s*POP_CLOSE(?:_MEDIA)?\b|\{\s*\.\.\.POP_CLOSE(?:_MEDIA)?\b)/;
+const USES_REMOVE = /style=\{\s*(?:POP_REMOVE(?:_MEDIA)?\b|Object\.assign\(\s*\{\s*\}\s*,\s*POP_REMOVE(?:_MEDIA)?\b|\{\s*\.\.\.POP_REMOVE(?:_MEDIA)?\b)/;
 const USES_BACK = /style=\{\s*(?:POP_BACK(?:_MEDIA)?\b|Object\.assign\(\s*\{\s*\}\s*,\s*POP_BACK(?:_MEDIA)?\b|\{\s*\.\.\.POP_BACK(?:_MEDIA)?\b)/;
 
 const bad = [];

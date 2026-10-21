@@ -164,6 +164,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       total-minus-completed. They coincide today only because nothing in the seed demo is completed,
       so the rule is `to go == active` and `routes >= active` — the day a climber ticks an objective,
       a three-way equality fires on working code.
+    - **The friends pair measured the WRONG number for weeks, and agreed.** Its "Friends badge" read
+      (`/Friends\s*\n?\s*(\d+)/`) was written when the box had a count beside its title; #1881
+      removed the badge and the regex silently re-attached to the ← Crews row's repeated "Friends"
+      followed by *"2 online now"* — the ONLINE count, equal to the friend count only because every
+      fixture friend is online. #2430 dropped that repeated title and the read went unmeasured
+      (CI red). It now COUNTS the friend rows (one *Message* per row) between *"See all friends
+      (N)"* and *"Find more friends"*, capped at the list's five (`listCap`). A `count` read whose
+      section is missing is ABSENT, never zero rows. Lesson: a regex that still matches after its
+      target was deleted is worse than one that fails — check what it matched, not that it did.
     - **Scope a read by SECTION, never by a character window.** The Logbook renders a *"1 climb to
       go"* badge per CUSTOM LIST, so an unanchored read compares a different list. A `{0,400}` window
       was tried and silently stopped finding the badge on the one snapshot carrying the defect —
@@ -379,7 +388,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       that only one mode sets is a permanent CI/local disagreement waiting for the first thing to
       read it. When adding a fixture property, ask which mode gets it.
     - **AND `check:outage`'s LANDING CHECK FOR THAT SUB-TAB WAS VACUOUS, so the red named the wrong
-      screen. FIXED — the landmark is `/saved searches|trip pack/i` now.** It led with `saved
+      screen. FIXED — the landmark is `/saved searches/i` now.** It led with `saved
       areas`, and the Logbook's **header** — which sits ABOVE the sub-tab bar and therefore renders
       on all four sub-tabs — reads *"Your objectives, completed climbs, challenges and saved areas
       — all in one place."* One alternative matching is enough, so a capture that never left the
@@ -396,12 +405,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         `SAVED SEARCHES` for the card heading, so without `/i` the *new* landmark would miss.
       - **`offline library` appeared ZERO times anywhere in the app**, so a third of the alternation
         had never matched once and could only ever report a false miss.
-      - Both survivors are `<MeH>` headings rendered **unconditionally** inside the
-        `logbookTab==="lists"` region, so neither moves with the data or with the outage — which is
-        the rule the comment states and the old landmark broke. `saved searches` is unique
-        app-wide; `trip pack` also heads two cards on the **Profile** tab, which a Logbook capture
-        cannot contain, and is kept as a second landmark so a single rename fails CLOSED rather
-        than silently.
+      - The survivor is a `<MeH>` heading rendered **unconditionally** inside the
+        `logbookTab==="lists"` region, so it does not move with the data or with the outage — which
+        is the rule the comment states and the old landmark broke. `saved searches` is unique
+        app-wide. There used to be a second alternative, `trip pack`, which also headed two cards
+        on the **Profile** tab; #2368 removed the trip pack and the term with it, so it is gone from
+        the landmark too (an alternative that matches nothing is the `offline library` defect
+        above). A rename of the one remaining heading now leaves the landmark matching nothing,
+        which `check:outage-landmark` reports at build time.
+      - **2026-10-15: the Logbook header became a per-sub-tab `<ScreenHero>`** (title and line follow
+        `logbookTab`; the fixed *"…all in one place."* prose is gone). Two of the probe's anchors
+        moved with it: the header check now looks for `<ScreenHero`, and the Saved-view carve
+        anchors on `logbookTab==="lists"?<div`, because the header's title ternary tests
+        `logbookTab==="lists"` FIRST and a bare-needle carve lifted 122 chars of it.
       - Proven by **`check:outage-landmark`**, which is **a BUILD GATE rather than a probe** on the
         two grounds `check:waypoint-dedupe` records for a class of one. *Anti-revert*: the repair
         changes a REGEX and **no identifier**, so `audit:silent-reverts` is blind to it by its own

@@ -28,6 +28,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { componentFiles } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CAP = 520;
@@ -37,8 +38,7 @@ const CAP = 520;
 // more, several of them the loading and error states of screens whose wrapper lives in core.
 // Capping a wrapper and not its loading state makes the screen jump width as the chunk lands.
 const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"]
-  .concat(fs.readdirSync(path.join(ROOT, "lib"))
-    .filter((x) => x.endsWith(".jsx")).map((x) => path.join("lib", x)));
+  .concat(componentFiles(ROOT, { guard: "check:overlay-width-cap" }));
 
 // Full-bleed ON PURPOSE. A media surface takes the whole window in this app -- the photo
 // lightboxes already do -- so the fire map is not a column. Each entry states its reason, and a

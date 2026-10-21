@@ -95,6 +95,9 @@ const waitForServer = async (base) => {
 // name -- a crew on an id the routes table lacks would render blank and read as the defect.
 const JOURNEY_ROUTE = "wa_mount_baker_north_ridge";
 const JOURNEY_ROUTE_NAME = "North Ridge";
+// The AREA crew's crag (0302): World Wall, Little Si — in the live catalog, a crag, sport.
+const JOURNEY_AREA = "wa_world_wall";
+const JOURNEY_AREA_NAME = "World Wall";
 
 const key = requireServiceKey();
 const H = { apikey: key, Authorization: `Bearer ${key}`, "Content-Type": "application/json" };
@@ -351,7 +354,7 @@ try {
   // The crew must contain NEITHER climber: App excludes crews you organise or are already in, so
   // reusing a fixture crew would assert on a row the finder is right to hide. It is created here,
   // owned by the OWNER, and torn down explicitly.
-  let crewId = null;
+  let crewId = null, areaCrewId = null;
   try {
     const mk = await fetch(`${SUPABASE_URL}/rest/v1/crews`, {
       method: "POST", headers: { ...H, Prefer: "return=representation" },
@@ -360,6 +363,16 @@ try {
     if (!mk.ok) dead(`could not create the findable crew: ${mk.status} ${await mk.text()}`);
     crewId = (await mk.json())[0].id;
     ok(`the owner opened a crew (${crewId.slice(0, 8)}) on ${JOURNEY_ROUTE}`);
+    // AND AN AREA CREW (0302): a crag session at World Wall, no route. The mate must find it in Join
+    // a crew by the crag's name, with no "undefined" -- the finder resolves a crew's place through
+    // crewPlace() and an area card read, which is exactly what this walks.
+    const mkA = await fetch(`${SUPABASE_URL}/rest/v1/crews`, {
+      method: "POST", headers: { ...H, Prefer: "return=representation" },
+      body: JSON.stringify({ created_by: uid, route_id: null, area_id: JOURNEY_AREA, discipline: "sport", dates: [], cap: 4 }),
+    });
+    if (!mkA.ok) dead(`could not create the findable AREA crew: ${mkA.status} ${await mkA.text()}`);
+    areaCrewId = (await mkA.json())[0].id;
+    ok(`the owner opened an AREA crew (${areaCrewId.slice(0, 8)}) at ${JOURNEY_AREA}`);
 
     // Sign in as the MATE. Over the auth API rather than the sign-in modal, for the reason
     // ui-fixture states: deterministic, and not coupled to that modal's markup.
@@ -394,6 +407,8 @@ try {
     await settledText(mp);
 
     const seenByMate = await mp.evaluate(() => document.body.innerText || "");
+    if (seenByMate.includes(JOURNEY_AREA_NAME)) ok(`the mate FINDS the owner's AREA crew ("${JOURNEY_AREA_NAME}") in Join a crew`);
+    else bad(`the mate cannot find the owner's AREA crew — "${JOURNEY_AREA_NAME}" is absent from Join a crew, so a crag session is invisible to another real climber`);
     if (seenByMate.includes(JOURNEY_ROUTE_NAME)) ok(`the mate FINDS the owner's crew ("${JOURNEY_ROUTE_NAME}") in Join a crew`);
     else bad(`the mate cannot find the owner's crew — "${JOURNEY_ROUTE_NAME}" is absent from Join a crew, so a real climber's crew is invisible to another real climber`);
     if (/undefined/.test(seenByMate)) { const at = seenByMate.indexOf("undefined"); bad("the crew list contains the word undefined — a row resolved against the wrong store: …" + seenByMate.slice(Math.max(0, at - 120), at + 40).replace(/\s+/g, " ") + "…"); }
@@ -401,6 +416,7 @@ try {
     await mp.close().catch(() => {});
   } finally {
     if (crewId) await fetch(`${SUPABASE_URL}/rest/v1/crews?id=eq.${crewId}`, { method: "DELETE", headers: H }).catch(() => {});
+    if (areaCrewId) await fetch(`${SUPABASE_URL}/rest/v1/crews?id=eq.${areaCrewId}`, { method: "DELETE", headers: H }).catch(() => {});
   }
 
   // ---- PHASE 3: A ROUTE ONE CLIMBER SHARES REACHES THE OTHER ------------------------------------
@@ -620,8 +636,17 @@ try {
   const friendsViewAfter = await page.evaluate(() => document.body.innerText || "");
   // FAIL CLOSED: a screen that rendered nothing satisfies every "is absent" assertion below.
   if (friendsViewAfter.length < 200) dead(`the Crew:Friends view rendered ${friendsViewAfter.length} chars after the reload — its silence is not evidence`);
-  if (!friendsViewAfter.includes(friendName)) ok(`after a reload ${friendName} is no longer in the friends list`);
-  else bad(`after a reload ${friendName} is back in the friends list — the removal did not survive`);
+  // A FRIEND ROW, not the page. The Crew:Friends view also renders "People you may know", and a climber
+  // you just unfriended is exactly who that section suggests next (shared crews, mutuals) -- so a
+  // whole-page text search read a correct suggestion as "the removal did not survive" (2026-10-15).
+  // The friend list's own rows carry a Remove control (the overlay) or sit under "See all"; neither
+  // may name them. The "See all" absence is asserted below as well.
+  const friendRowsAfter = await page.evaluate(() => [...document.querySelectorAll("button")]
+    .filter((b) => (b.innerText || "").trim() === "Remove")
+    .map((b) => { const row = b.parentElement; const lines = ((row && row.innerText) || "").split("\n").map((s) => s.trim()).filter(Boolean); return lines[0] || ""; }));
+  const seeAllAfter = await page.evaluate(() => [...document.querySelectorAll("button")].some((b) => /^See all\b/.test((b.innerText || "").trim())));
+  if (!friendRowsAfter.includes(friendName) && !seeAllAfter) ok(`after a reload ${friendName} is no longer a friend — no friend row names them and there is no friends list to open (a "People you may know" suggestion may still show them)`);
+  else bad(`after a reload ${friendName} is back in the friends list — the removal did not survive (friend rows: ${JSON.stringify(friendRowsAfter)}, See all: ${seeAllAfter})`);
   // THE OPENER IS THE FALSIFIABLE TEST HERE, AND A REMOVE-CONTROL COUNT IS NOT.
   // "See all (N)" renders only on `connections.length > 0`, so its absence is a direct
   // consequence of the removal having stuck. Counting Remove controls instead passes

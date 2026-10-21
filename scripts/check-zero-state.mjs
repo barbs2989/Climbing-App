@@ -306,6 +306,19 @@ for (const t of TABS) {
   if (lines.some((l) => /^Loading[\s.…]/i.test(l))) fail("tab:" + t, `still showing a loading state after 45s: ${JSON.stringify(lines.find((l) => /^Loading[\s.…]/i.test(l)))}`);
   assertScreen("tab:" + t, lines);
 }
+// The Profile screen is TABS (Profile · Activity · Review). Its default view no longer holds the catch
+// record, the logbook or the filed reports, and the catch-record FORBIDDEN rules above (#654, #674)
+// would go blind without this: walk Activity too, under the same rules.
+{
+  const lines = await load(`?zt=me&mt=activity`, 2600, true);
+  dump["tab:me:activity"] = lines;
+  const n = lines.join("\n").length;
+  log(`  tab:me:activity`.padEnd(24) + String(n).padStart(6) + " chars");
+  if (n <= CHROME_ONLY) fail("tab:me:activity", `rendered only the nav bar (${n} chars) — the content area was empty`);
+  if (lines.some((l) => /^Loading[\s.…]/i.test(l))) fail("tab:me:activity", `still showing a loading state after 45s: ${JSON.stringify(lines.find((l) => /^Loading[\s.…]/i.test(l)))}`);
+  if (!lines.some((l) => /BELAY & CATCH RECORD|Belay & Catch Record/.test(l))) fail("tab:me:activity", "the Activity tab did not render the Belay & Catch Record — the tab switch did not land, so the catch-record rules were never applied");
+  assertScreen("tab:me:activity", lines);
+}
 
 // 2. Every overlay the app declares. The list comes from the source via the scaffold,
 //    so a modal added later is walked without being registered here.

@@ -250,9 +250,11 @@ for (const d of [...CRAG, "alpine"]) {
 }
 
 /* ── a SPORT route must be able to say it needs natural gear ─────────────────────────────────
-   RouteGearCheck takes an early branch for `sport` and renders a computed quickdraw note
+   RouteGearCheck used to take an early branch for `sport` and render a computed quickdraw note
    instead of the RACK box. That is right for a pure sport line — the rack IS draws — and it
-   meant a sport route with one unbolted pitch had nowhere to say so.
+   meant a sport route with one unbolted pitch had nowhere to say so. (That branch is deleted:
+   RouteGearCheck is mounted only off CRAG_CATS, so once crag routes moved to CragRack it could
+   never run. CragRack's rackItems are what carry the natural gear now, asserted below.)
    `wa_technicians_of_the_sacred` is a 6-pitch 5.12c whose own pitch 6 reads "Hand crack,
    natural gear; only unbolted pitch"; a party racking off that page brings draws and arrives
    with nothing to place. Measured: 3 of 2,714 WA sport routes are in that position.
@@ -283,7 +285,39 @@ for (const d of [...CRAG, "alpine"]) {
     else if (!/No rack listed yet|No quickdraw count yet|No pad count yet/.test(none))
       fail(`rack: a ${d} route with no rack of its own shows no placeholder to add one`);
     else ok(`rack: a ${d} route with no rack of its own shows an add-the-rack placeholder and no stock kit`);
+    /* Owner note 2026-10-21, "add back the beta section": an empty crag BETA returned null and
+       left no place for beta at all. It is an EmptySection now; a route WITH beta prints it. */
+    if (!/BETA/.test(none) || !none.includes("No beta yet")) fail(`beta: a ${d} route with no beta shows no BETA section to add it`);
+    else if (!text(render({ ...base, beta: ["Stem the corner to the rest."] }, "overview")).includes("Stem the corner to the rest.")) fail(`beta: a ${d} route's own beta no longer reaches the BETA section`);
+    else ok(`beta: a ${d} route shows its BETA section, empty or not`);
   }
+}
+
+/* ── GEAR BETA reaches the rack card on every roped discipline ─────────────────────────────────
+   What a climber BROUGHT (a logged ascent's `gearBeta`) renders as "Rack beta" at the foot of the
+   rack card, and nowhere else: #2363 took it out of CLIMBER BETA so one fact was not two boxes.
+   But the only other copy for a crag route sat in a `sport` branch of RouteGearCheck, which is
+   mounted only OFF CRAG_CATS — so on trad, sport, toprope and aid it reached NO screen, and nothing
+   here noticed, because a bare route carries no activity. RackBetaList is now the one list, under
+   RouteRackBox (alpine, on Plan) and CragRack (crag, on Overview). Bouldering is excluded on
+   purpose: the log form asks for gear beta on a roped climb only.
+   Both cases carry the beta with NO rack of their own, the shape most routes have, so the list
+   must ride on the placeholder card too. */
+{
+  const GB = "ZZGEARBETAZZ doubles in the hand sizes";
+  const act = [{ user: "Probe Climber", date: "2026-06-01", gearBeta: GB }];
+  for (const [d, tab] of [["trad", "overview"], ["sport", "overview"], ["toprope", "overview"], ["aid", "overview"], ["alpine", "planner"]]) {
+    const t = text(render({ ...bare(d, "5.9"), activity: act }, tab));
+    const n = t.split("ZZGEARBETAZZ").length - 1;
+    if (!/RACK/.test(t)) fail(`ANCHOR LOST: a bare ${d} route renders no RACK card on ${tab} — this check read nothing`);
+    else if (n === 0) fail(`gear beta: a ${d} climber's logged gear beta reaches no screen (rack card on ${tab})`);
+    else if (n > 1) fail(`gear beta: a ${d} climber's gear beta renders ${n} times on ${tab} — one fact, one box`);
+    else if (!/Rack beta/.test(t)) fail(`gear beta: on a ${d} route it renders, but not under the rack card's "Rack beta"`);
+    else ok(`gear beta: a ${d} route shows a climber's gear beta once, under the rack (${tab})`);
+  }
+  const tb = text(render({ ...bare("bouldering", "V4"), activity: act }, "overview"));
+  if (tb.includes("ZZGEARBETAZZ")) fail("gear beta: a boulder problem renders gear beta — the log form never asks for it there");
+  else ok("gear beta: not on a boulder problem");
 }
 
 // 6. ROUTE FACTS — one set of guidebook facts on every crag discipline.
@@ -291,10 +325,10 @@ for (const d of [...CRAG, "alpine"]) {
 //    as "Not on file yet" with an "Add what you know" link — a placeholder for climbers to fill, never
 //    an "unknown" that reads as a fact, and never a value the route does not have. Facts the
 //    discipline does not have (bolts on a boulder, landing on a sport line) and facts that are not
-//    a discipline question (Quality, Also called, Variations, FFA/FWA, Sun, Descent) stay absent.
+//    a discipline question (Star rating, Also called, Variations, FFA/FWA, Sun, Descent) stay absent.
 //    Still: no "Season TBD", and a crag route's breakdown/climate render on Overview.
 {
-  const FACT_LABELS = ["Quality", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent", "Sun", "Wet", "Rock quality", "Fixed gear"];
+  const FACT_LABELS = ["Star rating", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent", "Sun", "Wet", "Rock quality", "Fixed gear"];
   const segs = (h) => h.replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, "\n").split("\n").map((x) => x.trim()).filter(Boolean);
   for (const d of CRAG) {
     const html = cache.get(d + "/overview") || render(bare(d, "5.9"), "overview");
@@ -311,7 +345,13 @@ for (const d of [...CRAG, "alpine"]) {
     const stray = FACT_LABELS.filter((l) => !(WANT || []).includes(l) && sg.includes(l));
     if (missing.length) fail(`bare ${d} route: these discipline facts are not shown as "Not on file yet" placeholders: ${missing.join(", ")}`);
     else if (stray.length) fail(`bare ${d} route: ROUTE FACTS prints rows that are not this discipline's facts and have no value (${stray.join(", ")})`);
-    else if (!t.includes("Add what you know")) fail(`bare ${d} route: placeholders render with no link to fill them`);
+    // Since 2026-10-15 each placeholder sits in its own section (WHERE IT STARTS — renamed from LOCATION 2026-10-21 and moved above BASE OF THE CLIMB —, GEAR & SAFETY, CONDITIONS) and
+    // carries its OWN "+ Add" — the page-wide "Add what you know" text also belongs to other cards, so
+    // finding it proved nothing. The control must be the segment right after the placeholder.
+    else if ((WANT || []).some((l) => sg[sg.indexOf(l) + 2] !== "+ Add")) fail(`bare ${d} route: a "Not on file yet" placeholder has no + Add beside it`);
+    else if (!["WHERE IT STARTS", "GEAR &amp; SAFETY", "CONDITIONS"].every((h) => sg.includes(h))) fail(`ANCHOR LOST: ${d} overview lacks a WHERE IT STARTS / GEAR & SAFETY / CONDITIONS section heading`);
+    else if ([["Location", "WHERE IT STARTS"], [d === "bouldering" ? "Landing" : "Anchor", "GEAR &amp; SAFETY"], ["Rock quality", "CONDITIONS"]].some(([l, h]) => sg.indexOf(l) < sg.indexOf(h)))
+      fail(`bare ${d} route: a fact renders outside its section (Location under WHERE IT STARTS, Anchor under GEAR & SAFETY, Rock quality under CONDITIONS)`);
     else ok(`bare ${d} route: every ${d} fact shows as a fillable "Not on file yet" placeholder, and nothing else`);
     if (t.includes("Season TBD")) fail(`bare ${d} route: header strap says "Season TBD" — a crag route states a season only when it has one`);
   }
@@ -320,7 +360,7 @@ for (const d of [...CRAG, "alpine"]) {
       altNames: ["ZZALTNAMEZZ"], variations: ["ZZVARIATIONZZ 5.11a"], fa: "A. Climber 1970", ffa: "B. Free 1980", fwa: "C. Winter 1990" };
     const html = render(r, "overview");
     const t = text(html), sg = segs(html);
-    const want = ["Quality", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"].filter((l) => !sg.includes(l));
+    const want = ["Star rating", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"].filter((l) => !sg.includes(l));
     if (want.length) fail(`enriched ${d} route: ROUTE FACTS is missing ${want.join(", ")}`);
     else if (!t.includes("★★★☆") || !t.includes("ZZALTNAMEZZ") || !t.includes("ZZVARIATIONZZ 5.11a") || !t.includes("SW-facing") || !t.includes("B. Free 1980") || !t.includes("C. Winter 1990"))
       fail(`enriched ${d} route: a ROUTE FACTS label rendered without its value`);

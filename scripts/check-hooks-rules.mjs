@@ -66,7 +66,7 @@ function scan() {
     const abs = path.join(ROOT, rel);
     let ast;
     try {
-      ast = parse(fs.readFileSync(abs, "utf8"), { sourceType: "module", plugins: ["jsx"] });
+      ast = parse(fs.readFileSync(abs, "utf8"), { sourceType: "module", plugins: ["jsx", "typescript"] });
     } catch (e) {
       console.error(`\n  Could not parse ${rel}: ${e.message}\n`);
       process.exit(1);

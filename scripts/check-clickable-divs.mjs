@@ -61,7 +61,7 @@ const NATIVE = new Set(["button", "a", "input", "select", "textarea", "summary",
 
 const KEY_HANDLERS = ["onKeyDown", "onKeyUp", "onKeyPress"];
 
-const files = appSources(ROOT, "check:clickable").filter((f) => f.endsWith(".jsx"));
+const files = appSources(ROOT, "check:clickable").filter((f) => /\.[jt]sx$/.test(f));
 
 const offenders = [];
 let candidates = 0;
@@ -69,7 +69,7 @@ let candidates = 0;
 for (const rel of files) {
   const src = fs.readFileSync(path.join(ROOT, rel), "utf8");
   let ast;
-  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); }
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
   catch (e) { console.error(`\ncheck:clickable FAILED — could not parse ${rel}: ${e.message}\n`); process.exit(1); }
 
   traverse(ast, {

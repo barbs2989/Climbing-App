@@ -123,7 +123,8 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
 import { dbRouteToCamel } from ${JSON.stringify(path.join(ROOT, "lib/db.js"))};
-import { enrichRoute, AspectSunPanel, EmergencyRescueCard, C, ActionIcon, MOUNTAINS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import { enrichRoute, AspectSunPanel, EmergencyRescueCard, C, MOUNTAINS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import ActionIcon from ${JSON.stringify(path.join(ROOT, "src/components/ActionIcon.tsx"))};
 import { SeasonalGuidancePanel, CrowdsPanel, PartnerRequirementsPanel } from ${JSON.stringify(path.join(ROOT, "EnrichmentPanels.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
@@ -304,7 +305,7 @@ async function rowWith(col) {
 }
 
 // Two bases, because whole sections are discipline-gated: RouteGearCheck (and the essentials
-// box it owns) render only when cragOnly is true, and the Plan/Safety tabs behave differently
+// box it owns) render only when cragOnly is FALSE, CragRack only when it is true, and the Plan/Safety tabs behave differently
 // either side of that line. Probing alpine alone reported crag-only sections as dead — the
 // same blind spot that let #655 hide the crag safety advice.
 const BASES = {

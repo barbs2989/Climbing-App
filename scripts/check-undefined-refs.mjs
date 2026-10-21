@@ -77,7 +77,7 @@ function scan() {
     const code = fs.readFileSync(abs, "utf8");
     let ast;
     try {
-      ast = parse(code, { sourceType: "module", plugins: ["jsx"] });
+      ast = parse(code, { sourceType: "module", plugins: ["jsx", "typescript"] });
     } catch (e) {
       console.error(`\n  Could not parse ${rel}: ${e.message}\n`);
       process.exit(1);
@@ -86,6 +86,16 @@ function scan() {
       ReferencedIdentifier(p) {
         const name = p.node.name;
         if (GLOBALS.has(name)) return;
+        // A name inside a TypeScript TYPE (`Record<K, V>`, `: RiskBadgeProps`) is erased before
+        // anything runs, so it can never be a ReferenceError; whether it resolves is check:types'
+        // question. Only type positions are skipped: `x as T` and `x!` wrap a VALUE, and a bare
+        // identifier inside them is still a runtime read that must be bound.
+        let anc = p.parentPath, inType = false;
+        while (anc && anc.type.startsWith("TS")) {
+          if (!/^TS(As|Satisfies|NonNull|TypeAssertion|Instantiation)/.test(anc.type)) { inType = true; break; }
+          anc = anc.parentPath;
+        }
+        if (inType) return;
         // `arguments` is bound inside every non-arrow function but has no Babel binding,
         // so it reads as undefined. Not added to GLOBALS: inside an ARROW function it
         // really is unbound, and that is a genuine bug worth keeping catchable.

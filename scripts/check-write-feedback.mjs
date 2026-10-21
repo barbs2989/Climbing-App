@@ -51,7 +51,7 @@ const walk = (dir, out = []) => {
     // otherwise kill this walk — the guards now run concurrently.
     const p = path.join(dir, name);
     if (fs.statSync(p).isDirectory()) walk(p, out);
-    else if (/\.jsx?$/.test(name)) out.push(p);
+    else if (/\.[jt]sx?$/.test(name)) out.push(p);
   }
   return out;
 };
@@ -85,7 +85,7 @@ const findings = [];
 for (const file of assertCovered(walk(ROOT), ROOT, "check:writes")) {
   const src = fs.readFileSync(file, "utf8");
   let ast;
-  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: true }); }
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: true }); }
   catch { continue; }
 
   traverse(ast, {

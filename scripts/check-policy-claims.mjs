@@ -496,7 +496,7 @@ if (fpDistinct.length < 2) dead(`only ${fpDistinct.length} distinctive key(s) pa
 
 const parseComments = (src, label) => {
   let ast;
-  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: false }); }
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: false }); }
   catch (e) { dead(`could not parse ${label} for the renderer test: ${e.message}`); }
   const cs = ast.comments || [];
   if (cs.length < 50) dead(`${label} reported only ${cs.length} comments — a broken parse, not a terse file, and masking nothing would let this section's own documentation decide the verdict`);

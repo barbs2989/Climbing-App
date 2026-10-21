@@ -367,6 +367,50 @@ export async function durableFixture(log) {
   }
   log(`  created this run's invite crew ${inviteCrew.id.slice(0, 8)}, owned by the mate, owner INVITED and not confirmed`);
 
+  // AN AREA CREW TOO (0302): a crag session bound to a crag, not a route, so the walks prove the
+  // second shape renders — the invite card names the crag, the Crew tab lists it, nothing prints
+  // "undefined". Same owner, same seating, same 45-minute sweep (by area_id, since it has no route).
+  const AREA_CREW_AREA_ID = "wa_world_wall"; // World Wall, Little Si — a crag that is in the live catalog
+  const staleAreaCrews = await asUser(mateSession,
+    `crews?select=id&created_by=eq.${mateSession.user.id}` +
+    `&area_id=eq.${AREA_CREW_AREA_ID}&created_at=lt.${staleBefore}`);
+  const staleAreaCrewRows = Array.isArray(staleAreaCrews.json) ? staleAreaCrews.json : [];
+  let sweptAreaCrews = 0;
+  for (const c of staleAreaCrewRows) {
+    const d = await asUser(mateSession, `crews?id=eq.${c.id}`, { method: "DELETE" });
+    if (d.status < 300) sweptAreaCrews++;
+  }
+  if (staleAreaCrewRows.length) log(`  swept ${sweptAreaCrews}/${staleAreaCrewRows.length} fixture AREA crew(s) left by earlier runs (older than 45 min)`);
+  const mkArea = await asUser(mateSession, "crews", {
+    method: "POST",
+    body: JSON.stringify({
+      created_by: mateSession.user.id, route_id: null, area_id: AREA_CREW_AREA_ID, discipline: "sport",
+      dates: ["2026-10-05"], meet_place: "Lower lot", meet_time: "09:00", cap: 3,
+    }),
+  });
+  assertHealthy(mkArea, "creating this run's area crew");
+  const areaCrew = mkArea.json?.[0];
+  if (!areaCrew?.id) throw new Error(`could not create this run's area crew (HTTP ${mkArea.status}): ${(mkArea.text || "").slice(0, 200)}`);
+  // Both CONFIRMED, so the session renders as a crew CARD on the Crews view — the surface that prints
+  // the place name, the Session steps and the roster — rather than as an invite under Requests.
+  // The creator can seat another climber only as INVITED ("Only the climber themselves can accept a
+  // crew invite", 0086/0227 — the first draft seated the owner confirmed and CI answered 403), so the
+  // mate invites and the OWNER accepts, which is exactly the app's own flow.
+  for (const [uid, status] of [[mateSession.user.id, "confirmed"], [session.user.id, "invited"]]) {
+    const seat = await asUser(mateSession, "crew_members", {
+      method: "POST",
+      body: JSON.stringify({ crew_id: areaCrew.id, user_id: uid, status, invited_by: mateSession.user.id }),
+    });
+    assertHealthy(seat, `seating ${status} member in this run's area crew`);
+    if (seat.status >= 300) throw new Error(`could not seat the ${status} member in the area crew (HTTP ${seat.status}): ${(seat.text || "").slice(0, 200)}`);
+  }
+  const accept = await asUser(session, `crew_members?crew_id=eq.${areaCrew.id}&user_id=eq.${session.user.id}`, {
+    method: "PATCH", body: JSON.stringify({ status: "confirmed" }),
+  });
+  assertHealthy(accept, "the owner accepting this run's area crew invite");
+  if (accept.status >= 300 || !Array.isArray(accept.json) || accept.json.length !== 1) throw new Error(`the owner could not accept the area crew invite (HTTP ${accept.status}): ${(accept.text || "").slice(0, 200)}`);
+  log(`  created this run's AREA crew ${areaCrew.id.slice(0, 8)} at ${AREA_CREW_AREA_ID} (sport), owned by the mate; the owner accepted — both CONFIRMED`);
+
   return {
     owner: { id: session.user.id, email: ownerEmail, name: "CI Fixture Owner" },
     mate: { id: mateSession.user.id, email: mateEmail, name: mate.name, username: mate.username || null },
@@ -383,6 +427,8 @@ export async function durableFixture(log) {
     mateSession,
     group,
     inviteCrew,
+    // The AREA crew (0302): a crag session at World Wall the owner is invited to.
+    areaCrew: { id: areaCrew.id, areaId: AREA_CREW_AREA_ID, areaName: "World Wall", discipline: "sport" },
     session,
     // The accounts stay; this run's group and invite crew do not. Returning the names of rows
     // that could NOT be removed matches createFixture's contract, so a leak is reported rather
@@ -403,6 +449,12 @@ export async function durableFixture(log) {
       else {
         const left = await asUser(mateSession, `crews?id=eq.${inviteCrew.id}&select=id`);
         if (Array.isArray(left.json) && left.json.length) leaked.push(`invite crew ${inviteCrew.id} (still present after DELETE)`);
+      }
+      const da = await asUser(mateSession, `crews?id=eq.${areaCrew.id}`, { method: "DELETE" });
+      if (da.status >= 300) leaked.push(`area crew ${areaCrew.id} (HTTP ${da.status})`);
+      else {
+        const left = await asUser(mateSession, `crews?id=eq.${areaCrew.id}&select=id`);
+        if (Array.isArray(left.json) && left.json.length) leaked.push(`area crew ${areaCrew.id} (still present after DELETE)`);
       }
       return leaked;
     },

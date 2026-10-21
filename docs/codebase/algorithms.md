@@ -4,10 +4,20 @@ Moved verbatim from `CLAUDE.md`, which keeps a one-paragraph summary of the rule
 Read this before doing the kind of work it describes. Where the text says "this file" it means the
 project documentation as a whole — `CLAUDE.md`, `docs/codebase/` and `docs/guards/`.
 
-- `compat(a, b)` (~L335) — partner compatibility score (20–99) from shared disciplines, grade closeness, shared objectives, verification, pace (`hikingSpeedFtHr`), and availability overlap. Every term is BOUNDED and the total is RESCALED onto that range; it does not clamp.
+- `compat(a, b)` (~L335) — partner compatibility score (20–99) from shared disciplines, grade closeness, shared objectives, **shared listed areas** (`partnerAreaPaths`, 0300), verification, pace (`hikingSpeedFtHr`), and availability overlap. Every term is BOUNDED and the total is RESCALED onto that range; it does not clamp.
+  - **LISTED AREAS (2026-10-15, 0300).** Crag partners are found by area, so a yes/no term `CMAX_AREA=14`
+    (the weight of ONE shared objective, deliberately — one shared crag is one shared climb's worth of
+    "we climb in the same place") fires when any of a's listed-area paths is b's, or sits inside it, or
+    contains it (`areaPathsOverlap`, the client form of the ltree `<@`/`@>` reach). In the same change
+    **crag-route objectives LEFT the objectives term**: callers pass `ME.matchObjectiveIds` (a route that
+    is not crag-family, or that climbs a peak) and real rows get `useMatchObjectivesOfUsers`, so two
+    climbers who saved the same sport route no longer score for it — their shared crag does instead.
+    `compatUnknown` treats objectives-or-areas as ONE "where you climb" signal, so a crag climber with
+    listed areas and no alpine objective is not "unknown". `check:match-percent` demands the new term
+    moves the number and names it in the copy ("shared objectives and listed areas").
   - **IT SATURATES, AND THE SCREEN'S OWN COPY IS FALSE EXACTLY WHERE THE SEARCH POINTS YOU.**
     Partners says *"Match % blends your shared objectives, grade range, disciplines, availability
-    overlap and verified trust"* — and the demo walk shows three climbers at **5.10a, 5.11a and
+    overlap and whether they are verified"* — and the demo walk shows three climbers at **5.10a, 5.11a and
     5.12b all reading 99%**. Measured with `scripts/oneoff/measure-compat-saturation.mjs`
     (report-only, no DB, no browser): **11 of 20 ordered seed pairs (55%) sit on the 99 ceiling**,
     the highest uncapped score is **157**, and **3 of the 5** climbers on the demo's My-Objectives
@@ -47,7 +57,7 @@ project documentation as a whole — `CLAUDE.md`, `docs/codebase/` and `docs/gua
     every pair**, so it stays a live check that the design measured is the design running.
   - **THE FIX MADE THE EXISTING COPY TRUE RATHER THAN NEEDING NEW COPY.** Three surfaces (the
     glossary, the Partners explainer and the score tooltip) already said the number *"blends your
-    shared objectives, grade range, disciplines, availability overlap and verified trust"*. That
+    shared objectives, grade range, disciplines, availability overlap and whether they are verified"*. That
     sentence was false while the blend was swamped and is now accurate — and `check:match-percent`
     ties it to behaviour so it cannot drift again.
   - The script **lifts `compat()` from source with a fail-closed `ANCHOR LOST`** rather than

@@ -57,21 +57,34 @@ export const COUNT_GROUPS = [
       // one snapshot that carries the defect this guard exists for.
       { screen: "Logbook", label: "N climbs to go", section: [/MY OBJECTIVES/i, /CUSTOM LISTS/i],
         re: /(\d+)\s+climbs?\s+to\s+go\b/i },
-      { screen: "Profile", label: "N active",       re: /My objectives\s*\n\s*(\d+)\s+active\b/i },
+      // "My objectives · N active" sits in Your Logbook, on the Profile screen's ACTIVITY tab since the
+      // screen split into Profile · Activity · Review; check:ui captures that tab as "Profile:Activity".
+      { screen: "Profile:Activity", label: "N active",       re: /My objectives\s*\n\s*(\d+)\s+active\b/i },
     ],
     // Only the pair that answers the SAME question is required equal.
-    equal: ["Logbook", "Profile"],
-    atLeast: [["Home", "Profile"]],
+    equal: ["Logbook", "Profile:Activity"],
+    atLeast: [["Home", "Profile:Activity"]],
   },
   {
     name: "friends",
     reads: [
-      { screen: "Crew:Friends", label: "Friends badge", re: /\bFriends\s*\n?\s*(\d+)\b/i },
       // The link reads "See all friends (N) →" since it moved into the Crew tab's headline box (#1881).
       { screen: "Crew:Friends", label: "See all (N)",   re: /See all (?:friends )?\((\d+)\)/i },
+      // THE ROWS UNDER IT, counted -- one "Message" button per friend row, between that link and
+      // "Find more friends →". This used to be a "Friends badge" read, /Friends\s*\n?\s*(\d+)/,
+      // written (#1227) when the box carried a count beside its title. #1881 removed that badge and
+      // the read did NOT go unmeasured: it matched "Friends" (the ← Crews row's repeated title)
+      // followed by "2 online now", and compared the ONLINE count with the friend count for weeks,
+      // agreeing only because every fixture friend is online. #2430 dropped the repeated title and
+      // the read finally found nothing. The list is the second statement of the count, so it is the
+      // honest comparison -- the online chip is a different question.
+      { screen: "Crew:Friends", label: "friend rows listed", section: [/See all (?:friends )?\(\d+\)/i, /Find more friends/i],
+        re: /^Message$/gm, count: true },
     ],
-    equal: ["Crew:Friends", "Crew:Friends"],   // both reads are on one screen; compared pairwise below
     sameScreenPair: true,
+    // The list draws the first FIVE friends (`.slice(0,5)` in ClimbMatch.jsx) and "See all" opens
+    // the rest, so the rows equal the count only up to five.
+    listCap: 5,
   },
 ];
 
@@ -79,7 +92,13 @@ export const COUNT_GROUPS = [
 export function checkScreenCounts(screens) {
   const out = [];
   for (const g of COUNT_GROUPS) {
-    const got = g.reads.map(r => ({ ...r, value: num(r.section ? sectionOf(screens[r.screen], r.section) : screens[r.screen], r.re) }));
+    const got = g.reads.map(r => {
+      const text = r.section ? sectionOf(screens[r.screen], r.section) : screens[r.screen];
+      // A `count` read is HOW MANY times `re` matches. A section that is not there is absent, not
+      // zero rows -- otherwise a moved heading would read as an empty list and "disagree".
+      if (r.count) return { ...r, value: text ? (String(text).match(r.re) || []).length : null };
+      return { ...r, value: num(text, r.re) };
+    });
     const readable = got.filter(x => x.value != null);
     if (readable.length < 2) {
       out.push({ group: g.name, kind: "unmeasured",
@@ -90,9 +109,11 @@ export function checkScreenCounts(screens) {
     }
     if (g.sameScreenPair) {
       const [a, b] = readable;
-      if (a.value !== b.value)
+      const cap = v => g.listCap ? Math.min(v, g.listCap) : v;
+      if (cap(a.value) !== cap(b.value))
         out.push({ group: g.name, kind: "disagree",
-          msg: `${a.screen} says ${a.label}=${a.value} and ${b.label}=${b.value} on the same screen` });
+          msg: `${a.screen} says ${a.label}=${a.value} and ${b.label}=${b.value} on the same screen` +
+               (g.listCap ? ` (the list shows up to ${g.listCap})` : "") });
       continue;
     }
     const byScreen = Object.fromEntries(got.map(x => [x.screen, x]));

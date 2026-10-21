@@ -22,7 +22,7 @@ for (const p of [BEFORE, AFTER]) if (!existsSync(p)) {
 }
 const before = JSON.parse(readFileSync(BEFORE, "utf8"));
 const after = JSON.parse(readFileSync(AFTER, "utf8"));
-if (!after.Logbook || !after.Profile) { console.error("the AFTER snapshot lacks Logbook/Profile — wrong file?"); process.exit(1); }
+if (!after.Logbook || !after["Profile:Activity"]) { console.error("the AFTER snapshot lacks Logbook/Profile:Activity — wrong file?"); process.exit(1); }
 
 const clone = o => JSON.parse(JSON.stringify(o));
 const run = s => checkScreenCounts(s);
@@ -45,7 +45,7 @@ const CASES = [
     want: r => r.some(x => x.kind === "unmeasured" && x.group === "objectives") },
 
   { name: "a screen was never captured -> NOT COMPARED, never silent",
-    build: () => { const s = clone(after); delete s.Profile; return s; },
+    build: () => { const s = clone(after); delete s["Profile:Activity"]; return s; },
     want: r => r.some(x => x.kind === "unmeasured" && x.group === "objectives") },
 
   { name: "a total smaller than its own unfinished part",
@@ -53,7 +53,7 @@ const CASES = [
     want: r => r.some(x => x.kind === "disagree" && /LESS than/.test(x.msg)) },
 
   { name: "two counts of the friends list disagreeing on one screen",
-    build: () => { const s = clone(after); s["Crew:Friends"] = s["Crew:Friends"].replace("See all (2)", "See all (5)"); return s; },
+    build: () => { const s = clone(after); s["Crew:Friends"] = s["Crew:Friends"].replace("See all friends (2)", "See all friends (5)"); return s; },
     want: r => r.some(x => x.group === "friends" && x.kind === "disagree") },
 ];
 

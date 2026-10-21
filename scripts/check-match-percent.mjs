@@ -48,7 +48,7 @@ const stripped = src.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:])\/\/[^\n
 // ---- 1. THE CEILING MUST NOT BE A LITERAL, AND THE MAXIMUM MUST BE DERIVED.
 // This is the half that stops the defect returning by a different route: the old code held the
 // weights in one place and the ceiling in another, so adding a term drifted them apart silently.
-const DERIVED = /COMPAT_MAX\s*=\s*COMPAT_BASE\s*\+\s*CMAX_DISC\s*\+\s*CMAX_GRADE\s*\+\s*CMAX_OBJ\s*\+\s*CMAX_VERIF\s*\+\s*CMAX_PACE\s*\+\s*CMAX_AVAIL/;
+const DERIVED = /COMPAT_MAX\s*=\s*COMPAT_BASE\s*\+\s*CMAX_DISC\s*\+\s*CMAX_GRADE\s*\+\s*CMAX_OBJ\s*\+\s*CMAX_VERIF\s*\+\s*CMAX_PACE\s*\+\s*CMAX_AVAIL\s*\+\s*CMAX_AREA/;
 if (DERIVED.test(stripped)) ok("COMPAT_MAX is derived by summing the term maxima, not written down");
 else fail("COMPAT_MAX is not derived from the CMAX_* constants — a new term can drift from the ceiling silently");
 
@@ -74,7 +74,7 @@ const out = path.join(outdir, "b.cjs");
 const CORE = JSON.stringify(corePath);
 await build({
   stdin: {
-    contents: `export { compat, compatUnknown, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_OBJ, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
+    contents: `export { compat, compatUnknown, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_OBJ, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_AREA, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
     resolveDir: ROOT, loader: "js",
   },
   bundle: true, format: "cjs", platform: "node", jsx: "automatic",
@@ -82,21 +82,22 @@ await build({
   outfile: out, logLevel: "error",
 });
 const M = require_(out);
-for (const k of ["compat", "compatUnknown", "CMAX_DISC", "CMAX_GRADE", "CMAX_OBJ", "CMAX_VERIF", "CMAX_PACE", "CMAX_AVAIL", "COMPAT_BASE", "COMPAT_TOP", "COMPAT_MAX"]) {
+for (const k of ["compat", "compatUnknown", "CMAX_DISC", "CMAX_GRADE", "CMAX_OBJ", "CMAX_VERIF", "CMAX_PACE", "CMAX_AVAIL", "CMAX_AREA", "COMPAT_BASE", "COMPAT_TOP", "COMPAT_MAX"]) {
   if (M[k] === undefined) dead(`core does not export ${k} — this guard cannot judge the formula`);
 }
 const { compat, CLIMBERS, ME, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } = M;
 if (!Array.isArray(CLIMBERS) || CLIMBERS.length < 4) dead(`only ${CLIMBERS && CLIMBERS.length} seed climbers — the population is too thin to judge saturation`);
 
 // ---- 2. THE ARITHMETIC REACHES BOTH ENDS OF THE DISPLAYED RANGE.
-const summed = COMPAT_BASE + M.CMAX_DISC + M.CMAX_GRADE + M.CMAX_OBJ + M.CMAX_VERIF + M.CMAX_PACE + M.CMAX_AVAIL;
+const summed = COMPAT_BASE + M.CMAX_DISC + M.CMAX_GRADE + M.CMAX_OBJ + M.CMAX_VERIF + M.CMAX_PACE + M.CMAX_AVAIL + M.CMAX_AREA;
 if (COMPAT_MAX === summed) ok(`COMPAT_MAX (${COMPAT_MAX}) equals the sum of the term maxima`);
 else fail(`COMPAT_MAX is ${COMPAT_MAX} but the term maxima sum to ${summed} — a term is unaccounted for`);
 
 // A pair that maxes every signal. If a future term is added and left OUT of COMPAT_MAX, this
 // overshoots and the result clamps below its own maximum, which this catches.
 const DISCS = ["sport", "trad", "alpine"];
-const maxA = { name: "maxA", disciplines: DISCS, sportGrade: "5.11a", objectiveIds: ["o1", "o2", "o3"], verified: true, hikingSpeedFtHr: 1000, availability: ["sat", "sun"] };
+// LISTED AREAS (0300): dotted ltree paths; a shared one, or one inside the other, is the yes of a yes/no term.
+const maxA = { name: "maxA", disciplines: DISCS, sportGrade: "5.11a", objectiveIds: ["o1", "o2", "o3"], verified: true, hikingSpeedFtHr: 1000, availability: ["sat", "sun"], partnerAreaPaths: ["usa.utah.ut_wasatch_range.ut_little_cottonwood_canyon"] };
 const maxB = { ...maxA, name: "maxB" };
 const topScore = compat(maxA, maxB);
 if (topScore === COMPAT_TOP) ok(`a pair that maxes every signal scores exactly ${COMPAT_TOP}`);
@@ -104,8 +105,8 @@ else fail(`a maximal pair scores ${topScore}, not ${COMPAT_TOP} — the top of t
 
 // A pair that shares nothing. Every term at its floor must land on the base, or the displayed
 // range is narrower than it claims.
-const minA = { name: "minA", disciplines: ["sport"], sportGrade: "5.6", objectiveIds: ["a"], verified: false, hikingSpeedFtHr: 400, availability: ["mon"] };
-const minB = { name: "minB", disciplines: ["ice"], sportGrade: "5.14a", objectiveIds: ["z"], verified: false, hikingSpeedFtHr: 2000, availability: ["tue"] };
+const minA = { name: "minA", disciplines: ["sport"], sportGrade: "5.6", objectiveIds: ["a"], verified: false, hikingSpeedFtHr: 400, availability: ["mon"], partnerAreaPaths: ["usa.utah.ut_wasatch_range"] };
+const minB = { name: "minB", disciplines: ["ice"], sportGrade: "5.14a", objectiveIds: ["z"], verified: false, hikingSpeedFtHr: 2000, availability: ["tue"], partnerAreaPaths: ["usa.washington.wa_north_cascades"] };
 const botScore = compat(minA, minB);
 if (botScore === COMPAT_BASE) ok(`a pair that shares nothing scores exactly ${COMPAT_BASE}`);
 else fail(`a pair sharing nothing scores ${botScore}, not ${COMPAT_BASE}`);
@@ -128,12 +129,15 @@ else fail(`the pane shows only ${distinct} distinct values across ${CLIMBERS.len
 // ---- 4. EVERY SIGNAL THE SCREEN NAMES MUST MOVE THE NUMBER.
 // This is the invariant. It is deliberately NOT a check on any weight: a rebalance is allowed, a
 // signal that stops mattering is not.
-const base = { name: "base", disciplines: ["sport", "trad"], sportGrade: "5.11a", objectiveIds: ["o1", "o2"], verified: true, hikingSpeedFtHr: 1000, availability: ["sat", "sun"] };
+const base = { name: "base", disciplines: ["sport", "trad"], sportGrade: "5.11a", objectiveIds: ["o1", "o2"], verified: true, hikingSpeedFtHr: 1000, availability: ["sat", "sun"], partnerAreaPaths: ["usa.utah.ut_wasatch_range.ut_little_cottonwood_canyon.ut_hellgate_cliffs"] };
 const withoutSignal = {
   disciplines: { ...base, disciplines: ["ice"] },
   "grade range": { ...base, sportGrade: "5.6" },
   "shared objectives": { ...base, objectiveIds: ["zz"] },
-  "verified trust": { ...base, verified: false },
+  // Listed at a DIFFERENT state: no path is the other or inside it. (Listed at the canyon ABOVE the
+  // crag would still overlap — that is the two-way reach partners_in_area promises.)
+  "listed areas": { ...base, partnerAreaPaths: ["usa.washington.wa_north_cascades"] },
+  "verified": { ...base, verified: false },
   "availability overlap": { ...base, availability: ["wed"] },
   pace: { ...base, hikingSpeedFtHr: 300 },
 };
@@ -203,7 +207,8 @@ if (row.length < 400) dead(`RealClimberRow lifted only ${row.length} chars — e
 const candSrc = (row.match(/var _cand=\{([\s\S]*?)\};/) || [])[1];
 if (!candSrc) dead("ANCHOR LOST: _cand's object literal could not be lifted from RealClimberRow");
 // eslint-disable-next-line no-new-func
-const buildCand = new Function("p", "objIds", "verified", "return {" + candSrc + "};");
+// `listing` is the row's listed areas (0300); undefined here means "not read", exactly as the row sees it.
+const buildCand = new Function("p", "objIds", "verified", "listing", "return {" + candSrc + "};");
 const richRow = {
   id: "3f2a91cc-0000-4000-8000-000000000001", name: "Robin Belay", username: "robinb",
   show_name: true, resume_public: true, avatar: null, bio: "b", location: "Salt Lake City, UT",

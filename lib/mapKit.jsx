@@ -281,13 +281,16 @@ export function applyBaseLayer(map, tileRef, baseLayer) {
   // itself, which its BSD licence does not require), so the tile credit gets its own control,
   // once per map. Leaflet then shows the ACTIVE layer's credit and swaps it with the layer.
   if (!map.__cmCredit) map.__cmCredit = L.control.attribution({ prefix: false, position: "bottomright" }).addTo(map);
+  // BaseLayerToggle's row sits at top-left (top:10, ~38px tall), exactly where Leaflet puts its
+  // +/- by default: the + was hidden under the first layer button. Drop the zoom below the row.
+  if (map.zoomControl && !map.__cmZoomMoved) { map.__cmZoomMoved = true; try { map.zoomControl.getContainer().style.marginTop = "56px"; } catch (e) {} }
   if (tileRef.current) { try { map.removeLayer(tileRef.current); } catch (e) {} }
   tileRef.current = baseTileLayer(L, baseLayer).addTo(map);
   fitZoomToLayer(map, baseLayer);
 }
 
-// The satellite/topo/street button row — lifted verbatim from GPXMap, the one
-// map that already had this toggle. `snow` opts a map into the Snow layer, and `snowAt`
+// The street/satellite/topo button row — lifted verbatim from GPXMap, the one
+// map that already had this toggle. Street leads: it is the one a climber reads a town off. `snow` opts a map into the Snow layer, and `snowAt`
 // ({lat,lng}) is the point whose satellite passes it lists. Its stepper sits top-right under
 // the full-screen button (44px from top:10), so a map that puts its own controls there
 // (FireMap's zoom) leaves it off.
@@ -305,7 +308,7 @@ export function BaseLayerToggle({ baseLayer, setBaseLayer, C, snow, snowAt }) {
   const older = pick && pick.p && list ? list.find((x) => x.date < pick.date) : null;
   const newer = pick && pick.p && list ? list.filter((x) => x.date > pick.date).pop() : null;
   const cur = pick && pick.p && list ? list.find((x) => x.date === pick.date && x.p === pick.p) : null;
-  const opts = [["sat", "Satellite"], ["topo", "Topo"], ["street", "Street"]].concat(snow ? [["snow", "Snow"]] : []);
+  const opts = [["street", "Street"], ["sat", "Satellite"], ["topo", "Topo"]].concat(snow ? [["snow", "Snow"]] : []);
   const step = { width: 30, height: 30, borderRadius: 7, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 15, fontWeight: 800, lineHeight: 1, padding: 0, cursor: "pointer" };
   const off = { opacity: 0.35, cursor: "default" };
   // The climber's date preference, read from its store: this file is imported BY core, so it
@@ -443,14 +446,18 @@ export function acceptFix(cur, next) {
   return fixDistM(cur, next) > acc + cur.acc;
 }
 
+/**
+ * @param {import("react").MutableRefObject<any>} mapRef the Leaflet map, once built
+ * @param {{ C?: any, zoom?: number, onFix?: (fix: any, first: boolean) => void }} [opts]
+ */
 export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
   const [locating, setLocating] = useState(false);
   const [following, setFollowing] = useState(false);
   const [acc, setAcc] = useState(null);
   const [lost, setLost] = useState(false);
   const [err, setErr] = useState("");
-  const watchRef = useRef(null), curRef = useRef(null), autoRef = useRef(false);
-  const dotRef = useRef(null), ringRef = useRef(null), hookedRef = useRef(null), onFixRef = useRef(onFix);
+  const watchRef = useRef(null), curRef = useRef(null), autoRef = useRef(false), quietRef = useRef(false);
+  const dotRef = useRef(null), ringRef = useRef(null), hookedRef = useRef(null), onFixRef = useRef(onFix), centredRef = useRef(false);
   onFixRef.current = onFix;
   const stop = () => { if (watchRef.current != null) { try { navigator.geolocation.clearWatch(watchRef.current); } catch (e) {} watchRef.current = null; } };
   useEffect(() => stop, []);
@@ -467,25 +474,33 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
     if (hookedRef.current !== map) { hookedRef.current = map; dotRef.current = null; ringRef.current = null; map.on("dragstart", () => { autoRef.current = false; }); }
     const ll = [fix.lat, fix.lng], r = Number.isFinite(fix.acc) ? fix.acc : 50;
     if (dotRef.current) dotRef.current.setLatLng(ll);
-    else dotRef.current = L.circleMarker(ll, { radius: 7, color: "#ffffff", weight: 3, fillColor: C.green, fillOpacity: 1 }).addTo(map).bindTooltip("You are here", { direction: "top" });
+    // An HTML marker lifted above every other marker, not a circleMarker: vector shapes draw in the
+    // overlay pane UNDER all markers, so on the area map a cluster bubble over a city hid the dot.
+    else dotRef.current = L.marker(ll, { icon: L.divIcon({ html: "<div style='width:14px;height:14px;border-radius:50%;background:" + C.green + ";border:3px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,0.6);'></div>", className: "", iconSize: [20, 20], iconAnchor: [10, 10] }), zIndexOffset: 5000, keyboard: false }).addTo(map).bindTooltip("You are here", { direction: "top" });
     if (ringRef.current) ringRef.current.setLatLng(ll).setRadius(r);
     else ringRef.current = L.circle(ll, { radius: r, color: C.green, weight: 1, fillColor: C.green, fillOpacity: 0.12, interactive: false }).addTo(map);
     if (first) map.setView(ll, Math.max(map.getZoom(), zoom));
     else if (autoRef.current) map.panTo(ll, { animate: true });
   };
-  const locate = () => {
-    if (typeof navigator === "undefined" || !navigator.geolocation) { setErr("Location isn’t available on this device."); return; }
-    setErr("");
-    autoRef.current = true;
+  // `quiet` (from showDot) draws the dot and nothing else: no re-centre, no follow, no message,
+  // no button state. A climber who opened the map on Utah keeps Utah, and sees where they are on it.
+  const locate = (quiet) => {
+    quiet = quiet === true;
+    if (typeof navigator === "undefined" || !navigator.geolocation) { if (!quiet) setErr("Location isn’t available on this device."); return; }
     const map = mapRef.current;
+    if (!quiet) { setErr(""); autoRef.current = true; quietRef.current = false; }
     if (watchRef.current != null) {
-      // Already following: the button re-centres on the latest fix and resumes following.
+      if (quiet) return;
+      // Already watching: the button re-centres on the latest fix and resumes following.
       const c = curRef.current;
-      if (c && map) map.setView([c.lat, c.lng], Math.max(map.getZoom(), zoom));
+      if (c && map) {
+        map.setView([c.lat, c.lng], Math.max(map.getZoom(), zoom));
+        if (!centredRef.current) { centredRef.current = true; setFollowing(true); if (onFixRef.current) onFixRef.current(c, true); }
+      } else setLocating(true);
       return;
     }
-    setLocating(true);
-    let first = true;
+    quietRef.current = quiet;
+    if (!quiet) setLocating(true);
     watchRef.current = navigator.geolocation.watchPosition(
       (pos) => {
         const c = pos.coords || {};
@@ -494,14 +509,17 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
         setLost(false);
         if (!acceptFix(curRef.current, fix)) return;
         curRef.current = fix;
-        setLocating(false); setFollowing(true); setErr("");
+        const q = quietRef.current;
+        // The first fix after the button is pressed re-centres, even when a quiet watch started it.
+        const centre = !q && !centredRef.current;
+        if (!q) { setLocating(false); setFollowing(true); setErr(""); centredRef.current = true; }
         setAcc(Number.isFinite(fix.acc) ? fix.acc : null);
-        draw(fix, first);
-        if (onFixRef.current) onFixRef.current(fix, first);
-        first = false;
+        draw(fix, centre);
+        if (onFixRef.current && !q) onFixRef.current(fix, centre);
       },
       (e) => {
-        if (e && e.code === 1) { stop(); setLocating(false); setFollowing(false); setErr("Location permission is off for this site — allow it in your browser or device settings to see where you are."); return; }
+        if (quietRef.current) { if (e && e.code === 1) stop(); return; }
+        if (e && e.code === 1) { stop(); centredRef.current = false; setLocating(false); setFollowing(false); setErr("Location permission is off for this site — allow it in your browser or device settings to see where you are."); return; }
         // A timeout or a lost signal is not the end of a watch: it keeps trying.
         if (!curRef.current) setErr("Still looking for a GPS signal — step out from under trees or the wall.");
       },
@@ -511,7 +529,15 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
   // A view the climber asked for (Reset view, Fit all) must not be yanked back by the next fix.
   // The dot keeps moving; the button resumes following.
   const release = () => { autoRef.current = false; };
-  return { locate, release, locating, following, acc, lost, err };
+  // The dot without the ask: only when this site ALREADY has location permission, so opening a
+  // map never pops a permission prompt the climber did not request.
+  const showDot = () => {
+    try {
+      if (!navigator.permissions || !navigator.permissions.query) return;
+      navigator.permissions.query({ name: "geolocation" }).then((p) => { if (p && p.state === "granted") locate(true); }, () => {});
+    } catch (e) {}
+  };
+  return { locate: () => locate(false), showDot, release, locating, following, acc, lost, err };
 }
 // The locate button's words. Once following, the label IS the accuracy, in the climber's units, so
 // "a little off" is something the screen states rather than something you discover at the crag.
@@ -523,4 +549,24 @@ export function locateLabel(st, idle) {
   if (st.locating) return "Locating…";
   if (st.following) return st.lost ? "No GPS fix" : st.acc != null ? "±" + fmtFixAcc(st.acc) : idle;
   return idle;
+}
+
+// "Where is Moab?" -- a town, county, city, zip or Canadian postal code typed into a map, answered by
+// OpenStreetMap's place index. Run on submit only (its usage policy forbids per-keystroke
+// lookups). `bounds` ({minLat,maxLat,minLng,maxLng}) ranks places in the current view first, so
+// "Springdale" on a Utah map is the Zion one. Resolves to [] for no match; rejects on a failed read,
+// which the caller must say -- a network failure is not "no such place".
+export function searchPlaces(q, bounds) {
+  const t = String(q || "").trim();
+  if (!t) return Promise.resolve([]);
+  let url = "https://nominatim.openstreetmap.org/search?format=jsonv2&countrycodes=us,ca&limit=5&dedupe=1&" + (/^\d{5}$/.test(t) ? "postalcode=" : "q=") + encodeURIComponent(t);
+  if (bounds && Number.isFinite(bounds.minLat)) url += "&viewbox=" + [bounds.minLng, bounds.maxLat, bounds.maxLng, bounds.minLat].map((n) => n.toFixed(4)).join(",");
+  return fetch(url, { headers: { Accept: "application/json" } }).then((r) => {
+    if (!r.ok) throw new Error("place search " + r.status);
+    return r.json();
+  }).then((rows) => (Array.isArray(rows) ? rows : []).map((r) => {
+    const parts = String(r.display_name || "").split(", ").filter((x) => x !== "United States" && x !== "Canada");
+    const bb = (r.boundingbox || []).map(Number);
+    return { name: parts[0] || t, sub: parts.slice(1).filter((x) => !/^(\d{5}|[A-Z]\d[A-Z] ?\d[A-Z]\d)$/i.test(x)).join(", "), lat: Number(r.lat), lng: Number(r.lon), bbox: bb.length === 4 && bb.every(Number.isFinite) ? [[bb[0], bb[2]], [bb[1], bb[3]]] : null };
+  }).filter((p) => Number.isFinite(p.lat) && Number.isFinite(p.lng)));
 }

@@ -4,14 +4,16 @@ import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
 import { useRouteSearch } from "./db";
 import { useState } from "react";
-import { ActionIcon, C, DiscBadges, ME, ROUTES, SKILLS, SKILL_GROUPS, VOUCH_RATINGS, VOUCH_RATINGS_RETIRED, areaPathNames, fuzzyMatchAny, mtnOf, shortDate } from "../ClimbMatchCore.jsx";
+import { C, ME, ROUTES, SKILLS, SKILL_GROUPS, VOUCH_RATINGS, VOUCH_RATINGS_RETIRED, areaPathNames, fuzzyMatchAny, mtnOf, shortDate } from "../ClimbMatchCore.jsx";
+import ActionIcon from "../src/components/ActionIcon.tsx";
+import DiscBadges from "../src/components/DiscBadges.tsx";
 import { POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
 
 /* `suggest` is the climber's OWN logbook, resolved to routes by App: [{route, date, together}], the
    climbs logged WITH this partner first. It is what makes the picker usable without typing -- the
    climb you did together is almost always one you logged -- and it is honest under USE_DB, where the
    seed ROUTES are never offered (see the comment on seedMs below). */
-export default function GiveVouch({friend,onClose,onSave,suggest,initial}){
+export default function GiveVouch({friend,onClose,onSave,suggest,initial,routeById}){
   // `initial` is the vouch you already gave this climber: the form opens on YOUR earlier answers, so editing a one-tap vouch adds to it rather than starting over.
   const [route,setRoute]=useState(initial&&initial.route&&initial.route!=="Climbed together"?{name:initial.route,sub:initial.date?"Vouched "+initial.date:""}:null);
   const [q,setQ]=useState("");
@@ -44,7 +46,7 @@ export default function GiveVouch({friend,onClose,onSave,suggest,initial}){
          objectives. Never the whole catalog, which is what an empty filter over ROUTES used to list. */
       var seen={},items=[];
       (suggest||[]).forEach(function(s){if(s&&s.route&&!seen[s.route.id]&&!(USE_DB&&ROUTES.some(function(x){return x.id===s.route.id;}))){seen[s.route.id]=1;items.push({r:s.route,logged:true,tag:s.together?("Logged with "+fn+(s.date?" "+shortDate(s.date):"")):("You logged"+(s.date?" "+shortDate(s.date):""))});}});
-      sh.forEach(function(id){var r=ROUTES.find(function(x){return x.id===id;});if(r&&!seen[r.id]){seen[r.id]=1;items.push({r:r,tag:"Shared objective"});}});
+      /* A shared objective resolves through routeById (catalog routes included), and under the DB an example-only climb is never offered -- the same rule as the logged list above. */sh.forEach(function(id){var r=routeById?routeById(id):ROUTES.find(function(x){return x.id===id;});if(r&&!seen[r.id]&&!(USE_DB&&ROUTES.some(function(x){return x.id===r.id;}))){seen[r.id]=1;items.push({r:r,tag:"Shared objective"});}});
       if(items.length)return <><div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,letterSpacing:0.4,margin:"2px 0 5px"}}>{/* the heading names the SOURCE: a partner with no climbs logged together falls back to shared objectives, which are not in your logbook */items.every(function(it){return it.logged;})?"FROM YOUR LOGBOOK":items.some(function(it){return it.logged;})?"SUGGESTED":"SHARED OBJECTIVES"}</div><div style={{maxHeight:208,overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderRadius:10}}>{items.slice(0,12).map(function(it,ix){return row(it.r,ix,it.tag);})}</div></>;
     }
     /* The seed ROUTES are the DEMO catalog. Under USE_DB they are climbs nobody can have done together, and this picker's choice is PERSISTED -- giveVouch stores the route NAME inside the reason blob -- so offering them writes a demo climb onto a real trust record about another climber. Even a search put them ahead of the real catalog. The DB search below is the only honest source there. */

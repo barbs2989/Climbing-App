@@ -5,11 +5,11 @@
 // just fetched on demand from Supabase instead of walking the in-memory
 // MOUNTAINS/ROUTES arrays, since the DB catalog (47k+ areas / 200k+ routes) is
 // far too large to hold in memory. Rendered only when USE_DB is on.
-import { useEffect, useMemo, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
+import { fetchArea, useArea, useAreaContributions, useAreaClimbStats, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb, usePartnerAreaCount, usePartnersInArea, savePartnerArea, removePartnerArea } from "./db";
 import { useRecentRouteIds } from "./recent";
-import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel } from "./mapKit";
+import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel, searchPlaces } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
 import { shortGrade, gradeNumFrom, displayGrade, gradeSystemForDiscipline } from "./grade";
@@ -18,6 +18,9 @@ import { subdivisionNoun, countryOfArea } from "./countries";
 import { effDistKm } from "./outing";
 import { POP_BACK, POP_CLOSE, POP_CLOSE_MEDIA, POP_REMOVE, POP_CHIP_X } from "./popupChrome.js";
 import { BTN, BTN_LG, BTN_SM, BTN_LINK, CHIP } from "./buttonStyles.js";
+import { ScreenHero } from "./ScreenHero";
+import { AboutCard, AreaFactsCard, ClimbsChart, GradeSpread, PendingAreaEdits } from "./AreaPageSections";
+import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_LINE, NO_PARKING_PIN_BUT_NOTE_LINE } from "./areaChrome";
 
 // Grade for a compact row. Two things happen inside displayGrade(): a qualifier carried inline
 // ("Class 3 (short 4th-class crux)") is dropped, and the route page's Composite Grade panel shows
@@ -27,8 +30,14 @@ import { BTN, BTN_LG, BTN_SM, BTN_LINK, CHIP } from "./buttonStyles.js";
 // every row carries one.
 function rowGrade(r) { return displayGrade(r) || "—"; }
 
-const HERO_BG = "linear-gradient(160deg,#0a0e16,#142a47)";
-const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07)";
+// THE CLIMBER, for the panels that personalise this browser. `wishlist`, `profile`,
+// `completedIds`, `rankSuggested` and `discSlots` come from App and are read only by
+// DbSuggestedClimbs and ObjectivesPanel — two and three components below the browser — so
+// DbAreaBrowser provides them once instead of AreaPage carrying five props it never reads.
+// Local to this file on purpose: everything app-wide is either the react-query cache or App's
+// own state (ARCHITECTURE.md).
+const ClimberCtx = createContext({ wishlist: [], profile: null, completedIds: new Set(), rankSuggested: () => [], discSlots: null });
+
 const ATYPE = { world: "World", country: "Country", state: "State", range: "Range", canyon: "Canyon", peak: "Peak", crag: "Crag", region: "Region", wall: "Wall" };
 const CHILD_NOUN = { crag: "Areas", peak: "Peaks", canyon: "Canyons", range: "Ranges", region: "Areas", wall: "Areas", state: "States", country: "Countries" };
 // These keys are sent verbatim to routes_in_subtree, which filters on the raw
@@ -53,13 +62,6 @@ const SL = ({ children, C }) => <div style={{ display: "flex", alignItems: "cent
 /* = core's CardHead (this module does not import core). Keep the two in step. */
 const CardHead = ({ children, C, style }) => <div role="heading" aria-level={3} style={Object.assign({ display: "flex", alignItems: "center", gap: 7, minWidth: 0, fontSize: 12, fontWeight: 800, color: C.text, letterSpacing: 0.5, textTransform: "uppercase" }, style)}><span aria-hidden="true" style={{ width: 3, height: 12, borderRadius: 2, background: C.blueSolid, flexShrink: 0 }} /><span style={{ minWidth: 0 }}>{children}</span></div>;
 const Pill = ({ label, color, bg, sm }) => <span style={{ background: bg, color, padding: sm ? "2px 7px" : "3px 10px", borderRadius: 20, fontSize: sm ? 11 : 12, fontWeight: 600, whiteSpace: "nowrap", display: "inline-flex", alignItems: "center", gap: 4 }}>{label}</span>;
-// Title only. It used to carry its own "← Back" too, directly under the sticky "Back to …" bar
-// that already sits above every panel — two Back buttons on one screen, doing the same thing.
-const titleRow = (title, C) => (
-  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
-    <span style={{ color: C.text, fontSize: 16, fontWeight: 700, borderLeft: "3px solid " + C.blue, paddingLeft: 9 }}>{title}</span>
-  </div>
-);
 
 // TOP CONTRIBUTORS used to be forked here — a second implementation of the panel that
 // ClimbMatchCore already owns. The fork is why the crag page rendered `c.contributor`, an auth
@@ -71,7 +73,10 @@ const titleRow = (title, C) => (
 
 function RouteRow({ r, onOpen, C, areaName }) {
   const stars = r.stars ? Math.round(r.stars) : 0;
-  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, r.sort_order != null ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
+  // The PITCH COUNT sits beside the discipline, as Mountain Project's lists write it ("Trad, 5 pitches"):
+  // the stored count, exactly as the route page's Pitches stat shows it. A boulder has no pitches.
+  const pitches = r.pitches > 0 && r.discipline !== "bouldering" ? r.pitches + " pitch" + (r.pitches !== 1 ? "es" : "") : null;
+  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, pitches, r.sort_order != null ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
   return (
     <div {...clickable(() => onOpen(r))} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", marginBottom: 8, background: C.card, border: "1px solid " + C.border, borderRadius: 11, cursor: "pointer" }}>
       <div style={{ flex: 1, minWidth: 0 }}>
@@ -90,8 +95,9 @@ function RouteRow({ r, onOpen, C, areaName }) {
 // — same layout/copy, but sourced from useScopedWishlistRoutes/useSubtreeRoutes
 // instead of the in-memory ROUTES array. `profile`/`completedIds`/`rankSuggested`
 // are computed once in App (grade/gain scoring lives in ClimbMatch.jsx, which
-// this file doesn't import — see its own header comment on why) and passed down.
-function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rankSuggested, discSlots, C }) {
+// this file doesn't import — see its own header comment on why) and read from ClimberCtx.
+function DbSuggestedClimbs({ area, onOpen, C }) {
+  const { profile, completedIds, wishlist, rankSuggested, discSlots } = useContext(ClimberCtx);
   // Collapsed until the climber opens it — the user's call (2026-09-30): the rows are one tap
   // away behind the "Suggested climbs · N" header, never spread across the area page by default.
   const [open, setOpen] = useState(false);
@@ -411,6 +417,42 @@ export function SummitBriefing({ area, routes, uElev, uDistMi, C }) {
   );
 }
 
+// ── GETTING THERE: drive & park, walk in, and the maps links — the area's own columns only ──
+function AreaGettingThere({ area, C, onEdit }) {
+  const note = area.parking_note && String(area.parking_note).trim();
+  const walk = area.approach && String(area.approach).trim();
+  const park = area.parking_lat != null && area.parking_lng != null && isFinite(Number(area.parking_lat)) && isFinite(Number(area.parking_lng)) ? { lat: Number(area.parking_lat), lng: Number(area.parking_lng) } : null;
+  const crag = area.lat != null && area.lng != null ? { lat: Number(area.lat), lng: Number(area.lng) } : null;
+  const dest = park || crag;
+  const lbl = { fontSize: 10.5, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
+  const linkSt = { flex: "1 1 0", display: "flex", alignItems: "center", justifyContent: "center", padding: "8px 10px", borderRadius: 8, border: "1px solid " + C.greenDim, background: C.greenBg, color: C.green, fontSize: 12.5, fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" };
+  const ll = dest ? dest.lat + "," + dest.lng : "";
+  const to = park ? "parking" : "crag";
+  return <div style={{ background: C.card, borderRadius: 12, padding: "12px 14px", border: "1px solid " + C.border, marginBottom: 14 }}>
+    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 8 }}><div role="heading" aria-level={3} style={{ fontSize: 12, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>Getting there</div>{onEdit ? <EditIconButton C={C} onClick={() => onEdit(note ? "approach" : "parking_note")} title={"Edit how to get to " + area.name} /> : null}</div>
+    {!note && !walk ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginBottom: dest ? 10 : 0 }}>{"No directions on file yet. Know the way in? "}{onEdit ? <button onClick={() => onEdit("parking_note")} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Add it</button> : "Add it"}{"."}</div> : null}
+    {note || park ? <div style={{ marginBottom: 10 }}>
+      <div style={lbl}>{"Drive & park" + (area.parking_name && area.parking_name !== "Trailhead" ? " · " + area.parking_name : "")}</div>
+      {note ? <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.55, marginBottom: park ? 6 : 0 }}>{note}</div> : null}
+      {park ? <CopyCoordButton lat={park.lat} lng={park.lng} what="parking" C={C} /> : null}
+    </div> : null}
+    {walk || area.approach_min ? <div style={{ marginBottom: 10 }}>
+      <div style={lbl}>{"Walk in" + (area.approach_min ? " · about " + area.approach_min + " min" : "")}</div>
+      {walk ? <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.55 }}>{walk}</div> : null}
+    </div> : null}
+    {dest ? <div>
+      <div style={lbl}>{park ? "Directions to parking" : "Directions"}</div>
+      {park ? null : <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 6 }}>{note ? NO_PARKING_PIN_BUT_NOTE_LINE : NO_PARKING_PIN_LINE}</div>}
+      {area.coords_approx ? <div style={{ fontSize: 11.5, color: C.amber, lineHeight: 1.45, marginBottom: 6 }}>Coordinates are approximate, so these are rough.</div> : null}
+      {/* The mount above is gated on ["crag", "peak", "wall"].includes(area.area_type) — a drive link is offered only where there is somewhere to park. */}
+      <div style={{ display: "flex", gap: 6 }}>
+        <a href={"https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + ll} target="_blank" rel="noopener noreferrer" aria-label={"Driving directions to the " + to + " in Google Maps" + (area.coords_approx ? " (approximate location)" : "")} style={linkSt}>Google Maps</a>
+        <a href={"https://maps.apple.com/?dirflg=d&daddr=" + ll} target="_blank" rel="noopener noreferrer" aria-label={"Driving directions to the " + to + " in Apple Maps" + (area.coords_approx ? " (approximate location)" : "")} style={linkSt}>Apple Maps</a>
+      </div>
+    </div> : null}
+  </div>;
+}
+
 // ── one area's own page: hero + save + View all/View map/Objectives + sub-areas ──
 // "Route finder" (it read "View all N routes" until the owner renamed it) opens the finder
 // unfiltered — the finder's own default state is every route in the subtree. There used to be a second "Route finder" button in
@@ -485,8 +527,96 @@ function NearbyPeaks({ area, onJumpToArea, C, uDistMi }) {
     </div>
   );
 }
-function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, wishlist, profile, completedIds, rankSuggested, discSlots , onAddClimb, TopContributors, onFireMap}) {
+// PARTNERS HERE (0300): who is listed as an available partner at this area, inside it, or across a wider
+// area that contains it — and the one-tap "List me here". Crag-family areas and their ancestors below the
+// state; NOT a peak (a peak's climbing is matched by route) and not a state (too broad to list from here;
+// the Partners tab's picker still allows it). The count and the rows are signed-in reads: the server
+// refuses a signed-out caller, so the card says "Sign in" rather than "nobody".
+const PARTNER_CARD_TYPES = ["region", "range", "canyon", "crag", "wall"];
+const CRAG_FAMILY = ["trad", "sport", "toprope", "aid", "bouldering"];
+function PartnersHereCard({ area, C, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, PartnerRow, notify, onStartCrew, onCrewsHere, openCrewCountAt }) {
+  // CREWS HERE (0302): a crag session is a crew bound to this area. Start one from the page you are on, or
+  // see the open ones in Join a crew → By Area, preset to this area.
+  const crewN = openCrewCountAt ? openCrewCountAt(area.id) : 0;
+  const on = !!uid;
+  const countQ = usePartnerAreaCount(area.id, on);
+  const rowsQ = usePartnersInArea(area.id, null, null, on, 3);
+  const [busy, setBusy] = useState(false);
+  const listed = !!(myListings || []).find((l) => l && l.areaId === area.id);
+  const count = countQ.data;
+  const rows = (rowsQ.data || []).filter((p) => p && p.id && String(p.id) !== String(uid));
+  const toggle = async () => {
+    if (!on || busy) return;
+    setBusy(true);
+    try {
+      if (listed) await removePartnerArea(uid, area.id);
+      else await savePartnerArea(uid, { areaId: area.id, disciplines: (area.disciplines || []).filter((d) => CRAG_FAMILY.includes(d)) });
+    } catch (e) { notify && notify((listed ? "Couldn’t remove your listing — " : "Couldn’t list you here — ") + ((e && e.message) || "try again")); }
+    finally { setBusy(false); }
+  };
+  const openAll = () => onFindPartnersInArea && onFindPartnersInArea({ id: area.id, name: area.name, areaType: area.area_type });
+  return (
+    <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 14, padding: "12px 13px", marginBottom: 14 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ fontSize: 13, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>Partners here</div>
+          <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{!on ? "Sign in to see who climbs here." : countQ.isError ? "Couldn’t load who’s listed." : count == null ? "Counting…" : count === 0 ? "Nobody listed here yet — be the first." : count + " climber" + (count === 1 ? "" : "s") + " listed here or nearby"}</div>
+        </div>
+        {on ? <button onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed at " + area.name + " — tap to remove" : "List me at " + area.name} style={{ flexShrink: 0, minHeight: 40, padding: "0 13px", borderRadius: 10, border: "1px solid " + (listed ? C.green : C.blueDim), background: listed ? C.greenBg : C.blueBg, color: listed ? C.green : C.blue, fontSize: 12.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Listed ✓" : "List me here"}</button> : null}
+      </div>
+      {/* Once listed, the follow-up — when you can climb here and what — is a real, full-width
+          control, not a bare word. It and "See all" used to spread `BTN_LINK` as an object; it is a
+          FUNCTION of C, so both rendered as the browser's default grey button: tiny, hard to see,
+          and the owner's first complaint about this card. */}
+      {on && listed && onListMe ? (
+        <button onClick={() => onListMe({ areaId: area.id, name: area.name, areaType: area.area_type, disciplines: (area.disciplines || []).filter((d) => CRAG_FAMILY.includes(d)) })} aria-label={"Add the dates and climbing types for your listing at " + area.name} style={{ width: "100%", boxSizing: "border-box", display: "flex", alignItems: "center", gap: 10, marginTop: 8, marginBottom: 4, padding: "10px 12px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, cursor: "pointer", textAlign: "left" }}>
+          <span aria-hidden="true" style={{ width: 32, height: 32, borderRadius: 9, background: C.blueBg, border: "1px solid " + C.blueDim, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={C.blue} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M16 3v4M8 3v4M3 11h18" /></svg>
+          </span>
+          <span style={{ flex: 1, minWidth: 0 }}>
+            <span style={{ display: "block", fontSize: 13.5, fontWeight: 800, color: C.text }}>Add dates or climbing types</span>
+            <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, marginTop: 2, lineHeight: 1.4 }}>When you can climb here, and what — so the right partners find you.</span>
+          </span>
+          <span aria-hidden="true" style={{ color: C.textMuted, fontSize: 17, flexShrink: 0 }}>›</span>
+        </button>
+      ) : null}
+      {on && rows.length && PartnerRow ? <div style={{ marginTop: 6 }}>{rows.map((p) => <PartnerRow key={p.id} p={p} onOpen={onViewProfile} />)}</div> : null}
+      {on && (count > 0 || rows.length) ? <button onClick={openAll} style={{ ...BTN_LINK(C), padding: "6px 0 0", fontSize: 12.5 }}>{"See all at " + area.name + " →"}</button> : null}
+      {onStartCrew || onCrewsHere ? <div style={{ display: "flex", gap: 8, marginTop: 10, paddingTop: 10, borderTop: "1px solid " + C.border }}>
+        {onStartCrew ? <button onClick={() => onStartCrew(area)} style={{ ...BTN, flex: 1, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue }}>Start a crew here</button> : null}
+        {onCrewsHere ? <button onClick={() => onCrewsHere(area)} style={{ ...BTN, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>{"Crews here" + (crewN ? " · " + crewN : "")}</button> : null}
+      </div> : null}
+    </div>
+  );
+}
+
+// The order a crag's own climb list can be read in (Mountain Project and theCrag: left to right as
+// on the wall, the default, or by name). `sort_order` is the left-to-right position; a climb with no
+// position stays LAST in both wall orders, by name, rather than being guessed into the line.
+const AREA_LIST_SORTS = [["lr", "Left → right"], ["rl", "Right → left"], ["az", "A → Z"], ["za", "Z → A"]];
+function sortAreaRoutes(routes, key) {
+  const byName = (a, b) => String(a.name || "").localeCompare(String(b.name || ""));
+  if (key === "az") return [...routes].sort(byName);
+  if (key === "za") return [...routes].sort((a, b) => byName(b, a));
+  const dir = key === "rl" ? -1 : 1;
+  return [...routes].sort((a, b) => Number(a.sort_order == null) - Number(b.sort_order == null) || (a.sort_order != null && b.sort_order != null ? dir * (a.sort_order - b.sort_order) : 0) || byName(a, b));
+}
+
+function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt}) {
   const [searchMode, setSearchMode] = useState("areas");
+  const [listSort, setListSort] = useState("lr");
+  // The row in the drill stack is a snapshot of a CHILD row read when its parent was opened. An
+  // agreed edit rewrites the areas row on the server (0304) and refreshes ["area", id] — so the
+  // page reads the live row over the snapshot, or a climber's own fill would never show.
+  const { data: liveArea } = useArea(areaRow.id);
+  const area = liveArea && liveArea.id === areaRow.id ? liveArea : areaRow;
+  const formation = ["crag", "peak", "wall"].includes(area.area_type);
+  // The chart runs on everything below a country: the whole catalog in one call is ~2 s against
+  // a 3 s statement timeout, and a country page is a list of states anyway.
+  const chartable = !["world", "country"].includes(area.area_type);
+  const stats = useAreaClimbStats(chartable ? area.id : null);
+  const areaEdits = useAreaContributions(formation && onSuggestAreaEdit ? area.id : null);
+  const editOn = formation && onSuggestAreaEdit ? (k) => onSuggestAreaEdit(area, k) : null;
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
   const isLeaf = Array.isArray(children) && children.length === 0;
@@ -508,19 +638,19 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
 
   return (
     <div>
-      <div style={{ background: HERO_BG, boxShadow: HERO_SHEEN, backgroundSize: "cover", backgroundPosition: "center", borderRadius: 14, padding: 16, marginBottom: 14, position: "relative", border: "1px solid " + C.border }}>
-        {area.area_type !== "country" && area.area_type !== "state" ? (
-          <button onClick={onToggleSave} aria-label={booked ? "Remove from Saved" : area.area_type === "peak" ? "Save this peak" : "Save this area"} style={{ position: "absolute", top: 13, right: 13, display: "flex", alignItems: "center", gap: 5, height: 34, padding: "0 12px", background: booked ? C.amber : "rgba(255,255,255,0.08)", border: "1px solid " + (booked ? C.amber : C.border), borderRadius: 9, fontSize: 12, fontWeight: 800, color: booked ? "#1a1200" : C.text, cursor: "pointer", lineHeight: 1, whiteSpace: "nowrap" }}>{booked ? "Saved" : area.area_type === "peak" ? "Save peak" : "Save area"}</button>
-        ) : null}
-        <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 4, flexWrap: "wrap", paddingRight: 118 }}>
-          <div style={{ fontSize: 19, fontWeight: 700, color: C.text }}>{area.name}</div>
+      {/* The area's box IS the Climbs tab's header once you are in an area: App's generic "Climbs"
+          box is drawn only on the picker (rootHeader), so Florida heads Florida. */}
+      <ScreenHero C={C} title={area.name} right={area.area_type !== "country" && area.area_type !== "state" ? (
+          <button onClick={onToggleSave} aria-label={booked ? "Remove from Saved" : area.area_type === "peak" ? "Save this peak" : "Save this area"} style={{ flexShrink: 0, display: "flex", alignItems: "center", gap: 5, height: 34, padding: "0 12px", background: booked ? C.amber : "rgba(255,255,255,0.08)", border: "1px solid " + (booked ? C.amber : C.border), borderRadius: 9, fontSize: 12, fontWeight: 800, color: booked ? "#1a1200" : C.text, cursor: "pointer", lineHeight: 1, whiteSpace: "nowrap" }}>{booked ? "Saved" : area.area_type === "peak" ? "Save peak" : "Save area"}</button>
+        ) : null}>
+        <div style={{ marginTop: 6, marginBottom: 4 }}>
           <Pill label={ATYPE[area.area_type] || "Area"} color={C.blue} bg={C.blueBg} sm />
         </div>
         {(() => { const parts = [area.region && area.region !== area.name ? area.region : null, area.elevation_ft ? (uElev ? uElev(area.elevation_ft) : area.elevation_ft.toLocaleString() + " ft") : null, area.prominence_ft ? ((uElev ? uElev(area.prominence_ft) : area.prominence_ft.toLocaleString() + " ft") + " prom") : null].filter(Boolean); return parts.length ? <div style={{ fontSize: 12, color: C.textSub }}>{parts.join(" · ")}</div> : null; })()}
         {parentPeak ? <div style={{ fontSize: 12, color: C.textMuted, marginTop: 3 }}>{"Parent peak — " + parentPeak}</div> : null}
         {area.coords_approx ? <div style={{ fontSize: 11.5, color: C.amber, marginTop: 4, lineHeight: 1.45 }}>Coordinates are approximate — the map pin, any distance shown, and the Directions link are rough.</div> : null}
         {chips.length ? <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 9 }}>{chips.map((t, i) => <span key={i} style={{ fontSize: 11.5, fontWeight: 600, color: C.text, background: "rgba(255,255,255,0.12)", border: "1px solid " + C.border, borderRadius: 7, padding: "3px 9px" }}>{t}</span>)}</div> : null}
-        {area.blurb ? <div style={{ marginTop: 8, fontSize: 13, color: C.textSub, lineHeight: 1.6 }}>{area.blurb}</div> : null}
+        {/* The description moved out of the hero into the ABOUT card below (0304), where it has an edit control. */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, flexWrap: "wrap", marginTop: 8 }}>
           <div style={{ fontSize: 13, color: C.blue }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count + " climbs" : area.route_count + " climb" + (area.route_count !== 1 ? "s" : "")}</div>
           {/* The Fire map entry. It used to be a full-width card at the very top of the Climbs
@@ -534,7 +664,15 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
             </button>
           ) : null}
         </div>
-      </div>
+      </ScreenHero>
+
+      {/* What Mountain Project's area page has and ours did not (audit 2026-10-15): a description,
+          the facts a crag visit needs, a count by discipline, and a way to improve the page.
+          Every section prints only what is stored; an empty one invites the edit instead. */}
+      {formation && areaEdits.data && areaEdits.data.length ? <PendingAreaEdits rows={areaEdits.data} C={C} myId={myId} /> : null}
+      {formation || (area.blurb && String(area.blurb).trim()) ? <AboutCard area={area} C={C} onEdit={editOn} /> : null}
+      {formation ? <AreaFactsCard area={area} C={C} uElev={uElev} onEdit={editOn} /> : null}
+      {chartable ? <ClimbsChart stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={DISCIPLINES.map(d => d[0]).filter(Boolean)} onDisc={onFinder}><GradeSpread stats={stats.data} C={C} /></ClimbsChart> : null}
 
       {area.route_count > 0 ? (
         <button onClick={onFinder} style={{ ...BTN_LG, width: "100%", marginBottom: 8, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
@@ -544,39 +682,20 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
       <div style={{ display: "flex", gap: 8, marginBottom: 14 }}>
         <button onClick={onNear} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.text }}>View map</button>
         <button onClick={onObjectives} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.text }}>My objectives</button>
-        {/* DIRECTIONS TO THE AREA. The only such link in the app lived in `GettingThere`, which is
-            gated on the seed-only `selArea` and so has never rendered for a real climber — so with
-            VITE_USE_DB=true there was no way to navigate to a crag at all. RouteDetail's three
-            directions links are trailhead-level, a different question from "where is this crag".
-            An <a>, not a button, because it leaves the app; rel=noopener with target=_blank. */}
-        {/* ONLY where a destination is actionable. Every area carries a coordinate, including
-            `country`, `state`, `region` and `range` — and "Directions to Colorado" routes you to a
-            state centroid, which is noise at best and misleading at worst. A crag, peak or wall has
-            somewhere you can actually park. Caught by the probe printing its own aria-label. */}
-        {["crag", "peak", "wall"].includes(area.area_type) && area.lat != null && area.lng != null ? (
-          <a
-            href={"https://www.google.com/maps/dir/?api=1&destination=" + area.lat + "," + area.lng}
-            target="_blank" rel="noopener noreferrer"
-            aria-label={"Directions to " + area.name + (area.coords_approx ? " (approximate location)" : "")}
-            style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.text, textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
-          >Directions</a>
-        ) : null}
       </div>
+      {/* GETTING THERE — the one drive control on the area page, as CragLocationCard is on a crag
+          route. It used to be a bare "Directions" button in the row above, with no words; the
+          Mountain Project page for the same crag says how to drive there, where to park and how
+          long the walk is. Drive & park is areas.parking_note + the parking pin; Walk in is
+          areas.approach + approach_min. Nothing here is derived — an empty card invites the edit.
+          ONLY where a destination is actionable: every area carries a coordinate, including
+          `country`, `state`, `region` and `range` — and "Directions to Colorado" routes you to a
+          state centroid, which is noise at best and misleading at worst. A crag, peak or wall has
+          somewhere you can actually park (check:area-surfaces reads this gate). */}
+      {["crag", "peak", "wall"].includes(area.area_type) ? <AreaGettingThere area={area} C={C} onEdit={editOn} /> : null}
+      {PARTNER_CARD_TYPES.includes(area.area_type) ? <PartnersHereCard area={area} C={C} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} PartnerRow={PartnerRow} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} /> : null}
       <button onClick={onAllAreas} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, marginBottom: 14 }}>All areas</button>
       {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
-
-      {/* The seed browser has had "Don't see a climb? Add it" since forever, but it lives
-          behind `selArea`, which is null under USE_DB — so on every real area page the
-          affordance did not exist. Opens the same AddRoute sheet with THIS area filled in.
-          It sits directly BELOW the Areas/Routes search rather than above it: the moment a
-          climber knows a route is missing is the moment a search for it came back empty, so
-          this is the next thing under their thumb. It is NOT gated on the search rendering —
-          a leaf crag has no DbSearchSplit and is exactly where a missing route is likeliest. */}
-      {onAddClimb ? (
-        <button onClick={() => onAddClimb(area)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, marginTop: 4, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
-          {"Don’t see a climb here? Add it to " + area.name}<span style={{ fontSize: 15 }}>{"→"}</span>
-        </button>
-      ) : null}
 
       {/* Sits directly above the route rows it summarises, so the page reads: this is the
           mountain, this is what is true of every way up it, here are the ways up. It renders
@@ -608,18 +727,56 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
         routes && routes.length > 0
           ? <>
               <SL C={C}>{routes.length + " climb" + (routes.length !== 1 ? "s" : "")}</SL>
-              {routes.map(r => <RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />)}
+              {(() => {
+                // Left/right is offered only where a wall order is stored: on a list with no
+                // positions both wall orders would be A → Z under another name.
+                const placed = routes.filter(r => r.sort_order != null).length;
+                const opts = placed ? AREA_LIST_SORTS : AREA_LIST_SORTS.filter(o => o[0] === "az" || o[0] === "za");
+                const key = opts.some(o => o[0] === listSort) ? listSort : opts[0][0];
+                const unplaced = (key === "lr" || key === "rl") ? routes.length - placed : 0;
+                return <>
+                  {routes.length > 1 ? <div role="group" aria-label="Sort climbs" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 8 }}>{opts.map(o => <button key={o[0]} onClick={() => setListSort(o[0])} aria-pressed={key === o[0]} style={{ ...CHIP, flexShrink: 0, border: "1px solid " + (key === o[0] ? C.blue : C.border), background: key === o[0] ? C.blueBg : C.surface, color: key === o[0] ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{o[1]}</button>)}</div> : null}
+                  {unplaced ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, lineHeight: 1.45 }}>{unplaced + (unplaced !== 1 ? " climbs have" : " climb has") + " no position on the wall yet, so " + (unplaced !== 1 ? "they are" : "it is") + " listed last, by name."}</div> : null}
+                  {sortAreaRoutes(routes, key).map(r => <RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />)}
+                </>;
+              })()}
             </>
           /* Only claim the crag is empty when the load actually succeeded — otherwise a
              failed refetch reports "no routes" about a crag it never managed to read. */
           : !error ? <div style={{ color: C.textMuted, fontSize: 12 }}>No routes in this crag yet.</div> : null
       )}
 
+      {/* The seed browser has had "Don't see a climb? Add it" since forever, but it lives
+          behind `selArea`, which is null under USE_DB — so on every real area page the
+          affordance did not exist. Opens the same AddRoute sheet with THIS area filled in.
+          It sits DIRECTLY UNDER the areas/climbs list (owner, 2026-10-15): a climber who has just
+          read to the end of the list and not found their climb is the one who adds it. It is NOT
+          gated on the list rendering — an empty crag is exactly where a missing route is likeliest. */}
+      {onAddClimb ? (
+        <button onClick={() => onAddClimb(area)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, marginTop: 10, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
+          {"Don’t see a climb here? Add it to " + area.name}<span style={{ fontSize: 15 }}>{"→"}</span>
+        </button>
+      ) : null}
+
+      {editOn ? (
+        <button onClick={() => editOn(null)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
+          {"Know " + area.name + "? Suggest an edit"}<span style={{ fontSize: 15 }}>{"→"}</span>
+        </button>
+      ) : null}
+
+      {/* TOP RATED HERE — Mountain Project's "Classic Climbing Routes". Only the rows that carry a
+          star rating (routes.stars, kept by 0294), best first; an area with no ratings shows
+          nothing rather than "no ratings yet". */}
+      {!loading && isLeaf && routes && routes.length > 1 ? (() => { const top = routes.filter(r => r.stars > 0).sort((a, b) => b.stars - a.stars || a.name.localeCompare(b.name)).slice(0, 5); return top.length ? <><SL C={C}>Top rated here</SL>{top.map(r => <RouteRow key={"top-" + r.id} r={r} onOpen={onOpenRoute} C={C} />)}</> : null; })() : null}
+
+      {/* Tail order is the owner's (2026-10-15): suggested climbs right under "Don't see a climb",
+          then nearby peaks, then Top contributors LAST — App mounts the area Discussion directly
+          after this component, so Top contributors sits right above it and Discussion ends the page. */}
+      <DbSuggestedClimbs area={area} onOpen={onOpenRoute} C={C} />
+
       <NearbyPeaks area={area} onJumpToArea={onJumpToArea} C={C} uDistMi={uDistMi} />
 
       {TopContributors ? <TopContributors areaId={area.id} mb={8}/> : null}
-
-      <DbSuggestedClimbs area={area} profile={profile} completedIds={completedIds} wishlist={wishlist} onOpen={onOpenRoute} rankSuggested={rankSuggested} discSlots={discSlots} C={C} />
     </div>
   );
 }
@@ -709,13 +866,15 @@ const gradeScalesFor = disc => DISC_GRADE_SCALES[disc] || [];
 const gradeScaleFor = (disc, sys) => { const ss = gradeScalesFor(disc); if (!ss.length) return null; return GRADE_SCALES[ss.indexOf(sys) >= 0 ? sys : ss[0]] || null; };
 const gradeSysFor = (disc, sys) => { const ss = gradeScalesFor(disc); return ss.indexOf(sys) >= 0 ? sys : (ss[0] || ""); };
 const gradeRangeLabel = (lo, hi) => lo && hi ? (lo === hi ? lo : lo + "–" + hi) : lo ? lo + " and up" : hi ? "Up to " + hi : "";
-function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit }) {
+function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc }) {
   const DEF = { disc: "", sortBy: "name", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "" };
+  // A chart bar on the area page opens the finder already narrowed to its discipline.
+  const DEF0 = presetDisc ? { ...DEF, disc: presetDisc } : DEF;
   const [q, setQ] = useState("");
   // Routes | Areas. One text box serves both, so switching carries what you typed across.
   const [mode, setMode] = useState("routes");
-  const [af, setAf] = useState(DEF);
-  const [df, setDf] = useState(DEF);
+  const [af, setAf] = useState(DEF0);
+  const [df, setDf] = useState(DEF0);
   const [sheet, setSheet] = useState(false);
   const [savedSearches, setSavedSearches] = useState([]);
   const [showSaved, setShowSaved] = useState(false);
@@ -765,7 +924,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
   // The APPLIED-filter chip is a second label site, and it must go through the same formatter or
   // the filter bar and the chip that says what you filtered by disagree about units.
   if (af.len !== "any") afChips.push({ k: "len", label: lenLabel(lenRange, uElevN, uElevUnit), clear: () => setAf(a => ({ ...a, len: "any" })) });
-  if (af.sortBy !== "name") afChips.push({ k: "sort", label: { name_desc: "Z→A", area: "By area", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: "name" })) });
+  if (af.sortBy !== "name") afChips.push({ k: "sort", label: { name_desc: "Z→A", area: "By area", lr: "Left → right", rl: "Right → left", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: "name" })) });
 
   const rowBtn = on => ({ ...BTN_LG, flex: 1, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.text });
   const chip = (label, on, fn) => <button key={label} onClick={fn} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
@@ -773,7 +932,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
 
   return (
     <div>
-      {titleRow("Route finder" + (scope ? " · " + scope.name : ""), C)}
+      <ScreenHero C={C} title={"Route finder" + (scope ? " · " + scope.name : "")} />
       <div style={{ display: "flex", gap: 4, background: C.surface, border: "1px solid " + C.border, borderRadius: 9, padding: 3, marginBottom: 8 }}>
         {[["routes", "Routes"], ["areas", "Areas"]].map(([k, l]) => <button key={k} onClick={() => setMode(k)} aria-pressed={mode === k} style={{ flex: 1, padding: "8px 0", border: "none", borderRadius: 7, background: mode === k ? C.blueSolid : "transparent", color: mode === k ? "#fff" : C.textSub, fontSize: 13.5, fontWeight: 700, cursor: "pointer" }}>{l}</button>)}
       </div>
@@ -819,7 +978,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
           <button onClick={() => setAf(DEF)} style={{ ...BTN_LINK(C), padding: "7px 8px", color: C.textMuted, textDecoration: "underline" }}>Clear all</button>
         </div>
       ) : null}
-      <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, padding: "0 2px" }}>{(total != null ? total : all.length) + " route" + ((total != null ? total : all.length) !== 1 ? "s" : "") + " · sorted by " + ({ name: "name", name_desc: "name (Z→A)", area: "area", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred" }[af.sortBy])}</div>
+      <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, padding: "0 2px" }}>{(total != null ? total : all.length) + " route" + ((total != null ? total : all.length) !== 1 ? "s" : "") + " · sorted by " + ({ name: "name", name_desc: "name (Z→A)", area: "area", lr: "wall, left to right", rl: "wall, right to left", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred" }[af.sortBy])}</div>
       {error && !all.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't search routes — check your connection and try again.</div> : null}
       {error && all.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the results from your last load.</div> : null}
       {all.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} areaName={areaNames && areaNames[r.area_id]} />)}
@@ -889,7 +1048,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
             })()}
             {lab("Sort by")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-              {[["name", "Name A→Z"], ["name_desc", "Name Z→A"], ["area", "By area"], ["stars_desc", "Most starred"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] }))))}
+              {[["name", "Name A→Z"], ["name_desc", "Name Z→A"], ["lr", "Left → right"], ["rl", "Right → left"], ["stars_desc", "Most starred"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] }))))}
               {df.disc ? [["grade_asc", "↓ Easiest"], ["grade_desc", "↑ Hardest"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] })))) : null}
             </div>
             {!df.disc ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Pick a discipline above to sort by grade.</div> : null}
@@ -912,11 +1071,12 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
 }
 
 // ── Objectives: your wishlisted routes that fall within the current area ──
-function ObjectivesPanel({ area, wishlist, onOpen, C }) {
+function ObjectivesPanel({ area, onOpen, C }) {
+  const { wishlist } = useContext(ClimberCtx);
   const { data, isLoading, error } = useScopedWishlistRoutes(area, wishlist);
   return (
     <div>
-      {titleRow("My objectives" + (area ? " · " + area.name : ""), C)}
+      <ScreenHero C={C} title={"My objectives" + (area ? " · " + area.name : "")} />
       {isLoading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
       {error && !(data && data.length) ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load your objectives — check your connection and try again.</div> : null}
       {error && data && data.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the list from your last load.</div> : null}
@@ -943,13 +1103,16 @@ function ObjectivesPanel({ area, wishlist, onOpen, C }) {
 // point at the same zoom used for a crag.
 const ZOOM_BY_AREA_TYPE = { world: 2, country: 3, state: 6, range: 8, region: 8, canyon: 10, peak: 12, crag: 13, wall: 14 };
 function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
-  const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), tileRef = useRef(null);
+  const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), tileRef = useRef(null), placeMarkRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [mapFail, setMapFail] = useState(false);
   const [bounds, setBounds] = useState(null);
   const [center, setCenter] = useState(center0 || null);
-  const [baseLayer, setBaseLayer] = useState("sat");
+  const [baseLayer, setBaseLayer] = useState("street");
   const [sel, setSel] = useState(null);
+  // Go to a town, county, or zip/postal code (US and Canada). `alts` are the other matches, offered as "Not it?".
+  const [placeQ, setPlaceQ] = useState("");
+  const [place, setPlace] = useState({ busy: false, err: "", alts: [] });
   const [fullscreen, setFullscreen] = useState(false);
   // Type-of-climbing filter over what is in view. Matches EVERY type an area holds
   // (`disciplines`, 0198: any type with at least one climb; on a peak, crag types count as
@@ -996,10 +1159,24 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
       map.on("moveend", () => readBounds(map));
       map.on("movestart", () => setSel(null));
       setTimeout(() => { try { map.invalidateSize(); readBounds(map); } catch (e) {} }, 150);
+      // ...and again whenever the map's box really changes size. On a slow phone the box can still
+      // be unlaid-out at 150ms: the query then asked for a near-zero box, got no areas, and the
+      // map said "No climbs in view" over a whole state until the climber panned.
+      if (typeof ResizeObserver !== "undefined") {
+        let last = "";
+        ro = new ResizeObserver(([e]) => {
+          const k = Math.round(e.contentRect.width) + "x" + Math.round(e.contentRect.height);
+          if (k === last || !mapRef.current) return;
+          last = k;
+          try { map.invalidateSize(); readBounds(map); } catch (err) {}
+        });
+        ro.observe(mapDiv.current);
+      }
     };
+    let ro = null;
     loadLeaflet(init, () => setMapFail(true));
     const ft = setTimeout(() => { if (!cancelled && !mapRef.current) setMapFail(true); }, 9000);
-    return () => { cancelled = true; clearTimeout(ft); if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; tileRef.current = null; } };
+    return () => { cancelled = true; clearTimeout(ft); if (ro) ro.disconnect(); if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; tileRef.current = null; placeMarkRef.current = null; } };
   }, []);
   useEffect(() => { if (!mapRef.current) return; applyBaseLayer(mapRef.current, tileRef, baseLayer); }, [baseLayer]);
 
@@ -1066,6 +1243,32 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
     if (map) setTimeout(() => readBounds(map), 350); // after the pan/zoom animation settles
   } });
   const locate = me.locate, locating = me.locating, geoErr = me.err;
+  // Your dot is on the map from the start when location is already allowed -- without moving the
+  // map off the area you opened it on. Never asks: the button above does that.
+  useEffect(() => { if (ready) me.showDot(); }, [ready]);
+
+  const goToPlace = p => {
+    const L = window.L, map = mapRef.current;
+    if (!L || !map || !p) return;
+    me.release();
+    try {
+      if (p.bbox) map.fitBounds(p.bbox, { maxZoom: 13 }); else map.setView([p.lat, p.lng], 12);
+      if (placeMarkRef.current) map.removeLayer(placeMarkRef.current);
+      const html = "<div style='width:16px;height:16px;border-radius:50%;background:" + C.blueSolid + ";border:3px solid #fff;box-shadow:0 0 0 4px " + C.blueSolid + "55,0 2px 7px rgba(0,0,0,0.6);'></div>";
+      placeMarkRef.current = L.marker([p.lat, p.lng], { icon: L.divIcon({ html, className: "", iconSize: [16, 16], iconAnchor: [8, 8] }), zIndexOffset: 1000 }).bindTooltip(p.name, { direction: "top", permanent: true }).addTo(map);
+    } catch (e) {}
+  };
+  const findPlace = e => {
+    if (e) e.preventDefault();
+    const q = placeQ.trim();
+    if (!q || place.busy) return;
+    setPlace({ busy: true, err: "", alts: [] });
+    searchPlaces(q, bounds).then(rows => {
+      if (!rows.length) { setPlace({ busy: false, err: "No town, county or zip/postal code called “" + q + "” found.", alts: [] }); return; }
+      goToPlace(rows[0]);
+      setPlace({ busy: false, err: "", alts: rows.slice(1, 4) });
+    }, () => setPlace({ busy: false, err: "Couldn't search places just now — check your connection and try again.", alts: [] }));
+  };
 
   // Sort the list by distance from the CURRENT viewport center, not the fixed
   // point the map opened at — otherwise, once you've panned somewhere else, the
@@ -1088,8 +1291,19 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
           {geoErr ? <div style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{geoErr}</div> : null}
         </>
       ) : null}
+      <form onSubmit={findPlace} role="search" style={{ display: "flex", gap: 6, marginBottom: place.err || place.alts.length ? 4 : 8 }}>
+        <input type="search" value={placeQ} onChange={e => setPlaceQ(e.target.value)} placeholder="Go to a town, county or zip/postal code" aria-label="Go to a town, county or zip/postal code" enterKeyHint="search" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16 }} />
+        <button type="submit" disabled={!placeQ.trim() || place.busy} style={{ ...BTN, background: C.blueSolid, color: "#fff", border: "none", flexShrink: 0, opacity: !placeQ.trim() || place.busy ? 0.6 : 1 }}>{place.busy ? "Finding…" : "Go"}</button>
+      </form>
+      {place.err ? <div role="status" style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{place.err}</div> : null}
+      {place.alts.length ? (
+        <div role="group" aria-label="Other places with that name" style={{ display: "flex", gap: 6, overflowX: "auto", alignItems: "center", marginBottom: 8, paddingBottom: 2 }}>
+          <span style={{ fontSize: 11.5, color: C.textMuted, flexShrink: 0 }}>Not it?</span>
+          {place.alts.map((p, i) => <button key={i} onClick={() => { goToPlace(p); setPlace(s => ({ ...s, alts: s.alts.filter(x => x !== p) })); }} style={{ ...CHIP, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 12, fontWeight: 600, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{p.name + (p.sub ? ", " + p.sub.split(", ").slice(-1)[0] : "")}</button>)}
+        </div>
+      ) : null}
       <div style={{ position: "relative", marginBottom: fullscreen ? 0 : 8 }}>
-        <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "calc(100vh - 210px)" : 260, borderRadius: fullscreen ? 0 : 12, overflow: "hidden", background: C.surface, transition: "height 0.2s" }} />
+        <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "calc(100vh - 262px)" : 260, borderRadius: fullscreen ? 0 : 12, overflow: "hidden", background: C.surface, transition: "height 0.2s" }} />
         {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
         <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={center} />
         <button onClick={() => setFullscreen(f => !f)} aria-label={fullscreen ? "Exit full screen" : "Full screen"} title={fullscreen ? "Exit full screen" : "Full screen"} style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000 })}>{fullscreen ? "✕" : "⤢"}</button>
@@ -1106,7 +1320,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
       </div>
       {!fullscreen ? (
         <>
-          <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8 }}>Pan or zoom the map to see areas anywhere else.</div>
+          <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8 }}>{"Pan or zoom the map, or type a town above, to see areas anywhere else." + (me.acc != null ? " The green dot is you." : "")}</div>
           {!center && !bounds ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{'Tap "Use my location" to find climbs near you.'}</div> : null}
           {error && !sorted.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load nearby areas — check your connection and try again.</div> : null}
           {error && sorted.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the areas from your last load.</div> : null}
@@ -1294,11 +1508,13 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, TopContributors }) {
+export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
+  const [finderDisc, setFinderDisc] = useState(""); // a chart bar presets the finder's discipline
   const [treeOpen, setTreeOpen] = useState(false);
+  const climber = useMemo(() => ({ wishlist, profile, completedIds, rankSuggested, discSlots }), [wishlist, profile, completedIds, rankSuggested, discSlots]);
   const handledJumpId = useRef(null);
 
   const current = stack.length ? stack[stack.length - 1] : stateNode;
@@ -1313,8 +1529,12 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
   // consumer cannot come to depend on the DB shape.
   useEffect(() => {
     if (!onAreaContext) return;
-    onAreaContext(current && current.lat != null && current.lng != null
-      ? { id: current.id, name: current.name, lat: current.lat, lng: current.lng, areaType: current.area_type }
+    // Reported WHETHER OR NOT the area has a coordinate. It used to be null without one, and
+    // the only consumer left (area Discussion) then never rendered on an area such as Florida's
+    // "Artificial Boulders" (fl_artificial_boulders: 30 climbs, lat/lng null). A consumer that
+    // needs a position checks lat/lng itself.
+    onAreaContext(current
+      ? { id: current.id, name: current.name, lat: current.lat != null ? current.lat : null, lng: current.lng != null ? current.lng : null, areaType: current.area_type }
       : null);
   }, [onAreaContext, current && current.id, current && current.lat, current && current.lng]);
 
@@ -1373,6 +1593,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
   }, [jumpToAreaReq, jumpAreaRowQ.data]);
 
   return (
+    <ClimberCtx.Provider value={climber}>
     <div>
       {/* Breadcrumb + Back. Sticky, and rendered on EVERY sub-screen — not just "areas".
           Two reports drove both halves. It used to scroll away on a long area page, so on
@@ -1387,7 +1608,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
           cut off. So the bar is now two rows and taller on purpose — a Back button that NAMES
           where it goes (drawn with POP_BACK since 2026-09-25, like every other Back in the app:
           44px tall with a bright edge, so it is still easy to find without its own colour), and under it the full path, WRAPPING rather than scrolling,
-          so every level is visible and tappable and the area you are in ends it in bold. */}
+          so every level above you is visible and tappable. */}
       {crumbs.length ? (
         <div style={{ position: "sticky", top: 0, zIndex: 30, background: C.bg, paddingBottom: 10, marginBottom: 2 }}>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "stretch", gap: 10, background: C.surface, border: "1px solid " + C.borderHi, borderRadius: 12, padding: "11px 12px" }}>
@@ -1395,36 +1616,41 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
               <span aria-hidden="true">{"←"}</span>
               <span style={{ minWidth: 0, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{"Back to " + (screen !== "areas" ? current.name : crumbs.length >= 2 ? crumbs[crumbs.length - 2].name : "All areas")}</span>
             </button>
-            <nav aria-label="Area path" style={{ display: "flex", alignItems: "center", flexWrap: "wrap", rowGap: 6, columnGap: 6, minWidth: 0 }}>
-              {[null, ...crumbs].map((c, i) => {
-                const last = i === crumbs.length;
-                return (
-                  <span key={c ? c.id : "root"} style={{ display: "inline-flex", alignItems: "center", gap: 6, minWidth: 0, maxWidth: "100%" }}>
-                    {i > 0 ? <span aria-hidden="true" style={{ color: C.textMuted, fontSize: 16, fontWeight: 700 }}>{"›"}</span> : null}
-                    {last && screen === "areas"
-                      ? <span aria-current="page" style={{ color: C.text, fontWeight: 800, fontSize: 17, lineHeight: 1.3, overflowWrap: "anywhere" }}>{c ? c.name : ""}</span>
-                      : <button onClick={() => { setScreen("areas"); jump(c ? i - 1 : -1); }} style={{ background: "transparent", border: "none", color: last ? C.text : C.blue, fontSize: last ? 17 : 14.5, cursor: "pointer", fontWeight: last ? 800 : 700, padding: "2px 0", textAlign: "left", lineHeight: 1.3, overflowWrap: "anywhere" }}>{c ? c.name : "All areas"}</button>}
-                  </span>
-                );
-              })}
-            </nav>
+            {/* On an area page the path stops at the PARENT: the area you are in is the header box
+                right below, so naming it here in bold too said it twice. On a sub-screen (Route
+                finder, Map…) the area stays in the path as the way back to its page. A path that
+                would only repeat the Back button above it (just "All areas") is not drawn. */}
+            {(() => {
+              const path = screen === "areas" ? [null, ...crumbs.slice(0, -1)] : [null, ...crumbs];
+              return path.length < 2 ? null : (
+                <nav aria-label="Area path" style={{ display: "flex", alignItems: "center", flexWrap: "wrap", rowGap: 6, columnGap: 6, minWidth: 0 }}>
+                  {path.map((c, i) => (
+                    <span key={c ? c.id : "root"} style={{ display: "inline-flex", alignItems: "center", gap: 6, minWidth: 0, maxWidth: "100%" }}>
+                      {i > 0 ? <span aria-hidden="true" style={{ color: C.textMuted, fontSize: 16, fontWeight: 700 }}>{"›"}</span> : null}
+                      <button onClick={() => { setScreen("areas"); jump(c ? i - 1 : -1); }} style={{ background: "transparent", border: "none", color: C.blue, fontSize: 14.5, cursor: "pointer", fontWeight: 700, padding: "2px 0", textAlign: "left", lineHeight: 1.3, overflowWrap: "anywhere" }}>{c ? c.name : "All areas"}</button>
+                    </span>
+                  ))}
+                </nav>
+              );
+            })()}
           </div>
         </div>
       ) : null}
       {!stateNode ? (
-        <StatePicker onPick={pickState} C={C} />
+        <>{rootHeader || null}<StatePicker onPick={pickState} C={C} /></>
       ) : screen === "finder" ? (
-        <RouteFinderPanel scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} />
+        <RouteFinderPanel scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} />
       ) : screen === "objectives" ? (
-        <ObjectivesPanel area={current} wishlist={wishlist} onOpen={onOpenRoute} C={C} />
+        <ObjectivesPanel area={current} onOpen={onOpenRoute} C={C} />
       ) : screen === "near" ? (
-        <NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
+        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} /></>
       ) : (
-        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap}onAddClimb={onAddClimb} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} discSlots={discSlots} />
+        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap}onAddClimb={onAddClimb} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { setFinderDisc(typeof d === "string" ? d : ""); setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
       ) : null}
     </div>
+    </ClimberCtx.Provider>
   );
 }
