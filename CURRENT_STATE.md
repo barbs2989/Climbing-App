@@ -28,6 +28,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Who reads a trip report is a Settings choice only, and every report feeds the conditions**: the log form no longer asks; Settings › Privacy & safety decides, and a new report takes the stored setting server-side. A report kept to friends, a crew or yourself now adds its conditions (date, tags, outcome, times, snow/trail answers) to the route's consensus for everyone, with no name or words (0329, the Mountain Project private-tick model). Help and the Privacy Policy say so. See `docs/features/route-page.md`.
 - **Partners › By route: Recently viewed is shorter**: it lists the 3 newest climbs, with a "Show N more" toggle for the rest (up to 5). See `docs/features/partners.md`.
 - **Groups Discover: explore by STATE, search finds states and About text**: one chip per state or province (home first, then where you listed partner areas), combinable with the search box; "Washington" now finds "Seattle, WA". New groups default to moderator-hosted events. See `docs/features/groups.md`.
 - **Rock type reads plainly**: the Rock tile, the Conditions card and the fix form no longer add "(mapped)" to a crag's rock type taken from the bedrock map. See `docs/features/conditions.md`.
