@@ -333,6 +333,15 @@ try {
      after this capture: "North Ridge" was listed but "CI" was not named and the chat would not open,
      which read as the #569 regression. Same shape as the Group wait below. Waiting cannot mask a real
      defect: the assertions are unchanged, so a roster that never renders still fails, just 15s later. */
+  /* Every crew card starts COLLAPSED (2026-10-21: the tab used to open the first crew's whole plan
+     inline, and the owner found it overwhelming), so the roster and the chat button sit behind the
+     North Ridge card's "View plan". Open that card first; the assertions below are unchanged. */
+  await page.waitForFunction(() => [...document.querySelectorAll('[id^="crewcard-"]')].some((c) => (c.innerText || "").includes("North Ridge")), null, { timeout: 15000 }).catch(() => {});
+  await page.evaluate(() => {
+    const card = [...document.querySelectorAll('[id^="crewcard-"]')].find((c) => (c.innerText || "").includes("North Ridge"));
+    const b = card && [...card.querySelectorAll("button")].find((e) => (e.textContent || "").trim().startsWith("View plan"));
+    if (b) b.click();
+  });
   const mateWait = fixture.mate.name.split(" ")[0].toLowerCase();
   await page.waitForFunction(
     (m) => document.body.innerText.toLowerCase().includes(m),
