@@ -28,6 +28,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Who reads a trip report is a Settings choice only, and every report feeds the conditions**: the log form no longer asks; Settings › Privacy & safety decides, and a new report takes the stored setting server-side. A report kept to friends, a crew or yourself now adds its conditions (date, tags, outcome, times, snow/trail answers) to the route's consensus for everyone, with no name or words (0329, the Mountain Project private-tick model). Help and the Privacy Policy say so. See `docs/features/route-page.md`.
 - **Another climber's profile: the tab strip hides its scrollbar** (`cm-hscroll`, as your own Profile's tabs already did), so the sideways scrollbar no longer draws over the active tab's blue underline (`FullProfile` in `ClimbMatchCore.jsx`).
 - **Home's "Nothing needs you right now" card**: the all-caught-up card no longer tells a climber who already has objectives to "save one to get started"; they get a plain all-clear, and only a climber with no objectives sees the *Explore climbs* button, which now opens the area list rather than the last route left open.
 - **Sport, trad and top-rope show one grade**: the TECHNICAL STATS "Crux grade" tile no longer repeats the Composite Grade panel on sport, trad and top-rope routes; it shows only when a stored crux grade differs from the route's grade. See `docs/features/route-page.md`.

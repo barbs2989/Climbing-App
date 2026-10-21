@@ -55,6 +55,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 
 - **`routes`** (thousands of rows; `dbRouteToCamel` reads it). `routes.stars` is a cache kept by triggers on `route_ratings` and `climb_logs`; the Climbs list, min-stars filter and stars sort read it.
 - **`route_ratings`** (0294): PK `(route_id, user_id)`, `stars` 1-5, RLS own-row read/insert/update/delete. Nothing renders who rated what.
+- **`route_private_conditions(p_route)`** (0329, `useRoutePrivateConditions`): every report on the route the caller cannot read in full (kept to friends, a crew or the climber alone), as conditions only: date, condition/hazard tags, outcome and its reasons, times, snow/water/bugs/trail/protection/crowd answers, and an opaque per-route `reporter_key`. No author, text, photos, beta, partners or track; taken-down and blocked-either-way rows excluded. `anonRowToActivity` (`lib/tripReportRow.js`) marks them `_anon`; RouteDetail feeds them to the Overview consensus, `ConsensusPanel` and `AlpineConditionsCard` only (`condActivity`), never to a list of reports. This is Mountain Project's private-tick model: a private tick still counts on the route page without a name.
 - **`route_star_summary(p_route_id)`**: average of one vote per climber: header rating, else their most recent public, visible trip report's stars; returns `stars` and `raters`.
 - **`route_base_checkins`** (0188): one row per climber per route, written only through `check_in_at_route_base()`; others read unattributed points through `route_base_checkin_points()` (`useRouteBaseCheckins`, read once in `RouteDetail` and shared by the map and the panel).
 - **`contributions`**: corrections (held `pending` until the owner approves; 0307–0309) and route photos (kind `photo`). **`climb_logs`**: trip reports/stars.
@@ -64,7 +65,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 
 - **Climbs browser:** `lib/DbAreaBrowser.jsx` and `openRoute` are the entry; the list's stars come from `routes.stars`.
 - **Crews:** crew gear list reaches a real route (`check:crew-gear`); crews are built around a `routeId`.
-- **Logbook:** logging a climb (`climb_logs`) feeds trip reports, consensus and, as fallback vote, the rating.
+- **Logbook:** logging a climb (`climb_logs`) feeds trip reports, consensus and, as fallback vote, the rating. Every report feeds the conditions: shared ones with their author, the rest anonymously through `route_private_conditions`.
 - **Partners:** the `partners` sub-tab; `useRoutePairings` / `useRouteLoggedWith` show who logged it. On a crag route (0300) the sub-tab is "Climbers at <crag>":
   `usePartnersInArea` on the route's area, List me at <crag> (`onListMe`, into the My listed areas sheet), See all (`onFindPartnersInArea`), and the seed example cards are off;
   "Sessions at <crag>" lists open crews bound to exactly this route's area (`dbCrews` rows with an `areaId`), joinable like a route crew.
