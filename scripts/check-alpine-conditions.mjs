@@ -165,7 +165,13 @@ const iceP = run(forecast(() => ({ fl: 4000 })), { kind: "alpineice", terrain: {
 eq("...and alpine ice gets it too", iceP.start && iceP.start.why, "snow-noon");
 const cardSrc = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
 eq("the card says WHY the noon start, and shows the later start the forecast alone allows", /why === "snow-noon"[\s\S]{0,700}plan to be off the snow by midday[\s\S]{0,300}The forecast alone would allow a start as late as/.test(cardSrc), true);
-eq("the DAY PICKER is sticky, outside the first box, and says every section below is for that day", /position: "sticky"[^\n]*\n[^\n]*every section below is for this day[\s\S]{0,200}role="group" aria-label="Day"/.test(cardSrc), true);
+eq("the day strip says every section below is for that day", /every section below is for this day[\s\S]{0,200}role="group" aria-label="Day"/.test(cardSrc), true);
+/* Not sticky: #appscroll is overflow:auto yet grows to its content, so a sticky strip binds to a box that never
+   scrolls and rides away with the page (measured live 2026-10-21). Each day section steps the day instead. */
+eq("...and is NOT sticky (it cannot stick inside #appscroll)", /aria-live="polite"[^\n]*every section below/.test(cardSrc) && !/position: "sticky"/.test(cardSrc), true);
+eq("every day section's heading carries the ‹ › day step: alerts, hour by hour, snowfall, air", ["WEATHER ALERTS", "HOUR BY HOUR", "SNOWFALL & SNOW LEVEL", "AIR QUALITY"].every((t) => new RegExp('<DayHead title="' + t + '" dayLabel=\\{dayLabel\\} nav=\\{nav\\} />').test(cardSrc)), true);
+eq("...each passed the one shared nav, so every section moves the SAME day", (cardSrc.match(/nav=\{nav\}/g) || []).length >= 8, true);
+eq("...and a missing neighbour day is a DISABLED button with a name, never a gap", /disabled=\{!n\} aria-label=\{n \? dir \+ " day: " \+ n\.name : "No "/.test(cardSrc), true);
 
 console.log("\n3. SCRAMBLE — thunder sets the deadline; cold and wet is verglas, not a refreeze");
 const storm = run(forecast((d, h) => (d === T && h === 14 ? { code: 95 } : {})), { kind: "scramble", terrain: { snow: "no" }, highFt: 8000, snowFt: null, legs: { up: 4, down: 3, fromCamp: false, floor: false } });
