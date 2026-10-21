@@ -55,6 +55,10 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - discipline, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { disc, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.
+  The **Filters** sheet is a full-height screen (since 2026-10-21; it was an 88vh bottom sheet, which on iOS overflowed off the
+  top and hid the title, ✕ and Discipline row): title row clears the notch, the list scrolls, and **Clear all / Show N routes**
+  are pinned at the bottom. N is the DRAFT's count (`finderArgs()` builds the RPC args for both the draft and the applied query, so
+  the button and the list agree). The page behind is scroll-locked while it is open.
   Mirrors Mountain Project's set, nothing extra (standing decision), except the sort, which offers **Left → right** / **Right → left**
   in place of *By area* (owner, 2026-10-21): `routes_in_subtree` `sort_by` `lr` / `rl` (0332) group the climbs by wall and order each wall
   by `sort_order`, no position last; `area` is still accepted. The offline twin is `subtreeComparer` in `lib/offline.js`.

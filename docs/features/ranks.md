@@ -38,7 +38,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 - **Classic climbs**: different classic routes sent.
 - **Per type**: on any type but All, Logged, Days, Vert, Classics and Peaks read `stats.<all|backed>.by.<type>`
   (sport and trad also roll up as `rock`), so the Bouldering board's Days are bouldering days.
-- **Trusted** `compute_trust_score`, **Belay** `counted_catch_count`, **Vouched** distinct vouchers,
+- **Belay** `counted_catch_count`, **Vouched** distinct vouchers,
   **Contributions** points from `contribution_points()` (0333) — all server-side.
 - **Contribution points (0333)**: ONE ledger, `contribution_points()`, feeds this board, every area's and route's
   TOP CONTRIBUTORS (`area_top_contributors`, rendered by `TopContributors` in `ClimbMatchCore.jsx`) and the profile's
@@ -72,7 +72,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
   Turned around and the roped ticks; top rope and aid offer the roped ticks.
 - **Profile**: tapping a row opens `FullProfile`; friend and message actions live there, not on the row.
 - **Moderation**: ⚑ opens the report sheet (`setReportUser`).
-- **Trust**: the Trusted board and the Profile read the same `compute_trust_score`.
+- **No Trusted board**: it went with the trust score (2026-10-21). `leaderboard()` still returns a `trust` column; nothing reads it.
 
 ## 6. Guards
 `check:grade-parser` holds `lib/rankGrade.js` equal to `rank_grade()` in the newest migration that defines it.
@@ -87,6 +87,6 @@ Hand-run probes: `scripts/oneoff/probe-ranks-anti-padding.sql`, `probe-ranks-ant
 ## 8. Known gaps
 - `leaderboard()` returns at most 500 climbers per scope, ordered by climbs logged, and each board is ranked from
   those. Correct while a scope holds ≤ 500 visible climbers (3 profiles on 2026-10-15); past that, a climber
-  outside the 500 who leads, say, Trusted is missed. Ranking per board on the server is the fix.
+  outside the 500 who leads, say, Vouched is missed. Ranking per board on the server is the fix.
 - Grade conversions between systems are approximate by nature (theCrag and 8a.nu publish their own tables).
 - A Peaks count is per summit AREA; two faces of one peak filed as two areas count twice.

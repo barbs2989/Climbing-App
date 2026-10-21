@@ -137,7 +137,7 @@ const withoutSignal = {
   // Listed at a DIFFERENT state: no path is the other or inside it. (Listed at the canyon ABOVE the
   // crag would still overlap — that is the two-way reach partners_in_area promises.)
   "listed areas": { ...base, partnerAreaPaths: ["usa.washington.wa_north_cascades"] },
-  "verified trust": { ...base, verified: false },
+  "verified": { ...base, verified: false },
   "availability overlap": { ...base, availability: ["wed"] },
   pace: { ...base, hikingSpeedFtHr: 300 },
 };
