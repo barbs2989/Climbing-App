@@ -11,6 +11,12 @@
 // Slots (route column <- page section): overview <- Description, detailed_rack <- Protection, location <- Location,
 // fa <- FA.
 //
+// THE REWRITE (a Claude pass, Sonnet, one batch at a time; writes out-NNN.json = { id: { field: text } }): list the
+// source's facts, then write them in a new order and new vocabulary — never a sentence-by-sentence paraphrase, which
+// apply-route-details refuses for 4-word overlaps (New York's first draft: 49 of 85 fields). Invent nothing; never
+// alter a route name; no first person, sources or capitals. Caps: overview 700, detailed_rack 280, fa 120, and
+// location 160 — a DATABASE limit (routes_location_len, 0243), so aim for 150.
+//
 // --adds: only the climbs order-from-mp.mjs ADDED (catalog/_mp/_order/<state>.adds.json), so a wall's new
 // neighbours get their prose without offering every mapped route in the state.
 // A slot that already holds text is never offered, so researched prose is never overwritten.

@@ -21,7 +21,7 @@ const [state, outFile] = process.argv.slice(2).filter((a, i, all) => a !== "--dr
 const APPLY = process.argv.includes("--apply");
 if (!state || !outFile) { console.error("usage: apply-route-details.mjs <state> <out.json> [--apply]"); process.exit(1); }
 const KEY = requireServiceKey(), H = { apikey: KEY, Authorization: "Bearer " + KEY, "Content-Type": "application/json" };
-const CAP = { overview: 700, detailed_rack: 280, location: 400, fa: 120 };
+const CAP = { overview: 700, detailed_rack: 280, location: 160, fa: 120 /* routes_location_len (0243) */ };
 
 const inFile = process.env.IN || join(dirname(outFile), basename(outFile).replace(/^out-(?:[a-z_]+-)?/, "in-"));
 const inputs = new Map(JSON.parse(readFileSync(inFile, "utf8")).map(r => [r.id, r]));
