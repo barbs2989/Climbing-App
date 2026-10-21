@@ -26,6 +26,13 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 - **Settings**: units (imperial/metric), date format, notification switches, visibility switches (show full name `show_name`,
   `discoverable`, résumé visibility, trip-report visibility incl. the bulk `setAllMyTripReportVisibility`, mutual friends,
   visible while browsing), emergency contact, sign out.
+- **Settings is four pages** (Facebook's layout): the sheet lists *Privacy & safety*, *Notifications*, *Your data & account*
+  and *Legal & help*; each opens full screen with ← Back (`settingsPrivacyOpen`, `settingsNotifsOpen`, `settingsDataOpen`,
+  `settingsLegalOpen`). Privacy & safety: every visibility and who-can-reach-you control, the inbox filter, the résumé switch,
+  restricted and blocked climbers. Notifications: the three switches. Your data & account: sign in/out, Edit profile, the guide
+  entries, Edit areas/disciplines/grades, Your conditions, Readiness defaults, units and date format (*Display*), then export,
+  opt out and delete. Legal & help: the four documents and How ClimbMatch works. Four flags rather than one, so each page is
+  its own overlay the browser walks open by name. `closeSettings` closes the sheet and any open page when a row leaves Settings.
 
 ## 2. How it works
 1. **Real vs seed.** `ME` (`ClimbMatchCore.jsx`) is the seed global. `App` re-copies hook state onto it each render (legacy hack; do not extend).
