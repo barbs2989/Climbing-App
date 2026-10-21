@@ -32860,3 +32860,38 @@ while Wikipedia/SummitPost give the same leader and year but a party of 20; left
 specific source corroborates the stored figure precisely.)
 
 Pass 7 continues next run after `wa_mount_baker_park_glacier_headwall`.
+
+## Batch 425 — 2026-10-21 (pass 7)
+
+Eight routes, one per peak: Mount Baker's Squak Glacier, Mount Barnes' Elwha Basin Scramble,
+Mount Berge's East Ridge, Mount Bigelow's Tribute to Richard, Mount Blum's North Ridge, Mount
+Buckindy's Glacier/Scramble Route, Mount Cameron's Standard Route, and Mount Challenger's
+Challenger Glacier.
+
+0 confirmed errors. Every peak's `high_point_ft`/`elevation_ft` checked exactly against an
+independent source: Barnes 5,986 ft (Wikipedia/PeakVisor: 5,987, a 1 ft rounding difference),
+Berge 7,948 ft (matches the surveyed northern-summit point a Peakbagger-adjacent source gives,
+distinct from the ~7,951 ft traditional southern summit some sources quote for the same double
+peak), Bigelow 8,449 ft (Wikipedia exact; SummitPost/Mountaineers' 8,440 ft is the older/rounded
+figure), Blum 7,685 ft (Wikipedia's NAVD88 figure exact), Buckindy 7,320 ft (Wikipedia exact),
+Cameron 7,190 ft (Wikipedia/PeakVisor exact), Challenger 8,207 ft (Wikipedia/PeakVisor/
+Mountaineers/Steph Abegg exact; a SummitPost 8,236 ft figure is the outlier here). All eight
+area rows and their routes' own `high_point_ft` agree with each other, as they did last batch.
+FA attributions checked: Mount Challenger's Challenger Glacier `fa` (Dickert, Hossack, MacGowan,
+Sept 7 1936) matches a Mountaineers photo-archive catalog entry naming the same three climbers
+for the peak's 1936 first ascent. Mount Buckindy's `fa` (Grimlund, Nicholson, Trueblood, Aug 28
+1955) matches Wikipedia exactly. Mount Blum's North Ridge `fa` (Hutchinson, Leatherman, Weigelt,
+Sept 16 1972) could not be independently corroborated or contradicted — Wikipedia and SummitPost
+cover the peak and this route's line but not its climbing history; left as-is, not flagged, same
+treatment as unconfirmable-but-uncontradicted facts in prior batches.
+
+Noted, not flagged: Mount Berge's `access`/`road` state the Chiwawa River Road (FR 6200) closed
+beyond Atkinson Flat since May 20, 2026 through Dec 31, 2027, plus a Little Giant Fire closure
+order through Oct 31, 2026 — both still plausibly current as of this run. Mount Blum's `road`
+states Baker Lake Road closed at Shannon Creek Bridge since ~July 15, 2026, "expected through
+end of August 2026" — that stated end date has now passed and no reopening notice was found
+either way, so current status is genuinely unconfirmed rather than confirmed-wrong; this is
+exactly the staleness `audit:expiring-closures` exists to track, not something to guess a fix
+for here.
+
+Pass 7 continues next run after `wa_mount_challenger_challenger_glacier`.
