@@ -28,6 +28,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **No demo flash on load**: the live site no longer shows the demo climber's Home ("Good morning, Nathan") for a split second before your own; it waits for the stored session first, and a first load on a new device greets you by the name you signed up with. See `docs/features/profile-and-settings.md`.
 - **Alpine Conditions: switch day from any section**: the day strip's sticky pin never held (the document scrolls, not `#appscroll`), so each day section (alerts, hour by hour, snowfall, air) now has its own ‹ › in its heading, stepping the same day for all of them. See `docs/features/conditions.md`.
 - **A crag's climb list can be sorted**: Left → right (default), Right → left, A → Z, Z → A. The two wall orders appear only where `routes.sort_order` is stored (1 route of 314k today; the order will be filled from Mountain Project's area pages, which hold more routes than OpenBeta), and climbs with no position are listed last, by name, with a line saying so. See `docs/features/maps-and-area-browser.md`.
 - **Sign out works offline**: when the logout request cannot reach the server, the app still signs this device out instead of saying "Signed out" over a session that came back on reload. See `docs/features/profile-and-settings.md`.

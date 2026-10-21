@@ -32,7 +32,8 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 1. **Real vs seed.** `ME` (`ClimbMatchCore.jsx`) is the seed global. `App` re-copies hook state onto it each render (legacy hack; do not extend).
    When signed in, `getProfile(id)` (`lib/auth.js`, `profiles` select `*`; `PGRST116` zero-rows returns `null`, any other error throws) hydrates `profile` (`useState` + `setProfile`)
    and the rest of the app reads it through `meLive`. The sign-in reset zeroes `ME`, so new code spreads `meLive` rather than `ME`.
-2. **Cold load**: until `getProfile()` lands `ME.name` is the placeholder "Climber"; the Today greeting remembers the name per device to avoid a flash.
+2. **Cold load**: until `getProfile()` lands `ME.name` is the placeholder "Climber"; the Today greeting uses the name this device remembered for the account, else the session's sign-up name, never the placeholder.
+   App paints a blank shell until `useSession` first answers (`session===undefined`) even with demo autologin on, as production is, or the demo climber's home flashes for a frame before the account's.
 3. **Edit**: opening the editor seeds `editDraft`; `saveEdit` normalises it (`FALLBACK_AV` avatar placeholder becomes `""`, never stored; `setMyWeek(d.availWeek)`),
    then calls `saveProfile(id, fields)` (`lib/auth.js`), a PATCH of whatever object it is handed that invalidates every cached profile reader (`authProfileReaders`).
    Because it PATCHes a partial object blindly, a failed profile read must not open the editor (`check:profile-edit-gate`) and the photo strip uses
