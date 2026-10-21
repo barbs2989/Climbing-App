@@ -28,6 +28,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Crews tab: + Create a crew leads the tab, for everyone**: it sat below every crew card and vanished for a climber with no saved climbs; it now opens the tab and offers an area, your saved climbs, or *A climb — find it in Climbs…*. A past crew no longer counts as a climb's crew: its climb can be crewed again, and invites, *Open crew* and the objectives badge reach only an active crew (`activeCrews`).
 - **The trust score is gone** (owner decision): no badge, number, ring, Profile trust card, Min trust filter, Most trusted sort, Trusted board or Trust 20+ group policy. Conditions consensus, start pins and topo lines no longer weight reports by reporter trust. Vouches, belay catches and ✓ Verified stay. See `docs/features/profile-and-settings.md`.
 - **Crag routes: no essentials field, BETA always shown**: sport/trad/toprope/aid/bouldering editors stop offering *Route-specific essentials* (it rendered nowhere on a crag page), and an empty crag BETA keeps its heading with *Add beta*. See [route-page.md](docs/features/route-page.md).
 - **Route finder Filters work on a phone**: the sheet is now a full-height screen — the ✕ and the Discipline row sit below the notch instead of under the browser bar, Clear all / **Show N routes** are pinned at the bottom with the live count, and the page behind no longer scrolls under it. See `docs/features/maps-and-area-browser.md`.

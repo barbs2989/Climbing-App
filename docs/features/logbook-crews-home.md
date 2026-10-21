@@ -34,6 +34,8 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   the Crews tab's "+ Create a crew → At an area…", or a past crew's picker, through `StartCrewSheet`; `formCrew` takes a route id or a place) — with members, proposed dates,
   per-member day acks and a "Ready" state (`datesAgreed`/`agreedDate`). Every surface that names a crew resolves its place through `crewPlace` (`placeTrip`, `placeCap`,
   `placeLabel`, `placeSub`, `placeMatchesLog`), wrapped by App as `placeOf`; `check:crew-place` holds every reader on it.
+  **+ Create a crew** is the first control on the tab for every climber (above pending requests and the crew cards): an area (`StartCrewSheet`), a saved climb with no ACTIVE crew, or *A climb — find it in Climbs…* (opens Climbs to save one); *Find partners* sits beside it.
+  A climb's crew is its ACTIVE crew (`activeCrews`): the create picker, the invite prompt, the partner rows' *+ Invite to crew*, a shared objective's *Open crew* and `ListsManager`/`PartnerSearch` (handed `activeCrews`) never reach a past crew, so a past crew's climb can be crewed again.
   Each crew renders as `CrewCard`: members, invite (by profile or email), itinerary, `CrewGearList` (who brings what), meet time/place, float plan.
   Every card starts COLLAPSED (`collapsed={!isOpen}` in App; `openCrewId` is set only by `openCrewCard` and the create flows): the header, Log the climb, join requests, Steps to get ready, Crew chat and **View plan ▾**. View plan opens the rest; a link that names a crew opens that one.
   Crew chat and direct messages (`useCrewMessages`, `useDirectMessages`); unread counts via `countCrewUnread`; `Inbox` and `NotifPanel` surface them.
