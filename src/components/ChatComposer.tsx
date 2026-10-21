@@ -1,5 +1,6 @@
 import { useState, type ChangeEvent, type KeyboardEvent } from "react";
-import { C, PhotoAltField, photoAlt } from "../../ClimbMatchCore.jsx";
+import { C, photoAlt } from "../../ClimbMatchCore.jsx";
+import PhotoAltField from "./PhotoAltField.tsx";
 
 export interface ChatComposerProps {
   /** "dm" or "crew": the quick replies are drawn as a scrolling strip of grey chips for a DM and blue chips for a crew. */
