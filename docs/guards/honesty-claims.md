@@ -370,109 +370,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `check:a11y-badges` exists for, since the course name is the previous inline span. The greying
     and the "(demo)" suffix carry the honesty instead. Same reasoning put the "added by hand" mark
     as plain text inside the existing muted sub-line rather than a chip after the grade.
-  - **"RAISE IT WITH:" OFFERED A STEP ALREADY DONE.** The trust card renders a fixed row of three
-    — Log a route / Verify email / Add a cert — and it was unconditional, so an already-verified
-    climber was told verifying would raise their score. **The app knew**: the handler opens
-    `if(verified){showToast("You're already verified.");return;}`, and the résumé two inches away
-    reads *"✓ Email verified"* off the same value (`ME.verified=verified`; `Resume` takes
-    `const ver=climber.verified` off `meLive`). **HOME ALREADY DID THIS CORRECTLY** — its setup
-    checklist pushes the verify row only `if(!ME.verified)` and every other row there is
-    conditional too — so this list was the outlier, not the rule.
-  - **The gate is ONE, deliberately.** A third array element carries the condition and the list is
-    filtered on it; "Log a route" and "Add a cert" stay unconditional, because both are always
-    worth doing and hiding them would remove real advice. An injection that gates "Log a route"
-    must FAIL, or a guard asserting only that the gate exists is satisfied by gating everything.
-  - **SECTION 3 IS PARSED WITH BABEL, NOT MATCHED WITH A REGEX, and that is this session's most
-    expensive lesson made structural.** Three separate checkers were fooled the same day by the
-    comment written to explain the fix they were checking — `check:fire` and a float-plan probe
-    each went RED on a correct tree from one comment quoting `{tab==="safety"?…}`, and a
-    demo-verify probe went the other way, **passing on a fully-restored defect** because the
-    comment contained `demo:true`. An AST does not see comments at all. Where source must be read
-    textually here (the `onVerifyCourse` handler), comments are stripped first.
-  - Fails **closed**: fewer than 5 app sources resolved (via `appSources`, which names any missing
-    required file rather than quietly reading fewer), a render under 900 chars — every *"must NOT
-    contain"* assertion passes against a page that rendered nothing — fewer than 200 array
-    literals parsed, and the list or handler anchors going missing.
-  - **A BUILD GATE RATHER THAN THREE PROBES, and the reason is the shape of the fixes.** All three
-    change **strings and conditions, not names**, which `audit:silent-reverts` says in its own
-    closing caveat it cannot see; a stale-base squash could restore every one of them with each
-    existing gate green. Same argument that promoted `check:verification-fallback` and
-    `check:topo-outage-copy`. It supersedes `probe-resume-self-reported-rows.mjs`,
-    `probe-resume-demo-verify-says-so.mjs` and `probe-raise-it-with-hides-done-steps.mjs` —
-    *a verification nobody runs is not a verification*.
-  - Injection-tested **10/10**, each case proving its edit landed **by checksum** and restoring
-    every file byte-identically. Cases 1, 4, 5, 7 are the real historical defects. **Three cases
-    are over-reach in the other direction** — marking every row hand-added, gating "Log a route",
-    and dropping the chip's leading glyph — because a mark applied to everything says nothing, and
-    a guard that only ever demands MORE marking would drive exactly that.
-  - **A FOURTH INVARIANT, AND THE GUARD'S OWN ASSERTION WAS FORBIDDING IT.** Section 3 was written
-    for *a step already DONE*; **"Add a cert" is the same defect arriving by the other route — a
-    step that CANNOT BE TAKEN.** The server model scores club/guide credentials off
-    `verification_records` at `status='verified'`, and **nothing in this app can write one**: `0085`
-    pins every client write to `'pending'` and `verify_my_email()` is the only definer that writes
-    `'verified'`, hardcoding `'email'`. So under *"Raise it with:"* a signed-in climber was told to
-    do something that could not move the number above it.
-    - **IT WAS TRUE WHEN IT WAS WRITTEN, which is the whole lesson.** The card then showed
-      `vScore`, and the **CLIENT** model scores `(c.certifications||[]).length` — the very array
-      `openEdit` edits — so the row genuinely raised it. **#1676 pointed the card at the SERVER
-      score and falsified the advice beside it without touching this file.** *A promise is only
-      true relative to a build*, which this file already records for `check:policy-claims` §3 —
-      arriving here as a claim broken by a change to a **different** subsystem.
-    - **AND THE GUARD HAD GONE STALE WITH IT.** Section 3 asserted *"Add a cert stays
-      unconditional"*, correct under the client score and, once the card moved, **an assertion
-      keeping a false claim alive and failing the fix**. That is the shape `check:policy-claims`
-      records (*"the stale assertion was REMOVED, not reworded"*), this time **inside a guard**.
-      When a guard argues with a repair, ask what its assertion was written against.
-    - **DERIVED, NEVER TYPED.** The rule asks `scripts/lib/verification-reach.mjs` which types some
-      definer can set to `'verified'`, so it is **two-directional by construction**: while nothing
-      can attest a credential the row must be gated, and **the day one can, the guard demands the
-      row back**. `credential-becomes-verifiable` is that case — a guard holding a hardcoded *"certs
-      are impossible"* stays quiet there and is wrong.
-    - **`!uid` is exactly the line between the two models** (`myTrustScore` is the server score
-      whenever there is a uid and `vScore` otherwise), so the **demo keeps the row** — a cert really
-      does raise the number there. Gating it globally would have removed correct advice.
-  - **SECTION 4 — THE BADGE BESIDE EVERY CLIMBER NAMED A SCALE THAT DOES NOT EXIST.** `TrustBadge`'s
-    tooltip read *"Trust score (0–100): built from **ID verification**, partner vouches, belay
-    catches logged, climbs logged and **certifications**"* — leading with the two components that
-    are 0 for everybody forever, and stating a range wrong twice over: the model caps at **99**, and
-    only **84** of its 104 points can be earned at all. The rule is the same derived one, plus two
-    that keep it honest: a **non-vacuity** floor (the tooltip must still name ≥3 inputs a climber
-    can move, or "corrected by deletion" passes) and **no hardcoded range** — a literal scale bound
-    typed into a title string is a hand-copy nobody re-derives, which is how the old one came to
-    describe a scale that had never been measured.
-  - **THE TIERS WERE MEASURED, THE QUESTION WAS PUT TO THE USER, AND IT IS ANSWERED — this bullet
-    said "deliberately NOT touched" for longer than that was true, and it was the LAST surviving
-    copy of a claim two other entries had already recorded going stale.**
-    `scripts/oneoff/measure-trust-goal-against-ceiling.mjs` bundles the app's own model and parses
-    the migrations: **ceiling 84, day one 5, partnerless 54**, with `ID verified 0/10` and
-    `Certifications 0/10` unfillable — all still true, and all still worth re-running rather than
-    quoting. Against that, the card's *"/ 90 goal"*, its *"goal met"*, its *"✓ Well-trusted"* and
-    the badge's *"Highly Trusted"* (≥90) **were all unreachable — no climber could ever be shown
-    any of them** — and *"Trusted"* (≥70) was barely better.
-    - **#1740 FIXED THEM.** One derived `TRUST_TIERS` at **65 / 33 / 15**, `TRUST_GOAL` derived
-      from its top tier, and `check:trust-breakdown` **section 7**, which **BOUNDS** every bar
-      (reachable, and not handed out for confirming an email) while deliberately pinning no
-      particular number — so it cannot argue with the next rebalance. That entry records the
-      climber states each bar is anchored to; read it rather than re-deriving them here.
-    - **READING THIS PARAGRAPH AS LIVE WOULD HAVE RE-RAISED A CLOSED PRODUCT DECISION, and the
-      likeliest "fix" it invites is restoring 90 and 70** — which is the one outcome memory
-      records as explicitly forbidden. That is the stale-bookkeeping class this file names
-      everywhere else, sitting in its own pages: *a stated gap that has since closed sits in the
-      worklist looking like work.* Its own worked example had inverted too — at 33 the climber it
-      describes scoring **65** now reads *"Trusted"*, not *"Building Trust"*.
-    - **Nothing reconciles two entries that describe one fact**, which is why this survived while
-      `check:trust-breakdown` §6 and §7 both recorded the same claim expiring. **When a limitation
-      here is acted on, replace it with the measurement — and grep for the other copies**, because
-      a decision stated in prose is a hand-copy wherever it lives.
-  - Injection-tested **10/10** for these two sections
-    (`scripts/oneoff/inject-profile-claims-reach-cases.mjs`), each case proving its edit landed **by
-    checksum**, restoring byte-identically, and judged on the guard's **own FAIL lines** — the
-    harness captures the clean run first and **refuses any expectation already present in it**, the
-    structural form of a mistake this repo has made twice. **Three must stay SILENT**: a reworded
-    tooltip (a guard pinned to one phrasing forbids improving it), a comment quoting the pre-fix
-    entry (section 3 reads the list through Babel, so comments are invisible — three checkers here
-    have been fooled by the comment explaining the very fix they were checking), and an unrelated
-    new row.
+  - **SECTIONS 3 AND 4 WERE RETIRED ON 2026-10-21 with the trust score** (owner decision). Section 3 policed the trust card's *"Raise it with:"* row and section 4 the `TrustBadge` tooltip; both surfaces are gone, so the sections, their shared verification-reach helper and the injection suites went with them. Their history is in git.
   - **SECTION 5 — THE GRADE PYRAMID ON SOMEBODY ELSE'S PROFILE CLAIMED TO BE LOGGED CLIMBS, AND
     CONTRADICTED THE HEADING DIRECTLY BENEATH IT.** `FullProfile` renders one section two ways.
     Viewing **yourself**, `AscentPyramid` is handed `climber.__selfLogs` — real logs — and *"Your
@@ -877,415 +775,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     (`CMAX_DISC` 16 -> 18), a comment quoting the forbidden `Math.min(99,` shape, a comment naming
     the old refusal wording, and **the refusal reworded truthfully and differently** — the
     load-bearing one, since it is what proves 6b/6c are not pinned to a phrase.
-- **`check:trust-breakdown`** asserts that the factors under WHAT FEEDS YOUR SCORE add up to the
-  number above them. Static (SSR of the real panel + a read of the migration), so it sits in
-  `npm run build`.
-  - **IT USED TO ASSERT AGAINST A SCORE THE SCREEN NO LONGER SHOWS, and that is the change.** One
-    climber had **two** trust scores: `FullProfile` reads
-    `climber._real ? realTrust : vScore(climber)`, `_real` is set only for a **uuid** id, and
-    **`ME.id` is 0 signed in or out** — so your own Profile and your own *"View public profile"*
-    rendered the **client** model while every other climber looking at you got the **server** one.
-    Measured gap up to **36 points** on a 0-99 scale: a verified account with 5 vouches and 20
-    climbs read **50** to itself and **14** to everyone else.
-  - **They were never two implementations of one formula, which is why "just swap the headline" is
-    wrong.** The client model scores email · reliability · response rate · vouches (4 each) ·
-    catches · logs, normalised to sum to 99; the server model (`0038`) scores email 5 · id 10 ·
-    certs 10 · **tenure 20** · vouches 20 (**1** each) · logs 15 (1 per 5) · reports 14 (1 per 3) ·
-    catches 10, raw and capped. **Tenure** and **condition reports** exist only server-side;
-    **reliability** and **response rate** only client-side. Swapping the headline alone would have
-    left an itemisation of six factors under a number derived from eight different ones — and this
-    guard would have stayed green, because it compared the breakdown against `vScore` rather than
-    against what the screen renders.
-  - **THE SERVER MAXIMA TOTAL 104 AGAINST A CAP OF 99**, so a factor list that sums past the
-    headline is correct rather than a defect. The panel says so instead of hiding it; a breakdown
-    quietly rescaled to hit 99 would be the [[trust-breakdown-shows-a-different-scale-from-its-headline]]
-    defect committed in the other direction.
-  - **TWO DEFENCES AGAINST THE TRANSCRIPTION DRIFTING, because `serverTrustFactors` is a JS copy of
-    plpgsql and this file records the four-grade-parsers shape four times over.** Build-time,
-    **section 3 reads the weights out of `0038` itself** — every rate, divisor and cap is parsed
-    from the migration, so nothing is written down twice and a re-weight in SQL fails the build.
-    Run-time, the app compares its local total against the number the server actually returned and
-    **withholds the itemisation** when they disagree, showing the server number alone. *A breakdown
-    that does not add up to its own headline is worse than no breakdown.*
-  - **THE FIRST VERSION OF SECTION 3 WAS BLIND TO TWO REAL DRIFTS AND ONLY INJECTION SAID SO.** It
-    asserted that one unit of input scores one point — which cannot see a wrong **rate** (one catch
-    at 3 points still caps at 10) nor a wrong **divisor** (`floor(5/4)` is 1 exactly as `floor(5/5)`
-    is). It probes **21 values per factor** now, spanning either side of the parameter and past the
-    cap: *probe the whole curve, never one point on it.*
-  - **AND THE HARNESS CREDITED CATCHES IT HAD NOT MADE.** It tested `/SERVER MODEL/` against the
-    whole output — which matches the **`ok SERVER MODEL: …`** lines too, so it scored any run that
-    merely *reached* section 3, and filed a section-4 failure as a section-3 catch. Each case
-    declares the text its **own** failure must carry now, matched against `FAIL` lines; that
-    immediately exposed one case being credited on the wrong message.
-  - **Section 4 proves the rows REACH THE MARKUP**, which no number can: the panel takes them
-    through `TrustBreakdown`'s `rows` prop, and a merge dropping that prop falls back to
-    `trustContributions(climber)` **silently** — the client model rendering under a server headline,
-    i.e. this whole defect restored without touching a value. It keys on *"Time on ClimbMatch"*,
-    a factor the client model has no equivalent of, so a fall-through cannot satisfy it.
-  - **The eight inputs are counted off the RAW query rows, not the hydrated `logs`**, and that is
-    not tidiness: the hydration defaults a null `trip_report_visibility` to `"public"` while the
-    SQL's `in ('public','crew')` does **not** match a null. Counting the hydrated list would
-    disagree with the server on precisely the rows nobody set a visibility on — and the runtime
-    check would then withhold the breakdown for a reason that is the reader's fault.
-  - **`VOUCH_BOOST` reaching no screen is NOT a regression and was checked rather than assumed.**
-    That session supplement gives immediate feedback when you vouch for someone; a real climber's
-    headline is the server score, which counts vouches at 1 point each, so the number is right on
-    the next fetch and there is no double-count.
-  - Fails **closed**: a missing export, a factor count that does not match the migration's, an
-    account with no inputs that already scores (which would hide a constant inside a rate), or a
-    panel rendering under 200 characters are each a broken guard rather than a clean one.
-  - **IT LANDED ON TOP OF #1539, WHICH CAVEATS THE SAME CARD, AND THE TWO NEEDED RECONCILING RATHER
-    THAN STACKING.** That change reads three flags — `logsUnavailable`, `catchesUnavailable`,
-    `vouchesInUnavailable` — and says *"Some of what feeds this couldn't load, so your score is
-    showing lower than it is"*, because a failed read does not blank the client score, it silently
-    **lowers** it (measured there: an established account reads 88 healthy against 32 with all three
-    down). Those three reads feed the **client** model. Once the headline is the number the server
-    computed, **they do not feed it** — so leaving the caveat on every account would put a false
-    warning over a number that is right, and this file records in half a dozen places that a false
-    warning is how a real one stops being read. `_trustUnsure` adds *"and the fallback is what is
-    showing"*: `_trustPartial && myServerTrust == null`. The caveat and the withheld *"Raise it
-    with"* prompt both key on it, and the probe asserts the **derivation** as well as the two uses —
-    a merge keeping the uses and dropping the definition would put the caveat back everywhere.
-  - **`trustGapLabels` takes a `server` flag for one reason worth stating**: the server model counts
-    **logged climbs and condition reports off the ONE `climb_logs` read**, so a failed logs read
-    takes both rows; in the client model *"Conditions reported"* is a separate, untracked input, and
-    marking it *"Couldn't load"* there would be a false statement about a row that reads *"Not yet
-    tracked"*. Same flag, two models, two correct answers.
-  - **THE GROUP-JOIN GATE NOW READS THE DISPLAYED SCORE, and the SIGNATURE is the fix rather than
-    the call site.** `groupTrustShortfall` took `meLive` and called `vScore` itself — the CLIENT
-    model — while the Profile and every other climber see the SERVER one. So a group's *"Trust 55+
-    only"* policy was enforced on a number that appears nowhere, and the app could tell you that you
-    are trust 14 and then admit you. It takes a **number** now, so a second derivation is impossible
-    rather than merely absent, and both byte-identical join handlers pass `myTrustScore`.
-    - **THE TWO HANDLERS ARE ONE NOW (2026-10-07).** The group card and the group detail each held a
-      60-line copy of the join handler, which is why this case counted to **two**. Membership
-      questions (0258) would have been a third thing to keep in step by hand, so both buttons now call
-      `groupJoinTap(cl)`. The assertion moved with it: exactly **one** `groupTrustShortfall(` call
-      site (the definition excluded), reading `myTrustScore`, and **at least two**
-      `onClick={()=>groupJoinTap(cl)}` callers — a regrown inline copy shows up as a second call, and
-      a button that bypasses the gate as fewer than two callers.
-    - **THE BAR MOVES, AND THAT IS STATED RATHER THAN DISCOVERED LATER.** The two models are scaled
-      differently — a vouch is 4 points in one and 1 in the other — so the same 55 is a different
-      threshold. Measured over five example profiles
-      (`scripts/oneoff/measure-group-trust-gate-scale.mjs`), **one changes side**: *a year in,
-      active* reads **57** on the client model and **37** on the server one. On the server scale even
-      email plus two years' tenure plus twenty vouches comes to **45**.
-    - **THAT OPEN QUESTION IS ANSWERED, AND 55 WAS NOT MERELY STRICT — IT WAS A CLOSED DOOR.** This
-      bullet read *"whether 55 is still the right number is an open product question … nothing here
-      answers it"*, which is the [[a-stated-limitation-is-a-worklist-not-a-caveat]] shape sitting on
-      a live gate. Measured (`scripts/oneoff/measure-real-trust-scores.mjs`, service key — an anon
-      count on `verification_records` returns 0 whatever the table holds): **every real account in
-      the project scores 0, 5 or 6**, and catalog-wide there are **0 vouches, 0 belay catches and 1
-      climb log**, so five of the eight components are zero for everyone.
-    - **THE EARNABLE CEILING IS 84, NOT 99, and that is what made 55 impossible rather than
-      demanding.** `compute_trust_score` pays 10 for a government ID and 10 for club/guide
-      credentials, and **nothing in the app can grant either**: `0085` pins every client write to
-      `'pending'`, `verify_my_email()` is the one definer that writes `'verified'` and it hardcodes
-      `'email'`, and `addVerification` is imported by both app files and **called by neither**. So
-      20 of the model's 104 points are unreachable, and 55 sat **one point above the 54** a climber
-      with no vouches and no belay catches can ever reach — i.e. "trust" had quietly become "somebody
-      has spoken for you", which is the state every new climber starts in.
-    - **20 IS NOT FITTED TO A CASE.** The verdict-preserving range for the profiles both models were
-      measured over is **17..37**, and 20 sits at the end that keeps the gate walkable for the
-      population that exists: a day-old verified account is 5 and is turned away, three months is 8,
-      half a year of real participation clears it.
-      `scripts/oneoff/measure-group-trust-threshold-candidates.mjs` re-derives all of it and prints
-      what each candidate demands in things a climber can actually do — **do not quote the figures
-      here without re-running it.**
-    - **Section 6 BOUNDS the threshold and deliberately asserts NO particular number**, because
-      where it sits between those bounds is a product decision and a guard pinning today's value
-      would argue with the next one. Both bounds are derived from the model and from
-      `scripts/lib/verification-reach.mjs`, so they move by themselves when the weights change or
-      when a verification the app cannot currently grant becomes earnable — the direction that
-      otherwise goes stale silently, since it makes the bar look more attainable than it is.
-    - **The honest-refusal branch keys on `_trustUnsure`, not `_trustPartial`.** Once the gate reads
-      the displayed score, the three client-side flags only make it unreliable while the
-      locally-computed fallback is showing; refusing a join because an unrelated client read failed
-      would be a false refusal.
-    - Section 5 asserts it **as source** (the call sites are click handlers) and **at a count of
-      two**, and two injection cases pin both halves — deriving a score again, and leaving one of
-      the two identical handlers behind.
-  - **SECTION 7 BOUNDS THE FOUR BARS THAT ONLY EVER SPEAK, and they were miscalibrated the same way
-    for the same reason section 6's threshold was.** Fixing the group gate left them: the Profile
-    card's **`/ 90 goal`**, its **progress denominator**, its **`✓ Well-trusted`** line and
-    `TrustBadge`'s **`Highly Trusted` (90)** all sat at or above the **84** a climber can earn, so
-    *"goal met"* and *"Highly Trusted"* were states **no account could ever be shown**, the progress
-    bar capped at **93%** for the best possible climber, and every real account in the live project
-    (0, 5 and 6) read **"New"** in red. `Trusted` at 70 was barely better — two years, 60 logs, 12
-    vouches, 20 reports and 9 catches scores **65**, so that climber read *"Building Trust"*.
-    - **SAME CONTRACT AS SECTION 6, and that is what keeps it from arguing with the next product
-      decision:** it asserts every bar is **REACHABLE** and that none is handed out for confirming
-      an email, and it deliberately pins **no particular number**. Both bounds are **DERIVED** — the
-      ceiling from `earnableCeiling()` in `scripts/lib/verification-reach.mjs`, the floor from
-      `dayOneScore()` — so they move by themselves the day a verification the app cannot currently
-      grant becomes earnable. A guard holding today's 65 would go red on the next rebalance, which is
-      how a guard teaches people to ignore it.
-    - **`SERVER_TRUST_EARNABLE` MUST BE THE DERIVED CEILING, not a number typed into core once.**
-      Without that assertion the constant is the hand-copy this whole section exists to remove, and
-      it would go stale in the direction that makes a bar look **attainable** — the safe-looking
-      direction, which is why it needs asserting rather than reading right.
-    - **THE LADDER WAS WRITTEN TWICE AND THE GOAL FOUR TIMES, and no number could see it.**
-      `TrustBadge` and `FullProfile` each carried their own `90/70/50` copy, so one climber could be
-      called two different things depending which screen you were on; the card's goal, its
-      denominator and its `Well-trusted` gate were three more literals. Every bound above is
-      satisfied by a second copy that happens to agree **today**. They are one exported
-      `TRUST_TIERS` table now with `TRUST_GOAL` derived from its top tier, and the count of copies is
-      asserted separately. Same shape as the group roster's `_memN`, where *a hoist is not a single
-      source of truth until every site uses it*.
-    - **THE ONE-COPY RULE IS A BABEL AST SHAPE TEST, AND A STRING COUNT WAS MEASURABLY WRONG.** The
-      first version counted the tier LABEL and reported two findings, **both correct code**: this
-      guard's own comment quoting `"Highly Trusted"` while explaining the fix, and the Leaderboards
-      board category `{id:"trust",label:"Trusted",val:pp=>vScore(pp)}` — a working control that
-      merely shares a word. It would have told an author to delete its documentation or rename a
-      control. The rule is *a `>=` comparison choosing a tier label*, and an AST sees neither a
-      comment nor an object property. That is the instrument `check:profile-claims` section 3
-      reaches for after three separate checkers were fooled in one day by a comment written to
-      explain the fix they were checking.
-    - **THE NUMBERS ARE ANCHORED TO DESCRIBED CLIMBER STATES, never to a fraction of the scale** —
-      the method that produced `GROUP_TRUST_MIN` 55 → 20. `Building Trust` **15** is email + six
-      months + 20 climbs (5+6+4); `Trusted` **33** is a year + 40 climbs + 3 vouches + 2 catches;
-      `Highly Trusted` **65** is two years + 60 climbs + 12 vouches + 9 catches + 20 reports. Each is
-      recorded in the source beside the table, because a bar justified by a fraction of a scale is a
-      bar nobody can re-derive. **A score cannot guarantee CORROBORATION** and the comment says so:
-      tenure plus logs plus reports reach 54 with no vouch and no catch, so the top tier is *"a long
-      and full record"*, not *"somebody has spoken for you"*.
-    - **THE PRODUCT CALL WAS THE USER'S, and a parallel session had explicitly deferred it.** The
-      comment that stood in core said the tiers were *"deliberately NOT touched here … a product
-      decision, not polish — raised rather than swept"*, and the memory entry said the same. It was
-      raised; the answer came back **fix them**. What changed is only where the reachable bars sit;
-      the reasoning that they were unreachable is unchanged.
-    - **PROVEN ON SCREEN SEPARATELY**, because the table can be perfect while `trustTier` is wired to
-      nothing: `scripts/oneoff/probe-trust-tiers-onscreen.mjs` renders the real `TrustBadge` at each
-      tier's own minimum **and at one point below it** (the boundary is where an off-by-one lives,
-      and a ladder wired to the bottom tier passes any test that only checks the minimum), asserts
-      the progress bar can reach **100%** at the ceiling, and pins the tooltip in **both**
-      directions — it must not name a scale the model lacks, and it must still say what the score is
-      built from, since a rewrite that stops over-claiming and also stops saying anything would pass
-      a test that only looks for the old text.
-    - **The measurement is `scripts/oneoff/measure-trust-tiers-against-ceiling.mjs`**, which reads
-      the bars **out of the source** rather than restating them and prints the milestone table the
-      numbers were chosen from. Its sibling `measure-trust-goal-against-ceiling.mjs` answers the
-      narrower *which components can nobody fill* question; both take the ceiling from the shared lib
-      rather than computing it locally, since two copies of that arithmetic is how this repo ended up
-      with four grade parsers.
-    - Injection-tested **9/9** (`scripts/oneoff/inject-trust-tier-cases.mjs`), each case proving its
-      edit landed **by checksum** and restoring the file byte-identically, judged on the guard's
-      **own failure text** matched against FAIL lines only. Four are the historical defect restored
-      verbatim (the 90 tier, the second ladder in `FullProfile`, the card's literal 90, a ceiling
-      typed rather than derived). **`ladder-declared-and-unused` is the non-vacuity case** — every
-      bound above is satisfied by a `trustTier` that ignores the table entirely. **Two must stay
-      SILENT** and they are the two the string count got wrong: a comment quoting the forbidden
-      shape, and an unrelated control labelled `Trusted`.
-  - **SECTION 8 BOUNDS A BAR STATED IN PROSE, AND SECTION 7 IS BLIND TO ONE BY CONSTRUCTION.** That
-    section walks `TRUST_TIERS` — so the same sweep that moved the card's goal, its denominator, the
-    *"✓ Well-trusted"* line and the badge ladder onto that array left a **notification** reading
-    *"Finish verification to lift your trust score to 90+"*: **six above the 84 a climber can earn,
-    twenty-five above the top tier, and promised for an action worth five points**. *An instance
-    fixed by hand is not a class closed*, with section 7's own enumeration of what it swept standing
-    as the evidence for what it did not.
-    - **FOUND BY READING A CI `ui-screens` CAPTURE**, the technique this file already credits for
-      the seed-identity bug, the glued *Recently climbed* row and the pyramid caption. Nothing else
-      could have: the column is a string literal, it renders, and the number is a number — only
-      comparing it against the model says it is impossible.
-    - **THE DISCRIMINATOR IS THE SCALE, NOT A VOCABULARY OF THRESHOLD WORDS, and it was MEASURED
-      rather than chosen** (`scripts/oneoff/measure-trust-bars-stated-in-prose.mjs`, which
-      re-derives every figure below — **re-run it rather than quoting them**). Of **36,328 string
-      literals across 50 rendering sources, 91 mention trust** and, before the fix, exactly **two**
-      also carried a number. **One of those two is a DATE** — *"Did your crew make Schoolroom on May
-      24? … reliability feeds your trust score"* — so it is the one that survives, and a rule firing
-      on any number in a trust sentence now reports **it and nothing else**. A deny-list of
-      threshold phrasings (`to N`, `N+`, `at least N`) is no better: one more phrasing beats it,
-      which this file records four separate times for `check:outage`'s rule 2 alone.
-    - **A trust SCORE lives on the model's own scale**, so the band in which a number cannot be
-      anything else is **(earnable ceiling, `SERVER_TRUST_CAP`]** — today **85..99**. A date or a
-      reachable bar sits at or below the ceiling and stays silent; a year or a row count is off the
-      scale entirely and stays silent. Both bounds are **DERIVED** from the model and the
-      migrations, so the band moves by itself the day a verification the app cannot currently grant
-      becomes earnable — and a bar that becomes reachable stops being a finding with nobody editing
-      the rule, which is the contract sections 6 and 7 already hold.
-    - **THE REPAIR NAMES NO NUMBER AT ALL, AND DERIVING ONE WOULD HAVE BEEN A SECOND FALSE
-      PROMISE.** `email` is the one earnable verification type and it is worth **5 points**, so
-      *"lift your trust score to &lt;any bar&gt;"* is false whichever bar is substituted —
-      `TRUST_GOAL` included. The app already had the honest wording one surface over: Home's setup
-      card reads *"Verify to boost your trust / Verified climbers get more requests."* Same
-      convention-violation shape as the résumé's demo-verify tick, which this file records as *"the
-      one outlier to a convention the app already has"*.
-    - **ONE PARSE PER FILE, SHARED WITH SECTION 7.** These are 400 kB JSX files and a build gate is
-      paid by every author and every CI run; `check:waypoint-placement` records what two independent
-      traversals of one source cost. `astOf` memoises, and a parse failure is **fatal** rather than
-      skipped — a file that did not parse contributes no findings and would read as a clean one.
-    - **A MEASURED NON-FINDING BESIDE IT, recorded so it is not re-derived: the notification is also
-      UNGATED where its sibling is gated, and that half is UNREACHABLE.** `_raiseRows` gates
-      *"Verify email"* on `!verified` — section 3's own fix — and its handler even answers *"You're
-      already verified."*; nothing removes `n3`, where `profile_setup` and `nrem` are both removed
-      by id the moment they stop applying. It cannot bite today: the demo cannot verify without a
-      `uid`, and signing in calls `setNotifs([])`, so `n3` and `verified===true` never coexist. *A
-      detector for a class of zero is the thing this repo keeps refusing to build.*
-    - Fails **closed** six ways, each of which otherwise prints identically to a clean run: a
-      migration tree that parsed short — which **widens** the band and therefore manufactures
-      findings rather than losing them — no verification type parsed as reachable, a ceiling that
-      is not inside the cap, fewer than 4 rendering sources walked, fewer than 5,000 string
-      literals, and **no literal mentioning trust at all**, with which the needle cannot fire and a
-      clean result means nothing.
-    - **IT CARRIES NO `ANCHOR LOST` ON THE CAP OR THE MODEL, AND THE INJECTION IS WHAT PROVED THOSE
-      UNREACHABLE.** Both were guarded here first. Section 3 **executes** the model and section 7
-      reads the same cap, so a missing `SERVER_TRUST_CAP` kills the run long before section 8 — the
-      case that renamed the export died in **section 3** with *"the cap is undefined in JS and 99 in
-      0038"*, which is the better message anyway. *An injection that produces a different failure is
-      not a catch*, and following that verdict showed the two checks were **dead code, which reads
-      as coverage** — deleted rather than given a contrived case, the same call
-      `check:waypoint-dedupe` records for a self-comparison its own suite proved inert.
-    - Injection-tested **8/8** (`scripts/oneoff/inject-trust-bar-prose-cases.mjs`), each case proving
-      its edit landed **by checksum** and restoring every file it touches byte-identically. Case 1 is
-      the real notification restored **verbatim**; a bar at **85** fires too, so the bound is the
-      ceiling rather than the literal 90; and the same bar written as a **template literal** fires,
-      or half the ways this app writes copy go unwatched. The eighth edits the **GUARD** rather
-      than the app — the precedent `check:seed-only-surfaces`' cases 11 and 12 set — and neuters the
-      trust needle, because with it matching nothing the walk still sees 36,328 literals and prints
-      a cheerful *"no bar found"*, which is exactly what a clean tree prints. **Four must stay
-      SILENT** — a bar **at** the ceiling is reachable and is correct work, a number **above** the
-      cap is not a trust score, a comment quoting the defect is documentation, and **a bar DERIVED
-      from the constant is the load-bearing one**: `"Trust "+GROUP_TRUST_MIN+"+"` puts no digit in
-      any literal, so a guard firing on it would forbid the very fix section 6 records.
-  - Injection-tested **13/13** (`scripts/oneoff/inject-server-trust-drift-cases.mjs`), each case
-    proving its edit landed **by checksum** and restoring the file byte-identically. Section 6's
-    four are the ones to read: the two bounds each fire (55 restored **verbatim**, and a bar of 5),
-    and **`id-verification-becomes-earnable` must stay SILENT** — giving the database a definer that
-    can attest a government ID lifts the partnerless ceiling to 64 by itself, so 55 stops being a
-    finding. A guard holding a hardcoded 54 would still fail there and would be **wrong** to; that
-    case is what proves the bound is derived rather than typed. `threshold-quoted-in-prose` pins the
-    line-anchored, unique declaration match, since the comment above the constant explains where the
-    number came from and names the one it replaced. The cases drift
-    the two sides in **both** directions on purpose — a comparison that only ever read the JS would
-    pass when the **migration** moves, which is the case that actually happens. **Case 7 must stay
-    SILENT**: `0038`'s own header lists component *ranges* that are not the weights, and a guard
-    reading those would fail on the file explaining itself.
-  - **SECTION 9 — A REPORTER'S TRUST IS MEASURED OR ABSENT, NEVER A CONSTANT.** Sections 1-8 are
-    about YOUR score; this is the same class one surface over, on somebody else's. `buildConsensus`
-    carried a LOCAL `trustOf` shadowing the module-level one, returning a literal **50** for any
-    author `seedAuthor` could not match by display NAME — i.e. every real climber — which
-    `RouteDetail` rendered **raw** beside their name on the HAZARD VOTES list, coloured by a
-    hand-copied pre-#1740 `>=90/70` ladder whose green sits above the **84** earnable ceiling.
-    - **SECTION 8 CANNOT SEE IT EITHER, so the two rules are complementary rather than
-      overlapping.** That section bounds a bar stated in PROSE by matching a number inside a
-      **string literal**; a colour ternary carries its `90` as a bare NumericLiteral in the test
-      with no string anywhere. A bar stated in prose and a bar stated as a COLOUR are different
-      shapes, and neither scan reaches the other's.
-    - **THERE IS NOTHING REAL TO PRINT INSTEAD, which is what decides the repair.**
-      `useProfilesByIds` selects `id, name, avatar, show_name, username` and **no score of any
-      kind**; the server score is a per-account RPC. So the honest render is **no chip**, not a
-      different number, and both chips are now gated `!=null` and coloured through `trustTier`.
-    - **A TRUST SCORE HAS TWO JOBS NEEDING DIFFERENT ANSWERS, and collapsing them is the tempting
-      wrong fix.** WEIGHTING legitimately wants a neutral prior for an unscoreable author — the
-      `dbReports` comment says so in as many words — while DISPLAY must never print a number nobody
-      measured. `reporterTrust` returns a score **or null**; `reporterWeightTrust` falls back to
-      **`TRUST_PRIOR`**, which is `50` because that is what **`vScore(null)`** already returns, so
-      it is the app's own neutral value rather than an invented constant. The comment beside them
-      says *do NOT collapse these two back into one*.
-    - **A GREP FOR ONE SPELLING IS NOT A MEASUREMENT OF A CLASS.** A textual scan for the inline
-      shape found **3** shadows (`buildConsensus`, `kwScan`, `routeKw`); the **Babel AST** scan for
-      `a ? vScore(a) : <NumericLiteral>` found **two more in `ClimbMatch.jsx`**, written with an
-      intermediate `const cl=`/`const base=` the regex could not match. Scanned with an AST, not a
-      regex, for the reason section 3 records: **an AST does not see comments**, and this fix wants
-      explaining — while the blanker other guards use once ate 21% of `RouteDetail.jsx`.
-    - **The two `ClimbMatch.jsx` sites are WEIGHTING, not display** — `weightOf` helpers inside the
-      start-location and topo-annotation consensus builders, neither of which renders a number.
-      Both take `reporterWeightTrust` and the conversion is **value-identical** (50 == `TRUST_PRIOR`),
-      so **only the AST scan can see a revert**; `app-weighting-site` is that injection case, and it
-      is what proves the scan's third file is load-bearing rather than decorative.
-    - **A GATE rather than a probe**, and section 7's tier-ladder scan is **widened to
-      `RouteDetail.jsx`** in the same change (measured additive: **0** label ladders there today).
-      The DISPLAY half of this fix is a JSX condition and a colour expression, so reverting it moves
-      **NO identifier** and `audit:silent-reverts` says in its own closing caveat it cannot see that.
-    - **A rule that only ever suppresses is satisfied by deleting the feature**, so the non-vacuity
-      assertion is the load-bearing half: a SEED author must still carry a number, and a reporter at
-      the earnable ceiling must still reach the ladder's top colour.
-    - **THE PROBE BOUNDS THE LADDER RATHER THAN PINNING IT**, which is the contract sections 6 and
-      7 already hold: it reads `SERVER_TRUST_EARNABLE` out of core and asserts the top tier is at
-      or below it, so a rebalance — correct work — cannot turn it red, and the bound moves by
-      itself the day a verification the app cannot currently grant becomes earnable. Its first
-      version typed `=== 65` and `trustTier(84)`.
-    - Probe: `scripts/oneoff/probe-reporter-trust-is-not-a-constant.mjs` (17 assertions, no browser,
-      no DB), whose section 3 asserts **equivalence against the pre-change core loaded via
-      `git show origin/main:`** — weighted `topTags`/`recentTags`/`confidence`/`avgStars`
-      byte-identical while the DISPLAYED trust moved `[50,94,50,94] -> [null,94,null,94]` — and
-      self-skips as spent once `origin/main` carries the fix.
-      - **THAT FIXTURE HAD TO VARY THE THING WHOSE WEIGHT IT MEASURES, and an injection found the
-        hole rather than a reading.** Every report initially carried the same tags, so every tag was
-        100% whatever the weights were and `prior-becomes-zero` reported a WRONG FAILURE against a
-        correctly-firing probe. **The fault was in the probe, not the app**: db authors are tagged
-        `["Rockfall"]` and seed authors `["Dry"]` now.
-    - Injection-tested **8/8** (`scripts/oneoff/inject-reporter-trust-cases.mjs`), each case proving
-      its edit landed **by checksum** and restoring every file byte-identically, judged on FAIL
-      lines only, with the harness **refusing any expectation already present in the clean run**.
-      **Two must stay SILENT** — a comment quoting the forbidden shape, and the same rule written
-      longhand, since a probe pinned to one spelling forbids a correct refactor.
-      - **A SUITE'S OWN SHAPE DECIDES WHETHER ITS ANCHORS ARE CHECKED AT ALL, and this one was
-        written in a shape `check:injection-anchors` cannot read.** That guard resolves every
-        `find:` it meets, so `also: [{file, find, repl}]` — an array of OBJECTS where it expects
-        an array of PAIRS — and a harness building `{ file: c.file, find: c.find }` both reported
-        **UNPARSED**: four anchors it could not resolve, i.e. four rules nobody was proving while
-        the suite printed 8/8. `also` carries pairs now (its file was always the case's own, so
-        the key was redundant) and the harness passes `[file, find, repl]` tuples. **An anchor a
-        guard cannot parse is not a checked anchor** — the same false-coverage shape this file
-        records for a floor that counts work done rather than work verified.
-- **`check:untracked-factors`** asserts that **a factor nobody has measured does not read as ZERO**.
-  Static (one esbuild bundle plus a source read, no browser and no database), so it sits in
-  `npm run build`.
-  - **IT IS #1569's OTHER HALF, AND THE ONE `check:new-climber-journey` STRUCTURALLY CANNOT REACH.**
-    That walk performs an action and then asks the DATABASE whether it survived; this defect leaves
-    no trace in any table, because it is a claim the breakdown computes at render time. Five of the
-    six defects that census found are covered by the walk; this is the sixth, and it needed a
-    different instrument rather than a sixth phase.
-  - **THE DEFECT.** The sign-in reset sets `relLedger` to `{honored:0, committed:0}` — correct, since
-    the demo's 23/24 must not follow a real account — and App then computed
-    `Math.round(relLedger.honored / Math.max(1, relLedger.committed) * 100)`, which turns *nothing
-    tracked* into the NUMBER 0. `trustFactors` already had the right branch
-    (`_rel != null ? … : "Not yet tracked"`, with `max: 0` so an untracked factor leaves the
-    denominator), and **a 0 is not null**, so it took the tracked branch. A climber who has never
-    committed to a crew was told they honour **0% of them**, on the card whose whole purpose is
-    telling them how to raise their score. `relLedger` has **no persistence anywhere** — no column,
-    no read, no write — so it is 0/0 for every real signed-in account.
-  - **Measured rather than asserted: it costs 9 points and holds 18 points of goal the climber
-    cannot fill** (denominator 120 against 102, score 53 against 62), because `max` stays 18 for a
-    measurement nobody made.
-  - **BOTH DIRECTIONS ARE ASSERTED, and the second is what keeps the rule honest.** A guard
-    demanding only *"Not yet tracked"* is satisfied by making the row **always** untracked, which
-    would hide a genuine no-show record — the *a rule that only ever suppresses is satisfied by
-    deleting the feature* shape this file records for `pitchShortfall` and the impossible-leg
-    suppression. So a **real** 0% must still be stated and must still count: 0 of 4 honored is a
-    measurement, not a blank.
-  - **THE SIBLING FACTORS ARE ASSERTED TOO, so this is a rule rather than one row's special case.**
-    Four other factors already read *"Not yet tracked"* and Reliability was the **outlier** — the
-    census recorded them as *"the correct twin that already existed"*. The guard requires at least
-    four, and requires that anything saying *"Not yet tracked"* carries `max: 0`; without that the
-    convention Reliability was measured against could erode and leave the rule resting on nothing.
-  - **A COUNT OF ZERO MUST STAY A NUMBER.** *"0 trip reports shared"* is TRUE, and nulling it would
-    swap one wrong answer for another by hiding a real, fillable goal. The rule is about a **ratio
-    with no denominator**, never about every zero on the card, and `routesLogged`/`conditionsReported`
-    are asserted to stay counts so a future sweep cannot over-apply it.
-  - **SECTION 2 ASSERTS THE WIRING AS SOURCE, because executing `trustFactors` proves the BRANCH and
-    not that App still hands it null.** A stale-base squash takes exactly that half: the ternary goes
-    back to `Math.max(1,committed)`, every executed assertion still passes, and the accusation
-    returns with **no identifier moved** — which `audit:silent-reverts` says in its own closing caveat
-    it cannot see.
-  - **IT ALSO CARRIES #1569's CONNECT-BUTTON HALF, and the walk does NOT cover that one.**
-    `check:new-climber-journey` phase 5 drives **`FullProfile`'s** connect button, which the census
-    names as the correct **TWIN** that already called `connect()`. The forked one was the **TRIP
-    REPORT's**: it pushed the climber into local `connections` and toasted *"you are now friends"*,
-    claiming a **MUTUAL** state the real flow cannot create, since `connect()` opens ConnectModal and
-    sends a request the other person must accept. So the walk exercises the path that was always
-    right, and this guard is the only thing watching the one that was wrong.
-  - **PROMOTED from `scripts/oneoff/probe-reliability-zero-vs-untracked.mjs`, which ran NOWHERE** —
-    the *a verification nobody runs is not a verification* shape this file records for
-    `check:overflow`, `check:pitch-discount`, `check:policy-claims`, `check:offline-claims` and
-    `check:photo-removal`. **The promotion is not a move: the probe PRINTED its core comparison and
-    asserted only the wiring**, so the rule it exists for could not fail. Section 1 is assertions
-    now. Promotion also changed its DEPTH, the trap `check:pitch-discount` records — paths are
-    ROOT-anchored rather than cwd-relative, so it cannot silently measure another tree.
-  - Fails **closed** four ways, each of which otherwise prints identically to a clean run: a missing
-    `trustFactors` or `vScore` export, fewer than 6 factors parsed (with none, every assertion passes
-    **vacuously**), a missing Reliability label, and an `app` source that read short.
+- **`check:trust-breakdown`** and **`check:untracked-factors`** were **RETIRED on 2026-10-21** with the trust score itself (owner decision): the app no longer computes, shows, filters, sorts or gates on a trust score, so there is no breakdown to add up and no factor to mis-read as zero. Their history is in git (`git log -- scripts/check-trust-breakdown.mjs`). Do not restore either without restoring the score.
+
 - **`check:no-rendered-sources`** asserts that no screen prints a field named `source`. The app
   carries no sources — nothing asks a climber where their information came from, and nothing tells
   them where ours did. **That rule was swept by hand twice and missed three surfaces both times**,
@@ -1378,6 +869,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     -0.05. Sunday after the storm now scores 4.0–4.9 ★, matching Climbit (~3.5–4.6) and CragReport
     (81–95). A full fit wants night faster than day — not physical, refused; `DRY_HOURS` is untouched.
     The guard pins only the ORDER (dew point ≤ 90% ≤ 75% ≤ 1, night ≤ day, dew point > 0).
+  - **...and the PAST rain is MEASURED where a measurement reaches (`mergeMeasuredRain`, 2026-10-15)**:
+    `lib/forecast.js fetchMeasuredRain` tries a 6-h radar-and-gauge analysis (HRDPA; northern US + Canada:
+    WA, OR, KY, WV, WI, NY answer; the South, Southwest, CA and CO return no feature), then an hourly one
+    (Stage IV via Iowa State) ONLY east of 104°W — west of it the hours are split from 6-h totals and put
+    the 2026-10-09 Index storm 18 h late — else null, and the score keeps the model. Both crag readers
+    (Conditions card, Home tile) go through `fetchCragForecastMeasured`, so they cannot disagree. Measured
+    on 2026-10-15: RRG's past 96 h 3.46" modelled vs 2.34" measured, Gunks 0.98" vs 1.48". A time not yet
+    analysed is an XML error, a point outside the analysis is `{}`: both are "not measured", never zero.
+    The guard pins the merge (amount from the measurement, timing from the model inside a window, gaps keep
+    the model, a measured dry window dries a modelled soaking). The two crag-fetch URL checks now match
+    `fetchCragForecast\(` exactly — `fetchCragForecastMeasured` shares the prefix and was read in its place.
   - **The thresholds were checked against published guidance (2026-10-07)**, so do not re-tune them
     on feel:
     - DAMP_SPREAD 5°F is the 3 °C surface-condensation margin (ISO 8502-4).
@@ -1421,8 +923,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Rock type**: the drying factor reads `routeRock()` (lib/rockType.js): a route's own `rock`,
     else its area's (`areas.rock`, 0248). `rock_basis='mapped'` is the bedrock at the crag's
     coordinate (scripts/derive-area-rock.mjs) and **agrees with what routes state on rock FAMILY
-    for 174 of 215 areas (81%)**, so §5 requires every place that renders `routeRock(route)` to
-    mark a mapped one. Do not drop the marker because "it is usually right": one in five is not.
+    for 174 of 215 areas (81%)**. Until 2026-10-15 §5 required a "(mapped)" marker wherever it
+    rendered; **the owner removed that word** (note item "Remove mapped word from rock type
+    mention"), matching Mountain Project / theCrag, which print a crag's rock with no qualifier.
+    §5 now fails if "(mapped)" comes back. `basis` still distinguishes the two in `routeRock()`.
   - **What it cannot see**: the drying hours per rock family (`DRY_HOURS`) are rules of thumb, not
     measurements, and the card says which rock it assumed. How a particular wall holds water is
     not modelled — seepage is only a risk from recent rain — and the card says so.
@@ -1565,13 +1069,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       (east first, west in the warm afternoon), and centres put the slope that lets go at ~35°
       (Utah: stay off and out from under slopes approaching 35° once the sun wets them). CalTopo's
       sun-exposure layer and point chart are the tool climbers use for this today, by hand.
-    - **Each kind gets its own line** (`SUN_NOTE`): sun loosens what is above a glacier or an
-      alpine-ice line; it loosens waterfall ice and the snow above it even while you climb in shade;
-      it strips rime and softens turf on mixed ground; it DRIES a scramble; it WARMS alpine rock on a
-      cold day. Every one is called a rule of thumb on screen.
+    - **No per-kind sun line, and no caveat footer under the map** (removed 2026-10-15 at the owner's
+      request, with the forecast, smoke and hourly-wind caveat footers): the section is the map and
+      its readouts only. Do not re-add them as a guard requirement.
     - **STEEP (35°+) AND IN SUN** is an overlay offered only where snow or ice is in play (glacier,
       alpine ice, waterfall, mixed, or a kind with snow legs). The slope comes from the same ~7 m
-      heights, so a short steep step reads gentler than it is, and the card says so.
+      heights, so a short steep step reads gentler than it is.
     - **A SUMMIT is read at the model's own high point** (`highestNear`, within 30 m). Measured
       live before it shipped: Colchuck Peak's summit pin sat one pixel off the model's top, 2 m
       lower, so the top "shaded" it until the sun was ~17° up — first sun 8:30 AM against a 7:10
@@ -1615,6 +1118,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - **Adding a deadline can only make a start EARLIER**, never later: the start is the earliest of
       snow, storm and sun. Seen live: Easton on a cold Saturday had no start before (snow frozen all
       day) and now reads a latest start to be past the thawing ground above camp.
+    - **...and that latest start read "leave camp by 7:30 AM" (owner, 2026-10-16: "no one leaves camp
+      at 7:30am").** Every forecast deadline says how LATE a party may start, with no margin; on a cold
+      clear day they all fall mid-morning. Glacier and alpine ice now add a PRACTICE candidate
+      (`snow-noon`, `LIMITS.snowBackBy` = 12): back off the snow by noon, need = the same up+down the
+      snow deadline uses. Evidence: guided Easton summit days leave camp 2-5 AM for a 6.5-9 h round
+      trip, club/self-guided parties midnight-2 AM; bridges weaken from late morning; the sun softens a
+      sunlit slope while the free air is below 0 C (the freezing level cannot see it). Not after a night
+      that never froze (no frozen window), and not on scrambles or alpine rock (their parties do not
+      start in the dark for snow). The candidate carries `forecast`, the latest start the forecast alone
+      allows, and the card prints it so the day-to-day signal is not lost. Easton (push-shaped 10.5 h,
+      from camp) now reads about 1:30 AM; its own stored `recommendedStart` is "2:30 AM from camp",
+      shown beside it.
   - **ICE-GRADED ALPINE ROUTES (2026-10-08).** `condKind` read every `discipline=alpine` route as
     alpine rock, so 18 of 5,147 with AI/WI grades (Triple Couloirs, Chair Peak N Face, Liberty Ridge,
     the Lane Peak couloirs, Cutthroat's Cauthorn-Wilson) got rock-dryness flags and the warm-rock sun

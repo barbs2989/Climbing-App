@@ -85,7 +85,7 @@ const flagValue = decl[1];
 const gated = new Map(); // name -> { file, emptiesOff }
 for (const f of FILES) {
   let ast;
-  try { ast = parse(src[f], { sourceType: "module", plugins: ["jsx"], errorRecovery: true }); }
+  try { ast = parse(src[f], { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: true }); }
   catch (e) { fail(`could not parse ${f} (${e.message}). A guard that cannot read a file has not checked it.`); }
   traverse(ast, {
     VariableDeclarator(p) {

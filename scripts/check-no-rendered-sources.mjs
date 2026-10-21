@@ -33,6 +33,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
+import { componentFiles } from "./lib/guard-sources.mjs";
 const traverse = _traverse.default || _traverse;
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -46,7 +47,7 @@ const dead = (m) => {
 };
 
 const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "EnrichmentPanels.jsx"]
-  .concat(fs.readdirSync(path.join(ROOT, "lib")).filter(f => /\.jsx?$/.test(f)).map(f => "lib/" + f));
+  .concat(componentFiles(ROOT, { js: true, guard: "check:no-sources" }));
 
 let scanned = 0, containers = 0, literals = 0;
 const findings = [], words = [];
@@ -58,7 +59,7 @@ for (const rel of FILES) {
   const src = fs.readFileSync(abs, "utf8");
   let ast;
   try {
-    ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: false });
+    ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: false });
   } catch (e) {
     dead(`${rel} did not parse: ${e.message}`);
   }

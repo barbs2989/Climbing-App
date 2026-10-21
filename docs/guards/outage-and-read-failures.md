@@ -1008,6 +1008,16 @@ their own Résumé showed an amber **"Unverified"** chip.
     `if(recs==null)return;`, which keeps the anchor intact and reproduces the defect exactly:
     **one** case fails and the other four stay green, so the probe is specific rather than firing
     on any change.
+  - **0306 (2026-10-15) REVERSED THE AUTHORITY on the owner's decision, and the guard went with it.**
+    Everything above argues that the session (`email_confirmed_at`) settles it. That held only while a
+    confirmed email meant an inbox had been read; with `mailer_autoconfirm` on, it is set for every
+    account at sign-up, so the rule verified everyone and wrote the record that showed others a ✓. Now
+    the RECORD is the authority, a session fresh from the inbox (`amr` otp/magiclink/recovery/
+    email-signup, < 30 min — what `verify_my_email()` itself checks) writes it, and only a read that
+    SUCCEEDED and found nothing says "not verified". The outage property survives in a stronger form:
+    a failed read decides NOTHING (the case asserts `untouched`), and `verificationUnavailable` hides
+    the Home and trust-card "Verify" prompts. Six cases now; restoring the old
+    `email_confirmed_at` branch fails two of them (OUTAGE and AUTOCONFIRM IS NOT PROOF).
 - **`check:profile-edit-gate`** — **a failed profile read turned "Edit profile" into a WIPE, and the
   class CLAUDE.md records as CLOSED AT ONE is therefore TWO.** Static (source + one executed
   expression), so it sits in `npm run build`.

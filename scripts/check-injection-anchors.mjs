@@ -41,7 +41,7 @@ if (files.length < 50) {
   process.exit(1);
 }
 
-const PATHISH = /\.(jsx?|mjs|json|sql|md)$/;
+const PATHISH = /\.(jsx?|tsx?|mjs|json|sql|md)$/;
 const ANCHOR_KEYS = new Set(["find", "from"]);          // a literal anchor
 const EDIT_KEYS = new Set(["edit", "then", "also"]);     // an arrow doing the edit itself
 const REPLACERS = new Set(["replace", "replaceAll", "split"]);
@@ -87,7 +87,7 @@ for (const f of files) {
   const src = fs.readFileSync(path.join(DIR, f), "utf8");
   let ast;
   try {
-    ast = parse(src, { sourceType: "module", plugins: ["jsx"] });
+    ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] });
   } catch (e) {
     unparsed.push(`${f} — does not parse: ${e.message.slice(0, 80)}`);
     continue;

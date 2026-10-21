@@ -9,9 +9,10 @@ import {
   useGuideProfile, useGuideCredentials, useGuideInquiries, useGuideReviews,
   updateGuideProfile, addGuideCredential, resubmitGuideCredential,
   updateInquiryStatus, postGuideReply, reconcileGuideVerification,
-  isGuideVerified, guideProfileMissingCopy, CERT_TRACK_LABELS,
+  isGuideVerified, guideProfileMissingCopy, CERT_TRACK_LABELS, publicNameOf,
 } from "./db";
 import { POP_BACK } from "./popupChrome.js";
+import { photoThumb } from "./photoThumb";
 
 const SECTIONS = [["credentials", "Credentials"], ["inquiries", "Inquiries"], ["reviews", "Reviews"], ["profile", "Profile"]];
 const DAYS_TO_EXPIRY_WARNING = 60;
@@ -161,10 +162,10 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
           <div style={{ fontSize: 12.5, color: C.textSub, marginBottom: 11 }}>Booking requests from climbers. Accept to hold the date, then agree on price and dates directly with them.</div>
           {(inquiries || []).length ? inquiries.map(q => <div key={q.id} style={card}>
             <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-              {q.profiles && q.profiles.avatar ? <img src={q.profiles.avatar} alt="" style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover" }} /> : null}
+              {q.profiles && q.profiles.avatar ? <img src={photoThumb(q.profiles.avatar, 40)} alt="" style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover" }} /> : null}
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text }}>{q.objective || "Climbing inquiry"}</div>
-                <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2 }}>{(q.profiles && q.profiles.name || "Climber") + " · " + (q.requested_dates || "flexible") + " · " + q.party_size + (q.party_size > 1 ? " climbers" : " climber")}</div>
+                <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2 }}>{publicNameOf(q.profiles) + " · " + (q.requested_dates || "flexible") + " · " + q.party_size + (q.party_size > 1 ? " climbers" : " climber")}</div>
                 {q.message ? <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 4 }}>{q.message}</div> : null}
                 {q.includes_minor ? <div style={{ fontSize: 11.5, fontWeight: 700, color: C.amber, background: C.amberBg, borderRadius: 6, padding: "2px 7px", display: "inline-block", marginTop: 4 }}>{"Trip includes a minor"}</div> : null}
               </div>
@@ -180,7 +181,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
         {section === "reviews" && <div>
           <div style={{ fontSize: 12.5, color: C.textSub, marginBottom: 11 }}>Reviews from climbers who actually sent you an inquiry. A reply shows publicly under the review.</div>
           {(reviews || []).length ? reviews.map(r => <div key={r.id} style={card}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 4 }}><span style={{ fontSize: 12.5, fontWeight: 700, color: C.text }}>{r.profiles && r.profiles.name || "Climber"}</span><span>{"★".repeat(r.rating)}</span></div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 4 }}><span style={{ fontSize: 12.5, fontWeight: 700, color: C.text }}>{publicNameOf(r.profiles)}</span><span>{"★".repeat(r.rating)}</span></div>
             <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5 }}>{r.text}</div>
             {r.guide_reply ? <div style={{ marginTop: 8, background: C.surface, borderLeft: "2px solid " + C.blue, borderRadius: "0 8px 8px 0", padding: "7px 10px" }}><div style={{ fontSize: 12, color: C.blue, fontWeight: 700, marginBottom: 2 }}>Your reply</div><div style={{ fontSize: 12.5, color: C.textSub }}>{r.guide_reply}</div></div>
               : replyId === r.id ? <div style={{ marginTop: 8 }}><textarea aria-label="Write a reply" value={replyText} onChange={e => setReplyText(e.target.value)} rows={2} placeholder="Write a reply..." style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} /><div style={{ display: "flex", gap: 8, marginTop: 6 }}><button onClick={() => postReply(r.id)} style={{ background: C.blueSolid, color: "#fff", border: "none", borderRadius: 8, padding: "6px 14px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}>Post reply</button><button onClick={() => { setReplyId(null); setReplyText(""); }} style={{ background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "6px 12px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Cancel</button></div></div>

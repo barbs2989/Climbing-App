@@ -8,6 +8,7 @@
 // and the 10 m GUST are the sum / probability / maximum of the PRECEDING hour (T-1 to T). One label for
 // both -- "2 PM" -- is wrong for half of the numbers beside it, so the boxes carry `at(T)` or
 // `spanEnding(T)` and never share a time.
+import { useRef, useEffect } from "react";
 import { C } from "../ClimbMatchCore.jsx";
 
 const COMPASS = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
@@ -54,4 +55,33 @@ export function TileGrid({ children, min }) {
   // A lone tile keeps a tile's width instead of stretching across the whole card.
   const lone = [children].flat(Infinity).filter(Boolean).length === 1;
   return <div style={{ display: "grid", gridTemplateColumns: lone ? "minmax(" + (min || 130) + "px,220px)" : "repeat(auto-fit,minmax(" + (min || 130) + "px,1fr))", gap: 6 }}>{children}</div>;
+}
+
+/* THE HOUR STRIP: a scrolling row of hour chips with an Earlier / Later step on either side (owner, 2026-10-15:
+   "hour by hour doesn't click well when going to the next hour"). Two things made the next hour hard to reach:
+   there was no step control, so the only way on was to tap the next chip; and every tap re-centred the row with an
+   INSTANT scrollLeft jump, so the chip you meant to tap next leapt out from under your finger. Now the row only
+   moves when the picked chip (with a neighbour either side) is not already in view, and it glides there; a new
+   day, or the first paint, still lands at once. `children` are the chips, one per index, in order. */
+export function HourStepper({ index, count, onPick, label, children }) {
+  const rowRef = useRef(null), seen = useRef(null);
+  useEffect(function () {
+    const row = rowRef.current, b = row && row.children[index];
+    if (!b) return;
+    const first = seen.current !== count; seen.current = count;
+    const rr = row.getBoundingClientRect(), br = b.getBoundingClientRect(), pad = b.offsetWidth + 5;
+    if (!first && br.left - pad >= rr.left && br.right + pad <= rr.right) return;
+    const left = row.scrollLeft + br.left - rr.left - (row.clientWidth - b.offsetWidth) / 2;
+    if (first || !row.scrollTo) row.scrollLeft = left; else row.scrollTo({ left: left, behavior: "smooth" });
+  }, [index, count]);
+  const step = function (d) { const j = index + d; if (j >= 0 && j < count) onPick(j); };
+  const arrow = function (d) {
+    const off = d < 0 ? index <= 0 : index >= count - 1;
+    return <button onClick={function () { step(d); }} disabled={off} aria-label={(d < 0 ? "Earlier hour" : "Later hour") + (off ? "" : ", " + label(index + d))} style={{ flex: "0 0 auto", width: 44, minHeight: 44, borderRadius: 8, border: "1px solid " + C.border, background: C.surface, color: off ? C.textMuted : C.text, fontSize: 20, fontWeight: 800, lineHeight: 1, cursor: off ? "default" : "pointer", opacity: off ? 0.4 : 1, touchAction: "manipulation" }}>{d < 0 ? "‹" : "›"}</button>;
+  };
+  return <div style={{ display: "flex", alignItems: "flex-start", gap: 5 }}>
+    {arrow(-1)}
+    <div ref={rowRef} role="group" aria-label="Pick an hour" style={{ flex: 1, minWidth: 0, display: "flex", gap: 5, overflowX: "auto", overscrollBehaviorX: "contain", WebkitOverflowScrolling: "touch", paddingBottom: 6 }}>{children}</div>
+    {arrow(1)}
+  </div>;
 }

@@ -39,7 +39,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const FILE = path.join(ROOT, "ClimbMatch.jsx");
 
 const src = readFileSync(FILE, "utf8");
-const ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: false });
+const ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: false });
 
 // The toast element identifier. Named rather than inferred: if the declaration is renamed,
 // this must fail loudly instead of finding zero returns and reporting a clean app.
