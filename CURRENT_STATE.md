@@ -28,6 +28,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Crew gear has quantities**: each item on a crew's gear list can say how many the crew wants, and each climber bringing it how many they bring (several can share one item; it counts as covered when the numbers add up). The card no longer suggests gear. Migration 0328. See `docs/features/logbook-crews-home.md`.
 - **Alpine start never mid-morning on a glacier; the day picker stays in view**: on glacier and alpine-ice routes the Conditions start is never later than one that has the party back off the snow by noon (Easton on a cold day read "leave camp by 7:30 AM"; now about 1:30 AM, with the forecast's later limit and the route's usual start beside it). The day strip sticks to the top while you scroll the hour-by-hour and other sections. See `docs/features/conditions.md`.
 - **"Quality" says what it means**: a route's guidebook stars read **Star rating**, not "Quality", and the rock report-tag group reads **Rock quality**. See `docs/features/route-page.md`.
 - **Partners › By route: Recently viewed is shorter**: it lists the 3 newest climbs, with a "Show N more" toggle for the rest (up to 5). See `docs/features/partners.md`.
