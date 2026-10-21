@@ -23,10 +23,27 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Climb rows** (`RouteRow`, every route list in the browser): name, stars, discipline, then the **pitch count** ("Trad · 5 pitches",
   Mountain Project's order; the stored `routes.pitches`, as the route page's Pitches stat shows it; none on a boulder or with no count stored),
   the crag's left-to-right number, and the grade at the right. `useAreaRoutes`' thin row selects `pitches` for it.
+- **Sorting a crag's own climb list** (`AREA_LIST_SORTS` / `sortAreaRoutes`, leaf areas only): chips over the list read **Left → right**
+  (default, as Mountain Project and theCrag list a wall), **Right → left**, **A → Z**, **Z → A**. The wall orders read `routes.sort_order` and are
+  offered only when at least one climb in the list has one; climbs without a position go last, by name, under a line counting them.
+  Neither import kept a position (the OpenBeta ETL dropped `metadata.leftRightIndex`; MP's route-finder CSV has none), so on 2026-10-21
+  **1 of 314,360 routes** had one.
+- **Where the wall order comes from** (`scripts/pipeline/order-from-mp.mjs`, one area per run; the owner's reference is **Mountain Project**,
+  which holds more routes than OpenBeta). Each row of an MP area page's route table carries `data-lr`, its left-to-right index
+  (999999 = MP does not place it); the cached tree walk kept the rows but not that attribute, so the page is read again (paced by
+  `scripts/lib/paced-fetch.mjs`, cached under `catalog/_mp/_pages/`). Per MP route: **MATCHED** to ours by the import's exact MP-id map
+  (`catalog/_mp/_map/<state>.json`), else by name on the wall ("Brat, The" = "The Brat"), and given MP's position; **ADD** — a sport,
+  trad or top-rope route MP lists and the wall lacks is added (grade and type from the page) in its place; **REVIEW** — a missing name
+  contained in, or containing, one of our routes not matched to another MP route ("Fancy Idiot" / our "Fancy I") is printed, not added.
+  Ours that MP does not list are **ANCHORED** right of their nearest left-hand neighbour in OpenBeta's older copy of MP's order, else
+  **UNPLACED** (empty, listed last). Positions are renumbered 1..n. Dry run by default; `--apply` writes and reads back.
+  First run, 2026-10-21: The Uberfall – left (Gunks), 45 matched, 3 added, 3 anchored, 1 for review, 6 unplaced (MP places 45 of 51).
 - **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - discipline, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { disc, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.
-  Mirrors Mountain Project's set, nothing extra (standing decision).
+  Mirrors Mountain Project's set, nothing extra (standing decision), except the sort, which offers **Left → right** / **Right → left**
+  in place of *By area* (owner, 2026-10-21): `routes_in_subtree` `sort_by` `lr` / `rl` (0332) group the climbs by wall and order each wall
+  by `sort_order`, no position last; `area` is still accepted. The offline twin is `subtreeComparer` in `lib/offline.js`.
 - **Near me / area map** (`NearMePanel`): Leaflet map of peak/crag area bubbles with route counts, list/map toggle (`ViewToggle`),
   Street / Satellite / Topo / snow base layers (`BaseLayerToggle`), a live location dot, and a place search box
   ("Go to a town, county or zip/postal code") covering the US and Canada (provinces, towns, US zip, Canadian postal codes).

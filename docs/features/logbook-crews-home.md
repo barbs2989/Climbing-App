@@ -9,6 +9,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   chips, in order: **Alpine, Mountaineering, Sport, Trad, Aid, Ice & Mixed, Boulder, Scrambling** — Alpine leads, and alpine,
   mountaineering and aid are each their own chip rather than folded into Alpine or Trad (#2409, then this split). Saved no longer repeats a "Pinned states" card;
   Home already shows it (#2408).
+- **Logbook > Saved filter**: chips **All · Routes · Peaks · Areas · Itineraries · Searches** (`savedKind`, default All) show one kind of saved thing at a time; opening Saved from the Menu or Home resets it to All.
 - **Logbook > Completed**: `MyAscents` (`lib/MyAscents.jsx`) lists logged climbs (`climb_logs`); `LogAscent` is the logging form,
   `TripReport` the opened trip report, `LogTagConfirmations` lets a tagged partner confirm or decline being named on a log.
 - **Quick log** (`QuickLog`, `ClimbMatchCore.jsx`; App state `quickLogFor`): the short way to log — style/outcome (no default, so nothing claims an onsight by accident), date, optional rating. The route page offers it beside *Full log* (`logRow` in `RouteDetail.jsx`, `onLog(route,"quick")`), and a crew card opens it for sport/trad/bouldering crews (`openCrewLog`). It saves a normal `climb_logs` row through `syncLogToDb`; *Add more details* opens `LogAscent` pre-filled with what was picked, and the log can be filled in later from Completed.
