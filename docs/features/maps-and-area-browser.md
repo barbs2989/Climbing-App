@@ -70,7 +70,8 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
     The search box is debounced 250 ms. With no name typed, both RPCs now read the subtree's areas first and each area's routes
     through `routes_area_idx`: Sport + Trad 5.6–5.10a in Central-East Cascades used to walk the grade index across every state and hit
     the 3 s anon timeout. A name search keeps 0244/0245's name-index plan.
-  - **Sticky bar**: Routes | Areas, the box, Filters and the chips stay pinned at the top while the results scroll.
+  - **Pinned search bar** (`usePinnedBar`): Routes | Areas, the box, Filters and the chips pin under the app's top bar once you scroll
+    past them. Fixed-position with a placeholder, not CSS sticky: on a phone the document scrolls while `#appscroll` (overflow:auto) only grows.
   - **Save from the list**: a ☆ beside each row opens a save sheet: My Objectives (`toggleWish`), your own lists (`toggleListRoute` in
     App, the same `onUpdateList` write ListsManager makes) and the climb's wall (`toggleBookmark`).
   Mirrors Mountain Project's set, nothing extra (standing decision), except the sort, which offers **Left → right** / **Right → left**

@@ -888,6 +888,46 @@ const finderArgs = (q, f) => {
   const lo = sc && f.gLo ? sc.find(o => o[0] === f.gLo) : null, hi = sc && f.gHi ? sc.find(o => o[0] === f.gHi) : null;
   return { q, disc: f.discs.join(","), gradeSys: (lo || hi) && f.discs.some(d => GRADE_SYS_FILTERED[d]) ? gradeSysFor(f.discs, f.gSys) : null, minGrade: lo ? lo[1] : null, maxGrade: hi ? hi[2] : null, minStars: f.minStars || null, minPitches: f.minPitches || null, minLengthM: len[3], maxLengthM: len[4], sortBy: f.sortBy };
 };
+// PINS a bar under the app's own top bar once the page scrolls past it. Not CSS sticky: #appscroll
+// is overflow:auto but grows to its content on a phone, where the DOCUMENT scrolls, and a sticky
+// child of a scroll container that never scrolls never sticks. The pin line is the bottom of the
+// app's sticky top bar (phone), or the top of #appscroll when that is what scrolls (desktop); both
+// are measured, because the bar's height differs between the two shells.
+function usePinnedBar() {
+  const wrapRef = useRef(null), barRef = useRef(null);
+  const [pin, setPin] = useState(null); // null, or { top, left, width, height } while pinned
+  useEffect(() => {
+    const lineY = () => {
+      const w = wrapRef.current, sc = w && w.closest("#appscroll");
+      if (sc && sc.scrollHeight > sc.clientHeight + 1) return sc.getBoundingClientRect().top;
+      let bottom = 0;
+      for (const e of document.elementsFromPoint(window.innerWidth / 2, 1)) {
+        if (w && w.contains(e)) continue;
+        for (let n = e; n && n !== document.body; n = n.parentElement) {
+          const pos = getComputedStyle(n).position;
+          if (pos === "sticky" || pos === "fixed") { bottom = Math.max(bottom, n.getBoundingClientRect().bottom); break; }
+        }
+      }
+      return bottom;
+    };
+    let line = lineY(), raf = 0;
+    const check = () => {
+      raf = 0;
+      const w = wrapRef.current, b = barRef.current;
+      if (!w || !b) return;
+      const r = w.getBoundingClientRect();
+      const next = r.top < line ? { top: Math.round(line), left: Math.round(r.left), width: Math.round(r.width), height: b.offsetHeight } : null;
+      setPin(p => (!p && !next) || (p && next && p.top === next.top && p.left === next.left && p.width === next.width && p.height === next.height) ? p : next);
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(check); };
+    const onResize = () => { line = lineY(); onScroll(); };
+    document.addEventListener("scroll", onScroll, true);
+    window.addEventListener("resize", onResize);
+    check();
+    return () => { document.removeEventListener("scroll", onScroll, true); window.removeEventListener("resize", onResize); if (raf) cancelAnimationFrame(raf); };
+  }, []);
+  return { wrapRef, barRef, pin };
+}
 function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute }) {
   const { wishlist } = useContext(ClimberCtx);
   const DEF = { discs: [], sortBy: "lr", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "" };
@@ -903,6 +943,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   useEffect(() => { const t = setTimeout(() => setQD(q), 250); return () => clearTimeout(t); }, [q]);
   const needsArea = !!FINDER_NEEDS_AREA[loc.area_type] && !qD.trim();
   const [saveFor, setSaveFor] = useState(null);
+  const { wrapRef: barWrap, barRef, pin } = usePinnedBar();
   // Routes | Areas. One text box serves both, so switching carries what you typed across.
   const [mode, setMode] = useState("routes");
   const [af, setAf] = useState(DEF0);
@@ -990,9 +1031,10 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
     <div>
       <ScreenHero C={C} title={"Route finder · " + loc.name} />
       {/* THE SEARCH BAR STAYS PUT (owner, 2026-10-21: "keep the search for areas and routes bar sticky
-          to the top of the page"): Routes | Areas, the box, Filters and the applied chips ride at the
-          top of #appscroll while the results scroll under them. */}
-      <div style={{ position: "sticky", top: 0, zIndex: 5, background: C.bg, margin: "0 -14px", padding: "8px 14px 2px", borderBottom: "1px solid " + C.borderLight }}>
+          to the top of the page"): Routes | Areas, the box, Filters and the applied chips pin under the
+          app's top bar (usePinnedBar) while the results scroll under them. */}
+      <div ref={barWrap} style={{ margin: "0 -14px", height: pin ? pin.height : undefined }}>
+      <div ref={barRef} style={{ ...(pin ? { position: "fixed", top: pin.top, left: pin.left, width: pin.width, zIndex: 25, boxShadow: "0 6px 12px rgba(0,0,0,0.25)" } : {}), boxSizing: "border-box", background: C.bg, padding: "8px 14px 2px", borderBottom: "1px solid " + C.borderLight }}>
       <div style={{ display: "flex", gap: 4, background: C.surface, border: "1px solid " + C.border, borderRadius: 9, padding: 3, marginBottom: 8 }}>
         {[["routes", "Routes"], ["areas", "Areas"]].map(([k, l]) => <button key={k} onClick={() => setMode(k)} aria-pressed={mode === k} style={{ flex: 1, padding: "8px 0", border: "none", borderRadius: 7, background: mode === k ? C.blueSolid : "transparent", color: mode === k ? "#fff" : C.textSub, fontSize: 13.5, fontWeight: 700, cursor: "pointer" }}>{l}</button>)}
       </div>
@@ -1014,6 +1056,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
       {/* No count after a failed read: "0 routes" above "Couldn't search routes" reads as an empty area. */}
       {!needsArea && !(error && total == null && !all.length) ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6, padding: "0 2px" }}>{nRes.toLocaleString() + " route" + (nRes !== 1 ? "s" : "") + " · sorted by " + SORT_PHRASE[af.sortBy]}</div> : null}
       </> : null}
+      </div>
       </div>
       {loc.id !== scope.id ? (
         <div style={{ display: "flex", alignItems: "center", gap: 8, margin: "10px 0 2px", fontSize: 12.5, color: C.textSub }}>
