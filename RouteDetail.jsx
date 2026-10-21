@@ -38,7 +38,7 @@ const EMPTY_ARR=[];
 import { clickable } from "./lib/clickable";
 import { PeakMetadataPanel, SeasonalGuidancePanel, CrowdsPanel, PartnerRequirementsPanel, splitParagraphs, monthRank } from "./EnrichmentPanels";
 import { MAP_TILE_URLS, loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./lib/mapKit";
-import { shortGrade, gradeDetail, cruxGrade } from "./lib/grade";
+import { shortGrade, gradeDetail, cruxGrade, displayGrade } from "./lib/grade";
 import { routeTerrain, fitGear, saysNotApplicable } from "./lib/terrain";
 import { rappelReportedMax, rappelHeaderLabel, rappelSingleRopeWarning } from "./lib/rappels";
 import { knownHazards } from "./lib/hazards";
@@ -994,7 +994,14 @@ function TechStats({route,onEdit,part}){
     if(route.pitches>0)stats.push(["Pitches",route.pitches,C.blue]);
     if(hasAscent)stats.push([gainIsWholeOuting?"Total ascent":"Approach gain","↑ "+uElev(totalAscentFt),C.green]);
     if(distTile)stats.push(distTile);
-    if(route.cruxGrade||route.grade)stats.push(["Crux grade",cruxGrade(route.cruxGrade||route.grade),C.amber]);
+    /* On sport and trad the route's grade IS its crux (a YDS grade rates the hardest move), so a
+       "Crux grade" tile repeated the Composite Grade panel above it, value for value. Mountain
+       Project and theCrag print one grade for these. The tile stays only when a stored crux
+       disagrees with the route's displayed grade (displayGrade, the header pill), which is
+       information rather than an echo. */
+    const _cx=(route.cruxGrade||route.grade)?cruxGrade(route.cruxGrade||route.grade):null;
+    const _cxEcho=_cx&&(disc==="sport"||disc==="trad")&&displayGrade(route)===_cx;
+    if(_cx&&!_cxEcho)stats.push(["Crux grade",_cx,C.amber]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
     /* Second copy of the Rappels tile — same reasoning as the pitched branch above. */
