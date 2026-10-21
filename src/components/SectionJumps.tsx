@@ -46,7 +46,15 @@ export default function SectionJumps({ rootRef, tabKey }: SectionJumpsProps) {
   function go(i: number) {
     const h = els.current[i];
     if (!h || !h.isConnected) return;
-    h.style.scrollMarginTop = "12px";
+    /* Land BELOW whatever is pinned at the top of the screen (the app bar is sticky, 59px), not under it: a fixed 12px margin hid the heading it jumped to (owner, 2026-10-21). Measured at tap time, so a taller bar (a notch inset, a banner) is cleared too. */
+    let bar = 0;
+    try {
+      for (let el: Element | null = document.elementFromPoint((window.innerWidth || 0) / 2, 1); el && el !== document.body; el = el.parentElement) {
+        const pos = getComputedStyle(el).position;
+        if ((pos === "sticky" || pos === "fixed") && !el.contains(h)) { const b = el.getBoundingClientRect().bottom; if (b > 0 && b < (window.innerHeight || 0) / 2) bar = b; break; }
+      }
+    } catch { /* elementFromPoint before layout: fall back to the plain 12px margin */ }
+    h.style.scrollMarginTop = (Math.round(bar) + 12) + "px";
     h.scrollIntoView({ behavior: "auto", block: "start" });
     if (h.animate) h.animate([{ backgroundColor: C.blueDim, boxShadow: "0 0 0 6px " + C.blueDim }, { backgroundColor: "transparent", boxShadow: "0 0 0 6px transparent" }], { duration: 1200, easing: "ease-out" });
     if (!h.hasAttribute("tabindex")) h.setAttribute("tabindex", "-1");

@@ -1374,6 +1374,47 @@ function TrailheadCard({route,onEdit}){
     </div>:<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45}}>No trailhead coordinates on file yet.</div>}
   </div>;
 }
+/* TRAILHEAD TO SUMMIT · SUMMIT TO TRAILHEAD (owner, 2026-10-21): the two legs a party plans the day by, under
+   the trailhead card, so the drive, the coordinates and how long it is from the car to the top and back sit
+   together. Laid out the way The Mountaineers' route pages print their trip profile — one row per leg, each
+   with its time, gain and distance. The times are planTimes() at its defaults, the same estimate Full Trip
+   Time starts from, so the two cannot disagree; a stored leg wins there and here alike. It sits OUTSIDE
+   TrailheadCard on purpose: that card carries no stat tiles (check:trailhead-directions section 7).
+   GAIN only where the stored gain is the whole climb to the top — the rule TECH STATS labels it by — and
+   DISTANCE per leg only on a route that comes back the way it went; a loop or point-to-point gives the
+   whole outing once instead of inventing a split. */
+function SummitLegsCard({route}){
+  const pt=planTimes(route);const disc=catOf(route);
+  const ascent=routeAscentFt(route);
+  const gainFt=ascent>0&&(disc==="alpine"||disc==="mountaineering"||disc==="hiking"||gainCoversWholeOuting(route))?ascent:null;
+  const km=effDistKm(route);const hasKm=km!=null&&km>0;const whole=effDistIsWholeTrip(route);const rs=recShapeOf(route);
+  const outBack=rs?rs==="outback":shapeOf(route)==="outback";
+  const legKm=hasKm&&outBack?(whole?km/2:km):null;
+  const fmtKm=function(k){return uDist(Math.round(k*10)/10);};
+  const fmtH=function(h){var r=Math.round(h*2)/2;return (r<1?"<1":String(r))+" hr";};
+  const top=climbsAPeak(route)||disc==="alpine"||disc==="mountaineering"||disc==="hiking"||disc==="scrambling"?"summit":"top of the climb";
+  const upH=pt.publishedIsWholeDay?null:pt.hikeH+pt.techH;
+  const upTxt=upH>0?(pt.walkInKnown&&pt.climbKnown?"":"≥ ")+fmtH(upH):null;
+  const downTxt=!pt.publishedIsWholeDay&&pt.downH>0?(pt.walkOutKnown?"":"≥ ")+fmtH(pt.downH):null;
+  const wholeTxt=pt.publishedIsWholeDay&&pt.techH>0?fmtH(pt.techH):null;
+  const legs=pt.publishedIsWholeDay
+    ?[["CAR TO CAR",[wholeTxt?["Time",wholeTxt]:null,gainFt?["Gain","↑ "+uElev(gainFt)]:null,hasKm?["Distance",fmtKm(outBack&&!whole?km*2:km)]:null]]]
+    :[["TRAILHEAD TO "+top.toUpperCase(),[upTxt?["Time",upTxt]:null,gainFt?["Gain","↑ "+uElev(gainFt)]:null,legKm?["Distance","~"+fmtKm(legKm)]:null]],
+      [top.toUpperCase()+" TO TRAILHEAD",[downTxt?["Time",downTxt]:null,legKm?["Distance","~"+fmtKm(legKm)]:null]]];
+  const shown=legs.map(function(l){return [l[0],l[1].filter(Boolean)];}).filter(function(l){return l[1].length;});
+  if(!shown.length)return null;
+  const days=itinDayCount(route);
+  const note=(pt.legsStored?"Times start from this route’s published figures for a fit party — the same estimate as Full Trip Time below.":"Times are estimated for an intermediate party with a light pack — set your own in Full Trip Time below.")
+    +(!pt.publishedIsWholeDay&&hasKm&&!legKm?" This route does not come back the way it goes: "+fmtKm(km)+" for the whole outing.":"")
+    +(days>1?" Usually done over "+days+" days — the Trip plan below splits it by day.":"");
+  return <div style={{background:C.surface,borderRadius:10,padding:"4px 12px 11px",border:"1px solid "+C.border,marginBottom:12}}>
+    {shown.map(function(l,i){return <div key={l[0]} style={{padding:"8px 0",borderTop:i===0?"none":"1px solid "+C.borderLight}}>
+      <div style={{...SUB_LABEL,marginBottom:5}}>{l[0]}</div>
+      <div style={{display:"flex",flexWrap:"wrap",gap:"4px 18px"}}>{l[1].map(function(s){return <div key={s[0]} style={{minWidth:0}}><div style={{fontSize:14,fontWeight:700,color:C.text,fontVariantNumeric:"tabular-nums",whiteSpace:"nowrap"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted}}>{s[0]}</div></div>;})}</div>
+    </div>;})}
+    <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:4}}>{note}</div>
+  </div>;
+}
 /* A coordinate you can read out, and one tap to copy it. Shared by both rows of CragLocationCard. */
 const CopyCoordButton=({lat,lng,what})=><AreaCopyCoordButton lat={lat} lng={lng} what={what} C={C}/>;
 /* WHERE THE CLIMBING IS, AND WHERE YOU PARK — the two places a crag visit needs, side by side under
@@ -3868,7 +3909,7 @@ const mtn=(function(){const _s=MOUNTAINS.find(m=>m.id===route.mountainId);if(_s&
            joins it: that button resolved its destination through trailheadPoint() and so does this
            card's "Drive here", so the two were the same link. trailheadPoint never returns a point
            with a null lat (every branch goes through wpPlaced), so wherever the button rendered the
-           card renders too and nothing is lost. */}{cragOnly?null:<Capped><TrailheadCard route={route} onEdit={()=>{openFix("approach");}}/></Capped>}{(()=>{const rx=rxOf(route.id);const dbA=route.access||{};const ac={...dbA,...rx.access};const passVal=ac.passRequired===true?"Yes":(typeof ac.passRequired==="string"?ac.passRequired:null);const feesVal=typeof ac.fees==="number"?("$"+ac.fees):ac.fees;/* DISPLAY prefers land_manager: it is the canonical field — 2,103 routes across just 80
+           card renders too and nothing is lost. */}{cragOnly?null:<Capped><TrailheadCard route={route} onEdit={()=>{openFix("approach");}}/><SummitLegsCard route={route}/></Capped>}{(()=>{const rx=rxOf(route.id);const dbA=route.access||{};const ac={...dbA,...rx.access};const passVal=ac.passRequired===true?"Yes":(typeof ac.passRequired==="string"?ac.passRequired:null);const feesVal=typeof ac.fees==="number"?("$"+ac.fees):ac.fees;/* DISPLAY prefers land_manager: it is the canonical field — 2,103 routes across just 80
    distinct values, "Agency (Ranger District) — Wilderness". landManager is legacy free prose:
    984 routes across 474 distinct values, a quarter of them over 110 chars, sometimes a whole
    sentence ("Most of the route ... lie within the ..."). 604 routes carry BOTH with different
