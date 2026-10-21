@@ -119,6 +119,8 @@ if (!paySrc || !draftSrc) { console.error("FAIL — could not balance a lifted e
 
 const weekOf = () => ["sat_am"];
 const showRealName = true;                       // App state the draft literal closes over
+const profile = {};                              // ...and so is profile (climbingSince, 0299), unset here
+const _since = null;                             // saveEdit's validated climbing_since (0299), computed above its payload
 const draftFrom = (ME) => eval("(" + draftSrc + ")");            // eslint-disable-line no-eval
 const patchFrom = (d) => {                                        // eslint-disable-line no-eval
   const f = eval("(" + paySrc + ")");

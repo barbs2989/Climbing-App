@@ -94,8 +94,53 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     or `var SS={` is renamed — an empty set on either side would make every comparison pass
     vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
   - Injection-tested; the 4 cases are named at the bottom of the script.
+- **`check:contrib-fields` reads pencils as `openFix("key")` since the confidence lock (0307–0309).**
+  Every pencil on the route page goes through `openFix`, which opens the flag sheet for a field at
+  HIGH confidence instead of the editor; the guard counts both spellings as pencils and FAILS on a
+  bare `setFixOpenSection("key")`, because that is a pencil that skips the lock. The first run after
+  the rewrite reported "found only 0 edit pencil(s) — the scan broke", which is the fail-closed
+  shape working as intended.
+- **`check:editable-coverage`** asserts that every `routes` column in the schema snapshot either has
+  an editor (a `contribution_fields` row names it as a `column_name`) or is declared in the script's
+  `NEVER` map with a reason a reviewer can check (identity, derived numbers, owner-curated lists,
+  never-writable bookkeeping, enrichment stubs whose editable twin is another column). A new column
+  with neither FAILS; a NEVER entry for a column that gained an editor or left the schema FAILS as
+  stale. It is the owner's 2026-10-15 rule — everything a climber can see, a climber can correct —
+  made checkable. Measured when written: 113 columns, 70 editable, 36 declared; the seven that
+  rendered with no editor (alt_names, variations, ffa, fwa, high_point_ft, sun, pro_tips) got a
+  FIELDS entry, an `SS` key and a `contribution_fields` row (0317) in the same PR. What it cannot
+  see: whether the editor's VALUE SHAPE matches the reader — that is `check:contrib-shapes`.
+- **`check:contrib-field-columns`** asserts that the database's list of editable route fields
+  (`contribution_fields`, migration 0307) is the FORM's list: every `FIELDS` key in
+  `RouteDetail.jsx` and every `SS` key in `ClimbMatch.jsx` has a row, every row names a `routes`
+  column the schema snapshot has (or is declared in `NO_COLUMN` with a reason), and every row is
+  a key some form offers (or is declared in `EXTRA`). The confidence rule (`route_field_level`,
+  0308) reads the row to test whether a field is EMPTY on a route, and the insert guard refuses an
+  edit to a field at 'high' — so a key with no row reads as 'medium' forever, and a row naming a
+  column that does not exist reads every route as empty, i.e. 'low', i.e. always editable. Both
+  are silent. Static; reads every migration's `insert into contribution_fields` block in file
+  order, latest value per key wins. Found `ascender` (in `SS`, not in the form) missing from the
+  first draft of 0307. Fails closed on fewer than 40 keys, no rows, or no snapshot.
+  - **Why the form key, not the column.** The unit a climber edits is the form key (`rap`,
+    `gain`, `pitchCount`); the app's `M` renames it to the camelCase route PROPERTY and
+    `dbRouteToCamel` renames the column to that property, so neither map gives the column. This
+    table is the one place the column is stated, which is why a guard has to hold it to the form.
+- **`check:contrib-shapes`**, on AddRoute's LOCAL path (`_nr`, the seed-shaped row handed to
+  `onAddRoute` with no CONV and no `dbRouteToCamel` between it and the readers), accepts a field as
+  array-shaped only when the expression holds an array literal or calls a helper named in its
+  `ARRAY_HELPERS`, each of which it re-checks is defined with a `.split`/`.map`/`.filter`. **The
+  allowance is a named list on purpose**, so it cannot rot into "anything with parentheses".
+  2026-10-16: `commaOf` joined `linesOf` there — the comma split `altNames`/`variations` use on
+  both paths (0327). The trap: the guard passed locally in a batch whose exit code was `tail`'s,
+  and only CI's build job surfaced the FAIL. A guard piped to `tail -1` reports nothing.
 - **`check:consensus-clustering`** asserts that three climbers who agree can actually be **counted**
-  as agreeing. The merge gate is `win.n>=3||wasEmpty`, so for a field that already holds a value
+  as agreeing. **Since 2026-10-15 (0307–0309, the owner's route quality control) the merge no
+  longer applies a value on agreement**: every field edit is held `pending` until the owner
+  approves it, the merge applies `status='approved'` rows only (value = `applied_value` else
+  `value`), and clustering serves the owner's queue ("3 climbers suggested X") rather than a
+  threshold. The guard still matters for exactly that reason — a cluster that cannot form is three
+  agreeing climbers the owner never sees as agreeing. The paragraph below describes the gate as it
+  was. The merge gate was `win.n>=3||wasEmpty`, so for a field that already holds a value
   three contributors must land in the same cluster or the correction sits pending **forever** —
   which makes `sameEditValue`, not the form or `SS`, the thing that decides whether a correction can
   ever go live. It was **exact for everything except numbers**. Static (bundles core and executes the
@@ -167,6 +212,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   correction displayed **nothing**) and `rack` (#907, the RACK box read `gearTiers.required`
   while the form writes `rack`, so the box the climber edited kept the value they had
   replaced). Fixing one never found the next; **do not assume a third looks like either.**
+  - **`_contribFields` used to hold only THIS SESSION's local edits** (`routeEdits`), never what
+    the DB merge accepted. So on the signed-in path a rack/rope/descent correction three OTHER
+    climbers had agreed was written to the route and then out-voted by the enrichment for every
+    reader but its author — the same rivalry, reached through the second merge path. Fixed
+    2026-10-15 (PR #2403): the DB merge records what it accepted (`_dbAcc`) and unions it in, and
+    also feeds `_pendingEdits` (other climbers' 1–2-of-3 suggestions were invisible) and
+    `_contribAgreed` (distinct-contributor count, rendered as "✓ N climbers agreed" in the form).
+    This guard checks the READERS; it cannot see which keys the writer puts in the list.
   - **It was widened because `rack` was guarded only by a `scripts/oneoff/` probe, and nothing
     runs those.** The general rule was enforced nowhere, so a third instance would have shipped
     in silence. That is the gap it closes, and it is why this is a build gate rather than a
@@ -353,3 +406,37 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     backup beside it) — a chip taken from the NAME ("Notta Slab" is vertical), from a
     NEIGHBOURING line on the same peak, or a rock-feature chip on a Class 2-4 scramble. Six
     more, where the text disagrees with itself, were left alone. No guard can see this class.
+
+- **`check:area-edit-fields`** asserts that the seven AREA fields a climber may suggest an edit to
+  are **one list, read five ways** (since 0319: the constraint in 0304; `apply_approved_area_field`'s
+  allow-list and `update areas set` targets and `approve_field_contribution`'s area branch in 0319;
+  the editor; the page; the owner's queue labels). It also refuses an `after insert` applier trigger
+  coming back and requires the `after update of status … when approved` shape. The threshold rule
+  ("N of 3") is gone with the rule it tested: area edits are held for the owner. Original wording: `AREA_EDIT_FIELDS` in `lib/areaFields.js`, the check
+  constraint `contributions_area_field_ck` and the applier `apply_agreed_area_field()` in the
+  `0304` migration (both its allow-list and the columns its `update areas set` statements write),
+  the rows `lib/AreaSuggestFix.jsx` offers, and the values the area page renders
+  (`lib/DbAreaBrowser.jsx`, `lib/AreaPageSections.jsx`). Static, in the build. Injection suite:
+  `scripts/oneoff/inject-area-edit-fields-cases.mjs` (a field dropped from the SQL, a field added
+  to the JS alone, a summary printing an object).
+  - **Why it exists.** Area edits are `contributions` rows with `area_id` and no `route_id`
+    (the column dates from 0002; Ranks and Top Contributors already counted such rows), applied
+    by a trigger as 0210 applies grades. `areas` has no client write path, so the four readers of
+    the field list can only agree by discipline — and the route page's four contribute guards are
+    anchored on RouteDetail's `const FIELDS=[{k:` and ClimbMatch's `SS`, so they **cannot see this
+    table at all**. This guard carries their three rules for it: shape (a months set clusters
+    order-free, as SQL `area_field_norm()` does), summary (every `cur(area)` is a string — its
+    first run caught the `text()` helper printing `[object Object]` for an object value), and
+    threshold (the banner's "N of 3" is the applier's `win.n >= 3`).
+  - **What it cannot see.** Whether the LIVE function matches the file (`check:function-drift`),
+    whether the trigger actually fires (hand-run: suggest `aspect` on a crag with none and watch
+    the row), and whether a renderer reads a field only to print nothing.
+- **`check:area-page-honest`** asserts three things about the area page's new sections
+  (2026-10-15): every `facts.push` in `AreaFactsCard` sits on a line gated `if (area.<col>` (a
+  fact nobody stored is not printed — `check:untracked-factors`' rule); the CLIMBS HERE chart's
+  headline is the sum of the bars it draws, and a remainder is said in words (`total > sum`) —
+  `check:count-matches-its-list`' rule, on one card; and `lib/DbAreaBrowser.jsx` offers
+  `maps/dir` exactly once (the GETTING THERE card replaced the bare `Directions` button, and two
+  drive controls means one of them is the un-captioned one). Static, in the build; same injection
+  suite. Its first run caught a code COMMENT containing the `maps/dir` literal — the rule is on
+  the file, not the markup, and a comment counts; the comment was reworded rather than the rule.

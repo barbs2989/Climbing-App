@@ -238,6 +238,88 @@ name their inputs, `assertCovered()` for the ones that walk the tree.
     the missing file and its own file count; breaking the `db.js` vocabulary regex fails
     `check:writes`. The file counts differ legitimately (15 for the `.jsx`-only walkers, 65 for
     `check:zindex`) because the guards have different `SKIP` sets — do not "normalise" them.
+  - **Components live in TWO folders since 2026-10-15** — `lib/` (the 2026-09 lazy-load moves) and
+    `src/components/` (the single-job TypeScript extractions, `docs/refactor-progress.md`) — and
+    the #547 shape was one directory away from recurring: **11 guards enumerated `lib/` by hand**
+    and **19 filtered on `.jsx`**, so a `.tsx` in the new folder was invisible to all of them, and
+    **44 parsed with Babel `plugins:["jsx"]`**, which THROWS on a `.tsx` (loud, at least). Now one
+    list, `componentFiles(root, { js })`, feeds `appSources()` and every hand-rolled walker, every
+    parse carries the `typescript` plugin, and `MOVED` is keyed by parent file so a component
+    extracted from `ClimbMatch.jsx` or `RouteDetail.jsx` is stitched back like one from core
+    (`readParentSource()`; `readCoreSource()`/`MOVED_FROM_CORE` kept as aliases for 21 importers).
+    Measured before the plugin went in: parsing every existing `.js/.jsx` with and without
+    `typescript` gives **identical ASTs** apart from `importKind`/`exportKind: "value"` on
+    import/export nodes, which no guard reads. `check:refs` skips identifiers in TS *type*
+    positions (`Record<K,V>`, `: Props`) — erased before anything runs — but not inside `x as T`,
+    which wraps a value.
+  - **A parent that still USES what it extracted imports it back** (`DiscBadge`, PR3: core's own
+    `DiscBadges` renders it). Stitched verbatim, that import line plus the moved body is a duplicate
+    declaration and Babel refuses the WHOLE stitched file — every text guard on core would have gone
+    red at once, not blind. `readParentSource()` drops the parent's own import of each moved file
+    before appending it; the stitch probe (one def, zero leftover imports, parses) is the check.
+- **`check:types`** runs `tsc --noEmit` over `tsconfig.json` (strict, `allowJs` so a component can
+  import the three JS app files with inferred types). It exists because **Vite compiles `.tsx`
+  with esbuild, which strips types and checks nothing**, so without it a type error ships. It is a
+  `node scripts/check-types.mjs` entry, not a bare `tsc`, because `run-build-guards.mjs` parses the
+  chain for exactly that shape and would silently skip anything else. Fails closed on zero
+  TypeScript files under `src/` (a layout move, not a pass). ~7 s CPU: `tsc` follows the imports
+  into the 2.3 MB of JSX; the wall time on a loaded box is much longer and is not a defect.
+  - **Trap, met on the first component:** a JS function's destructured parameter
+    (`const Pill=({label,color,bg,sm,icon})=>`) is inferred as an object with every property
+    REQUIRED, so a `.tsx` that omits `icon` fails TS2741. Type the seam on the JS side with a
+    JSDoc `@param {{label?: …}}` — one line, no runtime change, and every later component
+    benefits — rather than casting in the component.
+  - `npm run type-check` is the same script under the name the owner asked for (2026-10-15), and
+    `tsconfig.json` gained `noUnusedParameters` then (src/ was already clean under it).
+- **`lint`** (`scripts/check-lint.mjs`, config `eslint.config.js`, added 2026-10-15 on the owner's
+  request) runs ESLint with `--max-warnings 0` over the app — the root `.jsx`, `lib/`, `main.jsx`
+  and `src/` (134 files; `scripts/`, `supabase/` and the data folders are ignored). The rules are
+  the three the owner named and nothing else: unused variables, `any` (`src/` also gets
+  typescript-eslint `strict`), and `react-hooks/rules-of-hooks` + `exhaustive-deps`, all errors.
+  `react/jsx-uses-vars` is on only so a component used solely in JSX does not read as unused —
+  without it the first count was 643 unused variables, 386 of them false.
+  - **It must ignore the guards' scratch files** (2026-10-16): `npm run build` runs every guard concurrently, and ESLint
+    scanning `.` died with `ENOENT: scandir .cm-apsec-…` when `check:approach-section` removed its scratch directory
+    mid-scan — two deploys in a row failed on it (c50e07f8, 6f000593), neither of which touched lint. `.cm-*/**`,
+    `.wpplace-*/**`, `.core-entry-*.jsx` and `.trusttierprobe-*.mjs` are now in the config's `ignores`. A guard that
+    adds a new scratch name in the checkout root has to add it there too, or the race comes back.
+  - **Legacy findings are a ratchet.** On the day it landed, 257 unused variables and 148
+    incomplete hook dependency arrays already sat in 24 files (mostly the three big JSX files).
+    Fixing the dependency arrays in `App` is a behaviour change per effect (a missing dep added to
+    an effect that sets state can loop), so they were recorded with `eslint --suppress-all` into
+    `eslint-suppressions.json` (per file, per rule, a COUNT) rather than swept. A new finding
+    pushes its file over the count and fails. Fixing an old one also fails ("unused
+    suppressions") until `npx eslint . --prune-suppressions` shrinks the file, so the baseline can
+    only go down. Never re-run `--suppress-all` to make a new finding go away.
+  - **Reading a failure in a legacy file:** once a file is over its count, ESLint prints EVERY
+    finding of that rule in the file, old ones included (58 lines for one new missing dep in
+    `ClimbMatch.jsx`). The new one is the line your diff touched; `git diff -U0` finds it.
+  - Fails closed on fewer than 40 files linted (an ignore edit that hides the app) and on an
+    eslint run that produced no JSON report. Injection-tested on landing: an unused `const` in
+    `lib/presence.js`, an effect reading `tab` with `[]` deps in `ClimbMatch.jsx`, and `: any` in a
+    new `.tsx` each failed it.
+  - Two pre-existing findings were FIXED, not suppressed: `CountUp`'s effect now lists the
+    primitives it reads (`[clean, target, dur]`, not `[value]` — same runs, since both derive from
+    the value), and `Lbl`'s emoji regex had ZWJ/VS16 inside a character class
+    (`no-misleading-character-class`), rewritten as an alternation; 14,801 string literals from
+    the app split identically under the old and new pattern.
+- **`measure:guard-reach`** is the blindness detector the 2026-09 moves recorded and nobody had
+  built: run every build guard, record its exit code and **every integer it printed**, then run
+  again after a move with `--compare` and fail on a guard that passed before and fails now, prints
+  fewer numbers, or has a count that fell to **zero**. A changed count is listed, not failed — a
+  move legitimately shifts a file count by one. Hand-run around every extraction
+  (`docs/refactor-progress.md` step 2 and 4), never in the chain: it IS the chain, run twice.
+  Its first use, the `RiskBadge` extraction, is the measurement that this entry's claims rest on:
+  110 guards, 25 with changed counts — every one the new `.tsx` being SEEN (a file count up by one in
+  ten guards, the chain and the doc citations up by the new scripts) — and no drop.
+  - **Its first run also produced two false positives and the fix is in the tool:** `check:return-leg`
+    and `check:pitch-discount` "lost" 60 numbers each. Both blocks were Node's own
+    `(node:85793) ExperimentalWarning` text plus stack frames — pids and line numbers that appear or
+    not with the box's load — printed in the baseline and not after, while the guards' own counts were
+    identical to the last digit. Those lines are stripped before counting now. The lesson generalises:
+    **a count taken from a guard's output must come from what the guard SAID, not from what the
+    runtime said around it.** And run it without piping through `tail`: the pipe hides the exit code.
+
 **Can the database even answer, before a guard spends half an hour finding out?**
 `scripts/lib/db-preflight.mjs` asks once, up front, and is used by `check:ui`, `check:zero`
 and `check:overflow` (#865). `check:field-renders` answers the same question its own way,

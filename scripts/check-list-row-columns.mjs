@@ -42,7 +42,8 @@ const ENTRIES = [
   { file: "RouteDetail.jsx", fn: "approachFinishes" },
   { file: "RouteDetail.jsx", fn: "approachSibOpts" },
   { file: "RouteDetail.jsx", fn: "ApproachPicker", rows: ["sibs"] },
-  { file: "RouteDetail.jsx", fn: "cell" },
+  // `cell` (the header's prev/next strip) went 2026-10-21; NEXT DOOR (WallNeighbours) reads the same thin rows.
+  { file: "RouteDetail.jsx", fn: "WallNeighbours", rows: ["rows"] },
   { file: "RouteDetail.jsx", enclosing: "sibs" },
 ];
 const EMBED_MUST = ["name", "area_type"];
@@ -51,7 +52,7 @@ const problems = [];
 const asts = {}, fns = {}, consts = {};
 for (const rel of FILES) {
   const src = fs.readFileSync(path.join(ROOT, rel), "utf8");
-  const ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: true });
+  const ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: true });
   asts[rel] = ast;
   traverse(ast, {
     FunctionDeclaration(p) { if (p.node.id) reg(rel, p.node.id.name, p); },

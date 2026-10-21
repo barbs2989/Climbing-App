@@ -19,8 +19,8 @@
 //      for EVERY factor in WEIGHTS, says "not measured" for a missing one, refuses to show stars
 //      when the fetch failed, and is gated to crag disciplines only — never alpine, scrambling,
 //      mountaineering, ice or mixed (a user decision, 2026-10-07).
-//   5. ROCK — a MAPPED rock type says "(mapped)" wherever it renders.
-//   6. HOME — the Best day tile is the same score, under the same gate.
+//   5. ROCK — a route's own rock outranks its crag's, and no rock type is labelled "(mapped)" (owner, 2026-10-15).
+//   6. HOME + MENU — the Best day tile is the same score, under the same gate.
 //   7. CAPS AND INPUTS — rain, still-wet rock, wet sandstone, dew point and smoke CAP the stars with
 //      a named reason; drizzle counts; hours already gone are not offered; drying scales with the
 //      rain that fell; local time survives DST; prefs reach the score and live in ONE store that
@@ -30,7 +30,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { scoreForecast, WEIGHTS, CRAG_SCORE_DISCIPLINES, aspectBearing, sunPosition, starsLabel, frictionOf, aqiCategory, seepRisk, WET_BANDS, DRY_RATE } from "../lib/conditionsScore.js";
+import { scoreForecast, WEIGHTS, CRAG_SCORE_DISCIPLINES, aspectBearing, sunPosition, starsLabel, frictionOf, aqiCategory, seepRisk, WET_BANDS, DRY_RATE, mergeMeasuredRain } from "../lib/conditionsScore.js";
 import { routeRock, DRY_HOURS } from "../lib/rockType.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -153,23 +153,28 @@ console.log("check:conditions-score");
   else fail(`routeRock precedence is wrong: ${JSON.stringify(r)} / ${JSON.stringify(own)}`);
   const src = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
   const sites = src.match(/routeRock\(route\)/g) || [];
-  const marked = (src.match(/basis==="mapped"\?/g) || []).length;
-  if (sites.length && marked >= sites.length) ok(`${sites.length} place(s) render a rock type, and each marks a mapped one`);
-  else fail(`${sites.length} place(s) render routeRock but only ${marked} say "(mapped)"`);
+  const marked = (src.match(/\(mapped\)/g) || []).length;
+  if (sites.length && !marked) ok(`${sites.length} place(s) render a rock type, and none labels it "(mapped)"`);
+  else fail(`${marked} place(s) in RouteDetail.jsx still say "(mapped)" — the owner removed that qualifier 2026-10-15`);
 }
 
-// 6. MENU — the "Best day to climb" tile (moved off Home) (lib/BestDayTile.jsx) is the SAME score over the saved crag
+// 6. HOME + MENU — the "Best day to climb" tile (lib/BestDayTile.jsx), on Home under Jump back in and in the Menu, is the SAME score over the saved crag
 //    climbs, so its number and the Conditions tab's must come from one function, under one gate.
 {
   const tile = fs.readFileSync(path.join(ROOT, "lib/BestDayTile.jsx"), "utf8");
   const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
   const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
-  if (/<BestDayTile ids=\{wishlist\} routeById=\{routeById\} onOpen=/.test(app) && /\{bestDayOpen&&<div[\s\S]{0,260}aria-label="Best day to climb"[\s\S]{0,1200}<BestDayTile/.test(app) && /\["calendar","Best day to climb",\(\)=>setBestDayOpen\(true\)\]/.test(app) && (app.match(/<BestDayTile\b/g) || []).length === 1) ok("the Best day tile is opened from the Menu (Plan & log), over the saved climbs, and no longer sits on Home");
-  else fail("the Best day tile is no longer reachable from the Menu over the saved climbs, or is mounted on Home again");
-  // With no saved crag climb the tile says how to get one, and prints no number: it rates nothing.
-  const empty = (tile.match(/if \(!crag\.length\) return [^\n]*/) || [""])[0];
+  if (/<BestDayTile ids=\{wishlist\} areaIds=\{bookmarks\} routeById=\{routeById\} onOpenArea=/.test(app) && /\{bestDayOpen&&<div[\s\S]{0,260}aria-label="Best day to climb"[\s\S]{0,1200}<BestDayTile/.test(app) && /\["calendar","Best day to climb",\(\)=>setBestDayOpen\(true\)\]/.test(app) && /\{"Jump back in"\}[\s\S]{0,3000}<BestDayTile ids=\{wishlist\} areaIds=\{bookmarks\}[\s\S]{0,800}<\/Suspense><div id="pinned-downloads">/.test(app) && (app.match(/<BestDayTile\b/g) || []).length === 2) ok("the Best day tile sits on Home under Jump back in and opens from the Menu (Plan & log), over the saved climbs and saved areas");
+  else fail("the Best day tile is no longer on Home under Jump back in AND in the Menu over the saved climbs (owner 2026-10-15: both)");
+  // With no saved crag climb or crag area the tile says how to get one, and prints no number: it rates nothing.
+  const empty = (tile.match(/if \(!located\.length\) return [^\n]*/) || [""])[0];
   if (/scoreForecast\(/.test(tile) && /CRAG_SCORE_DISCIPLINES\.includes\(catOf\(r\)\)/.test(tile) && /Save a sport, trad, top-rope or bouldering climb/.test(empty) && /onClick=\{onExplore\}/.test(empty) && !/toFixed|stars/.test(empty)) ok("the tile scores with scoreForecast, crag climbs only, and with none saved shows how to save one, with no number");
   else fail("the tile no longer shares the score, its crag-only gate, or its no-number empty state");
+  // A saved AREA goes through the same crag-only gate (a crag by its disciplines, a region by the climbs under it),
+  // and is scored for that discipline, not for whatever catOf makes of a stand-in row.
+  const areaGate = (tile.match(/const areaDisc = [\s\S]*?\n\};/) || [""])[0];
+  if ((areaGate.match(/CRAG_SCORE_DISCIPLINES\.includes/g) || []).length >= 3 && /crag \* 2 >= all/.test(areaGate) && /discipline: ar \? ar\.discipline : catOf\(x\.r\)/.test(tile) && /\["crag", "wall", "region"\]/.test(tile)) ok("a saved area is scored only as a crag place (crag disciplines; a region by the climbs under it), for that discipline");
+  else fail("the saved-area path no longer gates on crag disciplines, or scores an area for the wrong discipline");
   // A score cell opens THAT day on the route's Conditions card, through the one-shot OPEN_DAY.
   if (/OPEN_DAY\.date = d\.date; onOpen\(row\.r, "forecast"\)/.test(tile) && /OPEN_DAY\.date;OPEN_DAY\.date=null/.test(rd) && /d\.date===wantDate/.test(rd)) ok("a tapped score opens that climb's Conditions tab on that day");
   else fail("a tapped score no longer opens its day on the Conditions tab");
@@ -216,6 +221,26 @@ console.log("check:conditions-score");
     const k = DRY_RATE;
     if (k.damp > 0 && k.damp <= k.rh90 && k.rh90 <= k.rh75 && k.rh75 <= 1 && k.night <= 1 && k.rhDry >= 1 && k.sun >= 1 && k.wind >= 1) ok(`drying rates are ordered: dew point ${k.damp} ≤ 90% RH ${k.rh90} ≤ 75% RH ${k.rh75} ≤ 1, night ${k.night} ≤ day`);
     else fail(`drying rates out of order: ${JSON.stringify(k)}`);
+  }
+  // MEASURED PAST RAIN (mergeMeasuredRain, 2026-10-15): the measurement decides HOW MUCH, the model only WHEN
+  // inside a 6-hour window; an hour no window covers keeps the model (a gap never reads as dry); a window that
+  // does not fit the series is skipped; and a measured dry spell over a modelled shower dries the rock.
+  {
+    const iso = (i) => Date.parse("2026-06-07T00:00:00Z") + i * 3600e3;
+    const base = fixture({ rainAt: [81, 83, 90] });
+    base.hourly.precipitation[83] = 0.1; // the model: 0.2" at 81, 0.1" at 83, 0.2" at 90
+    const m = mergeMeasuredRain(base, { kind: "6h", windows: [{ end: iso(84), hours: 6, inch: 0.6 }, { end: iso(78), hours: 6, inch: 0.3 }, { end: iso(2), hours: 6, inch: 0.9 }] });
+    const P = m.hourly.precipitation, sum = (a, b) => P.slice(a, b + 1).reduce((x, v) => x + v, 0);
+    const shaped = Math.abs(P[81] - 0.4) < 1e-6 && Math.abs(P[83] - 0.2) < 1e-6 && Math.abs(sum(79, 84) - 0.6) < 1e-6;
+    const even = [73, 74, 75, 76, 77, 78].every((i) => Math.abs(P[i] - 0.05) < 1e-6);
+    const kept = P[90] === 0.2 && P[2] === 0 && base.hourly.precipitation[81] === 0.2;
+    if (shaped && even && kept && m._rainMeasured && m._rainMeasured.windows === 2) ok("measured rain: a 6-h total keeps its amount and follows the model's timing (0.4\"/0.2\"), a dry-model window spreads evenly, an uncovered hour keeps the model, a window off the series is skipped, the input is not mutated");
+    else fail(`mergeMeasuredRain: 81=${P[81]} 83=${P[83]} sum=${sum(79, 84)} even=${even} 90=${P[90]} 2=${P[2]} meta=${JSON.stringify(m._rainMeasured)}`);
+    const wetModel = fixture({ rainAt: [83], rainAmt: 0.5 });
+    const dryMeasured = mergeMeasuredRain(wetModel, { kind: "6h", windows: [{ end: iso(84), hours: 6, inch: 0 }] });
+    const hm = at(scoreForecast(wetModel, WALL, null, NOW), 12), hd = at(scoreForecast(dryMeasured, WALL, null, NOW), 12), sd = scoreForecast(dryMeasured, WALL, null, NOW);
+    if (hm.dryFrac < 0.3 && hd.dryFrac === 1 && sd.rainMeasured && sd.rainMeasured.through === iso(84)) ok("a measured dry window overrides a modelled soaking: the rock reads dry, and the score says the rain was measured");
+    else fail(`measured rain did not reach the score: model ${hm.dryFrac}, measured ${hd.dryFrac}, ${JSON.stringify(sd.rainMeasured)}`);
   }
   // Drizzle: Open-Meteo reports 0.1 mm steps (0.004"); `>= 0.01` used to throw it away.
   const sD = scoreForecast(fixture({ rainAt: [84], rainAmt: 0.004 }), WALL, null, NOW);
@@ -334,7 +359,7 @@ console.log("check:conditions-score");
   if (/No three dry daylight hours/.test(rd)) fail('the old "No three dry daylight hours" label is back (it was wrong: the window needs daylight, not dry)');
   else ok("the no-window label says what is actually required: three daylight hours");
   const fc = fs.readFileSync(path.join(ROOT, "lib/forecast.js"), "utf8");
-  const crag = (fc.match(/export function fetchCragForecast[\s\S]*?\n}\n/) || [""])[0];
+  const crag = (fc.match(/export function fetchCragForecast\([\s\S]*?\n}\n/) || [""])[0];
   if (/dew_point_2m/.test(crag) && /is_day/.test(crag) && /past_days=14/.test(crag) && /timeformat=unixtime/.test(crag) && /daily=sunrise,sunset/.test(crag) && !/weather_code/.test(crag)) ok("the crag fetch asks for what the score reads (dew point, is_day, 14 past days, sunrise/sunset, unix time) and nothing it does not");
   else fail("the crag fetch and what the score reads have drifted apart");
   const prefs = fs.readFileSync(path.join(ROOT, "lib/CondPrefs.jsx"), "utf8");
@@ -457,17 +482,17 @@ console.log("check:conditions-score");
   if (card.includes("All 7 days")) fail("the hourly charts offer an \"All 7 days\" view again (owner, 2026-10-14: pick ONE day of the next 7, its hours below)");
   if (!lost.length) ok(`the card renders day by day, hour by hour (one picked day of the 7), cloud cover, feels-like, wind direction and the shade map (${need.length} anchors)`);
   else fail(`the card lost: ${lost.join(" | ")}`);
-  const chartNeed = ['"Rain amount ("', '"Chance of rain and cloud cover"', '"Humidity"', '"Wind and gusts"', "name:\"Feels\"", "windArrows", "Pick an hour"];
+  const chartNeed = ['"Rain amount ("', '"Chance of rain and cloud cover"', '"Humidity"', '"Wind and gusts"', "name:\"Feels\"", "windArrows", "<HourStepper"]; // the hour picker (its "Pick an hour" group lives in lib/HourTiles.jsx)
   const cLost = chartNeed.filter((s) => !chart.includes(s));
   if (!cLost.length) ok("the hourly chart draws rain AMOUNT, chance with cloud, humidity, feels-like and wind direction, for the picked day");
   else fail(`the hourly chart lost: ${cLost.join(" | ")}`);
   const fc = fs.readFileSync(path.join(ROOT, "lib/forecast.js"), "utf8");
-  const crag = (fc.match(/export function fetchCragForecast[\s\S]*?\n}\n/) || [""])[0];
+  const crag = (fc.match(/export function fetchCragForecast\([\s\S]*?\n}\n/) || [""])[0];
   if (/apparent_temperature/.test(crag) && /wind_direction_10m/.test(crag)) ok("the crag fetch asks for feels-like and wind direction, which the card reads");
   else fail("the crag fetch no longer asks for feels-like or wind direction");
   const sm = fs.readFileSync(path.join(ROOT, "lib/ShadeMap.jsx"), "utf8");
-  if (/IntersectionObserver/.test(sm) && /under a clear sky/.test(sm) && /not trees, overhangs/.test(sm) && /isn’t counted/.test(sm) && /Couldn’t load the terrain/.test(sm) && /aria-label="Time of day for the shade"/.test(sm)) ok("the shade map loads only near the screen, says it is a clear-sky terrain shadow (not trees or one face), how far it reaches, and when it failed");
-  else fail("the shade map lost a caveat, its lazy load, its failure state or its slider's name");
+  if (/IntersectionObserver/.test(sm) && /Couldn’t load the terrain/.test(sm) && /aria-label="Time of day for the shade"/.test(sm)) ok("the shade map loads only near the screen, and says when it failed");
+  else fail("the shade map lost its lazy load, its failure state or its slider's name");
 }
 function sN0() { return scoreForecast(fixture(), WALL, null, NOW); }
 

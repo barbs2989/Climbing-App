@@ -125,6 +125,10 @@ const REVIEWED = new Map([
     "scripts/check-units.mjs and its package.json entry in the same change. CLAUDE.md's check:units " +
     "entry describes it as SIX PROBES PROMOTED AT ONCE. Its message names none of the six, so the " +
     "consolidation escape could not fire."],
+  ["1e6287b60609b4f492a58e0fcba8d235ac09ee3d",
+    "#2546 removed the trust score from the whole app by owner decision (2026-10-21). reporterTrust, " +
+    "reporterWeightTrust, useTrustLookup and orgTrustUnavailable were deleted on purpose with every " +
+    "surface that read them; verified that nothing in the tree still references any of them."],
 ]);
 
 /* One printer for both gate exits. The file-finding exit used to print the findings and NO repair,

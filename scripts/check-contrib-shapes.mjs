@@ -127,7 +127,9 @@ const STRUCTURED = new Set(["waypoints", "pitches", "itinerary", "road", "access
   "crowds", "partnerRequirements", "seasonalGuidance", "emergency", "approachLogistics",
   // `sections` builds the {n,label,class,notes} array ClimbingRouteTable reads, exactly as
   // `pitches` builds pitchDetail's — structuredVal emits the shape, so no CONV applies.
-  "sections", "variants", "difficulty", "climate", "seasonalHazards"]);
+  "sections", "variants", "difficulty", "climate", "seasonalHazards",
+  // `rappels` builds rappel_detail's [{n,lengthM,anchor,station?,hazards?,notes}] the way `pitches` builds pitch_detail.
+  "rappels"]);
 
 const readers = stripComments(RD + "\n" + CORE);
 // The stripper's own failure mode is silent: desynchronise on an apostrophe and it eats real
@@ -251,8 +253,10 @@ for (const [key, expr] of nrPairs) {
   // broken the moment AddRoute started converting with a helper. Rather than loosen the rule to
   // "anything with parentheses", each allowed helper is named here AND its definition is checked
   // to actually produce an array — so the allowance cannot rot into a hole. `linesOf` splits a
-  // textarea into one entry per line, which is how whatToBring/watchOut/objHaz are read back.
-  const ARRAY_HELPERS = ["linesOf"];
+  // textarea into one entry per line, which is how whatToBring/watchOut/objHaz are read back;
+  // `commaOf` splits a comma list, which is how altNames/variations are read back (0327) — the
+  // same split routeForDetail's CONV applies to an edit of either.
+  const ARRAY_HELPERS = ["linesOf", "commaOf"];
   const helperOk = ARRAY_HELPERS.filter((h) => {
     const def = CORE.match(new RegExp("(?:const|function)\\s+" + h + "\\s*=?\\s*(?:function)?\\s*\\([^)]*\\)\\s*\\{[^}]{0,300}"));
     return def && /\.split\(|\.filter\(|\.map\(|\[\]/.test(def[0]);

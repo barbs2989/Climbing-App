@@ -43,8 +43,8 @@ const sum = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 
 const CASES = [
   {
     name: "1. the standalone 'Directions to trailhead' button is back beside the card",
-    find: '<TrailheadCard route={route} onEdit={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>',
-    repl: '<TrailheadCard route={route} onEdit={()=>{setFixOpenSection("approach");setFixOpen(true);}}/><button onClick={()=>window.open("https://maps.example","_blank")}>Directions to trailhead (Google Maps)</button>',
+    find: '<TrailheadCard route={route} onEdit={()=>{openFix("approach");}}/>',
+    repl: '<TrailheadCard route={route} onEdit={()=>{openFix("approach");}}/><button onClick={()=>window.open("https://maps.example","_blank")}>Directions to trailhead (Google Maps)</button>',
     expect: "fail",
   },
   {

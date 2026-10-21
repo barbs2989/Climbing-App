@@ -1,0 +1,48 @@
+{
+  "ny_moss_island": {
+    "_expect": { "name": "Moss Island", "region": "New York" },
+    "blurb": "Moss Island is a small rocky island in the Mohawk River at Little Falls, beside the Erie Canal lock. Its main cliff is thirty to forty feet high and faces south, with a wide spread of routes from very easy to hard; most are best toproped, and a handful take natural gear. The north side of the island holds boulders as well.\n\nThe south wall bakes on sunny summer days, so the northern boulders are the cooler choice then. The short walk-in and the range of grades make it a good spot for a day of toproping, for beginners and for groups.",
+    "parking_note": "Take Route 167 into Little Falls and cross the river bridge. The first drive on the right just past the bridge drops to a small lot under the bridge, where climbers park.",
+    "approach": "From the lot, cross the canal on the walkway beside the lock's lift gate to reach the island. The cliff is a very short walk from there.",
+    "approach_min": 5
+  },
+  "me_eagle_bluff": {
+    "_expect": { "name": "Eagle Bluff", "region": "Maine" },
+    "blurb": "Eagle Bluff is the main cliff at Clifton Crags, east of Bangor: a granite face up to about two hundred feet high with sport lines, trad routes, toprope setups and bouldering at its base, and a little ice in winter. The cliff is community-owned and looked after by local climbers.\n\nMore than a hundred lines, most of them concentrated from 5.9 to 5.12, many with bolts and rappel anchors though some still need a rack. It suits climbers who want a steep, varied day close to Bangor.",
+    "parking_note": "From the Route 9 and Route 180 junction in Clifton, drive about 2.5 miles south on Route 180. A small parking area sits in the woods just past a gated dirt road; if you reach Springy Pond Road on the right, you have gone a little too far.",
+    "approach": "An unmarked but easy-to-follow trail climbs steeply from the lot. After roughly five hundred feet it forks: the right branch reaches the base of the cliff, the left goes to the top.",
+    "approach_min": 10,
+    "rock": "granite"
+  },
+  "mi_bouldering": {
+    "_expect": { "name": "Grand Ledge (aka Oak Park) Bouldering", "region": "Michigan" },
+    "blurb": "Oak Park at Grand Ledge is the one real outdoor climbing area in Michigan's Lower Peninsula: a line of sandstone ledges, twenty-five to forty feet tall, along the Grand River, climbed since the 1960s. The bouldering is short, powerful and often technical, with problems from V0 into the double digits and most between V1 and V6.\n\nThe established classics are solid; less-used sections can be damp or crumbly. It suits local boulderers and visitors from nearby cities who want a quick session near Lansing.",
+    "approach": "The ledges run along the river inside the park; the boulders are a short walk from the park paths.",
+    "approach_min": 5,
+    "aspect": "S"
+  },
+  "or_main_forest": {
+    "_expect": { "name": "Main Forest", "region": "Oregon" },
+    "blurb": "Main Forest is the central bouldering sector at Carver, in the woods above the Clackamas River southeast of Portland. The boulders are basalt, with problems from technical slabs to steep overhangs, in named clusters such as the Birthday, Columbia and Triangle boulders.\n\nGrades run from V0 into the double digits, with most problems between V1 and V6. Close to Portland and varied, it is a busy sector that suits climbers who want a full day of forest bouldering.",
+    "approach": "From the back of the parking area take the path that goes right and uphill, and keep climbing at every junction to reach the boulders.",
+    "approach_min": 10,
+    "rock": "basalt"
+  },
+  "bc_upper_slide": {
+    "_expect": { "name": "Upper Slide", "region": "British Columbia" },
+    "blurb": "Upper Slide is the upper bouldering sector at Elbow Lake in the Fraser Valley, east of Mission near Harrison Mills. The boulders are scattered across a hillside just below a multi-pitch wall, and the sector is one of the main clusters in an area with well over a hundred problems.\n\nThe climbing runs from V0 warm-ups through a deep middle at V1 to V3 and on up to V10. The granitic rock sits on a hillside that gets sun most of the day, so it is best on cooler days. It suits climbers who want moderate circuits with a few harder lines in a forest setting.",
+    "parking_note": "From Mission, drive Highway 7 east to Morris Valley Road, then turn onto the forest service road at the first four-way stop. Follow it along the lake to the far end and park at the large pullout near the boulders.",
+    "season_months": [3, 4, 5, 9, 10, 11]
+  },
+  "ut_wasatch_resort_the": {
+    "_expect": { "name": "Wasatch Resort, The", "region": "Utah" },
+    "blurb": "The Wasatch Resort boulders sit near the mouth of Little Cottonwood Canyon above Sandy, on the Salt Lake side of the Wasatch Front: a compact collection of problems close to the city among the canyon's lower boulder zones.\n\nProblems run from V0 to V11, with most between V4 and V7. The setting suits climbers who want a short day close to town, and the hard end of the range will appeal most to strong boulderers."
+  },
+  "wa_lookout_point": {
+    "_expect": { "name": "Lookout Point", "region": "Washington" },
+    "blurb": "Lookout Point is a cliff on the forested slope above the town of Index in the Cascade foothills, with trad, sport, toprope, aid and a little bouldering. It is among the quieter parts of the Index walls because the walk in is longer than at the main crags.\n\nThe routes are mostly traditional lines on granite, concentrated from 5.9 to 5.11, with the Wall of Ten Thousand Insects among the better-known faces. Tree cover above the cliff drops debris onto routes in winter and spring, so it is best in the drier months. It suits climbers willing to hike a little further for fewer crowds.",
+    "approach": "From the town parking, walk toward the railroad tracks and stay on their right-hand side. Cross a small footbridge over the ditch to reach the trail. At the fork, the right branch leads to Private Idaho; the left climbs a dry streambed to Lookout Point and the Wall of Ten Thousand Insects.",
+    "rock": "granite",
+    "season_months": [5, 6, 7, 8, 9, 10]
+  }
+}

@@ -343,6 +343,15 @@ try {
      after this capture: "North Ridge" was listed but "CI" was not named and the chat would not open,
      which read as the #569 regression. Same shape as the Group wait below. Waiting cannot mask a real
      defect: the assertions are unchanged, so a roster that never renders still fails, just 15s later. */
+  /* Every crew card starts COLLAPSED (2026-10-21: the tab used to open the first crew's whole plan
+     inline, and the owner found it overwhelming), so the roster and the chat button sit behind the
+     North Ridge card's "View plan". Open that card first; the assertions below are unchanged. */
+  await page.waitForFunction(() => [...document.querySelectorAll('[id^="crewcard-"]')].some((c) => (c.innerText || "").includes("North Ridge")), null, { timeout: 15000 }).catch(() => {});
+  await page.evaluate(() => {
+    const card = [...document.querySelectorAll('[id^="crewcard-"]')].find((c) => (c.innerText || "").includes("North Ridge"));
+    const b = card && [...card.querySelectorAll("button")].find((e) => (e.textContent || "").trim().startsWith("View plan"));
+    if (b) b.click();
+  });
   const mateWait = fixture.mate.name.split(" ")[0].toLowerCase();
   await page.waitForFunction(
     (m) => document.body.innerText.toLowerCase().includes(m),
@@ -353,10 +362,31 @@ try {
   // screen to open. Clicking the route name here does NOT drill into the crew, it
   // navigates to the ROUTE, which is how the first draft of this check "failed" on a
   // perfectly good roster.
+  /* The AREA crew's name arrives from a THIRD query (the area card, keyed off the invites read), so wait for
+     it the way the roster is waited for; the assertion below is unchanged, so a name that never renders
+     still fails, just 15s later. */
+  await page.waitForFunction(
+    (n) => document.body.innerText.includes(n),
+    fixture.areaCrew.areaName,
+    { timeout: 15000 },
+  ).catch(() => {});
   const crewText = await capture("Crew:detail");
   asserted++;
   if (!crewText.includes("North Ridge")) {
     fail("Crew:detail", "the fixture's crew is not listed — the signed-in crew query returned nothing");
+  }
+  // THE AREA CREW (0302). The fixture also seats the owner in a crag SESSION at World Wall, a crew
+  // with no route, so it renders as a crew CARD here. The card must name the crag -- before
+  // crewPlace() every reader resolved crew.routeId, and an area crew would have been declared "no
+  // longer available" at best and printed "undefined" at worst.
+  asserted++;
+  if (!crewText.includes(fixture.areaCrew.areaName)) {
+    const crewLines = crewText.split("\n").filter((l) => /crew|session|no longer available|Loading/i.test(l)).slice(0, 8).join(" | ");
+    fail("Crew:detail", `the fixture's AREA crew at ${JSON.stringify(fixture.areaCrew.areaName)} is not named on the Crew tab — an area crew's card resolves to nothing (the 0302 shape of #569). Crew lines seen: ${crewLines || "(none)"}`);
+  }
+  asserted++;
+  if (/\bundefined\b/.test(crewText)) {
+    fail("Crew:detail", "the Crew tab prints the word undefined — a crew's place resolved against the wrong store");
   }
   asserted++;
   // First name only, deliberately: the app renders members through pubFirst/pubName, so
@@ -434,7 +464,7 @@ try {
        Waiting here cannot mask a real defect: the assertions below are unchanged, so a control
        that genuinely never renders still fails, with the same message, just later. */
     // The group page is TABS (About · Discussion · Events · Members · Media) and a member lands on
-    // the Discussion, so the roster is one tap away: on Members, which renders it for a manager and
+    // the Discussion, so the roster is one tap away: on Members, which renders it for a member and
     // only a count for anyone else. The tap is scoped to THIS group's dialog and matches the tab's
     // whole label -- a page-wide "contains" would also match "2 members" in the header.
     asserted++;

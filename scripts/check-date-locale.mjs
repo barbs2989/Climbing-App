@@ -58,7 +58,7 @@ for (const f of files) {
   const rel = path.relative(ROOT, f);
   const code = fs.readFileSync(f, "utf8");
   let ast;
-  try { ast = parse(code, { sourceType: "module", plugins: ["jsx"], errorRecovery: true }); }
+  try { ast = parse(code, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: true }); }
   catch (e) { dead(`${rel} does not parse: ${e.message}`); }
   traverse(ast, {
     CallExpression(p) {
