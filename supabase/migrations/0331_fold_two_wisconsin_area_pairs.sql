@@ -1,4 +1,4 @@
--- 0330: fold two Wisconsin areas filed twice (Devil's Lake East Bluff) into ONE area each.
+-- 0331: fold two Wisconsin areas filed twice (Devil's Lake East Bluff) into ONE area each.
 --
 -- check:area-duplicates named both pairs: same name, under 0.1 km apart, filed under two parents.
 --   keep wi_7_1_1_railroad_amphitheater (21)  drop wi_4_railroad_amphitheater (14)
@@ -21,14 +21,14 @@ begin
   select count(*) into n from areas where id in (select keep from m_fold union select drop_id from m_fold);
   if n = 0 then return; end if;
   if n <> 4 then
-    raise exception '0330: expected 4 areas, found a different number';
+    raise exception '0331: expected 4 areas, found a different number';
   end if;
   if exists (select 1 from areas a join m_fold f on a.parent_id = f.drop_id) then
-    raise exception '0330: a copy has a child area';
+    raise exception '0331: a copy has a child area';
   end if;
   if exists (select 1 from contributions where area_id in (select drop_id from m_fold))
      or exists (select 1 from topos where area_id in (select drop_id from m_fold)) then
-    raise exception '0330: climber data points at a copy';
+    raise exception '0331: climber data points at a copy';
   end if;
 end $$;
 
@@ -40,7 +40,7 @@ delete from areas a using m_fold f where a.id = f.drop_id
 do $$
 begin
   if exists (select 1 from areas where id in (select drop_id from m_fold)) then
-    raise exception '0330: a copy was not emptied';
+    raise exception '0331: a copy was not emptied';
   end if;
 end $$;
 
