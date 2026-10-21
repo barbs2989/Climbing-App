@@ -29,6 +29,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
 - **Logbook › Saved filter** Chips All · Routes · Peaks · Areas · Itineraries · Searches show one kind at a time, as Facebook’s Saved does; All is the default.
+- **"Quality" says what it means**: a route's guidebook stars read **Star rating**, not "Quality", and the rock report-tag group reads **Rock quality**. See `docs/features/route-page.md`.
 - **Partners › By route: Recently viewed is shorter**: it lists the 3 newest climbs, with a "Show N more" toggle for the rest (up to 5). See `docs/features/partners.md`.
 - **Groups Discover: explore by STATE, search finds states and About text**: one chip per state or province (home first, then where you listed partner areas), combinable with the search box; "Washington" now finds "Seattle, WA". New groups default to moderator-hosted events. See `docs/features/groups.md`.
 - **Rock type reads plainly**: the Rock tile, the Conditions card and the fix form no longer add "(mapped)" to a crag's rock type taken from the bedrock map. See `docs/features/conditions.md`.
