@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Menu: Your crews, and shortcuts first**: a *Crews · N* tile joins *Yours* (Groups takes the chat icon so the two differ), and a *Your crews* section lists up to five active crews with their unread counts, each opening that crew. *Your crews* and *Your groups* now sit above the tile groups, as Facebook's Menu leads with your shortcuts.
 
 - **Trailhead to summit / Summit to trailhead beside GETTING THERE**: the Plan tab now shows the two legs (time, gain, distance) right under the trailhead's drive directions and coordinates, from the same estimate as Full Trip Time. See [route-page.md](docs/features/route-page.md).
 - **The desktop website shell** (1024px+): a sticky top bar (☰ Menu far left, wordmark, a search for every climb and place, alerts, avatar), a sidebar with Groups, Profile and *Your crews*, a right rail at 1280px+ (Coming up, Alerts, Best day — the future ad column), a site footer, the Menu as a left drawer, bottom sheets as centred windows, hover and per-page tab titles. The phone tab bar is now soft and see-through. See `docs/features/app-shell-and-layout.md`.
