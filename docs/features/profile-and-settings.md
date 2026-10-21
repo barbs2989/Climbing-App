@@ -6,7 +6,8 @@
 profile can also open as `FullProfile` and `Resume` overlays from anywhere (partner rows, crews, leaderboards).
 
 ## 1. What it does today
-- **Profile (`me`)**: your header (trust score, verification, photo strip, résumé and public-profile buttons) stays on top; under it, tabs (`meTab`, read as `meTabOn`): **Profile** (At a glance, availability, speed, certifications, vouches you’ve given, Edit profile) · **Activity** (Year in Climbing banner, Your Logbook, sends by grade, Belay & Catch Record, reports you’ve filed) · **Review** (admins only: the eight safety and catalog queues). A catch notification opens Activity, Home’s availability gap opens Profile, and the admin banner and the Menu card (when items wait) open Review. Walks reach a tab with `?mt=` (overlay scaffold).
+- **Profile (`me`)**: your header (verification, photo strip, résumé and public-profile buttons) stays on top; under it, tabs (`meTab`, read as `meTabOn`): **Profile** (At a glance, availability, speed, certifications, vouches you’ve given, Edit profile) · **Activity** (Year in Climbing banner, Your Logbook, sends by grade, Belay & Catch Record, reports you’ve filed) · **Review** (admins only: the eight safety and catalog queues). A catch notification opens Activity, Home’s availability gap opens Profile, and the admin banner and the Menu card (when items wait) open Review. Walks reach a tab with `?mt=` (overlay scaffold).
+- **Menu card and tiles**: the card (avatar, name) opens Profile; under it, for a signed-in or demo climber, *View profile* and *Edit profile* (`openEdit`) sit side by side, then availability and the emergency contact. Tile groups: *Plan & log* (Log a climb, Your ascents, Add a climb, Float plans, Best day, Your conditions, Downloads, Hire a guide) · *Saved & lists* (Saved areas and Saved searches open Logbook › Saved with `savedKind` set to `areas`/`searches`; Everything saved; Objectives & your lists; Challenges; Climbing lists sets `challengeListsAt`, which `Challenges` reads as `listsAt` to open its curated-lists dialog) · *Yours* (Friends, Groups, Requests, Listed areas, contributions, Year in Climbing, share/invite, guide).
 - **Menu › Your groups** (signed in or demo, under the *Yours* tiles): up to five of the groups you are in (`myGroupsNow`, ordered by `groupsByLastPost`), each with its new-post count (`groupUnreadN`); a tap opens that group (`setOpenGroupId`) over Groups › Your groups, and *See all ›* appears past five. No groups means no section; a failed read (`groupsUnavailable`) says so instead of an empty list.
 - **Edit profile**: `lib/EditProfileScreen.jsx` over the `editDraft` state; `saveEdit` writes the draft back (see 2).
   Includes the owner-only zip code (feeds partner search distance; others never see it).
@@ -16,12 +17,11 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   Scrambling = scrambling + hiking. A `discipline:"rock"` route resolves to its `style`. Exportable via `exportResume`.
   Visible to others only when the climber's `resume_public` allows it.
   *Edit résumé › Add a past climb* asks how you climbed it from a list per discipline (`RESUME_STYLES`): routes offer Lead / Onsight / Flash / Redpoint / Follow / Top-rope (trad and ice add Solo; alpine and ice add Swapped leads), boulders Send / Flash, mountaineering Summit / Lead / Follow / Solo, scrambling Summit / Completed / Solo. Changing the discipline resets a style the new one lacks.
-- **Trust score**: `TrustBadge` tier chip on the headline; a "what feeds your score" breakdown (`trustFactors`) that adds up to the headline.
-  The authoritative number is the server's `compute_trust_score`; the highest earnable score is 84.
+- **No trust score** (removed 2026-10-21, owner decision): no screen computes, shows, filters, sorts or gates on one. What a climber judges a partner by is the ✓ (verification), the vouches they received and their belay record. The database function `compute_trust_score` still exists; nothing in the app calls it.
 - **Verification** (0306): ✓ means you proved you read your inbox. Sign-up's autoconfirm no longer counts. `VerifyEmailPanel` on Profile emails a one-time code (`sendEmailCode`), you type it (`confirmEmailCode`) or tap the link in the same email, and `verifyMyEmail` writes the record; the server's `verify_my_email()` accepts only a session whose `amr` shows a code, link or reset link from the last 30 minutes. Your own ✓ comes from the record (`useVerificationRecords`), never the session; a failed read decides nothing and hides the "Verify" prompts (`verificationUnavailable`). Until a mail provider (SMTP) is connected, Supabase's built-in mailer only delivers to the project's team, and the panel says so.
 - **Sign out** (Menu's *Sign out*, Settings' *Log out*): `signOut` ends the session on the server, drops every cached per-climber query, and goes back to signed-out. If the logout request cannot reach the server (offline, outage), it still signs THIS device out — supabase-js would otherwise keep the session while the app said "Signed out" — and the server-side refresh token simply expires.
 - **Vouches**: `GiveVouch` (`lib/GiveVouch.jsx`) writes through `giveVouch` in `lib/db.js`.
-- **Another climber's belay record** (0315): FullProfile's Safety tab reads `belay_ledgers()` (`useBelayLedgers`) — the catches their trust score counts (`counted_catch_count`), the climbers caught and the last catch. `CatchLedger`'s `otherReal` branch shows no High-Factor tile: nothing records a fall's severity.
+- **Another climber's belay record** (0315): FullProfile's Safety tab reads `belay_ledgers()` (`useBelayLedgers`) — the catches that count on the Belay board (`counted_catch_count`), the climbers caught and the last catch. `CatchLedger`'s `otherReal` branch shows no High-Factor tile: nothing records a fall's severity.
 - **Profile photos**: `uploadProfilePhoto` (location stripped first, public `topo-photos` bucket), `saveProfilePhotos`,
   `saveProfilePhotoAlts`, `removeProfilePhoto` (own photo only).
 - **Settings**: units (imperial/metric), date format, notification switches, visibility switches (show full name `show_name`,
@@ -50,13 +50,13 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
    and `loadDateFmt`/`saveDateFmt` (`lib/date-pref.js`); `currentDateLocale()` reads it outside React.
 7. **Notification and browse switches** are device-local flag sets: `loadNotifPrefs`/`saveNotifPrefs` (`lib/notif-pref.js`, `climbmatch-notif-prefs`),
    `visibleWhileBrowsingPref`/`saveVisibleWhileBrowsing` (`lib/browse-visibility-pref.js`), built on `lib/prefs.js` (`defineFlagSet`). Onboarding shown-once: `lib/onboard-pref.js`.
-8. **Trust inputs**: `useMyTrustCounts` (counts for the breakdown), compared to the server number; `trustFactors` builds the local list.
+8. **Your counted catches**: `useMyTrustCounts` (RPC `my_trust_counts`, 0203) feeds the Belay & Catch Record's counted total.
 
 ## 3. Files
 | File | Key symbols |
 |---|---|
 | `ClimbMatch.jsx` | `profile`/`setProfile`, `editDraft`, `saveEdit`, `settingsOpen`, `menuOpen`, `units`/`dateFmt`, `meLive`, `myVerificationQ`, `FALLBACK_AV` |
-| `ClimbMatchCore.jsx` | `ME`, `UNITS`, `__set_UNITS`, `__set_DLOCALE`, `FullProfile`, `Resume`, `TrustBadge`, `trustFactors`, `exportResume` |
+| `ClimbMatchCore.jsx` | `ME`, `UNITS`, `__set_UNITS`, `__set_DLOCALE`, `FullProfile`, `Resume`, `exportResume` |
 | `lib/EditProfileScreen.jsx` | `EditProfileScreen` (profile editor, zip field) |
 | `lib/auth.js` | `getProfile`, `saveProfile`, `useSession`, `signOut`, `sendEmailCode`, `confirmEmailCode`, `inboxProofFresh` |
 | `lib/VerifyEmailPanel.jsx` | `VerifyEmailPanel` (emailed-code verification on Profile, 0306) |
@@ -66,7 +66,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 
 ## 4. Data
 - **Supabase tables**: `profiles` (0009; `show_name` 0175; `discoverable` 0104/0110; `resume_public` 0177; certifications 0181), `profile_zips` (owner-only) + `zip_centroids` (0189),
-  `verification_records` (policies 0058; `verify_my_email()` 0085, inbox proof 0306), vouches and `compute_trust_score` (0038; ranking-aware revisions 0194/0203), `blocked_users` (0088), storage bucket `topo-photos` for profile photos.
+  `verification_records` (policies 0058; `verify_my_email()` 0085, inbox proof 0306), vouches, `my_trust_counts` (0203; `compute_trust_score` 0038 is no longer called), `blocked_users` (0088), storage bucket `topo-photos` for profile photos.
 - **Device-local (localStorage)**: units, date format, notification switches, visible-while-browsing, onboarding-prompted.
   These do **not** follow a climber to another device.
 - **Seed / in-memory**: `ME`, `CLIMBERS`/`FILLER_CLIMBERS` (gated by `DEMO_FILLERS`); seed résumé ticks (`ME.ticks`) are cleared by the sign-in reset.
@@ -81,11 +81,12 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 
 ## 6. Guards
 All present in `package.json`: `check:profile-edit-gate`, `check:profile-draft-persists`, `check:profile-claims`, `check:photo-removal`,
-`check:verification-fallback`, `check:trust-breakdown`, `check:untracked-factors`, `check:visibility-switches`, `check:notification-switches`,
+`check:verification-fallback`, `check:visibility-switches`, `check:notification-switches`,
 `check:onboarding-reach`, `check:real-profile-rows`, `check:policy-claims`, `check:units`, `check:date-locale`.
 Notes: `docs/guards/settings-and-persistence.md`, `honesty-claims.md`, `units-and-formatting.md`, `seed-and-identity.md`, `outage-and-read-failures.md`.
 
 ## 7. Last significant change
+- **Menu: Saved & lists + Edit profile** — saved areas, saved searches, challenges and climbing lists get Menu tiles; Edit profile sits beside View profile on the card.
 - **Menu lists your groups** — a *Your groups* section with up to five, newest post first, each opening the group.
 - **Résumé past-climb style per discipline** — a scramble no longer offers Lead or Top rope (`RESUME_STYLES`).
 - **Real climbers, batch 4** (0315) — another real climber's belay record reaches their profile.

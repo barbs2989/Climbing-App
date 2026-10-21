@@ -97,7 +97,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 - Route page (`RouteDetail.jsx`): saving an objective, logging a climb, opening a crew's route via `openRoute`; Planner reads logged times (`check:logged-times`).
 - Partners (Discover): `partners_by_objective` reads the objectives that still count (0303: not crag-family, or a peak); `onInvite` and `crews` feed crew invites (`docs/features/partners.md`).
   Saving a crag route stays a tick list; it no longer feeds the match %.
-- Profile/trust: vouches and logs feed trust score and the résumé; Menu opens Friends/Requests views and Settings.
+- Profile: vouches and logs feed the profile and the résumé; Menu opens Friends/Requests views and Settings.
 - Offline: pinned states and route packs (`packRouteOffline`) are what Home's pinned card lists.
 
 ## 6. Guards
