@@ -422,7 +422,7 @@ console.log("\n10. SUN ON THE FACE — be above each height of the face before t
   eq("a night that never froze says the sun gives no deadline", /The sun gives no deadline today: with nothing frozen overnight/.test(card), true);
   eq("...and so does a day too cold for the sun to matter", /day\.sunCold \? "The sun reaches steep ground shedding onto the line, but the air there stays below freezing all day/.test(card), true);
   eq("what the start could not read is said, every time (no aspect, no summit pin, no start height, no terrain)", /This start doesn’t count in sun on the face: /.test(card) && /Couldn’t load the terrain, so this start doesn’t count in sun on the face\./.test(card), true);
-  eq("...in the start box itself", /\{startEl\}\{sunEl\}/.test(card), true);
+  eq("...in the start box itself (after the route's own usual start, when it has one)", /\{startEl\}\{pubStart \?[^\n]*?: null\}\{sunEl\}/.test(card), true);
 }
 
 console.log("\n11. WHOLE-DAY ROWS — one published total counts back where the kind allows it, and says the split is assumed");
