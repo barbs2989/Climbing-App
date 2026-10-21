@@ -160,6 +160,7 @@ export const MOVED = {
     "src/components/ShareExportRow.tsx",
     "src/components/ReactionPicker.tsx",
     "src/components/PullToRefresh.tsx",
+    "src/components/TopContribBadge.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
