@@ -21,6 +21,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 - **Verification** (0306): ✓ means you proved you read your inbox. Sign-up's autoconfirm no longer counts. `VerifyEmailPanel` on Profile emails a one-time code (`sendEmailCode`), you type it (`confirmEmailCode`) or tap the link in the same email, and `verifyMyEmail` writes the record; the server's `verify_my_email()` accepts only a session whose `amr` shows a code, link or reset link from the last 30 minutes. Your own ✓ comes from the record (`useVerificationRecords`), never the session; a failed read decides nothing and hides the "Verify" prompts (`verificationUnavailable`). Until a mail provider (SMTP) is connected, Supabase's built-in mailer only delivers to the project's team, and the panel says so.
 - **Sign out** (Menu's *Sign out*, Settings' *Log out*): `signOut` ends the session on the server, drops every cached per-climber query, and goes back to signed-out. If the logout request cannot reach the server (offline, outage), it still signs THIS device out — supabase-js would otherwise keep the session while the app said "Signed out" — and the server-side refresh token simply expires.
 - **Vouches**: `GiveVouch` (`lib/GiveVouch.jsx`) writes through `giveVouch` in `lib/db.js`.
+- **Safety skills**: one list, `SKILLS` grouped by `SKILL_GROUPS` in `ClimbMatchCore.jsx`, is what Edit profile offers and what a vouch can name. *Partner checks* was removed (2026-10-21); `liveSkills()` drops it from any profile or vouch that saved it, so it never shows as an "other" skill.
 - **Another climber's belay record** (0315): FullProfile's Safety tab reads `belay_ledgers()` (`useBelayLedgers`) — the catches their trust score counts (`counted_catch_count`), the climbers caught and the last catch. `CatchLedger`'s `otherReal` branch shows no High-Factor tile: nothing records a fall's severity.
 - **Profile photos**: `uploadProfilePhoto` (location stripped first, public `topo-photos` bucket), `saveProfilePhotos`,
   `saveProfilePhotoAlts`, `removeProfilePhoto` (own photo only).
@@ -86,6 +87,7 @@ All present in `package.json`: `check:profile-edit-gate`, `check:profile-draft-p
 Notes: `docs/guards/settings-and-persistence.md`, `honesty-claims.md`, `units-and-formatting.md`, `seed-and-identity.md`, `outage-and-read-failures.md`.
 
 ## 7. Last significant change
+- **Partner checks removed from Safety skills** — no longer offered on Edit profile or the vouch form; saved copies are dropped on read (`liveSkills`).
 - **Menu lists your groups** — a *Your groups* section with up to five, newest post first, each opening the group.
 - **Résumé past-climb style per discipline** — a scramble no longer offers Lead or Top rope (`RESUME_STYLES`).
 - **Real climbers, batch 4** (0315) — another real climber's belay record reaches their profile.
