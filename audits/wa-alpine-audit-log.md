@@ -32745,3 +32745,40 @@ Mountaineers/AAC obituary pieces crediting the West Spire to both brothers on th
 trip (the exact day, August 29, wasn't independently found but wasn't contradicted either).
 
 Pass 7 continues next run after `wa_mcmillan_spire_west_west_ridge`.
+
+## 2026-10-21 — Pass 7, Batch 422
+
+Seven routes across six peaks: Mesahchie Peak (West Ridge/Southwest Gully), Middle Peak in
+the Gunsight Range (North Face, Traverse Route — both near-stub rows), Colchuck Balanced
+Rock (Milk n' Honey), Mix-up Peak (East Face/East Buttress), South Early Winters Spire
+(Mojo Rising), and Monte Cristo Peak (Standard Scramble).
+
+1 confirmed error fixed (audits/sql/2026-10-21-batch-422.sql): Middle Peak North Face's `fa`
+field credited Doug Klewin and Dan McNerthney with a December 1978 snow-and-ice climb — but
+that text is lifted wholesale from an AAC Publications report literally titled "Middle Peak
+of Mount Index, North Face." Mount Index (near the town of Index, WA) is a wholly different
+mountain from this area's Middle Peak in the Gunsight Range (Glacier Peak Wilderness, east
+of the Cascades crest) — a case of two differently-located peaks sharing a generic name. The
+same AAC report describes the party continuing "along the traverse route to the main peak"
+afterward — a suspicious echo of this same area's other route, Traverse Route, though that
+row carries no `fa` field to correct, just a naming coincidence worth a second look. Cleared
+the misattributed credit (set to NULL) rather than guessing a replacement, since no source
+for this peak's actual North Face FA was found.
+
+1 flagged for human review: Middle Peak's own elevation_ft (8,185) could not be corroborated
+by any source found — the closest match, "Gunsight Peak" at 8,198 ft in Chelan County, may
+or may not be the same summit under a different name. Left unchanged rather than guessing.
+
+5 clean: Mesahchie Peak's elevation (8,795 ft) and 1966 first-ascent year matched
+Wikipedia/trek.zone exactly (its data_quality note already discloses the prominence
+spread); Milk n' Honey's FA party and August 24, 2010 date match a CascadeClimbers.com trip
+report titled "Colchuck Balanced Crag - Milk n' Honey 5.11 8/24/2010" exactly; Mix-up Peak's
+elevation, prominence and 1947 first-ascent all matched Wikipedia exactly; Mojo Rising's FA
+party, October 2006 date, grade and length all matched Mountain Project/SuperTopo (pitch
+count has a known, unresolved source split — SuperTopo says 5, Mountain Project says 9,
+matching our stored value — not a flag since nothing contradicts what's stored); and Monte
+Cristo Peak's elevation, prominence and 1923 first-ascent all matched Wikipedia exactly.
+South Early Winters Spire's and Colchuck Balanced Rock's elevations, checked as the parent
+areas of Mojo Rising and Milk n' Honey, also matched external sources exactly.
+
+Pass 7 continues next run after `wa_monte_cristo_peak_scramble`.
