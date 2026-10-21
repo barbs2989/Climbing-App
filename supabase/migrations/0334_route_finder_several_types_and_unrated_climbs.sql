@@ -13,6 +13,14 @@
 --
 -- Only those two predicates change from 0332 (routes_in_subtree) and 0246 (routes_in_subtree_count);
 -- signatures, grants, ordering and every other filter are untouched. lib/offline.js mirrors both.
+--
+-- AND A BROWSE STARTS FROM THE AREA, NOT THE CATALOG. With no name typed, the planner chose to walk
+-- routes_grade_idx across EVERY state (80,226 rows for 5.6-5.10a) and join the subtree afterwards,
+-- so Sport + Trad 5.6-5.10a in Central-East Cascades hit the 3 s anon statement timeout (measured
+-- 2026-10-21; Sport alone happened to plan well). A browse now materialises the subtree's areas
+-- and reads each one's routes through routes_area_idx (a LATERAL with OFFSET 0, so it is not
+-- flattened back into the same hash join): Washington, Sport + Trad 5.6-5.11, 180 ms of route reads.
+-- A name search keeps 0244/0245's plan unchanged, which leads with the name index.
 
 create or replace function routes_in_subtree(
   root_id text,
@@ -31,6 +39,47 @@ create or replace function routes_in_subtree(
 )
 returns setof routes language plpgsql stable set plan_cache_mode = force_custom_plan as $$
 begin
+  if q is null or btrim(q) = '' then
+    return query
+  with ra as materialized (
+    select a.id, a.name from areas a
+    join areas root on root.id = root_id
+    where a.path <@ root.path
+  )
+  select r.* from ra cross join lateral (
+    select x.* from routes x
+    where x.area_id = ra.id
+    and (disc is null or disc = '' or x.discipline = any (string_to_array(disc, ',')))
+    and (case
+      when grade_sys = 'wi' then x.ice_grade_num is not null and (min_grade is null or x.ice_grade_num >= min_grade) and (max_grade is null or x.ice_grade_num <= max_grade)
+      when grade_sys = 'm' then x.mixed_grade_num is not null and (min_grade is null or x.mixed_grade_num >= min_grade) and (max_grade is null or x.mixed_grade_num <= max_grade)
+      when grade_sys = 'aid' then x.aid_grade_num is not null and (min_grade is null or x.aid_grade_num >= min_grade) and (max_grade is null or x.aid_grade_num <= max_grade)
+      when grade_sys = 'snow' then x.snow_grade_num is not null and (min_grade is null or x.snow_grade_num >= min_grade) and (max_grade is null or x.snow_grade_num <= max_grade)
+      else (grade_sys is null or grade_sys = '' or x.grade_system = grade_sys)
+        and (min_grade is null or x.grade_num >= min_grade)
+        and (max_grade is null or x.grade_num <= max_grade)
+    end)
+    and (min_stars is null or coalesce(x.stars, 0) = 0 or x.stars >= min_stars)
+    and (min_pitches is null or coalesce(nullif(x.pitches, 0),
+         case when x.discipline = 'bouldering' then 0 else 1 end) >= min_pitches)
+    and (min_length_m is null or x.length_m >= min_length_m)
+    and (max_length_m is null or x.length_m <= max_length_m)
+    offset 0
+  ) r
+  order by
+    case when sort_by in ('area', 'lr', 'rl') then ra.name end asc nulls last,
+    case when sort_by in ('area', 'lr', 'rl') then ra.id end asc,
+    case when sort_by = 'lr' then r.sort_order end asc nulls last,
+    case when sort_by = 'rl' then r.sort_order end desc nulls last,
+    case when sort_by = 'grade_asc' then r.grade_num end asc nulls last,
+    case when sort_by = 'grade_desc' then r.grade_num end desc nulls last,
+    case when sort_by = 'stars_desc' then r.stars end desc nulls last,
+    case when sort_by = 'name_desc' then r.name end desc,
+    r.name asc
+  limit lim offset off;
+    return;
+  end if;
+
   return query
 
   select r.* from routes r
@@ -82,6 +131,36 @@ create or replace function routes_in_subtree_count(
 )
 returns bigint language plpgsql stable set plan_cache_mode = force_custom_plan as $$
 begin
+  if q is null or btrim(q) = '' then
+    return (
+  with ra as materialized (
+    select a.id from areas a
+    join areas root on root.id = root_id
+    where a.path <@ root.path
+  )
+  select count(*) from ra cross join lateral (
+    select 1 from routes x
+    where x.area_id = ra.id
+    and (disc is null or disc = '' or x.discipline = any (string_to_array(disc, ',')))
+    and (case
+      when grade_sys = 'wi' then x.ice_grade_num is not null and (min_grade is null or x.ice_grade_num >= min_grade) and (max_grade is null or x.ice_grade_num <= max_grade)
+      when grade_sys = 'm' then x.mixed_grade_num is not null and (min_grade is null or x.mixed_grade_num >= min_grade) and (max_grade is null or x.mixed_grade_num <= max_grade)
+      when grade_sys = 'aid' then x.aid_grade_num is not null and (min_grade is null or x.aid_grade_num >= min_grade) and (max_grade is null or x.aid_grade_num <= max_grade)
+      when grade_sys = 'snow' then x.snow_grade_num is not null and (min_grade is null or x.snow_grade_num >= min_grade) and (max_grade is null or x.snow_grade_num <= max_grade)
+      else (grade_sys is null or grade_sys = '' or x.grade_system = grade_sys)
+        and (min_grade is null or x.grade_num >= min_grade)
+        and (max_grade is null or x.grade_num <= max_grade)
+    end)
+    and (min_stars is null or coalesce(x.stars, 0) = 0 or x.stars >= min_stars)
+    and (min_pitches is null or coalesce(nullif(x.pitches, 0),
+         case when x.discipline = 'bouldering' then 0 else 1 end) >= min_pitches)
+    and (min_length_m is null or x.length_m >= min_length_m)
+    and (max_length_m is null or x.length_m <= max_length_m)
+    offset 0
+  ) r
+    );
+  end if;
+
   return (
 
   select count(*) from routes r

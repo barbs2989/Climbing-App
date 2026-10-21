@@ -67,7 +67,9 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   - **Grouped by wall by default**: the default sort is `lr`, and on a wall sort each wall gets a heading (opens its page, *Save area*).
   - **A state needs an area first** (`FINDER_NEEDS_AREA`): on a state or larger, the finder lists the state's areas to pick from (the
     finder's own Location, `loc`; *Change area* goes back) unless a name is typed. An unfiltered California list took 3.3 s in the database.
-    The search box is debounced 250 ms.
+    The search box is debounced 250 ms. With no name typed, both RPCs now read the subtree's areas first and each area's routes
+    through `routes_area_idx`: Sport + Trad 5.6–5.10a in Central-East Cascades used to walk the grade index across every state and hit
+    the 3 s anon timeout. A name search keeps 0244/0245's name-index plan.
   - **Sticky bar**: Routes | Areas, the box, Filters and the chips stay pinned at the top while the results scroll.
   - **Save from the list**: a ☆ beside each row opens a save sheet: My Objectives (`toggleWish`), your own lists (`toggleListRoute` in
     App, the same `onUpdateList` write ListsManager makes) and the climb's wall (`toggleBookmark`).
