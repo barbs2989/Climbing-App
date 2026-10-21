@@ -2,7 +2,7 @@
 -- climbs nobody has rated (owner, 2026-10-21: "you should be able to select both trad and sport";
 -- "we probably need to still show them routes that fit the other filters").
 --
--- disc: a comma-separated list ("sport,trad"), as Mountain Project's Route Finder lets you tick Trad,
+-- disc: a comma-separated list ("sport,trad"), split once into `discs`, as Mountain Project's Route Finder lets you tick Trad,
 -- Sport and Toprope together. One discipline is a one-item list, so every caller that passes a
 -- single discipline reads exactly as before.
 --
@@ -38,6 +38,10 @@ create or replace function routes_in_subtree(
   grade_sys text default null
 )
 returns setof routes language plpgsql stable set plan_cache_mode = force_custom_plan as $$
+declare
+  -- Split ONCE into a variable: inline, string_to_array() made the planner re-evaluate it per row
+  -- (a crag took 9 s instead of 0.34 s, measured 2026-10-21).
+  discs text[] := string_to_array(nullif(disc, ''), ',');
 begin
   if q is null or btrim(q) = '' then
     return query
@@ -49,7 +53,7 @@ begin
   select r.* from ra cross join lateral (
     select x.* from routes x
     where x.area_id = ra.id
-    and (disc is null or disc = '' or x.discipline = any (string_to_array(disc, ',')))
+    and (discs is null or x.discipline = any (discs))
     and (case
       when grade_sys = 'wi' then x.ice_grade_num is not null and (min_grade is null or x.ice_grade_num >= min_grade) and (max_grade is null or x.ice_grade_num <= max_grade)
       when grade_sys = 'm' then x.mixed_grade_num is not null and (min_grade is null or x.mixed_grade_num >= min_grade) and (max_grade is null or x.mixed_grade_num <= max_grade)
@@ -88,7 +92,7 @@ begin
   where ra.path <@ root.path
     and (q is null or q = '' or coalesce(r.name_search, search_norm(r.name)) like all (search_patterns(q)))
     and (search_lead_pattern(q) is null or r.name_search like search_lead_pattern(q))
-    and (disc is null or disc = '' or r.discipline = any (string_to_array(disc, ',')))
+    and (discs is null or r.discipline = any (discs))
     and (case
       when grade_sys = 'wi' then r.ice_grade_num is not null and (min_grade is null or r.ice_grade_num >= min_grade) and (max_grade is null or r.ice_grade_num <= max_grade)
       when grade_sys = 'm' then r.mixed_grade_num is not null and (min_grade is null or r.mixed_grade_num >= min_grade) and (max_grade is null or r.mixed_grade_num <= max_grade)
@@ -130,6 +134,10 @@ create or replace function routes_in_subtree_count(
   grade_sys text default null
 )
 returns bigint language plpgsql stable set plan_cache_mode = force_custom_plan as $$
+declare
+  -- Split ONCE into a variable: inline, string_to_array() made the planner re-evaluate it per row
+  -- (a crag took 9 s instead of 0.34 s, measured 2026-10-21).
+  discs text[] := string_to_array(nullif(disc, ''), ',');
 begin
   if q is null or btrim(q) = '' then
     return (
@@ -141,7 +149,7 @@ begin
   select count(*) from ra cross join lateral (
     select 1 from routes x
     where x.area_id = ra.id
-    and (disc is null or disc = '' or x.discipline = any (string_to_array(disc, ',')))
+    and (discs is null or x.discipline = any (discs))
     and (case
       when grade_sys = 'wi' then x.ice_grade_num is not null and (min_grade is null or x.ice_grade_num >= min_grade) and (max_grade is null or x.ice_grade_num <= max_grade)
       when grade_sys = 'm' then x.mixed_grade_num is not null and (min_grade is null or x.mixed_grade_num >= min_grade) and (max_grade is null or x.mixed_grade_num <= max_grade)
@@ -169,7 +177,7 @@ begin
   where ra.path <@ root.path
     and (q is null or q = '' or coalesce(r.name_search, search_norm(r.name)) like all (search_patterns(q)))
     and (search_lead_pattern(q) is null or r.name_search like search_lead_pattern(q))
-    and (disc is null or disc = '' or r.discipline = any (string_to_array(disc, ',')))
+    and (discs is null or r.discipline = any (discs))
     and (case
       when grade_sys = 'wi' then r.ice_grade_num is not null and (min_grade is null or r.ice_grade_num >= min_grade) and (max_grade is null or r.ice_grade_num <= max_grade)
       when grade_sys = 'm' then r.mixed_grade_num is not null and (min_grade is null or r.mixed_grade_num >= min_grade) and (max_grade is null or r.mixed_grade_num <= max_grade)
