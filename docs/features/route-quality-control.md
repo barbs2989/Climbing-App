@@ -185,4 +185,5 @@ standing, flags, and notices (0307–0309). The page chips follow.
   "empty field → live" rule are no longer shown until approved; they are in the queue.
 - The queue clusters pending rows in JavaScript (`sameEditValue`); the server only checks that
   clustered ids share a route and field.
-- `area_top_contributors` (0148) still counts every row, approved or not.
+- Top contributors count only approved field edits and approved new climbs (0317, 0333); the scoring is in
+  `docs/features/ranks.md` › Contribution points.
