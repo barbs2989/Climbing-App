@@ -326,16 +326,19 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
 
   const s = day.sum;
   const readout = [["High / low", s.hi != null ? uTemp(s.hi) + " / " + uTemp(s.lo) : "—"], ["Freezing level", s.flLo != null ? uElev(Math.round(s.flLo / 100) * 100) + "–" + uElev(Math.round(s.flHi / 100) * 100) : "—"], ["Gusts, any hour", s.gust != null ? uWind(s.gust) : "—", s.gust != null && s.gustDay != null ? "daylight hours: " + uWind(s.gustDay) : null], ["New snow", uSnowfall(s.snow)]];
-  /* THE DAY PICKER STAYS IN VIEW (owner, 2026-10-16: "you have to scroll up every time to switch the day"). It
-     pins to the top of the page for as long as any of this day's sections is on screen -- the start, flags,
-     alerts, hour by hour, snowfall, air, sun -- and says in words which day all of them show, the way a
-     weather app keeps its day strip above the hours. It is a direct child of the wrapper on purpose: sticky
-     holds only inside its parent, so inside the first box it would scroll away with that box. */
+  /* SWITCHING DAY WITHOUT SCROLLING BACK UP (owner, 2026-10-16: "you have to scroll up every time to switch the
+     day ... make it easier to switch the day on each section"). The strip says in words which day every section
+     below shows, and each day section's heading (alerts, hour by hour, snowfall, air) carries its own ‹ › to step
+     the SAME day for all of them. NOT a sticky strip: #appscroll is overflow:auto but grows to its content (the
+     document scrolls), so a sticky child binds to a box that never scrolls and rides away with the page --
+     measured live 2026-10-21. */
+  const di = Math.min(dayI, days.length - 1);
+  const nav = { prev: di > 0 ? { go: function () { setDayI(di - 1); }, name: dayName(days[di - 1], di - 1) } : null, next: di < days.length - 1 ? { go: function () { setDayI(di + 1); }, name: dayName(days[di + 1], di + 1) } : null };
   // The route's own published start (timing.recommendedStart, free prose: "2:30 AM from camp"), beside the one
   // counted from the forecast -- the Plan tab shows it too. Shown only where the card gives a start box.
   const pubStart = route.timing && typeof route.timing.recommendedStart === "string" && route.timing.recommendedStart.trim() ? route.timing.recommendedStart.trim() : null;
   const fullDay = new Date(day.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { weekday: "long", month: "short", day: "numeric", timeZone: "UTC" });
-  return <div><div style={{ position: "sticky", top: 0, zIndex: 3, background: C.bg, padding: "6px 0 4px", marginBottom: 6, borderBottom: "1px solid " + C.border }}>
+  return <div><div style={{ padding: "2px 0 4px", marginBottom: 6 }}>
     <div aria-live="polite" style={{ fontSize: 12, color: C.textSub, marginBottom: 5 }}>{"Showing "}<b style={{ color: C.text }}>{(Math.min(dayI, days.length - 1) === 0 ? "today, " : "") + fullDay}</b>{" — every section below is for this day."}</div>
     <div role="group" aria-label="Day" style={{ display: "flex", gap: 5, overflowX: "auto", paddingBottom: 4 }}>{days.map(function (d, i) {
       const on = i === Math.min(dayI, days.length - 1), w = nWarn(d), c = nCaution(d);
@@ -358,10 +361,10 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "halfway" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + BLIND[kind]}
     </div>
   </div>
-  <AlertsSection day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} alerts={alerts} fc={fc} onRetry={function () { setAlertTries(alertTries + 1); }} />
-  <HourByHour key={day.date} fc={fc} day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} pt={pt} floor={floor} legs={legs} snowLegs={snowLegs} />
-  <SnowfallSection fc={fc} day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} />
-  <AirSection day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} air={air} onRetry={function () { setAirTries(airTries + 1); }} />
+  <AlertsSection day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} nav={nav} alerts={alerts} fc={fc} onRetry={function () { setAlertTries(alertTries + 1); }} />
+  <HourByHour key={day.date} fc={fc} day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} nav={nav} pt={pt} floor={floor} legs={legs} snowLegs={snowLegs} />
+  <SnowfallSection fc={fc} day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} nav={nav} />
+  <AirSection day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} nav={nav} air={air} onRetry={function () { setAirTries(airTries + 1); }} />
   <SunShadeSection route={route} kind={kind} terrain={terrain} pt={pt} fc={fc} day={day} isToday={Math.min(dayI, days.length - 1) === 0} />
   </div>;
 }
@@ -379,7 +382,20 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
    thunderstorms, so "possible" is the strongest word a CAPE hour gets and nothing here says "safe".
    Only the one heading line ("Tue · 2 PM") is aria-live: wrapping every tile in it read the whole grid out again on
    each tap. */
-function HourByHour({ fc, day, dayLabel, pt, floor, legs, snowLegs }) {
+/* A day section's heading with its own ‹ › (see `nav` in ForecastBox): steps the one selected day, so every
+   section moves together and the strip at the top agrees. A missing neighbour is a disabled button, not a gap,
+   so the heading never shifts. */
+function DayHead({ title, dayLabel, nav }) {
+  const btn = function (n, glyph, dir) {
+    return <button onClick={n ? n.go : undefined} disabled={!n} aria-label={n ? dir + " day: " + n.name : "No " + dir.toLowerCase() + " day in the forecast"} style={{ minWidth: 44, minHeight: 44, boxSizing: "border-box", padding: 0, borderRadius: 8, border: "1px solid " + C.border, background: "transparent", color: n ? C.blue : C.textMuted, opacity: n ? 1 : 0.45, fontSize: 18, fontWeight: 700, lineHeight: 1, cursor: n ? "pointer" : "default" }}>{glyph}</button>;
+  };
+  return <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 8 }}>
+    <CardHead style={{ margin: 0 }}>{title + " · " + dayLabel.toUpperCase()}</CardHead>
+    <div role="group" aria-label={"Change day for every section, now " + dayLabel} style={{ display: "flex", gap: 6, flexShrink: 0 }}>{btn(nav && nav.prev, "‹", "Previous")}{btn(nav && nav.next, "›", "Next")}</div>
+  </div>;
+}
+
+function HourByHour({ fc, day, dayLabel, nav, pt, floor, legs, snowLegs }) {
   const h = fc.hourly;
   const found = localDays(fc).find(function (d) { return d.date === day.date; });
   const endT = day.sunset != null ? day.sunset + 3600 : null;
@@ -413,7 +429,7 @@ function HourByHour({ fc, day, dayLabel, pt, floor, legs, snowLegs }) {
   const tops = pt.elevFt;
   const marks = marksIn(T);
   return <div style={BOX}>
-    <CardHead style={{ marginBottom: 8 }}>{"HOUR BY HOUR · " + dayLabel.toUpperCase()}</CardHead>
+    <DayHead title="HOUR BY HOUR" dayLabel={dayLabel} nav={nav} />
     <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginBottom: 8 }}>{"Key times for this day, then each hour at " + (tops != null ? uElev(tops) : "the forecast point") + ". Tap an hour, or step with ‹ ›."}</div>
     <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 10 }}>{kt.map(function (k, j) { return <span key={j} style={{ fontSize: 12, fontWeight: 700, color: C.text, background: C.surface, border: "1px solid " + k.tone + "99", borderRadius: 20, padding: "4px 10px", lineHeight: 1.3 }}>{k.label + " " + clockOf(fc, k.at) + (k.after || "")}</span>; })}</div>
     <div style={{ marginBottom: 8 }}><HourStepper index={idx.indexOf(cur)} count={idx.length} onPick={function (j) { setSel(idx[j]); }} label={function (j) { return clockHr(localHour(fc, idx[j])); }}>{idx.map(function (i) {
@@ -445,14 +461,14 @@ function HourByHour({ fc, day, dayLabel, pt, floor, legs, snowLegs }) {
    instability depends on the weak layers beneath new snow and can last days to weeks. The snow level is the
    freezing level over the day's wet hours less the 500 to 1500 ft the NWS-cited studies put snow below the
    0 C line; it is a rule of thumb with its range stated, and it needs precipitation to mean anything. */
-function SnowfallSection({ fc, day, dayLabel }) {
+function SnowfallSection({ fc, day, dayLabel, nav }) {
   /* `day` is the card's per-day SUMMARY (flags, start, sunrise...): it carries no `hours`. The raw local day does, so
      it is looked up by date -- passing the summary to snowLevel() crashed the whole route page (live, 2026-10-08). */
   const raw = localDays(fc).find(function (d) { return d.date === day.date; });
   const hist = snowHistory(fc, todayOf(fc)), lvl = raw ? snowLevel(fc, raw) : null;
   const when = function (n) { return n === 0 ? "today" : n === 1 ? "yesterday" : n + " days ago"; };
   return <div style={BOX}>
-    <CardHead style={{ marginBottom: 8 }}>{"SNOWFALL & SNOW LEVEL · " + dayLabel.toUpperCase()}</CardHead>
+    <DayHead title="SNOWFALL & SNOW LEVEL" dayLabel={dayLabel} nav={nav} />
     <TileGrid min={150}>
       <Tile label="Last measurable snow" when="at the forecast point" value={!hist ? NOT_MEASURED : hist.none ? "None" : when(hist.daysAgo)} sub={!hist ? null : hist.none ? "none of the last " + hist.days + " days reached " + uSnowfall(LIMITS.snowMeasurableIn) : new Date(hist.lastDate + "T12:00:00Z").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", timeZone: "UTC" }) + " · " + uSnowfall(hist.lastIn)} />
       <Tile label={"Snow in " + (hist ? hist.days : 14) + " days"} when="modelled total" value={hist ? uSnowfall(hist.totalIn) : NOT_MEASURED} />
@@ -525,10 +541,10 @@ function ReportFreshness({ activity, unavailable }) {
    its WHAT line verbatim in the units it was issued in -- not paraphrased, because a paraphrase of a wind speed
    is a wrong wind speed. Outside the US nothing is checked, and it says so; a failed read is "not measured";
    a day with no alert says that none is not an all-clear. */
-function AlertsSection({ day, dayLabel, alerts, fc, onRetry }) {
+function AlertsSection({ day, dayLabel, nav, alerts, fc, onRetry }) {
   const list = alerts && alerts.data && !alerts.data.outside ? alertsForDay(normAlerts(alerts.data), day.date, fc) : [];
   return <div style={BOX}>
-    <CardHead style={{ marginBottom: 8 }}>{"WEATHER ALERTS · " + dayLabel.toUpperCase()}</CardHead>
+    <DayHead title="WEATHER ALERTS" dayLabel={dayLabel} nav={nav} />
     {!alerts ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Loading weather alerts…</div>
       : alerts.error ? <div><div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>Couldn’t load weather alerts, so they are not measured. This is not a report of none.</div><button onClick={onRetry} style={RETRY}>Try again</button></div>
       : alerts.data.outside ? <div style={MUTED}>Weather alerts are only checked for places in the United States. Nothing was checked for this route.</div>
@@ -549,11 +565,11 @@ function AlertsSection({ day, dayLabel, alerts, fc, onRetry }) {
 /* AIR QUALITY for the selected day. The crag card has had this since the conditions score; the alpine card
    had none, and wildfire smoke is a first-order reason to change a plan in the West. A day the forecast
    does not reach says so; a failed read says "not measured" and offers a retry, never "clean air". */
-function AirSection({ day, dayLabel, air, onRetry }) {
+function AirSection({ day, dayLabel, nav, air, onRetry }) {
   const a = day.aqi;
   const tone = a ? (a.max > LIMITS.aqiWarn ? C.red : a.max > LIMITS.aqiCaution ? C.amber : a.max > 50 ? C.yellow : C.green) : null;
   return <div style={BOX}>
-    <CardHead style={{ marginBottom: 8 }}>{"AIR QUALITY · " + dayLabel.toUpperCase()}</CardHead>
+    <DayHead title="AIR QUALITY" dayLabel={dayLabel} nav={nav} />
     {!air ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Loading air quality…</div>
       : air.error ? <div><div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>Couldn’t load air quality, so smoke is not measured. This is not a clean-air reading.</div><button onClick={onRetry} style={RETRY}>Try again</button></div>
       : !a ? <div style={MUTED}>The air-quality forecast does not reach this day (it runs about five days), so smoke is not measured for it.</div>
