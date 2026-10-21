@@ -72,7 +72,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
   Turned around and the roped ticks; top rope and aid offer the roped ticks.
 - **Profile**: tapping a row opens `FullProfile`; friend and message actions live there, not on the row.
 - **Moderation**: ⚑ opens the report sheet (`setReportUser`).
-- **No Trusted board**: it went with the trust score (2026-10-21). `leaderboard()` still returns a `trust` column; nothing reads it.
+- **No Trusted board**: it went with the trust score (2026-10-21). 0335 dropped `leaderboard()`'s `trust` column with `compute_trust_score`.
 
 ## 6. Guards
 `check:grade-parser` holds `lib/rankGrade.js` equal to `rank_grade()` in the newest migration that defines it.

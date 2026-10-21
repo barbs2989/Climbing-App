@@ -102,7 +102,7 @@ npm run check:preview-claims # no toast tells a climber the app is a PREVIEW, a 
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks (in build)
 npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
 npm run check:match-percent # the match % blends what the screen SAYS it blends; no term may saturate it (in build)
-npm run check:profile-claims # the résumé and the trust card claim only what they can support (in build)
+npm run check:profile-claims # the résumé and the profile claim only what they can support (in build)
 npm run check:claims # no success toast for a write that only runs signed-in (in build)
 npm run check:writes # no success message in front of a write whose failure is unobservable (in build)
 
