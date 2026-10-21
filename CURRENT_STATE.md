@@ -28,6 +28,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Another climber's profile: the tab strip hides its scrollbar** (`cm-hscroll`, as your own Profile's tabs already did), so the sideways scrollbar no longer draws over the active tab's blue underline (`FullProfile` in `ClimbMatchCore.jsx`).
 - **Home's "Nothing needs you right now" card**: the all-caught-up card no longer tells a climber who already has objectives to "save one to get started"; they get a plain all-clear, and only a climber with no objectives sees the *Explore climbs* button, which now opens the area list rather than the last route left open.
 - **Sport and trad show one grade**: the TECHNICAL STATS "Crux grade" tile no longer repeats the Composite Grade panel on sport and trad routes; it shows only when a stored crux grade differs from the route's grade. See `docs/features/route-page.md`.
 - **One contribution score, rolled up the area tree (0333)**: `contribution_points()` is the one ledger that area Top contributors, the profile badge and Ranks › Contributions all read — points for live work only (new climb 10, photo/topo 5, edit/topo line 2, report 1), each kind once per place, summed over an area and every place inside it. Before, the three disagreed: pending/rejected new climbs counted on area boards, reports counted nothing on Ranks, topos counted nowhere, and Ranks By-area showed worldwide totals. See `docs/features/ranks.md`
