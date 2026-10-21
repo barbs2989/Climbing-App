@@ -41,7 +41,7 @@ if (files.length < 50) {
   process.exit(1);
 }
 
-const PATHISH = /\.(jsx?|mjs|json|sql|md)$/;
+const PATHISH = /\.(jsx?|tsx?|mjs|json|sql|md)$/;
 const ANCHOR_KEYS = new Set(["find", "from"]);          // a literal anchor
 const EDIT_KEYS = new Set(["edit", "then", "also"]);     // an arrow doing the edit itself
 const REPLACERS = new Set(["replace", "replaceAll", "split"]);

@@ -17,9 +17,12 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   (`GradeSpread`: columns over the area's main grading scale, saying how many climbs it left out), **GETTING THERE** (`AreaGettingThere`:
   `parking_note` + the parking pin, `approach` + `approach_min`, Google/Apple Maps links — the page's ONE drive control), **TOP RATED HERE**
   (up to five routes by `stars`), and **Suggest an edit** (`lib/AreaSuggestFix.jsx`: seven fields from `AREA_EDIT_FIELDS` in `lib/areaFields.js`,
-  each one a `contributions` row with `area_id`; a fill of an empty field goes live at once, a change to a filled one waits for 3 climbers;
-  the pending banner `PendingAreaEdits` shows "N of 3" with *I see this too*). The chart also runs on states, ranges and regions; not on
+  each one a `contributions` row with `area_id`, HELD for the owner like a route edit (0319) and written to the `areas` column by `apply_approved_area_field` on approval;
+  the climber's own held edits show as "Awaiting review" (`PendingAreaEdits`); the owner reviews them in `lib/RouteQualityQueues.jsx`). The chart also runs on states, ranges and regions; not on
   world/country (the whole catalog in one call is ~2 s). Access stays on the route page (owner, 2026-10-04 / 2026-10-15).
+- **Climb rows** (`RouteRow`, every route list in the browser): name, stars, discipline, then the **pitch count** ("Trad · 5 pitches",
+  Mountain Project's order; the stored `routes.pitches`, as the route page's Pitches stat shows it; none on a boulder or with no count stored),
+  the crag's left-to-right number, and the grade at the right. `useAreaRoutes`' thin row selects `pitches` for it.
 - **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - discipline, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { disc, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.
@@ -28,7 +31,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   Street / Satellite / Topo / snow base layers (`BaseLayerToggle`), a live location dot, and a place search box
   ("Go to a town, county or zip/postal code") covering the US and Canada (provinces, towns, US zip, Canadian postal codes).
 - **Objectives panel** (`ObjectivesPanel`): wishlisted routes under the current area.
-- **Route page map** (`GPXMap`, `ClimbMatchCore.jsx`): track + waypoints + peak coordinate on the same base layers; a line
+- **Route page map** (`GPXMap`, `src/components/GPXMap.tsx`): track + waypoints + peak coordinate on the same base layers; a line
   drawn between waypoints carries a "sketch" caveat rather than posing as GPS.
 
 ## 2. How it works
@@ -59,12 +62,13 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `lib/mapKit.jsx` | `MAP_TILE_URLS`, `TILE_CREDIT`, `loadLeaflet`, `baseTileLayer`, `applyBaseLayer`, `BaseLayerToggle`, `ViewToggle`, `pinHtml`, `useFollowMe`, `acceptFix`, `searchPlaces` |
 | `lib/AreaPageSections.jsx` | `AboutCard`, `AreaFactsCard`, `ClimbsChart`, `GradeSpread`, `MonthStrip`, `PendingAreaEdits`, `bucketLabel` |
 | `lib/AreaSuggestFix.jsx` | default export `AreaSuggestFix` (mounted by App from its areaFixOpen / areaFixArea / areaFixField state in `ClimbMatch.jsx`) |
-| `lib/areaFields.js` | `AREA_EDIT_FIELDS`, `AREA_EDIT_KEYS`, `AREA_EDIT_NEED`, `ASPECTS`, `MONTH_ABBR`, `monthsLabel`, `areaEditNorm`, `areaEditClusters` |
+| `lib/areaFields.js` | `AREA_EDIT_FIELDS`, `AREA_EDIT_KEYS`, `ASPECTS`, `MONTH_ABBR`, `monthsLabel`, `myPendingAreaEdits` |
 | `lib/areaChrome.jsx` | `EditIconButton`, `CopyCoordButton` (shared with `RouteDetail.jsx`), `NO_PARKING_PIN_LINE` |
 | `lib/db.js` | `useAreaClimbStats`, `useAreaContributions`, `useArea`, `useAreaRoutes`, `useAreaChildren`, `useNearbyAreas`, `useNearbyPeaks`, `useSubtreeRoutes`, `useSubtreeRouteCount`, `useAreaSearch`, `useStates`, `useCountries`, `useAreaPath` |
 | `lib/search.js` | `SEARCH_FORMS`, `searchNorm`, `searchCanon`, `searchMatches` |
 | `lib/offlineTiles.js` | `saveRouteMapOffline`, `removeRouteMapOffline`, `routeMapLines` |
-| `ClimbMatchCore.jsx` | `GPXMap`, `OverviewMap` (seed/overview map), lazy `DbAreaBrowser` import |
+| `src/components/GPXMap.tsx` | `GPXMap` — the route page map (extracted from core, PR13) |
+| `ClimbMatchCore.jsx` | `OverviewMap` (seed/overview map), lazy `DbAreaBrowser` import |
 | `RouteDetail.jsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`, `BaseLayerToggle`) for the route and waypoint-picker maps |
 
 ## 4. Data

@@ -6,7 +6,8 @@
 profile can also open as `FullProfile` and `Resume` overlays from anywhere (partner rows, crews, leaderboards).
 
 ## 1. What it does today
-- **Profile (`me`)**: your header, trust score, verification, vouches, photo strip, availability and a link into edit.
+- **Profile (`me`)**: your header (trust score, verification, photo strip, résumé and public-profile buttons) stays on top; under it, tabs (`meTab`, read as `meTabOn`): **Profile** (At a glance, availability, speed, certifications, vouches you’ve given, Edit profile) · **Activity** (Year in Climbing banner, Your Logbook, sends by grade, Belay & Catch Record, reports you’ve filed) · **Review** (admins only: the eight safety and catalog queues). A catch notification opens Activity, Home’s availability gap opens Profile, and the admin banner and the Menu card (when items wait) open Review. Walks reach a tab with `?mt=` (overlay scaffold).
+- **Menu › Your groups** (signed in or demo, under the *Yours* tiles): up to five of the groups you are in (`myGroupsNow`, ordered by `groupsByLastPost`), each with its new-post count (`groupUnreadN`); a tap opens that group (`setOpenGroupId`) over Groups › Your groups, and *See all ›* appears past five. No groups means no section; a failed read (`groupsUnavailable`) says so instead of an empty list.
 - **Edit profile**: `lib/EditProfileScreen.jsx` over the `editDraft` state; `saveEdit` writes the draft back (see 2).
   Includes the owner-only zip code (feeds partner search distance; others never see it).
 - **Résumé** (`Resume`): courses and training, plus an **Experience** list of notable climbs, most recent first, with a star for
@@ -14,6 +15,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   (the Objectives filter uses the same split except that it leads with Alpine and keeps Alpine, Mountaineering and Aid as separate chips). Sport = sport + top-rope; Trad = trad and everything that used to be "Crag";
   Scrambling = scrambling + hiking. A `discipline:"rock"` route resolves to its `style`. Exportable via `exportResume`.
   Visible to others only when the climber's `resume_public` allows it.
+  *Edit résumé › Add a past climb* asks how you climbed it from a list per discipline (`RESUME_STYLES`): routes offer Lead / Onsight / Flash / Redpoint / Follow / Top-rope (trad and ice add Solo; alpine and ice add Swapped leads), boulders Send / Flash, mountaineering Summit / Lead / Follow / Solo, scrambling Summit / Completed / Solo. Changing the discipline resets a style the new one lacks.
 - **Trust score**: `TrustBadge` tier chip on the headline; a "what feeds your score" breakdown (`trustFactors`) that adds up to the headline.
   The authoritative number is the server's `compute_trust_score`; the highest earnable score is 84.
 - **Verification** (0306): ✓ means you proved you read your inbox. Sign-up's autoconfirm no longer counts. `VerifyEmailPanel` on Profile emails a one-time code (`sendEmailCode`), you type it (`confirmEmailCode`) or tap the link in the same email, and `verifyMyEmail` writes the record; the server's `verify_my_email()` accepts only a session whose `amr` shows a code, link or reset link from the last 30 minutes. Your own ✓ comes from the record (`useVerificationRecords`), never the session; a failed read decides nothing and hides the "Verify" prompts (`verificationUnavailable`). Until a mail provider (SMTP) is connected, Supabase's built-in mailer only delivers to the project's team, and the panel says so.
@@ -33,7 +35,11 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 3. **Edit**: opening the editor seeds `editDraft`; `saveEdit` normalises it (`FALLBACK_AV` avatar placeholder becomes `""`, never stored; `setMyWeek(d.availWeek)`),
    then calls `saveProfile(id, fields)` (`lib/auth.js`), a PATCH of whatever object it is handed that invalidates every cached profile reader (`authProfileReaders`).
    Because it PATCHes a partial object blindly, a failed profile read must not open the editor (`check:profile-edit-gate`) and the photo strip uses
-   its own one-column write (`saveProfilePhotos`).
+   its own one-column write (`saveProfilePhotos`). The **avatar** is not drafted either: "Change photo" uploads and then writes `profiles.avatar`
+   at once (`saveProfileAvatar`, one column), and "Remove photo" clears it at once (`removeProfileAvatar`); both tell App through `onAvatarChange`.
+   It used to wait for Save, so Cancel dropped an uploaded photo, and Save is disabled until the climber has a username, which no signup sets
+   (`handle_new_user` stores only `id, name`). The empty-username reason now shows without touching the field.
+   Walked end to end by `scripts/oneoff/probe-profile-photos-stick.mjs` (fixture accounts, headless Chrome).
 4. **Other climbers**: `useFullProfile(userId)` and `fetchProfilesByIds` (`lib/db.js`) feed `FullProfile` / `Resume`; `profiles` is public read, blocked users cannot read it (0095).
 5. **Résumé groups**: `Resume` maps `GROUPS` (the six labels above) over the climber's ticks; each tick resolves to a group via its discipline (`catOf`).
    Seed ticks hand-tagged `kind:"Crag"`/`"Other"` were re-tagged Trad/Scrambling in #2415, otherwise they matched no group and vanished.
@@ -52,7 +58,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 | `lib/EditProfileScreen.jsx` | `EditProfileScreen` (profile editor, zip field) |
 | `lib/auth.js` | `getProfile`, `saveProfile`, `useSession`, `signOut`, `sendEmailCode`, `confirmEmailCode`, `inboxProofFresh` |
 | `lib/VerifyEmailPanel.jsx` | `VerifyEmailPanel` (emailed-code verification on Profile, 0306) |
-| `lib/db.js` | `uploadProfilePhoto`, `saveProfilePhotos`, `saveProfilePhotoAlts`, `removeProfilePhoto`, `useFullProfile`, `useMyZip`, `useMyEmergencyContact`, `useMyTrustCounts`, `useVerificationRecords`, `giveVouch`, `setAllMyTripReportVisibility`, `fetchProfilesByIds` |
+| `lib/db.js` | `uploadProfilePhoto`, `saveProfilePhotos`, `saveProfileAvatar`, `saveProfilePhotoAlts`, `removeProfilePhoto`, `useFullProfile`, `useMyZip`, `useMyEmergencyContact`, `useMyTrustCounts`, `useVerificationRecords`, `giveVouch`, `setAllMyTripReportVisibility`, `fetchProfilesByIds` |
 | `lib/GiveVouch.jsx`, `lib/Onboarding.jsx` | vouch sheet; first-run onboarding |
 | `lib/units-pref.js`, `lib/date-pref.js`, `lib/notif-pref.js`, `lib/browse-visibility-pref.js`, `lib/inbox-pref.js`, `lib/onboard-pref.js`, `lib/prefs.js` | device-local preference modules |
 
@@ -68,7 +74,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 - **Partners**: `discoverable`, zip, `avail_week`, `hiking_speed_ft_hr` and verification feed `lib/PartnerSearch.jsx` and `compat()`.
 - **Logbook**: résumé Experience is built from logged climbs; trip-report visibility is set here.
 - **Crews / social**: `FullProfile` actions (connect, message, form crew, vouch); blocks hide profiles; emergency contact feeds float plans.
-- **Leaderboards**: `lib/Leaderboards.jsx` reads `meLive`; ranking visibility (0177).
+- **Leaderboards**: `lib/Leaderboards.jsx` reads `meLive`; ranking visibility (0177). How Ranks scores: `docs/features/ranks.md`.
 - **Whole app**: `UNITS`/`DLOCALE` change every distance, elevation and date formatter.
 
 ## 6. Guards
@@ -78,6 +84,8 @@ All present in `package.json`: `check:profile-edit-gate`, `check:profile-draft-p
 Notes: `docs/guards/settings-and-persistence.md`, `honesty-claims.md`, `units-and-formatting.md`, `seed-and-identity.md`, `outage-and-read-failures.md`.
 
 ## 7. Last significant change
+- **Menu lists your groups** — a *Your groups* section with up to five, newest post first, each opening the group.
+- **Résumé past-climb style per discipline** — a scramble no longer offers Lead or Top rope (`RESUME_STYLES`).
 - **Real climbers, batch 4** (0315) — another real climber's belay record reaches their profile.
 Real climbers, batch 3: the résumé header, export title and "hasn't shared" lines, and the share card (`ShareCard`), name a real climber — you included — by `pubName`; `meLive` carries `showName` when signed in.
 - **#2415** — Résumé Experience groups now Sport · Trad · Ice & Mixed · Alpine & Mountaineering · Bouldering · Scrambling (was Crag … Other); seed ticks re-tagged (`ClimbMatchCore.jsx` only).
