@@ -72,7 +72,6 @@ export default function CrewCard({blocked,crew,areaById,onOpenArea,onDisband,onL
   const allConfirmed=inCrew.every(function(p){return p._status==="confirmed";});
   const need=tp.ready.filter(k=>k!=="confirm");
   const meetSet=!!(crew.meetPlace&&crew.meetTime);const ready=isReady(crew,hasMessages);
-  const kit=tp.modules.includes("gear")?[...new Set(roster.flatMap(p=>p.gear||[]))]:[];
   const risks=tp.modules.includes("align")?inCrew.map(p=>p.riskTolerance).filter(Boolean):[];
   const mixedRisk=new Set(risks).size>1;
   const addable=(connections||[]).filter(c=>!crew.members.some(m=>m.climberId===c.id));
