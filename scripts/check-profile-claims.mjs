@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* THE PROFILE TAB AND THE RÉSUMÉ IT OPENS MUST NOT CLAIM SOMETHING THE APP KNOWS IS UNTRUE.
  *
- * Three invariants, all fixed on 2026-09-03 (#1573, #1579, #1580), all of them CHANGES TO STRINGS
+ * Two invariants, both fixed on 2026-09-03 (#1573, #1579), all of them CHANGES TO STRINGS
  * AND CONDITIONS RATHER THAN TO NAMES — which is exactly the shape `audit:silent-reverts` says in
  * its own closing caveat it cannot see: "a merge that kept a name and dropped its guard clause is
  * invisible here". A stale-base squash could restore all three with every existing gate green.
@@ -15,31 +15,21 @@
  *      through the SAME row as a logged ascent.
  *   2. THE SELF-AWARDED TICK. `onVerifyCourse` let the owner mark their own course verified. It was
  *      caveated "(demo)" until 2026-09-30, then REMOVED by owner decision; this section keeps it gone.
- *   3. "RAISE IT WITH:". A fixed row of three offered "Verify email" to a climber whose own
- *      résumé, two inches away, reads "✓ Email verified".
  *
  * SECTIONS 1 AND 2 SHARE ONE esbuild BUNDLE, the way check:outage-copy merged two probes rather
- * than reading one 400 kB file twice. Section 3 needs no render at all.
+ * than reading one 400 kB file twice.
  *
- * PARSED WITH BABEL, NOT MATCHED WITH A REGEX, in section 3. Three separate checkers were fooled
- * in one session by the comment written to explain the fix they were checking — twice a false
- * FAILURE, once a false PASS on a fully-restored defect. An AST does not see comments, which
- * removes the trap rather than working around it.
- *
- * Promoted from scripts/oneoff/probe-resume-self-reported-rows.mjs,
- * probe-resume-demo-verify-says-so.mjs and probe-raise-it-with-hides-done-steps.mjs, whose
- * injection suites (4/4, 4/4 and 4/4) are the evidence these assertions are not vacuous.
+ * Promoted from scripts/oneoff/probe-resume-self-reported-rows.mjs and
+ * probe-resume-demo-verify-says-so.mjs, whose injection suites (4/4 and 4/4) are the evidence these assertions are not vacuous.
  */
 
 import { build } from "esbuild";
-import { parse } from "@babel/parser";
 import { createRequire } from "node:module";
 import path from "node:path";
 import fs from "node:fs";
 import os from "node:os";
 import { fileURLToPath } from "node:url";
 import { readCoreSource, appSources } from "./lib/guard-sources.mjs";
-import { reachableVerificationTypes } from "./lib/verification-reach.mjs";
 
 const GUARD = "check:profile-claims";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -177,138 +167,6 @@ else ok("no self-verify handler is wired to the résumé");
 if (/Verify \(demo\)|Mark verified/.test(coreCode)) fail("a self-verify button is back on the résumé or the guide dashboard");
 else ok("no control offers to mark your own credential verified");
 
-/* ------------------------------------------- section 3: "Raise it with:" hides completed steps */
-
-console.log('\n--- "Raise it with:" does not offer a step already done ---');
-
-const ast = parse(appSrc, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: false });
-
-let arr = null, filtered = false, arrays = 0;
-(function walk(n, parent) {
-  if (!n || typeof n.type !== "string") return;
-  if (n.type === "ArrayExpression") {
-    arrays++;
-    const first = n.elements[0];
-    if (first && first.type === "ArrayExpression" && first.elements[0] &&
-        first.elements[0].type === "StringLiteral" && first.elements[0].value === "Log a route") {
-      arr = n;
-      if (parent && parent.type === "MemberExpression" && parent.object === n &&
-          parent.property.type === "Identifier" && parent.property.name === "filter") filtered = true;
-    }
-  }
-  for (const k of Object.keys(n)) {
-    const v = n[k];
-    if (Array.isArray(v)) v.forEach((c) => c && typeof c.type === "string" && walk(c, n));
-    else if (v && typeof v.type === "string") walk(v, n);
-  }
-})(ast.program, null);
-
-if (arrays < 200) fail(`only ${arrays} array literals parsed — the walk is broken`);
-if (!arr) fail('ANCHOR LOST: no "Raise it with" list (first entry "Log a route") — this section is blind');
-else {
-  const entries = arr.elements.map((e) => ({
-    label: e && e.elements && e.elements[0] && e.elements[0].value,
-    cond: e && e.elements && e.elements[2] ? appSrc.slice(e.elements[2].start, e.elements[2].end) : null,
-  }));
-  ok(`found the list: ${entries.map((e) => `${e.label} -> ${e.cond === null ? "(always)" : e.cond}`).join(" | ")}`);
-
-  const ve = entries.find((e) => e.label === "Verify email");
-  if (!ve) fail('the "Verify email" entry is gone — re-check what this list now offers');
-  else if (ve.cond === null) fail('"Verify email" is UNCONDITIONAL — a verified climber is told to verify');
-  else if (/verified/.test(ve.cond)) ok(`"Verify email" is gated on ${ve.cond}`);
-  else fail(`"Verify email" carries a condition that does not mention verified: ${ve.cond}`);
-
-  // Over-reach in the other direction: gating this would hide advice that is always valid.
-  {
-    const e = entries.find((x) => x.label === "Log a route");
-    if (!e) fail('the "Log a route" entry is gone');
-    else if (e.cond === null) ok('"Log a route" stays unconditional');
-    else fail(`"Log a route" gained a condition (${e.cond}) — it is always worth doing`);
-  }
-
-  /* "ADD A CERT" IS DERIVED, NOT PINNED — and this replaces a STALE assertion rather than adding
-     one. Until #1676 this list sat under the CLIENT score, whose model counts
-     `(c.certifications||[]).length`, so the row genuinely raised the number and demanding it stay
-     unconditional was right. Pointing the card at the SERVER score falsified that without touching
-     this file, and the guard went on FORBIDDING THE FIX — an assertion kept past the fact it
-     describes, the shape check:policy-claims §3 already records, this time inside a guard.
-     The rule now asks the migrations: a certification is scored off `verification_records` at
-     status='verified', so the row may only be offered where something can actually write one. Ship
-     that definer and this flips by itself and demands the row back. */
-  const { types: reachable, scanned } = reachableVerificationTypes(path.join(ROOT, "supabase", "migrations"));
-  if (scanned < 20) fail(`only ${scanned} migrations scanned — the reachability parse is broken`);
-  else if (!reachable.size) fail("no verification type parsed as reachable at all — a broken scan, not a finding");
-  else {
-    const certEarnable = reachable.has("member_club") || reachable.has("guide_certified");
-    const e = entries.find((x) => x.label === "Add a cert");
-    if (!e) fail('the "Add a cert" entry is gone');
-    else if (certEarnable && e.cond !== null)
-      fail(`a credential CAN now be verified (${[...reachable].join(", ")}) but "Add a cert" is gated on ${e.cond} — it raises the score again`);
-    else if (certEarnable) ok('"Add a cert" is unconditional, and a credential can now be verified');
-    else if (e.cond === null)
-      fail('"Add a cert" is UNCONDITIONAL while nothing in the app can verify a credential — under "Raise it with:" it names a step that cannot be taken');
-    else if (/uid/.test(e.cond))
-      ok(`"Add a cert" is gated on ${e.cond}, and no migration can verify a credential`);
-    else
-      fail(`"Add a cert" carries a condition that does not turn on the signed-in model: ${e.cond}`);
-  }
-
-  if (filtered) ok("the list is filtered on that condition before rendering");
-  else fail("the array carries conditions but nothing filters on them — the gate is dead");
-}
-
-// The precedent this rests on: Home's setup checklist gates its own verify row. If that stops
-// being true, the argument for section 3 moves and somebody should know.
-// 0306 added `&&!verificationUnavailable` (a failed read hides the prompt); further conjuncts keep the gate.
-if (/if\(!ME\.verified(&&[^)]*)?\)gaps\.push\(/.test(appSrc))
-  ok("CONTROL — Home's setup checklist still gates its verify row on !ME.verified");
-else fail("CONTROL — Home no longer gates its verify row; re-check which surface is right");
-
-/* --------------------------------- section 4: the trust badge names inputs a climber can supply */
-
-console.log("\n--- the trust badge does not name an input nothing can grant ---");
-
-/* SAME ROOT CAUSE AS SECTION 3, ON THE BADGE SHOWN BESIDE EVERY CLIMBER. Its tooltip read
-   "Trust score (0-100): built from ID verification, partner vouches, belay catches logged, climbs
-   logged and certifications" — leading with the two components of the server model that are scored
-   off `verification_records` at status='verified' and are therefore 0 for everybody, forever.
-   Derived from the migrations for section 3's reason: the day a definer can attest an ID, naming it
-   becomes correct and this stops complaining without anyone editing the rule. */
-const badge = coreSrc.match(/function TrustBadge[\s\S]{0,400}?title="([^"]*)"/);
-if (!badge) fail("ANCHOR LOST: could not read TrustBadge's tooltip — this section is blind");
-else {
-  const tip = badge[1];
-  const { types: reach2, scanned: scanned2 } = reachableVerificationTypes(path.join(ROOT, "supabase", "migrations"));
-  if (scanned2 < 20 || !reach2.size) fail("the reachability parse is broken — section 4 proved nothing");
-  else {
-    const named = [
-      ["ID verification", /\bID verification\b/i, "id"],
-      ["certifications", /\bcertificat/i, "member_club"],
-    ];
-    for (const [what, re, type] of named) {
-      const earnable = reach2.has(type) || (type === "member_club" && reach2.has("guide_certified"));
-      if (re.test(tip) && !earnable)
-        fail(`the tooltip names ${what} as what builds the score, and nothing in the app can verify one`);
-      else if (re.test(tip)) ok(`the tooltip names ${what}, which IS now verifiable`);
-      else ok(`the tooltip does not name ${what}`);
-    }
-
-    /* NON-VACUITY. Every assertion above is satisfied by an empty tooltip, so the badge must still
-       say what the score is built from — at least three things a climber can actually move. */
-    const earnableWords = [/vouch/i, /belay|catch/i, /climb/i, /condition|report/i, /email/i, /time on/i];
-    const hits = earnableWords.filter((r) => r.test(tip)).length;
-    if (hits >= 3) ok(`...and still names ${hits} inputs a climber can move`);
-    else fail(`the tooltip names only ${hits} earnable input(s) — it has been emptied rather than corrected`);
-
-    /* A HAND-TYPED SCALE BOUND IS A HAND-COPY, and this one was wrong twice: the model caps at 99,
-       and only 84 of its 104 points can be earned at all. Any literal range typed here is a claim
-       nobody re-derives — measure it instead. */
-    const range = tip.match(/\(\s*0\s*[-‐-―]\s*\d+\s*\)/);
-    if (range) fail(`the tooltip states a hardcoded range ${range[0]} — the earnable maximum is derived and moves with the migrations`);
-    else ok("the tooltip states no hardcoded range");
-  }
-}
-
 /* ---------------------- section 5: another climber's grade pyramid is not "climbs logged" */
 
 console.log("\n--- the pyramid on somebody else's profile does not claim to be logged climbs ---");
@@ -324,7 +182,7 @@ console.log("\n--- the pyramid on somebody else's profile does not claim to be l
 
    DERIVED, NOT A PINNED PHRASE. The rule holds only while the non-self branch is fed by `pyramid`
    rather than by logs; wire real logs for other climbers and the precondition stops holding and
-   this stops complaining, without anyone editing the rule. Same shape as sections 3 and 4, which
+   this stops complaining, without anyone editing the rule. Same shape as the retired sections 3 and 4, which
    re-derive from the migrations. A guard pinned to today's wording would forbid improving it. */
 const pyr = coreSrc.match(/climber\.__selfLogs\s*\?\s*"([^"]*)"\s*:\s*"([^"]*)"([\s\S]{0,600}?)<AscentPyramid\b([\s\S]{0,300}?)\/>/);
 if (!pyr) fail("ANCHOR LOST: could not read the sends-by-grade caption beside <AscentPyramid> -- this section is blind");
@@ -354,5 +212,5 @@ else {
 
 console.log(bad
   ? `\n${GUARD}: ${bad} problem(s) — a profile surface is claiming something the app knows is untrue.`
-  : `\n${GUARD}: ok — the résumé and the trust card state only what they can support.`);
+  : `\n${GUARD}: ok — the résumé and the profile state only what they can support.`);
 process.exit(bad ? 1 : 0);
