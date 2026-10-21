@@ -44,6 +44,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 - **Float plans**: `FloatPlans` (`lib/FloatPlans.jsx`) lists plans for `activeCrews`; the plan text is stored on the crew (`createCrew({floatPlan})`).
 - **Home (`today`)**: greeting; **Finish setting up** checklist (`gaps`, shows 2 until `showSetupAll`); alerts; **Unfinished business** (`unfinishedOpen`);
   **Jump back in** tiles; **Best day to climb** (`BestDayTile`, also a Menu tile); **Recent condition reports**; recent friend activity; the pinned/downloaded states card (`#pinned-downloads`, which the Menu's Downloads tile scrolls to).
+  Below that, the **Nothing needs you right now** card: the all-caught-up state, shown only when there is no pending request or invite (`reqN`), no unread DM or crew chat, no crew waiting on your day, no unread alert and no friend activity. A climber with no objectives yet gets "Explore climbs and save one as an objective to get started" and an *Explore climbs* button; anyone with objectives gets the plain all-clear and no button (the *Jump back in* tile already offers it).
 
 ## 2. How it works
 1. `App` reads server state through React Query hooks in `lib/db.js`: `useMyObjectives`, `useUserLogs`, `useMyCrews`, `useMyItineraries`,

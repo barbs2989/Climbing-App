@@ -1398,7 +1398,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   (`approachFinishes`) reads siblings' `approach_variants`, so that column stays in the list; and
   the climb picker (`DbClimbPicker`), which hands a row to the LOG FORM rather than to openRoute,
   so it asks for `{ full: true }` under its own key. **What the guard does:** parses the readers
-  (RouteRow, SummitBriefing, the sibling cells and rows, ApproachPicker, the two approach memos)
+  (RouteRow, SummitBriefing, NEXT DOOR (`WallNeighbours`, since 2026-10-21; it replaced the header strip's `cell`) and the sibling rows, ApproachPicker, the two approach memos)
   and every function they hand a row to, across lib/DbAreaBrowser.jsx, lib/grade.js,
   lib/outing.js, ClimbMatchCore.jsx and RouteDetail.jsx; maps camelCase reads back to columns
   through dbRouteToCamel's own object; decides what IS a column from `scripts/schema-snapshot.json`
