@@ -590,8 +590,21 @@ function PartnersHereCard({ area, C, uid, myListings, onListMe, onFindPartnersIn
   );
 }
 
+// The order a crag's own climb list can be read in (Mountain Project and theCrag: left to right as
+// on the wall, the default, or by name). `sort_order` is the left-to-right position; a climb with no
+// position stays LAST in both wall orders, by name, rather than being guessed into the line.
+const AREA_LIST_SORTS = [["lr", "Left → right"], ["rl", "Right → left"], ["az", "A → Z"], ["za", "Z → A"]];
+function sortAreaRoutes(routes, key) {
+  const byName = (a, b) => String(a.name || "").localeCompare(String(b.name || ""));
+  if (key === "az") return [...routes].sort(byName);
+  if (key === "za") return [...routes].sort((a, b) => byName(b, a));
+  const dir = key === "rl" ? -1 : 1;
+  return [...routes].sort((a, b) => Number(a.sort_order == null) - Number(b.sort_order == null) || (a.sort_order != null && b.sort_order != null ? dir * (a.sort_order - b.sort_order) : 0) || byName(a, b));
+}
+
 function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt}) {
   const [searchMode, setSearchMode] = useState("areas");
+  const [listSort, setListSort] = useState("lr");
   // The row in the drill stack is a snapshot of a CHILD row read when its parent was opened. An
   // agreed edit rewrites the areas row on the server (0304) and refreshes ["area", id] — so the
   // page reads the live row over the snapshot, or a climber's own fill would never show.
@@ -714,7 +727,19 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
         routes && routes.length > 0
           ? <>
               <SL C={C}>{routes.length + " climb" + (routes.length !== 1 ? "s" : "")}</SL>
-              {routes.map(r => <RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />)}
+              {(() => {
+                // Left/right is offered only where a wall order is stored: on a list with no
+                // positions both wall orders would be A → Z under another name.
+                const placed = routes.filter(r => r.sort_order != null).length;
+                const opts = placed ? AREA_LIST_SORTS : AREA_LIST_SORTS.filter(o => o[0] === "az" || o[0] === "za");
+                const key = opts.some(o => o[0] === listSort) ? listSort : opts[0][0];
+                const unplaced = (key === "lr" || key === "rl") ? routes.length - placed : 0;
+                return <>
+                  {routes.length > 1 ? <div role="group" aria-label="Sort climbs" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 8 }}>{opts.map(o => <button key={o[0]} onClick={() => setListSort(o[0])} aria-pressed={key === o[0]} style={{ ...CHIP, flexShrink: 0, border: "1px solid " + (key === o[0] ? C.blue : C.border), background: key === o[0] ? C.blueBg : C.surface, color: key === o[0] ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{o[1]}</button>)}</div> : null}
+                  {unplaced ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, lineHeight: 1.45 }}>{unplaced + (unplaced !== 1 ? " climbs have" : " climb has") + " no position on the wall yet, so " + (unplaced !== 1 ? "they are" : "it is") + " listed last, by name."}</div> : null}
+                  {sortAreaRoutes(routes, key).map(r => <RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />)}
+                </>;
+              })()}
             </>
           /* Only claim the crag is empty when the load actually succeeded — otherwise a
              failed refetch reports "no routes" about a crag it never managed to read. */

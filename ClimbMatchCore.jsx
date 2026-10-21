@@ -44,6 +44,7 @@ import Av from "./src/components/Av.tsx";
 import Hr from "./src/components/Hr.tsx";
 import Stars from "./src/components/Stars.tsx";
 import Bar from "./src/components/Bar.tsx";
+import CardHead from "./src/components/CardHead.tsx";
 const DbAreaBrowser = lazy(() => import("./lib/DbAreaBrowser"));
 const DbGuides = lazy(() => import("./lib/DbGuides"));
 const DbGuideApply = lazy(() => import("./lib/DbGuideApply"));
@@ -1618,7 +1619,6 @@ const ROUTE_GAP=12;
    title is now SL's look one size down (white, tracked, uppercase, a coloured bar), and the colour a card
    used to carry in its text survives as `tone` on the bar, so KNOWN HAZARDS still reads red at a glance. */
 const RSL=(p)=><SL divider {...p}/>;
-export const CardHead=({tone,children,style})=>{const _cx=useContext(ConfidenceCtx);const _k=_cx&&_cx.levels?headKey(children):null;const _lv=_k?_cx.levels[_k]:null;return <div role="heading" aria-level={3} style={Object.assign({display:"flex",alignItems:"center",gap:7,minWidth:0,fontSize:12,fontWeight:800,color:C.text,letterSpacing:0.5,textTransform:"uppercase"},style)}><span aria-hidden="true" style={{width:3,height:12,borderRadius:2,background:tone||C.blueSolid,flexShrink:0}}/><span style={{minWidth:0}}>{children}</span>{_lv?<ConfChip level={_lv} label={children} compact onFlag={_cx.onFlag?function(){_cx.onFlag(_k,children);}:null}/>:null}</div>;};
 /* JUMP LINKS: one button per section the open tab ACTUALLY rendered, so the row cannot name a section this
    route lacks. Read off the DOM rather than kept as a per-tab list: the headings already are the page's
    outline (SL = aria-level 2, CardHead = 3), and a list beside them would drift the first time a section is
