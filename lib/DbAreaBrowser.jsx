@@ -866,6 +866,14 @@ const gradeScalesFor = disc => DISC_GRADE_SCALES[disc] || [];
 const gradeScaleFor = (disc, sys) => { const ss = gradeScalesFor(disc); if (!ss.length) return null; return GRADE_SCALES[ss.indexOf(sys) >= 0 ? sys : ss[0]] || null; };
 const gradeSysFor = (disc, sys) => { const ss = gradeScalesFor(disc); return ss.indexOf(sys) >= 0 ? sys : (ss[0] || ""); };
 const gradeRangeLabel = (lo, hi) => lo && hi ? (lo === hi ? lo : lo + "–" + hi) : lo ? lo + " and up" : hi ? "Up to " + hi : "";
+// One filter state -> the RPC's arguments. Shared by the applied query and the sheet's draft
+// count, so the number on "Show N routes" is the number the list then shows.
+const finderArgs = (q, f) => {
+  const len = LEN_BUCKETS.find(l => l[0] === f.len) || LEN_BUCKETS[0];
+  const sc = gradeScaleFor(f.disc, f.gSys);
+  const lo = sc && f.gLo ? sc.find(o => o[0] === f.gLo) : null, hi = sc && f.gHi ? sc.find(o => o[0] === f.gHi) : null;
+  return { q, disc: f.disc, gradeSys: (lo || hi) && GRADE_SYS_FILTERED[f.disc] ? gradeSysFor(f.disc, f.gSys) : null, minGrade: lo ? lo[1] : null, maxGrade: hi ? hi[2] : null, minStars: f.minStars || null, minPitches: f.minPitches || null, minLengthM: len[3], maxLengthM: len[4], sortBy: f.sortBy };
+};
 function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc }) {
   const DEF = { disc: "", sortBy: "name", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "" };
   // A chart bar on the area page opens the finder already narrowed to its discipline.
@@ -886,10 +894,22 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   const gScale = gradeScaleFor(af.disc, af.gSys);
   const gLoO = gScale && af.gLo ? gScale.find(o => o[0] === af.gLo) : null;
   const gHiO = gScale && af.gHi ? gScale.find(o => o[0] === af.gHi) : null;
-  const gSysQ = (gLoO || gHiO) && GRADE_SYS_FILTERED[af.disc] ? gradeSysFor(af.disc, af.gSys) : null;
-  const queryArgs = { q, disc: af.disc, gradeSys: gSysQ, minGrade: gLoO ? gLoO[1] : null, maxGrade: gHiO ? gHiO[2] : null, minStars: af.minStars || null, minPitches: af.minPitches || null, minLengthM: lenRange[3], maxLengthM: lenRange[4], sortBy: af.sortBy, page };
+  const queryArgs = { ...finderArgs(q, af), page };
   const { data: batch, isLoading, error } = useSubtreeRoutes(scope.id, queryArgs);
   const { data: total } = useSubtreeRouteCount(scope.id, queryArgs);
+  // The sheet's button says how many routes the DRAFT would show ("Show 212 routes"), as
+  // Mountain Project's filter screen does — so a tap on it visibly does something, and a
+  // combination that matches nothing is seen before the sheet is left. Queried only while open.
+  const { data: draftTotal, isFetching: draftCounting } = useSubtreeRouteCount(sheet ? scope.id : null, finderArgs(q, df));
+  // While the sheet is open the page behind it must not scroll. The document is the scroller
+  // here, and on a phone a drag past the end of the sheet moved the page instead, which slid the
+  // browser's own toolbar in and out and shifted the sheet under the climber's finger.
+  useEffect(() => {
+    if (!sheet) return;
+    const el = document.documentElement, prev = el.style.overflow;
+    el.style.overflow = "hidden";
+    return () => { el.style.overflow = prev; };
+  }, [sheet]);
 
   const saveSearch = () => {
     const name = q.trim() || "Untitled search";
@@ -999,12 +1019,20 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
           is therefore trapped below the app header + primary nav (z-index 30), whatever
           z-index it asks for. This sheet opens at 88vh, so its top 81px — the whole title
           row and the × — sat behind the tabs, with the × not even clickable. Same reason
-          RouteDetail portals its own sheets. Keep the title row sticky so it survives a
-          scroll too. */}
+          RouteDetail portals its own sheets.
+
+          A FULL-HEIGHT SCREEN, not an 88vh bottom sheet (owner, 2026-10-21: on a phone the
+          Discipline row was hidden under the header, the × misbehaved and Show routes did
+          nothing). On iOS `vh` is the viewport with the browser toolbar HIDDEN, so an 88vh sheet
+          pinned to the bottom of a shorter visible area overflowed off the TOP: the title, the ×
+          and the Discipline chips sat under the browser's own bar, and Show routes was the last
+          thing in a long scroll. Now it fills the visible area like Mountain Project's filter
+          screen — the title row clears the notch (safe-area-inset-top), the list scrolls between,
+          and Clear all / Show N routes are pinned at the bottom above the home indicator. */}
       {sheet ? createPortal(
-        <div onClick={() => setSheet(false)} role="dialog" aria-modal="true" style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 300, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
-          <div onClick={e => e.stopPropagation()} style={{ background: C.bg, width: "100%", maxWidth: 440, borderRadius: "16px 16px 0 0", maxHeight: "88vh", display: "flex", flexDirection: "column" }}>
-            <div style={{ position: "sticky", top: 0, zIndex: 2, background: C.bg, borderRadius: "16px 16px 0 0", borderBottom: "1px solid " + C.border, flexShrink: 0, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 16px 12px" }}>
+        <div onClick={() => setSheet(false)} role="dialog" aria-modal="true" aria-label="Filter routes" style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 300, display: "flex", alignItems: "stretch", justifyContent: "center" }}>
+          <div onClick={e => e.stopPropagation()} style={{ background: C.bg, width: "100%", maxWidth: 520, height: "100%", display: "flex", flexDirection: "column", boxSizing: "border-box" }}>
+            <div style={{ zIndex: 2, background: C.bg, borderBottom: "1px solid " + C.border, flexShrink: 0, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "calc(env(safe-area-inset-top) + 12px) 16px 12px" }}>
               <div style={{ fontSize: 16, fontWeight: 700 }}>Filter routes</div>
               <button onClick={() => setSheet(false)} aria-label="Close" style={POP_CLOSE}>✕</button>
             </div>
@@ -1059,10 +1087,10 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{[[0, "Any"], [1, "1+ (single)"], [2, "2+ (multi-pitch)"], [3, "3+"], [5, "5+"], [10, "10+"]].map(o => chip(o[1], df.minPitches === o[0], () => setDf(d => ({ ...d, minPitches: o[0] }))))}</div>
             {lab("Length")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{LEN_BUCKETS.map(o => chip(lenLabel(o, uElevN, uElevUnit), df.len === o[0], () => setDf(d => ({ ...d, len: o[0] }))))}</div>
-            <div style={{ display: "flex", gap: 8, marginTop: 20 }}>
-              <button onClick={() => setDf(DEF)} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>Clear all</button>
-              <button onClick={() => { setAf(df); setSheet(false); }} style={{ ...BTN_LG, flex: 2, border: "none", background: C.blueSolid, color: "#fff" }}>Show routes</button>
             </div>
+            <div style={{ flexShrink: 0, display: "flex", gap: 8, padding: "12px 16px calc(env(safe-area-inset-bottom) + 12px)", borderTop: "1px solid " + C.border, background: C.bg }}>
+              <button onClick={() => setDf(DEF)} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>Clear all</button>
+              <button onClick={() => { setAf(df); setSheet(false); }} style={{ ...BTN_LG, flex: 2, border: "none", background: C.blueSolid, color: "#fff" }}>{draftTotal == null || draftCounting ? "Show routes" : "Show " + draftTotal.toLocaleString() + " route" + (draftTotal !== 1 ? "s" : "")}</button>
             </div>
           </div>
         </div>, document.body) : null}
