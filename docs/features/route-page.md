@@ -5,6 +5,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 ## 1. What it does today
 
 - Tapping a climb anywhere in the app opens its page (`tab="routes"` with `selRoute` set). The header carries the five rating stars, a ★ cell with "★ N rated", grade, discipline and save/log actions.
+- **Jump links** (`SectionJumps` in `ClimbMatchCore.jsx`): a pill row at the top of every sub-tab, one pill per section heading (4+ only). A tap jumps instantly and flashes the heading; the heading lands 12px **below** the sticky app bar, measured at tap time, never under it (2026-10-21: a fixed 12px margin hid it behind the 59px bar).
 - Sub-tabs: `overview`, `planner`, `forecast` (labelled "Conditions"), `conditions` ("Reports" / "Send Reports"), `safety`, `partners`, `photos`. **Crag routes have no Plan tab** (see `CRAG_CATS`, `showPlan`); the Safety tab is unconditional.
 - Your header stars persist. Tapping another star changes your rating; tapping your own star again withdraws it. Signed out, it asks you to sign in rather than pretending to save.
 - Every figure built from several climbers' input states how many climbers it comes from and over what window (e.g. "avg of N ratings", "N climbers logged it", "N in the last 45 days", "N of 3 suggested").
