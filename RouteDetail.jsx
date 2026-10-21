@@ -3985,10 +3985,21 @@ function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bars,extra,readout
      scrub the pointer is CAPTURED, so it keeps reading when a finger or mouse runs off the chart's edge instead of
      dropping back to the picked hour; it starts after 6 px, not 8; the axis text can no longer be selected by the drag;
      and the readout above never SHRINKS mid-drag (a shorter tile pulled the chart up under the finger). */
+  /* ...AND A PASSING THUMB NEVER READS (owner, 2026-10-21: on a phone "you can see the boxes above you as you scroll"
+     and "it's sticky to scroll"). The 6 px sideways rule above still claimed every swipe that STARTED a little
+     diagonal: the boxes above changed under a thumb that was only scrolling, and the page stopped moving. Safari also
+     ignores touch-action on an <svg>, so the pan-y on it bound nothing there. On touch the chart now asks what the
+     Stocks app asks: TOUCH AND HOLD (350 ms, finger still within 10 px) to scrub, then slide; a tap reads one hour; any
+     swipe is the page's, untouched. While a hold-scrub runs the page is held still (a non-passive touchmove on the
+     HTML wrapper, which also carries the touch-action). A mouse still reads by hovering and dragging. */
   const cap=function(e){try{e.currentTarget.setPointerCapture(e.pointerId);}catch(_){}};
-  const down=function(e){downRef.current={x:e.clientX,y:e.clientY,scrub:false};if(e.pointerType==="mouse"){cap(e);const i=idxAt(e);if(i!=null)setHv(i);}};
-  const move=function(e){const d=downRef.current;if(d&&!d.scrub){const dx=Math.abs(e.clientX-d.x),dy=Math.abs(e.clientY-d.y);if(dx>=6&&dx>dy){d.scrub=true;cap(e);}}if(e.pointerType!=="mouse"&&!(d&&d.scrub))return;const i=idxAt(e);if(i!=null)setHv(i);};
-  const up=function(e){const d=downRef.current;downRef.current=null;if(!d)return;if(d.scrub||(Math.abs(e.clientX-d.x)<8&&Math.abs(e.clientY-d.y)<8)){const i=idxAt(e);if(i!=null){setPin(i);setHv(null);}}};
+  const holdT=useRef(null),wrapRef=useRef(null);
+  const unhold=function(){if(holdT.current){clearTimeout(holdT.current);holdT.current=null;}};
+  useEffect(function(){const el=wrapRef.current;if(!el)return;const tm=function(e){const d=downRef.current;if(d&&d.scrub&&e.cancelable)e.preventDefault();};el.addEventListener("touchmove",tm,{passive:false});return function(){el.removeEventListener("touchmove",tm);unhold();};},[]);
+  const down=function(e){unhold();const d={x:e.clientX,y:e.clientY,scrub:false};downRef.current=d;if(e.pointerType==="mouse"){d.scrub=true;cap(e);const i=idxAt(e);if(i!=null)setHv(i);return;}const t=e.currentTarget,pid=e.pointerId,i0=idxAt(e);holdT.current=setTimeout(function(){holdT.current=null;if(downRef.current!==d)return;d.scrub=true;try{t.setPointerCapture(pid);}catch(_){}if(i0!=null)setHv(i0);try{if(navigator.vibrate)navigator.vibrate(8);}catch(_){}},350);};
+  const move=function(e){const d=downRef.current;if(e.pointerType==="mouse"){const i=idxAt(e);if(i!=null)setHv(i);return;}if(!d)return;if(!d.scrub){if(Math.abs(e.clientX-d.x)>10||Math.abs(e.clientY-d.y)>10){unhold();downRef.current=null;}return;}const i=idxAt(e);if(i!=null)setHv(i);};
+  const up=function(e){unhold();const d=downRef.current;downRef.current=null;if(!d)return;if(d.scrub||(Math.abs(e.clientX-d.x)<8&&Math.abs(e.clientY-d.y)<8)){const i=idxAt(e);if(i!=null){setPin(i);setHv(null);}}};
+  const cancel=function(){unhold();downRef.current=null;setHv(null);};
   const readRef=useRef(null),readMax=useRef(0);
   useLayoutEffect(function(){readMax.current=0;if(readRef.current)readRef.current.style.minHeight="";},[all]);
   useLayoutEffect(function(){const el=readRef.current;if(!el)return;const h=el.offsetHeight;if(h>readMax.current){readMax.current=h;el.style.minHeight=h+"px";}});
@@ -4008,7 +4019,7 @@ function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bars,extra,readout
       <div style={{display:"flex",alignItems:"center",gap:8,minHeight:44,marginBottom:3}}><div style={{flex:1,minWidth:0,fontSize:12.5,fontWeight:700,color:C.textSub,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{clockHr(a.hr)}{a.past?<span style={{color:C.textMuted,fontWeight:600}}>{"  ·  already past"}</span>:null}</div>{at!==selIdx&&selIdx>=0?<button onClick={function(){setPin(null);setHv(null);}} style={{flexShrink:0,minHeight:44,padding:"0 12px",borderRadius:22,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue,fontSize:11.5,fontWeight:700,cursor:"pointer"}}>{"Back to "+clockHr(all[selIdx].hr)}</button>:null}</div>
       <div ref={readRef}><TileGrid min={104}>{readout(a)}</TileGrid></div>
     </div>
-    <svg width="100%" viewBox={"0 0 "+W+" "+(PH+20)} style={{display:"block",touchAction:"pan-y",marginTop:8,userSelect:"none",WebkitUserSelect:"none",WebkitTapHighlightColor:"transparent",cursor:"ew-resize"}} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={function(){downRef.current=null;setHv(null);}} onPointerLeave={function(){setHv(null);}} role="img" aria-label={title+" through the day; drag along it to read each hour"}>
+    <div ref={wrapRef} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={cancel} onPointerLeave={function(e){if(e.pointerType==="mouse")setHv(null);}} onContextMenu={function(e){e.preventDefault();}} style={{marginTop:8,touchAction:"pan-y",userSelect:"none",WebkitUserSelect:"none",WebkitTouchCallout:"none",WebkitTapHighlightColor:"transparent",cursor:"ew-resize"}}><svg width="100%" viewBox={"0 0 "+W+" "+(PH+20)} style={{display:"block"}} role="img" aria-label={title+" through the day; tap an hour, or touch and hold and slide along it, to read each hour"}>
       {lastPast>=0?<rect x={L} y={0} width={Math.max(0,x(lastPast)-L)} height={PH} fill={C.borderHi} opacity={0.35}/>:null}
       {lastPast>=0&&x(lastPast)-L>40?<text x={L+4} y={PH-4} fontSize="10.5" fill={C.textMuted}>already past</text>:null}
       <line x1={L} x2={W-R} y1={y(lo)} y2={y(lo)} stroke={C.borderLight}/><line x1={L} x2={W-R} y1={y(hi)} y2={y(hi)} stroke={C.borderLight}/>
@@ -4020,7 +4031,7 @@ function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bars,extra,readout
       {series.map(function(s){var v=s.vals[at];return v==null?null:<circle key={s.name} cx={0} cy={0} r={4.5} fill={s.color} stroke={C.card} strokeWidth="2" style={Object.assign({transform:"translate("+x(at).toFixed(1)+"px,"+y(v).toFixed(1)+"px)"},glide)}/>;})}
       {ends.map(function(e){return <text key={e.s.name} x={W-R+6} y={e.y+4} fontSize="11.5" fill={C.textSub}>{e.s.name}</text>;})}
       {axis}
-    </svg>
+    </svg></div>
   </div>;
 }
 function HourlyChart({all,selUtc}){
