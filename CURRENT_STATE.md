@@ -71,7 +71,8 @@ Newest first. Keep about 15 lines; older entries live in the PRs and the commit 
 - **Area page order**: areas/climbs list → *Don’t see a climb?* → suggested climbs → nearby peaks → Top contributors → Discussion. Discussion now renders on areas with no coordinate (Florida’s Artificial Boulders); *Partners here*’s dates/types control is a real card button (it had no style at all).
 - **RACK is rack-only, every state** — ~400 WA + ~140 other-state routes re-homed (ice axe, crampons, helmet, boots out of `detailed_rack`/`pro_needs`/`rack` into `what_to_bring`), `DISC_RACK` stripped to protection and ropes, `routeRackFor` splits every source and `rackLeftovers` feeds GEAR & ESSENTIALS; `audit:rack-items`.
 - **Objectives chips** Alpine is the left-most discipline chip; Mountaineering and Aid are their own chips instead of folding into Alpine and Trad (`lib/ListsManager.jsx`).
-- **PR17** `MessageRow` and `TypingIndicator` extracted to `src/components/` (one consumer; core never rendered them, so no import back).
+- **PR18** `Hr`, `Stars` and `Bar` extracted to `src/components/` (core renders all three and imports them back).
+- **#2520** `MessageRow` and `TypingIndicator` extracted to `src/components/` (one consumer; core never rendered them, so no import back).
 - **#2509** `ScreenSkeleton` and `OverlaySkeleton` extracted to `src/components/` (one consumer each; core never rendered them, so no import back).
 - **#2503** `ChatComposer` extracted to `src/components/ChatComposer.tsx` (one consumer; core never rendered it, so no import back).
 - **#2501** `SwipeRow` extracted to `src/components/SwipeRow.tsx` (three consumers; core never rendered it, so no import back).
