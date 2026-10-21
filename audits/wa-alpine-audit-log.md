@@ -32825,3 +32825,38 @@ ft) matches the USGS Mount Adams geology page exactly; the Cold Springs/South Cl
 day-use fee and the Mount Adams Climbing Pass both match the Forest Service's current page.
 
 Pass 7 continues next run after `wa_mount_adams_wilson_glacier_headwall`.
+
+## Batch 424 — 2026-10-21 (pass 7)
+
+Mount Anderson's Eel Glacier/Flypaper Pass, plus nine of Mount Baker's routes: Boulder
+Glacier, Boulder-Park Cleaver, Cockscomb Ridge, Coleman-Deming, Coleman Headwall, Coleman Ski
+Descent, Easton Glacier, North Ridge, and Park Glacier Headwall.
+
+0 confirmed errors. Strong independent FA matches found for most of this batch: Cockscomb
+Ridge's `fa` (Murley/Musser/Vielbig, July 4 1961) matches a first-hand AAC Publications
+account signed by Vielbig himself, naming that exact date and party — a SummitPost page's
+unsourced "1960" for the same route is the outlier, not this row. North Ridge's `fa`
+(Beckey/Widrig/Widrig, Aug 7 1948) and Park Glacier Headwall's `fa` (Bodine/Friar/Keliher,
+July 4-5 1971) both match AAC Publications accounts exactly. Coleman Headwall's `fa`
+(Cooper/Bartow/Grimlund/Nicholson, Aug 1957) and Boulder-Park Cleaver's `fa` (Joe Morovits and
+party, July 2 1894) both match Mountain Project exactly. Coleman-Deming's `fa` is the
+well-documented 1868 Coleman-party first ascent of the whole mountain. Mount Baker's shared
+`high_point_ft` (10,781 ft) matches USGS exactly on every route; Boulder-Park Cleaver's
+lat/lng sits on the summit itself, as expected. No access-field contradictions this batch
+(unlike batch 423's Wilson Glacier Headwall) — Baker's routes consistently name the Forest
+Service and Northwest Forest Pass, Anderson's Eel Glacier consistently names Olympic NP and
+its Recreation.gov permit, both matching each park's current fee pages. Coleman Ski Descent
+carries almost no stored facts beyond its grade, so there was nothing to check.
+
+1 flagged for human review, not fixed: Boulder Glacier's `fa` credits a "LaConnor Expedition,
+1891" — no source found anywhere uses that name for this climb. Two independent secondary
+sources (a Mount Baker Experience trivia page and a Jason Hummel blog post, both citing a
+September 2, 1891 Tacoma News Tribune article) instead credit this route's August 24, 1891
+first ascent to "Sue Nevin [Susan L. Nevin Ewing] and party." Neither the primary 1891
+newspaper account nor any source for "La Conner" was found, so left unchanged rather than
+guess which name belongs. (Also noted, not flagged: Eel Glacier/Flypaper Pass's `fa` gives
+"1920 by Fairman B. Lee and party of 13" — a Mountaineers presentation matches this exactly,
+while Wikipedia/SummitPost give the same leader and year but a party of 20; left as-is since a
+specific source corroborates the stored figure precisely.)
+
+Pass 7 continues next run after `wa_mount_baker_park_glacier_headwall`.
