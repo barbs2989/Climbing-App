@@ -192,22 +192,30 @@
       #cm-boot .b-icons i { width: 36px; height: 36px; border-radius: 10px; border: 1px solid #30363d; background: #1c2330; display: block; }
       #cm-boot .b-mark { font-size: 35px; font-weight: 800; letter-spacing: -0.7px; text-align: center; color: #e6edf3; line-height: 1.1; }
       #cm-boot .b-mark span { color: #2f81f7; }
-      #cm-boot .b-nav { display: flex; background: #161b22; border-top: 1px solid #30363d; position: sticky; bottom: 0; padding-bottom: env(safe-area-inset-bottom); }
-      #cm-boot .b-nav div { flex: 1; min-width: 0; padding: 9px 2px 8px; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: min(12.5px, 2.95vw); font-weight: 600; color: #99a3ad; border-top: 2px solid transparent; }
-      #cm-boot .b-nav div:first-child { color: #2f81f7; font-weight: 800; border-top-color: #2f81f7; }
+      #cm-boot .b-nav { display: flex; background: rgba(22,27,34,0.82); -webkit-backdrop-filter: saturate(160%) blur(16px); backdrop-filter: saturate(160%) blur(16px); box-shadow: 0 -1px 0 rgba(240,246,252,0.06), 0 -10px 30px rgba(0,0,0,0.35); position: sticky; bottom: 0; padding-bottom: env(safe-area-inset-bottom); }
+      #cm-boot .b-nav div { flex: 1; min-width: 0; padding: 11px 2px 8px; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: min(12.5px, 2.95vw); font-weight: 600; color: #99a3ad; }
+      #cm-boot .b-nav div:first-child { color: #2f81f7; font-weight: 800; }
       #cm-boot .b-nav b { width: 24px; height: 24px; border-radius: 6px; background: #21262d; margin: 3px 13px; display: block; }
       #cm-boot .b-nav div:first-child b { background: #0d2044; }
       #cm-boot .b-body { flex: 1; padding: 14px; display: flex; flex-direction: column; gap: 11px; }
       #cm-boot .b-card { background: #1c2330; border: 1px solid #30363d; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 9px; }
       #cm-boot .b-line { height: 11px; border-radius: 6px; }
-      /* Wide screens: the same shell lib/wideLayout.js draws (1024px, 232px sidebar + 28px gap + 720px column, the pair centred), so the nav does not jump from the bottom to the left when React mounts. */
+      /* Wide screens: the same shell lib/wideLayout.js draws, so nothing jumps when React mounts. A 64px top bar across the window;
+         1024-1279px: a 72px icon sidebar + 24px gap + 720px column (816px shell, centred); 1280px and up: a 240px sidebar + 24 + the
+         column + 24 + a 300px rail (1308px shell, centred). */
       @media (min-width: 1024px) {
-        #cm-boot { max-width: 720px; margin-left: calc(max(0px, calc(50vw - 490px)) + 260px); margin-right: auto; }
-        #cm-boot .b-nav { position: fixed; top: 0; bottom: 0; left: max(0px, calc(50vw - 490px)); width: 232px; box-sizing: border-box; flex-direction: column; gap: 2px; padding: 74px 12px 20px; background: #0d1117; border-top: none; border-right: 1px solid #30363d; }
-        #cm-boot .b-nav div { flex: none; flex-direction: row; gap: 14px; padding: 10px 12px; font-size: 15.5px; border-top: none; border-radius: 12px; }
+        #cm-boot { max-width: none; width: 720px; margin-left: calc(max(16px, calc(50vw - 408px)) + 96px); margin-right: 0; padding-top: 64px; box-sizing: border-box; }
+        #cm-boot .b-bar { position: fixed; top: 0; left: 0; right: 0; height: 64px; box-sizing: border-box; padding: 0 16px; flex-direction: row; align-items: center; z-index: 2; }
+        #cm-boot .b-nav { position: fixed; top: 64px; bottom: 0; left: max(16px, calc(50vw - 408px)); width: 72px; box-sizing: border-box; flex-direction: column; gap: 2px; padding: 16px 8px; background: #0d1117; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; border-right: 1px solid #30363d; font-size: 0; }
+        #cm-boot .b-nav div { flex: none; flex-direction: row; justify-content: center; padding: 10px 0; font-size: 0; border-radius: 12px; }
         #cm-boot .b-nav div:first-child { background: #0d2044; }
         #cm-boot .b-nav b { margin: 0; }
         #cm-boot .b-mark { display: none; }
+      }
+      @media (min-width: 1280px) {
+        #cm-boot { width: calc(min(1308px, calc(100vw - 32px)) - 588px); margin-left: calc(max(16px, calc(50vw - 654px)) + 264px); }
+        #cm-boot .b-nav { left: max(16px, calc(50vw - 654px)); width: 240px; padding: 16px 12px; }
+        #cm-boot .b-nav div { justify-content: flex-start; gap: 14px; padding: 10px 12px; font-size: 15.5px; }
       }
     </style>
   </head>
