@@ -32681,3 +32681,29 @@ project's database/compute being paused or otherwise down rather than a network-
 (TLS handshake completed against a genuine `*.supabase.co` cert each time). No batch was picked;
 `wa-alpine-audit-progress.json` was left untouched. Next run should retry from
 `wa_little_tahoma_east_shoulder` as before — nothing to redo, nothing skipped.
+
+## 2026-10-21 — Pass 7, Batch 420
+
+Checked: Liberty Bell's Live Free or Die!, Lizard Mountain's South Route, Luahna Peak's East
+Slopes, Phantom Peak's Luna Glacier, both Luna Peak routes (Southeast Slopes, Southwest Ridge),
+and all four Lundin Peak routes (Northwest Face, South Face Left, Southeast Ridge, West Ridge).
+
+2 confirmed errors fixed (audits/sql/2026-10-21-batch-420.sql): Live Free or Die's fa field named
+a third climber, "Seth Keena-Levin", unsupported by any source found -- the route's own
+first-ascensionist Blake Herrington published the only account located (AAC Publications, 2017)
+and credits just himself and Nathan Hadley. And Luahna Peak's area row (elevation_ft 8450) was the
+outlier, not the route: both Wikipedia and PeakVisor independently give 8445, which the route's
+own high_point_ft already had right.
+
+3 flagged for human review: Lizard Mountain's elevation is genuinely unsettled across sources
+(area row 7399, route 7420, best external match ~7400) and the row's own data_quality note
+already discloses the spread -- left alone; Lundin Peak Northwest Face's fa (Dan Davis, 1968) and
+South Face Left's fa (Mike Preiss & Don Preiss, 2004) are both unconfirmed by any source found.
+
+5 clean: Phantom Peak's Luna Glacier (FA corroborated with both Beckey brothers named, and the
+route itself independently corroborated via Mountain Project's own listing with a matching
+technical grade); Luna Peak's Southeast Slopes (FA and elevation both exact matches across four
+sources); Luna Peak's Southwest Ridge and Lundin Peak's Southeast Ridge (near-empty stub rows,
+nothing to check); Lundin Peak's West Ridge (elevation matches its own area row exactly).
+
+Pass 7 continues next run after `wa_lundin_peak_west_ridge`.
