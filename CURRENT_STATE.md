@@ -28,6 +28,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **No demo flash on load**: the live site no longer shows the demo climber's Home ("Good morning, Nathan") for a split second before your own; it waits for the stored session first, and a first load on a new device greets you by the name you signed up with. See `docs/features/profile-and-settings.md`.
 - **Sign out works offline**: when the logout request cannot reach the server, the app still signs this device out instead of saying "Signed out" over a session that came back on reload. See `docs/features/profile-and-settings.md`.
 - **Hour by hour charts scroll freely on a phone**: a swipe across a Conditions chart scrolls the page and no longer changes the boxes above it; tap an hour, or touch and hold then slide, to read it. See `docs/features/conditions.md`.
 - **Partners and Crews breathe**: the filter panels on Find partners and Join a crew start closed behind the Filters button, sections and cards get more room, and every crew card on the Crews tab starts collapsed to a summary with View plan. See `docs/features/partners.md` and `docs/features/logbook-crews-home.md`.
