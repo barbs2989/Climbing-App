@@ -305,6 +305,8 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       const offBy = clockOf(fc, day.start.at + legs.up * 3600), storm = day.thunder && day.thunder.likely ? "forecast" : "possible";
       const why = day.start.why === "snow"
         ? (legs.wholeDay ? "to do the " + hrs(legs.wholeDay) + " day and be back down by " : legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp and be back down by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.softAt) + ", when the snow at " + uElev(floor.ft) + " starts to soften"
+        : day.start.why === "snow-noon" ? (legs.wholeDay ? "to do the " + hrs(legs.wholeDay) + " day and be back down by " : legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp and be back there by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.start.backBy) + ": parties on glaciers start in the dark and plan to be off the snow by midday, while the night’s freeze still holds and before the sun softens it and weakens the bridges"
+          + (day.start.forecast ? ". The forecast alone would allow a start as late as " + clockOf(fc, floorQ(day.start.forecast.at)) + ", but that has no margin" : ". The forecast sets no earlier deadline today")
         : day.start.why === "sun" ? (legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp" : "to walk in (" + hrs(legs.hike) + ") and climb " + hrs(legs.tech)) + " and be above " + uElev(Math.ceil(day.start.sun.ft / 50) * 50) + " by " + clockOf(fc, day.start.sun.sunAt) + ", when the sun reaches steep ground that sheds onto the line above that height"
         : day.start.why === "storm-descent" ? "to reach the top" + (legs.wholeDay ? "" : " (" + hrs(legs.up) + ")") + " and start down by " + offBy + ", before the thunderstorms " + storm + " this afternoon"
         : "to be off the summit" + (legs.wholeDay ? "" : " (" + hrs(legs.up) + " up)") + " by " + offBy + ", before the thunderstorms " + storm + " this afternoon";
@@ -323,17 +325,28 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
 
   const s = day.sum;
   const readout = [["High / low", s.hi != null ? uTemp(s.hi) + " / " + uTemp(s.lo) : "—"], ["Freezing level", s.flLo != null ? uElev(Math.round(s.flLo / 100) * 100) + "–" + uElev(Math.round(s.flHi / 100) * 100) : "—"], ["Gusts, any hour", s.gust != null ? uWind(s.gust) : "—", s.gust != null && s.gustDay != null ? "daylight hours: " + uWind(s.gustDay) : null], ["New snow", uSnowfall(s.snow)]];
-  return <div><div style={box}>
-    {head}
-    <div role="group" aria-label="Day" style={{ display: "flex", gap: 5, overflowX: "auto", paddingBottom: 4, marginBottom: 10 }}>{days.map(function (d, i) {
+  /* THE DAY PICKER STAYS IN VIEW (owner, 2026-10-16: "you have to scroll up every time to switch the day"). It
+     pins to the top of the page for as long as any of this day's sections is on screen -- the start, flags,
+     alerts, hour by hour, snowfall, air, sun -- and says in words which day all of them show, the way a
+     weather app keeps its day strip above the hours. It is a direct child of the wrapper on purpose: sticky
+     holds only inside its parent, so inside the first box it would scroll away with that box. */
+  // The route's own published start (timing.recommendedStart, free prose: "2:30 AM from camp"), beside the one
+  // counted from the forecast -- the Plan tab shows it too. Shown only where the card gives a start box.
+  const pubStart = route.timing && typeof route.timing.recommendedStart === "string" && route.timing.recommendedStart.trim() ? route.timing.recommendedStart.trim() : null;
+  const fullDay = new Date(day.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { weekday: "long", month: "short", day: "numeric", timeZone: "UTC" });
+  return <div><div style={{ position: "sticky", top: 0, zIndex: 3, background: C.bg, padding: "6px 0 4px", marginBottom: 6, borderBottom: "1px solid " + C.border }}>
+    <div aria-live="polite" style={{ fontSize: 12, color: C.textSub, marginBottom: 5 }}>{"Showing "}<b style={{ color: C.text }}>{(Math.min(dayI, days.length - 1) === 0 ? "today, " : "") + fullDay}</b>{" — every section below is for this day."}</div>
+    <div role="group" aria-label="Day" style={{ display: "flex", gap: 5, overflowX: "auto", paddingBottom: 4 }}>{days.map(function (d, i) {
       const on = i === Math.min(dayI, days.length - 1), w = nWarn(d), c = nCaution(d);
       return <button key={d.date} onClick={function () { setDayI(i); }} aria-pressed={on} aria-label={dayName(d, i) + ", " + (w + c === 0 ? "no flags" : (w ? w + " warning" + (w === 1 ? "" : "s") : "") + (w && c ? " and " : "") + (c ? c + " caution" + (c === 1 ? "" : "s") : ""))} style={{ flex: "0 0 auto", minWidth: 52, padding: "6px 4px", borderRadius: 9, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : "transparent", color: C.text, cursor: "pointer", textAlign: "center" }}>
         <div style={{ fontSize: 11.5, fontWeight: 700 }}>{dayName(d, i)}</div>
         <div style={{ minHeight: 10, lineHeight: "10px" }}>{Array.from({ length: Math.min(w, 3) }, function (_, j) { return <span key={"w" + j}>{dot(C.red)}</span>; })}{Array.from({ length: Math.min(c, 3) }, function (_, j) { return <span key={"c" + j}>{dot(C.amber)}</span>; })}</div>
         <div style={{ fontSize: 10.5, color: C.textMuted }}>{d.sum.hi != null ? uTemp(d.sum.hi) + "/" + uTemp(d.sum.lo) : ""}</div>
       </button>;
-    })}</div>
-    {startEl || sunEl ? <div style={{ background: C.surface, borderRadius: 10, padding: "10px 12px", marginBottom: 10 }}>{startEl}{sunEl}</div> : null}
+    })}</div></div>
+    <div style={box}>
+    {head}
+    {startEl || sunEl ? <div style={{ background: C.surface, borderRadius: 10, padding: "10px 12px", marginBottom: 10 }}>{startEl}{pubStart ? <div style={{ fontSize: 12, color: C.text, lineHeight: 1.5, marginTop: 6 }}><b>{"This route’s usual start: "}</b>{pubStart}</div> : null}{sunEl}</div> : null}
     <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 10 }}>
       {day.flags.length ? day.flags.map(function (f, i) { const col = f.level === "warn" ? C.red : C.amber; return <div key={f.key + i} style={{ display: "flex", gap: 8, alignItems: "flex-start", fontSize: 12.5, color: C.text, lineHeight: 1.45 }}><span aria-hidden="true" style={{ flexShrink: 0, marginTop: 5, width: 8, height: 8, borderRadius: "50%", background: col }} /><span><b style={{ color: col }}>{f.level === "warn" ? "Warning: " : "Caution: "}</b>{flagText(f)}</span></div>; })
         : <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>Nothing in the forecast flags this day.</div>}
