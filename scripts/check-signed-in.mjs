@@ -254,6 +254,16 @@ try {
     return true;
   }, frag);
 
+  // A tab on a group page, by its WHOLE label, inside that group's own dialog (aria-label is the
+  // group's name). Returns false when the tab is not there.
+  const tapGroupTab = (groupName, label) => page.evaluate(([n, l]) => {
+    const dlg = [...document.querySelectorAll('[role="dialog"]')].find((d) => d.getAttribute("aria-label") === n);
+    const b = dlg && [...dlg.querySelectorAll("button")].find((x) => (x.textContent || "").trim() === l);
+    if (!b) return false;
+    b.click();
+    return true;
+  }, [groupName, label]);
+
   async function capture(name, opts = {}) {
     pageErrors.length = 0;
     // Read the screen once it stops changing. The literal spinner list this used to poll
@@ -453,6 +463,14 @@ try {
 
        Waiting here cannot mask a real defect: the assertions below are unchanged, so a control
        that genuinely never renders still fails, with the same message, just later. */
+    // The group page is TABS (About · Discussion · Events · Members · Media) and a member lands on
+    // the Discussion, so the roster is one tap away: on Members, which renders it for a member and
+    // only a count for anyone else. The tap is scoped to THIS group's dialog and matches the tab's
+    // whole label -- a page-wide "contains" would also match "2 members" in the header.
+    asserted++;
+    if (!(await tapGroupTab(groupName, "Members"))) {
+      fail("Group:detail", "the group page has no Members tab — the roster below cannot be reached, so nothing about it was checked");
+    }
     await page.waitForFunction(
       () => /[+\u2212-]\s?Mod\b/.test(document.body.innerText),
       undefined,
@@ -512,9 +530,15 @@ try {
     }
     asserted++;
     // The visibility toggle is gated on isMod, a different question. Its LABEL ("Public
-    // group") renders regardless, so match the button verb instead.
-    if (!/Make (private|public)/.test(g)) {
-      fail("Group:detail", "the visibility toggle is absent for a manager of this group — the isMod check is not uuid-aware");
+    // group") renders regardless, so match the button verb instead. It lives on the About tab,
+    // beside the privacy it changes.
+    if (!(await tapGroupTab(groupName, "About"))) {
+      fail("Group:about", "the group page has no About tab — the visibility toggle cannot be reached, so it was never checked");
+    }
+    await page.waitForFunction(() => /Make (private|public)/.test(document.body.innerText), undefined, { timeout: 15000 }).catch(() => {});
+    const ga = await capture("Group:about");
+    if (!/Make (private|public)/.test(ga)) {
+      fail("Group:about", "the visibility toggle is absent for a manager of this group — the isMod check is not uuid-aware");
     }
   } else {
     fail("Group:detail", "could not open the group the fixture owns — it is not listed for its own owner");

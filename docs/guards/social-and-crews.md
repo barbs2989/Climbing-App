@@ -326,6 +326,30 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     a sibling. `scripts/oneoff/probe-next-meetup-is-ahead.mjs` — 14 assertions, no browser, no
     database, dates built relative to today so it cannot rot into a fixture about 2026. Promote it
     if a second date-labelled surface joins the class.
+- **THE GROUP PAGE IS TABS, AND OUTSIDERS SEE ONLY A COUNT (2026-10-14; roster rule settled 2026-10-21).** The
+  `openGroupId` view was one scroll holding the hero, rules, notifications, the calendar, the
+  roster, the moderation queues and the discussion. It is now a hero (name, *Private/Public group
+  · N members*, Join and + Invite) over the tabs **About · Discussion · Events · Members · Media**
+  (`groupPageTab`, kept per group as `{gid, tab}`). A member lands on Discussion and anyone else
+  on About, because a real group's posts are members-only (0230).
+  - **Members shows the roster to the group's members and moderators, a COUNT to anyone else**
+    (`_canSeeRoster` = joined || isMod; RLS enforces it since 0318, #2476). Step 3 first showed
+    the roster to managers only; when it met #2476 on main the owner chose main's rule (2026-10-21).
+    Member requests and the banned list stay under `isMod`. An outsider sees *"N members"* (or
+    nothing, when the group row carries no count) and *"Only members can see who's in this group"*.
+    The **Moderators strip** and *"N of your friends are in this group"* are gone from the page.
+    `_memN` is still the one count: the hero and the roster heading read it, and it is null only
+    for an outsider of a DB group with no stored count, which both readers handle.
+  - **Managers' tools sit beside what they change**: Make public/private and Group settings on
+    About, requests and bans on Members, the *Reported* queue at the top of Discussion.
+  - **The two sheets (`reactPickerFor`, `postMenuFor`) render outside the tab switch**, because
+    `scripts/lib/overlay-scaffold.mjs` opens them with only the group around them.
+  - **The "Next meetup" line on the group page is gone**: Events is its own tab and lists it first.
+    The Groups hub's cards still call `nextMeetup(`, so the oneoff probe's count of call sites is 2
+    again.
+  - **One palette**: no per-group `cl.accent` and no `groupJoinTone` (deleted, nothing else read
+    it). The single accent is `C.blue`; amber/red/green section and badge colours went neutral.
+    Destructive actions (Delete/Remove post) and the safety notice keep their colours.
 - **`check:mutual-friends`** asserts that a mutual friend is **real**, **named the way they asked**,
   and **counted as the list that renders**. Static (one esbuild bundle of core plus two Babel
   parses — no browser, no database), so it sits in `npm run build`.
