@@ -1017,12 +1017,12 @@ function TechStats({route,onEdit,part}){
      name, grade, pitches — gains nothing here, because a row that says "unknown" under every fact
      is a placeholder, not a fact. Bolts is `bolts` (0240), never counted out of pitch prose. Aspect
      and season are here because a crag route without a Plan tab had nowhere else to show them.
-     QUALITY, ALSO CALLED, VARIATIONS and the first FREE ascent are facts about any line, so they
-     render on every discipline. Quality is `guide_stars` (0-4), a guidebook rating kept apart from
+     STAR RATING, ALSO CALLED, VARIATIONS and the first FREE ascent are facts about any line, so they
+     render on every discipline. Star rating is `guide_stars` (0-4), a guidebook rating kept apart from
      `stars` (a different scale, and the climbers' average falls back to it) and never attributed. */
   const crag=CRAG_CATS.includes(disc);const facts=[];var _missN=0,_firstMiss=null;
   const _gsRaw=route.guideStars!=null?route.guideStars:route.guide_stars;const _gs=(_gsRaw==null||_gsRaw===""||!isFinite(+_gsRaw))?null:Math.max(0,Math.min(4,Math.round(+_gsRaw)));
-  if(_gs!=null)stats.unshift(["Quality","★".repeat(_gs)+"☆".repeat(4-_gs),C.amber]);
+  if(_gs!=null)stats.unshift(["Star rating","★".repeat(_gs)+"☆".repeat(4-_gs),C.amber]);
   const _alt=(function(a){return (Array.isArray(a)?a:(a?[a]:[])).map(function(x){return String(x==null?"":x).trim();}).filter(Boolean);})(route.altNames!=null?route.altNames:route.alt_names);
   if(_alt.length)facts.push(["Also called",_alt.join(", ")]);
   const _vars=(Array.isArray(route.variations)?route.variations:[]).map(function(v){if(v==null)return "";if(typeof v!=="object")return String(v).trim();return [v.name,v.grade].filter(Boolean).join(" · ")+(v.note?" — "+v.note:"");}).filter(Boolean);
