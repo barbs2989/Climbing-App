@@ -161,6 +161,7 @@ export const MOVED = {
     "src/components/PullToRefresh.tsx",
     "src/components/TopContribBadge.tsx",
     "src/components/RetryReminder.tsx",
+    "src/components/PlaceMatches.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
