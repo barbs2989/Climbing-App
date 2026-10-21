@@ -285,6 +285,11 @@ for (const d of [...CRAG, "alpine"]) {
     else if (!/No rack listed yet|No quickdraw count yet|No pad count yet/.test(none))
       fail(`rack: a ${d} route with no rack of its own shows no placeholder to add one`);
     else ok(`rack: a ${d} route with no rack of its own shows an add-the-rack placeholder and no stock kit`);
+    /* Owner note 2026-10-21, "add back the beta section": an empty crag BETA returned null and
+       left no place for beta at all. It is an EmptySection now; a route WITH beta prints it. */
+    if (!/BETA/.test(none) || !none.includes("No beta yet")) fail(`beta: a ${d} route with no beta shows no BETA section to add it`);
+    else if (!text(render({ ...base, beta: ["Stem the corner to the rest."] }, "overview")).includes("Stem the corner to the rest.")) fail(`beta: a ${d} route's own beta no longer reaches the BETA section`);
+    else ok(`beta: a ${d} route shows its BETA section, empty or not`);
   }
 }
 
