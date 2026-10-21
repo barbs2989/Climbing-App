@@ -28,6 +28,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **A crag's climb list can be sorted**: Left → right (default), Right → left, A → Z, Z → A. The two wall orders appear only where `routes.sort_order` is stored (1 route of 314k today; the order will be filled from Mountain Project's area pages, which hold more routes than OpenBeta), and climbs with no position are listed last, by name, with a line saying so. See `docs/features/maps-and-area-browser.md`.
 - **Sign out works offline**: when the logout request cannot reach the server, the app still signs this device out instead of saying "Signed out" over a session that came back on reload. See `docs/features/profile-and-settings.md`.
 - **Hour by hour charts scroll freely on a phone**: a swipe across a Conditions chart scrolls the page and no longer changes the boxes above it; tap an hour, or touch and hold then slide, to read it. See `docs/features/conditions.md`.
 - **Partners and Crews breathe**: the filter panels on Find partners and Join a crew start closed behind the Filters button, sections and cards get more room, and every crew card on the Crews tab starts collapsed to a summary with View plan. See `docs/features/partners.md` and `docs/features/logbook-crews-home.md`.
