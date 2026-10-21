@@ -1,6 +1,6 @@
 # Importing past climbs and trip reports from other sites — feasibility and plan
 
-Status: **plan only, nothing built** (2026-10-16). The owner asked whether climbers should be able
+Status: **DECLINED by the owner on 2026-10-21 — do not build any of it.** The research below is kept for reference only. Plan written 2026-10-16. The owner asked whether climbers should be able
 to upload past trip reports from other websites, so that they land in the app automatically, feed the
 app's conditions feedback, and appear on the climber's completed list. This doc answers that, and
 lays out the build for the owner to approve. New capability needs the owner's approval before it is

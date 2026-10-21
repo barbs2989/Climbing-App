@@ -51,6 +51,9 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
    has acked the same proposed day (`dayAcks`, persisted in `crew_day_acks`). `isArchivedCrew(c,logs)` in the same file decides "past".
 3. **Crew gear**: `CrewGearList` calls `addCrewGearItem`, `assignCrewGear`, `removeCrewGearItem` (RPCs `add_crew_gear_item`, `assign_crew_gear`, `remove_crew_gear_item`);
    `useCrewGearSync` and `pingCrewGear` refresh other members. #2395 serialized gear writes and migration 0291 made `assign_crew_gear` accept only confirmed, listed members.
+   Since 0328 an item can carry how many the crew wants (`setCrewGearWanted`, RPC `set_crew_gear_wanted`, `crew_members.gear_wanted`) and each bringer how many they bring
+   (`setCrewGearCount`, RPC `set_crew_gear_count`, `crew_members.gear_counts`); several climbers can bring one item and the counts add up, so "Quickdraws · 12 wanted" is
+   covered only at 12. The list is only what the crew typed: nothing is drawn from the route or the members' profiles, and the card suggests no gear.
 4. **Messaging**: `sendCrewMessage`/`fetchCrewMessages`/`fetchOlderCrewMessages`, `sendDirectMessage`/`fetchMyDirectMessages`, read markers via `markCrewRead`/`fetchCrewLastReads`/`markMessageAsRead`.
 5. **Pinned states** follow the account (0187): `pinnedStates` state in `App`, saved by `savePinnedStates` (`profiles.pinned_states`). Offline downloads stay on the device
    (`downloadedStates`, `dlLoaded`, `lib/offline.js`: `downloadStateOffline`, `removeStateOffline`, `packRouteOffline`).
