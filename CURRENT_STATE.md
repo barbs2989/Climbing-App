@@ -28,6 +28,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Trailhead to summit / Summit to trailhead beside GETTING THERE**: the Plan tab now shows the two legs (time, gain, distance) right under the trailhead's drive directions and coordinates, from the same estimate as Full Trip Time. See [route-page.md](docs/features/route-page.md).
 - **The desktop website shell** (1024px+): a sticky top bar (☰ Menu far left, wordmark, a search for every climb and place, alerts, avatar), a sidebar with Groups, Profile and *Your crews*, a right rail at 1280px+ (Coming up, Alerts, Best day — the future ad column), a site footer, the Menu as a left drawer, bottom sheets as centred windows, hover and per-page tab titles. The phone tab bar is now soft and see-through. See `docs/features/app-shell-and-layout.md`.
 - **Route jump links land below the top bar**: tapping a section pill at the top of a route page used to put that heading under the sticky app bar, so you had to scroll up to read it; it now lands just below the bar. See [route-page.md](docs/features/route-page.md).
 - **The trust score is gone from the database too (0335)**: `compute_trust_score`, `trust_scores_view`, and the trust columns of `partner_signals()` and `leaderboard()` are dropped. See `docs/features/profile-and-settings.md`.

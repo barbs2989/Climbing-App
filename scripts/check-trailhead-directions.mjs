@@ -326,6 +326,28 @@ else fail("an out-and-back route whose stored column holds the round trip did no
 if (ePT > ePTc) ok("a recorded point-to-point gets a LONGER walk, so the planner is not halving unconditionally");
 else fail("a recorded point-to-point route did not get a longer estimate - either the planner is reading the stored column again, or it halves unconditionally; the assertions above say which");
 
+/* -- 9. TRAILHEAD TO SUMMIT / SUMMIT TO TRAILHEAD sit with GETTING THERE ---------------------------
+   The owner (2026-10-21) asked for the two legs -- time, gain, distance -- beside the drive and the
+   coordinates, the way The Mountaineers print a route's trip profile. SummitLegsCard renders them
+   directly under the TRAILHEAD card. Asserted: both legs render, AFTER the coordinates and BEFORE
+   ACCESS & REGULATIONS, and their times are planTimes()' -- the fixture stores approach 3 + summit 2
+   + descent 2.5 with a 10 km out-and-back walk, so up reads 5 hr and down the stored 2.5 is beaten
+   by the walk down (10 km and 5,000 ft is longer than 2.5 hr, and the descent is the longer of
+   the two), so what is asserted is that the down leg has its own time and is not the up leg. Distance per leg is the one-way walk, ~6.2 mi. */
+const legsHtml = render(ROUTE({ distKm: 10, gainFt: 5000, gainM: 1524, lossFt: 5000, lossM: 1524, timing: { approachTimeHrs: 3, summitTimeHrs: 2, descentTimeHrs: 2.5, totalHrs: 7.5 } }), "planner");
+const lt = text(legsHtml);
+const iCoord = lt.indexOf(COORD), iUp = lt.indexOf("TRAILHEAD TO SUMMIT"), iDown = lt.indexOf("SUMMIT TO TRAILHEAD"), iAccess = lt.indexOf("ACCESS & REGULATIONS");
+if (iUp < 0 || iDown < 0) fail("the TRAILHEAD TO SUMMIT / SUMMIT TO TRAILHEAD legs did not render on a route with stored times, a gain and a distance");
+else {
+  if (iCoord >= 0 && iCoord < iUp && iUp < iDown && (iAccess < 0 || iDown < iAccess)) ok("the two legs render under the trailhead coordinates, before ACCESS & REGULATIONS");
+  else fail("the two legs render, but not between the trailhead coordinates and ACCESS & REGULATIONS - they belong with GETTING THERE");
+  const upSeg = lt.slice(iUp, iDown), downSeg = lt.slice(iDown, iDown + 200);
+  if (/(?<![\d.])5 hr\b/.test(upSeg) && /5,000 ft/.test(upSeg) && /6\.2 mi/.test(upSeg)) ok("TRAILHEAD TO SUMMIT reads the stored approach + summit leg, the whole gain and the one-way distance");
+  else fail("TRAILHEAD TO SUMMIT does not read 5 hr / 5,000 ft / 6.2 mi on a route storing approach 3 + summit 2 over 10 km: " + upSeg.slice(0, 160));
+  if (/6\.2 mi/.test(downSeg) && !/(?<![\d.])5 hr\b/.test(downSeg) && /\bhr\b/.test(downSeg)) ok("SUMMIT TO TRAILHEAD carries its own time and the one-way distance");
+  else fail("SUMMIT TO TRAILHEAD is missing its time or distance, or repeats the way up: " + downSeg.slice(0, 160));
+}
+
 console.log("");
 if (failures) {
   console.log(`check:trailhead-directions: ${failures} failure(s).`);
