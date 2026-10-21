@@ -996,13 +996,13 @@ function TechStats({route,onEdit,part}){
     if(route.pitches>0)stats.push(["Pitches",route.pitches,C.blue]);
     if(hasAscent)stats.push([gainIsWholeOuting?"Total ascent":"Approach gain","↑ "+uElev(totalAscentFt),C.green]);
     if(distTile)stats.push(distTile);
-    /* On sport and trad the route's grade IS its crux (a YDS grade rates the hardest move), so a
+    /* On sport, trad and top-rope the route's grade IS its crux (a YDS grade rates the hardest move), so a
        "Crux grade" tile repeated the Composite Grade panel above it, value for value. Mountain
        Project and theCrag print one grade for these. The tile stays only when a stored crux
        disagrees with the route's displayed grade (displayGrade, the header pill), which is
        information rather than an echo. */
     const _cx=(route.cruxGrade||route.grade)?cruxGrade(route.cruxGrade||route.grade):null;
-    const _cxEcho=_cx&&(disc==="sport"||disc==="trad")&&displayGrade(route)===_cx;
+    const _cxEcho=_cx&&(disc==="sport"||disc==="trad"||disc==="toprope")&&displayGrade(route)===_cx;
     if(_cx&&!_cxEcho)stats.push(["Crux grade",_cx,C.amber]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
