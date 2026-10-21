@@ -599,6 +599,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **`check:trailhead-directions`** asserts a screen offers **exactly one way to drive to the
   trailhead**, that the **coordinates** are beside it, and that a **label describes the value under
   it**. Static (one esbuild bundle, five SSR renders), so it sits in `npm run build`.
+  - **SECTION 9: THE TWO LEGS SIT WITH GETTING THERE** (owner, 2026-10-21). `SummitLegsCard` renders
+    *Trailhead to summit* / *Summit to trailhead* under `TrailheadCard`, and the section asserts both
+    legs render between the coordinates and ACCESS & REGULATIONS, with `planTimes()`' times and the
+    one-way distance. It is a SEPARATE card on purpose: section 7 keeps stat tiles out of the
+    TRAILHEAD card, and its slice stops at the next caps heading, which "TRAILHEAD TO SUMMIT" is.
+    Injection-tested by hand: removing the mount fails "did not render". Trap met: `/\b5 hr/`
+    matches inside "4.5 hr" (a word boundary sits after the dot), so the time assertion is
+    `(?<![\d.])5 hr`.
   - **IT IS THE GATE #1437 DID NOT GET.** That change moved `TrailheadCard` up under GETTING THERE
     and dropped the standalone *"Directions to trailhead"* button standing there — both resolved
     the same `trailheadPoint()`, so the page offered one destination twice and printed the road
