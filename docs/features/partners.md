@@ -16,7 +16,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
   in common first; with no listing, a one-tap "List me here" banner over the nearest-by-zip list), My Objectives (mountain
   objectives only), By Area (listing-based; the region dropdown plus a search box for any crag, canyon or range inside the chosen
   state), By Route (a crag route redirects to its area), Anyone. By Route can pick from a search, your saved objectives,
-  recently opened routes, crew routes, or a country > state > crag drill-down.
+  recently opened routes (the 3 newest; up to 2 more behind a "Show N more" toggle), crew routes, or a country > state > crag drill-down.
 - **Climbers on ClimbMatch** (signed-in + DB): real, listed climbers (`profiles.discoverable`, on by default since 0195;
   opt out in Settings). Distance chips: Near my zip / Near me now (browser geolocation, rounded to 2 decimals) / Anywhere,
   with a 10-500 mi radius slider (steps of 5, debounced 400 ms). Others see a **distance only**, never a zip.

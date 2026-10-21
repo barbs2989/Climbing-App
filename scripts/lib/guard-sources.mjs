@@ -149,6 +149,8 @@ export const MOVED = {
     "src/components/ChatComposer.tsx",
     "src/components/ScreenSkeleton.tsx",
     "src/components/OverlaySkeleton.tsx",
+    "src/components/MessageRow.tsx",
+    "src/components/TypingIndicator.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
