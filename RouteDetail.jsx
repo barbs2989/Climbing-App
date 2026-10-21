@@ -2235,7 +2235,14 @@ const avyRelevant=["ice","mixed","alpine","mountaineering"].includes(cat)&&route
         section of Add or fix info and from the log form, and shown as START OF CLIMB on Overview. */}
   </div>;
 }
-const PIN_CATEGORIES=[["belay","Belay station",C.blue],["rappel","Rappel station",C.purple],["natural","Natural anchor",C.green],["variant","Variant line",C.amber],["bivy","Bivy",C.teal],["hazard","Hazard",C.red]];
+/* The topo's own colours, after the overlays climbers already read (Steph Abegg's, the reference
+   the owner named): the route line is RED with a dark edge so it holds on pale granite, a
+   variation is YELLOW, and a pitch's grade is white text beside its pitch. Variations are LINES
+   (topo_lines.variants, 0330) drawn on the Draw line tab; they used to be a "Variant line" pin, a
+   dot standing in for a line. */
+const TOPO_RED="#e3261b";
+const TOPO_VAR=C.amber;
+const PIN_CATEGORIES=[["belay","Belay station",C.blue],["grade","Grade","#fff"],["rappel","Rappel station",C.purple],["natural","Natural anchor",C.green],["bivy","Bivy",C.teal],["hazard","Hazard",C.red]];
 function pinColor(cat){var f=PIN_CATEGORIES.find(function(p){return p[0]===cat;});return f?f[2]:C.textMuted;}
 function pinLabel(cat){var f=PIN_CATEGORIES.find(function(p){return p[0]===cat;});return f?f[1]:"Marker";}
 /* Each pin category draws its own glyph. They used to be bare coloured dots, which asked a
@@ -2248,12 +2255,19 @@ const PIN_GLYPHS={
   belay:<g><circle cx="4.5" cy="4.5" r="1.6" fill="#fff"/><circle cx="11.5" cy="4.5" r="1.6" fill="#fff"/><path d="M4.5 4.5 L8 11.5 L11.5 4.5" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round"/><circle cx="8" cy="12" r="1.9" fill="none" stroke="#fff" strokeWidth="1.5"/></g>,
   rappel:<g><circle cx="8" cy="3.8" r="2.2" fill="none" stroke="#fff" strokeWidth="1.5"/><path d="M8 6 L8 13.5 M4.8 10.4 L8 13.6 L11.2 10.4" fill="none" stroke="#fff" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></g>,
   natural:<g><path d="M8 2 L13 10 L3 10 Z" fill="#fff"/><rect x="7" y="10" width="2" height="4" fill="#fff"/></g>,
-  variant:<path d="M3 13 L5.5 10.5 M7 9 L9 7 M10.5 5.5 L13 3" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round"/>,
   bivy:<g><path d="M1.5 13.5 L8 3 L14.5 13.5 Z" fill="#fff"/><path d="M5.8 13.5 L8 9.2 L10.2 13.5 Z" fill="#000" fillOpacity="0.45"/></g>,
   hazard:<g><rect x="7" y="2.5" width="2" height="7.5" rx="1" fill="#fff"/><circle cx="8" cy="12.8" r="1.3" fill="#fff"/></g>
 };
+/* A grade marker is its TEXT on the photo ("5.10-" beside the pitch), not an icon: the climber
+   reads the grade straight off the rock, as on a printed topo. Bold white with a dark halo so it
+   reads on snow and on shadowed rock alike. */
+function GradeTag({text,size,on,style}){
+  return <span aria-hidden="true" style={Object.assign({display:"inline-block",whiteSpace:"nowrap",fontSize:size||12,fontWeight:800,lineHeight:1.1,color:"#fff",padding:"1px 3px",borderRadius:4,
+    textShadow:"0 0 2px #000,0 0 3px #000,1px 1px 1px #000",background:on?"rgba(59,137,247,0.45)":"transparent",outline:on?"1.5px solid #fff":"none",pointerEvents:"none"},style||{})}>{text||"?"}</span>;
+}
 function PinIcon({cat,size,on}){
   var sz=size||18;
+  if(cat==="grade")return <GradeTag text="5.9" size={Math.max(10,Math.round(sz*0.62))} on={on}/>;
   return <span aria-hidden="true" style={{display:"inline-flex",alignItems:"center",justifyContent:"center",width:sz,height:sz,borderRadius:"50%",background:pinColor(cat),border:(on?2:1.5)+"px solid #fff",boxShadow:on?"0 0 0 3px "+C.blue+"66":"0 1px 3px rgba(0,0,0,0.7)",boxSizing:"border-box",flexShrink:0,pointerEvents:"none"}}>
     <svg viewBox="0 0 16 16" width={Math.round(sz*0.68)} height={Math.round(sz*0.68)} style={{display:"block"}}>{PIN_GLYPHS[cat]||<circle cx="8" cy="8" r="2.5" fill="#fff"/>}</svg>
   </span>;
@@ -2292,16 +2306,31 @@ function PinNum({n,style}){
 }
 /* Every icon and what it means, so a climber reading a topo never has to guess one. */
 function TopoPinLegend({style}){
-  return <div role="list" aria-label="Topo marker key" style={Object.assign({display:"flex",flexWrap:"wrap",gap:"6px 12px"},style||{})}>{PIN_CATEGORIES.map(function(c){return <span key={c[0]} role="listitem" style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,color:C.textSub}}><PinIcon cat={c[0]} size={16}/>{c[1]}</span>;})}</div>;
+  return <div role="list" aria-label="Topo marker key" style={Object.assign({display:"flex",flexWrap:"wrap",gap:"6px 12px"},style||{})}>{[["Route line",TOPO_RED],["Variation",TOPO_VAR]].map(function(l){return <span key={l[0]} role="listitem" style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,color:C.textSub}}><span aria-hidden="true" style={{display:"inline-block",width:16,height:4,borderRadius:2,background:l[1],boxShadow:"0 0 0 1px rgba(0,0,0,0.6)"}}/>{l[0]}</span>;})}{PIN_CATEGORIES.map(function(c){return <span key={c[0]} role="listitem" style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,color:C.textSub}}><PinIcon cat={c[0]} size={16}/>{c[1]}</span>;})}</div>;
 }
-function TopoLineOverlay({points,pins,pinSize,numbered}){
-  if((!points||points.length<2)&&(!pins||!pins.length))return null;
-  var path=(points||[]).map(function(p,i){return (i===0?"M":"L")+p.x+","+p.y;}).join(" ");var sz=pinSize||18;
+/* The number each marker wears: grade labels are text, not stations, so they take none and the
+   belays still count 1, 2, 3 up the line. null for a grade. */
+function pinNums(pins){var n=0;return (pins||[]).map(function(p){return p&&p.category==="grade"?null:++n;});}
+/* One drawn line: a dark edge under the colour, the way a printed topo keeps a red line legible
+   on red rock and pale granite alike. Stroke widths are in screen pixels (non-scaling-stroke). */
+function topoPath(points){return (points||[]).map(function(p,i){return (i===0?"M":"L")+p.x+","+p.y;}).join(" ");}
+function TopoStroke({points,color,w}){
+  if(!points||points.length<2)return null;
+  var d=topoPath(points);var sw=w||2.5;
+  return <><path d={d} fill="none" stroke="rgba(0,0,0,0.75)" strokeWidth={sw*1.8} strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke"/><path d={d} fill="none" stroke={color} strokeWidth={sw} strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke"/></>;
+}
+function TopoLineOverlay({points,pins,variants,pinSize,numbered,lineW}){
+  var vs=(variants||[]).filter(function(v){return v&&v.length>=2;});
+  if((!points||points.length<2)&&(!pins||!pins.length)&&!vs.length)return null;
+  var sz=pinSize||18;var nums=pinNums(pins);var lw=lineW||(sz<16?1.6:2.5);
   return <>
     <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{position:"absolute",inset:0,width:"100%",height:"100%",pointerEvents:"none"}}>
-      {path?<path d={path} fill="none" stroke={C.amber} strokeWidth={0.6} vectorEffect="non-scaling-stroke" style={{filter:"drop-shadow(0 0 2px rgba(0,0,0,0.8))"}}/>:null}
+      {vs.map(function(v,i){return <TopoStroke key={"v"+i} points={v} color={TOPO_VAR} w={lw}/>;})}
+      <TopoStroke points={points} color={TOPO_RED} w={lw}/>
     </svg>
-    {(pins||[]).map(function(pn,i){return <span key={i} style={{position:"absolute",left:pn.x+"%",top:pn.y+"%",width:sz,height:sz,marginLeft:-sz/2,marginTop:-sz/2,pointerEvents:"none",lineHeight:0}}><PinIcon cat={pn.category} size={sz}/>{numbered?<PinNum n={i+1} style={{position:"absolute",right:-8,bottom:-6}}/>:null}</span>;})}
+    {(pins||[]).map(function(pn,i){
+      if(pn.category==="grade")return pn.note?<span key={i} style={{position:"absolute",left:pn.x+"%",top:pn.y+"%",transform:"translate(-50%,-50%)",pointerEvents:"none",lineHeight:0}}><GradeTag text={pn.note} size={Math.max(9,Math.round(sz*0.62))}/></span>:null;
+      return <span key={i} style={{position:"absolute",left:pn.x+"%",top:pn.y+"%",width:sz,height:sz,marginLeft:-sz/2,marginTop:-sz/2,pointerEvents:"none",lineHeight:0}}><PinIcon cat={pn.category} size={sz}/>{numbered?<PinNum n={nums[i]} style={{position:"absolute",right:-8,bottom:-6}}/>:null}</span>;})}
   </>;
 }
 /* The key under an enlarged topo. A pin's note ("2 bolts, chains", "tree with slings") was
@@ -2309,143 +2338,241 @@ function TopoLineOverlay({points,pins,pinSize,numbered}){
    carries the number its marker wears on the photo (TopoLineOverlay `numbered`), in the order
    they were placed, which is how a climber drops them going up the line. */
 function TopoPinKey({pins}){
-  if(!pins||!pins.length)return null;
-  return <div style={{marginBottom:10}}>{pins.map(function(pn,i){return <div key={i} style={{display:"flex",gap:8,alignItems:"flex-start",marginBottom:5,fontSize:12.5,lineHeight:1.4}}><PinNum n={i+1} style={{marginTop:2}}/><PinIcon cat={pn.category} size={18}/><div style={{minWidth:0}}><span style={{fontWeight:600,color:C.text}}>{pinLabel(pn.category)}</span>{pn.note?<span style={{color:C.textSub}}>{" — "+pn.note}</span>:null}</div></div>;})}</div>;
+  /* Grade labels are already readable on the photo itself; the key lists the stations. */
+  var nums=pinNums(pins);
+  if(!pins||!pins.some(function(p){return p.category!=="grade";}))return null;
+  return <div style={{marginBottom:10}}>{pins.map(function(pn,i){if(pn.category==="grade")return null;return <div key={i} style={{display:"flex",gap:8,alignItems:"flex-start",marginBottom:5,fontSize:12.5,lineHeight:1.4}}><PinNum n={nums[i]} style={{marginTop:2}}/><PinIcon cat={pn.category} size={18}/><div style={{minWidth:0}}><span style={{fontWeight:600,color:C.text}}>{pinLabel(pn.category)}</span>{pn.note?<span style={{color:C.textSub}}>{" — "+pn.note}</span>:null}</div></div>;})}</div>;
 }
-/* The topo editor. Four things it could not do, each of them the difference between a line a
-   climber trusts and one they redraw:
+/* The topo editor. What it could not do, each of them the difference between a line a climber
+   trusts and one they redraw:
 
-     · Drawing was TAP-ONLY — one point per tap, so a twelve-pitch line was ~15 separate taps
-       and any wobble meant starting over. It draws on drag now, sampling a point every 1.5%
-       of the frame so a swipe yields a usable polyline rather than 400 coordinates.
      · A mis-placed point could not be fixed. The only tools were "undo last" and "clear all",
        so one bad point four points back cost you the four after it. Every point and pin is a
        draggable handle now, and the selected one can be deleted on its own.
      · No zoom, on a phone-sized image. A belay pin has to land on a specific ledge; at 390px
-       wide, 1% of the frame is under 4px. A loupe follows the drag at 3x, which is how touch
-       platforms have solved this since iOS text selection.
+       wide, 1% of the frame is under 4px. The photo zooms (pinch, the wheel, or − / +) and a
+       loupe follows a dragged handle at 3x.
+     · A finger moving across the photo DREW. The editor sampled a point every 1.5% of a drag,
+       so a climber pushing the photo around to see another part of the wall laid a line across
+       it (owner, 2026-10-21). Now only a TAP marks: a press that wanders more than TAP_SLOP
+       pixels pans the photo instead, and two fingers pinch-zoom — how every map app separates
+       "move the view" from "drop a pin", and how photo viewers zoom.
      · Upload/save errors used alert() — a blocking dialog, in an app that has toasts and
        inline notices everywhere else. Now an inline error inside the section.
 
-   Coordinates stay percentages of the frame, and the frame is the painted photo (see
-   TopoLineOverlay) — dragging clamps to 0..100 so a handle pulled off the edge cannot store a
-   point that is not on the rock. */
+   The route line is red and its variations yellow, both drawn on the Draw line tab (a variation
+   is a line, not a pin); a pitch's grade is a Grade marker on the Add pins tab, printed beside
+   the pitch as on Steph Abegg's overlays. Coordinates stay percentages of the photo: `at` reads
+   the ZOOMED layer's on-screen box, so a tap at 3x stores the same 0..100 point it would at 1x,
+   and a handle pulled off the edge is clamped onto the rock. */
 const LOUPE_Z = 3;            // magnification
-const DRAW_MIN_STEP = 1.5;    // % of frame between sampled points while dragging
+const TAP_SLOP = 8;           // px a press may wander and still be a tap rather than a pan
+const ZOOM_MAX = 6;
+/* The zoomed layer is scaled about its top-left corner; keep the photo covering the frame so a
+   pan can never drag empty space into view. */
+function clampTopoView(v,W,H){
+  const z=Math.min(ZOOM_MAX,Math.max(1,v.z));
+  return {z:z,tx:Math.min(0,Math.max(W-W*z,v.tx)),ty:Math.min(0,Math.max(H-H*z,v.ty))};
+}
+/* Zoom to z keeping the photo point under (px,py) — frame pixels — where it is. */
+function zoomTopoView(b,z,px,py,W,H){
+  const nz=Math.min(ZOOM_MAX,Math.max(1,z));
+  return clampTopoView({z:nz,tx:px-(px-b.tx)*nz/b.z,ty:py-(py-b.ty)*nz/b.z},W,H);
+}
 /* Exported for lib/LogAscent.jsx, which lets a climber draw a topo while logging the climb (lazy import, so the
    log form does not pull this file into its chunk until the control is tapped). */
 export function TopoDrawer({initial,onCancel,onSubmit}){
-  const [points,setPoints]=useState((initial&&initial.points)||[]);const [pins,setPins]=useState((initial&&initial.pins)||[]);const [ar,arOnLoad]=useImgAspect();
+  // lines[0] is the route line; lines[1..] are its variations.
+  const [lines,setLines]=useState(function(){return [((initial&&initial.points)||[]).slice()].concat(((initial&&initial.variants)||[]).map(function(v){return v.slice();}));});
+  const [act,setAct]=useState(0);         // which line a tap extends
+  const [pins,setPins]=useState((initial&&initial.pins)||[]);const [ar,arOnLoad]=useImgAspect();
   const [mode,setMode]=useState("line");const [pinCat,setPinCat]=useState(PIN_CATEGORIES[0][0]);
   const [label,setLabel]=useState((initial&&initial.label)||"");  // optional: which line this is, when a wall holds several
-  const [sel,setSel]=useState(null);      // {kind:"point"|"pin", i} — the handle under edit
-  const [loupe,setLoupe]=useState(null);  // {x,y} while a drag is in flight
-  const frameRef=useRef(null);
-  const drag=useRef(null);                // {kind:"point"|"pin"|"draw", i}
+  const [sel,setSel]=useState(null);      // {kind:"point", l, i} | {kind:"pin", i} — the handle under edit
+  const [loupe,setLoupe]=useState(null);  // {x,y} while a handle is being dragged
+  const [view,setViewState]=useState({z:1,tx:0,ty:0});
+  const viewRef=useRef(view);
+  const setView=function(v){viewRef.current=v;setViewState(v);};
+  const vpRef=useRef(null);               // the fixed frame on screen
+  const frameRef=useRef(null);            // the zoomed layer: the photo and everything on it
+  const ptrs=useRef(new Map());           // pointerId -> {x,y}, for pinch
+  const gest=useRef(null);                // {kind:"tap"|"pinch"|"point"|"pin", …}
+  const focusPin=useRef(null);            // a new Grade marker's input takes focus, to type the grade
   const photo=initial&&initial.photoUrl;
+  const points=lines[0];
+
+  // A wheel zooms about the cursor on a desktop. Registered by hand: React's onWheel is passive,
+  // and without preventDefault the sheet behind scrolls as well.
+  useEffect(function(){
+    const el=vpRef.current;if(!el)return undefined;
+    const onWheel=function(e){
+      e.preventDefault();
+      const r=el.getBoundingClientRect();const b=viewRef.current;
+      const v=zoomTopoView(b,b.z*Math.exp(-e.deltaY*0.0015),e.clientX-r.left-el.clientLeft,e.clientY-r.top-el.clientTop,el.clientWidth,el.clientHeight);
+      viewRef.current=v;setViewState(v);
+    };
+    el.addEventListener("wheel",onWheel,{passive:false});
+    return function(){el.removeEventListener("wheel",onWheel);};
+  },[]);
 
   // Clamped so a drag that leaves the frame parks the handle on the edge rather than storing
   // a coordinate that is not on the photo.
-  const at=function(e){
+  const at=function(cx,cy){
     const r=frameRef.current.getBoundingClientRect();
     const c=(v,size)=>Math.min(100,Math.max(0,Math.round((v/size)*1000)/10));
-    return {x:c(e.clientX-r.left,r.width),y:c(e.clientY-r.top,r.height)};
+    return {x:c(cx-r.left,r.width),y:c(cy-r.top,r.height)};
   };
-  const moveTo=function(kind,i,p){
-    if(kind==="point")setPoints(function(a){return a.map(function(q,qi){return qi===i?{x:p.x,y:p.y}:q;});});
-    else setPins(function(a){return a.map(function(q,qi){return qi===i?Object.assign({},q,{x:p.x,y:p.y}):q;});});
+  const local=function(cx,cy){const el=vpRef.current;const r=el.getBoundingClientRect();return {x:cx-r.left-el.clientLeft,y:cy-r.top-el.clientTop};};
+  const zoomBy=function(f){const el=vpRef.current;if(!el)return;const b=viewRef.current;setView(zoomTopoView(b,b.z*f,el.clientWidth/2,el.clientHeight/2,el.clientWidth,el.clientHeight));};
+  const two=function(){const a=Array.from(ptrs.current.values());return {d:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)||1,m:local((a[0].x+a[1].x)/2,(a[0].y+a[1].y)/2)};};
+  const setLine=function(l,fn){setLines(function(ls){return ls.map(function(q,qi){return qi===l?fn(q):q;});});};
+  const moveTo=function(g,p){
+    if(g.kind==="point")setLine(g.l,function(a){return a.map(function(q,qi){return qi===g.i?{x:p.x,y:p.y}:q;});});
+    else setPins(function(a){return a.map(function(q,qi){return qi===g.i?Object.assign({},q,{x:p.x,y:p.y}):q;});});
+  };
+  const place=function(p){
+    if(mode==="line"){
+      const l=act<lines.length?act:0;
+      setSel({kind:"point",l:l,i:lines[l].length});
+      setLine(l,function(a){return a.concat([p]);});
+    }else{
+      if(pinCat==="grade")focusPin.current=pins.length;
+      setSel({kind:"pin",i:pins.length});
+      setPins(function(a){return a.concat([{x:p.x,y:p.y,category:pinCat,note:""}]);});
+    }
   };
   const onDown=function(e){
-    if(!frameRef.current)return;
-    const p=at(e);
-    const h=e.target&&e.target.dataset&&e.target.dataset.h;   // "point:3" / "pin:1"
+    if(!frameRef.current||!vpRef.current)return;
+    ptrs.current.set(e.pointerId,{x:e.clientX,y:e.clientY});
     try{e.currentTarget.setPointerCapture(e.pointerId);}catch(_e){}
-    if(h){
-      const [kind,idx]=h.split(":");
-      drag.current={kind:kind,i:+idx};
-      setSel({kind:kind,i:+idx});
-      setLoupe(p);
+    if(ptrs.current.size>=2){                // a second finger: pinch, and nothing gets marked
+      const t=two();gest.current={kind:"pinch",d0:t.d,m0:t.m,base:viewRef.current};setLoupe(null);
       return;
     }
-    if(mode==="line"){
-      drag.current={kind:"draw"};
-      setPoints(function(a){return a.concat([p]);});
-      setSel({kind:"point",i:points.length});
-    }else{
-      setPins(function(a){return a.concat([{x:p.x,y:p.y,category:pinCat,note:""}]);});
-      setSel({kind:"pin",i:pins.length});
+    const h=e.target&&e.target.dataset&&e.target.dataset.h;   // "point:0:3" / "pin:1"
+    if(h){
+      const parts=h.split(":");
+      if(parts[0]==="point"){gest.current={kind:"point",l:+parts[1],i:+parts[2]};setSel({kind:"point",l:+parts[1],i:+parts[2]});setAct(+parts[1]);}
+      else{gest.current={kind:"pin",i:+parts[1]};setSel({kind:"pin",i:+parts[1]});}
+      setLoupe(at(e.clientX,e.clientY));
+      return;
     }
-    setLoupe(p);
+    gest.current={kind:"tap",sx:e.clientX,sy:e.clientY,base:viewRef.current,moved:false};
   };
   const onMove=function(e){
-    if(!drag.current||!frameRef.current)return;
-    const p=at(e);
-    setLoupe(p);
-    if(drag.current.kind==="draw"){
-      setPoints(function(a){
-        const last=a[a.length-1];
-        if(last&&Math.abs(last.x-p.x)<DRAW_MIN_STEP&&Math.abs(last.y-p.y)<DRAW_MIN_STEP)return a;
-        return a.concat([p]);
-      });
+    if(!ptrs.current.has(e.pointerId))return;
+    ptrs.current.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    const g=gest.current;const el=vpRef.current;if(!g||!el||!frameRef.current)return;
+    if(g.kind==="pinch"){
+      if(ptrs.current.size<2)return;
+      const t=two();const b=g.base;const nz=Math.min(ZOOM_MAX,Math.max(1,b.z*t.d/g.d0));
+      setView(clampTopoView({z:nz,tx:t.m.x-(g.m0.x-b.tx)*nz/b.z,ty:t.m.y-(g.m0.y-b.ty)*nz/b.z},el.clientWidth,el.clientHeight));
       return;
     }
-    moveTo(drag.current.kind,drag.current.i,p);
+    if(g.kind==="tap"){
+      const dx=e.clientX-g.sx,dy=e.clientY-g.sy;
+      if(!g.moved&&Math.hypot(dx,dy)<TAP_SLOP)return;
+      g.moved=true;
+      setView(clampTopoView({z:g.base.z,tx:g.base.tx+dx,ty:g.base.ty+dy},el.clientWidth,el.clientHeight));
+      return;
+    }
+    const p=at(e.clientX,e.clientY);setLoupe(p);moveTo(g,p);
   };
-  const onUp=function(){drag.current=null;setLoupe(null);};
+  const onUp=function(e){
+    if(!ptrs.current.has(e.pointerId))return;
+    ptrs.current.delete(e.pointerId);
+    const g=gest.current;
+    if(g&&g.kind==="pinch"){
+      // Lifting one finger of a pinch leaves a pan, never a tap: that finger never "tapped".
+      if(ptrs.current.size===1){const r=Array.from(ptrs.current.values())[0];gest.current={kind:"tap",sx:r.x,sy:r.y,base:viewRef.current,moved:true};}
+      else if(!ptrs.current.size)gest.current=null;
+      return;
+    }
+    if(ptrs.current.size)return;
+    gest.current=null;setLoupe(null);
+    if(e.type==="pointerup"&&g&&g.kind==="tap"&&!g.moved&&frameRef.current)place(at(e.clientX,e.clientY));
+  };
 
   const delSel=function(){
     if(!sel)return;
-    if(sel.kind==="point")setPoints(function(a){return a.filter(function(_q,i){return i!==sel.i;});});
+    if(sel.kind==="point")setLine(sel.l,function(a){return a.filter(function(_q,i){return i!==sel.i;});});
     else setPins(function(a){return a.filter(function(_q,i){return i!==sel.i;});});
     setSel(null);
   };
+  const lineName=function(l){return l===0?"Route line":(lines.length>2?"Variation "+l:"Variation");};
   const sm=on=>({...CHIP,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.blue:C.textSub});
   const btn={flex:1,padding:8,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:12.5,cursor:"pointer"};
-  const handle=function(kind,i,x,y,col,cat){
-    const on=sel&&sel.kind===kind&&sel.i===i;
-    if(kind==="pin"){const sz=on?26:20;return <span key={kind+i} data-h={kind+":"+i} title={pinLabel(cat)+" — drag to move"}
-      style={{position:"absolute",left:x+"%",top:y+"%",width:sz,height:sz,marginLeft:-sz/2,marginTop:-sz/2,lineHeight:0,cursor:"grab",touchAction:"none"}}><PinIcon cat={cat} size={sz} on={on}/><PinNum n={i+1} style={{position:"absolute",right:-8,bottom:-6}}/></span>;}
-    return <span key={kind+i} data-h={kind+":"+i} title={kind==="point"?("Point "+(i+1)+" — drag to move"):"Pin — drag to move"}
-      style={{position:"absolute",left:x+"%",top:y+"%",width:on?18:10,height:on?18:10,marginLeft:on?-9:-5,marginTop:on?-9:-5,
-        borderRadius:"50%",background:on?col:col+"99",border:(on?2:1.5)+"px solid "+(on?"#fff":"rgba(255,255,255,0.6)"),
+  const nums=pinNums(pins);
+  const inv="translate(-50%,-50%) scale("+(1/view.z)+")";   // handles keep their size while the photo zooms
+  const handle=function(kind,l,i,x,y,col,cat){
+    const on=!!sel&&sel.kind===kind&&sel.i===i&&(kind!=="point"||sel.l===l);
+    if(kind==="pin"){
+      if(cat==="grade")return <span key={"pin"+i} data-h={"pin:"+i} title="Grade — drag to move"
+        style={{position:"absolute",left:x+"%",top:y+"%",transform:inv,lineHeight:0,cursor:"grab",touchAction:"none",padding:4}}><GradeTag text={pins[i].note||"Grade?"} size={13} on={on}/></span>;
+      const sz=on?26:20;return <span key={"pin"+i} data-h={"pin:"+i} title={pinLabel(cat)+" — drag to move"}
+      style={{position:"absolute",left:x+"%",top:y+"%",width:sz,height:sz,transform:inv,lineHeight:0,cursor:"grab",touchAction:"none"}}><PinIcon cat={cat} size={sz} on={on}/><PinNum n={nums[i]} style={{position:"absolute",right:-8,bottom:-6}}/></span>;}
+    const dim=l!==act;
+    return <span key={"pt"+l+":"+i} data-h={"point:"+l+":"+i} title={lineName(l)+", point "+(i+1)+" — drag to move"}
+      style={{position:"absolute",left:x+"%",top:y+"%",width:on?18:11,height:on?18:11,transform:inv,boxSizing:"border-box",
+        borderRadius:"50%",background:col,opacity:dim&&!on?0.6:1,border:(on?2:1.5)+"px solid "+(on?"#fff":"rgba(0,0,0,0.7)"),
         boxShadow:on?"0 0 0 3px "+C.blue+"66":"none",cursor:"grab",touchAction:"none"}}/>;
   };
+  const pinText=function(cat){return (PIN_CATEGORIES.find(function(c){return c[0]===cat;})||[])[1];};
+  // A Grade marker nobody typed a grade into is dropped on save rather than stored as "?".
+  const cleanPins=function(){return pins.filter(function(p){return p.category!=="grade"||(p.note||"").trim();}).map(function(p){return p.category==="grade"?Object.assign({},p,{note:p.note.trim()}):p;});};
+  const variants=lines.slice(1).filter(function(v){return v.length>=2;});
+  const canSave=points.length>=2||variants.length>0||cleanPins().length>0;
+  const lastEmpty=lines.length>1&&!lines[lines.length-1].length;
+  const swatch=function(col){return <span aria-hidden="true" style={{display:"inline-block",width:14,height:4,borderRadius:2,background:col,boxShadow:"0 0 0 1px rgba(0,0,0,0.6)"}}/>;};
   return <div>
     <div style={{display:"flex",gap:6,marginBottom:8}}>{[["line","Draw line"],["pin","Add pins"]].map(function(m){return <button key={m[0]} onClick={function(){setMode(m[0]);setSel(null);}} style={sm(mode===m[0])}>{m[1]}</button>;})}</div>
-    {mode==="pin"?<div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:8}}>{PIN_CATEGORIES.map(function(c){return <button key={c[0]} onClick={function(){setPinCat(c[0]);}} aria-current={pinCat===c[0]?"true":undefined} style={{...CHIP,border:"1px solid "+(pinCat===c[0]?c[2]:C.border),background:pinCat===c[0]?c[2]+"22":C.surface,color:pinCat===c[0]?c[2]:C.textSub,display:"inline-flex",alignItems:"center",gap:6}}><PinIcon cat={c[0]} size={16}/>{c[1]}</button>;})}</div>:null}
-    <div style={{fontSize:11.5,color:C.textMuted,marginBottom:6,lineHeight:1.45}}>{mode==="line"?"Drag along the line to draw it, or tap point by point. Drag any dot to move it.":"Pick a marker — belay station, rappel station… — then tap where it is on the rock. Drag any marker to move it."}</div>
+    {mode==="line"?<div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:8}}>
+      {lines.map(function(_l,l){var on=act===l;var col=l===0?TOPO_RED:TOPO_VAR;return <button key={l} onClick={function(){setAct(l);setSel(null);}} aria-current={on?"true":undefined} style={{...CHIP,border:"1px solid "+(on?col:C.border),background:on?col+"22":C.surface,color:on?C.text:C.textSub,display:"inline-flex",alignItems:"center",gap:6}}>{swatch(col)}{lineName(l)}</button>;})}
+      {lines.length<6?<button onClick={function(){if(lastEmpty){setAct(lines.length-1);}else{setLines(function(ls){return ls.concat([[]]);});setAct(lines.length);}setSel(null);}} style={{...CHIP,border:"1px dashed "+C.border,background:C.surface,color:C.textSub}}>+ Variation</button>:null}
+    </div>:null}
+    {mode==="pin"?<div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:8}}>{PIN_CATEGORIES.map(function(c){return <button key={c[0]} onClick={function(){setPinCat(c[0]);}} aria-current={pinCat===c[0]?"true":undefined} style={{...CHIP,border:"1px solid "+(pinCat===c[0]?c[2]:C.border),background:pinCat===c[0]?c[2]+"22":C.surface,color:pinCat===c[0]?(c[0]==="grade"?C.text:c[2]):C.textSub,display:"inline-flex",alignItems:"center",gap:6}}><PinIcon cat={c[0]} size={16}/>{c[1]}</button>;})}</div>:null}
+    <div style={{fontSize:11.5,color:C.textMuted,marginBottom:6,lineHeight:1.45}}>{mode==="line"?("Tap the photo to add a point to the "+(act===0?"route line (red)":"variation (yellow)")+". Drag to move around the photo; pinch or use + to zoom. Drag a dot to move it."):(pinCat==="grade"?"Tap beside a pitch, then type its grade — e.g. 5.10-. Drag to move around the photo; pinch or use + to zoom.":"Pick a marker — belay station, rappel station… — then tap where it is on the rock. Drag to move around the photo; drag a marker to move it.")}</div>
+    <div style={{display:"flex",gap:6,justifyContent:"flex-end",alignItems:"center",marginBottom:6}}>
+      {view.z>1?<span style={{fontSize:11.5,color:C.textMuted,marginRight:"auto"}}>{(Math.round(view.z*10)/10)+"×"}</span>:null}
+      <button onClick={function(){zoomBy(1/1.6);}} disabled={view.z<=1} aria-label="Zoom out" style={Object.assign(sm(false),{minWidth:34,opacity:view.z<=1?0.45:1})}>−</button>
+      <button onClick={function(){zoomBy(1.6);}} disabled={view.z>=ZOOM_MAX} aria-label="Zoom in" style={Object.assign(sm(false),{minWidth:34,opacity:view.z>=ZOOM_MAX?0.45:1})}>+</button>
+      <button onClick={function(){setView({z:1,tx:0,ty:0});}} disabled={view.z<=1} aria-label="Fit the whole photo" style={Object.assign(sm(false),{opacity:view.z<=1?0.45:1})}>Fit</button>
+    </div>
     {/* touchAction:"none" is load-bearing: without it the browser claims the gesture for
-        scrolling and the drag never reaches these handlers on a touch screen.
+        scrolling and pinching, and neither ever reaches these handlers on a touch screen.
 
         HONEST NOTE ON check:clickable: this surface used to be a <div onClick> and was counted
         in that guard's mouse-only baseline. Pointer handlers are not onClick, so the scanner no
         longer sees it and the baseline drops by one — that is the guard losing sight of a
-        control, NOT the control becoming keyboard-operable. Freehand drawing on a photo has no
+        control, NOT the control becoming keyboard-operable. Placing points on a photo has no
         sensible key-by-key equivalent, so it stays pointer-driven on purpose. What IS reachable
         from a keyboard is everything destructive or corrective: Undo last point, Delete
-        selected and Clear all are real <button>s, as are the mode and category chips. */}
-    <div ref={frameRef} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}
-      style={{position:"relative",width:"100%",aspectRatio:ar||"4 / 3",background:C.card,borderRadius:9,overflow:"hidden",cursor:"crosshair",marginBottom:9,border:"1px solid "+C.border,touchAction:"none",userSelect:"none"}}>
-      {photo?<img loading="lazy" decoding="async" src={photo} alt="Photo to draw the topo line on" onLoad={arOnLoad} draggable={false} style={TOPO_IMG}/>:<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,color:C.textMuted}}>Tap to place points</div>}
-      <TopoLineOverlay points={points}/>
-      {points.map(function(p,i){return handle("point",i,p.x,p.y,C.amber);})}
-      {pins.map(function(p,i){return handle("pin",i,p.x,p.y,pinColor(p.category),p.category);})}
+        selected, Clear all and the zoom buttons are real <button>s, as are the mode, line and
+        category chips. */}
+    <div ref={vpRef} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}
+      style={{position:"relative",width:"100%",aspectRatio:ar||"4 / 3",background:C.card,borderRadius:9,overflow:"hidden",cursor:view.z>1?"grab":"crosshair",marginBottom:9,border:"1px solid "+C.border,touchAction:"none",userSelect:"none"}}>
+      <div ref={frameRef} style={{position:"absolute",inset:0,transformOrigin:"0 0",transform:"translate("+view.tx+"px,"+view.ty+"px) scale("+view.z+")"}}>
+        {photo?<img loading="lazy" decoding="async" src={photo} alt="Photo to draw the topo line on" onLoad={arOnLoad} draggable={false} style={TOPO_IMG}/>:<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,color:C.textMuted}}>Tap to place points</div>}
+        {/* The zoom is a CSS scale on this layer, which non-scaling-stroke does not undo: divide it out so the line stays a thin line at 6x. */}<TopoLineOverlay points={points} variants={lines.slice(1)} lineW={2.5/view.z}/>
+        {lines.map(function(ln,l){return ln.map(function(p,i){return handle("point",l,i,p.x,p.y,l===0?TOPO_RED:TOPO_VAR);});})}
+        {pins.map(function(p,i){return handle("pin",0,i,p.x,p.y,pinColor(p.category),p.category);})}
+      </div>
       {(loupe&&photo)?<div style={{position:"absolute",top:8,right:8,width:104,height:104,borderRadius:"50%",overflow:"hidden",border:"2px solid "+C.blue,boxShadow:"0 6px 18px rgba(0,0,0,0.55)",pointerEvents:"none",
-        backgroundImage:"url("+photo+")",backgroundRepeat:"no-repeat",backgroundSize:(LOUPE_Z*100)+"% "+(LOUPE_Z*100)+"%",backgroundPosition:loupe.x+"% "+loupe.y+"%"}}>
+        backgroundImage:"url("+photo+")",backgroundRepeat:"no-repeat",backgroundSize:(LOUPE_Z*view.z*100)+"% "+(LOUPE_Z*view.z*100)+"%",backgroundPosition:loupe.x+"% "+loupe.y+"%"}}>
         <span style={{position:"absolute",left:"50%",top:"50%",width:11,height:11,marginLeft:-5.5,marginTop:-5.5,borderRadius:"50%",border:"1.5px solid "+C.blue,background:"rgba(255,255,255,0.25)"}}/>
       </div>:null}
     </div>
     <div style={{display:"flex",gap:12,marginBottom:9}}>
-      <button onClick={function(){if(mode==="line")setPoints(function(p){return p.slice(0,-1);});else setPins(function(p){return p.slice(0,-1);});setSel(null);}} style={btn}>{mode==="line"?"Undo last point":"Undo last marker"}</button>
+      <button onClick={function(){if(mode==="line")setLine(act,function(p){return p.slice(0,-1);});else setPins(function(p){return p.slice(0,-1);});setSel(null);}} style={btn}>{mode==="line"?"Undo last point":"Undo last marker"}</button>
       <button onClick={delSel} disabled={!sel} style={Object.assign({},btn,{opacity:sel?1:0.45,cursor:sel?"pointer":"default"})}>{sel?("Delete "+(sel.kind==="point"?"point "+(sel.i+1):"marker")):"Delete selected"}</button>
-      <button onClick={function(){var _clr=function(){setPoints([]);setPins([]);setSel(null);};if(!points.length&&!pins.length)return _clr();askConfirm({title:"Clear the whole topo?",body:"Every point and marker you have drawn is removed.",confirmLabel:"Clear all"}).then(function(ok){if(ok)_clr();});}} style={btn}>Clear all</button>
+      <button onClick={function(){var _clr=function(){setLines([[]]);setAct(0);setPins([]);setSel(null);};if(!lines.some(function(l){return l.length;})&&!pins.length)return _clr();askConfirm({title:"Clear the whole topo?",body:"Every line, point and marker you have drawn is removed.",confirmLabel:"Clear all"}).then(function(ok){if(ok)_clr();});}} style={btn}>Clear all</button>
     </div>
-    {pins.length?<div style={{marginBottom:9}}>{pins.map(function(pn,i){return <div key={i} style={{display:"flex",gap:6,alignItems:"center",marginBottom:6}}><PinNum n={i+1}/><PinIcon cat={pn.category} size={18}/><input aria-label={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} value={pn.note} onChange={function(e){var v=e.target.value;setPins(function(p){return p.map(function(x,xi){return xi===i?Object.assign({},x,{note:v}):x;});});}} onFocus={function(){setSel({kind:"pin",i:i});}} placeholder={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} style={{flex:1,padding:"6px 9px",borderRadius:8,border:"1px solid "+((sel&&sel.kind==="pin"&&sel.i===i)?C.blue:C.border),background:C.surface,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/></div>;})}</div>:null}
+    {pins.length?<div style={{marginBottom:9}}>{pins.map(function(pn,i){var g=pn.category==="grade";var ph=g?"Grade — e.g. 5.10-":pinText(pn.category)+" — note (optional)";return <div key={i} style={{display:"flex",gap:6,alignItems:"center",marginBottom:6}}>{nums[i]!=null?<PinNum n={nums[i]}/>:null}<PinIcon cat={pn.category} size={18}/><input ref={function(el){if(el&&focusPin.current===i){focusPin.current=null;el.focus({preventScroll:true});}}} aria-label={ph} value={pn.note} maxLength={g?14:undefined} onChange={function(e){var v=e.target.value;setPins(function(p){return p.map(function(x,xi){return xi===i?Object.assign({},x,{note:v}):x;});});}} onFocus={function(){setSel({kind:"pin",i:i});}} placeholder={ph} style={{flex:1,padding:"6px 9px",borderRadius:8,border:"1px solid "+((sel&&sel.kind==="pin"&&sel.i===i)?C.blue:C.border),background:C.surface,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/></div>;})}</div>:null}
     {/* Two topos of one wall used to be "Latest" and "Alt 1": nothing said which drew the direct start and which the ramp. Optional, 60 characters, stored in topo_lines.label, shown on the thumbnail and as the line's chip in the viewer. */}
     <input aria-label="Name this line (optional)" value={label} maxLength={60} onChange={function(e){setLabel(e.target.value);}} placeholder="Name this line (optional) — e.g. direct start, left-hand variation" style={{width:"100%",boxSizing:"border-box",padding:"8px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:13,outline:"none",marginBottom:10}}/>
     <div style={{display:"flex",gap:12}}>
       <button onClick={onCancel} style={{flex:1,padding:9,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
-      <button disabled={points.length<2&&!pins.length} onClick={function(){onSubmit({points:points,pins:pins,label:label.trim()||null});}} style={{flex:2,padding:9,background:(points.length<2&&!pins.length)?C.border:C.blueSolid,color:"#fff",border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Save topo</button>
+      <button disabled={!canSave} onClick={function(){onSubmit({points:points,variants:variants,pins:cleanPins(),label:label.trim()||null});}} style={{flex:2,padding:9,background:canSave?C.blueSolid:C.border,color:"#fff",border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Save topo</button>
     </div>
   </div>;
 }
@@ -2606,13 +2733,13 @@ export function TopoSection({route}){
   const submitLine=function(photo,data){
     setErr(null);
     if(photo.db){
-      submitTopoLine(photo.id,route.id,data.points,data.pins,data.label||null).then(function(){
+      submitTopoLine(photo.id,route.id,data.points,data.pins,data.label||null,data.variants).then(function(){
         dbTopos.refetch();setDrawFor(null);
       }).catch(function(e){setErr((e&&e.message)||"Couldn't save that line.");});
     } else {
       setLocalLines(function(m){
         const o=Object.assign({},m);
-        o[photo.id]=(o[photo.id]||[]).concat([{id:"line_"+Date.now(),points:data.points,pins:data.pins,label:data.label||null,ts:Date.now()}]);
+        o[photo.id]=(o[photo.id]||[]).concat([{id:"line_"+Date.now(),points:data.points,variants:data.variants||[],pins:data.pins,label:data.label||null,ts:Date.now()}]);
         return o;
       });
       setDrawFor(null);
@@ -2640,7 +2767,7 @@ export function TopoSection({route}){
       </div>
     </div>}
     {toposSavedOnly?<div style={{fontSize:11.5,color:C.amber,lineHeight:1.45,marginTop:8}}>{"No signal — showing the "+photos.length+" topo"+(photos.length!==1?"s":"")+" you saved on this device. Any others need a connection."}</div>:null}
-    {photos.some(function(p){return p.lines[0]&&p.lines[0].pins&&p.lines[0].pins.length;})?<TopoPinLegend style={{marginTop:8}}/>:null}
+    {photos.some(function(p){return p.lines[0]&&((p.lines[0].pins&&p.lines[0].pins.length)||(p.lines[0].variants&&p.lines[0].variants.length));})?<TopoPinLegend style={{marginTop:8}}/>:null}
     {(viewerIdx!=null&&photos[viewerIdx])?<TopoPhotoModal photo={photos[viewerIdx]} onClose={function(){setViewerIdx(null);}} onDraw={function(p){setDrawFor(p);}} onDescribe={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?function(p,d){return updateTopoAlt(p.id,d).then(function(){return dbTopos.refetch();});}:undefined}/>:null}
     {drawFor?createPortal(<div onClick={function(){setDrawFor(null);}} role="dialog" aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.85)",zIndex:9500,display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
       <div onClick={function(e){e.stopPropagation();}} style={{background:C.bg,borderTopLeftRadius:18,borderTopRightRadius:18,width:"100%",maxWidth:520,padding:"16px 16px 22px",border:"1px solid "+C.border,maxHeight:"92vh",overflowY:"auto",overscrollBehavior:"contain",boxSizing:"border-box"}}>
@@ -2672,7 +2799,7 @@ function TopoThumb({p,onOpen}){
   const canonical=p.lines[0];
   return <div {...clickable(onOpen)} aria-label={(canonical?"Open topo photo":"Open topo photo — no line drawn yet")+(p.alt?": "+p.alt:"")} style={{flexShrink:0,width:132,aspectRatio:ar||"1 / 1",position:"relative",borderRadius:11,overflow:"hidden",border:"1px solid "+C.border,cursor:"pointer",background:C.card}}>
     <MediaImg loading="lazy" decoding="async" src={p.url} alt={photoAlt(p.alt,"Topo photo")} onLoad={arOnLoad} style={TOPO_IMG}/>
-    {canonical?<TopoLineOverlay points={canonical.points} pins={canonical.pins} pinSize={12}/>:null}
+    {canonical?<TopoLineOverlay points={canonical.points} variants={canonical.variants} pins={canonical.pins} pinSize={12}/>:null}
     {!canonical?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(0,0,0,0.45)",color:"#fff",fontSize:11,fontWeight:700,textAlign:"center",padding:8}}>No line drawn</div>:null}
     {p.lines.length>1?<span style={{position:"absolute",top:5,right:5,background:"rgba(0,0,0,0.65)",color:"#fff",fontSize:10,fontWeight:700,borderRadius:10,padding:"2px 6px"}}>{p.lines.length+" lines"}</span>:null}
     {canonical&&canonical.label?<span style={{position:"absolute",left:5,right:5,bottom:5,background:"rgba(0,0,0,0.65)",color:"#fff",fontSize:10,fontWeight:700,borderRadius:6,padding:"2px 6px",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{canonical.label}</span>:null}
@@ -2695,14 +2822,14 @@ function TopoPhotoModal({photo,onClose,onDraw,onDescribe}){
       <div style={{background:"#000",textAlign:"center",fontSize:0}}>
         <div style={{position:"relative",display:"inline-block",maxWidth:"100%",lineHeight:0}}>
           <MediaImg loading="lazy" decoding="async" src={photo.url} alt={photoAlt(photo.alt,"Topo photo, enlarged")} style={{display:"block",maxWidth:"100%",maxHeight:"58vh",width:"auto",height:"auto"}}/>
-          {active?<TopoLineOverlay points={active.points} pins={active.pins} pinSize={20} numbered/>:null}
+          {active?<TopoLineOverlay points={active.points} variants={active.variants} pins={active.pins} pinSize={20} numbered/>:null}
         </div>
       </div>
       <div style={{padding:"12px 14px"}}>
         {photo.saveEntry?<SaveOfflineChip key={photo.url} entry={photo.saveEntry} style={{marginBottom:12}}/>:null}
         {onDescribe?<PhotoDescribeBox key={photo.id} initial={photo.alt} onSave={function(d){return onDescribe(photo,d);}} style={{position:"static",left:"auto",right:"auto",margin:"0 0 12px",maxWidth:"none",background:C.surface}}/>:null}
         {active?<TopoPinKey pins={active.pins}/>:null}
-        {(active&&active.pins&&active.pins.length)?<TopoPinLegend style={{paddingTop:9,marginBottom:12,borderTop:"1px solid "+C.border}}/>:null}
+        {(active&&((active.pins&&active.pins.length)||(active.variants&&active.variants.length)))?<TopoPinLegend style={{paddingTop:9,marginBottom:12,borderTop:"1px solid "+C.border}}/>:null}
         {!photo.lines.length?<div style={{fontSize:12.5,color:C.textMuted,marginBottom:10}}>No one has drawn this route's line on this photo yet.</div>:null}
         {photo.lines.length>1?<div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:10}}>{photo.lines.map(function(l,i){return <button key={l.id||i} onClick={function(){setAltIdx(i);}} aria-current={i===altIdx?"true":undefined} style={{...CHIP,border:"1px solid "+(i===altIdx?C.blue:C.border),background:i===altIdx?C.blueBg:C.surface,color:i===altIdx?C.blue:C.textSub}}>{l.label||(i===0?"Latest":"Alt "+i)}</button>;})}</div>:null}
         {(active&&active.label&&photo.lines.length<2)?<div style={{fontSize:12.5,color:C.textSub,marginBottom:10}}>{active.label}</div>:null}
