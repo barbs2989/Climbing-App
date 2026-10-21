@@ -149,7 +149,23 @@ eq("...and the card says why, instead of a start beside a warning that the snow 
 const hot = run(forecast(() => ({ fl: 12000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
 eq("the freezing level above the SUMMIT all night is its own warning", has(hot, "fl-above-night"), true);
 const frozen = run(forecast(() => ({ fl: 4000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
-eq("snow that never thaws has no softening hour and no snow-anchored start", [frozen.softAt, frozen.start], [null, null]);
+eq("snow that never thaws has no softening hour, so the forecast sets no start...", [frozen.softAt, frozen.start && frozen.start.forecast], [null, null]);
+/* PRACTICE (owner, 2026-10-16: Easton read "leave camp by 7:30 AM" on a cold Saturday, "no one leaves camp at
+   7:30am"). Glacier and alpine-ice parties start in the dark to be off the snow by about midday (guided Easton
+   summit days leave high camp 2-5 AM), so a frozen night gives a start that has the party back by noon. */
+eq("...but a glacier on a frozen night still gets one: back off the snow by NOON, 12:00 - (6 h up + 4 h down) = 02:00", frozen.start && [clock(frozen.start.at), frozen.start.why, clock(frozen.start.backBy)], [2, "snow-noon", 12]);
+const eastonCold = run(forecast(() => ({ fl: 4000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10781, snowFt: 6000, legs: { up: 5, down: 3, fromCamp: true, floor: false } });
+eq("Easton's shape, from high camp on a cold day: back to camp by noon after 5 h up x 1.69 -> leave camp 03:33, not mid-morning", eastonCold.start && [Math.round(clock(eastonCold.start.at) * 100) / 100, eastonCold.start.why], [Math.round((12 - 5 * (1 + A.LIMITS.descentShareOfPush)) * 100) / 100, "snow-noon"]);
+eq("when the forecast's snow deadline is EARLIER than noon it still decides (23:00 the night before beats 02:00)", gl.start && gl.start.why, "snow");
+const nfPractice = run(forecast(() => ({ fl: 9000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
+eq("no practice start after a night that never froze: no frozen window to be back in", nfPractice.start, null);
+const scPractice = run(forecast(() => ({ fl: 4000 })), { kind: "scramble", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
+eq("the noon rule is glacier and alpine ice only: a snowy scramble on a cold day gets none", scPractice.start, null);
+const iceP = run(forecast(() => ({ fl: 4000 })), { kind: "alpineice", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
+eq("...and alpine ice gets it too", iceP.start && iceP.start.why, "snow-noon");
+const cardSrc = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+eq("the card says WHY the noon start, and shows the later start the forecast alone allows", /why === "snow-noon"[\s\S]{0,700}plan to be off the snow by midday[\s\S]{0,300}The forecast alone would allow a start as late as/.test(cardSrc), true);
+eq("the DAY PICKER is sticky, outside the first box, and says every section below is for that day", /position: "sticky"[^\n]*\n[^\n]*every section below is for this day[\s\S]{0,200}role="group" aria-label="Day"/.test(cardSrc), true);
 
 console.log("\n3. SCRAMBLE — thunder sets the deadline; cold and wet is verglas, not a refreeze");
 const storm = run(forecast((d, h) => (d === T && h === 14 ? { code: 95 } : {})), { kind: "scramble", terrain: { snow: "no" }, highFt: 8000, snowFt: null, legs: { up: 4, down: 3, fromCamp: false, floor: false } });
@@ -372,7 +388,7 @@ console.log("\n10. SUN ON THE FACE — be above each height of the face before t
   const gs = run(forecast(thaw), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 9800, legs: LEGS3, sun: SUN });
   eq("glacier on a warm day: the SUN decides — above 9,500 ft by 07:00 is a 4 h climb from 01:24 after the 2 h walk in", gs.start && [Math.round(clock(gs.start.at) * 10) / 10, gs.start.why, gs.start.sun.ft], [1.4, "sun", 9500]);
   const gc = run(frozen, { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS2, sun: SUN });
-  eq("...but on a day the air at those heights never thaws, the sun sets NO deadline, and says why", [gc.sun, gc.sunCold, gc.start && gc.start.why], [null, true, null]);
+  eq("...but on a day the air at those heights never thaws, the sun sets NO deadline, and says why (the start left is the noon practice one)", [gc.sun, gc.sunCold, gc.start && gc.start.why, gc.start && gc.start.forecast], [null, true, "snow-noon", null]);
   const ga = run(forecast(thaw), { kind: "alpineice", terrain: { snow: "yes" }, highFt: 10000, snowFt: 9800, legs: LEGS3, sun: SUN });
   eq("...and alpine ice the same", ga.start && ga.start.why, "sun");
   const gsn = run(forecast(thaw), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS2, sun: SUN });

@@ -27,6 +27,8 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Alpine start never mid-morning on a glacier; the day picker stays in view**: on glacier and alpine-ice routes the Conditions start is never later than one that has the party back off the snow by noon (Easton on a cold day read "leave camp by 7:30 AM"; now about 1:30 AM, with the forecast's later limit and the route's usual start beside it). The day strip sticks to the top while you scroll the hour-by-hour and other sections. See `docs/features/conditions.md`.
+
 - **Rock type reads plainly**: the Rock tile, the Conditions card and the fix form no longer add "(mapped)" to a crag's rock type taken from the bedrock map. See `docs/features/conditions.md`.
 - **Climb lists show the pitch count**: every climb row in the Climbs area browser reads e.g. "Trad · 5 pitches" beside its discipline (none on boulders or climbs with no count). See `docs/features/maps-and-area-browser.md`.
 - **Crag map is headed CRAG MAP**: on sport/trad/bouldering/aid/top-rope routes the map section (was TRAIL TO THE CRAG, before that ROUTE TRACK) is a location map, where the crag is and where to park, and says it is not a track of the climb. A shared walk-in line is still drawn and described when one exists.
