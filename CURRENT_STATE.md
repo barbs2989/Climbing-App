@@ -28,6 +28,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Route jump links land below the top bar**: tapping a section pill at the top of a route page used to put that heading under the sticky app bar, so you had to scroll up to read it; it now lands just below the bar. See [route-page.md](docs/features/route-page.md).
 - **The trust score is gone from the database too (0335)**: `compute_trust_score`, `trust_scores_view`, and the trust columns of `partner_signals()` and `leaderboard()` are dropped. See `docs/features/profile-and-settings.md`.
 - **Crews tab: + Create a crew leads the tab, for everyone**: it sat below every crew card and vanished for a climber with no saved climbs; it now opens the tab and offers an area, your saved climbs, or *A climb — find it in Climbs…*. A past crew no longer counts as a climb's crew: its climb can be crewed again, and invites, *Open crew* and the objectives badge reach only an active crew (`activeCrews`).
 - **Wall order for a whole state, with the missing climbs added**: `order-from-mp.mjs --state <slug>` orders every MP rock wall left to right, adds the 5.x sport/trad/TR climbs a wall lacks (never one the duplicate checks or trigger 0216 flag), and `--facts` plus `extract-route-details.mjs --adds` give each added climb its length, pitches, GPS, stars and rewritten description, protection, location and first ascent. New York done: 406 walls, 25 climbs added. See `docs/features/maps-and-area-browser.md`.
