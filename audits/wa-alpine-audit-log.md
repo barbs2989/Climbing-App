@@ -32782,3 +32782,46 @@ South Early Winters Spire's and Colchuck Balanced Rock's elevations, checked as 
 areas of Mojo Rising and Milk n' Honey, also matched external sources exactly.
 
 Pass 7 continues next run after `wa_monte_cristo_peak_scramble`.
+
+## 2026-10-21 — Pass 7, Batch 423
+
+Ten routes on Mount Adams: Adams Glacier, Avalanche-White Salmon Glaciers, Lava Glacier
+Headwall, Lyman Glacier, Mazama Glacier Headwall, North Ridge, Northwest Ridge (North Ridge
+West Face), Pinnacle Glacier Headwall, South Climb, and Wilson Glacier Headwall.
+
+1 confirmed error fixed (audits/sql/2026-10-21-batch-423.sql): Wilson Glacier Headwall's own
+`access.land_manager` said "U.S. Forest Service" and `access.parking_pass` said "Northwest
+Forest Pass" — directly contradicted by the SAME row's `access.landManager` ("Yakama Nation
+(Tract D, eastern Mount Adams)"), `access.closures` and `access.overnight_permit` fields, and
+by Wikipedia and the Forest Service's own Mt. Adams wilderness page, both of which place this
+east-side glacier within Yakama Nation land, not Gifford Pinchot National Forest. Looks like a
+leftover copy from the generic Forest-Service-land access template shared by this peak's other
+routes. Corrected the two contradicted keys to match the row's own already-correct Yakama-land
+fields; left the longer prose untouched.
+
+2 flagged for human review: Lava Glacier Headwall's `fa` field credits "Edward Cooper and Mike
+Swayne, July 3, 1961" — no source found documents this pair on Mount Adams, and their one
+well-documented joint first ascent is Mount Rainier's Willis Wall, dated 1962 by every source
+found — a different mountain, a different route, a year off. Same shape as the Middle Peak
+North Face mistake from batch 422, but without an exact textual match to the source it may
+have been lifted from, so flagged rather than cleared. Mazama Glacier Headwall's stored Yakama
+Nation Tract D day-use fee ($20/vehicle/day) couldn't be pinned down — external accounts give
+$20, $10 and $5 across different years, and sources agree the fee changes over time; left
+unchanged.
+
+7 clean: Adams Glacier's FA (Beckey, Lind and Mulhall, July 1945) matches Wikipedia exactly.
+Lyman Glacier's FA credits Robert W. Craig, corroborated by a Mountaineers 1907-1966 annual
+index entry tying "Craig, Robert W." specifically to Mount Adams' Lyman Glacier route.
+Northwest Ridge's FA (Molenaar, Johnson, Ostro and Startzell, September 1960) matches a
+Mountain Project route page of the same name exactly. North Ridge's FA (the 1854 Aiken/Allen/
+Burge first ascent of the whole mountain) is corroborated by three independent sources all
+placing that climb on the mountain's north side (one names the line "North Cleaver" rather
+than "North Ridge" — a minor naming split, not a date/party contradiction). South Climb's FA
+("Unknown, climbed since at least the 1860s") is consistent with the south side's first
+successful climb around 1864, a decade after the north-side first ascent. Avalanche-White
+Salmon Glaciers' and Pinnacle Glacier Headwall's FA credits could not be independently
+corroborated or contradicted — left as-is, not flagged. The mountain's own elevation (12,276
+ft) matches the USGS Mount Adams geology page exactly; the Cold Springs/South Climb Trailhead
+day-use fee and the Mount Adams Climbing Pass both match the Forest Service's current page.
+
+Pass 7 continues next run after `wa_mount_adams_wilson_glacier_headwall`.
