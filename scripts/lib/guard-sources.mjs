@@ -154,6 +154,7 @@ export const MOVED = {
     "src/components/Hr.tsx",
     "src/components/Stars.tsx",
     "src/components/Bar.tsx",
+    "src/components/CardHead.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
