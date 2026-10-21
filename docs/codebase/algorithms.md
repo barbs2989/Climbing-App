@@ -17,7 +17,7 @@ project documentation as a whole — `CLAUDE.md`, `docs/codebase/` and `docs/gua
     moves the number and names it in the copy ("shared objectives and listed areas").
   - **IT SATURATES, AND THE SCREEN'S OWN COPY IS FALSE EXACTLY WHERE THE SEARCH POINTS YOU.**
     Partners says *"Match % blends your shared objectives, grade range, disciplines, availability
-    overlap and verified trust"* — and the demo walk shows three climbers at **5.10a, 5.11a and
+    overlap and whether they are verified"* — and the demo walk shows three climbers at **5.10a, 5.11a and
     5.12b all reading 99%**. Measured with `scripts/oneoff/measure-compat-saturation.mjs`
     (report-only, no DB, no browser): **11 of 20 ordered seed pairs (55%) sit on the 99 ceiling**,
     the highest uncapped score is **157**, and **3 of the 5** climbers on the demo's My-Objectives
@@ -57,7 +57,7 @@ project documentation as a whole — `CLAUDE.md`, `docs/codebase/` and `docs/gua
     every pair**, so it stays a live check that the design measured is the design running.
   - **THE FIX MADE THE EXISTING COPY TRUE RATHER THAN NEEDING NEW COPY.** Three surfaces (the
     glossary, the Partners explainer and the score tooltip) already said the number *"blends your
-    shared objectives, grade range, disciplines, availability overlap and verified trust"*. That
+    shared objectives, grade range, disciplines, availability overlap and whether they are verified"*. That
     sentence was false while the blend was swamped and is now accurate — and `check:match-percent`
     ties it to behaviour so it cannot drift again.
   - The script **lifts `compat()` from source with a fail-closed `ANCHOR LOST`** rather than
