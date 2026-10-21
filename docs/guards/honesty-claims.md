@@ -1627,6 +1627,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - **Adding a deadline can only make a start EARLIER**, never later: the start is the earliest of
       snow, storm and sun. Seen live: Easton on a cold Saturday had no start before (snow frozen all
       day) and now reads a latest start to be past the thawing ground above camp.
+    - **...and that latest start read "leave camp by 7:30 AM" (owner, 2026-10-16: "no one leaves camp
+      at 7:30am").** Every forecast deadline says how LATE a party may start, with no margin; on a cold
+      clear day they all fall mid-morning. Glacier and alpine ice now add a PRACTICE candidate
+      (`snow-noon`, `LIMITS.snowBackBy` = 12): back off the snow by noon, need = the same up+down the
+      snow deadline uses. Evidence: guided Easton summit days leave camp 2-5 AM for a 6.5-9 h round
+      trip, club/self-guided parties midnight-2 AM; bridges weaken from late morning; the sun softens a
+      sunlit slope while the free air is below 0 C (the freezing level cannot see it). Not after a night
+      that never froze (no frozen window), and not on scrambles or alpine rock (their parties do not
+      start in the dark for snow). The candidate carries `forecast`, the latest start the forecast alone
+      allows, and the card prints it so the day-to-day signal is not lost. Easton (push-shaped 10.5 h,
+      from camp) now reads about 1:30 AM; its own stored `recommendedStart` is "2:30 AM from camp",
+      shown beside it.
   - **ICE-GRADED ALPINE ROUTES (2026-10-08).** `condKind` read every `discipline=alpine` route as
     alpine rock, so 18 of 5,147 with AI/WI grades (Triple Couloirs, Chair Peak N Face, Liberty Ridge,
     the Lane Peak couloirs, Cutthroat's Cauthorn-Wilson) got rock-dryness flags and the warm-rock sun
