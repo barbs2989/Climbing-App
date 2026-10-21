@@ -1,4 +1,5 @@
-import { ActionIcon, EMOJI_ICON } from "../../ClimbMatchCore.jsx";
+import { EMOJI_ICON } from "../../ClimbMatchCore.jsx";
+import ActionIcon from "./ActionIcon.tsx";
 
 export interface LblProps {
   /** The label text. A leading emoji that `EMOJI_ICON` knows is drawn as the matching `ActionIcon`; anything else renders as-is. */
@@ -15,9 +16,9 @@ export interface LblProps {
  */
 export default function Lbl({ s, size }: LblProps) {
   const str = String(s);
-  const m = str.match(/^([←-⯿\u{1F000}-\u{1FAFF}️‍]+)\s*([\s\S]*)$/u);
+  const m = str.match(/^((?:[←-⯿\u{1F000}-\u{1FAFF}]|\u{FE0F}|\u{200D})+)\s*([\s\S]*)$/u);
   if (!m) return str;
-  const key = m[1].replace(/[️‍]/g, "");
+  const key = m[1].replace(/\u{FE0F}|\u{200D}/gu, "");
   const nm = EMOJI_ICON[key];
   if (!nm) return str;
   return (

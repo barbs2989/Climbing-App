@@ -73,7 +73,7 @@ const WANT = { bouldering: ["Location", "Landing", "Crash pads", "Start", "Aspec
 const FOREIGN = { bouldering: ["Bolts", "Anchor", "Protection", "Fixed gear"], sport: ["Landing", "Crash pads", "Start", "Fixed gear"],
   trad: ["Landing", "Crash pads", "Start", "Bolts"], toprope: ["Landing", "Crash pads", "Start", "Bolts", "Protection", "Fixed gear"],
   aid: ["Landing", "Crash pads", "Start", "Bolts", "Protection"] };
-const SECTIONS = ["GETTING THERE", "APPROACH", "DESCENT", "ROUTE TRACK", "ROUTE FACTS", "CLIMATE & SEASON", "ROUTE BREAKDOWN", "ACCESS & REGULATIONS", "RACK", "CRAG", "PARKING"];
+const SECTIONS = ["GETTING THERE", "APPROACH", "DESCENT", "ROUTE TRACK", "CRAG MAP", "ROUTE FACTS", "LOCATION", "GEAR & SAFETY", "CONDITIONS", "CLIMATE & SEASON", "ROUTE BREAKDOWN", "ACCESS & REGULATIONS", "RACK", "CRAG", "PARKING"];
 
 const stub = { from: () => ({ select: (sel) => ({ eq: (_c, id) => ({ maybeSingle: async () => { const r = await get(`select=${encodeURIComponent(sel)}&id=eq.${encodeURIComponent(id)}`); return { data: r[0] || null, error: null }; } }) }) }) };
 const fetchRouteArea = new Function("supabase", FRA + "; return fetchRouteArea;")(stub);
@@ -149,7 +149,8 @@ for (const d of discs) {
       C.factsChecked += want.length;
       for (const l of want) if (!sg.includes(l.toUpperCase()) && !sg.includes(l)) P(r.id, d, `ROUTE FACTS lacks "${l}"`);
       for (const l of FOREIGN[catOf(r)] || []) { const i = sg.findIndex((x) => x === l || x === l.toUpperCase()); if (i >= 0 && sg[i + 1] === "Not on file yet") P(r.id, d, `foreign fact "${l}" shown as a placeholder`); }
-      if (/Not on file yet/.test(t) && !/Add what you know/.test(t)) P(r.id, d, "placeholders with no Add link");
+      // Since 2026-10-15 every placeholder carries its own "+ Add" (LOCATION / GEAR & SAFETY / CONDITIONS sections).
+      sg.forEach((x, i) => { if (x === "Not on file yet" && sg[i + 1] !== "+ Add" && !/Add what you know/.test(t)) P(r.id, d, `"${sg[i - 1]}" placeholder with no Add control`); });
       // discipline gating of placeholders
       const single = !(r.pitches > 1);
       if (catOf(r) === "bouldering" && /No rappel information|No protection information|No ropework notes|No turnaround guidance/.test(t + ts)) P(r.id, d, "boulder shows a roped-climbing placeholder");

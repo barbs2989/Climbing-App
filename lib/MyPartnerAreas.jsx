@@ -19,7 +19,8 @@ import { USE_DB } from "./supabase";
 import { POP_BACK, POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
 import { removePartnerArea, savePartnerArea, useAreaCardsByIds, useAreaSearch, useMyHomeStatePaths, useStates } from "./db";
 import { discLabel } from "./discLabels.js";
-import { ActionIcon, C, CRAG_CATS, DLOCALE, SL, haptic, localYmd } from "../ClimbMatchCore.jsx";
+import { C, CRAG_CATS, DLOCALE, SL, haptic, localYmd } from "../ClimbMatchCore.jsx";
+import ActionIcon from "../src/components/ActionIcon.tsx";
 
 const TYPE_LABEL = { state: "State", region: "Region", range: "Range", canyon: "Canyon", crag: "Crag", wall: "Wall", peak: "Peak" };
 const NO_LISTING = new Set(["peak", "world", "country"]);
@@ -65,7 +66,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
   const now = new Date(), today = localYmd(now);
   const wk1 = weekendFrom(now, 0), wk2 = weekendFrom(now, 1);
 
-  useEffect(() => { if (!prefill || !prefill.areaId) return; const ex = (listings || []).find((l) => l.areaId === prefill.areaId); startEdit(ex || { areaId: prefill.areaId, name: prefill.name, areaType: prefill.areaType, disciplines: prefill.disciplines || [] }); /* eslint-disable-next-line */ }, [prefill && prefill.areaId]);
+  useEffect(() => { if (!prefill || !prefill.areaId) return; const ex = (listings || []).find((l) => l.areaId === prefill.areaId); startEdit(ex || { areaId: prefill.areaId, name: prefill.name, areaType: prefill.areaType, disciplines: prefill.disciplines || [] }); }, [prefill && prefill.areaId]); // eslint-disable-line react-hooks/exhaustive-deps -- re-run only when the prefilled AREA changes
 
   function startEdit(l) {
     const ff = l.freeFrom || "", ft = l.freeTo || "";

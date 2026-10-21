@@ -73,7 +73,10 @@ const Pill = ({ label, color, bg, sm }) => <span style={{ background: bg, color,
 
 function RouteRow({ r, onOpen, C, areaName }) {
   const stars = r.stars ? Math.round(r.stars) : 0;
-  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, r.sort_order != null ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
+  // The PITCH COUNT sits beside the discipline, as Mountain Project's lists write it ("Trad, 5 pitches"):
+  // the stored count, exactly as the route page's Pitches stat shows it. A boulder has no pitches.
+  const pitches = r.pitches > 0 && r.discipline !== "bouldering" ? r.pitches + " pitch" + (r.pitches !== 1 ? "es" : "") : null;
+  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, pitches, r.sort_order != null ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
   return (
     <div {...clickable(() => onOpen(r))} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", marginBottom: 8, background: C.card, border: "1px solid " + C.border, borderRadius: 11, cursor: "pointer" }}>
       <div style={{ flex: 1, minWidth: 0 }}>
@@ -587,7 +590,7 @@ function PartnersHereCard({ area, C, uid, myListings, onListMe, onFindPartnersIn
   );
 }
 
-function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, TopContributors, onFireMap, onSuggestAreaEdit, onAgreeAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt}) {
+function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt}) {
   const [searchMode, setSearchMode] = useState("areas");
   // The row in the drill stack is a snapshot of a CHILD row read when its parent was opened. An
   // agreed edit rewrites the areas row on the server (0304) and refreshes ["area", id] — so the
@@ -653,7 +656,7 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
       {/* What Mountain Project's area page has and ours did not (audit 2026-10-15): a description,
           the facts a crag visit needs, a count by discipline, and a way to improve the page.
           Every section prints only what is stored; an empty one invites the edit instead. */}
-      {formation && areaEdits.data && areaEdits.data.length ? <PendingAreaEdits area={area} rows={areaEdits.data} C={C} myId={myId} onAgree={onAgreeAreaEdit ? (k, v) => onAgreeAreaEdit(area, k, v) : null} /> : null}
+      {formation && areaEdits.data && areaEdits.data.length ? <PendingAreaEdits rows={areaEdits.data} C={C} myId={myId} /> : null}
       {formation || (area.blurb && String(area.blurb).trim()) ? <AboutCard area={area} C={C} onEdit={editOn} /> : null}
       {formation ? <AreaFactsCard area={area} C={C} uElev={uElev} onEdit={editOn} /> : null}
       {chartable ? <ClimbsChart stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={DISCIPLINES.map(d => d[0]).filter(Boolean)} onDisc={onFinder}><GradeSpread stats={stats.data} C={C} /></ClimbsChart> : null}
@@ -1480,7 +1483,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, TopContributors, rootHeader, onSuggestAreaEdit, onAgreeAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt }) {
+export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
@@ -1617,7 +1620,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
       ) : screen === "near" ? (
         <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} /></>
       ) : (
-        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap}onAddClimb={onAddClimb} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { setFinderDisc(typeof d === "string" ? d : ""); setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} onAgreeAreaEdit={onAgreeAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
+        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap}onAddClimb={onAddClimb} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { setFinderDisc(typeof d === "string" ? d : ""); setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />

@@ -2,7 +2,9 @@
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
 import { clickable } from "./clickable";
 import { useEffect, useState } from "react";
-import { ActionIcon, C, CAT, CLIMBERS, DiscIcon, ROUTES, catOf, gradeLabel, mtnOf, pubFirst, renderMD, routeLoc, routeLocText } from "../ClimbMatchCore.jsx";
+import { C, CAT, CLIMBERS, ROUTES, catOf, gradeLabel, mtnOf, pubFirst, renderMD, routeLoc, routeLocText } from "../ClimbMatchCore.jsx";
+import DiscIcon from "../src/components/DiscIcon.tsx";
+import ActionIcon from "../src/components/ActionIcon.tsx";
 
 export default function MyAscents({logs,onOpen,onReport,onVouch,onView,focusId,routeById,condReports,onReportCond,logsUnavailable,climberFor}){
   const [asort,setASort]=useState("new");const [adisc,setADisc]=useState("all");const [aloc,setALoc]=useState("all");const [hl,setHl]=useState(null);useEffect(function(){if(!focusId)return;var idx=-1,bestDate="";logs.forEach(function(l,i){if(l.routeId===focusId&&(l.date||"")>=bestDate){bestDate=l.date||"";idx=i;}});if(idx<0)return;setHl(idx);var el=document.getElementById("asc-"+idx);if(el)el.scrollIntoView({behavior:"smooth",block:"center"});var tm=setTimeout(function(){setHl(null);},2600);return function(){clearTimeout(tm);};},[focusId,logs]);

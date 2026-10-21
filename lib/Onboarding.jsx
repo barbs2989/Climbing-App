@@ -3,7 +3,8 @@
 import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
 import { useState } from "react";
-import { C, DISC, DiscIcon, HERO_BG, HERO_SHEEN, MOUNTAINS, VL, YDSL, fuzzyMatch } from "../ClimbMatchCore.jsx";
+import { C, DISC, HERO_BG, HERO_SHEEN, MOUNTAINS, VL, YDSL, fuzzyMatch } from "../ClimbMatchCore.jsx";
+import DiscIcon from "../src/components/DiscIcon.tsx";
 
 export default function Onboarding({onFinish,onSkip,initial,onHelp}){
   const [home,setHome]=useState(initial&&initial.homeArea||"");const [disc,setDisc]=useState(initial&&initial.disciplines||[]);

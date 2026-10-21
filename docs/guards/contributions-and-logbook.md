@@ -125,6 +125,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `gain`, `pitchCount`); the app's `M` renames it to the camelCase route PROPERTY and
     `dbRouteToCamel` renames the column to that property, so neither map gives the column. This
     table is the one place the column is stated, which is why a guard has to hold it to the form.
+- **`check:contrib-shapes`**, on AddRoute's LOCAL path (`_nr`, the seed-shaped row handed to
+  `onAddRoute` with no CONV and no `dbRouteToCamel` between it and the readers), accepts a field as
+  array-shaped only when the expression holds an array literal or calls a helper named in its
+  `ARRAY_HELPERS`, each of which it re-checks is defined with a `.split`/`.map`/`.filter`. **The
+  allowance is a named list on purpose**, so it cannot rot into "anything with parentheses".
+  2026-10-16: `commaOf` joined `linesOf` there — the comma split `altNames`/`variations` use on
+  both paths (0327). The trap: the guard passed locally in a batch whose exit code was `tail`'s,
+  and only CI's build job surfaced the FAIL. A guard piped to `tail -1` reports nothing.
 - **`check:consensus-clustering`** asserts that three climbers who agree can actually be **counted**
   as agreeing. **Since 2026-10-15 (0307–0309, the owner's route quality control) the merge no
   longer applies a value on agreement**: every field edit is held `pending` until the owner
@@ -400,7 +408,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     more, where the text disagrees with itself, were left alone. No guard can see this class.
 
 - **`check:area-edit-fields`** asserts that the seven AREA fields a climber may suggest an edit to
-  are **one list, read four ways**: `AREA_EDIT_FIELDS` in `lib/areaFields.js`, the check
+  are **one list, read five ways** (since 0319: the constraint in 0304; `apply_approved_area_field`'s
+  allow-list and `update areas set` targets and `approve_field_contribution`'s area branch in 0319;
+  the editor; the page; the owner's queue labels). It also refuses an `after insert` applier trigger
+  coming back and requires the `after update of status … when approved` shape. The threshold rule
+  ("N of 3") is gone with the rule it tested: area edits are held for the owner. Original wording: `AREA_EDIT_FIELDS` in `lib/areaFields.js`, the check
   constraint `contributions_area_field_ck` and the applier `apply_agreed_area_field()` in the
   `0304` migration (both its allow-list and the columns its `update areas set` statements write),
   the rows `lib/AreaSuggestFix.jsx` offers, and the values the area page renders

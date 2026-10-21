@@ -46,6 +46,15 @@ extraction.** No guard reads this file; keeping it true is on the author.
 |---|---|---|---|
 | PR1 | `RiskBadge` | `ClimbMatchCore.jsx` | the smoke test for the pipeline; consumer `lib/SafetyTab.jsx`; `Pill` got its JSDoc seam |
 | PR1 | _infrastructure_ | — | `src/components/`, `tsconfig.json`, `check:types`, TS-aware guards, `measure-guard-reach` |
+| PR17 | `MessageRow`, `TypingIndicator` | `ClimbMatchCore.jsx` | the chat bubble (one 3.3 KB line, moved by SCRIPT) and the "… is typing" line — one job family, one consumer (`ClimbMatch.jsx`), core never rendered either — no cycle; the bubble reads `C`/`photoAlt`/`relTime` from core, the report helpers from `lib/reportBus` and `clickable` from `lib/clickable` directly, and `Av` from its own folder; the message shape is typed as `ChatMessage`; no guard, probe or feature doc names them |
+| PR16 | `ScreenSkeleton`, `OverlaySkeleton` | `ClimbMatchCore.jsx` | the two loading placeholders a lazy screen / overlay shows while its chunk arrives — one job family, one consumer (`ClimbMatch.jsx`, 12 + 10 uses), core never rendered either — no cycle; both take the palette as a prop (`C: typeof Palette`, a type-only import of core's `C`); their `//` comments moved with them as the JSDoc; no guard, probe or feature doc names them |
+| PR15 | `ChatComposer` | `ClimbMatchCore.jsx` | the DM/crew message composer (one 3.2 KB line, moved by SCRIPT); one consumer (`ClimbMatch.jsx`), core never rendered it — no cycle; reads `C`, `photoAlt`, `PhotoAltField` at render time; `PhotoAltField`'s seam typed on the JS side with a JSDoc `@param` (it destructures five props, the composer passes three); the only logic touch is the `typeof rd.result === "string"` check the FileReader type demands; no guard, probe or feature doc names it |
+| PR14 | `SwipeRow` | `ClimbMatchCore.jsx` | the swipe-left-to-act row; 3 consumers (`ClimbMatch.jsx`, `lib/Inbox.jsx`, `lib/NotifPanel.jsx`), core never rendered it — no cycle; reads `C` only; its comment block moved with it as the JSDoc; touch handlers typed `TouchEvent<HTMLDivElement>`; no guard, probe or feature doc names it |
+| PR13 | `GPXMap` | `ClimbMatchCore.jsx` | the route map (145 lines, moved by SCRIPT from core's body with asserted substitutions); 3 consumers (`RouteDetail.jsx`, `lib/LogAscent.jsx`, `lib/TripReport.jsx`), core never rendered it — no cycle; Leaflet is CDN-loaded and untyped, so `window.L` is declared `any` once in `src/types/leaflet-global.d.ts`; TypeScript cannot narrow through a boolean, so `track`/`pk` stand in for `pts`/`peakCoord` and `placed` is a type predicate over core's `wpPlaced()`; `check:waypoint-placement` reads it through the stitch (signature spelling kept) and `inject-waypoint-placement-cases.mjs` edits the `.tsx`; seams typed on the JS side: `useFollowMe` opts (JSDoc) and the seven `POP_*` styles (`CSSProperties`); core now exports `wpDivIcon` (`WP_COLORS` and `wpIs` already were); feature-doc rows moved in two docs |
+| PR12 | `Av` | `ClimbMatchCore.jsx` | the round avatar with its online dot; 15 consumers (`ClimbMatch.jsx`, `RouteDetail.jsx`, 13 `lib/` files) AND core itself (16 uses), so core imports it back; reads `C`, `FALLBACK_AV`, `onImgErr` from core and `photoThumb` from `lib/photoThumb` at render time; only comments name it (`check:control-names`, four oneoff probes: an icon-only control is not NAMED by an `<Av/>`) |
+| PR11 | `DiscIcon` | `ClimbMatchCore.jsx` | the discipline glyph (13 SVG groups, moved verbatim by script); 13 consumers (`ClimbMatch.jsx`, `RouteDetail.jsx`, 11 `lib/` files, `DiscBadge.tsx` via `./DiscIcon.tsx`) AND core itself (13 uses), so core imports it back; `CAT` is read at render time through a `Record` annotation, as `DiscBadge` does; `d` is optional because callers pass a place's `disc`, which can be unset — an unknown key drew the rock icon before and still does; no guard, probe or feature doc names it |
+| PR10 | `ElevChart` | `ClimbMatchCore.jsx` | the elevation profile under the route map; a `memo` component (kept); ONE consumer (`RouteDetail.jsx`) and core never rendered it, so core does NOT import it back — the first move since PR4 with no cycle; reads `C` and `uElev` from core at render time; `docs/features/route-page.md` listed it under core and `check:feature-docs` asserts a symbol in the file its row names, so the row moved too |
+| PR9 | `ActionIcon` | `ClimbMatchCore.jsx` | the line-icon set (6 KB of SVG, moved verbatim by script); 15 consumers (`ClimbMatch.jsx`, `RouteDetail.jsx`, 10 `lib/` files, 3 `.tsx` components via `./ActionIcon.tsx`) AND core itself (13 uses), so core imports it back; `EnrichmentPanels.jsx`, `lib/FireMap.jsx` and `lib/FireNearRoute.jsx` take it as a PROP and did not change; `check:field-renders` imported it from core by path and now imports the `.tsx`; the if-chain body is unchanged — add an icon by adding a case |
 | PR8 | `Pill` | `ClimbMatchCore.jsx` | the rounded tag every badge is drawn with; its JSDoc `@param` seam became the interface; consumers `ClimbMatch.jsx`, `RouteDetail.jsx`, `lib/SafetyTab.jsx`, `lib/TripReport.jsx`, the three earlier `.tsx` components (now `./Pill.tsx`, not through core) AND core itself (7 uses), so core imports it back; `lib/PartnerSearch.jsx` imported it and never rendered it — import dropped; `lib/DbAreaBrowser.jsx` keeps a LOCAL copy (pre-existing duplicate, not touched) |
 | PR7 | `CountUp` | `ClimbMatchCore.jsx` | the animated counter; consumers `ClimbMatch.jsx`, `RouteDetail.jsx`, `lib/Leaderboards.jsx` AND core itself (one use), so core imports it back; it reads NOTHING from core (only React), so there is no seam to type; five guards and nine probes name it only in comments ("never assert on a CountUp number under SSR"), one probe matches a call site in `RouteDetail.jsx`, which did not move |
 | PR6 | `Lbl` | `ClimbMatchCore.jsx` | the emoji-to-icon label; ten consumers (`ClimbMatch.jsx`, `RouteDetail.jsx`, eight `lib/` files) AND core itself (20 uses), so core imports it back; the seam is typed on the JS side with a JSDoc `@type {Record<string, string>}` on `EMOJI_ICON`, not a cast; `check:control-names` and `check:popup-chrome` match `<Lbl` at the CALL SITES, which did not move |
@@ -61,23 +70,39 @@ the pipeline. Then the `App` render tree in `ClimbMatch.jsx`, which has **no inn
 every piece lifted out of it needs its props enumerated from the ~100 `useState` hooks it closes over.
 Take the leaves first (a card, a row, a header strip), never a whole tab in one PR.
 
-Last session stopped at: **PR8 — `Pill`.** (**Grep for the definition before starting a candidate**: the
-PR4 hand-off named `HelpDot`, which #2430 had already deleted.) One candidate is left in core band 2 by the
-same census (top-level definition; `<Name` uses per file; guards and `scripts/oneoff` probes naming it):
-`ActionIcon` (6 KB of SVG paths, ~80 uses across 19 files). Its guards, already read: `check:field-renders`
-IMPORTS it from `ClimbMatchCore.jsx` by path (L126) and passes it as a prop to the enrichment panels, as
-`EnrichmentPanels.jsx` does — that import must be repointed at the `.tsx` in the same PR, or the guard dies;
-`check:count-matches-its-list` matches the `ActionIcon name="bell"` call site; `check:control-names`,
-`check:dead-props` and `check:zero-state` name it only in comments; `inject-control-name-cases.mjs` swaps a
-`<Lbl>` for an `<ActionIcon>` at a call site. After it, the census moves to band 2's LARGER components (`ProvenancePanel`,
-`RouteGearCheck`, `ElevChart`, `GPXMap`) and then to `RouteDetail.jsx` — take the leaves first, as the
-conventions above say. A component that another extracted component renders is imported from its own
-folder (`./Pill.tsx`), never through core. A parent that still uses what it extracted
-imports the new file back — a cycle, and an accepted one: the parent's import is dropped by the
-stitch, and the component reads the parent's exports at render time only. A component that renders
-another extracted component imports it from its own folder (`./DiscBadge.tsx`), not through the parent.
-A guard that matches the component's TEXT (`check:profile-claims` on `TrustBadge`'s tooltip) still sees
-it through the stitch, but only if the moved body keeps the shape the regex expects — read the guard,
-and do NOT quote its anchor in the component's JSDoc: the regex matched the comment before the code
-(PR5 caught `title="…"` as the tooltip). Oneoff probes that bundle core and destructure the moved
-export off it break too (`probe-trust-tiers-onscreen.mjs`, PR5) — grep `scripts/oneoff` for the name.
+Last session stopped at: **PR17 — `MessageRow` + `TypingIndicator`** (the chat family, one consumer; the live-leaf list below is what remains, minus these two). A census of every component still defined in core (2026-10-16,
+`node` over core's top-level `function X(`/`const X=` with a JSX body; `<X` uses per file; guards naming each) found
+**75**. Thirteen are declared SEED-ONLY by `check:seed-only-surfaces` and render for nobody once `VITE_USE_DB=true`:
+`OverviewMap` (20 KB), `Guides` (25 KB), `GuideDashboard` (18 KB), `RouteFinder` (14 KB), `GuideApply`, `QuickMatch`,
+`AreaView`, `SuggestedClimbs`, `GettingThere`, `AreaLatest`, `ClassicClimbs`, `AreaBrowse`, `AreaCrags`, `AvailCal` —
+about 130 KB of core that no climber reaches. **Do not extract them**: moving dead code into a nicer file is not a
+clean-up. Deleting them is a product decision (CLAUDE.md: polish only, features need approval), so it is PROPOSED to the
+owner here, not done. Two more have NO consumer at all (`RSL`, `GH`) — confirm with a grep for a non-JSX use, then they
+can go in a polish PR. The LIVE leaves to extract next, smallest first, none named by a guard: `Hr`, `Stars`, `Bar`
+(one guard comment), `ShareExportRow`, `CardHead` (62 uses:
+`RouteDetail.jsx` 49, `AlpineConditionsCard.jsx` 12), `TopContribBadge`, `PhotoAltField`, `PullToRefresh`,
+`ReactionPicker`, `PhotoDescribeBox`, `RetryReminder`, `PlaceMatches`, `SectionJumps`, `MiniCalendar`, `SunCorrect`,
+`StartLocationForm`, `AreaRegionSelect`, `TopContributors`. Then the guarded panels (`TrustBreakdown`,
+`ReportStats`, `PhotoStrip`, `ItineraryEditor`, `RealClimberRow`, …) — read every guard named first. Conventions that
+held through PR5–PR15: a parent that still uses what it extracted imports the new file back (the stitch drops that
+import; the component reads the parent's exports at render time only); a component another extracted component renders
+is imported from its own folder (`./Pill.tsx`), never through core; a guard that IMPORTS a moved symbol from core by
+path is repointed in the same PR; a guard that matches the component's TEXT still sees it through the stitch only if
+the body keeps the shape (`check:waypoint-placement` anchors on `function GPXMap({pts,waypoints` — exact spelling) — and
+never quote that anchor in the component's JSDoc; an injection suite that edits the moved text is repointed at the
+`.tsx`; explain any measured count that DROPS (`check:chunk-reload` counts JSDoc `import("react")` types); a feature doc
+that lists the symbol under its old file must move it, or `check:feature-docs` fails; the stitch (`movedAsParentText`)
+requires exactly ONE `export default function` per moved file, so a `memo(...)` component becomes an inner
+implementation wrapped in `memo` behind an exported function (`ElevChart`, PR10); a seam TypeScript infers wrongly from
+JS is typed on the JS side with JSDoc (`useFollowMe`'s options, the `POP_*` styles, `EMOJI_ICON`, `PhotoAltField`),
+never cast in the component; a boolean cannot narrow its source, so derive the narrowed value (`track`, `pk`) and a type
+predicate for a JS test (`placed` over `wpPlaced()`); ESLint is a build guard since #2487 and a ratchet
+(`eslint-suppressions.json`): a new `.tsx` is CLEAN — no `any` (Leaflet's type is the one declared `LeafletAny` in
+`src/types/leaflet-global.d.ts`), no empty block, and an effect that keys on a signature by design carries a per-line
+`exhaustive-deps` disable WITH THE REASON — and when a move removes legacy findings from core, run
+`npx eslint . --prune-suppressions`; a module-level helper in a component must not share a name with one in core, or
+the stitched core will not PARSE (`escHtml`, PR13); before adding an export to core, check the export list by BUILDING —
+a duplicate name fails esbuild, not `tsc`; a 100+ line body is moved by a GENERATOR with asserted substitutions, never
+retyped; and after EVERY merge of `origin/main` into the branch, grep the tree again for
+`import … Name … from "…ClimbMatchCore.jsx"` and run `npm run lint` — a consumer can land on main between the census
+and the merge, and CI builds the PR merged with main (PR9).

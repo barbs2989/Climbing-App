@@ -1432,8 +1432,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Rock type**: the drying factor reads `routeRock()` (lib/rockType.js): a route's own `rock`,
     else its area's (`areas.rock`, 0248). `rock_basis='mapped'` is the bedrock at the crag's
     coordinate (scripts/derive-area-rock.mjs) and **agrees with what routes state on rock FAMILY
-    for 174 of 215 areas (81%)**, so §5 requires every place that renders `routeRock(route)` to
-    mark a mapped one. Do not drop the marker because "it is usually right": one in five is not.
+    for 174 of 215 areas (81%)**. Until 2026-10-15 §5 required a "(mapped)" marker wherever it
+    rendered; **the owner removed that word** (note item "Remove mapped word from rock type
+    mention"), matching Mountain Project / theCrag, which print a crag's rock with no qualifier.
+    §5 now fails if "(mapped)" comes back. `basis` still distinguishes the two in `routeRock()`.
   - **What it cannot see**: the drying hours per rock family (`DRY_HOURS`) are rules of thumb, not
     measurements, and the card says which rock it assumed. How a particular wall holds water is
     not modelled — seepage is only a risk from recent rain — and the card says so.

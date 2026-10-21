@@ -1,4 +1,5 @@
-import { CAT, DiscIcon } from "../../ClimbMatchCore.jsx";
+import { CAT } from "../../ClimbMatchCore.jsx";
+import DiscIcon from "./DiscIcon.tsx";
 import Pill from "./Pill.tsx";
 
 /** What a discipline or category entry carries that this badge reads. */

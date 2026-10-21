@@ -2,7 +2,10 @@
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
 import { clickable } from "./clickable";
 import { useState } from "react";
-import { ActionIcon, Av, C, DiscIcon, ME, ROUTES, catOf, fuzzyMatch, mutualCount, pubFirst, pubName, seedIdentity, useTrustLookup, vScore } from "../ClimbMatchCore.jsx";
+import { C, ME, ROUTES, catOf, fuzzyMatch, mutualCount, pubFirst, pubName, seedIdentity, useTrustLookup, vScore } from "../ClimbMatchCore.jsx";
+import Av from "../src/components/Av.tsx";
+import DiscIcon from "../src/components/DiscIcon.tsx";
+import ActionIcon from "../src/components/ActionIcon.tsx";
 import Lbl from "../src/components/Lbl.tsx";
 import { POP_CLOSE } from "./popupChrome.js";
 import { askConfirm } from "./ConfirmSheet.jsx";

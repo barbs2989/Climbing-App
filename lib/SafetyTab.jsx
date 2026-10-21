@@ -1,7 +1,9 @@
 // Moved out of ClimbMatchCore.jsx verbatim so it can load lazily, off the first-paint
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
 import { useState } from "react";
-import { ActionIcon, Av, C, DOW, FloatPlan, Questionnaire, RISK_LEVELS, SL, analyzeAlignment, floatPlanState, hasSlot } from "../ClimbMatchCore.jsx";
+import { C, DOW, FloatPlan, Questionnaire, RISK_LEVELS, SL, analyzeAlignment, floatPlanState, hasSlot } from "../ClimbMatchCore.jsx";
+import Av from "../src/components/Av.tsx";
+import ActionIcon from "../src/components/ActionIcon.tsx";
 import Pill from "../src/components/Pill.tsx";
 import RiskBadge from "../src/components/RiskBadge.tsx";
 import { POP_BACK } from "./popupChrome.js";
