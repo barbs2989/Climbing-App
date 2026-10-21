@@ -28,6 +28,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Sign out works offline**: when the logout request cannot reach the server, the app still signs this device out instead of saying "Signed out" over a session that came back on reload. See `docs/features/profile-and-settings.md`.
 - **Partners and Crews breathe**: the filter panels on Find partners and Join a crew start closed behind the Filters button, sections and cards get more room, and every crew card on the Crews tab starts collapsed to a summary with View plan. See `docs/features/partners.md` and `docs/features/logbook-crews-home.md`.
 - **Crew gear has quantities**: each item on a crew's gear list can say how many the crew wants, and each climber bringing it how many they bring (several can share one item; it counts as covered when the numbers add up). The card no longer suggests gear. Migration 0328. See `docs/features/logbook-crews-home.md`.
 - **Alpine start never mid-morning on a glacier; the day picker stays in view**: on glacier and alpine-ice routes the Conditions start is never later than one that has the party back off the snow by noon (Easton on a cold day read "leave camp by 7:30 AM"; now about 1:30 AM, with the forecast's later limit and the route's usual start beside it). The day strip sticks to the top while you scroll the hour-by-hour and other sections. See `docs/features/conditions.md`.
