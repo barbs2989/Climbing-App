@@ -23,6 +23,14 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Climb rows** (`RouteRow`, every route list in the browser): name, stars, discipline, then the **pitch count** ("Trad · 5 pitches",
   Mountain Project's order; the stored `routes.pitches`, as the route page's Pitches stat shows it; none on a boulder or with no count stored),
   the crag's left-to-right number, and the grade at the right. `useAreaRoutes`' thin row selects `pitches` for it.
+- **Sorting a crag's own climb list** (`AREA_LIST_SORTS` / `sortAreaRoutes`, leaf areas only): chips over the list read **Left → right**
+  (default, as Mountain Project and theCrag list a wall), **Right → left**, **A → Z**, **Z → A**. The wall orders read `routes.sort_order` and are
+  offered only when at least one climb in the list has one; climbs without a position go last, by name, under a line counting them.
+  Coverage, measured 2026-10-21: **1 of 314,360 routes** has a `sort_order` — neither import kept it (the OpenBeta ETL dropped
+  `metadata.leftRightIndex`; Mountain Project's route-finder CSV has no position). The owner's reference for the order is
+  **Mountain Project** (2026-10-21: it holds more routes than OpenBeta): an MP area page lists its climbs left to right, so the
+  backfill is a crawl of MP leaf-area pages (under the same permission and 61 s crawl delay as `scripts/pipeline/fetch-rock-boulder.mjs`),
+  a separate, catalog-wide data job. OpenBeta's `leftRightIndex` (999999 = unknown) is MP's order copied at OpenBeta's import, a partial fallback.
 - **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - discipline, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { disc, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.
