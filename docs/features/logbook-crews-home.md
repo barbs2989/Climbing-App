@@ -35,6 +35,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   per-member day acks and a "Ready" state (`datesAgreed`/`agreedDate`). Every surface that names a crew resolves its place through `crewPlace` (`placeTrip`, `placeCap`,
   `placeLabel`, `placeSub`, `placeMatchesLog`), wrapped by App as `placeOf`; `check:crew-place` holds every reader on it.
   Each crew renders as `CrewCard`: members, invite (by profile or email), itinerary, `CrewGearList` (who brings what), meet time/place, float plan.
+  Every card starts COLLAPSED (`collapsed={!isOpen}` in App; `openCrewId` is set only by `openCrewCard` and the create flows): the header, Log the climb, join requests, Steps to get ready, Crew chat and **View plan ▾**. View plan opens the rest; a link that names a crew opens that one.
   Crew chat and direct messages (`useCrewMessages`, `useDirectMessages`); unread counts via `countCrewUnread`; `Inbox` and `NotifPanel` surface them.
 - **Past crews** (#2395): a crew whose day has passed, that has a log tied to it, or that was dismissed counts as past (`isArchivedCrew`).
   Past-crew members can be vouched for (`GiveVouch`, `givenVouches`). **Archive** and **Clear** (`archiveCrew`, `clearPastCrew`) only hide the crew
