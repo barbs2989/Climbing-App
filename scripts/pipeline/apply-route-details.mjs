@@ -3,7 +3,7 @@
 //
 //   node scripts/pipeline/apply-route-details.mjs <state> <out.json> [--apply]
 //
-// <out.json> is { id: { overview?, detailed_rack?, fa? } } written by the rewrite step; the matching
+// <out.json> is { id: { overview?, detailed_rack?, location?, fa? } } written by the rewrite step; the matching
 // in-NNN.json (same directory, same number) holds the source text the check compares against.
 // A field is REFUSED (and reported) when it:
 //   - repeats any 4 consecutive words of its source (numbers and short names excepted), or
@@ -21,7 +21,7 @@ const [state, outFile] = process.argv.slice(2).filter((a, i, all) => a !== "--dr
 const APPLY = process.argv.includes("--apply");
 if (!state || !outFile) { console.error("usage: apply-route-details.mjs <state> <out.json> [--apply]"); process.exit(1); }
 const KEY = requireServiceKey(), H = { apikey: KEY, Authorization: "Bearer " + KEY, "Content-Type": "application/json" };
-const CAP = { overview: 700, detailed_rack: 280, fa: 120 };
+const CAP = { overview: 700, detailed_rack: 280, location: 160, fa: 120 /* routes_location_len (0243) */ };
 
 const inFile = process.env.IN || join(dirname(outFile), basename(outFile).replace(/^out-(?:[a-z_]+-)?/, "in-"));
 const inputs = new Map(JSON.parse(readFileSync(inFile, "utf8")).map(r => [r.id, r]));
@@ -51,7 +51,7 @@ const problems = (field, val, src) => {
   }
   return p;
 };
-const srcOf = (r, f) => f === "overview" ? r.src.desc : f === "detailed_rack" ? r.src.prot : r.src.fa;
+const srcOf = (r, f) => f === "overview" ? r.src.desc : f === "detailed_rack" ? r.src.prot : f === "location" ? r.src.loc : r.src.fa;
 
 // --drop <verify.json>: a list of { id, field, problem } from the fact-check pass; those fields are never written.
 const dropped = new Set((dropFile ? JSON.parse(readFileSync(dropFile, "utf8")) : []).map(d => d.id + "|" + d.field));
@@ -75,7 +75,7 @@ const byRow = new Map();
 for (const x of ok) (byRow.get(x.id) || byRow.set(x.id, {}).get(x.id))[x.f] = x.v;
 let wrote = 0, skipped = 0;
 for (const [id, patch] of byRow) {
-  const cur = (await (await fetch(`${SUPABASE_URL}/rest/v1/routes?select=overview,detailed_rack,fa&id=eq.${encodeURIComponent(id)}`, { headers: H })).json())[0];
+  const cur = (await (await fetch(`${SUPABASE_URL}/rest/v1/routes?select=overview,detailed_rack,location,fa&id=eq.${encodeURIComponent(id)}`, { headers: H })).json())[0];
   if (!cur) { skipped++; continue; }
   const set = {};
   for (const [f, v] of Object.entries(patch)) if (f === "fa" ? /^(?:|unknown|\?+|n\/?a)$/i.test(String(cur.fa || "").trim()) : !cur[f]) set[f] = v;
@@ -88,7 +88,7 @@ for (const [id, patch] of byRow) {
 let bad = 0;
 for (const [id, patch] of byRow) {
   if (!patch.__set) continue;
-  const cur = (await (await fetch(`${SUPABASE_URL}/rest/v1/routes?select=overview,detailed_rack,fa&id=eq.${encodeURIComponent(id)}`, { headers: H })).json())[0];
+  const cur = (await (await fetch(`${SUPABASE_URL}/rest/v1/routes?select=overview,detailed_rack,location,fa&id=eq.${encodeURIComponent(id)}`, { headers: H })).json())[0];
   for (const [f, v] of Object.entries(patch.__set)) if (cur?.[f] !== v) { bad++; console.log(`  MISMATCH ${id} ${f}`); }
 }
 console.log(`wrote ${wrote} rows, skipped ${skipped} (slot already filled), re-read mismatches ${bad}`);

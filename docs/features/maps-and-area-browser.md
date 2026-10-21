@@ -38,6 +38,20 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   Ours that MP does not list are **ANCHORED** right of their nearest left-hand neighbour in OpenBeta's older copy of MP's order, else
   **UNPLACED** (empty, listed last). Positions are renumbered 1..n. Dry run by default; `--apply` writes and reads back.
   First run, 2026-10-21: The Uberfall – left (Gunks), 45 matched, 3 added, 3 anchored, 1 for review, 6 unplaced (MP places 45 of 51).
+  - **Whole state** (`--state <slug>`, resumable through `catalog/_mp/_order/<state>.jsonl`): every MP wall with a rock route
+    (roped, not tagged Ice/Mixed/Snow — MP keeps a parallel "Ice & Mixed" tree under the same crag names) is matched to the area of
+    ours its routes vote for (MP-id map, else a name unique in the state; ≥60% of votes). Two MP walls voting for one area: the one
+    with twice the votes keeps it, else both are logged `shared`. Only 5.x climbs are added (MP files slides as Trad). An add is NOT
+    made when the id map files it on another wall of ours (`ELSEWHERE`), its name contains or sits inside an unmatched name on the
+    wall, MP repeats the name, it names the wall itself, or `refuse_duplicate_route` (0216) refuses it — those go on the review list.
+    Walls only ordered, never sub-areas (owner: ordering walls is too confusing).
+  - **Added climbs get full details**: `--state <slug> --facts --apply` reads each added climb's route page and stores length,
+    pitches, GPS and the star average where empty; `extract-route-details.mjs <state> --adds` batches the description, protection,
+    location and first ascent for REWRITING (under `_details/<state>/adds/`), and `apply-route-details.mjs` refuses any field that
+    repeats four words of the page. Nothing is stored as fetched.
+  - New York, 2026-10-21: 406 walls ordered (3,780 matched, 68 anchored, 102 unplaced), 25 climbs added, 11 adds refused by the
+    duplicate trigger (all on near-duplicate walls of ours, e.g. "The Guides' Wall" beside "The Guides' Wall (Madame G's)"),
+    21 for review, 6 walls skipped (2 shared, 3 with no area of ours, 1 split).
 - **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - discipline, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { disc, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.
