@@ -16,6 +16,7 @@
 import { createContext } from "react";
 import { C } from "../ClimbMatchCore.jsx";
 
+/** @type {import("react").Context<{ levels?: Record<string, string>, routeId?: unknown, onFlag?: ((key: string, label: unknown) => void) | null } | null>} */
 export const ConfidenceCtx = createContext(null);
 
 export const HEAD_KEYS = {

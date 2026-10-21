@@ -46,6 +46,7 @@ extraction.** No guard reads this file; keeping it true is on the author.
 |---|---|---|---|
 | PR1 | `RiskBadge` | `ClimbMatchCore.jsx` | the smoke test for the pipeline; consumer `lib/SafetyTab.jsx`; `Pill` got its JSDoc seam |
 | PR1 | _infrastructure_ | — | `src/components/`, `tsconfig.json`, `check:types`, TS-aware guards, `measure-guard-reach` |
+| PR19 | `CardHead` | `ClimbMatchCore.jsx` | the card heading (62 uses: `RouteDetail.jsx` 48, `lib/AlpineConditionsCard.jsx` 12, core 3 — so core imports it back); it was a direct `export const`, so no export-list entry; reads `C` and the confidence helpers (`ConfidenceCtx`, `headKey`, `ConfChip` from `lib/confidence.jsx`) at render time; the seam typed on the JS side: `ConfidenceCtx` was `createContext(null)` and gets a JSDoc `@type` for its value; `Object.assign({…}, style)` became a style spread for `CSSProperties`; the feature-doc row in `route-quality-control.md` moved. NOT unified: `lib/DbAreaBrowser.jsx` and `EnrichmentPanels.jsx` keep their own `CardHead` copies ON PURPOSE (neither may import core) — unifying them means a palette PROP, as the skeletons take, which changes 60 call sites: a follow-up, not a move |
 | PR18 | `Hr`, `Stars`, `Bar` | `ClimbMatchCore.jsx` | three one-line presentational primitives (a rule, a star row, a progress bar) in one PR — each its own file and job; core renders all three, so it imports them back; consumers `RouteDetail.jsx` (all three) and `lib/TripReport.jsx` (`Stars`); `Stars` drops a no-op `"".repeat(…)` the original carried; the one script that names `Bar` matches boulder names ("12-Bar Boulder"), not the component |
 | PR17 | `MessageRow`, `TypingIndicator` | `ClimbMatchCore.jsx` | the chat bubble (one 3.3 KB line, moved by SCRIPT) and the "… is typing" line — one job family, one consumer (`ClimbMatch.jsx`), core never rendered either — no cycle; the bubble reads `C`/`photoAlt`/`relTime` from core, the report helpers from `lib/reportBus` and `clickable` from `lib/clickable` directly, and `Av` from its own folder; the message shape is typed as `ChatMessage`; no guard, probe or feature doc names them |
 | PR16 | `ScreenSkeleton`, `OverlaySkeleton` | `ClimbMatchCore.jsx` | the two loading placeholders a lazy screen / overlay shows while its chunk arrives — one job family, one consumer (`ClimbMatch.jsx`, 12 + 10 uses), core never rendered either — no cycle; both take the palette as a prop (`C: typeof Palette`, a type-only import of core's `C`); their `//` comments moved with them as the JSDoc; no guard, probe or feature doc names them |
@@ -71,7 +72,7 @@ the pipeline. Then the `App` render tree in `ClimbMatch.jsx`, which has **no inn
 every piece lifted out of it needs its props enumerated from the ~100 `useState` hooks it closes over.
 Take the leaves first (a card, a row, a header strip), never a whole tab in one PR.
 
-Last session stopped at: **PR18 — `Hr` + `Stars` + `Bar`** (three one-line primitives in one PR; the live-leaf list below is what remains, minus these three). A census of every component still defined in core (2026-10-16,
+Last session stopped at: **PR19 — `CardHead`** (the live-leaf list below is what remains, minus it). A census of every component still defined in core (2026-10-16,
 `node` over core's top-level `function X(`/`const X=` with a JSX body; `<X` uses per file; guards naming each) found
 **75**. Thirteen are declared SEED-ONLY by `check:seed-only-surfaces` and render for nobody once `VITE_USE_DB=true`:
 `OverviewMap` (20 KB), `Guides` (25 KB), `GuideDashboard` (18 KB), `RouteFinder` (14 KB), `GuideApply`, `QuickMatch`,
@@ -79,8 +80,7 @@ Last session stopped at: **PR18 — `Hr` + `Stars` + `Bar`** (three one-line pri
 about 130 KB of core that no climber reaches. **Do not extract them**: moving dead code into a nicer file is not a
 clean-up. Deleting them is a product decision (CLAUDE.md: polish only, features need approval), so it is PROPOSED to the
 owner here, not done. Two more have NO consumer at all (`RSL`, `GH`) — confirm with a grep for a non-JSX use, then they
-can go in a polish PR. The LIVE leaves to extract next, smallest first, none named by a guard: `ShareExportRow`, `CardHead` (62 uses:
-`RouteDetail.jsx` 49, `AlpineConditionsCard.jsx` 12), `TopContribBadge`, `PhotoAltField`, `PullToRefresh`,
+can go in a polish PR. The LIVE leaves to extract next, smallest first, none named by a guard: `ShareExportRow`, `TopContribBadge`, `PhotoAltField`, `PullToRefresh`,
 `ReactionPicker`, `PhotoDescribeBox`, `RetryReminder`, `PlaceMatches`, `SectionJumps`, `MiniCalendar`, `SunCorrect`,
 `StartLocationForm`, `AreaRegionSelect`, `TopContributors`. Then the guarded panels (`TrustBreakdown`,
 `ReportStats`, `PhotoStrip`, `ItineraryEditor`, `RealClimberRow`, …) — read every guard named first. Conventions that

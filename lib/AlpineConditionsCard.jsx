@@ -4,7 +4,8 @@
 // climber's own units. The crag score (ConditionsScoreCard) is a different card for different
 // disciplines -- the two never render on one route.
 import { useState, useEffect, useMemo } from "react";
-import { C, DLOCALE, CardHead, ROUTE_GAP, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, uImp, uDistMi, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
+import { C, DLOCALE, ROUTE_GAP, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, uImp, uDistMi, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
+import CardHead from "../src/components/CardHead.tsx";
 import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread, fetchCragAir, fetchPointAlerts, fetchGaugeSites, fetchGaugeFlow } from "./forecast.js";
 import { parseSites, nearestGauge, flowReading, gaugeName, STEADY_PCT, STEADY_STAGE_FT } from "./streams.js";
 import { condKind, hasSnowLegs, localDays, localHour, localAt, windChillF, airDay, aqiWord, smokeFlag, normAlerts, alertsForDay, alertLevel, fogHours, snowHistory, snowLevel, dayFlags, daySummary, rangeNote, todayOf, snowFloorFt, LIMITS, modelSpread, wholeDayLegs } from "./alpineConditions.js";

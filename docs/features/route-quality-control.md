@@ -65,7 +65,7 @@ empty field fills at once and two climbers who agree are enough to change one (0
   warned / restricted-until / banned with the reason and an Appeal button (kind `contributing`).
 
 - **The level on the page** (`lib/confidence.jsx`): App provides `ConfidenceCtx` ({levels, routeId,
-  onFlag}) around `RouteDetail`; the shared heading components `SL` and `CardHead` (core) map their
+  onFlag}) around `RouteDetail`; the shared heading components `SL` (core) and `CardHead` (`src/components/CardHead.tsx`) map their
   text to a form key through `headKey` / `HEAD_KEYS` and render `ConfChip` (High · locked / Medium /
   Low, with a ⚑ Flag button — the only place it renders); `ConfidenceLegend` explains the three levels once under the
   verification note. Every pencil on the page goes through `openFix` in `RouteDetail.jsx`: a HIGH
@@ -130,7 +130,8 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `lib/RouteQualityQueues.jsx` | `FieldContributionQueue`, `RouteFlagQueue`, `ContributorStandingQueue` |
 | `lib/confidence.jsx` | `ConfidenceCtx`, `HEAD_KEYS`, `headKey`, `ConfChip`, `ConfidenceLegend` |
 | `lib/FlagRouteInfo.jsx` | `FlagRouteSheet` |
-| `ClimbMatchCore.jsx` | `SL`, `CardHead` (render the chip on a route page) |
+| `ClimbMatchCore.jsx` | `SL` (renders the chip on a route page) |
+| `src/components/CardHead.tsx` | `CardHead` (the card heading; renders the chip on a route page — extracted from core, PR19) |
 | `lib/SafetyNotices.jsx` | `ContributionStandingNotice`, `AppealSheet` |
 | `ClimbMatchCore.jsx` | `sameEditValue` (clustering), the "Your contributions" ledger (`ST` statuses) |
 | `lib/db.js` | `submitContribution`, `useRouteContributions`, `useRouteFieldConfidence`, `setRouteFieldConfidence`, `useFieldContributions`, `approveFieldContribution`, `rejectFieldContribution`, `useMyContributionStanding`, `useContributionStandings`, `setContributionStanding`, `fileRouteFlag`, `useMyRouteFlags`, `useOpenRouteFlags`, `resolveRouteFlag`, `useMyNotices`, `markNoticeRead`, `useAdminQueueCounts`, `useContributionFields`, `useRouteRowsByIds` |
