@@ -144,7 +144,6 @@ export function realAuthor(aid){return (aid&&REAL_AUTHORS[aid])||null;}
    computed before the authors landed. */
 export function useRealAuthors(ids){var u=Array.from(new Set((ids||[]).filter(function(id){return typeof id==="string";}))).sort();var key=u.join(",");var sq=usePartnerSignals(u,u.length>0);var vq=useVerifiedUsers(u);
   return useMemo(function(){var n=0;u.forEach(function(id){var sg=sq.data&&sq.data[id];var v=vq.data?vq.data.has(id):undefined;if(!sg&&v===undefined)return;REAL_AUTHORS[id]=Object.assign({},REAL_AUTHORS[id],sg?{level:sg.level,years:yearsSince(sg.since)}:{},v!==undefined?{verified:v}:{});n++;});return key+"#"+n;},[key,sq.data,vq.data]);}
-let VOUCH_BOOST={};
 let MY_STARS={};
 let RESPONSE_RATES={};
 /* THE PACE THE CLIMBER SET, pushed in from App. `mySpeedFtHr` is App state; the sign-in
@@ -152,7 +151,7 @@ let RESPONSE_RATES={};
    match" toggle -- both of which read ME -- saw no pace however many times a real account
    set one. Signed OUT the demo ME carries a seeded pace, so both worked; only a real
    account was affected. Same App->core bridge as RESPONSE_RATES, and the same id-keyed
-   supplement shape as VOUCH_BOOST, rather than extending the ME.* sync hack CLAUDE.md
+   supplement shape, rather than extending the ME.* sync hack CLAUDE.md
    says not to extend. */
 let MY_PACE=null;
 function __set_MY_PACE(v){MY_PACE=v;}
