@@ -32707,3 +32707,41 @@ sources); Luna Peak's Southwest Ridge and Lundin Peak's Southeast Ridge (near-em
 nothing to check); Lundin Peak's West Ridge (elevation matches its own area row exactly).
 
 Pass 7 continues next run after `wa_lundin_peak_west_ridge`.
+
+## 2026-10-21 — Pass 7, Batch 421
+
+Eight routes across 4 peaks: Magic Mountain (North Face, Northeast Couloir, South Ridge/Southeast
+Slopes, West Ridge), Martin Peak (West Ridge), Morning Star Peak (Marvin's Ear, on Vega Tower),
+and West McMillan Spire (Southwest Ridge, West Ridge/Southwest Approach).
+
+1 confirmed error fixed (audits/sql/2026-10-21-batch-421.sql): Magic Mountain South Ridge's own
+`beta` field opened by saying the route descends ~600 ft from Kool-Aid Lake before climbing to
+the 7,100 ft col — but that descent is the Cache Col → Kool-Aid Lake leg, already correctly
+described earlier in this same row's `approach` field. From Kool-Aid Lake itself, this row's own
+`approach`/`overview` and the Mountaineers' route page both agree the route climbs directly (no
+descent) ~1,000 ft to the col; `beta` had duplicated the already-completed descent onto the wrong
+leg. Corrected to match.
+
+2 flagged for human review: West McMillan Spire's elevation is stored as 8,004 ft (area row and
+both routes' high_point_ft), but Mountain Project, SummitPost, the WTA route page and other trip
+reports consistently give 8,000 ft for this specific spire — 8,004 ft shows up in one WTA trip
+report and may be the figure Wikipedia's "McMillan Spire" article gives for the taller of the
+twin spires, so sources themselves split between a rounded 8,000 and a precise 8,004; left
+unchanged rather than guessing which convention the DB should follow. (The Southwest Ridge
+route's own summit waypoint already stores 8,000 ft, inconsistent with its own high_point_ft of
+8,004 — same ambiguity, not touched.) Separately, the Southwest Ridge route itself (5.8-, 6
+pitches) could not be independently located in any source checked — a SummitPost summary of
+Beckey's guide names only a North Face (5.6, 1966), Southeast Face (5.7, 1970) and South Face
+(class 4/5, 1951) for this peak; not contradicted, just unverified.
+
+6 clean: Magic Mountain's elevation (7,610 ft) and its South Ridge's 1938 FA (Calder Bressler,
+Ray W. Clough, Bill Cox, Tom Myers — the Ptarmigan Traverse's own first party) both matched
+Wikipedia exactly, confirming rather than contradicting the stored "Ray Clough"; Martin Peak's
+elevation (8,509 ft) and FA (Ida Zacher Darr, solo, July 1936) both matched Wikipedia/PeakVisor
+exactly; Marvin's Ear's FA (Morgan & Sheila Zentler, Sept 16 2017, with Imran Rahman having
+helped equip the line earlier that season) matched Zentler's own 2018 AAC Publications account;
+and West McMillan Spire's West Ridge FA (Fred & Helmy Beckey, 1940) is corroborated by
+Mountaineers/AAC obituary pieces crediting the West Spire to both brothers on their 1940 Pickets
+trip (the exact day, August 29, wasn't independently found but wasn't contradicted either).
+
+Pass 7 continues next run after `wa_mcmillan_spire_west_west_ridge`.
