@@ -22,6 +22,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
   with a 10-500 mi radius slider (steps of 5, debounced 400 ms). Others see a **distance only**, never a zip.
 - **Filters** (all narrow the real lists as well as the example profiles): Discipline, Experience (level), Min trust
   (slider max 80), Speed match, Available to climb (Weekend AM / Weekend PM / Weekday AM / Weekday PM / Flexible), Max distance (examples).
+  The panel starts CLOSED behind the Filters button (its badge counts the active filters), on Find partners and on Join a crew alike, so the results come first.
   A filter that empties a list says so; a failed signals read says the list is not narrowed by experience/trust.
 - **Rows**: real climbers render as `RealClimberRow` (match %, verified tick, shared objectives, and a "Listed at Hellgate · Sport · free Oct 18–19"
   line — "Listed across Utah" for an ancestor match); example climbers render as full cards

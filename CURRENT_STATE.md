@@ -29,6 +29,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
 - **Hour by hour charts scroll freely on a phone**: a swipe across a Conditions chart scrolls the page and no longer changes the boxes above it; tap an hour, or touch and hold then slide, to read it. See `docs/features/conditions.md`.
+- **Partners and Crews breathe**: the filter panels on Find partners and Join a crew start closed behind the Filters button, sections and cards get more room, and every crew card on the Crews tab starts collapsed to a summary with View plan. See `docs/features/partners.md` and `docs/features/logbook-crews-home.md`.
 - **Crew gear has quantities**: each item on a crew's gear list can say how many the crew wants, and each climber bringing it how many they bring (several can share one item; it counts as covered when the numbers add up). The card no longer suggests gear. Migration 0328. See `docs/features/logbook-crews-home.md`.
 - **Alpine start never mid-morning on a glacier; the day picker stays in view**: on glacier and alpine-ice routes the Conditions start is never later than one that has the party back off the snow by noon (Easton on a cold day read "leave camp by 7:30 AM"; now about 1:30 AM, with the forecast's later limit and the route's usual start beside it). The day strip sticks to the top while you scroll the hour-by-hour and other sections. See `docs/features/conditions.md`.
 - **"Quality" says what it means**: a route's guidebook stars read **Star rating**, not "Quality", and the rock report-tag group reads **Rock quality**. See `docs/features/route-page.md`.
@@ -75,7 +76,8 @@ Newest first. Keep about 15 lines; older entries live in the PRs and the commit 
 - **Area page order**: areas/climbs list → *Don’t see a climb?* → suggested climbs → nearby peaks → Top contributors → Discussion. Discussion now renders on areas with no coordinate (Florida’s Artificial Boulders); *Partners here*’s dates/types control is a real card button (it had no style at all).
 - **RACK is rack-only, every state** — ~400 WA + ~140 other-state routes re-homed (ice axe, crampons, helmet, boots out of `detailed_rack`/`pro_needs`/`rack` into `what_to_bring`), `DISC_RACK` stripped to protection and ropes, `routeRackFor` splits every source and `rackLeftovers` feeds GEAR & ESSENTIALS; `audit:rack-items`.
 - **Objectives chips** Alpine is the left-most discipline chip; Mountaineering and Aid are their own chips instead of folding into Alpine and Trad (`lib/ListsManager.jsx`).
-- **PR17** `MessageRow` and `TypingIndicator` extracted to `src/components/` (one consumer; core never rendered them, so no import back).
+- **PR18** `Hr`, `Stars` and `Bar` extracted to `src/components/` (core renders all three and imports them back).
+- **#2520** `MessageRow` and `TypingIndicator` extracted to `src/components/` (one consumer; core never rendered them, so no import back).
 - **#2509** `ScreenSkeleton` and `OverlaySkeleton` extracted to `src/components/` (one consumer each; core never rendered them, so no import back).
 - **#2503** `ChatComposer` extracted to `src/components/ChatComposer.tsx` (one consumer; core never rendered it, so no import back).
 - **#2501** `SwipeRow` extracted to `src/components/SwipeRow.tsx` (three consumers; core never rendered it, so no import back).
