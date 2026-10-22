@@ -74,9 +74,10 @@ export function WideSearch({ onOpenRoute, onOpenArea }) {
   </div>;
 }
 
-/* RIGHT RAIL. Widgets drawn from what App already holds — the next agreed crew days, unread alerts and
-   the Best-day shortcut. Ads, when they come, take slots in this column (desktop only). */
-export function WideRail({ upcoming, alerts, onOpenCal, onOpenAlerts, onBestDay, onFindPartners }) {
+/* RIGHT RAIL. Widgets drawn from what App already holds — the next agreed crew days and unread alerts.
+   Best day to climb is NOT here (owner, 2026-10-21): it opens from the Menu's tile. Ads, when they
+   come, take slots in this column (desktop only). */
+export function WideRail({ upcoming, alerts, onOpenCal, onOpenAlerts, onFindPartners }) {
   const unread = alerts.filter(n => !n.read);
   return <aside aria-label="Highlights" style={{ display: "flex", flexDirection: "column", gap: 14 }}>
     <section aria-labelledby="rail-upcoming" style={CARD}>
@@ -90,11 +91,6 @@ export function WideRail({ upcoming, alerts, onOpenCal, onOpenAlerts, onBestDay,
       <div id="rail-alerts" style={{ ...SECTION, marginBottom: 6 }}>{unread.length ? "Alerts · " + unread.length + " new" : "Alerts"}</div>
       {unread.length ? unread.slice(0, 3).map(n => <button key={n.id} onClick={onOpenAlerts} style={{ ...ROW, alignItems: "flex-start" }}><span aria-hidden="true" style={{ width: 7, height: 7, marginTop: 6, borderRadius: 4, background: C.blue, flexShrink: 0 }}/><span style={{ fontSize: 13, lineHeight: 1.4, color: C.text, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{n.text}</span></button>) : <div style={{ fontSize: 13, color: C.textMuted, padding: "2px 2px 4px" }}>You’re all caught up.</div>}
       {alerts.length ? <button onClick={onOpenAlerts} style={{ marginTop: 4, padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>See all alerts ›</button> : null}
-    </section>
-    <section aria-labelledby="rail-bestday" style={CARD}>
-      <div id="rail-bestday" style={{ ...SECTION, marginBottom: 6 }}>Best day to climb</div>
-      <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.45, marginBottom: 8 }}>The week’s conditions scored for your saved crag climbs.</div>
-      <button onClick={onBestDay} style={{ width: "100%", padding: "9px 12px", borderRadius: 10, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: "pointer" }}>Compare days</button>
     </section>
   </aside>;
 }

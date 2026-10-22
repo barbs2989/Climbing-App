@@ -59,7 +59,7 @@ const CASES = [
     why: "the formatter still converts and the call site stops handing it the helpers, so " +
          "`uElevUnit()` is undefined and the panel throws. NEITHER DIRECTION of check:dead-props " +
          "sees this — the component reads the prop, and the call site passes nothing unread",
-    edit: (s) => s.replace('C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} />', "C={C} presetDisc={finderDisc} />"),
+    edit: (s) => s.replace('C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} ', "C={C} presetDisc={finderDisc} "),
     expect: "fail",
     must: /passes them down to the finder panel/,
   },
@@ -67,8 +67,8 @@ const CASES = [
     name: "panel-stops-destructuring",
     why: "the other end of the same link — the panel stops taking the props while the call site " +
          "still sends them, which is silent to every other guard in the chain",
-    edit: (s) => s.replace("function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc })",
-      "function RouteFinderPanel({ scope, onOpen, onJumpToArea, C })"),
+    edit: (s) => s.replace("function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, ",
+      "function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, presetDisc, "),
     expect: "fail",
     must: /RouteFinderPanel destructures them/,
   },
