@@ -221,6 +221,17 @@ try {
     fail(`stateCatalogLine: the flag suppressed or overwrote a count already in hand — "${populated}"`);
   }
 
+  /* STILL LOADING is the third answer. The states read can take seconds; while it is in flight
+     Manage areas filled the gap from the seed tree, so 46 of 50 read "No climbs in the catalog",
+     dimmed and untappable, until it landed (owner: "can't view them all now", 2026-10-22). */
+  ran++;
+  const loading = stateCatalogLine(0, "Montana", false, "", true);
+  if (!loading.includes(SOON) && /loading/i.test(loading)) {
+    ok("stateCatalogLine: a states read still in flight says it is loading, not that there is no catalog");
+  } else {
+    fail(`stateCatalogLine: a read still in flight reads as a state with no catalog — "${loading}"`);
+  }
+
   ran++;
   if (stateCatalogLine(1, "Utah", false, "").includes("1 climb in the catalog")) {
     ok("stateCatalogLine: singular stays singular");
@@ -237,6 +248,14 @@ try {
      "App no longer computes the flag from the states query"],
     ["ClimbMatch.jsx", "stateCatalogLine(cnt,nm,statesUnavailable,",
      "the Manage areas line no longer goes through stateCatalogLine with the flag"],
+    ["ClimbMatch.jsx", "const statesLoading=!!(USE_DB&&dbStatesQ&&!dbStatesQ.data&&!dbStatesQ.isError);",
+     "App no longer computes the loading flag from the states query"],
+    ["ClimbMatch.jsx", ",statesLoading)}</div>",
+     "the Manage areas line no longer passes the loading flag to stateCatalogLine"],
+    /* With the database on, a state's count is the DATABASE's or nothing: the seed tree holds four
+       states, and Washington's one seed climb read as "1 climb in the catalog" during an outage. */
+    ["ClimbMatch.jsx", "var cnt=USE_DB?(dbSt?(dbSt.route_count||0):0):",
+     "Manage areas counts a state from the seed tree again while the database is on"],
   ];
   for (const [f, needle, why] of CHAIN) {
     ran++;
