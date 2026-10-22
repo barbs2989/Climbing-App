@@ -351,8 +351,14 @@ export function screenOverlays(appCode) {
     if (!declared.has(m[1])) declared.set(m[1], m.index);
   const found = [];
   const seen = new Set();
-  for (const m of appCode.matchAll(/if\(([a-zA-Z][\w$]*)\)return\s*</g)) {
-    const name = m[1];
+  // Two spellings of one screen. `if(x)return <…>` is the phone-only form. Since the desktop
+  // shell draws these screens INSIDE the page column (lib/wideLayout.js, desktop phase 2a), App
+  // builds each as `const _vX=x?<>…</>:null` and returns it alone only on a phone — the same
+  // screen, behind the same state. Reading only the first spelling dropped `legal` and
+  // `editDraft` out of every overlay guard at once (check:zero reported them as rendering no
+  // dialog), which is the silent-shrink this list exists to prevent.
+  for (const m of appCode.matchAll(/if\(([a-zA-Z][\w$]*)\)return\s*<|const _v[A-Z][\w$]*=([a-zA-Z][\w$]*)\?</g)) {
+    const name = m[1] || m[2];
     if (!declared.has(name) || seen.has(name)) continue;
     seen.add(name);
     found.push({ name, setter: "set" + name[0].toUpperCase() + name.slice(1), at: declared.get(name), kind: "screen", evidence: "App early-return screen" });
