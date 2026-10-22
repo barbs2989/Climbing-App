@@ -27,6 +27,8 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+
+- **Another climber's résumé is no longer empty**: the example climbers' *View climbing résumé* (and their card's *N climbs* chip) opened a résumé reading "0 climbs"; they now list notable climbs from the seed routes in their disciplines. See `docs/features/profile-and-settings.md`.
 - **View public profile shows your pace and belay devices**: `meLive` reads `mySpeedFtHr` and the profile's safety fields directly; your own Objectives tab says others see it and no longer marks every row "You both want this!"; the Certifications & Skills card opens Edit profile.
 - **KNOWN HAZARDS: a compact ✎ Edit, not a big Suggest a fix**: the Safety tab's hazards card used a full-size red button beside its heading; it now uses the small ✎ Edit every other route-page card header has (same form, same action).
 - **Search your friends list**: *See all friends* now always opens with a *Search friends* box (name or @handle) — it used to appear only past four friends — with a clear ✕; while a query is typed the activity feed steps aside so the matches sit under the box. See `docs/features/logbook-crews-home.md`.
