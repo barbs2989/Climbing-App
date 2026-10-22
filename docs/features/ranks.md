@@ -48,7 +48,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
   or pairing 1 (once per route; a pairing per pair). Pending and rejected work scores 0. Each item sits in its area,
   and a board sums the points of its area and EVERY place inside it (`path <@`), so a route edit counts on the crag,
   the area, the state and the country. On Ranks By area only that area's points count, and a climber who
-  contributed there without logging a climb there is listed. Trip reports do not count (private to their author).
+  contributed there without logging a climb there is listed. Since 0338 a logged climb (1, once per route) and a trip report (2, once per route per month) count too, only when shared with Everyone.
   Weights follow Mountain Project (area 15 · route 10 · photo 5 · comment 1); once-per-place follows theCrag's karma.
 - The demo board mirrors the same rules in `meStats` for your own row.
 
@@ -60,7 +60,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 | `lib/Help.jsx` | `Help` (its `topic` prop opens one section) |
 | `lib/db.js` | `useLeaderboard`, `useTopClimbs` |
 | `ClimbMatchCore.jsx` | `HELP_FEATS` (the Ranks section holds the scoring text), `tickTypesFor`, `NONCOMPLETION_TICKS`, `lbRowName` |
-| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333 |
+| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333, 0338 |
 
 ## 4. Data
 `climb_logs`, `climb_log_confirmations`, `routes` (`grade_system`, `grade_num`, `gain_ft`, `length_m`, `classic`,
