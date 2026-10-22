@@ -350,6 +350,32 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **One palette**: no per-group `cl.accent` and no `groupJoinTone` (deleted, nothing else read
     it). The single accent is `C.blue`; amber/red/green section and badge colours went neutral.
     Destructive actions (Delete/Remove post) and the safety notice keep their colours.
+- **A GROUP POST IS FACEBOOK'S CARD (2026-10-15).** Header: avatar, name, the day **and time**
+  through `groupPostWhen` (the climber's date preference; the old card spelled English month names
+  by hand, which `check:date-locale` cannot see because it reads only `toLocale*String` calls), and
+  a ⋯ button. Then the text (long posts clamp with *See more*), the photo grid, a counts line
+  (reaction emoji + total, *N comments*) and one row: **Like · Comment**.
+  - **Like is the 👍 reaction (`solid`).** A tap toggles it; press-and-hold or right-click opens
+    every reaction, and so does the reaction count, so **no reaction needs a long press** (a
+    keyboard can reach all of them). Like carries `aria-pressed`, Comment `aria-expanded`:
+    `check:selected-state` measures that row behind the `postMenuFor` overlay.
+  - **Photos: 1 full width, 2 side by side, 3 as one wide over two, 4 as a square, 5+ as a square
+    whose last tile is "+N"** and shows them all. There is no photo viewer yet, so "+N" must reveal
+    the rest in place; a "+N" that hid them would make photos unreachable.
+  - **A post holds at most 8 photos**: 0230 CHECKs `group_posts.photos` at 8, and the composer had no
+    cap, so a 9th photo failed the whole post as *"Couldn't post that"*. The composer counts
+    *Photos · N of 8* and refuses past it.
+  - **Sort is a dropdown: Most relevant · Recent activity · New posts**, under the pinned posts
+    and over the ones it orders. Most relevant = (1 + reactions + 2 × comments) ÷ (age in days +
+    2)^1.5; Recent activity = the newest comment, else the post. Comments are read only for the
+    OPEN group, which is the only place these sorts run.
+  - **Saved left the sort.** Save/Unsave is in the ⋯ menu, and **Groups › Your activity** lists
+    *Saved posts*, gated on `myPostSavesQ.isError` so a failed read is not "nothing saved".
+  - **Block is in the ⋯ menu of someone else's post** (Apple 1.2: block an abusive user from the
+    content). A **blocked climber's posts leave the feeds you read** — the Discussion, the Media
+    tab, For you, Your activity and the unread count — through `groupPostByBlocked`. They stay in
+    the page's own `posts`, because the Reported queue reads that list to tell a removed post from
+    a live one. Their **comments** are not filtered yet: that is the Comments redesign's job.
 - **`check:mutual-friends`** asserts that a mutual friend is **real**, **named the way they asked**,
   and **counted as the list that renders**. Static (one esbuild bundle of core plus two Babel
   parses — no browser, no database), so it sits in `npm run build`.
