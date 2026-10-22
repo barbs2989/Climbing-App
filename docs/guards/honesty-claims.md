@@ -672,6 +672,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **`check:match-percent`** asserts that **the partner Match % blends what the screen says it
   blends**. Static (one esbuild bundle of core, no browser and no database), so it sits in
   `npm run build`.
+  - **SECTION 7: "HOW YOU MATCH" EXPLAINS THE NUMBER IT SITS UNDER.** `compat()` is now the rescaled
+    sum of `compatParts()`'s rows, and the guard lifts BOTH bodies (a `compat()` that stops calling
+    `compatParts` is `ANCHOR LOST`, not a pass). It asserts the rows' maxima sum to `COMPAT_MAX`, every
+    signal that moves the score also changes its checklist line, an unfilled profile reads `unk` on
+    every line (never a mismatch — #612's rule, in words), and `FullProfile` renders `compatWhy()`
+    with the SAME viewer object it scores with, built from `ME.matchObjectiveIds`. Injection measured:
+    `compatWhy(ME,climber)` fails it. The refactor was proved score-identical on 20,036 pairs (seed
+    population plus 20,000 random profiles) before the old body was dropped.
   - **THE DEFECT WAS A CLAMP DOING THE WORK OF A FORMULA.** `compat()` ended `Math.min(99, …)`
     while two of its terms were UNCAPPED — shared disciplines ×16, shared objectives ×14 — and the
     BOUNDED terms alone summed to **78 of that 99**. So a climber with a broad profile saturated

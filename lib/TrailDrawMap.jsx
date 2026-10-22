@@ -27,7 +27,11 @@ export function fmtTrailLen(m) {
 }
 export function trailLenM(pts) { return lenM(pts || []); }
 
-export default function TrailDrawMap({ start, end, pts, setPts, C }) {
+/* `marks` names the two pins: the crag default (P parking, C crag), or the desktop drawing tool's
+   T trailhead and S summit / B base on a route that is not a crag. */
+const CRAG_MARKS = { start: "P", end: "C", startName: "the parking pin", endName: "the crag" };
+export default function TrailDrawMap({ start, end, pts, setPts, C, marks }) {
+  const mk = marks || CRAG_MARKS;
   const mapDiv = useRef(null), mapRef = useRef(null), tileRef = useRef(null), drawn = useRef([]);
   const [ready, setReady] = useState(false), [mapFail, setMapFail] = useState(false);
   const [baseLayer, setBaseLayer] = useState("topo");
@@ -62,11 +66,11 @@ export default function TrailDrawMap({ start, end, pts, setPts, C }) {
     drawn.current = [];
     const keep = (l) => { l.addTo(map); drawn.current.push(l); };
     const pin = (p, label, color) => keep(L.marker([p.lat, p.lng], { keyboard: false, interactive: false, icon: L.divIcon({ className: "", iconSize: [24, 24], iconAnchor: [12, 12], html: '<div style="width:24px;height:24px;border-radius:50%;background:' + color + ';border:2px solid #fff;color:#fff;font:700 12px/20px system-ui;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.5)">' + label + "</div>" }) }));
-    if (start) pin(start, "P", C.accent);
-    if (end) pin(end, "C", C.warning);
+    if (start) pin(start, mk.start, C.accent);
+    if (end) pin(end, mk.end, C.warning);
     if (pts.length > 1) keep(L.polyline(pts, { color: C.warning, weight: 4, opacity: 0.95 }));
     pts.forEach((p, i) => keep(L.circleMarker(p, { radius: i === pts.length - 1 ? 6 : 4, color: "#fff", weight: 2, fillColor: C.warning, fillOpacity: 1, interactive: false })));
-  }, [pts, ready, start, end, C.accent, C.warning]);
+  }, [pts, ready, start, end, C.accent, C.warning, mk.start, mk.end]);
   const btn = { padding: "8px 11px", borderRadius: 8, border: "1px solid " + C.border, background: C.bg70, color: C.text, fontSize: 13, fontWeight: 600, cursor: "pointer" };
   const off = { opacity: 0.4, cursor: "default" };
   return (
@@ -78,13 +82,13 @@ export default function TrailDrawMap({ start, end, pts, setPts, C }) {
         {ready ? <div style={{ position: "absolute", bottom: 7, left: 7, right: 7, zIndex: 1000, background: "rgba(13,17,23,0.85)", borderRadius: 7, padding: "4px 8px", fontSize: 12, color: "#fff", textAlign: "center", pointerEvents: "none" }}>{pts.length ? pts.length + " points · " + fmtTrailLen(lenM(pts)) + " · tap to keep going" : start ? "Tap the map along the trail, starting at P (parking)" : "Tap where you park, then along the trail to the crag"}</div> : null}
       </div>
       <div style={{ display: "flex", gap: 6, marginTop: 8, flexWrap: "wrap" }}>
-        {start ? <button onClick={() => setPts((p) => (p.length ? p : [[start.lat, start.lng]]))} disabled={pts.length > 0} style={pts.length ? { ...btn, ...off } : btn}>Start at P</button> : null}
-        {end ? <button onClick={() => setPts((p) => p.concat([[end.lat, end.lng]]))} disabled={!pts.length} style={pts.length ? btn : { ...btn, ...off }}>Finish at C</button> : null}
+        {start ? <button onClick={() => setPts((p) => (p.length ? p : [[start.lat, start.lng]]))} disabled={pts.length > 0} style={pts.length ? { ...btn, ...off } : btn}>{"Start at " + mk.start}</button> : null}
+        {end ? <button onClick={() => setPts((p) => p.concat([[end.lat, end.lng]]))} disabled={!pts.length} style={pts.length ? btn : { ...btn, ...off }}>{"Finish at " + mk.end}</button> : null}
         <button onClick={() => setPts((p) => p.slice(0, -1))} disabled={!pts.length} style={pts.length ? btn : { ...btn, ...off }}>Undo point</button>
         <button onClick={() => setPts([])} disabled={!pts.length} style={pts.length ? btn : { ...btn, ...off }}>Clear</button>
       </div>
       <p style={{ fontSize: 12, color: C.text70, margin: "8px 0 0", lineHeight: 1.45 }}>
-        <b style={{ color: C.accent }}>P</b> is the parking pin and <b style={{ color: C.warning }}>C</b> the crag. Follow the trail the way you walk it, with a point at every bend and fork. Zoom in: Topo shows mapped paths, Satellite shows the ones that aren't.
+        <b style={{ color: C.accent }}>{mk.start}</b>{" is " + mk.startName + " and "}<b style={{ color: C.warning }}>{mk.end}</b>{" " + mk.endName + "."} Follow the trail the way you walk it, with a point at every bend and fork. Zoom in: Topo shows mapped paths, Satellite shows the ones that aren't.
       </p>
     </div>
   );
