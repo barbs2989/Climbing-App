@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Crew "who is free" grids read real crewmates' availability**: the crew card's typical week and the Safety tab's heatmap showed every real member as never free (their profile was fetched without `availability`/`avail_week`), so they said no slot worked for the crew. Both now read what each member saved on their profile.
 - **Menu › Requests: the count is a corner badge**: the tile reads plain *Requests*, and what is waiting on you shows as a red badge in its top-right corner, as on the header's objectives, notifications, calendar and messages icons.
 - **Accessibility problems can actually be reported**: Settings › Legal & help › Accessibility now ends in a *Report an accessibility problem* form that saves to `accessibility_reports` (0343). The statement used to send people to the Feedback button, which sends nothing. See `docs/features/profile-and-settings.md`.
 - **Save a route map offline, again**: *⤓ Save map offline* under a route's map saves the map from the trailhead to the climb (USGS tiles) plus the page itself, so both open with no signal; *Manage areas › Saved route maps* lists them to open or remove. It had been unreachable since the trip pack was removed (#2368). See [maps-and-area-browser.md](docs/features/maps-and-area-browser.md).
