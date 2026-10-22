@@ -70,25 +70,39 @@ console.log(`${state}: ${ok.length} fields pass, ${refused.length} refused`);
 for (const [id, f, why] of refused) console.log(`  REFUSED ${id} ${f}: ${why}`);
 if (!APPLY) { for (const x of ok.slice(0, 6)) console.log(`  ${x.id} ${x.f}: ${x.v}`); console.log("DRY RUN — pass --apply to write"); process.exit(0); }
 
+// Every read and write is asked again on a timeout or gateway error, and a read that still fails THROWS: it used
+// to come back as an error object whose [0] is undefined, counted as "slot already filled" — Oregon's 27 rows
+// (2026-10-22) were reported skipped while the database held none of their text.
+const TRANSIENT = /57014|statement timeout|upstream|HTTP 5\d\d|fetch failed|ECONNRESET|ETIMEDOUT|PGRST303/i;
+async function ask(url, init) {
+  for (let t = 0; ; t++) {
+    try {
+      const r = await fetch(url, init), txt = await r.text();
+      if (!r.ok) throw new Error(`HTTP ${r.status} ${txt.slice(0, 200)}`);
+      return JSON.parse(txt);
+    } catch (e) { if (t >= 4 || !TRANSIENT.test(e.message)) throw e; await new Promise(res => setTimeout(res, 15_000 * (t + 1))); }
+  }
+}
+const readRow = async id => (await ask(`${SUPABASE_URL}/rest/v1/routes?select=overview,detailed_rack,location,fa&id=eq.${encodeURIComponent(id)}`, { headers: H }))[0];
+
 // Write one row at a time, only where the slot is STILL empty, then re-read and reconcile.
 const byRow = new Map();
 for (const x of ok) (byRow.get(x.id) || byRow.set(x.id, {}).get(x.id))[x.f] = x.v;
-let wrote = 0, skipped = 0;
+let wrote = 0, skipped = 0, missing = 0;
 for (const [id, patch] of byRow) {
-  const cur = (await (await fetch(`${SUPABASE_URL}/rest/v1/routes?select=overview,detailed_rack,location,fa&id=eq.${encodeURIComponent(id)}`, { headers: H })).json())[0];
-  if (!cur) { skipped++; continue; }
+  const cur = await readRow(id);
+  if (!cur) { missing++; console.log(`  NO ROW ${id}`); continue; }
   const set = {};
   for (const [f, v] of Object.entries(patch)) if (f === "fa" ? /^(?:|unknown|\?+|n\/?a)$/i.test(String(cur.fa || "").trim()) : !cur[f]) set[f] = v;
   if (!Object.keys(set).length) { skipped++; continue; }
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?id=eq.${encodeURIComponent(id)}`, { method: "PATCH", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(set) });
-  const body = await res.json();
-  if (!res.ok || body.length !== 1) throw new Error(`write ${id}: HTTP ${res.status}, ${Array.isArray(body) ? body.length : "?"} rows changed`);
+  const body = await ask(`${SUPABASE_URL}/rest/v1/routes?id=eq.${encodeURIComponent(id)}`, { method: "PATCH", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(set) });
+  if (!Array.isArray(body) || body.length !== 1) throw new Error(`write ${id}: ${Array.isArray(body) ? body.length : "?"} rows changed`);
   patch.__set = set; wrote++;
 }
 let bad = 0;
 for (const [id, patch] of byRow) {
   if (!patch.__set) continue;
-  const cur = (await (await fetch(`${SUPABASE_URL}/rest/v1/routes?select=overview,detailed_rack,location,fa&id=eq.${encodeURIComponent(id)}`, { headers: H })).json())[0];
+  const cur = await readRow(id);
   for (const [f, v] of Object.entries(patch.__set)) if (cur?.[f] !== v) { bad++; console.log(`  MISMATCH ${id} ${f}`); }
 }
-console.log(`wrote ${wrote} rows, skipped ${skipped} (slot already filled), re-read mismatches ${bad}`);
+console.log(`wrote ${wrote} rows, skipped ${skipped} (slot already filled), ${missing} with no row, re-read mismatches ${bad}`);
