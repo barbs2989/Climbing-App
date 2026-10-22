@@ -23,6 +23,8 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 
 - **On the desktop website (1024px+)**: a **breadcrumb** of the climb's areas (state › … › crag/peak, each a link to that area) sits above the header; the header is **facts beside a photo** — the first photo any climber shared (click: Photos tab), an *Add the first photo* box when there is none, or *Photos aren't reachable* when the photo read failed. At **1280px+** the **route map** leaves the Overview and sits in the right rail (`#cm-route-rail`, a portal from `RouteDetail`) on every tab; below 1280 it stays where it is. Phone layout unchanged.
 
+- **Print (desktop website)**: a *⎙ Print* button beside Share opens a one-sheet printout — area path, facts (grade, length, pitches, season, aspect, approach, gain), approach, pitch by pitch, descent, rack, hazards and waypoints with coordinates — through `printSheet`, built by `routeSheetHtml` (`lib/routeSheet.js`). It prints only what the route stores, in the climber's units. No map image (the waypoints table carries the coordinates).
+
 ## 2. How it works
 
 1. **Open.** `openRoute(x)` in `ClimbMatch.jsx` sets `routeFrom`, `selRoute` and `tab="routes"`. `App` renders `RouteDetail` (a lazy screen).
@@ -82,6 +84,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 `check:bare` (route with no enrichment, every discipline x sub-tab), `check:field-renders`, `check:token-boxes`, `check:pitch-split`, `check:approach-section`, `check:approach-overlay`, `check:trailhead-directions`, `check:trailhead-direction-shape`, `check:access-checked-line`, `check:fire`, `check:summit-briefing`, `check:photo-contract`, `check:crew-gear`, `check:camping`, `check:correction-readers`, `check:return-leg`, `check:write-readers` (rating writes refresh both cached readers), `check:schema`, `check:rls`, `check:migration-replay`, `check:ui`, `check:zero`, `check:overflow`. Notes: `docs/guards/route-page.md`. `audit:rack-items` (hand-run: no rack column files non-rack gear).
 
 ## 7. Last significant change
+- **Printable route sheet (desktop, phase 4a)**: `routeSheetHtml` in `lib/routeSheet.js`, the *⎙ Print* button in the header.
 - **Desktop route page (phase 2b)**: breadcrumb, facts beside a photo (or *Add the first photo*), route map in the right rail at 1280px+ (`deskWide`/`deskFull`, `_routeMap`, `railEl`).
 Crag routes (`CRAG_CATS`: trad, sport, toprope, aid, bouldering) carry no GEAR & ESSENTIALS card, and since 2026-10-21 their editors no longer offer *Route-specific essentials* (`whatToBring` is in SuggestFix `DROP` for `CRAG_CATS` and out of `AddRoute` FIELDS for rock, aid and bouldering): nothing on a crag page reads it. The crag RACK card (`CragRack`) prints only the route's own rack, draws or pads, never `DISC_RACK`. An empty crag BETA now draws as an `EmptySection` (heading + *Add beta*, opens the `beta` field) instead of vanishing.
 
