@@ -48,6 +48,12 @@ import { gradeNumFrom } from "../../lib/grade.js";
 const arg = k => { const i = process.argv.indexOf("--" + k); return i > 0 ? process.argv[i + 1] : null; };
 const AREA = arg("area"), MP = arg("mp"), STATE = arg("state"), APPLY = process.argv.includes("--apply"), FACTS = process.argv.includes("--facts");
 const LIMIT = arg("limit") ? +arg("limit") : Infinity;
+// THROTTLE (2026-10-22): the whole-catalog run saturated the production database for hours — one REST write per
+// route, back to back, with retries piling onto a database that was already timing out; the live app's reads 504'd
+// and the owner had it stopped. Every database write now waits PACE_MS after it (default 400 ms, about 2.5 writes
+// a second), and a failure backs off a minute or more before asking again.
+const PACE_MS = arg("pace-ms") ? +arg("pace-ms") : 400;
+const pace = () => new Promise(r => setTimeout(r, PACE_MS));
 if (!STATE && !(AREA && MP)) { console.error("usage: --area <our area id> --mp <MP area id> [--state <slug>] [--apply]  |  --state <slug> [--facts] [--apply] [--limit N]"); process.exit(1); }
 const DIR = process.env.MP_DIR || "catalog/_mp", PAGES = DIR + "/_pages", ROUTES = DIR + "/_routes", ORDER = DIR + "/_order";
 for (const d of [PAGES, ROUTES, ORDER]) mkdirSync(d, { recursive: true });
@@ -83,7 +89,7 @@ const TRANSIENT = /57014|statement timeout|upstream request timeout|HTTP 5\d\d|-
 async function retrying(fn) {
   for (let i = 0; ; i++) {
     try { return await fn(i); }
-    catch (e) { if (i >= 4 || !TRANSIENT.test(e.message)) throw e; await new Promise(r => setTimeout(r, 20_000 * (i + 1))); }
+    catch (e) { if (i >= 4 || !TRANSIENT.test(e.message)) throw e; await new Promise(r => setTimeout(r, 60_000 * (i + 1))); }
   }
 }
 // The state's routes come through the CLI (an ltree subtree, which PostgREST cannot filter on).
@@ -180,6 +186,7 @@ function printWall(area, mpId, w, ours) {
 async function writeWall(area, w) {
   const added = [], refused = [];
   for (const a of w.adds) {
+    await pace();
     // A retry after a timeout first asks whether the timed-out insert landed after all: re-sent, the row would be
     // refused as a duplicate of itself.
     try { const got = await retrying(async i => { if (i && (await rest(`routes?select=id&id=eq.${encodeURIComponent(a.row.id)}`)).length) return [a.row]; return rest("routes", { method: "POST", headers: { Prefer: "return=representation" }, body: JSON.stringify(a.row) }); }); if (got?.length === 1) added.push(a); else refused.push({ name: a.row.name, why: "insert returned " + (got?.length ?? 0) + " rows" }); }
@@ -193,7 +200,7 @@ async function writeWall(area, w) {
   for (const a of added) want.set(a.row.id, pos.get(a.row.id) ?? null);
   const after = await retrying(() => rest(`routes?select=id,sort_order&area_id=eq.${encodeURIComponent(area.id)}`));
   const cur = new Map(after.map(r => [r.id, r.sort_order]));
-  for (const [id, v] of want) if (cur.get(id) !== v) await retrying(() => patchRow("routes", id, { sort_order: v }));
+  for (const [id, v] of want) if (cur.get(id) !== v) { await retrying(() => patchRow("routes", id, { sort_order: v })); await pace(); }
   const back = await retrying(() => rest(`routes?select=id,sort_order&area_id=eq.${encodeURIComponent(area.id)}`));
   const bad = back.filter(r => want.has(r.id) && want.get(r.id) !== r.sort_order);
   return { added, refused, bad, rows: back.length };
@@ -240,7 +247,7 @@ if (FACTS) {
     if (r.lat == null && gps[1]) { p.lat = +gps[1]; p.lng = +gps[2]; }
     if (!(r.stars > 0) && avg && +avg[2].replace(/,/g, "") >= 1) p.stars = +avg[1];
     if (!Object.keys(p).length) continue;
-    if (APPLY) await retrying(() => patchRow("routes", id, p));
+    if (APPLY) { await retrying(() => patchRow("routes", id, p)); await pace(); }
     patched++;
     if (!APPLY && patched <= 10) console.log(id, JSON.stringify(p));
   }
