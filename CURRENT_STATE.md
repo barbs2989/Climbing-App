@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Float plans from the crew chat**: a float plan posted in a crew chat now shows as a card (climb, leave and return times, parking, vehicle, comms), and a crewmate can tap *Save to my float plans* to start their own from it — everything but the poster's emergency contact comes across. See [logbook-crews-home.md](docs/features/logbook-crews-home.md).
 
 - **Forecasts swing less, and are never saved offline**: every Open-Meteo forecast (Safety tab panel, Conditions cards, Best day) now leads with the NWS National Blend of Models instead of GFS alone past day 2 (measured: a 10 F+ change between runs in 0.7% of hours vs 12%). The dead per-route forecast snapshot is removed. See `docs/features/conditions.md`.
 - **Desktop: nothing stretches across the page**: the page column is 640px (was 720), and action buttons — *Log a past climb*, *Edit profile*, *Climbed it? Log the climb*, *Add trip report*… — are as wide as their label instead of the whole column; list rows still run edge to edge, phones are unchanged. See `docs/features/app-shell-and-layout.md`.
