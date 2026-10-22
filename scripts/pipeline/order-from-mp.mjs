@@ -77,8 +77,24 @@ const FIFTH = g => /^5\.\d/.test(g || "");
 
 const k = requireServiceKey();
 const rest = async (p, init) => { const r = await fetch(SUPABASE_URL + "/rest/v1/" + p, { ...init, headers: headers(k, { "Content-Type": "application/json", ...init?.headers }) }); const t = await r.text(); if (!r.ok) throw new Error(p + ": HTTP " + r.status + " " + t); return t ? JSON.parse(t) : null; };
+// A statement timeout (57014), a gateway error or a dropped connection is asked again, five times, further apart
+// each time: Colorado stopped on one timed-out PATCH (2026-10-21) while another session was writing.
+const TRANSIENT = /57014|statement timeout|upstream request timeout|HTTP 50[234]|fetch failed|ECONNRESET|ETIMEDOUT|socket hang up/i;
+async function retrying(fn) {
+  for (let i = 0; ; i++) {
+    try { return await fn(i); }
+    catch (e) { if (i >= 4 || !TRANSIENT.test(e.message)) throw e; await new Promise(r => setTimeout(r, 20_000 * (i + 1))); }
+  }
+}
 // The state's routes come through the CLI (an ltree subtree, which PostgREST cannot filter on).
-const sql = text => { const out = execFileSync("npx", ["supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1 << 30, stdio: ["ignore", "pipe", "pipe"] }); const at = [out.indexOf("{"), out.indexOf("[")].filter(i => i >= 0); const j = JSON.parse(out.slice(Math.min(...at))); return Array.isArray(j) ? j : j.rows; };
+// Eight tries, backing off to a minute, as import-route-grades.mjs does: Utah failed on "Connection terminated
+// due to connection timeout" (status 544) while the database was busy, and the loop moved on without it.
+function sql(text) {
+  for (let t = 0; ; t++) {
+    try { const out = execFileSync("npx", ["supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1 << 30, stdio: ["ignore", "pipe", "pipe"] }); const at = [out.indexOf("{"), out.indexOf("[")].filter(i => i >= 0); const j = JSON.parse(out.slice(Math.min(...at))); if (j._tag === "Error") throw new Error(JSON.stringify(j.error)); const rows = Array.isArray(j) ? j : j.rows; if (!Array.isArray(rows)) throw new Error("unexpected output " + out.slice(0, 200)); return rows; }
+    catch (e) { if (t >= 7) throw e; execFileSync("sleep", [String(Math.min(60, 5 * 2 ** t))]); }
+  }
+}
 const q = s => "'" + String(s).replace(/'/g, "''") + "'";
 const loadMap = st => { const m = {}; for (const f of [`${DIR}/_map/${st}.json`, `${DIR}/_map/${st}.snow.json`, `${ORDER}/${st}.adds.json`]) if (existsSync(f)) Object.assign(m, JSON.parse(readFileSync(f, "utf8"))); return m; };
 
@@ -164,7 +180,9 @@ function printWall(area, mpId, w, ours) {
 async function writeWall(area, w) {
   const added = [], refused = [];
   for (const a of w.adds) {
-    try { const got = await rest("routes", { method: "POST", headers: { Prefer: "return=representation" }, body: JSON.stringify(a.row) }); if (got?.length === 1) added.push(a); else refused.push({ name: a.row.name, why: "insert returned " + (got?.length ?? 0) + " rows" }); }
+    // A retry after a timeout first asks whether the timed-out insert landed after all: re-sent, the row would be
+    // refused as a duplicate of itself.
+    try { const got = await retrying(async i => { if (i && (await rest(`routes?select=id&id=eq.${encodeURIComponent(a.row.id)}`)).length) return [a.row]; return rest("routes", { method: "POST", headers: { Prefer: "return=representation" }, body: JSON.stringify(a.row) }); }); if (got?.length === 1) added.push(a); else refused.push({ name: a.row.name, why: "insert returned " + (got?.length ?? 0) + " rows" }); }
     catch (e) { if (/duplicate|already|23505|P0001/i.test(e.message)) refused.push({ name: a.row.name, mpId: a.mpId, why: "database: " + e.message.slice(0, 200) }); else throw e; }
   }
   const pos = new Map(w.pos);
@@ -173,10 +191,10 @@ async function writeWall(area, w) {
   const want = new Map();
   for (const r of w.writes.concat(w.seq.filter(s => s.ours).map(s => s.ours))) want.set(r.id, pos.get(r.id) ?? null);
   for (const a of added) want.set(a.row.id, pos.get(a.row.id) ?? null);
-  const after = await rest(`routes?select=id,sort_order&area_id=eq.${encodeURIComponent(area.id)}`);
+  const after = await retrying(() => rest(`routes?select=id,sort_order&area_id=eq.${encodeURIComponent(area.id)}`));
   const cur = new Map(after.map(r => [r.id, r.sort_order]));
-  for (const [id, v] of want) if (cur.get(id) !== v) await patchRow("routes", id, { sort_order: v });
-  const back = await rest(`routes?select=id,sort_order&area_id=eq.${encodeURIComponent(area.id)}`);
+  for (const [id, v] of want) if (cur.get(id) !== v) await retrying(() => patchRow("routes", id, { sort_order: v }));
+  const back = await retrying(() => rest(`routes?select=id,sort_order&area_id=eq.${encodeURIComponent(area.id)}`));
   const bad = back.filter(r => want.has(r.id) && want.get(r.id) !== r.sort_order);
   return { added, refused, bad, rows: back.length };
 }
