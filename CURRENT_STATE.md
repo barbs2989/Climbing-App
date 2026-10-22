@@ -27,7 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
-
+- **Area header: a larger Fire map button, centred on the right**: the red *Fire map* pill on an area's header box was a small chip in the bottom-right corner beside the climb count; it is now a 44px-tall button in its own right-hand column, vertically centred against the area's facts (`lib/DbAreaBrowser.jsx`, `AreaPage`).
 - **Safety: *Suggest a fix* on KNOWN HAZARDS no longer crashes the route page**: the button passed its click event to the form as the hazard; the fixed-gear chips passed a bare string to a multi field. Both now seed an array (or nothing). See `docs/features/route-page.md`.
 - **Profile photos load from cache; no ID verification (0339)**: photos are stored with a one-year cache instead of one hour, so the Profile's avatar and photo strip no longer wait to be resized again on each visit, and a new upload is pre-sized. `verification_records` can no longer hold an identity-document record; email is the only verification.
 - **North Cascades: one Cascade River tree, and a guard against bucket copies (0340)**: Mountain Project's *Cascade River Drainage (Eldorado, Forbidden, Johannesburg, Sahale, Torment, etc.)* and its *Boston Basin Peaks (…)* stood beside North Cascades Core, which already holds every one of those peaks. Both are gone; their one climb's boulder field (Hidden Lake Lookout) moved into North Cascades Core. The database now refuses an area NAMED by a list of two or more places the state already files, and `check:area-duplicates` sweeps for one daily. See `docs/features/maps-and-area-browser.md`.
