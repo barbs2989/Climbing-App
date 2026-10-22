@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **A shared trip report opens the REPORT**: its link (`?report=<id>`) now opens that report over its climb instead of only the climb; who can open it follows the report's visibility, and the share sheet says so. A not-shared or deleted report says so on arrival. See `docs/features/logbook-crews-home.md`.
 - **A climber's profile says HOW YOU MATCH**: under COMPATIBILITY WITH YOU, one line per thing the match % scores (grade, mountain objectives, disciplines, listed areas, availability, pace, verified), heaviest first, each marked as counting, partly, not, or not said by both. Built from the same rows the score sums (`compatParts`/`compatWhy`). The profile now scores with the same objectives the partner row does, so the two no longer show different %s. See `docs/features/partners.md`.
 - **Crew itinerary: your own plan, and Remove**: *Import from Plan* offers *Your plan* (the one saved on the climb's Plan tab) first, then the climb's suggested plans, plus *Build your own*. The crew card's builder starts from your plan and *Share with the crew* saves it as your plan and shares it in one step (it used to keep a draft on screen until somebody pressed Adopt). The crew's itinerary box has *Remove* beside *Change*. The red *Safety plan* button on a backcountry crew is blue like the card's other secondary buttons.
 
