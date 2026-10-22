@@ -32895,3 +32895,47 @@ exactly the staleness `audit:expiring-closures` exists to track, not something t
 for here.
 
 Pass 7 continues next run after `wa_mount_challenger_challenger_glacier`.
+
+## Batch 426 — 2026-10-22 (pass 7)
+
+Eight routes: Mount Chaval's North Ridge, Mount Christie's North Couloir/Christie Glacier,
+Mount Claywood's Standard Route, Mount Constance's West Arête, Mount Crowder's Northeast
+Ridge and Southwest Route, and Mount Cruiser's Northwest Face/Corner and South Corner.
+
+1 confirmed error, fixed in `audits/sql/2026-10-22-batch-426.sql`: Mount Crowder's Southwest
+Route (`wa_mount_crowder_southwest_route`) had its `fa` field set to the peak's 1962 FA party
+(Magnusson/Ardussi/Mech/Schmechel), but this same row's own `corrections` field already
+explains that 1962 ascent climbed the NE Ridge line, not this Southwest Route — "no `fa`
+credit is attached to this route entry." The `fa` field was never actually cleared to match;
+nulled it.
+
+Elevations checked exactly: Chaval 7,127 ft (Wikipedia/SummitPost exact; a TopoQuest figure of
+6,502 ft is a clear outlier, disregarded), Christie 6,181 ft route/6,182 ft area (Wikipedia
+gives 6,181 ft NAVD88 — a 1 ft rounding difference against the area row, below the threshold
+this audit treats as a real error), Claywood 6,836 ft (Wikipedia exact), Constance 7,756 ft
+(matches area row and waypoint), Crowder 7,082 ft (Wikipedia/Peakbagger exact, matches both
+routes and the area row).
+
+Mount Constance's West Arête was already correctly self-caveated: its `corrections` field
+documents the 5.4-vs-5.5 rock-grade split across sources (Eric's Base Camp/Lemke Climbs vs.
+SummitPost/Mountaineers/NWHikers) rather than picking one, which matches what a fresh search
+turned up — left as-is. Mount Cruiser's two routes were likewise already honestly caveated:
+South Corner's `data_quality.gaps` already notes the grade is "5.0 per The Mountaineers/
+Wikipedia vs 5.3 per Mountain Project," which matches independent confirmation that The
+Mountaineers and SummitPost both call the standard line 5.0; and Northwest Face/Corner's
+`data_quality.gaps` already flags its Wallace/Parker 2004 FA credit as "reasonably likely but
+not independently confirmed" — a search found nothing to confirm or contradict it either, so
+both are left as-is rather than re-flagged.
+
+Mount Crowder's Northeast Ridge access/permit fields (North Cascades NP backcountry permit:
+$10/person + $6 non-refundable reservation fee, mid-May through early October season) matched
+current NPS/Recreation.gov guidance exactly — clean.
+
+Flagged for human review, not auto-fixed: Mount Claywood's Standard Route `fa` ("Mountaineers
+Club outing party including Philip Rogers and Winona Bailey, first recorded ascent, August 3,
+1920") could not be corroborated — Wikipedia's infobox for Claywood carries no FA entry at all
+(nor does its neighbor Mt. Fromme's), and no primary climbing-specific source was reachable.
+Already partly caveated in this row's own `data_quality.gaps`; left as-is per the
+not-confirmed-but-not-contradicted rule used throughout this audit.
+
+Pass 7 continues next run after `wa_mount_cruiser_south_corner`.
