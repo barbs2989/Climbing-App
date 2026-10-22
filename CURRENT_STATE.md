@@ -28,6 +28,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Forecasts swing less, and are never saved offline**: every Open-Meteo forecast (Safety tab panel, Conditions cards, Best day) now leads with the NWS National Blend of Models instead of GFS alone past day 2 (measured: a 10 F+ change between runs in 0.7% of hours vs 12%). The dead per-route forecast snapshot is removed. See `docs/features/conditions.md`.
 - **Logs and trip reports earn contribution points (0338)**: a logged climb 1 (once per route), a trip report 2 (once per route per month), counted only when shared with Everyone, on Ranks › Contributions, TOP CONTRIBUTORS and the ★ badge. See `docs/features/ranks.md`.
 - **Menu: Your crews, and shortcuts first**: a *Crews · N* tile joins *Yours* (Groups takes the chat icon so the two differ), and a *Your crews* section lists up to five active crews with their unread counts, each opening that crew. *Your crews* and *Your groups* now sit above the tile groups, as Facebook's Menu leads with your shortcuts.
 
