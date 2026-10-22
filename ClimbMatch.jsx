@@ -541,7 +541,7 @@ useEffect(function(){
     if(!pid)return;
     if(g._db&&!(joinedGroups.indexOf(g.id)>=0||g.joined)){showToast(g.myStatus==="pending"?"Your request to join "+g.name+" is waiting — you’ll see the post once you’re in.":"Join "+g.name+" to see the post that was shared with you.",4200);return;}
     setGroupTopicFilter(null);setGroupPageTab({gid:g.id,tab:"discussion"});setGroupPostFocus({gid:g.id,pid:pid,at:Date.now()});if(g._db&&groupFeedQ.refetch)groupFeedQ.refetch();
-  },[groupLink,createdGroups,myGroupsQ.data,myGroupsQ.isError,uid,sessionRestoring,signedIn]);
+  },[groupLink,createdGroups,myGroupsQ.data,myGroupsQ.isError,uid,sessionRestoring,signedIn,realAuthGate,joinedGroups,groupFeedQ]);
   /* ...then the post: scrolled to and outlined once its card is on screen. Only a feed read AFTER the link was opened may say
      the post is gone -- a cached one predates a post shared a minute ago. */
   useEffect(function(){
@@ -553,8 +553,8 @@ useEffect(function(){
     if(g._db){if(groupFeedQ.isError&&groupFeedQ.errorUpdatedAt>=f.at){setGroupPostFocus(null);showToast("Couldn’t load the group’s posts just now, so the shared post can’t be shown.",4200);return;}if(groupFeedQ.isFetching||!(groupFeedQ.dataUpdatedAt>=f.at))return;}
     var po=(groupPostsAll[f.gid]||[]).find(function(x){return String(x.id)===String(f.pid);});
     setGroupPostFocus(null);
-    showToast(!po?"That post isn’t in "+g.name+" any more — it may have been deleted.":groupPostByBlocked(po)?"That post is from a climber you’ve blocked.":"Couldn’t find that post in "+g.name+".",4200);
-  },[groupPostFocus,openGroupId,createdGroups,groupPostsAll,groupFeedQ.dataUpdatedAt,groupFeedQ.errorUpdatedAt,groupFeedQ.isFetching,groupFeedQ.isError,groupPageTab]);
+    showToast(!po?"That post isn’t in "+g.name+" any more — it may have been deleted.":(po.authorId!==0&&blocked.some(function(b){return b.id===po.authorId;}))?"That post is from a climber you’ve blocked.":"Couldn’t find that post in "+g.name+".",4200);
+  },[groupPostFocus,openGroupId,createdGroups,groupPostsAll,groupFeedQ.dataUpdatedAt,groupFeedQ.errorUpdatedAt,groupFeedQ.isFetching,groupFeedQ.isError,groupPageTab,blocked]);
   useEffect(function(){if(!groupPostLit)return;var t=setTimeout(function(){setGroupPostLit(null);},2600);return function(){clearTimeout(t);};},[groupPostLit]);
   /* A LINK INTO THE APP inside a chat (chatText in core) opens in place instead of reloading the app, through the same pending
      link the address bar sets. Only a group link is caught; any other link of ours loads as a link would. */
