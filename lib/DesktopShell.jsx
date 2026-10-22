@@ -107,7 +107,7 @@ export function WideFooter({ onOpenState, links, legal }) {
       {statesQ.isError ? <div style={{ fontSize: 13, color: C.amber }}>The list of states couldn’t load right now.</div>
         : <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", columnGap: 16 }}>{states.map(s => <button key={s.id} onClick={() => onOpenState(s)} style={link}>{s.name}</button>)}</div>}
     </div> : null}
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 16 }}>{col("ClimbMatch", links)}{col("Legal", legal)}<div><div style={{ ...SECTION, marginBottom: 8 }}>Shortcuts</div><div style={{ fontSize: 13, lineHeight: 1.7 }}><kbd style={{ fontFamily: "inherit", border: "1px solid " + C.border, borderRadius: 5, padding: "0 6px", marginRight: 6 }}>/</kbd>Search<br/><kbd style={{ fontFamily: "inherit", border: "1px solid " + C.border, borderRadius: 5, padding: "0 6px", marginRight: 6 }}>Esc</kbd>Close a popup</div></div></div>
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 16, maxWidth: 480 }}>{col("ClimbMatch", links)}{col("Legal", legal)}</div>
     <div style={{ marginTop: 22, fontSize: 12, color: C.textMuted }}>{"© " + new Date().getFullYear() + " ClimbMatch"}</div>
   </footer>;
 }
