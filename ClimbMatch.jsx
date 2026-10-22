@@ -1093,8 +1093,8 @@ const _anniv=useMemo(()=>logs.map(function(cl){var d=new Date((cl.date||"")+"T12
     var seed=CLIMBERS.find(function(x){return x.id===id;})||(FILLER_CLIMBERS?FILLER_CLIMBERS.find(function(x){return x.id===id;}):null);
     if(seed)return seed;
     var pr=(crewProfilesQ.data||[]).find(function(x){return x.id===id;});
-    /* username and showName ride along: useProfilesByIds selects and maps both, and without them pubName() falls through to a handle DERIVED from the real name ("Robin Belay" -> @robinbelay, which need not be theirs) -- the #1619 RealClimberRow defect, and this object feeds the chat header, the avatar strip, the safety brief and the trip recap. */
-    return pr?{id:pr.id,name:pr.name||"A climber",username:pr.username,showName:!!pr.showName,avatar:pr.avatar||FALLBACK_AV,_real:true}:null;
+    /* availability and availWeek ride along so the crew Safety tab's "who is free" heatmap reads a real member's saved week (hasSlot), not an empty one. username and showName ride along: useProfilesByIds selects and maps both, and without them pubName() falls through to a handle DERIVED from the real name ("Robin Belay" -> @robinbelay, which need not be theirs) -- the #1619 RealClimberRow defect, and this object feeds the chat header, the avatar strip, the safety brief and the trip recap. */
+    return pr?{id:pr.id,name:pr.name||"A climber",username:pr.username,showName:!!pr.showName,avatar:pr.avatar||FALLBACK_AV,availability:pr.availability||[],availWeek:pr.availWeek||[],_real:true}:null;
   },[crewProfilesQ.data]);
   /* ...and the past rosters, named through it. Resolved against seed CLIMBERS alone, a crew of REAL climbers you
      had climbed with dropped out of "Or invite a crew you've climbed with" entirely. Here, not inside
