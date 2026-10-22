@@ -14,15 +14,15 @@ room for side-panel ads later. The phone app keeps its own look.
   - A full-width sticky **top bar** (64px): ☰ Menu at the far left, the ClimbMatch wordmark (→ Home), a
     search box for every climb and place (`/` jumps to it; arrow keys and Enter pick a hit), then
     Saved · Alerts · Calendar · Messages and your avatar (→ Profile).
-  - A fixed **left sidebar** under it: Home · Climbs · Partners · Crews · Groups · Logbook · Ranks ·
-    Profile, then *Your crews* (up to five, a red dot for unread). No site links: those are the footer's.
+  - A fixed **left sidebar** under it: Home · Climbs · Partners · Crews · Groups · Logbook · Ranks
+    (Profile is the avatar at the top right, not a sidebar row), then *Your crews* (up to five, a red dot for unread). No site links: those are the footer's.
   - The **page column**, and at **1280px and wider** a 300px **right rail** (`WideRail`): *Coming up*
     (agreed crew days) and *Alerts*. *Best day to climb* is not here; it opens from the Menu. Ads, when they come, take slots in this rail
     (desktop only).
   - Between 1024 and 1279px the sidebar shows **icons only** and there is no rail. The whole shell is
-    capped at 1308px and centred, so a big monitor gets plain background either side.
+    capped at 1228px and centred (a 640px page column), so a big monitor gets plain background either side.
   - A site **footer** under every page: every state with climbs, ClimbMatch links, Legal links,
-    shortcuts, ©. It is the ONLY home of About, Help, Feedback, Privacy and Terms on desktop.
+    ©. It is the ONLY home of About, Help, Feedback, Privacy and Terms on desktop.
   - **☰ Menu** fills the whole window, as on a phone, with its content centred in a 720px column.
   - **Full-screen views are pages.** Every view that covers the phone screen (Calendar, Messages, Edit
     profile, a group, an event, Settings' sub-pages, Best day, Manage areas, Terms…) is drawn in the
@@ -31,6 +31,23 @@ room for side-panel ads later. The phone app keeps its own look.
     (`_closePages`); the Menu opens above an open page. Settings itself stays a small window, and hides while one of its pages is open.
   - **Route pages** (see route-page.md): breadcrumb, facts beside a photo, and at 1280px+ the route
     map takes the rail's place (`#cm-route-rail`) instead of the widgets.
+  - **Messages are two panes**: the chat icon drops the inbox down under it (*Open Messages* opens the
+    page); on the page the inbox is a 280px left pane (`Inbox pane="side"`) and the conversation you
+    pick opens to its right, the inbox staying open; *Choose a conversation* fills the right until then.
+  - **The Climbs tab shows its regions as a grid** of cards with their climb counts (the countries
+    as buttons when there are two or more) instead of two dropdowns; **Groups** lists its group
+    cards and your group rows two per row. Partner and crew cards are long, so they stay one per row.
+  - **The Calendar has a month view** above its lists (`MonthGrid`): your crews' agreed climbing days and
+    group events on a month grid with ‹ › and *Today*; each entry opens what the list would. Crew days and
+    events only (owner).
+  - **Chats in the rail** (1280px+): under Coming up and Alerts, your direct messages and crew chats, newest
+    first, unread counts on each; one opens the conversation. The same threads the inbox shows (`RailChats`,
+    App's `_dmCounts` keeps blocked and restricted people out).
+  - **Nothing stretches across the page** (owner 2026-10-22): the page column is 640px (it was 720), and an
+    action button sizes to its label instead of filling the column — `wideCss`' rule for a `width:100%`
+    button (and a lone `flex:1` one) in the page column or a page-view. List rows (space-between,
+    left-aligned, flex-start) still run edge to edge; dialogs keep full-width footer buttons; on the route
+    page the action buttons sit in one row across the header.
   - The **bell** opens Notifications as a drop-down under it at the shell's right edge; Home stops
     repeating its own Alerts list on desktop (the bell and the rail's Alerts card carry it).
   - **Popups that slide up from the bottom** on a phone open as **centred windows** (rounded, at most
@@ -69,6 +86,7 @@ below the top bar) do not trip it. Any new fixed desktop panel must not either.
 | File | Key symbols |
 |---|---|
 | `lib/wideLayout.js` | `useWideScreen`, `useFullWidth`, `wideGeom`, `wideColumn`, `wideSidebar`, `wideRail`, `wideTopBar`, `wideTopRow`, `wideCss`, `WIDE_MIN`, `FULL_MIN` |
+| `lib/MonthGrid.jsx` | `MonthGrid` |
 | `lib/DesktopShell.jsx` | `WideSearch`, `WideRail`, `WideFooter`, `DocTitle` |
 | `lib/dialogA11y.js` | `coveringLayer` |
 | `ClimbMatch.jsx` | `NAV`, `goTab`, `navBadge`, `_inChat`, `_known`, `_openMe`, `_closePages`, `_pageView` |
@@ -86,6 +104,10 @@ Layout only. The footer reads the states list (`useStates`); the search reads th
 `check:zindex`. The browser walks drive a phone-width window, so they cover the phone layout only.
 
 ## 7. Last significant change
+- **Narrower desktop** (owner, 2026-10-22): 640px column, action buttons sized to their label, Messages pane 280px.
+- **Desktop phase 4e**: chats in the right rail (`RailChats` in `lib/DesktopShell.jsx`).
+- **Desktop phase 4b**: the Calendar's month view (`MonthGrid`).
+- **Desktop phase 2c**: Climbs region grid, two-per-row Groups lists, two-pane Messages with a chat drop-down; the footer's Shortcuts column and the sidebar's Profile row removed (owner).
 - **Desktop phase 2a**: every full-screen view is a page in the column, the desktop nav leaves it, the
   bell is a drop-down, and Home's Alerts list is phone-only.
 - **The website shell** (desktop phase 1 of 4, owner-decided 2026-10-21): top bar with search, sidebar
@@ -95,9 +117,8 @@ Layout only. The footer reads the states list (`useStates`); the search reads th
   left for the footer; *Best day to climb* left the right rail.
 
 ## 8. Known gaps
-- **Phase 2** (decided; views-as-pages, the bell drop-down and the route page shipped): Messages as a
-  drop-down; the Climbs tab
-  as a grid of regions; short cards 2–3 per row; Messages as a two-pane inbox.
+- **Phase 2**: shipped (pages, bell and chat drop-downs, route page, Climbs grid, two-per-row lists,
+  two-pane Messages).
 - **Phase 3**: public route and area pages with real web addresses. **Phase 4**: printable route
   page, compare routes, full-month calendar, draw an approach → GPX, chat list in the rail, logbook
   CSV, embeddable route card.

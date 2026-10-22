@@ -9,7 +9,7 @@
 - **Best day to climb** (`lib/BestDayTile.jsx`): the same score run over the climber's saved (`wishlist`) crag routes **and saved areas** (`bookmarks`). A saved crag is scored when one of its `disciplines` is a crag one (for `dominant_discipline` if that is one); a saved region, whose own row has no disciplines, when crag climbs are at least half of the climbs under it (`area_climb_stats`, read by `useAreasClimbDiscs` in `lib/db.js`), for its most-climbed crag discipline. An area is scored at its own coordinate with its own `aspect` and `rock`; peaks, ranges and states are left out. Area rows share the 8-crag forecast limit and open the area page, not a day. It renders inline on Home under Jump back in, and the Menu (Plan & log) opens it as a full-screen overlay (`bestDayOpen` in `ClimbMatch.jsx`) with a Back button; saved climbs with no crag location are listed as unscored; with no saved crag climb it shows only how to add one.
 
 ## 2. How it works
-1. **Fetch** (`lib/forecast.js`): `fetchCragForecast(lat,lng)` (Open-Meteo hourly) plus `fetchCragAir` (air quality) and `fetchCragClimate` (archive, monthly climate). Results are cached per crag in module maps in `RouteDetail.jsx` (`_cragAir`, `_cragClim`) and in `BestDayTile.jsx` (`_wx`, max `MAX_CRAGS` = 8 crags; routes on one crag share a forecast).
+1. **Fetch** (`lib/forecast.js`): `fetchCragForecast(lat,lng)` (Open-Meteo hourly; every Open-Meteo forecast fetch asks for `BLEND` — the NWS National Blend of Models first, the default model filling what it lacks — folded back into plain series by `blendModels`, so a forecast does not swing between visits) plus `fetchCragAir` (air quality) and `fetchCragClimate` (archive, monthly climate). Results are cached per crag in module maps in `RouteDetail.jsx` (`_cragAir`, `_cragClim`) and in `BestDayTile.jsx` (`_wx`, max `MAX_CRAGS` = 8 crags; routes on one crag share a forecast).
 2. **Score** (`scoreForecast(forecast, wall, prefs, nowMs, air)` in `lib/conditionsScore.js`): five factors with `WEIGHTS` temp 30, humidity 20, dry rock 25, wind 10, sun 15. Each is rounded to whole points before summing; a factor with a missing input is left out and stars = 5 x points / measured points. No clamp.
 3. **Dry rock**: a drying credit accumulates since the last rain at `DRY_RATE` (damp 0.6, night 1, rh90 0.6, rh75 0.9, rhDry 1.15, wind 1.15, sun 1.3), scaled by `rainScale(rain24)` and compared to `DRY_HOURS` for the rock family (`lib/rockType.js`: granite/quartzite 12 h, basalt/limestone/metamorphic 24, volcanic 36, sandstone/shale 48, unknown 36; x1.5 if rain caution is "cautious"). Rock type comes from the route's own `routes.rock`, then `areas.rock` (`routeRock`).
 4. **Caps** (stars = min(factor stars, lowest cap)): rain in the past hour -> 1; wet sandstone -> 1; `WET_BANDS` = under 30% dry -> 1, under 70% -> 2, not fully dry -> 3.5; air at dew point -> 2; AQI over the limit -> 1, over the lower limit -> 2 (`AQ_LIMITS`, per climber sensitivity). Label via `starsLabel`: 4+ Good, 2.5+ Fair, else Poor.
@@ -22,7 +22,7 @@
 |---|---|
 | `lib/conditionsScore.js` | `scoreForecast`, `WEIGHTS`, `DRY_RATE`, `WET_BANDS`, `rainScale`, `TEMP_BANDS`, `resolveRange/resolveWind`, sun helpers, `starsLabel`, `monthlyClimate/monthFit`, `OPEN_DAY`, pref definitions |
 | `lib/rockType.js` | `DRY_HOURS`, `DRY_HOURS_UNKNOWN`, `routeRock` |
-| `lib/forecast.js` | Open-Meteo/NWS/USGS fetchers, `visibilityInMetres`, `SPREAD_MODELS`, `snapshotPackForecast` |
+| `lib/forecast.js` | Open-Meteo/NWS/USGS fetchers, `visibilityInMetres`, `SPREAD_MODELS`, `blendModels` |
 | `lib/alpineConditions.js` | alpine kinds, flags, snow, fog, alerts, start-time helpers |
 | `lib/AlpineConditionsCard.jsx` | alpine Conditions UI |
 | `lib/streams.js` | USGS gauge parsing, `nearestGauge`, `flowReading` |
@@ -52,6 +52,7 @@
 #2406 — graded wet-rock caps (`WET_BANDS`) and a faster `DRY_RATE`, fitted to CragReport. Full history is in the PRs and the commit log for the files above.
 
 ## 8. Known gaps / open decisions
+- No forecast is saved for offline use (owner, 2026-10-21): offline, every forecast surface says it could not load. Past ~day 11, and for freezing level/UV/low cloud past day 4, the series is the default model (GFS in the US), which swings more.
 - `DRY_HOURS` is published guidance and was left unchanged in #2406; the best fit wanted night to dry faster than day and was not adopted (PR text).
 - No alpine go/no-go standard exists, so alpine is flags only by owner decision (2026-10-07).
 - No published fog/whiteout standard for model visibility in mountains; the card never says "whiteout" (PR #2352).

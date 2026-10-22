@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { C, ROUTES, shortDate, daysUntil } from "../ClimbMatchCore.jsx";
+import { C, CLIMBERS, ROUTES, catOf, gradeLabel, routeLocText, shortDate, daysUntil, pubName } from "../ClimbMatchCore.jsx";
+import Av from "../src/components/Av.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
-import { usePlaceSearch, useRouteSearch, useStates } from "./db.js";
+import { discLabel } from "./discLabels";
+import { usePlaceSearch, useProfilesByIds, useRouteSearch, useStates } from "./db.js";
 import { USE_DB } from "./supabase";
 
 /* THE WEBSITE'S OWN PIECES (lib/wideLayout.js). Everything here renders only at 1024px and up — the
@@ -15,6 +17,25 @@ const ROW = { width: "100%", display: "flex", alignItems: "center", gap: 10, pad
 export function DocTitle({ title }) {
   useEffect(() => { if (typeof document !== "undefined") document.title = title; }, [title]);
   return null;
+}
+
+/* LOGBOOK AS A SPREADSHEET (desktop website, owner-approved 2026-10-21): every logged climb as one
+   CSV row, for a climber's own records. Dates stay ISO (YYYY-MM-DD) so a spreadsheet sorts them;
+   the route's name, place and grade are resolved the way My Ascents resolves them. */
+const csvCell = v => { const s = v == null ? "" : String(v); return /[",\n\r]/.test(s) ? "\"" + s.replace(/"/g, "\"\"") + "\"" : s; };
+export function downloadLogbookCsv(logs, routeById) {
+  const head = ["Date", "Climb", "Where", "Grade", "Discipline", "Style", "Stars", "Partners", "Notes"];
+  const rows = (logs || []).slice().sort((a, b) => String(b.date || "").localeCompare(String(a.date || ""))).map(l => {
+    const r = routeById ? routeById(l.routeId) : null;
+    const partners = (l.partners && l.partners.length ? l.partners : []).concat(l.typedPartners || []);
+    return [l.date || "", r ? r.name : "", r ? routeLocText(r) : "", r ? gradeLabel(r) : "", r ? discLabel(catOf(r)) : "", l.tickType || "", l.stars || "", partners.join("; "), l.text || ""];
+  });
+  const csv = [head].concat(rows).map(row => row.map(csvCell).join(",")).join("\r\n");
+  const url = URL.createObjectURL(new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8" }));
+  const a = document.createElement("a");
+  a.href = url; a.download = "climbmatch-logbook-" + new Date().toISOString().slice(0, 10) + ".csv";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
 }
 
 const editable = el => !!el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName));
@@ -77,7 +98,41 @@ export function WideSearch({ onOpenRoute, onOpenArea }) {
 /* RIGHT RAIL. Widgets drawn from what App already holds — the next agreed crew days and unread alerts.
    Best day to climb is NOT here (owner, 2026-10-21): it opens from the Menu's tile. Ads, when they
    come, take slots in this column (desktop only). */
-export function WideRail({ upcoming, alerts, onOpenCal, onOpenAlerts, onFindPartners }) {
+/* CHATS IN THE RAIL (desktop website, owner-approved 2026-10-21): your crews' chats and your direct
+   messages, newest first, always in reach the way Facebook's contacts column is. The same threads
+   the inbox shows — `shows(id)` is App's own test for a direct thread (blocked and restricted
+   people stay out) — and a real account is named the way it chose (pubName), read the way the
+   inbox reads it. */
+function RailChats({ chats, onOpenDm, onOpenCrew }) {
+  const { msgs, crews, crewMsgs, crewUnread, dmUnread, shows, placeOf } = chats;
+  const dmIds = Object.keys(msgs || {}).filter(id => (msgs[id] || []).length > 0 && shows(id));
+  const realIds = dmIds.filter(id => !/^\d+$/.test(id));
+  const profQ = useProfilesByIds(realIds);
+  const last = arr => (arr && arr.length ? arr[arr.length - 1] : null);
+  const rows = [];
+  dmIds.forEach(id => {
+    const c = /^\d+$/.test(id) ? CLIMBERS.find(x => x.id === +id) : (profQ.data || []).find(p => p.id === id);
+    const m = last(msgs[id]);
+    if (c) rows.push({ key: "dm" + id, name: pubName(c), avatar: c.avatar, unread: Number((dmUnread || {})[id]) || 0, ts: (m && m.ts) || 0, open: () => onOpenDm(c) });
+  });
+  (crews || []).forEach(cr => {
+    const p = placeOf(cr);
+    const m = last((crewMsgs || {})[cr.id]);
+    rows.push({ key: "cr" + cr.id, name: (p && p.kind !== "missing" && p.name) || "Crew", crew: true, unread: Number((crewUnread || {})[cr.id]) || 0, ts: (m && m.ts) || 0, open: () => onOpenCrew(cr) });
+  });
+  rows.sort((a, b) => b.ts - a.ts);
+  const shown = rows.slice(0, 8);
+  return <section aria-labelledby="rail-chats" style={CARD}>
+    <div id="rail-chats" style={{ ...SECTION, marginBottom: 6 }}>Chats</div>
+    {shown.length ? shown.map(r => <button key={r.key} onClick={r.open} aria-label={(r.crew ? r.name + " crew chat" : "Chat with " + r.name) + (r.unread ? ", " + r.unread + " unread" : "")} style={ROW}>
+      {r.crew ? <span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 14, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><ActionIcon name="crews" size={15} color={C.textSub} /></span> : <Av src={r.avatar} size={28} />}
+      <span style={{ flex: 1, minWidth: 0, fontSize: 13.5, fontWeight: r.unread ? 800 : 600, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{r.name}</span>
+      {r.unread ? <span aria-hidden="true" style={{ minWidth: 18, height: 18, borderRadius: 9, background: C.redSolid, color: "#fff", fontSize: 11, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "0 5px", boxSizing: "border-box" }}>{r.unread}</span> : null}
+    </button>) : <div style={{ fontSize: 13, color: C.textMuted, padding: "2px 2px 4px" }}>No conversations yet.</div>}
+  </section>;
+}
+
+export function WideRail({ upcoming, alerts, onOpenCal, onOpenAlerts, onFindPartners, chats, onOpenDm, onOpenCrewChat }) {
   const unread = alerts.filter(n => !n.read);
   return <aside aria-label="Highlights" style={{ display: "flex", flexDirection: "column", gap: 14 }}>
     <section aria-labelledby="rail-upcoming" style={CARD}>
@@ -92,6 +147,7 @@ export function WideRail({ upcoming, alerts, onOpenCal, onOpenAlerts, onFindPart
       {unread.length ? unread.slice(0, 3).map(n => <button key={n.id} onClick={onOpenAlerts} style={{ ...ROW, alignItems: "flex-start" }}><span aria-hidden="true" style={{ width: 7, height: 7, marginTop: 6, borderRadius: 4, background: C.blue, flexShrink: 0 }}/><span style={{ fontSize: 13, lineHeight: 1.4, color: C.text, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{n.text}</span></button>) : <div style={{ fontSize: 13, color: C.textMuted, padding: "2px 2px 4px" }}>You’re all caught up.</div>}
       {alerts.length ? <button onClick={onOpenAlerts} style={{ marginTop: 4, padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>See all alerts ›</button> : null}
     </section>
+    {chats ? <RailChats chats={chats} onOpenDm={onOpenDm} onOpenCrew={onOpenCrewChat} /> : null}
   </aside>;
 }
 
@@ -107,7 +163,7 @@ export function WideFooter({ onOpenState, links, legal }) {
       {statesQ.isError ? <div style={{ fontSize: 13, color: C.amber }}>The list of states couldn’t load right now.</div>
         : <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", columnGap: 16 }}>{states.map(s => <button key={s.id} onClick={() => onOpenState(s)} style={link}>{s.name}</button>)}</div>}
     </div> : null}
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 16 }}>{col("ClimbMatch", links)}{col("Legal", legal)}<div><div style={{ ...SECTION, marginBottom: 8 }}>Shortcuts</div><div style={{ fontSize: 13, lineHeight: 1.7 }}><kbd style={{ fontFamily: "inherit", border: "1px solid " + C.border, borderRadius: 5, padding: "0 6px", marginRight: 6 }}>/</kbd>Search<br/><kbd style={{ fontFamily: "inherit", border: "1px solid " + C.border, borderRadius: 5, padding: "0 6px", marginRight: 6 }}>Esc</kbd>Close a popup</div></div></div>
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 16, maxWidth: 480 }}>{col("ClimbMatch", links)}{col("Legal", legal)}</div>
     <div style={{ marginTop: 22, fontSize: 12, color: C.textMuted }}>{"© " + new Date().getFullYear() + " ClimbMatch"}</div>
   </footer>;
 }

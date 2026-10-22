@@ -210,20 +210,20 @@
       #cm-boot .b-card { background: #1c2330; border: 1px solid #30363d; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 9px; }
       #cm-boot .b-line { height: 11px; border-radius: 6px; }
       /* Wide screens: the same shell lib/wideLayout.js draws, so nothing jumps when React mounts. A 64px top bar across the window;
-         1024-1279px: a 72px icon sidebar + 24px gap + 720px column (816px shell, centred); 1280px and up: a 240px sidebar + 24 + the
-         column + 24 + a 300px rail (1308px shell, centred). */
+         1024-1279px: a 72px icon sidebar + 24px gap + 640px column (736px shell, centred); 1280px and up: a 240px sidebar + 24 + the
+         column + 24 + a 300px rail (1228px shell, centred). */
       @media (min-width: 1024px) {
-        #cm-boot { max-width: none; width: 720px; margin-left: calc(max(16px, calc(50vw - 408px)) + 96px); margin-right: 0; padding-top: 64px; box-sizing: border-box; }
+        #cm-boot { max-width: none; width: 640px; margin-left: calc(max(16px, calc(50vw - 368px)) + 96px); margin-right: 0; padding-top: 64px; box-sizing: border-box; }
         #cm-boot .b-bar { position: fixed; top: 0; left: 0; right: 0; height: 64px; box-sizing: border-box; padding: 0 16px; flex-direction: row; align-items: center; z-index: 2; }
-        #cm-boot .b-nav { position: fixed; top: 64px; bottom: 0; left: max(16px, calc(50vw - 408px)); width: 72px; box-sizing: border-box; flex-direction: column; gap: 2px; padding: 16px 8px; background: #0d1117; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; border-right: 1px solid #30363d; font-size: 0; }
+        #cm-boot .b-nav { position: fixed; top: 64px; bottom: 0; left: max(16px, calc(50vw - 368px)); width: 72px; box-sizing: border-box; flex-direction: column; gap: 2px; padding: 16px 8px; background: #0d1117; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; border-right: 1px solid #30363d; font-size: 0; }
         #cm-boot .b-nav div { flex: none; flex-direction: row; justify-content: center; padding: 10px 0; font-size: 0; border-radius: 12px; }
         #cm-boot .b-nav div:first-child { background: #0d2044; }
         #cm-boot .b-nav b { margin: 0; }
         #cm-boot .b-mark { display: none; }
       }
       @media (min-width: 1280px) {
-        #cm-boot { width: calc(min(1308px, calc(100vw - 32px)) - 588px); margin-left: calc(max(16px, calc(50vw - 654px)) + 264px); }
-        #cm-boot .b-nav { left: max(16px, calc(50vw - 654px)); width: 240px; padding: 16px 12px; }
+        #cm-boot { width: calc(min(1228px, calc(100vw - 32px)) - 588px); margin-left: calc(max(16px, calc(50vw - 614px)) + 264px); }
+        #cm-boot .b-nav { left: max(16px, calc(50vw - 614px)); width: 240px; padding: 16px 12px; }
         #cm-boot .b-nav div { justify-content: flex-start; gap: 14px; padding: 10px 12px; font-size: 15.5px; }
       }
     </style>
