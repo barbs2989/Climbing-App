@@ -164,6 +164,15 @@
       }
       /* 16px inputs so iOS doesn't auto-zoom the page when a field is focused */
       input, textarea, select { font-size: 16px !important; }
+      /* ONE dropdown chevron for every <select>, on every screen. This rule used to live in a <style>
+         that App renders inside its MAIN return only, so every screen App returns EARLY (Edit
+         profile, the Calendar, the guide dashboard, the legal pages, sign-in) drew the browser's own
+         arrow -- black on the app's near-black field, which is how Edit profile's state picker was
+         reported as unreadable. In the document head it reaches them all. !important beats the
+         inline `background:` shorthand most selects carry, which would otherwise reset the image.
+         #2f81f7 is 4.6:1 on #161b22 (WCAG 1.4.11 asks 3:1 of a control's graphics). A list box
+         (multiple / size) draws no arrow, so it is left alone. */
+      select:not([multiple]):not([size]) { -webkit-appearance: none !important; -moz-appearance: none !important; appearance: none !important; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%232f81f7%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E') !important; background-repeat: no-repeat !important; background-position: right 12px center !important; background-size: 10px !important; padding-right: 34px !important; }
       /* iOS Safari draws a date/time input as a native control with its OWN minimum width and
          ignores width:100%, so DATE CLIMBED ran past the right edge of its card and its value sat
          centred inside a box wider than every field around it. Dropping the native appearance
