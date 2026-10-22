@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Desktop: draw an approach**: a route page's *✎ Draw approach* traces the way in on a map, shows its length and terrain gain and loss, and downloads it as GPX (marked hand-drawn); on a crag it can be suggested as the trail through the existing review. Desktop website only. See `docs/features/route-page.md`.
 - **Desktop: compare climbs side by side**: *+ Compare* on a route page fills a tray at the bottom of the window (up to four), and *Compare* opens a table of grade, length, pitches, approach, gain, aspect, season, rating, hazards and the best day this week. Desktop website only. See `docs/features/route-page.md`.
 - **Desktop: print a route, download your logbook**: a route page has *⎙ Print* — a one-sheet printout of approach, pitches, descent, rack, hazards and waypoints — and My Ascents has *⤓ Download as CSV*. Desktop website only. See `docs/features/route-page.md` and `docs/features/logbook-crews-home.md`.
 - **Desktop: the Calendar is a month**: above its lists, a month grid of your crews' agreed climbing days and group events, ‹ › to move and *Today* to come back; each entry opens the crew or the event. Desktop website only. See `docs/features/app-shell-and-layout.md`.
