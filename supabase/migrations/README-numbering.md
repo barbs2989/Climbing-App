@@ -78,6 +78,13 @@ To check before pushing, the owner's session keeps a PGlite replay harness (it s
 2. If you replace a function used in an index predicate, the index must be **DROP + CREATE**.
    `REINDEX` is a no-op: the predicate is stored inlined in `pg_index.indpred`, and REINDEX
    rebuilds from that stored copy. See `0067` for the detail and the verified evidence.
+3. **An area FOLD repoints every area-keyed climber table before it deletes the area.** The
+   convention (0292's shape, step 3): `topos`, `contributions`, **`crews`** (0302, FK with no
+   cascade — a session at the folded crag moves to the keeper, it is never lost) and
+   **`partner_areas`** (0300, cascades, so a listing silently vanishes unless repointed first).
+   Write the four `update … set area_id = d.into_area from m_drop_area d where …` lines together and
+   re-count all four afterwards. The refusal counter stays as it is: a same-place fold MOVES a
+   session or a listing, it does not lose one.
 
 ## Related habit
 

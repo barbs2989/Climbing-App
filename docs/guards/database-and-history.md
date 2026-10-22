@@ -665,6 +665,65 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       anywhere (source, web), still there. Planner: junk rows now come from `extra.json`, and a climb cannot be
       moved onto a place that has walls (`routes_require_leaf`), so a list there nests as "<Place> Routes".
       Rollback: `scripts/data/holding-bins-rollback.json`.
+    - **Places the source WITHHOLDS for access, withdrawn — 0301** (2026-10-15, owner: "do what you
+      recommend based on online research"). The rule: follow the source's own practice. What it HIDES (WA's
+      closed crags under initials, the Rumney Pound's boulders kept "for history ... Don't climb here", Bunyan
+      Mountain's "respect the landowner's request", a Maine spire on hotel land named in disguise) is deleted:
+      227 climbs, 48 areas, every row whole in `scripts/data/closed-places-rollback.json` to restore if access
+      reopens. What it SHOWS with a closure banner (Pickledish, "Pound (closed), The") stays. Also South West
+      Overhang back to the source's V1+: keep-the-higher is for old guidebooks graded low, not a misfiled copy's
+      grade (Dishpan Hands keeps V8: the source's "V0-1" is a placeholder on an "unfinished brutal highball").
+    - **The source's boulders we lacked, created, and their climbs filed on them — 0310** (2026-10-15). 0296's
+      5,644 "no area of ours" climbs. 5,481 passed 0296's rules (one home in the state, inside the list's crag,
+      ≤ 3 km). **2,289 were already home**: with the name read clean, the LIST itself is the home — the sweep's
+      key missed a sort label ("1. Upper Wall"). Placed: **2,056 climbs onto 417 new areas** (and existing levels
+      reused), 91 emptied lists folded. Applied in parts (`apply-fold-in-parts.mjs`); dry runs: part 1 in full,
+      and an Oregon subset end to end. Traps, each caught before it shipped: (1) the source's page HEADING
+      appends the area type on a new line ("Middle Marker\n Rock Climbing") and HIDES a leading initial ("T.
+      Barnum Wall" for "P.T. Barnum Wall"): the real name is the BREADCRUMB's; (2) the export's stored names had
+      the same cut; (3) a name matched exactly where the planner matches without stop-words ("Middle Marker" vs
+      "Middle Marker Area"): match siblings the PLANNER's way; (4) the "duplicates" found were each climb paired
+      with ITSELF (the list was the home) — 2,099 merges that would have deleted every one; (5) a new area under
+      one that holds climbs is MIXED (`routes_require_leaf`). Left: 491 whose chain has a generic level
+      ("Bouldering", "Top Rope"), 282 whose home has a same-named area within 1.5 km (likely ours under another
+      parent), and the places dropped as not-new or unnamed (Turtle Rock, Mordor, S.B.R. Block, "E. Macy Park").
+      Planner: a new area's parent may be another new one (`insertUnder`), and "left empty" counts its subtree.
+      Rollback: `scripts/data/boulders-created-rollback.json` (folded lists) and the migration's own `m_move`.
+      **REVERTED by 0316** — see the next entry.
+    - **0310 reverted exactly — 0316** (2026-10-15). After 0310, `check:area-duplicates` failed on 17 pairs and
+      `check:summit-briefing` on its fixture: Mount Baker had lost 7 of its routes to a new "Mt. Baker" under the
+      source's North Cascades. 0310's "does this place exist?" test matched names EXACTLY within 1.5 km; a wider read
+      (state-wide, Mt./Mount, spellings, labels, our `_2` ids) found ~60 places re-created: Stone Fort's whole tree a
+      second time, Chuckwalla / Chuckawalla Wall, Ellesmere / Ellsmere Island, "(.3) Cougar's Den" / "Cougar's Den",
+      peaks under a second parent. Fixing pair by pair was a redo, so 0316 puts 0310 back from its own rollback: the
+      91 lists re-created (id, name, parent, every column), the 2,056 moves reversed, its 417 areas folded away, the
+      keeper fill undone. Dry runs: part 1 in full, and an Oregon subset end to end. **For the redo, "is this place
+      ours already?" must search the WHOLE STATE**, under the planner's match plus Mt./Mount, spelling distance,
+      sort labels and `(aka …)` qualifiers, read every hit, and treat a peak's own route list as the place, never a
+      catch-all. A guard that names a FIXTURE (`check:summit-briefing`'s Mount Baker) is a free tripwire: run the
+      route-page guards after any catalog fold, not only the catalog ones.
+    - **0310 redone strictly, plus the names the source lists twice — 0320** (2026-10-15). The rule above, built:
+      every level of a climb's home is looked up state-wide (planner match, Mt./Mount, labels, parentheticals,
+      `| 1234`, spelling distance ≤ 2, 5 km by the nearest pin above OR below an unpinned area, and any same-named
+      area under the same parent). One hit is reused, two make the climb wait, and none creates the area. A climb never
+      leaves a peak's own list, nor a list that already IS its home under another spelling (3,796 of those: "Chuckawalla
+      Wall" ⇐ "Chuckwalla Wall", "Sinkhole" ⇐ "The Sinkhole", "Slesse Mountain" ⇐ "Mt. Slesse"). Then every new
+      area was read against every area within 3 km, and 8 more were the same place ("The Vault - CLOSED TO CLIMBING",
+      "Boulder N (aka Pimp Juice Boulder)", "Shinall (Chenal) Mountain"). The 2,103 ambiguous names were placed
+      only where exactly ONE of the source's homes sits inside the list's own crag within 3 km (1,120). 1,284 climbs
+      moved, 256 areas created, 110 emptied lists deleted, no grade changed, and 40 random moves were checked
+      against the live pages, all agreeing. The pin miss that let one through: an area with no pin above it
+      ("Beale Springs Wall") read as "not near". **An unpinned area is not a far one.**
+      After the apply, `check:generic-area-names` caught a new "CT Bouldering". decide.mjs had called
+      `genericAreaName(name, [])` with no ancestors, so the "discipline words beside the state" rule never fired. The
+      climbs whose source chain began at the STATE (17) were the risky class: **0324** puts AL's 7 back on Horse
+      Pens 40 Routes (0320 had re-created the source's "Temp HP40" bin under Alabama) and files CT's Babyface/Warm-Up
+      Slab under our Coney Rock Preserve, deleting the copy and "CT Bouldering". **Pass the ancestors, and treat
+      a chain anchored at a state as unsure.**
+    - **Pickledish's last holding bin — 0321** (2026-10-15). The source's "temp holding" > WW / BW > "Section 3
+      (edit later)": WW's page says "eastern end of SMW formation", so Crumbly Slab joins Spring Morning Wall. BW is
+      its own undeveloped buttress, so it stays, lifted under Pickledish, with The Bad on it. Three placeholders are
+      deleted.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
@@ -1019,6 +1078,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       head**, so it injected the forbidden shape while claiming to be innocent; and an
       outside-the-form decoy that included `u1` tripped the older file-wide rule instead, saying
       nothing about the new one. **A case that fails for its own reasons proves nothing.**
+    - **2026-10-15, rule 4 fired on purpose and the fix was a NEW DEFINITION, 0327.** 0317 made
+      seven more columns editable on the route page (`ffa`, `fwa`, `alt_names`, `variations`,
+      `high_point_ft`, `sun`, `pro_tips`); offering them in `lib/AddRoute.jsx`'s `FIELDS` without
+      a migration fails rule 4 against 0157, which is the point — the form must not ask what
+      approval drops. 0327 was **generated from 0157's body by INSERTION** (the generator refuses
+      a file whose column count and value count disagree: 58 and 58) and restates 0171's
+      `set search_path` in the definition. A trap met: `String.prototype.replace` reads `$$` in
+      its replacement as ONE `$`, so the first generated file lost the dollar-quote and
+      `check:migration-replay` stopped at it with `syntax error at or near "$"` — use a function
+      replacer. The form sends `highPointFt` in FEET (through its `canonFt`, like gain), so the
+      SQL rounds without converting; `altNames` is unnested to `text[]` like `rack`, and
+      `variations`/`proTips` pass through as jsonb arrays like `whatToBring`.
 - **`check:function-columns`** asks the general form of the question `check:approve-route-columns`
   rule 1 asks about one function: **does every column a stored function WRITES still exist?**
   #1020 dropped `routes.source`, swept the five call sites its header names, and missed
@@ -1327,7 +1398,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   (`approachFinishes`) reads siblings' `approach_variants`, so that column stays in the list; and
   the climb picker (`DbClimbPicker`), which hands a row to the LOG FORM rather than to openRoute,
   so it asks for `{ full: true }` under its own key. **What the guard does:** parses the readers
-  (RouteRow, SummitBriefing, the sibling cells and rows, ApproachPicker, the two approach memos)
+  (RouteRow, SummitBriefing, NEXT DOOR (`WallNeighbours`, since 2026-10-21; it replaced the header strip's `cell`) and the sibling rows, ApproachPicker, the two approach memos)
   and every function they hand a row to, across lib/DbAreaBrowser.jsx, lib/grade.js,
   lib/outing.js, ClimbMatchCore.jsx and RouteDetail.jsx; maps camelCase reads back to columns
   through dbRouteToCamel's own object; decides what IS a column from `scripts/schema-snapshot.json`

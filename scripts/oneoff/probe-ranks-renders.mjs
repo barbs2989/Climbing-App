@@ -90,5 +90,29 @@ const demoOptions = render({ ...base, rankBoard: "trust", uid: null, useDb: fals
   const h = text(render({ ...base, rankBoard: "points", uid: "u", useDb: true }, []));
   /Loading rankings|couldn’t be read|Couldn’t load the rankings/.test(h) ? ok("real board with no data is loading/unread, not empty") : fail("real board with no data renders as empty");
 }
+// 5. The 0323 audit: a discipline board reads that discipline's counts (stats.by), a climber with
+//    nothing on a board is not ranked on it, equal scores share a rank, and ⚑ sits in its own column.
+{
+  const by = (days, vert) => ({ sport: { logged: 4, backed: 1, daysYr: days, vertYr: vert, classics: 1, peaks: { life: 0, yr: 0 } },
+    rock: { logged: 4, backed: 1, daysYr: days, vertYr: vert, classics: 1, peaks: { life: 0, yr: 0 } } });
+  const row = (id, name, pts, days, extra) => ({ user_id: id, is_me: false, name, username: name.toLowerCase().replace(/\W/g, ""), show_name: true,
+    avatar: "", location: "Leavenworth", disciplines: ["sport"], dist_mi: null, no_origin: false, trust: 9, catches: 0, vouches: 0, contribs: 0,
+    stats: { all: { ...st(9, 1, pts), by: by(days, 0), ...extra }, backed: st(1, 1, 0) } });
+  const ROWS2 = [ROWS[0],
+    row("33333333-3333-3333-3333-333333333333", "Tiea Uno", 6061, 47),
+    row("44444444-4444-4444-4444-444444444444", "Tieb Dos", 6061, 12),
+    { ...row("55555555-5555-5555-5555-555555555555", "Nulla Zero", 0, 0), stats: { all: { ...st(0, 0, 0), sends: { sport: { life: 1, yr: 1 } }, points: { all: 0, sport: 0 }, by: by(0, 0) }, backed: st(0, 0, 0) } }];
+  const seed2 = [[["leaderboard", "overall", null, null, ""], ROWS2]];
+  const props = { ...base, uid: "11111111-1111-1111-1111-111111111111", useDb: true };
+  const pts = render({ ...props, rankBoard: "points" }, seed2);
+  const firsts = (pts.match(/aria-label="#1, /g) || []).length, thirds = (pts.match(/aria-label="#3, /g) || []).length;
+  firsts === 2 && thirds === 1 ? ok("equal scores share rank 1, and the next climber is #3") : fail(`ties: ${firsts} row(s) at #1 and ${thirds} at #3 (want 2 and 1)`);
+  /Nulla Zero/.test(text(pts)) ? fail("a climber with 0 points is ranked on Send points") : ok("a climber with 0 points is not ranked");
+  /aria-label="Report Tiea Uno’s climbs or ranking"/.test(pts) ? ok("each real row carries ⚑") : fail("⚑ missing on a real row");
+  const days = text(render({ ...props, rankDisc: "sport", rankBoard: "days" }, seed2));
+  days.includes("47") && days.includes("12") ? ok("the Sport board's Days are the sport days (stats.by), not the career total") : fail("the Sport board's Days did not read stats.by.sport");
+  const help = text(pts);
+  /Career performance points|Climbs are self-reported/.test(help) ? fail("the scoring text still renders on the board (it lives in Help › Ranks)") : ok("the scoring text is off the board");
+}
 console.log(failures ? `\nFAIL: ${failures}` : "\nok — Ranks renders in both populations");
 process.exit(failures ? 1 : 0);

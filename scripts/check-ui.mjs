@@ -98,7 +98,9 @@ const LANDMARKS = {
   // unreachable and nothing said so. check:dead-flag-gates catches a re-gating onto a dead
   // constant; this catches the banner simply disappearing. Built from the current year
   // because the label carries it, so this does not rot every January.
-  Profile: [`Your ${new Date().getFullYear()} Year in Climbing`],
+  // It lives on the Profile screen's ACTIVITY tab (Profile · Activity · Review), walked by the
+  // profile-tabs-switch flow below; the default Profile view no longer carries it.
+  "Profile:Activity": [`Your ${new Date().getFullYear()} Year in Climbing`],
   // The Crew sub-views, unreachable to this check until #740/#755 named their buttons.
   //
   // "PEOPLE YOU'VE CLIMBED WITH" is the surface #713 revived: it used to map over
@@ -776,6 +778,23 @@ try {
     const back = await settledText(page, { min: 30, timeout: 45000 });
     if (screens.Groups && back !== screens.Groups) {
       throw new Error("returning to For you did not restore the Groups screen -- the tab strip navigates one way only");
+    }
+  });
+
+  // THE PROFILE SCREEN'S OWN TABS (Profile · Activity · Review for admins). The main walk captures
+  // Profile; Activity holds the logbook, the catch record and the Year in Climbing banner, so it is
+  // captured here under the same rules (LANDMARKS["Profile:Activity"] asserts the banner). Profile is
+  // tapped last so the screen is left where a visit starts.
+  await flow("profile-tabs-switch", async () => {
+    if (!(await tap("Profile"))) throw new Error("the Menu's profile card is not present");
+    if (!(await tap("Activity"))) throw new Error("the Profile tab \"Activity\" is not present");
+    await capture("Profile:Activity");
+    // Opening Profile from the Menu lands on its Profile tab (Review only when an admin has items
+    // waiting, which the fixture account does not), so this one tap is the way back.
+    if (!(await tap("Profile"))) throw new Error("the Menu's profile card is not present");
+    const back = await settledText(page, { min: 30, timeout: 45000 });
+    if (screens.Profile && back !== screens.Profile) {
+      throw new Error("returning to the Profile tab did not restore the Profile screen -- the tab strip navigates one way only");
     }
   });
 

@@ -130,7 +130,39 @@ export const MOVED = {
     "lib/Help.jsx", "lib/LegalView.jsx", "lib/Calendar.jsx", "lib/FriendsList.jsx", "lib/Inbox.jsx",
     "lib/GiveVouch.jsx", "lib/Onboarding.jsx", "lib/ShareCard.jsx", "lib/NotifPanel.jsx",
     "lib/MyAscents.jsx", "lib/SafetyTab.jsx",
+    // Not moved OUT of core — born lazy (0300/0302) — but registered the same way so every guard that
+    // reads "core" (overlay discovery, absence copy, real-profile rows, popup chrome) sees them.
+    "lib/MyPartnerAreas.jsx", "lib/StartCrewSheet.jsx",
     "src/components/RiskBadge.tsx",
+    "src/components/DiscBadge.tsx",
+    "src/components/DiscBadges.tsx",
+    "src/components/Lbl.tsx",
+    "src/components/CountUp.tsx",
+    "src/components/Pill.tsx",
+    "src/components/ActionIcon.tsx",
+    "src/components/ElevChart.tsx",
+    "src/components/DiscIcon.tsx",
+    "src/components/Av.tsx",
+    "src/components/GPXMap.tsx",
+    "src/components/SwipeRow.tsx",
+    "src/components/ChatComposer.tsx",
+    "src/components/ScreenSkeleton.tsx",
+    "src/components/OverlaySkeleton.tsx",
+    "src/components/MessageRow.tsx",
+    "src/components/TypingIndicator.tsx",
+    "src/components/Hr.tsx",
+    "src/components/Stars.tsx",
+    "src/components/Bar.tsx",
+    "src/components/CardHead.tsx",
+    "src/components/PhotoAltField.tsx",
+    "src/components/PhotoDescribeBox.tsx",
+    "src/components/ShareExportRow.tsx",
+    "src/components/ReactionPicker.tsx",
+    "src/components/PullToRefresh.tsx",
+    "src/components/TopContribBadge.tsx",
+    "src/components/RetryReminder.tsx",
+    "src/components/PlaceMatches.tsx",
+    "src/components/SectionJumps.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
@@ -181,6 +213,10 @@ export function readParentSource(root = OWN_ROOT, parent = "ClimbMatchCore.jsx",
   for (const f of MOVED[parent]) {
     const p = path.join(root, f);
     if (!fs.existsSync(p)) bail(guard, `${f} (a component moved out of ${parent}) is missing, so it would go unscanned`);
+    // A parent that still USES what it extracted imports it back (core imports DiscBadge for
+    // DiscBadges). Stitched verbatim, that import plus the moved body is a duplicate declaration
+    // and Babel refuses the whole file — so the parent's own import of each moved file is dropped.
+    out = out.replace(new RegExp(`^import [^\\n]* from "[^"\\n]*/${path.basename(f).replace(/\./g, "\\.")}";?\\n`, "m"), "");
     out += "\n" + movedAsParentText(fs.readFileSync(p, "utf8"), f);
   }
   return out;

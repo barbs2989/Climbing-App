@@ -22,12 +22,18 @@
 // resume showed an amber "Unverified" chip. It also blocked `verifyMyEmail()`, the one call that
 // would have written the missing record, so the state could not recover for that session.
 //
-// WHY THE RECORD READ IS REDUNDANT, PROVEN RATHER THAN ASSUMED. 0085's `verify_my_email()` reads
-// auth.users itself and raises 'email is not confirmed' unless `email_confirmed_at` is set. So an
-// email record with status 'verified' CANNOT exist for an account whose email is unconfirmed. The
-// record is derivable from the session; the session is not derivable from the record. That makes
-// the session the authority and the record a fallback -- not the other way round.
-//
+// 0306 REVERSED THE AUTHORITY, ON PURPOSE. This guard used to assert that the SESSION settles it
+// (`email_confirmed_at`) and the record is a fallback. That was sound only while a confirmed email
+// meant someone read an inbox. With mailer_autoconfirm on, Supabase stamps every account confirmed at
+// sign-up without sending anything, so that rule called EVERYONE verified and quietly wrote the record
+// that showed everyone else a check mark. The owner chose a real check (2026-10-15): an emailed code.
+//   * a verified RECORD is the authority;
+//   * a session that came from the inbox in the last 30 minutes (code, link, reset link -- the `amr`
+//     claim verify_my_email() itself checks) writes the record;
+//   * ONLY a read that succeeded and found nothing says "not verified".
+// The property this guard was promoted for SURVIVES the reversal: a failed read still un-verifies
+// nobody -- it now decides nothing at all, rather than deciding "verified" from the session.
+
 // This needs NO browser and NO database, which is the point: the four cases below include ones
 // live data cannot produce on demand (an unconfirmed session, a stale session). The browser guard
 // `check:outage ONLY=verification_records` measures the same fix end to end and is the slower,
@@ -78,18 +84,21 @@ if (body.replace(/\/\*[\s\S]*?\*\//g, "").trim().length < 120) {
 // The free variables the effect closes over, supplied per case. `uid` and `verifHydratedRef` are
 // consumed by the anchor itself, so the body sees only these.
 const run = new Function("session", "myVerificationQ", "verifHydratedRef", "setVerified",
-  "verifyMyEmail", body);
+  "verifyMyEmail", "inboxProofFresh", body);
 
-function decide({ confirmed, records }) {
-  let verified = false;
+// `verified` starts as "untouched", so a case that must decide NOTHING is told apart from one that
+// decides false. inboxProofFresh is lib/auth.js's amr reader, stubbed per case -- its decoding is not
+// what this guard measures; what the effect DOES with its answer is.
+function decide({ confirmed, fresh, records }) {
+  let verified = "untouched";
   let repairCalled = false;
-  const ref = { current: false };
   run(
     confirmed ? { user: { email_confirmed_at: "2026-01-01T00:00:00Z" } } : { user: {} },
     { data: records },
-    ref,
+    { current: false },
     (v) => { verified = v; },
     () => { repairCalled = true; return Promise.resolve(); },
+    () => !!fresh,
   );
   return { verified, repairCalled };
 }
@@ -98,36 +107,40 @@ const VERIFIED_ROW = [{ verification_type: "email", status: "verified" }];
 
 const CASES = [
   {
-    name: "healthy — session confirmed, record present",
-    input: { confirmed: true, records: VERIFIED_ROW },
+    name: "healthy — a verified record",
+    input: { confirmed: true, fresh: false, records: VERIFIED_ROW },
     verified: true, repair: false,
-    why: "Nothing to repair; the record already agrees with the session.",
+    why: "The record is the authority.",
   },
   {
-    name: "OUTAGE — session confirmed, record read FAILED",
-    input: { confirmed: true, records: undefined },
-    verified: true, repair: true,
-    why: "THE DEFECT. `data` is undefined because the query threw. The session alone settles it, "
-       + "and the repair write fires -- idempotent by construction, since verify_my_email() is an "
-       + "`on conflict do update` upsert sourcing every column from auth.users.",
+    name: "OUTAGE — record read FAILED, autoconfirmed session",
+    input: { confirmed: true, fresh: false, records: undefined },
+    verified: "untouched", repair: false,
+    why: "THE PROPERTY THIS GUARD WAS PROMOTED FOR. A failed read must not un-verify anyone -- and since "
+       + "0306 it must not VERIFY anyone on the session's say-so either. It decides nothing.",
   },
   {
-    name: "stale session — not confirmed, but a verified record exists",
-    input: { confirmed: false, records: VERIFIED_ROW },
-    verified: true, repair: false,
-    why: "The record read stays as a fallback, so this direction is unchanged. A session issued "
-       + "before confirmation must not un-verify an account.",
-  },
-  {
-    name: "genuinely unknown — not confirmed, read FAILED",
-    input: { confirmed: false, records: undefined },
+    name: "AUTOCONFIRM IS NOT PROOF — read returned [], email_confirmed_at set",
+    input: { confirmed: true, fresh: false, records: [] },
     verified: false, repair: false,
-    why: "Neither source has anything to say, so nothing is claimed. This is the case a flag "
-       + "would cover, and it is unreachable while every account's email is confirmed.",
+    why: "THE 0306 DEFECT. Autoconfirm sets email_confirmed_at on every account without emailing; the "
+       + "old rule read that as verified and wrote the record everyone else sees as a check mark.",
   },
   {
-    name: "genuinely unverified — not confirmed, read returned []",
-    input: { confirmed: false, records: [] },
+    name: "inbox proof — fresh code/link session, no record yet",
+    input: { confirmed: true, fresh: true, records: [] },
+    verified: "untouched", repair: true,
+    why: "The emailed code or link just proved the inbox: write the record (verified is set when it lands).",
+  },
+  {
+    name: "inbox proof during an outage — fresh session, read FAILED",
+    input: { confirmed: true, fresh: true, records: undefined },
+    verified: "untouched", repair: true,
+    why: "The proof is the session's own, so a failed record read need not block the write.",
+  },
+  {
+    name: "genuinely unverified — read returned [], no inbox proof",
+    input: { confirmed: false, fresh: false, records: [] },
     verified: false, repair: false,
     why: "An honest negative: the read succeeded and found nothing.",
   },
@@ -149,5 +162,5 @@ if (bad) {
   console.error(bad + " case(s) failed.");
   process.exit(1);
 }
-console.log("ok — a failed verification_records read no longer un-verifies a confirmed account,\n"
-  + "     and neither the stale-session fallback nor the honest-negative case moved.");
+console.log("ok — a failed verification_records read decides nothing, autoconfirm alone verifies nobody,\n"
+  + "     and a session fresh from the inbox writes the record.");

@@ -35,6 +35,8 @@ npm run check:quiet-box-wiring # every BROWSER probe refuses an oversubscribed b
 npm run check:guard-wiring # every guard RUNS, is named here, and this file agrees about its CREDENTIAL (in build)
 npm run check:action-versions # no workflow pins an action below the version we moved to (in build)
 npm run check:types # every TypeScript file under src/ type-checks, strict — Vite strips types and checks nothing (in build)
+npm run type-check # the same as check:types, under the name the owner asked for
+npm run lint # ESLint, every rule an error: unused variables, `any`, rules-of-hooks + hook dependency arrays; legacy findings held in eslint-suppressions.json, which only shrinks (in build)
 npm run measure:guard-reach -- --out before.json # ...then --out after.json --compare before.json: did moving code make a guard go BLIND? (hand-run around every extraction)
 
 # ── Static code guards — notes: docs/guards/static-code.md ──
@@ -93,16 +95,14 @@ npm run check:outage-flag-reach # no outage flag that is computed and then read 
 npm run check:chunk-reload # a lazy screen whose file a DEPLOY removed reloads once, not "This screen hit a bug" (in build)
 
 # ── Honesty of what the screen claims — notes: docs/guards/honesty-claims.md ──
-npm run check:trust-breakdown # the factors under WHAT FEEDS YOUR SCORE add up to it (in build)
 npm run check:conditions-score # the crag CONDITIONS SCORE adds up, leaves out what it did not measure, and stays off alpine (in build)
 npm run check:alpine-conditions # the ALPINE Conditions tab: each discipline its own flags, a start counted back from the Planner, nothing it did not read (in build)
-npm run check:untracked-factors # a factor nobody has measured must not read as ZERO (in build)
 npm run check:no-sources  # no screen prints a field named source, or any text about sources or "auto-generated" (in build)
 npm run check:preview-claims # no toast tells a climber the app is a PREVIEW, a demo or a simulation (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks (in build)
 npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
 npm run check:match-percent # the match % blends what the screen SAYS it blends; no term may saturate it (in build)
-npm run check:profile-claims # the résumé and the trust card claim only what they can support (in build)
+npm run check:profile-claims # the résumé and the profile claim only what they can support (in build)
 npm run check:claims # no success toast for a write that only runs signed-in (in build)
 npm run check:writes # no success message in front of a write whose failure is unobservable (in build)
 
@@ -130,6 +130,8 @@ npm run check:real-profile-rows # no row prints a level/trust a real profile lac
 # ── Social, crews and groups — notes: docs/guards/social-and-crews.md ──
 npm run check:mutual-friends # a mutual friend is real, named as they asked, and counted as the list that renders (in build)
 npm run check:crew  # guards the crew "Ready" calculation (in build)
+npm run check:partner-areas # crag partners are found by AREA both ways up the tree, and a crag-route objective is a tick list, not a match signal (in build)
+npm run check:crew-place # a crew has ONE place, a route or an area, and every surface that names it resolves it through crewPlace() (in build)
 
 # ── The route page — notes: docs/guards/route-page.md ──
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
@@ -139,6 +141,8 @@ npm run check:trailhead-direction-shape # ...and those directions END AT THE TRA
 npm run check:approach-section # ONE approach section; the most-used way in is first, marked, and carries the paragraph (in build)
 npm run check:area-name-embed # an areas() embed missing `name` prints "undefined" at a climber (in build)
 npm run check:area-surfaces # a climber can DISCUSS an area and NAVIGATE to a crag (in build)
+npm run check:area-edit-fields # the seven editable AREA fields are ONE list — constraint, applier, editor and page agree (in build)
+npm run check:area-page-honest # the area page prints only STORED facts, its chart headline is the sum of its bars, and it drives there ONCE (in build)
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:field-renders # every enriched route column actually reaches a screen
@@ -146,6 +150,7 @@ npm run check:summit-briefing # a peak page states only what its routes AGREE on
 npm run check:token-boxes  # no element shaped like a chip holds a paragraph
 npm run check:pitch-split # every pitch_detail entry is a row of ROUTE BREAKDOWN, in order (in build)
 npm run check:approach-overlay # the PICKED way in drives the page, nothing from another leaks, edits hit the stored row (in build)
+npm run audit:rack-items   # does any rack column, in ANY state, file NON-RACK gear (an ice axe, a helmet) where the RACK card reads? (--state wa narrows; --selftest needs no DB)
 
 # ── Camping and bivy — notes: docs/guards/camping.md ──
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
@@ -226,6 +231,8 @@ npm run check:route-tags # real list prose still reaches a list key, and each ke
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
 npm run check:add-route-fields # add-a-climb asks what the discipline needs, and nothing unstorable (in build)
+npm run check:contrib-field-columns # every editable field has a DB row naming the routes column its confidence is computed from (in build)
+npm run check:editable-coverage # every routes column a climber can SEE has an editor, or a written reason it has none (in build)
 npm run audit:fifty-classics # which Fifty Classics does the catalog hold, and are they tagged?
 npm run audit:list-coverage # how full is each named tick-list against the total it advertises?
 
@@ -255,8 +262,8 @@ npm run check:migration-replay # does supabase/migrations rebuild an EMPTY datab
 npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS (in build)
 ```
 
-There is no unit test suite or linter; `check:types` type-checks `src/` (strict TypeScript) and
-the other `check:` scripts stand in for the rest. They target the failure mode this codebase
+There is no unit test suite; `check:types` type-checks `src/` (strict TypeScript), `lint` runs
+ESLint (`eslint.config.js`), and the other `check:` scripts stand in for the rest. They target the failure mode this codebase
 actually ships: not a build error, but a screen that renders wrong or not at all.
 
 **Per-guard notes live in `docs/guards/`**, one file per area, indexed by
@@ -311,7 +318,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 - `crew` — your crews and direct/crew messaging (`crewView`). Friends and Requests are `crewView`s opened from the Menu's tiles; the tab's own view is crews only.
 - `groups` — the Groups screen, Facebook-style: For you · Your groups · Your activity · Discover · Events (`groupsTab`). **Not on the bottom bar**: NAV marks it `bar:false`, like `me`, and it opens from the Menu's Groups tile. A group opens as the `openGroupId` overlay over it.
 - `logbook` — your objectives, completed climbs, trip reports.
-- `me` — profile, verification, trust score. **Not on the bottom bar**: NAV marks it `bar:false`, and it opens from the **Menu** (the avatar button at the top left, `menuOpen`), whose "You" card leads here. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. One tile, *Best day to climb*, opens the `bestDayOpen` overlay (the conditions score over saved crag climbs, `lib/BestDayTile.jsx`) — it is not on Home. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
+- `me` — profile, verification, trust score. **Not on the bottom bar**: NAV marks it `bar:false`, and it opens from the **Menu** (the avatar button at the top left, `menuOpen`), whose "You" card leads here. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. One tile, *Best day to climb*, opens the `bestDayOpen` overlay (the conditions score over saved crag climbs, `lib/BestDayTile.jsx`); the same tile also renders on Home under Jump back in. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
 
 `openRoute(x)` is the standard way to navigate into a route (sets `routeFrom`, `selRoute`, and `tab="routes"`).
 
@@ -320,7 +327,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 Read it in three bands:
 
 1. **`ClimbMatchCore.jsx`, top: constants + pure helpers.** The `C` object is the shared dark-theme color palette used everywhere via inline styles (there are no CSS files or Tailwind). Domain helpers live here: `catOf`/`tripOf` (discipline categorization), `compat` (partner compatibility scoring), `scarfHrs`/`techHrs` (time estimates), `sunReadout`/`aspectDirs` (sun/shade by wall aspect and time of day), `buildConsensus` (aggregates trip reports into conditions consensus weighted by `trustScore`), `gpxDownload`, `passesFilters`, `distMiles`, `fuzzyMatch`.
-2. **`ClimbMatchCore.jsx`, bottom: presentational components** — small functions like `DiscBadge`, `TrustBadge`, `VerifyBadge`, `ProvenancePanel`, `RouteGearCheck`, `ElevChart`, `GPXMap`, plus icon components (`DiscIcon`, `ActionIcon`).
+2. **`ClimbMatchCore.jsx`, bottom: presentational components** — `FullProfile`, `Resume`, `OverviewMap` and the other larger panels. The small ones (`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`, `ActionIcon`, `ElevChart`, `DiscIcon`, `Av`, `SwipeRow`, `ChatComposer`, the two loading skeletons, the chat bubble and typing indicator, `Hr`, `Stars`, `Bar`, `CardHead`, the photo alt-text field and describe box, `ShareExportRow`, `ReactionPicker`, `PullToRefresh`, `TopContribBadge`, `RetryReminder`, `PlaceMatches`, `SectionJumps`) and the route map (`GPXMap`) have moved to band 4; `VerifyBadge`, `ProvenancePanel` and `RouteGearCheck`, once listed here, no longer live in core (`RouteGearCheck` is in `RouteDetail.jsx`).
 3. **`ClimbMatch.jsx`: `App`** — all stateful screen logic and the big inline-JSX render tree, gated by `tab===...` and `selRoute`.
 4. **`src/components/<Name>.tsx`: single-job components being extracted from the three files above** (since 2026-10; first: `RiskBadge`). Strict TypeScript, one `export default function` each, props declared as an `interface`. The guards still see each one as its parent file's code — every move is registered in `MOVED` in `scripts/lib/guard-sources.mjs`, or the text-reading guards go blind to it. Conventions and the per-PR procedure: [docs/refactor-progress.md](docs/refactor-progress.md). A JS function's destructured params are inferred as REQUIRED props; type the seam with a JSDoc `@param` on the JS side (as `Pill` has), not with casts in the component.
 
@@ -343,6 +350,12 @@ Four functions do the real work; everything else is UI around them. The code is 
 
 ## Working in this codebase
 
+- **Before finalizing ANY feature or fix, run `npm run lint` and `npm run type-check`** (owner's standing
+  rule, 2026-10-15). Any finding about unused variables, implicit or explicit `any`, or a hook's dependency
+  array is fixed in the code before the work is presented or merged — never silenced with a new
+  `eslint-disable`, a cast to `any`, or `--suppress-all`. An omission from a dependency array that is
+  genuinely intended gets a `// eslint-disable-line react-hooks/exhaustive-deps -- <why>` naming the reason.
+  When a legacy finding is fixed, shrink the baseline: `npx eslint . --prune-suppressions`.
 - When adding a feature, follow the existing pattern: add seed data to the relevant top-level `const`, add `useState` in `App`, and add a `tab===...`/sub-view branch in the render tree. Match the dense, inline-style formatting of surrounding code.
 - Styling is always inline `style={{...}}` referencing the `C` palette — do not introduce CSS files or a styling library.
 - For anything outside the DB-backed routes/areas/contributions/auth path (crews, messages, connections, vouches, logs, trip reports, etc.), "saving" means updating React state — don't reach for storage APIs unless explicitly asked to add persistence. For DB-backed data, use the existing `lib/db.js`/`lib/supabase.js` patterns (e.g. `submitContribution`) rather than writing new ad-hoc persistence.

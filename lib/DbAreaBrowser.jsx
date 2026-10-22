@@ -5,9 +5,9 @@
 // just fetched on demand from Supabase instead of walking the in-memory
 // MOUNTAINS/ROUTES arrays, since the DB catalog (47k+ areas / 200k+ routes) is
 // far too large to hold in memory. Rendered only when USE_DB is on.
-import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { createContext, Fragment, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
+import { fetchArea, useArea, useAreaContributions, useAreaClimbStats, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb, usePartnerAreaCount, usePartnersInArea, savePartnerArea, removePartnerArea } from "./db";
 import { useRecentRouteIds } from "./recent";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel, searchPlaces } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
@@ -19,6 +19,8 @@ import { effDistKm } from "./outing";
 import { POP_BACK, POP_CLOSE, POP_CLOSE_MEDIA, POP_REMOVE, POP_CHIP_X } from "./popupChrome.js";
 import { BTN, BTN_LG, BTN_SM, BTN_LINK, CHIP } from "./buttonStyles.js";
 import { ScreenHero } from "./ScreenHero";
+import { AboutCard, AreaFactsCard, ClimbsChart, GradeSpread, PendingAreaEdits } from "./AreaPageSections";
+import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_LINE, NO_PARKING_PIN_BUT_NOTE_LINE } from "./areaChrome";
 
 // Grade for a compact row. Two things happen inside displayGrade(): a qualifier carried inline
 // ("Class 3 (short 4th-class crux)") is dropped, and the route page's Composite Grade panel shows
@@ -71,9 +73,12 @@ const Pill = ({ label, color, bg, sm }) => <span style={{ background: bg, color,
 
 function RouteRow({ r, onOpen, C, areaName }) {
   const stars = r.stars ? Math.round(r.stars) : 0;
-  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, r.sort_order != null ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
+  // The PITCH COUNT sits beside the discipline, as Mountain Project's lists write it ("Trad, 5 pitches"):
+  // the stored count, exactly as the route page's Pitches stat shows it. A boulder has no pitches.
+  const pitches = r.pitches > 0 && r.discipline !== "bouldering" ? r.pitches + " pitch" + (r.pitches !== 1 ? "es" : "") : null;
+  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, pitches, r.sort_order != null ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
   return (
-    <div {...clickable(() => onOpen(r))} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", marginBottom: 8, background: C.card, border: "1px solid " + C.border, borderRadius: 11, cursor: "pointer" }}>
+    <div {...clickable(() => onOpen(r))} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", marginBottom: 8, background: C.card, border: "1px solid " + C.border, borderRadius: 11, cursor: "pointer", flex: 1, minWidth: 0 }}>
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{r.name}</div>
         <div style={{ fontSize: 11, color: C.textMuted, display: "flex", alignItems: "center", gap: 5 }}>
@@ -412,6 +417,42 @@ export function SummitBriefing({ area, routes, uElev, uDistMi, C }) {
   );
 }
 
+// ── GETTING THERE: drive & park, walk in, and the maps links — the area's own columns only ──
+function AreaGettingThere({ area, C, onEdit }) {
+  const note = area.parking_note && String(area.parking_note).trim();
+  const walk = area.approach && String(area.approach).trim();
+  const park = area.parking_lat != null && area.parking_lng != null && isFinite(Number(area.parking_lat)) && isFinite(Number(area.parking_lng)) ? { lat: Number(area.parking_lat), lng: Number(area.parking_lng) } : null;
+  const crag = area.lat != null && area.lng != null ? { lat: Number(area.lat), lng: Number(area.lng) } : null;
+  const dest = park || crag;
+  const lbl = { fontSize: 10.5, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
+  const linkSt = { flex: "1 1 0", display: "flex", alignItems: "center", justifyContent: "center", padding: "8px 10px", borderRadius: 8, border: "1px solid " + C.greenDim, background: C.greenBg, color: C.green, fontSize: 12.5, fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" };
+  const ll = dest ? dest.lat + "," + dest.lng : "";
+  const to = park ? "parking" : "crag";
+  return <div style={{ background: C.card, borderRadius: 12, padding: "12px 14px", border: "1px solid " + C.border, marginBottom: 14 }}>
+    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 8 }}><div role="heading" aria-level={3} style={{ fontSize: 12, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>Getting there</div>{onEdit ? <EditIconButton C={C} onClick={() => onEdit(note ? "approach" : "parking_note")} title={"Edit how to get to " + area.name} /> : null}</div>
+    {!note && !walk ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginBottom: dest ? 10 : 0 }}>{"No directions on file yet. Know the way in? "}{onEdit ? <button onClick={() => onEdit("parking_note")} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Add it</button> : "Add it"}{"."}</div> : null}
+    {note || park ? <div style={{ marginBottom: 10 }}>
+      <div style={lbl}>{"Drive & park" + (area.parking_name && area.parking_name !== "Trailhead" ? " · " + area.parking_name : "")}</div>
+      {note ? <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.55, marginBottom: park ? 6 : 0 }}>{note}</div> : null}
+      {park ? <CopyCoordButton lat={park.lat} lng={park.lng} what="parking" C={C} /> : null}
+    </div> : null}
+    {walk || area.approach_min ? <div style={{ marginBottom: 10 }}>
+      <div style={lbl}>{"Walk in" + (area.approach_min ? " · about " + area.approach_min + " min" : "")}</div>
+      {walk ? <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.55 }}>{walk}</div> : null}
+    </div> : null}
+    {dest ? <div>
+      <div style={lbl}>{park ? "Directions to parking" : "Directions"}</div>
+      {park ? null : <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 6 }}>{note ? NO_PARKING_PIN_BUT_NOTE_LINE : NO_PARKING_PIN_LINE}</div>}
+      {area.coords_approx ? <div style={{ fontSize: 11.5, color: C.amber, lineHeight: 1.45, marginBottom: 6 }}>Coordinates are approximate, so these are rough.</div> : null}
+      {/* The mount above is gated on ["crag", "peak", "wall"].includes(area.area_type) — a drive link is offered only where there is somewhere to park. */}
+      <div style={{ display: "flex", gap: 6 }}>
+        <a href={"https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + ll} target="_blank" rel="noopener noreferrer" aria-label={"Driving directions to the " + to + " in Google Maps" + (area.coords_approx ? " (approximate location)" : "")} style={linkSt}>Google Maps</a>
+        <a href={"https://maps.apple.com/?dirflg=d&daddr=" + ll} target="_blank" rel="noopener noreferrer" aria-label={"Driving directions to the " + to + " in Apple Maps" + (area.coords_approx ? " (approximate location)" : "")} style={linkSt}>Apple Maps</a>
+      </div>
+    </div> : null}
+  </div>;
+}
+
 // ── one area's own page: hero + save + View all/View map/Objectives + sub-areas ──
 // "Route finder" (it read "View all N routes" until the owner renamed it) opens the finder
 // unfiltered — the finder's own default state is every route in the subtree. There used to be a second "Route finder" button in
@@ -486,8 +527,96 @@ function NearbyPeaks({ area, onJumpToArea, C, uDistMi }) {
     </div>
   );
 }
-function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, TopContributors, onFireMap}) {
+// PARTNERS HERE (0300): who is listed as an available partner at this area, inside it, or across a wider
+// area that contains it — and the one-tap "List me here". Crag-family areas and their ancestors below the
+// state; NOT a peak (a peak's climbing is matched by route) and not a state (too broad to list from here;
+// the Partners tab's picker still allows it). The count and the rows are signed-in reads: the server
+// refuses a signed-out caller, so the card says "Sign in" rather than "nobody".
+const PARTNER_CARD_TYPES = ["region", "range", "canyon", "crag", "wall"];
+const CRAG_FAMILY = ["trad", "sport", "toprope", "aid", "bouldering"];
+function PartnersHereCard({ area, C, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, PartnerRow, notify, onStartCrew, onCrewsHere, openCrewCountAt }) {
+  // CREWS HERE (0302): a crag session is a crew bound to this area. Start one from the page you are on, or
+  // see the open ones in Join a crew → By Area, preset to this area.
+  const crewN = openCrewCountAt ? openCrewCountAt(area.id) : 0;
+  const on = !!uid;
+  const countQ = usePartnerAreaCount(area.id, on);
+  const rowsQ = usePartnersInArea(area.id, null, null, on, 3);
+  const [busy, setBusy] = useState(false);
+  const listed = !!(myListings || []).find((l) => l && l.areaId === area.id);
+  const count = countQ.data;
+  const rows = (rowsQ.data || []).filter((p) => p && p.id && String(p.id) !== String(uid));
+  const toggle = async () => {
+    if (!on || busy) return;
+    setBusy(true);
+    try {
+      if (listed) await removePartnerArea(uid, area.id);
+      else await savePartnerArea(uid, { areaId: area.id, disciplines: (area.disciplines || []).filter((d) => CRAG_FAMILY.includes(d)) });
+    } catch (e) { notify && notify((listed ? "Couldn’t remove your listing — " : "Couldn’t list you here — ") + ((e && e.message) || "try again")); }
+    finally { setBusy(false); }
+  };
+  const openAll = () => onFindPartnersInArea && onFindPartnersInArea({ id: area.id, name: area.name, areaType: area.area_type });
+  return (
+    <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 14, padding: "12px 13px", marginBottom: 14 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ fontSize: 13, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>Partners here</div>
+          <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{!on ? "Sign in to see who climbs here." : countQ.isError ? "Couldn’t load who’s listed." : count == null ? "Counting…" : count === 0 ? "Nobody listed here yet — be the first." : count + " climber" + (count === 1 ? "" : "s") + " listed here or nearby"}</div>
+        </div>
+        {on ? <button onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed at " + area.name + " — tap to remove" : "List me at " + area.name} style={{ flexShrink: 0, minHeight: 40, padding: "0 13px", borderRadius: 10, border: "1px solid " + (listed ? C.green : C.blueDim), background: listed ? C.greenBg : C.blueBg, color: listed ? C.green : C.blue, fontSize: 12.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Listed ✓" : "List me here"}</button> : null}
+      </div>
+      {/* Once listed, the follow-up — when you can climb here and what — is a real, full-width
+          control, not a bare word. It and "See all" used to spread `BTN_LINK` as an object; it is a
+          FUNCTION of C, so both rendered as the browser's default grey button: tiny, hard to see,
+          and the owner's first complaint about this card. */}
+      {on && listed && onListMe ? (
+        <button onClick={() => onListMe({ areaId: area.id, name: area.name, areaType: area.area_type, disciplines: (area.disciplines || []).filter((d) => CRAG_FAMILY.includes(d)) })} aria-label={"Add the dates and climbing types for your listing at " + area.name} style={{ width: "100%", boxSizing: "border-box", display: "flex", alignItems: "center", gap: 10, marginTop: 8, marginBottom: 4, padding: "10px 12px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, cursor: "pointer", textAlign: "left" }}>
+          <span aria-hidden="true" style={{ width: 32, height: 32, borderRadius: 9, background: C.blueBg, border: "1px solid " + C.blueDim, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={C.blue} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M16 3v4M8 3v4M3 11h18" /></svg>
+          </span>
+          <span style={{ flex: 1, minWidth: 0 }}>
+            <span style={{ display: "block", fontSize: 13.5, fontWeight: 800, color: C.text }}>Add dates or climbing types</span>
+            <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, marginTop: 2, lineHeight: 1.4 }}>When you can climb here, and what — so the right partners find you.</span>
+          </span>
+          <span aria-hidden="true" style={{ color: C.textMuted, fontSize: 17, flexShrink: 0 }}>›</span>
+        </button>
+      ) : null}
+      {on && rows.length && PartnerRow ? <div style={{ marginTop: 6 }}>{rows.map((p) => <PartnerRow key={p.id} p={p} onOpen={onViewProfile} />)}</div> : null}
+      {on && (count > 0 || rows.length) ? <button onClick={openAll} style={{ ...BTN_LINK(C), padding: "6px 0 0", fontSize: 12.5 }}>{"See all at " + area.name + " →"}</button> : null}
+      {onStartCrew || onCrewsHere ? <div style={{ display: "flex", gap: 8, marginTop: 10, paddingTop: 10, borderTop: "1px solid " + C.border }}>
+        {onStartCrew ? <button onClick={() => onStartCrew(area)} style={{ ...BTN, flex: 1, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue }}>Start a crew here</button> : null}
+        {onCrewsHere ? <button onClick={() => onCrewsHere(area)} style={{ ...BTN, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>{"Crews here" + (crewN ? " · " + crewN : "")}</button> : null}
+      </div> : null}
+    </div>
+  );
+}
+
+// The order a crag's own climb list can be read in (Mountain Project and theCrag: left to right as
+// on the wall, the default, or by name). `sort_order` is the left-to-right position; a climb with no
+// position stays LAST in both wall orders, by name, rather than being guessed into the line.
+const AREA_LIST_SORTS = [["lr", "Left → right"], ["rl", "Right → left"], ["az", "A → Z"], ["za", "Z → A"]];
+function sortAreaRoutes(routes, key) {
+  const byName = (a, b) => String(a.name || "").localeCompare(String(b.name || ""));
+  if (key === "az") return [...routes].sort(byName);
+  if (key === "za") return [...routes].sort((a, b) => byName(b, a));
+  const dir = key === "rl" ? -1 : 1;
+  return [...routes].sort((a, b) => Number(a.sort_order == null) - Number(b.sort_order == null) || (a.sort_order != null && b.sort_order != null ? dir * (a.sort_order - b.sort_order) : 0) || byName(a, b));
+}
+
+function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt}) {
   const [searchMode, setSearchMode] = useState("areas");
+  const [listSort, setListSort] = useState("lr");
+  // The row in the drill stack is a snapshot of a CHILD row read when its parent was opened. An
+  // agreed edit rewrites the areas row on the server (0304) and refreshes ["area", id] — so the
+  // page reads the live row over the snapshot, or a climber's own fill would never show.
+  const { data: liveArea } = useArea(areaRow.id);
+  const area = liveArea && liveArea.id === areaRow.id ? liveArea : areaRow;
+  const formation = ["crag", "peak", "wall"].includes(area.area_type);
+  // The chart runs on everything below a country: the whole catalog in one call is ~2 s against
+  // a 3 s statement timeout, and a country page is a list of states anyway.
+  const chartable = !["world", "country"].includes(area.area_type);
+  const stats = useAreaClimbStats(chartable ? area.id : null);
+  const areaEdits = useAreaContributions(formation && onSuggestAreaEdit ? area.id : null);
+  const editOn = formation && onSuggestAreaEdit ? (k) => onSuggestAreaEdit(area, k) : null;
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
   const isLeaf = Array.isArray(children) && children.length === 0;
@@ -521,7 +650,7 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
         {parentPeak ? <div style={{ fontSize: 12, color: C.textMuted, marginTop: 3 }}>{"Parent peak — " + parentPeak}</div> : null}
         {area.coords_approx ? <div style={{ fontSize: 11.5, color: C.amber, marginTop: 4, lineHeight: 1.45 }}>Coordinates are approximate — the map pin, any distance shown, and the Directions link are rough.</div> : null}
         {chips.length ? <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 9 }}>{chips.map((t, i) => <span key={i} style={{ fontSize: 11.5, fontWeight: 600, color: C.text, background: "rgba(255,255,255,0.12)", border: "1px solid " + C.border, borderRadius: 7, padding: "3px 9px" }}>{t}</span>)}</div> : null}
-        {area.blurb ? <div style={{ marginTop: 8, fontSize: 13, color: C.textSub, lineHeight: 1.6 }}>{area.blurb}</div> : null}
+        {/* The description moved out of the hero into the ABOUT card below (0304), where it has an edit control. */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, flexWrap: "wrap", marginTop: 8 }}>
           <div style={{ fontSize: 13, color: C.blue }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count + " climbs" : area.route_count + " climb" + (area.route_count !== 1 ? "s" : "")}</div>
           {/* The Fire map entry. It used to be a full-width card at the very top of the Climbs
@@ -537,6 +666,14 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
         </div>
       </ScreenHero>
 
+      {/* What Mountain Project's area page has and ours did not (audit 2026-10-15): a description,
+          the facts a crag visit needs, a count by discipline, and a way to improve the page.
+          Every section prints only what is stored; an empty one invites the edit instead. */}
+      {formation && areaEdits.data && areaEdits.data.length ? <PendingAreaEdits rows={areaEdits.data} C={C} myId={myId} /> : null}
+      {formation || (area.blurb && String(area.blurb).trim()) ? <AboutCard area={area} C={C} onEdit={editOn} /> : null}
+      {formation ? <AreaFactsCard area={area} C={C} uElev={uElev} onEdit={editOn} /> : null}
+      {chartable ? <ClimbsChart stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={DISCIPLINES.map(d => d[0]).filter(Boolean)} onDisc={onFinder}><GradeSpread stats={stats.data} C={C} /></ClimbsChart> : null}
+
       {area.route_count > 0 ? (
         <button onClick={onFinder} style={{ ...BTN_LG, width: "100%", marginBottom: 8, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
           {"Route finder"}<span style={{ fontSize: 16 }}>{"→"}</span>
@@ -545,39 +682,20 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
       <div style={{ display: "flex", gap: 8, marginBottom: 14 }}>
         <button onClick={onNear} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.text }}>View map</button>
         <button onClick={onObjectives} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.text }}>My objectives</button>
-        {/* DIRECTIONS TO THE AREA. The only such link in the app lived in `GettingThere`, which is
-            gated on the seed-only `selArea` and so has never rendered for a real climber — so with
-            VITE_USE_DB=true there was no way to navigate to a crag at all. RouteDetail's three
-            directions links are trailhead-level, a different question from "where is this crag".
-            An <a>, not a button, because it leaves the app; rel=noopener with target=_blank. */}
-        {/* ONLY where a destination is actionable. Every area carries a coordinate, including
-            `country`, `state`, `region` and `range` — and "Directions to Colorado" routes you to a
-            state centroid, which is noise at best and misleading at worst. A crag, peak or wall has
-            somewhere you can actually park. Caught by the probe printing its own aria-label. */}
-        {["crag", "peak", "wall"].includes(area.area_type) && area.lat != null && area.lng != null ? (
-          <a
-            href={"https://www.google.com/maps/dir/?api=1&destination=" + area.lat + "," + area.lng}
-            target="_blank" rel="noopener noreferrer"
-            aria-label={"Directions to " + area.name + (area.coords_approx ? " (approximate location)" : "")}
-            style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.text, textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
-          >Directions</a>
-        ) : null}
       </div>
+      {/* GETTING THERE — the one drive control on the area page, as CragLocationCard is on a crag
+          route. It used to be a bare "Directions" button in the row above, with no words; the
+          Mountain Project page for the same crag says how to drive there, where to park and how
+          long the walk is. Drive & park is areas.parking_note + the parking pin; Walk in is
+          areas.approach + approach_min. Nothing here is derived — an empty card invites the edit.
+          ONLY where a destination is actionable: every area carries a coordinate, including
+          `country`, `state`, `region` and `range` — and "Directions to Colorado" routes you to a
+          state centroid, which is noise at best and misleading at worst. A crag, peak or wall has
+          somewhere you can actually park (check:area-surfaces reads this gate). */}
+      {["crag", "peak", "wall"].includes(area.area_type) ? <AreaGettingThere area={area} C={C} onEdit={editOn} /> : null}
+      {PARTNER_CARD_TYPES.includes(area.area_type) ? <PartnersHereCard area={area} C={C} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} PartnerRow={PartnerRow} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} /> : null}
       <button onClick={onAllAreas} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, marginBottom: 14 }}>All areas</button>
       {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
-
-      {/* The seed browser has had "Don't see a climb? Add it" since forever, but it lives
-          behind `selArea`, which is null under USE_DB — so on every real area page the
-          affordance did not exist. Opens the same AddRoute sheet with THIS area filled in.
-          It sits directly BELOW the Areas/Routes search rather than above it: the moment a
-          climber knows a route is missing is the moment a search for it came back empty, so
-          this is the next thing under their thumb. It is NOT gated on the search rendering —
-          a leaf crag has no DbSearchSplit and is exactly where a missing route is likeliest. */}
-      {onAddClimb ? (
-        <button onClick={() => onAddClimb(area)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, marginTop: 4, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
-          {"Don’t see a climb here? Add it to " + area.name}<span style={{ fontSize: 15 }}>{"→"}</span>
-        </button>
-      ) : null}
 
       {/* Sits directly above the route rows it summarises, so the page reads: this is the
           mountain, this is what is true of every way up it, here are the ways up. It renders
@@ -609,18 +727,56 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
         routes && routes.length > 0
           ? <>
               <SL C={C}>{routes.length + " climb" + (routes.length !== 1 ? "s" : "")}</SL>
-              {routes.map(r => <RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />)}
+              {(() => {
+                // Left/right is offered only where a wall order is stored: on a list with no
+                // positions both wall orders would be A → Z under another name.
+                const placed = routes.filter(r => r.sort_order != null).length;
+                const opts = placed ? AREA_LIST_SORTS : AREA_LIST_SORTS.filter(o => o[0] === "az" || o[0] === "za");
+                const key = opts.some(o => o[0] === listSort) ? listSort : opts[0][0];
+                const unplaced = (key === "lr" || key === "rl") ? routes.length - placed : 0;
+                return <>
+                  {routes.length > 1 ? <div role="group" aria-label="Sort climbs" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 8 }}>{opts.map(o => <button key={o[0]} onClick={() => setListSort(o[0])} aria-pressed={key === o[0]} style={{ ...CHIP, flexShrink: 0, border: "1px solid " + (key === o[0] ? C.blue : C.border), background: key === o[0] ? C.blueBg : C.surface, color: key === o[0] ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{o[1]}</button>)}</div> : null}
+                  {unplaced ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, lineHeight: 1.45 }}>{unplaced + (unplaced !== 1 ? " climbs have" : " climb has") + " no position on the wall yet, so " + (unplaced !== 1 ? "they are" : "it is") + " listed last, by name."}</div> : null}
+                  {sortAreaRoutes(routes, key).map(r => <RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />)}
+                </>;
+              })()}
             </>
           /* Only claim the crag is empty when the load actually succeeded — otherwise a
              failed refetch reports "no routes" about a crag it never managed to read. */
           : !error ? <div style={{ color: C.textMuted, fontSize: 12 }}>No routes in this crag yet.</div> : null
       )}
 
+      {/* The seed browser has had "Don't see a climb? Add it" since forever, but it lives
+          behind `selArea`, which is null under USE_DB — so on every real area page the
+          affordance did not exist. Opens the same AddRoute sheet with THIS area filled in.
+          It sits DIRECTLY UNDER the areas/climbs list (owner, 2026-10-15): a climber who has just
+          read to the end of the list and not found their climb is the one who adds it. It is NOT
+          gated on the list rendering — an empty crag is exactly where a missing route is likeliest. */}
+      {onAddClimb ? (
+        <button onClick={() => onAddClimb(area)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, marginTop: 10, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
+          {"Don’t see a climb here? Add it to " + area.name}<span style={{ fontSize: 15 }}>{"→"}</span>
+        </button>
+      ) : null}
+
+      {editOn ? (
+        <button onClick={() => editOn(null)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
+          {"Know " + area.name + "? Suggest an edit"}<span style={{ fontSize: 15 }}>{"→"}</span>
+        </button>
+      ) : null}
+
+      {/* TOP RATED HERE — Mountain Project's "Classic Climbing Routes". Only the rows that carry a
+          star rating (routes.stars, kept by 0294), best first; an area with no ratings shows
+          nothing rather than "no ratings yet". */}
+      {!loading && isLeaf && routes && routes.length > 1 ? (() => { const top = routes.filter(r => r.stars > 0).sort((a, b) => b.stars - a.stars || a.name.localeCompare(b.name)).slice(0, 5); return top.length ? <><SL C={C}>Top rated here</SL>{top.map(r => <RouteRow key={"top-" + r.id} r={r} onOpen={onOpenRoute} C={C} />)}</> : null; })() : null}
+
+      {/* Tail order is the owner's (2026-10-15): suggested climbs right under "Don't see a climb",
+          then nearby peaks, then Top contributors LAST — App mounts the area Discussion directly
+          after this component, so Top contributors sits right above it and Discussion ends the page. */}
+      <DbSuggestedClimbs area={area} onOpen={onOpenRoute} C={C} />
+
       <NearbyPeaks area={area} onJumpToArea={onJumpToArea} C={C} uDistMi={uDistMi} />
 
       {TopContributors ? <TopContributors areaId={area.id} mb={8}/> : null}
-
-      <DbSuggestedClimbs area={area} onOpen={onOpenRoute} C={C} />
     </div>
   );
 }
@@ -706,17 +862,92 @@ const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bou
 // were corrected (above). The rock disciplines keep #1811's behaviour — one scale each, no label
 // needed.
 const GRADE_SYS_FILTERED = { ice: 1, mixed: 1, aid: 1, mountaineering: 1, alpine: 1, scrambling: 1 };
-const gradeScalesFor = disc => DISC_GRADE_SCALES[disc] || [];
-const gradeScaleFor = (disc, sys) => { const ss = gradeScalesFor(disc); if (!ss.length) return null; return GRADE_SCALES[ss.indexOf(sys) >= 0 ? sys : ss[0]] || null; };
-const gradeSysFor = (disc, sys) => { const ss = gradeScalesFor(disc); return ss.indexOf(sys) >= 0 ? sys : (ss[0] || ""); };
+// SEVERAL DISCIPLINES can be picked at once (0334), as Mountain Project ticks Trad, Sport and Toprope
+// together. A range is then offered on the scales EVERY picked discipline shares — sport + trad on
+// 5.x, ice + mixed on 5.x, bouldering + sport on none — because one number means one grade only
+// within one scale.
+const gradeScalesFor = discs => { const ls = (discs || []).map(d => DISC_GRADE_SCALES[d] || []); return ls.length ? ls[0].filter(s => ls.every(l => l.indexOf(s) >= 0)) : []; };
+const gradeScaleFor = (discs, sys) => { const ss = gradeScalesFor(discs); if (!ss.length) return null; return GRADE_SCALES[ss.indexOf(sys) >= 0 ? sys : ss[0]] || null; };
+const gradeSysFor = (discs, sys) => { const ss = gradeScalesFor(discs); return ss.indexOf(sys) >= 0 ? sys : (ss[0] || ""); };
+const discLabel = d => (DISCIPLINES.find(x => x[0] === d) || [, d])[1];
+// Wall order first (owner, 2026-10-21: "grouped by area such as crag or wall so they show up in
+// order"): each wall's climbs together, left to right, under the wall's name.
+const FINDER_SORTS = [["lr", "By wall, left → right"], ["rl", "By wall, right → left"], ["name", "Name A→Z"], ["name_desc", "Name Z→A"], ["stars_desc", "Most starred"]];
+const SORT_PHRASE = { name: "name", name_desc: "name (Z→A)", area: "wall", lr: "wall, left to right", rl: "wall, right to left", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred" };
+const GROUPED_SORTS = { area: 1, lr: 1, rl: 1 };
+// A whole state (or more) is not listed until an area in it is picked or a name is typed: an
+// unfiltered California list took 3.3 s in the database (2026-10-21), and nobody pages through
+// 44,000 climbs. Mountain Project's Route Finder starts from a Location the same way.
+const FINDER_NEEDS_AREA = { world: 1, country: 1, state: 1 };
 const gradeRangeLabel = (lo, hi) => lo && hi ? (lo === hi ? lo : lo + "–" + hi) : lo ? lo + " and up" : hi ? "Up to " + hi : "";
-function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit }) {
-  const DEF = { disc: "", sortBy: "name", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "" };
+// One filter state -> the RPC's arguments. Shared by the applied query and the sheet's draft
+// count, so the number on "Show N routes" is the number the list then shows.
+const finderArgs = (q, f) => {
+  const len = LEN_BUCKETS.find(l => l[0] === f.len) || LEN_BUCKETS[0];
+  const sc = gradeScaleFor(f.discs, f.gSys);
+  const lo = sc && f.gLo ? sc.find(o => o[0] === f.gLo) : null, hi = sc && f.gHi ? sc.find(o => o[0] === f.gHi) : null;
+  return { q, disc: f.discs.join(","), gradeSys: (lo || hi) && f.discs.some(d => GRADE_SYS_FILTERED[d]) ? gradeSysFor(f.discs, f.gSys) : null, minGrade: lo ? lo[1] : null, maxGrade: hi ? hi[2] : null, minStars: f.minStars || null, minPitches: f.minPitches || null, minLengthM: len[3], maxLengthM: len[4], sortBy: f.sortBy };
+};
+// PINS a bar under the app's own top bar once the page scrolls past it. Not CSS sticky: #appscroll
+// is overflow:auto but grows to its content on a phone, where the DOCUMENT scrolls, and a sticky
+// child of a scroll container that never scrolls never sticks. The pin line is the bottom of the
+// app's sticky top bar (phone), or the top of #appscroll when that is what scrolls (desktop); both
+// are measured, because the bar's height differs between the two shells.
+function usePinnedBar() {
+  const wrapRef = useRef(null), barRef = useRef(null);
+  const [pin, setPin] = useState(null); // null, or { top, left, width, height } while pinned
+  useEffect(() => {
+    const lineY = () => {
+      const w = wrapRef.current, sc = w && w.closest("#appscroll");
+      if (sc && sc.scrollHeight > sc.clientHeight + 1) return sc.getBoundingClientRect().top;
+      let bottom = 0;
+      for (const e of document.elementsFromPoint(window.innerWidth / 2, 1)) {
+        if (w && w.contains(e)) continue;
+        for (let n = e; n && n !== document.body; n = n.parentElement) {
+          const pos = getComputedStyle(n).position;
+          if (pos === "sticky" || pos === "fixed") { bottom = Math.max(bottom, n.getBoundingClientRect().bottom); break; }
+        }
+      }
+      return bottom;
+    };
+    let line = lineY(), raf = 0;
+    const check = () => {
+      raf = 0;
+      const w = wrapRef.current, b = barRef.current;
+      if (!w || !b) return;
+      const r = w.getBoundingClientRect();
+      const next = r.top < line ? { top: Math.round(line), left: Math.round(r.left), width: Math.round(r.width), height: b.offsetHeight } : null;
+      setPin(p => (!p && !next) || (p && next && p.top === next.top && p.left === next.left && p.width === next.width && p.height === next.height) ? p : next);
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(check); };
+    const onResize = () => { line = lineY(); onScroll(); };
+    document.addEventListener("scroll", onScroll, true);
+    window.addEventListener("resize", onResize);
+    check();
+    return () => { document.removeEventListener("scroll", onScroll, true); window.removeEventListener("resize", onResize); if (raf) cancelAnimationFrame(raf); };
+  }, []);
+  return { wrapRef, barRef, pin };
+}
+function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute }) {
+  const { wishlist } = useContext(ClimberCtx);
+  const DEF = { discs: [], sortBy: "lr", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "" };
+  // A chart bar on the area page opens the finder already narrowed to its discipline.
+  const DEF0 = presetDisc ? { ...DEF, discs: [presetDisc] } : DEF;
+  // LOCATION: where the search runs. Starts as the area the finder was opened from; on a state it
+  // must be narrowed to an area inside it first (FINDER_NEEDS_AREA). The panel is keyed by the
+  // scope's id, so a new scope starts a new Location.
+  const [loc, setLoc] = useState(scope);
   const [q, setQ] = useState("");
+  // The query follows the box a beat behind, so typing "castle" is one search, not six.
+  const [qD, setQD] = useState("");
+  useEffect(() => { const t = setTimeout(() => setQD(q), 250); return () => clearTimeout(t); }, [q]);
+  const needsArea = !!FINDER_NEEDS_AREA[loc.area_type] && !qD.trim();
+  const [saveFor, setSaveFor] = useState(null);
+  const { wrapRef: barWrap, barRef, pin } = usePinnedBar();
   // Routes | Areas. One text box serves both, so switching carries what you typed across.
   const [mode, setMode] = useState("routes");
-  const [af, setAf] = useState(DEF);
-  const [df, setDf] = useState(DEF);
+  const [af, setAf] = useState(DEF0);
+  const [df, setDf] = useState(DEF0);
   const [sheet, setSheet] = useState(false);
   const [savedSearches, setSavedSearches] = useState([]);
   const [showSaved, setShowSaved] = useState(false);
@@ -725,22 +956,38 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
   const lenRange = (LEN_BUCKETS.find(l => l[0] === af.len) || LEN_BUCKETS[0]);
   // Resolved against the APPLIED discipline's scale, so a label saved under one discipline can
   // never be read on another's number line (a "V5" bound is not a 5.5 bound).
-  const gScale = gradeScaleFor(af.disc, af.gSys);
+  const gScale = gradeScaleFor(af.discs, af.gSys);
   const gLoO = gScale && af.gLo ? gScale.find(o => o[0] === af.gLo) : null;
   const gHiO = gScale && af.gHi ? gScale.find(o => o[0] === af.gHi) : null;
-  const gSysQ = (gLoO || gHiO) && GRADE_SYS_FILTERED[af.disc] ? gradeSysFor(af.disc, af.gSys) : null;
-  const queryArgs = { q, disc: af.disc, gradeSys: gSysQ, minGrade: gLoO ? gLoO[1] : null, maxGrade: gHiO ? gHiO[2] : null, minStars: af.minStars || null, minPitches: af.minPitches || null, minLengthM: lenRange[3], maxLengthM: lenRange[4], sortBy: af.sortBy, page };
-  const { data: batch, isLoading, error } = useSubtreeRoutes(scope.id, queryArgs);
-  const { data: total } = useSubtreeRouteCount(scope.id, queryArgs);
+  const queryArgs = { ...finderArgs(qD, af), page };
+  const { data: batch, isLoading: lr0, error } = useSubtreeRoutes(needsArea ? null : loc.id, queryArgs);
+  const { data: total } = useSubtreeRouteCount(needsArea ? null : loc.id, queryArgs);
+  // A disabled query can still report loading; while the area picker shows, nothing is loading.
+  const isLoading = !needsArea && lr0;
+  const { data: locKids, isLoading: lk, error: ek } = useAreaChildren(loc.id, { enabled: needsArea });
+  // The sheet's button says how many routes the DRAFT would show ("Show 212 routes"), as
+  // Mountain Project's filter screen does — so a tap on it visibly does something, and a
+  // combination that matches nothing is seen before the sheet is left. Queried only while open.
+  const { data: draftTotal, isFetching: draftCounting } = useSubtreeRouteCount(sheet && !needsArea ? loc.id : null, finderArgs(qD, df));
+  // While the sheet is open the page behind it must not scroll. The document is the scroller
+  // here, and on a phone a drag past the end of the sheet moved the page instead, which slid the
+  // browser's own toolbar in and out and shifted the sheet under the climber's finger.
+  useEffect(() => {
+    if (!sheet) return;
+    const el = document.documentElement, prev = el.style.overflow;
+    el.style.overflow = "hidden";
+    return () => { el.style.overflow = prev; };
+  }, [sheet]);
 
   const saveSearch = () => {
     const name = q.trim() || "Untitled search";
-    const newSearch = { id: Date.now(), name, q, filters: af };
+    const newSearch = { id: Date.now(), name, q, filters: af, loc };
     setSavedSearches(prev => [newSearch, ...prev]);
   };
   const loadSearch = (search) => {
     setQ(search.q);
     setAf(search.filters);
+    setLoc(search.loc || scope);
     setShowSaved(false);
     setPage(0);
     setAll([]);
@@ -748,39 +995,77 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
   const deleteSearch = (id) => {
     setSavedSearches(prev => prev.filter(s => s.id !== id));
   };
-  useEffect(() => { setPage(0); setAll([]); }, [q, af, scope.id]);
+  useEffect(() => { setPage(0); setAll([]); }, [qD, af, loc.id]);
   useEffect(() => {
     if (!batch) return;
     setAll(prev => page === 0 ? batch : [...prev, ...batch]);
   }, [batch, page]);
   const areaIds = useMemo(() => [...new Set(all.map(r => r.area_id).filter(Boolean))], [all]);
   const { data: areaNames } = useAreaNamesByIds(areaIds);
-  const { data: areaHits, isLoading: la, error: ea } = useAreaSearch(scope.id, mode === "areas" ? q.trim() : "");
+  const { data: areaHits, isLoading: la, error: ea } = useAreaSearch(scope.id, mode === "areas" ? qD.trim() : "");
 
-  const nF = (af.disc ? 1 : 0) + (gLoO || gHiO ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== "name" ? 1 : 0);
+  const nF = af.discs.length + (gLoO || gHiO ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== DEF.sortBy ? 1 : 0);
   const afChips = [];
-  if (af.disc) afChips.push({ k: "d", label: (DISCIPLINES.find(d => d[0] === af.disc) || [, af.disc])[1], clear: () => setAf(a => ({ ...a, disc: "", gSys: "", gLo: "", gHi: "", sortBy: a.sortBy === "grade_asc" || a.sortBy === "grade_desc" ? "name" : a.sortBy })) });
+  // One chip per discipline; removing one keeps the grade range only if the disciplines left still
+  // share its scale.
+  af.discs.forEach(d => afChips.push({ k: "d-" + d, label: discLabel(d), clear: () => setAf(a => { const discs = a.discs.filter(x => x !== d); const keep = discs.length && gradeSysFor(discs, a.gSys) === gradeSysFor(a.discs, a.gSys); return { ...a, discs, ...(keep ? {} : { gSys: "", gLo: "", gHi: "" }), sortBy: !discs.length && (a.sortBy === "grade_asc" || a.sortBy === "grade_desc") ? DEF.sortBy : a.sortBy }; }) }));
   if (gLoO || gHiO) afChips.push({ k: "g", label: gradeRangeLabel(gLoO && gLoO[0], gHiO && gHiO[0]), clear: () => setAf(a => ({ ...a, gLo: "", gHi: "" })) });
   if (af.minStars) afChips.push({ k: "s", label: af.minStars + "★+", clear: () => setAf(a => ({ ...a, minStars: 0 })) });
   if (af.minPitches) afChips.push({ k: "p", label: af.minPitches + "+ pitches", clear: () => setAf(a => ({ ...a, minPitches: 0 })) });
   // The APPLIED-filter chip is a second label site, and it must go through the same formatter or
   // the filter bar and the chip that says what you filtered by disagree about units.
   if (af.len !== "any") afChips.push({ k: "len", label: lenLabel(lenRange, uElevN, uElevUnit), clear: () => setAf(a => ({ ...a, len: "any" })) });
-  if (af.sortBy !== "name") afChips.push({ k: "sort", label: { name_desc: "Z→A", area: "By area", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: "name" })) });
+  if (af.sortBy !== DEF.sortBy) afChips.push({ k: "sort", label: { name: "A→Z", name_desc: "Z→A", area: "By area", lr: "Left → right", rl: "Right → left", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: DEF.sortBy })) });
+  const inList = (l, id) => (l.routeIds || []).includes(id);
+  const customLists = (userLists || []).filter(l => l.id !== "ul_obj");
+  const isSaved = id => (wishlist || []).includes(id) || customLists.some(l => inList(l, id));
 
   const rowBtn = on => ({ ...BTN_LG, flex: 1, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.text });
   const chip = (label, on, fn) => <button key={label} onClick={fn} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
   const lab = s => <SL C={C}>{s}</SL>;
 
+  const savePill = on => ({ ...CHIP, flexShrink: 0, padding: "5px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub });
+  const nRes = total != null ? total : all.length;
+
   return (
     <div>
-      <ScreenHero C={C} title={"Route finder" + (scope ? " · " + scope.name : "")} />
+      <ScreenHero C={C} title={"Route finder · " + loc.name} />
+      {/* THE SEARCH BAR STAYS PUT (owner, 2026-10-21: "keep the search for areas and routes bar sticky
+          to the top of the page"): Routes | Areas, the box, Filters and the applied chips pin under the
+          app's top bar (usePinnedBar) while the results scroll under them. */}
+      <div ref={barWrap} style={{ margin: "0 -14px", height: pin ? pin.height : undefined }}>
+      <div ref={barRef} style={{ ...(pin ? { position: "fixed", top: pin.top, left: pin.left, width: pin.width, zIndex: 25, boxShadow: "0 6px 12px rgba(0,0,0,0.25)" } : {}), boxSizing: "border-box", background: C.bg, padding: "8px 14px 2px", borderBottom: "1px solid " + C.borderLight }}>
       <div style={{ display: "flex", gap: 4, background: C.surface, border: "1px solid " + C.border, borderRadius: 9, padding: 3, marginBottom: 8 }}>
         {[["routes", "Routes"], ["areas", "Areas"]].map(([k, l]) => <button key={k} onClick={() => setMode(k)} aria-pressed={mode === k} style={{ flex: 1, padding: "8px 0", border: "none", borderRadius: 7, background: mode === k ? C.blueSolid : "transparent", color: mode === k ? "#fff" : C.textSub, fontSize: 13.5, fontWeight: 700, cursor: "pointer" }}>{l}</button>)}
       </div>
-      <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", padding: "11px 13px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none", marginBottom: 8 }} />
+      <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes in " + loc.name + "…"} style={{ width: "100%", padding: "11px 13px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none", marginBottom: 8 }} />
+      {mode === "routes" ? <>
+      {/* ONE style for the three buttons in this row. Filters was drawn in the text colour and
+          Save search in blue, which read as two different sizes of type side by side. */}
+      <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
+        <button onClick={() => { setDf(af); setSheet(true); }} style={rowBtn(nF)}>{"Filters" + (nF ? " (" + nF + ")" : "")}</button>
+        <button onClick={saveSearch} style={rowBtn(false)}>Save search</button>
+        {savedSearches.length > 0 && <button onClick={() => setShowSaved(!showSaved)} style={rowBtn(true)}>{savedSearches.length} saved</button>}
+      </div>
+      {afChips.length ? (
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", marginBottom: 8 }}>
+          {afChips.map(c => <button key={c.k} onClick={c.clear} aria-label={"Remove filter: " + c.label} style={{ ...CHIP, display: "inline-flex", alignItems: "center", gap: 5, padding: "7px 10px 7px 12px", border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue }}>{c.label}<span aria-hidden="true" style={POP_CHIP_X}>✕</span></button>)}
+          <button onClick={() => setAf(DEF)} style={{ ...BTN_LINK(C), padding: "7px 8px", color: C.textMuted, textDecoration: "underline" }}>Clear all</button>
+        </div>
+      ) : null}
+      {/* No count after a failed read: "0 routes" above "Couldn't search routes" reads as an empty area. */}
+      {!needsArea && !(error && total == null && !all.length) ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6, padding: "0 2px" }}>{nRes.toLocaleString() + " route" + (nRes !== 1 ? "s" : "") + " · sorted by " + SORT_PHRASE[af.sortBy]}</div> : null}
+      </> : null}
+      </div>
+      </div>
+      {loc.id !== scope.id ? (
+        <div style={{ display: "flex", alignItems: "center", gap: 8, margin: "10px 0 2px", fontSize: 12.5, color: C.textSub }}>
+          <span style={{ flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{"In " + loc.name + ", " + scope.name}</span>
+          <button onClick={() => setLoc(scope)} style={{ ...BTN_LINK(C), padding: "4px 2px", flexShrink: 0 }}>Change area</button>
+        </div>
+      ) : null}
       {mode === "areas" ? (
-        !q.trim() ? <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "22px 12px", lineHeight: 1.5 }}>{"Type a name to find any area, crag or peak in " + scope.name + "."}</div>
+        !qD.trim() ? <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "22px 12px", lineHeight: 1.5 }}>{"Type a name to find any area, crag or peak in " + scope.name + "."}</div>
         : la ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>
         : ea ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't search areas — check your connection and try again.</div>
         : !areaHits || !areaHits.length ? <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "22px 12px" }}>No areas match.</div>
@@ -797,15 +1082,8 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
           {areaSearchTotal(areaHits) > areaHits.length ? <div style={{ fontSize: 11.5, color: C.textMuted, padding: "10px 4px", textAlign: "center" }}>{"Closest " + areaHits.length + " of " + areaSearchTotal(areaHits).toLocaleString() + " — keep typing to narrow."}</div> : null}
         </>
       ) : <>
-      {/* ONE style for the three buttons in this row. Filters was drawn in the text colour and
-          Save search in blue, which read as two different sizes of type side by side. */}
-      <div style={{ display: "flex", gap: 8, marginBottom: 10 }}>
-        <button onClick={() => { setDf(af); setSheet(true); }} style={rowBtn(nF)}>{"Filters" + (nF ? " (" + nF + ")" : "")}</button>
-        <button onClick={saveSearch} style={rowBtn(false)}>Save search</button>
-        {savedSearches.length > 0 && <button onClick={() => setShowSaved(!showSaved)} style={rowBtn(true)}>{savedSearches.length} saved</button>}
-      </div>
       {showSaved && savedSearches.length > 0 && (
-        <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: 10, marginBottom: 10 }}>
+        <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: 10, margin: "10px 0" }}>
           {savedSearches.map(s => (
             <div key={s.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 10px", borderBottom: "1px solid " + C.borderLight, cursor: "pointer" }} {...clickable(() => loadSearch(s))}>
               <div style={{ flex: 1, fontSize: 13, color: C.text, fontWeight: 600 }}>{s.name}</div>
@@ -814,26 +1092,86 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
           ))}
         </div>
       )}
-      {afChips.length ? (
-        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", marginBottom: 9 }}>
-          {afChips.map(c => <button key={c.k} onClick={c.clear} aria-label={"Remove filter: " + c.label} style={{ ...CHIP, display: "inline-flex", alignItems: "center", gap: 5, padding: "7px 10px 7px 12px", border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue }}>{c.label}<span aria-hidden="true" style={POP_CHIP_X}>✕</span></button>)}
-          <button onClick={() => setAf(DEF)} style={{ ...BTN_LINK(C), padding: "7px 8px", color: C.textMuted, textDecoration: "underline" }}>Clear all</button>
-        </div>
-      ) : null}
-      <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, padding: "0 2px" }}>{(total != null ? total : all.length) + " route" + ((total != null ? total : all.length) !== 1 ? "s" : "") + " · sorted by " + ({ name: "name", name_desc: "name (Z→A)", area: "area", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred" }[af.sortBy])}</div>
+      {/* PICK AN AREA FIRST on a state (FINDER_NEEDS_AREA). The filters still apply once one is
+          picked; typing a climb's name searches the whole state straight away. */}
+      {needsArea ? <>
+        <SL C={C}>{"Pick an area in " + loc.name}</SL>
+        <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginBottom: 10 }}>{"Choose where to look and the finder lists its climbs with your filters — or type a climb's name above to search all of " + loc.name + "."}</div>
+        {lk ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div> : null}
+        {ek && !(locKids && locKids.length) ? <div style={{ color: C.red, fontSize: 12.5 }}>{"Couldn't load the areas in " + loc.name + " — check your connection and try again."}</div> : null}
+        {(locKids || []).filter(a => a.route_count > 0).map(a => (
+          <div key={a.id} {...clickable(() => setLoc(a))} style={{ display: "flex", alignItems: "center", gap: 10, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer" }}>
+            <span style={{ flex: 1, minWidth: 0, fontSize: 14.5, fontWeight: 700, color: C.text, overflowWrap: "anywhere" }}>{a.name}</span>
+            <span style={{ fontSize: 12, color: C.blue, fontWeight: 600, flexShrink: 0 }}>{a.route_count.toLocaleString() + " climb" + (a.route_count !== 1 ? "s" : "") + " →"}</span>
+          </div>
+        ))}
+      </> : <>
+      {af.minStars ? <div style={{ fontSize: 11.5, color: C.textMuted, margin: "8px 2px", lineHeight: 1.45 }}>{"Few climbs have a star rating yet, so climbs nobody has rated still show. Only climbs rated below " + af.minStars + "★ are hidden."}</div> : null}
       {error && !all.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't search routes — check your connection and try again.</div> : null}
       {error && all.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the results from your last load.</div> : null}
-      {all.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} areaName={areaNames && areaNames[r.area_id]} />)}
+      {/* GROUPED BY WALL on a wall sort: a heading opens the wall's page and saves it; the rows under
+          it then drop the wall's name, which the heading already says. */}
+      {all.map((r, i) => {
+        const wall = areaNames && areaNames[r.area_id];
+        const head = GROUPED_SORTS[af.sortBy] && (i === 0 || all[i - 1].area_id !== r.area_id);
+        const booked = (bookmarks || []).includes(r.area_id);
+        const saved = isSaved(r.id);
+        return <Fragment key={r.id}>
+          {head ? (
+            <div style={{ display: "flex", alignItems: "center", gap: 8, margin: i ? "16px 0 8px" : "10px 0 8px" }}>
+              <button onClick={() => onJumpToArea({ id: r.area_id, name: wall || "" })} style={{ ...BTN_LINK(C), flex: 1, minWidth: 0, textAlign: "left", padding: "3px 0", fontSize: 13.5, fontWeight: 800, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{(wall || "This wall") + " ›"}</button>
+              {onToggleBookmark ? <button onClick={() => onToggleBookmark(r.area_id)} aria-label={booked ? "Remove " + (wall || "this wall") + " from Saved" : "Save " + (wall || "this wall")} style={savePill(booked)}>{booked ? "★ Saved" : "☆ Save area"}</button> : null}
+            </div>
+          ) : null}
+          <div style={{ display: "flex", gap: 6, alignItems: "stretch" }}>
+            <RouteRow r={r} onOpen={onOpen} C={C} areaName={GROUPED_SORTS[af.sortBy] ? null : wall} />
+            {onToggleWish ? <button onClick={() => setSaveFor({ ...r, wall })} aria-haspopup="dialog" aria-label={"Save " + r.name + (saved ? ", saved" : "")} style={{ ...CHIP, flexShrink: 0, width: 44, marginBottom: 8, padding: 0, fontSize: 17, cursor: "pointer", border: "1px solid " + (saved ? C.blue : C.border), background: saved ? C.blueBg : C.card, color: saved ? C.blue : C.textSub }}><span aria-hidden="true">{saved ? "★" : "☆"}</span></button> : null}
+          </div>
+        </Fragment>;
+      })}
       {isLoading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
       {!isLoading && all.length > 0 && total != null && all.length < total && (
         <button onClick={() => setPage(p => p + 1)} style={{ width: "100%", padding: 11, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer", marginTop: 4 }}>Load more</button>
       )}
-      {/* A star minimum is almost always the real reason a search comes back empty: the RPC
-          filters on coalesce(stars,0), and 6 routes in 205,492 have a rating, so 4★+ matches
-          nothing anywhere in the catalog and 3★+ matches four. Left unexplained the climber
-          reads "no routes match" as "this crag is no good" rather than "we have no ratings". */}
-      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{af.minStars ? "No routes match these filters. Almost no climb in the catalog has a star rating yet, so a minimum-star filter rules out nearly everything — try setting it back to Any." : (gLoO || gHiO) ? "No routes match these filters. Routes without a readable grade are hidden while a grade range is set — try widening it or setting it back to Any." : "No routes match these filters."}</div>}
+      {/* A star minimum no longer empties a search (0334: unrated climbs stay in), so the
+          explanation left is the grade range's: a route with no readable grade fails it. */}
+      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{(gLoO || gHiO) ? "No routes match these filters. Routes without a readable grade are hidden while a grade range is set — try widening it or setting it back to Any." : "No routes match these filters."}</div>}
       </>}
+      </>}
+
+      {/* SAVE FROM THE LIST (owner, 2026-10-21: "a quick option ... to add the climb to list of
+          objectives, saved climbs, areas"): the same three things the route and area pages save —
+          My Objectives, your own lists, and the climb's wall — without opening the climb.
+          Portalled for the same #appscroll stacking reason as the Filters sheet below. */}
+      {saveFor ? createPortal(
+        <div role="dialog" aria-modal="true" aria-label={"Save " + saveFor.name} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 300, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
+          {/* The backdrop is a real button under the sheet, so a tap outside closes it without a
+              mouse-only div; the ✕ and Done are the keyboard's way out. */}
+          <button onClick={() => setSaveFor(null)} aria-label="Close" tabIndex={-1} style={{ position: "absolute", inset: 0, background: "transparent", border: "none", padding: 0, cursor: "default" }} />
+          <div style={{ position: "relative", background: C.bg, width: "100%", maxWidth: 440, borderRadius: "16px 16px 0 0", maxHeight: "80vh", display: "flex", flexDirection: "column" }}>
+            <div style={{ borderBottom: "1px solid " + C.border, flexShrink: 0, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, padding: "16px 16px 12px" }}>
+              <div style={{ fontSize: 16, fontWeight: 700, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{"Save " + saveFor.name}</div>
+              <button onClick={() => setSaveFor(null)} aria-label="Close" style={POP_CLOSE}>✕</button>
+            </div>
+            <div style={{ padding: "6px 16px 18px", overflowY: "auto", overscrollBehavior: "contain", flex: 1, minHeight: 0 }}>
+              {(() => {
+                const row = (key, label, sub, on, fn) => (
+                  <button key={key} onClick={fn} aria-pressed={on} style={{ ...BTN_LG, width: "100%", display: "flex", alignItems: "center", gap: 10, textAlign: "left", marginTop: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: C.text }}>
+                    <span style={{ flex: 1, minWidth: 0 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700 }}>{label}</span>{sub ? <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, fontWeight: 500, marginTop: 2, lineHeight: 1.4 }}>{sub}</span> : null}</span>
+                    <span aria-hidden="true" style={{ flexShrink: 0, fontSize: 12.5, fontWeight: 700, color: on ? C.blue : C.textSub }}>{on ? "✓ Saved" : "+ Add"}</span>
+                  </button>
+                );
+                return <>
+                  {row("obj", "My Objectives", "Climbs you want to do. Partners who want the same climb can find you.", (wishlist || []).includes(saveFor.id), () => onToggleWish(saveFor.id))}
+                  {onToggleListRoute ? customLists.map(l => row("l-" + l.id, l.name, null, inList(l, saveFor.id), () => onToggleListRoute(l.id, saveFor.id))) : null}
+                  {onToggleBookmark && saveFor.area_id ? row("area", "Save the area: " + (saveFor.wall || "this wall"), "Saved areas are listed under Logbook → Saved.", (bookmarks || []).includes(saveFor.area_id), () => onToggleBookmark(saveFor.area_id)) : null}
+                  {!customLists.length ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 12, lineHeight: 1.45 }}>Make your own lists under Logbook → Saved, and they show up here.</div> : null}
+                </>;
+              })()}
+              <button onClick={() => setSaveFor(null)} style={{ ...BTN_LG, width: "100%", marginTop: 16, border: "none", background: C.blueSolid, color: "#fff" }}>Done</button>
+            </div>
+          </div>
+        </div>, document.body) : null}
 
       {/* Portalled to <body>, and not because 300 was too low a z-index. #appscroll — the
           tab's scroll container — carries `animation-fill-mode: both`, which makes it a
@@ -841,12 +1179,20 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
           is therefore trapped below the app header + primary nav (z-index 30), whatever
           z-index it asks for. This sheet opens at 88vh, so its top 81px — the whole title
           row and the × — sat behind the tabs, with the × not even clickable. Same reason
-          RouteDetail portals its own sheets. Keep the title row sticky so it survives a
-          scroll too. */}
+          RouteDetail portals its own sheets.
+
+          A FULL-HEIGHT SCREEN, not an 88vh bottom sheet (owner, 2026-10-21: on a phone the
+          Discipline row was hidden under the header, the × misbehaved and Show routes did
+          nothing). On iOS `vh` is the viewport with the browser toolbar HIDDEN, so an 88vh sheet
+          pinned to the bottom of a shorter visible area overflowed off the TOP: the title, the ×
+          and the Discipline chips sat under the browser's own bar, and Show routes was the last
+          thing in a long scroll. Now it fills the visible area like Mountain Project's filter
+          screen — the title row clears the notch (safe-area-inset-top), the list scrolls between,
+          and Clear all / Show N routes are pinned at the bottom above the home indicator. */}
       {sheet ? createPortal(
-        <div onClick={() => setSheet(false)} role="dialog" aria-modal="true" style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 300, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
-          <div onClick={e => e.stopPropagation()} style={{ background: C.bg, width: "100%", maxWidth: 440, borderRadius: "16px 16px 0 0", maxHeight: "88vh", display: "flex", flexDirection: "column" }}>
-            <div style={{ position: "sticky", top: 0, zIndex: 2, background: C.bg, borderRadius: "16px 16px 0 0", borderBottom: "1px solid " + C.border, flexShrink: 0, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 16px 12px" }}>
+        <div onClick={() => setSheet(false)} role="dialog" aria-modal="true" aria-label="Filter routes" style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 300, display: "flex", alignItems: "stretch", justifyContent: "center" }}>
+          <div onClick={e => e.stopPropagation()} style={{ background: C.bg, width: "100%", maxWidth: 520, height: "100%", display: "flex", flexDirection: "column", boxSizing: "border-box" }}>
+            <div style={{ zIndex: 2, background: C.bg, borderBottom: "1px solid " + C.border, flexShrink: 0, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "calc(env(safe-area-inset-top) + 12px) 16px 12px" }}>
               <div style={{ fontSize: 16, fontWeight: 700 }}>Filter routes</div>
               <button onClick={() => setSheet(false)} aria-label="Close" style={POP_CLOSE}>✕</button>
             </div>
@@ -856,14 +1202,16 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
             <div style={{ padding: "0 16px 18px", overflowY: "auto", overscrollBehavior: "contain", flex: 1, minHeight: 0 }}>
             {lab("Discipline")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-              {DISCIPLINES.filter(d => d[0]).map(d => chip(d[1], df.disc === d[0], () => setDf(x => ({ ...x, disc: x.disc === d[0] ? "" : d[0], gSys: "", gLo: "", gHi: "", sortBy: (x.sortBy === "grade_asc" || x.sortBy === "grade_desc") && x.disc === d[0] ? "name" : x.sortBy }))))}
+              {/* Tick as many as you like; a range stays only while every ticked discipline shares its scale. */}
+              {DISCIPLINES.filter(d => d[0]).map(d => chip(d[1], df.discs.includes(d[0]), () => setDf(x => { const discs = x.discs.includes(d[0]) ? x.discs.filter(v => v !== d[0]) : [...x.discs, d[0]]; const keep = discs.length && gradeSysFor(discs, x.gSys) === gradeSysFor(x.discs, x.gSys) && gradeScalesFor(discs).length; return { ...x, discs, ...(keep ? {} : { gSys: "", gLo: "", gHi: "" }), sortBy: !discs.length && (x.sortBy === "grade_asc" || x.sortBy === "grade_desc") ? DEF.sortBy : x.sortBy }; })))}
             </div>
+            {df.discs.length > 1 ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>{"Showing " + df.discs.map(discLabel).join(" + ") + " climbs."}</div> : null}
             {lab("Grade")}
             {(() => {
-              const sc = gradeScaleFor(df.disc, df.gSys);
-              if (!df.disc) return <div style={{ fontSize: 12.5, color: C.textMuted }}>Pick a discipline above to filter by grade — grades aren't comparable across climbing types.</div>;
-              if (!sc) return <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.45 }}>Not available for {(DISCIPLINES.find(d => d[0] === df.disc) || [, df.disc])[1].toLowerCase()} yet — these routes store more than one kind of grade (rock, class or commitment), so a range would include routes it shouldn't. Sorting by grade still works below.</div>;
-              const scales = gradeScalesFor(df.disc), curSys = gradeSysFor(df.disc, df.gSys);
+              const sc = gradeScaleFor(df.discs, df.gSys);
+              if (!df.discs.length) return <div style={{ fontSize: 12.5, color: C.textMuted }}>Pick a discipline above to filter by grade — grades aren't comparable across climbing types.</div>;
+              if (!sc) return <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.45 }}>{df.discs.map(discLabel).join(" and ") + " are graded on different scales, so a grade range can't cover them together. Pick disciplines that share a scale, such as Sport and Trad."}</div>;
+              const scales = gradeScalesFor(df.discs), curSys = gradeSysFor(df.discs, df.gSys);
               const iLo = df.gLo ? sc.findIndex(o => o[0] === df.gLo) : -1, iHi = df.gHi ? sc.findIndex(o => o[0] === df.gHi) : -1;
               const sel = (label, val, opts, set) => (
                 <label style={{ flex: 1, display: "flex", flexDirection: "column", gap: 5, fontSize: 11.5, color: C.textMuted, fontWeight: 700 }}>{label}
@@ -884,27 +1232,29 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
                     {sel("From", df.gLo, iHi >= 0 ? sc.slice(0, iHi + 1) : sc, v => setDf(d => ({ ...d, gLo: v })))}
                     {sel("To", df.gHi, iLo >= 0 ? sc.slice(iLo) : sc, v => setDf(d => ({ ...d, gHi: v })))}
                   </div>
-                  {df.gLo || df.gHi ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>{"Routes without a readable grade are hidden while a grade range is set." + (GRADE_SYS_FILTERED[df.disc] ? " So are routes graded only on a different scale." : "")}</div> : null}
+                  {df.gLo || df.gHi ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>{"Routes without a readable grade are hidden while a grade range is set." + (df.discs.some(d => GRADE_SYS_FILTERED[d]) ? " So are routes graded only on a different scale." : "")}</div> : null}
                 </div>
               );
             })()}
             {lab("Sort by")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-              {[["name", "Name A→Z"], ["name_desc", "Name Z→A"], ["area", "By area"], ["stars_desc", "Most starred"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] }))))}
-              {df.disc ? [["grade_asc", "↓ Easiest"], ["grade_desc", "↑ Hardest"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] })))) : null}
+              {FINDER_SORTS.map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] }))))}
+              {df.discs.length ? [["grade_asc", "↓ Easiest"], ["grade_desc", "↑ Hardest"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] })))) : null}
             </div>
-            {!df.disc ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Pick a discipline above to sort by grade.</div> : null}
+            {!df.discs.length ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Pick a discipline above to sort by grade.</div> : null}
             {lab("Minimum stars")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{[[0, "Any"], [2, "★★+"], [3, "★★★+"], [4, "★★★★+"]].map(o => chip(o[1], df.minStars === o[0], () => setDf(d => ({ ...d, minStars: o[0] }))))}</div>
-            {df.minStars ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Star ratings are still missing for almost every climb, so this will hide nearly all of them.</div> : null}
+            {/* 0334: an unrated climb is not ruled out. 2 of 90,084 sport climbs had a rating when this
+                was written, so the old rule turned every star search into an empty list. */}
+            <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Few climbs have a star rating yet, so climbs nobody has rated always show. This hides only climbs rated below the minimum.</div>
             {lab("Pitches")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{[[0, "Any"], [1, "1+ (single)"], [2, "2+ (multi-pitch)"], [3, "3+"], [5, "5+"], [10, "10+"]].map(o => chip(o[1], df.minPitches === o[0], () => setDf(d => ({ ...d, minPitches: o[0] }))))}</div>
             {lab("Length")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{LEN_BUCKETS.map(o => chip(lenLabel(o, uElevN, uElevUnit), df.len === o[0], () => setDf(d => ({ ...d, len: o[0] }))))}</div>
-            <div style={{ display: "flex", gap: 8, marginTop: 20 }}>
-              <button onClick={() => setDf(DEF)} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>Clear all</button>
-              <button onClick={() => { setAf(df); setSheet(false); }} style={{ ...BTN_LG, flex: 2, border: "none", background: C.blueSolid, color: "#fff" }}>Show routes</button>
             </div>
+            <div style={{ flexShrink: 0, display: "flex", gap: 8, padding: "12px 16px calc(env(safe-area-inset-bottom) + 12px)", borderTop: "1px solid " + C.border, background: C.bg }}>
+              <button onClick={() => setDf(DEF)} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>Clear all</button>
+              <button onClick={() => { setAf(df); setSheet(false); }} style={{ ...BTN_LG, flex: 2, border: "none", background: C.blueSolid, color: "#fff" }}>{draftTotal == null || draftCounting ? "Show routes" : "Show " + draftTotal.toLocaleString() + " route" + (draftTotal !== 1 ? "s" : "")}</button>
             </div>
           </div>
         </div>, document.body) : null}
@@ -1350,10 +1700,11 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, TopContributors, rootHeader }) {
+export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
+  const [finderDisc, setFinderDisc] = useState(""); // a chart bar presets the finder's discipline
   const [treeOpen, setTreeOpen] = useState(false);
   const climber = useMemo(() => ({ wishlist, profile, completedIds, rankSuggested, discSlots }), [wishlist, profile, completedIds, rankSuggested, discSlots]);
   const handledJumpId = useRef(null);
@@ -1370,8 +1721,12 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
   // consumer cannot come to depend on the DB shape.
   useEffect(() => {
     if (!onAreaContext) return;
-    onAreaContext(current && current.lat != null && current.lng != null
-      ? { id: current.id, name: current.name, lat: current.lat, lng: current.lng, areaType: current.area_type }
+    // Reported WHETHER OR NOT the area has a coordinate. It used to be null without one, and
+    // the only consumer left (area Discussion) then never rendered on an area such as Florida's
+    // "Artificial Boulders" (fl_artificial_boulders: 30 climbs, lat/lng null). A consumer that
+    // needs a position checks lat/lng itself.
+    onAreaContext(current
+      ? { id: current.id, name: current.name, lat: current.lat != null ? current.lat : null, lng: current.lng != null ? current.lng : null, areaType: current.area_type }
       : null);
   }, [onAreaContext, current && current.id, current && current.lat, current && current.lng]);
 
@@ -1476,13 +1831,13 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
       {!stateNode ? (
         <>{rootHeader || null}<StatePicker onPick={pickState} C={C} /></>
       ) : screen === "finder" ? (
-        <RouteFinderPanel scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} />
+        <RouteFinderPanel key={current.id} scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} bookmarks={bookmarks} onToggleBookmark={onToggleBookmark} onToggleWish={onToggleWish} userLists={userLists} onToggleListRoute={onToggleListRoute} />
       ) : screen === "objectives" ? (
         <ObjectivesPanel area={current} onOpen={onOpenRoute} C={C} />
       ) : screen === "near" ? (
         <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} /></>
       ) : (
-        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap}onAddClimb={onAddClimb} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
+        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap}onAddClimb={onAddClimb} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { setFinderDisc(typeof d === "string" ? d : ""); setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
