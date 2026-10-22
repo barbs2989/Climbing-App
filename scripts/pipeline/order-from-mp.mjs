@@ -226,7 +226,7 @@ if (FACTS) {
   if (!existsSync(addsFile)) { console.error(`no ${addsFile} — run the state with --apply first`); process.exit(1); }
   const adds = Object.entries(JSON.parse(readFileSync(addsFile, "utf8")));
   const rows = new Map();
-  for (let i = 0; i < adds.length; i += 200) for (const r of await rest(`routes?select=id,length_m,pitches,lat,lng,stars&id=in.(${adds.slice(i, i + 200).map(([, id]) => encodeURIComponent(id)).join(",")})`)) rows.set(r.id, r);
+  for (let i = 0; i < adds.length; i += 200) for (const r of await retrying(() => rest(`routes?select=id,length_m,pitches,lat,lng,stars&id=in.(${adds.slice(i, i + 200).map(([, id]) => encodeURIComponent(id)).join(",")})`))) rows.set(r.id, r);
   let n = 0, patched = 0;
   for (const [mpId, id] of adds) {
     const r = rows.get(id); if (!r) continue;
