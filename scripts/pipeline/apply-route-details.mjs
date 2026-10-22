@@ -37,6 +37,11 @@ const BAD = [
 const STOP = new Set("a an the of on in to for and or but with at from by is are was be as it its this that these those up out into onto over under then than so if not no".split(" "));
 const shouts = s => (s.match(/\b[A-Z]{5,}\b/g) || []).some(w => !/^(?:PG13|WI\d|AI\d)$/.test(w));
 
+// A neighbouring climb's NAME is not copied prose: "left of Back Against The Wall" is a direction, and the overlap
+// rule refused it (Colorado, 2026-10-22), so rewrites dropped useful neighbours. Names of three or more words of the
+// climbs on the batch's walls are masked out of both texts before the overlap is measured.
+const NAMES = { list: [] };
+const maskNames = t => { let x = " " + words(t).join(" ") + " "; for (const n of NAMES.list) x = x.split(" " + n + " ").join(" zz "); return x; };
 const problems = (field, val, src) => {
   const p = [];
   if (typeof val !== "string" || !val.trim()) return ["empty"];
@@ -44,14 +49,23 @@ const problems = (field, val, src) => {
   if (shouts(val)) p.push("all caps");
   if (field !== "fa") for (const [re, why] of BAD) if (re.test(val)) p.push(why);
   if (field !== "fa") {
-    const have = grams(src || "", 4), have6 = grams(src || "", 6);
-    const hit = [...grams(val, 4)].filter(g => have.has(g) && g.split(" ").filter(w => !STOP.has(w) && !/^\d+$/.test(w)).length >= 3);
-    for (const g of grams(val, 6)) if (have6.has(g) && !hit.some(h => g.includes(h))) hit.push(g);
+    const ms = maskNames(src || ""), mv = maskNames(val);
+    const have = grams(ms, 4), have6 = grams(ms, 6);
+    const hit = [...grams(mv, 4)].filter(g => have.has(g) && g.split(" ").filter(w => !STOP.has(w) && !/^\d+$/.test(w)).length >= 3);
+    for (const g of grams(mv, 6)) if (have6.has(g) && !hit.some(h => g.includes(h))) hit.push(g);
     if (hit.length) p.push(`4-word overlap: "${hit[0]}"${hit.length > 1 ? ` (+${hit.length - 1})` : ""}`);
   }
   return p;
 };
 const srcOf = (r, f) => f === "overview" ? r.src.desc : f === "detailed_rack" ? r.src.prot : f === "location" ? r.src.loc : r.src.fa;
+
+const areaIds = [...new Set([...inputs.values()].map(r => r.area).filter(Boolean))];
+for (let i = 0; i < areaIds.length; i += 50) {
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=name&area_id=in.(${areaIds.slice(i, i + 50).map(encodeURIComponent).join(",")})`, { headers: H });
+  if (r.ok) for (const x of await r.json()) { const w = words(x.name).join(" "); if (w.split(" ").length >= 3) NAMES.list.push(w); }
+}
+for (const r of inputs.values()) { const w = words(r.name).join(" "); if (w.split(" ").length >= 3) NAMES.list.push(w); }
+NAMES.list = [...new Set(NAMES.list)].sort((a, b) => b.length - a.length);
 
 // --drop <verify.json>: a list of { id, field, problem } from the fact-check pass; those fields are never written.
 const dropped = new Set((dropFile ? JSON.parse(readFileSync(dropFile, "utf8")) : []).map(d => d.id + "|" + d.field));
