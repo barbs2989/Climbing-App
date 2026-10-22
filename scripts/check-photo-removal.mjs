@@ -282,7 +282,10 @@ const avCore = readCoreSource()
   .replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
 if (/removeProfileAvatar\(uid,/.test(avCore)) ok("the editor calls removeProfileAvatar with its uid");
 else bad("the editor no longer calls removeProfileAvatar(uid, …)");
-if (/\(avaPreview\|\|draft\.avatar\)\?<button onClick=\{removeAva\}/.test(avCore))
+// Gated on hasAva, which must also exclude FALLBACK_AV: the draft is seeded from ME.avatar, the
+// silhouette for a climber with no photo, so a truthy avatar alone offered "Remove photo" over nothing.
+if (/\{hasAva\?<button onClick=\{removeAva\}/.test(avCore) &&
+    /const hasAva=!!\(avaPreview\|\|draft\.avatar\)&&\(avaPreview\|\|draft\.avatar\)!==FALLBACK_AV;/.test(avCore))
   ok("the Remove control is GATED on there being a photo to remove");
 else bad("the Remove control is not gated on there being a photo (an empty avatar would offer one)");
 if (/function EditProfileScreen\(\{[^}]*\buid\b/.test(avCore)) ok("EditProfileScreen destructures uid");
