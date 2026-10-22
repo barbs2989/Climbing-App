@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Menu: Your crews, and shortcuts first**: a *Crews · N* tile joins *Yours* (Groups takes the chat icon so the two differ), and a *Your crews* section lists up to five active crews with their unread counts, each opening that crew. *Your crews* and *Your groups* now sit above the tile groups, as Facebook's Menu leads with your shortcuts.
 
 - **Route finder: several types, unrated climbs kept, grouped by wall, pick an area first, save from the list**: tick Sport and Trad together; a star minimum no longer hides climbs nobody has rated (it emptied every search); climbs list wall by wall, left to right, under each wall's name; on a whole state you pick an area first (or type a name); the search bar stays at the top; a ☆ on each row saves the climb to My Objectives, your lists or its wall (0334). See [maps-and-area-browser.md](docs/features/maps-and-area-browser.md).
 - **Route page: the approach picker sits under the sub-tabs**: *How you get there* moved from above Overview · Plan · Reports… to the top of each tab's content, with more room around it. A climb with more than one way in now reads *Choose your approach · N ways in* over full-width radio rows (one marked *Showing*); *Other finishes from this route* is its own card, on Overview only.
