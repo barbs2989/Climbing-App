@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Crew itinerary: your own plan, and Remove**: *Import from Plan* offers *Your plan* (the one saved on the climb's Plan tab) first, then the climb's suggested plans, plus *Build your own*. The crew card's builder starts from your plan and *Share with the crew* saves it as your plan and shares it in one step (it used to keep a draft on screen until somebody pressed Adopt). The crew's itinerary box has *Remove* beside *Change*. The red *Safety plan* button on a backcountry crew is blue like the card's other secondary buttons.
 - **Menu: Your crews, and shortcuts first**: a *Crews · N* tile joins *Yours* (Groups takes the chat icon so the two differ), and a *Your crews* section lists up to five active crews with their unread counts, each opening that crew. *Your crews* and *Your groups* now sit above the tile groups, as Facebook's Menu leads with your shortcuts.
 
 - **Logged climb vs trip report, reviewed**: both are one `climb_logs` row, and the Logbook doc now maps what each kind feeds. A *Conditions only* report no longer pairs two climbs as "Logged the same day" (0336). Your *Log conditions on 5 routes* challenge now counts Conditions-only reports, and it no longer shows another climber a 0 it cannot measure. See `docs/features/logbook-crews-home.md`.
