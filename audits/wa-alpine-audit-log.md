@@ -33163,3 +33163,41 @@ gap between this route's high_point_ft and areas.elevation_ft for wa_mount_la_cr
 and a 4 ft spread is ordinary survey-rounding noise, not a real discrepancy).
 
 Pass 7 continues next run after `wa_mount_la_crosse_scramble`.
+
+## 2026-10-22 (batch 431) — pass 7
+
+DB reachable this run. Checked Mount Lago (South Slope-South Face), Mount Lawson (Standard
+Scramble), three Mount Logan routes (Fremont Glacier, Banded Glacier, Douglas Glacier), Mount
+Mathias (West Face), two Mount Maude routes (North Face, Entiat Ice Fall), Mount McCausland
+(North Slopes from Lake Valhalla), and Mount Mystery (Standard Scramble).
+
+1 fixed, 0 flagged, 9 clean — the first batch in a while with no FA dispute needing a human.
+Fixed: wa_mount_logan_fremont_glacier's approach text gave the Colonial Creek Campground/Thunder
+Creek Trailhead elevation as "1,060 ft", contradicting its own waypoint for the same spot
+(1,200 ft) and the identical trailhead shared by the two sibling Logan routes (also 1,200 ft);
+Campendium (1,213 ft) and WTA's Thunder Woods Nature Trail page at the same coordinates
+(1,200 ft) both corroborate 1,200, not 1,060, so the prose was corrected (see
+audits/sql/2026-10-22-batch-431.sql). Clean: all seven areas' elevations (Lago 8,745; Lawson
+5,401; Logan 9,087; Mathias 7,156; Maude 9,082; McCausland 5,747; Mystery 7,639) match Wikipedia
+and/or SummitPost/PeakVisor/the Mountaineers, each route's own waypoint summit elevation agrees
+with its area row, and all seven areas' coordinates fall in the right drainage/range for their
+name. Mathias (Mountaineers: 7,168) and McCausland (Wikipedia: 5,741) each have one outlier
+source a handful of feet off the stored value, noted but not flagged — ordinary survey-rounding
+spread, same call as Mount La Crosse in batch 430. FA checks: Mount Lago's 1933 Ulrichs/Alt FA
+matches Wikipedia (a SummitPost aside floating an unconfirmed 1926 Wernstedt theory is explicitly
+speculative there, not a real conflict); Mount Logan's 1926 Wernstedt FA matches Wikipedia
+exactly; Mount Lawson correctly carries no FA (no source has one on record, and the row's own
+overview says so); Mount Maude's North Face FA (Beckey, Gordon, Rupley, Staley, no year stored)
+matches a 1957 AAC Club report by Rupley/Beckey/Staley plus the report's own first-person author
+(almost certainly Gordon) — correctly kept separate from the peak's own, earlier 1932 Ulrichs/
+Burnett summit FA, which this route row does not claim. Access/hazard spot-checks: Mount Maude's
+Little Giant Fire closure order (06-17-07-2026-40, Sept 3–Oct 31 2026, Wenatchee River/Entiat
+Ranger Districts) matches the live Forest Service alert exactly; Mount Mystery's account of Sean
+Allen's July 2022 fatal fall (38, solo, near the south end/Del Monte ridgeline, ruled accidental)
+matches contemporary local news coverage in every detail. Mount Maude's Chiwawa River Road
+closure beyond Atkinson Flat and Mount McCausland's Smithbrook Road closure order are each
+plausible and uncontradicted by any source found, but too locally specific for general web
+search to confirm or deny the exact order numbers/end dates — left as is per the audit's rule
+against flagging what can't be checked either way.
+
+Pass 7 continues next run after `wa_mount_mystery_standard`.

@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_mount_la_crosse_scramble",
+  "last_processed_id": "wa_mount_mystery_standard",
   "total_in_scope_last_count": 739,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: Mount Blum's road field states a Baker Lake Road bridge closure 'expected through end of August 2026' -- that date has passed with no reopening notice found either way, so current status is genuinely unconfirmed; left for audit:expiring-closures to track rather than guessed at here.",
@@ -8581,6 +8581,27 @@
       "clean": 4,
       "sql_file": "audits/sql/2026-10-22-batch-430.sql",
       "note": "wa_mount_hopper's elevation (stored 6120 ft in areas.elevation_ft, this route's high_point_ft, and its summit waypoint) was fixed to 6114 ft -- WTA and SummitPost both independently give 6114 ft and neither names 6120. Flagged, not fixed: five of Mount Johnson's six routes (Deception Chimney, Northwest Face, Rumble Gully, South Terrace Route, Staircase Route) credit FA climbers/years no source names for this peak at all -- Deception Chimney and Rumble Gully share an identical FA credit (likely duplicated data), and Staircase Route's claimed 1920 FA predates the mountain's own documented first ascent (Wikipedia: 1935 or 1940). Clean: Mount Howard elevation, Mount Index North Peak FA (already correctly hedged in its own fa field), Mount Johnson Southwest Route (stub, no FA claim) and its parent area's elevation, and Mount La Crosse's elevation + 1928 FA all matched independent sources."
+    },
+    {
+      "batch_number": 431,
+      "date": "2026-10-22",
+      "route_ids": [
+        "wa_mount_lago_south_slope_south_face",
+        "wa_mount_lawson_standard",
+        "wa_mount_logan_fremont_glacier",
+        "wa_mount_logan_r1",
+        "wa_mount_logan_r2",
+        "wa_mount_mathias_scramble",
+        "wa_mount_maude_r1",
+        "wa_mount_maude_r2",
+        "wa_mount_mccausland_n_route",
+        "wa_mount_mystery_standard"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 0,
+      "clean": 9,
+      "sql_file": "audits/sql/2026-10-22-batch-431.sql",
+      "note": "wa_mount_logan_fremont_glacier's approach text gave the Colonial Creek Campground/Thunder Creek Trailhead elevation as 1,060 ft, contradicting its own waypoint (1,200 ft) and the same trailhead on sibling routes r1/r2 (also 1,200 ft); Campendium (1,213 ft) and WTA's Thunder Woods Nature Trail page at the same coordinates (1,200 ft) both corroborate 1,200 -- fixed. All seven peaks' elevations and FA credits checked out against Wikipedia/SummitPost/AAC Publications (Mathias and McCausland each have one outlier source a few feet off, noted not flagged, same as Mount La Crosse in batch 430). Mount Maude's North Face FA (Beckey/Gordon/Rupley/Staley) correctly kept distinct from the peak's own earlier 1932 Ulrichs/Burnett summit FA. Access/hazard spot-checks (Little Giant Fire closure order, Sean Allen's 2022 fatal fall on Mount Mystery) both matched outside sources exactly. First batch in a while with zero FA disputes needing human review."
     }
   ]
 }
