@@ -58,7 +58,14 @@ const CASES = [
     file: "lib/EditProfileScreen.jsx", name: "gate-dropped",
     why: "the Remove control renders with no photo to remove, offering a destructive action against " +
          "nothing",
-    edit: (s) => s.replace("{(avaPreview||draft.avatar)?<button onClick={removeAva}", "{true?<button onClick={removeAva}"),
+    edit: (s) => s.replace("{hasAva?<button onClick={removeAva}", "{true?<button onClick={removeAva}"),
+    expect: "fail", must: /Remove control is not gated/,
+  },
+  {
+    file: "lib/EditProfileScreen.jsx", name: "silhouette-counts-as-photo",
+    why: "the draft is seeded with FALLBACK_AV for a climber with no photo; dropping that test offers " +
+         "Remove photo over the placeholder silhouette",
+    edit: (s) => s.replace("const hasAva=!!(avaPreview||draft.avatar)&&(avaPreview||draft.avatar)!==FALLBACK_AV;", "const hasAva=!!(avaPreview||draft.avatar);"),
     expect: "fail", must: /Remove control is not gated/,
   },
   {

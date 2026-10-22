@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Profile photo from the avatar; readable dropdowns; the zip says where it puts you**: with no photo, the Profile avatar carries a + and adds one directly. Every `<select>` draws the app's blue chevron (the rule moved to `index.html`; screens App returns early, like Edit profile, drew a black native arrow). Empty rating stars are grey, not border-dark. Edit profile explains the home city is a label and checks a typed zip live (recognised? which state? matches your state?).
 - **Menu: Your crews, and shortcuts first**: a *Crews · N* tile joins *Yours* (Groups takes the chat icon so the two differ), and a *Your crews* section lists up to five active crews with their unread counts, each opening that crew. *Your crews* and *Your groups* now sit above the tile groups, as Facebook's Menu leads with your shortcuts.
 
 - **Climbing lists on Home; a clean Fifty Classics list (0337)**: an expanded list in Logbook › Challenges has *Show on Home*; Home's *Your lists* shows the picked lists' progress (every list still counts every log). The Fifty Classics list follows the book: numbered, the route over its peak and region, no "null" grade. See [logbook-crews-home.md](docs/features/logbook-crews-home.md).
