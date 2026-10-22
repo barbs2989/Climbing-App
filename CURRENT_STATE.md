@@ -115,7 +115,7 @@ Newest first. Keep about 15 lines; older entries live in the PRs and the commit 
 - **Area page order**: areas/climbs list → *Don’t see a climb?* → suggested climbs → nearby peaks → Top contributors → Discussion. Discussion now renders on areas with no coordinate (Florida’s Artificial Boulders); *Partners here*’s dates/types control is a real card button (it had no style at all).
 - **RACK is rack-only, every state** — ~400 WA + ~140 other-state routes re-homed (ice axe, crampons, helmet, boots out of `detailed_rack`/`pro_needs`/`rack` into `what_to_bring`), `DISC_RACK` stripped to protection and ropes, `routeRackFor` splits every source and `rackLeftovers` feeds GEAR & ESSENTIALS; `audit:rack-items`.
 - **Objectives chips** Alpine is the left-most discipline chip; Mountaineering and Aid are their own chips instead of folding into Alpine and Trad (`lib/ListsManager.jsx`).
-- **PR29** `AreaRegionSelect` extracted to `src/components/AreaRegionSelect.tsx` (two lib consumers; no import back; its DB query results are annotated, not cast).
+- **#2596** `AreaRegionSelect` extracted to `src/components/AreaRegionSelect.tsx` (two lib consumers; no import back; its DB query results are annotated, not cast).
 - **#2591** `StartLocationForm` extracted to `src/components/StartLocationForm.tsx` (two consumers; no import back).
 - **#2590** `SunCorrect` extracted to `src/components/SunCorrect.tsx` (one consumer, `ClimbMatch.jsx`; no import back).
 - **#2580** `MiniCalendar` extracted to `src/components/MiniCalendar.tsx` (one consumer, `lib/CrewCard.jsx`; `DLOCALE` gained a JSDoc type seam). `check:date-locale` now walks `src/` too: the move had taken its one formatter out of the guard's reach.
