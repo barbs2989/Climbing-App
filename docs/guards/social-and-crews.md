@@ -396,6 +396,23 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `data-cm-applink` and opens it in place, while the href alone would still load it.
   - **The sheet is registered in `scripts/lib/overlay-scaffold.mjs`** with the same `prep` as
     `postMenuFor`: it lives inside the group view and looks its post up in that view's `posts`.
+- **EVERY THREAD IS FACEBOOK'S (2026-10-15).** `Comments` in core is the ONE thread component: routes
+  and their five tabs, areas, trip reports, photos and group posts. A change there reaches all of them.
+  - **A comment is a grey bubble** (name + words), with a small line under it: *time · Like · Reply ·
+    React*. Reactions are a pill at the bubble's edge that opens the picker. Edit, Delete, Report,
+    Remove and **Block** live behind ⋯ (`menuFor`, a portalled sheet at z 9700 like `ReactionPicker`,
+    state local to `Comments` so the overlay scaffold, which reads App's state, has nothing to register).
+  - **Time is `commentWhen`**: *now / 5m / 3h / 2d*, then a date through `DLOCALE`; a tap spells out
+    the day and time. Replies have a time now. `ago()` printed fixed English and stays for other callers.
+  - **Sort: Most relevant (default) · Newest · Oldest.** Relevant = reactions + likes + 2 × replies,
+    newest breaking ties. Replies fold behind *View N more replies* past two; the latest stays shown.
+  - **Blocked authors leave every thread** (`blockedIds`; App passes `blocked`'s ids to all nine App
+    mounts, `RouteDetail` and `TripReport`), and so do the replies under one of their comments. The thread
+    counts what it hid. **Block** (`onBlock` → `blockClimber`) needs an author with an account.
+  - **Kept for the guards:** the composer's `ariaLabel="Add a comment"` (a one-off probe matches it),
+    `"Reply to "+name` on the reply box (`check:a11y-names`), and the reaction entry point is a real
+    named button (*Add a reaction* / *Change your reaction*), which `check:clickable` records was once
+    inert on Enter. Like carries `aria-pressed`; Reply and *View N more replies* carry `aria-expanded`.
 - **`check:mutual-friends`** asserts that a mutual friend is **real**, **named the way they asked**,
   and **counted as the list that renders**. Static (one esbuild bundle of core plus two Babel
   parses — no browser, no database), so it sits in `npm run build`.
