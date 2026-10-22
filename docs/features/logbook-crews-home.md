@@ -27,8 +27,13 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   - *Conditions only* (`tick_type` `Conditions`, App's `condReports` rather than `logs`) = a report from someone who may not have climbed: road, snow, crowds. It feeds conditions and is never counted as a climb. It does count toward your *Log conditions on 5 routes* challenge (`Challenges` takes `condReports`).
   - Every row, climb or conditions only, feeds the route page: the Reports tab, the conditions consensus (`buildConsensus` over `activity`; a report kept to friends or to yourself still counts, anonymously, through `route_private_conditions`), the crowd readout and the alpine Conditions card's freshness. It also feeds Home's recent condition reports and offline state downloads (`state_trip_reports`). Saving one of either kind raises the *still missing …* alert that opens the contribute form (`missingFacts`), and records a sun vote if one was cast.
   - Only a climb (not Conditions) feeds the climber's side: Completed, Challenges, the profile résumé, sends and points on Ranks (`leaderboard()`; Attempt, Turned around, Fell, Hung and Project are logged but are not sends), Unfinished business (`RetryReminder`), *Logged the same day* pairings (`route_logged_with`, Conditions excluded since 0336), a crew's past state and recap, partner tags and the vouch prompt, a belay catch, a first-ascent credit and the send celebration. A public report's stars are the route rating's fallback vote (`route_star_summary`), and Ranks › *Top climbs* counts public reports per route.
-  - Neither earns contribution points (`contribution_points()`, 0333). This is deliberate, and it is what Mountain Project does: it awards points for routes, areas and photos, not ticks. 0333's comment gives an older reason, "reports are private", which 0272 has since made untrue.
+  - Both earn contribution points since 0338 (owner: "reward all"): a logged climb or attempt 1, once per route; a trip report (a write-up, conditions tags, beta, or a Conditions-only report) 2, once per route per month. Only a row shared with Everyone counts, because the boards are public and name the climber per area; this is Strava's rule for public leaderboards. A private log still counts toward your own Challenges.
 - **Logbook > Challenges**: named tick-lists from `lib/lists.js` (`LISTS`, `routeInList`, `listPeaks`, `peakClimbed`).
+  The lists and their progress are built by ONE hook, `useCuratedLists` (`ClimbMatchCore.jsx`), which Challenges and Home's `TrackedLists` both call.
+  Every list counts every log; an expanded list in your own Logbook (signed in) has a **Show on Home** switch that only decides whether Home shows it
+  (`profile_tracked_lists`, 0337, owner-only; `useMyTrackedLists`/`saveMyTrackedLists`; App's `trackedLists`/`toggleTrackedList`).
+  The **Fifty Classics** rows come from the book's roster (`FIFTY_CLASSICS`, each entry naming its catalog `id`): numbered 1–50, the book's route name
+  over "peak · region", a missing grade left out. All fifty are in the catalog (2026-10-21).
   `Challenges` (`ClimbMatchCore.jsx`) has three parts: personal challenges (climbs this year, `pitchesClimbed`, conditions reported,
   vouches given, catches), curated lists, badges. All are DERIVED from the logs it is handed, so a new log updates them the moment it is
   saved (`setLogs`; the logged route's row arrives through `useRoutesByIds`), and nothing is stored. Another climber's profile sheet
@@ -51,7 +56,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 - **Crew safety check** (`SafetyTab`, 0314): the pre-climb questionnaire and "mark me safety-ready" are stored per crew for real crews (`saveCrewSafetyAnswers`, `markCrewSafetyReady`) in `crew_safety_answers`, readable by their owner alone. The crew's Team Alignment comes from `crew_alignment()` (`useCrewAlignment` → `alignmentFromServer`): counts per risk level and per flag, never anyone's answers, as the questionnaire promises. Flags are anonymous on every path (`alignmentFromCounts`). The crew card's per-member "reviewed the safety plan" mark reads `crew_ready_ids()` (`useCrewReadyIds`). Example crews keep the local path.
 - **Float plans**: `FloatPlans` (`lib/FloatPlans.jsx`) lists plans for `activeCrews`; the plan text is stored on the crew (`createCrew({floatPlan})`).
 - **Home (`today`)**: greeting; **Finish setting up** checklist (`gaps`, shows 2 until `showSetupAll`); alerts; **Unfinished business** (`unfinishedOpen`);
-  **Jump back in** tiles; **Best day to climb** (`BestDayTile`, also a Menu tile); **Recent condition reports**; recent friend activity; the pinned/downloaded states card (`#pinned-downloads`, which the Menu's Downloads tile scrolls to).
+  **Jump back in** tiles; **Your lists** (`TrackedLists`, signed in: the curated lists the climber chose with *Show on Home*, in the order picked, each with the same progress Logbook › Challenges shows; with none picked, a one-line *Follow a climbing list here* that opens the lists; a row opens Logbook › Challenges with that list expanded); **Best day to climb** (`BestDayTile`, also a Menu tile); **Recent condition reports**; recent friend activity; the pinned/downloaded states card (`#pinned-downloads`, which the Menu's Downloads tile scrolls to).
   Below that, the **Nothing needs you right now** card: the all-caught-up state, shown only when there is no pending request or invite (`reqN`), no unread DM or crew chat, no crew waiting on your day, no unread alert and no friend activity. A climber with no objectives yet gets "Explore climbs and save one as an objective to get started" and an *Explore climbs* button; anyone with objectives gets the plain all-clear and no button (the *Jump back in* tile already offers it).
 
 ## 2. How it works
@@ -78,10 +83,10 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 | File | Key symbols |
 |---|---|
 | `ClimbMatch.jsx` | `tab` branches for `today`/`crew`/`logbook`, `logbookTab`, `crewView`, `pinnedStates`, `archiveCrew`, `clearPastCrew`, `givenVouches`, `activeCrews`, setup `gaps`, `unfinishedOpen`, `renderObjectives` |
-| `ClimbMatchCore.jsx` | `Challenges`, `pitchesClimbed`, `datesAgreed`, `agreedDate`, `isArchivedCrew`, `CrewInviteModal`, `ItineraryEditor`, `crewPlace`, `placeTrip`, `placeCap`, `placeLabel`, `placeSub`, `placeMatchesLog` |
+| `ClimbMatchCore.jsx` | `Challenges`, `useCuratedLists`, `TrackedLists`, `pitchesClimbed`, `datesAgreed`, `agreedDate`, `isArchivedCrew`, `CrewInviteModal`, `ItineraryEditor`, `crewPlace`, `placeTrip`, `placeCap`, `placeLabel`, `placeSub`, `placeMatchesLog` |
 | `lib/ListsManager.jsx` | Objectives/Saved UI, per-discipline filter chips (Alpine first; Mountaineering and Aid separate); a crag row's Find partners goes to the crag (`onFindPartnersInArea`) |
 | `lib/MyAscents.jsx`, `lib/LogAscent.jsx` (no visibility chooser since 2026-10-21: one line names the Settings choice; a new report sends `visibilityFromSetting` and `syncLogToDb` leaves the column out so 0272's insert trigger fills it from the stored setting), `lib/TripReport.jsx`, `lib/tripReportRow.js`, `lib/LogTagConfirmations.jsx` | Completed climbs, logging, trip reports, partner tag confirmation |
-| `lib/lists.js` | `LISTS`, `routeInList`, `listPeaks`, `peakClimbed` (Challenges) |
+| `lib/lists.js` | `LISTS`, `routeInList`, `listPeaks`, `peakClimbed`, `FIFTY_CLASSICS` (Challenges) |
 | `lib/CrewCard.jsx`, `lib/CrewGearList.jsx` | Crew card, gear list |
 | `lib/CrewFinder.jsx` | Crew discovery (`inMyAreas`: "My climbs & areas" also matches a crew at an area you listed; `initialArea` from the area page's "Crews here") |
 | `lib/StartCrewSheet.jsx` | `StartCrewSheet` — start a crew at an AREA: the place, the session's discipline, a day, a size, a note; hands `formCrew` a place |
@@ -92,7 +97,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 | `lib/db.js` | All hooks and writes named above |
 
 ## 4. Data
-- **Supabase tables read/written in `lib/db.js`**: `objectives`, `climb_logs`, `climb_log_partner_names`, `crews`, `crew_members`, `crew_day_acks`,
+- **Supabase tables read/written in `lib/db.js`**: `profile_tracked_lists` (0337, the lists Home shows), `objectives`, `climb_logs`, `climb_log_partner_names`, `crews`, `crew_members`, `crew_day_acks`,
   `crew_email_invites`, `crew_listings`, `crew_reads`, `crews_messages`, `messages`, `vouches`, `user_lists`, `user_itineraries`, `saved_searches`, `saved_areas`, `profiles` (`pinned_states`).
 - **RPCs**: `add_crew_gear_item`, `assign_crew_gear`, `remove_crew_gear_item`, `claim_my_crew_email_invites`, `share_crew_itinerary`, `log_tags_for_me`, `respond_to_log_tag`, `route_logged_with`, `state_trip_reports`.
 - **Migrations**: 0031 objectives, 0036 crews, 0037/00400/00540/00730/0121 climb logs, 0038/0238 vouches, 00420 messaging, 0075 crew locked day, 0086/0227 invite rules,
