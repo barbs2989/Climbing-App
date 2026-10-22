@@ -18,6 +18,17 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   button that opens it.
 - **Edit profile**: `lib/EditProfileScreen.jsx` over the `editDraft` state; `saveEdit` writes the draft back (see 2).
   Includes the owner-only zip code (feeds partner search distance; others never see it).
+  - **Home city + state are a LABEL, never geocoded.** The city is free text with a `US_CITIES` datalist; the state comes
+    from the dropdown. They show on your profile and partner rows, and the state orders namesakes in search
+    (`homeStatePath`). They place you nowhere: partner and crew distance come only from the zip.
+  - **The zip is the only thing that places you**: `zip_centroids` (Census ZCTA) gives its point, and `partners_near` and
+    CrewFinder's *Nearest* measure from it. While you type, `useZipCentroid` checks a changed zip against that same table
+    and the field says whether it is recognised, which state it is in (`zipState`), and when it disagrees with the state you
+    picked. A zip typed with no state chosen fills the state in; a chosen state is never overwritten.
+  - The photo button reads *Add photo* when there is none (the draft's `FALLBACK_AV` silhouette is not a photo).
+- **Add a photo from Profile**: with no photo, the Profile header's avatar carries a **+** and opens the photo picker itself
+  (`avaAdding`); it uploads and saves the avatar column at once (`uploadProfilePhoto` + `saveProfileAvatar`), as the editor
+  does. Not offered until the profile has been read, so a loading or failed read cannot replace a stored photo.
 - **Résumé** (`Resume`): courses and training, plus an **Experience** list of notable climbs, most recent first, with a star for
   led/summited. Groups, in order: **Sport, Trad, Ice & Mixed, Alpine & Mountaineering, Bouldering, Scrambling**
   (the Objectives filter uses the same split except that it leads with Alpine and keeps Alpine, Mountaineering and Aid as separate chips). Sport = sport + top-rope; Trad = trad and everything that used to be "Crag";
@@ -25,12 +36,16 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   Visible to others only when the climber's `resume_public` allows it.
   *Edit résumé › Add a past climb* asks how you climbed it from a list per discipline (`RESUME_STYLES`): routes offer Lead / Onsight / Flash / Redpoint / Follow / Top-rope (trad and ice add Solo; alpine and ice add Swapped leads), boulders Send / Flash, mountaineering Summit / Lead / Follow / Solo, scrambling Summit / Completed / Solo. Changing the discipline resets a style the new one lacks.
 - **No trust score** (removed 2026-10-21, owner decision): no screen computes, shows, filters, sorts or gates on one. What a climber judges a partner by is the ✓ (verification), the vouches they received and their belay record. 0335 dropped `compute_trust_score` and `trust_scores_view` from the database too.
-- **Verification** (0306): ✓ means you proved you read your inbox. Sign-up's autoconfirm no longer counts. `VerifyEmailPanel` on Profile emails a one-time code (`sendEmailCode`), you type it (`confirmEmailCode`) or tap the link in the same email, and `verifyMyEmail` writes the record; the server's `verify_my_email()` accepts only a session whose `amr` shows a code, link or reset link from the last 30 minutes. Your own ✓ comes from the record (`useVerificationRecords`), never the session; a failed read decides nothing and hides the "Verify" prompts (`verificationUnavailable`). Until a mail provider (SMTP) is connected, Supabase's built-in mailer only delivers to the project's team, and the panel says so.
+- **Verification** (0306): ✓ means you proved you read your inbox. Sign-up's autoconfirm no longer counts. `VerifyEmailPanel` on Profile emails a one-time code (`sendEmailCode`), you type it (`confirmEmailCode`) or tap the link in the same email, and `verifyMyEmail` writes the record; the server's `verify_my_email()` accepts only a session whose `amr` shows a code, link or reset link from the last 30 minutes. Your own ✓ comes from the record (`useVerificationRecords`), never the session; a failed read decides nothing and hides the "Verify" prompts (`verificationUnavailable`). Until a mail provider (SMTP) is connected, Supabase's built-in mailer only delivers to the project's team, and the panel says so. **There is no ID verification** (0339, owner decision 2026-10-21): no screen asks for an identity document, `verification_records` no longer accepts the kind `id`, and the unused client writer that could file one is gone. Email is the only verification a climber does.
 - **Sign out** (Menu's *Sign out*, Settings' *Log out*): `signOut` ends the session on the server, drops every cached per-climber query, and goes back to signed-out. If the logout request cannot reach the server (offline, outage), it still signs THIS device out — supabase-js would otherwise keep the session while the app said "Signed out" — and the server-side refresh token simply expires.
 - **Vouches**: `GiveVouch` (`lib/GiveVouch.jsx`) writes through `giveVouch` in `lib/db.js`.
 - **Another climber's belay record** (0315): FullProfile's Safety tab reads `belay_ledgers()` (`useBelayLedgers`) — the catches that count on the Belay board (`counted_catch_count`), the climbers caught and the last catch. `CatchLedger`'s `otherReal` branch shows no High-Factor tile: nothing records a fall's severity.
 - **Profile photos**: `uploadProfilePhoto` (location stripped first, public `topo-photos` bucket), `saveProfilePhotos`,
   `saveProfilePhotoAlts`, `removeProfilePhoto` (own photo only).
+  Every `topo-photos` upload passes `photoUploadOptions` (`lib/photoUpload.js`): a one-year cache, since a photo's path is
+  unique and never overwritten. The default was one hour, and the resized copies (`photoThumb`) inherit it, so an hour after
+  a climber last looked, the Profile's avatar and strip were each resized again before they drew (0.6–1.1 s each, measured
+  2026-10-21; 50–65 ms cached). After an upload, `warmThumbs` requests the avatar and strip sizes so the first look is cached too.
 - **Settings**: units (imperial/metric), date format, notification switches, visibility switches (show full name `show_name`,
   `discoverable`, résumé visibility, trip-report visibility incl. the bulk `setAllMyTripReportVisibility`, mutual friends,
   visible while browsing), emergency contact, sign out.
