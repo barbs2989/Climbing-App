@@ -26,6 +26,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 - **Print (desktop website)**: a *⎙ Print* button beside Share opens a one-sheet printout — area path, facts (grade, length, pitches, season, aspect, approach, gain), approach, pitch by pitch, descent, rack, hazards and waypoints with coordinates — through `printSheet`, built by `routeSheetHtml` (`lib/routeSheet.js`). It prints only what the route stores, in the climber's units. No map image (the waypoints table carries the coordinates).
 
 - **Draw approach (desktop website)**: *✎ Draw approach* in the header opens a map (`DrawRouteView`, `lib/DrawRoute.jsx`, on `TrailDrawMap`) to click the way in from the trailhead (T) toward the summit (S) or base (B) — a crag keeps P and C. It shows the line's length and the gain and loss read from terrain heights (Open-Meteo elevation, the forecast provider), and downloads it as a GPX whose description says it is hand-drawn, not recorded. On a crag, *Suggest this as the trail* opens the reviewed trail submission (`GpsSubmissionModal`, `initialPts`) with the line already drawn; elsewhere that form takes the climb's own track, so no suggestion is offered.
+- **Compare (desktop website)**: *+ Compare* beside Print adds the climb to a tray pinned at the bottom of the window (up to four); *Compare N* opens a side-by-side table — grade, discipline, where, length, pitches, approach, gain, aspect, season, rating, hazards and the best day this week (the conditions score, crag disciplines only; alpine says it is judged by flags). Every cell is a stored value or "—" (`CompareTray`, `CompareView` in `lib/CompareRoutes.jsx`).
 
 ## 2. How it works
 
@@ -87,6 +88,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 
 ## 7. Last significant change
 - **Draw an approach (desktop, phase 4d)**: `lib/DrawRoute.jsx`; `TrailDrawMap` takes `marks`, `GpsSubmissionModal` takes `initialPts`.
+- **Compare climbs (desktop, phase 4c)**: `lib/CompareRoutes.jsx`; the print sheet and logbook CSV now name the discipline through `discLabel` (they printed nothing for trad).
 - **Printable route sheet (desktop, phase 4a)**: `routeSheetHtml` in `lib/routeSheet.js`, the *⎙ Print* button in the header.
 - **Desktop route page (phase 2b)**: breadcrumb, facts beside a photo (or *Add the first photo*), route map in the right rail at 1280px+ (`deskWide`/`deskFull`, `_routeMap`, `railEl`).
 Crag routes (`CRAG_CATS`: trad, sport, toprope, aid, bouldering) carry no GEAR & ESSENTIALS card, and since 2026-10-21 their editors no longer offer *Route-specific essentials* (`whatToBring` is in SuggestFix `DROP` for `CRAG_CATS` and out of `AddRoute` FIELDS for rock, aid and bouldering): nothing on a crag page reads it. The crag RACK card (`CragRack`) prints only the route's own rack, draws or pads, never `DISC_RACK`. An empty crag BETA now draws as an `EmptySection` (heading + *Add beta*, opens the `beta` field) instead of vanishing.
