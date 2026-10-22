@@ -240,7 +240,7 @@ if (FACTS) {
     if (r.lat == null && gps[1]) { p.lat = +gps[1]; p.lng = +gps[2]; }
     if (!(r.stars > 0) && avg && +avg[2].replace(/,/g, "") >= 1) p.stars = +avg[1];
     if (!Object.keys(p).length) continue;
-    if (APPLY) await patchRow("routes", id, p);
+    if (APPLY) await retrying(() => patchRow("routes", id, p));
     patched++;
     if (!APPLY && patched <= 10) console.log(id, JSON.stringify(p));
   }
