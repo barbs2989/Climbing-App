@@ -85,6 +85,10 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 4. **Messaging**: `sendCrewMessage`/`fetchCrewMessages`/`fetchOlderCrewMessages`, `sendDirectMessage`/`fetchMyDirectMessages`, read markers via `markCrewRead`/`fetchCrewLastReads`/`markMessageAsRead`.
 5. **Pinned states** follow the account (0187): `pinnedStates` state in `App`, saved by `savePinnedStates` (`profiles.pinned_states`). Offline downloads stay on the device
    (`downloadedStates`, `dlLoaded`, `lib/offline.js`: `downloadStateOffline`, `removeStateOffline`, `packRouteOffline`).
+   **Manage areas** (`manageAreasOpen`, from Home's pinned card) lists every state or province of the picked country with its
+   catalog count from `useStates()`. With the database on, a count is the database's or nothing: while that read is in flight a
+   row says *Loading the catalog…* (`statesLoading`), and a failed read says so (`statesUnavailable`); neither falls back to
+   the four-state seed tree, which used to grey out 46 states as "No climbs in the catalog" until the read landed.
 5a. **Saved areas and peaks** follow the account (0322): one `bookmarks` list in `App` feeds the area page's Save button, Logbook › Saved's ✕, the Home and Menu tiles, so they always agree.
    `toggleBookmark` writes `saveAreaRow`/`removeAreaRow` (`saved_areas`, owner-only) and toasts only after the write; a failure restores the list. `useMySavedAreas` is copied into `bookmarks`;
    `lib/offline.js` (`saveAreaIds`, `savedAreaIds`, `savedAreasSynced`) is the offline mirror, and a device's pre-0322 saves are uploaded the first time the account is read there.

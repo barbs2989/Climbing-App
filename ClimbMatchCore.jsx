@@ -3838,7 +3838,7 @@ var _cbBatch=[],_cbTimer=null,_toastT=null,_celebTimer=null;
    climber's own data, on the one screen whose whole purpose is downloading a catalog FOR use with
    no signal -- so it was wrong exactly when somebody needed it.
    A pure function so check:outage-copy can execute all three branches without rendering App. */
-export function stateCatalogLine(cnt,name,unavailable,suffix){if(cnt)return cnt.toLocaleString()+(cnt===1?" climb":" climbs")+" in the catalog"+(suffix||"");if(unavailable)return "Couldn’t load the catalog list — this is not a claim that "+name+" has no climbs. Check your connection and try again.";return "No climbs in the catalog";}
+export function stateCatalogLine(cnt,name,unavailable,suffix,loading){if(cnt)return cnt.toLocaleString()+(cnt===1?" climb":" climbs")+" in the catalog"+(suffix||"");if(loading)return "Loading the catalog…";if(unavailable)return "Couldn’t load the catalog list — this is not a claim that "+name+" has no climbs. Check your connection and try again.";return "No climbs in the catalog";}
 
 export function __set_UNITS(v){UNITS=v;}
 export function __set_DB_UID(v){DB_UID=v;}
