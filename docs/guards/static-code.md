@@ -893,6 +893,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     route map** (`GPXMap`'s fullscreen branch), and the reason it is exempt rather than capped is
     **consistency**: capping it would put two maps in one app at two different widths, which is a
     worse desktop/phone difference than the one the cap exists to fix.
+    A **fourth**, `menu-wide` (2026-10-21): the owner asked for the desktop Menu to fill the screen
+    (it was a 440px drawer). Its content is centred in a 720px column by the panel's padding. It is
+    keyed on the WHOLE style string, so the Menu's phone branch, with the same zIndex and capped, is
+    still checked.
   - **THE DETECTOR ANCHORED ON `style={{` AND THE ROUTE MAP WAS OUTSIDE ITS CENSUS ENTIRELY.**
     That matches a **literal** style object, and `GPXMap` writes
     `style={fullscreen?{position:"fixed",inset:0,…}:{position:"relative"}}` — a **ternary**. So the
