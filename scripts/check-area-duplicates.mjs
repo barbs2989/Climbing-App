@@ -115,8 +115,11 @@ for (const [g, list] of sib) {
 // make it a copy. Compass and face words do not count ("Sport Boulder (E and NE Face)", "Sunset Slab
 // (N & S)"). The same rule is refuse_bucket_copy_area() in 0340, which refuses one at insert.
 const FACE = new Set(["n", "s", "e", "w", "ne", "nw", "se", "sw", "north", "south", "east", "west", "northeast", "northwest", "southeast", "southwest", "face", "faces", "side", "sides", "wall", "walls", "end", "upper", "lower"]);
+// Each name is filed under its key AND that key with the spaces taken out, so "El Dorado" finds
+// "Eldorado Peak" (0341) — measured 2026-10-21: no stored bucket depended on it, so it adds no finding.
+const compactKey = n => catalogKey(n).replace(/ /g, "");
 const byKey = new Map();
-for (const a of areas) { const k = String(a.path).split(".").slice(0, 2).join(".") + "|" + catalogKey(a.name); (byKey.get(k) || byKey.set(k, []).get(k)).push(a); }
+for (const a of areas) for (const k of new Set([catalogKey(a.name), compactKey(a.name)])) { const g = String(a.path).split(".").slice(0, 2).join(".") + "|" + k; (byKey.get(g) || byKey.set(g, []).get(g)).push(a); }
 for (const a of areas) {
   const list = /\(([^)]*)\)/.exec(a.name)?.[1];
   if (!list || String(a.path).split(".").length < 3) continue;
@@ -126,7 +129,7 @@ for (const a of areas) {
     if (/^etc\.?$/i.test(item) || words(item).every(w => FACE.has(w))) continue;
     const k = catalogKey(item);
     if (k.length < 4) continue;
-    const twin = (byKey.get(st + "|" + k) || []).find(o => o.id !== a.id && !within(a, o));
+    const twin = [k, compactKey(item)].flatMap(x => byKey.get(st + "|" + x) || []).find(o => o.id !== a.id && !within(a, o));
     if (twin) hits.push(`${item.trim()} = ${twin.id}`);
   }
   if (hits.length >= 2) pairs.set(a.id + "|(bucket)", `${a.name} — already filed: ${hits.join(", ")}`);
