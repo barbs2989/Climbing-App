@@ -6,8 +6,9 @@
 -- Pilot Knob (S), which is suspended and not added. Mount Rose is in Nevada and is filed there.
 --
 -- ABSENCE WAS PROVEN, NOT ASSUMED (0137's method, as in 0344): every California area read once, matched
--- by name and coordinate, then a loose probe by distinctive word within 8 km. Three list peaks were found
--- under other names (Black Kaweah, Four Gables, Bloody Mountain) and get nothing new. Six ids a new peak
+-- by name and coordinate, then a loose probe by distinctive word within 8 km. Four list peaks were found
+-- under other names (Black Kaweah, Four Gables, Bloody Mountain, and The Hermit, filed as "Hermit, The" —
+-- found by 0216's trigger when this file first ran) and get no new area; The Hermit gets its route. Six ids a new peak
 -- would have taken belong to other places 3-437 km away, so those peaks carry a suffix.
 --
 -- WHERE A PEAK HANGS: under the parent of the nearest list peak the catalog already holds, when that is
@@ -101,7 +102,6 @@ insert into areas (id, name, parent_id, area_type, elevation_ft, lat, lng) value
   ('ca_wheel_mountain', 'Wheel Mountain', 'ca_blackcap_basin_area', 'peak', 12774, 37.0467, -118.6294),
   ('ca_scylla', 'Scylla', 'ca_blackcap_basin_area', 'peak', 12956, 37.08, -118.6897),
   ('ca_mount_powell', 'Mount Powell', 'ca_08_bishop_pass_evolution', 'peak', 13360, 37.1387, -118.634),
-  ('ca_the_hermit', 'The Hermit', 'ca_08_bishop_pass_evolution', 'peak', 12328, 37.1629, -118.7185),
   ('ca_pilot_knob', 'Pilot Knob', 'ca_07_humphreys_basin_pine_creek_granite_park', 'peak', 12245, 37.2733, -118.7573),
   ('ca_mount_hilgard', 'Mount Hilgard', 'ca_06_little_lakes_valley_mono_recesses', 'peak', 13361, 37.3605, -118.8268),
   ('ca_red_and_white_mountain', 'Red and White Mountain', 'ca_05_convict_lake_mcgee_creek', 'peak', 12816, 37.4797, -118.8572),
@@ -166,7 +166,6 @@ insert into areas (id, name, parent_id, area_type, elevation_ft, lat, lng) value
   ('ca_red_kaweah', 'Red Kaweah', 'ca_11_great_western_kings_kern_divide', 'peak', 13720, 36.54, -118.5057),
   ('ca_glacier_ridge', 'Glacier Ridge', 'ca_11_great_western_kings_kern_divide', 'peak', 12360, 36.6175, -118.5589),
   ('ca_thunder_mountain_sierra', 'Thunder Mountain', 'ca_11_great_western_kings_kern_divide', 'peak', 13517, 36.669, -118.4758),
-  ('ca_mount_ericsson', 'Mount Ericsson', 'ca_13_shepherd_pass', 'peak', 13583, 36.697, -118.4145),
   ('ca_mount_bradley', 'Mount Bradley', 'ca_12_kearsarge_pass_to_cedar_grove', 'peak', 13264, 36.7284, -118.3387),
   ('ca_mount_rixford', 'Mount Rixford', 'ca_12_kearsarge_pass_to_cedar_grove', 'peak', 12887, 36.7848, -118.3989),
   ('ca_mount_baxter', 'Mount Baxter', 'ca_12_kearsarge_pass_to_cedar_grove', 'peak', 13136, 36.8614, -118.362),
@@ -193,6 +192,16 @@ insert into areas (id, name, parent_id, area_type, elevation_ft, lat, lng) value
   ('ca_tinker_knob', 'Tinker Knob', 'ca_lake_tahoe', 'peak', 8949, 39.2447, -120.2851),
   ('ca_english_mountain', 'English Mountain', 'ca_northern_sierra', 'peak', 8373, 39.4465, -120.5512)
 on conflict (id) do nothing;
+
+-- 2b. Mount Ericsson, refused by 0216's trigger as a copy of Ericsson Crags 0.74 km away (catalog_key
+--     folds both to "ericsson"). READ before bypassing: Ericsson Crags is a climbing REGION of pinnacles
+--     on the mountain's northwest ridge; the list peak is the 13,583 ft summit. Two places — so the one
+--     row is let through, and the switch is put back at once.
+perform set_config('catalog.allow_duplicate', 'on', true);
+insert into areas (id, name, parent_id, area_type, elevation_ft, lat, lng) values
+  ('ca_mount_ericsson', 'Mount Ericsson', 'ca_13_shepherd_pass', 'peak', 13583, 36.697, -118.4145)
+on conflict (id) do nothing;
+perform set_config('catalog.allow_duplicate', 'off', true);
 
 -- 3. One route each: its confirmed name, or "Standard route" where research could not confirm one.
 insert into routes (id, area_id, name, discipline, grade, grade_system, description) values
@@ -260,7 +269,7 @@ insert into routes (id, area_id, name, discipline, grade, grade_system, descript
   ('ca_wheel_mountain_standard_route', 'ca_wheel_mountain', 'Standard route', 'scrambling', 'Class 3', 'class', null),
   ('ca_scylla_northwest_slope', 'ca_scylla', 'Northwest Slope', 'scrambling', 'Class 2', 'class', 'A non-technical class 2 ascent from the northwest; long approach via Lamarck Col, the John Muir Trail and Ionian Basin.'),
   ('ca_mount_powell_standard_route', 'ca_mount_powell', 'Standard route', 'scrambling', 'Class 2', 'class', null),
-  ('ca_the_hermit_standard_route', 'ca_the_hermit', 'Standard route', 'alpine', 'Class 5', 'class', 'Class 2 to the summit block, which is Class 5.'),
+  ('ca_hermit_the_standard_route', 'ca_hermit_the', 'Standard route', 'alpine', 'Class 5', 'class', 'Class 2 to the summit block, which is Class 5.'),
   ('ca_pilot_knob_east_ridge_from_piute_pass', 'ca_pilot_knob', 'East Ridge from Piute Pass', 'scrambling', 'Class 2', 'class', 'Hike over Piute Pass, cross Humphreys Basin to the saddle on the east ridge, then scramble boulders to the summit.'),
   ('ca_mount_hilgard_standard_route', 'ca_mount_hilgard', 'Standard route', 'scrambling', 'Class 2', 'class', null),
   ('ca_red_and_white_mountain_standard_route', 'ca_red_and_white_mountain', 'Standard route', 'scrambling', 'Class 2', 'class', null),

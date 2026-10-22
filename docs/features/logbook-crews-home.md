@@ -42,6 +42,8 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   0344 (38 Colorado 13ers, 34 Adirondack peaks) and 0345 (155 Sierra peaks), and list peaks held only as climbing walls got a
   peak-bagger's route, so every entry can be ticked. A roster entry may carry `also`: the face sub-areas of a peak whose climbs sit
   on faces (Half Dome, Cathedral Peak); `peakClimbed` and `routeInList` count a log on any of them.
+  0347 gave four fourteeners (Handies, Bierstadt, Blue Sky, Quandary) a walk-up; the 14ers, Bulgers and Cascade rosters had four dead ids
+  and six faces-only peaks re-pointed the same day, and `audit:list-coverage` now counts only peaks that can be ticked.
   `Challenges` (`ClimbMatchCore.jsx`) has three parts: personal challenges (climbs this year, `pitchesClimbed`, conditions reported,
   vouches given, catches), curated lists, badges. All are DERIVED from the logs it is handed, so a new log updates them the moment it is
   saved (`setLogs`; the logged route's row arrives through `useRoutesByIds`), and nothing is stored. Another climber's profile sheet
