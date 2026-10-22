@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **A climber's profile says HOW YOU MATCH**: under COMPATIBILITY WITH YOU, one line per thing the match % scores (grade, mountain objectives, disciplines, listed areas, availability, pace, verified), heaviest first, each marked as counting, partly, not, or not said by both. Built from the same rows the score sums (`compatParts`/`compatWhy`). The profile now scores with the same objectives the partner row does, so the two no longer show different %s. See `docs/features/partners.md`.
 - **Crew itinerary: your own plan, and Remove**: *Import from Plan* offers *Your plan* (the one saved on the climb's Plan tab) first, then the climb's suggested plans, plus *Build your own*. The crew card's builder starts from your plan and *Share with the crew* saves it as your plan and shares it in one step (it used to keep a draft on screen until somebody pressed Adopt). The crew's itinerary box has *Remove* beside *Change*. The red *Safety plan* button on a backcountry crew is blue like the card's other secondary buttons.
 
 - **Another climber's résumé is no longer empty**: the example climbers' *View climbing résumé* (and their card's *N climbs* chip) opened a résumé reading "0 climbs"; they now list notable climbs from the seed routes in their disciplines. See `docs/features/profile-and-settings.md`.
