@@ -6,7 +6,7 @@
 profile can also open as `FullProfile` and `Resume` overlays from anywhere (partner rows, crews, leaderboards).
 
 ## 1. What it does today
-- **Profile (`me`)**: your header (verification, photo strip, résumé and public-profile buttons) stays on top; under it, tabs (`meTab`, read as `meTabOn`): **Profile** (At a glance, availability, speed, certifications, vouches you’ve given, Edit profile) · **Activity** (Year in Climbing banner, Your Logbook, sends by grade, Belay & Catch Record, reports you’ve filed) · **Review** (admins only: the eight safety and catalog queues). A catch notification opens Activity, Home’s availability gap opens Profile, and the admin banner and the Menu card (when items wait) open Review. Walks reach a tab with `?mt=` (overlay scaffold).
+- **Profile (`me`)**: your header (verification, photo strip, résumé and public-profile buttons) stays on top; under it, tabs (`meTab`, read as `meTabOn`): **Profile** (At a glance, availability, speed, certifications, vouches you’ve received (`myVouchesShown`, the two newest in full and *See all*), vouches you’ve given, Edit profile) · **Activity** (Year in Climbing banner, Your Logbook, sends by grade, Belay & Catch Record, reports you’ve filed) · **Review** (admins only: the eight safety and catalog queues). A catch notification opens Activity, Home’s availability gap opens Profile, and the admin banner and the Menu card (when items wait) open Review. Walks reach a tab with `?mt=` (overlay scaffold).
 - **Menu card and tiles**: the card (avatar, name) opens Profile; under it, for a signed-in or demo climber, *View profile* and *Edit profile* (`openEdit`) sit side by side, then availability and the emergency contact. Tile groups: *Plan & log* (Log a climb, Your ascents, Add a climb, Float plans, Best day, Your conditions, Downloads, Hire a guide) · *Saved & lists* (Saved areas and Saved searches open Logbook › Saved with `savedKind` set to `areas`/`searches`; Everything saved; Objectives & your lists; Challenges; Climbing lists sets `challengeListsAt`, which `Challenges` reads as `listsAt` to open its curated-lists dialog) · *Yours* (Friends, Crews · N, Groups, Requests, Listed areas, contributions, Year in Climbing, share/invite, guide).
 - **Menu › Your crews** (signed in or demo, under the card, above *Your groups* and the tiles): up to five of `activeCrews` — the Crews tab's own list — each named by `placeOf` (its route or area) with its unread count (`crewUnread`); a tap opens that crew (`setOpenCrewId`) on the Crews tab, and *See all ›* appears past five. No active crews means no section; a failed read (`crewsUnavailable`) says so.
 - **Menu › Your groups** (signed in or demo, under *Your crews*, above the tiles): up to five of the groups you are in (`myGroupsNow`, ordered by `groupsByLastPost`), each with its new-post count (`groupUnreadN`); a tap opens that group (`setOpenGroupId`) over Groups › Your groups, and *See all ›* appears past five. No groups means no section; a failed read (`groupsUnavailable`) says so instead of an empty list.
@@ -18,6 +18,13 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   button that opens it.
 - **Edit profile**: `lib/EditProfileScreen.jsx` over the `editDraft` state; `saveEdit` writes the draft back (see 2).
   Includes the owner-only zip code (feeds partner search distance; others never see it).
+  **Certifications** are typed or picked: `certMatches` offers matches from `CERT_GROUPS` (wilderness medicine,
+  avalanche, climbing instruction, guiding, rescue, gym & competition, clubs & courses — 66, named by their
+  issuers: NOLS/SOLO/WMA, AIARE/A3/Avalanche Canada, AMGA, PCGI, PCIA, ACMG, UK Mountain Training, IFMGA,
+  USA Climbing, The Mountaineers, Leave No Trace) as you type, and *Browse certifications* lists them all. A pick
+  only fills the box, so the expiry date still applies; anything not listed is added as typed. **Skills** are the
+  `SKILLS` chips in `SKILL_GROUPS` (seven groups, 42 skills incl. technique and rescue) plus free-text ones;
+  the vouch form offers the same groups, and `rappel` stays retired.
   - **Home city + state are a LABEL, never geocoded.** The city is free text with a `US_CITIES` datalist; the state comes
     from the dropdown. They show on your profile and partner rows, and the state orders namesakes in search
     (`homeStatePath`). They place you nowhere: partner and crew distance come only from the zip.
@@ -39,7 +46,16 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 - **No trust score** (removed 2026-10-21, owner decision): no screen computes, shows, filters, sorts or gates on one. What a climber judges a partner by is the ✓ (verification), the vouches they received and their belay record. 0335 dropped `compute_trust_score` and `trust_scores_view` from the database too.
 - **Verification** (0306): ✓ means you proved you read your inbox. Sign-up's autoconfirm no longer counts. `VerifyEmailPanel` on Profile emails a one-time code (`sendEmailCode`), you type it (`confirmEmailCode`) or tap the link in the same email, and `verifyMyEmail` writes the record; the server's `verify_my_email()` accepts only a session whose `amr` shows a code, link or reset link from the last 30 minutes. Your own ✓ comes from the record (`useVerificationRecords`), never the session; a failed read decides nothing and hides the "Verify" prompts (`verificationUnavailable`). Until a mail provider (SMTP) is connected, Supabase's built-in mailer only delivers to the project's team, and the panel says so. **There is no ID verification** (0339, owner decision 2026-10-21): no screen asks for an identity document, `verification_records` no longer accepts the kind `id`, and the unused client writer that could file one is gone. Email is the only verification a climber does.
 - **Sign out** (Menu's *Sign out*, Settings' *Log out*): `signOut` ends the session on the server, drops every cached per-climber query, and goes back to signed-out. If the logout request cannot reach the server (offline, outage), it still signs THIS device out — supabase-js would otherwise keep the session while the app said "Signed out" — and the server-side refresh token simply expires.
-- **Vouches**: `GiveVouch` (`lib/GiveVouch.jsx`) writes through `giveVouch` in `lib/db.js`.
+- **Vouches**: `GiveVouch` (`lib/GiveVouch.jsx`) writes through `giveVouch` in `lib/db.js`. The sheet is portalled
+  above a climber's profile (z 9850 over `FullProfile`'s 9800), and the profile and the Friends list stay OPEN beneath
+  it, so closing or posting returns you to where you vouched from; App prefetches its chunk when a profile opens.
+  (It used to draw at z 220, under most overlays, so callers closed theirs first and whatever else was open, such as
+  the résumé, showed instead.) Its climb picker searches the DB catalog (`useRouteSearch`) and stores the route NAME
+  in the vouch's `reason` JSON. Skills come from `SKILLS`/`SKILL_GROUPS` in core (32 in six groups since
+  2026-10-21; keys are never renamed or reused), the same list the profile editor's *Safety skills* uses.
+- **The ✕ on another climber's profile** sticks to the top while the profile scrolls (zero-height sticky row,
+  `POP_CLOSE_MEDIA`; the card is `overflow:clip` because `hidden` would stop sticky working, which is also why the
+  résumé's "sticky" header never stuck until now).
 - **Another climber's belay record** (0315): FullProfile's Safety tab reads `belay_ledgers()` (`useBelayLedgers`) — the catches that count on the Belay board (`counted_catch_count`), the climbers caught and the last catch. `CatchLedger`'s `otherReal` branch shows no High-Factor tile: nothing records a fall's severity.
 - **Profile photos**: `uploadProfilePhoto` (location stripped first, public `topo-photos` bucket), `saveProfilePhotos`,
   `saveProfilePhotoAlts`, `removeProfilePhoto` (own photo only).
@@ -116,6 +132,7 @@ All present in `package.json`: `check:profile-edit-gate`, `check:profile-draft-p
 Notes: `docs/guards/settings-and-persistence.md`, `honesty-claims.md`, `units-and-formatting.md`, `seed-and-identity.md`, `outage-and-read-failures.md`.
 
 ## 7. Last significant change
+- **Profile: Vouches you’ve received** — what partners said about you (ratings, words, skills, would climb again) shows on your own Profile tab above the vouches you gave, as LinkedIn keeps Received above Given; it was reachable only through View public profile, the tab showed just a count.
 - **Menu: Your crews + shortcuts first** — a Crews tile and a *Your crews* list; both shortcut lists sit above the tiles.
 - **Menu: Saved & lists + Edit profile** — saved areas, saved searches, challenges and climbing lists get Menu tiles; Edit profile sits beside View profile on the card.
 - **Menu lists your groups** — a *Your groups* section with up to five, newest post first, each opening the group.
