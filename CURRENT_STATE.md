@@ -27,6 +27,8 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+
+- **Logs and trip reports earn contribution points (0338)**: a logged climb 1 (once per route), a trip report 2 (once per route per month), counted only when shared with Everyone, on Ranks › Contributions, TOP CONTRIBUTORS and the ★ badge. See `docs/features/ranks.md`.
 - **Menu: Your crews, and shortcuts first**: a *Crews · N* tile joins *Yours* (Groups takes the chat icon so the two differ), and a *Your crews* section lists up to five active crews with their unread counts, each opening that crew. *Your crews* and *Your groups* now sit above the tile groups, as Facebook's Menu leads with your shortcuts.
 
 - **Logged climb vs trip report, reviewed**: both are one `climb_logs` row, and the Logbook doc now maps what each kind feeds. A *Conditions only* report no longer pairs two climbs as "Logged the same day" (0336). Your *Log conditions on 5 routes* challenge now counts Conditions-only reports, and it no longer shows another climber a 0 it cannot measure. See `docs/features/logbook-crews-home.md`.
