@@ -443,6 +443,23 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     is `audits/area-pairs-2026-09-26/fold.mjs`) or a newly READ different place (`--write-baseline`).
   - **Proven to fail**: with Kraft Boulders / Kraft Crags removed from the list it exits 1 naming
     exactly that pair.
+  - **BUCKET COPIES, third pass (0340, 2026-10-21)**: an area NAMED by a list of places — MP's
+    "Cascade River Drainage (Eldorado, Forbidden, Johannesburg, Sahale, Torment, etc.)" and its child
+    "Boston Basin Peaks (Forbidden, Johannesburg, etc.)" stood beside North Cascades Core, which holds every
+    one of those peaks. The owner: *"this keeps happening … We need to have guards"*. Neither pass above nor
+    0216 could pair it: no coordinate, and no key folds a list onto one peak. A bucket is TWO OR MORE
+    parenthesised names whose `catalog_key` is already an area elsewhere in the state (not inside it);
+    compass/face words do not count. The SAME rule is the trigger `refuse_bucket_copy_area` (0340), which
+    refuses one at insert or rename (bypass: `catalog.allow_duplicate`). Measured over all 67,371 areas the
+    day it was built: 5 parenthesised lists hit 2+ names — the 2 North Cascades buckets (folded by 0340;
+    their one boulder field moved into North Cascades Core), McClellan Mountain (Gray's & Torrey's area) —
+    a separate Colorado 13er, LISTED as read — and 2 face-letter names the face-word rule now drops ("Sport
+    Boulder (E and NE Face)", "Sunset Slab (N & S)"). Proven: before the fold it exited 1 naming exactly the
+    two buckets; a rolled-back re-insert of both was refused live while a face-word, a one-match and a plain
+    name went in. Washington's other same-key areas near the North Cascades were read the same day: all
+    different places (Main Wall, Big Rock, Hairpin, The Temple…).
+    - **Cannot see** a bucket that lists ONE place we hold, a list outside parentheses ("Eldorado and
+      Forbidden"), or a copy spelled past what `catalog_key` folds ("El Dorado").
   - **SAME PARENT, second pass (0256, 2026-10-07)**: two children of one area under the plain
     `catalog_key` pair at ANY distance, with or without a coordinate or climbs. The first pass skips
     a shared parent, and 209 groups had collected there unseen — one import's "Pawn, The" beside
