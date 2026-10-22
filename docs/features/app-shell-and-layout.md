@@ -20,7 +20,7 @@ room for side-panel ads later. The phone app keeps its own look.
     (agreed crew days) and *Alerts*. *Best day to climb* is not here; it opens from the Menu. Ads, when they come, take slots in this rail
     (desktop only).
   - Between 1024 and 1279px the sidebar shows **icons only** and there is no rail. The whole shell is
-    capped at 1308px and centred, so a big monitor gets plain background either side.
+    capped at 1228px and centred (a 640px page column), so a big monitor gets plain background either side.
   - A site **footer** under every page: every state with climbs, ClimbMatch links, Legal links,
     ©. It is the ONLY home of About, Help, Feedback, Privacy and Terms on desktop.
   - **☰ Menu** fills the whole window, as on a phone, with its content centred in a 720px column.
@@ -32,7 +32,7 @@ room for side-panel ads later. The phone app keeps its own look.
   - **Route pages** (see route-page.md): breadcrumb, facts beside a photo, and at 1280px+ the route
     map takes the rail's place (`#cm-route-rail`) instead of the widgets.
   - **Messages are two panes**: the chat icon drops the inbox down under it (*Open Messages* opens the
-    page); on the page the inbox is a 320px left pane (`Inbox pane="side"`) and the conversation you
+    page); on the page the inbox is a 280px left pane (`Inbox pane="side"`) and the conversation you
     pick opens to its right, the inbox staying open; *Choose a conversation* fills the right until then.
   - **The Climbs tab shows its regions as a grid** of cards with their climb counts (the countries
     as buttons when there are two or more) instead of two dropdowns; **Groups** lists its group
@@ -43,6 +43,11 @@ room for side-panel ads later. The phone app keeps its own look.
   - **Chats in the rail** (1280px+): under Coming up and Alerts, your direct messages and crew chats, newest
     first, unread counts on each; one opens the conversation. The same threads the inbox shows (`RailChats`,
     App's `_dmCounts` keeps blocked and restricted people out).
+  - **Nothing stretches across the page** (owner 2026-10-22): the page column is 640px (it was 720), and an
+    action button sizes to its label instead of filling the column — `wideCss`' rule for a `width:100%`
+    button (and a lone `flex:1` one) in the page column or a page-view. List rows (space-between,
+    left-aligned, flex-start) still run edge to edge; dialogs keep full-width footer buttons; on the route
+    page the action buttons sit in one row across the header.
   - The **bell** opens Notifications as a drop-down under it at the shell's right edge; Home stops
     repeating its own Alerts list on desktop (the bell and the rail's Alerts card carry it).
   - **Popups that slide up from the bottom** on a phone open as **centred windows** (rounded, at most
@@ -99,6 +104,7 @@ Layout only. The footer reads the states list (`useStates`); the search reads th
 `check:zindex`. The browser walks drive a phone-width window, so they cover the phone layout only.
 
 ## 7. Last significant change
+- **Narrower desktop** (owner, 2026-10-22): 640px column, action buttons sized to their label, Messages pane 280px.
 - **Desktop phase 4e**: chats in the right rail (`RailChats` in `lib/DesktopShell.jsx`).
 - **Desktop phase 4b**: the Calendar's month view (`MonthGrid`).
 - **Desktop phase 2c**: Climbs region grid, two-per-row Groups lists, two-pane Messages with a chat drop-down; the footer's Shortcuts column and the sidebar's Profile row removed (owner).
