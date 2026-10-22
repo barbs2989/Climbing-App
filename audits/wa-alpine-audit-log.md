@@ -33130,3 +33130,36 @@ Since this failure mode has now recurred intermittently (reachable for exactly o
 429, then unreachable again), it looks less like a one-time pause and more like the Supabase
 project flapping under load or an intermittent compute issue on Supabase's side — still worth a
 human checking the project's status/billing page directly.
+
+## 2026-10-22 (batch 430) — pass 7
+
+DB reachable this run. Checked Mount Hopper (Standard Scramble), Mount Howard (South Slope),
+Mount Index's North Peak (North Face), six Mount Johnson routes (Deception Chimney, Northwest
+Face, Rumble Gully, South Terrace Route, Southwest Route, Staircase Route), and Mount La Crosse
+(Scramble).
+
+1 fixed, 5 flagged, 4 clean. Fixed: wa_mount_hopper's elevation was stored as 6,120 ft in three
+places (areas.elevation_ft, the route's own high_point_ft, and its summit waypoint), but WTA's
+and SummitPost's hike/peak pages both independently give 6,114 ft and neither names 6,120 ft —
+corrected all three to 6,114 (see audits/sql/2026-10-22-batch-430.sql). Flagged, not fixed: five
+of Mount Johnson's six named routes (Deception Chimney, Northwest Face, Rumble Gully, South
+Terrace Route, Staircase Route) credit specific first-ascent climbers and years that no source
+(Wikipedia, AAC Publications, general web search) names for Mount Johnson at all. Two of them —
+Deception Chimney and Rumble Gully — carry the exact same FA credit ("Lex Maxwell, Joe Gleason,
+and Louis Ulrich, 1933"), which reads as duplicated data rather than two independent facts, and
+Staircase Route's claimed 1920 FA would predate the mountain's own documented first ascent
+(Wikipedia gives 1935 or 1940, itself unresolved between two sources, for Mount Johnson's
+summit). No authoritative replacement was found for any of these, so nothing was fixed — this
+needs a human with access to a print source (the Olympic Mountains climbing guide, or AAC/AAJ
+archives not indexed by general web search) to adjudicate. Clean: Mount Howard's elevation
+(7,063 ft) matches Wikipedia/PeakVisor/the Mountaineers; Mount Index North Peak's FA (Chute &
+Kaartinen, 1929) matches Wikipedia/DBpedia/PeakVisor and the row's own `fa` field already hedges
+the unresolved question of whether Beckey's 1945 climb reached the true summit, so no change
+needed; Mount Johnson's Southwest Route is a near-empty stub with no FA claim to check, and its
+parent area's elevation (7,680 ft) matches Wikipedia exactly; Mount La Crosse's elevation
+(6,417 ft) and 1928 FA (Paulson, Ryer, Wiseman, Woodworth) both match Wikipedia exactly (a 4 ft
+gap between this route's high_point_ft and areas.elevation_ft for wa_mount_la_crosse — 6,417 vs
+6,421 — is noted but not flagged: the route's own figure is the one an outside source confirms,
+and a 4 ft spread is ordinary survey-rounding noise, not a real discrepancy).
+
+Pass 7 continues next run after `wa_mount_la_crosse_scramble`.
