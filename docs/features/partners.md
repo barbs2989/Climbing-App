@@ -42,6 +42,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 5. Client filtering: `_realFits(p)` applies discipline, availability (`availFits` against `availWeek`/`avail_week`) and speed (`paceOf`; an unrecorded pace is unknown, not a mismatch); `_vRows` also applies level from `sigQ`.
    A climber who never set level/discipline/availability does not match a filter on it. Name search is not narrowed.
 6. Match %: `compat(a,b)` in `ClimbMatchCore.jsx` (bounded terms `CMAX_DISC/GRADE/OBJ/VERIF/PACE/AVAIL/AREA`, summed to `COMPAT_MAX`, rescaled onto 20..99; see `docs/codebase/algorithms.md`).
+   **HOW YOU MATCH** (the profile's COMPATIBILITY WITH YOU panel, `FullProfile`): one line per term, heaviest first, each marked ✓ counts / ~ partly / ✕ does not / ? not said by both. Built by `compatWhy()` from `compatParts()`, the same rows `compat()` sums, so the explanation cannot disagree with the number. The profile scores with ME's MOUNTAIN objectives (`ME.matchObjectiveIds`), as the partner row does — it used to use `ME.objectiveIds`, so a crag-route objective could make one climber read two different match %s.
    `RealClimberRow` feeds it real signals (0209): availability, `avail_week`, `hiking_speed_ft_hr`, match objectives, listed-area paths (`partnerAreaPaths`, `areaPathsOverlap`), verified.
    The viewer's side is `ME.matchObjectiveIds` (the wishlist minus crag-family routes, `CRAG_CATS` + `catOf`) plus `ME.partnerAreaPaths`.
 7. Example list: `ALL_CLIMBERS.filter(...)` then sort by `compat`/`distMiles`/`vScore`. Availability helpers (`AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `availLabel`) live in core;
@@ -53,9 +54,9 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 | `lib/PartnerSearch.jsx` | `PartnerSearch` (modes incl. Near my areas and listing-based By Area, filters, near/objective/area/browse lists, example cards, route picker, `initialArea` deep link) |
 | `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas screen (add/edit/remove a listing, `windowText`): a full-screen view in the 520px column, search first (pre-set to the home state via `useMyHomeStatePaths`), one-tap suggestions from the climber's own crag climbs and saved areas (`suggestIds`, a wall offered as its crag), date presets This weekend / Next weekend / Pick dates, an ended window flagged on its card |
 | `ClimbMatch.jsx` | `partnersMode` state and mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder`, `DbGuides`/`Guides`, `MyPartnerAreas`; `myAreasOpen`, `openMyAreas`, `onFindPartnersInArea`, `ME.matchObjectiveIds` |
-| `ClimbMatchCore.jsx` | `compat`, `CMAX_*`/`COMPAT_*`, `CMAX_AREA`, `areaPathsOverlap`, `CRAG_CATS`, `RealClimberRow`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf`, `PARTNER_NUMBERS` (also read by `lib/Help.jsx`) |
+| `ClimbMatchCore.jsx` | `compat`, `compatParts`, `compatWhy`, `CMAX_*`/`COMPAT_*`, `CMAX_AREA`, `areaPathsOverlap`, `CRAG_CATS`, `RealClimberRow`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf`, `PARTNER_NUMBERS` (also read by `lib/Help.jsx`) |
 | `lib/db.js` | `PARTNER_COLS`, `useDiscoverableProfiles`, `useProfileSearch`, `useMyZip`, `usePartnersNear`, `usePartnersByObjective`, `usePartnerSignals`, `useMatchObjectivesOfUsers`, `useVerifiedUsers`, `useMyPartnerAreas`, `savePartnerArea`, `removePartnerArea`, `usePartnersInArea`, `usePartnersForMyAreas`, `usePartnerAreaCounts`, `usePartnerAreasOfUsers`, zip save/delete |
-| `lib/EditProfileScreen.jsx` | Zip code field (owner-only, feeds the origin) |
+| `lib/EditProfileScreen.jsx` | Zip code field (owner-only, feeds the origin; a typed zip is checked live by `useZipCentroid`). The home city is a label only — it places nobody |
 | `supabase/migrations/0189, 0211, 0232, 0295, 0300, 0303, 0311` | RPCs and tables below |
 | `docs/codebase/algorithms.md` | `compat()` design history |
 
@@ -65,7 +66,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 - **`partner_areas`** (0300): one row per climber and area (`disciplines text[]` within the crag family, one optional `free_from`/`free_to` window, `note`);
   owner-only RLS; a trigger refuses peak/world/country and caps 30 per climber. An expired window reads back as no window.
 - **RPCs**: `partners_near` (0189; SECURITY DEFINER, distance rounded up to next 5 mi, radius floor 10 mi, only discoverable, never self, never users who blocked the caller);
-  `partners_by_objective` (0211, re-created 0303 with the match rule); `partner_signals(uuid[])` (0295; returns `level` and a `trust_score` the app no longer reads, max 200 rows, authenticated only);
+  `partners_by_objective` (0211, re-created 0303 with the match rule); `partner_signals(uuid[])` (0295; returns `level` and `climbing_since` — its `trust_score` column was dropped in 0335 — max 200 rows, authenticated only);
   `partners_in_area`, `partners_for_my_areas`, `partner_area_counts`, `partner_areas_of_users`, `match_objectives_of_users` (0300; same visibility rule as `partners_near`; reach is `path <@ T or (path @> T and the listing is below the state)` since 0311 — a state listing answers a search at the state only).
 - **Still seed / in-memory**: `ALL_CLIMBERS` example profiles (`CLIMBERS`/`FILLER_CLIMBERS`, gated by `DEMO_FILLERS`); mode, filters, radius and origin are component state (not persisted).
   Production has `FILLER_CLIMBERS` off, so real climbers are the only people there.

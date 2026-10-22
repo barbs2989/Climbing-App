@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-10-16",
+  "generatedAt": "2026-10-22",
   "tables": {
     "account_standing": [
       "reason",
@@ -268,7 +268,9 @@
     "crew_members": [
       "crew_id",
       "gear_claims",
+      "gear_counts",
       "gear_extras",
+      "gear_wanted",
       "invited_by",
       "joined_at",
       "note",
@@ -636,6 +638,11 @@
       "updated_at",
       "user_id"
     ],
+    "profile_tracked_lists": [
+      "keys",
+      "updated_at",
+      "user_id"
+    ],
     "profile_zips": [
       "updated_at",
       "user_id",
@@ -892,7 +899,8 @@
       "pins",
       "points",
       "route_id",
-      "topo_id"
+      "topo_id",
+      "variants"
     ],
     "topos": [
       "alt",
@@ -904,11 +912,6 @@
       "moderation",
       "photographer",
       "storage_path"
-    ],
-    "trust_scores_view": [
-      "id",
-      "name",
-      "trust_score"
     ],
     "user_itineraries": [
       "itinerary",

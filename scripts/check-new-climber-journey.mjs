@@ -265,6 +265,15 @@ try {
   } else {
     if (!(await tapMenuItem(page, "Settings"))) dead("no Settings row in the Menu (top-left avatar)");
     await settledText(page);
+    // Settings is a list of four pages; the onboarding entry lives on "Your data & account".
+    // The row's innerText carries its subtitle too, so it is found by its name, not clickText.
+    const openedPage = await page.evaluate(() => {
+      const el = document.querySelector('button[aria-label="Your data & account"]');
+      if (!el) return false;
+      el.click(); return true;
+    });
+    if (!openedPage) dead("Settings did not list a 'Your data & account' page");
+    await settledText(page);
     if (!(await clickText("Edit areas, disciplines & grades"))) {
       const seen = await page.evaluate(() => [...document.querySelectorAll("button,a,[role=button]")]
         .map((e) => (e.innerText || "").trim()).filter(Boolean).slice(0, 40));

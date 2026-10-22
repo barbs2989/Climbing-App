@@ -83,6 +83,28 @@ const rows = JSON.parse(await res.text());
 // Fails closed: an empty read would make every list look equally (and falsely) empty.
 if (!rows.length) { console.error("FAIL: no routes carry a lists value — refusing to report 0 for everything."); process.exit(1); }
 
+// A ROSTER ENTRY COUNTS ONLY IF IT CAN BE TICKED: its area exists and a route sits on it or on one of
+// its `also` sub-areas. This used to count roster LENGTH, so the 14ers card read "complete" while three
+// of its ids named rows a cleanup had folded away and four peaks held no route anywhere (found
+// 2026-10-22). An entry nobody can log is an objective the card cannot fill, whatever the roster says.
+const rosterIds = new Set();
+for (const c of cards) for (const p of (c.roster ? listPeaks(c.k) || [] : [])) { rosterIds.add(p.id); for (const a of p.also || []) rosterIds.add(a); }
+async function readIn(table, col, ids) {
+  const out = [];
+  const all = [...ids];
+  for (let i = 0; i < all.length; i += 80) {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/${table}?select=${col}&${col}=in.(${all.slice(i, i + 80).join(",")})`, { headers: headers(key) });
+    if (!r.ok) { console.error(`FAIL: ${table} read ${r.status} ${(await r.text()).slice(0, 160)}`); process.exit(1); }
+    out.push(...JSON.parse(await r.text()).map(x => x[col]));
+  }
+  return new Set(out);
+}
+const areaExists = await readIn("areas", "id", rosterIds);
+const holdsRoute = await readIn("routes", "area_id", rosterIds);
+// Fails closed: an empty read would report every roster as unfillable.
+if (rosterIds.size && !areaExists.size) { console.error("FAIL: none of the roster areas came back — refusing to report."); process.exit(1); }
+const tickable = p => areaExists.has(p.id) && [p.id].concat(p.also || []).some(id => holdsRoute.has(id));
+
 console.log(`\n=== named list coverage ===`);
 console.log(`${cards.length} cards on the Challenges screen; ${rows.length} routes carry any list tag\n`);
 
@@ -92,7 +114,8 @@ console.log(`${cards.length} cards on the Challenges screen; ${rows.length} rout
 const out = cards.map(c => {
   const roster = c.roster ? listPeaks(c.k) : null;
   const tagged = rows.filter(r => routeInList(r, c.k)).length;
-  const have = roster ? roster.length : tagged;
+  const have = roster ? roster.filter(tickable).length : tagged;
+  const untickable = roster ? roster.filter(p => !tickable(p)).map(p => p.id + (areaExists.has(p.id) ? " (no route)" : " (no such area)")) : [];
   const demoOnly = DEMO_ONLY.has(c.k);
   const via = demoOnly ? "demo" : roster ? "roster" : c.derived ? "seed" : "tags";
   // A card that can NEVER fill: its objectives come only from a tag no route in the catalog
@@ -100,7 +123,7 @@ const out = cards.map(c => {
   // Summits removed. `seed` cards are excluded: they build from seed ROUTES and the user's own
   // logs, so this catalog read says nothing about them either way.
   const dead = via === "tags" && have === 0;
-  return { ...c, have, via, dead, gap: c.want != null ? c.want - have : null };
+  return { ...c, have, via, dead, untickable, gap: c.want != null ? c.want - have : null };
 }).sort((a, b) => Number(b.dead) - Number(a.dead) || (b.gap ?? -1) - (a.gap ?? -1));
 
 const pad = (s, n) => String(s).padEnd(n);
@@ -110,7 +133,7 @@ for (const r of out) {
     : r.via === "demo" ? "demo mode only — a real account never sees this card"
     : r.via === "seed" ? "seed/derived — not measurable from the catalog"
     : r.gap == null ? "no advertised total"
-    : r.gap > 0 ? `${r.gap} missing` : "complete";
+    : r.gap > 0 ? `${r.gap} missing` + (r.untickable.length ? ` — cannot be ticked: ${r.untickable.join(", ")}` : "") : "complete";
   console.log(pad(r.k, 14) + pad(r.have, 9) + pad(r.want ?? "—", 12) + pad(r.via, 8) + state);
 }
 
