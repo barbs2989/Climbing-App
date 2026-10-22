@@ -46,6 +46,7 @@ extraction.** No guard reads this file; keeping it true is on the author.
 |---|---|---|---|
 | PR1 | `RiskBadge` | `ClimbMatchCore.jsx` | the smoke test for the pipeline; consumer `lib/SafetyTab.jsx`; `Pill` got its JSDoc seam |
 | PR1 | _infrastructure_ | — | `src/components/`, `tsconfig.json`, `check:types`, TS-aware guards, `measure-guard-reach` |
+| PR26 | `MiniCalendar` | `ClimbMatchCore.jsx` | the crew's propose-days month grid (14 lines, moved by copy — the apply script asserts every body line verbatim, four with a type annotation stripped); one consumer (`lib/CrewCard.jsx`), core never rendered it — no cycle; reads `C` and `DLOCALE` from core; **`DLOCALE` got a JSDoc `@type {string\|undefined}` seam** (`let DLOCALE=undefined` infers `any`, as `DB_UID` did in PR22); the `check:date-locale` call passes `DLOCALE` as before — **but that guard walked only the root files and `lib/`, so the move took its one formatter out of reach (51→50 in the measurement, which prints the decrement without calling it blinded); it now walks `src/` too and accepts `.tsx`**; `scripts/oneoff/partnership-loop-audit.mjs` mentions the component only in a comment about its key format |
 | PR25 | `SectionJumps` | `ClimbMatchCore.jsx` | the route page's inline section-jump pill row (#2178; one 1.9 KB line re-typed with types — the apply script asserts sixteen pieces of the original verbatim); `jumpLabel` and the six-line JUMP LINKS comment move with it (core read neither elsewhere); one consumer (`RouteDetail.jsx`), core never rendered it — no cycle; reads only `C`; `catch(e){}` became `catch{}` (an unused binding is a lint error); the effect's deps stay `[tabKey]` with a per-line reason (a ref object's identity never changes) |
 | PR24 | `PlaceMatches` | `ClimbMatchCore.jsx` | the PLACES block above a climb search's route hits (9 lines, moved by copy — the apply script asserts both JSX lines verbatim, bar one TS narrowing on `ex.parent.name`); two consumers (`lib/CrewFinder.jsx`, `lib/PartnerSearch.jsx`), core never rendered it — no cycle; reads `C` and `DbClimbPicker` from core, `usePlaceSearch` from `lib/db.js`, `USE_DB` from `lib/supabase.js`, `clickable`; **`DbClimbPicker` got a JSDoc `@param` seam** (its destructuring inferred every prop REQUIRED, and the component passes four of six); core's own `usePlaceSearch` import dropped with the move (the block was its only reader) |
 | PR23 | `RetryReminder` | `ClimbMatchCore.jsx` | the UNFINISHED BUSINESS / BACK IN SEASON card on the Logbook's objectives tab (17 lines, moved by copy — the apply script asserts every JSX line verbatim); one consumer (`ClimbMatch.jsx`), core never rendered it — no cycle; reads `C` and `unfinishedRoutes` from core and `clickable` from `lib/clickable`; `routes` is typed as a lookup function OR an array because `unfinishedRoutes` accepts both; the browser walks' "Unfinished business" assertions are Home's own dropdown, not this card |
@@ -78,7 +79,7 @@ the pipeline. Then the `App` render tree in `ClimbMatch.jsx`, which has **no inn
 every piece lifted out of it needs its props enumerated from the ~100 `useState` hooks it closes over.
 Take the leaves first (a card, a row, a header strip), never a whole tab in one PR.
 
-Last session stopped at: **PR25 — `SectionJumps`** (the live-leaf list below is what remains, minus this one). A census of every component still defined in core (2026-10-16,
+Last session stopped at: **PR26 — `MiniCalendar`** (the live-leaf list below is what remains, minus this one). A census of every component still defined in core (2026-10-16,
 `node` over core's top-level `function X(`/`const X=` with a JSX body; `<X` uses per file; guards naming each) found
 **75**. Thirteen are declared SEED-ONLY by `check:seed-only-surfaces` and render for nobody once `VITE_USE_DB=true`:
 `OverviewMap` (20 KB), `Guides` (25 KB), `GuideDashboard` (18 KB), `RouteFinder` (14 KB), `GuideApply`, `QuickMatch`,
@@ -87,7 +88,7 @@ about 130 KB of core that no climber reaches. **Do not extract them**: moving de
 clean-up. Deleting them is a product decision (CLAUDE.md: polish only, features need approval), so it is PROPOSED to the
 owner here, not done. Two more have NO consumer at all (`RSL`, `GH`) — confirm with a grep for a non-JSX use, then they
 can go in a polish PR. The LIVE leaves to extract next, smallest first, none named by a guard:
-`MiniCalendar`, `SunCorrect`,
+`SunCorrect`,
 `StartLocationForm`, `AreaRegionSelect`, `TopContributors`. Then the guarded panels (`TrustBreakdown`,
 `ReportStats`, `PhotoStrip`, `ItineraryEditor`, `RealClimberRow`, …) — read every guard named first. Conventions that
 held through PR5–PR15: a parent that still uses what it extracted imports the new file back (the stitch drops that

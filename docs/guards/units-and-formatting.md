@@ -533,3 +533,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     (`FireMap`'s is passed from App — a reading, not a guarantee) passes. And `toLocaleString()` is
     deliberately excluded: in this app it formats NUMBERS, and a thousands separator is not the date
     preference. Injection suite: `scripts/oneoff/inject-date-locale-cases.mjs`, 5 cases.
+  - **IT WALKED THE ROOT FILES AND `lib/` ONLY, SO AN EXTRACTED COMPONENT LEFT ITS REACH (fixed in the
+    `MiniCalendar` extraction, PR26).** It reads files itself rather than through `readCoreSource()`, so
+    `MOVED` did not stitch `src/components/*.tsx` back for it: moving `MiniCalendar` (one
+    `toLocaleDateString(DLOCALE, …)`) took its count from 51 to 50. `measure:guard-reach` printed the
+    decrement but did not call it blinded — it flags a count that goes to zero, not one that shrinks —
+    so a reader who takes its summary line ("no guard lost a count") at face value misses this. Now it
+    walks `src/` too and accepts `.ts`/`.tsx` (the parser already had the `typescript` plugin). **Rule for
+    every guard that enumerates files itself:** walk `src/` as well as the root files and `lib/`, and after
+    an extraction read the per-guard `diff` lines of the measurement, not only its summary.
