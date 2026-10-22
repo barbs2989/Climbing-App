@@ -33,6 +33,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 6. **Planner.** Time estimates come from `scarfHrs(...)` (Naismith-style approach by fitness tier and pack weight) and `techHrs(...)` (pitch-by-pitch climbing, exponential slowdown by grade); `lib/planTimes.js` (`planTimes`, `realPitches`) assembles the stage totals. A route's stored legs win over computed ones (`check:return-leg`).
 7. **Glacier terrain.** Alpine routes whose terrain read says glacier get the glacier conditions card plus the rock-weather flags (#2336).
 8. **Photos.** `submitRoutePhoto` writes a `contributions` row of kind `photo`; `reportPhoto` reports one; `lib/PhotoReports.jsx` holds the moderation queue; `lib/photoPrivacy.js` / `lib/photoEvidence.js` support gating.
+9. **Suggest a fix on KNOWN HAZARDS (Safety).** `SafetyMatrix`'s *✎ Suggest a fix* button opens `SuggestFix` on its Hazards field with nothing picked; a *Fixed gear* chip opens it with that one hazard already picked (an extra chip beside the stock options). Hazards is a multi field, so the seed is always an ARRAY of strings — a bare string, or the click event the button once passed through, crashed the page.
 
 ## 3. Files
 

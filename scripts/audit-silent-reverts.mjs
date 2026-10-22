@@ -645,9 +645,13 @@ for (const [tok, info] of missing) {
   const stem = tok.replace(/^(check|audit):/, "").replace(/^scripts\/|\.mjs$/g, "");
   // Same subject-only bug as the file classifier above; see the comment there.
   const removedText2 = removedBy ? bodyOf(removedBy) : removedSubject;
-  const deliberate = removedText2 && (removedText2.includes(tok) || removedText2.toLowerCase().includes(stem.toLowerCase()));
+  /* A REVIEWED commit excuses its DEFINITION removals too: the entry records that the commit was read and
+     its deletions were meant, and a squash cannot be re-worded to name them once it is on main. */
+  const reviewed = !!(removedBy && REVIEWED.has(removedBy));
+  if (reviewed) REVIEWED_SEEN.add(removedBy);
+  const deliberate = reviewed || (removedText2 && (removedText2.includes(tok) || removedText2.toLowerCase().includes(stem.toLowerCase())));
   if (!deliberate) { silent++; silentKinds.add(info.kind); }
-  console.log(`${deliberate ? "  deliberate " : "  ** SILENT "}${info.kind.padEnd(13)} ${tok}`);
+  console.log(`${reviewed ? "  REVIEWED   " : deliberate ? "  deliberate " : "  ** SILENT "}${info.kind.padEnd(13)} ${tok}`);
   console.log(`      added by  ${info.sha.slice(0, 8)}  ${info.subject.slice(0, 96)}`);
   console.log(`      removed   ${removedBy ? removedBy.slice(0, 8) : "(not found)"}  ${removedSubject.slice(0, 96)}`);
 }
