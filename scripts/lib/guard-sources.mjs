@@ -163,6 +163,7 @@ export const MOVED = {
     "src/components/RetryReminder.tsx",
     "src/components/PlaceMatches.tsx",
     "src/components/SectionJumps.tsx",
+    "src/components/MiniCalendar.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],

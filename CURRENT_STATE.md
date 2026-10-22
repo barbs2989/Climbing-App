@@ -113,6 +113,7 @@ Newest first. Keep about 15 lines; older entries live in the PRs and the commit 
 - **Area page order**: areas/climbs list → *Don’t see a climb?* → suggested climbs → nearby peaks → Top contributors → Discussion. Discussion now renders on areas with no coordinate (Florida’s Artificial Boulders); *Partners here*’s dates/types control is a real card button (it had no style at all).
 - **RACK is rack-only, every state** — ~400 WA + ~140 other-state routes re-homed (ice axe, crampons, helmet, boots out of `detailed_rack`/`pro_needs`/`rack` into `what_to_bring`), `DISC_RACK` stripped to protection and ropes, `routeRackFor` splits every source and `rackLeftovers` feeds GEAR & ESSENTIALS; `audit:rack-items`.
 - **Objectives chips** Alpine is the left-most discipline chip; Mountaineering and Aid are their own chips instead of folding into Alpine and Trad (`lib/ListsManager.jsx`).
+- **#2580** `MiniCalendar` extracted to `src/components/MiniCalendar.tsx` (one consumer, `lib/CrewCard.jsx`; `DLOCALE` gained a JSDoc type seam). `check:date-locale` now walks `src/` too: the move had taken its one formatter out of the guard's reach.
 - **#2569** `SectionJumps` extracted to `src/components/SectionJumps.tsx` (one consumer, `RouteDetail.jsx`; `jumpLabel` moved with it).
 - **#2559** `PlaceMatches` extracted to `src/components/PlaceMatches.tsx` (two lib consumers; no import back; `DbClimbPicker` gained a JSDoc prop seam).
 - **#2555** `RetryReminder` extracted to `src/components/RetryReminder.tsx` (one consumer, `ClimbMatch.jsx`; no import back).
