@@ -39,7 +39,16 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 - **No trust score** (removed 2026-10-21, owner decision): no screen computes, shows, filters, sorts or gates on one. What a climber judges a partner by is the ✓ (verification), the vouches they received and their belay record. 0335 dropped `compute_trust_score` and `trust_scores_view` from the database too.
 - **Verification** (0306): ✓ means you proved you read your inbox. Sign-up's autoconfirm no longer counts. `VerifyEmailPanel` on Profile emails a one-time code (`sendEmailCode`), you type it (`confirmEmailCode`) or tap the link in the same email, and `verifyMyEmail` writes the record; the server's `verify_my_email()` accepts only a session whose `amr` shows a code, link or reset link from the last 30 minutes. Your own ✓ comes from the record (`useVerificationRecords`), never the session; a failed read decides nothing and hides the "Verify" prompts (`verificationUnavailable`). Until a mail provider (SMTP) is connected, Supabase's built-in mailer only delivers to the project's team, and the panel says so. **There is no ID verification** (0339, owner decision 2026-10-21): no screen asks for an identity document, `verification_records` no longer accepts the kind `id`, and the unused client writer that could file one is gone. Email is the only verification a climber does.
 - **Sign out** (Menu's *Sign out*, Settings' *Log out*): `signOut` ends the session on the server, drops every cached per-climber query, and goes back to signed-out. If the logout request cannot reach the server (offline, outage), it still signs THIS device out — supabase-js would otherwise keep the session while the app said "Signed out" — and the server-side refresh token simply expires.
-- **Vouches**: `GiveVouch` (`lib/GiveVouch.jsx`) writes through `giveVouch` in `lib/db.js`.
+- **Vouches**: `GiveVouch` (`lib/GiveVouch.jsx`) writes through `giveVouch` in `lib/db.js`. The sheet is portalled
+  above a climber's profile (z 9850 over `FullProfile`'s 9800), and the profile and the Friends list stay OPEN beneath
+  it, so closing or posting returns you to where you vouched from; App prefetches its chunk when a profile opens.
+  (It used to draw at z 220, under most overlays, so callers closed theirs first and whatever else was open, such as
+  the résumé, showed instead.) Its climb picker searches the DB catalog (`useRouteSearch`) and stores the route NAME
+  in the vouch's `reason` JSON. Skills come from `SKILLS`/`SKILL_GROUPS` in core (32 in six groups since
+  2026-10-21; keys are never renamed or reused), the same list the profile editor's *Safety skills* uses.
+- **The ✕ on another climber's profile** sticks to the top while the profile scrolls (zero-height sticky row,
+  `POP_CLOSE_MEDIA`; the card is `overflow:clip` because `hidden` would stop sticky working, which is also why the
+  résumé's "sticky" header never stuck until now).
 - **Another climber's belay record** (0315): FullProfile's Safety tab reads `belay_ledgers()` (`useBelayLedgers`) — the catches that count on the Belay board (`counted_catch_count`), the climbers caught and the last catch. `CatchLedger`'s `otherReal` branch shows no High-Factor tile: nothing records a fall's severity.
 - **Profile photos**: `uploadProfilePhoto` (location stripped first, public `topo-photos` bucket), `saveProfilePhotos`,
   `saveProfilePhotoAlts`, `removeProfilePhoto` (own photo only).
