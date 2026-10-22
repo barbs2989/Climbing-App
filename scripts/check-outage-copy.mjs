@@ -248,7 +248,7 @@ try {
      "App no longer computes the flag from the states query"],
     ["ClimbMatch.jsx", "stateCatalogLine(cnt,nm,statesUnavailable,",
      "the Manage areas line no longer goes through stateCatalogLine with the flag"],
-    ["ClimbMatch.jsx", "const statesLoading=!!(USE_DB&&dbStatesQ&&!dbStatesQ.data&&!dbStatesQ.isError);",
+    ["ClimbMatch.jsx", "const statesLoading=!!(USE_DB&&dbStatesQ&&dbStatesQ.isPending);",
      "App no longer computes the loading flag from the states query"],
     ["ClimbMatch.jsx", ",statesLoading)}</div>",
      "the Manage areas line no longer passes the loading flag to stateCatalogLine"],
