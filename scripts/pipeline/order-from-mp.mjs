@@ -253,6 +253,13 @@ const treeFile = `${DIR}/_tree/${STATE}.routes.json`;
 if (!existsSync(treeFile)) { console.error(`no ${treeFile}`); process.exit(1); }
 const mpRoutes = JSON.parse(readFileSync(treeFile, "utf8"));
 const idMap = loadMap(STATE);
+// A resumed state whose every rock wall is already logged needs nothing from the database: loading California's
+// 40k routes timed out over and over on 2026-10-22 just to skip walls that were all finished.
+if (APPLY && existsSync(`${ORDER}/${STATE}.jsonl`)) {
+  const finished = new Set(readFileSync(`${ORDER}/${STATE}.jsonl`, "utf8").split("\n").filter(Boolean).map(l => JSON.parse(l)).filter(x => x.status !== "error").map(x => x.mp));
+  const rockWalls = new Set(mpRoutes.filter(r => ROCK(r.tags)).map(r => r.area));
+  if ([...rockWalls].every(w => finished.has(w))) { console.log(`${STATE}: all ${rockWalls.size} walls already done`); process.exit(0); }
+}
 const state = sql(`select id, name from areas where id = ${q(STATE)}`)[0];
 if (!state) throw new Error("no state area " + STATE);
 const all = sql(`select r.id, r.name, r.area_id, r.discipline, r.grade, r.sort_order, a.name as area_name from routes r join areas a on a.id = r.area_id where a.path <@ (select path from areas where id = ${q(STATE)})`);
