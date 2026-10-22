@@ -129,6 +129,14 @@ const REVIEWED = new Map([
     "#2546 removed the trust score from the whole app by owner decision (2026-10-21). reporterTrust, " +
     "reporterWeightTrust, useTrustLookup and orgTrustUnavailable were deleted on purpose with every " +
     "surface that read them; verified that nothing in the tree still references any of them."],
+  ["767cba8fc9abbb40bb3cdce6057aacadecac4172",
+    "Desktop website shell (phase 1) replaced lib/wideLayout.js's style constants SIDEBAR_GAP, " +
+    "WIDE_COLUMN and WIDE_SIDEBAR with the functions wideGeom/wideColumn/wideSidebar in the same " +
+    "commit: its diff rewrites the App import to the new names and the docs table row with them. " +
+    "Verified that nothing in the tree still references the three constants."],
+  ["021c068cdb04ee757ac4df16cf516e3d336a38b7",
+    "#2578 (desktop phase 2a) deleted WIDE_CSS together with its App import, its <style> mount " +
+    "and its docs line, in the same commit. Verified that nothing in the tree still references it."],
 ]);
 
 /* One printer for both gate exits. The file-finding exit used to print the findings and NO repair,
