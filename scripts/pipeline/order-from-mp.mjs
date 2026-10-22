@@ -79,7 +79,7 @@ const k = requireServiceKey();
 const rest = async (p, init) => { const r = await fetch(SUPABASE_URL + "/rest/v1/" + p, { ...init, headers: headers(k, { "Content-Type": "application/json", ...init?.headers }) }); const t = await r.text(); if (!r.ok) throw new Error(p + ": HTTP " + r.status + " " + t); return t ? JSON.parse(t) : null; };
 // A statement timeout (57014), a gateway error or a dropped connection is asked again, five times, further apart
 // each time: Colorado stopped on one timed-out PATCH (2026-10-21) while another session was writing.
-const TRANSIENT = /57014|statement timeout|upstream request timeout|HTTP 5\d\d|-> 5\d\d |fetch failed|ECONNRESET|ETIMEDOUT|socket hang up/i;
+const TRANSIENT = /57014|statement timeout|upstream request timeout|HTTP 5\d\d|-> 5\d\d |fetch failed|ECONNRESET|ETIMEDOUT|socket hang up|PGRST303|JWT issued at future/i;
 async function retrying(fn) {
   for (let i = 0; ; i++) {
     try { return await fn(i); }
