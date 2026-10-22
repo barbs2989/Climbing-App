@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Log a belay catch: more ways to find the climb, a bigger ✕**: the climb search shows each route's crag and grade (30 results, not 8), finds a peak or crag and opens its climbs, browses by area, and suggests climbs done with that partner, your recent climbs and recently viewed ones. The ✕ (now 48px app-wide) stays pinned while the sheet scrolls. DB routes round-trip (search, save, Recent catches).
 - **Desktop: chats in the right rail**: on wide screens the rail lists your direct messages and crew chats, newest first with unread counts, under Coming up and Alerts; one click opens the conversation. Desktop website only. See `docs/features/app-shell-and-layout.md`.
 - **Desktop: draw an approach**: a route page's *✎ Draw approach* traces the way in on a map, shows its length and terrain gain and loss, and downloads it as GPX (marked hand-drawn); on a crag it can be suggested as the trail through the existing review. Desktop website only. See `docs/features/route-page.md`.
 - **Desktop: compare climbs side by side**: *+ Compare* on a route page fills a tray at the bottom of the window (up to four), and *Compare* opens a table of grade, length, pitches, approach, gain, aspect, season, rating, hazards and the best day this week. Desktop website only. See `docs/features/route-page.md`.
