@@ -99,8 +99,8 @@ ok("the flag is keyed on a real error, never on `!p`",
 
 // ---- 3. ORDER IS THE INVARIANT ------------------------------------------------------------------
 console.log("\n— the refusal must come BEFORE the draft is built —");
-const oeAt = anchor(app, "openEdit=()=>{", "openEdit");
-const oe = balanced(app, app.indexOf("{", oeAt + "openEdit=()=>".length), "{", "}") || "";
+const oeAt = anchor(app, "openEdit=(focus)=>{", "openEdit");
+const oe = balanced(app, app.indexOf("{", oeAt + "openEdit=(focus)=>".length), "{", "}") || "";
 const guardAt = oe.indexOf("profileUnavailable");
 const draftAt = oe.indexOf("setEditDraft(");
 ok("openEdit consults profileUnavailable at all", guardAt >= 0,

@@ -16,7 +16,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   list is) because partner search matches on them; on your own view the Objectives tab says so, and no row reads
   "You both want this!". Belay devices are set in Edit profile; the Profile tab's Certifications & Skills card has a
   button that opens it.
-- **Edit profile**: `lib/EditProfileScreen.jsx` over the `editDraft` state; `saveEdit` writes the draft back (see 2).
+- **Edit profile**: `lib/EditProfileScreen.jsx` over the `editDraft` state; `saveEdit` writes the draft back (see 2). `openEdit(focus)` takes an optional field key (`editFocus` → the `focus` prop; keys in `SETUP`: grades, bio, availability, zip, photo): the editor then opens with a *Finish setting up* card naming the task, scrolls to the `ep-<key>` section and outlines it. A plain Edit button passes an event, so it opens at the top as before.
   Includes the owner-only zip code (feeds partner search distance; others never see it).
   - **Home city + state are a LABEL, never geocoded.** The city is free text with a `US_CITIES` datalist; the state comes
     from the dropdown. They show on your profile and partner rows, and the state orders namesakes in search
