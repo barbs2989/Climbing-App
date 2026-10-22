@@ -33062,3 +33062,22 @@ from `wa_mount_fury_west_west_ridge` as before.
 This is the third run in a row (spanning multiple scheduled firings, not just retries within
 one) unable to reach the DB at all — worth a human checking whether the Supabase project
 needs to be resumed/unpaused, since this audit cannot make progress until it is.
+
+## 2026-10-22 (follow-up run 4) — DB unreachable, no batch run
+
+Fourth consecutive run unable to reach the database, now with a clearer error: both
+`GET /rest/v1/routes` and `GET /rest/v1/areas` (authenticated, `sb_publishable_...` key) return
+HTTP 522 "Connection timed out" directly from Cloudflare — Cloudflare's edge reaches the
+`ofuofhojhbcrcahuotya.supabase.co` host fine, but the origin (Supabase's own compute) never
+answers within Cloudflare's timeout. Retried once after a 5s delay with the same result. The
+earlier unauthenticated `GET /rest/v1/` still returns instantly (401, no API key), confirming
+this is specific to the authenticated data path, i.e. the database compute itself, not
+TLS/DNS/routing. Could not re-check the agent-proxy status endpoint this run (blocked by this
+environment's own tooling), but the prior three runs already ruled out an egress-proxy cause,
+and a 522 originating at Cloudflare (not the proxy) is consistent with that. No batch was
+picked; `wa-alpine-audit-progress.json` untouched. Next run should still retry from
+`wa_mount_fury_west_west_ridge`.
+
+Four runs in a row now (2026-10-16, and three on 2026-10-22) with the database completely
+unreachable. This audit cannot make any progress until a human checks whether the Supabase
+project is paused (e.g. for inactivity/billing) and resumes it.
