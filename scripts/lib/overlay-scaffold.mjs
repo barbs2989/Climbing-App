@@ -353,8 +353,14 @@ export function screenOverlays(appCode) {
     if (!declared.has(m[1])) declared.set(m[1], m.index);
   const found = [];
   const seen = new Set();
-  for (const m of appCode.matchAll(/if\(([a-zA-Z][\w$]*)\)return\s*</g)) {
-    const name = m[1];
+  // Two spellings of one screen. `if(x)return <…>` is the phone-only form. Since the desktop
+  // shell draws these screens INSIDE the page column (lib/wideLayout.js, desktop phase 2a), App
+  // builds each as `const _vX=x?<>…</>:null` and returns it alone only on a phone — the same
+  // screen, behind the same state. Reading only the first spelling dropped `legal` and
+  // `editDraft` out of every overlay guard at once (check:zero reported them as rendering no
+  // dialog), which is the silent-shrink this list exists to prevent.
+  for (const m of appCode.matchAll(/if\(([a-zA-Z][\w$]*)\)return\s*<|const _v[A-Z][\w$]*=([a-zA-Z][\w$]*)\?</g)) {
+    const name = m[1] || m[2];
     if (!declared.has(name) || seen.has(name)) continue;
     seen.add(name);
     found.push({ name, setter: "set" + name[0].toUpperCase() + name.slice(1), at: declared.get(name), kind: "screen", evidence: "App early-return screen" });
@@ -612,6 +618,9 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       "useEffect(function(){window.__overlays=[" + names + "];" +
       "var p=new URLSearchParams(location.search);var t=p.get('zt');var z=p.get('z');" +
       "if(t)setTab(t);" +
+      // `?mt=<profile|activity|review>` picks the Profile screen's tab, so a walk can reach the sections
+      // that left its default view (the catch record, the logbook and the Year in Climbing banner live on Activity).
+      "var mt=p.get('mt');if(mt)setMeTab(mt);" +
       // `?zr=1` opens the route detail screen and nothing else. check:overflow reached it by
       // driving the UI — select a state, tap Routes, tap the first row — and that drill-in did
       // not complete under the scaffold config, so the richest layout in the app, and the one

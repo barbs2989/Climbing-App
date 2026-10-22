@@ -315,6 +315,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **`check:popup-chrome`** asserts that **every close and back control in the app looks the same** —
   styled by `POP_CLOSE` / `POP_CLOSE_MEDIA` / `POP_BACK` / `POP_BACK_MEDIA` from `lib/popupChrome.js`. Static, so it
   sits in `npm run build`. Reported 2026-09-24 as *"sloppy"* and *"not consistent with popups"*.
+  - **A spread is the same token** (2026-10-16, PR13 of the component extraction): `style={{...POP_CLOSE_MEDIA, position:"absolute"}}`
+    is recognised for close and remove controls as it already was for back ones. In strict TypeScript `Object.assign({}, POP_CLOSE_MEDIA,
+    {position:"absolute"})` infers `position: string`, which `CSSProperties` rejects, so a `.tsx` consumer writes the spread; the guard
+    reading only the `Object.assign` shape flagged `GPXMap.tsx`'s full-screen toggle as styled on its own.
   - **Measured before the fix: 8+ close looks and 6 back looks across ~73 popup dismiss controls**
     — a bare muted `×` at 22px with no visible hit area, 36px circles and squares in three fills,
     32px and 34px variants, a bordered 16px `×`; back as a zero-padding blue text link or a bordered
@@ -570,6 +574,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   so it sits in `npm run build`, at **0.86x `check:policy-claims`** taken back to back on one box,
   best of two. **Quoted as a ratio because the clock here is fiction**: that reading was taken at
   load average 446 on 4 cores, where this file already records a profile being off by 4x.
+  - **A suite may name a `.tsx` file** (2026-10-16, PR13): `PATHISH` did not know the extension, so a `{core, rd, gpx}` map entry
+    pointing at `src/components/GPXMap.tsx` was dropped from the suite's targets and its case read as ROTTED although the anchor
+    was there. The component extraction moves code into `.tsx`; every path test in a guard has to accept it.
   - **NEVER RUN `npm run build` WHILE AN INJECTION SUITE IS IN FLIGHT — this gate made a third
     kind of overlap fatal.** This file already forbids **committing** mid-suite (#1190 shipped
     whichever revert happened to be live) and forbids **two runs of one suite** overlapping. This
@@ -886,6 +893,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     route map** (`GPXMap`'s fullscreen branch), and the reason it is exempt rather than capped is
     **consistency**: capping it would put two maps in one app at two different widths, which is a
     worse desktop/phone difference than the one the cap exists to fix.
+    A **fourth**, `menu-wide` (2026-10-21): the owner asked for the desktop Menu to fill the screen
+    (it was a 440px drawer). Its content is centred in a 720px column by the panel's padding. It is
+    keyed on the WHOLE style string, so the Menu's phone branch, with the same zIndex and capped, is
+    still checked.
   - **THE DETECTOR ANCHORED ON `style={{` AND THE ROUTE MAP WAS OUTSIDE ITS CENSUS ENTIRELY.**
     That matches a **literal** style object, and `GPXMap` writes
     `style={fullscreen?{position:"fixed",inset:0,…}:{position:"relative"}}` — a **ternary**. So the

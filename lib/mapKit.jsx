@@ -446,6 +446,10 @@ export function acceptFix(cur, next) {
   return fixDistM(cur, next) > acc + cur.acc;
 }
 
+/**
+ * @param {import("react").MutableRefObject<any>} mapRef the Leaflet map, once built
+ * @param {{ C?: any, zoom?: number, onFix?: (fix: any, first: boolean) => void }} [opts]
+ */
 export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
   const [locating, setLocating] = useState(false);
   const [following, setFollowing] = useState(false);

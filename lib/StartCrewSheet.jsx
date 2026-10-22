@@ -12,7 +12,8 @@ import { USE_DB } from "./supabase";
 import { POP_CLOSE } from "./popupChrome.js";
 import { useAreaSearch, useStates } from "./db";
 import { discLabel } from "./discLabels.js";
-import { Av, C, CRAG_CATS, MOUNTAINS, SL, crewMax, pubName } from "../ClimbMatchCore.jsx";
+import { C, CRAG_CATS, MOUNTAINS, SL, crewMax, pubName } from "../ClimbMatchCore.jsx";
+import Av from "../src/components/Av.tsx";
 
 const AREA_TYPE_LABEL = { state: "State", region: "Region", range: "Range", canyon: "Canyon", crag: "Crag", wall: "Wall", peak: "Peak" };
 const NO_CREW_TYPES = new Set(["peak", "world", "country", "state"]);

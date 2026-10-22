@@ -326,17 +326,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     a sibling. `scripts/oneoff/probe-next-meetup-is-ahead.mjs` — 14 assertions, no browser, no
     database, dates built relative to today so it cannot rot into a fixture about 2026. Promote it
     if a second date-labelled surface joins the class.
-- **THE GROUP PAGE IS TABS, AND ITS MEMBERS ARE A COUNT (2026-10-14, the owner's decision).** The
+- **THE GROUP PAGE IS TABS, AND OUTSIDERS SEE ONLY A COUNT (2026-10-14; roster rule settled 2026-10-21).** The
   `openGroupId` view was one scroll holding the hero, rules, notifications, the calendar, the
   roster, the moderation queues and the discussion. It is now a hero (name, *Private/Public group
   · N members*, Join and + Invite) over the tabs **About · Discussion · Events · Members · Media**
   (`groupPageTab`, kept per group as `{gid, tab}`). A member lands on Discussion and anyone else
   on About, because a real group's posts are members-only (0230).
-  - **Members shows a COUNT to everyone but the group's managers.** The roster, Member requests and
-    the banned list render under `isMod`; anyone else sees *"N members"* and one line saying the
-    list is shown to moderators. The **Moderators strip** and *"N of your friends are in this
-    group"* were removed with it, so a member's face or name is no longer on the page for
-    non-managers. `_memN` is still the one count: the hero and the roster heading read it.
+  - **Members shows the roster to the group's members and moderators, a COUNT to anyone else**
+    (`_canSeeRoster` = joined || isMod; RLS enforces it since 0318, #2476). Step 3 first showed
+    the roster to managers only; when it met #2476 on main the owner chose main's rule (2026-10-21).
+    Member requests and the banned list stay under `isMod`. An outsider sees *"N members"* (or
+    nothing, when the group row carries no count) and *"Only members can see who's in this group"*.
+    The **Moderators strip** and *"N of your friends are in this group"* are gone from the page.
+    `_memN` is still the one count: the hero and the roster heading read it, and it is null only
+    for an outsider of a DB group with no stored count, which both readers handle.
   - **Managers' tools sit beside what they change**: Make public/private and Group settings on
     About, requests and bans on Members, the *Reported* queue at the top of Discussion.
   - **The two sheets (`reactPickerFor`, `postMenuFor`) render outside the tab switch**, because
@@ -694,6 +697,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     "listed at Hellgate" from a Wasatch search. Ancestor matches carry `listed_above=true` and sort
     last, so a card says "listed across Utah" rather than "listed here". The guard demands both
     operators in every reader (`partners_in_area`, `partners_for_my_areas`, `partner_area_counts`).
+  - **...CAPPED AT THE STATE (`0311`).** 0300's header named the thing to cap if it flooded: taken to the
+    top, "listed at Utah" was a row on EVERY Utah crag, canyon and range — sorted last, but still there.
+    0311 re-creates the three readers with the predicate `(L.path <@ T or (L.path @> T and
+    L.area_type <> 'state'))`: an ancestor listing reaches down only from BELOW the state. A state
+    listing still answers a search AT the state (the `<@` half, equal paths). The guard pins that
+    exact predicate shape — not "both operators appear somewhere", because `@>` also computes
+    `listed_above`, so a reader that dropped the ancestor half from its WHERE would still contain it.
+    The injection suite (`scripts/oneoff/inject-partner-areas-cases.mjs`) edits 0311 for the readers
+    and 0300 for the table, policy and trigger; `probe-partner-areas.mjs` lists a sixth account at
+    `utah` and asserts it is absent from the crag, the range, Near my areas and the crag count, and
+    present (with `listed_above=false`) at the state. 53 assertions, 2026-10-15.
   - **The table is OWNER-ONLY, unlike `objectives` (public-read).** Every cross-climber read is a
     `SECURITY DEFINER` that refuses a signed-out caller and applies `discoverable` plus
     `profile_owner_blocked_me`, byte-for-byte `partners_near`'s rule. The guard refuses a
