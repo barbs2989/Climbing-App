@@ -19,6 +19,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     A coverage hole in a guard is invisible by construction unless something asks from
     outside, which is what this script is. Same lesson as `check:drift`: *a workflow cannot
     report on a run that never existed.*
+  - **App's early-return SCREENS have two spellings** (2026-10-21, desktop phase 2a).
+    `screenOverlays()` found `legal` and `editDraft` only through `if(x)return <`; when the
+    desktop shell began drawing those screens inside its page column, App started building them
+    as `const _vX=x?<>…</>:null` and returning them alone only on a phone. Both screens dropped
+    out of every overlay guard at once — `check:zero` said they "no longer render a dialog" and
+    `check:overlay-absence` called their CHECKED entries stale. The screens had not changed; the
+    spelling had. `screenOverlays` now reads both. Before renaming the `_v` prefix, change it here.
   - Two precision rules, both wrong in the first draft. **Balance the braces, never take a
     fixed window** — half these modals are wrapped in an IIFE (`{crewInvite&&(()=>{…})()}`)
     so the dialog can be thousands of characters past the state name, and on a 428,000-char
