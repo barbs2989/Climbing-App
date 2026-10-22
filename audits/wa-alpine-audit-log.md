@@ -33112,3 +33112,21 @@ one substantive claim (La Bohn Gap approach via the Hinman Glacier's upper margi
 consistent with its own overview and with the Hinman Glacier route's shared approach.
 
 Pass 7 continues next run after `wa_mount_hinman_west_route`.
+
+## 2026-10-22 (follow-up run 5) — DB unreachable, no batch run
+
+Same signature as the four prior unreachable runs (2026-10-16, and three on 2026-10-22), despite
+batch 429 succeeding in between: `GET /rest/v1/routes` returned HTTP 522 "Connection timed out"
+from Cloudflare on first try and again after an 8s retry; a direct `GET /rest/v1/areas` request
+timed out client-side with zero bytes before that. The unauthenticated `GET /rest/v1/` request
+still answered instantly (401, no API key), so this is again specific to the authenticated data
+path (the database compute), not TLS/DNS/routing/egress-proxy — confirmed this run by checking
+the agent-proxy status endpoint directly, which showed no relay failures and the Supabase host
+itself reachable at the TLS layer (the 522 comes from Cloudflare's edge in front of Supabase, not
+the environment's own network policy). No batch was picked; `wa-alpine-audit-progress.json`
+untouched. Next run should still retry from `wa_mount_hinman_west_route` (pass 7).
+
+Since this failure mode has now recurred intermittently (reachable for exactly one run, batch
+429, then unreachable again), it looks less like a one-time pause and more like the Supabase
+project flapping under load or an intermittent compute issue on Supabase's side — still worth a
+human checking the project's status/billing page directly.
