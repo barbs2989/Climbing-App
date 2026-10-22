@@ -36,6 +36,14 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   (`profile_tracked_lists`, 0337, owner-only; `useMyTrackedLists`/`saveMyTrackedLists`; App's `trackedLists`/`toggleTrackedList`).
   The **Fifty Classics** rows come from the book's roster (`FIFTY_CLASSICS`, each entry naming its catalog `id`): numbered 1–50, the book's route name
   over "peak · region", a missing grade left out. All fifty are in the catalog (2026-10-21).
+  Peak lists (2026-10-22): **Colorado Centennials** (`co_cent`, 99 = the 52 fourteeners + 47 thirteeners, Mount Bross excluded as on the
+  14ers card), **Adirondack 46** (`adk46`) and **Sierra Peaks Section** (`sps`, 247 active peaks in list order). Their rosters are in
+  `lib/lists.js` (`CO_CENTENNIAL_PEAKS`, `ADK_46_PEAKS`, `SPS_PEAKS`); the summits the catalog lacked were ADDED with a standard route by
+  0344 (38 Colorado 13ers, 34 Adirondack peaks) and 0345 (155 Sierra peaks), and list peaks held only as climbing walls got a
+  peak-bagger's route, so every entry can be ticked. A roster entry may carry `also`: the face sub-areas of a peak whose climbs sit
+  on faces (Half Dome, Cathedral Peak); `peakClimbed` and `routeInList` count a log on any of them.
+  0347 gave four fourteeners (Handies, Bierstadt, Blue Sky, Quandary) a walk-up; the 14ers, Bulgers and Cascade rosters had four dead ids
+  and six faces-only peaks re-pointed the same day, and `audit:list-coverage` now counts only peaks that can be ticked.
   `Challenges` (`ClimbMatchCore.jsx`) has three parts: personal challenges (climbs this year, `pitchesClimbed`, conditions reported,
   vouches given, catches), curated lists, badges. All are DERIVED from the logs it is handed, so a new log updates them the moment it is
   saved (`setLogs`; the logged route's row arrives through `useRoutesByIds`), and nothing is stored. Another climber's profile sheet
