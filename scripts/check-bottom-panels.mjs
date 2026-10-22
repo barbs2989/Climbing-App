@@ -50,6 +50,15 @@ const DECLARED = [
     why: "PolicyUpdateNotice — non-dismissible by design, so it MUST reserve space; #appscroll's paddingBottom is the reservation",
     reserves: true,
   },
+  {
+    style: 'position:"fixed",top:64,bottom:0,left:"var(--cm-col-left)",width:280',
+    file: "lib/Inbox.jsx",
+    why: "the desktop Messages LEFT PANE (Inbox pane=\"side\", 1024px+ only) — it runs to the bottom of the window by design, beside the conversation, not over it",
+    // ClimbMatch.jsx reserves its 280px: #appscroll takes paddingLeft:280 while the pane is open
+    // (_inboxSide) and the "Choose a conversation" prompt takes marginLeft:280, so nothing in the
+    // page column is ever drawn underneath it.
+    reserves: true,
+  },
 ];
 
 const files = appSources(ROOT, GUARD);

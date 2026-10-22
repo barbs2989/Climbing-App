@@ -3,14 +3,26 @@
 import { clickable } from "./clickable";
 import { searchMatches } from "./search";
 import { useProfilesByIds } from "./db";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { C, CLIMBERS, ME, ROUTES, SZ5, crewPlace, crewSize, pubFirst, pubName } from "../ClimbMatchCore.jsx";
 import SwipeRow from "../src/components/SwipeRow.tsx";
 import Av from "../src/components/Av.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import { POP_BACK } from "./popupChrome.js";
 
-export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoading,msgs,crews,crewMsgs,connections,onOpenDM,onOpenCrew,onClose,onDeleteDM,onDeleteCrew,msgFrom,onAcceptReq,crewUnread,dmUnread,placeOf,routeById}){
+/* `pane` is the desktop website's placement (lib/wideLayout.js): "side" is the LEFT PANE of the
+   two-pane Messages page — a 280px column at the page column's left edge, the open conversation
+   drawn to its right — and "drop" is the drop-down under the top bar's chat icon, whose header
+   opens the two-pane page (onExpand). Absent on a phone: the full-screen view, as before. */
+const PANE_STYLE={
+  side:{position:"fixed",top:64,bottom:0,left:"var(--cm-col-left)",width:280,background:C.bg,zIndex:35,overflowY:"auto",overscrollBehavior:"contain",borderRight:"1px solid "+C.border,borderLeft:"1px solid "+C.border,boxSizing:"border-box"},
+  drop:{position:"fixed",top:70,right:"var(--cm-shell-right)",width:400,maxHeight:"calc(100vh - 90px)",background:C.surface,zIndex:1450,overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderRadius:14,boxShadow:"0 18px 50px rgba(0,0,0,0.6)",boxSizing:"border-box"},
+};
+export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoading,msgs,crews,crewMsgs,connections,onOpenDM,onOpenCrew,onClose,onDeleteDM,onDeleteCrew,msgFrom,onAcceptReq,crewUnread,dmUnread,placeOf,routeById,pane,onExpand,onDismiss}){
+  /* The drop-down leaves on a click outside it or Esc, as a website's menus do. The chat icon that
+     opens it is not "outside": it toggles the drop-down itself. */
+  const rootRef=useRef(null);
+  useEffect(function(){if(pane!=="drop"||!onDismiss)return undefined;const down=function(e){var t=e.target;if(rootRef.current&&!rootRef.current.contains(t)&&!(t.closest&&t.closest('[aria-label="Messages"]')))onDismiss();};const key=function(e){if(e.key==="Escape")onDismiss();};document.addEventListener("mousedown",down);document.addEventListener("keydown",key);return function(){document.removeEventListener("mousedown",down);document.removeEventListener("keydown",key);};},[pane,onDismiss]);
   const [itab,setItab]=useState("friends");const [msgQ,setMsgQ]=useState("");const mqOk=str=>!msgQ.trim()||(str||"").toLowerCase().includes(msgQ.trim().toLowerCase());
   const dmIds=Object.keys(msgs||{}).filter(id=>(msgs[id]||[]).length>0);
   const _realDmIds=dmIds.filter(id=>!/^\d+$/.test(id));const dmProfilesQ=useProfilesByIds(_realDmIds);
@@ -22,10 +34,11 @@ export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoa
   const lbl={fontSize:12,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:7,fontWeight:700};
   const prev={fontSize:12.5,color:C.textSub,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",fontWeight:400,letterSpacing:0.1,marginTop:1};
   const del={background:"transparent",border:"none",color:C.textMuted,fontSize:16,cursor:"pointer",flexShrink:0,padding:"4px 6px",lineHeight:1};
-  return (<div style={{position:"fixed",inset:0,background:C.bg,zIndex:1100,overflowY:"auto",overscrollBehavior:"contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
+  return (<div ref={rootRef} style={pane?PANE_STYLE[pane]:{position:"fixed",inset:0,background:C.bg,zIndex:1100,overflowY:"auto",overscrollBehavior:"contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
     <div style={{position:"sticky",top:0,background:C.surface,borderBottom:"1px solid "+C.border,padding:"12px 16px",display:"flex",alignItems:"center",gap:10,zIndex:2}}>
-      <button onClick={onClose} style={POP_BACK}>← Back</button>
-      <div style={{fontSize:15,fontWeight:700,color:C.text}}>Messages</div>
+      {pane==="drop"?null:<button onClick={onClose} style={POP_BACK}>← Back</button>}
+      <div style={{fontSize:15,fontWeight:700,color:C.text,flex:pane==="drop"?1:undefined}}>Messages</div>
+      {pane==="drop"&&onExpand?<button onClick={onExpand} style={{background:"none",border:"none",padding:"4px 2px",color:C.blue,fontSize:13,fontWeight:700,cursor:"pointer"}}>Open Messages</button>:null}
     </div>
     <div style={{maxWidth:560,margin:"0 auto",padding:"14px 16px 40px",color:C.text}}>
       <div style={{display:"flex",gap:8,marginBottom:14}}>{[["friends","Friends",dmThreads.length],["crews","Crews",crewThreads.length]].map(z=><button key={z[0]} onClick={()=>setItab(z[0])} aria-label={z[2]?z[1]+", "+z[2]:z[1]} aria-current={itab===z[0]?"true":undefined} style={{flex:1,padding:"9px 4px",borderRadius:11,border:"1px solid "+(itab===z[0]?C.blue:C.border),cursor:"pointer",background:itab===z[0]?C.blueSolid:C.card,color:itab===z[0]?"#fff":C.textSub,fontSize:13,fontWeight:700}}>{z[1]}{z[2]?<span style={{marginLeft:5,fontSize:12,fontWeight:800,opacity:0.85}}>{z[2]}</span>:null}</button>)}</div>
