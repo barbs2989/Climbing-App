@@ -52,6 +52,13 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   - New York, 2026-10-21: 406 walls ordered (3,780 matched, 68 anchored, 102 unplaced), 25 climbs added, 11 adds refused by the
     duplicate trigger (all on near-duplicate walls of ours, e.g. "The Guides' Wall" beside "The Guides' Wall (Madame G's)"),
     21 for review, 6 walls skipped (2 shared, 3 with no area of ours, 1 split).
+  - **Whole-catalog run, 2026-10-21/22 — STOPPED by the owner partway through Utah** (it saturated the production
+    database: one REST write per route back to back, with retries piling on; the live app's reads 504'd). Done and
+    rewritten: New York, California, Oregon, New Hampshire, Colorado. Ordered, facts/prose pending: Quebec,
+    Kentucky. Partly ordered: Utah, Arizona, Washington, BC, Wyoming, Nevada, New Mexico, Idaho, Montana. Every
+    wall is logged under `_order/<state>.jsonl`, so a re-run skips finished walls (and a state whose walls are all
+    done skips its database load). Writes now wait `--pace-ms` (default 400) after each one and back off a minute
+    on failure; **do not restart without the owner's OK.**
 - **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.

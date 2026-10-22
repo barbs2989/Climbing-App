@@ -247,6 +247,7 @@ if (!demo.includes(MARK)) {
   const VOUCH_ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+import ReactDOM from "react-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import GiveVouch from ${JSON.stringify(path.join(ROOT, "lib", "GiveVouch.jsx"))};
 import { ROUTES } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
@@ -254,9 +255,16 @@ const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(friend, names) {
   const suggest = names ? ROUTES.filter((r) => names.includes(r.name)).map((route) => ({ route, date: "", together: false })) : undefined;
-  return renderToStaticMarkup(
-    React.createElement(QueryClientProvider, { client: qc },
-      React.createElement(GiveVouch, { friend, suggest, onClose: noop, onSave: noop })));
+  // GiveVouch is portalled to document.body since 2026-10-21 (it draws above a climber's profile), which
+  // the server renderer refuses: flattened for THIS call only, the same scoped patch as Resume above.
+  const orig = ReactDOM.createPortal, hadDoc = "document" in globalThis;
+  ReactDOM.createPortal = (children) => children;
+  if (!hadDoc) globalThis.document = { body: {} };
+  try {
+    return renderToStaticMarkup(
+      React.createElement(QueryClientProvider, { client: qc },
+        React.createElement(GiveVouch, { friend, suggest, onClose: noop, onSave: noop })));
+  } finally { ReactDOM.createPortal = orig; if (!hadDoc) delete globalThis.document; }
 }
 `;
   const stub = (useDb) => ({

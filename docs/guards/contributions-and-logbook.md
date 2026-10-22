@@ -204,6 +204,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     shortest and was never guaranteed to be this one — *a guard that might look at the right card
     is not a guard.* `scripts/oneoff/probe-colorado-14ers-ceiling-copy.mjs` is the before/after
     measurement, and it fails closed on a card that never expanded.
+- **`audit:list-coverage` counted roster LENGTH, not tickable peaks (fixed 2026-10-22).** It read
+  "complete" for the 14ers, Bulgers and Cascade cards while four roster ids named rows a cleanup had
+  folded away (`co_la_plata_peak`, `co_torreys_peak`, `co_pikes_peak`, `or_mt_hood`) and six peaks
+  held no route on themselves — their climbs sit on FACE sub-areas, and `peakClimbed` matched the
+  peak's own id only. A roster entry now counts only if its area exists and a route sits on it or on
+  one of its `also` sub-areas; the failures are named ("cannot be ticked: X (no such area)").
+  Proved by re-pointing one id at a dead row: co14 and co_cent each dropped to "1 missing" naming it.
+  `also` is the fix for containers: list ONLY the peak's own faces, never a neighbouring formation
+  filed under it (Eldorado's Dorado Needle, McClellan's Nightmare Needles must not tick the peak).
 - **`check:correction-readers`** (was `check:rappel-readers`) enforces one sentence, now for
   **every** contributable column rather than rappels alone: **where a contribute-form field
   competes with an enrichment column, the reader must prefer the CLIMBERS' value once

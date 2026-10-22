@@ -48,6 +48,12 @@ import { gradeNumFrom } from "../../lib/grade.js";
 const arg = k => { const i = process.argv.indexOf("--" + k); return i > 0 ? process.argv[i + 1] : null; };
 const AREA = arg("area"), MP = arg("mp"), STATE = arg("state"), APPLY = process.argv.includes("--apply"), FACTS = process.argv.includes("--facts");
 const LIMIT = arg("limit") ? +arg("limit") : Infinity;
+// THROTTLE (2026-10-22): the whole-catalog run saturated the production database for hours — one REST write per
+// route, back to back, with retries piling onto a database that was already timing out; the live app's reads 504'd
+// and the owner had it stopped. Every database write now waits PACE_MS after it (default 400 ms, about 2.5 writes
+// a second), and a failure backs off a minute or more before asking again.
+const PACE_MS = arg("pace-ms") ? +arg("pace-ms") : 400;
+const pace = () => new Promise(r => setTimeout(r, PACE_MS));
 if (!STATE && !(AREA && MP)) { console.error("usage: --area <our area id> --mp <MP area id> [--state <slug>] [--apply]  |  --state <slug> [--facts] [--apply] [--limit N]"); process.exit(1); }
 const DIR = process.env.MP_DIR || "catalog/_mp", PAGES = DIR + "/_pages", ROUTES = DIR + "/_routes", ORDER = DIR + "/_order";
 for (const d of [PAGES, ROUTES, ORDER]) mkdirSync(d, { recursive: true });
@@ -77,8 +83,24 @@ const FIFTH = g => /^5\.\d/.test(g || "");
 
 const k = requireServiceKey();
 const rest = async (p, init) => { const r = await fetch(SUPABASE_URL + "/rest/v1/" + p, { ...init, headers: headers(k, { "Content-Type": "application/json", ...init?.headers }) }); const t = await r.text(); if (!r.ok) throw new Error(p + ": HTTP " + r.status + " " + t); return t ? JSON.parse(t) : null; };
+// A statement timeout (57014), a gateway error or a dropped connection is asked again, five times, further apart
+// each time: Colorado stopped on one timed-out PATCH (2026-10-21) while another session was writing.
+const TRANSIENT = /57014|statement timeout|upstream request timeout|HTTP 5\d\d|-> 5\d\d |fetch failed|ECONNRESET|ETIMEDOUT|socket hang up|PGRST303|JWT issued at future/i;
+async function retrying(fn) {
+  for (let i = 0; ; i++) {
+    try { return await fn(i); }
+    catch (e) { if (i >= 4 || !TRANSIENT.test(e.message)) throw e; await new Promise(r => setTimeout(r, 60_000 * (i + 1))); }
+  }
+}
 // The state's routes come through the CLI (an ltree subtree, which PostgREST cannot filter on).
-const sql = text => { const out = execFileSync("npx", ["supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1 << 30, stdio: ["ignore", "pipe", "pipe"] }); const at = [out.indexOf("{"), out.indexOf("[")].filter(i => i >= 0); const j = JSON.parse(out.slice(Math.min(...at))); return Array.isArray(j) ? j : j.rows; };
+// Eight tries, backing off to a minute, as import-route-grades.mjs does: Utah failed on "Connection terminated
+// due to connection timeout" (status 544) while the database was busy, and the loop moved on without it.
+function sql(text) {
+  for (let t = 0; ; t++) {
+    try { const out = execFileSync("npx", ["supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1 << 30, stdio: ["ignore", "pipe", "pipe"] }); const at = [out.indexOf("{"), out.indexOf("[")].filter(i => i >= 0); const j = JSON.parse(out.slice(Math.min(...at))); if (j._tag === "Error") throw new Error(JSON.stringify(j.error)); const rows = Array.isArray(j) ? j : j.rows; if (!Array.isArray(rows)) throw new Error("unexpected output " + out.slice(0, 200)); return rows; }
+    catch (e) { if (t >= 7) throw e; execFileSync("sleep", [String(Math.min(60, 5 * 2 ** t))]); }
+  }
+}
 const q = s => "'" + String(s).replace(/'/g, "''") + "'";
 const loadMap = st => { const m = {}; for (const f of [`${DIR}/_map/${st}.json`, `${DIR}/_map/${st}.snow.json`, `${ORDER}/${st}.adds.json`]) if (existsSync(f)) Object.assign(m, JSON.parse(readFileSync(f, "utf8"))); return m; };
 
@@ -164,7 +186,10 @@ function printWall(area, mpId, w, ours) {
 async function writeWall(area, w) {
   const added = [], refused = [];
   for (const a of w.adds) {
-    try { const got = await rest("routes", { method: "POST", headers: { Prefer: "return=representation" }, body: JSON.stringify(a.row) }); if (got?.length === 1) added.push(a); else refused.push({ name: a.row.name, why: "insert returned " + (got?.length ?? 0) + " rows" }); }
+    await pace();
+    // A retry after a timeout first asks whether the timed-out insert landed after all: re-sent, the row would be
+    // refused as a duplicate of itself.
+    try { const got = await retrying(async i => { if (i && (await rest(`routes?select=id&id=eq.${encodeURIComponent(a.row.id)}`)).length) return [a.row]; return rest("routes", { method: "POST", headers: { Prefer: "return=representation" }, body: JSON.stringify(a.row) }); }); if (got?.length === 1) added.push(a); else refused.push({ name: a.row.name, why: "insert returned " + (got?.length ?? 0) + " rows" }); }
     catch (e) { if (/duplicate|already|23505|P0001/i.test(e.message)) refused.push({ name: a.row.name, mpId: a.mpId, why: "database: " + e.message.slice(0, 200) }); else throw e; }
   }
   const pos = new Map(w.pos);
@@ -173,10 +198,10 @@ async function writeWall(area, w) {
   const want = new Map();
   for (const r of w.writes.concat(w.seq.filter(s => s.ours).map(s => s.ours))) want.set(r.id, pos.get(r.id) ?? null);
   for (const a of added) want.set(a.row.id, pos.get(a.row.id) ?? null);
-  const after = await rest(`routes?select=id,sort_order&area_id=eq.${encodeURIComponent(area.id)}`);
+  const after = await retrying(() => rest(`routes?select=id,sort_order&area_id=eq.${encodeURIComponent(area.id)}`));
   const cur = new Map(after.map(r => [r.id, r.sort_order]));
-  for (const [id, v] of want) if (cur.get(id) !== v) await patchRow("routes", id, { sort_order: v });
-  const back = await rest(`routes?select=id,sort_order&area_id=eq.${encodeURIComponent(area.id)}`);
+  for (const [id, v] of want) if (cur.get(id) !== v) { await retrying(() => patchRow("routes", id, { sort_order: v })); await pace(); }
+  const back = await retrying(() => rest(`routes?select=id,sort_order&area_id=eq.${encodeURIComponent(area.id)}`));
   const bad = back.filter(r => want.has(r.id) && want.get(r.id) !== r.sort_order);
   return { added, refused, bad, rows: back.length };
 }
@@ -208,7 +233,7 @@ if (FACTS) {
   if (!existsSync(addsFile)) { console.error(`no ${addsFile} — run the state with --apply first`); process.exit(1); }
   const adds = Object.entries(JSON.parse(readFileSync(addsFile, "utf8")));
   const rows = new Map();
-  for (let i = 0; i < adds.length; i += 200) for (const r of await rest(`routes?select=id,length_m,pitches,lat,lng,stars&id=in.(${adds.slice(i, i + 200).map(([, id]) => encodeURIComponent(id)).join(",")})`)) rows.set(r.id, r);
+  for (let i = 0; i < adds.length; i += 200) for (const r of await retrying(() => rest(`routes?select=id,length_m,pitches,lat,lng,stars&id=in.(${adds.slice(i, i + 200).map(([, id]) => encodeURIComponent(id)).join(",")})`))) rows.set(r.id, r);
   let n = 0, patched = 0;
   for (const [mpId, id] of adds) {
     const r = rows.get(id); if (!r) continue;
@@ -222,7 +247,7 @@ if (FACTS) {
     if (r.lat == null && gps[1]) { p.lat = +gps[1]; p.lng = +gps[2]; }
     if (!(r.stars > 0) && avg && +avg[2].replace(/,/g, "") >= 1) p.stars = +avg[1];
     if (!Object.keys(p).length) continue;
-    if (APPLY) await patchRow("routes", id, p);
+    if (APPLY) { await retrying(() => patchRow("routes", id, p)); await pace(); }
     patched++;
     if (!APPLY && patched <= 10) console.log(id, JSON.stringify(p));
   }
@@ -235,6 +260,13 @@ const treeFile = `${DIR}/_tree/${STATE}.routes.json`;
 if (!existsSync(treeFile)) { console.error(`no ${treeFile}`); process.exit(1); }
 const mpRoutes = JSON.parse(readFileSync(treeFile, "utf8"));
 const idMap = loadMap(STATE);
+// A resumed state whose every rock wall is already logged needs nothing from the database: loading California's
+// 40k routes timed out over and over on 2026-10-22 just to skip walls that were all finished.
+if (APPLY && existsSync(`${ORDER}/${STATE}.jsonl`)) {
+  const finished = new Set(readFileSync(`${ORDER}/${STATE}.jsonl`, "utf8").split("\n").filter(Boolean).map(l => JSON.parse(l)).filter(x => x.status !== "error").map(x => x.mp));
+  const rockWalls = new Set(mpRoutes.filter(r => ROCK(r.tags)).map(r => r.area));
+  if ([...rockWalls].every(w => finished.has(w))) { console.log(`${STATE}: all ${rockWalls.size} walls already done`); process.exit(0); }
+}
 const state = sql(`select id, name from areas where id = ${q(STATE)}`)[0];
 if (!state) throw new Error("no state area " + STATE);
 const all = sql(`select r.id, r.name, r.area_id, r.discipline, r.grade, r.sort_order, a.name as area_name from routes r join areas a on a.id = r.area_id where a.path <@ (select path from areas where id = ${q(STATE)})`);
@@ -269,7 +301,7 @@ const addsFile = `${ORDER}/${STATE}.adds.json`, addsMap = existsSync(addsFile) ?
 const log = x => appendFileSync(logFile, JSON.stringify(x) + "\n");
 const elsewhere = (mpId, areaId) => { const r = routeById.get(idMap[mpId]); return r && r.area_id !== areaId ? r : null; };
 const tot = { walls: 0, matched: 0, added: 0, anchored: 0, unplaced: 0, review: 0, elsewhere: 0, skipped: 0, refused: 0 };
-let n = 0;
+let n = 0, failedRun = 0;
 for (const x of votes) {
   if (done.has(x.mpArea)) continue;
   if (n >= LIMIT) break;
@@ -288,7 +320,12 @@ for (const x of votes) {
     review: c("REVIEW").map(p => `${p.name} — ${p.why}`), elsewhere: c("ELSEWHERE").map(p => `${p.name} — ${p.why}`), changes: w.writes.length };
   tot.walls++; tot.matched += entry.matched; tot.added += APPLY ? 0 : w.adds.length; tot.anchored += entry.anchored; tot.unplaced += entry.unplaced; tot.review += entry.review.length; tot.elsewhere += entry.elsewhere.length;
   if (!APPLY) { log({ ...entry, status: "planned" }); continue; }
-  const r = await writeWall(area, w);
+  // A wall whose write still fails after the retries is logged as an error and the state goes on (a re-run
+  // redoes it; an add that landed before the failure is matched by name then). Five failed walls in a row
+  // means the database is down: stop the state rather than wait out every wall.
+  let r;
+  try { r = await writeWall(area, w); failedRun = 0; }
+  catch (e) { log({ ...entry, status: "error", why: e.message.slice(0, 300) }); console.error(`${area.id}: ${e.message.slice(0, 200)}`); if (++failedRun >= 5) throw new Error(`${state.name}: 5 walls in a row failed to write — the database looks down; re-run to resume`); continue; }
   for (const a of r.added) { addsMap[a.mpId] = a.row.id; routeById.set(a.row.id, { ...a.row }); }
   writeFileSync(addsFile, JSON.stringify(addsMap));
   tot.refused += r.refused.length; tot.added += r.added.length;
