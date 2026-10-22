@@ -51,6 +51,19 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   visibility lets you read) and `self={false}`: *Their challenges* shows the log-derived rows, never the vouch, catch or log-conditions rows, which are only
   drawn where the caller passed them. `pitchesClimbed` counts a log's route pitches; Attempt/Turned around/Project add 0, a route with
   no count is 1 pitch only on a roped crag discipline, an unresolved route adds 0.
+- **Badges** are built by ONE hook, `useBadges` (`ClimbMatchCore.jsx`), on top of `useCuratedLists`, for three readers: the
+  Badges grid at the foot of `Challenges` (`BadgeGrid`), the trophy case at the top of a profile (`FullProfile`, through `trophies()`),
+  and App's *Badge earned* overlay (`BadgeWatcher`). The owner's bar (2026-10-22): a badge marks a REAL accomplishment, never a
+  first step. The set: crag sends (sport, trad, top-rope, boulder, aid; different routes) 50/100/250/500; alpine summits (alpine,
+  mountaineering, scrambling) 10/25/50/100, counting ONLY a log ticked *Summit*; ice & mixed 10/25/50; pitches 100/500/1,000;
+  a 6/12/24-month logging streak (`monthRuns`); 50/100 climbs in one calendar year (`yearCounts`); Onsight ace (10 onsights or
+  flashes); All-rounder (5 disciplines); First ascent; Route developer; and one *finisher* badge per curated list. No badge for a
+  first send, a single peak or a vouch. Each earned badge carries `on`, the date of the log that crossed the line (a list: the last
+  objective's first tick; null when that log has no date), shown as *✓ Earned <date>* when tapped. Tiers share a `fam`; a profile
+  shows the highest earned tier of each, newest first. Your Logbook shows every badge, earned or not, with `cur / tgt` under a
+  locked one (a list's finisher only once you have started it); another climber's shows only what they earned, and an empty trophy
+  case renders nothing for them. The log form's save stamps `badgeAt`; `BadgeWatcher` (mounted while the log form is open, so it
+  holds the badges from before the save) celebrates any badge that appears within 6 s, once each.
 - **Crew**: your crews around ONE PLACE — a `routeId`, or since 0302 an `areaId` + `discipline` (a crag session: started from the area page's "Start a crew here",
   the Crews tab's "+ Create a crew → At an area…", or a past crew's picker, through `StartCrewSheet`; `formCrew` takes a route id or a place) — with members, proposed dates,
   per-member day acks and a "Ready" state (`datesAgreed`/`agreedDate`). Every surface that names a crew resolves its place through `crewPlace` (`placeTrip`, `placeCap`,
@@ -115,7 +128,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 | File | Key symbols |
 |---|---|
 | `ClimbMatch.jsx` | `tab` branches for `today`/`crew`/`logbook`, `logbookTab`, `crewView`, `pinnedStates`, `archiveCrew`, `clearPastCrew`, `givenVouches`, `activeCrews`, setup `gaps`, `unfinishedOpen`, `renderObjectives` |
-| `ClimbMatchCore.jsx` | `Challenges`, `useCuratedLists`, `TrackedLists`, `pitchesClimbed`, `datesAgreed`, `agreedDate`, `isArchivedCrew`, `CrewInviteModal`, `ItineraryEditor`, `crewPlace`, `placeTrip`, `placeCap`, `placeLabel`, `placeSub`, `placeMatchesLog` |
+| `ClimbMatchCore.jsx` | `Challenges`, `useCuratedLists`, `useBadges`, `trophies`, `BadgeGrid`, `BadgeWatcher`, `monthRuns`, `yearCounts`, `TrackedLists`, `pitchesClimbed`, `datesAgreed`, `agreedDate`, `isArchivedCrew`, `CrewInviteModal`, `ItineraryEditor`, `crewPlace`, `placeTrip`, `placeCap`, `placeLabel`, `placeSub`, `placeMatchesLog` |
 | `lib/ListsManager.jsx` | Objectives/Saved UI, per-discipline filter chips (Alpine first; Mountaineering and Aid separate); a crag row's Find partners goes to the crag (`onFindPartnersInArea`) |
 | `lib/MyAscents.jsx`, `lib/LogAscent.jsx` (no visibility chooser since 2026-10-21: one line names the Settings choice; a new report sends `visibilityFromSetting` and `syncLogToDb` leaves the column out so 0272's insert trigger fills it from the stored setting), `lib/TripReport.jsx`, `lib/tripReportRow.js`, `lib/LogTagConfirmations.jsx` | Completed climbs, logging, trip reports, partner tag confirmation |
 | `lib/lists.js` | `LISTS`, `routeInList`, `listPeaks`, `peakClimbed`, `FIFTY_CLASSICS` (Challenges) |
