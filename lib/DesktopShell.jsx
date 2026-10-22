@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { C, ROUTES, shortDate, daysUntil } from "../ClimbMatchCore.jsx";
+import { C, ROUTES, DISC, catOf, gradeLabel, routeLocText, shortDate, daysUntil } from "../ClimbMatchCore.jsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import { usePlaceSearch, useRouteSearch, useStates } from "./db.js";
 import { USE_DB } from "./supabase";
@@ -15,6 +15,26 @@ const ROW = { width: "100%", display: "flex", alignItems: "center", gap: 10, pad
 export function DocTitle({ title }) {
   useEffect(() => { if (typeof document !== "undefined") document.title = title; }, [title]);
   return null;
+}
+
+/* LOGBOOK AS A SPREADSHEET (desktop website, owner-approved 2026-10-21): every logged climb as one
+   CSV row, for a climber's own records. Dates stay ISO (YYYY-MM-DD) so a spreadsheet sorts them;
+   the route's name, place and grade are resolved the way My Ascents resolves them. */
+const csvCell = v => { const s = v == null ? "" : String(v); return /[",\n\r]/.test(s) ? "\"" + s.replace(/"/g, "\"\"") + "\"" : s; };
+export function downloadLogbookCsv(logs, routeById) {
+  const head = ["Date", "Climb", "Where", "Grade", "Discipline", "Style", "Stars", "Partners", "Notes"];
+  const rows = (logs || []).slice().sort((a, b) => String(b.date || "").localeCompare(String(a.date || ""))).map(l => {
+    const r = routeById ? routeById(l.routeId) : null;
+    const disc = r ? DISC[catOf(r)] : null;
+    const partners = (l.partners && l.partners.length ? l.partners : []).concat(l.typedPartners || []);
+    return [l.date || "", r ? r.name : "", r ? routeLocText(r) : "", r ? gradeLabel(r) : "", disc ? disc.label : "", l.tickType || "", l.stars || "", partners.join("; "), l.text || ""];
+  });
+  const csv = [head].concat(rows).map(row => row.map(csvCell).join(",")).join("\r\n");
+  const url = URL.createObjectURL(new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8" }));
+  const a = document.createElement("a");
+  a.href = url; a.download = "climbmatch-logbook-" + new Date().toISOString().slice(0, 10) + ".csv";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
 }
 
 const editable = el => !!el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName));
