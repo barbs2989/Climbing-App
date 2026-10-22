@@ -129,6 +129,14 @@ const REVIEWED = new Map([
     "#2546 removed the trust score from the whole app by owner decision (2026-10-21). reporterTrust, " +
     "reporterWeightTrust, useTrustLookup and orgTrustUnavailable were deleted on purpose with every " +
     "surface that read them; verified that nothing in the tree still references any of them."],
+  ["767cba8fc9abbb40bb3cdce6057aacadecac4172",
+    "#2568 (desktop website shell) replaced lib/wideLayout.js's fixed phase-1 geometry with computed " +
+    "styles: SIDEBAR_GAP, WIDE_COLUMN and WIDE_SIDEBAR became GAP, wideColumn(g) and wideSidebar(g) " +
+    "from wideGeom(). Deliberate; verified nothing in the tree still references the three old names."],
+  ["021c068cdb04ee757ac4df16cf516e3d336a38b7",
+    "#2578 (desktop phase 2a) turned lib/wideLayout.js's WIDE_CSS constant into wideCss(g), because " +
+    "the page-view rules need the shell geometry. Deliberate rename; verified nothing in the tree " +
+    "still references WIDE_CSS."],
 ]);
 
 /* One printer for both gate exits. The file-finding exit used to print the findings and NO repair,
@@ -645,9 +653,13 @@ for (const [tok, info] of missing) {
   const stem = tok.replace(/^(check|audit):/, "").replace(/^scripts\/|\.mjs$/g, "");
   // Same subject-only bug as the file classifier above; see the comment there.
   const removedText2 = removedBy ? bodyOf(removedBy) : removedSubject;
-  const deliberate = removedText2 && (removedText2.includes(tok) || removedText2.toLowerCase().includes(stem.toLowerCase()));
+  /* A REVIEWED commit excuses its DEFINITION removals too: the entry records that the commit was read and
+     its deletions were meant, and a squash cannot be re-worded to name them once it is on main. */
+  const reviewed = !!(removedBy && REVIEWED.has(removedBy));
+  if (reviewed) REVIEWED_SEEN.add(removedBy);
+  const deliberate = reviewed || (removedText2 && (removedText2.includes(tok) || removedText2.toLowerCase().includes(stem.toLowerCase())));
   if (!deliberate) { silent++; silentKinds.add(info.kind); }
-  console.log(`${deliberate ? "  deliberate " : "  ** SILENT "}${info.kind.padEnd(13)} ${tok}`);
+  console.log(`${reviewed ? "  REVIEWED   " : deliberate ? "  deliberate " : "  ** SILENT "}${info.kind.padEnd(13)} ${tok}`);
   console.log(`      added by  ${info.sha.slice(0, 8)}  ${info.subject.slice(0, 96)}`);
   console.log(`      removed   ${removedBy ? removedBy.slice(0, 8) : "(not found)"}  ${removedSubject.slice(0, 96)}`);
 }

@@ -164,6 +164,15 @@
       }
       /* 16px inputs so iOS doesn't auto-zoom the page when a field is focused */
       input, textarea, select { font-size: 16px !important; }
+      /* ONE dropdown chevron for every <select>, on every screen. This rule used to live in a <style>
+         that App renders inside its MAIN return only, so every screen App returns EARLY (Edit
+         profile, the Calendar, the guide dashboard, the legal pages, sign-in) drew the browser's own
+         arrow -- black on the app's near-black field, which is how Edit profile's state picker was
+         reported as unreadable. In the document head it reaches them all. !important beats the
+         inline `background:` shorthand most selects carry, which would otherwise reset the image.
+         #2f81f7 is 4.6:1 on #161b22 (WCAG 1.4.11 asks 3:1 of a control's graphics). A list box
+         (multiple / size) draws no arrow, so it is left alone. */
+      select:not([multiple]):not([size]) { -webkit-appearance: none !important; -moz-appearance: none !important; appearance: none !important; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%232f81f7%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E') !important; background-repeat: no-repeat !important; background-position: right 12px center !important; background-size: 10px !important; padding-right: 34px !important; }
       /* iOS Safari draws a date/time input as a native control with its OWN minimum width and
          ignores width:100%, so DATE CLIMBED ran past the right edge of its card and its value sat
          centred inside a box wider than every field around it. Dropping the native appearance
@@ -201,20 +210,20 @@
       #cm-boot .b-card { background: #1c2330; border: 1px solid #30363d; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 9px; }
       #cm-boot .b-line { height: 11px; border-radius: 6px; }
       /* Wide screens: the same shell lib/wideLayout.js draws, so nothing jumps when React mounts. A 64px top bar across the window;
-         1024-1279px: a 72px icon sidebar + 24px gap + 720px column (816px shell, centred); 1280px and up: a 240px sidebar + 24 + the
-         column + 24 + a 300px rail (1308px shell, centred). */
+         1024-1279px: a 72px icon sidebar + 24px gap + 640px column (736px shell, centred); 1280px and up: a 240px sidebar + 24 + the
+         column + 24 + a 300px rail (1228px shell, centred). */
       @media (min-width: 1024px) {
-        #cm-boot { max-width: none; width: 720px; margin-left: calc(max(16px, calc(50vw - 408px)) + 96px); margin-right: 0; padding-top: 64px; box-sizing: border-box; }
+        #cm-boot { max-width: none; width: 640px; margin-left: calc(max(16px, calc(50vw - 368px)) + 96px); margin-right: 0; padding-top: 64px; box-sizing: border-box; }
         #cm-boot .b-bar { position: fixed; top: 0; left: 0; right: 0; height: 64px; box-sizing: border-box; padding: 0 16px; flex-direction: row; align-items: center; z-index: 2; }
-        #cm-boot .b-nav { position: fixed; top: 64px; bottom: 0; left: max(16px, calc(50vw - 408px)); width: 72px; box-sizing: border-box; flex-direction: column; gap: 2px; padding: 16px 8px; background: #0d1117; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; border-right: 1px solid #30363d; font-size: 0; }
+        #cm-boot .b-nav { position: fixed; top: 64px; bottom: 0; left: max(16px, calc(50vw - 368px)); width: 72px; box-sizing: border-box; flex-direction: column; gap: 2px; padding: 16px 8px; background: #0d1117; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; border-right: 1px solid #30363d; font-size: 0; }
         #cm-boot .b-nav div { flex: none; flex-direction: row; justify-content: center; padding: 10px 0; font-size: 0; border-radius: 12px; }
         #cm-boot .b-nav div:first-child { background: #0d2044; }
         #cm-boot .b-nav b { margin: 0; }
         #cm-boot .b-mark { display: none; }
       }
       @media (min-width: 1280px) {
-        #cm-boot { width: calc(min(1308px, calc(100vw - 32px)) - 588px); margin-left: calc(max(16px, calc(50vw - 654px)) + 264px); }
-        #cm-boot .b-nav { left: max(16px, calc(50vw - 654px)); width: 240px; padding: 16px 12px; }
+        #cm-boot { width: calc(min(1228px, calc(100vw - 32px)) - 588px); margin-left: calc(max(16px, calc(50vw - 614px)) + 264px); }
+        #cm-boot .b-nav { left: max(16px, calc(50vw - 614px)); width: 240px; padding: 16px 12px; }
         #cm-boot .b-nav div { justify-content: flex-start; gap: 14px; padding: 10px 12px; font-size: 15.5px; }
       }
     </style>
