@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Desktop: nothing stretches across the page**: the page column is 640px (was 720), and action buttons — *Log a past climb*, *Edit profile*, *Climbed it? Log the climb*, *Add trip report*… — are as wide as their label instead of the whole column; list rows still run edge to edge, phones are unchanged. See `docs/features/app-shell-and-layout.md`.
 - **Float plans ⇄ crews**: a crew's place, partners, meet-up and day now fill a crew float plan's empty fields; a plan started from a route's Safety tab (or with no crew) can be moved onto a crew; and a saved crew plan can be sent to the crew chat so everyone in the crew has it. See [logbook-crews-home.md](docs/features/logbook-crews-home.md).
 - **Log a belay catch: more ways to find the climb, a bigger ✕**: the climb search shows each route's crag and grade (30 results, not 8), finds a peak or crag and opens its climbs, browses by area, and suggests climbs done with that partner, your recent climbs and recently viewed ones. The ✕ (now 48px app-wide) stays pinned while the sheet scrolls. DB routes round-trip (search, save, Recent catches).
 - **Desktop: chats in the right rail**: on wide screens the rail lists your direct messages and crew chats, newest first with unread counts, under Coming up and Alerts; one click opens the conversation. Desktop website only. See `docs/features/app-shell-and-layout.md`.
