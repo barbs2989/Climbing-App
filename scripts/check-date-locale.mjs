@@ -43,13 +43,13 @@ function walk(dir, out = []) {
     if (e.name.startsWith(".")) continue;
     const p = path.join(dir, e.name);
     if (e.isDirectory()) walk(p, out);
-    else if (/\.(jsx?|mjs)$/.test(e.name)) out.push(p);
+    else if (/\.(jsx?|mjs|tsx?)$/.test(e.name)) out.push(p);
   }
   return out;
 }
 const files = ["main.jsx", "ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "EnrichmentPanels.jsx"]
   .map((f) => path.join(ROOT, f)).filter((f) => fs.existsSync(f))
-  .concat(walk(path.join(ROOT, "lib")));
+  .concat(walk(path.join(ROOT, "lib")), walk(path.join(ROOT, "src")));
 if (files.length < 20) dead(`only ${files.length} app source files found — the walk is broken`);
 
 let calls = 0;

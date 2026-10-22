@@ -38,9 +38,42 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   Ours that MP does not list are **ANCHORED** right of their nearest left-hand neighbour in OpenBeta's older copy of MP's order, else
   **UNPLACED** (empty, listed last). Positions are renumbered 1..n. Dry run by default; `--apply` writes and reads back.
   First run, 2026-10-21: The Uberfall – left (Gunks), 45 matched, 3 added, 3 anchored, 1 for review, 6 unplaced (MP places 45 of 51).
+  - **Whole state** (`--state <slug>`, resumable through `catalog/_mp/_order/<state>.jsonl`): every MP wall with a rock route
+    (roped, not tagged Ice/Mixed/Snow — MP keeps a parallel "Ice & Mixed" tree under the same crag names) is matched to the area of
+    ours its routes vote for (MP-id map, else a name unique in the state; ≥60% of votes). Two MP walls voting for one area: the one
+    with twice the votes keeps it, else both are logged `shared`. Only 5.x climbs are added (MP files slides as Trad). An add is NOT
+    made when the id map files it on another wall of ours (`ELSEWHERE`), its name contains or sits inside an unmatched name on the
+    wall, MP repeats the name, it names the wall itself, or `refuse_duplicate_route` (0216) refuses it — those go on the review list.
+    Walls only ordered, never sub-areas (owner: ordering walls is too confusing).
+  - **Added climbs get full details**: `--state <slug> --facts --apply` reads each added climb's route page and stores length,
+    pitches, GPS and the star average where empty; `extract-route-details.mjs <state> --adds` batches the description, protection,
+    location and first ascent for REWRITING (under `_details/<state>/adds/`), and `apply-route-details.mjs` refuses any field that
+    repeats four words of the page. Nothing is stored as fetched.
+  - New York, 2026-10-21: 406 walls ordered (3,780 matched, 68 anchored, 102 unplaced), 25 climbs added, 11 adds refused by the
+    duplicate trigger (all on near-duplicate walls of ours, e.g. "The Guides' Wall" beside "The Guides' Wall (Madame G's)"),
+    21 for review, 6 walls skipped (2 shared, 3 with no area of ours, 1 split).
 - **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker.
-- **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - discipline, grade (system + low/high),
-  min stars, min pitches, length band, sort (`DEF = { disc, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.
+- **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
+  min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.
+  The **Filters** sheet is a full-height screen (since 2026-10-21; it was an 88vh bottom sheet, which on iOS overflowed off the
+  top and hid the title, ✕ and Discipline row): title row clears the notch, the list scrolls, and **Clear all / Show N routes**
+  are pinned at the bottom. N is the DRAFT's count (`finderArgs()` builds the RPC args for both the draft and the applied query, so
+  the button and the list agree). The page behind is scroll-locked while it is open.
+  Since 0334 (owner, 2026-10-21):
+  - **Several disciplines at once** (Sport + Trad, the way Mountain Project ticks types): `disc` reaches `routes_in_subtree(_count)` as a
+    comma list. A grade range is offered on the scales every ticked discipline shares (`gradeScalesFor`); Sport + Bouldering share none, and the sheet says so.
+  - **A star minimum keeps unrated climbs**: only a climb RATED below it is hidden (2 of 90,084 sport climbs had a rating, so the old rule
+    emptied every star search). The sheet and the results both say unrated climbs still show.
+  - **Grouped by wall by default**: the default sort is `lr`, and on a wall sort each wall gets a heading (opens its page, *Save area*).
+  - **A state needs an area first** (`FINDER_NEEDS_AREA`): on a state or larger, the finder lists the state's areas to pick from (the
+    finder's own Location, `loc`; *Change area* goes back) unless a name is typed. An unfiltered California list took 3.3 s in the database.
+    The search box is debounced 250 ms. With no name typed, both RPCs now read the subtree's areas first and each area's routes
+    through `routes_area_idx`: Sport + Trad 5.6–5.10a in Central-East Cascades used to walk the grade index across every state and hit
+    the 3 s anon timeout. A name search keeps 0244/0245's name-index plan.
+  - **Pinned search bar** (`usePinnedBar`): Routes | Areas, the box, Filters and the chips pin under the app's top bar once you scroll
+    past them. Fixed-position with a placeholder, not CSS sticky: on a phone the document scrolls while `#appscroll` (overflow:auto) only grows.
+  - **Save from the list**: a ☆ beside each row opens a save sheet: My Objectives (`toggleWish`), your own lists (`toggleListRoute` in
+    App, the same `onUpdateList` write ListsManager makes) and the climb's wall (`toggleBookmark`).
   Mirrors Mountain Project's set, nothing extra (standing decision), except the sort, which offers **Left → right** / **Right → left**
   in place of *By area* (owner, 2026-10-21): `routes_in_subtree` `sort_by` `lr` / `rl` (0332) group the climbs by wall and order each wall
   by `sort_order`, no position last; `area` is still accepted. The offline twin is `subtreeComparer` in `lib/offline.js`.
@@ -119,6 +152,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 `check:area-duplicates`, `check:area-sort-labels`, `check:generic-area-names`, `check:wp-styles`, `check:waypoint-placement`, `check:waypoint-dedupe`,
 `check:track-caveat`, `check:gpx-caveats`, `check:waypoint-caveat`, `check:bottom-panels`, `check:overlays`, `check:overflow`, `check:ui`, `check:zero`,
 `check:area-edit-fields` (the seven editable fields are one list), `check:area-page-honest` (gated facts, chart headline = its bars, one drive control), `check:write-readers`.
+A place filed twice is refused at insert by `refuse_duplicate_area` (0216/0218, a same-named area within 1.5 km) and `refuse_bucket_copy_area` (0340, an area NAMED by a list of two or more places the state already files — MP's "Cascade River Drainage (Eldorado, Forbidden, …)" beside North Cascades Core); `check:area-duplicates` sweeps for both daily.
 Notes: `docs/guards/README.md`.
 
 ## 7. Last significant change

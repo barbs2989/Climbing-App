@@ -15,12 +15,13 @@ const C = {
   border: '#333'
 }
 
-export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, cragAt, onClose, onSuccess }) {
+export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, cragAt, onClose, onSuccess, initialPts }) {
   // A crag's trail can be TRACED on the map ('draw') as well as recorded. It opens first on a crag
   // whenever the map has somewhere to open: the parking pin or the crag's own coordinate.
   const canDraw = !!(crag && (parkAt || cragAt))
   const [tab, setTab] = useState(canDraw ? 'draw' : 'paste') // 'draw', 'paste', 'upload', 'devices'
-  const [drawPts, setDrawPts] = useState([])
+  // A line already drawn in the desktop drawing tool (lib/DrawRoute.jsx) arrives here to be submitted.
+  const [drawPts, setDrawPts] = useState(() => (canDraw && initialPts && initialPts.length ? initialPts : []))
   const drawing = tab === 'draw'
   const [coordinates, setCoordinates] = useState('')
   const [deviceType, setDeviceType] = useState('Garmin')
