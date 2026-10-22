@@ -4,6 +4,7 @@ import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
 import { useRouteSearch } from "./db";
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { C, ME, ROUTES, SKILLS, SKILL_GROUPS, VOUCH_RATINGS, VOUCH_RATINGS_RETIRED, areaPathNames, fuzzyMatchAny, mtnOf, shortDate } from "../ClimbMatchCore.jsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import DiscBadges from "../src/components/DiscBadges.tsx";
@@ -33,8 +34,15 @@ export default function GiveVouch({friend,onClose,onSave,suggest,initial,routeBy
   const sub={fontSize:12,color:C.textSub,lineHeight:1.45,marginBottom:10};
   const pick=(r)=>{setRoute({name:r.name,sub:r.grade+" · "+mtnOf(r)});setQ("");};
   const row=(r,ix,tag)=><div key={r.id} {...clickable(()=>pick(r))} aria-label={"Choose "+r.name} style={{display:"flex",alignItems:"center",gap:9,padding:"9px 10px",borderTop:ix?"1px solid "+C.borderLight:"none",cursor:"pointer"}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13,fontWeight:600,color:C.text,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{r.name}</div><div style={{fontSize:11,color:C.textMuted,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",marginTop:1}}>{tag?<span style={{color:C.blue,fontWeight:700}}>{tag+" · "}</span>:null}{r.grade+" · "+mtnOf(r)}</div></div><DiscBadges route={r} sm/><span style={{flexShrink:0,fontSize:12,fontWeight:700,color:C.blue,border:"1px solid "+C.blueDim,borderRadius:7,padding:"3px 9px"}}>Choose</span></div>;
-  return <div onClick={onClose} role="dialog" aria-label={initial?"Edit your vouch":"Vouch for a climber"} aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.6)",zIndex:220,display:"flex",alignItems:"flex-end",justifyContent:"center"}}><div onClick={e=>e.stopPropagation()} style={{background:C.bg,width:"100%",maxWidth:440,borderRadius:"16px 16px 0 0",padding:18,maxHeight:"88vh",overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.borderHi,borderBottom:"none",boxShadow:"0 -12px 40px rgba(0,0,0,0.55)",boxSizing:"border-box"}}>
-    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:6}}><div style={{color:C.text,fontSize:17,fontWeight:700,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{initial?"Edit your vouch for "+fn:"Vouch for "+fn}</div><button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div>
+  /* Portalled, and ABOVE a climber's profile (9800), which stays open underneath: the sheet was drawn at
+     z 220, under the profile, the résumé (9900) and most overlays, so every caller had to close what it was
+     opened from first -- and whatever else was still open (the résumé, Past crews, a list) showed in its
+     place until that was closed too ("it goes to their climbing resume instead, then eventually shows the
+     vouch"). Closing the sheet now returns you to the profile you vouched from. Below the résumé is moot,
+     since nothing on the résumé opens it; the toast (99999) stays above it. The header STICKS, so the ✕ is
+     in reach wherever the long form is scrolled to. */
+  return createPortal(<div onClick={onClose} role="dialog" aria-label={initial?"Edit your vouch":"Vouch for a climber"} aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.6)",zIndex:9850,display:"flex",alignItems:"flex-end",justifyContent:"center"}}><div onClick={e=>e.stopPropagation()} style={{background:C.bg,width:"100%",maxWidth:440,borderRadius:"16px 16px 0 0",padding:18,maxHeight:"88vh",overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.borderHi,borderBottom:"none",boxShadow:"0 -12px 40px rgba(0,0,0,0.55)",boxSizing:"border-box"}}>
+    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:10,position:"sticky",top:-18,zIndex:2,background:C.bg,margin:"-18px -18px 6px",padding:"14px 18px 8px"}}><div style={{color:C.text,fontSize:17,fontWeight:700,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{initial?"Edit your vouch for "+fn:"Vouch for "+fn}</div><button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div>
     <div style={{fontSize:13,color:C.textSub,marginBottom:15,lineHeight:1.5}}>A vouch is a public reference for someone you’ve actually climbed with. Every part is optional — only say what you saw.</div>
 
     {H("Climb you did together")}
@@ -68,5 +76,5 @@ export default function GiveVouch({friend,onClose,onSave,suggest,initial,routeBy
     <textarea aria-label="A few words (optional)" value={text} onChange={e=>setText(e.target.value)} placeholder={"What was it like climbing with "+fn+"?"} style={{width:"100%",minHeight:62,padding:"10px 11px",borderRadius:10,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13,marginBottom:13,boxSizing:"border-box",resize:"vertical",fontFamily:"inherit"}}/>
     <label style={{display:"flex",alignItems:"center",gap:11,marginBottom:16,cursor:"pointer",fontSize:15,fontWeight:700,color:again?C.green:C.text,background:again?C.greenBg:C.surface,border:"1px solid "+(again?C.green:C.border),borderRadius:11,padding:"12px 14px"}}><input type="checkbox" checked={again} onChange={e=>setAgain(e.target.checked)} style={{width:20,height:20,accentColor:C.green,cursor:"pointer",flexShrink:0}}/><span>I&rsquo;d climb with {fn} again</span></label>
     <button onClick={()=>onSave({_targetId:friend.id,from:ME.name,avatar:ME.avatar,route:(route&&route.name)||"Climbed together",date:initial&&initial.date?initial.date:"Today",ratings:ratings,skills:skills,text:text||"",wouldClimbAgain:again})} style={{width:"100%",padding:12,background:C.blueSolid,color:"#fff",border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",borderRadius:10,fontSize:15,fontWeight:700,cursor:"pointer"}}>{initial?"Save changes":"Post vouch"}</button>
-  </div></div>;
+  </div></div>,document.body);
 }
