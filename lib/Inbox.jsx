@@ -11,11 +11,11 @@ import ActionIcon from "../src/components/ActionIcon.tsx";
 import { POP_BACK } from "./popupChrome.js";
 
 /* `pane` is the desktop website's placement (lib/wideLayout.js): "side" is the LEFT PANE of the
-   two-pane Messages page — a 320px column at the page column's left edge, the open conversation
+   two-pane Messages page — a 280px column at the page column's left edge, the open conversation
    drawn to its right — and "drop" is the drop-down under the top bar's chat icon, whose header
    opens the two-pane page (onExpand). Absent on a phone: the full-screen view, as before. */
 const PANE_STYLE={
-  side:{position:"fixed",top:64,bottom:0,left:"var(--cm-col-left)",width:320,background:C.bg,zIndex:35,overflowY:"auto",overscrollBehavior:"contain",borderRight:"1px solid "+C.border,borderLeft:"1px solid "+C.border,boxSizing:"border-box"},
+  side:{position:"fixed",top:64,bottom:0,left:"var(--cm-col-left)",width:280,background:C.bg,zIndex:35,overflowY:"auto",overscrollBehavior:"contain",borderRight:"1px solid "+C.border,borderLeft:"1px solid "+C.border,boxSizing:"border-box"},
   drop:{position:"fixed",top:70,right:"var(--cm-shell-right)",width:400,maxHeight:"calc(100vh - 90px)",background:C.surface,zIndex:1450,overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderRadius:14,boxShadow:"0 18px 50px rgba(0,0,0,0.6)",boxSizing:"border-box"},
 };
 export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoading,msgs,crews,crewMsgs,connections,onOpenDM,onOpenCrew,onClose,onDeleteDM,onDeleteCrew,msgFrom,onAcceptReq,crewUnread,dmUnread,placeOf,routeById,pane,onExpand,onDismiss}){
