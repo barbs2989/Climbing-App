@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **All friends: the search bar is always there**: `FriendsList` hid its search box until you had five or more friends; it now shows for any list, and a search with no hits names what you typed.
 - **KNOWN HAZARDS: a compact ✎ Edit, not a big Suggest a fix**: the Safety tab's hazards card used a full-size red button beside its heading; it now uses the small ✎ Edit every other route-page card header has (same form, same action).
 - **Profile photo from the avatar; readable dropdowns; the zip says where it puts you**: with no photo, the Profile avatar carries a + and adds one directly. Every `<select>` draws the app's blue chevron (the rule moved to `index.html`; screens App returns early, like Edit profile, drew a black native arrow). Empty rating stars are grey, not border-dark. Edit profile explains the home city is a label and checks a typed zip live (recognised? which state? matches your state?).
 - **Area header: a larger Fire map button, centred on the right**: the red *Fire map* pill on an area's header box was a small chip in the bottom-right corner beside the climb count; it is now a 44px-tall button in its own right-hand column, vertically centred against the area's facts (`lib/DbAreaBrowser.jsx`, `AreaPage`).

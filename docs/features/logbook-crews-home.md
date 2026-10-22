@@ -50,6 +50,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   Each crew renders as `CrewCard`: members, invite (by profile or email), itinerary, `CrewGearList` (who brings what), meet time/place, float plan.
   Every card starts COLLAPSED (`collapsed={!isOpen}` in App; `openCrewId` is set only by `openCrewCard` and the create flows): the header, Log the climb, join requests, Steps to get ready, Crew chat and **View plan ▾**. View plan opens the rest; a link that names a crew opens that one.
   Crew chat and direct messages (`useCrewMessages`, `useDirectMessages`); unread counts via `countCrewUnread`; `Inbox` and `NotifPanel` surface them.
+- **Friends** (`crewView==="friends"`): the first five friends inline; *See all friends (N)* opens `FriendsList` (`lib/FriendsList.jsx`), whose search box ("Search friends by name or @username") shows for ANY non-empty list, not only past four friends, and matches the name on screen (`pubName` + @handle) only. Sort chips Shared goals · Active · A–Z; *Shares an objective with me* filter.
 - **Past crews** (#2395): a crew whose day has passed, that has a log tied to it, or that was dismissed counts as past (`isArchivedCrew`).
   Past-crew members can be vouched for (`GiveVouch`, `givenVouches`). **Archive** and **Clear** (`archiveCrew`, `clearPastCrew`) only hide the crew
   on this device until reload and say so in the toast ("Crew archived on this device until you reload").
