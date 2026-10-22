@@ -29,6 +29,8 @@ room for side-panel ads later. The phone app keeps its own look.
     page column under the top bar, so the top bar, sidebar and rail stay usable; the sidebar, the
     wordmark, the search, ★, the avatar, Calendar and Messages leave an open page first
     (`_closePages`); the Menu opens above an open page. Settings itself stays a small window, and hides while one of its pages is open.
+  - **Route pages** (see route-page.md): breadcrumb, facts beside a photo, and at 1280px+ the route
+    map takes the rail's place (`#cm-route-rail`) instead of the widgets.
   - The **bell** opens Notifications as a drop-down under it at the shell's right edge; Home stops
     repeating its own Alerts list on desktop (the bell and the rail's Alerts card carry it).
   - **Popups that slide up from the bottom** on a phone open as **centred windows** (rounded, at most
@@ -93,7 +95,8 @@ Layout only. The footer reads the states list (`useStates`); the search reads th
   left for the footer; *Best day to climb* left the right rail.
 
 ## 8. Known gaps
-- **Phase 2** (decided; views-as-pages and the bell drop-down shipped): Messages as a drop-down; route page with facts + photo side by side and the map in the rail; the Climbs tab
+- **Phase 2** (decided; views-as-pages, the bell drop-down and the route page shipped): Messages as a
+  drop-down; the Climbs tab
   as a grid of regions; short cards 2–3 per row; Messages as a two-pane inbox.
 - **Phase 3**: public route and area pages with real web addresses. **Phase 4**: printable route
   page, compare routes, full-month calendar, draw an approach → GPX, chat list in the rail, logbook
