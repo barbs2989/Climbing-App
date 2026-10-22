@@ -164,6 +164,7 @@ export const MOVED = {
     "src/components/PlaceMatches.tsx",
     "src/components/SectionJumps.tsx",
     "src/components/MiniCalendar.tsx",
+    "src/components/SunCorrect.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
