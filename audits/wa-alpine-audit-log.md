@@ -32992,3 +32992,44 @@ handshake completes against a genuine `*.supabase.co` cert; it's specifically th
 apikey-authenticated, table-routed requests that hang). No batch was picked;
 `wa-alpine-audit-progress.json` was left untouched. Next run should retry from
 `wa_mount_fernow_southeast_face` as before — nothing to redo, nothing skipped.
+
+## 2026-10-22 — Pass 7, Batch 428
+
+Eight routes across Mount Ferry, Mount Formidable, Mount Fricaba, and Mount Fury's East and
+West Peaks (Direct East Ridge, Mongo Ridge, North Buttress, Southeast Glaciers, West Ridge).
+
+Clean against Wikipedia/SummitPost/Mountain Project/AAC Publications: Mount Ferry's elevation
+(6,195 ft) and rank (8th-highest in the Bailey Range); Mount Formidable's FA party and date
+(Bressler, Clough, Cox, Myers, July 25 1938) — "Ray Clough" on file matches the Ptarmigan
+Traverse's own Wikipedia page, a near-miss since a different search summary suggested "Ralph
+W. Clough"; Mount Fricaba's FA (Bechlem/Newman, 1957, per the Olympic Mountains Climbing
+Guide); Direct East Ridge's FA-era (SummitPost's climber's log confirms the route dates to
+September 1976, consistent with the on-file Fries/Mendoza credit); Mongo Ridge's FA (Wayne
+Wallace solo, Aug 24-27 2006) and stats (25 pitches, ~4,000 ft/1,219 m, Grade VI 5.10) against
+Mountain Project/Alpinist/AAC Publications.
+
+Fixed: `wa_mount_fury_west_west_ridge.high_point_ft` was 8322 — East Fury's figure, misfiled
+on a West Fury route. Every other West-Peak number in the catalog (the area row, the sibling
+Mongo Ridge route, and that route's own West-Fury-summit waypoint) clusters at 8301-8303 ft,
+consistent with the best outside figure (Gilbertson's Oct 2022 theodolite survey, 8305 ft
+±10). Fixed to 8303. SQL: `audits/sql/2026-10-22-batch-428.sql`.
+
+Flagged, not fixed: `wa_mount_fury_east_southeast_glaciers.fa` still credits "Don Keller,
+Joan Firey, and Joe Firey, 1960." Batch 82 (2026-08-08, pass 2) already found this doesn't
+hold up and proposed "Fred Beckey and Helmy Beckey, 1940" instead (medium-high confidence,
+still unapplied in the live DB). This run turned up a third, independent candidate — a
+chronology crediting Bill Cox and Will F. Thompson with East Peak's first ascent in early
+September 1937 via the "Fury Glacier." Three non-overlapping candidates for one first ascent
+is a job for a human with Beckey's Cascade Alpine Guide or the AAJ archive in hand, not
+another guess from this audit.
+
+Noted, not re-flagged: `wa_mount_fury_east_north_buttress.high_point_ft` (8322) disagrees with
+its two East-Peak siblings (8356), but this is the same ambiguity batch 82 already raised for
+the area row — a 2022 theodolite survey gives 8356, a more precise October 2024 GPS resurvey
+by the same party gives 8321.5, so 8322 may be the *more* accurate figure rather than an
+error. Left alone rather than re-litigated. Also noted: `wa_mount_fury_east_mongo_ridge`'s own
+`id` names "fury_east" despite being a West Peak route (its `area_id` is correctly
+`wa_mount_fury_west`) — already flagged by batch 81 as a primary-key rename that needs a
+foreign-key check first, so not repeated here.
+
+Pass 7 continues next run after `wa_mount_fury_west_west_ridge`.

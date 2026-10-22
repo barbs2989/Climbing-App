@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_mount_fernow_southeast_face",
+  "last_processed_id": "wa_mount_fury_west_west_ridge",
   "total_in_scope_last_count": 739,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: Mount Blum's road field states a Baker Lake Road bridge closure 'expected through end of August 2026' -- that date has passed with no reopening notice found either way, so current status is genuinely unconfirmed; left for audit:expiring-closures to track rather than guessed at here.",
@@ -8523,6 +8523,25 @@
       "flagged_for_human_review": 1,
       "clean": 9,
       "note": "Mount Custer, both Mount Daniel routes, Mount Deception, both Mount Despair routes, Mount Ellinor, Mount Fairchild, and Mount Fernow all check out clean against Wikipedia/SummitPost/HistoryLink/Mountaineers -- FA credits and elevations confirmed independently (Custer FA+elevation, Despair FA, Daniel FA+summit-mislabel note, Deception elevation+prominence, Fairchild FA party, Fernow FA all match). Flagged, not fixed: wa_mount_degenhardt_southwest_route itinerary describes a Class-4/5 \"Southwest/Corkscrew Route\" (north ridge -> west ridge -> south ridge) that contradicts this same row own approach/descent_text/pitch_detail (direct south-ridge ascent from the Barrier notch, matching the route name and an independent trip report) -- no source names a Corkscrew route on Degenhardt at all, so likely contaminated itinerary text, but no authoritative replacement found either."
+    },
+    {
+      "batch_number": 428,
+      "date": "2026-10-22",
+      "route_ids": [
+        "wa_mount_ferry_standard",
+        "wa_mount_formidable_south_face",
+        "wa_mount_fricaba_standard",
+        "wa_mount_fury_east_direct_east_ridge",
+        "wa_mount_fury_east_mongo_ridge",
+        "wa_mount_fury_east_north_buttress",
+        "wa_mount_fury_east_southeast_glaciers",
+        "wa_mount_fury_west_west_ridge"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 1,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-10-22-batch-428.sql",
+      "note": "wa_mount_fury_west_west_ridge's high_point_ft (8322) was East Fury's elevation misapplied to a West Fury route -- fixed to 8303 to match the area row and the sibling Mongo Ridge route's own figures/waypoint. wa_mount_fury_east_southeast_glaciers' fa (Keller/Firey 1960) is still unresolved from batch 82 (which proposed Beckey/Beckey 1940, unapplied); this run found a third candidate (Cox/Thompson 1937) -- flagged, not fixed. wa_mount_fury_east_north_buttress's 8322 vs its siblings' 8356 is the same East-Fury elevation-survey ambiguity batch 82 already flagged for the area row (2022 survey vs more precise Oct 2024 resurvey); not re-litigated."
     }
   ]
 }
