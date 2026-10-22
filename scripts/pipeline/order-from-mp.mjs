@@ -287,7 +287,7 @@ const addsFile = `${ORDER}/${STATE}.adds.json`, addsMap = existsSync(addsFile) ?
 const log = x => appendFileSync(logFile, JSON.stringify(x) + "\n");
 const elsewhere = (mpId, areaId) => { const r = routeById.get(idMap[mpId]); return r && r.area_id !== areaId ? r : null; };
 const tot = { walls: 0, matched: 0, added: 0, anchored: 0, unplaced: 0, review: 0, elsewhere: 0, skipped: 0, refused: 0 };
-let n = 0;
+let n = 0, failedRun = 0;
 for (const x of votes) {
   if (done.has(x.mpArea)) continue;
   if (n >= LIMIT) break;
@@ -306,7 +306,12 @@ for (const x of votes) {
     review: c("REVIEW").map(p => `${p.name} — ${p.why}`), elsewhere: c("ELSEWHERE").map(p => `${p.name} — ${p.why}`), changes: w.writes.length };
   tot.walls++; tot.matched += entry.matched; tot.added += APPLY ? 0 : w.adds.length; tot.anchored += entry.anchored; tot.unplaced += entry.unplaced; tot.review += entry.review.length; tot.elsewhere += entry.elsewhere.length;
   if (!APPLY) { log({ ...entry, status: "planned" }); continue; }
-  const r = await writeWall(area, w);
+  // A wall whose write still fails after the retries is logged as an error and the state goes on (a re-run
+  // redoes it; an add that landed before the failure is matched by name then). Five failed walls in a row
+  // means the database is down: stop the state rather than wait out every wall.
+  let r;
+  try { r = await writeWall(area, w); failedRun = 0; }
+  catch (e) { log({ ...entry, status: "error", why: e.message.slice(0, 300) }); console.error(`${area.id}: ${e.message.slice(0, 200)}`); if (++failedRun >= 5) throw new Error(`${state.name}: 5 walls in a row failed to write — the database looks down; re-run to resume`); continue; }
   for (const a of r.added) { addsMap[a.mpId] = a.row.id; routeById.set(a.row.id, { ...a.row }); }
   writeFileSync(addsFile, JSON.stringify(addsMap));
   tot.refused += r.refused.length; tot.added += r.added.length;
