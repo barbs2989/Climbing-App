@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_mount_fury_west_west_ridge",
+  "last_processed_id": "wa_mount_hinman_west_route",
   "total_in_scope_last_count": 739,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: Mount Blum's road field states a Baker Lake Road bridge closure 'expected through end of August 2026' -- that date has passed with no reopening notice found either way, so current status is genuinely unconfirmed; left for audit:expiring-closures to track rather than guessed at here.",
@@ -8542,6 +8542,24 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-10-22-batch-428.sql",
       "note": "wa_mount_fury_west_west_ridge's high_point_ft (8322) was East Fury's elevation misapplied to a West Fury route -- fixed to 8303 to match the area row and the sibling Mongo Ridge route's own figures/waypoint. wa_mount_fury_east_southeast_glaciers' fa (Keller/Firey 1960) is still unresolved from batch 82 (which proposed Beckey/Beckey 1940, unapplied); this run found a third candidate (Cox/Thompson 1937) -- flagged, not fixed. wa_mount_fury_east_north_buttress's 8322 vs its siblings' 8356 is the same East-Fury elevation-survey ambiguity batch 82 already flagged for the area row (2022 survey vs more precise Oct 2024 resurvey); not re-litigated."
+    },
+    {
+      "batch_number": 429,
+      "date": "2026-10-22",
+      "route_ids": [
+        "wa_mount_goode_northeast_buttress",
+        "wa_mount_hardy_snow_scramble",
+        "wa_mount_herman_standard_scramble",
+        "wa_mount_hinman_east_route",
+        "wa_mount_hinman_hinman_glacier",
+        "wa_mount_hinman_southeast_route",
+        "wa_mount_hinman_west_ridge",
+        "wa_mount_hinman_west_route"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 0,
+      "clean": 8,
+      "note": "DB was reachable this run after four straight unreachable runs (2026-10-16 and three on 2026-10-22). All 8 routes checked out clean: Mount Goode's Northeast Buttress FA (Beckey/Stewart 1966) and first winter ascent (Pilling/Mascioli 1984) match SummitPost; Mount Hardy's FA (Schmerling/Ulrichs 1933) and elevation hedge match Wikipedia/SummitPost's own source split; Mount Herman's elevation matches the Mountaineers; Mount Hinman's Hinman Glacier route (elevation, 1928 FA, 1934 naming, 2022 glacier collapse) matches Wikipedia and press coverage. East/Southeast/West Route are bare stubs with nothing to check; West Ridge's one claim is internally consistent."
     }
   ]
 }

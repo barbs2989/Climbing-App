@@ -33081,3 +33081,34 @@ picked; `wa-alpine-audit-progress.json` untouched. Next run should still retry f
 Four runs in a row now (2026-10-16, and three on 2026-10-22) with the database completely
 unreachable. This audit cannot make any progress until a human checks whether the Supabase
 project is paused (e.g. for inactivity/billing) and resumes it.
+
+## 2026-10-22 — Pass 7, Batch 429
+
+DB reachable again this run after four straight failures (2026-10-16 and three on 2026-10-22) --
+unauthenticated `GET /rest/v1/` still returned instantly as before, but authenticated queries
+against `routes` and `areas` now succeed normally; a human may have resumed the Supabase
+project, or it came back on its own. Worth a human confirming nothing needs attention there.
+
+Eight routes across four peaks: Mount Goode (Northeast Buttress), Mount Hardy (Southeast Slope
+via Methow Pass), Mount Herman (Standard Scramble), and all five Mount Hinman routes (East
+Route, Hinman Glacier/Standard, Southeast Route, West Ridge, West Route).
+
+8 clean, 0 fixed, 0 flagged: Mount Goode's Northeast Buttress FA (Fred Beckey & Tom Stewart,
+Aug 6 1966) and its first winter ascent (Bill Pilling & Steve Mascioli, March 3-5 1984) both
+match SummitPost's route page exactly; the peak's own elevation (9,220+ ft) matches Wikipedia.
+Mount Hardy's FA (Schmerling & Ulrichs, 1933) and 1973 name-adoption date match Wikipedia, and
+its elevation hedge ("8,099 ft, or 8,097 ft...within survey variance") correctly reflects a
+genuine source split (Wikipedia's 8,099 vs SummitPost's undetermined 8,080-8,120 range) rather
+than inventing false precision. Mount Herman's elevation (6,285 ft) matches the Mountaineers'
+route page exactly (SummitPost's 6,286 is rounding noise). Mount Hinman's Hinman Glacier/
+Standard route checked out on every specific claim: elevation (7,492 ft), the 1928 first
+ascent with party unknown, the 1934 naming for Dr. Harry B. Hinman, and the glacier's 2022
+collapse (Mauri Pelto/NCGCP found it reduced to ~10 acres of non-flowing ice, widely reported
+Jan 2023) all match Wikipedia and contemporary press coverage. All four parent-area coordinates
+(Goode, Hardy, Herman, Hinman) fall within the expected bounding box for each named peak and
+sit under the correct branch of the area hierarchy. East Route, Southeast Route and West Route
+are near-empty stub rows (id/area/name/discipline only) with nothing to verify; West Ridge's
+one substantive claim (La Bohn Gap approach via the Hinman Glacier's upper margin) is
+consistent with its own overview and with the Hinman Glacier route's shared approach.
+
+Pass 7 continues next run after `wa_mount_hinman_west_route`.
