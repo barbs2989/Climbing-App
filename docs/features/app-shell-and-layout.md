@@ -37,6 +37,9 @@ room for side-panel ads later. The phone app keeps its own look.
   - **The Climbs tab shows its regions as a grid** of cards with their climb counts (the countries
     as buttons when there are two or more) instead of two dropdowns; **Groups** lists its group
     cards and your group rows two per row. Partner and crew cards are long, so they stay one per row.
+  - **The Calendar has a month view** above its lists (`MonthGrid`): your crews' agreed climbing days and
+    group events on a month grid with ‹ › and *Today*; each entry opens what the list would. Crew days and
+    events only (owner).
   - The **bell** opens Notifications as a drop-down under it at the shell's right edge; Home stops
     repeating its own Alerts list on desktop (the bell and the rail's Alerts card carry it).
   - **Popups that slide up from the bottom** on a phone open as **centred windows** (rounded, at most
@@ -75,6 +78,7 @@ below the top bar) do not trip it. Any new fixed desktop panel must not either.
 | File | Key symbols |
 |---|---|
 | `lib/wideLayout.js` | `useWideScreen`, `useFullWidth`, `wideGeom`, `wideColumn`, `wideSidebar`, `wideRail`, `wideTopBar`, `wideTopRow`, `wideCss`, `WIDE_MIN`, `FULL_MIN` |
+| `lib/MonthGrid.jsx` | `MonthGrid` |
 | `lib/DesktopShell.jsx` | `WideSearch`, `WideRail`, `WideFooter`, `DocTitle` |
 | `lib/dialogA11y.js` | `coveringLayer` |
 | `ClimbMatch.jsx` | `NAV`, `goTab`, `navBadge`, `_inChat`, `_known`, `_openMe`, `_closePages`, `_pageView` |
@@ -92,6 +96,7 @@ Layout only. The footer reads the states list (`useStates`); the search reads th
 `check:zindex`. The browser walks drive a phone-width window, so they cover the phone layout only.
 
 ## 7. Last significant change
+- **Desktop phase 4b**: the Calendar's month view (`MonthGrid`).
 - **Desktop phase 2c**: Climbs region grid, two-per-row Groups lists, two-pane Messages with a chat drop-down; the footer's Shortcuts column and the sidebar's Profile row removed (owner).
 - **Desktop phase 2a**: every full-screen view is a page in the column, the desktop nav leaves it, the
   bell is a drop-down, and Home's Alerts list is phone-only.
