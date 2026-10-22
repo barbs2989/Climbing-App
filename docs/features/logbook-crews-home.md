@@ -71,6 +71,8 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   Below that, the **Nothing needs you right now** card: the all-caught-up state, shown only when there is no pending request or invite (`reqN`), no unread DM or crew chat, no crew waiting on your day, no unread alert and no friend activity. A climber with no objectives yet gets "Explore climbs and save one as an objective to get started" and an *Explore climbs* button; anyone with objectives gets the plain all-clear and no button (the *Jump back in* tile already offers it).
 - **All friends (`FriendsList`, `lib/FriendsList.jsx`, opened by *See all friends (N)* on Crew › Friends)**: a **Search friends** box sits at the top for any list with a friend in it (it used to appear only past four). It matches the name on screen and the @handle (`pubName`, never a hidden real name), has a clear ✕ (Escape also clears), hides *Recent friend activity* while a query is typed so the matches sit under the box, and an empty result names the query. Sort chips (Shared goals · Active · A–Z) and *Shares an objective with me* filter the same list.
 
+- **Download as CSV (desktop website)**: My Ascents has a *⤓ Download as CSV* button — every logged climb as one row (date, climb, where, grade, discipline, style, stars, partners, notes), newest first; disabled while your climbs could not load (`downloadLogbookCsv` in `lib/DesktopShell.jsx`).
+
 ## 2. How it works
 1. `App` reads server state through React Query hooks in `lib/db.js`: `useMyObjectives`, `useUserLogs`, `useMyCrews`, `useMyItineraries`,
    `useMyCrewInvites`, `useMyObjectiveSavedAt`. Writes are `saveObjective`/`removeObjective`, `createClimbLog`/`updateClimbLog`/`deleteClimbLog`,
