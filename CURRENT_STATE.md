@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Desktop: compare climbs side by side**: *+ Compare* on a route page fills a tray at the bottom of the window (up to four), and *Compare* opens a table of grade, length, pitches, approach, gain, aspect, season, rating, hazards and the best day this week. Desktop website only. See `docs/features/route-page.md`.
 - **Desktop: print a route, download your logbook**: a route page has *⎙ Print* — a one-sheet printout of approach, pitches, descent, rack, hazards and waypoints — and My Ascents has *⤓ Download as CSV*. Desktop website only. See `docs/features/route-page.md` and `docs/features/logbook-crews-home.md`.
 - **Manage areas lists every state again**: while the state list was still loading (seconds on a slow connection) it fell back to the demo data, so 46 of 50 states read "No climbs in the catalog", greyed out and untappable, and Washington claimed "1 climb". Rows now say *Loading the catalog…* until the real counts land, and a failed read says so. See [logbook-crews-home.md](docs/features/logbook-crews-home.md).
 - **Profile: Vouches you’ve received**: your own Profile tab now shows what partners said about you (the two newest in full, *See all* for the rest) above the vouches you gave. Before, it showed only a count, and the vouches themselves were reachable only through View public profile. See `docs/features/profile-and-settings.md`.

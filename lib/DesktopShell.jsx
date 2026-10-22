@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { C, ROUTES, DISC, catOf, gradeLabel, routeLocText, shortDate, daysUntil } from "../ClimbMatchCore.jsx";
+import { C, ROUTES, catOf, gradeLabel, routeLocText, shortDate, daysUntil } from "../ClimbMatchCore.jsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
+import { discLabel } from "./discLabels";
 import { usePlaceSearch, useRouteSearch, useStates } from "./db.js";
 import { USE_DB } from "./supabase";
 
@@ -25,9 +26,8 @@ export function downloadLogbookCsv(logs, routeById) {
   const head = ["Date", "Climb", "Where", "Grade", "Discipline", "Style", "Stars", "Partners", "Notes"];
   const rows = (logs || []).slice().sort((a, b) => String(b.date || "").localeCompare(String(a.date || ""))).map(l => {
     const r = routeById ? routeById(l.routeId) : null;
-    const disc = r ? DISC[catOf(r)] : null;
     const partners = (l.partners && l.partners.length ? l.partners : []).concat(l.typedPartners || []);
-    return [l.date || "", r ? r.name : "", r ? routeLocText(r) : "", r ? gradeLabel(r) : "", disc ? disc.label : "", l.tickType || "", l.stars || "", partners.join("; "), l.text || ""];
+    return [l.date || "", r ? r.name : "", r ? routeLocText(r) : "", r ? gradeLabel(r) : "", r ? discLabel(catOf(r)) : "", l.tickType || "", l.stars || "", partners.join("; "), l.text || ""];
   });
   const csv = [head].concat(rows).map(row => row.map(csvCell).join(",")).join("\r\n");
   const url = URL.createObjectURL(new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8" }));
