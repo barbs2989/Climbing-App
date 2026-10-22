@@ -1198,6 +1198,9 @@ const FILLER_CLIMBERS=DEMO_FILLERS?(()=>{
     if(disc.includes("mixed"))sends.mixed={life:fh(k,37)%18,yr:fh(k,38)%5};
     if(disc.includes("scrambling"))sends.scrambling={life:fh(k,39)%40,yr:fh(k,40)%9};
     if(disc.includes("mountaineering"))sends.mountaineering={life:fh(k,41)%20,yr:fh(k,42)%5};
+    /* Their résumé's notable climbs. A filler had none, so its "23 climbs" chip and the profile's "View climbing résumé" opened a résumé reading "0 climbs · hasn't shared any climbs here" — the owner's "viewing others' résumé doesn't work" (2026-10-21). Drawn from seed routes in their own disciplines, with a style that discipline offers (no Solo). */
+    const tkPool=ROUTES.filter(r=>disc.includes(catOf(r)));const tkN=Math.min(routesLogged,tkPool.length,4+fh(k,70)%5);
+    const ticks=Array.from({length:tkN},(_,i)=>{const r=tkPool[(fh(k,71)+i)%tkPool.length];const st=(RESUME_STYLES[catOf(r)]||["Lead"]).filter(s=>s!=="Solo");return {routeId:r.id,date:(2022+fh(k,72+i)%4)+"-"+String(1+fh(k,80+i)%12).padStart(2,"0")+"-"+String(1+fh(k,90+i)%28).padStart(2,"0"),role:st[fh(k,100+i)%st.length],partner:null};});
     return {id:1000+k,name:fname+" "+lname,username:(fname+lname).toLowerCase(),showName:fh(k,55)%2===0,age:21+fh(k,4)%34,location:LOC[fh(k,5)%LOC.length],
       lat:40.76+((fh(k,6)%240)-120)/110,lng:-111.89+((fh(k,7)%240)-120)/95,avatar:"https://i.pravatar.cc/120?img="+(1+fh(k,8)%70),
       level,years:1+fh(k,10)%19,disciplines:disc,
@@ -1208,7 +1211,7 @@ const FILLER_CLIMBERS=DEMO_FILLERS?(()=>{
       verified:fh(k,15)%3!==0,objectiveIds:[...new Set([ROUTES[fh(k,16)%ROUTES.length].id,ROUTES[fh(k,17)%ROUTES.length].id])],
       vehicle:"",gear:[],certifications:[],belayDevices:{},
       catchLedger:{totalCatches:fh(k,18)%85,highFactorCatches:fh(k,19)%15,lastCatch:"",partnersSigned:fh(k,20)%12},
-      safetyScore:70+fh(k,21)%30,communityVouches,routesLogged,vertYr,daysYr,classics,
+      safetyScore:70+fh(k,21)%30,communityVouches,routesLogged,ticks,vertYr,daysYr,classics,
       stats:{peaks:{life:peaksLife,yr:peaksYr},sends,onsights:{rock:rock?{life:Math.round(sendsRockLife*onsightRate),yr:Math.round(sendsRockYr*onsightRate)}:{life:0,yr:0},sport:{life:Math.round((sends.sport&&sends.sport.life||0)*onsightRate),yr:Math.round((sends.sport&&sends.sport.yr||0)*onsightRate)},trad:{life:Math.round((sends.trad&&sends.trad.life||0)*onsightRate),yr:Math.round((sends.trad&&sends.trad.yr||0)*onsightRate)},bouldering:bould?{life:Math.round(sendsBoulderLife*onsightRate),yr:Math.round(sendsBoulderYr*onsightRate)}:{life:0,yr:0}}},
       floatPlanEnabled:false,emergencyContact:"",photos:[],riskTolerance:RISK[fh(k,43)%3],vouches,resumePublic:fh(k,44)%5!==0,hikingSpeedFtHr:700+fh(k,45)%1000,technicalSpeedFtHr:300+fh(k,46)%500,online:fh(k,47)%4===0};
   });
