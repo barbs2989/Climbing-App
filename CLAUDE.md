@@ -226,7 +226,7 @@ npm run check:contrib-summary # ...and its CURRENT-VALUE line never prints [obje
 npm run check:correction-readers # no enrichment column out-votes an agreed correction (in build)
 npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
-npm run check:challenge-rows # tick-list rows say something true, and the tick matches the row
+npm run check:challenge-rows # tick-list rows say something true, the tick matches the row, and no row's text overlaps at 390 or 320px
 npm run check:route-tags # real list prose still reaches a list key, and each key renders (in build)
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)

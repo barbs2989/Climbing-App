@@ -204,6 +204,23 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     shortest and was never guaranteed to be this one — *a guard that might look at the right card
     is not a guard.* `scripts/oneoff/probe-colorado-14ers-ceiling-copy.mjs` is the before/after
     measurement, and it fails closed on a card that never expanded.
+- **No list row's text may run into another's, on a phone (`check:challenge-rows`, 2026-10-22).**
+  The owner saw Liberty Crack and Liberty Ridge print over their own facts in the Fifty Classics
+  list. #2575 had already let the name and the facts column both wrap (facts capped at 45%); this
+  section measures that it holds. It expands **every** list card in turn (Discipline Quiver
+  excepted: it draws discipline chips, not rows) at **390 and 320px**, and compares the box of
+  every text run in a row with every other run in that row and with the row's right edge.
+  - **It reads boxes, not text.** Overlapping text is still all there in `innerText`, so a text
+    assertion cannot see this class at all.
+  - **Fails closed:** a card that expands to no new rows, fewer than 5 cards, or a Fifty Classics
+    list without both Liberty rows means nothing was measured.
+  - **Proven:** with the row put back to one-line no-wrap columns, it failed with 42 findings,
+    among them `"Liberty Bell Mountain · Washington" overlaps "Alpine · 5.11a C2"`; on main it
+    passes on 13 lists at both widths.
+  - **Traps met building it.** List rows are `role="button"` like the card headers, so cards are
+    read with every list closed and rows (`padding: 8px 6px`) filtered out; tapping a row leaves
+    the panel. The *All* filter re-renders, so cards are read in a separate step after the click.
+    The panel opens on whichever filter the chip implies, which hid the Fifty Classics card.
 - **`audit:list-coverage` counted roster LENGTH, not tickable peaks (fixed 2026-10-22).** It read
   "complete" for the 14ers, Bulgers and Cascade cards while four roster ids named rows a cleanup had
   folded away (`co_la_plata_peak`, `co_torreys_peak`, `co_pikes_peak`, `or_mt_hood`) and six peaks
