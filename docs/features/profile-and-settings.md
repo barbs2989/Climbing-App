@@ -55,7 +55,10 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   `settingsLegalOpen`). Privacy & safety: every visibility and who-can-reach-you control, the inbox filter, the résumé switch,
   restricted and blocked climbers. Notifications: the three switches. Your data & account: sign in/out, Edit profile, the guide
   entries, Edit areas/disciplines/grades, Your conditions, Readiness defaults, units and date format (*Display*), then export,
-  opt out and delete. Legal & help: the four documents and How ClimbMatch works. Four flags rather than one, so each page is
+  opt out and delete. Legal & help: the four documents and How ClimbMatch works.
+  The Accessibility document (`lib/LegalView.jsx`, its own `ACCESS_UPDATED` date) ends in a *Report an accessibility problem* form
+  (`AccessReportForm` → `fileAccessibilityReport` → `accessibility_reports`, 0343) — signed in only; the owner reads the rows in
+  the Supabase dashboard and replies to the account email. Before 0343 the statement pointed at Feedback, which sends nothing. Four flags rather than one, so each page is
   its own overlay the browser walks open by name. `closeSettings` closes the sheet and any open page when a row leaves Settings.
 
 ## 2. How it works
@@ -92,11 +95,12 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 | `lib/VerifyEmailPanel.jsx` | `VerifyEmailPanel` (emailed-code verification on Profile, 0306) |
 | `lib/db.js` | `uploadProfilePhoto`, `saveProfilePhotos`, `saveProfileAvatar`, `saveProfilePhotoAlts`, `removeProfilePhoto`, `useFullProfile`, `useMyZip`, `useMyEmergencyContact`, `useMyTrustCounts`, `useVerificationRecords`, `giveVouch`, `setAllMyTripReportVisibility`, `fetchProfilesByIds` |
 | `lib/GiveVouch.jsx`, `lib/Onboarding.jsx` | vouch sheet; first-run onboarding |
+| `lib/LegalView.jsx` | `LegalView` (Terms, Privacy, Guidelines, Accessibility), `AccessReportForm`, `ACCESS_UPDATED` |
 | `lib/units-pref.js`, `lib/date-pref.js`, `lib/notif-pref.js`, `lib/browse-visibility-pref.js`, `lib/inbox-pref.js`, `lib/onboard-pref.js`, `lib/prefs.js` | device-local preference modules |
 
 ## 4. Data
 - **Supabase tables**: `profiles` (0009; `show_name` 0175; `discoverable` 0104/0110; `resume_public` 0177; certifications 0181), `profile_zips` (owner-only) + `zip_centroids` (0189),
-  `verification_records` (policies 0058; `verify_my_email()` 0085, inbox proof 0306), vouches, `my_trust_counts` (0203; the counts only — `compute_trust_score` was dropped in 0335), `blocked_users` (0088), storage bucket `topo-photos` for profile photos.
+  `verification_records` (policies 0058; `verify_my_email()` 0085, inbox proof 0306), vouches, `my_trust_counts` (0203; the counts only — `compute_trust_score` was dropped in 0335), `blocked_users` (0088), `accessibility_reports` (0343, file own / read own / admin updates), storage bucket `topo-photos` for profile photos.
 - **Device-local (localStorage)**: units, date format, notification switches, visible-while-browsing, onboarding-prompted.
   These do **not** follow a climber to another device.
 - **Seed / in-memory**: `ME`, `CLIMBERS`/`FILLER_CLIMBERS` (gated by `DEMO_FILLERS`); seed résumé ticks (`ME.ticks`) are cleared by the sign-in reset.
@@ -116,6 +120,7 @@ All present in `package.json`: `check:profile-edit-gate`, `check:profile-draft-p
 Notes: `docs/guards/settings-and-persistence.md`, `honesty-claims.md`, `units-and-formatting.md`, `seed-and-identity.md`, `outage-and-read-failures.md`.
 
 ## 7. Last significant change
+- **Accessibility reports reach someone** (0343) — the statement's report form saves to `accessibility_reports`; it used to point at the Feedback button, which only copies to the clipboard.
 - **Menu: Your crews + shortcuts first** — a Crews tile and a *Your crews* list; both shortcut lists sit above the tiles.
 - **Menu: Saved & lists + Edit profile** — saved areas, saved searches, challenges and climbing lists get Menu tiles; Edit profile sits beside View profile on the card.
 - **Menu lists your groups** — a *Your groups* section with up to five, newest post first, each opening the group.
@@ -125,6 +130,7 @@ Real climbers, batch 3: the résumé header, export title and "hasn't shared" li
 - **#2415** — Résumé Experience groups now Sport · Trad · Ice & Mixed · Alpine & Mountaineering · Bouldering · Scrambling (was Crag … Other); seed ticks re-tagged (`ClimbMatchCore.jsx` only).
 
 ## 8. Known gaps
+- Nothing notifies the owner of a new `accessibility_reports` row; it is read in the Supabase dashboard. A signed-out visitor cannot file one (this project's anon role cannot write, 0078).
 - Units, date format, notification and browse-visibility switches live in localStorage only (`lib/units-pref.js`, `lib/date-pref.js`, `lib/notif-pref.js`, `lib/browse-visibility-pref.js`): not synced across devices.
 - `saveProfile` PATCHes any object it is handed; safety depends on callers sending only loaded fields (enforced by `check:profile-edit-gate`, not by the function).
 - `ME.* = ...` mutation per render remains a second source of truth that the codebase asks not to extend.
