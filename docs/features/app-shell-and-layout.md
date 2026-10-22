@@ -29,6 +29,8 @@ room for side-panel ads later. The phone app keeps its own look.
     page column under the top bar, so the top bar, sidebar and rail stay usable; the sidebar, the
     wordmark, the search, ★, the avatar, Calendar and Messages leave an open page first
     (`_closePages`); the Menu opens above an open page. Settings itself stays a small window, and hides while one of its pages is open.
+  - **Route pages** (see route-page.md): breadcrumb, facts beside a photo, and at 1280px+ the route
+    map takes the rail's place (`#cm-route-rail`) instead of the widgets.
   - **Messages are two panes**: the chat icon drops the inbox down under it (*Open Messages* opens the
     page); on the page the inbox is a 320px left pane (`Inbox pane="side"`) and the conversation you
     pick opens to its right, the inbox staying open; *Choose a conversation* fills the right until then.
@@ -90,7 +92,7 @@ Layout only. The footer reads the states list (`useStates`); the search reads th
 `check:zindex`. The browser walks drive a phone-width window, so they cover the phone layout only.
 
 ## 7. Last significant change
-- **Desktop phase 2c**: Climbs region grid, two-per-row Groups lists, two-pane Messages with a chat drop-down; the footer's Shortcuts column removed (owner).
+- **Desktop phase 2c**: Climbs region grid, two-per-row Groups lists, two-pane Messages with a chat drop-down; the footer's Shortcuts column and the sidebar's Profile row removed (owner).
 - **Desktop phase 2a**: every full-screen view is a page in the column, the desktop nav leaves it, the
   bell is a drop-down, and Home's Alerts list is phone-only.
 - **The website shell** (desktop phase 1 of 4, owner-decided 2026-10-21): top bar with search, sidebar
