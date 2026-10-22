@@ -741,6 +741,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       (edit later)": WW's page says "eastern end of SMW formation", so Crumbly Slab joins Spring Morning Wall. BW is
       its own undeveloped buttress, so it stays, lifted under Pickledish, with The Bad on it. Three placeholders are
       deleted.
+    - **The rest of 0320's waiting climbs — 0349** (2026-10-22), plus **0350** (the last sort label, "c Electric Co.
+      Sector"). Three rules from 0324 were added:
+      - a chain that begins at the state waits (420 did);
+      - "generic" is tested with the ancestors, and a generic LEVEL is stepped over;
+      - of several areas of ours that could be the home, the one inside the list's crag is taken.
+
+      It also covers the 591 names the source lists once but which several of our areas share. 364 climbs moved
+      (nearly all onto areas we had), 4 walls were created, and 11 lists were folded. **Every move, not a sample, was
+      checked against its live page**, and 21 were dropped. Seven had been re-filed by the source since the crawl
+      (Hotel Boulders: C Block → A Block). Fourteen were a spelling-distance false match: Seal Rock's "S Side" read as
+      our "South Ridge" (side/ridge is 2 edits). **Edit distance ≤ 2 matches different words when they are short; a
+      live check of every move is cheap (~8 min) and catches it.** Still waiting: 481 whose source home is itself
+      generic, 420 state-anchored, 123 with several areas of ours outside the crag, and ~1,341 the source lists
+      under several homes.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
