@@ -25,6 +25,9 @@
 // without a coordinate or climbs — the first pass skipped them, and 209 such groups ("Pawn, The" beside
 // "The Pawn") had collected unseen.
 //
+// A THIRD pass (0340) flags a BUCKET: an area named by a list of places the state already files —
+// "Cascade River Drainage (Eldorado, Forbidden, Johannesburg, …)" beside North Cascades Core.
+//
 // What it cannot see: a copy under ANOTHER parent over 3 km from its twin (coordinate slop larger than
 // that) or with no coordinate or no climbs yet, and a copy spelled differently beyond what the key folds
 // ("Kody Block" vs "The Kody Boulder"). Long Hill's copy of Hidden in Plain Sight Boulders was all three
@@ -103,6 +106,30 @@ for (const [g, list] of sib) {
     const [a, b] = [x, y].sort((p, q) => p.id < q.id ? -1 : 1);
     pairs.set(a.id + "|" + b.id, `${a.name} / ${b.name} (same parent)`);
   }
+}
+// BUCKET COPIES (0340): an area NAMED by a list of places the state already files — Mountain Project's
+// "Cascade River Drainage (Eldorado, Forbidden, Johannesburg, Sahale, Torment, etc.)" beside our North
+// Cascades Core, which holds every one of those peaks. No coordinate and a name no key folds, so neither
+// pass above nor the 0216 trigger could pair it; the owner (2026-10-21): "this keeps happening … We need
+// to have guards". TWO OR MORE listed names, each filed elsewhere in the state (not inside the bucket),
+// make it a copy. Compass and face words do not count ("Sport Boulder (E and NE Face)", "Sunset Slab
+// (N & S)"). The same rule is refuse_bucket_copy_area() in 0340, which refuses one at insert.
+const FACE = new Set(["n", "s", "e", "w", "ne", "nw", "se", "sw", "north", "south", "east", "west", "northeast", "northwest", "southeast", "southwest", "face", "faces", "side", "sides", "wall", "walls", "end", "upper", "lower"]);
+const byKey = new Map();
+for (const a of areas) { const k = String(a.path).split(".").slice(0, 2).join(".") + "|" + catalogKey(a.name); (byKey.get(k) || byKey.set(k, []).get(k)).push(a); }
+for (const a of areas) {
+  const list = /\(([^)]*)\)/.exec(a.name)?.[1];
+  if (!list || String(a.path).split(".").length < 3) continue;
+  const st = String(a.path).split(".").slice(0, 2).join(".");
+  const hits = [];
+  for (const item of list.split(/\s*(?:,|\/|&|\band\b)\s*/i)) {
+    if (/^etc\.?$/i.test(item) || words(item).every(w => FACE.has(w))) continue;
+    const k = catalogKey(item);
+    if (k.length < 4) continue;
+    const twin = (byKey.get(st + "|" + k) || []).find(o => o.id !== a.id && !within(a, o));
+    if (twin) hits.push(`${item.trim()} = ${twin.id}`);
+  }
+  if (hits.length >= 2) pairs.set(a.id + "|(bucket)", `${a.name} — already filed: ${hits.join(", ")}`);
 }
 const found = Object.fromEntries([...pairs].sort());
 
