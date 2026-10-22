@@ -33046,3 +33046,19 @@ recent relay failures, proxy enabled and otherwise healthy — this is specific 
 Supabase project's data path (database/compute still paused or down), not the egress proxy.
 No batch was picked; `wa-alpine-audit-progress.json` untouched. Next run should still retry
 from `wa_mount_fury_west_west_ridge` as before.
+
+## 2026-10-22 (follow-up run 3) — DB unreachable, no batch run
+
+Third consecutive failure to reach the database. Same signature as the prior two 2026-10-22
+runs and the 2026-10-16 run: an unauthenticated `GET /rest/v1/` returns instantly (401 "No
+API key found in request"), so TLS/network reach the project fine, but authenticated queries
+against both `routes` and `areas` (`sb_publishable_...` key, `apikey`/`Authorization` headers)
+time out with zero bytes after 20-30s. Checked the agent-proxy status endpoint again: no
+recent relay failures, proxy enabled and healthy — this keeps pointing at the Supabase
+project's database/compute being paused or down, not an egress/proxy issue on this side.
+No batch was picked; `wa-alpine-audit-progress.json` untouched. Next run should still retry
+from `wa_mount_fury_west_west_ridge` as before.
+
+This is the third run in a row (spanning multiple scheduled firings, not just retries within
+one) unable to reach the DB at all — worth a human checking whether the Supabase project
+needs to be resumed/unpaused, since this audit cannot make progress until it is.
