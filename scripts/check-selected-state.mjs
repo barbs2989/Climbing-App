@@ -265,6 +265,10 @@ const SCAN = `(() => {
   //     overlay:settingsOpen  [ft mi|m km]                  the units toggle
   // Both are controls #1233 had just fixed. A 25% saving is not worth two controls of coverage,
   // and this repo's own rule is that a skipped check is worth less than a runner minute.
+  // (2026-10-15: that sort bar is now a native <select>, which needs no aria state, but the same
+  // group view still puts stateful rows only it reaches behind the dialog: the page's tabs
+  // (aria-current), the topic filter (aria-pressed), and each post's Like (aria-pressed) and
+  // Comment (aria-expanded) buttons. The argument stands.)
   for (const el of document.querySelectorAll("button,[role='button'],[role='tab'],[role='checkbox']")) {
     if (!vis(el)) continue;
     const p = el.parentElement; if (!p) continue;

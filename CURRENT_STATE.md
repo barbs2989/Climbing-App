@@ -27,6 +27,9 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Menu: Your crews, and shortcuts first**: a *Crews · N* tile joins *Yours* (Groups takes the chat icon so the two differ), and a *Your crews* section lists up to five active crews with their unread counts, each opening that crew. *Your crews* and *Your groups* now sit above the tile groups, as Facebook's Menu leads with your shortcuts.
+
+- **Logged climb vs trip report, reviewed**: both are one `climb_logs` row, and the Logbook doc now maps what each kind feeds. A *Conditions only* report no longer pairs two climbs as "Logged the same day" (0336). Your *Log conditions on 5 routes* challenge now counts Conditions-only reports, and it no longer shows another climber a 0 it cannot measure. See `docs/features/logbook-crews-home.md`.
 
 - **Desktop: full-screen views are pages** (1024px+): Calendar, Messages, Edit profile, a group, an event, Settings' pages, Best day, Terms and the rest open in the page column with the top bar, sidebar and rail still live, and the sidebar leaves them; the bell opens Notifications as a drop-down; Home's Alerts list is phone-only. See `docs/features/app-shell-and-layout.md`.
 - **Route finder: several types, unrated climbs kept, grouped by wall, pick an area first, save from the list**: tick Sport and Trad together; a star minimum no longer hides climbs nobody has rated (it emptied every search); climbs list wall by wall, left to right, under each wall's name; on a whole state you pick an area first (or type a name); the search bar stays at the top; a ☆ on each row saves the climb to My Objectives, your lists or its wall (0334). See [maps-and-area-browser.md](docs/features/maps-and-area-browser.md).
