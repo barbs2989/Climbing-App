@@ -32939,3 +32939,42 @@ Already partly caveated in this row's own `data_quality.gaps`; left as-is per th
 not-confirmed-but-not-contradicted rule used throughout this audit.
 
 Pass 7 continues next run after `wa_mount_cruiser_south_corner`.
+
+## Batch 427 (2026-10-22): Mount Custer through Mount Fernow
+
+Checked: Mount Custer (Standard), Mount Daniel (Daniel Glacier, Lynch Glacier), Mount Deception
+(Standard/Royal Basin), Mount Degenhardt (South Route), Mount Despair (East Route, Northeast
+Buttress "Bipolar Buttress"), Mount Ellinor (Southeast Chute), Mount Fairchild (Standard),
+Mount Fernow (Southeast Face/Leroy Basin) — 8 peaks, 10 routes.
+
+FA credits and elevations confirmed independently: Custer's FA (Frank Dawe, Roy Mason, Karl
+Teichman, 1958) and 8,630 ft elevation match SummitPost/Wikipedia exactly. Despair's FA (Fred
+Beckey, Lloyd Anderson, Clint Kelley, July 2, 1939) matches HistoryLink/Wikipedia/Mountaineers
+— sources differ on Beckey's age that summer (15 per HistoryLink/Mountaineers vs 16 per
+Wikipedia, which our `overview` field follows), a known cross-source conflict, not a DB error,
+left as-is. Daniel's FA (1925 Mountaineers party via the Lynch/north-side glacier) and the
+"Daniels benchmark mislabels the East Peak, true high point is the West Summit" note both
+match Wikipedia/SummitPost/Mountaineers exactly. Deception's elevation (7,788 ft) and
+prominence (4,108 ft) match Wikipedia exactly. Fairchild's FA party (Denny Pruitt, Dan Baker,
+Jack Christiansen, Roy Etten, 1963) is corroborated by two independent sources once checked
+past an initial truncated snippet that seemed to drop Etten — not an error. Fernow's FA (Oscar
+Pennington, Hermann Ulrichs, 1932) matches Wikipedia.
+
+Noted, not flagged: Fairchild's prose (`overview`, `approach`) says "6,899 ft" throughout while
+the stored `high_point_ft` is 6900 — a 1 ft rounding difference, and external sources
+themselves range from 6,900 (Wikipedia/PeakVisor) to 6,925 (Wikipedia's Fitzhenry page) to
+6,950 (Mountaineers), so no single authoritative figure to correct toward; left as-is.
+
+Flagged for human review, not auto-fixed: Mount Degenhardt's South Route (`wa_mount_
+degenhardt_southwest_route`) itinerary day 2 describes climbing via a "Southwest/Corkscrew
+Route" — a Class 4 slot to the north ridge, then a Class 4-5 face to the west ridge, then an
+exposed Class 3 ledge to the south ridge — which contradicts this same row's own `approach`,
+`descent_text`, and `pitch_detail` fields, all of which describe a single direct ascent of the
+south ridge from the notch at the top of the Barrier (matching the route's own name, "South
+Route", and matching an independent trip report's description of the south-side line). No
+source found names a "Corkscrew" route on Degenhardt at all, so this looks like itinerary text
+contaminated from a different route rather than a genuine variant — but since no authoritative
+description of the correct itinerary was found either, left for human review rather than
+guessing at a replacement.
+
+Pass 7 continues next run after `wa_mount_fernow_southeast_face`.
