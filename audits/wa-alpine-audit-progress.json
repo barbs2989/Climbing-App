@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_mount_mystery_standard",
+  "last_processed_id": "wa_mount_price_hester_lake_route",
   "total_in_scope_last_count": 739,
   "total_wa_alpine_or_mountaineering_tagged": 833,
-  "pass_note": "Noted, not flagged: Mount Blum's road field states a Baker Lake Road bridge closure 'expected through end of August 2026' -- that date has passed with no reopening notice found either way, so current status is genuinely unconfirmed; left for audit:expiring-closures to track rather than guessed at here.",
+  "pass_note": "Noted, not flagged: Mount Olympus West Ridge's 1964 Maykut/Miller/Witte FA and Mount Persis West Ridge's 1917 Hinman FA -- neither confirmable nor contradicted by general web search; likely needs AAJ/guidebook archives general search doesn't index.",
   "batches": [
     {
       "batch_number": 1,
@@ -8602,6 +8602,25 @@
       "clean": 9,
       "sql_file": "audits/sql/2026-10-22-batch-431.sql",
       "note": "wa_mount_logan_fremont_glacier's approach text gave the Colonial Creek Campground/Thunder Creek Trailhead elevation as 1,060 ft, contradicting its own waypoint (1,200 ft) and the same trailhead on sibling routes r1/r2 (also 1,200 ft); Campendium (1,213 ft) and WTA's Thunder Woods Nature Trail page at the same coordinates (1,200 ft) both corroborate 1,200 -- fixed. All seven peaks' elevations and FA credits checked out against Wikipedia/SummitPost/AAC Publications (Mathias and McCausland each have one outlier source a few feet off, noted not flagged, same as Mount La Crosse in batch 430). Mount Maude's North Face FA (Beckey/Gordon/Rupley/Staley) correctly kept distinct from the peak's own earlier 1932 Ulrichs/Burnett summit FA. Access/hazard spot-checks (Little Giant Fire closure order, Sean Allen's 2022 fatal fall on Mount Mystery) both matched outside sources exactly. First batch in a while with zero FA disputes needing human review."
+    },
+    {
+      "batch_number": 432,
+      "date": "2026-10-22",
+      "route_ids": [
+        "wa_mount_norton_scramble",
+        "wa_mount_olympus_blue_glacier",
+        "wa_mount_olympus_west_ridge",
+        "wa_mount_persis_the_hexorcist",
+        "wa_mount_persis_west_ridge",
+        "wa_mount_pilchuck_east_ridge",
+        "wa_mount_pilchuck_standard_route",
+        "wa_mount_price_hester_lake_route"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 0,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-10-22-batch-432.sql",
+      "note": "wa_mount_norton_scramble's own 6,319 ft summit figure (high_point_ft, summit waypoint, overview prose, itinerary label) was stale against its own area row (already correct at 6,397 ft per Wikipedia/PeakVisor) -- fixed all four places. areas.elevation_ft for wa_mount_pilchuck (5,341 ft) matched no outside source; both of the app's own Pilchuck routes already agreed at 5,324 ft, corroborated by SummitPost and the Mount Pilchuck State Park Wikipedia article's body text -- fixed the area row to 5,324. Clean: Mount Olympus's 1907 Nelson-party FA and 7,980 ft high point (both routes); Mount Price Hester Lake's 5,587 ft high point. Noted, not flagged: Mount Olympus West Ridge's 1964 Maykut/Miller/Witte FA and Mount Persis West Ridge's 1917 Hinman FA -- neither confirmable nor contradicted by general web search (likely needs AAJ/guidebook archives); Mount Persis's Hexorcist FA is already hedged as 'Likely'."
     }
   ]
 }

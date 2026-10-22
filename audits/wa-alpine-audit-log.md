@@ -33201,3 +33201,39 @@ search to confirm or deny the exact order numbers/end dates — left as is per t
 against flagging what can't be checked either way.
 
 Pass 7 continues next run after `wa_mount_mystery_standard`.
+
+## 2026-10-22 (batch 432) — pass 7
+
+DB reachable this run. Checked Mount Norton (Scramble), two Mount Olympus routes (Blue
+Glacier, West Ridge), two Mount Persis routes (The Hexorcist, West Ridge), two Mount
+Pilchuck routes (East Ridge/Iodine Gulch, Standard Route), and Mount Price's Hester Lake
+Route.
+
+2 fixed, 0 flagged, 6 clean. Fixed: wa_mount_norton_scramble stored 6,319 ft for its own
+summit in four places (high_point_ft, the summit waypoint's elev/elevFt, the overview
+prose, and an itinerary schedule label) while areas.elevation_ft for the same peak already
+correctly held 6,397 ft — Wikipedia and PeakVisor both independently confirm 6,397, so the
+route's own stale figure was brought into line with its own area row and the sources (see
+audits/sql/2026-10-22-batch-432.sql). Also fixed: areas.elevation_ft for wa_mount_pilchuck
+stored 5,341 ft, a number no outside source names at all, while both of the app's own
+Pilchuck routes already agree with each other at 5,324 ft — independently corroborated by
+SummitPost and by the Mount Pilchuck State Park Wikipedia article's body text (its infobox
+gives a third, lower 5,273 ft, and WTA gives a fourth, 5,327 ft; none of the four sources
+found name 5,341). Fixed the area row to 5,324 ft to match the app's own routes and the
+strongest outside corroboration. Clean: Mount Olympus's Blue Glacier route's 1907 first
+ascent (Lorenz A. Nelson's Mountaineers party, Aug 13, 1907, the true West Peak) matches
+Wikipedia, SummitPost and a contemporary 1907 Mountaineer account exactly, including the
+detail that a July 1907 Belmore Browne party is excluded because they reached the slightly
+lower Middle Peak, not the true summit; both Olympus routes' 7,980 ft high point matches
+the area row and outside sources. Mount Persis's West Ridge FA credit (Harry B. Hinman's
+party, 1917) and Mount Olympus West Ridge's FA credit (Maykut/Miller/Witte, 1964) could not
+be confirmed by general web search — niche first-ascent credits that most likely need
+AAJ/guidebook archives (Beckey's Cascade Alpine Guide, Mountaineers' Olympic Mountains
+guide) general search doesn't index — but neither is contradicted by anything found, so
+per the audit's own rule against flagging what can't be checked either way, both are left
+as is, not flagged. The Hexorcist's own FA credit is already hedged ("Likely Bryan Burdo &
+Bill Enger, 1985"), consistent with its sparse documentation. Mount Price's Hester Lake
+Route's 5,587 ft high point matches its area row; no first-ascent claim on this route to
+check.
+
+Pass 7 continues next run after `wa_mount_price_hester_lake_route`.
