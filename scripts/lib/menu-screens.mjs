@@ -46,7 +46,7 @@ export async function tapMenuItem(page, text, settleMs = 1200) {
   if (!(await openMenu(page))) return false;
   const ok = await page.evaluate((t) => {
     const b = [...document.querySelectorAll('[role="dialog"][aria-label="Menu"] button')]
-      .find((e) => { const f = (e.innerText || "").trim().split("\n")[0].trim(); return f === t || f.startsWith(t + " ·"); }); // a row ends in a "›" line; a tile may carry a count ("Requests · 3")
+      .find((e) => { const f = (e.innerText || "").trim().split("\n")[0].trim(); return f === t || f.startsWith(t + " ·"); }); // a row ends in a "›" line; a tile may carry a count ("Crews · 3"); a corner badge comes after the label, so it is never the first line
     if (!b) return false;
     b.click();
     return true;
