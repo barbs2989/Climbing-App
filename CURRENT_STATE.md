@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **KNOWN HAZARDS: a compact ✎ Edit, not a big Suggest a fix**: the Safety tab's hazards card used a full-size red button beside its heading; it now uses the small ✎ Edit every other route-page card header has (same form, same action).
 - **Profile photo from the avatar; readable dropdowns; the zip says where it puts you**: with no photo, the Profile avatar carries a + and adds one directly. Every `<select>` draws the app's blue chevron (the rule moved to `index.html`; screens App returns early, like Edit profile, drew a black native arrow). Empty rating stars are grey, not border-dark. Edit profile explains the home city is a label and checks a typed zip live (recognised? which state? matches your state?).
 - **Area header: a larger Fire map button, centred on the right**: the red *Fire map* pill on an area's header box was a small chip in the bottom-right corner beside the climb count; it is now a 44px-tall button in its own right-hand column, vertically centred against the area's facts (`lib/DbAreaBrowser.jsx`, `AreaPage`).
 - **Safety: *Suggest a fix* on KNOWN HAZARDS no longer crashes the route page**: the button passed its click event to the form as the hazard; the fixed-gear chips passed a bare string to a multi field. Both now seed an array (or nothing). See `docs/features/route-page.md`.
