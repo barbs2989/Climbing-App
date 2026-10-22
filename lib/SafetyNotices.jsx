@@ -29,6 +29,33 @@ export function AccountStandingNotice({ standing, onAppeal }) {
   </div>;
 }
 
+// What a climber is told about their ROUTE-EDITING standing (0307–0309), at the top of the edit
+// sheet: warned (edits still accepted), restricted (field edits refused until a date; flags still
+// allowed) or banned from contributing (edits and flags refused). The reason is the one the owner
+// typed into the rejection or the override; only the climber's own row is readable (RLS).
+export function ContributionStandingNotice({ standing, onAppeal }) {
+  if (!standing || standing.status === "ok") return null;
+  const banned = standing.status === "banned", restricted = standing.status === "restricted";
+  let untilTxt = "";
+  if (restricted && standing.until) {
+    try { untilTxt = new Date(standing.until).toLocaleDateString(DLOCALE, { month: "short", day: "numeric", year: "numeric" }); } catch (_e) { untilTxt = String(standing.until).slice(0, 10); }
+  }
+  const col = banned || restricted ? C.red : C.amber, bg = banned || restricted ? C.redBg : C.amberBg;
+  const strikes = standing.strikes || 0;
+  return <div role="status" style={{ margin: "12px 16px 0", padding: "11px 13px", borderRadius: 12, border: "1px solid " + col, background: bg, color: C.text }}>
+    <div style={{ fontSize: 13.5, fontWeight: 800, color: col }}>
+      {banned ? "Route editing is closed for your account" : restricted ? "Route editing is paused" + (untilTxt ? " until " + untilTxt : "") : "One of your route edits was turned down"}
+    </div>
+    <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 4, lineHeight: 1.5 }}>
+      {standing.reason ? "Reason: " + standing.reason + ". " : ""}
+      {banned ? "Five of your edits were checked and not applied. You can’t suggest edits or flag details; you can appeal."
+        : restricted ? "Three of your edits were checked and not applied. You can still flag a detail that looks wrong, and you can appeal."
+        : strikes + " of 3 — after three turned-down edits, editing is paused for 90 days. Keep edits to what you have seen on the route."}
+    </div>
+    {(banned || restricted) && onAppeal ? <button onClick={onAppeal} style={{ marginTop: 9, padding: "7px 12px", borderRadius: 9, border: "1px solid " + col, background: "transparent", color: col, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Appeal this decision</button> : null}
+  </div>;
+}
+
 export function AppealSheet({ target, busy, onClose, onSubmit }) {
   const [text, setText] = useState("");
   const isAccount = target && target.kind === "account";

@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-10-15",
+  "generatedAt": "2026-10-22",
   "tables": {
     "account_standing": [
       "reason",
@@ -42,7 +42,8 @@
       "region",
       "rock",
       "rock_basis",
-      "route_count"
+      "route_count",
+      "season_months"
     ],
     "belay_catches": [
       "belayer_id",
@@ -205,7 +206,25 @@
       "route_id",
       "status"
     ],
+    "contribution_fields": [
+      "column_name",
+      "form_key",
+      "is_gear",
+      "is_prose",
+      "label"
+    ],
+    "contribution_standing": [
+      "last_strike_at",
+      "reason",
+      "set_at",
+      "set_by",
+      "status",
+      "strikes",
+      "until",
+      "user_id"
+    ],
     "contributions": [
+      "applied_value",
       "area_id",
       "contributor",
       "created_at",
@@ -249,7 +268,9 @@
     "crew_members": [
       "crew_id",
       "gear_claims",
+      "gear_counts",
       "gear_extras",
+      "gear_wanted",
       "invited_by",
       "joined_at",
       "note",
@@ -259,6 +280,14 @@
     "crew_reads": [
       "crew_id",
       "last_read_at",
+      "user_id"
+    ],
+    "crew_safety_answers": [
+      "answers",
+      "crew_id",
+      "ready_at",
+      "risk_tolerance",
+      "updated_at",
       "user_id"
     ],
     "crews": [
@@ -609,6 +638,11 @@
       "updated_at",
       "user_id"
     ],
+    "profile_tracked_lists": [
+      "keys",
+      "updated_at",
+      "user_id"
+    ],
     "profile_zips": [
       "updated_at",
       "user_id",
@@ -698,6 +732,26 @@
       "copies",
       "route_ids",
       "route_name"
+    ],
+    "route_field_confidence": [
+      "field",
+      "level",
+      "reason",
+      "route_id",
+      "set_at",
+      "set_by"
+    ],
+    "route_flags": [
+      "created_at",
+      "field",
+      "id",
+      "note",
+      "reporter",
+      "resolution_note",
+      "resolved_at",
+      "resolved_by",
+      "route_id",
+      "status"
     ],
     "route_ratings": [
       "created_at",
@@ -821,6 +875,11 @@
       "wet",
       "what_to_bring"
     ],
+    "saved_areas": [
+      "area_id",
+      "created_at",
+      "user_id"
+    ],
     "saved_searches": [
       "created_at",
       "id",
@@ -840,7 +899,8 @@
       "pins",
       "points",
       "route_id",
-      "topo_id"
+      "topo_id",
+      "variants"
     ],
     "topos": [
       "alt",
@@ -852,11 +912,6 @@
       "moderation",
       "photographer",
       "storage_path"
-    ],
-    "trust_scores_view": [
-      "id",
-      "name",
-      "trust_score"
     ],
     "user_itineraries": [
       "itinerary",
@@ -873,6 +928,16 @@
       "name",
       "route_ids",
       "shared",
+      "user_id"
+    ],
+    "user_notices": [
+      "body",
+      "created_at",
+      "id",
+      "kind",
+      "link",
+      "read_at",
+      "title",
       "user_id"
     ],
     "user_reports": [

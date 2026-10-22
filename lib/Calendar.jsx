@@ -3,7 +3,9 @@
 import { clickable } from "./clickable";
 import { fitGear, routeTerrain } from "./terrain";
 import { useState } from "react";
-import { C, DISC_GEAR, DLOCALE, DiscBadges, Lbl, ME, MOUNTAINS, SZ2, catOf, daysUntil, distMiles, uDistMi } from "../ClimbMatchCore.jsx";
+import { C, DISC_GEAR, DLOCALE, ME, MOUNTAINS, SZ2, catOf, daysUntil, distMiles, uDistMi } from "../ClimbMatchCore.jsx";
+import Lbl from "../src/components/Lbl.tsx";
+import DiscBadges from "../src/components/DiscBadges.tsx";
 import { POP_BACK } from "./popupChrome.js";
 import { sunRiseSet } from "./conditionsScore.js";
 

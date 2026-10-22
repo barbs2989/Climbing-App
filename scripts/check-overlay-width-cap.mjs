@@ -65,6 +65,15 @@ const EXEMPT = [
     why: "the route map is a MAP -- spatial content, full-bleed like the fire map and the lightboxes",
     match: (style) => /zIndex:9700/.test(style) && /flexDirection:"column"/.test(style),
   },
+  {
+    key: "menu-wide",
+    // The Menu's WIDE branch only (≥1024px, where the desktop shell is no longer a 520px column).
+    // The owner asked for the Menu to fill the screen (2026-10-21); it had been a 440px drawer.
+    // Its content is centred in a 720px column by the panel's padding, so nothing stretches. Keyed
+    // on the whole style so the phone branch beside it -- same zIndex, capped -- is still checked.
+    why: "the desktop Menu is a full-window sheet by the owner's decision, its content centred at 720px",
+    match: (style) => style === 'position:"fixed",inset:0,zIndex:1200,background:C.bg,overflowY:"auto",overscrollBehavior:"contain",boxSizing:"border-box"',
+  },
 ];
 
 // A style object is an opaque full-screen view when it is fixed, stretched to every edge, and

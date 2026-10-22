@@ -326,17 +326,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     a sibling. `scripts/oneoff/probe-next-meetup-is-ahead.mjs` — 14 assertions, no browser, no
     database, dates built relative to today so it cannot rot into a fixture about 2026. Promote it
     if a second date-labelled surface joins the class.
-- **THE GROUP PAGE IS TABS, AND ITS MEMBERS ARE A COUNT (2026-10-14, the owner's decision).** The
+- **THE GROUP PAGE IS TABS, AND OUTSIDERS SEE ONLY A COUNT (2026-10-14; roster rule settled 2026-10-21).** The
   `openGroupId` view was one scroll holding the hero, rules, notifications, the calendar, the
   roster, the moderation queues and the discussion. It is now a hero (name, *Private/Public group
   · N members*, Join and + Invite) over the tabs **About · Discussion · Events · Members · Media**
   (`groupPageTab`, kept per group as `{gid, tab}`). A member lands on Discussion and anyone else
   on About, because a real group's posts are members-only (0230).
-  - **Members shows a COUNT to everyone but the group's managers.** The roster, Member requests and
-    the banned list render under `isMod`; anyone else sees *"N members"* and one line saying the
-    list is shown to moderators. The **Moderators strip** and *"N of your friends are in this
-    group"* were removed with it, so a member's face or name is no longer on the page for
-    non-managers. `_memN` is still the one count: the hero and the roster heading read it.
+  - **Members shows the roster to the group's members and moderators, a COUNT to anyone else**
+    (`_canSeeRoster` = joined || isMod; RLS enforces it since 0318, #2476). Step 3 first showed
+    the roster to managers only; when it met #2476 on main the owner chose main's rule (2026-10-21).
+    Member requests and the banned list stay under `isMod`. An outsider sees *"N members"* (or
+    nothing, when the group row carries no count) and *"Only members can see who's in this group"*.
+    The **Moderators strip** and *"N of your friends are in this group"* are gone from the page.
+    `_memN` is still the one count: the hero and the roster heading read it, and it is null only
+    for an outsider of a DB group with no stored count, which both readers handle.
   - **Managers' tools sit beside what they change**: Make public/private and Group settings on
     About, requests and bans on Members, the *Reported* queue at the top of Discussion.
   - **The two sheets (`reactPickerFor`, `postMenuFor`) render outside the tab switch**, because
@@ -694,6 +697,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     "listed at Hellgate" from a Wasatch search. Ancestor matches carry `listed_above=true` and sort
     last, so a card says "listed across Utah" rather than "listed here". The guard demands both
     operators in every reader (`partners_in_area`, `partners_for_my_areas`, `partner_area_counts`).
+  - **...CAPPED AT THE STATE (`0311`).** 0300's header named the thing to cap if it flooded: taken to the
+    top, "listed at Utah" was a row on EVERY Utah crag, canyon and range — sorted last, but still there.
+    0311 re-creates the three readers with the predicate `(L.path <@ T or (L.path @> T and
+    L.area_type <> 'state'))`: an ancestor listing reaches down only from BELOW the state. A state
+    listing still answers a search AT the state (the `<@` half, equal paths). The guard pins that
+    exact predicate shape — not "both operators appear somewhere", because `@>` also computes
+    `listed_above`, so a reader that dropped the ancestor half from its WHERE would still contain it.
+    The injection suite (`scripts/oneoff/inject-partner-areas-cases.mjs`) edits 0311 for the readers
+    and 0300 for the table, policy and trigger; `probe-partner-areas.mjs` lists a sixth account at
+    `utah` and asserts it is absent from the crag, the range, Near my areas and the crag count, and
+    present (with `listed_above=false`) at the state. 53 assertions, 2026-10-15.
   - **The table is OWNER-ONLY, unlike `objectives` (public-read).** Every cross-climber read is a
     `SECURITY DEFINER` that refuses a signed-out caller and applies `discoverable` plus
     `profile_owner_blocked_me`, byte-for-byte `partners_near`'s rule. The guard refuses a
@@ -809,3 +823,27 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   in both function bodies, demands `ME.matchObjectiveIds` is derived with the imported `CRAG_CATS`,
   and refuses the raw hook's return (10 injections). Probe: `partners_by_objective` finds B through
   the alpine objective and not through the sport one (47 assertions).
+
+- **AREA CREWS CAN BE STARTED, FOUND AND JOINED (0302, Step 7).** `lib/StartCrewSheet.jsx` collects what the
+  database demands of an area crew (the area, the session's discipline) and what a session needs to be
+  joinable (a day, a size); `formCrew` takes a route id OR a place `{kind:"area",id,disc}` and mints
+  `crew_a_<area>_<ts>`. Entry points: the area page's "Start a crew here" / "Crews here · N" (Join a crew, By
+  Area preset), the Crews tab's "+ Create a crew → At an area — a crag session…" (and a plain button when
+  there is no saved climb to pick), a past crew's picker. The finder's first mode is "My climbs & areas":
+  a crew at an area I listed, or inside one (`inMyAreas` over `useAreaPaths`), is mine to find, badged
+  "★ In an area you’re listed in". A crag route's Partners sub-tab lists "Sessions at <crag>". One seed
+  example (`open_hellgate_session`) in `OPEN_CREWS` so the demo finder and area page show the shape.
+  - **A lazy sheet that is born lazy still goes in `MOVED["ClimbMatchCore.jsx"]`** — overlay discovery
+    only recognises a dialog COMPONENT it can see in the stitched core source, so an unregistered
+    payload overlay reads as "no longer renders a dialog". And the stitch is ONE module: two sheets each
+    declaring `const TYPE_LABEL` broke every guard that parses core ("already been declared"). Prefix
+    module-level names in a lazy file.
+  - The recap alert for an area crew carries `crew:cr.id` beside `crewlog`, so a tap opens the crew card
+    (there is no route to log from the alert).
+
+- **THE FIXTURES CARRY AN AREA CREW (0302, Step 8).** `durable-fixture.mjs` creates, beside the North
+  Ridge invite crew, a crag SESSION at World Wall (`wa_world_wall`, sport) owned by the mate with the owner
+  invited — swept by `area_id` on the same 45-minute rule, deleted in `cleanup()`, returned as `areaCrew`.
+  `check:signed-in` asserts the Crew tab names "World Wall" and prints no `undefined`;
+  `check:new-climber-journey` opens an area crew as the owner and the mate must find "World Wall" under
+  Any Crew. Both walk the second shape of a crew through the real app, which no static guard can.
