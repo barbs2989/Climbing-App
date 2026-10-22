@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Float plans from the crew chat**: a float plan posted in a crew chat now shows as a card (climb, leave and return times, parking, vehicle, comms), and a crewmate can tap *Save to my float plans* to start their own from it — everything but the poster's emergency contact comes across. See [logbook-crews-home.md](docs/features/logbook-crews-home.md).
 - **Float plans ⇄ crews**: a crew's place, partners, meet-up and day now fill a crew float plan's empty fields; a plan started from a route's Safety tab (or with no crew) can be moved onto a crew; and a saved crew plan can be sent to the crew chat so everyone in the crew has it. See [logbook-crews-home.md](docs/features/logbook-crews-home.md).
 - **Log a belay catch: more ways to find the climb, a bigger ✕**: the climb search shows each route's crag and grade (30 results, not 8), finds a peak or crag and opens its climbs, browses by area, and suggests climbs done with that partner, your recent climbs and recently viewed ones. The ✕ (now 48px app-wide) stays pinned while the sheet scrolls. DB routes round-trip (search, save, Recent catches).
 - **Desktop: chats in the right rail**: on wide screens the rail lists your direct messages and crew chats, newest first with unread counts, under Coming up and Alerts; one click opens the conversation. Desktop website only. See `docs/features/app-shell-and-layout.md`.
