@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Menu › Requests: the count is a corner badge**: the tile reads plain *Requests*, and what is waiting on you shows as a red badge in its top-right corner, as on the header's objectives, notifications, calendar and messages icons.
 - **Accessibility problems can actually be reported**: Settings › Legal & help › Accessibility now ends in a *Report an accessibility problem* form that saves to `accessibility_reports` (0343). The statement used to send people to the Feedback button, which sends nothing. See `docs/features/profile-and-settings.md`.
 - **Save a route map offline, again**: *⤓ Save map offline* under a route's map saves the map from the trailhead to the climb (USGS tiles) plus the page itself, so both open with no signal; *Manage areas › Saved route maps* lists them to open or remove. It had been unreachable since the trip pack was removed (#2368). See [maps-and-area-browser.md](docs/features/maps-and-area-browser.md).
 - **Float plans from the crew chat**: a float plan posted in a crew chat now shows as a card (climb, leave and return times, parking, vehicle, comms), and a crewmate can tap *Save to my float plans* to start their own from it — everything but the poster's emergency contact comes across. See [logbook-crews-home.md](docs/features/logbook-crews-home.md).

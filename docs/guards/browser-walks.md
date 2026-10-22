@@ -242,7 +242,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     name** instead, which is authored (`aria-label`) and so does not move when the count does.
     **Since the Menu restructure (2026-10-14) Friends and Requests are no longer on a Crew
     sub-tab bar: they open from the Menu's "Yours" tiles (`tapMenuItem`, which also accepts a tile
-    that carries a count, "Requests · 3"), still render as `crewView`s, and return through a
+    that carries a count, "Crews · 3"; Requests carries its count as a corner badge instead), still render as `crewView`s, and return through a
     "← Crews" row. The Crew tab itself is crews only; tapping the Crews nav resets `crewView`.**
     Crews is *not* captured: `crewView` defaults to it, so it is the `Crew` screen already
     captured, and that equality is asserted as a round-trip rather than dodged.
