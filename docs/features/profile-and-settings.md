@@ -12,6 +12,17 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 - **Menu › Your groups** (signed in or demo, under *Your crews*, above the tiles): up to five of the groups you are in (`myGroupsNow`, ordered by `groupsByLastPost`), each with its new-post count (`groupUnreadN`); a tap opens that group (`setOpenGroupId`) over Groups › Your groups, and *See all ›* appears past five. No groups means no section; a failed read (`groupsUnavailable`) says so instead of an empty list.
 - **Edit profile**: `lib/EditProfileScreen.jsx` over the `editDraft` state; `saveEdit` writes the draft back (see 2).
   Includes the owner-only zip code (feeds partner search distance; others never see it).
+  - **Home city + state are a LABEL, never geocoded.** The city is free text with a `US_CITIES` datalist; the state comes
+    from the dropdown. They show on your profile and partner rows, and the state orders namesakes in search
+    (`homeStatePath`). They place you nowhere: partner and crew distance come only from the zip.
+  - **The zip is the only thing that places you**: `zip_centroids` (Census ZCTA) gives its point, and `partners_near` and
+    CrewFinder's *Nearest* measure from it. While you type, `useZipCentroid` checks a changed zip against that same table
+    and the field says whether it is recognised, which state it is in (`zipState`), and when it disagrees with the state you
+    picked. A zip typed with no state chosen fills the state in; a chosen state is never overwritten.
+  - The photo button reads *Add photo* when there is none (the draft's `FALLBACK_AV` silhouette is not a photo).
+- **Add a photo from Profile**: with no photo, the Profile header's avatar carries a **+** and opens the photo picker itself
+  (`avaAdding`); it uploads and saves the avatar column at once (`uploadProfilePhoto` + `saveProfileAvatar`), as the editor
+  does. Not offered until the profile has been read, so a loading or failed read cannot replace a stored photo.
 - **Résumé** (`Resume`): courses and training, plus an **Experience** list of notable climbs, most recent first, with a star for
   led/summited. Groups, in order: **Sport, Trad, Ice & Mixed, Alpine & Mountaineering, Bouldering, Scrambling**
   (the Objectives filter uses the same split except that it leads with Alpine and keeps Alpine, Mountaineering and Aid as separate chips). Sport = sport + top-rope; Trad = trad and everything that used to be "Crag";
