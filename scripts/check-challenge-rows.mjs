@@ -180,6 +180,88 @@ try {
     if (!/Mount Bross/i.test(t2)) fail.push("the Colorado card does not name Mount Bross, so its 52 is unexplained");
     if (!/closed to the public/i.test(t2)) fail.push("the Colorado card does not say why Mount Bross is excluded");
   }
+
+  /* NO ROW'S TEXT MAY RUN INTO ANOTHER'S, IN ANY LIST, ON A PHONE. The owner saw Liberty Crack and
+     Liberty Ridge print over their own facts in the Fifty Classics list: the name was a one-line
+     flex item and the "Alpine · grade" column refused to shrink, so a long grade pushed the name
+     under it. #2575 let both columns wrap (facts capped at 45%); this measures that it holds.
+     Every list card is expanded in turn, at 390 and at 320px, and every text run's own box in a
+     row is compared with every other one in that row, and with the row's right edge — reading the
+     boxes, not the text, because overlapping text is still all there in innerText.
+     Fails closed: a card that expands to no rows, or a Fifty Classics list without Liberty Crack,
+     means nothing was measured. */
+  const geometry = async () => page.evaluate(() => {
+    const dlg = [...document.querySelectorAll('[role="dialog"]')].find(d => /Challenges & Lists/.test(d.textContent || ""));
+    if (!dlg) return { rows: 0, bad: ["the Challenges & Lists panel is not open"] };
+    const rows = [...dlg.querySelectorAll('div[style*="gap: 9px"][style*="padding: 8px 6px"]')];
+    const bad = [];
+    const hit = (a, b) => !(a.right <= b.left + 0.5 || b.right <= a.left + 0.5 || a.bottom <= b.top + 0.5 || b.bottom <= a.top + 0.5);
+    for (const row of rows) {
+      const runs = [];
+      const walk = document.createTreeWalker(row, NodeFilter.SHOW_TEXT);
+      for (let n = walk.nextNode(); n; n = walk.nextNode()) {
+        if (!n.textContent.trim()) continue;
+        const rg = document.createRange(); rg.selectNodeContents(n);
+        for (const b of rg.getClientRects()) if (b.width > 0) runs.push({ t: n.textContent.trim(), b });
+      }
+      const rb = row.getBoundingClientRect();
+      const label = (row.innerText || "").replace(/\s+/g, " ").slice(0, 60);
+      for (let i = 0; i < runs.length; i++) {
+        if (runs[i].b.right > rb.right + 1) bad.push(`"${runs[i].t}" runs past the row's edge — row: ${label}`);
+        for (let j = i + 1; j < runs.length; j++) if (hit(runs[i].b, runs[j].b)) bad.push(`"${runs[i].t}" overlaps "${runs[j].t}" — row: ${label}`);
+      }
+    }
+    return { rows: rows.length, bad, text: dlg.innerText || "" };
+  });
+  const tapCard = (name) => page.evaluate((nm) => {
+    const dlg = [...document.querySelectorAll('[role="dialog"]')].find(d => /Challenges & Lists/.test(d.textContent || ""));
+    const b = dlg && [...dlg.querySelectorAll('[role="button"]')].find(x => (x.textContent || "").trim().startsWith(nm.slice(0, 16)));
+    if (b) b.click();
+    return !!b;
+  }, name);
+  // The Colorado card above was left open; close it, so each card below is measured against a
+  // panel with nothing expanded.
+  if (co) { await tapCard("Colorado 14ers"); await page.waitForTimeout(600); }
+  // Show every list, not just the filter the panel happened to open on; the click re-renders, so
+  // the cards are read in a SEPARATE step after it lands.
+  await page.evaluate(() => {
+    const dlg = [...document.querySelectorAll('[role="dialog"]')].find(d => /Challenges & Lists/.test(d.textContent || ""));
+    const all = dlg && [...dlg.querySelectorAll('[role="button"]')].find(b => (b.textContent || "").trim() === "All");
+    if (all) all.click();
+  });
+  await page.waitForTimeout(800);
+  const cardNames = await page.evaluate(() => {
+    const dlg = [...document.querySelectorAll('[role="dialog"]')].find(d => /Challenges & Lists/.test(d.textContent || ""));
+    if (!dlg) return [];
+    // A card's HEADER, not a row of an open list — rows are role=button too, and tapping one leaves the panel.
+    return [...dlg.querySelectorAll('[role="button"]')].filter(b => !b.matches('div[style*="padding: 8px 6px"]')).map(b => (b.textContent || "").trim())
+      // Discipline Quiver is the one card with no route rows: it expands to discipline chips (`quiver:true`).
+      .filter(t => t && !/^(All|Your region|State|Regional|National|Global)$/.test(t) && !/^Discipline Quiver/.test(t));
+  });
+  await page.waitForTimeout(800);
+  log(`  list cards: ${cardNames.map(n => n.slice(0, 22)).join(" | ")}`);
+  if (cardNames.length < 5) fail.push(`only ${cardNames.length} list card(s) found in the panel — the overlap scan measured almost nothing`);
+  let fiftySeen = false;
+  for (const width of [390, 320]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.waitForTimeout(600);
+    for (const name of cardNames) {
+      const closed = await geometry();
+      if (!(await tapCard(name))) { fail.push(`list card "${name.slice(0, 30)}" vanished at ${width}px`); continue; }
+      await page.waitForTimeout(900);
+      const g = await geometry();
+      if (g.rows <= closed.rows) fail.push(`expanding "${name.slice(0, 30)}" at ${width}px drew no rows — its overlap was not measured`);
+      for (const b of g.bad) fail.push(`${width}px, ${name.slice(0, 24)}: ${b}`);
+      if (/^Fifty Classic/.test(name)) {
+        fiftySeen = true;
+        if (!/Liberty Crack/.test(g.text) || !/Liberty Ridge/.test(g.text)) fail.push(`the Fifty Classics list at ${width}px has no Liberty Crack/Liberty Ridge row — the rows the owner saw overlap were not measured`);
+      }
+      await tapCard(name);
+      await page.waitForTimeout(400);
+    }
+  }
+  if (!fiftySeen) fail.push("no Fifty Classic Climbs card in the panel — the list the owner saw overlap was not measured");
+  else log(`  overlap scan: ${cardNames.length} lists at 390 and 320px, no text overlapping`);
 } catch (e) {
   fail.push("threw: " + String(e.message).split("\n")[0]);
 }
