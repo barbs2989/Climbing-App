@@ -32978,3 +32978,17 @@ description of the correct itinerary was found either, left for human review rat
 guessing at a replacement.
 
 Pass 7 continues next run after `wa_mount_fernow_southeast_face`.
+
+## 2026-10-22 (follow-up run) — DB unreachable, no batch run
+
+A run later the same day as batch 427 found the live Supabase project unreachable, in the same
+way as the 2026-10-16 follow-up run: a raw REST `GET /rest/v1/` with no `apikey` header returned
+instantly (401 "No API key found in request" — a gateway-level key-format pre-check that never
+touches Postgres), but every real data endpoint tried with the configured `sb_publishable_...`
+key — `/rest/v1/routes`, `/rest/v1/areas`, and even a nonexistent table name — timed out with
+zero bytes received across repeated attempts (15-30s each). This points at the
+database/compute being paused or otherwise down rather than a network-policy block (TLS
+handshake completes against a genuine `*.supabase.co` cert; it's specifically the
+apikey-authenticated, table-routed requests that hang). No batch was picked;
+`wa-alpine-audit-progress.json` was left untouched. Next run should retry from
+`wa_mount_fernow_southeast_face` as before — nothing to redo, nothing skipped.
