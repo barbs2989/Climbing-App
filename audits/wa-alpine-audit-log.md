@@ -33033,3 +33033,16 @@ error. Left alone rather than re-litigated. Also noted: `wa_mount_fury_east_mong
 foreign-key check first, so not repeated here.
 
 Pass 7 continues next run after `wa_mount_fury_west_west_ridge`.
+
+## 2026-10-22 (follow-up run 2) — DB unreachable, no batch run
+
+Same failure signature as the 2026-10-16 and the earlier 2026-10-22 follow-up runs: an
+unauthenticated `GET /rest/v1/` against the Supabase REST gateway returns instantly (401 "No
+API key found in request"), confirming network/TLS reaches the project fine, but every
+authenticated data query (`/rest/v1/routes`, `/rest/v1/areas`, both with the configured
+`sb_publishable_...` key) times out with zero bytes after 30-40s. Checked the agent-proxy
+status endpoint this time to rule out a proxy-side cause rather than just assuming it: no
+recent relay failures, proxy enabled and otherwise healthy — this is specific to the
+Supabase project's data path (database/compute still paused or down), not the egress proxy.
+No batch was picked; `wa-alpine-audit-progress.json` untouched. Next run should still retry
+from `wa_mount_fury_west_west_ridge` as before.
