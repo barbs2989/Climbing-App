@@ -41,6 +41,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   (the Objectives filter uses the same split except that it leads with Alpine and keeps Alpine, Mountaineering and Aid as separate chips). Sport = sport + top-rope; Trad = trad and everything that used to be "Crag";
   Scrambling = scrambling + hiking. A `discipline:"rock"` route resolves to its `style`. Exportable via `exportResume`.
   Visible to others only when the climber's `resume_public` allows it.
+  **Stored (0342, `climber_resumes`)**: the headline, courses and past climbs you add by hand are saved to your account (`saveClimberResume`, debounced, after `useClimberResume` has hydrated them below the sign-in reset) and reach other climbers: their résumé shows your headline, courses (self-reported) and hand-added climbs ("added by hand") beside your public logged climbs. Until 2026-10-22 all three were session state, so another real climber's résumé showed only logged climbs. A failed read says so; it is not an empty résumé.
   Example climbers (`FILLER_CLIMBERS`, behind `DEMO_FILLERS`) carry their own `ticks` — a few seed routes in their disciplines, with a style from `RESUME_STYLES` (never Solo) — so their résumé is not empty; until 2026-10-21 it read "0 climbs · hasn't shared any climbs" under a card saying "23 climbs".
   *Edit résumé › Add a past climb* asks how you climbed it from a list per discipline (`RESUME_STYLES`): routes offer Lead / Onsight / Flash / Redpoint / Follow / Top-rope (trad and ice add Solo; alpine and ice add Swapped leads), boulders Send / Flash, mountaineering Summit / Lead / Follow / Solo, scrambling Summit / Completed / Solo. Changing the discipline resets a style the new one lacks.
 - **No trust score** (removed 2026-10-21, owner decision): no screen computes, shows, filters, sorts or gates on one. What a climber judges a partner by is the ✓ (verification), the vouches they received and their belay record. 0335 dropped `compute_trust_score` and `trust_scores_view` from the database too.
@@ -94,7 +95,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
    It used to wait for Save, so Cancel dropped an uploaded photo, and Save is disabled until the climber has a username, which no signup sets
    (`handle_new_user` stores only `id, name`). The empty-username reason now shows without touching the field.
    Walked end to end by `scripts/oneoff/probe-profile-photos-stick.mjs` (fixture accounts, headless Chrome).
-4. **Other climbers**: `useFullProfile(userId)` and `fetchProfilesByIds` (`lib/db.js`) feed `FullProfile` / `Resume`; `profiles` is public read, blocked users cannot read it (0095).
+4. **Other climbers**: `useFullProfile(userId)` and `fetchProfilesByIds` (`lib/db.js`) feed `FullProfile` / `Resume`, and `useClimberResume(userId)` their résumé's hand-written parts (0342); `profiles` is public read, blocked users cannot read it (0095).
 5. **Résumé groups**: `Resume` maps `GROUPS` (the six labels above) over the climber's ticks; each tick resolves to a group via its discipline (`catOf`).
    Seed ticks hand-tagged `kind:"Crag"`/`"Other"` were re-tagged Trad/Scrambling in #2415, otherwise they matched no group and vanished.
 6. **Units / date**: `units` and `dateFmt` are `App` state; each render calls `__set_UNITS(units)` and `__set_DLOCALE(dateFmtToLocale(dateFmt))`
@@ -112,13 +113,13 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 | `lib/EditProfileScreen.jsx` | `EditProfileScreen` (profile editor, zip field) |
 | `lib/auth.js` | `getProfile`, `saveProfile`, `useSession`, `signOut`, `sendEmailCode`, `confirmEmailCode`, `inboxProofFresh` |
 | `lib/VerifyEmailPanel.jsx` | `VerifyEmailPanel` (emailed-code verification on Profile, 0306) |
-| `lib/db.js` | `uploadProfilePhoto`, `saveProfilePhotos`, `saveProfileAvatar`, `saveProfilePhotoAlts`, `removeProfilePhoto`, `useFullProfile`, `useMyZip`, `useMyEmergencyContact`, `useMyTrustCounts`, `useVerificationRecords`, `giveVouch`, `setAllMyTripReportVisibility`, `fetchProfilesByIds` |
+| `lib/db.js` | `useClimberResume`, `saveClimberResume`, `uploadProfilePhoto`, `saveProfilePhotos`, `saveProfileAvatar`, `saveProfilePhotoAlts`, `removeProfilePhoto`, `useFullProfile`, `useMyZip`, `useMyEmergencyContact`, `useMyTrustCounts`, `useVerificationRecords`, `giveVouch`, `setAllMyTripReportVisibility`, `fetchProfilesByIds` |
 | `lib/GiveVouch.jsx`, `lib/Onboarding.jsx` | vouch sheet; first-run onboarding |
 | `lib/LegalView.jsx` | `LegalView` (Terms, Privacy, Guidelines, Accessibility), `AccessReportForm`, `ACCESS_UPDATED` |
 | `lib/units-pref.js`, `lib/date-pref.js`, `lib/notif-pref.js`, `lib/browse-visibility-pref.js`, `lib/inbox-pref.js`, `lib/onboard-pref.js`, `lib/prefs.js` | device-local preference modules |
 
 ## 4. Data
-- **Supabase tables**: `profiles` (0009; `show_name` 0175; `discoverable` 0104/0110; `resume_public` 0177; certifications 0181), `profile_zips` (owner-only) + `zip_centroids` (0189),
+- **Supabase tables**: `profiles` (0009; `show_name` 0175; `discoverable` 0104/0110; `resume_public` 0177; certifications 0181), `climber_resumes` (0342: owner, or anyone while `resume_public`), `profile_zips` (owner-only) + `zip_centroids` (0189),
   `verification_records` (policies 0058; `verify_my_email()` 0085, inbox proof 0306), vouches, `my_trust_counts` (0203; the counts only — `compute_trust_score` was dropped in 0335), `blocked_users` (0088), `accessibility_reports` (0343, file own / read own / admin updates), storage bucket `topo-photos` for profile photos.
 - **Device-local (localStorage)**: units, date format, notification switches, visible-while-browsing, onboarding-prompted.
   These do **not** follow a climber to another device.
