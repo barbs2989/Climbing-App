@@ -78,6 +78,9 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   restricted and blocked climbers. Notifications: the three switches. Your data & account: sign in/out, Edit profile, the guide
   entries, Edit areas/disciplines/grades, Your conditions, Readiness defaults, units and date format (*Display*), then export,
   opt out and delete. Legal & help: the four documents and How ClimbMatch works.
+  When the Terms or Privacy Policy change, a signed-in account sees `PolicyUpdateNotice` pinned to the bottom (Read Terms ·
+  Read Privacy · I accept; not dismissible). *I accept* records the version (`acceptCurrentPolicy`) and then closes the notice
+  AND any document it opened, returning the climber to the app.
   The Accessibility document (`lib/LegalView.jsx`, its own `ACCESS_UPDATED` date) ends in a *Report an accessibility problem* form
   (`AccessReportForm` → `fileAccessibilityReport` → `file_accessibility_report()`, 0343/0354). A signed-out visitor can file one
   too, with an email to reply to: the sign-in screen links to the statement ("Accessibility — report a problem", `lib/AuthModal.jsx`),

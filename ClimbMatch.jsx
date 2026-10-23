@@ -265,10 +265,10 @@ export default function App(){
      resolved — rendering it while the query is in flight would flash a legal notice at somebody
      who has already accepted, and `data===undefined` is loading while `null` is a profile row
      that genuinely carries nothing. */
-  const policyQ=useMyPolicyAcceptance(uid),[policyBusy,setPolicyBusy]=useState(false);
+  const policyQ=useMyPolicyAcceptance(uid),[policyBusy,setPolicyBusy]=useState(false),[policyDoneV,setPolicyDoneV]=useState(null);
   const _accepted=policyQ&&policyQ.data?policyQ.data.terms_accepted_version:undefined;
-  const _needsPolicy=!!uid&&!policyQ.isLoading&&!policyQ.error&&_accepted!==POLICY_VERSION;
-  const acceptPolicy=function(){setPolicyBusy(true);acceptCurrentPolicy(uid,POLICY_VERSION).then(function(){policyQ.refetch&&policyQ.refetch();showToast("Thanks — recorded against your account.");}).catch(function(e){showToast((e&&e.message)||"That couldn't be recorded — try again.");}).finally(function(){setPolicyBusy(false);});};
+  const _needsPolicy=!!uid&&!policyQ.isLoading&&!policyQ.error&&_accepted!==POLICY_VERSION&&policyDoneV!==POLICY_VERSION;
+  const acceptPolicy=function(){setPolicyBusy(true);acceptCurrentPolicy(uid,POLICY_VERSION).then(function(){/* Accepting finishes the job, so it closes what the notice opened: the Terms or Privacy page read from "Read Terms" used to stay on screen under the toast. The notice itself goes at once, not when the re-read lands -- the write has already succeeded. */setPolicyDoneV(POLICY_VERSION);setLegal(null);policyQ.refetch&&policyQ.refetch();showToast("Thanks — recorded against your account.");}).catch(function(e){showToast((e&&e.message)||"That couldn't be recorded — try again.");}).finally(function(){setPolicyBusy(false);});};
   /* The notice is fixed at the bottom and cannot be dismissed, so without this the last
      ~200px of every screen is unreachable for as long as it is up -- which is every account,
      every time POLICY_VERSION is bumped, not just the legacy ones. Measured at 390x844: 39
