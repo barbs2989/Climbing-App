@@ -168,6 +168,7 @@ export const MOVED = {
     "src/components/StartLocationForm.tsx",
     "src/components/AreaRegionSelect.tsx",
     "src/components/TopContributors.tsx",
+    "src/components/PhotoStrip.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
