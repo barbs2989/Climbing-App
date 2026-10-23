@@ -63,4 +63,8 @@ and the PR that fixed it (or "open").
 
 | Date | Tester | Device / AT | Tasks | Failures found | Fixed in |
 |---|---|---|---|---|---|
+| 2026-10-23 | Claude (scripted) | Chrome 150 headless, **keyboard only — NOT a screen reader**; 390px and 1280px | 1 (keyboard reaches the statement from sign-in, guest email field shown), 3 (Menu: Enter opens, Escape closes, focus returns), the route sub-tabs, plus a Tab walk of sign-in, the statement, Home, Climbs, Partners, Crews, Logbook, Ranks, Profile, route Safety and desktop Home: 469 focus stops checked for a name, a visible focus ring and being on screen and uncovered | None. (The route sub-tabs are buttons with `aria-current`, not `role="tab"`; that is announced as "current" and is acceptable.) | — |
 | | | | | | |
+
+The scripted row covers the keyboard half of tasks 1, 3 and 5 only. Tasks 2 and 4–12 still need a person
+with VoiceOver and TalkBack, and only that pass can say what a screen reader actually announces.
