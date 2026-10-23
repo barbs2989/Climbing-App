@@ -7,6 +7,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
   discipline that can benight a party, and that it merges its **two** stores into one section.
   Static SSR, so it sits in `npm run build`.
+  - **Case 20 (0358)**: `campReportsOf` counts a report once per camp, by name case aside, never a near-miss (`Wing Lake camp` is not `Wing Lake`); an unlisted camp comes back in `extra`; and both reach the rendered Planner. Injection-tested: dropping `activity={activity}` from the mount fails both render assertions.
   - **The mount has already been silently lost once**, which is why this is a script and not the
     comment it replaces. It lived on a dense line, main changed the same line, and the merge kept
     main's copy — leaving the panel **defined and rendered nowhere**. Nothing caught it:

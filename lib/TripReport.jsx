@@ -4,7 +4,7 @@ import { clickable } from "./clickable";
 import { createPortal } from "react-dom";
 import { useState } from "react";
 import { useLogTrack, useProfilesByIds } from "./db";
-import { DB_UID, C, CAT, CLIMBERS, Comments, FALLBACK_COVER, PhotoStrip, renderMD, catOf, condGroupsFor, condMetricsFor, fmtDurMin, isHazardTag, isRoadTag, rapSummary, roadReportOf, climberLine, onImgErr, pubName, realAuthor, seedAuthor, shortDate, useRealAuthors, uDistMi, uElev, uMass, uTempU } from "../ClimbMatchCore.jsx";
+import { DB_UID, C, CAT, CLIMBERS, Comments, FALLBACK_COVER, PhotoStrip, renderMD, catOf, condGroupsFor, condMetricsFor, fmtDurMin, isHazardTag, isRoadTag, rapSummary, campSummary, campLabel, roadReportOf, climberLine, onImgErr, pubName, realAuthor, seedAuthor, shortDate, useRealAuthors, uDistMi, uElev, uMass, uTempU } from "../ClimbMatchCore.jsx";
 import Stars from "../src/components/Stars.tsx";
 import GPXMap from "../src/components/GPXMap.tsx";
 import Av from "../src/components/Av.tsx";
@@ -101,7 +101,8 @@ export default function TripReport({blockedIds,onBlock,ascent,onClose,onViewClim
   rr?factRows([rr.status?["road","Road to the trailhead",rr.status]:null,rr.vehicle?["veh","Vehicle",rr.vehicle]:null,rr.issues.length?["iss","Road issues",rr.issues.join(", ")]:null].filter(Boolean),"road"):null,
   rr?prose("roadNote",null,rr.note):null,
   chipRows(tagsIn("approach"),C.teal,C.tealDim),
-  factRows(facts(["trail","mud","water","bugs","approachMin"]),"approach")
+  factRows(facts(["trail","mud","water","bugs","approachMin"]),"approach"),
+  campSummary(cond)?factRows([["camp",campLabel(cond),campSummary(cond)]],"camp"):null
 ])}
 {section("On the route",[
   factRows(facts(["climbMin"]),"climbTime"),
