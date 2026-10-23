@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Add a climb asks what each discipline's page shows** (0352): approach, location on the wall, bolts, anchor, fixed gear, rock quality, seepage, rope length, split rock/ice/alpine grades and steepest angle, per discipline as the route page's edit sheet takes them; the quickdraw/cam/nut/screw steppers now reach the RACK card (they reached no screen); `check:add-route-fields` §3b keeps the two forms level.
 - **Crew "who is free" grids read real crewmates' availability**: the crew card's typical week and the Safety tab's heatmap showed every real member as never free (their profile was fetched without `availability`/`avail_week`), so they said no slot worked for the crew. Both now read what each member saved on their profile.
 - **Menu › Requests: the count is a corner badge**: the tile reads plain *Requests*, and what is waiting on you shows as a red badge in its top-right corner, as on the header's objectives, notifications, calendar and messages icons.
 - **Accessibility problems can actually be reported**: Settings › Legal & help › Accessibility now ends in a *Report an accessibility problem* form that saves to `accessibility_reports` (0343). The statement used to send people to the Feedback button, which sends nothing. See `docs/features/profile-and-settings.md`.

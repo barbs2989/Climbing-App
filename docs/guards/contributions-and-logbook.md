@@ -133,6 +133,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   2026-10-16: `commaOf` joined `linesOf` there — the comma split `altNames`/`variations` use on
   both paths (0327). The trap: the guard passed locally in a batch whose exit code was `tail`'s,
   and only CI's build job surfaced the FAIL. A guard piped to `tail -1` reports nothing.
+- **`check:add-route-fields` §3b (2026-10-22): the add form is held LEVEL with the edit sheet, per
+  discipline.** It evaluates RouteDetail's `DROP` literal (via `Function`, with the same
+  `cat`/`roped`/`alpiney`/`boulder` inputs SuggestFix computes) for each of the ten types the add form
+  offers, and requires each kept key to be in `FIELDS[disc] ∪ FIELDS[sub]` (renamed through `AS`:
+  pitchCount→pitches, length→height, descentText→descent), or be a gear STEPPER in `GSEC`, or be named
+  in `NOT_AT_CREATION` / `NOT_FOR` with a reason. Stale exemptions fail. **What it cannot see:** that a
+  form key REACHES its column — rule 4 of `check:approve-route-columns` holds that — nor whether the
+  edit sheet's own DROP is right; it copies the edit sheet's judgment, by design (the owner's
+  rationale in 0327: one who proposes is not asked less than one who corrects). `singlePitch` is fed
+  `boulder` only, so `crux` is demanded of every non-boulder type. Measured when written: every one
+  of the ten types had gaps, 3–17 keys each; also found the gear steppers wrote only `routes.gear`,
+  an object `gearArr()` reads as empty — no guard asked whether that column reaches a screen.
 - **`check:consensus-clustering`** asserts that three climbers who agree can actually be **counted**
   as agreeing. **Since 2026-10-15 (0307–0309, the owner's route quality control) the merge no
   longer applies a value on agreement**: every field edit is held `pending` until the owner

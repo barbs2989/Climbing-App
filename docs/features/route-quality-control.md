@@ -95,6 +95,22 @@ empty field fills at once and two climbers who agree are enough to change one (0
   the owner's proposal queue (`lib/RouteProposals.jsx`) shows them. `check:add-route-fields` and
   `check:approve-route-columns` hold the form, the applier and the queue's keys together.
 
+- **Add-a-climb asks, per discipline, what the edit sheet takes** (`lib/AddRoute.jsx`, 0352,
+  2026-10-22): the walk-in **Approach** (a sentence) on every type; **Location on the wall**, **Anchor**,
+  **Rock quality** and **Wet / seepage** on crags and aid; **Bolts** on sport; **Fixed gear** on trad
+  and aid; **Rope length** (50–80 m chips, stored as metres) on roped types; the split **Hardest rock /
+  Hardest ice / Alpine grade** dropdowns and the **Steepest angle** off crags; and the facts the edit
+  sheet already offered that type (rock, style, crux grade, distance/gain/loss on ice and mixed,
+  pitches on alpine…). `FIELDS` now carries per-crag-type extras (`trad`/`sport`/`toprope`) on top of
+  `rock`, and `sf()` reads both. The gear steppers (quickdraws, ice screws, cams, nuts) and the ticked
+  items now become **rack lines** — they used to land only in the `gear` object, which no screen reads
+  — and a non-rack item (helmet, crampons) goes to Route-specific essentials; crag types are offered
+  only rack items, since a crag page has no GEAR & ESSENTIALS card. The **Crux** box asks for a crux
+  *grade*: `routes.crux` prints in a stat tile, and it used to ask for a sentence.
+  `check:add-route-fields` §3b evaluates the edit sheet's `DROP` per type and fails on any fact the add
+  form does not ask, unless `NOT_AT_CREATION` / `NOT_FOR` names it with a reason (the multi-part
+  builders — waypoints, approach variants, rappel table, rescue card… — are added on the live route).
+
 Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 
 ## 2. How it works

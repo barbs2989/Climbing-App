@@ -386,6 +386,105 @@ for (const lighter of ["rock", "bouldering", "scrambling", "hiking"]) {
 }
 if (!inverted) ok(`alpine ${alpine} >= rock ${counts.rock}, bouldering ${counts.bouldering}, scrambling ${counts.scrambling}, hiking ${counts.hiking}`);
 
+/* 3b. A CLIMBER WHO ADDS A CLIMB IS ASKED WHAT ONE WHO CORRECTS IT IS ASKED — per discipline.
+   ---------------------------------------------------------------------------
+   The owner's item (2026-10-22): "for adding a climb ... we are giving the user everything they
+   need to add information that we have in the app for the specific disciplines". The route page's
+   edit sheet (SuggestFix, RouteDetail.jsx) already decides, per discipline, which facts that
+   discipline's page carries: its FIELDS minus its DROP rules. Measured that day, the add form asked
+   for less on EVERY discipline — no approach on any of them, no bolts on sport, no location /
+   anchor / rock quality / wet rock on crags, no rock or ice grade on alpine, no pitch count on
+   alpine — so a new climb was born with gaps its own page invites the next climber to fill.
+
+   So this evaluates the edit sheet's DROP for each type the add form offers and requires every
+   key it keeps to be asked by the add form for that type — or to be named in NOT_AT_CREATION
+   with a reason. Mountain Project asks Description / Protection / Location at creation and lets
+   the rest be edited in; theCrag asks "as much as you know" (FFA, bolts, length, pitches). The
+   reasons below are that line: a multi-part builder (waypoints, approach variants, a rappel
+   table, a rescue card) is added on the live route, where its own editor is.
+   Fails closed: DROP must parse and evaluate for every type, and the edit sheet must keep >= 30
+   keys per type, or nothing here was checked. */
+{
+  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const sfLine = rd.split("\n").find((l) => l.includes("const FIELDS=[{k:"));
+  if (!sfLine) anchorLost("`const FIELDS=[{k:` — the edit sheet's field list in RouteDetail.jsx");
+  const sheet = [...sfLine.matchAll(/\{k:"([a-zA-Z0-9_]+)"/g)].map((m) => m[1]);
+  const di = rd.indexOf("const DROP={");
+  if (di < 0) anchorLost("`const DROP={` — the edit sheet's per-discipline rules");
+  // Brace-balanced, string- and comment-aware, so a `}` inside a comment cannot cut it short.
+  let d = 0, de = -1;
+  for (let i = di + 11; i < rd.length; i++) {
+    const c = rd[i];
+    if (c === "/" && rd[i + 1] === "*") { i = rd.indexOf("*/", i + 2) + 1; continue; }
+    if (c === '"' || c === "'") { const q = c; while (++i < rd.length && rd[i] !== q) if (rd[i] === "\\") i++; continue; }
+    if (c === "{") d++;
+    else if (c === "}" && --d === 0) { de = i; break; }
+  }
+  if (de < 0) anchorLost("the edit sheet's DROP literal did not close");
+  const dropSrc = rd.slice(di + 11, de + 1);
+  const ccM = /const CRAG_CATS=(\[[^\]]*\])/.exec(core);
+  if (!ccM) anchorLost("`const CRAG_CATS=[` in ClimbMatchCore.jsx");
+  const CRAG_CATS = JSON.parse(ccM[1]);
+  // The add form's own gear steppers. GSEC is a pure expression of disc/sub, evaluated the same way.
+  const gM = /const GSEC=([^;]*);/.exec(ar);
+  if (!gM) anchorLost("`const GSEC=` — the add form's gear steppers");
+  const gsecOf = (disc, sub) => Function("disc", "sub", "return (" + gM[1] + ")")(disc, sub);
+
+  // Edit-sheet key -> the add form's key, where the two forms name one column differently.
+  const AS = { pitchCount: "pitches", length: "height", descentText: "descent" };
+  // Edit-sheet keys the add form answers with a gear STEPPER rather than a field.
+  const STEPPER = { draws: "qd", screws: "screws", pads: "pads" };
+  // Asked by every type, outside FIELDS: the name box and the beta box.
+  const ALWAYS = new Set(["name", "beta"]);
+  const BUILDER = "a multi-part builder with its own editor on the route page; added once the route exists, as Mountain Project and theCrag add everything past description / protection / location";
+  const NOT_AT_CREATION = {
+    approachVariants: BUILDER, climbingRoute: BUILDER, waypoints: BUILDER, bivy: BUILDER, rappelDetail: BUILDER,
+    approachLogistics: BUILDER, climate: BUILDER, seasonalHazards: BUILDER, crowds: BUILDER,
+    partnerRequirements: BUILDER, seasonalGuidance: BUILDER, emergency: BUILDER,
+    condWindow: "no routes column (contribution_fields.column_name is null) — held only as an edit overlay, so approval has nowhere to write it",
+    permitUrl: "no routes column (contribution_fields.column_name is null) — held only as an edit overlay, so approval has nowhere to write it",
+    permit: "asked as the Permit row of Permits & land manager (access.permit), which the page's permit line falls back to",
+    aidGrade: "on an aid route the Grade picker IS the aid scale (ADDR_GRADES.aid)",
+  };
+  // Per type, where the edit sheet offers a fact the discipline does not have.
+  // A crag page (CRAG_CATS) has no Plan tab, and TechStats prints "High point" only for alpine,
+  // mountaineering and hiking — so on a crag type these three are read by no screen.
+  const CRAG_UNREAD = {
+    highPointFt: "TechStats prints High point only on alpine / mountaineering / hiking pages",
+    outingShape: "read by the planner, and a crag page has no Plan tab",
+    timing: "published times render in the planner, and a crag page has no Plan tab",
+  };
+  const NOT_FOR = {
+    trad: CRAG_UNREAD, sport: CRAG_UNREAD, toprope: CRAG_UNREAD, aid: CRAG_UNREAD,
+    bouldering: { ...CRAG_UNREAD, ffa: "a boulder's first ascent is its free ascent", fwa: "no winter-ascent distinction on a boulder", ropeNote: "no rope on a boulder", rappelCountNote: "no rappel off a boulder" },
+    mountaineering: { ffa: "a walk-up is climbed free by its first ascent" },
+    scrambling: { ffa: "a scramble is climbed free by its first ascent" },
+  };
+  const TYPES = ["trad", "sport", "toprope", "bouldering", "ice", "mixed", "aid", "alpine", "mountaineering", "scrambling"];
+  let gaps = 0, checked = 0;
+  for (const t of TYPES) {
+    const crag = ["trad", "sport", "toprope", "bouldering"].includes(t);
+    const disc = crag ? (t === "bouldering" ? "bouldering" : "rock") : t, sub = crag ? t : "";
+    const cat = t, roped = ["trad", "sport", "alpine", "ice", "mixed", "aid", "mountaineering"].includes(cat);
+    const alpiney = ["alpine", "mountaineering", "ice", "mixed", "scrambling"].includes(cat), boulder = cat === "bouldering";
+    let DROP;
+    try { DROP = Function("cat", "CRAG_CATS", "roped", "alpiney", "boulder", "singlePitch", "return (" + dropSrc + ")")(cat, CRAG_CATS, roped, alpiney, boulder, boulder); }
+    catch (e) { anchorLost(`the edit sheet's DROP no longer evaluates for ${t} (${e.message})`); }
+    const offered = sheet.filter((k) => !DROP[k]);
+    if (offered.length < 30) anchorLost(`the edit sheet offers only ${offered.length} keys for ${t}`);
+    const asked = new Set([...(FIELDS[disc] || []), ...(sub && FIELDS[sub] ? FIELDS[sub] : [])]);
+    const steppers = new Set(gsecOf(disc, sub));
+    const missing = offered.filter((k) => !ALWAYS.has(k) && !asked.has(AS[k] || k) && !(STEPPER[k] && steppers.has(STEPPER[k])) &&
+      !NOT_AT_CREATION[k] && !(NOT_FOR[t] && NOT_FOR[t][k]));
+    checked += offered.length;
+    if (missing.length) { gaps++; fail(`${t}: the route page's edit sheet takes ${missing.join(", ")}, and add-a-climb never asks for ${missing.length === 1 ? "it" : "them"} — a new ${t} climb is born with that gap. Ask it in lib/AddRoute.jsx (FIELDS.${sub && FIELDS[sub] ? sub : disc}), or name it in NOT_AT_CREATION / NOT_FOR with a reason a reviewer can check.`); }
+  }
+  // Stale bookkeeping: an exemption for a key the edit sheet no longer has hides nothing and rots.
+  const staleEx = [...Object.keys(NOT_AT_CREATION), ...Object.values(NOT_FOR).flatMap(Object.keys)].filter((k) => !sheet.includes(k));
+  if (staleEx.length) fail(`NOT_AT_CREATION / NOT_FOR name ${[...new Set(staleEx)].join(", ")}, which the edit sheet no longer offers — drop the stale entries`);
+  if (!gaps && !staleEx.length) ok(`add-a-climb asks every fact the edit sheet takes, on all ${TYPES.length} types (${checked} type×field pairs; ${Object.keys(NOT_AT_CREATION).length} added on the live route, each with a reason)`);
+}
+
 // 4. the signed-out case must be VISIBLY different, whatever the policy currently allows.
 //
 // This assertion used to require a hard refusal, because on 2026-08-09 an anonymous INSERT
@@ -423,3 +522,6 @@ console.log(`check:add-route-fields: ok — ${declared.size} fields across ${Obj
 //   3. write `style:` twice in _prop        -> "repeats style"
 //   4. trim alpine's FIELDS below rock's    -> "the tailoring is inverted again"
 //   5. drop any one of the three signed-out surfaces -> "the signed-out path is not disclosed on <that surface>"
+//   6. (2026-10-22) remove "bolts" from FIELDS.sport   -> "sport: the route page's edit sheet takes bolts"
+//   7. remove "approach" from FIELDS.alpine            -> "alpine: ... takes approach"
+//   8. add a fake key to NOT_AT_CREATION               -> "NOT_AT_CREATION / NOT_FOR name <key> ... stale"
