@@ -33678,3 +33678,91 @@ row's own `corrections` note almost exactly) and the Suiattle River Road closure
 following December 2025 atmospheric-river flood damage — not a fabricated closure).
 
 Pass 7 continues next run after `wa_old_snowy_mountain_r1`.
+
+## Batch 444 — 2026-10-23
+
+Routes: `wa_old_snowy_mountain_west_route` (Old Snowy Mountain, not yet enriched — nothing to check),
+`wa_olympus_summit_block_north_face`, `wa_olympus_summit_block_west_edge`, `wa_olympus_traverse` (Mount
+Olympus, **fixed**), `wa_open_book_2` (Unicorn Peak, **fixed**), `wa_osceola_peak_scramble` (Osceola Peak,
+**fixed**), `wa_ottohorn_southeast_route` (Ottohorn, **fixed**), `wa_oval_peak_scramble` (Oval Peak, flagged).
+
+**Important note before the findings:** every fix in this batch was *already* proposed against these exact
+rows in `audits/sql/2026-09-30-batch-358.sql` (pass 6, 2026-09-30). A fresh read of the live DB for this
+batch found every one of those old values still present, unchanged — i.e. nobody has run batch 358's SQL
+file against the live database yet. Rather than silently re-discovering the same bugs as if they were new,
+this batch re-verified each one against current sources (not just copied the old file) and re-emits the
+identical fixes in `audits/sql/2026-10-23-batch-444.sql` so there is one current, re-confirmed file. If a
+human already ran batch 358's SQL out-of-band, this file's WHERE guards will simply no-op on every
+statement (each one still carries a guard on the pre-fix value) — safe either way.
+
+**Fixed (6 routes, 14 statements):**
+
+*Mount Olympus cluster* — `wa_olympus_summit_block_north_face`'s `gain_ft`/`loss_ft` (7500/7402) still
+disagreed with its own `itinerary.days[]` sum (10200/10250), matching the exact bug batch 358 found; fixed
+to 10200/10250 (sibling `wa_olympus_traverse`'s top-level gain/loss already equal its own itinerary sum,
+confirming this is the row convention). Its `length_m` (30) still disagreed with its own
+`pitch_detail[0].lengthM` (24) and overview/rappels text ("~80 ft" / "about 80 ft") — fixed to 24. All three
+Olympus routes in this batch (`summit_block_north_face`, `summit_block_west_edge`, `traverse`) still dated
+the Upper Hoh Road's Dec 2024 storm-closure reopening to "May 2026" (or, on `summit_block_west_edge`,
+claimed the road is "Maintained year-round" with no closure history at all) — re-verified 2026-10-23 via
+Peninsula Daily News's reopening coverage and the Yakima Herald/Sequim Gazette: the road reopened **May 8,
+2025** after a ribbon-cutting with Gov. Bob Ferguson, roughly 4.5 months after the Dec 2024 washout (funded
+from the state's Strategic Reserve Fund after county/federal funding fell through) — not May 2026, and not
+"no closure history." Corrected `road.status`/`road.seasonalGate`/`access.closures` on all three rows to
+say May 2025 / acknowledge the closure.
+
+*Unicorn Peak* — `wa_open_book_2`'s `itinerary.days[0].gainFt/lossFt` (2600/2600) and `itinerary.totalNote`
+("~2,600 ft gain") still contradicted the row's own top-level `gain_ft`/`loss_ft` (2397/2397, externally
+corroborated by an aggregator's "Unicorn Peak roundtrip is 4.8 miles with 2,397 feet of elevation gain") —
+corrected the itinerary day entry and totalNote text to 2397, same fix as batch 358 proposed.
+
+*Osceola Peak* — `wa_osceola_peak_scramble`'s summit waypoint still stored `elev=8584` (while that SAME
+waypoint's own "note" field already says "True summit (8,587 ft)"), and `itinerary.days[1].objective`
+still repeated "8,584 ft", disagreeing with the row's own `high_point_ft` (8587, re-confirmed via a WTA
+trip report and Wikipedia-sourced aggregates) — corrected both to 8587. Top-level `gain_ft`/`loss_ft`
+(3439/3439) still contradicted the row's own itinerary day sums (5650/5650, agreeing with its own
+totalNote "~5,600 ft of cumulative gain") — corrected to 5650. `access.passRequired` still flatly denied a
+Northwest Forest Pass is needed at Harts Pass/Slate Pass, contradicting this same row's own
+`access.parking_pass` and `bivy` fields (both say a pass is required) — corrected to state a pass is
+required.
+
+*Ottohorn* — `wa_ottohorn_southeast_route`'s `emergency.county` still said "Skagit County" for the Goodell
+Creek trailhead; re-verified 2026-10-23 via Wikipedia and an NPS places page that Newhalem/Goodell Creek is
+specifically in **Whatcom County** (the "Skagit" name here comes from the Skagit River running through
+Newhalem, not from Skagit County) — corrected, along with `emergency.sheriffDispatch`, which still named
+the Skagit County Sheriff instead of the Whatcom County Sheriff's Office (360-676-6911). This route's `gpx`
+track was still out of order — the Goodell Creek Trailhead point second-to-last instead of first,
+disagreeing with the row's own `waypoints[]` array — reordered to match. `itinerary.days[1].note` still
+called Himmelgeisterhorn "(Düsseldorfspitz)" as if the two names were the same feature; per batch 358's
+research (Himmelgeisterhorn is Himmelhorn's own original/full name, while Düsseldorferspitze is a separate,
+smaller pinnacle en route to it) — corrected the parenthetical.
+
+**Flagged for human review (1):** `wa_oval_peak_scramble` (Oval Peak)'s own `high_point_ft` (8795 ft)
+disagrees with its parent area row's `elevation_ft` (8800 ft) — both figures are real and sourced:
+Wikipedia and PeakVisor give 8,800 ft (NAVD 88), while SummitPost and countryhighpoints.com give 8,795 ft.
+This is a genuine cross-source elevation spread on a rarely-surveyed peak, not a same-row contradiction with
+an obvious tie-breaker, so left for a human to pick a side rather than guessed. Everything else on this row
+(gain/loss-vs-itinerary math, FA correctly left null, permit/access text) checked out clean.
+
+**Clean:** `wa_old_snowy_mountain_west_route` is an unenriched stub row (just `area_id`/`discipline`/
+`auto_generated`/`classic`/`name_search` — no overview, elevation, or any other field) — nothing to audit,
+same situation as `wa_old_snowy_mountain_north_route` in batch 443.
+
+`last_processed_id` advances to `wa_oval_peak_scramble`. Scope counts not re-run this batch (last known:
+737 in-scope / 833 total, from batch 443); this batch's candidates were confirmed on 'peak'-type areas via
+a direct `areas` lookup before auditing — three candidates in the surrounding id range
+(`wa_one_piece_at_a_time`/Cutthroat Wall, `wa_plan_9_from_outer_space`/Ed Wood Memorial Buttress,
+`wa_playing_not_spraying`/Silver Horn) were excluded as crags, not peaks. `.env`/`.env.local` were not
+present at run start (fresh clone); a `.env.local` holding only the read-only anon key supplied directly in
+the task prompt was created locally (gitignored, never committed) so that `npm run check:sql` could run —
+unlike several recent batches, `node_modules` WAS present this run, so the fix file was validated with the
+real guard tool rather than hand-verified: `checked 15 write target(s) across 35 statement(s)` /
+`OK every target id exists; no DELETE removes an only copy`. The tool's own paste-size warning (file is
+~15KB against its 4000-byte soft limit) is noted for whoever runs this by hand — split into ~1.5KB chunks
+in the Supabase SQL Editor and verify each as you go, same as any multi-statement fix file this size.
+WebSearch reached Wikipedia, Peninsula Daily News, Yakima Herald, Sequim Gazette, SummitPost, PeakVisor,
+countryhighpoints.com and an NPS places page via result snippets; WebFetch was not attempted given prior
+batches' consistent `EGRESS_BLOCKED` results in this environment, so every finding rests on WebSearch
+snippets, cross-checked across 2+ independent sources per claim.
+
+Pass 7 continues next run after `wa_oval_peak_scramble`.

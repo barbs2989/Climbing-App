@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_old_snowy_mountain_r1",
+  "last_processed_id": "wa_oval_peak_scramble",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -8832,6 +8832,25 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-10-23-batch-443.sql",
       "note": "wa_old_snowy_mountain_r1's high_point_ft (7880 ft, an older rounded/contour figure) and its top-level lat/lng (a less-precise rounded point ~90-100m off, vs. this row's own more accurate approach_logistics.peakLat/peakLng) were both fixed to match peakbagger.com/listsofjohn.com/oregonhikers.org (~7930 ft; 46.512244,-121.454431). Flagged for human review: wa_northwest_ridge (Dorado Needle)'s FA surname 'Tom Gorton' vs. SummitPost's 'Tom Gordon' -- Anderson, Boyer and July 1940 all agree, only the one surname differs and nothing resolves which is right; wa_nw_face_var_remsberg_variation (Liberty Bell)'s FA ('Dale Remsberg & Scott Stimpson', no year) found no corroborating source at all, not contradicted, just unconfirmed. Verified clean: Dorado Needle's 8,440 ft elevation; Boston Peak's 8,894 ft elevation and 1938 Bressler/Clough/Cox/Myers FA (its 'east side' description left as inference, not directly sourced, but not contradicted either); Liberty Bell's 7,720 ft elevation and this variation's 5.10d/5-pitch grade (Wikipedia's own route table, despite MP reportedly showing 5.11a elsewhere); Colchuck Balanced Rock's 8,240 ft elevation with this route's FA correctly left null (the feature's 1958 Prater/Quin FA is documented but not tied to this specific ridge line); and both Old Guard Peak routes' 8,259.6 ft NAVD88 elevation (June 2025 differential-GPS survey, matching the row's own corrections note) and Suiattle River Road closure detail (real USFS Forest Order 06-05-26-03, Apr 2 2026-Jan 1 2028, following Dec 2025 flood damage -- confirmed, not fabricated). wa_old_snowy_mountain_north_route is an essentially unenriched stub row (no overview/elevation/etc.) -- nothing to audit."
+    },
+    {
+      "batch_number": 444,
+      "date": "2026-10-23",
+      "route_ids": [
+        "wa_old_snowy_mountain_west_route",
+        "wa_olympus_summit_block_north_face",
+        "wa_olympus_summit_block_west_edge",
+        "wa_olympus_traverse",
+        "wa_open_book_2",
+        "wa_osceola_peak_scramble",
+        "wa_ottohorn_southeast_route",
+        "wa_oval_peak_scramble"
+      ],
+      "confirmed_errors_fixed": 6,
+      "flagged_for_human_review": 1,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-10-23-batch-444.sql",
+      "note": "All 6 fixes in this batch were already proposed in batch 358 (pass 6) against these same rows -- live DB re-read found every one still unapplied, so this batch re-verified each against current sources and re-emitted the identical fixes rather than treating them as new findings. See audits/wa-alpine-audit-log.md for full detail. Flagged: wa_oval_peak_scramble has a genuine cross-source elevation spread (8795 SummitPost/countryhighpoints.com vs 8800 Wikipedia/PeakVisor, matching this app own area row) with no tie-breaker. wa_old_snowy_mountain_west_route is an unenriched stub -- nothing to audit."
     }
   ]
 }
