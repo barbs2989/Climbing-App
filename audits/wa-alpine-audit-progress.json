@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_navaho_peak_south_slopes",
+  "last_processed_id": "wa_north_face_left_buttress",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -8756,6 +8756,25 @@
       "clean": 7,
       "sql_file": null,
       "note": "wa_mushroom_tower_standard's fa (Fred and Helmy Beckey with Walt Varney, 1942) is plausible given the same trio's documented June 1942 campaign on other Kangaroo Ridge towers (Wallaby Peak 6/17, Big Kangaroo 6/21) but no source names this tower by name/date -- flagged for human verification, not altered. Noted, not flagged: wa_narcos was skipped (area_type=crag, out of scope). Verified clean: Mount Torment (8120 ft) and Forbidden Peak (8815 ft) elevations, the shared 1958 Cooper/Sellers FA on both the South Ridge and the Torment-Forbidden Traverse (same ascent per Cooper's 1959 AAJ account), and the 2026 Boston Basin permit lottery window (Mar 2-13) all check out exactly; Mount Triumph's 7270 ft elevation and its Northeast Ridge FA (Joan and Joe Firey, 1965) check out, and Mount Townsend's Upper Trailhead is confirmed fee-free per USFS's own current page (its elevation stays unresolved at 6243 vs 6282/6260/6280 ft across sources, consistent with the row's own self-flagged uncertainty); Mount Washington (Olympics)'s 6260 ft elevation and Mount Skokomish Wilderness/Olympic NF jurisdiction (not NP) check out, as does Mount Wilder's 5939 ft elevation, Olympic NP's 2026 entrance fees (0/vehicle, 5/person, 5 annual), and the still-current Olympic Hot Springs Road vehicle closure beyond Madison Falls; Navaho Peak's 7223 ft elevation, current NW Forest Pass pricing (~/0), Washington Pass/Kangaroo Ridge's USFS jurisdiction, and the row's specific, checkable claim that Stafford Creek Trail #1359 reopened after Labor Mountain Fire damage on September 25, 2026 (confirmed by a WTA trip report dated that same day) all check out."
+    },
+    {
+      "batch_number": 440,
+      "date": "2026-10-23",
+      "route_ids": [
+        "wa_ne_ridge",
+        "wa_needle_peak_north_ridge",
+        "wa_news_nw_corner",
+        "wa_nooksack_tower_beckey_route",
+        "wa_nooksack_tower_beckey_schmidtke_route",
+        "wa_nooksack_tower_south_face",
+        "wa_north_face_3",
+        "wa_north_face_left_buttress"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 3,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-10-23-batch-440.sql",
+      "note": "wa_news_nw_corner's FA party name was stored as \"Paul Boving and Steve Pollack\" (route name too); SummitPost and Mountain Project both spell it \"Steve Pollock\" -- FA date (Sept 25, 1976) already matched and is unchanged, only the name spelling is fixed (and the row's own fatality claim -- 3 climbers killed May 10, 2025 when an old piton anchor pulled during a rappel in the Early Winter Couloir on this peak's east side -- is independently confirmed by NBC/CBS/KSL news coverage, so left as-is). Flagged for human review: wa_nooksack_tower_beckey_route and wa_nooksack_tower_beckey_schmidtke_route are almost certainly the SAME real route filed twice -- same peak, same FA party (Beckey/Schmidtke) and year (1946), same commitment grade (IV) -- but beckey_route is the fully-enriched row (10 pitches, waypoints, descent text, AAJ-confirmed July 5 1946 date) while beckey_schmidtke_route is a near-empty stub with every other field null; per this audit's scope, noted for a human merge/delete decision rather than altered (same pattern as the previously-noted Rainier Ingraham Direct/Glacier Direct pair). Also flagged: wa_nooksack_tower_south_face's stored FA (\"Jens Klubberud and Ben Manfredi, July 2001\") could not be corroborated against Wikipedia/SummitPost/AAC-AAJ/Mountain Project, which document the 1946 FA and two 1983 ascents (Nelson/Gerson's NE Couloir-East Ridge, Collum/Nelson's winter route) but no south-face line or these climbers by name -- absence of corroboration isn't proof of error, so left for a human to check against Beckey's Cascade Alpine Guide Vol. 3; and wa_needle_peak_north_ridge's cited 2026 \"Sisi Fire\" closure (order 06-17-02-2026-35, closing Agnes Creek/PCT-area trails) is a real, current fire closure but the specific order number and trail list could not be independently confirmed against live USFS/NPS alert pages. Verified clean otherwise: Cathedral Peak's 8,606 ft elevation and coordinates; North Face (Beckey-Schmidtke)'s FA, date and 8,285 ft elevation (AAC/AAJ-confirmed); the Needle Peak-to-Bonanza traverse's V 5.8 grade (AAC Journal 2007) and Bonanza's 9,516 ft elevation/coordinates; Lexington Tower North Face's FA (Tim Kelley & Dick McGowan, July 5 1954, matching the area's own blurb) and coordinates; and Castle Peak North Face Left Buttress's FA (Blake Herrington & Peter Hirst, Aug 3 2008), 8,343 ft high point, and a real, verbatim-matching USFS Ptarmigan Fire closure order (06-17-04-26-39)."
     }
   ]
 }

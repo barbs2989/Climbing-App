@@ -33513,3 +33513,46 @@ Cle Elum Ranger District reported Stafford Creek Trail #1359 reopened after Labo
 damage on September 25, 2026: a WTA trip report dated that same day confirms the reopening.
 
 Pass 7 continues next run after `wa_navaho_peak_south_slopes`.
+
+## Batch 440 — 2026-10-23
+
+Routes: `wa_ne_ridge` (Cathedral Peak NE Ridge), `wa_needle_peak_north_ridge` (Needle Peak→Bonanza
+traverse), `wa_news_nw_corner` (North Early Winters Spire), `wa_nooksack_tower_beckey_route`,
+`wa_nooksack_tower_beckey_schmidtke_route`, `wa_nooksack_tower_south_face` (Nooksack Tower, 3
+routes), `wa_north_face_3` (Lexington Tower), `wa_north_face_left_buttress` (Castle Peak,
+Pasayten).
+
+**Confirmed error (1):** `wa_news_nw_corner`'s FA party name was misspelled "Paul Boving and
+Steve Pollack" (in both `name` and `fa`); SummitPost and Mountain Project both spell it "Steve
+Pollock." FA date (Sept 25, 1976) already matched and is unchanged — only the spelling is fixed.
+SQL in `audits/sql/2026-10-23-batch-440.sql`, pre-flighted with `check:sql`. Separately verified
+clean: this row's own hazard note about 3 climbers killed May 10, 2025 when an old piton anchor
+pulled during a rappel in the Early Winter Couloir (this peak's east side) is independently
+confirmed by NBC/CBS/KSL news coverage.
+
+**Flagged for human review (3):**
+- `wa_nooksack_tower_beckey_route` and `wa_nooksack_tower_beckey_schmidtke_route` look like the
+  SAME real route filed twice — same peak, same FA party (Beckey/Schmidtke) and year (1946), same
+  commitment grade (IV) — but `beckey_route` is the fully-enriched row (10 pitches, waypoints,
+  descent text, AAJ-confirmed July 5 1946 date) while `beckey_schmidtke_route` is a near-empty
+  stub with every other field null. Same shape as the previously-noted Rainier Ingraham
+  Direct/Glacier Direct pair — left for a human merge/delete decision, not altered.
+- `wa_nooksack_tower_south_face`'s stored FA ("Jens Klubberud and Ben Manfredi, July 2001") isn't
+  corroborated by Wikipedia/SummitPost/AAC-AAJ/Mountain Project, which document the 1946 FA and
+  two 1983 ascents (Nelson/Gerson's NE Couloir-East Ridge; Collum/Nelson's winter route) but no
+  south-face line or these climbers by name. Absence of a hit isn't proof of error — flagged for
+  a human to check against Beckey's Cascade Alpine Guide Vol. 3 rather than guessed at.
+- `wa_needle_peak_north_ridge`'s access field cites a specific 2026 "Sisi Fire" closure (order
+  06-17-02-2026-35, closing Agnes Creek Trail/PCT-area trails). The fire and closure are real, but
+  the exact order number and trail list couldn't be independently confirmed against live USFS/NPS
+  alert pages — flagged, not altered.
+
+Verified clean otherwise: Cathedral Peak's 8,606 ft elevation and coordinates (`wa_ne_ridge`);
+`wa_nooksack_tower_beckey_route`'s FA, date and 8,285 ft elevation (AAC/AAJ-confirmed); the Needle
+Peak→Bonanza traverse's V 5.8 grade (AAC Journal 2007) and Bonanza's 9,516 ft elevation/
+coordinates; Lexington Tower North Face's FA (Tim Kelley & Dick McGowan, July 5 1954, matching
+the area's own blurb) and coordinates; and Castle Peak North Face Left Buttress's FA (Blake
+Herrington & Peter Hirst, Aug 3 2008), 8,343 ft high point, and a real, verbatim-matching USFS
+Ptarmigan Fire closure order (06-17-04-26-39).
+
+Pass 7 continues next run after `wa_north_face_left_buttress`.
