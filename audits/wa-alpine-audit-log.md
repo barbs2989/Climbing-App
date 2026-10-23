@@ -33237,3 +33237,44 @@ Route's 5,587 ft high point matches its area row; no first-ascent claim on this 
 check.
 
 Pass 7 continues next run after `wa_mount_price_hester_lake_route`.
+
+## 2026-10-23 (batch 433) — pass 7
+
+DB reachable this run. Checked four Mount Price routes (Lower Ramp Route, Northeast Route,
+Prominent Dihedral, South Ridge), Mount Pugh's Pika Slab, and three Mount Rainier routes
+(Curtis Ridge, Disappointment Cleaver, East Success Couloir).
+
+1 fixed, 1 flagged, 6 clean. Fixed: wa_mount_rainier_curtis_ridge stored high_point_ft as
+13,800 ft (the top of the technical ridge) even though the route's own waypoints list
+Columbia Crest — the true summit, elevFt 14,406 — as its final point, and its own
+descent_text says the route continues "over the summit area" to Columbia Crest; 14,406
+also matches areas.elevation_ft for Mount Rainier and the sibling Disappointment Cleaver
+route's own high_point_ft. Brought the stale field into line with the route's own data
+(see audits/sql/2026-10-23-batch-433.sql). Flagged for human review: wa_mount_pugh_pika_slab
+credits its FA to "Leland Windham, July 2023," but the same route's own `beta` text says
+"first-ascent info ... [is] not published" — the two fields contradict each other and
+general web search turned up no record of this route or climber at all, so there's no way
+to tell which one (if either) is right without a human who has local knowledge. Mount
+Rainier's own elevation (14,406 ft, stored in both the area row and on Disappointment
+Cleaver) is defensible but not clear-cut: NGS/NPS's long-standing official figure is
+14,410 ft, while a 2024 remeasurement under peer review puts the current high point near
+14,406 ft NAVD88 — noted, not flagged, since the figure is in active scientific dispute
+rather than simply wrong. Also noted, not flagged: Mount Pugh's stored road/access text
+describes a Mountain Loop Highway closure as of Dec 2025-Apr 2026 with no mention of
+reopening, but Snohomish County's own seasonal page says the highway was fully open as of
+May 15, 2026 — the text may be stale by now, but confirming exactly what changed (and
+whether the usual Nov-May winter gate closure has since kicked back in) needs a check
+against the county/Forest Service alerts page directly, not general search. Clean: both
+Disappointment Cleaver's $82-per-climb-per-person 2026 NPS Climbing Cost Recovery Fee and
+its above-10,000-ft/glacier climbing-registration requirement, both confirmed against NPS's
+own Mount Rainier climbing-fee page; Curtis Ridge's FA credit (Gene Prater and Marcel
+Schuster, no year given) matches Mountain Project with nothing to contradict it. Mount
+Price's Prominent Dihedral FA (Doorish/Devaney, 1979) and Mount Rainier's East Success
+Couloir FA (Senner/Walstrom, 1960) could not be confirmed or contradicted by general web
+search — niche credits on routes with no indexed source — left as is per the audit's own
+rule against flagging what can't be checked either way. Mount Price's Lower Ramp Route,
+Northeast Route and South Ridge carry almost no enrichment beyond grade/area placement
+(the stub shape `check:bare` describes), so there was nothing substantive to check on them
+beyond area placement, which is correct (area_type=peak, matches the catalog directory).
+
+Pass 7 continues next run after `wa_mount_rainier_east_success_couloir`.
