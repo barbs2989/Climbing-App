@@ -33,7 +33,7 @@ const ONLY = argOf("--states") ? new Set(argOf("--states").split(",").map((s) =>
 const PAGE = 500, PART_ROUTES = 2000, REPORTS_PER_ROUTE = 5;
 // Keep in step with TRIP_REPORT_COLS (+ the 0121 columns) in lib/db.js: the offline reader serves
 // these rows to the same screen.
-const REPORT_COLS = "id, route_id, user_id, stars, cond_tags, date_climbed, discipline, tick_type, notes, photos, beta, gear_beta, outcome_reasons, outcome_note, approach_minutes, climb_minutes, descent_minutes, car_to_car_minutes, snow_condition, freezing_level_ft, water_level, bug_pressure, trail_condition, party_size, protection_quality, anchor_quality, crowd_level, fa_ascent, developed, sun_vote, sun_note, itinerary, created_at, temp_f, snow_depth, seepage, mud, road_note, rappel_count, rappel_longest_m, rappel_rope";
+const REPORT_COLS = "id, route_id, user_id, stars, cond_tags, date_climbed, discipline, tick_type, notes, photos, beta, gear_beta, outcome_reasons, outcome_note, approach_minutes, climb_minutes, descent_minutes, car_to_car_minutes, snow_condition, freezing_level_ft, water_level, bug_pressure, trail_condition, party_size, protection_quality, anchor_quality, crowd_level, fa_ascent, developed, sun_vote, sun_note, itinerary, created_at, temp_f, snow_depth, seepage, mud, road_note, rappel_count, rappel_longest_m, rappel_rope, nights_out, camp_names";
 
 const KEY = anonKey();
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

@@ -51,8 +51,8 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import RouteDetail, { campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
-export { campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs };
+import RouteDetail, { campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
+export { campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine };
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route, tab) {
@@ -74,7 +74,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render, campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs } = require_(out);
+const { render, campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine } = require_(out);
 
 // renderToStaticMarkup ESCAPES: "CAMPING & BIVY" is emitted as "CAMPING &amp; BIVY".
 // Un-escape before matching, or the heading reads as absent and a false NO looks like a
@@ -543,6 +543,36 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   else fail("a non-https permit url was accepted");
   if (overnightPermitOf({ access: {} }) === null) ok("no overnight permit renders nothing");
   else fail("an empty access block produced a permit");
+}
+
+// ── 20. WHERE CLIMBERS SAY THEY SLEPT (0358). The log form's WHERE DID YOU CAMP? stores cond.camps by
+// the names this list uses; the panel counts reports per site by NAME (case aside, nothing fuzzier),
+// once per report, and offers a camp no site carries as one to ADD — never writing it into the list.
+{
+  const sites = [{ name: "Boston Basin" }, { name: "Sahale Glacier camp" }];
+  const acts = [
+    { date: "2026-08-01", cond: { camps: ["boston basin", "Sahale Glacier camp"] } },
+    { date: "2026-08-20", cond: { camps: ["Boston Basin", "Boston Basin"] } },
+    { date: "2026-07-04", cond: { camps: ["Basin Creek"] } },
+    { date: "2026-07-05", cond: { nights: "0" } },
+  ];
+  const r = campReportsOf(sites, acts);
+  const bb = r.by.get(0), sg = r.by.get(1);
+  if (bb && bb.n === 2 && bb.last === "2026-08-20") ok("a camp's count is of reports, once each, case aside, with the latest date");
+  else fail(`campReportsOf counted Boston Basin as ${JSON.stringify(bb)} (want n 2, last 2026-08-20)`);
+  if (sg && sg.n === 1) ok("a second camp in one report counts for that camp too");
+  else fail("the second camp of a multi-camp report was not counted");
+  if (r.extra.length === 1 && r.extra[0].name === "Basin Creek" && r.extra[0].n === 1) ok("a camp the list lacks comes back as one to add");
+  else fail(`unlisted camps came back as ${JSON.stringify(r.extra)}`);
+  if (campReportsOf([{ name: "Wing Lake" }], [{ cond: { camps: ["Wing Lake camp"] } }]).by.size === 0) ok("a near-miss name is not counted against a listed camp");
+  else fail("a near-miss camp name was counted against a listed site");
+  if (campSleptLine(null) === "" && /^Slept here in 2 trip reports/.test(campSleptLine(bb))) ok("the slept-here line reads as a count of reports");
+  else fail(`campSleptLine said ${JSON.stringify(campSleptLine(bb))}`);
+  const t = text(render(route("alpine", { bivy: [SITE], activity: [{ id: "a1", user: "x", date: "2026-08-01", cond: { camps: ["Boston Basin"] } }, { id: "a2", user: "y", date: "2026-08-02", cond: { camps: ["Hidden Lake"] } }] }), "planner"));
+  if (t.includes("Slept here in 1 trip report")) ok("a reported night reaches the camp's card on the Planner");
+  else fail("a trip report's camp did not reach the CAMPING & BIVY card");
+  if (t.includes("NAMED IN TRIP REPORTS") && t.includes("Hidden Lake")) ok("an unlisted reported camp is offered on the Planner");
+  else fail("an unlisted camp from a trip report was not offered to add");
 }
 
 console.log(failures

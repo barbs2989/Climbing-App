@@ -23,6 +23,12 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   `LogAscent` also offers *Add topo photo* (signed in, DB on): the climber draws the route line with the route page's
   `TopoDrawer` (lazy import from `RouteDetail.jsx`) and on save App's `addLogTopo` files the photo under the climb's
   area (`uploadTopoPhoto`) and the line on the route (`submitTopoLine`), so it reaches the Photos tab for everyone.
+- **Where you camped (0358)**: on a route where `campingGate(route)` is true, `LogAscent`'s *Getting there* asks *Nights out*
+  (`cond.nights`, a STRING so a day trip "0" survives the save filter → `climb_logs.nights_out`) and *Where did you camp?*
+  (`cond.camps`, the camps in the order slept in → `climb_logs.camp_names text[]`). The chips are the route's own CAMPING & BIVY
+  list (`campSites`, imported from `RouteDetail.jsx`); *Somewhere else* types a name. `TripReport` shows it under Getting there
+  and `ReportStats` as a chip (`campSummary`/`campLabel` in core). Model: Peakbagger's ascent form asks "nights camped", WTA's
+  trip reports tag day hike / overnight / multi-night; neither lets you pick the camp, which is what lets the route page count it.
 - **A logged climb and a trip report are ONE `climb_logs` row** (reviewed 2026-10-21). The difference is how much the climber filled in and which way they answered *DID YOU CLIMB IT?*:
   - *Quick log* = a climb with a style, a date and maybe stars. *Full log* (`LogAscent`) = the same row with the seven sections filled in; its write-up box (`notes`) is what makes it read as a trip report, and `TripReport` is how any row opens.
   - *Conditions only* (`tick_type` `Conditions`, App's `condReports` rather than `logs`) = a report from someone who may not have climbed: road, snow, crowds. It feeds conditions and is never counted as a climb. It does count toward your *Log conditions on 5 routes* challenge (`Challenges` takes `condReports`).
