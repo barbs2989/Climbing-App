@@ -33556,3 +33556,40 @@ Herrington & Peter Hirst, Aug 3 2008), 8,343 ft high point, and a real, verbatim
 Ptarmigan Fire closure order (06-17-04-26-39).
 
 Pass 7 continues next run after `wa_north_face_left_buttress`.
+
+## Batch 441 — 2026-10-23
+
+Routes: `wa_north_face_var_right_directisimo` (Concord Tower, area fixed), `wa_north_gardner_mountain_nw_couloir`
+(clean), `wa_north_peak_north_ridge` and `wa_north_peak_southeast_buttress` (Gunsight Range "North Peak," flagged),
+`wa_north_ridge_3` (Cutthroat Peak, flagged), `wa_north_ridge_4` (Primus Peak, clean), `wa_north_star_mountain_east_route`
+(clean), `wa_northeast_buttress_4` (Colchuck Peak, clean).
+
+**Fixed (1):** `wa_north_face_var_right_directisimo`'s own data checks out — its 7,560 ft `high_point_ft` already
+matches Mountain Project/SummitPost/Mountaineers.org. But its parent area row, `wa_concord_tower`, stored
+`elevation_ft` 7,611 — the outlier against all three outside sources and against the app's own route value — so
+the area row is corrected to 7,560.
+
+**Flagged for human review (3):**
+- `wa_north_ridge_3` (Cutthroat Peak, North Ridge): stored FA "Fred Beckey, Jim Crooks, and Ed Kenney, August 19,
+  1940." A University of Washington Earth & Space Sciences page confirms Jim Crooks's 1940 first ascent of this
+  route but does not name Beckey or Kenney, and Wikipedia's own list of Beckey first ascents for 1940 omits this
+  route entirely — "Kenney" may be a garbling of "Kenneth" (Cutthroat's separate, earlier 1937 West Ridge FA
+  credits a Kenneth Adam). No single source gives a clean replacement party list, so left unaltered; a human
+  check against Beckey's Cascade Alpine Guide Vol. 2 is the right next step.
+- `wa_north_peak_north_ridge` and `wa_north_peak_southeast_buttress` (both on the obscure "North Peak," Gunsight
+  Range, Glacier Peak Wilderness): stored FAs ("Steve Risse and Donna McBain, Aug 14 1989" and "Garrett Gardner
+  and Bill Lingley, Aug 1971") turned up in no AAJ/SummitPost/Mountain Project search — but this peak has almost
+  no indexed online climbing history, and neither claim is contradicted by anything found, so per the standing
+  rule these are noted, not flagged for a rewrite, and left as-is.
+
+Verified clean otherwise: `wa_north_gardner_mountain_nw_couloir`'s 8,956 ft elevation and Cedar Creek Trailhead
+location; `wa_north_ridge_4` (Primus Peak)'s 1986 Mark Bebie FA (AAC Journal 1987, matching the route's own
+account almost exactly) and its specific claim of a March 2026 SR-20/Diablo Lake rockslide closing the highway
+near Colonial Creek Campground through June 14, 2026 (confirmed by WSDOT's own travel advisory); `wa_north_star_mountain_east_route`'s
+FR 8301/Holden Village closure through 2027 (confirmed by Holden Village's own July 2026 release) and its claim
+that USGS survey crews swapped this peak's name with Bonanza Peak's on the original 1904 map (confirmed by
+Wikipedia/SummitPost); and `wa_northeast_buttress_4` (Colchuck Peak)'s 8,705 ft elevation — its "Mark Weigelt,
+Julie Brugger, 1970" FA could not be corroborated by any source checked, but nothing contradicts it either, so
+it's left as-is per the same rule.
+
+Pass 7 continues next run after `wa_northeast_buttress_4`.

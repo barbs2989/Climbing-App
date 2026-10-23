@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_north_face_left_buttress",
+  "last_processed_id": "wa_northeast_buttress_4",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -8775,6 +8775,25 @@
       "clean": 4,
       "sql_file": "audits/sql/2026-10-23-batch-440.sql",
       "note": "wa_news_nw_corner's FA party name was stored as \"Paul Boving and Steve Pollack\" (route name too); SummitPost and Mountain Project both spell it \"Steve Pollock\" -- FA date (Sept 25, 1976) already matched and is unchanged, only the name spelling is fixed (and the row's own fatality claim -- 3 climbers killed May 10, 2025 when an old piton anchor pulled during a rappel in the Early Winter Couloir on this peak's east side -- is independently confirmed by NBC/CBS/KSL news coverage, so left as-is). Flagged for human review: wa_nooksack_tower_beckey_route and wa_nooksack_tower_beckey_schmidtke_route are almost certainly the SAME real route filed twice -- same peak, same FA party (Beckey/Schmidtke) and year (1946), same commitment grade (IV) -- but beckey_route is the fully-enriched row (10 pitches, waypoints, descent text, AAJ-confirmed July 5 1946 date) while beckey_schmidtke_route is a near-empty stub with every other field null; per this audit's scope, noted for a human merge/delete decision rather than altered (same pattern as the previously-noted Rainier Ingraham Direct/Glacier Direct pair). Also flagged: wa_nooksack_tower_south_face's stored FA (\"Jens Klubberud and Ben Manfredi, July 2001\") could not be corroborated against Wikipedia/SummitPost/AAC-AAJ/Mountain Project, which document the 1946 FA and two 1983 ascents (Nelson/Gerson's NE Couloir-East Ridge, Collum/Nelson's winter route) but no south-face line or these climbers by name -- absence of corroboration isn't proof of error, so left for a human to check against Beckey's Cascade Alpine Guide Vol. 3; and wa_needle_peak_north_ridge's cited 2026 \"Sisi Fire\" closure (order 06-17-02-2026-35, closing Agnes Creek/PCT-area trails) is a real, current fire closure but the specific order number and trail list could not be independently confirmed against live USFS/NPS alert pages. Verified clean otherwise: Cathedral Peak's 8,606 ft elevation and coordinates; North Face (Beckey-Schmidtke)'s FA, date and 8,285 ft elevation (AAC/AAJ-confirmed); the Needle Peak-to-Bonanza traverse's V 5.8 grade (AAC Journal 2007) and Bonanza's 9,516 ft elevation/coordinates; Lexington Tower North Face's FA (Tim Kelley & Dick McGowan, July 5 1954, matching the area's own blurb) and coordinates; and Castle Peak North Face Left Buttress's FA (Blake Herrington & Peter Hirst, Aug 3 2008), 8,343 ft high point, and a real, verbatim-matching USFS Ptarmigan Fire closure order (06-17-04-26-39)."
+    },
+    {
+      "batch_number": 441,
+      "date": "2026-10-23",
+      "route_ids": [
+        "wa_north_face_var_right_directisimo",
+        "wa_north_gardner_mountain_nw_couloir",
+        "wa_north_peak_north_ridge",
+        "wa_north_peak_southeast_buttress",
+        "wa_north_ridge_3",
+        "wa_north_ridge_4",
+        "wa_north_star_mountain_east_route",
+        "wa_northeast_buttress_4"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 3,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-10-23-batch-441.sql",
+      "note": "wa_north_face_var_right_directisimo's own facts check out, but its parent area row (wa_concord_tower) stored elevation_ft 7611 against Mountain Project/SummitPost/Mountaineers.org's agreeing 7560 ft -- which the route's own high_point_ft already had right -- so the area row is fixed. Flagged for human review: wa_north_ridge_3 (Cutthroat Peak North Ridge)'s stored FA 'Fred Beckey, Jim Crooks, and Ed Kenney, Aug 19 1940' -- a UW Earth & Space Sciences page confirms Jim Crooks's 1940 FA of this route but does not name Beckey or Kenney, and Wikipedia's own Beckey FA list for 1940 omits this route, so the party list may be garbled (possibly 'Kenney' for 'Kenneth', confused with Cutthroat's separate 1937 West Ridge FA party); wa_north_peak_north_ridge and wa_north_peak_southeast_buttress (obscure Gunsight Range peak) whose stored FAs could not be found in any indexed source, left as noted-not-flagged per the standing rule since neither is contradicted. Verified clean otherwise: wa_north_gardner_mountain_nw_couloir's 8956 ft elevation and Cedar Creek Trailhead location; wa_north_ridge_4 (Primus Peak)'s 1986 Mark Bebie FA (AAC Journal 1987) and its cited March 2026 SR-20/Diablo Lake rockslide closure, reopened June 14 2026 (confirmed via WSDOT's own travel advisory); wa_north_star_mountain_east_route's FR 8301/Holden Village closure through 2027 (confirmed via Holden Village's own July 2026 release) and its USGS peak-name-swap-with-Bonanza-Peak claim (confirmed via Wikipedia/SummitPost); wa_northeast_buttress_4 (Colchuck Peak)'s 8705 ft elevation -- its 'Mark Weigelt, Julie Brugger, 1970' FA could not be corroborated but is also not contradicted by anything found."
     }
   ]
 }
