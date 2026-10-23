@@ -17,7 +17,8 @@ room for side-panel ads later. The phone app keeps its own look.
   - A fixed **left sidebar** under it: Home · Climbs · Partners · Crews · Groups · Logbook · Ranks
     (Profile is the avatar at the top right, not a sidebar row), then *Your crews* (up to five, a red dot for unread). No site links: those are the footer's.
   - The **page column**, and at **1280px and wider** a 300px **right rail** (`WideRail`): *Coming up*
-    (agreed crew days) and *Alerts*. *Best day to climb* is not here; it opens from the Menu. Ads, when they come, take slots in this rail
+    (agreed crew days) and *Alerts*, which starts **collapsed**: just the header (*Alerts · N new*, a blue dot when
+    any are unread) until you click it, like Home's Alerts row on a phone. *Best day to climb* is not here; it opens from the Menu. Ads, when they come, take slots in this rail
     (desktop only).
   - Between 1024 and 1279px the sidebar shows **icons only** and there is no rail. The whole shell is
     capped at 1228px and centred (a 640px page column), so a big monitor gets plain background either side.
