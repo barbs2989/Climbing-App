@@ -405,7 +405,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     indefinite closure while the row says an open alternative exists — worse than silence);
     `wa_mount_spickard_silver_glacier` has two real drives and the sibling covers one, the
     two-trailhead trap however explicitly the row cross-references it; and
-    `wa_don_t_climb_that_she_said` place-matches *"White Chuck"* onto the **FR 23 White Chuck Road**
+    `wa_don_t_climb_that_she_said` (deleted on the owner's instruction 2026-10-22; full row in
+    `audits/route-deletions/`) place-matches *"White Chuck"* onto the **FR 23 White Chuck Road**
     block — a different, closed valley — while its own overview puts it on Glacier Peak's
     **south-side** North Fork Sauk approach. A true statement about the wrong leg of the wrong drive.
   - **Donors stay scoped to the SAME AREA, and that scoping is what makes a bare highway number
@@ -493,6 +494,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     prose names, and prints the different-road case as the reason a researched write was needed.
 - **AN ADMISSION THAT NOTHING IS KNOWN IS EVIDENCE; AN ADMISSION FOLLOWED BY SPECULATION IS A
   DEFECT — and the second one printed an affirmative safety claim.** `wa_don_t_climb_that_she_said`'s
+  (a row since deleted, 2026-10-22)
   `approach` opened *"No route-specific trailhead or approach beta … turned up anywhere online"* and
   then carried on for another 636 characters inventing one, ending **"nothing resembling glacier
   travel, creek fording, or avalanche terrain given the minimal distance and zero gain."**

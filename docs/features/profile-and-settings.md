@@ -78,6 +78,8 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   the Supabase dashboard and replies to the account email. Before 0343 the statement pointed at Feedback, which sends nothing. Four flags rather than one, so each page is
   its own overlay the browser walks open by name. `closeSettings` closes the sheet and any open page when a row leaves Settings.
 
+- **Badges (trophy case)**: the profile's overview opens with *Badges · N* -- what that climber earned (`useBadges` + `trophies`, see logbook-crews-home.md); nothing for another climber with none, a one-line nudge on your own.
+
 ## 2. How it works
 1. **Real vs seed.** `ME` (`ClimbMatchCore.jsx`) is the seed global. `App` re-copies hook state onto it each render (legacy hack; do not extend).
    When signed in, `getProfile(id)` (`lib/auth.js`, `profiles` select `*`; `PGRST116` zero-rows returns `null`, any other error throws) hydrates `profile` (`useState` + `setProfile`)
