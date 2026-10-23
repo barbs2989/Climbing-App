@@ -33440,3 +33440,36 @@ Gendarme — matches the Alpine Institute's route history closely); Stuart Glaci
 Llewellyn & John Vertrees, Aug 1935, SummitPost + Mazamas).
 
 Pass 7 continues next run after `wa_mount_stuart_west_ridge`.
+
+## 2026-10-23 — Pass 7, Batch 438
+
+Eight routes across 4 peaks (Mount Teneriffe ×2, Mount Terror ×4, Mount Thomson, Mount Tom):
+Kamikaze Trail + Standard Route (Teneriffe); North Face/North Buttress, East Ridge (stored
+under the `southeast_face` id), Stoddard Buttress, West Ridge (Terror); West Ridge (Thomson);
+Glacier/Scramble Route (Tom).
+
+No confirmed errors — no SQL file this batch.
+
+- **Flagged for human review:** `wa_mount_terror_stoddard_buttress`'s `fa` claims a solo first
+  ascent by John Stoddard on July 16, 1984, plus a 1985 extended variant. No authoritative
+  source (AAJ archive, guidebook) turned up to confirm or deny this; SummitPost's route page
+  and climber logs confirm the route/grade but give no FA. Left as-is per the "can't verify,
+  don't guess" rule.
+- **Noted, not flagged:** `wa_mount_terror_southeast_face`'s own `corrections` field already
+  documents that its id says "southeast_face" but its stored name is "East Ridge" — a known
+  route-identity mismatch already on file for a human to resolve, not something this pass
+  introduces or can fix.
+
+Verified clean against authoritative sources: both Teneriffe routes match WTA's own stats
+exactly (13.0 mi RT, 3,800 ft gain, trail high point 4,585 ft — the row correctly uses the true
+4,788 ft summit instead, already reconciled in its own `corrections` field) and the DNR Mount Si
+NRCA land-manager correction holds up. Mount Terror's 8,151 ft elevation (Wikipedia/SummitPost —
+the widely-repeated figure over TopoQuest's 8,129 ft) and its North Cascades NP backcountry
+permit fees ($10/person + $6 reservation, free age 15 and under) check out current for 2026
+across all four routes. Mount Thomson's West Ridge FA (Beckey brothers, 1940, per AAC's Helmy
+Beckey obituary and a Mountaineers memorial piece — the row's added Craig/Ford names rest only
+on a SummitPost comment, unconfirmed but not contradicted, left as-is) and its elevation/
+coordinates check out. Mount Tom's 7,076 ft elevation, coordinates, 1914 FA, and Olympic NP
+wilderness camping fees ($8/person/night + $6 reservation) all check out current for 2026.
+
+Pass 7 continues next run after `wa_mount_tom_scramble`.
