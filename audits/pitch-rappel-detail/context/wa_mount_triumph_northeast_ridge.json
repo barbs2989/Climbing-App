@@ -1,0 +1,83 @@
+{
+ "id": "wa_mount_triumph_northeast_ridge",
+ "name": "Northeast Ridge",
+ "area_id": "wa_mount_triumph",
+ "discipline": "alpine",
+ "grade": "5.6",
+ "pitches": 11,
+ "length_m": 488,
+ "overview": "A long, sustained alpine rock route climbing Mount Triumph's northeast-facing ridge from a high bivy col above Thornton Lakes to the small, airy summit — mostly 4th and low-5th class ridge climbing over towers and a knife-edge crest, capped by a well-known 5.7 offwidth crux near the top.",
+ "description": null,
+ "beta": "The Northeast Ridge is the one genuinely 'moderate' way up an otherwise defended peak. From a col/bivy site above Thornton Lakes, the route crosses a shrinking glacier remnant and a loose gully to gain the ridge crest, then follows roughly 9-12 belayed pitches (mostly easy 5th class, with a runout 5.6 traverse and the signature 5.7 offwidth crux) plus short simul-climbed/scrambled sections along an exposed, towered ridge to the summit. The descent reverses the ridge with a long series of rappels and downclimbing back to the col.",
+ "descent_text": "From the summit, downclimb roughly 30 ft off the north side of the notch to easier rock, then reverse the ridge via a long string of rappels (double-rope where two ropes are carried) interspersed with downclimbing — accounts report anywhere from about 7 to 10 rappels total, including a double-rope rappel off the crux crack pitch — back down to the bivy col. Existing slings and rap rings are present at most stations but the rock is loose, so back up or replace suspect anchors. From the col, reverse the approach gully and climbers' path back around Thornton Lake and out the Thornton Lakes Trail to the trailhead.",
+ "descent": "Reverse the route: downclimb and rappel the ridge crest back to the col, then descend the approach gully and trail to the trailhead.",
+ "rappels": "7-10 rappels (mix of double- and single-rope, 60m ropes) back down the ridge to the bivy col, interspersed with downclimbing; existing slings/rap rings are present at most stations but should be inspected or backed up",
+ "rappel_count_note": null,
+ "rope_length_m": null,
+ "pitch_detail": [
+  {
+   "grade": "Class 3–4, glacier",
+   "notes": "From the bivy col, drop about 200 ft to talus and cross the thin, crevassed glacier remnant below the ridge's gendarmes (exposed to icefall; roughly an hour on snow). A steep gully with class 4 moves at its base and class 3 above reaches the notch at about 6,080 ft where roped climbing starts; the red ledges left of the obvious gully are the better line up it.",
+   "pitch": "Approach pitch (col to notch)"
+  },
+  {
+   "grade": "low 5th",
+   "notes": "An easy ramp off the notch: traverse right along a ledge, then climb up downward-sloping blocks with little protection. A variation to the left, through a small tree, has better holds and is the more secure choice for a less confident leader.",
+   "pitch": "P1"
+  },
+  {
+   "grade": "low 5th",
+   "notes": "Straight up on big jugs and good footholds to a bush at the top, with solid rock and plenty of placements. The pitch finishes near a small bivy ledge on the ridge.",
+   "pitch": "P2"
+  },
+  {
+   "grade": "low 5th",
+   "notes": "An easy 4th-class gully on the left with some 5th-class moves above, then easier ground and snow fins along the crest. Most parties simul-climb this stretch; keep gear in on the exposed sections.",
+   "pitch": "P3"
+  },
+  {
+   "grade": "low 5th",
+   "notes": "The second steep rise on the ridge: solid rock with pockets and ledges where you need them. Small towers follow, with the knife-edge crest ahead.",
+   "pitch": "P4"
+  },
+  {
+   "grade": "5.6",
+   "notes": "The poorly protected pitch (often called PG13): traverse down and right around the first gendarme on an exposed ramp on the right side of the ridge, over mossy, lichen-covered and sometimes wet slabs and turf. Protection is marginal and rope drag builds quickly; extend placements.",
+   "pitch": "P5"
+  },
+  {
+   "grade": "low 5th",
+   "notes": "Climb the second tower on solid rock with big exposure. The top offers a crack for a gear belay, which is more trustworthy than slinging a loose horn.",
+   "pitch": "P6"
+  },
+  {
+   "grade": "5.6",
+   "notes": "Steep, clean climbing on solid rock with small holds and good feet, well protected. It ends at the base of the offwidth crux.",
+   "pitch": "P7"
+  },
+  {
+   "crux": true,
+   "grade": "5.7",
+   "notes": "A vertical offwidth crack with a large chockstone that feels closer to canyoneering than ridge climbing; it protects well with cams to #2–#3 and many take climbing shoes for it. The bypass traverse right around a horn crosses 15–20 ft of unprotectable slab and is not the easier option. Finish on steep smears onto slab.",
+   "pitch": "P8 (crux)"
+  },
+  {
+   "grade": "low 5th",
+   "notes": "Above the offwidth a slab wall with finger cracks can be climbed directly, but moving right and scrambling is faster. A thin, sharp ledge then leads to the great notch, traversing above the West Face with huge exposure on loose rock.",
+   "pitch": "P9"
+  },
+  {
+   "grade": "4th class",
+   "notes": "From the great notch, make a short 4th-class step on the right to a faint path, then go diagonally left up class 3–4 ledges and heather toward the south ridge and the small summit. The difficulty is low but the heather-covered rock is loose and a fall would be serious; many parties keep the rope on.",
+   "pitch": "Summit scramble"
+  }
+ ],
+ "rappel_detail": null,
+ "climbing_route": null,
+ "fa": "Joan and Joe Firey, 1965",
+ "areas": {
+  "name": "Mount Triumph",
+  "parent_id": "wa_picket_range"
+ },
+ "parent_area": "Picket Range"
+}

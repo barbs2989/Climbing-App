@@ -1,0 +1,41 @@
+{
+  "or_european_vacation": {
+    "area": "or_1_northeast_face",
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.10a", "bolts": 4, "notes": "Starts up the bolted line of The Struggle Within, climbing a crack past its first four bolts, then steps right to the belay bolts beneath the second pitch of the East Wall route." },
+      { "pitch": "2", "grade": "5.10c", "bolts": 8, "notes": "Bolted climbing that trends up and right to reach the arete followed by Eye of the Beholder. Pitches 1 and 2 can be linked on a 70 m rope if the rope is managed with long runners." },
+      { "pitch": "3", "grade": "5.10d", "notes": "Easy natural-gear climbing at about 5.7 leads to one bolt-protected hard move, then a crack that widens up to a hanging belay. Pitches 3 and 4 can be linked on a 70 m rope with runners." },
+      { "pitch": "4", "grade": "5.10c", "notes": "A wide crack taking 4-inch gear, then the line veers right to a bolted finish over a bulge. Belay on a ledge." },
+      { "pitch": "5", "grade": "5.9", "bolts": 4, "notes": "Easy bolted face climbing on imperfect rock up to an anchor. Pitches 5 and 6 can be linked on a 70 m rope." },
+      { "pitch": "6", "grade": "5.10a", "bolts": 5, "notes": "A bolted face crosses a section of poor rock; the holds near the top are solid." },
+      { "pitch": "7", "grade": "5.10d", "bolts": 7, "crux": true, "notes": "The best climbing of the route, on good rock high on the finishing tower. At the arete, clip a bolt for the follower and step down around the edge to a ledge. The anchor here is not meant for rappelling." },
+      { "pitch": "8", "notes": "Step right to a bolted water streak and stem past dubious rock to a better finish. Belay from the slings or bolts just over the lip, or continue to the summit and belay there." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "sources": ["https://www.mountainproject.com/route/109071980"],
+      "changed": "Wrote 8 pitch notes from the single route page (grades, bolt counts, linking advice). No pitch lengths stated, so none given. No rappel_detail: sources give no station-by-station descent and report that anchors were once pulled then later said present but hard to find.",
+      "pitch_count_found": 8,
+      "other_findings": "Stored descent says seven rappels with a 70 m rope; not confirmed by the source read. Page says anchors on the rappel route had been removed (2014), later said to exist but hard to find. Pitch 8 has no stated grade. Pitch text on the source page is credited to a guidebook, so only one independent source."
+    }
+  },
+  "az_moby_dick": {
+    "area": "az_whale_dome",
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.8", "lengthM": 37, "anchor": "2 bolts", "notes": "Begin at the double-crack left of the large flake. Climb right of two thin cracks until they split, take the left fork to cruxy face moves past a single bolt, then easier face climbing to the two-bolt belay." },
+      { "pitch": "2", "notes": "Step left onto an exposed arete, then climb right past a short parallel crack system. Continue up the obvious flake system and finish to the right where the flake ends." }
+    ],
+    "review": {
+      "confidence": "low",
+      "sources": ["https://www.summitpost.org/moby-dick/163502", "https://mountainproject.com/route/105738239/moby-dick?print=1"],
+      "changed": "Only pitches 1 and 2 were available, via search-result excerpts (direct fetch of both pages was blocked). P1 120 ft converted to 37 m. No rappel_detail written: excerpts say a free-air rappel off the north side with two ropes, while the stored descent says westward to a saddle; sources conflict and no station detail was read.",
+      "pitch_count_found": 2,
+      "other_findings": "Mountain Project lists 6 pitches / 700 ft; stored row says 5 pitches. Stored descent (rappel westward to saddle) disagrees with the north-side free-air rappel in the excerpt."
+    }
+  },
+  "skip_reasons": {
+    "or_gulag_archipelago": "Only a bolt count (14 bolts, 4 pitches, grade 5.11d vs 5.11+ elsewhere) found; no pitch descriptions readable.",
+    "az_cherry_jam": "No pitch-by-pitch text found in any readable source; only general area info and a rumored north gully descent.",
+    "wa_comb_the_dreamer": "Searches found no page tying this route to The Comb; cannot confirm the route (one unlocated 10-pitch 5.10- Dreamer appeared, ambiguous)."
+  }
+}
