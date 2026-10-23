@@ -1531,8 +1531,9 @@ function RappelTable({route,onEdit}){
    `approach` instead, which is why approach prose on unpitched routes so often walks you past
    the base of the climb and keeps going to the summit — and why a party looking for where the
    climbing STARTS had to reverse-engineer it out of a paragraph about a trail.
-   Gated on isPitched() being false: a route with real pitches keeps PITCH-BY-PITCH and this
-   never renders, so the two can never both claim to describe the same ground. */
+   It renders wherever it is written and is drawn ABOVE ROUTE BREAKDOWN: this is the climb at a
+   glance, the breakdown is the same ground pitch by pitch (owner, 2026-10-22). It used to be gated
+   on isPitched() being false, which hid it on the 46 alpine routes that carry one. */
 export function ClimbingRouteTable({route,onEdit}){
   const segs=Array.isArray(route.climbingRoute)?route.climbingRoute:[];
   if(!segs.length)return null;
@@ -1550,6 +1551,19 @@ export function ClimbingRouteTable({route,onEdit}){
       </div>
     </div>)}
   </div></>;
+}
+
+/* The join between CLIMBING ROUTE and the ROUTE BREAKDOWN drawn directly under it: a short spine
+   down from the overview and one line saying what the breakdown holds, counted by breakdownRows()
+   so it names the same pitches and legs the breakdown's own intro does. Text, not a control: the
+   breakdown is the very next section. */
+function BreakdownHandoff({route}){
+  const {pitchCount,stageCount}=breakdownRows(route);
+  if(!pitchCount&&!stageCount)return null;
+  const what=pitchCount
+    ?(pitchCount+" roped pitch"+(pitchCount!==1?"es":"")+(stageCount?" and "+stageCount+" leg"+(stageCount!==1?"s":""):""))
+    :(stageCount+" leg"+(stageCount!==1?"s":""));
+  return <div data-handoff="" style={{display:"flex",alignItems:"center",gap:10,padding:"0 0 0 24px"}}><div aria-hidden="true" style={{width:2,height:22,background:C.blueDim,flexShrink:0}}/><span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.4}}>{"↓ "+(pitchCount?"Pitch by pitch":"Leg by leg")+" below — "+what+" in the route breakdown."}</span></div>;
 }
 
 /* APPROACH — ONE section, holding every way in. It used to be two: "APPROACHES · N ways in"
@@ -4088,12 +4102,19 @@ const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+
     Overview, which left Plan describing how to reach the base and how to walk off but
     nothing about the climbing in between. */}
 {!cragOnly?<Capped><ProtectionCard route={route} myReports={myReports} onEdit={()=>{openFix("rack");}}/></Capped>:null}
+{/* OVERVIEW, THEN DETAIL. CLIMBING ROUTE (the climb at a glance, section by section) comes
+    BEFORE ROUTE BREAKDOWN (every pitch and leg), the order a climber reads a route in and the
+    order guidebooks print it: the line as a whole, then pitch by pitch (owner, 2026-10-22). It
+    used to sit AFTER the breakdown, and on a pitched route it was not drawn at all: 121
+    scramble/mountaineering routes showed the detail before the overview, and 46 alpine routes
+    held a written CLIMBING ROUTE nobody saw. It now renders wherever it is written; only its
+    EMPTY state stays unpitched-only, so a rock route is not asked for a second description of
+    pitches it already lists. When both are on the page they are drawn as one piece: the
+    overview ends in a connector that hands off to the breakdown directly under it. No section
+    is matched to a pitch — nothing in the record says which pitches a section spans, and
+    guessing from words would be a claim the record never made. */}
+{route.discipline!=="bouldering"&&(route.climbingRoute||[]).length?<div style={{marginBottom:14}}><Capped><ClimbingRouteTable route={route} onEdit={()=>{openFix("climbingRoute");}}/></Capped>{route.pitchDetail&&route.pitchDetail.length?<BreakdownHandoff route={route}/>:null}</div>:(!isPitched(route)&&route.discipline!=="bouldering"?<EmptySection title="CLIMBING ROUTE" what="No climbing route breakdown" why="Nothing describes the climbing section by section — where it steepens, where it gets exposed, where the crux is." cta="Describe the climbing" onFix={()=>{openFix("climbingRoute");}}/>:null)}
 {route.discipline!=="bouldering"&&route.pitchDetail&&route.pitchDetail.length?<Capped><RouteBreakdown route={route} comments={comments} commentsUnavailable={commentsUnavailable} onCommentAdd={commentApi.onAdd} onEdit={(pIdx)=>{setFixFocusPitch(typeof pIdx==="number"?pIdx:null);openFix("pitchDetail");}}/></Capped>:(gapPitches(route)?<EmptySection title="ROUTE BREAKDOWN" what="No pitch-by-pitch breakdown" why={route.pitches+" pitches are listed, but none of them are described — no per-pitch grades, belays or crux."} cta="Add the pitches" onFix={()=>{openFix("pitchDetail");}}/>:(isPitched(route)&&!cragOnly&&!(route.pitches>0)?<EmptySection title="ROUTE BREAKDOWN" what="No pitch-by-pitch breakdown" why="Nothing records how many pitches this climbs or what each one asks of you." cta="Add the pitches" onFix={()=>{openFix("pitchDetail");}}/>:null))}
-{/* The unpitched counterpart, in the SAME slot as PITCH-BY-PITCH. isPitched() is the
-    switch, so exactly one of PITCH-BY-PITCH and CLIMBING ROUTE can appear on a route and
-    neither can silently shadow the other. Moved here with the pitch table when Plan took
-    ownership of the climbing itself. */}
-{!isPitched(route)&&(route.climbingRoute||[]).length?<div style={{marginBottom:14}}><Capped><ClimbingRouteTable route={route} onEdit={()=>{openFix("climbingRoute");}}/></Capped></div>:(!isPitched(route)&&route.discipline!=="bouldering"?<EmptySection title="CLIMBING ROUTE" what="No climbing route breakdown" why="Nothing describes the climbing section by section — where it steepens, where it gets exposed, where the crux is." cta="Describe the climbing" onFix={()=>{openFix("climbingRoute");}}/>:null)}
 {(route.descent||route.descentText)?<div style={{marginBottom:ROUTE_GAP}}><SL action={<EditIconButton onClick={()=>{openFix("descentText");}} title="Edit descent information"/>}>DESCENT</SL><Capped>{[["Descent",descentBeta(route)]].filter(x=>x[1]).map(x=><div key={x[0]} style={{background:C.card,borderRadius:10,padding:"10px 12px",marginBottom:8,border:`1px solid ${C.border}`}}><div style={{fontSize:12,fontWeight:700,color:C.blue,marginBottom:5}}>{x[0]}</div>{splitParagraphs(x[1]).map((p,i)=><p key={i} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:i===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}</div>)}</Capped></div>:(route.discipline==="bouldering"?null:<EmptySection title="DESCENT" what="No descent recorded" why="Nothing says how you get off this route — and on many climbs the way down is the committing part." cta="Describe the descent" onFix={()=>{openFix("descentText");}}/>)}{/* The rappel table and its prose/count summary, immediately after the descent they belong
     to. Both were on Overview; keeping them adjacent is what matters — see the note where
     they used to sit. */}
