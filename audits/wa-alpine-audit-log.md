@@ -33593,3 +33593,48 @@ Julie Brugger, 1970" FA could not be corroborated by any source checked, but not
 it's left as-is per the same rule.
 
 Pass 7 continues next run after `wa_northeast_buttress_4`.
+
+## Batch 442 — 2026-10-23
+
+Routes: `wa_northeast_face_direct` (Mount Formidable, clean), `wa_northeast_ridge_1963_route` (Johannesburg
+Mountain, flagged — pre-existing), `wa_northwest_arete` (Argonaut Peak, clean), `wa_northwest_buttress` (Sloan
+Peak, clean), `wa_northwest_face_2` (Kangaroo Temple, clean), `wa_northwest_face_4` (Little Big Chief Mountain,
+flagged), `wa_northwest_face_boving_pollock` (South Early Winters Spire, fixed + a pre-existing flag), `wa_northwest_mox_peak_standard`
+(Northwest Mox Peak, clean).
+
+**Fixed (1):** `wa_northwest_face_boving_pollock`'s `watch_out` prose said "High-grade 5.11a climbing," but this
+route's own `grade`/`rock_grade` (5.11b) is independently confirmed by Mountain Project — the prose disagreed
+with the row's own verified grade, not just with an outside source. `watch_out` text swapped to 5.11b.
+
+**Flagged for human review (3):**
+- `wa_northeast_ridge_1963_route` (Johannesburg Mountain): the stored 1963 FA date remains unverifiable. A
+  genuinely distinct, confirmed "1957 Northeast Rib" route exists on this peak's NE side (cited in a 2023 AAJ
+  writeup), consistent with this row's own `data_quality.gaps` note flagging possible conflation with a 1951/1957
+  NE-side line — but no primary source confirms whether this row is that 1957 route misdated, or a separate 1963
+  climb. Same pre-existing uncertainty the row already discloses; nothing new found.
+- `wa_northwest_face_4` (Little Big Chief Mountain): the stored route-specific FA ("Martin Volken and Jeff
+  Hansell, September 10, 2001") turned up on no indexed source (no Mountain Project/SummitPost/Cascade Climbers
+  page for this NW Face line exists online) — absence of corroboration, not a contradiction, so left unaltered
+  pending a check against Beckey's Cascade Alpine Guide Vol. 2 or the Cascade Climbers forum archive.
+- `wa_northwest_face_boving_pollock` (South Early Winters Spire): the FA naming ambiguity between the route name
+  ("Boving-Pollock") and the stored `fa` field ("Boving and Kerns, 1977") is real and already captured in the
+  row's own `data_quality.gaps` — Mountain Project credits this specific 6-pitch 5.11b NW Face line to Boving &
+  Kerns 1977, while SummitPost separately describes a differently-shaped "Northwest Corner" (7 pitches, 5.9,
+  Boving & Pollock, Sept 25 1976) that may be an unrelated route. No source resolves which name belongs on this
+  row; left as-is, not a new finding. Also noted, out of this audit's scope to alter: this row's `watch_out`
+  column holds one long string with literal `\n` separators rather than the array-of-strings shape every other
+  route in this batch uses — a structural inconsistency, not a fact error.
+
+Verified clean otherwise: Mount Formidable's 8,325 ft elevation and its 2002 Klubberud/Campbell FA (corroborated
+by a CascadeClimbers trip report and a related Lemke Climbs page, matching the row's own pre-existing
+`data_quality` gap note almost exactly); Argonaut Peak's 8,457 ft elevation (Wikipedia infobox) with FA correctly
+left null (no named FA party for this specific arete exists in any source, distinct from the peak's own 1955
+south-route FA); Sloan Peak's Northwest Buttress FA ("M Preiss & M Bunker, 2000," confirmed directly by Mountain
+Project, resolving the row's own prior internal doubt about a "Sept 2020" entry) and the peak's 7,835 ft
+elevation; Kangaroo Temple's Northwest Face FA (Fred and Helmy Beckey, 1942, confirmed by The Mountaineers'
+own route page, distinct from the similarly-dated Big Kangaroo FA) and its 7,572 ft elevation; and Northwest Mox
+Peak's 8,407 ft elevation (WTA/SummitPost/Country High Points/a trip report all agree; Mountain Project's 7,586 ft
+figure is the contradicted outlier) and its 1941 Beckey brothers FA (Wikipedia/AAC, same trip that climbed SE Mox
+the day before).
+
+Pass 7 continues next run after `wa_northwest_mox_peak_standard`.

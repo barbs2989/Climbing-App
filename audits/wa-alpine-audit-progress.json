@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_northeast_buttress_4",
+  "last_processed_id": "wa_northwest_mox_peak_standard",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -8794,6 +8794,25 @@
       "clean": 4,
       "sql_file": "audits/sql/2026-10-23-batch-441.sql",
       "note": "wa_north_face_var_right_directisimo's own facts check out, but its parent area row (wa_concord_tower) stored elevation_ft 7611 against Mountain Project/SummitPost/Mountaineers.org's agreeing 7560 ft -- which the route's own high_point_ft already had right -- so the area row is fixed. Flagged for human review: wa_north_ridge_3 (Cutthroat Peak North Ridge)'s stored FA 'Fred Beckey, Jim Crooks, and Ed Kenney, Aug 19 1940' -- a UW Earth & Space Sciences page confirms Jim Crooks's 1940 FA of this route but does not name Beckey or Kenney, and Wikipedia's own Beckey FA list for 1940 omits this route, so the party list may be garbled (possibly 'Kenney' for 'Kenneth', confused with Cutthroat's separate 1937 West Ridge FA party); wa_north_peak_north_ridge and wa_north_peak_southeast_buttress (obscure Gunsight Range peak) whose stored FAs could not be found in any indexed source, left as noted-not-flagged per the standing rule since neither is contradicted. Verified clean otherwise: wa_north_gardner_mountain_nw_couloir's 8956 ft elevation and Cedar Creek Trailhead location; wa_north_ridge_4 (Primus Peak)'s 1986 Mark Bebie FA (AAC Journal 1987) and its cited March 2026 SR-20/Diablo Lake rockslide closure, reopened June 14 2026 (confirmed via WSDOT's own travel advisory); wa_north_star_mountain_east_route's FR 8301/Holden Village closure through 2027 (confirmed via Holden Village's own July 2026 release) and its USGS peak-name-swap-with-Bonanza-Peak claim (confirmed via Wikipedia/SummitPost); wa_northeast_buttress_4 (Colchuck Peak)'s 8705 ft elevation -- its 'Mark Weigelt, Julie Brugger, 1970' FA could not be corroborated but is also not contradicted by anything found."
+    },
+    {
+      "batch_number": 442,
+      "date": "2026-10-23",
+      "route_ids": [
+        "wa_northeast_face_direct",
+        "wa_northeast_ridge_1963_route",
+        "wa_northwest_arete",
+        "wa_northwest_buttress",
+        "wa_northwest_face_2",
+        "wa_northwest_face_4",
+        "wa_northwest_face_boving_pollock",
+        "wa_northwest_mox_peak_standard"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 3,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-10-23-batch-442.sql",
+      "note": "wa_northwest_face_boving_pollock's watch_out prose said \"5.11a\" but its own grade/rock_grade (5.11b, Mountain Project-confirmed) disagreed with itself -- fixed. Flagged for human review: wa_northeast_ridge_1963_route (Johannesburg Mountain)'s 1963 FA date stays unverifiable (possible conflation with a distinct, confirmed 1957 Northeast Rib route on the same face, per the row's own pre-existing data_quality note -- nothing new resolved); wa_northwest_face_4 (Little Big Chief Mountain)'s route-specific FA (Volken/Hansell, 2001) turned up on no indexed source at all; wa_northwest_face_boving_pollock's FA naming ambiguity (route name 'Boving-Pollock' vs stored fa 'Boving and Kerns, 1977', vs a SummitPost 'Northwest Corner' line credited to 'Boving and Pollock, 1976' that may be a different route) is real but already disclosed in the row's own data_quality.gaps -- not new. Verified clean: Mount Formidable's 8325 ft elevation and 2002 FA; Argonaut Peak's 8457 ft elevation with FA correctly left null; Sloan Peak's Northwest Buttress FA (M Preiss & M Bunker, 2000, Mountain Project-confirmed, resolving a prior internal doubt) and 7835 ft elevation; Kangaroo Temple's 1942 Beckey FA (Mountaineers.org-confirmed) and 7572 ft elevation; Northwest Mox Peak's 8407 ft elevation (Mountain Project's 7586 ft is the contradicted outlier) and 1941 Beckey brothers FA."
     }
   ]
 }
