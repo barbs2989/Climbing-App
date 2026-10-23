@@ -127,6 +127,11 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
    It comes from the nightly state file (`scripts/build-state-snapshots.mjs`) when that file is under 3 days old, else
    live from the database (`downloadStateLive`), which reads routes BY AREA id (`AREA_BATCH`): the old path-join read
    timed out on every state. A state the nightly build cannot read is left out of that night's file, not the whole set.
+   A downloaded state answers the Climbs tab from the device first (`deviceFirst` in `lib/db.js`), except the Route finder's
+   list and count over more than 2,000 climbs (`deviceFirstScan`, `DEVICE_SCAN_MAX_ROUTES`): the device has no index to filter
+   or sort on, so a whole pinned state scanned all its climbs and the Washington page's Suggested climbs waited seconds for it.
+   Those ask the database first and keep the device copy as the no-signal fallback. A smaller subtree reads only its own
+   areas' climbs (`localSubtreeRouteCount`; `matchingRoutes` by the `area_id` index), not the whole state's.
    **Manage areas** (`manageAreasOpen`, from Home's pinned card) lists every state or province of the picked country with its
    catalog count from `useStates()`. With the database on, a count is the database's or nothing: while that read is in flight a
    row says *Loading the catalog…* (`statesLoading`), and a failed read says so (`statesUnavailable`); neither falls back to
