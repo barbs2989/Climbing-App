@@ -33278,3 +33278,46 @@ Northeast Route and South Ridge carry almost no enrichment beyond grade/area pla
 beyond area placement, which is correct (area_type=peak, matches the catalog directory).
 
 Pass 7 continues next run after `wa_mount_rainier_east_success_couloir`.
+
+## 2026-10-23 (batch 434) — pass 7
+
+DB reachable this run. Checked eight Mount Rainier routes: Edmunds Headwall, the
+Emmons-Winthrop (plus its sparse legacy duplicate row, Emmons Glacier), Fuhrer Finger,
+Fuhrer Thumb, Gibraltar Ledges, Ingraham Direct and Ingraham Glacier Direct.
+
+2 fixed, 0 flagged, 6 clean. Fixed: wa_mount_rainier_ingraham_direct's own
+climbing_route breakdown (step 5, "Crater to Columbia Crest") named the summit as
+"Columbia Crest (14,411 ft)" — contradicting this same route's own high_point_ft and
+summit waypoint, which already give 14,406 ft. Brought the stale free-text figure
+into line with the row's own data, with areas.elevation_ft, and with the sibling
+Disappointment Cleaver route's high_point_ft (all three already 14,406 ft) — see
+audits/sql/2026-10-23-batch-434.sql. wa_mount_rainier_ingraham_glacier_direct's
+overview text carried the same stale "14,411 ft" figure (fixed the same way) plus a
+genuine misspelling, "Cadever Gap" for "Cadaver Gap" — confirmed against SummitPost
+and trip reports (turns-all-year.com, bcmc.ca) describing Cadaver Gap as the steeper
+alternative to Cathedral Gap near Ingraham Flats; the sibling Ingraham Direct route's
+own climbing_route text already spells it correctly, which is what caught the typo.
+Noted, not flagged: the two Ingraham routes read as near-duplicate rows for the same
+real-world route — Ingraham Direct is fully enriched (waypoints, access, climbing_route
+breakdown) while Ingraham Glacier Direct is a thin legacy stub carrying only
+name/discipline/overview — consolidating them is a human call, out of this audit's
+scope (no merge/delete). Clean: Edmunds Headwall's 1957 first ascent (Rupley, Gordon,
+Beckey, Hornbein, Staley) and its 14,112 ft Liberty Cap high point (correct — the route
+tops out below the true summit, matching its own descent text); the Emmons-Winthrop's
+1884 first ascent (Fobes, James, Wells) and its current $82 NPS climbing cost-recovery
+fee, confirmed against nps.gov/mora's own climbing-fee page; the legacy Emmons Glacier
+duplicate row's first-ascent credit, consistent with the main Emmons-Winthrop entry;
+Fuhrer Finger's 1920 first ascent (Fuhrer, Fuhrer, Hazard, Farrer, Hermans — matches NPS
+Nature Notes' historical account under minor name-spelling variants) and its 14,406 ft
+high point (the route continues into the upper Kautz/summit slopes, not a sub-peak);
+Fuhrer Thumb's fee/permit fields and internal consistency (its exact 1972 first-ascent
+party could not be independently corroborated by general web search, but nothing
+contradicts it either, so it's left as-is per the audit's own rule); Gibraltar Ledges'
+1870 first ascent (Hazard Stevens and P.B. Van Trump — Rainier's original, documented
+first ascent of the mountain) confirmed via Wikipedia and SummitPost, plus its fee/permit
+fields. The already-adjudicated Rainier-elevation dispute (14,406 ft measured-2024 vs.
+the long-standing 14,410/14,411 ft official figure) was not re-opened; the fixes above
+are about rows disagreeing with their *own* data and the app's own established 14,406 ft
+convention, not about picking a side in that outside dispute.
+
+Pass 7 continues next run after `wa_mount_rainier_ingraham_glacier_direct`.

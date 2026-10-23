@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_mount_rainier_east_success_couloir",
+  "last_processed_id": "wa_mount_rainier_ingraham_glacier_direct",
   "total_in_scope_last_count": 739,
   "total_wa_alpine_or_mountaineering_tagged": 833,
-  "pass_note": "Noted, not flagged: Mount Olympus West Ridge's 1964 Maykut/Miller/Witte FA and Mount Persis West Ridge's 1917 Hinman FA -- neither confirmable nor contradicted by general web search; likely needs AAJ/guidebook archives general search doesn't index.",
+  "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
   "batches": [
     {
       "batch_number": 1,
@@ -8640,6 +8640,25 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-10-23-batch-433.sql",
       "note": "wa_mount_rainier_curtis_ridge high_point_ft (stored 13800) contradicted its own waypoints (Columbia Crest summit waypoint elevFt 14406) and descent_text (continues to the summit) -- fixed to 14406, matching areas.elevation_ft and sibling route wa_mount_rainier_disappointment_cleaver. Flagged: wa_mount_pugh_pika_slab fa field (\"Leland Windham, July 2023\") contradicts its own beta field (\"first-ascent info ... not published\") -- unresolvable without local knowledge, no web corroboration either way. Noted not flagged: Mount Rainier elevation 14406 vs the long-standing official 14410/14411 figure is an active scientific-dispute case (2024 remeasurement), not a clear error; Mount Pugh road/access text describing a Dec 2025-Apr 2026 Mountain Loop Highway closure may be stale (county page says fully open as of May 15 2026) but needs a direct alerts-page check, not general search. Clean: Disappointment Cleaver 2026 NPS fee (2/climb) and >10,000ft/glacier permit requirement; Curtis Ridge FA (Prater/Schuster) matches Mountain Project. Unverifiable, left as-is: Prominent Dihedral FA (Doorish/Devaney 1979), East Success Couloir FA (Senner/Walstrom 1960). Mount Price Lower Ramp/Northeast/South Ridge are stub routes with only grade+area data -- area placement (area_type=peak) correct, nothing else to check."
+    },
+    {
+      "batch_number": 434,
+      "date": "2026-10-23",
+      "route_ids": [
+        "wa_mount_rainier_edmunds_headwall",
+        "wa_mount_rainier_emmons_glacier",
+        "wa_mount_rainier_emmons_glacier_2",
+        "wa_mount_rainier_fuhrer_finger",
+        "wa_mount_rainier_fuhrer_thumb",
+        "wa_mount_rainier_gibraltar_ledges",
+        "wa_mount_rainier_ingraham_direct",
+        "wa_mount_rainier_ingraham_glacier_direct"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 0,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-10-23-batch-434.sql",
+      "note": "wa_mount_rainier_ingraham_direct's own climbing_route step 5 named the summit as \"Columbia Crest (14,411 ft)\", contradicting this same route's own high_point_ft and summit waypoint (both 14406) -- fixed to 14406 to match the row's own data, areas.elevation_ft, and sibling route wa_mount_rainier_disappointment_cleaver. wa_mount_rainier_ingraham_glacier_direct's overview had the same stale 14,411 figure (fixed to 14406 for consistency) plus a misspelling, \"Cadever Gap\" for \"Cadaver Gap\" (confirmed via SummitPost/trip reports; the sibling route's own text already spells it correctly). Noted, not flagged: the two Ingraham routes look like near-duplicate rows for the same real-world route -- ingraham_direct is fully enriched, ingraham_glacier_direct is a thin legacy stub with only name/discipline/overview -- out of scope to merge/delete, left for a human to decide whether to consolidate. Clean: Edmunds Headwall's 1957 FA (Rupley/Gordon/Beckey/Hornbein/Staley) and its 14112 ft Liberty-Cap high point; Emmons-Winthrop's 1884 FA (Fobes/James/Wells) and current $82 NPS cost-recovery fee; Emmons Glacier (legacy duplicate row) FA matches; Fuhrer Finger's 1920 FA (Fuhrer/Fuhrer/Hazard/Farrer/Hermans, per NPS Nature Notes) and 14406 high point (route continues to the true summit); Fuhrer Thumb's fee/permit fields and internal consistency; Gibraltar Ledges' 1870 FA (Stevens & Van Trump, Rainier's original first ascent, confirmed via Wikipedia/SummitPost) and fee/permit fields."
     }
   ]
 }
