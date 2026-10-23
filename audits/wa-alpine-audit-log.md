@@ -33407,3 +33407,36 @@ Beckey/1966 variations, confirmed via Mountain Project and the 1939 AAC Journal 
 placement (area_type=peak) is correct and there is no other data on the row to check.
 
 Pass 7 continues next run after `wa_mount_rainier_sunset_ridge`.
+
+## Batch 437 — 2026-10-23
+
+Checked: Mount St. Helens' two routes (Monitor Ridge, Worm Flows), Mount Steel's two
+routes (First Divide, Standard Scramble), and five Mount Stuart routes (Girth Pillar, Ice
+Cliff Glacier, North Ridge, Stuart Glacier Couloir, West Ridge).
+
+- **West Ridge**'s `access->notes` carried the Enchantment overnight-lottery boilerplate
+  copy-pasted verbatim from the north-side Stuart routes (identical text to Girth Pillar's
+  own `notes`) — "2026 lottery application window Feb 15-Mar 1 ... Season requiring the
+  overnight permit: May 15-Oct 31 ...". This contradicts the same row's own `permit`
+  column, which correctly says the Esmeralda Basin/Ingalls Creek approach is *outside* the
+  Enchantment Permit Area and needs no lottery, and its own `access->overnight_permit.where`
+  agrees with `permit`, not with `notes`. No new research needed — this was a plain
+  self-contradiction within one row. Replaced `notes` with text that agrees with the rest
+  of the row.
+
+Verified against authoritative sources (no other errors found): Mount St. Helens' climbing
+quota (350 climbers/day Apr 1-May 14, 110/day May 15-Oct 31) matches current USFS/Mount St.
+Helens Institute pages; Mount Steel's 6,225 ft elevation (Wikipedia) and its FA date (July
+19, 1897, per Wikipedia) — the party is correctly left "unknown" on the row given a
+disputed secondary claim (Louis Murdock, 1899, under the peak's old name Mt. Duckabush)
+that doesn't corroborate either way. All five Mount Stuart routes agree on `high_point_ft`
+9415, matching `areas.elevation_ft`, and their FAs check out: Girth Pillar (Kit Lewis & Jim
+Nelson, 1983 per Mountain Project — AAC indexes the climb under 1984, a routine
+journal-year-vs-climb-year offset, not an error); Ice Cliff Glacier (Bill & Gene Prater
+with Dave Mahre, Aug 1957, SummitPost); North Ridge (Claunch/Rupley 1956 upper-ridge-only +
+Beckey/Marts 1963 lower-ridge variation + Hargis/Ossiander 1970 toe-to-summit over the Great
+Gendarme — matches the Alpine Institute's route history closely); Stuart Glacier Couloir
+(Helmy Beckey & Larry Strathdee, June 1944, SummitPost); West Ridge (Lex Maxwell, Fred
+Llewellyn & John Vertrees, Aug 1935, SummitPost + Mazamas).
+
+Pass 7 continues next run after `wa_mount_stuart_west_ridge`.
