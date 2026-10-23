@@ -52,7 +52,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 - **Belay** `counted_catch_count`, **Vouched** distinct vouchers,
   **Contributions** points from `contribution_points()` (0333) — all server-side.
 - **Contribution points (0333)**: ONE ledger, `contribution_points()`, feeds this board, every area's and route's
-  TOP CONTRIBUTORS (`area_top_contributors`, rendered by `TopContributors` in `ClimbMatchCore.jsx`) and the profile's
+  TOP CONTRIBUTORS (`area_top_contributors`, rendered by `TopContributors` in `src/components/TopContributors.tsx`) and the profile's
   ★ Top Contributor badge (`user_top_contributor_areas`). Only live work scores: an approved new climb 10, a photo of
   a route 5 (once per route), a topo 5 (once per area, while moderation leaves it visible), a line drawn on a topo 2
   (once per route), an approved correction or area detail 2 (once per place and field), a sun vote, start location

@@ -167,6 +167,7 @@ export const MOVED = {
     "src/components/SunCorrect.tsx",
     "src/components/StartLocationForm.tsx",
     "src/components/AreaRegionSelect.tsx",
+    "src/components/TopContributors.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
