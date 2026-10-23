@@ -22,6 +22,21 @@ empty field fills at once and two climbers who agree are enough to change one (0
   Auto-applied rows keep `reviewed_by` NULL (the owner's approvals set it) and do **not** raise the
   field to high — only the owner's check locks a field. A field a climber filled stops reading as
   "empty → low". Area edits are unchanged: still held (0319).
+- **A removal always waits for the owner (0351, owner note 2026-10-22: "people shouldn't be able to
+  delete waypoints when editing").** An edit *removes something* when the page holds a value and the
+  edit is empty, or both are lists and the edit has fewer rows, or fewer rows with a map pin
+  (`_edit_removes`, against `route_field_page_value`: the latest approved edit, else the column).
+  Such a row stays `pending` however many climbers send it — it is never approved by agreement and
+  never counted as the second climber for another row — and carries `review_note` `REMOVAL_NOTE`
+  (`lib/db.js`). The edit sheet (`SuggestFix`, `editRemoves` / `REMOVABLE_LISTS` — waypoints,
+  pitches, rappel stations, camps, ways in, climbing sections, hazards) says so before sending and
+  **requires a reason** (≥10 characters), sent as `contributions.reason`; the toast, the climber's
+  own waiting line and the Agree box say a removal waits for ClimbMatch. The owner's queue marks the
+  card *Removes something from the page* in red above the struck-through rows and shows each
+  climber's *Why*. A reckless removal the owner turns down is a strike like any other (3 →
+  restricted, 5 → banned). Modelled on theCrag (no delete of a referenced route; merge instead),
+  Mountain Project (deletions go to the regional admin) and OpenStreetMap's OSMCha (mass deletions
+  flagged for review).
 - **Other climbers' waiting suggestions are shown in the edit sheet**, each with an **Agree**
   button that sends the value verbatim — Google Maps' "Check the facts" model; that tap is the
   second climber, so it goes live at once. The climber's own waiting value reads "You suggested: …
@@ -141,6 +156,7 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `lib/db.js` | `submitContribution`, `useRouteContributions`, `useRouteFieldConfidence`, `setRouteFieldConfidence`, `useFieldContributions`, `approveFieldContribution`, `rejectFieldContribution`, `useMyContributionStanding`, `useContributionStandings`, `setContributionStanding`, `fileRouteFlag`, `useMyRouteFlags`, `useOpenRouteFlags`, `resolveRouteFlag`, `useMyNotices`, `markNoticeRead`, `useAdminQueueCounts`, `useContributionFields`, `useRouteRowsByIds` |
 | `scripts/check-contrib-field-columns.mjs` | the guard that keeps `contribution_fields` equal to the form |
 | `supabase/migrations/0307_route_quality_control_tables.sql` | `contribution_fields`, `route_field_confidence`, `contribution_standing`, `route_flags`, `user_notices`, `applied_value` |
+| `supabase/migrations/0351_a_removal_waits_for_the_owner.sql` | `contributions.reason`, `route_field_page_value`, `_edit_removes`, `contribution_consensus` with the removal exit |
 | `supabase/migrations/0308_field_confidence_and_edit_guards.sql` | `route_field_level`, `route_field_confidence_map`, `can_contribute_fields`, `can_flag`, `guard_field_contribution` |
 | `scripts/check-editable-coverage.mjs` | the guard that keeps every rendered column editable or explained |
 | `supabase/migrations/0317_seven_more_editable_fields.sql` | the seven field rows |

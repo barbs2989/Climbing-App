@@ -17,7 +17,7 @@ import { useState, useEffect, useMemo } from "react";
 import {
   useFieldContributions, approveFieldContribution, rejectFieldContribution, setRouteFieldConfidence,
   useContributionFields, useRouteRowsByIds, useOpenRouteFlags, resolveRouteFlag,
-  useContributionStandings, setContributionStanding, fetchProfilesByIds,
+  useContributionStandings, setContributionStanding, fetchProfilesByIds, REMOVAL_NOTE,
 } from "./db";
 import { C, DLOCALE, sameEditValue, pubNameRow } from "../ClimbMatchCore";
 import { AREA_EDIT_FIELDS, monthsLabel } from "./areaFields";
@@ -192,6 +192,10 @@ export function FieldContributionQueue({ onOpenRoute }) {
               : <button onClick={() => onOpenRoute && onOpenRoute(g.route_id, name)} style={{ background: "none", border: "none", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer", padding: 0 }}>Open route →</button>}
           </div>
           <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2 }}>{[r0.routes && r0.routes.discipline, "sent " + when(r0.created_at), g.who.length > 1 ? g.who.length + " climbers suggested this" : "by " + (names[r0.contributor] || String(r0.contributor || "").slice(0, 8))].filter(Boolean).join(" · ")}</div>
+          {/* 0351: an edit that takes something off the page (a waypoint, a pitch, a pin) is never approved by agreement — it waits here
+              for the owner, marked so it cannot be waved through with the rest. The climber's own reason is required for one. */}
+          {g.rows.some((r) => r.review_note === REMOVAL_NOTE) ? <div style={{ marginTop: 8, fontSize: 12, fontWeight: 700, color: C.red, background: C.redBg, border: "1px solid " + C.red, borderRadius: 8, padding: "6px 9px", lineHeight: 1.45 }}>{"Removes something from the page — the rows struck through below. Nothing changes until you approve it."}</div> : null}
+          {g.rows.filter((r) => r.reason).map((r) => <div key={"why-" + r.id} style={{ marginTop: 6, fontSize: 12, color: C.textSub, lineHeight: 1.45 }}><b style={{ color: C.text }}>{"Why" + (g.rows.length > 1 ? " (" + (names[r.contributor] || String(r.contributor || "").slice(0, 8)) + ")" : "") + ": "}</b>{r.reason}</div>)}
           <div style={{ marginTop: 8, fontSize: 12.5, fontWeight: 700, color: C.text }}>{label}</div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
             <div><div style={{ fontSize: 11, color: C.textMuted, fontWeight: 700, marginTop: 4 }}>{isEmpty(cur) ? "ON THE PAGE NOW: nothing" : "ON THE PAGE NOW"}</div>{!isEmpty(cur) ? <Val v={cur} /> : null}</div>
