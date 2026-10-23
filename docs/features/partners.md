@@ -75,6 +75,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 - **Profile**: `onViewProfile` opens a climber's profile/résumé; the zip is edited in `EditProfileScreen`; `discoverable` is a Settings privacy control.
 - **Crews / Planner**: `onPlan(c,route)` starts a plan with that partner; `onInvite` invites to a crew; `crews` prop drives suggested crews on example cards and By Route picks; `objDates` drives the date-fit badge.
 - **Social**: `friendState`/`onConnect` (connections), `mutuals`/`onShowMutuals`, `blocked` (block list), message button.
+  The card's friend button has one look per state: **+ Add friend** filled blue, **✓ Accept friend** filled green, **Requested · tap to undo** amber outline (tapping it again withdraws, after a confirm), **✓ Friends** quiet green outline. A sent request also lists under Crew › Requests › Waiting on others with Withdraw.
 - **Route page**: `initialClimb` + `onConsumeInitial` open By Route preselected; `useRecentRouteIds` supplies recent picks. `initialArea` + `onConsumeInitialArea`
   open By Area on an area (from the area page's "See all", a crag route's Partners sub-tab, a Logbook crag row — all through App's `onFindPartnersInArea`).
 - **Menu**: the *Yours* group has a **Listed areas · N** tile (`openMyAreas`; signed out it asks to sign in).
