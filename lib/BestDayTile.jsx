@@ -136,6 +136,6 @@ export default function BestDayTile({ ids, areaIds, routeById, onOpen, onOpenAre
       })}
       <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>{"Each number is that day’s best 3-hour window, scored as on the route’s Conditions tab. Tap one to open that day." + (rows.some(function (x) { return x.area; }) ? " A saved area is scored at its own location, for the climbing most of it holds; sun on the wall counts only where the area has one wall direction on file." : "") + (over ? " Showing the first " + MAX_CRAGS + " crags you saved." : "") + (failed ? " " + failed + " couldn’t load." : "")}</div>
     </div> : null}
-    {onPrefs ? <button onClick={onPrefs} style={{ marginTop: 8, background: "none", border: "none", padding: "4px 0", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{"Your conditions ›"}</button> : null}
+    {onPrefs ? <button onClick={onPrefs} style={{ marginTop: 8, background: "none", border: "none", padding: "4px 0", minHeight: 24, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{"Your conditions ›"}</button> : null}
   </div>;
 }

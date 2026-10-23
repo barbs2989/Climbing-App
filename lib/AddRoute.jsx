@@ -218,7 +218,12 @@ export default function AddRoute({onClose,defaultArea,defaultAreaName,dbAreaId,s
     if(sf("height"))nums.push(["h","Height / length ("+uEl+")",uImp()?"e.g. 600":"e.g. 180",height,setHeight]);
     if(sf("gain"))nums.push(["g","Elevation gain ("+uEl+")",uImp()?"e.g. 4100":"e.g. 1250",gain,setGain]);
     if(sf("loss"))nums.push(["l","Elevation loss ("+uEl+")",uImp()?"e.g. 4100":"e.g. 1250",loss,setLoss]);
-    if(sf("dist"))nums.push(["d","Distance ("+uDi+")",uImp()?"e.g. 9.5":"e.g. 15",dist,setDist]);
+    /* WHICH distance, said in the label. A bare "Distance" left the climber to guess one way or
+       round trip, and the two differ by 2x: the route page doubles an out-and-back's figure into
+       its Round trip tile, and shows a loop's or point-to-point's as the whole outing
+       (lib/outing.js effDistIsWholeTrip). So the label follows "How you get back" below. */
+    var _whole=outingShape==="loop"||outingShape==="point";
+    if(sf("dist"))nums.push(["d",(_whole?"Total distance":"Approach, one way")+" ("+uDi+")",_whole?(uImp()?"e.g. 11.25":"e.g. 18.1"):(uImp()?"e.g. 4.75":"e.g. 7.6"),dist,setDist]);
     if(sf("angle"))nums.push(["an","Steepest angle (°)","e.g. 45",angle,setAngle]);
     if(sf("highPointFt"))nums.push(["hp","High point ("+uEl+")",uImp()?"e.g. 10781":"e.g. 3286",highPoint,setHighPoint]);
     if(!nums.length)return null;
@@ -244,7 +249,7 @@ export default function AddRoute({onClose,defaultArea,defaultAreaName,dbAreaId,s
      APPROACH section. Nothing anywhere read those four keys back, so no information is lost;
      for the disciplines that need a number the form already asks `dist`. */}
   {/* A SENTENCE, unlike the bucket chips removed in #1713: routes.approach is the walk-in prose the Planner and the APPROACH section render. */}
-  {sf("approach")?<div>{Lab("Approach","approach")}<textarea aria-label="Approach" value={approach} onChange={function(e){setApproach(e.target.value);}} rows={2} placeholder="How you walk in from the parking or trailhead to the start, and roughly how long it takes" style={Object.assign({},fld,{resize:"vertical",fontFamily:"inherit"})}/></div>:null}
+  {sf("approach")?<div>{Lab("Approach","approach")}<textarea aria-label="Approach" value={approach} onChange={function(e){setApproach(e.target.value);}} rows={2} placeholder={"How you walk in from the parking or trailhead to the start, with the distance and time — e.g. "+(uImp()?"0.4 mi":"0.6 km")+", 15 min, the left fork at the boulder"} style={Object.assign({},fld,{resize:"vertical",fontFamily:"inherit"})}/></div>:null}
 {sf("road")?<div><div style={lab}>{"Road & driving"}</div><div style={{fontSize:11.5,color:C.textMuted,margin:"0 0 7px"}}>{"How you reach the trailhead, and what the road is like."}</div><div style={{display:"flex",flexDirection:"column",gap:8}}>{OBJ_LISTS.road.map(function(k){return <div key={k[0]}><div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:3}}>{k[1]}</div><input aria-label={k[1]} value={(objVals.road||{})[k[0]]||""} onChange={function(e){setObjAt("road",k[0],e.target.value);}} inputMode={k[3]==="num"?"decimal":undefined} placeholder={k[2]} style={fld}/></div>;})}</div></div>:null}
   {sf("access")?<div><div style={lab}>{"Permits & land manager"}</div><div style={{fontSize:11.5,color:C.textMuted,margin:"0 0 7px"}}>{"Who manages it, what you need, and what closes when."}</div><div style={{display:"flex",flexDirection:"column",gap:8}}>{OBJ_LISTS.access.map(function(k){return <div key={k[0]}><div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:3}}>{k[1]}</div><input aria-label={k[1]} value={(objVals.access||{})[k[0]]||""} onChange={function(e){setObjAt("access",k[0],e.target.value);}} inputMode={k[3]==="num"?"decimal":undefined} placeholder={k[2]} style={fld}/></div>;})}</div></div>:null}
   {sf("season")?<div>{Lab("Best season","season")}<div style={{display:"flex",gap:6,flexWrap:"wrap"}}>{["Spring","Summer","Fall","Winter","Year-round"].map(o=>{const on=season===o;return <button key={o} onClick={()=>setSeason(on?"":o)} style={sm(on)}>{o}</button>;})}</div></div>:null}

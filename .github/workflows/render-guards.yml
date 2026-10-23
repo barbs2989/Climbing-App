@@ -587,3 +587,36 @@ jobs:
           CI_TEST_OWNER_PASSWORD: ${{ secrets.CI_TEST_OWNER_PASSWORD }}
           CI_TEST_MATE_EMAIL: ${{ secrets.CI_TEST_MATE_EMAIL }}
           CI_TEST_MATE_PASSWORD: ${{ secrets.CI_TEST_MATE_PASSWORD }}
+
+  axe:
+    name: Every screen passes axe-core's WCAG 2.2 A/AA rules
+    runs-on: ubuntu-latest
+    # Signed in: 8 tabs and 7 route tabs at two widths plus ~55 overlays. Signed out: 3 screens on a
+    # second dev server. Each scan is a second or two; the page loads are the cost.
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:axe cannot drive anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      # The 2026-10-22 accessibility audit's guard. The static a11y guards in the build all passed
+      # while axe found contrast, target size, nested controls, unnamed dialogs and missing landmarks
+      # -- properties of LAYOUT that only a rendered page has. The guard sets VITE_DEMO_AUTOLOGIN
+      # itself: "true" for the signed-in walk, "false" for the signed-out one, so it is not set here.
+      - name: WCAG 2.2 A/AA on every screen
+        run: npm run check:axe
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"

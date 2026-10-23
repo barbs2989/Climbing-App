@@ -17,6 +17,17 @@
   row is pinned under it whenever the visible part does not include you. *You're #N of M* sits above the table, or
   *You're not ranked on this board yet* when nothing you logged counts toward it.
 - **Backed climbs only** (signed in, log-counted boards): ranks on partner-confirmed / photo / GPS-backed climbs only.
+- **The climbs behind a number (0357)**: on every board counted from logs (not Belay, Vouched, Contributions
+  or Top climbs), a real row's value is a button that opens `RankBreakdown`, *How N points add up*: a sentence on
+  how that board scores, then one line per counted climb — name, grade, date, tick, area, its backing tier
+  (Partner confirmed ×1 · Photo or GPS ×0.75 · Self-logged ×0.5) on the points boards, and what it added. Send
+  points lists each route's best log; Days lists days with their climbs; Peaks lists summits. It reads
+  `rank_breakdown(p_user, p_area_id)`, which repeats `leaderboard()`'s counting for one climber, so the lines
+  add up to the row (checked on live data: 8 = 8). The sheet follows the board's type, scope area and *Backed
+  climbs only* switch. Logs the viewer could not read under climb_logs' own select policy come back hidden —
+  no route, name, grade, date or tick — with route/day/summit keys salted per call so different routes and days
+  still count; the sheet sums them into one "N more climbs they keep private" line. Modelled on 8a.nu's
+  scorecard (the ascents a score is summed from) and theCrag's CPR timeline (the ascent list under a column).
 - **Top climbs**: routes, not climbers, from `leaderboard_top_climbs`.
 - Signed out (or `USE_DB` off) the board is the seed example set plus you, never mixed with real climbers.
 
@@ -56,11 +67,12 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 | File | Key symbols |
 |---|---|
 | `lib/Leaderboards.jsx` | `Leaderboards`, `meStats`, `rowToPP`, `byOf`, `rankAt`, `lbRow`, `DISCS`, `NOT_SENT` |
+| `lib/RankBreakdown.jsx` | `RankBreakdown`, `itemsFor` |
 | `lib/rankGrade.js` | `rankGrade`, `styleGrade` |
 | `lib/Help.jsx` | `Help` (its `topic` prop opens one section) |
-| `lib/db.js` | `useLeaderboard`, `useTopClimbs` |
+| `lib/db.js` | `useLeaderboard`, `useTopClimbs`, `useRankBreakdown` |
 | `ClimbMatchCore.jsx` | `HELP_FEATS` (the Ranks section holds the scoring text), `tickTypesFor`, `NONCOMPLETION_TICKS`, `lbRowName` |
-| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333, 0338 |
+| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333, 0338, 0357 (`rank_breakdown`) |
 
 ## 4. Data
 `climb_logs`, `climb_log_confirmations`, `routes` (`grade_system`, `grade_num`, `gain_ft`, `length_m`, `classic`,
@@ -84,7 +96,11 @@ Hand-run probes: `scripts/oneoff/probe-ranks-anti-padding.sql`, `probe-ranks-ant
   vert = finished climbs and crag height, per-type stats, Top rope/Mixed/Aid boards, zero scores unranked, tied
   ranks, a table layout with ⚑ in its own column, the scoring text moved into Help › Ranks behind the header's `?`.
 
+- **The climbs behind a number (0357)**: a row's value opens the counted climbs and what each scored.
+
 ## 8. Known gaps
+- `rank_breakdown()` copies `leaderboard()`'s counting rather than sharing it; a change to the scoring must
+  change both (no guard holds them equal yet).
 - `leaderboard()` returns at most 500 climbers per scope, ordered by climbs logged, and each board is ranked from
   those. Correct while a scope holds ≤ 500 visible climbers (3 profiles on 2026-10-15); past that, a climber
   outside the 500 who leads, say, Vouched is missed. Ranking per board on the server is the fix.

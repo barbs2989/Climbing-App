@@ -78,6 +78,7 @@ npm run check:overlay-scroll # no overlay pane may chain its scroll to the page 
 npm run check:a11y-badges # no control announces two fragments welded into one token
 npm run check:selected-state # a control that LOOKS selected must SAY it is selected
 npm run check:control-names # a control says WHAT IT IS; a switch says what it is SET TO (in build)
+npm run check:axe # every screen, signed in AND signed out, passes axe-core's WCAG 2.2 A/AA rules (render-guards.yml)
 npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
 
