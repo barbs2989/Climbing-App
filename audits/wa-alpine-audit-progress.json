@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_mount_tom_scramble",
+  "last_processed_id": "wa_navaho_peak_south_slopes",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -8737,6 +8737,25 @@
       "clean": 7,
       "sql_file": null,
       "note": "wa_mount_terror_stoddard_buttress's fa ('John Stoddard, solo, July 16, 1984' plus a 1985 extended left-side finish variant) could not be confirmed against any authoritative source (AAJ online archive, guidebook) -- SummitPost's route page and climber logs confirm the route and its 5.8 grade but give no FA date or party; flagged for human verification rather than guessed at or altered. Noted, not flagged: wa_mount_terror_southeast_face's own corrections field already documents that its id ('southeast_face') doesn't match its stored name ('East Ridge') -- a known route-identity mismatch already on file for DB review, not something this pass introduces or can fix. Verified and confirmed clean: both Mount Teneriffe routes' stats match WTA exactly (13.0 mi RT, 3,800 ft gain, trail high point 4,585 ft vs the DB's correctly-used 4,788 ft true summit -- already reconciled in the row's own corrections field from an earlier pass) and its DNR Mount Si NRCA land-manager correction; Mount Terror's 8,151 ft elevation (Wikipedia/SummitPost, the widely-repeated figure over TopoQuest's 8,129 ft) and its North Cascades NP backcountry permit fees ($10/person + $6 reservation, free age 15 and under -- confirmed current for 2026) across all four of its routes; Mount Thomson's West Ridge FA (Beckey brothers, 1940, per AAC's Helmy Beckey obituary and a Mountaineers memorial piece -- the row's additional Craig/Ford party names rest only on a SummitPost comment, unconfirmed but not contradicted, left as-is) and its 6,554 ft elevation/coordinates; Mount Tom's 7,076 ft elevation (matches Wikipedia exactly), coordinates, 1914 FA (Meany party/Thomas Martin), and Olympic NP wilderness camping fees ($8/person/night + $6 reservation, confirmed current for 2026)."
+    },
+    {
+      "batch_number": 439,
+      "date": "2026-10-23",
+      "route_ids": [
+        "wa_mount_torment_south_ridge",
+        "wa_mount_torment_torment_forbidden_traverse",
+        "wa_mount_townsend_standard",
+        "wa_mount_triumph_northeast_ridge",
+        "wa_mount_washington_olympic_winter_direct",
+        "wa_mount_wilder_scramble",
+        "wa_mushroom_tower_standard",
+        "wa_navaho_peak_south_slopes"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 1,
+      "clean": 7,
+      "sql_file": null,
+      "note": "wa_mushroom_tower_standard's fa (Fred and Helmy Beckey with Walt Varney, 1942) is plausible given the same trio's documented June 1942 campaign on other Kangaroo Ridge towers (Wallaby Peak 6/17, Big Kangaroo 6/21) but no source names this tower by name/date -- flagged for human verification, not altered. Noted, not flagged: wa_narcos was skipped (area_type=crag, out of scope). Verified clean: Mount Torment (8120 ft) and Forbidden Peak (8815 ft) elevations, the shared 1958 Cooper/Sellers FA on both the South Ridge and the Torment-Forbidden Traverse (same ascent per Cooper's 1959 AAJ account), and the 2026 Boston Basin permit lottery window (Mar 2-13) all check out exactly; Mount Triumph's 7270 ft elevation and its Northeast Ridge FA (Joan and Joe Firey, 1965) check out, and Mount Townsend's Upper Trailhead is confirmed fee-free per USFS's own current page (its elevation stays unresolved at 6243 vs 6282/6260/6280 ft across sources, consistent with the row's own self-flagged uncertainty); Mount Washington (Olympics)'s 6260 ft elevation and Mount Skokomish Wilderness/Olympic NF jurisdiction (not NP) check out, as does Mount Wilder's 5939 ft elevation, Olympic NP's 2026 entrance fees (0/vehicle, 5/person, 5 annual), and the still-current Olympic Hot Springs Road vehicle closure beyond Madison Falls; Navaho Peak's 7223 ft elevation, current NW Forest Pass pricing (~/0), Washington Pass/Kangaroo Ridge's USFS jurisdiction, and the row's specific, checkable claim that Stafford Creek Trail #1359 reopened after Labor Mountain Fire damage on September 25, 2026 (confirmed by a WTA trip report dated that same day) all check out."
     }
   ]
 }

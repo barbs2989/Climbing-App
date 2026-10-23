@@ -33473,3 +33473,43 @@ coordinates check out. Mount Tom's 7,076 ft elevation, coordinates, 1914 FA, and
 wilderness camping fees ($8/person/night + $6 reservation) all check out current for 2026.
 
 Pass 7 continues next run after `wa_mount_tom_scramble`.
+
+## 2026-10-23 — Pass 7, Batch 439
+
+Eight routes across 7 peaks (`wa_narcos` excluded — its area is a crag, not a peak, out of
+scope): Mount Torment South Ridge + Torment-Forbidden Traverse, Mount Townsend standard trail,
+Mount Triumph Northeast Ridge, Mount Washington (Olympics) Winter Direct, Mount Wilder Scramble,
+Mushroom Tower Standard Route, Navaho Peak South Slopes.
+
+No confirmed errors — no SQL file this batch.
+
+- **Flagged for human review:** `wa_mushroom_tower_standard`'s `fa` ("Fred and Helmy Beckey with
+  Walt Varney, 1942") is plausible — that exact trio climbed several other Kangaroo Ridge towers
+  in June 1942 (Wallaby Peak 6/17, Big Kangaroo 6/21) and Varney's 1943 Mountaineer annual
+  describes a matching-profile tower — but no source names Mushroom Tower specifically with a
+  date/party. Left as-is.
+- **Noted, not flagged:** the Torment-Forbidden Traverse's rappel counts (10 total, descending
+  Forbidden's West Ridge) sit at the high end of what trip reports describe (2-8 rappels across
+  several accounts) but aren't contradicted by any one source — condition/rope-length dependent,
+  not a fixable error. Thornton Lakes trailhead elevation (row gives both ~2,500 ft and 2,700 ft)
+  couldn't be resolved against NPS's own page (unreachable) or settled search results — left
+  as-is. Mount Townsend's elevation (row flags 6,243 vs 6,282 ft) stays unresolved too — WTA's own
+  two different pages give 6,260 ft and 6,280 ft, so the row's self-admitted uncertainty is the
+  honest state, not something to guess at.
+
+Verified clean against authoritative sources: Mount Torment (8,120 ft) and Forbidden Peak
+(8,815 ft) elevations, the 1958 Cooper/Sellers FA on both the South Ridge and the traverse
+(same ascent per Cooper's own 1959 AAJ account), and the 2026 Boston Basin permit lottery
+window (Mar 2-13, ~40% walk-up) all check out exactly. Mount Triumph's 7,270 ft elevation and
+its Northeast Ridge FA (Joan and Joe Firey, 1965, per Mountain Madness) check out; Mount
+Townsend's Upper Trailhead is genuinely fee-free per the Forest Service's own current page.
+Mount Washington (Olympics)'s 6,260 ft elevation and Mount Skokomish Wilderness/Olympic NF
+land-manager status (not NP) check out, as does Mount Wilder's 5,939 ft elevation, Olympic NP's
+2026 entrance fees ($30/vehicle, $15/person, $55 annual), and the still-current Olympic Hot
+Springs Road vehicle closure beyond Madison Falls. Navaho Peak's 7,223 ft elevation, current NW
+Forest Pass pricing (~$5/$30), Washington Pass/Kangaroo Ridge's USFS (not NPS) jurisdiction, and
+— the one genuinely surprising item checked this batch — the row's very specific claim that the
+Cle Elum Ranger District reported Stafford Creek Trail #1359 reopened after Labor Mountain Fire
+damage on September 25, 2026: a WTA trip report dated that same day confirms the reopening.
+
+Pass 7 continues next run after `wa_navaho_peak_south_slopes`.
