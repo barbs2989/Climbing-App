@@ -126,6 +126,9 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
    catalog count from `useStates()`. With the database on, a count is the database's or nothing: while that read is in flight a
    row says *Loading the catalog…* (`statesLoading`), and a failed read says so (`statesUnavailable`); neither falls back to
    the four-state seed tree, which used to grey out 46 states as "No climbs in the catalog" until the read landed.
+   The country choice (United States · Canada) is always shown: `KNOWN_COUNTRIES` and `CA_PROVINCES` in `lib/countries.js`
+   list every country and province before the read lands and when it fails, so Canada is offered at once, offline included;
+   it used to appear only once `useStates()` returned, so the screen read as US-only for the first 8-28s.
 5a. **Saved areas and peaks** follow the account (0322): one `bookmarks` list in `App` feeds the area page's Save button, Logbook › Saved's ✕, the Home and Menu tiles, so they always agree.
    `toggleBookmark` writes `saveAreaRow`/`removeAreaRow` (`saved_areas`, owner-only) and toasts only after the write; a failure restores the list. `useMySavedAreas` is copied into `bookmarks`;
    `lib/offline.js` (`saveAreaIds`, `savedAreaIds`, `savedAreasSynced`) is the offline mirror, and a device's pre-0322 saves are uploaded the first time the account is read there.
