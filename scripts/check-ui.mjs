@@ -123,7 +123,7 @@ const LANDMARKS = {
   "Groups:Your activity": ["EVENTS YOU’RE GOING TO", "YOUR POSTS"],
   "Groups:Discover": ["GROUPS TO JOIN"],
   "Groups:Events": ["UPCOMING IN YOUR GROUPS"],
-  "Crew:Requests": ["Friend requests, crew invites, and group activity waiting on you."],
+  "Crew:Requests": ["Everything waiting on you — friend, crew and group requests — and the requests you’ve sent."],
 };
 
 // Disclosure affordances: controls that reveal more of the screen they are on.
