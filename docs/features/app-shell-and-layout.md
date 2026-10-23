@@ -40,6 +40,9 @@ room for side-panel ads later. The phone app keeps its own look.
   - **The Calendar has a month view** above its lists (`MonthGrid`): your crews' agreed climbing days and
     group events on a month grid with ‹ › and *Today*; each entry opens what the list would. Crew days and
     events only (owner).
+  - **No emoji in the Calendar** (owner, 2026-10-23): its rows read *Drive from you* and *Daylight* as
+    plain labels, its two notes carry the app's line `info` icon, and the empty state a line `calendar` icon
+    (`lib/Calendar.jsx`). The meeting place keeps its `pin` line icon through `Lbl`.
   - **Chats in the rail** (1280px+): under Coming up and Alerts, your direct messages and crew chats, newest
     first, unread counts on each; one opens the conversation. The same threads the inbox shows (`RailChats`,
     App's `_dmCounts` keeps blocked and restricted people out).
