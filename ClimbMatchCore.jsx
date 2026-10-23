@@ -211,7 +211,9 @@ const NOVAL="—";
 const _uNum=v=>(v===null||v===undefined||v===""||isNaN(+v))?null:+v;
 const intOnly=v=>String(v==null?"":v).replace(/[^0-9.]/g,"").split(".")[0];
 const uElev=ft=>{const n=_uNum(ft);return n===null?NOVAL:(uImp()?Math.round(n).toLocaleString()+" ft":Math.round(n/3.28084).toLocaleString()+" m");};
-const uDist=km=>{const n=_uNum(km);return n===null?NOVAL:(uImp()?(n*0.621371).toFixed(1)+" mi":n+" km");};
+/* One decimal in BOTH units, and two under 1 so a short walk-in is not rounded to "0.1 mi". Metric
+   used to print the raw number, so a doubled or converted distance read "7.564 km" or "9.65604 km". */
+const uDist=km=>{const n=_uNum(km);if(n===null)return NOVAL;const v=uImp()?n*0.621371:n;return (v>0&&v<1?String(Math.round(v*100)/100):v.toFixed(1))+(uImp()?" mi":" km");};
 
 /* WEATHER UNITS. The forecast is FETCHED in imperial and stays that way internally --
    temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch -- and these convert

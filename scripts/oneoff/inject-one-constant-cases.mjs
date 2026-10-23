@@ -22,10 +22,12 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", ".
 const sum = (p) => crypto.createHash("sha256").update(fs.readFileSync(path.join(ROOT, p))).digest("hex");
 
 const CASES = [
-  { name: "form-dist", file: "RouteDetail.jsx",
-    why: "the contribute form's Distance current value (9 of 790 WA routes disagreed with the page)",
-    find: '(route.distKm*0.621371).toFixed(1)+" mi"', repl: '(route.distKm*0.621).toFixed(1)+" mi"',
-    expect: /RouteDetail\.jsx @\d+: 0\.621 —/ },
+  // The contribute form's Distance current value now prints through uDist itself, so the one
+  // km->mi constant both it and the page use lives in uDist; this reverts THAT one.
+  { name: "form-dist", file: "ClimbMatchCore.jsx",
+    why: "the km->mi constant behind the contribute form's Distance current value and the page (9 of 790 WA routes disagreed when they differed)",
+    find: 'const v=uImp()?n*0.621371:n;', repl: 'const v=uImp()?n*0.621:n;',
+    expect: /ClimbMatchCore\.jsx @\d+: 0\.621 —/ },
   { name: "form-gain", file: "RouteDetail.jsx",
     why: 'the contribute form\'s Elev. gain current value ("14001 ft" against the page\'s "14,000 ft")',
     find: 'uElev(route.gainFt||route.gainM*3.28084)', repl: 'uElev(route.gainFt||route.gainM*3.281)',
