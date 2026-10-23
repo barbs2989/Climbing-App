@@ -458,8 +458,27 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     two buckets; a rolled-back re-insert of both was refused live while a face-word, a one-match and a plain
     name went in. Washington's other same-key areas near the North Cascades were read the same day: all
     different places (Main Wall, Big Rock, Hairpin, The Temple…).
-    - **Cannot see** a bucket that lists ONE place we hold, a list outside parentheses ("Eldorado and
-      Forbidden"), or a copy spelled past what `catalog_key` folds ("El Dorado").
+    - **Its three gaps, worked by 0341 (2026-10-22, the owner: "keep trying for the others")**:
+      - SPELLING: a listed name now also matches with its spaces taken out ("El Dorado" = Eldorado Peak), in
+        the trigger (index `areas_catalog_compact_key_idx`) and the daily pass. No stored bucket depended on
+        it. Probed live, rolled back: "(El Dorado, Johannes Burg)" refused.
+      - A list OUTSIDE parentheses: a FOURTH pass, daily only, never refused at insert. A hit counts only
+        when the named area is filed NEAR (under the list area's grandparent, or its parent when the
+        grandparent is the state); statewide, 41 names hit and nearly all were one generic word matching a
+        far place. Near, 12 hit + Ouray once the parent rule went in: 3 were copies, folded by 0341 —
+        Arizona's "Courthouse Butte & Bell Rock", Pennsylvania's "Devils Den, Gettysburg" › Plum Run,
+        Icicle Creek's "The Fist/Rob's Corral" — and 7 are LISTED as read, each with its reason.
+        **Shared climbs do NOT decide it**: all 12 shared ZERO climbs with their twins, the 3 copies
+        included — a copy parent holds a DIFFERENT child (Plum Run), exactly as Cascade River held a
+        boulder field Core lacked. Read each one. Proven with `--areas-file` on the pre-fold dump: it
+        names exactly those 3 copies (plus Ouray, then read).
+      - A list naming only ONE place we hold: measured, NOT built — 8 in the catalog, all a generic word
+        matching a different place ("The Lookout (main wall and shield)" vs Castleview's Main Wall).
+    - **Still cannot see** a one-name list, a list split by words other than , / & + "and", or a copy
+      whose listed places sit farther away than the grandparent.
+    - **`--areas-file <dump>`** runs the passes on a saved `{rows:[…]}` dump instead of the live read, to
+      prove a pass against the catalog BEFORE a fold. Include `lat,lng` in the dump, or the first pass
+      sees no coordinates and goes quiet.
   - **SAME PARENT, second pass (0256, 2026-10-07)**: two children of one area under the plain
     `catalog_key` pair at ANY distance, with or without a coordinate or climbs. The first pass skips
     a shared parent, and 209 groups had collected there unseen — one import's "Pawn, The" beside
