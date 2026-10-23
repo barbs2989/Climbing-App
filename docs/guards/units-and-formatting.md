@@ -181,6 +181,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     probes it started from cost **~3x `check:policy-claims`**, the merged guard **~1.5x** — a little
     over half, for more assertions. **Quote the ratio, never the clock**: those readings were taken
     at load average 488, where this file already records a profile being off by 4x.
+  - **`ItineraryEditor` moved to `src/components/ItineraryEditor.tsx` (PR33 of the component extraction).** The
+    render probe's entry imported it from core BY PATH — the one shape the `MOVED` stitch cannot help, because
+    esbuild resolves the real file, not the stitched text — so the entry now imports the component file
+    (`IE_PATH`) and `FullProfile` from core as before; `TIME_PRESETS` moved with it. The guard's unit
+    assertions on the editor's labels are unchanged. Measured by `measure:guard-reach` around the move.
   - **THE CLASS IS ONE CLASS AND THE WRITE HALF IS THE SERIOUS END.** A display defect misinforms
     one reader; a form that stores what was typed corrupts the record for **every** reader — a
     metric climber typing 10 meaning 10°C had **10 written into `climb_logs.temp_f`**, so their own

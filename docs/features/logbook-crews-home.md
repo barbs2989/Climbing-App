@@ -153,7 +153,8 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 | File | Key symbols |
 |---|---|
 | `ClimbMatch.jsx` | `tab` branches for `today`/`crew`/`logbook`, `logbookTab`, `crewView`, `pinnedStates`, `archiveCrew`, `clearPastCrew`, `givenVouches`, `activeCrews`, setup `gaps`, `unfinishedOpen`, `renderObjectives` |
-| `ClimbMatchCore.jsx` | `Challenges`, `useCuratedLists`, `useBadges`, `trophies`, `BadgeGrid`, `BadgeWatcher`, `monthRuns`, `yearCounts`, `TrackedLists`, `pitchesClimbed`, `datesAgreed`, `agreedDate`, `isArchivedCrew`, `CrewInviteModal`, `ItineraryEditor`, `crewPlace`, `placeTrip`, `placeCap`, `placeLabel`, `placeSub`, `placeMatchesLog` |
+| `ClimbMatchCore.jsx` | `Challenges`, `useCuratedLists`, `useBadges`, `trophies`, `BadgeGrid`, `BadgeWatcher`, `monthRuns`, `yearCounts`, `TrackedLists`, `pitchesClimbed`, `datesAgreed`, `agreedDate`, `isArchivedCrew`, `CrewInviteModal`, `crewPlace`, `placeTrip`, `placeCap`, `placeLabel`, `placeSub`, `placeMatchesLog` |
+| `src/components/ItineraryEditor.tsx` | `ItineraryEditor` — the day-by-day itinerary editor (and its `TIME_PRESETS`), rendered by the crew plan, the log, add-a-climb and the route page |
 | `lib/ListsManager.jsx` | Objectives/Saved UI, per-discipline filter chips (Alpine first; Mountaineering and Aid separate); a crag row's Find partners goes to the crag (`onFindPartnersInArea`) |
 | `lib/MyAscents.jsx`, `lib/LogAscent.jsx` (no visibility chooser since 2026-10-21: one line names the Settings choice; a new report sends `visibilityFromSetting` and `syncLogToDb` leaves the column out so 0272's insert trigger fills it from the stored setting), `lib/TripReport.jsx`, `lib/tripReportRow.js`, `lib/LogTagConfirmations.jsx` | Completed climbs, logging, trip reports, partner tag confirmation |
 | `lib/lists.js` | `LISTS`, `routeInList`, `listPeaks`, `peakClimbed`, `FIFTY_CLASSICS` (Challenges) |
