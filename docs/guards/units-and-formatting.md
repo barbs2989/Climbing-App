@@ -128,6 +128,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       NOW) and where it is TYPED (`uElevIn` in the form). The guard asserts all four links and
       FAILS on the old `uElev(row.freezing_level_ft)` shape rather than accepting it. The legacy
       prose `cond.freezing` (seed routes) still renders as written.
+    - **`ReportStats` moved to `src/components/ReportStats.tsx` (PR32 of the component extraction).** The
+      `["Freezing lvl",uElev(cond.freezingFt)]` anchor is kept verbatim there and reaches this guard through
+      `readCoreSource()`'s `MOVED` stitch (the apply script asserts the fragment); the browser half that reads
+      two ReportStats temperatures per run is unaffected by where the component is defined. Measured by
+      `measure:guard-reach` around the move (no count decremented).
     - **The imperial output is NOT byte-identical here and that is stated rather than glossed**:
       `11000+" ft"` becomes `uElev(11000)` = `"11,000 ft"`. A thousands separator, matching the 35
       other `uElev` call sites in that file. The forecast tile IS byte-identical, since `freezeMax`

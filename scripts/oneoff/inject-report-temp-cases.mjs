@@ -28,7 +28,8 @@ const CASES = [
   { name: "chip-does-not-convert", file: RD, expect: "fail",
     find: '{p[0]==="tempF"?uTempU(cd.value):p[0]==="freezingFt"?uElev(cd.value):cd.value}</span>', repl: '{p[0]==="freezingFt"?uElev(cd.value):cd.value}</span>',
     says: /could not read the Temp chip|chip reads|metric chip/ },
-  { name: "reportstats-bakes-F", file: CORE, expect: "fail",
+  // ReportStats lives in src/components/ReportStats.tsx since PR32; check:units still reads it through the MOVED stitch.
+  { name: "reportstats-bakes-F", file: path.join(ROOT, "src/components/ReportStats.tsx"), expect: "fail",
     find: '["Temp",uTempU(cond.tempF)]', repl: '["Temp",cond.tempF+"°F"]',
     says: /Fahrenheit figure survives|still append a fixed/ },
   { name: "form-stores-what-was-typed", file: path.join(ROOT, "lib/LogAscent.jsx"), expect: "fail",
