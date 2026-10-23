@@ -98,7 +98,7 @@ try { browser = await chromium.launch({ channel: "chrome", headless: true }); }
 catch (e) { console.error("check:axe: could not launch Google Chrome: " + String(e.message).split("\n")[0]); process.exit(1); }
 
 // ── scanning ───────────────────────────────────────────────────────────────────────────────────
-const fails = [], advisories = [], unreached = [];
+const fails = [], advisories = [], unreached = [], notOffered = [];
 let scanned = 0;
 const ONLY_OBSCURED = /partially obscured/;
 async function scan(page, where) {
@@ -159,7 +159,18 @@ if (want("tabs") || want("routes") || want("overlays")) {
       try {
         await load(page, base, "?zr=1");
         await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 30000 }).catch(() => {});
-        if (st !== "Overview" && !(await page.evaluate((t) => { const b = [...document.querySelectorAll('[role="tab"], button')].find((x) => x.textContent.trim() === t); if (!b) return false; b.click(); return true; }, st))) { unreached.push(`${label}:route·${st}`); continue; }
+        if (st !== "Overview") {
+          const got = await page.evaluate((t) => {
+            const tabs = [...document.querySelectorAll('[role="tab"], button')];
+            const b = tabs.find((x) => x.textContent.trim() === t);
+            if (b) { b.click(); return "opened"; }
+            // A crag climb has no Plan tab, by design. The tab bar being there (Overview is) while this
+            // one tab is not means the ROUTE does not offer it; no tab bar at all means the walk broke.
+            return tabs.some((x) => x.textContent.trim() === "Overview") ? "not offered" : "missing";
+          }, st);
+          if (got === "not offered") { notOffered.push(`${label}:route·${st}`); continue; }
+          if (got !== "opened") { unreached.push(`${label}:route·${st}`); continue; }
+        }
         await settledText(page, { timeout: 20000 }).catch(() => {});
         await scan(page, `${label}:route·${st}`);
       } catch (e) { unreached.push(`${label}:route·${st} (${err(e)})`); }
@@ -199,6 +210,8 @@ if (want("signed-out")) {
 await browser.close();
 
 if (ALL && advisories.length) { console.log(`\nReported, NOT gated on (${advisories.length}):`); for (const a of advisories) console.log("  " + a); }
+if (notOffered.length) console.log(`
+Not offered by the sample route (${notOffered.length}), so not scanned: ${notOffered.join(", ")}`);
 // A screen it could not open is a screen it did not check: that fails too, or coverage erodes silently.
 if (unreached.length) { console.log(`\nNOT REACHED (${unreached.length}) — a screen not opened is a screen not checked:`); for (const u of unreached) console.log("  " + u); }
 if (fails.length) { console.log(`\ncheck:axe FAILED — ${fails.length} node(s) break a gated rule:`); for (const f of fails) console.log("  " + f); }
