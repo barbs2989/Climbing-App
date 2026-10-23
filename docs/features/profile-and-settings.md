@@ -79,8 +79,13 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   entries, Edit areas/disciplines/grades, Your conditions, Readiness defaults, units and date format (*Display*), then export,
   opt out and delete. Legal & help: the four documents and How ClimbMatch works.
   The Accessibility document (`lib/LegalView.jsx`, its own `ACCESS_UPDATED` date) ends in a *Report an accessibility problem* form
-  (`AccessReportForm` → `fileAccessibilityReport` → `accessibility_reports`, 0343) — signed in only; the owner reads the rows in
-  the Supabase dashboard and replies to the account email. Before 0343 the statement pointed at Feedback, which sends nothing. Four flags rather than one, so each page is
+  (`AccessReportForm` → `fileAccessibilityReport` → `file_accessibility_report()`, 0343/0354). A signed-out visitor can file one
+  too, with an email to reply to: the sign-in screen links to the statement ("Accessibility — report a problem", `lib/AuthModal.jsx`),
+  because the visitor who most needs the form may be the one who cannot get through sign-up. The owner sees open reports in
+  Profile › Review › *Accessibility reports* (`AccessibilityReportQueue`, `lib/AccessibilityReports.jsx`, oldest first, with the
+  address to reply to from `accessibility_report_queue()`), counted into the Review badge, and gets an email per report from
+  `notify-accessibility-report` once Resend is configured. The statement promises a reply within 5 business days. Before 0343 the
+  statement pointed at Feedback, which sends nothing. Four flags rather than one, so each page is
   its own overlay the browser walks open by name. `closeSettings` closes the sheet and any open page when a row leaves Settings.
 
 - **Badges (trophy case)**: the profile's overview opens with *Badges · N* -- what that climber earned (`useBadges` + `trophies`, see logbook-crews-home.md); nothing for another climber with none, a one-line nudge on your own.
@@ -120,11 +125,13 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 | `lib/db.js` | `useClimberResume`, `saveClimberResume`, `uploadProfilePhoto`, `saveProfilePhotos`, `saveProfileAvatar`, `saveProfilePhotoAlts`, `removeProfilePhoto`, `useFullProfile`, `useMyZip`, `useMyEmergencyContact`, `useMyTrustCounts`, `useVerificationRecords`, `giveVouch`, `setAllMyTripReportVisibility`, `fetchProfilesByIds` |
 | `lib/GiveVouch.jsx`, `lib/Onboarding.jsx` | vouch sheet; first-run onboarding |
 | `lib/LegalView.jsx` | `LegalView` (Terms, Privacy, Guidelines, Accessibility), `AccessReportForm`, `ACCESS_UPDATED` |
+| `lib/AccessibilityReports.jsx` | `AccessibilityReportQueue` — the owner's queue of accessibility reports in Profile › Review |
+| `supabase/functions/notify-accessibility-report/index.ts` | emails the owner when a report is filed (needs `RESEND_API_KEY`) |
 | `lib/units-pref.js`, `lib/date-pref.js`, `lib/notif-pref.js`, `lib/browse-visibility-pref.js`, `lib/inbox-pref.js`, `lib/onboard-pref.js`, `lib/prefs.js` | device-local preference modules |
 
 ## 4. Data
 - **Supabase tables**: `profiles` (0009; `show_name` 0175; `discoverable` 0104/0110; `resume_public` 0177; certifications 0181), `climber_resumes` (0342: owner, or anyone while `resume_public`), `profile_zips` (owner-only) + `zip_centroids` (0189),
-  `verification_records` (policies 0058; `verify_my_email()` 0085, inbox proof 0306), vouches, `my_trust_counts` (0203; the counts only — `compute_trust_score` was dropped in 0335), `blocked_users` (0088), `accessibility_reports` (0343, file own / read own / admin updates), storage bucket `topo-photos` for profile photos.
+  `verification_records` (policies 0058; `verify_my_email()` 0085, inbox proof 0306), vouches, `my_trust_counts` (0203; the counts only — `compute_trust_score` was dropped in 0335), `blocked_users` (0088), `accessibility_reports` (0343; since 0354 filed only through `file_accessibility_report()`, guests included, with `contact_email`; read own / admin updates; admin list via `accessibility_report_queue()`), storage bucket `topo-photos` for profile photos.
 - **Device-local (localStorage)**: units, date format, notification switches, visible-while-browsing, onboarding-prompted.
   These do **not** follow a climber to another device.
 - **Seed / in-memory**: `ME`, `CLIMBERS`/`FILLER_CLIMBERS` (gated by `DEMO_FILLERS`); seed résumé ticks (`ME.ticks`) are cleared by the sign-in reset.
@@ -144,6 +151,7 @@ All present in `package.json`: `check:profile-edit-gate`, `check:profile-draft-p
 Notes: `docs/guards/settings-and-persistence.md`, `honesty-claims.md`, `units-and-formatting.md`, `seed-and-identity.md`, `outage-and-read-failures.md`.
 
 ## 7. Last significant change
+- **Accessibility reports from guests, and a queue** (0354) — a signed-out visitor can file one with an email; the owner sees them in Profile › Review and the Review badge; the statement promises a reply within 5 business days.
 - **Accessibility reports reach someone** (0343) — the statement's report form saves to `accessibility_reports`; it used to point at the Feedback button, which only copies to the clipboard.
 - **Profile: Vouches you’ve received** — what partners said about you (ratings, words, skills, would climb again) shows on your own Profile tab above the vouches you gave, as LinkedIn keeps Received above Given; it was reachable only through View public profile, the tab showed just a count.
 - **Menu: Your crews + shortcuts first** — a Crews tile and a *Your crews* list; both shortcut lists sit above the tiles.
@@ -155,7 +163,7 @@ Real climbers, batch 3: the résumé header, export title and "hasn't shared" li
 - **#2415** — Résumé Experience groups now Sport · Trad · Ice & Mixed · Alpine & Mountaineering · Bouldering · Scrambling (was Crag … Other); seed ticks re-tagged (`ClimbMatchCore.jsx` only).
 
 ## 8. Known gaps
-- Nothing notifies the owner of a new `accessibility_reports` row; it is read in the Supabase dashboard. A signed-out visitor cannot file one (this project's anon role cannot write, 0078).
+- The email alert for a new accessibility report (`notify-accessibility-report`) sends nothing until `RESEND_API_KEY` is set (the company-email wait in pending actions); until then the Review badge is the only signal, and only while the owner has the app open.
 - Units, date format, notification and browse-visibility switches live in localStorage only (`lib/units-pref.js`, `lib/date-pref.js`, `lib/notif-pref.js`, `lib/browse-visibility-pref.js`): not synced across devices.
 - `saveProfile` PATCHes any object it is handed; safety depends on callers sending only loaded fields (enforced by `check:profile-edit-gate`, not by the function).
 - `ME.* = ...` mutation per render remains a second source of truth that the codebase asks not to extend.
