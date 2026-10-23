@@ -1,0 +1,135 @@
+{
+  "ut_kor_ingalls_route": {
+    "area": "ut_castleton_tower",
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.6",
+        "notes": "Easy climbing in four short sections: a wide dihedral or chimney for about 20 ft to a big ledge, past a bulge, then slightly left into a fat dihedral and squeeze chimney to a second large ledge (a two-bolt rap anchor sits on the right). A short chimney above leads to a third ledge with a gear-only belay, so bring small and medium cams to build it. Roughly 130 to 140 ft in all." },
+      { "pitch": "2", "grade": "5.8", "lengthM": 30, "anchor": "bolted belay",
+        "notes": "Follow the obvious double crack system; after about 20 ft the left crack passes a bolt and heads off as a neighbouring route, while the right crack is the original line. Big cams (doubles of the largest size help) and some leap-frogging make it easier, and medium to large stoppers protect the upper part. Large loose blocks shift near the top, so face climb around them for the last 25 ft. Belay on a ledge at bolts." },
+      { "pitch": "3", "grade": "5.9+", "crux": true, "anchor": "bolted belay",
+        "notes": "The crux pitch: mostly wide climbing, but the protection is mostly narrower than the climbing. Bolts protect the offwidth and the hard moves at its start, and the first one is not inspiring, so get gear in as well. Past the crux a squeeze chimney offers a secure stance, with gear deep inside; the polished face holds outside are an alternative for those who do not fit. Roughly 100 to 110 ft. Sources differ on the number of bolts, and the grade is quoted as 5.9 by some and 5.9+ by others." },
+      { "pitch": "4", "grade": "5.7",
+        "notes": "Two options: a 5.7 face with a hand or foot traverse to the right, or a chimney of similar difficulty on the left; the chimney is the easier choice for a nervous follower. Short compared with pitches 2 and 3, at roughly 80 ft, ending at a two-bolt anchor just below the summit." }
+    ],
+    "review": {
+      "confidence": "high",
+      "sources": ["https://www.mountainproject.com/route/105717289/kor-ingalls-route", "https://stephabegg.com/?p=5514"],
+      "changed": "Wrote four pitches. Only P2 length (both sources say 100 ft) is stated; P1 (130 vs 140 ft) and P3 (100 vs 110 ft) lengths and the P3 bolt count (two vs three) are left out because sources disagree. P3 grade 5.9+ per route grade, noted as 5.9 by one source. No rappel_detail: sources give the count only (four raps down the north side with a single 70 m rope; the route itself can be rapped with a 70 m but ropes stick and traffic is a problem), no per-rappel stations or lengths.",
+      "pitch_count_found": 4,
+      "other_findings": "Stored descent (two 200 ft raps or four 100 ft raps, north side) is not contradicted; sources only mention a single 70 m rope for four raps."
+    }
+  },
+  "nv_dark_shadows": {
+    "area": "nv_dark_shadows_wall",
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.5", "anchor": "2 bolts",
+        "notes": "Easy start with two good bolts to the anchor. Pitches 1 and 2 can be climbed as one 170 ft pitch, so a 60 m rope is helpful." },
+      { "pitch": "2", "grade": "5.7", "lengthM": 18, "anchor": "bolts",
+        "notes": "From the bolt anchor, take the right-facing desert-varnished dihedral for about 60 ft, then move left to the belay anchors." },
+      { "pitch": "3", "grade": "5.8", "lengthM": 37, "anchor": "bolts",
+        "notes": "Continue up the excellent crack system with some stemming to another anchor, about 120 ft. The varnished rock is slick." },
+      { "pitch": "4", "grade": "5.8", "anchor": "bolts",
+        "notes": "From the anchor break out right onto the curving crack and follow it to the final anchor beneath the giant roof. Take care on the way down that the rappel ropes do not jam in this crack." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "sources": ["https://www.mountainproject.com/route/105732380/dark-shadows", "https://tenthousandtoofar.com/2026/07/31/dancing-in-the-sunlight-dark-shadows-5-8-10p-1000-lead-rope-solo-mescalito-dome-red-rocks-nv-06-28-26/"],
+      "changed": "Wrote the four pitches below the roof. Protection described as good with all anchors bolted. rappel_detail omitted: one source says a single 60 m rope reaches from the top-anchor shared with a neighbouring route, another says three rappels on two 50 m ropes; no per-rappel stations are given and they conflict.",
+      "pitch_count_found": 4,
+      "other_findings": "The full route continues over the roof for around 10 or more pitches; the stored 4 pitches cover the standard rappel-off section. Stored descent 'three rappels on two ropes' is disputed by a source saying a single 60 m rope works from the top anchor. Overview says it starts up a ramp; the bottom pitch is described as a 5.5 slab."
+    }
+  },
+  "nv_prince_of_darkness": {
+    "area": "nv_black_velvet_wall",
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.6", "anchor": "bolts",
+        "notes": "Shared with the neighbouring route. Start up right-facing shallow corners to the crack above; place some gear or solo to the anchors." },
+      { "pitch": "2", "grade": "5.10b", "anchor": "bolts",
+        "notes": "Climb straight up the face past many bolts on mostly positive edges with a few balancy moves and slopers, ending at bolted anchors. Some climbers consider this the hardest pitch of the route. The rappel station to use for descent is to the left rather than this belay." },
+      { "pitch": "3", "grade": "5.10a", "anchor": "bolts",
+        "notes": "Straight up past even more bolts on positive edges, with a few pieces of gear in the crack low down. Ends at bolted anchors." },
+      { "pitch": "4", "grade": "5.9", "anchor": "bolts",
+        "notes": "Similar to the pitch below but slightly easier." },
+      { "pitch": "5", "grade": "5.9", "anchor": "bolts",
+        "notes": "The rock becomes more slabby with a few longer runouts between bolts. Ends at the belay below the final pitch." },
+      { "pitch": "6", "grade": "5.10c", "crux": true, "anchor": "bolts",
+        "notes": "The hardest moves are right off the belay past the first two bolts. The rock changes from positive edges to a slick slab with a thin, shallow crack, climbed on small holds and smears. The first bolt is hard to reach and a fall there can swing you into the belayer. Edges return higher up and the climbing eases to a final anchor on an excellent ledge, the only non-hanging belay on the route." }
+    ],
+    "review": {
+      "confidence": "high",
+      "sources": ["https://www.mountainproject.com/route/105732458/prince-of-darkness", "https://lamountaineers.org/NAC/browserf/climbs/princeod/gc_400.htm", "https://lamountaineers.org/NAC/browserf/climbs/princeod/beta.htm"],
+      "changed": "Wrote all six pitches from the main description. No lengths or bolt counts given by sources so left out (one older report gives 140 ft for P2; not used, single source). No rappel_detail: sources give options only (single 70 m on the dedicated rap line, or rap the route or neighbouring route with a single 80 m or double 60 m ropes) and no per-rappel stations.",
+      "pitch_count_found": 6,
+      "other_findings": "Stored overview says very heavily bolted and every belay hanging: consistent, except the top anchor is on a ledge. Whether P2 or P6 is the crux is contested; P6 is the hardest grade."
+    }
+  },
+  "nv_cat_in_the_hat": {
+    "area": "nv_southeast_buttress",
+    "pitch_detail": [
+      { "pitch": "1-2", "grade": "5.6", "anchor": "2 bolts",
+        "notes": "Follow a 5.6 crack up and left; a large cam helps if you want solid protection at one point. A two-bolt anchor sits about 110 ft up and many parties belay there, but you can continue to the next bolted anchor off to the right on a ledge (a 60 m rope helps). It is easy to be drawn left into the gully, where you can only belay from gear. Above, wander up and right on a huge terrace to its highest point, third class except possibly the first move; many parties stay roped." },
+      { "pitch": "3", "grade": "5.5", "lengthM": 21,
+        "notes": "Aim for the tree at the top of a gully. A short awkward boulder-problem start off the ground, then easier going up the gully to the tree, about 70 ft." },
+      { "pitch": "4", "grade": "5.6", "lengthM": 46,
+        "notes": "The wall steepens. Climb a thin crack in a black face, step left below a roof, then follow another crack all the way up to a block slung with slings, about 150 ft." },
+      { "pitch": "5", "grade": "5.3", "lengthM": 15,
+        "notes": "Bolts visible above the belay mark a harder direct variation (5.10d). The normal way goes down from the belay and traverses right around the corner to the base of a crack in the centre of a black wall, about 50 ft." },
+      { "pitch": "6", "grade": "5.6", "lengthM": 30, "anchor": "2 bolts",
+        "notes": "Climb the crack, angle right to a bolt, then go up a face, somewhat runout, to a two-bolt belay, about 100 ft. Pitches 5 and 6 can be combined on a 50 m rope, but rope drag makes the runout final moves harder. Most parties rappel from here rather than continuing to the summit." }
+    ],
+    "rappel_detail": [
+      { "n": 1, "lengthM": 40, "anchor": "bolts",
+        "station": "The top of pitch 6 anchors.",
+        "notes": "Rappel 130 ft to the slung block at the top of pitch 4, or split it into 50 ft to an intermediate bolted anchor on the direct variation and then 80 ft to the block.",
+        "hazards": ["heavy rope drag and knobs that catch the rope", "do not rappel to the bolts about 120 ft down to the right: parties have had severe rope drag there"] },
+      { "n": 2, "lengthM": 43, "anchor": "slung block",
+        "station": "The slung round block at the top of pitch 4.",
+        "notes": "Rappel 140 ft to the tree at the top of pitch 3. Alternatively rappel slightly left to a large ledge (Lunch Ledge) and scramble exposed rock clockwise to the next rappel tree.",
+        "hazards": [] },
+      { "n": 3, "lengthM": 21, "anchor": "tree",
+        "station": "The tree at the top of pitch 3.",
+        "notes": "Rappel 70 ft to a big complex ledge system, then scramble the easiest way down to an enormous flat ledge, the last step using a cheater block. Walk right to rappel bolts on the up-canyon side of a huge free-standing block.",
+        "hazards": ["the step down to the cheater block is tricky; belay beginners"] },
+      { "n": 4, "lengthM": 46, "anchor": "bolts",
+        "station": "Bolts on the up-canyon side of the huge free-standing block, the top of the second pitch. A second bolted station lies left of the cheater block.",
+        "notes": "Rappel about 150 ft to the ground, angling a little right (north). Intermediate anchors about 50 ft down in an alcove let you split it into two shorter rappels.",
+        "hazards": ["bad rope drag when pulling the full-length rappel", "unknown whether a single 60 m rope reaches the ground from the intermediate anchor; a 70 m does"] }
+    ],
+    "review": {
+      "confidence": "medium",
+      "sources": ["https://www.mountainproject.com/route/105732419/cat-in-the-hat"],
+      "changed": "Single full source read. Pitches 1 and 2 are written as one labelled '1-2' because the source treats them as one long lead; lengths in metres are converted from the source's feet. No pitch lengths for the linked first pitch. Rappel table follows the stated descent in four steps; lengths are the source's feet converted.",
+      "pitch_count_found": 6,
+      "other_findings": "Stored pitches is 7 and grade 5.6+; the source lists six pitches at 5.6 (the 10d direct variation is separate). Other sites split the route differently (5-7 pitches, with lengths that disagree), so the count depends on how the long first pitch is broken."
+    }
+  },
+  "nv_epinephrine": {
+    "area": "nv_black_velvet_wall",
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.8", "lengthM": 50,
+        "notes": "Climb out of the creek bed past bolts to a big ledge, then continue past a couple more bolts to a bushy ledge, about 165 ft." },
+      { "pitch": "2", "grade": "5.7", "lengthM": 50,
+        "notes": "Work up and left into a chimney, pull out the right side and climb easier rock to the base of the big chimney forming the right side of the Black Tower. Long, and some rope stretch may be needed." },
+      { "pitch": "3", "grade": "5.9", "lengthM": 43, "anchor": "bolts",
+        "notes": "The main event: chimney up a wide smooth crack with good protection to a ledge on the right wall with a bolted anchor, about 140 ft. Pitch a pack on a long sling rather than carrying it through the chimneys." },
+      { "pitch": "4", "grade": "5.9", "lengthM": 50,
+        "notes": "Chimney up and swing left as the crack narrows, then easier rock to a good ledge. You can continue into a narrower chimney with a fixed nut at its base and two bolts, which are hard to spot: work away from the back of the chimney to find them. With enough rope, belay at the top of the Black Tower; otherwise stop at the top of the chimney and do a short easy pitch to the tower top. The lower part of the chimney can be avoided on the right." },
+      { "pitch": "5", "grade": "5.8", "lengthM": 46,
+        "notes": "Climb the face above the top of the tower, passing an overhang, aiming for a brushy ledge." },
+      { "pitch": "6", "grade": "5.6", "lengthM": 24,
+        "notes": "Traverse easily right to the Elephant's Trunk and climb it to a ledge at its top." },
+      { "pitch": "7", "grade": "5.8+", "lengthM": 27, "anchor": "bolts",
+        "notes": "Climb the crack system, with some bolts, to a bolted belay on a ledge. The rap route goes straight down from here. Can be combined with the pitch below." },
+      { "pitch": "8-10", "grade": "5.8+", "anchor": "bolts",
+        "notes": "Continue up the same crack system, stopping at the bolted belays, about 400 ft in total. On pitch 10 a short traverse right (bolt) leads to a small roof and then a slightly harder roof; good gear, and jugs above and left of the crack. These pitches are among the best on the route." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "sources": ["https://www.mountainproject.com/route/105732422/epinephrine", "https://lamountaineers.org/NAC/browserf/climbs/epineph/beta.htm"],
+      "changed": "Wrote pitches 1 to 10 following the single detailed account, which assumes bolted belays; this is one source, and lengths are its own estimates (some marked uncertain), converted to metres. Left out the 600 ft of fourth-class exit and the walk-off, which belong in descent not pitches. No rappel_detail: the normal descent is a long cairned walk-off from the summit (rappel route exists but is not described pitch by pitch, and a rescue notice says there are no rappels from the top).",
+      "pitch_count_found": 12,
+      "other_findings": "Stored pitches is 6; sources say 11 or 12 pitches with bolted belays, 13 to 18 depending on the topo. Stored descent (two-rope rappels via roof-lip belay, then another rappel and downclimbing) does not match the usual descent, a walk-off along the ridge east from the summit taking 1.5 to 3 hours; the overview's 'extended easy scrambling to get down' fits the walk-off. Pitch labels here follow the bolted-belay count, not the stored 6."
+    }
+  },
+  "skip_reasons": {}
+}
