@@ -738,6 +738,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       seed climber **legitimately**, and surfacing that as a "% match" is exactly the
       confident-percentage-over-thin-data this branch exists to refuse. The repair is the
       **sentence**, and the reason is recorded beside the code so the next reader does not undo it.
+    - **`RealClimberRow` moved to `src/components/RealClimberRow.tsx` (PR34 of the component extraction).**
+      Section 6 still reaches it through `readCoreSource()`'s `MOVED` stitch: `function RealClimberRow` is
+      found, the lifted row runs to the end of the stitched text (no column-0 `function` follows a
+      component), the `_cand` literal is unchanged and still EXECUTED — the regex now accepts `const` as
+      well as `var`, nothing else — and the refusal branch is verbatim. The injection suite's row cases name
+      the component file; two of its anchors had rotted BEFORE the move (the `_cand` literal gained
+      `partnerAreaPaths` after `objectiveIds` in 0300, and the signature gained `verified`/`listing`) and are
+      repaired with it — `check:injection-anchors` had not flagged them, which is a reach question for that
+      guard, noted here rather than fixed. Measured by `measure:guard-reach` around the move.
     - **6a IS THE STRUCTURAL FACT AND IT FAILS AS STALE, NOT AS A DEFECT.** It lifts `_cand`'s
       literal and **executes** it — a hand-typed copy would agree with itself whatever the row does
       — and requires `compatUnknown >= 3`. Widening `_cand` (a column arrives) is correct work, and

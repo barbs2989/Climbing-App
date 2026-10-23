@@ -171,6 +171,7 @@ export const MOVED = {
     "src/components/PhotoStrip.tsx",
     "src/components/ReportStats.tsx",
     "src/components/ItineraryEditor.tsx",
+    "src/components/RealClimberRow.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],

@@ -21,6 +21,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 const PARTNER_SEARCH = path.join(ROOT, "lib", "PartnerSearch.jsx");
+const REAL_ROW = path.join(ROOT, "src", "components", "RealClimberRow.tsx");   // the browse row moved out of core (PR34)
 const LOCK = path.join(ROOT, ".match-pct-injection.lock");
 
 // Two runs of one suite must never overlap: both snapshot, edit and restore the same file, so a
@@ -90,11 +91,13 @@ const cases = [
   },
   {
     name: "THE REAL DEFECT: the browse row calls every real climber a NEW PROFILE",
+    file: REAL_ROW,
     edits: [['>Not enough shared info to score a match<', '>New profile — not enough shared info to score a match yet<']],
     expect: 'calls every real climber a "New profile"',
   },
   {
     name: "...and the other half of it: the refusal promises the score arrives YET",
+    file: REAL_ROW,
     // Separated deliberately. The two claims fail differently — one blames the climber, one
     // promises a resolution nothing on `profiles` can deliver — and a case that restored both
     // would pass on the strength of either.
@@ -103,23 +106,27 @@ const cases = [
   },
   {
     name: "the refusal is deleted, leaving the absence unexplained beside the seed card's big score",
+    file: REAL_ROW,
     edits: [['>Not enough shared info to score a match<', '><']],
     expect: "no longer explains the missing match %",
   },
   {
     name: "_cand narrows back to the pre-0209 projection, so every real climber reads the refusal again",
+    file: REAL_ROW,
     // The regression 0209 closed: objectives hardcoded empty and the new columns dropped.
-    edits: [['objectiveIds:Array.isArray(objIds)?objIds:[]};', 'objectiveIds:[]};'],
+    edits: [['objectiveIds:Array.isArray(objIds)?objIds:[],', 'objectiveIds:[],'],
             ['hikingSpeedFtHr:Number(p.hiking_speed_ft_hr)||undefined,', '']],
     expect: "for a COMPLETE profile",
   },
   {
     name: "the objectives gate is removed, so an UNREAD list scores as zero shared objectives",
+    file: REAL_ROW,
     edits: [['{!_objReady?<div', '{false?<div']],
     expect: "before its objectives are read",
   },
   {
     name: "SILENT: the refusal is REWORDED, truthfully and differently",
+    file: REAL_ROW,
     // The load-bearing negative. 6b/6c test the lifted TEXT for two forbidden claims and a
     // length, never for today's phrasing — a guard pinned to one sentence forbids improving it.
     edits: [['>Not enough shared info to score a match<', '>Match scores need objectives and availability, which a public profile does not carry<']],
@@ -127,7 +134,8 @@ const cases = [
   },
   {
     name: "SILENT: a comment naming the old wording",
-    edits: [['function RealClimberRow({p,onOpen,objIds,objErr}){', '/* this used to read "New profile — …score a match yet" */\nfunction RealClimberRow({p,onOpen,objIds,objErr}){']],
+    file: REAL_ROW,
+    edits: [['export default function RealClimberRow({p,onOpen,objIds,objErr,verified,listing}: RealClimberRowProps){', '/* this used to read "New profile — …score a match yet" */\nexport default function RealClimberRow({p,onOpen,objIds,objErr,verified,listing}: RealClimberRowProps){']],
     expect: null,
   },
   {
