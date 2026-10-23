@@ -32,8 +32,12 @@ const EXTRA_KEYS = [
   ["crux", "Crux"], ["landing", "Landing"], ["pads", "Pads"], ["startType", "Start"],
   // 0327: the seven route-page fields the form asks for since then. The three lists render below.
   ["ffa", "First free ascent"], ["fwa", "First winter ascent"], ["highPointFt", "High point (ft)"], ["sun", "Sun"],
+  // 0352: what the edit sheet takes per discipline and the form now asks too.
+  ["approach", "Approach"], ["location", "Location on the wall"], ["bolts", "Bolts"], ["anchor", "Anchor"],
+  ["fixedGear", "Fixed gear"], ["rockQuality", "Rock quality"], ["wet", "Wet / seepage"], ["ropeLen", "Rope length (m)"],
+  ["rockGrade", "Hardest rock"], ["iceGrade", "Hardest ice / mixed"], ["alpineGrade", "Alpine grade"], ["angle", "Steepest angle (°)"],
 ];
-const LIST_KEYS = [["altNames", "Also known as"], ["variations", "Variations"], ["proTips", "Pro tips"]];
+const LIST_KEYS = [["altNames", "Also known as"], ["variations", "Variations"], ["proTips", "Pro tips"], ["rack", "Rack"]];
 
 function Row({ label, children }) {
   if (children === null || children === undefined || children === "") return null;
