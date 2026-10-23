@@ -200,13 +200,18 @@ export default function AddRoute({onClose,defaultArea,defaultAreaName,dbAreaId,s
     if(sf("height"))nums.push(["h","Height / length ("+uEl+")",uImp()?"e.g. 600":"e.g. 180",height,setHeight]);
     if(sf("gain"))nums.push(["g","Elevation gain ("+uEl+")",uImp()?"e.g. 4100":"e.g. 1250",gain,setGain]);
     if(sf("loss"))nums.push(["l","Elevation loss ("+uEl+")",uImp()?"e.g. 4100":"e.g. 1250",loss,setLoss]);
-    if(sf("dist"))nums.push(["d","Distance ("+uDi+")",uImp()?"e.g. 9.5":"e.g. 15",dist,setDist]);
+    /* WHICH distance, said in the label. A bare "Distance" left the climber to guess one way or
+       round trip, and the two differ by 2x: the route page doubles an out-and-back's figure into
+       its Round trip tile, and shows a loop's or point-to-point's as the whole outing
+       (lib/outing.js effDistIsWholeTrip). So the label follows "How you get back" below. */
+    var _whole=outingShape==="loop"||outingShape==="point";
+    if(sf("dist"))nums.push(["d",(_whole?"Total distance":"Approach, one way")+" ("+uDi+")",_whole?(uImp()?"e.g. 11.25":"e.g. 18.1"):(uImp()?"e.g. 4.75":"e.g. 7.6"),dist,setDist]);
     if(sf("highPointFt"))nums.push(["hp","High point ("+uEl+")",uImp()?"e.g. 10781":"e.g. 3286",highPoint,setHighPoint]);
     if(!nums.length)return null;
     var rows=[];
     for(var i=0;i<nums.length;i+=2){var a=nums[i],b=nums[i+1];
       rows.push(<div key={"num"+a[0]}>{TwoCol(numF(a[0],a[1],a[2],a[3],a[4],1),b?numF(b[0],b[1],b[2],b[3],b[4],1):<div style={{flex:1}}/>)}</div>);}
-    return <div>{rows}</div>;})()}
+    return <div>{rows}{sf("dist")?<div style={{fontSize:11.5,color:C.textMuted,marginTop:5,lineHeight:1.45}}>{_whole?(outingShape==="loop"?"The whole loop, trailhead back to trailhead.":"The whole trip, from the trailhead you start at to the one you finish at."):"Trailhead to the base of the climb, one way, to two decimals if you know them (e.g. 0.35). The app doubles it for the round trip; on a loop or point to point, pick that under How you get back."}</div>:null}</div>;})()}
   {/* "Face / route-group" is SuggestFix's own label for this column, reused verbatim so the two
      forms name one thing the same way. It is NOT "Aspect" below it: aspect is the compass
      direction the rock points, this is which named face or route-group the line belongs to
