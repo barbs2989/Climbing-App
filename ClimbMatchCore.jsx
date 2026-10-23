@@ -44,6 +44,9 @@ import Stars from "./src/components/Stars.tsx";
 import Bar from "./src/components/Bar.tsx";
 import CardHead from "./src/components/CardHead.tsx";
 import PhotoStrip from "./src/components/PhotoStrip.tsx";
+import CommentMenu from "./src/components/CommentMenu.tsx";
+import DbAreaLevel from "./src/components/DbAreaLevel.tsx";
+import DbCountryAreaHits from "./src/components/DbCountryAreaHits.tsx";
 import ShareExportRow from "./src/components/ShareExportRow.tsx";
 import ReactionPicker from "./src/components/ReactionPicker.tsx";
 import PlaceMatches from "./src/components/PlaceMatches.tsx";
@@ -2535,18 +2538,6 @@ const ADDR_COMMIT=["A few hours","Half day","Full day","Multi-day"];
 
    Seed mode is untouched: `!USE_DB` still walks MOUNTAINS, so the seed build and the render
    guards that run with no database behave exactly as before. */
-function DbAreaLevel({parentId,value,placeholder,onPick,sel}){
-  const q=useAreaChildren(parentId,{enabled:!!parentId});
-  const kids=q.data||[];
-  if(!parentId)return null;
-  if(q.isLoading)return <div style={{fontSize:12,color:C.textMuted,padding:"6px 2px"}}>Loading areas…</div>;
-  /* A failed children read must not read as "this area holds nothing" — the same sentence
-     DbAreaTreeNode says one screen over. Silence is worse here than there: the climber would
-     conclude they had reached a leaf and try to file a route against a container. */
-  if(q.isError)return <div style={{fontSize:12,color:C.amber,padding:"6px 2px",lineHeight:1.45}}>{"Couldn’t load what’s inside this area — this is not a claim it holds nothing. Try again in a moment."}</div>;
-  if(!kids.length)return null;
-  return <div style={{position:"relative",marginBottom:7}}><select aria-label={placeholder} value={value||""} onChange={e=>{const v=e.target.value;onPick(v?(kids.find(k=>k.id===v)||null):null);}} style={sel}><option value="">{placeholder}</option>{kids.map(k=><option key={k.id} value={k.id}>{k.name+(k.route_count?(" · "+k.route_count+" climb"+(k.route_count===1?"":"s")):"")}</option>)}</select></div>;
-}
 /* SEARCH FIRST, THE WHOLE CATALOG. The search box used to appear only once a country AND a
    state were picked, so on opening the form the only box was "Crag not listed? Type a new one":
    the owner typed "Jack Mountain" there and it filed a NEW crag beside the existing peak, six
@@ -3285,15 +3276,6 @@ function Guides({notify,onDash,onInquire}){
     </div>,document.body):null}
   </div>);
 }
-/* One country's area hits for DbClimbPicker's root search. A component per country because
-   `areas_in_subtree` takes one root and a hook cannot be called in a loop. Each country states
-   its own "no match", so a miss in Canada is never read as a miss everywhere. */
-function DbCountryAreaHits({country,q,showName,rowStyle,onOpen}){
-  const _q=(q||"").trim();
-  const searchQ=useAreaSearch(country.id,q);
-  const hits=searchQ.data||[];
-  return <div style={{marginBottom:showName?10:0}}>{showName?<div style={{fontSize:11,fontWeight:800,letterSpacing:0.5,textTransform:"uppercase",color:C.textMuted,padding:"6px 4px 2px"}}>{country.name}</div>:null}{searchQ.isLoading?<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>Searching…</div>:null}{searchQ.error?<div style={{fontSize:12.5,color:C.red,padding:"12px 4px",textAlign:"center"}}>Couldn't run that search — check your connection.</div>:null}{hits.map(function(a){return <div key={a.id} {...clickable(function(){onOpen(a);})} aria-label={"Open "+a.name+(a.parent_name?" in "+a.parent_name:"")} style={rowStyle}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.name}</div><div style={{fontSize:10.5,color:C.textMuted,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.parent_name||""}</div></div>{a.route_count>0?<span style={{fontSize:12,color:C.textMuted,flexShrink:0,whiteSpace:"nowrap"}}>{a.route_count+" ›"}</span>:null}</div>;})}{(!searchQ.isLoading&&!searchQ.error&&!hits.length)?<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>{"No area"+(showName?" in "+country.name:"")+" matches “"+_q+"”."}</div>:null}</div>;
-}
 /** @param {{onPickRoute:(route:{id:string|number,name:string})=>void, selectedIds?:(string|number)[], onViewRoute?:(route:{id:string|number,name:string})=>void, start?:{id:string|number,name:string}|null, onExit?:()=>void, pickLabel?:string}} props — typed here, not with casts in src/components/PlaceMatches.tsx: a JS destructuring infers every prop as REQUIRED. */
 function DbClimbPicker({onPickRoute,selectedIds,onViewRoute,start,onExit,pickLabel}){
   /* `start` opens the drill-down AT a place (a search hit the climber tapped), and `onExit` is
@@ -3808,8 +3790,6 @@ function commentWhen(ts,full){if(!ts)return "";var t=typeof ts==="number"?ts:new
    drawn the way Facebook draws one: a grey bubble holding the name and the words, a small line under it (time · Like · Reply ·
    React), the reactions as a pill at the bubble's edge, and everything else (edit, delete, report, remove, block) behind ⋯.
    Replies stay one level deep and fold behind "View N more replies" past two. */
-/* The ⋯ sheet of a comment, its own component as ReactionPicker is: overlay discovery reads a component that renders a dialog as a dialog, and Comments itself is not one. */
-function CommentMenu({label,items,onClose}){const closeMenu=onClose;const menuList=items;return createPortal(<div onClick={closeMenu} tabIndex={-1} onKeyDown={e=>{if(e.key==="Escape")closeMenu();}} role="dialog" aria-modal="true" aria-label={label} style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.6)",zIndex:9700,display:"flex",alignItems:"flex-end",justifyContent:"center"}}><div onClick={e=>e.stopPropagation()} style={{background:C.bg,width:"100%",maxWidth:440,borderRadius:"16px 16px 0 0",padding:8,border:"1px solid "+C.border,borderBottom:"none",boxSizing:"border-box"}}>{menuList.map(x=><button key={x[0]} onClick={()=>{closeMenu();x[1]();}} style={{width:"100%",textAlign:"left",padding:"13px 14px",background:"none",border:"none",color:x[2]?C.red:C.text,fontSize:14,fontWeight:600,cursor:"pointer"}}>{x[0]}</button>)}<button onClick={closeMenu} style={{width:"100%",padding:"13px 14px",background:"none",border:"none",borderTop:"1px solid "+C.borderLight,color:C.textSub,fontSize:14,fontWeight:700,cursor:"pointer"}}>Cancel</button></div></div>,document.body);}
 function Comments({targetId,comments,onAdd,onViewProfile,onEdit,onDelete,onLike,onReact,onReply,mentionCandidates,onModRemove,onReport,blockedIds,onBlock}){
   const [text,setText]=useState("");const [reactFor,setReactFor]=useState(null);const [open,setOpen]=useState({});const [sort,setSort]=useState("relevant");const [editId,setEditId]=useState(null);const [editText,setEditText]=useState("");const [replyOpen,setReplyOpen]=useState(null);const [replyTxt,setReplyTxt]=useState("");const [menuFor,setMenuFor]=useState(null);const [allReplies,setAllReplies]=useState({});const [fullAt,setFullAt]=useState(null);
   /* BLOCKED AUTHORS leave the thread for the climber who blocked them (Apple 1.2), as their group posts already do, and so do the
