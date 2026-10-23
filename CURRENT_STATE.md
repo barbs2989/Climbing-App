@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Avatars start loading with the screen, not as they scroll in**: avatars were `loading="lazy"`, and inside the app's scroll pane a lazy image is fetched only once it is on screen, so every avatar appeared after the text around it. They now load eagerly (a thumbnail is 3–9 KB), and the silhouette shows in the circle until the photo arrives. Docs: [profile-and-settings](docs/features/profile-and-settings.md)
 - **No emoji in the Calendar**: the car, sun, climber and ℹ️ emoji are gone from the Calendar screen; the notes and the empty state use the app's line icons instead. See `docs/features/app-shell-and-layout.md`.
 - **Editing a route: camping and bivy are easy to find**: the edit sheet's group now reads *Approach, descent & camping*, the Camping & bivy row lists the camps on file by name instead of "✓ on file", and every box in a camp is captioned (Kind, Elevation, Used for, Water, Capacity, Permit, Notes). A metric climber editing a camp no longer saves its height 3.28× too high. Crag lines that show no camping section no longer offer the field.
 - **Your résumé is saved, and other climbers see it (0342)**: the headline, courses and past climbs you add by hand were lost on reload and reached nobody; they are now stored in `climber_resumes` and shown on your résumé to anyone while it is public. See `docs/features/profile-and-settings.md`.
