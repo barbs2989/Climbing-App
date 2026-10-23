@@ -126,6 +126,18 @@ empty field fills at once and two climbers who agree are enough to change one (0
   form does not ask, unless `NOT_AT_CREATION` / `NOT_FOR` names it with a reason (the multi-part
   builders — waypoints, approach variants, rappel table, rescue card… — are added on the live route).
 
+- **Add-a-climb finds the area by searching the whole catalog** (`DbAreaPicker` in
+  `ClimbMatchCore.jsx`, `useCatalogAreaSearch` in `lib/db.js`): the first box searches every
+  area in every state and province, with no country or state needed first. It uses the Climbs tab's
+  spelling rules, so "jack mtn" finds Jack Mountain. Each hit names its type, its climb count and
+  its full trail ("Washington › Northwest Region › … › North Cascades Core"). The country → state
+  → area tree stays below it for browsing. The *Not in the catalog?* box lists existing areas
+  matching what is typed into it ("Already in the catalog? Tap it…") before treating it as a new
+  crag, and picking an existing area clears it. Opened from an area page, the form no longer
+  prefills that box with the area's own name, which used to file the area as a *new* crag. Each
+  field carries one line of context, shared with the route page's edit sheet through
+  `lib/fieldHints.js`.
+
 Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 
 ## 2. How it works
@@ -165,7 +177,10 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `lib/RouteQualityQueues.jsx` | `FieldContributionQueue`, `RouteFlagQueue`, `ContributorStandingQueue` |
 | `lib/confidence.jsx` | `ConfidenceCtx`, `HEAD_KEYS`, `headKey`, `ConfChip`, `ConfidenceLegend` |
 | `lib/FlagRouteInfo.jsx` | `FlagRouteSheet` |
-| `ClimbMatchCore.jsx` | `SL` (renders the chip on a route page) |
+| `ClimbMatchCore.jsx` | `SL` (renders the chip on a route page); `DbAreaPicker` (Add a climb's area step) |
+| `lib/AddRoute.jsx` | `AddRoute`: the add-a-climb form, its per-field context lines (`Lab`) |
+| `lib/fieldHints.js` | `HINTS`: one line of context per field, shared by the edit sheet and Add a climb |
+| `lib/db.js` | `useCatalogAreaSearch`: area search over the whole catalog |
 | `src/components/CardHead.tsx` | `CardHead` (the card heading; renders the chip on a route page — extracted from core, PR19) |
 | `lib/SafetyNotices.jsx` | `ContributionStandingNotice`, `AppealSheet` |
 | `ClimbMatchCore.jsx` | `sameEditValue` (clustering), the "Your contributions" ledger (`ST` statuses) |

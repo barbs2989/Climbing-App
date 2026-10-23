@@ -13,9 +13,9 @@ import { ROAD_KEYS, ACCESS_KEYS, TIMING_KEYS } from "./lib/objKeys";
 import { USE_DB, supabase } from "./lib/supabase";
 import { POLICY_VERSION, policyVersionLabel } from "./lib/policy";
 import { exportedTrackNotes, waypointCaveat } from "./lib/track";
-import {ROUTE_PICK_LIM,useBelayLedgers,usePartnerSignals,useMyEmergencyContact,useVerifiedUsers,useComments, addComment as dbAddComment, editComment as dbEditComment, deleteComment as dbDeleteComment, setCommentLike, submitContribution, fetchCrewMessages, markDmThreadRead, fetchCrewLastReads, countCrewUnread, markCrewRead, useRouteContributions, dbRouteToCamel, useAreaRoutes, useAreaTopContributors, useMyContributions, useProfilesByIds, useFullProfile, useRoutesByIds, useRoutesWithLists, useStates, useCountries, useAreaChildren, useAreaSearch, useAreaPath, uploadProfilePhoto, removeProfileAvatar, useSubtreeRoutes, useAreaTopos, topoPhotoUrl, uploadTopoPhoto, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useAreaPaths, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useDiscoverableProfiles, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, useVerificationRecords, inviteToCrewByEmail, useCrewEmailInvites, deleteCrewEmailInvite, sendCrewMessage, useCrewMessages, fetchOlderCrewMessages, sendDirectMessage, useDirectMessages, fetchMyDirectMessages, fetchOlderDirectMessages, markMessageAsRead, fetchRouteArea, useSharedList, usePublicLists} from "./lib/db";
+import {ROUTE_PICK_LIM,useBelayLedgers,usePartnerSignals,useMyEmergencyContact,useVerifiedUsers,useComments, addComment as dbAddComment, editComment as dbEditComment, deleteComment as dbDeleteComment, setCommentLike, submitContribution, fetchCrewMessages, markDmThreadRead, fetchCrewLastReads, countCrewUnread, markCrewRead, useRouteContributions, dbRouteToCamel, useAreaRoutes, useAreaTopContributors, useMyContributions, useProfilesByIds, useFullProfile, useRoutesByIds, useRoutesWithLists, useStates, useCountries, useAreaChildren, useAreaSearch,useCatalogAreaSearch, useAreaPath, uploadProfilePhoto, removeProfileAvatar, useSubtreeRoutes, useAreaTopos, topoPhotoUrl, uploadTopoPhoto, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useAreaPaths, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useDiscoverableProfiles, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, useVerificationRecords, inviteToCrewByEmail, useCrewEmailInvites, deleteCrewEmailInvite, sendCrewMessage, useCrewMessages, fetchOlderCrewMessages, sendDirectMessage, useDirectMessages, fetchMyDirectMessages, fetchOlderDirectMessages, markMessageAsRead, fetchRouteArea, useSharedList, usePublicLists} from "./lib/db";
 import {subdivisionNoun, countryOfArea} from "./lib/countries";
-import {searchClean, searchNorm, searchMatches} from "./lib/search";
+import {searchClean, searchNorm, searchMatches, searchTokens} from "./lib/search";
 import { clickable } from "./lib/clickable"
 import { openContentReport, canReportContent, isDbRowId, openAppeal, canAppeal } from "./lib/reportBus";
 import { routeTerrain, fitGear, fitAdvice } from "./lib/terrain"
@@ -2577,7 +2577,16 @@ function DbAreaLevel({parentId,value,placeholder,onPick,sel}){
   if(!kids.length)return null;
   return <div style={{position:"relative",marginBottom:7}}><select aria-label={placeholder} value={value||""} onChange={e=>{const v=e.target.value;onPick(v?(kids.find(k=>k.id===v)||null):null);}} style={sel}><option value="">{placeholder}</option>{kids.map(k=><option key={k.id} value={k.id}>{k.name+(k.route_count?(" · "+k.route_count+" climb"+(k.route_count===1?"":"s")):"")}</option>)}</select></div>;
 }
-function DbAreaPicker({chain,onChain,sel,fld,seedAreaId,isLeaf,settled,kidsUnavailable}){
+/* SEARCH FIRST, THE WHOLE CATALOG. The search box used to appear only once a country AND a
+   state were picked, so on opening the form the only box was "Crag not listed? Type a new one":
+   the owner typed "Jack Mountain" there and it filed a NEW crag beside the existing peak, six
+   levels down (Washington › Northwest Region › Hwy 20… › North Cascades › North Cascades Core).
+   Now the first thing is a search over every area in every state (useCatalogAreaSearch), each
+   hit carrying its trail so namesakes can be told apart; the tree stays below it for browsing.
+   Mountain Project files a route from inside its area page and nothing warns of a duplicate
+   area — so the new-crag box lives here too, and offers what is already listed under the name
+   typed into it before it calls anything new. */
+function DbAreaPicker({chain,onChain,sel,fld,seedAreaId,isLeaf,settled,kidsUnavailable,newArea,onNewArea}){
   const [q,setQ]=useState("");
   const statesQ=useStates();
   const states=statesQ.data||[];
@@ -2601,12 +2610,19 @@ function DbAreaPicker({chain,onChain,sel,fld,seedAreaId,isLeaf,settled,kidsUnava
   const countryId=countryOfArea(stateRow)||countryPick||onlyCountry;
   const noun=subdivisionNoun(countryId);
   const inCountry=states.filter(function(x){return !countryId||countryOfArea(x)===countryId;});
-  /* Search is scoped to the chosen state because `areas_in_subtree` takes ONE root and the
-     catalog has TWO (usa, canada) — picking either silently excludes the other. It is also
-     the difference between a usable result set and an unusable one: "mount" matches 216
-     areas inside Washington alone. */
-  const searchQ=useAreaSearch(stateId||null,q.trim().length>=2?q.trim():"",30);
-  const hits=searchQ.data||[];
+  /* Not scoped to a state any more: areas_in_subtree over the `usa` root times out, and naming
+     the state first is the step that hid the box. "mount" matching 1,669 areas is handled by the
+     ranking (exact, then starts-with, then size) and by saying how many there were. */
+  const searchQ=useCatalogAreaSearch(q,12);
+  const hits=(searchQ.data&&searchQ.data.rows)||[];
+  const hitTotal=(searchQ.data&&searchQ.data.total)||0;
+  const dupQ=useCatalogAreaSearch(newArea||"",4);
+  const dupHits=(dupQ.data&&dupQ.data.rows)||[];
+  const pick=function(id){setResolveId(id);setQ("");if(onNewArea)onNewArea("");};
+  const hitRow=function(m,query){return <div key={m.id} {...clickable(function(){pick(m.id);})} style={{padding:"9px 12px",cursor:"pointer",borderBottom:"1px solid "+C.borderLight}}>
+    <div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{hlMatch(m.name,query)}<span style={{fontSize:11.5,fontWeight:600,color:C.textMuted}}>{" · "+m.area_type+(m.route_count?(" · "+m.route_count+" climb"+(m.route_count===1?"":"s")):"")}</span></div>
+    <div style={{fontSize:11.5,color:C.textMuted,marginTop:1,lineHeight:1.4}}>{(m.trail||[]).join(" › ")}</div>
+  </div>;};
   /* An area reached by any route other than drilling — the form opened from a DB area page,
      or a search hit several levels down — arrives as a bare id, so its ANCESTORS have to be
      resolved before the cascade can show where it sits. Without this the levels above it
@@ -2630,6 +2646,14 @@ function DbAreaPicker({chain,onChain,sel,fld,seedAreaId,isLeaf,settled,kidsUnava
   },[resolveId,pathData,states,onChain]);
   const crumb=chain.map(function(a){return a.name;}).join(" › ");
   return <div>
+    <div style={{marginBottom:10}}>
+      <input aria-label="Search for a crag or peak" value={q} onChange={e=>setQ(e.target.value)} placeholder="Search every crag, peak and area — e.g. Jack Mountain" style={fld}/>
+      {searchQ.isError?<div style={{fontSize:12,color:C.amber,marginTop:5,lineHeight:1.45}}>{"Couldn’t run that search — this is not a claim nothing matched."}</div>
+        :hits.length?<div style={{marginTop:4,border:"1px solid "+C.border,borderRadius:10,overflow:"hidden",background:C.surface,maxHeight:260,overflowY:"auto",overscrollBehavior:"contain"}}>{hits.map(function(m){return hitRow(m,q);})}
+          {hitTotal>hits.length?<div style={{padding:"8px 12px",fontSize:11.5,color:C.textMuted}}>{"Showing the top "+hits.length+" of "+hitTotal+" — keep typing to narrow it."}</div>:null}</div>
+        :(searchTokens(q).join("").length>=2&&!searchQ.isLoading)?<div style={{fontSize:12,color:C.textMuted,marginTop:5,lineHeight:1.45}}>{"Nothing in the catalog matches that. Browse the tree below, or add it as a new crag at the bottom."}</div>:null}
+    </div>
+    <div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,margin:"0 0 5px"}}>{"Or browse: country → state → area → crag or peak"}</div>
     {noCountryStep?null:<div style={{position:"relative",marginBottom:7}}>
       <select aria-label="Country" value={countryId} onChange={e=>{setCountryPick(e.target.value);setResolveId(null);onChain([]);setQ("");}} style={sel}>
         <option value="">{countriesQ.isLoading?"Loading countries…":"Choose a country"}</option>
@@ -2643,16 +2667,6 @@ function DbAreaPicker({chain,onChain,sel,fld,seedAreaId,isLeaf,settled,kidsUnava
       </select>
     </div>:null}
     {statesQ.isError?<div style={{fontSize:12,color:C.amber,marginBottom:7,lineHeight:1.45}}>{"Couldn’t load the state list — this is not a claim the catalog is empty. Try again in a moment."}</div>:null}
-    {stateId?<div style={{marginBottom:8}}>
-      <input aria-label="Search for a crag or peak" value={q} onChange={e=>setQ(e.target.value)} placeholder={"Search "+((chain[0]&&chain[0].name)||("this "+noun))+" for a crag or peak…"} style={fld}/>
-      {searchQ.isError?<div style={{fontSize:12,color:C.amber,marginTop:5,lineHeight:1.45}}>{"Couldn’t run that search — this is not a claim nothing matched."}</div>
-        :hits.length?<div style={{marginTop:4,border:"1px solid "+C.border,borderRadius:10,overflow:"hidden",background:C.surface,maxHeight:230,overflowY:"auto",overscrollBehavior:"contain"}}>{hits.map(function(m){
-          return <div key={m.id} {...clickable(function(){setResolveId(m.id);setQ("");})} style={{padding:"9px 12px",cursor:"pointer",borderBottom:"1px solid "+C.borderLight}}>
-            <div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{hlMatch(m.name,q)}</div>
-            <div style={{fontSize:11.5,color:C.textMuted,marginTop:1}}>{[m.parent_name,m.area_type,m.route_count?(m.route_count+" climb"+(m.route_count===1?"":"s")):null].filter(Boolean).join(" · ")}</div>
-          </div>;})}</div>
-        :(q.trim().length>=2&&!searchQ.isLoading)?<div style={{fontSize:12,color:C.textMuted,marginTop:5}}>{"Nothing in "+((chain[0]&&chain[0].name)||("this "+noun))+" matches that. Drill down below, or add it as a new crag."}</div>:null}
-    </div>:null}
     {resolveId?<div style={{fontSize:12,color:C.textMuted,padding:"6px 2px"}}>Opening that area…</div>:null}
     {chain.map(function(a,i){
       return <DbAreaLevel key={a.id} parentId={a.id} value={chain[i+1]?chain[i+1].id:""} placeholder={"Choose in "+a.name+"…"} sel={sel} onPick={function(k){setResolveId(null);onChain(chain.slice(0,i+1).concat(k?[{id:k.id,name:k.name}]:[]));}}/>;
@@ -2660,6 +2674,13 @@ function DbAreaPicker({chain,onChain,sel,fld,seedAreaId,isLeaf,settled,kidsUnava
     {chain.length?<div style={{fontSize:12,fontWeight:600,margin:"2px 0 4px",color:isLeaf?C.green:C.textMuted}}>{<Lbl s={"📍 "+crumb}/>}</div>:null}
     {(chosen&&kidsUnavailable)?<div style={{fontSize:11.5,color:C.amber,marginBottom:4,lineHeight:1.5}}>{"Couldn’t check what’s inside “"+chosen.name+"” — this is not a claim it is the right place to file a climb. Try again in a moment."}</div>
       :(chosen&&settled&&!isLeaf)?<div style={{fontSize:11.5,color:C.amber,marginBottom:4,lineHeight:1.5}}>{"“"+chosen.name+"” holds other areas, so a climb cannot be filed on it — pick the exact crag or peak inside it."}</div>:null}
+    {onNewArea?<div style={{marginTop:8}}>
+      <input aria-label="Crag not listed? Type a new one to add it" value={newArea||""} onChange={e=>onNewArea(e.target.value)} placeholder="Not in the catalog? Type the new crag’s name…" style={fld}/>
+      {dupHits.length?<div style={{marginTop:6,border:"1px solid "+C.amber+"55",borderRadius:10,overflow:"hidden",background:C.amberBg}}>
+        <div style={{padding:"8px 12px",fontSize:12,fontWeight:700,color:C.amber,lineHeight:1.45}}>{"Already in the catalog? Tap it to file your climb there instead:"}</div>
+        <div style={{background:C.surface}}>{dupHits.map(function(m){return hitRow(m,newArea);})}</div>
+      </div>:null}
+    </div>:null}
   </div>;
 }
 
