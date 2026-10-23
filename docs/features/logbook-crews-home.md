@@ -36,6 +36,14 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   (`profile_tracked_lists`, 0337, owner-only; `useMyTrackedLists`/`saveMyTrackedLists`; App's `trackedLists`/`toggleTrackedList`).
   The **Fifty Classics** rows come from the book's roster (`FIFTY_CLASSICS`, each entry naming its catalog `id`): numbered 1–50, the book's route name
   over "peak · region", a missing grade left out. All fifty are in the catalog (2026-10-21).
+  Peak lists (2026-10-22): **Colorado Centennials** (`co_cent`, 99 = the 52 fourteeners + 47 thirteeners, Mount Bross excluded as on the
+  14ers card), **Adirondack 46** (`adk46`) and **Sierra Peaks Section** (`sps`, 247 active peaks in list order). Their rosters are in
+  `lib/lists.js` (`CO_CENTENNIAL_PEAKS`, `ADK_46_PEAKS`, `SPS_PEAKS`); the summits the catalog lacked were ADDED with a standard route by
+  0344 (38 Colorado 13ers, 34 Adirondack peaks) and 0345 (155 Sierra peaks), and list peaks held only as climbing walls got a
+  peak-bagger's route, so every entry can be ticked. A roster entry may carry `also`: the face sub-areas of a peak whose climbs sit
+  on faces (Half Dome, Cathedral Peak); `peakClimbed` and `routeInList` count a log on any of them.
+  0347 gave four fourteeners (Handies, Bierstadt, Blue Sky, Quandary) a walk-up; the 14ers, Bulgers and Cascade rosters had four dead ids
+  and six faces-only peaks re-pointed the same day, and `audit:list-coverage` now counts only peaks that can be ticked.
   `Challenges` (`ClimbMatchCore.jsx`) has three parts: personal challenges (climbs this year, `pitchesClimbed`, conditions reported,
   vouches given, catches), curated lists, badges. All are DERIVED from the logs it is handed, so a new log updates them the moment it is
   saved (`setLogs`; the logged route's row arrives through `useRoutesByIds`), and nothing is stored. Another climber's profile sheet
@@ -43,6 +51,19 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   visibility lets you read) and `self={false}`: *Their challenges* shows the log-derived rows, never the vouch, catch or log-conditions rows, which are only
   drawn where the caller passed them. `pitchesClimbed` counts a log's route pitches; Attempt/Turned around/Project add 0, a route with
   no count is 1 pitch only on a roped crag discipline, an unresolved route adds 0.
+- **Badges** are built by ONE hook, `useBadges` (`ClimbMatchCore.jsx`), on top of `useCuratedLists`, for three readers: the
+  Badges grid at the foot of `Challenges` (`BadgeGrid`), the trophy case at the top of a profile (`FullProfile`, through `trophies()`),
+  and App's *Badge earned* overlay (`BadgeWatcher`). The owner's bar (2026-10-22): a badge marks a REAL accomplishment, never a
+  first step. The set: crag sends (sport, trad, top-rope, boulder, aid; different routes) 50/100/250/500; alpine summits (alpine,
+  mountaineering, scrambling) 10/25/50/100, counting ONLY a log ticked *Summit*; ice & mixed 10/25/50; pitches 100/500/1,000;
+  a 6/12/24-month logging streak (`monthRuns`); 50/100 climbs in one calendar year (`yearCounts`); Onsight ace (10 onsights or
+  flashes); All-rounder (5 disciplines); First ascent; Route developer; and one *finisher* badge per curated list. No badge for a
+  first send, a single peak or a vouch. Each earned badge carries `on`, the date of the log that crossed the line (a list: the last
+  objective's first tick; null when that log has no date), shown as *✓ Earned <date>* when tapped. Tiers share a `fam`; a profile
+  shows the highest earned tier of each, newest first. Your Logbook shows every badge, earned or not, with `cur / tgt` under a
+  locked one (a list's finisher only once you have started it); another climber's shows only what they earned, and an empty trophy
+  case renders nothing for them. The log form's save stamps `badgeAt`; `BadgeWatcher` (mounted while the log form is open, so it
+  holds the badges from before the save) celebrates any badge that appears within 6 s, once each.
 - **Crew**: your crews around ONE PLACE — a `routeId`, or since 0302 an `areaId` + `discipline` (a crag session: started from the area page's "Start a crew here",
   the Crews tab's "+ Create a crew → At an area…", or a past crew's picker, through `StartCrewSheet`; `formCrew` takes a route id or a place) — with members, proposed dates,
   per-member day acks and a "Ready" state (`datesAgreed`/`agreedDate`). Every surface that names a crew resolves its place through `crewPlace` (`placeTrip`, `placeCap`,
@@ -50,6 +71,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   **+ Create a crew** is the first control on the tab for every climber (above pending requests and the crew cards): an area (`StartCrewSheet`), a saved climb with no ACTIVE crew, or *A climb — find it in Climbs…* (opens Climbs to save one); *Find partners* sits beside it.
   A climb's crew is its ACTIVE crew (`activeCrews`): the create picker, the invite prompt, the partner rows' *+ Invite to crew*, a shared objective's *Open crew* and `ListsManager`/`PartnerSearch` (handed `activeCrews`) never reach a past crew, so a past crew's climb can be crewed again.
   Each crew renders as `CrewCard`: members, invite (by profile or email), itinerary, `CrewGearList` (who brings what), meet time/place, float plan.
+  **Who is free**: the card's *Step 1 · Your typical week* grid and the crew Safety tab's heatmap read each member's SAVED profile availability (`availWeek`, else the coarse `availability` tags) through `hasSlot`/`weekOf`. A real crewmate's comes from `fetchProfilesByIds` (`lib/db.js`), which selects `availability` + `avail_week` for exactly this, and `crewMemberById` carries both; your own row starts from your saved week.
   **Itinerary** (`CrewCard`, props `myItin` and `onShareMyItin`): *Import from Plan* lists *Your plan* first (`myItineraries[routeId]`, saved on the Plan tab through `saveMyItin` in App), then `getAvailableItineraries(route)`, and *Build your own*. The builder (`openItinBuilder`) starts from your plan; *Share with the crew* (`shareItinDraft`) saves it as your plan for the climb (`saveMyItin(..., quiet)`) and shares it (`shareItinToCrew` → `share_crew_itinerary`). *Remove* (`removeCrewItin`) clears the crew's plan with `itinerary:null` after a confirm; your own saved plan is untouched.
   Every card starts COLLAPSED (`collapsed={!isOpen}` in App; `openCrewId` is set only by `openCrewCard` and the create flows): the header, Log the climb, join requests, Steps to get ready, Crew chat and **View plan ▾**. View plan opens the rest; a link that names a crew opens that one.
   Crew chat and direct messages (`useCrewMessages`, `useDirectMessages`); unread counts via `countCrewUnread`; `Inbox` and `NotifPanel` surface them.
@@ -58,10 +80,25 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   on this device until reload and say so in the toast ("Crew archived on this device until you reload").
 - **Crew safety check** (`SafetyTab`, 0314): the pre-climb questionnaire and "mark me safety-ready" are stored per crew for real crews (`saveCrewSafetyAnswers`, `markCrewSafetyReady`) in `crew_safety_answers`, readable by their owner alone. The crew's Team Alignment comes from `crew_alignment()` (`useCrewAlignment` → `alignmentFromServer`): counts per risk level and per flag, never anyone's answers, as the questionnaire promises. Flags are anonymous on every path (`alignmentFromCounts`). The crew card's per-member "reviewed the safety plan" mark reads `crew_ready_ids()` (`useCrewReadyIds`). Example crews keep the local path.
 - **Float plans**: `FloatPlans` (`lib/FloatPlans.jsx`) lists plans for `activeCrews`; the plan text is stored on the crew (`createCrew({floatPlan})`).
+  **Crew ⇄ plan** (2026-10-22): a crew's facts come INTO its plan — `crewFloatFill` (App) maps the place, the confirmed partners' public names,
+  the party size, `meetPlace` and the agreed day + `meetTime` onto the form's route/partner/party/lot/depart; a new crew plan starts with them and an
+  existing one offers *Fill in from the crew (N empty fields)*, which only ever fills EMPTY fields. A plan with no crew (a route Safety tab's
+  `route:<id>`, or *+ New*'s `trip:<ms>`) can be MOVED onto an active crew without one (*Climbing this with a crew? Move the plan to it*): saved under
+  `crew:<id>` first, the old scope deleted second, and a saved plan files the crew stub. A saved crew plan has *Send to the crew chat*
+  (`FloatPlan`'s `onSendToCrew`, wired in both `FloatPlans` and the crew `SafetyTab`), which posts the plan text through `sendCrewMsg` — the
+  climber's own send, so the Privacy Policy's "stays on your phone until you send it" still holds; `crews.float_plan` is unchanged.
+  **Chat → plan**: the plan text is ONE format, `floatPlanText` (core), and `parseFloatPlanText` reads it back (null for any other message).
+  In a crew thread `MessageRow` (given `onSaveFloatPlan`) draws a posted plan as `FloatPlanCard` (`src/components/FloatPlanCard.tsx`): the climb,
+  Leaves / Back by (amber) / Parking / Vehicle / Party / Comms / Contact where filled, notes, coordinate. A crewmate's card has *Save to my float
+  plans* → App's `saveFloatPlanFromChat` opens Float plans on `crew:<id>` with the trip facts copied, the partner line taken from the reader's own
+  view of the crew, and the poster's EMERGENCY CONTACT never copied; an existing plan for that crew gets empty fields only (`focus.merge`), and a
+  note above the form asks for their own contact until the plan is saved.
 - **Home (`today`)**: greeting; **Finish setting up** checklist (`gaps`, shows 2 until `showSetupAll`; the grades, bio, availability, zip and photo rows call `openEdit(<field>)`, which opens the profile editor on that field, highlighted, under a card saying what to do and why); alerts; **Unfinished business** (`unfinishedOpen`);
   **Jump back in** tiles; **Your lists** (`TrackedLists`, signed in: the curated lists the climber chose with *Show on Home*, in the order picked, each with the same progress Logbook › Challenges shows; with none picked, a one-line *Follow a climbing list here* that opens the lists; a row opens Logbook › Challenges with that list expanded); **Best day to climb** (`BestDayTile`, also a Menu tile); **Recent condition reports** (one card per objective with a report in the last 90 days: the newest report in full — author, date, outcome, the labelled `ReportStats` chips, every tag with hazards first, three lines of text, photo count — then up to three more recent reports by other climbers, each opening its own report, and *All trip reports on this climb*, which opens the route on its Reports tab via `setPendingSubTab("conditions")`; reads `useRecentReportsOnRoutes`); **Recent friend activity** (each row has TWO targets: the avatar + name header opens the friend's profile, the climb line under it opens that trip report; Crew › Friends' `FriendsFeed` splits the same way, its climb line opening the route); the pinned/downloaded states card (`#pinned-downloads`, which the Menu's Downloads tile scrolls to).
   Below that, the **Nothing needs you right now** card: the all-caught-up state, shown only when there is no pending request or invite (`reqN`), no unread DM or crew chat, no crew waiting on your day, no unread alert and no friend activity. A climber with no objectives yet gets "Explore climbs and save one as an objective to get started" and an *Explore climbs* button; anyone with objectives gets the plain all-clear and no button (the *Jump back in* tile already offers it).
 - **All friends (`FriendsList`, `lib/FriendsList.jsx`, opened by *See all friends (N)* on Crew › Friends)**: a **Search friends** box sits at the top for any list with a friend in it (it used to appear only past four). It matches the name on screen and the @handle (`pubName`, never a hidden real name), has a clear ✕ (Escape also clears), hides *Recent friend activity* while a query is typed so the matches sit under the box, and an empty result names the query. Sort chips (Shared goals · Active · A–Z) and *Shares an objective with me* filter the same list.
+
+- **Download as CSV (desktop website)**: My Ascents has a *⤓ Download as CSV* button — every logged climb as one row (date, climb, where, grade, discipline, style, stars, partners, notes), newest first; disabled while your climbs could not load (`downloadLogbookCsv` in `lib/DesktopShell.jsx`).
 
 ## 2. How it works
 1. `App` reads server state through React Query hooks in `lib/db.js`: `useMyObjectives`, `useUserLogs`, `useMyCrews`, `useMyItineraries`,
@@ -77,6 +114,10 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 4. **Messaging**: `sendCrewMessage`/`fetchCrewMessages`/`fetchOlderCrewMessages`, `sendDirectMessage`/`fetchMyDirectMessages`, read markers via `markCrewRead`/`fetchCrewLastReads`/`markMessageAsRead`.
 5. **Pinned states** follow the account (0187): `pinnedStates` state in `App`, saved by `savePinnedStates` (`profiles.pinned_states`). Offline downloads stay on the device
    (`downloadedStates`, `dlLoaded`, `lib/offline.js`: `downloadStateOffline`, `removeStateOffline`, `packRouteOffline`).
+   **Manage areas** (`manageAreasOpen`, from Home's pinned card) lists every state or province of the picked country with its
+   catalog count from `useStates()`. With the database on, a count is the database's or nothing: while that read is in flight a
+   row says *Loading the catalog…* (`statesLoading`), and a failed read says so (`statesUnavailable`); neither falls back to
+   the four-state seed tree, which used to grey out 46 states as "No climbs in the catalog" until the read landed.
 5a. **Saved areas and peaks** follow the account (0322): one `bookmarks` list in `App` feeds the area page's Save button, Logbook › Saved's ✕, the Home and Menu tiles, so they always agree.
    `toggleBookmark` writes `saveAreaRow`/`removeAreaRow` (`saved_areas`, owner-only) and toasts only after the write; a failure restores the list. `useMySavedAreas` is copied into `bookmarks`;
    `lib/offline.js` (`saveAreaIds`, `savedAreaIds`, `savedAreasSynced`) is the offline mirror, and a device's pre-0322 saves are uploaded the first time the account is read there.
@@ -87,7 +128,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 | File | Key symbols |
 |---|---|
 | `ClimbMatch.jsx` | `tab` branches for `today`/`crew`/`logbook`, `logbookTab`, `crewView`, `pinnedStates`, `archiveCrew`, `clearPastCrew`, `givenVouches`, `activeCrews`, setup `gaps`, `unfinishedOpen`, `renderObjectives` |
-| `ClimbMatchCore.jsx` | `Challenges`, `useCuratedLists`, `TrackedLists`, `pitchesClimbed`, `datesAgreed`, `agreedDate`, `isArchivedCrew`, `CrewInviteModal`, `ItineraryEditor`, `crewPlace`, `placeTrip`, `placeCap`, `placeLabel`, `placeSub`, `placeMatchesLog` |
+| `ClimbMatchCore.jsx` | `Challenges`, `useCuratedLists`, `useBadges`, `trophies`, `BadgeGrid`, `BadgeWatcher`, `monthRuns`, `yearCounts`, `TrackedLists`, `pitchesClimbed`, `datesAgreed`, `agreedDate`, `isArchivedCrew`, `CrewInviteModal`, `ItineraryEditor`, `crewPlace`, `placeTrip`, `placeCap`, `placeLabel`, `placeSub`, `placeMatchesLog` |
 | `lib/ListsManager.jsx` | Objectives/Saved UI, per-discipline filter chips (Alpine first; Mountaineering and Aid separate); a crag row's Find partners goes to the crag (`onFindPartnersInArea`) |
 | `lib/MyAscents.jsx`, `lib/LogAscent.jsx` (no visibility chooser since 2026-10-21: one line names the Settings choice; a new report sends `visibilityFromSetting` and `syncLogToDb` leaves the column out so 0272's insert trigger fills it from the stored setting), `lib/TripReport.jsx`, `lib/tripReportRow.js`, `lib/LogTagConfirmations.jsx` | Completed climbs, logging, trip reports, partner tag confirmation |
 | `lib/lists.js` | `LISTS`, `routeInList`, `listPeaks`, `peakClimbed`, `FIFTY_CLASSICS` (Challenges) |

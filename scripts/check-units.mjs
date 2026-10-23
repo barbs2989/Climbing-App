@@ -1248,7 +1248,7 @@ async function runPitches() {
      "a placeholder reading (m) over a feet box is the same lie in smaller type"],
     ["the editor summary labels the unit it is showing", /pp\.lengthM\+uLenUnit\(\)/,
      'a hardcoded "m" over a converted draft prints feet labelled metres'],
-    ["the current-value summary is fed the same convention as the draft", /pitchStr\(routePitches\)/,
+    ["the current-value summary is fed the same convention as the draft", /pitchStr\(routePitches[,)]/,
      "fed route.pitchDetail it would compare canonical metres against a display-unit draft"],
   ]) {
     if (re.test(src)) ok(label);

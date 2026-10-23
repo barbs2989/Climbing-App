@@ -117,7 +117,7 @@ const SITES = [
   ["app", "D — the open-crew organiser chip carries showName",
     "username:p.username||\"\",showName:!!p.showName"],
   ["db", "the hook still SELECTS the columns all four depend on",
-    'select("id, name, avatar, show_name, username")'],
+    'select("id, name, avatar, show_name, username, availability, avail_week")'],
   ["db", "...and PARTNER_COLS still carries show_name for the search pool",
     "show_name,resume_public"],
   // THE TWO HOOKS HAVE DIFFERENT SHAPES AND WHICH FIX READS WHICH DEPENDS ON IT:

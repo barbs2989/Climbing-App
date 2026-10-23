@@ -52,7 +52,7 @@ const CASES = [
     says: /labels the unit it is showing/ },
   // TWO CONVENTIONS THROUGH ONE FORMATTER — canonical metres against a display-unit draft.
   { name: "summary-fed-canonical-rows", expect: "fail",
-    find: "pitchStr(routePitches)", repl: "pitchStr(route.pitchDetail)",
+    find: "pitchStr(routePitches,", repl: "pitchStr(route.pitchDetail,",
     says: /same convention as the draft/ },
   // THE OVER-REACH IN THE OTHER DIRECTION: converting for a METRIC climber too, which hands them
   // their own typing back changed. Worse than the defect it replaces.

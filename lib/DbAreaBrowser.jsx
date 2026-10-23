@@ -18,6 +18,7 @@ import { subdivisionNoun, countryOfArea } from "./countries";
 import { effDistKm } from "./outing";
 import { POP_BACK, POP_CLOSE, POP_CLOSE_MEDIA, POP_REMOVE, POP_CHIP_X } from "./popupChrome.js";
 import { BTN, BTN_LG, BTN_SM, BTN_LINK, CHIP } from "./buttonStyles.js";
+import { useWideScreen } from "./wideLayout.js";
 import { ScreenHero } from "./ScreenHero";
 import { AboutCard, AreaFactsCard, ClimbsChart, GradeSpread, PendingAreaEdits } from "./AreaPageSections";
 import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_LINE, NO_PARKING_PIN_BUT_NOTE_LINE } from "./areaChrome";
@@ -176,6 +177,7 @@ function StatePicker({ onPick, C }) {
   const { data: countries, isLoading: lc, error: ec } = useCountries();
   const { data: states, isLoading, error } = useStates();
   const [countryId, setCountryId] = useState("");
+  const wide = useWideScreen();
   // One country is not a choice, it is a dead tap — so skip the step until there are two.
   // The catalog ran on a single root for its whole life and would have shown a pointless
   // "pick a country" select the entire time.
@@ -192,6 +194,32 @@ function StatePicker({ onPick, C }) {
   const country = countryId || only || "";
   const noun = subdivisionNoun(country);
   const inCountry = (states || []).filter(x => !country || countryOfArea(x) === country);
+  // THE WEBSITE (lib/wideLayout.js): a desktop has the room to SHOW the regions instead of hiding
+  // them in a select, the way Mountain Project's location directory does — the countries as
+  // buttons (only when there are two or more) and every region as a card with its climb count.
+  // Same data, same onPick, same loading and failure wording as the phone selects below.
+  if (wide) {
+    const card = { textAlign: "left", background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", cursor: "pointer", color: C.text };
+    return (
+      <div style={{ marginBottom: 14 }}>
+        {only ? null : (
+          <div style={{ marginBottom: 14 }}>
+            <SL C={C}>Pick a country</SL>
+            {lc ? <div style={{ color: C.textMuted, fontSize: 13 }}>Loading countries…</div>
+              : ec && !(countries && countries.length) ? <div style={{ color: C.red, fontSize: 12.5 }}>{"Couldn’t load countries — the " + noun + "s below are every one we have."}</div>
+              : <div role="radiogroup" aria-label="Country" style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>{(countries || []).map(c => { const on = country === c.id; return <button key={c.id} role="radio" aria-checked={on} onClick={() => setCountryId(on ? "" : c.id)} style={{ padding: "9px 14px", borderRadius: 999, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.card, color: on ? C.blue : C.text, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>{c.name}{c.route_count != null ? <span style={{ color: on ? C.blue : C.textMuted, fontWeight: 600 }}>{" · " + c.route_count.toLocaleString()}</span> : null}</button>; })}</div>}
+          </div>
+        )}
+        <SL C={C}>{`Pick a ${noun}`}</SL>
+        {!country && !noCountryStep ? <div style={{ color: C.textMuted, fontSize: 13 }}>{"Choose a country above to see its " + noun + "s."}</div>
+          : isLoading ? <div style={{ color: C.textMuted, fontSize: 13 }}>{`Loading ${noun}s…`}</div>
+          : inCountry.length ? <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(190px, 1fr))", gap: 10 }}>{inCountry.map(s => <button key={s.id} onClick={() => onPick(s)} style={card}><div style={{ fontSize: 14.5, fontWeight: 700, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{s.name}</div>{s.route_count != null ? <div style={{ fontSize: 12.5, color: C.textMuted, marginTop: 3 }}>{s.route_count.toLocaleString() + (s.route_count === 1 ? " climb" : " climbs")}</div> : null}</button>)}</div>
+          : error ? <div style={{ color: C.red, fontSize: 12.5 }}>{"Couldn't load " + noun + "s — check your connection and try again."}</div>
+          : <div style={{ color: C.textMuted, fontSize: 13 }}>{`No ${noun}s found`}</div>}
+        {error && states && states.length ? <div style={{ color: C.textMuted, fontSize: 12.5, marginTop: 8 }}>Couldn't refresh just now — showing the list from your last load.</div> : null}
+      </div>
+    );
+  }
   const selStyle = { width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600 };
   return (
     <div style={{ marginBottom: 14 }}>

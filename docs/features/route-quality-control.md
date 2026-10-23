@@ -105,6 +105,10 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
    and the restrictive policy "contribution standing allows field edits" refuses a restricted or
    banned contributor. A refusal's sentence is shown as the toast; the local "Awaiting review"
    entry is withdrawn.
+   Opening a field in `SuggestFix` shows **On the app now**: the field's full stored text
+   (`curRefStr`, fed by the `FULL` map), line breaks kept and list fields one item per line, in a
+   box that scrolls past ~260px. The row's collapsed summary and the contribution's `meta` line
+   keep the 44-character clip in `cur`.
 2. **Overlay.** The route memo in `ClimbMatch.jsx` groups `kind='field'` rows by field: approved
    rows are applied (latest by `reviewed_at`; `_contribFields` and `_contribAgreed` record them);
    the caller's own pending rows feed `_pendingEdits` only.
