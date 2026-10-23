@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_northwest_mox_peak_standard",
+  "last_processed_id": "wa_old_snowy_mountain_r1",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -8813,6 +8813,25 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-10-23-batch-442.sql",
       "note": "wa_northwest_face_boving_pollock's watch_out prose said \"5.11a\" but its own grade/rock_grade (5.11b, Mountain Project-confirmed) disagreed with itself -- fixed. Flagged for human review: wa_northeast_ridge_1963_route (Johannesburg Mountain)'s 1963 FA date stays unverifiable (possible conflation with a distinct, confirmed 1957 Northeast Rib route on the same face, per the row's own pre-existing data_quality note -- nothing new resolved); wa_northwest_face_4 (Little Big Chief Mountain)'s route-specific FA (Volken/Hansell, 2001) turned up on no indexed source at all; wa_northwest_face_boving_pollock's FA naming ambiguity (route name 'Boving-Pollock' vs stored fa 'Boving and Kerns, 1977', vs a SummitPost 'Northwest Corner' line credited to 'Boving and Pollock, 1976' that may be a different route) is real but already disclosed in the row's own data_quality.gaps -- not new. Verified clean: Mount Formidable's 8325 ft elevation and 2002 FA; Argonaut Peak's 8457 ft elevation with FA correctly left null; Sloan Peak's Northwest Buttress FA (M Preiss & M Bunker, 2000, Mountain Project-confirmed, resolving a prior internal doubt) and 7835 ft elevation; Kangaroo Temple's 1942 Beckey FA (Mountaineers.org-confirmed) and 7572 ft elevation; Northwest Mox Peak's 8407 ft elevation (Mountain Project's 7586 ft is the contradicted outlier) and 1941 Beckey brothers FA."
+    },
+    {
+      "batch_number": 443,
+      "date": "2026-10-23",
+      "route_ids": [
+        "wa_northwest_ridge",
+        "wa_northwest_ridge_2",
+        "wa_nw_face_var_remsberg_variation",
+        "wa_nw_ridge_2",
+        "wa_old_guard_peak_east_side_route",
+        "wa_old_guard_peak_southwest_route",
+        "wa_old_snowy_mountain_north_route",
+        "wa_old_snowy_mountain_r1"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 2,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-10-23-batch-443.sql",
+      "note": "wa_old_snowy_mountain_r1's high_point_ft (7880 ft, an older rounded/contour figure) and its top-level lat/lng (a less-precise rounded point ~90-100m off, vs. this row's own more accurate approach_logistics.peakLat/peakLng) were both fixed to match peakbagger.com/listsofjohn.com/oregonhikers.org (~7930 ft; 46.512244,-121.454431). Flagged for human review: wa_northwest_ridge (Dorado Needle)'s FA surname 'Tom Gorton' vs. SummitPost's 'Tom Gordon' -- Anderson, Boyer and July 1940 all agree, only the one surname differs and nothing resolves which is right; wa_nw_face_var_remsberg_variation (Liberty Bell)'s FA ('Dale Remsberg & Scott Stimpson', no year) found no corroborating source at all, not contradicted, just unconfirmed. Verified clean: Dorado Needle's 8,440 ft elevation; Boston Peak's 8,894 ft elevation and 1938 Bressler/Clough/Cox/Myers FA (its 'east side' description left as inference, not directly sourced, but not contradicted either); Liberty Bell's 7,720 ft elevation and this variation's 5.10d/5-pitch grade (Wikipedia's own route table, despite MP reportedly showing 5.11a elsewhere); Colchuck Balanced Rock's 8,240 ft elevation with this route's FA correctly left null (the feature's 1958 Prater/Quin FA is documented but not tied to this specific ridge line); and both Old Guard Peak routes' 8,259.6 ft NAVD88 elevation (June 2025 differential-GPS survey, matching the row's own corrections note) and Suiattle River Road closure detail (real USFS Forest Order 06-05-26-03, Apr 2 2026-Jan 1 2028, following Dec 2025 flood damage -- confirmed, not fabricated). wa_old_snowy_mountain_north_route is an essentially unenriched stub row (no overview/elevation/etc.) -- nothing to audit."
     }
   ]
 }

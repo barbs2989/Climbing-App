@@ -33638,3 +33638,43 @@ figure is the contradicted outlier) and its 1941 Beckey brothers FA (Wikipedia/A
 the day before).
 
 Pass 7 continues next run after `wa_northwest_mox_peak_standard`.
+## Batch 443 — 2026-10-23
+
+Routes: `wa_northwest_ridge` (Dorado Needle, clean + a minor flag), `wa_northwest_ridge_2` (Boston Peak, clean),
+`wa_nw_face_var_remsberg_variation` (Liberty Bell, clean + a flag), `wa_nw_ridge_2` (Colchuck Balanced Rock,
+clean), `wa_old_guard_peak_east_side_route` (Old Guard Peak, clean), `wa_old_guard_peak_southwest_route` (Old
+Guard Peak, clean), `wa_old_snowy_mountain_north_route` (Old Snowy Mountain, not yet enriched — nothing to
+check), `wa_old_snowy_mountain_r1` (Old Snowy Mountain, **fixed**).
+
+**Fixed (1 route, 2 statements):** `wa_old_snowy_mountain_r1`'s `high_point_ft` (7880 ft) traced to an older
+rounded/contour-based figure; peakbagger.com (7928.9 ft), listsofjohn.com (7929 ft) and oregonhikers.org (7930 ft)
+independently agree on ~7930 ft. Its top-level `lat`/`lng` (46.51194, -121.45389) was also a rounded,
+Wikipedia/GNIS-style point sitting ~90-100 m from the true summit, while this same row's own
+`approach_logistics.peakLat`/`peakLng` (46.512244, -121.454431) is an exact match for peakbagger's listed summit
+coordinate — corrected `lat`/`lng` to match the row's own more accurate field rather than leaving two
+disagreeing coordinates in one row.
+
+**Flagged for human review (2), not fixed — no corroborating or contradicting source found either way:**
+- `wa_northwest_ridge` (Dorado Needle): SummitPost's account of this same 1940 FA names the third climber "Tom
+  Gordon," while this row stores "Tom Gorton." Anderson, Boyer and the July 1940 date all agree; only the one
+  surname differs by a letter, and nothing resolves which spelling (or person) is correct.
+- `wa_nw_face_var_remsberg_variation` (Liberty Bell): the stored FA ("Dale Remsberg & Scott Stimpson") has no
+  year attached, and no source turned up even corroborating "Stimpson" as Remsberg's partner on this specific
+  variation — not contradicted, just unconfirmed; needs a direct look at Beckey's Cascade Alpine Guide or the
+  Mountain Project route page rather than search snippets.
+
+Verified clean otherwise: Dorado Needle's 8,440 ft elevation (Wikipedia/SummitPost/WTA agree); Boston Peak's
+8,894 ft elevation and its 1938 Bressler/Clough/Cox/Myers first ascent (Wikipedia/SummitPost), with the row's
+own "east side" description of that 1938 route left as an inference rather than a directly-sourced detail (modern
+sources split between calling today's standard line the "East Face" and the "Southeast Face," but nothing
+contradicts the stored text); Liberty Bell's 7,720 ft summit elevation and this variation's 5.10d/5-pitch grade
+(independently confirmed by Wikipedia's own route table, despite Mountain Project reportedly listing 5.11a for
+the same line elsewhere); Colchuck Balanced Rock's 8,240 ft elevation (Wikipedia/PeakVisor) with this route's FA
+correctly left null (the feature's 1958 Prater/Quin first ascent is documented, but no source ties that climb to
+this specific ridge line rather than another route on the formation); and, for both Old Guard Peak routes, the
+peak's 8,259.6 ft NAVD88 elevation (a June 2025 differential-GPS survey on countryhighpoints.com, matching this
+row's own `corrections` note almost exactly) and the Suiattle River Road closure described in both rows' `road`/
+`bail`/`access` fields (real USFS Forest Order 06-05-26-03, effective April 2, 2026 through January 1, 2028,
+following December 2025 atmospheric-river flood damage — not a fabricated closure).
+
+Pass 7 continues next run after `wa_old_snowy_mountain_r1`.
