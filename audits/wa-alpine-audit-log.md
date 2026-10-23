@@ -8,6 +8,43 @@ scope out of 557 total WA rows tagged alpine/mountaineering.
 
 ---
 
+## 2026-10-23 — Pass 7, Batch 436
+
+Nine routes across 7 peaks (Mount Rainier ×2, Mount Redoubt, Mount Roosevelt, Mount Sefrit ×2,
+Mount Si, Mount Spickard ×2): Tahoma Glacier; Willis Wall; South Face/Redoubt Glacier; Southeast
+Route (Roosevelt); Bloody Head Couloir + Southeast Ridge (Sefrit); Mount Si Trail; Silver Glacier
++ Southwest Route/Silver Lake (Spickard). (Mount Shuksan's 7 routes in this id range were skipped —
+`wa_mount_shuksan_climbs` is `area_type = 'crag'`, out of scope.)
+
+**All 9 clean — no confirmed errors.** Independently reconfirmed: Mount Redoubt (8969 ft + 1930
+Cherry/Ross FA), Mount Sefrit (7191 ft), Mount Si Trail (3150 ft gain to the 3900 ft Haystack
+Basin viewpoint, ~4 mi one-way, matches Mountaineers/Outdoor Project), Mount Spickard (8979 ft,
+5th-highest in North Cascades NP, 16th-highest in WA and 9th-greatest prominence in the state —
+all confirmed against Peakbagger/Wikipedia/SummitPost ranked lists; Southwest Route FA by Fred &
+Helmi Beckey, June 21 1941, right after their Northwest Mox FA, also confirmed). Willis Wall's FA
+dispute (Charlie Bell's 1961 solo West Rib, doubted for years until Wickwire cross-checked his
+notes) and its approach note that SR-165's Fairfax Bridge was permanently closed by WSDOT (closed
+Apr 14 2025, made permanent Apr 22 2025, with no public detour) both confirmed exactly.
+
+Checked but not an error: Rainier's `high_point_ft` splits cleanly by side of the mountain across
+every route in the area (14406 on south/east routes reaching Columbia Crest; 14112 — Liberty
+Cap's own well-documented elevation — on every north-side route: Willis Wall, Liberty Ridge,
+Ptarmigan Ridge, Sunset Ridge, the Mowich routes, Edmunds Headwall). That's a real, consistent
+convention (north-side lines top out on Liberty Cap before the traverse to the true summit), not
+a typo — left as-is.
+
+Noted, not flagged: `wa_mount_roosevelt_southeast_route` is a near-empty stub (grade and area_id
+only; no elevation, FA, or description on the route row). The parent area row is well-populated
+and accurate (5835 ft, Alpine Lakes Wilderness, near Snow Lake/Kaleetan Peak — confirmed), so
+placement is right; one secondary source (SummitPost) describes Roosevelt's scrambling as more
+sustained than a plain Class 2, but that's a subjective characterization, not a documented grade
+contradiction, so left for human judgment rather than guessed at.
+
+No new DB writes this batch — see `wa-alpine-audit-progress.json` batch 436 for the full route
+list and next-up queue.
+
+---
+
 ## 2026-10-01 — Pass 6, Batch 364
 
 Ten routes across 8 peaks (Colchuck Balanced Rock, Mount Washington/Olympics, Sentinel Peak,
