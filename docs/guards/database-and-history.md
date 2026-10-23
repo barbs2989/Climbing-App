@@ -772,8 +772,26 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       (Hotel Boulders: C Block → A Block). Fourteen were a spelling-distance false match: Seal Rock's "S Side" read as
       our "South Ridge" (side/ridge is 2 edits). **Edit distance ≤ 2 matches different words when they are short; a
       live check of every move is cheap (~8 min) and catches it.** Still waiting: 481 whose source home is itself
-      generic, 420 state-anchored, 123 with several areas of ours outside the crag, and ~1,341 the source lists
-      under several homes.
+      generic, 420 state-anchored, 123 with several areas of ours outside the crag, and ~217 the source lists
+      under several homes. (An earlier count of ~1,341 for that last group included the 1,120 that 0320 had
+      already placed.)
+    - **A third pass — 0355** (2026-10-23), plus **0356** (the 18 area names ending in the source's id suffix).
+      0355 adds three ways to settle a climb:
+      - a state-anchored chain counts, but only when it creates nothing;
+      - of several areas of ours, the one nearest the source's pin, when it is within 1 km and the next is 3× as far;
+      - a name filed under several homes inside the crag, when exactly ONE home's live climb page gives our grade
+        (71 of 121).
+
+      Every move was live-checked and 28 of 51 agreed. Five more were left out by reading: three come from
+      "Restricted Access" lists (0301 withheld access there, and placing them would make them findable), and two
+      would have moved our "Climbing Area 57" onto a new "Area55". That leaves 23 moves and one emptied list.
+      0356 handles the 18 "Carter Lake | 5876" names:
+      - 13 renamed: the suffix off, and "<Place> Routes" where that would repeat the parent;
+      - 3 same-named middle layers lifted, their descendants re-pathed explicitly, because the path trigger rewrites only
+        the touched row;
+      - 2 folded into a twin. **The duplicate trigger (0216) caught one twin the plan had missed:** after a lift,
+        "Painted Savage Boulders | 8759" would have landed beside an existing "Painted Savage Boulders". Check a
+        rename against the FINAL parent, after the lifts.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
