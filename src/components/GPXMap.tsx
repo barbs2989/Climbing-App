@@ -38,7 +38,7 @@ export interface GPXMapProps {
 }
 interface WpStyle { color: string; glyph: string }
 /** One drawn pin: its position and the card every layer that draws it opens. */
-interface Pin { ll: LeafletAny; html: string }
+interface Pin { ll: LeafletAny; html: string; chip: string }
 // Named so it cannot collide with core's own `escHtml` when the guard stitch pastes this body into
 // core; this one deliberately keeps GPXMap's original four-character set (no apostrophe).
 const ESC_PIN: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" };
@@ -97,14 +97,28 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
        CURRENT ZOOM and shows them in one card, tapped pin first: every pin is reachable at every
        zoom, and nothing moves a coordinate that is correct. The autopan padding keeps the card
        clear of the layer buttons along the top and the Me button along the bottom, which it
-       used to open underneath. */
+       used to open underneath.
+       ONE WAYPOINT PER CARD (owner, 2026-10-23: "2 boxes pull up and are overlapping"). The card
+       for a crowded tap used to STACK every nearby pin's full card under a "N waypoints here"
+       line, which read as two boxes on top of each other, and in the 300px inline map it ran
+       past the bottom edge under the Me button. Now the card shows the tapped pin only, and the
+       other pins under the finger are an "Also here" row of buttons that swap the SAME card to
+       that pin (and move its tip there) — Gaia GPS's pick-from-what-you-tapped list and
+       Mapbox/Google's one-place card, in one box. The height cap is fitted to the map so the
+       card never outgrows it. */
     const PIN_TAP_PX=22,pins: Pin[]=[];
     const pinPopup=L.popup({minWidth:150,maxWidth:260,maxHeight:280,autoPanPaddingTopLeft:[12,58],autoPanPaddingBottomRight:[12,52]});
+    const pinCard=(p: Pin,near: Pin[]): HTMLElement=>{const el: HTMLElement=L.DomUtil.create("div");L.DomEvent.disableClickPropagation(el);el.innerHTML=p.html;const others=near.filter(q=>q!==p);
+      if(others.length){const box: HTMLElement=L.DomUtil.create("div","",el);box.style.cssText="border-top:1px solid rgba(127,127,127,0.35);margin-top:8px;padding-top:7px";box.innerHTML='<div style="font-size:11.5px;opacity:0.75;margin-bottom:5px">Also here</div>';
+        others.forEach(q=>{const bt: HTMLButtonElement=L.DomUtil.create("button","",box);bt.type="button";bt.innerHTML=q.chip;bt.style.cssText="display:inline-flex;align-items:center;gap:5px;min-height:32px;margin:0 6px 6px 0;padding:5px 10px;border-radius:999px;border:1px solid rgba(127,127,127,0.45);background:transparent;color:inherit;font:inherit;font-size:12.5px;font-weight:600;cursor:pointer";
+          L.DomEvent.on(bt,"click",(e: Event)=>{L.DomEvent.stop(e);pinPopup.setLatLng(q.ll).setContent(pinCard(q,near));});});}
+      return el;};
     const openPins=(p: Pin,z?: number)=>{const zz=z!=null?z:map.getZoom();const at=map.project(p.ll,zz);const near=[p,...pins.filter(q=>q!==p&&map.project(q.ll,zz).distanceTo(at)<PIN_TAP_PX)];
-      const html=near.length===1?p.html:'<div style="font-size:11.5px;opacity:0.75;margin-bottom:6px">'+near.length+' waypoints here — zoom in to separate them</div>'+near.map((q,i)=>'<div style="'+(i?'border-top:1px solid rgba(127,127,127,0.35);margin-top:8px;padding-top:8px':'')+'">'+q.html+'</div>').join("");
-      pinPopup.setLatLng(p.ll).setContent(html).openOn(map);};
+      pinPopup.options.maxHeight=Math.max(140,Math.min(280,map.getSize().y-120));
+      pinPopup.setLatLng(p.ll).setContent(pinCard(p,near)).openOn(map);};
     /* `layers` are every Leaflet layer that draws this one pin; they all open the same card. */
-    const addPin=(layers: LeafletAny[],ll: LeafletAny,html: string): Pin=>{const p: Pin={ll:L.latLng(ll),html};pins.push(p);layers.forEach(m=>m.on("click",()=>openPins(p)).addTo(map));return p;};
+    /* `chip` is the pin's button in a neighbour's "Also here" row: its legend glyph and its name. */
+    const addPin=(layers: LeafletAny[],ll: LeafletAny,html: string,name: string,type: string): Pin=>{const st=styles[type];const chip=(st?'<span aria-hidden="true" style="color:'+(wc[type]||st.color)+'">'+st.glyph+'</span>':"")+'<span>'+escPinHtml(name)+'</span>';const p: Pin={ll:L.latLng(ll),html,chip};pins.push(p);layers.forEach(m=>m.on("click",()=>openPins(p)).addTo(map));return p;};
     const pinHead=(name: string,type?: string)=>'<div style="font-weight:700;margin-bottom:2px">'+name+'</div>'+(type?'<div style="font-size:11.5px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;opacity:0.7">'+type+'</div>':"");
     openPinsRef.current=openPins;
     if(track){const ll=track.map(p=>[p[0],p[1]]);const line=L.polyline(ll,{color:C.blue,weight:4,opacity:0.9}).addTo(map);b=line.getBounds();const nearWp=(pt: readonly number[])=>(waypoints||[]).some(w=>placed(w)&&Math.hypot(pt[0]-w.lat,pt[1]-w.lng)<0.0015);
@@ -122,8 +136,8 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
        non-alpine route labels them "Start"/"Finish", which are positions on a GPS track rather than
        waypoint types — those keep a plain dot, because giving them a Trailhead glyph would assert a
        type nobody recorded. */
-    if(!nearWp(ll[0])&&!hasWpType("Trailhead"))addPin([styles[ep.startLabel]?L.marker(ll[0],{icon:wpDivIcon(L,ep.startLabel),keyboard:false}):L.circleMarker(ll[0],{radius:6,color:"#ffffff",weight:2,fillColor:ep.startColor,fillOpacity:1,bubblingMouseEvents:false})],ll[0],'<div style="font-size:13px;line-height:1.45">'+pinHead(ep.startLabel)+'<div style="font-size:12px;opacity:0.8;margin-top:3px">Where the recorded GPS track starts</div></div>');
-    if(!nearWp(ll[ll.length-1])&&!hasWpType("Summit","Topout"))addPin([styles[ep.finishLabel]?L.marker(ll[ll.length-1],{icon:wpDivIcon(L,ep.finishLabel),keyboard:false}):L.circleMarker(ll[ll.length-1],{radius:6,color:"#ffffff",weight:2,fillColor:ep.finishColor,fillOpacity:1,bubblingMouseEvents:false})],ll[ll.length-1],'<div style="font-size:13px;line-height:1.45">'+pinHead(ep.finishLabel)+'<div style="font-size:12px;opacity:0.8;margin-top:3px">Where the recorded GPS track ends</div></div>');
+    if(!nearWp(ll[0])&&!hasWpType("Trailhead"))addPin([styles[ep.startLabel]?L.marker(ll[0],{icon:wpDivIcon(L,ep.startLabel),keyboard:false}):L.circleMarker(ll[0],{radius:6,color:"#ffffff",weight:2,fillColor:ep.startColor,fillOpacity:1,bubblingMouseEvents:false})],ll[0],'<div style="font-size:13px;line-height:1.45">'+pinHead(ep.startLabel)+'<div style="font-size:12px;opacity:0.8;margin-top:3px">Where the recorded GPS track starts</div></div>',ep.startLabel,ep.startLabel);
+    if(!nearWp(ll[ll.length-1])&&!hasWpType("Summit","Topout"))addPin([styles[ep.finishLabel]?L.marker(ll[ll.length-1],{icon:wpDivIcon(L,ep.finishLabel),keyboard:false}):L.circleMarker(ll[ll.length-1],{radius:6,color:"#ffffff",weight:2,fillColor:ep.finishColor,fillOpacity:1,bubblingMouseEvents:false})],ll[ll.length-1],'<div style="font-size:13px;line-height:1.45">'+pinHead(ep.finishLabel)+'<div style="font-size:12px;opacity:0.8;margin-top:3px">Where the recorded GPS track ends</div></div>',ep.finishLabel,ep.finishLabel);
     // A named Trailhead/Summit can sit a little past where the recorded GPS track starts/stops
     // (the recorder often starts the track after leaving the car, or loses lock near an exposed
     // summit) without being wrong data. Rather than leave it as a stray dot, draw a short dashed
@@ -150,7 +164,7 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
       +'</div>';
     const hit=L.circleMarker([wp.lat,wp.lng],{radius:14,stroke:false,fillOpacity:0,interactive:true,bubblingMouseEvents:false});
     const mk=L.marker([wp.lat,wp.lng],{icon:wpDivIcon(L,wpType(wp)),keyboard:false});
-    markersRef.current[wi]=addPin([hit,mk],[wp.lat,wp.lng],html);
+    markersRef.current[wi]=addPin([hit,mk],[wp.lat,wp.lng],html,String(wp.name||wp.type||"Waypoint"),wpType(wp));
     if(!b){b=L.latLngBounds([[wp.lat,wp.lng]]);}else{b.extend([wp.lat,wp.lng]);}});
     /* THE START POINT THE DIRECTIONS BUTTON USES, when it lives only in approach_logistics and so
        has no waypoint marker of its own. Drawn through `wpDivIcon` with derived=true — hollow and
@@ -169,7 +183,7 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
       const dHtml='<div style="font-size:13px;line-height:1.45">'
         +pinHead(dEsc(dt.name||"Trailhead"),"Trailhead")
         +'<div style="font-size:12px;opacity:0.8;margin-top:4px">Where the Directions button sends you. Recorded in this route&#8217;s approach logistics rather than as a waypoint, so it is not in the list below.</div></div>';
-      addPin([L.marker(dll,{icon:wpDivIcon(L,"Trailhead",22,null,true),keyboard:false})],dll,dHtml);
+      addPin([L.marker(dll,{icon:wpDivIcon(L,"Trailhead",22,null,true),keyboard:false})],dll,dHtml,String(dt.name||"Trailhead"),"Trailhead");
       if(!b){b=L.latLngBounds([dll]);}else{b.extend(dll);}
     }
     if(b&&b.isValid()){map.fitBounds(b.pad(0.25),{maxZoom:layerSharpZoom(baseLayer)});}else if(hasPeak&&pk){L.marker([pk.lat,pk.lng],{icon:wpDivIcon(L,"Summit",24,null,true),keyboard:false}).addTo(map).bindTooltip(pk.name||"Peak location",{direction:"top"});map.setView([pk.lat,pk.lng],12);}else{map.setView([39.5,-98.5],4);}fitZoomToLayer(map,baseLayer);boundsRef.current=b;mapRef.current=map;setReady(true);setMapGen(g=>g+1);setTimeout(()=>{try{map.invalidateSize();}catch{/* the map is already gone */}},150);};loadLeaflet(init,()=>setMapFail(true));const ft=setTimeout(()=>{if(!cancelled&&!mapRef.current)setMapFail(true);},9000);return ()=>{cancelled=true;clearTimeout(ft);if(mapRef.current){try{mapRef.current.remove();}catch{/* the map is already gone */}mapRef.current=null;tileRef.current=null;openPinsRef.current=null;}};
