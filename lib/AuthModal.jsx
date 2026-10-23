@@ -240,6 +240,14 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
             <button onClick={() => onLegal("privacy")} style={{ background: "none", border: "none", color: c.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: 0, textDecoration: "underline", textUnderlineOffset: "2px" }}>Privacy Policy</button>.
           </div>
         )}
+        {/* The Accessibility statement is reachable BEFORE signing in (0354): its report form takes a
+            report from a visitor, and the visitor most likely to need it is one who cannot get past
+            this screen. Not on forgot/reset, for the same reason as the line above. */}
+        {onLegal && (mode === "in" || mode === "up") && (
+          <div style={{ marginTop: 8, textAlign: "center" }}>
+            <button onClick={() => onLegal("accessibility")} style={{ background: "none", border: "none", color: c.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", padding: "4px 6px", minHeight: 24 }}>Accessibility — report a problem</button>
+          </div>
+        )}
         {mode === "forgot" ? (
           <div style={{ textAlign: "center", marginTop: 14, fontSize: 13, color: c.sub }}>
             <button onClick={() => { setErr(""); setInfo(""); setMode("in"); }} style={{ background: "none", border: "none", color: c.blue, fontWeight: 700, cursor: "pointer", fontSize: 13, padding: 0 }}>Back to sign in</button>

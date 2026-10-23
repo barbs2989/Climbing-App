@@ -52,6 +52,10 @@
       html { -webkit-text-size-adjust: 100%; }
       * { -webkit-tap-highlight-color: transparent; }
       body { overscroll-behavior-y: none; }
+      /* WCAG 2.4.11 Focus Not Obscured. Below the desktop breakpoint (lib/wideLayout.js WIDE_MIN) the
+         nav is a sticky bar at the bottom of the window, and a control scrolled into view by Tab
+         could land underneath it. The padding makes the browser stop short of the bar. */
+      @media (max-width: 1023px) { html { scroll-padding-bottom: calc(72px + env(safe-area-inset-bottom)); } }
       /* Buttons: kill the 300ms tap delay + double-tap zoom, add press feedback */
       button { touch-action: manipulation; font-family: inherit; }
       button:not(:disabled):active { opacity: 0.82; transform: scale(0.97); }

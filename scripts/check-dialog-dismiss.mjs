@@ -121,8 +121,33 @@ function hasDismiss(region) {
   return buttonsIn(region).some(b => BUTTON_LABEL.some(re => re.test(b)));
 }
 
+// SECTION 2 — every dialog has a NAME. A screen reader announces a dialog by its name when focus
+// moves in; without one VoiceOver says only "dialog", and the climber has to explore it to learn
+// what opened. axe-core (check:axe) found the "Vouches you've given" sheet like this on
+// 2026-10-22, and a scan here then found six more: the route filter, the line drawer, the topo,
+// the share sheet, the photo lightbox and the photo picker. The name must sit on the dialog's
+// OWN opening tag: a heading inside it does not name it unless aria-labelledby points there.
+// endOfTag() stops at the first ">", which inside an opening tag is usually the arrow of an
+// onClick={()=>…}: the attributes AFTER it, aria-label included, would never be read. So this
+// one counts braces, and only a ">" outside every {…} and every string ends the tag.
+function openingTag(src, at) {
+  const start = src.lastIndexOf("<", at);
+  if (start < 0) return "";
+  let depth = 0, q = null;
+  for (let z = start + 1; z < src.length; z++) {
+    const ch = src[z];
+    if (q) { if (ch === "\\") z++; else if (ch === q) q = null; continue; }
+    if (ch === '"' || ch === "'" || ch === "`") q = ch;
+    else if (ch === "{") depth++;
+    else if (ch === "}") depth--;
+    else if (ch === ">" && depth === 0) return src.slice(start, z + 1);
+  }
+  return "";
+}
+const NAMED = /\saria-(?:label|labelledby)\s*=/;
+
 let dialogs = 0;
-const missing = [];
+const missing = [], unnamed = [];
 for (const f of files) {
   const src = fs.readFileSync(f, "utf8");
   let i = 0;
@@ -130,6 +155,8 @@ for (const f of files) {
     i = src.indexOf('role="dialog"', i);
     if (i < 0) break;
     dialogs++;
+    // `role="dialog"` in backticks is prose about a dialog (TermsReaccept explains why it is NOT one).
+    if (src[i - 1] !== "`" && !NAMED.test(openingTag(src, i))) unnamed.push(`${path.basename(f)}:${src.slice(0, i).split("\n").length}`);
     const region = elementRegion(src, i);
     if (region != null && !hasDismiss(region)) {
       const line = src.slice(0, i).split("\n").length;
@@ -147,9 +174,15 @@ if (dialogs < 10) {
   console.error(`FAIL: only ${dialogs} dialogs found — the scan is not reading the app.`);
   process.exit(1);
 }
+if (unnamed.length) {
+  console.error(`\nFAIL: ${unnamed.length} dialog(s) with no aria-label or aria-labelledby on the dialog itself.`);
+  console.error("A screen reader announces an unnamed dialog as just \"dialog\" (WCAG 4.1.2).\n");
+  unnamed.forEach(m => console.error("  " + m));
+}
 if (!missing.length) {
   console.log("ok — every dialog offers a visible way out.");
-  process.exit(0);
+  if (!unnamed.length) console.log("ok — every dialog has a name.");
+  process.exit(unnamed.length ? 1 : 0);
 }
 console.error(`\nFAIL: ${missing.length} dialog(s) with no visible close or back control.`);
 console.error("Backdrop-tap is not an answer: it is undiscoverable, and absent on a full-screen sheet.\n");
