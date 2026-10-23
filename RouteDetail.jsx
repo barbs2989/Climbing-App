@@ -3324,7 +3324,7 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
           A text box here would make the same fact unagreeable. `hours` stays text: 27% of its
           values are ranges ("3-4", "1-1.5"), which a single number cannot express. */}
       <div style={{display:"flex",gap:7,marginBottom:7}}>
-        <input aria-label={"Approach "+(idx+1)+" one-way distance to the base in "+(uImp()?"miles":"kilometres")} inputMode="decimal" value={av.distMi} onChange={function(e){setAvar(idx,"distMi",e.target.value.replace(/[^0-9.]/g,""));}} placeholder={"one way "+uDistMiUnit()} style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
+        <input aria-label={"Approach "+(idx+1)+" distance in "+(uImp()?"miles":"kilometres")+", one way to the base"} inputMode="decimal" value={av.distMi} onChange={function(e){setAvar(idx,"distMi",e.target.value.replace(/[^0-9.]/g,""));}} placeholder={"one way "+uDistMiUnit()} style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
         <input aria-label={"Approach "+(idx+1)+" gain in "+(uImp()?"feet":"metres")} inputMode="numeric" value={av.gainFt} onChange={function(e){setAvar(idx,"gainFt",e.target.value.replace(/[^0-9]/g,""));}} placeholder={"gain "+uElevUnit()} style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
         <input aria-label={"Approach "+(idx+1)+" hours"} value={av.hours} onChange={function(e){setAvar(idx,"hours",e.target.value);}} placeholder="hrs, e.g. 3-4" style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
       </div>
