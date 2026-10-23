@@ -86,6 +86,10 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 - **Past crews** (#2395): a crew whose day has passed, that has a log tied to it, or that was dismissed counts as past (`isArchivedCrew`).
   Past-crew members can be vouched for (`GiveVouch`, `givenVouches`). **Archive** and **Clear** (`archiveCrew`, `clearPastCrew`) only hide the crew
   on this device until reload and say so in the toast ("Crew archived on this device until you reload").
+  *View all past crews* is a full-screen portal (`pastExpand`, zIndex 9500), so anything opened from inside it must land ON TOP of it:
+  **Stay in touch › + Add** opens `ConnectModal`, which is portalled to `document.body` (zIndex 9950) like `FullProfile`; Vouch, Log this climb
+  and the trip report close the list first; **Climb with them again** closes it too before the Start a crew sheet (zIndex 1200) or the new crew's
+  card opens, which it used to cover until Back (2026-10-23).
 - **Crew safety check** (`SafetyTab`, 0314): the pre-climb questionnaire and "mark me safety-ready" are stored per crew for real crews (`saveCrewSafetyAnswers`, `markCrewSafetyReady`) in `crew_safety_answers`, readable by their owner alone. The crew's Team Alignment comes from `crew_alignment()` (`useCrewAlignment` → `alignmentFromServer`): counts per risk level and per flag, never anyone's answers, as the questionnaire promises. Flags are anonymous on every path (`alignmentFromCounts`). The crew card's per-member "reviewed the safety plan" mark reads `crew_ready_ids()` (`useCrewReadyIds`). Example crews keep the local path.
 - **Float plans**: `FloatPlans` (`lib/FloatPlans.jsx`) lists plans for `activeCrews`; the plan text is stored on the crew (`createCrew({floatPlan})`).
   **Crew ⇄ plan** (2026-10-22): a crew's facts come INTO its plan — `crewFloatFill` (App) maps the place, the confirmed partners' public names,

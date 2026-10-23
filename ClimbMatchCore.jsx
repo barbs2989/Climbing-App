@@ -2218,7 +2218,8 @@ function ConnectModal({climber,onClose,onSend,routeById}){
   const suggested=shared.length?("Hi "+first+", I saw we both want to climb "+shared[0].name+". I’m looking for a solid, safety-minded partner for it — want to team up?"):("Hi "+first+", I’d love to connect and find a climb to do together.");
   const [note,setNote]=useState("");
   const MAX=300;
-  return <div onClick={onClose} role="dialog" aria-modal="true" aria-label="Connect with climber" style={{position:"fixed",inset:0,zIndex:9950,background:"rgba(0,0,0,0.62)",display:"flex",alignItems:"flex-end",justifyContent:"center",padding:0}}>
+  /* Portalled, like FullProfile. "+ Add" under Stay in touch is tapped inside Past crews, itself a portal on document.body; left in App's tree this sheet sat EARLIER in the DOM than the list it opens from, so only its zIndex kept it on top. Here it is the last child of body, so order and zIndex agree. */
+  return createPortal(<div onClick={onClose} role="dialog" aria-modal="true" aria-label="Connect with climber" style={{position:"fixed",inset:0,zIndex:9950,background:"rgba(0,0,0,0.62)",display:"flex",alignItems:"flex-end",justifyContent:"center",padding:0}}>
     <div onClick={e=>e.stopPropagation()} style={{background:C.surface,borderRadius:"18px 18px 0 0",border:"1px solid "+C.border,width:"100%",maxWidth:520,padding:18,boxShadow:"0 -10px 40px rgba(0,0,0,0.5)",maxHeight:"90%",overflowY:"auto",overscrollBehavior:"contain"}}>
       <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:14}}>
         <Av src={c.avatar} size={46} online={c.online}/>
@@ -2241,7 +2242,7 @@ function ConnectModal({climber,onClose,onSend,routeById}){
       </div>
       <div style={{fontSize:12,color:C.textMuted,textAlign:"center",marginTop:11,lineHeight:1.5}}>A connection is mutual — {first} confirms before you’re connected.</div>
     </div>
-  </div>;
+  </div>,document.body);
 }
 function CrewInviteModal({climber,route,onClose,onSend}){
   const c=climber,first=pubFirst(c);
@@ -3509,6 +3510,9 @@ function AscentPyramid({logs,pyramid,routeById,emptyMsg}){
   const useLogs=!!(logs&&logs.length);
   const [discF,setDiscF]=useState([]);
   const [ddOpen,setDdOpen]=useState(false);
+  /* A tap anywhere outside the open menu closes it. This was a full-screen catcher portalled to body (#690, so it cleared the tabs), but inside the résumé (9900) a body-level catcher lay UNDER the résumé and a tap outside closed nothing. A document listener needs no layer, so it works on the Profile tab and in the résumé alike. */
+  const ddRef=useRef(null);
+  useEffect(()=>{if(!ddOpen)return undefined;const h=e=>{if(ddRef.current&&!ddRef.current.contains(e.target))setDdOpen(false);};document.addEventListener("pointerdown",h,true);return ()=>document.removeEventListener("pointerdown",h,true);},[ddOpen]);
   const allDiscs=useLogs?[...new Set(logs.map(l=>{const r=(routeById?routeById(l.routeId):ROUTES.find(x=>x.id===l.routeId));return r?catOf(r):null;}).filter(Boolean))]:[];
   const flogs=useLogs?logs.filter(l=>{const r=(routeById?routeById(l.routeId):ROUTES.find(x=>x.id===l.routeId));return r&&(!discF.length||discF.some(_d=>rDiscs(r).includes(_d)));}):null;
   const bySys={},discsInSys={};
@@ -3518,9 +3522,8 @@ function AscentPyramid({logs,pyramid,routeById,emptyMsg}){
   const sysLabel=sys=>{const ds=discsInSys[sys]?[...discsInSys[sys]]:[];return ds.length===1&&CAT[ds[0]]?<span style={{display:"inline-flex",alignItems:"center",gap:5}}><DiscIcon d={ds[0]} size={12} color={CAT[ds[0]].color}/>{CAT[ds[0]].label}</span>:(SYSUMBR[sys]||sys);};
   const card={background:C.card,borderRadius:12,border:"1px solid "+C.border,padding:"14px 16px"};
   const toggle=d=>setDiscF(v=>v.includes(d)?v.filter(x=>x!==d):[...v,d]);
-  const dd=allDiscs.length>1?<div style={{position:"relative",marginBottom:14}}>
+  const dd=allDiscs.length>1?<div ref={ddRef} style={{position:"relative",marginBottom:14}}>
       <button onClick={()=>setDdOpen(o=>!o)} style={{width:"100%",display:"flex",alignItems:"center",gap:8,padding:"8px 11px",borderRadius:10,border:"1px solid "+(discF.length?C.blue:C.border),background:C.surface,color:C.text,fontSize:12.5,fontWeight:600,cursor:"pointer"}}><span style={{flex:1,textAlign:"left",color:discF.length?C.text:C.textSub,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{discF.length?discF.map(d=>(CAT[d]||{}).label||d).join(", "):"All disciplines"}</span>{discF.length?<span style={{flexShrink:0,fontSize:11.5,fontWeight:700,color:C.blue,background:C.blueBg,borderRadius:9,padding:"2px 7px"}}>{discF.length}</span>:null}<span style={{flexShrink:0,color:C.textMuted,fontSize:12}}>{ddOpen?"▴":"▾"}</span></button>
-      {ddOpen?createPortal(<div onClick={()=>setDdOpen(false)} style={{position:"fixed",inset:0,zIndex:40}}></div>,document.body):null}
       {ddOpen?<div style={{position:"absolute",top:"100%",left:0,right:0,marginTop:6,zIndex:41,background:C.surface,border:"1px solid "+C.border,borderRadius:11,boxShadow:"0 10px 30px rgba(0,0,0,0.5)",padding:7,maxHeight:280,overflowY:"auto",overscrollBehavior:"contain"}}><button onClick={()=>setDiscF([])} aria-current={!discF.length?"true":undefined} style={{width:"100%",display:"flex",alignItems:"center",gap:9,padding:"8px 9px",borderRadius:8,border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",background:discF.length?"transparent":C.blueBg,color:C.text,fontSize:12.5,fontWeight:600,cursor:"pointer",textAlign:"left"}}><span style={{width:16,height:16,borderRadius:5,border:"1px solid "+(!discF.length?C.blue:C.border),background:!discF.length?C.blueSolid:"transparent",color:C.bg,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,flexShrink:0}}>{!discF.length?"✓":""}</span>All disciplines</button>{allDiscs.map(d=>{const on=discF.includes(d),cat=CAT[d]||{};return <button key={d} onClick={()=>toggle(d)} style={{width:"100%",display:"flex",alignItems:"center",gap:9,padding:"8px 9px",borderRadius:8,border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",background:on?C.blueBg:"transparent",color:C.text,fontSize:12.5,fontWeight:600,cursor:"pointer",textAlign:"left"}}><span style={{width:16,height:16,borderRadius:5,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueSolid:"transparent",color:C.bg,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,flexShrink:0}}>{on?"✓":""}</span><span style={{display:"inline-flex",alignItems:"center",gap:5}}><DiscIcon d={d} size={18}/>{cat.label||d}</span></button>;})}</div>:null}
     </div>:null;
   if(!systems.length)return <div style={card}>{dd}<div style={{fontSize:12.5,color:C.textMuted,textAlign:"center",lineHeight:1.6,padding:"8px 0"}}>{useLogs?"No sends in the selected disciplines — adjust the filter above.":(emptyMsg||"Log your ascents and they’ll stack up here by grade.")}</div></div>;
