@@ -65,6 +65,10 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   unique and never overwritten. The default was one hour, and the resized copies (`photoThumb`) inherit it, so an hour after
   a climber last looked, the Profile's avatar and strip were each resized again before they drew (0.6–1.1 s each, measured
   2026-10-21; 50–65 ms cached). After an upload, `warmThumbs` requests the avatar and strip sizes so the first look is cached too.
+  Avatars (`Av`, and the stacked avatar strips) load EAGERLY, never `loading="lazy"`: a lazy image inside the
+  `#appscroll` pane is requested only once it is on screen, so every avatar used to start loading as it scrolled in,
+  after its row's text had drawn. A cold thumbnail costs about as much as a cold original (0.3–0.6 s, measured
+  2026-10-23), so the head start is what matters. `Av` draws the `FALLBACK_AV` silhouette behind the photo while it loads.
 - **Settings**: units (imperial/metric), date format, notification switches, visibility switches (show full name `show_name`,
   `discoverable`, résumé visibility, trip-report visibility incl. the bulk `setAllMyTripReportVisibility`, mutual friends,
   visible while browsing), emergency contact, sign out.
