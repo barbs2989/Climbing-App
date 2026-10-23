@@ -247,6 +247,7 @@
       "field",
       "id",
       "kind",
+      "reason",
       "review_note",
       "reviewed_at",
       "reviewed_by",
@@ -626,6 +627,12 @@
       "status",
       "target_id",
       "target_kind"
+    ],
+    "notification_state": [
+      "dismissed_ids",
+      "seen_ids",
+      "updated_at",
+      "user_id"
     ],
     "objectives": [
       "created_at",

@@ -45,8 +45,8 @@ async function page(disc, after) {
 // The per-discipline advice PANELS were removed from the route page (too generic), so only
 // the packing checklist still renders through lib/terrain.js and only gear is measured here.
 const GEAR = {
-  alpine: ["Rope", "Ice axe / tools", "Crampons", "Insulating layers & shell", "Navigation (map / GPS)"],
-  mountaineering: ["Ice axe / tools", "Crampons", "Rope", "Glacier / crevasse kit", "Insulating layers & shell", "Navigation (map / GPS)"],
+  alpine: ["Rope", "Ice axe / tools", "Crampons"],
+  mountaineering: ["Ice axe / tools", "Crampons", "Rope", "Glacier / crevasse kit"],
   ice: ["Ice axe / tools", "Crampons", "Ice screws", "Rope"],
   mixed: ["Ice axe / tools", "Crampons", "Ice screws", "Trad rack / protection", "Rope"],
 };
