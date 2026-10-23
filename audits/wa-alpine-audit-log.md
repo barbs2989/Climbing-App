@@ -33321,3 +33321,52 @@ are about rows disagreeing with their *own* data and the app's own established 1
 convention, not about picking a side in that outside dispute.
 
 Pass 7 continues next run after `wa_mount_rainier_ingraham_glacier_direct`.
+
+## Batch 435 — 2026-10-23
+
+Checked 8 Mount Rainier routes, `wa_mount_rainier_kautz_glacier` through
+`wa_mount_rainier_sunset_ridge`. Two confirmed problems, fixed:
+
+- **Mowich Face** — the `fa` field named the Central Mowich Face first-ascent party
+  (Dee Molenaar, Gene Prater, Jim Wickwire, Dick Pargeter) correctly but with no date.
+  Mountain Project's Central Mowich Face route page gives July 23-24, 1967, corroborated
+  by the American Alpine Club Journal's 1968 Mount Rainier "Climbs and Expeditions" note
+  (the unnamed author's "...Pargeter, Prater, Wickwire and me" is consistent with
+  Molenaar, a known AAJ Rainier-area contributor of that era). Added the date.
+- **Mowich Face** and **Sunset Ridge** both had `descent` set to the literal leftover
+  string `"see prose fix"` — not a real descent summary. This isn't cosmetic:
+  RouteDetail.jsx's overview "Descent" fact tile reads `route.descent` directly whenever
+  it's ≤140 chars, with no fallback to the route's own `descent_text`, so the placeholder
+  string itself was being shown to climbers as the descent. Replaced both with a one-line
+  summary drawn from each route's own (already-researched) `descent_text` — no new
+  research, just surfacing data already on the row. Sunset Ridge's `descent_text` was
+  already one short sentence, so it was copied in verbatim.
+
+Noted, not flagged (minor source discrepancies, not clear errors): Liberty Ridge's `fa`
+names "Jim Borrow" where the AAC's own 1936 account by Daiber spells it "Will H. Borrow
+Jr." — plausibly the same person under a period nickname, not corroborated either way as
+a mistake. Sunset Ridge's `fa` date "August 27-28, 1938" vs. the primary 1938 AAC article
+by party member Don Woods, which gives "August 26-29" — likely a difference between the
+whole outing's span and the summit day(s), not a contradicted fact. Mowich Face's claim
+that "the North Mowich Face was completed later by a party including Mike Heath, Mead
+Hargiss, and Bill Cockerham" could not be confirmed or contradicted by any source found
+(no AAJ, NPS, Mountain Project, or SummitPost record of a North Mowich Face first ascent
+turned up) — left as-is per the audit's own rule against flagging what can't be checked
+against a source either way. The Fairfax Bridge/SR-165 closure note on Mowich Face and
+Ptarmigan Ridge's `road` fields was re-checked and remains accurate as of this run (WSDOT:
+permanently closed since April 2025, no funded reopening timeline).
+
+Clean: Kautz Glacier's 1920 first ascent (Fuhrer, Fuhrer, Toll, Myers) and its 14,406 ft
+high point, both confirmed (NPS Nature Notes, Mountain Project); Kautz Headwall has no
+first-ascent record stored and none could be found either — correctly left blank rather
+than guessed; Liberty Ridge's 1935 first ascent (Daiber, Borrow, Campbell) and 1955 second
+ascent (Mahre, Schuster, McGuire, Prater), confirmed via the NPS Liberty Ridge Routebrief
+and Daiber's own 1936 AAC Journal account; Nisqually Icefall's 1948 first ascent (Molenaar,
+Craig), confirmed via Molenaar's own 1949 AAC Journal article (the 1968 first-winter-ascent
+claim for Frederickson's party could not be independently confirmed but isn't contradicted
+either, so left as-is); Ptarmigan Ridge's 1935 first ascent (Bauer, Hossack) and later
+Beckey/1966 variations, confirmed via Mountain Project and the 1939 AAC Journal article.
+`wa_mount_rainier_north_mowich_icefall` is a near-empty stub (id/name/area only) — area
+placement (area_type=peak) is correct and there is no other data on the row to check.
+
+Pass 7 continues next run after `wa_mount_rainier_sunset_ridge`.

@@ -2,8 +2,8 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_mount_rainier_ingraham_glacier_direct",
-  "total_in_scope_last_count": 739,
+  "last_processed_id": "wa_mount_rainier_sunset_ridge",
+  "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
   "batches": [
@@ -8659,6 +8659,25 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-10-23-batch-434.sql",
       "note": "wa_mount_rainier_ingraham_direct's own climbing_route step 5 named the summit as \"Columbia Crest (14,411 ft)\", contradicting this same route's own high_point_ft and summit waypoint (both 14406) -- fixed to 14406 to match the row's own data, areas.elevation_ft, and sibling route wa_mount_rainier_disappointment_cleaver. wa_mount_rainier_ingraham_glacier_direct's overview had the same stale 14,411 figure (fixed to 14406 for consistency) plus a misspelling, \"Cadever Gap\" for \"Cadaver Gap\" (confirmed via SummitPost/trip reports; the sibling route's own text already spells it correctly). Noted, not flagged: the two Ingraham routes look like near-duplicate rows for the same real-world route -- ingraham_direct is fully enriched, ingraham_glacier_direct is a thin legacy stub with only name/discipline/overview -- out of scope to merge/delete, left for a human to decide whether to consolidate. Clean: Edmunds Headwall's 1957 FA (Rupley/Gordon/Beckey/Hornbein/Staley) and its 14112 ft Liberty-Cap high point; Emmons-Winthrop's 1884 FA (Fobes/James/Wells) and current $82 NPS cost-recovery fee; Emmons Glacier (legacy duplicate row) FA matches; Fuhrer Finger's 1920 FA (Fuhrer/Fuhrer/Hazard/Farrer/Hermans, per NPS Nature Notes) and 14406 high point (route continues to the true summit); Fuhrer Thumb's fee/permit fields and internal consistency; Gibraltar Ledges' 1870 FA (Stevens & Van Trump, Rainier's original first ascent, confirmed via Wikipedia/SummitPost) and fee/permit fields."
+    },
+    {
+      "batch_number": 435,
+      "date": "2026-10-23",
+      "route_ids": [
+        "wa_mount_rainier_kautz_glacier",
+        "wa_mount_rainier_kautz_headwall",
+        "wa_mount_rainier_liberty_ridge",
+        "wa_mount_rainier_mowich_face",
+        "wa_mount_rainier_nisqually_icefall",
+        "wa_mount_rainier_north_mowich_icefall",
+        "wa_mount_rainier_ptarmigan_ridge",
+        "wa_mount_rainier_sunset_ridge"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 0,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-10-23-batch-435.sql",
+      "note": "Mowich Face fa was missing the Central Mowich Face FA date -- confirmed July 23-24, 1967 via Mountain Project + AAJ 1968 note, added. Mowich Face and Sunset Ridge both had descent set to the literal leftover string 'see prose fix' (not real content) -- this is user-visible: RouteDetail.jsx's overview Descent fact tile reads route.descent directly at <=140 chars with no fallback to descent_text, so the placeholder itself was being shown to climbers. Fixed both from each route's own descent_text (no new research). Noted not flagged: Liberty Ridge fa 'Jim Borrow' vs AAC's own 'Will H. Borrow Jr.' (likely a period nickname, unresolved either way); Sunset Ridge fa date range 'Aug 27-28' vs primary AAC article's 'Aug 26-29' (likely outing-span vs summit-day difference); Mowich Face's North Mowich Face FA party (Heath/Hargiss/Cockerham) found in no source either way, left as-is. Clean: Kautz Glacier (1920 FA, 14406 high point), Kautz Headwall (no FA on file, correctly so), Liberty Ridge (1935 FA + 1955 2nd ascent), Nisqually Icefall (1948 FA; 1968 first winter ascent unconfirmed but not contradicted, left as-is), Ptarmigan Ridge (1935 FA + later variations). wa_mount_rainier_north_mowich_icefall is a near-empty stub (id/name/area only) -- area placement correct, nothing else to check."
     }
   ]
 }
