@@ -123,6 +123,7 @@
     "check:seed-history": "node scripts/check-seed-history.mjs",
     "check:overlay-discovery": "node scripts/check-overlay-discovery.mjs",
     "check:overlay-scroll": "node scripts/check-overlay-scroll.mjs",
+    "check:pinned-dismiss": "node scripts/check-pinned-dismiss.mjs",
     "check:zero": "node scripts/check-zero-state.mjs",
     "check:dead-flag-gates": "node scripts/check-dead-flag-gates.mjs",
     "check:sample-content-removable": "node scripts/check-sample-content-removable.mjs",
