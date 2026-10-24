@@ -97,7 +97,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   **⤢ Full screen** is a real full-screen view (`position:fixed`, titled "Map · <area>", ✕ or Escape to close, the place search inside),
   drawn like the route map's. It keeps the SAME Leaflet map: the map renders through a portal into a host div the panel owns, and only
   that div moves, into `document.body` and back into the inline slot, so markers, zoom, pan and the dot survive the round trip (2026-10-23).
-- **Fire map** (`FireMap`, `lib/FireMap.jsx`; data in `lib/fire.js`): opens from an area page and a route's Safety tab. Layers, each a chip:
+- **Fire map** (`FireMap`, `lib/FireMap.jsx`; data in `lib/fire.js`): opens from an area page below the state (a range, peak, crag or wall — never a country or state page, the first screen after the picker) and a route's Safety tab. Layers, each a chip:
   Fires (WFIGS incident points — the point of ORIGIN, coloured by containment, sized by acres), Perimeters, Red flag (NWS fire-weather
   zones) and **Heat** (`useHeat`: VIIRS satellite detections from the last 48 h, newer brighter, drawn at their real ~375 m footprint
   when zoomed in; queried only from zoom 7, `HEAT_MIN_ZOOM`). A **legend** under the map names every colour, grey (contained) included.

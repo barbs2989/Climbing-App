@@ -721,8 +721,11 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
           {/* The Fire map entry. It used to be a full-width card at the very top of the Climbs
               tab, above the path and the area itself; it lives here now, on the area it opens
               focused on. It makes no claim about whether anything is burning — the map is where
-              that data lives, and it is honest about loading and failing. */}
-          {onFireMap ? (
+              that data lives, and it is honest about loading and failing. It is not drawn on a
+              country or state page — the first screen after the country/state picker — which is
+              far too broad a place to ask "is anything burning near here?" (owner, 2026-10-24); it
+              starts at the range, the first level with a place to focus on, as Save does. */}
+          {onFireMap && area.area_type !== "country" && area.area_type !== "state" ? (
             <button onClick={() => onFireMap(area)} aria-label={"Fire map — active wildfires and red-flag warnings near " + area.name} style={{ flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 7, minHeight: 44, background: C.redBg, border: "1px solid " + C.red + "66", color: C.red, borderRadius: 11, padding: "0 16px", fontSize: 14.5, fontWeight: 800, cursor: "pointer", whiteSpace: "nowrap" }}>
               <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2c1 3.5 5 6 5 11a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.7 1.2 2.7 2.5 3 0-3.5-1-6.5 0-9z" /></svg>
               {"Fire map"}
