@@ -402,8 +402,8 @@ function assessSentinel(col) {
   return { hits, changed, needle };
 }
 
-// A field can be USED without being echoed: the RACK box prints rackSummary(route.rack), so
-// the raw gear prose never appears verbatim even though the column drives the screen. Without
+// A field can be USED without being echoed: a derived readout (the old PROTECTION card's
+// rackSummary, removed 2026-10-23) never prints the raw gear prose verbatim even though the column drives the screen. Without
 // this baseline the probe reports such a field as dead and sends you chasing a non-bug.
 const BASELINE = {};
 for (const [bname, b] of Object.entries(BASES)) {
