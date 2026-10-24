@@ -120,12 +120,12 @@ const LANDMARKS = {
   // (uppercase: innerText returns the CSS-transformed text). Those headings carry their count
   // ("ALL YOUR GROUPS · 3"), so capture() also matches a line with a trailing " · N" removed,
   // and the landmark stays the descriptive part the rule above asks for.
-  Groups: ["Standing communities with their own calendar, events, and members. Search, join, or start your own."],
+  Groups: ["Communities with their own events and members."],
   "Groups:Your groups": ["ALL YOUR GROUPS"],
   "Groups:Your activity": ["EVENTS YOU’RE GOING TO", "YOUR POSTS"],
   "Groups:Discover": ["GROUPS TO JOIN"],
   "Groups:Events": ["UPCOMING IN YOUR GROUPS"],
-  "Crew:Requests": ["Everything waiting on you — friend, crew and group requests — and the requests you’ve sent."],
+  "Crew:Requests": ["What’s waiting on you, and what you’ve sent."],
 };
 
 // Disclosure affordances: controls that reveal more of the screen they are on.
