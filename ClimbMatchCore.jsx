@@ -793,8 +793,8 @@ function wpDivIcon(L,t,size,ring,derived){
      peak coordinate) must not read as an N+1st pin that somebody surveyed and put in the WAYPOINTS
      list. Hollow-and-dashed is the language #1185 chose for exactly that distinction; carrying the
      glyph and the type colour is what keeps it inside the legend instead of being a mystery dot.
-     The hollow form is also the LEGEND ROW's own look — tint, coloured border, coloured glyph — so
-     "derived" reads as the legend swatch and "recorded" reads as its filled counterpart.
+     The hollow form keeps the LEGEND ROW's coloured border and coloured glyph, so "derived" reads as
+     the legend swatch and "recorded" reads as its filled counterpart; its inside is opaque (below).
 
      WHO IS DERIVED, TODAY: the `hasPeak` fallback marker. It draws the MOUNTAIN's coordinate out of
      `areas` when the route has no track and no waypoints of its own — a location the app worked out
@@ -808,11 +808,19 @@ function wpDivIcon(L,t,size,ring,derived){
      WAYPOINTS list shows N rows and neither of these is the N+1st. It arrived as a bare dashed
      circleMarker and was moved onto this builder before merging, because a colour-only dot is a
      mystery the legend cannot explain, which is the defect the glyph work removed everywhere else. */
+  /* THE DERIVED FILL WAS A 13% TINT, AND OVER TERRAIN IT VANISHED (owner, 2026-10-24: "on crag map,
+     the orange pin is too faint and hard to see"). The crag's own pin is this derived Summit marker,
+     and a 2px dashed orange ring around a near-transparent disc disappears into tan rock and green
+     forest alike. Hollow-and-dashed is kept — it is what says "worked out, not surveyed" — but the
+     inside is now an OPAQUE dark disc with a 3px dashed type-colour ring, a bold glyph, and a thin
+     WHITE halo outside it: the outline Google Maps added to its own pins and the one every
+     marker-legibility guideline recommends for a marker that must read on light and dark tiles. */
   const box=derived
-    ?'background:'+col+'22;border:'+bw+'px dashed '+(ring||col)+';color:'+col
+    ?'background:'+C.bg+';border:3px dashed '+(ring||col)+';color:'+col+';font-weight:700'
     :'background:'+col+';border:'+bw+'px solid '+(ring||"#fff")+';color:#fff';
+  const shadow=derived?'0 0 0 2px rgba(255,255,255,0.9),0 1px 4px rgba(0,0,0,0.6)':'0 1px 3px rgba(0,0,0,0.45)';
   return L.divIcon({className:"",iconSize:[s,s],iconAnchor:[s/2,s/2],popupAnchor:[0,-s/2],
-    html:'<div style="width:'+s+'px;height:'+s+'px;border-radius:50%;'+box+';box-shadow:0 1px 3px rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;font-size:'+Math.round(s*0.55)+'px;line-height:1">'+g+'</div>'});
+    html:'<div style="width:'+s+'px;height:'+s+'px;border-radius:50%;'+box+';box-shadow:'+shadow+';display:flex;align-items:center;justify-content:center;font-size:'+Math.round(s*0.55)+'px;line-height:1">'+g+'</div>'});
 }
 /* type -> colour, for the call sites that index a plain map (`wc[wpType(wp)]`, `wc.Summit`).
    Index it with `wpType(w)`, NEVER the raw `w.type`. Both Leaflet marker call sites did the

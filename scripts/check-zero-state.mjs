@@ -79,7 +79,7 @@ const ZERO_LANDMARKS = {
   "tab:today": ["Explore climbs", "Find partners", "Find crews", "Unfinished business"],
   // The dropdown has to say what it is empty OF. It used to read "Nothing waiting on you
   // right now", a near-copy of the "Nothing needs you right now" card immediately below it.
-  "modal:unfinishedOpen": ["No requests, invites or unread messages."],
+  "modal:unfinishedOpen": ["No requests, invites, unread messages or climbs to confirm."],
 };
 
 // Controls that must NOT be offered at zero, because acting on them produces or shares
