@@ -75,6 +75,8 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   `#appscroll` pane is requested only once it is on screen, so every avatar used to start loading as it scrolled in,
   after its row's text had drawn. A cold thumbnail costs about as much as a cold original (0.3–0.6 s, measured
   2026-10-23), so the head start is what matters. `Av` draws the `FALLBACK_AV` silhouette behind the photo while it loads.
+- **First-run setup** (`lib/Onboarding.jsx`, opened once per device for an account with no disciplines — `lib/onboard-pref.js`; the Home card and *Replay the tour* reopen it): full screen, one question per step with a progress bar, ← Back and *Skip setup*: welcome → **photo** (signed in only: *Use my Google photo* when the session carries a Google picture, `user_metadata.avatar_url`, copied into our own storage, or choose one; saved at once with `saveProfileAvatar`) → **home area** (*Use my current location*: `homeFromDevice` in `lib/homeFromDevice.js` rounds the position to ~1 km, asks the map search's place-name lookup for the town, fills "City, ST", and offers the found zip for partner search behind a ticked box; never stores the position) → **climbing** (disciplines, required; grades) → **about you** (gender, optional) → **alerts** (the three Settings › Notifications switches themselves). `onFinish` writes the same columns `saveEdit` does, plus the zip through `saveMyZip`. Opened over a profile that already has disciplines it is the climbing step alone. There are no phone push notifications to ask for: the alerts step governs the in-app list.
+- **Gender** (0359, `profiles.gender`: `woman` / `man` / `non_binary`, NULL = prefer not to say): asked in setup and in the profile editor, optional; shown beside the home area on your profile and on the one other climbers open (`genderLabel`, `GENDERS` in core). Partner rows from a name or browse read carry it (`PARTNER_COLS`); `partners_near` rows do not yet. Nothing filters on it.
 - **Settings**: units (imperial/metric), date format, notification switches, visibility switches (show full name `show_name`,
   `discoverable`, résumé visibility, trip-report visibility incl. the bulk `setAllMyTripReportVisibility`, mutual friends,
   visible while browsing), emergency contact, sign out.
@@ -140,14 +142,16 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 | `lib/auth.js` | `getProfile`, `saveProfile`, `useSession`, `signOut`, `sendEmailCode`, `confirmEmailCode`, `inboxProofFresh` |
 | `lib/VerifyEmailPanel.jsx` | `VerifyEmailPanel` (emailed-code verification on Profile, 0306) |
 | `lib/db.js` | `useClimberResume`, `saveClimberResume`, `uploadProfilePhoto`, `saveProfilePhotos`, `saveProfileAvatar`, `saveProfilePhotoAlts`, `removeProfilePhoto`, `useFullProfile`, `useMyZip`, `useMyEmergencyContact`, `useMyTrustCounts`, `useVerificationRecords`, `giveVouch`, `setAllMyTripReportVisibility`, `fetchProfilesByIds` |
-| `lib/GiveVouch.jsx`, `lib/Onboarding.jsx` | vouch sheet; first-run onboarding |
+| `lib/GiveVouch.jsx` | vouch sheet |
+| `lib/Onboarding.jsx` | `Onboarding` (first-run setup) |
+| `lib/homeFromDevice.js` | `homeFromDevice` (onboarding's *Use my current location*) |
 | `lib/LegalView.jsx` | `LegalView` (Terms, Privacy, Guidelines, Accessibility), `AccessReportForm`, `ACCESS_UPDATED` |
 | `lib/AccessibilityReports.jsx` | `AccessibilityReportQueue` — the owner's queue of accessibility reports in Profile › Review |
 | `supabase/functions/notify-accessibility-report/index.ts` | emails the owner when a report is filed (needs `RESEND_API_KEY`) |
 | `lib/units-pref.js`, `lib/date-pref.js`, `lib/notif-pref.js`, `lib/browse-visibility-pref.js`, `lib/inbox-pref.js`, `lib/onboard-pref.js`, `lib/prefs.js` | device-local preference modules |
 
 ## 4. Data
-- **Supabase tables**: `profiles` (0009; `show_name` 0175; `discoverable` 0104/0110; `resume_public` 0177; certifications 0181), `climber_resumes` (0342: owner, or anyone while `resume_public`), `profile_zips` (owner-only) + `zip_centroids` (0189),
+- **Supabase tables**: `profiles` (0009; `show_name` 0175; `gender` 0359; `discoverable` 0104/0110; `resume_public` 0177; certifications 0181), `climber_resumes` (0342: owner, or anyone while `resume_public`), `profile_zips` (owner-only) + `zip_centroids` (0189),
   `verification_records` (policies 0058; `verify_my_email()` 0085, inbox proof 0306), vouches, `my_trust_counts` (0203; the counts only — `compute_trust_score` was dropped in 0335), `blocked_users` (0088), `accessibility_reports` (0343; since 0354 filed only through `file_accessibility_report()`, guests included, with `contact_email`; read own / admin updates; admin list via `accessibility_report_queue()`), storage bucket `topo-photos` for profile photos.
 - **Device-local (localStorage)**: units, date format, notification switches, visible-while-browsing, onboarding-prompted.
   These do **not** follow a climber to another device.
