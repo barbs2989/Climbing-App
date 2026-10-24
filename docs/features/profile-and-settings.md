@@ -104,9 +104,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 - **The sign-in screen** (`lib/AuthModal.jsx`, `LoginScreen`): the live site opens on it (`LOGIN_FIRST` in `ClimbMatchCore.jsx`,
   set by `VITE_LOGIN_FIRST` in deploy.yml alongside `VITE_DEMO_AUTOLOGIN`), unless this device already holds a real session.
   *View as guest* (`onGuest`) enters the app with the sample content, remembered for the tab only (`markGuest`/`wasGuest` in
-  `lib/auth.js`), so the next visit opens on sign-in again. Signing out of ANY build with Supabase lands here too, with *View as guest* unless the real gate is on (`USE_DB||LOGIN_FIRST` in `ClimbMatch.jsx`);
-  the demo `LoginScreen` in `ClimbMatchCore.jsx` is left only to a build with no backend, and its one button is *View as guest* as well — there is no
-  "Continue as a demo climber" sample account on any sign-in screen (2026-10-24). *Sign in with Apple* and *Continue with Google* always render, Apple
+  `lib/auth.js`), so the next visit opens on sign-in again. *Sign in with Apple* and *Continue with Google* always render, Apple
   first at the same size (App Store guideline 4.8); a provider the Supabase project has not switched on yet
   (`useOAuthProviders`) answers a tap with "coming soon" instead of redirecting. *Create account* asks for the email and the
   password twice and refuses a mismatch before the request (paste is allowed in both).
@@ -150,13 +148,14 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 | `lib/Onboarding.jsx` | `Onboarding` (first-run setup) |
 | `lib/homeFromDevice.js` | `homeFromDevice` (onboarding's *Use my current location*) |
 | `lib/LegalView.jsx` | `LegalView` (Terms, Privacy, Guidelines, Accessibility), `AccessReportForm`, `ACCESS_UPDATED` |
+| `lib/AppFeedback.jsx` | `FeedbackForm`, `RateForm` (the Menu's Feedback and Rate app sheets), `AppFeedbackQueue` (Menu › Review › Feedback & ratings), `devicePlatform`, `storeListing`, `APP_VERSION` |
 | `lib/AccessibilityReports.jsx` | `AccessibilityReportQueue` — the owner's queue of accessibility reports in Menu › Review |
 | `supabase/functions/notify-accessibility-report/index.ts` | emails the owner when a report is filed (needs `RESEND_API_KEY`) |
 | `lib/units-pref.js`, `lib/date-pref.js`, `lib/notif-pref.js`, `lib/browse-visibility-pref.js`, `lib/inbox-pref.js`, `lib/onboard-pref.js`, `lib/prefs.js` | device-local preference modules |
 
 ## 4. Data
 - **Supabase tables**: `profiles` (0009; `show_name` 0175; `gender` 0359; `discoverable` 0104/0110; `resume_public` 0177; certifications 0181), `climber_resumes` (0342: owner, or anyone while `resume_public`), `profile_zips` (owner-only) + `zip_centroids` (0189),
-  `verification_records` (policies 0058; `verify_my_email()` 0085, inbox proof 0306), vouches, `my_trust_counts` (0203; the counts only — `compute_trust_score` was dropped in 0335), `blocked_users` (0088), `accessibility_reports` (0343; since 0354 filed only through `file_accessibility_report()`, guests included, with `contact_email`; read own / admin updates; admin list via `accessibility_report_queue()`), storage bucket `topo-photos` for profile photos.
+  `verification_records` (policies 0058; `verify_my_email()` 0085, inbox proof 0306), vouches, `my_trust_counts` (0203; the counts only — `compute_trust_score` was dropped in 0335), `blocked_users` (0088), `accessibility_reports` (0343; since 0354 filed only through `file_accessibility_report()`, guests included, with `contact_email`; read own / admin updates; admin list via `accessibility_report_queue()`), `app_feedback` (0365: Feedback notes and app ratings, filed only through `file_app_feedback()`, guests included; read own / admin updates; admin list via `app_feedback_queue()`, rating average via `app_rating_summary()`, each account's latest rating once), storage bucket `topo-photos` for profile photos.
 - **Device-local (localStorage)**: units, date format, notification switches, visible-while-browsing, onboarding-prompted.
   These do **not** follow a climber to another device.
 - **Seed / in-memory**: `ME`, `CLIMBERS`/`FILLER_CLIMBERS` (gated by `DEMO_FILLERS`); seed résumé ticks (`ME.ticks`) are cleared by the sign-in reset.
@@ -176,6 +175,7 @@ All present in `package.json`: `check:profile-edit-gate`, `check:profile-draft-p
 Notes: `docs/guards/settings-and-persistence.md`, `honesty-claims.md`, `units-and-formatting.md`, `seed-and-identity.md`, `outage-and-read-failures.md`.
 
 ## 7. Last significant change
+- **Feedback and Rate app actually reach the team** (0365) — Feedback sends a note (Something's broken / An idea / Something else, optional reply email for guests) instead of only copying it; Rate app records 1–5 stars and an optional comment. The owner reads both in Menu › Review › *Feedback & ratings*, with the app's average rating on top. **No review gating**: Apple 5.6.1 and Google Play forbid sending only happy raters to the store, which is what the old sheet's 4–5 stars → thanks / 1–3 → feedback split did; when a store listing exists for the climber's device (`VITE_APP_STORE_ID` for iPhone/iPad, `VITE_PLAY_STORE_ID` for Android, both unset today because ClimbMatch is a web app), *Rate us on the App Store / Google Play* shows first, to everyone. About us lost its "demo build" lines and gained Send feedback / Rate ClimbMatch buttons and the real version.
 - **Accessibility reports from guests, and a queue** (0354) — a signed-out visitor can file one with an email; the owner sees them in Menu › Review and its tile badge; the statement promises a reply within 5 business days.
 - **Accessibility reports reach someone** (0343) — the statement's report form saves to `accessibility_reports`; it used to point at the Feedback button, which only copies to the clipboard.
 - **Profile: Vouches you’ve received** — what partners said about you (ratings, words, skills, would climb again) shows on your own Profile tab above the vouches you gave, as LinkedIn keeps Received above Given; it was reachable only through View public profile, the tab showed just a count.
@@ -188,6 +188,7 @@ Real climbers, batch 3: the résumé header, export title and "hasn't shared" li
 - **#2415** — Résumé Experience groups now Sport · Trad · Ice & Mixed · Alpine & Mountaineering · Bouldering · Scrambling (was Crag … Other); seed ticks re-tagged (`ClimbMatchCore.jsx` only).
 
 ## 8. Known gaps
+- **No app store listing yet.** Rate app names a store only once `VITE_APP_STORE_ID` / `VITE_PLAY_STORE_ID` are set in the deploy env (`.github/workflows/deploy.yml`); until then ratings come only to the team. A new feedback note has no email alert, only the Review tile badge.
 - The email alert for a new accessibility report (`notify-accessibility-report`) sends nothing until `RESEND_API_KEY` is set (the company-email wait in pending actions); until then the Menu › Review tile badge is the only signal, and only while the owner has the app open.
 - Units, date format, notification and browse-visibility switches live in localStorage only (`lib/units-pref.js`, `lib/date-pref.js`, `lib/notif-pref.js`, `lib/browse-visibility-pref.js`): not synced across devices.
 - `saveProfile` PATCHes any object it is handed; safety depends on callers sending only loaded fields (enforced by `check:profile-edit-gate`, not by the function).
