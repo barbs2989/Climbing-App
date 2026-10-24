@@ -74,7 +74,7 @@ import ItineraryEditor from "./src/components/ItineraryEditor.tsx";
 import RealClimberRow from "./src/components/RealClimberRow.tsx";
 import RouteStats from "./lib/RouteStats.jsx";
 import { recShapeOf, effDistIsWholeTrip, effDistKm, isMultiDayOuting, itinDayCount } from "./lib/outing.js";
-import { approachOptions, defaultApproachKey, viaRouteOf, applyApproach, approachKeyOf, tripTrailheadDraft, tripTrailheadStore, tripTrailheadMerge } from "./lib/approaches.js";
+import { approachOptions, defaultApproachKey, viaRouteOf, applyApproach, approachKeyOf, tripTrailheadDraft, tripTrailheadStore, tripTrailheadMerge, viaPitchSpans, spanLabel, wholeLine } from "./lib/approaches.js";
 import { POP_CLOSE, POP_CLOSE_MEDIA, POP_BACK_MEDIA, POP_REMOVE } from "./lib/popupChrome.js";
 import { BTN, BTN_SM, BTN_LINK, CHIP } from "./lib/buttonStyles.js";
 import { askConfirm } from "./lib/ConfirmSheet.jsx";
@@ -3611,7 +3611,7 @@ export function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCo
         baseFinding:v.baseFinding||"",primary:v.primary===true,longForm:v.longForm===true,storedRow:v.storedRow===true,
         /* ...and the WAY-IN LINK (lib/approaches.js) the same way: dropping `viaRouteId` would turn the
            Southeast Ridge's "via Fisher Chimneys" back into a prose card on the next accepted edit. */
-        viaRouteId:v.viaRouteId||"",trip:v.trip&&typeof v.trip==="object"?v.trip:null,
+        viaRouteId:v.viaRouteId||"",viaPitches:v.viaPitches&&typeof v.viaPitches==="object"?v.viaPitches:null,_origVia:v.viaRouteId||"",trip:v.trip&&typeof v.trip==="object"?v.trip:null,
         /* WHICH CAMPS this way in uses: its own trip's camps, or for the way in the row itself describes, the names it keeps. null = never chosen, so nothing is rewritten. */
         campSel:v.trip&&Array.isArray(v.trip.bivy)?v.trip.bivy.map(function(c){return c&&c.name;}).filter(Boolean):Array.isArray(v.camps)?v.camps.slice():null,
         ...tripDraft(v),
@@ -3859,7 +3859,7 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
     if(x.mode!=="via"&&x.mode!=="own"&&Array.isArray(x.campSel))o.camps=x.campSel.slice();
     /* WHERE IT STARTS (see tripDraft). The mode decides, so switching a way in from "own trailhead"
        to "by another route" really drops the typed trailhead rather than storing both. */
-    if(x.mode==="via"){var vr=String(x.viaRouteId||"").trim();if(vr)o.viaRouteId=vr;}
+    if(x.mode==="via"){var vr=String(x.viaRouteId||"").trim();if(vr)o.viaRouteId=vr;/* ...and the pitches of it a VARIATION climbs, kept only while the link points at the same route. */if(vr&&vr===x._origVia&&x.viaPitches)o.viaPitches=x.viaPitches;}
     else if(x.mode==="own"){/* START FROM THE STORED RECORD: a way in also carries camps, a road, pins and an itinerary this form has no box for, and rebuilding it from the boxes alone deleted them on the next accepted edit. Only what the form controls is replaced. */var tr=Object.assign({},x.trip&&typeof x.trip==="object"?x.trip:{});["distKm","outingShape","gainFt","gainM","lossFt","lossM"].forEach(function(k){delete tr[k];});var _oal=tr.approachLogistics;delete tr.approachLogistics;var _ot=tr.timing&&typeof tr.timing==="object"?Object.assign({},tr.timing):{};delete _ot.approachTimeHrs;delete tr.timing;var sd=x._tSeed||{dist:"",gain:"",loss:"",t:{}},imp=uImp();
       var al=tripTrailheadMerge(_oal,x.thName,x.thLat,x.thLng);if(Object.keys(al).length)tr.approachLogistics=al;
       var dv=parseFloat(x.tDist);if(isFinite(dv)&&dv>0)tr.distKm=x.tDist===sd.dist&&sd.t.distKm!=null?sd.t.distKm:+(imp?dv*1.609344:dv).toFixed(2);
@@ -4196,10 +4196,17 @@ function PairsWellWith({route,onOpenRoute,notify}){
    navigation, not a setting, and changes nothing on the other tabs. */
 function ApproachPicker({route,opts,sel,onSel,sibs,sibsErr,finishes,showFinishes,onOpenRoute}){
   const showFin=!!(showFinishes&&finishes.length);
+  /* A finish whose way in records `viaPitches.after` rejoins THIS route: a variation of it, named as one. */
+  const finSpans=function(r){var v=(Array.isArray(r.approachVariants)?r.approachVariants:EMPTY_ARR).find(function(x){return x&&x.viaRouteId===route.id;});return v?viaPitchSpans(v):null;};
+  const allVar=showFin&&finishes.every(function(r){var sp=finSpans(r);return !!(sp&&sp.after);});
   if(!opts.length&&!showFin)return null;
   const ap=route._approach;const selOpt=opts.find(function(o){return o.key===sel;})||null;
   const via=selOpt&&selOpt.variant.viaRouteId?(sibs||EMPTY_ARR).find(function(r){return r.id===selOpt.variant.viaRouteId;}):null;
   const viaMissing=!!(selOpt&&selOpt.variant.viaRouteId&&!ap);
+  /* A VARIATION (lib/approaches.js wholeLine): the via route's pitches below and above this one's, in climbing order, on Overview. */
+  const line=via&&showFinishes?wholeLine(route,selOpt.variant,via):null;
+  const viaSp=via?viaPitchSpans(selOpt.variant):null;
+  const viaSpText=viaSp?[viaSp.before,viaSp.after].filter(Boolean).map(spanLabel).join(" and "):"";
   const th=route.approachLogistics&&route.approachLogistics.trailhead;
   const isFinish=opts.some(function(o){return !!o.variant.viaRouteId;});
   const many=opts.length>1;
@@ -4216,13 +4223,25 @@ function ApproachPicker({route,opts,sel,onSel,sibs,sibsErr,finishes,showFinishes
         {th?<div><span style={{color:C.textMuted}}>Trailhead: </span>{th}</div>:null}
         {via&&ap&&ap.viaGrade?<div><span style={{color:C.textMuted}}>The way in: </span>{via.name+" · "+ap.viaGrade}</div>:null}
         {via?<div style={{marginTop:8}}>{chip(dbRouteToCamel(via),"Read the "+via.name+" route",via.id)}</div>:null}
-        {via?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginTop:7}}>{"Times on the Plan tab: the walk in and out are the "+via.name+" route’s own, and the climbing time counts only this route’s pitches — add the time for whatever part of "+via.name+" you climb to reach its start."}</div>:null}
+        {line?<div data-whole-line="1" style={{marginTop:10,borderTop:"1px solid "+C.border,paddingTop:10}}>
+          <div style={{fontSize:12.5,fontWeight:800,color:C.text,marginBottom:3}}>{"The whole climb · "+line.rows.length+" pitches"}</div>
+          <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:8}}>{"This route is a variation of "+via.name+": you climb "+via.name+"’s "+viaSpText+" as well as this route’s own "+line.ownCount+"."}</div>
+          {line.rows.map(function(r){var mine=r.src==="own";return <div key={r.n} style={{display:"flex",gap:9,alignItems:"flex-start",padding:"6px 0",borderTop:r.n>1?"1px solid "+C.border:"none"}}>
+            <span style={{flexShrink:0,minWidth:30,textAlign:"center",fontSize:11.5,fontWeight:800,borderRadius:6,padding:"2px 5px",color:mine?C.blue:C.textSub,background:mine?C.blueBg:C.surface,border:"1px solid "+(mine?C.blueDim:C.border)}}>{"P"+r.n}</span>
+            <div style={{minWidth:0,flex:1}}>
+              <div style={{fontSize:12.5,fontWeight:700,color:mine?C.text:C.textSub}}>{[r.grade,mine?"This route, pitch "+r.pitch:via.name+", pitch "+r.pitch].filter(Boolean).join(" · ")}</div>
+              {r.notes?<div style={{fontSize:12,color:C.textMuted,lineHeight:1.45,marginTop:2}}>{r.notes}</div>:null}
+            </div>
+          </div>;})}
+          <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginTop:6}}>{"This route’s own pitches are in ROUTE BREAKDOWN below; "+via.name+"’s rack, hazards and descent are on its page."}</div>
+        </div>:null}
+        {via?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginTop:7}}>{"Times on the Plan tab: the walk in and out are the "+via.name+" route’s own, and the climbing time counts only this route’s pitches — "+(viaSpText?"add the time for "+via.name+"’s "+viaSpText+", which you climb too.":"add the time for whatever part of "+via.name+" you climb to reach its start.")}</div>:null}
       </div>}
     </div>:null}
     {showFin?<div data-approach-finishes="1" style={card}>
-      <div style={head}>Other finishes from this route</div>
-      <div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginBottom:9}}>{finishes.length>1?"These climbs start by climbing this route. Open one to see it.":"This climb starts by climbing this route. Open it to see it."}</div>
-      <div style={{display:"flex",flexWrap:"wrap",gap:7}}>{finishes.map(function(r){return chip(r,r.name,r.id);})}</div>
+      <div style={head}>{allVar?"Variations of this route":"Other finishes from this route"}</div>
+      <div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginBottom:9}}>{allVar?(finishes.length>1?"These climbs leave this route partway and rejoin it. Open one to see the whole line, pitch by pitch.":"This climb leaves this route partway and rejoins it. Open it to see the whole line, pitch by pitch."):(finishes.length>1?"These climbs start by climbing this route. Open one to see it.":"This climb starts by climbing this route. Open it to see it.")}</div>
+      <div style={{display:"flex",flexWrap:"wrap",gap:7}}>{finishes.map(function(r){var sp=finSpans(r);var g=displayGrade(r);return chip(r,[r.name,g,sp&&sp.before?"leaves after P"+sp.before[1]:null,sp&&sp.after?"rejoins at P"+sp.after[0]:null].filter(Boolean).join(" · "),r.id);})}</div>
     </div>:null}
   </>;
 }

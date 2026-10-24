@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **A variation shows the whole line**: Boving Roofs now links to the Southwest Rib it is climbed on; its Overview lists all 8 pitches to the summit in order (rib 1–3, its own 3, rib 6–7), and the Southwest Rib lists it under *Variations of this route* (`viaPitches`, lib/approaches.js). Both pages now say the South Arete's 3 rappels land at the foot of the South Arete, a walk from the start. See [route-page.md](docs/features/route-page.md).
 - **Notifications: nothing covers a climber's photo**: the small crew/shield badge pinned on the corner of the avatar in the bell's rows is gone. The sentence beside the photo already says what happened. See `docs/features/logbook-crews-home.md`.
 - **Saved headings sit above their boxes**: on Logbook › Saved, *My itineraries* and the other four section headings now sit above their box, like the Objectives tab's headings, instead of inside it (owner note 2026-10-24).
 - **Partners: Only climbers of my gender**: a switch in partner search, offered once you have set your gender, shows only climbers who stated the same one; anyone who has not is left out, and a failed check shows nobody rather than everyone. See `docs/features/partners.md`.

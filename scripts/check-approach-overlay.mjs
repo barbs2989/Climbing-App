@@ -18,7 +18,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { approachOptions, applyApproach, defaultApproachKey, APPROACH_OWNED_KEYS } from "../lib/approaches.js";
+import { approachOptions, applyApproach, defaultApproachKey, APPROACH_OWNED_KEYS, wholeLine } from "../lib/approaches.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const fails = [];
@@ -76,6 +76,15 @@ check(cv.bivy.map((c) => c.name).join() === "Sib north camp", "a linked route le
 check(c.gainFt === 5100 && c.waypoints[0].name === "S TH", "a via route must supply the way in");
 check(c.timing.summitTimeHrs === undefined && c.timing.totalHrs === undefined && c.timing.approachTimeHrs === 7.5, "a via route's own summit/total times time ITS finish and must be dropped");
 check(applyApproach(rv, vo, null) === rv, "with the via route not loaded nothing may be half-applied");
+// A VARIATION (Boving Roofs on the Southwest Rib): the parent's walk, but this route's OWN trip plan, and the whole line in climbing order.
+const sibItin = { ...sib, itinerary: { days: [{ note: "Climb Sib's 7 pitches" }] }, pitch_detail: [1, 2, 3, 4, 5, 6, 7].map((n) => ({ pitch: n, grade: "5." + n })) };
+const varV = { name: "via Sib", viaRouteId: "sib", viaPitches: { before: [1, 3], after: [6, 7] } };
+const rvar = { ...route, itinerary: { days: [{ note: "Own 8-pitch day" }] }, pitchDetail: [{ pitch: 1, grade: "5.2" }, { pitch: 2, grade: "5.10b" }, { pitch: 3, grade: "5.9" }], approachVariants: [varV] };
+const cvar = applyApproach(rvar, approachOptions(rvar)[0], sibItin);
+check(cvar.itinerary.days[0].note === "Own 8-pitch day" && cvar.waypoints[0].name === "S TH", "a variation must keep its OWN trip plan (the parent's narrates the parent's pitches) and still take the parent's walk");
+check(applyApproach({ ...rvar, approachVariants: [{ name: "via Sib", viaRouteId: "sib" }] }, approachOptions({ ...rvar, approachVariants: [{ name: "via Sib", viaRouteId: "sib" }] })[0], sibItin).itinerary.days[0].note === "Climb Sib's 7 pitches", "a plain via route (no viaPitches) still lends its trip plan");
+const wl = wholeLine(rvar, varV, sibItin);
+check(wl && wl.rows.map((r) => r.src + r.pitch).join() === "via1,via2,via3,own1,own2,own3,via6,via7" && wl.rows[7].n === 8, "the whole line must run parent 1–3, this route's 3, parent 6–7, numbered 1–8");
 
 // ── 2. wiring ────────────────────────────────────────────────────────────────────────────────
 const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
