@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Friends’ recent activity buttons in colour** (owner, 2026-10-24): on Crew › Friends, Kudos is amber, Message blue and Vouch green (a tint until given, solid once given) instead of three grey outlines.
 - **Partner cards read in white** (owner, 2026-10-24): on Find partners, a card's facts — level, location, distance, pace, *Usually free*, the bio, the catches/climbs/vouches chips and the *Full Profile & Vouches* button — are white (`C.text`) instead of grey; on a real climber's row the @handle/distance, the match % (now bold) and the pace are white. Only loading and "not enough info" notes stay grey.
 - **Bigger selector boxes**: Ranks' Overall / Near me / Friends / By area row is four full-width 46px boxes; the crag Grade/Stars/A–Z sort and All/Trad/Sport/Multipitch filter, the Groups sort, a group's topic filter and the list status filter grew to a 40–44px touch target with larger type. See `docs/features/ranks.md`.
 - **White text on blue boxes, app-wide**: every blue-tinted button, chip, badge and selected toggle (`C.blueBg` / `C.blueChip` / `C.blueDim` or a blue wash) used to print its label in the same blue; those labels are now white (`#fff`) — 189 styles across 36 files, including the shared `btnChip` and `onB`. The box keeps its blue fill and edge, so a selected chip still reads as selected. Blue text on a dark (non-blue) background is unchanged.
