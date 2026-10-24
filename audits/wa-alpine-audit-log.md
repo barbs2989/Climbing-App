@@ -34208,3 +34208,46 @@ key from the task prompt — no write attempted. The `routes?id=like.wa_%25&disc
 combination timed out (57014) on this project; worked around by bounding with `id=gt./id=lt.`
 instead of `like`, then filtering area_type client-side against a separate `areas` query — noting
 here in case a future run hits the same timeout.
+
+## Batch 453 (pass 7) — 2026-10-24
+
+Checked `wa_skookum_peak_twinsisters_scramble`, `wa_sky_mountain_s_route`, `wa_sloan_peak_corkscrew`,
+`wa_snowfield_peak_neve_glacier`, `wa_snowking_mountain_standard`, `wa_south_arete`,
+`wa_south_early_winter_spire_direct_east_buttress`, `wa_south_early_winter_spire_passenger`.
+1 fix, 0 flagged, 7 clean. SQL: `audits/sql/2026-10-24-batch-453.sql`.
+
+Fixed: `wa_skookum_peak_twinsisters_scramble.fa` claimed "Dallas Kloke and Dave Dixon, September
+1972 (first ascent of the peak)" for Skookum Peak. That 1972 ascent is real, but of a different
+summit: Washington's 2022 Committee on Geographic Names proposal for "Kloke Peak" (dnr.wa.gov)
+names Dallas Kloke and Dave Dixon as the September 1972 first-ascent party of a 6,480 ft Twin
+Sisters summit, and listsofjohn.com gives that same peak's prior unofficial name as "Hayden Peak".
+SummitPost's own Twin Sisters Range elevation list orders the chain North Twin Sister → South Twin
+Sister → Skookum Peak (6,616 ft) → Hayden Peak (6,480 ft) → Little Sister — Hayden/Kloke Peak is
+the next distinct summit south of Skookum, not Skookum itself. No source ties the Kloke/Dixon climb
+to Skookum, and none gives a first-ascent party for Skookum Peak itself, so the misattributed `fa`
+was cleared (not replaced with a guess) and the row's `corrections`/`data_quality.gaps` updated to
+record why and point a future pass away from re-adding it.
+
+Verified clean: `wa_sloan_peak_corkscrew`'s FA ("Harry Bedal & Nels Skaar, July 30, 1921") and
+7,835 ft elevation both confirmed exactly via Wikipedia and SummitPost. `wa_snowfield_peak_neve_glacier`'s
+FA ("William Degenhardt and Herbert Strandberg, August 1931") is attested by SummitPost (not
+independently cross-named elsewhere, but not contradicted); its 8,351 ft elevation matches
+Wikipedia, with the already-documented 8,347–8,351 ft source spread left as-is.
+`wa_snowking_mountain_standard`'s 7,433 ft elevation and stored coordinates (48.408385, -121.278165)
+match Wikipedia's figure and its 48°24'30"N 121°16'42"W almost exactly. `wa_south_arete`'s FA
+("Fred Beckey and Helmy Beckey, June 19, 1942") matches SummitPost/Wikipedia's "June 1942" credit
+to the Beckeys for this specific route (the spire's own first ascent was a separate 1937 party —
+not what this route's `fa` describes). `wa_south_early_winter_spire_direct_east_buttress`'s FA
+("Fred Beckey and Doug Leen, 1968") confirmed via SummitPost. `wa_south_early_winter_spire_passenger`'s
+FA ("Bryan Burdo, Pete Doorish, and Greg White, October 1991") and its 7 pitches / 900 ft (274 m)
+match Mountain Project's route page exactly; the AAC's conflicting "800 ft, 5.12a, August" figures
+were already noted in this row's own `corrections` field by a prior pass, so left as is.
+`wa_sky_mountain_s_route`'s 5,482 ft elevation matches SummitPost exactly.
+
+`last_processed_id` advances to `wa_south_early_winter_spire_passenger`. No `.env`/`.env.local`
+present at run start (fresh clone); all reads went directly against the REST API with the
+read-only anon key from the task prompt — no write attempted. The `id=like.wa_%25` combined with a
+`discipline=in.(...)` filter again hit the 57014 statement-timeout this project's notes already
+flag; worked around the same way, with `id=gt.`/`id=lt.` bounding plus a client-side join against
+`areas.area_type` for the peak-only scope filter. The proposed SQL was pre-flighted with
+`npm run check:sql` using the same read-only anon key (no write attempted or needed).
