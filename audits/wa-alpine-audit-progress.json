@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_southeast_mox_peak_se_rib",
+  "last_processed_id": "wa_spinnaker_peak_s_route",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -9055,6 +9055,25 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-10-24-batch-455.sql",
       "note": "Fixed wa_south_face_center.high_point_ft/waypoints[1].elev (7569/7611 -> 7560): same Concord Tower stale-elevation pattern batch 454 (same day) fixed on wa_south_face_3 and flagged as outstanding on this peak's other routes -- two independent prior passes (batch 102, batch 156) converged on ~7,560 ft via Mountain Project/SummitPost/mountain-forecast.com. Still outstanding on this peak: wa_the_cave_route, wa_around_the_cave_we_go, wa_up_in_arms, wa_concord_tower_north_face, and areas.wa_concord_tower.elevation_ft (all still 7569/7611) -- worth a human batch-fixing together. Fixed wa_south_headwall.gain_ft (5009 -> 6546): the stored value was below this row's own trailhead-to-summit net rise (5146 ft), which is impossible -- the row's own bivy entry ('Ingalls Creek basin camp' at 4800 ft, explicitly 'dropping roughly 1,400 ft' from Longs Pass at 6200 ft) confirms a real drop-and-reclimb profile, giving a true one-way cumulative gain of 1931+3900+715=6546 ft, derived entirely from the row's own waypoints/bivy data. Flagged for human review, not fixed: wa_south_headwall's FA ('Paul Myhre & Darrell Sorenson, 1966') and even the route name 'South Headwall' itself could not be corroborated in three separate web searches (Wikipedia, SummitPost, AAC publications, cascadeclimbers/turns-all-year trip reports on Mount Stuart's other south-side lines); nothing found contradicts it either, so left as-is. Verified clean: wa_south_gully_south_spur and wa_south_rib (Guye Peak, 5168 ft exact via Wikipedia/SummitPost); wa_south_twin_sister_north_ridge (South Twin Sister, 7004 ft exact via Wikipedia/PeakVisor); wa_southeast_face (Sharkfin Tower, 8120 ft exact via SummitPost/Mountaineers; its gain_ft of 4870 reconciles exactly against the trailhead's own stated 3,200-3,300 ft range); wa_southeast_mox_peak_se_rib (Southeast Mox/Hard Mox, 8504 ft + Beckey brothers June 1941 FA both confirmed via Wikipedia/SummitPost/AAC). wa_south_ridge_4 (Eldorado Peak's Main Peak, high_point_ft 8873 / waypoint 8868) sits within a genuine, already-known external source spread (Wikipedia 8872.9, SummitPost 8876, PeakVisor 8868, a 2024 resurvey 8873.3) -- not a data error, left alone; its gain_ft of 6800 also reconciles against its own waypoints/bivy chain (Eldorado camp 7600, Roush Creek Basin camp 6300, etc.)."
+    },
+    {
+      "batch_number": 456,
+      "date": "2026-10-24",
+      "route_ids": [
+        "wa_southwest_buttress",
+        "wa_spectre_peak_haunted_wall",
+        "wa_spectre_peak_south_route",
+        "wa_sperry_peak_east_face",
+        "wa_sperry_peak_upper_south_ridge",
+        "wa_spider_mountain_north_face",
+        "wa_spider_mountain_north_ridge",
+        "wa_spinnaker_peak_s_route"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 2,
+      "clean": 6,
+      "sql_file": null,
+      "note": "Haunted Wall (Spectre Peak): FA (Wallace/Layton, Aug 14 2006) and length (640m/2100ft) confirmed exactly via Northwest Mountain Journal's 'Pickets Get a Southern Facelift' and Wallace's own blog, but both call it a 'southwest buttress' route against this row's aspect:S/face:'South Face (center of face)' -- flagged, not fixed, no precise bearing found to justify a confident rewrite. Spider Mountain Southeast Gully/East Ridge: row's FA names 'Ralph Clough' in the 1938 Ptarmigan Club foursome -- SummitPost's own Spider Mountain page corroborates 'Ralph Clough' (matches row), but Wikipedia's Ptarmigan Traverse article independently gives 'Ray W. Clough' for the same four-person party -- sources conflict with EACH OTHER, not just the row, so left for human review rather than picked between. Spirited Away (Spectre Peak, South Ridge): FA (Boyce/Manning, July 2022) confirmed exactly via AAJ 2023; this row's length_m (732/2402ft) looked high against AAJ/FA-blog's externally-quoted '2000 ft', but reconciles against the row's OWN gear field (~1600-1800ft pitched + ~600ft simul-climbing = 2200-2400ft) -- not a new error, the external figure appears to count pitched footage only. Verified clean: wa_southwest_buttress (Dorado Needle, 8440ft exact via Wikipedia/SummitPost/WTA/Mountaineers), wa_sperry_peak_east_face (6120ft Sperry Peak elevation matches WTA/Mountaineers; FA Mike Preiss/M. Bunker Sept 2002 could not be corroborated or contradicted, left as unverified per no-guessing rule), wa_sperry_peak_upper_south_ridge (no FA claimed, correctly defers to standard route's approach), wa_spider_mountain_north_face (Kloke-Tindall Route FA Dallas Kloke/Reed Tindall 1972 found in no source either way, left unflagged; 8317ft matches Wikipedia against a known PeakVisor/SummitPost spread), wa_spinnaker_peak_s_route (5645ft confirmed via Mountaineers/WTA, no FA claimed). WebFetch returned getaddrinfo ENOTFOUND on every external host this run (alpenglow.org, summitpost.org, en.wikipedia.org) -- all findings rest on WebSearch snippets only."
     }
   ]
 }

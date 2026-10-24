@@ -34374,3 +34374,58 @@ then resolving `area_type` via small `id IN (...)` lookups (PK lookups stayed fa
 under 1s). The proposed SQL was pre-flighted with `npm run check:sql` (same anon key) — all 3 write
 targets across 5 statements confirmed to exist, no DELETE in this batch; final file is 3.4 KB,
 under the SQL Editor's ~4 KB paste-size soft limit.
+
+## 2026-10-24 — Pass 7, Batch 456
+
+Eight routes across 6 peaks (Dorado Needle, Spectre Peak ×2, Sperry Peak ×2, Spider Mountain ×2,
+Spinnaker Peak): Southwest Buttress; Haunted Wall + South Ridge "Spirited Away" (Spectre); East
+Face (2002) + Upper South Ridge (Sperry); North Face "Kloke-Tindall Route" + Southeast
+Gully/East Ridge (Spider); South Slopes Scramble (Spinnaker).
+
+**0 confirmed errors, 2 flagged for human review, 6 clean — no SQL file this batch.**
+
+- `wa_southwest_buttress` (Dorado Needle, 8,440 ft): confirmed exactly via
+  Wikipedia/SummitPost/WTA/Mountaineers, which all agree.
+- `wa_spectre_peak_haunted_wall`: FA (Wayne Wallace & Mike Layton, climbed Aug 14 2006) and
+  length (640 m = 2,100 ft) both confirmed via the Northwest Mountain Journal feature "The
+  Pickets Get a Southern Facelift" and Wallace's own blog — both put the climb at "2,100 feet"
+  on Aug 14 2006, matching this row almost to the foot. Flagged, not fixed: both of those same
+  sources call it a "southwest buttress" route, while the row stores `aspect: S` and
+  `face: "South Face (center of face)"`. Couldn't find a precise bearing in any source to
+  justify a confident S→SW rewrite (and the two directions describe adjacent, not contradictory,
+  faces), so left for a human to adjudicate rather than guessed.
+- `wa_spectre_peak_south_route` ("Spirited Away"): FA (Sam Boyce & Joe Manning, July 2022)
+  confirmed exactly via the AAJ 2023 publication. The row's own `data_quality` field already
+  notes the FA party's own trip report calling it 5.8/2,000 ft against AAJ's IV 5.9 — checked
+  that spread again directly and it's not a new finding. Also checked this row's `length_m`
+  (732 = 2,402 ft) against the externally-quoted "2,000 ft": it reconciles with the row's own
+  `gear` field ("~1,600-1,800 ft of pitched climbing" + "~600 ft" of simul-climbing = 2,200-2,400
+  ft) — the external "2,000 ft" figure appears to count pitched footage only, so not an error.
+- `wa_sperry_peak_east_face`: FA (Mike Preiss & M. Bunker, Sept 24-25 2002) could not be
+  corroborated OR contradicted in Wikipedia/SummitPost/AAC/outdoorproject searches — left as-is
+  per the no-guessing rule. Sperry Peak's 6,120 ft elevation matches WTA/Mountaineers exactly
+  (SummitPost's 6,140 ft is an already-known minor spread, not re-litigated).
+- `wa_sperry_peak_upper_south_ridge`: verified clean — no FA is claimed on this row, and its
+  approach/descent both correctly defer to the standard route's already-verified Headlee Pass
+  access.
+- `wa_spider_mountain_north_face` ("Kloke-Tindall Route"): FA (Dallas Kloke & Reed Tindall, 1972)
+  could not be corroborated or contradicted — no source found even mentions this named route,
+  let alone its FA, so left unflagged per the no-guessing rule. Spider Mountain's 8,317 ft
+  matches Wikipedia (PeakVisor's 8,286 ft and SummitPost's 8,280 ft are an already-known spread).
+- `wa_spider_mountain_north_ridge`: flagged for human review, not fixed. The row's FA names
+  "Ralph Clough" among the four-person Ptarmigan Club party credited with the peak's July 25,
+  1938 first ascent. SummitPost's own Spider Mountain page corroborates "Ralph Clough" verbatim
+  (matching this row) — but Wikipedia's separate Ptarmigan Traverse article independently names
+  the same four-person 1938 party with "Ray W. Clough" instead. The two sources disagree with
+  each other, not just with the row, so this isn't a case of one authoritative source outvoting
+  the DB — left for a human to run down (e.g. against Beckey's Cascade Alpine Guide) rather than
+  picked between.
+- `wa_spinnaker_peak_s_route`: 5,645 ft confirmed via Mountaineers/WTA; no FA is claimed (a
+  non-technical scramble).
+
+`last_processed_id` advances to `wa_spinnaker_peak_s_route`. WebFetch resolved no external
+hostname this run (`getaddrinfo ENOTFOUND` on alpenglow.org, summitpost.org, en.wikipedia.org
+alike) — every finding above rests on WebSearch result snippets only, cross-checked against this
+row's own internal fields (gear/pitch_detail/data_quality) where possible; nothing here needed a
+full-page fetch to resolve, but a future run hitting a genuinely ambiguous case should retry
+WebFetch rather than assume it's permanently unavailable.
