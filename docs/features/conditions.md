@@ -60,3 +60,5 @@
 - No published fog/whiteout standard for model visibility in mountains; the card never says "whiteout" (PR #2352).
 - Gauges may be on another stream; no wadeability verdict is given (`lib/streams.js`).
 - #2406 notes a full local build was killed for low memory; CI was the full run.
+
+The forecast carries no "read it yourself" or "sources can disagree" caveats (owner, 2026-10-15 #2425 and 2026-10-24): the only footer kept is the alpine hour-by-hour's measured station temperature error.
