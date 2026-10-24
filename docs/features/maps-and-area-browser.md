@@ -68,6 +68,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   area holds no climbs itself (areas hold sub-areas OR climbs — Mountain Project's rule, and `trg_areas_leaf_xor`), and never on a country.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.
+  *Save search* writes the account's `saved_searches` (see `docs/features/logbook-crews-home.md`); a saved one reopens the finder through `jumpToFinderReq` with its `initial` words and filters.
   The **Filters** sheet is a full-height screen (since 2026-10-21; it was an 88vh bottom sheet, which on iOS overflowed off the
   top and hid the title, ✕ and Discipline row): title row clears the notch, the list scrolls, and **Clear all / Show N routes**
   are pinned at the bottom. N is the DRAFT's count (`finderArgs()` builds the RPC args for both the draft and the applied query, so
