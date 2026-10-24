@@ -213,7 +213,7 @@ npm run audit:prose-citations   # does rendered prose still name a third party a
 npm run audit:misplaced-prose # ...is ANY rendered string the pipeline talking, NAMING A SOURCE (every state + area blurbs), or a FIRST ASCENT that argues?
 npm run audit:shouted-prose # does any rendered string SHOUT in ALL CAPS? (enrich:apply refuses it too)
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
-npm run audit:mountaineering-rule # mountaineering is ONLY a walk-up: no mountaineering row carries a 5.x grade (alpine instead); trigger 0280 + catOf enforce it
+npm run audit:mountaineering-rule # mountaineering is ONLY a walk-up and a scramble is never roped: no mountaineering or scrambling row carries a 5.x grade (alpine instead), and every disciplines list names its own primary; trigger 0280/0366 + catOf/rDiscs enforce it
 npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
 npm run audit:multi-approach # a climb reached MORE THAN ONE WAY that the page cannot switch between yet
 npm run enrich:next-batch  # next unpitched routes still needing a climbing_route

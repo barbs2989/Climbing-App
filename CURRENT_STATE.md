@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **A 5.x route is never called a scramble**: Monte Cristo's route is now *North Col* and shows Alpine, not "Scrambling 5.6". Route badges and the discipline filters lead with the route's own primary (`rDiscs`), a scramble with a 5.x grade is alpine (`catOf`, trigger 0366), and 123 peak routes whose discipline list contradicted their primary were repaired (`audit:mountaineering-rule` now checks both).
 - **Adding a route photo shows one box**: on the Photos tab, *+ Add photo* opens a sheet whose only box is *Choose from camera or library*; the *Describe this photo (optional)* text box that appeared under each picked photo is gone, and picked photos show as a row of thumbnails above *Add N photos*.
 - **Notifications: nothing covers a climber's photo**: the small crew/shield badge pinned on the corner of the avatar in the bell's rows is gone. The sentence beside the photo already says what happened. See `docs/features/logbook-crews-home.md`.
 - **Saved headings sit above their boxes**: on Logbook › Saved, *My itineraries* and the other four section headings now sit above their box, like the Objectives tab's headings, instead of inside it (owner note 2026-10-24).
