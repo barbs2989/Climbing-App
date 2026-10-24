@@ -45,6 +45,7 @@ npm run check:jsx-comments # a comment in JSX children position renders to the U
 npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay readable (in build)
 npm run check:script-roots # no script reads the app files of somebody ELSE's worktree (in build)
 npm run check:dup-attrs # a declaration written TWICE: the later wins, the earlier is dead (in build)
+npm run check:no-module-scope-core-reads # a component core imports BACK must not read core at module scope — the bundle throws before React mounts (in build)
 npm run check:bottom-panels # a fixed panel at the bottom must RESERVE the space it covers (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
