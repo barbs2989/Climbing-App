@@ -472,11 +472,8 @@ function conditionalFor(route,disc){
   return items.length?{items:items,quote:ev.quote}:null;
 }
 const DISC_HAZ={sport:["Loose rock","Runout","Warms up / sun-affected"],trad:["Rockfall","Loose rock","Runout","Serious exposure","Warms up / sun-affected"],bouldering:["Bad landing zone","Loose rock","Warms up / sun-affected"],aid:["Rockfall","Loose rock","Runout","Serious exposure"],ice:["Avalanche terrain","Rockfall","Serious exposure"],mixed:["Rockfall","Loose rock","Avalanche terrain","Serious exposure"],alpine:["Rockfall","Loose rock","Lightning / storms","Avalanche terrain","Crevasse hazard","Cornices","Serious exposure","Complex route-finding","River / creek crossing"],mountaineering:["Rockfall","Lightning / storms","Avalanche terrain","Crevasse hazard","Cornices","Serious exposure","Complex route-finding","River / creek crossing"],hiking:["Avalanche terrain","River / creek crossing","Complex route-finding","Serious exposure"],scrambling:["Rockfall","Loose rock","Serious exposure"]};
-/* The Protection tile is a half-width column at 13px, so it needs a label, not a paragraph. Researched racks are written as full sentences ("Cams: doubles from small sizes through #3 — trip reports call for…"), which would dump the whole rack into that column. Keep only compact, rack-shaped entries and fall back to the generic label rather than overflowing. The full rack still renders in its own section on the Plan tab. */
 /* Judge each rack entry on its own and drop the negated or conditional ones. A researched rack says things like "ice screws are rarely used here and are not worth carrying" or "protected with rock gear, not screws"; read as a flat word list, those advertise exactly the gear the route says to leave behind. Anything matching a rack against keywords must go through this first. */
 const RACK_NEG=/\bnot worth\b|\bnot needed\b|\bnot necessary\b|\bnot required\b|\bno need\b|\bunnecessary\b|\brarely\b|\bseldom\b|\bnever\b|\bdon'?t\b|\bdo not\b|,\s*not\b|\bnot\s+(?:the\s+)?(?:screws|cams|nuts|pickets|pins|bolts)\b/i;
-/* Conditional phrasing ("only if you plan to belay") is not a negation — it is real gear you may not need. The compact tile leaves it out; the packing checklist keeps it, because a checklist should over-include rather than send someone up short. */
-const RACK_COND=/\bonly if\b|\bunless\b|\bif you\b|\boptional\b/i;
 /* Does this text ASSERT the agency, or disclaim it? Scans every occurrence and accepts
    the keyword only if at least one is not sitting behind a negation in the ~60 chars
    before it. Per-occurrence, not per-string, for the same reason rackMentions is:
@@ -501,34 +498,11 @@ const PERMIT_NEG=/\b(?:not|no|outside|other than|isn'?t|aren'?t|rather than|inst
    108 to shrink over time; suppression is right whether the mention is peripheral or wrong. */
 const PERMIT_PERIPHERAL=/\b(?:crossing into|crosses into|cross into|partly (?:in|within|inside)|partially (?:in|within)|some (?:upper )?routes?|upper routes?|adjacent to|borders?(?: on)?|boundary (?:of|with)|near(?:by)?|approach (?:partly )?crosses|just outside|edge of)\b[^.;]{0,60}$/i;
 function _pmSays(hay,re){if(!hay)return false;re.lastIndex=0;var m;while((m=re.exec(hay))!==null){var before=hay.slice(Math.max(0,m.index-70),m.index);if(!PERMIT_NEG.test(before)&&!PERMIT_PERIPHERAL.test(before))return true;if(m.index===re.lastIndex)re.lastIndex++;}return false;}
-function rackAffirmed(rack){var a=Array.isArray(rack)?rack:(rack?[String(rack)]:[]);return a.filter(function(g){return typeof g==="string"&&!RACK_NEG.test(g)&&!RACK_COND.test(g);});}
 /* Per-OCCURRENCE negation for keyword matching. Dropping a whole entry loses affirmative gear that shares a sentence with a negation — "belays are often pins rather than screws" genuinely calls for pins. A category counts as present if any single mention of it is not negated in its immediate context. */
 function rackMentions(rack,kw){var a=Array.isArray(rack)?rack:(rack?[String(rack)]:[]);
   for(var i=0;i<a.length;i++){var e=a[i];if(typeof e!=="string")continue;var low=e.toLowerCase();
     for(var k=0;k<kw.length;k++){var p=low.indexOf(kw[k]);while(p>=0){if(!RACK_NEG.test(low.slice(Math.max(0,p-45),p+kw[k].length+30)))return true;p=low.indexOf(kw[k],p+1);}}}
   return false;}
-function rackSummary(rack){
-  var a=Array.isArray(rack)?rack:(rack?[String(rack)]:[]);var strs=a.filter(function(g){return typeof g==="string";});if(!strs.length)return "Gear-protected";
-  var NEG=RACK_NEG;
-  var low=rackAffirmed(rack).join(" · ").toLowerCase();
-  /* Derive a compact label from prose so a researched rack still says something concrete. Only sizes written as "#3" or "to 3 inches" count — never a bare number, which would read pitch or grade numbers as cam sizes. */
-  var parts=[],nums=[],m,re=/#(\d+(?:\.\d+)?)/g;while((m=re.exec(low)))nums.push(parseFloat(m[1]));
-  re=/\bto (?:a )?(\d+(?:\.\d+)?)\s*(?:in\b|inch)/g;while((m=re.exec(low)))nums.push(parseFloat(m[1]));
-  if(/\bcams?\b|camalot|friend/.test(low)){var top=nums.length?Math.max.apply(null,nums):null;parts.push(top!=null?"Cams to #"+top:"Cams");}
-  if(/\bnuts?\b|stopper|\bwires?\b/.test(low))parts.push("nuts");
-  if(/offset/.test(low))parts.push("offsets");
-  if(/piton|knifeblade|\bpins?\b|\bangles?\b/.test(low))parts.push("pins");
-  if(/\bscrews?\b/.test(low))parts.push("screws");
-  if(/picket/.test(low))parts.push("pickets");
-  var dm=low.match(/(\d+\s*(?:-|–|to)\s*\d+|\d+)\s*\+?\s*(?:quickdraws|draws)/);
-  if(dm)parts.push(dm[1].replace(/\s*(?:to|–)\s*/,"-")+" draws");else if(/quickdraw|\bdraws\b/.test(low))parts.push("draws");
-  if(/two \d*\s*m?\s*ropes|two ropes|double[- ]rope|half or twin|twin ropes/.test(low))parts.push("2 ropes");
-  var s=parts.join(" · ");
-  /* Nothing derivable — fall back to whole entries short enough to sit in the column, then to the generic label. */
-  if(!s)s=strs.filter(function(g){return !NEG.test(g)&&g.length<=60&&/cam|rack|nut|stopper|draw|hex|tricam|piece|gear/i.test(g);}).join(", ");
-  if(!s)return "Gear-protected";
-  return s.length>64?s.slice(0,63).replace(/[\s,;:·—-]+$/,"")+"…":s;
-}
 function gearReadout(route,owners){
   /* The per-discipline defaults assume snow and glacier terrain for everything filed as
      alpine or mountaineering, which put an ice axe and crampons on the packing list for dry
@@ -613,7 +587,7 @@ function rackLines(sr){
    `activity` is the merged list (seed + your reports + every other climber's DB rows); route.activity
    alone is the seed, so a real climber's gear beta never reached the box that read only that. */
 function RackBetaList({activity,route,onSeeReports}){const _acts=activity||(route&&route.activity)||[];const _gbX=_acts.filter(a=>a&&a.gearBeta).map(a=>({who:a.user,avatar:a.avatar,date:a.date,note:a.gearBeta}));const beta=_gbX.concat((route&&route.gearBeta&&route.gearBeta.length)?route.gearBeta:(_acts.filter(a=>a&&a.text&&/(\bcams?\b|\brack\b|doubles|#\d|\bnuts?\b|draws|quickdraw|\bropes?\b|screws|pickets|\bset of\b)/i.test(a.text)).slice(0,3).map(a=>({who:a.user,avatar:a.avatar,date:a.date,note:a.text}))));if(!beta.length)return null;return <div style={{marginTop:11,paddingTop:10,borderTop:`1px solid ${C.borderLight}`}}><div style={{...SUB_LABEL,marginBottom:7}}>Rack beta</div>{beta.map((b,i)=><div key={i} style={{display:"flex",gap:8,marginBottom:8}}>{b.avatar?<Av src={b.avatar} size={24}/>:null}<div style={{flex:1,minWidth:0}}><div style={{fontSize:11.5,color:C.textMuted,marginBottom:1}}>{(b.who||"A climber")+(b.date?" · "+b.date:"")}</div><div style={{fontSize:12.5,color:C.text,lineHeight:1.5,fontStyle:"italic"}}>{"\""+b.note+"\""}</div></div></div>)}{onSeeReports?<button onClick={onSeeReports} style={{marginTop:2,padding:"7px 12px",background:C.surface,border:`1px solid ${C.border}`,borderRadius:9,color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer"}}>Reports →</button>:null}</div>;}
-function RouteRackBox({route,activity,onEditRack,rack,onSeeReports,rackGeneric}){const items=gearReadout(route,[]);const cams=(route&&route.cams)||[];const _rackLines=rackLines(route.slingRack);const lines=[];/* draws/screws/ropeLen are contributable in SuggestFix and were rendered NOWHERE — a climber could correct the quickdraw count, the screw count or the rope length, watch it pass the 3-agree gate, and never see it on the route. They belong on the same list as the alpine draws and the rope that were already here. ropeLen is the contributed spelling ("60 m"); ropeLengthM is the enrichment column, and they can disagree because NOTHING mirrors one onto the other. An agreed correction wins (_ropeEdited); absent one the enrichment number is the better value, since it is a number rather than free text. Never print two rope lines. */if(route.draws)lines.push(route.draws+" quickdraws");if(route.screws)lines.push(route.screws+" ice screws");_rackLines.forEach(function(rl){lines.push(rl.label+" — "+rl.text);});if(route.alpineDraws)lines.push(route.alpineDraws+" alpine draws");var _ropeContrib=route.ropeLen?fmtRopeLen(route.ropeLen):"";var _ropeLen=(_ropeEdited(route)&&_ropeContrib)?_ropeContrib:(route.ropeLengthM?(route.ropeLengthM+"m"):_ropeContrib);if(route.ropeType||_ropeLen)lines.push("Rope — "+[route.ropeType,_ropeLen].filter(Boolean).join(" "));/* ropeNote used to be appended here in brackets, which meant two things: a note on a route with no ropeType and no length rendered NOWHERE (63 WA routes), and the 381 that did render put a whole paragraph inside a bullet — median 186 chars, max 716. It has its own box below now. *//* No route-level anchor line: `anchorType` was deliberately removed from SS ("anchors are per-pitch
+function RouteRackBox({route,activity,onEditRack,rack,onSeeReports,rackGeneric}){const items=gearReadout(route,[]);const cams=(route&&route.cams)||[];const _rackLines=rackLines(route.slingRack);const lines=[];/* draws/screws/ropeLen are contributable in SuggestFix and were rendered NOWHERE — a climber could correct the quickdraw count, the screw count or the rope length, watch it pass the 3-agree gate, and never see it on the route. They belong on the same list as the alpine draws and the rope that were already here. ropeLen is the contributed spelling ("60 m"); ropeLengthM is the enrichment column, and they can disagree because NOTHING mirrors one onto the other. An agreed correction wins (_ropeEdited); absent one the enrichment number is the better value, since it is a number rather than free text. Never print two rope lines. */if(route.draws)lines.push(route.draws+" quickdraws");/* The bolt count was carried only by the PROTECTION section that used to sit above this card on Plan, which repeated the rest of this list; it lives here now. */if(+route.bolts>0)lines.push(Math.round(+route.bolts)+" bolts"+(route.draws?"":" — bring "+Math.round(+route.bolts)+"+ quickdraws"));if(route.screws)lines.push(route.screws+" ice screws");_rackLines.forEach(function(rl){lines.push(rl.label+" — "+rl.text);});if(route.alpineDraws)lines.push(route.alpineDraws+" alpine draws");var _ropeContrib=route.ropeLen?fmtRopeLen(route.ropeLen):"";var _ropeLen=(_ropeEdited(route)&&_ropeContrib)?_ropeContrib:(route.ropeLengthM?(route.ropeLengthM+"m"):_ropeContrib);if(route.ropeType||_ropeLen)lines.push("Rope — "+[route.ropeType,_ropeLen].filter(Boolean).join(" "));/* ropeNote used to be appended here in brackets, which meant two things: a note on a route with no ropeType and no length rendered NOWHERE (63 WA routes), and the 381 that did render put a whole paragraph inside a bullet — median 186 chars, max 716. It has its own box below now. *//* No route-level anchor line: `anchorType` was deliberately removed from SS ("anchors are per-pitch
    now"), `routes` has no anchor_type column, and no seed route carries the key — so this read could
    never fire. The live anchor records are `station.anchorType` on a bailout and `wp.anchorType` on a
    waypoint, both of which render elsewhere. */if(route.ascender&&route.ascender!=="Not needed")lines.push("Ascender — "+route.ascender);const specificItems=(rack&&rack.length)?rack:items.map(x=>x.label);const allRack=lines.concat(cams.map(camFmt)).concat(specificItems);if(!allRack.length&&!onEditRack)return null;return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:3,gap:10}}><CardHead>RACK</CardHead>{onEditRack?<EditIconButton onClick={()=>onEditRack(allRack.join("\n"))} title={allRack.length?"Suggest a rack correction":"Add the rack for this route"}/>:null}</div><div style={{fontSize:12,color:C.textMuted,marginBottom:10,lineHeight:1.45}}>{rackGeneric?"Standard rack for this discipline — nobody has recorded what this route itself takes, so treat it as a starting point and check it in the field":(route&&route.gearConfidence==="inferred"?"Protection and technical gear — inferred from this route's own description, not confirmed against trip reports":"Protection and technical gear")}.</div>{allRack.length?<div style={{display:"flex",flexDirection:"column",gap:5}}>{allRack.map((gi,i)=><div key={i} style={{display:"flex",gap:8,fontSize:12.5,color:C.text,lineHeight:1.45}}><span style={{color:C.blue,flexShrink:0}}>•</span><span>{gi}</span></div>)}</div>:<div style={{fontSize:12.5,color:C.textMuted,lineHeight:1.5}}>No rack listed yet — climbed it? Add what you brought.</div>}<RackBetaList activity={activity} route={route} onSeeReports={onSeeReports}/></div>;}
@@ -3990,13 +3964,6 @@ function strapTrim(s){return String(s||"").replace(/\s*·\s*$/,"").replace(/^\s*
    list of absences rather than a climb. Same words, same fix link, one thin rule and muted
    11.5px text. The button keeps a 30px tap target via padding, since shrinking type must
    not shrink the touch area. */
-/* PROTECTION. This was the left half of a two-column card on Overview whose right half was
-   "Anchor" — and that half could only ever print "—" for a DB-backed route: there is no
-   `routes.anchor` column (confirmed against the live schema) and `dbRouteToCamel` maps no
-   such key, so a value existed for seed routes alone. Per-pitch anchors are already in
-   PITCH-BY-PITCH, which is the only place they can be specific enough to act on. What is
-   left is one fact — what protects this line — so it reads as a section on Plan next to the
-   rack it implies, rather than as half of a cramped box on Overview. */
 /* The one thing worth keeping out of the DATA CONFIDENCE box. That box graded every route
    ("Not reviewed", "no community confirmations yet") whether or not it had anything to say,
    which is what made it noise. On 19 routes `verif` says something specific and worth
@@ -4021,13 +3988,6 @@ function VerifNote({route}){
   if(!st||st==="verified")return null;
   const note=st==="community"?"Community-reported":"Unverified";
   return <div style={{margin:ROUTE_GAP+"px 0",paddingLeft:9,borderLeft:"2px solid "+C.amber+"66"}}><span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.55}}><b style={{color:C.amber,fontWeight:700}}>{note}</b></span></div>;
-}
-function ProtectionCard({route,myReports,onEdit}){
-  const hasCams=route.cams&&route.cams.length;const hasRack=route.rack&&route.rack.length;
-  if(!hasCams&&!route.bolts&&!hasRack)return isPitched(route)?<div style={{marginBottom:ROUTE_GAP}}><SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit protection information"/>:null}>PROTECTION</SL><GapNote what="No protection information" why="Nothing says whether this is bolted, takes gear, or what sizes to bring." cta="Add the protection" onFix={onEdit}/></div>:null;
-  const pro=hasCams?("Cams "+route.cams[0]+"–"+route.cams[route.cams.length-1]):(route.bolts?(route.bolts+" bolts · "+route.bolts+"+ quickdraws"):(hasRack?rackSummary(route.rack):"Gear-protected"));
-  const rc=(myReports||[]).length;
-  return <div style={{marginBottom:ROUTE_GAP}}><SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit protection information"/>:null}>PROTECTION</SL><div style={{background:C.card,border:"1px solid "+C.border,borderRadius:11,padding:"11px 13px"}}><div style={{fontSize:14,fontWeight:700,color:C.text,lineHeight:1.45}}>{pro}</div><div style={{fontSize:11,color:C.textMuted,marginTop:8,paddingTop:8,borderTop:"1px solid "+C.borderLight,fontWeight:600}}>{rc?("Confirmed on "+rc+" logged ascent"+(rc>1?"s":"")):"No ascents logged here yet"}</div></div></div>;
 }
 /* AN EMPTY SECTION IS STILL A SECTION (owner, 2026-10-15). A bare GapNote, one muted line with no
    heading, is what a missing pitch breakdown and missing rappels used to be, and on Castleton Tower's
@@ -4307,11 +4267,13 @@ const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+
            being shown; with that card at the top of the tab such a route would render the APPROACH
            heading over an empty box. It takes the GapNote above instead, which is true — the trailhead
            is on screen and the walk from it genuinely is not written down. */}{/* TURNAROUND and BAILOUT were removed from the app entirely (owner, 2026-10-07). The `turnaround` and
-    `bail` columns stay in the database, unread. */}{/* Up, then down. PROTECTION and PITCH-BY-PITCH sit after the approach and before the
-    descent; the rappels follow the descent prose immediately below. All three used to be on
-    Overview, which left Plan describing how to reach the base and how to walk off but
-    nothing about the climbing in between. */}
-{!cragOnly?<Capped><ProtectionCard route={route} myReports={myReports} onEdit={()=>{openFix("rack");}}/></Capped>:null}
+    `bail` columns stay in the database, unread. */}{/* Up, then down. PITCH-BY-PITCH sits after the approach and before the descent; the rappels
+    follow the descent prose immediately below. There is no PROTECTION section here any more
+    (owner note, 2026-10-23: "remove protection and just move that info to the rack section"):
+    its one line — a cam range, a rack summary, or "N bolts · N+ quickdraws" — repeated the RACK
+    card further down this tab, which lists the same cams and rack in full. The bolt count was the
+    one fact only it carried, and it is a line in RACK now. Mountain Project prints one protection
+    box per route, not two. */}
 {/* OVERVIEW, THEN DETAIL. CLIMBING ROUTE (the climb at a glance, section by section) comes
     BEFORE ROUTE BREAKDOWN (every pitch and leg), the order a climber reads a route in and the
     order guidebooks print it: the line as a whole, then pitch by pitch (owner, 2026-10-22). It
@@ -4391,8 +4353,8 @@ const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+
     writing the description could never clear the note, however many people answered it. The
     card above reads overview||desc and BETA is a separate section further down the page, so
     the two are different claims; the fix is to open the field the card actually reads. */}
-      {(route.overview||route.desc)?null:<GapNote what="No route description yet" why="Nobody has written up what this line actually climbs or how it goes." cta="Write the description" onFix={()=>{openFix("overview");}}/>}{route.face?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 14px",marginBottom:12}}><div style={{...SUB_LABEL,marginBottom:3}}>FACE / WHERE ON THE PEAK</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.5}}>{route.face}</div></div>:null}{cragOnly?planBody():null}{/* The Protection/Anchor card lived here; it is now <Capped><ProtectionCard/></Capped> on Plan, minus the
-        Anchor column. See the note on that component for why the Anchor half was dead. */}{rkFlagged.length?<div {...clickable(()=>setTab("safety"))} style={{display:"flex",alignItems:"center",gap:9,background:C.amberBg,border:`1px solid ${C.amber}`,borderRadius:11,padding:"10px 13px",marginBottom:13,cursor:"pointer"}}><span style={{flexShrink:0}}><ActionIcon name="alert" size={17} color={C.amber}/></span><div style={{flex:1}}><div style={{fontSize:12.5,fontWeight:700,color:C.amber}}>Climbers are flagging hazards not in the official info</div><div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:2}}>{rkFlagged.slice(0,3).map(h=>h.label+" ("+h.count+" reports)").join(", ")+" — tap to open Safety."}</div></div><span style={{color:C.amber,fontSize:16,flexShrink:0}}>›</span></div>:null}
+      {(route.overview||route.desc)?null:<GapNote what="No route description yet" why="Nobody has written up what this line actually climbs or how it goes." cta="Write the description" onFix={()=>{openFix("overview");}}/>}{route.face?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 14px",marginBottom:12}}><div style={{...SUB_LABEL,marginBottom:3}}>FACE / WHERE ON THE PEAK</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.5}}>{route.face}</div></div>:null}{cragOnly?planBody():null}{/* The Protection/Anchor card lived here. It moved to Plan without the Anchor half (no
+        `routes.anchor` column existed then), and was removed there on 2026-10-23: the RACK card says it all. */}{rkFlagged.length?<div {...clickable(()=>setTab("safety"))} style={{display:"flex",alignItems:"center",gap:9,background:C.amberBg,border:`1px solid ${C.amber}`,borderRadius:11,padding:"10px 13px",marginBottom:13,cursor:"pointer"}}><span style={{flexShrink:0}}><ActionIcon name="alert" size={17} color={C.amber}/></span><div style={{flex:1}}><div style={{fontSize:12.5,fontWeight:700,color:C.amber}}>Climbers are flagging hazards not in the official info</div><div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:2}}>{rkFlagged.slice(0,3).map(h=>h.label+" ("+h.count+" reports)").join(", ")+" — tap to open Safety."}</div></div><span style={{color:C.amber,fontSize:16,flexShrink:0}}>›</span></div>:null}
         {!cragOnly?techStatsEl:null}<VerifNote route={route}/>{_rdCx&&_rdCx.levels?<ConfidenceLegend/>:null}{route._dbAreaReadFailed&&!route._dbArea?<div style={{fontSize:12.5,color:C.textMuted,lineHeight:1.6,marginBottom:8}}>Couldn’t load this climb’s area — the peak, range and walk-in are missing until the connection returns.</div>:null}<Capped><PeakMetadataPanel route={enrichRoute(route)} C={C} ActionIcon={ActionIcon}/></Capped>{/* DATA CONFIDENCE (ProvenancePanel) and DATA QUALITY (DataQualityPanel, mounted from
         ClimbMatch.jsx) both sat on Overview and both answered "how complete/trusted is this
         route's data" — two boxes for one question, ahead of the route itself. Gaps are now
