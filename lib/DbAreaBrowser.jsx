@@ -208,7 +208,7 @@ function StatePicker({ onPick, C }) {
             <SL C={C}>Pick a country</SL>
             {lc ? <div style={{ color: C.textMuted, fontSize: 13 }}>Loading countries…</div>
               : ec && !(countries && countries.length) ? <div style={{ color: C.red, fontSize: 12.5 }}>{"Couldn’t load countries — the " + noun + "s below are every one we have."}</div>
-              : <div role="radiogroup" aria-label="Country" style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>{(countries || []).map(c => { const on = country === c.id; return <button key={c.id} role="radio" aria-checked={on} onClick={() => setCountryId(on ? "" : c.id)} style={{ padding: "9px 14px", borderRadius: 999, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.card, color: on ? C.blue : C.text, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>{c.name}{c.route_count != null ? <span style={{ color: on ? C.blue : C.textMuted, fontWeight: 600 }}>{" · " + c.route_count.toLocaleString()}</span> : null}</button>; })}</div>}
+              : <div role="radiogroup" aria-label="Country" style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>{(countries || []).map(c => { const on = country === c.id; return <button key={c.id} role="radio" aria-checked={on} onClick={() => setCountryId(on ? "" : c.id)} style={{ padding: "9px 14px", borderRadius: 999, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.card, color: on ? "#fff" : C.text, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>{c.name}{c.route_count != null ? <span style={{ color: on ? C.blue : C.textMuted, fontWeight: 600 }}>{" · " + c.route_count.toLocaleString()}</span> : null}</button>; })}</div>}
           </div>
         )}
         <SL C={C}>{`Pick a ${noun}`}</SL>
@@ -643,7 +643,7 @@ function PartnersHereCard({ area, C, uid, myListings, onListMe, onFindPartnersIn
       {on && rows.length && PartnerRow ? <div style={{ marginTop: 6 }}>{rows.map((p) => <PartnerRow key={p.id} p={p} onOpen={onViewProfile} />)}</div> : null}
       {on && (count > 0 || rows.length) ? <button onClick={openAll} style={{ ...BTN_LINK(C), padding: "6px 0 0", fontSize: 12.5 }}>{"See all at " + area.name + " →"}</button> : null}
       {onStartCrew || onCrewsHere ? <div style={{ display: "flex", gap: 8, marginTop: 10, paddingTop: 10, borderTop: "1px solid " + C.border }}>
-        {onStartCrew ? <button onClick={() => onStartCrew(area)} style={{ ...BTN, flex: 1, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue }}>Start a crew here</button> : null}
+        {onStartCrew ? <button onClick={() => onStartCrew(area)} style={{ ...BTN, flex: 1, border: "1px solid " + C.blueDim, background: C.blueBg, color: "#fff" }}>Start a crew here</button> : null}
         {onCrewsHere ? <button onClick={() => onCrewsHere(area)} style={{ ...BTN, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>{"Crews here" + (crewN ? " · " + crewN : "")}</button> : null}
       </div> : null}
     </div>
@@ -765,7 +765,7 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
       {chartable ? <ClimbsChart stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={DISCIPLINES.map(d => d[0]).filter(Boolean)} onDisc={onFinder}><GradeSpread stats={stats.data} C={C} /></ClimbsChart> : null}
 
       {area.route_count > 0 ? (
-        <button onClick={onFinder} style={{ ...BTN_LG, width: "100%", marginBottom: 8, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
+        <button onClick={onFinder} style={{ ...BTN_LG, width: "100%", marginBottom: 8, border: "1px solid " + C.blue, background: C.blueBg, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
           {"Route finder"}<span style={{ fontSize: 16 }}>{"→"}</span>
         </button>
       ) : null}
@@ -784,7 +784,7 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
           somewhere you can actually park (check:area-surfaces reads this gate). */}
       {["crag", "peak", "wall"].includes(area.area_type) ? <AreaGettingThere area={area} C={C} onEdit={editOn} /> : null}
       {PARTNER_CARD_TYPES.includes(area.area_type) ? <PartnersHereCard area={area} C={C} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} PartnerRow={PartnerRow} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} /> : null}
-      <button onClick={onAllAreas} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, marginBottom: 14 }}>All areas</button>
+      <button onClick={onAllAreas} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.blue, background: C.blueBg, color: "#fff", marginBottom: 14 }}>All areas</button>
       {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} endRef={listEndRef} /> : null}
 
       {/* Sits directly above the route rows it summarises, so the page reads: this is the
@@ -1110,11 +1110,11 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   const customLists = (userLists || []).filter(l => l.id !== "ul_obj");
   const isSaved = id => (wishlist || []).includes(id) || customLists.some(l => inList(l, id));
 
-  const rowBtn = on => ({ ...BTN_LG, flex: 1, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.text });
-  const chip = (label, on, fn) => <button key={label} onClick={fn} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
+  const rowBtn = on => ({ ...BTN_LG, flex: 1, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.text });
+  const chip = (label, on, fn) => <button key={label} onClick={fn} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
   const lab = s => <SL C={C}>{s}</SL>;
 
-  const savePill = on => ({ ...CHIP, flexShrink: 0, padding: "5px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub });
+  const savePill = on => ({ ...CHIP, flexShrink: 0, padding: "5px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub });
   const nRes = total != null ? total : all.length;
 
   return (
@@ -1139,7 +1139,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
       </div>
       {afChips.length ? (
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", marginBottom: 8 }}>
-          {afChips.map(c => <button key={c.k} onClick={c.clear} aria-label={"Remove filter: " + c.label} style={{ ...CHIP, display: "inline-flex", alignItems: "center", gap: 5, padding: "7px 10px 7px 12px", border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue }}>{c.label}<span aria-hidden="true" style={POP_CHIP_X}>✕</span></button>)}
+          {afChips.map(c => <button key={c.k} onClick={c.clear} aria-label={"Remove filter: " + c.label} style={{ ...CHIP, display: "inline-flex", alignItems: "center", gap: 5, padding: "7px 10px 7px 12px", border: "1px solid " + C.blueDim, background: C.blueBg, color: "#fff" }}>{c.label}<span aria-hidden="true" style={POP_CHIP_X}>✕</span></button>)}
           <button onClick={() => setAf(DEF)} style={{ ...BTN_LINK(C), padding: "7px 8px", color: C.textMuted, textDecoration: "underline" }}>Clear all</button>
         </div>
       ) : null}
@@ -1215,7 +1215,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
           ) : null}
           <div style={{ display: "flex", gap: 6, alignItems: "stretch" }}>
             <RouteRow r={r} onOpen={onOpen} C={C} areaName={GROUPED_SORTS[af.sortBy] ? null : wall} />
-            {onToggleWish ? <button onClick={() => setSaveFor({ ...r, wall })} aria-haspopup="dialog" aria-label={"Save " + r.name + (saved ? ", saved" : "")} style={{ ...CHIP, flexShrink: 0, width: 44, marginBottom: 8, padding: 0, fontSize: 17, cursor: "pointer", border: "1px solid " + (saved ? C.blue : C.border), background: saved ? C.blueBg : C.card, color: saved ? C.blue : C.textSub }}><span aria-hidden="true">{saved ? "★" : "☆"}</span></button> : null}
+            {onToggleWish ? <button onClick={() => setSaveFor({ ...r, wall })} aria-haspopup="dialog" aria-label={"Save " + r.name + (saved ? ", saved" : "")} style={{ ...CHIP, flexShrink: 0, width: 44, marginBottom: 8, padding: 0, fontSize: 17, cursor: "pointer", border: "1px solid " + (saved ? C.blue : C.border), background: saved ? C.blueBg : C.card, color: saved ? "#fff" : C.textSub }}><span aria-hidden="true">{saved ? "★" : "☆"}</span></button> : null}
           </div>
         </Fragment>;
       })}
@@ -1309,7 +1309,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
               const iLo = df.gLo ? sc.findIndex(o => o[0] === df.gLo) : -1, iHi = df.gHi ? sc.findIndex(o => o[0] === df.gHi) : -1;
               const sel = (label, val, opts, set) => (
                 <label style={{ flex: 1, display: "flex", flexDirection: "column", gap: 5, fontSize: 11.5, color: C.textMuted, fontWeight: 700 }}>{label}
-                  <select aria-label={label + " grade"} value={val} onChange={e => set(e.target.value)} style={{ padding: "10px 10px", borderRadius: 10, border: "1px solid " + (val ? C.blue : C.border), background: val ? C.blueBg : C.surface, color: val ? C.blue : C.text, fontSize: 14, fontWeight: 700 }}>
+                  <select aria-label={label + " grade"} value={val} onChange={e => set(e.target.value)} style={{ padding: "10px 10px", borderRadius: 10, border: "1px solid " + (val ? C.blue : C.border), background: val ? C.blueBg : C.surface, color: val ? "#fff" : C.text, fontSize: 14, fontWeight: 700 }}>
                     <option value="">Any</option>
                     {opts.map(o => <option key={o[0]} value={o[0]}>{o[0]}</option>)}
                   </select>
@@ -1600,7 +1600,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
     const withDist = viewCenter ? nearby.map(a => ({ ...a, _mi: haversineMi(viewCenter, a) })) : nearby.map(a => ({ ...a, _mi: null }));
     return withDist.sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)).slice(0, 60);
   }, [nearby, bounds, center]);
-  const discChip = (k, label, on) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
+  const discChip = (k, label, on) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
 
   const searchUI = (
     <>
@@ -1741,7 +1741,7 @@ function DbAreaTreeNode({ area, depth, currentId, pinIds, expanded, onToggle, on
   return (
     <div>
       <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "12px 12px 12px " + pad + "px", borderBottom: "1px solid " + C.borderLight, background: cur ? C.blueBg : "transparent" }}>
-        <button onClick={() => onToggle(area.id)} aria-label={isOpen ? "Collapse" : "Expand"} style={{ flexShrink: 0, width: 38, height: 38, borderRadius: 10, border: "1.5px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 18, fontWeight: 800, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}><Chevron open={isOpen} color={C.blue} /></button>
+        <button onClick={() => onToggle(area.id)} aria-label={isOpen ? "Collapse" : "Expand"} style={{ flexShrink: 0, width: 38, height: 38, borderRadius: 10, border: "1.5px solid " + C.blue, background: C.blueBg, color: "#fff", fontSize: 18, fontWeight: 800, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}><Chevron open={isOpen} color={C.blue} /></button>
         {/* One target opens the area: the name, its count and the chevron. The chevron used
             to be a separate 16px span and the name was cut to one line, so the only ways in
             were a sliver of truncated text or an arrow a thumb barely covers. Names wrap. */}

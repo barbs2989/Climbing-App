@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **White text on blue boxes, app-wide**: every blue-tinted button, chip, badge and selected toggle (`C.blueBg` / `C.blueChip` / `C.blueDim` or a blue wash) used to print its label in the same blue; those labels are now white (`#fff`) — 189 styles across 36 files, including the shared `btnChip` and `onB`. The box keeps its blue fill and edge, so a selected chip still reads as selected. Blue text on a dark (non-blue) background is unchanged.
 - **Create a group: sections stand apart**: on the Create a group / Group settings sheet each section now opens 24px below the one above, while its label stays 8px from its field (it was 13 vs 8, so the form read as one run of fields); the About box no longer leaves a stray gap under it (`gfHead` in `ClimbMatch.jsx`).
 - **Saved areas are a list**: Logbook › Saved draws saved areas and peaks as rows (name, type and parent area, › to open, ✕ to unsave) like the Saved routes rows, not wrapping pills. See `docs/features/logbook-crews-home.md`.
 - **Settings scrolls from anywhere**: on *Your data & account*, a swipe that started on the temperature or wind slider used to be swallowed — and could drag the range (45°–68° became 18°–68° just by scrolling). The sliders now take only a sideways drag; an up-down swipe scrolls the page, as a native slider does (`lib/RangeSlider.jsx`, pinned in `check:conditions-score`).
