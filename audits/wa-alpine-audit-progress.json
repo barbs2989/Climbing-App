@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_red_mountain_snoqualmie_southeast_face",
+  "last_processed_id": "wa_ruby_mountain_happy_creek",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -8925,6 +8925,24 @@
       "flagged_for_human_review": 2,
       "clean": 6,
       "note": "No confirmed errors. Verified clean: Prusik Peak elevation 8008 ft matches Wikipedia/PeakVisor exactly (Mountain Project 7916/TopoQuest 7857 are a known cross-source spread, not a DB error); its West Ridge Stuart Lake Trailhead coords (47.5282,-120.82036) are within ~50-60m of WTA/Trailforks, normal noise. Ptarmigan Peak (Pasayten) 8614 ft matches SummitPost exactly / PeakVisor 8615 (rounding). Ragged Edge FA party (Berdinka & Pires) confirmed via stephabegg.com and a Mountaineers guide (exact day unconfirmed, not contradicted). Rapple Grapple is already internally consistent from a prior-batch fix (length_m 120 matching theCrag, high_point_ft 7720 matching Liberty Bell). Raven Ridge 8572 ft matches Wikipedia exactly, and its stored winter-ascent itinerary note (Gilbertson & Robinson, Jan 2019) is independently confirmed by a countryhighpoints.com trip report of that exact climb. wa_red_mountain_snoqualmie_east_face and _east_ridge are unenriched stubs -- nothing to audit. Flagged for human review: wa_prusik_peak_west_ridge's route FA (Beckey, Rupley, Gordon & Ayres, May 1957) -- this is a specific-route FA distinct from the peak's own 1948 Beckey/Holben FA, and no source corroborates it (not contradicted, just unconfirmed). wa_red_mountain_snoqualmie_southeast_face's FA (Don Blair and Art Winder, Aug 11 1934) -- also unconfirmed; Wikipedia gives the peak's own FA as 1898 (Mendenhall), which does not contradict a later technical-route FA but also does not corroborate this one."
+    },
+    {
+      "batch_number": 449,
+      "date": "2026-10-24",
+      "route_ids": [
+        "wa_red_mountain_snoqualmie_west_ridge",
+        "wa_remmel_mountain_nw_ridge",
+        "wa_remmel_mountain_southeast_slope",
+        "wa_ridge_traverse_from_east_fury",
+        "wa_rikki_tikki_tavi",
+        "wa_rock_mountain_northeast_ridge",
+        "wa_rock_mountain_west_route",
+        "wa_ruby_mountain_happy_creek"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 2,
+      "clean": 5,
+      "note": "1 fix (wa_rock_mountain_west_route's data_quality note cited 6,856 ft while its own high_point_ft holds 6,852 ft, which matches mountaineers.org exactly -- fixed the note). Plus two area-row elevation fixes found while checking parent peaks: Remmel Mountain's area row stored 8688 ft against its own blurb and all sources (8685 ft) -- fixed; Ruby Mountain's area row stored 7426 ft, matching no source -- fixed to 7412 ft (Wikipedia/PeakVisor NAVD88), leaving the route's own 7408 ft (WTA/trip-report figure) alone as normal cross-source spread. Flagged for human review: wa_red_mountain_snoqualmie_west_ridge's fa field is truncated mid-word ('...Rob-') and the full text could not be found online; wa_ridge_traverse_from_east_fury's high_point_ft (8322) doesn't closely match either Mount Fury summit under the current 2022 survey (West 8305+-10, East 8356+-8). Also noted: batch 448's log said pass 7 would skip straight to wa_remmel_mountain_nw_ridge, missing wa_red_mountain_snoqualmie_west_ridge, which was in scope and sorts earlier -- picked it up this batch rather than carrying the gap forward."
     }
   ]
 }

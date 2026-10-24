@@ -33998,3 +33998,68 @@ human rather than guessed, per the audit's standing rule.
 
 Pass 7 continues next run after `wa_red_mountain_snoqualmie_southeast_face` (next
 candidate in id order: `wa_remmel_mountain_nw_ridge`).
+
+## Batch 449 (pass 7) -- 2026-10-24
+
+`wa_red_mountain_snoqualmie_west_ridge`, `wa_remmel_mountain_nw_ridge`,
+`wa_remmel_mountain_southeast_slope`, `wa_ridge_traverse_from_east_fury`,
+`wa_rikki_tikki_tavi`, `wa_rock_mountain_northeast_ridge`, `wa_rock_mountain_west_route`,
+`wa_ruby_mountain_happy_creek`. 1 fix, 2 flagged, 5 clean -- plus two area-row elevation
+fixes found while cross-checking these routes' parent peaks (see SQL file).
+
+Note: batch 448's log entry said pass 7 would continue at `wa_remmel_mountain_nw_ridge`,
+skipping `wa_red_mountain_snoqualmie_west_ridge` -- that route is in scope (alpine,
+`wa_red_mountain_snoqualmie` is `area_type = 'peak'`) and sorts between the two by id, so
+it had simply been missed rather than legitimately out of scope. Picked it up this batch
+instead of carrying the gap forward.
+
+Fixed: `wa_rock_mountain_west_route`'s own `data_quality.gaps[0]` text said "treat 6,856 ft
+as approximate" while its `high_point_ft` field holds 6,852 ft (which matches
+mountaineers.org's route page for this exact peak) -- the note was citing a different
+number than the field it describes. Updated the note's number only.
+
+Also fixed (areas, found while checking these routes' parent peaks): Remmel Mountain's
+area row stored `elevation_ft` 8688, contradicting its own blurb text (8,685 ft) and
+Wikipedia/SummitPost/Komoot (8,685 ft; PeakVisor 8,684 ft) -- both routes under it already
+store `high_point_ft` 8685, so the area row was the outlier. Ruby Mountain's area row
+stored 7426 ft, which matches no source checked; Wikipedia and PeakVisor independently
+give 7,412 ft (NAVD88) -- `wa_ruby_mountain_happy_creek`'s own `high_point_ft` (7,408 ft,
+the WTA/trip-report figure, a known small cross-source spread) was left alone.
+
+Verified clean: `wa_remmel_mountain_nw_ridge`'s alpine/5.2/4-pitch classification is
+consistent with a 2011 trip report describing the route as mostly a 3rd-class
+boulder-ridge scramble with two short rappels -- a low technical grade for a short roped
+section fits that description, not a contradiction. `wa_remmel_mountain_southeast_slope`'s
+FA (Sledge Tatum and George E. Louden Jr., US-Canada Boundary Survey, July 26 1904) matches
+the area's own blurb text verbatim. `wa_rikki_tikki_tavi`'s FA (Tom Ramier and Abe Traven)
+and 5.11 grade could not be found on any source searched (Mountain Project's Colchuck
+Balanced Rock area page did not resolve), but nothing contradicts it either --left as an
+unconfirmed thin route rather than flagged. `wa_rock_mountain_northeast_ridge`'s 6,841 ft
+high point is a one-foot rounding variant of Wikipedia/PeakVisor's 6,840 ft, and its permit
+text (no climbing/wilderness permit, Northwest Forest Pass to park) matches Wenatchee NF
+practice for this trailhead. `wa_ruby_mountain_happy_creek`'s own 7,408 ft high point is
+independently confirmed by WTA and multiple trip reports (see area fix above).
+
+Flagged for human review: `wa_red_mountain_snoqualmie_west_ridge`'s `fa` field reads
+"Fred Beckey, Helmy Beckey, Rob-" -- cut off mid-word. This is self-evidently truncated
+data, not a complete value, and no source found online gives the full party for a Red
+Mountain (Snoqualmie Pass / Commonwealth Basin) West Ridge first ascent specifically
+(cascadeclimber.com and willhiteweb.com, which usually cover this route, did not resolve
+from this session). Needs a human with direct Beckey Cascade Alpine Guide access to supply
+the complete, correct text -- not safe to guess the missing name(s).
+`wa_ridge_traverse_from_east_fury`'s `high_point_ft` (8,322 ft) does not closely match
+either Mount Fury summit under the current best survey (a 2022 theodolite survey gives
+West Fury 8,305 ft ±10 and East Fury 8,356 ft ±8, per Wikipedia/SummitPost) -- worth a
+human check of which summit this traverse's stored high point is meant to represent.
+
+`last_processed_id` advances to `wa_ruby_mountain_happy_creek`. Scope counts not re-run
+this batch (last known: 737 in-scope / 833 total, from batch 444). No `.env`/`.env.local`
+present at run start (fresh clone); reads went directly against the REST API with the
+read-only anon key supplied in the task prompt via plain `curl`, and the proposed SQL file
+was pre-flighted with `check:sql` using that same anon key (no write attempted or needed).
+Every finding rests on 2+ independent sources where more than one was available; the two
+unconfirmed/ambiguous items were left to a human rather than guessed, per the audit's
+standing rule.
+
+Pass 7 continues next run after `wa_ruby_mountain_happy_creek` (next candidate in id
+order: `wa_ruby_mountain_northwest_ridge`).
