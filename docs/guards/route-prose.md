@@ -1154,3 +1154,26 @@ the correction knows the screen is wrong, and they have no way to report it.
     128. Before treating a drop as a lost switch, diff the ids every `*multi-approach*.before.json`
     touched against the live table, read each missing id's KEPT row in that work's merge plan, and
     compare its ways in with the deleted row's (the rollback file holds the deleted row in full).
+
+- **`audit:copied-prose`** asks whether a research batch repeats its OWN SOURCES word for word,
+  and `enrich:apply` refuses the same thing at the write (shared code: `scripts/lib/source-overlap.mjs`).
+  Asked by the owner on 2026-10-24 (*"are we making sure we aren't copying the text of our app
+  from other sources?"*). The answer was: by request only. The 2026-10-01 audit (#2142) found
+  copying concentrated in quoted passages and rewrote 292 strings, and every brief since says
+  "your own words" — but nothing checked, and the 2026-10-23 pitch wave (#2655) shipped 74 strings on
+  21 of 25 routes that kept 8+ word runs of the pages it listed (Dark Shadows P4 carried a
+  20-word source sentence whole). Rewritten the same day, re-checked clean, written through
+  `enrich:apply` with the new gate on.
+  - **Why 8 words.** At 6, almost every route trips on climbing's shared vocabulary ("to a two-bolt
+    anchor at the base of"); at 8, the runs that remain are overwhelmingly sentences or clauses
+    that were lifted, with a few generic ones ("bolted belay at the top of the wall") that are
+    cheap to reword. Normalised for case, punctuation and hyphens, so "right-facing" ≡ "right facing".
+  - **What it cannot see.** A source it could not load (SummitPost and theCrag 403 to scripts;
+    some `review.sources` entries carry notes after the URL and fail to fetch) — named in the
+    output, never counted as clean. A copy from a page the batch did not list. A paraphrase that
+    swaps one word in every seven. Prose already in the catalog with no batch file behind it — that
+    is the #2142 audit's ground, measured then at ~1 verbatim lift per 160 sampled phrases, and
+    deliberately NOT re-run here.
+  - **Selftest:** `--selftest` needs no network: the Dark Shadows sentence as applied is flagged,
+    the same facts reworded are not, a short shared phrase is not, and `review`/`area`/labels are
+    never walked.

@@ -212,6 +212,7 @@ npm run audit:note-voice   # a waypoint note RENDERS — is it written for a cli
 npm run audit:prose-citations   # does rendered prose still name a third party as its SOURCE?
 npm run audit:misplaced-prose # ...is ANY rendered string the pipeline talking, NAMING A SOURCE (every state + area blurbs), or a FIRST ASCENT that argues?
 npm run audit:shouted-prose # does any rendered string SHOUT in ALL CAPS? (enrich:apply refuses it too)
+npm run audit:copied-prose -- batch.json # does a research batch repeat its OWN SOURCES word for word? (enrich:apply refuses it too; --selftest needs no network)
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run audit:mountaineering-rule # mountaineering is ONLY a walk-up and a scramble is never roped: no mountaineering or scrambling row carries a 5.x grade (alpine instead), and every disciplines list names its own primary; trigger 0280/0366 + catOf/rDiscs enforce it
 npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
@@ -400,5 +401,7 @@ Each rule below is a summary; the linked file has the incidents behind it and th
   different place, bypass for one transaction with `set local catalog.allow_duplicate = 'on'`.
 - **Before writing a researched string into an existing column, look at where it renders.** A
   column that reaches a header, pill, chip or table cell takes a *value* (`season` is a window,
-  `grade` is a grade); its explanation belongs in the prose column beside it. `rappels` is prose
+  `grade` is a grade); its explanation belongs in the prose column beside it. And every word must be
+  OUR OWN — facts may come from a source, sentences may not; enrich:apply refuses a string that
+  shares 8+ words with a page in the batch's `review.sources`. `rappels` is prose
   and must never be parsed for a count. → [enrichment-prose.md](docs/codebase/enrichment-prose.md)
