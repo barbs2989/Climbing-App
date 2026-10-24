@@ -150,6 +150,19 @@
       .cm-stagger > *:nth-child(6){animation-delay:.2s} .cm-stagger > *:nth-child(n+7){animation-delay:.24s}
       /* Bottom sheets (rounded-top containers) slide up when they open */
       [style*="18px 18px 0 0"], [style*="16px 16px 0 0"] { animation: cm-slideup .28s cubic-bezier(.2,.8,.2,1) both; }
+      /* On a phone a popup FILLS THE SCREEN (owner 2026-10-23: "I don't like how some popups only show
+         on the bottom of the screen"). Every bottom sheet is the same markup -- a role="dialog" backdrop
+         with align-items:flex-end whose single child is the sheet -- so one rule turns all of them into
+         full-screen views, the way Facebook, Strava and AllTrails open a form, a list or a share screen,
+         without touching any of them. The transparent top and bottom borders keep the header out from
+         under the notch and the last row above the home bar (viewport-fit=cover); the sheet's own
+         background shows through them. A short ACTION MENU (a post's or a comment's ⋯) stays a bottom
+         sheet, as iOS and Material both draw one: it opts out with data-sheet="menu". Desktop never
+         sees this rule: lib/wideLayout.js lifts the same markup into a centred window at 1024px. */
+      @media (max-width: 1023.98px) {
+        [role="dialog"][style*="align-items: flex-end"]:not([data-sheet="menu"]) { align-items: stretch !important; }
+        [role="dialog"][style*="align-items: flex-end"]:not([data-sheet="menu"]) > div { height: 100% !important; max-height: none !important; box-sizing: border-box !important; border-radius: 0 !important; border-left: none !important; border-right: none !important; border-top: env(safe-area-inset-top, 0px) solid transparent !important; border-bottom: env(safe-area-inset-bottom, 0px) solid transparent !important; box-shadow: none !important; overflow-y: auto; overscroll-behavior: contain; }
+      }
       /* Links dim on press rather than shrink — scaling a run of inline text reads as a glitch. */
       a[href]:active { opacity: 0.7; }
       /* Switch knobs SLIDE between off and on instead of teleporting. The knob is the switch's
