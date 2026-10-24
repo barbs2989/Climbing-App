@@ -218,7 +218,7 @@ if (!rows.some((r) => r.name === "inboxOpen")) {
    Each entry is a REASON, verified by reading the component, not a pass. A name here that starts
    naming a flag is stale bookkeeping and is reported as such below. */
 const CHECKED = {
-  reviewQueue: "the Menu's admin review queues (moved off Profile 2026-10-23); each queue component returns its own `error` copy (\"Couldn't load … Do not read this as 'no reports'\") BEFORE its empty copy — UserReportQueue, AppealQueue and AccessibilityReportQueue gate inside the component, where this file's App-side flag search cannot see it",
+  reviewQueue: "the Menu's admin review queues (moved off Profile 2026-10-23); each queue component returns its own `error` copy (\"Couldn't load … Do not read this as 'no reports'\") BEFORE its empty copy — UserReportQueue, AppealQueue, AccessibilityReportQueue and AreaProposalQueue gate inside the component, where this file's App-side flag search cannot see it",
   areaTreeOpen: "AreaTree is gated on `selArea`, which is written only on the SEED catalog path — dead in production (VITE_USE_DB=true renders DbAreaBrowser)",
   logPickOpen: "LogRoutePicker filters the seed ROUTES/MOUNTAINS module constants; no DB read to fail",
   logCatchWith: 'the copy is "No climbs match." — a statement about the filter the user just typed, true during an outage',

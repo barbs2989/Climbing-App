@@ -7,7 +7,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 
 ## 1. What it does today
 - **Area browser**: world > country > state > range > crag/peak drill-down. `StatePicker` is the entry; `AreaPage` shows one area
-  (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb? Add it*, `DbSuggestedClimbs`
+  (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb or area here?* (`AddHereFooter`: Add a climb · Add an area), `DbSuggestedClimbs`
   "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page).
   `DbAreaTree` / `DbAreaTreeNode` / `DbAreaTreeRoots` give an expandable tree to jump around.
 - **Area page sections** (0304, `lib/AreaPageSections.jsx`): on a crag, peak or wall — **ABOUT** (`areas.blurb`, or an invitation to write one),
@@ -59,7 +59,13 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
     wall is logged under `_order/<state>.jsonl`, so a re-run skips finished walls (and a state whose walls are all
     done skips its database load). Writes now wait `--pace-ms` (default 400) after each one and back off a minute
     on failure; **do not restart without the owner's OK.**
-- **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker.
+- **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker. Its Areas | Routes
+  toggle and box PIN under the top bar (`usePinnedBar`) while the list below scrolls, and let go at the list's end marker (2026-10-23).
+- **Add an area** (0360, `lib/AddArea.jsx`): *Add an area* under an area's list, or under the route finder's results, opens a sheet —
+  name, kind (crag/wall/boulder · peak · area), about, optional location — that lists catalog places already filed under that name
+  before it sends. It files a `contributions` row of kind `new_area` (area_id = the parent); nothing shows until the owner approves it
+  in Menu › Review › Area proposals (`AreaProposalQueue`), where `approve_new_area` inserts the `areas` row. Offered only where the
+  area holds no climbs itself (areas hold sub-areas OR climbs — Mountain Project's rule, and `trg_areas_leaf_xor`), and never on a country.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.
   The **Filters** sheet is a full-height screen (since 2026-10-21; it was an 88vh bottom sheet, which on iOS overflowed off the
@@ -87,6 +93,17 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Near me / area map** (`NearMePanel`): Leaflet map of peak/crag area bubbles with route counts, list/map toggle (`ViewToggle`),
   Street / Satellite / Topo / snow base layers (`BaseLayerToggle`), a live location dot, and a place search box
   ("Go to a town, county or zip/postal code") covering the US and Canada (provinces, towns, US zip, Canadian postal codes).
+  Its zoom buttons sit BOTTOM-LEFT (the layer row owns top-left) and a **📍 Me** button sits on the map bottom-right, as on the route map.
+  **⤢ Full screen** is a real full-screen view (`position:fixed`, titled "Map · <area>", ✕ or Escape to close, the place search inside),
+  drawn like the route map's. It keeps the SAME Leaflet map: the map renders through a portal into a host div the panel owns, and only
+  that div moves, into `document.body` and back into the inline slot, so markers, zoom, pan and the dot survive the round trip (2026-10-23).
+- **Fire map** (`FireMap`, `lib/FireMap.jsx`; data in `lib/fire.js`): opens from an area page and a route's Safety tab. Layers, each a chip:
+  Fires (WFIGS incident points — the point of ORIGIN, coloured by containment, sized by acres), Perimeters, Red flag (NWS fire-weather
+  zones) and **Heat** (`useHeat`: VIIRS satellite detections from the last 48 h, newer brighter, drawn at their real ~375 m footprint
+  when zoomed in; queried only from zoom 7, `HEAT_MIN_ZOOM`). A **legend** under the map names every colour, grey (contained) included.
+  **⤢** gives a map-only view (the list steps aside; ✕ returns to it). **📍 Me** is the area map's button. The banner's **Full text →**
+  opens `FireAlertSheet`, which reads the product's own words from api.weather.gov (`useFireAlert`; an expired product says so) and
+  links to weather.gov's page for the zone (`nwsPointPage`) — the old link opened api.weather.gov's raw JSON (2026-10-23).
 - **Objectives panel** (`ObjectivesPanel`): wishlisted routes under the current area.
 - **Route page map** (`GPXMap`, `src/components/GPXMap.tsx`): track + waypoints + peak coordinate on the same base layers; a line
   drawn between waypoints carries a "sketch" caveat rather than posing as GPS.
@@ -118,6 +135,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, `AreaPage`, `PartnersHereCard`, `PARTNER_CARD_TYPES`, `StatePicker`, `DbSearchSplit`, `RouteFinderPanel`, `NearMePanel`, `NearbyPeaks`, `ObjectivesPanel`, `DbAreaTree`, `DbSuggestedClimbs`, `SummitBriefing`, `nearbyPeaksBounds` |
 | `lib/mapKit.jsx` | `MAP_TILE_URLS`, `TILE_CREDIT`, `loadLeaflet`, `baseTileLayer`, `applyBaseLayer`, `BaseLayerToggle`, `ViewToggle`, `pinHtml`, `useFollowMe`, `acceptFix`, `searchPlaces` |
 | `lib/AreaPageSections.jsx` | `AboutCard`, `AreaFactsCard`, `ClimbsChart`, `GradeSpread`, `MonthStrip`, `PendingAreaEdits`, `bucketLabel` |
+| `lib/AddArea.jsx` | default export `AddArea` (mounted by App from its addAreaParent state in `ClimbMatch.jsx`) |
 | `lib/AreaSuggestFix.jsx` | default export `AreaSuggestFix` (mounted by App from its areaFixOpen / areaFixArea / areaFixField state in `ClimbMatch.jsx`) |
 | `lib/areaFields.js` | `AREA_EDIT_FIELDS`, `AREA_EDIT_KEYS`, `ASPECTS`, `MONTH_ABBR`, `monthsLabel`, `myPendingAreaEdits` |
 | `lib/areaChrome.jsx` | `EditIconButton`, `CopyCoordButton` (shared with `RouteDetail.jsx`), `NO_PARKING_PIN_LINE` |
@@ -125,6 +143,8 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `lib/search.js` | `SEARCH_FORMS`, `searchNorm`, `searchCanon`, `searchMatches` |
 | `lib/offlineTiles.js` | `saveRouteMapOffline`, `removeRouteMapOffline`, `routeMapLines` |
 | `lib/SaveMapOffline.jsx` | `SaveMapOffline` (under the route map), `SavedRouteMaps` (Manage areas) |
+| `lib/FireMap.jsx` | default export `FireMap`, `FireAlertSheet` |
+| `lib/fire.js` | `useActiveFires`, `useFirePerimeters`, `useFireWeather`, `useHeat`, `useFireAlert`, `nwsPointPage`, `fireLevel` |
 | `src/components/GPXMap.tsx` | `GPXMap` — the route page map (extracted from core, PR13) |
 | `ClimbMatchCore.jsx` | `OverviewMap` (seed/overview map), lazy `DbAreaBrowser` import |
 | `RouteDetail.jsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`, `BaseLayerToggle`) for the route and waypoint-picker maps |

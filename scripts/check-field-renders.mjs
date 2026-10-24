@@ -123,7 +123,8 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
 import { dbRouteToCamel } from ${JSON.stringify(path.join(ROOT, "lib/db.js"))};
-import { enrichRoute, AspectSunPanel, EmergencyRescueCard, C, MOUNTAINS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import { enrichRoute, EmergencyRescueCard, C, MOUNTAINS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import AspectSunPanel from ${JSON.stringify(path.join(ROOT, "src/components/AspectSunPanel.tsx"))};
 import ActionIcon from ${JSON.stringify(path.join(ROOT, "src/components/ActionIcon.tsx"))};
 import { SeasonalGuidancePanel, CrowdsPanel, PartnerRequirementsPanel } from ${JSON.stringify(path.join(ROOT, "EnrichmentPanels.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
@@ -401,8 +402,8 @@ function assessSentinel(col) {
   return { hits, changed, needle };
 }
 
-// A field can be USED without being echoed: the RACK box prints rackSummary(route.rack), so
-// the raw gear prose never appears verbatim even though the column drives the screen. Without
+// A field can be USED without being echoed: a derived readout (the old PROTECTION card's
+// rackSummary, removed 2026-10-23) never prints the raw gear prose verbatim even though the column drives the screen. Without
 // this baseline the probe reports such a field as dead and sends you chasing a non-bug.
 const BASELINE = {};
 for (const [bname, b] of Object.entries(BASES)) {

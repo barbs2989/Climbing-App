@@ -62,8 +62,10 @@ const EXEMPT = [
     // capping this one would put two maps in one app at two different widths, which is a worse
     // desktop/phone difference than the one the cap exists to fix. Reached only since the detector
     // learned to read a ternary style -- it was outside this guard's census entirely before that.
-    why: "the route map is a MAP -- spatial content, full-bleed like the fire map and the lightboxes",
-    match: (style) => /zIndex:9700/.test(style) && /flexDirection:"column"/.test(style),
+    // The AREA map's full screen (NearMePanel, lib/DbAreaBrowser.jsx) is the same view drawn the
+    // same way since the owner asked for it to work like the route map's (2026-10-23).
+    why: "the route map and the area map are MAPS -- spatial content, full-bleed like the fire map and the lightboxes",
+    match: (style) => /zIndex:\s*9700/.test(style) && /flexDirection:\s*"column"/.test(style),
   },
   {
     key: "menu-wide",

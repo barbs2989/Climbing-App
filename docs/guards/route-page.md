@@ -94,8 +94,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `EmergencyRescueCard` owns emergency); one discipline base, when `RouteGearCheck` is
     `cragOnly`; testing only the longest string leaf, which condemns a column over one hidden
     sub-key (it called `pitch_detail` dead, and that visibly renders); and confusing **used**
-    with **echoed** — the RACK box prints `rackSummary()`, so raw `gear` prose never appears
-    verbatim though the column drives the screen.
+    with **echoed** — the old PROTECTION card printed `rackSummary()`, a derived label, so raw
+    `gear` prose never appeared verbatim though the column drove the screen (that card and
+    `rackSummary` were removed 2026-10-23; the BASELINE below still covers any derived readout).
     - **A SEVENTH, added 2026-08-20 after it produced a wrong claim in a merged PR:
       `dbRouteToCamel` opens `return { ...r, ... }`.** It SPREADS the raw row and then adds
       camelCase aliases, so every snake_case column reaches the app whether or not the mapper

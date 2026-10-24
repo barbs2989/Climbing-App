@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { C, WP_COLORS, WP_STYLE, uDistMi, uElev, wpDivIcon, wpIs, wpPlaced, wpType } from "../../ClimbMatchCore.jsx";
 import { BaseLayerToggle, applyBaseLayer, baseTileLayer, fitZoomToLayer, layerSharpZoom, loadLeaflet, locateLabel, useFollowMe } from "../../lib/mapKit";
 import { POP_CLOSE, POP_CLOSE_MEDIA } from "../../lib/popupChrome.js";
+import { trackIsJustTheWaypoints, waypointLinePins } from "../../lib/track.js";
 import Lbl from "./Lbl.tsx";
 
 /** A route waypoint as the route row stores it; placement is decided ONLY by core's `wpPlaced()`. */
@@ -20,7 +21,7 @@ export interface Waypoint {
 /** A waypoint `wpPlaced()` accepted: it has a coordinate. */
 export interface PlacedWaypoint extends Waypoint { lat: number; lng: number }
 export interface Coord { lat?: number | null; lng?: number | null; name?: string | null }
-export interface BaseSpot { lat: number; lng: number; n: number; mine?: boolean }
+export interface BaseSpot { lat: number; lng: number; n: number; mine?: boolean; confirmed?: boolean }
 export interface GPXMapProps {
   /** The recorded track as [lat, lng, ...] samples; fewer than two draws no line. */
   pts?: ReadonlyArray<readonly number[]> | null;
@@ -33,7 +34,7 @@ export interface GPXMapProps {
   focusWp?: { i?: number | null; n?: number } | null;
   /** The trailhead the Directions button uses when it lives only in approach_logistics. */
   derivedTrailhead?: Coord | null;
-  /** Where climbers checked in at the base (0188). */
+  /** Where climbers checked in at the base (0188), clustered by the database (0363 route_base_spots). */
   baseSpots?: ReadonlyArray<BaseSpot> | null;
 }
 interface WpStyle { color: string; glyph: string }
@@ -58,7 +59,10 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
   const placed = (w: Waypoint | null | undefined): w is PlacedWaypoint => wpPlaced(w);
   const styles: Record<string, WpStyle> = WP_STYLE;
   const colors: Record<string, string> = WP_COLORS;
-  const track = pts && pts.length >= 2 ? pts : null;
+  /* A stored "track" that is only the route's own pins joined up is drawn by the same rule as no
+     track at all (`waypointLinePins`), because its order was made by the same mistake: a pin with
+     no distance sorted to mile 0, so the line ran from the trailhead to the summit and back. */
+  const track = pts && pts.length >= 2 && !trackIsJustTheWaypoints(pts, waypoints) ? pts : null;
   const pk = peakCoord && peakCoord.lat != null && peakCoord.lng != null ? peakCoord : null;
   const mapDiv=useRef<HTMLDivElement | null>(null),mapRef=useRef<LeafletAny>(null),tileRef=useRef<LeafletAny>(null);
   /* Keyed by the waypoint's index in the ORIGINAL `waypoints` array — the same index the
@@ -75,7 +79,10 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
   const ep=endpointLabels||{startLabel:"Start",startColor:C.green,finishLabel:"Finish",finishColor:C.red};
   const hasPts=!!track;
   const wpPts=(waypoints||[]).filter(placed);
-  const hasWpLine=!hasPts&&wpPts.length>=2;
+  /* The dashed line joins only the pins that are ON the way, from one trailhead to the summit; a
+     camp before the trailhead or down a side trail is still a pin, just not a stop on the line. */
+  const wpLine: PlacedWaypoint[]=hasPts?[]:waypointLinePins(wpPts);
+  const hasWpLine=wpLine.length>=2;
   const hasPeak=!hasPts&&!(waypoints&&waypoints.length)&&!!pk;
   /* The point the Snow layer lists satellite passes for: the peak, else the track's start, else the first placed pin. */
   const snowAt=(()=>{if(pk)return {lat:pk.lat,lng:pk.lng};if(track)return {lat:track[0][0],lng:track[0][1]};const w=(waypoints||[]).find(placed);return w?{lat:w.lat,lng:w.lng}:null;})();
@@ -146,7 +153,7 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
     const CONNECT_DEG=0.02;const connect=(trackPt: readonly number[],wp: Waypoint | undefined,color: string)=>{if(!placed(wp))return;const d=Math.hypot(trackPt[0]-wp.lat,trackPt[1]-wp.lng);if(d>0.0015&&d<=CONNECT_DEG)L.polyline([trackPt,[wp.lat,wp.lng]],{color,weight:2,opacity:0.6,dashArray:"3,7"}).addTo(map);};
     connect(ll[0],(waypoints||[]).find(w=>placed(w)&&wpIs(w,"Trailhead")),wc.Trailhead);
     connect(ll[ll.length-1],(waypoints||[]).find(w=>placed(w)&&(wpIs(w,"Summit")||wpIs(w,"Topout"))),wc.Summit);
-    }else if(hasWpLine){const ordered=[...wpPts].sort((a,b2)=>(a.distMi??0)-(b2.distMi??0));const ll=ordered.map(w=>[w.lat,w.lng]);const line=L.polyline(ll,{color:C.blue,weight:3,opacity:0.7,dashArray:"7,7"}).addTo(map);line.bindTooltip("Approximate line — connects known waypoints, not a recorded track",{direction:"top",sticky:true});b=line.getBounds();}markersRef.current={};(waypoints||[]).forEach((wp,wi)=>{if(!placed(wp))return;
+    }else if(hasWpLine){const ll=wpLine.map(w=>[w.lat,w.lng]);const line=L.polyline(ll,{color:C.blue,weight:3,opacity:0.7,dashArray:"7,7"}).addTo(map);line.bindTooltip("Approximate line — joins the waypoints along the way, not a recorded track",{direction:"top",sticky:true});b=line.getBounds();}markersRef.current={};(waypoints||[]).forEach((wp,wi)=>{if(!placed(wp))return;
     // Waypoints carried a hover tooltip and nothing else, so on a phone — which is what this
     // app is built for — tapping one did nothing at all, on every route. A tooltip is a
     // pointer affordance; a popup is what opens on tap. The icon is also under a comfortable
@@ -208,9 +215,9 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
      check-ins arrive later than the route; it does not refit the view, except where the map had
      nothing but the peak/crag coordinate to show. Keyed on the spots' content, so a refetch that
      returns the same points redraws nothing. */
-  const baseSig=(baseSpots||[]).map(function(b){return b.lat.toFixed(6)+","+b.lng.toFixed(6)+":"+b.n+(b.mine?"m":"");}).join("|");
+  const baseSig=(baseSpots||[]).map(function(b){return b.lat.toFixed(6)+","+b.lng.toFixed(6)+":"+b.n+(b.mine?"m":"")+(b.confirmed?"c":"");}).join("|");
   useEffect(()=>{const map=mapRef.current;if(!mapGen||!map||!window.L||!baseSig)return;const L: LeafletAny=window.L;const grp=L.layerGroup().addTo(map);
-    (baseSpots||[]).forEach(function(b,i){const html='<div style="font-size:13px;line-height:1.45"><div style="font-weight:700;margin-bottom:2px">'+(i===0?"Base of the climb":"Another reported base")+'</div><div style="font-size:11.5px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;opacity:0.7">Climber check-in</div><div style="font-size:12px;opacity:0.8;margin-top:3px">Checked in on-site by '+b.n+' climber'+(b.n!==1?"s":"")+(b.mine?", including you":"")+'</div></div>';
+    (baseSpots||[]).forEach(function(b,i){const html='<div style="font-size:13px;line-height:1.45"><div style="font-weight:700;margin-bottom:2px">'+(b.confirmed?"Base of the climb":i===0?"Reported base":"Another reported base")+'</div><div style="font-size:11.5px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;opacity:0.7">'+(b.confirmed?"Confirmed by climbers":"Climber check-in · not confirmed yet")+'</div><div style="font-size:12px;opacity:0.8;margin-top:3px">Checked in on-site by '+b.n+' climber'+(b.n!==1?"s":"")+(b.mine?", including you":"")+'</div></div>';
       L.circleMarker([b.lat,b.lng],{radius:14,stroke:false,fillOpacity:0,interactive:true,bubblingMouseEvents:false}).addTo(grp).bindPopup(html);
       L.marker([b.lat,b.lng],{icon:wpDivIcon(L,"Base",i===0?24:20,true),keyboard:false,zIndexOffset:i===0?500:0}).addTo(grp).bindPopup(html);});
     if(!boundsRef.current&&hasPeak&&pk){try{const fb=L.latLngBounds([[pk.lat,pk.lng]]);(baseSpots||[]).forEach(function(b){fb.extend([b.lat,b.lng]);});map.fitBounds(fb.pad(0.4),{maxZoom:Math.min(17,layerSharpZoom(baseLayer))});}catch{/* the map is already gone */}}

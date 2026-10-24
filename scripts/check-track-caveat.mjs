@@ -30,7 +30,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
-import { trackStubCaveat, trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage } from "../lib/track.js";
+import { trackStubCaveat, trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage, waypointLinePins } from "../lib/track.js";
 import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -439,6 +439,35 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
   if (!/No recent tracks or trip reports yet/.test(emptyBody))
     fail("the empty state does not name both kinds the section can hold");
   else ok("the empty state names both kinds");
+}
+
+// ── 6. The dashed line joins only the pins ON THE WAY (owner, 2026-10-23) ──────────────────────
+// A camp before the trailhead, a second trailhead and a camp down a side trail are pins, not stops
+// on the line; a summit with no trail distance closes it rather than sorting to mile 0.
+console.log("\nThe waypoint line joins only the pins on the way:");
+{
+  const TH = { type: "Trailhead", name: "TH", lat: 48.6855, lng: -121.0925, distMi: 0 };
+  const TH2 = { type: "Trailhead", name: "Other way in", lat: 48.40, lng: -120.80 };
+  const CG = { type: "Campsite", name: "Campground behind the trailhead", lat: 48.70, lng: -121.11, distMi: null };
+  const CAMP = { type: "Campsite", name: "Camp on the way", lat: 48.5423, lng: -121.0143, distMi: 13.8 };
+  const SPUR = { type: "Campsite", name: "Camp up a side valley", lat: 48.53, lng: -121.20, distMi: 15 };
+  const PASS = { type: "Junction", name: "Pass", lat: 48.4985, lng: -120.9623, distMi: 19.6 };
+  const COL = { type: "Junction", name: "Col with no distance", lat: 48.495, lng: -120.94 };
+  const SUM = { type: "Summit", name: "Summit", lat: 48.4913, lng: -120.9228 };
+  const names = ws => waypointLinePins(ws).map(w => w.name).join(" > ");
+  const got = names([SUM, CG, TH, TH2, SPUR, CAMP, PASS, COL]);
+  const want = "TH > Camp on the way > Pass > Col with no distance > Summit";
+  if (got !== want) fail(`line order: got "${got}", want "${want}"`);
+  else ok("trailhead > camp on the way > pass > col > summit; the campground, the second trailhead and the side-trip camp are left off");
+  if (names([TH, CG]) !== "TH") fail("a trailhead and a campground with no distance must draw no line");
+  else ok("a trailhead plus a campground with no distance draws no line");
+  const gpxMap = fs.readFileSync(path.join(ROOT, "src/components/GPXMap.tsx"), "utf8");
+  if (!/waypointLinePins\(/.test(gpxMap)) fail("GPXMap no longer draws its dashed line through waypointLinePins()");
+  else ok("GPXMap draws the dashed line through waypointLinePins()");
+  if (/distMi\s*\?\?\s*0/.test(gpxMap)) fail("GPXMap sorts pins by `distMi ?? 0` again — a summit with no distance sorts to mile 0");
+  else ok("GPXMap does not sort pins by `distMi ?? 0`");
+  if (!/!trackIsJustTheWaypoints\(pts/.test(gpxMap)) fail("GPXMap draws a stored pin-join 'track' in its stored order again, instead of by waypointLinePins()");
+  else ok("a stored pin-join track is drawn by the same rule");
 }
 
 console.log();

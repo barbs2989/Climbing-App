@@ -168,6 +168,8 @@ export const OVERLAY_PAYLOADS = {
 
   // Composites, copied from the setter call sites verbatim.
   invitePrompt: { expr: "{climber:CLIMBERS[0],route:ROUTES[0]}" },
+  // Share a list: ListsManager's onShareList passes the list, its [{id,r}] items and whether it is public.
+  listShareFor: { expr: '{ul:{id:"l1",name:"Sample list",routeIds:[ROUTES[0].id]},items:[{id:ROUTES[0].id,r:ROUTES[0]}],pub:false}' },
   // Start a crew at an AREA (0302): the sheet renders for any payload; the lifted shape is what the area
   // page's "Start a crew here" builds, on a seed area so it resolves without the database.
   startCrew: { expr: '{mode:"area",area:{id:"lcc_hellgate",name:"Hellgate",areaType:"crag",disciplines:["sport"]},partners:[]}' },

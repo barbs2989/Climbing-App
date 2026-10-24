@@ -65,15 +65,16 @@ if (!form.length || !ss.size) {
 
 // There are TWO ways a field reaches onContribute, and checking only the first was this
 // guard's own first-draft bug. Besides the FIELDS list, RouteDetail calls onSubmit directly
-// with a literal field name — that is how startLocation is filed (bailout was too, until bail
-// points were removed), and it is NOT in FIELDS, so a FIELDS-only scan can never see that path at all.
+// with a literal field name — that is how startLocation was filed (until 0363 made the on-site
+// check-in the one start of a climb) and bailout too (until bail points were removed), neither
+// in FIELDS, so a FIELDS-only scan can never see that path at all.
 const direct = [...rd.matchAll(/onSubmit\(\{[^)]{0,120}?field:\s*"([a-zA-Z0-9_]+)"/g)].map((m) => m[1]);
 
 // Exempt from the SS requirement because onContribute returns BEFORE the field-edit path for
-// them: they are additive, geo-clustered lists read back through
-// startLocationConsensus, not scalar fields. A name here that stops being filed that way
-// must fail, so the list cannot rot.
-const EXEMPT = ["startLocation"];
+// them: additive, geo-clustered lists, not scalar fields. Empty since 0363 retired the last
+// one (startLocation). A name here that stops being filed that way must fail, so the list
+// cannot rot.
+const EXEMPT = [];
 const stale = EXEMPT.filter((k) => !direct.includes(k) && !form.includes(k));
 if (stale.length) {
   console.error(`stale exemption(s): ${stale.join(", ")} — no longer submitted anywhere. Remove from EXEMPT.`);
@@ -215,9 +216,8 @@ if (ungrouped.length) {
 }
 console.log(`  ${_fieldKeys.length} editor field(s), every one in a section the sheet renders`);
 const sectionIds = new Set(_fieldKeys);
-// One section is rendered with a literal id rather than from a FIELDS key (bail points, the
-// other, were removed from the app on 2026-10-07).
-for (const extra of ["startLocation"]) sectionIds.add(extra);
+// No section is rendered with a literal id any more: bail points went 2026-10-07 and the start
+// location (now the on-site check-in, 0363) on 2026-10-23.
 const orphanPencils = [...new Set(pencilIds.filter((id) => !sectionIds.has(id)))];
 if (orphanPencils.length) {
   const n = pencilIds.filter((id) => orphanPencils.includes(id)).length;
