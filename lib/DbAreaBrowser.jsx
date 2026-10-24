@@ -913,6 +913,29 @@ const lenLabel = (o, uElevN, uElevUnit) => {
   if (o[2] == null) return uElevN(o[1]) + "+ " + u;
   return uElevN(o[1]) + "–" + uElevN(o[2]) + " " + u;
 };
+// GAIN, ROUND TRIP, PEAK ELEVATION, PROMINENCE and DISTANCE AWAY (owner, 2026-10-24: "filter peaks
+// and routes by prominence, elevation gain, miles, etc ... Also by location and distance away").
+// AllTrails offers length and elevation gain as ranges and "Distance away" as a radius around you
+// or a place you pick; Peakbagger lists peaks by elevation and prominence. Each bucket is written
+// in ROUND numbers of BOTH unit systems — [key, imperial [lo, hi], metric [lo, hi]] — rather than
+// one set converted, which would offer a metric climber "305–914 m". The key is shared, so a saved
+// search keeps its meaning when the unit setting changes. What each reads is 0369's header.
+const FT_PER_M = 3.28084, KM_PER_MI = 1.60934;
+const GAIN_BUCKETS = [["any"], ["g1", [null, 1000], [null, 300]], ["g2", [1000, 3000], [300, 900]], ["g3", [3000, 5000], [900, 1500]], ["g4", [5000, null], [1500, null]]];
+const TRIP_BUCKETS = [["any"], ["t1", [null, 5], [null, 8]], ["t2", [5, 10], [8, 16]], ["t3", [10, 15], [16, 25]], ["t4", [15, null], [25, null]]];
+const PEAK_ELEV_MINS = [["any"], ["e1", 5000, 1500], ["e2", 8000, 2500], ["e3", 10000, 3000], ["e4", 12000, 3500], ["e5", 14000, 4000]];
+const PROM_MINS = [["any"], ["p1", 1000, 300], ["p2", 2000, 600], ["p3", 3000, 1000], ["p4", 5000, 1500]];
+const WITHIN = [["w1", 10, 15], ["w2", 25, 40], ["w3", 50, 80], ["w4", 100, 150]];
+const isMetric = uElevUnit => uElevUnit() === "m";
+const fmtN = n => n.toLocaleString("en-US");
+const rangeLabel = (o, metric, unit) => {
+  if (!o || o[0] === "any") return "Any";
+  const [lo, hi] = metric ? o[2] : o[1];
+  return lo == null ? "< " + fmtN(hi) + " " + unit : hi == null ? fmtN(lo) + "+ " + unit : fmtN(lo) + "–" + fmtN(hi) + " " + unit;
+};
+const minLabel = (o, metric, unit) => !o || o[0] === "any" ? "Any" : fmtN(metric ? o[2] : o[1]) + "+ " + unit;
+const withinLabel = (o, metric, unit) => (metric ? o[2] : o[1]) + " " + unit;
+const findB = (list, k) => list.find(o => o[0] === k) || null;
 /* The grade options a range can be set from, per grading system, on the SAME number line as
    gradeNumFrom (lib/grade.js). Each entry is [label, lo, hi]: `lo` is the bound used when the
    grade is the MINIMUM, `hi` when it is the MAXIMUM, so a pick means "this grade" at either end.
@@ -960,8 +983,8 @@ const discLabel = d => (DISCIPLINES.find(x => x[0] === d) || [, d])[1];
 // Wall order first (owner, 2026-10-21: "grouped by area such as crag or wall so they show up in
 // order"): each wall's climbs together, left to right, under the wall's name.
 const FINDER_SORTS = [["lr", "By wall, left → right"], ["rl", "By wall, right → left"], ["name", "Name A→Z"], ["name_desc", "Name Z→A"], ["stars_desc", "Most starred"]];
-const SORT_PHRASE = { name: "name", name_desc: "name (Z→A)", area: "wall", lr: "wall, left to right", rl: "wall, right to left", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred" };
-const GROUPED_SORTS = { area: 1, lr: 1, rl: 1 };
+const SORT_PHRASE = { name: "name", name_desc: "name (Z→A)", area: "wall", lr: "wall, left to right", rl: "wall, right to left", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred", near: "nearest first" };
+const GROUPED_SORTS = { area: 1, lr: 1, rl: 1, near: 1 };
 // A whole state (or more) is not listed until an area in it is picked or a name is typed: an
 // unfiltered California list took 3.3 s in the database (2026-10-21), and nobody pages through
 // 44,000 climbs. Mountain Project's Route Finder starts from a Location the same way.
@@ -969,12 +992,23 @@ const FINDER_NEEDS_AREA = { world: 1, country: 1, state: 1 };
 const gradeRangeLabel = (lo, hi) => lo && hi ? (lo === hi ? lo : lo + "–" + hi) : lo ? lo + " and up" : hi ? "Up to " + hi : "";
 // One filter state -> the RPC's arguments. Shared by the applied query and the sheet's draft
 // count, so the number on "Show N routes" is the number the list then shows.
-const finderArgs = (q, f) => {
+// `metric` decides which of a bucket's two bound sets is meant; the RPC always takes feet and km.
+const finderArgs = (q, f, metric) => {
   const len = LEN_BUCKETS.find(l => l[0] === f.len) || LEN_BUCKETS[0];
   const sc = gradeScaleFor(f.discs, f.gSys);
   const lo = sc && f.gLo ? sc.find(o => o[0] === f.gLo) : null, hi = sc && f.gHi ? sc.find(o => o[0] === f.gHi) : null;
-  return { q, disc: f.discs.join(","), gradeSys: (lo || hi) && f.discs.some(d => GRADE_SYS_FILTERED[d]) ? gradeSysFor(f.discs, f.gSys) : null, minGrade: lo ? lo[1] : null, maxGrade: hi ? hi[2] : null, minStars: f.minStars || null, minPitches: f.minPitches || null, minLengthM: len[3], maxLengthM: len[4], sortBy: f.sortBy };
+  const g = findB(GAIN_BUCKETS, f.gain), t = findB(TRIP_BUCKETS, f.trip), e = findB(PEAK_ELEV_MINS, f.elev), p = findB(PROM_MINS, f.prom), w = f.near && findB(WITHIN, f.within);
+  const gr = g && g[1] ? (metric ? g[2].map(v => v == null ? null : Math.round(v * FT_PER_M)) : g[1]) : [null, null];
+  const tr = t && t[1] ? (metric ? t[2] : t[1].map(v => v == null ? null : v * KM_PER_MI)) : [null, null];
+  return { q, disc: f.discs.join(","), gradeSys: (lo || hi) && f.discs.some(d => GRADE_SYS_FILTERED[d]) ? gradeSysFor(f.discs, f.gSys) : null, minGrade: lo ? lo[1] : null, maxGrade: hi ? hi[2] : null, minStars: f.minStars || null, minPitches: f.minPitches || null, minLengthM: len[3], maxLengthM: len[4], sortBy: f.sortBy === "near" && !f.near ? "lr" : f.sortBy,
+    minGainFt: gr[0], maxGainFt: gr[1], minTripKm: tr[0], maxTripKm: tr[1],
+    minElevFt: e && e[1] ? (metric ? Math.round(e[2] * FT_PER_M) : e[1]) : null, minPromFt: p && p[1] ? (metric ? Math.round(p[2] * FT_PER_M) : p[1]) : null,
+    nearLat: f.near ? f.near.lat : null, nearLng: f.near ? f.near.lng : null, withinKm: w ? (metric ? w[2] : w[1] * KM_PER_MI) : null };
 };
+// Filters that narrow the AREAS before any climb is read (0369) make a whole state cheap to search,
+// so they lift FINDER_NEEDS_AREA. Gain and round trip are read climb by climb and do not: alone
+// over California they took 3.6 s cold, past the 3 s statement timeout (2026-10-24).
+const narrowsAreas = f => !!(f.near || (f.elev && f.elev !== "any") || (f.prom && f.prom !== "any"));
 // PINS a bar under the app's own top bar once the page scrolls past it. Not CSS sticky: #appscroll
 // is overflow:auto but grows to its content on a phone, where the DOCUMENT scrolls, and a sticky
 // child of a scroll container that never scrolls never sticks. The pin line is the bottom of the
@@ -1020,7 +1054,8 @@ function usePinnedBar(endRef) {
 }
 function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute, onAddClimb, onAddArea }) {
   const { wishlist } = useContext(ClimberCtx);
-  const DEF = { discs: [], sortBy: "lr", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "" };
+  const DEF = { discs: [], sortBy: "lr", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "", gain: "any", trip: "any", elev: "any", prom: "any", near: null, within: "w2" };
+  const metric = isMetric(uElevUnit);
   // A chart bar on the area page opens the finder already narrowed to its discipline.
   const DEF0 = presetDisc ? { ...DEF, discs: [presetDisc] } : DEF;
   // LOCATION: where the search runs. Starts as the area the finder was opened from; on a state it
@@ -1031,14 +1066,36 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   // The query follows the box a beat behind, so typing "castle" is one search, not six.
   const [qD, setQD] = useState("");
   useEffect(() => { const t = setTimeout(() => setQD(q), 250); return () => clearTimeout(t); }, [q]);
-  const needsArea = !!FINDER_NEEDS_AREA[loc.area_type] && !qD.trim();
+  const needsAreaFor = f => !!FINDER_NEEDS_AREA[loc.area_type] && !qD.trim() && !narrowsAreas(f);
   const [saveFor, setSaveFor] = useState(null);
   const { wrapRef: barWrap, barRef, pin } = usePinnedBar();
   // Routes | Areas. One text box serves both, so switching carries what you typed across.
   const [mode, setMode] = useState("routes");
   const [af, setAf] = useState(DEF0);
   const [df, setDf] = useState(DEF0);
+  const needsArea = needsAreaFor(af);
   const [sheet, setSheet] = useState(false);
+  // DISTANCE AWAY's point: your device's location, or a town / zip you type (AllTrails offers both).
+  const [nearQ, setNearQ] = useState("");
+  const [nearSt, setNearSt] = useState({ busy: false, err: "", hits: [] });
+  const pickNear = pt => { setNearSt({ busy: false, err: "", hits: [] }); setNearQ(""); setDf(d => ({ ...d, near: pt, sortBy: "near" })); };
+  const locateMe = () => {
+    if (typeof navigator === "undefined" || !navigator.geolocation) { setNearSt({ busy: false, err: "Location isn’t available on this device — type a town or zip code instead.", hits: [] }); return; }
+    setNearSt({ busy: true, err: "", hits: [] });
+    navigator.geolocation.getCurrentPosition(
+      pos => pickNear({ lat: pos.coords.latitude, lng: pos.coords.longitude, label: "your location" }),
+      e => setNearSt({ busy: false, err: e && e.code === 1 ? "Location is turned off for this site — allow it, or type a town or zip code." : "Couldn’t find your location — try again, or type a town or zip code.", hits: [] }),
+      { enableHighAccuracy: false, timeout: 15000, maximumAge: 300000 });
+  };
+  const findNear = () => {
+    if (!nearQ.trim()) return;
+    setNearSt({ busy: true, err: "", hits: [] });
+    searchPlaces(nearQ).then(rows => {
+      if (!rows.length) setNearSt({ busy: false, err: "No town or zip code matches “" + nearQ.trim() + "”.", hits: [] });
+      else if (rows.length === 1) pickNear({ lat: rows[0].lat, lng: rows[0].lng, label: rows[0].name });
+      else setNearSt({ busy: false, err: "", hits: rows });
+    }, () => setNearSt({ busy: false, err: "Couldn’t look that place up — check your connection and try again.", hits: [] }));
+  };
   const [savedSearches, setSavedSearches] = useState([]);
   const [showSaved, setShowSaved] = useState(false);
   const [page, setPage] = useState(0);
@@ -1049,7 +1106,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   const gScale = gradeScaleFor(af.discs, af.gSys);
   const gLoO = gScale && af.gLo ? gScale.find(o => o[0] === af.gLo) : null;
   const gHiO = gScale && af.gHi ? gScale.find(o => o[0] === af.gHi) : null;
-  const queryArgs = { ...finderArgs(qD, af), page };
+  const queryArgs = { ...finderArgs(qD, af, metric), page };
   const { data: batch, isLoading: lr0, error } = useSubtreeRoutes(needsArea ? null : loc.id, queryArgs);
   const { data: total } = useSubtreeRouteCount(needsArea ? null : loc.id, queryArgs);
   // A disabled query can still report loading; while the area picker shows, nothing is loading.
@@ -1058,7 +1115,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   // The sheet's button says how many routes the DRAFT would show ("Show 212 routes"), as
   // Mountain Project's filter screen does — so a tap on it visibly does something, and a
   // combination that matches nothing is seen before the sheet is left. Queried only while open.
-  const { data: draftTotal, isFetching: draftCounting } = useSubtreeRouteCount(sheet && !needsArea ? loc.id : null, finderArgs(qD, df));
+  const { data: draftTotal, isFetching: draftCounting } = useSubtreeRouteCount(sheet && !needsAreaFor(df) ? loc.id : null, finderArgs(qD, df, metric));
   // While the sheet is open the page behind it must not scroll. The document is the scroller
   // here, and on a phone a drag past the end of the sheet moved the page instead, which slid the
   // browser's own toolbar in and out and shifted the sheet under the climber's finger.
@@ -1076,7 +1133,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   };
   const loadSearch = (search) => {
     setQ(search.q);
-    setAf(search.filters);
+    setAf({ ...DEF, ...search.filters });
     setLoc(search.loc || scope);
     setShowSaved(false);
     setPage(0);
@@ -1094,7 +1151,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   const { data: areaNames } = useAreaNamesByIds(areaIds);
   const { data: areaHits, isLoading: la, error: ea } = useAreaSearch(scope.id, mode === "areas" ? qD.trim() : "");
 
-  const nF = af.discs.length + (gLoO || gHiO ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== DEF.sortBy ? 1 : 0);
+  const nF = af.discs.length + (gLoO || gHiO ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== DEF.sortBy ? 1 : 0) + ["gain", "trip", "elev", "prom"].filter(k => af[k] && af[k] !== "any").length + (af.near ? 1 : 0);
   const afChips = [];
   // One chip per discipline; removing one keeps the grade range only if the disciplines left still
   // share its scale.
@@ -1105,7 +1162,13 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   // The APPLIED-filter chip is a second label site, and it must go through the same formatter or
   // the filter bar and the chip that says what you filtered by disagree about units.
   if (af.len !== "any") afChips.push({ k: "len", label: lenLabel(lenRange, uElevN, uElevUnit), clear: () => setAf(a => ({ ...a, len: "any" })) });
-  if (af.sortBy !== DEF.sortBy) afChips.push({ k: "sort", label: { name: "A→Z", name_desc: "Z→A", area: "By area", lr: "Left → right", rl: "Right → left", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: DEF.sortBy })) });
+  const eU = uElevUnit(), dU = metric ? "km" : "mi";
+  if (af.gain && af.gain !== "any") afChips.push({ k: "gain", label: rangeLabel(findB(GAIN_BUCKETS, af.gain), metric, eU) + " gain", clear: () => setAf(a => ({ ...a, gain: "any" })) });
+  if (af.trip && af.trip !== "any") afChips.push({ k: "trip", label: rangeLabel(findB(TRIP_BUCKETS, af.trip), metric, dU) + " round trip", clear: () => setAf(a => ({ ...a, trip: "any" })) });
+  if (af.elev && af.elev !== "any") afChips.push({ k: "elev", label: "Peak " + minLabel(findB(PEAK_ELEV_MINS, af.elev), metric, eU), clear: () => setAf(a => ({ ...a, elev: "any" })) });
+  if (af.prom && af.prom !== "any") afChips.push({ k: "prom", label: minLabel(findB(PROM_MINS, af.prom), metric, eU) + " prominence", clear: () => setAf(a => ({ ...a, prom: "any" })) });
+  if (af.near) afChips.push({ k: "near", label: "Within " + withinLabel(findB(WITHIN, af.within) || WITHIN[1], metric, dU) + " of " + af.near.label, clear: () => setAf(a => ({ ...a, near: null, sortBy: a.sortBy === "near" ? DEF.sortBy : a.sortBy })) });
+  if (af.sortBy !== DEF.sortBy) afChips.push({ k: "sort", label: { name: "A→Z", name_desc: "Z→A", area: "By area", lr: "Left → right", rl: "Right → left", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred", near: "Nearest first" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: DEF.sortBy })) });
   const inList = (l, id) => (l.routeIds || []).includes(id);
   const customLists = (userLists || []).filter(l => l.id !== "ul_obj");
   const isSaved = id => (wishlist || []).includes(id) || customLists.some(l => inList(l, id));
@@ -1186,7 +1249,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
           picked; typing a climb's name searches the whole state straight away. */}
       {needsArea ? <>
         <SL C={C}>{"Pick an area in " + loc.name}</SL>
-        <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginBottom: 10 }}>{"Choose where to look and the finder lists its climbs with your filters — or type a climb's name above to search all of " + loc.name + "."}</div>
+        <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginBottom: 10 }}>{"Choose where to look and the finder lists its climbs with your filters — or type a climb's name above, or set Distance away, Peak elevation or Prominence under Filters, to search all of " + loc.name + "."}</div>
         {lk ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div> : null}
         {ek && !(locKids && locKids.length) ? <div style={{ color: C.red, fontSize: 12.5 }}>{"Couldn't load the areas in " + loc.name + " — check your connection and try again."}</div> : null}
         {(locKids || []).filter(a => a.route_count > 0).map(a => (
@@ -1225,7 +1288,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
       )}
       {/* A star minimum no longer empties a search (0334: unrated climbs stay in), so the
           explanation left is the grade range's: a route with no readable grade fails it. */}
-      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{(gLoO || gHiO) ? "No routes match these filters. Routes without a readable grade are hidden while a grade range is set — try widening it or setting it back to Any." : "No routes match these filters."}</div>}
+      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{(gLoO || gHiO) ? "No routes match these filters. Routes without a readable grade are hidden while a grade range is set — try widening it or setting it back to Any." : ["gain", "trip", "elev", "prom"].some(k => af[k] && af[k] !== "any") ? "No routes match these filters. Gain, round trip, peak elevation and prominence are recorded mostly for mountain routes, and climbs without the figure are hidden while one is set." : af.near ? "No routes in " + loc.name + " are that close to " + af.near.label + " — try a wider distance." : "No routes match these filters."}</div>}
       </>}
       </>}
 
@@ -1294,6 +1357,26 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
                 the page behind the sheet (the document is the scroller here), so the sheet reads as
                 stuck — the same chaining #684 fixed on the other sheets. */}
             <div style={{ padding: "0 16px 18px", overflowY: "auto", overscrollBehavior: "contain", flex: 1, minHeight: 0 }}>
+            {lab("Distance away")}
+            {df.near ? <>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: C.text, marginBottom: 8 }}>
+                <span style={{ flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{"From " + df.near.label}</span>
+                <button onClick={() => setDf(d => ({ ...d, near: null, sortBy: d.sortBy === "near" ? DEF.sortBy : d.sortBy }))} style={{ ...BTN_LINK(C), padding: "4px 2px", flexShrink: 0 }}>Change</button>
+              </div>
+              <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{WITHIN.map(o => chip("Within " + withinLabel(o, metric, dU), df.within === o[0], () => setDf(d => ({ ...d, within: o[0] }))))}</div>
+              <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>{"Measured in a straight line to each climb's crag or peak, inside " + loc.name + "."}</div>
+            </> : <>
+              <button onClick={locateMe} disabled={nearSt.busy} style={{ ...BTN_LG, width: "100%", marginBottom: 8, border: "1px solid " + C.border, background: C.surface, color: C.text }}>{nearSt.busy ? "Finding…" : "Use my location"}</button>
+              <form onSubmit={e => { e.preventDefault(); findNear(); }} style={{ display: "flex", gap: 8 }}>
+                <input aria-label="Town or zip code" value={nearQ} onChange={e => setNearQ(e.target.value)} placeholder="…or a town or zip code" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box" }} />
+                <button type="submit" disabled={nearSt.busy || !nearQ.trim()} style={{ ...BTN_LG, flexShrink: 0, border: "1px solid " + C.border, background: C.surface, color: C.text }}>Go</button>
+              </form>
+              {nearSt.err ? <div style={{ fontSize: 12, color: C.red, marginTop: 8, lineHeight: 1.45 }}>{nearSt.err}</div> : null}
+              {nearSt.hits.length ? <div style={{ marginTop: 8 }}>
+                <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6 }}>Which one?</div>
+                {nearSt.hits.map((h, i) => <button key={i} onClick={() => pickNear({ lat: h.lat, lng: h.lng, label: h.name })} style={{ ...BTN_LG, width: "100%", textAlign: "left", marginBottom: 6, border: "1px solid " + C.border, background: C.surface, color: C.text }}>{h.name}{h.sub ? <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, fontWeight: 500 }}>{h.sub}</span> : null}</button>)}
+              </div> : null}
+            </>}
             {lab("Discipline")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
               {/* Tick as many as you like; a range stays only while every ticked discipline shares its scale. */}
@@ -1332,6 +1415,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
             })()}
             {lab("Sort by")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+              {df.near ? chip("Nearest first", df.sortBy === "near", () => setDf(d => ({ ...d, sortBy: "near" }))) : null}
               {FINDER_SORTS.map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] }))))}
               {df.discs.length ? [["grade_asc", "↓ Easiest"], ["grade_desc", "↑ Hardest"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] })))) : null}
             </div>
@@ -1345,6 +1429,17 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{[[0, "Any"], [1, "1+ (single)"], [2, "2+ (multi-pitch)"], [3, "3+"], [5, "5+"], [10, "10+"]].map(o => chip(o[1], df.minPitches === o[0], () => setDf(d => ({ ...d, minPitches: o[0] }))))}</div>
             {lab("Length")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{LEN_BUCKETS.map(o => chip(lenLabel(o, uElevN, uElevUnit), df.len === o[0], () => setDf(d => ({ ...d, len: o[0] }))))}</div>
+            {/* Recorded mostly on mountain routes (0369's header has the counts), so each says what a
+                climb without the figure does: it is hidden while the filter is set, as an ungraded climb is by a grade range. */}
+            {lab("Elevation gain")}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{GAIN_BUCKETS.map(o => chip(rangeLabel(o, metric, eU), df.gain === o[0], () => setDf(d => ({ ...d, gain: o[0] }))))}</div>
+            {lab("Round trip")}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{TRIP_BUCKETS.map(o => chip(rangeLabel(o, metric, dU), df.trip === o[0], () => setDf(d => ({ ...d, trip: o[0] }))))}</div>
+            {lab("Peak elevation")}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{PEAK_ELEV_MINS.map(o => chip(minLabel(o, metric, eU), df.elev === o[0], () => setDf(d => ({ ...d, elev: o[0] }))))}</div>
+            {lab("Prominence")}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{PROM_MINS.map(o => chip(minLabel(o, metric, eU), df.prom === o[0], () => setDf(d => ({ ...d, prom: o[0] }))))}</div>
+            {[df.gain, df.trip, df.elev, df.prom].some(v => v && v !== "any") ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Gain, round trip, peak elevation and prominence are recorded mostly for mountain routes. Climbs without the figure are hidden while one of these is set.</div> : null}
             </div>
             <div style={{ flexShrink: 0, display: "flex", gap: 8, padding: "12px 16px calc(env(safe-area-inset-bottom) + 12px)", borderTop: "1px solid " + C.border, background: C.bg }}>
               <button onClick={() => setDf(DEF)} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>Clear all</button>
