@@ -2214,9 +2214,12 @@ function LoginScreen({onAuth,onLegal}){
         which signs you out into this screen.
         The real modal (lib/AuthModal.jsx) does this correctly: it ASKS Supabase which
         providers are enabled (useOAuthProviders) and renders Google only if one really
-        is. One honest button here, named for what it actually does. */}
-    <button onClick={()=>onAuth({via:"preview"})} style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"center",gap:8,padding:13,borderRadius:11,border:"1px solid "+C.border,boxSizing:"border-box",background:C.surface,color:C.text,fontSize:15,fontWeight:600,cursor:"pointer",marginBottom:7}}>Continue as a demo climber</button>
-    <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:9}}>This preview signs you straight in with sample data — no password is checked, and nothing is saved to a real account.</div>
+        is. One honest button here, named for what it actually does -- and since 2026-10-24
+        named as the real screen names it, View as guest, not "Continue as a demo climber":
+        a sign-in screen does not offer a sample ACCOUNT, and this one is reached only by a
+        build with no backend now (every Supabase build signs out onto AuthModal). */}
+    <button onClick={()=>onAuth({via:"guest"})} style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"center",gap:8,padding:13,borderRadius:11,border:"1px solid "+C.border,boxSizing:"border-box",background:C.surface,color:C.text,fontSize:15,fontWeight:600,cursor:"pointer",marginBottom:7}}>View as guest</button>
+    <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:9}}>Look around with sample content — nothing is saved to an account.</div>
     <div style={{display:"flex",alignItems:"center",gap:10,margin:"14px 0"}}><div style={{flex:1,height:1,background:C.border}}/><span style={{fontSize:12,color:C.textMuted}}>or use email</span><div style={{flex:1,height:1,background:C.border}}/></div>
     {signup?<div style={{marginBottom:12}}><label htmlFor="cm-demo-name" style={lbl}>Full name</label><input id="cm-demo-name" value={nm} onChange={e=>setNm(e.target.value)} placeholder="Nathan Barber" style={inp}/></div>:null}
     {signup?<div style={{marginBottom:12}}><label htmlFor="cm-demo-username" style={lbl}>Username</label><input id="cm-demo-username" value={un} onChange={e=>setUn(e.target.value.replace(/[^a-zA-Z0-9_]/g,"").toLowerCase())} placeholder="climbnathan" style={inp}/><div style={{fontSize:12,color:C.textMuted,marginTop:4}}>Shown publicly. You can hide your real name in Settings.</div>{un&&hasVulgarity(un)?<div style={{fontSize:12,color:C.red,marginTop:4,fontWeight:600}}>That username contains language that is not allowed.</div>:null}</div>:null}
