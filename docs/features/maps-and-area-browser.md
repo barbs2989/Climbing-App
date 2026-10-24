@@ -64,7 +64,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Add an area** (0360, `lib/AddArea.jsx`): *Add an area* under an area's list, or under the route finder's results, opens a sheet —
   name, kind (crag/wall/boulder · peak · area), about, optional location — that lists catalog places already filed under that name
   before it sends. It files a `contributions` row of kind `new_area` (area_id = the parent); nothing shows until the owner approves it
-  in Profile › Review › Area proposals (`AreaProposalQueue`), where `approve_new_area` inserts the `areas` row. Offered only where the
+  in Menu › Review › Area proposals (`AreaProposalQueue`), where `approve_new_area` inserts the `areas` row. Offered only where the
   area holds no climbs itself (areas hold sub-areas OR climbs — Mountain Project's rule, and `trg_areas_leaf_xor`), and never on a country.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.

@@ -68,7 +68,7 @@ empty field fills at once and two climbers who agree are enough to change one (0
 - **Your contributions** (Menu → Profile) shows each edit as Awaiting review / Added — live /
   Not applied with the owner's reason.
 
-- **The owner's queues** (Me tab, admin block; `lib/RouteQualityQueues.jsx`): *Route edits to review*
+- **The owner's queues** (Menu › Review tiles, admin only; `lib/RouteQualityQueues.jsx`): *Route edits to review*
   clusters pending rows by route, field and `sameEditValue` so three climbers who sent the same value
   are one card; shows the page's current value beside the proposed one with a row-by-row diff for
   pitch / rappel / waypoint tables; Approve, Edit &amp; approve (the owner's value becomes
