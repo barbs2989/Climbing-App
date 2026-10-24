@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Home's Alerts swipe too**: on a phone, each row of Home's Alerts list now swipes right to archive and left to delete, as the bell's Notifications panel already did; it still shows the newest 8, with *View all N alerts* opening the full, scrolling panel and its *Archive all*. See `docs/features/logbook-crews-home.md`.
 - **Route page: the sub-tab bar shows that it scrolls**: while Partners or Photos is hidden past the edge of a phone, that edge fades and carries a › button (‹ at the other end once scrolled), so a climber can find the hidden tabs.
 - **Popups fill the screen on a phone**: the 27 popups that slid up from the bottom (forms, lists, share screens, Quick log, Filter routes, vouches, group and event forms) now open full screen with the ✕ at the top; a post's or comment's ⋯ menu stays at the bottom. See `docs/features/app-shell-and-layout.md`.
 - **Option boxes stay on one row**: Edit profile's four *Experience level* boxes (Beginner · Intermediate · Advanced · Expert) used to wrap one box onto a second line on a phone; they now share the row like a segmented control. The same fix holds the four *When you're free to climb* boxes (the Menu card, the Profile tab, a climber's profile; a long label breaks onto two lines inside its box) and add-a-climb's four *Time commitment* boxes on one row from 320px up. See `docs/features/profile-and-settings.md`.
