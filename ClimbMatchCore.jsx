@@ -51,6 +51,8 @@ import BadgeGrid from "./src/components/BadgeGrid.tsx";
 import VouchCard from "./src/components/VouchCard.tsx";
 import SpeedCompat from "./src/components/SpeedCompat.tsx";
 import SpeedProfile from "./src/components/SpeedProfile.tsx";
+import TickList from "./src/components/TickList.tsx";
+import SearchSplit from "./src/components/SearchSplit.tsx";
 import ShareExportRow from "./src/components/ShareExportRow.tsx";
 import ReactionPicker from "./src/components/ReactionPicker.tsx";
 import PlaceMatches from "./src/components/PlaceMatches.tsx";
@@ -1792,22 +1794,6 @@ const seedIdentity=c=>!!(c&&typeof c.id==="number"&&(c.id!==0||!DB_UID));
 const seedHistoryFor=c=>seedIdentity(c)?ticksFor(c.name):[];
 /* How many climbs an example climber's RÉSUMÉ lists: the same source Resume's `baked` reads. The partner card's "N climbs" chip opens that résumé, and it printed `routesLogged` (a stored total, 156 for Maya) above a résumé listing 9 -- the owner's "check for other broken buttons" (2026-10-23). `routesLogged` still feeds Ranks, where it is a total and says so. */
 const resumeClimbCount=c=>(c&&c.ticks)?c.ticks.length:seedHistoryFor(c).length;
-function TickList({climber,logs,onOpen,initial,routeById}){
-  const [sort,setSort]=useState("new");const [disc,setDisc]=useState("all");const [showAll,setShowAll]=useState(false);
-  const base=seedHistoryFor(climber);
-  const extra=(logs||[]).map(l=>{const r=(routeById?routeById(l.routeId):ROUTES.find(x=>x.id===l.routeId));return r?{route:r,mtn:MOUNTAINS.find(m=>m.id===r.mountainId)||r._dbArea||{},date:l.date,tickType:l.tickType,stars:l.stars,/* Another real climber's logs carry their own author and must not be filed under ME; partners stay ABSENT when the row never said (not "solo"). */user:l.user||ME.name,avatar:l.user?l.avatar:ME.avatar,_dbId:l._dbId,_authorId:l._authorId,condTags:l.condTags||[],text:l.text||l.notes||"",partners:l.user?l.partners:(l.partners||[]),cond:l.cond,photos:l.photos,photoAlts:l.photoAlts,gpxName:l.gpxName}:null;}).filter(Boolean);
-  const allRaw=[...extra,...base];
-  if(!allRaw.length)return <div style={{fontSize:13,color:C.textMuted,padding:"10px 2px"}}>No logged climbs yet — log an ascent from any climb's page and it shows up here.</div>;
-  const all=allRaw.map(t=>({t,d:catOf(t.route)}));const discs=Array.from(new Set(all.map(x=>x.d)));
-  let view=all.filter(x=>disc==="all"||x.d===disc);
-  view=view.slice().sort((a,b)=>sort==="old"?(a.t.date||"").localeCompare(b.t.date||""):sort==="stars"?(((b.t.stars||0)-(a.t.stars||0))||(b.t.date||"").localeCompare(a.t.date||"")):(b.t.date||"").localeCompare(a.t.date||""));
-  const N=initial||6;const shown=showAll?view:view.slice(0,N);
-  return <div>
-    {allRaw.length>3?<div style={{marginBottom:9}}><select aria-label="Sort guides" value={sort} onChange={e=>setSort(e.target.value)} style={{width:"100%",padding:"7px 10px",borderRadius:9,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:12.5,cursor:"pointer",marginBottom:discs.length>1?7:0}}>{[["new","Newest first"],["old","Oldest first"],["stars","Top rated"]].map(o=><option key={o[0]} value={o[0]}>{o[1]}</option>)}</select>{discs.length>1?<div style={{display:"flex",gap:6,flexWrap:"wrap"}}>{[["all","All"]].concat(discs.map(dc=>[dc,(CAT[dc]||{}).label||dc])).map(x=><button key={x[0]} onClick={()=>setDisc(x[0])} aria-current={disc===x[0]?"true":undefined} style={{padding:"7px 12px",borderRadius:20,border:`1px solid ${disc===x[0]?C.blue:C.border}`,background:disc===x[0]?C.blueBg:"transparent",color:disc===x[0]?C.blue:C.textSub,fontSize:11.5,fontWeight:600,cursor:"pointer"}}><span style={{display:"inline-flex",alignItems:"center",gap:5}}>{x[0]!=="all"?<DiscIcon d={x[0]} size={13}/>:null}{x[1]}</span></button>)}</div>:null}</div>:null}
-    <div className="cm-stagger">{shown.map(({t},i)=><div key={i} {...clickable(()=>onOpen&&onOpen(t))} style={{display:"flex",alignItems:"center",gap:10,padding:"9px 0",borderBottom:i<shown.length-1?`1px solid ${C.borderLight}`:"none",cursor:onOpen?"pointer":"default"}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13,fontWeight:600}}>{t.route.name}</div><div style={{fontSize:12,color:C.textMuted}}>{t.mtn.name} · {t.route.grade} · {shortDate(t.date)}</div></div><div style={{textAlign:"right",flexShrink:0}}><Pill label={t.tickType} color={C.blue} bg={C.blueBg} sm/><div style={{marginTop:3}}><Stars n={t.stars} size={11}/></div></div>{onOpen?<span style={{color:C.blue,marginLeft:4}}>→</span>:null}</div>)}</div>
-    {view.length>N?<button onClick={()=>setShowAll(a=>!a)} style={{marginTop:9,width:"100%",padding:"8px",background:"transparent",color:C.blue,border:`1px solid ${C.border}`,borderRadius:9,fontSize:12,fontWeight:700,cursor:"pointer"}}>{showAll?"Show fewer":"Show all "+view.length+" →"}</button>:null}
-  </div>;
-}
 function LogCatch({friend,partners,logs,crews,routeById,onClose,onSave}){
   /* Opened from a partner's profile `friend` is that partner; opened from the Me tab's catch card
      it is null and the sheet asks WHO first, from `partners` -- friends plus everyone you have
@@ -2222,39 +2208,6 @@ function ConnectModal({climber,onClose,onSend,routeById}){
       <div style={{fontSize:12,color:C.textMuted,textAlign:"center",marginTop:11,lineHeight:1.5}}>A connection is mutual — {first} confirms before you’re connected.</div>
     </div>
   </div>,document.body);
-}
-function CrewInviteModal({climber,route,onClose,onSend}){
-  const c=climber,first=pubFirst(c);
-  const suggested="Hi "+first+", want to join my crew for "+route.name+"? "+(route.grade?("It’s "+route.grade+". "):"")+"Looking for a solid, safety-minded partner — let me know!";
-  const [note,setNote]=useState("");
-  const MAX=300;
-  return <div onClick={onClose} role="dialog" aria-modal="true" aria-label="Invite to crew" style={{position:"fixed",inset:0,zIndex:80,background:"rgba(0,0,0,0.62)",display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
-    <div onClick={e=>e.stopPropagation()} style={{background:C.surface,borderRadius:"18px 18px 0 0",border:"1px solid "+C.border,width:"100%",maxWidth:520,padding:18,boxShadow:"0 -10px 40px rgba(0,0,0,0.5)",maxHeight:"90%",overflowY:"auto",overscrollBehavior:"contain"}}>
-      <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:13}}>
-        <Av src={c.avatar} size={46} online={c.online}/>
-        <div style={{flex:1,minWidth:0}}>
-          <div style={{fontSize:16,fontWeight:700}}>Invite {first} to your crew</div>
-          <div style={{fontSize:12,color:C.textMuted,marginTop:1}}>They join the trip for this objective</div>
-        </div>
-        <button onClick={onClose} aria-label="Close" style={POP_CLOSE}>✕</button>
-      </div>
-      <div style={{display:"flex",alignItems:"center",gap:10,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:11,padding:"9px 11px",marginBottom:14}}>
-        <div style={{width:40,height:40,borderRadius:8,overflow:"hidden",flexShrink:0}}><img loading="lazy" decoding="async" src={route.cover} className="cover-x" alt="" style={{width:"100%",height:"100%",objectFit:"cover"}} onError={onImgErr(FALLBACK_COVER)}/></div>
-        <div style={{minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{route.name}</div><div style={{fontSize:11.5,color:C.blue,fontWeight:600}}>{route.grade}</div></div>
-      </div>
-      <div style={{fontSize:13,color:C.text,fontWeight:800,textTransform:"uppercase",letterSpacing:0.4,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Add a note (optional)</div>
-      <textarea aria-label="Add a note (optional)" value={note} onChange={e=>setNote(e.target.value.slice(0,MAX))} placeholder={suggested} rows={4} style={{width:"100%",padding:"11px 12px",borderRadius:11,border:"1px solid "+C.border,background:C.bg,color:C.text,fontSize:13.5,lineHeight:1.5,boxSizing:"border-box",resize:"vertical",fontFamily:"inherit",outline:"none"}}/>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginTop:7,marginBottom:15}}>
-        <button onClick={()=>setNote(suggested)} style={{background:"transparent",border:"none",color:C.blue,fontSize:12.5,fontWeight:600,cursor:"pointer",padding:0}}>Use suggested note</button>
-        <span style={{fontSize:12,color:note.length>MAX-30?C.amber:C.textMuted}}>{note.length}/{MAX}</span>
-      </div>
-      <div style={{display:"flex",gap:12}}>
-        <button onClick={onClose} style={{flex:"0 0 auto",padding:"12px 17px",background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:12,fontSize:14,fontWeight:600,cursor:"pointer"}}>Cancel</button>
-        <button onClick={()=>onSend(note.trim())} style={{flex:1,padding:"12px 16px",background:C.blueSolid,color:"#fff",border:"none",borderRadius:12,fontSize:14.5,fontWeight:700,cursor:"pointer"}}>{note.trim()?"Send invite":"Send without note"}</button>
-      </div>
-      <div style={{fontSize:12,color:C.textMuted,textAlign:"center",marginTop:11,lineHeight:1.5}}>{first} can accept or decline your invite.</div>
-    </div>
-  </div>;
 }
 function LoginScreen({onAuth,onLegal}){
   const [mode,setMode]=useState("signin");
@@ -2807,53 +2760,6 @@ function SharedListView({list:given,listId,onClose,onOpenRoute,routeById,notify}
 /* One row of export controls, shared by a list and an itinerary so the two read the same. */
 /* The float plan as a page for paper or a PDF — every field, with "—" for one left empty rather than a dropped row, because a blank on a safety document should read as blank, not as missing. */
 function floatPlanSheetHtml(form,coords){var f=form||{};var rows=[["Route / objective",f.route],["Climbing partner",f.partner],["Party size",f.party],["Vehicle",f.vehicle],["Trailhead / parking",f.lot],["Departure",f.depart],["HARD RETURN",f.ret],["Communication plan",f.comms],["Emergency contact",f.contact]];if(coords)rows.splice(5,0,["Objective coordinates",coords.lat.toFixed(4)+", "+coords.lng.toFixed(4)+(coords.name?" ("+coords.name+")":"")]);return "<h1>Float plan — "+escHtml(f.route||"climb")+"</h1><p class=\"sub\">Leave this with someone staying home.</p><table><tbody>"+rows.map(function(r){return "<tr><th style=\"width:38%\">"+escHtml(r[0])+"</th><td>"+escHtml(r[1]||"—")+"</td></tr>";}).join("")+"</tbody></table>"+(f.notes?"<h2>Notes</h2><p>"+escHtml(f.notes)+"</p>":"")+"<h2>If we are not back</h2><p>If we are not back by the hard return time, call 911 and ask for county Search and Rescue — give them this plan and the coordinates.</p>";}
-function WaypointMapPicker({waypoints,activeIdx,onPick,peakCoord}){
-  const mapDiv=useRef(null),mapRef=useRef(null),markersRef=useRef([]),tileRef=useRef(null);
-  const [ready,setReady]=useState(false),[mapFail,setMapFail]=useState(false);
-  const [baseLayer,setBaseLayer]=useState("sat");
-  const wc=WP_COLORS;
-  const pickRef=useRef(onPick);pickRef.current=onPick;
-  useEffect(function(){
-    let cancelled=false;
-    const init=function(){
-      if(cancelled||!mapDiv.current||mapRef.current||!window.L)return;
-      const L=window.L;const map=L.map(mapDiv.current,{attributionControl:false});
-      applyBaseLayer(map,tileRef,baseLayer);
-      const withCoords=(waypoints||[]).filter(function(w){return wpPlaced(w)&&w.lng!=null&&!isNaN(w.lat)&&!isNaN(w.lng);});
-      if(withCoords.length){map.fitBounds(L.latLngBounds(withCoords.map(function(w){return [w.lat,w.lng];})).pad(0.35),{maxZoom:layerSharpZoom(baseLayer)});}
-      else if(peakCoord&&peakCoord.lat!=null){map.setView([peakCoord.lat,peakCoord.lng],15);}
-      else{map.setView([39.5,-98.5],4);}
-      map.on("click",function(e){pickRef.current&&pickRef.current(e.latlng.lat,e.latlng.lng);});
-      mapRef.current=map;setReady(true);
-      setTimeout(function(){try{map.invalidateSize();}catch(e){}},150);
-    };
-    loadLeaflet(init,function(){setMapFail(true);});
-    const ft=setTimeout(function(){if(!cancelled&&!mapRef.current)setMapFail(true);},9000);
-    return function(){cancelled=true;clearTimeout(ft);if(mapRef.current){try{mapRef.current.remove();}catch(e){}mapRef.current=null;tileRef.current=null;}};
-  },[]);
-  useEffect(function(){if(!mapRef.current)return;applyBaseLayer(mapRef.current,tileRef,baseLayer);},[baseLayer]);
-  useEffect(function(){
-    if(!mapRef.current||!window.L)return;
-    const L=window.L,map=mapRef.current;
-    markersRef.current.forEach(function(m){try{map.removeLayer(m);}catch(e){}});markersRef.current=[];
-    if(peakCoord&&peakCoord.lat!=null){
-      const pk=L.circleMarker([peakCoord.lat,peakCoord.lng],{radius:5,color:C.orange,weight:2,fillColor:C.orange,fillOpacity:0.15,dashArray:"2,2"});
-      pk.bindTooltip(peakCoord.name||"Peak location",{direction:"top"});pk.addTo(map);markersRef.current.push(pk);
-    }
-    (waypoints||[]).forEach(function(w,i){
-      if(!w||w.lat==null||w.lng==null||isNaN(w.lat)||isNaN(w.lng))return;
-      const isActive=i===activeIdx;
-      const mk=L.marker([w.lat,w.lng],{icon:wpDivIcon(L,wpType(w),isActive?28:20,isActive?C.blue:null),keyboard:false});
-      mk.bindTooltip((w.type||"")+(w.name?": "+w.name:""),{direction:"top"});mk.addTo(map);markersRef.current.push(mk);
-    });
-  },[waypoints,activeIdx,peakCoord]);
-  return <div style={{position:"relative",marginBottom:10}}>
-    <div ref={mapDiv} style={{height:190,borderRadius:9,border:"1px solid "+C.border,overflow:"hidden",background:"#0a0f1a",cursor:"crosshair"}}/>
-    {!ready?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",color:C.textMuted,fontSize:12,pointerEvents:"none",textAlign:"center",padding:16}}>{mapFail?"Map couldn't load — enter coordinates manually below.":"Loading map…"}</div>:null}
-    {ready?<div style={{position:"absolute",top:7,left:7,zIndex:1000,display:"flex",gap:3}}>{[["sat","Sat"],["topo","Topo"],["street","St"]].map(([k,lbl])=><button key={k} onClick={()=>setBaseLayer(k)} aria-current={baseLayer===k?"true":undefined} style={{padding:"4px 7px",borderRadius:6,border:"1px solid "+(baseLayer===k?C.blue:C.border),background:baseLayer===k?C.blueBg:C.surface,color:baseLayer===k?C.blue:C.textSub,fontSize:10,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 6px rgba(0,0,0,0.4)"}}>{lbl}</button>)}</div>:null}
-    {ready?<div style={{position:"absolute",bottom:7,left:7,right:7,background:"rgba(13,17,23,0.85)",borderRadius:7,padding:"4px 8px",fontSize:11,color:C.text,textAlign:"center",pointerEvents:"none"}}>{"Tap the map to place Waypoint "+((activeIdx!=null?activeIdx:0)+1)}</div>:null}
-  </div>;
-}
 
 function Contributions({items,onClose,onOpenRoute,session,routeById}){
   const ST={review:{lbl:"Awaiting review",icon:"⚠",col:C.amber,bg:C.amberBg},community:{lbl:"Confirming",icon:"👥",col:C.blue,bg:C.blueBg},added:{lbl:"Added — live",icon:"✓",col:C.green,bg:C.greenBg},confirmed:{lbl:"You confirmed",icon:"✓",col:C.green,bg:C.greenBg},verified:{lbl:"Live & verified",icon:"✓",col:C.green,bg:C.greenBg},rejected:{lbl:"Not applied",icon:"✕",col:C.red,bg:C.redBg}};
@@ -2873,21 +2779,6 @@ function Contributions({items,onClose,onOpenRoute,session,routeById}){
   </div>;
 }
 
-function SearchSplit({onArea,onRoute,selected,defaultMode,addArea,compact,scope,query,onQuery,onView}){
-  const [mode,setMode]=useState(defaultMode||"areas");
-  const [iq,setIq]=useState("");const q=query!==undefined?query:iq;const setQ=onQuery||setIq;
-  const qq=q.trim();const sel=selected||[];
-  const tab=on=>({flex:1,padding:"7px 0",textAlign:"center",fontSize:12.5,fontWeight:700,cursor:"pointer",borderRadius:7,background:on?C.blueSolid:"transparent",color:on?"#fff":C.textSub});
-  const fld={width:"100%",padding:"10px 12px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:14,boxSizing:"border-box",outline:"none"};
-  const row={display:"flex",alignItems:"center",gap:10,padding:"9px 4px",cursor:"pointer",borderBottom:"1px solid "+C.borderLight};
-  const sub={fontSize:11,color:C.textMuted,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"};
-  const nm={fontSize:13.5,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"};
-  const parentName=a=>{const p=a.parentId?MOUNTAINS.find(x=>x.id===a.parentId):null;return p?p.name:"";};
-  const cragName=r=>{const m=MOUNTAINS.find(x=>x.id===r.mountainId);return m?m.name:"";};
-  const areas=useMemo(()=>qq?MOUNTAINS.filter(m=>m.areaType&&["world","country"].indexOf(m.areaType)<0&&fuzzyMatch(qq,m.name)&&(!scope||inArea(m.id,scope))).slice(0,40):[],[qq,scope]);
-  const routes=useMemo(()=>qq?ROUTES.filter(r=>(fuzzyMatchAny(qq,r.name,areaPathNames(r.mountainId)))&&(!scope||inArea(r.mountainId,scope))).slice(0,60):[],[qq,scope]);
-  return <div><div style={{display:"flex",gap:4,background:C.surface,border:"1px solid "+C.border,borderRadius:9,padding:3,marginBottom:8}}><div {...clickable(()=>setMode("areas"))} style={tab(mode==="areas")}>{<Lbl s={"📍 Areas"}/>}</div><div {...clickable(()=>setMode("routes"))} style={tab(mode==="routes")}>{<Lbl s={"Routes"}/>}</div></div><input aria-label={mode==="areas"?"Search areas, crags, peaks":"Search routes & boulders"} value={q} onChange={e=>setQ(e.target.value)} placeholder={mode==="areas"?"Search areas, crags, peaks…":"Search routes & boulders…"} style={fld}/>{qq?<div style={{marginTop:6,maxHeight:compact?"34vh":"46vh",overflowY:"auto",overscrollBehavior:"contain"}}>{mode==="areas"?(areas.length?areas.map(a=><div key={a.id} {...clickable(()=>onArea&&onArea(a))} style={row}><span style={{fontSize:16,flexShrink:0}}>{<Lbl s={"📍"}/>}</span><div style={{flex:1,minWidth:0}}><div style={nm}>{a.name}</div><div style={sub}>{(ATYPE[a.areaType]||a.areaType)+(parentName(a)?" · "+parentName(a):"")}</div></div>{addArea?<span style={{fontSize:12,fontWeight:700,color:C.blue,flexShrink:0}}>{"+ Add all"}</span>:null}</div>):<div style={{fontSize:13,color:C.textMuted,padding:"14px 4px",textAlign:"center"}}>{"No areas match."}</div>):(routes.length?routes.map(r=>{const on=sel.indexOf(r.id)>=0;return <div key={r.id} {...clickable(()=>onRoute&&onRoute(r))} style={row}>{selected?<span style={{width:18,height:18,borderRadius:5,border:"1.5px solid "+(on?C.blue:C.border),background:on?C.blueSolid:"transparent",color:"#fff",fontSize:12,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>{on?"✓":""}</span>:null}<div style={{flex:1,minWidth:0}}><div style={nm}>{r.name}</div><div style={sub}>{cragName(r)}</div></div>{onView?<button onClick={e=>{e.stopPropagation();onView(r);}} style={{flexShrink:0,fontSize:10.5,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:7,padding:"3px 8px",cursor:"pointer"}}>{"Details"}</button>:null}<span style={{fontSize:12,color:C.textMuted,flexShrink:0,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{r.grade}</span></div>;}):<div style={{fontSize:13,color:C.textMuted,padding:"14px 4px",textAlign:"center"}}>{"No routes match."}</div>)}</div>:null}</div>;
-}
 
 const ATYPE={world:"World",country:"Country",state:"State",range:"Range",canyon:"Canyon",peak:"Peak",crag:"Crag",region:"Region",wall:"Wall"};
 function areaClimbCount(areaId,disc,seen){seen=seen||new Set();if(seen.has(areaId))return 0;seen.add(areaId);let n=ROUTES.filter(r=>r.mountainId===areaId&&(!disc||disc==="All"||rDiscs(r).includes(disc))).length;MOUNTAINS.filter(m=>m.parentId===areaId).forEach(c=>{n+=areaClimbCount(c.id,disc,seen);});return n;}
@@ -3876,4 +3767,4 @@ export function __set__cbTimer(v){_cbTimer=v;}
 export function __set__cbBatch(v){_cbBatch=v;}
 export {ROAD_STATUS,ROAD_VEHICLE,ROAD_ISSUES,ROAD_LEGACY,ROAD_LABEL,isRoadTag,roadReportOf};
 export {floatPlanText,parseFloatPlanText};
-export {BadgeWatcher,wpDivIcon,CRAG_CATS,CMAX_AREA,areaPathsOverlap,crewPlace,placeTrip,placeCap,placeLabel,placeSub,placeMatchesLog,rapSummary,campSummary,campLabel,rappelReportsOf,shareOrCopy,groupPostLink,chatText,localYmd,weekendEndYmd,printSheet,itinShareText,itinSheetHtml,escHtml,routeLink,SharedListView,climbsAPeak,photoAlt,photoAltsOf,PHOTO_ALT_MAX,crewAllConfirmed,crewChatReaders,crewChatParticipantLine,uLenUnit,uLenN,uLenIn,groupEventsEmptyLine,nextMeetup,pubNameRow,groupMemberFromRow,mentionToken,floatPlanState,uTempU,uTempIn,uElevN,uElevIn,uElevUnit,uDistMiN,uDistMiIn,uDistMiUnit,uMassN,uMassIn,uMassUnit,itinDraftVal,itinStoreVal,uTemp,uTempN,uTempDelta,uWind,uWindN,uPrecip,uSnowfall,normEditStr,SET_FIELDS,climberLine,wpType,wpIs,trailheadPoint,DbAreaBrowser,DbGuides,DbGuideApply,DbGuideDashboard,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ1,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,MY_STARS,RESPONSE_RATES,__set_MY_PACE,paceOf,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,uApproxDist,uDistMiUnitLong,ROUTE_LENGTHS,routeLengthLabel,routeAscentFt,gainCoversWholeOuting,gainBelowOwnPins,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,suggestDiscSlots,TRIP,tripOf,SKILLS,SKILL_GROUPS,CERT_GROUPS,certMatches,VOUCH_RATINGS,VOUCH_RATINGS_RETIRED,VOUCH_RATING_LABEL,vouchRated,vouchAvg,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,RichEditor,caretToEnd,useRichTextareas,gpxDownload,buildGpx,WP_TYPES,WP_SINGLE_TYPES,WP_STYLE,WP_COLORS,wpColor,wpGlyph,MAX_WAYPOINTS,MAX_BIVY,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,GUIDES,GPHOTOS,GLANGS,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,compat,compatParts,compatWhy,CMAX_DISC,CMAX_GRADE,CMAX_OBJ,CMAX_VERIF,CMAX_PACE,CMAX_AVAIL,COMPAT_BASE,COMPAT_TOP,COMPAT_MAX,compatUnknown,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,parseHrsRange,fmtHrsRange,mapFitToPace,paceVariants,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,CREW_ARCHIVE_GRACE_DAYS,isReady,isArchivedCrew,REPLY_LINES,DISC_TO_REPLY_POOL,replyPoolFor,pickReplyCategory,pickReplyLine,pickImageReplyLine,daysUntil,futLabel,YDSL,VL,SL,RSL,ROUTE_GAP,MeH,GH,EMOJI_ICON,notifIcon,AspectSunPanel,PARTNER_NUMBERS,EmergencyRescueCard,CatchLedger,ticksFor,seedIdentity,TickList,LogCatch,FriendsFeed,pubName,pubFirst,cById,GROUPS,REACTIONS,reactionCounts,groupMentionMatch,extractMentionIds,mutualsFor,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,FullProfile,BADWORDS,hasVulgarity,GuideDashboard,ReportModal,ConnectModal,CrewInviteModal,LoginScreen,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AVAIL_FILTER_OPTS,AVAIL_SLOT_OPTS,availSlotOn,availSlotToggle,availTagsOf,availFits,analyzeAlignment,alignmentFromServer,Questionnaire,FloatPlan,inArea,_lev,_tol,fuzzyMatch,fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,routeLoc,routeLocText,PROFILE_GRADES,CLIMB_ROLES,profileGradeRows,roleLabel,BELAY_DEVICES,BELAY_LEVELS,belayLabel,certExpiryInfo,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_ALPS,ADDR_CLS,ADDR_GRADES,gradeGroups,ADDR_STYLE,ADDR_HAZ,ADDR_COMMIT,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,WaypointMapPicker,Contributions,SearchSplit,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,CA_PROV,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,unfinishedRoutes,routeCompleted,AreaView,crewMax,_discIconCache,getDiscIconMarkup,OverviewMap,GUIDE_REVIEWS,GMETA,gm,GuideApply,revTime,AvailCal,OPEN_CREWS,Guides,DbClimbPicker,LogRoutePicker,Resume,AscentPyramid,Challenges,useCuratedLists,haptic,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,AreaTree,COMMENTS,Comments,ClassicClimbs,GettingThere,crewInCrew,crewSize,crewAskedToJoin,notifTarget,_cbBatch,_cbTimer,_toastT,_celebTimer,DB_UID,haveMyLoc,lbRowName,seedHistoryFor,resumeClimbCount,DbAreaPicker,hoursNum,listShareText,listSheetHtml,HELP_FEATS};
+export {BadgeWatcher,wpDivIcon,CRAG_CATS,CMAX_AREA,areaPathsOverlap,crewPlace,placeTrip,placeCap,placeLabel,placeSub,placeMatchesLog,rapSummary,campSummary,campLabel,rappelReportsOf,shareOrCopy,groupPostLink,chatText,localYmd,weekendEndYmd,printSheet,itinShareText,itinSheetHtml,escHtml,routeLink,SharedListView,climbsAPeak,photoAlt,photoAltsOf,PHOTO_ALT_MAX,crewAllConfirmed,crewChatReaders,crewChatParticipantLine,uLenUnit,uLenN,uLenIn,groupEventsEmptyLine,nextMeetup,pubNameRow,groupMemberFromRow,mentionToken,floatPlanState,uTempU,uTempIn,uElevN,uElevIn,uElevUnit,uDistMiN,uDistMiIn,uDistMiUnit,uMassN,uMassIn,uMassUnit,itinDraftVal,itinStoreVal,uTemp,uTempN,uTempDelta,uWind,uWindN,uPrecip,uSnowfall,normEditStr,SET_FIELDS,climberLine,wpType,wpIs,trailheadPoint,DbAreaBrowser,DbGuides,DbGuideApply,DbGuideDashboard,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ1,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,MY_STARS,RESPONSE_RATES,__set_MY_PACE,paceOf,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,uApproxDist,uDistMiUnitLong,ROUTE_LENGTHS,routeLengthLabel,routeAscentFt,gainCoversWholeOuting,gainBelowOwnPins,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,suggestDiscSlots,TRIP,tripOf,SKILLS,SKILL_GROUPS,CERT_GROUPS,certMatches,VOUCH_RATINGS,VOUCH_RATINGS_RETIRED,VOUCH_RATING_LABEL,vouchRated,vouchAvg,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,RichEditor,caretToEnd,useRichTextareas,gpxDownload,buildGpx,WP_TYPES,WP_SINGLE_TYPES,WP_STYLE,WP_COLORS,wpColor,wpGlyph,MAX_WAYPOINTS,MAX_BIVY,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,GUIDES,GPHOTOS,GLANGS,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,compat,compatParts,compatWhy,CMAX_DISC,CMAX_GRADE,CMAX_OBJ,CMAX_VERIF,CMAX_PACE,CMAX_AVAIL,COMPAT_BASE,COMPAT_TOP,COMPAT_MAX,compatUnknown,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,parseHrsRange,fmtHrsRange,mapFitToPace,paceVariants,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,CREW_ARCHIVE_GRACE_DAYS,isReady,isArchivedCrew,REPLY_LINES,DISC_TO_REPLY_POOL,replyPoolFor,pickReplyCategory,pickReplyLine,pickImageReplyLine,daysUntil,futLabel,YDSL,VL,SL,RSL,ROUTE_GAP,MeH,GH,EMOJI_ICON,notifIcon,AspectSunPanel,PARTNER_NUMBERS,EmergencyRescueCard,CatchLedger,ticksFor,seedIdentity,LogCatch,FriendsFeed,pubName,pubFirst,cById,GROUPS,REACTIONS,reactionCounts,groupMentionMatch,extractMentionIds,mutualsFor,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,FullProfile,BADWORDS,hasVulgarity,GuideDashboard,ReportModal,ConnectModal,LoginScreen,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AVAIL_FILTER_OPTS,AVAIL_SLOT_OPTS,availSlotOn,availSlotToggle,availTagsOf,availFits,analyzeAlignment,alignmentFromServer,Questionnaire,FloatPlan,inArea,_lev,_tol,fuzzyMatch,fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,routeLoc,routeLocText,PROFILE_GRADES,CLIMB_ROLES,profileGradeRows,roleLabel,BELAY_DEVICES,BELAY_LEVELS,belayLabel,certExpiryInfo,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_ALPS,ADDR_CLS,ADDR_GRADES,gradeGroups,ADDR_STYLE,ADDR_HAZ,ADDR_COMMIT,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,Contributions,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,CA_PROV,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,unfinishedRoutes,routeCompleted,AreaView,crewMax,_discIconCache,getDiscIconMarkup,OverviewMap,GUIDE_REVIEWS,GMETA,gm,GuideApply,revTime,AvailCal,OPEN_CREWS,Guides,DbClimbPicker,LogRoutePicker,Resume,AscentPyramid,Challenges,useCuratedLists,haptic,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,AreaTree,COMMENTS,Comments,ClassicClimbs,GettingThere,crewInCrew,crewSize,crewAskedToJoin,notifTarget,_cbBatch,_cbTimer,_toastT,_celebTimer,DB_UID,haveMyLoc,lbRowName,seedHistoryFor,resumeClimbCount,DbAreaPicker,hoursNum,listShareText,listSheetHtml,HELP_FEATS};
