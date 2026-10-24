@@ -22,6 +22,7 @@ import { useWideScreen } from "./wideLayout.js";
 import { ScreenHero } from "./ScreenHero";
 import { AboutCard, AreaFactsCard, ClimbsChart, GradeSpread, PendingAreaEdits } from "./AreaPageSections";
 import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_LINE, NO_PARKING_PIN_BUT_NOTE_LINE } from "./areaChrome";
+import Chevron from "../src/components/Chevron.tsx";
 
 // Grade for a compact row. Two things happen inside displayGrade(): a qualifier carried inline
 // ("Class 3 (short 4th-class crux)") is dropped, and the route page's Composite Grade panel shows
@@ -150,7 +151,7 @@ function DbSuggestedClimbs({ area, onOpen, C }) {
     <div style={{ marginTop: 14 }}>
       <button onClick={() => setOpen(o => !o)} aria-expanded={open} style={{ width: "100%", display: "flex", alignItems: "center", gap: 9, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", cursor: "pointer" }}>
         <span style={{ flex: 1, textAlign: "left", fontSize: 13.5, fontWeight: 700, color: C.text }}>{"Suggested climbs · " + total}</span>
-        <span style={{ color: C.blue, fontSize: 13, fontWeight: 700 }}>{open ? "▾" : "▸"}</span>
+        <Chevron open={open} color={C.blue} />
       </button>
       {open ? (
         <div style={{ marginTop: 9 }}>
@@ -220,6 +221,10 @@ function StatePicker({ onPick, C }) {
       </div>
     );
   }
+  const phoneGrid = { display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 8 };
+  const phoneCard = { textAlign: "left", minWidth: 0, minHeight: 56, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", cursor: "pointer", color: C.text, fontFamily: "inherit" };
+  const phoneCardName = { fontSize: 14, fontWeight: 700, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" };
+  const phoneCardSub = { fontSize: 12, color: C.textMuted, marginTop: 2 };
   const selStyle = { width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600 };
   return (
     <div style={{ marginBottom: 14 }}>
@@ -251,6 +256,23 @@ function StatePicker({ onPick, C }) {
         {inCountry.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
       </select>
       <div style={{ fontSize: 12, color: C.textMuted, marginTop: 9, lineHeight: 1.5 }}>Tap through to drill in to its crags and climbs. Open any area's route list to filter and search by type, grade, stars and more.</div>
+      {/* THE SAME LIST AS CARDS under the selects (2026-10-24). On a phone this screen was two
+          dropdowns over a screen of empty dark space; the website already lays the countries and
+          regions out as cards, the way Mountain Project's directory does. Same data and same
+          onPick/setCountryId as the selects above, which stay (check:ui drives them), so the
+          cards add a way in and take none away. Nothing new is loaded. */}
+      {!country && !noCountryStep && countries && countries.length > 1 ? (
+        <div style={{ marginTop: 16 }}>
+          <SL C={C}>Countries</SL>
+          <div style={phoneGrid}>{countries.map(c => <button key={c.id} onClick={() => setCountryId(c.id)} style={phoneCard}><div style={phoneCardName}>{c.name}</div>{c.route_count != null ? <div style={phoneCardSub}>{c.route_count.toLocaleString() + (c.route_count === 1 ? " climb" : " climbs")}</div> : null}</button>)}</div>
+        </div>
+      ) : null}
+      {(country || noCountryStep) && inCountry.length ? (
+        <div style={{ marginTop: 16 }}>
+          <SL C={C}>{`All ${noun}s`}</SL>
+          <div style={phoneGrid}>{inCountry.map(s => <button key={s.id} onClick={() => onPick(s)} style={phoneCard}><div style={phoneCardName}>{s.name}</div>{s.route_count != null ? <div style={phoneCardSub}>{s.route_count.toLocaleString() + (s.route_count === 1 ? " climb" : " climbs")}</div> : null}</button>)}</div>
+        </div>
+      ) : null}
       {isLoading ? <div style={{ color: C.textMuted, fontSize: 12, marginTop: 8 }}>Loading states…</div> : null}
       {/* Same split: red is for "you have nothing", muted is for "this may be out of date".
           Telling someone to check their connection is useless advice when the list they
@@ -1694,7 +1716,7 @@ function DbAreaTreeNode({ area, depth, currentId, pinIds, expanded, onToggle, on
   return (
     <div>
       <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "12px 12px 12px " + pad + "px", borderBottom: "1px solid " + C.borderLight, background: cur ? C.blueBg : "transparent" }}>
-        <button onClick={() => onToggle(area.id)} aria-label={isOpen ? "Collapse" : "Expand"} style={{ flexShrink: 0, width: 38, height: 38, borderRadius: 10, border: "1.5px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 18, fontWeight: 800, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>{isOpen ? "▾" : "▸"}</button>
+        <button onClick={() => onToggle(area.id)} aria-label={isOpen ? "Collapse" : "Expand"} style={{ flexShrink: 0, width: 38, height: 38, borderRadius: 10, border: "1.5px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 18, fontWeight: 800, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}><Chevron open={isOpen} color={C.blue} /></button>
         {/* One target opens the area: the name, its count and the chevron. The chevron used
             to be a separate 16px span and the name was cut to one line, so the only ways in
             were a sliver of truncated text or an arrow a thumb barely covers. Names wrap. */}
