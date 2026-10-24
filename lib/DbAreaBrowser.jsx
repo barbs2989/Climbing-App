@@ -267,9 +267,15 @@ function StatePicker({ onPick, C }) {
 // drilling down one level at a time. Area hits can be at any depth, so they
 // navigate via onJumpToArea (rebuilds the real breadcrumb from the area's
 // path) rather than onDrill (which assumes a direct child). ──
-function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
+//
+// THE BAR STAYS PUT while you scroll the list under it (owner, 2026-10-23: "the search function for
+// areas and routes ... sticky to the top of the view as they scroll down"), as the route finder's
+// has since 2026-10-21 — and lets go once the list (`endRef`, a marker AreaPage puts after it) has
+// scrolled past, so it does not ride over the rest of the page.
+function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange, endRef }) {
   const [mode, setMode] = useState("areas");
   const [q, setQ] = useState("");
+  const { wrapRef, barRef, pin } = usePinnedBar(endRef);
   const qq = q.trim();
   const { data: areaHits, isLoading: la, error: ea } = useAreaSearch(scope.id, qq);
   const { data: routeHits, isLoading: lr, error: er } = useSubtreeRoutes(scope.id, { q: qq, page: 0, pageSize: 40 });
@@ -279,11 +285,15 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
   return (
     <div style={{ marginBottom: 14 }}>
       <SL C={C}>{"Search " + scope.name}</SL>
+      <div ref={wrapRef} style={{ margin: "0 -14px", height: pin ? pin.height : undefined }}>
+      <div ref={barRef} style={{ ...(pin ? { position: "fixed", top: pin.top, left: pin.left, width: pin.width, zIndex: 25, boxShadow: "0 6px 12px rgba(0,0,0,0.25)", borderBottom: "1px solid " + C.borderLight } : {}), boxSizing: "border-box", background: C.bg, padding: "6px 14px 8px" }}>
       <div style={{ display: "flex", gap: 4, background: C.surface, border: "1px solid " + C.border, borderRadius: 9, padding: 3, marginBottom: 8 }}>
         <div {...clickable(() => setMode("areas"))} aria-pressed={mode === "areas"} style={tab(mode === "areas")}>Areas</div>
         <div {...clickable(() => setMode("routes"))} aria-pressed={mode === "routes"} style={tab(mode === "routes")}>Routes</div>
       </div>
       <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none" }} />
+      </div>
+      </div>
       {qq ? (
         // No maxHeight/overflow: the hits used to scroll inside a 46vh box of their own, so most
         // of them were hidden behind a second scrollbar. They run down the page instead.
@@ -630,8 +640,30 @@ function sortAreaRoutes(routes, key) {
   return [...routes].sort((a, b) => Number(a.sort_order == null) - Number(b.sort_order == null) || (a.sort_order != null && b.sort_order != null ? dir * (a.sort_order - b.sort_order) : 0) || byName(a, b));
 }
 
-function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt}) {
+// "Don't see a climb or area here?" — under the list on an area page AND under the route finder's
+// results (owner, 2026-10-23). Add an area is Mountain Project's "Add to Page → Sub-Area", under the
+// same rule MP and our trg_areas_leaf_xor share: an area holds sub-areas OR climbs, so a crag that
+// already lists climbs offers only Add a climb; a country (its states are fixed) offers no new area.
+function AddHereFooter({ area, onAddClimb, onAddArea, C }) {
+  const { data: kids } = useAreaChildren(onAddArea && area ? area.id : null);
+  if (!area || (!onAddClimb && !onAddArea)) return null;
+  const holdsClimbs = Array.isArray(kids) && kids.length === 0 && area.route_count > 0;
+  const canArea = !!onAddArea && Array.isArray(kids) && !holdsClimbs && !["world", "country"].includes(area.area_type);
+  const btn = { ...BTN_LG, flex: 1, minWidth: 0, border: "1px dashed " + C.border, background: C.surface, color: C.blue, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 };
+  return (
+    <div style={{ marginTop: 10, marginBottom: 14 }}>
+      <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, marginBottom: 8 }}>{canArea && onAddClimb ? "Don’t see a climb or area here?" : canArea ? "Don’t see an area here?" : "Don’t see a climb here?"}</div>
+      <div style={{ display: "flex", gap: 8 }}>
+        {onAddClimb ? <button onClick={() => onAddClimb(area)} aria-label={"Add a climb to " + area.name} style={btn}>{"Add a climb"}<span aria-hidden="true" style={{ fontSize: 15 }}>{"→"}</span></button> : null}
+        {canArea ? <button onClick={() => onAddArea(area)} aria-label={"Add an area to " + area.name} style={btn}>{"Add an area"}<span aria-hidden="true" style={{ fontSize: 15 }}>{"→"}</span></button> : null}
+      </div>
+    </div>
+  );
+}
+
+function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt}) {
   const [searchMode, setSearchMode] = useState("areas");
+  const listEndRef = useRef(null);
   const [listSort, setListSort] = useState("lr");
   // The row in the drill stack is a snapshot of a CHILD row read when its parent was opened. An
   // agreed edit rewrites the areas row on the server (0304) and refreshes ["area", id] — so the
@@ -728,7 +760,7 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
       {["crag", "peak", "wall"].includes(area.area_type) ? <AreaGettingThere area={area} C={C} onEdit={editOn} /> : null}
       {PARTNER_CARD_TYPES.includes(area.area_type) ? <PartnersHereCard area={area} C={C} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} PartnerRow={PartnerRow} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} /> : null}
       <button onClick={onAllAreas} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, marginBottom: 14 }}>All areas</button>
-      {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
+      {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} endRef={listEndRef} /> : null}
 
       {/* Sits directly above the route rows it summarises, so the page reads: this is the
           mountain, this is what is true of every way up it, here are the ways up. It renders
@@ -781,15 +813,12 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
 
       {/* The seed browser has had "Don't see a climb? Add it" since forever, but it lives
           behind `selArea`, which is null under USE_DB — so on every real area page the
-          affordance did not exist. Opens the same AddRoute sheet with THIS area filled in.
-          It sits DIRECTLY UNDER the areas/climbs list (owner, 2026-10-15): a climber who has just
-          read to the end of the list and not found their climb is the one who adds it. It is NOT
-          gated on the list rendering — an empty crag is exactly where a missing route is likeliest. */}
-      {onAddClimb ? (
-        <button onClick={() => onAddClimb(area)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, marginTop: 10, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
-          {"Don’t see a climb here? Add it to " + area.name}<span style={{ fontSize: 15 }}>{"→"}</span>
-        </button>
-      ) : null}
+          affordance did not exist. It sits DIRECTLY UNDER the areas/climbs list (owner, 2026-10-15
+          and again 2026-10-23): a climber who has just read to the end of the list and not found
+          their climb — or their crag — is the one who adds it. It is NOT gated on the list
+          rendering — an empty crag is exactly where a missing route is likeliest. */}
+      <div ref={listEndRef} />
+      <AddHereFooter area={area} onAddClimb={onAddClimb} onAddArea={onAddArea} C={C} />
 
       {editOn ? (
         <button onClick={() => editOn(null)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
@@ -926,7 +955,9 @@ const finderArgs = (q, f) => {
 // child of a scroll container that never scrolls never sticks. The pin line is the bottom of the
 // app's sticky top bar (phone), or the top of #appscroll when that is what scrolls (desktop); both
 // are measured, because the bar's height differs between the two shells.
-function usePinnedBar() {
+// `endRef` (optional) marks where the list the bar searches ENDS: once that marker rises to the
+// bar's bottom edge the bar lets go and scrolls away with the list, as CSS sticky would inside it.
+function usePinnedBar(endRef) {
   const wrapRef = useRef(null), barRef = useRef(null);
   const [pin, setPin] = useState(null); // null, or { top, left, width, height } while pinned
   useEffect(() => {
@@ -948,8 +979,9 @@ function usePinnedBar() {
       raf = 0;
       const w = wrapRef.current, b = barRef.current;
       if (!w || !b) return;
-      const r = w.getBoundingClientRect();
-      const next = r.top < line ? { top: Math.round(line), left: Math.round(r.left), width: Math.round(r.width), height: b.offsetHeight } : null;
+      const r = w.getBoundingClientRect(), end = endRef && endRef.current;
+      const past = !!end && end.getBoundingClientRect().top < line + b.offsetHeight;
+      const next = r.top < line && !past ? { top: Math.round(line), left: Math.round(r.left), width: Math.round(r.width), height: b.offsetHeight } : null;
       setPin(p => (!p && !next) || (p && next && p.top === next.top && p.left === next.left && p.width === next.width && p.height === next.height) ? p : next);
     };
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(check); };
@@ -958,10 +990,10 @@ function usePinnedBar() {
     window.addEventListener("resize", onResize);
     check();
     return () => { document.removeEventListener("scroll", onScroll, true); window.removeEventListener("resize", onResize); if (raf) cancelAnimationFrame(raf); };
-  }, []);
+  }, [endRef]);
   return { wrapRef, barRef, pin };
 }
-function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute }) {
+function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute, onAddClimb, onAddArea }) {
   const { wishlist } = useContext(ClimberCtx);
   const DEF = { discs: [], sortBy: "lr", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "" };
   // A chart bar on the area page opens the finder already narrowed to its discipline.
@@ -1171,6 +1203,10 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
       {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{(gLoO || gHiO) ? "No routes match these filters. Routes without a readable grade are hidden while a grade range is set — try widening it or setting it back to Any." : "No routes match these filters."}</div>}
       </>}
       </>}
+
+      {/* Under the list of areas and climbs, as on the area page: a search that did not find it is
+          exactly when a climber adds it. Files into the area the finder is looking in. */}
+      {!isLoading && !la ? <AddHereFooter area={loc} onAddClimb={onAddClimb} onAddArea={onAddArea} C={C} /> : null}
 
       {/* SAVE FROM THE LIST (owner, 2026-10-21: "a quick option ... to add the climb to list of
           objectives, saved climbs, areas"): the same three things the route and area pages save —
@@ -1733,7 +1769,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute }) {
+export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, onAddArea, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
@@ -1864,13 +1900,13 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
       {!stateNode ? (
         <>{rootHeader || null}<StatePicker onPick={pickState} C={C} /></>
       ) : screen === "finder" ? (
-        <RouteFinderPanel key={current.id} scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} bookmarks={bookmarks} onToggleBookmark={onToggleBookmark} onToggleWish={onToggleWish} userLists={userLists} onToggleListRoute={onToggleListRoute} />
+        <RouteFinderPanel key={current.id} scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} bookmarks={bookmarks} onToggleBookmark={onToggleBookmark} onToggleWish={onToggleWish} userLists={userLists} onToggleListRoute={onToggleListRoute} onAddClimb={onAddClimb} onAddArea={onAddArea} />
       ) : screen === "objectives" ? (
         <ObjectivesPanel area={current} onOpen={onOpenRoute} C={C} />
       ) : screen === "near" ? (
         <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} /></>
       ) : (
-        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap}onAddClimb={onAddClimb} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { setFinderDisc(typeof d === "string" ? d : ""); setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
+        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap} onAddClimb={onAddClimb} onAddArea={onAddArea} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { setFinderDisc(typeof d === "string" ? d : ""); setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
