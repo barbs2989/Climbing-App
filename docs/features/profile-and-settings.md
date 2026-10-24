@@ -104,7 +104,9 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 - **The sign-in screen** (`lib/AuthModal.jsx`, `LoginScreen`): the live site opens on it (`LOGIN_FIRST` in `ClimbMatchCore.jsx`,
   set by `VITE_LOGIN_FIRST` in deploy.yml alongside `VITE_DEMO_AUTOLOGIN`), unless this device already holds a real session.
   *View as guest* (`onGuest`) enters the app with the sample content, remembered for the tab only (`markGuest`/`wasGuest` in
-  `lib/auth.js`), so the next visit opens on sign-in again. *Sign in with Apple* and *Continue with Google* always render, Apple
+  `lib/auth.js`), so the next visit opens on sign-in again. Signing out of ANY build with Supabase lands here too, with *View as guest* unless the real gate is on (`USE_DB||LOGIN_FIRST` in `ClimbMatch.jsx`);
+  the demo `LoginScreen` in `ClimbMatchCore.jsx` is left only to a build with no backend, and its one button is *View as guest* as well — there is no
+  "Continue as a demo climber" sample account on any sign-in screen (2026-10-24). *Sign in with Apple* and *Continue with Google* always render, Apple
   first at the same size (App Store guideline 4.8); a provider the Supabase project has not switched on yet
   (`useOAuthProviders`) answers a tap with "coming soon" instead of redirecting. *Create account* asks for the email and the
   password twice and refuses a mismatch before the request (paste is allowed in both).
