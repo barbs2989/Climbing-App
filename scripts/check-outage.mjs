@@ -219,7 +219,7 @@ const ROUTE = "RouteDetail";
 // makes from the other side: topos render in TopoSection on OVERVIEW, not on the Photos tab.
 //
 // THE TABLE IS `topos`, NOT `topo_photos`, and this comment said the wrong one for months.
-// `useAreaTopos` selects `.from("topos")`; `topo_photos` is a storage bucket and is not a
+// `useRouteTopos` selects `.from("topos")`; `topo_photos` is a storage bucket and is not a
 // PostgREST path at all, so that mode intercepted NOTHING and the guard would have said so.
 // `topo_lines` is EMBEDDED in the same query string, and ONLY matches the path segment after
 // /rest/v1/ rather than a substring, so naming it would miss too.
@@ -231,7 +231,7 @@ const ROUTE = "RouteDetail";
 // RED ONE. Each of those three runs also failed on ONE arbitrary screen that had nothing to do
 // with topos -- Ranks, Ranks, then Crew:Groups -- and Ranks reproduced its exact character counts
 // (1170 -> 1148) TWICE before coming back IDENTICAL on the third run. Two agreeing runs are not
-// determinism. Nothing on those screens can read topos: `useAreaTopos` is called once, in
+// determinism. Nothing on those screens can read topos: `useRouteTopos` is called once, in
 // RouteDetail, and Ranks is captured BEFORE the route page is ever opened.
 //
 // The mechanism is `waitOutFetch` below: in the failing run it re-settles only while a SPINNER is
