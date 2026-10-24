@@ -48,7 +48,7 @@ import AlpineConditionsCard, { forecastPoint } from "./lib/AlpineConditionsCard.
 import { ALPINE_COND_DISCIPLINES } from "./lib/alpineConditions.js";
 import { Tile, TileGrid, NOT_MEASURED, clockHr, spanEnding, compass, HourStepper } from "./lib/HourTiles.jsx";
 import { usableFa } from "./lib/fa";
-import {routeLink,realProfileId,CRAG_CATS,parseGpxText,DbClimbPicker,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,photoAltsOf,wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,DISC,CAT,ME,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,seedAuthor,roadReportOf,isRoadTag,buildConsensus,SZ3,MONTHS,MOUNTAINS,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,RSL as SL,ROUTE_GAP,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,ALL_CLIMBERS,ROUTES,isHazardTag,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,isRecent,RECENT_DAYS,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,Comments,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,rappelReportsOf,sunReadout,realAuthor,useRealAuthors} from "./ClimbMatchCore.jsx";
+import {routeLink,realProfileId,CRAG_CATS,parseGpxText,DbClimbPicker,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,photoAltsOf,wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,DISC,CAT,ME,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,seedAuthor,roadReportOf,isRoadTag,buildConsensus,SZ3,MONTHS,MOUNTAINS,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,RSL as SL,ROUTE_GAP,FOLD_GAP,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,ALL_CLIMBERS,ROUTES,isHazardTag,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,isRecent,RECENT_DAYS,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,Comments,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,rappelReportsOf,sunReadout,realAuthor,useRealAuthors} from "./ClimbMatchCore.jsx";
 import PhotoAltField from "./src/components/PhotoAltField.tsx";
 import PhotoDescribeBox from "./src/components/PhotoDescribeBox.tsx";
 import CardHead from "./src/components/CardHead.tsx";
@@ -663,9 +663,12 @@ function Capped({children}){const outer=useRef(null);const inner=useRef(null);co
    labels of the rows on file) so a climber can tell a permit is involved without opening it.
    The body is HIDDEN, not unmounted: the text stays in the markup, so check:field-renders still
    proves every access sub-key reaches the page. The edit pencil sits beside the toggle, not inside
-   it — a button inside a button is invalid and swallows the pencil's tap. */
+   it — a button inside a button is invalid and swallows the pencil's tap.
+   FOLD_GAP above it (owner, 2026-10-24: "clumping against box above"): closed, it is one row on its own
+   topic under the trailhead cards, and at the card gap it read as part of them. Only the card gap
+   below: a section rule always follows it, and that rule carries its own wide gap. */
 function AccessFold({summary,onEdit,children}){const [open,setOpen]=useState(false);
-  return <div style={{background:C.card,borderRadius:10,padding:"11px 12px",marginBottom:8,border:`1px solid ${C.border}`}}>
+  return <div style={{background:C.card,borderRadius:10,padding:"11px 12px",margin:FOLD_GAP+"px 0 "+ROUTE_GAP+"px",border:`1px solid ${C.border}`}}>
     <div style={{display:"flex",alignItems:"center",gap:8}}>
       <button onClick={function(){setOpen(!open);}} aria-expanded={open} style={{flex:1,minWidth:0,display:"flex",alignItems:"center",gap:8,padding:0,background:"transparent",border:"none",color:C.text,cursor:"pointer",textAlign:"left"}}>
         <span style={{flex:1,minWidth:0}}><CardHead style={{marginBottom:open?0:3}}>ACCESS & REGULATIONS</CardHead>{open?null:<span style={{display:"block",fontSize:12,color:C.textMuted,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{summary}</span>}</span>
@@ -682,7 +685,7 @@ function AccessFold({summary,onEdit,children}){const [open,setOpen]=useState(fal
    whether you will have signal — so the prompt is not lost by folding it. The body is HIDDEN,
    not unmounted, like AccessFold. */
 function FloatPlanFold({coverage,onFile}){const [open,setOpen]=useState(false);
-  return <div style={{background:C.amberBg,border:`1px solid ${C.amber}55`,borderRadius:12,padding:"11px 13px",marginTop:14}}>
+  return <div style={{background:C.amberBg,border:`1px solid ${C.amber}55`,borderRadius:12,padding:"11px 13px",margin:FOLD_GAP+"px 0"}}>
     <div role="heading" aria-level={2}><button onClick={function(){setOpen(!open);}} aria-expanded={open} style={{display:"flex",alignItems:"center",gap:8,width:"100%",padding:0,background:"transparent",border:"none",color:C.text,cursor:"pointer",textAlign:"left"}}>
       <span style={{flex:1,minWidth:0}}><CardHead style={{marginBottom:3}}>FLOAT PLAN</CardHead><span style={{display:"block",fontSize:12.5,color:C.text,lineHeight:1.5}}><b style={{color:C.amber}}>Committing objective.</b> {coverage==="good"?"File a float plan in case something still goes wrong.":"File a float plan before you lose cell service."}</span></span>
       <span aria-hidden="true" style={{fontSize:13,color:C.amber,fontWeight:700,flexShrink:0}}>{open?"▴":"▾"}</span>
