@@ -34117,3 +34117,48 @@ read-only anon key supplied in the task prompt, and the proposed SQL file was pr
 with `check:sql` using that same anon key (no write attempted or needed). Every finding
 rests on 2+ independent sources where more than one was available; the one ambiguous item
 was left to a human rather than guessed, per the audit's standing rule.
+
+## 2026-10-24 — Pass 7, Batch 451
+
+Eight routes: `wa_sentinel_peak_standard`, `wa_sews_sw_rib`, `wa_sharkfin_tower_southeast_ridge`,
+`wa_sherman_peak_baker_route`, `wa_sherman_peak_baker_squak_glacier`,
+`wa_sherpa_balanced_rock_ne_couloir`, `wa_sherpa_balanced_rock_standard`, `wa_sherpa_glacier`. 0
+fixes, 2 flagged, 6 clean. No SQL file this batch — nothing confirmed wrong.
+
+Verified clean: `wa_sentinel_peak_standard`'s already-corrected 8,257 ft elevation and empty `fa`
+field (no first-ascent record found anywhere, consistent with the route's own documented gap)
+both still hold; a trip-report summit table giving 8,261 ft is ordinary quad-vs-LiDAR noise, not
+grounds to override the listsofjohn.com LiDAR figure already on file. `wa_sews_sw_rib`'s FA
+("Donald Anderson and Larry Scott, 1964") is confirmed exactly via Mountain Project and the AAC's
+1966 publication; its 7,807 ft elevation matches its own area row and Wikipedia.
+`wa_sharkfin_tower_southeast_ridge`'s FA ("Wesley Grande, Jay Todd, and Joseph Vance, August
+1947") matches Wikipedia and Mountain Project exactly; its stored account of the July 2005 fatal
+accident (anchor failure during a rappel, wrong-gully routefinding as a contributing factor, 3
+dead) matches both the Mountaineers' own 2006 investigation and the AAC accident report, in cause
+and count. `wa_sherman_peak_baker_route` and `wa_sherman_peak_baker_squak_glacier` are still
+internally consistent with each other and their area row at 10,133 ft (the 2023 DGPS survey figure
+a prior pass already applied) — no regression. `wa_sherpa_glacier`'s FA ("Bill & Gene Prater, Don
+& Nelson Torrey, 1956") is confirmed exactly via SummitPost; Mount Stuart's 9,415 ft elevation
+matches its own area row and Wikipedia.
+
+Flagged for human review, not fixed: `wa_sherpa_balanced_rock_ne_couloir` and
+`wa_sherpa_balanced_rock_standard`. Sherpa Peak and "Sherpa Balanced Rock" are a real, surveyed
+double-summit cluster about 100 yards apart — countryhighpoints.com's 2017 sight-level attempt
+found the rock roughly 2 ft lower than the main summit, so this is a genuine two-summit situation,
+not a duplicate-area bug like past batches' Dragontail/Colonial Peak flags. But the cluster's
+*absolute* elevation is unresolved across sources: Wikipedia/PeakVisor/our `wa_sherpa_peak` area
+row give 8,630 ft, while SummitPost/WTA/countryhighpoints.com give 8,600–8,605 ft (matching the
+Standard Route's own stored `high_point_ft` of 8,605), and Peakbagger logs a climber GPS reading
+of 8,634.5 ft. Unlike Sentinel/Sherman/Remmel/Ruby in recent batches, no LiDAR/DGPS survey giving
+an absolute figure for this summit was found, so the Standard Route's `high_point_ft` was left as
+8,605 rather than overwritten to match the area row's 8,630 — a human with guidebook/survey access
+should pick the authoritative number. Separately, the NE Couloir is filed under the `wa_sherpa_peak`
+area while its own topo description (finishing at "the balanced rock") points at the
+`wa_sherpa_balanced_rock` cluster instead; worth a human look, but not an obvious misfiling given
+how close together and disputed the two summits are even in the source material itself.
+
+`last_processed_id` advances to `wa_sherpa_glacier`. No `.env`/`.env.local` present at run start
+(fresh clone); reads went directly against the REST API with the read-only anon key supplied in
+the task prompt, no write attempted or needed. Every finding rests on 2+ independent sources where
+more than one was available; the one unresolved elevation conflict was left to a human rather than
+guessed, per the audit's standing rule.
