@@ -55,7 +55,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
   TOP CONTRIBUTORS (`area_top_contributors`, rendered by `TopContributors` in `src/components/TopContributors.tsx`) and the profile's
   ★ Top Contributor badge (`user_top_contributor_areas`). Only live work scores: an approved new climb 10, a photo of
   a route 5 (once per route), a topo 5 (once per area, while moderation leaves it visible), a line drawn on a topo 2
-  (once per route), an approved correction or area detail 2 (once per place and field), a sun vote, start location
+  (once per route), an approved new area 2 (0360), an approved correction or area detail 2 (once per place and field), a sun vote, start location
   or pairing 1 (once per route; a pairing per pair). Pending and rejected work scores 0. Each item sits in its area,
   and a board sums the points of its area and EVERY place inside it (`path <@`), so a route edit counts on the crag,
   the area, the state and the country. On Ranks By area only that area's points count, and a climber who
