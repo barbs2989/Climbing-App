@@ -307,7 +307,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 
 `export default function App()` (~line 214 of `ClimbMatch.jsx`) holds **~250 `useState` hooks** and every screen — where each kind of state lives, and why there is no global store, is in [ARCHITECTURE.md](ARCHITECTURE.md). Navigation is driven by a single `tab` state string. Main tabs:
 
-- `today` — home dashboard (greeting, a setup checklist, alerts, *Unfinished business*, *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
+- `today` — home dashboard (greeting, a setup checklist, *Alerts* (one dropdown: what waits on you, then notifications), *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
 - `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `planner`, `forecast`, `conditions`, `safety`, `partners`, `photos`.
   - **`forecast` is labelled "Conditions"**: the crag conditions score on sport/trad/top-rope/bouldering, and FLAGS plus a start time (no stars) on alpine/mountaineering/scrambling/ice/mixed; `conditions` is
     labelled "Reports" / "Send Reports" and holds what climbers reported. Two tabs on purpose: they show different things.
