@@ -57,6 +57,9 @@ You do NOT write to the database and you do NOT edit any other file.
 1. **No sources in the text.** Never name Mountain Project, SummitPost, a guidebook, an author, "trip report",
    "according to", "per X", "reportedly said by". Sources go ONLY in `review.sources`.
 2. **Your own words.** Facts are facts, but do not copy any run of 4+ words from a source. Rewrite.
+   Trimming words out of the source's sentence is not a rewrite. Run `npm run audit:copied-prose -- <your file>`
+   before you finish: the apply step fetches every URL in `review.sources` and refuses a string sharing
+   8+ words with one (this wave shipped 74 such strings before that check existed).
 3. **Nothing invented.** Every fact must come from a source you read. No guessed grades, bolt counts, or lengths.
    If only one weak source describes a pitch, keep the note short and factual.
 4. No ALL-CAPS words. No first-person, no "we", no testimony ("I found…"). Write for a climber standing at the belay.
