@@ -4894,7 +4894,6 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
     {sec("Season",<div style={condBox}>
       {!clim?<div style={{fontSize:12.5,color:C.textMuted}}>Loading the climate history…</div>:clim.error?<div><div style={{fontSize:12.5,color:C.amber,lineHeight:1.5,marginBottom:8}}>Couldn’t load the climate history for this crag. This says nothing about its season.</div><button onClick={function(){setClimTries(climTries+1);}} style={{background:C.surface,color:C.blue,border:"1px solid "+C.border,borderRadius:8,padding:"7px 12px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Try again</button></div>:<SeasonChart clim={clim.data} band={score.band}/>}
     </div>)}
-    <div style={{fontSize:11,color:C.textMuted,marginTop:10,lineHeight:1.5}}>A forecast for the crag, not a promise about the rock. Wet cracks and how a particular wall holds water are for your own eyes.</div>
   </div>;
 }
 function pickForecastWaypoints(waypoints){
