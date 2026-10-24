@@ -452,7 +452,7 @@ function HourByHour({ fc, day, dayLabel, nav, pt, floor, legs, snowLegs }) {
         <Tile label="Low cloud" when={"at " + clockHr(hr)} value={lowc != null ? Math.round(lowc) + "%" : NOT_MEASURED} sub={lowc == null ? null : "cloud in the layers up to about " + (uImp() ? "10,000 ft" : "3 km") + " up; the route may sit in or above them"} />
         <Tile label="Freezing level" when={"at " + clockHr(hr)} value={fl != null ? uElev(Math.round(fl / 100) * 100) : NOT_MEASURED} sub={fl == null || tops == null ? null : "Air at " + uElev(tops) + " is " + (fl > tops ? "above" : "below") + " 0 °C" + (snowLegs && floor ? "; at the lowest snow you cross (" + uElev(floor.ft) + ") it is " + (fl > floor.ft ? "above" : "below") + " 0 °C" : "")} wide /></TileGroup>
     </div>
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Temperatures are modelled for the height named above: checked against mountain weather stations, an hour’s value was typically off by {uTempDelta(3)}–{uTempDelta(5)}°, and in winter by up to {uTempDelta(9)}°, most often reading too cold. Forecasts from different services can differ by more at a summit.</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Temperatures are modelled for the height named above: checked against mountain weather stations, an hour’s value was typically off by {uTempDelta(3)}–{uTempDelta(5)}°, and in winter by up to {uTempDelta(9)}°, most often reading too cold.</div>
   </div>;
 }
 

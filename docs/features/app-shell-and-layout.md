@@ -10,6 +10,22 @@ room for side-panel ads later. The phone app keeps its own look.
   Partners · Crews · Logbook · Ranks). The bar is soft: see-through with a blur, a faint shadow instead
   of a hard top line, and the selected tab marked only by its pill. Inside an open chat thread the bar
   steps aside for the composer.
+  - **Popups fill the screen** (owner 2026-10-23): every popup that used to slide up as a bottom sheet
+    (a form, a list, a share screen, a photo — 27 of them) opens full screen, clear of the notch and the
+    home bar, with its ✕ at the top. One rule in `index.html` does it, matched on the sheets' serialised
+    inline style (`align-items: flex-end` on a `role="dialog"` backdrop), so no sheet was edited and a
+    new one is covered too. A short **action menu** — a group post's ⋯ and a comment's ⋯ — stays a
+    bottom sheet, as iOS and Material draw one; it opts out with `data-sheet="menu"`.
+  - **...and so does every card popup** (owner 2026-10-24: "like an actual page on itself"): the ~20
+    popups that were a rounded card centred or pinned near the top over a dimmed page (Settings,
+    Feedback, Rate app, Privacy, About us, Data request, Form a crew, Year in review, a climber's profile,
+    Report climber, the résumé, Your contributions, Friends, Notifications, Share profile, both Log a
+    climb forms, Add a climb, Contribute info, a trip report, a shared list, the topo) open as a
+    full-height page in the 520px column, scrolling inside themselves, from a second rule beside the
+    first one (`align-items: center` / `flex-start` on a `role="dialog"` backdrop). Two kinds opt out
+    with `data-sheet`: the delete-account confirm (`"alert"` — Material keeps a small centred dialog
+    for an urgent yes/no) and the photo viewers (`"viewer"`, already a black full-screen lightbox).
+    The page behind is locked by `useDialogA11y` in `lib/dialogA11y.js`, as for every dialog.
 - **Desktop (1024px and wider) — the website shell:**
   - A full-width sticky **top bar** (64px): ☰ Menu at the far left, the ClimbMatch wordmark (→ Home), a
     search box for every climb and place (`/` jumps to it; arrow keys and Enter pick a hit), then
@@ -58,6 +74,8 @@ room for side-panel ads later. The phone app keeps its own look.
     85% of the window tall).
   - Controls brighten under the mouse; the browser tab names the page (*Coleman-Deming – ClimbMatch*).
 
+- **Loading screen and the sign-in screen.** While the bundle downloads, `index.html` paints a branded splash (`#cm-splash`: the app mark, wordmark and a moving bar; still under reduced motion) over the boot shell; while App restores the session it draws the same splash (`BootSplash`, `lib/BootSplash.jsx`) instead of a blank page. As the app's first screen (the real gate, or `LOGIN_FIRST`), the sign-in screen (`lib/AuthModal.jsx`) fills the screen under a branded header (the mark, the wordmark and what the app is for) instead of drawing a modal over a black page; opened from inside the app it is still the modal.
+
 ## 2. How it works
 `useWideScreen()` / `useFullWidth()` (in `lib/wideLayout.js`) are `matchMedia` hooks on `WIDE_MIN` (1024)
 and `FULL_MIN` (1280). `wideGeom(full)` computes every horizontal position of the shell as CSS lengths;
@@ -94,7 +112,8 @@ below the top bar) do not trip it. Any new fixed desktop panel must not either.
 | `lib/DesktopShell.jsx` | `WideSearch`, `WideRail`, `WideFooter`, `DocTitle` |
 | `lib/dialogA11y.js` | `coveringLayer` |
 | `ClimbMatch.jsx` | `NAV`, `goTab`, `navBadge`, `_inChat`, `_known`, `_openMe`, `_closePages`, `_pageView` |
-| `index.html` | `#cm-boot`, `.b-nav` |
+| `index.html` | `#cm-boot`, `.b-nav`, `#cm-splash` |
+| `lib/BootSplash.jsx` | `BootSplash` |
 
 ## 4. Data
 Layout only. The footer reads the states list (`useStates`); the search reads the catalog.

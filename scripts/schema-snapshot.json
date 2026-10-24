@@ -1,9 +1,10 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-10-22",
+  "generatedAt": "2026-10-24",
   "tables": {
     "accessibility_reports": [
       "assistive",
+      "contact_email",
       "created_at",
       "id",
       "problem",
@@ -17,6 +18,18 @@
       "set_by",
       "status",
       "until",
+      "user_id"
+    ],
+    "app_feedback": [
+      "app_version",
+      "contact_email",
+      "created_at",
+      "id",
+      "kind",
+      "message",
+      "platform",
+      "stars",
+      "status",
       "user_id"
     ],
     "app_settings": [
@@ -120,6 +133,7 @@
       "belayed_by",
       "beta",
       "bug_pressure",
+      "camp_names",
       "car_to_car_minutes",
       "caught_fall",
       "climb_minutes",
@@ -139,6 +153,7 @@
       "itinerary",
       "moderation",
       "mud",
+      "nights_out",
       "notes",
       "outcome_note",
       "outcome_reasons",
@@ -687,6 +702,7 @@
       "disciplines",
       "discoverable",
       "free_until",
+      "gender",
       "hiking_speed_ft_hr",
       "id",
       "is_admin",
@@ -740,6 +756,18 @@
       "updated_at",
       "user_id"
     ],
+    "route_base_pin_changes": [
+      "action",
+      "climbers",
+      "created_at",
+      "id",
+      "lat",
+      "lng",
+      "moved_m",
+      "previous",
+      "route_id",
+      "total"
+    ],
     "route_difficulty_ratings": [
       "axis",
       "created_at",
@@ -782,6 +810,11 @@
       "stars",
       "updated_at",
       "user_id"
+    ],
+    "route_views": [
+      "day",
+      "route_id",
+      "visitor"
     ],
     "routes": [
       "access",
@@ -923,17 +956,20 @@
       "points",
       "route_id",
       "topo_id",
+      "variant_labels",
       "variants"
     ],
     "topos": [
       "alt",
       "area_id",
+      "caption",
       "created_at",
       "created_by",
       "id",
       "license",
       "moderation",
       "photographer",
+      "route_id",
       "storage_path"
     ],
     "user_itineraries": [

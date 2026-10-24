@@ -1032,3 +1032,42 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     0 because `#appscroll` scrolls, not the document — so any downward drag mid-feed grew the
     pull spacer instead of scrolling. It now reads `#appscroll.scrollTop` and ignores touches
     bubbling up (through the React tree) from portalled overlays. No guard covers that one.
+- **`check:no-module-scope-core-reads`** replays ESM evaluation order from `main.jsx` over the app's
+  static import graph and fails on any **module-scope read of a binding whose module is still
+  evaluating** — the shape that took the live site down on 2026-10-23. Static (Babel), so it sits in
+  `npm run build`. Injection suite: `scripts/oneoff/inject-module-scope-core-read-cases.mjs`.
+  - **THE OUTAGE (#2678 → hotfix #2679).** PR36 of the component extraction moved `VouchCard` to
+    `src/components/VouchCard.tsx` and hoisted `const SKILL_LABELS: Record<…> = SKILLS;` above the
+    component. `ClimbMatchCore.jsx` imports VouchCard back (`FullProfile` renders it), so the
+    component's module body ran INSIDE core's evaluation, before `const SKILLS` existed: the bundle
+    threw `ReferenceError: Cannot access 'Nb' before initialization` at load and the app drew the
+    navigation shell and nothing else. **Types, lint, every static guard, the build and the reach
+    measurement all passed.** `measure-guard-reach` had caught the identical slip in PR3
+    (`DiscBadge`, `const META = CAT`) because two guards RENDER the profile; nothing renders a vouch,
+    so this time nothing failed until the post-deploy Chrome console check, ~10 minutes after it
+    went live. A dev build does not reproduce it either: unbundled ESM in the browser follows the
+    same order, but the symptom was only ever observed in the bundle.
+  - **Why a replay and not "no component reads core at the top".** Direction matters: core reading
+    VouchCard at module scope would be fine, because VouchCard has finished by the time core's body
+    runs. And the rule is not about `src/components` — a `lib/*.jsx` module that core imports and
+    that imports core back is in the same cycle. The replay keeps the stack of modules whose bodies
+    are in progress (depth-first, import order, skipping one already started — the ESM rule) and
+    asks, at each body, which of its module-scope import reads name a module still on the stack. A
+    dynamic `import()` is a boundary (it evaluates later, with the static graph done) and its
+    targets are replayed as their own roots afterwards.
+  - **A hoisted `function` export is allowed.** Function declarations exist from instantiation, in
+    ESM and in the Rollup chunk alike, so `import Av from "./Av.tsx"` (an `export default function`)
+    or a core `export function shortDate` read at module scope is safe and the guard says so.
+    `const`, `let`, `class` and `export default <expr>` are values and are not.
+  - **"Module scope" is**: not inside any function (a component body, hook, handler or default
+    parameter runs later), not a non-static class field initialiser, not a TypeScript type position
+    (erased), and not an `export { X }` re-export (a live binding, no read).
+  - **Measured on the tree it was written against (2026-10-24):** 184 module bodies, 648 static edges,
+    **23 back-edges** (core ↔ 22 components, plus lib), 58 dynamic boundaries, 92 module-scope
+    import reads examined — **none of an in-progress module**. So the hotfix tree is clean and the
+    whole extraction series up to PR36 had introduced exactly the one.
+  - **Fails closed**: floors on modules, edges, back-edges and reads examined, because the guard
+    reports an absence and a broken walk prints what a clean tree prints.
+  - **Known miss**: `const X = (() => SKILLS)();` — the read sits inside a function, so it is
+    deferred, but the call runs at module scope. Not followed on purpose: following calls means
+    evaluating the program. Recorded in the suite as a known miss, not a case.

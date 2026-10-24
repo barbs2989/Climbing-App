@@ -18,6 +18,8 @@ export interface PartnerRow {
   sport_grade?: string | null;
   trad_grade?: string | null;
   boulder_grade?: string | null;
+  /** 0359: woman | man | non_binary; null = prefer not to say. */
+  gender?: string | null;
   availability?: string[] | null;
   avail_week?: string[] | null;
   hiking_speed_ft_hr?: number | string | null;
@@ -53,6 +55,7 @@ export interface RealClimberCand {
   sportGrade?: string | null;
   tradGrade?: string | null;
   boulderGrade?: string | null;
+  gender?: string;
   availability: string[];
   availWeek: string[];
   hikingSpeedFtHr?: number;
@@ -98,7 +101,7 @@ export default function RealClimberRow({p,onOpen,objIds,objErr,verified,listing}
      their resume private had it offered from partner browse. `!!` rather than `!== false`
      because this is SOMEBODY ELSE's row: an omitted column must hide a button, never expose a
      resume. `!== false` is only correct for your own read-back. */
-  const _cand={id:p.id,name:p.name||"Climber",username:p.username,showName:!!p.show_name,resumePublic:!!p.resume_public,avatar:p.avatar,bio:p.bio,location:p.location,disciplines:Array.isArray(p.disciplines)?p.disciplines:[],sportGrade:p.sport_grade,tradGrade:p.trad_grade,boulderGrade:p.boulder_grade,availability:Array.isArray(p.availability)?p.availability:[],availWeek:Array.isArray(p.avail_week)?p.avail_week:[],hikingSpeedFtHr:Number(p.hiking_speed_ft_hr)||undefined,_distMi:p.dist_mi!=null?p.dist_mi:undefined,objectiveIds:Array.isArray(objIds)?objIds:[],/* Their LISTED AREAS (0300): the list's one partner_areas_of_users read, or the row's own listed_* columns when it came from an area search. Paths feed compat()'s shared-areas term. */partnerAreaPaths:(Array.isArray(listing)?listing.map(function(x){return x&&x.path}):(Array.isArray(p.listed_area_paths)?p.listed_area_paths:[])).filter(Boolean),/* From the list's one verified_user_ids read (0232). Only a confirmed TRUE sets it: unknown must not cost the match % nor read as unverified on the profile this row opens. */verified:verified===true};
+  const _cand={id:p.id,name:p.name||"Climber",username:p.username,showName:!!p.show_name,resumePublic:!!p.resume_public,avatar:p.avatar,bio:p.bio,location:p.location,disciplines:Array.isArray(p.disciplines)?p.disciplines:[],sportGrade:p.sport_grade,tradGrade:p.trad_grade,boulderGrade:p.boulder_grade,/* 0359 */gender:p.gender||undefined,availability:Array.isArray(p.availability)?p.availability:[],availWeek:Array.isArray(p.avail_week)?p.avail_week:[],hikingSpeedFtHr:Number(p.hiking_speed_ft_hr)||undefined,_distMi:p.dist_mi!=null?p.dist_mi:undefined,objectiveIds:Array.isArray(objIds)?objIds:[],/* Their LISTED AREAS (0300): the list's one partner_areas_of_users read, or the row's own listed_* columns when it came from an area search. Paths feed compat()'s shared-areas term. */partnerAreaPaths:(Array.isArray(listing)?listing.map(function(x){return x&&x.path}):(Array.isArray(p.listed_area_paths)?p.listed_area_paths:[])).filter(Boolean),/* From the list's one verified_user_ids read (0232). Only a confirmed TRUE sets it: unknown must not cost the match % nor read as unverified on the profile this row opens. */verified:verified===true};
   const _nm=pubNameRow(p)||"Climber";const _objReady=Array.isArray(objIds);/* The viewer's side of the score: mountain objectives only (crag objectives are a tick list, not a match signal) plus their listed areas. */const _me=Object.assign({},ME,{objectiveIds:Array.isArray(meView.matchObjectiveIds)?meView.matchObjectiveIds:(meView.objectiveIds||[])});const _unk=compatUnknown(_me,_cand),_pct=compat(_me,_cand);
   const _lst: PartnerListing[] | null=Array.isArray(listing)?listing:(Array.isArray(p.listed_area_names)?p.listed_area_names.map(function(n,i){return {name:n,path:(p.listed_area_paths||[])[i],disciplines:p.listed_disciplines||[],freeFrom:p.free_from||null,freeTo:p.free_to||null,above:!!p.listed_above};}):null);
   const _lstLine=(function(){if(!_lst||!_lst.length)return null;const names=_lst.slice(0,2).map(function(l){return l.name;}).filter(Boolean);const more=_lst.length>2?" +"+(_lst.length-2):"";const discs: string[]=[];_lst.forEach(function(l){(l.disciplines||[]).forEach(function(d){if(discs.indexOf(d)<0)discs.push(d);});});const win=_lst.find(function(l){return l.freeFrom&&l.freeTo;});const fmt=function(d: string){try{return new Date(d+"T12:00:00").toLocaleDateString(DLOCALE,{month:"short",day:"numeric"});}catch{return d;}};return (_lst[0].above?"Listed across ":"Listed at ")+names.join(", ")+more+(discs.length?" · "+discs.map(function(d){return (CATS[d]||{}).label||d;}).join(", "):"")+(win?" · free "+(win.freeFrom===win.freeTo?fmt(win.freeFrom||""):fmt(win.freeFrom||"")+"–"+fmt(win.freeTo||"")):"");})();

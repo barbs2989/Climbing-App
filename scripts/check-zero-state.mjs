@@ -76,10 +76,12 @@ const FORBIDDEN = [
 const ZERO_LANDMARKS = {
   // #637: these four tiles and the dropdown used to be filtered out when their count
   // was 0, which is exactly when a new user needs them.
-  "tab:today": ["Explore climbs", "Find partners", "Find crews", "Unfinished business"],
-  // The dropdown has to say what it is empty OF. It used to read "Nothing waiting on you
-  // right now", a near-copy of the "Nothing needs you right now" card immediately below it.
-  "modal:unfinishedOpen": ["No requests, invites or unread messages."],
+  // The dropdown is now Home's ONE Alerts button (Unfinished business folded into it,
+  // 2026-10-23). A brand-new account already holds a notification, so its label carries a
+  // count -- a RegExp landmark, still matched against the WHOLE line. For the same reason the
+  // empty copy ("No requests, invites, unread messages, climbs to confirm or alerts.") is
+  // unreachable at zero and is not asserted here; the near-duplicate below is still forbidden.
+  "tab:today": ["Explore climbs", "Find partners", "Find crews", /^Alerts( · \d+ new)?$/],
 };
 
 // Controls that must NOT be offered at zero, because acting on them produces or shares
@@ -88,7 +90,7 @@ const FORBIDDEN_LANDMARKS = {
   // #674: a share block on a year of all zeros. Also the near-duplicate empty copy the
   // Unfinished business dropdown used to carry.
   "modal:recapOpen": ["Share your year", "Copy my year", "↗ Share…"],
-  "modal:unfinishedOpen": ["Nothing waiting on you right now."],
+  "modal:alertsOpen": ["Nothing waiting on you right now."],
 };
 
 const log = (...a) => console.log(...a);
@@ -281,7 +283,7 @@ function assertScreen(label, lines) {
   const bare = lines.filter((l) => ICONS.has(l));
   if (bare.length) fail(label, `an icon name rendered as text: ${JSON.stringify([...new Set(bare)])}`);
   for (const want of ZERO_LANDMARKS[label] || []) {
-    if (!lines.includes(want)) fail(label, `landmark missing at zero: ${JSON.stringify(want)}`);
+    if (!(want instanceof RegExp ? lines.some((l) => want.test(l)) : lines.includes(want))) fail(label, `landmark missing at zero: ${want instanceof RegExp ? String(want) : JSON.stringify(want)}`);
   }
   for (const nope of FORBIDDEN_LANDMARKS[label] || []) {
     if (lines.includes(nope)) fail(label, `offered at zero when there is nothing behind it: ${JSON.stringify(nope)}`);
