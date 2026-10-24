@@ -41,7 +41,7 @@ import { gradeDetail, cruxGrade, displayGrade, singleGrade, gradeRangeNote } fro
 import { routeTerrain, fitGear, saysNotApplicable } from "./lib/terrain";
 import { rappelReportedMax, rappelHeaderLabel, rappelSingleRopeWarning } from "./lib/rappels";
 import { knownHazards } from "./lib/hazards";
-import { acquireBaseFix, clusterBasePoints, baseCheckinMessage, baseGuide, pendingBaseCheckins, savePendingBaseCheckins } from "./lib/baseCheckin";
+import { acquireBaseFix, baseCheckinMessage, baseGuide, pendingBaseCheckins, savePendingBaseCheckins, distM, BASE_CONFIRM_MIN } from "./lib/baseCheckin";
 import { routeTags } from "./lib/routeTags";
 import { planTimes, realPitches } from "./lib/planTimes";
 import AlpineConditionsCard, { forecastPoint } from "./lib/AlpineConditionsCard.jsx";
@@ -69,7 +69,6 @@ import SectionJumps from "./src/components/SectionJumps.tsx";
 import { useWideScreen, useFullWidth } from "./lib/wideLayout.js";
 import { routeSheetHtml } from "./lib/routeSheet.js";
 import DrawRouteView from "./lib/DrawRoute.jsx";
-import StartLocationForm from "./src/components/StartLocationForm.tsx";
 import ReportStats from "./src/components/ReportStats.tsx";
 import ItineraryEditor from "./src/components/ItineraryEditor.tsx";
 import RealClimberRow from "./src/components/RealClimberRow.tsx";
@@ -346,13 +345,16 @@ function _isNoSignal(e){if(typeof navigator!=="undefined"&&navigator.onLine===fa
    DATABASE judges whether that point is at this climb, because a rule the browser applies can be
    skipped by a crafted request. So the screen reports the server's answer, never its own guess.
    Other climbers see each checked-in spot and how many climbers stood there — never who, never when.
+   ONE CONSENSUS, THE DATABASE'S (0363 route_base_spots): the spots arrive already clustered, the
+   top one CONFIRMED once BASE_CONFIRM_MIN climbers agree and are a majority, and a confirmed spot
+   becomes the route's own Base pin — so the map, this card, the waypoint list and the GPX all read
+   the same start. An unconfirmed spot is shown as what it is and never outranks the recorded pin.
    It sits UNDER THE ROUTE MAP, which draws the same spots (GPXMap's baseSpots); `q` and `spots` are
    read once by RouteDetail and handed to both, so the map and this card cannot disagree.
-   FIND THE BASE: a live distance and compass direction from the phone to the best-known start — the
-   most-confirmed check-in spot, else a Base/Start waypoint the route records. Inside GPS error it
+   FIND THE BASE: a live distance and compass direction from the phone to the best-known start — a
+   confirmed spot, else the Base pin the route records, else a spot not yet confirmed. Inside GPS error it
    stops pointing and shows the route's own LOCATION note (0243), because that, not GPS, is what tells
    two neighbouring lines apart. */
-const _BASE_WP_RE=/^(base|start|route[ _-]?start|route base)$/;
 function BaseCheckinPanel({route,who,spots,q}){
   const [st,setSt]=useState({phase:"idle"});const [prog,setProg]=useState(null);
   const [guide,setGuide]=useState(null);const guideRef=useRef(null);
@@ -360,7 +362,7 @@ function BaseCheckinPanel({route,who,spots,q}){
   useEffect(function(){return stopGuide;},[stopGuide]);
   useEffect(function(){stopGuide();setGuide(null);},[route.id,stopGuide]);
   const area=route._dbArea||{};
-  const baseWp=(route.waypoints||[]).find(function(w){return wpPlaced(w)&&_BASE_WP_RE.test(String((w&&w.type)||"").toLowerCase());});
+  const baseWp=(route.waypoints||[]).find(function(w){return wpPlaced(w)&&wpType(w)==="Base";});
   const hasAnchor=(area.lat!=null&&area.lng!=null&&Number.isFinite(+area.lat)&&Number.isFinite(+area.lng))||!!baseWp;
   /* Check-ins taken with no signal wait on this phone. Send them whenever this panel mounts with a
      connection or the browser comes back online; the server still judges each one. */
@@ -368,7 +370,7 @@ function BaseCheckinPanel({route,who,spots,q}){
   const flush=useCallback(function(){if(!who||!USE_DB)return;var list=pendingBaseCheckins(who);if(!list.length)return;var keep=[];var chain=Promise.resolve();list.forEach(function(p){chain=chain.then(function(){return checkInAtRouteBase(p.routeId,p.fix).then(function(res){if(p.routeId===route.id)setSt(res.ok?{phase:"done",late:true}:{phase:"refused",res:res});}).catch(function(e){if(_isNoSignal(e))keep.push(p);});});});chain.then(function(){savePendingBaseCheckins(who,keep);if(refetch)refetch();});},[who,route.id,refetch]);
   useEffect(function(){flush();if(typeof window==="undefined")return;window.addEventListener("online",flush);return function(){window.removeEventListener("online",flush);};},[flush]);
   if(!USE_DB)return null;
-  const pts=q.data||[];const clusters=spots||EMPTY_ARR;const mineAny=pts.some(function(p){return p.mine===true;});
+  const clusters=spots||EMPTY_ARR;const mineAny=clusters.some(function(p){return p.mine===true;});
   if(!hasAnchor&&!clusters.length)return null;
   const go=function(){if(!who||st.phase==="locating"||st.phase==="sending")return;setSt({phase:"locating"});setProg(null);
     acquireBaseFix(typeof navigator!=="undefined"?navigator.geolocation:null,{onProgress:setProg}).then(function(fix){
@@ -379,8 +381,10 @@ function BaseCheckinPanel({route,who,spots,q}){
         else setSt({phase:"error"});});});};
   const withdraw=function(){if(!who)return;setSt({phase:"withdrawing"});withdrawBaseCheckin(who,route.id).then(function(){setSt({phase:"idle"});if(refetch)refetch();}).catch(function(){setSt({phase:"error",withdraw:true});});};
   const busy=st.phase==="locating"||st.phase==="sending"||st.phase==="withdrawing";
-  const top=clusters[0];
-  const target=top?{lat:top.lat,lng:top.lng,what:"the spot climbers checked in at"}:baseWp?{lat:+baseWp.lat,lng:+baseWp.lng,what:"the start this route records"}
+  const top=clusters[0];const confirmed=!!(top&&top.confirmed);
+  /* Held (0363): a confirmed spot more than 200 m from the recorded pin is a different place, not a correction, so the pin waits for a review. */
+  const pinGap=confirmed&&baseWp?distM(top,{lat:+baseWp.lat,lng:+baseWp.lng}):null;const held=pinGap!=null&&pinGap>200;
+  const target=confirmed?{lat:top.lat,lng:top.lng,what:"the spot "+top.n+" climbers confirmed on-site"}:baseWp?{lat:+baseWp.lat,lng:+baseWp.lng,what:"the start this route records"}:top?{lat:top.lat,lng:top.lng,what:"the spot "+(top.n===1?"one climber":top.n+" climbers")+" checked in at — not confirmed yet"}
     /* Last, a CRAG's own coordinate: a base pin on a crag sits 0–1 m from it (measured for 0188), so it
        gets a climber to the wall. Never a PEAK's — that is the summit, kilometres from any start. */
     :(area.areaType==="crag"&&Number.isFinite(+area.lat)&&Number.isFinite(+area.lng)&&area.lat!=null&&area.lng!=null)?{lat:+area.lat,lng:+area.lng,what:"the crag’s location on file, not this climb’s own start — nobody has marked that yet"}:null;
@@ -396,7 +400,8 @@ function BaseCheckinPanel({route,who,spots,q}){
     {q.isError?<div style={{fontSize:12.5,color:C.textSub,marginBottom:8}}>Couldn’t load check-ins at the base — try again in a moment.</div>
     :top?<div style={{marginBottom:9}}>
       <div style={{fontSize:13,color:C.text,fontWeight:600,marginBottom:3}}>{top.lat.toFixed(5)+", "+top.lng.toFixed(5)}</div>
-      <div style={{fontSize:12,color:C.textSub,marginBottom:5}}>{"Checked in on-site by "+top.n+" climber"+(top.n!==1?"s":"")+(top.mine?", including you":"")+(clusters.length>1?" · "+(clusters.length-1)+" other spot"+(clusters.length-1!==1?"s":"")+" reported":"")}</div>
+      <div style={{fontSize:12,color:confirmed?C.green:C.textSub,fontWeight:confirmed?600:400,marginBottom:3}}>{(confirmed?"✓ Confirmed on-site by ":"Checked in on-site by ")+top.n+" climber"+(top.n!==1?"s":"")+(top.mine?", including you":"")+(clusters.length>1?" · "+(clusters.length-1)+" other spot"+(clusters.length-1!==1?"s":"")+" reported":"")}</div>
+      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginBottom:5}}>{confirmed?(held?"That is "+_baseDist(Math.round(pinGap))+" from the start this route records, so ClimbMatch checks it before the Base pin moves.":"The route’s Base pin on the map follows this spot."):(baseWp?"The Base pin on the map is still the start this route records. ":"")+"A spot becomes this route’s Base pin once "+BASE_CONFIRM_MIN+" climbers check in within 25 m of each other and are most of those who checked in."}</div>
       <a href={"https://www.google.com/maps/search/?api=1&query="+top.lat.toFixed(6)+","+top.lng.toFixed(6)} target="_blank" rel="noopener noreferrer" style={{fontSize:12.5,color:C.blue,fontWeight:600,textDecoration:"none"}}>Open the base in maps ›</a>
     </div>
     :q.isPending?<div style={{fontSize:12.5,color:C.textMuted,marginBottom:8}}>Loading check-ins…</div>
@@ -3262,7 +3267,7 @@ export function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCo
   const DISCS=[[DL.trad,"trad",{discipline:"rock",style:"Trad"}],[DL.sport,"sport",{discipline:"rock",style:"Sport"}],[DL.toprope,"toprope",{discipline:"toprope"}],[DL.bouldering,"bouldering",{discipline:"bouldering"}],[DL.alpine,"alpine",{discipline:"alpine"}],[DL.ice,"ice",{discipline:"ice"}],[DL.mixed,"mixed",{discipline:"mixed"}],[DL.aid,"aid",{discipline:"aid"}],[DL.mountaineering,"mountaineering",{discipline:"mountaineering"}],[DL.scrambling,"scrambling",{discipline:"scrambling"}]];
   const catToChip=function(c){if(c==="hiking")return "scrambling";return DISCS.some(function(d){return d[1]===c;})?c:"trad";};
   const [disc,setDisc]=useState(catToChip(catOf(route)));
-  const [vals,setVals]=useState(prefill||{});const [note,setNote]=useState("");const [sent,setSent]=useState(false);const [sentN,setSentN]=useState(0);const [agreed,setAgreed]=useState({});const [open,setOpen]=useState({});/* There is no "I see this too" any more: every edit is held for the owner (0307–0309), so a second climber's agreement is information for the review queue, not a vote that can push a value live. */const _sfSess=useSession();const _sfUid=(USE_DB&&_sfSess&&_sfSess.user)?_sfSess.user.id:null;const _standQ=useMyContributionStanding(_sfUid);const _standing=(_standQ&&_standQ.data)||null;const _sfCx=useContext(ConfidenceCtx);const _lvOf=function(k){return _sfCx&&_sfCx.levels?_sfCx.levels[k]:null;};const [showStartForm,setShowStartForm]=useState(scrollTo==="startLocation");const [startAdded,setStartAdded]=useState(0);
+  const [vals,setVals]=useState(prefill||{});const [note,setNote]=useState("");const [sent,setSent]=useState(false);const [sentN,setSentN]=useState(0);const [agreed,setAgreed]=useState({});const [open,setOpen]=useState({});/* There is no "I see this too" any more: every edit is held for the owner (0307–0309), so a second climber's agreement is information for the review queue, not a vote that can push a value live. */const _sfSess=useSession();const _sfUid=(USE_DB&&_sfSess&&_sfSess.user)?_sfSess.user.id:null;const _standQ=useMyContributionStanding(_sfUid);const _standing=(_standQ&&_standQ.data)||null;const _sfCx=useContext(ConfidenceCtx);const _lvOf=function(k){return _sfCx&&_sfCx.levels?_sfCx.levels[k]:null;};
   // rack builder (keyed per use; shared across the single rack field)
   const RACK_CATS=[["Cams",["#0.3","#0.4","#0.5","#0.75","#1","#2","#3","#4","#5"],"cam"],["Nuts / stoppers",["#1","#2","#3","#4","#5","#6","#7","#8","#9","#10","#11","#12","#13"],"nut"],["Slings",["60cm","120cm","180cm","240cm"],"sling"],["Alpine draws",["Qty"],"adraw"]];
   const rack=vals.rack||{};const setRack=function(fn){setVals(function(v){return Object.assign({},v,{rack:fn(v.rack||{})});});};
@@ -3827,11 +3832,6 @@ var _pv=(k[3]==="num")?(isFinite(parseFloat(v))?parseFloat(v):undefined):(k[3]==
             {isOpen?<div style={{marginTop:8}}>{pend&&pend.mine?<div style={{background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:9,padding:"7px 9px",marginBottom:8,display:"flex",alignItems:"center",gap:7}}><span style={{flex:1,fontSize:11,color:C.text,lineHeight:1.4}}>{"You suggested: "}<b>{pendStr(f,pend.value)}</b>{pend.removes?" — it removes something, so it waits for ClimbMatch to check it. Sending another value replaces it.":" — it goes live when a second climber sends the same, or once ClimbMatch checks it. Sending another value replaces it."}</span></div>:null}{/* AGREE (0325): another climber's waiting suggestion, offered verbatim. Sending it is the second climber the database needs, so it goes live on this tap. Google Maps' "Check the facts" is the model: confirm what someone else proposed instead of retyping it. */pend&&pend.other&&_lvOf(f.k)!=="high"?<div style={{background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:9,padding:"7px 9px",marginBottom:8,display:"flex",alignItems:"center",gap:8}}><span style={{flex:1,minWidth:0,fontSize:11,color:C.text,lineHeight:1.4,overflowWrap:"anywhere"}}>{(pend.other.n>1?pend.other.n+" climbers suggested: ":"Another climber suggested: ")}<b>{pendStr(f,pend.other.value)}</b>{agreed[f.k]?null:(pend.other.removes?" — it removes something, so ClimbMatch checks it first; agree if you know it’s right.":" — if you know it’s right, agree and it goes live.")}</span>{agreed[f.k]?<span style={{flexShrink:0,fontSize:11.5,fontWeight:700,color:C.green}}>{"✓ Agreed"}</span>:<button onClick={function(){if(onSubmit)onSubmit({type:"edit",field:f.k,label:f.label,value:pend.other.value,wasEmpty:false,routeId:route.id,note:"",title:route.name,area:mtnOf(route),meta:f.label+": agreed with "+pendStr(f,pend.other.value),status:"review",when:"just now"});setAgreed(function(a){return Object.assign({},a,{[f.k]:true});});}} aria-label={"Agree with the suggested "+f.label} style={{flexShrink:0,padding:"6px 12px",background:C.blueSolid,color:"#fff",border:"none",borderRadius:8,fontSize:12,fontWeight:700,cursor:"pointer"}}>Agree</button>}</div>:null}{help?<div style={{fontSize:11,color:C.textMuted,lineHeight:1.4,marginBottom:7}}>{help}</div>:null}{(function(){var cr=curRefStr(f);return cr?<div style={{marginBottom:9,background:C.surface,border:"1px solid "+C.border,borderRadius:9,padding:"9px 11px"}}><div style={{...SUB_LABEL,marginBottom:5}}>{"On the app now"}</div><div style={{fontSize:13,color:C.text,lineHeight:1.55,whiteSpace:"pre-wrap",overflowWrap:"anywhere",maxHeight:260,overflowY:"auto",overscrollBehavior:"contain"}}>{cr}</div></div>:null;})()}{renderInput(f)}</div>:null}
           </div>;})}
         </div>;})}
-        <div id="sf-section-startLocation" style={{background:C.card,border:"1px solid "+C.blue+"40",borderLeft:"4px solid "+C.blue,borderRadius:12,padding:"11px 14px 14px",marginBottom:18}}>
-          <CardHead style={{margin:"2px 0 6px"}}>Start of climb</CardHead>
-          <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.4,marginBottom:8}}>Exact location the technical climbing begins — not the trailhead. When climbers agree, the closest-matching submissions become the shown location; others stay visible as alternates.</div>
-          {!showStartForm?<button onClick={function(){setShowStartForm(true);}} style={{padding:"8px 12px",background:C.surface,color:C.blue,border:"1px solid "+C.border,borderRadius:9,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>{"+ Add start location"+(startAdded?" ("+startAdded+" added)":"")}</button>:<StartLocationForm peakCoord={peakCoord} onCancel={function(){setShowStartForm(false);}} onSubmit={function(loc){onSubmit&&onSubmit({field:"startLocation",routeId:route.id,value:loc,wasEmpty:false});setStartAdded(function(n){return n+1;});setShowStartForm(false);}}/>}
-        </div>
         {_removals.length?<div role="note" style={{background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:11,padding:"10px 12px",marginBottom:10,fontSize:12.5,color:C.text,lineHeight:1.55}}>{"You’re removing something from "}<b>{_removals.map(function(f){return f.label;}).join(", ")}</b>{". Removals always wait for ClimbMatch to check them, however many climbers agree — other parties rely on what’s here. Say why below (at least 10 characters): it’s gone, it’s a duplicate, it’s in the wrong place…"}</div>:null}
         <div style={{marginBottom:4}}><div style={{...SUB_LABEL,margin:"2px 0 6px"}}>{_removals.length?"Why (required)":"Why (optional)"}</div><input aria-label={_removals.length?"Why (required)":"Why (optional)"} value={note} onChange={function(e){setNote(e.target.value);}} placeholder={_removals.length?"e.g. the old bivy at the col is gone, washed out in 2025":"e.g. climbed it last week and it is WI4 now"} style={fld}/></div>
       </div>
@@ -4155,7 +4155,7 @@ function RouteDetail({route:routeRow,onBlockClimber,cragPanels,condPanels,who,on
   const mapWrapRef=useRef(null);
   /* The base check-ins (0188) are read ONCE here and handed to both the map, which draws them, and
      the panel under it, which lists and records them. */
-  const baseQ=useRouteBaseCheckins(USE_DB?route.id:null);const baseSpots=useMemo(function(){return clusterBasePoints(baseQ.data||EMPTY_ARR);},[baseQ.data]);
+  const baseQ=useRouteBaseCheckins(USE_DB?route.id:null);const baseSpots=baseQ.data||EMPTY_ARR;
   const [wpFocus,setWpFocus]=useState(null);
   const focusWaypoint=useCallback(function(i){
     setWpFocus(function(p){return {i:i,n:((p&&p.n)||0)+1};});
@@ -4359,7 +4359,7 @@ const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+
         ClimbMatch.jsx) both sat on Overview and both answered "how complete/trusted is this
         route's data" — two boxes for one question, ahead of the route itself. Gaps are now
         reported only by the section that owns the missing field (GapNote), so the reader is
-        told where to look instead of being told, twice, that there is somewhere to look. The "I'm at the base" check-in moved under the route map (BaseCheckinPanel). */}{route._startLocConsensus?<div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginBottom:12}}><CardHead style={{marginBottom:8}}>START OF CLIMB</CardHead>{route._startLocConsensus.photo?<img loading="lazy" decoding="async" src={route._startLocConsensus.photo} alt="Start of climb" style={{width:"100%",maxHeight:180,objectFit:"cover",borderRadius:9,marginBottom:8}}/>:null}<div style={{fontSize:12.5,color:C.textSub,marginBottom:4}}>{route._startLocConsensus.lat.toFixed(4)+", "+route._startLocConsensus.lng.toFixed(4)}</div>{route._startLocConsensus.note?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.45,marginBottom:6}}>{route._startLocConsensus.note}</div>:null}<div style={{fontSize:11.5,color:C.textMuted}}>{route._startLocConsensus.n+" climber"+(route._startLocConsensus.n!==1?"s":"")+" confirmed this location"+(route._startLocConsensus.alternates.length?" · "+route._startLocConsensus.alternates.length+" alternate"+(route._startLocConsensus.alternates.length!==1?"s":"")+" suggested":"")}</div></div>:null}{cragOnly?<div style={{margin:ROUTE_GAP+"px 0"}}><CragRack route={route} activity={activity} onSeeReports={()=>{setTab("conditions");setTimeout(()=>{if(typeof document!=="undefined"){var el=document.getElementById("trip-reports-section");if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"start"});}},60);}} onEditRack={function(cur,sec){setFixOpenSection(sec||"rack");setFixPrefill(cur&&(!sec||sec==="rack")?{rack:{note:cur}}:null);setFixOpen(true);}}/>{gearUpdateBox}</div>:null}{cragOnly?cragFactsEl("gear"):null}{cragOnly?cragFactsEl("cond"):null}
+        told where to look instead of being told, twice, that there is somewhere to look. The "I'm at the base" check-in moved under the route map (BaseCheckinPanel). */}{cragOnly?<div style={{margin:ROUTE_GAP+"px 0"}}><CragRack route={route} activity={activity} onSeeReports={()=>{setTab("conditions");setTimeout(()=>{if(typeof document!=="undefined"){var el=document.getElementById("trip-reports-section");if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"start"});}},60);}} onEditRack={function(cur,sec){setFixOpenSection(sec||"rack");setFixPrefill(cur&&(!sec||sec==="rack")?{rack:{note:cur}}:null);setFixOpen(true);}}/>{gearUpdateBox}</div>:null}{cragOnly?cragFactsEl("gear"):null}{cragOnly?cragFactsEl("cond"):null}
         {/* The per-discipline safety advice boxes were removed as too generic; nothing to render inline here. */}
         {(()=>{const tp=noWaypoints?null:typicalFor(route);if(!tp)return null;const rtags=new Set(activity.filter(a=>isRecent(a.date)).flatMap(a=>a.condTags||[]));const conf=(tp.patterns||[]).filter(pat=>{const st=patternStatus(pat.label,rtags);return st&&st.status==="confirmed";}).length;const diff=(tp.patterns||[]).filter(pat=>{const st=patternStatus(pat.label,rtags);return st&&st.status!=="confirmed";}).length;return <><SL>What to expect</SL><Capped><div style={{background:C.surface,borderRadius:14,border:`1px solid ${C.border}`,padding:"13px 15px",marginBottom:ROUTE_GAP}}><CardHead style={{marginBottom:8}}>Typical conditions · the general picture</CardHead>{(conf||diff)?<div style={{display:"flex",alignItems:"center",gap:7,background:diff?C.amberBg:C.greenBg,border:`1px solid ${(diff?C.amber:C.green)}44`,borderRadius:9,padding:"7px 10px",marginBottom:10}}><span style={{fontSize:12,fontWeight:600,color:diff?C.amber:C.green}}>{((conf&&diff)?("Recent reports: "+conf+" confirmed · "+diff+" differ"):diff?("Recent reports differ from typical on "+diff+" point"+(diff!==1?"s":"")):("Recent reports back up the typical picture · "+conf+" confirmed"))+" ("+recentN+" report"+(recentN!==1?"s":"")+", last "+RECENT_DAYS+" days)"}</span></div>:null}{tp.summary?<div style={{fontSize:13,color:C.textSub,lineHeight:1.6,marginBottom:(tp.patterns&&tp.patterns.length)?9:0}}>{tp.summary}</div>:null}{(tp.patterns||[]).map((pat,i)=><div key={i} style={{display:"flex",gap:9,padding:"8px 0",borderTop:`1px solid ${C.borderLight}`}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13,fontWeight:700,marginBottom:2}}>{pat.label}{" "}{pat.when?<span style={{marginLeft:7,fontSize:12,fontWeight:700,color:C.blue,background:C.blueBg,padding:"1px 7px",borderRadius:6,whiteSpace:"nowrap"}}>{pat.when}</span>:null}</div><div style={{fontSize:12,color:C.textSub,lineHeight:1.55}}>{pat.detail}</div>{(()=>{const st=patternStatus(pat.label,rtags);if(!st)return null;const good=st.status==="confirmed";const col=good?C.green:C.amber;const tg=(good?st.matched:(st.countered.length?st.countered:st.matched))||[];return <div style={{display:"inline-flex",alignItems:"center",gap:5,marginTop:5,padding:"2px 8px",borderRadius:8,background:good?C.greenBg:C.amberBg,border:`1px solid ${col}44`}}><span style={{fontSize:12,fontWeight:700,color:col}}>{good?"✓ Confirmed by recent reports":st.status==="mixed"?"± Mixed recent reports":"↔ Recent reports differ"}</span>{tg.length?<span style={{fontSize:12,color:C.textMuted}}>{"· "+tg.slice(0,2).join(", ")}</span>:null}</div>;})()}</div></div>)}<div {...clickable(()=>setTab("conditions"))} style={{marginTop:11,paddingTop:10,borderTop:"1px solid "+C.border,fontSize:12,color:C.blue,fontWeight:600,cursor:"pointer",display:"flex",alignItems:"center",gap:6}}>{/* `rtags` is the tag set from RECENT trip reports, and patternStatus returns null without it --
     so with no reports every pattern above is the generic discipline picture, and calling that
