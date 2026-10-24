@@ -21,7 +21,7 @@ export interface Waypoint {
 /** A waypoint `wpPlaced()` accepted: it has a coordinate. */
 export interface PlacedWaypoint extends Waypoint { lat: number; lng: number }
 export interface Coord { lat?: number | null; lng?: number | null; name?: string | null }
-export interface BaseSpot { lat: number; lng: number; n: number; mine?: boolean }
+export interface BaseSpot { lat: number; lng: number; n: number; mine?: boolean; confirmed?: boolean }
 export interface GPXMapProps {
   /** The recorded track as [lat, lng, ...] samples; fewer than two draws no line. */
   pts?: ReadonlyArray<readonly number[]> | null;
@@ -34,7 +34,7 @@ export interface GPXMapProps {
   focusWp?: { i?: number | null; n?: number } | null;
   /** The trailhead the Directions button uses when it lives only in approach_logistics. */
   derivedTrailhead?: Coord | null;
-  /** Where climbers checked in at the base (0188). */
+  /** Where climbers checked in at the base (0188), clustered by the database (0363 route_base_spots). */
   baseSpots?: ReadonlyArray<BaseSpot> | null;
 }
 interface WpStyle { color: string; glyph: string }
@@ -193,7 +193,7 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
       addPin([L.marker(dll,{icon:wpDivIcon(L,"Trailhead",22,null,true),keyboard:false})],dll,dHtml,String(dt.name||"Trailhead"),"Trailhead");
       if(!b){b=L.latLngBounds([dll]);}else{b.extend(dll);}
     }
-    if(b&&b.isValid()){map.fitBounds(b.pad(0.25),{maxZoom:layerSharpZoom(baseLayer)});}else if(hasPeak&&pk){L.marker([pk.lat,pk.lng],{icon:wpDivIcon(L,"Summit",24,null,true),keyboard:false}).addTo(map).bindTooltip(pk.name||"Peak location",{direction:"top"});map.setView([pk.lat,pk.lng],12);}else{map.setView([39.5,-98.5],4);}fitZoomToLayer(map,baseLayer);boundsRef.current=b;mapRef.current=map;setReady(true);setMapGen(g=>g+1);setTimeout(()=>{try{map.invalidateSize();}catch{/* the map is already gone */}},150);};loadLeaflet(init,()=>setMapFail(true));const ft=setTimeout(()=>{if(!cancelled&&!mapRef.current)setMapFail(true);},9000);return ()=>{cancelled=true;clearTimeout(ft);if(mapRef.current){try{mapRef.current.remove();}catch{/* the map is already gone */}mapRef.current=null;tileRef.current=null;openPinsRef.current=null;}};
+    if(b&&b.isValid()){map.fitBounds(b.pad(0.25),{maxZoom:layerSharpZoom(baseLayer)});}else if(hasPeak&&pk){L.marker([pk.lat,pk.lng],{icon:wpDivIcon(L,"Summit",26,null,true),keyboard:false}).addTo(map).bindTooltip(pk.name||"Peak location",{direction:"top"});map.setView([pk.lat,pk.lng],12);}else{map.setView([39.5,-98.5],4);}fitZoomToLayer(map,baseLayer);boundsRef.current=b;mapRef.current=map;setReady(true);setMapGen(g=>g+1);setTimeout(()=>{try{map.invalidateSize();}catch{/* the map is already gone */}},150);};loadLeaflet(init,()=>setMapFail(true));const ft=setTimeout(()=>{if(!cancelled&&!mapRef.current)setMapFail(true);},9000);return ()=>{cancelled=true;clearTimeout(ft);if(mapRef.current){try{mapRef.current.remove();}catch{/* the map is already gone */}mapRef.current=null;tileRef.current=null;openPinsRef.current=null;}};
   // eslint-disable-next-line react-hooks/exhaustive-deps -- the map is rebuilt on `sig` (route identity incl. the derived trailhead) and `fullscreen` ONLY, by design: every other value is read at build time, and re-running on them would re-fit the view (see the comments above)
   },[sig,fullscreen]);
   /* The base layer is swapped IN PLACE rather than rebuilding the map (it used to sit in the deps above).
@@ -215,9 +215,9 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
      check-ins arrive later than the route; it does not refit the view, except where the map had
      nothing but the peak/crag coordinate to show. Keyed on the spots' content, so a refetch that
      returns the same points redraws nothing. */
-  const baseSig=(baseSpots||[]).map(function(b){return b.lat.toFixed(6)+","+b.lng.toFixed(6)+":"+b.n+(b.mine?"m":"");}).join("|");
+  const baseSig=(baseSpots||[]).map(function(b){return b.lat.toFixed(6)+","+b.lng.toFixed(6)+":"+b.n+(b.mine?"m":"")+(b.confirmed?"c":"");}).join("|");
   useEffect(()=>{const map=mapRef.current;if(!mapGen||!map||!window.L||!baseSig)return;const L: LeafletAny=window.L;const grp=L.layerGroup().addTo(map);
-    (baseSpots||[]).forEach(function(b,i){const html='<div style="font-size:13px;line-height:1.45"><div style="font-weight:700;margin-bottom:2px">'+(i===0?"Base of the climb":"Another reported base")+'</div><div style="font-size:11.5px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;opacity:0.7">Climber check-in</div><div style="font-size:12px;opacity:0.8;margin-top:3px">Checked in on-site by '+b.n+' climber'+(b.n!==1?"s":"")+(b.mine?", including you":"")+'</div></div>';
+    (baseSpots||[]).forEach(function(b,i){const html='<div style="font-size:13px;line-height:1.45"><div style="font-weight:700;margin-bottom:2px">'+(b.confirmed?"Base of the climb":i===0?"Reported base":"Another reported base")+'</div><div style="font-size:11.5px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;opacity:0.7">'+(b.confirmed?"Confirmed by climbers":"Climber check-in · not confirmed yet")+'</div><div style="font-size:12px;opacity:0.8;margin-top:3px">Checked in on-site by '+b.n+' climber'+(b.n!==1?"s":"")+(b.mine?", including you":"")+'</div></div>';
       L.circleMarker([b.lat,b.lng],{radius:14,stroke:false,fillOpacity:0,interactive:true,bubblingMouseEvents:false}).addTo(grp).bindPopup(html);
       L.marker([b.lat,b.lng],{icon:wpDivIcon(L,"Base",i===0?24:20,true),keyboard:false,zIndexOffset:i===0?500:0}).addTo(grp).bindPopup(html);});
     if(!boundsRef.current&&hasPeak&&pk){try{const fb=L.latLngBounds([[pk.lat,pk.lng]]);(baseSpots||[]).forEach(function(b){fb.extend([b.lat,b.lng]);});map.fitBounds(fb.pad(0.4),{maxZoom:Math.min(17,layerSharpZoom(baseLayer))});}catch{/* the map is already gone */}}
