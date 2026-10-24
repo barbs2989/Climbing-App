@@ -280,6 +280,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   (the share card putting the word `undefined` into the clipboard copy, the `mailto:` body,
   the `sms:` body and the tweet). The pattern in all four: *a section that is correct with
   data becomes a lie, a dangling label, or a dead end at zero.*
+  Since 2026-10-23 Unfinished business is folded into Home's ONE *Alerts* dropdown, so the #637
+  landmark is `/^Alerts( · N new)?$/` (a brand-new account already holds one notification, so the
+  label carries a count and the dropdown's empty copy is unreachable at zero; the near-duplicate
+  "Nothing waiting on you right now." stays forbidden on `modal:alertsOpen`).
   - The zero state is forced by `scripts/zero-state.config.mjs`, a Vite config used only by
     this check. It rewrites three anchors **in memory** to replay the app's own sign-in
     reset — never edit the source, and never hand-copy that reset: a copy that omits
@@ -777,10 +781,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     profile read alone landed ~78 s into the page, the sheet opened after the wait expired, and the
     walk then found it on screen anyway. The wait is the navigation budget now, and the elapsed time
     is printed (0.0 s on the warm re-run).
-  - **Known red, NOT onboarding (2026-10-24, two runs):** phase 5 (the connect button) dies at
-    `openMateProfile` — "expected exactly 1 crew member who is not You, found 0" — reading the crew
-    roster by its `crew · N member` heading after the crew/popup redesigns (#2728 and the PRs before
-    it). Every assertion before it passed, and the fixture accounts were cleaned up (no `LEAKED`).
+  - **Crew cards start COLLAPSED (#2531), so the walk opens them** (fixed 2026-10-24). Phase 5 read the
+    roster by its `crew · N member` heading, which renders only behind each card's *View plan ▾*; two
+    runs died "expected exactly 1 crew member who is not You, found 0" — reading exactly like a
+    missing roster. `openMateProfile` clicks every *View plan ▾* first; the next run passed all 42.
   - **FIVE of the six are covered, and the count is stated in the script so the gap cannot quietly
     stall.** Onboarding (#1576): disciplines and a grade typed into the real modal, read back out of
     `profiles` **and** off the Profile tab after a reload. The crew (#1554): a row one real account
