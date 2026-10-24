@@ -259,6 +259,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     so a guard firing on exactly the right rule read as a miss. Match on a FAIL **line**, not from
     its start.
 - **`check:wp-styles`** asks whether the app can *draw* every kind of waypoint it *recognises*.
+  - **Section 2b measures whether two types can be TOLD APART** (owner, 2026-10-24: "the legend waypoints are too similar in color"). Every colour was a different hex string, so nothing failed, but Campsite and Approach were 8.2 apart in CIEDE2000, which reads as one purple on a 20px pin. The section resolves each `WP_STYLE` colour through `C` and fails any pair under **18**, a floor just under Summit vs Hazard (19.5), the closest pair among the familiar colours. Twelve categories is close to the limit for colour alone: a search of the sRGB cube for all twelve plus the grey fallback found at best 20.6, so don't try to raise the floor much. The glyph stays the primary signal. Injections 9 (Approach back to `C.indigo`) and 10 (an unknown `C.` token) are caught.
   Two maps in `ClimbMatchCore.jsx` describe waypoint types and were maintained separately:
   `WP_TYPE_MAP` turns ~30 raw spellings into a canonical type (`"lake"` → `Water`), and
   `WP_STYLE` turns a canonical type into `{color, glyph}`. Nothing tied them together and they

@@ -733,7 +733,7 @@ const WP_STYLE={
  Water:{color:C.blue,glyph:"≈"},
  Campsite:{color:C.purple,glyph:"⌂"},
  Summit:{color:C.orange,glyph:"▲"},
- Topout:{color:C.teal,glyph:"△"},
+ Topout:{color:"#aaeeff",glyph:"△"},
  Hazard:{color:C.red,glyph:"⚠"},
  
  /* The five below are DESCRIPTIVE, not navigational, and that is why they deliberately share
@@ -763,12 +763,29 @@ const WP_STYLE={
     the very bug this fixes. Approach is the DASHED arrow U+21E2 rather than a plain "→": the
     plain arrow appears 104 times in this app as ordinary copy ("See all →", "A → B"), so as a
     pin glyph it would read as punctuation rather than as a type, and no render assertion could
-    tell the two apart. A glyph used elsewhere as prose is not a glyph. */
- Base:{color:C.lime,glyph:"⊥"},
- Crag:{color:C.brown,glyph:"▩"},
- Pass:{color:C.cyan,glyph:"◡"},
- Approach:{color:C.indigo,glyph:"⇢"},
- Landmark:{color:C.magenta,glyph:"◉"}
+    tell the two apart. A glyph used elsewhere as prose is not a glyph.
+
+    THE TWELVE WERE STILL TOO CLOSE (owner, 2026-10-24: "the legend waypoints are too similar in
+    color"). Measured as CIEDE2000, the perceptual distance a designer reads as "same / different",
+    six pairs sat below 17 and the worst were nearly identical: Campsite purple vs Approach indigo
+    8.2, Trailhead green vs Base lime 11.2, Water blue vs Approach 12.0, Summit orange vs Crag brown
+    12.2, Campsite vs Landmark magenta 13.5, Topout teal vs Pass cyan 16.7. The "gaps" the five were
+    put in were gaps in HUE only, and at a 20px pin on a sunlit phone hue alone does not separate.
+    So the five, and Topout, now spread on LIGHTNESS as well as hue: a pale sky Topout, an aqua Base,
+    a pale stone Crag, a dark olive Pass, a chartreuse Approach, a pink Landmark — chosen by search
+    over the sRGB cube for the largest worst-pair distance that still reads on the dark card. The
+    worst pair is now 19.3, level with Summit vs Hazard (19.5), which was already the closest pair
+    among the seven familiar colours and is kept: green trailhead, blue water, red hazard are what
+    every map app teaches. Twelve categories is about the ceiling for colour alone (the best set the
+    search could find for all twelve plus the grey fallback was 20.6), which is why the glyph stays
+    the primary signal, as Gaia GPS's icon-plus-coloured-ring does. check:wp-styles now fails a pair
+    below 18. These are literals, not C tokens, because C.lime/C.indigo/C.cyan are read elsewhere
+    (the Logbook's style chips, the wind chart) and those screens should not move with the map. */
+ Base:{color:"#00e0c0",glyph:"⊥"},
+ Crag:{color:"#e6e1f0",glyph:"▩"},
+ Pass:{color:"#9a9a00",glyph:"◡"},
+ Approach:{color:"#8cff1a",glyph:"⇢"},
+ Landmark:{color:"#ff8cc6",glyph:"◉"}
 };
 function wpColor(t){return (WP_STYLE[t]&&WP_STYLE[t].color)||C.textSub;}
 function wpGlyph(t){return (WP_STYLE[t]&&WP_STYLE[t].glyph)||"📍";}
@@ -787,6 +804,11 @@ function wpGlyph(t){return (WP_STYLE[t]&&WP_STYLE[t].glyph)||"📍";}
    One builder, used by both maps, so they cannot drift the way the three copies of WP_STYLE did.
    The FILL is solid rather than the legend's 13% tint because a tint is illegible over terrain
    tiles; colour and glyph — the two things that identify a type — are the same in both places. */
+/* A WHITE GLYPH ON A PALE FILL IS INVISIBLE. The recorded marker painted every glyph #fff, which was
+   already unreadable on the yellow Junction and would have been on the pale Topout and Crag that
+   the palette above needs for distance. The ink is whichever of white and the app's near-black has
+   the higher WCAG contrast against the fill, the rule map pin sets that mix pale and dark fills use. */
+function wpInk(hex){const h=String(hex||"").replace("#","");if(h.length!==6)return "#fff";const ch=function(i){const c=parseInt(h.slice(i,i+2),16)/255;return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);};const L=0.2126*ch(0)+0.7152*ch(2)+0.0722*ch(4);return (1.05/(L+0.05))>=((L+0.05)/0.0565)?"#fff":C.bg;}
 function wpDivIcon(L,t,size,ring,derived){
   const s=size||20,col=wpColor(t),g=wpGlyph(t),bw=ring?3:2;
   /* DERIVED markers are hollow and dashed; RECORDED ones are solid. That is a visual grammar rather
@@ -818,7 +840,7 @@ function wpDivIcon(L,t,size,ring,derived){
      marker-legibility guideline recommends for a marker that must read on light and dark tiles. */
   const box=derived
     ?'background:'+C.bg+';border:3px dashed '+(ring||col)+';color:'+col+';font-weight:700'
-    :'background:'+col+';border:'+bw+'px solid '+(ring||"#fff")+';color:#fff';
+    :'background:'+col+';border:'+bw+'px solid '+(ring||"#fff")+';color:'+wpInk(col);
   const shadow=derived?'0 0 0 2px rgba(255,255,255,0.9),0 1px 4px rgba(0,0,0,0.6)':'0 1px 3px rgba(0,0,0,0.45)';
   return L.divIcon({className:"",iconSize:[s,s],iconAnchor:[s/2,s/2],popupAnchor:[0,-s/2],
     html:'<div style="width:'+s+'px;height:'+s+'px;border-radius:50%;'+box+';box-shadow:'+shadow+';display:flex;align-items:center;justify-content:center;font-size:'+Math.round(s*0.55)+'px;line-height:1">'+g+'</div>'});
