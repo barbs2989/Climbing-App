@@ -145,7 +145,6 @@ const LANDMARKS = {
 const DISCLOSURE = [
   /^\d+ updates?\s*[▾▸]?$/,     // "11 updates ▾"  (activity feed)
   /^Alerts( · \d+ new)?\s*[▾▸]?$/,
-  /^Unfinished business( · \d+)?\s*[▾▸]?$/,
   /^View all \d+ \w+$/,                   // "View all 14 alerts"
   /^View \d+ more suggestions?$/,
   /^Suggested climbs( · \d+)?\s*[▾▸]?$/,

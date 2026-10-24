@@ -280,6 +280,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   (the share card putting the word `undefined` into the clipboard copy, the `mailto:` body,
   the `sms:` body and the tweet). The pattern in all four: *a section that is correct with
   data becomes a lie, a dangling label, or a dead end at zero.*
+  Since 2026-10-23 Unfinished business is folded into Home's ONE *Alerts* dropdown, so the #637
+  landmark is `/^Alerts( · N new)?$/` (a brand-new account already holds one notification, so the
+  label carries a count and the dropdown's empty copy is unreachable at zero; the near-duplicate
+  "Nothing waiting on you right now." stays forbidden on `modal:alertsOpen`).
   - The zero state is forced by `scripts/zero-state.config.mjs`, a Vite config used only by
     this check. It rewrites three anchors **in memory** to replay the app's own sign-in
     reset — never edit the source, and never hand-copy that reset: a copy that omits
