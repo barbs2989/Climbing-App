@@ -39,6 +39,12 @@ const ACTION = { in: "Sign in", up: "Create account", forgot: "Email me a reset 
 // thing a visitor meets, and browsing the app without an account stays one tap away.
 export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, onLegal, onGuest }) {
   const [mode, setMode] = useState(recovery ? "reset" : "in"); // "in" | "up" | "forgot" | "reset"
+  // AS THE APP'S FIRST SCREEN (no onClose: the real gate, or LOGIN_FIRST since #2688) the sign-in
+  // form fills the screen under a branded header -- the mark, the wordmark and what the app is for --
+  // the way Strava, AllTrails and Gora open, instead of a bare modal over a black page. It stays the
+  // sign-in screen itself (owner, 2026-10-23: the app opens ON sign-in, with View as guest), so this
+  // adds no step in front of it. Opened from inside the app (onClose) it stays the modal it was.
+  const gate = !onClose && !recovery;
   const [email, setEmail] = useState(recallEmail());
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -164,17 +170,41 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
     if (error) setErr(error.message);
   };
 
+  const legalLink = { background: "none", border: "none", color: c.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: 0, textDecoration: "underline", textUnderlineOffset: "2px" };
+  const legalLine = (verb) => onLegal ? (
+    <div style={{ marginTop: 12, fontSize: 11.5, color: c.sub, lineHeight: 1.5, textAlign: "center" }}>
+      By {verb} you agree to our{" "}
+      <button onClick={() => onLegal("terms")} style={legalLink}>Terms of Service</button>
+      {", "}
+      <button onClick={() => onLegal("guidelines")} style={legalLink}>Community Guidelines</button>
+      {" "}and{" "}
+      <button onClick={() => onLegal("privacy")} style={legalLink}>Privacy Policy</button>.
+    </div>
+  ) : null;
+  const a11yLink = onLegal ? (
+    <div style={{ marginTop: 8, textAlign: "center" }}>
+      <button onClick={() => onLegal("accessibility")} style={{ background: "none", border: "none", color: c.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", padding: "4px 6px", minHeight: 24 }}>Accessibility — report a problem</button>
+    </div>
+  ) : null;
+
   // role/aria-modal live on the BACKDROP, not the inner panel — the other 39 dialogs in this
   // app do the same, and useDialogA11y (lib/dialogA11y.js) depends on it: Escape closes by
-  // calling dlg.click() on the element carrying role="dialog", expecting that element's own
+  // calling dlg.click() on the element carrying `role="dialog"`, expecting that element's own
   // handler to dismiss. With the role on the panel, that click hit
   // onClick={e=>e.stopPropagation()} and was swallowed, so Escape silently did nothing on the
   // sign-in modal — the one a keyboard user meets first.
   return (
-    <div onClick={onClose} role="dialog" aria-modal="true" aria-label={TITLE[mode]} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 2000, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
-      <div onClick={(e) => e.stopPropagation()} style={{ width: "100%", maxWidth: 380, background: c.card, border: "1px solid " + c.border, borderRadius: 16, padding: 20, color: c.text }}>
+    <div onClick={onClose} role="dialog" aria-modal="true" aria-label={TITLE[mode]} style={gate ? { position: "fixed", inset: 0, background: "radial-gradient(120% 60% at 50% 0%, #10264a 0%, " + c.bg + " 58%)", zIndex: 2000, overflowY: "auto", overscrollBehavior: "contain", display: "flex", justifyContent: "center", padding: "calc(16px + env(safe-area-inset-top)) 16px 24px", boxSizing: "border-box" } : { position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 2000, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
+      <div onClick={(e) => e.stopPropagation()} style={gate ? { width: "100%", maxWidth: 420, color: c.text } : { width: "100%", maxWidth: 380, background: c.card, border: "1px solid " + c.border, borderRadius: 16, padding: 20, color: c.text }}>
+        {gate && (mode === "in" || mode === "up") && (
+          <div style={{ textAlign: "center", margin: "18px 0 26px" }}>
+            <svg width="76" height="76" viewBox="0 0 24 24" aria-hidden="true" style={{ display: "block", margin: "0 auto 14px", filter: "drop-shadow(0 10px 28px rgba(47,129,247,0.35))" }}><rect width="24" height="24" rx="5.5" fill="#161b22" stroke="#30363d" strokeWidth="0.4"/><g transform="translate(2.4 2.4) scale(0.8)"><path d="m8 3 4 8 5-5 5 15H2L8 3z" fill="none" stroke={c.blue} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"/></g></svg>
+            <div style={{ fontSize: 31, fontWeight: 800, letterSpacing: -0.6 }}>Climb<span style={{ color: c.blue }}>Match</span></div>
+            <div style={{ fontSize: 14, color: c.sub, lineHeight: 1.5, marginTop: 6 }}>Find partners, trusted beta, and a climbing community built on trust.</div>
+          </div>
+        )}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
-          <div style={{ fontSize: 19, fontWeight: 800 }}>{TITLE[mode]}</div>
+          <div style={{ fontSize: gate ? 26 : 19, fontWeight: 800, letterSpacing: gate ? -0.4 : 0 }}>{TITLE[mode]}</div>
           {/* Only offer a way out when there is one. Since #584 this component is also the
               production sign-in GATE (ClimbMatch.jsx renders <AuthModal onAuthed={...}/> with
               no onClose when realAuthGate is on), and React drops onClick={undefined} silently
@@ -266,24 +296,11 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
             door into the app -- so both paths are the moment of acceptance. Not on forgot or
             reset: you are an existing user mid-recovery there, and it would be noise at the
             one point someone is locked out. */}
-        {onLegal && (mode === "in" || mode === "up") && (
-          <div style={{ marginTop: 12, fontSize: 11.5, color: c.sub, lineHeight: 1.5, textAlign: "center" }}>
-            By {mode === "up" ? "creating an account" : "signing in"} you agree to our{" "}
-            <button onClick={() => onLegal("terms")} style={{ background: "none", border: "none", color: c.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: 0, textDecoration: "underline", textUnderlineOffset: "2px" }}>Terms of Service</button>
-            {", "}
-            <button onClick={() => onLegal("guidelines")} style={{ background: "none", border: "none", color: c.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: 0, textDecoration: "underline", textUnderlineOffset: "2px" }}>Community Guidelines</button>
-            {" "}and{" "}
-            <button onClick={() => onLegal("privacy")} style={{ background: "none", border: "none", color: c.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: 0, textDecoration: "underline", textUnderlineOffset: "2px" }}>Privacy Policy</button>.
-          </div>
-        )}
+        {(mode === "in" || mode === "up") && legalLine(mode === "up" ? "creating an account" : "signing in")}
         {/* The Accessibility statement is reachable BEFORE signing in (0354): its report form takes a
             report from a visitor, and the visitor most likely to need it is one who cannot get past
             this screen. Not on forgot/reset, for the same reason as the line above. */}
-        {onLegal && (mode === "in" || mode === "up") && (
-          <div style={{ marginTop: 8, textAlign: "center" }}>
-            <button onClick={() => onLegal("accessibility")} style={{ background: "none", border: "none", color: c.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", padding: "4px 6px", minHeight: 24 }}>Accessibility — report a problem</button>
-          </div>
-        )}
+        {(mode === "in" || mode === "up") && a11yLink}
         {mode === "forgot" ? (
           <div style={{ textAlign: "center", marginTop: 14, fontSize: 13, color: c.sub }}>
             <button onClick={() => { setErr(""); setInfo(""); setMode("in"); }} style={{ background: "none", border: "none", color: c.blue, fontWeight: 700, cursor: "pointer", fontSize: 13, padding: 0 }}>Back to sign in</button>
