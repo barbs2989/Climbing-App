@@ -42,8 +42,8 @@ const CASES = [
   {
     name: "4. the refusal is kept but moved AFTER the draft is built (ORDER)",
     file: APP, expect: "fail", needs: /BEFORE setEditDraft|returns rather than falling through/,
-    find: "openEdit=(focus)=>{if(profileUnavailable){showToast(",
-    repl: "openEdit=(focus)=>{if(false){showToast(",
+    find: "openEdit=(sec)=>{if(profileUnavailable){showToast(",
+    repl: "openEdit=(sec)=>{if(false){showToast(",
     also: { find: "showRealName:showRealName});/*", repl: "showRealName:showRealName});if(profileUnavailable)return;/*" },
   },
   {

@@ -47,7 +47,9 @@ const problems = (field, val, src) => {
   if (typeof val !== "string" || !val.trim()) return ["empty"];
   if (val.length > CAP[field]) p.push(`over ${CAP[field]} chars (${val.length})`);
   if (shouts(val)) p.push("all caps");
-  if (field !== "fa") for (const [re, why] of BAD) if (re.test(val)) p.push(why);
+  // ...and out of the source/first-person tests too: "Twist My Tea" and "Nail in my Coffin" are climbs, not a voice.
+  const unnamed = NAMES.list.reduce((t, n) => t.replace(new RegExp("\\b" + n.split(" ").map(w => w.replace(/[^a-z0-9]/g, "")).filter(Boolean).join("\\W+") + "\\b", "gi"), "zz"), val);
+  if (field !== "fa") for (const [re, why] of BAD) if (re.test(unnamed)) p.push(why);
   if (field !== "fa") {
     const ms = maskNames(src || ""), mv = maskNames(val);
     const have = grams(ms, 4), have6 = grams(ms, 6);

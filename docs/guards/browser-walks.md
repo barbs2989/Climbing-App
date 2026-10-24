@@ -1312,6 +1312,42 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     which proves both that the button is scanned at all and that `Lbl` is what names it; the
     no-op attribute edit it replaced proved neither and would have passed against a guard that
     never looked at that button.
+- **`check:axe`** runs **axe-core's WCAG 2.2 A/AA rules** over every screen, in Chrome, signed in
+  (8 NAV tabs and 7 route tabs at 390px and 1280px, plus every scaffold overlay at 390px) **and
+  signed out** (sign-in, create-account, and the Accessibility statement with its guest report
+  form, on a second dev server started with `VITE_DEMO_AUTOLOGIN=false`). Runs in
+  `render-guards.yml`, not the build: it renders the app.
+  - **Why: the static a11y guards were all green and axe still found eight rules failing**
+    (2026-10-22 accessibility risk audit). Desktop footer links 22px tall on every page; tag text
+    at 3.9:1 (`Pill` now lifts its text to 4.5:1 against its own tint, `lib/contrast.js`); 49
+    Manage-areas rows that were buttons holding buttons; seven unnamed dialogs; an avatar button
+    with no name; photo buttons with `alt=""` (which tells a screen reader to skip them) and
+    `role="button"` at once; no `<h1>` on Home, Profile or the route page; and the full-screen
+    views a phone returns EARLY (legal, editor, inbox, calendar, dashboards) outside any main
+    landmark. Contrast, size and nesting are properties of LAYOUT, so no text-reading guard can
+    see them.
+  - **The dialog-name half is also static now**: `check:dialog-dismiss` section 2 fails any
+    `role="dialog"` with no `aria-label`/`aria-labelledby` on its own opening tag. Its first draft
+    reported 38 — it read the tag with `endOfTag()`, which stops at the `>` of an `onClick={()=>…}`
+    arrow, so every attribute after the handler was invisible. The brace-counting `openingTag()`
+    reads the whole tag; the true count was 7, all fixed.
+  - **One per-node carve-out: target-size "partially obscured".** axe measures the page as the walk
+    left it scrolled, so a Ranks row half under the sticky bottom bar, or a chip half outside a
+    horizontal scroller, fails or passes depending on where the walk stopped. Those are reported
+    (`--all`), not failed. The real defect behind the class — a focused control hidden under the
+    bar, WCAG 2.4.11 — is handled by `scroll-padding-bottom` in `index.html`. A target that is
+    simply too small (`insufficient size (WxH)`) is never excused.
+  - **A screen it cannot open FAILS** (NOT REACHED), or coverage erodes silently. The first run
+    could not open Crews or Logbook: it matched nav buttons by EXACT text, and those carry a badge
+    count ("Crews2"). Matched by name prefix now.
+  - **Gated best-practice rules** (`GATED_PRACTICE`): page-has-heading-one, landmark-one-main,
+    region, aria-dialog-name, presentation-role-conflict, landmark-no-duplicate-main,
+    landmark-unique. Wrapping LegalView's body in `<main>` passed on a phone and made a SECOND main
+    on desktop (where `_pageView` is already inside `role="main"`); the landmark now goes on the
+    phone's early return instead.
+  - **Blind to**: what a screen reader does over time (focus order, what is announced on change),
+    any state the walk never opens, contrast over a photo. Automated rules find about a third of
+    real barriers — the manual pass is `docs/accessibility-testing.md`.
 - **`check:overflow`** asks whether the app still fits the phone it is built for. Every
   control here is hand-positioned with inline styles and there is no CSS framework, which is
   exactly the setup where one fixed `minWidth`, a `flex` row with `nowrap`, or a single

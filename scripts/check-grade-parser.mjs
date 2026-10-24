@@ -192,6 +192,10 @@ const CASES = [
   [{ discipline: "alpine", gradeSystem: "yds", grade: "5.6", rockGrade: "Class 3-4" }, "5.6", "...camelCase too"],
   [{ discipline: "mountaineering", grade_system: "yds", grade: "Class 3", rock_grade: "5.4" }, "5.4", "MUST NOT MOVE: a final grade on the WRONG scale is not final"],
   [{ discipline: "ice", grade_system: "yds", grade: "5.7", ice_grade: "WI4" }, "WI4", "MUST NOT MOVE: an ice route's free grade does not displace its ice headline"],
+  [{ discipline: "scrambling", grade_system: "class", grade: "Class 3-4 on loose rock, exposed" }, "Class 4", "a class RANGE headlines its TOP — the grade the filter already uses (owner, 2026-10-23)"],
+  [{ rock_grade: "3rd-4th class (unroped scramble)" }, "Class 4", "...the ordinal spelling too"],
+  [{ alpine_grade: "Grade II", grade: "Grade II, Class 2-3" }, "Class 3", "...and a range promoted out of a compound commitment string"],
+  [{ rock_grade: "Class 3 (Class 3-4 on the final ridge)" }, "Class 3", "MUST NOT MOVE: a range inside the QUALIFIER is prose, not the grade"],
 ];
 let ran = 0;
 for (const [route, want, why] of CASES) {
@@ -204,6 +208,29 @@ for (const [route, want, why] of CASES) {
   }
 }
 if (ran < CASES.length) { console.error("check:grade-parser: fewer cases ran than exist — a guard that quietly stops asking still exits 0"); process.exit(1); }
+
+/* ONE GRADE AND A NOTICE. A range shows as one grade in the Composite Grade chip too, and the
+   spread it carried survives as gradeRangeNote's sentence — never as a second grade. */
+{
+  const { singleGrade, gradeRangeNote } = await import(pathToFileURL(truth).href);
+  const R = [
+    [{ discipline: "mountaineering", grade_system: "class", grade: "Class 4", rock_grade: "Class 3-4" }, "Class 4", "Graded Class 4 for its hardest moves; easier sections down to Class 3."],
+    [{ discipline: "mountaineering", grade_system: "class", grade: "Class 3", rock_grade: "Class 3-4 (3rd class, with 4th-class variations)" }, "Class 3", "Graded Class 3 on its standard line; some sections or variations reach Class 4."],
+    [{ discipline: "mountaineering", grade_system: "class", grade: "Class 3", rock_grade: "Class 3 scramble" }, "Class 3", ""],
+  ];
+  for (const [route, chip, note] of R) {
+    const gotChip = singleGrade(route.rock_grade, route), gotNote = gradeRangeNote(route);
+    if (gotChip !== chip || gotNote !== note) {
+      console.error(`check:grade-parser FAILED — ${JSON.stringify(route)}: chip ${JSON.stringify(gotChip)} (want ${JSON.stringify(chip)}), note ${JSON.stringify(gotNote)} (want ${JSON.stringify(note)})`);
+      process.exit(1);
+    }
+  }
+  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  if (!/singleGrade\(p\[1\],route\)/.test(rd) || !/gradeRangeNote\(route\)/.test(rd)) {
+    console.error("check:grade-parser FAILED — RouteDetail.jsx's Composite Grade no longer draws its chips through singleGrade() and its notice through gradeRangeNote(): a class range would print as two grades again.");
+    process.exit(1);
+  }
+}
 
 /* THE WIRING, as source. Executing displayGrade proves the rule and NOT that the two surfaces
    still call it — and those are the exact two lines a stale-base squash restores. */

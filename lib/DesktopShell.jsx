@@ -95,7 +95,8 @@ export function WideSearch({ onOpenRoute, onOpenArea }) {
   </div>;
 }
 
-/* RIGHT RAIL. Widgets drawn from what App already holds — the next agreed crew days and unread alerts.
+/* RIGHT RAIL. Widgets drawn from what App already holds — the next agreed crew days and unread alerts
+   (collapsed until clicked).
    Best day to climb is NOT here (owner, 2026-10-21): it opens from the Menu's tile. Ads, when they
    come, take slots in this column (desktop only). */
 /* CHATS IN THE RAIL (desktop website, owner-approved 2026-10-21): your crews' chats and your direct
@@ -134,6 +135,9 @@ function RailChats({ chats, onOpenDm, onOpenCrew }) {
 
 export function WideRail({ upcoming, alerts, onOpenCal, onOpenAlerts, onFindPartners, chats, onOpenDm, onOpenCrewChat }) {
   const unread = alerts.filter(n => !n.read);
+  /* Alerts start CLOSED (owner, 2026-10-23): the card is a header you click, as Home's own Alerts
+     row and the bell are; no alert is shown until the climber asks for them. */
+  const [alertsOpen, setAlertsOpen] = useState(false);
   return <aside aria-label="Highlights" style={{ display: "flex", flexDirection: "column", gap: 14 }}>
     <section aria-labelledby="rail-upcoming" style={CARD}>
       <div id="rail-upcoming" style={{ ...SECTION, marginBottom: 6 }}>Coming up</div>
@@ -143,9 +147,9 @@ export function WideRail({ upcoming, alerts, onOpenCal, onOpenAlerts, onFindPart
       }) : <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "2px 2px 4px" }}>No crew days agreed yet.<button onClick={onFindPartners} style={{ display: "block", marginTop: 8, padding: 0, border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Find partners ›</button></div>}
     </section>
     <section aria-labelledby="rail-alerts" style={CARD}>
-      <div id="rail-alerts" style={{ ...SECTION, marginBottom: 6 }}>{unread.length ? "Alerts · " + unread.length + " new" : "Alerts"}</div>
-      {unread.length ? unread.slice(0, 3).map(n => <button key={n.id} onClick={onOpenAlerts} style={{ ...ROW, alignItems: "flex-start" }}><span aria-hidden="true" style={{ width: 7, height: 7, marginTop: 6, borderRadius: 4, background: C.blue, flexShrink: 0 }}/><span style={{ fontSize: 13, lineHeight: 1.4, color: C.text, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{n.text}</span></button>) : <div style={{ fontSize: 13, color: C.textMuted, padding: "2px 2px 4px" }}>You’re all caught up.</div>}
-      {alerts.length ? <button onClick={onOpenAlerts} style={{ marginTop: 4, padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>See all alerts ›</button> : null}
+      <button id="rail-alerts" onClick={() => setAlertsOpen(o => !o)} aria-expanded={alertsOpen} style={{ ...SECTION, width: "100%", display: "flex", alignItems: "center", gap: 8, padding: 0, border: "none", background: "transparent", cursor: "pointer", textAlign: "left" }}>{unread.length ? <span aria-hidden="true" style={{ width: 7, height: 7, borderRadius: 4, background: C.blue, flexShrink: 0 }}/> : null}<span style={{ flex: 1 }}>{unread.length ? "Alerts · " + unread.length + " new" : "Alerts"}</span><span aria-hidden="true" style={{ color: C.blue, fontSize: 13 }}>{alertsOpen ? "▾" : "▸"}</span></button>
+      {!alertsOpen ? null : <div style={{ marginTop: 6 }}>{unread.length ? unread.slice(0, 3).map(n => <button key={n.id} onClick={onOpenAlerts} style={{ ...ROW, alignItems: "flex-start" }}><span aria-hidden="true" style={{ width: 7, height: 7, marginTop: 6, borderRadius: 4, background: C.blue, flexShrink: 0 }}/><span style={{ fontSize: 13, lineHeight: 1.4, color: C.text, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{n.text}</span></button>) : <div style={{ fontSize: 13, color: C.textMuted, padding: "2px 2px 4px" }}>You’re all caught up.</div>}
+      {alerts.length ? <button onClick={onOpenAlerts} style={{ marginTop: 4, padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>See all alerts ›</button> : null}</div>}
     </section>
     {chats ? <RailChats chats={chats} onOpenDm={onOpenDm} onOpenCrew={onOpenCrewChat} /> : null}
   </aside>;
@@ -156,7 +160,7 @@ export function WideRail({ upcoming, alerts, onOpenCal, onOpenAlerts, onFindPart
 export function WideFooter({ onOpenState, links, legal }) {
   const statesQ = useStates();
   const states = ((statesQ.data || []).filter(s => Number(s.route_count) > 0)).slice().sort((a, b) => a.name.localeCompare(b.name));
-  const link = { padding: "3px 0", border: "none", background: "transparent", color: C.textSub, fontSize: 13, cursor: "pointer", textAlign: "left" };
+  const link = { padding: "4px 0", minHeight: 24, border: "none", background: "transparent", color: C.textSub, fontSize: 13, cursor: "pointer", textAlign: "left" };
   const col = (title, items) => <div style={{ minWidth: 0 }}><div style={{ ...SECTION, marginBottom: 8 }}>{title}</div><div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>{items.map(([label, go]) => <button key={label} onClick={go} style={link}>{label}</button>)}</div></div>;
   return <footer style={{ borderTop: "1px solid " + C.border, marginTop: 28, padding: "24px 4px 40px", color: C.textSub }}>
     {USE_DB ? <div style={{ marginBottom: 22 }}><div style={{ ...SECTION, marginBottom: 8 }}>Explore climbs by state</div>

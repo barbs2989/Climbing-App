@@ -1,0 +1,57 @@
+{
+ "id": "wa_little_sister_north_face",
+ "name": "North Face",
+ "area_id": "wa_little_sister",
+ "discipline": "alpine",
+ "grade": "5.4",
+ "pitches": 4,
+ "length_m": 183,
+ "overview": "A long, moderate alpine rock route up the North Face of Little Sister, crossing the Green Creek Glacier to gain a wide, moderate-angle face split into two aretes, then finishing with unroped scrambling to the true summit.",
+ "description": null,
+ "beta": "Ascend steep snow from the center of the Green Creek Glacier and cross a potentially tricky moat/bergschrund to gain the center or right side of the 500-ft-wide face. Climb sustained, moderate 5.4 face climbing on solid rock for roughly 600 ft (4 pitches), then continue over easier, looser terrain — the full wall, including this upper scrambling, is nearly 1,000 ft top to bottom.",
+ "descent_text": "Two options are used: rappelling down the climber's-right side of the North Face on scattered fixed pin and tat anchors back to the Green Creek Glacier, or downclimbing the easier Southeast Ridge line to the Cinderella-Little Sister col and from there back to the glacier.",
+ "descent": "Rappel the looker's right side of the face on scattered pin/tat anchors, or downclimb the Southeast Ridge instead.",
+ "rappels": "Rappel the lookers-right side of the face using scattered pin and natural anchors. There is no maintained rappel line — carry webbing and rings to build or back up stations. A single 60 m rope is adequate for the face; alternatively downclimb the Southeast Ridge.",
+ "rappel_count_note": null,
+ "rope_length_m": null,
+ "pitch_detail": [
+  {
+   "grade": "5.2-5.3",
+   "notes": "Cross the moat/bergschrund and gain moderate-angle rock on the center or right side of the face.",
+   "pitch": "P1",
+   "lengthM": 45
+  },
+  {
+   "grade": "5.4",
+   "notes": "Sustained face climbing on solid rock; crux band.",
+   "pitch": "P2",
+   "lengthM": 46
+  },
+  {
+   "grade": "5.3",
+   "notes": "Continue up the face on generally solid rock.",
+   "pitch": "P3",
+   "lengthM": 46
+  },
+  {
+   "grade": "5.2",
+   "notes": "Finish the pitched, roped section of the face (matches the published 600 ft/4-pitch total).",
+   "pitch": "P4",
+   "lengthM": 45
+  },
+  {
+   "grade": "3rd-4th class",
+   "notes": "Unroped scrambling above the pitches to the true summit; on-the-ground trip reports (e.g. Climber Kyle's Green Creek Circuit) describe the full wall as nearly 1,000 ft top to bottom versus the published 600 ft figure for the roped section alone — this section makes up the difference.",
+   "pitch": "Scramble to summit",
+   "lengthM": 123
+  }
+ ],
+ "rappel_detail": null,
+ "climbing_route": null,
+ "fa": null,
+ "areas": {
+  "name": "Little Sister",
+  "parent_id": "wa_shuksan_baker_neighbors"
+ },
+ "parent_area": "Bellingham and Mt Baker Hwy"
+}

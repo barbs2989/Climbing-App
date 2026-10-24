@@ -1,0 +1,63 @@
+{
+ "id": "wa_boving_christensen",
+ "name": "Boving-Christensen",
+ "area_id": "wa_prusik_peak",
+ "discipline": "alpine",
+ "grade": "5.10",
+ "pitches": 4,
+ "length_m": 137,
+ "overview": "A little-traveled line on Prusik's south face, put up by Paul Boving and Matt Christensen in 1977 using nuts and hexes. It has a moderately gritty, lichen-covered, adventurous feel compared to its more popular neighbors.",
+ "description": null,
+ "beta": "Starts about 100 ft right of Solid Gold on the west side of the south face: a short crack and slab to a corner, a long exposed and somewhat dirty face-crack pitch, a corner with a bouldery move, and a finishing fingers-to-hands pitch to the ridge.",
+ "descent_text": "Same north-side descent as the neighboring Solid Gold and Energizer Bunny lines: locate the shared rap anchors on the north side of the ridge and make one full-length rappel (a 60m rope is standard) down to easier ground, then scramble/downclimb roughly 30 minutes back around to the base of the south face. Anchors here are natural (slung blocks/chockstones, webbing/tat) rather than bolted, and per recent forum reports have been periodically rebuilt as old tat accumulates — back up any worn-looking station.",
+ "descent": "One 60m rappel down the north side, then a ~30-minute scramble back to the base.",
+ "rappels": "Two rappels off tat to the base of the West Ridge, or complete the West Ridge and use its normal rappel descent.",
+ "rappel_count_note": null,
+ "rope_length_m": 60,
+ "pitch_detail": [
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.9",
+   "notes": "Short crack leads to a low-angled slab, then a corner to a belay below the white face.",
+   "pitch": 1,
+   "anchor": "Gear",
+   "lengthM": 35
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.8",
+   "notes": "Long, exposed, somewhat dirty and lichen-covered face cracks trending left to a ledge; noted for rope drag on this pitch.",
+   "pitch": 2,
+   "anchor": "Gear",
+   "lengthM": 60
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.10-",
+   "notes": "The 'money pitch' — a corner with a fun bouldery crux move, exiting right to a small alcove.",
+   "pitch": 3,
+   "anchor": "Gear",
+   "lengthM": 30
+  },
+  {
+   "crux": true,
+   "bolts": 0,
+   "grade": "5.10-",
+   "notes": "Finger-to-hand crack transitioning to a flake, then final hand cracks up to the West Ridge; gear here is reportedly tricky, matching the FA team's original nuts-and-hexes rack.",
+   "pitch": 4,
+   "anchor": "Gear (West Ridge junction)",
+   "lengthM": 50
+  }
+ ],
+ "rappel_detail": null,
+ "climbing_route": null,
+ "fa": "Paul Boving and Matt Christensen",
+ "areas": {
+  "name": "Prusik Peak",
+  "parent_id": "wa_stuart_range"
+ },
+ "parent_area": "Stuart-Enchantments"
+}

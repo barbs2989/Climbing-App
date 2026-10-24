@@ -17,7 +17,8 @@ room for side-panel ads later. The phone app keeps its own look.
   - A fixed **left sidebar** under it: Home · Climbs · Partners · Crews · Groups · Logbook · Ranks
     (Profile is the avatar at the top right, not a sidebar row), then *Your crews* (up to five, a red dot for unread). No site links: those are the footer's.
   - The **page column**, and at **1280px and wider** a 300px **right rail** (`WideRail`): *Coming up*
-    (agreed crew days) and *Alerts*. *Best day to climb* is not here; it opens from the Menu. Ads, when they come, take slots in this rail
+    (agreed crew days) and *Alerts*, which starts **collapsed**: just the header (*Alerts · N new*, a blue dot when
+    any are unread) until you click it, like Home's Alerts row on a phone. *Best day to climb* is not here; it opens from the Menu. Ads, when they come, take slots in this rail
     (desktop only).
   - Between 1024 and 1279px the sidebar shows **icons only** and there is no rail. The whole shell is
     capped at 1228px and centred (a 640px page column), so a big monitor gets plain background either side.
@@ -40,6 +41,9 @@ room for side-panel ads later. The phone app keeps its own look.
   - **The Calendar has a month view** above its lists (`MonthGrid`): your crews' agreed climbing days and
     group events on a month grid with ‹ › and *Today*; each entry opens what the list would. Crew days and
     events only (owner).
+  - **No emoji in the Calendar** (owner, 2026-10-23): its rows read *Drive from you* and *Daylight* as
+    plain labels, its two notes carry the app's line `info` icon, and the empty state a line `calendar` icon
+    (`lib/Calendar.jsx`). The meeting place keeps its `pin` line icon through `Lbl`.
   - **Chats in the rail** (1280px+): under Coming up and Alerts, your direct messages and crew chats, newest
     first, unread counts on each; one opens the conversation. The same threads the inbox shows (`RailChats`,
     App's `_dmCounts` keeps blocked and restricted people out).

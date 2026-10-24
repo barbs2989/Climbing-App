@@ -12,7 +12,7 @@
 
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { useRouteProposals, approveNewRoute, rejectNewRoute, preferNetworkReads } from "./db";
+import { useRouteProposals, useAreaProposals, approveNewRoute, approveNewArea, rejectNewRoute, preferNetworkReads } from "./db";
 import { gradeNumFor } from "./grade";
 import { discLabel } from "./discLabels";
 import { C } from "../ClimbMatchCore";
@@ -32,8 +32,12 @@ const EXTRA_KEYS = [
   ["crux", "Crux"], ["landing", "Landing"], ["pads", "Pads"], ["startType", "Start"],
   // 0327: the seven route-page fields the form asks for since then. The three lists render below.
   ["ffa", "First free ascent"], ["fwa", "First winter ascent"], ["highPointFt", "High point (ft)"], ["sun", "Sun"],
+  // 0352: what the edit sheet takes per discipline and the form now asks too.
+  ["approach", "Approach"], ["location", "Location on the wall"], ["bolts", "Bolts"], ["anchor", "Anchor"],
+  ["fixedGear", "Fixed gear"], ["rockQuality", "Rock quality"], ["wet", "Wet / seepage"], ["ropeLen", "Rope length (m)"],
+  ["rockGrade", "Hardest rock"], ["iceGrade", "Hardest ice / mixed"], ["alpineGrade", "Alpine grade"], ["angle", "Steepest angle (°)"],
 ];
-const LIST_KEYS = [["altNames", "Also known as"], ["variations", "Variations"], ["proTips", "Pro tips"]];
+const LIST_KEYS = [["altNames", "Also known as"], ["variations", "Variations"], ["proTips", "Pro tips"], ["rack", "Rack"]];
 
 function Row({ label, children }) {
   if (children === null || children === undefined || children === "") return null;
@@ -175,6 +179,75 @@ export function RouteProposalQueue() {
                   style={{ flex: 1, padding: 9, background: C.surface, color: C.textSub, border: "1px solid " + C.border, borderRadius: 8, fontSize: 12.5, cursor: "pointer" }}>
                   Reject
                 </button>
+              </div>}
+        </div>;
+      })}
+  </div>;
+}
+
+// New AREA proposals (0360) — Add an area files a `new_area` row whose area_id is the PARENT.
+// approve_new_area writes the areas row; the area triggers refuse a same-named place within
+// 1.5 km or a parent that holds climbs, and that refusal is printed here verbatim.
+const AREA_KIND = { crag: "Crag, wall or boulder", peak: "Peak", region: "Area" };
+export function AreaProposalQueue() {
+  const { data: rows, isLoading, error } = useAreaProposals("pending");
+  const [busyId, setBusyId] = useState(null);
+  const [msg, setMsg] = useState(null);      // {kind:"ok"|"err", text}
+  const [rejecting, setRejecting] = useState(null);
+  const [note, setNote] = useState("");
+
+  const doApprove = async (r) => {
+    setBusyId(r.id); setMsg(null);
+    try {
+      const newId = await approveNewArea(r.id);
+      setMsg({ kind: "ok", text: "Approved — " + ((r.value || {}).name || "the area") + " is now in the catalog (" + newId + ")" });
+    } catch (e) {
+      setMsg({ kind: "err", text: (e && e.message) ? e.message : "Could not approve that proposal." });
+    } finally { setBusyId(null); }
+  };
+  const doReject = async (id) => {
+    setBusyId(id); setMsg(null);
+    try {
+      await rejectNewRoute(id, note);
+      setMsg({ kind: "ok", text: "Rejected." });
+      setRejecting(null); setNote("");
+    } catch (e) {
+      setMsg({ kind: "err", text: (e && e.message) ? e.message : "Could not reject that proposal." });
+    } finally { setBusyId(null); }
+  };
+
+  if (isLoading) return <div style={{ fontSize: 12.5, color: C.textMuted, padding: "8px 0" }}>Loading proposals…</div>;
+  if (error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>
+    Could not load area proposals — {(error && error.message) || "the request failed"}. This is not a report that there are none.
+  </div>;
+
+  const list = rows || [];
+  return <div>
+    {msg ? <div role={msg.kind === "err" ? "alert" : "status"} style={{ background: msg.kind === "err" ? C.redBg : C.greenBg, color: msg.kind === "err" ? C.red : C.green, border: "1px solid " + (msg.kind === "err" ? C.red : C.greenDim), borderRadius: 9, padding: "9px 11px", fontSize: 12.5, lineHeight: 1.5, marginBottom: 10 }}>{msg.text}</div> : null}
+    {!list.length
+      ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.6, padding: "4px 0" }}>No areas are waiting for review.</div>
+      : list.map(function (r) {
+        const v = r.value || {};
+        const busy = busyId === r.id;
+        return <div key={r.id} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "11px 12px", marginBottom: 9 }}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: C.text }}>{v.name || "(no name given)"}</div>
+          <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2, marginBottom: 6 }}>{[AREA_KIND[v.areaType] || v.areaType, "inside " + (v.parentName || r.area_id || "no area")].filter(Boolean).join(" · ")}</div>
+          <Row label="About">{v.description}</Row>
+          <Row label="Location">{v.lat != null && v.lng != null ? v.lat + ", " + v.lng : null}</Row>
+          <Row label="Submitted">{r.created_at ? String(r.created_at).slice(0, 10) : null}</Row>
+          <Row label="By">{r.contributor ? String(r.contributor).slice(0, 8) : "anonymous"}</Row>
+          {rejecting === r.id
+            ? <div style={{ marginTop: 9 }}>
+                <textarea value={note} onChange={e => setNote(e.target.value)} rows={2} aria-label="Why this proposal is rejected" placeholder="Why? (optional, kept on the record)"
+                  style={{ width: "100%", background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 9px", fontSize: 12.5, fontFamily: "inherit", resize: "vertical" }} />
+                <div style={{ display: "flex", gap: 12, marginTop: 7 }}>
+                  <button onClick={() => doReject(r.id)} disabled={busy} style={{ flex: 1, padding: 9, background: busy ? C.surface : C.redBg, color: C.red, border: "1px solid " + C.red, borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>{busy ? "Working…" : "Confirm reject"}</button>
+                  <button onClick={() => { setRejecting(null); setNote(""); }} disabled={busy} style={{ flex: 1, padding: 9, background: C.surface, color: C.textSub, border: "1px solid " + C.border, borderRadius: 8, fontSize: 12.5, cursor: "pointer" }}>Cancel</button>
+                </div>
+              </div>
+            : <div style={{ display: "flex", gap: 12, marginTop: 9 }}>
+                <button onClick={() => doApprove(r)} disabled={busy} style={{ flex: 2, padding: 9, background: busy ? C.surface : C.blueSolid, color: busy ? C.textMuted : "#fff", border: busy ? "1px solid " + C.border : "none", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>{busy ? "Working…" : "Approve — file this area"}</button>
+                <button onClick={() => setRejecting(r.id)} disabled={busy} style={{ flex: 1, padding: 9, background: C.surface, color: C.textSub, border: "1px solid " + C.border, borderRadius: 8, fontSize: 12.5, cursor: "pointer" }}>Reject</button>
               </div>}
         </div>;
       })}

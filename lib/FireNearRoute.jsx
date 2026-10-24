@@ -47,14 +47,14 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
   const hd = { fontSize: 12, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.text, marginBottom: 8, borderLeft: "3px solid " + C.blueSolid, paddingLeft: 7, lineHeight: 1.1 };
 
   if (q.isLoading) {
-    return <div style={wrap}><div role="heading" aria-level={3} style={hd}>Fire &amp; smoke</div><div style={{ fontSize: 12, color: C.textMuted }}>Checking federal fire reports…</div></div>;
+    return <div style={wrap}><div role="heading" aria-level={2} style={hd}>Fire &amp; smoke</div><div style={{ fontSize: 12, color: C.textMuted }}>Checking federal fire reports…</div></div>;
   }
 
   // Rule 3.
   if (q.error) {
     return (
       <div style={{ ...wrap, borderColor: C.amber, background: C.amberBg }}>
-        <div role="heading" aria-level={3} style={hd}>Fire &amp; smoke</div>
+        <div role="heading" aria-level={2} style={hd}>Fire &amp; smoke</div>
         <div style={{ fontSize: 12, color: C.text, lineHeight: 1.5, display: "flex", gap: 8 }}>
           <ActionIcon name="alert" size={15} color={C.amber} />
           <span>
@@ -94,7 +94,7 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
 
   return (
     <div style={{ ...wrap, borderColor: tone.c, background: tone.bg }}>
-      <div role="heading" aria-level={3} style={{ ...hd, color: tone.c, borderLeftColor: tone.c, marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
+      <div role="heading" aria-level={2} style={{ ...hd, color: tone.c, borderLeftColor: tone.c, marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
         <ActionIcon name="fire" size={14} color={tone.c} />
         {closeUncontained.length ? "Active fire nearby" : "Active fire in the area"}
       </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { C, DLOCALE, MOUNTAINS, catOf, gradeLabel, uDist, uElev, routeAscentFt, routeLocText } from "../ClimbMatchCore.jsx";
-import { effDistKm } from "./outing.js";
+import { effDistKm, effDistIsWholeTrip } from "./outing.js";
 import { fetchCragForecastMeasured } from "./forecast";
 import { scoreForecast, starsLabel, CRAG_SCORE_DISCIPLINES } from "./conditionsScore.js";
 import { useCondPrefs, scorePrefs } from "./CondPrefs.jsx";
@@ -54,7 +54,9 @@ const ROWS = [
   ["Where", r => routeLocText(r)],
   ["Length", r => r.routeFt != null ? uElev(r.routeFt) : null],
   ["Pitches", r => r.pitches > 0 ? String(r.pitches) : null],
-  ["Approach", r => { const d = effDistKm(r); return d != null ? uDist(d) : null; }],
+  // ONE WAY or the whole outing, said: a loop's stored figure is the whole trip, and the column
+  // printed both under "Approach" as if they were the same measurement.
+  ["Approach", r => { const d = effDistKm(r); return d != null ? uDist(d) + (effDistIsWholeTrip(r) ? " whole outing" : " one way") : null; }],
   ["Gain", r => { const g = routeAscentFt(r); return g != null ? "↑" + uElev(g) : null; }],
   ["Aspect", r => r.aspect || r.face || (r._dbArea && r._dbArea.aspect) || null],
   ["Season", r => r.season],

@@ -758,3 +758,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     edit landed **by checksum** and restoring the file byte-identically: reverse the write order,
     drop `onRemove` from the profile call site, add it to somebody **else's**, and make a no-op
     removal report success.
+  - **`PhotoStrip` moved to `src/components/PhotoStrip.tsx` (PR31 of the component extraction).** The
+    guard still reads it: `readCoreSource()` stitches every `MOVED` file back into core's text, so the
+    `onRemove?` gate is found as before, and the call-site scan still counts three (`FullProfile` in core
+    imports the component back and renders it; `ClimbMatch.jsx`; `lib/TripReport.jsx`). One anchor had to
+    move with it: the signature regex matched `function PhotoStrip({…})` and the TypeScript form is
+    `function PhotoStrip({…}: PhotoStripProps)`, so it now accepts an optional `: Identifier` before the
+    `)` — and nothing looser, so a renamed or re-shaped signature still reads ANCHOR LOST. Measured by
+    `measure:guard-reach` around the move (no count decremented).
