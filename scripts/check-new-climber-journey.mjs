@@ -737,6 +737,16 @@ try {
     await settledText(page);
     if (!(await tapByName(page, "Crews"))) dead(`no Crews sub-view on the Crew tab (${why})`);
     await settledText(page);
+    // OPEN EVERY CREW CARD FIRST. Since #2531 (2026-10-21) each card starts COLLAPSED to a summary,
+    // and the roster -- the "Crew · N members" box this reads -- renders only behind "View plan ▾".
+    // The walk scanned collapsed cards and reported "found 0" two runs running (2026-10-24), which
+    // reads exactly like a missing roster. Clicked once each; a card already open has no such button.
+    const opened = await page.evaluate(() => {
+      const bs = [...document.querySelectorAll("button")].filter((b) => (b.innerText || "").trim() === "View plan ▾");
+      bs.forEach((b) => b.click());
+      return bs.length;
+    });
+    if (opened) await settledText(page);
     // FOUND STRUCTURALLY -- the one roster member who is not YOU -- never by a name derived here.
     // THE ROSTER DOES NOT RENDER `pubName`: it renders `p.name.split(" ")[0]`, the member's first
     // name, so the handle phase 4 read off the friends row (`@robinbelay`) matches nothing here.
