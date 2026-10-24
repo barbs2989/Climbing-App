@@ -48,6 +48,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       field as serialising to a string, so a new builder type must be added to its `STRUCTURED`
       set; until `bivy` was, it correctly reported *"reader discards a string, and CONV has no
       `bivy` entry"*. Keyed on the TYPE, so the next builder field is exempt automatically.
+    - **THE GROUPS ARE GONE: ONE LIST IN WALKING ORDER (owner, 2026-10-24).** The entry below is
+      history. The owner asked for camps "ordered by where people would camp if they were doing the
+      whole route", and grouping by USE contradicts that — a `main` high camp printed above the
+      valley campground a party sleeps at first. `campRouteOrder` (inside `campSites`) orders by
+      trail distance, slots a distance-less site in by height before the first distanced site above
+      it, and puts a site with neither LAST rather than guessing; `campOrderNote` says so on screen
+      and names how many could not be placed. The role survives as a tag (`campRoleLabel`) whose
+      words are still the form's options — section 12a now matches the option against the tag, and
+      the unsorted rule below still holds: no role, no tag. Section 12 pins the order (pure and
+      rendered), the absent headings, the tags and `campFromPrev` (the stretch from the camp
+      before, FarOut's tent-site number, only from two known distances). Known limit: height
+      ordering assumes the walk in goes UP; a traverse that camps on its descent side would list
+      that camp too early when it has no distance.
     - **A SITE WITH NO ROLE GETS ITS OWN GROUP, AND THE FORM SPEAKS THE PAGE'S WORDS (2026-10-14).**
       #2339 cut the groups to WHERE MOST PARTIES SLEEP / OTHER OPTIONS and filed every unsorted site
       (a pre-role contribution, or the form's *Not sure*) under OTHER OPTIONS, whose blurb — *"a slower
