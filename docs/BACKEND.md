@@ -351,8 +351,11 @@ A topo is **two separate things**, and conflating them is the usual mistake:
 1. a real **photo** of the wall, and
 2. a **vector overlay** drawn on it — the route line, belays, pitch numbers, anchors.
 
-Key modelling point: a topo is **per-wall, not per-route**. One photo of a buttress carries
-many route lines (this is how MP/theCrag do it). So: one photo → N lines, each line → a route.
+Key modelling point (changed 2026-10-23, 0364): a topo photo **belongs to the route page it was
+posted from** (`topos.route_id`) and shows on that route only. It was per-wall (filed by `area_id`),
+but an alpine route's area is the whole peak, so a north-face photo showed on every south-side
+route. `area_id` is still stored (contribution points credit it to the area). The schema still
+allows one photo → N lines, each line → a route.
 Normalized line coordinates make the overlay resolution-independent.
 
 ### Sourcing is a legal problem, not a technical one
