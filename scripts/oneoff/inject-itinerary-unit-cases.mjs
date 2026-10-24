@@ -9,7 +9,7 @@
 // the FIX that stops the fix being lossy. And `imperial-converts-too` is the over-reach in the
 // other direction, which would be worse than the defect it replaces.
 //
-// IT EDITS ClimbMatchCore.jsx IN PLACE. Do not commit, and do not build, while it runs.
+// IT EDITS ClimbMatchCore.jsx (and, for the two editor-label cases, src/components/ItineraryEditor.tsx) IN PLACE. Do not commit, and do not build, while it runs.
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
@@ -19,7 +19,9 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const FILE = "ClimbMatchCore.jsx";
 const abs = path.join(ROOT, FILE);
-const sum = () => crypto.createHash("sha1").update(fs.readFileSync(abs)).digest("hex");
+// Two cases revert the editor's GAIN label, which lives in the component since PR33 of the extraction.
+const ieAbs = path.join(ROOT, "src/components/ItineraryEditor.tsx");
+const sum = (f = abs) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex");
 
 const CASES = [
   // THE WRITE HALF — the one that corrupts a plan every other climber reads back.
@@ -34,11 +36,11 @@ const CASES = [
     says: /the gain box does not show 152/ },
   // The label and the accessible name are separate expressions, so they are reverted separately:
   // a screen reader announcing "ft" over a box holding metres is the same lie by another route.
-  { name: "visible-label-reverts-to-ft", expect: "fail",
+  { name: "visible-label-reverts-to-ft", expect: "fail", file: ieAbs,
     find: 'marginBottom:3}}>{"GAIN ("+uElevUnit().toUpperCase()+")"}</div>',
     repl: 'marginBottom:3}}>GAIN (FT)</div>',
     says: /not labelled GAIN \(M\)/ },
-  { name: "accessible-name-reverts-to-ft", expect: "fail",
+  { name: "accessible-name-reverts-to-ft", expect: "fail", file: ieAbs,
     find: '<input aria-label={"Gain ("+uElevUnit()+")"}',
     repl: '<input aria-label="Gain (ft)"',
     says: /the gain box does not show/ },
@@ -84,21 +86,22 @@ const CASES = [
 
 let bad = 0;
 for (const c of CASES) {
-  const before = fs.readFileSync(abs, "utf8");
-  const beforeSum = sum();
+  const target = c.file || abs;
+  const before = fs.readFileSync(target, "utf8");
+  const beforeSum = sum(target);
   const hits = before.split(c.find).length - 1;
   if (hits !== 1) { console.log(`  BROKEN CASE  ${c.name}: pattern matched ${hits} times — the case is wrong, not the probe`); bad++; continue; }
   let after = before.replace(c.find, c.repl);
   for (const [a, b] of c.also || []) after = after.split(a).join(b);
-  fs.writeFileSync(abs, after);
-  if (sum() === beforeSum) { console.log(`  BROKEN CASE  ${c.name}: edit did not change the file`); fs.writeFileSync(abs, before); bad++; continue; }
+  fs.writeFileSync(target, after);
+  if (sum(target) === beforeSum) { console.log(`  BROKEN CASE  ${c.name}: edit did not change the file`); fs.writeFileSync(target, before); bad++; continue; }
 
   let out = "", code = 0;
   try { out = execFileSync("node", [path.join(ROOT, "scripts", "check-units.mjs"), "--only=itinerary"],
     { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }); }
   catch (e) { code = e.status || 1; out = String(e.stdout || "") + String(e.stderr || ""); }
-  fs.writeFileSync(abs, before);
-  if (sum() !== beforeSum) { console.log(`  BROKEN CASE  ${c.name}: restore was not byte-identical`); bad++; continue; }
+  fs.writeFileSync(target, before);
+  if (sum(target) !== beforeSum) { console.log(`  BROKEN CASE  ${c.name}: restore was not byte-identical`); bad++; continue; }
 
   const caught = code !== 0;
   if (c.expect === "fail") {

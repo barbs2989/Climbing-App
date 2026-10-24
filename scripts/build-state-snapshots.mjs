@@ -31,6 +31,10 @@ const argOf = (k) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : 
 const OUT = argOf("--out") || "dist/states";
 const ONLY = argOf("--states") ? new Set(argOf("--states").split(",").map((s) => s.trim()).filter(Boolean)) : null;
 const PAGE = 500, PART_ROUTES = 2000, REPORTS_PER_ROUTE = 5;
+// Routes are read by AREA id, never through an `areas!inner(path)` join ordered by route id: that
+// join walks the whole routes table in id order per page, and it hit the 3 s statement timeout on
+// every attempt — the nights of 2026-10-15 (Vermont) and 2026-10-22 (North Carolina) failed on it.
+const AREA_BATCH = 100, ROUTE_PAGE = 200;
 // Keep in step with TRIP_REPORT_COLS (+ the 0121 columns) in lib/db.js: the offline reader serves
 // these rows to the same screen.
 const REPORT_COLS = "id, route_id, user_id, stars, cond_tags, date_climbed, discipline, tick_type, notes, photos, beta, gear_beta, outcome_reasons, outcome_note, approach_minutes, climb_minutes, descent_minutes, car_to_car_minutes, snow_condition, freezing_level_ft, water_level, bug_pressure, trail_condition, party_size, protection_quality, anchor_quality, crowd_level, fa_ascent, developed, sun_vote, sun_note, itinerary, created_at, temp_f, snow_depth, seepage, mud, road_note, rappel_count, rappel_longest_m, rappel_rope, nights_out, camp_names";
@@ -72,22 +76,27 @@ async function buildState(st) {
   const reporters = new Set();
   const newPart = () => { cur = { routes: [], contribs: [], reports: [] }; parts.push(cur); };
   newPart();
-  for (;;) {
-    const page = await get(rest(`routes?select=*,areas!inner(path)&areas.path=cd.${p}&order=id${last ? `&id=gt.${encodeURIComponent(last)}` : ""}&limit=${PAGE}`));
-    if (!page.length) break;
-    if (cur.routes.length >= PART_ROUTES) newPart();
-    const rows = page.map(({ areas: _drop, ...r }) => r);
-    const from = rows[0].id, to = rows[rows.length - 1].id;
-    const inPage = new Set(rows.map((r) => r.id));
-    // The id window spans other states too (ids sort across states) — keep only this page's rows.
-    const contribs = (await keysetAfter((after) => rest(`contributions?select=*&route_id=gte.${encodeURIComponent(from)}&route_id=lte.${encodeURIComponent(to)}&kind=neq.photo&order=id${after ? `&id=gt.${after}` : ""}&limit=1000`)))
-      .filter((c) => inPage.has(c.route_id));
-    const reports = await keysetAfter((after) => rest(`rpc/state_trip_reports?select=${encodeURIComponent(REPORT_COLS)}&order=id${after ? `&id=gt.${after}` : ""}&limit=1000`),
-      { method: "POST", body: JSON.stringify({ p_state: st.id, p_from: from, p_to: to, p_per_route: REPORTS_PER_ROUTE }) });
-    reports.forEach((r) => { if (r.user_id) reporters.add(r.user_id); });
-    cur.routes.push(...rows); cur.contribs.push(...contribs); cur.reports.push(...reports);
-    last = to;
-    if (page.length < PAGE) break;
+  // Routes are paged BY AREA (AREA_BATCH ids per request), as lib/offline.js's live path does.
+  for (let b = 0; b < areas.length; b += AREA_BATCH) {
+    const batch = areas.slice(b, b + AREA_BATCH).map((a) => encodeURIComponent(`"${a.id}"`)).join(",");
+    last = "";
+    for (;;) {
+      const rows = await get(rest(`routes?select=*&area_id=in.(${batch})&order=id${last ? `&id=gt.${encodeURIComponent(last)}` : ""}&limit=${ROUTE_PAGE}`));
+      if (!rows.length) break;
+      if (cur.routes.length >= PART_ROUTES) newPart();
+      const from = rows[0].id, to = rows[rows.length - 1].id;
+      const inPage = new Set(rows.map((r) => r.id));
+      // The id window spans other states and other batches too (ids sort across both) — keep only this page's rows.
+      const contribs = (await keysetAfter((after) => rest(`contributions?select=*&route_id=gte.${encodeURIComponent(from)}&route_id=lte.${encodeURIComponent(to)}&kind=neq.photo&order=id${after ? `&id=gt.${after}` : ""}&limit=1000`)))
+        .filter((c) => inPage.has(c.route_id));
+      const reports = (await keysetAfter((after) => rest(`rpc/state_trip_reports?select=${encodeURIComponent(REPORT_COLS)}&order=id${after ? `&id=gt.${after}` : ""}&limit=1000`),
+        { method: "POST", body: JSON.stringify({ p_state: st.id, p_from: from, p_to: to, p_per_route: REPORTS_PER_ROUTE }) }))
+        .filter((r) => inPage.has(r.route_id));
+      reports.forEach((r) => { if (r.user_id) reporters.add(r.user_id); });
+      cur.routes.push(...rows); cur.contribs.push(...contribs); cur.reports.push(...reports);
+      last = to;
+      if (rows.length < ROUTE_PAGE) break;
+    }
   }
   const people = [];
   const ids = [...reporters];
@@ -112,9 +121,17 @@ const states = (await get(rest(`areas?select=id,name,path,route_count&area_type=
   .filter((s) => s.path && (s.route_count || 0) > 0 && (!ONLY || ONLY.has(s.name)));
 const index = { v: 1, generatedAt, states: {} };
 let total = 0;
+// One state that still fails after get()'s retries is LEFT OUT of tonight's index rather than failing
+// the whole run: before, one timeout cost all 61 states their file, and with no file under 3 days old
+// every download in the app falls back to the database. A state missing from the index downloads
+// over the live path instead (lib/offline.js), and is tried again tomorrow night.
+const failed = [];
 for (const st of states) {
   const t0 = Date.now();
-  const { areas, parts, people } = await buildState(st);
+  let built;
+  try { built = await buildState(st); }
+  catch (e) { failed.push(st.name); console.log(`${st.name.padEnd(16)} FAILED, left out of tonight's files: ${e.message.slice(0, 200)}`); continue; }
+  const { areas, parts, people } = built;
   const entry = { id: st.id, path: st.path, areaCount: areas.length, routeCount: 0, parts: [] };
   parts.forEach((part, n) => {
     if (!part.routes.length && n > 0) return;
@@ -134,3 +151,8 @@ for (const st of states) {
 }
 fs.writeFileSync(path.join(OUT, "index.json"), JSON.stringify(index));
 console.log(`total ${(total / 1e6).toFixed(1)} MB across ${Object.keys(index.states).length} state(s) -> ${OUT}`);
+if (failed.length) {
+  console.log(`::warning::${failed.length} state(s) left out of tonight's offline files: ${failed.join(", ")}`);
+  // Nothing built at all is a broken job, not one slow state: fail it so the empty set is never cached.
+  if (!Object.keys(index.states).length) process.exit(1);
+}

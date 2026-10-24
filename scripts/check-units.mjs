@@ -97,6 +97,8 @@ const dead = (m) => { problems.push("BROKEN: " + m); throw new Error(STOP); };
 
 const CORE_PATH = path.join(ROOT, "ClimbMatchCore.jsx");
 const RD_PATH = path.join(ROOT, "RouteDetail.jsx");
+// ItineraryEditor lives in src/components since PR32+1; esbuild bundles the .tsx as it does the .jsx.
+const IE_PATH = path.join(ROOT, "src/components/ItineraryEditor.tsx");
 const APP_PATH = path.join(ROOT, "ClimbMatch.jsx");
 
 // ===== HARD-CODED IMPERIAL UNITS, APP-WIDE =============================================
@@ -186,7 +188,8 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ReactDOM from "react-dom";
 import RouteDetail from ${JSON.stringify(RD_PATH)};
-import { ItineraryEditor, FullProfile } from ${JSON.stringify(CORE_PATH)};
+import ItineraryEditor from ${JSON.stringify(IE_PATH)};
+import { FullProfile } from ${JSON.stringify(CORE_PATH)};
 export { distMiles, ME } from ${JSON.stringify(CORE_PATH)};
 export {
   uTemp, uTempN, uTempDelta, uWind, uWindN, uPrecip, uSnowfall,

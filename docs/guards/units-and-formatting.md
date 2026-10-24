@@ -128,6 +128,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       NOW) and where it is TYPED (`uElevIn` in the form). The guard asserts all four links and
       FAILS on the old `uElev(row.freezing_level_ft)` shape rather than accepting it. The legacy
       prose `cond.freezing` (seed routes) still renders as written.
+    - **`ReportStats` moved to `src/components/ReportStats.tsx` (PR32 of the component extraction).** The
+      `["Freezing lvl",uElev(cond.freezingFt)]` anchor is kept verbatim there and reaches this guard through
+      `readCoreSource()`'s `MOVED` stitch (the apply script asserts the fragment); the browser half that reads
+      two ReportStats temperatures per run is unaffected by where the component is defined. Measured by
+      `measure:guard-reach` around the move (no count decremented).
     - **The imperial output is NOT byte-identical here and that is stated rather than glossed**:
       `11000+" ft"` becomes `uElev(11000)` = `"11,000 ft"`. A thousands separator, matching the 35
       other `uElev` call sites in that file. The forecast tile IS byte-identical, since `freezeMax`
@@ -176,6 +181,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     probes it started from cost **~3x `check:policy-claims`**, the merged guard **~1.5x** — a little
     over half, for more assertions. **Quote the ratio, never the clock**: those readings were taken
     at load average 488, where this file already records a profile being off by 4x.
+  - **`ItineraryEditor` moved to `src/components/ItineraryEditor.tsx` (PR33 of the component extraction).** The
+    render probe's entry imported it from core BY PATH — the one shape the `MOVED` stitch cannot help, because
+    esbuild resolves the real file, not the stitched text — so the entry now imports the component file
+    (`IE_PATH`) and `FullProfile` from core as before; `TIME_PRESETS` moved with it. The guard's unit
+    assertions on the editor's labels are unchanged. Measured by `measure:guard-reach` around the move.
   - **THE CLASS IS ONE CLASS AND THE WRITE HALF IS THE SERIOUS END.** A display defect misinforms
     one reader; a form that stores what was typed corrupts the record for **every** reader — a
     metric climber typing 10 meaning 10°C had **10 written into `climb_logs.temp_f`**, so their own

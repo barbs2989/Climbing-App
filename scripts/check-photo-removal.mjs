@@ -99,7 +99,9 @@ for (const s of sites) {
 // The component must actually consult the prop -- a call site that passes onRemove to a
 // component ignoring it is the dead-wiring shape, and reads as a shipped feature.
 const core = readCoreSource();
-const decl = core.match(/function PhotoStrip\(\{([^}]*)\}\)/);
+// The component lives in src/components/PhotoStrip.tsx (reached through readCoreSource's MOVED stitch), so the
+// destructure may carry its props annotation: `}: PhotoStripProps)`. The anchor accepts that and nothing looser.
+const decl = core.match(/function PhotoStrip\(\{([^}]*)\}(?::\s*\w+)?\)/);
 if (!decl) dead("PhotoStrip's signature moved — ANCHOR LOST");
 if (!/\bonRemove\b/.test(decl[1])) bad("PhotoStrip does not destructure onRemove");
 else ok("PhotoStrip destructures onRemove");

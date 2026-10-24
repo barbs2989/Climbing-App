@@ -82,10 +82,14 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   Every card starts COLLAPSED (`collapsed={!isOpen}` in App; `openCrewId` is set only by `openCrewCard` and the create flows): the header, Log the climb, join requests, Steps to get ready, Crew chat and **View plan ▾**. View plan opens the rest; a link that names a crew opens that one.
   Crew chat and direct messages (`useCrewMessages`, `useDirectMessages`); unread counts via `countCrewUnread`; `Inbox` and `NotifPanel` surface them.
 - **Crew › Requests** (`crewView==="requests"`) is the one place for everything pending: crew invites, **climbers asking to join your crews** (`allJoinIn`, with Accept / Decline / Crew), friend requests, group invites and join requests to groups you run, then **Waiting on others** — every request YOU sent, each marked Pending with its own Withdraw: friend requests (signed in), crews you asked to join (`myCrewAsks`, the same list the Crews tab's Pending requests reads) and groups you asked to join (`pendingGroups`). The Menu tile's badge counts incoming join requests too.
-- **The bell** (`NotifPanel`) leads with a **Requests** section — friend requests plus every notice under the *requests* switch (crew invites and crew join requests via `_crewReqNotifs`, group and event invites, join requests, accepted friend requests) — with *See all requests ›* opening Crew › Requests; everything else is under Activity. The bell button's accessible name carries the new count ("Notifications, 3 new").
+- **The bell** (`NotifPanel`) leads with a **Requests** section — friend requests plus every notice under the *requests* switch (crew invites and crew join requests via `_crewReqNotifs`, group and event invites, join requests, accepted friend requests) — with *See all requests ›* opening Crew › Requests; everything else is under Activity. The bell button's accessible name carries the new count ("Notifications, 3 new"). **Archive and delete** (owner 2026-10-23; Mail and Gmail pair the two swipes): swipe a row RIGHT to archive it (`onArchive` → `dismissedNotifs`, plus `markNoticeRead` for a `user_notices` row); it moves under *Archived*, where *Restore* brings it back (`markNoticeUnread` clears `read_at`). Swipe LEFT to delete it (`onDelete` → `deletedNotifs`, plus `deleteNotice` for a stored notice, which throws when RLS deleted nothing); it leaves both lists, and archived rows swipe left to delete too. The header is ← Back (top left, no ✕), the title, and *Archive all* alone at the right; a muted line under it names both swipes.
 - **Past crews** (#2395): a crew whose day has passed, that has a log tied to it, or that was dismissed counts as past (`isArchivedCrew`).
   Past-crew members can be vouched for (`GiveVouch`, `givenVouches`). **Archive** and **Clear** (`archiveCrew`, `clearPastCrew`) only hide the crew
   on this device until reload and say so in the toast ("Crew archived on this device until you reload").
+  *View all past crews* is a full-screen portal (`pastExpand`, zIndex 9500), so anything opened from inside it must land ON TOP of it:
+  **Stay in touch › + Add** opens `ConnectModal`, which is portalled to `document.body` (zIndex 9950) like `FullProfile`; Vouch, Log this climb
+  and the trip report close the list first; **Climb with them again** closes it too before the Start a crew sheet (zIndex 1200) or the new crew's
+  card opens, which it used to cover until Back (2026-10-23).
 - **Crew safety check** (`SafetyTab`, 0314): the pre-climb questionnaire and "mark me safety-ready" are stored per crew for real crews (`saveCrewSafetyAnswers`, `markCrewSafetyReady`) in `crew_safety_answers`, readable by their owner alone. The crew's Team Alignment comes from `crew_alignment()` (`useCrewAlignment` → `alignmentFromServer`): counts per risk level and per flag, never anyone's answers, as the questionnaire promises. Flags are anonymous on every path (`alignmentFromCounts`). The crew card's per-member "reviewed the safety plan" mark reads `crew_ready_ids()` (`useCrewReadyIds`). Example crews keep the local path.
 - **Float plans**: `FloatPlans` (`lib/FloatPlans.jsx`) lists plans for `activeCrews`; the plan text is stored on the crew (`createCrew({floatPlan})`).
   **Crew ⇄ plan** (2026-10-22): a crew's facts come INTO its plan — `crewFloatFill` (App) maps the place, the confirmed partners' public names,
@@ -122,6 +126,16 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 4. **Messaging**: `sendCrewMessage`/`fetchCrewMessages`/`fetchOlderCrewMessages`, `sendDirectMessage`/`fetchMyDirectMessages`, read markers via `markCrewRead`/`fetchCrewLastReads`/`markMessageAsRead`.
 5. **Pinned states** follow the account (0187): `pinnedStates` state in `App`, saved by `savePinnedStates` (`profiles.pinned_states`). Offline downloads stay on the device
    (`downloadedStates`, `dlLoaded`, `lib/offline.js`: `downloadStateOffline`, `removeStateOffline`, `packRouteOffline`).
+   A download lives in IndexedDB, asks the browser to keep it (`navigator.storage.persist()`), and is read back by
+   `offlineDownloads()` on every launch, so it survives closing the app; a pin made on another device downloads here.
+   It comes from the nightly state file (`scripts/build-state-snapshots.mjs`) when that file is under 3 days old, else
+   live from the database (`downloadStateLive`), which reads routes BY AREA id (`AREA_BATCH`): the old path-join read
+   timed out on every state. A state the nightly build cannot read is left out of that night's file, not the whole set.
+   A downloaded state answers the Climbs tab from the device first (`deviceFirst` in `lib/db.js`), except the Route finder's
+   list and count over more than 2,000 climbs (`deviceFirstScan`, `DEVICE_SCAN_MAX_ROUTES`): the device has no index to filter
+   or sort on, so a whole pinned state scanned all its climbs and the Washington page's Suggested climbs waited seconds for it.
+   Those ask the database first and keep the device copy as the no-signal fallback. A smaller subtree reads only its own
+   areas' climbs (`localSubtreeRouteCount`; `matchingRoutes` by the `area_id` index), not the whole state's.
    **Manage areas** (`manageAreasOpen`, from Home's pinned card) lists every state or province of the picked country with its
    catalog count from `useStates()`. With the database on, a count is the database's or nothing: while that read is in flight a
    row says *Loading the catalog…* (`statesLoading`), and a failed read says so (`statesUnavailable`); neither falls back to
@@ -139,7 +153,8 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 | File | Key symbols |
 |---|---|
 | `ClimbMatch.jsx` | `tab` branches for `today`/`crew`/`logbook`, `logbookTab`, `crewView`, `pinnedStates`, `archiveCrew`, `clearPastCrew`, `givenVouches`, `activeCrews`, setup `gaps`, `unfinishedOpen`, `renderObjectives` |
-| `ClimbMatchCore.jsx` | `Challenges`, `useCuratedLists`, `useBadges`, `trophies`, `BadgeGrid`, `BadgeWatcher`, `monthRuns`, `yearCounts`, `TrackedLists`, `pitchesClimbed`, `datesAgreed`, `agreedDate`, `isArchivedCrew`, `CrewInviteModal`, `ItineraryEditor`, `crewPlace`, `placeTrip`, `placeCap`, `placeLabel`, `placeSub`, `placeMatchesLog` |
+| `ClimbMatchCore.jsx` | `Challenges`, `useCuratedLists`, `useBadges`, `trophies`, `BadgeGrid`, `BadgeWatcher`, `monthRuns`, `yearCounts`, `TrackedLists`, `pitchesClimbed`, `datesAgreed`, `agreedDate`, `isArchivedCrew`, `CrewInviteModal`, `crewPlace`, `placeTrip`, `placeCap`, `placeLabel`, `placeSub`, `placeMatchesLog` |
+| `src/components/ItineraryEditor.tsx` | `ItineraryEditor` — the day-by-day itinerary editor (and its `TIME_PRESETS`), rendered by the crew plan, the log, add-a-climb and the route page |
 | `lib/ListsManager.jsx` | Objectives/Saved UI, per-discipline filter chips (Alpine first; Mountaineering and Aid separate); a crag row's Find partners goes to the crag (`onFindPartnersInArea`) |
 | `lib/MyAscents.jsx`, `lib/LogAscent.jsx` (no visibility chooser since 2026-10-21: one line names the Settings choice; a new report sends `visibilityFromSetting` and `syncLogToDb` leaves the column out so 0272's insert trigger fills it from the stored setting), `lib/TripReport.jsx`, `lib/tripReportRow.js`, `lib/LogTagConfirmations.jsx` | Completed climbs, logging, trip reports, partner tag confirmation |
 | `lib/lists.js` | `LISTS`, `routeInList`, `listPeaks`, `peakClimbed`, `FIFTY_CLASSICS` (Challenges) |
