@@ -4,6 +4,7 @@
 // out -- with one exception: `recovery` opens it over a signed-in session, because a reset link
 // authenticates you before you have chosen the new password. Password is never stored.
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { signIn, signUp, rememberEmail, recallEmail, requestPasswordReset, updatePassword, useOAuthProviders, signInWithGoogle, signInWithApple } from "./auth";
 
 // Must match the project's Auth setting `password_min_length` (raised 6 -> 8 on
@@ -199,7 +200,10 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
   // handler to dismiss. With the role on the panel, that click hit
   // onClick={e=>e.stopPropagation()} and was swallowed, so Escape silently did nothing on the
   // sign-in modal — the one a keyboard user meets first.
-  return (
+  // PORTALLED: opened from the Menu it renders inside #appscroll, whose fade-in makes it a stacking
+  // context under the app header -- so the header drew over this sheet's ✕ and the ✕ could not be
+  // tapped (2026-10-24, check:pinned-dismiss). check:overlays explains the trap.
+  return createPortal(
     <div onClick={onClose} role="dialog" aria-modal="true" aria-label={TITLE[mode]} style={gate ? { position: "fixed", inset: 0, background: "radial-gradient(120% 60% at 50% 0%, #10264a 0%, " + c.bg + " 58%)", zIndex: 2000, overflowY: "auto", overscrollBehavior: "contain", display: "flex", justifyContent: "center", padding: "calc(16px + env(safe-area-inset-top)) 16px 24px", boxSizing: "border-box" } : { position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 2000, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
       <div onClick={(e) => e.stopPropagation()} style={gate ? { width: "100%", maxWidth: 420, color: c.text } : { width: "100%", maxWidth: 380, background: c.card, border: "1px solid " + c.border, borderRadius: 16, padding: 20, color: c.text }}>
         {gate && (mode === "in" || mode === "up") && (
@@ -325,6 +329,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

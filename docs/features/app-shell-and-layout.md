@@ -26,6 +26,17 @@ room for side-panel ads later. The phone app keeps its own look.
     with `data-sheet`: the delete-account confirm (`"alert"` — Material keeps a small centred dialog
     for an urgent yes/no) and the photo viewers (`"viewer"`, already a black full-screen lightbox).
     The page behind is locked by `useDialogA11y` in `lib/dialogA11y.js`, as for every dialog.
+  - **A popup's ✕ and ← Back stay on screen** (owner 2026-10-24: "need to be sticky when a popup page
+    comes up"): the header row holding a popup's Close…/Back… button is pinned to the top of the pane
+    that scrolls, and the content scrolls under it — Material's full-screen dialog and iOS's sheet both
+    keep the close in a top bar like this. One function does it for every open popup, `pinDismiss` in
+    `lib/dialogA11y.js` (run by `pinLayers` on each change while a popup is open), so no popup was
+    edited and a new one is covered too. It pins only a ROW (at most 120px tall) at the TOP of its pane,
+    so a Back at the foot of a step stays where it is. Two needed hand fixes: the trip report's ✕ and
+    share float over the cover photo in a zero-height sticky bar, and the sign-in sheet is portalled to
+    `<body>` (it rendered inside `#appscroll`, under the app header, which hid its ✕). Hidden file
+    inputs (`.cm-file-input`) are `position:fixed`, so they no longer stretch a popup's backdrop into a
+    second scroller that carried Log a climb off the screen. `check:pinned-dismiss` walks every popup.
 - **Desktop (1024px and wider) — the website shell:**
   - A full-width sticky **top bar** (64px): ☰ Menu at the far left, the ClimbMatch wordmark (→ Home), a
     search box for every climb and place (`/` jumps to it; arrow keys and Enter pick a hit), then
@@ -111,7 +122,7 @@ below the top bar) do not trip it. Any new fixed desktop panel must not either.
 | `lib/wideLayout.js` | `useWideScreen`, `useFullWidth`, `wideGeom`, `wideColumn`, `wideSidebar`, `wideRail`, `wideTopBar`, `wideTopRow`, `wideCss`, `WIDE_MIN`, `FULL_MIN` |
 | `lib/MonthGrid.jsx` | `MonthGrid` |
 | `lib/DesktopShell.jsx` | `WideSearch`, `WideRail`, `WideFooter`, `DocTitle` |
-| `lib/dialogA11y.js` | `coveringLayer` |
+| `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers` |
 | `ClimbMatch.jsx` | `NAV`, `goTab`, `navBadge`, `_inChat`, `_known`, `_openMe`, `_closePages`, `_pageView` |
 | `index.html` | `#cm-boot`, `.b-nav`, `#cm-splash` |
 | `lib/BootSplash.jsx` | `BootSplash` |
