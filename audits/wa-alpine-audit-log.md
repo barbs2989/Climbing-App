@@ -33838,3 +33838,56 @@ available.
 
 Pass 7 continues next run after `wa_poltergeist_pinnacle` (next candidate in id order:
 `wa_poltergeist_pinnacle_north_route`).
+
+## Batch 446 -- 2026-10-24 (pass 7)
+
+Routes: `wa_poltergeist_pinnacle_north_route`, `wa_preacher_mountain_east_gully`,
+`wa_preacher_mountain_north_route`, `wa_preacher_mountain_scramble`,
+`wa_preacher_mountain_south_gully_south_spur`, `wa_preacher_mountain_south_rib`,
+`wa_preacher_mountain_west_face`, `wa_primus_peak_south_ridge`.
+
+**Fixed (1):** `wa_poltergeist_pinnacle_north_route`'s `waypoints[0]` ("Hannegan Pass
+Trailhead") stored lat/lng 48.910185/-121.591971, disagreeing with this same row's own
+`approach_logistics.trailheadLat`/`trailheadLng` (48.91049444/-121.5894222) -- and that
+second figure is the exact official USFS trailhead-page coordinate
+(fs.usda.gov/r06/mbs/recreation/hannegan-trailhead). Corrected the waypoint to match.
+
+**Flagged for human review (1):** the same route's `pitches` (4) / `length_m` (445, i.e.
+1,460 ft) disagree with Mountain Project's "6 pitches, 1200 ft" for the same East Face
+route. Internally self-consistent here (its own `pitch_detail` entries sum exactly to
+445m) and plausibly just a different convention for splitting the long simul-climbed
+ridge section into pitches rather than a clear error, so left unfixed pending a human
+call. Also noted but not formally flagged: the parent area row's peak coordinate
+(48.83524, -121.3419) sits almost exactly on Mount Challenger's own summit rather than
+~140m south of it, as Wikipedia's prose for Poltergeist Pinnacle states -- but that same
+Wikipedia stub's own infobox coordinate for the pinnacle is ~1.3 km from Challenger's, a
+10x contradiction of its own prose, so Wikipedia can't adjudicate this and no independent
+Peakbagger/ListsOfJohn page could be retrieved. Left as-is. The route's FA ("Dan Aylward
+and Forrest Murphy, 2004") and Grade IV commitment both independently confirmed via
+Mountain Project and AAC Publications.
+
+**Clean:** `wa_preacher_mountain_scramble` -- 5,924 ft summit and 47.498605/-121.519225
+coordinate both match Wikipedia almost exactly. `wa_primus_peak_south_ridge` -- 8,508 ft
+and 48.5819/-121.092 both match Wikipedia almost exactly; its Eldorado/Cascade River
+Road approach is a genuinely different, valid route from the Mountaineers' default
+Thunder Creek/Borealis Glacier approach to the same peak, not a contradiction. The other
+5 routes in this batch (`wa_preacher_mountain_east_gully`, `_north_route`,
+`_south_gully_south_spur`, `_south_rib`, `_west_face`) are unenriched stubs -- just
+id/area_id/name/discipline/classic/name_search, no stored fact to check against a
+source, same situation as prior-batch stubs.
+
+`last_processed_id` advances to `wa_primus_peak_south_ridge`. Scope counts not re-run
+this batch (last known: 737 in-scope / 833 total, from batch 444). No `.env`/`.env.local`
+present at run start (fresh clone); the read-only anon key supplied directly in the task
+prompt was used via plain `curl` against the REST API for all reads (no DB write
+attempted). The fix file was validated with `npm run check:sql` (env vars passed
+directly on the command line, since no `.env.local` exists in this worktree) --
+`check:sql` confirmed both write targets exist live and no DELETE removes an only copy.
+WebSearch (standard and one extended-mode query) reached Wikipedia, SummitPost,
+Mountain Project, AAC Publications, the official USFS Hannegan Trailhead page, and the
+Mountaineers' route pages; every finding rests on 2+ independent sources where more than
+one was available, and ambiguous/contradictory ones were left to a human rather than
+guessed, per the audit's standing rule.
+
+Pass 7 continues next run after `wa_primus_peak_south_ridge` (next candidates start with
+`wa_prusik_peak_*`).
