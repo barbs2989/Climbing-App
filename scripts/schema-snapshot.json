@@ -20,6 +20,18 @@
       "until",
       "user_id"
     ],
+    "app_feedback": [
+      "app_version",
+      "contact_email",
+      "created_at",
+      "id",
+      "kind",
+      "message",
+      "platform",
+      "stars",
+      "status",
+      "user_id"
+    ],
     "app_settings": [
       "key",
       "value"
@@ -744,6 +756,18 @@
       "updated_at",
       "user_id"
     ],
+    "route_base_pin_changes": [
+      "action",
+      "climbers",
+      "created_at",
+      "id",
+      "lat",
+      "lng",
+      "moved_m",
+      "previous",
+      "route_id",
+      "total"
+    ],
     "route_difficulty_ratings": [
       "axis",
       "created_at",
@@ -945,6 +969,7 @@
       "license",
       "moderation",
       "photographer",
+      "route_id",
       "storage_path"
     ],
     "user_itineraries": [
