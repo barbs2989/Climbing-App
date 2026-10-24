@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Safety tab reordered**: the forecast opens it on every route, then active fires (now a dropdown), known hazards, cell coverage, emergency & rescue, and the float plan last (also a dropdown) — see `docs/features/route-page.md`.
 - **Safety reports, Appeals and Reported photos queues removed**: the three admin tiles in Menu › Review, the screens they opened and Home's admin 24-hour safety banner are gone (owner: not needed). Climbers can still report, block and appeal; those rows land in `user_reports` / `content_reports` / `moderation_appeals` and are read in the Supabase dashboard. See `docs/features/profile-and-settings.md`.
 - **Requests reads top to bottom**: everything waiting on you — including group invites and group join requests, which used to sit under *Waiting on others* — now comes before the requests you sent; friend requests are shown open (no *Tap to review* fold) with when each was sent; every Accept is the same green button. See `docs/features/logbook-crews-home.md`.
 - **Every ← Back and ✕ has a blue edge**: the close ✕, the ← Back (in popups and in-page, over photos too) and the remove ✕ on tags, days, photos and list rows now carry the same blue ring as the résumé's Edit button, in place of the faint white one. One token in `lib/popupChrome.js`; the 18px ✕ inside a chip keeps its white ring.
