@@ -51,8 +51,8 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import RouteDetail, { campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
-export { campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine };
+import RouteDetail, { campDetail, campFromTrailhead, campingGate, climbsAPeak, campRouteOrder, campRoleLabel, campFromPrev, campOrderNote, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
+export { campDetail, campFromTrailhead, campingGate, climbsAPeak, campRouteOrder, campRoleLabel, campFromPrev, campOrderNote, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine };
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route, tab) {
@@ -74,7 +74,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render, campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine } = require_(out);
+const { render, campDetail, campFromTrailhead, campingGate, climbsAPeak, campRouteOrder, campRoleLabel, campFromPrev, campOrderNote, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine } = require_(out);
 
 // renderToStaticMarkup ESCAPES: "CAMPING & BIVY" is emitted as "CAMPING &amp; BIVY".
 // Un-escape before matching, or the heading reads as absent and a false NO looks like a
@@ -402,54 +402,65 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
 }
 
 
-// ── 12. MAIN CAMPS vs ON THE ROUTE. A researched `role` splits the list, main camps first; a list
-//    nobody has sorted stays the flat list it always was (no heading filing everything as OTHER).
+// ── 12. IN THE ORDER THE WALK IN REACHES THEM (owner, 2026-10-24). One list, ordered by distance
+//    from the trailhead, a site with no distance placed by its height, a site with neither last; the
+//    researched `role` is a TAG on the site, never a group that would put a high camp above the valley
+//    campground you sleep at first. Replaced the WHERE MOST PARTIES SLEEP / OTHER OPTIONS / NOT YET
+//    SORTED groups.
 {
-  const sorted = [
-    { name: "Side Bivy", role: "route" }, { name: "Base Camp Alpha", role: "main" }, { name: "Loose Site" },
-  ];
-  const t = text(render(route("alpine", { bivy: sorted }), "planner"));
-  const iM = t.indexOf("WHERE MOST PARTIES SLEEP"), iO = t.indexOf("OTHER OPTIONS"), iU = t.indexOf("NOT YET SORTED");
-  if (iM >= 0 && iO > iM && iU > iO) ok("sorted sites render WHERE MOST PARTIES SLEEP, then OTHER OPTIONS, then NOT YET SORTED");
-  else fail(`group headings missing or out of order (main ${iM}, other ${iO}, unsorted ${iU})`);
-  /* A site with NO role must not sit under OTHER OPTIONS: that group's blurb ("a slower pace, bad
-     weather or an emergency") is a researched claim about the `route` role, and #2339 briefly filed
-     every unsorted site under it. */
+  const names = (l) => campRouteOrder(l).map((s) => s.name).join(" > ");
+  const o1 = names([{ name: "High", distMi: 6, elev: 7000 }, { name: "Low", distMi: 2, elev: 4000 }, { name: "Mid", distMi: 4, elev: 5500 }]);
+  if (o1 === "Low > Mid > High") ok("sites with a distance run from the trailhead outward");
+  else fail("sites with a distance are not in walking order: " + o1);
+  const o2 = names([{ name: "Loose" }, { name: "High", distMi: 6, elev: 7000 }, { name: "Valley CG", elev: 1200 }, { name: "Lake", elev: 5000 }, { name: "Low", distMi: 2, elev: 4000 }]);
+  if (o2 === "Valley CG > Low > Lake > High > Loose") ok("a site with only a height slots in by height; one with neither comes last");
+  else fail("height-only or unplaceable sites are misplaced: " + o2);
+  const o3 = names([{ name: "A", elev: 5000 }, { name: "B", elev: 5000 }]);
+  if (o3 === "A > B") ok("a tie keeps the stored order");
+  else fail("a tie reordered the stored list: " + o3);
+
+  const t = text(render(route("alpine", { bivy: [
+    { name: "Side Bivy", role: "route", elev: 2800 }, { name: "Base Camp Alpha", role: "main", elev: 2000 }, { name: "Loose Site" },
+  ] }), "planner"));
   const a = t.indexOf("Base Camp Alpha"), b = t.indexOf("Side Bivy"), c = t.indexOf("Loose Site");
-  if (a > iM && a < iO && b > iO && b < iU && c > iU) ok("each site renders under its own group, an unsorted one under NOT YET SORTED");
-  else fail("a site rendered under the wrong group (an unsorted site under OTHER OPTIONS reads as a researched fallback)");
-  const g3 = campGroups([{ name: "Main", role: "main", sorted: true }, { name: "Loose" }]);
-  if (g3.length === 2 && g3[1].key === "unsorted" && !/weather|emergency|slower/i.test(g3[1].blurb)) ok("the unsorted group's blurb claims no use the row does not record");
-  else fail("an unsorted site is grouped with, or described like, the researched fallbacks: " + JSON.stringify(g3.map((x) => [x.key, x.blurb])));
-  const flat = text(render(route("alpine", { bivy: [SITE, { name: "Other Place" }] }), "planner"));
-  if (!/WHERE MOST PARTIES SLEEP|OTHER OPTIONS|NOT YET SORTED/.test(flat)) ok("an unsorted list renders flat, with no group headings");
-  else fail("an unsorted list was given group headings");
-  const g = campGroups([{ name: "Pin", role: "route", onTrack: true }]);
-  if (g.length === 1 && g[0].title === null) ok("a Campsite pin's default role alone does not trigger grouping");
-  else fail("a pin's default role triggered grouping on an unsorted route");
+  if (a >= 0 && b > a && c > b) ok("the page draws the sites in walking order, not stored or use order");
+  else fail(`the page did not draw the sites in walking order (alpha ${a}, side ${b}, loose ${c})`);
+  if (!/WHERE MOST PARTIES SLEEP|OTHER OPTIONS|NOT YET SORTED/.test(t)) ok("no use-group heading splits the walking order");
+  else fail("a use-group heading is back, splitting the list out of walking order");
+  if (/Where most parties sleep/.test(t.slice(a, b)) && /Other option/.test(t.slice(b, c)) && !/Where most parties sleep|Other option/.test(t.slice(c))) ok("each site carries its use as a tag, and an unsorted site claims none");
+  else fail("the use tags are missing, on the wrong site, or an unsorted site claims a use");
+  if (/order you reach them walking in from the trailhead; the site with no distance or height on file comes last/.test(t)) ok("the list says it runs in walking order, and names the site it could not place");
+  else fail("the list does not say how it is ordered, or hides that a site could not be placed");
+  if (campOrderNote([{ name: "x" }, { name: "y" }]) === "" && campOrderNote([{ name: "x", elev: 1 }]) === "") ok("no order claim when nothing can be placed, or for one site");
+  else fail("the order note claims a walking order it could not establish");
+
+  const step = campFromPrev({ name: "B", distMi: 5, elev: 6000 }, { name: "A", distMi: 2, elev: 4500 });
+  if (/on from A · /.test(step) && /higher$/.test(step)) ok(`a site states the stretch from the camp before it ("${step}")`);
+  else fail("the stretch from the previous camp is missing: " + JSON.stringify(step));
+  if (campFromPrev({ name: "B", elev: 6000 }, { name: "A", distMi: 2, elev: 4500 }) === "") ok("no stretch is stated without two known distances");
+  else fail("a stretch was stated from a missing distance");
 }
 
-// ── 12a. The contribute form's ROLE options name the groups a site will land in. They read "Main
-//    camp" / "On the route" while the page said WHERE MOST PARTIES SLEEP / OTHER OPTIONS, so a
-//    climber chose one vocabulary and found their camp filed under another. Read from the source:
-//    the form is a modal a static render of the route page does not open.
+// ── 12a. The contribute form's ROLE options speak the page's words: the tag a site carries is the
+//    option the climber picked. They once read "Main camp" / "On the route" while the page said
+//    something else, so a climber chose one vocabulary and found their camp filed under another.
+//    Read from the source: the form is a modal a static render of the route page does not open.
 {
   const src = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
   const sel = src.match(/aria-label=\{"Site "\+\(idx\+1\)\+" role"\}[\s\S]*?<\/select>/);
   if (!sel) { fail("ANCHOR LOST: the camping form's role <select> is gone or renamed — its labels were not checked"); }
   else {
     const opts = Object.fromEntries([...sel[0].matchAll(/<option value="([^"]*)">\{"([^"]*)"\}<\/option>/g)].map((m) => [m[1], m[2]]));
-    const titleOf = (role) => { const gs = campGroups([{ name: "x", role, sorted: !!role }, { name: "y", role: "main", sorted: true }]); const hit = gs.find((x) => x.sites.some((s) => s.b.name === "x")); return hit ? hit.title : null; };
-    const stems = (s) => String(s || "").toLowerCase().match(/[a-z]+/g).map((w) => w.replace(/s$/, ""));
+    const stems = (s) => (String(s || "").toLowerCase().match(/[a-z]+/g) || []).map((w) => w.replace(/s$/, ""));
     for (const role of ["main", "route"]) {
-      const title = titleOf(role), label = opts[role];
+      const tag = campRoleLabel(role), label = opts[role];
       if (!label) fail(`the camping form offers no "${role}" role option`);
-      else if (!title) fail(`campGroups files a "${role}" site under no group`);
-      else if (stems(title).every((w) => stems(label).includes(w))) ok(`the form's "${role}" option ("${label}") names the group it lands in (${title})`);
-      else fail(`the form's "${role}" option reads "${label}" but the site is shown under ${title}`);
+      else if (!tag) fail(`campRoleLabel gives a "${role}" site no tag`);
+      else if (stems(tag).every((w) => stems(label).includes(w))) ok(`the form's "${role}" option ("${label}") names the tag the site shows (${tag})`);
+      else fail(`the form's "${role}" option reads "${label}" but the site is tagged ${tag}`);
     }
-    if (opts[""] != null) ok(`the form keeps an unsorted choice ("${opts[""]}"), shown under ${titleOf("")}`);
-    else fail("the camping form lost its unsorted / not-sure role option");
+    if (opts[""] != null && campRoleLabel("") === "") ok(`the form keeps an unsorted choice ("${opts[""]}"), which shows no tag`);
+    else fail("the camping form lost its unsorted / not-sure role option, or an unsorted site claims a use");
   }
 }
 
