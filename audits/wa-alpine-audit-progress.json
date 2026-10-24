@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_ruby_mountain_happy_creek",
+  "last_processed_id": "wa_se_ridge_aka_shield_wall",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -8943,6 +8943,24 @@
       "flagged_for_human_review": 2,
       "clean": 5,
       "note": "1 fix (wa_rock_mountain_west_route's data_quality note cited 6,856 ft while its own high_point_ft holds 6,852 ft, which matches mountaineers.org exactly -- fixed the note). Plus two area-row elevation fixes found while checking parent peaks: Remmel Mountain's area row stored 8688 ft against its own blurb and all sources (8685 ft) -- fixed; Ruby Mountain's area row stored 7426 ft, matching no source -- fixed to 7412 ft (Wikipedia/PeakVisor NAVD88), leaving the route's own 7408 ft (WTA/trip-report figure) alone as normal cross-source spread. Flagged for human review: wa_red_mountain_snoqualmie_west_ridge's fa field is truncated mid-word ('...Rob-') and the full text could not be found online; wa_ridge_traverse_from_east_fury's high_point_ft (8322) doesn't closely match either Mount Fury summit under the current 2022 survey (West 8305+-10, East 8356+-8). Also noted: batch 448's log said pass 7 would skip straight to wa_remmel_mountain_nw_ridge, missing wa_red_mountain_snoqualmie_west_ridge, which was in scope and sorts earlier -- picked it up this batch rather than carrying the gap forward."
+    },
+    {
+      "batch_number": 450,
+      "date": "2026-10-24",
+      "route_ids": [
+        "wa_ruby_mountain_northwest_ridge",
+        "wa_ruby_mountain_south_ridge",
+        "wa_ruth_icy_traverse",
+        "wa_ruth_mountain_south_slopes",
+        "wa_sahale_mountain_r1",
+        "wa_sahale_mountain_sahale_glacier",
+        "wa_scarface_3",
+        "wa_se_ridge_aka_shield_wall"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 0,
+      "clean": 6,
+      "note": "2 fixes: wa_ruby_mountain_northwest_ridge and wa_ruby_mountain_south_ridge both store a \"Ruby Mountain summit\" waypoint with elev/elevFt 7426 ft, contradicting each route's own high_point_ft (7408 ft) -- 7426 ft is the exact stale area-row value batch 449 already corrected to 7412 ft, so the waypoints were clearly populated from the same bad figure; fixed both to 7408 ft to match each route's own high_point_ft. No confirmed errors on the other 6 routes -- wa_ruth_icy_traverse and wa_ruth_mountain_south_slopes both store 7115 ft for Ruth Mountain, matching Wikipedia/PeakVisor, with Icy Peak independently lower (~7053-7073 ft) so Ruth as the stored high point is consistent; wa_sahale_mountain_r1 and wa_sahale_mountain_sahale_glacier both store 8680 ft for Sahale Mountain matching Wikipedia/SummitPost, and the Sahale Glacier route's FA (Aug 1897, Charlton/Sylvester) is corroborated; wa_scarface_3 (Colchuck Balanced Rock) is independently confirmed via Mountain Project/theCrag/Outdooractive and a CascadeClimbers.com trip report whose title matches the stored FA date (8/15/2010) exactly -- FA party initials unconfirmed but not contradicted, and Mountain Project itself lists this route's FA as unknown; wa_se_ridge_aka_shield_wall (Mount Washington, Olympics) has its grade/commitment/pitch-count confirmed via Mountaineers.org and Mountain Project. Bonus item flagged for human review (parent-area blurb, not one of these 8 routes): Mount Washington's area blurb claims it is the third-highest peak in Mason County -- the two named peaks above it check out, but no source gives a complete ranked list to confirm nothing else falls in between, and PeakVisor separately calls it the county's most prominent (not highest) peak -- left for a human to check against a full ranked list."
     }
   ]
 }

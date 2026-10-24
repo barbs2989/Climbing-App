@@ -34063,3 +34063,57 @@ standing rule.
 
 Pass 7 continues next run after `wa_ruby_mountain_happy_creek` (next candidate in id
 order: `wa_ruby_mountain_northwest_ridge`).
+
+---
+
+## 2026-10-24 — Pass 7, Batch 450
+
+Eight routes: `wa_ruby_mountain_northwest_ridge`, `wa_ruby_mountain_south_ridge`,
+`wa_ruth_icy_traverse`, `wa_ruth_mountain_south_slopes`, `wa_sahale_mountain_r1`,
+`wa_sahale_mountain_sahale_glacier`, `wa_scarface_3`, `wa_se_ridge_aka_shield_wall`. 2 fixes,
+0 flagged on the routes themselves, 6 clean — plus one area-blurb item flagged below.
+
+Fixed (see SQL file): both Ruby Mountain routes (`_northwest_ridge` and `_south_ridge`)
+store a `waypoints` entry for "Ruby Mountain summit" with `elev`/`elevFt` = 7426 ft, while
+each route's own `high_point_ft` field holds 7408 ft — a within-row contradiction about the
+same summit. 7426 ft is exactly the stale area-row elevation batch 449 already disproved
+and corrected to 7412 ft, so the waypoints were clearly populated from that same bad figure.
+Resolved both to 7408 ft, matching each route's own (independently WTA/trip-report-sourced)
+`high_point_ft`, rather than introducing a third number.
+
+Verified clean: `wa_ruth_icy_traverse` and `wa_ruth_mountain_south_slopes` both store
+`high_point_ft` 7115 ft for Ruth Mountain, matching Wikipedia/PeakVisor exactly; Icy Peak
+(the traverse's other summit) is independently given as lower (~7053-7073 ft across
+sources), so Ruth being the stored high point for both routes is consistent, not
+contradictory. `wa_sahale_mountain_r1` and `wa_sahale_mountain_sahale_glacier` both store
+8680 ft for Sahale Mountain, matching Wikipedia/SummitPost exactly; the Sahale Glacier
+route's FA (August 1897, John Charlton and Albert H. Sylvester) is corroborated via
+Sylvester's own documented USGS survey work in the area that same period. `wa_scarface_3`
+(Colchuck Balanced Rock, 8240 ft area elevation matching Wikipedia): the route itself —
+grade 5.10+, III, 6 pitches, ~1200 ft/366 m — is independently confirmed via Mountain
+Project, theCrag and Outdooractive, and a CascadeClimbers.com trip report titled "Colchuck
+Balanced Rock - Scarface (III, 5.10+) 8/15/2010" matches the stored FA date exactly; the
+specific FA names (Colin B./Nate F.) could not be independently confirmed from search
+snippets but are not contradicted by anything, and Mountain Project itself lists this
+route's FA as unknown, consistent with an obscure trip report — not flagged.
+`wa_se_ridge_aka_shield_wall` (Mount Washington, Olympics, 6260 ft): the route's own grade
+(5.7), commitment (Grade III) and 13-pitch count are confirmed via Mountaineers.org and
+Mountain Project; no source gives a first-ascent party for this specific route, but the
+row doesn't claim one either (the `fa` field is empty), so there is nothing to contradict.
+
+Flagged for human review (parent-area context, not one of this batch's 8 routes): Mount
+Washington's area blurb claims it is "the third-highest peak in Mason County (behind Mount
+Stone, 6,612 ft, and Mount Skokomish, 6,434 ft)". Mount Stone and Mount Skokomish's
+elevations and their #1/#2 ranking both check out independently (Wikipedia/PeakVisor), but
+no source found gives a complete ranked list of Mason County peaks to confirm nothing else
+falls between 6,260 ft and 6,434 ft — and PeakVisor separately describes Mount Washington
+as the county's *most prominent* peak, a different (and not obviously compatible) kind of
+superlative from "third-highest by elevation." Worth a human check against a full ranked
+list (e.g. Peakbagger) before trusting the specific ordinal claim.
+
+`last_processed_id` advances to `wa_se_ridge_aka_shield_wall`. No `.env`/`.env.local`
+present at run start (fresh clone); reads went directly against the REST API with the
+read-only anon key supplied in the task prompt, and the proposed SQL file was pre-flighted
+with `check:sql` using that same anon key (no write attempted or needed). Every finding
+rests on 2+ independent sources where more than one was available; the one ambiguous item
+was left to a human rather than guessed, per the audit's standing rule.
