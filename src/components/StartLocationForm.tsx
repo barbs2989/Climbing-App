@@ -1,5 +1,6 @@
 import { useState, type CSSProperties } from "react";
-import { C, SUB_LABEL, WaypointMapPicker } from "../../ClimbMatchCore.jsx";
+import {C, SUB_LABEL} from "../../ClimbMatchCore.jsx";
+import WaypointMapPicker from "./WaypointMapPicker.tsx";
 
 /** What the form submits: the pin, and the optional photo (an object URL) and identifying note. */
 export interface StartLocation {
