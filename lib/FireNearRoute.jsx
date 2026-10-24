@@ -98,10 +98,11 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
   // how close the nearest is — so the forecast above and the hazards below stay in view. The tone
   // still colours the closed row, so an uncontained fire close by reads red without opening it.
   // The body is HIDDEN, not unmounted, as AccessFold does: its caveats stay in the markup.
+  // 24px above and below is the route page's FOLD_GAP: a closed dropdown sits apart from the cards around it.
   const nearest = fires.reduce((m, f) => Math.min(m, f.originMi), Infinity);
   const summary = fires.length + " fire" + (fires.length === 1 ? "" : "s") + " · nearest " + uDistMi(Math.round(nearest * 10) / 10);
   return (
-    <div style={{ ...wrap, borderColor: tone.c, background: tone.bg }}>
+    <div style={{ ...wrap, borderColor: tone.c, background: tone.bg, margin: "24px 0" }}>
       <div role="heading" aria-level={2} style={{ margin: 0 }}>
         <button onClick={() => setOpen(!open)} aria-expanded={open} style={{ display: "flex", alignItems: "center", gap: 8, width: "100%", padding: 0, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}>
           <span style={{ flex: 1, minWidth: 0 }}>
