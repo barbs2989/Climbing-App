@@ -258,6 +258,7 @@ Newest first. Keep about 15 lines; older entries live in the PRs and the commit 
 - **#2395** Crews: vouching for past crews, honest Archive/Clear, serialised gear writes (0291).
 - **#2390** Conditions audit: visibility units, DST-aware clocks, chart pinning, touch targets.
 - **#2352** Alpine conditions: fog hours, snowfall and snow level, stream flow, report freshness.
+- **#2336** Plan card is Full Trip Time; glaciated alpine routes keep glacier conditions.
 
 ## Keeping this current
 
