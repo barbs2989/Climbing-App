@@ -2721,7 +2721,7 @@ function zoomTopoView(b,z,px,py,W,H){
 }
 /* Exported for lib/LogAscent.jsx, which lets a climber draw a topo while logging the climb (lazy import, so the
    log form does not pull this file into its chunk until the control is tapped). */
-export function TopoDrawer({initial,onCancel,onSubmit}){
+export function TopoDrawer({initial,onCancel,onSubmit,dirtyRef}){
   // lines[0] is the route line; lines[1..] are its variations.
   const [lines,setLines]=useState(function(){return [((initial&&initial.points)||[]).slice()].concat(((initial&&initial.variants)||[]).map(function(v){return v.slice();}));});
   const [act,setAct]=useState(0);         // which line a tap extends
@@ -2744,6 +2744,13 @@ export function TopoDrawer({initial,onCancel,onSubmit}){
   const focusPin=useRef(null);            // a new Grade marker's input takes focus, to type the grade
   const photo=initial&&initial.photoUrl;
   const points=lines[0];
+  /* UNSAVED WORK IS ASKED ABOUT, NOT DROPPED (topo audit, 2026-10-24). Cancel, the sheet's ✕ and a
+     stray tap on the dark backdrop all threw away every point and marker without a word — minutes of
+     zoomed-in placing gone to one mis-tap. The drawing as it first opened is the baseline; anything
+     different is unsaved, and dirtyRef lets the sheet around the editor ask before closing too. */
+  const snapNow=JSON.stringify([lines,varLabels,pins,label]);const [snap0]=useState(snapNow);const dirty=snapNow!==snap0;
+  useEffect(function(){if(dirtyRef)dirtyRef.current=dirty;},[dirty,dirtyRef]);
+  const cancel=function(){if(!dirty)return onCancel();askConfirm({title:"Discard this drawing?",body:"The points and markers you placed are not saved.",confirmLabel:"Discard"}).then(function(ok){if(ok)onCancel();});};
 
   // A wheel zooms about the cursor on a desktop. Registered by hand: React's onWheel is passive,
   // and without preventDefault the sheet behind scrolls as well.
@@ -2976,7 +2983,7 @@ export function TopoDrawer({initial,onCancel,onSubmit}){
     {/* Two topos of one wall used to be "Latest" and "Alt 1": nothing said which drew the direct start and which the ramp. Optional, 60 characters, stored in topo_lines.label, shown on the thumbnail and as the line's chip in the viewer. */}
     <input aria-label="Name this line (optional)" value={label} maxLength={60} onChange={function(e){setLabel(e.target.value);}} placeholder="Name this line (optional) — e.g. direct start, left-hand variation" style={{width:"100%",boxSizing:"border-box",padding:"8px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:13,outline:"none",marginBottom:10}}/>
     <div style={{display:"flex",gap:12}}>
-      <button onClick={onCancel} style={{flex:1,padding:9,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
+      <button onClick={cancel} style={{flex:1,padding:9,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
       <button disabled={!canSave} onClick={function(){onSubmit({points:points,variants:variants,variantLabels:keptVar.map(function(o){return o.t;}),pins:cleanPins(),label:label.trim()||null});}} style={{flex:2,padding:9,background:canSave?C.blueSolid:C.border,color:"#fff",border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Save topo</button>
     </div>
   </div>;
@@ -3111,7 +3118,9 @@ export function TopoSection({route}){
 
   const photos=USE_DB
     ?(dbTopos.data||[]).map(function(t){var _u=topoPhotoUrl(t.storage_path);return {id:t.id,url:_u,db:true,storagePath:t.storage_path,alt:t.alt||null,caption:t.caption||null,mine:!!(_topoUid&&t.created_by===_topoUid),saveEntry:{url:_u,kind:"topo",areaId:areaId,routeId:route.id,row:t},
-        lines:(t.topo_lines||[]).filter(function(l){return l.route_id===route.id;}).slice().sort(function(a,b){return (b.created_at||"").localeCompare(a.created_at||"");})};})
+        lines:(t.topo_lines||[]).filter(function(l){return l.route_id===route.id;}).slice().sort(function(a,b){return (b.created_at||"").localeCompare(a.created_at||"");}).map(function(l){return Object.assign({},l,{mine:!!(_topoUid&&l.created_by===_topoUid)});}),
+        /* Lines on this photo by anyone else, for ANY route: deleting the photo would take theirs with it (cascade). */
+        othersDrew:(t.topo_lines||[]).some(function(l){return l.created_by!==_topoUid;})};})
     :localPhotos.map(function(p){return {id:p.id,url:p.url,db:false,
         lines:(localLines[p.id]||[]).slice().sort(function(a,b){return b.ts-a.ts;})};});
 
@@ -3140,7 +3149,11 @@ export function TopoSection({route}){
   };
   const submitLine=function(photo,data){
     setErr(null);
-    if(photo.db){
+    if(photo.db&&photo.editLine){
+      updateTopoLine(photo.editLine.id,{points:data.points,pins:data.pins,label:data.label||null,variants:data.variants||[],variant_labels:data.variantLabels||[]}).then(function(){
+        dbTopos.refetch();setDrawFor(null);
+      }).catch(function(e){setErr((e&&e.message)||"Couldn't save your changes.");});
+    } else if(photo.db){
       submitTopoLine(photo.id,route.id,data.points,data.pins,data.label||null,data.variants,data.variantLabels).then(function(){
         dbTopos.refetch();setDrawFor(null);
       }).catch(function(e){setErr((e&&e.message)||"Couldn't save that line.");});
@@ -3155,6 +3168,27 @@ export function TopoSection({route}){
   };
 
   const saveCaption=function(p,t){return updateTopoCaption(p.id,t).then(function(){return dbTopos.refetch();});};
+  /* YOUR OWN TOPO CAN BE FIXED OR TAKEN DOWN (topo audit, 2026-10-24). updateTopoLine, deleteTopoLine
+     and deleteTopoPhoto were written with their RLS (0026: own update / own delete) and never called, so
+     a misplaced dot meant drawing a second line beside the first forever, and a photo posted on the
+     wrong route could not come down. Mountain Project and 27 Crags both let the uploader edit and
+     delete their own; like theirs, a photo other climbers have drawn on stays (it is theirs too) —
+     so its uploader cannot take it down. */
+  const drawDirty=useRef(false);
+  const closeDraw=function(){if(!drawDirty.current)return setDrawFor(null);askConfirm({title:"Discard this drawing?",body:"The points and markers you placed are not saved.",confirmLabel:"Discard"}).then(function(ok){if(ok){drawDirty.current=false;setDrawFor(null);}});};
+  const editLine=function(p,l){setViewerIdx(null);setDrawFor(Object.assign({},p,{editLine:l}));};
+  const removeLine=function(p,l){
+    return askConfirm({title:"Delete your line?",body:"Your line and its markers come off this photo for everyone. The photo stays.",confirmLabel:"Delete line"}).then(function(ok){
+      if(!ok)return false;setErr(null);
+      return deleteTopoLine(l.id).then(function(){return dbTopos.refetch();}).then(function(){return true;}).catch(function(e){setErr((e&&e.message)||"Couldn't delete that line.");return false;});
+    });
+  };
+  const removePhoto=function(p){
+    return askConfirm({title:"Delete this topo photo?",body:"The photo, and any line you drew on it, come down for everyone.",confirmLabel:"Delete photo"}).then(function(ok){
+      if(!ok)return false;setErr(null);
+      return deleteTopoPhoto(p.id,p.storagePath).then(function(){setViewerIdx(null);return dbTopos.refetch();}).then(function(){return true;}).catch(function(e){setErr((e&&e.message)||"Couldn't delete that photo.");return false;});
+    });
+  };
 
   if(USE_DB&&dbTopos.isLoading)return <div style={{marginBottom:ROUTE_GAP}}><SL>TOPO</SL><div style={{background:C.card,border:"1px solid "+C.border,borderRadius:13,padding:20,textAlign:"center",color:C.textMuted,fontSize:12.5}}>Loading topo photos…</div></div>;
 
@@ -3179,16 +3213,16 @@ export function TopoSection({route}){
     </div>}
     {toposSavedOnly?<div style={{fontSize:11.5,color:C.amber,lineHeight:1.45,marginTop:8}}>{"No signal — showing the "+photos.length+" topo"+(photos.length!==1?"s":"")+" you saved on this device. Any others need a connection."}</div>:null}
     {photos.some(function(p){return p.lines[0]&&((p.lines[0].pins&&p.lines[0].pins.length)||(p.lines[0].variants&&p.lines[0].variants.length));})?<TopoPinLegend style={{marginTop:8}}/>:null}
-    {(viewerIdx!=null&&photos[viewerIdx])?<TopoPhotoModal photo={photos[viewerIdx]} onClose={function(){setViewerIdx(null);}} onDraw={function(p){setDrawFor(p);}} onDescribe={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?function(p,d){return updateTopoAlt(p.id,d).then(function(){return dbTopos.refetch();});}:undefined} onCaption={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?saveCaption:undefined}/>:null}
-    {drawFor?createPortal(<div onClick={function(){setDrawFor(null);}} role="dialog" aria-modal="true" aria-label="Draw this route's line" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.85)",zIndex:9500,display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
+    {(viewerIdx!=null&&photos[viewerIdx])?<TopoPhotoModal photo={photos[viewerIdx]} onClose={function(){setViewerIdx(null);}} onDraw={function(p){setDrawFor(p);}} onDescribe={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?function(p,d){return updateTopoAlt(p.id,d).then(function(){return dbTopos.refetch();});}:undefined} onCaption={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?saveCaption:undefined} onEditLine={USE_DB?editLine:undefined} onDeleteLine={USE_DB?removeLine:undefined} onDeletePhoto={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?removePhoto:undefined}/>:null}
+    {drawFor?createPortal(<div onClick={closeDraw} role="dialog" aria-modal="true" aria-label={drawFor.editLine?"Edit your line":"Draw this route's line"} style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.85)",zIndex:9500,display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
       <div onClick={function(e){e.stopPropagation();}} style={{background:C.bg,borderTopLeftRadius:18,borderTopRightRadius:18,width:"100%",maxWidth:520,padding:"16px 16px 22px",border:"1px solid "+C.border,maxHeight:"92vh",overflowY:"auto",overscrollBehavior:"contain",boxSizing:"border-box"}}>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
-          <div style={{fontSize:14,fontWeight:800}}>Draw this route's line</div>
-          <button onClick={function(){setDrawFor(null);}} style={POP_CLOSE} aria-label="Close">✕</button>
+          <div style={{fontSize:14,fontWeight:800}}>{drawFor.editLine?"Edit your line":"Draw this route's line"}</div>
+          <button onClick={closeDraw} style={POP_CLOSE} aria-label="Close">✕</button>
         </div>
         {/* The photo was just posted: ask for its caption here, while the climber still remembers why they took it. Saved on its own, so cancelling the drawing keeps it. */}
         {(drawFor.fresh&&drawFor.db)?<TopoCaptionBox key={drawFor.id} initial={null} onSave={function(t){return saveCaption(drawFor,t);}} style={{marginBottom:12}}/>:null}
-        <TopoDrawer initial={{photoUrl:drawFor.url}} onCancel={function(){setDrawFor(null);}} onSubmit={function(data){submitLine(drawFor,data);}}/>
+        <TopoDrawer key={drawFor.id+":"+(drawFor.editLine?drawFor.editLine.id:"new")} dirtyRef={drawDirty} initial={drawFor.editLine?{photoUrl:drawFor.url,points:drawFor.editLine.points,variants:drawFor.editLine.variants||[],variantLabels:drawFor.editLine.variant_labels||[],pins:drawFor.editLine.pins||[],label:drawFor.editLine.label||""}:{photoUrl:drawFor.url}} onCancel={function(){drawDirty.current=false;setDrawFor(null);}} onSubmit={function(data){drawDirty.current=false;submitLine(drawFor,data);}}/>
       </div>
     </div>,document.body):null}
   </div>;
@@ -3250,9 +3284,10 @@ function TopoCaptionBox({initial,onSave,style}){
     </div>
   </div>;
 }
-function TopoPhotoModal({photo,onClose,onDraw,onDescribe,onCaption}){
+function TopoPhotoModal({photo,onClose,onDraw,onDescribe,onCaption,onEditLine,onDeleteLine,onDeletePhoto}){
   const [altIdx,setAltIdx]=useState(0);const [editCap,setEditCap]=useState(false);
-  const active=photo.lines[altIdx]||null;
+  const active=photo.lines[altIdx]||null;const [delBusy,setDelBusy]=useState(false);
+  const del=function(fn){if(delBusy)return;setDelBusy(true);fn().then(function(ok){setDelBusy(false);if(ok)setAltIdx(0);});};
   return createPortal(<div onClick={onClose} role="dialog" aria-modal="true" aria-label="Topo" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.9)",zIndex:9400,display:"flex",alignItems:"center",justifyContent:"center",padding:16}}>
     <div onClick={function(e){e.stopPropagation();}} style={{background:C.bg,borderRadius:16,width:"100%",maxWidth:520,border:"1px solid "+C.border,overflowX:"hidden",overflowY:"auto",maxHeight:"92vh",overscrollBehavior:"contain"}}>
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"12px 14px",borderBottom:"1px solid "+C.border}}>
@@ -3281,7 +3316,14 @@ function TopoPhotoModal({photo,onClose,onDraw,onDescribe,onCaption}){
         {!photo.lines.length?<div style={{fontSize:12.5,color:C.textMuted,marginBottom:10}}>No one has drawn this route's line on this photo yet.</div>:null}
         {photo.lines.length>1?<div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:10}}>{photo.lines.map(function(l,i){return <button key={l.id||i} onClick={function(){setAltIdx(i);}} aria-current={i===altIdx?"true":undefined} style={{...CHIP,border:"1px solid "+(i===altIdx?C.blue:C.border),background:i===altIdx?C.blueBg:C.surface,color:i===altIdx?C.blue:C.textSub}}>{l.label||(i===0?"Latest":"Alt "+i)}</button>;})}</div>:null}
         {(active&&active.label&&photo.lines.length<2)?<div style={{fontSize:12.5,color:C.textSub,marginBottom:10}}>{active.label}</div>:null}
-        <button onClick={function(){onDraw(photo);}} style={{...BTN,width:"100%",border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue}}>{photo.lines.length?"Draw your own line":"Draw this route's line"}</button>
+        {(active&&active.mine&&onEditLine)?<div style={{display:"flex",gap:8,marginBottom:8}}>
+          <button onClick={function(){onEditLine(photo,active);}} style={{...BTN,flex:2,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue}}>Edit your line</button>
+          {onDeleteLine?<button onClick={function(){del(function(){return onDeleteLine(photo,active);});}} disabled={delBusy} style={{...BTN,flex:1,border:"1px solid "+C.red+"66",background:C.surface,color:C.red}}>{delBusy?"Deleting…":"Delete line"}</button>:null}
+        </div>:null}
+        {(active&&active.mine&&onEditLine)?null:<button onClick={function(){onDraw(photo);}} style={{...BTN,width:"100%",border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue}}>{photo.lines.length?"Draw your own line":"Draw this route's line"}</button>}
+        {onDeletePhoto?(photo.othersDrew
+          ?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:10}}>Other climbers have drawn their lines on this photo, so it stays up for them.</div>
+          :<button onClick={function(){del(function(){return onDeletePhoto(photo);});}} disabled={delBusy} style={{background:"none",border:"none",padding:"12px 0 0",color:C.red,fontSize:12.5,fontWeight:700,cursor:delBusy?"default":"pointer"}}>{delBusy?"Deleting…":"Delete this photo"}</button>):null}
       </div>
     </div>
   </div>,document.body);
