@@ -1694,7 +1694,7 @@ export function ApproachVariants({route,onEdit,onEditProse}){
         {seasonPill?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{seasonPill}</span>:null}
       </div>:null}
       {facts.length||crossing?<div style={{display:"flex",flexWrap:"wrap",gap:10,alignItems:"center",marginBottom:7}}>{facts.map((f,fi)=><span key={fi} style={{fontSize:11.5,color:C.textSub}}>{f}</span>)}{crossing?<span style={{display:"inline-flex",alignItems:"center",gap:4,fontSize:11,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:20,padding:"1px 8px"}}><ActionIcon name="alert" size={11} color={C.amber}/>Stream crossing</span>:null}</div>:null}
-      {seasonPill&&seasonPill!==seasonFull?<p style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:"0 0 7px"}}>{seasonFull}</p>:null}
+      {seasonPill&&seasonPill!==seasonTidy(seasonFull)?<p style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:"0 0 7px"}}>{seasonFull}</p>:null}
       {v.notes?splitParagraphs(v.notes).map((p,pi)=><p key={pi} style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:pi===0?"0 0 7px":"7px 0 0"}}>{p}</p>):null}
       {/* The full account renders IN FULL, never behind a "read more": check:field-renders proves
           this column reaches a screen by server-rendering the page, and a collapsed paragraph is
@@ -3031,7 +3031,7 @@ function ItineraryView({route,activity,onSeeReports,onContribute,myItin,onSaveMy
   return <div>
     <SL>Trip plan</SL>
     {(days.length||parsed.multi||proseIt)?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:9}}>A <b style={{color:C.textSub}}>recommended</b> itinerary based on how parties commonly climb this route — not the only way to do it. Faster/slower parties, different camps, or a different order are all normal.</div>:null}
-    <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:8}}>{chip(conf+" confidence",confC)}{repN?<span {...clickable(()=>onSeeReports&&onSeeReports())} style={{cursor:"pointer"}} title="Jump to trip reports">{chip(repN+(repN===1?" trip report":" trip reports")+" →",C.blue)}</span>:chip("0 trip reports",C.textMuted)}{(route.season&&!["trad","sport"].includes(catOf(route)))?chip("Typical season: "+seasonShort(route.season),C.teal):null}</div>{(route.season&&!["trad","sport"].includes(catOf(route))&&seasonShort(route.season)!==String(route.season).trim())?<div style={{fontSize:12,color:C.textSub,margin:"6px 0 0",lineHeight:1.5}}>{route.season}</div>:null}{(route.bestSeason&&!route.seasonalGuidance&&!["trad","sport"].includes(catOf(route)))?<div style={{fontSize:12,color:C.textSub,margin:"6px 0 0",lineHeight:1.5}}><b style={{color:C.teal}}>When to go: </b>{route.bestSeason}</div>:null}{(route.seasonalGuidance&&!["trad","sport"].includes(catOf(route)))?<div style={{fontSize:12,color:C.textMuted,margin:"6px 0 0",lineHeight:1.5,fontStyle:"italic"}}>Full month-by-month seasonal guidance is further down this tab.</div>:null}
+    <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:8}}>{chip(conf+" confidence",confC)}{repN?<span {...clickable(()=>onSeeReports&&onSeeReports())} style={{cursor:"pointer"}} title="Jump to trip reports">{chip(repN+(repN===1?" trip report":" trip reports")+" →",C.blue)}</span>:chip("0 trip reports",C.textMuted)}{(route.season&&!["trad","sport"].includes(catOf(route)))?chip("Typical season: "+seasonShort(route.season),C.teal):null}</div>{(route.season&&!["trad","sport"].includes(catOf(route))&&seasonShort(route.season)!==seasonTidy(route.season))?<div style={{fontSize:12,color:C.textSub,margin:"6px 0 0",lineHeight:1.5}}>{route.season}</div>:null}{(route.bestSeason&&!route.seasonalGuidance&&!["trad","sport"].includes(catOf(route)))?<div style={{fontSize:12,color:C.textSub,margin:"6px 0 0",lineHeight:1.5}}><b style={{color:C.teal}}>When to go: </b>{route.bestSeason}</div>:null}{(route.seasonalGuidance&&!["trad","sport"].includes(catOf(route)))?<div style={{fontSize:12,color:C.textMuted,margin:"6px 0 0",lineHeight:1.5,fontStyle:"italic"}}>Full month-by-month seasonal guidance is further down this tab.</div>:null}
     {it&&it.cal?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,marginBottom:4}}>{it.cal}</div>:null}
     {it&&it.totalNote?<div style={{fontSize:12,color:C.textMuted,marginBottom:12}}>{it.totalNote}</div>:<div style={{marginBottom:12}}/>}
     {/* Where the hours actually came from. Populated on 544 routes and read by nothing until
@@ -4046,7 +4046,26 @@ const SEASON_WINDOW_WIDE_RE=new RegExp("(?:"+_QUAL+")?"+_WHEN+_SEP+"(?:"+_QUAL+"
    full here can never trip that guard.
    The last resort now breaks on a WORD boundary: "Roughly January through the…" reads as a
    sentence that stops, where "Roughly January through the e…" reads as a bug. */
-export function seasonShort(s,max){const lim=typeof max==="number"?max:30;if(!s)return "";s=String(s).trim().replace(/\s+/g," ");if(s.length<=lim)return s;const m=s.match(SEASON_WINDOW_RE);if(m)return m[0];const cut=s.split(/[;.(]/)[0].trim();if(cut.length<=lim)return cut;const w2=s.match(SEASON_WINDOW_WIDE_RE);if(w2)return w2[0];const w=cut.lastIndexOf(" ",lim-1);const keep=w>Math.floor(lim/2)?cut.slice(0,w):cut.slice(0,lim-1);return keep.replace(/[\s,;-]+$/,"")+"…";}
+/* ONE spelling of a window. The header strap printed the same thing six ways ("Jul-Sep", "Jul–Sep",
+   "July-September", "Late June - September", "July through October", "Mid-July to September"), so
+   two routes side by side read as if they disagreed. Months are cut to three letters, the joint
+   between two months is a plain hyphen, a qualifier is its own word ("Mid Jul-Sep"). Only the
+   SPELLING changes: no window is widened, narrowed or invented. Only a month PAIR is respelled, so a
+   month in running prose ("Best in June while…") stays a word, and months are matched
+   case-sensitively so the verb "may" is never read as one. */
+const _MON_ABBR={january:"Jan",february:"Feb",march:"Mar",april:"Apr",june:"Jun",july:"Jul",august:"Aug",sept:"Sep",september:"Sep",october:"Oct",november:"Nov",december:"Dec"};
+const _MONF="Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|June?|July?|Aug(?:ust)?|Sept?(?:ember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?";
+const _QUALF="(?:[Ee]arly|[Mm]id|[Ll]ate)[- ]?";
+const SEASON_PAIR_RE=new RegExp("\\b("+_QUALF+")?("+_MONF+")\\b\\s*(?:[-\u2013\u2014]|to|through|thru)\\s*("+_QUALF+")?("+_MONF+")\\b","g");
+function _monAbbr(m){const k=m.toLowerCase();return _MON_ABBR[k]||m;}
+function _qualTidy(q){return q?q.replace(/[- ]$/,"")+" ":"";}
+function _cap(s){return s?s.charAt(0).toUpperCase()+s.slice(1):s;}
+export function seasonTidy(s){s=String(s||"").trim().replace(/\s+/g," ");if(!s)return "";s=s.replace(SEASON_PAIR_RE,function(_,q1,m1,q2,m2){return _qualTidy(q1)+_monAbbr(m1)+"-"+_qualTidy(q2)+_monAbbr(m2);});return _cap(s.replace(/\.$/,""));}
+/* A window the sentence tells you to AVOID is not the season. "good in cold weather; avoid May-Sep"
+   showed "May-Sep" in the header: the strap saying the opposite of the row (va_strawberry_fields,
+   2026-10-24). A window whose own clause negates it is skipped, and the next rung decides. */
+function seasonWin(s,re){const m=s.match(re);if(!m)return null;const pre=s.slice(0,m.index).split(/[;.]/).pop();return /\b(avoid|not|except|outside)\b/i.test(pre)?null:m[0];}
+export function seasonShort(s,max){const lim=typeof max==="number"?max:30;if(!s)return "";s=seasonTidy(s);if(s.length<=lim)return s;const m=seasonWin(s,SEASON_WINDOW_RE);if(m)return _cap(m);const cut=s.split(/[;.(]/)[0].trim();if(cut.length<=lim)return cut;const w2=seasonWin(s,SEASON_WINDOW_WIDE_RE);if(w2)return _cap(w2);const w=cut.lastIndexOf(" ",lim-1);const keep=w>Math.floor(lim/2)?cut.slice(0,w):cut.slice(0,lim-1);return keep.replace(/[\s,;-]+$/,"")+"…";}
 /* Route tags — list membership ("Fifty Classic Climbs", "Bulger"), what the climbing is
    like (from routes.features), and the derived warnings. Rendered from the SAME slugs
    Challenges and Lists match on, so a chip a climber can see is a chip a challenge can

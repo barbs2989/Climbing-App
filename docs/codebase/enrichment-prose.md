@@ -25,6 +25,13 @@ value, put the reasoning somewhere else.**
   `seasonShort()` in `RouteDetail.jsx` defends the header by matching a month range and
   falling back to a cut at `;`/`.`/`(` — but it is a *repair*, and it can only ever show
   less than what was written.
+  - **Audited 2026-10-24 over all 1,035 non-null values**: 14 still read wrong in the header —
+    9 cut mid-sentence (`"Summer only, and typically…"`), one that lost its end (`"Late May"` from
+    `"Late May (when the White River Road opens) through August"`) and one that INVERTED the row
+    (`"good in cold weather; avoid May-Sep"` showed `"May-Sep"`). The rows were rewritten to the
+    window (`scripts/oneoff/fix-header-season-windows.mjs`); `seasonShort` now skips a window its
+    own clause negates (`avoid`/`not`/`except`/`outside`), and `seasonTidy` spells every month
+    pair one way. Re-run the audit after any enrichment batch that writes `season`.
   - **Shortening is only half a fix; audit what the box ACTUALLY SAYS afterwards.** When the
     same defence was pointed at `approach_variants[].season`, **15% (132 of 885)** fell through
     to its last-resort truncation and read as nonsense — `"Roughly January through the e…"`,
