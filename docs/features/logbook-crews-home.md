@@ -157,12 +157,13 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 | `src/components/ItineraryEditor.tsx` | `ItineraryEditor` — the day-by-day itinerary editor (and its `TIME_PRESETS`), rendered by the crew plan, the log, add-a-climb and the route page |
 | `src/components/TrackedLists.tsx` | `TrackedLists` — YOUR LISTS on Home: the followed curated lists with the Logbook's progress for each (`useCuratedLists`) |
 | `src/components/CrewInviteModal.tsx` | `CrewInviteModal` — the Invite to crew sheet (who, which climb, an optional note); `ClimbMatch.jsx` opens it from a partner's profile |
+| `src/components/ConnectModal.tsx` | `ConnectModal` — the Connect sheet (who, the objectives you share, an optional note), portalled to `document.body`; `ClimbMatch.jsx` opens it from Stay in touch › + Add and a profile's Connect |
 | `src/components/TickList.tsx` | `TickList` — LOGGED CLIMBS on a profile: the climber's logs (plus seed history for a seed identity, `seedHistoryFor`), sortable and filterable by discipline; `FullProfile` renders it |
 | `lib/ListsManager.jsx` | Objectives/Saved UI, per-discipline filter chips (Alpine first; Mountaineering and Aid separate); a crag row's Find partners goes to the crag (`onFindPartnersInArea`) |
 | `lib/MyAscents.jsx`, `lib/LogAscent.jsx` (no visibility chooser since 2026-10-21: one line names the Settings choice; a new report sends `visibilityFromSetting` and `syncLogToDb` leaves the column out so 0272's insert trigger fills it from the stored setting), `lib/TripReport.jsx`, `lib/tripReportRow.js`, `lib/LogTagConfirmations.jsx` | Completed climbs, logging, trip reports, partner tag confirmation |
 | `lib/lists.js` | `LISTS`, `routeInList`, `listPeaks`, `peakClimbed`, `FIFTY_CLASSICS` (Challenges) |
 | `lib/CrewCard.jsx`, `lib/CrewGearList.jsx` | Crew card, gear list |
-| `lib/CrewFinder.jsx` | Crew discovery (`inMyAreas`: "My climbs & areas" also matches a crew at an area you listed; `initialArea` from the area page's "Crews here") |
+| `lib/CrewFinder.jsx` | Crew discovery (`inMyAreas`: "My climbs & areas" also matches a crew at, or inside, an area you listed or saved — `savedAreaIds`, signed in only; `initialArea` from the area page's "Crews here") |
 | `lib/StartCrewSheet.jsx` | `StartCrewSheet` — start a crew at an AREA: the place, the session's discipline, a day, a size, a note; hands `formCrew` a place |
 | `lib/FloatPlans.jsx`, `lib/GiveVouch.jsx`, `lib/Inbox.jsx`, `lib/NotifPanel.jsx` | Float plans, vouch sheet, messages, notifications |
 | `lib/SafetyTab.jsx` | `SafetyTab` — crew safety check: Team Alignment (server counts for a real crew) and the float plan |

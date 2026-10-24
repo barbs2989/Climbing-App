@@ -12,8 +12,12 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
   *Plan a session at <area>*, which opens the Start-a-crew sheet at that area with them invited. Alpine, mountaineering,
   scrambling, ice and mixed stay route-based through saved objectives. A crag-route objective is a tick list, not a match signal.
 - **Find someone by name** (DB only): a search box (min 2 chars) over real profiles.
-- **Search for partners by** five modes: **Near my areas** (the signed-in default — climbers whose listings overlap yours, most
-  in common first; with no listing, a one-tap "List me here" banner over the nearest-by-zip list), My Objectives (mountain
+- **Search for partners by** six modes: **Near my areas** (the signed-in default — climbers whose listings overlap yours, most
+  in common first; with no listing, a one-tap "List me here" banner over the nearest-by-zip list), **Saved areas** (signed in: the
+  areas you saved with Save area as the search — a chip row *All saved · N* plus one chip per saved crag, canyon, range or state;
+  climbers listed at, inside, or across a wider area containing any of them, listed in the most of them first; saved peaks are left
+  out, since alpine partners are found by route; at most the first 12 saved areas; with none saved it says how to save one; an
+  *Edit saved areas* link opens Logbook › Saved › Areas), My Objectives (mountain
   objectives only), By Area (listing-based; the region dropdown plus a search box for any crag, canyon or range inside the chosen
   state), By Route (a crag route redirects to its area), Anyone. By Route can pick from a search, your saved objectives,
   recently opened routes (the 3 newest; up to 2 more behind a "Show N more" toggle), crew routes, or a country > state > crag drill-down.
@@ -35,7 +39,9 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 2. Real lists, each a React Query hook in `lib/db.js`: `useProfileSearch(q)` (by name); `useDiscoverableProfiles(meId,24)` (browse, `PARTNER_COLS`);
    `usePartnersNear(origin,radiusMi)` -> RPC `partners_near`; `usePartnersByObjective(routeIds,areaId,origin,radiusMi)` -> RPC `partners_by_objective`
    (My Objectives / By Route; since 0303 it counts only objectives whose route is not crag-family or climbs a peak; with an origin it is also a radius search);
-   `usePartnersForMyAreas(origin,radiusMi)` -> RPC `partners_for_my_areas` (Near my areas); `usePartnersInArea(areaId,origin,radiusMi)` -> RPC `partners_in_area` (By Area, the area page, a crag route's Partners sub-tab).
+   `usePartnersForMyAreas(origin,radiusMi)` -> RPC `partners_for_my_areas` (Near my areas); `usePartnersInArea(areaId,origin,radiusMi)` -> RPC `partners_in_area` (By Area, the area page, a crag route's Partners sub-tab);
+   `usePartnersInAreas(areaIds,origin,radiusMi)` -> one `partners_in_area` read per saved area under the same query key, merged by climber with `via_area_ids` (Saved areas; `SAVED_SEARCH_LIM` = 12).
+   The saved list (`bookmarks`, owner-only `saved_areas`) never leaves the viewer: only climbers who LISTED themselves come back, so Saved areas exposes nothing a By Area search does not.
    Listings: `useMyPartnerAreas`, `savePartnerArea`, `removePartnerArea` (owner-only table `partner_areas`), `usePartnerAreaCounts` -> RPC `partner_area_counts`.
 3. Origin: `_nearBy` = `nearBy || (zip ? "zip" : "any")`. Zip comes from `useMyZip` (owner-only `profile_zips` joined to `zip_centroids`); "here" comes from `hereLoc`. Neither is stored.
 4. Per-row enrichment, one read each for every row on screen: `useMatchObjectivesOfUsers` (the objectives that still count for a match — RPC `match_objectives_of_users`), `usePartnerAreasOfUsers` (their listed areas — RPC `partner_areas_of_users`), `useVerifiedUsers` (verified tick, 0232), `usePartnerSignals` (level via RPC `partner_signals`, only fetched when Experience is active).
@@ -51,12 +57,12 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 ## 3. Files
 | File | What lives there |
 |---|---|
-| `lib/PartnerSearch.jsx` | `PartnerSearch` (modes incl. Near my areas and listing-based By Area, filters, near/objective/area/browse lists, example cards, route picker, `initialArea` deep link) |
+| `lib/PartnerSearch.jsx` | `PartnerSearch` (modes incl. Near my areas, Saved areas (`savedAreaIds`, `onOpenSaved`, `SAVED_SEARCH_LIM`) and listing-based By Area, filters, near/objective/area/browse lists, example cards, route picker, `initialArea` deep link) |
 | `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas screen (add/edit/remove a listing, `windowText`): a full-screen view in the 520px column, search first (pre-set to the home state via `useMyHomeStatePaths`), one-tap suggestions from the climber's own crag climbs and saved areas (`suggestIds`, a wall offered as its crag), date presets This weekend / Next weekend / Pick dates, an ended window flagged on its card |
 | `ClimbMatch.jsx` | `partnersMode` state and mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder`, `DbGuides`/`Guides`, `MyPartnerAreas`; `myAreasOpen`, `openMyAreas`, `onFindPartnersInArea`, `ME.matchObjectiveIds` |
 | `ClimbMatchCore.jsx` | `compat`, `compatParts`, `compatWhy`, `CMAX_*`/`COMPAT_*`, `CMAX_AREA`, `areaPathsOverlap`, `CRAG_CATS`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf`, `PARTNER_NUMBERS` (also read by `lib/Help.jsx`) |
 | `src/components/RealClimberRow.tsx` | `RealClimberRow` — the browse and name-search row for a REAL profile: match % or its refusal, ✓ Verified, the listed-areas line, pace and discipline chips |
-| `lib/db.js` | `PARTNER_COLS`, `useDiscoverableProfiles`, `useProfileSearch`, `useMyZip`, `usePartnersNear`, `usePartnersByObjective`, `usePartnerSignals`, `useMatchObjectivesOfUsers`, `useVerifiedUsers`, `useMyPartnerAreas`, `savePartnerArea`, `removePartnerArea`, `usePartnersInArea`, `usePartnersForMyAreas`, `usePartnerAreaCounts`, `usePartnerAreasOfUsers`, zip save/delete |
+| `lib/db.js` | `PARTNER_COLS`, `useDiscoverableProfiles`, `useProfileSearch`, `useMyZip`, `usePartnersNear`, `usePartnersByObjective`, `usePartnerSignals`, `useMatchObjectivesOfUsers`, `useVerifiedUsers`, `useMyPartnerAreas`, `savePartnerArea`, `removePartnerArea`, `usePartnersInArea`, `usePartnersInAreas`, `usePartnersForMyAreas`, `usePartnerAreaCounts`, `usePartnerAreasOfUsers`, zip save/delete |
 | `lib/EditProfileScreen.jsx` | Zip code field (owner-only, feeds the origin; a typed zip is checked live by `useZipCentroid`). The home city is a label only — it places nobody |
 | `supabase/migrations/0189, 0211, 0232, 0295, 0300, 0303, 0311` | RPCs and tables below |
 | `docs/codebase/algorithms.md` | `compat()` design history |
@@ -91,6 +97,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 (Matched by grep of `docs/guards/` for PartnerSearch/partners_near/match-percent; not individually re-run.)
 
 ## 7. Last significant change
+Find partners and crews by SAVED areas: Find partners has a *Saved areas* mode (chips: all saved areas, or one), and Join a crew's *My climbs & areas* also matches a session at, or inside, an area you saved ("★ In an area you saved").
 Partner-area reach stops at the state (0311): a listing at Utah no longer appears on every Utah crag; *Plan a session at <area>* on listed climbers' rows under Near my areas / By Area; the new-climber journey asserts friend removal against the Friends rows, not the whole page.
 Real climbers, batch 3: real friends carry their match objectives and ✓ (`useMatchObjectivesOfUsers` / `useVerifiedUsers` in App's connections hydration), so shared-objective counts, "You both want", the DM banner and suggested crews work for them; Leaderboards shows a real row's ✓; the signed-in header counts "example climbers" and the real-list copy says the filters narrow it.
 #2437 / #2444 / #2445 / #2446 (0300, 0303) — crag partners are found by AREA: `partner_areas` listings, the My listed areas sheet, Near my areas as the signed-in default,
