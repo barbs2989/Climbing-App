@@ -184,11 +184,7 @@ try {
         } else {
           const reqTab = pageB.getByRole("button", { name: /^Requests/ }).first();
           if (await reqTab.count()) { await reqTab.click(); await pageB.waitForTimeout(2000); }
-          // Friend requests arrive COLLAPSED: "FRIEND REQUESTS (1) … 1 friend request /
-          // Tap to review". The name only appears once expanded, so asserting on the name
-          // without expanding reports a working screen as broken.
-          const review = pageB.getByText(/Tap to review/i).first();
-          if (await review.count()) { await review.click(); await pageB.waitForTimeout(2000); }
+          // Friend requests render EXPANDED (they used to sit behind "Tap to review"), so the name is on screen.
           let seen = "";
           for (let i = 0; i < 12; i++) {
             await pageB.waitForTimeout(1500);
