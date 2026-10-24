@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Adding a route photo shows one box**: on the Photos tab, *+ Add photo* opens a sheet whose only box is *Choose from camera or library*; the *Describe this photo (optional)* text box that appeared under each picked photo is gone, and picked photos show as a row of thumbnails above *Add N photos*.
 - **Notifications: nothing covers a climber's photo**: the small crew/shield badge pinned on the corner of the avatar in the bell's rows is gone. The sentence beside the photo already says what happened. See `docs/features/logbook-crews-home.md`.
 - **Saved headings sit above their boxes**: on Logbook › Saved, *My itineraries* and the other four section headings now sit above their box, like the Objectives tab's headings, instead of inside it (owner note 2026-10-24).
 - **Partners: Only climbers of my gender**: a switch in partner search, offered once you have set your gender, shows only climbers who stated the same one; anyone who has not is left out, and a failed check shows nobody rather than everyone. See `docs/features/partners.md`.
