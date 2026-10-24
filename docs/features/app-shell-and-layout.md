@@ -16,6 +16,16 @@ room for side-panel ads later. The phone app keeps its own look.
     inline style (`align-items: flex-end` on a `role="dialog"` backdrop), so no sheet was edited and a
     new one is covered too. A short **action menu** — a group post's ⋯ and a comment's ⋯ — stays a
     bottom sheet, as iOS and Material draw one; it opts out with `data-sheet="menu"`.
+  - **...and so does every card popup** (owner 2026-10-24: "like an actual page on itself"): the ~20
+    popups that were a rounded card centred or pinned near the top over a dimmed page (Settings,
+    Feedback, Rate app, Privacy, About us, Data request, Form a crew, Year in review, a climber's profile,
+    Report climber, the résumé, Your contributions, Friends, Notifications, Share profile, both Log a
+    climb forms, Add a climb, Contribute info, a trip report, a shared list, the topo) open as a
+    full-height page in the 520px column, scrolling inside themselves, from a second rule beside the
+    first one (`align-items: center` / `flex-start` on a `role="dialog"` backdrop). Two kinds opt out
+    with `data-sheet`: the delete-account confirm (`"alert"` — Material keeps a small centred dialog
+    for an urgent yes/no) and the photo viewers (`"viewer"`, already a black full-screen lightbox).
+    The page behind is locked by `useDialogA11y` in `lib/dialogA11y.js`, as for every dialog.
 - **Desktop (1024px and wider) — the website shell:**
   - A full-width sticky **top bar** (64px): ☰ Menu at the far left, the ClimbMatch wordmark (→ Home), a
     search box for every climb and place (`/` jumps to it; arrow keys and Enter pick a hit), then
