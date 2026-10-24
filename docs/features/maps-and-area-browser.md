@@ -93,6 +93,10 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Near me / area map** (`NearMePanel`): Leaflet map of peak/crag area bubbles with route counts, list/map toggle (`ViewToggle`),
   Street / Satellite / Topo / snow base layers (`BaseLayerToggle`), a live location dot, and a place search box
   ("Go to a town, county or zip/postal code") covering the US and Canada (provinces, towns, US zip, Canadian postal codes).
+  Its zoom buttons sit BOTTOM-LEFT (the layer row owns top-left) and a **📍 Me** button sits on the map bottom-right, as on the route map.
+  **⤢ Full screen** is a real full-screen view (`position:fixed`, titled "Map · <area>", ✕ or Escape to close, the place search inside),
+  drawn like the route map's. It keeps the SAME Leaflet map: the map renders through a portal into a host div the panel owns, and only
+  that div moves, into `document.body` and back into the inline slot, so markers, zoom, pan and the dot survive the round trip (2026-10-23).
 - **Objectives panel** (`ObjectivesPanel`): wishlisted routes under the current area.
 - **Route page map** (`GPXMap`, `src/components/GPXMap.tsx`): track + waypoints + peak coordinate on the same base layers; a line
   drawn between waypoints carries a "sketch" caveat rather than posing as GPS.

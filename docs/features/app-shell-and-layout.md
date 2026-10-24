@@ -10,6 +10,12 @@ room for side-panel ads later. The phone app keeps its own look.
   Partners · Crews · Logbook · Ranks). The bar is soft: see-through with a blur, a faint shadow instead
   of a hard top line, and the selected tab marked only by its pill. Inside an open chat thread the bar
   steps aside for the composer.
+  - **Popups fill the screen** (owner 2026-10-23): every popup that used to slide up as a bottom sheet
+    (a form, a list, a share screen, a photo — 27 of them) opens full screen, clear of the notch and the
+    home bar, with its ✕ at the top. One rule in `index.html` does it, matched on the sheets' serialised
+    inline style (`align-items: flex-end` on a `role="dialog"` backdrop), so no sheet was edited and a
+    new one is covered too. A short **action menu** — a group post's ⋯ and a comment's ⋯ — stays a
+    bottom sheet, as iOS and Material draw one; it opts out with `data-sheet="menu"`.
 - **Desktop (1024px and wider) — the website shell:**
   - A full-width sticky **top bar** (64px): ☰ Menu at the far left, the ClimbMatch wordmark (→ Home), a
     search box for every climb and place (`/` jumps to it; arrow keys and Enter pick a hit), then
