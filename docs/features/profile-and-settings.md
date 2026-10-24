@@ -91,6 +91,14 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   statement pointed at Feedback, which sends nothing. Four flags rather than one, so each page is
   its own overlay the browser walks open by name. `closeSettings` closes the sheet and any open page when a row leaves Settings.
 
+- **The sign-in screen** (`lib/AuthModal.jsx`, `LoginScreen`): the live site opens on it (`LOGIN_FIRST` in `ClimbMatchCore.jsx`,
+  set by `VITE_LOGIN_FIRST` in deploy.yml alongside `VITE_DEMO_AUTOLOGIN`), unless this device already holds a real session.
+  *View as guest* (`onGuest`) enters the app with the sample content, remembered for the tab only (`markGuest`/`wasGuest` in
+  `lib/auth.js`), so the next visit opens on sign-in again. *Sign in with Apple* and *Continue with Google* always render, Apple
+  first at the same size (App Store guideline 4.8); a provider the Supabase project has not switched on yet
+  (`useOAuthProviders`) answers a tap with "coming soon" instead of redirecting. *Create account* asks for the email and the
+  password twice and refuses a mismatch before the request (paste is allowed in both).
+
 - **Badges (trophy case)**: the profile's overview opens with *Badges · N* -- what that climber earned (`useBadges` + `trophies`, see logbook-crews-home.md); nothing for another climber with none, a one-line nudge on your own.
 
 ## 2. How it works
