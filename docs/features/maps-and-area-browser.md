@@ -7,7 +7,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 
 ## 1. What it does today
 - **Area browser**: world > country > state > range > crag/peak drill-down. `StatePicker` is the entry; `AreaPage` shows one area
-  (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb? Add it*, `DbSuggestedClimbs`
+  (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb or area here?* (`AddHereFooter`: Add a climb · Add an area), `DbSuggestedClimbs`
   "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page).
   `DbAreaTree` / `DbAreaTreeNode` / `DbAreaTreeRoots` give an expandable tree to jump around.
 - **Area page sections** (0304, `lib/AreaPageSections.jsx`): on a crag, peak or wall — **ABOUT** (`areas.blurb`, or an invitation to write one),
@@ -52,7 +52,20 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   - New York, 2026-10-21: 406 walls ordered (3,780 matched, 68 anchored, 102 unplaced), 25 climbs added, 11 adds refused by the
     duplicate trigger (all on near-duplicate walls of ours, e.g. "The Guides' Wall" beside "The Guides' Wall (Madame G's)"),
     21 for review, 6 walls skipped (2 shared, 3 with no area of ours, 1 split).
-- **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker.
+  - **Whole-catalog run, 2026-10-21/22 — STOPPED by the owner partway through Utah** (it saturated the production
+    database: one REST write per route back to back, with retries piling on; the live app's reads 504'd). Done and
+    rewritten: New York, California, Oregon, New Hampshire, Colorado. Ordered, facts/prose pending: Quebec,
+    Kentucky. Partly ordered: Utah, Arizona, Washington, BC, Wyoming, Nevada, New Mexico, Idaho, Montana. Every
+    wall is logged under `_order/<state>.jsonl`, so a re-run skips finished walls (and a state whose walls are all
+    done skips its database load). Writes now wait `--pace-ms` (default 400) after each one and back off a minute
+    on failure; **do not restart without the owner's OK.**
+- **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker. Its Areas | Routes
+  toggle and box PIN under the top bar (`usePinnedBar`) while the list below scrolls, and let go at the list's end marker (2026-10-23).
+- **Add an area** (0360, `lib/AddArea.jsx`): *Add an area* under an area's list, or under the route finder's results, opens a sheet —
+  name, kind (crag/wall/boulder · peak · area), about, optional location — that lists catalog places already filed under that name
+  before it sends. It files a `contributions` row of kind `new_area` (area_id = the parent); nothing shows until the owner approves it
+  in Profile › Review › Area proposals (`AreaProposalQueue`), where `approve_new_area` inserts the `areas` row. Offered only where the
+  area holds no climbs itself (areas hold sub-areas OR climbs — Mountain Project's rule, and `trg_areas_leaf_xor`), and never on a country.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.
   The **Filters** sheet is a full-height screen (since 2026-10-21; it was an 88vh bottom sheet, which on iOS overflowed off the
@@ -80,6 +93,10 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Near me / area map** (`NearMePanel`): Leaflet map of peak/crag area bubbles with route counts, list/map toggle (`ViewToggle`),
   Street / Satellite / Topo / snow base layers (`BaseLayerToggle`), a live location dot, and a place search box
   ("Go to a town, county or zip/postal code") covering the US and Canada (provinces, towns, US zip, Canadian postal codes).
+  Its zoom buttons sit BOTTOM-LEFT (the layer row owns top-left) and a **📍 Me** button sits on the map bottom-right, as on the route map.
+  **⤢ Full screen** is a real full-screen view (`position:fixed`, titled "Map · <area>", ✕ or Escape to close, the place search inside),
+  drawn like the route map's. It keeps the SAME Leaflet map: the map renders through a portal into a host div the panel owns, and only
+  that div moves, into `document.body` and back into the inline slot, so markers, zoom, pan and the dot survive the round trip (2026-10-23).
 - **Objectives panel** (`ObjectivesPanel`): wishlisted routes under the current area.
 - **Route page map** (`GPXMap`, `src/components/GPXMap.tsx`): track + waypoints + peak coordinate on the same base layers; a line
   drawn between waypoints carries a "sketch" caveat rather than posing as GPS.
@@ -103,7 +120,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
    `NearMePanel` re-centres only on the first fix.
 8. Place search: `searchPlaces(q, bounds)` calls Nominatim with `countrycodes=us,ca&limit=5&dedupe=1`, `postalcode=` for a 5-digit zip else `q=`, and a `viewbox` from the map bounds.
    It returns `{ name, sub, lat, lng, bbox }`; `NearMePanel` flies the map there.
-9. Offline: `lib/offlineTiles.js` (`saveRouteMapOffline`, `routeTileKeys`, `OFFLINE_MAX_Z`) caches tiles along a route's way in (USGS layers); `offlineFallbackLayer` in the kit falls back to the cache.
+9. Offline: `lib/offlineTiles.js` (`saveRouteMapOffline`, `routeTileKeys`, `OFFLINE_MAX_Z`) caches tiles along a route's way in (USGS layers); `offlineFallbackLayer` in the kit falls back to the cache. The climber saves one with **⤓ Save map offline** under the route map (`SaveMapOffline` in `lib/SaveMapOffline.jsx`, via `packRouteWithSnapshot`: the tiles plus the route row, reports and corrections, so the page opens with no signal in a state never downloaded; never a forecast). It shows progress, then "✓ Map saved offline · N ago" with Remove, or the saved % and Retry. Every saved map is listed under **Manage areas › Saved route maps** (`SavedRouteMaps`), to open or remove. Proven live by `scripts/oneoff/probe-live-route-map-save.mjs`.
 
 ## 3. Files
 | File | Key symbols |
@@ -111,12 +128,14 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, `AreaPage`, `PartnersHereCard`, `PARTNER_CARD_TYPES`, `StatePicker`, `DbSearchSplit`, `RouteFinderPanel`, `NearMePanel`, `NearbyPeaks`, `ObjectivesPanel`, `DbAreaTree`, `DbSuggestedClimbs`, `SummitBriefing`, `nearbyPeaksBounds` |
 | `lib/mapKit.jsx` | `MAP_TILE_URLS`, `TILE_CREDIT`, `loadLeaflet`, `baseTileLayer`, `applyBaseLayer`, `BaseLayerToggle`, `ViewToggle`, `pinHtml`, `useFollowMe`, `acceptFix`, `searchPlaces` |
 | `lib/AreaPageSections.jsx` | `AboutCard`, `AreaFactsCard`, `ClimbsChart`, `GradeSpread`, `MonthStrip`, `PendingAreaEdits`, `bucketLabel` |
+| `lib/AddArea.jsx` | default export `AddArea` (mounted by App from its addAreaParent state in `ClimbMatch.jsx`) |
 | `lib/AreaSuggestFix.jsx` | default export `AreaSuggestFix` (mounted by App from its areaFixOpen / areaFixArea / areaFixField state in `ClimbMatch.jsx`) |
 | `lib/areaFields.js` | `AREA_EDIT_FIELDS`, `AREA_EDIT_KEYS`, `ASPECTS`, `MONTH_ABBR`, `monthsLabel`, `myPendingAreaEdits` |
 | `lib/areaChrome.jsx` | `EditIconButton`, `CopyCoordButton` (shared with `RouteDetail.jsx`), `NO_PARKING_PIN_LINE` |
 | `lib/db.js` | `useAreaClimbStats`, `useAreaContributions`, `useArea`, `useAreaRoutes`, `useAreaChildren`, `useNearbyAreas`, `useNearbyPeaks`, `useSubtreeRoutes`, `useSubtreeRouteCount`, `useAreaSearch`, `useStates`, `useCountries`, `useAreaPath` |
 | `lib/search.js` | `SEARCH_FORMS`, `searchNorm`, `searchCanon`, `searchMatches` |
 | `lib/offlineTiles.js` | `saveRouteMapOffline`, `removeRouteMapOffline`, `routeMapLines` |
+| `lib/SaveMapOffline.jsx` | `SaveMapOffline` (under the route map), `SavedRouteMaps` (Manage areas) |
 | `src/components/GPXMap.tsx` | `GPXMap` — the route page map (extracted from core, PR13) |
 | `ClimbMatchCore.jsx` | `OverviewMap` (seed/overview map), lazy `DbAreaBrowser` import |
 | `RouteDetail.jsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`, `BaseLayerToggle`) for the route and waypoint-picker maps |
@@ -152,7 +171,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 `check:area-duplicates`, `check:area-sort-labels`, `check:generic-area-names`, `check:wp-styles`, `check:waypoint-placement`, `check:waypoint-dedupe`,
 `check:track-caveat`, `check:gpx-caveats`, `check:waypoint-caveat`, `check:bottom-panels`, `check:overlays`, `check:overflow`, `check:ui`, `check:zero`,
 `check:area-edit-fields` (the seven editable fields are one list), `check:area-page-honest` (gated facts, chart headline = its bars, one drive control), `check:write-readers`.
-A place filed twice is refused at insert by `refuse_duplicate_area` (0216/0218, a same-named area within 1.5 km) and `refuse_bucket_copy_area` (0340, an area NAMED by a list of two or more places the state already files — MP's "Cascade River Drainage (Eldorado, Forbidden, …)" beside North Cascades Core); `check:area-duplicates` sweeps for both daily.
+A place filed twice is refused at insert by `refuse_duplicate_area` (0216/0218, a same-named area within 1.5 km) and `refuse_bucket_copy_area` (0340/0341, an area NAMED by a list of two or more places the state already files, spacing variants included — MP's "Cascade River Drainage (Eldorado, Forbidden, …)" beside North Cascades Core); `check:area-duplicates` sweeps for both daily, and also for names listing NEARBY places without brackets ("Devils Den, Gettysburg").
 Notes: `docs/guards/README.md`.
 
 ## 7. Last significant change

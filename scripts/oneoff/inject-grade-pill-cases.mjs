@@ -42,7 +42,7 @@ const CASES = [
     why: "the whole defect back with ONE chain still in the tree — rule A cannot see this, which is why rule B exists" },
 
   { name: "rule-gutted", file: "lib/grade.js",
-    find: "  for (const v of cands) if (carriesClimbingGrade(v)) return cruxGrade(v);\n",
+    find: "  for (const v of cands) if (carriesClimbingGrade(v)) return topOfRange(cruxGrade(v));\n",
     repl: "",
     expect: "expected \"5.9 A2\"", why: "displayGrade stops preferring a climbing grade" },
 
@@ -67,8 +67,8 @@ const CASES = [
     silent: true, why: "two SPELLINGS of one column is what RouteDetail's COMPOSITE GRADE block correctly does" },
 
   { name: "SILENT-commitment-only-route-keeps-it", file: "lib/grade.js",
-    find: "  return cands.length ? shortGrade(cands[0]) : \"\";\n}",
-    repl: "  return cands.length ? shortGrade(cands[0]) : \"\"; /* nothing better exists */\n}",
+    find: "  return cands.length ? topOfRange(shortGrade(cands[0])) : \"\";\n}",
+    repl: "  return cands.length ? topOfRange(shortGrade(cands[0])) : \"\"; /* nothing better exists */\n}",
     silent: true, why: "a route whose record holds only a commitment grade must still show it" },
 ];
 

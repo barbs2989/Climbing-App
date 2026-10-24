@@ -39,6 +39,7 @@ import { readCoreSource } from "./guard-sources.mjs";
 export const NEEDS_EXTRA_STATE = {
   areaTreeOpen: "rendered as `areaTreeOpen && selArea` — needs an area selected first",
   crewListOpen: "a disclosure inside the crew finder's result list — needs crews to list",
+  compareOpen: "rendered as `wide&&compareOpen` — a desktop-only view (#2621) that needs a viewport of WIDE_MIN (1024px) or wider; the walks run at phone width",
   // `sessionRestoring` deliberately gets NO entry — it is a derived const
   // (`realAuthGate && session===undefined`), not state, so discovery cannot return it and an
   // exemption naming it would be the stale bookkeeping this registry fails on. `editDraft` is
@@ -166,6 +167,8 @@ export const OVERLAY_PAYLOADS = {
 
   // Composites, copied from the setter call sites verbatim.
   invitePrompt: { expr: "{climber:CLIMBERS[0],route:ROUTES[0]}" },
+  // Share a list: ListsManager's onShareList passes the list, its [{id,r}] items and whether it is public.
+  listShareFor: { expr: '{ul:{id:"l1",name:"Sample list",routeIds:[ROUTES[0].id]},items:[{id:ROUTES[0].id,r:ROUTES[0]}],pub:false}' },
   // Start a crew at an AREA (0302): the sheet renders for any payload; the lifted shape is what the area
   // page's "Start a crew here" builds, on a seed area so it resolves without the database.
   startCrew: { expr: '{mode:"area",area:{id:"lcc_hellgate",name:"Hellgate",areaType:"crag",disciplines:["sport"]},partners:[]}' },

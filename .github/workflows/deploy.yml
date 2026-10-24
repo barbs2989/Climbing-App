@@ -132,6 +132,10 @@ jobs:
           # sign-in box and could not see a single climb. Whether the app gates on a
           # real account is a product decision, and the recorded one is to stay open.
           VITE_DEMO_AUTOLOGIN: "true"
+          # ...but OPEN ON THE SIGN-IN SCREEN, with "View as guest" on it (owner, 2026-10-23):
+          # the app stays browsable without an account, one tap from where it starts. Only here,
+          # so the browser guards (which set VITE_DEMO_AUTOLOGIN alone) still land in the app.
+          VITE_LOGIN_FIRST: "true"
       # The offline state files (state-snapshots.yml builds them nightly into the Actions cache).
       # Restored by key PREFIX, so the newest set wins. Missing is not an error: the app falls back
       # to paging the database, exactly as it did before these files existed.

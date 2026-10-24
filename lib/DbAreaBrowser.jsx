@@ -5,7 +5,7 @@
 // just fetched on demand from Supabase instead of walking the in-memory
 // MOUNTAINS/ROUTES arrays, since the DB catalog (47k+ areas / 200k+ routes) is
 // far too large to hold in memory. Rendered only when USE_DB is on.
-import { createContext, Fragment, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { createContext, Fragment, useContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { fetchArea, useArea, useAreaContributions, useAreaClimbStats, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb, usePartnerAreaCount, usePartnersInArea, savePartnerArea, removePartnerArea } from "./db";
 import { useRecentRouteIds } from "./recent";
@@ -18,6 +18,7 @@ import { subdivisionNoun, countryOfArea } from "./countries";
 import { effDistKm } from "./outing";
 import { POP_BACK, POP_CLOSE, POP_CLOSE_MEDIA, POP_REMOVE, POP_CHIP_X } from "./popupChrome.js";
 import { BTN, BTN_LG, BTN_SM, BTN_LINK, CHIP } from "./buttonStyles.js";
+import { useWideScreen } from "./wideLayout.js";
 import { ScreenHero } from "./ScreenHero";
 import { AboutCard, AreaFactsCard, ClimbsChart, GradeSpread, PendingAreaEdits } from "./AreaPageSections";
 import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_LINE, NO_PARKING_PIN_BUT_NOTE_LINE } from "./areaChrome";
@@ -176,6 +177,7 @@ function StatePicker({ onPick, C }) {
   const { data: countries, isLoading: lc, error: ec } = useCountries();
   const { data: states, isLoading, error } = useStates();
   const [countryId, setCountryId] = useState("");
+  const wide = useWideScreen();
   // One country is not a choice, it is a dead tap — so skip the step until there are two.
   // The catalog ran on a single root for its whole life and would have shown a pointless
   // "pick a country" select the entire time.
@@ -192,6 +194,32 @@ function StatePicker({ onPick, C }) {
   const country = countryId || only || "";
   const noun = subdivisionNoun(country);
   const inCountry = (states || []).filter(x => !country || countryOfArea(x) === country);
+  // THE WEBSITE (lib/wideLayout.js): a desktop has the room to SHOW the regions instead of hiding
+  // them in a select, the way Mountain Project's location directory does — the countries as
+  // buttons (only when there are two or more) and every region as a card with its climb count.
+  // Same data, same onPick, same loading and failure wording as the phone selects below.
+  if (wide) {
+    const card = { textAlign: "left", background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", cursor: "pointer", color: C.text };
+    return (
+      <div style={{ marginBottom: 14 }}>
+        {only ? null : (
+          <div style={{ marginBottom: 14 }}>
+            <SL C={C}>Pick a country</SL>
+            {lc ? <div style={{ color: C.textMuted, fontSize: 13 }}>Loading countries…</div>
+              : ec && !(countries && countries.length) ? <div style={{ color: C.red, fontSize: 12.5 }}>{"Couldn’t load countries — the " + noun + "s below are every one we have."}</div>
+              : <div role="radiogroup" aria-label="Country" style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>{(countries || []).map(c => { const on = country === c.id; return <button key={c.id} role="radio" aria-checked={on} onClick={() => setCountryId(on ? "" : c.id)} style={{ padding: "9px 14px", borderRadius: 999, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.card, color: on ? C.blue : C.text, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>{c.name}{c.route_count != null ? <span style={{ color: on ? C.blue : C.textMuted, fontWeight: 600 }}>{" · " + c.route_count.toLocaleString()}</span> : null}</button>; })}</div>}
+          </div>
+        )}
+        <SL C={C}>{`Pick a ${noun}`}</SL>
+        {!country && !noCountryStep ? <div style={{ color: C.textMuted, fontSize: 13 }}>{"Choose a country above to see its " + noun + "s."}</div>
+          : isLoading ? <div style={{ color: C.textMuted, fontSize: 13 }}>{`Loading ${noun}s…`}</div>
+          : inCountry.length ? <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(190px, 1fr))", gap: 10 }}>{inCountry.map(s => <button key={s.id} onClick={() => onPick(s)} style={card}><div style={{ fontSize: 14.5, fontWeight: 700, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{s.name}</div>{s.route_count != null ? <div style={{ fontSize: 12.5, color: C.textMuted, marginTop: 3 }}>{s.route_count.toLocaleString() + (s.route_count === 1 ? " climb" : " climbs")}</div> : null}</button>)}</div>
+          : error ? <div style={{ color: C.red, fontSize: 12.5 }}>{"Couldn't load " + noun + "s — check your connection and try again."}</div>
+          : <div style={{ color: C.textMuted, fontSize: 13 }}>{`No ${noun}s found`}</div>}
+        {error && states && states.length ? <div style={{ color: C.textMuted, fontSize: 12.5, marginTop: 8 }}>Couldn't refresh just now — showing the list from your last load.</div> : null}
+      </div>
+    );
+  }
   const selStyle = { width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600 };
   return (
     <div style={{ marginBottom: 14 }}>
@@ -239,9 +267,15 @@ function StatePicker({ onPick, C }) {
 // drilling down one level at a time. Area hits can be at any depth, so they
 // navigate via onJumpToArea (rebuilds the real breadcrumb from the area's
 // path) rather than onDrill (which assumes a direct child). ──
-function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
+//
+// THE BAR STAYS PUT while you scroll the list under it (owner, 2026-10-23: "the search function for
+// areas and routes ... sticky to the top of the view as they scroll down"), as the route finder's
+// has since 2026-10-21 — and lets go once the list (`endRef`, a marker AreaPage puts after it) has
+// scrolled past, so it does not ride over the rest of the page.
+function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange, endRef }) {
   const [mode, setMode] = useState("areas");
   const [q, setQ] = useState("");
+  const { wrapRef, barRef, pin } = usePinnedBar(endRef);
   const qq = q.trim();
   const { data: areaHits, isLoading: la, error: ea } = useAreaSearch(scope.id, qq);
   const { data: routeHits, isLoading: lr, error: er } = useSubtreeRoutes(scope.id, { q: qq, page: 0, pageSize: 40 });
@@ -251,11 +285,15 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
   return (
     <div style={{ marginBottom: 14 }}>
       <SL C={C}>{"Search " + scope.name}</SL>
+      <div ref={wrapRef} style={{ margin: "0 -14px", height: pin ? pin.height : undefined }}>
+      <div ref={barRef} style={{ ...(pin ? { position: "fixed", top: pin.top, left: pin.left, width: pin.width, zIndex: 25, boxShadow: "0 6px 12px rgba(0,0,0,0.25)", borderBottom: "1px solid " + C.borderLight } : {}), boxSizing: "border-box", background: C.bg, padding: "6px 14px 8px" }}>
       <div style={{ display: "flex", gap: 4, background: C.surface, border: "1px solid " + C.border, borderRadius: 9, padding: 3, marginBottom: 8 }}>
         <div {...clickable(() => setMode("areas"))} aria-pressed={mode === "areas"} style={tab(mode === "areas")}>Areas</div>
         <div {...clickable(() => setMode("routes"))} aria-pressed={mode === "routes"} style={tab(mode === "routes")}>Routes</div>
       </div>
       <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none" }} />
+      </div>
+      </div>
       {qq ? (
         // No maxHeight/overflow: the hits used to scroll inside a 46vh box of their own, so most
         // of them were hidden behind a second scrollbar. They run down the page instead.
@@ -602,8 +640,30 @@ function sortAreaRoutes(routes, key) {
   return [...routes].sort((a, b) => Number(a.sort_order == null) - Number(b.sort_order == null) || (a.sort_order != null && b.sort_order != null ? dir * (a.sort_order - b.sort_order) : 0) || byName(a, b));
 }
 
-function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt}) {
+// "Don't see a climb or area here?" — under the list on an area page AND under the route finder's
+// results (owner, 2026-10-23). Add an area is Mountain Project's "Add to Page → Sub-Area", under the
+// same rule MP and our trg_areas_leaf_xor share: an area holds sub-areas OR climbs, so a crag that
+// already lists climbs offers only Add a climb; a country (its states are fixed) offers no new area.
+function AddHereFooter({ area, onAddClimb, onAddArea, C }) {
+  const { data: kids } = useAreaChildren(onAddArea && area ? area.id : null);
+  if (!area || (!onAddClimb && !onAddArea)) return null;
+  const holdsClimbs = Array.isArray(kids) && kids.length === 0 && area.route_count > 0;
+  const canArea = !!onAddArea && Array.isArray(kids) && !holdsClimbs && !["world", "country"].includes(area.area_type);
+  const btn = { ...BTN_LG, flex: 1, minWidth: 0, border: "1px dashed " + C.border, background: C.surface, color: C.blue, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 };
+  return (
+    <div style={{ marginTop: 10, marginBottom: 14 }}>
+      <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, marginBottom: 8 }}>{canArea && onAddClimb ? "Don’t see a climb or area here?" : canArea ? "Don’t see an area here?" : "Don’t see a climb here?"}</div>
+      <div style={{ display: "flex", gap: 8 }}>
+        {onAddClimb ? <button onClick={() => onAddClimb(area)} aria-label={"Add a climb to " + area.name} style={btn}>{"Add a climb"}<span aria-hidden="true" style={{ fontSize: 15 }}>{"→"}</span></button> : null}
+        {canArea ? <button onClick={() => onAddArea(area)} aria-label={"Add an area to " + area.name} style={btn}>{"Add an area"}<span aria-hidden="true" style={{ fontSize: 15 }}>{"→"}</span></button> : null}
+      </div>
+    </div>
+  );
+}
+
+function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt}) {
   const [searchMode, setSearchMode] = useState("areas");
+  const listEndRef = useRef(null);
   const [listSort, setListSort] = useState("lr");
   // The row in the drill stack is a snapshot of a CHILD row read when its parent was opened. An
   // agreed edit rewrites the areas row on the server (0304) and refreshes ["area", id] — so the
@@ -700,7 +760,7 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
       {["crag", "peak", "wall"].includes(area.area_type) ? <AreaGettingThere area={area} C={C} onEdit={editOn} /> : null}
       {PARTNER_CARD_TYPES.includes(area.area_type) ? <PartnersHereCard area={area} C={C} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} PartnerRow={PartnerRow} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} /> : null}
       <button onClick={onAllAreas} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, marginBottom: 14 }}>All areas</button>
-      {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
+      {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} endRef={listEndRef} /> : null}
 
       {/* Sits directly above the route rows it summarises, so the page reads: this is the
           mountain, this is what is true of every way up it, here are the ways up. It renders
@@ -753,15 +813,12 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
 
       {/* The seed browser has had "Don't see a climb? Add it" since forever, but it lives
           behind `selArea`, which is null under USE_DB — so on every real area page the
-          affordance did not exist. Opens the same AddRoute sheet with THIS area filled in.
-          It sits DIRECTLY UNDER the areas/climbs list (owner, 2026-10-15): a climber who has just
-          read to the end of the list and not found their climb is the one who adds it. It is NOT
-          gated on the list rendering — an empty crag is exactly where a missing route is likeliest. */}
-      {onAddClimb ? (
-        <button onClick={() => onAddClimb(area)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, marginTop: 10, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
-          {"Don’t see a climb here? Add it to " + area.name}<span style={{ fontSize: 15 }}>{"→"}</span>
-        </button>
-      ) : null}
+          affordance did not exist. It sits DIRECTLY UNDER the areas/climbs list (owner, 2026-10-15
+          and again 2026-10-23): a climber who has just read to the end of the list and not found
+          their climb — or their crag — is the one who adds it. It is NOT gated on the list
+          rendering — an empty crag is exactly where a missing route is likeliest. */}
+      <div ref={listEndRef} />
+      <AddHereFooter area={area} onAddClimb={onAddClimb} onAddArea={onAddArea} C={C} />
 
       {editOn ? (
         <button onClick={() => editOn(null)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
@@ -898,7 +955,9 @@ const finderArgs = (q, f) => {
 // child of a scroll container that never scrolls never sticks. The pin line is the bottom of the
 // app's sticky top bar (phone), or the top of #appscroll when that is what scrolls (desktop); both
 // are measured, because the bar's height differs between the two shells.
-function usePinnedBar() {
+// `endRef` (optional) marks where the list the bar searches ENDS: once that marker rises to the
+// bar's bottom edge the bar lets go and scrolls away with the list, as CSS sticky would inside it.
+function usePinnedBar(endRef) {
   const wrapRef = useRef(null), barRef = useRef(null);
   const [pin, setPin] = useState(null); // null, or { top, left, width, height } while pinned
   useEffect(() => {
@@ -920,8 +979,9 @@ function usePinnedBar() {
       raf = 0;
       const w = wrapRef.current, b = barRef.current;
       if (!w || !b) return;
-      const r = w.getBoundingClientRect();
-      const next = r.top < line ? { top: Math.round(line), left: Math.round(r.left), width: Math.round(r.width), height: b.offsetHeight } : null;
+      const r = w.getBoundingClientRect(), end = endRef && endRef.current;
+      const past = !!end && end.getBoundingClientRect().top < line + b.offsetHeight;
+      const next = r.top < line && !past ? { top: Math.round(line), left: Math.round(r.left), width: Math.round(r.width), height: b.offsetHeight } : null;
       setPin(p => (!p && !next) || (p && next && p.top === next.top && p.left === next.left && p.width === next.width && p.height === next.height) ? p : next);
     };
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(check); };
@@ -930,10 +990,10 @@ function usePinnedBar() {
     window.addEventListener("resize", onResize);
     check();
     return () => { document.removeEventListener("scroll", onScroll, true); window.removeEventListener("resize", onResize); if (raf) cancelAnimationFrame(raf); };
-  }, []);
+  }, [endRef]);
   return { wrapRef, barRef, pin };
 }
-function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute }) {
+function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute, onAddClimb, onAddArea }) {
   const { wishlist } = useContext(ClimberCtx);
   const DEF = { discs: [], sortBy: "lr", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "" };
   // A chart bar on the area page opens the finder already narrowed to its discipline.
@@ -1144,6 +1204,10 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
       </>}
       </>}
 
+      {/* Under the list of areas and climbs, as on the area page: a search that did not find it is
+          exactly when a climber adds it. Files into the area the finder is looking in. */}
+      {!isLoading && !la ? <AddHereFooter area={loc} onAddClimb={onAddClimb} onAddArea={onAddArea} C={C} /> : null}
+
       {/* SAVE FROM THE LIST (owner, 2026-10-21: "a quick option ... to add the climb to list of
           objectives, saved climbs, areas"): the same three things the route and area pages save —
           My Objectives, your own lists, and the climb's wall — without opening the climb.
@@ -1299,7 +1363,7 @@ function ObjectivesPanel({ area, onOpen, C }) {
 // map" in absurdly tight since it centered on the state's single lat/lng
 // point at the same zoom used for a crag.
 const ZOOM_BY_AREA_TYPE = { world: 2, country: 3, state: 6, range: 8, region: 8, canyon: 10, peak: 12, crag: 13, wall: 14 };
-function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
+function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }) {
   const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), tileRef = useRef(null), placeMarkRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [mapFail, setMapFail] = useState(false);
@@ -1317,13 +1381,35 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   // Falls back to the main type for a row read before that column existed.
   const [disc, setDisc] = useState(null);
 
-  // Full screen just resizes the same Leaflet instance in place (same map div,
-  // same markers, same zoom/pan) rather than tearing it down and rebuilding it
-  // elsewhere — collapsing back drops you exactly where you were, no reload.
+  // FULL SCREEN IS A REAL FULL-SCREEN VIEW, drawn over the whole app like the route map's. It used
+  // to stretch the map in place, in the page's flow: on a phone it ran on under the bottom bar, the
+  // header stayed on top of it, the controls above it vanished so the ✕ jumped ~100px up the screen,
+  // and the height was ANIMATED, so the map's ResizeObserver re-measured and re-read the view on
+  // every frame of the transition. The owner reported a crash on closing it (2026-10-23).
+  // It is still the SAME Leaflet instance -- same markers, zoom, pan and your dot, so collapsing
+  // back drops you exactly where you were. The map is rendered through a portal into `host`, a div
+  // this panel owns, and only `host` moves: into document.body for full screen, back into the
+  // inline slot for the page. Moving a node keeps everything inside it, Leaflet included.
+  const hostRef = useRef(null), slotRef = useRef(null), wasFullRef = useRef(false);
+  if (!hostRef.current && typeof document !== "undefined") hostRef.current = document.createElement("div");
+  // Layout, not passive: the map div must be in the document before Leaflet's init effect measures it.
+  useLayoutEffect(() => {
+    const host = hostRef.current;
+    if (!host) return;
+    if (fullscreen) { wasFullRef.current = true; document.body.appendChild(host); }
+    else if (slotRef.current) {
+      slotRef.current.appendChild(host);
+      // While the map was away the page was shorter and its scroll clamped: put the map back in view.
+      if (wasFullRef.current) { wasFullRef.current = false; try { slotRef.current.scrollIntoView({ block: "nearest" }); } catch (e) {} }
+    }
+    if (mapRef.current) { try { mapRef.current.invalidateSize(); } catch (e) {} }
+  }, [fullscreen]);
+  useEffect(() => () => { if (hostRef.current) hostRef.current.remove(); }, []);
   useEffect(() => {
-    if (!mapRef.current) return;
-    const t = setTimeout(() => { try { mapRef.current.invalidateSize(); } catch (e) {} }, 220);
-    return () => clearTimeout(t);
+    if (!fullscreen) return;
+    const onKey = e => { if (e.key === "Escape") setFullscreen(false); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
   }, [fullscreen]);
   const { data, isLoading, error } = useNearbyAreas(bounds);
   const nearbyAll = data && data.rows;
@@ -1348,7 +1434,11 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
     const init = () => {
       if (cancelled || !mapDiv.current || mapRef.current || !window.L) return;
       const L = window.L;
-      const map = L.map(mapDiv.current, { attributionControl: false }).setView(center ? [center.lat, center.lng] : [39.5, -98.5], center ? (ZOOM_BY_AREA_TYPE[areaType] || 10) : 4);
+      // Zoom sits BOTTOM-LEFT, a corner nothing else on this map uses (the fire map moved its own
+      // to a free corner the same way). Top-left it shared with the Street/Satellite/Topo/Snow row,
+      // and pushing it 56px down (#2411) still left the owner reporting the row over the + / −.
+      const map = L.map(mapDiv.current, { attributionControl: false, zoomControl: false }).setView(center ? [center.lat, center.lng] : [39.5, -98.5], center ? (ZOOM_BY_AREA_TYPE[areaType] || 10) : 4);
+      L.control.zoom({ position: "bottomleft" }).addTo(map);
       applyBaseLayer(map, tileRef, baseLayer);
       markRef.current = L.layerGroup().addTo(map);
       mapRef.current = map;
@@ -1479,46 +1569,71 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   }, [nearby, bounds, center]);
   const discChip = (k, label, on) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
 
-  return (
-    <div>
-      {!fullscreen ? <ViewToggle mode="map" onList={onBack} onMap={() => {}} C={C} /> : null}
-      {!fullscreen ? (
-        <>
-          <button onClick={locate} disabled={locating} style={{ width: "100%", padding: 11, borderRadius: 10, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: locating ? "default" : "pointer", marginBottom: 8 }}>{locateLabel(me, "Use my location")}</button>
-          {geoErr ? <div style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{geoErr}</div> : null}
-        </>
-      ) : null}
-      <form onSubmit={findPlace} role="search" style={{ display: "flex", gap: 6, marginBottom: place.err || place.alts.length ? 4 : 8 }}>
-        <input type="search" value={placeQ} onChange={e => setPlaceQ(e.target.value)} placeholder="Go to a town, county or zip/postal code" aria-label="Go to a town, county or zip/postal code" enterKeyHint="search" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16 }} />
-        <button type="submit" disabled={!placeQ.trim() || place.busy} style={{ ...BTN, background: C.blueSolid, color: "#fff", border: "none", flexShrink: 0, opacity: !placeQ.trim() || place.busy ? 0.6 : 1 }}>{place.busy ? "Finding…" : "Go"}</button>
-      </form>
-      {place.err ? <div role="status" style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{place.err}</div> : null}
-      {place.alts.length ? (
-        <div role="group" aria-label="Other places with that name" style={{ display: "flex", gap: 6, overflowX: "auto", alignItems: "center", marginBottom: 8, paddingBottom: 2 }}>
-          <span style={{ fontSize: 11.5, color: C.textMuted, flexShrink: 0 }}>Not it?</span>
-          {place.alts.map((p, i) => <button key={i} onClick={() => { goToPlace(p); setPlace(s => ({ ...s, alts: s.alts.filter(x => x !== p) })); }} style={{ ...CHIP, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 12, fontWeight: 600, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{p.name + (p.sub ? ", " + p.sub.split(", ").slice(-1)[0] : "")}</button>)}
-        </div>
-      ) : null}
-      <div style={{ position: "relative", marginBottom: fullscreen ? 0 : 8 }}>
-        <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "calc(100vh - 262px)" : 260, borderRadius: fullscreen ? 0 : 12, overflow: "hidden", background: C.surface, transition: "height 0.2s" }} />
-        {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
-        <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={center} />
-        <button onClick={() => setFullscreen(f => !f)} aria-label={fullscreen ? "Exit full screen" : "Full screen"} title={fullscreen ? "Exit full screen" : "Full screen"} style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000 })}>{fullscreen ? "✕" : "⤢"}</button>
-        {sel ? (
-          <div style={{ position: "absolute", left: 12, right: 12, bottom: 12, zIndex: 1000, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12, padding: "10px 12px", boxShadow: "0 6px 20px rgba(0,0,0,0.5)", display: "flex", alignItems: "center", gap: 10 }}>
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, lineHeight: 1.3, overflowWrap: "anywhere" }}>{sel.name}</div>
-              <div style={{ fontSize: 11.5, color: C.textMuted }}>{sel.route_count + " climb" + (sel.route_count !== 1 ? "s" : "") + (sel._mi != null ? " · " + (uDistMi ? uDistMi(sel._mi) : sel._mi.toFixed(1) + " mi") : "")}</div>
-            </div>
-            <button onClick={() => { onOpenArea(sel); setSel(null); }} style={{ ...BTN, background: C.blueSolid, color: "#fff", border: "none", flexShrink: 0 }}>Open</button>
-            <button onClick={() => setSel(null)} title="Close" aria-label="Close" style={POP_CLOSE}>✕</button>
+  const searchUI = (
+    <>
+        <form onSubmit={findPlace} role="search" style={{ display: "flex", gap: 6, marginBottom: place.err || place.alts.length ? 4 : 8 }}>
+          <input type="search" value={placeQ} onChange={e => setPlaceQ(e.target.value)} placeholder="Go to a town, county or zip/postal code" aria-label="Go to a town, county or zip/postal code" enterKeyHint="search" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16 }} />
+          <button type="submit" disabled={!placeQ.trim() || place.busy} style={{ ...BTN, background: C.blueSolid, color: "#fff", border: "none", flexShrink: 0, opacity: !placeQ.trim() || place.busy ? 0.6 : 1 }}>{place.busy ? "Finding…" : "Go"}</button>
+        </form>
+        {place.err ? <div role="status" style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{place.err}</div> : null}
+        {place.alts.length ? (
+          <div role="group" aria-label="Other places with that name" style={{ display: "flex", gap: 6, overflowX: "auto", alignItems: "center", marginBottom: 8, paddingBottom: 2 }}>
+            <span style={{ fontSize: 11.5, color: C.textMuted, flexShrink: 0 }}>Not it?</span>
+            {place.alts.map((p, i) => <button key={i} onClick={() => { goToPlace(p); setPlace(s => ({ ...s, alts: s.alts.filter(x => x !== p) })); }} style={{ ...CHIP, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 12, fontWeight: 600, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{p.name + (p.sub ? ", " + p.sub.split(", ").slice(-1)[0] : "")}</button>)}
           </div>
         ) : null}
-      </div>
+    </>
+  );
+  const mapBox = (
+    <div style={{ position: "relative", flex: fullscreen ? 1 : "none", minHeight: 0 }}>
+      <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "100%" : 260, borderRadius: 12, overflow: "hidden", background: C.surface }} />
+      {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
+      <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={center} />
+      {fullscreen ? null : <button onClick={() => setFullscreen(true)} aria-label="Full screen" title="Full screen" style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000 })}>⤢</button>}
+      {/* WHERE AM I, on the map itself, as the route map has it: bottom-right, above the tile
+          credit, in full screen too. It used to be a full-width button above the map, which full
+          screen hid. Out of the way of an open area card, which spans the bottom of the map. */}
+      {sel ? null : <button onClick={locate} disabled={locating} aria-label="Show my location on the map" style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{"📍 " + locateLabel(me, "Me")}</button>}
+      {sel ? (
+        <div style={{ position: "absolute", left: 12, right: 12, bottom: 12, zIndex: 1000, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12, padding: "10px 12px", boxShadow: "0 6px 20px rgba(0,0,0,0.5)", display: "flex", alignItems: "center", gap: 10 }}>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, lineHeight: 1.3, overflowWrap: "anywhere" }}>{sel.name}</div>
+            <div style={{ fontSize: 11.5, color: C.textMuted }}>{sel.route_count + " climb" + (sel.route_count !== 1 ? "s" : "") + (sel._mi != null ? " · " + (uDistMi ? uDistMi(sel._mi) : sel._mi.toFixed(1) + " mi") : "")}</div>
+          </div>
+          <button onClick={() => { onOpenArea(sel); setSel(null); }} style={{ ...BTN, background: C.blueSolid, color: "#fff", border: "none", flexShrink: 0 }}>Open</button>
+          <button onClick={() => setSel(null)} title="Close" aria-label="Close" style={POP_CLOSE}>✕</button>
+        </div>
+      ) : null}
+    </div>
+  );
+  const errUI = geoErr ? <div role="status" style={{ color: C.red, fontSize: 12, marginTop: 6 }}>{geoErr}</div> : null;
+  const title = "Map" + (name ? " · " + name : "");
+  return (
+    <div>
+      <ViewToggle mode="map" onList={onBack} onMap={() => {}} C={C} />
+      {fullscreen ? null : searchUI}
+      {/* The inline slot the map's host div sits in when it is not full screen. React renders it
+          empty and never touches its children; only the effect above moves the host in and out. */}
+      <div ref={slotRef} style={{ marginBottom: 8 }} />
+      {/* ONE wrapper in both modes, its children in fixed slots (null when unused): a different
+          element around `mapBox` in full screen would make React unmount the map's div, and with it
+          the Leaflet map, every time the climber went in or out. */}
+      {hostRef.current ? createPortal(
+        <div role={fullscreen ? "dialog" : undefined} aria-modal={fullscreen ? "true" : undefined} aria-label={fullscreen ? title : undefined} style={fullscreen ? { position: "fixed", inset: 0, zIndex: 9700, background: C.bg, padding: 12, display: "flex", flexDirection: "column" } : { position: "relative" }}>
+          {fullscreen ? (
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, marginBottom: 9 }}>
+              <span style={{ fontSize: 14, fontWeight: 700, color: C.text, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{title}</span>
+              <button onClick={() => setFullscreen(false)} aria-label="Close full-screen map" style={POP_CLOSE}>✕</button>
+            </div>
+          ) : null}
+          {fullscreen ? searchUI : null}
+          {mapBox}
+          {errUI}
+        </div>, hostRef.current) : null}
       {!fullscreen ? (
         <>
           <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8 }}>{"Pan or zoom the map, or type a town above, to see areas anywhere else." + (me.acc != null ? " The green dot is you." : "")}</div>
-          {!center && !bounds ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{'Tap "Use my location" to find climbs near you.'}</div> : null}
+          {!center && !bounds ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{'Tap "Me" on the map to find climbs near you.'}</div> : null}
           {error && !sorted.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load nearby areas — check your connection and try again.</div> : null}
           {error && sorted.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the areas from your last load.</div> : null}
           {isLoading && bounds ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading nearby climbs…</div> : null}
@@ -1705,7 +1820,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute }) {
+export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, onAddArea, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
@@ -1836,13 +1951,13 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
       {!stateNode ? (
         <>{rootHeader || null}<StatePicker onPick={pickState} C={C} /></>
       ) : screen === "finder" ? (
-        <RouteFinderPanel key={current.id} scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} bookmarks={bookmarks} onToggleBookmark={onToggleBookmark} onToggleWish={onToggleWish} userLists={userLists} onToggleListRoute={onToggleListRoute} />
+        <RouteFinderPanel key={current.id} scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} bookmarks={bookmarks} onToggleBookmark={onToggleBookmark} onToggleWish={onToggleWish} userLists={userLists} onToggleListRoute={onToggleListRoute} onAddClimb={onAddClimb} onAddArea={onAddArea} />
       ) : screen === "objectives" ? (
         <ObjectivesPanel area={current} onOpen={onOpenRoute} C={C} />
       ) : screen === "near" ? (
-        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} /></>
+        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} /></>
       ) : (
-        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap}onAddClimb={onAddClimb} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { setFinderDisc(typeof d === "string" ? d : ""); setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
+        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap} onAddClimb={onAddClimb} onAddArea={onAddArea} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { setFinderDisc(typeof d === "string" ? d : ""); setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />

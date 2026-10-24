@@ -51,8 +51,8 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import RouteDetail, { campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
-export { campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf };
+import RouteDetail, { campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
+export { campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine };
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route, tab) {
@@ -74,7 +74,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render, campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf } = require_(out);
+const { render, campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine } = require_(out);
 
 // renderToStaticMarkup ESCAPES: "CAMPING & BIVY" is emitted as "CAMPING &amp; BIVY".
 // Un-escape before matching, or the heading reads as absent and a false NO looks like a
@@ -466,6 +466,70 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   else fail("a role:hidden stub did not hide its pin (or hid the whole panel)");
 }
 
+// ── 12c. ONE PLACE UNDER TWO SPELLINGS lists once, and the pin lends the researched site its
+//    distance. The Glacier Peak shape (2026-10-22): a researched "Mackinaw Shelter camp, North Fork
+//    Sauk" and a pin "Mackinaw Shelter (former shelter site)", both at 2,950 ft. And the two ways the
+//    rule must REFUSE: two lakes 100 ft apart that differ by "Lower"/"Middle", and a record with no
+//    height, which is never guessed into another.
+{
+  const th = { name: "North Fork Sauk Trailhead", type: "Trailhead", elev: 2050, distMi: 0 };
+  const t = text(render(route("alpine", {
+    bivy: [{ name: "Mackinaw Shelter camp, North Fork Sauk", elev: 2950, role: "route", notes: "First night." }],
+    waypoints: [th, { name: "Mackinaw Shelter (former shelter site)", type: "Campsite", elev: 2950, distMi: 5, lat: 48.1, lng: -121.1 }],
+  }), "planner"));
+  const start = t.indexOf(HEAD), intro = t.indexOf("pin under ROUTE TRACK", start);
+  const end = t.indexOf("ROUTE TRACK", intro >= 0 ? intro + 21 : start);
+  const panel = t.slice(start, end > start ? end : undefined);
+  const n = (panel.match(/Mackinaw Shelter/g) || []).length;
+  if (start >= 0 && n === 1) ok("a site and a pin spelling one place differently list once");
+  else fail(`the Mackinaw shape rendered ${n} rows naming it (want 1) — a differently spelled pin is a second camp again`);
+  if (/5(\.0)? mi/.test(panel)) ok("the merged pin lends its trail distance to the researched site");
+  else fail("the merged pin's distance did not reach the researched site");
+  if (samePlaceCamp({ name: "Lower Blum Lake", elev: 4900 }, { name: "Middle Blum Lake", elev: 5000 })) fail("Lower and Middle Blum Lake were merged — two lakes are one camp");
+  else ok("Lower and Middle Blum Lake stay two camps");
+  if (samePlaceCamp({ name: "Wing Lake" }, { name: "Wing Lake camp", elev: 6923 })) fail("a record with no height was merged by name alone");
+  else ok("a record with no height is never merged by name alone");
+  if (samePlaceCamp({ name: "Wing Lake", elev: 6900 }, { name: "Wing Lake camp", elev: 6923 })) ok("Wing Lake / Wing Lake camp at 6,900 / 6,923 ft are one place");
+  else fail("Wing Lake and Wing Lake camp were not recognised as one place");
+}
+
+// ── 12d. CHOOSING A CAMP: the night the trip plan spends there, and the walk in at the planner pace.
+{
+  const itin = { days: [
+    { n: 1, title: "Approach to Glacier Gap camp", objective: "Reach high camp at Glacier Gap" },
+    { n: 2, title: "Ferry Basin to Queets Basin", objective: "Climb the peak and return to Low Divide" },
+    { n: 3, title: "Hike out to Glacier Gap", objective: "Return to trailhead" },
+  ] };
+  const r = { itinerary: itin };
+  const got = (nm) => JSON.stringify(campNightsOf(r, nm));
+  if (got("Glacier Gap") === "[1]") ok("a day that ENDS at a camp tags its night (and the last day is never a night)");
+  else fail(`Glacier Gap read as nights ${got("Glacier Gap")} (want [1])`);
+  if (got("Ferry Basin") === "[]") ok("the place a day LEAVES is not tagged as that night");
+  else fail(`Ferry Basin, which day 2 leaves, was tagged ${got("Ferry Basin")}`);
+  if (got("Low Divide, the pass camp") === "[2]") ok("\"return to X\" tags X as that night");
+  else fail(`"return to Low Divide" read as ${got("Low Divide, the pass camp")} (want [2])`);
+  if (campNightsLabel([1, 2], 3) === "Nights 1\u20132 of the 3-day trip plan") ok("night label reads as a range");
+  else fail("night label: " + campNightsLabel([1, 2], 3));
+  const s = { distMi: 5, gainFt: 900 };
+  const slow = campWalkHrs(s, { fit: "beginner", pack: 20 }), fast = campWalkHrs(s, { fit: "expert", pack: 5 });
+  if (slow > fast) ok("the walk-in time moves with the planner's fitness and pack");
+  else fail(`walk-in time did not respond to the planner inputs (${slow} vs ${fast})`);
+  if (campWalkHrs({ distMi: 5, gainFt: null }, {}) === null) ok("no walk-in time without a gain — distance alone would read fast");
+  else fail("a walk-in time printed with no gain behind it");
+  const th = { name: "TH", type: "Trailhead", elev: 2050, distMi: 0 };
+  const t = text(render(route("alpine", {
+    itinerary: itin,
+    bivy: [{ name: "Glacier Gap", elev: 7300, role: "main", notes: "High camp." }],
+    waypoints: [th, { name: "Glacier Gap", type: "Campsite", elev: 7300, distMi: 15, lat: 48.1, lng: -121.1 }],
+  }), "planner"));
+  if (t.includes("Night 1 of the 3-day trip plan")) ok("the night tag reaches the camp card");
+  else fail("the night tag did not reach the screen");
+  if (/\u2248\d+(\.5)? h walk in at your planner pace/.test(t)) ok("the walk-in time reaches the camp card");
+  else fail("the walk-in time did not reach the screen");
+  if (t.includes("Choosing a camp:")) ok("the panel says once what the tags and times mean");
+  else fail("no explanation of the night tag and walk-in time");
+}
+
 // ── 13. OVERNIGHT PERMIT: what + where + the agency link, and only an https link.
 {
   const acc = { overnight_permit: { what: "Free self-issue wilderness permit", where: "Fill one out at the trailhead kiosk.", url: "https://www.fs.usda.gov/x" } };
@@ -479,6 +543,36 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   else fail("a non-https permit url was accepted");
   if (overnightPermitOf({ access: {} }) === null) ok("no overnight permit renders nothing");
   else fail("an empty access block produced a permit");
+}
+
+// ── 20. WHERE CLIMBERS SAY THEY SLEPT (0358). The log form's WHERE DID YOU CAMP? stores cond.camps by
+// the names this list uses; the panel counts reports per site by NAME (case aside, nothing fuzzier),
+// once per report, and offers a camp no site carries as one to ADD — never writing it into the list.
+{
+  const sites = [{ name: "Boston Basin" }, { name: "Sahale Glacier camp" }];
+  const acts = [
+    { date: "2026-08-01", cond: { camps: ["boston basin", "Sahale Glacier camp"] } },
+    { date: "2026-08-20", cond: { camps: ["Boston Basin", "Boston Basin"] } },
+    { date: "2026-07-04", cond: { camps: ["Basin Creek"] } },
+    { date: "2026-07-05", cond: { nights: "0" } },
+  ];
+  const r = campReportsOf(sites, acts);
+  const bb = r.by.get(0), sg = r.by.get(1);
+  if (bb && bb.n === 2 && bb.last === "2026-08-20") ok("a camp's count is of reports, once each, case aside, with the latest date");
+  else fail(`campReportsOf counted Boston Basin as ${JSON.stringify(bb)} (want n 2, last 2026-08-20)`);
+  if (sg && sg.n === 1) ok("a second camp in one report counts for that camp too");
+  else fail("the second camp of a multi-camp report was not counted");
+  if (r.extra.length === 1 && r.extra[0].name === "Basin Creek" && r.extra[0].n === 1) ok("a camp the list lacks comes back as one to add");
+  else fail(`unlisted camps came back as ${JSON.stringify(r.extra)}`);
+  if (campReportsOf([{ name: "Wing Lake" }], [{ cond: { camps: ["Wing Lake camp"] } }]).by.size === 0) ok("a near-miss name is not counted against a listed camp");
+  else fail("a near-miss camp name was counted against a listed site");
+  if (campSleptLine(null) === "" && /^Slept here in 2 trip reports/.test(campSleptLine(bb))) ok("the slept-here line reads as a count of reports");
+  else fail(`campSleptLine said ${JSON.stringify(campSleptLine(bb))}`);
+  const t = text(render(route("alpine", { bivy: [SITE], activity: [{ id: "a1", user: "x", date: "2026-08-01", cond: { camps: ["Boston Basin"] } }, { id: "a2", user: "y", date: "2026-08-02", cond: { camps: ["Hidden Lake"] } }] }), "planner"));
+  if (t.includes("Slept here in 1 trip report")) ok("a reported night reaches the camp's card on the Planner");
+  else fail("a trip report's camp did not reach the CAMPING & BIVY card");
+  if (t.includes("NAMED IN TRIP REPORTS") && t.includes("Hidden Lake")) ok("an unlisted reported camp is offered on the Planner");
+  else fail("an unlisted camp from a trip report was not offered to add");
 }
 
 console.log(failures

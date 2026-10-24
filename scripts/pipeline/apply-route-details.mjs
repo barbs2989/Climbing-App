@@ -37,21 +37,37 @@ const BAD = [
 const STOP = new Set("a an the of on in to for and or but with at from by is are was be as it its this that these those up out into onto over under then than so if not no".split(" "));
 const shouts = s => (s.match(/\b[A-Z]{5,}\b/g) || []).some(w => !/^(?:PG13|WI\d|AI\d)$/.test(w));
 
+// A neighbouring climb's NAME is not copied prose: "left of Back Against The Wall" is a direction, and the overlap
+// rule refused it (Colorado, 2026-10-22), so rewrites dropped useful neighbours. Names of three or more words of the
+// climbs on the batch's walls are masked out of both texts before the overlap is measured.
+const NAMES = { list: [] };
+const maskNames = t => { let x = " " + words(t).join(" ") + " "; for (const n of NAMES.list) x = x.split(" " + n + " ").join(" zz "); return x; };
 const problems = (field, val, src) => {
   const p = [];
   if (typeof val !== "string" || !val.trim()) return ["empty"];
   if (val.length > CAP[field]) p.push(`over ${CAP[field]} chars (${val.length})`);
   if (shouts(val)) p.push("all caps");
-  if (field !== "fa") for (const [re, why] of BAD) if (re.test(val)) p.push(why);
+  // ...and out of the source/first-person tests too: "Twist My Tea" and "Nail in my Coffin" are climbs, not a voice.
+  const unnamed = NAMES.list.reduce((t, n) => t.replace(new RegExp("\\b" + n.split(" ").map(w => w.replace(/[^a-z0-9]/g, "")).filter(Boolean).join("\\W+") + "\\b", "gi"), "zz"), val);
+  if (field !== "fa") for (const [re, why] of BAD) if (re.test(unnamed)) p.push(why);
   if (field !== "fa") {
-    const have = grams(src || "", 4), have6 = grams(src || "", 6);
-    const hit = [...grams(val, 4)].filter(g => have.has(g) && g.split(" ").filter(w => !STOP.has(w) && !/^\d+$/.test(w)).length >= 3);
-    for (const g of grams(val, 6)) if (have6.has(g) && !hit.some(h => g.includes(h))) hit.push(g);
+    const ms = maskNames(src || ""), mv = maskNames(val);
+    const have = grams(ms, 4), have6 = grams(ms, 6);
+    const hit = [...grams(mv, 4)].filter(g => have.has(g) && g.split(" ").filter(w => !STOP.has(w) && !/^\d+$/.test(w)).length >= 3);
+    for (const g of grams(mv, 6)) if (have6.has(g) && !hit.some(h => g.includes(h))) hit.push(g);
     if (hit.length) p.push(`4-word overlap: "${hit[0]}"${hit.length > 1 ? ` (+${hit.length - 1})` : ""}`);
   }
   return p;
 };
 const srcOf = (r, f) => f === "overview" ? r.src.desc : f === "detailed_rack" ? r.src.prot : f === "location" ? r.src.loc : r.src.fa;
+
+const areaIds = [...new Set([...inputs.values()].map(r => r.area).filter(Boolean))];
+for (let i = 0; i < areaIds.length; i += 50) {
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=name&area_id=in.(${areaIds.slice(i, i + 50).map(encodeURIComponent).join(",")})`, { headers: H });
+  if (r.ok) for (const x of await r.json()) { const w = words(x.name).join(" "); if (w.split(" ").length >= 3) NAMES.list.push(w); }
+}
+for (const r of inputs.values()) { const w = words(r.name).join(" "); if (w.split(" ").length >= 3) NAMES.list.push(w); }
+NAMES.list = [...new Set(NAMES.list)].sort((a, b) => b.length - a.length);
 
 // --drop <verify.json>: a list of { id, field, problem } from the fact-check pass; those fields are never written.
 const dropped = new Set((dropFile ? JSON.parse(readFileSync(dropFile, "utf8")) : []).map(d => d.id + "|" + d.field));
@@ -70,25 +86,41 @@ console.log(`${state}: ${ok.length} fields pass, ${refused.length} refused`);
 for (const [id, f, why] of refused) console.log(`  REFUSED ${id} ${f}: ${why}`);
 if (!APPLY) { for (const x of ok.slice(0, 6)) console.log(`  ${x.id} ${x.f}: ${x.v}`); console.log("DRY RUN — pass --apply to write"); process.exit(0); }
 
+// Every read and write is asked again on a timeout or gateway error, and a read that still fails THROWS: it used
+// to come back as an error object whose [0] is undefined, counted as "slot already filled" — Oregon's 27 rows
+// (2026-10-22) were reported skipped while the database held none of their text.
+const TRANSIENT = /57014|statement timeout|upstream|HTTP 5\d\d|fetch failed|ECONNRESET|ETIMEDOUT|PGRST303/i;
+async function ask(url, init) {
+  for (let t = 0; ; t++) {
+    try {
+      const r = await fetch(url, init), txt = await r.text();
+      if (!r.ok) throw new Error(`HTTP ${r.status} ${txt.slice(0, 200)}`);
+      return JSON.parse(txt);
+    } catch (e) { if (t >= 4 || !TRANSIENT.test(e.message)) throw e; await new Promise(res => setTimeout(res, 15_000 * (t + 1))); }
+  }
+}
+const readRow = async id => (await ask(`${SUPABASE_URL}/rest/v1/routes?select=overview,detailed_rack,location,fa&id=eq.${encodeURIComponent(id)}`, { headers: H }))[0];
+
 // Write one row at a time, only where the slot is STILL empty, then re-read and reconcile.
 const byRow = new Map();
 for (const x of ok) (byRow.get(x.id) || byRow.set(x.id, {}).get(x.id))[x.f] = x.v;
-let wrote = 0, skipped = 0;
+let wrote = 0, skipped = 0, missing = 0;
 for (const [id, patch] of byRow) {
-  const cur = (await (await fetch(`${SUPABASE_URL}/rest/v1/routes?select=overview,detailed_rack,location,fa&id=eq.${encodeURIComponent(id)}`, { headers: H })).json())[0];
-  if (!cur) { skipped++; continue; }
+  const cur = await readRow(id);
+  if (!cur) { missing++; console.log(`  NO ROW ${id}`); continue; }
   const set = {};
   for (const [f, v] of Object.entries(patch)) if (f === "fa" ? /^(?:|unknown|\?+|n\/?a)$/i.test(String(cur.fa || "").trim()) : !cur[f]) set[f] = v;
   if (!Object.keys(set).length) { skipped++; continue; }
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?id=eq.${encodeURIComponent(id)}`, { method: "PATCH", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(set) });
-  const body = await res.json();
-  if (!res.ok || body.length !== 1) throw new Error(`write ${id}: HTTP ${res.status}, ${Array.isArray(body) ? body.length : "?"} rows changed`);
+  const body = await ask(`${SUPABASE_URL}/rest/v1/routes?id=eq.${encodeURIComponent(id)}`, { method: "PATCH", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(set) });
+  if (!Array.isArray(body) || body.length !== 1) throw new Error(`write ${id}: ${Array.isArray(body) ? body.length : "?"} rows changed`);
   patch.__set = set; wrote++;
+  // Paced like order-from-mp (bulk writes saturated production on 2026-10-22): 400 ms after each write.
+  await new Promise(res => setTimeout(res, 400));
 }
 let bad = 0;
 for (const [id, patch] of byRow) {
   if (!patch.__set) continue;
-  const cur = (await (await fetch(`${SUPABASE_URL}/rest/v1/routes?select=overview,detailed_rack,location,fa&id=eq.${encodeURIComponent(id)}`, { headers: H })).json())[0];
+  const cur = await readRow(id);
   for (const [f, v] of Object.entries(patch.__set)) if (cur?.[f] !== v) { bad++; console.log(`  MISMATCH ${id} ${f}`); }
 }
-console.log(`wrote ${wrote} rows, skipped ${skipped} (slot already filled), re-read mismatches ${bad}`);
+console.log(`wrote ${wrote} rows, skipped ${skipped} (slot already filled), ${missing} with no row, re-read mismatches ${bad}`);
