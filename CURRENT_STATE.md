@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Researched text is checked against its sources**: `enrich:apply` fetches every page in a batch's `review.sources` and refuses a string that repeats 8+ words of one; `audit:copied-prose` runs the same check on a batch. 74 pitch and rappel notes on 21 routes from the 2026-10-23 pitch wave (#2655) repeated their sources and were reworded, facts unchanged. See `docs/codebase/enrichment-prose.md`.
 - **Friends’ recent activity buttons in colour** (owner, 2026-10-24): on Crew › Friends, Kudos is amber, Message blue and Vouch green (a tint until given, solid once given) instead of three grey outlines.
 - **Profile: Edit profile and Settings sit under your bio**: they were two small boxes alone in the top-right corner of the profile card, above your photo. They are now a full-width row of two equal buttons under your name and bio, where Instagram and Facebook put the action row, styled like the Share profile / View public profile row below. See `docs/features/profile-and-settings.md`.
 - **Partner cards read in white** (owner, 2026-10-24): on Find partners, a card's facts — level, location, distance, pace, *Usually free*, the bio, the catches/climbs/vouches chips and the *Full Profile & Vouches* button — are white (`C.text`) instead of grey; on a real climber's row the @handle/distance, the match % (now bold) and the pace are white. Only loading and "not enough info" notes stay grey.
