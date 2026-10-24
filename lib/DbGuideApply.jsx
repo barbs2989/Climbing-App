@@ -202,7 +202,7 @@ export default function DbGuideApply({ onClose, notify, C }) {
         <div style={label}>Primary certification track</div>
         <div style={{ fontSize: 12, color: C.textMuted, marginBottom: 8, lineHeight: 1.5 }}>This determines exactly which disciplines you can be listed under — we cross-check it against AMGA/IFMGA's public directories before listing you.</div>
         <select aria-label="Primary certification track" value={certTrack} onChange={e => setCertTrack(e.target.value)} style={inp}>{tracks.map(t => <option key={t} value={t}>{CERT_TRACK_LABELS[t]}</option>)}</select>
-        {track.length ? <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>{track.map(d => <span key={d} style={{ fontSize: 11.5, fontWeight: 600, color: C.blue, background: C.blueBg, borderRadius: 20, padding: "3px 9px" }}>{d}</span>)}</div> : null}
+        {track.length ? <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>{track.map(d => <span key={d} style={{ fontSize: 11.5, fontWeight: 600, color: "#fff", background: C.blueBg, borderRadius: 20, padding: "3px 9px" }}>{d}</span>)}</div> : null}
         <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
           <input aria-label="Certification number" value={certNumber} onChange={e => setCertNumber(e.target.value)} placeholder="Certification number" style={inp} />
           <input aria-label="Issuing org" value={issuingOrg} onChange={e => setIssuingOrg(e.target.value)} placeholder="Issuing org" style={{ ...inp, maxWidth: 140 }} />
