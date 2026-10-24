@@ -67,7 +67,17 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   in Menu › Review › Area proposals (`AreaProposalQueue`), where `approve_new_area` inserts the `areas` row. Offered only where the
   area holds no climbs itself (areas hold sub-areas OR climbs — Mountain Project's rule, and `trg_areas_leaf_xor`), and never on a country.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
-  min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.
+  min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi, gain, trip, elev, prom, near, within }`). Active filters show as chips.
+  **Since 0369 (2026-10-24)** it also filters by **Distance away** (first in the sheet: *Use my location* or a town / zip through
+  `searchPlaces`, then Within 10/25/50/100 mi or 15/40/80/150 km, plus a *Nearest first* sort grouped by wall), **Elevation gain**
+  and **Round trip** (ranges), **Peak elevation** and **Prominence** (minimums), as AllTrails does gain, length and Distance
+  away and Peakbagger does elevation and prominence. Buckets are round numbers in BOTH unit systems (`GAIN_BUCKETS`,
+  `TRIP_BUCKETS`, `PEAK_ELEV_MINS`, `PROM_MINS`, `WITHIN`). Gain and round trip are the route page's own figures (SQL
+  `route_gain_ft` / `route_trip_km`, mirrored in `lib/offline.js`; `scripts/oneoff/parity-route-finder-0369.mjs` found 0 of 950
+  rows differing); elevation and prominence are the climb's area's; distance is to the area's coordinate. Recorded mostly on
+  mountain routes (gain 885 climbs, prominence 996), so a climb without the figure is hidden while that filter is set, and the
+  sheet says so. Distance away, peak elevation and prominence narrow the AREAS first, so they lift *pick an area first* on a
+  state (`narrowsAreas`); gain and round trip alone do not (3.6 s cold over California).
   The **Filters** sheet is a full-height screen (since 2026-10-21; it was an 88vh bottom sheet, which on iOS overflowed off the
   top and hid the title, ✕ and Discipline row): title row clears the notch, the list scrolls, and **Clear all / Show N routes**
   are pinned at the bottom. N is the DRAFT's count (`finderArgs()` builds the RPC args for both the draft and the applied query, so
