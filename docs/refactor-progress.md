@@ -28,6 +28,11 @@ extraction.** No guard reads this file; keeping it true is on the author.
   did `const META = CAT` at the top of the file; `check:units` and `check:seed-history` both rendered
   the profile and threw `Cannot read properties of undefined` — caught by `measure-guard-reach`'s
   passed-before/fails-now rule, not by `check:types`. Look things up inside the function body.
+  **Enforced since 2026-10-24 by `check:no-module-scope-core-reads`** (in build), written after `VouchCard` (PR36,
+  #2678) did the same with `SKILLS` and nothing rendered the vouch, so no guard rendered the failure: the production
+  bundle threw `Cannot access … before initialization` at load and the live site drew only the nav shell until
+  #2679. The guard replays ESM evaluation order from `main.jsx` and fails on any module-scope read of a binding whose
+  module is still evaluating (a hoisted `function` export is allowed — it exists from instantiation).
 
 ## Procedure (per PR)
 
