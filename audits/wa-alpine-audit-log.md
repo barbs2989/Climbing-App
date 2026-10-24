@@ -33766,3 +33766,75 @@ batches' consistent `EGRESS_BLOCKED` results in this environment, so every findi
 snippets, cross-checked across 2+ independent sources per claim.
 
 Pass 7 continues next run after `wa_oval_peak_scramble`.
+
+## Batch 445 (pass 7) -- 2026-10-24
+
+Checked 8 routes: `wa_overcoat_peak_north_face`, `wa_overcoat_peak_southeast_route`,
+`wa_pernod_spire_standard`, `wa_phantom_peak_south_route`, `wa_phantom_peak_west_ridge`,
+`wa_philadelphia_mountain_scramble`, `wa_point_success_south_side`, `wa_poltergeist_pinnacle`.
+
+**Fixed (4 routes + 1 parent area row, 11 statements):**
+
+*Overcoat Peak, East Face* (`wa_overcoat_peak_southeast_route`) -- top-level `gain_ft`/`loss_ft`
+(6032/5800) disagreed with each other (impossible for a simple out-and-back) and with the row's
+own `itinerary.days[]`, which sums to 6200/6200 -- confirmed correct by walking the day-by-day
+profile from the Dingford Creek Trailhead waypoint (1450 ft) back to exactly 1450 ft. Corrected
+both fields to 6200.
+
+*Pernod Spire, Standard Rock Route* (`wa_pernod_spire_standard`) -- the `waypoints[1]` "Burgundy
+Col" entry stored `elev=7793` and a note calling it a "7,770-ft notch", disagreeing with this
+SAME row's own `itinerary.days[0].objective` text, which already said "Burgundy Col (~7,950
+ft)". Re-verified 2026-10-24 via SummitPost's Chianti Spire page, which independently gives the
+Burgundy Col bivy at ~7,950 ft -- corrected the waypoint's `elev` and `note` to match. With that
+confirmed, `itinerary.days[0].gainFt` (2600) was also too low to actually reach that destination
+from the stored trailhead elevation (4360 ft) net of the day's own `lossFt` (100) -- corrected to
+3690 (= 7950 - 4360 + 100).
+
+*Phantom Peak, South Route* (`wa_phantom_peak_south_route`) -- top-level `gain_ft`/`loss_ft`
+(1916/1000) were wildly inconsistent with the row's own `itinerary.days[]` sum (8400/8400),
+confirmed correct the same way as Overcoat Peak above (the 5-day profile returns exactly to the
+3120 ft Hannegan Pass Trailhead). Corrected both to 8400. Separately, `high_point_ft` (8016,
+also repeated in this row's own itinerary objective text and in the sibling West Ridge route and
+the parent area row) disagreed with this SAME row's own `waypoints[4]` summit elevation (8000).
+Re-verified 2026-10-24: Wikipedia's Picket Range table gives 8,004 ft, SummitPost's Northern
+Pickets list gives 8,000 ft -- both close to this row's own waypoint, and no source found gives
+8,016 ft anywhere (a WTA figure of 8,207 ft is a known mismatch with Mount Challenger's height,
+not a corroboration). Corrected `high_point_ft` (both Phantom Peak routes), the parent area row's
+`elevation_ft`, and the itinerary objective text's parenthetical to 8,000 ft.
+
+**Flagged for human review (1):** `wa_phantom_peak_west_ridge`'s `gain_ft` (1916) is the exact
+same number that proved wrong on its sibling South Route above, but West Ridge carries no
+itinerary of its own to derive a confident replacement from -- left for a human rather than
+guessed. Also noted but not fixed: Pernod Spire's `itinerary.days[1].lossFt` (3600) likely needs
+a matching adjustment after the day-1 fix above, but no source gives the Pernod-Chianti notch's
+exact elevation to derive one with confidence.
+
+**Clean:** `wa_overcoat_peak_north_face` is an unenriched stub (just id/area/discipline -- no
+overview, elevation, or any other field), same situation as the stub routes noted in recent prior
+batches. `wa_philadelphia_mountain_scramble` -- all fields (gain/loss vs. itinerary and pitch
+lengths, Lake Serene Trailhead elevation, NW Forest Pass requirement) checked out against WTA data
+within normal rounding tolerance. `wa_point_success_south_side` -- Mount Rainier's $82 annual
+climbing fee and $12/person/night wilderness camping fee (May 1-Sept 15) both re-verified current
+against NPS's own climbing-fee page; a ~650 ft gap between `gain_ft` (11500) and the itinerary's
+own day sum (12150) was within plausible measurement/rounding noise for an undulating cleaver
+route and not flagged. `wa_poltergeist_pinnacle` -- 2004 first-ascent year independently
+corroborated (Wikipedia's Picket Range table); the 2 ft gap between the route's `high_point_ft`
+(8200) and the parent area's `elevation_ft` (8198) is trivial rounding, not flagged.
+
+`last_processed_id` advances to `wa_poltergeist_pinnacle`. Scope counts not re-run this batch
+(last known: 737 in-scope / 833 total, from batch 444); this batch's 8 candidates (of 10 routes
+found in the id range) were confirmed on 'peak'-type areas via a direct `areas` lookup before
+auditing -- `wa_plan_9_from_outer_space` (Ed Wood Memorial Buttress) and `wa_playing_not_spraying`
+(Silver Horn, The) were excluded as crags, not peaks. No `.env`/`.env.local` or `node_modules` were
+present at run start (fresh clone); the read-only anon key supplied directly in the task prompt was
+used via plain `curl` against the REST API (no DB write attempted). `node_modules` was not
+installed this run, so the fix file was hand-verified rather than run through `check:sql` --
+every `id`/array-index/current-value guard in the SQL file was re-checked against a fresh read of
+the live row(s) immediately before writing it, and no DELETE/DROP/TRUNCATE/ALTER appears anywhere
+in it. WebSearch (standard mode) reached Wikipedia, SummitPost, the NPS Mount Rainier climbing-fee
+page, and NPS North Cascades wildfire news releases via result snippets; every finding rests on
+those snippets, cross-checked across 2+ independent sources per claim where more than one was
+available.
+
+Pass 7 continues next run after `wa_poltergeist_pinnacle` (next candidate in id order:
+`wa_poltergeist_pinnacle_north_route`).

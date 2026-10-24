@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_oval_peak_scramble",
+  "last_processed_id": "wa_poltergeist_pinnacle",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -8851,6 +8851,25 @@
       "clean": 1,
       "sql_file": "audits/sql/2026-10-23-batch-444.sql",
       "note": "All 6 fixes in this batch were already proposed in batch 358 (pass 6) against these same rows -- live DB re-read found every one still unapplied, so this batch re-verified each against current sources and re-emitted the identical fixes rather than treating them as new findings. See audits/wa-alpine-audit-log.md for full detail. Flagged: wa_oval_peak_scramble has a genuine cross-source elevation spread (8795 SummitPost/countryhighpoints.com vs 8800 Wikipedia/PeakVisor, matching this app own area row) with no tie-breaker. wa_old_snowy_mountain_west_route is an unenriched stub -- nothing to audit."
+    },
+    {
+      "batch_number": 445,
+      "date": "2026-10-24",
+      "route_ids": [
+        "wa_overcoat_peak_north_face",
+        "wa_overcoat_peak_southeast_route",
+        "wa_pernod_spire_standard",
+        "wa_phantom_peak_south_route",
+        "wa_phantom_peak_west_ridge",
+        "wa_philadelphia_mountain_scramble",
+        "wa_point_success_south_side",
+        "wa_poltergeist_pinnacle"
+      ],
+      "confirmed_errors_fixed": 4,
+      "flagged_for_human_review": 1,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-10-24-batch-445.sql",
+      "note": "Fixed 4 rows + 1 parent area row (11 statements): wa_overcoat_peak_southeast_route's gain_ft/loss_ft corrected to match its own itinerary sum and round-trip closure (6200/6200); wa_pernod_spire_standard's Burgundy Col waypoint elev/note corrected to ~7,950 ft per SummitPost and this row's own itinerary text, plus its day-1 itinerary gainFt recomputed to actually reach that destination; wa_phantom_peak_south_route's gain_ft/loss_ft corrected to match its own itinerary sum and round-trip closure (8400/8400); Phantom Peak's elevation (8016, repeated across both of its routes' high_point_ft and the parent area row) corrected to 8000 ft per Wikipedia/SummitPost, matching this row's own waypoint which already said 8000. Flagged for human review: wa_phantom_peak_west_ridge's gain_ft (1916) shares the exact value that proved wrong on its sibling south_route, but has no itinerary of its own to verify a replacement against; also noted but not fixed: wa_pernod_spire_standard's day-2 itinerary lossFt may need a matching adjustment but no source gives the Pernod-Chianti notch's exact elevation to derive one confidently. wa_overcoat_peak_north_face is an unenriched stub (no fields beyond id/area/discipline) -- nothing to audit. wa_philadelphia_mountain_scramble, wa_point_success_south_side and wa_poltergeist_pinnacle checked out clean (Mount Rainier's $82 climbing fee and $12/night wilderness fee both current per NPS; Poltergeist Pinnacle's 2004 FA year corroborated independently; Lake Serene trailhead elevation and Point Success's gain_ft-vs-itinerary gap were within source/measurement tolerance, not flagged)."
     }
   ]
 }
