@@ -15,7 +15,8 @@
 //
 // WHAT IT COVERS TODAY -- FIVE of the six, stated as a count so it cannot quietly stall.
 //   1. onboarding (#1576): disciplines and a grade typed in, then read back out of `profiles`
-//      and off the screen after a reload.
+//      and off the screen after a reload -- and, since the stepped setup (#2687), the home area
+//      typed on its own step and the gender (0359) picked on its own.
 //   2. the crew (#1554): a row a real account opens, found by a DIFFERENT real account through
 //      crew_listings.
 //   3. the route share (#1576): a route shared from the real share sheet, asked of `messages` --
@@ -213,10 +214,16 @@ try {
   // profileLoaded, which turns true only when getProfile resolves, and nothing spins while it is
   // pending -- so settledText returns before the read does, and on a loaded box the sheet opened
   // AFTER this assertion had already failed it.
-  await page.waitForFunction(() => /Takes about 30 seconds\.|WHAT DO YOU DO\?/.test(document.body.innerText || ""), null, { timeout: 60000 }).catch(() => {});
+  // #2687 made setup a stepped flow that opens on a welcome step ("Set up my profile").
+  // THE BUDGET IS THE NAVIGATION BUDGET, NOT 60s. The sheet is a lazy chunk vite transforms on its
+  // first request, after the profile read; on a loaded box (2026-10-24, load ~60) that read alone
+  // landed ~78s into the page, and a 60s wait failed a sheet that then opened anyway -- the walk
+  // went on to find it on screen. The elapsed time is printed so a slow open reads as slow.
+  const openT0 = Date.now();
+  await page.waitForFunction(() => /Takes about a minute\.|What do you climb\?/.test(document.body.innerText || ""), null, { timeout: GOTO_MS }).catch(() => {});
   const firstScreen = await page.evaluate(() => document.body.innerText || "");
-  const autoOpened = firstScreen.includes("Takes about 30 seconds.") || firstScreen.includes("WHAT DO YOU DO?");
-  if (autoOpened) ok("onboarding AUTO-OPENED for a brand-new real account");
+  const autoOpened = firstScreen.includes("Takes about a minute.") || firstScreen.includes("What do you climb?");
+  if (autoOpened) ok(`onboarding AUTO-OPENED for a brand-new real account (${((Date.now() - openT0) / 1000).toFixed(1)}s after the page settled)`);
   else bad("onboarding did not auto-open for a brand-new real account. The account has no disciplines and the profile read resolved, so accountNeedsOnboarding should be true — check that the effect keys on it and that the device preference is not already set for this profile" + traffic());
 
   // SKIP RATHER THAN COMPLETE, because the card assertion below depends on still needing it.
@@ -282,7 +289,7 @@ try {
     await settledText(page);
     if (!(await clickText("Set up my profile"))) {
       // Already past step 0 -- the editing entry can land on step 1 directly, which is fine.
-      const onStep1 = await page.evaluate(() => (document.body.innerText || "").includes("WHAT DO YOU DO?"));
+      const onStep1 = await page.evaluate(() => (document.body.innerText || "").includes("What do you climb?"));
       if (!onStep1) dead("Settings opened something that is not Onboarding");
     }
     // THE SETTINGS PATH IS STILL THE ONE WALKED, and that is deliberate rather than left over: the
@@ -293,6 +300,27 @@ try {
   }
   await settledText(page);
   ok(`onboarding is open (entered via ${entered})`);
+
+  // THE STEPS BEFORE "What do you climb?" (#2687): a photo step (signed in), then the home area.
+  // The photo is left for later ("Not now"); the home area is TYPED, so the walk can ask the
+  // database for it below -- the step writes profiles.location, which partner rows print.
+  const HOME = "Leavenworth, WA";
+  let typedHome = false;
+  for (let i = 0; i < 4; i++) {
+    const body = await page.evaluate(() => document.body.innerText || "");
+    if (body.includes("What do you climb?")) break;
+    if (body.includes("Where do you mainly climb?")) {
+      const box = page.locator('input[aria-label="Search a range, canyon, or peak"]');
+      if (await box.count()) { await box.fill(HOME); typedHome = true; }
+      if (!(await clickText("Continue"))) dead("the home-area step offers no 'Continue'");
+    } else if (!(await clickText("Not now")) && !(await clickText("Continue"))) {
+      dead("a setup step before 'What do you climb?' offers neither 'Not now' nor 'Continue'. Screen: " + body.slice(0, 300));
+    }
+    await settledText(page);
+  }
+  if (!(await page.evaluate(() => (document.body.innerText || "").includes("What do you climb?")))) dead("the walk never reached the 'What do you climb?' step");
+  if (typedHome) ok(`typed a home area: ${HOME}`);
+  else bad("the setup never showed the home-area step ('Where do you mainly climb?')");
 
   // The discipline chips carry aria-pressed and their own label; pick two by that shape rather
   // than by a hardcoded name, so a renamed discipline does not read as a broken walk.
@@ -319,7 +347,14 @@ try {
   ok(`picked a sport grade: ${grade}`);
 
   await settledText(page);
-  if (!(await clickText("Finish setup"))) dead("'Finish setup' was not clickable — disciplines may not have registered");
+  if (!(await clickText("Continue"))) dead("'Continue' on the climbing step was not clickable — disciplines may not have registered");
+  await settledText(page);
+  // GENDER (0359): optional, asked on its own step. Picked so the walk can ask the DB for it.
+  if (!(await clickText("Woman"))) bad("the gender step offered no 'Woman' choice");
+  else ok("picked a gender: Woman");
+  if (!(await clickText("Continue"))) dead("the gender step offers no 'Continue'");
+  await settledText(page);
+  if (!(await clickText("Finish setup"))) dead("'Finish setup' was not clickable on the last step");
   await settledText(page);
   ok("finished onboarding");
 
@@ -338,6 +373,12 @@ try {
   else bad("onboarding's disciplines never reached the database — they are lost on reload, and compat() scores them at 16 points each" + traffic());
   if (after && after.sport_grade) ok(`the sport grade reached the database: ${after.sport_grade}`);
   else bad("onboarding's sport grade never reached the database");
+  if (typedHome) {
+    if (after && after.location === HOME) ok(`the home area reached the database: ${after.location}`);
+    else bad(`the typed home area did not reach profiles.location (it holds ${JSON.stringify(after && after.location)})`);
+  }
+  if (after && after.gender === "woman") ok("the gender reached the database: woman");
+  else bad(`the picked gender did not reach profiles.gender (it holds ${JSON.stringify(after && after.gender)})`);
 
   // ---- AND DOES THE SCREEN SHOW IT AFTER A RELOAD? ----------------------------------------------
   // The DB write is necessary and not sufficient: the sign-in hydration has to read it back.
@@ -352,6 +393,8 @@ try {
   const shown = picked.filter((d) => reloaded.toLowerCase().includes(d.toLowerCase()));
   if (shown.length) ok(`after a reload the app still shows ${shown.length} of the ${picked.length} disciplines entered`);
   else bad(`after a reload the Profile shows none of the entered disciplines (${picked.join(", ")}) — the write landed but the hydration does not read it back`);
+  if (/\bWoman\b/.test(reloaded)) ok("after a reload the Profile shows the gender (Woman)");
+  else bad("after a reload the Profile does not show the gender that was stored");
   if (!(await clickText("Set up my profile"))) ok("onboarding does not re-open — the account is set up");
   else bad("onboarding re-opened after a reload, so nothing it collected was remembered");
 
