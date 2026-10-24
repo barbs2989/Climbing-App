@@ -3,12 +3,19 @@
 import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
 import { useState } from "react";
-import { C, DISC, HERO_BG, HERO_SHEEN, MOUNTAINS, VL, YDSL, fuzzyMatch } from "../ClimbMatchCore.jsx";
+import { C, DISC, HERO_BG, HERO_SHEEN, MOUNTAINS, PROFILE_GRADES, VL, YDSL, fuzzyMatch } from "../ClimbMatchCore.jsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
 
 export default function Onboarding({onFinish,onSkip,initial,onHelp}){
   const [home,setHome]=useState(initial&&initial.homeArea||"");const [disc,setDisc]=useState(initial&&initial.disciplines||[]);
   const [sg,setSg]=useState(initial&&initial.sportGrade||"N/A");const [tg,setTg]=useState(initial&&initial.tradGrade||"N/A");const [bg,setBg]=useState(initial&&initial.boulderGrade||"N/A");
+  /* Ice, mixed and aid have no grade column: their grade lives in `climb_grades` (0237), as the profile
+     editor writes it. Tapping Ice or Mixed above used to offer no grade for it, only sport, trad and boulder.
+     A row appears for a discipline once it is picked, or when a grade is already on file, so finishing
+     onboarding can never drop one; an emptied grade is DELETED from the map, keeping any lead/follow role. */
+  const [cg,setCg]=useState(initial&&initial.climbGrades||{});
+  const setCgGrade=(k,v)=>setCg(m=>{const o={...m};const x={...(o[k]||{})};if(v&&v!=="N/A")x.grade=v;else delete x.grade;if(Object.keys(x).length)o[k]=x;else delete o[k];return o;});
+  const extraGrades=PROFILE_GRADES.filter(g=>!g.col&&(disc.includes(g.k)||(cg[g.k]&&cg[g.k].grade)));
   const editing=!!(initial&&initial.disciplines&&initial.disciplines.length);const tog=v=>setDisc(d=>d.includes(v)?d.filter(x=>x!==v):[...d,v]);
   const areas=MOUNTAINS.filter(m=>m.id!=="world");
   const [step,setStep]=useState(editing?1:0);const [homeQ,setHomeQ]=useState(()=>{const a=areas.find(x=>x.id===home);return a?a.name:home;});
@@ -22,9 +29,9 @@ export default function Onboarding({onFinish,onSkip,initial,onHelp}){
         <div style={{fontSize:12,color:C.textMuted,fontWeight:700,marginBottom:8,letterSpacing:0.3}}>WHAT DO YOU DO? <span style={{color:C.red}}>*</span></div>
         <div style={{display:"flex",gap:7,flexWrap:"wrap",marginBottom:16}}>{Object.keys(DISC).map(k=>{const on=disc.includes(k),cat=DISC[k];return <button key={k} onClick={()=>tog(k)} aria-pressed={on} style={{display:"flex",alignItems:"center",gap:5,padding:"7px 12px",borderRadius:16,border:`1.5px solid ${on?cat.color:C.border}`,background:on?cat.bg:C.surface,color:on?cat.color:C.textSub,fontSize:13,fontWeight:600,cursor:"pointer"}}><DiscIcon d={k} size={14}/> {cat.label}</button>;})}</div>
         <div style={{fontSize:12,color:C.textMuted,fontWeight:700,marginBottom:8,letterSpacing:0.3}}>YOUR GRADES <span style={{fontWeight:500,textTransform:"none"}}>(optional)</span></div>
-        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8}}>{[["Sport",sg,setSg,YDSL],["Trad",tg,setTg,YDSL],["Boulder",bg,setBg,VL]].map(x=><div key={x[0]}><div style={{fontSize:12,color:C.textMuted,marginBottom:3}}>{x[0]}</div><select aria-label={x[0]+" grade"} value={x[1]} onChange={e=>x[2](e.target.value)} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.card,color:C.text,fontSize:12.5,boxSizing:"border-box"}}><option>N/A</option>{x[3].map(g=><option key={g}>{g}</option>)}</select></div>)}</div>
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8}}>{[["Sport",sg,setSg,YDSL],["Trad",tg,setTg,YDSL],["Boulder",bg,setBg,VL]].concat(extraGrades.map(g=>[g.label,(cg[g.k]&&cg[g.k].grade)||"N/A",v=>setCgGrade(g.k,v),g.ladder])).map(x=><div key={x[0]}><div style={{fontSize:12,color:C.textMuted,marginBottom:3}}>{x[0]}</div><select aria-label={x[0]+" grade"} value={x[1]} onChange={e=>x[2](e.target.value)} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.card,color:C.text,fontSize:12.5,boxSizing:"border-box"}}><option>N/A</option>{x[1]!=="N/A"&&!x[3].includes(x[1])?<option>{x[1]}</option>:null}{x[3].map(g=><option key={g}>{g}</option>)}</select></div>)}</div>
       </div>:null}
-      {step===1?<div style={{display:"flex",gap:8,padding:"12px 16px",borderTop:`1px solid ${C.border}`}}><button onClick={onSkip} style={{flex:1,padding:11,background:C.surface,color:C.textSub,border:`1px solid ${C.border}`,borderRadius:11,fontSize:14,cursor:"pointer",fontWeight:600}}>Skip for now</button><button onClick={()=>disc.length&&onFinish({/* homeArea is saved into profiles.location, which partner rows print as the climber's city. It sent the picked area's ID ("lcc"), so a raw id reached other climbers. Send what the box shows -- the picked name or the city already on file -- and fall back to `home` so an untouched box never blanks it. */homeArea:(homeQ||"").trim()||home,disciplines:disc,sportGrade:sg,tradGrade:tg,boulderGrade:bg})} disabled={!disc.length} style={{flex:2,padding:11,background:disc.length?C.green:C.border,color:disc.length?C.bg:C.textMuted,border:"none",borderRadius:11,fontSize:14.5,cursor:disc.length?"pointer":"default",fontWeight:700}}>{editing?"Save changes":"Finish setup"}</button></div>:null}
+      {step===1?<div style={{display:"flex",gap:8,padding:"12px 16px",borderTop:`1px solid ${C.border}`}}><button onClick={onSkip} style={{flex:1,padding:11,background:C.surface,color:C.textSub,border:`1px solid ${C.border}`,borderRadius:11,fontSize:14,cursor:"pointer",fontWeight:600}}>Skip for now</button><button onClick={()=>disc.length&&onFinish({/* homeArea is saved into profiles.location, which partner rows print as the climber's city. It sent the picked area's ID ("lcc"), so a raw id reached other climbers. Send what the box shows -- the picked name or the city already on file -- and fall back to `home` so an untouched box never blanks it. */homeArea:(homeQ||"").trim()||home,disciplines:disc,sportGrade:sg,tradGrade:tg,boulderGrade:bg,climbGrades:cg})} disabled={!disc.length} style={{flex:2,padding:11,background:disc.length?C.green:C.border,color:disc.length?C.bg:C.textMuted,border:"none",borderRadius:11,fontSize:14.5,cursor:disc.length?"pointer":"default",fontWeight:700}}>{editing?"Save changes":"Finish setup"}</button></div>:null}
     </div>
   </div>;
 }

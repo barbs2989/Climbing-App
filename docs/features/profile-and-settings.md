@@ -33,6 +33,10 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
     and the field says whether it is recognised, which state it is in (`zipState`), and when it disagrees with the state you
     picked. A zip typed with no state chosen fills the state in; a chosen state is never overwritten.
   - The photo button reads *Add photo* when there is none (the draft's `FALLBACK_AV` silhouette is not a photo).
+- **Onboarding** (`lib/Onboarding.jsx`, first run and *Edit areas, disciplines & grades*): home area, disciplines, and
+  *Your grades*: Sport, Trad and Boulder always, plus **Ice, Mixed and Aid once that discipline is tapped** (or a grade
+  is already on file), on the profile editor's `PROFILE_GRADES` ladders. Those three are saved to `climb_grades`, merged
+  with any lead/follow role already there, by the same `saveProfile` call as the rest.
 - **Add a photo from Profile**: with no photo, the Profile header's avatar carries a **+** and opens the photo picker itself
   (`avaAdding`); it uploads and saves the avatar column at once (`uploadProfilePhoto` + `saveProfileAvatar`), as the editor
   does. Not offered until the profile has been read, so a loading or failed read cannot replace a stored photo.
