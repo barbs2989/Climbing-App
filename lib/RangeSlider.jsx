@@ -10,7 +10,14 @@ import { C } from "../ClimbMatchCore.jsx";
 
    Each handle is a real slider (role="slider", focusable, arrow keys, Home/End, PageUp/PageDown) with its
    own name, so a screen reader hears "Ideal temperature, lowest 45°". Pointer events with capture, and
-   touch-action:none on the handles, so dragging on a phone moves the handle and does not scroll the page. */
+   touch-action:pan-y on the handles AND the track: a SIDEWAYS drag moves the handle, an UP-DOWN swipe scrolls
+   the page, as a native range input and iOS's own slider do. It was touch-action:none (owner 2026-10-24:
+   "Settings page is difficult to scroll"): the two sliders on Your data & account made two full-width 44 px
+   rows a swipe could not scroll from, and a swipe that started on the track JUMPED the nearer handle to the
+   finger -- scrolling past the temperature slider set the range to 18°-68°. So the track moves a handle only on a
+   TAP -- a touch that lifts within 10 px of where it began; a swipe the browser turns into a scroll is
+   cancelled and never lifts -- and a handle whose drag the browser takes over
+   for a scroll (pointercancel) puts the range back as it was. */
 /* THUMB is the circle you SEE; HIT is the area that takes the touch. Apple's guideline for a touch target is
    44 pt (WCAG 2.2 AA asks 24 px), and a 28 px circle is a poor mark for a thumb, so the handle is a 44 px
    transparent button around the same circle. Two handles at the narrowest range sit 11 px apart, so their
@@ -22,6 +29,8 @@ import { C } from "../ClimbMatchCore.jsx";
 const THUMB = 28, HIT = 44;
 export function RangeSlider({ label, min, max, minGap, value, onChange, fmt, snap, step }) {
   const box = useRef(null);
+  const before = useRef(null); // the range when a handle was touched, restored if the touch becomes a scroll
+  const tap = useRef(null); // where a touch on the TRACK began; it jumps a handle only if it lifts there, unscrolled
   const [lo, hi] = value;
   const clamp = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
   const pos = function (v) { return ((v - min) / (max - min)) * 100; };
@@ -47,9 +56,10 @@ export function RangeSlider({ label, min, max, minGap, value, onChange, fmt, sna
     return <div key={which} role="slider" tabIndex={0} aria-label={label + ", " + name} aria-orientation="horizontal"
       aria-valuemin={which === "lo" ? min : lo + minGap} aria-valuemax={which === "lo" ? hi - minGap : max} aria-valuenow={v} aria-valuetext={fmt(v)}
       onKeyDown={key}
-      onPointerDown={function (e) { try { e.currentTarget.setPointerCapture(e.pointerId); } catch (x) { /* no capture: the move events still arrive over the thumb */ } e.preventDefault(); e.currentTarget.focus(); }}
+      onPointerDown={function (e) { before.current = [lo, hi]; try { e.currentTarget.setPointerCapture(e.pointerId); } catch (x) { /* no capture: the move events still arrive over the thumb */ } e.preventDefault(); e.currentTarget.focus(); }}
+      onPointerCancel={function () { const b = before.current; before.current = null; if (b && (b[0] !== lo || b[1] !== hi)) onChange(b); }}
       onPointerMove={function (e) { let cap = false; try { cap = e.currentTarget.hasPointerCapture(e.pointerId); } catch (x) { cap = false; } if (!cap) return; const raw = fromPointer(e); if (raw != null) move(which, raw); }}
-      style={{ position: "absolute", top: 0, left: "calc(" + pos(v) + "% - " + HIT / 2 + "px)", width: HIT, height: HIT, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", cursor: "grab", touchAction: "none", outlineOffset: -2, zIndex: which === "lo" ? (loOnTop ? 4 : 2) : 3 }}>
+      style={{ position: "absolute", top: 0, left: "calc(" + pos(v) + "% - " + HIT / 2 + "px)", width: HIT, height: HIT, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", cursor: "grab", touchAction: "pan-y", outlineOffset: -2, zIndex: which === "lo" ? (loOnTop ? 4 : 2) : 3 }}>
       <span aria-hidden="true" style={{ width: THUMB, height: THUMB, borderRadius: "50%", background: C.green, border: "3px solid " + C.surface, boxShadow: "0 0 0 1px " + C.green + ", 0 1px 4px rgba(0,0,0,0.4)", pointerEvents: "none", boxSizing: "content-box" }} />
     </div>;
   };
@@ -58,8 +68,10 @@ export function RangeSlider({ label, min, max, minGap, value, onChange, fmt, sna
       <span style={{ fontSize: 15, fontWeight: 800, color: C.green }}>{fmt(lo)} <span style={{ color: C.textMuted, fontWeight: 600 }}>to</span> {fmt(hi)}</span>
     </div>
     <div style={{ padding: "0 " + HIT / 2 + "px" }}>
-      <div ref={box} style={{ position: "relative", height: HIT, touchAction: "none" }}
-        onPointerDown={function (e) { if (e.target !== e.currentTarget) return; const raw = fromPointer(e); if (raw == null) return; move(Math.abs(raw - lo) <= Math.abs(raw - hi) ? "lo" : "hi", raw); }}>
+      <div ref={box} style={{ position: "relative", height: HIT, touchAction: "pan-y" }}
+        onPointerDown={function (e) { tap.current = e.target === e.currentTarget ? { x: e.clientX, y: e.clientY } : null; }}
+        onPointerCancel={function () { tap.current = null; }}
+        onPointerUp={function (e) { const t = tap.current; tap.current = null; if (!t || e.target !== e.currentTarget || Math.abs(e.clientX - t.x) > 10 || Math.abs(e.clientY - t.y) > 10) return; const raw = fromPointer(e); if (raw == null) return; move(Math.abs(raw - lo) <= Math.abs(raw - hi) ? "lo" : "hi", raw); }}>
         <div aria-hidden="true" style={{ position: "absolute", left: 0, right: 0, top: HIT / 2 - 3, height: 6, borderRadius: 3, background: C.border, pointerEvents: "none" }} />
         <div aria-hidden="true" style={{ position: "absolute", left: pos(lo) + "%", width: (pos(hi) - pos(lo)) + "%", top: HIT / 2 - 3, height: 6, borderRadius: 3, background: C.green, pointerEvents: "none" }} />
         {thumb("lo", lo, "lowest")}
