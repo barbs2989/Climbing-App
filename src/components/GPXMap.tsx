@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { C, WP_COLORS, WP_STYLE, uDistMi, uElev, wpDivIcon, wpIs, wpPlaced, wpType } from "../../ClimbMatchCore.jsx";
 import { BaseLayerToggle, applyBaseLayer, baseTileLayer, fitZoomToLayer, layerSharpZoom, loadLeaflet, locateLabel, useFollowMe } from "../../lib/mapKit";
 import { POP_CLOSE, POP_CLOSE_MEDIA } from "../../lib/popupChrome.js";
 import { trackIsJustTheWaypoints, waypointLinePins } from "../../lib/track.js";
 import Lbl from "./Lbl.tsx";
+
+const Route3DView = lazy(() => import("../../lib/Route3DView.jsx"));
 
 /** A route waypoint as the route row stores it; placement is decided ONLY by core's `wpPlaced()`. */
 export interface Waypoint {
@@ -36,7 +38,13 @@ export interface GPXMapProps {
   derivedTrailhead?: Coord | null;
   /** Where climbers checked in at the base (0188), clustered by the database (0363 route_base_spots). */
   baseSpots?: ReadonlyArray<BaseSpot> | null;
+  /** Climbers' recorded tracks the reader picked from the CLIMBERS' TRACKS list, each in its own colour. */
+  extraTracks?: ReadonlyArray<ExtraTrack> | null;
+  /** The route's name, for the 3D view's header. */
+  title?: string | null;
 }
+/** One climber's recording drawn over the route: [lat, lng, ...] samples, its colour and its legend line. */
+export interface ExtraTrack { id: string; color: string; label: string; pts: ReadonlyArray<ReadonlyArray<number | null>> }
 interface WpStyle { color: string; glyph: string }
 /** One drawn pin: its position and the card every layer that draws it opens. */
 interface Pin { ll: LeafletAny; html: string; chip: string }
@@ -53,7 +61,7 @@ const escPinHtml = (t: unknown) => String(t == null ? "" : t).replace(/[&<>"]/g,
  * are `any` here, declared once in `src/types/leaflet-global.d.ts`. The body is core's, moved by
  * script; only types and narrowing (`track`, `pk`, `placed`) were added.
  */
-export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,derivedTrailhead,baseSpots}: GPXMapProps) {
+export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,derivedTrailhead,baseSpots,extraTracks,title}: GPXMapProps) {
   /* The ONE placement test, as a type predicate over core's wpPlaced() — every other test below goes
      through it (check:waypoint-placement scopes to this body and requires exactly that). */
   const placed = (w: Waypoint | null | undefined): w is PlacedWaypoint => wpPlaced(w);
@@ -74,7 +82,7 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
   /* Counts map builds. `ready` turns true once and stays true, so a layer drawn AFTER the build (the
      base check-ins below) needs this to know a rebuild — fullscreen, a new route — wiped it. */
   const [mapGen,setMapGen]=useState(0);
-  const [baseLayer,setBaseLayer]=useState<string>("sat");
+  const [baseLayer,setBaseLayer]=useState<string>("sat");const [view3d,setView3d]=useState(false);
   const wc=colors;
   const ep=endpointLabels||{startLabel:"Start",startColor:C.green,finishLabel:"Finish",finishColor:C.red};
   const hasPts=!!track;
@@ -224,8 +232,20 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
     return ()=>{try{grp.remove();}catch{/* the map is already gone */}};
   // eslint-disable-next-line react-hooks/exhaustive-deps -- redrawn when the map is rebuilt (`mapGen`) or the spots' CONTENT changes (`baseSig`), by design; a refetch returning the same points must redraw nothing
   },[mapGen,baseSig]);
+  /* CLIMBERS' TRACKS the reader switched on, each in its colour over the route line, in their own layer
+     so switching one off removes only it. Switching one ON fits the view to the route and every shown
+     track, as Gaia GPS zooms to a track you open; switching the last one off leaves the view alone. */
+  const xSig=(extraTracks||[]).map(t=>t.id+":"+t.color).join("|");
+  useEffect(()=>{const map=mapRef.current;if(!mapGen||!map||!window.L||!xSig)return;const L: LeafletAny=window.L;const grp=L.layerGroup().addTo(map);let fb: LeafletAny=boundsRef.current&&boundsRef.current.isValid()?L.latLngBounds(boundsRef.current.getSouthWest(),boundsRef.current.getNorthEast()):null;
+    (extraTracks||[]).forEach(t=>{const ll=t.pts.filter(p=>p[0]!=null&&p[1]!=null).map(p=>[p[0],p[1]]);if(ll.length<2)return;L.polyline(ll,{color:"#000",weight:6,opacity:0.35,interactive:false}).addTo(grp);const pl=L.polyline(ll,{color:t.color,weight:3.5,opacity:0.95}).addTo(grp);pl.bindTooltip(escPinHtml(t.label),{sticky:true});fb=fb?fb.extend(pl.getBounds()):pl.getBounds();});
+    if(fb&&fb.isValid()){try{map.fitBounds(fb.pad(0.15),{maxZoom:layerSharpZoom(baseLayer)});}catch{/* the map is already gone */}}
+    return ()=>{try{grp.remove();}catch{/* the map is already gone */}};
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- redrawn when the map is rebuilt (`mapGen`) or the SET of shown tracks changes (`xSig`), by design
+  },[mapGen,xSig]);
   if(!hasPts&&!(waypoints&&waypoints.length)&&!hasPeak)return null;
   const resetView=()=>{const map=mapRef.current;if(!map)return;me.release();if(boundsRef.current&&boundsRef.current.isValid())map.fitBounds(boundsRef.current.pad(0.25),{maxZoom:layerSharpZoom(baseLayer)});else if(hasPeak&&pk)map.setView([pk.lat,pk.lng],12);else map.setView([39.5,-98.5],4);};
-  const mapUI=<div style={fullscreen?{position:"fixed",inset:0,zIndex:9700,background:C.bg,padding:12,display:"flex",flexDirection:"column"}:{position:"relative"}} role={fullscreen?"dialog":undefined} aria-modal={fullscreen?"true":undefined} aria-label={fullscreen?"Route map":undefined}>{fullscreen?<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:9}}><span style={{fontSize:14,fontWeight:700,color:C.text}}>Route map</span><button onClick={()=>setFullscreen(false)} aria-label="Close full-screen map" style={POP_CLOSE}>✕</button></div>:null}<div style={{position:"relative",flex:fullscreen?1:"none"}}><div ref={mapDiv} style={{height:fullscreen?"100%":300,borderRadius:9,border:`1px solid ${C.border}`,overflow:"hidden",background:"#0a0f1a"}}/>{!ready?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",color:C.textMuted,fontSize:12,pointerEvents:"none",textAlign:"center",padding:16}}>{mapFail?"Map couldn’t load — see waypoints below.":"Loading map…"}</div>:null}<BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={snowAt}/>{fullscreen?null:<button onClick={()=>setFullscreen(true)} aria-label="Full screen" title="Full screen" style={{...POP_CLOSE_MEDIA,position:"absolute",top:10,right:10,zIndex:1000}}>⤢</button>}{locatedOnce?<button onClick={resetView} style={{position:"absolute",bottom:26,left:10,zIndex:1000,background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>↺ Reset view</button>:null}<button onClick={locate} style={{position:"absolute",bottom:26,right:10,zIndex:1000,background:C.blueSolid,color:"#ffffff",border:"none",borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>{<Lbl s={"📍 "+locateLabel(me,"Me")}/>}</button></div>{geoErr?<div style={{fontSize:11.5,color:C.amber,marginTop:6}}>{geoErr}</div>:null}<div style={{padding:"7px 2px 0",display:"flex",gap:5,flexWrap:"wrap"}}>{/* A legend describes THE MAP ABOVE IT, so it lists only the types this route actually uses. It used to print all of WP_STYLE unconditionally, which was already listing types the map did not draw; at 13 styled types that becomes a wall of pills that is mostly about other routes. Normalise before comparing — a raw "lake" must light the Water row. */Object.keys(WP_STYLE).filter(function(k){return (waypoints||[]).some(function(w){return wpType(w)===k;});}).map(k=><span key={k} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,padding:"3px 8px",borderRadius:999,background:C.surface,border:"1px solid "+C.border,whiteSpace:"nowrap"}}><span aria-hidden="true" style={{color:styles[k].color,fontSize:12.5,lineHeight:1}}>{styles[k].glyph}</span><span style={{color:C.textSub}}>{k}</span></span>)}</div></div>;
-  return fullscreen?createPortal(mapUI,document.body):<div>{mapUI}</div>;
+  const mapUI=<div style={fullscreen?{position:"fixed",inset:0,zIndex:9700,background:C.bg,padding:12,display:"flex",flexDirection:"column"}:{position:"relative"}} role={fullscreen?"dialog":undefined} aria-modal={fullscreen?"true":undefined} aria-label={fullscreen?"Route map":undefined}>{fullscreen?<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:9}}><span style={{fontSize:14,fontWeight:700,color:C.text}}>Route map</span><button onClick={()=>setFullscreen(false)} aria-label="Close full-screen map" style={POP_CLOSE}>✕</button></div>:null}<div style={{position:"relative",flex:fullscreen?1:"none"}}><div ref={mapDiv} style={{height:fullscreen?"100%":300,borderRadius:9,border:`1px solid ${C.border}`,overflow:"hidden",background:"#0a0f1a"}}/>{!ready?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",color:C.textMuted,fontSize:12,pointerEvents:"none",textAlign:"center",padding:16}}>{mapFail?"Map couldn’t load — see waypoints below.":"Loading map…"}</div>:null}<BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={snowAt}/>{fullscreen?null:<button onClick={()=>setFullscreen(true)} aria-label="Full screen" title="Full screen" style={{...POP_CLOSE_MEDIA,position:"absolute",top:10,right:10,zIndex:1000}}>⤢</button>}{/* 3D sits bottom-centre: the layer buttons fill the top on a phone, Me and Reset view hold the bottom corners. */}<button onClick={()=>setView3d(true)} aria-label="View in 3D" style={{position:"absolute",bottom:26,left:"50%",transform:"translateX(-50%)",zIndex:1000,background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:9,padding:"7px 12px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>3D</button>{locatedOnce?<button onClick={resetView} style={{position:"absolute",bottom:26,left:10,zIndex:1000,background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>↺ Reset view</button>:null}<button onClick={locate} style={{position:"absolute",bottom:26,right:10,zIndex:1000,background:C.blueSolid,color:"#ffffff",border:"none",borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>{<Lbl s={"📍 "+locateLabel(me,"Me")}/>}</button></div>{geoErr?<div style={{fontSize:11.5,color:C.amber,marginTop:6}}>{geoErr}</div>:null}<div style={{padding:"7px 2px 0",display:"flex",gap:5,flexWrap:"wrap"}}>{/* A legend describes THE MAP ABOVE IT, so it lists only the types this route actually uses. It used to print all of WP_STYLE unconditionally, which was already listing types the map did not draw; at 13 styled types that becomes a wall of pills that is mostly about other routes. Normalise before comparing — a raw "lake" must light the Water row. */Object.keys(WP_STYLE).filter(function(k){return (waypoints||[]).some(function(w){return wpType(w)===k;});}).map(k=><span key={k} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,padding:"3px 8px",borderRadius:999,background:C.surface,border:"1px solid "+C.border,whiteSpace:"nowrap"}}><span aria-hidden="true" style={{color:styles[k].color,fontSize:12.5,lineHeight:1}}>{styles[k].glyph}</span><span style={{color:C.textSub}}>{k}</span></span>)}</div></div>;
+  /* The 3D view draws what this map draws: the recorded line, or the dashed sketch through the pins, the placed pins, the derived trailhead, and the climbers' tracks shown here. */
+  const view3dEl=view3d?<Suspense fallback={null}><Route3DView line={track?track.map(p=>[p[0],p[1]]):(hasWpLine?wpLine.map(w=>[w.lat,w.lng]):null)} lineIsSketch={!track} waypoints={wpPts.map(w=>({lat:w.lat,lng:w.lng,name:w.name,type:w.type})).concat(derivedTrailhead&&derivedTrailhead.lat!=null&&derivedTrailhead.lng!=null&&(hasPts||wpPts.length>0)?[{lat:derivedTrailhead.lat,lng:derivedTrailhead.lng,name:derivedTrailhead.name||"Trailhead",type:"Trailhead"}]:[]).concat(!hasPts&&!wpPts.length&&pk?[{lat:pk.lat as number,lng:pk.lng as number,name:pk.name||"Peak location",type:"Summit"}]:[])} tracks={(extraTracks||[]).map(t=>({id:t.id,color:t.color,label:t.label,pts:t.pts.map(p=>[p[0],p[1]])}))} title={title||undefined} onClose={()=>setView3d(false)}/></Suspense>:null;
+  return <>{fullscreen?createPortal(mapUI,document.body):<div>{mapUI}</div>}{view3dEl}</>;
 }
