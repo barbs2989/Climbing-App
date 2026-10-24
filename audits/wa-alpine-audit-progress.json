@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_primus_peak_south_ridge",
+  "last_processed_id": "wa_prusik_peak_taylor_wood_route",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -8889,6 +8889,24 @@
       "clean": 7,
       "sql_file": "audits/sql/2026-10-24-batch-446.sql",
       "note": "wa_poltergeist_pinnacle_north_route's waypoints[0] 'Hannegan Pass Trailhead' stored lat/lng (48.910185/-121.591971) disagreed with this SAME row's own approach_logistics.trailheadLat/trailheadLng field (48.91049444/-121.5894222) -- and that second figure is the exact official USFS trailhead-page coordinate (fs.usda.gov/r06/mbs/recreation/hannegan-trailhead). Corrected the waypoint to match. Flagged for human review: the same route's pitches (4) / length_m (445, i.e. 1460 ft) disagree with Mountain Project's '6 pitches, 1200 ft' for the same East Face route -- internally self-consistent here (its own pitch_detail sums exactly to 445m) and plausibly just a different convention for splitting the long simul-climbed ridge section into pitches, not a clear error, so left unfixed. Also noted but not flagged as an error: the area row's own peak coordinate (48.83524,-121.3419) sits almost exactly on Mount Challenger's own summit rather than ~140m south of it per Wikipedia's prose for Poltergeist Pinnacle -- but that same Wikipedia stub's own infobox coordinate for the pinnacle is ~1.3 km from Challenger's, a 10x contradiction of its own prose, so Wikipedia cannot adjudicate this and no independent peakbagger/listsofjohn page could be retrieved; left as-is pending a better source. wa_poltergeist_pinnacle_north_route's FA ('Dan Aylward and Forrest Murphy, 2004') and Grade IV commitment both independently confirmed via Mountain Project and AAC Publications. Clean: wa_preacher_mountain_scramble (5,924 ft summit and 47.498605/-121.519225 coordinate both match Wikipedia almost exactly) and wa_primus_peak_south_ridge (8,508 ft and 48.5819/-121.092 both match Wikipedia almost exactly; its Eldorado/Cascade River Road approach is a genuinely different, valid route from the Mountaineers' default Thunder Creek/Borealis Glacier approach, not a contradiction). The other 5 routes on this batch's list (wa_preacher_mountain_east_gully, north_route, south_gully_south_spur, south_rib, west_face) are unenriched stubs -- just id/area_id/name/discipline/classic/name_search, no stored fact to check against a source, same situation as prior-batch stubs."
+    },
+    {
+      "batch_number": 447,
+      "date": "2026-10-24",
+      "route_ids": [
+        "wa_prusik_peak_alpine_craggers_delight",
+        "wa_prusik_peak_der_sportsman",
+        "wa_prusik_peak_east_face",
+        "wa_prusik_peak_prayer_for_a_friend",
+        "wa_prusik_peak_sail_away",
+        "wa_prusik_peak_solid_gold",
+        "wa_prusik_peak_south_face_burgner_stanley",
+        "wa_prusik_peak_taylor_wood_route"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 2,
+      "clean": 6,
+      "note": "No confirmed errors this batch -- every checkable fact on the 6 'clean' routes was independently corroborated. wa_prusik_peak_der_sportsman: grade 5.11+, 6 pitches, 183m/600ft, Brooke Sandahl FA (undated, developed over ~3 years in the 1990s) all match Mountain Project; the stored Enchantment Permit Area text (overnight permits required May 15-Oct 31, free self-issued day-use permit otherwise) matches USFS/recreation.gov exactly. wa_prusik_peak_prayer_for_a_friend: grade 5.14a, FA (Fitz Cahall/Becca Cahall/Aaron Webb, 2003, aided) and FFA (Adrian Vanoni, October 2023) all independently confirmed via Climbing.com, AAC Publications and Mountain Project's route history ('6 Oct 2023: First free ascent'). wa_prusik_peak_solid_gold: FA (Wayne Wallace and Tim Olson, 1989) and grade 5.11a both confirmed via Wikipedia, Mountain Project and Mountaineers trip reports (a minority of sources give 5.10d instead, a genuine but not DB-sided cross-source spread). wa_prusik_peak_south_face_burgner_stanley: FA (Burgner and Stanley, 1968) confirmed via SummitPost; grade 5.10a matches Mountain Project's own page for this exact route (titled 'stanley-burgner') even though the Mountaineers/Wenatchee Outdoors give 5.9/5.9+ for the same line -- stored value has direct source support, so not flagged. wa_prusik_peak_taylor_wood_route: FA (David Wood and Fletcher Taylor, August 18 2023) confirmed verbatim via the climbers' own SummitPost route report; grade 5.9+ falls within that report's stated 5.9+/5.10- range. wa_prusik_peak_alpine_craggers_delight is a thin, very recent (2022) route with no independent source found, but its own FA field already hedges honestly ('Unknown; first reported publicly by...') rather than overclaiming, so left as-is. Flagged for human review: wa_prusik_peak_east_face's only facts are name 'East Face' and FA 'Fred Beckey and Dan Davis' -- but no authoritative source (Mountain Project's Prusik Peak area page, Mountaineers, SummitPost, Wikipedia) documents any 'East Face' route on Prusik Peak, and that exact FA pair/era belongs to the well-documented 'South Face (Beckey-Davis)' route (June 29, 1962) which is NOT otherwise present in this batch or an obvious sibling row -- this looks like a misnamed or mis-attributed stub, but renaming/re-identifying a route is a structural call beyond this audit's mandate (and area/duplicate rules in docs/codebase/route-identity.md counsel against guessing identity), so left for a human to decide whether to rename it, merge it, or leave it. wa_prusik_peak_sail_away's FA ('Fletch Taylor and David Wood, August 9, 2025') could not be found on Mountain Project, SummitPost, or general web search -- plausible (same two climbers put up the Taylor-Wood Route in 2023 and are active new-routers in the Enchantments) but too recent/obscure to independently corroborate, so flagged rather than assumed correct."
     }
   ]
 }

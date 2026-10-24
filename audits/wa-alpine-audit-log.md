@@ -33891,3 +33891,63 @@ guessed, per the audit's standing rule.
 
 Pass 7 continues next run after `wa_primus_peak_south_ridge` (next candidates start with
 `wa_prusik_peak_*`).
+
+## Batch 447 -- 2026-10-24 (pass 7)
+
+Routes: `wa_prusik_peak_alpine_craggers_delight`, `wa_prusik_peak_der_sportsman`,
+`wa_prusik_peak_east_face`, `wa_prusik_peak_prayer_for_a_friend`,
+`wa_prusik_peak_sail_away`, `wa_prusik_peak_solid_gold`,
+`wa_prusik_peak_south_face_burgner_stanley`, `wa_prusik_peak_taylor_wood_route`.
+
+**Fixed:** none. Every stored fact checked this batch had either direct source
+corroboration or an honest existing hedge, so no SQL file was produced.
+
+**Flagged for human review (2):** `wa_prusik_peak_east_face`'s only facts are its name
+("East Face") and FA ("Fred Beckey and Dan Davis"), but no authoritative source --
+Mountain Project's own Prusik Peak area/route list, the Mountaineers, SummitPost or
+Wikipedia -- documents any "East Face" route on Prusik Peak at all, and that exact FA
+pair and era (June 29, 1962) belongs to the well-documented "South Face (Beckey-Davis)"
+route, which isn't otherwise present as a sibling row in this batch. Looks like a
+misnamed or mis-attributed stub, but renaming/re-identifying a route's name is a
+structural call outside this audit's mandate (and the "don't guess identity" rule in
+`docs/codebase/route-identity.md`), so left for a human to decide whether to rename it,
+merge it into a Beckey-Davis row, or leave it as a genuinely separate, just-undocumented
+line. `wa_prusik_peak_sail_away`'s FA ("Fletch Taylor and David Wood, August 9, 2025")
+could not be found on Mountain Project, SummitPost, or general web search -- plausible
+(the same two climbers put up the Taylor-Wood Route in 2023 and are both active
+new-routers on this peak) but too recent/obscure to independently corroborate one way or
+the other, so flagged rather than assumed correct.
+
+**Clean (6):** `wa_prusik_peak_der_sportsman` -- grade 5.11+, 6 pitches, 183m/600ft, and
+Brooke Sandahl's undated-in-the-1990s FA all match Mountain Project; its Enchantment
+Permit Area text (overnight permits required May 15-Oct 31, free self-issued day-use
+permit otherwise) matches USFS/recreation.gov exactly. `wa_prusik_peak_prayer_for_a_friend`
+-- grade 5.14a, FA (Fitz Cahall/Becca Cahall/Aaron Webb, 2003, aided) and FFA (Adrian
+Vanoni, October 2023) all independently confirmed via Climbing.com, AAC Publications and
+Mountain Project's own route history ("6 Oct 2023: First free ascent").
+`wa_prusik_peak_solid_gold` -- FA (Wayne Wallace and Tim Olson, 1989) and grade 5.11a
+both confirmed via Wikipedia, Mountain Project and Mountaineers trip reports (a minority
+of sources give 5.10d instead -- a real cross-source spread, but the stored value has its
+own direct support, so not flagged). `wa_prusik_peak_south_face_burgner_stanley` -- FA
+(Burgner and Stanley, 1968) confirmed via SummitPost; grade 5.10a matches Mountain
+Project's own page for this exact route even though the Mountaineers and Wenatchee
+Outdoors give 5.9/5.9+ for the same line -- same situation, stored value has direct
+support. `wa_prusik_peak_taylor_wood_route` -- FA (David Wood and Fletcher Taylor, August
+18, 2023) confirmed verbatim via the climbers' own SummitPost route report; grade 5.9+
+falls within that report's stated 5.9+/5.10- range. `wa_prusik_peak_alpine_craggers_delight`
+is a thin, very recent (2022) route with no independent source found, but its own FA
+field already hedges honestly ("Unknown; first reported publicly by...") rather than
+overclaiming, so left as-is rather than flagged.
+
+`last_processed_id` advances to `wa_prusik_peak_taylor_wood_route`. Scope counts not
+re-run this batch (last known: 737 in-scope / 833 total, from batch 444). No
+`.env`/`.env.local` present at run start (fresh clone); the read-only anon key supplied
+directly in the task prompt was used via plain `curl` against the REST API for all reads
+(no DB write attempted, and none needed -- no SQL file this batch). WebSearch (standard
+and one extended-mode query) reached Wikipedia, SummitPost, Mountain Project, AAC
+Publications, Climbing.com and PhysiVantage; every finding rests on 2+ independent
+sources where more than one was available, and the two ambiguous/unconfirmable ones were
+left to a human rather than guessed, per the audit's standing rule.
+
+Pass 7 continues next run after `wa_prusik_peak_taylor_wood_route` (next candidate in id
+order: `wa_prusik_peak_west_ridge`).
