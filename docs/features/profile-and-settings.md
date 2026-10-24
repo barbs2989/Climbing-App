@@ -88,6 +88,9 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   restricted and blocked climbers. Notifications: the three switches. Your data & account: sign in/out, Edit profile, the guide
   entries, Edit areas/disciplines/grades, Your conditions, Readiness defaults, units and date format (*Display*), then export,
   opt out and delete. Legal & help: the four documents and How ClimbMatch works.
+  Your conditions' temperature and wind are two-handle sliders (`lib/RangeSlider.jsx`) that take a SIDEWAYS drag
+  only: an up-down swipe that starts on one scrolls the page and leaves the range alone (`touch-action:pan-y`; the
+  track jumps a handle on a tap, never on a swipe), so the page scrolls from anywhere on it.
   When the Terms or Privacy Policy change, a signed-in account sees `PolicyUpdateNotice` pinned to the bottom (Read Terms ·
   Read Privacy · I accept; not dismissible). *I accept* records the version (`acceptCurrentPolicy`) and then closes the notice
   AND any document it opened, returning the climber to the app.
