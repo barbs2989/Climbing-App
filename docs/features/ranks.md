@@ -49,7 +49,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 - **Classic climbs**: different classic routes sent.
 - **Per type**: on any type but All, Logged, Days, Vert, Classics and Peaks read `stats.<all|backed>.by.<type>`
   (sport and trad also roll up as `rock`), so the Bouldering board's Days are bouldering days.
-- **Belay** `counted_catch_count`, **Vouched** distinct vouchers,
+- **Belay** `counted_catch_count` (a catch both climbers recorded, 0361), **Vouched** distinct vouchers,
   **Contributions** points from `contribution_points()` (0333) — all server-side.
 - **Contribution points (0333)**: ONE ledger, `contribution_points()`, feeds this board, every area's and route's
   TOP CONTRIBUTORS (`area_top_contributors`, rendered by `TopContributors` in `src/components/TopContributors.tsx`) and the profile's
