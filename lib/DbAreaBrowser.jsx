@@ -5,7 +5,7 @@
 // just fetched on demand from Supabase instead of walking the in-memory
 // MOUNTAINS/ROUTES arrays, since the DB catalog (47k+ areas / 200k+ routes) is
 // far too large to hold in memory. Rendered only when USE_DB is on.
-import { createContext, Fragment, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { createContext, Fragment, useContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { fetchArea, useArea, useAreaContributions, useAreaClimbStats, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb, usePartnerAreaCount, usePartnersInArea, savePartnerArea, removePartnerArea } from "./db";
 import { useRecentRouteIds } from "./recent";
@@ -1363,7 +1363,7 @@ function ObjectivesPanel({ area, onOpen, C }) {
 // map" in absurdly tight since it centered on the state's single lat/lng
 // point at the same zoom used for a crag.
 const ZOOM_BY_AREA_TYPE = { world: 2, country: 3, state: 6, range: 8, region: 8, canyon: 10, peak: 12, crag: 13, wall: 14 };
-function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
+function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }) {
   const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), tileRef = useRef(null), placeMarkRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [mapFail, setMapFail] = useState(false);
@@ -1381,13 +1381,35 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   // Falls back to the main type for a row read before that column existed.
   const [disc, setDisc] = useState(null);
 
-  // Full screen just resizes the same Leaflet instance in place (same map div,
-  // same markers, same zoom/pan) rather than tearing it down and rebuilding it
-  // elsewhere — collapsing back drops you exactly where you were, no reload.
+  // FULL SCREEN IS A REAL FULL-SCREEN VIEW, drawn over the whole app like the route map's. It used
+  // to stretch the map in place, in the page's flow: on a phone it ran on under the bottom bar, the
+  // header stayed on top of it, the controls above it vanished so the ✕ jumped ~100px up the screen,
+  // and the height was ANIMATED, so the map's ResizeObserver re-measured and re-read the view on
+  // every frame of the transition. The owner reported a crash on closing it (2026-10-23).
+  // It is still the SAME Leaflet instance -- same markers, zoom, pan and your dot, so collapsing
+  // back drops you exactly where you were. The map is rendered through a portal into `host`, a div
+  // this panel owns, and only `host` moves: into document.body for full screen, back into the
+  // inline slot for the page. Moving a node keeps everything inside it, Leaflet included.
+  const hostRef = useRef(null), slotRef = useRef(null), wasFullRef = useRef(false);
+  if (!hostRef.current && typeof document !== "undefined") hostRef.current = document.createElement("div");
+  // Layout, not passive: the map div must be in the document before Leaflet's init effect measures it.
+  useLayoutEffect(() => {
+    const host = hostRef.current;
+    if (!host) return;
+    if (fullscreen) { wasFullRef.current = true; document.body.appendChild(host); }
+    else if (slotRef.current) {
+      slotRef.current.appendChild(host);
+      // While the map was away the page was shorter and its scroll clamped: put the map back in view.
+      if (wasFullRef.current) { wasFullRef.current = false; try { slotRef.current.scrollIntoView({ block: "nearest" }); } catch (e) {} }
+    }
+    if (mapRef.current) { try { mapRef.current.invalidateSize(); } catch (e) {} }
+  }, [fullscreen]);
+  useEffect(() => () => { if (hostRef.current) hostRef.current.remove(); }, []);
   useEffect(() => {
-    if (!mapRef.current) return;
-    const t = setTimeout(() => { try { mapRef.current.invalidateSize(); } catch (e) {} }, 220);
-    return () => clearTimeout(t);
+    if (!fullscreen) return;
+    const onKey = e => { if (e.key === "Escape") setFullscreen(false); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
   }, [fullscreen]);
   const { data, isLoading, error } = useNearbyAreas(bounds);
   const nearbyAll = data && data.rows;
@@ -1412,7 +1434,11 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
     const init = () => {
       if (cancelled || !mapDiv.current || mapRef.current || !window.L) return;
       const L = window.L;
-      const map = L.map(mapDiv.current, { attributionControl: false }).setView(center ? [center.lat, center.lng] : [39.5, -98.5], center ? (ZOOM_BY_AREA_TYPE[areaType] || 10) : 4);
+      // Zoom sits BOTTOM-LEFT, a corner nothing else on this map uses (the fire map moved its own
+      // to a free corner the same way). Top-left it shared with the Street/Satellite/Topo/Snow row,
+      // and pushing it 56px down (#2411) still left the owner reporting the row over the + / −.
+      const map = L.map(mapDiv.current, { attributionControl: false, zoomControl: false }).setView(center ? [center.lat, center.lng] : [39.5, -98.5], center ? (ZOOM_BY_AREA_TYPE[areaType] || 10) : 4);
+      L.control.zoom({ position: "bottomleft" }).addTo(map);
       applyBaseLayer(map, tileRef, baseLayer);
       markRef.current = L.layerGroup().addTo(map);
       mapRef.current = map;
@@ -1543,46 +1569,71 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   }, [nearby, bounds, center]);
   const discChip = (k, label, on) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
 
-  return (
-    <div>
-      {!fullscreen ? <ViewToggle mode="map" onList={onBack} onMap={() => {}} C={C} /> : null}
-      {!fullscreen ? (
-        <>
-          <button onClick={locate} disabled={locating} style={{ width: "100%", padding: 11, borderRadius: 10, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: locating ? "default" : "pointer", marginBottom: 8 }}>{locateLabel(me, "Use my location")}</button>
-          {geoErr ? <div style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{geoErr}</div> : null}
-        </>
-      ) : null}
-      <form onSubmit={findPlace} role="search" style={{ display: "flex", gap: 6, marginBottom: place.err || place.alts.length ? 4 : 8 }}>
-        <input type="search" value={placeQ} onChange={e => setPlaceQ(e.target.value)} placeholder="Go to a town, county or zip/postal code" aria-label="Go to a town, county or zip/postal code" enterKeyHint="search" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16 }} />
-        <button type="submit" disabled={!placeQ.trim() || place.busy} style={{ ...BTN, background: C.blueSolid, color: "#fff", border: "none", flexShrink: 0, opacity: !placeQ.trim() || place.busy ? 0.6 : 1 }}>{place.busy ? "Finding…" : "Go"}</button>
-      </form>
-      {place.err ? <div role="status" style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{place.err}</div> : null}
-      {place.alts.length ? (
-        <div role="group" aria-label="Other places with that name" style={{ display: "flex", gap: 6, overflowX: "auto", alignItems: "center", marginBottom: 8, paddingBottom: 2 }}>
-          <span style={{ fontSize: 11.5, color: C.textMuted, flexShrink: 0 }}>Not it?</span>
-          {place.alts.map((p, i) => <button key={i} onClick={() => { goToPlace(p); setPlace(s => ({ ...s, alts: s.alts.filter(x => x !== p) })); }} style={{ ...CHIP, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 12, fontWeight: 600, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{p.name + (p.sub ? ", " + p.sub.split(", ").slice(-1)[0] : "")}</button>)}
-        </div>
-      ) : null}
-      <div style={{ position: "relative", marginBottom: fullscreen ? 0 : 8 }}>
-        <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "calc(100vh - 262px)" : 260, borderRadius: fullscreen ? 0 : 12, overflow: "hidden", background: C.surface, transition: "height 0.2s" }} />
-        {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
-        <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={center} />
-        <button onClick={() => setFullscreen(f => !f)} aria-label={fullscreen ? "Exit full screen" : "Full screen"} title={fullscreen ? "Exit full screen" : "Full screen"} style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000 })}>{fullscreen ? "✕" : "⤢"}</button>
-        {sel ? (
-          <div style={{ position: "absolute", left: 12, right: 12, bottom: 12, zIndex: 1000, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12, padding: "10px 12px", boxShadow: "0 6px 20px rgba(0,0,0,0.5)", display: "flex", alignItems: "center", gap: 10 }}>
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, lineHeight: 1.3, overflowWrap: "anywhere" }}>{sel.name}</div>
-              <div style={{ fontSize: 11.5, color: C.textMuted }}>{sel.route_count + " climb" + (sel.route_count !== 1 ? "s" : "") + (sel._mi != null ? " · " + (uDistMi ? uDistMi(sel._mi) : sel._mi.toFixed(1) + " mi") : "")}</div>
-            </div>
-            <button onClick={() => { onOpenArea(sel); setSel(null); }} style={{ ...BTN, background: C.blueSolid, color: "#fff", border: "none", flexShrink: 0 }}>Open</button>
-            <button onClick={() => setSel(null)} title="Close" aria-label="Close" style={POP_CLOSE}>✕</button>
+  const searchUI = (
+    <>
+        <form onSubmit={findPlace} role="search" style={{ display: "flex", gap: 6, marginBottom: place.err || place.alts.length ? 4 : 8 }}>
+          <input type="search" value={placeQ} onChange={e => setPlaceQ(e.target.value)} placeholder="Go to a town, county or zip/postal code" aria-label="Go to a town, county or zip/postal code" enterKeyHint="search" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16 }} />
+          <button type="submit" disabled={!placeQ.trim() || place.busy} style={{ ...BTN, background: C.blueSolid, color: "#fff", border: "none", flexShrink: 0, opacity: !placeQ.trim() || place.busy ? 0.6 : 1 }}>{place.busy ? "Finding…" : "Go"}</button>
+        </form>
+        {place.err ? <div role="status" style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{place.err}</div> : null}
+        {place.alts.length ? (
+          <div role="group" aria-label="Other places with that name" style={{ display: "flex", gap: 6, overflowX: "auto", alignItems: "center", marginBottom: 8, paddingBottom: 2 }}>
+            <span style={{ fontSize: 11.5, color: C.textMuted, flexShrink: 0 }}>Not it?</span>
+            {place.alts.map((p, i) => <button key={i} onClick={() => { goToPlace(p); setPlace(s => ({ ...s, alts: s.alts.filter(x => x !== p) })); }} style={{ ...CHIP, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 12, fontWeight: 600, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{p.name + (p.sub ? ", " + p.sub.split(", ").slice(-1)[0] : "")}</button>)}
           </div>
         ) : null}
-      </div>
+    </>
+  );
+  const mapBox = (
+    <div style={{ position: "relative", flex: fullscreen ? 1 : "none", minHeight: 0 }}>
+      <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "100%" : 260, borderRadius: 12, overflow: "hidden", background: C.surface }} />
+      {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
+      <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={center} />
+      {fullscreen ? null : <button onClick={() => setFullscreen(true)} aria-label="Full screen" title="Full screen" style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000 })}>⤢</button>}
+      {/* WHERE AM I, on the map itself, as the route map has it: bottom-right, above the tile
+          credit, in full screen too. It used to be a full-width button above the map, which full
+          screen hid. Out of the way of an open area card, which spans the bottom of the map. */}
+      {sel ? null : <button onClick={locate} disabled={locating} aria-label="Show my location on the map" style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{"📍 " + locateLabel(me, "Me")}</button>}
+      {sel ? (
+        <div style={{ position: "absolute", left: 12, right: 12, bottom: 12, zIndex: 1000, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12, padding: "10px 12px", boxShadow: "0 6px 20px rgba(0,0,0,0.5)", display: "flex", alignItems: "center", gap: 10 }}>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, lineHeight: 1.3, overflowWrap: "anywhere" }}>{sel.name}</div>
+            <div style={{ fontSize: 11.5, color: C.textMuted }}>{sel.route_count + " climb" + (sel.route_count !== 1 ? "s" : "") + (sel._mi != null ? " · " + (uDistMi ? uDistMi(sel._mi) : sel._mi.toFixed(1) + " mi") : "")}</div>
+          </div>
+          <button onClick={() => { onOpenArea(sel); setSel(null); }} style={{ ...BTN, background: C.blueSolid, color: "#fff", border: "none", flexShrink: 0 }}>Open</button>
+          <button onClick={() => setSel(null)} title="Close" aria-label="Close" style={POP_CLOSE}>✕</button>
+        </div>
+      ) : null}
+    </div>
+  );
+  const errUI = geoErr ? <div role="status" style={{ color: C.red, fontSize: 12, marginTop: 6 }}>{geoErr}</div> : null;
+  const title = "Map" + (name ? " · " + name : "");
+  return (
+    <div>
+      <ViewToggle mode="map" onList={onBack} onMap={() => {}} C={C} />
+      {fullscreen ? null : searchUI}
+      {/* The inline slot the map's host div sits in when it is not full screen. React renders it
+          empty and never touches its children; only the effect above moves the host in and out. */}
+      <div ref={slotRef} style={{ marginBottom: 8 }} />
+      {/* ONE wrapper in both modes, its children in fixed slots (null when unused): a different
+          element around `mapBox` in full screen would make React unmount the map's div, and with it
+          the Leaflet map, every time the climber went in or out. */}
+      {hostRef.current ? createPortal(
+        <div role={fullscreen ? "dialog" : undefined} aria-modal={fullscreen ? "true" : undefined} aria-label={fullscreen ? title : undefined} style={fullscreen ? { position: "fixed", inset: 0, zIndex: 9700, background: C.bg, padding: 12, display: "flex", flexDirection: "column" } : { position: "relative" }}>
+          {fullscreen ? (
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, marginBottom: 9 }}>
+              <span style={{ fontSize: 14, fontWeight: 700, color: C.text, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{title}</span>
+              <button onClick={() => setFullscreen(false)} aria-label="Close full-screen map" style={POP_CLOSE}>✕</button>
+            </div>
+          ) : null}
+          {fullscreen ? searchUI : null}
+          {mapBox}
+          {errUI}
+        </div>, hostRef.current) : null}
       {!fullscreen ? (
         <>
           <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8 }}>{"Pan or zoom the map, or type a town above, to see areas anywhere else." + (me.acc != null ? " The green dot is you." : "")}</div>
-          {!center && !bounds ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{'Tap "Use my location" to find climbs near you.'}</div> : null}
+          {!center && !bounds ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{'Tap "Me" on the map to find climbs near you.'}</div> : null}
           {error && !sorted.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load nearby areas — check your connection and try again.</div> : null}
           {error && sorted.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the areas from your last load.</div> : null}
           {isLoading && bounds ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading nearby climbs…</div> : null}
@@ -1904,7 +1955,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
       ) : screen === "objectives" ? (
         <ObjectivesPanel area={current} onOpen={onOpenRoute} C={C} />
       ) : screen === "near" ? (
-        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} /></>
+        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} /></>
       ) : (
         <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap} onAddClimb={onAddClimb} onAddArea={onAddArea} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { setFinderDisc(typeof d === "string" ? d : ""); setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
       )}
