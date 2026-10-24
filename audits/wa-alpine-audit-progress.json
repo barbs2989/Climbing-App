@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_sherpa_glacier",
+  "last_processed_id": "wa_sinister_peak_southwest_route",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -8979,6 +8979,25 @@
       "flagged_for_human_review": 2,
       "clean": 6,
       "note": "No confirmed fixes this batch -- all claims checked against at least one authoritative source matched. wa_sentinel_peak_standard: already-corrected 8,257 ft elevation and empty fa field (no FA found anywhere) both hold up; a trip-report summit table giving 8,261 ft is within normal quad-vs-LiDAR noise and doesn't outweigh the already-documented listsofjohn.com LiDAR figure. wa_sews_sw_rib: FA 'Donald Anderson and Larry Scott, 1964' confirmed exactly via Mountain Project and the AAC's 1966 publication; elevation (7,807 ft) matches its own area row and Wikipedia. wa_sharkfin_tower_southeast_ridge: FA 'Wesley Grande, Jay Todd, and Joseph Vance, August 1947' confirmed exactly via Wikipedia and Mountain Project; the stored 2005 fatal-accident hazard note (anchor failure during a rappel, wrong-gully routefinding as a contributing factor, 3 dead) matches the Mountaineers' own 2006 investigation and AAC accident report in both cause and count. wa_sherman_peak_baker_route and wa_sherman_peak_baker_squak_glacier: both still consistent with each other and their area row at 10,133 ft (the 2023 DGPS survey figure already applied in a prior pass) -- no regression. wa_sherpa_glacier: FA 'Bill & Gene Prater, Don & Nelson Torrey, 1956' confirmed exactly via SummitPost; Mount Stuart's 9,415 ft elevation matches its own area row and Wikipedia. Flagged for human review (not fixed): wa_sherpa_balanced_rock_ne_couloir and wa_sherpa_balanced_rock_standard. Sherpa Peak and 'Sherpa Balanced Rock' are a real, surveyed double-summit cluster about 100 yards apart (countryhighpoints.com's 2017 sight-level attempt found the rock 2 ft lower than the main summit, not a duplicate-area bug), but the cluster's absolute elevation is genuinely disputed and unresolved across sources: Wikipedia/PeakVisor/the area row give 8,630 ft, while SummitPost/WTA/countryhighpoints.com give 8,600-8,605 ft (matching the Standard Route's own stored high_point_ft of 8,605), and Peakbagger logs a climber GPS reading of 8,634.5 ft. No LiDAR/DGPS survey resolving the absolute figure was found (unlike Sentinel/Sherman/Remmel/Ruby in recent batches), so the Standard Route's high_point_ft was left alone rather than overwritten to match its area row's 8,630 -- a human with guidebook/survey access should decide which figure is authoritative. Separately, the NE Couloir is filed under the wa_sherpa_peak area while its own summit waypoint and topo description (finishing at 'the balanced rock') point at the wa_sherpa_balanced_rock cluster instead -- worth a human look, but not an obvious misfiling given how close and disputed the two summits are."
+    },
+    {
+      "batch_number": 452,
+      "date": "2026-10-24",
+      "route_ids": [
+        "wa_sherpa_peak_east_ridge",
+        "wa_sherpa_peak_north_ridge",
+        "wa_sherpa_peak_northeast_face",
+        "wa_sherpa_peak_west_ridge",
+        "wa_silver_star_glacier",
+        "wa_silver_star_ne_ridge",
+        "wa_sinister_peak_north_face",
+        "wa_sinister_peak_southwest_route"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 2,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-10-24-batch-452.sql",
+      "note": "Fixed: Sinister Peak's area-row elevation_ft and both routes' high_point_ft/summit-waypoint elev all read 8,444 ft, traced to a 2026-07-31 prior pass that moved the area row from 8,440 to 8,444 purely to agree with the routes' own fields rather than any outside source -- Wikipedia, PeakVisor, SummitPost and mountaineers.org all independently give 8,440 ft, none give 8,444, so reverted all three back to 8,440. Also fixed wa_silver_star_glacier.fa: misspelled the 1952 FA party as 'Joe Heib'; AAC's 1953 Climbs & Expeditions report and SummitPost both spell it 'Joe Hieb', and this row's own corrections field already uses the correct spelling for this exact ascent -- the fa column was just never updated to match. Verified clean: wa_silver_star_glacier's 8,876 ft east summit and wa_silver_star_ne_ridge's 8,840 ft west summit both check out against Wikipedia/SummitPost, including the ~300 ft col between them; wa_sinister_peak_north_face's FA (Gordy Skoog, Carl Skoog, Gary Brill, Aug 1 1980) isn't independently nameable but isn't contradicted by a 2005 trip report's 'almost 26 years ago' from a co-climber named Carl; wa_sherpa_peak_north_ridge/west_ridge pitch counts and lengths are internally consistent with their rope lengths and grades. Flagged for human review, not fixed: wa_sherpa_peak_east_ridge/north_ridge/west_ridge all carry the same Sherpa Peak 8,630-vs-8,605 elevation ambiguity batch 451 already flagged for the Balanced Rock routes -- left unresolved, consistent with that prior call. wa_sherpa_peak_north_ridge.data_quality.gaps claims it duplicates 'wa_north_ridge_9', an id that does not exist in the live routes table -- stale/misleading note, not itself a fact this audit corrects, left for a human to clean up. wa_sherpa_peak_northeast_face is a near-empty stub (name/discipline only) with nothing stored to fact-check. Also noted: routes?id=like.wa_%25 combined with a discipline filter timed out (57014) on this project; worked around with id=gt./id=lt. bounds plus a separate areas query, in case a future run hits the same timeout."
     }
   ]
 }

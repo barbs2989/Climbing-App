@@ -34162,3 +34162,49 @@ how close together and disputed the two summits are even in the source material 
 the task prompt, no write attempted or needed. Every finding rests on 2+ independent sources where
 more than one was available; the one unresolved elevation conflict was left to a human rather than
 guessed, per the audit's standing rule.
+
+## Batch 452 (pass 7) — 2026-10-24
+
+Checked `wa_sherpa_peak_east_ridge`, `wa_sherpa_peak_north_ridge`, `wa_sherpa_peak_northeast_face`,
+`wa_sherpa_peak_west_ridge`, `wa_silver_star_glacier`, `wa_silver_star_ne_ridge`,
+`wa_sinister_peak_north_face`, `wa_sinister_peak_southwest_route`. 2 fixes, 2 flagged, 4 clean.
+SQL: `audits/sql/2026-10-24-batch-452.sql`.
+
+Fixed: Sinister Peak's `elevation_ft` (area row) and both routes' `high_point_ft`/summit-waypoint
+`elev` all read 8,444 ft, traced to a 2026-07-31 prior pass that changed the area row from 8,440
+to 8,444 purely to agree with the routes' own fields, not with any outside source. Wikipedia,
+PeakVisor, SummitPost and mountaineers.org all independently give 8,440 ft; none give 8,444 —
+reverted the area row and both routes back to 8,440 so all three now agree with an actual source,
+not just each other. Also fixed `wa_silver_star_glacier.fa`: misspells the 1952 FA party as "Joe
+Heib"; AAC's 1953 Climbs & Expeditions report and SummitPost both spell it "Joe Hieb" — and this
+same row's own `corrections` field already uses the correct spelling when describing this exact
+ascent, so the `fa` column itself was simply never updated to match.
+
+Verified clean: `wa_silver_star_glacier`'s east-summit 8,876 ft and `wa_silver_star_ne_ridge`'s
+west-summit 8,840 ft both check out against Wikipedia/SummitPost, which also confirm the ~300 ft
+col between the two summits that this route's overview describes. `wa_sinister_peak_north_face`'s
+FA ("Gordy Skoog, Carl Skoog, and Gary Brill, August 1, 1980") isn't independently nameable from
+a primary source, but a 2005 trip report's "almost 26 years ago" by a co-climber named Carl lines
+up with the stored date and isn't contradicted by anything found — left as is rather than treated
+as an error. `wa_sherpa_peak_north_ridge` and `wa_sherpa_peak_west_ridge` pitch/length figures
+(13 pitches/427 m and 5 pitches/152 m) are internally consistent with their own rope lengths and
+grades.
+
+Flagged for human review, not fixed: `wa_sherpa_peak_east_ridge`/`north_ridge`/`west_ridge` all
+carry `high_point_ft` 8,630, the same Sherpa Peak elevation ambiguity batch 451 already flagged
+for the Balanced Rock routes (Wikipedia/PeakVisor give 8,630; SummitPost/WTA give 8,605) — still
+unresolved, left alone rather than guessed, consistent with that prior call.
+`wa_sherpa_peak_north_ridge.data_quality.gaps` claims this row "duplicates `wa_north_ridge_9`";
+that id does not exist in the live `routes` table (checked directly), so either the duplicate was
+already cleaned up or the id was always wrong — the note is stale/misleading either way but isn't
+itself a stored *fact* this audit corrects, so left for a human to clean up rather than touched.
+`wa_sherpa_peak_northeast_face` is a near-empty stub (name/discipline only, no beta/grade/gear/
+waypoints) — nothing to fact-check since no claims are stored, but worth a human's attention as
+incomplete.
+
+`last_processed_id` advances to `wa_sinister_peak_southwest_route`. No `.env`/`.env.local` present
+at run start (fresh clone); all reads went directly against the REST API with the read-only anon
+key from the task prompt — no write attempted. The `routes?id=like.wa_%25&discipline=in.(...)`
+combination timed out (57014) on this project; worked around by bounding with `id=gt./id=lt.`
+instead of `like`, then filtering area_type client-side against a separate `areas` query — noting
+here in case a future run hits the same timeout.
