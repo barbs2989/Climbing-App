@@ -1,6 +1,6 @@
 // "Is anything burning near this climb?" — the per-route half of the Fire map.
 //
-// Sits at the top of a route's Safety tab, above the float plan and the forecast links —
+// Sits on a route's Safety tab under the forecast, above the hazards and the float plan —
 // a fire that can close an approach road is a hazard, not a description of the climb. (On a
 // route with no Safety tab, which is content-gated, RouteDetail keeps it on Overview instead
 // rather than dropping it.) The map answers "is the range on fire"; this answers it for one
@@ -24,6 +24,7 @@
 // Severity follows containment and distance together, because neither alone means
 // anything: a 100%-contained fire 5 miles off is smoke, and an uncontained one at 45
 // miles is a road-closure risk tomorrow, not today.
+import { useState } from "react";
 import { useFiresNear, NEAR_ROUTE_KM, fireLevel, fireColor, fmtAcres, fmtContained, fmtDiscovered } from "./fire";
 import { TILE_CREDIT } from "./mapKit";
 
@@ -34,6 +35,7 @@ const CLOSE_MI = 25;
 
 export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Math.round(mi) + " mi", onOpenFireMap }) {
   const q = useFiresNear(coord, NEAR_ROUTE_KM);
+  const [open, setOpen] = useState(false);
 
   // Rule 1. No point to measure from → no section at all. An absent section makes no
   // claim; an empty state would.
@@ -92,13 +94,28 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
   // returns null AND sits after both of them in source order.
   if (!fires.length) return null;
 
+  // A DROPDOWN (owner, 2026-10-24): closed, it is one tinted row — the heading, how many fires and
+  // how close the nearest is — so the forecast above and the hazards below stay in view. The tone
+  // still colours the closed row, so an uncontained fire close by reads red without opening it.
+  // The body is HIDDEN, not unmounted, as AccessFold does: its caveats stay in the markup.
+  const nearest = fires.reduce((m, f) => Math.min(m, f.originMi), Infinity);
+  const summary = fires.length + " fire" + (fires.length === 1 ? "" : "s") + " · nearest " + uDistMi(Math.round(nearest * 10) / 10);
   return (
     <div style={{ ...wrap, borderColor: tone.c, background: tone.bg }}>
-      <div role="heading" aria-level={2} style={{ ...hd, color: tone.c, borderLeftColor: tone.c, marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
-        <ActionIcon name="fire" size={14} color={tone.c} />
-        {closeUncontained.length ? "Active fire nearby" : "Active fire in the area"}
+      <div role="heading" aria-level={2} style={{ margin: 0 }}>
+        <button onClick={() => setOpen(!open)} aria-expanded={open} style={{ display: "flex", alignItems: "center", gap: 8, width: "100%", padding: 0, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}>
+          <span style={{ flex: 1, minWidth: 0 }}>
+            <span style={{ ...hd, color: tone.c, borderLeftColor: tone.c, marginBottom: 3, display: "flex", alignItems: "center", gap: 6 }}>
+              <ActionIcon name="fire" size={14} color={tone.c} />
+              {closeUncontained.length ? "Active fire nearby" : "Active fire in the area"}
+            </span>
+            <span style={{ display: "block", fontSize: 12, color: C.textSub }}>{summary}</span>
+          </span>
+          <span aria-hidden="true" style={{ fontSize: 13, color: tone.c, fontWeight: 700, flexShrink: 0 }}>{open ? "▴" : "▾"}</span>
+        </button>
       </div>
 
+      <div hidden={!open} style={{ marginTop: 10 }}>
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         {fires.slice(0, 4).map(f => (
           <div key={f.id} style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
@@ -124,6 +141,7 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
       </div>
 
       <Foot C={C} coord={coord} ActionIcon={ActionIcon} onOpenFireMap={onOpenFireMap} />
+      </div>
     </div>
   );
 }
