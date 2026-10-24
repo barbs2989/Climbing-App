@@ -353,6 +353,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   waypoints are real and worth keeping; calling the line between them a track is the untrue part, so
   the fix is a **caption**, the same shape as the RACK caption and the fire panel's point-of-origin
   caveat. Static SSR, so it sits in `npm run build`. See `lib/track.js`.
+  - **Section 6 (2026-10-23): the line joins only the pins ON THE WAY** (`waypointLinePins`). The
+    owner had asked for the line to link every pin, then took that back: a campground can sit
+    before the trailhead or the opposite way. The old order was `distMi ?? 0`, so a summit with no
+    distance sorted to mile 0 (`wa_storm_king_southwest_scramble` went trailhead → summit → 13.8 mi
+    back to camp). The 134 stored pin-join "tracks" were built in the same order (Bear Mountain
+    Chilliwack: 52 km stored, 25 km drawn now), so GPXMap draws them by the same rule. Measured over
+    the 323 routes with no track: 96 lines change and 43 pins leave the line (22 camps, 7 water, 6
+    hazards). 5 routes now draw no line, because their only other pin has no distance. Seven
+    side-trips remain, all on spine pins (a pass or summit on an out-and-back); those are kept on
+    purpose. The section asserts the order on a fixture and checks that GPXMap no longer
+    sorts by `distMi ?? 0`.
   - **The provenance chip does not already cover this, and the measurement says so in the worst
     way.** `auto_generated` is true on **45%** of the synthetic tracks and on **78%** of the routes
     whose track is genuine — it points the **wrong way**, so a climber reading the chip cannot tell
