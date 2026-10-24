@@ -69,9 +69,10 @@ const CASES = [
   { name: "6. the Conditions tab is gated to crags again",
     find: "x[0]===\"forecast\"?(showScore||showAlpineCond):true", repl: "x[0]===\"forecast\"?showScore:true",
     expect: "fail", expectText: "the Conditions tab is offered and its card mounts" },
-  { name: "7. the weather panel is back on Safety for alpine routes",
-    find: "{showScore||showAlpineCond?null:wxEl()}", repl: "{showScore?null:wxEl()}",
-    expect: "fail", expectText: "the weather panel left Safety" },
+  /* Inverted 2026-10-24: the forecast now opens Safety on EVERY route (owner), so the defect is it leaving again. */
+  { name: "7. the weather panel is gated off Safety for alpine routes again",
+    find: "*/}{wxEl()}{fireEl}", repl: "*/}{showScore||showAlpineCond?null:wxEl()}{fireEl}",
+    expect: "fail", expectText: "the weather panel opens Safety on an alpine route" },
   { name: "8. a flag hard-codes mph", file: CARD,
     find: "case \"wind\": return \"Summit gusts to \" + uWind(v.gust) + \" in daylight\";", repl: "case \"wind\": return \"Summit gusts to \" + Math.round(v.gust) + \" mph in daylight\";",
     expect: "fail", expectText: "in metric units only" },
