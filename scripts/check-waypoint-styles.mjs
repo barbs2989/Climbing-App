@@ -126,6 +126,57 @@ else {
   else ok(`all ${glyphs.length} glyphs are text-presentation characters that take their colour`);
 }
 
+// ── 2b. no two types may be drawn in colours the eye cannot tell apart ─────────
+// The owner's note, 2026-10-24: "the legend waypoints are too similar in color". Nothing caught it
+// because every colour WAS different as a hex string; Campsite and Approach were 8.2 apart in
+// CIEDE2000, which on a 20px pin is the same purple. This measures the perceptual distance of every
+// pair and fails any pair below FLOOR. The floor sits under Summit vs Hazard (19.5) — orange against
+// red, the two colours every map uses for a peak and a danger — so it holds the line the palette
+// already meets rather than one it cannot. Values resolve through the C palette, so a `C.teal`
+// entry is measured as the teal it draws.
+{
+  const FLOOR = 18;
+  const cLine = CORE.match(/const C=\{([^\n]*?)\};/);
+  const tokens = {};
+  if (cLine) for (const m of cLine[1].matchAll(/(\w+):"(#[0-9a-fA-F]{6})"/g)) tokens[m[1]] = m[2];
+  const cols = [...styleBlock.matchAll(/(?:^|[{,\s])([A-Z][A-Za-z]*)\s*:\s*\{\s*color\s*:\s*(?:"(#[0-9a-fA-F]{6})"|C\.(\w+))/g)]
+    .map((m) => ({ type: m[1], hex: m[2] || tokens[m[3]], via: m[3] }));
+  const unresolved = cols.filter((c) => !c.hex);
+  if (cols.length < styled.size) bad(`read a colour for only ${cols.length} of ${styled.size} WP_STYLE types — the parse broke, this is not a clean result`);
+  else if (unresolved.length) bad(`could not resolve ${unresolved.map((c) => `${c.type} (C.${c.via})`).join(", ")} to a hex — nothing was measured for them`);
+  else {
+    const lab = (hex) => {
+      const f = (i) => { const c = parseInt(hex.slice(i, i + 2), 16) / 255; return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; };
+      const r = f(1), g = f(3), b = f(5);
+      const h = (t) => (t > 0.008856 ? Math.cbrt(t) : 7.787 * t + 16 / 116);
+      const x = h((r * 0.4124 + g * 0.3576 + b * 0.1805) / 0.95047), y = h(r * 0.2126 + g * 0.7152 + b * 0.0722), z = h((r * 0.0193 + g * 0.1192 + b * 0.9505) / 1.08883);
+      return [116 * y - 16, 500 * (x - y), 200 * (y - z)];
+    };
+    // CIEDE2000, Sharma, Wu & Dalal (2005).
+    const de = ([L1, a1, b1], [L2, a2, b2]) => {
+      const d = Math.PI / 180, C1 = Math.hypot(a1, b1), C2 = Math.hypot(a2, b2), Cb = (C1 + C2) / 2;
+      const G = 0.5 * (1 - Math.sqrt(Cb ** 7 / (Cb ** 7 + 25 ** 7)));
+      const a1p = a1 * (1 + G), a2p = a2 * (1 + G), C1p = Math.hypot(a1p, b1), C2p = Math.hypot(a2p, b2);
+      let h1 = Math.atan2(b1, a1p) / d; if (h1 < 0) h1 += 360;
+      let h2 = Math.atan2(b2, a2p) / d; if (h2 < 0) h2 += 360;
+      const dL = L2 - L1, dC = C2p - C1p;
+      let dh = h2 - h1; if (C1p * C2p === 0) dh = 0; else if (dh > 180) dh -= 360; else if (dh < -180) dh += 360;
+      const dH = 2 * Math.sqrt(C1p * C2p) * Math.sin((dh / 2) * d), Lb = (L1 + L2) / 2, Cbp = (C1p + C2p) / 2;
+      let hb = h1 + h2; if (C1p * C2p !== 0) hb = Math.abs(h1 - h2) > 180 ? (h1 + h2 + 360) / 2 : (h1 + h2) / 2;
+      const T = 1 - 0.17 * Math.cos((hb - 30) * d) + 0.24 * Math.cos(2 * hb * d) + 0.32 * Math.cos((3 * hb + 6) * d) - 0.2 * Math.cos((4 * hb - 63) * d);
+      const dth = 30 * Math.exp(-(((hb - 275) / 25) ** 2)), RC = 2 * Math.sqrt(Cbp ** 7 / (Cbp ** 7 + 25 ** 7));
+      const SL = 1 + (0.015 * (Lb - 50) ** 2) / Math.sqrt(20 + (Lb - 50) ** 2), SC = 1 + 0.045 * Cbp, SH = 1 + 0.015 * Cbp * T, RT = -Math.sin(2 * dth * d) * RC;
+      return Math.sqrt((dL / SL) ** 2 + (dC / SC) ** 2 + (dH / SH) ** 2 + RT * (dC / SC) * (dH / SH));
+    };
+    const pairsDe = [];
+    for (let i = 0; i < cols.length; i++) for (let j = i + 1; j < cols.length; j++) pairsDe.push({ a: cols[i], b: cols[j], d: de(lab(cols[i].hex), lab(cols[j].hex)) });
+    pairsDe.sort((x, y) => x.d - y.d);
+    const close = pairsDe.filter((p) => p.d < FLOOR);
+    if (close.length) for (const p of close) bad(`${p.a.type} ${p.a.hex} and ${p.b.type} ${p.b.hex} are only ${p.d.toFixed(1)} apart (CIEDE2000, floor ${FLOOR}) — on a map pin and a legend chip they read as one colour`);
+    else ok(`every pair of the ${cols.length} waypoint colours is at least ${pairsDe[0].d.toFixed(1)} apart (closest: ${pairsDe[0].a.type} / ${pairsDe[0].b.type}; floor ${FLOOR})`);
+  }
+}
+
 // ── 3. every style lookup normalises first ───────────────────────────────────
 // `waypoints[].type` is free text: WP_TYPE_MAP is keyed lowercase and the catalog holds
 // "Lake", "camp", "Base/bivy", "Trailhead/pass". Indexing a style map with the RAW string is
@@ -370,6 +421,8 @@ process.exit(0);
 //   6.  add "Foo" to WP_TYPES                           -> "WP_TYPES offers Foo"
 //   7.  blank the Overview list's `:wpGlyph(_wt);`      -> "missing a surface" (only section 4 sees it)
 //   8.  make wpType() stop normalising                  -> "missing a surface"
+//   9.  set Approach back to C.indigo                   -> "Campsite … and Approach … only 8.2 apart"
+//   10. set Topout to C.nope (an unknown token)          -> "could not resolve Topout (C.nope)"
 //
 // TWO OF THESE WERE HARNESS BUGS BEFORE THEY WERE TESTS, both the "injection logged, counter
 // didn't move" shape, and neither was visible by reading the harness:
