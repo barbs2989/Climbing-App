@@ -58,6 +58,8 @@ room for side-panel ads later. The phone app keeps its own look.
     85% of the window tall).
   - Controls brighten under the mouse; the browser tab names the page (*Coleman-Deming – ClimbMatch*).
 
+- **Loading screen and the sign-in screen.** While the bundle downloads, `index.html` paints a branded splash (`#cm-splash`: the app mark, wordmark and a moving bar; still under reduced motion) over the boot shell; while App restores the session it draws the same splash (`BootSplash`, `lib/BootSplash.jsx`) instead of a blank page. As the app's first screen (the real gate, or `LOGIN_FIRST`), the sign-in screen (`lib/AuthModal.jsx`) fills the screen under a branded header (the mark, the wordmark and what the app is for) instead of drawing a modal over a black page; opened from inside the app it is still the modal.
+
 ## 2. How it works
 `useWideScreen()` / `useFullWidth()` (in `lib/wideLayout.js`) are `matchMedia` hooks on `WIDE_MIN` (1024)
 and `FULL_MIN` (1280). `wideGeom(full)` computes every horizontal position of the shell as CSS lengths;
@@ -94,7 +96,8 @@ below the top bar) do not trip it. Any new fixed desktop panel must not either.
 | `lib/DesktopShell.jsx` | `WideSearch`, `WideRail`, `WideFooter`, `DocTitle` |
 | `lib/dialogA11y.js` | `coveringLayer` |
 | `ClimbMatch.jsx` | `NAV`, `goTab`, `navBadge`, `_inChat`, `_known`, `_openMe`, `_closePages`, `_pageView` |
-| `index.html` | `#cm-boot`, `.b-nav` |
+| `index.html` | `#cm-boot`, `.b-nav`, `#cm-splash` |
+| `lib/BootSplash.jsx` | `BootSplash` |
 
 ## 4. Data
 Layout only. The footer reads the states list (`useStates`); the search reads the catalog.
