@@ -70,8 +70,11 @@ let STATE = argOf("--state") || (USE_DB ? "Washington" : "Utah");
 // on its own -- the header and strip alone are ~250 -- so every tab but For you also carries a
 // LANDMARK below that only its own body renders, and the twin rule catches a tab that
 // silently renders a sibling.
-const MIN_CHARS = { default: 400, "route:Photos": 120, Home: 300, Groups: 300,
-  "Groups:Your groups": 300, "Groups:Your activity": 300, "Groups:Discover": 300, "Groups:Events": 300 };
+// 2026-10-24: the Groups header's line under the title went from 100 characters to 45 (every header
+// was cut to one short line), so every Groups tab measures 55 fewer and the floor moved down by the
+// same 55: Events' empty state now measures 255. The landmarks below still prove each tab's body.
+const MIN_CHARS = { default: 400, "route:Photos": 120, Home: 300, Groups: 245,
+  "Groups:Your groups": 245, "Groups:Your activity": 245, "Groups:Discover": 245, "Groups:Events": 245 };
 
 // Text that should never reach a user. Tuned to the bugs above; each entry is a
 // regex plus a note on the shape it catches.
