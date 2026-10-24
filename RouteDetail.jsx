@@ -1526,8 +1526,33 @@ function RappelTable({route,onEdit}){
         rappel straight past; and anything else (`notes`). Every key is optional and each
         block is gated on its own value, so a route carrying only the old {lengthM, anchor,
         notes} shape renders exactly as it did before. */}
-    {raps.map((r,idx)=>{const _haz=Array.isArray(r.hazards)?r.hazards.filter(Boolean):(r.hazards?[r.hazards]:[]);return <div key={r._n+"-"+idx} style={{display:"flex",gap:10,padding:"9px 11px",alignItems:"flex-start",border:"1px solid "+C.border,borderRadius:10,marginBottom:8}}><div style={{width:26,height:26,borderRadius:7,background:C.surface,border:"1px solid "+C.border,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:C.textSub}}>{"R"+r._n}</div><div style={{flex:1,minWidth:0}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:2,gap:8}}><span style={{fontSize:13,fontWeight:700,color:C.red,flexShrink:0,whiteSpace:"nowrap"}}>{r.lengthM!=null?uLen(r.lengthM):"—"}</span><span style={{fontSize:11.5,fontWeight:600,color:/bolt/i.test(r.anchor||"")?C.green:C.blue,textAlign:"right",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r.anchor||"—"}</span></div>{r.station?<div style={{marginTop:5,marginBottom:_haz.length||r.notes||r.pull?6:0,background:C.surface,border:"1px solid "+C.border,borderRadius:8,padding:"6px 9px"}}><div style={{fontSize:9.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.5,marginBottom:2}}>Finding the station</div><div style={{fontSize:12,color:C.text,lineHeight:1.5}}>{r.station}</div></div>:null}{_haz.length?<div style={{marginBottom:r.notes||r.pull?6:0,display:"flex",flexDirection:"column",gap:4}}>{_haz.map((h,hi)=><div key={hi} style={{display:"flex",gap:6,alignItems:"flex-start",background:C.redBg,border:"1px solid "+C.red+"55",borderRadius:8,padding:"5px 8px"}}><span style={{flexShrink:0,marginTop:1}}><ActionIcon name="alert" size={12} color={C.red}/></span><span style={{fontSize:11.5,color:C.text,lineHeight:1.45}}>{h}</span></div>)}</div>:null}{r.pull?<div style={{fontSize:11.5,color:C.amber,lineHeight:1.45,marginBottom:r.notes?5:0}}><span style={{fontWeight:800,textTransform:"uppercase",letterSpacing:0.4,fontSize:9.5,color:C.textMuted,marginRight:5}}>Pull</span>{r.pull}</div>:null}{r.notes?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{r.notes}</div>:null}</div></div>;})}
+    {raps.map((r,idx)=><RappelRow key={r._n+"-"+idx} r={r} first={idx===0}/>)}
   </div></>;
+}
+/* ONE RAPPEL, a dropdown like a CampSite (owner, 2026-10-24: "to reduce screen space"). The row
+   always shows what a party scans the list FOR — which rap, how long, off what — and the prose
+   (finding the station, hazards, the pull, notes) is one tap away. The first opens expanded, as
+   the first camp does, so the section proves its rows hold detail. A collapsed row still SAYS it
+   has hazards, in red with a count: a station's danger must not hide behind a tap unannounced. */
+function RappelRow({r,first}){
+  const [open,setOpen]=useState(!!first);
+  const _haz=Array.isArray(r.hazards)?r.hazards.filter(Boolean):(r.hazards?[r.hazards]:[]);
+  const more=!!(r.station||_haz.length||r.pull||r.notes);
+  const len=r.lengthM!=null?uLen(r.lengthM):"—";
+  const label="Rappel "+r._n+", "+len+(r.anchor?", "+r.anchor:"")+(_haz.length?", "+_haz.length+(_haz.length===1?" hazard":" hazards"):"");
+  return <div style={{border:"1px solid "+(open&&more?C.red+"55":C.border),borderRadius:10,marginBottom:8,overflow:"hidden"}}>
+    <div {...(more?clickable(function(){setOpen(!open);}):{})} aria-expanded={more?open:undefined} aria-label={more?((open?"Hide":"Show")+" detail for "+label):undefined} style={{display:"flex",gap:10,padding:"9px 11px",alignItems:"center",cursor:more?"pointer":"default"}}>
+      <div style={{width:26,height:26,borderRadius:7,background:C.surface,border:"1px solid "+C.border,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:C.textSub}}>{"R"+r._n}</div>
+      <div style={{flex:1,minWidth:0}}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:8}}><span style={{fontSize:13,fontWeight:700,color:C.red,flexShrink:0,whiteSpace:"nowrap"}}>{len}</span><span style={{fontSize:11.5,fontWeight:600,color:/bolt/i.test(r.anchor||"")?C.green:C.blue,textAlign:"right",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r.anchor||"—"}</span></div>
+        {more?<div style={{display:"flex",alignItems:"center",gap:6,marginTop:4}}>
+          {_haz.length?<span style={{display:"inline-flex",alignItems:"center",gap:4,fontSize:11,fontWeight:700,color:C.red}}><ActionIcon name="alert" size={11} color={C.red}/>{_haz.length+(_haz.length===1?" hazard":" hazards")}</span>:null}
+          <span style={{fontSize:11.5,fontWeight:700,color:C.blue,marginLeft:"auto",whiteSpace:"nowrap"}}>{open?"▾ Less":"▸ More"}</span>
+        </div>:null}
+      </div>
+    </div>
+    {more&&open?<div style={{padding:"0 11px 9px 47px"}}>{r.station?<div style={{marginTop:0,marginBottom:_haz.length||r.notes||r.pull?6:0,background:C.surface,border:"1px solid "+C.border,borderRadius:8,padding:"6px 9px"}}><div style={{fontSize:9.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.5,marginBottom:2}}>Finding the station</div><div style={{fontSize:12,color:C.text,lineHeight:1.5}}>{r.station}</div></div>:null}{_haz.length?<div style={{marginBottom:r.notes||r.pull?6:0,display:"flex",flexDirection:"column",gap:4}}>{_haz.map((h,hi)=><div key={hi} style={{display:"flex",gap:6,alignItems:"flex-start",background:C.redBg,border:"1px solid "+C.red+"55",borderRadius:8,padding:"5px 8px"}}><span style={{flexShrink:0,marginTop:1}}><ActionIcon name="alert" size={12} color={C.red}/></span><span style={{fontSize:11.5,color:C.text,lineHeight:1.45}}>{h}</span></div>)}</div>:null}{r.pull?<div style={{fontSize:11.5,color:C.amber,lineHeight:1.45,marginBottom:r.notes?5:0}}><span style={{fontWeight:800,textTransform:"uppercase",letterSpacing:0.4,fontSize:9.5,color:C.textMuted,marginRight:5}}>Pull</span>{r.pull}</div>:null}{r.notes?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{r.notes}</div>:null}</div>:null}
+  </div>;
 }
 /* CLIMBING ROUTE — the pitch table's counterpart for terrain that has no pitches.
    A scramble or a mountaineering line has an actual-climbing section every bit as real as a
@@ -1877,11 +1902,61 @@ export function campSites(route){
      Researched per route (enrichment-wip/camping-roles), because one corridor-wide list had been
      handed to every route in it — 799 routes shared 174 lists, up to 16 camps each. A Campsite
      pin is on the route's own track by definition, so an unmatched pin is "route". A site with no
-     role (a contribution from before the field existed, or one marked "Not sure") is null and renders
-     under NOT YET SORTED (campGroups). */
+     role (a contribution from before the field existed, or one marked "Not sure") is null and carries
+     no use tag (campRoleLabel). */
   const ROLE={main:"main",route:"route"};
-  return bivy.map(b=>{const p=pinOf(b);const el=campElevFt(b)!=null?campElevFt(b):(p?campElevFt(p):null);return {name:b&&b.name,elev:el,gainFt:gainOf(el),distMi:p?_campMi(p):null,kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:!!p,role:(b&&ROLE[String(b.role||"").toLowerCase()])||null,sorted:!!(b&&ROLE[String(b.role||"").toLowerCase()]),nights:campNightsOf(route,b&&b.name)};})
-    .concat(wps.map(w=>({name:w&&w.name,elev:campElevFt(w),gainFt:gainOf(campElevFt(w)),distMi:_campMi(w),kind:null,notes:(w&&w.directions)||"",onTrack:true,role:"route",nights:campNightsOf(route,w&&w.name)})));
+  return campRouteOrder(bivy.map(b=>{const p=pinOf(b);const el=campElevFt(b)!=null?campElevFt(b):(p?campElevFt(p):null);return {name:b&&b.name,elev:el,gainFt:gainOf(el),distMi:p?_campMi(p):null,kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:!!p,role:(b&&ROLE[String(b.role||"").toLowerCase()])||null,sorted:!!(b&&ROLE[String(b.role||"").toLowerCase()]),nights:campNightsOf(route,b&&b.name)};})
+    .concat(wps.map(w=>({name:w&&w.name,elev:campElevFt(w),gainFt:gainOf(campElevFt(w)),distMi:_campMi(w),kind:null,notes:(w&&w.directions)||"",onTrack:true,role:"route",nights:campNightsOf(route,w&&w.name)}))));
+}
+/* IN THE ORDER A PARTY REACHES THEM, walking in from the trailhead (owner, 2026-10-24: "ordered by
+   where people would camp if they were doing the whole route"). It replaced three USE groups —
+   where most parties sleep / other options / not yet sorted — under which a high camp could print
+   above the valley campground you sleep at the night before; the use is now a tag on each site.
+   Distance from the trailhead decides first: every site with one is a fixed point on the walk in.
+   A site with no distance is placed by its HEIGHT, before the first fixed site higher than it — a
+   walk in to a climb goes UP, and a campground below the trailhead is where the trip starts. A
+   site with neither keeps its stored place at the END, never guessed into the middle. Ties keep
+   the stored order, which the research wrote in walking order. Exported so check:camping asks it. */
+export function campRouteOrder(list){
+  const all=(list||[]).map(function(s,i){return {s:s,i:i};});
+  const num=function(v){return v!=null&&isFinite(v);};
+  const chain=all.filter(function(x){return num(x.s&&x.s.distMi);}).sort(function(a,b){return a.s.distMi-b.s.distMi||(num(a.s.elev)&&num(b.s.elev)?a.s.elev-b.s.elev:0)||a.i-b.i;});
+  const byElev=all.filter(function(x){return !num(x.s&&x.s.distMi)&&num(x.s&&x.s.elev);}).sort(function(a,b){return a.s.elev-b.s.elev||a.i-b.i;});
+  const rest=all.filter(function(x){return !num(x.s&&x.s.distMi)&&!num(x.s&&x.s.elev);});
+  const out=chain.slice();
+  byElev.forEach(function(x){
+    /* Before the first FIXED site above it, and after any height-placed site already there at or below its height. */
+    let at=out.findIndex(function(y){return num(y.s.distMi)&&num(y.s.elev)&&y.s.elev>x.s.elev;});
+    if(at<0)at=out.length;
+    while(at>0&&!num(out[at-1].s.distMi)&&out[at-1].s.elev>x.s.elev)at--;
+    out.splice(at,0,x);
+  });
+  return out.concat(rest).map(function(x){return x.s;});
+}
+/* The list SAYS it runs in walking order, and says which sites it could not place: a site with no
+   distance and no height on file sits last because nothing says where it is, not because it is the
+   highest. Nothing to say for one site, or when no site can be placed at all. */
+export function campOrderNote(sites){
+  const num=function(v){return v!=null&&isFinite(v);};
+  const placed=(sites||[]).filter(function(s){return s&&(num(s.distMi)||num(s.elev));}).length;
+  if((sites||[]).length<2||!placed)return "";
+  const loose=sites.length-placed;
+  return " Listed in the order you reach them walking in from the trailhead"+(loose?"; "+(loose===1?"the site":"the "+loose+" sites")+" with no distance or height on file "+(loose===1?"comes":"come")+" last.":".");
+}
+/* What the site is FOR on this route, as the tag the list carries in place of the old group heading.
+   The words are the contribute form's role options, so a climber who picks one sees it come back.
+   No role → no tag: an unsorted site claims no use (the 2026-10-14 entry in docs/guards/camping.md). */
+export function campRoleLabel(role){
+  return role==="main"?"Where most parties sleep":role==="route"?"Other option":"";
+}
+/* THE STRETCH FROM THE CAMP BEFORE — the number FarOut prints beside every tent site: how far on,
+   and how much higher, the next place to sleep is. Only from two known distances (and, for the
+   height, two known heights) — never a chord or a guess. Exported so check:camping asks it. */
+export function campFromPrev(s,prev){
+  if(!s||!prev||!String(prev.name||"").trim())return "";
+  if(s.distMi==null||prev.distMi==null||!isFinite(s.distMi)||!isFinite(prev.distMi)||s.distMi-prev.distMi<0.05)return "";
+  const dg=(s.elev!=null&&prev.elev!=null&&isFinite(s.elev)&&isFinite(prev.elev))?Math.round(s.elev-prev.elev):0;
+  return uDistMi(s.distMi-prev.distMi)+" on from "+String(prev.name).trim()+(dg?" · "+uElev(Math.abs(dg))+(dg>0?" higher":" lower"):"");
 }
 /* CAPACITY, WATER and PERMIT are PROSE, and they used to render as CHIPS. Measured on the live
    catalog: median 130 / 136 / 297 characters, up to 1,386 — so 5,001 / 5,008 / 5,020 of 5,083
@@ -1927,7 +2002,7 @@ export function campDetail(b){
    the same refusal the rappel columns already record: do not read a fact out of English prose.
    So the summary line carries only what somebody wrote into a field that holds a VALUE, and the
    prose is one tap away rather than one guess away. */
-function CampSite({b,i,first,calc,dayCount,slept}){
+function CampSite({b,i,first,calc,dayCount,slept,prev}){
   /* The FIRST site opens expanded: above it sits the overnight-permit panel, and a section that
      shows only a permit and then a column of collapsed rows does not read as naming a place to
      sleep. One full site (capacity, water, permit) proves the rest are real; the others stay one tap away. */
@@ -1946,7 +2021,10 @@ function CampSite({b,i,first,calc,dayCount,slept}){
   const walk=walkH!=null?"\u2248"+(Math.round(walkH*2)/2).toFixed(1).replace(/\.0$/,"")+" h walk in at your planner pace":"";
   /* What climbers who logged this route said: how many trip reports slept HERE (campReportsOf). */
   const sleptLine=campSleptLine(slept);
-  const label=nm+(b&&b.elev!=null?", "+uElev(b.elev):"")+(b&&b.kind?", "+b.kind:"")+(fromTh?", "+fromTh:"")+(walk?", "+walk:"")+(night?", "+night:"")+(sleptLine?", "+sleptLine:"");
+  /* Its place in the walk in: the stretch from the site above it in the list, and what parties use it for. */
+  const step=campFromPrev(b,prev);
+  const use=campRoleLabel(b&&b.role);
+  const label=nm+(b&&b.elev!=null?", "+uElev(b.elev):"")+(b&&b.kind?", "+b.kind:"")+(fromTh?", "+fromTh:"")+(step?", "+step:"")+(walk?", "+walk:"")+(night?", "+night:"")+(sleptLine?", "+sleptLine:"")+(use?", "+use:"");
   /* Each kind gets its own accent so a scan down the list tells a camp from a bivy from a hut
      before reading a word; the three detail fields get theirs so WATER is findable at a glance in
      an open card — it is the field a party most needs and the longest one to wade through. */
@@ -1963,10 +2041,12 @@ function CampSite({b,i,first,calc,dayCount,slept}){
             {b.elev!=null?<span style={{flexShrink:0,fontSize:12.5,fontWeight:800,color:tone,whiteSpace:"nowrap"}}>{uElev(b.elev)}</span>:null}
           </div>
           {fromTh?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:2}}>{fromTh}</div>:null}
+          {step?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:1}}>{step}</div>:null}
           {walk?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:1}}>{walk}</div>:null}
           {sleptLine?<div style={{fontSize:11.5,color:C.green,fontWeight:700,lineHeight:1.4,marginTop:1}}>{sleptLine}</div>:null}
-          {(b.kind||b.onTrack||more||night)?<div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:6,marginTop:7}}>
+          {(b.kind||b.onTrack||more||night||use)?<div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:6,marginTop:7}}>
             {night?<span style={chip(C.green,C.green+"55")}>{night}</span>:null}
+            {use?<span style={chip(b.role==="main"?C.blue:C.textSub,(b.role==="main"?C.blue:C.textSub)+"55")}>{use}</span>:null}
             {b.kind?<span style={chip(tone,tone+"55")}>{b.kind}</span>:null}
             {b.onTrack?<span style={chip(C.textMuted,C.border)}>{"Marked on the track"}</span>:null}
             {more?<span style={{fontSize:11.5,fontWeight:700,color:C.blue,marginLeft:"auto",whiteSpace:"nowrap"}}>{open?"▾ Less":"▸ More"}</span>:null}
@@ -2028,7 +2108,7 @@ function CampingPanel({route,onEdit,calc,activity}){
         waypoint-derived sites. Most researched bivy rows carry no coordinate at all — measured:
         4 of 175 catalog-wide — so stating it unconditionally tells a climber to look for pins
         that are not there. Claim it only when at least one site actually is on the track. */}
-    <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:12}}>{"Where you can sleep on this route — camps, approach bivies and high camps. Worth reading even if you plan to go car-to-car, for the day that runs long or the weather that turns."+(sites.some(s=>s.onTrack)?" Anything marked on the track is also a pin under ROUTE TRACK.":"")}</div>
+    <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:12}}>{"Where you can sleep on this route — camps, approach bivies and high camps. Worth reading even if you plan to go car-to-car, for the day that runs long or the weather that turns."+(sites.some(s=>s.onTrack)?" Anything marked on the track is also a pin under ROUTE TRACK.":"")+campOrderNote(sites)}</div>
     <OvernightPermit route={route}/>
     {/* Capped HERE, around the sites only. It used to wrap the whole panel, and the intro plus the
         permit panel alone fill the 400px a capped block shows — so the first thing under "Show more"
@@ -2040,38 +2120,14 @@ function CampingPanel({route,onEdit,calc,activity}){
     {(function(){
       /* The FIRST site sits outside the cap entirely, so one camp is always shown whole — a cap
          that slices through it (its Notes cut off, the next camp hidden) leaves the same doubt the
-         cap was moved to remove. Everything after it is capped. */
-      var groups=campGroups(sites);
-      var group=function(g,gi,from,to,head){var list=g.sites.slice(from,to);if(!list.length)return null;return <div key={g.key+from} style={{marginTop:head&&g.title&&gi?16:0}}>
-        {head&&g.title?<div style={{marginBottom:9}}><div style={{fontSize:11.5,fontWeight:800,color:C.purple,letterSpacing:0.6}}>{g.title+" · "+g.sites.length}</div><div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:2}}>{g.blurb}</div></div>:null}
-        {list.map(function(x,si){return <CampSite key={x.i} b={x.b} i={x.i} first={gi===0&&from+si===0} calc={calc} dayCount={_days} slept={slept.by.get(x.i)}/>;})}
-      </div>;};
-      var rest=[group(groups[0],0,1,undefined,false)].concat(groups.slice(1).map(function(g,k){return group(g,k+1,0,undefined,true);})).filter(Boolean);
-      return <>{group(groups[0],0,0,1,true)}{rest.length?<Capped>{rest}</Capped>:null}</>;
+         cap was moved to remove. Everything after it is capped. ONE list, in the order the walk in
+         reaches the sites (campRouteOrder, applied by campSites); each says what parties use it for. */
+      var one=function(b,i){return <CampSite key={i} b={b} i={i} first={i===0} calc={calc} dayCount={_days} slept={slept.by.get(i)} prev={i?sites[i-1]:null}/>;};
+      var rest=sites.slice(1).map(function(b,k){return one(b,k+1);});
+      return <>{one(sites[0],0)}{rest.length?<Capped>{rest}</Capped>:null}</>;
     })()}
     {named}
   </div>;
-}
-/* Where most parties sleep first, then other options. Grouping only happens once at least
-   one site carries a researched role; a route whose list was never sorted renders exactly the flat
-   list it always did, rather than filing every site under OTHER SITES. Order WITHIN a group is the
-   stored order — the research wrote main camps most-used first and on-route sites in the order you
-   reach them, and a sort would undo both. Exported so check:camping can ask it directly. */
-export function campGroups(sites){
-  const all=(sites||[]).map(function(b,i){return {b:b,i:i};});
-  if(!all.some(function(s){return s.b&&s.b.sorted;}))return [{key:"all",title:null,blurb:null,sites:all}];
-  /* "Main camps" over "On the route" read as a geography claim and was often false: a main camp can
-     sit ABOVE a site on the route's own line. The split is about USE — where most parties sleep, then
-     the rest for a slower pace, bad weather or an emergency.
-     A site with NO role keeps its own small group, last. It was filed under OTHER OPTIONS for a while,
-     whose blurb is a researched claim about the `route` role only — so a site nobody had sorted was
-     presented as a researched fallback for a slow day or an emergency. The blurb says nothing about
-     who added it either: "added by climbers" is a provenance the row does not carry. */
-  return [
-    {key:"main",title:"WHERE MOST PARTIES SLEEP",blurb:"The camps and bivies most parties on this route actually use.",sites:all.filter(function(s){return s.b.role==="main";})},
-    {key:"other",title:"OTHER OPTIONS",blurb:"Further sites for a slower pace, bad weather or an emergency.",sites:all.filter(function(s){return s.b.role==="route";})},
-    {key:"unsorted",title:"NOT YET SORTED",blurb:"Nobody has said yet how parties on this route use these.",sites:all.filter(function(s){return s.b.role!=="main"&&s.b.role!=="route";})}
-  ].filter(function(g){return g.sites.length;});
 }
 /* WHERE TO GET THE OVERNIGHT PERMIT for the zone this route sleeps in. `access.permit` answers the
    DAY question on most rows ("None required for day climbing"), each site's own `permit` prose says
@@ -2945,7 +3001,10 @@ function ItineraryView({route,activity,onSeeReports,onContribute,myItin,onSaveMy
   const conf=k.confidence;const confC=conf==="High"?C.green:conf==="Medium"?C.amber:C.red;
   const flagged=k.hazards.filter(h=>!h.official&&h.count>=2).length;
   const chip=(t,col)=><span style={{fontSize:12,fontWeight:700,color:col,background:col+"22",borderRadius:7,padding:"3px 8px"}}>{t}</span>;
-  const stat=(k,ic,val,col)=>val==null||val===""?null:<div key={k} style={{display:"flex",alignItems:"center",gap:4,background:C.surface,borderRadius:8,padding:"5px 9px"}}><span style={{fontSize:12}}>{ic}</span><span style={{fontSize:12,fontWeight:700,color:col||C.text}}>{val}</span></div>;
+  // `fill`: a day card's row. Five pills at the TOTAL row's padding need ~320px and a day card on a 390px phone has ~294, so the
+  // fifth (pack weight) wrapped onto a row of its own; tighter pills that share the row's width keep all five on one line down to
+  // a 360px phone (measured on Goode NE Buttress), and below that a wrapped pill stretches to fill its row rather than sit alone.
+  const stat=(k,ic,val,col,fill)=>val==null||val===""?null:<div key={k} style={{display:"flex",alignItems:"center",justifyContent:"center",gap:4,background:C.surface,borderRadius:8,padding:fill?"5px 5px":"5px 9px",...(fill?{flex:"1 1 auto",whiteSpace:"nowrap"}:null)}}>{ic?<span style={{fontSize:12}}>{ic}</span>:null}<span style={{fontSize:12,fontWeight:700,color:col||C.text}}>{val}</span></div>;
   return <div>
     <SL>Trip plan</SL>
     {(days.length||parsed.multi||proseIt)?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:9}}>A <b style={{color:C.textSub}}>recommended</b> itinerary based on how parties commonly climb this route — not the only way to do it. Faster/slower parties, different camps, or a different order are all normal.</div>:null}
@@ -2963,7 +3022,7 @@ function ItineraryView({route,activity,onSeeReports,onContribute,myItin,onSaveMy
       <div style={{display:"flex",flexDirection:"column",alignItems:"center",flexShrink:0}}><div style={{width:30,height:30,borderRadius:15,background:C.blueBg,color:C.blue,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,fontWeight:700}}>{d.n||i+1}</div>{i<days.length-1?<div style={{flex:1,width:2,background:C.border,marginTop:3,minHeight:18}}/>:null}</div>
       <div style={{flex:1,background:C.card,border:`1px solid ${C.border}`,borderRadius:12,padding:"11px 13px"}}>
         <div style={{fontSize:13.5,fontWeight:700,marginBottom:d.objective?5:8,lineHeight:1.35}}>{d.title}</div>{d.objective?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginBottom:9}}><span style={{color:C.blue,fontWeight:700}}>Objective · </span>{d.objective}</div>:null}
-        <div style={{display:"flex",gap:6,flexWrap:"wrap",justifyContent:"center",marginBottom:d.note?8:0}}>{[stat("gain","↑",d.gainFt!=null?uElev(d.gainFt):null,C.green),stat("loss","↓",d.lossFt!=null?uElev(d.lossFt):null,C.amber),stat("hours","",d.hours?d.hours+" hr":null,C.text),stat("miles","",d.miles?uDistMi(d.miles):null,C.text),stat("pack","",d.packLb?uMass(d.packLb):null,C.purple)]}</div>
+        <div style={{display:"flex",gap:4,flexWrap:"wrap",justifyContent:"center",marginBottom:d.note?8:0}}>{[stat("gain","↑",d.gainFt!=null?uElev(d.gainFt):null,C.green,1),stat("loss","↓",d.lossFt!=null?uElev(d.lossFt):null,C.amber,1),stat("hours","",d.hours?d.hours+" hr":null,C.text,1),stat("miles","",d.miles?uDistMi(d.miles):null,C.text,1),stat("pack","",d.packLb?uMass(d.packLb):null,C.purple,1)]}</div>
         {d.note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{d.note}</div>:null}{d.schedule&&d.schedule.length?<div style={{marginTop:d.note?10:9,borderTop:"1px solid "+C.borderLight,paddingTop:10,display:"flex",flexDirection:"column",gap:9}}>{d.schedule.map((st,si)=><div key={si} style={{display:"flex",gap:10,alignItems:"flex-start"}}><span style={{flexShrink:0,width:68,fontSize:12,fontWeight:700,color:st.time?C.blue:C.textMuted,lineHeight:1.35,paddingTop:1,textAlign:"right",wordBreak:"break-word"}}>{st.time||""}</span><div style={{flex:1,minWidth:0,borderLeft:"2px solid "+C.borderLight,paddingLeft:11}}><div style={{fontSize:12.5,color:C.text,lineHeight:1.4,fontWeight:600}}>{st.label}</div>{st.detail?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.45,marginTop:2}}>{st.detail}</div>:null}</div></div>)}</div>:null}
       </div></div>)}
     {(!days.length&&!parsed.multi)?<div style={{fontSize:12.5,color:C.textSub,background:C.card,border:`1px solid ${C.border}`,borderRadius:11,padding:"11px 13px",marginBottom:ROUTE_GAP}}>No day-by-day plan on file yet for this route.</div>:null}
