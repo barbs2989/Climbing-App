@@ -1395,7 +1395,15 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
   const [bounds, setBounds] = useState(null);
   const [center, setCenter] = useState(center0 || null);
   const [baseLayer, setBaseLayer] = useState("street");
-  const [sel, setSel] = useState(null);
+  // WHAT YOU TAPPED, listed BELOW the map (2026-10-24, owner: "Sometimes when you click on the circle,
+  // the climbs don't show up. The blue circles in particular ... I would prefer if the climbs showed
+  // up in list view below the map"). A blue circle used to ONLY zoom: the zoomed view refetched,
+  // re-clustered the larger set it found into new circles with BIGGER numbers, and the areas you
+  // tapped were never shown; when they sat on one spot (or the map was already at its deepest
+  // zoom) nothing happened at all. Now a circle zooms AND lists its areas here, and a single pin
+  // lists its one area here instead of a card over the map. The list survives the zoom it causes:
+  // it is cleared by its own ✕, a tap on the bare map, or a tap on another circle.
+  const [pick, setPick] = useState(null);
   // Go to a town, county, or zip/postal code (US and Canada). `alts` are the other matches, offered as "Not it?".
   const [placeQ, setPlaceQ] = useState("");
   const [place, setPlace] = useState({ busy: false, err: "", alts: [] });
@@ -1469,7 +1477,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
       mapRef.current = map;
       setReady(true);
       map.on("moveend", () => readBounds(map));
-      map.on("movestart", () => setSel(null));
+      map.on("click", () => setPick(null));
       setTimeout(() => { try { map.invalidateSize(); readBounds(map); } catch (e) {} }, 150);
       // ...and again whenever the map's box really changes size. On a slow phone the box can still
       // be unlaid-out at 150ms: the query then asked for a near-zero box, got no areas, and the
@@ -1502,7 +1510,6 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
     if (!ready || !nearby) return;
     const L = window.L, map = mapRef.current, grp = markRef.current;
     if (!L || !map || !grp) return;
-    setSel(s => (s && nearby.some(a => a.id === s.id)) ? s : null);
     grp.clearLayers();
     // Kept comfortably above the max single-pin size below (52px) so tightly
     // spaced but distinct areas cluster instead of visually overlapping.
@@ -1527,7 +1534,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
         const html = pinHtml(a.name, null, sz, color, "#ffffff", discIconMarkup(a.dominant_discipline, 18));
         const mk = L.marker([a.lat, a.lng], { icon: L.divIcon({ html, className: "", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2] }) });
         mk.bindTooltip(a.name + " · " + a.route_count + " climb" + (a.route_count !== 1 ? "s" : ""), { direction: "top" });
-        mk.on("click", () => setSel({ ...a, _mi: viewCenter ? haversineMi(viewCenter, a) : null }));
+        mk.on("click", () => setPick({ areas: [a], cluster: false }));
         grp.addLayer(mk);
       } else {
         const areas = group.map(g => g.a);
@@ -1539,6 +1546,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
         const mk = L.marker([avgLat, avgLng], { icon: L.divIcon({ html, className: "", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2] }) });
         mk.bindTooltip(n + " areas · " + climbs + " climbs — tap to zoom in", { direction: "top" });
         mk.on("click", () => {
+          setPick({ areas, cluster: true });
           try { map.fitBounds(L.latLngBounds(areas.map(a => [a.lat, a.lng])), { padding: [50, 50], maxZoom: 15 }); } catch (e) {}
         });
         grp.addLayer(mk);
@@ -1614,23 +1622,36 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
       <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "100%" : 260, borderRadius: 12, overflow: "hidden", background: C.surface }} />
       {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
       <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={center} />
-      {fullscreen ? null : <button onClick={() => setFullscreen(true)} aria-label="Full screen" title="Full screen" style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000 })}>⤢</button>}
+      {/* ⤢ to go full screen and ✕ to leave it, in the SAME spot on the map, so the way out is where the
+          way in was (owner, 2026-10-24: "Exit full screen is a little hidden on the map"). Drawn OPAQUE, with a
+          shadow: the translucent fill let the circles beneath show through it. Full screen also has
+          ← Back in its title row. */}
+      <button onClick={() => setFullscreen(f => !f)} aria-label={fullscreen ? "Exit full screen" : "Full screen"} title={fullscreen ? "Exit full screen" : "Full screen"} style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000, background: C.surface, boxShadow: "0 2px 8px rgba(0,0,0,0.5)" })}>{fullscreen ? "✕" : "⤢"}</button>
       {/* WHERE AM I, on the map itself, as the route map has it: bottom-right, above the tile
           credit, in full screen too. It used to be a full-width button above the map, which full
-          screen hid. Out of the way of an open area card, which spans the bottom of the map. */}
-      {sel ? null : <button onClick={locate} disabled={locating} aria-label="Show my location on the map" style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{"📍 " + locateLabel(me, "Me")}</button>}
-      {sel ? (
-        <div style={{ position: "absolute", left: 12, right: 12, bottom: 12, zIndex: 1000, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12, padding: "10px 12px", boxShadow: "0 6px 20px rgba(0,0,0,0.5)", display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, lineHeight: 1.3, overflowWrap: "anywhere" }}>{sel.name}</div>
-            <div style={{ fontSize: 11.5, color: C.textMuted }}>{sel.route_count + " climb" + (sel.route_count !== 1 ? "s" : "") + (sel._mi != null ? " · " + (uDistMi ? uDistMi(sel._mi) : sel._mi.toFixed(1) + " mi") : "")}</div>
-          </div>
-          <button onClick={() => { onOpenArea(sel); setSel(null); }} style={{ ...BTN, background: C.blueSolid, color: "#fff", border: "none", flexShrink: 0 }}>Open</button>
-          <button onClick={() => setSel(null)} title="Close" aria-label="Close" style={POP_CLOSE}>✕</button>
-        </div>
-      ) : null}
+          screen hid. */}
+      <button onClick={locate} disabled={locating} aria-label="Show my location on the map" style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{"📍 " + locateLabel(me, "Me")}</button>
     </div>
   );
+  // The tapped circle's areas, nearest the middle of the map first.
+  const pickRows = pick ? pick.areas.map(a => ({ ...a, _mi: viewCenter ? haversineMi(viewCenter, a) : null })).sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)) : [];
+  const pickClimbs = pickRows.reduce((n, a) => n + (a.route_count || 0), 0);
+  const pickUI = pick ? (
+    <section aria-label="Areas you tapped on the map" style={{ marginTop: 8, flexShrink: 0, maxHeight: fullscreen ? "42%" : "none", display: "flex", flexDirection: "column", minHeight: 0, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 8px 8px 12px", borderBottom: "1px solid " + C.border }}>
+        <div style={{ flex: 1, minWidth: 0, fontSize: 13.5, fontWeight: 700, color: C.text }}>{(pickRows.length === 1 ? "1 area" : pickRows.length + " areas") + " · " + pickClimbs + " climb" + (pickClimbs !== 1 ? "s" : "")}</div>
+        <button onClick={() => setPick(null)} title="Close" aria-label="Close the list of tapped areas" style={POP_CLOSE}>✕</button>
+      </div>
+      <div style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", padding: "6px 8px 0" }}>
+        {pickRows.map(a => (
+          <div key={a.id} {...clickable(() => onOpenArea(a))} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "10px 12px", marginBottom: 6, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
+            <span style={{ fontWeight: 700, fontSize: 14, color: C.text, minWidth: 0, overflowWrap: "anywhere" }}>{a.name}</span>
+            <span style={{ color: C.textMuted, fontSize: 12, flexShrink: 0 }}>{a._mi != null ? (uDistMi ? uDistMi(a._mi) : a._mi.toFixed(1) + " mi") + " · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  ) : null;
   const errUI = geoErr ? <div role="status" style={{ color: C.red, fontSize: 12, marginTop: 6 }}>{geoErr}</div> : null;
   const title = "Map" + (name ? " · " + name : "");
   return (
@@ -1644,15 +1665,19 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
           element around `mapBox` in full screen would make React unmount the map's div, and with it
           the Leaflet map, every time the climber went in or out. */}
       {hostRef.current ? createPortal(
-        <div role={fullscreen ? "dialog" : undefined} aria-modal={fullscreen ? "true" : undefined} aria-label={fullscreen ? title : undefined} style={fullscreen ? { position: "fixed", inset: 0, zIndex: 9700, background: C.bg, padding: 12, display: "flex", flexDirection: "column" } : { position: "relative" }}>
+        <div role={fullscreen ? "dialog" : undefined} aria-modal={fullscreen ? "true" : undefined} aria-label={fullscreen ? title : undefined} style={fullscreen ? { position: "fixed", inset: 0, zIndex: 9700, background: C.bg, padding: "calc(env(safe-area-inset-top) + 12px) 12px calc(env(safe-area-inset-bottom) + 12px)", display: "flex", flexDirection: "column" } : { position: "relative" }}>
+          {/* The title row clears the notch (safe-area-inset-top): the page is viewport-fit=cover, so
+              with a flat 12px it sat under the phone's status bar and the ✕ was hidden until you
+              looked for it (owner, 2026-10-24). ← Back leads, as on every other screen. */}
           {fullscreen ? (
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, marginBottom: 9 }}>
-              <span style={{ fontSize: 14, fontWeight: 700, color: C.text, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{title}</span>
-              <button onClick={() => setFullscreen(false)} aria-label="Close full-screen map" style={POP_CLOSE}>✕</button>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 9 }}>
+              <button onClick={() => setFullscreen(false)} aria-label="Back" style={POP_BACK}>← Back</button>
+              <span style={{ flex: 1, fontSize: 14, fontWeight: 700, color: C.text, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{title}</span>
             </div>
           ) : null}
           {fullscreen ? searchUI : null}
           {mapBox}
+          {pickUI}
           {errUI}
         </div>, hostRef.current) : null}
       {!fullscreen ? (
