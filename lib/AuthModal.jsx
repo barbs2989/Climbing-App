@@ -4,7 +4,7 @@
 // out -- with one exception: `recovery` opens it over a signed-in session, because a reset link
 // authenticates you before you have chosen the new password. Password is never stored.
 import { useState } from "react";
-import { signIn, signUp, rememberEmail, recallEmail, requestPasswordReset, updatePassword, useOAuthProviders, signInWithGoogle } from "./auth";
+import { signIn, signUp, rememberEmail, recallEmail, requestPasswordReset, updatePassword, useOAuthProviders, signInWithGoogle, signInWithApple } from "./auth";
 
 // Must match the project's Auth setting `password_min_length` (raised 6 -> 8 on
 // 2026-09-23). The server is what enforces it; this only gives a clear message before
@@ -16,6 +16,8 @@ import { POP_CLOSE } from "./popupChrome.js";
 import { CAPTCHA_ON, Turnstile } from "./captcha.jsx";
 
 const c = { bg: "#0d1117", card: "#161b22", border: "#30363d", text: "#e6edf3", sub: "#8b949e", blue: "#2f81f7", red: "#f85149", green: "#3fb950" };
+const provBtn = { width: "100%", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: 12, minHeight: 46, borderRadius: 11, border: "1px solid " + c.border, fontSize: 15, fontWeight: 600, cursor: "pointer" };
+const hint = { color: c.sub, fontSize: 12, marginTop: -6, marginBottom: 10 };
 const field = { width: "100%", boxSizing: "border-box", background: "#0d1117", border: "1px solid " + c.border, borderRadius: 10, padding: "11px 13px", color: c.text, fontSize: 15, marginBottom: 10, outline: "none" };
 
 const TITLE = { in: "Welcome back", up: "Create your account", forgot: "Reset your password", reset: "Choose a new password" };
@@ -33,11 +35,18 @@ const ACTION = { in: "Sign in", up: "Create account", forgot: "Email me a reset 
 // the real one did not. `onLegal` is what lets the host show them; when it is absent (the
 // `recovery` modal, where you are already a user mid-password-reset) nothing renders, so this
 // cannot break a call site that does not pass it.
-export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, onLegal }) {
+// `onGuest` (LOGIN_FIRST, ClimbMatch.jsx) adds "View as guest": the sign-in screen is the first
+// thing a visitor meets, and browsing the app without an account stays one tap away.
+export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, onLegal, onGuest }) {
   const [mode, setMode] = useState(recovery ? "reset" : "in"); // "in" | "up" | "forgot" | "reset"
   const [email, setEmail] = useState(recallEmail());
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  // Create account asks for the email and the password TWICE (owner, 2026-10-23): a typo in either
+  // makes an account nobody can sign in to, and with autoconfirm on no mail arrives to catch it.
+  // Paste is allowed in both -- blocking it fails WCAG 3.3.8 and pushes people to weaker passwords.
+  const [email2, setEmail2] = useState("");
+  const [password2, setPassword2] = useState("");
   const [err, setErr] = useState("");
   const [info, setInfo] = useState("");
   const [busy, setBusy] = useState(false);
@@ -58,6 +67,11 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
   // false and the button never renders, so nobody is offered a sign-in that cannot complete.
   const providers = useOAuthProviders();
   const googleOn = !!providers && providers.indexOf("google") >= 0;
+  const appleOn = !!providers && providers.indexOf("apple") >= 0;
+  // Known to be off (the settings read answered and left it out): the button SAYS "coming soon"
+  // on its face, so it never poses as a sign-in that works. Unknown (still loading) says nothing.
+  const appleSoon = !!providers && !appleOn, googleSoon = !!providers && !googleOn;
+  const sameEmail = email.trim().toLowerCase() === email2.trim().toLowerCase();
 
   // Deliberately the same message whether or not the address has an account. Saying "no account
   // for that email" turns this box into a membership oracle for anyone who wants to know which
@@ -93,7 +107,9 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
     // not just the checkbox, or the rule is decoration.
     if (mode === "up" && !adult) { setErr("You must be 18 or older to create an account."); return; }
     if (mode === "up" && !agreed) { setErr("Agree to the Terms of Service and Community Guidelines to create an account."); return; }
+    if (mode === "up" && !sameEmail) { setErr("The two email addresses don't match."); return; }
     if (mode === "up" && password.length < MIN_PASSWORD) { setErr(`Use at least ${MIN_PASSWORD} characters.`); return; }
+    if (mode === "up" && password !== password2) { setErr("The two passwords don't match."); return; }
     if (captchaMissing()) return;
     setErr(""); setInfo(""); setBusy(true);
     const token = needsCaptcha ? captcha : undefined;
@@ -128,11 +144,14 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
 
   const go = () => (mode === "forgot" ? sendReset() : mode === "reset" ? saveNewPassword() : submit());
 
-  // A successful call navigates to Google and never comes back to this line, so reaching the
+  // A successful call navigates to Apple or Google and never comes back to this line, so reaching the
   // error branch means the redirect did not happen at all -- surface it rather than leaving the
   // button looking dead. Coming back, the tokens are in the URL hash and detectSessionInUrl
   // (on by default) turns them into a session, which useSession picks up and the gate closes.
-  const goGoogle = async () => {
+  const goProvider = async (provider) => {
+    // Shown before the provider is switched on, so the screen has the buttons it will have -- but
+    // a tap must say so rather than send anyone to a sign-in that cannot complete.
+    if (!(provider === "apple" ? appleOn : googleOn)) { setErr(""); setInfo((provider === "apple" ? "Sign in with Apple" : "Google sign-in") + " is coming soon. Use your email for now."); return; }
     // Google on "up" creates an account too, so it has to clear the same 18+ gate as the email
     // form. Without this the attestation would be a checkbox you could simply walk around, and
     // the Terms would again assert an age nothing checks. Google is not enabled on the project
@@ -140,7 +159,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
     if (mode === "up" && !adult) { setErr("You must be 18 or older to create an account."); return; }
     if (mode === "up" && !agreed) { setErr("Agree to the Terms of Service and Community Guidelines to create an account."); return; }
     setErr(""); setInfo(""); setBusy(true);
-    const { error } = await signInWithGoogle();
+    const { error } = await (provider === "apple" ? signInWithApple() : signInWithGoogle());
     setBusy(false);
     if (error) setErr(error.message);
   };
@@ -167,13 +186,19 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
         </div>
         <div style={{ fontSize: 13, color: c.sub, marginBottom: 16, lineHeight: 1.5 }}>{BLURB[mode]}</div>
         {/* Sign-in and sign-up only: on "forgot" there is no account to federate yet, and on
-            "reset" the climber is already signed in and owes us a password.
-            aria-label so the decorative "G" does not become part of the announced name -- the
-            same reason the demo screen's Facebook button carries one. */}
-        {googleOn && (mode === "in" || mode === "up") && (
+            "reset" the climber is already signed in and owes us a password. Apple first and the
+            same size as Google: App Store guideline 4.8 wants Sign in with Apple offered beside any
+            other third-party login, with equal prominence. Both always render (owner, 2026-10-23);
+            one the project has not switched on yet reads "coming soon" on tap (goProvider).
+            aria-label so the decorative logo does not become part of the announced name. */}
+        {(mode === "in" || mode === "up") && (
           <div>
-            <button onClick={goGoogle} disabled={busy} aria-label="Continue with Google" style={{ width: "100%", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: 12, borderRadius: 11, border: "1px solid " + c.border, background: "#fff", color: "#1f2328", fontSize: 15, fontWeight: 600, cursor: busy ? "default" : "pointer", opacity: busy ? 0.7 : 1 }}>
-              <span style={{ fontWeight: 800, color: "#4285F4" }}>G</span> Continue with Google
+            <button onClick={() => goProvider("apple")} disabled={busy} aria-label={(mode === "up" ? "Sign up with Apple" : "Sign in with Apple") + (appleSoon ? ", coming soon" : "")} style={{ ...provBtn, background: "#fff", color: "#000", opacity: busy ? 0.7 : appleOn || !providers ? 1 : 0.6 }}>
+              <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16.37 12.6c-.03-2.64 2.16-3.91 2.26-3.97-1.23-1.8-3.15-2.05-3.83-2.08-1.63-.17-3.18.96-4.01.96-.83 0-2.1-.94-3.46-.91-1.78.03-3.42 1.03-4.34 2.63-1.85 3.21-.47 7.96 1.33 10.56.88 1.27 1.93 2.7 3.3 2.65 1.33-.05 1.83-.86 3.43-.86 1.6 0 2.05.86 3.45.83 1.43-.02 2.33-1.29 3.2-2.57 1.01-1.47 1.43-2.9 1.45-2.97-.03-.01-2.78-1.07-2.81-4.23zM13.74 4.83c.73-.89 1.22-2.12 1.09-3.35-1.05.04-2.32.7-3.07 1.58-.67.78-1.27 2.03-1.11 3.24 1.17.09 2.37-.6 3.09-1.47z" /></svg>
+              {mode === "up" ? "Sign up with Apple" : "Sign in with Apple"}{appleSoon && <span style={{ fontWeight: 500, fontSize: 12.5, color: "#57606a" }}>· coming soon</span>}
+            </button>
+            <button onClick={() => goProvider("google")} disabled={busy} aria-label={"Continue with Google" + (googleSoon ? ", coming soon" : "")} style={{ ...provBtn, marginTop: 8, background: "#fff", color: "#1f2328", opacity: busy ? 0.7 : googleOn || !providers ? 1 : 0.6 }}>
+              <span aria-hidden="true" style={{ fontWeight: 800, color: "#4285F4" }}>G</span> Continue with Google{googleSoon && <span style={{ fontWeight: 500, fontSize: 12.5, color: "#57606a" }}>· coming soon</span>}
             </button>
             <div style={{ display: "flex", alignItems: "center", gap: 10, margin: "14px 0" }}>
               <div style={{ flex: 1, height: 1, background: c.border }} />
@@ -195,9 +220,17 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
         {mode !== "reset" && (
           <input value={email} onChange={(e) => setEmail(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} aria-label="Email" placeholder="Email" type="email" autoComplete="email" style={field} />
         )}
+        {mode === "up" && (
+          <input value={email2} onChange={(e) => setEmail2(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} aria-label="Confirm email" placeholder="Confirm email" type="email" autoComplete="email" aria-invalid={email2 && !sameEmail ? "true" : undefined} style={field} />
+        )}
+        {mode === "up" && email2 && !sameEmail && <div style={hint}>The emails don't match yet.</div>}
         {mode !== "forgot" && !done && (
           <input value={password} onChange={(e) => setPassword(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} aria-label={mode === "reset" ? "New password" : "Password"} placeholder={mode === "reset" ? "New password" : "Password"} type="password" autoComplete={mode === "in" ? "current-password" : "new-password"} style={field} />
         )}
+        {mode === "up" && (
+          <input value={password2} onChange={(e) => setPassword2(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} aria-label="Confirm password" placeholder="Confirm password" type="password" autoComplete="new-password" aria-invalid={password2 && password2 !== password ? "true" : undefined} style={field} />
+        )}
+        {mode === "up" && password2 && password2 !== password && <div style={hint}>The passwords don't match yet.</div>}
         {mode === "in" && (
           <div style={{ textAlign: "right", marginTop: -4, marginBottom: 12 }}>
             <button onClick={() => { setErr(""); setInfo(""); setPassword(""); setMode("forgot"); }} style={{ background: "none", border: "none", color: c.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", padding: 0 }}>Forgot password?</button>
@@ -225,6 +258,9 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
         <button onClick={done ? () => onRecovered && onRecovered() : go} disabled={busy} style={{ width: "100%", padding: 12, borderRadius: 11, border: "none", background: "#2a74de", color: "#fff", fontSize: 15, fontWeight: 700, cursor: busy ? "default" : "pointer", opacity: busy ? 0.7 : 1 }}>
           {busy ? "…" : done ? "Continue to ClimbMatch" : ACTION[mode]}
         </button>
+        {onGuest && (mode === "in" || mode === "up") && (
+          <button onClick={onGuest} disabled={busy} style={{ width: "100%", marginTop: 10, padding: 12, borderRadius: 11, border: "1px solid " + c.border, background: "transparent", color: c.text, fontSize: 15, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>View as guest</button>
+        )}
         {/* Shown on BOTH sign-in and create-account, because the Terms bind on "creating an
             account OR using ClimbMatch" and when realAuthGate is on this screen is the only
             door into the app -- so both paths are the moment of acceptance. Not on forgot or

@@ -7,7 +7,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 
 ## 1. What it does today
 - **Area browser**: world > country > state > range > crag/peak drill-down. `StatePicker` is the entry; `AreaPage` shows one area
-  (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb? Add it*, `DbSuggestedClimbs`
+  (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb or area here?* (`AddHereFooter`: Add a climb · Add an area), `DbSuggestedClimbs`
   "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page).
   `DbAreaTree` / `DbAreaTreeNode` / `DbAreaTreeRoots` give an expandable tree to jump around.
 - **Area page sections** (0304, `lib/AreaPageSections.jsx`): on a crag, peak or wall — **ABOUT** (`areas.blurb`, or an invitation to write one),
@@ -59,7 +59,13 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
     wall is logged under `_order/<state>.jsonl`, so a re-run skips finished walls (and a state whose walls are all
     done skips its database load). Writes now wait `--pace-ms` (default 400) after each one and back off a minute
     on failure; **do not restart without the owner's OK.**
-- **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker.
+- **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker. Its Areas | Routes
+  toggle and box PIN under the top bar (`usePinnedBar`) while the list below scrolls, and let go at the list's end marker (2026-10-23).
+- **Add an area** (0360, `lib/AddArea.jsx`): *Add an area* under an area's list, or under the route finder's results, opens a sheet —
+  name, kind (crag/wall/boulder · peak · area), about, optional location — that lists catalog places already filed under that name
+  before it sends. It files a `contributions` row of kind `new_area` (area_id = the parent); nothing shows until the owner approves it
+  in Profile › Review › Area proposals (`AreaProposalQueue`), where `approve_new_area` inserts the `areas` row. Offered only where the
+  area holds no climbs itself (areas hold sub-areas OR climbs — Mountain Project's rule, and `trg_areas_leaf_xor`), and never on a country.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.
   The **Filters** sheet is a full-height screen (since 2026-10-21; it was an 88vh bottom sheet, which on iOS overflowed off the
@@ -118,6 +124,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, `AreaPage`, `PartnersHereCard`, `PARTNER_CARD_TYPES`, `StatePicker`, `DbSearchSplit`, `RouteFinderPanel`, `NearMePanel`, `NearbyPeaks`, `ObjectivesPanel`, `DbAreaTree`, `DbSuggestedClimbs`, `SummitBriefing`, `nearbyPeaksBounds` |
 | `lib/mapKit.jsx` | `MAP_TILE_URLS`, `TILE_CREDIT`, `loadLeaflet`, `baseTileLayer`, `applyBaseLayer`, `BaseLayerToggle`, `ViewToggle`, `pinHtml`, `useFollowMe`, `acceptFix`, `searchPlaces` |
 | `lib/AreaPageSections.jsx` | `AboutCard`, `AreaFactsCard`, `ClimbsChart`, `GradeSpread`, `MonthStrip`, `PendingAreaEdits`, `bucketLabel` |
+| `lib/AddArea.jsx` | default export `AddArea` (mounted by App from its addAreaParent state in `ClimbMatch.jsx`) |
 | `lib/AreaSuggestFix.jsx` | default export `AreaSuggestFix` (mounted by App from its areaFixOpen / areaFixArea / areaFixField state in `ClimbMatch.jsx`) |
 | `lib/areaFields.js` | `AREA_EDIT_FIELDS`, `AREA_EDIT_KEYS`, `ASPECTS`, `MONTH_ABBR`, `monthsLabel`, `myPendingAreaEdits` |
 | `lib/areaChrome.jsx` | `EditIconButton`, `CopyCoordButton` (shared with `RouteDetail.jsx`), `NO_PARKING_PIN_LINE` |
