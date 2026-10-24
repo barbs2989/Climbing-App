@@ -163,7 +163,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 | `lib/MyAscents.jsx`, `lib/LogAscent.jsx` (no visibility chooser since 2026-10-21: one line names the Settings choice; a new report sends `visibilityFromSetting` and `syncLogToDb` leaves the column out so 0272's insert trigger fills it from the stored setting), `lib/TripReport.jsx`, `lib/tripReportRow.js`, `lib/LogTagConfirmations.jsx` | Completed climbs, logging, trip reports, partner tag confirmation |
 | `lib/lists.js` | `LISTS`, `routeInList`, `listPeaks`, `peakClimbed`, `FIFTY_CLASSICS` (Challenges) |
 | `lib/CrewCard.jsx`, `lib/CrewGearList.jsx` | Crew card, gear list |
-| `lib/CrewFinder.jsx` | Crew discovery (`inMyAreas`: "My climbs & areas" also matches a crew at an area you listed; `initialArea` from the area page's "Crews here") |
+| `lib/CrewFinder.jsx` | Crew discovery (`inMyAreas`: "My climbs & areas" also matches a crew at, or inside, an area you listed or saved — `savedAreaIds`, signed in only; `initialArea` from the area page's "Crews here") |
 | `lib/StartCrewSheet.jsx` | `StartCrewSheet` — start a crew at an AREA: the place, the session's discipline, a day, a size, a note; hands `formCrew` a place |
 | `lib/FloatPlans.jsx`, `lib/GiveVouch.jsx`, `lib/Inbox.jsx`, `lib/NotifPanel.jsx` | Float plans, vouch sheet, messages, notifications |
 | `lib/SafetyTab.jsx` | `SafetyTab` — crew safety check: Team Alignment (server counts for a real crew) and the float plan |
