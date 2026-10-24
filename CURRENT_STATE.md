@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Find partners and crews by your saved areas**: Find partners has a *Saved areas* mode — one tap searches every crag, canyon or range you saved (or one, from its chip) for the climbers listed there; Join a crew's *My climbs & areas* now also shows sessions at areas you saved. Your saved list stays private: only climbers who listed themselves are shown. See `docs/features/partners.md`.
 - **Step to the next problem on the same boulder**: a boulder problem's page shows **ON THIS BOULDER** where a wall climb shows NEXT DOOR: *← Previous* / *Next →* open the other problems and variations on that boulder, with "Problem n of N on <boulder>", in Mountain Project's order where stored. An area named as a group (a sector, a field) reads *In this area* instead. See `docs/features/route-page.md`.
 - **Home's Alerts swipe too**: on a phone, each row of Home's Alerts list now swipes right to archive and left to delete, as the bell's Notifications panel already did; it still shows the newest 8, with *View all N alerts* opening the full, scrolling panel and its *Archive all*. See `docs/features/logbook-crews-home.md`.
 - **Route page: the sub-tab bar shows that it scrolls**: while Partners or Photos is hidden past the edge of a phone, that edge fades and carries a › button (‹ at the other end once scrolled), so a climber can find the hidden tabs.
