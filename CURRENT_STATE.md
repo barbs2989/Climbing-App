@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Every ← Back and ✕ has a blue edge**: the close ✕, the ← Back (in popups and in-page, over photos too) and the remove ✕ on tags, days, photos and list rows now carry the same blue ring as the résumé's Edit button, in place of the faint white one. One token in `lib/popupChrome.js`; the 18px ✕ inside a chip keeps its white ring.
 - **No "Continue as a demo climber" on sign-in**: signing out of any build with a backend (not only the live site) lands on the real sign-in screen with *View as guest*; the old demo screen, now reached only by a build with no Supabase, offers *View as guest* too instead of a sample account. See `docs/features/profile-and-settings.md`.
 - **Climate & season moved to the Conditions tab**: the CLIMATE & SEASON box (the typical weather, spring to winter, and the forecast zone) and its *No season guidance* note left the Plan tab (and a crag route's Overview) for the Conditions tab, after the forecast, beside ASPECT & SUN and SEASONAL GUIDANCE. A discipline with no Conditions tab (aid) keeps it where it was. `check:bare` holds it: once, on Conditions.
 - **Each rappel is a dropdown**: under RAPPELS a station shows its number, length and anchor (and a red hazard count when it has any); its station, hazards, pull and notes open with *▸ More*, the way a camp opens under CAMPING & BIVY. The first opens expanded (`RappelRow`).
