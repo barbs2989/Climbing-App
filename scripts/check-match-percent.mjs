@@ -210,7 +210,9 @@ if (row.length < 400) dead(`RealClimberRow lifted only ${row.length} chars — e
 
 // 6a. THE STRUCTURAL FACT, executed rather than read. A hand-typed copy of `_cand` would agree
 // with itself whatever the row does, which is the whole question.
-const candSrc = (row.match(/var _cand=\{([\s\S]*?)\};/) || [])[1];
+// The row lives in src/components/RealClimberRow.tsx (reached through readCoreSource's MOVED stitch) and declares
+// the projection with const; the literal itself is unchanged and still executed below.
+const candSrc = (row.match(/(?:var|const) _cand=\{([\s\S]*?)\};/) || [])[1];
 if (!candSrc) dead("ANCHOR LOST: _cand's object literal could not be lifted from RealClimberRow");
 // eslint-disable-next-line no-new-func
 // `listing` is the row's listed areas (0300); undefined here means "not read", exactly as the row sees it.
