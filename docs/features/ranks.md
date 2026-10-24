@@ -5,7 +5,8 @@
 `lib/Leaderboards.jsx`, loaded lazily.
 
 ## 1. What it does today
-- **Scope** chips: Overall · Near me (home zip + radius) · Friends · By area (area tree, down from the countries).
+- **Scope** row: Overall · Near me (home zip + radius) · Friends · By area (area tree, down from the countries) —
+  four equal-width boxes across the full row, 46px tall at 14px type (a 44px touch target), not small scrolling chips.
 - **Climbing type** (All, Sport, Trad, Top rope, Bouldering, Alpine, Mountaineering, Scrambling, Ice, Mixed, Aid)
   and **Ranking**, grouped Performance · Lists · Reliability · Community. Which boards a type offers is the `ids`
   list in `Leaderboards`: Send points on every graded type (not Mountaineering/Scrambling, whose class grades weigh

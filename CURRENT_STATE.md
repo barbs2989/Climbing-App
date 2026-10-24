@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Bigger selector boxes**: Ranks' Overall / Near me / Friends / By area row is four full-width 46px boxes; the crag Grade/Stars/A–Z sort and All/Trad/Sport/Multipitch filter, the Groups sort, a group's topic filter and the list status filter grew to a 40–44px touch target with larger type. See `docs/features/ranks.md`.
 - **Saved areas are a list**: Logbook › Saved draws saved areas and peaks as rows (name, type and parent area, › to open, ✕ to unsave) like the Saved routes rows, not wrapping pills. See `docs/features/logbook-crews-home.md`.
 - **Settings scrolls from anywhere**: on *Your data & account*, a swipe that started on the temperature or wind slider used to be swallowed — and could drag the range (45°–68° became 18°–68° just by scrolling). The sliders now take only a sideways drag; an up-down swipe scrolls the page, as a native slider does (`lib/RangeSlider.jsx`, pinned in `check:conditions-score`).
 - **Crew card: Not ready yet sits under the members**: an opened crew card shows *Crew Ready* / *Not ready yet* directly beneath its members list, where it used to sit at the foot of the card below the gear list (`lib/CrewCard.jsx`).
