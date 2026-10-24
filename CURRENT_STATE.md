@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Area map: what you tap is listed under it**: tapping a blue circle (or a single pin) on the Climbs map lists those areas, with their climb counts, below the map — in full screen too; a circle still zooms. Full screen's top row now clears the phone's notch and has *← Back*, and its exit is an opaque ✕ on the map where ⤢ was. See `docs/features/maps-and-area-browser.md`.
 - **A 5.x route is never called a scramble**: Monte Cristo's route is now *North Col* and shows Alpine, not "Scrambling 5.6". Route badges and the discipline filters lead with the route's own primary (`rDiscs`), a scramble with a 5.x grade is alpine (`catOf`, trigger 0366), and 123 peak routes whose discipline list contradicted their primary were repaired (`audit:mountaineering-rule` now checks both).
 - **Adding a route photo shows one box**: on the Photos tab, *+ Add photo* opens a sheet whose only box is *Choose from camera or library*; the *Describe this photo (optional)* text box that appeared under each picked photo is gone, and picked photos show as a row of thumbnails above *Add N photos*.
 - **Notifications: nothing covers a climber's photo**: the small crew/shield badge pinned on the corner of the avatar in the bell's rows is gone. The sentence beside the photo already says what happened. See `docs/features/logbook-crews-home.md`.

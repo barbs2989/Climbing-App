@@ -94,8 +94,13 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   Street / Satellite / Topo / snow base layers (`BaseLayerToggle`), a live location dot, and a place search box
   ("Go to a town, county or zip/postal code") covering the US and Canada (provinces, towns, US zip, Canadian postal codes).
   Its zoom buttons sit BOTTOM-LEFT (the layer row owns top-left) and a **📍 Me** button sits on the map bottom-right, as on the route map.
-  **⤢ Full screen** is a real full-screen view (`position:fixed`, titled "Map · <area>", ✕ or Escape to close, the place search inside),
-  drawn like the route map's. It keeps the SAME Leaflet map: the map renders through a portal into a host div the panel owns, and only
+  **⤢ Full screen** is a real full-screen view (`position:fixed`, titled "Map · <area>", the place search inside), drawn like the
+  route map's. Its title row clears the notch (`safe-area-inset-top`) and leads with **← Back**; the ⤢ on the map becomes an opaque
+  **✕** in the same corner; Escape also closes it (2026-10-24).
+  **Tapping a pin or a blue circle lists what you tapped BELOW the map** (`pick`), in both modes: "N areas · M climbs", nearest
+  the map's middle first, each row opening the area, ✕ or a tap on the bare map to clear. A circle also still zooms in, but the
+  list is the answer: the zoomed view refetches and re-clusters, and areas on one spot never separate. A single pin's card over the
+  map is gone (owner note 2026-10-24: "I would prefer if the climbs showed up in list view below the map"). It keeps the SAME Leaflet map: the map renders through a portal into a host div the panel owns, and only
   that div moves, into `document.body` and back into the inline slot, so markers, zoom, pan and the dot survive the round trip (2026-10-23).
 - **Fire map** (`FireMap`, `lib/FireMap.jsx`; data in `lib/fire.js`): opens from an area page below the state (a range, peak, crag or wall — never a country or state page, the first screen after the picker) and a route's Safety tab. Layers, each a chip:
   Fires (WFIGS incident points — the point of ORIGIN, coloured by containment, sized by acres), Perimeters, Red flag (NWS fire-weather
