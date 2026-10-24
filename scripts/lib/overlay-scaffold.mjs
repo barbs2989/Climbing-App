@@ -39,6 +39,7 @@ import { readCoreSource } from "./guard-sources.mjs";
 export const NEEDS_EXTRA_STATE = {
   areaTreeOpen: "rendered as `areaTreeOpen && selArea` — needs an area selected first",
   crewListOpen: "a disclosure inside the crew finder's result list — needs crews to list",
+  reviewQueue: "rendered as `reviewQueue&&isAdmin` — the Menu's Review queues (moved off Profile 2026-10-23) open only for an ADMIN account, and no walk signs in as one",
   compareOpen: "rendered as `wide&&compareOpen` — a desktop-only view (#2621) that needs a viewport of WIDE_MIN (1024px) or wider; the walks run at phone width",
   // `sessionRestoring` deliberately gets NO entry — it is a derived const
   // (`realAuthGate && session===undefined`), not state, so discovery cannot return it and an
@@ -619,7 +620,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       "useEffect(function(){window.__overlays=[" + names + "];" +
       "var p=new URLSearchParams(location.search);var t=p.get('zt');var z=p.get('z');" +
       "if(t)setTab(t);" +
-      // `?mt=<profile|activity|review>` picks the Profile screen's tab, so a walk can reach the sections
+      // `?mt=<profile|activity>` picks the Profile screen's tab, so a walk can reach the sections
       // that left its default view (the catch record, the logbook and the Year in Climbing banner live on Activity).
       "var mt=p.get('mt');if(mt)setMeTab(mt);" +
       // `?zr=1` opens the route detail screen and nothing else. check:overflow reached it by
