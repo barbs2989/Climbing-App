@@ -37,7 +37,8 @@ const ACTION = { in: "Sign in", up: "Create account", forgot: "Email me a reset 
 // cannot break a call site that does not pass it.
 // `onGuest` (LOGIN_FIRST, ClimbMatch.jsx) adds "View as guest": the sign-in screen is the first
 // thing a visitor meets, and browsing the app without an account stays one tap away.
-export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, onLegal, onGuest }) {
+// `arrival` ("climb" | "list") names what a shared link the visitor came in on will open.
+export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, onLegal, onGuest, arrival }) {
   const [mode, setMode] = useState(recovery ? "reset" : "in"); // "in" | "up" | "forgot" | "reset"
   // AS THE APP'S FIRST SCREEN (no onClose: the real gate, or LOGIN_FIRST since #2688) the sign-in
   // form fills the screen under a branded header -- the mark, the wordmark and what the app is for --
@@ -202,6 +203,11 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
             <div style={{ fontSize: 31, fontWeight: 800, letterSpacing: -0.6 }}>Climb<span style={{ color: c.blue }}>Match</span></div>
             <div style={{ fontSize: 14, color: c.sub, lineHeight: 1.5, marginTop: 6 }}>Find partners, trusted beta, and a climbing community built on trust.</div>
           </div>
+        )}
+        {/* ARRIVED BY A SHARED LINK: someone sent a climb or a list, and this screen is the first thing the
+            recipient sees. Say so, and that it opens either way: App read the link at load and holds it. */}
+        {gate && arrival && (mode === "in" || mode === "up") && (
+          <div role="status" style={{ margin: "-12px 0 20px", padding: "11px 13px", borderRadius: 11, border: "1px solid " + c.border, background: c.card, fontSize: 14, lineHeight: 1.5, textAlign: "center" }}>{"A " + arrival + " was shared with you. Sign in" + (onGuest ? ", or View as guest," : "") + " and it opens."}</div>
         )}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
           <div style={{ fontSize: gate ? 26 : 19, fontWeight: 800, letterSpacing: gate ? -0.4 : 0 }}>{TITLE[mode]}</div>
