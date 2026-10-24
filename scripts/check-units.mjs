@@ -1184,11 +1184,14 @@ async function runPitches() {
   //    them); either way the lifted text is the ternary itself, which is what gets evaluated.
   const seedHead = "const routePitches=";
   const seedBody = "(route.pitchDetail&&route.pitchDetail.length)";
-  const seedKeys = [seedHead + seedBody, seedHead + "useMemo(function(){return " + seedBody];
+  //    Since 2026-10-24 the ternary is wrapped in padPitchRows(<expr>, …), which orders the rows as
+  //    the page does and adds the not-described ones; it converts nothing, so the ternary is still
+  //    the whole unit edge.
+  const seedKeys = [seedHead + seedBody, seedHead + "useMemo(function(){return " + seedBody, seedHead + "useMemo(function(){return padPitchRows(" + seedBody];
   const seedKey = seedKeys.find((k) => src.includes(k));
   if (!seedKey) dead("the routePitches seed is not where this section reads it — re-read RouteDetail.jsx");
   const seedAt = src.indexOf(seedKey);
-  const seedEnd = src.indexOf(":[blankPitch(1)];", seedAt);
+  const seedEnd = src.indexOf(":[blankPitch(1)]", seedAt);
   if (seedEnd < 0) dead("could not bound the routePitches seed");
   const seedExpr = src.slice(seedAt + seedKey.length - seedBody.length, seedEnd + ":[blankPitch(1)]".length);
   if (!/\.map\(/.test(seedExpr) || !/lengthM:/.test(seedExpr)) dead("the seed is not the map-over-pitchDetail shape this section reads");
@@ -1201,7 +1204,11 @@ async function runPitches() {
   if (storeEnd < 0) dead("could not bound the pitches submit branch");
   const storeExpr = src.slice(storeAt + 'if(f.type==="pitches")return '.length, storeEnd).replace(/;\s*$/, "");
   if (!/\.map\(/.test(storeExpr) || !/\.filter\(/.test(storeExpr)) dead("the pitches branch is not the map/filter shape this section reads");
-  const store = new Function("vals", "uLenIn", "return " + storeExpr + ";");
+  // The store keeps each row's own label (`n`) through isNumLbl — lifted from source too, not re-typed.
+  const numAt = src.indexOf("function isNumLbl(");
+  if (numAt < 0) dead("isNumLbl is not where the pitches branch reads it");
+  const numSrc = src.slice(numAt, src.indexOf("\n", numAt));
+  const store = new Function("vals", "uLenIn", numSrc + "\nreturn " + storeExpr + ";");
 
   const blankPitch = (n) => ({ pitch: n, grade: "", lengthM: "", gear: "", notes: "", anchor: "", bolts: "", crux: false });
   const STORED = { pitch: 1, n: 1, grade: "5.10a", lengthM: 45, gear: "Yellow C4", note: "Sustained hands", anchor: "2 bolts", bolts: 4, crux: true };

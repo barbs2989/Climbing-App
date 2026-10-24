@@ -83,6 +83,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       change outright, which is the trap this section's own comment warns of. It now accepts either
       `const routePitches=(…` or `const routePitches=useMemo(function(){return (…`; what it slices
       and evaluates is the ternary itself in both cases, so the nine injection cases still land.
+      Since 2026-10-24 a third form, `useMemo(function(){return padPitchRows((…`, wraps it (page order
+      plus not-described rows; it converts nothing), and the submit keeps each row's label through
+      `isNumLbl`, which the section lifts from source alongside the store expression.
     - **MEASURED, so it needs no `_orig` guard where `itinStoreVal` does:** every length
       **1-200 m round-trips m→ft→m exactly**, so a box seeded from a stored length and saved
       untouched cannot drift. Miles and pounds do not, which is what that guard exists for.
