@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Bigger selector boxes**: Ranks' Overall / Near me / Friends / By area row is four full-width 46px boxes; the crag Grade/Stars/A–Z sort and All/Trad/Sport/Multipitch filter, the Groups sort, a group's topic filter and the list status filter grew to a 40–44px touch target with larger type. See `docs/features/ranks.md`.
 - **White text on blue boxes, app-wide**: every blue-tinted button, chip, badge and selected toggle (`C.blueBg` / `C.blueChip` / `C.blueDim` or a blue wash) used to print its label in the same blue; those labels are now white (`#fff`) — 189 styles across 36 files, including the shared `btnChip` and `onB`. The box keeps its blue fill and edge, so a selected chip still reads as selected. Blue text on a dark (non-blue) background is unchanged.
 - **Create a group: sections stand apart**: on the Create a group / Group settings sheet each section now opens 24px below the one above, while its label stays 8px from its field (it was 13 vs 8, so the form read as one run of fields); the About box no longer leaves a stray gap under it (`gfHead` in `ClimbMatch.jsx`).
 - **Saved areas are a list**: Logbook › Saved draws saved areas and peaks as rows (name, type and parent area, › to open, ✕ to unsave) like the Saved routes rows, not wrapping pills. See `docs/features/logbook-crews-home.md`.
