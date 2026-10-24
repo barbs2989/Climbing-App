@@ -39,6 +39,7 @@ import { readCoreSource } from "./guard-sources.mjs";
 export const NEEDS_EXTRA_STATE = {
   areaTreeOpen: "rendered as `areaTreeOpen && selArea` — needs an area selected first",
   crewListOpen: "a disclosure inside the crew finder's result list — needs crews to list",
+  compareOpen: "rendered as `wide&&compareOpen` — a desktop-only view (#2621) that needs a viewport of WIDE_MIN (1024px) or wider; the walks run at phone width",
   // `sessionRestoring` deliberately gets NO entry — it is a derived const
   // (`realAuthGate && session===undefined`), not state, so discovery cannot return it and an
   // exemption naming it would be the stale bookkeeping this registry fails on. `editDraft` is
@@ -87,6 +88,8 @@ export const OVERLAY_PAYLOADS = {
   // so no fixture could seed them, and this is the only way to reach these two in any walk.
   postMenuFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
   reactPickerFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
+  // 4b's Share sheet: the same group view, the same post.
+  sharePostFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
 
   // 0258's two group sheets. `joinAsk` resolves its group out of createdGroups.concat(GROUPS) and
   // renders one field per entry of `joinQuestions`, so the probe group carries one question of each
@@ -164,6 +167,8 @@ export const OVERLAY_PAYLOADS = {
 
   // Composites, copied from the setter call sites verbatim.
   invitePrompt: { expr: "{climber:CLIMBERS[0],route:ROUTES[0]}" },
+  // Share a list: ListsManager's onShareList passes the list, its [{id,r}] items and whether it is public.
+  listShareFor: { expr: '{ul:{id:"l1",name:"Sample list",routeIds:[ROUTES[0].id]},items:[{id:ROUTES[0].id,r:ROUTES[0]}],pub:false}' },
   // Start a crew at an AREA (0302): the sheet renders for any payload; the lifted shape is what the area
   // page's "Start a crew here" builds, on a seed area so it resolves without the database.
   startCrew: { expr: '{mode:"area",area:{id:"lcc_hellgate",name:"Hellgate",areaType:"crag",disciplines:["sport"]},partners:[]}' },
@@ -351,8 +356,14 @@ export function screenOverlays(appCode) {
     if (!declared.has(m[1])) declared.set(m[1], m.index);
   const found = [];
   const seen = new Set();
-  for (const m of appCode.matchAll(/if\(([a-zA-Z][\w$]*)\)return\s*</g)) {
-    const name = m[1];
+  // Two spellings of one screen. `if(x)return <…>` is the phone-only form. Since the desktop
+  // shell draws these screens INSIDE the page column (lib/wideLayout.js, desktop phase 2a), App
+  // builds each as `const _vX=x?<>…</>:null` and returns it alone only on a phone — the same
+  // screen, behind the same state. Reading only the first spelling dropped `legal` and
+  // `editDraft` out of every overlay guard at once (check:zero reported them as rendering no
+  // dialog), which is the silent-shrink this list exists to prevent.
+  for (const m of appCode.matchAll(/if\(([a-zA-Z][\w$]*)\)return\s*<|const _v[A-Z][\w$]*=([a-zA-Z][\w$]*)\?</g)) {
+    const name = m[1] || m[2];
     if (!declared.has(name) || seen.has(name)) continue;
     seen.add(name);
     found.push({ name, setter: "set" + name[0].toUpperCase() + name.slice(1), at: declared.get(name), kind: "screen", evidence: "App early-return screen" });

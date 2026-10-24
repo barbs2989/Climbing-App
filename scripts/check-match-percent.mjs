@@ -52,15 +52,21 @@ const DERIVED = /COMPAT_MAX\s*=\s*COMPAT_BASE\s*\+\s*CMAX_DISC\s*\+\s*CMAX_GRADE
 if (DERIVED.test(stripped)) ok("COMPAT_MAX is derived by summing the term maxima, not written down");
 else fail("COMPAT_MAX is not derived from the CMAX_* constants — a new term can drift from the ceiling silently");
 
-const compatStart = stripped.indexOf("function compat(a,b){");
-if (compatStart < 0) dead("ANCHOR LOST: `function compat(a,b){` — nothing below is meaningful");
-let depth = 0, compatEnd = -1;
-for (let i = stripped.indexOf("{", compatStart); i < stripped.length; i++) {
-  if (stripped[i] === "{") depth++;
-  else if (stripped[i] === "}") { depth--; if (depth === 0) { compatEnd = i + 1; break; } }
-}
-if (compatEnd < 0) dead("could not balance compat()");
-const body = stripped.slice(compatStart, compatEnd);
+// compat() is the rescaled sum of compatParts()'s rows (the profile's "How you match" checklist reads the same rows), so
+// the formula is the two bodies together.
+const lift = (anchor) => {
+  const start = stripped.indexOf(anchor);
+  if (start < 0) dead("ANCHOR LOST: `" + anchor + "` — nothing below is meaningful");
+  let depth = 0;
+  for (let i = stripped.indexOf("{", start); i < stripped.length; i++) {
+    if (stripped[i] === "{") depth++;
+    else if (stripped[i] === "}") { depth--; if (depth === 0) return stripped.slice(start, i + 1); }
+  }
+  dead("could not balance " + anchor);
+};
+const compatBody = lift("function compat(a,b){");
+if (!/compatParts\(a,b\)/.test(compatBody)) dead("compat() no longer sums compatParts() — section 7 and the lift below assume it does");
+const body = lift("function compatParts(a,b){") + compatBody;
 if (body.length < 1000) dead(`compat() lifted short (${body.length} chars) — refusing to judge it`);
 
 if (!/Math\.min\(\s*99\s*,/.test(body)) ok("compat() no longer clamps at a literal 99");
@@ -74,7 +80,7 @@ const out = path.join(outdir, "b.cjs");
 const CORE = JSON.stringify(corePath);
 await build({
   stdin: {
-    contents: `export { compat, compatUnknown, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_OBJ, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_AREA, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
+    contents: `export { compat, compatParts, compatWhy, compatUnknown, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_OBJ, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_AREA, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
     resolveDir: ROOT, loader: "js",
   },
   bundle: true, format: "cjs", platform: "node", jsx: "automatic",
@@ -82,7 +88,7 @@ await build({
   outfile: out, logLevel: "error",
 });
 const M = require_(out);
-for (const k of ["compat", "compatUnknown", "CMAX_DISC", "CMAX_GRADE", "CMAX_OBJ", "CMAX_VERIF", "CMAX_PACE", "CMAX_AVAIL", "CMAX_AREA", "COMPAT_BASE", "COMPAT_TOP", "COMPAT_MAX"]) {
+for (const k of ["compat", "compatParts", "compatWhy", "compatUnknown", "CMAX_DISC", "CMAX_GRADE", "CMAX_OBJ", "CMAX_VERIF", "CMAX_PACE", "CMAX_AVAIL", "CMAX_AREA", "COMPAT_BASE", "COMPAT_TOP", "COMPAT_MAX"]) {
   if (M[k] === undefined) dead(`core does not export ${k} — this guard cannot judge the formula`);
 }
 const { compat, CLIMBERS, ME, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } = M;
@@ -137,7 +143,7 @@ const withoutSignal = {
   // Listed at a DIFFERENT state: no path is the other or inside it. (Listed at the canyon ABOVE the
   // crag would still overlap — that is the two-way reach partners_in_area promises.)
   "listed areas": { ...base, partnerAreaPaths: ["usa.washington.wa_north_cascades"] },
-  "verified trust": { ...base, verified: false },
+  "verified": { ...base, verified: false },
   "availability overlap": { ...base, availability: ["wed"] },
   pace: { ...base, hikingSpeedFtHr: 300 },
 };
@@ -204,7 +210,9 @@ if (row.length < 400) dead(`RealClimberRow lifted only ${row.length} chars — e
 
 // 6a. THE STRUCTURAL FACT, executed rather than read. A hand-typed copy of `_cand` would agree
 // with itself whatever the row does, which is the whole question.
-const candSrc = (row.match(/var _cand=\{([\s\S]*?)\};/) || [])[1];
+// The row lives in src/components/RealClimberRow.tsx (reached through readCoreSource's MOVED stitch) and declares
+// the projection with const; the literal itself is unchanged and still executed below.
+const candSrc = (row.match(/(?:var|const) _cand=\{([\s\S]*?)\};/) || [])[1];
 if (!candSrc) dead("ANCHOR LOST: _cand's object literal could not be lifted from RealClimberRow");
 // eslint-disable-next-line no-new-func
 // `listing` is the row's listed areas (0300); undefined here means "not read", exactly as the row sees it.
@@ -253,6 +261,44 @@ else fail(`the refusal says the score is unavailable "yet" — three of the four
 // Length, not wording, for the same reason as above.
 if (refusal.trim().length >= 15) ok(`...and still explains why there is no percentage (${refusal.trim().length} chars)`);
 else fail(`the browse row no longer explains the missing match % (${JSON.stringify(refusal)}) — the seed card beside it renders one, so the absence needs a sentence`);
+
+// ---- 7. "HOW YOU MATCH" EXPLAINS THE NUMBER IT SITS UNDER.
+// The profile's checklist is built from compatParts(), the rows compat() sums, so an explanation cannot argue with
+// the score. Asserted: the rows ARE the score, there is one sentence per scored term, a signal that moves the number
+// changes its sentence, and nobody's missing field is described as a mismatch.
+{
+  const parts = M.compatParts(base, base);
+  const sum = COMPAT_BASE + parts.reduce((t, x) => t + x.max, 0);
+  if (sum === COMPAT_MAX && parts.length === 7) ok(`compatParts() has ${parts.length} rows whose maxima sum to COMPAT_MAX (${COMPAT_MAX})`);
+  else fail(`compatParts() has ${parts.length} rows summing to ${sum}, not COMPAT_MAX ${COMPAT_MAX} — the checklist and the score disagree about the terms`);
+  const why = (a, b) => Object.fromEntries(M.compatWhy(a, b).map((r) => [r.k, r]));
+  const w0 = why(base, base);
+  if (Object.keys(w0).length === parts.length && Object.values(w0).every((r) => r.text && r.text.length >= 6)) ok("compatWhy() writes a sentence for every scored term");
+  else fail("compatWhy() leaves a scored term without a sentence");
+  const KEY = { disciplines: "disc", "grade range": "grade", "shared objectives": "obj", "listed areas": "area", verified: "verif", "availability overlap": "avail", pace: "pace" };
+  for (const [signal, variant] of Object.entries(withoutSignal)) {
+    const k = KEY[signal], before = w0[k], after = why(base, variant)[k];
+    if (before && after && before.text !== after.text && before.tone !== after.tone) ok(`losing ${signal} changes its "How you match" line ("${before.text}" -> "${after.text}")`);
+    else fail(`losing ${signal} moves the score but not its "How you match" line — the checklist would explain a number it does not describe`);
+  }
+  // A side that never said is "unk", never "bad": the score is neutral there (#612), and so must the sentence be.
+  const blank = { name: "blank" };
+  const wb = M.compatWhy(base, blank).filter((r) => r.k !== "verif");
+  const bad_ = wb.filter((r) => r.tone !== "unk");
+  if (!bad_.length) ok("an unfilled profile reads as NOT SAID on every line, never as a mismatch");
+  else fail(`an unfilled profile reads as ${bad_.map((r) => r.k + "=" + r.tone).join(", ")} — absence is being described as a mismatch`);
+  // The panel renders compatWhy() with the SAME viewer object it scores with: the partner row scores ME's MOUNTAIN
+  // objectives (matchObjectiveIds), and the profile once scored ME.objectiveIds, so one climber read two numbers.
+  const fpStart = stripped.indexOf("function FullProfile(");
+  const fp = fpStart < 0 ? "" : stripped.slice(fpStart, stripped.indexOf("\nfunction ", fpStart + 10));
+  if (fp.length < 2000) dead("ANCHOR LOST: FullProfile could not be lifted");
+  const meVar = (fp.match(/score=climber\._real\?\(\(realObjQ\.data&&_unkN<3\)\?compat\((\w+),climber\)/) || [])[1];
+  if (!meVar) dead("ANCHOR LOST: FullProfile's score expression");
+  if (meVar !== "ME" && new RegExp(meVar + "=Object\\.assign\\(\\{\\},ME,\\{objectiveIds:Array\\.isArray\\(ME\\.matchObjectiveIds\\)").test(fp)) ok("the profile scores with ME's mountain objectives, as the partner row does");
+  else fail("the profile scores with ME.objectiveIds while the partner row scores ME.matchObjectiveIds — the same climber reads two different match %s");
+  if (fp.includes("compatWhy(" + meVar + ",climber)")) ok("the profile's \"How you match\" checklist explains that same score");
+  else fail("the profile does not render compatWhy() for the viewer it scores — the match % has no explanation, or explains a different pair");
+}
 
 // ---- Fail closed on a run that quietly stopped asking.
 const FLOOR = 20;

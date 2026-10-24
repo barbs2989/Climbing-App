@@ -83,7 +83,7 @@ const dead = (what) => {
 
 try {
   // USE_DB must be TRUE or `toposUnavailable` is dead by construction and every assertion about it
-  // is vacuous — `useAreaTopos` is `enabled: !!supabase && !!areaId`. A .invalid host is safe:
+  // is vacuous — `useRouteTopos` is `enabled: !!supabase && !!routeId`. A .invalid host is safe:
   // createClient issues no request, and SSR never fetches.
   const env = JSON.stringify({
     VITE_USE_DB: "true",
@@ -163,7 +163,7 @@ const route = { id: "probe_route", mountainId: AREA, name: "Probe Route" };
 let markup;
 try {
   const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
-  qc.setQueryData(["area-topos", AREA], []);
+  qc.setQueryData(["route-topos", route.id], []);
   markup = renderToStaticMarkup(
     React.createElement(QueryClientProvider, { client: qc },
       React.createElement(TopoSection, { route })));

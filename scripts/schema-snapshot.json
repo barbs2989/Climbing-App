@@ -1,7 +1,17 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-10-16",
+  "generatedAt": "2026-10-24",
   "tables": {
+    "accessibility_reports": [
+      "assistive",
+      "contact_email",
+      "created_at",
+      "id",
+      "problem",
+      "screen",
+      "status",
+      "user_id"
+    ],
     "account_standing": [
       "reason",
       "set_at",
@@ -111,6 +121,7 @@
       "belayed_by",
       "beta",
       "bug_pressure",
+      "camp_names",
       "car_to_car_minutes",
       "caught_fall",
       "climb_minutes",
@@ -130,6 +141,7 @@
       "itinerary",
       "moderation",
       "mud",
+      "nights_out",
       "notes",
       "outcome_note",
       "outcome_reasons",
@@ -158,6 +170,13 @@
       "updated_at",
       "user_id",
       "water_level"
+    ],
+    "climber_resumes": [
+      "climbs",
+      "courses",
+      "headline",
+      "updated_at",
+      "user_id"
     ],
     "comment_reactions": [
       "comment_id",
@@ -231,6 +250,7 @@
       "field",
       "id",
       "kind",
+      "reason",
       "review_note",
       "reviewed_at",
       "reviewed_by",
@@ -268,7 +288,9 @@
     "crew_members": [
       "crew_id",
       "gear_claims",
+      "gear_counts",
       "gear_extras",
+      "gear_wanted",
       "invited_by",
       "joined_at",
       "note",
@@ -609,6 +631,12 @@
       "target_id",
       "target_kind"
     ],
+    "notification_state": [
+      "dismissed_ids",
+      "seen_ids",
+      "updated_at",
+      "user_id"
+    ],
     "objectives": [
       "created_at",
       "route_id",
@@ -636,6 +664,11 @@
       "updated_at",
       "user_id"
     ],
+    "profile_tracked_lists": [
+      "keys",
+      "updated_at",
+      "user_id"
+    ],
     "profile_zips": [
       "updated_at",
       "user_id",
@@ -657,6 +690,7 @@
       "disciplines",
       "discoverable",
       "free_until",
+      "gender",
       "hiking_speed_ft_hr",
       "id",
       "is_admin",
@@ -752,6 +786,11 @@
       "stars",
       "updated_at",
       "user_id"
+    ],
+    "route_views": [
+      "day",
+      "route_id",
+      "visitor"
     ],
     "routes": [
       "access",
@@ -892,11 +931,14 @@
       "pins",
       "points",
       "route_id",
-      "topo_id"
+      "topo_id",
+      "variant_labels",
+      "variants"
     ],
     "topos": [
       "alt",
       "area_id",
+      "caption",
       "created_at",
       "created_by",
       "id",
@@ -904,11 +946,6 @@
       "moderation",
       "photographer",
       "storage_path"
-    ],
-    "trust_scores_view": [
-      "id",
-      "name",
-      "trust_score"
     ],
     "user_itineraries": [
       "itinerary",

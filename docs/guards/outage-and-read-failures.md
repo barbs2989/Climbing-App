@@ -157,7 +157,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         Overview is already `says-broken=YES` from `reportsUnavailable`, so rule 1 passes whether
         or not the topos copy flips, and `check:topo-outage-copy` proves the copy statically.
         Isolating it here needs a run failing only that read — **`ONLY=topos`**, not
-        `topo_photos`: `useAreaTopos` selects `from("topos")`, and ONLY is matched on the path
+        `topo_photos`: `useRouteTopos` selects `from("topos")`, and ONLY is matched on the path
         segment after `/rest/v1/`, so a wrong table name intercepts nothing and now says so.
         - **Measured over three runs, 2026-09-02**: it intercepts (4 blocked, 80 through) and
           reports `RouteDetail` **5,018 → 5,031 says-broken=YES** identically every time, with
@@ -171,7 +171,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
           reproduced its exact counts (1,170 → 1,148) **twice** before coming back IDENTICAL on the
           third. *Two agreeing runs are not determinism*, and a **catch** on a loaded box is no
           more evidence than the miss this file already records. Nothing on those screens can read
-          topos: `useAreaTopos` has one call site, in `RouteDetail`, and Ranks is captured before
+          topos: `useRouteTopos` has one call site, in `RouteDetail`, and Ranks is captured before
           the route page is opened. The mechanism is `waitOutFetch`, which in the failing run
           re-settles only while a **spinner** is on screen — enough under a blanket outage where
           every read fails fast, not enough under `ONLY=` where the other 80 reads are still in
@@ -1447,9 +1447,9 @@ that they had none — on the one screen whose whole subject is who you climb wi
     Injection suite `scripts/oneoff/inject-write-readers-cases.mjs`: 6 cases (a writer drops its
     refresh, a list forgets a reader, a NEW writer with none, a DECLARED name nobody declares; and two
     that must stay silent — an extra name, and a refresh through a callee).
-  - **It counts writers no screen calls.** `addVerification` is imported by three files and called
-    by none, so the production bundle drops it and its `verificationRecordsReaders` with it (43 of
-    the 44 lists survive minification). The guard reads source, not the bundle, and that is right —
+  - **It counts writers no screen calls.** `addVerification` was imported by three files and called
+    by none, so the production bundle dropped it (43 of the 44 lists survived minification). It was
+    deleted in 0339 (no ID verification); a writer like it may come back. The guard reads source, not the bundle, and that is right —
     a dead writer wired up tomorrow must already refresh its readers — but a bundle marker for this
     change must not expect every list.
 

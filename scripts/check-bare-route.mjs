@@ -285,6 +285,11 @@ for (const d of [...CRAG, "alpine"]) {
     else if (!/No rack listed yet|No quickdraw count yet|No pad count yet/.test(none))
       fail(`rack: a ${d} route with no rack of its own shows no placeholder to add one`);
     else ok(`rack: a ${d} route with no rack of its own shows an add-the-rack placeholder and no stock kit`);
+    /* Owner note 2026-10-21, "add back the beta section": an empty crag BETA returned null and
+       left no place for beta at all. It is an EmptySection now; a route WITH beta prints it. */
+    if (!/BETA/.test(none) || !none.includes("No beta yet")) fail(`beta: a ${d} route with no beta shows no BETA section to add it`);
+    else if (!text(render({ ...base, beta: ["Stem the corner to the rest."] }, "overview")).includes("Stem the corner to the rest.")) fail(`beta: a ${d} route's own beta no longer reaches the BETA section`);
+    else ok(`beta: a ${d} route shows its BETA section, empty or not`);
   }
 }
 
@@ -320,10 +325,10 @@ for (const d of [...CRAG, "alpine"]) {
 //    as "Not on file yet" with an "Add what you know" link — a placeholder for climbers to fill, never
 //    an "unknown" that reads as a fact, and never a value the route does not have. Facts the
 //    discipline does not have (bolts on a boulder, landing on a sport line) and facts that are not
-//    a discipline question (Quality, Also called, Variations, FFA/FWA, Sun, Descent) stay absent.
+//    a discipline question (Star rating, Also called, Variations, FFA/FWA, Sun, Descent) stay absent.
 //    Still: no "Season TBD", and a crag route's breakdown/climate render on Overview.
 {
-  const FACT_LABELS = ["Quality", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent", "Sun", "Wet", "Rock quality", "Fixed gear"];
+  const FACT_LABELS = ["Star rating", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent", "Sun", "Wet", "Rock quality", "Fixed gear"];
   const segs = (h) => h.replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, "\n").split("\n").map((x) => x.trim()).filter(Boolean);
   for (const d of CRAG) {
     const html = cache.get(d + "/overview") || render(bare(d, "5.9"), "overview");
@@ -340,7 +345,13 @@ for (const d of [...CRAG, "alpine"]) {
     const stray = FACT_LABELS.filter((l) => !(WANT || []).includes(l) && sg.includes(l));
     if (missing.length) fail(`bare ${d} route: these discipline facts are not shown as "Not on file yet" placeholders: ${missing.join(", ")}`);
     else if (stray.length) fail(`bare ${d} route: ROUTE FACTS prints rows that are not this discipline's facts and have no value (${stray.join(", ")})`);
-    else if (!t.includes("Add what you know")) fail(`bare ${d} route: placeholders render with no link to fill them`);
+    // Since 2026-10-15 each placeholder sits in its own section (WHERE IT STARTS — renamed from LOCATION 2026-10-21 and moved above BASE OF THE CLIMB —, GEAR & SAFETY, CONDITIONS) and
+    // carries its OWN "+ Add" — the page-wide "Add what you know" text also belongs to other cards, so
+    // finding it proved nothing. The control must be the segment right after the placeholder.
+    else if ((WANT || []).some((l) => sg[sg.indexOf(l) + 2] !== "+ Add")) fail(`bare ${d} route: a "Not on file yet" placeholder has no + Add beside it`);
+    else if (!["WHERE IT STARTS", "GEAR &amp; SAFETY", "CONDITIONS"].every((h) => sg.includes(h))) fail(`ANCHOR LOST: ${d} overview lacks a WHERE IT STARTS / GEAR & SAFETY / CONDITIONS section heading`);
+    else if ([["Location", "WHERE IT STARTS"], [d === "bouldering" ? "Landing" : "Anchor", "GEAR &amp; SAFETY"], ["Rock quality", "CONDITIONS"]].some(([l, h]) => sg.indexOf(l) < sg.indexOf(h)))
+      fail(`bare ${d} route: a fact renders outside its section (Location under WHERE IT STARTS, Anchor under GEAR & SAFETY, Rock quality under CONDITIONS)`);
     else ok(`bare ${d} route: every ${d} fact shows as a fillable "Not on file yet" placeholder, and nothing else`);
     if (t.includes("Season TBD")) fail(`bare ${d} route: header strap says "Season TBD" — a crag route states a season only when it has one`);
   }
@@ -349,7 +360,7 @@ for (const d of [...CRAG, "alpine"]) {
       altNames: ["ZZALTNAMEZZ"], variations: ["ZZVARIATIONZZ 5.11a"], fa: "A. Climber 1970", ffa: "B. Free 1980", fwa: "C. Winter 1990" };
     const html = render(r, "overview");
     const t = text(html), sg = segs(html);
-    const want = ["Quality", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"].filter((l) => !sg.includes(l));
+    const want = ["Star rating", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"].filter((l) => !sg.includes(l));
     if (want.length) fail(`enriched ${d} route: ROUTE FACTS is missing ${want.join(", ")}`);
     else if (!t.includes("★★★☆") || !t.includes("ZZALTNAMEZZ") || !t.includes("ZZVARIATIONZZ 5.11a") || !t.includes("SW-facing") || !t.includes("B. Free 1980") || !t.includes("C. Winter 1990"))
       fail(`enriched ${d} route: a ROUTE FACTS label rendered without its value`);

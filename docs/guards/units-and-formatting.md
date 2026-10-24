@@ -128,6 +128,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       NOW) and where it is TYPED (`uElevIn` in the form). The guard asserts all four links and
       FAILS on the old `uElev(row.freezing_level_ft)` shape rather than accepting it. The legacy
       prose `cond.freezing` (seed routes) still renders as written.
+    - **`ReportStats` moved to `src/components/ReportStats.tsx` (PR32 of the component extraction).** The
+      `["Freezing lvl",uElev(cond.freezingFt)]` anchor is kept verbatim there and reaches this guard through
+      `readCoreSource()`'s `MOVED` stitch (the apply script asserts the fragment); the browser half that reads
+      two ReportStats temperatures per run is unaffected by where the component is defined. Measured by
+      `measure:guard-reach` around the move (no count decremented).
     - **The imperial output is NOT byte-identical here and that is stated rather than glossed**:
       `11000+" ft"` becomes `uElev(11000)` = `"11,000 ft"`. A thousands separator, matching the 35
       other `uElev` call sites in that file. The forecast tile IS byte-identical, since `freezeMax`
@@ -176,6 +181,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     probes it started from cost **~3x `check:policy-claims`**, the merged guard **~1.5x** — a little
     over half, for more assertions. **Quote the ratio, never the clock**: those readings were taken
     at load average 488, where this file already records a profile being off by 4x.
+  - **`ItineraryEditor` moved to `src/components/ItineraryEditor.tsx` (PR33 of the component extraction).** The
+    render probe's entry imported it from core BY PATH — the one shape the `MOVED` stitch cannot help, because
+    esbuild resolves the real file, not the stitched text — so the entry now imports the component file
+    (`IE_PATH`) and `FullProfile` from core as before; `TIME_PRESETS` moved with it. The guard's unit
+    assertions on the editor's labels are unchanged. Measured by `measure:guard-reach` around the move.
   - **THE CLASS IS ONE CLASS AND THE WRITE HALF IS THE SERIOUS END.** A display defect misinforms
     one reader; a form that stores what was typed corrupts the record for **every** reader — a
     metric climber typing 10 meaning 10°C had **10 written into `climb_logs.temp_f`**, so their own
@@ -533,3 +543,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     (`FireMap`'s is passed from App — a reading, not a guarantee) passes. And `toLocaleString()` is
     deliberately excluded: in this app it formats NUMBERS, and a thousands separator is not the date
     preference. Injection suite: `scripts/oneoff/inject-date-locale-cases.mjs`, 5 cases.
+  - **IT WALKED THE ROOT FILES AND `lib/` ONLY, SO AN EXTRACTED COMPONENT LEFT ITS REACH (fixed in the
+    `MiniCalendar` extraction, PR26).** It reads files itself rather than through `readCoreSource()`, so
+    `MOVED` did not stitch `src/components/*.tsx` back for it: moving `MiniCalendar` (one
+    `toLocaleDateString(DLOCALE, …)`) took its count from 51 to 50. `measure:guard-reach` printed the
+    decrement but did not call it blinded — it flags a count that goes to zero, not one that shrinks —
+    so a reader who takes its summary line ("no guard lost a count") at face value misses this. Now it
+    walks `src/` too and accepts `.ts`/`.tsx` (the parser already had the `typescript` plugin). **Rule for
+    every guard that enumerates files itself:** walk `src/` as well as the root files and `lib/`, and after
+    an extraction read the per-guard `diff` lines of the measurement, not only its summary.

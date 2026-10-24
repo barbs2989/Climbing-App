@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { parseGpxXml, parseCoordinateList, validateGpxQuality, calculateQualityScore, detectGpxFormat, formatCoordinatesForDisplay } from './gpxParser'
 import { POP_CLOSE } from "./popupChrome.js";
+import TrailDrawMap from './TrailDrawMap'
 
 const C = {
   bg: '#1a1a1a',
@@ -14,8 +15,14 @@ const C = {
   border: '#333'
 }
 
-export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, onSuccess }) {
-  const [tab, setTab] = useState('paste') // 'paste', 'upload', 'devices'
+export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, cragAt, onClose, onSuccess, initialPts }) {
+  // A crag's trail can be TRACED on the map ('draw') as well as recorded. It opens first on a crag
+  // whenever the map has somewhere to open: the parking pin or the crag's own coordinate.
+  const canDraw = !!(crag && (parkAt || cragAt))
+  const [tab, setTab] = useState(canDraw ? 'draw' : 'paste') // 'draw', 'paste', 'upload', 'devices'
+  // A line already drawn in the desktop drawing tool (lib/DrawRoute.jsx) arrives here to be submitted.
+  const [drawPts, setDrawPts] = useState(() => (canDraw && initialPts && initialPts.length ? initialPts : []))
+  const drawing = tab === 'draw'
   const [coordinates, setCoordinates] = useState('')
   const [deviceType, setDeviceType] = useState('Garmin')
   const [climbDate, setClimbDate] = useState('')
@@ -126,29 +133,29 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, 
     setError('')
 
     // Client-side validation
-    if (coordinates.trim().length === 0) {
-      setError('Please paste or upload GPS coordinates')
+    if (drawing ? drawPts.length < 3 : coordinates.trim().length === 0) {
+      setError(drawing ? 'Tap at least 3 points along the trail' : 'Please paste or upload GPS coordinates')
       return
     }
 
     if (!climbDate) {
-      setError('Please select the climb date')
+      setError(crag ? 'Please select when you last walked it' : 'Please select the climb date')
       return
     }
 
     if (!confirmations.climbed) {
-      setError('Please confirm you personally climbed this route')
+      setError(crag ? 'Please confirm you have walked this trail yourself' : 'Please confirm you personally climbed this route')
       return
     }
 
     if (!confirmations.isRoute) {
-      setError('Please confirm this is the climbing route, not the approach')
+      setError(crag ? 'Please confirm this is the walk in, not the climb' : 'Please confirm this is the climbing route, not the approach')
       return
     }
 
     // Parse coordinates
-    const format = detectGpxFormat(coordinates)
-    let parsed = []
+    const format = drawing ? null : detectGpxFormat(coordinates)
+    let parsed = drawing ? drawPts : []
 
     if (format === 'gpx') {
       parsed = parseGpxXml(coordinates)
@@ -156,7 +163,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, 
       parsed = parseCoordinateList(coordinates)
     }
 
-    if (parsed.length < 5) {
+    if (!drawing && parsed.length < 5) {
       setError('Track needs at least 5 waypoints')
       return
     }
@@ -187,7 +194,8 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, 
           gpxData: parsed,
           climberEmail: climbEmail || undefined,
           climberName: climbName || undefined,
-          deviceType,
+          // A traced line is said to be one, so a reviewer never reads it as a recording.
+          deviceType: drawing ? 'Traced on the map' : deviceType,
           climbDate,
           notes: notes || undefined
         })
@@ -253,14 +261,14 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, 
           <div style={{...styles.successContent}}>
             <div style={{fontSize: '32px', marginBottom: '12px'}}>✓</div>
             <h2 style={{...styles.heading, color: C.success}}>Thanks for contributing!</h2>
-            {/* No turnaround is promised: a person reviews tracks when they can, and nothing measures or enforces 24-48 hours. */}<p style={{...styles.text}}>Your GPS track is waiting for a person to review it.</p>
-            <div style={{...styles.scoreBox}}>
+            {/* No turnaround is promised: a person reviews tracks when they can, and nothing measures or enforces 24-48 hours. */}<p style={{...styles.text}}>{crag ? 'Your trail to the crag is waiting for a person to review it.' : 'Your GPS track is waiting for a person to review it.'}</p>
+            {/* The score rates a RECORDING (point density, spread); a traced line has neither, so it shows none. */}{drawing ? null : <div style={{...styles.scoreBox}}>
               <div style={{fontSize: '18px', fontWeight: 'bold', color: C.accent}}>
                 Quality Score: {qualityScore}/100
               </div>
-            </div>
+            </div>}
             <p style={{...styles.textSmall, color: C.text70}}>
-              Once it's approved your track shows up on this route's page. Thank you for helping the climbing community!
+              {crag ? "Once it's approved the trail shows on this climb's crag map." : "Once it's approved your track shows up on this route's page."} Thank you for helping the climbing community!
               {emailed ? " We've emailed you a receipt." : ""}
             </p>
             <button style={{...styles.button, ...styles.buttonPrimary}} onClick={onClose}>
@@ -279,7 +287,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, 
           <h2 style={{...styles.heading}}>{crag ? 'Add the trail to the crag' : 'Submit GPS Track'}</h2>
           <p style={{...styles.subheading}}>{routeName}</p>
           {/* A crag climb summits nothing, so its track is the walk in: say where to start and stop the recording. */}
-          {crag && <p style={{...styles.textSmall, color: C.text70, margin: '6px 0 0'}}>Record from where you park to the base of the crag, or on to this climb if it sits away from the main wall. Stop at the base: the climb itself is not part of it.</p>}
+          {crag && <p style={{...styles.textSmall, color: C.text70, margin: '6px 0 0'}}>From where you park to the base of the crag, or on to this climb if it sits away from the main wall. Stop at the base: the climb itself is not part of it. Trace it on the map, or add a recording from your phone or watch.</p>}
           <button aria-label="Close" style={POP_CLOSE} onClick={onClose}>✕</button>
         </div>
 
@@ -291,7 +299,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, 
 
         {/* Tabs */}
         <div style={{...styles.tabs}}>
-          {['paste', 'upload', 'devices'].map((t) => (
+          {(canDraw ? ['draw', 'paste', 'upload', 'devices'] : ['paste', 'upload', 'devices']).map((t) => (
             <button
               key={t}
               onClick={() => setTab(t)} aria-current={tab === t ? "true" : undefined}
@@ -301,6 +309,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, 
                 color: tab === t ? C.accent : C.text70
               }}
             >
+              {t === 'draw' && 'Draw on map'}
               {t === 'paste' && 'Paste Coordinates'}
               {t === 'upload' && 'Upload File'}
               {t === 'devices' && 'Device Instructions'}
@@ -310,6 +319,8 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, 
 
         {/* Tab Content */}
         <div style={{...styles.tabContent}}>
+          {tab === 'draw' && <TrailDrawMap start={parkAt} end={cragAt} pts={drawPts} setPts={setDrawPts} C={C} />}
+
           {tab === 'paste' && (
             <div>
               <label style={{...styles.label}}>Paste GPX XML or Coordinates</label>
@@ -397,7 +408,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, 
         </div>
 
         {/* Quality Indicator */}
-        {qualityScore !== null && coordinates.trim().length > 0 && (
+        {!drawing && qualityScore !== null && coordinates.trim().length > 0 && (
           <div style={{...styles.qualityBox, borderColor: qualityScore >= 70 ? C.success : C.warning}}>
             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px'}}>
               <span>Quality Score</span>
@@ -433,7 +444,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, 
               onChange={(e) => setConfirmations({...confirmations, climbed: e.target.checked})}
               style={{marginRight: '8px'}}
             />
-            I personally climbed this exact route on:
+            {crag ? "I've walked this trail myself. Last time:" : 'I personally climbed this exact route on:'}
           </label>
           <input aria-label="Climb date"
             type="date"
@@ -449,11 +460,11 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, 
               onChange={(e) => setConfirmations({...confirmations, isRoute: e.target.checked})}
               style={{marginRight: '8px'}}
             />
-            This is the climbing route, not the approach
+            {crag ? 'This is the walk in from parking, not the climb' : 'This is the climbing route, not the approach'}
           </label>
 
-          <label style={{...styles.label, marginTop: '16px'}}>GPS Device Type</label>
-          <select aria-label="GPS device type"
+          {!drawing && <label style={{...styles.label, marginTop: '16px'}}>GPS Device Type</label>}
+          {!drawing && <select aria-label="GPS device type"
             value={deviceType}
             onChange={(e) => setDeviceType(e.target.value)}
             style={{...styles.input}}
@@ -466,7 +477,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, 
             <option>Caltopo</option>
             <option>Manual GPS Logger</option>
             <option>Other</option>
-          </select>
+          </select>}
 
           <label htmlFor="gps-email" style={{...styles.label}}>Email (optional)</label>
           <input
@@ -493,7 +504,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, 
             id="gps-notes"
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
-            placeholder="e.g., Early season snow / Late season dry / Took West Ridge variant"
+            placeholder={crag ? 'e.g., Keep right at the fork by the big boulder / Muddy in spring' : 'e.g., Early season snow / Late season dry / Took West Ridge variant'}
             style={{...styles.textarea, height: '80px'}}
           />
         </div>
@@ -510,9 +521,9 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, onClose, 
           <button
             onClick={handleSubmit}
             style={{...styles.button, ...styles.buttonPrimary}}
-            disabled={submitting || !coordinates.trim() || !climbDate}
+            disabled={submitting || (drawing ? drawPts.length < 3 : !coordinates.trim()) || !climbDate}
           >
-            {submitting ? 'Submitting...' : 'Submit Track'}
+            {submitting ? 'Submitting...' : crag ? 'Submit Trail' : 'Submit Track'}
           </button>
         </div>
       </div>

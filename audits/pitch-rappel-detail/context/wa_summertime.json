@@ -1,0 +1,47 @@
+{
+ "id": "wa_summertime",
+ "name": "Summertime",
+ "area_id": "wa_summertime_crag",
+ "discipline": "alpine",
+ "grade": "5.11c",
+ "pitches": 5,
+ "length_m": 122,
+ "overview": "The crag's namesake and longest route: a 5-pitch, Grade II trad/sport line that wanders along the line of least resistance up the tallest formation, with a bolted-plus-small-gear crux roof pitch (5.11c) partway up.",
+ "description": null,
+ "beta": "P1 follows bolts at 5.10 to chains, then trends left past additional anchor sets. The next section is a corner with traditional gear and a slab. The standout crux pitch is bolted with small trad gear, trending up-right through corners and over a roof (5.11c) to an anchor, after which easier 5.10 slabby climbing leads to the top of the cliff.",
+ "descent_text": "Chain anchors at several points along the route let parties lower or rappel pitch by pitch, and the crux pitch ends at an anchor. Above it the easier final pitch runs to the top of the cliff with no fixed descent from there, so plan to come back to the anchors and rappel.",
+ "descent": "Descend via the standard descent route, retracing the ascent when possible. Be aware of loose rock and snow bridge hazards. Maintain group cohesion on exposed sections.",
+ "rappels": "Descend via the route's chain anchors, including intermediate stations atop Caravan and Django",
+ "rappel_count_note": null,
+ "rope_length_m": null,
+ "pitch_detail": [
+  {
+   "grade": "5.10",
+   "notes": "Start just right of Caravan (the routes to its left share their first few bolts). All bolts to chains, then trend left past two more sets of chains — the tops of Caravan and Django — to the anchor atop Django's second pitch.",
+   "pitch": "P1"
+  },
+  {
+   "notes": "From the top of Django, step left and climb a corner on trad gear, then move right across a slab past bolts to a ledge. Walk to the far right side of the ledge to belay below the crux.",
+   "pitch": "P2"
+  },
+  {
+   "crux": true,
+   "grade": "5.11c",
+   "notes": "The standout pitch: bolts supplemented by small trad gear up a series of right-trending corners, then over a roof to an anchor. Pitch numbering varies with how parties link the lower pitches.",
+   "pitch": "P3 (crux)"
+  },
+  {
+   "grade": "5.10",
+   "notes": "An easier, slabby and somewhat scrappy pitch of about 5.10 to the top of the cliff.",
+   "pitch": "P4-P5"
+  }
+ ],
+ "rappel_detail": null,
+ "climbing_route": null,
+ "fa": "Jason Keith (JMK)",
+ "areas": {
+  "name": "Summertime Crag",
+  "parent_id": "wa_sub_wapass"
+ },
+ "parent_area": "Washington Pass"
+}

@@ -58,7 +58,7 @@ const CASES = [
     find: '" gain in "+(uImp()?"feet":"metres")', repl: '" gain in feet"',
     says: /gain box's aria-label is an expression that consults no unit helper/ },
   { name: "placeholder-reverts-to-fixed-text", expect: "fail",
-    find: "placeholder={uDistMiUnit()}", repl: 'placeholder="miles"',
+    find: 'placeholder={"one way "+uDistMiUnit()}', repl: 'placeholder="miles"',
     says: /distance box's placeholder is a fixed string/ },
   // MUST STAY SILENT: a renamed local is not a change to what is stored.
   { name: "local-renamed", expect: "pass",
@@ -68,7 +68,7 @@ const CASES = [
   // MUST STAY SILENT: a better placeholder is ordinary editorial work. It still consults the unit
   // helper, which is the property the probe asserts — pinning the exact string would forbid this.
   { name: "placeholder-reworded", expect: "pass",
-    find: "placeholder={uDistMiUnit()}", repl: 'placeholder={"e.g. 4 "+uDistMiUnit()}',
+    find: 'placeholder={"one way "+uDistMiUnit()}', repl: 'placeholder={"e.g. 4 one way "+uDistMiUnit()}',
     says: null },
 ];
 

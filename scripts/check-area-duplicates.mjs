@@ -25,6 +25,9 @@
 // without a coordinate or climbs — the first pass skipped them, and 209 such groups ("Pawn, The" beside
 // "The Pawn") had collected unseen.
 //
+// A THIRD pass (0340) flags a BUCKET: an area named by a list of places the state already files —
+// "Cascade River Drainage (Eldorado, Forbidden, Johannesburg, …)" beside North Cascades Core.
+//
 // What it cannot see: a copy under ANOTHER parent over 3 km from its twin (coordinate slop larger than
 // that) or with no coordinate or no climbs yet, and a copy spelled differently beyond what the key folds
 // ("Kody Block" vs "The Kody Boulder"). Long Hill's copy of Hidden in Plain Sight Boulders was all three
@@ -55,8 +58,12 @@ const discWord = n => /\bice\b|mixed/i.test(n) ? "ice" : /boulder/i.test(n) ? "b
 const DISC = /bouldering|boulders|\bice\b|mixed/i;
 const km = (a, b) => { const r = x => x * Math.PI / 180, dLat = r(b.lat - a.lat), dLng = r(b.lng - a.lng); const h = Math.sin(dLat / 2) ** 2 + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.sin(dLng / 2) ** 2; return 2 * 6371 * Math.asin(Math.sqrt(h)); };
 
-await selectAll("areas", "id", "id=eq.__warmup_no_such_area__", { pageSize: 1 });   // cold start: see check-area-counts.mjs
-const areas = await selectAll("areas", "id,name,parent_id,path,lat,lng,route_count", "", { pageSize: 1000 });
+// --areas-file <json>: a saved {rows:[…]} dump of areas instead of the live read — how a pass is PROVEN
+// against the catalog as it stood before a fold (0341's proof). Never for the daily run.
+const FILE = process.argv.includes("--areas-file") ? process.argv[process.argv.indexOf("--areas-file") + 1] : null;
+if (!FILE) await selectAll("areas", "id", "id=eq.__warmup_no_such_area__", { pageSize: 1 });   // cold start: see check-area-counts.mjs
+const areas = FILE ? (s => JSON.parse(s.slice(s.indexOf("{"))).rows)(fs.readFileSync(FILE, "utf8"))
+  : await selectAll("areas", "id,name,parent_id,path,lat,lng,route_count", "", { pageSize: 1000 });
 if (areas.length < 40000) { console.error(`check:area-duplicates: read only ${areas.length} areas — an empty read is not a clean catalog`); process.exit(2); }
 
 const live = areas.filter(a => a.route_count > 0 && a.lat != null && a.lng != null && String(a.path).split(".").length >= 3);
@@ -103,6 +110,55 @@ for (const [g, list] of sib) {
     const [a, b] = [x, y].sort((p, q) => p.id < q.id ? -1 : 1);
     pairs.set(a.id + "|" + b.id, `${a.name} / ${b.name} (same parent)`);
   }
+}
+// BUCKET COPIES (0340): an area NAMED by a list of places the state already files — Mountain Project's
+// "Cascade River Drainage (Eldorado, Forbidden, Johannesburg, Sahale, Torment, etc.)" beside our North
+// Cascades Core, which holds every one of those peaks. No coordinate and a name no key folds, so neither
+// pass above nor the 0216 trigger could pair it; the owner (2026-10-21): "this keeps happening … We need
+// to have guards". TWO OR MORE listed names, each filed elsewhere in the state (not inside the bucket),
+// make it a copy. Compass and face words do not count ("Sport Boulder (E and NE Face)", "Sunset Slab
+// (N & S)"). The same rule is refuse_bucket_copy_area() in 0340, which refuses one at insert.
+const FACE = new Set(["n", "s", "e", "w", "ne", "nw", "se", "sw", "north", "south", "east", "west", "northeast", "northwest", "southeast", "southwest", "face", "faces", "side", "sides", "wall", "walls", "end", "upper", "lower"]);
+// Each name is filed under its key AND that key with the spaces taken out, so "El Dorado" finds
+// "Eldorado Peak" (0341) — measured 2026-10-21: no stored bucket depended on it, so it adds no finding.
+const compactKey = n => catalogKey(n).replace(/ /g, "");
+const byKey = new Map();
+for (const a of areas) for (const k of new Set([catalogKey(a.name), compactKey(a.name)])) { const g = String(a.path).split(".").slice(0, 2).join(".") + "|" + k; (byKey.get(g) || byKey.set(g, []).get(g)).push(a); }
+for (const a of areas) {
+  const list = /\(([^)]*)\)/.exec(a.name)?.[1];
+  if (!list || String(a.path).split(".").length < 3) continue;
+  const st = String(a.path).split(".").slice(0, 2).join(".");
+  const hits = [];
+  for (const item of list.split(/\s*(?:,|\/|&|\band\b)\s*/i)) {
+    if (/^etc\.?$/i.test(item) || words(item).every(w => FACE.has(w))) continue;
+    const k = catalogKey(item);
+    if (k.length < 4) continue;
+    const twin = [k, compactKey(item)].flatMap(x => byKey.get(st + "|" + x) || []).find(o => o.id !== a.id && !within(a, o));
+    if (twin) hits.push(`${item.trim()} = ${twin.id}`);
+  }
+  if (hits.length >= 2) pairs.set(a.id + "|(bucket)", `${a.name} — already filed: ${hits.join(", ")}`);
+}
+// ...and a list OUTSIDE parentheses (0341): "Devils Den, Gettysburg" › Plum Run beside Gettysburg › Devils Den,
+// "Courthouse Butte & Bell Rock" beside Bell Rock / Courthouse Butte. Unbracketed names list real places far
+// more often ("Turtle Rock, Big Boulder" is one boulder field), so a hit counts only when it is filed NEAR —
+// under the list area's grandparent, or its parent when the grandparent is the state. 12 hit on 2026-10-21;
+// 3 were copies (folded by 0341) and the rest hold climbs of their own, LISTED as read. Not refused at
+// insert: too many real names match.
+for (const a of areas) {
+  const d = String(a.path).split(".");
+  if (d.length < 4) continue;
+  const items = a.name.replace(/\([^)]*\)/g, "").split(/\s*(?:,|\/|&|\band\b|\+)\s*/i).map(x => x.trim()).filter(Boolean);
+  if (items.length < 2) continue;
+  const st = d.slice(0, 2).join("."), near = d.slice(0, d.length >= 5 ? -2 : -1).join(".") + ".";
+  const hits = [];
+  for (const item of items) {
+    if (/^etc\.?$/i.test(item) || words(item).every(w => FACE.has(w))) continue;
+    const k = catalogKey(item);
+    if (k.length < 4) continue;
+    const twin = [k, compactKey(item)].flatMap(x => byKey.get(st + "|" + x) || []).find(o => o.id !== a.id && !within(a, o) && !within(o, a) && String(o.path).startsWith(near));
+    if (twin) hits.push(`${item} = ${twin.id}`);
+  }
+  if (hits.length >= 2) pairs.set(a.id + "|(list)", `${a.name} — filed beside it: ${hits.join(", ")}`);
 }
 const found = Object.fromEntries([...pairs].sort());
 

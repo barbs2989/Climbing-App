@@ -472,8 +472,10 @@ the correction knows the screen is wrong, and they have no way to report it.
     Ridge) — `lengthM` feeds the planner, so a rewrite drops an unsourced length rather than keep it.
     `verify-route-breakdown-renders.mjs` checks the rows reach the Plan tab; it is spent once the
     rows are edited again.
-  - A populated column is not a rendered one. `CLIMBING ROUTE` and `ROUTE BREAKDOWN` are mutually
-    exclusive through `isPitched()`; both halves have been confirmed on screen, and the bivy
+  - A populated column is not a rendered one. `CLIMBING ROUTE` and `ROUTE BREAKDOWN` used to be
+    mutually exclusive through `isPitched()` — only on pitched routes; 121 unpitched routes drew
+    both, breakdown first. Since 2026-10-22 both render wherever written, CLIMBING ROUTE first;
+    both halves have been confirmed on screen, and the bivy
     section was found **defined and mounted nowhere** after a merge kept main's copy of the
     dense line its mount lived on.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —

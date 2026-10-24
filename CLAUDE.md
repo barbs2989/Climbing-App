@@ -45,6 +45,7 @@ npm run check:jsx-comments # a comment in JSX children position renders to the U
 npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay readable (in build)
 npm run check:script-roots # no script reads the app files of somebody ELSE's worktree (in build)
 npm run check:dup-attrs # a declaration written TWICE: the later wins, the earlier is dead (in build)
+npm run check:no-module-scope-core-reads # a component core imports BACK must not read core at module scope — the bundle throws before React mounts (in build)
 npm run check:bottom-panels # a fixed panel at the bottom must RESERVE the space it covers (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
@@ -78,6 +79,7 @@ npm run check:overlay-scroll # no overlay pane may chain its scroll to the page 
 npm run check:a11y-badges # no control announces two fragments welded into one token
 npm run check:selected-state # a control that LOOKS selected must SAY it is selected
 npm run check:control-names # a control says WHAT IT IS; a switch says what it is SET TO (in build)
+npm run check:axe # every screen, signed in AND signed out, passes axe-core's WCAG 2.2 A/AA rules (render-guards.yml)
 npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
 
@@ -95,16 +97,14 @@ npm run check:outage-flag-reach # no outage flag that is computed and then read 
 npm run check:chunk-reload # a lazy screen whose file a DEPLOY removed reloads once, not "This screen hit a bug" (in build)
 
 # ── Honesty of what the screen claims — notes: docs/guards/honesty-claims.md ──
-npm run check:trust-breakdown # the factors under WHAT FEEDS YOUR SCORE add up to it (in build)
 npm run check:conditions-score # the crag CONDITIONS SCORE adds up, leaves out what it did not measure, and stays off alpine (in build)
 npm run check:alpine-conditions # the ALPINE Conditions tab: each discipline its own flags, a start counted back from the Planner, nothing it did not read (in build)
-npm run check:untracked-factors # a factor nobody has measured must not read as ZERO (in build)
 npm run check:no-sources  # no screen prints a field named source, or any text about sources or "auto-generated" (in build)
 npm run check:preview-claims # no toast tells a climber the app is a PREVIEW, a demo or a simulation (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks (in build)
 npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
 npm run check:match-percent # the match % blends what the screen SAYS it blends; no term may saturate it (in build)
-npm run check:profile-claims # the résumé and the trust card claim only what they can support (in build)
+npm run check:profile-claims # the résumé and the profile claim only what they can support (in build)
 npm run check:claims # no success toast for a write that only runs signed-in (in build)
 npm run check:writes # no success message in front of a write whose failure is unobservable (in build)
 
@@ -228,7 +228,7 @@ npm run check:contrib-summary # ...and its CURRENT-VALUE line never prints [obje
 npm run check:correction-readers # no enrichment column out-votes an agreed correction (in build)
 npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
-npm run check:challenge-rows # tick-list rows say something true, and the tick matches the row
+npm run check:challenge-rows # tick-list rows say something true, the tick matches the row, and no row's text overlaps at 390 or 320px
 npm run check:route-tags # real list prose still reaches a list key, and each key renders (in build)
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
@@ -329,7 +329,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 Read it in three bands:
 
 1. **`ClimbMatchCore.jsx`, top: constants + pure helpers.** The `C` object is the shared dark-theme color palette used everywhere via inline styles (there are no CSS files or Tailwind). Domain helpers live here: `catOf`/`tripOf` (discipline categorization), `compat` (partner compatibility scoring), `scarfHrs`/`techHrs` (time estimates), `sunReadout`/`aspectDirs` (sun/shade by wall aspect and time of day), `buildConsensus` (aggregates trip reports into conditions consensus weighted by `trustScore`), `gpxDownload`, `passesFilters`, `distMiles`, `fuzzyMatch`.
-2. **`ClimbMatchCore.jsx`, bottom: presentational components** — `FullProfile`, `Resume`, `ChatComposer`, `OverviewMap` and the other larger panels. The small ones (`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`, `ActionIcon`, `ElevChart`, `DiscIcon`, `Av`, `SwipeRow`) and the route map (`GPXMap`) have moved to band 4; `VerifyBadge`, `ProvenancePanel` and `RouteGearCheck`, once listed here, no longer live in core (`RouteGearCheck` is in `RouteDetail.jsx`).
+2. **`ClimbMatchCore.jsx`, bottom: presentational components** — `FullProfile`, `Resume`, `OverviewMap` and the other larger panels. The small ones (`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`, `ActionIcon`, `ElevChart`, `DiscIcon`, `Av`, `SwipeRow`, `ChatComposer`, the two loading skeletons, the chat bubble and typing indicator, `Hr`, `Stars`, `Bar`, `CardHead`, the photo alt-text field and describe box, `ShareExportRow`, `ReactionPicker`, `PullToRefresh`, `TopContribBadge`, `RetryReminder`, `PlaceMatches`, `SectionJumps`, `MiniCalendar`, `SunCorrect`, `StartLocationForm`, `AreaRegionSelect`, `TopContributors`, `PhotoStrip`, `ReportStats`, `ItineraryEditor`, `RealClimberRow`, `CommentMenu`, `DbAreaLevel`, `DbCountryAreaHits`, `BadgeGrid`, `VouchCard`, `SpeedCompat`, `TrackedLists`, `SpeedProfile`, `QuickLog`, `TickList`, `CrewInviteModal`, `SearchSplit`, `WaypointMapPicker`, `SharedListView`, `ConnectModal`, `AspectSunPanel`) and the route map (`GPXMap`) have moved to band 4; `VerifyBadge`, `ProvenancePanel` and `RouteGearCheck`, once listed here, no longer live in core (`RouteGearCheck` is in `RouteDetail.jsx`).
 3. **`ClimbMatch.jsx`: `App`** — all stateful screen logic and the big inline-JSX render tree, gated by `tab===...` and `selRoute`.
 4. **`src/components/<Name>.tsx`: single-job components being extracted from the three files above** (since 2026-10; first: `RiskBadge`). Strict TypeScript, one `export default function` each, props declared as an `interface`. The guards still see each one as its parent file's code — every move is registered in `MOVED` in `scripts/lib/guard-sources.mjs`, or the text-reading guards go blind to it. Conventions and the per-PR procedure: [docs/refactor-progress.md](docs/refactor-progress.md). A JS function's destructured params are inferred as REQUIRED props; type the seam with a JSDoc `@param` on the JS side (as `Pill` has), not with casts in the component.
 

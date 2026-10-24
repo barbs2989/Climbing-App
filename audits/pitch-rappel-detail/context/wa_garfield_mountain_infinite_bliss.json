@@ -1,0 +1,87 @@
+{
+ "id": "wa_garfield_mountain_infinite_bliss",
+ "name": "Infinite Bliss",
+ "area_id": "wa_garfield_mountain",
+ "discipline": "alpine",
+ "grade": "5.10c",
+ "pitches": 23,
+ "length_m": 792,
+ "overview": "A long, mostly bolt-protected trad/slab line up 23 pitches on Garfield's West Peaks (Infinite Peak), one of the longest sport-oriented routes in the Cascades foothills.",
+ "description": null,
+ "beta": "Low-angle, runout slab climbing for the first ~12 pitches (soloable for confident 5.8 climbers early on), a very runout, fair-quality middle section (pitches 13-18, with 15-17 hard to protect), and a harder, well-bolted finish (pitches 19-23) with two 5.10 pitches.",
+ "descent_text": "Rappel the line. Two 60 m ropes are required — a single 70 m or 80 m is not long enough for some stations. Reported rappel times run 2.5 to 4 hours. The stations are chained; one station 10 m above the crux anchor lets two 60 m ropes reach the base of the crux pitch in one rappel. Carrying over the top and descending the far side of the mountain has been done but risks an extra night out in brushy, cliffy terrain, and is not recommended. Knot your rope ends: a climber died here on September 7, 2014 after deliberately bypassing a station in fading light, running out of rope, and falling roughly three pitches. Start the rappels with real daylight in hand, and watch for parties still climbing beneath you.",
+ "descent": "Rappel from the summit of Infinite Peak.",
+ "rappels": "Counts for this rappel line differ - about 20 to 25 double-rope rappels off the chained stations, interspersed with downclimbing. They do not correspond one-to-one with the route's 23 pitches. Two 60 m ropes are required; a single 70 m or 80 m is not long enough for some stations. Reported rappel times run 2.5 to 4 hours.",
+ "rappel_count_note": null,
+ "rope_length_m": null,
+ "pitch_detail": [
+  {
+   "grade": "5.8",
+   "notes": "Low-angle, sometimes water-polished slab at 5.4-5.8, with runouts that can be long but on easy ground; P7 climbs a short 5.7 wall before easing back. Competent parties often simul-climb the first six pitches. The whole route follows a gully slab, so anything knocked off above funnels straight down these pitches — the many bent hangers show it; do not linger below other parties.",
+   "pitch": "P1-7"
+  },
+  {
+   "grade": "5.5",
+   "notes": "A fun blocky ramp cutting through the steeper wall above the lower slabs. Protection is sparse — a bolt about halfway and a fixed pin about 15 ft below the belay — but the climbing is easy.",
+   "pitch": "P8"
+  },
+  {
+   "grade": "5.9",
+   "notes": "The first 5.9 pitch, on steeper rock where the bolts are closer together as the moves get harder. It ends on a large ledge.",
+   "pitch": "P9"
+  },
+  {
+   "grade": "5.7",
+   "notes": "Easy climbing above the ledge. Bypass the chain anchors and scramble up to the base of the steep wall on the left, belaying on a flake below the bolt line of the next pitch.",
+   "pitch": "P10",
+   "anchor": "flake, gear"
+  },
+  {
+   "grade": "5.10b",
+   "notes": "The first 5.10 pitch: well-bolted, balancy face climbing that is a fair test for the upper crux. Stay on the bolt line; forcing moves off it makes the pitch harder.",
+   "pitch": "P11"
+  },
+  {
+   "notes": "A more moderate pitch up to chains. The top of this pitch makes a worthwhile objective on its own; above it the rock and climbing are poorer.",
+   "pitch": "P12",
+   "anchor": "chains",
+   "lengthM": 30
+  },
+  {
+   "notes": "Easy (about 5.0-5.8) but the most runout section, on fair, slightly polished rock that sheds stones onto parties below; P15's two bolts are easy to miss and P16-17 have only the stations. Where the wall kicks back, go left to a bolt, up and right to a belay between a stand of trees and a heather patch, then right along an obvious ramp to the headwall. Parties most often get lost here.",
+   "pitch": "P13-18"
+  },
+  {
+   "notes": "The first pitch of the upper headwall, where the bolt line picks back up, finishing on a tricky friction slab.",
+   "pitch": "P19"
+  },
+  {
+   "crux": true,
+   "grade": "5.10",
+   "notes": "The crux: a steep, sustained wall nearly a full 60 m rope length, needing around 17 draws (bring long ones or back-clean). Its anchor has no chains; a chained station about 10 m higher lets two 60 m ropes reach the base of this pitch on the descent.",
+   "pitch": "P20"
+  },
+  {
+   "grade": "5.10a",
+   "notes": "A chimney climbed by stemming and scrounging; it is often wet and can feel harder than the crux late in the day. Grades given for it range from 5.9 to 5.10a.",
+   "pitch": "P21"
+  },
+  {
+   "notes": "An easier, fun pitch up blocky ground, ending about 30 m below the summit.",
+   "pitch": "P22"
+  },
+  {
+   "grade": "5.10a",
+   "notes": "A steep friction finish to the summit that looks easy from the belay but has few holds; well bolted and airy. Grades given for it range from 5.9 to 5.10a.",
+   "pitch": "P23"
+  }
+ ],
+ "rappel_detail": null,
+ "climbing_route": null,
+ "fa": "Leland Windham & Steve Martin, August 2003",
+ "areas": {
+  "name": "Garfield Mountain",
+  "parent_id": "wa_exit_34_middle_fork_amp_taylor_river"
+ },
+ "parent_area": "Exit 34: Middle Fork & Taylor River"
+}
