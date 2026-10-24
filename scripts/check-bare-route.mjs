@@ -375,7 +375,8 @@ for (const d of [...CRAG, "alpine"]) {
     if (!/-webkit-line-clamp:2[^>]*>[^<]*ZZSEASONZZ/.test(html)) fail(`${d}: season on file but not in the header strap`);
     else ok(`${d}: season shows in the header strap`);
   }
-  // A crag route with a breakdown and a climate box but nothing that opens Plan: both on Overview.
+  // A crag route with a breakdown and a climate box but nothing that opens Plan: the breakdown on
+  // Overview, CLIMATE & SEASON on the Conditions tab (owner note 2026-10-24) and NOT on Overview.
   {
     const r = { ...bare("trad", "5.9"), pitches: 2, pitchDetail: [{ n: 1, grade: "5.8", notes: "ZZPITCHONEZZ corner" }, { n: 2, grade: "5.9", notes: "roof" }],
       climate: { typical: "ZZCLIMATEZZ dry summers." } };
@@ -384,13 +385,25 @@ for (const d of [...CRAG, "alpine"]) {
     const t = text(render(r, "overview"));
     if (!t.includes("ROUTE BREAKDOWN") || !t.includes("ZZPITCHONEZZ")) fail("crag route with no Plan tab: its ROUTE BREAKDOWN is invisible");
     else ok("crag route with no Plan tab: ROUTE BREAKDOWN renders on Overview");
-    if (!t.includes("ZZCLIMATEZZ")) fail("crag route with no Plan tab: its CLIMATE & SEASON is invisible");
-    else ok("crag route with no Plan tab: CLIMATE & SEASON renders on Overview");
-    // ...and exactly once, with or without other plan content (a crag has no Plan tab to share them).
     const withPlan = text(render({ ...r, approach: "Walk the trail." }, "overview"));
-    const n1 = (withPlan.match(/ZZPITCHONEZZ/g) || []).length, n2 = (withPlan.match(/ZZCLIMATEZZ/g) || []).length;
-    if (n1 !== 1 || n2 !== 1) fail(`crag route with an approach: breakdown x${n1} / climate x${n2} on Overview — each must render exactly once`);
-    else ok("crag route with an approach: breakdown and climate render once, on Overview");
+    const n1 = (withPlan.match(/ZZPITCHONEZZ/g) || []).length;
+    if (n1 !== 1) fail(`crag route with an approach: breakdown x${n1} on Overview — must render exactly once`);
+    else ok("crag route with an approach: breakdown renders once, on Overview");
+    // CLIMATE & SEASON: exactly once across the whole page, and that once on Conditions.
+    for (const [d, g, plan] of [["trad", "5.9", "overview"], ["alpine", "5.6", "planner"]]) {
+      const rr = { ...bare(d, g), approach: "Walk the trail.", climate: { typical: "ZZCLIMATEZZ dry summers." } };
+      const onCond = (text(render(rr, "forecast")).match(/ZZCLIMATEZZ/g) || []).length;
+      const elsewhere = (text(render(rr, plan)).match(/ZZCLIMATEZZ/g) || []).length;
+      if (onCond !== 1 || elsewhere !== 0) fail(`${d}: CLIMATE & SEASON x${onCond} on Conditions, x${elsewhere} on ${plan} — it belongs once, on Conditions`);
+      else ok(`${d}: CLIMATE & SEASON renders once, on the Conditions tab`);
+    }
+    // AID has no Conditions tab: it keeps CLIMATE & SEASON on Overview rather than losing it.
+    {
+      const rr = { ...bare("aid", "C2"), climate: { typical: "ZZCLIMATEZZ dry summers." } };
+      const n = (text(render(rr, "overview")).match(/ZZCLIMATEZZ/g) || []).length;
+      if (n !== 1) fail(`aid (no Conditions tab): CLIMATE & SEASON x${n} on Overview — it must not vanish`);
+      else ok("aid (no Conditions tab): CLIMATE & SEASON stays on Overview");
+    }
   }
 }
 
