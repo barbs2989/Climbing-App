@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_prusik_peak_taylor_wood_route",
+  "last_processed_id": "wa_red_mountain_snoqualmie_southeast_face",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -8907,6 +8907,24 @@
       "flagged_for_human_review": 2,
       "clean": 6,
       "note": "No confirmed errors this batch -- every checkable fact on the 6 'clean' routes was independently corroborated. wa_prusik_peak_der_sportsman: grade 5.11+, 6 pitches, 183m/600ft, Brooke Sandahl FA (undated, developed over ~3 years in the 1990s) all match Mountain Project; the stored Enchantment Permit Area text (overnight permits required May 15-Oct 31, free self-issued day-use permit otherwise) matches USFS/recreation.gov exactly. wa_prusik_peak_prayer_for_a_friend: grade 5.14a, FA (Fitz Cahall/Becca Cahall/Aaron Webb, 2003, aided) and FFA (Adrian Vanoni, October 2023) all independently confirmed via Climbing.com, AAC Publications and Mountain Project's route history ('6 Oct 2023: First free ascent'). wa_prusik_peak_solid_gold: FA (Wayne Wallace and Tim Olson, 1989) and grade 5.11a both confirmed via Wikipedia, Mountain Project and Mountaineers trip reports (a minority of sources give 5.10d instead, a genuine but not DB-sided cross-source spread). wa_prusik_peak_south_face_burgner_stanley: FA (Burgner and Stanley, 1968) confirmed via SummitPost; grade 5.10a matches Mountain Project's own page for this exact route (titled 'stanley-burgner') even though the Mountaineers/Wenatchee Outdoors give 5.9/5.9+ for the same line -- stored value has direct source support, so not flagged. wa_prusik_peak_taylor_wood_route: FA (David Wood and Fletcher Taylor, August 18 2023) confirmed verbatim via the climbers' own SummitPost route report; grade 5.9+ falls within that report's stated 5.9+/5.10- range. wa_prusik_peak_alpine_craggers_delight is a thin, very recent (2022) route with no independent source found, but its own FA field already hedges honestly ('Unknown; first reported publicly by...') rather than overclaiming, so left as-is. Flagged for human review: wa_prusik_peak_east_face's only facts are name 'East Face' and FA 'Fred Beckey and Dan Davis' -- but no authoritative source (Mountain Project's Prusik Peak area page, Mountaineers, SummitPost, Wikipedia) documents any 'East Face' route on Prusik Peak, and that exact FA pair/era belongs to the well-documented 'South Face (Beckey-Davis)' route (June 29, 1962) which is NOT otherwise present in this batch or an obvious sibling row -- this looks like a misnamed or mis-attributed stub, but renaming/re-identifying a route is a structural call beyond this audit's mandate (and area/duplicate rules in docs/codebase/route-identity.md counsel against guessing identity), so left for a human to decide whether to rename it, merge it, or leave it. wa_prusik_peak_sail_away's FA ('Fletch Taylor and David Wood, August 9, 2025') could not be found on Mountain Project, SummitPost, or general web search -- plausible (same two climbers put up the Taylor-Wood Route in 2023 and are active new-routers in the Enchantments) but too recent/obscure to independently corroborate, so flagged rather than assumed correct."
+    },
+    {
+      "batch_number": 448,
+      "date": "2026-10-24",
+      "route_ids": [
+        "wa_prusik_peak_west_ridge",
+        "wa_ptarmigan_peak_pasayten_scramble",
+        "wa_ragged_edge",
+        "wa_rapple_grapple",
+        "wa_raven_ridge_southeast_ridge_crater_lake",
+        "wa_red_mountain_snoqualmie_east_face",
+        "wa_red_mountain_snoqualmie_east_ridge",
+        "wa_red_mountain_snoqualmie_southeast_face"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 2,
+      "clean": 6,
+      "note": "No confirmed errors. Verified clean: Prusik Peak elevation 8008 ft matches Wikipedia/PeakVisor exactly (Mountain Project 7916/TopoQuest 7857 are a known cross-source spread, not a DB error); its West Ridge Stuart Lake Trailhead coords (47.5282,-120.82036) are within ~50-60m of WTA/Trailforks, normal noise. Ptarmigan Peak (Pasayten) 8614 ft matches SummitPost exactly / PeakVisor 8615 (rounding). Ragged Edge FA party (Berdinka & Pires) confirmed via stephabegg.com and a Mountaineers guide (exact day unconfirmed, not contradicted). Rapple Grapple is already internally consistent from a prior-batch fix (length_m 120 matching theCrag, high_point_ft 7720 matching Liberty Bell). Raven Ridge 8572 ft matches Wikipedia exactly, and its stored winter-ascent itinerary note (Gilbertson & Robinson, Jan 2019) is independently confirmed by a countryhighpoints.com trip report of that exact climb. wa_red_mountain_snoqualmie_east_face and _east_ridge are unenriched stubs -- nothing to audit. Flagged for human review: wa_prusik_peak_west_ridge's route FA (Beckey, Rupley, Gordon & Ayres, May 1957) -- this is a specific-route FA distinct from the peak's own 1948 Beckey/Holben FA, and no source corroborates it (not contradicted, just unconfirmed). wa_red_mountain_snoqualmie_southeast_face's FA (Don Blair and Art Winder, Aug 11 1934) -- also unconfirmed; Wikipedia gives the peak's own FA as 1898 (Mendenhall), which does not contradict a later technical-route FA but also does not corroborate this one."
     }
   ]
 }

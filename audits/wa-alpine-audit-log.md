@@ -33951,3 +33951,50 @@ left to a human rather than guessed, per the audit's standing rule.
 
 Pass 7 continues next run after `wa_prusik_peak_taylor_wood_route` (next candidate in id
 order: `wa_prusik_peak_west_ridge`).
+
+## Batch 448 (pass 7) -- 2026-10-24
+
+`wa_prusik_peak_west_ridge`, `wa_ptarmigan_peak_pasayten_scramble`, `wa_ragged_edge`,
+`wa_rapple_grapple`, `wa_raven_ridge_southeast_ridge_crater_lake`,
+`wa_red_mountain_snoqualmie_east_face`, `wa_red_mountain_snoqualmie_east_ridge`,
+`wa_red_mountain_snoqualmie_southeast_face`. No confirmed errors; 0 fixes, 2 flagged, 6
+clean -- no SQL file this batch.
+
+Verified clean: Prusik Peak's 8,008 ft (both the area row and this route's
+`high_point_ft`) matches Wikipedia and PeakVisor exactly; Mountain Project's 7,916 ft and
+TopoQuest/USGS's 7,857 ft are a known cross-source spread, not evidence the DB is wrong.
+This route's Stuart Lake Trailhead waypoint (47.5282,-120.82036) sits ~50-60m from
+WTA's and Trailforks' figures -- ordinary noise, not flagged. Ptarmigan Peak (Pasayten)
+8,614 ft matches SummitPost exactly (PeakVisor's 8,615 is rounding). `wa_ragged_edge`'s
+FA party (Darin Berdinka, Gene Pires, 2013) is confirmed via stephabegg.com and a
+Mountaineers guide; the stored exact day (Aug 18, 2013) wasn't independently found but
+isn't contradicted either. `wa_rapple_grapple` is already internally consistent from an
+earlier batch's fix -- `length_m` 120 matches theCrag's figure and `high_point_ft` 7720
+matches the Liberty Bell area row; nothing further to correct. Raven Ridge's 8,572 ft
+(area row and this route's `high_point_ft`) matches Wikipedia exactly (SummitPost's 8,590
+and the Mountaineers' 8,580 are the cross-source spread here); its stored itinerary note
+about a January 2019 winter ascent by "Gilbertson & Robinson" is independently confirmed
+by a countryhighpoints.com trip report of that exact climb (Eric Gilbertson and Jake
+Robinson, Jan 26 2019, Crater Lake approach). `wa_red_mountain_snoqualmie_east_face` and
+`_east_ridge` are unenriched stubs (name/discipline only) -- nothing to audit.
+
+Flagged for human review: `wa_prusik_peak_west_ridge`'s route FA ("Fred Beckey, John
+Rupley, Don Gordon & Fred Ayres, May 1957") -- this is a specific-route FA, distinct from
+Prusik Peak's own first ascent (Beckey & Holben, May 1948, which several sources do
+confirm); no source was found either confirming or contradicting the 1957 West Ridge
+claim specifically. `wa_red_mountain_snoqualmie_southeast_face`'s FA ("Don Blair and Art
+Winder, August 11, 1934") -- also unconfirmed; Wikipedia gives this peak's own FA as 1898
+(Mendenhall, presumably an easier line), which doesn't contradict a later technical route
+FA but doesn't corroborate this one either, and no other source mentions a Blair/Winder
+ascent of Red Mountain.
+
+`last_processed_id` advances to `wa_red_mountain_snoqualmie_southeast_face`. Scope counts
+not re-run this batch (last known: 737 in-scope / 833 total, from batch 444). No
+`.env`/`.env.local` present at run start (fresh clone); reads went directly against the
+REST API with the read-only anon key supplied in the task prompt via plain `curl` --
+no write attempted, none needed. Every finding rests on 2+ independent sources where
+more than one was available; the two unconfirmed route-specific FA claims were left to a
+human rather than guessed, per the audit's standing rule.
+
+Pass 7 continues next run after `wa_red_mountain_snoqualmie_southeast_face` (next
+candidate in id order: `wa_remmel_mountain_nw_ridge`).
