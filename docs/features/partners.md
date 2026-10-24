@@ -101,4 +101,4 @@ leaving matching. Before that #2413 — every partner filter narrows the real li
 - Name search (`useProfileSearch`) is not narrowed by any filter by design.
 - Experience filtering depends on one `partner_signals` read; on failure it is skipped with an amber note.
 - Distance disclosure is reduced, not zero (0189 states the rounding/floor trade-off).
-- `AVAIL_OPTS` (profile editor, no weekend AM/PM split) differs from `AVAIL_FILTER_OPTS` (search); the search matches through `weekOf`.
+- *When you're free to climb* (Menu card, Profile tab, the editor's quick row, and another climber's profile) offers the same four groups as the search: `AVAIL_SLOT_OPTS` — Weekday mornings, Weekday evenings, Weekend mornings, Weekend evenings. Each is a block of the week grid (`availSlotOn`/`availSlotToggle`); `availTagsOf` derives the coarse `profiles.availability` tags from the grid, so no migration was needed. `AVAIL_FILTER_OPTS` is those four plus Flexible; the search matches through `weekOf`. `AVAIL_OPTS` survives only as the label table for the coarse tags (`compatWhy`).
