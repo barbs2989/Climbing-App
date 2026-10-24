@@ -635,7 +635,7 @@ console.log("\n16. TEMPERATURE GAPS — shifted to the pin's height, stated, unk
   eq("the weather panel applies the shift to every NWS temperature it reads", /const nwsShift=nwsHeightShiftF\(nwsJson,w\.elev\);[\s\S]{0,400}push\(v\.value\*9\/5\+32\+nwsShift\)/.test(rd), true);
   eq("...and says how far it adjusted, in the climber's units, when that is a degree or more", /Math\.abs\(dy\.nws\.adj\)>=1\?" · adjusted "\+uTempDelta\(Math\.abs\(dy\.nws\.adj\)\)\+"° "/.test(rd), true);
   eq("the alpine card states the measured station error through the unit helper, not a fixed Fahrenheit figure", /typically off by \{uTempDelta\(3\)\}–\{uTempDelta\(5\)\}°/.test(card) && !/off by 3–5 ?°F/.test(card), true);
-  eq("...and that services can differ by more at a summit", /Forecasts from different services can differ by more at a summit/.test(card), true);
+  eq("...and no longer adds that forecast services can disagree (owner, 2026-10-24: not under the forecast)", /different services can differ/.test(card), false);
   eq("...and that winter is worse and reads too cold (measured: 53 station-seasons, winter median error 4.6 F, 90th percentile 8.5 F, 14 of 17 winter stations too cold), in the unit helper", /and in winter by up to \{uTempDelta\(9\)\}°, most often reading too cold/.test(card), true);
 }
 
