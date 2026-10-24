@@ -92,7 +92,9 @@ const FORBIDDEN = [
 // disappears while the check stays green.
 const LANDMARKS = {
   "route:Overview": ["Overview"],
-  "route:Plan": ["GETTING THERE", "APPROACH", "ASPECT & SUN", "RACK"],
+  "route:Plan": ["GETTING THERE", "APPROACH", "RACK"],
+  // ASPECT & SUN and SEASONAL GUIDANCE moved from Plan to the Conditions tab (owner, 2026-10-23).
+  "route:Conditions": ["ASPECT & SUN", "SEASONAL GUIDANCE"],
   // The Year in Climbing banner is the ONLY opener of that modal, and until #713 it was
   // gated on MY_CLIMBS.length — a constant DEMO_FILLERS empties — so the whole modal was
   // unreachable and nothing said so. check:dead-flag-gates catches a re-gating onto a dead
@@ -642,7 +644,7 @@ try {
       fail("route", `the route page blanked after opening (${opened.length} chars) — a component threw during render`);
       for (const e of pageErrors) fail("route", `uncaught page error: ${e}`);
     }
-    for (const sub of ["Overview", "Plan", "Safety", "Photos"]) {
+    for (const sub of ["Overview", "Plan", "Conditions", "Safety", "Photos"]) {
       if (!(await tap(sub))) continue;   // not every route exposes every sub-tab
       await capture("route:" + sub);
     }
