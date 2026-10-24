@@ -34318,3 +34318,59 @@ retry; no other workaround needed this batch). The proposed SQL was pre-flighted
 `npm run check:sql` (same anon key) — all 5 write targets across 7 statements confirmed to exist,
 no DELETE in this batch. It also warned the file (6.2 KB) is over the SQL Editor's ~4 KB paste-size
 soft limit, same as several recent batches — split it into ~1.5 KB chunks when pasting.
+
+## Batch 455 (pass 7) — 2026-10-24
+
+Routes: `wa_south_face_center`, `wa_south_gully_south_spur`, `wa_south_headwall`, `wa_south_rib`,
+`wa_south_ridge_4`, `wa_south_twin_sister_north_ridge`, `wa_southeast_face`,
+`wa_southeast_mox_peak_se_rib`.
+
+**Fixed (SQL in `audits/sql/2026-10-24-batch-455.sql`):**
+- `wa_south_face_center` (Concord Tower): `high_point_ft`/summit waypoint elev (7569/7611 ->
+  7560). Same stale pair batch 454, written earlier the same day, fixed on sibling
+  `wa_south_face_3` and flagged as still outstanding here — two independent prior passes (batch
+  102, batch 156) converged on ~7,560 ft via Mountain Project/SummitPost/mountain-forecast.com.
+  Still outstanding on this peak: `wa_the_cave_route`, `wa_around_the_cave_we_go`,
+  `wa_up_in_arms`, `wa_concord_tower_north_face`, and `areas.wa_concord_tower.elevation_ft` —
+  worth a human batch-fixing together rather than one row at a time.
+- `wa_south_headwall` (Mount Stuart): `gain_ft` (5009 -> 6546). The stored value was *below* this
+  row's own trailhead-to-summit net rise (4269 -> 9415 = 5146 ft), which is impossible. The row's
+  own bivy entry ("Ingalls Creek basin camp" at 4800 ft, explicitly "dropping roughly 1,400 ft"
+  from Longs Pass at 6200 ft) confirms a real drop-and-reclimb profile the sparse 3-point
+  waypoint list doesn't show: TH 4269 -> Longs Pass 6200 (+1931) -> creek 4800 (-1400) -> cirque
+  ~8700 (+3900) -> summit 9415 (+715) = 6546 ft one-way cumulative gain, derived entirely from
+  this row's own stored fields, no external source needed.
+
+**Flagged for human review, not fixed:**
+- `wa_south_headwall`'s FA ("Paul Myhre & Darrell Sorenson, 1966") and even the route name
+  "South Headwall" itself could not be corroborated in three separate searches (Wikipedia,
+  SummitPost, AAC publications, and trip-report sites covering Mount Stuart's other south-side
+  lines — Ulrich's Couloir, Cascadian Couloir, West Ridge). Nothing found contradicts it either,
+  so left as-is per the "don't guess" rule.
+
+**Clean:**
+- `wa_south_gully_south_spur` / `wa_south_rib` (Guye Peak): 5,168 ft confirmed exactly via
+  Wikipedia/SummitPost on both sibling routes.
+- `wa_south_twin_sister_north_ridge` (South Twin Sister): 7,004 ft confirmed exactly via
+  Wikipedia/PeakVisor.
+- `wa_southeast_face` (Sharkfin Tower): 8,120 ft confirmed exactly via SummitPost/Mountaineers;
+  its `gain_ft` (4870) reconciles exactly once the trailhead's own stated "3,200-3,300 ft" range
+  is used instead of the single 3200 waypoint figure. FA (Nelson/Martin/Lewis/Liddell/Bale, 1990)
+  already verified by a prior pass directly against Mountain Project — not re-litigated.
+- `wa_southeast_mox_peak_se_rib` (Southeast Mox / Hard Mox): 8,504 ft and the Fred & Helmy Beckey
+  June 1941 FA both confirmed via Wikipedia/SummitPost/AAC.
+- `wa_south_ridge_4` (Eldorado Peak's "Main Peak"): `high_point_ft` 8873 / summit waypoint 8868
+  sit inside a genuine, already-known external spread (Wikipedia 8872.9, SummitPost 8876,
+  PeakVisor 8868, a 2024 resurvey 8873.3 ft) — not a data error, left alone. Its `gain_ft` (6800)
+  reconciles against its own waypoint/bivy chain (Eldorado camp 7600, Roush Creek Basin camp
+  6300, etc.).
+
+`last_processed_id` advances to `wa_southeast_mox_peak_se_rib`. No `.env`/`.env.local` present at
+run start (fresh clone); all reads went through the REST API with the read-only anon key from the
+task prompt. Several queries combining `discipline`/`area_type` filters with `id` range + `order`
+hit the 57014 statement timeout (one areas lookup took 94s before succeeding) — worked around by
+scanning narrow `id` range windows without `order`/`discipline` pushdown and filtering client-side,
+then resolving `area_type` via small `id IN (...)` lookups (PK lookups stayed fast throughout, well
+under 1s). The proposed SQL was pre-flighted with `npm run check:sql` (same anon key) — all 3 write
+targets across 5 statements confirmed to exist, no DELETE in this batch; final file is 3.4 KB,
+under the SQL Editor's ~4 KB paste-size soft limit.
