@@ -34251,3 +34251,70 @@ read-only anon key from the task prompt — no write attempted. The `id=like.wa_
 flag; worked around the same way, with `id=gt.`/`id=lt.` bounding plus a client-side join against
 `areas.area_type` for the peak-only scope filter. The proposed SQL was pre-flighted with
 `npm run check:sql` using the same read-only anon key (no write attempted or needed).
+
+## Batch 454 (pass 7) — 2026-10-24
+
+Checked `wa_south_early_winter_spire_southwest_couloir`, `wa_south_face_10` (Cathedral Peak),
+`wa_south_face_12` (Argonaut Peak), `wa_south_face_2` (Pernod Spire), `wa_south_face_3` (Concord
+Tower), `wa_south_face_4` (Kangaroo Temple), `wa_south_face_5` (Inspiration Peak), `wa_south_face_8`
+(Lundin Peak). 4 fixes, 0 newly flagged, 4 clean. SQL: `audits/sql/2026-10-24-batch-454.sql`.
+
+This batch landed squarely on routes this audit already researched once before, back in pass 2's
+batch 102 (2026-08-12) — a useful check on whether earlier proposed fixes actually stuck. Three of
+them hadn't: this run re-confirmed and re-proposed fixes that batch 102 (or a later pass) had
+already written to SQL but which the live data shows were never applied.
+
+**Fixed:**
+- `wa_south_face_10` (Cathedral Peak): summit waypoint stored 8,601 ft against this row's own
+  `high_point_ft` of 8,606 ft. Batch 102 traced this split to a genuine external datum dispute
+  (GNIS/NAVD88 gives 8,606; the NGVD29-era figure most trip reports use gives 8,601; a 2020s LiDAR
+  resurvey gives 8,599 lower still) and deliberately left it open. That dispute is still open and
+  not re-litigated here, but this catalog's sibling Cathedral Peak route
+  (`wa_cathedral_peak_pasayten_se_buttress`) already stores 8,606 with no internal split, and a
+  later pass (batch 182) independently reconfirmed 8,606 for the peak — so the outlying waypoint
+  was brought up to 8,606 for internal consistency with the row's own field and the sibling route.
+- `wa_south_face_12` (Argonaut Peak): summit waypoint stale at 8,453 ft against `high_point_ft`
+  8,457 ft — the same stale value and same fix batch 102 already identified and proposed
+  (8,457 ft is Wikipedia's figure, independently reconfirmed across at least three other prior
+  passes). Re-proposed unchanged since the live row still shows the contradiction.
+- `wa_south_face_3` (Concord Tower): `high_point_ft` (7,569 ft) and the summit waypoint
+  (7,611 ft) disagreed with each other and with three independent sources found this run
+  (Mountain Project, SummitPost, mountain-forecast.com all ~7,559-7,560 ft). This is the same
+  figure two earlier passes landed on independently: batch 102 (2026-08-12, "no source anywhere
+  supports 7,569") and batch 156 (2026-08-27, re-checking after a different pass had moved a
+  sibling route to 7,611 citing ListsOfJohn — found "7,611 appears in no source found" and fixed
+  the area row plus `wa_north_face_var_right_directisimo` to 7,560, a fix confirmed still live
+  today). This South Face row was evidently never brought into that already-settled correction;
+  fixed both fields to 7,560. **Left for a human:** four more sibling routes on this peak
+  (`wa_the_cave_route`, `wa_around_the_cave_we_go`, `wa_south_face_center`, `wa_up_in_arms`) plus
+  `wa_concord_tower_north_face` and `areas.wa_concord_tower.elevation_ft` still carry the stale
+  7569/7611 values as of this run — out of this batch's scope, but worth batch-applying the same
+  7,560 fix across all of them at once rather than rediscovering each one route-by-route.
+- `wa_south_face_5` (Inspiration Peak): top-level `length_m` (305 = ~1,000 ft) contradicted this
+  row's own 4-entry `pitch_detail` array (50+40+35+35 = 160 m) and its own overview text ("about
+  600 ft (4 pitches)"); `pitches` was already correctly 4. Batch 102 identified this same
+  contradiction and proposed correcting `length_m` to 160; re-proposed unchanged since the live
+  row still shows 305.
+
+**Clean / left as previously flagged (no new action):**
+- `wa_south_early_winter_spire_southwest_couloir`: FA party (Kenneth Adam, Rafi Bedayn, W. Kenneth
+  Davis, July 20, 1937) and 7,807 ft elevation both confirmed exactly via SummitPost/Wikipedia/
+  Mountain Project.
+- `wa_south_face_2` (Pernod Spire): elevation (8,507 ft, internally consistent) and FA (Jewitt/
+  Leight/Waters, July 10, 1988) could not be independently corroborated online this run either —
+  same result batch 102 got when WebFetch to Mountain Project was blocked. Nothing found
+  contradicts the stored facts, so left as-is rather than flagged again on no new information.
+- `wa_south_face_4` (Kangaroo Temple): elevation (7,572 ft) matches SummitPost exactly. FA (Bill
+  Marts, Steve Marts, Don McPherson, summer 1965) remains unconfirmable online, same as batch 102's
+  result — only the peak's 1942 Beckey FA (a different, unrelated ascent) surfaces in searches.
+- `wa_south_face_8` (Lundin Peak): elevation (6,057 ft) matches Wikipedia exactly. FA (Jim Crooks &
+  Ed Kennedy, 1941) could not be confirmed or denied online; this route wasn't part of batch 102's
+  set and no contradicting source was found, so left as-is.
+
+`last_processed_id` advances to `wa_south_face_8`. No `.env`/`.env.local` present at run start
+(fresh clone); all reads went through the REST API with the read-only anon key from the task
+prompt (two single-route reads hit the usual 57014 statement timeout on first try and succeeded on
+retry; no other workaround needed this batch). The proposed SQL was pre-flighted with
+`npm run check:sql` (same anon key) — all 5 write targets across 7 statements confirmed to exist,
+no DELETE in this batch. It also warned the file (6.2 KB) is over the SQL Editor's ~4 KB paste-size
+soft limit, same as several recent batches — split it into ~1.5 KB chunks when pasting.
