@@ -104,7 +104,11 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   **⤢** gives a map-only view (the list steps aside; ✕ returns to it). **📍 Me** is the area map's button. The banner's **Full text →**
   opens `FireAlertSheet`, which reads the product's own words from api.weather.gov (`useFireAlert`; an expired product says so) and
   links to weather.gov's page for the zone (`nwsPointPage`) — the old link opened api.weather.gov's raw JSON (2026-10-23).
-- **Objectives panel** (`ObjectivesPanel`): wishlisted routes under the current area.
+- **Objectives panel** (`ObjectivesPanel`): wishlisted routes under the current area. Each row names
+  WHERE the climb is before its type (`placeOf`: the peak or crag, then the place holding it —
+  "Bear Mountain · Chilliwack Range · Alpine · 7 pitches"), as the Logbook's objectives rows do; a list
+  gathered from a whole state is otherwise a column of names like "North Buttress". The *From your
+  objectives* band of `DbSuggestedClimbs` uses the same line.
 - **Route page map** (`GPXMap`, `src/components/GPXMap.tsx`): track + waypoints + peak coordinate on the same base layers; a line
   drawn between waypoints carries a "sketch" caveat rather than posing as GPS. A point the app worked out rather than one somebody
   pinned — the crag/peak coordinate (the orange ▲ on a crag map) and a derived trailhead — draws hollow and DASHED (`wpDivIcon`'s
