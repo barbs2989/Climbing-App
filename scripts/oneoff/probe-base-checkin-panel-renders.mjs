@@ -2,7 +2,7 @@
  *
  * The panel returns nothing unless USE_DB is on, so check:bare — which renders the seed shape —
  * can never see it. This renders the REAL RouteDetail with ./lib/supabase stubbed to USE_DB=true,
- * and seeds the react-query cache with the unattributed points route_base_checkin_points()
+ * and seeds the react-query cache with the unattributed spots route_base_spots() (0363)
  * returns, so every state the panel can be in is drawn without a browser or a database.
  *
  * Both directions: it must render where the climb has a location to check against, and must NOT
@@ -90,7 +90,8 @@ const p1 = panel(text(render(LOCATED, null, [])));
 is(p1.includes("Sign in to check in"), "a signed-out reader is told to sign in");
 is(!!p1 && !p1.includes("I’m at the base"), "...and offered no button that could only fail");
 
-const pts = [{ lat: 47.84040, lng: -117.75530, mine: false }, { lat: 47.84043, lng: -117.75533, mine: true }, { lat: 47.8500, lng: -117.7553, mine: false }];
+// The read returns SPOTS, already clustered by the database (0363 route_base_spots).
+const pts = [{ lat: 47.84041, lng: -117.75531, n: 2, mine: true, spread_m: 2, confirmed: false }, { lat: 47.8500, lng: -117.7553, n: 1, mine: false, spread_m: 0, confirmed: false }];
 const p2 = panel(text(render(LOCATED, UID, pts)));
 is(/Checked in on-site by 2 climbers, including you/.test(p2), "two agreeing check-ins read as one spot, 2 climbers, including you");
 is(p2.includes("1 other spot reported"), "...with the outlying check-in counted, not merged");
@@ -98,10 +99,16 @@ is(p2.includes("Open the base in maps"), "...and a link to the spot");
 is(p2.includes("Remove my check-in"), "...and a way to withdraw your own");
 is(p2.includes("check in again"), "...and the button reads as a re-check-in");
 is(!/user_id|undefined|NaN/.test(p2), "no identity field, undefined or NaN reaches the panel");
+is(p2.includes("once 3 climbers check in"), "...and an unconfirmed spot says what it takes to become the Base pin");
+is(!p2.includes("Confirmed on-site"), "...and does not call itself confirmed");
+
+const p4 = panel(text(render(LOCATED, UID, [{ lat: 47.84041, lng: -117.75531, n: 3, mine: false, spread_m: 4, confirmed: true }])));
+is(p4.includes("Confirmed on-site by 3 climbers"), "a confirmed spot says so");
+is(p4.includes("Base pin on the map follows this spot"), "...and that the route's Base pin follows it");
 
 const t3 = text(render(UNLOCATED, UID, []));
 is(t3.length > 800 && !t3.includes("BASE OF THE CLIMB"), "a climb with NO location on file shows no check-in button at all");
 
 console.log(`\n${ran - bad}/${ran} passed`);
-if (ran < 14) { console.log("FAIL: fewer assertions ran than written"); process.exit(1); }
+if (ran < 18) { console.log("FAIL: fewer assertions ran than written"); process.exit(1); }
 process.exit(bad ? 1 : 0);
