@@ -16,7 +16,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   list is) because partner search matches on them; on your own view the Objectives tab says so, and no row reads
   "You both want this!". Belay devices are set in Edit profile; the Profile tab's Certifications & Skills card has a
   button that opens it.
-- **Edit profile**: `lib/EditProfileScreen.jsx` over the `editDraft` state; `saveEdit` writes the draft back (see 2).
+- **Edit profile**: `lib/EditProfileScreen.jsx` over the `editDraft` state; `saveEdit` writes the draft back (see 2) Its *Experience level* boxes are one row of equal-share boxes on every phone width from 320px, never wrapping a box onto its own line; the four availability boxes on the Menu card, the Profile tab and a climber's profile follow the same rule (a long label breaks inside its box).
   Includes the owner-only zip code (feeds partner search distance; others never see it).
   **Certifications** are typed or picked: `certMatches` offers matches from `CERT_GROUPS` (wilderness medicine,
   avalanche, climbing instruction, guiding, rescue, gym & competition, clubs & courses — 66, named by their
