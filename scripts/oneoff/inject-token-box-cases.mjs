@@ -52,8 +52,8 @@ const CASES = [
     // problem. Reporting it would be telling an author to undo a correct fix.
     name: "4. long text in a box that explicitly wraps (must PASS)",
     edit: (s) => s.replace(
-      '{seasonPill?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{seasonPill}</span>:null}',
-      '{seasonFull?<span style={{flexShrink:1,fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{seasonFull}</span>:null}'),
+      '{seasonPill?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:"#fff",background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{seasonPill}</span>:null}',
+      '{seasonFull?<span style={{flexShrink:1,fontSize:11,fontWeight:700,color:"#fff",background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{seasonFull}</span>:null}'),
     want: null,
   },
   {
@@ -62,7 +62,7 @@ const CASES = [
     // defect — excluding these is what took an earlier scan from 104 candidates to 54.
     name: "3. long text in an ellipsis-clipping nowrap box (must PASS)",
     edit: (s) => s.replace(
-      '{seasonPill?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{seasonPill}</span>:null}',
+      '{seasonPill?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:"#fff",background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{seasonPill}</span>:null}',
       '{seasonFull?<span style={{flexShrink:0,fontSize:11,color:C.blue,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",maxWidth:120}}>{seasonFull}</span>:null}'),
     want: null, // expect a clean run
   },

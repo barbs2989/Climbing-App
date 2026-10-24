@@ -319,7 +319,7 @@ export function BaseLayerToggle({ baseLayer, setBaseLayer, C, snow, snowAt }) {
       <div style={{ position: "absolute", top: 10, left: 10, zIndex: 1000, display: "flex", gap: 4 }}>
         {opts.map(([k, lbl]) => {
           const on = k === "snow" ? pick != null : baseLayer === k;
-          return <button key={k} onClick={() => { if (!(k === "snow" && on)) setBaseLayer(k); }} aria-current={on ? "true" : undefined} style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{lbl}</button>;
+          return <button key={k} onClick={() => { if (!(k === "snow" && on)) setBaseLayer(k); }} aria-current={on ? "true" : undefined} style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{lbl}</button>;
         })}
       </div>
       {pick ? (
