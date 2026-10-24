@@ -27,6 +27,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 ## Recent changes
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
+- **Notifications: nothing covers a climber's photo**: the small crew/shield badge pinned on the corner of the avatar in the bell's rows is gone. The sentence beside the photo already says what happened. See `docs/features/logbook-crews-home.md`.
 - **Saved headings sit above their boxes**: on Logbook › Saved, *My itineraries* and the other four section headings now sit above their box, like the Objectives tab's headings, instead of inside it (owner note 2026-10-24).
 - **Partners: Only climbers of my gender**: a switch in partner search, offered once you have set your gender, shows only climbers who stated the same one; anyone who has not is left out, and a failed check shows nobody rather than everyone. See `docs/features/partners.md`.
 - **Your own topo can be fixed or taken down**: in the enlarged topo, a line you drew offers *Edit your line* (the editor opens with it, `updateTopoLine`) and *Delete line*; a photo you posted offers *Delete this photo* unless other climbers have drawn on it (`deleteTopoPhoto`, row first, file after). Closing the editor with unsaved points — Cancel, ✕ or a tap on the backdrop — now asks *Discard this drawing?* instead of throwing the work away. See `docs/features/route-page.md`.
