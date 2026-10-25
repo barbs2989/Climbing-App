@@ -106,7 +106,7 @@ function useNames(ids) {
 const btn = (kind, busy) => ({
   padding: "8px 10px", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer", flex: 1,
   background: busy ? C.surface : kind === "ok" ? C.blueSolid : kind === "bad" ? C.redBg : C.surface,
-  color: busy ? C.textMuted : kind === "ok" ? "#fff" : kind === "bad" ? C.red : C.textSub,
+  color: busy ? C.textMuted : kind === "ok" ? C.onSolid : kind === "bad" ? C.red : C.textSub,
   border: kind === "ok" && !busy ? "none" : "1px solid " + (kind === "bad" ? C.red : C.border),
 });
 const fld = { width: "100%", background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 9px", fontSize: 12.5, fontFamily: "inherit", resize: "vertical", boxSizing: "border-box" };

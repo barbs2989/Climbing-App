@@ -232,7 +232,10 @@ for (const abs of mods.keys()) if (!done.has(abs)) evaluate(abs);
 // ── fail closed ───────────────────────────────────────────────────────────────────────────────
 // This app's static graph is ~190 modules and ~700 edges with dozens of back-edges (core imports
 // ~25 components that import core); the floors sit far below that and far above a broken walk.
-if (mods.size < 60 || edges < 200 || backEdges < 10 || readsExamined < 1) {
+// Back-edges: 24 until PR50 (2026-10-25) moved FullProfile out of core — it was the only core renderer of 15 components,
+// so core imports 7 back now (ActionIcon, Av, CardHead, Chevron, DiscIcon, Lbl, Pill, Stars, EmptyState and the like);
+// the floor sits under that real count and still far above a broken walk (0).
+if (mods.size < 60 || edges < 200 || backEdges < 4 || readsExamined < 1) {
   die(`the replay is broken, not the app: ${mods.size} module(s), ${edges} static edge(s), ${backEdges} back-edge(s), ${readsExamined} module-scope import read(s) examined — all should be well above these floors`);
 }
 

@@ -62,7 +62,7 @@ export default function VerifyEmailPanel({ email, nudge, onVerified }) {
     onVerified && onVerified();
   };
 
-  const btn = { padding: "9px 14px", borderRadius: 9, border: "none", background: C.blue, color: "#fff", fontSize: 13, fontWeight: 700, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 };
+  const btn = { padding: "9px 14px", borderRadius: 9, border: "none", background: C.blue, color: C.onSolid, fontSize: 13, fontWeight: 700, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 };
   const link = { background: "transparent", border: "none", color: C.textSub, fontSize: 12, fontWeight: 600, cursor: "pointer", padding: "6px 0", textDecoration: "underline" };
   return (<div ref={box} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: 14, marginBottom: 14 }}>
     {!open ? <button onClick={() => setOpen(true)} aria-label="Verify your email" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", background: "transparent", border: "none", color: C.text, cursor: "pointer", padding: 0, textAlign: "left" }}>

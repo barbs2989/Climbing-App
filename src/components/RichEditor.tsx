@@ -28,7 +28,7 @@ export default function RichEditor({value,onChange,elRef,ariaLabel,placeholder,m
   const emit=function(){const el=ref.current;if(!el)return;const md=editorHtmlToMd(el);if(!md.trim()&&el.innerHTML&&!el.querySelector("ul,ol"))el.innerHTML="";last.current=md;onChange(md);};
   const cmd=function(c: string){const el=ref.current;if(!el)return;if(document.activeElement!==el)caretToEnd(el);try{document.execCommand("styleWithCSS",false,"false");document.execCommand(c,false);}catch{/* the command is unsupported here */}emit();refresh();};
   const btn: CSSProperties={display:"flex",alignItems:"center",justifyContent:"center",width:compact?32:36,height:compact?28:32,borderRadius:7,border:"1px solid "+C.border,background:C.surface,color:C.textSub,cursor:"pointer"};
-  const onB=function(on: boolean): CSSProperties{return on?{background:C.blueBg,border:"1px solid "+C.blueDim,color:"#fff"}:{};};
+  const onB=function(on: boolean): CSSProperties{return on?{background:C.blueBg,border:"1px solid "+C.blueDim,color:C.onSolid}:{};};
   const keep=function(e: SyntheticEvent){e.preventDefault();};
   return <div>
     <div role="toolbar" aria-label="Text formatting" style={{display:"flex",alignItems:"center",gap:5,marginBottom:6}}>

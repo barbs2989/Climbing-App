@@ -15,7 +15,7 @@ import { createPortal } from "react-dom";
 import { AREA_EDIT_FIELDS, ASPECTS, MONTH_ABBR, myPendingAreaEdits, monthsLabel } from "./areaFields";
 import { ROCK_OPTIONS } from "./rockType";
 import { POP_CLOSE } from "./popupChrome.js";
-import { BTN, CHIP } from "./buttonStyles.js";
+import { BTN, CHIP, INPUT } from "./buttonStyles.js";
 
 export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, onSubmit }) {
   const scrollRef = useRef(null);
@@ -30,7 +30,7 @@ export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, on
   }, [field]);
   const a = area || {};
   const set = (k, v) => setVals(p => ({ ...p, [k]: v }));
-  const input = { width: "100%", boxSizing: "border-box", background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 9, padding: "9px 11px", fontSize: 13, lineHeight: 1.5, fontFamily: "inherit" };
+  const input = INPUT(C);
   const lbl = { fontSize: 11, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
 
   // What changed, validated against each field's limits. Unchanged and blank rows are skipped.
@@ -94,13 +94,13 @@ export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, on
             {f.type === "long" ? <textarea value={v || ""} onChange={e => set(f.k, e.target.value)} rows={3} maxLength={f.max} placeholder={f.hint} aria-label={f.label} style={{ ...input, resize: "vertical", minHeight: 76 }} /> : null}
             {f.type === "text" ? <><input value={v || ""} onChange={e => set(f.k, e.target.value)} maxLength={f.max} placeholder={f.hint} aria-label={f.label} style={input} list={"af-opts-" + f.k} />{f.k === "rock" ? <datalist id={"af-opts-" + f.k}>{ROCK_OPTIONS.map(o => <option key={o} value={o} />)}</datalist> : null}</> : null}
             {f.type === "int" ? <input value={v || ""} onChange={e => set(f.k, e.target.value)} inputMode="numeric" placeholder={f.hint} aria-label={f.label + " (minutes)"} style={input} /> : null}
-            {f.type === "aspect" ? <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>{f.opts.map(o => <button key={o} onClick={() => set(f.k, v === o ? "" : o)} aria-pressed={v === o} style={{ ...CHIP, border: "1px solid " + (v === o ? C.blue : C.border), background: v === o ? C.blueBg : C.card, color: v === o ? "#fff" : C.textSub }}>{o === "varies" ? "Varies" : o}</button>)}</div> : null}
+            {f.type === "aspect" ? <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>{f.opts.map(o => <button key={o} onClick={() => set(f.k, v === o ? "" : o)} aria-pressed={v === o} style={{ ...CHIP, border: "1px solid " + (v === o ? C.blue : C.border), background: v === o ? C.blueBg : C.card, color: v === o ? C.onSolid : C.textSub }}>{o === "varies" ? "Varies" : o}</button>)}</div> : null}
             {f.type === "months" ? <div style={{ display: "flex", gap: 3 }}>{MONTH_ABBR.map((m, i) => { const on = Array.isArray(v) && v.includes(i + 1); return <button key={m} onClick={() => set(f.k, on ? (v || []).filter(x => x !== i + 1) : [...(v || []), i + 1])} aria-pressed={on} aria-label={m} style={{ flex: 1, minWidth: 0, minHeight: 36, padding: 0, borderRadius: 7, border: "1px solid " + (on ? C.green : C.border), background: on ? C.greenBg : C.card, color: on ? C.green : C.textSub, fontSize: 10.5, fontWeight: 700, cursor: "pointer" }}>{m[0]}</button>; })}</div> : null}
             {problems[f.k] ? <div role="alert" style={{ fontSize: 11.5, color: C.amber, marginTop: 5 }}>{problems[f.k]}</div> : null}
           </div>;
         })}
         {err ? <div role="alert" style={{ fontSize: 12.5, color: C.red, lineHeight: 1.45, marginBottom: 10 }}>{err}</div> : null}
-        <button onClick={submit} disabled={!canSubmit} style={{ ...BTN, width: "100%", background: canSubmit ? C.blueSolid : C.card, color: canSubmit ? "#fff" : C.textMuted, border: "1px solid " + (canSubmit ? C.blueSolid : C.border), cursor: canSubmit ? "pointer" : "default" }}>{busy ? "Sending…" : edits.length ? "Send " + edits.length + " " + (edits.length === 1 ? "edit" : "edits") : "Fill in a field to send"}</button>
+        <button onClick={submit} disabled={!canSubmit} style={{ ...BTN, width: "100%", background: canSubmit ? C.blueSolid : C.card, color: canSubmit ? C.onSolid : C.textMuted, border: "1px solid " + (canSubmit ? C.blueSolid : C.border), cursor: canSubmit ? "pointer" : "default" }}>{busy ? "Sending…" : edits.length ? "Send " + edits.length + " " + (edits.length === 1 ? "edit" : "edits") : "Fill in a field to send"}</button>
       </div>}
     </div>
   </div>, document.body);

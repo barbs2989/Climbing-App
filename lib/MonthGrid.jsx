@@ -24,7 +24,7 @@ export default function MonthGrid({ climbs, events, onOpenCrew, onOpenEvent }) {
   const title = first.toLocaleDateString(DLOCALE, { month: "long", year: "numeric" });
   const weekdays = [0, 1, 2, 3, 4, 5, 6].map(i => new Date(2026, 0, 4 + i).toLocaleDateString(DLOCALE, { weekday: "short" }));
   const step = d => setYm(p => { const t = new Date(p.y, p.m + d, 1); return { y: t.getFullYear(), m: t.getMonth() }; });
-  const navBtn = { width: 34, height: 34, borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, cursor: "pointer" };
+  const navBtn = { width: 44, height: 44, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, cursor: "pointer" };
   return (
     <section aria-label="Month view" style={{ marginBottom: 20 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
@@ -38,7 +38,7 @@ export default function MonthGrid({ climbs, events, onOpenCrew, onOpenEvent }) {
         {shown.map(d => {
           const k = ymd(d), items = byDay[k] || [], inMonth = d.getMonth() === ym.m, isToday = k === today;
           return <div key={k} role="gridcell" aria-label={d.toLocaleDateString(DLOCALE, { weekday: "long", month: "long", day: "numeric" }) + (items.length ? ", " + items.length + (items.length === 1 ? " entry" : " entries") : "")} style={{ background: inMonth ? C.bg : C.surface, minHeight: 78, padding: 4, display: "flex", flexDirection: "column", gap: 3, minWidth: 0 }}>
-            <div style={{ alignSelf: "flex-end", minWidth: 22, height: 22, borderRadius: 11, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: isToday ? 800 : 600, background: isToday ? C.blueSolid : "transparent", color: isToday ? "#fff" : inMonth ? C.text : C.textMuted }}>{d.getDate()}</div>
+            <div style={{ alignSelf: "flex-end", minWidth: 22, height: 22, borderRadius: 11, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: isToday ? 800 : 600, background: isToday ? C.blueSolid : "transparent", color: isToday ? C.onSolid : inMonth ? C.text : C.textMuted }}>{d.getDate()}</div>
             {items.slice(0, 2).map(it => <button key={it.key} onClick={it.open} title={it.label} style={{ display: "block", width: "100%", textAlign: "left", border: "none", borderLeft: "3px solid " + it.color, borderRadius: 4, background: C.card, color: C.text, fontSize: 11, fontWeight: 700, padding: "2px 5px", cursor: "pointer", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{it.label}</button>)}
             {items.length > 2 ? <div style={{ fontSize: 10.5, color: C.textMuted, paddingLeft: 3 }}>{"+" + (items.length - 2) + " more"}</div> : null}
           </div>;

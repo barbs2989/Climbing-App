@@ -65,7 +65,7 @@ function flat(fn) {
   if (!hadDoc) globalThis.document = { body: {} };
   try { return fn(); } finally { ReactDOM.createPortal = orig; if (!hadDoc) delete globalThis.document; }
 }
-import { Resume } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import Resume from ${JSON.stringify(path.join(ROOT, "src/components/Resume.tsx"))};
 const climber = { id: "u_9f1c2d", name: "Robin Belay", username: "robinbelay", avatar: "",
   location: "Bellingham, WA", vouches: [], certifications: [], courses: [], pyramid: {} };
 const ROUTE = { id: "wa_x", name: "North Ridge", grade: "5.7", discipline: "trad", mountainId: null };
