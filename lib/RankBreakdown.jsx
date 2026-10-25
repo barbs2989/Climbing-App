@@ -68,7 +68,7 @@ export default function RankBreakdown({ target, onClose }) {
       {valText(x.val) ? <div style={{ flexShrink: 0, fontSize: 13.5, fontWeight: 700, color: C.blue, fontVariantNumeric: "tabular-nums" }}>{valText(x.val)}</div> : null}
     </div>;
   };
-  return createPortal(<div onClick={onClose} tabIndex={-1} onKeyDown={(e) => { if (e.key === "Escape") onClose(); }} role="dialog" aria-modal="true" aria-label={title} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.85)", zIndex: 100001, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "72px 12px 32px", overflowY: "auto", overscrollBehavior: "contain" }}>
+  return createPortal(<div onClick={onClose} tabIndex={-1} onKeyDown={(e) => { if (e.key === "Escape") onClose(); }} role="dialog" aria-modal="true" aria-label={title} style={{ position: "fixed", inset: 0, background:C.scrimStrong, zIndex: 100001, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "72px 12px 32px", overflowY: "auto", overscrollBehavior: "contain" }}>
     <div onClick={(e) => e.stopPropagation()} style={{ background: C.surface, borderRadius: 18, width: "100%", maxWidth: 460, border: "1px solid " + C.border, overflow: "hidden" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, padding: "14px 16px", borderBottom: "1px solid " + C.border }}>
         <div style={{ fontSize: 16, fontWeight: 700, color: C.text }}>{title}</div>
