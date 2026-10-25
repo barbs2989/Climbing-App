@@ -1,0 +1,30 @@
+{
+  "wa_himmelhorn_stonehenge": {
+    "area": "wa_himmelhorn",
+    "pitch_detail": [
+      {"pitch": "1", "grade": "5.8", "notes": "Starts from the grassy col, where the rope and rack come out after the long ramp-and-ledge scramble from the snow. Blocky terrain makes for straightforward climbing to the first belay."},
+      {"pitch": "2", "grade": "5.10-", "crux": true, "notes": "The crux. A dihedral looks like the natural line but dead-ends, so the leader steps left onto the open face and finishes up a hand crack."},
+      {"pitch": "3", "notes": "Quite easy ground that connects the hard pitches below to the steeper climbing above."},
+      {"pitch": "4", "grade": "5.8", "notes": "A steep flake of good quality gives the climbing on this pitch."},
+      {"pitch": "5", "notes": "A rightward traverse leads to the foot of the summit tower. No grade is recorded for it."},
+      {"pitch": "6", "grade": "5.10-", "notes": "A steep face about two-thirds of the way up the tower. It is run out, so expect little protection between the holds."},
+      {"pitch": "7", "notes": "A moderate rightward traverse that feels wild and exposed, on solid rock with almost nothing to protect it. It ends in the notch between the summit tower and a neighbouring pinnacle, which marks the end of the difficulties."},
+      {"pitch": "8", "notes": "One easy but loose pitch from the notch to the summit; test blocks before weighting them."}
+    ],
+    "review": {
+      "confidence": "medium",
+      "sources": ["https://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge"],
+      "changed": "Wrote all 8 pitches from the first-ascent account, which gives grades for 1, 2, 4 and 6 only. No lengths, bolt counts or anchors are stated, so none were written. Grades for pitches 3, 5, 7 and 8 left out. Single source.",
+      "pitch_count_found": 8,
+      "other_findings": "Stored pitch count (8) and grade (5.10-) match the source. The source describes no descent."
+    }
+  },
+  "skip_reasons": {
+    "wa_dragontail_peak_northwest_face": "No page found for a Beckey/Davis 1962 5.9 Northwest Face on Dragontail. The Mountain Project 'Northwest Face' hit is a different peak (Forbidden, 5.8); other Dragontail NW-face lines (Serpentine Ridge, Backbone Ridge) are different routes. Cannot confirm the line, so skipped.",
+    "wa_east_mcmillan_spire_northeast_buttress": "Only a summary article exists (25 pitches, daily pitch totals, grade spread); no pitch-by-pitch account. The Mountain Project 'Northeast Buttress' hit is a different peak. Nothing to write without inventing pitches.",
+    "wa_east_twin_needle_north_buttress": "No pitch-level source found; only route history and attempt reports surfaced. Skipped.",
+    "wa_garfield_mountain_east_rib": "No source found for a Garfield Mountain East Rib at all (stored row has no grade, length or first ascent). Cannot confirm the line.",
+    "wa_garfield_mountain_southeast_face": "No source found for this Garfield line. The Mountain Project 'Southeast Face' hit is the Lotus Flower Tower route in the Nahanni, a different route. Skipped.",
+    "wa_golden_horn_northeast_arete": "Only a general description (five pitches, 5.8, loose flakes) found; no pitch-by-pitch account. Skipped."
+  }
+}

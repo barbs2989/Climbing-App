@@ -1449,10 +1449,51 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     It injects three shapes into a real page — a plain over-wide box, one pushed out by a
     fixed `minWidth`, and one inside an `overflow-x:auto` parent — and the first two must be
     caught and the third must not, or the run fails having measured nothing.
-  - Fails closed in the other direction too: an empty `__overlays` or fewer than 26 screens
-    walked is a failure, not a pass. The openable count varies run to run (42–46 of 50)
-    because some payloads resolve only on some tabs, so the floor is deliberately well below
-    it rather than pinned.
+  - Fails closed in the other direction too: an empty `__overlays` or fewer than
+    `TABS.length + 20` screens walked is a failure, not a pass. The floor is deliberately well
+    below the openable count rather than pinned, because some payloads resolve only on some
+    tabs. When it trips, the run now NAMES the overlays — split into "opener never set
+    `__overlaysReady`" and "opener ran but nothing new rendered" — because the same list run
+    after run is a broken opener and a list that changes every run is timing.
+  - **Every `load` waits for `window.__overlaysReady` BEFORE `settledText`, and that order is
+    the fix for a month of red (2026-10-25).** The opener fires on a timer (1200ms after App
+    mounts for `?z=`, 900ms for `?zr=1`); `settledText` only waits for the text to stop
+    changing, and a tab that renders fully on mount is stable for its three samples before the
+    timer fires. This guard never waited on the flag (every other browser walk does), so a load
+    could settle on the bare tab, find no fresh lines, and move on to the next tab to lose the
+    same race again. Measured on a laptop: 5 of 33 overlay loads settled with the flag still
+    false. On CI runners most did — the job failed about half the time on main and on unrelated
+    branches with "59 of 74 overlays did not open" (also 57, 64…), a DIFFERENT set missing each
+    run, and zero overflow findings. With the wait: 70 of 74 open, nearly all on the first tab.
+    A run that dies here with a list of names is now worth reading; do not answer it with a
+    longer sleep.
+  - **The clip exclusion skips `<html>` and `<body>`, or the overlay walk is blind.** Every
+    popup locks the page with `overflow:hidden` on `<html>` (`lib/dialogA11y.js`
+    `setPageLock`, #1794, 2026-09-23). `<html>` is an ancestor of everything and its computed
+    `overflowX` is then `hidden`, so the "an ancestor clips it on purpose" test excused every
+    element of every open overlay: from that day the overlay half of this guard could not fail.
+    Found while injection-testing the readiness fix — a `minWidth:520` row inside the Blocked
+    climbers dialog reported `offenders:0`. A clip at the viewport is the page-lock, not a
+    component cropping its child, and content cut off there is exactly the defect. The
+    self-test now takes the same lock before injecting, so a detector that goes blind under an
+    open popup fails the self-test (verified: removing the skip prints `SELF-TEST FAILED ... saw
+    0`).
+  - Injection-tested 2026-10-25: (1) `minWidth:520` inside the Blocked climbers dialog fails
+    the run naming `modal:blockedOpen`, `+130px`, and the element; the unmodified app reports
+    no offenders on any of the 70 overlays. (2) Making every opener thunk a no-op (`void v`
+    instead of the setter call in `buildOpener`) fails the run with the named "opener ran but
+    nothing new rendered" list (68 of 74; the 6 that still count are the three `rd:` names,
+    which navigate to a route, and three whose `prep` opens a screen of its own).
+  - **That second injection first PASSED, and the reason is the mount test.** With every
+    opener dead, 48 of 74 overlays still "opened" on Home: the bare tab captured as the
+    baseline at the start of the run had drifted by the time those overlays were tried, and
+    the drifted lines counted as fresh. Two changes close it: line sets are compared with
+    **digits masked** (as `settledText` masks them — "3 min ago" vs "4 min ago" is the same
+    line), and a fresh read is only believed after the bare tab is **reloaded beside it** and
+    still lacks those lines (the baseline is replaced either way). With both, the dead-opener
+    run counted 0 drifted reads, so the masking carried it; the reload is the backstop and
+    costs one load per opened overlay. Before this, a green run could have been partly
+    overlays that never opened.
   - Mount detection compares **line sets, not text length** — the trap `check:a11y-badges`
     records, and one this repeated in draft: with a `>120 chars` test every modal reported
     the Home tab's numbers, because that was true on the first tab every time.

@@ -233,7 +233,7 @@ eq("a daylight return carries NO warning", daylight.ret, "");
 eq("a daylight summit carries NO warning", daylight.summit, "");
 
 /* Same day, past the thresholds. Both warnings are correct here and must survive the fix. */
-const sameDay = labels(route({ distKm: 24, gainM: 5200 / FT, lossM: 500 / FT }));
+const sameDay = labels(route({ distKm: 20, gainM: 4200 / FT, lossM: 500 / FT }));
 eq("ANCHOR: the same-day dusk route rendered both captions", sameDay.summit !== null && sameDay.ret !== null, true);
 eq("a same-day return after dusk is still warned about", sameDay.ret !== "", true);
 eq("a same-day summit after 1 PM is still warned about", sameDay.summit !== "", true);

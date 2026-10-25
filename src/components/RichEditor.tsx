@@ -11,12 +11,10 @@ export interface RichEditorProps {
   placeholder?: string;
   /** Pixels; 78 when unset. */
   minHeight?: number;
-  /** Smaller toolbar buttons. */
-  compact?: boolean;
 }
 
 /** The markdown-backed rich text box: a bold / italic / list toolbar over a contentEditable that round-trips through `mdToEditorHtml` and `editorHtmlToMd`, so the stored text stays markdown. Rendered by the log form and core's comments. */
-export default function RichEditor({value,onChange,elRef,ariaLabel,placeholder,minHeight,compact}: RichEditorProps){
+export default function RichEditor({value,onChange,elRef,ariaLabel,placeholder,minHeight}: RichEditorProps){
   const ref=useRef<HTMLDivElement | null>(null),last=useRef<string | null>(null);const [act,setAct]=useState<Record<string, boolean>>({});
   const setEl=function(el: HTMLDivElement | null){ref.current=el;if(elRef)elRef.current=el;};
   /* The stored text is the source of truth. It is only written INTO the box when it changed from
@@ -27,7 +25,8 @@ export default function RichEditor({value,onChange,elRef,ariaLabel,placeholder,m
   useEffect(function(){const on=function(){if(ref.current&&document.activeElement===ref.current)refresh();};document.addEventListener("selectionchange",on);return function(){document.removeEventListener("selectionchange",on);};},[]);
   const emit=function(){const el=ref.current;if(!el)return;const md=editorHtmlToMd(el);if(!md.trim()&&el.innerHTML&&!el.querySelector("ul,ol"))el.innerHTML="";last.current=md;onChange(md);};
   const cmd=function(c: string){const el=ref.current;if(!el)return;if(document.activeElement!==el)caretToEnd(el);try{document.execCommand("styleWithCSS",false,"false");document.execCommand(c,false);}catch{/* the command is unsupported here */}emit();refresh();};
-  const btn: CSSProperties={display:"flex",alignItems:"center",justifyContent:"center",width:compact?32:36,height:compact?28:32,borderRadius:7,border:"1px solid "+C.border,background:C.surface,color:C.textSub,cursor:"pointer"};
+  /* 44px is the platform minimum tap target; the toolbar was 32px, too small to hit on a phone. */
+  const btn: CSSProperties={display:"flex",alignItems:"center",justifyContent:"center",width:44,height:44,borderRadius:7,border:"1px solid "+C.border,background:C.surface,color:C.textSub,cursor:"pointer"};
   const onB=function(on: boolean): CSSProperties{return on?{background:C.blueBg,border:"1px solid "+C.blueDim,color:C.onSolid}:{};};
   const keep=function(e: SyntheticEvent){e.preventDefault();};
   return <div>

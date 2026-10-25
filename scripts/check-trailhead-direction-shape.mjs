@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // check:trailhead-direction-shape — the TRAILHEAD card's directions say how to DRIVE there.
 //
-// approach_logistics.trailheadDirection renders under the trailhead's name, beside "Drive here".
+// approach_logistics.trailheadDirection renders under the trailhead's name, beside the Google Maps / Apple Maps pair.
 // On 2026-09-24 230 routes carried the WALK in it — "From Slate Pass at the end of Harts Pass Road:
 // backpack ~13 miles via the Whistler Cutoff toward the Pasayten base camps", "South side from
 // Paradise: Skyline Trail to the Muir Snowfield and Camp Muir", a bare "North". Every guard the

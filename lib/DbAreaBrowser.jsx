@@ -25,6 +25,8 @@ import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_LINE, NO_PARKING_PIN_BU
 import Chevron from "../src/components/Chevron.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import LoadingRows from "../src/components/LoadingRows.tsx";
+import AreaWrongSpot from "./AreaWrongSpot";
+import { submitAreaPlacementClaim } from "./db";
 import EmptyState from "../src/components/EmptyState.tsx";
 
 // Grade for a compact row. Two things happen inside displayGrade(): a qualifier carried inline
@@ -671,11 +673,16 @@ function PartnersHereCard({ area, C, uid, myListings, onListMe, onFindPartnersIn
 // The order a crag's own climb list can be read in (Mountain Project and theCrag: left to right as
 // on the wall, the default, or by name). `sort_order` is the left-to-right position; a climb with no
 // position stays LAST in both wall orders, by name, rather than being guessed into the line.
-const AREA_LIST_SORTS = [["lr", "Left → right"], ["rl", "Right → left"], ["az", "A → Z"], ["za", "Z → A"]];
+// "By discipline" groups the list under one heading per discipline (in DISCIPLINES order), each A → Z.
+const AREA_LIST_SORTS = [["lr", "Left → right"], ["rl", "Right → left"], ["az", "A → Z"], ["za", "Z → A"], ["disc", "By discipline"]];
 function sortAreaRoutes(routes, key) {
   const byName = (a, b) => String(a.name || "").localeCompare(String(b.name || ""));
   if (key === "az") return [...routes].sort(byName);
   if (key === "za") return [...routes].sort((a, b) => byName(b, a));
+  if (key === "disc") {
+    const rank = d => { const i = DISCIPLINES.findIndex(x => x[0] === d); return i < 0 ? 999 : i; };
+    return [...routes].sort((a, b) => rank(a.discipline) - rank(b.discipline) || byName(a, b));
+  }
   const dir = key === "rl" ? -1 : 1;
   return [...routes].sort((a, b) => Number(a.sort_order == null) - Number(b.sort_order == null) || (a.sort_order != null && b.sort_order != null ? dir * (a.sort_order - b.sort_order) : 0) || byName(a, b));
 }
@@ -701,10 +708,16 @@ function AddHereFooter({ area, onAddClimb, onAddArea, C }) {
   );
 }
 
-function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt}) {
+function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt}) {
   const [searchMode, setSearchMode] = useState("areas");
+  const [wrongOpen, setWrongOpen] = useState(false);
   const listEndRef = useRef(null);
   const [listSort, setListSort] = useState("lr");
+  // Filters on a WALL's own climb list (owner note, 2026-10-25): discipline and a star minimum,
+  // applied to the rows already loaded — no query. Unrated climbs stay in, as the finder keeps them.
+  const [wallFilterOpen, setWallFilterOpen] = useState(false);
+  const [wallDisc, setWallDisc] = useState("");
+  const [wallStars, setWallStars] = useState(0);
   // The row in the drill stack is a snapshot of a CHILD row read when its parent was opened. An
   // agreed edit rewrites the areas row on the server (0304) and refreshes ["area", id] — so the
   // page reads the live row over the snapshot, or a climber's own fill would never show.
@@ -841,13 +854,36 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
                 // Left/right is offered only where a wall order is stored: on a list with no
                 // positions both wall orders would be A → Z under another name.
                 const placed = routes.filter(r => r.sort_order != null).length;
-                const opts = placed ? AREA_LIST_SORTS : AREA_LIST_SORTS.filter(o => o[0] === "az" || o[0] === "za");
+                const opts = placed ? AREA_LIST_SORTS : AREA_LIST_SORTS.filter(o => o[0] === "az" || o[0] === "za" || o[0] === "disc");
                 const key = opts.some(o => o[0] === listSort) ? listSort : opts[0][0];
-                const unplaced = (key === "lr" || key === "rl") ? routes.length - placed : 0;
+                const discsHere = [...new Set(routes.map(r => r.discipline).filter(Boolean))];
+                const shownAll = routes.filter(r => (!wallDisc || r.discipline === wallDisc) && (!wallStars || !(r.stars > 0) || r.stars >= wallStars));
+                const unplaced = (key === "lr" || key === "rl") ? shownAll.filter(r => r.sort_order == null).length : 0;
+                const filtersOn = (wallDisc ? 1 : 0) + (wallStars ? 1 : 0);
+                const wallChip = on => ({ ...CHIP, flexShrink: 0, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" });
                 return <>
+                  {routes.length > 1 ? <div style={{ marginBottom: 8 }}>
+                    <button onClick={() => setWallFilterOpen(o => !o)} aria-expanded={wallFilterOpen} style={{ ...wallChip(filtersOn > 0), minHeight: 36 }}>{"Filters" + (filtersOn ? " (" + filtersOn + ")" : "")}</button>
+                    {wallFilterOpen ? <div style={{ marginTop: 8, padding: "10px 11px", background: C.card, borderRadius: 10, border: "1px solid " + C.border }}>
+                      <div id="wall-filter-disc" style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6 }}>Discipline</div>
+                      <div role="group" aria-labelledby="wall-filter-disc" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 10 }}>{[["", "All"], ...discsHere.map(d => [d, discLabel(d)])].map(o => <button key={o[0] || "all"} onClick={() => setWallDisc(o[0])} aria-pressed={wallDisc === o[0]} style={wallChip(wallDisc === o[0])}>{o[1]}</button>)}</div>
+                      <div id="wall-filter-stars" style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6 }}>Stars</div>
+                      <div role="group" aria-labelledby="wall-filter-stars" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3 }}>{[[0, "Any"], [2, "2+ stars"], [3, "3+ stars"]].map(o => <button key={o[0]} onClick={() => setWallStars(o[0])} aria-pressed={wallStars === o[0]} style={wallChip(wallStars === o[0])}>{o[1]}</button>)}</div>
+                      <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>{"Climbs nobody has rated yet stay in the list when a star minimum is set."}</div>
+                    </div> : null}
+                  </div> : null}
                   {routes.length > 1 ? <div role="group" aria-label="Sort climbs" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 8 }}>{opts.map(o => <button key={o[0]} onClick={() => setListSort(o[0])} aria-pressed={key === o[0]} style={{ ...CHIP, flexShrink: 0, border: "1px solid " + (key === o[0] ? C.blue : C.border), background: key === o[0] ? C.blueBg : C.surface, color: key === o[0] ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{o[1]}</button>)}</div> : null}
                   {unplaced ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, lineHeight: 1.45 }}>{unplaced + (unplaced !== 1 ? " climbs have" : " climb has") + " no position on the wall yet, so " + (unplaced !== 1 ? "they are" : "it is") + " listed last, by name."}</div> : null}
-                  {sortAreaRoutes(routes, key).map(r => <RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />)}
+                  {shownAll.length ? (() => {
+                    // By discipline: one heading per run of the same discipline, rows under it in name order.
+                    const out = []; let last = null;
+                    sortAreaRoutes(shownAll, key).forEach(r => {
+                      if (key === "disc" && r.discipline !== last) out.push(<SL key={"h-" + r.discipline} C={C}>{discLabel(r.discipline)}</SL>);
+                      last = r.discipline;
+                      out.push(<RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />);
+                    });
+                    return out;
+                  })() : <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>{"No climb on this wall matches these filters. "}<button onClick={() => { setWallDisc(""); setWallStars(0); }} style={{ ...BTN, border: "none", background: "transparent", color: C.blue, padding: 0, fontWeight: 700, textDecoration: "underline" }}>Clear filters</button></div>}
                 </>;
               })()}
             </>
@@ -870,6 +906,12 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
           {"Know " + area.name + "? Suggest an edit"}<span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={14} color={"currentColor"}/></span>
         </button>
       ) : null}
+
+      {/* WRONG PLACE (0372): a claim only. The page does not change; the owner moves the area and resolves it. */}
+      <button onClick={() => setWrongOpen(true)} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.border, background: C.surface, color: C.textSub, marginBottom: 14 }}>
+        {"Wrong place? Tell us where " + area.name + " belongs"}
+      </button>
+      {wrongOpen ? <AreaWrongSpot area={area} C={C} onClose={() => setWrongOpen(false)} onSubmit={(note, place) => submitAreaPlacementClaim(area.id, note, place)} onSignIn={onSignIn} /> : null}
 
       {/* TOP RATED HERE — Mountain Project's "Classic Climbing Routes". Only the rows that carry a
           star rating (routes.stars, kept by 0294), best first; an area with no ratings shows
@@ -2164,7 +2206,7 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
       ) : screen === "near" ? (
         <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} /></>
       ) : (
-        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap} onAddClimb={onAddClimb} onAddArea={onAddArea} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { setFinderInit(null); setFinderDisc(typeof d === "string" ? d : ""); setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
+        <AreaPage key={current.id} onSignIn={onSignIn} TopContributors={TopContributors} onFireMap={onFireMap} onAddClimb={onAddClimb} onAddArea={onAddArea} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { setFinderInit(null); setFinderDisc(typeof d === "string" ? d : ""); setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
