@@ -56,6 +56,7 @@
     "audit:note-voice": "node scripts/audit-waypoint-note-voice.mjs",
     "audit:misplaced-prose": "node scripts/audit-misplaced-prose.mjs",
     "audit:shouted-prose": "node scripts/audit-shouted-prose.mjs",
+    "audit:prose-length": "node scripts/audit-prose-length.mjs",
     "audit:copied-prose": "node scripts/audit-copied-prose.mjs",
     "audit:rappels": "node scripts/audit-rappels.mjs",
     "audit:rack-items": "node scripts/audit-rack-items.mjs",
