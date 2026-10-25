@@ -342,10 +342,13 @@ else {
   if (iCoord >= 0 && iCoord < iUp && iUp < iDown && (iAccess < 0 || iDown < iAccess)) ok("the two legs render under the trailhead coordinates, before ACCESS & REGULATIONS");
   else fail("the two legs render, but not between the trailhead coordinates and ACCESS & REGULATIONS - they belong with GETTING THERE");
   const upSeg = lt.slice(iUp, iDown), downSeg = lt.slice(iDown, iDown + 200);
-  if (/(?<![\d.])5 hr\b/.test(upSeg) && /5,000 ft/.test(upSeg) && /6\.2 mi/.test(upSeg)) ok("TRAILHEAD TO SUMMIT reads the stored approach + summit leg, the whole gain and the one-way distance");
-  else fail("TRAILHEAD TO SUMMIT does not read 5 hr / 5,000 ft / 6.2 mi on a route storing approach 3 + summit 2 over 10 km: " + upSeg.slice(0, 160));
-  if (/6\.2 mi/.test(downSeg) && !/(?<![\d.])5 hr\b/.test(downSeg) && /\bhr\b/.test(downSeg)) ok("SUMMIT TO TRAILHEAD carries its own time and the one-way distance");
-  else fail("SUMMIT TO TRAILHEAD is missing its time or distance, or repeats the way up: " + downSeg.slice(0, 160));
+  /* The owner (2026-10-26) asked for NO times on these legs: the approach, climb and descent times are
+     the Full Trip Time card's, at the party set there. So the legs carry gain and distance only, and a
+     time here is the regression this asserts against. */
+  if (/5,000 ft/.test(upSeg) && /6\.2 mi/.test(upSeg) && !/\bhr\b/.test(upSeg)) ok("TRAILHEAD TO SUMMIT carries the whole gain and the one-way distance, and no time");
+  else fail("TRAILHEAD TO SUMMIT does not read 5,000 ft / 6.2 mi with no time: " + upSeg.slice(0, 160));
+  if (/6\.2 mi/.test(downSeg) && !/\bhr\b/.test(downSeg)) ok("SUMMIT TO TRAILHEAD carries the one-way distance, and no time");
+  else fail("SUMMIT TO TRAILHEAD shows a time, or is missing its distance: " + downSeg.slice(0, 160));
 }
 
 console.log("");

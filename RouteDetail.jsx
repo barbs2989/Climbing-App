@@ -1483,20 +1483,18 @@ function SummitLegsCard({route}){
   const outBack=rs?rs==="outback":shapeOf(route)==="outback";
   const legKm=hasKm&&outBack?(whole?km/2:km):null;
   const fmtKm=function(k){return uDist(Math.round(k*10)/10);};
-  const fmtH=function(h){var r=Math.round(h*2)/2;return (r<1?"<1":String(r))+" hr";};
   const top=climbsAPeak(route)||disc==="alpine"||disc==="mountaineering"||disc==="hiking"||disc==="scrambling"?"summit":"top of the climb";
-  const upH=pt.publishedIsWholeDay?null:pt.hikeH+pt.techH;
-  const upTxt=upH>0?(pt.walkInKnown&&pt.climbKnown?"":"≥ ")+fmtH(upH):null;
-  const downTxt=!pt.publishedIsWholeDay&&pt.downH>0?(pt.walkOutKnown?"":"≥ ")+fmtH(pt.downH):null;
-  const wholeTxt=pt.publishedIsWholeDay&&pt.techH>0?fmtH(pt.techH):null;
+  /* NO TIMES HERE. The approach, climb and descent times are the Full Trip Time card's, at the party
+     the climber set there. This card printed a second approach figure at the party's DEFAULTS, so it
+     disagreed with the card below whenever fitness or pack was changed. Gain and distance only. */
   const legs=pt.publishedIsWholeDay
-    ?[["CAR TO CAR",[wholeTxt?["Time",wholeTxt]:null,gainFt?["Gain","↑ "+uElev(gainFt)]:null,hasKm?["Distance",fmtKm(outBack&&!whole?km*2:km)]:null]]]
-    :[["TRAILHEAD TO "+top.toUpperCase(),[upTxt?["Time",upTxt]:null,gainFt?["Gain","↑ "+uElev(gainFt)]:null,legKm?["Distance","~"+fmtKm(legKm)]:null]],
-      [top.toUpperCase()+" TO TRAILHEAD",[downTxt?["Time",downTxt]:null,legKm?["Distance","~"+fmtKm(legKm)]:null]]];
+    ?[["CAR TO CAR",[gainFt?["Gain","↑ "+uElev(gainFt)]:null,hasKm?["Distance",fmtKm(outBack&&!whole?km*2:km)]:null]]]
+    :[["TRAILHEAD TO "+top.toUpperCase(),[gainFt?["Gain","↑ "+uElev(gainFt)]:null,legKm?["Distance","~"+fmtKm(legKm)]:null]],
+      [top.toUpperCase()+" TO TRAILHEAD",[legKm?["Distance","~"+fmtKm(legKm)]:null]]];
   const shown=legs.map(function(l){return [l[0],l[1].filter(Boolean)];}).filter(function(l){return l[1].length;});
   if(!shown.length)return null;
   const days=itinDayCount(route);
-  const note=(pt.legsStored?"Times start from this route’s published figures for a fit party — the same estimate as Full trip time below.":"Times are estimated for an intermediate party with a light pack — set your own in Full trip time below.")
+  const note="Times for each leg are in Full trip time below."
     +(!pt.publishedIsWholeDay&&hasKm&&!legKm?" This route does not come back the way it goes: "+fmtKm(km)+" for the whole outing.":"")
     +(days>1?" Usually done over "+days+" days — the Trip plan below splits it by day.":"");
   return <div style={{background:C.surface,borderRadius:10,padding:"4px 12px 11px",border:"1px solid "+C.border,marginBottom:12}}>
