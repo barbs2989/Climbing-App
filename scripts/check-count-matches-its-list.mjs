@@ -138,7 +138,12 @@ let panelProps = null;
   else fail(`NotifPanel's requests prop is an expression rather than a named array (${prop.slice(0, 60)}) — nothing else can count the same list, so the badge must re-derive it and the two can drift`);
 
   // The badge: the rendered number beside the bell.
-  const b = src.indexOf('ActionIcon name="bell"');
+  // The bell that CARRIES a badge sits in a position:relative button; Settings' Notifications row
+  // draws the same icon earlier in the file, so the first match is not necessarily the top bar's.
+  let b = -1;
+  for (let at = src.indexOf('ActionIcon name="bell"'); at >= 0; at = src.indexOf('ActionIcon name="bell"', at + 1)) {
+    if (src.slice(Math.max(0, at - 300), at).includes('position:"relative"')) { b = at; break; }
+  }
   if (b < 0) dead("the alerts bell moved — its badge cannot be read");
   const badge = src.slice(b, b + 900);
   cases++;
