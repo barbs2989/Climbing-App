@@ -64,6 +64,13 @@ are symlinked, and in a fresh worktree they are not, so every DB-touching guard 
 Both patterns are in `.gitignore` and a symlink is not a directory to git, so neither shows up as
 untracked.
 
+**No script carries a project URL or a key as a literal.** A script in `scripts/oneoff/` reads
+`process.env.VITE_SUPABASE_URL` and `process.env.VITE_SUPABASE_ANON_KEY`, and a writer calls
+`requireServiceKey()`. Start it with a side-effect import of `scripts/lib/load-env.mjs`, which copies
+the values from `.env` and `.env.local` into `process.env`. The relative import path depends on depth:
+one level down (`scripts/oneoff/`) is `../lib/`, and the top of `scripts/` is `./lib/`.
+`.env.example` lists the names. `npm run check:no-secrets` fails the build if a literal comes back.
+
 Import `scripts/lib/supabase-env.mjs` — do not hand-roll env loading. The
 credentials are split across two gitignored files (`SUPABASE_SERVICE_KEY` in
 `.env`, the `VITE_*` url/anon key in `.env.local`), so a script that reads only
@@ -95,3 +102,19 @@ table — the default 60 means ~3,400 round trips and takes over ten minutes.
 - `selectAll(table, select, filter)` paginates by keyset. Offset paging over a filtered, unindexed column times out on the 200k-row `routes` table, and an unordered `.range()` silently skips/duplicates rows.
 
 After any batch write, re-read the affected ids and reconcile counts. A 200 is not evidence the data changed.
+
+## The schema document: `SUPABASE_SCHEMA.sql`
+
+`SUPABASE_SCHEMA.sql` at the repo root is the live `public` schema: every table's `CREATE TABLE`
+(types, NOT NULL, defaults, identity, primary/unique/check/foreign keys), the foreign-key index,
+RLS flags and every `CREATE POLICY`. It is **generated**, not written by hand, from the catalog
+through the linked CLI (one read-only SELECT):
+
+    npm run gen:schema                # rewrite the file from the live database
+    npm run gen:schema -- --check     # exit 1 if the committed file has drifted from live
+
+Run `npm run gen:schema` after ANY change to the database structure (a migration, a DDL run in
+the SQL Editor, a policy edit) and commit the result in the same PR. It needs the link state
+(`supabase/.temp`) and so, like the function guards, cannot run in a fresh worktree until that is
+symlinked. It is deliberately not part of `npm run build`: the build must never reach the live
+database. Views, functions, triggers and standalone indexes are not in it; the migrations are.

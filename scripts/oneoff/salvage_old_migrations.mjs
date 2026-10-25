@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import "../lib/load-env.mjs";
 // Extracts valid UPDATE blocks from migrations 0029-0033, corrects wa_ prefix
 // and route_id->id column bugs, discards blocks whose route ID doesn't exist
 // in the live DB at all. Produces one clean, correct consolidated migration.
@@ -6,8 +7,8 @@ import { createClient } from "@supabase/supabase-js";
 import ws from "ws";
 import fs from "fs";
 
-const url = "https://ofuofhojhbcrcahuotya.supabase.co";
-const key = "sb_publishable_Xeg2L1pOa5YK6RjTUuYvNA_7B0tfRr5";
+const url = process.env.VITE_SUPABASE_URL;
+const key = process.env.VITE_SUPABASE_ANON_KEY;
 const supabase = createClient(url, key, { auth: { persistSession: false }, realtime: { transport: ws } });
 
 const FILES = [

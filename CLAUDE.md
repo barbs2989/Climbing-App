@@ -44,6 +44,7 @@ npm run check:refs # identifiers referenced but never bound (runs in build + CI)
 npm run check:jsx-comments # a comment in JSX children position renders to the USER (in build)
 npm run check:no-emoji # the app draws NO emoji — an ActionIcon or the words alone (owner, 2026-10-25) (in build)
 npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay readable (in build)
+npm run check:no-secrets # no Supabase service key, service_role JWT, or literal anon key / project URL in source (in build)
 npm run check:script-roots # no script reads the app files of somebody ELSE's worktree (in build)
 npm run check:dup-attrs # a declaration written TWICE: the later wins, the earlier is dead (in build)
 npm run check:no-module-scope-core-reads # a component core imports BACK must not read core at module scope — the bundle throws before React mounts (in build)
@@ -384,6 +385,7 @@ Each rule below is a summary; the linked file has the incidents behind it and th
   has not RECORDED. So when you apply a migration by hand, record its version in
   `supabase_migrations.schema_migrations` in the same step, or the merge applies it twice; and run
   `npm run check:migration-replay` before pushing one. → [README-numbering.md](supabase/migrations/README-numbering.md)
+- **After any change to the database structure, run `npm run gen:schema` and commit `SUPABASE_SCHEMA.sql`.** It is generated from the live catalog; `npm run gen:schema -- --check` says when it has drifted. → [supabase-scripts.md](docs/codebase/supabase-scripts.md)
 - **Run `npm run check:sql -- fix.sql` before handing over any SQL.** The SQL Editor reports
   success for an UPDATE or DELETE that matched zero rows; a wrong id has already destroyed the only
   copy of a route. → [hand-written-sql.md](docs/codebase/hand-written-sql.md)
