@@ -73,7 +73,7 @@ export function AppealSheet({ target, busy, onClose, onSubmit }) {
         <div style={{ fontSize: 12, color: C.textMuted, fontWeight: 700, marginBottom: 6 }}>WHY SHOULD WE LOOK AGAIN?</div>
         <textarea aria-label="Why should ClimbMatch Safety look again?" value={text} onChange={e => setText(e.target.value)} maxLength={2000} rows={5} placeholder="What we got wrong, or context we didn’t have." style={{ width: "100%", padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 13, boxSizing: "border-box", resize: "vertical", minHeight: 100, outline: "none", fontFamily: "inherit", lineHeight: 1.5 }} />
       </div>
-      <div style={{ padding: "12px 16px", borderTop: "1px solid " + C.border }}><button disabled={!text.trim() || busy} onClick={() => onSubmit(text.trim())} style={{ width: "100%", padding: 12, background: text.trim() && !busy ? C.blueSolid : C.border, color: text.trim() && !busy ? "#fff" : C.textMuted, border: "none", borderRadius: 11, fontSize: 15, cursor: text.trim() && !busy ? "pointer" : "default", fontWeight: 700 }}>{busy ? "Sending…" : "Send appeal"}</button></div>
+      <div style={{ padding: "12px 16px", borderTop: "1px solid " + C.border }}><button disabled={!text.trim() || busy} onClick={() => onSubmit(text.trim())} style={{ width: "100%", padding: 12, background: text.trim() && !busy ? C.blueSolid : C.border, color: text.trim() && !busy ? C.onSolid : C.textMuted, border: "none", borderRadius: 11, fontSize: 15, cursor: text.trim() && !busy ? "pointer" : "default", fontWeight: 700 }}>{busy ? "Sending…" : "Send appeal"}</button></div>
     </div>
   </div>;
 }

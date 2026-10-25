@@ -57,8 +57,8 @@ export default function Onboarding({onFinish,onSkip,initial,onHelp,uid,googlePho
   const takeGooglePhoto=(onDone)=>{const u=bigGooglePhoto(googlePhoto);setAvaBusy(true);fetch(u).then(function(r){if(!r.ok)throw new Error(String(r.status));return r.blob();}).then(function(b){keepPhoto(new File([b],"google-photo.jpg",{type:b.type||"image/jpeg"}),u,onDone);}).catch(function(){keepPhoto(null,u,onDone);});};
 
   const H=(t,sub)=><div style={{marginBottom:18}}><div style={{fontSize:23,fontWeight:800,letterSpacing:-0.3,color:C.text,lineHeight:1.2}}>{t}</div>{sub?<div style={{fontSize:13.5,color:C.textSub,lineHeight:1.5,marginTop:6}}>{sub}</div>:null}</div>;
-  const chip=(on)=>({padding:"10px 15px",borderRadius:12,border:"1.5px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?"#fff":C.textSub,fontSize:14,fontWeight:700,cursor:"pointer"});
-  const primary=(ok)=>({flex:2,padding:13,background:ok?C.blueSolid:C.border,color:ok?"#fff":C.textMuted,border:"none",borderRadius:12,fontSize:15,cursor:ok?"pointer":"default",fontWeight:800});
+  const chip=(on)=>({padding:"10px 15px",borderRadius:12,border:"1.5px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.onSolid:C.textSub,fontSize:14,fontWeight:700,cursor:"pointer"});
+  const primary=(ok)=>({flex:2,padding:13,background:ok?C.blueSolid:C.border,color:ok?C.onSolid:C.textMuted,border:"none",borderRadius:12,fontSize:15,cursor:ok?"pointer":"default",fontWeight:800});
   const quiet={flex:1,padding:13,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:12,fontSize:14,cursor:"pointer",fontWeight:600};
   const climbOk=disc.length>0;
 
@@ -115,7 +115,7 @@ export default function Onboarding({onFinish,onSkip,initial,onHelp,uid,googlePho
 
         {step==="alerts"?<div>
           {H("Stay in the loop","Choose what shows up in your notifications. These are the switches in Settings → Notifications, so you can change them there any time.")}
-          {NOTIF_FLAGS.map(function(k){var t=NOTIF_COPY[k]||[k,""];var on=notifPrefs?notifPrefs[k]!==false:true;return <div key={k} style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,background:C.card,borderRadius:12,padding:"12px 14px",border:"1px solid "+C.border,marginBottom:9}}><div style={{minWidth:0}}><div style={{fontSize:14,fontWeight:700,color:C.text}}>{t[0]}</div><div style={{fontSize:12,color:C.textMuted,marginTop:2,lineHeight:1.4}}>{t[1]}</div></div><button onClick={function(){if(onNotifChange)onNotifChange(k,!on);}} aria-label={t[0]} role="switch" aria-checked={on} style={{flexShrink:0,position:"relative",width:46,height:26,borderRadius:13,border:"none",background:on?C.green:C.border,cursor:"pointer"}}><span style={{position:"absolute",top:3,left:on?23:3,width:20,height:20,borderRadius:"50%",background:"#fff",transition:"left .15s"}}/></button></div>;})}
+          {NOTIF_FLAGS.map(function(k){var t=NOTIF_COPY[k]||[k,""];var on=notifPrefs?notifPrefs[k]!==false:true;return <div key={k} style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,background:C.card,borderRadius:12,padding:"12px 14px",border:"1px solid "+C.border,marginBottom:9}}><div style={{minWidth:0}}><div style={{fontSize:14,fontWeight:700,color:C.text}}>{t[0]}</div><div style={{fontSize:12,color:C.textMuted,marginTop:2,lineHeight:1.4}}>{t[1]}</div></div><button onClick={function(){if(onNotifChange)onNotifChange(k,!on);}} aria-label={t[0]} role="switch" aria-checked={on} style={{flexShrink:0,position:"relative",width:46,height:26,borderRadius:13,border:"none",background:on?C.green:C.border,cursor:"pointer"}}><span style={{position:"absolute",top:3,left:on?23:3,width:20,height:20,borderRadius:"50%",background:C.onSolid,transition:"left .15s"}}/></button></div>;})}
         </div>:null}
       </div>
 

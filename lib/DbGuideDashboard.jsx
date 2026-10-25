@@ -121,7 +121,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
           <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
           <div><div style={{ fontSize: 15, fontWeight: 700 }}>Guide dashboard</div><div style={{ fontSize: 12, color: C.textSub }}>{"Status: " + profile.status + (newInquiries ? " · " + newInquiries + " new inquiries" : "")}</div></div>
         </div>
-        <div style={{ display: "flex", gap: 6, overflowX: "auto" }}>{SECTIONS.map(x => { const on = section === x[0]; return <button key={x[0]} onClick={() => setSection(x[0])} aria-current={on?"true":undefined} style={{ flexShrink: 0, padding: "6px 12px", borderRadius: 16, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>{x[1]}</button>; })}</div>
+        <div style={{ display: "flex", gap: 6, overflowX: "auto" }}>{SECTIONS.map(x => { const on = section === x[0]; return <button key={x[0]} onClick={() => setSection(x[0])} aria-current={on?"true":undefined} style={{ flexShrink: 0, padding: "6px 12px", borderRadius: 16, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.textSub, fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>{x[1]}</button>; })}</div>
       </div>
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "14px 16px 44px" }}>
         <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "14px 15px", marginBottom: 14 }}>
@@ -173,7 +173,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
               {q.status !== "new" ? <span style={{ flexShrink: 0, fontSize: 12, fontWeight: 700, color: q.status === "accepted" ? C.green : C.textMuted, background: q.status === "accepted" ? C.greenBg : C.surface, border: "1px solid " + (q.status === "accepted" ? C.greenDim : C.border), borderRadius: 6, padding: "2px 7px" }}>{q.status === "accepted" ? "Accepted" : "Declined"}</span> : null}
             </div>
             {q.status === "new" ? <div style={{ display: "flex", gap: 12, marginTop: 9 }}>
-              <button onClick={() => setInqStatus(q.id, "accepted")} style={{ flex: 1, background: C.green, color: "#04110a", border: "none", borderRadius: 8, padding: "7px 0", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Accept</button>
+              <button onClick={() => setInqStatus(q.id, "accepted")} style={{ flex: 1, background: C.green, color: C.onBright, border: "none", borderRadius: 8, padding: "7px 0", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Accept</button>
               <button onClick={() => setInqStatus(q.id, "declined")} style={{ flex: 1, background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "7px 0", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>Decline</button>
             </div> : null}
           </div>) : <div style={{ fontSize: 12.5, color: C.textMuted }}>{inqLoading ? "Loading inquiries…" : inqError ? "Couldn’t load your inquiries — check your connection and try again" : "No inquiries yet."}</div>}
