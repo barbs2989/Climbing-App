@@ -61,7 +61,9 @@ const uliSrc = core.match(/const uLenIn=([\s\S]*?\});\n/);
 if (!unum || !uliSrc) { console.error("ANCHOR LOST: _uNum/uLenIn are not in ClimbMatchCore.jsx where this probe reads them"); process.exit(1); }
 const mkRun = (imperial) => {
   const uLenIn = new Function("uImp", "_uNum", "return " + uliSrc[1])(() => imperial, new Function("return " + unum[1])());
-  const f = new Function("vals", "uLenIn", "uImp", "return " + branch + ";");
+  const numAt = src.indexOf("function isNumLbl(");
+  if (numAt < 0) { console.error("ANCHOR LOST: isNumLbl is not where the pitches branch reads it"); process.exit(1); }
+  const f = new Function("vals", "uLenIn", "uImp", src.slice(numAt, src.indexOf("\n", numAt)) + "\nreturn " + branch + ";");
   return (vals) => f(vals, uLenIn, () => imperial);
 };
 // METRIC is the canonical case, so the assertions below read as "what was typed is what is stored".

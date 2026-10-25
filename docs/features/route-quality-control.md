@@ -68,7 +68,7 @@ empty field fills at once and two climbers who agree are enough to change one (0
 - **Your contributions** (Menu → Profile) shows each edit as Awaiting review / Added — live /
   Not applied with the owner's reason.
 
-- **The owner's queues** (Me tab, admin block; `lib/RouteQualityQueues.jsx`): *Route edits to review*
+- **The owner's queues** (Menu › Review tiles, admin only; `lib/RouteQualityQueues.jsx`): *Route edits to review*
   clusters pending rows by route, field and `sameEditValue` so three climbers who sent the same value
   are one card; shows the page's current value beside the proposed one with a row-by-row diff for
   pitch / rappel / waypoint tables; Approve, Edit &amp; approve (the owner's value becomes
@@ -103,6 +103,31 @@ empty field fills at once and two climbers who agree are enough to change one (0
   ascent, high point, sun, pro tips — have edit-sheet entries and `contribution_fields` rows (0317);
   every other column is either editable or declared with a reason. The log form offers "⚑ Something
   on this route page is wrong?", which opens the flag sheet through `openFlag` (`lib/reportBus.js`).
+
+- **Adding a climb vs logging one** (reviewed 2026-10-24). They write different things, on purpose:
+  - *Add a climb* (`lib/AddRoute.jsx`) proposes the climb's FACTS — grade, pitches, gear, approach,
+    descent, history — as one `contributions` row of kind `new_route`. Nothing reaches a page until the
+    owner approves it in the proposal queue; `approve_new_route` then writes every field the form asks into
+    a new `routes` row (`check:add-route-fields`, `check:approve-route-columns`), keeping the proposal
+    verbatim in `provenance`. *Add an area* is the same with kind `new_area` (0360).
+  - *Log a climb* (`LogAscent`, `QuickLog`) records one VISIT as a `climb_logs` row, live at once. It never
+    changes the climb's facts: it feeds the Reports tab, the conditions consensus, crowds, camps, the rating
+    fallback and *Recently climbed* (the full map is in [logbook-crews-home.md](logbook-crews-home.md)). Its
+    bridges to the facts are the *still missing …* alert (`missingFacts`) that opens the contribute form, the
+    ⚑ flag link, *Add topo photo* and the sun vote.
+  - A climb can only be logged once it exists, so a proposal cannot carry its proposer's ascent (Mountain
+    Project's ticks also need a published route). Instead, **since 0367 the proposer is told**: approving or
+    rejecting a `new_route` / `new_area` row fires `trg_contribution_result`, which sends a bell notice
+    (*Your climb is live: …* — *Climbed it? Log it from its page.*, or the owner's reason) and records the
+    new row's id in `contributions.result_id`. Route edits have notified their author since 0309; added
+    climbs and areas told nobody. *Your contributions* (`Contributions` in core) now shows them as *Route
+    added* / *Area added* with their status, and an approved one opens its page (not the edit sheet). Model:
+    MTB Project, Mountain Project's sister site, tells the submitter on the site and by email on approval.
+  - Notice links open: a notice's `route` is now the id, as every other notification carries it (it was a
+    route object that `routeById` never matched, so *Your route edit is live* opened nothing), and one not
+    loaded yet opens thin through `openableRoute`; an area link opens through `openAreaById`.
+  - The success screen no longer says a proposal is "visible to other climbers": no screen shows a pending
+    proposal to anyone but the owner.
 
 - **Add-a-climb asks for the same seven** (`lib/AddRoute.jsx`, 0327): first free / first winter
   ascent, other names, variations, sun and pro tips in group 8, the high point in the numeric row

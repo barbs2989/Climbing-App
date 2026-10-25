@@ -70,8 +70,11 @@ let STATE = argOf("--state") || (USE_DB ? "Washington" : "Utah");
 // on its own -- the header and strip alone are ~250 -- so every tab but For you also carries a
 // LANDMARK below that only its own body renders, and the twin rule catches a tab that
 // silently renders a sibling.
-const MIN_CHARS = { default: 400, "route:Photos": 120, Home: 300, Groups: 300,
-  "Groups:Your groups": 300, "Groups:Your activity": 300, "Groups:Discover": 300, "Groups:Events": 300 };
+// 2026-10-24: the Groups header's line under the title went from 100 characters to 45 (every header
+// was cut to one short line), so every Groups tab measures 55 fewer and the floor moved down by the
+// same 55: Events' empty state now measures 255. The landmarks below still prove each tab's body.
+const MIN_CHARS = { default: 400, "route:Photos": 120, Home: 300, Groups: 245,
+  "Groups:Your groups": 245, "Groups:Your activity": 245, "Groups:Discover": 245, "Groups:Events": 245 };
 
 // Text that should never reach a user. Tuned to the bugs above; each entry is a
 // regex plus a note on the shape it catches.
@@ -120,12 +123,12 @@ const LANDMARKS = {
   // (uppercase: innerText returns the CSS-transformed text). Those headings carry their count
   // ("ALL YOUR GROUPS · 3"), so capture() also matches a line with a trailing " · N" removed,
   // and the landmark stays the descriptive part the rule above asks for.
-  Groups: ["Standing communities with their own calendar, events, and members. Search, join, or start your own."],
+  Groups: ["Communities with their own events and members."],
   "Groups:Your groups": ["ALL YOUR GROUPS"],
   "Groups:Your activity": ["EVENTS YOU’RE GOING TO", "YOUR POSTS"],
   "Groups:Discover": ["GROUPS TO JOIN"],
   "Groups:Events": ["UPCOMING IN YOUR GROUPS"],
-  "Crew:Requests": ["Everything waiting on you — friend, crew and group requests — and the requests you’ve sent."],
+  "Crew:Requests": ["What’s waiting on you, and what you’ve sent."],
 };
 
 // Disclosure affordances: controls that reveal more of the screen they are on.
@@ -145,7 +148,6 @@ const LANDMARKS = {
 const DISCLOSURE = [
   /^\d+ updates?\s*[▾▸]?$/,     // "11 updates ▾"  (activity feed)
   /^Alerts( · \d+ new)?\s*[▾▸]?$/,
-  /^Unfinished business( · \d+)?\s*[▾▸]?$/,
   /^View all \d+ \w+$/,                   // "View all 14 alerts"
   /^View \d+ more suggestions?$/,
   /^Suggested climbs( · \d+)?\s*[▾▸]?$/,

@@ -7,7 +7,7 @@ room for side-panel ads later. The phone app keeps its own look.
 
 ## 1. What it does today
 - **Phone (under 1024px wide):** one 520px column, centred, with the bottom tab bar (Home · Climbs ·
-  Partners · Crews · Logbook · Ranks). The bar is soft: see-through with a blur, a faint shadow instead
+  Partners · Crews · Logbook · Ranks · Profile). The bar is soft: see-through with a blur, a faint shadow instead
   of a hard top line, and the selected tab marked only by its pill. Inside an open chat thread the bar
   steps aside for the composer.
   - **Popups fill the screen** (owner 2026-10-23): every popup that used to slide up as a bottom sheet
@@ -16,6 +16,27 @@ room for side-panel ads later. The phone app keeps its own look.
     inline style (`align-items: flex-end` on a `role="dialog"` backdrop), so no sheet was edited and a
     new one is covered too. A short **action menu** — a group post's ⋯ and a comment's ⋯ — stays a
     bottom sheet, as iOS and Material draw one; it opts out with `data-sheet="menu"`.
+  - **...and so does every card popup** (owner 2026-10-24: "like an actual page on itself"): the ~20
+    popups that were a rounded card centred or pinned near the top over a dimmed page (Settings,
+    Feedback, Rate app, Privacy, About us, Data request, Form a crew, Year in review, a climber's profile,
+    Report climber, the résumé, Your contributions, Friends, Notifications, Share profile, both Log a
+    climb forms, Add a climb, Contribute info, a trip report, a shared list, the topo) open as a
+    full-height page in the 520px column, scrolling inside themselves, from a second rule beside the
+    first one (`align-items: center` / `flex-start` on a `role="dialog"` backdrop). Two kinds opt out
+    with `data-sheet`: the delete-account confirm (`"alert"` — Material keeps a small centred dialog
+    for an urgent yes/no) and the photo viewers (`"viewer"`, already a black full-screen lightbox).
+    The page behind is locked by `useDialogA11y` in `lib/dialogA11y.js`, as for every dialog.
+  - **A popup's ✕ and ← Back stay on screen** (owner 2026-10-24: "need to be sticky when a popup page
+    comes up"): the header row holding a popup's Close…/Back… button is pinned to the top of the pane
+    that scrolls, and the content scrolls under it — Material's full-screen dialog and iOS's sheet both
+    keep the close in a top bar like this. One function does it for every open popup, `pinDismiss` in
+    `lib/dialogA11y.js` (run by `pinLayers` on each change while a popup is open), so no popup was
+    edited and a new one is covered too. It pins only a ROW (at most 120px tall) at the TOP of its pane,
+    so a Back at the foot of a step stays where it is. Two needed hand fixes: the trip report's ✕ and
+    share float over the cover photo in a zero-height sticky bar, and the sign-in sheet is portalled to
+    `<body>` (it rendered inside `#appscroll`, under the app header, which hid its ✕). Hidden file
+    inputs (`.cm-file-input`) are `position:fixed`, so they no longer stretch a popup's backdrop into a
+    second scroller that carried Log a climb off the screen. `check:pinned-dismiss` walks every popup.
 - **Desktop (1024px and wider) — the website shell:**
   - A full-width sticky **top bar** (64px): ☰ Menu at the far left, the ClimbMatch wordmark (→ Home), a
     search box for every climb and place (`/` jumps to it; arrow keys and Enter pick a hit), then
@@ -65,6 +86,7 @@ room for side-panel ads later. The phone app keeps its own look.
   - Controls brighten under the mouse; the browser tab names the page (*Coleman-Deming – ClimbMatch*).
 
 - **Loading screen and the sign-in screen.** While the bundle downloads, `index.html` paints a branded splash (`#cm-splash`: the app mark, wordmark and a moving bar; still under reduced motion) over the boot shell; while App restores the session it draws the same splash (`BootSplash`, `lib/BootSplash.jsx`) instead of a blank page. As the app's first screen (the real gate, or `LOGIN_FIRST`), the sign-in screen (`lib/AuthModal.jsx`) fills the screen under a branded header (the mark, the wordmark and what the app is for) instead of drawing a modal over a black page; opened from inside the app it is still the modal.
+- **The sign-in look carries into the app.** Every screen header (`ScreenHero`, `lib/ScreenHero.jsx`) wears the sign-in screen's blue top glow (`HERO_BG`, `HERO_SHEEN`), as do the Me card, a climber's profile header and an area without a cover photo. Home's banner has the sign-in background itself (`HOME_GLOW`) and the mark (`BrandMark`, `src/components/BrandMark.tsx`) beside the wordmark; the Menu's header is the mark and wordmark too. The four icon squares at the top right are one plain dark style; their count badges carry the colour. Disclosure rows end in one chevron (`Chevron`, `src/components/Chevron.tsx`) instead of ▸/▾ text glyphs. Each header's line under the title is one short line.
 
 ## 2. How it works
 `useWideScreen()` / `useFullWidth()` (in `lib/wideLayout.js`) are `matchMedia` hooks on `WIDE_MIN` (1024)
@@ -100,10 +122,13 @@ below the top bar) do not trip it. Any new fixed desktop panel must not either.
 | `lib/wideLayout.js` | `useWideScreen`, `useFullWidth`, `wideGeom`, `wideColumn`, `wideSidebar`, `wideRail`, `wideTopBar`, `wideTopRow`, `wideCss`, `WIDE_MIN`, `FULL_MIN` |
 | `lib/MonthGrid.jsx` | `MonthGrid` |
 | `lib/DesktopShell.jsx` | `WideSearch`, `WideRail`, `WideFooter`, `DocTitle` |
-| `lib/dialogA11y.js` | `coveringLayer` |
+| `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers` |
 | `ClimbMatch.jsx` | `NAV`, `goTab`, `navBadge`, `_inChat`, `_known`, `_openMe`, `_closePages`, `_pageView` |
 | `index.html` | `#cm-boot`, `.b-nav`, `#cm-splash` |
 | `lib/BootSplash.jsx` | `BootSplash` |
+| `lib/ScreenHero.jsx` | `ScreenHero`, `HERO_BG`, `HERO_SHEEN`, `HOME_GLOW` |
+| `src/components/BrandMark.tsx` | `BrandMark` |
+| `src/components/Chevron.tsx` | `Chevron` |
 
 ## 4. Data
 Layout only. The footer reads the states list (`useStates`); the search reads the catalog.
@@ -117,6 +142,7 @@ Layout only. The footer reads the states list (`useStates`); the search reads th
 `check:zindex`. The browser walks drive a phone-width window, so they cover the phone layout only.
 
 ## 7. Last significant change
+- **The sign-in look, app-wide** (owner, 2026-10-24): header glow, branded Home banner and Menu header, plain top-right icons, one chevron, one-line header text, Logbook sort & filter folded, Climbs regions as cards on a phone.
 - **Narrower desktop** (owner, 2026-10-22): 640px column, action buttons sized to their label, Messages pane 280px.
 - **Desktop phase 4e**: chats in the right rail (`RailChats` in `lib/DesktopShell.jsx`).
 - **Desktop phase 4b**: the Calendar's month view (`MonthGrid`).

@@ -110,8 +110,12 @@
          beside — a native file input, and those inputs were display:none: a display:none input
          cannot take focus and a label never can, so nobody on a keyboard could attach a photo
          anywhere in the app. Visually hidden instead, the input stays in the tab order and
-         Enter/Space opens the picker; the ring goes on the label a sighted user sees. */
-      .cm-file-input { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+         Enter/Space opens the picker; the ring goes on the label a sighted user sees.
+         FIXED, not absolute (2026-10-24): an absolute input keeps its place in the flow but belongs
+         to the nearest POSITIONED box, which inside a popup is the fixed backdrop -- so the three at
+         the foot of Log a climb stretched that backdrop to 3,968px of scroll, and a drag on the
+         header carried the whole popup, ✕ and all, off the screen. */
+      .cm-file-input { position: fixed; top: 0; left: 0; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
       label:has(.cm-file-input:focus-visible), .cm-file-input:focus-visible + label { outline: 2px solid #2f81f7; outline-offset: 2px; }
       .cm-pop { animation: cm-pop .42s cubic-bezier(.2,.8,.2,1) both; }
       .cm-burst { animation: cm-burst .85s ease-out forwards; }
@@ -162,6 +166,17 @@
       @media (max-width: 1023.98px) {
         [role="dialog"][style*="align-items: flex-end"]:not([data-sheet="menu"]) { align-items: stretch !important; }
         [role="dialog"][style*="align-items: flex-end"]:not([data-sheet="menu"]) > div { height: 100% !important; max-height: none !important; box-sizing: border-box !important; border-radius: 0 !important; border-left: none !important; border-right: none !important; border-top: env(safe-area-inset-top, 0px) solid transparent !important; border-bottom: env(safe-area-inset-bottom, 0px) solid transparent !important; box-shadow: none !important; overflow-y: auto; overscroll-behavior: contain; }
+        /* ...and so does every CARD popup (owner 2026-10-24: "When a page pops up, I would like it to
+           fill the whole screen. Like an actual page on itself"). Settings, Feedback, Privacy, About us,
+           a climber's profile, Log a climb, a trip report and the rest were a rounded card centred, or
+           pinned near the top, over the dimmed page -- a backdrop with align-items:center or flex-start
+           and the card as its child. Here the card becomes the page: the full height of the screen, the
+           app's 520px column wide, its own scroller. Material keeps a small centred dialog for an ALERT
+           alone (a yes/no about something urgent), so the delete-account confirm opts out with
+           data-sheet="alert"; the photo viewers are already a black full-screen lightbox and opt out with
+           data-sheet="viewer". */
+        [role="dialog"][style*="align-items: center"]:not([data-sheet]), [role="dialog"][style*="align-items: flex-start"]:not([data-sheet]) { align-items: stretch !important; padding: 0 !important; }
+        [role="dialog"][style*="align-items: center"]:not([data-sheet]) > div, [role="dialog"][style*="align-items: flex-start"]:not([data-sheet]) > div { width: 100% !important; max-width: 520px !important; height: 100% !important; min-height: 0 !important; max-height: none !important; margin: 0 !important; box-sizing: border-box !important; border-radius: 0 !important; border-left: none !important; border-right: none !important; border-top: env(safe-area-inset-top, 0px) solid transparent !important; border-bottom: env(safe-area-inset-bottom, 0px) solid transparent !important; box-shadow: none !important; overflow-y: auto !important; overscroll-behavior: contain; }
       }
       /* Links dim on press rather than shrink — scaling a run of inline text reads as a glitch. */
       a[href]:active { opacity: 0.7; }
@@ -267,7 +282,7 @@
         <div class="b-card"><div class="b-line cm-shimmer" style="width:44%"></div><div class="b-line cm-shimmer" style="width:80%"></div></div>
         <div class="b-card"><div class="b-line cm-shimmer" style="width:66%"></div><div class="b-line cm-shimmer" style="width:52%"></div></div>
       </div>
-      <div class="b-nav"><div><b></b>Home</div><div><b></b>Climbs</div><div><b></b>Partners</div><div><b></b>Crews</div><div><b></b>Logbook</div><div><b></b>Ranks</div></div>
+      <div class="b-nav"><div><b></b>Home</div><div><b></b>Climbs</div><div><b></b>Partners</div><div><b></b>Crews</div><div><b></b>Logbook</div><div><b></b>Ranks</div><div><b></b>Profile</div></div>
     </div></div>
     <script type="module" src="/main.jsx"></script>
   </body>

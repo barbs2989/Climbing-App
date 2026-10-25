@@ -7,7 +7,7 @@
 import { useState } from "react";
 
 export const EditIconButton = ({ onClick, title, C }) => (
-  <button onClick={onClick} title={title} aria-label={title} style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "8px 12px", borderRadius: 8, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue, fontSize: 11, fontWeight: 700, cursor: "pointer", flexShrink: 0, whiteSpace: "nowrap" }}>{"✎ Edit"}</button>
+  <button onClick={onClick} title={title} aria-label={title} style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "8px 12px", borderRadius: 8, border: "1px solid " + C.blueDim, background: C.blueBg, color: "#fff", fontSize: 11, fontWeight: 700, cursor: "pointer", flexShrink: 0, whiteSpace: "nowrap" }}>{"✎ Edit"}</button>
 );
 
 export function CopyCoordButton({ lat, lng, what, C }) {

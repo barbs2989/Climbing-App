@@ -6,15 +6,21 @@
 //
 // It lives in lib/ rather than ClimbMatchCore.jsx so DbAreaBrowser, which does not import core,
 // draws the same box (it used to keep its own copies of these two colours).
-export const HERO_BG = "linear-gradient(160deg,#0a0e16,#142a47)";
-export const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07)";
+// The sign-in screen's look (#2687) carried into every header: a blue glow from the top centre
+// fading into the page background (#0d1117 is C.bg, written out because DbAreaBrowser does not
+// import core), and a soft blue shadow under the box. Was a flat 160deg navy gradient.
+export const HERO_BG = "radial-gradient(130% 120% at 50% 0%, #10264a 0%, #0d1117 78%)";
+// Home's banner wears the sign-in screen's own background, unchanged: Home is the screen you land
+// on from it, so the hand-over keeps the same light.
+export const HOME_GLOW = "radial-gradient(120% 100% at 50% 0%, #10264a 0%, #0d1117 70%)";
+export const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07), 0 10px 26px -14px rgba(47,129,247,0.4)";
 
 // `right` sits beside the title (a Save button); `children` run under the line (a count, a button).
 export function ScreenHero({ C, title, sub, right, children, mb = 14 }) {
   return (
     <div style={{ background: HERO_BG, boxShadow: HERO_SHEEN, borderRadius: 14, padding: 16, marginBottom: mb, border: "1px solid " + C.border }}>
       <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
-        <h1 style={{ flex: 1, minWidth: 0, margin: 0, fontSize: 22, fontWeight: 800, letterSpacing: -0.4, lineHeight: 1.25, color: C.text, overflowWrap: "anywhere" }}>{title}</h1>
+        <h1 style={{ flex: 1, minWidth: 0, margin: 0, fontSize: 24, fontWeight: 800, letterSpacing: -0.5, lineHeight: 1.25, color: C.text, overflowWrap: "anywhere" }}>{title}</h1>
         {right || null}
       </div>
       {sub ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginTop: 4 }}>{sub}</div> : null}

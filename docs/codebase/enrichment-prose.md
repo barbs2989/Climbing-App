@@ -25,6 +25,13 @@ value, put the reasoning somewhere else.**
   `seasonShort()` in `RouteDetail.jsx` defends the header by matching a month range and
   falling back to a cut at `;`/`.`/`(` — but it is a *repair*, and it can only ever show
   less than what was written.
+  - **Audited 2026-10-24 over all 1,035 non-null values**: 14 still read wrong in the header —
+    9 cut mid-sentence (`"Summer only, and typically…"`), one that lost its end (`"Late May"` from
+    `"Late May (when the White River Road opens) through August"`) and one that INVERTED the row
+    (`"good in cold weather; avoid May-Sep"` showed `"May-Sep"`). The rows were rewritten to the
+    window (`scripts/oneoff/fix-header-season-windows.mjs`); `seasonShort` now skips a window its
+    own clause negates (`avoid`/`not`/`except`/`outside`), and `seasonTidy` spells every month
+    pair one way. Re-run the audit after any enrichment batch that writes `season`.
   - **Shortening is only half a fix; audit what the box ACTUALLY SAYS afterwards.** When the
     same defence was pointed at `approach_variants[].season`, **15% (132 of 885)** fell through
     to its last-resort truncation and read as nonsense — `"Roughly January through the e…"`,
@@ -130,3 +137,22 @@ column reaches a screen, and all three of these did — correctly, in full, in t
   `longForm:true` so the paragraph and the route-level miles/gain hang under the right card. Give every variant a `season` that says why you would pick it over the main one —
   two variants that both read `"Jul-Sep"` leave a climber no reason to choose. A crossing only
   shows its *Stream crossing* chip when it is in that variant's `hazards`, not its `notes`.
+
+## Every word must be our own
+
+Facts may come from Mountain Project, a blog, a guidebook or a trip report; the sentences may not.
+The owner set the rule on 2026-10-01 — reword so nobody could tell where it came from, keep it
+accurate, and name no source — and #2142 rewrote 292 copied strings that day. Grades, lengths,
+pitch and bolt counts and anchor types are facts and can be stored as found. Pitch notes,
+approach, descent, hazard and overview text cannot: deleting words from the source's sentence while
+keeping its order is not a rewrite.
+
+- **Enforced at the write, since 2026-10-24.** `enrich:apply` fetches every URL in the batch's
+  `review.sources` and refuses a string that shares a run of 8+ words with one of them
+  (`scripts/lib/source-overlap.mjs`). It was added because the brief alone did not hold: the
+  #2655 pitch wave, written under "do not copy any run of 4+ words", shipped 74 strings on 21 of
+  its 25 routes that repeated their sources, rewritten by `audits/pitch-rappel-detail/2026-10-24-copied-prose-rewrites.json`.
+- **List the pages you read.** A batch with no `review.sources` is checked against nothing, and a
+  source that will not load (SummitPost and theCrag refuse scripts) is warned about, not counted as
+  clean. Research from a book or a non-loading page still has to be reworded by hand.
+- **Check a batch before review:** `npm run audit:copied-prose -- <batch.json>`.

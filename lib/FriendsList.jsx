@@ -31,7 +31,7 @@ export default function FriendsList({routeById,unavailable,friends,onClose,onOpe
     return pubName(a).replace(/^@/,"").localeCompare(pubName(b).replace(/^@/,""));
   });
   const SORTS=[["shared","Shared goals"],["active","Active"],["name","A–Z"]];
-  const chipStyle=(on)=>({flexShrink:0,padding:"9px 11px",borderRadius:14,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.blue:C.textSub,fontSize:12,fontWeight:600,cursor:"pointer",whiteSpace:"nowrap"});
+  const chipStyle=(on)=>({flexShrink:0,padding:"9px 11px",borderRadius:14,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?"#fff":C.textSub,fontSize:12,fontWeight:600,cursor:"pointer",whiteSpace:"nowrap"});
   return <div onClick={onClose} role="dialog" aria-label="Friends" aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.85)",zIndex:1150,overflowY:"auto",overscrollBehavior:"contain",display:"flex",alignItems:"flex-start",justifyContent:"center",padding:"12px 8px"}}>
     <div onClick={e=>e.stopPropagation()} style={{background:C.surface,borderRadius:18,width:"100%",maxWidth:460,border:"1px solid "+C.border,overflow:"hidden"}}>
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"14px 16px",borderBottom:"1px solid "+C.border}}><div style={{color:C.text,fontSize:17,fontWeight:700,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{"Friends ("+friends.length+")"}</div><button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div>

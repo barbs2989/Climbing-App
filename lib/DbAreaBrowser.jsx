@@ -22,6 +22,7 @@ import { useWideScreen } from "./wideLayout.js";
 import { ScreenHero } from "./ScreenHero";
 import { AboutCard, AreaFactsCard, ClimbsChart, GradeSpread, PendingAreaEdits } from "./AreaPageSections";
 import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_LINE, NO_PARKING_PIN_BUT_NOTE_LINE } from "./areaChrome";
+import Chevron from "../src/components/Chevron.tsx";
 
 // Grade for a compact row. Two things happen inside displayGrade(): a qualifier carried inline
 // ("Class 3 (short 4th-class crux)") is dropped, and the route page's Composite Grade panel shows
@@ -150,7 +151,7 @@ function DbSuggestedClimbs({ area, onOpen, C }) {
     <div style={{ marginTop: 14 }}>
       <button onClick={() => setOpen(o => !o)} aria-expanded={open} style={{ width: "100%", display: "flex", alignItems: "center", gap: 9, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", cursor: "pointer" }}>
         <span style={{ flex: 1, textAlign: "left", fontSize: 13.5, fontWeight: 700, color: C.text }}>{"Suggested climbs · " + total}</span>
-        <span style={{ color: C.blue, fontSize: 13, fontWeight: 700 }}>{open ? "▾" : "▸"}</span>
+        <Chevron open={open} color={C.blue} />
       </button>
       {open ? (
         <div style={{ marginTop: 9 }}>
@@ -207,7 +208,7 @@ function StatePicker({ onPick, C }) {
             <SL C={C}>Pick a country</SL>
             {lc ? <div style={{ color: C.textMuted, fontSize: 13 }}>Loading countries…</div>
               : ec && !(countries && countries.length) ? <div style={{ color: C.red, fontSize: 12.5 }}>{"Couldn’t load countries — the " + noun + "s below are every one we have."}</div>
-              : <div role="radiogroup" aria-label="Country" style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>{(countries || []).map(c => { const on = country === c.id; return <button key={c.id} role="radio" aria-checked={on} onClick={() => setCountryId(on ? "" : c.id)} style={{ padding: "9px 14px", borderRadius: 999, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.card, color: on ? C.blue : C.text, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>{c.name}{c.route_count != null ? <span style={{ color: on ? C.blue : C.textMuted, fontWeight: 600 }}>{" · " + c.route_count.toLocaleString()}</span> : null}</button>; })}</div>}
+              : <div role="radiogroup" aria-label="Country" style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>{(countries || []).map(c => { const on = country === c.id; return <button key={c.id} role="radio" aria-checked={on} onClick={() => setCountryId(on ? "" : c.id)} style={{ padding: "9px 14px", borderRadius: 999, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.card, color: on ? "#fff" : C.text, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>{c.name}{c.route_count != null ? <span style={{ color: on ? C.blue : C.textMuted, fontWeight: 600 }}>{" · " + c.route_count.toLocaleString()}</span> : null}</button>; })}</div>}
           </div>
         )}
         <SL C={C}>{`Pick a ${noun}`}</SL>
@@ -220,6 +221,10 @@ function StatePicker({ onPick, C }) {
       </div>
     );
   }
+  const phoneGrid = { display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 8 };
+  const phoneCard = { textAlign: "left", minWidth: 0, minHeight: 56, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", cursor: "pointer", color: C.text, fontFamily: "inherit" };
+  const phoneCardName = { fontSize: 14, fontWeight: 700, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" };
+  const phoneCardSub = { fontSize: 12, color: C.textMuted, marginTop: 2 };
   const selStyle = { width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600 };
   return (
     <div style={{ marginBottom: 14 }}>
@@ -251,6 +256,23 @@ function StatePicker({ onPick, C }) {
         {inCountry.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
       </select>
       <div style={{ fontSize: 12, color: C.textMuted, marginTop: 9, lineHeight: 1.5 }}>Tap through to drill in to its crags and climbs. Open any area's route list to filter and search by type, grade, stars and more.</div>
+      {/* THE SAME LIST AS CARDS under the selects (2026-10-24). On a phone this screen was two
+          dropdowns over a screen of empty dark space; the website already lays the countries and
+          regions out as cards, the way Mountain Project's directory does. Same data and same
+          onPick/setCountryId as the selects above, which stay (check:ui drives them), so the
+          cards add a way in and take none away. Nothing new is loaded. */}
+      {!country && !noCountryStep && countries && countries.length > 1 ? (
+        <div style={{ marginTop: 16 }}>
+          <SL C={C}>Countries</SL>
+          <div style={phoneGrid}>{countries.map(c => <button key={c.id} onClick={() => setCountryId(c.id)} style={phoneCard}><div style={phoneCardName}>{c.name}</div>{c.route_count != null ? <div style={phoneCardSub}>{c.route_count.toLocaleString() + (c.route_count === 1 ? " climb" : " climbs")}</div> : null}</button>)}</div>
+        </div>
+      ) : null}
+      {(country || noCountryStep) && inCountry.length ? (
+        <div style={{ marginTop: 16 }}>
+          <SL C={C}>{`All ${noun}s`}</SL>
+          <div style={phoneGrid}>{inCountry.map(s => <button key={s.id} onClick={() => onPick(s)} style={phoneCard}><div style={phoneCardName}>{s.name}</div>{s.route_count != null ? <div style={phoneCardSub}>{s.route_count.toLocaleString() + (s.route_count === 1 ? " climb" : " climbs")}</div> : null}</button>)}</div>
+        </div>
+      ) : null}
       {isLoading ? <div style={{ color: C.textMuted, fontSize: 12, marginTop: 8 }}>Loading states…</div> : null}
       {/* Same split: red is for "you have nothing", muted is for "this may be out of date".
           Telling someone to check their connection is useless advice when the list they
@@ -621,7 +643,7 @@ function PartnersHereCard({ area, C, uid, myListings, onListMe, onFindPartnersIn
       {on && rows.length && PartnerRow ? <div style={{ marginTop: 6 }}>{rows.map((p) => <PartnerRow key={p.id} p={p} onOpen={onViewProfile} />)}</div> : null}
       {on && (count > 0 || rows.length) ? <button onClick={openAll} style={{ ...BTN_LINK(C), padding: "6px 0 0", fontSize: 12.5 }}>{"See all at " + area.name + " →"}</button> : null}
       {onStartCrew || onCrewsHere ? <div style={{ display: "flex", gap: 8, marginTop: 10, paddingTop: 10, borderTop: "1px solid " + C.border }}>
-        {onStartCrew ? <button onClick={() => onStartCrew(area)} style={{ ...BTN, flex: 1, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue }}>Start a crew here</button> : null}
+        {onStartCrew ? <button onClick={() => onStartCrew(area)} style={{ ...BTN, flex: 1, border: "1px solid " + C.blueDim, background: C.blueBg, color: "#fff" }}>Start a crew here</button> : null}
         {onCrewsHere ? <button onClick={() => onCrewsHere(area)} style={{ ...BTN, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>{"Crews here" + (crewN ? " · " + crewN : "")}</button> : null}
       </div> : null}
     </div>
@@ -721,8 +743,11 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
           {/* The Fire map entry. It used to be a full-width card at the very top of the Climbs
               tab, above the path and the area itself; it lives here now, on the area it opens
               focused on. It makes no claim about whether anything is burning — the map is where
-              that data lives, and it is honest about loading and failing. */}
-          {onFireMap ? (
+              that data lives, and it is honest about loading and failing. It is not drawn on a
+              country or state page — the first screen after the country/state picker — which is
+              far too broad a place to ask "is anything burning near here?" (owner, 2026-10-24); it
+              starts at the range, the first level with a place to focus on, as Save does. */}
+          {onFireMap && area.area_type !== "country" && area.area_type !== "state" ? (
             <button onClick={() => onFireMap(area)} aria-label={"Fire map — active wildfires and red-flag warnings near " + area.name} style={{ flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 7, minHeight: 44, background: C.redBg, border: "1px solid " + C.red + "66", color: C.red, borderRadius: 11, padding: "0 16px", fontSize: 14.5, fontWeight: 800, cursor: "pointer", whiteSpace: "nowrap" }}>
               <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2c1 3.5 5 6 5 11a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.7 1.2 2.7 2.5 3 0-3.5-1-6.5 0-9z" /></svg>
               {"Fire map"}
@@ -740,7 +765,7 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
       {chartable ? <ClimbsChart stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={DISCIPLINES.map(d => d[0]).filter(Boolean)} onDisc={onFinder}><GradeSpread stats={stats.data} C={C} /></ClimbsChart> : null}
 
       {area.route_count > 0 ? (
-        <button onClick={onFinder} style={{ ...BTN_LG, width: "100%", marginBottom: 8, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
+        <button onClick={onFinder} style={{ ...BTN_LG, width: "100%", marginBottom: 8, border: "1px solid " + C.blue, background: C.blueBg, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
           {"Route finder"}<span style={{ fontSize: 16 }}>{"→"}</span>
         </button>
       ) : null}
@@ -759,7 +784,7 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
           somewhere you can actually park (check:area-surfaces reads this gate). */}
       {["crag", "peak", "wall"].includes(area.area_type) ? <AreaGettingThere area={area} C={C} onEdit={editOn} /> : null}
       {PARTNER_CARD_TYPES.includes(area.area_type) ? <PartnersHereCard area={area} C={C} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} PartnerRow={PartnerRow} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} /> : null}
-      <button onClick={onAllAreas} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, marginBottom: 14 }}>All areas</button>
+      <button onClick={onAllAreas} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.blue, background: C.blueBg, color: "#fff", marginBottom: 14 }}>All areas</button>
       {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} endRef={listEndRef} /> : null}
 
       {/* Sits directly above the route rows it summarises, so the page reads: this is the
@@ -888,6 +913,29 @@ const lenLabel = (o, uElevN, uElevUnit) => {
   if (o[2] == null) return uElevN(o[1]) + "+ " + u;
   return uElevN(o[1]) + "–" + uElevN(o[2]) + " " + u;
 };
+// GAIN, ROUND TRIP, PEAK ELEVATION, PROMINENCE and DISTANCE AWAY (owner, 2026-10-24: "filter peaks
+// and routes by prominence, elevation gain, miles, etc ... Also by location and distance away").
+// AllTrails offers length and elevation gain as ranges and "Distance away" as a radius around you
+// or a place you pick; Peakbagger lists peaks by elevation and prominence. Each bucket is written
+// in ROUND numbers of BOTH unit systems — [key, imperial [lo, hi], metric [lo, hi]] — rather than
+// one set converted, which would offer a metric climber "305–914 m". The key is shared, so a saved
+// search keeps its meaning when the unit setting changes. What each reads is 0369's header.
+const FT_PER_M = 3.28084, KM_PER_MI = 1.60934;
+const GAIN_BUCKETS = [["any"], ["g1", [null, 1000], [null, 300]], ["g2", [1000, 3000], [300, 900]], ["g3", [3000, 5000], [900, 1500]], ["g4", [5000, null], [1500, null]]];
+const TRIP_BUCKETS = [["any"], ["t1", [null, 5], [null, 8]], ["t2", [5, 10], [8, 16]], ["t3", [10, 15], [16, 25]], ["t4", [15, null], [25, null]]];
+const PEAK_ELEV_MINS = [["any"], ["e1", 5000, 1500], ["e2", 8000, 2500], ["e3", 10000, 3000], ["e4", 12000, 3500], ["e5", 14000, 4000]];
+const PROM_MINS = [["any"], ["p1", 1000, 300], ["p2", 2000, 600], ["p3", 3000, 1000], ["p4", 5000, 1500]];
+const WITHIN = [["w1", 10, 15], ["w2", 25, 40], ["w3", 50, 80], ["w4", 100, 150]];
+const isMetric = uElevUnit => uElevUnit() === "m";
+const fmtN = n => n.toLocaleString("en-US");
+const rangeLabel = (o, metric, unit) => {
+  if (!o || o[0] === "any") return "Any";
+  const [lo, hi] = metric ? o[2] : o[1];
+  return lo == null ? "< " + fmtN(hi) + " " + unit : hi == null ? fmtN(lo) + "+ " + unit : fmtN(lo) + "–" + fmtN(hi) + " " + unit;
+};
+const minLabel = (o, metric, unit) => !o || o[0] === "any" ? "Any" : fmtN(metric ? o[2] : o[1]) + "+ " + unit;
+const withinLabel = (o, metric, unit) => (metric ? o[2] : o[1]) + " " + unit;
+const findB = (list, k) => list.find(o => o[0] === k) || null;
 /* The grade options a range can be set from, per grading system, on the SAME number line as
    gradeNumFrom (lib/grade.js). Each entry is [label, lo, hi]: `lo` is the bound used when the
    grade is the MINIMUM, `hi` when it is the MAXIMUM, so a pick means "this grade" at either end.
@@ -935,8 +983,8 @@ const discLabel = d => (DISCIPLINES.find(x => x[0] === d) || [, d])[1];
 // Wall order first (owner, 2026-10-21: "grouped by area such as crag or wall so they show up in
 // order"): each wall's climbs together, left to right, under the wall's name.
 const FINDER_SORTS = [["lr", "By wall, left → right"], ["rl", "By wall, right → left"], ["name", "Name A→Z"], ["name_desc", "Name Z→A"], ["stars_desc", "Most starred"]];
-const SORT_PHRASE = { name: "name", name_desc: "name (Z→A)", area: "wall", lr: "wall, left to right", rl: "wall, right to left", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred" };
-const GROUPED_SORTS = { area: 1, lr: 1, rl: 1 };
+const SORT_PHRASE = { name: "name", name_desc: "name (Z→A)", area: "wall", lr: "wall, left to right", rl: "wall, right to left", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred", near: "nearest first" };
+const GROUPED_SORTS = { area: 1, lr: 1, rl: 1, near: 1 };
 // A whole state (or more) is not listed until an area in it is picked or a name is typed: an
 // unfiltered California list took 3.3 s in the database (2026-10-21), and nobody pages through
 // 44,000 climbs. Mountain Project's Route Finder starts from a Location the same way.
@@ -944,12 +992,23 @@ const FINDER_NEEDS_AREA = { world: 1, country: 1, state: 1 };
 const gradeRangeLabel = (lo, hi) => lo && hi ? (lo === hi ? lo : lo + "–" + hi) : lo ? lo + " and up" : hi ? "Up to " + hi : "";
 // One filter state -> the RPC's arguments. Shared by the applied query and the sheet's draft
 // count, so the number on "Show N routes" is the number the list then shows.
-const finderArgs = (q, f) => {
+// `metric` decides which of a bucket's two bound sets is meant; the RPC always takes feet and km.
+const finderArgs = (q, f, metric) => {
   const len = LEN_BUCKETS.find(l => l[0] === f.len) || LEN_BUCKETS[0];
   const sc = gradeScaleFor(f.discs, f.gSys);
   const lo = sc && f.gLo ? sc.find(o => o[0] === f.gLo) : null, hi = sc && f.gHi ? sc.find(o => o[0] === f.gHi) : null;
-  return { q, disc: f.discs.join(","), gradeSys: (lo || hi) && f.discs.some(d => GRADE_SYS_FILTERED[d]) ? gradeSysFor(f.discs, f.gSys) : null, minGrade: lo ? lo[1] : null, maxGrade: hi ? hi[2] : null, minStars: f.minStars || null, minPitches: f.minPitches || null, minLengthM: len[3], maxLengthM: len[4], sortBy: f.sortBy };
+  const g = findB(GAIN_BUCKETS, f.gain), t = findB(TRIP_BUCKETS, f.trip), e = findB(PEAK_ELEV_MINS, f.elev), p = findB(PROM_MINS, f.prom), w = f.near && findB(WITHIN, f.within);
+  const gr = g && g[1] ? (metric ? g[2].map(v => v == null ? null : Math.round(v * FT_PER_M)) : g[1]) : [null, null];
+  const tr = t && t[1] ? (metric ? t[2] : t[1].map(v => v == null ? null : v * KM_PER_MI)) : [null, null];
+  return { q, disc: f.discs.join(","), gradeSys: (lo || hi) && f.discs.some(d => GRADE_SYS_FILTERED[d]) ? gradeSysFor(f.discs, f.gSys) : null, minGrade: lo ? lo[1] : null, maxGrade: hi ? hi[2] : null, minStars: f.minStars || null, minPitches: f.minPitches || null, minLengthM: len[3], maxLengthM: len[4], sortBy: f.sortBy === "near" && !f.near ? "lr" : f.sortBy,
+    minGainFt: gr[0], maxGainFt: gr[1], minTripKm: tr[0], maxTripKm: tr[1],
+    minElevFt: e && e[1] ? (metric ? Math.round(e[2] * FT_PER_M) : e[1]) : null, minPromFt: p && p[1] ? (metric ? Math.round(p[2] * FT_PER_M) : p[1]) : null,
+    nearLat: f.near ? f.near.lat : null, nearLng: f.near ? f.near.lng : null, withinKm: w ? (metric ? w[2] : w[1] * KM_PER_MI) : null };
 };
+// Filters that narrow the AREAS before any climb is read (0369) make a whole state cheap to search,
+// so they lift FINDER_NEEDS_AREA. Gain and round trip are read climb by climb and do not: alone
+// over California they took 3.6 s cold, past the 3 s statement timeout (2026-10-24).
+const narrowsAreas = f => !!(f.near || (f.elev && f.elev !== "any") || (f.prom && f.prom !== "any"));
 // PINS a bar under the app's own top bar once the page scrolls past it. Not CSS sticky: #appscroll
 // is overflow:auto but grows to its content on a phone, where the DOCUMENT scrolls, and a sticky
 // child of a scroll container that never scrolls never sticks. The pin line is the bottom of the
@@ -995,7 +1054,8 @@ function usePinnedBar(endRef) {
 }
 function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute, onAddClimb, onAddArea }) {
   const { wishlist } = useContext(ClimberCtx);
-  const DEF = { discs: [], sortBy: "lr", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "" };
+  const DEF = { discs: [], sortBy: "lr", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "", gain: "any", trip: "any", elev: "any", prom: "any", near: null, within: "w2" };
+  const metric = isMetric(uElevUnit);
   // A chart bar on the area page opens the finder already narrowed to its discipline.
   const DEF0 = presetDisc ? { ...DEF, discs: [presetDisc] } : DEF;
   // LOCATION: where the search runs. Starts as the area the finder was opened from; on a state it
@@ -1006,14 +1066,36 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   // The query follows the box a beat behind, so typing "castle" is one search, not six.
   const [qD, setQD] = useState("");
   useEffect(() => { const t = setTimeout(() => setQD(q), 250); return () => clearTimeout(t); }, [q]);
-  const needsArea = !!FINDER_NEEDS_AREA[loc.area_type] && !qD.trim();
+  const needsAreaFor = f => !!FINDER_NEEDS_AREA[loc.area_type] && !qD.trim() && !narrowsAreas(f);
   const [saveFor, setSaveFor] = useState(null);
   const { wrapRef: barWrap, barRef, pin } = usePinnedBar();
   // Routes | Areas. One text box serves both, so switching carries what you typed across.
   const [mode, setMode] = useState("routes");
   const [af, setAf] = useState(DEF0);
   const [df, setDf] = useState(DEF0);
+  const needsArea = needsAreaFor(af);
   const [sheet, setSheet] = useState(false);
+  // DISTANCE AWAY's point: your device's location, or a town / zip you type (AllTrails offers both).
+  const [nearQ, setNearQ] = useState("");
+  const [nearSt, setNearSt] = useState({ busy: false, err: "", hits: [] });
+  const pickNear = pt => { setNearSt({ busy: false, err: "", hits: [] }); setNearQ(""); setDf(d => ({ ...d, near: pt, sortBy: "near" })); };
+  const locateMe = () => {
+    if (typeof navigator === "undefined" || !navigator.geolocation) { setNearSt({ busy: false, err: "Location isn’t available on this device — type a town or zip code instead.", hits: [] }); return; }
+    setNearSt({ busy: true, err: "", hits: [] });
+    navigator.geolocation.getCurrentPosition(
+      pos => pickNear({ lat: pos.coords.latitude, lng: pos.coords.longitude, label: "your location" }),
+      e => setNearSt({ busy: false, err: e && e.code === 1 ? "Location is turned off for this site — allow it, or type a town or zip code." : "Couldn’t find your location — try again, or type a town or zip code.", hits: [] }),
+      { enableHighAccuracy: false, timeout: 15000, maximumAge: 300000 });
+  };
+  const findNear = () => {
+    if (!nearQ.trim()) return;
+    setNearSt({ busy: true, err: "", hits: [] });
+    searchPlaces(nearQ).then(rows => {
+      if (!rows.length) setNearSt({ busy: false, err: "No town or zip code matches “" + nearQ.trim() + "”.", hits: [] });
+      else if (rows.length === 1) pickNear({ lat: rows[0].lat, lng: rows[0].lng, label: rows[0].name });
+      else setNearSt({ busy: false, err: "", hits: rows });
+    }, () => setNearSt({ busy: false, err: "Couldn’t look that place up — check your connection and try again.", hits: [] }));
+  };
   const [savedSearches, setSavedSearches] = useState([]);
   const [showSaved, setShowSaved] = useState(false);
   const [page, setPage] = useState(0);
@@ -1024,7 +1106,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   const gScale = gradeScaleFor(af.discs, af.gSys);
   const gLoO = gScale && af.gLo ? gScale.find(o => o[0] === af.gLo) : null;
   const gHiO = gScale && af.gHi ? gScale.find(o => o[0] === af.gHi) : null;
-  const queryArgs = { ...finderArgs(qD, af), page };
+  const queryArgs = { ...finderArgs(qD, af, metric), page };
   const { data: batch, isLoading: lr0, error } = useSubtreeRoutes(needsArea ? null : loc.id, queryArgs);
   const { data: total } = useSubtreeRouteCount(needsArea ? null : loc.id, queryArgs);
   // A disabled query can still report loading; while the area picker shows, nothing is loading.
@@ -1033,7 +1115,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   // The sheet's button says how many routes the DRAFT would show ("Show 212 routes"), as
   // Mountain Project's filter screen does — so a tap on it visibly does something, and a
   // combination that matches nothing is seen before the sheet is left. Queried only while open.
-  const { data: draftTotal, isFetching: draftCounting } = useSubtreeRouteCount(sheet && !needsArea ? loc.id : null, finderArgs(qD, df));
+  const { data: draftTotal, isFetching: draftCounting } = useSubtreeRouteCount(sheet && !needsAreaFor(df) ? loc.id : null, finderArgs(qD, df, metric));
   // While the sheet is open the page behind it must not scroll. The document is the scroller
   // here, and on a phone a drag past the end of the sheet moved the page instead, which slid the
   // browser's own toolbar in and out and shifted the sheet under the climber's finger.
@@ -1051,7 +1133,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   };
   const loadSearch = (search) => {
     setQ(search.q);
-    setAf(search.filters);
+    setAf({ ...DEF, ...search.filters });
     setLoc(search.loc || scope);
     setShowSaved(false);
     setPage(0);
@@ -1069,7 +1151,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   const { data: areaNames } = useAreaNamesByIds(areaIds);
   const { data: areaHits, isLoading: la, error: ea } = useAreaSearch(scope.id, mode === "areas" ? qD.trim() : "");
 
-  const nF = af.discs.length + (gLoO || gHiO ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== DEF.sortBy ? 1 : 0);
+  const nF = af.discs.length + (gLoO || gHiO ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== DEF.sortBy ? 1 : 0) + ["gain", "trip", "elev", "prom"].filter(k => af[k] && af[k] !== "any").length + (af.near ? 1 : 0);
   const afChips = [];
   // One chip per discipline; removing one keeps the grade range only if the disciplines left still
   // share its scale.
@@ -1080,16 +1162,22 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   // The APPLIED-filter chip is a second label site, and it must go through the same formatter or
   // the filter bar and the chip that says what you filtered by disagree about units.
   if (af.len !== "any") afChips.push({ k: "len", label: lenLabel(lenRange, uElevN, uElevUnit), clear: () => setAf(a => ({ ...a, len: "any" })) });
-  if (af.sortBy !== DEF.sortBy) afChips.push({ k: "sort", label: { name: "A→Z", name_desc: "Z→A", area: "By area", lr: "Left → right", rl: "Right → left", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: DEF.sortBy })) });
+  const eU = uElevUnit(), dU = metric ? "km" : "mi";
+  if (af.gain && af.gain !== "any") afChips.push({ k: "gain", label: rangeLabel(findB(GAIN_BUCKETS, af.gain), metric, eU) + " gain", clear: () => setAf(a => ({ ...a, gain: "any" })) });
+  if (af.trip && af.trip !== "any") afChips.push({ k: "trip", label: rangeLabel(findB(TRIP_BUCKETS, af.trip), metric, dU) + " round trip", clear: () => setAf(a => ({ ...a, trip: "any" })) });
+  if (af.elev && af.elev !== "any") afChips.push({ k: "elev", label: "Peak " + minLabel(findB(PEAK_ELEV_MINS, af.elev), metric, eU), clear: () => setAf(a => ({ ...a, elev: "any" })) });
+  if (af.prom && af.prom !== "any") afChips.push({ k: "prom", label: minLabel(findB(PROM_MINS, af.prom), metric, eU) + " prominence", clear: () => setAf(a => ({ ...a, prom: "any" })) });
+  if (af.near) afChips.push({ k: "near", label: "Within " + withinLabel(findB(WITHIN, af.within) || WITHIN[1], metric, dU) + " of " + af.near.label, clear: () => setAf(a => ({ ...a, near: null, sortBy: a.sortBy === "near" ? DEF.sortBy : a.sortBy })) });
+  if (af.sortBy !== DEF.sortBy) afChips.push({ k: "sort", label: { name: "A→Z", name_desc: "Z→A", area: "By area", lr: "Left → right", rl: "Right → left", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred", near: "Nearest first" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: DEF.sortBy })) });
   const inList = (l, id) => (l.routeIds || []).includes(id);
   const customLists = (userLists || []).filter(l => l.id !== "ul_obj");
   const isSaved = id => (wishlist || []).includes(id) || customLists.some(l => inList(l, id));
 
-  const rowBtn = on => ({ ...BTN_LG, flex: 1, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.text });
-  const chip = (label, on, fn) => <button key={label} onClick={fn} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
+  const rowBtn = on => ({ ...BTN_LG, flex: 1, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.text });
+  const chip = (label, on, fn) => <button key={label} onClick={fn} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
   const lab = s => <SL C={C}>{s}</SL>;
 
-  const savePill = on => ({ ...CHIP, flexShrink: 0, padding: "5px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub });
+  const savePill = on => ({ ...CHIP, flexShrink: 0, padding: "5px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub });
   const nRes = total != null ? total : all.length;
 
   return (
@@ -1114,7 +1202,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
       </div>
       {afChips.length ? (
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", marginBottom: 8 }}>
-          {afChips.map(c => <button key={c.k} onClick={c.clear} aria-label={"Remove filter: " + c.label} style={{ ...CHIP, display: "inline-flex", alignItems: "center", gap: 5, padding: "7px 10px 7px 12px", border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue }}>{c.label}<span aria-hidden="true" style={POP_CHIP_X}>✕</span></button>)}
+          {afChips.map(c => <button key={c.k} onClick={c.clear} aria-label={"Remove filter: " + c.label} style={{ ...CHIP, display: "inline-flex", alignItems: "center", gap: 5, padding: "7px 10px 7px 12px", border: "1px solid " + C.blueDim, background: C.blueBg, color: "#fff" }}>{c.label}<span aria-hidden="true" style={POP_CHIP_X}>✕</span></button>)}
           <button onClick={() => setAf(DEF)} style={{ ...BTN_LINK(C), padding: "7px 8px", color: C.textMuted, textDecoration: "underline" }}>Clear all</button>
         </div>
       ) : null}
@@ -1161,7 +1249,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
           picked; typing a climb's name searches the whole state straight away. */}
       {needsArea ? <>
         <SL C={C}>{"Pick an area in " + loc.name}</SL>
-        <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginBottom: 10 }}>{"Choose where to look and the finder lists its climbs with your filters — or type a climb's name above to search all of " + loc.name + "."}</div>
+        <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginBottom: 10 }}>{"Choose where to look and the finder lists its climbs with your filters — or type a climb's name above, or set Distance away, Peak elevation or Prominence under Filters, to search all of " + loc.name + "."}</div>
         {lk ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div> : null}
         {ek && !(locKids && locKids.length) ? <div style={{ color: C.red, fontSize: 12.5 }}>{"Couldn't load the areas in " + loc.name + " — check your connection and try again."}</div> : null}
         {(locKids || []).filter(a => a.route_count > 0).map(a => (
@@ -1190,7 +1278,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
           ) : null}
           <div style={{ display: "flex", gap: 6, alignItems: "stretch" }}>
             <RouteRow r={r} onOpen={onOpen} C={C} areaName={GROUPED_SORTS[af.sortBy] ? null : wall} />
-            {onToggleWish ? <button onClick={() => setSaveFor({ ...r, wall })} aria-haspopup="dialog" aria-label={"Save " + r.name + (saved ? ", saved" : "")} style={{ ...CHIP, flexShrink: 0, width: 44, marginBottom: 8, padding: 0, fontSize: 17, cursor: "pointer", border: "1px solid " + (saved ? C.blue : C.border), background: saved ? C.blueBg : C.card, color: saved ? C.blue : C.textSub }}><span aria-hidden="true">{saved ? "★" : "☆"}</span></button> : null}
+            {onToggleWish ? <button onClick={() => setSaveFor({ ...r, wall })} aria-haspopup="dialog" aria-label={"Save " + r.name + (saved ? ", saved" : "")} style={{ ...CHIP, flexShrink: 0, width: 44, marginBottom: 8, padding: 0, fontSize: 17, cursor: "pointer", border: "1px solid " + (saved ? C.blue : C.border), background: saved ? C.blueBg : C.card, color: saved ? "#fff" : C.textSub }}><span aria-hidden="true">{saved ? "★" : "☆"}</span></button> : null}
           </div>
         </Fragment>;
       })}
@@ -1200,7 +1288,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
       )}
       {/* A star minimum no longer empties a search (0334: unrated climbs stay in), so the
           explanation left is the grade range's: a route with no readable grade fails it. */}
-      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{(gLoO || gHiO) ? "No routes match these filters. Routes without a readable grade are hidden while a grade range is set — try widening it or setting it back to Any." : "No routes match these filters."}</div>}
+      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{(gLoO || gHiO) ? "No routes match these filters. Routes without a readable grade are hidden while a grade range is set — try widening it or setting it back to Any." : ["gain", "trip", "elev", "prom"].some(k => af[k] && af[k] !== "any") ? "No routes match these filters. Gain, round trip, peak elevation and prominence are recorded mostly for mountain routes, and climbs without the figure are hidden while one is set." : af.near ? "No routes in " + loc.name + " are that close to " + af.near.label + " — try a wider distance." : "No routes match these filters."}</div>}
       </>}
       </>}
 
@@ -1269,6 +1357,26 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
                 the page behind the sheet (the document is the scroller here), so the sheet reads as
                 stuck — the same chaining #684 fixed on the other sheets. */}
             <div style={{ padding: "0 16px 18px", overflowY: "auto", overscrollBehavior: "contain", flex: 1, minHeight: 0 }}>
+            {lab("Distance away")}
+            {df.near ? <>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: C.text, marginBottom: 8 }}>
+                <span style={{ flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{"From " + df.near.label}</span>
+                <button onClick={() => setDf(d => ({ ...d, near: null, sortBy: d.sortBy === "near" ? DEF.sortBy : d.sortBy }))} style={{ ...BTN_LINK(C), padding: "4px 2px", flexShrink: 0 }}>Change</button>
+              </div>
+              <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{WITHIN.map(o => chip("Within " + withinLabel(o, metric, dU), df.within === o[0], () => setDf(d => ({ ...d, within: o[0] }))))}</div>
+              <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>{"Measured in a straight line to each climb's crag or peak, inside " + loc.name + "."}</div>
+            </> : <>
+              <button onClick={locateMe} disabled={nearSt.busy} style={{ ...BTN_LG, width: "100%", marginBottom: 8, border: "1px solid " + C.border, background: C.surface, color: C.text }}>{nearSt.busy ? "Finding…" : "Use my location"}</button>
+              <form onSubmit={e => { e.preventDefault(); findNear(); }} style={{ display: "flex", gap: 8 }}>
+                <input aria-label="Town or zip code" value={nearQ} onChange={e => setNearQ(e.target.value)} placeholder="…or a town or zip code" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box" }} />
+                <button type="submit" disabled={nearSt.busy || !nearQ.trim()} style={{ ...BTN_LG, flexShrink: 0, border: "1px solid " + C.border, background: C.surface, color: C.text }}>Go</button>
+              </form>
+              {nearSt.err ? <div style={{ fontSize: 12, color: C.red, marginTop: 8, lineHeight: 1.45 }}>{nearSt.err}</div> : null}
+              {nearSt.hits.length ? <div style={{ marginTop: 8 }}>
+                <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6 }}>Which one?</div>
+                {nearSt.hits.map((h, i) => <button key={i} onClick={() => pickNear({ lat: h.lat, lng: h.lng, label: h.name })} style={{ ...BTN_LG, width: "100%", textAlign: "left", marginBottom: 6, border: "1px solid " + C.border, background: C.surface, color: C.text }}>{h.name}{h.sub ? <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, fontWeight: 500 }}>{h.sub}</span> : null}</button>)}
+              </div> : null}
+            </>}
             {lab("Discipline")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
               {/* Tick as many as you like; a range stays only while every ticked discipline shares its scale. */}
@@ -1284,7 +1392,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
               const iLo = df.gLo ? sc.findIndex(o => o[0] === df.gLo) : -1, iHi = df.gHi ? sc.findIndex(o => o[0] === df.gHi) : -1;
               const sel = (label, val, opts, set) => (
                 <label style={{ flex: 1, display: "flex", flexDirection: "column", gap: 5, fontSize: 11.5, color: C.textMuted, fontWeight: 700 }}>{label}
-                  <select aria-label={label + " grade"} value={val} onChange={e => set(e.target.value)} style={{ padding: "10px 10px", borderRadius: 10, border: "1px solid " + (val ? C.blue : C.border), background: val ? C.blueBg : C.surface, color: val ? C.blue : C.text, fontSize: 14, fontWeight: 700 }}>
+                  <select aria-label={label + " grade"} value={val} onChange={e => set(e.target.value)} style={{ padding: "10px 10px", borderRadius: 10, border: "1px solid " + (val ? C.blue : C.border), background: val ? C.blueBg : C.surface, color: val ? "#fff" : C.text, fontSize: 14, fontWeight: 700 }}>
                     <option value="">Any</option>
                     {opts.map(o => <option key={o[0]} value={o[0]}>{o[0]}</option>)}
                   </select>
@@ -1307,6 +1415,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
             })()}
             {lab("Sort by")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+              {df.near ? chip("Nearest first", df.sortBy === "near", () => setDf(d => ({ ...d, sortBy: "near" }))) : null}
               {FINDER_SORTS.map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] }))))}
               {df.discs.length ? [["grade_asc", "↓ Easiest"], ["grade_desc", "↑ Hardest"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] })))) : null}
             </div>
@@ -1320,6 +1429,17 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{[[0, "Any"], [1, "1+ (single)"], [2, "2+ (multi-pitch)"], [3, "3+"], [5, "5+"], [10, "10+"]].map(o => chip(o[1], df.minPitches === o[0], () => setDf(d => ({ ...d, minPitches: o[0] }))))}</div>
             {lab("Length")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{LEN_BUCKETS.map(o => chip(lenLabel(o, uElevN, uElevUnit), df.len === o[0], () => setDf(d => ({ ...d, len: o[0] }))))}</div>
+            {/* Recorded mostly on mountain routes (0369's header has the counts), so each says what a
+                climb without the figure does: it is hidden while the filter is set, as an ungraded climb is by a grade range. */}
+            {lab("Elevation gain")}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{GAIN_BUCKETS.map(o => chip(rangeLabel(o, metric, eU), df.gain === o[0], () => setDf(d => ({ ...d, gain: o[0] }))))}</div>
+            {lab("Round trip")}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{TRIP_BUCKETS.map(o => chip(rangeLabel(o, metric, dU), df.trip === o[0], () => setDf(d => ({ ...d, trip: o[0] }))))}</div>
+            {lab("Peak elevation")}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{PEAK_ELEV_MINS.map(o => chip(minLabel(o, metric, eU), df.elev === o[0], () => setDf(d => ({ ...d, elev: o[0] }))))}</div>
+            {lab("Prominence")}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{PROM_MINS.map(o => chip(minLabel(o, metric, eU), df.prom === o[0], () => setDf(d => ({ ...d, prom: o[0] }))))}</div>
+            {[df.gain, df.trip, df.elev, df.prom].some(v => v && v !== "any") ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Gain, round trip, peak elevation and prominence are recorded mostly for mountain routes. Climbs without the figure are hidden while one of these is set.</div> : null}
             </div>
             <div style={{ flexShrink: 0, display: "flex", gap: 8, padding: "12px 16px calc(env(safe-area-inset-bottom) + 12px)", borderTop: "1px solid " + C.border, background: C.bg }}>
               <button onClick={() => setDf(DEF)} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>Clear all</button>
@@ -1370,7 +1490,15 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
   const [bounds, setBounds] = useState(null);
   const [center, setCenter] = useState(center0 || null);
   const [baseLayer, setBaseLayer] = useState("street");
-  const [sel, setSel] = useState(null);
+  // WHAT YOU TAPPED, listed BELOW the map (2026-10-24, owner: "Sometimes when you click on the circle,
+  // the climbs don't show up. The blue circles in particular ... I would prefer if the climbs showed
+  // up in list view below the map"). A blue circle used to ONLY zoom: the zoomed view refetched,
+  // re-clustered the larger set it found into new circles with BIGGER numbers, and the areas you
+  // tapped were never shown; when they sat on one spot (or the map was already at its deepest
+  // zoom) nothing happened at all. Now a circle zooms AND lists its areas here, and a single pin
+  // lists its one area here instead of a card over the map. The list survives the zoom it causes:
+  // it is cleared by its own ✕, a tap on the bare map, or a tap on another circle.
+  const [pick, setPick] = useState(null);
   // Go to a town, county, or zip/postal code (US and Canada). `alts` are the other matches, offered as "Not it?".
   const [placeQ, setPlaceQ] = useState("");
   const [place, setPlace] = useState({ busy: false, err: "", alts: [] });
@@ -1444,7 +1572,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
       mapRef.current = map;
       setReady(true);
       map.on("moveend", () => readBounds(map));
-      map.on("movestart", () => setSel(null));
+      map.on("click", () => setPick(null));
       setTimeout(() => { try { map.invalidateSize(); readBounds(map); } catch (e) {} }, 150);
       // ...and again whenever the map's box really changes size. On a slow phone the box can still
       // be unlaid-out at 150ms: the query then asked for a near-zero box, got no areas, and the
@@ -1477,7 +1605,6 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
     if (!ready || !nearby) return;
     const L = window.L, map = mapRef.current, grp = markRef.current;
     if (!L || !map || !grp) return;
-    setSel(s => (s && nearby.some(a => a.id === s.id)) ? s : null);
     grp.clearLayers();
     // Kept comfortably above the max single-pin size below (52px) so tightly
     // spaced but distinct areas cluster instead of visually overlapping.
@@ -1502,7 +1629,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
         const html = pinHtml(a.name, null, sz, color, "#ffffff", discIconMarkup(a.dominant_discipline, 18));
         const mk = L.marker([a.lat, a.lng], { icon: L.divIcon({ html, className: "", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2] }) });
         mk.bindTooltip(a.name + " · " + a.route_count + " climb" + (a.route_count !== 1 ? "s" : ""), { direction: "top" });
-        mk.on("click", () => setSel({ ...a, _mi: viewCenter ? haversineMi(viewCenter, a) : null }));
+        mk.on("click", () => setPick({ areas: [a], cluster: false }));
         grp.addLayer(mk);
       } else {
         const areas = group.map(g => g.a);
@@ -1514,6 +1641,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
         const mk = L.marker([avgLat, avgLng], { icon: L.divIcon({ html, className: "", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2] }) });
         mk.bindTooltip(n + " areas · " + climbs + " climbs — tap to zoom in", { direction: "top" });
         mk.on("click", () => {
+          setPick({ areas, cluster: true });
           try { map.fitBounds(L.latLngBounds(areas.map(a => [a.lat, a.lng])), { padding: [50, 50], maxZoom: 15 }); } catch (e) {}
         });
         grp.addLayer(mk);
@@ -1567,7 +1695,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
     const withDist = viewCenter ? nearby.map(a => ({ ...a, _mi: haversineMi(viewCenter, a) })) : nearby.map(a => ({ ...a, _mi: null }));
     return withDist.sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)).slice(0, 60);
   }, [nearby, bounds, center]);
-  const discChip = (k, label, on) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
+  const discChip = (k, label, on) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
 
   const searchUI = (
     <>
@@ -1589,23 +1717,36 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
       <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "100%" : 260, borderRadius: 12, overflow: "hidden", background: C.surface }} />
       {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
       <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={center} />
-      {fullscreen ? null : <button onClick={() => setFullscreen(true)} aria-label="Full screen" title="Full screen" style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000 })}>⤢</button>}
+      {/* ⤢ to go full screen and ✕ to leave it, in the SAME spot on the map, so the way out is where the
+          way in was (owner, 2026-10-24: "Exit full screen is a little hidden on the map"). Drawn OPAQUE, with a
+          shadow: the translucent fill let the circles beneath show through it. Full screen also has
+          ← Back in its title row. */}
+      <button onClick={() => setFullscreen(f => !f)} aria-label={fullscreen ? "Exit full screen" : "Full screen"} title={fullscreen ? "Exit full screen" : "Full screen"} style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000, background: C.surface, boxShadow: "0 2px 8px rgba(0,0,0,0.5)" })}>{fullscreen ? "✕" : "⤢"}</button>
       {/* WHERE AM I, on the map itself, as the route map has it: bottom-right, above the tile
           credit, in full screen too. It used to be a full-width button above the map, which full
-          screen hid. Out of the way of an open area card, which spans the bottom of the map. */}
-      {sel ? null : <button onClick={locate} disabled={locating} aria-label="Show my location on the map" style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{"📍 " + locateLabel(me, "Me")}</button>}
-      {sel ? (
-        <div style={{ position: "absolute", left: 12, right: 12, bottom: 12, zIndex: 1000, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12, padding: "10px 12px", boxShadow: "0 6px 20px rgba(0,0,0,0.5)", display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, lineHeight: 1.3, overflowWrap: "anywhere" }}>{sel.name}</div>
-            <div style={{ fontSize: 11.5, color: C.textMuted }}>{sel.route_count + " climb" + (sel.route_count !== 1 ? "s" : "") + (sel._mi != null ? " · " + (uDistMi ? uDistMi(sel._mi) : sel._mi.toFixed(1) + " mi") : "")}</div>
-          </div>
-          <button onClick={() => { onOpenArea(sel); setSel(null); }} style={{ ...BTN, background: C.blueSolid, color: "#fff", border: "none", flexShrink: 0 }}>Open</button>
-          <button onClick={() => setSel(null)} title="Close" aria-label="Close" style={POP_CLOSE}>✕</button>
-        </div>
-      ) : null}
+          screen hid. */}
+      <button onClick={locate} disabled={locating} aria-label="Show my location on the map" style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{"📍 " + locateLabel(me, "Me")}</button>
     </div>
   );
+  // The tapped circle's areas, nearest the middle of the map first.
+  const pickRows = pick ? pick.areas.map(a => ({ ...a, _mi: viewCenter ? haversineMi(viewCenter, a) : null })).sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)) : [];
+  const pickClimbs = pickRows.reduce((n, a) => n + (a.route_count || 0), 0);
+  const pickUI = pick ? (
+    <section aria-label="Areas you tapped on the map" style={{ marginTop: 8, flexShrink: 0, maxHeight: fullscreen ? "42%" : "none", display: "flex", flexDirection: "column", minHeight: 0, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 8px 8px 12px", borderBottom: "1px solid " + C.border }}>
+        <div style={{ flex: 1, minWidth: 0, fontSize: 13.5, fontWeight: 700, color: C.text }}>{(pickRows.length === 1 ? "1 area" : pickRows.length + " areas") + " · " + pickClimbs + " climb" + (pickClimbs !== 1 ? "s" : "")}</div>
+        <button onClick={() => setPick(null)} title="Close" aria-label="Close the list of tapped areas" style={POP_CLOSE}>✕</button>
+      </div>
+      <div style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", padding: "6px 8px 0" }}>
+        {pickRows.map(a => (
+          <div key={a.id} {...clickable(() => onOpenArea(a))} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "10px 12px", marginBottom: 6, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
+            <span style={{ fontWeight: 700, fontSize: 14, color: C.text, minWidth: 0, overflowWrap: "anywhere" }}>{a.name}</span>
+            <span style={{ color: C.textMuted, fontSize: 12, flexShrink: 0 }}>{a._mi != null ? (uDistMi ? uDistMi(a._mi) : a._mi.toFixed(1) + " mi") + " · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  ) : null;
   const errUI = geoErr ? <div role="status" style={{ color: C.red, fontSize: 12, marginTop: 6 }}>{geoErr}</div> : null;
   const title = "Map" + (name ? " · " + name : "");
   return (
@@ -1619,15 +1760,19 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
           element around `mapBox` in full screen would make React unmount the map's div, and with it
           the Leaflet map, every time the climber went in or out. */}
       {hostRef.current ? createPortal(
-        <div role={fullscreen ? "dialog" : undefined} aria-modal={fullscreen ? "true" : undefined} aria-label={fullscreen ? title : undefined} style={fullscreen ? { position: "fixed", inset: 0, zIndex: 9700, background: C.bg, padding: 12, display: "flex", flexDirection: "column" } : { position: "relative" }}>
+        <div role={fullscreen ? "dialog" : undefined} aria-modal={fullscreen ? "true" : undefined} aria-label={fullscreen ? title : undefined} style={fullscreen ? { position: "fixed", inset: 0, zIndex: 9700, background: C.bg, padding: "calc(env(safe-area-inset-top) + 12px) 12px calc(env(safe-area-inset-bottom) + 12px)", display: "flex", flexDirection: "column" } : { position: "relative" }}>
+          {/* The title row clears the notch (safe-area-inset-top): the page is viewport-fit=cover, so
+              with a flat 12px it sat under the phone's status bar and the ✕ was hidden until you
+              looked for it (owner, 2026-10-24). ← Back leads, as on every other screen. */}
           {fullscreen ? (
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, marginBottom: 9 }}>
-              <span style={{ fontSize: 14, fontWeight: 700, color: C.text, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{title}</span>
-              <button onClick={() => setFullscreen(false)} aria-label="Close full-screen map" style={POP_CLOSE}>✕</button>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 9 }}>
+              <button onClick={() => setFullscreen(false)} aria-label="Back" style={POP_BACK}>← Back</button>
+              <span style={{ flex: 1, fontSize: 14, fontWeight: 700, color: C.text, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{title}</span>
             </div>
           ) : null}
           {fullscreen ? searchUI : null}
           {mapBox}
+          {pickUI}
           {errUI}
         </div>, hostRef.current) : null}
       {!fullscreen ? (
@@ -1691,7 +1836,7 @@ function DbAreaTreeNode({ area, depth, currentId, pinIds, expanded, onToggle, on
   return (
     <div>
       <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "12px 12px 12px " + pad + "px", borderBottom: "1px solid " + C.borderLight, background: cur ? C.blueBg : "transparent" }}>
-        <button onClick={() => onToggle(area.id)} aria-label={isOpen ? "Collapse" : "Expand"} style={{ flexShrink: 0, width: 38, height: 38, borderRadius: 10, border: "1.5px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 18, fontWeight: 800, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>{isOpen ? "▾" : "▸"}</button>
+        <button onClick={() => onToggle(area.id)} aria-label={isOpen ? "Collapse" : "Expand"} style={{ flexShrink: 0, width: 38, height: 38, borderRadius: 10, border: "1.5px solid " + C.blue, background: C.blueBg, color: "#fff", fontSize: 18, fontWeight: 800, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}><Chevron open={isOpen} color={C.blue} /></button>
         {/* One target opens the area: the name, its count and the chevron. The chevron used
             to be a separate 16px span and the name was cut to one line, so the only ways in
             were a sliver of truncated text or an arrow a thumb barely covers. Names wrap. */}

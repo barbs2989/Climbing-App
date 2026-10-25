@@ -79,8 +79,9 @@ jobs:
     runs-on: ubuntu-latest
     # A hung dev server or a browser that never launches should fail in minutes,
     # not sit for the default six hours.
-    # 50 overlays since the scaffold's discovery was widened (was 28).
-    timeout-minutes: 32
+    # 50 overlays since the scaffold's discovery was widened (was 28); walked twice since
+    # check:pinned-dismiss joined (2026-10-24), so the budget doubled.
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -107,6 +108,16 @@ jobs:
         env:
           # Match zero-state.yml. Without these USE_DB is off and the app under test
           # is not the one that ships, so a pass would say nothing about production.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
+
+      # Same scaffold, same opener, same browser: a popup's ✕ / ← Back stays on screen and tappable
+      # scrolled to the end. A second walk of the same overlays, so the job's timeout covers both.
+      - name: Popup close and back stay pinned
+        run: npm run check:pinned-dismiss
+        env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           VITE_USE_DB: "true"
@@ -164,7 +175,7 @@ jobs:
     runs-on: ubuntu-latest
     # 50 overlays since #748 widened the scaffold's discovery (was 28). This check shares
     # that discovery, so it inherited the wider walk — and the longer runtime with it.
-    timeout-minutes: 32
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7

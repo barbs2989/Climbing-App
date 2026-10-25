@@ -94,8 +94,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `EmergencyRescueCard` owns emergency); one discipline base, when `RouteGearCheck` is
     `cragOnly`; testing only the longest string leaf, which condemns a column over one hidden
     sub-key (it called `pitch_detail` dead, and that visibly renders); and confusing **used**
-    with **echoed** — the RACK box prints `rackSummary()`, so raw `gear` prose never appears
-    verbatim though the column drives the screen.
+    with **echoed** — the old PROTECTION card printed `rackSummary()`, a derived label, so raw
+    `gear` prose never appeared verbatim though the column drove the screen (that card and
+    `rackSummary` were removed 2026-10-23; the BASELINE below still covers any derived readout).
     - **A SEVENTH, added 2026-08-20 after it produced a wrong claim in a merged PR:
       `dbRouteToCamel` opens `return { ...r, ... }`.** It SPREADS the raw row and then adds
       camelCase aliases, so every snake_case column reaches the app whether or not the mapper
@@ -995,6 +996,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 
 - **`check:approach-overlay`** (in build) — when a climb has more than one way in, the PICKED one
   drives the whole page and nothing from another leaks under its name.
+  - **A VARIATION (2026-10-24, Boving Roofs on the Southwest Rib)** is a via route the climb leaves
+    and REJOINS (`viaPitches`). The guard asserts it keeps its OWN `itinerary` — the parent's narrated
+    "7 pitches of 5.6–5.8" on Boving Roofs' page — while still taking the parent's walk, that a plain
+    via route still lends its trip plan, and that `wholeLine` orders parent 1–3, own 1–3, parent 6–7.
+    Injection-tested: dropping the itinerary exemption fails the first assertion.
   - **Mount Shuksan's Southeast Ridge is why.** It is a summit-pyramid FINISH reached by the
     Sulphide Glacier or the Fisher Chimneys, from two trailheads. The row could hold one: its pins,
     camps and numbers were the Sulphide's while its own road prose named Lake Ann, and its 6,627 ft /
