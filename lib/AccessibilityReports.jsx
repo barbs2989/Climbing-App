@@ -14,6 +14,7 @@
 import { useState } from "react";
 import { useAccessibilityReportQueue, setAccessibilityReportStatus } from "./db";
 import { C } from "../ClimbMatchCore";
+import LoadingRows from "../src/components/LoadingRows.tsx";
 
 const WAITED = (iso) => {
   if (!iso) return { text: "", late: false };
@@ -25,7 +26,7 @@ const WAITED = (iso) => {
 export function AccessibilityReportQueue({ notify }) {
   const { data, isLoading, error } = useAccessibilityReportQueue(true, "open");
   const [busy, setBusy] = useState(null);
-  if (isLoading) return <div style={{ fontSize: 12.5, color: C.textMuted, padding: "10px 2px" }}>Loading accessibility reports…</div>;
+  if (isLoading) return <LoadingRows C={C} label="Loading accessibility reports…" style={{padding: "10px 2px"}}/>;
   if (error) return <div style={{ fontSize: 12.5, color: C.red, padding: "10px 2px" }}>{"Couldn't load accessibility reports — " + ((error && error.message) || "try again") + ". Do not read this as 'no reports'."}</div>;
   if (!data || !data.length) return <div style={{ fontSize: 12.5, color: C.textMuted, padding: "10px 2px" }}>No open accessibility reports.</div>;
   const close = (r) => {

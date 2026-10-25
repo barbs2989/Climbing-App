@@ -19,6 +19,7 @@ import { useState } from "react";
 import { C } from "../ClimbMatchCore.jsx";
 import { fileAppFeedback, useAppFeedbackQueue, useAppRatingSummary, setAppFeedbackStatus } from "./db.js";
 import pkg from "../package.json";
+import LoadingRows from "../src/components/LoadingRows.tsx";
 
 export const APP_VERSION = pkg.version;
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -151,7 +152,7 @@ export function AppFeedbackQueue({ notify }) {
   };
   return <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
     <div style={{ fontSize: 12.5, color: sum.error ? C.red : C.textSub, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", lineHeight: 1.5 }}>{summary}</div>
-    {isLoading ? <div style={{ fontSize: 12.5, color: C.textMuted, padding: "10px 2px" }}>Loading feedback…</div>
+    {isLoading ? <LoadingRows C={C} label="Loading feedback…" style={{padding: "10px 2px"}}/>
       : error ? <div style={{ fontSize: 12.5, color: C.red, padding: "10px 2px" }}>{"Couldn't load feedback — " + ((error && error.message) || "try again") + ". Do not read this as 'no feedback'."}</div>
       : !data || !data.length ? <div style={{ fontSize: 12.5, color: C.textMuted, padding: "10px 2px" }}>No unread feedback.</div>
       : data.map((r) => {

@@ -9,6 +9,7 @@ import { C, pubName, shortDate, uDistMi, uElev } from "../ClimbMatchCore.jsx";
 import { CHIP } from "./buttonStyles.js";
 import { ROUTE_TRACKS_CAP } from "./db";
 import { MAX_SHOWN_TRACKS, SEASONS, TRACK_SORTS, fmtDuration, inSeason, sortTracks } from "./routeTracks.js";
+import LoadingRows from "../src/components/LoadingRows.tsx";
 
 const SH = { fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.textMuted, marginBottom: 8 };
 
@@ -28,7 +29,7 @@ export default function RouteTracksPanel({ rows, profiles, loading, failed, show
     <section aria-label="Climbers' tracks" style={{ marginTop: 12 }}>
       <div style={SH}>Climbers' tracks{rows.length ? " · " + rows.length : ""}</div>
       {failed ? <div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>Climbers' tracks couldn’t load. Pull to refresh, or try again later.</div>
-        : loading ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Loading climbers' tracks…</div>
+        : loading ? <LoadingRows C={C} label="Loading climbers' tracks…"/>
         : !rows.length ? <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>No climber has shared a GPS track of this route yet. Attach your GPX when you log it, and it shows here for anyone who can read your report.{onLog ? <> <button onClick={onLog} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Log this climb</button></> : null}</div>
         : <>
           <div role="group" aria-label="Sort tracks" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 6 }}>

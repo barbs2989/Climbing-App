@@ -85,6 +85,7 @@ import DbClimbPicker from "./src/components/DbClimbPicker.tsx";
 import Comments from "./src/components/Comments.tsx";
 import { photoThumb, thumbFallback } from "./lib/photoThumb";
 import { HINTS } from "./lib/fieldHints.js";
+import LoadingRows from "./src/components/LoadingRows.tsx";
 const GpsSubmissionModal = lazy(() => import("./lib/GpsSubmissionModal"));
 const SZ4={display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8};
 const uGain=m=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
@@ -408,7 +409,7 @@ function BaseCheckinPanel({route,who,spots,q}){
       <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginBottom:5}}>{confirmed?(held?"That is "+_baseDist(Math.round(pinGap))+" from the start this route records, so ClimbMatch checks it before the Base pin moves.":"The route’s Base pin on the map follows this spot."):(baseWp?"The Base pin on the map is still the start this route records. ":"")+"A spot becomes this route’s Base pin once "+BASE_CONFIRM_MIN+" climbers check in within 25 m of each other and are most of those who checked in."}</div>
       <a href={"https://www.google.com/maps/search/?api=1&query="+top.lat.toFixed(6)+","+top.lng.toFixed(6)} target="_blank" rel="noopener noreferrer" style={{fontSize:12.5,color:C.blue,fontWeight:600,textDecoration:"none"}}>Open the base in maps ›</a>
     </div>
-    :q.isPending?<div style={{fontSize:12.5,color:C.textMuted,marginBottom:8}}>Loading check-ins…</div>
+    :q.isPending?<LoadingRows C={C} label="Loading check-ins…" style={{marginBottom:8}}/>
     :<div style={{fontSize:12.5,color:C.textSub,marginBottom:8}}>{baseWp?"Nobody has checked in at the base yet — the Base pin on the map is where this route records its start.":"Nobody has checked in at the base yet."}</div>}
     {target?<div style={{background:C.surface,border:`1px solid ${C.border}`,borderRadius:10,padding:"9px 11px",marginBottom:10}}>
       {!guide?<button onClick={startGuide} style={{...BTN,width:"100%",background:C.blueBg,color:C.blue,border:`1px solid ${C.blueDim}`}}>How far am I from the base?</button>
@@ -3234,7 +3235,7 @@ export function TopoSection({route}){
     });
   };
 
-  if(USE_DB&&dbTopos.isLoading)return <div style={{marginBottom:ROUTE_GAP}}><SL>TOPO</SL><div style={{background:C.card,border:"1px solid "+C.border,borderRadius:13,padding:20,textAlign:"center",color:C.textMuted,fontSize:12.5}}>Loading topo photos…</div></div>;
+  if(USE_DB&&dbTopos.isLoading)return <div style={{marginBottom:ROUTE_GAP}}><SL>TOPO</SL><LoadingRows C={C} label="Loading topo photos…" style={{padding:20}}/></div>;
 
   return <div style={{marginBottom:ROUTE_GAP}}>
     <SL action={<button onClick={pickFile} disabled={busy} style={{padding:"8px 12px",borderRadius:9,border:"1px solid "+C.blueDim,background:C.blueBg,color:"#fff",fontSize:11.5,fontWeight:700,cursor:busy?"default":"pointer"}}>{busy?"Uploading…":"+ Add photo"}</button>}>TOPO</SL>
@@ -4930,7 +4931,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
   const head=<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:8}}><CardHead style={{marginBottom:0}}>CONDITIONS SCORE</CardHead>{hasPt?<button onClick={function(){setShowPrefs(!showPrefs);}} aria-expanded={showPrefs} aria-label="Your ideal conditions" style={{background:"none",border:"1px solid "+(showPrefs?C.blue:C.border),color:showPrefs?C.blue:C.textSub,borderRadius:8,padding:"5px 9px",fontSize:11.5,fontWeight:700,cursor:"pointer",display:"inline-flex",alignItems:"center",gap:5}}><ActionIcon name="settings" size={12} color="currentColor"/>Your conditions</button>:null}</div>;
   if(!hasPt)return <div style={box}>{head}<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55}}>No score for this climb: the crag it is on has no location on file yet, so there is no forecast to score.</div></div>;
   if(wx&&wx.error)return <div style={box}>{head}<div style={{fontSize:12.5,color:C.amber,lineHeight:1.55,marginBottom:8}}>Couldn’t load the forecast, so there is no score. This is not a rating of the conditions.</div><button onClick={function(){setTries(tries+1);}} style={{background:C.surface,color:C.blue,border:"1px solid "+C.border,borderRadius:8,padding:"7px 12px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Try again</button></div>;
-  if(!score)return <div style={box} aria-busy="true">{head}<div style={{fontSize:12.5,color:C.textMuted}}>Loading the forecast…</div></div>;
+  if(!score)return <div style={box} aria-busy="true">{head}<LoadingRows C={C} label="Loading the forecast…"/></div>;
   const days=score.days;const day=days[Math.min(dayI,days.length-1)];
   if(!day)return <div style={box}>{head}<div style={{fontSize:12.5,color:C.textSub}}>The forecast came back with no days ahead to score.</div></div>;
   const col=function(s){return s==null?C.border:s>=4?C.green:s>=2.5?C.amber:C.red;};
@@ -5064,7 +5065,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
     </div>)}
     {sec("Shade map",<div style={condBox}>{shadeAt!=null?<ShadeMap lat={lat} lng={lng} rise={day.sun.rise} set={day.sun.set} at0={shadeAt} dayKey={day.date} clock={function(u){return clockAt(score,u);}} C={C}/>:<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>The forecast has no sunrise and sunset for this day, so the shade can’t be drawn.</div>}</div>)}
     {sec("Air quality",<div style={condBox}>
-      {!aq?<div style={{fontSize:12.5,color:C.textMuted}}>Loading air quality…</div>:aq.error?<div><div style={{fontSize:12.5,color:C.amber,lineHeight:1.5,marginBottom:8}}>Couldn’t load air quality, so smoke is not measured. This is not a clean-air reading.</div><button onClick={function(){setAqTries(aqTries+1);}} style={{background:C.surface,color:C.blue,border:"1px solid "+C.border,borderRadius:8,padding:"7px 12px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Try again</button></div>:<div>
+      {!aq?<LoadingRows C={C} label="Loading air quality…"/>:aq.error?<div><div style={{fontSize:12.5,color:C.amber,lineHeight:1.5,marginBottom:8}}>Couldn’t load air quality, so smoke is not measured. This is not a clean-air reading.</div><button onClick={function(){setAqTries(aqTries+1);}} style={{background:C.surface,color:C.blue,border:"1px solid "+C.border,borderRadius:8,padding:"7px 12px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Try again</button></div>:<div>
         {condRow("Now",aqNow!=null?"AQI "+Math.round(aqNow)+" · "+aqCat.label:"Not measured",aqNow!=null?aqiTone(aqNow):C.textMuted)}
         {condRow(dayI===0?"Worst today":"Worst "+dayName(day,dayI),day.aqiMax!=null?"AQI "+Math.round(day.aqiMax)+" · "+dayAqCat.label:"No air-quality forecast this far ahead",day.aqiMax!=null?aqiTone(day.aqiMax):C.textMuted)}
         {cur&&cur.pm25!=null?condRow("Fine smoke",Math.round(cur.pm25)+" µg/m³ of PM2.5 now"):null}
@@ -5072,7 +5073,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
       </div>}
     </div>)}
     {sec("Season",<div style={condBox}>
-      {!clim?<div style={{fontSize:12.5,color:C.textMuted}}>Loading the climate history…</div>:clim.error?<div><div style={{fontSize:12.5,color:C.amber,lineHeight:1.5,marginBottom:8}}>Couldn’t load the climate history for this crag. This says nothing about its season.</div><button onClick={function(){setClimTries(climTries+1);}} style={{background:C.surface,color:C.blue,border:"1px solid "+C.border,borderRadius:8,padding:"7px 12px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Try again</button></div>:<SeasonChart clim={clim.data} band={score.band}/>}
+      {!clim?<LoadingRows C={C} label="Loading the climate history…"/>:clim.error?<div><div style={{fontSize:12.5,color:C.amber,lineHeight:1.5,marginBottom:8}}>Couldn’t load the climate history for this crag. This says nothing about its season.</div><button onClick={function(){setClimTries(climTries+1);}} style={{background:C.surface,color:C.blue,border:"1px solid "+C.border,borderRadius:8,padding:"7px 12px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Try again</button></div>:<SeasonChart clim={clim.data} band={score.band}/>}
     </div>)}
   </div>;
 }
@@ -5281,7 +5282,7 @@ function WeatherPanel({waypoints,showPlan,fallback,crag}){
         <div style={{width:28,height:28,borderRadius:"50%",background:wCol+"22",border:"1.5px solid "+wCol,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:wCol,flexShrink:0}}>{wpGlyph(_wty)}</div>
         <div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</div>
       </div>
-      {!d?<div style={{fontSize:12,color:C.textMuted}}>Loading forecast…</div>:d.error?<div style={{fontSize:12,color:C.textMuted}}>Forecast unavailable — check your connection.</div>:<><div style={{display:"flex",gap:9,overflowX:"auto",paddingBottom:3}}>{d.days.map(function(dy,di){
+      {!d?<LoadingRows C={C} label="Loading forecast…"/>:d.error?<div style={{fontSize:12,color:C.textMuted}}>Forecast unavailable — check your connection.</div>:<><div style={{display:"flex",gap:9,overflowX:"auto",paddingBottom:3}}>{d.days.map(function(dy,di){
         const dt=new Date(dy.date+"T12:00:00");
         const lbl=di===0?"Today":dt.toLocaleDateString(DLOCALE,{weekday:"short"});
         const sub=dt.toLocaleDateString(DLOCALE,{month:"short",day:"numeric"});

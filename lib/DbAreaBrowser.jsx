@@ -24,6 +24,7 @@ import { AboutCard, AreaFactsCard, ClimbsChart, GradeSpread, PendingAreaEdits } 
 import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_LINE, NO_PARKING_PIN_BUT_NOTE_LINE } from "./areaChrome";
 import Chevron from "../src/components/Chevron.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
+import LoadingRows from "../src/components/LoadingRows.tsx";
 
 // Grade for a compact row. Two things happen inside displayGrade(): a qualifier carried inline
 // ("Class 3 (short 4th-class crux)") is dropped, and the route page's Composite Grade panel shows
@@ -217,7 +218,7 @@ function StatePicker({ onPick, C }) {
         {only ? null : (
           <div style={{ marginBottom: 14 }}>
             <SL C={C}>Pick a country</SL>
-            {lc ? <div style={{ color: C.textMuted, fontSize: 13 }}>Loading countries…</div>
+            {lc ? <LoadingRows C={C} label="Loading countries…"/>
               : ec && !(countries && countries.length) ? <div style={{ color: C.red, fontSize: 12.5 }}>{"Couldn’t load countries — the " + noun + "s below are every one we have."}</div>
               : <div role="radiogroup" aria-label="Country" style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>{(countries || []).map(c => { const on = country === c.id; return <button key={c.id} role="radio" aria-checked={on} onClick={() => setCountryId(on ? "" : c.id)} style={{ padding: "9px 14px", borderRadius: 999, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.card, color: on ? "#fff" : C.text, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>{c.name}{c.route_count != null ? <span style={{ color: on ? C.blue : C.textMuted, fontWeight: 600 }}>{" · " + c.route_count.toLocaleString()}</span> : null}</button>; })}</div>}
           </div>
@@ -284,7 +285,7 @@ function StatePicker({ onPick, C }) {
           <div style={phoneGrid}>{inCountry.map(s => <button key={s.id} onClick={() => onPick(s)} style={phoneCard}><div style={phoneCardName}>{s.name}</div>{s.route_count != null ? <div style={phoneCardSub}>{s.route_count.toLocaleString() + (s.route_count === 1 ? " climb" : " climbs")}</div> : null}</button>)}</div>
         </div>
       ) : null}
-      {isLoading ? <div style={{ color: C.textMuted, fontSize: 12, marginTop: 8 }}>Loading states…</div> : null}
+      {isLoading ? <LoadingRows C={C} label="Loading states…" style={{marginTop: 8}}/> : null}
       {/* Same split: red is for "you have nothing", muted is for "this may be out of date".
           Telling someone to check their connection is useless advice when the list they
           asked for is already on screen and working. */}
@@ -336,7 +337,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange, endR
         // of them were hidden behind a second scrollbar. They run down the page instead.
         <div style={{ marginTop: 6 }}>
           {mode === "areas" ? (
-            la ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 4px", textAlign: "center" }}>Loading…</div>
+            la ? <LoadingRows C={C} label="Loading…" style={{padding: "14px 4px"}}/>
             : ea ? <div style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>Couldn't search areas.</div>
             : !areaHits || !areaHits.length ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 4px", textAlign: "center" }}>No areas match.</div>
             : <>
@@ -352,7 +353,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange, endR
               {areaSearchTotal(areaHits) > areaHits.length ? <div style={{ fontSize: 11.5, color: C.textMuted, padding: "10px 4px", textAlign: "center" }}>{"Closest " + areaHits.length + " of " + areaSearchTotal(areaHits).toLocaleString() + " — keep typing to narrow."}</div> : null}
             </>
           ) : (
-            lr ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 4px", textAlign: "center" }}>Loading…</div>
+            lr ? <LoadingRows C={C} label="Loading…" style={{padding: "14px 4px"}}/>
             : er ? <div style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>Couldn't search routes.</div>
             : !routeHits || !routeHits.length ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 4px", textAlign: "center" }}>No routes match.</div>
             : routeHits.map(r => (
@@ -809,7 +810,7 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
           mountain, this is what is true of every way up it, here are the ways up. It renders
           nothing at all unless the routes support it — see SummitBriefing's own gates. */}
       {!loading && routes && routes.length ? <SummitBriefing area={area} routes={routes} uElev={uElev} uDistMi={uDistMi} C={C} /> : null}
-      {loading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
+      {loading && <LoadingRows C={C} label="Loading…"/>}
       {/* Data outranks error, as in the state picker: a failed REFETCH leaves the previous
           children/routes intact, and hiding a list the user can still use is worse than showing
           it. Red stays for "there is nothing here", where "check your connection" is actionable;
@@ -1260,7 +1261,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
       ) : null}
       {mode === "areas" ? (
         !qD.trim() ? <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "22px 12px", lineHeight: 1.5 }}>{"Type a name to find any area, crag or peak in " + scope.name + "."}</div>
-        : la ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>
+        : la ? <LoadingRows C={C} label="Loading…"/>
         : ea ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't search areas — check your connection and try again.</div>
         : !areaHits || !areaHits.length ? <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "22px 12px" }}>No areas match.</div>
         : <>
@@ -1291,7 +1292,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
       {needsArea ? <>
         <SL C={C}>{"Pick an area in " + loc.name}</SL>
         <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginBottom: 10 }}>{"Choose where to look and the finder lists its climbs with your filters — or type a climb's name above, or set Distance away, Peak elevation or Prominence under Filters, to search all of " + loc.name + "."}</div>
-        {lk ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div> : null}
+        {lk ? <LoadingRows C={C} label="Loading…"/> : null}
         {ek && !(locKids && locKids.length) ? <div style={{ color: C.red, fontSize: 12.5 }}>{"Couldn't load the areas in " + loc.name + " — check your connection and try again."}</div> : null}
         {(locKids || []).filter(a => a.route_count > 0).map(a => (
           <div key={a.id} {...clickable(() => setLoc(a))} style={{ display: "flex", alignItems: "center", gap: 10, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer" }}>
@@ -1323,7 +1324,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
           </div>
         </Fragment>;
       })}
-      {isLoading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
+      {isLoading && <LoadingRows C={C} label="Loading…"/>}
       {!isLoading && all.length > 0 && total != null && all.length < total && (
         <button onClick={() => setPage(p => p + 1)} style={{ width: "100%", padding: 11, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer", marginTop: 4 }}>Load more</button>
       )}
@@ -1499,7 +1500,7 @@ function ObjectivesPanel({ area, onOpen, C }) {
   return (
     <div>
       <ScreenHero C={C} title={"My objectives" + (area ? " · " + area.name : "")} />
-      {isLoading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
+      {isLoading && <LoadingRows C={C} label="Loading…"/>}
       {error && !(data && data.length) ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load your objectives — check your connection and try again.</div> : null}
       {error && data && data.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the list from your last load.</div> : null}
       {!isLoading && !error && (!data || !data.length) && (
@@ -1822,7 +1823,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
           {!center && !bounds ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{'Tap "Me" on the map to find climbs near you.'}</div> : null}
           {error && !sorted.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load nearby areas — check your connection and try again.</div> : null}
           {error && sorted.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the areas from your last load.</div> : null}
-          {isLoading && bounds ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading nearby climbs…</div> : null}
+          {isLoading && bounds ? <LoadingRows C={C} label="Loading nearby climbs…"/> : null}
           {discsInView.length > 1 || disc ? (
             <div style={{ marginBottom: 8 }}>
               <div role="group" aria-label="Filter areas by type of climbing" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 4 }}>
@@ -1889,7 +1890,7 @@ function DbAreaTreeNode({ area, depth, currentId, pinIds, expanded, onToggle, on
       </div>
       {isOpen ? (
         isLoading
-          ? <div style={{ padding: "10px 14px 10px " + (pad + 46) + "px", color: C.textMuted, fontSize: 12 }}>Loading…</div>
+          ? <LoadingRows C={C} label="Loading…" style={{padding: "10px 14px 10px " + (pad + 46) + "px"}}/>
           : children && children.length
             ? pinFirst(children, pinIds).map(k => <DbAreaTreeNode key={k.id} area={k} depth={depth + 1} currentId={currentId} pinIds={pinIds} expanded={expanded} onToggle={onToggle} onNavigate={onNavigate} C={C} />)
             : error
@@ -1969,7 +1970,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
       </div>
       <div style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", paddingBottom: 30 }}>
         {q.trim() ? (
-          searching ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.textMuted, fontSize: 13 }}>Loading…</div>
+          searching ? <LoadingRows C={C} label="Loading…" style={{padding: "26px 16px"}}/>
           : searchError ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.red, fontSize: 13 }}>Couldn't search areas — check your connection and try again.</div>
           : !results || !results.length ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.textMuted, fontSize: 13 }}>{'No areas match "' + q.trim() + '"'}</div>
           : <>

@@ -9,6 +9,7 @@ import { createPortal } from "react-dom";
 import { C, shortDate, uElev } from "../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "./popupChrome.js";
 import { useRankBreakdown } from "./db";
+import LoadingRows from "../src/components/LoadingRows.tsx";
 
 const TIER = { confirmed: "Partner confirmed · ×1", evidence: "Photo or GPS · ×0.75", self: "Self-logged · ×0.5" };
 // The keys a log ranks under, as leaderboard()'s vkeys: sport and trad also rank as rock.
@@ -75,7 +76,7 @@ export default function RankBreakdown({ target, onClose }) {
       <div style={{ padding: "12px 16px 16px" }}>
         {HOW[board] ? <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.55, marginBottom: 6 }}>{HOW[board]}{backedOnly ? " Backed climbs only is on, so self-logged climbs are left out." : ""}</div> : null}
         {q.isError ? <div style={{ fontSize: 13, color: C.amber, padding: "14px 0" }}>Couldn’t load the climbs behind this number. Try again in a moment.</div>
-          : q.isPending ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 0" }}>Loading climbs…</div>
+          : q.isPending ? <LoadingRows C={C} label="Loading climbs…" style={{padding: "14px 0"}}/>
           : !items.length ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 0" }}>No logged climb counts toward this board yet.</div>
           : <div>
             {shown.map(line)}

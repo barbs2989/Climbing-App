@@ -28,6 +28,7 @@ import { createPortal } from "react-dom";
 import { POP_CLOSE, POP_CLOSE_MEDIA } from "./popupChrome.js";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, useFollowMe, locateLabel } from "./mapKit";
 import { useActiveFires, useFirePerimeters, useFireWeather, useHeat, useFireAlert, nwsPointPage, HEAT_MIN_ZOOM, HEAT_HOURS, fmtHoursAgo, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi } from "./fire";
+import LoadingRows from "../src/components/LoadingRows.tsx";
 
 const Z = 3000;
 // Continental US, the honest default when we have nothing better to centre on.
@@ -646,7 +647,7 @@ function FireAlertSheet({ zone, onClose, C, locale }) {
         <div style={{ flex: "1 1 auto", minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", padding: "12px 14px 18px", display: "flex", flexDirection: "column", gap: 10 }}>
           {!zone.url ? <div style={{ fontSize: 12.5, color: C.textSub }}>No text was published with this product.</div>
             : q.error ? <div style={{ fontSize: 12.5, color: C.textSub }}>Couldn&apos;t load the text — the weather service didn&apos;t answer.</div>
-            : !d ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Loading…</div>
+            : !d ? <LoadingRows C={C} label="Loading…"/>
             : d.gone ? <div style={{ fontSize: 12.5, color: C.textSub }}>This product has expired or been replaced, so its text is no longer published.</div>
             : (
               <>

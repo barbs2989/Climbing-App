@@ -22,6 +22,7 @@ import {
 import { C, DLOCALE, sameEditValue, pubNameRow } from "../ClimbMatchCore";
 import { AREA_EDIT_FIELDS, monthsLabel } from "./areaFields";
 import { useAreaCardsByIds } from "./db";
+import LoadingRows from "../src/components/LoadingRows.tsx";
 
 // An AREA edit (0319): area_id set, route_id null. Its field label and current value come from
 // lib/areaFields.js (the one list the constraint, applier, sheet and page share), not from
@@ -164,7 +165,7 @@ export function FieldContributionQueue({ onOpenRoute }) {
   };
   const draftText = (g) => { const v = g.rows[0].value; return isPrim(v) ? String(v == null ? "" : v) : (Array.isArray(v) && (!v.length || isPrim(v[0]))) ? v.join(", ") : JSON.stringify(v, null, 1); };
 
-  if (q.isLoading) return <div style={{ fontSize: 12.5, color: C.textMuted, padding: "8px 0" }}>Loading held edits…</div>;
+  if (q.isLoading) return <LoadingRows C={C} label="Loading held edits…" style={{padding: "8px 0"}}/>;
   if (q.error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>Could not load the held edits — {(q.error && q.error.message) || "the request failed"}. This is not a report that there are none.</div>;
 
   return <div>
@@ -235,7 +236,7 @@ export function RouteFlagQueue({ onOpenRoute }) {
   const [msg, setMsg] = useState(null);
   const [note, setNote] = useState({});
   const rows = q.data || [];
-  if (q.isLoading) return <div style={{ fontSize: 12.5, color: C.textMuted, padding: "8px 0" }}>Loading flags…</div>;
+  if (q.isLoading) return <LoadingRows C={C} label="Loading flags…" style={{padding: "8px 0"}}/>;
   if (q.error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>Could not load the flags — {(q.error && q.error.message) || "the request failed"}. This is not a report that there are none.</div>;
   const act = async (id, status) => {
     setBusy(id); setMsg(null);
@@ -274,7 +275,7 @@ export function ContributorStandingQueue() {
   const [msg, setMsg] = useState(null);
   const [reason, setReason] = useState({});
   const rows = q.data || [];
-  if (q.isLoading) return <div style={{ fontSize: 12.5, color: C.textMuted, padding: "8px 0" }}>Loading contributor standing…</div>;
+  if (q.isLoading) return <LoadingRows C={C} label="Loading contributor standing…" style={{padding: "8px 0"}}/>;
   if (q.error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>Could not load contributor standing — {(q.error && q.error.message) || "the request failed"}. This is not a report that nobody has a strike.</div>;
   const act = async (uid, status, days) => {
     setBusy(uid); setMsg(null);

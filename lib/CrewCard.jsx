@@ -16,6 +16,7 @@ import DiscIcon from "../src/components/DiscIcon.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import Lbl from "../src/components/Lbl.tsx";
 import Chevron from "../src/components/Chevron.tsx";
+import LoadingRows from "../src/components/LoadingRows.tsx";
 
 export default function CrewCard({blocked,crew,areaById,onOpenArea,onDisband,onLeave,onDismiss,onOpenClimb,onLog,onMessage,onInviteMember,connections,onSafety,onViewMember,onRemoveMember,onSetDate,onForceDate,onSetFloatPlan,onUpdateCrew,onMeRank,joinReqs,onAcceptJoin,onDeclineJoin,meRisk,collapsed:collapsedProp,onToggle,accordion,logged,onFindPartners,onNudge,hasMessages,onAdoptItinerary,myItin,onShareMyItin,routeById,onInviteByEmail,onReshareEmailInvite,onRemoveEmailInvite,meOrganizer,onWithdrawInvite}){var dtL=function(v){var a=Array.isArray(v)?v:(v?[v]:[]);return a.join(" / ");};
   const [showAdd,setShowAdd]=useState(false);const [showItinPick,setShowItinPick]=useState(false);const [showMyItinBuilder,setShowMyItinBuilder]=useState(false);const [itinDraft,setItinDraft]=useState(null);const [expandedItin,setExpandedItin]=useState(null);const [showComparePanel,setShowComparePanel]=useState(false);const [myAvail,setMyAvail]=useState(()=>new Set(weekOf(ME)));const slotOn=(m,d,p)=>m._me?myAvail.has(d+"_"+p):hasSlot(m,d,p);const toggleMy=(d,p)=>setMyAvail(s=>{const n=new Set(s);const k=d+"_"+p;if(n.has(k))n.delete(k);else n.add(k);return n;});const [invQ,setInvQ]=useState("");const [openMember,setOpenMember]=useState(null);
@@ -29,7 +30,7 @@ export default function CrewCard({blocked,crew,areaById,onOpenArea,onDisband,onL
      stays the route object for the route-only modules below (itineraries, "Log the climb"); an area
      crew has none, and each of those modules says what it does instead. */
   const place=crewPlace(crew,{routeById:routeById,areaById:areaById});
-  if(place===null)return <div aria-busy="true" style={{background:C.card,border:"1px solid "+C.border,borderRadius:14,padding:"16px 15px",marginBottom:14,textAlign:"center"}}><div style={{fontSize:13,fontWeight:700,color:C.textMuted}}>Loading this crew…</div></div>;
+  if(place===null)return <div aria-busy="true" style={{background:C.card,border:"1px solid "+C.border,borderRadius:14,padding:"16px 15px",marginBottom:14,textAlign:"center"}}><LoadingRows C={C} label="Loading this crew…"/></div>;
   if(place.kind==="missing")return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:14,padding:"16px 15px",marginBottom:14,textAlign:"center"}}><div style={{fontSize:14,fontWeight:700,color:C.textSub,marginBottom:4}}>{crew.areaId?"This crew’s area is no longer available":"This crew’s climb is no longer available"}</div><div style={{fontSize:12.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>{crew.areaId?"The area this crew was planned around couldn’t be found.":"The route this crew was planned around couldn’t be found."}</div>{onDismiss?<button onClick={()=>onDismiss(crew.id)} style={{padding:"8px 16px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.textSub,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Remove this crew</button>:null}</div>;
   const route=place.route;
   /* THE CREW'S ITINERARY (owner note 2026-10-21). Import offers YOUR OWN plan for this climb first -- the one saved
