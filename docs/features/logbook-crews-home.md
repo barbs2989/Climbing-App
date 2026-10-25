@@ -90,8 +90,12 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 - **Crew › Requests** (`crewView==="requests"`) is the one place for everything pending: crew invites, **climbers asking to join your crews** (`allJoinIn`, with Accept / Decline / Crew), friend requests, group invites and join requests to groups you run, then **Waiting on others** — every request YOU sent, each marked Pending with its own Withdraw: friend requests (signed in), crews you asked to join (`myCrewAsks`, the same list the Crews tab's Pending requests reads) and groups you asked to join (`pendingGroups`). The Menu tile's badge counts incoming join requests too. Everything incoming (crew invites, crew join requests, friend requests, group invites, group join requests) renders ABOVE *Waiting on others*, as LinkedIn splits Received from Sent. Friend requests are listed open, one card each with ✓ Accept friend / Decline / Profile and, for a real request, *Sent 2d ago* from the connection row's `createdAt` — no *N friend requests · Tap to review* fold. Every Accept on the screen is the same filled green ✓ Accept.
 - **The bell** (`NotifPanel`) leads with a **Requests** section — friend requests plus every notice under the *requests* switch (crew invites and crew join requests via `_crewReqNotifs`, group and event invites, join requests, accepted friend requests) — with *See all requests ›* opening Crew › Requests; everything else is under Activity. The bell button's accessible name carries the new count ("Notifications, 3 new"). **Archive and delete** (owner 2026-10-23; Mail and Gmail pair the two swipes): swipe a row RIGHT to archive it (`onArchive` → `dismissedNotifs`, plus `markNoticeRead` for a `user_notices` row); it moves under *Archived*, where *Restore* brings it back (`markNoticeUnread` clears `read_at`). Swipe LEFT to delete it (`onDelete` → `deletedNotifs`, plus `deleteNotice` for a stored notice, which throws when RLS deleted nothing); it leaves both lists, and archived rows swipe left to delete too. The header is ← Back (top left, no ✕), the title, and *Archive all* alone at the right; a muted line under it names both swipes. A row about a climber shows their photo alone; the small type badge that sat on the photo's corner covered their face and was removed (owner note 2026-10-24). A row with no climber shows its type icon in a grey circle instead.
 - **Past crews** (#2395): a crew whose day has passed, that has a log tied to it, or that was dismissed counts as past (`isArchivedCrew`).
-  Past-crew members can be vouched for (`GiveVouch`, `givenVouches`). **Archive** and **Clear** (`archiveCrew`, `clearPastCrew`) only hide the crew
-  on this device until reload and say so in the toast ("Crew archived on this device until you reload").
+  Past-crew members can be vouched for (`GiveVouch`, `givenVouches`). **Archive** and **Clear** (`archiveCrew`, `clearPastCrew`, both through `filePastCrew`)
+  are saved per climber (0370): one `crew_past_state` row (`archived` | `cleared`, no row = on the list), RLS-readable and writable by its
+  owner only, so the rest of the crew never sees it. `setPastCrewState` in `lib/db.js` writes it; `useMyCrews` embeds it and the crews
+  hydration reads it into `archived`/`cleared` on first load. The toast waits for the write and a refused write restores the crew.
+  *Restore* and Clear's *Undo* delete the row. A seed crew (no `_dbId`, or signed out) has nothing to write and its toast still says
+  "on this device until you reload". The overlay has ONE ← Back, at the top (#2374 removed the second one under the list).
   *View all past crews* is a full-screen portal (`pastExpand`, zIndex 9500), so anything opened from inside it must land ON TOP of it:
   **Stay in touch › + Add** opens `ConnectModal`, which is portalled to `document.body` (zIndex 9950) like `FullProfile`; Vouch, Log this climb
   and the trip report close the list first; **Climb with them again** closes it too before the Start a crew sheet (zIndex 1200) or the new crew's
@@ -187,7 +191,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 - **Migrations**: 0031 objectives, 0036 crews, 0037/00400/00540/00730/0121 climb logs, 0038/0238 vouches, 00420 messaging, 0075 crew locked day, 0086/0227 invite rules,
   0187 pinned states, 0199 itineraries, 0209 crew gear, 0286/0287/0289/0291 `assign_crew_gear` and gear claims, 0092 `user_lists`,
   0302 `crews.area_id` + `crews.discipline` (exactly one of route/area; `crew_listings` appends both; an area fold must repoint `crews.area_id`).
-- **Device-only**: Archive/Clear of a past crew (React state `archived`, lost on reload); offline downloads (browser storage via `lib/offline.js`).
+- **Device-only**: offline downloads (browser storage via `lib/offline.js`).
 - **Seed**: `ROUTES`/`CLIMBERS` fallbacks and `DEMO_FILLERS` sample crews/logs exist for the non-DB path; with `USE_DB` on, the lists above come from Supabase.
 
 ## 5. Connections
@@ -214,5 +218,4 @@ Real climbers, batch 4 (0314): a real crew's safety questionnaire and safety-rea
 #2395: Crews audit: past-crew vouching, honest Archive/Clear, serialized gear writes, migration 0291 tightens `assign_crew_gear`.
 
 ## 8. Known gaps (verified)
-- Archive and Clear of a past crew are not persisted; the code comment in `archiveCrew` calls per-member persistence a follow-up.
 - `docs/guards` and CLAUDE.md describe crews as in-memory seed; `lib/db.js` shows they are DB-backed, so that older claim is stale.
