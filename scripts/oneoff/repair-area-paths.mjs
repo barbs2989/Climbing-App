@@ -1,7 +1,7 @@
 // Repairs EVERY area whose path is not its parent's path + "." + its own id label (the stale prefixes
 // left by the held Stairway to Heaven re-parent). Parents first, so each child is computed from a
 // corrected parent. Each PATCH is preconditioned on the current bad path; 1 s pace.
-import { loadEnv } from "/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/discipline-areas-wrong-spot/scripts/lib/supabase-env.mjs";
+import { loadEnv } from "../lib/supabase-env.mjs";
 const env = loadEnv(), url = env.VITE_SUPABASE_URL, key = env.SUPABASE_SERVICE_KEY;
 const H = { apikey: key, Authorization: `Bearer ${key}`, "Content-Type": "application/json", Prefer: "return=representation" };
 async function loadAll() {
