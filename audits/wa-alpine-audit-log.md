@@ -34850,3 +34850,54 @@ closes out pass 7; the next run starts pass 8 from the beginning.
 
 1 confirmed error fixed, 2 flagged for human review (new), 5 clean.
 `last_processed_id` advances to `wa_wolframite_mountain_scramble` — **pass 7 complete.**
+
+## 2026-10-25 — Pass 8, Batch 466 (pass 8 begins)
+
+First batch of a new pass: facts go stale between passes, so pass 8 re-queries the
+live scope from scratch rather than reusing pass 1's route list. The catalog has
+grown since pass 1 (e.g. `wa_american_border_peak_northeast_face` and
+`wa_accendo_lunae_lib_west_face_var` did not exist back then), so this batch's
+route set differs slightly from pass 1's batch 1 even though both start at the
+same alphabetical point. Eight routes across six peaks: Liberty Bell Mountain (A
+Servant To Liberty / A Slave to Liberty), Abernathy Peak (South Ridge), Colchuck
+Balanced Rock (Accendo Lunae), Burgundy Spire (Action Potential), Agnes Mountain
+(South Ridge), Alpine Lookout (Round Mountain Trail), and American Border Peak
+(Northeast Face, Southeast Face/South Ridge).
+
+**Fixed (1), SQL in `audits/sql/2026-10-25-batch-466.sql`:**
+- `wa_action_potential` (Burgundy Spire): `high_point_ft` 8492 → 8483. It was the
+  only route on Burgundy Spire disagreeing with the peak's own area row (8483 ft)
+  and sibling route Ultramega OK (also 8483 ft); a Lemke Climbs trip report
+  independently gives the summit as 8,483 ft / 2,586 m, matching both. No source
+  found supports 8492. (A third sibling, North Face, stores 8400 ft — matching
+  SummitPost/The Mountaineers — a pre-existing area-vs-SummitPost split that
+  predates this batch and is left untouched since North Face wasn't in scope
+  this round.)
+
+**Noted, not flagged:**
+- `wa_a_servant_to_liberty`: stored under the name "A Servant To Liberty", but
+  every source found (AAC Publications, Climbing.com, Mountain Project) calls
+  the route "A Slave to Liberty" — no source uses "Servant". The row's own
+  `overview` text already cross-references "Also published as 'A Slave to
+  Liberty'", so this reads as a deliberate, already-documented naming choice
+  rather than an undocumented database error. Left unchanged.
+
+**Clean (7):**
+- `wa_abernathy_peak_south_ridge`: 8,321 ft matches SummitPost, The Mountaineers
+  and Fastest Known Time.
+- `wa_accendo_lunae_lib_west_face_var`: 8,240 ft matches Wikipedia/PeakVisor; the
+  2012 Herrington/Bennett/Zimmerman FA is confirmed by the AAC's own report.
+- `wa_action_potential`'s FA (Mark Allen and Mike Layton, 2004) is confirmed by a
+  SummitPost first-ascent trip report for the route.
+- `wa_agnes_mountain_south_ridge`: 8,119 ft matches Wikipedia's NAVD88 figure
+  exactly.
+- `wa_alpine_lookout_round_mountain_trail`: 6,237 ft was already cross-checked
+  against USFS/willhiteweb/wenatcheeoutdoors in the row's own `corrections` field
+  from a prior pass.
+- `wa_american_border_peak_northeast_face`, `wa_american_border_peak_southeast_face`:
+  7,998 ft matches Wikipedia's NAVD88 figure (SummitPost/Mountaineers give 7,994,
+  a 4-ft difference not worth re-litigating).
+
+1 confirmed error fixed, 0 flagged for human review (new), 7 clean.
+`last_processed_id` advances to `wa_american_border_peak_southeast_face` — pass 8
+in progress.
