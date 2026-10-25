@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **One auth listener for the app** (owner to-do, 2026-10-25): `src/AuthContext.tsx` wraps the whole app in `main.jsx`. `useAuth()` gives any screen the signed-in `user` (or null), a `loading` flag until the stored session is read, and `login` / `logout` (the existing `lib/auth.js` calls). It is the only shared `onAuthStateChange` subscription in the app; the older `useSession()` hook still subscribes on its own, and its callers are unchanged. No visible change.
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
