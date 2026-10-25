@@ -1,0 +1,25 @@
+{
+  "wa_phantom_peak_west_ridge": {
+    "area": "wa_phantom_peak",
+    "pitch_detail": [
+      { "pitch": "1", "notes": "Opens with a short, steep crack system, then relaxes into rambling along the crest of the ridge. Start from the roping-up ledge above the saddle." },
+      { "pitch": "2-5", "notes": "Four more leads in the same vein: big corners, towers that you can either skirt or climb straight over, and airy ridge running. The climbing is engaging but surprisingly moderate, mostly 5.7+." },
+      { "pitch": "6", "grade": "5.10", "crux": true, "notes": "Partway up, the ridge is split by an airy cleft about four feet wide and roughly 100 ft deep. Crossing it takes a long stemming move around 5.10 in difficulty. The first-ascent party rigged a nut and sling as a temporary handhold to tension across, then freed it on top-rope, so the stem is unprotected for the leader." },
+      { "pitch": "8-10", "notes": "Above the tower and the notch below it, the last three leads follow good-quality faces and cracks in sound stone. Once the difficulty drops, the rope can be coiled for roughly 400 ft of fourth-class soloing to the summit ridge." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "sources": ["https://publications.americanalpineclub.org/articles/13201216005"],
+      "changed": "Wrote the pitches the single first-ascent account describes individually: 1, 2-5 (grouped), 6 (crux), and 8-10 (grouped). Pitch 7 left out because the account never describes it. No lengths, bolts or anchors are stated, so none given. Only one source exists, hence medium.",
+      "pitch_count_found": 10,
+      "other_findings": "Stored beta says the tower is topped at the end of pitch 7 followed by a ~100 ft rappel; the account says the tower is reached two pitches after the middle of pitch 6, i.e. around pitch 8, and then says pitches eight through ten follow, so the numbering is ambiguous in the source itself. Stored row's grade 5.10 is only a single move; the bulk is 5.7+."
+    }
+  },
+  "skip_reasons": {
+    "wa_little_mac_spire_southwest_route": "Only source found (1971 AAJ note) says eight class 4-5 leads on solid rock with three near-vertical steps; no pitch-level account. Stored 9 pitches vs 8 leads there.",
+    "wa_lundin_peak_south_face_left": "Only source read (route page) gives a single paragraph for the whole line (start crack 5.10, ramp, finish 5.7-5.8) with no pitch-by-pitch description; stored 4 pitches matches. A summary, not a table.",
+    "wa_north_peak_north_ridge": "No page describing this route found (searches returned nothing for a North Ridge on this North Peak; area page lists no pitch text).",
+    "wa_northeast_ridge_1963_route": "No pitch-level account found; searches only surfaced different Johannesburg routes (Northeast Face, Northeast Rib, Northeast Buttress).",
+    "wa_plan_9_from_outer_space": "No climbing page found for the route; searches returned only film results and a to-do list listing, and a conflicting 5.11/25-pitch entry that may be a different line."
+  }
+}
