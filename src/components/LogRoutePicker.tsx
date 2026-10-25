@@ -1,6 +1,7 @@
 import { useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
-import { C, DbClimbPicker, MOUNTAINS, ROUTES, inArea } from "../../ClimbMatchCore.jsx";
+import { C, MOUNTAINS, ROUTES, inArea } from "../../ClimbMatchCore.jsx";
+import DbClimbPicker from "./DbClimbPicker.tsx";
 import { USE_DB } from "../../lib/supabase.js";
 import { clickable } from "../../lib/clickable";
 import { POP_BACK, POP_CLOSE } from "../../lib/popupChrome.js";
