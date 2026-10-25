@@ -415,7 +415,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         have sent the next reader to delete a flag that is doing real work — `innerText` returns
         `SAVED SEARCHES` for the card heading, so without `/i` the *new* landmark would miss.
       - **`offline library` appeared ZERO times anywhere in the app**, so a third of the alternation
-        had never matched once and could only ever report a false miss.
+        had never matched once and could only ever report a false miss. **Since 2026-10-24 it does
+        exist** — as the Menu tile that opens Saved on its *Offline* chip — so the test asks only
+        that it is not text inside the Saved sub-view. A Menu label is a way in, not a heading on
+        the view, and the Offline card's own heading renders only behind its chip.
       - The survivor is a `<MeH>` heading rendered **unconditionally** inside the
         `logbookTab==="lists"` region, so it does not move with the data or with the outage — which
         is the rule the comment states and the old landmark broke. `saved searches` is unique
