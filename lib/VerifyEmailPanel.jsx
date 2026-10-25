@@ -12,6 +12,7 @@ import { C } from "../ClimbMatchCore.jsx";
 import { sendEmailCode, confirmEmailCode } from "./auth";
 import { verifyMyEmail } from "./db";
 import { CAPTCHA_ON, Turnstile } from "./captcha.jsx";
+import Chevron from "../src/components/Chevron.tsx";
 
 // What the send call's failure means to the climber. Supabase's built-in mailer delivers only to the
 // project's own team until a mail provider (SMTP) is connected, and refuses everyone else -- say that
@@ -66,7 +67,7 @@ export default function VerifyEmailPanel({ email, nudge, onVerified }) {
   return (<div ref={box} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: 14, marginBottom: 14 }}>
     {!open ? <button onClick={() => setOpen(true)} aria-label="Verify your email" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", background: "transparent", border: "none", color: C.text, cursor: "pointer", padding: 0, textAlign: "left" }}>
       <span><span style={{ display: "block", fontSize: 14, fontWeight: 700 }}>Verify your email</span><span style={{ display: "block", fontSize: 12, color: C.textMuted, marginTop: 2 }}>Get the ✓ other climbers see — we email you a code.</span></span>
-      <span style={{ color: C.textMuted, fontSize: 16 }}>›</span>
+      <span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={16} color={C.textMuted}/></span>
     </button> : <div>
       <div style={{ fontSize: 14, fontWeight: 700, color: C.text, marginBottom: 4 }}>Verify your email</div>
       {!sent ? <div>

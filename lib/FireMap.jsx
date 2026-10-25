@@ -446,7 +446,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
             {/* The area map's button, exactly: "📍 Me". It was a line-drawn pin icon in
                 the same white as its word, which read as decoration, not "where am I". */}
             <button onClick={locate} disabled={me.locating} aria-label="Show my location on the map"
-              style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: me.locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{"📍 " + locateLabel(me, "Me")}</button>
+              style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: me.locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}><span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><ActionIcon name="pin" size={14} color="currentColor" />{locateLabel(me, "Me")}</span></button>
             {fullscreen ? null : <button onClick={() => setFullscreen(true)} aria-label="Full screen" title="Full screen" style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000 })}>⤢</button>}
             {/* Top-right under the zoom buttons (which end ~140px down, below the ⤢), not
                 GPXMap's bottom-left: that corner holds the layer chips here. */}

@@ -637,11 +637,12 @@ async function runReports() {
   const shot = (u) => { M.__set_UNITS(u); const h = M.renderRoute(route, "conditions"); M.__set_UNITS("imperial"); return h; };
   const impT = strip(shot("imperial")), metT = strip(shot("metric"));
 
-  // Fails CLOSED: with no chip on screen every assertion below passes vacuously.
-  if (!impT.includes("CONDITIONS NOW") || !/\ud83c\udf21 Temp/.test(impT)) fail("ANCHOR LOST: no CONDITIONS NOW thermometer chip on the Conditions tab — this run proved nothing");
+  // Fails CLOSED: with no chip on screen every assertion below passes vacuously. The chip read
+  // "🌡 Temp" until polish round 3 removed the app's emoji (check:no-emoji); it is "Temp" now.
+  if (!impT.includes("CONDITIONS NOW") || !/Temp -?\d+\u00b0[FC]/.test(impT)) fail("ANCHOR LOST: no CONDITIONS NOW thermometer chip on the Conditions tab — this run proved nothing");
   else if (impT.length < 400 || metT.length < 400) fail(`thin render (${impT.length}/${metT.length} chars) — NOT MEASURED`);
   else {
-    const grab = (t) => (t.match(/\ud83c\udf21 Temp (-?\d+)\u00b0([FC])/) || []).slice(1);
+    const grab = (t) => (t.match(/Temp (-?\d+)\u00b0([FC])/) || []).slice(1);
     const gi = grab(impT), gm = grab(metT);
     if (!gi.length || !gm.length) fail(`could not read the Temp chip (imperial ${JSON.stringify(gi)}, metric ${JSON.stringify(gm)})`);
     else {

@@ -1071,3 +1071,39 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Known miss**: `const X = (() => SKILLS)();` — the read sits inside a function, so it is
     deferred, but the call runs at module scope. Not followed on purpose: following calls means
     evaluating the program. Recorded in the suite as a known miss, not a case.
+
+- **`check:no-emoji`** asserts that **the app draws no emoji** (owner, 2026-10-25: "i dont want
+  emojis"). Every icon is a line icon (`ActionIcon`) or no icon at all; an emoji is drawn by the
+  phone's own colour font, so it changes from device to device, sits at a different size from the
+  text beside it, and was the one thing on a screen that did not match the rest. Polish round 3
+  removed them (195 drawn emoji in 29 files once comments and lookup keys are set aside). Static, in
+  `npm run build`.
+  - **What counts.** The pictograph planes (U+1F000–1FAFF) and the BMP blocks phones draw as emoji:
+    Misc Symbols + Dingbats (U+2600–27BF, so ⚠ ⚑ ⚙ ✎ ✅ ❄ ☀), U+2B00–2BFF (⭐ ⬆), the ⏩–⏺ media keys
+    (⏱) and ⌚⌛. **Not** the typographic marks the app uses on purpose — ✓ ✔ ✕ ✖ ✗ ✦ ★ ☆ ☾ — nor
+    anything outside those blocks (← → ↗ ⌂ ⇢ ◈ ● ▪ • ›). The waypoint glyphs are all outside them,
+    so `check:wp-styles`' own "no emoji glyph" rule and this one agree; Hazard's ⚠ became "!" and the
+    unstyled fallback 📍 became "○" (which `check:wp-styles` now asserts never renders).
+  - **Three things may still hold one, and the census line prints how many of each:**
+    1. a **lookup key** — `{"🏆":"award"}`, quoted, after `{` or `,`, followed by `:`. `EMOJI_ICON`
+       is the main one. A first draft accepted any quoted emoji followed by `:`, which let a
+       ternary's `x.lit?"☀":"▪"` through as a "key" — the hourly forecast's sun and rain marks hid
+       behind it until the `{`/`,` test was added;
+    2. the **start of a string handed straight to `<Lbl s=…>`** — Lbl draws a leading emoji as the
+       ActionIcon `EMOJI_ICON` names, and since this round **drops** one it has no icon for (it used
+       to print it), so nothing passed to Lbl can reach the screen as a glyph. A string built
+       elsewhere and passed to Lbl (`groupWhere()` returned `"📍 Based in …"`) is NOT recognised —
+       move the emoji to the call site, as `<Lbl s={"📍 "+t}/>`;
+    3. `src/components/Lbl.tsx` itself, whose regex recognises the emoji it swaps.
+  - **Comments are stripped first** (block, JSX `{/* */}`, and `//` after whitespace or punctuation
+    so `https://` survives) — a comment may quote what a screen used to say.
+  - **What it cannot see:** text from the database (a climber's own words, a list name typed with an
+    emoji) and strings assembled at runtime from escapes. Neither is the app's own copy.
+  - **Data that held emoji now holds icon NAMES:** `routeTags.js` (lists and features),
+    `RISK_LEVELS`, the challenge lists and goal rows in `useCuratedLists`/`Challenges`, and
+    `REACTIONS` (`i`, an ActionIcon name or none — the faces have no icon and render as their word).
+    `DISC`/`CAT` `icon`, `VERIF.icon`, `Contributions`' `ST.icon` and the Ranks metric `icon` were
+    read by nothing and were removed or blanked. Saved `user_lists.icon` values are already names.
+  - **Injection-tested 7/7** with a throwaway `src/components/` file: a drawn emoji, a ternary's
+    `"☀"` and a bare `"⚠ careful"` FAIL; a comment, a `{"🏆":"award"}` key, an `<Lbl s={"📍 "+x}/>`
+    and `"✓ done ★"` PASS.

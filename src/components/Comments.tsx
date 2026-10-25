@@ -1,5 +1,5 @@
 import { useState, type CSSProperties } from "react";
-import { C, CLIMBERS, FALLBACK_COVER, ME, REACTIONS, commentWhen, groupMentionMatch, mentionName, mentionToken, onImgErr, reactionCounts, renderMD } from "../../ClimbMatchCore.jsx";
+import { C, CLIMBERS, FALLBACK_COVER, ME, REACTIONS, commentWhen, groupMentionMatch, mentionName, mentionToken, onImgErr, reactionCounts, reactionIcons, renderMD } from "../../ClimbMatchCore.jsx";
 import { askConfirm } from "../../lib/ConfirmSheet.jsx";
 import { photoThumb } from "../../lib/photoThumb";
 import { canAppeal, canReportContent, isDbRowId, openAppeal, openContentReport } from "../../lib/reportBus";
@@ -95,10 +95,10 @@ export default function Comments({targetId,comments,onAdd,onViewProfile,onEdit,o
   const lnk: CSSProperties={background:"none",border:"none",padding:"6px 2px",margin:"-6px -2px",fontSize:11.5,fontWeight:700,cursor:"pointer",color:C.textMuted};
   // `c.reactions` is { "<climber>": "<key>" } and `c.myReaction` is resolved by the caller, which is the only place that knows
   // whether "me" is a uuid (DB) or seed id 0 (demo). The pill shows the top three and the total; it opens the picker.
-  const reactPill=(c: ThreadComment)=>{const counts=reactionCounts(c.reactions);const n=counts.reduce((s,x)=>s+x.n,0);if(!n)return null;return <button onClick={()=>setReactFor(c.id)} aria-label={n+(n===1?" reaction":" reactions")+" — choose yours"} style={{flexShrink:0,display:"inline-flex",alignItems:"center",gap:3,padding:"1px 7px",marginBottom:2,borderRadius:10,border:"1px solid "+C.border,background:C.card,color:C.textSub,fontSize:11,fontWeight:700,cursor:"pointer",lineHeight:1.6}}><span aria-hidden="true">{counts.slice(0,3).map(rc=>{const rr=REACTIONS.find(x=>x.k===rc.k);return rr?rr.e:"";}).join("")}</span><span>{n}</span></button>;};
+  const reactPill=(c: ThreadComment)=>{const counts=reactionCounts(c.reactions);const n=counts.reduce((s,x)=>s+x.n,0);if(!n)return null;return <button onClick={()=>setReactFor(c.id)} aria-label={n+(n===1?" reaction":" reactions")+" — choose yours"} style={{flexShrink:0,display:"inline-flex",alignItems:"center",gap:3,padding:"1px 7px",marginBottom:2,borderRadius:10,border:"1px solid "+C.border,background:C.card,color:C.textSub,fontSize:11,fontWeight:700,cursor:"pointer",lineHeight:1.6}}><span aria-hidden="true" style={{display:"inline-flex",gap:2}}>{reactionIcons(counts,12)}</span><span>{n}</span></button>;};
   /* The reaction picker's entry point stays a real, named button (check:clickable records it was once inert on Enter). It
      shows the reaction you gave, so "React" does not read as less real than Like. */
-  const reactBtn=(c: ThreadComment)=>{const mr=c.myReaction?REACTIONS.find(x=>x.k===c.myReaction):null;return <button onClick={()=>setReactFor(c.id)} aria-label={mr?"Change your reaction":"Add a reaction"} style={Object.assign({},lnk,{color:mr?C.blue:C.textMuted})}>{mr?mr.e+" "+mr.l:"React"}</button>;};
+  const reactBtn=(c: ThreadComment)=>{const mr=c.myReaction?REACTIONS.find(x=>x.k===c.myReaction):null;return <button onClick={()=>setReactFor(c.id)} aria-label={mr?"Change your reaction":"Add a reaction"} style={Object.assign({},lnk,{color:mr?C.blue:C.textMuted})}>{mr?<span style={{display:"inline-flex",alignItems:"center",gap:4}}>{mr.i?<ActionIcon name={mr.i} size={12} color="currentColor"/>:null}{mr.l}</span>:"React"}</button>;};
   const whenBtn=(c: ThreadComment)=>{const f=fullAt===c.id;return <button onClick={()=>setFullAt(f?null:c.id)} aria-label={commentWhen(c.ts,true)+(c.edited?", edited":"")} style={Object.assign({},lnk,{fontWeight:600})}>{commentWhen(c.ts,f)+(c.edited?" · Edited":"")}</button>;};
   /* ⋯ holds what used to be a row of text links. Report goes to the mount's own sheet where it passes one (a group's), and to
      the app-wide one (0263) for any stored comment otherwise, so no comment gets two. Block needs a person with an account. */

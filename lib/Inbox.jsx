@@ -38,7 +38,7 @@ export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoa
     <div style={{position:"sticky",top:0,background:C.surface,borderBottom:"1px solid "+C.border,padding:"12px 16px",display:"flex",alignItems:"center",gap:10,zIndex:2}}>
       {pane==="drop"?null:<button onClick={onClose} style={POP_BACK}>← Back</button>}
       <div style={{fontSize:15,fontWeight:700,color:C.text,flex:pane==="drop"?1:undefined}}>Messages</div>
-      {pane==="drop"&&onExpand?<button onClick={onExpand} style={{background:"none",border:"none",padding:"4px 2px",color:C.blue,fontSize:13,fontWeight:700,cursor:"pointer"}}>Open Messages</button>:null}
+      {pane==="drop"&&onExpand?<button onClick={onExpand} style={{background:"none",border:"none",padding:"4px 2px",color:C.blue,fontSize:13,fontWeight:700,cursor:"pointer"}}>Open messages</button>:null}
     </div>
     <div style={{maxWidth:560,margin:"0 auto",padding:"14px 16px 40px",color:C.text}}>
       <div style={{display:"flex",gap:8,marginBottom:14}}>{[["friends","Friends",dmThreads.length],["crews","Crews",crewThreads.length]].map(z=><button key={z[0]} onClick={()=>setItab(z[0])} aria-label={z[2]?z[1]+", "+z[2]:z[1]} aria-current={itab===z[0]?"true":undefined} style={{flex:1,padding:"9px 4px",borderRadius:11,border:"1px solid "+(itab===z[0]?C.blue:C.border),cursor:"pointer",background:itab===z[0]?C.blueSolid:C.card,color:itab===z[0]?"#fff":C.textSub,fontSize:13,fontWeight:700}}>{z[1]}{z[2]?<span style={{marginLeft:5,fontSize:12,fontWeight:800,opacity:0.85}}>{z[2]}</span>:null}</button>)}</div>

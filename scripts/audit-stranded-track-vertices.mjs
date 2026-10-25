@@ -65,8 +65,9 @@ for (const r of rows) {
   if (line.length - off.length < 3) continue;         // too short to call a sketch at all
 
   // WHICH KIND OF ADRIFT VERTEX, because the two want OPPOSITE repairs and this report used to
-  // prescribe one of them for both. A STRANDED vertex sits where a pin used to be, and the fix is
-  // to carry it onto the pin. A COMPUTED one was interpolated along the line itself — a 14-decimal
+  // prescribe one of them for both. A STRANDED vertex sits where a pin used to be; carrying it onto
+  // the pin was the old repair, and is now FORBIDDEN (owner, 2026-10-25: a route line is never
+  // reshaped from the waypoints; the app does not draw a pin-join line at all). A COMPUTED one was interpolated along the line itself — a 14-decimal
   // tail, or sitting on the straight chord between its own neighbours — and moving it would invent
   // a shape the line never had. Measured: of the six routes the repair script proposed before this
   // distinction existed, THREE were computed, and the confidence ratio did not catch them (one
@@ -122,9 +123,9 @@ if (!stranded.length) {
   const nComp = stranded.reduce((a, s) => a + s.computed.length, 0);
   console.log(`\n${nOff} adrift vertex/vertices across ${stranded.length} route(s); ${nComp} of them COMPUTED.`);
   console.log("A STRANDED vertex — adrift while a pin sits orphaned — is the fingerprint of a pin repair");
-  console.log("that did not carry its sketched line with it, and the fix is to move it onto the pin,");
-  console.log("copying a coordinate the row already holds. A COMPUTED one is the opposite: it was");
-  console.log("interpolated along the line, so there is no old pin position to carry it to and moving");
-  console.log("it would invent a shape the line never had. Leave those alone.");
+  console.log("that did not carry its sketched line with it. DO NOT move it onto the pin: the owner's rule");
+  console.log("(2026-10-25) is that a route line is a recorded track or nothing, never built or reshaped from");
+  console.log("the waypoints. A \"captioned\" line is a pin-join and the app does not draw it at all; an");
+  console.log("UNcaptioned one would be drawn as a track, so widen trackIsJustTheWaypoints, not the row.");
 }
 console.log("\nreport-only");

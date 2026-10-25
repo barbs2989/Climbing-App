@@ -52,13 +52,14 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   - New York, 2026-10-21: 406 walls ordered (3,780 matched, 68 anchored, 102 unplaced), 25 climbs added, 11 adds refused by the
     duplicate trigger (all on near-duplicate walls of ours, e.g. "The Guides' Wall" beside "The Guides' Wall (Madame G's)"),
     21 for review, 6 walls skipped (2 shared, 3 with no area of ours, 1 split).
-  - **Whole-catalog run, 2026-10-21/22 — STOPPED by the owner partway through Utah** (it saturated the production
-    database: one REST write per route back to back, with retries piling on; the live app's reads 504'd). Done and
-    rewritten: New York, California, Oregon, New Hampshire, Colorado. Ordered, facts/prose pending: Quebec,
-    Kentucky. Partly ordered: Utah, Arizona, Washington, BC, Wyoming, Nevada, New Mexico, Idaho, Montana. Every
-    wall is logged under `_order/<state>.jsonl`, so a re-run skips finished walls (and a state whose walls are all
-    done skips its database load). Writes now wait `--pace-ms` (default 400) after each one and back off a minute
-    on failure; **do not restart without the owner's OK.**
+  - **Whole-catalog run, 2026-10-21 → 10-25 — DONE.** 60 states and provinces, **24,683 walls ordered and 1,112
+    climbs added**, every added climb with its facts and rewritten prose. It was stopped twice: on 10-22 it saturated
+    the production database (one REST write per route back to back, retries piling on), and on 10-24 the project's
+    Disk IO budget ran out, when even a paced write tipped reads past 15 s. It finished at `--pace-ms 1000` behind a
+    watchdog that froze the importer whenever an app-style read went slow. Five walls stay unordered for good: their
+    MP pages return 404 or have no route table. Every wall is logged under `_order/<state>.jsonl`, so a re-run skips
+    finished walls, and a state whose walls are all done skips its database load. Any future bulk run must be paced
+    and watched the same way.
 - **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker. Its Areas | Routes
   toggle and box PIN under the top bar (`usePinnedBar`) while the list below scrolls, and let go at the list's end marker (2026-10-23).
 - **Add an area** (0360, `lib/AddArea.jsx`): *Add an area* under an area's list, or under the route finder's results, opens a sheet —
@@ -68,6 +69,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   area holds no climbs itself (areas hold sub-areas OR climbs — Mountain Project's rule, and `trg_areas_leaf_xor`), and never on a country.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi, gain, trip, elev, prom, near, within }`). Active filters show as chips.
+  *Save search* writes the account's `saved_searches` (see `docs/features/logbook-crews-home.md`); a saved one reopens the finder through `jumpToFinderReq` with its `initial` words and filters.
   **Since 0369 (2026-10-24)** it also filters by **Distance away** (first in the sheet: *Use my location* or a town / zip through
   `searchPlaces`, then Within 10/25/50/100 mi or 15/40/80/150 km, plus a *Nearest first* sort grouped by wall), **Elevation gain**
   and **Round trip** (ranges), **Peak elevation** and **Prominence** (minimums), as AllTrails does gain, length and Distance
@@ -119,7 +121,11 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   **⤢** gives a map-only view (the list steps aside; ✕ returns to it). **📍 Me** is the area map's button. The banner's **Full text →**
   opens `FireAlertSheet`, which reads the product's own words from api.weather.gov (`useFireAlert`; an expired product says so) and
   links to weather.gov's page for the zone (`nwsPointPage`) — the old link opened api.weather.gov's raw JSON (2026-10-23).
-- **Objectives panel** (`ObjectivesPanel`): wishlisted routes under the current area.
+- **Objectives panel** (`ObjectivesPanel`): wishlisted routes under the current area. Each row names
+  WHERE the climb is before its type (`placeOf`: the peak or crag, then the place holding it —
+  "Bear Mountain · Chilliwack Range · Alpine · 7 pitches"), as the Logbook's objectives rows do; a list
+  gathered from a whole state is otherwise a column of names like "North Buttress". The *From your
+  objectives* band of `DbSuggestedClimbs` uses the same line.
 - **Route page map** (`GPXMap`, `src/components/GPXMap.tsx`): track + waypoints + peak coordinate on the same base layers; a line
   drawn between waypoints carries a "sketch" caveat rather than posing as GPS. A point the app worked out rather than one somebody
   pinned — the crag/peak coordinate (the orange ▲ on a crag map) and a derived trailhead — draws hollow and DASHED (`wpDivIcon`'s

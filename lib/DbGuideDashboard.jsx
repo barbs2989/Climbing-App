@@ -3,6 +3,7 @@
 // credential status only ever changes via admin review (Supabase Studio, Phase 1) or
 // the 12-month reconciliation RPC. Rendered only when USE_DB (see ClimbMatch.jsx's swap).
 import { useEffect, useState } from "react";
+import { BTN_SM } from "./buttonStyles.js";
 import { createPortal } from "react-dom";
 import { useSession } from "./auth";
 import {
@@ -184,7 +185,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 4 }}><span style={{ fontSize: 12.5, fontWeight: 700, color: C.text }}>{publicNameOf(r.profiles)}</span><span>{"★".repeat(r.rating)}</span></div>
             <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5 }}>{r.text}</div>
             {r.guide_reply ? <div style={{ marginTop: 8, background: C.surface, borderLeft: "2px solid " + C.blue, borderRadius: "0 8px 8px 0", padding: "7px 10px" }}><div style={{ fontSize: 12, color: C.blue, fontWeight: 700, marginBottom: 2 }}>Your reply</div><div style={{ fontSize: 12.5, color: C.textSub }}>{r.guide_reply}</div></div>
-              : replyId === r.id ? <div style={{ marginTop: 8 }}><textarea aria-label="Write a reply" value={replyText} onChange={e => setReplyText(e.target.value)} rows={2} placeholder="Write a reply..." style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} /><div style={{ display: "flex", gap: 8, marginTop: 6 }}><button onClick={() => postReply(r.id)} style={{ background: C.blueSolid, color: "#fff", border: "none", borderRadius: 8, padding: "6px 14px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}>Post reply</button><button onClick={() => { setReplyId(null); setReplyText(""); }} style={{ background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "6px 12px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Cancel</button></div></div>
+              : replyId === r.id ? <div style={{ marginTop: 8 }}><textarea aria-label="Write a reply" value={replyText} onChange={e => setReplyText(e.target.value)} rows={2} placeholder="Write a reply..." style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} /><div style={{ display: "flex", gap: 8, marginTop: 6 }}><button onClick={() => postReply(r.id)} style={{ ...BTN_SM, background: C.blueSolid, color: "#fff", border: "none" }}>Post reply</button><button onClick={() => { setReplyId(null); setReplyText(""); }} style={{ background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "6px 12px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Cancel</button></div></div>
                 : <button onClick={() => { setReplyId(r.id); setReplyText(""); }} style={{ marginTop: 8, background: C.surface, border: "1px solid " + C.border, color: C.blue, borderRadius: 8, padding: "9px 12px", fontSize: 11.5, fontWeight: 700, cursor: "pointer" }}>Respond</button>}
           </div>) : <div style={{ fontSize: 12.5, color: C.textMuted }}>{revLoading ? "Loading reviews…" : revError ? "Couldn’t load your reviews — check your connection and try again" : "No reviews yet."}</div>}
         </div>}

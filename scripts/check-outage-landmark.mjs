@@ -191,10 +191,13 @@ for (const alt of ALTS) {
            "\n        FIX: delete it from the landmark in scripts/check-outage.mjs. It protects" +
            "\n        nothing, and while it sits there the alternation LOOKS broader than it is.");
 }
-if (!appLower.includes("offline library") && !core.includes("offline library")) {
-  ok('"offline library" is confirmed absent from the app -- the dead term the landmark used to carry');
+// Since 2026-10-24 "Offline library" is a MENU tile that opens Saved on its Offline chip. It is a
+// label on the way IN, not a heading on this view, so it still cannot identify the view: what this
+// asserts now is that it has not become text inside the Saved sub-view, where it would need deciding.
+if (!lists.text.toLowerCase().includes("offline library")) {
+  ok('"offline library" is not text on the Saved sub-view -- the dead term the landmark used to carry');
 } else {
-  bad('"offline library" now exists in the app; re-check whether it belongs in the landmark');
+  bad('"offline library" now renders on the Saved sub-view; re-check whether it belongs in the landmark');
 }
 
 // ---------------------------------------------------------------- 4. the landmark is a HEADING
