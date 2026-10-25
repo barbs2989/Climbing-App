@@ -65,6 +65,7 @@
     "audit:list-coverage": "node scripts/audit-list-coverage.mjs",
     "check:route-tags": "node scripts/check-route-tags.mjs",
     "check:approach-overlay": "node scripts/check-approach-overlay.mjs",
+    "audit:approach-hazards": "node scripts/audit-approach-hazards.mjs",
     "check:sql": "node scripts/check-sql-targets.mjs",
     "check:crew": "node scripts/check-crew-ready.mjs",
     "check:partner-areas": "node scripts/check-partner-areas.mjs",
