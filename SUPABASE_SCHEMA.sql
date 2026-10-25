@@ -1658,15 +1658,15 @@ CREATE TABLE public.route_difficulty_ratings (
   created_at timestamp with time zone DEFAULT now(),
   updated_at timestamp with time zone DEFAULT now(),
   CONSTRAINT route_difficulty_ratings_pkey PRIMARY KEY (id),
-  CONSTRAINT route_difficulty_ratings_axis_check CHECK ((axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text]))),
+  CONSTRAINT route_difficulty_ratings_axis_check CHECK ((axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text, 'power'::text, 'endurance'::text, 'fingery'::text, 'mental'::text, 'protection'::text, 'sustained'::text, 'strenuous'::text, 'height'::text, 'landing'::text]))),
   CONSTRAINT route_difficulty_ratings_rating_check CHECK (((rating >= 1) AND (rating <= 5))),
   CONSTRAINT route_difficulty_ratings_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.route_difficulty_ratings ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "difficulty ratings delete own" ON public.route_difficulty_ratings AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "difficulty ratings insert own" ON public.route_difficulty_ratings AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND ((rating >= 1) AND (rating <= 5)) AND (axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text]))));
+CREATE POLICY "difficulty ratings insert own" ON public.route_difficulty_ratings AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND ((rating >= 1) AND (rating <= 5)) AND (axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text, 'power'::text, 'endurance'::text, 'fingery'::text, 'mental'::text, 'protection'::text, 'sustained'::text, 'strenuous'::text, 'height'::text, 'landing'::text]))));
 CREATE POLICY "difficulty ratings public read" ON public.route_difficulty_ratings AS PERMISSIVE FOR SELECT TO public USING (true);
-CREATE POLICY "difficulty ratings update own" ON public.route_difficulty_ratings AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND ((rating >= 1) AND (rating <= 5)) AND (axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text]))));
+CREATE POLICY "difficulty ratings update own" ON public.route_difficulty_ratings AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND ((rating >= 1) AND (rating <= 5)) AND (axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text, 'power'::text, 'endurance'::text, 'fingery'::text, 'mental'::text, 'protection'::text, 'sustained'::text, 'strenuous'::text, 'height'::text, 'landing'::text]))));
 
 CREATE TABLE public.route_field_confidence (
   route_id text NOT NULL,

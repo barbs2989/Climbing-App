@@ -68,7 +68,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 
 | File | What lives there |
 |---|---|
-| `RouteDetail.jsx` | The page: sub-tabs, `CRAG_CATS` (imported from core since 0300), `showPlan`, `cragOnly`, header stars UI, planner, photos tab and `photoLightbox`, edit pencils, `DiffRadar`, the crag Partners sub-tab (`usePartnersInArea`, `areaPartners`) |
+| `RouteDetail.jsx` | The page: sub-tabs, `CRAG_CATS` (imported from core since 0300), `showPlan`, `cragOnly`, header stars UI, planner, photos tab and `photoLightbox`, edit pencils, `DiffRadar` (its axes come from `DIFF_AXES_BY_DISC` / `diffAxesFor`: sport, trad and bouldering have their own five, every other discipline keeps the original five, widened for storage by migration 0374), the crag Partners sub-tab (`usePartnersInArea`, `areaPartners`) |
 | `ClimbMatch.jsx` | `openRoute`, `selRoute`, `myStars`/`myRateQ`, route memo that merges `_contribFields`/`_pendingEdits`/`_contribAgreed` |
 | `ClimbMatchCore.jsx` | `scarfHrs`, `techHrs`, `buildConsensus`, `catOf`, `wpPlaced`, `WP_STYLE` |
 | `lib/TrailDrawMap.jsx` | `TrailDrawMap` — tap-to-trace the walk in from parking to the crag, inside the Add-the-trail sheet on crag routes |
