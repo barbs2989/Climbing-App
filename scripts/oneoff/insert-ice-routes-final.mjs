@@ -1,10 +1,12 @@
+import "../lib/load-env.mjs";
+import { requireServiceKey } from "../lib/supabase-env.mjs";
 import { createClient } from '@supabase/supabase-js';
 import fs from 'fs';
 import ws from 'ws';
 
 const supabase = createClient(
-  'https://ofuofhojhbcrcahuotya.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9mdW9maG9qaGJjcmNhaHVvdHlhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODM4Njc5NzcsImV4cCI6MTk5OTQ0Mzk3N30.7Cih20z7h3rR9DpEe5Yb8vL2Z5Q3m9K6Q7x8N2M3P4Q',
+  process.env.VITE_SUPABASE_URL,
+  requireServiceKey(),
   { realtime: { transport: ws } }
 );
 
