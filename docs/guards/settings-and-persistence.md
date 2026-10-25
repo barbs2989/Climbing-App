@@ -599,6 +599,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     none, every comparison passes **vacuously**), a moved empty-state gate, a `requests` prop that
     does not close, and a missing bell. It also fails if the *"Nothing needs you"* copy is gone —
     a gate guarding nothing is not a gate.
+  - **THE BELL IS THE ONE IN A `position:"relative"` BUTTON, not the first bell icon in the file**
+    (2026-10-24). Settings' *Notifications* row drew a bell earlier in `ClimbMatch.jsx`, and the
+    first-match read compared the badge against that row — which carries no badge — and failed.
   - **A WIDER DETECTOR WAS MEASURED AND REJECTED — do not re-derive it.**
     `scripts/oneoff/measure-controls-rendered-from-a-loop.mjs` sizes the general blind spot this
     came from: **349 of 1,133 interactive JSX sites (31%) sit inside a `.map`**, so a scan reading
