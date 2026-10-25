@@ -16,6 +16,7 @@ import { useRouteProposals, useAreaProposals, approveNewRoute, approveNewArea, r
 import { gradeNumFor } from "./grade";
 import { discLabel } from "./discLabels";
 import { C } from "../ClimbMatchCore";
+import LoadingRows from "../src/components/LoadingRows.tsx";
 
 // Shown here because a reviewer should see everything the climber wrote, not only the part
 // the schema models. Six of these got real columns in 0131 (prot_rating, start_type, landing,
@@ -96,7 +97,7 @@ export function RouteProposalQueue() {
     } finally { setBusyId(null); }
   };
 
-  if (isLoading) return <div style={{ fontSize: 12.5, color: C.textMuted, padding: "8px 0" }}>Loading proposals…</div>;
+  if (isLoading) return <LoadingRows C={C} label="Loading proposals…" style={{padding: "8px 0"}}/>;
   if (error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>
     Could not load route proposals — {(error && error.message) || "the request failed"}. This is not a report that there are none.
   </div>;
@@ -216,7 +217,7 @@ export function AreaProposalQueue() {
     } finally { setBusyId(null); }
   };
 
-  if (isLoading) return <div style={{ fontSize: 12.5, color: C.textMuted, padding: "8px 0" }}>Loading proposals…</div>;
+  if (isLoading) return <LoadingRows C={C} label="Loading proposals…" style={{padding: "8px 0"}}/>;
   if (error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>
     Could not load area proposals — {(error && error.message) || "the request failed"}. This is not a report that there are none.
   </div>;

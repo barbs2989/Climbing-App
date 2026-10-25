@@ -202,7 +202,7 @@ export default function DbGuideApply({ onClose, notify, C }) {
         <div style={label}>Primary certification track</div>
         <div style={{ fontSize: 12, color: C.textMuted, marginBottom: 8, lineHeight: 1.5 }}>This determines exactly which disciplines you can be listed under — we cross-check it against AMGA/IFMGA's public directories before listing you.</div>
         <select aria-label="Primary certification track" value={certTrack} onChange={e => setCertTrack(e.target.value)} style={inp}>{tracks.map(t => <option key={t} value={t}>{CERT_TRACK_LABELS[t]}</option>)}</select>
-        {track.length ? <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>{track.map(d => <span key={d} style={{ fontSize: 11.5, fontWeight: 600, color: "#fff", background: C.blueBg, borderRadius: 20, padding: "3px 9px" }}>{d}</span>)}</div> : null}
+        {track.length ? <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>{track.map(d => <span key={d} style={{ fontSize: 11.5, fontWeight: 600, color:C.onSolid, background: C.blueBg, borderRadius: 20, padding: "3px 9px" }}>{d}</span>)}</div> : null}
         <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
           <input aria-label="Certification number" value={certNumber} onChange={e => setCertNumber(e.target.value)} placeholder="Certification number" style={inp} />
           <input aria-label="Issuing org" value={issuingOrg} onChange={e => setIssuingOrg(e.target.value)} placeholder="Issuing org" style={{ ...inp, maxWidth: 140 }} />
@@ -233,14 +233,14 @@ export default function DbGuideApply({ onClose, notify, C }) {
             reason DbGuides' Check records — a button role would drop the state. */}
         {AGREEMENTS.map((text, i) => (
           <div key={i} {...clickable(() => setAgree(a => a.map((v, k) => k === i ? !v : v)), { role: "checkbox" })} aria-checked={!!agree[i]} style={{ display: "flex", gap: 10, alignItems: "flex-start", padding: "9px 0", cursor: "pointer" }}>
-            <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: 5, border: "1px solid " + (agree[i] ? C.blue : C.border), background: agree[i] ? C.blueSolid : "transparent", color: "#fff", fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>{agree[i] ? "✓" : ""}</span>
+            <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: 5, border: "1px solid " + (agree[i] ? C.blue : C.border), background: agree[i] ? C.blueSolid : "transparent", color:C.onSolid, fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>{agree[i] ? "✓" : ""}</span>
             <span style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{text}</span>
           </div>
         ))}
         <div style={{ ...label, marginTop: 10 }}>Signature</div>
         <input aria-label="Type your full legal name" value={sig} onChange={e => setSig(e.target.value)} placeholder="Type your full legal name" style={inp} />
 
-        <button onClick={submit} disabled={!ok || submitting} style={{ width: "100%", marginTop: 18, background: ok ? C.blueSolid : C.border, color: "#fff", border: "none", borderRadius: 11, padding: 13, fontSize: 14, fontWeight: 700, cursor: ok ? "pointer" : "default" }}>
+        <button onClick={submit} disabled={!ok || submitting} style={{ width: "100%", marginTop: 18, background: ok ? C.blueSolid : C.border, color:C.onSolid, border: "none", borderRadius: 11, padding: 13, fontSize: 14, fontWeight: 700, cursor: ok ? "pointer" : "default" }}>
           {submitting ? "Submitting…" : "Submit application"}
         </button>
       </div>

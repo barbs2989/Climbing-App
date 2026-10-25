@@ -73,16 +73,16 @@ export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, on
     setBusy(false);
   };
 
-  return createPortal(<div role="dialog" aria-modal="true" aria-label={"Suggest an edit to " + (a.name || "this area")} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.85)", zIndex: 100000, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "72px 12px 32px", overflowY: "auto", overscrollBehavior: "contain" }}>
+  return createPortal(<div role="dialog" aria-modal="true" aria-label={"Suggest an edit to " + (a.name || "this area")} style={{ position: "fixed", inset: 0, background:C.scrimStrong, zIndex: 100000, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "72px 12px 32px", overflowY: "auto", overscrollBehavior: "contain" }}>
     <div style={{ background: C.surface, borderRadius: 18, width: "100%", maxWidth: 460, border: "1px solid " + C.border, overflowY: "auto", overscrollBehavior: "contain", maxHeight: "92vh", display: "flex", flexDirection: "column" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 16px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}><div style={{ fontSize: 16, fontWeight: 700, color: C.text }}>{sent ? "Thanks for contributing" : "Suggest an edit"}</div><button onClick={onClose} aria-label="Close" style={POP_CLOSE}>{"✕"}</button></div>
       {sent ? <div style={{ padding: 16 }}>
         <div style={{ fontSize: 40, textAlign: "center", marginBottom: 8 }}>{"✓"}</div>
         <div style={{ textAlign: "center", fontWeight: 700, fontSize: 15, color: C.text, marginBottom: 12 }}>{sent.n === 1 ? "Sent for review" : sent.n + " edits sent for review"}</div>
         <div style={{ background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 11, padding: "11px 13px", fontSize: 12.5, color: C.text, lineHeight: 1.55, marginBottom: 12 }}>{"Every edit is checked before it shows. You’ll be told when it’s checked, and it credits you once it’s live."}</div>
-        <button onClick={onClose} style={{ ...BTN, width: "100%", background: C.blueSolid, color: "#fff", border: "none" }}>Done</button>
+        <button onClick={onClose} style={{ ...BTN, width: "100%", background: C.blueSolid, color:C.onSolid, border: "none" }}>Done</button>
       </div> : <div ref={scrollRef} style={{ minHeight: 0, padding: 16, overflowY: "auto", overscrollBehavior: "contain", flex: 1 }}>
-        <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55, background: C.card, border: "1px solid " + C.border, borderRadius: 11, padding: "10px 12px", marginBottom: 12 }}>{"Spotted something wrong or missing about "}<b>{a.name || "this area"}</b>{"? Fill in any fields below — leave the rest blank. Every edit is checked before it shows on the page."}</div>
+        <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", marginBottom: 12 }}>{"Spotted something wrong or missing about "}<b>{a.name || "this area"}</b>{"? Fill in any fields below — leave the rest blank. Every edit is checked before it shows on the page."}</div>
         {AREA_EDIT_FIELDS.map(f => {
           const cur = f.cur(a);
           const pend = myPendingAreaEdits(rows, myId).filter(r => r.field === f.k).sort((x, y) => String(y.created_at).localeCompare(String(x.created_at)))[0];
