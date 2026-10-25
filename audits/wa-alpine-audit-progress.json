@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_american_border_peak_southeast_face",
+  "last_processed_id": "wa_argonaut_peak_east_ridge",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 1 of 466 total. Started fresh from the beginning of the id-ascending scope (id > ''). American Border Peak sorts ahead of its sibling peaks alphabetically only by routes.id, not areas.id, so both of its routes landed in batch 1.",
+  "pass_note": "Pass 8 in progress, batch 467 of a re-queried total. Continuing id-ascending scope from wa_argonaut_peak_east_ridge.",
   "batches": [
     {
       "batch_number": 1,
@@ -9264,6 +9264,26 @@
       "clean": 7,
       "sql_file": "audits/sql/2026-10-25-batch-466.sql",
       "note": "Pass 8, batch 1 (fresh pass, scope re-queried from the live DB rather than reused from pass 1 -- the catalog has grown since July, e.g. wa_american_border_peak_northeast_face and wa_accendo_lunae_lib_west_face_var did not exist in pass 1's batch 1). Fixed: wa_action_potential (Burgundy Spire) high_point_ft 8492 -> 8483, the only Burgundy Spire route disagreeing with the peak's own area row (8483 ft, matching a Lemke Climbs trip report) and sibling route Ultramega OK (also 8483 ft); no source supports 8492. Noted, not flagged: wa_a_servant_to_liberty is stored under the name 'A Servant To Liberty', but every source found (AAC Publications, Climbing.com, Mountain Project) calls the route 'A Slave to Liberty' -- the row's own overview text already cross-references this as an alternate name, so this looks like a deliberate, already-documented naming choice rather than an undocumented database error, and was left unchanged. Verified clean: wa_abernathy_peak_south_ridge (8,321 ft matches SummitPost/Mountaineers/FKT), wa_accendo_lunae_lib_west_face_var (8,240 ft and the 2012 Herrington/Bennett/Zimmerman FA both match Wikipedia/PeakVisor and the AAC), wa_agnes_mountain_south_ridge (8,119 ft matches Wikipedia exactly), wa_alpine_lookout_round_mountain_trail (6,237 ft already cross-checked in the row's own corrections field against USFS/willhiteweb/wenatcheeoutdoors), wa_american_border_peak_northeast_face and wa_american_border_peak_southeast_face (7,998 ft matches Wikipedia's NAVD88 figure), and the FA on Action Potential itself (Mark Allen and Mike Layton, 2004, confirmed by a SummitPost trip report)."
+    },
+    {
+      "batch_number": 467,
+      "date": "2026-10-25",
+      "pass": 8,
+      "route_ids": [
+        "wa_amphitheater_mountain_finger_of_fatwa",
+        "wa_amphitheater_mountain_middle_finger_buttress_left_side",
+        "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+        "wa_amphitheater_mountain_north_ridge",
+        "wa_amphitheater_mountain_pilgrimage_to_mecca",
+        "wa_amphitheater_mountain_west_route",
+        "wa_andersons_thumb_standard",
+        "wa_argonaut_peak_east_ridge"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 1,
+      "clean": 7,
+      "sql_file": null,
+      "note": "Flagged, not fixed: wa_andersons_thumb_standard carries two internally disagreeing elevations (high_point_ft=6785 vs its own waypoint summit elev=6700); three outside sources each give a different number (Peakbagger 6785.1, Lists of John 6700, Climbers Guide to the Olympic Mountains ~6850) so no source is authoritative enough to pick a winner -- left for human adjudication. Noted, not flagged: wa_argonaut_peak_east_ridge is stored under name Southeast Ridge (matching its own face field), an id/name drift pre-dating this audit and outside its scope; the area row (8457 ft) vs this route (8453 ft) both independently match Wikipedia itself (infobox vs body text), so neither figure is unsupported. FA credits across the batch (Finger of Fatwa, Middle Finger Buttress L/R, North Ridge, Pilgrimage to Mecca, Argonaut SE Ridge) could not be confirmed or disproven online -- plausible guidebook-only sourcing, not flagged. Verified clean: all six Amphitheater Mountain routes share high_point_ft=8358, matching Wikipedia/SummitPost exactly, with summit coordinates matching the area row to four decimal places; Argonaut Peak Southeast Ridge grade/description match The Mountaineers route page."
     }
   ]
 }

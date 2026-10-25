@@ -34901,3 +34901,54 @@ Balanced Rock (Accendo Lunae), Burgundy Spire (Action Potential), Agnes Mountain
 1 confirmed error fixed, 0 flagged for human review (new), 7 clean.
 `last_processed_id` advances to `wa_american_border_peak_southeast_face` — pass 8
 in progress.
+
+## 2026-10-25 — Pass 8, Batch 467
+
+Eight routes across three peaks: Amphitheater Mountain (Finger of Fatwa, Middle
+Finger Buttress Left/Right Side, North Ridge, Pilgrimage to Mecca, West Route),
+Anderson's Thumb (Standard Route), and Argonaut Peak (Southeast Ridge, stored
+as `wa_argonaut_peak_east_ridge`).
+
+**Flagged for human review (1):**
+- `wa_andersons_thumb_standard`: the route's own `high_point_ft` (6785) and its
+  own `waypoints` entry for "Anderson's Thumb summit" (6700) disagree with each
+  other. Three outside sources give three different numbers for this obscure
+  Mount Anderson sub-peak — Peakbagger's Olympic 6500-foot list gives 6785.1 ft
+  (matching the stored `high_point_ft`), Lists of John gives 6700 ft (matching
+  the stored waypoint), and the Climbers Guide to the Olympic Mountains gives an
+  approximate 6,850 ft (matching neither). No source is authoritative enough to
+  pick a winner, so this is left for a human to adjudicate rather than guessed
+  at — at minimum the route's two internal fields should agree with each other,
+  whichever figure is chosen.
+
+**Noted, not flagged:**
+- `wa_argonaut_peak_east_ridge`: stored `name` is "Southeast Ridge" (matching
+  its own `face` field and SE `aspect`), not "East Ridge" as the id suggests —
+  pre-existing id/name drift, not a factual error, and outside this audit's
+  scope (see `docs/codebase/route-identity.md`).
+- Argonaut Peak's area row gives 8457 ft, this route's `high_point_ft` gives
+  8453 ft — both figures are independently attested by Wikipedia itself (the
+  infobox says 8457 ft NAVD88, the body text says 8453 ft), so neither is an
+  unsupported invention; left as-is.
+- FA credits that could not be confirmed or disproven online (Finger of Fatwa:
+  Bennett/Herrington 2012; Middle Finger Buttress Left Side: Aug 1971; Right
+  Side: Jul 15 1973; North Ridge: Aug 29 1973; Pilgrimage to Mecca:
+  Berdinka/Lunz 2004; Argonaut Peak Southeast Ridge: Loomis/Parks/Schnell/Seman
+  1977) — all plausible as guidebook-only (Beckey's Cascade Alpine Guide)
+  sourcing, not flagged per the audit's own rule against fixing or flagging
+  what can't be checked against a source either way.
+
+**Clean (7):**
+- `wa_amphitheater_mountain_finger_of_fatwa`, `_middle_finger_buttress_left_side`,
+  `_middle_finger_buttress_right_side`, `_north_ridge`, `_pilgrimage_to_mecca`,
+  `_west_route`: all six share `high_point_ft`=8358, matching Wikipedia and
+  SummitPost exactly; summit coordinates (48.97556, -120.19222) match the area
+  row's own coordinates to four decimal places.
+- `wa_argonaut_peak_east_ridge`: Grade II 5.6 and Beckey-sourced description
+  match The Mountaineers' route page (which itself cites Beckey); permit
+  language (free self-issue USFS wilderness permit, outside the Enchantment
+  Permit Area) is consistent with the Teanaway-side approach described.
+
+0 confirmed errors fixed, 1 flagged for human review (new), 7 clean.
+`last_processed_id` advances to `wa_argonaut_peak_east_ridge` — pass 8 in
+progress.
