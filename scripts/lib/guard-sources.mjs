@@ -200,6 +200,7 @@ export const MOVED = {
     "src/components/DbClimbPicker.tsx",
     "src/components/LoginScreen.tsx",
     "src/components/FloatPlan.tsx",
+    "src/components/LogCatch.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
