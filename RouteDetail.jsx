@@ -1387,7 +1387,7 @@ function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onComme
    FR-2329)` — followed by prose. Everything else the row already knew was somewhere else or
    nowhere: the coordinates (650 routes carry trailheadLat/Lng and none of them rendered as a
    number you could read out or paste into a GPS). The card is the trailhead's name, its driving
-   directions, and one compact row: Drive here + the copyable coordinates. Elevation and
+   directions, and one compact row: Google Maps and Apple Maps (the same destination) + the copyable coordinates. Elevation and
    approach figures live in TECH STATS and are not repeated here. */
 function TrailheadCard({route,onEdit}){
   const [copied,setCopied]=useState(false);
@@ -1461,7 +1461,8 @@ function TrailheadCard({route,onEdit}){
     </div>
     {(dir&&!dup)?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55,marginBottom:10}}>{_dirIsOther?<span style={{color:C.textMuted}}>{"Directions on file describe a different start \u2014 "+al.trailhead+": "}</span>:null}{dir}</div>:null}
     {hasCoord?<div style={{display:"flex",gap:6,alignItems:"stretch"}}>
-      <a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" style={{flex:"0 0 auto",display:"flex",alignItems:"center",justifyContent:"center",padding:"7px 14px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"}}>Drive here</a>
+      <a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" style={{flex:"0 0 auto",display:"flex",alignItems:"center",justifyContent:"center",padding:"7px 14px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"}}>Google Maps</a>
+      <a href={"https://maps.apple.com/?dirflg=d&daddr="+lat+","+lng} target="_blank" rel="noreferrer" style={{flex:"0 0 auto",display:"flex",alignItems:"center",justifyContent:"center",padding:"7px 14px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"}}>Apple Maps</a>
       <button onClick={copy} aria-label={copied==="fail"?"Couldn’t copy — your browser blocked clipboard access":copied?"Coordinates copied":"Copy coordinates "+lat.toFixed(5)+", "+lng.toFixed(5)} style={{flex:"1 1 auto",minWidth:0,display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,padding:"7px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.textSub,cursor:"pointer",textAlign:"left"}}><span style={{fontSize:12,fontWeight:600,fontVariantNumeric:"tabular-nums",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",minWidth:0}}>{lat.toFixed(5)+", "+lng.toFixed(5)}</span><span style={{flexShrink:0,fontSize:10.5,fontWeight:700,letterSpacing:0.4,color:copied==="fail"?C.amber:copied?C.green:C.textMuted}}>{copied==="fail"?"BLOCKED":copied?"COPIED":"COPY"}</span></button>
     </div>:<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45}}>No trailhead coordinates on file yet.</div>}
   </div>;
