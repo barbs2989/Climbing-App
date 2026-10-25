@@ -15,7 +15,7 @@ import { createPortal } from "react-dom";
 import { AREA_EDIT_FIELDS, ASPECTS, MONTH_ABBR, myPendingAreaEdits, monthsLabel } from "./areaFields";
 import { ROCK_OPTIONS } from "./rockType";
 import { POP_CLOSE } from "./popupChrome.js";
-import { BTN, CHIP } from "./buttonStyles.js";
+import { BTN, CHIP, INPUT } from "./buttonStyles.js";
 
 export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, onSubmit }) {
   const scrollRef = useRef(null);
@@ -30,7 +30,7 @@ export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, on
   }, [field]);
   const a = area || {};
   const set = (k, v) => setVals(p => ({ ...p, [k]: v }));
-  const input = { width: "100%", boxSizing: "border-box", background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 9, padding: "9px 11px", fontSize: 13, lineHeight: 1.5, fontFamily: "inherit" };
+  const input = INPUT(C);
   const lbl = { fontSize: 11, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
 
   // What changed, validated against each field's limits. Unchanged and blank rows are skipped.

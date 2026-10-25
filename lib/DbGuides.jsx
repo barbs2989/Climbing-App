@@ -16,6 +16,7 @@ import {
 import { POP_BACK } from "./popupChrome.js";
 import { askConfirm } from "./ConfirmSheet.jsx";
 import { photoThumb } from "./photoThumb";
+import { INPUT } from "./buttonStyles.js";
 
 const DISCLAIMER_TEXT = "ClimbMatch is a directory connecting me with independent, self-employed guides. ClimbMatch is not a party to any guiding agreement, does not supervise or guarantee the guide's services, and assumes no liability for injury, loss, or damage arising from a guided trip.";
 
@@ -123,7 +124,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
     }
   };
 
-  const inp = { width: "100%", padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, boxSizing: "border-box" };
+  const inp = INPUT(C);
   const label = { fontSize: 13, fontWeight: 700, color: C.text, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 8, marginTop: 14, borderLeft: "3px solid " + C.blue, paddingLeft: 9 };
   const primaryCred = (credentials || []).find(c => c.kind === "primary_track");
 
@@ -221,7 +222,7 @@ export default function DbGuides({ onDash, notify, C }) {
     return list;
   }, [rows, q, disc, sort]);
 
-  const inp = { width: "100%", padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, boxSizing: "border-box" };
+  const inp = INPUT(C);
 
   return (
     <div style={{ padding: 14 }}>

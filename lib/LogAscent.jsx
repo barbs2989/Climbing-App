@@ -17,6 +17,7 @@ import { askConfirm } from "./ConfirmSheet.jsx";
 import { campSites, campingGate } from "../RouteDetail.jsx";
 import RichEditor from "../src/components/RichEditor.tsx";
 import LoadingRows from "../src/components/LoadingRows.tsx";
+import { INPUT } from "./buttonStyles.js";
 /* The route page's topo drawer, loaded only when a climber taps Add topo photo: RouteDetail.jsx is the largest chunk
    in the app, and the log form must not carry it for a control most logs never use. */
 const TopoDrawer=lazy(function(){return import("../RouteDetail.jsx").then(function(m){return {default:m.TopoDrawer};});});
@@ -81,7 +82,7 @@ export default function LogAscent({route,onClose,onSave,connections,crewMates,me
      headings on their own card; field labels are small grey caps beneath them. */
   const metricDefs=condMetricsFor(route);const hasMetric=function(k){return metricDefs.some(function(m){return m[0]===k;});};const metricLabel=function(k){var m=metricDefs.find(function(mm){return mm[0]===k;});return m?m[1]:k;};
   const FL={fontSize:11.5,color:C.textSub,fontWeight:800,letterSpacing:0.5,marginBottom:6};
-  const inputSt={width:"100%",minWidth:0,padding:"8px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:13,boxSizing:"border-box",outline:"none"};
+  const inputSt={...INPUT(C),minWidth:0,background:C.card};
   const APPROACH_GROUPS=["Approach & access","Access","Trail","Water crossings","Water"];
   const groupSection=function(g){return (g.hazard||g.group==="Avalanche danger")?"hazards":APPROACH_GROUPS.indexOf(g.group)>=0?"approach":"route";};
   /* in the order they are MET: the road and trailhead, then the trail, its crossings, and water */

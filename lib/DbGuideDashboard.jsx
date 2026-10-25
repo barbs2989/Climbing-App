@@ -3,7 +3,7 @@
 // credential status only ever changes via admin review (Supabase Studio, Phase 1) or
 // the 12-month reconciliation RPC. Rendered only when USE_DB (see ClimbMatch.jsx's swap).
 import { useEffect, useState } from "react";
-import { BTN_SM } from "./buttonStyles.js";
+import { BTN_SM, INPUT } from "./buttonStyles.js";
 import { createPortal } from "react-dom";
 import { useSession } from "./auth";
 import {
@@ -48,7 +48,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
   const [replyId, setReplyId] = useState(null); const [replyText, setReplyText] = useState("");
 
   const card = { background: C.card, border: "1px solid " + C.border, borderRadius: 11, padding: "11px 13px", marginBottom: 9 };
-  const inp = { width: "100%", padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, boxSizing: "border-box" };
+  const inp = INPUT(C);
   const stTag = st => st === "verified" ? { t: "✓ Verified", c: C.green, b: C.greenBg, d: C.greenDim } : st === "pending" ? { t: "In review", c: C.amber, b: C.amberBg, d: C.amber } : st === "lapsed" ? { t: "Lapsed — resubmit", c: C.amber, b: C.amberBg, d: C.amber } : { t: "Rejected — resubmit", c: C.red, b: C.redBg, d: C.red };
 
   const verified = isGuideVerified(credentials || []);

@@ -10,6 +10,7 @@ import Av from "../src/components/Av.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
 import Lbl from "../src/components/Lbl.tsx";
 import Chevron from "../src/components/Chevron.tsx";
+import { INPUT } from "./buttonStyles.js";
 
 /* What a Home "Finish setting up" row is asking for. The row used to open this editor at the top,
    with nothing saying which of its dozen fields the tap was about; now the editor opens on that
@@ -78,7 +79,7 @@ export default function EditProfileScreen({draft,setDraft,onSave,onCancel,onAvat
   /* An EMPTY username shows its reason at once: every new account has none, and a greyed Save with nothing saying why read as a broken editor. */
   const uShow=(uTouched||!draft.username.trim())&&uErr;
   const lbl={fontSize:12,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:5,marginTop:14};
-  const inp={width:"100%",padding:"10px 12px",borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:14,boxSizing:"border-box"};
+  const inp=INPUT(C);
   return (<div style={{position:"fixed",inset:0,background:C.bg,zIndex:1100,overflowY:"auto",overscrollBehavior:"contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
     <div style={{position:"sticky",top:0,background:C.surface,borderBottom:"1px solid "+C.border,padding:"12px 16px",display:"flex",alignItems:"center",justifyContent:"space-between",zIndex:2}}>
       <div style={{display:"flex",alignItems:"center",gap:12}}><button onClick={onCancel} style={{background:C.card,border:"1px solid "+C.border,color:C.text,borderRadius:8,padding:"9px 11px",fontSize:13,fontWeight:700,cursor:"pointer"}}>Cancel</button><div style={{fontSize:15,fontWeight:700,color:C.text}}>Edit profile</div></div>
