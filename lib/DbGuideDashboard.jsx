@@ -163,7 +163,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
           <div style={{ fontSize: 12.5, color: C.textSub, marginBottom: 11 }}>Booking requests from climbers. Accept to hold the date, then agree on price and dates directly with them.</div>
           {(inquiries || []).length ? inquiries.map(q => <div key={q.id} style={card}>
             <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-              {q.profiles && q.profiles.avatar ? <img src={photoThumb(q.profiles.avatar, 40)} alt="" style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover" }} /> : null}
+              {q.profiles && q.profiles.avatar ? <img src={photoThumb(q.profiles.avatar, 40)} alt="" onError={e => { e.currentTarget.style.visibility = "hidden"; }} style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover" }} /> : null}
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text }}>{q.objective || "Climbing inquiry"}</div>
                 <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2 }}>{publicNameOf(q.profiles) + " · " + (q.requested_dates || "flexible") + " · " + q.party_size + (q.party_size > 1 ? " climbers" : " climber")}</div>
