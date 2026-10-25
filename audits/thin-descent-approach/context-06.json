@@ -1,0 +1,775 @@
+{
+ "targets": [
+  {
+   "approach": "Standard East Face approach; park at the pond pullout near the hairpin turn east of Washington Pass.",
+   "area_id": "wa_liberty_bell",
+   "corrected": false,
+   "descent": "Standard Liberty Bell East Face rappel/downclimb via Beckey Gully",
+   "descent_text": "From the top, descend via the shared East Face rappel line into Beckey Gully, or downclimb the sheltered Beckey Route slab in good conditions.",
+   "discipline": "alpine",
+   "grade": "5.10d",
+   "id": "wa_liberty_bell_freedom_rider",
+   "name": "Freedom Rider",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Liberty Bell Group",
+   "peak": "Liberty Bell Mountain",
+   "peak_elev": 7720,
+   "peak_lat": 48.515435,
+   "peak_lng": -120.658365,
+   "pitches": 14,
+   "siblings": [
+    "wa_dark_side_of_liberty = Dark Side of Liberty",
+    "wa_liberty_traverse = Liberty Traverse",
+    "wa_live_free_or_die = Live Free or Die!™",
+    "wa_liberty_and_injustice_for_all = Liberty and Injustice for All",
+    "wa_liberty_crack_free = Liberty Crack (Free)",
+    "wa_liberty_bell_the_barber_pole = The Barber Pole",
+    "wa_liberty_bell_overexposure = Overexposure",
+    "wa_liberty_bell_thin_red_line = Thin Red Line",
+    "wa_liberty_bell_independence_route = The Independence Route",
+    "wa_liberty_bell_girl_next_door = The Girl Next Door",
+    "wa_liberty_bell_freedom_or_death = Freedom or Death",
+    "wa_liberty_bell_sidewinder = Sidewinder (Southwest Corner)",
+    "wa_rapple_grapple = Rapple Grapple",
+    "wa_liberty_bell_serpentine_crack = Serpentine Crack",
+    "wa_nw_face_var_remsberg_variation = NW Face Var. (Remsberg Variation)",
+    "wa_liberty_bell_nw_face = Northwest Face",
+    "wa_a_servant_to_liberty = A Servant To Liberty",
+    "wa_liberty_bell_beckey_route = Beckey Route (Southwest Face)",
+    "wa_liberty_crack = Liberty Crack"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "Follow the Beckey Gully approach, breaking left at the fork; multiple start options exist depending on the chosen variation, scrambling to a major shelf or ramp below a cave feature.",
+   "area_id": "wa_liberty_bell",
+   "corrected": false,
+   "descent": "Standard Liberty Bell descent via the Beckey Route (two rappels)",
+   "descent_text": "Rejoin the standard descent: two single-rope rappels off bolted/chain anchors down to the Liberty-Concord notch, then the gully back to the trail.",
+   "discipline": "alpine",
+   "grade": "5.9+",
+   "id": "wa_liberty_bell_sidewinder",
+   "name": "Sidewinder (Southwest Corner)",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Liberty Bell Group",
+   "peak": "Liberty Bell Mountain",
+   "peak_elev": 7720,
+   "peak_lat": 48.515435,
+   "peak_lng": -120.658365,
+   "pitches": 5,
+   "siblings": [
+    "wa_dark_side_of_liberty = Dark Side of Liberty",
+    "wa_liberty_traverse = Liberty Traverse",
+    "wa_live_free_or_die = Live Free or Die!™",
+    "wa_liberty_and_injustice_for_all = Liberty and Injustice for All",
+    "wa_liberty_crack_free = Liberty Crack (Free)",
+    "wa_liberty_bell_the_barber_pole = The Barber Pole",
+    "wa_liberty_bell_overexposure = Overexposure",
+    "wa_liberty_bell_thin_red_line = Thin Red Line",
+    "wa_liberty_bell_independence_route = The Independence Route",
+    "wa_liberty_bell_freedom_rider = Freedom Rider",
+    "wa_liberty_bell_girl_next_door = The Girl Next Door",
+    "wa_liberty_bell_freedom_or_death = Freedom or Death",
+    "wa_rapple_grapple = Rapple Grapple",
+    "wa_liberty_bell_serpentine_crack = Serpentine Crack",
+    "wa_nw_face_var_remsberg_variation = NW Face Var. (Remsberg Variation)",
+    "wa_liberty_bell_nw_face = Northwest Face",
+    "wa_a_servant_to_liberty = A Servant To Liberty",
+    "wa_liberty_bell_beckey_route = Beckey Route (Southwest Face)",
+    "wa_liberty_crack = Liberty Crack"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_lichen_rock",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_lichen_rock_east_face",
+   "name": "East Face",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Minnehaha",
+   "peak": "Lichen Rock",
+   "peak_elev": null,
+   "peak_lat": 47.68816,
+   "peak_lng": -117.32517,
+   "pitches": null,
+   "siblings": [
+    "wa_dirk_diggler = Dirk Diggler",
+    "wa_to_have_and_two_holds = To have and Two Holds",
+    "wa_lichen_it_a_bit_more_traverse = Lichen It A Bit More Traverse",
+    "wa_lichen_traverse = Lichen Traverse",
+    "wa_highball = Highball",
+    "wa_lichen_rock_south_face = South Face",
+    "wa_lichen_rock_northeast_rib = Northeast Rib",
+    "wa_lichen_rock_southeast_rib = Southeast Rib"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_lichen_rock",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.9",
+   "id": "wa_lichen_rock_northeast_rib",
+   "name": "Northeast Rib",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Minnehaha",
+   "peak": "Lichen Rock",
+   "peak_elev": null,
+   "peak_lat": 47.68816,
+   "peak_lng": -117.32517,
+   "pitches": null,
+   "siblings": [
+    "wa_dirk_diggler = Dirk Diggler",
+    "wa_to_have_and_two_holds = To have and Two Holds",
+    "wa_lichen_it_a_bit_more_traverse = Lichen It A Bit More Traverse",
+    "wa_lichen_traverse = Lichen Traverse",
+    "wa_highball = Highball",
+    "wa_lichen_rock_south_face = South Face",
+    "wa_lichen_rock_east_face = East Face",
+    "wa_lichen_rock_southeast_rib = Southeast Rib"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_lichen_rock",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_lichen_rock_south_face",
+   "name": "South Face",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Minnehaha",
+   "peak": "Lichen Rock",
+   "peak_elev": null,
+   "peak_lat": 47.68816,
+   "peak_lng": -117.32517,
+   "pitches": null,
+   "siblings": [
+    "wa_dirk_diggler = Dirk Diggler",
+    "wa_to_have_and_two_holds = To have and Two Holds",
+    "wa_lichen_it_a_bit_more_traverse = Lichen It A Bit More Traverse",
+    "wa_lichen_traverse = Lichen Traverse",
+    "wa_highball = Highball",
+    "wa_lichen_rock_northeast_rib = Northeast Rib",
+    "wa_lichen_rock_east_face = East Face",
+    "wa_lichen_rock_southeast_rib = Southeast Rib"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_lichen_rock",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_lichen_rock_southeast_rib",
+   "name": "Southeast Rib",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Minnehaha",
+   "peak": "Lichen Rock",
+   "peak_elev": null,
+   "peak_lat": 47.68816,
+   "peak_lng": -117.32517,
+   "pitches": null,
+   "siblings": [
+    "wa_dirk_diggler = Dirk Diggler",
+    "wa_to_have_and_two_holds = To have and Two Holds",
+    "wa_lichen_it_a_bit_more_traverse = Lichen It A Bit More Traverse",
+    "wa_lichen_traverse = Lichen Traverse",
+    "wa_highball = Highball",
+    "wa_lichen_rock_south_face = South Face",
+    "wa_lichen_rock_northeast_rib = Northeast Rib",
+    "wa_lichen_rock_east_face = East Face"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_little_annapurna",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_little_annapurna_boola_boola_buttress",
+   "name": "Boola Boola Buttress",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Stuart-Enchantments",
+   "peak": "Little Annapurna",
+   "peak_elev": 8485,
+   "peak_lat": 47.468226,
+   "peak_lng": -120.814335,
+   "pitches": null,
+   "siblings": [
+    "wa_little_annapurna_south_face = South Face",
+    "wa_little_annapurna_south_slopes = North Slopes",
+    "wa_little_annapurna_northwest_buttress = Northwest Buttress",
+    "wa_little_annapurna_northeast_face = Northeast Face"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_little_annapurna",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.8",
+   "id": "wa_little_annapurna_northeast_face",
+   "name": "Northeast Face",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Stuart-Enchantments",
+   "peak": "Little Annapurna",
+   "peak_elev": 8485,
+   "peak_lat": 47.468226,
+   "peak_lng": -120.814335,
+   "pitches": null,
+   "siblings": [
+    "wa_little_annapurna_south_face = South Face",
+    "wa_little_annapurna_south_slopes = North Slopes",
+    "wa_little_annapurna_northwest_buttress = Northwest Buttress",
+    "wa_little_annapurna_boola_boola_buttress = Boola Boola Buttress"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_little_annapurna",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.7",
+   "id": "wa_little_annapurna_northwest_buttress",
+   "name": "Northwest Buttress",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Stuart-Enchantments",
+   "peak": "Little Annapurna",
+   "peak_elev": 8485,
+   "peak_lat": 47.468226,
+   "peak_lng": -120.814335,
+   "pitches": null,
+   "siblings": [
+    "wa_little_annapurna_south_face = South Face",
+    "wa_little_annapurna_south_slopes = North Slopes",
+    "wa_little_annapurna_boola_boola_buttress = Boola Boola Buttress",
+    "wa_little_annapurna_northeast_face = Northeast Face"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_little_big_chief_mountain",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_little_big_chief_mountain_southwest_face",
+   "name": "Southwest Face",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Western Alpine Lakes",
+   "peak": "Little Big Chief Mountain",
+   "peak_elev": 7225,
+   "peak_lat": 47.5296806,
+   "peak_lng": -121.2566659,
+   "pitches": null,
+   "siblings": [
+    "wa_northwest_face_4 = Northwest Face",
+    "wa_little_big_chief_mountain_falcon_route = Falcon Route",
+    "wa_little_big_chief_mountain_northeast_face = Northeast Face"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_luna_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_luna_peak_southwest_ridge",
+   "name": "Southwest Ridge",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Northern Pickets",
+   "peak": "Luna Peak",
+   "peak_elev": 8311,
+   "peak_lat": 48.831,
+   "peak_lng": -121.273,
+   "pitches": null,
+   "siblings": [
+    "wa_luna_peak_southeast_slopes = Southeast Slopes"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "From the PCT parking lot at I-90 Exit 52, hike the Pacific Crest Trail 2 miles to the Commonwealth Creek trail junction, then continue about 2.5 more miles, passing Red Mountain and Red Pond, to Red Pass. From Red Pass follow the climbers' path west to the saddle between Lundin Peak and East Lundin.",
+   "area_id": "wa_lundin_peak",
+   "corrected": false,
+   "descent": "Rappel (off the installed bolts) or downclimb the same broken rock/slab back to the saddle.",
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.0",
+   "id": "wa_lundin_peak_east_ridge",
+   "name": "East Ridge",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Snoqualmie Pass Area",
+   "peak": "Lundin Peak",
+   "peak_elev": 6057,
+   "peak_lat": 47.4628774,
+   "peak_lng": -121.400379,
+   "pitches": 1,
+   "siblings": [
+    "wa_lundin_peak_northwest_face = Northwest Face",
+    "wa_lundin_peak_southeast_ridge = Southeast Ridge",
+    "wa_lundin_peak_west_ridge = West Ridge",
+    "wa_lundin_peak_south_face_left = South Face Left",
+    "wa_south_face_8 = South Face"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_lundin_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_lundin_peak_northwest_face",
+   "name": "Northwest Face",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Snoqualmie Pass Area",
+   "peak": "Lundin Peak",
+   "peak_elev": 6057,
+   "peak_lat": 47.4628774,
+   "peak_lng": -121.400379,
+   "pitches": null,
+   "siblings": [
+    "wa_lundin_peak_east_ridge = East Ridge",
+    "wa_lundin_peak_southeast_ridge = Southeast Ridge",
+    "wa_lundin_peak_west_ridge = West Ridge",
+    "wa_lundin_peak_south_face_left = South Face Left",
+    "wa_south_face_8 = South Face"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_lundin_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_lundin_peak_southeast_ridge",
+   "name": "Southeast Ridge",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Snoqualmie Pass Area",
+   "peak": "Lundin Peak",
+   "peak_elev": 6057,
+   "peak_lat": 47.4628774,
+   "peak_lng": -121.400379,
+   "pitches": null,
+   "siblings": [
+    "wa_lundin_peak_east_ridge = East Ridge",
+    "wa_lundin_peak_northwest_face = Northwest Face",
+    "wa_lundin_peak_west_ridge = West Ridge",
+    "wa_lundin_peak_south_face_left = South Face Left",
+    "wa_south_face_8 = South Face"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "M&M Wall, also known as Supercave Wall for the tennis-court-sized cave crossing the cliff at mid-height, is one of the largest roadside walls at Washington Pass. Park at a pullout near milepost 166 on SR-20, about 3 miles east of the hairpin turns (and a similar distance from the Washington Pass summit). From the highway, head directly uphill toward the talus at the base of the Supercave gully, following it up and briefly left before rejoining the gully; it takes roughly 1 hour to reach the lower ledge and about 1 hour 10 minutes to reach the upper ledge and base of the longer routes.",
+   "area_id": "wa_m_m_wall_aka_supercave_wall",
+   "corrected": false,
+   "descent": null,
+   "descent_text": "The route is designed for a single 70-meter-rope rappel descent back down the line.",
+   "discipline": "alpine",
+   "grade": "5.11a",
+   "id": "wa_the_exorcism_of_mark_hanna",
+   "name": "The Exorcism of Mark Hanna",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Washington Pass",
+   "peak": "M&M wall (AKA \"Supercave Wall\")",
+   "peak_elev": null,
+   "peak_lat": 48.54794,
+   "peak_lng": -120.63975,
+   "pitches": 3,
+   "siblings": [
+    "wa_golden_age = Golden Age",
+    "wa_ellen_pea = Ellen Pea",
+    "wa_the_tiger = The Tiger",
+    "wa_the_l_h_route_free_variation = The L & H Route (Free Variation)"
+   ],
+   "trailhead": "SR-20 pullout near milepost 166 (Washington Pass)"
+  },
+  {
+   "approach": "Same as the East Ridge: Eldorado Creek trailhead (2,100 ft) via Cascade River Road, boulder field, Eldorado Creek basin, and the Eldorado/Inspiration Glacier to around 7,500-8,200 ft, where the Northeast Face angles off climbers' right of the standard glacier track.",
+   "area_id": "wa_main_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": "From the summit, descend the East Ridge/Inspiration Glacier line (not the face) back to camp and out the approach trail.",
+   "discipline": "alpine",
+   "grade": "AI2",
+   "id": "wa_eldorado_peak_northeast_face",
+   "name": "Northeast Face",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Eldorado Peak",
+   "peak": "Main Peak",
+   "peak_elev": 8872,
+   "peak_lat": 48.53755,
+   "peak_lng": -121.13436,
+   "pitches": null,
+   "siblings": [
+    "wa_eldorado_peak_east_ridge = East Ridge (Inspiration Glacier)",
+    "wa_eldorado_peak_north_ridge = North Ridge",
+    "wa_eldorado_peak_west_arete = West Arete",
+    "wa_south_ridge_4 = South Ridge",
+    "wa_eldorado_peak_eldorado_glacier_nw = Northwest Couloir / Eldorado Glacier",
+    "wa_main_peak_northwest_ice_couloir = Northwest Ice Couloir",
+    "wa_main_peak_tepeh_towers = Tepeh Towers"
+   ],
+   "trailhead": "Eldorado Creek trailhead (Cascade River Road mile 20)"
+  },
+  {
+   "approach": "From Seattle, drive I-5 north and then WA-20 (North Cascades Highway) east through Sedro-Woolley, Concrete, and Rockport to Marblemount, then follow Cascade River Road south for about 20 miles — paved for the first 10 miles, gravel and washboard the rest of the way — to the Eldorado parking area near mile 20. From the trailhead, hikers backtrack a short distance along the road to find a safe crossing of the Cascade River (historically a large log or braided ford, which shifts year to year), then pick up a steep, unmaintained climbers' boot path that gains roughly 3,000-3,500 feet through old-growth forest to a boulder field, crosses Eldorado Creek, and opens into the alpine meadows of the Eldorado Creek basin, a common camp area roughly 5-6 hours from the car. From the basin, the route continues onto glaciated terrain (roped travel and crevasse-rescue gear required) to the high camp near 7,600 ft on the Inspiration Glacier flat. Any overnight stay requires a free North Cascades National Park backcountry permit — Eldorado is managed as a high-use cross-country zone with advance reservations available on Recreation.gov plus a limited walk-up allocation issued in person at the Marblemount Wilderness Information Center. For this specific route: from high camp, traverse the steep, exposed snow on the flank of the glacier (crampons mandatory) to the lowest point of the south ridge, the left-hand skyline seen from camp, below an obvious crack leading up to a U-shaped notch in the crest.",
+   "area_id": "wa_main_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": "Descend via Eldorado's standard East Ridge route back toward the glacier camp.",
+   "discipline": "alpine",
+   "grade": "5.6",
+   "id": "wa_south_ridge_4",
+   "name": "South Ridge",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Eldorado Peak",
+   "peak": "Main Peak",
+   "peak_elev": 8872,
+   "peak_lat": 48.53755,
+   "peak_lng": -121.13436,
+   "pitches": 4,
+   "siblings": [
+    "wa_eldorado_peak_east_ridge = East Ridge (Inspiration Glacier)",
+    "wa_eldorado_peak_north_ridge = North Ridge",
+    "wa_eldorado_peak_west_arete = West Arete",
+    "wa_eldorado_peak_eldorado_glacier_nw = Northwest Couloir / Eldorado Glacier",
+    "wa_main_peak_northwest_ice_couloir = Northwest Ice Couloir",
+    "wa_eldorado_peak_northeast_face = Northeast Face",
+    "wa_main_peak_tepeh_towers = Tepeh Towers"
+   ],
+   "trailhead": "Eldorado Creek trailhead (Cascade River Road mile 20)"
+  },
+  {
+   "approach": null,
+   "area_id": "wa_middle_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_middle_peak_north_face",
+   "name": "North Face",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Gunsight Range, The",
+   "peak": "Middle Peak",
+   "peak_elev": 8185,
+   "peak_lat": 48.30571,
+   "peak_lng": -120.99439,
+   "pitches": null,
+   "siblings": [
+    "wa_gunsight_peak_standard = Standard Route",
+    "wa_middle_peak_traverse_route = Traverse Route",
+    "wa_sw_ridge = Southwest Ridge",
+    "wa_east_face = East Face",
+    "wa_gunrunner = Gunrunner"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_middle_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_middle_peak_traverse_route",
+   "name": "Traverse Route",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Gunsight Range, The",
+   "peak": "Middle Peak",
+   "peak_elev": 8185,
+   "peak_lat": 48.30571,
+   "peak_lng": -120.99439,
+   "pitches": null,
+   "siblings": [
+    "wa_middle_peak_north_face = North Face",
+    "wa_gunsight_peak_standard = Standard Route",
+    "wa_sw_ridge = Southwest Ridge",
+    "wa_east_face = East Face",
+    "wa_gunrunner = Gunrunner"
+   ],
+   "trailhead": null
+  }
+ ],
+ "richSiblingsOnSamePeak": {
+  "wa_a_servant_to_liberty": {
+   "approach": "Same East Face approach as Freedom or Death and Thin Red Line: park at the hairpin turn on WA-20 east of Washington Pass, walk back to the pond, and follow the cairned climbers' path from the pond's east end about a mile through forest to the East Face talus. This route starts at the Freedom or Death line — locate that start among the East Face cluster of routes rather than the Liberty Crack or Thin Red Line starts.",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "From the top, either scramble to the summit roped and take the standard Liberty Bell descent, or rappel with two ropes down Thin Red Line's line: rappel with two ropes off M&M Ledge (fixed pin/wire anchor), then move climber's-left to bolted anchors for four double-rope rappels back to the base — five rappels total, all on bolted stations after the first.",
+   "name": "A Servant To Liberty"
+  },
+  "wa_dark_side_of_liberty": {
+   "approach": "Dark Side of Liberty climbs the northeast face of Liberty Bell and sits about 20 minutes from the road — the shortest approach of the major Liberty Bell technical lines. Park at the hairpin turn on WA-20 east of Washington Pass (same general area as the East Face approach) and follow the cairned path from the pond toward the East Face, then contour toward the northeast aspect of the wall rather than continuing all the way into the main East Face talus. Given the short, steep nature of this approach, expect some scrambling/scree underfoot near the base; carry a helmet through any loose sections.",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "Two descent options exist. Most parties rappel the route itself on a single 80 m rope, back down the 1,100 ft face to the base and their packs; bring the 80 m, since shorter ropes are not described as reaching. Alternatively, continue about 150 m of 4th-class terrain to Liberty Bell’s true summit and take the standard descent: from the summit, go east to a tree hung with rappel slings, make one single-rope rappel to a sandy ledge, then two single-rope rappels of about 25 m from bolted anchors into the Liberty Bell-Concord notch. That leaves you on the opposite side of the mountain from the East Face approach.",
+   "name": "Dark Side of Liberty"
+  },
+  "wa_east_face": {
+   "approach": "Middle Peak shares the same approach as South Peak: from Downey Creek Trailhead, follow the southern Ptarmigan Traverse cross-country route (Itswoot Ridge/Cub Lake, Bachelor Creek) to reach the range's ridge. Middle Gunsight's east face is a known technical objective once on the ridge; expect a multi-day glaciated approach with route-finding and bushwhacking, not a drive-up or short-trail access.",
+   "area_id": "wa_middle_peak",
+   "descent_text": "After summiting, traverse south along the summit ridge to the south-facing rappel anchors. Make one double-rope rappel to the notch between Middle and South Gunsight, then a second, loose and dirty one into the moat at the base of the notch. Navigate the crevasse field on Chickamin Glacier to return to base camp.",
+   "name": "East Face"
+  },
+  "wa_eldorado_peak_east_ridge": {
+   "approach": "Start at the Eldorado Trailhead (Eldorado Creek Climbers' Path) at mile 20 of Cascade River Road, elevation ~2,100 ft (pit toilet at the parking area). From the parking area, backtrack downstream about 90 feet on the road and look for a log or a clump of three trees spanning the Cascade River — cross here (this crossing can be exposed and slick when wet or in high water; a rope/handline is prudent for less experienced parties), then walk roughly 100 feet perpendicular to the river to pick up the climbers' trail. The path climbs steeply through heavy timber, gaining about 1,500 ft before breaking out onto talus. Follow cairns and flagging up the boulder field, staying climber's right to avoid an unnecessary crossing of Eldorado Creek, until the talus eases into the open, beautiful alpine Eldorado Creek Basin (a common first camp at roughly 5,400–5,600 ft, ~3 miles and 3,300 ft from the trailhead). From the basin, climb up onto a rocky ridge at about 6,100 ft, then drop a few hundred feet on the far side into Roush Creek Basin (an alternate/second camp at 6,100–6,400 ft, with reliable running water). From Roush Basin, ascend broken talus and slabs onto the toe of the Eldorado Glacier",
+   "area_id": "wa_main_peak",
+   "descent_text": "Reverse the ascent line: downclimb the exposed, corniced knife-edge summit ridge (in certain conditions a very thin edge with steep — 40–45°+ — flanks; ice axe and crampons essentially mandatory, and rope/running-belay technique is common for less experienced members), continue down through the gap in the lower East Ridge, then rope up again to cross the Inspiration Glacier and descend the Eldorado Glacier back to Roush Basin, over the intervening ridge into Eldorado Creek Basin, and down the boulder field and timbered climbers' trail to the Cascade River crossing and trailhead. This is a walk-off/downclimb — no rappels are used on the standard route; multiple trip reports and guide-service itineraries describe the descent purely in terms of downclimbing and reversing glacier travel, and note that some parties have even skied the ridge and glaciers in spring conditions rather than roping for rappels. Watch for softening snow bridges and increasing crevasse hazard on the glaciers later in the day (afternoon descents in summer are notably less secure than an early-morning ascent), and for the knife-edge becoming icy/firm late-season, which can make the downclimb more consequential an",
+   "name": "East Ridge (Inspiration Glacier)"
+  },
+  "wa_eldorado_peak_eldorado_glacier_nw": {
+   "approach": "Same trailhead and lower approach as the East Ridge: Eldorado Trailhead at Cascade River Road mile 20 (~2,100 ft), cross the Cascade River via the log/three-tree crossing about 90 ft downstream of the parking area, then climb the steep timbered climbers' trail into a dry boulderfield (roughly to 4,500 ft) and on into Eldorado Creek Basin. From there, continue as for the East Ridge over the Roush Divide and up the Eldorado Glacier, then trend toward the Eldorado–Dean's Spire col on the mountain's northwest side to reach the wild Marble Creek Cirque, with views of Dorado Needle and Early Morning Spire. The approach to this face is longer and more involved than the East Ridge approach — a long, somewhat complicated route across glaciated and crevassed terrain, so rope up for the glacier sections. High camp is typically established either in Eldorado Creek/Roush Creek Basin or higher at the Eldorado-Inspiration Glacier site (~7,500–7,600 ft). One recorded ascent (climbing from the trailhead in a single push) took roughly 5 hours to reach the couloir's base; that party also used a shortcut of a belayed downclimb (~35 m) and two 30-meter rappels down a snow/rock gully near the Eldorado–D",
+   "area_id": "wa_main_peak",
+   "descent_text": "From the summit, do not reverse the couloir — descend via the standard East Ridge / Inspiration Glacier route: downclimb the knife-edge summit ridge, drop through the gap in the lower East Ridge, rope up and cross the Inspiration Glacier, then descend the Eldorado Glacier back toward Roush Basin and Eldorado Creek Basin, finishing on the timbered climbers' trail back to the Cascade River crossing and trailhead (see the East Ridge route for full detail). This is a walk-off/downclimb with no rappels required on the descent itself — one party even skied the knife-edge ridge and glacier on the way down. Rappelling comes up on this route only on the approach/entry into the couloir, not on the summit descent: one party used a 40-meter rappel off the Inspiration Glacier side to drop into the couloir's gully system, anchored on two pitons with some newish tat, and noted a full 60m rope would get a party through everything in one rappel rather than needing to downclimb the remainder — but again, this is describing getting into the route, not descending from the summit. Because the descent is the shared East Ridge walk-off, treat glacier crevasse hazard and knife-edge icing exactly as on tha",
+   "name": "Northwest Couloir / Eldorado Glacier"
+  },
+  "wa_eldorado_peak_north_ridge": {
+   "approach": "Same approach as the East Ridge to high camp on the Inspiration Glacier, then cross the Inspiration Glacier around the east end of the East Ridge and traverse the glacier on the mountain's north side at about 8,100 ft to the NW Ice Couloir notch at the base of the North Ridge.",
+   "area_id": "wa_main_peak",
+   "descent_text": "Return down the same ridge system to the notch and back to camp on the Inspiration Glacier; parties who finish via the East Ridge instead descend that ridge's knife-edge back to camp.",
+   "name": "North Ridge"
+  },
+  "wa_eldorado_peak_west_arete": {
+   "approach": "Start at the Eldorado Creek trailhead on Cascade River Road, follow the climbers' trail up Eldorado Creek into the Roush Creek basin, camp near the base of the East Ridge (about 7,500 ft), then cross the Inspiration and McAllister glaciers to Dorado Needle Col and make a loose fourth-class downclimb into the Marble Creek cirque, traversing to the toe of the arete near 6,000 ft. Typically a 3-day trip (approach day, climb day, exit day); the first roughly 800 ft of climbing is Class 4 before harder 5th-class sections.",
+   "area_id": "wa_main_peak",
+   "descent_text": "From the summit, descend the East Ridge — most parties find this significantly easier and more straightforward than downclimbing the loose West Arete — then return to camp via the Inspiration/Eldorado Glacier.",
+   "name": "West Arete"
+  },
+  "wa_ellen_pea": {
+   "approach": "M&M Wall, also known as Supercave Wall for the tennis-court-sized cave crossing the cliff at mid-height, is one of the largest roadside walls at Washington Pass. Park at a pullout near milepost 166 on SR-20, about 3 miles east of the hairpin turns below Washington Pass. From the highway, head directly uphill (west, away from the creek) toward the talus at the base of the Supercave gully, following it up and briefly left before rejoining the gully; it takes roughly 1 hour to reach the lower ledge and about 1 hour 10 minutes to reach the upper ledge and base of the longer routes.",
+   "area_id": "wa_m_m_wall_aka_supercave_wall",
+   "descent_text": "Descend via rappel using two ropes; expect some diagonal-rappel maneuvering to stay on anchors, or traverse off to a 3rd-class ramp partway down. Figure roughly an hour from the summit/top of the route back to the base.",
+   "name": "Ellen Pea"
+  },
+  "wa_golden_age": {
+   "approach": "Hike directly up the gully below the wall; after about an hour, leave it on a narrow ledge that leads back right to the start, a prominent 4–5 in left-arching corner. Alternatively, reach the base by climbing the early pitches of either The Tiger or Ellen Pea to the shared midway ledge system, then traverse left to the start; a two-bolt anchor sits on the ledge below the trees.",
+   "area_id": "wa_m_m_wall_aka_supercave_wall",
+   "descent_text": "All belays are bolted, and the route can be rappelled directly with one 70 m rope; the second rappel anchor from the top sits off to the left of the line.",
+   "name": "Golden Age"
+  },
+  "wa_gunrunner": {
+   "approach": "Middle Peak shares the same approach as South Peak: from Downey Creek Trailhead, follow the southern Ptarmigan Traverse cross-country route (Itswoot Ridge/Cub Lake, Bachelor Creek) to reach the range's ridge. Expect a multi-day glaciated approach with route-finding and bushwhacking, not a drive-up or short-trail access.",
+   "area_id": "wa_middle_peak",
+   "descent_text": "The traverse climbs the north faces of the four Gunsight summits and rappels their south sides. From South Peak, a rappel descent leads to the Blue Glacier; the last rappel is free-hanging over a gaping moat onto the glacier, so look for the line that clears it. Check every rappel anchor on the granite thoroughly before trusting it. Parties often finish this descent in darkness. The rappels land on the east side of the range: a party camped below the Blue Glacier walks down to camp, while one based at the Dome-Chickamin col must work south below the peaks, cross the Blizzard-Gunsight col back onto the Chickamin Glacier, and recross the glacier to the col. Allow 3-4 hours, depending on snow and crevasse conditions on the glacier.",
+   "name": "Gunrunner"
+  },
+  "wa_gunsight_peak_standard": {
+   "approach": "From the Downey Creek Trailhead (1,400', end of the drivable Suiattle River Road/FR-26 — the road has been closed to vehicles at a flood washout near milepost 4, roughly 16 miles short of the trailhead; while it stays closed, add that road walk or ride to the hike and check its status first), follow Downey Creek Trail #768. The maintained tread climbs gently along Downey Creek, crossing five tributary creeks (one draining Downey/Pilot Lakes can be a difficult ford in spring high water) and passing informal camps at roughly 1.6, 3, 3.5, and 4 miles before reaching the Bachelor Creek crossing at 6.6 miles/2,400'. Expect old-growth blowdown across the tread in places and a brushy avalanche-chute crossing opposite Green Mountain. At Bachelor Creek, leave the maintained trail and pick up the unmaintained Bachelor Creek climbers'/boot path, which follows the north side of the creek (parties report an improved use-trail here that avoids older brushy sections) up to Bachelor Flats and Bachelor Meadows — the common first-night camp and most parties' Day 1 stop. From Bachelor Meadows continue up steepening open slopes to Cub Pass, then drop about 700' to Cub Lake and cross the meadows beyond",
+   "area_id": "wa_middle_peak",
+   "descent_text": "Reverse the ridge crest from the summit: belay/downclimb the exposed summit ridge back down to a large horn about 50' below the true summit that is thickly slung with rappel webbing (a good on-route confirmation marker). From there, make a double-rope (60m x 2) rappel down the West Face to regain the base of the route's black basaltic dike/dihedral. Scramble down several hundred feet of Class 3 terrain on the dike to the top of the crux dihedral, then make a second, diagonal double-rope (60m x 2) rappel — the last person down should place a directional piece of protection to keep the rope running true — which in one pull reaches the snow finger below. From the snow finger, downclimb or glissade back onto the Chikamin Glacier and reverse the approach (re-climb to the Chikamin-Dome col, cross the Dome Glacier, over Itswoot Pass/Cub Pass, down Bachelor Meadows/Bachelor Creek, and out Downey Creek Trail #768) to the trailhead. All anchors reported on this route are natural — slung horns, blocks, and chockstones — with no fixed/bolted stations, consistent with its remote, low-traffic character. Typical parties use two 60m ropes for both rappels; expect the crux dihedral's black rock to ",
+   "name": "Standard Route"
+  },
+  "wa_liberty_and_injustice_for_all": {
+   "approach": "Same East Face approach as the other Liberty Crack-area routes: park at the hairpin turn on WA-20 east of Washington Pass, walk back to the pond, and follow the cairned climbers' path from the pond's east end about a mile through forest to the East Face talus. Liberty and Injustice for All takes a line roughly 10 meters right of Thin Red Line, so locate the correct start among the cluster of East Face lines (it shares some climbing with the old aid route Liberty Loop).",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "Rappel the route with two ropes; the descent is straightforward and every station is a two-bolt anchor with fixed biners. From the top of pitch 5, where the route joins the top of pitch 7 on Thin Red Line, rappel to the pitch-4 anchor and then to pitch 3. From the top of pitch 3, skip the pitch-2 anchor and rappel directly to the pitch-1 anchor, then to the ground: four rappels in all, or two for parties who stop after pitch 3. Alternatively, continue climbing on Thin Red Line from the top of pitch 5.",
+   "name": "Liberty and Injustice for All"
+  },
+  "wa_liberty_bell_beckey_route": {
+   "approach": "From the Blue Lake Trailhead (FS Trail #314, ~5,400 ft, on SR-20 about 1 mile west of Washington Pass), follow the maintained, well-graded Blue Lake Trail through forest and open meadow for about 1.7 miles to a small meadow just past a small stream crossing (the last reliable water). Leave the maintained trail here on a climbers' boot path heading left (east), ascending through granite slabs, talus, and heather meadow toward the gully that drops from the notch between Liberty Bell and Concord Tower. The path is steep in places with short sections of 3rd-class scrambling. At a fork roughly 200 ft below the notch, stay left to reach the Liberty Bell-Concord Tower notch (~7,300 ft) — about 2 miles and ~2,100 ft of gain total from the car, 1.5-2.5 hours. The approach gully commonly holds snow into late June, so carry an ice axe (and possibly crampons) for an early-season ascent.",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "This is the standard descent line for most Liberty Bell summit routes, not just the Beckey Route itself. From the summit, downclimb the upper (4th) pitch about 20 ft to the first ledge, then go left (east) to a tree hung with rappel slings. One single-rope rappel with a 60m rope reaches a flatter area; from the bolted anchor there, one double-rope rappel (or two single-rope rappels if only carrying one rope) reaches the Liberty Bell-Concord notch. From the notch, downclimb the loose approach gully back to the climbers' path and the Blue Lake Trail. All anchors are bolted or fixed tree slings — no natural gear or v-thread anchors are needed.",
+   "name": "Beckey Route (Southwest Face)"
+  },
+  "wa_liberty_bell_freedom_or_death": {
+   "approach": "Standard East Face approach; look for the leftward-trending ramp right of Liberty Crack.",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "All belays are bolted; the route can be rappelled with a 60 m rope from the top of P3, or parties can continue up the shared terrain into Liberty Crack toward the summit.",
+   "name": "Freedom or Death"
+  },
+  "wa_liberty_bell_girl_next_door": {
+   "approach": "A couple hundred vertical feet below the top of the Liberty-Concord notch, locate a side gully on climber's left with a large cave; walk partway up, then move right onto a treed ledge to start.",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "The route rejoins the Beckey Route line near its top; descend via the standard two single-rope rappels off chain/bolted anchors down to the Liberty-Concord notch.",
+   "name": "The Girl Next Door"
+  },
+  "wa_liberty_bell_independence_route": {
+   "approach": "This is on the East Face, so — like Liberty Crack — the approach is not from the Blue Lake Trailhead but from a separate pullout on SR-20 at the hairpin curve just east of Washington Pass. Park on the north shoulder near the curve, walk back toward the pass to a small pond on the south side of the highway, round its east end, and follow a cairned boot path north into the forest. The path climbs through timber and breaks out onto the talus field directly below the East Face after roughly an hour. From where the path reaches the talus, continue right (north) along the base past the Liberty Crack starts to the far right-hand end of the face, below the red Baer Ceiling roof about 85 m above. No water source along the way; watch for the cairned track being hard to follow in low light, and loose talus underfoot at the base.",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "The Independence Route is a serious, sustained 12-pitch line (first climbed wall-style with 180 pitons and 5 bolts, later freed at 5.12a/5.11) that tops out on Liberty Bell’s upper mountain, so it funnels into the standard Liberty Bell descent used by other summit-finishing routes. From the summit, downclimb the upper pitch a short way and go left (east) to a tree hung with rappel slings. One single-rope rappel with a 60 m rope reaches a sandy ledge; work right and down to a bolted station, then make two single-rope rappels of about 25 m from bolted anchors into the Liberty Bell-Concord notch at about 7,300 ft. Parties who downclimb the ridge and the 5.6 boulder problem to the first bolts instead of making the tree rappel do two rappels in all. From the notch, downclimb the loose gully back to the climbers’ path and the Blue Lake Trail. Given the route’s length and serious character, plan for a long day-into-evening descent; loose rock in the notch gully is a real hazard when tired or descending in the dark.",
+   "name": "The Independence Route"
+  },
+  "wa_liberty_bell_nw_face": {
+   "approach": "From the Blue Lake Trailhead (5,400 ft, on WA-20 about 1 mi west of Washington Pass), follow the maintained Blue Lake Trail roughly 1.7 miles through forest to a small meadow/clearing below Liberty Bell. Leave the Blue Lake Trail here on the well-beaten climbers' path that splits left just past a small stream crossing, and follow it up through slabs, talus, and heather benches toward Concord Tower. Rather than dropping into the main Beckey/Liberty Bell-Concord gully, the NW Face approach stays on the climbers' trail as it climbs toward Concord as long as it reasonably can, then breaks left onto a short, well-trodden low-5th-class step (no more than about 10 ft of easy 4th/low-5th climbing — if you're doing more than that you've missed the spot) that gains the little-visited NW plateau of Liberty Bell, a bench of larch groves below the northwest face proper. Total gain to the base is on the order of 2,000+ ft over roughly 2-2.5 miles one-way; plan 1.5-2.5 hours. The gully section below the plateau can hold snow into early summer and sheds rockfall as it melts out, so helmet up through the talus and gully approach; the Access Fund/Washington Conservation Corps have done trail work he",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "From the west summit, downclimb and scramble to the top of the standard Beckey Route line and descend that way rather than reversing the NW Face. From the summit, downclimb the upper pitch a short way and go left (east) to a tree hung with rappel slings. One single-rope rappel with a 60 m rope reaches a sandy ledge; work right and down to a bolted station, then make two single-rope rappels of about 25 m from bolted anchors into the Liberty Bell-Concord notch at about 7,300 ft. Parties who downclimb the ridge and the 5.6 boulder problem to the first bolts instead of making the tree rappel do two rappels in all. From the notch, downclimb the loose gully back to the climbers’ path and the Blue Lake Trail. Expect a queue at the rappels in busy weather; parties have reported stacking up several deep.",
+   "name": "Northwest Face"
+  },
+  "wa_liberty_bell_overexposure": {
+   "approach": "Overexposure starts right at the top of the notch between Liberty Bell and Concord Tower, so the trailhead-to-base approach is identical to the Beckey Route: Blue Lake Trailhead (FS Trail #314) → 1.7 miles of maintained trail to the small meadow/stream crossing → climbers' boot path through slabs, talus, and meadow to the fork below the notch → stay left to the notch itself at ~7,300 ft (about 2 miles, ~2,100 ft gain, 1.5-2.5 hours). Because the route begins above the notch rather than at it, budget a little extra time and care scrambling up into the initial belay compared to Beckey Route parties, and expect the same early-season snow in the approach gully requiring an axe.",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "The route’s 2nd pitch tops out at the same bolted anchor system that starts the standard Liberty Bell descent, so most parties either stop there or continue a few hundred feet of 4th/low-5th-class scrambling to the true summit, then descend the standard way. From the summit, downclimb the upper (4th) pitch about 20 ft to the first ledge, then go left (east) to a tree hung with rappel slings. One single-rope rappel with a 60m rope reaches a flatter area; from the bolted anchor there, one double-rope rappel (or two single-rope rappels if only carrying one rope) reaches the Liberty Bell-Concord notch. From the notch, downclimb the loose approach gully back to the climbers' path and the Blue Lake Trail. All anchors are bolted or fixed tree slings — no natural gear or v-thread anchors are needed. Some parties instead rappel back down the Overexposure line itself, a couple of enjoyable rappels on a mix of bolts and gear or tree anchors, directly into the approach couloir where packs were cached, particularly when the main descent line is congested.",
+   "name": "Overexposure"
+  },
+  "wa_liberty_bell_serpentine_crack": {
+   "approach": "From the Blue Lake Trailhead on SR-20 (about 1 mile west of Washington Pass, 5,400 ft), hike the Blue Lake Trail about 1.7 miles to the signed Liberty Bell climbers' trail just past a small stream in a meadow. Follow it left up slabs, talus and heather into the gully below the Liberty Bell-Concord notch, as for the Beckey Route. Where the gully forks, stay left and cache packs, then scramble 4th-class ledges up and left to a slung small pine above slabs at the base of the crack on the west face.",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "Serpentine Crack finishes on an exposed, sunny arete with a 5.7 simul-climb or scramble to the true summit, so the descent is the standard one used by all summit-topping Liberty Bell lines. From the summit, downclimb the upper pitch a short way and go left (east) to a tree hung with rappel slings. One single-rope rappel with a 60 m rope reaches a sandy ledge; work right and down to a bolted station, then make two single-rope rappels of about 25 m from bolted anchors into the Liberty Bell-Concord notch at about 7,300 ft. Parties who downclimb the ridge and the 5.6 boulder problem to the first bolts instead of making the tree rappel do two rappels in all. From the notch, downclimb the loose gully back to the climbers’ path and the Blue Lake Trail.",
+   "name": "Serpentine Crack"
+  },
+  "wa_liberty_bell_thin_red_line": {
+   "approach": "From Highway 20 hairpin curve on east side of Washington Pass, locate small pond on south side of road; trailhead pullout on north side of highway; follow climbers' path marked with cairns from pond into forest",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "Two documented options. (1) From the top of the route near M&M Ledge, work climber's left to good bolts and make four double-rope rappels (2 ropes) essentially to the ground at the base of the East Face — this is the faster option and returns you directly to your pack/the East Face approach. (2) If you continue to the true summit instead, descend via the standard Liberty Bell notch route: downclimb east ~100 ft through trees/loose rock to the 2-bolt station, then make two roughly 25m rappels (the second off a bolted anchor) down into the Liberty Bell-Concord notch, then hike down the scree/snow gully to the climbers' trail along the base of the west faces — but this leaves you on the opposite (west) side of the mountain from your car at the East Face pullout, requiring a shuttle or road walk back.",
+   "name": "Thin Red Line"
+  },
+  "wa_liberty_crack": {
+   "approach": "Liberty Crack climbs the East Face, and its approach does NOT start from the Blue Lake Trailhead — that's the trailhead for the west-side Beckey Route. Instead, drive to the pullout on the north side of SR-20 at the hairpin curve a short distance east of Washington Pass (about 0.3-0.5 mile past the Washington Pass Overlook turnoff). Park there and walk back (west) along the road shoulder to a small pond on the south side of the highway. Skirt the pond's east end and pick up a boot path — cairned but easy to lose in the dark on an alpine start — heading north into the forest. The path climbs steeply through timber for 15-20 minutes before breaking out onto talus/boulder terrain directly beneath the East Face, about an hour from the car. There is no reliable water on this short approach, so fill up before leaving the car. The main hazards are losing the cairned track in the trees pre-dawn and loose talus/scree footing at the base.",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "The standard way off is the two-rappel Beckey-side descent, shared with Liberty Crack (Free), Freedom Rider and the Beckey Route. From the bolted alcove near the summit shoulder where the last pitch ends, traverse third-class ledges climber's left to the double-bolt station - the final few metres to it are exposed - and make the first rappel, under 30 m, down toward Beckey Gully. Do not link this into one double-length rappel to the notch: that variation has a poor reputation for jammed ropes. A second rappel of roughly the same length reaches Beckey Gully and the Liberty Bell-Concord Tower notch, and from there you downclimb and hike the scree and boulder gully below the notch - snow-covered or loose and unpleasant depending on the season - to the climbers' trail and the Blue Lake Trail. Manage the ropes carefully on both: the terrain is steep and snags are the common problem here.\n\nPlan the walk back before you start down. Liberty Crack parties park at the East Face pullout on SR-20 rather than at the Blue Lake Trailhead, so this descent puts you down on the far side of the mountain from the car, meaning either a shuttle or roughly a mile back along the highway shoulder. A rappel",
+   "name": "Liberty Crack"
+  },
+  "wa_liberty_crack_free": {
+   "approach": "Drive to the hairpin turn on WA-20 just east of Washington Pass and park at the pullout on the curve (this is a different trailhead than the Blue Lake TH used for the SW/NW Face routes). Walk back toward the pass and find the small pond on the south side of the highway; a cairned climbers' path leaves from the pond's east end and switchbacks up through forest for roughly a mile, breaking out into a talus field directly beneath Liberty Bell's East Face. From the base of the talus, traverse left (climber's left) on 3rd/4th-class ledges for about 40 ft to reach the start of the crack system. This approach is short (about an hour) but steep in its upper section, with a bit of loose talus underfoot near the top — no water source along the way, so carry what you need.",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "Liberty Crack (Free) tops out at the same alcove/bolted anchor used by the original aid line. From there, work along ledges to a double-bolt rap anchor and make two rappels (about 25 m each, 80-100 ft by different accounts) down into the Beckey Gully — the same rap line used by the standard Liberty Crack and Beckey Route descents — landing near a tree anchor in the gully. From there it's a downclimb/walk down the gully to the Liberty Bell-Concord notch and back to the climbers' path. All anchors on this line are bolted (shiny modern bolts plus a tree station); a single 60m rope is adequate for a one-day car-to-car push, though some parties opt to downclimb the sheltered Beckey Route slab unroped instead of rapping the last section.",
+   "name": "Liberty Crack (Free)"
+  },
+  "wa_liberty_traverse": {
+   "approach": "South side of Highway 20, 1 mile west of Washington Pass overlook; from trailhead follow Blue Lake Trail 1.5 miles to climber's trail junction",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "This is a link-up, not a single down-route: after topping out Liberty Bell via the Beckey Route, the traverse continues over the North Face of Concord Tower, then the North Face of Lexington Tower, then the NW Corner of North Early Winter Spire, finishing on the SW Rib of South Early Winter Spire — five summits total. Between summits: rappel the south face of Concord to reach Lexington, climb Lexington and rappel its south face, cross a short but exposed 3rd-class section, make one more short rappel, and walk to the base of North Early Winter Spire. After finishing on South Early Winter Spire, descend via that peak's standard South Arête rappel line — bolted chain anchors allow 2-3 single-rope rappels with a 60m rope back down its gully — then hike back to the Blue Lake Trail. Even fast parties spend most of a day on the rock, and car-to-car time with all the transitions and the final descent typically runs 12-14 hours; a light rack, one 60m rope, and comfort simul-climbing/downclimbing 5.9 terrain are standard for parties doing it quickly.",
+   "name": "Liberty Traverse"
+  },
+  "wa_little_annapurna_south_face": {
+   "approach": "From Highway 97 south of the Y-junction, drive ~7.5 miles and turn onto Ingalls Creek Road/Trailhead. Hike the Ingalls Creek Trail roughly 8 miles, then leave the trail (right/north) into brushy terrain up Crystal Creek, gaining about 2,200 ft to a base-camp meadow and tarn near 6,000 ft. From the tarn, climb a large talus-apron gully west of the tarn to a col at roughly 7,700-7,880 ft between Little Annapurna and the spires to its south.",
+   "area_id": "wa_little_annapurna",
+   "descent_text": "From the summit plateau, descend north/northeast down talus and slab slopes toward Crystal Lake, then pick up the outlet stream drainage and follow it back down to the Crystal Creek base-camp meadow/tarn, retracing the approach back to Ingalls Creek Trail.",
+   "name": "South Face"
+  },
+  "wa_little_annapurna_south_slopes": {
+   "approach": "From the Stuart Lake/Colchuck Lake Trailhead (~3,500 ft, end of Eightmile Road/FR-7601), follow the Stuart Lake Trail (#1599) about 2.5 miles to the signed fork where the Colchuck Lake Trail (#1599.1) splits left/south. Continue roughly 1.8 more miles — crossing Mountaineer Creek and a boulder-hop stretch near the outlet — to Colchuck Lake (5,570 ft, ~4.3 mi in), the last easy, reliable water before the pass. Skirt the lake's south/east shoreline on a braided, cairned climbers' path over talus and slab to the base of Aasgard Pass, the obvious steep gully/headwall at the lake's south end. Aasgard Pass is the crux of the approach: it gains roughly 2,000 ft in under a mile on a mix of dirt switchbacks, loose scree and boulder-hopping, cairns are frequently knocked down and the path braids into several use-trails, and well into summer it can still hold firm snow/ice that makes an ice axe (and sometimes crampons) worthwhile even though the route is otherwise a scramble. Top out at Aasgard Pass (~7,800-7,841 ft, ~5.3 mi from the trailhead). Beyond the pass, cross the grey talus/glacial-till 'moonscape' of the upper Core Zone past Tranquil Lake (Lake Freya) and Isolation Lake, then drop s",
+   "area_id": "wa_little_annapurna",
+   "descent_text": "Reverse the North Slopes: downclimb the low-3rd-class/class-2 slabs and talus on the peak's east side back to the col/basin, pick up the braided boot paths back through the Brisingamen Lakelets meadows, and rejoin the Core Zone trail past Isolation and Tranquil Lakes to Aasgard Pass. This is a scramble walk-off in both directions — no rope, rack, or rappelling is used on the standard North Slopes line; parties simply describe reversing the ascent, and the peak is often characterized as little more than a steep class 2 hike. The one genuine descent-specific hazard is Aasgard Pass itself: down-climbing its ~2,000 ft of loose scree and talus in the afternoon (often with the sun having softened any remaining snow, and other parties ascending below) is a common cause of rockfall incidents and slips — down-climb deliberately, stay out of others' fall line, and only glissade if a real, clean snow chute with a safe runout is in (by mid-to-late summer the pass is usually bare, exposed talus rather than snow). From the base of the pass, retrace the trail around Colchuck Lake and down the Colchuck Lake/Stuart Lake Trail to the trailhead. Rappels: 0.",
+   "name": "North Slopes"
+  },
+  "wa_little_big_chief_mountain_northeast_face": {
+   "approach": "From the Dutch Miller Gap Trailhead (the Dingford Creek Trailhead, where the road is gated), follow Dutch Miller Gap Trail 1030 up the Middle Fork Snoqualmie valley about 14-15 miles to Dutch Miller Gap, passing Hardscrabble Horse Camp and the Williams Lake trail junction along the way. Little Big Chief sits immediately southwest of the gap, reached from the gap itself by an off-trail scramble up the peak's east slope/northeast ridge, with a short but exposed class 4 notch as the crux below the summit. An alternate, longer approach comes from the east via the Necklace Valley Trail off Foss River Road (Skykomish/US 2 side), crossing La Bohn Gap before dropping to Dutch Miller Gap. A second long approach comes from the southeast: the Waptus River Trail from Salmon La Sac to Waptus Lake (with an unbridged river ford below the lake), a ford of Chief Creek near the head of the lake, then the Dutch Miller Gap trail up past Lake Ivanhoe to the gap. For this specific route: continue the standard Middle Fork Snoqualmie trail all the way up to Dutch Miller Gap, then climb directly above the gap onto the peak's northeast ridge/face — no cross-country detour into Summit Chief Valley needed.",
+   "area_id": "wa_little_big_chief_mountain",
+   "descent_text": "From the summit, reverse the two short belayed pitches — using tree or sling anchors for any rappels — back into the cirque below the east face. Cross the snowfield and descend the roughly 500 feet of heather and rock steps on the northeast ridge toward Dutch Miller Gap. Parties who approached via Pete Lake/Summit Chief instead downclimb the ridge-notch crux (often roped) and drop into the northeast basin to regain camp. Do not improvise a shortcut gully: a first-hand account of this east-side face descended the East Face at class 3 but became cliffed out about 600 ft above the valley floor after straying into a northeast-trending couloir.",
+   "name": "Northeast Face"
+  },
+  "wa_live_free_or_die": {
+   "approach": "Same East Face approach as Liberty Crack: park at the hairpin turn on WA-20 east of Washington Pass, walk back to the pond on the south side of the road, and follow the cairned climbers' path from the pond's east end about a mile through forest to the talus below the East Face. The route begins in the same general area as Liberty Crack and the Independence Route on the lower East Face — verify you're at the correct start, since several route lines begin within a short distance of each other along the base talus.",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "Live Free or Die climbs the East Face for 8 pitches to M&M Ledge (roughly mid-height), then shares its final 3-4 pitches to the summit with the upper section of Thin Red Line. Parties who finish on the summit take the standard Liberty Bell descent. From the summit, downclimb the upper pitch a short way and go left (east) to a tree hung with rappel slings. One single-rope rappel with a 60 m rope reaches a sandy ledge; work right and down to a bolted station, then make two single-rope rappels of about 25 m from bolted anchors into the Liberty Bell-Concord notch at about 7,300 ft. Parties who downclimb the ridge and the 5.6 boulder problem to the first bolts instead of making the tree rappel do two rappels in all. From the notch, downclimb the loose gully back to the climbers’ path and the Blue Lake Trail. Parties who stop at M&M Ledge can instead take Thin Red Line’s rappel line: from M&M Ledge, rappel with two ropes off a fixed pin and wire, then work climber’s left to bolted anchors and make four more double-rope rappels to the talus at the base of the East Face.",
+   "name": "Live Free or Die!™"
+  },
+  "wa_luna_peak_southeast_slopes": {
+   "approach": "The trip starts at the Ross Dam Trailhead on SR 20 (North Cascades Highway, ~2,050ft), where parking is right off the highway. From there it's about a 0.8-mile hike down the Ross Dam Trail to Ross Lake, then a boat shuttle (Ross Lake Resort water taxi, or a paddled canoe/packraft for parties without a shuttle reservation) roughly 9 miles up-lake to the Big Beaver Trailhead (~1,600ft) near the Big Beaver / 39 Mile camp area — this lake crossing is a key logistical step, not an afterthought, since Ross Lake Resort's shuttle season and hours govern when you can actually reach the trailhead. From the Big Beaver Trailhead, follow the Big Beaver Trail through old-growth cedar forest along the north bank of Big Beaver Creek for about 8 miles to Luna Camp (an established backcountry campsite, permit required from the NPS backcountry office), gaining only modest elevation on generally mellow, well-graded tread. Continue north on the Big Beaver Trail roughly 1.5 more miles past Luna Camp; watch on the left for a small, easy-to-miss boot path leaving the maintained trail just north of where Access Creek enters Big Beaver Creek (~2,460ft) — this is the turn onto the Access Creek approach. Ford",
+   "area_id": "wa_luna_peak",
+   "descent_text": "Descend by reversing the ascent line exactly — there is no rappelling on this route and no shorter alternative down-route; it is a walk-off/downclimb from summit to camp. From the true (east) summit, reverse the short, exposed Class 3 traverse and the 5-foot downclimb step across the notch back to the false (south) summit, then descend the broad Class 2 talus ridge about 1,100 feet to Luna Col. From the col, reverse the basin traverse at ~6,600ft, cross back over the ridge south of Point 6,730, and downclimb the talus/snow gully into the Access Creek headwaters basin to regain camp. The next day (or continuing the same push on a car-to-car attempt), retrace the Access Creek boot path — staying on the south bank through the brushy 3,700ft band before recrossing to the north flank lower down — back to the Big Beaver Trail, ford Big Beaver Creek, and hike the 8 miles out to the Big Beaver Trailhead, then take the boat shuttle/paddle back down Ross Lake and hike up to the Ross Dam Trailhead. Watch for loose talus and scree underfoot on the upper ridge descent (rockfall risk onto parties below), and treat the Access Creek brush band as slower and more disorienting on tired legs going do",
+   "name": "Southeast Slopes"
+  },
+  "wa_lundin_peak_south_face_left": {
+   "approach": "Follow the Commonwealth Creek trail (PCT to Commonwealth Creek trail) until soon after crossing a stream and moving onto the flank of Red Mountain; leave the trail and follow the side valley below Lundin up to the base of its south face.",
+   "area_id": "wa_lundin_peak",
+   "descent_text": "The route tops out on the West Ridge a short way below the summit. Either reverse the West Ridge, Class 3-4 with a few low fifth-class moves, rappelling or downclimbing most of it to the notch near 5,800 ft at its foot and dropping back into Commonwealth Basin; or descend the Southeast Ridge to Red Pass (about 5,400 ft), Class 3-4 with one rappel of about 80 ft, then follow the Commonwealth Basin trail about 4.5 miles back to the trailhead.",
+   "name": "South Face Left"
+  },
+  "wa_lundin_peak_west_ridge": {
+   "approach": "Two standard ways to reach the base of the West Ridge, both converging on the ridge's low-point notch around 5,800 ft where the technical climbing starts. (1) Commonwealth/Lundin Basin approach: from the PCT-North/Commonwealth Basin trailhead off Alpental Rd (elev. ~3,000 ft), follow the Pacific Crest Trail northbound; within about half a mile bear left onto the Commonwealth Basin use-trail, which climbs gently along Commonwealth Creek through old-growth forest for roughly 1.7 mi as the valley opens into the basin. Near 4,200 ft, leave the main Red Pass/Commonwealth Basin tread and cut left (west), contouring into Lundin Basin below Red Mountain's south face. From there climb a broad couloir (snow early season, scree/talus by late summer) up Lundin's steep south face to gain the West Ridge at the obvious saddle/notch. This leg runs roughly 3.5-4 miles one-way with about 2,800 ft of gain, 2.5-3 hours. Commonwealth Creek is a reliable water source in the lower basin but nothing is dependable once you're up in Lundin Basin, so top off early. Hazards: the south-face couloir is prone to wet-slide/sluffing in afternoon sun and wants an axe (crampons if firm) in early season; the basin tr",
+   "area_id": "wa_lundin_peak",
+   "descent_text": "Most parties reverse the West Ridge: from the true (west) summit, downclimb the class 3-4 ridge crest back toward the notch/saddle used on the way up, staying on the north side of the crest per the standard line and reversing the short crux step (a ~6 ft downclimb at a minor notch). Many parties downclimb this cleanly, but a single short rappel (roughly 15 m/50 ft, well within a 30 m single-rope length) is commonly used here instead, especially in wet conditions or with less experienced climbers — anchors are natural (slung horns/blocks or a small nut/cam placement backed by a cordelette), not bolted; there's no fixed hardware on this route. From the saddle, either reverse the ascent couloir into Lundin Basin (a fast glissade of up to 1,200-1,500 ft when it's still snow-filled, typically only reliable early season) or walk scree/talus down toward the Red-Lundin col to pick up the use trail back into Commonwealth Basin and the PCT. An alternative some parties use is descending the East Ridge instead: scramble down the crest about 100 ft to the top of a small cliff band, then make one single-rope rappel (30 m is sufficient; natural tree/horn anchors — the ridge has plenty of trees to",
+   "name": "West Ridge"
+  },
+  "wa_northwest_face_4": {
+   "approach": "From the Dingford Creek Trailhead, where FR 56 is gated, follow Dutch Miller Gap Trail 1030 — the first 7.7 miles on the closed road to Hardscrabble Horse Camp — up the Middle Fork Snoqualmie valley toward Dutch Miller Gap, but do not go to the gap: leave the main Middle Fork Snoqualmie trail at a small steel bridge well before Dutch Miller Gap and cut cross-country south into Summit Chief Valley; the Northwest Face is visible on the east side of that valley — a distinctly different final leg than the Northeast Face's direct ridge approach.",
+   "area_id": "wa_little_big_chief_mountain",
+   "descent_text": "From the summit, travel south along the ridge for several hundred feet to a small pocket glacier below the face. Cross glacier-polished slabs, trending climber's left, to regain the ridge crest at approximately 5,400'. From there, make one to two rappels down broken terrain into the valley, then traverse exposed goat ledges before a final forest descent back to the Summit Chief Valley camp. The glacier-polished slabs can be wet, snow-covered, or icy well into summer.",
+   "name": "Northwest Face"
+  },
+  "wa_nw_face_var_remsberg_variation": {
+   "approach": "Identical to the standard Northwest Face route, since this is a single-pitch variation on it: from the Blue Lake Trailhead, hike the Blue Lake Trail ~1.5 miles to the meadow, take the climbers' path left past the small stream, and follow it toward Concord as far as it goes before breaking left onto the short low-5th-class step that gains Liberty Bell's NW plateau. The Remsberg Variation only diverges from the parent route at the 3rd pitch belay — everything below that is the standard NW Face approach.",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "The variation rejoins the standard NW Face route above pitch 3 (it climbs a more direct crack to the same belay ledge the original pitch 3 reaches), so pitches 4-5 and the descent are identical to the Northwest Face: from the west summit, scramble to the top of the Beckey Route and use its rappel line. From the summit, downclimb the upper pitch a short way and go left (east) to a tree hung with rappel slings. One single-rope rappel with a 60 m rope reaches a sandy ledge; work right and down to a bolted station, then make two single-rope rappels of about 25 m from bolted anchors into the Liberty Bell-Concord notch at about 7,300 ft. Parties who downclimb the ridge and the 5.6 boulder problem to the first bolts instead of making the tree rappel do two rappels in all. From the notch, downclimb the loose gully back to the climbers’ path and the Blue Lake Trail.",
+   "name": "NW Face Var. (Remsberg Variation)"
+  },
+  "wa_rapple_grapple": {
+   "approach": "From the Blue Lake Trailhead, hike the Blue Lake Trail ~1.5 miles to the meadow, then take the climbers' path left past the small stream up through slabs and talus toward the Liberty Bell-Concord gully. Rapple Grapple shares its first pitch with the Beckey Route, so follow the standard Beckey approach (stay right at the gully fork) to the same base.",
+   "area_id": "wa_liberty_bell",
+   "descent_text": "After finishing the route’s scramble and short 5.6 slab to the ridge, take the standard Liberty Bell descent, which lands close to the base of the route. From the summit, downclimb the upper pitch a short way and go left (east) to a tree hung with rappel slings. One single-rope rappel with a 60 m rope reaches a sandy ledge; work right and down to a bolted station, then make two single-rope rappels of about 25 m from bolted anchors into the Liberty Bell-Concord notch at about 7,300 ft. Parties who downclimb the ridge and the 5.6 boulder problem to the first bolts instead of making the tree rappel do two rappels in all. From the notch, downclimb the loose gully back to the climbers’ path and the Blue Lake Trail.",
+   "name": "Rapple Grapple"
+  },
+  "wa_south_face_8": {
+   "approach": "Start at the Snoqualmie Pass PCT-North (PCT-Northbound) trailhead off I-90 Exit 52, elevation about 3,000-3,040 ft. Follow the Pacific Crest Trail north for roughly 2.5 miles through second-growth forest, climbing gently, to the signed junction with the Commonwealth Creek Trail (#1033). Follow #1033 into Commonwealth Basin; not far past the junction the trail crosses Commonwealth Creek, which is the last reliable water on the approach and can be a tricky ford in early season/high snowmelt. Immediately beyond the crossing, leave the maintained tread - there is no trail from here - and climb cross-country to the northwest, first through open timber and then boulder/talus, gaining roughly 1,500-2,000 ft into the open cirque at the headwaters of Commonwealth Creek beneath Lundin's south face. The face rises directly above; the route starts near the low point of the face, close under the summit. Total car-to-base distance is roughly 3-3.5 miles one-way, with lingering snow patches possible into early summer in the upper basin and some route-finding through talus to find the actual toe of the face.",
+   "area_id": "wa_lundin_peak",
+   "descent_text": "Descend by scrambling the connecting ridge to the Southeast Ridge and following it down (Class 3-4), the standard descent for routes topping out on Lundin's summit. The ridge crosses several rock horns; between the first two there is a short (~40 ft) Class 3+ downclimb, and lower on the ridge is a single rappel of roughly 25 meters down a step that's awkward to downclimb, from a long-standing fixed anchor (slung chockstones - natural gear, not bolted) that lands you on Class 2 ledges. From there continue down the ridge/talus back toward Red Pass or directly into Commonwealth Basin to rejoin the approach line and the PCT. A single 30m or 60m rope is sufficient for the one rappel; in good, dry conditions some parties downclimb this step instead of rigging a rappel.",
+   "name": "South Face"
+  },
+  "wa_sw_ridge": {
+   "approach": "The east-side multi-day approach: Lady of the Lake ferry from Chelan to Stehekin, NPS shuttle to High Bridge, ~9-10 miles on the PCT/Agnes Creek Trail, then an off-trail bushwhack and glacier approach (~5,000 ft gain) to a high camp below the peaks.",
+   "area_id": "wa_middle_peak",
+   "descent_text": "From the summit, traverse south along the summit ridge to the south-facing rappel anchors and make two double-rope rappels: the first to the notch between Middle and South Gunsight, the second into the moat at the base of the notch (loose, dirty and cold). With a single 60 m rope expect more rappels. From the glacier, reverse the approach: descend roughly 5,000 ft back to Agnes Creek and hike out 9-10 miles to High Bridge.",
+   "name": "Southwest Ridge"
+  },
+  "wa_the_l_h_route_free_variation": {
+   "approach": "M&M Wall, also known as Supercave Wall for the tennis-court-sized cave crossing the cliff at mid-height, is one of the largest roadside walls at Washington Pass. Park at a pullout near milepost 166 on SR-20, about 3 miles east of the hairpin turns (and a similar distance from the Washington Pass summit). From the highway, head directly uphill toward the talus at the base of the Supercave gully, following it up and briefly left before rejoining the gully; it takes roughly 1 hour to reach the lower ledge and about 1 hour 10 minutes to reach the upper ledge and base of the longer routes.",
+   "area_id": "wa_m_m_wall_aka_supercave_wall",
+   "descent_text": "From the top, rappel down the Ellen Pea line using two ropes (diagonal rappelling is required in places), or walk down via the 3rd-class terrain to the west.",
+   "name": "The L & H Route (Free Variation)"
+  },
+  "wa_the_tiger": {
+   "approach": "M&M Wall, also known as Supercave Wall for the tennis-court-sized cave crossing the cliff at mid-height, is one of the largest roadside walls at Washington Pass. Park at a pullout near milepost 166 on SR-20, about 3 miles east of the hairpin turns (and a similar distance from the Washington Pass summit). From the highway, head directly uphill toward the talus at the base of the Supercave gully, following it up and briefly left before rejoining the gully; it takes roughly 1 hour to reach the lower ledge and about 1 hour 10 minutes to reach the upper ledge and base of the longer routes.",
+   "area_id": "wa_m_m_wall_aka_supercave_wall",
+   "descent_text": "Descend via double-rope rappels down the line of The Tiger using 70m ropes; alternatively, traverse across to the Ellen Pea route line for a rappel descent, or walk off via the 3rd-class ledge system to the west/summit ridge.",
+   "name": "The Tiger"
+  }
+ }
+}
