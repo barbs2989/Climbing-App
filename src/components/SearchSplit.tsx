@@ -39,7 +39,7 @@ export default function SearchSplit({onArea,onRoute,selected,defaultMode,addArea
   const [mode,setMode]=useState(defaultMode||"areas");
   const [iq,setIq]=useState("");const q=query!==undefined?query:iq;const setQ=onQuery||setIq;
   const qq=q.trim();const sel=selected||[];
-  const tab=(on: boolean): CSSProperties=>({flex:1,padding:"7px 0",textAlign:"center",fontSize:12.5,fontWeight:700,cursor:"pointer",borderRadius:7,background:on?C.blueSolid:"transparent",color:on?"#fff":C.textSub});
+  const tab=(on: boolean): CSSProperties=>({flex:1,padding:"7px 0",textAlign:"center",fontSize:12.5,fontWeight:700,cursor:"pointer",borderRadius:7,background:on?C.blueSolid:"transparent",color:on?C.onSolid:C.textSub});
   const fld: CSSProperties={width:"100%",padding:"10px 12px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:14,boxSizing:"border-box",outline:"none"};
   const row: CSSProperties={display:"flex",alignItems:"center",gap:10,padding:"9px 4px",cursor:"pointer",borderBottom:"1px solid "+C.borderLight};
   const sub: CSSProperties={fontSize:11,color:C.textMuted,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"};
