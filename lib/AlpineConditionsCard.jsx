@@ -393,8 +393,10 @@ function DayByDay({ days, di, pick, dayName, nWarn, nCaution, fc, legs, startOn 
   const cell = { background: C.surface, borderRadius: 8, padding: "5px 7px", display: "block", minWidth: 0 };
   const lbl = { display: "block", fontSize: 10.5, color: C.textMuted, fontWeight: 700 };
   const val = { display: "block", fontSize: 12.5, color: C.text, fontWeight: 700, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" };
+  const date = function (d) { return new Date(d.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", timeZone: "UTC" }); };
   return <div style={BOX}>
     <CardHead style={{ marginBottom: 8 }}>DAY BY DAY</CardHead>
+    <div data-day-table="1" style={{ margin: "0 -14px -12px", borderTop: "1px solid " + C.border }}>
     {days.map(function (d, i) {
       const on = i === di, w = nWarn(d), c = nCaution(d), s = d.sum;
       const flagWord = w + c === 0 ? "No flags" : [w ? w + " warning" + (w === 1 ? "" : "s") : null, c ? c + " caution" + (c === 1 ? "" : "s") : null].filter(Boolean).join(" · ");
@@ -403,8 +405,8 @@ function DayByDay({ days, di, pick, dayName, nWarn, nCaution, fc, legs, startOn 
       const gust = s.gust != null ? uWind(s.gust) : "—";
       const start = startOn && !legs.floor && d.start && d.daysEarly < 2 ? (legs.fromCamp ? "Leave camp by " : "Start by ") + clockOf(fc, floorQ(d.start.at)) + (d.daysEarly === 1 ? " the night before" : "") : null;
       const extra = [s.snow != null ? uSnowfall(s.snow) + " new snow" : null, start].filter(Boolean).join(" · ");
-      return <button key={d.date} onClick={function () { pick(i); }} aria-pressed={on} aria-label={dayName(d, i) + ", " + flagWord + ". High / low " + temp + ". Freezing level " + fl + ". Gusts " + gust + ". " + extra + "."} style={{ display: "block", width: "100%", textAlign: "left", padding: "8px 6px", margin: 0, border: "none", borderTop: i ? "1px solid " + C.borderLight : "none", borderRadius: on ? 8 : 0, background: on ? C.blueBg : "transparent", color: C.text, cursor: "pointer", font: "inherit" }}>
-        <span style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 5 }}><span style={{ fontSize: 12.5, fontWeight: 800 }}>{dayName(d, i)}</span><span style={{ fontSize: 12, fontWeight: 700, color: w ? C.red : c ? C.amber : C.textSub }}>{flagWord}</span></span>
+      return <button key={d.date} onClick={function () { pick(i); }} aria-pressed={on} aria-label={dayName(d, i) + ", " + flagWord + ". High / low " + temp + ". Freezing level " + fl + ". Gusts " + gust + ". " + extra + "."} style={{ display: "block", width: "100%", textAlign: "left", padding: "11px 14px", margin: 0, border: "none", borderTop: i ? "1px solid " + C.border : "none", borderRadius: 0, background: on ? C.blueBg : "transparent", boxShadow: on ? "inset 3px 0 0 " + C.blue : "none", color: C.text, cursor: "pointer", font: "inherit" }}>
+        <span style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 6 }}><span style={{ fontSize: 12.5, fontWeight: 800 }}>{dayName(d, i)}</span><span style={{ fontSize: 11.5, color: C.textMuted }}>{date(d)}</span><span style={{ fontSize: 12, fontWeight: 700, color: w ? C.red : c ? C.amber : C.textSub }}>{flagWord}</span></span>
         <span style={{ display: "grid", gridTemplateColumns: "repeat(3,minmax(0,1fr))", gap: 5 }}>
           <span style={cell}><span style={lbl}>High / low</span><span style={val}>{temp}</span></span>
           <span style={cell}><span style={lbl}>Freezing level</span><span style={val}>{fl}</span></span>
@@ -413,7 +415,8 @@ function DayByDay({ days, di, pick, dayName, nWarn, nCaution, fc, legs, startOn 
         <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 4 }}>{extra}</span>
       </button>;
     })}
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 6 }}>Whole-day figures at the forecast’s height. Tap a day to open it in every section.</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, padding: "9px 14px 11px", borderTop: "1px solid " + C.border }}>Whole-day figures at the forecast’s height. Tap a day to open it in every section.</div>
+    </div>
   </div>;
 }
 
