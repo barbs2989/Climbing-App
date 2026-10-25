@@ -222,3 +222,4 @@ Real climbers, batch 4 (0314): a real crew's safety questionnaire and safety-rea
 
 ## 8. Known gaps (verified)
 - `docs/guards` and CLAUDE.md describe crews as in-memory seed; `lib/db.js` shows they are DB-backed, so that older claim is stale.
+- **One climb, a summit AND a style (open, not built).** The log form offers Summit as one pick, so a climber cannot record that they summited while leading, following, or falling/hanging on the same climb. Fixing it needs a `summited` column on `climb_logs` (migration, `withoutNewLogCols` fallback, hydration in `ClimbMatch.jsx` `syncLogToDb` and the row mapper) AND the peak count rewritten in the server-side rank SQL (migrations 0194 to 0357 count `tick_type = 'Summit'`), so it is a migration plus an SQL change, not a form change.

@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **Log form audit** (owner to-do, 2026-10-25): each discipline offers only its own tick words (`tickTypesFor`: alpine/ice/mixed gain Lead, Follow, Hung, Fell; top rope and aid drop Onsight/Flash/Redpoint); the snow tags *Trail broken/packed* and the *Coverage* group say what they mean; section headers in the log form and trip report are bright 12.5px and each starts under a rule. Summit plus a style on one climb is still open (see `docs/features/logbook-crews-home.md`, section 8). See `docs/features/logbook-crews-home.md` and `docs/features/ranks.md`.
 - **One auth listener for the app** (owner to-do, 2026-10-25): `src/AuthContext.tsx` wraps the whole app in `main.jsx`. `useAuth()` gives any screen the signed-in `user` (or null), a `loading` flag until the stored session is read, and `login` / `logout` (the existing `lib/auth.js` calls). It is the only shared `onAuthStateChange` subscription in the app; the older `useSession()` hook still subscribes on its own, and its callers are unchanged. No visible change.
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.

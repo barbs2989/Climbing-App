@@ -63,7 +63,8 @@ export default function TripReport({blockedIds,onBlock,ascent,onClose,onViewClim
   const ownTrack=(ascent.gpxTrack&&Array.isArray(ascent.gpxTrack.pts)&&ascent.gpxTrack.pts.length>1)?ascent.gpxTrack:((trackQ.data&&Array.isArray(trackQ.data.pts)&&trackQ.data.pts.length>1)?trackQ.data:null);
   const SH={fontSize:13,fontWeight:800,color:C.text,textTransform:"uppercase",letterSpacing:0.4,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9};
   const CARD={background:C.card,borderRadius:11,padding:"12px 14px",marginBottom:12,border:"1px solid "+C.border};
-  const SUB={fontSize:10.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:5};
+  /* A sub-header was 10.5px C.textMuted, so it read as a faint caption under the section heading. Now it is the same bright 12.5px header the Log form uses, and each sub-section starts under a rule. */
+const SUB={fontSize:12.5,fontWeight:800,color:C.text,textTransform:"uppercase",letterSpacing:0.6,marginTop:14,marginBottom:8,paddingTop:12,borderTop:"1px solid "+C.borderHi};
   const PROSE={fontSize:14,color:C.text,lineHeight:1.6,whiteSpace:"pre-wrap"};
   const cond=ascent.cond||{};
   /* Labels are the form's own (condMetricsFor), so "Water sources: Flowing" reads as the question it answered;
