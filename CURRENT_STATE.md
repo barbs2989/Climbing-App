@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **Résumé edit and share (owner note, 2026-10-25)**: *Edit résumé* is a full-width button at the top of the sheet; Sends by grade and Experience say they update as you log; a hand-added climb can be removed in Edit; *Share résumé* offers Text, Email, Copy link and More (`ShareVia`). Conditioning has no editor yet. See `docs/features/profile-and-settings.md`.
 
 - **Elevation profile under the route map, linked to it** (owner note, 2026-10-25): the route page's profile now sits directly under the map, shows height against distance with the climb and descent, and a dot moves along the recorded track as you scrub it. The old static profile in the Overview (after the photos) is gone; it had no link to the map and called max-minus-min "gain". → [route-page](docs/features/route-page.md)
 - **The five top tabs lose their boxed header** (owner note, 2026-10-25): Climbs, Partners, Crew, Logbook and Ranks no longer draw the big title box that took a third of a phone screen. The title stays as a screen-reader heading, the one-line caption stays as plain text, and Ranks keeps its "?". `ScreenHero` takes `quiet` for this. → [app-shell-and-layout](docs/features/app-shell-and-layout.md)
