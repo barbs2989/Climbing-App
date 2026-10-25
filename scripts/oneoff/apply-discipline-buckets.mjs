@@ -78,12 +78,20 @@ for (let i = resume; i < ops.length; i++) {
     r = await fetch(`${url}/rest/v1/areas?id=eq.${enc(o.id)}&path=eq.${enc(o.prev.path)}`, { method: "PATCH", headers: H, body: JSON.stringify({ path: o.path }) });
   } else if (o.type === "delete") {
     const kids = await childCount(o.id);
-    if (kids) throw new Error(`bucket ${o.name} now has ${kids} children — stopping`);
+    if (kids) { held.push({ i, id: o.id, name: o.name, why: `${kids} child(ren) still held` }); console.log(`HELD delete op ${i} ${o.name}: ${kids} child(ren) still under it`); continue; }
     const refs = await cascadeRefs(o.id);
     if (Object.keys(refs).length) { held.push({ i, id: o.id, name: o.name, refs }); console.log(`HELD delete op ${i} ${o.name}: rows in ${Object.keys(refs).join(", ")}`); continue; }
     r = await fetch(`${url}/rest/v1/areas?id=eq.${enc(o.id)}&parent_id=eq.${enc(o.prev.parent_id)}`, { method: "DELETE", headers: H });
   } else throw new Error("unknown op " + o.type);
   body = await r.text();
+  if (!r.ok && o.type === "reparent" && body.includes('"P0001"') && body.includes("already exists")) {
+    // The 0216 trigger refused a same-named place already in the catalog. A person folds that pair;
+    // this script never does. The bucket stays, holding this crag.
+    held.push({ i, id: o.id, name: o.name, why: "duplicate place refused by the database: " + body.slice(0, 200) });
+    console.log(`HELD reparent op ${i} ${o.name}: duplicate place refused`);
+    await sleep(1000);
+    continue;
+  }
   if (!r.ok) throw new Error(`op ${i} ${o.type} ${o.name}: HTTP ${r.status} ${body.slice(0, 300)} — stopping at op ${i}; resume with --resume ${i}`);
   const rows = JSON.parse(body || "[]");
   if (!rows.length) { skipped.push({ i, type: o.type, name: o.name }); console.log(`skip op ${i} (${o.type} ${o.name}): precondition no longer holds`); }
