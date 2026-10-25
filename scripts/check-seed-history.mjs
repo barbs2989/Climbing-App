@@ -168,7 +168,8 @@ function flat(fn) {
   if (!hadDoc) globalThis.document = { body: {} };
   try { return fn(); } finally { ReactDOM.createPortal = orig; if (!hadDoc) delete globalThis.document; }
 }
-import { Resume, ME, __set_DB_UID } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import Resume from ${JSON.stringify(path.join(ROOT, "src/components/Resume.tsx"))};
+import { ME, __set_DB_UID } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 const noop = () => {};
 export function render(climber, uid) {
   __set_DB_UID(uid);

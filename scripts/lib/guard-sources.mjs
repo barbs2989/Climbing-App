@@ -203,6 +203,7 @@ export const MOVED = {
     "src/components/LogCatch.tsx",
     "src/components/Comments.tsx",
     "src/components/Challenges.tsx",
+    "src/components/Resume.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
