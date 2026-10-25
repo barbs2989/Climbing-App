@@ -32,6 +32,16 @@ import ActionIcon from "../src/components/ActionIcon.tsx";
 // a bare NCCS roman numeral on 30 routes. An area list is where a wrong grade is read fastest:
 // every row carries one.
 function rowGrade(r) { return displayGrade(r) || "—"; }
+// WHERE a climb is, for a row read with the `areas(name, parent:parent_id(name))` embed: its peak or
+// crag, then the place that holds it ("Mount Stuart · Stuart-Enchantments"), as the Logbook's
+// objectives rows print it. A list gathered from a whole state needs it: "North Buttress" and
+// "Standard Scramble" are names many peaks share (owner, 2026-10-24).
+function placeOf(r) {
+  const a = r && r.areas;
+  if (!a || !a.name) return null;
+  const p = a.parent && a.parent.name;
+  return p && p !== a.name ? a.name + " · " + p : a.name;
+}
 
 // THE CLIMBER, for the panels that personalise this browser. `wishlist`, `profile`,
 // `completedIds`, `rankSuggested` and `discSlots` come from App and are read only by
@@ -156,7 +166,7 @@ function DbSuggestedClimbs({ area, onOpen, C }) {
       </button>
       {open ? (
         <div style={{ marginTop: 9 }}>
-          {objectives.length ? <div><div style={lbl}>From your objectives</div>{objectives.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
+          {objectives.length ? <div><div style={lbl}>From your objectives</div>{objectives.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} areaName={placeOf(r)} />)}</div> : null}
           {recent.length ? <div><div style={lbl}>Pick up where you left off</div>{recent.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
           {bands.map(b => <div key={b.slot.src + ":" + b.slot.disc}><div style={lbl}>{bandTitle(b.slot)}</div>{b.rows.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div>)}
           {/* `popular` sorts on (stars || 0), and only 6 routes in the whole 205k catalog carry
@@ -1472,7 +1482,7 @@ function ObjectivesPanel({ area, onOpen, C }) {
       {!isLoading && !error && (!data || !data.length) && (
         <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>No objectives here yet — open a climb and tap to add it to your objectives.</div>
       )}
-      {(data || []).map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}
+      {(data || []).map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} areaName={placeOf(r)} />)}
     </div>
   );
 }
