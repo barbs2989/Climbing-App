@@ -34758,3 +34758,48 @@ Concord Tower's Up In Arms.
 
 1 confirmed error fixed, 0 flagged for human review (new), 7 clean.
 `last_processed_id` advances to `wa_up_in_arms`.
+
+## 2026-10-25 — Pass 7, Batch 464
+
+Eight routes across eight peaks: Mount Stuart's Upper North Ridge w/Great Gendarme;
+Ares Tower's Standard Route (Vasiliki Ridge); Wallaby Peak's Standard Route; Warrior
+Peak's Southeast Peak Standard; the Washington-Ellinor Traverse; West Craggy Peak's
+Standard Route; North (Gunsight) Peak's West Face; West Twin Needle's South Route.
+
+**Fixed (2), SQL in `audits/sql/2026-10-25-batch-464.sql`:**
+- `wa_vasiliki_ridge_standard` (Ares Tower): `high_point_ft` 8190 → 8203. The row's
+  own `corrections` column already documents this exact fix — Wikipedia's commonly
+  cited 8,190 ft is the older, rounded figure, while a 2025 dGPS survey
+  (countryhighpoints.com, cross-checked, consistent with newer USGS LiDAR) measured
+  Ares Tower's actual summit at 8,202.8 ft ±0.1 ft, and that text states outright
+  "the more precise 8,203 ft figure is used here as highPointFt" — but the column
+  itself was still 8190. The documented correction had never actually been applied.
+- `wa_west_face_2` (North/Gunsight Peak, West Face): `fa` aid grade "5.10 A2" →
+  "5.10 A1" for the 1986 Jim Nelson/Carl Dietrich first ascent. Alpinist's NewsWire
+  writeup on the 2007 first free ascent states the original grade as 5.10 A1; no
+  source found anywhere supports A2. FFA climbers/year (Hasson & Holsten, 2007) and
+  free grade (5.11+) are independently corroborated and left unchanged.
+
+**Clean (6):**
+- `wa_upper_north_ridge_w_great_gendarme` (Mount Stuart): `high_point_ft` 9415 matches
+  Mount Stuart's well-established USGS summit elevation. FA attribution (Rupley/Gordon
+  1956 bypass, Wickwire/Stanley 1964 direct) not independently reconfirmed this pass —
+  no source found either confirms or contradicts it.
+- `wa_wallaby_peak_standard`: 7,995 ft and the Beckey/Beckey/Varney June 17, 1942 FA
+  are consistent with the route's own documented sourcing; nothing found contradicts
+  either.
+- `wa_warrior_peak_standard`: checked the stored coordinates (47.78391, -123.133644)
+  against Wikipedia (47.784°N, 123.134°W) and SummitPost (47.78410°N/123.134°W) —
+  both match closely. `high_point_ft` 7320 also matches Wikipedia's 7,320+ ft.
+- `wa_washington_ellinor_traverse_ridge`: `high_point_ft` 6260 correctly reflects
+  Mount Washington (~6,255-6,278 ft per sources), the taller of the traverse's two
+  named peaks — Mount Ellinor is only ~5,920-5,952 ft, so the traverse's high point
+  being Washington's summit rather than Ellinor's is correct, not an error.
+- `wa_west_craggy_peak_standard_route`: `high_point_ft` 8372 is already the row's own
+  documented "most commonly cited" figure (Wikipedia/PeakVisor) among three
+  conflicting sources (8366/8372/8367); not re-litigated.
+- `wa_west_twin_needle_south_route`: 7,936 ft and the Degenhardt/Martin/Strandberg
+  August 17, 1932 FA both match Wikipedia exactly.
+
+2 confirmed errors fixed, 0 flagged for human review (new), 6 clean.
+`last_processed_id` advances to `wa_west_twin_needle_south_route`.
