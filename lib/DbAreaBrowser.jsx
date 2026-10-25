@@ -248,7 +248,7 @@ function StatePicker({ onPick, C }) {
             onChange={e => setCountryId(e.target.value)}
             style={{ ...selStyle, cursor: lc || !countries ? "default" : "pointer" }}>
             <option value="">{lc ? "Loading countries…" : (countries && countries.length) ? "Select a country…" : ec ? "Couldn’t load countries" : "No countries found"}</option>
-            {(countries || []).map(c => <option key={c.id} value={c.id}>{c.name + (c.route_count != null ? ` — ${c.route_count.toLocaleString()} climbs` : "")}</option>)}
+            {(countries || []).map(c => <option key={c.id} value={c.id}>{c.name + (c.route_count != null ? ` — ${c.route_count.toLocaleString()} climb${c.route_count === 1 ? "" : "s"}` : "")}</option>)}
           </select>
         </div>
       )}
@@ -756,7 +756,7 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
             {area.coords_approx ? <div style={{ fontSize: 11.5, color: C.amber, marginTop: 4, lineHeight: 1.45 }}>Coordinates are approximate — the map pin, any distance shown, and the Directions link are rough.</div> : null}
             {chips.length ? <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 9 }}>{chips.map((t, i) => <span key={i} style={{ fontSize: 11.5, fontWeight: 600, color: C.text, background: "rgba(255,255,255,0.12)", border: "1px solid " + C.border, borderRadius: 7, padding: "3px 9px" }}>{t}</span>)}</div> : null}
             {/* The description moved out of the hero into the ABOUT card below (0304), where it has an edit control. */}
-            <div style={{ fontSize: 13, color: C.blue, marginTop: 8 }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count.toLocaleString() + " climbs" : area.route_count.toLocaleString() + " climb" + (area.route_count !== 1 ? "s" : "")}</div>
+            <div style={{ fontSize: 13, color: C.blue, marginTop: 8 }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count.toLocaleString() + " climb" + (area.route_count !== 1 ? "s" : "") : area.route_count.toLocaleString() + " climb" + (area.route_count !== 1 ? "s" : "")}</div>
           </div>
           {/* The Fire map entry. It used to be a full-width card at the very top of the Climbs
               tab, above the path and the area itself; it lives here now, on the area it opens
@@ -1682,7 +1682,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
         const sz = Math.min(22 + n, 44);
         const html = "<div style='width:" + sz + "px;height:" + sz + "px;border-radius:50%;background:" + C.blueSolid + ";border:2px solid #fff;color:#fff;font-weight:700;font-size:" + (n > 99 ? 10 : 12) + "px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,0.55);'>" + n + "</div>";
         const mk = L.marker([avgLat, avgLng], { icon: L.divIcon({ html, className: "", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2] }) });
-        mk.bindTooltip(n + " areas · " + climbs + " climbs — tap to zoom in", { direction: "top" });
+        mk.bindTooltip(n + " areas · " + climbs + (climbs === 1 ? " climb" : " climbs") + " — tap to zoom in", { direction: "top" });
         mk.on("click", () => {
           setPick({ areas, cluster: true });
           try { map.fitBounds(L.latLngBounds(areas.map(a => [a.lat, a.lng])), { padding: [50, 50], maxZoom: 15 }); } catch (e) {}
@@ -1835,7 +1835,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
             </div>
           ) : null}
           {data && data.total != null && !disc && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
-          {disc && (nearby.length > sorted.length || (data && data.total > nearbyAll.length)) ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing " + sorted.length + " " + (DL[disc] || disc).toLowerCase() + " areas — zoom in to see more."}</div> : null}
+          {disc && (nearby.length > sorted.length || (data && data.total > nearbyAll.length)) ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing " + sorted.length + " " + (DL[disc] || disc).toLowerCase() + (sorted.length === 1 ? " area" : " areas") + " — zoom in to see more."}</div> : null}
           {sorted.map(a => (
             <div key={a.id} {...clickable(() => onOpenArea(a))} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontWeight: 700, fontSize: 14.5, color: C.text }}>{a.name}</span>

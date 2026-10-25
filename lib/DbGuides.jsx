@@ -151,7 +151,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
           ["Disciplines listed", guide.disciplines.map(d => DISCIPLINE_LABELS[d] || d).join(", ") || "None yet"],
           ["Insurance", guide.insuranceCarrierName ? guide.insuranceCarrierName + " (self-attested, not independently confirmed)" : "Not on file"],
           ["Permits/licenses", guide.permitAttested ? "Attested by guide (not independently confirmed)" : "Not on file"],
-          ["Rate", "$" + guide.rate + "/day, up to " + guide.groupMax + " climbers"],
+          ["Rate", "$" + guide.rate + "/day, up to " + guide.groupMax + (guide.groupMax === 1 ? " climber" : " climbers")],
           ["Cancellation policy", guide.cancellationPolicy || "Not specified"],
         ].map(row => (
           <div key={row[0]} style={{ display: "flex", justifyContent: "space-between", gap: 10, padding: "7px 0", borderBottom: "1px solid " + C.border, fontSize: 12.5 }}>

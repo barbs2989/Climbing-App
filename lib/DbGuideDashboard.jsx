@@ -143,7 +143,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
                 <div style={{ minWidth: 0 }}>
                   <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text }}>{c.kind === "primary_track" ? CERT_TRACK_LABELS[c.cert_track] : c.cross_cutting_type}</div>
                   <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2 }}>{"No. " + c.cert_number + (c.issuing_org ? " · " + c.issuing_org : "")}</div>
-                  {dLeft != null && dLeft <= DAYS_TO_EXPIRY_WARNING ? <div style={{ fontSize: 11.5, color: C.amber, marginTop: 2 }}>{"Expires in " + dLeft + " days"}</div> : null}
+                  {dLeft != null && dLeft <= DAYS_TO_EXPIRY_WARNING ? <div style={{ fontSize: 11.5, color: C.amber, marginTop: 2 }}>{dLeft < 0 ? "Expired" : dLeft === 0 ? "Expires today" : "Expires in " + dLeft + (dLeft === 1 ? " day" : " days")}</div> : null}
                 </div>
                 <span style={{ flexShrink: 0, fontSize: 12, fontWeight: 700, color: tg.c, background: tg.b, border: "1px solid " + tg.d, borderRadius: 6, padding: "2px 7px" }}>{tg.t}</span>
               </div>
