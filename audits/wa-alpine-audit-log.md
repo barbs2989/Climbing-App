@@ -34475,3 +34475,44 @@ Face (Switchback Mtn).
 
 0 confirmed errors, 2 flagged for human review (both on `wa_storm_king_north_face`), 7 clean.
 `last_processed_id` advances to `wa_switchback_mountain_west_ridge`.
+
+---
+
+## 2026-10-25 — Pass 7, Batch 458
+
+Eight routes: Table Mountain Standard Scramble; Tenpeak Mountain North Couloir + Southeast
+Route; The Brothers South Couloir + Traverse; Concord Tower's The Cave Route; The Chopping
+Block's Northeast Ridge + Northwest Route.
+
+- `wa_the_cave_route`: **fixed** — `high_point_ft` 7569 → 7560. This is the same stale Concord
+  Tower elevation batches 454/455 already corrected on sibling routes (`wa_south_face_3`,
+  `wa_south_face_center`) and flagged as still outstanding on this row specifically; SummitPost
+  and Mountain Project both re-confirm 7,560 ft independently this run, matching what three
+  prior passes (batch 102, 156, and this one) have now converged on. The area's own blurb
+  separately notes a second ~7,611-7,612 ft LIDAR figure also in circulation — left unresolved,
+  not re-litigated. Still outstanding on this peak: `wa_around_the_cave_we_go`, `wa_up_in_arms`,
+  `wa_concord_tower_north_face`, and `areas.wa_concord_tower.elevation_ft` (still 7611) — not yet
+  reached by the scan.
+- `wa_the_chopping_block_northeast_ridge`: **flagged for human review, not fixed** — the row's FA
+  ("Firey party, 1970") could not be confirmed or contradicted anywhere; the Mountaineers' own
+  Chopping Block/Northeast Ridge page gives no FA at all. Left as unverified per the no-guessing
+  rule.
+- `wa_table_mountain_standard_scramble`: 5,742 ft high point and 725 ft gain both match WTA and
+  SummitPost exactly.
+- `wa_tenpeak_mountain_north_couloir` / `wa_tenpeak_mountain_southeast`: 8,312 ft is the
+  most-consistently-cited figure for Tenpeak Mountain across sources (a few give 8,281 or
+  8,200); the Southeast route's FA (Lloyd Anderson & Tom Campbell, Sept 21 1940) matches
+  Wikipedia exactly.
+- `wa_the_brothers_south_couloir`: FA party names for both summits match SummitPost exactly —
+  1908 Mt Arthur (north) by C. Hill/W. Hill, 1912 Mt Edward (south) by Collier/Corkenill/Dehn/
+  Fish/Goldsmith/Trumbull. 6,866 ft high point matches.
+- `wa_the_brothers_traverse`: 6,866 ft high point matches; carries no FA claim to check.
+- `wa_the_chopping_block_northwest_route`: 6,819 ft high point matches SummitPost/Mountaineers.
+  FA climbers and month/year (Cooper & Denny, Sept 1961) corroborated via Mountain Project's
+  climbing-history list, though MP calls the line "West Ridge" rather than "Northwest Route" —
+  likely the same route under a different conventional name; not a strong enough naming
+  conflict to flag as an error.
+
+1 confirmed error fixed (`wa_the_cave_route`), 1 flagged for human review
+(`wa_the_chopping_block_northeast_ridge`), 6 clean.
+`last_processed_id` advances to `wa_the_chopping_block_northwest_route`.
