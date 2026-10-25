@@ -120,7 +120,7 @@ empty field fills at once and two climbers who agree are enough to change one (0
     rejecting a `new_route` / `new_area` row fires `trg_contribution_result`, which sends a bell notice
     (*Your climb is live: …* — *Climbed it? Log it from its page.*, or the owner's reason) and records the
     new row's id in `contributions.result_id`. Route edits have notified their author since 0309; added
-    climbs and areas told nobody. *Your contributions* (`Contributions` in core) now shows them as *Route
+    climbs and areas told nobody. *Your contributions* (`Contributions`, `src/components/Contributions.tsx`) now shows them as *Route
     added* / *Area added* with their status, and an approved one opens its page (not the edit sheet). Model:
     MTB Project, Mountain Project's sister site, tells the submitter on the site and by email on approval.
   - Notice links open: a notice's `route` is now the id, as every other notification carries it (it was a
@@ -208,7 +208,8 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `lib/db.js` | `useCatalogAreaSearch`: area search over the whole catalog |
 | `src/components/CardHead.tsx` | `CardHead` (the card heading; renders the chip on a route page — extracted from core, PR19) |
 | `lib/SafetyNotices.jsx` | `ContributionStandingNotice`, `AppealSheet` |
-| `ClimbMatchCore.jsx` | `sameEditValue` (clustering), the "Your contributions" ledger (`ST` statuses) |
+| `ClimbMatchCore.jsx` | `sameEditValue` (clustering) |
+| `src/components/Contributions.tsx` | `Contributions` — the "Your contributions" ledger (`ST` statuses) |
 | `lib/db.js` | `submitContribution`, `useRouteContributions`, `useRouteFieldConfidence`, `setRouteFieldConfidence`, `useFieldContributions`, `approveFieldContribution`, `rejectFieldContribution`, `useMyContributionStanding`, `useContributionStandings`, `setContributionStanding`, `fileRouteFlag`, `useMyRouteFlags`, `useOpenRouteFlags`, `resolveRouteFlag`, `useMyNotices`, `markNoticeRead`, `useAdminQueueCounts`, `useContributionFields`, `useRouteRowsByIds` |
 | `scripts/check-contrib-field-columns.mjs` | the guard that keeps `contribution_fields` equal to the form |
 | `supabase/migrations/0307_route_quality_control_tables.sql` | `contribution_fields`, `route_field_confidence`, `contribution_standing`, `route_flags`, `user_notices`, `applied_value` |
