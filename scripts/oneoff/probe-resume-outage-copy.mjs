@@ -41,12 +41,22 @@ const require_ = createRequire(import.meta.url);
 const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { Resume } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import ReactDOM from "react-dom";
+// Resume ends in createPortal(..., document.body), which the server renderer refuses: portals are
+// PLACEMENT, and check:overlays owns that. Flattened and \`document.body\` stubbed for THIS call only,
+// the same scoped patch check:seed-history and check:profile-claims use.
+function flat(fn) {
+  const orig = ReactDOM.createPortal, hadDoc = "document" in globalThis;
+  ReactDOM.createPortal = (children) => children;
+  if (!hadDoc) globalThis.document = { body: {} };
+  try { return fn(); } finally { ReactDOM.createPortal = orig; if (!hadDoc) delete globalThis.document; }
+}
+import Resume from ${JSON.stringify(path.join(ROOT, "src/components/Resume.tsx"))};
 const climber = { id: "u_9f1c2d", name: "Robin Belay", username: "robinbelay", avatar: "",
   location: "Bellingham, WA", vouches: [], certifications: [], courses: [], pyramid: {} };
 export function render(props) {
-  return renderToStaticMarkup(React.createElement(Resume, Object.assign(
-    { climber, logs: [], onClose(){}, routeById: () => null }, props)));
+  return flat(() => renderToStaticMarkup(React.createElement(Resume, Object.assign(
+    { climber, logs: [], onClose(){}, routeById: () => null }, props))));
 }
 `;
 
@@ -87,7 +97,7 @@ if (/hasn't shared any climbs/.test(empty)) ok("a genuinely empty logbook still 
 else fail("the ordinary empty state lost its copy");
 if (!/Couldn’t load/.test(empty)) ok("and does not claim a failure that did not happen");
 else fail("the ordinary empty state now claims a read failure");
-if (/Tap 'Log a climb'/.test(mine)) ok("your OWN empty résumé still prompts you to log");
+if (/Log a climb and it shows up here/.test(mine)) ok("your OWN empty résumé still prompts you to log");
 else fail("the editable empty state lost its prompt");
 
 console.log(bad ? `\n${bad} problem(s).` : "\nall assertions passed");

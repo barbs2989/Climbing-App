@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import "./lib/load-env.mjs";
 /**
  * Find remaining unenriched WA alpine/scramble/mountaineering peaks in live database.
  * Compare enriched peaks (phase 1-2) against all WA peaks to identify gaps.
@@ -14,7 +15,7 @@ if (!SERVICE_KEY) {
   process.exit(1);
 }
 
-const SUPABASE_URL = 'db.swwbvzvhndqpnqsblpov.supabase.co';
+const SUPABASE_URL = new URL(process.env.VITE_SUPABASE_URL).hostname;
 
 async function query(path) {
   return new Promise((resolve, reject) => {

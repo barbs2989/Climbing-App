@@ -41,10 +41,10 @@ export default function SwipeRow({ onDelete, radius, action, onArchive, children
   const hot = dx < -140, hotR = dx > 140;
   return (
     <div style={{ position: "relative", overflow: "hidden", borderRadius: radius || 13, marginBottom: 8 }}>
-      <div aria-hidden="true" style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, background: hot ? C.redSolid : C.redBg, display: "flex", alignItems: "center", justifyContent: "flex-end", paddingRight: 18, color: hot ? "#fff" : C.red, fontWeight: 800, fontSize: 13, opacity: dx < -6 ? 1 : 0, transition: "background .12s" }}>
+      <div aria-hidden="true" style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, background: hot ? C.redSolid : C.redBg, display: "flex", alignItems: "center", justifyContent: "flex-end", paddingRight: 18, color: hot ? C.onSolid : C.red, fontWeight: 800, fontSize: 13, opacity: dx < -6 ? 1 : 0, transition: "background .12s" }}>
         {hot ? "Release to " + verb : "← Swipe further to " + verb}
       </div>
-      {onArchive ? <div aria-hidden="true" style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, background: hotR ? C.blueSolid : C.blueBg, display: "flex", alignItems: "center", justifyContent: "flex-start", paddingLeft: 18, color: hotR ? "#fff" : C.blue, fontWeight: 800, fontSize: 13, opacity: dx > 6 ? 1 : 0, transition: "background .12s" }}>
+      {onArchive ? <div aria-hidden="true" style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, background: hotR ? C.blueSolid : C.blueBg, display: "flex", alignItems: "center", justifyContent: "flex-start", paddingLeft: 18, color: hotR ? C.onSolid : C.blue, fontWeight: 800, fontSize: 13, opacity: dx > 6 ? 1 : 0, transition: "background .12s" }}>
         {hotR ? "Release to archive" : "Swipe further to archive →"}
       </div> : null}
       <div onTouchStart={start} onTouchMove={move} onTouchEnd={end} onTouchCancel={cancel} style={{ transform: "translateX(" + dx + "px)", transition: dx ? "none" : "transform .2s ease", position: "relative", touchAction: "pan-y" }}>

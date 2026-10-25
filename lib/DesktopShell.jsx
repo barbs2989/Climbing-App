@@ -79,7 +79,7 @@ export function WideSearch({ onOpenRoute, onOpenArea }) {
   const row = (h, i) => {
     const on = i === hi;
     const name = h.kind === "place" ? h.a.name : h.r.name;
-    const sub = h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + " climbs" : ""].filter(Boolean).join(" · ") : [h.r.grade, h.r._dbArea && h.r._dbArea.name].filter(Boolean).join(" · ");
+    const sub = h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : [h.r.grade, h.r._dbArea && h.r._dbArea.name].filter(Boolean).join(" · ");
     return <button key={h.kind + (h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={() => pick(h)} style={{ ...ROW, background: on ? C.card : "transparent" }}><ActionIcon name={h.kind === "place" ? "pin" : "mountain"} size={17} color={C.textMuted}/><span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{name}</span>{sub ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{sub}</span> : null}</span></button>;
   };
   const showList = open && !!qq;

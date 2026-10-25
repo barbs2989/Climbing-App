@@ -204,6 +204,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Fails **closed**: finding no bottom-anchored panel at all is a broken scan, and a declared panel
     that no longer exists fails as **stale**. Injection-tested **5/5**; **case 3 must PASS** (a
     full-screen overlay is out of scope) and case 1 is the real revert.
+- **`check:no-secrets`** asserts that no tracked or untracked file holds a Supabase credential or the
+  project's own URL as a literal. The repo is **public**, and a `service_role` key was once committed
+  in a checklist doc and as a `process.env.X || '<key>'` fallback. It stayed in git history after the
+  tree was cleaned, so the tree-only check was never enough: **rotate the key, do not just delete it**.
+  Four rules: a `sb_secret_` key anywhere; a JWT whose payload says `service_role` anywhere; a literal
+  anon JWT or `sb_publishable_` key in code; a literal `<ref>.supabase.co` host in code. Docs are exempt
+  from the last two. Fails closed on a walk under 500 files. Injection-tested with an untracked probe
+  holding one of each shape (all four fire; the probe is deleted afterwards). Reads `git ls-files
+  --cached --others --exclude-standard`, so a file not yet added is still seen.
 - **`check:no-nul`** asserts that no source file holds a **literal NUL byte**. Git classifies a file
   containing one as **binary**, so the whole file renders in a pull request as `Bin 0 -> 12464 bytes`
   or as `+0/-0` and **nobody can read the diff**. Static — no browser, no DB, no network — so it sits

@@ -11,7 +11,7 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import { useCatalogAreaSearch } from "./db";
 import { POP_CLOSE } from "./popupChrome.js";
-import { BTN, CHIP } from "./buttonStyles.js";
+import { BTN, CHIP, INPUT } from "./buttonStyles.js";
 import { clickable } from "./clickable";
 
 const KINDS = [["crag", "Crag, wall or boulder", "Has climbs on it"], ["peak", "Peak", "A summit with routes up it"], ["region", "Area", "Holds crags or peaks of its own"]];
@@ -30,7 +30,7 @@ export default function AddArea({ parent, C, onClose, onSubmit, onOpenArea }) {
   const nm = name.trim();
   const dupQ = useCatalogAreaSearch(nm, 5);
   const dups = (dupQ.data && dupQ.data.rows) || [];
-  const input = { width: "100%", boxSizing: "border-box", background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 9, padding: "9px 11px", fontSize: 14, lineHeight: 1.5, fontFamily: "inherit" };
+  const input = INPUT(C);
   const lbl = { fontSize: 11, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
   const canSubmit = !!parent && nm.length > 0 && nm.length <= NAME_MAX && desc.length <= DESC_MAX && !busy;
 
@@ -95,7 +95,7 @@ export default function AddArea({ parent, C, onClose, onSubmit, onOpenArea }) {
         </div>
 
         {err ? <div role="alert" style={{ fontSize: 12.5, color: C.red, lineHeight: 1.45, marginBottom: 10 }}>{err}</div> : null}
-        <button onClick={submit} disabled={!canSubmit} style={{ ...BTN, width: "100%", background: canSubmit ? C.blueSolid : C.card, color: canSubmit ? "#fff" : C.textMuted, border: "1px solid " + (canSubmit ? C.blueSolid : C.border), cursor: canSubmit ? "pointer" : "default" }}>{busy ? "Sending…" : nm ? "Send " + nm + " for review" : "Name the area to send it"}</button>
+        <button onClick={submit} disabled={!canSubmit} style={{ ...BTN, width: "100%", background: canSubmit ? C.blueSolid : C.card, color: canSubmit ? C.onSolid : C.textMuted, border: "1px solid " + (canSubmit ? C.blueSolid : C.border), cursor: canSubmit ? "pointer" : "default" }}>{busy ? "Sending…" : nm ? "Send " + nm + " for review" : "Name the area to send it"}</button>
       </div>}
     </div>
   </div>, document.body);
