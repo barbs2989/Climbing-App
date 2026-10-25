@@ -188,6 +188,8 @@ export const MOVED = {
     "src/components/SharedListView.tsx",
     "src/components/ConnectModal.tsx",
     "src/components/AspectSunPanel.tsx",
+    "src/components/Questionnaire.tsx",
+    "src/components/RichEditor.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],

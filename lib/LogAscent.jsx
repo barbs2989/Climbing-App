@@ -4,7 +4,7 @@ import { openFlag, canFlag } from "./reportBus.js";
 import { createPortal } from "react-dom";
 import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import { readPhotoFacts, photoFingerprint, photoEvidence } from "./photoEvidence";
-import { C, COND_ENUMS, MAX_WAYPOINTS, ME, RichEditor, caretToEnd, NONCOMPLETION_TICKS, OUTCOME_REASONS, ROAD_ISSUES, ROAD_LEGACY, ROAD_STATUS, ROAD_VEHICLE, WP_SINGLE_TYPES, WP_TYPES, blankItinDay, catOf, condGroupsFor, condMetricsFor, intOnly, isRoadTag, isHazardTag, itinDaysToDraft, itinDraftToStructured, parseGpxText, photoAlt, pubFirst, pubNameRow, realProfileId, tickTypesFor, uLenIn, uLenN, uLenUnit, uElevIn, uElevN, uElevUnit, uImp, uTempIn, uTempN } from "../ClimbMatchCore.jsx";
+import { C, COND_ENUMS, MAX_WAYPOINTS, ME, caretToEnd, NONCOMPLETION_TICKS, OUTCOME_REASONS, ROAD_ISSUES, ROAD_LEGACY, ROAD_STATUS, ROAD_VEHICLE, WP_SINGLE_TYPES, WP_TYPES, blankItinDay, catOf, condGroupsFor, condMetricsFor, intOnly, isRoadTag, isHazardTag, itinDaysToDraft, itinDraftToStructured, parseGpxText, photoAlt, pubFirst, pubNameRow, realProfileId, tickTypesFor, uLenIn, uLenN, uLenUnit, uElevIn, uElevN, uElevUnit, uImp, uTempIn, uTempN } from "../ClimbMatchCore.jsx";
 import ItineraryEditor from "../src/components/ItineraryEditor.tsx";
 import StartLocationForm from "../src/components/StartLocationForm.tsx";
 import PhotoAltField from "../src/components/PhotoAltField.tsx";
@@ -16,6 +16,7 @@ import { useProfileSearch } from "./db";
 import { USE_DB } from "./supabase";
 import { askConfirm } from "./ConfirmSheet.jsx";
 import { campSites, campingGate } from "../RouteDetail.jsx";
+import RichEditor from "../src/components/RichEditor.tsx";
 /* The route page's topo drawer, loaded only when a climber taps Add topo photo: RouteDetail.jsx is the largest chunk
    in the app, and the log form must not carry it for a control most logs never use. */
 const TopoDrawer=lazy(function(){return import("../RouteDetail.jsx").then(function(m){return {default:m.TopoDrawer};});});
