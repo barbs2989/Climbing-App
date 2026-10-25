@@ -25,6 +25,7 @@ import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_LINE, NO_PARKING_PIN_BU
 import Chevron from "../src/components/Chevron.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import LoadingRows from "../src/components/LoadingRows.tsx";
+import EmptyState from "../src/components/EmptyState.tsx";
 
 // Grade for a compact row. Two things happen inside displayGrade(): a qualifier carried inline
 // ("Class 3 (short 4th-class crux)") is dropped, and the route page's Composite Grade panel shows
@@ -339,7 +340,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange, endR
           {mode === "areas" ? (
             la ? <LoadingRows C={C} label="Loading…" style={{padding: "14px 4px"}}/>
             : ea ? <div style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>Couldn't search areas.</div>
-            : !areaHits || !areaHits.length ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 4px", textAlign: "center" }}>No areas match.</div>
+            : !areaHits || !areaHits.length ? <EmptyState C={C} icon="search">No areas match.</EmptyState>
             : <>
               {areaHits.map(a => (
                 <div key={a.id} {...clickable(() => onJumpToArea(a))} style={row}>
@@ -355,7 +356,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange, endR
           ) : (
             lr ? <LoadingRows C={C} label="Loading…" style={{padding: "14px 4px"}}/>
             : er ? <div style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>Couldn't search routes.</div>
-            : !routeHits || !routeHits.length ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 4px", textAlign: "center" }}>No routes match.</div>
+            : !routeHits || !routeHits.length ? <EmptyState C={C} icon="search">No routes match.</EmptyState>
             : routeHits.map(r => (
               <div key={r.id} {...clickable(() => onOpenRoute(r))} style={row}>
                 <div style={{ flex: 1, minWidth: 0 }}>
@@ -1263,7 +1264,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
         !qD.trim() ? <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "22px 12px", lineHeight: 1.5 }}>{"Type a name to find any area, crag or peak in " + scope.name + "."}</div>
         : la ? <LoadingRows C={C} label="Loading…"/>
         : ea ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't search areas — check your connection and try again.</div>
-        : !areaHits || !areaHits.length ? <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "22px 12px" }}>No areas match.</div>
+        : !areaHits || !areaHits.length ? <EmptyState C={C} icon="search">No areas match.</EmptyState>
         : <>
           {areaHits.map(a => (
             <div key={a.id} {...clickable(() => onJumpToArea(a))} style={{ display: "flex", alignItems: "center", gap: 10, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer" }}>
@@ -1504,7 +1505,7 @@ function ObjectivesPanel({ area, onOpen, C }) {
       {error && !(data && data.length) ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load your objectives — check your connection and try again.</div> : null}
       {error && data && data.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the list from your last load.</div> : null}
       {!isLoading && !error && (!data || !data.length) && (
-        <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>No objectives here yet — open a climb and tap to add it to your objectives.</div>
+        <EmptyState C={C} icon="target">No objectives here yet — open a climb and tap to add it to your objectives.</EmptyState>
       )}
       {(data || []).map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} areaName={placeOf(r)} />)}
     </div>

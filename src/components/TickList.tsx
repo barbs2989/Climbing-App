@@ -5,6 +5,7 @@ import DiscIcon from "./DiscIcon.tsx";
 import Pill from "./Pill.tsx";
 import Stars from "./Stars.tsx";
 import Chevron from "./Chevron.tsx";
+import EmptyState from "./EmptyState.tsx";
 
 /** A route as a tick row needs it: the seed `ROUTES` shape or a `dbRouteToCamel` row (`_dbArea` stands in for the seed area). */
 export interface TickRoute {
@@ -72,7 +73,7 @@ export default function TickList({climber,logs,onOpen,initial,routeById}: TickLi
   const base: Tick[]=seedHistoryFor(climber);
   const extra=(logs||[]).map((l): Tick | null=>{const r: TickRoute | null | undefined=(routeById?routeById(l.routeId):ROUTES.find(x=>x.id===l.routeId));return r?{route:r,mtn:MOUNTAINS.find(m=>m.id===r.mountainId)||r._dbArea||{},date:l.date,tickType:l.tickType,stars:l.stars,/* Another real climber's logs carry their own author and must not be filed under ME; partners stay ABSENT when the row never said (not "solo"). */user:l.user||ME.name,avatar:l.user?l.avatar:ME.avatar,_dbId:l._dbId,_authorId:l._authorId,condTags:l.condTags||[],text:l.text||l.notes||"",partners:l.user?l.partners:(l.partners||[]),cond:l.cond,photos:l.photos,photoAlts:l.photoAlts,gpxName:l.gpxName}:null;}).filter((t): t is Tick => !!t);
   const allRaw=[...extra,...base];
-  if(!allRaw.length)return <div style={{fontSize:13,color:C.textMuted,padding:"10px 2px"}}>No logged climbs yet — log an ascent from any climb's page and it shows up here.</div>;
+  if(!allRaw.length)return <EmptyState C={C} icon="log">No logged climbs yet — log an ascent from any climb's page and it shows up here.</EmptyState>;
   const all=allRaw.map(t=>({t,d:catOf(t.route)}));const discs=Array.from(new Set(all.map(x=>x.d)));
   let view=all.filter(x=>disc==="all"||x.d===disc);
   view=view.slice().sort((a,b)=>sort==="old"?(a.t.date||"").localeCompare(b.t.date||""):sort==="stars"?(((b.t.stars||0)-(a.t.stars||0))||(b.t.date||"").localeCompare(a.t.date||"")):(b.t.date||"").localeCompare(a.t.date||""));

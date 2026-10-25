@@ -10,6 +10,7 @@ import { C, shortDate, uElev } from "../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "./popupChrome.js";
 import { useRankBreakdown } from "./db";
 import LoadingRows from "../src/components/LoadingRows.tsx";
+import EmptyState from "../src/components/EmptyState.tsx";
 
 const TIER = { confirmed: "Partner confirmed · ×1", evidence: "Photo or GPS · ×0.75", self: "Self-logged · ×0.5" };
 // The keys a log ranks under, as leaderboard()'s vkeys: sport and trad also rank as rock.
@@ -77,7 +78,7 @@ export default function RankBreakdown({ target, onClose }) {
         {HOW[board] ? <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.55, marginBottom: 6 }}>{HOW[board]}{backedOnly ? " Backed climbs only is on, so self-logged climbs are left out." : ""}</div> : null}
         {q.isError ? <div style={{ fontSize: 13, color: C.amber, padding: "14px 0" }}>Couldn’t load the climbs behind this number. Try again in a moment.</div>
           : q.isPending ? <LoadingRows C={C} label="Loading climbs…" style={{padding: "14px 0"}}/>
-          : !items.length ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 0" }}>No logged climb counts toward this board yet.</div>
+          : !items.length ? <EmptyState C={C} icon="chart">No logged climb counts toward this board yet.</EmptyState>
           : <div>
             {shown.map(line)}
             {priv.length ? <div style={{ display: "flex", gap: 10, padding: "9px 0", borderTop: "1px solid " + C.borderLight }}><div style={{ flex: 1, fontSize: 13, color: C.textMuted, lineHeight: 1.45 }}>{priv.length + " more " + (board === "days" ? (priv.length === 1 ? "day" : "days") : (priv.length === 1 ? "climb" : "climbs")) + " they keep private — counted, but not shown to you."}</div>{valText(privSum) ? <div style={{ flexShrink: 0, fontSize: 13.5, fontWeight: 700, color: C.textMuted, fontVariantNumeric: "tabular-nums" }}>{valText(privSum)}</div> : null}</div> : null}
