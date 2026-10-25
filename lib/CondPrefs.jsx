@@ -166,6 +166,9 @@ export function useCondPrefsAccount(uid) {
 
 const NAME = { cool: "Cool", standard: "Mild", warm: "Warm" };
 const hourName = function (h) { return (h % 12 || 12) + (h % 24 < 12 ? " AM" : " PM"); };
+// The daylight window's scale: a mark every third hour, written short ("9a", "3p") so nine fit a phone.
+const HOUR_TICKS = [0, 3, 6, 9, 12, 15, 18, 21, 24];
+const hourTick = function (h) { return (h % 12 || 12) + (h % 24 < 12 ? "a" : "p"); };
 const rangeText = function (r) { return uTemp(r[0]) + "–" + uTemp(r[1]); };
 const same = function (a, b) { return !!a && !!b && a[0] === b[0] && a[1] === b[1]; };
 const LBL = { fontSize: 10.5, fontWeight: 800, color: C.textMuted, letterSpacing: 0.5, textTransform: "uppercase", marginBottom: 5 };
@@ -254,9 +257,8 @@ export function CondPrefsControls({ disc, only }) {
       <div>
         <div style={LBL}>Daylight window</div>
         <div role="group" aria-label="Daylight window" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 8 }}>{chip(!p.window, "Any daylight hour", function () { updateCondPrefs(function (x) { x.window = null; return x; }); }, "any")}</div>
-        {slider("Start no earlier than", win[0], 0, 21, function (v) { setWin(Math.min(v, win[1] - WIN_MIN_SPAN), win[1]); }, hourName(win[0]))}
-        {slider("Finish by", win[1], 3, 24, function (v) { setWin(win[0], Math.max(v, win[0] + WIN_MIN_SPAN)); }, hourName(win[1]))}
-        <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5 }}>{p.window ? "The best window is picked from " + hourName(win[0]) + " to " + hourName(win[1]) + ". Hours outside it are still shown." : "The best window can fall in any daylight hour."}</div>
+        <RangeSlider label="Daylight window" min={0} max={24} minGap={WIN_MIN_SPAN} step={1} value={win} fmt={hourName} snap={Math.round} ticks={HOUR_TICKS} tickFmt={hourTick} ends={["start no earlier than", "finish by"]} onChange={function (r) { setWin(r[0], r[1]); }} />
+        <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5, marginTop: 4 }}>{p.window ? "The best window is picked from " + hourName(win[0]) + " to " + hourName(win[1]) + ". Hours outside it are still shown." : "The best window can fall in any daylight hour."}</div>
       </div>
       <div>
         <div style={LBL}>Smoke and air quality</div>
