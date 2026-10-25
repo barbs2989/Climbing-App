@@ -192,6 +192,8 @@ export const MOVED = {
     "src/components/AreaTree.tsx",
     "src/components/LogRoutePicker.tsx",
     "src/components/ReportModal.tsx",
+    "src/components/FriendsFeed.tsx",
+    "src/components/Contributions.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
