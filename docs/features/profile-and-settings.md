@@ -24,7 +24,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   avalanche, climbing instruction, guiding, rescue, gym & competition, clubs & courses — 66, named by their
   issuers: NOLS/SOLO/WMA, AIARE/A3/Avalanche Canada, AMGA, PCGI, PCIA, ACMG, UK Mountain Training, IFMGA,
   USA Climbing, The Mountaineers, Leave No Trace) as you type, and *Browse certifications* lists them all. A pick
-  only fills the box, so the expiry date still applies; anything not listed is added as typed. **Skills** are the
+  only fills the box, so the expiry date still applies (the date box is captioned *Expires (optional)*, so it says what it is before you pick one); anything not listed is added as typed. **Skills** are the
   `SKILLS` chips in `SKILL_GROUPS` (seven groups, 42 skills incl. technique and rescue) plus free-text ones;
   the vouch form offers the same groups, and `rappel` stays retired.
   - **Home city + state are a LABEL, never geocoded.** The city is free text with a `US_CITIES` datalist; the state comes
