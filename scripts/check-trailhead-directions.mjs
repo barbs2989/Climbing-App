@@ -342,13 +342,22 @@ else {
   if (iCoord >= 0 && iCoord < iUp && iUp < iDown && (iAccess < 0 || iDown < iAccess)) ok("the two legs render under the trailhead coordinates, before ACCESS & REGULATIONS");
   else fail("the two legs render, but not between the trailhead coordinates and ACCESS & REGULATIONS - they belong with GETTING THERE");
   const upSeg = lt.slice(iUp, iDown), downSeg = lt.slice(iDown, iDown + 200);
-  /* The owner (2026-10-26) asked for NO times on these legs: the approach, climb and descent times are
-     the Full Trip Time card's, at the party set there. So the legs carry gain and distance only, and a
-     time here is the regression this asserts against. */
-  if (/5,000 ft/.test(upSeg) && /6\.2 mi/.test(upSeg) && !/\bhr\b/.test(upSeg)) ok("TRAILHEAD TO SUMMIT carries the whole gain and the one-way distance, and no time");
-  else fail("TRAILHEAD TO SUMMIT does not read 5,000 ft / 6.2 mi with no time: " + upSeg.slice(0, 160));
-  if (/6\.2 mi/.test(downSeg) && !/\bhr\b/.test(downSeg)) ok("SUMMIT TO TRAILHEAD carries the one-way distance, and no time");
-  else fail("SUMMIT TO TRAILHEAD shows a time, or is missing its distance: " + downSeg.slice(0, 160));
+  /* The owner's trip-profile request (2026-10-25) puts a TIME on every leg, and the times must agree
+     across sections. So each leg carries its time, gain and distance, and the time is written as
+     "5.2hr" (the Full trip time card's format). The regex is not \bhr\b: a word boundary does not sit
+     between a digit and "h", so that test matches nothing and passes for the wrong reason. */
+  const TIME_RE = /[≥]?\d+\.\d+hr/;
+  const upT = upSeg.match(TIME_RE), downT = downSeg.match(TIME_RE);
+  if (/5,000 ft/.test(upSeg) && /6\.2 mi/.test(upSeg) && upT) ok("TRAILHEAD TO SUMMIT carries the whole gain, the one-way distance and a time (" + upT[0] + ")");
+  else fail("TRAILHEAD TO SUMMIT does not read 5,000 ft / 6.2 mi with a time: " + upSeg.slice(0, 160));
+  if (/6\.2 mi/.test(downSeg) && downT) ok("SUMMIT TO TRAILHEAD carries the one-way distance and a time (" + downT[0] + ")");
+  else fail("SUMMIT TO TRAILHEAD is missing its distance or its time: " + downSeg.slice(0, 160));
+  /* THE DESCENT SECTION REPEATS THE LEG, and the two must print the same time: that is the match the
+     owner asked for. The second "SUMMIT TO TRAILHEAD" in the text is the DESCENT section's strip. */
+  const iDescStrip = lt.indexOf("SUMMIT TO TRAILHEAD", iDown + 1);
+  const descT = iDescStrip > 0 ? lt.slice(iDescStrip, iDescStrip + 200).match(TIME_RE) : null;
+  if (descT && downT && descT[0] === downT[0]) ok("the DESCENT section's time matches the SUMMIT TO TRAILHEAD leg (" + descT[0] + ")");
+  else fail("the DESCENT section does not print the same time as the SUMMIT TO TRAILHEAD leg (leg " + (downT ? downT[0] : "none") + ", descent " + (descT ? descT[0] : "none") + ")");
 }
 
 console.log("");
