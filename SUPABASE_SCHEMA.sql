@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 84 tables, 828 columns, 425 keyed/checked constraints (151 foreign keys), 257 RLS policies.
+-- Counts: 84 tables, 829 columns, 425 keyed/checked constraints (151 foreign keys), 257 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -422,6 +422,7 @@ CREATE TABLE public.climb_logs (
   moderation text NOT NULL DEFAULT 'visible'::text,
   nights_out integer,
   camp_names text[],
+  summited boolean,
   CONSTRAINT climb_logs_pkey PRIMARY KEY (id),
   CONSTRAINT climb_logs_camp_names_sane CHECK (((camp_names IS NULL) OR (((cardinality(camp_names) >= 1) AND (cardinality(camp_names) <= 10)) AND (char_length(array_to_string(camp_names, ''::text)) <= 1200)))),
   CONSTRAINT climb_logs_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
