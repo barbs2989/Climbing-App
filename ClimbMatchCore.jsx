@@ -13,9 +13,9 @@ import { ROAD_KEYS, ACCESS_KEYS, TIMING_KEYS } from "./lib/objKeys";
 import { USE_DB, supabase } from "./lib/supabase";
 import { POLICY_VERSION, policyVersionLabel } from "./lib/policy";
 import { exportedTrackNotes, waypointCaveat } from "./lib/track";
-import {ROUTE_PICK_LIM,useClimberSearch,useBelayLedgers,usePartnerSignals,useMyEmergencyContact,useVerifiedUsers,useComments, addComment as dbAddComment, editComment as dbEditComment, deleteComment as dbDeleteComment, setCommentLike, submitContribution, fetchCrewMessages, markDmThreadRead, fetchCrewLastReads, countCrewUnread, markCrewRead, useRouteContributions, dbRouteToCamel, useAreaRoutes, useProfilesByIds, useFullProfile, useRoutesByIds, useRoutesWithLists, useStates, useCountries, useAreaChildren, useAreaSearch,useCatalogAreaSearch, useAreaPath, uploadProfilePhoto, removeProfileAvatar, useSubtreeRoutes, useRouteTopos, topoPhotoUrl, uploadTopoPhoto, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useDiscoverableProfiles, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, useVerificationRecords, inviteToCrewByEmail, useCrewEmailInvites, deleteCrewEmailInvite, sendCrewMessage, useCrewMessages, fetchOlderCrewMessages, sendDirectMessage, useDirectMessages, fetchMyDirectMessages, fetchOlderDirectMessages, markMessageAsRead, fetchRouteArea, usePublicLists} from "./lib/db";
-import {subdivisionNoun, countryOfArea} from "./lib/countries";
-import {searchClean, searchNorm, searchTokens} from "./lib/search";
+import {ROUTE_PICK_LIM,useClimberSearch,useBelayLedgers,usePartnerSignals,useMyEmergencyContact,useVerifiedUsers,useComments, addComment as dbAddComment, editComment as dbEditComment, deleteComment as dbDeleteComment, setCommentLike, submitContribution, fetchCrewMessages, markDmThreadRead, fetchCrewLastReads, countCrewUnread, markCrewRead, useRouteContributions, dbRouteToCamel, useAreaRoutes, useProfilesByIds, useFullProfile, useRoutesByIds, useRoutesWithLists, useStates, useCountries, useAreaChildren, useAreaSearch, uploadProfilePhoto, removeProfileAvatar, useSubtreeRoutes, useRouteTopos, topoPhotoUrl, uploadTopoPhoto, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useDiscoverableProfiles, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, useVerificationRecords, inviteToCrewByEmail, useCrewEmailInvites, deleteCrewEmailInvite, sendCrewMessage, useCrewMessages, fetchOlderCrewMessages, sendDirectMessage, useDirectMessages, fetchMyDirectMessages, fetchOlderDirectMessages, markMessageAsRead, fetchRouteArea, usePublicLists} from "./lib/db";
+import {countryOfArea} from "./lib/countries";
+import {searchClean, searchNorm} from "./lib/search";
 import { clickable } from "./lib/clickable"
 import { openContentReport, canReportContent, isDbRowId, openAppeal, canAppeal } from "./lib/reportBus";
 import { routeTerrain, fitGear, fitAdvice } from "./lib/terrain"
@@ -45,7 +45,6 @@ import Bar from "./src/components/Bar.tsx";
 import CardHead from "./src/components/CardHead.tsx";
 import PhotoStrip from "./src/components/PhotoStrip.tsx";
 import CommentMenu from "./src/components/CommentMenu.tsx";
-import DbAreaLevel from "./src/components/DbAreaLevel.tsx";
 import DbCountryAreaHits from "./src/components/DbCountryAreaHits.tsx";
 import BadgeGrid from "./src/components/BadgeGrid.tsx";
 import VouchCard from "./src/components/VouchCard.tsx";
@@ -53,6 +52,7 @@ import SpeedCompat from "./src/components/SpeedCompat.tsx";
 import SpeedProfile from "./src/components/SpeedProfile.tsx";
 import TickList from "./src/components/TickList.tsx";
 import SharedListView from "./src/components/SharedListView.tsx";
+import CatchLedger from "./src/components/CatchLedger.tsx";
 import RichEditor from "./src/components/RichEditor.tsx";
 import ReactionPicker from "./src/components/ReactionPicker.tsx";
 import PlaceMatches from "./src/components/PlaceMatches.tsx";
@@ -1723,38 +1723,6 @@ const PARTNER_NUMBERS=[["Match %","Shown on partner cards: it blends shared obje
 
 
 
-function CatchLedger({ledger,unavailable,onLog}){
-  if(!ledger)return null;
-  /* `unavailable` is the belay_catches read having FAILED, not the account having no
-     catches. Those two produce a byte-identical ledger — totalCatches 0 and lastCatch ""
-     — so without it this card tells a climber who has caught falls that they have caught
-     none, and invites them to go log one. A dash says the number did not arrive; a 0 in a
-     strip of three counts reads as a measurement. FullProfile renders another climber's
-     ledger through the same component and passes nothing, which is correct: that data
-     comes down with the profile rather than from this query. */
-  const _n=(v)=>(unavailable||v==null)?"—":v;
-  /* A REAL ACCOUNT'S RECORD (`ledger.real`) says what the SERVER counts. Since 0361 a catch
-     counts toward the Belay board only when BOTH climbers have recorded it (0194/0203 counted the
-     caught climber's word alone). The card used to sum every "I caught X" row into a number
-     headed VERIFIED, beside High-Factor and Partners Signed tiles nothing ever writes for a real
-     account, while the Belay board counted none of it. So: what counts, what is waiting on the
-     partner to log it, and the falls you took — each a number something actually produces. */
-  /* ANOTHER real climber's record (0315, belay_ledgers): the catches their Belay board counts -- each
-     recorded by both climbers (0361) -- how many climbers that covers, and the latest. Nothing records
-     a fall's severity, so there is no High-Factor tile to fill, and none is shown. */
-  if(ledger.otherReal){
-    const tiles=[["Counted catches",_n(ledger.counted),C.green],["Climbers caught",_n(ledger.partners),C.blue]];
-    return <div style={{background:C.card,borderRadius:12,padding:"15px 16px",border:`1px solid ${C.border}`}}><div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:13}}>CATCH RECORD</div><div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:9,marginBottom:12}}>{tiles.map(x=><div key={x[0]} style={{textAlign:"center",background:C.surface,borderRadius:9,padding:"12px 6px"}}><div style={{fontSize:19,fontWeight:700,color:x[2]}}>{x[1]}</div><div style={{fontSize:12,color:C.textMuted,marginTop:1}}>{x[0]}</div></div>)}</div><div style={{fontSize:12,color:C.textMuted,lineHeight:1.5}}>{unavailable?"Couldn’t load this climber’s catch record — try again in a moment.":(ledger.counted||0)>0?((ledger.lastCatch?"Last catch: "+ledger.lastCatch+". ":"")+"Each catch here was recorded by both climbers."):"No catches counted yet."}</div></div>;
-  }
-  if(ledger.real){
-    const tiles=[["Counted",_n(ledger.counted),C.green],["Waiting on partner",_n(ledger.awaiting),C.amber],["Falls you took",_n(ledger.took),C.blue]];
-    const any=(ledger.counted||0)+(ledger.awaiting||0)+(ledger.took||0)>0;
-    return <div style={{background:C.card,borderRadius:12,padding:"15px 16px",border:`1px solid ${C.border}`}}><div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:13}}>CATCH RECORD</div><div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:9,marginBottom:12}}>{tiles.map(x=><div key={x[0]} style={{textAlign:"center",background:C.surface,borderRadius:9,padding:"12px 6px"}}><div style={{fontSize:19,fontWeight:700,color:x[2]}}>{x[1]}</div><div style={{fontSize:12,color:C.textMuted,marginTop:1}}>{x[0]}</div></div>)}</div><div style={{fontSize:12,color:C.textMuted,lineHeight:1.5}}>{unavailable?"Couldn’t load your catch record — try again in a moment.":any?((ledger.lastCatch?"Last catch: "+ledger.lastCatch+". ":"")+"A catch counts toward the belayer’s record and the Belay board once both climbers have recorded it — whoever logs it, the other confirms."):"No catches logged yet. When a partner catches your fall, log it here or when you log the climb — it counts on their belay record once they confirm it."}</div>{onLog&&!unavailable?<button onClick={onLog} style={{width:"100%",marginTop:12,padding:10,background:C.greenBg,color:C.green,border:`1px solid ${C.greenDim}`,borderRadius:10,fontSize:13.5,cursor:"pointer",fontWeight:700}}>Log a catch</button>:null}</div>;
-  }
-  const _hfr=(unavailable||!(ledger.totalCatches>0))?null:Math.round((ledger.highFactorCatches/ledger.totalCatches)*100);
-  return <div style={{background:C.card,borderRadius:12,padding:"15px 16px",border:`1px solid ${C.border}`}}><div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:13}}>CATCH RECORD</div><div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:9,marginBottom:14}}>{[["Total Catches",_n(ledger.totalCatches),C.blue],["High-Factor",_n(ledger.highFactorCatches),C.amber],["Partners Signed",_n(ledger.partnersSigned),C.green]].map(x=><div key={x[0]} style={{textAlign:"center",background:C.surface,borderRadius:9,padding:"12px 6px"}}><div style={{fontSize:19,fontWeight:700,color:x[2]}}>{x[1]}</div><div style={{fontSize:12,color:C.textMuted,marginTop:1}}>{x[0]}</div></div>)}</div><div style={{fontSize:12,color:C.textMuted,marginBottom:7}}>{"High-factor catch ratio"+(unavailable?" · —":_hfr==null?"":" · "+_hfr+"%")}</div><Bar val={_hfr||0} color={C.amber}/>{/* With no catches lastCatch is "", which rendered a dangling "Last catch: · 0". */}
-  <div style={{fontSize:12,color:C.textMuted,marginTop:10}}>{ledger.lastCatch?("Last catch: "+ledger.lastCatch+" · "+ledger.partnersSigned+" partner"+(ledger.partnersSigned===1?"":"s")+" signed"):unavailable?"Couldn’t load "+(onLog?"your":"this climber’s")+" catch record — try again in a moment.":(ledger.totalCatches>0)?(ledger.partnersSigned+" partner"+(ledger.partnersSigned===1?"":"s")+" signed these catches"):"No catches logged yet."}</div>{onLog&&!unavailable?<button onClick={onLog} style={{width:"100%",marginTop:12,padding:10,background:C.greenBg,color:C.green,border:`1px solid ${C.greenDim}`,borderRadius:10,fontSize:13.5,cursor:"pointer",fontWeight:700}}>Log a catch</button>:null}</div>;
-}
 
 /* `onRemove` is what makes this strip's own photos removable, and it is passed at ONE call site
    on purpose: your own profile. FullProfile and TripReport render other people's photos through
@@ -2388,112 +2356,6 @@ const ADDR_COMMIT=["A few hours","Half day","Full day","Multi-day"];
 
    Seed mode is untouched: `!USE_DB` still walks MOUNTAINS, so the seed build and the render
    guards that run with no database behave exactly as before. */
-/* SEARCH FIRST, THE WHOLE CATALOG. The search box used to appear only once a country AND a
-   state were picked, so on opening the form the only box was "Crag not listed? Type a new one":
-   the owner typed "Jack Mountain" there and it filed a NEW crag beside the existing peak, six
-   levels down (Washington › Northwest Region › Hwy 20… › North Cascades › North Cascades Core).
-   Now the first thing is a search over every area in every state (useCatalogAreaSearch), each
-   hit carrying its trail so namesakes can be told apart; the tree stays below it for browsing.
-   Mountain Project files a route from inside its area page and nothing warns of a duplicate
-   area — so the new-crag box lives here too, and offers what is already listed under the name
-   typed into it before it calls anything new. */
-function DbAreaPicker({chain,onChain,sel,fld,seedAreaId,isLeaf,settled,kidsUnavailable,newArea,onNewArea}){
-  const [q,setQ]=useState("");
-  const statesQ=useStates();
-  const states=statesQ.data||[];
-  const stateId=chain.length?chain[0].id:"";
-  const chosen=chain.length?chain[chain.length-1]:null;
-  /* COUNTRY FIRST. useStates returns every child of every root in one alphabetical list, so the
-     state select used to read "…Arkansas, British Columbia, California…" — a Canadian province
-     filed among US states, and a list that only gets worse with each country added. The country
-     is DERIVED from the chosen state when there is one (an area resolved from seedAreaId or a
-     search hit sets the chain without touching this select), else it is whatever was picked.
-     One country is not a choice, so the step is skipped until there are two; a country read that
-     FAILS must not gate the state step either (useCountries has no offline fallback, useStates
-     does) — the same two rules StatePicker on the Climbs tab follows. */
-  const countriesQ=useCountries();
-  const countries=countriesQ.data||[];
-  const [countryPick,setCountryPick]=useState("");
-  const onlyCountry=countries.length===1?countries[0].id:"";
-  const countriesUnavailable=countriesQ.isError;
-  const noCountryStep=!!onlyCountry||countriesUnavailable;
-  const stateRow=stateId?states.find(function(x){return x.id===stateId;}):null;
-  const countryId=countryOfArea(stateRow)||countryPick||onlyCountry;
-  const noun=subdivisionNoun(countryId);
-  const inCountry=states.filter(function(x){return !countryId||countryOfArea(x)===countryId;});
-  /* Not scoped to a state any more: areas_in_subtree over the `usa` root times out, and naming
-     the state first is the step that hid the box. "mount" matching 1,669 areas is handled by the
-     ranking (exact, then starts-with, then size) and by saying how many there were. */
-  const searchQ=useCatalogAreaSearch(q,12);
-  const hits=(searchQ.data&&searchQ.data.rows)||[];
-  const hitTotal=(searchQ.data&&searchQ.data.total)||0;
-  const dupQ=useCatalogAreaSearch(newArea||"",4);
-  const dupHits=(dupQ.data&&dupQ.data.rows)||[];
-  const pick=function(id){setResolveId(id);setQ("");if(onNewArea)onNewArea("");};
-  const hitRow=function(m,query){return <div key={m.id} {...clickable(function(){pick(m.id);})} style={{padding:"9px 12px",cursor:"pointer",borderBottom:"1px solid "+C.borderLight}}>
-    <div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{hlMatch(m.name,query)}<span style={{fontSize:11.5,fontWeight:600,color:C.textMuted}}>{" · "+m.area_type+(m.route_count?(" · "+m.route_count+" climb"+(m.route_count===1?"":"s")):"")}</span></div>
-    <div style={{fontSize:11.5,color:C.textMuted,marginTop:1,lineHeight:1.4}}>{(m.trail||[]).join(" › ")}</div>
-  </div>;};
-  /* An area reached by any route other than drilling — the form opened from a DB area page,
-     or a search hit several levels down — arrives as a bare id, so its ANCESTORS have to be
-     resolved before the cascade can show where it sits. Without this the levels above it
-     render their placeholder while the breadcrumb names a formation, which reads as the
-     picker having lost the selection.
-     `fetchAreaPath` walks all the way to the root, so the chain it returns starts at the
-     COUNTRY; the picker's chain starts at the state. Slicing at the first entry that is in
-     `states` is self-correcting — while the state list is still loading no entry matches,
-     the effect does nothing, and it re-runs when the list arrives. */
-  const [resolveId,setResolveId]=useState(seedAreaId||null);
-  const pathQ=useAreaPath(resolveId);
-  const pathData=pathQ.data;
-  useEffect(function(){
-    if(!resolveId||!pathData||!pathData.length)return;
-    if(pathData[pathData.length-1].id!==resolveId)return;
-    const stateIds={};states.forEach(function(x){stateIds[x.id]=1;});
-    const at=pathData.findIndex(function(a){return stateIds[a.id];});
-    if(at<0)return;
-    setResolveId(null);
-    onChain(pathData.slice(at).map(function(a){return {id:a.id,name:a.name};}));
-  },[resolveId,pathData,states,onChain]);
-  const crumb=chain.map(function(a){return a.name;}).join(" › ");
-  return <div>
-    <div style={{marginBottom:10}}>
-      <input aria-label="Search for a crag or peak" value={q} onChange={e=>setQ(e.target.value)} placeholder="Search every crag, peak and area — e.g. Jack Mountain" style={fld}/>
-      {searchQ.isError?<div style={{fontSize:12,color:C.amber,marginTop:5,lineHeight:1.45}}>{"Couldn’t run that search — this is not a claim nothing matched."}</div>
-        :hits.length?<div style={{marginTop:4,border:"1px solid "+C.border,borderRadius:10,overflow:"hidden",background:C.surface,maxHeight:260,overflowY:"auto",overscrollBehavior:"contain"}}>{hits.map(function(m){return hitRow(m,q);})}
-          {hitTotal>hits.length?<div style={{padding:"8px 12px",fontSize:11.5,color:C.textMuted}}>{"Showing the top "+hits.length+" of "+hitTotal+" — keep typing to narrow it."}</div>:null}</div>
-        :(searchTokens(q).join("").length>=2&&!searchQ.isLoading)?<div style={{fontSize:12,color:C.textMuted,marginTop:5,lineHeight:1.45}}>{"Nothing in the catalog matches that. Browse the tree below, or add it as a new crag at the bottom."}</div>:null}
-    </div>
-    <div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,margin:"0 0 5px"}}>{"Or browse: country → state → area → crag or peak"}</div>
-    {noCountryStep?null:<div style={{position:"relative",marginBottom:7}}>
-      <select aria-label="Country" value={countryId} onChange={e=>{setCountryPick(e.target.value);setResolveId(null);onChain([]);setQ("");}} style={sel}>
-        <option value="">{countriesQ.isLoading?"Loading countries…":"Choose a country"}</option>
-        {countries.map(o=><option key={o.id} value={o.id}>{o.name}</option>)}
-      </select>
-    </div>}
-    {(countryId||noCountryStep)?<div style={{position:"relative",marginBottom:7}}>
-      <select aria-label={countryId?("Choose a "+noun):"State or province"} value={stateId} onChange={e=>{const v=e.target.value;const st=v?states.find(x=>x.id===v):null;setResolveId(null);onChain(st?[{id:st.id,name:st.name}]:[]);setQ("");}} style={sel}>
-        <option value="">{statesQ.isLoading?("Loading "+noun+"s…"):("Choose a "+noun)}</option>
-        {inCountry.map(o=><option key={o.id} value={o.id}>{o.name}</option>)}
-      </select>
-    </div>:null}
-    {statesQ.isError?<div style={{fontSize:12,color:C.amber,marginBottom:7,lineHeight:1.45}}>{"Couldn’t load the state list — this is not a claim the catalog is empty. Try again in a moment."}</div>:null}
-    {resolveId?<div style={{fontSize:12,color:C.textMuted,padding:"6px 2px"}}>Opening that area…</div>:null}
-    {chain.map(function(a,i){
-      return <DbAreaLevel key={a.id} parentId={a.id} value={chain[i+1]?chain[i+1].id:""} placeholder={"Choose in "+a.name+"…"} sel={sel} onPick={function(k){setResolveId(null);onChain(chain.slice(0,i+1).concat(k?[{id:k.id,name:k.name}]:[]));}}/>;
-    })}
-    {chain.length?<div style={{fontSize:12,fontWeight:600,margin:"2px 0 4px",color:isLeaf?C.green:C.textMuted}}>{<Lbl s={"📍 "+crumb}/>}</div>:null}
-    {(chosen&&kidsUnavailable)?<div style={{fontSize:11.5,color:C.amber,marginBottom:4,lineHeight:1.5}}>{"Couldn’t check what’s inside “"+chosen.name+"” — this is not a claim it is the right place to file a climb. Try again in a moment."}</div>
-      :(chosen&&settled&&!isLeaf)?<div style={{fontSize:11.5,color:C.amber,marginBottom:4,lineHeight:1.5}}>{"“"+chosen.name+"” holds other areas, so a climb cannot be filed on it — pick the exact crag or peak inside it."}</div>:null}
-    {onNewArea?<div style={{marginTop:8}}>
-      <input aria-label="Crag not listed? Type a new one to add it" value={newArea||""} onChange={e=>onNewArea(e.target.value)} placeholder="Not in the catalog? Type the new crag’s name…" style={fld}/>
-      {dupHits.length?<div style={{marginTop:6,border:"1px solid "+C.amber+"55",borderRadius:10,overflow:"hidden",background:C.amberBg}}>
-        <div style={{padding:"8px 12px",fontSize:12,fontWeight:700,color:C.amber,lineHeight:1.45}}>{"Already in the catalog? Tap it to file your climb there instead:"}</div>
-        <div style={{background:C.surface}}>{dupHits.map(function(m){return hitRow(m,newArea);})}</div>
-      </div>:null}
-    </div>:null}
-  </div>;
-}
 
 
 function numsClose(a,b,pct,abs){var an=parseFloat(a),bn=parseFloat(b);if(isNaN(an)||isNaN(bn))return an===bn||(isNaN(an)&&isNaN(bn));var tol=Math.max(abs||0,(pct||0)*Math.max(Math.abs(an),Math.abs(bn)));return Math.abs(an-bn)<=tol;}
@@ -3619,4 +3481,4 @@ export function __set__cbBatch(v){_cbBatch=v;}
 export {ROAD_STATUS,ROAD_VEHICLE,ROAD_ISSUES,ROAD_LEGACY,ROAD_LABEL,isRoadTag,roadReportOf};
 export {floatPlanText,parseFloatPlanText};
 export {GENDERS,genderLabel};
-export {listLink,appLink,BadgeWatcher,wpDivIcon,CRAG_CATS,CMAX_AREA,areaPathsOverlap,crewPlace,placeTrip,placeCap,placeLabel,placeSub,placeMatchesLog,rapSummary,campSummary,campLabel,rappelReportsOf,shareOrCopy,groupPostLink,chatText,localYmd,weekendEndYmd,printSheet,itinShareText,itinSheetHtml,escHtml,routeLink,routeShareBits,climbsAPeak,photoAlt,photoAltsOf,PHOTO_ALT_MAX,crewAllConfirmed,crewChatReaders,crewChatParticipantLine,uLenUnit,uLenN,uLenIn,groupEventsEmptyLine,nextMeetup,pubNameRow,groupMemberFromRow,mentionToken,floatPlanState,uTempU,uTempIn,uElevN,uElevIn,uElevUnit,uDistMiN,uDistMiIn,uDistMiUnit,uMassN,uMassIn,uMassUnit,itinDraftVal,itinStoreVal,uTemp,uTempN,uTempDelta,uWind,uWindN,uPrecip,uSnowfall,normEditStr,SET_FIELDS,climberLine,wpType,wpIs,trailheadPoint,DbAreaBrowser,DbGuides,DbGuideApply,DbGuideDashboard,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ1,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,MY_STARS,RESPONSE_RATES,__set_MY_PACE,paceOf,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,uApproxDist,uDistMiUnitLong,ROUTE_LENGTHS,routeLengthLabel,routeAscentFt,gainCoversWholeOuting,gainBelowOwnPins,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,suggestDiscSlots,TRIP,tripOf,SKILLS,SKILL_GROUPS,CERT_GROUPS,certMatches,VOUCH_RATINGS,VOUCH_RATINGS_RETIRED,VOUCH_RATING_LABEL,vouchRated,vouchAvg,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,mdToEditorHtml,editorHtmlToMd,caretToEnd,useRichTextareas,gpxDownload,buildGpx,WP_TYPES,WP_SINGLE_TYPES,WP_STYLE,WP_COLORS,wpColor,wpGlyph,MAX_WAYPOINTS,MAX_BIVY,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,LOGIN_FIRST,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,GUIDES,GPHOTOS,GLANGS,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,compat,compatParts,compatWhy,CMAX_DISC,CMAX_GRADE,CMAX_OBJ,CMAX_VERIF,CMAX_PACE,CMAX_AVAIL,COMPAT_BASE,COMPAT_TOP,COMPAT_MAX,compatUnknown,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,parseHrsRange,fmtHrsRange,mapFitToPace,paceVariants,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,CREW_ARCHIVE_GRACE_DAYS,isReady,isArchivedCrew,REPLY_LINES,DISC_TO_REPLY_POOL,replyPoolFor,pickReplyCategory,pickReplyLine,pickImageReplyLine,daysUntil,futLabel,YDSL,VL,SL,RSL,ROUTE_GAP,FOLD_GAP,MeH,GH,EMOJI_ICON,notifIcon,PARTNER_NUMBERS,EmergencyRescueCard,CatchLedger,ticksFor,seedIdentity,LogCatch,pubName,pubFirst,cById,GROUPS,REACTIONS,reactionCounts,groupMentionMatch,extractMentionIds,mutualsFor,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,FullProfile,BADWORDS,hasVulgarity,GuideDashboard,LoginScreen,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AVAIL_FILTER_OPTS,AVAIL_SLOT_OPTS,availSlotOn,availSlotToggle,availTagsOf,availFits,analyzeAlignment,alignmentFromServer,FloatPlan,inArea,_lev,_tol,fuzzyMatch,fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,routeLoc,routeLocText,PROFILE_GRADES,CLIMB_ROLES,profileGradeRows,roleLabel,BELAY_DEVICES,BELAY_LEVELS,belayLabel,certExpiryInfo,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_ALPS,ADDR_CLS,ADDR_GRADES,gradeGroups,ADDR_STYLE,ADDR_HAZ,ADDR_COMMIT,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,CA_PROV,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,unfinishedRoutes,routeCompleted,AreaView,crewMax,_discIconCache,getDiscIconMarkup,OverviewMap,GUIDE_REVIEWS,GMETA,gm,GuideApply,revTime,AvailCal,OPEN_CREWS,Guides,DbClimbPicker,Resume,AscentPyramid,Challenges,useCuratedLists,haptic,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,COMMENTS,Comments,ClassicClimbs,GettingThere,crewInCrew,crewSize,crewAskedToJoin,notifTarget,_cbBatch,_cbTimer,_toastT,_celebTimer,DB_UID,haveMyLoc,lbRowName,seedHistoryFor,resumeClimbCount,DbAreaPicker,hoursNum,listShareText,listSheetHtml,HELP_FEATS};
+export {listLink,appLink,BadgeWatcher,wpDivIcon,CRAG_CATS,CMAX_AREA,areaPathsOverlap,crewPlace,placeTrip,placeCap,placeLabel,placeSub,placeMatchesLog,rapSummary,campSummary,campLabel,rappelReportsOf,shareOrCopy,groupPostLink,chatText,localYmd,weekendEndYmd,printSheet,itinShareText,itinSheetHtml,escHtml,routeLink,routeShareBits,climbsAPeak,photoAlt,photoAltsOf,PHOTO_ALT_MAX,crewAllConfirmed,crewChatReaders,crewChatParticipantLine,uLenUnit,uLenN,uLenIn,groupEventsEmptyLine,nextMeetup,pubNameRow,groupMemberFromRow,mentionToken,floatPlanState,uTempU,uTempIn,uElevN,uElevIn,uElevUnit,uDistMiN,uDistMiIn,uDistMiUnit,uMassN,uMassIn,uMassUnit,itinDraftVal,itinStoreVal,uTemp,uTempN,uTempDelta,uWind,uWindN,uPrecip,uSnowfall,normEditStr,SET_FIELDS,climberLine,wpType,wpIs,trailheadPoint,DbAreaBrowser,DbGuides,DbGuideApply,DbGuideDashboard,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ1,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,MY_STARS,RESPONSE_RATES,__set_MY_PACE,paceOf,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,uApproxDist,uDistMiUnitLong,ROUTE_LENGTHS,routeLengthLabel,routeAscentFt,gainCoversWholeOuting,gainBelowOwnPins,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,suggestDiscSlots,TRIP,tripOf,SKILLS,SKILL_GROUPS,CERT_GROUPS,certMatches,VOUCH_RATINGS,VOUCH_RATINGS_RETIRED,VOUCH_RATING_LABEL,vouchRated,vouchAvg,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,mdToEditorHtml,editorHtmlToMd,caretToEnd,useRichTextareas,gpxDownload,buildGpx,WP_TYPES,WP_SINGLE_TYPES,WP_STYLE,WP_COLORS,wpColor,wpGlyph,MAX_WAYPOINTS,MAX_BIVY,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,LOGIN_FIRST,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,GUIDES,GPHOTOS,GLANGS,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,compat,compatParts,compatWhy,CMAX_DISC,CMAX_GRADE,CMAX_OBJ,CMAX_VERIF,CMAX_PACE,CMAX_AVAIL,COMPAT_BASE,COMPAT_TOP,COMPAT_MAX,compatUnknown,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,parseHrsRange,fmtHrsRange,mapFitToPace,paceVariants,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,CREW_ARCHIVE_GRACE_DAYS,isReady,isArchivedCrew,REPLY_LINES,DISC_TO_REPLY_POOL,replyPoolFor,pickReplyCategory,pickReplyLine,pickImageReplyLine,daysUntil,futLabel,YDSL,VL,SL,RSL,ROUTE_GAP,FOLD_GAP,MeH,GH,EMOJI_ICON,notifIcon,PARTNER_NUMBERS,EmergencyRescueCard,ticksFor,seedIdentity,LogCatch,pubName,pubFirst,cById,GROUPS,REACTIONS,reactionCounts,groupMentionMatch,extractMentionIds,mutualsFor,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,FullProfile,BADWORDS,hasVulgarity,GuideDashboard,LoginScreen,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AVAIL_FILTER_OPTS,AVAIL_SLOT_OPTS,availSlotOn,availSlotToggle,availTagsOf,availFits,analyzeAlignment,alignmentFromServer,FloatPlan,inArea,_lev,_tol,fuzzyMatch,fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,routeLoc,routeLocText,PROFILE_GRADES,CLIMB_ROLES,profileGradeRows,roleLabel,BELAY_DEVICES,BELAY_LEVELS,belayLabel,certExpiryInfo,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_ALPS,ADDR_CLS,ADDR_GRADES,gradeGroups,ADDR_STYLE,ADDR_HAZ,ADDR_COMMIT,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,CA_PROV,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,unfinishedRoutes,routeCompleted,AreaView,crewMax,_discIconCache,getDiscIconMarkup,OverviewMap,GUIDE_REVIEWS,GMETA,gm,GuideApply,revTime,AvailCal,OPEN_CREWS,Guides,DbClimbPicker,Resume,AscentPyramid,Challenges,useCuratedLists,haptic,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,COMMENTS,Comments,ClassicClimbs,GettingThere,crewInCrew,crewSize,crewAskedToJoin,notifTarget,_cbBatch,_cbTimer,_toastT,_celebTimer,DB_UID,haveMyLoc,lbRowName,seedHistoryFor,resumeClimbCount,hoursNum,listShareText,listSheetHtml,HELP_FEATS};
