@@ -32,8 +32,8 @@ for (const r of bad.slice(0, 40)) console.log("  ", r.id, "|", r.name, "|", r.di
 
 const rows = [...byDisc.mountaineering, ...byDisc.scrambling, ...byDisc.alpine];
 const listBad = rows.filter((r) => !HELD.has(r.id) && Array.isArray(r.disciplines) && r.disciplines.length &&
-  (!r.disciplines.includes(r.discipline) || (fifth(r) && r.disciplines.some((d) => d === "scrambling" || d === "scramble"))));
-console.log(`disciplines lists scanned: ${rows.length}; omitting their primary or calling a 5.x route a scramble: ${listBad.length}`);
+  (!r.disciplines.includes(r.discipline) || (fifth(r) && r.disciplines.some((d) => d === "scrambling" || d === "scramble" || d === "mountaineering"))));
+console.log(`disciplines lists scanned: ${rows.length}; omitting their primary, or calling a 5.x route a scramble or mountaineering: ${listBad.length}`);
 for (const r of listBad.slice(0, 40)) console.log("  ", r.id, "|", r.discipline, JSON.stringify(r.disciplines), "|", r.grade);
 
 process.exit(bad.length || listBad.length ? 1 : 0);
