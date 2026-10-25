@@ -226,7 +226,7 @@ export default function DbGuides({ onDash, notify, C }) {
 
   return (
     <div style={{ padding: 14 }}>
-      <input aria-label="Search guides, areas" value={q} onChange={e => setQ(e.target.value)} placeholder="Search guides, areas..." style={inp} />
+      <input aria-label="Search guides, areas" value={q} onChange={e => setQ(e.target.value)} placeholder="Search guides, areas…" style={inp} />
       <div style={{ display: "flex", gap: 8, marginTop: 8, overflowX: "auto" }}>
         <select aria-label="Filter by discipline" value={disc} onChange={e => setDisc(e.target.value)} style={{ ...inp, minWidth: 160 }}>
           <option value="">All disciplines</option>
