@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_this_my_friend",
+  "last_processed_id": "wa_tower_mountain_southwest_route",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -9170,6 +9170,25 @@
       "clean": 6,
       "sql_file": null,
       "note": "No confirmed errors this batch -- two findings flagged for human review, six routes clean. wa_the_temple_south_ridge (name 'West Side', area The Temple): the row's fa field reads 'Fred Beckey, 1942 (first ascent of the peak)', matching The Temple's Wikipedia infobox exactly, but HistoryLink's detailed account of Beckey's own June 1947 climb of The Temple's West Peak (with Mel Marcus and Bill Dunaway) states the MAIN summit -- the one this route's standard line (South Ridge/West Side) actually tops out on -- 'had been bagged previously by Keith Rankin', undated, before Beckey's 1947 trip. That directly conflicts with Wikipedia's bare '1942 Fred Beckey' infobox claim for the same main summit, and no source found gives Rankin's actual ascent date or confirms Beckey independently climbed the main peak (as opposed to only the West Peak) in 1942 -- left unchanged per no-guessing rule; this is a new finding, separate from the route's own already-flagged South-Ridge-vs-West-Side naming conflict and 5.3-vs-5.6 grade spread. wa_the_west_face (North Early Winters Spire): FA second climber is spelled 'Dave Beckstad' on this row vs 'Dave Beckstead' on SummitPost's route page (which otherwise confirms the June 17, 1965 Beckey-led first ascent and the 7,760 ft summit height exactly) -- single-source spelling conflict, left unchanged per the same precedent as prior batches' other Beckey-party-name spellings. Verified clean: wa_the_roof (Unicorn Peak's 6,971 ft high point and 2,397 ft approach gain both match Wikipedia/SummitPost/WTA exactly; the route's own corrections field already discloses its name isn't independently confirmed), wa_the_scoop_2 (Colchuck Balanced Rock's 8,240 ft high point matches Wikipedia/PeakVisor, the majority figure against one outlier Mountain Project listing of 7,790 ft for the peak generally; the row's own 10-entry pitch_detail is internally consistent with its itinerary's '10 pitches' claim, and a trip report's informal '6+ pitches' count is explained by the route's own simul-climbed upper pitches, not a real conflict; the 2010 Clifton/Cabodi/Matthiesen FA is unconfirmed but not contradicted by anything found), wa_the_tipping_point (Mountain Project confirms the 2017 Loukusa/Stefurak FA, 8 pitches and ~1,000 ft exactly as stored), wa_the_triad_east_peak and wa_the_triad_traverse (both share high_point_ft=7520, matching outside sources' figure for the Middle/East Triad summits -- the traverse's own high point is the same shared summit reached by the East Peak route), wa_this_my_friend (Dragontail Peak's NE Towers sub-feature; high_point_ft is correctly left blank since the route's own text says it doesn't reach Dragontail's main 8,840+ ft summit, and no source gives a specific NE Towers height)."
+    },
+    {
+      "batch_number": 462,
+      "date": "2026-10-25",
+      "route_ids": [
+        "wa_three_fingers_r1",
+        "wa_three_fingers_r2",
+        "wa_three_fingers_south_peak_lookout",
+        "wa_three_queens_approach_routes",
+        "wa_three_queens_middle_peak",
+        "wa_three_queens_west_peak",
+        "wa_tooth_and_claw",
+        "wa_tower_mountain_southwest_route"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 2,
+      "clean": 6,
+      "sql_file": null,
+      "note": "Flagged, not fixed: wa_three_fingers_r1 (North Peak) carries high_point_ft=6870, which exactly matches the South Peak's pre-1931-blast elevation (post-blast it is 6854 ft) rather than any figure found for the North Peak itself -- SummitPost only offers an informal climber estimate of 'at least 6800+ feet' for the North Peak, not enough to substitute with confidence. wa_tooth_and_claw (Lexington Tower) carries pitches=7, internally consistent with its own 7-entry pitch_detail and beta field, but three independent sources (Wikipedia, Mountain Project, SuperTopo) all agree this route is 8 pitches -- not fixed because splitting pitch_detail to match would require fabricating where the 8th pitch boundary falls, which no reachable source confirmed this run; FA (Risse/Tower, June 1989), grade (5.12a) and length (244m/800ft) are all independently confirmed. Verified clean: wa_three_fingers_r2 (Middle Peak high_point_ft=6800 matches its own corrections field's Peakery citation), wa_three_fingers_south_peak_lookout (6854 ft and the Bedal/Engles/Benesh FA both match the NRHP nomination), wa_three_queens_approach_routes (empty placeholder row, nothing to verify), wa_three_queens_middle_peak and wa_three_queens_west_peak (6600 ft / 6400 ft both match Wikipedia; the West Peak row's cited Three Queens Fire closure order 06-17-03-2026-44 matches the real, still-active USFS closure almost exactly), wa_tower_mountain_southwest_route (8444 ft and the 1913 unnamed-surveyor FA both match Wikipedia/SummitPost)."
     }
   ]
 }

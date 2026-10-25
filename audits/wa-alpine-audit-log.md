@@ -34656,3 +34656,53 @@ Winters Spire's West Face; Dragontail Peak's This, My Friend (NE Towers).
 
 0 confirmed errors fixed, 2 flagged for human review, 6 clean.
 `last_processed_id` advances to `wa_this_my_friend`.
+
+## 2026-10-25 — Pass 7, Batch 462
+
+Eight routes across 4 peaks: Three Fingers' North Peak + Middle Peak (South Face) + South Peak
+via Lookout; Three Queens' Approach Routes (stub) + Middle Peak (South Face/South Chimney) + West
+Peak (West Ridge/West Face); Lexington Tower's Tooth and Claw; Tower Mountain's Southwest
+Route/Standard.
+
+- `wa_three_fingers_r1` (North Peak): **flagged for human review, not fixed** — stored
+  `high_point_ft` is 6870. That number exactly matches Three Fingers' *South* Peak's elevation
+  *before* 15 ft were blasted off its summit block in 1931 to make room for the fire lookout (post-
+  blast: 6,854 ft, per Mountain-Forecast and this area's own South Peak route row) — a plausible
+  sign the figure was carried over from the wrong peak rather than measured for the North Peak
+  itself. No authoritative source gives the North Peak's own elevation: SummitPost's North Peak
+  page only offers a climber's informal estimate of "at least 6800+ feet," after noting the north
+  summit's elevation is shown incorrectly on the map it references. Not enough to substitute a
+  number with confidence either way, so left unchanged.
+- `wa_tooth_and_claw` (Lexington Tower): **flagged for human review, not fixed** — stored `pitches`
+  is 7, matching this row's own 7-entry `pitch_detail` breakdown and its `beta` field's "Seven-
+  pitch" description — internally consistent, but three independent sources (Wikipedia, Mountain
+  Project's route database, and the SuperTopo guidebook excerpt) all agree this route is 8 pitches.
+  The stored `length_m` (244 m ≈ 800 ft) already matches the sources' "800'" height exactly, so the
+  pitch *count* is the only field in question. FA (Steve Risse & Dave Tower, June 1989) and grade
+  (5.12a) are both independently confirmed by the same three sources. Not fixed because correcting
+  the count would mean fabricating where an 8th pitch boundary falls in `pitch_detail` without a
+  topo to confirm it — the detailed guidebook/Mountain Project pages themselves weren't reachable
+  this run to pin down the split.
+- `wa_three_fingers_r2` (Middle Peak, South Face): clean. `high_point_ft` = 6800 matches this row's
+  own `corrections` field, which already cites Peakery's 6,800 ft figure for Middle Peak
+  specifically (separate from the South/main peak's 6,854–6,870 ft).
+- `wa_three_fingers_south_peak_lookout`: clean. `high_point_ft` = 6854 matches the post-1931-blast
+  figure (Mountain-Forecast, Wikipedia). `fa` ("Harry Bedal, Harold Engles & Frank Benesh, c.
+  1929–1933") matches the NRHP nomination's builder list (Engles, Bedal, Benesh) and construction
+  timeline (1929 feasibility climb, 1930–1932 build, staffed from 1933) closely enough across
+  sources' spelling variants (Bedal/Bedel, Benesh/Benesch) not to flag.
+- `wa_three_queens_approach_routes`: clean — an essentially empty placeholder row (no technical
+  fields populated beyond id/name/discipline), nothing to verify.
+- `wa_three_queens_middle_peak`: clean. `high_point_ft` = 6600 matches Wikipedia's ~6,600 ft figure
+  for Three Queens' Middle Peak.
+- `wa_three_queens_west_peak`: clean. `high_point_ft` = 6400 matches Wikipedia's ~6,400 ft figure
+  for Three Queens' West Peak. The `access` field's cited closure — Order 06-17-03-2026-44, Three
+  Queens Fire, Cle Elum Ranger District, effective through Oct 31 2026 — matches the real, currently
+  still-active Forest Service closure order (confirmed via USFS alert and news coverage of the fire)
+  almost exactly by number and date.
+- `wa_tower_mountain_southwest_route`: clean. `high_point_ft` = 8444 and `fa` ("1913, first ascent
+  of the peak") both match Wikipedia/SummitPost, which also confirm the first ascent was by
+  unnamed government surveyors who left a cairn still standing today.
+
+0 confirmed errors fixed, 2 flagged for human review, 6 clean.
+`last_processed_id` advances to `wa_tower_mountain_southwest_route`.
