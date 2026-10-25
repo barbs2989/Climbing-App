@@ -4738,12 +4738,15 @@ const rainN=function(inch){return inch==null?null:uImp()?inch:inch*25.4;};
    `selIdx` is the hour picked in the chips; a chart follows it until you drag that chart, and snaps back when the
    chips move. */
 function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bars,extra,readout}){
-  const [hv,setHv]=useState(null);
-  const [pin,setPin]=useState(null);useEffect(function(){setPin(null);setHv(null);},[selIdx]);
+  const [hv,setHv]=useState(null),[hf,setHf]=useState(null);
+  const [pin,setPin]=useState(null);useEffect(function(){setPin(null);setHv(null);setHf(null);},[selIdx]);
   const downRef=useRef(null);
   const W=340,PH=130,L=34,R=58,n=all.length,xw=(W-L-R)/(n-1),x=function(i){return L+i*xw;};
   const at=hv!=null&&hv<n?hv:(pin!=null&&pin<n?pin:(selIdx>=0?selIdx:0));const a=all[at];
-  const idxAt=function(e){const r=e.currentTarget.getBoundingClientRect();if(!r.width)return null;const px=(e.clientX-r.left)/r.width*W;return Math.max(0,Math.min(n-1,Math.round((px-L)/xw)));};
+  const fAt=function(e){const r=e.currentTarget.getBoundingClientRect();if(!r.width)return null;const px=(e.clientX-r.left)/r.width*W;return Math.max(0,Math.min(n-1,(px-L)/xw));};
+  const idxAt=function(e){const f=fAt(e);return f==null?null:Math.round(f);};
+  const read=function(e){const f=fAt(e);if(f==null)return;setHf(f);setHv(Math.round(f));};
+  const unread=function(){setHv(null);setHf(null);};
   /* A POINTER DOWN ONLY REMEMBERS WHERE IT STARTED. Pinning the hour there (#2357) moved the readout under every thumb
      that was only scrolling the page past a chart. A finger moving mostly up or down is a scroll (the browser takes it
      and sends pointercancel); one moving ACROSS at least 8 px scrubs; a tap (under 8 px) or a released scrub pins its
@@ -4759,19 +4762,30 @@ function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bars,extra,readout
      Stocks app asks: TOUCH AND HOLD (350 ms, finger still within 10 px) to scrub, then slide; a tap reads one hour; any
      swipe is the page's, untouched. While a hold-scrub runs the page is held still (a non-passive touchmove on the
      HTML wrapper, which also carries the touch-action). A mouse still reads by hovering and dragging. */
+  /* ...AND A SIDEWAYS DRAG SCRUBS AT ONCE, WITH THE CURSOR UNDER THE FINGER (owner, 2026-10-24: the hour by hour graph
+     "feels sticky when I move it left and right"). Hold-to-scrub made every plain left/right drag do NOTHING (the
+     10 px rule dropped it), and once a scrub ran the cursor jumped hour to hour 120 ms behind the finger. Weather apps
+     (widget weather, Magic Weather) scrub on a plain sideways drag with the marker following the finger, so: a touch
+     that moves at least 8 px ACROSS and more than twice as far across as up or down scrubs straight away (the hold
+     still works too). That ratio keeps the #2526 promise: a scroll that starts a little diagonal is the page's, and
+     touch-action pan-y lets the browser take it (pointercancel puts the boxes back). While a finger or mouse is on the
+     chart the line and dots sit exactly under it, with no glide; the boxes above read the nearest whole hour; on
+     release the cursor glides onto that hour. */
   const cap=function(e){try{e.currentTarget.setPointerCapture(e.pointerId);}catch(_){}};
   const holdT=useRef(null),wrapRef=useRef(null);
   const unhold=function(){if(holdT.current){clearTimeout(holdT.current);holdT.current=null;}};
   useEffect(function(){const el=wrapRef.current;if(!el)return;const tm=function(e){const d=downRef.current;if(d&&d.scrub&&e.cancelable)e.preventDefault();};el.addEventListener("touchmove",tm,{passive:false});return function(){el.removeEventListener("touchmove",tm);unhold();};},[]);
-  const down=function(e){unhold();const d={x:e.clientX,y:e.clientY,scrub:false};downRef.current=d;if(e.pointerType==="mouse"){d.scrub=true;cap(e);const i=idxAt(e);if(i!=null)setHv(i);return;}const t=e.currentTarget,pid=e.pointerId,i0=idxAt(e);holdT.current=setTimeout(function(){holdT.current=null;if(downRef.current!==d)return;d.scrub=true;try{t.setPointerCapture(pid);}catch(_){}if(i0!=null)setHv(i0);try{if(navigator.vibrate)navigator.vibrate(8);}catch(_){}},350);};
-  const move=function(e){const d=downRef.current;if(e.pointerType==="mouse"){const i=idxAt(e);if(i!=null)setHv(i);return;}if(!d)return;if(!d.scrub){if(Math.abs(e.clientX-d.x)>10||Math.abs(e.clientY-d.y)>10){unhold();downRef.current=null;}return;}const i=idxAt(e);if(i!=null)setHv(i);};
-  const up=function(e){unhold();const d=downRef.current;downRef.current=null;if(!d)return;if(d.scrub||(Math.abs(e.clientX-d.x)<8&&Math.abs(e.clientY-d.y)<8)){const i=idxAt(e);if(i!=null){setPin(i);setHv(null);}}};
-  const cancel=function(){unhold();downRef.current=null;setHv(null);};
+  const down=function(e){unhold();const d={x:e.clientX,y:e.clientY,scrub:false};downRef.current=d;if(e.pointerType==="mouse"){d.scrub=true;cap(e);read(e);return;}const t=e.currentTarget,pid=e.pointerId,f0=fAt(e);holdT.current=setTimeout(function(){holdT.current=null;if(downRef.current!==d)return;d.scrub=true;try{t.setPointerCapture(pid);}catch(_){}if(f0!=null){setHf(f0);setHv(Math.round(f0));}try{if(navigator.vibrate)navigator.vibrate(8);}catch(_){}},350);};
+  const move=function(e){const d=downRef.current;if(e.pointerType==="mouse"){read(e);return;}if(!d)return;if(!d.scrub){const dx=Math.abs(e.clientX-d.x),dy=Math.abs(e.clientY-d.y);if(dx>=8&&dx>2*dy){unhold();d.scrub=true;cap(e);}else{if(dy>10){unhold();downRef.current=null;}return;}}read(e);};
+  const up=function(e){unhold();const d=downRef.current;downRef.current=null;if(!d)return;if(d.scrub||(Math.abs(e.clientX-d.x)<8&&Math.abs(e.clientY-d.y)<8)){const i=idxAt(e);if(i!=null){setPin(i);unread();}}};
+  const cancel=function(){unhold();downRef.current=null;unread();};
   const readRef=useRef(null),readMax=useRef(0);
   useLayoutEffect(function(){readMax.current=0;if(readRef.current)readRef.current.style.minHeight="";},[all]);
   useLayoutEffect(function(){const el=readRef.current;if(!el)return;const h=el.offsetHeight;if(h>readMax.current){readMax.current=h;el.style.minHeight=h+"px";}});
   // The cursor and its dots GLIDE to the next hour rather than teleport; the values themselves stay whole hours.
-  const glide={transition:"transform .12s ease-out"};
+  const glide=hf==null?{transition:"transform .12s ease-out"}:{};
+  const cx=hf!=null?L+hf*xw:x(at);
+  const vAt=function(vals){if(hf==null)return vals[at];const i0=Math.floor(hf),i1=Math.min(n-1,i0+1),v0=vals[i0],v1=vals[i1];return v0==null||v1==null?vals[at]:v0+(v1-v0)*(hf-i0);};
   const lastPast=all.reduce(function(m,h,i){return h.past?i:m;},-1);
   const path=function(vals,y){var d="",pen=false;vals.forEach(function(v,i){if(v==null){pen=false;return;}d+=(pen?"L":"M")+x(i).toFixed(1)+","+y(v).toFixed(1);pen=true;});return d;};
   if(hi-lo<1e-9)hi=lo+1;
@@ -4786,7 +4800,7 @@ function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bars,extra,readout
       <div style={{display:"flex",alignItems:"center",gap:8,minHeight:44,marginBottom:3}}><div style={{flex:1,minWidth:0,fontSize:12.5,fontWeight:700,color:C.textSub,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{clockHr(a.hr)}{a.past?<span style={{color:C.textMuted,fontWeight:600}}>{"  ·  already past"}</span>:null}</div>{at!==selIdx&&selIdx>=0?<button onClick={function(){setPin(null);setHv(null);}} style={{flexShrink:0,minHeight:44,padding:"0 12px",borderRadius:22,border:"1px solid "+C.blueDim,background:C.blueBg,color:"#fff",fontSize:11.5,fontWeight:700,cursor:"pointer"}}>{"Back to "+clockHr(all[selIdx].hr)}</button>:null}</div>
       <div ref={readRef}><TileGrid min={104}>{readout(a)}</TileGrid></div>
     </div>
-    <div ref={wrapRef} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={cancel} onPointerLeave={function(e){if(e.pointerType==="mouse")setHv(null);}} onContextMenu={function(e){e.preventDefault();}} style={{marginTop:8,touchAction:"pan-y",userSelect:"none",WebkitUserSelect:"none",WebkitTouchCallout:"none",WebkitTapHighlightColor:"transparent",cursor:"ew-resize"}}><svg width="100%" viewBox={"0 0 "+W+" "+(PH+20)} style={{display:"block"}} role="img" aria-label={title+" through the day; tap an hour, or touch and hold and slide along it, to read each hour"}>
+    <div ref={wrapRef} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={cancel} onPointerLeave={function(e){if(e.pointerType==="mouse")unread();}} onContextMenu={function(e){e.preventDefault();}} style={{marginTop:8,touchAction:"pan-y",userSelect:"none",WebkitUserSelect:"none",WebkitTouchCallout:"none",WebkitTapHighlightColor:"transparent",cursor:"ew-resize"}}><svg width="100%" viewBox={"0 0 "+W+" "+(PH+20)} style={{display:"block"}} role="img" aria-label={title+" through the day; tap an hour, or slide along it, to read each hour"}>
       {lastPast>=0?<rect x={L} y={0} width={Math.max(0,x(lastPast)-L)} height={PH} fill={C.borderHi} opacity={0.35}/>:null}
       {lastPast>=0&&x(lastPast)-L>40?<text x={L+4} y={PH-4} fontSize="10.5" fill={C.textMuted}>already past</text>:null}
       <line x1={L} x2={W-R} y1={y(lo)} y2={y(lo)} stroke={C.borderLight}/><line x1={L} x2={W-R} y1={y(hi)} y2={y(hi)} stroke={C.borderLight}/>
@@ -4794,8 +4808,8 @@ function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bars,extra,readout
       {bars?bars.vals.map(function(v,i){if(v==null||v<=0)return null;var top=y(Math.min(hi,v)),x0=Math.max(L,x(i)-xw*0.85),x1=Math.max(L,x(i)-xw*0.15);if(x1<=x0)return null;return <rect key={i} x={x0} y={top} width={Math.max(0.8,x1-x0)} height={Math.max(0.8,y(lo)-top)} rx={2} fill={bars.color} opacity={0.65}/>;}):null}
       {series.map(function(s){return <path key={s.name} d={path(s.vals,y)} fill="none" stroke={s.color} strokeWidth={2.5} strokeDasharray={s.dash||undefined} strokeLinejoin="round"/>;})}
       {extra?extra(y):null}
-      <line x1={0} x2={0} y1={0} y2={PH} stroke={C.text} strokeWidth="1.25" style={Object.assign({transform:"translate("+x(at).toFixed(1)+"px,0px)"},glide)}/>
-      {series.map(function(s){var v=s.vals[at];return v==null?null:<circle key={s.name} cx={0} cy={0} r={4.5} fill={s.color} stroke={C.card} strokeWidth="2" style={Object.assign({transform:"translate("+x(at).toFixed(1)+"px,"+y(v).toFixed(1)+"px)"},glide)}/>;})}
+      <line x1={0} x2={0} y1={0} y2={PH} stroke={C.text} strokeWidth="1.25" style={Object.assign({transform:"translate("+cx.toFixed(1)+"px,0px)"},glide)}/>
+      {series.map(function(s){var v=vAt(s.vals);return v==null?null:<circle key={s.name} cx={0} cy={0} r={4.5} fill={s.color} stroke={C.card} strokeWidth="2" style={Object.assign({transform:"translate("+cx.toFixed(1)+"px,"+y(v).toFixed(1)+"px)"},glide)}/>;})}
       {ends.map(function(e){return <text key={e.s.name} x={W-R+6} y={e.y+4} fontSize="11.5" fill={C.textSub}>{e.s.name}</text>;})}
       {axis}
     </svg></div>
