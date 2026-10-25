@@ -34612,3 +34612,47 @@ South Route) and The Rake's Ridge Traverse Route.
 
 1 confirmed error fixed (`wa_the_pyramid_picket_east_ridge`), 6 flagged for human review, 1 clean.
 `last_processed_id` advances to `wa_the_rake_traverse_route`.
+
+## 2026-10-25 — Pass 7, Batch 461
+
+Eight routes: Unicorn Peak's The Roof; Colchuck Balanced Rock's The Scoop + The Tipping Point;
+The Temple's South Ridge ("West Side"); The Triad's East Peak + full ridge traverse; North Early
+Winters Spire's West Face; Dragontail Peak's This, My Friend (NE Towers).
+
+- `wa_the_temple_south_ridge`: **flagged for human review, not fixed** — the row's `fa` field reads
+  "Fred Beckey, 1942 (first ascent of the peak)", which matches The Temple's Wikipedia infobox
+  exactly. But HistoryLink's detailed account of Beckey's actual, dated climb on this peak — the
+  June 1947 first ascent of The Temple's *West* Peak, with Mel Marcus and Bill Dunaway — states
+  outright that the *main* summit (the one this route's standard South Ridge/West Side line
+  actually reaches) "had been bagged previously by Keith Rankin," undated, before that 1947 trip.
+  That directly contradicts Wikipedia's bare "1942 Fred Beckey" claim for the same main summit, and
+  no source found gives Rankin's actual ascent date or otherwise confirms a 1942 Beckey ascent of
+  the main peak specifically (as opposed to the separate, later-climbed West Peak). Left unchanged
+  per the no-guessing rule. This is a new finding, distinct from the route's own already-flagged
+  South-Ridge-vs-West-Side naming conflict and 5.3-vs-5.6 grade spread (both still open in the
+  row's `corrections` field from an earlier pass).
+- `wa_the_west_face` (North Early Winters Spire): **flagged for human review, not fixed** — FA
+  second climber is spelled "Dave Beckstad" on this row vs "Dave Beckstead" on SummitPost's route
+  page, which otherwise independently confirms the June 17, 1965 Beckey-led first ascent and the
+  7,760 ft summit height exactly. Single-source spelling conflict on a surname — left unchanged,
+  same treatment as prior batches' other Beckey-party-name spelling discrepancies.
+- `wa_the_roof`: clean. Unicorn Peak's 6,971 ft high point and 2,397 ft approach gain both match
+  Wikipedia/SummitPost/WTA exactly. The route's own `corrections` field already discloses its name
+  isn't independently confirmed by any source — a known, pre-existing gap, not a new finding.
+- `wa_the_scoop_2`: clean. Colchuck Balanced Rock's 8,240 ft high point matches Wikipedia/PeakVisor
+  — the majority figure against one outlier Mountain Project listing of 7,790 ft for the peak
+  generally. The row's own 10-entry `pitch_detail` is internally consistent with its itinerary's
+  "10 pitches" claim; a trip report's informal "6+ pitches" count is explained by the route's own
+  simul-climbed upper pitches (P7-P9), not a real conflict. The 2010 Clifton/Cabodi/Matthiesen FA
+  is unconfirmed by any source found, but nothing contradicts it either.
+- `wa_the_tipping_point`: clean. Mountain Project confirms the 2017 Kerwin Loukusa/Luke Stefurak
+  FA, 8 pitches and ~1,000 ft, exactly as stored.
+- `wa_the_triad_east_peak` / `wa_the_triad_traverse`: clean. Both share `high_point_ft` = 7520,
+  matching outside sources' figure for the Middle/East Triad summits (the West summit is lower, at
+  ~7,440 ft) — the traverse's own high point is the same shared summit the East Peak route climbs.
+- `wa_this_my_friend`: clean. Dragontail Peak's NE Towers sub-feature; `high_point_ft` is correctly
+  left blank since the route's own text says it doesn't reach Dragontail's main 8,840+ ft summit,
+  and no source gives a specific NE Towers height to fill it with.
+
+0 confirmed errors fixed, 2 flagged for human review, 6 clean.
+`last_processed_id` advances to `wa_this_my_friend`.
