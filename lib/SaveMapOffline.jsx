@@ -90,7 +90,7 @@ export function SavedRouteMaps({ onOpen, notify }) {
       const r = byId[m.id];
       const name = r ? r.name : (rowsQ.isLoading ? "Loading…" : "A saved climb");
       const pct = m.mapTotal ? Math.round(100 * m.mapTiles / m.mapTotal) : 0;
-      return <div key={m.id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", background: C.card, border: "1px solid " + C.border, borderRadius: 11, marginBottom: 8 }}>
+      return <div key={m.id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", background: C.card, border: "1px solid " + C.border, borderRadius: 12, marginBottom: 8 }}>
         <button onClick={function () { if (r && onOpen) onOpen(dbRouteToCamel(r)); }} disabled={!r} style={{ flex: 1, minWidth: 0, textAlign: "left", background: "none", border: "none", padding: 0, cursor: r ? "pointer" : "default", color: C.text }}>
           <div style={{ fontSize: 14, fontWeight: 700 }}>{name}</div>
           <div style={{ fontSize: 11.5, color: m.mapMissing ? C.amber : C.textMuted }}>{(r && r.areas && r.areas.name ? r.areas.name + " · " : "") + (m.mapMissing ? pct + "% of the map saved" : "map saved " + savedAgo(m.mapAt))}</div>

@@ -122,7 +122,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
           <SL>A line for partners (optional)</SL>
           <input value={draft.note} maxLength={140} onChange={(e) => setDraft({ ...draft, note: e.target.value })} placeholder="e.g. Looking for a rope gun on weekends" aria-label="Note for partners" style={{ ...field, marginBottom: 4 }} />
           <div style={{ fontSize: 11.5, color: C.textMuted, textAlign: "right", marginBottom: 16 }}>{(draft.note || "").length}/140</div>
-          <button onClick={save} disabled={busy} style={{ ...BTN_LG, width: "100%", minHeight: 48, border: "none", background: C.blueSolid, color: "#fff", opacity: busy ? 0.6 : 1 }}>{editing ? "Save changes" : "List me at " + draft.name}</button>
+          <button onClick={save} disabled={busy} style={{ ...BTN_LG, width: "100%", minHeight: 48, border: "none", background: C.blueSolid, color:C.onSolid, opacity: busy ? 0.6 : 1 }}>{editing ? "Save changes" : "List me at " + draft.name}</button>
           {editing ? <button onClick={() => remove({ areaId: draft.areaId })} disabled={busy} style={{ width: "100%", minHeight: 44, marginTop: 10, padding: "10px", borderRadius: 12, border: "1px solid " + C.border, background: C.surface, color: C.red, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>Remove this listing</button> : null}
         </div> : <div>
           <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5, marginBottom: 14 }}>List the crags, canyons and ranges you climb. Climbers looking for a partner there will find you, and you’ll see who climbs where you do.</div>

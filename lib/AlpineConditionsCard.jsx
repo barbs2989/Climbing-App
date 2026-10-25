@@ -18,6 +18,7 @@ import { fetchAvyMap, zoneFor, fetchAvyProduct, avyReading, DANGER_NAME } from "
 import { fetchSnotelStations, nearestStation, fetchSnotelDepth, snowReading } from "./snotel.js";
 import ShadeMap, { loadTerrain } from "./ShadeMap.jsx";
 import { shadeGrid, gridPx, highestNear, SUMMIT_SNAP_M, faceSunBands, faceBearing } from "./terrainShade.js";
+import LoadingRows from "../src/components/LoadingRows.tsx";
 
 const _alpWx = {}, _alpSp = {}, _alpAir = {}, _alpAlerts = {};
 const ALERT_TTL = 10 * 60 * 1000; // alerts are issued and cancelled within the hour: a session-long cache would hide a new one
@@ -268,7 +269,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
   const head = <CardHead style={{ marginBottom: 8 }}>{"CONDITIONS · " + KIND_LABEL[kind].toUpperCase()}</CardHead>;
   if (!pt) return <div style={box}>{head}<div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55 }}>No conditions for this climb: neither it nor the area it is on has a location on file, so there is no forecast to read.</div></div>;
   if (wx && wx.error) return <div style={box}>{head}<div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.55, marginBottom: 8 }}>Couldn’t load the forecast, so no flags are shown. This is not a reading of the conditions.</div><button onClick={function () { setTries(tries + 1); }} style={{ background: C.surface, color: C.blue, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 12px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Try again</button></div>;
-  if (!model) return <div style={box} aria-busy="true">{head}<div style={{ fontSize: 12.5, color: C.textMuted }}>Loading the forecast…</div></div>;
+  if (!model) return <div style={box} aria-busy="true">{head}<LoadingRows C={C} label="Loading the forecast…"/></div>;
   const days = model.days, fc = model.fc;
   if (!days.length) return <div style={box}>{head}<div style={{ fontSize: 12.5, color: C.textSub }}>The forecast came back with no days ahead to read.</div></div>;
   const day = days[Math.min(dayI, days.length - 1)];
@@ -537,7 +538,7 @@ function StreamsSection({ pt, base }) {
   const sgn = function (d) { return d > 0 ? "+" : d < 0 ? "−" : "±"; };
   return <div>
     <CardHead style={HEAD}>Stream flow near the approach</CardHead>
-    {!st ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Loading stream flow…</div>
+    {!st ? <LoadingRows C={C} label="Loading stream flow…"/>
       : st.error ? <div><div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>Couldn’t load stream gauges, so stream flow is not measured. This is not a report that streams are low.</div><button onClick={function () { setTries(tries + 1); }} style={RETRY}>Try again</button></div>
       : st.none ? <div style={MUTED}>{"No stream gauge within " + uDistMi(25 / 1.60934) + " of " + where + ", so stream flow is not measured here. This is not a report that streams are low."}</div>
       : !f ? <div style={MUTED}>{"The nearest gauge, " + gaugeName(st.g.name) + " (" + uDistMi(st.g.km / 1.60934) + " away), has no current reading."}</div>
@@ -582,7 +583,7 @@ function AlertsSection({ day, dayLabel, nav, alerts, fc, onRetry }) {
   const list = alerts && alerts.data && !alerts.data.outside ? alertsForDay(normAlerts(alerts.data), day.date, fc) : [];
   return <div style={BOX}>
     <DayHead title="WEATHER ALERTS" dayLabel={dayLabel} nav={nav} />
-    {!alerts ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Loading weather alerts…</div>
+    {!alerts ? <LoadingRows C={C} label="Loading weather alerts…"/>
       : alerts.error ? <div><div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>Couldn’t load weather alerts, so they are not measured. This is not a report of none.</div><button onClick={onRetry} style={RETRY}>Try again</button></div>
       : alerts.data.outside ? <div style={MUTED}>Weather alerts are only checked for places in the United States. Nothing was checked for this route.</div>
       : !list.length ? <div style={MUTED}>{"No weather alert is in effect for this area " + (dayLabel === "Today" ? "today" : "on " + dayLabel) + "."}</div>
@@ -607,7 +608,7 @@ function AirSection({ day, dayLabel, nav, air, onRetry }) {
   const tone = a ? (a.max > LIMITS.aqiWarn ? C.red : a.max > LIMITS.aqiCaution ? C.amber : a.max > 50 ? C.yellow : C.green) : null;
   return <div style={BOX}>
     <DayHead title="AIR QUALITY" dayLabel={dayLabel} nav={nav} />
-    {!air ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Loading air quality…</div>
+    {!air ? <LoadingRows C={C} label="Loading air quality…"/>
       : air.error ? <div><div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>Couldn’t load air quality, so smoke is not measured. This is not a clean-air reading.</div><button onClick={onRetry} style={RETRY}>Try again</button></div>
       : !a ? <div style={MUTED}>The air-quality forecast does not reach this day (it runs about five days), so smoke is not measured for it.</div>
       : <TileGrid>
@@ -695,7 +696,7 @@ function AvalancheSection({ pt }) {
     return function () { live = false; };
   }, [pt.lat, pt.lng, tries]);
   const head = <CardHead style={HEAD}>Avalanche today</CardHead>;
-  if (!st) return <div aria-busy="true">{head}<div style={{ ...MUTED, color: C.textMuted }}>Loading the avalanche forecast…</div></div>;
+  if (!st) return <div aria-busy="true">{head}<LoadingRows C={C} label="Loading the avalanche forecast…"/></div>;
   if (st.error) return <div>{head}<div style={{ ...MUTED, color: C.amber }}>Couldn’t load the avalanche forecast. This is not a rating.</div><button onClick={function () { setTries(tries + 1); }} style={RETRY}>Try again</button></div>;
   const r = st.r, link = r.link ? <a href={r.link} target="_blank" rel="noreferrer" style={{ display: "inline-block", marginTop: 4, color: C.blue, fontSize: 12, fontWeight: 700 }}>Full avalanche forecast ↗</a> : null;
   if (r.kind === "outside") return <div>{head}<div style={MUTED}>This climb is outside the avalanche forecast zones the app reads. That is not a rating — check the local forecast before you go.</div></div>;
@@ -723,7 +724,7 @@ function SnowSection({ pt }) {
     return function () { live = false; };
   }, [pt.lat, pt.lng, tries]);
   const head = <CardHead style={HEAD}>Snow on the ground</CardHead>;
-  if (!st) return <div aria-busy="true">{head}<div style={{ ...MUTED, color: C.textMuted }}>Loading the nearest snow station…</div></div>;
+  if (!st) return <div aria-busy="true">{head}<LoadingRows C={C} label="Loading the nearest snow station…"/></div>;
   if (st.error) return <div>{head}<div style={{ ...MUTED, color: C.amber }}>Couldn’t load the snow station. This says nothing about the snow.</div><button onClick={function () { setTries(tries + 1); }} style={RETRY}>Try again</button></div>;
   if (st.none) return <div>{head}<div style={MUTED}>{"No snow station within " + (uImp() ? "19 mi" : "30 km") + " of this climb."}</div></div>;
   const s = st.st, r = st.r, below = pt.elevFt != null && s.elevFt != null ? pt.elevFt - s.elevFt : null;
@@ -748,7 +749,7 @@ function SeasonSection({ pt }) {
     return function () { live = false; };
   }, [pt.lat, pt.lng, pt.elevFt, tries]);
   const head = <CardHead style={HEAD}>Season at the top</CardHead>;
-  if (!st) return <div aria-busy="true">{head}<div style={{ ...MUTED, color: C.textMuted }}>Loading the climate at the top…</div></div>;
+  if (!st) return <div aria-busy="true">{head}<LoadingRows C={C} label="Loading the climate at the top…"/></div>;
   if (st.error) return <div>{head}<div style={{ ...MUTED, color: C.amber }}>Couldn’t load the climate. This says nothing about the season.</div><button onClick={function () { setTries(tries + 1); }} style={RETRY}>Try again</button></div>;
   const m = st.m, now = new Date().getMonth();
   const name = function (i) { return new Date(Date.UTC(2026, i, 15)).toLocaleDateString(DLOCALE, { month: "short", timeZone: "UTC" }); };

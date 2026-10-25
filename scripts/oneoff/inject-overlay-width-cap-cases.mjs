@@ -91,7 +91,7 @@ const CASES = [
     file: "ClimbMatch.jsx",
     why: "MUST STAY SILENT — a backdrop scrim is MEANT to cover the whole window, and its inner " +
          "panel carries its own maxWidth. Flagging it would tell authors to break correct code.",
-    edit: (s) => s.replace('position:"fixed",inset:0,background:"rgba(0,0,0,0.6)"',
+    edit: (s) => s.replace('position:"fixed",inset:0,background:C.scrim',
                            'position:"fixed",inset:0,background:"rgba(0,0,0,0.61)"'),
     expect: "pass",
   },

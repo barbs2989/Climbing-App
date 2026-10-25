@@ -33,7 +33,7 @@ export default function LogTagConfirmations({ uid, showToast }) {
       .finally(() => setBusy(null));
   };
   return (
-    <div style={{ background: C.card, borderRadius: 14, border: `1px solid ${C.border}`, padding: "12px 14px", marginBottom: 12 }}>
+    <div style={{ background: C.card, borderRadius: 12, border: `1px solid ${C.border}`, padding: "12px 14px", marginBottom: 12 }}>
       <div style={{ fontSize: 13, color: C.text, fontWeight: 800, letterSpacing: 0.4, textTransform: "uppercase", marginBottom: 4, borderLeft: "3px solid " + C.blue, paddingLeft: 9 }}>Climbs to confirm</div>
       <div style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.45, marginBottom: 8 }}>A partner tagged you on these. Confirming one makes it count fully on their rankings; saying you weren’t there takes it off every board.</div>
       {pending.map((t, i) => {

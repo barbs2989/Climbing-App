@@ -19,6 +19,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useGuideApplications, reviewGuideCredential, setGuideApplicationStatus, getSignedDocUrl } from "./db";
 import { C } from "../ClimbMatchCore";
 import { clickable } from "./clickable";
+import LoadingRows from "../src/components/LoadingRows.tsx";
 
 const AGO = (iso) => {
   if (!iso) return "";
@@ -150,7 +151,7 @@ export function GuideApplicationQueue({ notify, onViewProfile }) {
 
   // Three outcomes, three messages. "No applications" over a failed read is the false clean bill
   // this codebase has been bitten by more than once.
-  if (isLoading) return <div style={{ fontSize: 12.5, color: C.textMuted, padding: "10px 2px" }}>Loading applications…</div>;
+  if (isLoading) return <LoadingRows C={C} label="Loading applications…" style={{padding: "10px 2px"}}/>;
   if (error) return <div style={{ fontSize: 12.5, color: C.red, padding: "10px 2px" }}>{"Couldn't load the queue — " + ((error && error.message) || "try again") + ". Do not read this as 'no applications'."}</div>;
   if (!data || !data.length) return <div style={{ fontSize: 12.5, color: C.textMuted, padding: "10px 2px" }}>No applications waiting.</div>;
 
