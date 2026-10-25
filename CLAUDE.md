@@ -385,6 +385,7 @@ Each rule below is a summary; the linked file has the incidents behind it and th
   has not RECORDED. So when you apply a migration by hand, record its version in
   `supabase_migrations.schema_migrations` in the same step, or the merge applies it twice; and run
   `npm run check:migration-replay` before pushing one. → [README-numbering.md](supabase/migrations/README-numbering.md)
+- **After any change to the database structure, run `npm run gen:schema` and commit `SUPABASE_SCHEMA.sql`.** It is generated from the live catalog; `npm run gen:schema -- --check` says when it has drifted. → [supabase-scripts.md](docs/codebase/supabase-scripts.md)
 - **Run `npm run check:sql -- fix.sql` before handing over any SQL.** The SQL Editor reports
   success for an UPDATE or DELETE that matched zero rows; a wrong id has already destroyed the only
   copy of a route. → [hand-written-sql.md](docs/codebase/hand-written-sql.md)
