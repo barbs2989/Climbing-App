@@ -1,9 +1,9 @@
 import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { C, WP_COLORS, WP_STYLE, uDistMi, uElev, wpDivIcon, wpIs, wpPlaced, wpType } from "../../ClimbMatchCore.jsx";
+import { C, WP_COLORS, WP_STYLE, uDistMi, uElev, wpDivIcon, wpPlaced, wpType } from "../../ClimbMatchCore.jsx";
 import { BaseLayerToggle, applyBaseLayer, baseTileLayer, fitZoomToLayer, layerSharpZoom, loadLeaflet, locateLabel, useFollowMe } from "../../lib/mapKit";
 import { POP_CLOSE, POP_CLOSE_MEDIA } from "../../lib/popupChrome.js";
-import { trackIsJustTheWaypoints, waypointLinePins } from "../../lib/track.js";
+import { trackIsJustTheWaypoints } from "../../lib/track.js";
 import Lbl from "./Lbl.tsx";
 
 const Route3DView = lazy(() => import("../../lib/Route3DView.jsx"));
@@ -54,7 +54,7 @@ const ESC_PIN: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;"
 const escPinHtml = (t: unknown) => String(t == null ? "" : t).replace(/[&<>"]/g, (c) => ESC_PIN[c]);
 
 /**
- * The route page map: the recorded track (or a dashed line through the waypoints), one pin per placed
+ * The route page map: the recorded track (never a line through the waypoints), one pin per placed
  * waypoint with ONE shared popup card, the derived trailhead, the peak as empty state, and the base
  * check-ins drawn in their own layer. Leaflet arrives through `loadLeaflet` as `window.L`, untyped —
  * there are no Leaflet typings in this repo because it is CDN-loaded — so `L`, the map and its layers
@@ -67,9 +67,10 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
   const placed = (w: Waypoint | null | undefined): w is PlacedWaypoint => wpPlaced(w);
   const styles: Record<string, WpStyle> = WP_STYLE;
   const colors: Record<string, string> = WP_COLORS;
-  /* A stored "track" that is only the route's own pins joined up is drawn by the same rule as no
-     track at all (`waypointLinePins`), because its order was made by the same mistake: a pin with
-     no distance sorted to mile 0, so the line ran from the trailhead to the summit and back. */
+  /* THE LINE IS A RECORDED TRACK OR NOTHING (owner, 2026-10-25): never a line built from, or
+     reshaped by, the waypoints, which are often off. A stored "track" that is only the route's own
+     pins joined up is not drawn (dbRouteToCamel already drops it; this covers every other caller),
+     and with no track the map shows the pins alone. */
   const track = pts && pts.length >= 2 && !trackIsJustTheWaypoints(pts, waypoints) ? pts : null;
   const pk = peakCoord && peakCoord.lat != null && peakCoord.lng != null ? peakCoord : null;
   const mapDiv=useRef<HTMLDivElement | null>(null),mapRef=useRef<LeafletAny>(null),tileRef=useRef<LeafletAny>(null);
@@ -87,10 +88,6 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
   const ep=endpointLabels||{startLabel:"Start",startColor:C.green,finishLabel:"Finish",finishColor:C.red};
   const hasPts=!!track;
   const wpPts=(waypoints||[]).filter(placed);
-  /* The dashed line joins only the pins that are ON the way, from one trailhead to the summit; a
-     camp before the trailhead or down a side trail is still a pin, just not a stop on the line. */
-  const wpLine: PlacedWaypoint[]=hasPts?[]:waypointLinePins(wpPts);
-  const hasWpLine=wpLine.length>=2;
   const hasPeak=!hasPts&&!(waypoints&&waypoints.length)&&!!pk;
   /* The point the Snow layer lists satellite passes for: the peak, else the track's start, else the first placed pin. */
   const snowAt=(()=>{if(pk)return {lat:pk.lat,lng:pk.lng};if(track)return {lat:track[0][0],lng:track[0][1]};const w=(waypoints||[]).find(placed);return w?{lat:w.lat,lng:w.lng}:null;})();
@@ -142,8 +139,8 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
     // Blue Glacier standard route has a recorded track that stops ~0.9 km short of the
     // summit — well outside the 0.0015° window — so the map drew a "Finish" pin beside the
     // "Summit" pin and the mountain appeared to have two summits. A named waypoint is
-    // strictly more informative than "Finish", and the dashed connector below still shows
-    // that the track runs out before it.
+    // strictly more informative than "Finish", and the gap between the line's end and the
+    // pin shows that the track runs out before it.
     const hasWpType=(...ts: string[])=>(waypoints||[]).some(w=>placed(w)&&ts.indexOf(String(w.type))>=0);
     /* The track endpoints follow the legend too WHEN THEY NAME A LEGEND TYPE. On an alpine route
        endpointLabels is literally {startLabel:"Trailhead", finishLabel:"Summit"}, so these are the
@@ -153,15 +150,9 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
        type nobody recorded. */
     if(!nearWp(ll[0])&&!hasWpType("Trailhead"))addPin([styles[ep.startLabel]?L.marker(ll[0],{icon:wpDivIcon(L,ep.startLabel),keyboard:false}):L.circleMarker(ll[0],{radius:6,color:"#ffffff",weight:2,fillColor:ep.startColor,fillOpacity:1,bubblingMouseEvents:false})],ll[0],'<div style="font-size:13px;line-height:1.45">'+pinHead(ep.startLabel)+'<div style="font-size:12px;opacity:0.8;margin-top:3px">Where the recorded GPS track starts</div></div>',ep.startLabel,ep.startLabel);
     if(!nearWp(ll[ll.length-1])&&!hasWpType("Summit","Topout"))addPin([styles[ep.finishLabel]?L.marker(ll[ll.length-1],{icon:wpDivIcon(L,ep.finishLabel),keyboard:false}):L.circleMarker(ll[ll.length-1],{radius:6,color:"#ffffff",weight:2,fillColor:ep.finishColor,fillOpacity:1,bubblingMouseEvents:false})],ll[ll.length-1],'<div style="font-size:13px;line-height:1.45">'+pinHead(ep.finishLabel)+'<div style="font-size:12px;opacity:0.8;margin-top:3px">Where the recorded GPS track ends</div></div>',ep.finishLabel,ep.finishLabel);
-    // A named Trailhead/Summit can sit a little past where the recorded GPS track starts/stops
-    // (the recorder often starts the track after leaving the car, or loses lock near an exposed
-    // summit) without being wrong data. Rather than leave it as a stray dot, draw a short dashed
-    // connector out to it — but only within CONNECT_DEG, so a genuinely different real-world
-    // location (a different trailhead entirely) still reads as visually separate, not "connected".
-    const CONNECT_DEG=0.02;const connect=(trackPt: readonly number[],wp: Waypoint | undefined,color: string)=>{if(!placed(wp))return;const d=Math.hypot(trackPt[0]-wp.lat,trackPt[1]-wp.lng);if(d>0.0015&&d<=CONNECT_DEG)L.polyline([trackPt,[wp.lat,wp.lng]],{color,weight:2,opacity:0.6,dashArray:"3,7"}).addTo(map);};
-    connect(ll[0],(waypoints||[]).find(w=>placed(w)&&wpIs(w,"Trailhead")),wc.Trailhead);
-    connect(ll[ll.length-1],(waypoints||[]).find(w=>placed(w)&&(wpIs(w,"Summit")||wpIs(w,"Topout"))),wc.Summit);
-    }else if(hasWpLine){const ll=wpLine.map(w=>[w.lat,w.lng]);const line=L.polyline(ll,{color:C.blue,weight:3,opacity:0.7,dashArray:"7,7"}).addTo(map);line.bindTooltip("Approximate line — joins the waypoints along the way, not a recorded track",{direction:"top",sticky:true});b=line.getBounds();}markersRef.current={};(waypoints||[]).forEach((wp,wi)=>{if(!placed(wp))return;
+    // NO CONNECTOR from the track's end out to a Trailhead/Summit pin (owner, 2026-10-25): the line
+    // is the recorded track and stops where the recording stops; a pin past its end stays a pin.
+    }markersRef.current={};(waypoints||[]).forEach((wp,wi)=>{if(!placed(wp))return;
     // Waypoints carried a hover tooltip and nothing else, so on a phone — which is what this
     // app is built for — tapping one did nothing at all, on every route. A tooltip is a
     // pointer affordance; a popup is what opens on tap. The icon is also under a comfortable
@@ -246,6 +237,6 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
   const resetView=()=>{const map=mapRef.current;if(!map)return;me.release();if(boundsRef.current&&boundsRef.current.isValid())map.fitBounds(boundsRef.current.pad(0.25),{maxZoom:layerSharpZoom(baseLayer)});else if(hasPeak&&pk)map.setView([pk.lat,pk.lng],12);else map.setView([39.5,-98.5],4);};
   const mapUI=<div style={fullscreen?{position:"fixed",inset:0,zIndex:9700,background:C.bg,padding:12,display:"flex",flexDirection:"column"}:{position:"relative"}} role={fullscreen?"dialog":undefined} aria-modal={fullscreen?"true":undefined} aria-label={fullscreen?"Route map":undefined}>{fullscreen?<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:9}}><span style={{fontSize:14,fontWeight:700,color:C.text}}>Route map</span><button onClick={()=>setFullscreen(false)} aria-label="Close full-screen map" style={POP_CLOSE}>✕</button></div>:null}<div style={{position:"relative",flex:fullscreen?1:"none"}}><div ref={mapDiv} style={{height:fullscreen?"100%":300,borderRadius:9,border:`1px solid ${C.border}`,overflow:"hidden",background:"#0a0f1a"}}/>{!ready?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",color:C.textMuted,fontSize:12,pointerEvents:"none",textAlign:"center",padding:16}}>{mapFail?"Map couldn’t load — see waypoints below.":"Loading map…"}</div>:null}<BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={snowAt}/>{fullscreen?null:<button onClick={()=>setFullscreen(true)} aria-label="Full screen" title="Full screen" style={{...POP_CLOSE_MEDIA,position:"absolute",top:10,right:10,zIndex:1000}}>⤢</button>}{/* 3D sits bottom-centre: the layer buttons fill the top on a phone, Me and Reset view hold the bottom corners. */}<button onClick={()=>setView3d(true)} aria-label="View in 3D" style={{position:"absolute",bottom:26,left:"50%",transform:"translateX(-50%)",zIndex:1000,background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:9,padding:"7px 12px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>3D</button>{locatedOnce?<button onClick={resetView} style={{position:"absolute",bottom:26,left:10,zIndex:1000,background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>↺ Reset view</button>:null}<button onClick={locate} style={{position:"absolute",bottom:26,right:10,zIndex:1000,background:C.blueSolid,color:"#ffffff",border:"none",borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>{<Lbl s={"📍 "+locateLabel(me,"Me")}/>}</button></div>{geoErr?<div style={{fontSize:11.5,color:C.amber,marginTop:6}}>{geoErr}</div>:null}<div style={{padding:"7px 2px 0",display:"flex",gap:5,flexWrap:"wrap"}}>{/* A legend describes THE MAP ABOVE IT, so it lists only the types this route actually uses. It used to print all of WP_STYLE unconditionally, which was already listing types the map did not draw; at 13 styled types that becomes a wall of pills that is mostly about other routes. Normalise before comparing — a raw "lake" must light the Water row. */Object.keys(WP_STYLE).filter(function(k){return (waypoints||[]).some(function(w){return wpType(w)===k;});}).map(k=><span key={k} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,padding:"3px 8px",borderRadius:999,background:C.surface,border:"1px solid "+C.border,whiteSpace:"nowrap"}}><span aria-hidden="true" style={{color:styles[k].color,fontSize:12.5,lineHeight:1}}>{styles[k].glyph}</span><span style={{color:C.textSub}}>{k}</span></span>)}</div></div>;
   /* The 3D view draws what this map draws: the recorded line, or the dashed sketch through the pins, the placed pins, the derived trailhead, and the climbers' tracks shown here. */
-  const view3dEl=view3d?<Suspense fallback={null}><Route3DView line={track?track.map(p=>[p[0],p[1]]):(hasWpLine?wpLine.map(w=>[w.lat,w.lng]):null)} lineIsSketch={!track} waypoints={wpPts.map(w=>({lat:w.lat,lng:w.lng,name:w.name,type:w.type})).concat(derivedTrailhead&&derivedTrailhead.lat!=null&&derivedTrailhead.lng!=null&&(hasPts||wpPts.length>0)?[{lat:derivedTrailhead.lat,lng:derivedTrailhead.lng,name:derivedTrailhead.name||"Trailhead",type:"Trailhead"}]:[]).concat(!hasPts&&!wpPts.length&&pk?[{lat:pk.lat as number,lng:pk.lng as number,name:pk.name||"Peak location",type:"Summit"}]:[])} tracks={(extraTracks||[]).map(t=>({id:t.id,color:t.color,label:t.label,pts:t.pts.map(p=>[p[0],p[1]])}))} title={title||undefined} onClose={()=>setView3d(false)}/></Suspense>:null;
+  const view3dEl=view3d?<Suspense fallback={null}><Route3DView line={track?track.map(p=>[p[0],p[1]]):null} waypoints={wpPts.map(w=>({lat:w.lat,lng:w.lng,name:w.name,type:w.type})).concat(derivedTrailhead&&derivedTrailhead.lat!=null&&derivedTrailhead.lng!=null&&(hasPts||wpPts.length>0)?[{lat:derivedTrailhead.lat,lng:derivedTrailhead.lng,name:derivedTrailhead.name||"Trailhead",type:"Trailhead"}]:[]).concat(!hasPts&&!wpPts.length&&pk?[{lat:pk.lat as number,lng:pk.lng as number,name:pk.name||"Peak location",type:"Summit"}]:[])} tracks={(extraTracks||[]).map(t=>({id:t.id,color:t.color,label:t.label,pts:t.pts.map(p=>[p[0],p[1]])}))} title={title||undefined} onClose={()=>setView3d(false)}/></Suspense>:null;
   return <>{fullscreen?createPortal(mapUI,document.body):<div>{mapUI}</div>}{view3dEl}</>;
 }

@@ -30,7 +30,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
-import { trackStubCaveat, trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage, waypointLinePins } from "../lib/track.js";
+import { trackStubCaveat, trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage, recordedTrackPts, withRecordedTrackOnly, exportedTrackNotes } from "../lib/track.js";
 import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -107,7 +107,7 @@ console.log("check:track-caveat\n");
 //    renaming the heading left this check GREEN. Caught by injection, not by reading it; the same
 //    two-surfaces trap CLAUDE.md records for `rappels`, and the reason its landmark rule says to
 //    match whole lines rather than substrings.
-const anchored = render(route({ gpxPts: SYNTH, waypoints: WPS }), "planner").includes(">ROUTE TRACK<");
+const anchored = render(route({ gpxPts: REAL, waypoints: WPS }), "planner").includes(">ROUTE TRACK<");
 if (!anchored) {
   console.log("  FAIL  ANCHOR LOST: a route with a track renders no 'ROUTE TRACK' heading on the Planner.");
   console.log("        The section moved or is unmounted. Nothing below was checked.");
@@ -193,9 +193,16 @@ else ok("predicate: a two-point line through two pins is unaffected");
 if (trackIsJustTheWaypoints([SYNTH[0], OFF], TWO_PINS)) fail("predicate: a 2-point line with one end off a pin qualified against a 2-pin route — the slack reached a line with no interior");
 else ok("predicate: two points, one off a pin, still refused when the pin side cannot mask it");
 
-// ── 2. It reaches the screen, and only on the routes it should.
-if (!shows(route({ gpxPts: SYNTH, waypoints: WPS }))) fail("the caveat does not render on a route whose track is just its waypoints");
-else ok("the caveat renders on a waypoint-polyline route");
+// ── 2. A line that is only the pins joined up is NOT A TRACK (owner, 2026-10-25). The route page
+//    drops it, so it is neither drawn nor offered as a download, and no sentence describes a line
+//    that is not there. The download offered is the pins only.
+{
+  const synthHtml = text(render(route({ gpxPts: SYNTH, waypoints: WPS }), "planner"));
+  if (synthHtml.includes(WAYPOINT_LINE_CAVEAT)) fail("a pin-join route still renders the straight-lines caveat — the line it describes is no longer drawn");
+  else ok("a pin-join route renders no caveat about a line that is not drawn");
+  if (!/Download GPX \(waypoints only\)/.test(synthHtml)) fail("a pin-join route still offers its joined-up pins as the route's GPX track — it must download the waypoints only");
+  else ok("a pin-join route offers Download GPX (waypoints only)");
+}
 
 if (shows(route({ gpxPts: REAL, waypoints: WPS }))) fail("the caveat renders on a route with a GENUINE track — that is a false warning on good data");
 else ok("a genuine track carries no caveat");
@@ -441,38 +448,38 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
   else ok("the empty state names both kinds");
 }
 
-// ── 6. The dashed line joins only the pins ON THE WAY (owner, 2026-10-23) ──────────────────────
-// A camp before the trailhead, a second trailhead and a camp down a side trail are pins, not stops
-// on the line; a summit with no trail distance closes it rather than sorting to mile 0.
-console.log("\nThe waypoint line joins only the pins on the way:");
+// ── 6. THE ROUTE LINE IS A RECORDED TRACK OR NOTHING (owner, 2026-10-25) ──────────────────────
+// The map never draws a line built from the waypoints, and nothing reshapes a track to follow them:
+// the pins are often off, and a climber's recorded GPX holds more truth. This replaced #2706, which
+// re-ordered the pins into a dashed "on the way" line.
+console.log("\nThe route line is a recorded track or nothing:");
 {
-  const TH = { type: "Trailhead", name: "TH", lat: 48.6855, lng: -121.0925, distMi: 0 };
-  const TH2 = { type: "Trailhead", name: "Other way in", lat: 48.40, lng: -120.80 };
-  const CG = { type: "Campsite", name: "Campground behind the trailhead", lat: 48.70, lng: -121.11, distMi: null };
-  const CAMP = { type: "Campsite", name: "Camp on the way", lat: 48.5423, lng: -121.0143, distMi: 13.8 };
-  const SPUR = { type: "Campsite", name: "Camp up a side valley", lat: 48.53, lng: -121.20, distMi: 15 };
-  const PASS = { type: "Junction", name: "Pass", lat: 48.4985, lng: -120.9623, distMi: 19.6 };
-  const COL = { type: "Junction", name: "Col with no distance", lat: 48.495, lng: -120.94 };
-  const SUM = { type: "Summit", name: "Summit", lat: 48.4913, lng: -120.9228 };
-  const names = ws => waypointLinePins(ws).map(w => w.name).join(" > ");
-  const got = names([SUM, CG, TH, TH2, SPUR, CAMP, PASS, COL]);
-  const want = "TH > Camp on the way > Pass > Col with no distance > Summit";
-  if (got !== want) fail(`line order: got "${got}", want "${want}"`);
-  else ok("trailhead > camp on the way > pass > col > summit; the campground, the second trailhead and the side-trip camp are left off");
-  if (names([TH, CG]) !== "TH") fail("a trailhead and a campground with no distance must draw no line");
-  else ok("a trailhead plus a campground with no distance draws no line");
+  if (recordedTrackPts(SYNTH, WPS) !== null) fail("recordedTrackPts kept a line that is only the pins joined up");
+  else ok("recordedTrackPts drops a pin-join line");
+  if (recordedTrackPts(REAL, WPS) !== REAL) fail("recordedTrackPts dropped a GENUINE recorded track");
+  else ok("recordedTrackPts keeps a genuine recorded track untouched");
+  const dropped = withRecordedTrackOnly({ gpxPts: SYNTH, elevPts: [1, 2, 3, 4], waypoints: WPS });
+  if (dropped.gpxPts || dropped.elevPts) fail("withRecordedTrackOnly left the pin-join line or its elevation profile on the route");
+  else ok("withRecordedTrackOnly drops the pin-join line and the profile sampled along it");
+  if (exportedTrackNotes({ gpxPts: SYNTH, waypoints: WPS }).length) fail("the GPX export still writes a note about a pin-join line it no longer exports");
+  else ok("the GPX export writes no note about a line it does not carry");
   const gpxMap = fs.readFileSync(path.join(ROOT, "src/components/GPXMap.tsx"), "utf8");
-  if (!/waypointLinePins\(/.test(gpxMap)) fail("GPXMap no longer draws its dashed line through waypointLinePins()");
-  else ok("GPXMap draws the dashed line through waypointLinePins()");
-  if (/distMi\s*\?\?\s*0/.test(gpxMap)) fail("GPXMap sorts pins by `distMi ?? 0` again — a summit with no distance sorts to mile 0");
-  else ok("GPXMap does not sort pins by `distMi ?? 0`");
-  if (!/!trackIsJustTheWaypoints\(pts/.test(gpxMap)) fail("GPXMap draws a stored pin-join 'track' in its stored order again, instead of by waypointLinePins()");
-  else ok("a stored pin-join track is drawn by the same rule");
+  if (/dashArray/.test(gpxMap) || /wpPts\.map\(w=>\[w\.lat,w\.lng\]\)/.test(gpxMap) || /\.sort\([^)]*distMi/.test(gpxMap)) fail("GPXMap builds a line from the waypoints again (a dashed polyline, a pin sort or a pin-coordinate line)");
+  else ok("GPXMap draws no line from the waypoints");
+  if (!/!trackIsJustTheWaypoints\(pts/.test(gpxMap)) fail("GPXMap no longer refuses a stored pin-join 'track' passed in by a caller that skipped the filter");
+  else ok("GPXMap refuses a stored pin-join track from any caller");
+  const db = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8"), rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8"), core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+  if (!/recordedTrackPts\(r\.gpx,/.test(db)) fail("dbRouteToCamel no longer drops a pin-join gpx at the read");
+  else ok("dbRouteToCamel drops a pin-join gpx at the read");
+  if (!/withRecordedTrackOnly\(applyApproach\(/.test(rd)) fail("RouteDetail no longer drops a pin-join line after the approach overlay");
+  else ok("RouteDetail drops a pin-join line after the approach overlay");
+  if (!/recordedTrackPts\(r&&r\.gpxPts/.test(core)) fail("buildGpx exports a pin-join line as the route's track again");
+  else ok("buildGpx exports recorded tracks only");
 }
 
 console.log();
 if (failures) { console.error(`check:track-caveat FAILED — ${failures} problem(s).`); process.exit(1); }
-console.log("ok — a line drawn between waypoints says so, a partial one says which end is missing, and a real track is left alone");
+console.log("ok — the route line is a recorded track or nothing, a partial one says which end is missing, and a real track is left alone");
 
 // Injection-tested, 6 cases:
 //   delete the caveat from RouteDetail's ROUTE TRACK block  -> assertion 2 fails
