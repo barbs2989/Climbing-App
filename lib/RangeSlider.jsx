@@ -27,7 +27,12 @@ import { C } from "../ClimbMatchCore.jsx";
    cannot go further right, so the range could not be widened again. Past the middle the free direction is
    left, which is the low handle's; before it, right, the high one's. */
 const THUMB = 28, HIT = 44;
-export function RangeSlider({ label, min, max, minGap, value, onChange, fmt, snap, step }) {
+/* `ticks` (optional): values to MARK under the track, each labelled by `tickFmt` (default `fmt`) at its own
+   place on the scale -- the daylight window marks every third hour, so a climber reads 9a or 3p off the
+   scale instead of only the two ends. Without it, only the ends are labelled. The marks are decoration: each
+   handle already speaks its own value. `ends` (optional) names the two handles where "lowest"/"highest"
+   reads wrong -- a window of hours has an earliest start and a latest finish. */
+export function RangeSlider({ label, min, max, minGap, value, onChange, fmt, snap, step, ticks, tickFmt, ends }) {
   const box = useRef(null);
   const before = useRef(null); // the range when a handle was touched, restored if the touch becomes a scroll
   const tap = useRef(null); // where a touch on the TRACK began; it jumps a handle only if it lifts there, unscrolled
@@ -74,10 +79,13 @@ export function RangeSlider({ label, min, max, minGap, value, onChange, fmt, sna
         onPointerUp={function (e) { const t = tap.current; tap.current = null; if (!t || e.target !== e.currentTarget || Math.abs(e.clientX - t.x) > 10 || Math.abs(e.clientY - t.y) > 10) return; const raw = fromPointer(e); if (raw == null) return; move(Math.abs(raw - lo) <= Math.abs(raw - hi) ? "lo" : "hi", raw); }}>
         <div aria-hidden="true" style={{ position: "absolute", left: 0, right: 0, top: HIT / 2 - 3, height: 6, borderRadius: 3, background: C.border, pointerEvents: "none" }} />
         <div aria-hidden="true" style={{ position: "absolute", left: pos(lo) + "%", width: (pos(hi) - pos(lo)) + "%", top: HIT / 2 - 3, height: 6, borderRadius: 3, background: C.green, pointerEvents: "none" }} />
-        {thumb("lo", lo, "lowest")}
-        {thumb("hi", hi, "highest")}
+        {thumb("lo", lo, ends ? ends[0] : "lowest")}
+        {thumb("hi", hi, ends ? ends[1] : "highest")}
       </div>
     </div>
-    <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: C.textMuted, marginTop: 4 }}><span>{fmt(min)}</span><span>{fmt(max)}</span></div>
+    {ticks ? <div aria-hidden="true" style={{ padding: "0 " + HIT / 2 + "px" }}><div style={{ position: "relative", height: 22, marginTop: 2 }}>
+      {ticks.map(function (t) { return <div key={t} style={{ position: "absolute", left: pos(t) + "%", top: 0, transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", fontSize: 11, color: C.textMuted, whiteSpace: "nowrap", lineHeight: 1 }}><span style={{ width: 1, height: 5, background: C.border, marginBottom: 3 }} />{(tickFmt || fmt)(t)}</div>; })}
+    </div></div>
+      : <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: C.textMuted, marginTop: 4 }}><span>{fmt(min)}</span><span>{fmt(max)}</span></div>}
   </div>;
 }

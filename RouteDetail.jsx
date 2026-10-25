@@ -4837,7 +4837,6 @@ function HourlyChart({all,selUtc}){
   const card=function(key,title,series,lo,hi,axisFmt,bars,extra,readout){return <HourChartCard key={key} all={all} selIdx={selIdx} title={title} series={series} lo={lo} hi={hi} axisFmt={axisFmt} bars={bars} extra={extra} readout={readout}/>;};
   return <div>
     <div style={{marginBottom:6}}><HourStepper index={selIdx} count={n} onPick={setPin} label={function(i){return clockHr(all[i].hr);}}>{all.map(function(h,i){const on=i===selIdx;return <button key={h.utc} onClick={function(){setPin(i);}} aria-pressed={on} aria-label={clockHr(h.hr)+(h.past?", already past":"")} style={{flex:"0 0 auto",minWidth:58,minHeight:44,boxSizing:"border-box",padding:"8px 8px",borderRadius:8,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?"#fff":C.textSub,fontSize:12,fontWeight:on?800:600,cursor:"pointer",opacity:h.past?0.6:1}}>{clockHr(h.hr)}</button>;})}</HourStepper></div>
-    <div style={{fontSize:12,color:C.textSub,lineHeight:1.5,background:C.surface,border:"1px solid "+C.borderLight,borderRadius:9,padding:"7px 10px"}}><div><b>At 2 PM</b>{": the reading at that moment (temperature, wind, humidity, cloud)."}</div><div style={{marginTop:2}}><b>During 1–2 PM</b>{": a total or peak over the hour just before (rain, chance of rain, gusts)."}</div><div style={{marginTop:2}}>{"Each chart below has its own readout. Drag along a chart, or tap an hour or ‹ › above, to read it."}</div></div>
     {tv.length?card("t","Temperature",[{name:"Temp",vals:T,color:C.orange},{name:"Feels",vals:F,color:C.yellow,dash:"2 3"},{name:"Dew pt",vals:D,color:C.cyan,dash:"4 3"}],Math.floor(Math.min.apply(null,tv)),Math.ceil(Math.max.apply(null,tv)),function(v){return v+"°";},null,null,function(h){const damp=h.temp!=null&&h.dew!=null&&h.temp-h.dew<5;return [
       <Tile key="t" label="Temperature" when={atOf(h)} value={h.temp!=null?uTemp(h.temp):NOT_MEASURED} tone={h.temp!=null?wxTempColor(h.temp):null}/>,
       <Tile key="f" label="Feels like" when={atOf(h)} value={h.feels!=null?uTemp(h.feels):NOT_MEASURED}/>,
@@ -4855,8 +4854,9 @@ function HourlyChart({all,selUtc}){
   </div>;
 }
 /* SEASON — twelve months of average high and low at the crag, from the last five years. A bar is
-   one month's range; green months are PRIME for you (average high in your ideal band and under 12
-   wet days), amber GOOD (within a few degrees and under 16). Historical averages, never a forecast. */
+   one month's range; green months are PRIME for you (some of the climbing day, from the cool morning
+   up to the afternoon high, in your ideal band, in a dry month: monthFit), amber GOOD (within a few
+   degrees and under 16 wet days). Historical averages, never a forecast. */
 function SeasonChart({clim,band}){
   const [hv,setHv]=useState(null);
   const ms=clim.months;const W=340,H=104,L=28,R=6,cw=(W-L-R)/12;
@@ -4870,7 +4870,7 @@ function SeasonChart({clim,band}){
   const move=function(e){const r=e.currentTarget.getBoundingClientRect();if(!r.width)return;const px=(e.clientX-r.left)/r.width*W;setHv(Math.max(0,Math.min(11,Math.floor((px-L)/cw))));};
   const m=hv!=null?ms[hv]:null;
   return <div>
-    {condRow("Prime months",prime.length?prime.join(", "):"None — no month averages a high in your range with under 12 wet days",prime.length?C.green:C.textSub)}
+    {condRow("Prime months",prime.length?prime.join(", "):"None — no dry month has a morning or afternoon in your range",prime.length?C.green:C.textSub)}
     {good.length?condRow("Good months",good.join(", "),C.amber):null}
     <div style={{marginTop:8}}><svg width="100%" viewBox={"0 0 "+W+" "+(H+14)} style={{display:"block",touchAction:"pan-y"}} onPointerMove={move} onPointerDown={move} onPointerLeave={function(){setHv(null);}} role="img" aria-label={"Average high and low by month. Prime: "+(prime.join(", ")||"none")+". Good: "+(good.join(", ")||"none")+"."}>
       <rect x={L} y={y(uTempN(band[1]))} width={W-L-R} height={Math.max(0,y(uTempN(band[0]))-y(uTempN(band[1])))} fill={C.green} opacity={0.1}/>
