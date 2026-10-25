@@ -7,7 +7,7 @@
 // far too large to hold in memory. Rendered only when USE_DB is on.
 import { createContext, Fragment, useContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { fetchArea, useArea, useAreaContributions, useAreaClimbStats, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb, usePartnerAreaCount, usePartnersInArea, savePartnerArea, removePartnerArea } from "./db";
+import { fetchArea, useArea, useAreaContributions, useAreaClimbStats, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb, usePartnerAreaCount, usePartnersInArea, savePartnerArea, removePartnerArea, useMySavedSearches, createSavedSearchRow, deleteSavedSearchRow } from "./db";
 import { useRecentRouteIds } from "./recent";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel, searchPlaces } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
@@ -1070,7 +1070,10 @@ function usePinnedBar(endRef) {
   }, [endRef]);
   return { wrapRef, barRef, pin };
 }
-function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute, onAddClimb, onAddArea }) {
+// A saved search's identity: the words, the filters and where it looks. Keys are sorted because the
+// filters come back from a jsonb column, which does not keep the order they were written in.
+const searchKey = (q, f, locId) => JSON.stringify([(q || "").trim(), Object.keys(f || {}).sort().map(k => [k, f[k]]), locId]);
+function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute, onAddClimb, onAddArea, initial, uid, notify, onSignIn }) {
   const { wishlist } = useContext(ClimberCtx);
   const DEF = { discs: [], sortBy: "lr", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "", gain: "any", trip: "any", elev: "any", prom: "any", near: null, within: "w2" };
   const metric = isMetric(uElevUnit);
@@ -1080,17 +1083,20 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   // must be narrowed to an area inside it first (FINDER_NEEDS_AREA). The panel is keyed by the
   // scope's id, so a new scope starts a new Location.
   const [loc, setLoc] = useState(scope);
-  const [q, setQ] = useState("");
+  // A saved search opened from Logbook › Saved or the Menu arrives as `initial`: its words and
+  // filters, on the area it was saved in (which is this panel's scope).
+  const [q, setQ] = useState(initial ? initial.q || "" : "");
   // The query follows the box a beat behind, so typing "castle" is one search, not six.
-  const [qD, setQD] = useState("");
+  const [qD, setQD] = useState(initial ? initial.q || "" : "");
   useEffect(() => { const t = setTimeout(() => setQD(q), 250); return () => clearTimeout(t); }, [q]);
   const needsAreaFor = f => !!FINDER_NEEDS_AREA[loc.area_type] && !qD.trim() && !narrowsAreas(f);
   const [saveFor, setSaveFor] = useState(null);
   const { wrapRef: barWrap, barRef, pin } = usePinnedBar();
   // Routes | Areas. One text box serves both, so switching carries what you typed across.
   const [mode, setMode] = useState("routes");
-  const [af, setAf] = useState(DEF0);
-  const [df, setDf] = useState(DEF0);
+  const AF0 = initial && initial.filters ? { ...DEF, ...initial.filters } : DEF0;
+  const [af, setAf] = useState(AF0);
+  const [df, setDf] = useState(AF0);
   const needsArea = needsAreaFor(af);
   const [sheet, setSheet] = useState(false);
   // DISTANCE AWAY's point: your device's location, or a town / zip you type (AllTrails offers both).
@@ -1114,8 +1120,14 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
       else setNearSt({ busy: false, err: "", hits: rows });
     }, () => setNearSt({ busy: false, err: "Couldn’t look that place up — check your connection and try again.", hits: [] }));
   };
-  const [savedSearches, setSavedSearches] = useState([]);
+  // SAVED SEARCHES ARE THE ACCOUNT'S (saved_searches, 0091), the same rows Logbook › Saved and the
+  // Menu's "Saved searches · N" read. This list used to be this panel's own React state: a search
+  // saved here was gone the moment the finder closed, never reached the Logbook, and the table held
+  // no row at all (0 on 2026-10-24). Only finder searches are listed here; their `kind` says so.
+  const mySearchesQ = useMySavedSearches(uid);
+  const savedSearches = (mySearchesQ.data || []).filter(s => s.kind === "finder");
   const [showSaved, setShowSaved] = useState(false);
+  const [savingSearch, setSavingSearch] = useState(false);
   const [page, setPage] = useState(0);
   const [all, setAll] = useState([]);
   const lenRange = (LEN_BUCKETS.find(l => l[0] === af.len) || LEN_BUCKETS[0]);
@@ -1144,21 +1156,17 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
     return () => { el.style.overflow = prev; };
   }, [sheet]);
 
-  const saveSearch = () => {
-    const name = q.trim() || "Untitled search";
-    const newSearch = { id: Date.now(), name, q, filters: af, loc };
-    setSavedSearches(prev => [newSearch, ...prev]);
-  };
   const loadSearch = (search) => {
-    setQ(search.q);
-    setAf({ ...DEF, ...search.filters });
-    setLoc(search.loc || scope);
+    setQ(search.q || "");
+    setAf({ ...DEF, ...(search.filters || {}) });
+    setLoc(search.loc && search.loc.id ? search.loc : scope);
     setShowSaved(false);
     setPage(0);
     setAll([]);
   };
-  const deleteSearch = (id) => {
-    setSavedSearches(prev => prev.filter(s => s.id !== id));
+  const deleteSearch = (s) => {
+    deleteSavedSearchRow(s._dbId).then(() => { if (notify) notify("Saved search removed"); },
+      () => { if (notify) notify("Couldn’t delete that search — try again."); });
   };
   useEffect(() => { setPage(0); setAll([]); }, [qD, af, loc.id]);
   useEffect(() => {
@@ -1187,6 +1195,21 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
   if (af.prom && af.prom !== "any") afChips.push({ k: "prom", label: minLabel(findB(PROM_MINS, af.prom), metric, eU) + " prominence", clear: () => setAf(a => ({ ...a, prom: "any" })) });
   if (af.near) afChips.push({ k: "near", label: "Within " + withinLabel(findB(WITHIN, af.within) || WITHIN[1], metric, dU) + " of " + af.near.label, clear: () => setAf(a => ({ ...a, near: null, sortBy: a.sortBy === "near" ? DEF.sortBy : a.sortBy })) });
   if (af.sortBy !== DEF.sortBy) afChips.push({ k: "sort", label: { name: "A→Z", name_desc: "Z→A", area: "By area", lr: "Left → right", rl: "Right → left", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred", near: "Nearest first" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: DEF.sortBy })) });
+  const curKey = searchKey(q, af, loc.id);
+  const isSavedSearch = savedSearches.some(s => searchKey(s.q, s.filters, s.loc && s.loc.id) === curKey);
+  const saveSearch = () => {
+    if (!uid) { if (onSignIn) onSignIn(); else if (notify) notify("Sign in to save searches."); return; }
+    if (isSavedSearch) { if (notify) notify("Already saved — it’s in Logbook › Saved."); return; }
+    if (savingSearch) return;
+    // Named for what it IS, as the applied chips read: words, filters, place. "Untitled search"
+    // told a climber nothing when they came back to it from the Logbook.
+    const name = [q.trim() ? "“" + q.trim() + "”" : null, ...afChips.filter(c => c.k !== "sort").map(c => c.label), loc.name].filter(Boolean).join(" · ");
+    setSavingSearch(true);
+    createSavedSearchRow(uid, name, { kind: "finder", q: q.trim(), filters: af, loc: { id: loc.id, name: loc.name, area_type: loc.area_type } })
+      .then(() => { if (notify) notify("Search saved — find it in Logbook › Saved."); },
+        () => { if (notify) notify("Couldn’t save that search — check your connection and try again."); })
+      .finally(() => setSavingSearch(false));
+  };
   const inList = (l, id) => (l.routeIds || []).includes(id);
   const customLists = (userLists || []).filter(l => l.id !== "ul_obj");
   const isSaved = id => (wishlist || []).includes(id) || customLists.some(l => inList(l, id));
@@ -1215,7 +1238,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
           Save search in blue, which read as two different sizes of type side by side. */}
       <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
         <button onClick={() => { setDf(af); setSheet(true); }} style={rowBtn(nF)}>{"Filters" + (nF ? " (" + nF + ")" : "")}</button>
-        <button onClick={saveSearch} style={rowBtn(false)}>Save search</button>
+        <button onClick={saveSearch} disabled={savingSearch} aria-pressed={isSavedSearch} style={rowBtn(isSavedSearch)}>{savingSearch ? "Saving…" : isSavedSearch ? "✓ Saved" : "Save search"}</button>
         {savedSearches.length > 0 && <button onClick={() => setShowSaved(!showSaved)} style={rowBtn(true)}>{savedSearches.length} saved</button>}
       </div>
       {afChips.length ? (
@@ -1258,7 +1281,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
           {savedSearches.map(s => (
             <div key={s.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 10px", borderBottom: "1px solid " + C.borderLight, cursor: "pointer" }} {...clickable(() => loadSearch(s))}>
               <div style={{ flex: 1, fontSize: 13, color: C.text, fontWeight: 600 }}>{s.name}</div>
-              <button aria-label="Remove saved search" onClick={e => { e.stopPropagation(); deleteSearch(s.id); }} style={POP_REMOVE}>✕</button>
+              <button aria-label={"Remove saved search " + s.name} onClick={e => { e.stopPropagation(); deleteSearch(s); }} style={POP_REMOVE}>✕</button>
             </div>
           ))}
         </div>
@@ -1983,11 +2006,12 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, onAddArea, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute }) {
+export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, onAddArea, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
   const [finderDisc, setFinderDisc] = useState(""); // a chart bar presets the finder's discipline
+  const [finderInit, setFinderInit] = useState(null); // a saved search being reopened: { id, q, filters }
   const [treeOpen, setTreeOpen] = useState(false);
   const climber = useMemo(() => ({ wishlist, profile, completedIds, rankSuggested, discSlots }), [wishlist, profile, completedIds, rankSuggested, discSlots]);
   const handledJumpId = useRef(null);
@@ -2047,15 +2071,16 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
     let full = a;
     if (!a.path) {
       const row = await fetchArea(a.id).catch(() => null);
-      if (jumpSeq.current !== seq) return;
+      if (jumpSeq.current !== seq) return false;
       if (row) { full = row; setStateNode(row); }
     }
     const ancestors = await fetchAreaBreadcrumb(full).catch(() => []);
-    if (jumpSeq.current !== seq) return;
+    if (jumpSeq.current !== seq) return false;
     const state = ancestors.find(x => x.area_type === "state");
-    if (!state) return;
+    if (!state) return true;
     setStateNode(state);
     setStack([...ancestors.filter(x => x.area_type !== "state"), full]);
+    return true;
   };
   // Saved-areas chips (and anything outside the browser) jump to a DB area by id;
   // the full row is fetched here because jumpToArea needs area_type + ltree path.
@@ -2066,6 +2091,23 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
     handledAreaJump.current = jumpToAreaReq.id;
     jumpToArea(jumpAreaRowQ.data);
   }, [jumpToAreaReq, jumpAreaRowQ.data]);
+  // A SAVED SEARCH reopened from Logbook › Saved or the Menu: go to the area it was saved in, then
+  // open the finder there with its words and filters, as the climber left it.
+  const handledFinderJump = useRef(null);
+  const finderLocQ = useArea(jumpToFinderReq && jumpToFinderReq.search.loc ? jumpToFinderReq.search.loc.id : null);
+  useEffect(() => {
+    if (!jumpToFinderReq || handledFinderJump.current === jumpToFinderReq.id) return;
+    if (finderLocQ.isError) { handledFinderJump.current = jumpToFinderReq.id; if (notify) notify("Couldn’t open that saved search — check your connection and try again."); return; }
+    if (!finderLocQ.data) return;
+    handledFinderJump.current = jumpToFinderReq.id;
+    const req = jumpToFinderReq;
+    jumpToArea(finderLocQ.data).then(ok => {
+      if (!ok) return;
+      setFinderDisc("");
+      setFinderInit({ id: req.id, q: req.search.q, filters: req.search.filters });
+      setScreen("finder");
+    });
+  }, [jumpToFinderReq, finderLocQ.data, finderLocQ.isError, notify]);
 
   return (
     <ClimberCtx.Provider value={climber}>
@@ -2114,13 +2156,13 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
       {!stateNode ? (
         <>{rootHeader || null}<StatePicker onPick={pickState} C={C} /></>
       ) : screen === "finder" ? (
-        <RouteFinderPanel key={current.id} scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} bookmarks={bookmarks} onToggleBookmark={onToggleBookmark} onToggleWish={onToggleWish} userLists={userLists} onToggleListRoute={onToggleListRoute} onAddClimb={onAddClimb} onAddArea={onAddArea} />
+        <RouteFinderPanel key={current.id + (finderInit ? ":" + finderInit.id : "")} initial={finderInit} uid={uid} notify={notify} onSignIn={onSignIn} scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} bookmarks={bookmarks} onToggleBookmark={onToggleBookmark} onToggleWish={onToggleWish} userLists={userLists} onToggleListRoute={onToggleListRoute} onAddClimb={onAddClimb} onAddArea={onAddArea} />
       ) : screen === "objectives" ? (
         <ObjectivesPanel area={current} onOpen={onOpenRoute} C={C} />
       ) : screen === "near" ? (
         <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} /></>
       ) : (
-        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap} onAddClimb={onAddClimb} onAddArea={onAddArea} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { setFinderDisc(typeof d === "string" ? d : ""); setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
+        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap} onAddClimb={onAddClimb} onAddArea={onAddArea} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { setFinderInit(null); setFinderDisc(typeof d === "string" ? d : ""); setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
