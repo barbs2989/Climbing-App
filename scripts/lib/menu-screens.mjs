@@ -1,6 +1,6 @@
 // Screens and controls that live in the MENU (the avatar button at the top left), not on the
-// bottom bar. Profile left the bar when the Menu arrived: it is a screen in NAV marked
-// `bar:false`, opened from the Menu's "You" card. The footer link strip (Settings, Feedback,
+// bottom bar. Profile left the bar when the Menu arrived and came back as its right-most tab on
+// 2026-10-24; walks still open it from the Menu's "You" card, which leads to the same screen. The footer link strip (Settings, Feedback,
 // Privacy, Rate app, About us, How ClimbMatch works) moved into the Menu at the same time.
 //
 // A walk that taps a bar label by its text finds nothing named "Profile" any more, so every
@@ -8,7 +8,7 @@
 // drift on how the Menu is opened.
 
 // label a walk asks for -> accessible-name prefix of the control inside the Menu.
-// Groups joined Profile on 2026-10-14: a NAV screen marked `bar:false`, opened by the Menu's
+// Groups on 2026-10-14: a NAV screen marked `bar:false`, opened by the Menu's
 // "Groups" tile. A tile carries no aria-label, so its name is its text.
 export const MENU_SCREENS = { Profile: "Your profile", Groups: "Groups" };
 

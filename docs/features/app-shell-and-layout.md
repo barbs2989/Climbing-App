@@ -7,7 +7,7 @@ room for side-panel ads later. The phone app keeps its own look.
 
 ## 1. What it does today
 - **Phone (under 1024px wide):** one 520px column, centred, with the bottom tab bar (Home · Climbs ·
-  Partners · Crews · Logbook · Ranks). The bar is soft: see-through with a blur, a faint shadow instead
+  Partners · Crews · Logbook · Ranks · Profile). The bar is soft: see-through with a blur, a faint shadow instead
   of a hard top line, and the selected tab marked only by its pill. Inside an open chat thread the bar
   steps aside for the composer.
   - **Popups fill the screen** (owner 2026-10-23): every popup that used to slide up as a bottom sheet
