@@ -1162,15 +1162,23 @@ function TechStats({route,onEdit,part}){
    and the button opens the real one, via the same `onEdit` the pitch table header uses.
    The facts themselves stay — they were never the problem. See PR #514's sibling fix in
    ProvenancePanel, which kept its Confirm because it actually has somewhere to record it. */
+/* THE PITCH'S ANCHOR AND GEAR, EACH IN A FULL-WIDTH BOX (owner's note, 2026-10-25: "the anchor box when you click on a
+   pitch is too small"). The anchor was a tile a third of the row wide, so "two bolts and a chain under the chockstone,
+   lower off" was cut to its first few words. Both boxes now wrap in full, and the button beneath opens THIS pitch in the
+   editor, where anchor and gear are typed. Bolts stay in the tile row above. An empty card says so and offers the editor
+   rather than vanishing, when the editor is open to the climber. */
 function PitchConsensus({p,onSuggestFix}){
-  const FACTS=[["Bolts (this pitch)",p.bolts!=null?String(p.bolts):null],["Anchor",p.anchor||null]].filter(f=>f[1]!=null);
-  if(!FACTS.length)return null;
+  const anchor=String(p.anchor||"").trim();const gear=String(p.gear||"").trim();
+  if(!anchor&&!gear&&!onSuggestFix)return null;
+  const box=function(label,text,empty){return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:8,padding:"8px 10px",marginBottom:6}}>
+    <div style={{fontSize:11,fontWeight:700,color:C.textMuted,letterSpacing:0.4,textTransform:"uppercase",marginBottom:3}}>{label}</div>
+    <div style={{fontSize:13,color:text?C.text:C.textMuted,lineHeight:1.5,whiteSpace:"pre-wrap",wordBreak:"break-word",overflowWrap:"anywhere"}}>{text||empty}</div>
+  </div>;};
   return <div style={{background:C.surface,borderRadius:8,padding:"10px 11px",marginBottom:9,border:"1px solid "+C.border}}>
     <CardHead tone={C.green} style={{marginBottom:8}}>Pitch gear</CardHead>
-    {FACTS.map(f=>{const label=f[0];return <div key={label} style={{display:"flex",alignItems:"center",gap:8,flexWrap:"wrap",marginBottom:6}}>
-      <span style={{fontSize:12.5,color:C.textSub}}>{label}</span><span style={{fontSize:13,fontWeight:700,color:C.text}}>{f[1]}</span>
-    </div>;})}
-    {onSuggestFix?<button onClick={onSuggestFix} style={{...BTN,marginTop:3,background:"transparent",color:C.textSub,border:"1px solid "+C.border}}>Suggest a fix</button>:null}
+    {box("Anchor / belay",anchor,"Not described yet — say where to belay from and what it is built of")}
+    {box("Gear for this pitch",gear,"Not described yet — say what to place, e.g. cams, nuts, slings")}
+    {onSuggestFix?<button onClick={onSuggestFix} style={{...BTN,marginTop:3,background:"transparent",color:C.textSub,border:"1px solid "+C.border}}>{(anchor||gear)?"Edit anchor & gear":"Add anchor & gear"}</button>:null}
   </div>;
 }
 function BetaDiff({route}){
@@ -1296,8 +1304,21 @@ function pitchSpanText(ns){const s=ns.slice().sort(function(a,b){return a-b;});c
    a route whose every belay is bolted says nothing a single Anchor value does not. */
 function pitchAnchorSummary(route){const rows=breakdownRows(route).rows.filter(function(r){return r._kind==="pitch"&&anchorKind(r.anchor);});if(rows.length<2)return null;const by={};const order=[];rows.forEach(function(r){const k=anchorKind(r.anchor);const n=parseInt(r._badge,10);if(!isFinite(n))return;if(!by[k]){by[k]=[];order.push(k);}by[k].push(n);});if(order.length<2)return null;return order.map(function(k){return [k,pitchSpanText(by[k])];});}
 const pitchAnchorText=function(sum){return sum.map(function(x){return x[0]+" "+x[1];}).join(" · ");};
-function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd}){
+/* A PITCH'S PHOTOS, WITH AN ADD BUTTON ON THE PITCH ITSELF (owner's note, 2026-10-25: "a photo right there of the pitch").
+   The upload is a route photo tagged with the pitch's label (contributions value.pitch), so the route's Photos tab still
+   lists it with the rest. Signed out there is no upload, and the box says so rather than offering a button that does nothing. */
+function PitchPhotos({items,onAdd}){
+  const [busy,setBusy]=useState(false);const inp=useRef(null);
+  return <div style={{marginBottom:9}}>
+    {items.length?<PhotoRow items={items} w={160} h={108}/>:null}
+    {onAdd?<div style={{marginTop:items.length?8:0}}>
+      <button disabled={busy} onClick={function(){if(inp.current)inp.current.click();}} style={{...BTN_SM,background:C.surface,color:C.blue,border:"1px solid "+C.border,display:"inline-flex",alignItems:"center",gap:6,opacity:busy?0.6:1,cursor:busy?"default":"pointer"}}><ActionIcon name="camera" size={14} color={C.blue}/>{busy?"Adding…":(items.length?"Add another photo of this pitch":"Add a photo of this pitch")}</button>
+      <input ref={inp} type="file" accept="image/*" multiple hidden aria-label="Add a photo of this pitch" onChange={function(e){const fs=Array.from(e.target.files||[]);e.target.value="";if(!fs.length)return;setBusy(true);Promise.resolve(onAdd(fs)).finally(function(){setBusy(false);});}}/>
+    </div>:(items.length?null:<div style={{background:C.card,borderRadius:8,padding:"12px",textAlign:"center",border:`1px dashed ${C.border}`,fontSize:12,color:C.textMuted,lineHeight:1.5}}>No photos of this pitch yet. Sign in to add one.</div>)}
+  </div>;}
+function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd,dbPhotos,onAddPitchPhoto}){
   const [open,setOpen]=useState(null);
+  const photosOf=function(r){return (dbPhotos||[]).filter(function(p){return p._pitch!=null&&String(p._pitch)===String(r._n);});};
   const {rows,pitchCount,stageCount}=breakdownRows(route);
   useEffect(function(){if(focus==null)return;const hit=rows.filter(r=>r._kind==="pitch")[focus];if(hit)setOpen(hit._i);},[focus]);
   if(!rows.length)return null;
@@ -1370,13 +1391,13 @@ function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onComme
               {r._note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,wordBreak:"break-word",overflowWrap:"break-word"}}>{r._note}</div>:null}
             </div>
             {isOpen?<div style={{padding:"0 11px 11px"}}>{onEdit?<button onClick={function(e){e.stopPropagation();onEdit(r._i);}} style={{...editBtnStyle(C),marginTop:8}}><EditPencil C={C}/>{isPitch?"Edit this pitch":"Edit this section"}</button>:null}
-              {(isPitch||stageTiles.length)?<div style={{marginTop:2,paddingTop:9,borderTop:"1px solid "+C.borderLight,display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:7,marginBottom:isPitch?9:0}}>
+              {(isPitch||stageTiles.length)?<div style={{marginTop:2,paddingTop:9,borderTop:"1px solid "+C.borderLight,display:"grid",gridTemplateColumns:isPitch?"repeat(2,1fr)":"repeat(3,1fr)",gap:7,marginBottom:isPitch?9:0}}>
                 {(isPitch
-                  ?[["Length",r.lengthM!=null?uLen(r.lengthM):"—",C.blue],["Bolts (this pitch)",r.bolts!=null?String(r.bolts):"—",C.amber],["Anchor",r.anchor||"—",/bolt/i.test(r.anchor||"")?C.green:C.blue]]
+                  ?[["Length",r.lengthM!=null?uLen(r.lengthM):"—",C.blue],["Bolts (this pitch)",r.bolts!=null?String(r.bolts):"—",C.amber]]
                   :stageTiles
                 ).map(function(s){return <div key={s[0]} style={{background:C.card,borderRadius:8,padding:"7px 9px",textAlign:"center",minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:s[2],overflowWrap:"anywhere"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{s[0]}</div></div>;})}
               </div>:null}
-              {isPitch?<><PitchConsensus p={r} onSuggestFix={onEdit}/><CardHead style={{marginBottom:8}}>Photos</CardHead>{r.photos&&r.photos.length?<PhotoRow items={r.photos} w={160} h={108}/>:<div style={{background:C.card,borderRadius:8,padding:"14px 12px",textAlign:"center",border:`1px dashed ${C.border}`}}><div style={{marginBottom:3,display:"flex",justifyContent:"center"}}><ActionIcon name="camera" size={21} color={C.textMuted}/></div><div style={{fontSize:12,color:C.textMuted}}>No photos yet — add route photos for this pitch</div></div>}<PitchComments targetId={route.id+"_pitch_"+r._n} comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}/></>:<PitchComments title="Comments on this section" targetId={route.id+"_pitch_"+r._n} comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}/>}
+              {isPitch?<><PitchConsensus p={r} onSuggestFix={onEdit?function(){onEdit(r._i);}:null}/><CardHead style={{marginBottom:8}}>Photos</CardHead><PitchPhotos items={photosOf(r)} onAdd={onAddPitchPhoto?function(fs){return onAddPitchPhoto(fs,r._n);}:null}/><PitchComments targetId={route.id+"_pitch_"+r._n} comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}/></>:<PitchComments title="Comments on this section" targetId={route.id+"_pitch_"+r._n} comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}/>}
             </div>:null}
           </div>
         </div>;})}
@@ -2208,11 +2229,23 @@ function OvernightPermit({route}){
     {p.url?<a href={p.url} target="_blank" rel="noopener noreferrer" style={{display:"block",marginTop:8,padding:"8px 12px",background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:9,color:C.onSolid,fontSize:12.5,fontWeight:700,textDecoration:"none",textAlign:"center"}}>{"Get the permit →"}</a>:null}
   </div>;
 }
+/* A COMMENT SOMEONE TYPED AT LENGTH opens at three lines with a Read more (owner's note, 2026-10-25: "if someone types
+   too much so it doesn't fill the screen"). Short comments render whole, with no button. */
+const COMMENT_CLAMP_CHARS=240;
+function ClampText({text,style}){const [open,setOpen]=useState(false);const t=String(text||"");const long=t.length>COMMENT_CLAMP_CHARS;
+  return <div style={style}>
+    <div style={long&&!open?{display:"-webkit-box",WebkitLineClamp:3,WebkitBoxOrient:"vertical",overflow:"hidden",whiteSpace:"pre-wrap",wordBreak:"break-word"}:{whiteSpace:"pre-wrap",wordBreak:"break-word"}}>{t}</div>
+    {long?<button onClick={function(){setOpen(!open);}} aria-expanded={open} style={{background:"none",border:"none",padding:"4px 0 0",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer"}}>{open?"Show less":"Read more"}</button>:null}
+  </div>;}
+/* MANY COMMENTS ON A PITCH: the newest three show, and "Show N earlier comments" opens the rest (owner's note, 2026-10-25:
+   "if many ppl comment on the pitch … a dropdown to read more"). The list is still counted in full in its heading. */
+const PITCH_COMMENTS_SHOWN=3;
 export function PitchComments({targetId,comments,commentsUnavailable,onAdd,title="Pitch comments"}){
   const list=(comments||[]).filter(c=>c.targetId===targetId&&!c.parentId).slice().sort((a,b)=>new Date(a.ts).getTime()-new Date(b.ts).getTime());
-  const [txt,setTxt]=useState("");
+  const [txt,setTxt]=useState("");const [allOpen,setAllOpen]=useState(false);
   const add=()=>{const t=txt.trim();if(!t)return;if(onAdd)onAdd(targetId,t);setTxt("");};
-  return <div style={{marginTop:10}}><CardHead style={{marginBottom:8}}>{title+(list.length?" · "+list.length:"")}</CardHead>{list.length?list.map((c,i)=><div key={c.id||i} style={{background:C.surface,borderRadius:8,padding:"8px 10px",marginBottom:6}}><div style={{fontSize:11.5,fontWeight:700,color:C.text}}>{(c.userId===0?ME:CLIMBERS.find(x=>x.id===c.userId)||{name:c.name||"Climber"}).name}<span style={{fontSize:11.5,color:C.textMuted,fontWeight:400,marginLeft:6}}>{ago(c.ts)}</span></div><div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:2}}>{c.text}</div></div>):<div style={{fontSize:11.5,color:C.textMuted,marginBottom:7}}>{commentsUnavailable?"Couldn’t load the comments on this pitch — beta may already be here, so do not read this as none.":"No comments yet — be the first to add beta for this exact pitch."}</div>}<div style={{display:"flex",gap:6,marginTop:2}}><input value={txt} onChange={e=>setTxt(e.target.value)} aria-label="Add a pitch comment" placeholder="Add a comment on this pitch…" style={{flex:1,minWidth:0,padding:"7px 9px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/><button onClick={add} style={{...BTN_SM,border:"none",background:C.blueSolid,color:C.onSolid,flexShrink:0}}>Post</button></div></div>;
+  const collapsible=list.length>PITCH_COMMENTS_SHOWN;const shown=(!collapsible||allOpen)?list:list.slice(list.length-PITCH_COMMENTS_SHOWN);const earlier=list.length-shown.length;
+  return <div style={{marginTop:10}}><CardHead style={{marginBottom:8}}>{title+(list.length?" · "+list.length:"")}</CardHead>{list.length?<>{earlier>0?<button onClick={function(){setAllOpen(true);}} style={{background:"none",border:"none",padding:"2px 0 6px",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer",display:"inline-flex",alignItems:"center",gap:5}}>{"Show "+earlier+" earlier comment"+(earlier===1?"":"s")}<Chevron open={false} size={14} color={C.blue}/></button>:null}{shown.map((c,i)=><div key={c.id||i} style={{background:C.surface,borderRadius:8,padding:"8px 10px",marginBottom:6}}><div style={{fontSize:11.5,fontWeight:700,color:C.text}}>{(c.userId===0?ME:CLIMBERS.find(x=>x.id===c.userId)||{name:c.name||"Climber"}).name}<span style={{fontSize:11.5,color:C.textMuted,fontWeight:400,marginLeft:6}}>{ago(c.ts)}</span></div><ClampText text={c.text} style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:2}}/></div>)}{collapsible&&allOpen?<button onClick={function(){setAllOpen(false);}} style={{background:"none",border:"none",padding:"2px 0 6px",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer",display:"inline-flex",alignItems:"center",gap:5}}>Show fewer<Chevron open={true} size={14} color={C.blue}/></button>:null}</>:<div style={{fontSize:11.5,color:C.textMuted,marginBottom:7}}>{commentsUnavailable?"Couldn’t load the comments on this pitch — beta may already be here, so do not read this as none.":"No comments yet — be the first to add beta for this exact pitch."}</div>}<div style={{display:"flex",gap:6,marginTop:2}}><input value={txt} onChange={e=>setTxt(e.target.value)} aria-label="Add a pitch comment" placeholder="Add a comment on this pitch…" style={{flex:1,minWidth:0,padding:"7px 9px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/><button onClick={add} style={{...BTN_SM,border:"none",background:C.blueSolid,color:C.onSolid,flexShrink:0}}>Post</button></div></div>;
 }
 /* THE PLANNER PRINTED ITS DAY PLAN TWICE, AND THE SECOND COPY WAS THE WORSE ONE.
    `timing.sectionBreakdown[i]` is `{section, fromTo, note, hrs}` and `itinerary.days[i]` is
@@ -4516,7 +4549,7 @@ const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+
     is matched to a pitch — nothing in the record says which pitches a section spans, and
     guessing from words would be a claim the record never made. */}
 {route.discipline!=="bouldering"&&(route.climbingRoute||[]).length?<div id="climbing-route" style={{marginBottom:14,scrollMarginTop:"80px"}}><Capped><ClimbingRouteTable route={route} onEdit={()=>{openFix("climbingRoute");}}/></Capped>{route.pitchDetail&&route.pitchDetail.length?<BreakdownHandoff route={route}/>:null}</div>:(!isPitched(route)&&route.discipline!=="bouldering"?<EmptySection title="CLIMBING ROUTE" what="No climbing route breakdown" why="Nothing describes the climbing section by section — where it steepens, where it gets exposed, where the crux is." cta="Describe the climbing" onFix={()=>{openFix("climbingRoute");}}/>:null)}
-{route.discipline!=="bouldering"&&route.pitchDetail&&route.pitchDetail.length?<Capped><RouteBreakdown route={route} comments={comments} commentsUnavailable={commentsUnavailable} onCommentAdd={commentApi.onAdd} onEdit={(pIdx)=>{setFixFocusPitch(typeof pIdx==="number"?pIdx:null);openFix("pitchDetail");}}/></Capped>:(gapPitches(route)?<EmptySection title="ROUTE BREAKDOWN" what="No pitch-by-pitch breakdown" why={route.pitches+" pitches are listed, but none of them are described — no per-pitch grades, belays or crux."} cta="Add the pitches" onFix={()=>{openFix("pitchDetail");}}/>:(isPitched(route)&&!cragOnly&&!(route.pitches>0)?<EmptySection title="ROUTE BREAKDOWN" what="No pitch-by-pitch breakdown" why="Nothing records how many pitches this climbs or what each one asks of you." cta="Add the pitches" onFix={()=>{openFix("pitchDetail");}}/>:null))}
+{route.discipline!=="bouldering"&&route.pitchDetail&&route.pitchDetail.length?<Capped><RouteBreakdown route={route} comments={comments} commentsUnavailable={commentsUnavailable} onCommentAdd={commentApi.onAdd} dbPhotos={dbPhotos} onAddPitchPhoto={onAddPhotos?function(files,n){return onAddPhotos(files,files.map(function(){return "";}),n);}:null} onEdit={(pIdx)=>{setFixFocusPitch(typeof pIdx==="number"?pIdx:null);openFix("pitchDetail");}}/></Capped>:(gapPitches(route)?<EmptySection title="ROUTE BREAKDOWN" what="No pitch-by-pitch breakdown" why={route.pitches+" pitches are listed, but none of them are described — no per-pitch grades, belays or crux."} cta="Add the pitches" onFix={()=>{openFix("pitchDetail");}}/>:(isPitched(route)&&!cragOnly&&!(route.pitches>0)?<EmptySection title="ROUTE BREAKDOWN" what="No pitch-by-pitch breakdown" why="Nothing records how many pitches this climbs or what each one asks of you." cta="Add the pitches" onFix={()=>{openFix("pitchDetail");}}/>:null))}
 {(route.descent||route.descentText)?<div style={{marginBottom:ROUTE_GAP}}><SL action={<EditIconButton onClick={()=>{openFix("descentText");}} title="Edit descent information"/>}>DESCENT</SL><Capped>{[["Descent",descentBeta(route)]].filter(x=>x[1]).map(x=><div key={x[0]} style={{background:C.card,borderRadius:10,padding:"10px 12px",marginBottom:8,border:`1px solid ${C.border}`}}><div style={{fontSize:12,fontWeight:700,color:C.blue,marginBottom:5}}>{x[0]}</div>{splitParagraphs(x[1]).map((p,i)=><p key={i} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:i===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}</div>)}</Capped></div>:(route.discipline==="bouldering"?null:<EmptySection title="DESCENT" what="No descent recorded" why="Nothing says how you get off this route — and on many climbs the way down is the committing part." cta="Describe the descent" onFix={()=>{openFix("descentText");}}/>)}{/* The rappel table and its prose/count summary, immediately after the descent they belong
     to. Both were on Overview; keeping them adjacent is what matters — see the note where
     they used to sit. */}
