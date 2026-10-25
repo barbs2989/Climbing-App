@@ -19,6 +19,7 @@ import { useState } from "react";
 import { C } from "../ClimbMatchCore.jsx";
 import { fileAppFeedback, useAppFeedbackQueue, useAppRatingSummary, setAppFeedbackStatus } from "./db.js";
 import pkg from "../package.json";
+import LoadingRows from "../src/components/LoadingRows.tsx";
 
 export const APP_VERSION = pkg.version;
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -111,7 +112,7 @@ export function RateForm({ uid, onFeedback }) {
   </div>;
   return <form onSubmit={(e) => { e.preventDefault(); send(); }} aria-label="Rate ClimbMatch">
     {store ? <>
-      <a href={store.url} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: 46, padding: 12, background: C.blueSolid, color: "#fff", borderRadius: 11, fontSize: 14, fontWeight: 700, textDecoration: "none", boxSizing: "border-box" }}>{"Rate us on " + store.name}</a>
+      <a href={store.url} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: 46, padding: 12, background: C.blueSolid, color:C.onSolid, borderRadius: 11, fontSize: 14, fontWeight: 700, textDecoration: "none", boxSizing: "border-box" }}>{"Rate us on " + store.name}</a>
       <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, margin: "10px 0 4px" }}>{"A rating on " + store.name + " helps other climbers find ClimbMatch. Or rate us here — that one comes only to the team."}</div>
     </> : <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.55, marginBottom: 4 }}>How is ClimbMatch working for you? Your rating goes straight to the ClimbMatch team.</div>}
     <div role="radiogroup" aria-label="Your rating, out of 5 stars" onKeyDown={key} style={{ display: "flex", justifyContent: "center", gap: 4, margin: "10px 0 2px" }}>
@@ -151,7 +152,7 @@ export function AppFeedbackQueue({ notify }) {
   };
   return <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
     <div style={{ fontSize: 12.5, color: sum.error ? C.red : C.textSub, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", lineHeight: 1.5 }}>{summary}</div>
-    {isLoading ? <div style={{ fontSize: 12.5, color: C.textMuted, padding: "10px 2px" }}>Loading feedback…</div>
+    {isLoading ? <LoadingRows C={C} label="Loading feedback…" style={{padding: "10px 2px"}}/>
       : error ? <div style={{ fontSize: 12.5, color: C.red, padding: "10px 2px" }}>{"Couldn't load feedback — " + ((error && error.message) || "try again") + ". Do not read this as 'no feedback'."}</div>
       : !data || !data.length ? <div style={{ fontSize: 12.5, color: C.textMuted, padding: "10px 2px" }}>No unread feedback.</div>
       : data.map((r) => {
@@ -165,7 +166,7 @@ export function AppFeedbackQueue({ notify }) {
           {r.message ? <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 6, lineHeight: 1.45, whiteSpace: "pre-wrap" }}>{r.message}</div> : null}
           <div style={{ fontSize: 12, color: C.textMuted, marginTop: 6 }}>{[r.platform, r.app_version ? "v" + r.app_version : null, r.reply_to ? "Reply to " + r.reply_to : "No address to reply to"].filter(Boolean).join(" · ")}</div>
           <div style={{ display: "flex", gap: 7, marginTop: 9, flexWrap: "wrap" }}>
-            {mail ? <a href={mail} style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.blueDim, background: C.blueBg, color: "#fff", fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Reply by email</a> : null}
+            {mail ? <a href={mail} style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.blueDim, background: C.blueBg, color:C.onSolid, fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Reply by email</a> : null}
             <button disabled={busy === r.id} onClick={() => done(r)} style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 12.5, fontWeight: 600, cursor: busy === r.id ? "default" : "pointer" }}>{busy === r.id ? "Working…" : "Mark as read"}</button>
           </div>
         </div>;

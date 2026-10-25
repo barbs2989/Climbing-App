@@ -60,7 +60,7 @@ export function AppealSheet({ target, busy, onClose, onSubmit }) {
   const [text, setText] = useState("");
   const isAccount = target && target.kind === "account";
   const what = isAccount ? "your account’s suspension" : (target && target.label) || "this removal";
-  return <div onClick={busy ? undefined : onClose} tabIndex={-1} onKeyDown={e => { if (e.key === "Escape" && !busy) onClose(); }} role="dialog" aria-label={"Appeal " + what} aria-modal="true" style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.85)", zIndex: 1150, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "16px 12px", overflowY: "auto", overscrollBehavior: "contain" }}>
+  return <div onClick={busy ? undefined : onClose} tabIndex={-1} onKeyDown={e => { if (e.key === "Escape" && !busy) onClose(); }} role="dialog" aria-label={"Appeal " + what} aria-modal="true" style={{ position: "fixed", inset: 0, background:C.scrimStrong, zIndex: 1150, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "16px 12px", overflowY: "auto", overscrollBehavior: "contain" }}>
     <div onClick={e => e.stopPropagation()} style={{ background: C.surface, borderRadius: 18, width: "100%", maxWidth: 420, border: "1px solid " + C.border, overflow: "hidden" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, padding: "14px 16px", borderBottom: "1px solid " + C.border }}>
         <div style={{ flex: 1, minWidth: 0 }}>

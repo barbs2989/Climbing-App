@@ -52,16 +52,16 @@ export default function AddArea({ parent, C, onClose, onSubmit, onOpenArea }) {
     setBusy(false);
   };
 
-  return createPortal(<div role="dialog" aria-modal="true" aria-label={"Add an area to " + (p.name || "this area")} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.85)", zIndex: 100000, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "72px 12px 32px", overflowY: "auto", overscrollBehavior: "contain" }}>
+  return createPortal(<div role="dialog" aria-modal="true" aria-label={"Add an area to " + (p.name || "this area")} style={{ position: "fixed", inset: 0, background:C.scrimStrong, zIndex: 100000, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "72px 12px 32px", overflowY: "auto", overscrollBehavior: "contain" }}>
     <div style={{ background: C.surface, borderRadius: 18, width: "100%", maxWidth: 460, border: "1px solid " + C.border, overflowY: "auto", overscrollBehavior: "contain", maxHeight: "92vh", display: "flex", flexDirection: "column" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 16px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}><div style={{ fontSize: 16, fontWeight: 700, color: C.text }}>{sent ? "Thanks for contributing" : "Add an area"}</div><button onClick={onClose} aria-label="Close" style={POP_CLOSE}>{"✕"}</button></div>
       {sent ? <div style={{ padding: 16 }}>
         <div style={{ fontSize: 40, textAlign: "center", marginBottom: 8 }}>{"✓"}</div>
         <div style={{ textAlign: "center", fontWeight: 700, fontSize: 15, color: C.text, marginBottom: 12 }}>{nm + " sent for review"}</div>
         <div style={{ background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 11, padding: "11px 13px", fontSize: 12.5, color: C.text, lineHeight: 1.55, marginBottom: 12 }}>{"Every new area is checked before it shows. Once it’s live under " + (p.name || "its area") + ", you can add its climbs."}</div>
-        <button onClick={onClose} style={{ ...BTN, width: "100%", background: C.blueSolid, color: "#fff", border: "none" }}>Done</button>
+        <button onClick={onClose} style={{ ...BTN, width: "100%", background: C.blueSolid, color:C.onSolid, border: "none" }}>Done</button>
       </div> : <div style={{ minHeight: 0, padding: 16, overflowY: "auto", overscrollBehavior: "contain", flex: 1 }}>
-        <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55, background: C.card, border: "1px solid " + C.border, borderRadius: 11, padding: "10px 12px", marginBottom: 14 }}>{"A new crag, peak or area inside "}<b>{p.name || "this area"}</b>{". It’s checked before it shows on the page."}</div>
+        <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", marginBottom: 14 }}>{"A new crag, peak or area inside "}<b>{p.name || "this area"}</b>{". It’s checked before it shows on the page."}</div>
 
         <div style={{ marginBottom: 14 }}>
           <div style={lbl}>Name</div>

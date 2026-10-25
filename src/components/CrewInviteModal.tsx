@@ -32,7 +32,7 @@ export default function CrewInviteModal({climber,route,onClose,onSend}: CrewInvi
   const suggested="Hi "+first+", want to join my crew for "+route.name+"? "+(route.grade?("It’s "+route.grade+". "):"")+"Looking for a solid, safety-minded partner — let me know!";
   const [note,setNote]=useState("");
   const MAX=300;
-  return <div onClick={onClose} role="dialog" aria-modal="true" aria-label="Invite to crew" style={{position:"fixed",inset:0,zIndex:80,background:"rgba(0,0,0,0.62)",display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
+  return <div onClick={onClose} role="dialog" aria-modal="true" aria-label="Invite to crew" style={{position:"fixed",inset:0,zIndex:80,background:C.scrim,display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
     <div onClick={e=>e.stopPropagation()} style={{background:C.surface,borderRadius:"18px 18px 0 0",border:"1px solid "+C.border,width:"100%",maxWidth:520,padding:18,boxShadow:"0 -10px 40px rgba(0,0,0,0.5)",maxHeight:"90%",overflowY:"auto",overscrollBehavior:"contain"}}>
       <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:13}}>
         <Av src={c.avatar} size={46} online={c.online}/>
@@ -54,7 +54,7 @@ export default function CrewInviteModal({climber,route,onClose,onSend}: CrewInvi
       </div>
       <div style={{display:"flex",gap:12}}>
         <button onClick={onClose} style={{flex:"0 0 auto",padding:"12px 17px",background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:12,fontSize:14,fontWeight:600,cursor:"pointer"}}>Cancel</button>
-        <button onClick={()=>onSend(note.trim())} style={{...BTN_LG,flex:1,background:C.blueSolid,color:"#fff",border:"none"}}>{note.trim()?"Send invite":"Send without note"}</button>
+        <button onClick={()=>onSend(note.trim())} style={{...BTN_LG,flex:1,background:C.blueSolid,color:C.onSolid,border:"none"}}>{note.trim()?"Send invite":"Send without note"}</button>
       </div>
       <div style={{fontSize:12,color:C.textMuted,textAlign:"center",marginTop:11,lineHeight:1.5}}>{first} can accept or decline your invite.</div>
     </div>

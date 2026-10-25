@@ -45,7 +45,7 @@ export default function StartCrewSheet({ payload, uid, onClose, onStart, notify 
     if (!canStart) { notify && notify(!area ? "Pick an area first" : "Pick what the session is — sport, trad, bouldering…"); return; }
     onStart && onStart({ kind: "area", id: area.id, disc, name: area.name }, partners, { date: date || null, note: note.trim(), cap: Math.max(2, Math.min(12, Number(cap) || 4)) });
   };
-  return createPortal(<div onClick={onClose} role="dialog" aria-label="Start a crew" aria-modal="true" style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.85)", zIndex: 1200, overflowY: "auto", overscrollBehavior: "contain", display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "12px 8px" }}>
+  return createPortal(<div onClick={onClose} role="dialog" aria-label="Start a crew" aria-modal="true" style={{ position: "fixed", inset: 0, background:C.scrimStrong, zIndex: 1200, overflowY: "auto", overscrollBehavior: "contain", display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "12px 8px" }}>
     <div onClick={(e) => e.stopPropagation()} style={{ background: C.surface, borderRadius: 18, width: "100%", maxWidth: 440, border: "1px solid " + C.border, overflow: "hidden" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 16px", borderBottom: "1px solid " + C.border }}><div style={{ color: C.text, fontSize: 17, fontWeight: 700, borderLeft: "3px solid " + C.blue, paddingLeft: 9 }}>{area ? "Start a crew at " + area.name : "Start a crew at an area"}</div><button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div>
       <div style={{ padding: "12px 14px", maxHeight: "76vh", overflowY: "auto", overscrollBehavior: "contain" }}>
