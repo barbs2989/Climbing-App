@@ -46,7 +46,7 @@ const GUARD = "check:bottom-panels";
 const DECLARED = [
   {
     style: 'position:"fixed",left:0,right:0,bottom:0',
-    file: "ClimbMatchCore.jsx",
+    file: "src/components/PolicyUpdateNotice.tsx",
     why: "PolicyUpdateNotice — non-dismissible by design, so it MUST reserve space; #appscroll's paddingBottom is the reservation",
     reserves: true,
   },

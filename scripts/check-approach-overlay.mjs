@@ -58,6 +58,17 @@ const rt = { ...route, timing: { approachTimeHrs: 5, summitTimeHrs: 9, totalHrs:
 const bt = applyApproach(rt, { key: "b", index: 1, variant: { name: "B", trip: { approachLogistics: { trailhead: "B" } } } }, null);
 check(bt.timing && bt.timing.summitTimeHrs === 9 && bt.timing.approachTimeHrs === undefined && bt.timing.totalHrs === undefined && bt.timing.recommendedStart === undefined && bt.timing.sectionBreakdown === undefined, "a trailhead way in with no times must drop the stored way's approach hours, total, start and legs — and keep the climb's own time");
 check(b.pitches === 3 && b.grade === "5.3", "the climb itself must be untouched");
+/* KNOWN HAZARDS follow the pick: a way in with its own hazard lists replaces the row's, a way in with
+   none keeps the row's, and the stored main way in keeps its own. Sulphide's crevasses never show
+   under a Fisher Chimneys pick (the Shuksan SE Ridge defect). */
+const hz = { ...route, hazards: ["ROW crevasses"], objHaz: ["crevasses"], approachVariants: [{ name: "A", primary: true, trip: { approachLogistics: { trailhead: "A" } }, hazards: ["A rockfall"], objHaz: ["rockfall"] }, { name: "B", trip: { approachLogistics: { trailhead: "B" } }, hazards: ["B loose rock"], objHaz: [] }, { name: "C", trip: { approachLogistics: { trailhead: "C" } } }] };
+const ho = approachOptions(hz);
+const hb = applyApproach(hz, ho.find((o) => o.variant.name === "B"), null);
+check(hb.hazards.join() === "B loose rock" && Array.isArray(hb.objHaz) && !hb.objHaz.length, "a picked way in's own hazards must replace the row's — no other way in's show");
+const hc = applyApproach(hz, ho.find((o) => o.variant.name === "C"), null);
+check(hc.hazards.join() === "ROW crevasses", "a way in with no hazard list of its own keeps the row's, unchanged");
+const hA = applyApproach(hz, ho.find((o) => o.variant.name === "A"), null);
+check(hA.hazards.join() === "A rockfall" && hA.objHaz.join() === "rockfall", "the stored main way in's own list must be read too");
 for (const k of APPROACH_OWNED_KEYS) check(k in b, `owned key ${k} must be set (to a value or empty) by every linked pick`);
 const rc = { ...route, bivy: [{ name: "A camp" }, { name: "B camp" }, { name: "Shared camp" }], approachVariants: [{ name: "From A", primary: true, camps: ["A camp", "Shared camp"] }, route.approachVariants[1]] };
 const ac = applyApproach(rc, approachOptions(rc)[0], null);

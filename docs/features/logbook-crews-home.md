@@ -7,7 +7,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 ## 1. What it does today
 - **Logbook > Objectives / Saved**: `ListsManager` (`lib/ListsManager.jsx`) holds the objectives (wishlist) and saved lists. The Objectives filter
   chips, in order: **Alpine, Mountaineering, Sport, Trad, Aid, Ice & Mixed, Boulder, Scrambling** — Alpine leads, and alpine,
-  mountaineering and aid are each their own chip rather than folded into Alpine or Trad (#2409, then this split). Saved no longer repeats a "Pinned states" card;
+  mountaineering and aid are each their own chip rather than folded into Alpine or Trad (#2409, then this split). A route with a 5.x grade is never on the Mountaineering chip, whatever its discipline list says (`rDiscs`). Saved no longer repeats a "Pinned states" card;
   Home already shows it (#2408).
 - **Logbook > Saved filter**: chips **All · Routes · Peaks · Areas · Itineraries · Searches · Offline** (`savedKind`, default All) show one kind of saved thing at a time; opening Saved from the Menu or Home resets it to All.
 - **Logbook > Saved > Searches** (2026-10-24): the Route finder's *Save search* (`RouteFinderPanel` in `lib/DbAreaBrowser.jsx`) writes a `saved_searches` row whose query is `{kind:"finder", q, filters, loc}`, named from the words, the applied filter chips and the area. The finder's *N saved* list, this card and the Menu's *Saved searches · N* all read `useMySavedSearches`. Tapping a search here calls `openSavedSearch`, which sets `finderJump`; `DbAreaBrowser` (`jumpToFinderReq`) goes to the saved area and opens the finder with the search's words and filters. A guest's *Save search* opens sign-in. Before this the finder kept searches in its own React state, so none outlived the finder.
