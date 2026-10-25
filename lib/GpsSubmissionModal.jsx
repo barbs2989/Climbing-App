@@ -265,7 +265,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
             {/* No turnaround is promised: a person reviews tracks when they can, and nothing measures or enforces 24-48 hours. */}<p style={{...styles.text}}>{crag ? 'Your trail to the crag is waiting for a person to review it.' : 'Your GPS track is waiting for a person to review it.'}</p>
             {/* The score rates a RECORDING (point density, spread); a traced line has neither, so it shows none. */}{drawing ? null : <div style={{...styles.scoreBox}}>
               <div style={{fontSize: '18px', fontWeight: 'bold', color: C.accent}}>
-                Quality Score: {qualityScore}/100
+                Quality score: {qualityScore}/100
               </div>
             </div>}
             <p style={{...styles.textSmall, color: C.text70}}>
@@ -412,7 +412,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
         {!drawing && qualityScore !== null && coordinates.trim().length > 0 && (
           <div style={{...styles.qualityBox, borderColor: qualityScore >= 70 ? C.success : C.warning}}>
             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px'}}>
-              <span>Quality Score</span>
+              <span>Quality score</span>
               <span style={{fontSize: '18px', fontWeight: 'bold', color: qualityScore >= 70 ? C.success : C.warning}}>
                 {qualityScore}/100
               </span>

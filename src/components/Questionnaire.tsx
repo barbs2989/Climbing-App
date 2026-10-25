@@ -21,7 +21,7 @@ export default function Questionnaire({onComplete}: QuestionnaireProps){
   const [step,setStep]=useState(0),[risk,setRisk]=useState<string | null>(null),[ans,setAns]=useState<Record<string, number>>({});
   const total=PRE_QS.length+1,pct=Math.round((step/total)*100);
   if(step===0)return <div>
-    <div style={{background:C.blueBg,borderRadius:12,padding:"12px 14px",marginBottom:16,border:`1px solid ${C.blueDim}`}}><div style={{fontSize:14,fontWeight:700,color:C.blue,marginBottom:4}}>Pre-Climb Questionnaire</div><div style={{fontSize:12,color:C.textSub,lineHeight:1.6}}>Your answers are shared anonymously with the group to surface alignment issues. No one sees your exact answers — only group-level flags. This removes social pressure.</div></div>
+    <div style={{background:C.blueBg,borderRadius:12,padding:"12px 14px",marginBottom:16,border:`1px solid ${C.blueDim}`}}><div style={{fontSize:14,fontWeight:700,color:C.blue,marginBottom:4}}>Pre-climb questionnaire</div><div style={{fontSize:12,color:C.textSub,lineHeight:1.6}}>Your answers are shared anonymously with the group to surface alignment issues. No one sees your exact answers — only group-level flags. This removes social pressure.</div></div>
     <div style={{marginBottom:10,background:C.surface,borderRadius:8,overflow:"hidden",height:6}}><div style={{width:`${pct}%`,height:"100%",background:C.blueSolid}}/></div>
     <div style={{fontSize:12,color:C.textMuted,marginBottom:14}}>Step {step+1} of {total}</div>
     <div style={{fontSize:15,fontWeight:700,marginBottom:4}}>What is your risk tolerance?</div>
