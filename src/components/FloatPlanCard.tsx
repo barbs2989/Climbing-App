@@ -1,4 +1,5 @@
 import { C } from "../../ClimbMatchCore.jsx";
+import Lbl from "./Lbl.tsx";
 
 /** A float plan read back out of a chat message by `parseFloatPlanText`. Empty fields are "". */
 export interface ParsedFloatPlan {
@@ -56,7 +57,7 @@ export default function FloatPlanCard({ plan, mine, onSave }: FloatPlanCardProps
         <div style={{ marginTop: 7, fontSize: 12.5, color: C.textSub, lineHeight: 1.45, whiteSpace: "pre-wrap", wordBreak: "break-word" }}>{plan.notes}</div>
       ) : null}
       {plan.coords ? (
-        <div style={{ marginTop: 7, fontSize: 12, color: C.textMuted }}>{"📍 " + plan.coords.lat.toFixed(4) + ", " + plan.coords.lng.toFixed(4)}</div>
+        <div style={{ marginTop: 7, fontSize: 12, color: C.textMuted }}>{<Lbl s={"📍 " + plan.coords.lat.toFixed(4) + ", " + plan.coords.lng.toFixed(4)} />}</div>
       ) : null}
       {!mine && onSave ? (
         <button

@@ -88,7 +88,7 @@ for (const p of pairs) if (!emitted.has(p.canonical)) emitted.set(p.canonical, p
 const orphans = [...emitted].filter(([c]) => !styled.has(c));
 if (orphans.length) {
   for (const [c, eg] of orphans) {
-    bad(`WP_TYPE_MAP emits "${c}" (e.g. from "${eg}") but WP_STYLE has no entry — it renders the fallback 📍 in the list and a grey dot on the map`);
+    bad(`WP_TYPE_MAP emits "${c}" (e.g. from "${eg}") but WP_STYLE has no entry — it renders the fallback ○ in the list and a grey dot on the map`);
   }
 } else ok(`all ${emitted.size} canonical types WP_TYPE_MAP can emit have a WP_STYLE entry`);
 
@@ -371,8 +371,10 @@ export function render(route, tab) {
     const missing = counts.filter(([, , c]) => c < 2);
     if (missing.length) bad(`rendered a route with waypoints but these pins are missing a surface: ${missing.map(([n, , c]) => `${n} (${c}/2)`).join(", ")} — expected one in the waypoint list AND one in the map legend`);
     else ok(`all ${want.length} pins render from their RAW spellings, on both the list and the legend`);
-    if (html.includes("📍")) bad("the fallback 📍 still renders — a waypoint type is reaching the screen unstyled");
-    else ok("no fallback 📍 anywhere in the rendered route");
+    /* The fallback was 📍 until polish round 3 (the app draws no emoji, check:no-emoji); it is now
+       "○", which occurs nowhere else in app source, so a hit is still an unstyled waypoint. */
+    if (html.includes("○")) bad("the fallback ○ still renders — a waypoint type is reaching the screen unstyled");
+    else ok("no fallback ○ anywhere in the rendered route");
   }
   /* A CRAG route (trad/sport/bouldering, not on a peak) carries no WAYPOINTS list and no "What
      to expect" card — a product decision, and the probe above is alpine for that reason. The

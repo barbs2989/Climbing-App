@@ -1,6 +1,7 @@
 import { createPortal } from "react-dom";
 import { C, REACTIONS } from "../../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "../../lib/popupChrome.js";
+import ActionIcon from "./ActionIcon.tsx";
 
 export interface ReactionPickerProps {
   /** Called with the reaction's key (`REACTIONS[].k`). */
@@ -10,7 +11,7 @@ export interface ReactionPickerProps {
 
 /**
  * The reaction sheet: a bottom sheet over a scrim listing every reaction in `REACTIONS` as a 4-column
- * grid of emoji + label buttons. Portalled to document.body like every other overlay; the scrim and the
+ * grid of buttons: the reaction's line icon (when it has one) over its word — the app draws no emoji. Portalled to document.body like every other overlay; the scrim and the
  * ✕ both close it. Reads `C` and `REACTIONS` at render time.
  */
 export default function ReactionPicker({ onPick, onClose }: ReactionPickerProps) {
@@ -25,8 +26,8 @@ export default function ReactionPicker({ onPick, onClose }: ReactionPickerProps)
           {REACTIONS.map(function (r) {
             return (
               <button key={r.k} onClick={() => onPick(r.k)} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4, padding: "10px 4px", borderRadius: 12, border: "1px solid " + C.border, background: C.surface, cursor: "pointer" }}>
-                <span style={{ fontSize: 22, lineHeight: 1 }}>{r.e}</span>
-                <span style={{ fontSize: 10, fontWeight: 700, color: C.textSub, textAlign: "center" }}>{r.l}</span>
+                {r.i ? <span aria-hidden="true" style={{ display: "flex" }}><ActionIcon name={r.i} size={20} color={C.blue} /></span> : null}
+                <span style={{ fontSize: 11.5, fontWeight: 700, color: C.textSub, textAlign: "center" }}>{r.l}</span>
               </button>
             );
           })}

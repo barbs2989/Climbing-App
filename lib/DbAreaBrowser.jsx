@@ -23,6 +23,7 @@ import { ScreenHero } from "./ScreenHero";
 import { AboutCard, AreaFactsCard, ClimbsChart, GradeSpread, PendingAreaEdits } from "./AreaPageSections";
 import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_LINE, NO_PARKING_PIN_BUT_NOTE_LINE } from "./areaChrome";
 import Chevron from "../src/components/Chevron.tsx";
+import ActionIcon from "../src/components/ActionIcon.tsx";
 
 // Grade for a compact row. Two things happen inside displayGrade(): a qualifier carried inline
 // ("Class 3 (short 4th-class crux)") is dropped, and the route page's Composite Grade panel shows
@@ -1732,7 +1733,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
       {/* WHERE AM I, on the map itself, as the route map has it: bottom-right, above the tile
           credit, in full screen too. It used to be a full-width button above the map, which full
           screen hid. */}
-      <button onClick={locate} disabled={locating} aria-label="Show my location on the map" style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{"📍 " + locateLabel(me, "Me")}</button>
+      <button onClick={locate} disabled={locating} aria-label="Show my location on the map" style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}><span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><ActionIcon name="pin" size={14} color="currentColor" />{locateLabel(me, "Me")}</span></button>
     </div>
   );
   // The tapped circle's areas, nearest the middle of the map first.

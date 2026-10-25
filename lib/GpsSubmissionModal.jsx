@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { parseGpxXml, parseCoordinateList, validateGpxQuality, calculateQualityScore, detectGpxFormat, formatCoordinatesForDisplay } from './gpxParser'
 import { POP_CLOSE } from "./popupChrome.js";
 import TrailDrawMap from './TrailDrawMap'
+import ActionIcon from '../src/components/ActionIcon.tsx'
 
 const C = {
   bg: '#1a1a1a',
@@ -354,7 +355,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
                   id="gpxFileInput"
                 />
                 <label htmlFor="gpxFileInput" style={{...styles.uploadLabel}}>
-                  <div style={{fontSize: '24px', marginBottom: '8px'}}>📁</div>
+                  <div aria-hidden="true" style={{display: 'flex', justifyContent: 'center', marginBottom: '8px'}}><ActionIcon name="doc" size={24} color={C.text70} /></div>
                   <div>Click to select .gpx file</div>
                   <div style={{fontSize: '12px', color: C.text70}}>{dragOver ? 'Drop the .gpx to load it' : 'or drag and drop'}</div>
                 </label>
@@ -421,7 +422,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
               <div style={{fontSize: '13px', color: C.text70}}>
                 {validationIssues.map((issue, i) => (
                   <div key={i} style={{marginBottom: '4px', paddingLeft: '4px'}}>
-                    ⚠ {issue}
+                    {issue}
                   </div>
                 ))}
               </div>
