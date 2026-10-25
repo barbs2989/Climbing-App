@@ -34803,3 +34803,50 @@ Standard Route; North (Gunsight) Peak's West Face; West Twin Needle's South Rout
 
 2 confirmed errors fixed, 0 flagged for human review (new), 6 clean.
 `last_processed_id` advances to `wa_west_twin_needle_south_route`.
+
+## 2026-10-25 — Pass 7, Batch 465 (pass complete)
+
+Eight routes across six peaks, the tail end of the id-ascending scope: White
+Mountain's Scramble (Olympics); Whitehorse Mountain's Northwest Shoulder; Winchester
+Mountain's South Trail/Lookout Route; Witches Tower's Northwest Buttress, South Face,
+Southwest Corner and West Buttress; Wolframite Mountain's Standard Scramble. Querying
+`id > wa_wolframite_mountain_scramble` in scope returned zero rows, so this batch
+closes out pass 7; the next run starts pass 8 from the beginning.
+
+**Fixed (1), SQL in `audits/sql/2026-10-25-batch-465.sql`:**
+- `wa_whitehorse_mountain` (area) / `wa_whitehorse_mountain_nw_shoulder` (route):
+  elevation 6851/6852 ft → 6840 ft. Wikipedia's infobox (6,840+ ft, NGVD 29),
+  SummitPost (6,840 ft) and Living Wilderness (6,840 ft) all converge on the same
+  figure; no source found supports 6851 or 6852. The route's own FA credit (Nels
+  Bruseth, 1909) is independently confirmed by the same Wikipedia article and left
+  unchanged.
+
+**Flagged for human review (2):**
+- `wa_witches_tower_northwest_buttress`: FA "Al Givler, Jerry Barnard, Jim McCarthy,
+  and Carla Firey, June 1975" could not be confirmed or contradicted — Wikipedia,
+  SummitPost, Mountain Project, Peakbagger, Wenatchee Outdoors and an AAJ search all
+  come up empty on this specific credit.
+- `wa_witches_tower_west_buttress`: same problem for its FA, "Charles Sink and Eric
+  Gerber, July 4, 1971" — not found in any reachable source. Both are plausible as
+  print-guidebook-only sourcing (e.g. Beckey's Cascade Alpine Guide) rather than
+  errors; left for a human with guidebook access to check.
+
+**Noted, not flagged:**
+- `wa_wolframite_mountain_scramble`'s own `rope_note` text says "8137ft summit" while
+  `high_point_ft`/`overview` say 8,136 ft. External sources split the same way
+  (SummitPost/WTA/CountryHighPoints: 8,137 ft; PeakVisor: 8,136 ft), and the one
+  meters figure everyone agrees on (2480 m) rounds to 8136.48 ft — so neither number
+  is clearly wrong. Not fixed; picking a side of a 1-ft, source-level disagreement
+  isn't a confirmed error.
+
+**Clean (5):**
+- `wa_white_mountain_olympics_scramble`: 6,378 ft and the 0.95 mi separation from
+  Mount La Crosse (6,417 ft) both match Wikipedia exactly.
+- `wa_winchester_mountain_south_trail`: 6,521 ft and its coordinates are already
+  correct, carried over from a prior pass's fix of a meters-into-feet entry error.
+- `wa_witches_tower_south_face`, `wa_witches_tower_southwest_corner`,
+  `wa_witches_tower_west_buttress`: 8,566 ft matches Wikipedia and SummitPost, and is
+  internally consistent across all three routes on the tower.
+
+1 confirmed error fixed, 2 flagged for human review (new), 5 clean.
+`last_processed_id` advances to `wa_wolframite_mountain_scramble` — **pass 7 complete.**
