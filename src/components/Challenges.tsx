@@ -12,7 +12,7 @@ import type { CuratedList } from "./TrackedLists.tsx";
 
 /** A climb log as the Logbook holds them (yours), or as a profile sheet hands another climber's; a route's own `activity` rows share the shape, with `user`. */
 export interface ChallengeLog {
-  routeId?: string | null;
+  routeId?: string | number | null;
   user?: string | null;
   date?: string | null;
   tickType?: string | null;
@@ -25,7 +25,6 @@ export interface ChallengeLog {
   photos?: unknown;
   photoAlts?: unknown;
   gpxName?: string | null;
-  [k: string]: unknown;
 }
 /** A route in a list's roster — or a PEAK posing as one (`_peak`, with `ft`), or a roster entry the catalog lacks (`_noOpen`). */
 export interface ListRoute {
@@ -105,7 +104,7 @@ export interface ChallengesProps {
   onOpenReport?: (asc: ChallengeAscent) => void;
   givenVouches?: ReadonlyArray<unknown> | null;
   catches?: ReadonlyArray<{ dir?: string | null }> | null;
-  routeById?: ((id: string) => ListRoute | undefined) | null;
+  routeById?: ((id: string | number) => ListRoute | null | undefined) | null;
   /** A peak objective is an AREA id: the caller jumps to the area browser. */
   onOpenArea?: (areaId: string, name?: string | null) => void;
   listsAt?: ListsAtStamp | null;

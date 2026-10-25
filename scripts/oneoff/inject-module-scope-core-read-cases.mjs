@@ -6,20 +6,22 @@
 import fs from "fs"; import { spawnSync } from "child_process"; import crypto from "crypto";
 const W = new URL("../../", import.meta.url).pathname;
 const sha = s => crypto.createHash("sha1").update(s).digest("hex");
-// VouchCard: core imports it back (FullProfile renders it) — the cycle the outage ran on.
+// Av: core imports it back (its chat and crew rows render it) — the cycle the outage ran on. (VouchCard carried these
+// cases until PR50 moved FullProfile, its only core renderer, out of core.)
 // TopContributors: imports core, but only ClimbMatch.jsx imports IT, so core has finished evaluating
 // before its body runs — the same read is safe there, and the guard must know the difference.
-const FILES = { vouch: W + "src/components/VouchCard.tsx", top: W + "src/components/TopContributors.tsx" };
+const FILES = { vouch: W + "src/components/Av.tsx", top: W + "src/components/TopContributors.tsx" };
 const orig = Object.fromEntries(Object.entries(FILES).map(([k, f]) => [k, fs.readFileSync(f, "utf8")]));
-const SIG = "export default function VouchCard({v}: VouchCardProps){";
+const SIG = "export default function Av({ src, size, online }: AvProps) {";
+const IMP = 'import { C, FALLBACK_AV, onImgErr } from "../../ClimbMatchCore.jsx";\n';
 const TOP_SIG = "export default function TopContributors(";
 const cases = [
   // [name, file key, find, replace, want exit (1 = must FAIL), text the failure must name]
-  ["the outage: a core CONST read above the component must FAIL", "vouch", SIG, "const HOIST = SKILLS;\n" + SIG, 1, "VouchCard.tsx"],
-  ["…and the failure names the binding", "vouch", SIG, "const HOIST = SKILLS;\n" + SIG, 1, "`SKILLS`"],
-  ["a core const read via `export default` must FAIL", "vouch", SIG, "export const HOIST = VOUCH_RATING_LABEL;\n" + SIG, 1, "VOUCH_RATING_LABEL"],
-  ["a hoisted FUNCTION export read at module scope must PASS", "vouch", SIG, "const HOIST = shortDate;\n" + SIG, 0, null],
-  ["a core read in a DEFAULT PARAMETER must PASS", "vouch", SIG, "export default function VouchCard({v}: VouchCardProps, _d = SKILLS){", 0, null],
+  ["the outage: a core CONST read above the component must FAIL", "vouch", SIG, "const HOIST = FALLBACK_AV;\n" + SIG, 1, "Av.tsx"],
+  ["…and the failure names the binding", "vouch", SIG, "const HOIST = FALLBACK_AV;\n" + SIG, 1, "`FALLBACK_AV`"],
+  ["a core const read via `export default` must FAIL", "vouch", SIG, "export const HOIST = C;\n" + SIG, 1, "`C`"],
+  ["a hoisted FUNCTION export read at module scope must PASS", "vouch", IMP, 'import { C, FALLBACK_AV, onImgErr, catOf } from "../../ClimbMatchCore.jsx";\nconst HOIST = catOf;\n', 0, null],
+  ["a core read in a DEFAULT PARAMETER must PASS", "vouch", SIG, "export default function Av({ src, size, online }: AvProps, _d = FALLBACK_AV) {", 0, null],
   ["the same read in a component core does NOT import back must PASS", "top", TOP_SIG, "const HOIST = C;\n" + TOP_SIG, 0, null],
   ["untouched, must PASS", null, null, null, 0, null],
 ];
