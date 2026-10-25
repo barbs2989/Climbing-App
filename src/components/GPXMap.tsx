@@ -42,6 +42,8 @@ export interface GPXMapProps {
   extraTracks?: ReadonlyArray<ExtraTrack> | null;
   /** The route's name, for the 3D view's header. */
   title?: string | null;
+  /** The point the elevation profile is on, [lat, lng]: a dot that moves along the track as the climber scrubs it. */
+  cursor?: readonly [number, number] | null;
 }
 /** One climber's recording drawn over the route: [lat, lng, ...] samples, its colour and its legend line. */
 export interface ExtraTrack { id: string; color: string; label: string; pts: ReadonlyArray<ReadonlyArray<number | null>> }
@@ -61,7 +63,7 @@ const escPinHtml = (t: unknown) => String(t == null ? "" : t).replace(/[&<>"]/g,
  * are `any` here, declared once in `src/types/leaflet-global.d.ts`. The body is core's, moved by
  * script; only types and narrowing (`track`, `pk`, `placed`) were added.
  */
-export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,derivedTrailhead,baseSpots,extraTracks,title}: GPXMapProps) {
+export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,derivedTrailhead,baseSpots,extraTracks,title,cursor}: GPXMapProps) {
   /* The ONE placement test, as a type predicate over core's wpPlaced() — every other test below goes
      through it (check:waypoint-placement scopes to this body and requires exactly that). */
   const placed = (w: Waypoint | null | undefined): w is PlacedWaypoint => wpPlaced(w);
@@ -198,6 +200,9 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
   /* The base layer is swapped IN PLACE rather than rebuilding the map (it used to sit in the deps above).
      The Snow layer's day stepper changes it once per tap, and a rebuild re-fitted the route every time. */
   useEffect(()=>{if(!mapRef.current)return;applyBaseLayer(mapRef.current,tileRef,baseLayer);},[baseLayer]);
+  /* The elevation profile's marker: its own effect, so a scrub moves one dot and never rebuilds the map. */
+  const cursorRef=useRef<LeafletAny>(null);const cLat=cursor?cursor[0]:null,cLng=cursor?cursor[1]:null;
+  useEffect(()=>{if(cursorRef.current){try{cursorRef.current.remove();}catch{/* the map it sat on was rebuilt */}cursorRef.current=null;}const map=mapRef.current;if(!map||!window.L||cLat==null||cLng==null)return;cursorRef.current=window.L.circleMarker([cLat,cLng],{radius:7,color:"#ffffff",weight:2,fillColor:C.blue,fillOpacity:1,interactive:false}).addTo(map);},[cLat,cLng,mapGen,ready]);
   const me=useFollowMe(mapRef,{C,zoom:16,onFix:(_f,first)=>{if(first)setLocatedOnce(true);}}),locate=me.locate,geoErr=me.err;
   useEffect(()=>{if(!mapRef.current)return;const t=setTimeout(()=>{try{mapRef.current.invalidateSize();}catch{/* the map is already gone */}},220);return ()=>clearTimeout(t);},[fullscreen]);
   /* Tapping a waypoint row below the map pans to that pin and opens its popup. `focusWp`
