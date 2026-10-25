@@ -11,6 +11,7 @@ import {
   CERT_TRACK_LABELS, DISCIPLINE_LABELS,
 } from "./db";
 import { POP_BACK } from "./popupChrome.js";
+import { INPUT } from "./buttonStyles.js";
 
 const CROSS_CUTTING = [["AIARE", "AIARE (avalanche)"], ["WFR", "WFR (Wilderness First Responder)"], ["other", "Other medical/safety cert"]];
 
@@ -124,7 +125,7 @@ export default function DbGuideApply({ onClose, notify, C }) {
     }
   };
 
-  const inp = { width: "100%", padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, boxSizing: "border-box" };
+  const inp = INPUT(C);
   const label = { fontSize: 13, fontWeight: 700, color: C.text, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 8, marginTop: 14, borderLeft: "3px solid " + C.blue, paddingLeft: 9 };
   const track = certTrackRows ? certTrackRows.filter(r => r.cert_track === certTrack).map(r => DISCIPLINE_LABELS[r.discipline] || r.discipline) : [];
 

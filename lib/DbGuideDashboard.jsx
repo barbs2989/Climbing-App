@@ -3,7 +3,7 @@
 // credential status only ever changes via admin review (Supabase Studio, Phase 1) or
 // the 12-month reconciliation RPC. Rendered only when USE_DB (see ClimbMatch.jsx's swap).
 import { useEffect, useState } from "react";
-import { BTN_SM } from "./buttonStyles.js";
+import { BTN_SM, INPUT } from "./buttonStyles.js";
 import { createPortal } from "react-dom";
 import { useSession } from "./auth";
 import {
@@ -48,7 +48,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
   const [replyId, setReplyId] = useState(null); const [replyText, setReplyText] = useState("");
 
   const card = { background: C.card, border: "1px solid " + C.border, borderRadius: 11, padding: "11px 13px", marginBottom: 9 };
-  const inp = { width: "100%", padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, boxSizing: "border-box" };
+  const inp = INPUT(C);
   const stTag = st => st === "verified" ? { t: "✓ Verified", c: C.green, b: C.greenBg, d: C.greenDim } : st === "pending" ? { t: "In review", c: C.amber, b: C.amberBg, d: C.amber } : st === "lapsed" ? { t: "Lapsed — resubmit", c: C.amber, b: C.amberBg, d: C.amber } : { t: "Rejected — resubmit", c: C.red, b: C.redBg, d: C.red };
 
   const verified = isGuideVerified(credentials || []);
@@ -121,7 +121,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
           <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
           <div><div style={{ fontSize: 15, fontWeight: 700 }}>Guide dashboard</div><div style={{ fontSize: 12, color: C.textSub }}>{"Status: " + profile.status + (newInquiries ? " · " + newInquiries + " new inquiries" : "")}</div></div>
         </div>
-        <div style={{ display: "flex", gap: 6, overflowX: "auto" }}>{SECTIONS.map(x => { const on = section === x[0]; return <button key={x[0]} onClick={() => setSection(x[0])} aria-current={on?"true":undefined} style={{ flexShrink: 0, padding: "6px 12px", borderRadius: 16, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>{x[1]}</button>; })}</div>
+        <div style={{ display: "flex", gap: 6, overflowX: "auto" }}>{SECTIONS.map(x => { const on = section === x[0]; return <button key={x[0]} onClick={() => setSection(x[0])} aria-current={on?"true":undefined} style={{ flexShrink: 0, padding: "6px 12px", borderRadius: 16, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.textSub, fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>{x[1]}</button>; })}</div>
       </div>
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "14px 16px 44px" }}>
         <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "14px 15px", marginBottom: 14 }}>
@@ -143,7 +143,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
                 <div style={{ minWidth: 0 }}>
                   <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text }}>{c.kind === "primary_track" ? CERT_TRACK_LABELS[c.cert_track] : c.cross_cutting_type}</div>
                   <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2 }}>{"No. " + c.cert_number + (c.issuing_org ? " · " + c.issuing_org : "")}</div>
-                  {dLeft != null && dLeft <= DAYS_TO_EXPIRY_WARNING ? <div style={{ fontSize: 11.5, color: C.amber, marginTop: 2 }}>{"Expires in " + dLeft + " days"}</div> : null}
+                  {dLeft != null && dLeft <= DAYS_TO_EXPIRY_WARNING ? <div style={{ fontSize: 11.5, color: C.amber, marginTop: 2 }}>{dLeft < 0 ? "Expired" : dLeft === 0 ? "Expires today" : "Expires in " + dLeft + (dLeft === 1 ? " day" : " days")}</div> : null}
                 </div>
                 <span style={{ flexShrink: 0, fontSize: 12, fontWeight: 700, color: tg.c, background: tg.b, border: "1px solid " + tg.d, borderRadius: 6, padding: "2px 7px" }}>{tg.t}</span>
               </div>
@@ -163,7 +163,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
           <div style={{ fontSize: 12.5, color: C.textSub, marginBottom: 11 }}>Booking requests from climbers. Accept to hold the date, then agree on price and dates directly with them.</div>
           {(inquiries || []).length ? inquiries.map(q => <div key={q.id} style={card}>
             <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-              {q.profiles && q.profiles.avatar ? <img src={photoThumb(q.profiles.avatar, 40)} alt="" style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover" }} /> : null}
+              {q.profiles && q.profiles.avatar ? <img src={photoThumb(q.profiles.avatar, 40)} alt="" onError={e => { e.currentTarget.style.visibility = "hidden"; }} style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover" }} /> : null}
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text }}>{q.objective || "Climbing inquiry"}</div>
                 <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2 }}>{publicNameOf(q.profiles) + " · " + (q.requested_dates || "flexible") + " · " + q.party_size + (q.party_size > 1 ? " climbers" : " climber")}</div>
@@ -173,7 +173,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
               {q.status !== "new" ? <span style={{ flexShrink: 0, fontSize: 12, fontWeight: 700, color: q.status === "accepted" ? C.green : C.textMuted, background: q.status === "accepted" ? C.greenBg : C.surface, border: "1px solid " + (q.status === "accepted" ? C.greenDim : C.border), borderRadius: 6, padding: "2px 7px" }}>{q.status === "accepted" ? "Accepted" : "Declined"}</span> : null}
             </div>
             {q.status === "new" ? <div style={{ display: "flex", gap: 12, marginTop: 9 }}>
-              <button onClick={() => setInqStatus(q.id, "accepted")} style={{ flex: 1, background: C.green, color: "#04110a", border: "none", borderRadius: 8, padding: "7px 0", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Accept</button>
+              <button onClick={() => setInqStatus(q.id, "accepted")} style={{ flex: 1, background: C.green, color: C.onBright, border: "none", borderRadius: 8, padding: "7px 0", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Accept</button>
               <button onClick={() => setInqStatus(q.id, "declined")} style={{ flex: 1, background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "7px 0", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>Decline</button>
             </div> : null}
           </div>) : <div style={{ fontSize: 12.5, color: C.textMuted }}>{inqLoading ? "Loading inquiries…" : inqError ? "Couldn’t load your inquiries — check your connection and try again" : "No inquiries yet."}</div>}
@@ -185,7 +185,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 4 }}><span style={{ fontSize: 12.5, fontWeight: 700, color: C.text }}>{publicNameOf(r.profiles)}</span><span>{"★".repeat(r.rating)}</span></div>
             <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5 }}>{r.text}</div>
             {r.guide_reply ? <div style={{ marginTop: 8, background: C.surface, borderLeft: "2px solid " + C.blue, borderRadius: "0 8px 8px 0", padding: "7px 10px" }}><div style={{ fontSize: 12, color: C.blue, fontWeight: 700, marginBottom: 2 }}>Your reply</div><div style={{ fontSize: 12.5, color: C.textSub }}>{r.guide_reply}</div></div>
-              : replyId === r.id ? <div style={{ marginTop: 8 }}><textarea aria-label="Write a reply" value={replyText} onChange={e => setReplyText(e.target.value)} rows={2} placeholder="Write a reply..." style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} /><div style={{ display: "flex", gap: 8, marginTop: 6 }}><button onClick={() => postReply(r.id)} style={{ ...BTN_SM, background: C.blueSolid, color:C.onSolid, border: "none" }}>Post reply</button><button onClick={() => { setReplyId(null); setReplyText(""); }} style={{ background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "6px 12px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Cancel</button></div></div>
+              : replyId === r.id ? <div style={{ marginTop: 8 }}><textarea aria-label="Write a reply" value={replyText} onChange={e => setReplyText(e.target.value)} rows={2} placeholder="Write a reply…" style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} /><div style={{ display: "flex", gap: 8, marginTop: 6 }}><button onClick={() => postReply(r.id)} style={{ ...BTN_SM, background: C.blueSolid, color:C.onSolid, border: "none" }}>Post reply</button><button onClick={() => { setReplyId(null); setReplyText(""); }} style={{ background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "6px 12px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Cancel</button></div></div>
                 : <button onClick={() => { setReplyId(r.id); setReplyText(""); }} style={{ marginTop: 8, background: C.surface, border: "1px solid " + C.border, color: C.blue, borderRadius: 8, padding: "9px 12px", fontSize: 11.5, fontWeight: 700, cursor: "pointer" }}>Respond</button>}
           </div>) : <div style={{ fontSize: 12.5, color: C.textMuted }}>{revLoading ? "Loading reviews…" : revError ? "Couldn’t load your reviews — check your connection and try again" : "No reviews yet."}</div>}
         </div>}

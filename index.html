@@ -59,6 +59,11 @@
       /* Buttons: kill the 300ms tap delay + double-tap zoom, add press feedback */
       button { touch-action: manipulation; font-family: inherit; }
       button:not(:disabled):active { opacity: 0.82; transform: scale(0.97); }
+      /* A disabled button must LOOK disabled. 172 buttons take `disabled` and most (busy, form not
+         ready) set no style for it, so they read exactly like live ones. A button that styles its own
+         disabled look — a "Sent"/"Friends" confirmation sets cursor:default, a dimmed chip sets an
+         inline opacity (inline outranks this rule) — keeps it. */
+      button:disabled:not([style*="cursor: default"]):not([style*="cursor: not-allowed"]) { opacity: 0.5; cursor: not-allowed !important; }
       /* Smooth state changes: presses ease back, tab/selection colours & borders glide */
       button, a, input, select, textarea, [style*="cursor: pointer"] { transition: transform .09s ease, opacity .12s ease, background-color .16s ease, border-color .16s ease, color .15s ease, box-shadow .18s ease; }
       /* Tappable cards & chips (not just <button>) press in on tap. Matched by ROLE as well as
@@ -66,7 +71,7 @@
          cursor:pointer used to get no press feedback at all. An inline transform (a centring
          translate, a rotated chevron) is inline and so outranks this rule — it is never undone. */
       [style*="cursor: pointer"], [role="button"], [role="tab"], [role="switch"], [role="checkbox"], [role="option"], [role="menuitem"] { transition: transform .09s ease, opacity .12s ease, background-color .16s ease, border-color .16s ease, color .15s ease, box-shadow .18s ease; }
-      [style*="cursor: pointer"]:active, [role="button"]:not([aria-disabled="true"]):active, [role="tab"]:active, [role="switch"]:active, [role="checkbox"]:not([aria-disabled="true"]):active, [role="option"]:active, [role="menuitem"]:active { transform: scale(0.985); }
+      [style*="cursor: pointer"]:not(:disabled):active, [role="button"]:not([aria-disabled="true"]):active, [role="tab"]:active, [role="switch"]:active, [role="checkbox"]:not([aria-disabled="true"]):active, [role="option"]:active, [role="menuitem"]:active { transform: scale(0.985); }
       /* ...but NOT a map pin. Leaflet places each pin by rewriting its inline `transform` every pinch
          frame and after every zoom, and a Climbs-map pin is role="button" (keyboard-reachable), so the
          two rules above eased it 0.09s behind the map: pins wobbled while pinching and slid into place
