@@ -158,7 +158,7 @@ const pTxt = text(plan), nTxt = text(noCoord), coTxt = text(cragOv), cpTxt = tex
    is not matched and neither is a paragraph that merely says "drive here". */
 /* "Google Maps" / "Apple Maps" are CragLocationCard's pair: ONE destination offered in two apps,
    counted as one offer below (cragOffer), never as two destinations. */
-const DRIVE_LABEL = /^(?:Drive here|Directions to (?:trailhead|crag) \(Google Maps\)|Google Maps|Apple Maps)$/;
+const DRIVE_LABEL = /^(?:Directions to (?:trailhead|crag) \(Google Maps\)|Google Maps|Apple Maps)$/;
 const cragOffer = (html) => { const c = driveControls(html); return c.length === 2 && c.includes("Google Maps") && c.includes("Apple Maps"); };
 const driveControls = (html) => [...html.matchAll(/<(a|button)\b[^>]*>([^<]*)<\/\1>/g)]
   .map((m) => m[2].replace(/&amp;/g, "&").trim())
@@ -181,8 +181,8 @@ ok("both GETTING THERE panels, TrailheadCard and the APPROACH heading render, so
    Section 1b asserts that directly rather than leaving it implied. */
 for (const [n, html] of [["Plan tab", plan]]) {
   const c = driveControls(html);
-  if (c.length === 1) ok(`${n}: exactly one drive control (${JSON.stringify(c[0])})`);
-  else fail(`${n}: ${c.length} drive control(s) — ${JSON.stringify(c)}. One destination must be offered once.`);
+  if (cragOffer(html)) ok(`${n}: one drive offer, in two apps (Google Maps + Apple Maps to one destination)`);
+  else fail(`${n}: ${c.length} drive control(s) — ${JSON.stringify(c)}. One destination must be offered once, as the Google Maps + Apple Maps pair.`);
 }
 
 // ── 1b. one PAGE, one GETTING THERE — a crag says it once, on Overview ───────────────────────────
@@ -206,7 +206,7 @@ for (const [n, html] of [["a crag with plan content", cragDup], ["a crag with no
    two headings is the invariant. */
 const iGetting = pTxt.indexOf("GETTING THERE");
 const iApproach = pTxt.indexOf("APPROACH", iGetting);
-const iDrive = pTxt.indexOf("Drive here");
+const iDrive = pTxt.indexOf("Google Maps");
 if (iDrive > iGetting && iApproach > iGetting && iDrive < iApproach) ok("the Plan tab's control sits between GETTING THERE and APPROACH");
 else fail(`the drive control is not with GETTING THERE (GETTING THERE @${iGetting}, control @${iDrive}, APPROACH @${iApproach})`);
 
