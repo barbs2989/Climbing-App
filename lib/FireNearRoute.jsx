@@ -27,6 +27,7 @@
 import { useState } from "react";
 import { useFiresNear, NEAR_ROUTE_KM, fireLevel, fireColor, fmtAcres, fmtContained, fmtDiscovered } from "./fire";
 import { TILE_CREDIT } from "./mapKit";
+import Chevron from "../src/components/Chevron.tsx";
 
 const MI_PER_KM = 0.621371;
 
@@ -112,7 +113,7 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
             </span>
             <span style={{ display: "block", fontSize: 12, color: C.textSub }}>{summary}</span>
           </span>
-          <span aria-hidden="true" style={{ fontSize: 13, color: tone.c, fontWeight: 700, flexShrink: 0 }}>{open ? "▴" : "▾"}</span>
+          <span aria-hidden="true" style={{ display: "flex", flexShrink: 0 }}><Chevron open={open} size={15} color={tone.c} /></span>
         </button>
       </div>
 
@@ -209,7 +210,7 @@ function MapCard({ C, coord, ActionIcon, onOpen }) {
           <span style={{ display: "block", fontSize: 14, fontWeight: 800, color: C.blue }}>Open fire map</span>
           <span style={{ display: "block", fontSize: 11.5, color: C.textSub, lineHeight: 1.4 }}>Fire perimeters and red-flag warnings around this climb</span>
         </span>
-        <span aria-hidden="true" style={{ fontSize: 18, fontWeight: 700, color: C.blue }}>›</span>
+        <span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={16} color={C.textMuted}/></span>
       </span>
     </button>
   );

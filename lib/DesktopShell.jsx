@@ -5,6 +5,7 @@ import ActionIcon from "../src/components/ActionIcon.tsx";
 import { discLabel } from "./discLabels";
 import { usePlaceSearch, useProfilesByIds, useRouteSearch, useStates } from "./db.js";
 import { USE_DB } from "./supabase";
+import Chevron from "../src/components/Chevron.tsx";
 
 /* THE WEBSITE'S OWN PIECES (lib/wideLayout.js). Everything here renders only at 1024px and up — the
    phone app never mounts it. The top bar's search, the right rail's widgets and the site footer. */
@@ -147,7 +148,7 @@ export function WideRail({ upcoming, alerts, onOpenCal, onOpenAlerts, onFindPart
       }) : <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "2px 2px 4px" }}>No crew days agreed yet.<button onClick={onFindPartners} style={{ display: "block", marginTop: 8, padding: 0, border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Find partners ›</button></div>}
     </section>
     <section aria-labelledby="rail-alerts" style={CARD}>
-      <button id="rail-alerts" onClick={() => setAlertsOpen(o => !o)} aria-expanded={alertsOpen} style={{ ...SECTION, width: "100%", display: "flex", alignItems: "center", gap: 8, padding: 0, border: "none", background: "transparent", cursor: "pointer", textAlign: "left" }}>{unread.length ? <span aria-hidden="true" style={{ width: 7, height: 7, borderRadius: 4, background: C.blue, flexShrink: 0 }}/> : null}<span style={{ flex: 1 }}>{unread.length ? "Alerts · " + unread.length + " new" : "Alerts"}</span><span aria-hidden="true" style={{ color: C.blue, fontSize: 13 }}>{alertsOpen ? "▾" : "▸"}</span></button>
+      <button id="rail-alerts" onClick={() => setAlertsOpen(o => !o)} aria-expanded={alertsOpen} style={{ ...SECTION, width: "100%", display: "flex", alignItems: "center", gap: 8, padding: 0, border: "none", background: "transparent", cursor: "pointer", textAlign: "left" }}>{unread.length ? <span aria-hidden="true" style={{ width: 7, height: 7, borderRadius: 4, background: C.blue, flexShrink: 0 }}/> : null}<span style={{ flex: 1 }}>{unread.length ? "Alerts · " + unread.length + " new" : "Alerts"}</span><span aria-hidden="true" style={{ display: "flex" }}><Chevron open={alertsOpen} size={14} color={C.blue} /></span></button>
       {!alertsOpen ? null : <div style={{ marginTop: 6 }}>{unread.length ? unread.slice(0, 3).map(n => <button key={n.id} onClick={onOpenAlerts} style={{ ...ROW, alignItems: "flex-start" }}><span aria-hidden="true" style={{ width: 7, height: 7, marginTop: 6, borderRadius: 4, background: C.blue, flexShrink: 0 }}/><span style={{ fontSize: 13, lineHeight: 1.4, color: C.text, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{n.text}</span></button>) : <div style={{ fontSize: 13, color: C.textMuted, padding: "2px 2px 4px" }}>You’re all caught up.</div>}
       {alerts.length ? <button onClick={onOpenAlerts} style={{ marginTop: 4, padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>See all alerts ›</button> : null}</div>}
     </section>

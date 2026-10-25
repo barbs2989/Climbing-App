@@ -37,7 +37,7 @@ export interface ContributionsProps {
 
 /** YOUR CONTRIBUTIONS: climbs and areas you added, edits you suggested, each with its review status; a row opens what it changed. The backdrop is a mouse-only div by design (check:clickable baseline). */
 export default function Contributions({items,onClose,onOpenRoute,onOpenArea,session,routeById}: ContributionsProps){
-  const ST: Record<string, {lbl: string; icon: string; col: string; bg: string}>={review:{lbl:"Awaiting review",icon:"⚠",col:C.amber,bg:C.amberBg},community:{lbl:"Confirming",icon:"👥",col:C.blue,bg:C.blueBg},added:{lbl:"Added — live",icon:"✓",col:C.green,bg:C.greenBg},confirmed:{lbl:"You confirmed",icon:"✓",col:C.green,bg:C.greenBg},verified:{lbl:"Live & verified",icon:"✓",col:C.green,bg:C.greenBg},rejected:{lbl:"Not applied",icon:"✕",col:C.red,bg:C.redBg}};
+  const ST: Record<string, {lbl: string; icon: string; col: string; bg: string}>={review:{lbl:"Awaiting review",icon:"",col:C.amber,bg:C.amberBg},community:{lbl:"Confirming",icon:"",col:C.blue,bg:C.blueBg},added:{lbl:"Added — live",icon:"✓",col:C.green,bg:C.greenBg},confirmed:{lbl:"You confirmed",icon:"✓",col:C.green,bg:C.greenBg},verified:{lbl:"Live & verified",icon:"✓",col:C.green,bg:C.greenBg},rejected:{lbl:"Not applied",icon:"✕",col:C.red,bg:C.redBg}};
   const STATUS_ICON: Record<string, string>={review:"alert",community:"user",added:"check",confirmed:"check",verified:"check",rejected:"alert"};
   const uid=(USE_DB&&session&&session.user)?session.user.id:null;
   const dbMine=useMyContributions(uid);

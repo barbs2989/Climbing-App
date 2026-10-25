@@ -51,8 +51,8 @@ const CASES = [
     why: "0237's contact is owner-only and deliberately NOT fed to the crew float plan; the day it is, a crew can read it and the premise has moved" },
 
   { name: "plan-becomes-rendered", file: "lib/CrewCard.jsx", fires: true,
-    find: "{crew.floatPlan?\"✓ Float plan\":\"⚠ Set float plan\"}",
-    repl: "{crew.floatPlan?\"✓ Back by \"+crew.floatPlan.returnBy:\"⚠ Set float plan\"}",
+    find: "{crew.floatPlan?\"✓ Float plan\":\"Set float plan\"}",
+    repl: "{crew.floatPlan?\"✓ Back by \"+crew.floatPlan.returnBy:\"Set float plan\"}",
     expect: "a screen reads the stored crew float plan",
     why: "the day a crew is SHOWN the plan, \"your crew can see it\" becomes true — the other half of the premise, and a different repair from a settable contact" },
 

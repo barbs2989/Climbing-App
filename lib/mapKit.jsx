@@ -353,7 +353,7 @@ export function ViewToggle({ mode, onList, onMap, C }) {
   );
   return (
     <div style={{ display: "flex", gap: 3, background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: 3, marginBottom: 12 }}>
-      {seg("list", "☰ List", onList)}
+      {seg("list", "List", onList)}
       {seg("map", "⤢ Map", onMap)}
     </div>
   );

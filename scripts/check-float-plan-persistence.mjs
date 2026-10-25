@@ -121,7 +121,7 @@ else fail("the ready-to-send panel shows on an UNSAVED plan");
 
 // ---- 4. `checkedIn` likewise: losing it re-presents a party that has checked in as overdue.
 const inR = render({ plan: Object.assign({}, TYPED, { saved: true, checkedIn: true }), onPlan() {} });
-if (/Checked In Safe/.test(inR)) ok("a lifted `checkedIn` still shows as checked in");
+if (/Checked [Ii]n [Ss]afe/.test(inR)) ok("a lifted `checkedIn` still shows as checked in");
 else fail("`checkedIn` no longer reaches the panel");
 
 // ---- 5. THE UNCONTROLLED PATH MUST STILL WORK, or this breaks SafetyTab, the other call site.

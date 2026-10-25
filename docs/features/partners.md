@@ -37,7 +37,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 - **Rows**: real climbers render as `RealClimberRow` (match %, verified tick, shared objectives, and a "Listed at Hellgate · Sport · free Oct 18–19"
   line — "Listed across Utah" for an ancestor match); example climbers render as full cards
   (match %, shared objectives, "Likely free your date" badge, "Plan <route> together", Connect, message, mutuals).
-  On both, every fact about the climber is primary white (`C.text`), down to the stats chips and the *Full Profile & Vouches*
+  On both, every fact about the climber is primary white (`C.text`), down to the stats chips and the *Full profile & vouches*
   button at the bottom (owner, 2026-10-24: grey made the cards hard to read); grey (`C.textSub`) is kept only for a status note
   ("Scoring match…", "Not enough shared info…", "résumé private").
 - Blocked climbers are filtered from every list, on both id spaces (seed numbers, real uuids, compared as strings).
