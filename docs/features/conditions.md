@@ -63,4 +63,4 @@
 - Gauges may be on another stream; no wadeability verdict is given (`lib/streams.js`).
 - #2406 notes a full local build was killed for low memory; CI was the full run.
 
-The forecast carries no "read it yourself" or "sources can disagree" caveats (owner, 2026-10-15 #2425 and 2026-10-24): the only footer kept is the alpine hour-by-hour's measured station temperature error.
+The forecast carries no "read it yourself" or "sources can disagree" caveats (owner, 2026-10-15 #2425 and 2026-10-24): the only footer kept is the alpine hour-by-hour's measured station temperature error. Neither hour-by-hour section carries a how-to-read caption either (owner, 2026-10-24): the crag one's "At 2 PM / During 1–2 PM / Drag along a chart" box and the alpine one's "Key times for this day, then each hour at … Tap an hour, or step with ‹ ›" line are gone — each tile already says "at 2 PM" or "1–2 PM", and the alpine card states its height in its "Read at …" line.
