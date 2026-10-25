@@ -52,13 +52,14 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   - New York, 2026-10-21: 406 walls ordered (3,780 matched, 68 anchored, 102 unplaced), 25 climbs added, 11 adds refused by the
     duplicate trigger (all on near-duplicate walls of ours, e.g. "The Guides' Wall" beside "The Guides' Wall (Madame G's)"),
     21 for review, 6 walls skipped (2 shared, 3 with no area of ours, 1 split).
-  - **Whole-catalog run, 2026-10-21/22 — STOPPED by the owner partway through Utah** (it saturated the production
-    database: one REST write per route back to back, with retries piling on; the live app's reads 504'd). Done and
-    rewritten: New York, California, Oregon, New Hampshire, Colorado. Ordered, facts/prose pending: Quebec,
-    Kentucky. Partly ordered: Utah, Arizona, Washington, BC, Wyoming, Nevada, New Mexico, Idaho, Montana. Every
-    wall is logged under `_order/<state>.jsonl`, so a re-run skips finished walls (and a state whose walls are all
-    done skips its database load). Writes now wait `--pace-ms` (default 400) after each one and back off a minute
-    on failure; **do not restart without the owner's OK.**
+  - **Whole-catalog run, 2026-10-21 → 10-25 — DONE.** 60 states and provinces, **24,683 walls ordered and 1,112
+    climbs added**, every added climb with its facts and rewritten prose. It was stopped twice: on 10-22 it saturated
+    the production database (one REST write per route back to back, retries piling on), and on 10-24 the project's
+    Disk IO budget ran out, when even a paced write tipped reads past 15 s. It finished at `--pace-ms 1000` behind a
+    watchdog that froze the importer whenever an app-style read went slow. Five walls stay unordered for good: their
+    MP pages return 404 or have no route table. Every wall is logged under `_order/<state>.jsonl`, so a re-run skips
+    finished walls, and a state whose walls are all done skips its database load. Any future bulk run must be paced
+    and watched the same way.
 - **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker. Its Areas | Routes
   toggle and box PIN under the top bar (`usePinnedBar`) while the list below scrolls, and let go at the list's end marker (2026-10-23).
 - **Add an area** (0360, `lib/AddArea.jsx`): *Add an area* under an area's list, or under the route finder's results, opens a sheet —
