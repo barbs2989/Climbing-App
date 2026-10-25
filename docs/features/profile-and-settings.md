@@ -1,6 +1,6 @@
 # Profile, résumé and settings — the `me` tab and the Settings sheet
 
-`tab==="me"` in `ClimbMatch.jsx`. It is **not on the bottom bar** (NAV marks it `bar:false`); it opens from the Menu
+`tab==="me"` in `ClimbMatch.jsx`. It is the bottom bar's **right-most tab**, and it also opens from the Menu
 (`menuOpen`, the avatar button top left), whose "You" card leads here. Settings is a separate full-screen dialog
 (`settingsOpen` / `setSettingsOpen`, `aria-label="Settings"`) also opened from the Menu. A climber's own or another's
 profile can also open as `FullProfile` and `Resume` overlays from anywhere (partner rows, crews, leaderboards).
