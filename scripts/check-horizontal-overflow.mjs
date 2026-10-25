@@ -142,6 +142,15 @@ const scan = () => page.evaluate((vw) => {
       // translate3d offsets outside the frame on purpose and the clip is not always on the
       // ancestor's own inline style. Reading it inline made this guard FLAKY — the map
       // reported 0 offenders on one tab and 3 on another, run to run.
+      //
+      // NOT the root or the body, though. Every popup locks the page behind it with
+      // `overflow:hidden` on <html> (lib/dialogA11y.js setPageLock, since #1794), and <html> is
+      // an ancestor of everything — so from 2026-09-23 this test excused EVERY element of EVERY
+      // open overlay, and the overlay half of this walk could not fail at all. Measured
+      // 2026-10-25: a 520px `minWidth` injected into the Blocked climbers dialog reported
+      // "offenders:0". A clip at the viewport is not a component meaning to crop its child; it
+      // is the page-lock, and content cut off there is precisely "the right edge simply gone".
+      if (p === document.documentElement || p === document.body) continue;
       const c = getComputedStyle(p);
       if (c.overflowX === "hidden" || c.overflowX === "clip") return true;
     }
@@ -179,9 +188,26 @@ const scan = () => page.evaluate((vw) => {
   };
 }, WIDTH);
 
+// Wait for the OPENER, then for the text. In that order, and the first half is not optional.
+//
+// The scaffold's opener fires on a timer — 1200ms after App mounts for `?z=`, 900ms for
+// `?zr=1` — and sets `window.__overlaysReady` once it has run. settledText() only waits for
+// the text to stop changing, and a tab that renders fully on mount is stable for its three
+// samples (~800ms) BEFORE that timer fires. This load used to settle and return right
+// there: the guard then read the bare tab, found no fresh lines, and moved on to the next
+// tab, where the same race was run again. On a fast laptop 5 of 33 overlay loads lost it
+// (measured 2026-10-25); on a CI runner most of them did, and the run failed with "59 of 74
+// overlays did not open" while finding nothing wrong with the layout — red on main and on
+// unrelated branches about half the time, with a different set of overlays missing each run.
+// Every other browser guard waits on this flag; this one never had.
+//
+// Returns false when the opener never ran, so the caller can say WHICH overlays that was
+// rather than folding a dead opener into "did not open".
 const load = async (qs) => {
   await page.goto(base + qs, { waitUntil: "domcontentloaded", timeout: 120000 });
+  const ready = await page.waitForFunction(() => window.__overlaysReady === true, null, { timeout: 30000 }).then(() => true, () => false);
   await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
+  return ready;
 };
 
 // Self-test FIRST. A scan that reports zero because it is broken looks exactly like a clean
@@ -201,6 +227,10 @@ const selftest = await page.evaluate((vw) => {
     document.body.appendChild(host);
     return host;
   };
+  // Take the page-lock every open popup takes (overflow:hidden on <html>), so the self-test
+  // runs in the state the whole overlay walk is measured in. Without it the self-test proved
+  // a detector that went blind the moment any overlay opened.
+  document.documentElement.style.overflow = "hidden";
   const a = mk("width:600px;height:20px;background:#f00");
   const b = mk("min-width:520px;height:20px;background:#0f0");
   const c = mk("width:900px;height:20px;background:#00f", "overflow-x:auto;width:200px");
@@ -221,7 +251,11 @@ if (st.offenders.some((o) => o.style.includes("900px"))) {
 log(`self-test ok — detector caught ${stTexts}/2 injected offenders and correctly ignored the one inside a horizontal scroller\n`);
 if (argvSelfTestOnly) { await browser.close(); stopServer(); process.exit(0); }
 
-const lines = async () => new Set((await page.innerText("body").catch(() => "")).split("\n").map((s) => s.trim()).filter(Boolean));
+// Digits masked, as settledText masks them: "3 min ago" on one load and "4 min ago" on the
+// next is the same line, not a sign that something mounted.
+const lines = async () => new Set((await page.innerText("body").catch(() => "")).split("\n").map((s) => s.trim().replace(/\d/g, "#")).filter(Boolean));
+const freshLines = (now, base) => { let n = 0; for (const l of now) if (!base.has(l)) n++; return n; };
+let staleBaselines = 0;
 
 const findings = [];
 let routeNotReached = false;
@@ -299,11 +333,12 @@ await load("?zt=today");
 const overlays = await page.evaluate(() => window.__overlays || []);
 log(`\n  ${overlays.length} overlay states discovered\n`);
 let skipped = 0;
+const notOpened = [], neverRan = [];
 for (const name of overlays) {
   if (NEEDS_EXTRA_STATE[name]) { skipped++; continue; }
-  let got = null, onTab = null;
+  let got = null, onTab = null, ran = false;
   for (const t of TABS) {
-    await load(`?zt=${t}&z=${name}`);
+    if (await load(`?zt=${t}&z=${name}`)) ran = true;
     if (await page.evaluate((n) => (window.__overlayNoPayload || {})[n], name)) { got = "nopayload"; break; }
     // Mount detection by LINE SET, not text length. An overlay that REPLACES the screen
     // (Inbox does) leaves the page no longer than it was, so a length test reads it as
@@ -311,12 +346,20 @@ for (const name of overlays) {
     // my first draft here repeated it: every modal reported the Home tab's numbers because
     // ">120 chars" was true on the first tab every time.
     const now = await lines();
-    let fresh = 0;
-    for (const l of now) if (!baseline[t].has(l)) fresh++;
-    if (fresh >= 2) { got = await scan(); onTab = t; break; }
+    if (freshLines(now, baseline[t]) < 2) continue;
+    // ...against a baseline taken NOW, not at the start of the run. The bare tab DRIFTS over a
+    // run: measured 2026-10-25 with every opener disabled, the Home tab grew enough new lines
+    // part-way through the walk that 48 of 74 overlays "opened" on it and the run passed. A
+    // walk that cannot tell a dead opener from a live one measured nothing, so a fresh read is
+    // only believed once the bare tab, reloaded beside it, still lacks those lines.
+    const scanned = await scan();
+    await load(`?zt=${t}`);
+    baseline[t] = await lines();
+    if (freshLines(now, baseline[t]) >= 2) { got = scanned; onTab = t; break; }
+    staleBaselines++;
   }
   if (got === "nopayload") { skipped++; continue; }
-  if (!got) { skipped++; continue; }
+  if (!got) { skipped++; (ran ? notOpened : neverRan).push(name); continue; }
   const pageWide = got.docScrollW > got.docClientW + 1;
   log(`  modal:${name}`.padEnd(28) + `page ${got.docScrollW}/${got.docClientW}${pageWide ? "  <-- SCROLLS SIDEWAYS" : ""}  offenders:${got.total}  (${onTab})`);
   if (pageWide || got.total) findings.push({ screen: `modal:${name} (on ${onTab})`, ...got });
@@ -344,11 +387,18 @@ if (routeNotReached) {
 }
 if (walked < TABS.length + 20) {
   console.error(`check:overflow FAILED — only ${walked} screen(s) were measured, which is too few to mean anything.`);
-  console.error(`${skipped} of ${overlays.length} overlays did not open; the opener is probably broken.\n`);
+  console.error(`${skipped} of ${overlays.length} overlays did not open; the opener is probably broken.`);
+  // Name them. "59 of 74" with no names cannot be told apart from a race, and a list that is
+  // the SAME run after run is a broken opener while one that changes every run is timing.
+  if (neverRan.length) console.error(`  opener never set __overlaysReady (on any tab): ${neverRan.join(", ")}`);
+  if (notOpened.length) console.error(`  opener ran but nothing new rendered (on any tab): ${notOpened.join(", ")}`);
+  if (staleBaselines) console.error(`  ${staleBaselines} apparent opening(s) were only the bare tab drifting, and were not counted`);
+  console.error("");
   process.exit(1);
 }
 
 if (!findings.length) {
+  if (staleBaselines) log(`  (${staleBaselines} overlay read(s) were the bare tab drifting, not an overlay — re-baselined and not counted)`);
   log(`check:overflow: ok — nothing overflows ${WIDTH}px across ${TABS.length} tabs and ${overlays.length - skipped} of ${overlays.length} overlays (${skipped} not openable here).`);
   process.exit(0);
 }
