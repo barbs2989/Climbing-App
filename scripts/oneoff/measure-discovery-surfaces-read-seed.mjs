@@ -31,9 +31,10 @@ const dbHooks = new Set();
 const SURFACES = ["CrewFinder", "PartnerSearch", "DbGuides", "Guides", "Leaderboards", "FriendsFeed"];
 
 const rows = [];
-for (const file of ["ClimbMatch.jsx", "ClimbMatchCore.jsx"]) {
+// FriendsFeed moved to its own file in PR42 (the component extraction).
+for (const file of ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "src/components/FriendsFeed.tsx"]) {
   const src = fs.readFileSync(file, "utf8");
-  const ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: true });
+  const ast = parse(src, { sourceType: "module", plugins: file.endsWith(".tsx") ? ["jsx", "typescript"] : ["jsx"], errorRecovery: true });
   traverse(ast, {
     FunctionDeclaration(p) {
       const name = p.node.id && p.node.id.name;

@@ -16,6 +16,7 @@ import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
+import { coreModuleEntry } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const out = path.join(ROOT, `.friends-feed-probe-${process.pid}.mjs`);
@@ -24,8 +25,11 @@ const ok = (m) => console.log("  ok   " + m);
 const fail = (m) => { bad++; console.log("  FAIL " + m); };
 const dead = (m) => { console.error("\nBROKEN PROBE: " + m); process.exit(2); };
 
+// FriendsFeed lives in src/components/ since PR42; the entry re-exports it under its old name.
+const coreEntry = coreModuleEntry(ROOT);
+process.on("exit", coreEntry.cleanup);
 try {
-  execFileSync("npx", ["esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
+  execFileSync("npx", ["esbuild", coreEntry.path,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     "--loader:.jsx=jsx",
     `--define:import.meta.env=${JSON.stringify({})}`,
