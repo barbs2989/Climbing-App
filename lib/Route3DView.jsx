@@ -44,10 +44,10 @@ function loadMaplibre(onReady, onError) {
 const lineFeature = (pts) => ({ type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: pts.map((p) => [p[1], p[0]]) } });
 
 /**
- * @param {{ line?: Array<Array<number|null>>|null, lineIsSketch?: boolean, waypoints?: Array<{lat:number,lng:number,name?:string|null,type?:string|null}>,
+ * @param {{ line?: Array<Array<number|null>>|null, waypoints?: Array<{lat:number,lng:number,name?:string|null,type?:string|null}>,
  *   tracks?: Array<{id:string,color:string,label:string,pts:Array<Array<number|null>>}>, title?: string, onClose: () => void }} props
  */
-export default function Route3DView({ line, lineIsSketch, waypoints, tracks, title, onClose }) {
+export default function Route3DView({ line, waypoints, tracks, title, onClose }) {
   const div = useRef(null), mapRef = useRef(null);
   const [state, setState] = useState("loading");
   useEffect(() => {
@@ -93,7 +93,7 @@ export default function Route3DView({ line, lineIsSketch, waypoints, tracks, tit
         if (line && line.length >= 2) {
           map.addSource("route", { type: "geojson", data: lineFeature(line) });
           map.addLayer({ id: "route-casing", type: "line", source: "route", paint: { "line-color": "#000", "line-width": 6, "line-opacity": 0.45 }, layout: { "line-join": "round", "line-cap": "round" } });
-          map.addLayer({ id: "route", type: "line", source: "route", paint: { "line-color": C.blue, "line-width": 3.5, ...(lineIsSketch ? { "line-dasharray": [2, 2] } : {}) }, layout: { "line-join": "round", "line-cap": "round" } });
+          map.addLayer({ id: "route", type: "line", source: "route", paint: { "line-color": C.blue, "line-width": 3.5 }, layout: { "line-join": "round", "line-cap": "round" } });
         }
         (tracks || []).forEach((t, i) => {
           const id = "trk" + i;
@@ -136,7 +136,7 @@ export default function Route3DView({ line, lineIsSketch, waypoints, tracks, tit
         {msg ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 13, textAlign: "center", padding: 16, pointerEvents: "none" }}>{msg}</div> : null}
       </div>
       <div style={{ paddingTop: 8, display: "flex", flexWrap: "wrap", gap: "4px 12px", fontSize: 12, color: C.textSub }}>
-        {line && line.length >= 2 ? <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><span aria-hidden="true" style={{ width: 16, height: 0, borderTop: "3px " + (lineIsSketch ? "dashed " : "solid ") + C.blue }} />{lineIsSketch ? "Approximate line through the waypoints" : "Route line"}</span> : null}
+        {line && line.length >= 2 ? <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><span aria-hidden="true" style={{ width: 16, height: 0, borderTop: "3px solid " + C.blue }} />Route line</span> : null}
         {(tracks || []).map((t) => <span key={t.id} style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><span aria-hidden="true" style={{ width: 16, height: 0, borderTop: "3px solid " + t.color }} />{t.label}</span>)}
       </div>
       <div style={{ fontSize: 11.5, color: C.textMuted, paddingTop: 4 }}>Drag with two fingers to tilt, twist to turn. On a computer, right-drag. The ground is raised 1.3× so slopes read clearly.</div>

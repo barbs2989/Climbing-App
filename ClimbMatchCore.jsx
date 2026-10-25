@@ -12,7 +12,7 @@ import { DISC_LABELS as DL, DISC_SHORT as DS } from "./lib/discLabels";
 import { ROAD_KEYS, ACCESS_KEYS, TIMING_KEYS } from "./lib/objKeys";
 import { USE_DB, supabase } from "./lib/supabase";
 import { POLICY_VERSION, policyVersionLabel } from "./lib/policy";
-import { exportedTrackNotes, waypointCaveat } from "./lib/track";
+import { exportedTrackNotes, waypointCaveat, recordedTrackPts } from "./lib/track";
 import {useBelayLedgers,usePartnerSignals,useVerifiedUsers,useComments, addComment as dbAddComment, editComment as dbEditComment, deleteComment as dbDeleteComment, setCommentLike, submitContribution, fetchCrewMessages, markDmThreadRead, fetchCrewLastReads, countCrewUnread, markCrewRead, useRouteContributions, dbRouteToCamel, useProfilesByIds, useFullProfile, useRoutesByIds, useRoutesWithLists, uploadProfilePhoto, removeProfileAvatar, useRouteTopos, topoPhotoUrl, uploadTopoPhoto, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useDiscoverableProfiles, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, useVerificationRecords, inviteToCrewByEmail, useCrewEmailInvites, deleteCrewEmailInvite, sendCrewMessage, useCrewMessages, fetchOlderCrewMessages, sendDirectMessage, useDirectMessages, fetchMyDirectMessages, fetchOlderDirectMessages, markMessageAsRead, fetchRouteArea, usePublicLists} from "./lib/db";
 import {searchClean, searchNorm} from "./lib/search";
 import { clickable } from "./lib/clickable"
@@ -661,7 +661,7 @@ function caretToEnd(el){try{el.focus({preventScroll:true});var r=document.create
 /* THE CAVEAT MUST SURVIVE THE DOWNLOAD. Split out of gpxDownload so the FILE can be asserted on:
    the download half calls Blob and document inside a try/catch, so a probe that called it got the
    exception swallowed and could never read what was written. check:gpx-caveats renders this. */
-function buildGpx(r,overridePts,overrideName){const pts=(overridePts&&overridePts.length)?overridePts:((r&&r.gpxPts)||[]);/* "Download GPX (waypoints only)" is offered for a route with placed pins and no track, and used to download NOTHING: an empty track returned "" here. A pins-only file is a valid GPX — it just has no <trk>. */if(!pts.length&&!((r&&r.waypoints)||[]).some(wpPlaced))return "";
+function buildGpx(r,overridePts,overrideName){/* The file carries a RECORDED track or none: a stored line that is only the pins joined up is left out, so the download is pins only (owner, 2026-10-25). */const pts=(overridePts&&overridePts.length)?overridePts:(recordedTrackPts(r&&r.gpxPts,r&&r.waypoints)||[]);/* "Download GPX (waypoints only)" is offered for a route with placed pins and no track, and used to download NOTHING: an empty track returned "" here. A pins-only file is a valid GPX — it just has no <trk>. */if(!pts.length&&!((r&&r.waypoints)||[]).some(wpPlaced))return "";
   /* `<desc>` may not strip its own punctuation the way a name can -- these are sentences, so & < >
      are ESCAPED rather than deleted. */
   const esc=t=>String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
