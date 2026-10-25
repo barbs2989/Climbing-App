@@ -56,7 +56,7 @@ const CASES = [
     find: 'const act=st[2]==="climbs"?(c.resumePublic!==false?()=>onResume&&onResume(c):null)',
     repl: 'const act=st[2]==="climbs"?()=>onResume&&onResume(c)' },
 
-  { name: "resume-button", file: "ClimbMatchCore.jsx", must: "fail",
+  { name: "resume-button", file: "src/components/FullProfile.tsx", must: "fail", // FullProfile moved from core in PR50
     why: "rule 3 — the profile button stops consulting the flag",
     find: "{climber.resumePublic!==false?<button onClick={()=>onResume&&onResume(climber)}",
     repl: "{true?<button onClick={()=>onResume&&onResume(climber)}" },

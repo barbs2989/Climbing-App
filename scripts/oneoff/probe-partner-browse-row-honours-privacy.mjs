@@ -28,6 +28,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readCoreSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 let bad = 0;
@@ -35,7 +36,8 @@ const ok = (m) => console.log("  ok    " + m);
 const fail = (m) => { console.log("  FAIL  " + m); bad++; };
 
 const strip = (s) => s.replace(/\/\*[\s\S]*?\*\//g, " ");
-const core = strip(fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8"));
+// The stitched core (scripts/lib/guard-sources.mjs): RealClimberRow and FullProfile live in src/components now.
+const core = strip(readCoreSource());
 const db = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
 
 // ---- 1. THE SELECT MUST STILL FETCH IT. Without this the mapping has nothing to carry and the
@@ -103,7 +105,7 @@ const out = path.join(outdir, "b.cjs");
 process.on("exit", () => { try { fs.rmSync(outdir, { recursive: true, force: true }); } catch {} });
 await build({
   stdin: {
-    contents: `export { FullProfile, pubNameRow } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};`,
+    contents: `export { default as FullProfile } from ${JSON.stringify(path.join(ROOT, "src/components/FullProfile.tsx"))};\nexport { pubNameRow } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};`,
     resolveDir: ROOT, loader: "js",
   },
   bundle: true, format: "cjs", platform: "node", jsx: "automatic",
@@ -146,13 +148,14 @@ const render = (climber) => {
 // its real-profile path. A short id renders the SEED path, which is not what a browse row is
 // and would have made this whole section a statement about the wrong branch.
 const rawRow = { id: "3f2a91cc-0000-4000-8000-000000000001", name: "Robin Belay", username: "robinb", show_name: false, resume_public: false };
-const candSrc = (row.match(/var _cand=\{([\s\S]*?)\};/) || [])[1];
+const candSrc = (row.match(/(?:var|const) _cand=\{([\s\S]*?)\};/) || [])[1]; // `const` since RealClimberRow moved to TypeScript
 const BTN = "View climbing r\u00e9sum\u00e9";
 if (!candSrc) fail("ANCHOR LOST: _cand's object literal could not be lifted for the render");
 else {
   // eslint-disable-next-line no-new-func
-  const buildCand = new Function("p", "return {" + candSrc + "};");
-  const cand = buildCand(rawRow);
+  // The literal also reads three of the row's list-level props (objectives, listed areas, verified ids): a bare browse row has none of them read.
+  const buildCand = new Function("p", "objIds", "listing", "verified", "return {" + candSrc + "};");
+  const cand = buildCand(rawRow, undefined, undefined, undefined);
 
   const shown = render(cand);
   if (shown.length > 400) ok(`FullProfile rendered from the row's own mapping (${shown.length} chars)`);

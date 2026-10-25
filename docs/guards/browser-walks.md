@@ -1053,6 +1053,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     fixed in `scripts/check-overlay-portals.mjs`; reading conditionals then flagged `GPXMap`'s
     full-screen map, which IS portalled through a variable (`const mapUI=…; createPortal(mapUI,…)`),
     so the guard now follows a declarator into `createPortal` too.
+  - **A negative TOP margin on the ✕ defeats the pin (#2794, red on main 2026-10-25).** The Menu's ✕
+    drew a 34px circle inside its 44px button with `margin:-5`, so the button sat 5px ABOVE its header
+    row; `pinDismiss` pins the ROW at `top:0`, which left the button at `top -5px` — off the screen,
+    scrolled to the end — and this failed `menuOpen`. The CI job reads "Overlays contain their own
+    scroll" because this runs as its second step; `check:overlay-scroll` itself stayed green. Fixed by
+    making the margin sideways only (`"0 -5px"`) and taking the 5px off the panel's top padding and the
+    row's bottom margin instead, so the layout is pixel-identical. A pinned control must sit INSIDE its
+    row's box vertically.
   - **A second scroller nobody wrote:** Log a climb's backdrop scrolled 3,968px although its card was
     clamped to the screen — three `.cm-file-input`s (visually-hidden file pickers, `position:absolute`)
     belonged to the backdrop as their nearest positioned box, at their place deep in the form. Now
@@ -1485,6 +1493,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     today, and the seed logbook holds one entry dated 2026-05-24 — so on ~360 days of the year
     it renders nothing, and every other guard walks the app on one of those days. A feature
     invisible to your guards 98% of the time will break silently and stay broken for a year.
+  - **It walks a SIGNED-IN account, through climb_logs (since 2026-10-25).** #2789 made alerts the
+    account's: a guest in a backend build gets an empty `mergedNotifs` by design, because every
+    alert source there is the seed demo. The guard used to prepend its probe to the SEED `logs` of
+    a guest, a path #2789 legitimately closed, so it went red on `main` with the feature intact (a
+    real climber's `_anniv` still maps their hydrated climb_logs). The scaffold now forces a uid
+    (`PROBE_UID`, a VALID uuid — a malformed one makes PostgREST answer 400, the logs query errors
+    and nothing hydrates; `zero-state.config.mjs` can get away with its malformed one, this cannot)
+    and prepends one synthetic climb_logs row (`probeRow()`) to what `useUserLogs(uid)` returns, so
+    the path held is the shipping one: climb_logs row → hydration → `logs` → `_anniv` →
+    `mergedNotifs` → screen. The wrapper is keyed on the query's DATA, not the query object, or every
+    effect keyed on `myLogsQ.data` would re-run each render. Needs a USE_DB build. Injection-tested:
+    dropping `_anniv` from `mergedNotifs` fails both surfaces. The seed-entry clone and its
+    brace-balancing walk described below are GONE with it; the bullets about them are history.
   - `scripts/anniversary.config.mjs` injects a log dated **exactly one year ago today**,
     computed at config load so it never rots. The date is built in **local** time, because
     `_anniv` compares `new Date(y,m,d)` against `new Date()`; a UTC-derived date is a day off

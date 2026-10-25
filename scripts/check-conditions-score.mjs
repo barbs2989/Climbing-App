@@ -500,6 +500,11 @@ console.log("check:conditions-score");
   const sm = fs.readFileSync(path.join(ROOT, "lib/ShadeMap.jsx"), "utf8");
   if (/IntersectionObserver/.test(sm) && /Couldn’t load the terrain/.test(sm) && /aria-label="Time of day for the shade"/.test(sm)) ok("the shade map loads only near the screen, and says when it failed");
   else fail("the shade map lost its lazy load, its failure state or its slider's name");
+  // The score reads route.aspect, then the crag's areas.aspect. The ASPECT & SUN card must read the same two, or a crag whose
+  // wall facing came from the area says "No aspect recorded" directly under a score that used one.
+  const sunPanel = fs.readFileSync(path.join(ROOT, "src/components/AspectSunPanel.tsx"), "utf8");
+  if (/route\._dbArea\.aspect/.test(sunPanel) && !/sunReadout\(route\.aspect/.test(sunPanel)) ok("the Aspect & sun card reads the crag's wall aspect as well as the route's, like the score does");
+  else fail("the Aspect & sun card reads only the route's own aspect, so a crag whose facing is on its area says none is recorded under a score that used one");
 }
 function sN0() { return scoreForecast(fixture(), WALL, null, NOW); }
 

@@ -189,7 +189,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ReactDOM from "react-dom";
 import RouteDetail from ${JSON.stringify(RD_PATH)};
 import ItineraryEditor from ${JSON.stringify(IE_PATH)};
-import { FullProfile } from ${JSON.stringify(CORE_PATH)};
+import FullProfile from ${JSON.stringify(path.join(ROOT, "src/components/FullProfile.tsx"))};
 export { distMiles, ME } from ${JSON.stringify(CORE_PATH)};
 export {
   uTemp, uTempN, uTempDelta, uWind, uWindN, uPrecip, uSnowfall,

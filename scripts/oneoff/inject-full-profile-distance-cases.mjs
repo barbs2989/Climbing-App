@@ -20,7 +20,8 @@ import fs from "node:fs";
 import crypto from "node:crypto";
 import { execFileSync } from "node:child_process";
 
-const CORE = "ClimbMatchCore.jsx";
+// FullProfile lives in src/components since PR50 (2026-10-25); the header and card text is unchanged.
+const CORE = "src/components/FullProfile.tsx";
 const FIRE = "lib/FireNearRoute.jsx";
 const PROBE = ["node", ["scripts/oneoff/probe-full-profile-distance-honours-units.mjs"]];
 const GUARD = ["node", ["scripts/check-units.mjs", "--only=profile"]];

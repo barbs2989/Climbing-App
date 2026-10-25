@@ -29,6 +29,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
+import { readCoreSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const require_ = createRequire(import.meta.url);
@@ -39,7 +40,8 @@ const fail = (m) => { console.log("  FAIL  " + m); bad++; };
 // ── 1. SOURCE: neither site may print a bare unit again. This is the half a stale-base squash
 //    takes — it changes a STRING and no identifier, which audit:silent-reverts says in its own
 //    closing caveat it cannot see.
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+// The stitched core (scripts/lib/guard-sources.mjs): FullProfile lives in src/components since PR50.
+const core = readCoreSource();
 const rawDist = [...core.matchAll(/\{\s*dist\.toFixed\(1\)\s*\}\s*(?:mi|miles)\b/g)];
 if (!rawDist.length) ok("no site prints dist with a hardcoded distance unit");
 else fail(`${rawDist.length} site(s) still print dist with a hardcoded unit: ${rawDist.map((m) => JSON.stringify(m[0])).join(", ")}`);
@@ -70,7 +72,7 @@ process.on("exit", () => { try { fs.rmSync(outdir, { recursive: true, force: tru
 
 await build({
   stdin: {
-    contents: `export { FullProfile, __set_UNITS, ME, CLIMBERS, distMiles, uDistMi } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};`,
+    contents: `export { default as FullProfile } from ${JSON.stringify(path.join(ROOT, "src/components/FullProfile.tsx"))};\nexport { __set_UNITS, ME, CLIMBERS, distMiles, uDistMi } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};`,
     resolveDir: ROOT, loader: "js",
   },
   bundle: true, format: "cjs", platform: "node", jsx: "automatic",

@@ -1077,6 +1077,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     whole extraction series up to PR36 had introduced exactly the one.
   - **Fails closed**: floors on modules, edges, back-edges and reads examined, because the guard
     reports an absence and a broken walk prints what a clean tree prints.
+    The back-edge floor came down from 10 to 4 on 2026-10-25 (PR50): moving `FullProfile` out of core took
+    core's back-edges from 24 to 7, because it was the only core renderer of 15 components — fewer cycles, not
+    a broken walk; the floor still sits far above the 0 a broken walk prints. The injection suite proves the
+    cycle on `Av` since then (`VouchCard`, its earlier subject, is no longer imported back by core).
   - **Known miss**: `const X = (() => SKILLS)();` — the read sits inside a function, so it is
     deferred, but the call runs at module scope. Not followed on purpose: following calls means
     evaluating the program. Recorded in the suite as a known miss, not a case.
