@@ -24,7 +24,7 @@ export default function MonthGrid({ climbs, events, onOpenCrew, onOpenEvent }) {
   const title = first.toLocaleDateString(DLOCALE, { month: "long", year: "numeric" });
   const weekdays = [0, 1, 2, 3, 4, 5, 6].map(i => new Date(2026, 0, 4 + i).toLocaleDateString(DLOCALE, { weekday: "short" }));
   const step = d => setYm(p => { const t = new Date(p.y, p.m + d, 1); return { y: t.getFullYear(), m: t.getMonth() }; });
-  const navBtn = { width: 34, height: 34, borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, cursor: "pointer" };
+  const navBtn = { width: 44, height: 44, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, cursor: "pointer" };
   return (
     <section aria-label="Month view" style={{ marginBottom: 20 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
