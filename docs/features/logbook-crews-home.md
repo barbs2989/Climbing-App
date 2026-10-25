@@ -169,7 +169,9 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 | File | Key symbols |
 |---|---|
 | `ClimbMatch.jsx` | `tab` branches for `today`/`crew`/`logbook`, `logbookTab`, `crewView`, `pinnedStates`, `archiveCrew`, `clearPastCrew`, `givenVouches`, `activeCrews`, setup `gaps`, `alertsOpen`, `renderObjectives`, `mergedNotifs`, `markAllNotifsSeen`, `_actionNotifs` |
-| `ClimbMatchCore.jsx` | `Challenges`, `useCuratedLists`, `useBadges`, `trophies`, `BadgeGrid`, `BadgeWatcher`, `monthRuns`, `yearCounts`, `pitchesClimbed`, `datesAgreed`, `agreedDate`, `isArchivedCrew`, `crewPlace`, `placeTrip`, `placeCap`, `placeLabel`, `placeSub`, `placeMatchesLog` |
+| `src/components/Challenges.tsx` | `Challenges` — the Challenges & Lists panel (moved from core in PR48) |
+| `src/components/BadgeGrid.tsx` | `BadgeGrid` — the badges grid under Challenges and in the profile's trophy case |
+| `ClimbMatchCore.jsx` | `useCuratedLists`, `useBadges`, `trophies`, `BadgeWatcher`, `monthRuns`, `yearCounts`, `pitchesClimbed`, `datesAgreed`, `agreedDate`, `isArchivedCrew`, `crewPlace`, `placeTrip`, `placeCap`, `placeLabel`, `placeSub`, `placeMatchesLog` |
 | `src/components/ItineraryEditor.tsx` | `ItineraryEditor` — the day-by-day itinerary editor (and its `TIME_PRESETS`), rendered by the crew plan, the log, add-a-climb and the route page |
 | `src/components/TrackedLists.tsx` | `TrackedLists` — YOUR LISTS on Home: the followed curated lists with the Logbook's progress for each (`useCuratedLists`) |
 | `src/components/CrewInviteModal.tsx` | `CrewInviteModal` — the Invite to crew sheet (who, which climb, an optional note); `ClimbMatch.jsx` opens it from a partner's profile |
