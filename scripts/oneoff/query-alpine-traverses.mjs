@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import "../lib/load-env.mjs";
 /**
  * Query: Find alpine traverse routes in database
  * Used to identify which routes can be matched during import
@@ -6,7 +7,7 @@
 
 import https from 'https';
 
-const key = "sb_publishable_Xeg2L1pOa5YK6RjTUuYvNA_7B0tfRr5";
+const key = process.env.VITE_SUPABASE_ANON_KEY;
 
 // Search for potential alpine traverse routes by name patterns
 const searchTerms = [
@@ -28,7 +29,7 @@ const query = new URLSearchParams({
 });
 
 const options = {
-  hostname: 'ofuofhojhbcrcahuotya.supabase.co',
+  hostname: new URL(process.env.VITE_SUPABASE_URL).hostname,
   path: `/rest/v1/routes?${query}`,
   method: 'GET',
   headers: {

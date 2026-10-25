@@ -1,8 +1,9 @@
+import "../lib/load-env.mjs";
 import { createClient } from "@supabase/supabase-js";
 import ws from "ws";
 
-const url = "https://ofuofhojhbcrcahuotya.supabase.co";
-const key = "sb_publishable_Xeg2L1pOa5YK6RjTUuYvNA_7B0tfRr5";
+const url = process.env.VITE_SUPABASE_URL;
+const key = process.env.VITE_SUPABASE_ANON_KEY;
 
 const supabase = createClient(url, key, {
   auth: { persistSession: false },

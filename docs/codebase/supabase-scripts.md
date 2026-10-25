@@ -64,6 +64,13 @@ are symlinked, and in a fresh worktree they are not, so every DB-touching guard 
 Both patterns are in `.gitignore` and a symlink is not a directory to git, so neither shows up as
 untracked.
 
+**No script carries a project URL or a key as a literal.** A script in `scripts/oneoff/` reads
+`process.env.VITE_SUPABASE_URL` and `process.env.VITE_SUPABASE_ANON_KEY`, and a writer calls
+`requireServiceKey()`. Start it with a side-effect import of `scripts/lib/load-env.mjs`, which copies
+the values from `.env` and `.env.local` into `process.env`. The relative import path depends on depth:
+one level down (`scripts/oneoff/`) is `../lib/`, and the top of `scripts/` is `./lib/`.
+`.env.example` lists the names. `npm run check:no-secrets` fails the build if a literal comes back.
+
 Import `scripts/lib/supabase-env.mjs` — do not hand-roll env loading. The
 credentials are split across two gitignored files (`SUPABASE_SERVICE_KEY` in
 `.env`, the `VITE_*` url/anon key in `.env.local`), so a script that reads only
