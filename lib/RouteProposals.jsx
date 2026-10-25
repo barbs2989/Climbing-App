@@ -12,7 +12,7 @@
 
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { useRouteProposals, useAreaProposals, approveNewRoute, approveNewArea, rejectNewRoute, preferNetworkReads } from "./db";
+import { useRouteProposals, useAreaProposals, useAreaPlacementClaims, resolveAreaPlacement, approveNewRoute, approveNewArea, rejectNewRoute, preferNetworkReads } from "./db";
 import { gradeNumFor } from "./grade";
 import { discLabel } from "./discLabels";
 import { C } from "../ClimbMatchCore";
@@ -181,6 +181,55 @@ export function RouteProposalQueue() {
                   Reject
                 </button>
               </div>}
+        </div>;
+      })}
+  </div>;
+}
+
+// "Wrong place?" claims on an AREA (0372). A climber says where an area belongs. Nothing on the
+// page changes from here: the owner moves the area by hand, then marks the claim moved (approved)
+// or not wrong (rejected). resolve_area_placement refuses anything that is not a pending claim.
+export function AreaPlacementQueue() {
+  const { data: rows, isLoading, error } = useAreaPlacementClaims("pending");
+  const [busyId, setBusyId] = useState(null);
+  const [msg, setMsg] = useState(null);      // {kind:"ok"|"err", text}
+  const [note, setNote] = useState({});
+
+  const resolve = async (id, status) => {
+    setBusyId(id); setMsg(null);
+    try {
+      await resolveAreaPlacement(id, status, note[id] || "");
+      setMsg({ kind: "ok", text: status === "approved" ? "Marked moved." : "Marked not wrong." });
+    } catch (e) {
+      setMsg({ kind: "err", text: (e && e.message) ? e.message : "That did not go through." });
+    } finally { setBusyId(null); }
+  };
+
+  if (isLoading) return <LoadingRows C={C} label="Loading claims…" style={{padding: "8px 0"}}/>;
+  if (error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>
+    Could not load wrong-place claims — {(error && error.message) || "the request failed"}. This is not a report that there are none.
+  </div>;
+
+  const list = rows || [];
+  return <div>
+    {msg ? <div role={msg.kind === "err" ? "alert" : "status"} style={{ background: msg.kind === "err" ? C.redBg : C.greenBg, color: msg.kind === "err" ? C.red : C.green, border: "1px solid " + (msg.kind === "err" ? C.red : C.greenDim), borderRadius: 9, padding: "9px 11px", fontSize: 12.5, lineHeight: 1.5, marginBottom: 10 }}>{msg.text}</div> : null}
+    {!list.length
+      ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.6, padding: "4px 0" }}>No wrong-place claims are waiting.</div>
+      : list.map(function (r) {
+        const v = r.value || {};
+        const busy = busyId === r.id;
+        return <div key={r.id} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "11px 12px", marginBottom: 9 }}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: C.text }}>{(r.areas && r.areas.name) || r.area_id || "(no area)"}</div>
+          <Row label="Says it belongs">{v.note}</Row>
+          <Row label="In">{v.suggested}</Row>
+          <Row label="Submitted">{r.created_at ? String(r.created_at).slice(0, 10) : null}</Row>
+          <Row label="By">{r.contributor ? String(r.contributor).slice(0, 8) : "anonymous"}</Row>
+          <textarea value={note[r.id] || ""} onChange={e => setNote({ ...note, [r.id]: e.target.value })} rows={2} aria-label="Note kept with this claim (optional)" placeholder="Note kept on the record (optional)"
+            style={{ width: "100%", marginTop: 8, background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 9px", fontSize: 12.5, fontFamily: "inherit", resize: "vertical" }} />
+          <div style={{ display: "flex", gap: 12, marginTop: 9 }}>
+            <button onClick={() => resolve(r.id, "approved")} disabled={busy} style={{ flex: 1, padding: 9, background: busy ? C.surface : C.blueSolid, color: busy ? C.textMuted : C.onSolid, border: busy ? "1px solid " + C.border : "none", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>Moved it</button>
+            <button onClick={() => resolve(r.id, "rejected")} disabled={busy} style={{ flex: 1, padding: 9, background: C.surface, color: C.textSub, border: "1px solid " + C.border, borderRadius: 8, fontSize: 12.5, cursor: busy ? "default" : "pointer" }}>Not wrong</button>
+          </div>
         </div>;
       })}
   </div>;
