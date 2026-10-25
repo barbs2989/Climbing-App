@@ -198,6 +198,8 @@ export const MOVED = {
     "src/components/DbAreaPicker.tsx",
     "src/components/AscentPyramid.tsx",
     "src/components/DbClimbPicker.tsx",
+    "src/components/LoginScreen.tsx",
+    "src/components/FloatPlan.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],

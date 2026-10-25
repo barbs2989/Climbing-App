@@ -7,8 +7,9 @@
 // your phone until you send it. Plans saved from the route page before the move are `route:<id>`
 // scopes and are listed here too, so nothing filed earlier went missing.
 import { useState, useEffect, useRef } from "react";
-import { C, SL, FloatPlan, floatPlanState } from "../ClimbMatchCore.jsx";
+import { C, SL, floatPlanState } from "../ClimbMatchCore.jsx";
 import { listFloatPlans, saveFloatPlan, deleteFloatPlan } from "./offline";
+import FloatPlan from "../src/components/FloatPlan.tsx";
 
 export default function FloatPlans({who,crews,placeOf,focus,onFocusDone,onFiledCrew,crewFill,onSendCrew}){
   const [rows,setRows]=useState(null),[readErr,setReadErr]=useState(false);
