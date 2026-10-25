@@ -194,6 +194,8 @@ export const MOVED = {
     "src/components/ReportModal.tsx",
     "src/components/FriendsFeed.tsx",
     "src/components/Contributions.tsx",
+    "src/components/CatchLedger.tsx",
+    "src/components/DbAreaPicker.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],

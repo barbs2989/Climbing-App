@@ -202,7 +202,8 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `lib/RouteQualityQueues.jsx` | `FieldContributionQueue`, `RouteFlagQueue`, `ContributorStandingQueue` |
 | `lib/confidence.jsx` | `ConfidenceCtx`, `HEAD_KEYS`, `headKey`, `ConfChip`, `ConfidenceLegend` |
 | `lib/FlagRouteInfo.jsx` | `FlagRouteSheet` |
-| `ClimbMatchCore.jsx` | `SL` (renders the chip on a route page); `DbAreaPicker` (Add a climb's area step) |
+| `ClimbMatchCore.jsx` | `SL` (renders the chip on a route page) |
+| `src/components/DbAreaPicker.tsx` | `DbAreaPicker` (Add a climb's area step) |
 | `lib/AddRoute.jsx` | `AddRoute`: the add-a-climb form, its per-field context lines (`Lab`) |
 | `lib/fieldHints.js` | `HINTS`: one line of context per field, shared by the edit sheet and Add a climb |
 | `lib/db.js` | `useCatalogAreaSearch`: area search over the whole catalog |

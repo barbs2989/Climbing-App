@@ -6,13 +6,14 @@ import { clickable } from "./clickable";
 import { submitContribution, useAreaChildren, useRouteSearch } from "./db";
 import { searchMatches } from "./search";
 import { useCallback, useMemo, useState } from "react";
-import { ADDR_COMMIT, ADDR_GRADES, ADDR_HAZ, ADDR_STYLE, C, CAT, DISC, DbAreaPicker, MOUNTAINS, ROUTES, areaPathNames, blankItinDay, fuzzyMatch, hlMatch, itinDraftToStructured, seedRoutesOn, uImp } from "../ClimbMatchCore.jsx";
+import { ADDR_COMMIT, ADDR_GRADES, ADDR_HAZ, ADDR_STYLE, C, CAT, DISC, MOUNTAINS, ROUTES, areaPathNames, blankItinDay, fuzzyMatch, hlMatch, itinDraftToStructured, seedRoutesOn, uImp } from "../ClimbMatchCore.jsx";
 import ItineraryEditor from "../src/components/ItineraryEditor.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
 import Lbl from "../src/components/Lbl.tsx";
 import { POP_CLOSE, POP_REMOVE_MEDIA } from "./popupChrome.js";
 import { splitRackEntries } from "./rack.js";
 import { HINTS } from "./fieldHints.js";
+import DbAreaPicker from "../src/components/DbAreaPicker.tsx";
 
 export default function AddRoute({onClose,defaultArea,defaultAreaName,dbAreaId,session,onSubmit,onAddRoute}){
   // Until now this form persisted NOTHING. `onSubmit` pushed a row into React state and
