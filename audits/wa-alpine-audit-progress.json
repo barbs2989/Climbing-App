@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_spinnaker_peak_s_route",
+  "last_processed_id": "wa_switchback_mountain_west_ridge",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -9074,6 +9074,26 @@
       "clean": 6,
       "sql_file": null,
       "note": "Haunted Wall (Spectre Peak): FA (Wallace/Layton, Aug 14 2006) and length (640m/2100ft) confirmed exactly via Northwest Mountain Journal's 'Pickets Get a Southern Facelift' and Wallace's own blog, but both call it a 'southwest buttress' route against this row's aspect:S/face:'South Face (center of face)' -- flagged, not fixed, no precise bearing found to justify a confident rewrite. Spider Mountain Southeast Gully/East Ridge: row's FA names 'Ralph Clough' in the 1938 Ptarmigan Club foursome -- SummitPost's own Spider Mountain page corroborates 'Ralph Clough' (matches row), but Wikipedia's Ptarmigan Traverse article independently gives 'Ray W. Clough' for the same four-person party -- sources conflict with EACH OTHER, not just the row, so left for human review rather than picked between. Spirited Away (Spectre Peak, South Ridge): FA (Boyce/Manning, July 2022) confirmed exactly via AAJ 2023; this row's length_m (732/2402ft) looked high against AAJ/FA-blog's externally-quoted '2000 ft', but reconciles against the row's OWN gear field (~1600-1800ft pitched + ~600ft simul-climbing = 2200-2400ft) -- not a new error, the external figure appears to count pitched footage only. Verified clean: wa_southwest_buttress (Dorado Needle, 8440ft exact via Wikipedia/SummitPost/WTA/Mountaineers), wa_sperry_peak_east_face (6120ft Sperry Peak elevation matches WTA/Mountaineers; FA Mike Preiss/M. Bunker Sept 2002 could not be corroborated or contradicted, left as unverified per no-guessing rule), wa_sperry_peak_upper_south_ridge (no FA claimed, correctly defers to standard route's approach), wa_spider_mountain_north_face (Kloke-Tindall Route FA Dallas Kloke/Reed Tindall 1972 found in no source either way, left unflagged; 8317ft matches Wikipedia against a known PeakVisor/SummitPost spread), wa_spinnaker_peak_s_route (5645ft confirmed via Mountaineers/WTA, no FA claimed). WebFetch returned getaddrinfo ENOTFOUND on every external host this run (alpenglow.org, summitpost.org, en.wikipedia.org) -- all findings rest on WebSearch snippets only."
+    },
+    {
+      "batch_number": 457,
+      "date": "2026-10-25",
+      "route_ids": [
+        "wa_spire_mountain_scramble",
+        "wa_spire_point_southwest_face",
+        "wa_star_peak_sawtooth_nw_ridge",
+        "wa_storm_king_north_face",
+        "wa_summit_chief_mountain_southeast_face",
+        "wa_sw_ridge",
+        "wa_swiss_peak_standard_route",
+        "wa_switchback_mountain_scramble",
+        "wa_switchback_mountain_west_ridge"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 2,
+      "clean": 7,
+      "sql_file": null,
+      "note": "Storm King North Face (wa_storm_king_north_face): two issues flagged, not fixed. high_point_ft (8565) matches neither figure on SummitPost's Storm King page (8,520 ft true summit, 8,515 ft a triangulated subsummit SummitPost itself warns is often mistaken for the real height) -- only one secondary source found, not enough for a confident fix. FA second climber spelled 'Walter Gove' on this row vs 'Walt Grove' on the one source found -- single-source, left unchanged. All other 7 routes in this batch (Spire Mountain scramble, Spire Point SE face, Star Peak NW ridge FA+grade, Middle Peak SW ridge, Swiss Peak standard route, both Switchback Mountain routes) had their elevation/FA/access claims confirmed exactly or near-exactly against Wikipedia/SummitPost/WTA/Forest Service sources; wa_summit_chief_mountain_southeast_face is a near-empty stub row with nothing to check."
     }
   ]
 }

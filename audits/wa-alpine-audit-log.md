@@ -34429,3 +34429,49 @@ alike) — every finding above rests on WebSearch result snippets only, cross-ch
 row's own internal fields (gear/pitch_detail/data_quality) where possible; nothing here needed a
 full-page fetch to resolve, but a future run hitting a genuinely ambiguous case should retry
 WebFetch rather than assume it's permanently unavailable.
+
+## 2026-10-25 — Pass 7, Batch 457
+
+Nine routes across Spire Mountain, Spire Point, Star Peak (Sawtooth), Storm King, Summit Chief
+Mountain, Middle Peak (Gunsight Range), Swiss Peak, and Switchback Mountain (×2 routes): Standard
+Route (Spire Mtn scramble); Southeast Face (Spire Point, id still says `southwest_face` from a
+pre-existing name/aspect correction — not re-litigated, out of scope per route-identity rules);
+Northwest Ridge (Star Peak); North Face (Storm King); Southeast Face (Summit Chief Mtn); Southwest
+Ridge (Middle Peak); Standard Route/Southwest Face (Swiss Peak); Standard Scramble + West Ridge/West
+Face (Switchback Mtn).
+
+- `wa_spire_mountain_scramble`: 6,213 ft and the 1934 FA (Dwight Dean & Kenneth Chapman, first
+  ascent of the Northwest Spire) both confirmed exactly via Wikipedia/SummitPost.
+- `wa_spire_point_southwest_face`: 8,264 ft confirmed via this row's own well-documented overview
+  (Ptarmigan Traverse classic); the Suiattle River Rd (FR 26) closure text ("closed at milepost
+  4.5... December 2025 flood damage... through Jan 1, 2028") matches the Forest Service's own alert
+  page almost verbatim.
+- `wa_star_peak_sawtooth_nw_ridge`: FA (John Mailhioti & Rolf Larson, Sept 7 1997) and grade
+  (5.7, Grade III) both confirmed exactly via SummitPost; 8,693 ft matches Wikipedia exactly
+  (SummitPost's 8,690 ft is an already-known minor spread).
+- `wa_storm_king_north_face`: **flagged for human review, not fixed** — two independent issues.
+  (1) This row's `high_point_ft` (8,565) matches neither of the two figures SummitPost's Storm
+  King page gives: 8,520 ft for the true (easternmost) summit, and 8,515 ft for a triangulated
+  subsummit SummitPost explicitly warns is "often mistakenly given as the peak's height." 8,565
+  doesn't match either number, but SummitPost is the only elevation source found (no USGS/NPS
+  figure turned up), so this is one secondary source against the row, not enough on its own for a
+  confident SQL fix. (2) This row's `fa` spells the second climber "Walter Gove"; the one source
+  found (SummitPost) spells it "Walt Grove" — single-source, unconfirmed either way, not changed.
+- `wa_summit_chief_mountain_southeast_face`: effectively an empty stub row (grade only, no
+  elevation/coords/approach/hazards/FA stored) — nothing to cross-check; verified clean by having
+  no unsupported claims.
+- `wa_sw_ridge` (Middle Peak, Gunsight Range): 8,200 ft and the 5-pitch SW Ridge description both
+  consistent with a WildSnow trip report on "the classic SW ridge of the highest peak in the
+  range" (exact elevation not independently pinned down by any source, but the row's figure falls
+  inside the 8,000-8,200 ft range reported for the range's four named summits).
+  No FA is claimed on this row.
+- `wa_swiss_peak_standard_route`: 7,988 ft matches SummitPost and Steph Abegg's trip reports
+  exactly (Wikipedia's 7,993 ft, sourced to Beckey's guide, is an already-known 5 ft spread not
+  re-litigated).
+- `wa_switchback_mountain_scramble` / `wa_switchback_mountain_west_ridge`: 8,321 ft confirmed via
+  WTA, Lemke Climbs and PeakVisor; no FA claimed on either (both are undocumented
+  scramble/walk-up lines). The row's own `data_quality.gaps` already discloses the
+  Class 1-2/Class 3 and prominence disagreements across sources — not a new finding.
+
+0 confirmed errors, 2 flagged for human review (both on `wa_storm_king_north_face`), 7 clean.
+`last_processed_id` advances to `wa_switchback_mountain_west_ridge`.
