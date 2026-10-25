@@ -1,0 +1,10 @@
+-- Undo a parking-notes batch: clears each note only while it still holds this batch's text.
+begin;
+update public.areas set parking_note=null where id='ca_holcomb_valley_pinnacles' and parking_note='Two lots. The southern lot, below Parking Lot Rock, is reached by following 3N07 to its end and suits low-clearance cars. The northern lot, via 3N16 and 3N32, suits high-clearance vehicles. The gate on Van Dusen Canyon Road locks after the first snowfall.';
+update public.areas set parking_note=null where id='ca_tanglewood_slabs_area' and parking_note='Drive 2.3 miles east of Holcomb Valley Campground on 3N16 and park in the northwest-facing turnout on the north side of the road; the crag is about 0.1 mile north and visible from the road.';
+update public.areas set parking_note=null where id='ca_north_shore_boulders' and parking_note='From the Highway 18 and 38 intersection, drive north a couple of blocks on Greenway Dr. to where it ends at Pioneer Lane, and park there.';
+update public.areas set parking_note=null where id='ca_jacoby_canyon' and parking_note='Drive 3.2 miles east from the Van Dusen Canyon Rd and 3N16 intersection and park where 3N16 meets 3N02. Walk down into the stream bed and head east about 150 yards to the crags.';
+update public.areas set parking_note=null where id='ut_smithfield_dry_canyon' and parking_note='Drive about 3 miles east on 300 South in Smithfield from Main Street to the parking area at the Forest Service trailhead; the Dry Canyon trail starts there.';
+update public.areas set parking_note=null where id='ut_high_creek_canyon' and parking_note='From US-91 about 14.9 miles north of 400 N in Logan, turn east on High Creek Road (12100 N) and follow it 6.4 miles to the parking area; the last few miles are semi-rough dirt.';
+update public.areas set parking_note=null where id='ut_hell_s_kitchen_cove' and parking_note='Park at the end of the cul-de-sac on 900 East above the Little Baldy subdivision in Providence (reached from 500 North or Center St), then hike about 0.35 mi on the trail.';
+commit;
