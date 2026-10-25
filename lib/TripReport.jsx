@@ -5,7 +5,7 @@ import { BTN_LG } from "./buttonStyles.js";
 import { createPortal } from "react-dom";
 import { useState } from "react";
 import { useLogTrack, useProfilesByIds } from "./db";
-import { DB_UID, C, CAT, CLIMBERS, Comments, FALLBACK_COVER, renderMD, catOf, condGroupsFor, condMetricsFor, fmtDurMin, isHazardTag, isRoadTag, rapSummary, campSummary, campLabel, roadReportOf, climberLine, onImgErr, pubName, realAuthor, seedAuthor, shortDate, useRealAuthors, uDistMi, uElev, uMass, uTempU } from "../ClimbMatchCore.jsx";
+import { DB_UID, C, CAT, CLIMBERS, FALLBACK_COVER, renderMD, catOf, condGroupsFor, condMetricsFor, fmtDurMin, isHazardTag, isRoadTag, rapSummary, campSummary, campLabel, roadReportOf, climberLine, onImgErr, pubName, realAuthor, seedAuthor, shortDate, useRealAuthors, uDistMi, uElev, uMass, uTempU } from "../ClimbMatchCore.jsx";
 import PhotoStrip from "../src/components/PhotoStrip.tsx";
 import Stars from "../src/components/Stars.tsx";
 import GPXMap from "../src/components/GPXMap.tsx";
@@ -16,6 +16,7 @@ import ActionIcon from "../src/components/ActionIcon.tsx";
 import { POP_CLOSE, POP_CLOSE_MEDIA } from "./popupChrome.js";
 import { openContentReport, canReportContent, isDbRowId } from "./reportBus";
 import { photoThumb } from "./photoThumb";
+import Comments from "../src/components/Comments.tsx";
 
 export default function TripReport({blockedIds,onBlock,ascent,onClose,onViewClimber,onOpenRoute,onShare,onConnect,friendStateOf,comments,commentApi={},connections}){
   const [showShare,setShowShare]=useState(false);

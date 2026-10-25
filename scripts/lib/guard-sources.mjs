@@ -201,6 +201,7 @@ export const MOVED = {
     "src/components/LoginScreen.tsx",
     "src/components/FloatPlan.tsx",
     "src/components/LogCatch.tsx",
+    "src/components/Comments.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
