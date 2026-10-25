@@ -28,6 +28,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   offered only when at least one climb in the list has one; climbs without a position go last, by name, under a line counting them.
   Neither import kept a position (the OpenBeta ETL dropped `metadata.leftRightIndex`; MP's route-finder CSV has none), so on 2026-10-21
   **1 of 314,360 routes** had one.
+- **Filters on a wall's list** (owner note, 2026-10-25): **Filters** over a leaf area's climb list narrows it by discipline (the disciplines the wall holds, plus All) and a star minimum (Any / 2+ / 3+ stars; a climb nobody has rated stays in). It filters the rows `useAreaRoutes` already loaded, so it costs no query. The sort adds **By discipline** (one heading per discipline, in `DISCIPLINES` order, A → Z under each). Grade is deliberately NOT a sort key: `grade_num` is only comparable within one scale.
 - **Where the wall order comes from** (`scripts/pipeline/order-from-mp.mjs`, one area per run; the owner's reference is **Mountain Project**,
   which holds more routes than OpenBeta). Each row of an MP area page's route table carries `data-lr`, its left-to-right index
   (999999 = MP does not place it); the cached tree walk kept the rows but not that attribute, so the page is read again (paced by
