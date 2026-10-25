@@ -110,8 +110,12 @@
          beside — a native file input, and those inputs were display:none: a display:none input
          cannot take focus and a label never can, so nobody on a keyboard could attach a photo
          anywhere in the app. Visually hidden instead, the input stays in the tab order and
-         Enter/Space opens the picker; the ring goes on the label a sighted user sees. */
-      .cm-file-input { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+         Enter/Space opens the picker; the ring goes on the label a sighted user sees.
+         FIXED, not absolute (2026-10-24): an absolute input keeps its place in the flow but belongs
+         to the nearest POSITIONED box, which inside a popup is the fixed backdrop -- so the three at
+         the foot of Log a climb stretched that backdrop to 3,968px of scroll, and a drag on the
+         header carried the whole popup, ✕ and all, off the screen. */
+      .cm-file-input { position: fixed; top: 0; left: 0; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
       label:has(.cm-file-input:focus-visible), .cm-file-input:focus-visible + label { outline: 2px solid #2f81f7; outline-offset: 2px; }
       .cm-pop { animation: cm-pop .42s cubic-bezier(.2,.8,.2,1) both; }
       .cm-burst { animation: cm-burst .85s ease-out forwards; }
@@ -278,7 +282,7 @@
         <div class="b-card"><div class="b-line cm-shimmer" style="width:44%"></div><div class="b-line cm-shimmer" style="width:80%"></div></div>
         <div class="b-card"><div class="b-line cm-shimmer" style="width:66%"></div><div class="b-line cm-shimmer" style="width:52%"></div></div>
       </div>
-      <div class="b-nav"><div><b></b>Home</div><div><b></b>Climbs</div><div><b></b>Partners</div><div><b></b>Crews</div><div><b></b>Logbook</div><div><b></b>Ranks</div></div>
+      <div class="b-nav"><div><b></b>Home</div><div><b></b>Climbs</div><div><b></b>Partners</div><div><b></b>Crews</div><div><b></b>Logbook</div><div><b></b>Ranks</div><div><b></b>Profile</div></div>
     </div></div>
     <script type="module" src="/main.jsx"></script>
   </body>

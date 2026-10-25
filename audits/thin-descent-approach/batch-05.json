@@ -1,0 +1,93 @@
+{
+  "wa_golden_horn_northeast_arete": {
+    "area": "wa_golden_horn",
+    "set": {
+      "descent_text": "The arete ends on the summit, and the way off is the standard Southwest Route. A short rappel of roughly 35 to 40 ft down the summit block, from slings in the notch between the summit pillars, returns you to the ridge; a 30 m rope is plenty. Below that, loose scree and talus on the southwest side leads back toward Snowy Lakes, and plunge-stepping makes it quick. From camp, retrace the Pacific Crest Trail over Granite Pass and Cutthroat Pass to Rainy Pass."
+    },
+    "review": {
+      "sources": [
+        "http://www.alpenglow.org/climbing/golden-horn-1980/",
+        "https://climberkyle.com/2016/08/27/golden-horn/",
+        "https://www.mountainproject.com/route/126875651/southwest-route",
+        "https://trailcatjim.com/tower-mtn-golden-horn-snowy-lakes/"
+      ],
+      "confidence": "medium",
+      "notes": "The 1980 second-ascent account shows the arete finishes on the summit; the southwest route descent (short summit-block rappel, scree) is confirmed by two trip reports and MP's gear note. No source describes a descent specific to the arete."
+    }
+  },
+  "wa_granite_mountain_standard_scramble_route": {
+    "area": "wa_granite_mountain",
+    "set": {
+      "approach": "Start at the Pratt Lake trailhead at I-90 exit 47 and hike the Pratt Lake trail on moderate grade through forest. At about 1.2 miles a junction sends Granite Mountain Trail #1016 off to the right; Pratt Lake continues left. The Granite Mountain trail is the route, so the approach is simply the first miles of it: steep switchbacks, a crossing of a large avalanche chute just under a mile past the junction, then a traverse east onto the mountain's shoulder. In winter and early spring the chute is a real avalanche hazard.",
+      "descent_text": "The route is the trail, so you come down the way you went up. From the summit lookout, drop back through the rocky basin and the meadow, then follow the switchbacks down the shoulder, where the steep grade is hard on knees. Cross the avalanche chute again, take care on the loose rocky tread, and turn left at the junction onto the Pratt Lake trail for the last stretch to the trailhead. Round trip is roughly 8.6 miles with about 3,800 ft of gain. Snow cover, especially at the chute, turns this descent from a walk into a hazard."
+    },
+    "review": {
+      "sources": [
+        "https://www.wta.org/go-hiking/hikes/granite-mountain",
+        "https://www.hikeoftheweek.com/2024/09/26/granitemountain/"
+      ],
+      "confidence": "high",
+      "notes": "WTA hike description supports trailhead, 1.2 mile junction, avalanche chute crossing, traverse onto the shoulder, distance and gain; descent is the same out-and-back trail."
+    }
+  },
+  "wa_hibox_mountain_east_route": {
+    "area": "wa_hibox_mountain",
+    "set": {
+      "approach": "Start at the Rachel Lake trailhead at the end of the Box Canyon road (FR 4930) and walk Rachel Lake Trail #1313 for about 2.2 miles, passing a brushy avalanche clearing where the summit block shows ahead. Just beyond it, watch on the right for the unmarked climbers' boot path that climbs steeply through timber and deadfall, mostly Class 2. It breaks out below a cliff band: pass the first cliffs on the right, work left around a rock outcrop, and take a gully on the right through the second cliffs. The path then leads up to the open slopes at about 6,250 ft below the summit block, where the East Route splits off to the right around the south and east sides. Expect roughly 3,800 to 3,900 ft of gain from the car.",
+      "descent_text": "Descend the way you came. From the summit, downclimb the east-side gully and the low-exposure Class 3 cleft, then head back across the base of the summit block to the top of the boot path. Follow it down through both cliff bands, using the same gully on the right, and stay on the existing tread rather than cutting new lines through the loose scree. Watch for the exit where the boot path meets Rachel Lake Trail near the avalanche clearing; it is easy to miss in the trees. From there it is an easy walk of a little over two miles to the trailhead. No rappel is needed."
+    },
+    "review": {
+      "sources": [
+        "http://www.willhiteweb.com/alpine_lakes_wilderness/hibox_mountain/rachel_lake_trail_339.htm",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-09-09.081229111143",
+        "https://www.wta.org/go-hiking/hikes/hibox-mountain"
+      ],
+      "confidence": "medium",
+      "notes": "Willhite and the 2025 WTA report agree on the boot path, cliff bands, 6,250 ft split and the east-side gully or cleft with Class 3 moves; WTA gives 3,900 ft gain, Willhite 3,800. Assumes East Route = the east-side finish; the other Hibox rows (NW Ridge, South, SE Ridge, SE Shoulder) cannot be told apart from sources so they are skipped."
+    }
+  },
+  "wa_hibox_mountain_northwest_ridge": { "area": "wa_hibox_mountain", "skip_reason": "No source describes a Northwest Ridge line; sources only describe the Rachel Lake boot path and east-side finish, so this row's own approach/descent cannot be stated without inventing." },
+  "wa_hibox_mountain_south_route": { "area": "wa_hibox_mountain", "skip_reason": "No source distinguishes a South Route from the standard boot-path scramble; cannot write line-specific text without inventing." },
+  "wa_hibox_mountain_southeast_ridge": { "area": "wa_hibox_mountain", "skip_reason": "No source describes a Southeast Ridge line separate from the standard scramble; not written." },
+  "wa_hibox_mountain_southeast_shoulder": { "area": "wa_hibox_mountain", "skip_reason": "No source describes a Southeast Shoulder line separate from the standard scramble; not written." },
+  "wa_hozomeen_mountain_north_peak_south_ridge": { "area": "wa_hozomeen_mountain", "skip_reason": "Sources only mention the loose South Ridge connecting the two summits in passing (rotten Class 4-5 bumps); not enough to state this row's approach or descent without guessing." },
+  "wa_hozomeen_mountain_south_peak_north_ridge": { "area": "wa_hozomeen_mountain", "skip_reason": "No source found describing a South Peak North Ridge route or its 5.5 grade; the north side is described only as a vertical face." },
+  "wa_hozomeen_mountain_south_peak_southeast_buttress": { "area": "wa_hozomeen_mountain", "skip_reason": "No source found that describes the descent of the Southeast Buttress; the descent depends on where it tops out." },
+  "wa_hozomeen_mountain_south_peak_southwest_route": {
+    "area": "wa_hozomeen_mountain",
+    "set": {
+      "descent_text": "Descend the line you climbed. From the summit, reverse the narrow west ridge: the short 5.6 headwall below the top is usually rappelled from the anchor on the platform above it, and the overhang lower on the ridge is rappelled from a fixed bolt. Between those the crest is loose, with scree-covered ledges where a slip is serious, and most of the traverse is on the south side of the ridge. Past the overhang, go back around the rib and the broad loose gully to the access notch and drop to the 6,800 ft saddle. From there, descend the west basin: slabs first, then red scree and heather, then the boulder bottleneck, and finally the west rib and the dry creek bed, where deadfall slows everything. Expect devil's club near Hozomeen Creek before rejoining the Hozomeen Lake trail."
+    },
+    "review": {
+      "sources": [
+        "https://onehikeaweek.com/2019/07/21/hozomeen-mountain-south-peak/",
+        "https://trailcatjim.com/hozomeen-mtn-south-peak-via-west-gully-south-face-west-ridge/"
+      ],
+      "confidence": "medium",
+      "notes": "A 2019 report covers the same line as the row's stored approach (Hozomeen Lake trail, west basin, 6,800 ft saddle, south side, west ridge, 5.6 crux) and describes the rappels and the return through the west basin. Rope count at the crux not stated in sources so none is given."
+    }
+  },
+  "wa_hozomeen_mountain_southwest_buttress": { "area": "wa_hozomeen_mountain", "skip_reason": "No source found for a North Peak Southwest Buttress (5.10a); cannot state approach or descent without inventing." },
+  "wa_huckleberry_mountain_north_route": { "area": "wa_huckleberry_mountain", "skip_reason": "No source describes a North Route on this Huckleberry Mountain; sources cover only the East Ridge, West Face, South Face and a south gully." },
+  "wa_huckleberry_mountain_north_spur": { "area": "wa_huckleberry_mountain", "skip_reason": "No source describes a North Spur on this peak; not written." },
+  "wa_huckleberry_mountain_southwest_slope": { "area": "wa_huckleberry_mountain", "skip_reason": "No source describes a Southwest Slope on this peak (the WTA Huckleberry page is a different mountain near Glacier Peak); not written." },
+  "wa_ingalls_peak_north_peak_southwest_face": { "area": "wa_ingalls_peak", "skip_reason": "Sources give only a one-line mention of a Class 4 southwest face with loose rock; the approach text found applies to the South Ridge and no descent for the face is described." },
+  "wa_ingalls_peak_east_ne_ridge_route": {
+    "area": "wa_ingalls_peak_east",
+    "set": {
+      "approach": "Park at the Esmeralda trailhead at the end of the North Fork Teanaway road and take the Lake Ingalls trail. After about 0.4 mile the Ingalls Way junction bears right, and a second junction near 1.4 miles leads off to Longs Pass; stay on the main trail through Headlight Basin to Ingalls Pass at roughly 3 miles and 6,500 ft, about 2,500 ft of gain. Descend into the basin and traverse to Lake Ingalls, taking the higher trail for the shortest way, or the lower fork if you are camping in Headlight Basin. From the lake, head toward the east side of the peak, keeping to the right of the large couloir there. Easy ledges lead to the base of the northeast ridge."
+    },
+    "review": {
+      "sources": [
+        "https://www.wta.org/go-hiking/hikes/lake-ingalls",
+        "http://www.willhiteweb.com/teanawayriver/ingalls_north/south_ridge_198.htm",
+        "https://www.shane.st/trip-reports/ingalls/"
+      ],
+      "confidence": "medium",
+      "notes": "Trail junctions, pass elevation and gain come from WTA and two trip reports; the final ledges-to-base sentence is the row's existing stored text, not independently confirmed."
+    }
+  },
+  "wa_iron_cap_mountain_northeast_shoulder": { "area": "wa_iron_cap_mountain", "skip_reason": "No source found describing a Northeast Shoulder line; sources cover the North Ridge from Chetwoot Lake only." },
+  "wa_iron_cap_mountain_south_route_2": { "area": "wa_iron_cap_mountain", "skip_reason": "No source found describing this South Route separately from the Chetwoot Lake line; not written." },
+  "wa_lane_peak_fly_the": { "area": "wa_lane_peak", "skip_reason": "duplicate of wa_lane_peak_r2" }
+}

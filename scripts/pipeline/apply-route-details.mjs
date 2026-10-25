@@ -49,7 +49,9 @@ const problems = (field, val, src) => {
   if (shouts(val)) p.push("all caps");
   // ...and out of the source/first-person tests too: "Twist My Tea" and "Nail in my Coffin" are climbs, not a voice.
   const unnamed = NAMES.list.reduce((t, n) => t.replace(new RegExp("\\b" + n.split(" ").map(w => w.replace(/[^a-z0-9]/g, "")).filter(Boolean).join("\\W+") + "\\b", "gi"), "zz"), val);
-  if (field !== "fa") for (const [re, why] of BAD) if (re.test(unnamed)) p.push(why);
+  // Accents stripped first: \b treats "ô" as a non-word character, so "Dôme" read as "D" + "me" (first person).
+  const plain = unnamed.normalize("NFKD").replace(/[̀-ͯ]/g, "");
+  if (field !== "fa") for (const [re, why] of BAD) if (re.test(plain)) p.push(why);
   if (field !== "fa") {
     const ms = maskNames(src || ""), mv = maskNames(val);
     const have = grams(ms, 4), have6 = grams(ms, 6);

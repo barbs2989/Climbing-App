@@ -996,6 +996,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 
 - **`check:approach-overlay`** (in build) — when a climb has more than one way in, the PICKED one
   drives the whole page and nothing from another leaks under its name.
+  - **A VARIATION (2026-10-24, Boving Roofs on the Southwest Rib)** is a via route the climb leaves
+    and REJOINS (`viaPitches`). The guard asserts it keeps its OWN `itinerary` — the parent's narrated
+    "7 pitches of 5.6–5.8" on Boving Roofs' page — while still taking the parent's walk, that a plain
+    via route still lends its trip plan, and that `wholeLine` orders parent 1–3, own 1–3, parent 6–7.
+    Injection-tested: dropping the itinerary exemption fails the first assertion.
   - **Mount Shuksan's Southeast Ridge is why.** It is a summit-pyramid FINISH reached by the
     Sulphide Glacier or the Fisher Chimneys, from two trailheads. The row could hold one: its pins,
     camps and numbers were the Sulphide's while its own road prose named Lake Ann, and its 6,627 ft /

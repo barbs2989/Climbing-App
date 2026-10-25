@@ -19,22 +19,26 @@ import { fileURLToPath } from "url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const out = path.join(ROOT, `.friends-feed-probe-${process.pid}.mjs`);
+// FriendsFeed (PR42) and TickList (PR38) live in src/components; CLIMBERS stays in core. One entry re-exports all three, so the bundle below keeps its shape.
+const entry = path.join(ROOT, `.friends-feed-probe-entry-${process.pid}.mjs`);
+fs.writeFileSync(entry, 'export { default as FriendsFeed } from "./src/components/FriendsFeed.tsx";\nexport { default as TickList } from "./src/components/TickList.tsx";\nexport { CLIMBERS } from "./ClimbMatchCore.jsx";\n');
 let bad = 0;
 const ok = (m) => console.log("  ok   " + m);
 const fail = (m) => { bad++; console.log("  FAIL " + m); };
 const dead = (m) => { console.error("\nBROKEN PROBE: " + m); process.exit(2); };
 
 try {
-  execFileSync("npx", ["esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
+  execFileSync("npx", ["esbuild", entry,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
-    "--loader:.jsx=jsx",
+    "--loader:.jsx=jsx", "--loader:.tsx=tsx",
     `--define:import.meta.env=${JSON.stringify({})}`,
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
     "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
-} catch { fs.rmSync(out, { force: true }); dead("esbuild could not bundle ClimbMatchCore.jsx"); }
+} catch { fs.rmSync(out, { force: true }); fs.rmSync(entry, { force: true }); dead("esbuild could not bundle ClimbMatchCore.jsx"); }
 
 const core = await import(out + "?t=" + Date.now());
 fs.rmSync(out, { force: true });
+fs.rmSync(entry, { force: true });
 const { FriendsFeed, CLIMBERS } = core;
 if (typeof FriendsFeed !== "function") dead("FriendsFeed is not exported — ANCHOR LOST");
 if (!Array.isArray(CLIMBERS) || !CLIMBERS.length) dead("CLIMBERS did not load");

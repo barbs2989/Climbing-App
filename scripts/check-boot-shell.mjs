@@ -41,7 +41,7 @@ const navDecl = app.match(/const NAV=\[(.*?)\];/s);
 if (!navDecl) fail("could not find `const NAV=[...]` in ClimbMatch.jsx — update this check if it was renamed.");
 const realLabels = [...navDecl[1].matchAll(/label:"([^"]+)"/g)].map((m) => m[1]);
 if (!realLabels.length) fail("NAV parsed but no label: entries found.");
-// The BAR is NAV minus the entries marked `bar:false` (Profile: a screen reached from the Menu,
+// The BAR is NAV minus the entries marked `bar:false` (Groups: a screen reached from the Menu,
 // not a tab). The boot shell draws the bar, so it is compared to barLabels; the Help tour below
 // explains every SCREEN, so it still has to cover all of realLabels.
 const barLabels = [...navDecl[1].matchAll(/\{[^{}]*\}/g)].filter((m) => !/bar:\s*false/.test(m[0])).map((m) => (/label:"([^"]+)"/.exec(m[0]) || [])[1]).filter(Boolean);

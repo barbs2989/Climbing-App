@@ -1,0 +1,570 @@
+{
+ "targets": [
+  {
+   "approach": "From the Stuart Lake Trailhead (end of Eightmile Road/FR 7601, off Icicle Road/FR 7600), follow the Mountaineer Creek climbers' path past the Colchuck Lake turnoff toward the basins below the north side of the mountain, then work up into the Stuart Glacier basin beneath the col shared with the West Ridge.",
+   "area_id": "wa_mount_stuart",
+   "corrected": false,
+   "descent": "Descend the Cascadian Couloir (south side) and Longs Pass, the standard Stuart descent.",
+   "descent_text": "Descend south via the Cascadian Couloir to Ingalls Creek and out over Longs Pass, or as planned.",
+   "discipline": "alpine",
+   "grade": "WI3",
+   "id": "wa_mount_stuart_stuart_glacier_couloir",
+   "name": "Stuart Glacier Couloir",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Stuart-Enchantments",
+   "peak": "Mount Stuart",
+   "peak_elev": 9415,
+   "peak_lat": 47.475118,
+   "peak_lng": -120.903144,
+   "pitches": 6,
+   "siblings": [
+    "wa_mount_stuart_west_ridge = West Ridge",
+    "wa_upper_north_ridge_w_great_gendarme = Upper North Ridge w/Great Gendarme",
+    "wa_south_headwall = South Headwall",
+    "wa_gorillas_direct = Gorillas Direct",
+    "wa_king_kong_gorillas_direct_direct = King Kong - Gorillas Direct Direct",
+    "wa_mount_stuart_north_ridge = North Ridge (Complete)",
+    "wa_mount_stuart_cascadian_couloir = Cascadian Couloir",
+    "wa_mount_stuart_stuart_range_traverse = Stuart Range Traverse",
+    "wa_mt_stuart_always_the_cowboy_never_the_cow = Always the Cowboy, Never the Cow",
+    "wa_mount_stuart_gorillas_in_the_mist = Gorillas in the Mist",
+    "wa_mount_stuart_girth_pillar = Girth Pillar",
+    "wa_mount_stuart_ice_cliff_glacier = Ice Cliff Glacier",
+    "wa_sherpa_glacier = Sherpa Glacier",
+    "wa_mount_stuart_direct_north_ridge = Direct North Ridge"
+   ],
+   "trailhead": "Stuart Lake Trailhead (Trail #1599)"
+  },
+  {
+   "approach": "From the Lake Stuart Trailhead, hike the Lake Stuart-Colchuck Lake Trail (#1599); at about 2.2 miles a fork splits toward Colchuck Lake (left) and Lake Stuart (right) — leave the maintained trail near the meadow around 4,500 ft and head southwest, following the south fork of Mountaineer Creek upstream. After a couple of miles, climb a steep talus/boulder slope into the hanging valley beneath Sherpa Peak and the Sherpa/Stuart Glaciers. Sherpa Glacier climbers ascend directly from this basin; Stuart Glacier Couloir climbers continue up into the couloir on Stuart's north side from the same basin. This is the standard approach for a compact two-day outing on these routes, though it can alternatively be reached from the south via Goat Pass by traversing across the upper Stuart Glacier.",
+   "area_id": "wa_mount_stuart",
+   "corrected": false,
+   "descent": "Same glacier (best early-season descent) or continue over the summit to the Cascadian Couloir",
+   "descent_text": "Most parties descend the same glacier back to a Mountaineer Creek camp; commonly used as the descent after climbing the Ice Cliff Glacier.",
+   "discipline": "mountaineering",
+   "grade": "Class 4",
+   "id": "wa_sherpa_glacier",
+   "name": "Sherpa Glacier",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Stuart-Enchantments",
+   "peak": "Mount Stuart",
+   "peak_elev": 9415,
+   "peak_lat": 47.475118,
+   "peak_lng": -120.903144,
+   "pitches": 0,
+   "siblings": [
+    "wa_mount_stuart_west_ridge = West Ridge",
+    "wa_upper_north_ridge_w_great_gendarme = Upper North Ridge w/Great Gendarme",
+    "wa_south_headwall = South Headwall",
+    "wa_gorillas_direct = Gorillas Direct",
+    "wa_king_kong_gorillas_direct_direct = King Kong - Gorillas Direct Direct",
+    "wa_mount_stuart_north_ridge = North Ridge (Complete)",
+    "wa_mount_stuart_cascadian_couloir = Cascadian Couloir",
+    "wa_mount_stuart_stuart_range_traverse = Stuart Range Traverse",
+    "wa_mount_stuart_stuart_glacier_couloir = Stuart Glacier Couloir",
+    "wa_mt_stuart_always_the_cowboy_never_the_cow = Always the Cowboy, Never the Cow",
+    "wa_mount_stuart_gorillas_in_the_mist = Gorillas in the Mist",
+    "wa_mount_stuart_girth_pillar = Girth Pillar",
+    "wa_mount_stuart_ice_cliff_glacier = Ice Cliff Glacier",
+    "wa_mount_stuart_direct_north_ridge = Direct North Ridge"
+   ],
+   "trailhead": "Stuart Lake Trailhead (Trail #1599)"
+  },
+  {
+   "approach": "Northeast via Ingalls Way Trail #1390 and Longs Pass Trail #1229, then down to Ingalls Creek; ascend first major clearing west of Ulrich's Couloir",
+   "area_id": "wa_mount_stuart",
+   "corrected": true,
+   "descent": null,
+   "descent_text": "The route tops out very close to the true summit; descend south via the Cascadian Couloir.",
+   "discipline": "alpine",
+   "grade": "5.8",
+   "id": "wa_south_headwall",
+   "name": "South Headwall",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Stuart-Enchantments",
+   "peak": "Mount Stuart",
+   "peak_elev": 9415,
+   "peak_lat": 47.475118,
+   "peak_lng": -120.903144,
+   "pitches": 5,
+   "siblings": [
+    "wa_mount_stuart_west_ridge = West Ridge",
+    "wa_upper_north_ridge_w_great_gendarme = Upper North Ridge w/Great Gendarme",
+    "wa_gorillas_direct = Gorillas Direct",
+    "wa_king_kong_gorillas_direct_direct = King Kong - Gorillas Direct Direct",
+    "wa_mount_stuart_north_ridge = North Ridge (Complete)",
+    "wa_mount_stuart_cascadian_couloir = Cascadian Couloir",
+    "wa_mount_stuart_stuart_range_traverse = Stuart Range Traverse",
+    "wa_mount_stuart_stuart_glacier_couloir = Stuart Glacier Couloir",
+    "wa_mt_stuart_always_the_cowboy_never_the_cow = Always the Cowboy, Never the Cow",
+    "wa_mount_stuart_gorillas_in_the_mist = Gorillas in the Mist",
+    "wa_mount_stuart_girth_pillar = Girth Pillar",
+    "wa_mount_stuart_ice_cliff_glacier = Ice Cliff Glacier",
+    "wa_sherpa_glacier = Sherpa Glacier",
+    "wa_mount_stuart_direct_north_ridge = Direct North Ridge"
+   ],
+   "trailhead": "Esmeralda Basin Trailhead"
+  },
+  {
+   "approach": "From the Goodell Creek trailhead off SR-20 near Newhalem, follow the old roadbed and Terror Basin climbers' path (~4 miles, then a steep, cairned side trail) to the 5,800' Terror Basin camp, then continue over the roughly 6,400' Chopping Block col into Crescent Creek Basin. The saddle between Terror and Degenhardt is reached from the basin via slabs and talus on its east side.",
+   "area_id": "wa_mount_terror",
+   "corrected": false,
+   "descent": "Descend the West Ridge to the notch above the descent gully, then rappel and downclimb the gully into Crescent Creek Basin.",
+   "descent_text": "Standard descent is the West Ridge gully back into Crescent Creek Basin (multiple rappels off a large chockstone), not a reversal of the East Ridge.",
+   "discipline": "alpine",
+   "grade": "5.8",
+   "id": "wa_mount_terror_southeast_face",
+   "name": "East Ridge",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Southern Pickets",
+   "peak": "Mount Terror",
+   "peak_elev": 8151,
+   "peak_lat": 48.7748,
+   "peak_lng": -121.2993,
+   "pitches": 4,
+   "siblings": [
+    "wa_mount_terror_stoddard_buttress = Stoddard Buttress",
+    "wa_mount_terror_north_face = North Face / North Buttress",
+    "wa_mount_terror_west_ridge = West Ridge"
+   ],
+   "trailhead": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)"
+  },
+  {
+   "approach": "Reached via the longer, rougher Triumph Pass climbers' route rather than the standard Thornton Lakes approach used for the Northeast Ridge; used far less often and much less documented than the NE Ridge approach.",
+   "area_id": "wa_mount_triumph",
+   "corrected": false,
+   "descent": "Reverse the route with a long series of rappels (double- and single-rope) back down the southeast ramp and west-side benches.",
+   "descent_text": null,
+   "discipline": "scrambling",
+   "grade": "Class 4",
+   "id": "wa_mount_triumph_west_route",
+   "name": "West Route",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Picket Range",
+   "peak": "Mount Triumph",
+   "peak_elev": 7260,
+   "peak_lat": 48.706705,
+   "peak_lng": -121.355985,
+   "pitches": null,
+   "siblings": [
+    "wa_mount_triumph_northeast_ridge = Northeast Ridge"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "From the road-end parking on Forest Road 2419 (off North Lake Cushman Road/FR-24), shared with the standard route, walk the old roadbed past the standard route's trail entrance to just beyond the Big Creek crossing (~3,100 ft); a way trail leads to the base of the southeast ridge's rock section. Follow an old roadbed across Big Creek and a climbers' trail up a rock rib, gaining roughly 1,600 ft to a bowl below the Shield Wall; a gully ascends up and left to a notch at the wall's left corner (~4,850 ft) where the technical climbing begins.",
+   "area_id": "wa_mount_washington_olympic",
+   "corrected": false,
+   "descent": "Descend via the standard route rather than reversing the SE Ridge.",
+   "descent_text": "Descend via Mount Washington's standard Class 3-4 scramble route, reversing back down to the same FR-2419/Big Creek trailhead used for the approach.",
+   "discipline": "alpine",
+   "grade": "5.7",
+   "id": "wa_se_ridge_aka_shield_wall",
+   "name": "SE Ridge AKA Shield Wall",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Eastern Olympic Mountains",
+   "peak": "Mount Washington",
+   "peak_elev": 6260,
+   "peak_lat": 47.531349,
+   "peak_lng": -123.246118,
+   "pitches": 13,
+   "siblings": [
+    "wa_washington_ellinor_traverse_ridge = Washington Ellinor Traverse (Ridge)",
+    "wa_mount_washington_olympic_winter_direct = Winter Direct",
+    "wa_mount_washington_olympic_standard = Standard Scramble (above Lake Cushman)",
+    "wa_mount_washington_olympic_left_ventricle = Left ventricle"
+   ],
+   "trailhead": "FR-2419 trailhead (Big Creek, off North Lake Cushman Road)"
+  },
+  {
+   "approach": null,
+   "area_id": "wa_nooksack_tower",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_nooksack_tower_beckey_schmidtke_route",
+   "name": "Beckey-Schmidtke Route",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Bellingham and Mt Baker Hwy",
+   "peak": "Nooksack Tower",
+   "peak_elev": 8285,
+   "peak_lat": 48.8364,
+   "peak_lng": -121.5867,
+   "pitches": null,
+   "siblings": [
+    "wa_nooksack_tower_south_face = South Face",
+    "wa_nooksack_tower_beckey_route = North Face (Beckey-Schmidtke Route)"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_north_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.7",
+   "id": "wa_north_peak_north_ridge",
+   "name": "North Ridge",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Gunsight Range, The",
+   "peak": "North Peak",
+   "peak_elev": 8160,
+   "peak_lat": 48.3068,
+   "peak_lng": -120.994,
+   "pitches": 4,
+   "siblings": [
+    "wa_north_peak_southeast_buttress = Southeast Buttress",
+    "wa_west_face_2 = West Face"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_north_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.7",
+   "id": "wa_north_peak_southeast_buttress",
+   "name": "Southeast Buttress",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Gunsight Range, The",
+   "peak": "North Peak",
+   "peak_elev": 8160,
+   "peak_lat": 48.3068,
+   "peak_lng": -120.994,
+   "pitches": null,
+   "siblings": [
+    "wa_north_peak_north_ridge = North Ridge",
+    "wa_west_face_2 = West Face"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "Standard approach is via Holden Village: Lady of the Lake ferry from Chelan or Fields Point Landing to Lucerne, shuttle to Holden, then roughly 8 miles up the Railroad Creek Trail to Lyman Lake. Forest Road 8301 and the Lucerne commercial dock are closed under Forest Service order 06-17-05-26-04, in effect January 28, 2026 through December 31, 2027, after December 2025 storm damage — leaving the longer Phelps Creek Trailhead approach over Spider Gap (roughly 11–12 miles one-way, glacier travel with ice axe required), itself closed through October 31, 2026 by the Little Giant Fire closure (Forest Service order 06-17-07-2026-40) and reached only over closed road (Forest Service order 06-17-07-2026-11, through December 31, 2027).",
+   "area_id": "wa_north_star_mountain",
+   "corrected": true,
+   "descent": "Reverse the ascent route",
+   "descent_text": "Reverse the south-side talus and scree back down to the Lyman Lake basin.",
+   "discipline": "mountaineering",
+   "grade": "Class 2",
+   "id": "wa_north_star_mountain_east_route",
+   "name": "East Route",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Entiat Mountain Range",
+   "peak": "North Star Mountain",
+   "peak_elev": 8096,
+   "peak_lat": 48.2230435,
+   "peak_lng": -120.9005039,
+   "pitches": null,
+   "siblings": [
+    "wa_north_star_mountain_cloudy_peak_traverse = Cloudy Peak Traverse (South Ridge)"
+   ],
+   "trailhead": "Holden Village (Railroad Creek)"
+  },
+  {
+   "approach": null,
+   "area_id": "wa_observation_rock",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "scrambling",
+   "grade": null,
+   "id": "wa_observation_rock_standard_scramble_route",
+   "name": "Standard scramble route",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Columbia Gorge",
+   "peak": "Observation Rock",
+   "peak_elev": null,
+   "peak_lat": 46.90179,
+   "peak_lng": -121.80659,
+   "pitches": null,
+   "siblings": [
+    "wa_observation_rock_2_north_face = North Face"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_old_guard_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.5",
+   "id": "wa_old_guard_peak_east_side_route",
+   "name": "East Side Route",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Darrington and Mountain Loop Hwy",
+   "peak": "Old Guard Peak",
+   "peak_elev": 8260,
+   "peak_lat": 48.3559,
+   "peak_lng": -121.0358,
+   "pitches": null,
+   "siblings": [
+    "wa_old_guard_peak_southwest_route = West Side (LeConte Glacier)"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "Drive Cascade River Road east from Marblemount roughly 23 miles (paved for about the first 10, then good gravel) to its end at the Cascade Pass Trailhead (3,660 ft; parking area and vault toilet, North Cascades NP wilderness permit required for overnight camps). In some seasons, including 2026, the road is gated to vehicles at Eldorado (mile 20), leaving the last 3 miles to the trailhead on foot or bike. From the trailhead, follow the Cascade Pass Trail, which switchbacks about 30 times up a forested rib, gaining roughly 1,400 ft in the first 2 miles before the grade eases into a long ascending traverse through meadows, talus, and lingering snowfields to Cascade Pass (5,400 ft) at about 3.7 miles — figure 2.5-3.5 hours to the pass. This is only the start: Old Guard Peak sits deep in the Ptarmigan Mountains and is normally reached via the classic Ptarmigan Traverse, not as a day trip from the pass. From Cascade Pass, leave the maintained trail and climb south and east on a boot path/talus toward Cache Col (~6,900 ft), a rocky saddle roughly 3 hours above the pass; a steep snowfield on the col's far side (often needing an axe and crampons through midsummer) descends to Kool-Aid Lake basin (~6,320-6,800 ft), a common first camp about 6-8 miles and 2,800 ft of gain from the trailhead. From Kool-Aid Lake the route crosses a band of steep snow (pickets useful) to reach the Red Ledge, an exposed but broad Class 3 rock traverse that is the traverse's first real crux, especially if snow-covered. Beyond the ledges, follow the true-left (climber's left) edge of the Middle Cascade Glacier, roping up for crevasse hazard, staying on the less-broken upper glacier, then continue to the Spider-Formidable Col (a whiteout-prone spot where altimeter/compass/GPS route-finding matters). From the col, descend steep snow and a long sidehill traverse over snow and rock down to Yang Yang Lakes, then continue via LeConte Pass and Sentinel Pass to White Rock Lakes/the LeConte Glacier area — the standard second or third camp, roughly 12-14 hours of cumulative travel from the trailhead for parties moving efficiently. Old Guard Peak is climbed from Sentinel Pass: contour onto the LeConte Glacier and ascend a moderate, gradually-angled snow couloir/snowfinger on the peak's northwest side (watch for a bergschrund/moat late season) to gain the summit ridge, then finish on short, low-Class-3 scrambling on solid, high-friction gabbro to the true summit (8,240-8,260 ft). Water is available at Kool-Aid Lake, Yang Yang Lakes, and White Rock Lakes/tarns near the LeConte Glacier; carry a full topo map and glacier gear, as this is committing, remote glacier terrain with no easy bail once past Cache Col.",
+   "area_id": "wa_old_guard_peak",
+   "corrected": false,
+   "descent": "Reverse the west-side route back to the Le Conte Glacier",
+   "descent_text": "Reverse the snow couloir and scramble down to the Le Conte-Sentinel col camp.",
+   "discipline": "mountaineering",
+   "grade": "Class 3",
+   "id": "wa_old_guard_peak_southwest_route",
+   "name": "West Side (LeConte Glacier)",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Darrington and Mountain Loop Hwy",
+   "peak": "Old Guard Peak",
+   "peak_elev": 8260,
+   "peak_lat": 48.3559,
+   "peak_lng": -121.0358,
+   "pitches": null,
+   "siblings": [
+    "wa_old_guard_peak_east_side_route = East Side Route"
+   ],
+   "trailhead": "Cascade Pass Trailhead (Cascade River Road)"
+  },
+  {
+   "approach": null,
+   "area_id": "wa_old_snowy_mountain",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_old_snowy_mountain_north_route",
+   "name": "North Route",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Southwest Cascades",
+   "peak": "Old Snowy Mountain",
+   "peak_elev": 7880,
+   "peak_lat": 46.512244,
+   "peak_lng": -121.454431,
+   "pitches": null,
+   "siblings": [
+    "wa_old_snowy_mountain_west_route = West Route",
+    "wa_old_snowy_mountain_r1 = Northwest Ridge / PCT approach"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_old_snowy_mountain",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_old_snowy_mountain_west_route",
+   "name": "West Route",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Southwest Cascades",
+   "peak": "Old Snowy Mountain",
+   "peak_elev": 7880,
+   "peak_lat": 46.512244,
+   "peak_lng": -121.454431,
+   "pitches": null,
+   "siblings": [
+    "wa_old_snowy_mountain_north_route = North Route",
+    "wa_old_snowy_mountain_r1 = Northwest Ridge / PCT approach"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_overcoat_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_overcoat_peak_north_face",
+   "name": "North Face",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Western Alpine Lakes",
+   "peak": "Overcoat Peak",
+   "peak_elev": 7432,
+   "peak_lat": 47.5139668,
+   "peak_lng": -121.2922506,
+   "pitches": null,
+   "siblings": [
+    "wa_overcoat_peak_southeast_route = East Face"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "From the Entiat River/Cottonwood Camp Trailhead, follow the Entiat River Trail roughly 7 miles to the 45-Mile Sheep Driveway, then go off-trail into the Pinnacle Creek drainage toward the south slopes; alternatively, use the North Fork Entiat Trailhead (end of FR 5606, 3,940 ft) and approach from the north side via Trail #1437. Both options require route-finding through 2006/2015 burn areas with heavy deadfall on the lower trail.",
+   "area_id": "wa_pinnacle_mountain_entiat",
+   "corrected": false,
+   "descent": "Reverse the ascent route.",
+   "descent_text": "No established alternate descent — down-climb/scree-descend the same south-slopes talus line used on ascent back to the high camp and drainage.",
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "id": "wa_pinnacle_mountain_entiat_scramble",
+   "name": "Standard Scramble",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Sawtooth / Lake Chelan",
+   "peak": "Pinnacle Mountain",
+   "peak_elev": 8400,
+   "peak_lat": 48.132174,
+   "peak_lng": -120.6701,
+   "pitches": null,
+   "siblings": null,
+   "trailhead": "North Fork Entiat Trailhead"
+  }
+ ],
+ "richSiblingsOnSamePeak": {
+  "wa_gorillas_direct": {
+   "approach": "From the Esmeralda/Lake Ingalls Trailhead at the end of FS-9737, hike the Ingalls Way Trail up switchbacks past several waterfalls. For the Cascadian Couloir and South Headwall, turn right onto the Longs Pass Trail at the junction about 1.7 miles in, climb to Longs Pass (about 6,250 ft) near mile 2.9, and descend the rocky climbers' trail on the far side to Ingalls Creek, cross on a log bridge, and follow the climbers' path up the meadow into the base of the Cascadian Couloir (South Headwall lies further up-basin via the same drainage). For West Ridge, the North Ridge routes, and the West Face Wall (Gorillas in the Mist / Gorillas Direct / King Kong), instead stay on the Ingalls Way Trail over Ingalls Pass (about 6,500 ft, roughly mile 3) and continue past Ingalls Lake toward Stuart Pass, then follow the climbers' trail onto the talus shoulder below Stuart's West Ridge and contour northwest to Goat Pass (7,600 ft) — the West Face Wall with the Gorillas routes sits in the amphitheater roughly midway between Stuart Pass and Goat Pass, while West Ridge and North Ridge climbers continue over or along Goat Pass toward their respective start points. Camping is common near Goat Pass or do",
+   "area_id": "wa_mount_stuart",
+   "descent_text": "Follow the West Ridge to the summit, or descend via the main gully with scrambling and downclimbing, breaking right on a large bench with a single-rope rappel option, before reaching Stuart Pass bivy sites.",
+   "name": "Gorillas Direct"
+  },
+  "wa_king_kong_gorillas_direct_direct": {
+   "approach": "From the Esmeralda/Lake Ingalls Trailhead at the end of FS-9737, hike the Ingalls Way Trail up switchbacks past several waterfalls over Ingalls Pass (about 6,500 ft, roughly mile 3), then continue past Ingalls Lake toward Stuart Pass, follow the climbers' trail onto the talus shoulder below Stuart's West Ridge, and contour northwest to Goat Pass (7,600 ft). The West Face Wall, home to the Gorillas routes (Gorillas in the Mist / Gorillas Direct / King Kong), sits in the amphitheater roughly midway between Stuart Pass and Goat Pass. Camping is common near Goat Pass or down at Ingalls Creek.",
+   "area_id": "wa_mount_stuart",
+   "descent_text": "Quickest descent follows the main gully of the West Ridge via scrambling and downclimbing before breaking skier's right onto a large bench with a single-rope rappel option, then downclimbing to bivy sites at Stuart Pass.",
+   "name": "King Kong - Gorillas Direct Direct"
+  },
+  "wa_mount_stuart_cascadian_couloir": {
+   "approach": "Drive to the Esmeralda (DeRoux Campground/Teanaway) trailhead at the end of North Fork Teanaway River Road (FR 9737), elevation ~4,243 ft — from I-90 exit 85 near Cle Elum, take SR 970 northeast, then Teanaway River Road roughly 23 miles to the road-end parking. From the trailhead, hike an old mining road/climbers' trail about 0.25 mile to a fork and take the right (east) branch toward Longs Pass. The trail climbs a mostly open, sun-exposed hillside — worth starting before dawn in summer to avoid the heat — gaining roughly 2,000 ft over about 2 miles to Longs Pass (~6,250 ft), the high point of the approach and the first place Mount Stuart and the Cascadian Couloir come into view. From the pass, descend the steep, loose scree on the far side, dropping about 1,200-1,400 ft to Ingalls Creek. Cross the creek on a log footbridge, then follow the Ingalls Creek Trail east for about a mile to a meadow and campsite area around 4,800 ft (good camps are found straight south of the couloir's outlet, and a few more near the footlog); this is the standard basecamp for an overnight ascent, though the route is also done car-to-car. From camp, pick up the climbers' trail up through the meadow to t",
+   "area_id": "wa_mount_stuart",
+   "descent_text": "Standard descent is simply reversing the ascent line — a walk-off/downclimb with no rappelling (0 rappels). From the false summit (~9,200 ft), descend the broken class 2-3 ridge back to the couloir, then work down the Cascadian Couloir itself, staying on the established climber's-left talus path around the permanent snowfield near 8,800 ft (parties who wander onto the right side of the snowfield have encountered old rappel-station remnants and much harder, more hazardous downclimbing — avoid this line). The couloir is notoriously loose top to bottom — sand, scree, and unstable blocks create real rockfall risk for parties below, and the upper sections splinter into a maze of use-trails and cairns that make route-finding genuinely tricky, especially at dawn/dusk or in whiteout; a GPS track or careful attention to your ascent line is worthwhile. An ice axe (and crampons in early season, or on any lingering snow tongue) should be carried for the descent through at least mid-summer. Continue down to Ingalls Creek, re-cross the footlog, and regain about 1,400-1,500 ft back up to Longs Pass over roughly 2-3 miles before descending the final stretch to the Esmeralda trailhead. Budget rough",
+   "name": "Cascadian Couloir"
+  },
+  "wa_mount_stuart_girth_pillar": {
+   "approach": "From the Stuart Lake Trailhead (Trail #1599, ~3,400') off Icicle Creek Rd/FS-7601, follow the trail up Mountaineer Creek about 2.5 miles to the Colchuck Lake junction (~4,600') and stay right for Stuart Lake. About a mile farther, leave the trail where it turns uphill for Stuart Lake: cross Mountaineer Creek on logs, follow the climbers' path up the valley bottom, and climb steepening talus and heather benches directly toward the basin beneath the Ice Cliff Glacier on Stuart's northeast face (moraine camps around 6,800-7,000'). This off-trail stretch is loose and exposed to rockfall — expect real route-finding, especially in the dark on an alpine start. From camp, rope up and climb the Ice Cliff Glacier itself: this is the route's main objective hazard, with significant icefall, spindrift, and crevasse danger — parties typically stay left to dodge falling ice and swing wide right to avoid the glacier's largest crevasses. At the top of the glacier is the 'ice cliff' step itself, anywhere from 10 to 100+ feet of 50-70° snow/ice (easier and shorter early season, steeper and more likely bare ice as the season progresses). Above the step, four moderate pitches of rock lead to the base o",
+   "area_id": "wa_mount_stuart",
+   "descent_text": "The route tops out on easier ground above the pillar, leading to the false summit above the Ice Cliff Glacier and on to Stuart's true summit. There is no reasonable way to reverse the route — down-climbing or rappelling back through the Ice Cliff Glacier's icefall and crevasse hazard is considerably more dangerous than finishing over the top, so continuing to the summit is effectively mandatory. From the true summit, retrace toward the false summit and descend the Sherpa Glacier, entered just east of where the Ice Cliff Glacier couloir tops out near 8,200 ft, back to the moraine camp; later in the season, once the Sherpa has melted out, parties go around Sherpa Peak to Sherpa Pass instead. Then walk out the Mountaineer Creek climbers' trail to the Stuart Lake trailhead, the same one used for the approach, so no car shuttle is needed. The glacier descent is technical, especially in the dark, so keep the axe, crampons and crevasse kit for it. If a party needs to bail from partway up the pillar itself, the crack pitches would need to be rappelled on natural gear anchors (no fixed hardware is reported on the pillar) — a real possibility to plan for given the route's commitment, but not",
+   "name": "Girth Pillar"
+  },
+  "wa_mount_stuart_ice_cliff_glacier": {
+   "approach": "From the Stuart Lake Trailhead (end of Eightmile Road/FR 7601 off Icicle Road/FR 7600), follow the main trail toward Stuart Lake, staying right at the fork, then leave the trail before the final switchbacks, cross the creek, and follow a climbers' path up the Mountaineer Creek valley to campsites around 5,400 ft beneath the Sherpa and Ice Cliff glaciers.",
+   "area_id": "wa_mount_stuart",
+   "descent_text": "Descend via the Sherpa Glacier, starting near the false summit (~8,200 ft), back down into the basin below the Sherpa and Ice Cliff glaciers, then retrace the approach to the Stuart Lake Trailhead. Do not down-climb the ice route.",
+   "name": "Ice Cliff Glacier"
+  },
+  "wa_mount_stuart_north_ridge": {
+   "approach": "Primary approach is from the north via the Stuart Lake Trailhead (reached via Icicle Creek Road and FR 7601 out of Leavenworth). From the trailhead, follow the Stuart/Colchuck Lake Trail as it rolls along Mountaineer Creek through forest; at the signed junction roughly 2 miles in, stay right on the Stuart Lake Trail (the Colchuck Lake Trail is the left fork). Continue up the Mountaineer Creek valley on the Stuart Lake Trail, then leave the maintained trail before reaching Stuart Lake itself, cross Mountaineer Creek, and follow its south fork upstream cross-country. After roughly 2 more miles of streamside travel, climb a steep, loose talus/boulder slope to gain the hanging valley beneath Sherpa Peak and the Sherpa Glacier — this valley has good bivy sites and is a common overnight stop. From the valley, angle directly up to the toe of the North Ridge, keeping the Ice Cliff Glacier on your left; the notch/base of the upper ridge sits around 8,200 ft, where a snow-filled gully (often climbed on 4th-class rock at its edge) gains the crest. All-in this is roughly 6-6.5 miles and 3,300+ ft of gain, about 4-5 hours to the base of the climbing. A well-known alternative is the southern app",
+   "area_id": "wa_mount_stuart",
+   "descent_text": "Nearly all parties descend via the Cascadian Couloir on the mountain's south side — this is a walk-off/downclimb with no rappelling required (0 rappels) under normal summer conditions. From the true summit, downclimb steep snow or scree, keeping right through sparse trees to drop into the head of the Cascadian Couloir, then follow the couloir down its full length (loose sand, scree, and rockfall-prone rock the entire way; an ice axe, and often crampons, are recommended into mid-summer for a lingering snow tongue) to the valley floor near Ingalls Creek, roughly 4,000 ft below the summit. The upper couloir splits into a confusing maze of climbers' paths and cairns — keep to the established talus path on the climber's left side around the 8,800 ft permanent snowfield; parties who drift onto the right side have run into old rappel-station remnants and much harder downclimbing. Because the North Ridge is climbed from the north (Stuart Lake/Mountaineer Creek side) while the Cascadian Couloir exits to the south (Ingalls Creek/Teanaway side), most parties face a long, tiring hike back around the mountain to a north-side vehicle — either via Longs Pass and a car shuttle, or a full trail loo",
+   "name": "North Ridge (Complete)"
+  },
+  "wa_mount_stuart_west_ridge": {
+   "approach": "Start at the Esmeralda Trailhead (end of North Fork Teanaway Road, ~4,243 ft) and follow the Ingalls Way Trail. At about 0.3 mile, stay right onto Ingalls Way where it leaves the Esmeralda Basin Trail; at about 1.7 miles (5,440 ft), turn right at the Longs Pass junction rather than continuing to Ingalls Basin, and switchback up open slopes to Longs Pass (roughly 3 mi, ~2,100 ft gain from the trailhead, cresting around 6,400 ft) — the pass gives the first clear look at Stuart's west aspect. From the pass, descend steep, sometimes dusty/scree-y trail on the north side, losing about 1,300 ft in a mile, to reach Ingalls Creek in the timber below. Cross the creek (a straightforward rock-hop or wade in normal summer flow, the last reliable water source before the ridge) and pick up the climber's path heading west, up-valley, toward Stuart Pass. Well short of the pass itself (roughly 6,200–6,400 ft), leave the trail and traverse climber's-left (north) across open talus and heather benches toward the base of the West Ridge — this cross-country traverse is where parties most commonly go astray, since there is no maintained tread and several minor gullies look similar; aim for the obvious de",
+   "area_id": "wa_mount_stuart",
+   "descent_text": "Descend via the Cascadian Couloir, the standard walk-off for the entire Stuart massif — this is a scramble descent, not a rappel route, under normal (dry to firm-snow) conditions. From the summit, reverse the short 3rd/2nd-class scramble east along the summit ridge to the false summit (~9,200 ft), then drop into the broken rock and scree above the top of the couloir. Stay climber's-right through sparse trees and rock bands near the top to find the true couloir entrance rather than dropping into parallel gullies to the left, which cliff out. From there it's a sustained, direct descent of loose scree/talus (snow early season) losing about 4,000 ft to the floor of the Ingalls Creek valley — many parties glissade or boot-ski the upper snowfield when it's in, which is markedly faster and easier on the knees than the bare-scree version later in summer. Watch for sun cups and inconsistent snow texture on the upper couloir, and expect significant rockfall exposure funneled by the gully, especially with other parties above or below. At the bottom, pick up a climber's path through meadows to the Ingalls Creek Trail near the Longs Pass turnoff, then reverse the approach (back over Longs Pass)",
+   "name": "West Ridge"
+  },
+  "wa_mount_terror_north_face": {
+   "approach": "From the Goodell Creek Group Camp trailhead (elev. ~600 ft, reached via the unpaved Goodell Creek Road that turns north off Highway 20 directly across from Newhalem Campground), follow the old abandoned roadbed/boot path northeast along Goodell Creek for roughly 4 to 4.5 miles — gentle grade, easy walking — to a stone-cairn/arrow junction near 1,700 ft marking the start of the climbers' path up toward Terror Basin. Do not continue straight past the cairn; that fainter track follows Terror Creek toward Crescent Creek Basin and is a separate (and notoriously brushier) approach. Instead take the hard right and start up the steep, well-beaten Terror Basin boot path, which climbs directly and relentlessly through old-growth forest — roughly 3,000+ ft of gain in about 1.5 miles — before breaking out above treeline around 5,000–5,200 ft. Above the trees, a rising traverse across heather benches, slabs, and (early-season) snowfields leads to a broad saddle near 6,200 ft; the standard high camp is in a gravelly, wildflower basin about 400 ft below and beyond the saddle, around 5,800 ft, fed by several small streams (reliable water). From this Terror Basin camp, parties continue over the Bar",
+   "area_id": "wa_mount_terror",
+   "descent_text": "The North Face and any north-side buttress lines are steep and complex enough that essentially no one reverses them — virtually all parties, regardless of which route they climbed, descend via the West Ridge. From the summit, downclimb/scramble the West Ridge crest westward toward the low notch between Terror and The Rake, where a large chockstone marks the top of the descent gully system. From there, work down a narrow, loose, rockfall-prone gully back into Crescent Creek Basin. The exact count varies with snow coverage and route-finding — figure roughly 3–5 rappels total: commonly one or two shorter raps off slung horns/chockstones or fixed pitons-and-a-nut near the ridge crest, followed by two or three more rappels down the gully itself with down-climbing in between. A single 50–60m rope is sufficient for every station reported; anchors are a mix of pre-existing fixed slings/rap rings and natural chockstone/horn anchors that may need backing up with your own gear. The gully is narrow with little shelter from rockfall, frequently has an undercut, melted-out snow moat by mid-to-late season, and the final ~100 ft is loose and marginal — expect stuck ropes in the confined terrain an",
+   "name": "North Face / North Buttress"
+  },
+  "wa_mount_terror_stoddard_buttress": {
+   "approach": "Same as the North Buttress: from the Goodell Creek trailhead follow the old roadbed trail and a climbers' path to Terror Creek at about 2,000 ft, cross it, and climb the very steep path up the Barrier, the ridge beyond. Follow its crest north into Stump Hollow, make a rising traverse to the 6,400 ft saddle northeast of The Chopping Block, and downclimb about 200 ft into Crescent Creek Basin to the high camp (~6,000 ft gain, ~7-7.5 hrs), then on the climbing day cross the Ottohorn-Himmelhorn col and descend the Mustard Glacier to the base of the north face (2-3 hrs from camp). Stoddard's original approach used a two-day approach via Stettattle Ridge and the upper McMillan Creek cirque.",
+   "area_id": "wa_mount_terror",
+   "descent_text": "Rappel/scramble the West Ridge to the Blob (The Rake)-Terror notch (2 rappels of ~30m), then descend a chossy, steep-snow gully with several rappels, one of them past an overhanging chockstone, back into Crescent Creek Cirque. On the original ascent the return proved unexpectedly difficult, including a six-hour bushwhack after a barrier crossing went wrong.",
+   "name": "Stoddard Buttress"
+  },
+  "wa_mount_terror_west_ridge": {
+   "approach": "From Goodell Creek trailhead, follow the old roadbed ~4.5 miles, cross Terror Creek, and climb a steep climber's track (pink flagging, moss-covered cliffs) to reach Crescent Creek Basin; total approach elevation gain to basecamp is nearly 6,000 ft.",
+   "area_id": "wa_mount_terror",
+   "descent_text": "Downclimb the summit tower or rappel a short section back to the notch, using existing sling anchors there, then descend the steep choss gully back toward Crescent Creek Basin with two or three rappels and downclimbing between them — take care with loose rock and, in early season, snow/ice in the gully.",
+   "name": "West Ridge"
+  },
+  "wa_mount_triumph_northeast_ridge": {
+   "approach": "From Marblemount, drive SR-20 east to the Thornton Lakes Road spur (near milepost 117, just west of Newhalem) and follow the rough, unpaved, high-clearance road about 5 miles to the Thornton Lakes Trailhead (~2,500 ft). Hike the Thornton Lakes Trail — an old logging-road grade for the first ~2 miles, then steeper trail up to the ridge/pass (~4,900 ft) above the lakes — then descend to the lake outlet (~4,400-4,486 ft). Traverse the brushy, sometimes-faint climbers' path around the east/south side of middle Thornton Lake, then climb a long, loose scree/talus gully (roughly 1,200 ft of gain) to a col around 5,750-5,840 ft that serves as the standard bivy site.",
+   "area_id": "wa_mount_triumph",
+   "descent_text": "From the summit, downclimb roughly 30 ft off the north side of the notch to easier rock, then reverse the ridge via a long string of rappels (double-rope where two ropes are carried) interspersed with downclimbing — accounts report anywhere from about 7 to 10 rappels total, including a double-rope rappel off the crux crack pitch — back down to the bivy col. Existing slings and rap rings are present at most stations but the rock is loose, so back up or replace suspect anchors. From the col, reverse the approach gully and climbers' path back around Thornton Lake and out the Thornton Lakes Trail to the trailhead.",
+   "name": "Northeast Ridge"
+  },
+  "wa_mount_washington_olympic_standard": {
+   "approach": "From the T-intersection at the end of North Lake Cushman Road, continue right onto FS Road 24 for about 1.5 miles, then turn left onto FS Road 2419 and follow it up the Big Creek drainage for roughly 6.6 miles to its end at a small trailhead/parking area at about 3,026 ft. From here the 'trail' quickly becomes a boot path and then largely off-trail scrambling — there is no numbered maintained trail for most of the route. The path climbs directly and steeply through forest for the first stretch, hand-over-hand on roots and rock in places, gaining several hundred feet before breaking out of the trees into a couple of open meadow benches (the most reliable early-season water, via lingering snowmelt seeps, is generally found in this meadow band — by mid-to-late summer expect it to be dry, so carry all the water you'll need from the car). Above the meadows the route enters scree and talus slopes and stays primarily on the climber's-left side of a large, loose rocky gully; this section is tight in spots with a lot of unconsolidated rock, so groups should stay spread out (not stacked directly above/below each other) to avoid raining rocks on people below. In spring and early summer this g",
+   "area_id": "wa_mount_washington_olympic",
+   "descent_text": "Descend the same ridge and gully line used on ascent — this is a walk-down/downclimb route with no fixed or standard rappels. From the summit, reverse the short class 3–4 step to the wind-shelter ridge, downclimb the scree field, and carefully re-trace the exposed 'Dog Walk Ledge' ridge-crest section facing in and moving one at a time through the narrowest, one-boot-width spots — this is the section most parties find harder and more nerve-wracking going down than coming up. Continue down the goat trail off the ridge into the gully and downclimb its climber's-left side back toward the meadows and treeline, again spreading the group out to avoid kicking loose rock onto anyone below. Some scramble parties carry a light rope, harness, and a rap device as a safety backup for this route — to lower packs, belay a nervous member through the exposed ridge crest, or rig a short rappel off a rock horn or tree if someone is uncomfortable downclimbing a specific class 4 move — but there are no bolted or fixed anchors anywhere on the route and a rope is not required for a competent scrambling party in dry conditions. Total descent retraces roughly 3,190 ft of loss back to the FR-2419 trailhead; ",
+   "name": "Standard Scramble (above Lake Cushman)"
+  },
+  "wa_mount_washington_olympic_winter_direct": {
+   "approach": "Start at the Jefferson Pass trailhead at the end of FR-2419, beside the Mount Washington trailhead, and follow the drainages west/toward the mountain, mixing bushwhacking with snow travel; parties have reported getting off-route on this approach.",
+   "area_id": "wa_mount_washington_olympic",
+   "descent_text": "The winter descent is long and largely on snow; carry two 60m ropes to allow full-length double-rope rappels down the steepest slopes, supplemented by face-in downclimbing on lower-angle sections.",
+   "name": "Winter Direct"
+  },
+  "wa_nooksack_tower_beckey_route": {
+   "approach": "From Bellingham, exit Interstate 5 at Sunset Drive/Mount Baker exit. Drive Mount Baker Highway (Washington 542) east through the town of Glacier (last resupply for groceries) and continue 13 miles to the Nooksack River bridge. Immediately before the bridge, turn left on Hannegan Pass Road (USFS #32). Stay left at 0.5 miles, then bear right onto Nooksack Cirque Road (#34) at about 1.4 miles from highway. Continue to the washout at 2.3 miles from the highway and park at Ruth Creek (elevation 2,156 feet). Hike the abandoned road beyond the washout for two miles to the original Nooksack Cirque trailhead at 2,550 feet. River ford the Nooksack (use the log crossing at the original location noted at N48.87097 W121.61267; new logs are often swept away). Proceed up the forested mountainside east of the creek, starting up the west bank of Price Creek until finding a good log crossing. Continue to the moraine above Price Lake (3,911 feet), then hike the ridgeline between Price and East Nooksack Glaciers upward from the moraine to a rock slab bivouac spot at approximately 5,900 feet. From the bivouac, gain the glacier, traverse climber's right along the glacier to an exposed snow saddle below ",
+   "area_id": "wa_nooksack_tower",
+   "descent_text": "Beckey and Schmidtke's 1946 descent reversed the route: an uneventful series of rappels from pitons placed in the rock wall flanking the couloir, back down to the glacier and camp. Modern parties do the same — this route is a there-and-back climb, reversed rather than continuing over the summit. From the top, downclimb/rappel the north arête and rock trough back to the head of the couloir, then make a long series of rappels (parties describe roughly ten 60m rappels) down the couloir to the snow/glacier below, building anchors as needed (slings on rock horns, occasional picket or v-thread — don't count on finding fixed gear in place or trustworthy). Where conditions allow, the lower couloir is often downclimbed instead of rappelled. From the base of the couloir, reverse the approach across the glacier/basin to the bivy, then down through Price Lake, the forested slope, and the Nooksack River flats to the Ruth Creek trailhead. Because the descent is technical, parties are frequently still on the couloir or lower approach after dark — one party describes getting back to camp roughly 21 hours after leaving it. Unlike the Price Glacier route, no car shuttle is needed — this returns to t",
+   "name": "North Face (Beckey-Schmidtke Route)"
+  },
+  "wa_nooksack_tower_south_face": {
+   "approach": "Approach is similar to the Beckey route via Ruth Creek and Price Lake moraine, but instead of ascending toward Price Glacier, traverse to the East Nooksack Glacier. Climb to the base of the south face (elevation approximately 6,500-7,000 feet), which rises directly above the glacier. Multiple variations exist depending on snow/ice conditions; the climb starts on the right side of the face.",
+   "area_id": "wa_nooksack_tower",
+   "descent_text": "Descend by downclimbing and rappelling the standard north face route on the front (north) side of the tower rather than retracing the South Face, then reverse the glacier approach back to camp.",
+   "name": "South Face"
+  },
+  "wa_north_star_mountain_cloudy_peak_traverse": {
+   "approach": "Approach as for the East Route to Lyman Lake: either from Lake Chelan via Lucerne, Holden Village and the Railroad Creek trail, or from the Chiwawa River side via Phelps Creek, over Spider Gap and down past the Upper Lyman Lakes. Both ways have been closed in recent seasons, the Lucerne side by storm-damaged roads and the Chiwawa side by wildfire and road closures, so check current Okanogan-Wenatchee National Forest closures before planning. From Lower Lyman Lake follow Trail #1256 west through forest and meadows to Cloudy Pass (6,440 ft), and gain the ridge crest there to start the traverse.",
+   "area_id": "wa_north_star_mountain",
+   "descent_text": "From the North Star summit, downclimb the summit step, then make a direct beeline across talus toward the Cloudy Pass Trail, intersecting it at about 6,300 ft; follow meadows and interconnected granite slabs roughly 1.5 miles back to Cloudy Pass/Lyman Lake basin.",
+   "name": "Cloudy Peak Traverse (South Ridge)"
+  },
+  "wa_old_snowy_mountain_r1": {
+   "approach": "From the Snowgrass Flats Trailhead (end of FR-2150, elev. ~4,600 ft), start on Trail 96 (Snowgrass Flat Trail). The first stretch climbs gently through forest, crossing Goat Creek on a footbridge at about 1.9 miles. Around 2.4-2.6 miles in you'll hear and then reach the springs that form the head of Snowgrass Creek just off the trail to the right - the last reliable, easy water source before treeline. About 0.8 mile past that the trail fords Snowgrass Creek itself; there's no bridge, but logs and rocks usually allow a dry crossing except during heavy snowmelt, when it can run fast enough to require care. Just beyond the ford (~3.9-4 miles, ~5,800 ft) the trail breaks out of forest into the open heather meadows and wildflower bogs of Snowgrass Flat, a scenic rest and water-filter stop before the climb — note that camping is prohibited within Snowgrass Flat itself under Gifford Pinchot wilderness regulations (36 CFR 261.58(e)); parties camp instead at designated sites above/below the flats. Stay left on Trail 96 where the Bypass Trail 97 forks right toward Cispus Basin at about 3.9 miles, and continue straight past the Trail 86 junction (left, to Goat Lake) at about 4.7 miles, stayin",
+   "area_id": "wa_old_snowy_mountain",
+   "descent_text": "This is a walk-off, not a technical descent - there is no rappelling on the standard northwest ridge/PCT route. Reverse the ascent line: downclimb the Class 2-3 scramble off the summit block (the loose scree and blocky talus here is the descent crux - go slow, test holds, and stay alert for rock knocked loose by parties above or below you), then pick up the climbers' path back down to the PCT. From the PCT junction, follow the trail back south, again watching footing on any lingering snowfields on the exposed sidehill traverse below the ridge (these are firmest and safest to cross in the morning before they soften). Continue south on the PCT to the Trail 96 junction (~6,400 ft) and descend Trail 96 the way you came - back through Snowgrass Flat, across the Snowgrass Creek ford, past the spring/water source, and down through forest to the Snowgrass Flats Trailhead. No ropes, anchors, or rappel gear are needed for this route under normal summer conditions; a rope and basic glacier/snow travel gear are only warranted for early-season attempts with significant snow cover on the PCT traverse or summit scramble.",
+   "name": "Northwest Ridge / PCT approach"
+  },
+  "wa_overcoat_peak_southeast_route": {
+   "approach": "From the Dingford Creek Trailhead (end of FR 56, Middle Fork Snoqualmie River Road), the fastest approach uses the gated continuation of the road as a mountain-bike/hike-in: roughly 7-8 miles of old roadbed (NF-5620) to Hardscrabble Horse Camp near the old Dutch Miller Gap Trailhead, saving significant time over walking it. From there, follow the Middle Fork Snoqualmie River / Dutch Miller Gap Trail (Trail 1030) east along the north bank of the river for several more miles — the tread here is in reasonable shape with minimal blowdown, passing dispersed camps and, in season, overgrown thimbleberry brush that obscures footing on the lower tread. Roughly 13-14 miles in from the trailhead (about a mile before the trail crosses toward Williams Lake/Dutch Miller Gap proper), leave the trail and ford the Middle Fork Snoqualmie River — a real ford, potentially thigh-to-waist deep and cold with snowmelt, so time it for lower water and expect wet feet. On the far side, climb steep, brushy forest into the rocky defile some parties call the 'Valley of the Chiefs,' a roughly two-mile corridor that gains the bench below Overcoat Peak. Continuous snowfields typically begin around 4,600 ft; above ",
+   "area_id": "wa_overcoat_peak",
+   "descent_text": "Reverse the ascent for most parties: from the summit, downclimb the Class 3-4 gully/ledge system on the peak's east side back toward the snow finger and glacier. Where the ledges pinch down at a dihedral feature (a damp, water-streaked corner reported by climbers), most parties do NOT free-downclimb the full corner — instead, build two rappels (roughly full 30m/60m-rope-length pitches) down the dihedral to regain the glacier below. Anchors are natural (slung horns, chockstones, or gear placements) rather than fixed bolts/chains — this is an alpine line with no fixed hardware, so carry a small rack and cordage for anchor-building and expect to leave gear (or plan to down-lead/simul on lower-angle sections to save equipment). A single 60m rope handles both rappels; parties without a 60m would need to break it into more, shorter rappels. Some parties instead find they can downclimb the full gully/ledge system without rappelling if conditions and confidence allow (reversing the ascent by downclimbing is the lower-commitment option), but the two-rappel dihedral descent is the more commonly reported method, especially when the rock is wet or holds are snow-covered. Below the glacier, ret",
+   "name": "East Face"
+  },
+  "wa_upper_north_ridge_w_great_gendarme": {
+   "approach": "From I-90 Exit 85, take Highway 970 east 7 miles to Teanaway Road, then bear right onto North Fork Teanaway Road continuing 22.5 miles total. From trailhead: via Lake Ingalls and Stuart Pass to Goat Pass, then east across the Stuart Glacier to the North Ridge notch",
+   "area_id": "wa_mount_stuart",
+   "descent_text": "From the true summit, travel southeast on blocky 3rd/4th-class terrain toward the false summit, follow cairns down into the Cascadian Couloir snowfield, then descend extended 3rd-class scree/talus to Ingalls Creek. Sherpa Glacier or a Sherpa Pass glissade are faster early-season alternatives for parties returning to a north-side camp.",
+   "name": "Upper North Ridge w/Great Gendarme"
+  },
+  "wa_washington_ellinor_traverse_ridge": {
+   "approach": "Climb Mount Washington first via its standard south route from the FR 2419 trailhead (see the Standard Route). The traverse itself has no separate trailhead or approach — it begins directly from Washington's summit, heading southwest along the connecting ridge toward Mt. Ellinor rather than descending Washington's standard route.",
+   "area_id": "wa_mount_washington_olympic",
+   "descent_text": "Most parties continue the traverse to Mount Ellinor's summit and descend via Mount Ellinor's standard trail (upper trailhead off a spur of FR-2419, the same North Lake Cushman Road corridor used for the approach); parties can also reverse the traverse back over Mount Washington to its own trailhead.",
+   "name": "Washington Ellinor Traverse (Ridge)"
+  },
+  "wa_west_face_2": {
+   "approach": "The standard approach is from the Downey Creek Trailhead (off Suiattle River Road) via the southern end of the Ptarmigan Traverse — a rugged, largely off-trail alpine route over Itswoot Ridge/Cub Lake and Bachelor Creek involving glacier travel and significant bushwhacking. Climbers typically budget a full day (or two) of approach before reaching the base of North Peak's granite West Face; this is an experienced-mountaineers-only objective, not a roadside crag.",
+   "area_id": "wa_north_peak",
+   "descent_text": "Rappel down the center of the West Face via four consecutive double-rope rappels of roughly 50 m, 50 m, 50 m and 20 m, using natural anchor features and existing bolt/gear anchors established on the granite. Ensure proper rope management to avoid tangling on the steep granite face. Once back at the base of the route, climb back up to the Chikamin-Dome Col via the Chickamin Glacier approach, watching carefully for crevasses and potential moat crossings. From the col, descend the cross-country route back to Bachelor Flats (taking approximately 8-10 hours depending on snow coverage and conditions). From Bachelor Flats, follow the Downey Creek trail back to the trailhead (6-8 hours depending on fitness and pack weight). Plan on getting back to the col the day you climb, then two days out to the car.",
+   "name": "West Face"
+  }
+ }
+}

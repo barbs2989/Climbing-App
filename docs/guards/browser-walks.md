@@ -280,6 +280,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   (the share card putting the word `undefined` into the clipboard copy, the `mailto:` body,
   the `sms:` body and the tweet). The pattern in all four: *a section that is correct with
   data becomes a lie, a dangling label, or a dead end at zero.*
+  Since 2026-10-23 Unfinished business is folded into Home's ONE *Alerts* dropdown, so the #637
+  landmark is `/^Alerts( · N new)?$/` (a brand-new account already holds one notification, so the
+  label carries a count and the dropdown's empty copy is unreachable at zero; the near-duplicate
+  "Nothing waiting on you right now." stays forbidden on `modal:alertsOpen`).
   - The zero state is forced by `scripts/zero-state.config.mjs`, a Vite config used only by
     this check. It rewrites three anchors **in memory** to replay the app's own sign-in
     reset — never edit the source, and never hand-copy that reset: a copy that omits
@@ -777,10 +781,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     profile read alone landed ~78 s into the page, the sheet opened after the wait expired, and the
     walk then found it on screen anyway. The wait is the navigation budget now, and the elapsed time
     is printed (0.0 s on the warm re-run).
-  - **Known red, NOT onboarding (2026-10-24, two runs):** phase 5 (the connect button) dies at
-    `openMateProfile` — "expected exactly 1 crew member who is not You, found 0" — reading the crew
-    roster by its `crew · N member` heading after the crew/popup redesigns (#2728 and the PRs before
-    it). Every assertion before it passed, and the fixture accounts were cleaned up (no `LEAKED`).
+  - **Crew cards start COLLAPSED (#2531), so the walk opens them** (fixed 2026-10-24). Phase 5 read the
+    roster by its `crew · N member` heading, which renders only behind each card's *View plan ▾*; two
+    runs died "expected exactly 1 crew member who is not You, found 0" — reading exactly like a
+    missing roster. `openMateProfile` clicks every *View plan ▾* first; the next run passed all 42.
   - **FIVE of the six are covered, and the count is stated in the script so the gap cannot quietly
     stall.** Onboarding (#1576): disciplines and a grade typed into the real modal, read back out of
     `profiles` **and** off the Profile tab after a reload. The crew (#1554): a row one real account
@@ -1014,6 +1018,49 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     hand-run only until 2026-08-09, by which point it had **already gone red on main** and
     nobody knew (#724, the guide application sheet). A guard that runs only when somebody
     remembers is a guard you do not have.
+- **`check:pinned-dismiss`** opens every overlay (the same scaffold and opener as
+  `check:overlay-scroll`, at 390x844), scrolls every pane holding the TOPMOST layer's first ✕ / ← Back
+  to its end, and asks whether that control is still inside the viewport AND is what a tap at its
+  centre hits (`elementFromPoint`). Owner, 2026-10-24: *"The x out to close the page and back button
+  need to be sticky when a popup page comes up."* Runs in CI as a second step of the overlay-scroll
+  job in `render-guards.yml`; not in `npm run build`.
+  - **What it found before the fix:** 5 popups lost the ✕ with the demo's own content (Menu, Privacy,
+    Log a climb at 3,124px of travel, Suggest a fix at 3,634px, the trip report), the sign-in sheet's ✕
+    sat UNDER the app header, Settings › Your data's Back sat under a range-slider thumb (z 4 over a
+    sticky header at z 2), and **45 more** failed once the latent test below added content. 8 had
+    pinned their own header by hand.
+  - **The fix it guards is central** — `pinDismiss` in `lib/dialogA11y.js` makes the header ROW
+    (the tallest ancestor of the control at most 120px tall, below the pane that scrolls, within 80px
+    of that pane's top) `position:sticky` with the background of what it sits on, and a box-shadow
+    strip that paints the pane's top padding so content does not show above it. Already-sticky rows
+    are only lifted to z 5. An absolute ✕ (over a photo) is left alone: the trip report pins its own
+    in a zero-height sticky bar.
+  - **LATENT, NOT VACUOUS.** A popup with nothing to scroll in the demo passes for free — 45 of them
+    did on the first run. When no pane holding the control overflows, 3000px is appended to the block
+    the header row sits in (NOT to the pane: a sticky row is held inside its own parent, and appending
+    to the pane made already-sticky headers read as failing), and the same question is asked.
+  - **TOPMOST layer only.** The first version measured the outermost overlay and reported the group
+    page's own Back as "covered" by Post options open over it — correct behaviour. `.slice(-1)` of
+    the fixed layers in document order is the top one, since a nested layer follows its parent.
+  - **The "covered" half earned its place on the first run:** the sign-in sheet's ✕ was on screen and
+    untappable, because `lib/AuthModal.jsx` rendered inside `#appscroll` unportalled — the trap
+    `check:overlays` exists for — and `check:overlays` missed it twice: its style is a
+    `gate ? {...} : {...}` conditional the guard did not read, and its function is `LoginScreen`
+    imported as `AuthModal`, so the render graph edge ended at a name no overlay carried. Both are
+    fixed in `scripts/check-overlay-portals.mjs`; reading conditionals then flagged `GPXMap`'s
+    full-screen map, which IS portalled through a variable (`const mapUI=…; createPortal(mapUI,…)`),
+    so the guard now follows a declarator into `createPortal` too.
+  - **A second scroller nobody wrote:** Log a climb's backdrop scrolled 3,968px although its card was
+    clamped to the screen — three `.cm-file-input`s (visually-hidden file pickers, `position:absolute`)
+    belonged to the backdrop as their nearest positioned box, at their place deep in the form. Now
+    `position:fixed` in `index.html`.
+  - **Cannot see:** overlays the scaffold cannot open (printed as skipped), popups whose only way out
+    is Cancel/Done (Edit profile's sticky Cancel·Save bar), and the desktop layout. Listed at the end
+    of every run: the overlays with no ✕ / Back at all.
+  - **Injection cases** (2026-10-24): (1) `pinLayers()` disabled in `useDialogA11y` → Settings, Menu
+    and Friends FAIL, the hand-pinned vouch sheet and the Fire map (header outside its scroller) stay
+    ok; (2) the sign-in portal undone → `loginOpen` FAILS "covered by Messages", the app header's chat
+    button.
 - **`check:a11y-badges`** asks whether any control announces **two fragments welded into one
   token** — a badge count glued to its label, or one word glued to the next. The Crew sub-tab
   bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so Chrome computed the name

@@ -4,6 +4,7 @@
 // out -- with one exception: `recovery` opens it over a signed-in session, because a reset link
 // authenticates you before you have chosen the new password. Password is never stored.
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { signIn, signUp, rememberEmail, recallEmail, requestPasswordReset, updatePassword, useOAuthProviders, signInWithGoogle, signInWithApple } from "./auth";
 
 // Must match the project's Auth setting `password_min_length` (raised 6 -> 8 on
@@ -14,9 +15,14 @@ const MIN_PASSWORD = 8;
 import { POLICY_VERSION } from "./policy";
 import { POP_CLOSE } from "./popupChrome.js";
 import { CAPTCHA_ON, Turnstile } from "./captcha.jsx";
+import BrandMark from "../src/components/BrandMark.tsx";
 
 const c = { bg: "#0d1117", card: "#161b22", border: "#30363d", text: "#e6edf3", sub: "#8b949e", blue: "#2f81f7", red: "#f85149", green: "#3fb950" };
 const provBtn = { width: "100%", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: 12, minHeight: 46, borderRadius: 11, border: "1px solid " + c.border, fontSize: 15, fontWeight: 600, cursor: "pointer" };
+// A provider the project has not switched on yet ("coming soon") is drawn DARK and outlined: as two
+// white slabs at 60% opacity they were the brightest thing on the sign-in screen and read as broken.
+// Live, each keeps its own white brand button. Both stay the same shape, for guideline 4.8's equal prominence.
+const provSoon = { background: "transparent", color: c.sub, border: "1px solid " + c.border };
 const hint = { color: c.sub, fontSize: 12, marginTop: -6, marginBottom: 10 };
 const field = { width: "100%", boxSizing: "border-box", background: "#0d1117", border: "1px solid " + c.border, borderRadius: 10, padding: "11px 13px", color: c.text, fontSize: 15, marginBottom: 10, outline: "none" };
 
@@ -194,12 +200,15 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
   // handler to dismiss. With the role on the panel, that click hit
   // onClick={e=>e.stopPropagation()} and was swallowed, so Escape silently did nothing on the
   // sign-in modal — the one a keyboard user meets first.
-  return (
+  // PORTALLED: opened from the Menu it renders inside #appscroll, whose fade-in makes it a stacking
+  // context under the app header -- so the header drew over this sheet's ✕ and the ✕ could not be
+  // tapped (2026-10-24, check:pinned-dismiss). check:overlays explains the trap.
+  return createPortal(
     <div onClick={onClose} role="dialog" aria-modal="true" aria-label={TITLE[mode]} style={gate ? { position: "fixed", inset: 0, background: "radial-gradient(120% 60% at 50% 0%, #10264a 0%, " + c.bg + " 58%)", zIndex: 2000, overflowY: "auto", overscrollBehavior: "contain", display: "flex", justifyContent: "center", padding: "calc(16px + env(safe-area-inset-top)) 16px 24px", boxSizing: "border-box" } : { position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 2000, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
       <div onClick={(e) => e.stopPropagation()} style={gate ? { width: "100%", maxWidth: 420, color: c.text } : { width: "100%", maxWidth: 380, background: c.card, border: "1px solid " + c.border, borderRadius: 16, padding: 20, color: c.text }}>
         {gate && (mode === "in" || mode === "up") && (
           <div style={{ textAlign: "center", margin: "18px 0 26px" }}>
-            <svg width="76" height="76" viewBox="0 0 24 24" aria-hidden="true" style={{ display: "block", margin: "0 auto 14px", filter: "drop-shadow(0 10px 28px rgba(47,129,247,0.35))" }}><rect width="24" height="24" rx="5.5" fill="#161b22" stroke="#30363d" strokeWidth="0.4"/><g transform="translate(2.4 2.4) scale(0.8)"><path d="m8 3 4 8 5-5 5 15H2L8 3z" fill="none" stroke={c.blue} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"/></g></svg>
+            <BrandMark size={76} color={c.blue} glow style={{ margin: "0 auto 14px" }} />
             <div style={{ fontSize: 31, fontWeight: 800, letterSpacing: -0.6 }}>Climb<span style={{ color: c.blue }}>Match</span></div>
             <div style={{ fontSize: 14, color: c.sub, lineHeight: 1.5, marginTop: 6 }}>Find partners, trusted beta, and a climbing community built on trust.</div>
           </div>
@@ -229,12 +238,12 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
             aria-label so the decorative logo does not become part of the announced name. */}
         {(mode === "in" || mode === "up") && (
           <div>
-            <button onClick={() => goProvider("apple")} disabled={busy} aria-label={(mode === "up" ? "Sign up with Apple" : "Sign in with Apple") + (appleSoon ? ", coming soon" : "")} style={{ ...provBtn, background: "#fff", color: "#000", opacity: busy ? 0.7 : appleOn || !providers ? 1 : 0.6 }}>
+            <button onClick={() => goProvider("apple")} disabled={busy} aria-label={(mode === "up" ? "Sign up with Apple" : "Sign in with Apple") + (appleSoon ? ", coming soon" : "")} style={{ ...provBtn, ...(appleSoon ? provSoon : { background: "#fff", color: "#000" }), opacity: busy ? 0.7 : 1 }}>
               <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16.37 12.6c-.03-2.64 2.16-3.91 2.26-3.97-1.23-1.8-3.15-2.05-3.83-2.08-1.63-.17-3.18.96-4.01.96-.83 0-2.1-.94-3.46-.91-1.78.03-3.42 1.03-4.34 2.63-1.85 3.21-.47 7.96 1.33 10.56.88 1.27 1.93 2.7 3.3 2.65 1.33-.05 1.83-.86 3.43-.86 1.6 0 2.05.86 3.45.83 1.43-.02 2.33-1.29 3.2-2.57 1.01-1.47 1.43-2.9 1.45-2.97-.03-.01-2.78-1.07-2.81-4.23zM13.74 4.83c.73-.89 1.22-2.12 1.09-3.35-1.05.04-2.32.7-3.07 1.58-.67.78-1.27 2.03-1.11 3.24 1.17.09 2.37-.6 3.09-1.47z" /></svg>
-              {mode === "up" ? "Sign up with Apple" : "Sign in with Apple"}{appleSoon && <span style={{ fontWeight: 500, fontSize: 12.5, color: "#57606a" }}>· coming soon</span>}
+              {mode === "up" ? "Sign up with Apple" : "Sign in with Apple"}{appleSoon && <span style={{ fontWeight: 500, fontSize: 12.5, color: c.sub }}>· coming soon</span>}
             </button>
-            <button onClick={() => goProvider("google")} disabled={busy} aria-label={"Continue with Google" + (googleSoon ? ", coming soon" : "")} style={{ ...provBtn, marginTop: 8, background: "#fff", color: "#1f2328", opacity: busy ? 0.7 : googleOn || !providers ? 1 : 0.6 }}>
-              <span aria-hidden="true" style={{ fontWeight: 800, color: "#4285F4" }}>G</span> Continue with Google{googleSoon && <span style={{ fontWeight: 500, fontSize: 12.5, color: "#57606a" }}>· coming soon</span>}
+            <button onClick={() => goProvider("google")} disabled={busy} aria-label={"Continue with Google" + (googleSoon ? ", coming soon" : "")} style={{ ...provBtn, marginTop: 8, ...(googleSoon ? provSoon : { background: "#fff", color: "#1f2328" }), opacity: busy ? 0.7 : 1 }}>
+              <span aria-hidden="true" style={{ fontWeight: 800, color: "#4285F4" }}>G</span> Continue with Google{googleSoon && <span style={{ fontWeight: 500, fontSize: 12.5, color: c.sub }}>· coming soon</span>}
             </button>
             <div style={{ display: "flex", alignItems: "center", gap: 10, margin: "14px 0" }}>
               <div style={{ flex: 1, height: 1, background: c.border }} />
@@ -320,6 +329,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

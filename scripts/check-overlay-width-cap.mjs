@@ -64,6 +64,7 @@ const EXEMPT = [
     // learned to read a ternary style -- it was outside this guard's census entirely before that.
     // The AREA map's full screen (NearMePanel, lib/DbAreaBrowser.jsx) is the same view drawn the
     // same way since the owner asked for it to work like the route map's (2026-10-23).
+    // The route map's 3D VIEW (lib/Route3DView.jsx, 2026-10-24) is the same map tilted, drawn the same way.
     why: "the route map and the area map are MAPS -- spatial content, full-bleed like the fire map and the lightboxes",
     match: (style) => /zIndex:\s*9700/.test(style) && /flexDirection:\s*"column"/.test(style),
   },

@@ -997,6 +997,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     go/no-go standard exists to score against); the start gets a party back DOWN off the snow before it
     softens ("going down is more dangerous"); and "mixed and ice climbing needs a check because they can
     be different… same with scrambling and mountaineering, research online".
+  - **DAY BY DAY + a day step on EVERY section (owner, 2026-10-24):** "we have hour by hour, but not day
+    to day… you should be able to change the day above each section". Section 2 holds that the flags card
+    and Sun and shade carry `DayHead` with the shared `nav`, that `DayByDay` renders every day as a
+    pressed-state button calling the same `setDayI`, and that its start line is gated exactly like the
+    start box (`!legs.floor`, `daysEarly < 2`) — a row must never show a start the card itself refuses.
   - **THE DISCIPLINES DISAGREE ON DIRECTION, which is why there is one KIND per route and not one flag
     set.** Researched online the same day (guide services, avalanche centres, Parks Canada, AAC
     Accidents, Weiss et al. 2011 in the *Journal of Glaciology*, practitioner threads):
@@ -1324,7 +1329,13 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
   range. Wind had no preference before: it was the fixed rule full at 10 mph, nothing at 35. Unchosen it is still
   that rule EXACTLY (range [0,10], fade 25 mph above), pinned in `check:conditions-score`; a climber who wants a
   breeze can raise the bottom (fades over 10 mph below). Each handle is a real slider (named, arrow keys,
-  Home/End, `touch-action:none`). WHICH HANDLE IS ON TOP where their 44 px hit areas overlap: the LOW one once the
+  Home/End). TOUCH (2026-10-24, owner: "Settings page is difficult to scroll"): handles AND track are
+  `touch-action:pan-y`, so a sideways drag moves a handle and an up-down swipe scrolls the page, as a native range
+  input does. It was `none`, which made each slider's 44 px row a dead zone for scrolling, and the track jumped a
+  handle on POINTERDOWN, so a swipe begun on it CHANGED the range (measured: 45°-68° became 18°-68° by scrolling).
+  The track now jumps on a TAP that lifts within 10 px of where it began (a touch the browser takes for a scroll
+  is cancelled and never lifts; an onClick would do the same but `check:clickable` counts it as a mouse-only control) and a handle drag the browser cancels
+  for a scroll puts the range back; all three pinned in `check:conditions-score`. WHICH HANDLE IS ON TOP where their 44 px hit areas overlap: the LOW one once the
   range sits past the middle of the track, the high one before it (pinned in `check:conditions-score`). A fixed
   "high on top" stranded the low handle at the top of the scale: every touch landed on the high handle, which
   cannot go further right, so the range could not be widened again. TRAP: the Conditions browser window may be hidden (`visibilityState` hidden,

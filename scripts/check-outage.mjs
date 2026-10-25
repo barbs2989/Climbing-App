@@ -484,7 +484,7 @@ async function walk(browser, base, session, fail) {
   const compText = await waitOutFetch(page, fail);
   // A sub-tab click that does not land leaves the DEFAULT view on screen, which reads as a
   // clean result rather than as a miss. Say which it was.
-  out[SUBTAB] = /My Ascents|Log your completed climbs|Couldn\u2019t load your climbs/.test(compText)
+  out[SUBTAB] = /My [Aa]scents|Log your completed climbs|Couldn\u2019t load your climbs/.test(compText)
     ? compText : "SUBTAB CLICK DID NOT LAND -- this is the default Logbook view, not Completed\n" + compText;
   // The FOURTH Logbook sub-tab, and the one a flag has been sitting on unwalked. `saved_searches`
   // feeds a card here that says "No saved searches yet -- save a filter set from the Climbs page."

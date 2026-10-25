@@ -368,8 +368,15 @@ console.log("check:conditions-score");
   const slider = fs.readFileSync(path.join(ROOT, "lib/RangeSlider.jsx"), "utf8");
   if (/<RangeSlider label=\{\(ownOnly \? "Temperatures I like, " : "Ideal temperature, "\) \+ scopeName\}/.test(prefs) && /<RangeSlider label="Ideal wind"/.test(prefs) && /\["cool", "standard", "warm"\]\.map\(/.test(prefs) && /setRange\(TEMP_BANDS\[k\]\.slice\(\)\)/.test(prefs)) ok("temperature (every scope) AND wind are drag-both-ends ranges; Cool / Mild / Warm are shortcuts that set one, not exclusive choices");
   else fail("the ideal temperature or wind is no longer a range, or the shortcuts stopped setting one");
-  if (/role="slider"/.test(slider) && /aria-label=\{label \+ ", " \+ name\}/.test(slider) && /aria-valuetext=\{fmt\(v\)\}/.test(slider) && /onKeyDown=\{key\}/.test(slider) && /touchAction: "none"/.test(slider) && /ArrowRight/.test(slider) && /"Home"/.test(slider)) ok("each handle is a named, keyboard-operable slider that reads its value in the climber's units, and does not scroll the page on touch");
-  else fail("a range handle lost its name, its keyboard, or its touch-action");
+  if (/role="slider"/.test(slider) && /aria-label=\{label \+ ", " \+ name\}/.test(slider) && /aria-valuetext=\{fmt\(v\)\}/.test(slider) && /onKeyDown=\{key\}/.test(slider) && /ArrowRight/.test(slider) && /"Home"/.test(slider)) ok("each handle is a named, keyboard-operable slider that reads its value in the climber's units");
+  else fail("a range handle lost its name or its keyboard");
+  // A swipe up or down that starts on a slider must SCROLL the page and leave the range alone (owner 2026-10-24:
+  // "Settings page is difficult to scroll"). touch-action:none on the track made two full-width rows of Your data &
+  // account unscrollable, and the track's pointerdown jumped a handle to the finger, so scrolling past the slider
+  // set the range. pan-y on BOTH, the track jump on a TAP that lifts where it began (a scroll is cancelled, never lifts), and a handle whose touch
+  // becomes a scroll (pointercancel) restores the range it started from.
+  if (!/touchAction: "none"/.test(slider) && (slider.match(/touchAction: "pan-y"/g) || []).length === 2 && /onPointerDown=\{function \(e\) \{ tap\.current = /.test(slider) && /onPointerCancel=\{function \(\) \{ tap\.current = null; \}\}/.test(slider) && /onPointerUp=\{function \(e\) \{ const t = tap\.current;[^\n]*> 10[^\n]*move\(/.test(slider) && /onPointerCancel=\{function \(\) \{ const b = before\.current;[^}]*onChange\(b\)/.test(slider) && /before\.current = \[lo, hi\]/.test(slider)) ok("a vertical swipe that starts on a range slider scrolls the page and cannot change the range (pan-y; the track jumps on a tap, not a swipe; a cancelled drag restores)");
+  else fail("a range slider traps vertical scrolling or changes the range on a scroll: its handles and track need touch-action pan-y, the track must jump on a lifted tap (not pointerdown), and pointercancel must restore the range");
   if (/const THUMB = 28, HIT = 44;/.test(slider) && /width: HIT, height: HIT/.test(slider)) ok("each handle's touch target is 44 px (Apple's guideline; WCAG 2.2 AA asks 24) around a 28 px visible circle");
   else fail("a range handle's touch target fell below 44 px");
   // Pushed together at the top of the scale, a fixed "high on top" left every touch on the high handle, which

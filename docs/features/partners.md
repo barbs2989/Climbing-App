@@ -24,6 +24,12 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 - **Climbers on ClimbMatch** (signed-in + DB): real, listed climbers (`profiles.discoverable`, on by default since 0195;
   opt out in Settings). Distance chips: Near my zip / Near me now (browser geolocation, rounded to 2 decimals) / Anywhere,
   with a 10-500 mi radius slider (steps of 5, debounced 400 ms). Others see a **distance only**, never a zip.
+- **Only climbers of my gender** (0359, 2026-10-24): a switch under *Climbers on ClimbMatch*'s distance chips, worded by
+  your own gender (*Only women* / *Only men* / *Only non-binary climbers*), offered once you have set one (otherwise a line
+  points to Edit profile). On, every real browse list shows only climbers who stated the same gender (`usePartnerGenders`, one
+  read of `profiles.gender` for the rows on screen); someone who has not stated one is not shown. A loading or failed read
+  shows nobody and says so, never everyone. Name search is not narrowed. Remembered on this device
+  (`lib/partner-gender-pref.js`). The same filter RockBase and GoWith offer; there is no filter by any OTHER gender.
 - **Filters** (all narrow the real lists as well as the example profiles): Discipline, Experience (level)
   (slider max 80), Speed match, Available to climb (Weekend AM / Weekend PM / Weekday AM / Weekday PM / Flexible), Max distance (examples).
   The panel starts CLOSED behind the Filters button (its badge counts the active filters), on Find partners and on Join a crew alike, so the results come first.
@@ -31,6 +37,9 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 - **Rows**: real climbers render as `RealClimberRow` (match %, verified tick, shared objectives, and a "Listed at Hellgate · Sport · free Oct 18–19"
   line — "Listed across Utah" for an ancestor match); example climbers render as full cards
   (match %, shared objectives, "Likely free your date" badge, "Plan <route> together", Connect, message, mutuals).
+  On both, every fact about the climber is primary white (`C.text`), down to the stats chips and the *Full Profile & Vouches*
+  button at the bottom (owner, 2026-10-24: grey made the cards hard to read); grey (`C.textSub`) is kept only for a status note
+  ("Scoring match…", "Not enough shared info…", "résumé private").
 - Blocked climbers are filtered from every list, on both id spaces (seed numbers, real uuids, compared as strings).
 - Sort for examples: match or distance; a climber free on a crew/objective date sorts first.
 
@@ -62,7 +71,8 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 | `ClimbMatch.jsx` | `partnersMode` state and mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder`, `DbGuides`/`Guides`, `MyPartnerAreas`; `myAreasOpen`, `openMyAreas`, `onFindPartnersInArea`, `ME.matchObjectiveIds` |
 | `ClimbMatchCore.jsx` | `compat`, `compatParts`, `compatWhy`, `CMAX_*`/`COMPAT_*`, `CMAX_AREA`, `areaPathsOverlap`, `CRAG_CATS`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf`, `PARTNER_NUMBERS` (also read by `lib/Help.jsx`) |
 | `src/components/RealClimberRow.tsx` | `RealClimberRow` — the browse and name-search row for a REAL profile: match % or its refusal, ✓ Verified, the listed-areas line, pace and discipline chips |
-| `lib/db.js` | `PARTNER_COLS`, `useDiscoverableProfiles`, `useProfileSearch`, `useMyZip`, `usePartnersNear`, `usePartnersByObjective`, `usePartnerSignals`, `useMatchObjectivesOfUsers`, `useVerifiedUsers`, `useMyPartnerAreas`, `savePartnerArea`, `removePartnerArea`, `usePartnersInArea`, `usePartnersInAreas`, `usePartnersForMyAreas`, `usePartnerAreaCounts`, `usePartnerAreasOfUsers`, zip save/delete |
+| `lib/partner-gender-pref.js` | `partnersMyGenderPref`, `savePartnersMyGender` |
+| `lib/db.js` | `PARTNER_COLS`, `usePartnerGenders`, `useDiscoverableProfiles`, `useProfileSearch`, `useMyZip`, `usePartnersNear`, `usePartnersByObjective`, `usePartnerSignals`, `useMatchObjectivesOfUsers`, `useVerifiedUsers`, `useMyPartnerAreas`, `savePartnerArea`, `removePartnerArea`, `usePartnersInArea`, `usePartnersInAreas`, `usePartnersForMyAreas`, `usePartnerAreaCounts`, `usePartnerAreasOfUsers`, zip save/delete |
 | `lib/EditProfileScreen.jsx` | Zip code field (owner-only, feeds the origin; a typed zip is checked live by `useZipCentroid`). The home city is a label only — it places nobody |
 | `supabase/migrations/0189, 0211, 0232, 0295, 0300, 0303, 0311` | RPCs and tables below |
 | `docs/codebase/algorithms.md` | `compat()` design history |

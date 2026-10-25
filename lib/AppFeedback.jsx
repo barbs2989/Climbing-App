@@ -76,7 +76,7 @@ export function FeedbackForm({ uid }) {
   return <form onSubmit={(e) => { e.preventDefault(); send(); }} aria-label="Send feedback">
     <div style={{ fontSize: 13, color: C.textSub, marginBottom: 12, lineHeight: 1.5 }}>Found a bug or have an idea? It goes straight to the ClimbMatch team, and we read every one.</div>
     <div role="radiogroup" aria-label="What is it about" style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-      {KINDS.map(([k, label]) => <button key={k} type="button" role="radio" aria-checked={kind === k} onClick={() => setKind(k)} style={{ minHeight: 40, padding: "8px 13px", borderRadius: 20, border: "1px solid " + (kind === k ? C.blue : C.border), background: kind === k ? C.blueBg : C.bg, color: kind === k ? C.blue : C.textSub, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{label}</button>)}
+      {KINDS.map(([k, label]) => <button key={k} type="button" role="radio" aria-checked={kind === k} onClick={() => setKind(k)} style={{ minHeight: 40, padding: "8px 13px", borderRadius: 20, border: "1px solid " + (kind === k ? C.blue : C.border), background: kind === k ? C.blueBg : C.bg, color: kind === k ? "#fff" : C.textSub, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{label}</button>)}
     </div>
     <label htmlFor="fb-text" style={lbl}>{kind === "bug" ? "What happened, and on which screen?" : kind === "idea" ? "What would make ClimbMatch better?" : "What’s on your mind?"}</label>
     <textarea id="fb-text" value={text} onChange={(e) => { setText(e.target.value); if (state !== "sending") setState("idle"); }} rows={5} maxLength={4000} style={{ ...field, resize: "vertical" }} />
@@ -165,7 +165,7 @@ export function AppFeedbackQueue({ notify }) {
           {r.message ? <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 6, lineHeight: 1.45, whiteSpace: "pre-wrap" }}>{r.message}</div> : null}
           <div style={{ fontSize: 12, color: C.textMuted, marginTop: 6 }}>{[r.platform, r.app_version ? "v" + r.app_version : null, r.reply_to ? "Reply to " + r.reply_to : "No address to reply to"].filter(Boolean).join(" · ")}</div>
           <div style={{ display: "flex", gap: 7, marginTop: 9, flexWrap: "wrap" }}>
-            {mail ? <a href={mail} style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue, fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Reply by email</a> : null}
+            {mail ? <a href={mail} style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.blueDim, background: C.blueBg, color: "#fff", fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Reply by email</a> : null}
             <button disabled={busy === r.id} onClick={() => done(r)} style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 12.5, fontWeight: 600, cursor: busy === r.id ? "default" : "pointer" }}>{busy === r.id ? "Working…" : "Mark as read"}</button>
           </div>
         </div>;

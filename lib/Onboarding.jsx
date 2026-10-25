@@ -24,7 +24,7 @@ import ActionIcon from "../src/components/ActionIcon.tsx";
 import Av from "../src/components/Av.tsx";
 
 // The Settings > Notifications switches, in the words that screen uses.
-const NOTIF_COPY = { crew: ["Crew updates", "Day proposals, members joining, ready to climb"], conditions: ["Condition reports", "Your condition reports and logged climbs"], requests: ["Requests & vouches", "Friend / crew requests, vouches and belay catches"] };
+const NOTIF_COPY = { crew: ["Crew updates", "Day proposals, members joining, ready to climb"], conditions: ["Condition reports", "Your condition reports and logged climbs"], objectives: ["Your objectives", "Another climber logs a climb you saved"], requests: ["Requests & vouches", "Friend / crew requests, vouches and belay catches"] };
 
 // A Google account's photo, at a size worth keeping: its URL ends in a size suffix (=s96-c).
 const bigGooglePhoto = (u) => String(u || "").replace(/=s\d+(-c)?$/, "=s400-c");
@@ -57,7 +57,7 @@ export default function Onboarding({onFinish,onSkip,initial,onHelp,uid,googlePho
   const takeGooglePhoto=(onDone)=>{const u=bigGooglePhoto(googlePhoto);setAvaBusy(true);fetch(u).then(function(r){if(!r.ok)throw new Error(String(r.status));return r.blob();}).then(function(b){keepPhoto(new File([b],"google-photo.jpg",{type:b.type||"image/jpeg"}),u,onDone);}).catch(function(){keepPhoto(null,u,onDone);});};
 
   const H=(t,sub)=><div style={{marginBottom:18}}><div style={{fontSize:23,fontWeight:800,letterSpacing:-0.3,color:C.text,lineHeight:1.2}}>{t}</div>{sub?<div style={{fontSize:13.5,color:C.textSub,lineHeight:1.5,marginTop:6}}>{sub}</div>:null}</div>;
-  const chip=(on)=>({padding:"10px 15px",borderRadius:12,border:"1.5px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.blue:C.textSub,fontSize:14,fontWeight:700,cursor:"pointer"});
+  const chip=(on)=>({padding:"10px 15px",borderRadius:12,border:"1.5px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?"#fff":C.textSub,fontSize:14,fontWeight:700,cursor:"pointer"});
   const primary=(ok)=>({flex:2,padding:13,background:ok?C.blueSolid:C.border,color:ok?"#fff":C.textMuted,border:"none",borderRadius:12,fontSize:15,cursor:ok?"pointer":"default",fontWeight:800});
   const quiet={flex:1,padding:13,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:12,fontSize:14,cursor:"pointer",fontWeight:600};
   const climbOk=disc.length>0;
@@ -94,7 +94,7 @@ export default function Onboarding({onFinish,onSkip,initial,onHelp,uid,googlePho
 
         {step==="home"?<div>
           {H("Where do you mainly climb?","Your home area is shown on your profile and helps us find partners and climbs near you.")}
-          <button onClick={detect} disabled={locBusy} style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"center",gap:8,padding:"12px 14px",borderRadius:12,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue,fontSize:14,fontWeight:700,cursor:locBusy?"default":"pointer",marginBottom:14}}><ActionIcon name="pin" size={17} color={C.blue}/>{locBusy?"Finding you…":"Use my current location"}</button>
+          <button onClick={detect} disabled={locBusy} style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"center",gap:8,padding:"12px 14px",borderRadius:12,border:"1px solid "+C.blueDim,background:C.blueBg,color:"#fff",fontSize:14,fontWeight:700,cursor:locBusy?"default":"pointer",marginBottom:14}}><ActionIcon name="pin" size={17} color={C.blue}/>{locBusy?"Finding you…":"Use my current location"}</button>
           {locErr?<div role="alert" style={{fontSize:12.5,color:C.amber,lineHeight:1.45,marginTop:-6,marginBottom:12}}>{locErr}</div>:null}
           <div style={{fontSize:12,color:C.textMuted,fontWeight:700,marginBottom:6,letterSpacing:0.3}}>OR TYPE IT</div>
           <div style={{position:"relative",marginBottom:12}}><input aria-label="Search a range, canyon, or peak" value={homeQ} onChange={e=>{setHomeQ(e.target.value);setHome("");setZip("");}} placeholder={USE_DB?"Your city or home area — e.g. Seattle, WA":"Search a range, canyon, or peak..."} style={{width:"100%",padding:"12px 13px",borderRadius:12,border:"1px solid "+(home||homeQ?C.blue:C.border),background:C.card,color:C.text,fontSize:15,boxSizing:"border-box"}}/>{!USE_DB&&homeQ&&!home?(()=>{const ms=areas.filter(a=>fuzzyMatch(homeQ,a.name)).slice(0,7);return <div style={{position:"absolute",top:"100%",left:0,right:0,background:C.card,border:"1px solid "+C.border,borderRadius:10,marginTop:4,maxHeight:210,overflowY:"auto",overscrollBehavior:"contain",zIndex:5,boxShadow:"0 12px 30px rgba(0,0,0,0.5)"}}>{ms.length?ms.map(a=><div key={a.id} {...clickable(()=>{setHome(a.id);setHomeQ(a.name);})} style={{padding:"9px 11px",fontSize:13.5,fontWeight:700,cursor:"pointer",borderBottom:"1px solid "+C.borderLight,color:C.text}}>{a.name}</div>):<div style={{padding:"9px 11px",fontSize:12.5,color:C.textMuted}}>No match — keep typing</div>}</div>;})():null}{home?<div style={{fontSize:11.5,color:C.green,marginTop:5,fontWeight:600}}>✓ {homeQ}</div>:null}</div>

@@ -501,7 +501,7 @@ if (!inverted) ok(`alpine ${alpine} >= rock ${counts.rock}, bouldering ${counts.
 const SIGNED_OUT_SURFACES = [
   [/\(USE_DB&&!uid&&!saveErr\)\?<div/, "the pre-submit banner"],
   [/\(USE_DB&&!uid\)\?"[^"]+":"Submit for review"/, "the submit button label"],
-  [/uid\?"It is filed against your account/, "the confirmation screen"],
+  [/uid\?"Other climbers won’t see it until it’s reviewed\. You’ll get a notification/, "the confirmation screen"],
 ];
 const missing = SIGNED_OUT_SURFACES.filter(([re]) => !re.test(ar)).map(([, name]) => name);
 if (missing.length) {

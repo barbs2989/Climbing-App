@@ -1121,6 +1121,46 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Service key, reads ~230k routes + 53k areas (~3 min). After 2026-09-30: **0 on 0 rows.** Not a
     build gate — a property of the DB, not the checkout.
 
+- **`audit:prose-length`** asks whether a route's **description** (`overview`, the *Route
+  description* card) states a climb length or pitch count that its own **stats** contradict — the
+  *Route length*/*Climb length* tile (`length_m`, else the `pitch_detail` sum) and *Pitches*
+  (`pitches` when > 0). Reported by the owner on 2026-10-24: *"the description says the climb
+  length is different than technical stats show"*. Report-only; `scripts/audit-prose-length.mjs`.
+  - **Almost every number in this prose is a SECTION**, so the extractor is POSITIONAL: a length
+    counts only at the OPENING of the description, after "the route/climb/it is|runs N", or as
+    "N m in total" not tied to a numbered pitch; a pitch count only where a sentence OPENS with it,
+    as "a/an N-pitch <route noun>", or "N pitches long". The unrestricted first pass read 1,633
+    pitch phrases and every "a 50-ft chimney" as a route length. One-sided by design: a whole-route
+    length stated mid-paragraph is missed, never manufactured. `--selftest` holds 9 cases.
+  - **First run, 2026-10-24: 18,463 described routes, 29 contradictions on 28 routes.** Every one
+    was READ and researched (Mountain Project, the AAC, SummitPost, theCrag):
+    - **16 were not contradictions** — the number describes a spur, an extension, the opening
+      section, another line, an option ("plus an optional 7th"). They sit in `READ` in the script,
+      each with its reason, and print as a count so a later edit that makes one real is not hidden.
+    - **7 repaired on the first pass** (`scripts/oneoff/fix-prose-length-2026-10-24.mjs`, compare-and-set, rollback in
+      `audits/prose-length/`). Stats wrong: Dual Track w/ Extension 1→2 pitches and Expresso
+      (Cap Trinité) 1→9, both itemised by their own prose with the stored length already agreeing;
+      Stringer 2→4 pitches and 49→120 m, its prose itemising 45+30+20+25 m. Prose wrong: Leviathan
+      "ten-pitch"→nine (AAC: 9; the prose lists nine pitch grades), Doug's Dandy Lower
+      "four-pitch"→three (four is the Upper section), Stop That Train 12→11 (published 11 pitches,
+      1,400 ft), Air Kentucky "A 200 ft sky route"→"200 ft off the ground" (the pitch is 75 ft).
+    - **2 more on a second-source pass**: Stokeman Pillar 5→6 pitches and 183→200 m (the first
+      ascensionist's AAJ report: 200 m of climbing above the couloir, 250 m overall); Lichen Arete
+      prose "eight-pitch"→nine (a guide service lists 9 pitches, as stored). **9 repaired in all.**
+    - **3 stay OPEN, on purpose** — the only source contradicts itself and nothing independent
+      names the route: The Mammoth (header 8 pitches, text itemises P1–P7), Station D Peak North
+      Buttress (header 7, text "nine pitches"), Echo Location (header 30 m, text "a 55 m pillar").
+      A guidebook settles them; do not pick a side from the one page again.
+    - **Where the one source disagrees with itself** (a stats header saying 5, its own text saying
+      6), the itemised pitch-by-pitch text wins only when it also states the total; otherwise the
+      row stays open rather than picking a side.
+  - **The 163 + 17 "stated where the stats show none" are a GAP, not a contradiction** — nothing on
+    screen disagrees, because a 0 pitch count and a missing length do not render. They are counted,
+    not listed (`--missing` lists them). Filling them from the prose is a separate job, and a
+    fingerprint does not authorise a bulk fill: read them first.
+  - Service key, reads every route with an `overview` in 500-row pages (1,000-row pages hit the
+    statement timeout on 2026-10-24). Not a build gate — a property of the DB, not the checkout.
+
 - **`audit:multi-approach`** — which climbs can be reached more than ONE way, and can the page
   switch between them? Report-only; a signal is a reason to read the row and research the climb.
   - Signals: `VARIANTS` (≥2 cards, none linked), `PROSE` (names an alternate approach, <2 cards),
@@ -1154,3 +1194,26 @@ the correction knows the screen is wrong, and they have no way to report it.
     128. Before treating a drop as a lost switch, diff the ids every `*multi-approach*.before.json`
     touched against the live table, read each missing id's KEPT row in that work's merge plan, and
     compare its ways in with the deleted row's (the rollback file holds the deleted row in full).
+
+- **`audit:copied-prose`** asks whether a research batch repeats its OWN SOURCES word for word,
+  and `enrich:apply` refuses the same thing at the write (shared code: `scripts/lib/source-overlap.mjs`).
+  Asked by the owner on 2026-10-24 (*"are we making sure we aren't copying the text of our app
+  from other sources?"*). The answer was: by request only. The 2026-10-01 audit (#2142) found
+  copying concentrated in quoted passages and rewrote 292 strings, and every brief since says
+  "your own words" — but nothing checked, and the 2026-10-23 pitch wave (#2655) shipped 74 strings on
+  21 of 25 routes that kept 8+ word runs of the pages it listed (Dark Shadows P4 carried a
+  20-word source sentence whole). Rewritten the same day, re-checked clean, written through
+  `enrich:apply` with the new gate on.
+  - **Why 8 words.** At 6, almost every route trips on climbing's shared vocabulary ("to a two-bolt
+    anchor at the base of"); at 8, the runs that remain are overwhelmingly sentences or clauses
+    that were lifted, with a few generic ones ("bolted belay at the top of the wall") that are
+    cheap to reword. Normalised for case, punctuation and hyphens, so "right-facing" ≡ "right facing".
+  - **What it cannot see.** A source it could not load (SummitPost and theCrag 403 to scripts;
+    some `review.sources` entries carry notes after the URL and fail to fetch) — named in the
+    output, never counted as clean. A copy from a page the batch did not list. A paraphrase that
+    swaps one word in every seven. Prose already in the catalog with no batch file behind it — that
+    is the #2142 audit's ground, measured then at ~1 verbatim lift per 160 sampled phrases, and
+    deliberately NOT re-run here.
+  - **Selftest:** `--selftest` needs no network: the Dark Shadows sentence as applied is flagged,
+    the same facts reworded are not, a short shared phrase is not, and `review`/`area`/labels are
+    never walked.

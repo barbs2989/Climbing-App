@@ -19,11 +19,11 @@ const require_ = createRequire(import.meta.url);
 const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { CatchLedger } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import CatchLedger from ${JSON.stringify(path.join(ROOT, "src/components/CatchLedger.tsx"))};
 export function render(props) { return renderToStaticMarkup(React.createElement(CatchLedger, props)); }`;
 const out = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "cm-catch-")), "b.cjs");
 await build({ stdin: { contents: ENTRY, resolveDir: ROOT, loader: "js" }, bundle: true, format: "cjs",
-  platform: "node", jsx: "automatic", loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
+  platform: "node", jsx: "automatic", loader: { ".jsx": "jsx", ".tsx": "tsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error" });
 const raw = require_(out).render;
 // SSR ESCAPES its output, so an assertion written against the source string silently never
@@ -40,7 +40,7 @@ const REAL = { totalCatches: 7, highFactorCatches: 2, lastCatch: "2026-05-24", p
 const cases = [
   ["a genuinely empty record", { ledger: EMPTY },
    [/No catches logged yet/, /0 Total Catches/], [/Couldn.t load/, /— Total Catches/]],
-  ["the SAME ledger, but the read failed", { ledger: EMPTY, unavailable: true },
+  ["the SAME ledger, but the read failed", { ledger: EMPTY, unavailable: true, onLog() {} }, // YOUR card (onLog present), so the copy says "your"
    [/Couldn.t load your catch record/, /— Total Catches/, /— High-Factor/, /— Partners Signed/],
    [/No catches logged yet/, /0 Total Catches/]],
   ["a populated record is untouched", { ledger: REAL },

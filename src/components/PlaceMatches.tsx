@@ -1,4 +1,5 @@
-import { C, DbClimbPicker } from "../../ClimbMatchCore.jsx";
+import { C } from "../../ClimbMatchCore.jsx";
+import DbClimbPicker from "./DbClimbPicker.tsx";
 import { usePlaceSearch } from "../../lib/db.js";
 import { USE_DB } from "../../lib/supabase.js";
 import { clickable } from "../../lib/clickable";
@@ -11,7 +12,7 @@ export interface PickedRoute {
 
 /** One place-search hit: an `areas` row plus the `where` line `usePlaceSearch` composes. */
 export interface PlaceHit {
-  id: string | number;
+  id: string;
   name: string;
   where?: string;
   parent?: { name?: string } | null;

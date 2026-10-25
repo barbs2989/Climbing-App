@@ -104,6 +104,31 @@ empty field fills at once and two climbers who agree are enough to change one (0
   every other column is either editable or declared with a reason. The log form offers "⚑ Something
   on this route page is wrong?", which opens the flag sheet through `openFlag` (`lib/reportBus.js`).
 
+- **Adding a climb vs logging one** (reviewed 2026-10-24). They write different things, on purpose:
+  - *Add a climb* (`lib/AddRoute.jsx`) proposes the climb's FACTS — grade, pitches, gear, approach,
+    descent, history — as one `contributions` row of kind `new_route`. Nothing reaches a page until the
+    owner approves it in the proposal queue; `approve_new_route` then writes every field the form asks into
+    a new `routes` row (`check:add-route-fields`, `check:approve-route-columns`), keeping the proposal
+    verbatim in `provenance`. *Add an area* is the same with kind `new_area` (0360).
+  - *Log a climb* (`LogAscent`, `QuickLog`) records one VISIT as a `climb_logs` row, live at once. It never
+    changes the climb's facts: it feeds the Reports tab, the conditions consensus, crowds, camps, the rating
+    fallback and *Recently climbed* (the full map is in [logbook-crews-home.md](logbook-crews-home.md)). Its
+    bridges to the facts are the *still missing …* alert (`missingFacts`) that opens the contribute form, the
+    ⚑ flag link, *Add topo photo* and the sun vote.
+  - A climb can only be logged once it exists, so a proposal cannot carry its proposer's ascent (Mountain
+    Project's ticks also need a published route). Instead, **since 0367 the proposer is told**: approving or
+    rejecting a `new_route` / `new_area` row fires `trg_contribution_result`, which sends a bell notice
+    (*Your climb is live: …* — *Climbed it? Log it from its page.*, or the owner's reason) and records the
+    new row's id in `contributions.result_id`. Route edits have notified their author since 0309; added
+    climbs and areas told nobody. *Your contributions* (`Contributions`, `src/components/Contributions.tsx`) now shows them as *Route
+    added* / *Area added* with their status, and an approved one opens its page (not the edit sheet). Model:
+    MTB Project, Mountain Project's sister site, tells the submitter on the site and by email on approval.
+  - Notice links open: a notice's `route` is now the id, as every other notification carries it (it was a
+    route object that `routeById` never matched, so *Your route edit is live* opened nothing), and one not
+    loaded yet opens thin through `openableRoute`; an area link opens through `openAreaById`.
+  - The success screen no longer says a proposal is "visible to other climbers": no screen shows a pending
+    proposal to anyone but the owner.
+
 - **Add-a-climb asks for the same seven** (`lib/AddRoute.jsx`, 0327): first free / first winter
   ascent, other names, variations, sun and pro tips in group 8, the high point in the numeric row
   (in the climber's units, stored in feet like gain); `approve_new_route` writes all seven, and
@@ -177,13 +202,15 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `lib/RouteQualityQueues.jsx` | `FieldContributionQueue`, `RouteFlagQueue`, `ContributorStandingQueue` |
 | `lib/confidence.jsx` | `ConfidenceCtx`, `HEAD_KEYS`, `headKey`, `ConfChip`, `ConfidenceLegend` |
 | `lib/FlagRouteInfo.jsx` | `FlagRouteSheet` |
-| `ClimbMatchCore.jsx` | `SL` (renders the chip on a route page); `DbAreaPicker` (Add a climb's area step) |
+| `ClimbMatchCore.jsx` | `SL` (renders the chip on a route page) |
+| `src/components/DbAreaPicker.tsx` | `DbAreaPicker` (Add a climb's area step) |
 | `lib/AddRoute.jsx` | `AddRoute`: the add-a-climb form, its per-field context lines (`Lab`) |
 | `lib/fieldHints.js` | `HINTS`: one line of context per field, shared by the edit sheet and Add a climb |
 | `lib/db.js` | `useCatalogAreaSearch`: area search over the whole catalog |
 | `src/components/CardHead.tsx` | `CardHead` (the card heading; renders the chip on a route page — extracted from core, PR19) |
 | `lib/SafetyNotices.jsx` | `ContributionStandingNotice`, `AppealSheet` |
-| `ClimbMatchCore.jsx` | `sameEditValue` (clustering), the "Your contributions" ledger (`ST` statuses) |
+| `ClimbMatchCore.jsx` | `sameEditValue` (clustering) |
+| `src/components/Contributions.tsx` | `Contributions` — the "Your contributions" ledger (`ST` statuses) |
 | `lib/db.js` | `submitContribution`, `useRouteContributions`, `useRouteFieldConfidence`, `setRouteFieldConfidence`, `useFieldContributions`, `approveFieldContribution`, `rejectFieldContribution`, `useMyContributionStanding`, `useContributionStandings`, `setContributionStanding`, `fileRouteFlag`, `useMyRouteFlags`, `useOpenRouteFlags`, `resolveRouteFlag`, `useMyNotices`, `markNoticeRead`, `useAdminQueueCounts`, `useContributionFields`, `useRouteRowsByIds` |
 | `scripts/check-contrib-field-columns.mjs` | the guard that keeps `contribution_fields` equal to the form |
 | `supabase/migrations/0307_route_quality_control_tables.sql` | `contribution_fields`, `route_field_confidence`, `contribution_standing`, `route_flags`, `user_notices`, `applied_value` |

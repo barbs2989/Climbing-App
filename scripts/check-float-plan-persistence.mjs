@@ -56,7 +56,8 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { FloatPlan, floatPlanState } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import { floatPlanState } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import FloatPlan from ${JSON.stringify(path.join(ROOT, "src/components/FloatPlan.tsx"))};
 export function render(props) {
   // FloatPlan reads the climber's saved emergency contact (0237) through React Query, which the app
   // always provides; the harness must too, or the render throws before any assertion runs.

@@ -12,6 +12,10 @@ const MONTHS = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
 const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const n = (v) => Number(v || 0).toLocaleString(DLOCALE);
 const plural = (v, one, many) => n(v) + " " + (Number(v) === 1 ? one : many);
+/* How many of those climbers did it in the past 12 months (0371): a lifetime count alone cannot say
+   whether a climb is still being done. Trailing 365 days, so October still counts the summer. Left
+   off when there is nobody to split, or when the RPC predates 0371 and returns no figure. */
+const recent = (all, yr) => (Number(all) > 0 && yr != null ? " · " + n(yr) + " in the past 12 months" : "");
 
 function Tile({ label, value, sub }) {
   return <div style={{ background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: "9px 11px", minWidth: 0 }}>
@@ -38,8 +42,8 @@ export default function RouteStats({ routeId, cragOnly }) {
     <SL>ROUTE STATS</SL>
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
       <Tile label="Page views" value={s.views_total} sub={n(s.views_30d) + " in the last 30 days"} />
-      <Tile label={sendWord} value={s.sends} sub={"by " + plural(s.senders, "climber", "climbers")} />
-      <Tile label="Logged climbs" value={s.climbs} sub={"by " + plural(s.climbers, "climber", "climbers") + (last ? " · last " + last : "")} />
+      <Tile label={sendWord} value={s.sends} sub={"by " + plural(s.senders, "climber", "climbers") + recent(s.senders, s.senders_12m)} />
+      <Tile label="Logged climbs" value={s.climbs} sub={"by " + plural(s.climbers, "climber", "climbers") + recent(s.climbers, s.climbers_12m) + (last ? " · last " + last : "")} />
       <Tile label="On objectives" value={s.objectives} sub={Number(s.objectives) === 1 ? "climber saved it" : "climbers saved it"} />
     </div>
     {raters ? <div style={{ marginTop: 12 }}>

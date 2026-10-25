@@ -76,6 +76,7 @@ npm run check:message-delivery # a message from a SECOND real account arrives, a
 npm run check:block-guarantees # blocked: cannot read, message or crew-invite you (2 real accounts; hand-run)
 npm run check:new-climber-journey # a new climber onboards, opens a crew, removes a friend — did any of it reach the DB? (hand-run)
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
+npm run check:pinned-dismiss # a popup's ✕ / ← Back stays on screen, and tappable, scrolled to the end
 npm run check:a11y-badges # no control announces two fragments welded into one token
 npm run check:selected-state # a control that LOOKS selected must SAY it is selected
 npm run check:control-names # a control says WHAT IT IS; a switch says what it is SET TO (in build)
@@ -212,9 +213,11 @@ npm run audit:note-voice   # a waypoint note RENDERS — is it written for a cli
 npm run audit:prose-citations   # does rendered prose still name a third party as its SOURCE?
 npm run audit:misplaced-prose # ...is ANY rendered string the pipeline talking, NAMING A SOURCE (every state + area blurbs), or a FIRST ASCENT that argues?
 npm run audit:shouted-prose # does any rendered string SHOUT in ALL CAPS? (enrich:apply refuses it too)
+npm run audit:copied-prose -- batch.json # does a research batch repeat its OWN SOURCES word for word? (enrich:apply refuses it too; --selftest needs no network)
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
-npm run audit:mountaineering-rule # mountaineering is ONLY a walk-up: no mountaineering row carries a 5.x grade (alpine instead); trigger 0280 + catOf enforce it
+npm run audit:mountaineering-rule # mountaineering is ONLY a walk-up and a scramble is never roped: no mountaineering or scrambling row carries a 5.x grade (alpine instead), and every disciplines list names its own primary; trigger 0280/0366 + catOf/rDiscs enforce it
 npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
+npm run audit:prose-length   # does a route's DESCRIPTION state a length or pitch count its own STATS contradict? (--selftest needs no DB)
 npm run audit:multi-approach # a climb reached MORE THAN ONE WAY that the page cannot switch between yet
 npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
 npm run check:enrichment-traceable # does a climbing_route batch invent anything?
@@ -307,7 +310,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 
 `export default function App()` (~line 214 of `ClimbMatch.jsx`) holds **~250 `useState` hooks** and every screen — where each kind of state lives, and why there is no global store, is in [ARCHITECTURE.md](ARCHITECTURE.md). Navigation is driven by a single `tab` state string. Main tabs:
 
-- `today` — home dashboard (greeting, a setup checklist, alerts, *Unfinished business*, *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
+- `today` — home dashboard (greeting, a setup checklist, *Alerts* (one dropdown: what waits on you, then notifications), *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
 - `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `planner`, `forecast`, `conditions`, `safety`, `partners`, `photos`.
   - **`forecast` is labelled "Conditions"**: the crag conditions score on sport/trad/top-rope/bouldering, and FLAGS plus a start time (no stars) on alpine/mountaineering/scrambling/ice/mixed; `conditions` is
     labelled "Reports" / "Send Reports" and holds what climbers reported. Two tabs on purpose: they show different things.
@@ -318,9 +321,9 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
     prose naming the absent id would fail on its own explanation.
 - `discover` — find partners, crews **or guides** (`partnersMode` is `"partners"` / `"crews"` / `"guides"`, whose controls read *Find partners* / *Join a crew* / *Hire a guide*). Only the first two are tested with `partnersMode===`; **`guides` is the else branch**, so grepping for the comparison finds two of three.
 - `crew` — your crews and direct/crew messaging (`crewView`). Friends and Requests are `crewView`s opened from the Menu's tiles; the tab's own view is crews only.
-- `groups` — the Groups screen, Facebook-style: For you · Your groups · Your activity · Discover · Events (`groupsTab`). **Not on the bottom bar**: NAV marks it `bar:false`, like `me`, and it opens from the Menu's Groups tile. A group opens as the `openGroupId` overlay over it.
+- `groups` — the Groups screen, Facebook-style: For you · Your groups · Your activity · Discover · Events (`groupsTab`). **Not on the bottom bar**: NAV marks it `bar:false`, and it opens from the Menu's Groups tile. A group opens as the `openGroupId` overlay over it.
 - `logbook` — your objectives, completed climbs, trip reports.
-- `me` — profile, verification, trust score. **Not on the bottom bar**: NAV marks it `bar:false`, and it opens from the **Menu** (the avatar button at the top left, `menuOpen`), whose "You" card leads here. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. One tile, *Best day to climb*, opens the `bestDayOpen` overlay (the conditions score over saved crag climbs, `lib/BestDayTile.jsx`); the same tile also renders on Home under Jump back in. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
+- `me` — profile, verification, trust score. The bottom bar's **right-most tab** (back since 2026-10-24; it left the bar in #2074), and the **Menu** (the avatar button at the top left, `menuOpen`) still leads here too, from its "You" card. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. One tile, *Best day to climb*, opens the `bestDayOpen` overlay (the conditions score over saved crag climbs, `lib/BestDayTile.jsx`); the same tile also renders on Home under Jump back in. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
 
 `openRoute(x)` is the standard way to navigate into a route (sets `routeFrom`, `selRoute`, and `tab="routes"`).
 
@@ -329,7 +332,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 Read it in three bands:
 
 1. **`ClimbMatchCore.jsx`, top: constants + pure helpers.** The `C` object is the shared dark-theme color palette used everywhere via inline styles (there are no CSS files or Tailwind). Domain helpers live here: `catOf`/`tripOf` (discipline categorization), `compat` (partner compatibility scoring), `scarfHrs`/`techHrs` (time estimates), `sunReadout`/`aspectDirs` (sun/shade by wall aspect and time of day), `buildConsensus` (aggregates trip reports into conditions consensus weighted by `trustScore`), `gpxDownload`, `passesFilters`, `distMiles`, `fuzzyMatch`.
-2. **`ClimbMatchCore.jsx`, bottom: presentational components** — `FullProfile`, `Resume`, `OverviewMap` and the other larger panels. The small ones (`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`, `ActionIcon`, `ElevChart`, `DiscIcon`, `Av`, `SwipeRow`, `ChatComposer`, the two loading skeletons, the chat bubble and typing indicator, `Hr`, `Stars`, `Bar`, `CardHead`, the photo alt-text field and describe box, `ShareExportRow`, `ReactionPicker`, `PullToRefresh`, `TopContribBadge`, `RetryReminder`, `PlaceMatches`, `SectionJumps`, `MiniCalendar`, `SunCorrect`, `StartLocationForm`, `AreaRegionSelect`, `TopContributors`, `PhotoStrip`, `ReportStats`, `ItineraryEditor`, `RealClimberRow`, `CommentMenu`, `DbAreaLevel`, `DbCountryAreaHits`, `BadgeGrid`, `VouchCard`, `SpeedCompat`, `TrackedLists`, `SpeedProfile`, `QuickLog`, `TickList`, `CrewInviteModal`, `SearchSplit`, `WaypointMapPicker`, `SharedListView`, `ConnectModal`, `AspectSunPanel`) and the route map (`GPXMap`) have moved to band 4; `VerifyBadge`, `ProvenancePanel` and `RouteGearCheck`, once listed here, no longer live in core (`RouteGearCheck` is in `RouteDetail.jsx`).
+2. **`ClimbMatchCore.jsx`, bottom: presentational components** — `FullProfile`, `Resume`, `OverviewMap` and the other larger panels. The small ones (`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`, `ActionIcon`, `ElevChart`, `DiscIcon`, `Av`, `SwipeRow`, `ChatComposer`, the two loading skeletons, the chat bubble and typing indicator, `Hr`, `Stars`, `Bar`, `CardHead`, the photo alt-text field and describe box, `ShareExportRow`, `ReactionPicker`, `PullToRefresh`, `TopContribBadge`, `RetryReminder`, `PlaceMatches`, `SectionJumps`, `MiniCalendar`, `SunCorrect`, `StartLocationForm`, `AreaRegionSelect`, `TopContributors`, `PhotoStrip`, `ReportStats`, `ItineraryEditor`, `RealClimberRow`, `CommentMenu`, `DbAreaLevel`, `DbCountryAreaHits`, `BadgeGrid`, `VouchCard`, `SpeedCompat`, `TrackedLists`, `SpeedProfile`, `QuickLog`, `TickList`, `CrewInviteModal`, `SearchSplit`, `WaypointMapPicker`, `SharedListView`, `ConnectModal`, `AspectSunPanel`, `Questionnaire`, `RichEditor`, `AreaTree`, `LogRoutePicker`, `ReportModal`, `FriendsFeed`, `Contributions`, `CatchLedger`, `DbAreaPicker`, `AscentPyramid`, `DbClimbPicker`, `LoginScreen`, `FloatPlan`, `LogCatch`) and the route map (`GPXMap`) have moved to band 4; `VerifyBadge`, `ProvenancePanel` and `RouteGearCheck`, once listed here, no longer live in core (`RouteGearCheck` is in `RouteDetail.jsx`).
 3. **`ClimbMatch.jsx`: `App`** — all stateful screen logic and the big inline-JSX render tree, gated by `tab===...` and `selRoute`.
 4. **`src/components/<Name>.tsx`: single-job components being extracted from the three files above** (since 2026-10; first: `RiskBadge`). Strict TypeScript, one `export default function` each, props declared as an `interface`. The guards still see each one as its parent file's code — every move is registered in `MOVED` in `scripts/lib/guard-sources.mjs`, or the text-reading guards go blind to it. Conventions and the per-PR procedure: [docs/refactor-progress.md](docs/refactor-progress.md). A JS function's destructured params are inferred as REQUIRED props; type the seam with a JSDoc `@param` on the JS side (as `Pill` has), not with casts in the component.
 
@@ -400,5 +403,7 @@ Each rule below is a summary; the linked file has the incidents behind it and th
   different place, bypass for one transaction with `set local catalog.allow_duplicate = 'on'`.
 - **Before writing a researched string into an existing column, look at where it renders.** A
   column that reaches a header, pill, chip or table cell takes a *value* (`season` is a window,
-  `grade` is a grade); its explanation belongs in the prose column beside it. `rappels` is prose
+  `grade` is a grade); its explanation belongs in the prose column beside it. And every word must be
+  OUR OWN — facts may come from a source, sentences may not; enrich:apply refuses a string that
+  shares 8+ words with a page in the batch's `review.sources`. `rappels` is prose
   and must never be parsed for a count. → [enrichment-prose.md](docs/codebase/enrichment-prose.md)

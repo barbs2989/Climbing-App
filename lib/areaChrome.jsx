@@ -5,9 +5,16 @@
 // EditIconButton and CopyCoordButton used to be private to RouteDetail.jsx and closed over
 // core's C; they moved here when the area page needed the same two controls (2026-10-15).
 import { useState } from "react";
+import ActionIcon from "../src/components/ActionIcon.tsx";
+
+// The ONE look for an Edit button beside a section heading -- route sections, area sections, the
+// Profile's sections and a pitch row. Outlined and quiet, with a blue pencil: a filled blue pill on
+// every section was the loudest thing on both pages (2026-10-24).
+export const editBtnStyle = (C) => ({ display: "inline-flex", alignItems: "center", gap: 5, minHeight: 32, padding: "5px 11px", borderRadius: 8, border: "1px solid " + C.border, background: "transparent", color: C.text, fontSize: 12, fontWeight: 700, cursor: "pointer", flexShrink: 0, whiteSpace: "nowrap" });
+export const EditPencil = ({ C }) => <span aria-hidden="true" style={{ display: "inline-flex" }}><ActionIcon name="log" size={14} color={C.blue} /></span>;
 
 export const EditIconButton = ({ onClick, title, C }) => (
-  <button onClick={onClick} title={title} aria-label={title} style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "8px 12px", borderRadius: 8, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue, fontSize: 11, fontWeight: 700, cursor: "pointer", flexShrink: 0, whiteSpace: "nowrap" }}>{"✎ Edit"}</button>
+  <button onClick={onClick} title={title} aria-label={title} style={editBtnStyle(C)}><EditPencil C={C} />Edit</button>
 );
 
 export function CopyCoordButton({ lat, lng, what, C }) {
