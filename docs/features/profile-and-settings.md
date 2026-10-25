@@ -144,7 +144,8 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 | File | Key symbols |
 |---|---|
 | `ClimbMatch.jsx` | `profile`/`setProfile`, `editDraft`, `saveEdit`, `settingsOpen`, `menuOpen`, `units`/`dateFmt`, `meLive`, `myVerificationQ`, `FALLBACK_AV` |
-| `ClimbMatchCore.jsx` | `ME`, `UNITS`, `__set_UNITS`, `__set_DLOCALE`, `FullProfile`, `Resume`, `exportResume` |
+| `ClimbMatchCore.jsx` | `ME`, `UNITS`, `__set_UNITS`, `__set_DLOCALE`, `FullProfile`, `RESUME_STYLES` |
+| `src/components/Resume.tsx` | `Resume`, `shareResume`, `exportResume`, `secEdit` (the résumé sheet; moved from core in PR49) |
 | `lib/EditProfileScreen.jsx` | `EditProfileScreen` (profile editor, zip field) |
 | `lib/auth.js` | `getProfile`, `saveProfile`, `useSession`, `signOut`, `sendEmailCode`, `confirmEmailCode`, `inboxProofFresh` |
 | `lib/VerifyEmailPanel.jsx` | `VerifyEmailPanel` (emailed-code verification on Profile, 0306) |
