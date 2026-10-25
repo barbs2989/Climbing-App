@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import App from "./ClimbMatch.jsx";
 import AppErrorBoundary from "./AppErrorBoundary.jsx";
+import { AuthProvider } from "./src/AuthContext.tsx";
 import { restoreQueryCache, persistQueryCache } from "./lib/query-persist.js";
 import { setQueryClient } from "./lib/queryClientRef.js";
 
@@ -98,7 +99,9 @@ restoreQueryCache(queryClient).finally(() => {
   createRoot(document.getElementById("root")).render(
     <AppErrorBoundary>
       <QueryClientProvider client={queryClient}>
-        <App />
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </QueryClientProvider>
     </AppErrorBoundary>
   );

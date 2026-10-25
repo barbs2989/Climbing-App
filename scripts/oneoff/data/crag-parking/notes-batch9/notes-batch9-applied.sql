@@ -1,0 +1,7 @@
+begin;
+create temp table _had_note on commit drop as select id from public.areas where parking_note is not null;
+update public.areas set parking_note='Park at the trail easement on either Skyline Drive or Lugano Way (Lugano is preferred), then follow social trails up the canyon; about 45 minutes to the top crags.' where id='az_upper_middle_elden_canyon' and id not in (select id from _had_note);
+update public.areas set parking_note='Park at the trail easement on either Skyline Drive or Lugano Way (Lugano is preferred), then follow social trails up the canyon; about 45 minutes to the top crags.' where path <@ (select path from public.areas where id='az_upper_middle_elden_canyon') and id <> 'az_upper_middle_elden_canyon' and id not in (select id from _had_note) and parking_note is null and parking_lat is null;
+update public.areas set parking_note='Take Paradise Rd. and park at the end of the cul-de-sac, taking care not to block driveways or mailboxes. A longer option is on foot from Buffalo Park, about 15 minutes.' where id='az_gloria_s' and id not in (select id from _had_note);
+update public.areas set parking_note='Take Paradise Rd. and park at the end of the cul-de-sac, taking care not to block driveways or mailboxes. A longer option is on foot from Buffalo Park, about 15 minutes.' where path <@ (select path from public.areas where id='az_gloria_s') and id <> 'az_gloria_s' and id not in (select id from _had_note) and parking_note is null and parking_lat is null;
+commit;

@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **One auth listener for the app** (owner to-do, 2026-10-25): `src/AuthContext.tsx` wraps the whole app in `main.jsx`. `useAuth()` gives any screen the signed-in `user` (or null), a `loading` flag until the stored session is read, and `login` / `logout` (the existing `lib/auth.js` calls). It is the only shared `onAuthStateChange` subscription in the app; the older `useSession()` hook still subscribes on its own, and its callers are unchanged. No visible change.
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
@@ -285,6 +286,7 @@ Newest first. Keep about 15 lines; older entries live in the PRs and the commit 
 - **Area page order**: areas/climbs list → *Don’t see a climb?* → suggested climbs → nearby peaks → Top contributors → Discussion. Discussion now renders on areas with no coordinate (Florida’s Artificial Boulders); *Partners here*’s dates/types control is a real card button (it had no style at all).
 - **RACK is rack-only, every state** — ~400 WA + ~140 other-state routes re-homed (ice axe, crampons, helmet, boots out of `detailed_rack`/`pro_needs`/`rack` into `what_to_bring`), `DISC_RACK` stripped to protection and ropes, `routeRackFor` splits every source and `rackLeftovers` feeds GEAR & ESSENTIALS; `audit:rack-items`.
 - **Objectives chips** Alpine is the left-most discipline chip; Mountaineering and Aid are their own chips instead of folding into Alpine and Trad (`lib/ListsManager.jsx`).
+- **#2814** `Resume` extracted to `src/components/` (the climbing résumé sheet; `ClimbMatch.jsx` imports the file; the four scripts that render it by module import are repointed).
 - **#2803** `Challenges` extracted to `src/components/` (the Logbook's Challenges & Lists panel and the profile sheet's challenge block; `ClimbMatch.jsx` and core import the file).
 - **#2798** `Comments` extracted to `src/components/` (the one discussion thread under routes, areas, trip reports, photos and group posts; `ClimbMatch.jsx`, `RouteDetail.jsx` and `lib/TripReport.jsx` import the file).
 - **#2793** `LogCatch` extracted to `src/components/` (the Log a belay catch sheet; `ClimbMatch.jsx` imports the file; core no longer imports `DbClimbPicker` or `PlaceMatches` back).
