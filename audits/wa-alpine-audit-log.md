@@ -34516,3 +34516,15 @@ Block's Northeast Ridge + Northwest Route.
 1 confirmed error fixed (`wa_the_cave_route`), 1 flagged for human review
 (`wa_the_chopping_block_northeast_ridge`), 6 clean.
 `last_processed_id` advances to `wa_the_chopping_block_northwest_route`.
+
+---
+
+## 2026-10-25 — Run skipped: database unreachable
+
+No batch audited this run — the live DB's data-query path is down. `GET .../rest/v1/` (no
+table) returns instantly (401, as expected for a publishable key on that introspection route),
+but every actual table read (`routes`, `areas`, even the small static `cert_track_disciplines`)
+timed out with zero bytes after repeated attempts up to 150s. Looks like the Postgres backend
+itself is locked/unresponsive rather than a network or key problem, since the API gateway layer
+in front of it answers fine. `last_processed_id` is unchanged (`wa_the_chopping_block_northwest_route`,
+pass 7) — next run resumes from there once the DB is reachable again.
