@@ -16,7 +16,24 @@ export const HOME_GLOW = "radial-gradient(120% 100% at 50% 0%, #10264a 0%, #0d11
 export const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07), 0 10px 26px -14px rgba(47,129,247,0.4)";
 
 // `right` sits beside the title (a Save button); `children` run under the line (a count, a button).
-export function ScreenHero({ C, title, sub, right, children, mb = 14 }) {
+// `quiet` (owner, 2026-10-25): the five top tabs (Climbs, Partners, Crew, Logbook, Ranks) lost the
+// boxed headline -- the title sits in the sub-tab bar below it already, and the box took a third of a
+// phone screen. Quiet keeps the title as a visually hidden <h1> (screen readers still get the screen's
+// name), and keeps the one-line caption as plain muted text, with `right` beside it. Nothing else changes.
+const SR_ONLY = { position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0 };
+export function ScreenHero({ C, title, sub, right, children, mb = 14, quiet = false }) {
+  if (quiet) return (
+    <div style={{ position: "relative", marginBottom: mb }}>
+      <h1 style={SR_ONLY}>{title}</h1>
+      {sub || right ? (
+        <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
+          <div style={{ flex: 1, minWidth: 0, fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>{sub || null}</div>
+          {right || null}
+        </div>
+      ) : null}
+      {children || null}
+    </div>
+  );
   return (
     <div style={{ background: HERO_BG, boxShadow: HERO_SHEEN, borderRadius: 14, padding: 16, marginBottom: mb, border: "1px solid " + C.border }}>
       <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
