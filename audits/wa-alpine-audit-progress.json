@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_the_chopping_block_northwest_route",
+  "last_processed_id": "wa_the_monk_odine",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "Noted, not flagged: wa_mount_rainier_ingraham_direct and wa_mount_rainier_ingraham_glacier_direct look like near-duplicate rows for the same real route (one full, one a thin legacy stub) -- out of this audit's scope to merge/delete, left for a human to decide whether to consolidate.",
@@ -9113,6 +9113,25 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-10-25-batch-458.sql",
       "note": "Fixed wa_the_cave_route.high_point_ft (7569 -> 7560): the stale Concord Tower elevation pattern flagged as outstanding in batch 455's note, now reached by the scan -- SummitPost and Mountain Project both independently re-confirmed 7,560 ft this run, matching the figure batches 102/156/454/455 already converged on; the area's own blurb separately flags a second ~7,611-7,612 ft LIDAR figure also in circulation, left unresolved. Flagged for human review, not fixed: wa_the_chopping_block_northeast_ridge's FA ('Firey party, 1970') -- no source found confirms or contradicts it (the Mountaineers' own Chopping Block/NE Ridge page gives no FA at all); left as unverified per no-guessing rule. Verified clean: wa_table_mountain_standard_scramble (5,742 ft high point and 725 ft gain match WTA/SummitPost exactly), wa_tenpeak_mountain_north_couloir and wa_tenpeak_mountain_southeast (8,312 ft is the most-cited figure for Tenpeak Mountain across sources, and the Southeast route's FA -- Lloyd Anderson & Tom Campbell, Sept 21 1940 -- matches Wikipedia exactly), wa_the_brothers_south_couloir (FA party names for both summits -- 1908 Mt Arthur: C. Hill/W. Hill; 1912 Mt Edward: Collier/Corkenill/Dehn/Fish/Goldsmith/Trumbull -- match SummitPost exactly; 6,866 ft high point matches), wa_the_brothers_traverse (6,866 ft high point matches; carries no FA claim to check), wa_the_chopping_block_northwest_route (6,819 ft high point matches SummitPost/Mountaineers; FA climbers and month/year -- Cooper & Denny, Sept 1961 -- corroborated via Mountain Project's climbing-history list, though MP calls the line 'West Ridge' rather than 'Northwest Route' -- likely the same route under a different conventional name, not a strong enough naming conflict to flag as wrong)."
+    },
+    {
+      "batch_number": 459,
+      "date": "2026-10-25",
+      "route_ids": [
+        "wa_the_chopping_block_south_route",
+        "wa_the_devils_club",
+        "wa_the_fin_northeast_face",
+        "wa_the_hitchhiker",
+        "wa_the_horn_scramble",
+        "wa_the_incisor_scramble",
+        "wa_the_monk_le_gibet",
+        "wa_the_monk_odine"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 2,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-10-25-batch-459.sql",
+      "note": "Fixed areas.wa_the_horn.parent_id (wa_north_central_olympics -> wa_southern_olympics): The Horn sits on Sawtooth Ridge in the Mount Skokomish Wilderness, 0.15 km from sibling peak The Fin and 0.8 km from Mount Cruiser -- both already correctly filed under wa_southern_olympics -- while the nearest wa_north_central_olympics member (Mount Steel) is ~9 km north; Wikipedia independently confirms Sawtooth Ridge is in the southern, not north-central, Olympics, and this route's own overview field already said so ('shares its approach ... with Mount Cruiser and The Fin'). A rare areas-table fix rather than a routes fix. Flagged for human review, not fixed: wa_the_monk_le_gibet and wa_the_monk_odine both share high_point_ft=8606, an exact match for parent Cathedral Peak's own elevation, but The Monk is consistently described (Mountain Project, Mountaineers.org) as a separate, smaller subsidiary tower on Cathedral's south face -- no source found gives The Monk's own height, so nothing to substitute. Verified clean: wa_the_chopping_block_south_route/Southeast Face (grade/pitches/approach match this row's own corrections field, already reconciled 2026-10-02 against the published guide), wa_the_devils_club (FA Layton & Erik/Eric Wolfe, Aug-Sep 2005, and 25 pitches confirmed via Mountain Project/Climbing.com), wa_the_fin_northeast_face (5.4 grade and NE chimney description match Mountaineers.org's Sawtooth Ridge page exactly), wa_the_hitchhiker (FA Burdo & Johnston 2007, 9 pitches, ~900 ft, Grade IV all confirmed via Mountain Project), wa_the_incisor_scramble (grade/FA/elevation not independently indexed online -- not contradicted by anything found)."
     }
   ]
 }

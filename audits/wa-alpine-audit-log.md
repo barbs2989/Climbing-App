@@ -34528,3 +34528,44 @@ timed out with zero bytes after repeated attempts up to 150s. Looks like the Pos
 itself is locked/unresponsive rather than a network or key problem, since the API gateway layer
 in front of it answers fine. `last_processed_id` is unchanged (`wa_the_chopping_block_northwest_route`,
 pass 7) — next run resumes from there once the DB is reachable again.
+
+---
+
+## 2026-10-25 — Pass 7, Batch 459
+
+Eight routes: The Chopping Block's Southeast Face (`south_route`); Southeast Mox Peak's The
+Devils Club; The Fin NE Face + The Horn Scramble + The Incisor Scramble (Olympics); South Early
+Winters Spire's The Hitchhiker; Cathedral Peak's The Monk — Le Gibet + Odine.
+
+- `wa_the_horn`: **fixed (areas table, not routes)** — `parent_id` was `wa_north_central_olympics`;
+  changed to `wa_southern_olympics`. The Horn sits on Sawtooth Ridge in the Mount Skokomish
+  Wilderness, 0.15 km from sibling peak The Fin and 0.8 km from Mount Cruiser — both already
+  correctly filed under `wa_southern_olympics` — while the nearest `wa_north_central_olympics`
+  member (Mount Steel) is ~9 km north. Wikipedia independently confirms Sawtooth Ridge is in the
+  southern, not north-central, Olympics, and this route's own `overview` field already says The
+  Horn "shares its approach ... with Mount Cruiser and The Fin" — the route text was right, only
+  the area row's `parent_id` was wrong.
+- `wa_the_monk_le_gibet` / `wa_the_monk_odine`: **flagged for human review, not fixed** — both
+  share `high_point_ft` = 8606, an exact match for parent Cathedral Peak's own elevation, but The
+  Monk is consistently described (Mountain Project, Mountaineers.org) as a separate, smaller
+  subsidiary tower on Cathedral's south face, not Cathedral's own summit. No source found gives
+  The Monk's own height, so nothing to substitute — left flagged rather than guessed. Both routes'
+  grades (5.8 / 5.9) match Mountain Project exactly; neither route's unrecorded-party FA (Jul 1973
+  / Sep 1974) is contradicted by anything found.
+- `wa_the_chopping_block_south_route` (Southeast Face): grade, pitches and approach all match this
+  row's own `corrections` field (already reconciled 2026-10-02 against the published guide); FA
+  (Degenhardt & Strandberg, 1932) couldn't be confirmed or denied by any source found.
+- `wa_the_devils_club`: FA (Mike Layton & Erik/Eric Wolfe, Aug 31–Sep 1 2005) and pitch count (25)
+  confirmed via Mountain Project/Climbing.com; length and grade variously given across sources,
+  consistent with this row's own `beta` field already flagging that spread.
+- `wa_the_fin_northeast_face`: grade (5.4) and NE aspect/chimney description both match
+  Mountaineers.org's Sawtooth Ridge page exactly. FA (Pinsch & Tate, 1966) unconfirmed either way.
+- `wa_the_hitchhiker`: FA (Bryan Burdo & Scott Johnston, 2007), 9 pitches, ~900 ft and Grade IV all
+  confirmed via Mountain Project.
+- `wa_the_incisor_scramble`: grade, FA (Heathershaw & McKee, 1958) and elevation (7,440 ft) — The
+  Incisor in Royal Basin isn't indexed well online (search engines confuse it with an unrelated BC
+  peak of the same name); no source found to confirm or contradict any of it.
+
+1 confirmed error fixed (`wa_the_horn`, areas table), 2 flagged for human review (both Monk
+routes), 5 clean.
+`last_processed_id` advances to `wa_the_monk_odine`.
