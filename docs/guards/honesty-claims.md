@@ -997,6 +997,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     go/no-go standard exists to score against); the start gets a party back DOWN off the snow before it
     softens ("going down is more dangerous"); and "mixed and ice climbing needs a check because they can
     be different… same with scrambling and mountaineering, research online".
+  - **DAY BY DAY + a day step on EVERY section (owner, 2026-10-24):** "we have hour by hour, but not day
+    to day… you should be able to change the day above each section". Section 2 holds that the flags card
+    and Sun and shade carry `DayHead` with the shared `nav`, that `DayByDay` renders every day as a
+    pressed-state button calling the same `setDayI`, and that its start line is gated exactly like the
+    start box (`!legs.floor`, `daysEarly < 2`) — a row must never show a start the card itself refuses.
   - **THE DISCIPLINES DISAGREE ON DIRECTION, which is why there is one KIND per route and not one flag
     set.** Researched online the same day (guide services, avalanche centres, Parks Canada, AAC
     Accidents, Weiss et al. 2011 in the *Journal of Glaciology*, practitioner threads):

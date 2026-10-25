@@ -126,7 +126,7 @@ function RangeLine({ route, sum }) {
     : "Both colder and warmer than your " + r + " range at times (" + uTemp(sum.lo) + " to " + uTemp(sum.hi) + ").";
   return <div style={{ marginBottom: 10 }}>
     {text ? <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginBottom: 4 }}>{text}</div> : null}
-    <button onClick={function () { setOpen(!open); }} aria-expanded={open} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{open ? "Hide your temperature range" : range ? "Change your temperature range" : "Set a temperature range you like"}</button>
+    <button onClick={function () { setOpen(!open); }} aria-expanded={open} style={{ background: "none", border: "none", padding: "5px 0", minHeight: 28, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{open ? "Hide your temperature range" : range ? "Change your temperature range" : "Set a temperature range you like"}</button>
     {open ? <div style={{ background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: "10px 12px", marginTop: 6 }}><CondPrefsControls disc={disc} only="temp" /></div> : null}
   </div>;
 }
@@ -342,14 +342,14 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     <div aria-live="polite" style={{ fontSize: 12, color: C.textSub, marginBottom: 5 }}>{"Showing "}<b style={{ color: C.text }}>{(Math.min(dayI, days.length - 1) === 0 ? "today, " : "") + fullDay}</b>{" — every section below is for this day."}</div>
     <div role="group" aria-label="Day" style={{ display: "flex", gap: 5, overflowX: "auto", paddingBottom: 4 }}>{days.map(function (d, i) {
       const on = i === Math.min(dayI, days.length - 1), w = nWarn(d), c = nCaution(d);
-      return <button key={d.date} onClick={function () { setDayI(i); }} aria-pressed={on} aria-label={dayName(d, i) + ", " + (w + c === 0 ? "no flags" : (w ? w + " warning" + (w === 1 ? "" : "s") : "") + (w && c ? " and " : "") + (c ? c + " caution" + (c === 1 ? "" : "s") : ""))} style={{ flex: "0 0 auto", minWidth: 52, padding: "6px 4px", borderRadius: 9, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : "transparent", color: C.text, cursor: "pointer", textAlign: "center" }}>
+      return <button key={d.date} onClick={function () { setDayI(i); }} aria-pressed={on} aria-label={dayName(d, i) + ", " + (w + c === 0 ? "no flags" : (w ? w + " warning" + (w === 1 ? "" : "s") : "") + (w && c ? " and " : "") + (c ? c + " caution" + (c === 1 ? "" : "s") : ""))} style={{ flex: "0 0 58px", width: 58, boxSizing: "border-box", minHeight: 58, padding: "6px 2px", borderRadius: 9, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : "transparent", color: C.text, cursor: "pointer", textAlign: "center" }}>
         <div style={{ fontSize: 11.5, fontWeight: 700 }}>{dayName(d, i)}</div>
         <div style={{ minHeight: 10, lineHeight: "10px" }}>{Array.from({ length: Math.min(w, 3) }, function (_, j) { return <span key={"w" + j}>{dot(C.red)}</span>; })}{Array.from({ length: Math.min(c, 3) }, function (_, j) { return <span key={"c" + j}>{dot(C.amber)}</span>; })}</div>
         <div style={{ fontSize: 10.5, color: C.textMuted }}>{d.sum.hi != null ? uTemp(d.sum.hi) + "/" + uTemp(d.sum.lo) : ""}</div>
       </button>;
     })}</div></div>
     <div style={box}>
-    {head}
+    <DayHead title={"CONDITIONS · " + KIND_LABEL[kind].toUpperCase()} dayLabel={dayName(day, di)} nav={nav} />
     {startEl || sunEl ? <div style={{ background: C.surface, borderRadius: 10, padding: "10px 12px", marginBottom: 10 }}>{startEl}{pubStart ? <div style={{ fontSize: 12, color: C.text, lineHeight: 1.5, marginTop: 6 }}><b>{"This route’s usual start: "}</b>{pubStart}</div> : null}{sunEl}</div> : null}
     <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 10 }}>
       {day.flags.length ? day.flags.map(function (f, i) { const col = f.level === "warn" ? C.red : C.amber; return <div key={f.key + i} style={{ display: "flex", gap: 8, alignItems: "flex-start", fontSize: 12.5, color: C.text, lineHeight: 1.45 }}><span aria-hidden="true" style={{ flexShrink: 0, marginTop: 5, width: 8, height: 8, borderRadius: "50%", background: col }} /><span><b style={{ color: col }}>{f.level === "warn" ? "Warning: " : "Caution: "}</b>{flagText(f)}</span></div>; })
@@ -361,11 +361,12 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "halfway" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + BLIND[kind]}
     </div>
   </div>
+  <DayByDay days={days} di={di} pick={setDayI} dayName={dayName} nWarn={nWarn} nCaution={nCaution} fc={fc} legs={legs} startOn={kind !== "waterfall" && kind !== "cragmixed"} />
   <AlertsSection day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} nav={nav} alerts={alerts} fc={fc} onRetry={function () { setAlertTries(alertTries + 1); }} />
   <HourByHour key={day.date} fc={fc} day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} nav={nav} pt={pt} floor={floor} legs={legs} snowLegs={snowLegs} />
   <SnowfallSection fc={fc} day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} nav={nav} />
   <AirSection day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} nav={nav} air={air} onRetry={function () { setAirTries(airTries + 1); }} />
-  <SunShadeSection route={route} kind={kind} terrain={terrain} pt={pt} fc={fc} day={day} isToday={Math.min(dayI, days.length - 1) === 0} />
+  <SunShadeSection route={route} kind={kind} terrain={terrain} pt={pt} fc={fc} day={day} isToday={di === 0} dayLabel={dayName(day, di)} nav={nav} />
   </div>;
 }
 
@@ -382,6 +383,43 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
    thunderstorms, so "possible" is the strongest word a CAPE hour gets and nothing here says "safe".
    Only the one heading line ("Tue · 2 PM") is aria-live: wrapping every tile in it read the whole grid out again on
    each tap. */
+/* DAY BY DAY (owner, 2026-10-24: "we have hour by hour, but not day to day conditions ... look at how we do sport,
+   trad and bouldering routes"). The seven days in one list, as the crag card's Day by day and Mountain-Forecast's
+   daily summit table lay them out: each row is the day's flag count, high / low, freezing level and gusts at the
+   forecast's own height, plus new snow and the start. It adds NO judgement -- every number is the day's own
+   daySummary, every count the flags the card already raised, and the start the same one the card's start box
+   shows (none past a one-day push or on a minimum estimate). Tapping a row opens that day in every section. */
+function DayByDay({ days, di, pick, dayName, nWarn, nCaution, fc, legs, startOn }) {
+  const cell = { background: C.surface, borderRadius: 8, padding: "5px 7px", display: "block", minWidth: 0 };
+  const lbl = { display: "block", fontSize: 10.5, color: C.textMuted, fontWeight: 700 };
+  const val = { display: "block", fontSize: 12.5, color: C.text, fontWeight: 700, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" };
+  const date = function (d) { return new Date(d.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", timeZone: "UTC" }); };
+  return <div style={BOX}>
+    <CardHead style={{ marginBottom: 8 }}>DAY BY DAY</CardHead>
+    <div data-day-table="1" style={{ margin: "0 -14px -12px", borderTop: "1px solid " + C.border }}>
+    {days.map(function (d, i) {
+      const on = i === di, w = nWarn(d), c = nCaution(d), s = d.sum;
+      const flagWord = w + c === 0 ? "No flags" : [w ? w + " warning" + (w === 1 ? "" : "s") : null, c ? c + " caution" + (c === 1 ? "" : "s") : null].filter(Boolean).join(" · ");
+      const temp = s.hi != null ? uTemp(s.hi) + " / " + uTemp(s.lo) : "—";
+      const fl = s.flLo != null ? uElev(Math.round(s.flLo / 100) * 100) + "–" + uElev(Math.round(s.flHi / 100) * 100) : "—";
+      const gust = s.gust != null ? uWind(s.gust) : "—";
+      const start = startOn && !legs.floor && d.start && d.daysEarly < 2 ? (legs.fromCamp ? "Leave camp by " : "Start by ") + clockOf(fc, floorQ(d.start.at)) + (d.daysEarly === 1 ? " the night before" : "") : null;
+      const extra = [s.snow != null ? uSnowfall(s.snow) + " new snow" : null, start].filter(Boolean).join(" · ");
+      return <button key={d.date} onClick={function () { pick(i); }} aria-pressed={on} aria-label={dayName(d, i) + ", " + flagWord + ". High / low " + temp + ". Freezing level " + fl + ". Gusts " + gust + ". " + extra + "."} style={{ display: "block", width: "100%", textAlign: "left", padding: "11px 14px", margin: 0, border: "none", borderTop: i ? "1px solid " + C.border : "none", borderRadius: 0, background: on ? C.blueBg : "transparent", boxShadow: on ? "inset 3px 0 0 " + C.blue : "none", color: C.text, cursor: "pointer", font: "inherit" }}>
+        <span style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 6 }}><span style={{ fontSize: 12.5, fontWeight: 800 }}>{dayName(d, i)}</span><span style={{ fontSize: 11.5, color: C.textMuted }}>{date(d)}</span><span style={{ fontSize: 12, fontWeight: 700, color: w ? C.red : c ? C.amber : C.textSub }}>{flagWord}</span></span>
+        <span style={{ display: "grid", gridTemplateColumns: "repeat(3,minmax(0,1fr))", gap: 5 }}>
+          <span style={cell}><span style={lbl}>High / low</span><span style={val}>{temp}</span></span>
+          <span style={cell}><span style={lbl}>Freezing level</span><span style={val}>{fl}</span></span>
+          <span style={cell}><span style={lbl}>Gusts</span><span style={val}>{gust}</span></span>
+        </span>
+        <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 4 }}>{extra}</span>
+      </button>;
+    })}
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, padding: "9px 14px 11px", borderTop: "1px solid " + C.border }}>Whole-day figures at the forecast’s height. Tap a day to open it in every section.</div>
+    </div>
+  </div>;
+}
+
 /* A day section's heading with its own ‹ › (see `nav` in ForecastBox): steps the one selected day, so every
    section moves together and the strip at the top agrees. A missing neighbour is a disabled button, not a gap,
    so the heading never shifts. */
@@ -624,7 +662,7 @@ export function sunFace(route, kind, pt, fromCamp) {
   if (fromFt == null) return { missing: "from" };
   return { top: top, deg: deg, fromFt: fromFt, ctr: pins.find(function (p) { return p.key === "Base"; }) || top };
 }
-function SunShadeSection({ route, kind, terrain, pt, fc, day, isToday }) {
+function SunShadeSection({ route, kind, terrain, pt, fc, day, isToday, dayLabel, nav }) {
   const pins = useMemo(function () { return sunPins(route); }, [route]);
   if (!pt || !day || day.sunrise == null || day.sunset == null) return null;
   // The terrain is centred on the CLIMB: its base, else its top, else the forecast point.
@@ -633,7 +671,7 @@ function SunShadeSection({ route, kind, terrain, pt, fc, day, isToday }) {
   const at0 = isToday && now >= rise && now <= set ? now : Math.min(set, rise + 3 * 3600e3);
   const steep = kind === "glacier" || kind === "alpineice" || kind === "waterfall" || kind === "cragmixed" || hasSnowLegs(kind, terrain);
   return <div style={BOX}>
-    <CardHead style={{ marginBottom: 6 }}>SUN AND SHADE</CardHead>
+    <DayHead title="SUN AND SHADE" dayLabel={dayLabel} nav={nav} />
     <ShadeMap lat={ctr.lat} lng={ctr.lng} pins={pins.length ? pins : null} steep={steep} place={pins.length ? "climb" : "area"} rise={rise} set={set} at0={at0} dayKey={day.date} clock={function (u) { return clockOf(fc, Math.round(u / 1000)); }} C={C} />
   </div>;
 }
