@@ -34706,3 +34706,55 @@ Route/Standard.
 
 0 confirmed errors fixed, 2 flagged for human review, 6 clean.
 `last_processed_id` advances to `wa_tower_mountain_southwest_route`.
+
+## 2026-10-25 — Pass 7, Batch 463
+
+Eight routes across eight peaks: Trapper Mountain's North Couloir; the Traverse of Mount
+Index (Main Peak); Vesper Peak's True Grit; Tupshin Peak's East Face; Tye Peak's East
+Slopes Scramble; Burgundy Spire's Ultramega OK; Union Peak's Southeast Slopes Scramble;
+Concord Tower's Up In Arms.
+
+**Fixed (1), SQL in `audits/sql/2026-10-25-batch-463.sql`:**
+- `wa_up_in_arms` (Concord Tower): `high_point_ft` 7569 → 7560. Same stale figure five
+  prior passes (batch 102, batch 156, and this pass's own batches 454/455/458) have
+  already converged on fixing for this peak's other routes via Mountain Project/SummitPost
+  agreement, naming `wa_up_in_arms` each time as still outstanding on the peak. Re-confirmed
+  again this run — no source found anywhere supports 7,569. Still outstanding on this peak:
+  `wa_concord_tower_north_face` (7611) and `areas.wa_concord_tower.elevation_ft` (still
+  7611) — not reached by this batch.
+
+**Clean (7):**
+- `wa_trapper_mountain_north_couloir`: summit elevation (7,530 ft) matches Wikipedia/
+  PeakVisor exactly. FA details confirmed independently via a Turns All Year trip report
+  citing the Skoog Alpenglow history: 1970s foot ascent by John Roper, Don Avreitt, Stu
+  Ferguson; first ski descent 2012 by Rowan Stewart and Alex Spoonde — matches the stored
+  `fa` field verbatim.
+- `wa_traverse_of_mount_index`: high point 5,991 ft matches Wikipedia's Main Peak figure
+  exactly, and the North/Middle/Main summit waypoints now carry distinct, ascending-order
+  elevations (5337/5521/5991) with no duplicated coordinates — the North-Peak-copied-
+  Main-Peak-coordinates issue batch 238 (pass 4) flagged is no longer present, and the
+  internally-inconsistent `dist_km` that same batch flagged has since been removed
+  (column is now null) rather than fixed to a wrong number. FA ("Fred Beckey and
+  Schoening, August 1950, in sneakers over two nights") independently corroborated via
+  the AAC Publications 1951 writeup and The Mountaineer's 1950 annual, both of which
+  describe the same first three-summit traverse.
+- `wa_true_grit_2` (Vesper Peak): elevation (6,221 ft) matches Wikipedia/Komoot; the
+  row's own `corrections` field already discloses WTA's close alternate 6,214 ft.
+  FA (Darin Berdinka, 2015) not independently re-checked this run beyond what prior
+  passes already confirmed; nothing found contradicts it.
+- `wa_tupshin_peak_east_face`: 8,348 ft high point vs. Wikipedia's 8,347 ft — a 1-ft
+  rounding difference, not an error (same conclusion a prior pass already reached).
+- `wa_tye_peak_e_route`: 5,476 ft matches both a Wenatchee Outdoors trip report and a
+  Mountaineers route listing for this unofficial-name Stevens Pass summit.
+- `wa_union_peak_se_route`: 5,696 ft matches WTA and the Mountaineers' guide exactly.
+- `wa_ultramega_ok` (Burgundy Spire): FA (Mark Allen and Tom Smith, July 24, 2004)
+  confirmed via Mountain Project/SuperTopo, consistent with multiple prior passes.
+  `high_point_ft` (8,483 ft) is the long-running, already-flagged three-way elevation
+  ambiguity for this peak (area/Action Potential: 8483; North Face: 8400, with real
+  independent corroboration via SummitPost/Mountaineers; a since-superseded claim of
+  8492 traces to listsofjohn but a later pass found no source for it either) — an open
+  "needs a human call" item from earlier passes, not re-litigated or re-flagged here
+  since nothing new was found to change that picture.
+
+1 confirmed error fixed, 0 flagged for human review (new), 7 clean.
+`last_processed_id` advances to `wa_up_in_arms`.
