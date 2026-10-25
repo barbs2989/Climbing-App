@@ -120,6 +120,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
    and the rest of the app reads it through `meLive`. The sign-in reset zeroes `ME`, so new code spreads `meLive` rather than `ME`.
 2. **Cold load**: until `getProfile()` lands `ME.name` is the placeholder "Climber"; the Today greeting uses the name this device remembered for the account, else the session's sign-up name, never the placeholder.
    App paints a blank shell until `useSession` first answers (`session===undefined`) even with demo autologin on, as production is, or the demo climber's home flashes for a frame before the account's.
+   With a backend, a frame with NO account greets with no name at all, never `ME.name`: that frame is a guest, or a signed-in climber whose expired token is still refreshing (supabase-js answers `getSession()` with null when the refresh fails, and a tab with `cm_guest` set then paints guest Home), and `ME` there is the seed climber.
 3. **Edit**: opening the editor seeds `editDraft`; `saveEdit` normalises it (`FALLBACK_AV` avatar placeholder becomes `""`, never stored; `setMyWeek(d.availWeek)`),
    then calls `saveProfile(id, fields)` (`lib/auth.js`), a PATCH of whatever object it is handed that invalidates every cached profile reader (`authProfileReaders`).
    Because it PATCHes a partial object blindly, a failed profile read must not open the editor (`check:profile-edit-gate`) and the photo strip uses
