@@ -48,7 +48,7 @@ export function storeListing(platform) {
 
 const field = { width: "100%", padding: "11px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.bg, color: C.text, fontSize: 14, outline: "none", boxSizing: "border-box", fontFamily: "inherit" };
 const lbl = { display: "block", fontSize: 12.5, fontWeight: 700, color: C.textSub, margin: "12px 0 5px" };
-const primary = (on) => ({ width: "100%", marginTop: 14, padding: 12, minHeight: 46, background: on ? C.blueSolid : C.bg, color: on ? "#fff" : C.textMuted, border: on ? "none" : "1px solid " + C.border, borderRadius: 11, fontSize: 14, fontWeight: 700, cursor: on ? "pointer" : "default" });
+const primary = (on) => ({ width: "100%", marginTop: 14, padding: 12, minHeight: 46, background: on ? C.blueSolid : C.bg, color: on ? C.onSolid : C.textMuted, border: on ? "none" : "1px solid " + C.border, borderRadius: 11, fontSize: 14, fontWeight: 700, cursor: on ? "pointer" : "default" });
 const why = (e) => (e && e.code === "P0001" && e.message ? e.message + " " : "");
 
 function GuestEmail({ id, email, setEmail }) {
@@ -77,7 +77,7 @@ export function FeedbackForm({ uid }) {
   return <form onSubmit={(e) => { e.preventDefault(); send(); }} aria-label="Send feedback">
     <div style={{ fontSize: 13, color: C.textSub, marginBottom: 12, lineHeight: 1.5 }}>Found a bug or have an idea? It goes straight to the ClimbMatch team, and we read every one.</div>
     <div role="radiogroup" aria-label="What is it about" style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-      {KINDS.map(([k, label]) => <button key={k} type="button" role="radio" aria-checked={kind === k} onClick={() => setKind(k)} style={{ minHeight: 40, padding: "8px 13px", borderRadius: 20, border: "1px solid " + (kind === k ? C.blue : C.border), background: kind === k ? C.blueBg : C.bg, color: kind === k ? "#fff" : C.textSub, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{label}</button>)}
+      {KINDS.map(([k, label]) => <button key={k} type="button" role="radio" aria-checked={kind === k} onClick={() => setKind(k)} style={{ minHeight: 40, padding: "8px 13px", borderRadius: 20, border: "1px solid " + (kind === k ? C.blue : C.border), background: kind === k ? C.blueBg : C.bg, color: kind === k ? C.onSolid : C.textSub, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{label}</button>)}
     </div>
     <label htmlFor="fb-text" style={lbl}>{kind === "bug" ? "What happened, and on which screen?" : kind === "idea" ? "What would make ClimbMatch better?" : "What’s on your mind?"}</label>
     <textarea id="fb-text" value={text} onChange={(e) => { setText(e.target.value); if (state !== "sending") setState("idle"); }} rows={5} maxLength={4000} style={{ ...field, resize: "vertical" }} />

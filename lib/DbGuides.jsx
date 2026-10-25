@@ -16,6 +16,7 @@ import {
 import { POP_BACK } from "./popupChrome.js";
 import { askConfirm } from "./ConfirmSheet.jsx";
 import { photoThumb } from "./photoThumb";
+import { INPUT } from "./buttonStyles.js";
 
 const DISCLAIMER_TEXT = "ClimbMatch is a directory connecting me with independent, self-employed guides. ClimbMatch is not a party to any guiding agreement, does not supervise or guarantee the guide's services, and assumes no liability for injury, loss, or damage arising from a guided trip.";
 
@@ -35,7 +36,7 @@ function GuideCard({ g, verified, onOpen, C }) {
   return (
     <div {...clickable(onOpen)} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 13px", marginBottom: 10, cursor: "pointer" }}>
       <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-        {g.avatar ? <img src={photoThumb(g.avatar, 46)} alt="" style={{ width: 46, height: 46, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} /> : null}
+        {g.avatar ? <img src={photoThumb(g.avatar, 46)} alt="" onError={e => { e.currentTarget.style.visibility = "hidden"; }} style={{ width: 46, height: 46, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} /> : null}
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
             <span style={{ fontSize: 14.5, fontWeight: 700, color: C.text }}>{g.name}</span>
@@ -123,7 +124,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
     }
   };
 
-  const inp = { width: "100%", padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, boxSizing: "border-box" };
+  const inp = INPUT(C);
   const label = { fontSize: 13, fontWeight: 700, color: C.text, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 8, marginTop: 14, borderLeft: "3px solid " + C.blue, paddingLeft: 9 };
   const primaryCred = (credentials || []).find(c => c.kind === "primary_track");
 
@@ -134,7 +135,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
       </div>
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "14px 16px 44px" }}>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-          {guide.avatar ? <img src={photoThumb(guide.avatar, 56)} alt="" style={{ width: 56, height: 56, borderRadius: "50%", objectFit: "cover" }} /> : null}
+          {guide.avatar ? <img src={photoThumb(guide.avatar, 56)} alt="" onError={e => { e.currentTarget.style.visibility = "hidden"; }} style={{ width: 56, height: 56, borderRadius: "50%", objectFit: "cover" }} /> : null}
           <div>
             <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
               <span style={{ fontSize: 17, fontWeight: 700, color: C.text }}>{guide.name}</span>
@@ -151,7 +152,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
           ["Disciplines listed", guide.disciplines.map(d => DISCIPLINE_LABELS[d] || d).join(", ") || "None yet"],
           ["Insurance", guide.insuranceCarrierName ? guide.insuranceCarrierName + " (self-attested, not independently confirmed)" : "Not on file"],
           ["Permits/licenses", guide.permitAttested ? "Attested by guide (not independently confirmed)" : "Not on file"],
-          ["Rate", "$" + guide.rate + "/day, up to " + guide.groupMax + " climbers"],
+          ["Rate", "$" + guide.rate + "/day, up to " + guide.groupMax + (guide.groupMax === 1 ? " climber" : " climbers")],
           ["Cancellation policy", guide.cancellationPolicy || "Not specified"],
         ].map(row => (
           <div key={row[0]} style={{ display: "flex", justifyContent: "space-between", gap: 10, padding: "7px 0", borderBottom: "1px solid " + C.border, fontSize: 12.5 }}>
@@ -221,11 +222,11 @@ export default function DbGuides({ onDash, notify, C }) {
     return list;
   }, [rows, q, disc, sort]);
 
-  const inp = { width: "100%", padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, boxSizing: "border-box" };
+  const inp = INPUT(C);
 
   return (
     <div style={{ padding: 14 }}>
-      <input aria-label="Search guides, areas" value={q} onChange={e => setQ(e.target.value)} placeholder="Search guides, areas..." style={inp} />
+      <input aria-label="Search guides, areas" value={q} onChange={e => setQ(e.target.value)} placeholder="Search guides, areas…" style={inp} />
       <div style={{ display: "flex", gap: 8, marginTop: 8, overflowX: "auto" }}>
         <select aria-label="Filter by discipline" value={disc} onChange={e => setDisc(e.target.value)} style={{ ...inp, minWidth: 160 }}>
           <option value="">All disciplines</option>
