@@ -996,6 +996,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 
 - **`check:approach-overlay`** (in build) — when a climb has more than one way in, the PICKED one
   drives the whole page and nothing from another leaks under its name.
+  - **Hazards (2026-10-25, KNOWN HAZARDS follows the pick).** A way in with its own `hazards` / `objHaz`
+    replaces the row's list (`overlayHazards`); one with none keeps the row's. Asserted on fixtures:
+    the picked way in's list shows, another's does not, and a list-less way in keeps the row's.
+  - **`audit:approach-hazards`** (read-only, not in build) is the catalog census: every switchable way in
+    has its own list (MISSING) and no two ways in on one route share identical text (IDENTICAL). It reads
+    with keyset paging — an offset-paged filter over the 315k-row table returns 500. It cannot say whether
+    a list is RIGHT for its way in; the apply run's `unsure` flags are the reading job.
   - **A VARIATION (2026-10-24, Boving Roofs on the Southwest Rib)** is a via route the climb leaves
     and REJOINS (`viaPitches`). The guard asserts it keeps its OWN `itinerary` — the parent's narrated
     "7 pitches of 5.6–5.8" on Boving Roofs' page — while still taking the parent's walk, that a plain
