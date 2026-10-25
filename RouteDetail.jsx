@@ -1469,33 +1469,44 @@ function TrailheadCard({route,onEdit}){
 /* TRAILHEAD TO SUMMIT · SUMMIT TO TRAILHEAD (owner, 2026-10-21): the two legs a party plans the day by, under
    the trailhead card, so the drive, the coordinates and how long it is from the car to the top and back sit
    together. Laid out the way The Mountaineers' route pages print their trip profile — one row per leg, each
-   with its time, gain and distance. The times are planTimes() at its defaults, the same estimate Full Trip
-   Time starts from, so the two cannot disagree; a stored leg wins there and here alike. It sits OUTSIDE
+   with its time, gain and distance. The times come from planTimes() at the pace, pack, party and departure
+   the climber set in Full trip time (passed in as `calc`), so this card, the Descent section and Full trip
+   time are one estimate and cannot disagree. A stored leg wins there and here alike. It sits OUTSIDE
    TrailheadCard on purpose: that card carries no stat tiles (check:trailhead-directions section 7).
    GAIN only where the stored gain is the whole climb to the top — the rule TECH STATS labels it by — and
    DISTANCE per leg only on a route that comes back the way it went; a loop or point-to-point gives the
    whole outing once instead of inventing a split. */
-function SummitLegsCard({route}){
-  const pt=planTimes(route);const disc=catOf(route);
+/* THE LEG GEOMETRY, ONCE. The Approach card and the Descent section both read it, so a leg's miles and
+   feet cannot differ between sections. Feet are the stored gain (see gainCoversWholeOuting) and the drop
+   the time model walks down: the larger of stored gain and loss, which is what planTimes() charges. */
+function tripLegGeometry(route){
+  const disc=catOf(route);
   const ascent=routeAscentFt(route);
   const gainFt=ascent>0&&(disc==="alpine"||disc==="mountaineering"||disc==="hiking"||gainCoversWholeOuting(route))?ascent:null;
+  const dropM=Math.max(route.lossM||0,route.gainM||0);
+  const dropFt=dropM>0?Math.round(dropM*3.28084):null;
   const km=effDistKm(route);const hasKm=km!=null&&km>0;const whole=effDistIsWholeTrip(route);const rs=recShapeOf(route);
   const outBack=rs?rs==="outback":shapeOf(route)==="outback";
   const legKm=hasKm&&outBack?(whole?km/2:km):null;
-  const fmtKm=function(k){return uDist(Math.round(k*10)/10);};
+  return {disc,gainFt,dropFt,km,hasKm,whole,outBack,legKm};
+}
+const fmtLegKm=function(k){return uDist(Math.round(k*10)/10);};
+/* A time at the Full trip time card's own format, with "≥" where a leg has no input to count from. */
+const fmtLegHrs=function(h,floor){return (floor?"≥":"")+h.toFixed(1)+"hr";};
+function SummitLegsCard({route,calc}){
+  const pt=planTimes(route,calc);const g=tripLegGeometry(route);
+  const {disc,gainFt,dropFt,km,hasKm,whole,outBack,legKm}=g;
   const top=climbsAPeak(route)||disc==="alpine"||disc==="mountaineering"||disc==="hiking"||disc==="scrambling"?"summit":"top of the climb";
-  /* NO TIMES HERE. The approach, climb and descent times are the Full Trip Time card's, at the party
-     the climber set there. This card printed a second approach figure at the party's DEFAULTS, so it
-     disagreed with the card below whenever fitness or pack was changed. Gain and distance only. */
+  const upFloor=!pt.walkInKnown||!pt.climbKnown;const downFloor=!pt.walkOutKnown;
   const legs=pt.publishedIsWholeDay
-    ?[["CAR TO CAR",[gainFt?["Gain","↑ "+uElev(gainFt)]:null,hasKm?["Distance",fmtKm(outBack&&!whole?km*2:km)]:null]]]
-    :[["TRAILHEAD TO "+top.toUpperCase(),[gainFt?["Gain","↑ "+uElev(gainFt)]:null,legKm?["Distance","~"+fmtKm(legKm)]:null]],
-      [top.toUpperCase()+" TO TRAILHEAD",[legKm?["Distance","~"+fmtKm(legKm)]:null]]];
+    ?[["CAR TO CAR",[gainFt?["Gain","↑ "+uElev(gainFt)]:null,hasKm?["Distance",fmtLegKm(outBack&&!whole?km*2:km)]:null,["Time",fmtLegHrs(pt.tripH,upFloor||downFloor)]]]]
+    :[["TRAILHEAD TO "+top.toUpperCase(),[gainFt?["Gain","↑ "+uElev(gainFt)]:null,legKm?["Distance","~"+fmtLegKm(legKm)]:null,["Time",fmtLegHrs(pt.totalH,upFloor)]]],
+      [top.toUpperCase()+" TO TRAILHEAD",[legKm?["Distance","~"+fmtLegKm(legKm)]:null,legKm&&dropFt?["Drop","↓ "+uElev(dropFt)]:null,["Time",fmtLegHrs(pt.downH,downFloor)]]]];
   const shown=legs.map(function(l){return [l[0],l[1].filter(Boolean)];}).filter(function(l){return l[1].length;});
   if(!shown.length)return null;
   const days=itinDayCount(route);
-  const note="Times for each leg are in Full trip time below."
-    +(!pt.publishedIsWholeDay&&hasKm&&!legKm?" This route does not come back the way it goes: "+fmtKm(km)+" for the whole outing.":"")
+  const note="Times use the pace, pack and party set in Full trip time below."
+    +(!pt.publishedIsWholeDay&&hasKm&&!legKm?" This route does not come back the way it goes: "+fmtLegKm(km)+" for the whole outing.":"")
     +(days>1?" Usually done over "+days+" days — the Trip plan below splits it by day.":"");
   return <div style={{background:C.surface,borderRadius:10,padding:"4px 12px 11px",border:"1px solid "+C.border,marginBottom:12}}>
     {shown.map(function(l,i){return <div key={l[0]} style={{padding:"8px 0",borderTop:i===0?"none":"1px solid "+C.borderLight}}>
@@ -1503,6 +1514,19 @@ function SummitLegsCard({route}){
       <div style={{display:"flex",flexWrap:"wrap",gap:"4px 18px"}}>{l[1].map(function(s){return <div key={s[0]} style={{minWidth:0}}><div style={{fontSize:14,fontWeight:700,color:C.text,fontVariantNumeric:"tabular-nums",whiteSpace:"nowrap"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted}}>{s[0]}</div></div>;})}</div>
     </div>;})}
     <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:4}}>{note}</div>
+  </div>;
+}
+/* THE DESCENT'S OWN LEG, at the top of the DESCENT section: the way down, timed and measured with the same
+   numbers SummitLegsCard prints under GETTING THERE (tripLegGeometry and planTimes at the same calc). It
+   gives a leg only where the route comes back the way it went; a loop or point-to-point has no split to
+   print, and its whole-day row is timed on the trip profile above. Renders nothing when there is no leg. */
+function DescentLegStrip({route,calc}){
+  const pt=planTimes(route,calc);const g=tripLegGeometry(route);
+  if(pt.publishedIsWholeDay||!g.legKm)return null;
+  const rows=[["Distance","~"+fmtLegKm(g.legKm)],g.dropFt?["Drop","↓ "+uElev(g.dropFt)]:null,["Time",fmtLegHrs(pt.downH,!pt.walkOutKnown)]].filter(Boolean);
+  return <div style={{background:C.surface,borderRadius:10,padding:"8px 12px",marginBottom:8,border:"1px solid "+C.border}}>
+    <div style={{...SUB_LABEL,marginBottom:5}}>{"SUMMIT TO TRAILHEAD"}</div>
+    <div style={{display:"flex",flexWrap:"wrap",gap:"4px 18px"}}>{rows.map(function(s){return <div key={s[0]} style={{minWidth:0}}><div style={{fontSize:14,fontWeight:700,color:C.text,fontVariantNumeric:"tabular-nums",whiteSpace:"nowrap"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted}}>{s[0]}</div></div>;})}</div>
   </div>;
 }
 /* A coordinate you can read out, and one tap to copy it. Shared by both rows of CragLocationCard. */
@@ -4472,7 +4496,7 @@ const mtn=(function(){const _s=MOUNTAINS.find(m=>m.id===route.mountainId);if(_s&
            joins it: that button resolved its destination through trailheadPoint() and so does this
            card's "Drive here", so the two were the same link. trailheadPoint never returns a point
            with a null lat (every branch goes through wpPlaced), so wherever the button rendered the
-           card renders too and nothing is lost. */}{cragOnly?null:<Capped><TrailheadCard route={route} onEdit={()=>{openFix("approach");}}/><SummitLegsCard route={route}/></Capped>}{(()=>{const rx=rxOf(route.id);const dbA=route.access||{};const ac={...dbA,...rx.access};const passVal=ac.passRequired===true?"Yes":(typeof ac.passRequired==="string"?ac.passRequired:null);const feesVal=typeof ac.fees==="number"?("$"+ac.fees):ac.fees;/* DISPLAY prefers land_manager: it is the canonical field — 2,103 routes across just 80
+           card renders too and nothing is lost. */}{cragOnly?null:<Capped><TrailheadCard route={route} onEdit={()=>{openFix("approach");}}/><SummitLegsCard route={route} calc={calcInputs}/></Capped>}{(()=>{const rx=rxOf(route.id);const dbA=route.access||{};const ac={...dbA,...rx.access};const passVal=ac.passRequired===true?"Yes":(typeof ac.passRequired==="string"?ac.passRequired:null);const feesVal=typeof ac.fees==="number"?("$"+ac.fees):ac.fees;/* DISPLAY prefers land_manager: it is the canonical field — 2,103 routes across just 80
    distinct values, "Agency (Ranger District) — Wilderness". landManager is legacy free prose:
    984 routes across 474 distinct values, a quarter of them over 110 chars, sometimes a whole
    sentence ("Most of the route ... lie within the ..."). 604 routes carry BOTH with different
@@ -4516,7 +4540,7 @@ const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+
     guessing from words would be a claim the record never made. */}
 {route.discipline!=="bouldering"&&(route.climbingRoute||[]).length?<div id="climbing-route" style={{marginBottom:14,scrollMarginTop:"80px"}}><Capped><ClimbingRouteTable route={route} onEdit={()=>{openFix("climbingRoute");}}/></Capped>{route.pitchDetail&&route.pitchDetail.length?<BreakdownHandoff route={route}/>:null}</div>:(!isPitched(route)&&route.discipline!=="bouldering"?<EmptySection title="CLIMBING ROUTE" what="No climbing route breakdown" why="Nothing describes the climbing section by section — where it steepens, where it gets exposed, where the crux is." cta="Describe the climbing" onFix={()=>{openFix("climbingRoute");}}/>:null)}
 {route.discipline!=="bouldering"&&route.pitchDetail&&route.pitchDetail.length?<Capped><RouteBreakdown route={route} comments={comments} commentsUnavailable={commentsUnavailable} onCommentAdd={commentApi.onAdd} onEdit={(pIdx)=>{setFixFocusPitch(typeof pIdx==="number"?pIdx:null);openFix("pitchDetail");}}/></Capped>:(gapPitches(route)?<EmptySection title="ROUTE BREAKDOWN" what="No pitch-by-pitch breakdown" why={route.pitches+" pitches are listed, but none of them are described — no per-pitch grades, belays or crux."} cta="Add the pitches" onFix={()=>{openFix("pitchDetail");}}/>:(isPitched(route)&&!cragOnly&&!(route.pitches>0)?<EmptySection title="ROUTE BREAKDOWN" what="No pitch-by-pitch breakdown" why="Nothing records how many pitches this climbs or what each one asks of you." cta="Add the pitches" onFix={()=>{openFix("pitchDetail");}}/>:null))}
-{(route.descent||route.descentText)?<div style={{marginBottom:ROUTE_GAP}}><SL action={<EditIconButton onClick={()=>{openFix("descentText");}} title="Edit descent information"/>}>DESCENT</SL><Capped>{[["Descent",descentBeta(route)]].filter(x=>x[1]).map(x=><div key={x[0]} style={{background:C.card,borderRadius:10,padding:"10px 12px",marginBottom:8,border:`1px solid ${C.border}`}}><div style={{fontSize:12,fontWeight:700,color:C.blue,marginBottom:5}}>{x[0]}</div>{splitParagraphs(x[1]).map((p,i)=><p key={i} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:i===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}</div>)}</Capped></div>:(route.discipline==="bouldering"?null:<EmptySection title="DESCENT" what="No descent recorded" why="Nothing says how you get off this route — and on many climbs the way down is the committing part." cta="Describe the descent" onFix={()=>{openFix("descentText");}}/>)}{/* The rappel table and its prose/count summary, immediately after the descent they belong
+{(route.descent||route.descentText)?<div style={{marginBottom:ROUTE_GAP}}><SL action={<EditIconButton onClick={()=>{openFix("descentText");}} title="Edit descent information"/>}>DESCENT</SL><Capped><DescentLegStrip route={route} calc={calcInputs}/></Capped><Capped>{[["Descent",descentBeta(route)]].filter(x=>x[1]).map(x=><div key={x[0]} style={{background:C.card,borderRadius:10,padding:"10px 12px",marginBottom:8,border:`1px solid ${C.border}`}}><div style={{fontSize:12,fontWeight:700,color:C.blue,marginBottom:5}}>{x[0]}</div>{splitParagraphs(x[1]).map((p,i)=><p key={i} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:i===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}</div>)}</Capped></div>:(route.discipline==="bouldering"?null:<><DescentLegStrip route={route} calc={calcInputs}/><EmptySection title="DESCENT" what="No descent recorded" why="Nothing says how you get off this route — and on many climbs the way down is the committing part." cta="Describe the descent" onFix={()=>{openFix("descentText");}}/></>)}{/* The rappel table and its prose/count summary, immediately after the descent they belong
     to. Both were on Overview; keeping them adjacent is what matters — see the note where
     they used to sit. */}
 {(function(){
