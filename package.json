@@ -145,6 +145,7 @@
     "check:generic-area-names": "node scripts/check-generic-area-names.mjs",
     "check:function-columns": "node scripts/check-function-columns.mjs",
     "check:column-drift": "node scripts/check-column-drift.mjs",
+    "gen:schema": "node scripts/gen-supabase-schema.mjs",
     "check:function-drift": "node scripts/check-function-drift.mjs",
     "check:rappel-lengths": "node scripts/check-rappel-lengths.mjs",
     "check:token-boxes": "node scripts/check-prose-in-token-boxes.mjs",
