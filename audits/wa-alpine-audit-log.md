@@ -34569,3 +34569,46 @@ Winters Spire's The Hitchhiker; Cathedral Peak's The Monk — Le Gibet + Odine.
 1 confirmed error fixed (`wa_the_horn`, areas table), 2 flagged for human review (both Monk
 routes), 5 clean.
 `last_processed_id` advances to `wa_the_monk_odine`.
+
+## 2026-10-25 — Pass 7, Batch 460
+
+Eight routes: Cathedral Peak's The Monk — Scabo + West Cracks (Left/Right Crack); The Needle's
+Neve Glacier; The Pleiades' Glacier/Scramble Route; Southern Pickets' The Pyramid (East Ridge +
+South Route) and The Rake's Ridge Traverse Route.
+
+- `wa_the_pyramid_picket_east_ridge`: **fixed** — `beta` named "Colin Haley (age 17)" as one of
+  the three climbers (with Wayne Wallace and Mark Bunker) on the July 2003 Southern Pickets
+  Enchainment that put up this line. Haley's documented birth date (Sept 2, 1984 — Wikipedia and a
+  North Cascades Institute profile agree) means he'd already turned 18 that previous September; he
+  was 18 on this climb, not 17. (A separately-documented "age 17" Haley climb — a winter ascent of
+  Mt. Johannesburg's NE Buttress — is a different, earlier route and isn't the source of this
+  figure.) Changed to "age 18".
+- `wa_the_monk_scabo` / `wa_the_monk_west_cracks_left_crack` / `wa_the_monk_west_cracks_right_crack`:
+  **flagged for human review, not fixed** — all three carry `high_point_ft` = 8606, the same
+  shared-with-parent-Cathedral-Peak figure batch 459 already flagged on this peak's other two Monk
+  routes (Le Gibet, Odine). The Monk is a separate subsidiary tower, not Cathedral's own summit, and
+  still no source gives its own height. Grades (5.9 / 5.8 / 5.7) match Mountain Project per this
+  row's own `corrections` field; FA dates (Aug 1973 / Sep 1977 / Jul 1975, unrecorded parties) are
+  not contradicted by anything found.
+- `wa_the_needle_neve_glacier`: **flagged for human review, not fixed** — stored `high_point_ft` is
+  8079; the only outside elevation figure found for The Needle (SummitPost) gives 8,040 ft. A single
+  non-authoritative secondary source conflicting with the stored value on an informally-named,
+  USGS-mislabeled spire isn't enough to overwrite with confidence either way. FA (Degenhardt &
+  Strandberg, Aug 1, 1931, the same day as their Snowfield Peak FA) is confirmed by SummitPost.
+- `wa_the_pleiades_scramble`: **flagged for human review, not fixed** — this row's own
+  `data_quality.gaps` already flags the true high point (Peak 3) as disputed 7,346–7,371 ft across
+  sources; this run turned up a THIRD figure, SummitPost's 7,334 ft for the Pleiades group, widening
+  rather than resolving the range. Left unchanged, per the existing gap note.
+- `wa_the_pyramid_picket_south_route`: **flagged for human review, not fixed** — this row's
+  `data_quality.gaps` text still reads "Grade III/5.6 rating ... could not be corroborated", but the
+  row's current `grade` field is "Class 3", not 5.6 — looks like a stale note left behind by an
+  earlier correction that updated the grade but not this text. Separately, the 1951 FA date is now
+  partially corroborated (Wikipedia's Picket Range peak table lists 1951 for The Pyramid), though the
+  "Don Gordon" attribution itself remains unconfirmed by any source found. Elevation (7,920 ft)
+  matches both SummitPost and Steph Abegg's Pickets reference page.
+- `wa_the_rake_traverse_route`: clean. FA party (Wallace, Haley, Bunker) and the July 2003
+  "14-summit" Southern Pickets Enchainment are well corroborated by Alpinist's coverage of the
+  traverse and Wallace's own AAJ account; nothing found contradicts the route's other stored facts.
+
+1 confirmed error fixed (`wa_the_pyramid_picket_east_ridge`), 6 flagged for human review, 1 clean.
+`last_processed_id` advances to `wa_the_rake_traverse_route`.
