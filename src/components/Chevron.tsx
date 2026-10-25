@@ -4,6 +4,8 @@ export interface ChevronProps {
   /** Width and height in px. */
   size?: number;
   color: string;
+  /** Sits in a line of text ("Show more ⌄") rather than as a flex child at the end of a row. */
+  inline?: boolean;
 }
 
 /**
@@ -11,9 +13,9 @@ export interface ChevronProps {
  * at 9-13px -- a speck at the end of a full-width row, and inside a 28-34px blue box on the Logbook
  * rows. Decorative: the row it sits in is the control, and carries aria-expanded or its own name.
  */
-export default function Chevron({ open, size = 18, color }: ChevronProps) {
+export default function Chevron({ open, size = 18, color, inline }: ChevronProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" style={{ display: "block", flexShrink: 0, transform: open ? "rotate(90deg)" : "none", transition: "transform .15s ease" }}>
+    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" style={{ display: inline ? "inline-block" : "block", verticalAlign: inline ? "-0.15em" : undefined, flexShrink: 0, transform: open ? "rotate(90deg)" : "none", transition: "transform .15s ease" }}>
       <path d="m9 5 7 7-7 7" fill="none" stroke={color} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );

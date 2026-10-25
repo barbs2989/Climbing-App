@@ -301,6 +301,10 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange, endR
   const qq = q.trim();
   const { data: areaHits, isLoading: la, error: ea } = useAreaSearch(scope.id, qq);
   const { data: routeHits, isLoading: lr, error: er } = useSubtreeRoutes(scope.id, { q: qq, page: 0, pageSize: 40 });
+  // Which crag each hit is on, as the Route finder's rows say: two "Beckey Route"s read as one
+  // climb listed twice. A failed read leaves the line off, never empty.
+  const hitAreaIds = useMemo(() => [...new Set((routeHits || []).map(r => r.area_id).filter(Boolean))], [routeHits]);
+  const { data: hitAreaNames } = useAreaNamesByIds(hitAreaIds);
   useEffect(() => { if (onModeChange) onModeChange(mode); }, [mode, onModeChange]);
   const tab = on => ({ flex: 1, padding: "7px 0", textAlign: "center", fontSize: 12.5, fontWeight: 700, cursor: "pointer", borderRadius: 7, background: on ? C.blueSolid : "transparent", color: on ? "#fff" : C.textSub });
   const row = { display: "flex", alignItems: "center", gap: 10, padding: "9px 4px", cursor: "pointer", borderBottom: "1px solid " + C.borderLight };
@@ -344,6 +348,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange, endR
               <div key={r.id} {...clickable(() => onOpenRoute(r))} style={row}>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize: 13.5, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{r.name}</div>
+                  {hitAreaNames && hitAreaNames[r.area_id] ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{hitAreaNames[r.area_id]}</div> : null}
                 </div>
                 <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, maxWidth: "38%", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{rowGrade(r)}</span>
               </div>
@@ -738,7 +743,7 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
             {area.coords_approx ? <div style={{ fontSize: 11.5, color: C.amber, marginTop: 4, lineHeight: 1.45 }}>Coordinates are approximate — the map pin, any distance shown, and the Directions link are rough.</div> : null}
             {chips.length ? <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 9 }}>{chips.map((t, i) => <span key={i} style={{ fontSize: 11.5, fontWeight: 600, color: C.text, background: "rgba(255,255,255,0.12)", border: "1px solid " + C.border, borderRadius: 7, padding: "3px 9px" }}>{t}</span>)}</div> : null}
             {/* The description moved out of the hero into the ABOUT card below (0304), where it has an edit control. */}
-            <div style={{ fontSize: 13, color: C.blue, marginTop: 8 }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count + " climbs" : area.route_count + " climb" + (area.route_count !== 1 ? "s" : "")}</div>
+            <div style={{ fontSize: 13, color: C.blue, marginTop: 8 }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count.toLocaleString() + " climbs" : area.route_count.toLocaleString() + " climb" + (area.route_count !== 1 ? "s" : "")}</div>
           </div>
           {/* The Fire map entry. It used to be a full-width card at the very top of the Climbs
               tab, above the path and the area itself; it lives here now, on the area it opens
@@ -769,9 +774,12 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
           {"Route finder"}<span style={{ fontSize: 16 }}>{"→"}</span>
         </button>
       ) : null}
+      {/* Route finder is the one primary button; the three ways to look elsewhere sit in one quiet row
+          under it. "All areas" used to be a second blue full-width button further down the page. */}
       <div style={{ display: "flex", gap: 8, marginBottom: 14 }}>
-        <button onClick={onNear} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.text }}>View map</button>
-        <button onClick={onObjectives} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.text }}>My objectives</button>
+        <button onClick={onNear} style={{ ...BTN_LG, flex: 1, minWidth: 0, paddingLeft: 6, paddingRight: 6, fontSize: 13.5, border: "1px solid " + C.border, background: C.surface, color: C.text }}>View map</button>
+        <button onClick={onObjectives} style={{ ...BTN_LG, flex: 1, minWidth: 0, paddingLeft: 6, paddingRight: 6, fontSize: 13.5, border: "1px solid " + C.border, background: C.surface, color: C.text }}>My objectives</button>
+        <button onClick={onAllAreas} style={{ ...BTN_LG, flex: 1, minWidth: 0, paddingLeft: 6, paddingRight: 6, fontSize: 13.5, border: "1px solid " + C.border, background: C.surface, color: C.text }}>All areas</button>
       </div>
       {/* GETTING THERE — the one drive control on the area page, as CragLocationCard is on a crag
           route. It used to be a bare "Directions" button in the row above, with no words; the
@@ -784,7 +792,6 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
           somewhere you can actually park (check:area-surfaces reads this gate). */}
       {["crag", "peak", "wall"].includes(area.area_type) ? <AreaGettingThere area={area} C={C} onEdit={editOn} /> : null}
       {PARTNER_CARD_TYPES.includes(area.area_type) ? <PartnersHereCard area={area} C={C} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} PartnerRow={PartnerRow} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} /> : null}
-      <button onClick={onAllAreas} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.blue, background: C.blueBg, color: "#fff", marginBottom: 14 }}>All areas</button>
       {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} endRef={listEndRef} /> : null}
 
       {/* Sits directly above the route rows it summarises, so the page reads: this is the
@@ -806,7 +813,7 @@ function AreaPage({ area: areaRow, uElev, uDistMi, booked, onToggleSave, onDrill
             <div key={a.id} {...clickable(() => onDrill(a))} style={{ background: C.card, borderRadius: 12, padding: "12px 14px", marginBottom: 11, border: "1px solid " + C.borderHi, cursor: "pointer" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <span style={{ fontWeight: 700, fontSize: 15, color: C.text }}>{a.name}</span>
-                <span style={{ fontSize: 12, color: a.route_count > 0 ? C.blue : C.textMuted, fontWeight: 600, flexShrink: 0, marginLeft: 8 }}>{a.route_count + " climb" + (a.route_count !== 1 ? "s" : "") + " →"}</span>
+                <span style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 12, color: C.textMuted, fontWeight: 600, flexShrink: 0, marginLeft: 8 }}>{a.route_count.toLocaleString() + " climb" + (a.route_count !== 1 ? "s" : "")}<Chevron size={16} color={C.textMuted} /></span>
               </div>
             </div>
           ))}
