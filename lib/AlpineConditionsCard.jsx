@@ -468,7 +468,6 @@ function HourByHour({ fc, day, dayLabel, nav, pt, floor, legs, snowLegs }) {
   const marks = marksIn(T);
   return <div style={BOX}>
     <DayHead title="HOUR BY HOUR" dayLabel={dayLabel} nav={nav} />
-    <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginBottom: 8 }}>{"Key times for this day, then each hour at " + (tops != null ? uElev(tops) : "the forecast point") + ". Tap an hour, or step with ‹ ›."}</div>
     <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 10 }}>{kt.map(function (k, j) { return <span key={j} style={{ fontSize: 12, fontWeight: 700, color: C.text, background: C.surface, border: "1px solid " + k.tone + "99", borderRadius: 20, padding: "4px 10px", lineHeight: 1.3 }}>{k.label + " " + clockOf(fc, k.at) + (k.after || "")}</span>; })}</div>
     <div style={{ marginBottom: 8 }}><HourStepper index={idx.indexOf(cur)} count={idx.length} onPick={function (j) { setSel(idx[j]); }} label={function (j) { return clockHr(localHour(fc, idx[j])); }}>{idx.map(function (i) {
       const on = i === cur, sv = sev(i), mk = marksIn(h.time[i]).length;
