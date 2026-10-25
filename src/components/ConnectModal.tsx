@@ -41,7 +41,7 @@ export default function ConnectModal({climber,onClose,onSend,routeById}: Connect
   const [note,setNote]=useState("");
   const MAX=300;
   /* Portalled, like FullProfile. "+ Add" under Stay in touch is tapped inside Past crews, itself a portal on document.body; left in App's tree this sheet sat EARLIER in the DOM than the list it opens from, so only its zIndex kept it on top. Here it is the last child of body, so order and zIndex agree. */
-  return createPortal(<div onClick={onClose} role="dialog" aria-modal="true" aria-label="Connect with climber" style={{position:"fixed",inset:0,zIndex:9950,background:"rgba(0,0,0,0.62)",display:"flex",alignItems:"flex-end",justifyContent:"center",padding:0}}>
+  return createPortal(<div onClick={onClose} role="dialog" aria-modal="true" aria-label="Connect with climber" style={{position:"fixed",inset:0,zIndex:9950,background:C.scrim,display:"flex",alignItems:"flex-end",justifyContent:"center",padding:0}}>
     <div onClick={e=>e.stopPropagation()} style={{background:C.surface,borderRadius:"18px 18px 0 0",border:"1px solid "+C.border,width:"100%",maxWidth:520,padding:18,boxShadow:"0 -10px 40px rgba(0,0,0,0.5)",maxHeight:"90%",overflowY:"auto",overscrollBehavior:"contain"}}>
       <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:14}}>
         <Av src={c.avatar} size={46} online={c.online}/>
@@ -60,7 +60,7 @@ export default function ConnectModal({climber,onClose,onSend,routeById}: Connect
       </div>
       <div style={{display:"flex",gap:12}}>
         <button onClick={onClose} style={{flex:"0 0 auto",padding:"12px 17px",background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:12,fontSize:14,fontWeight:600,cursor:"pointer"}}>Cancel</button>
-        <button onClick={()=>onSend(note.trim())} style={{...BTN_LG,flex:1,background:C.blueSolid,color:"#fff",border:"none"}}>{note.trim()?"Send request":"Send without note"}</button>
+        <button onClick={()=>onSend(note.trim())} style={{...BTN_LG,flex:1,background:C.blueSolid,color:C.onSolid,border:"none"}}>{note.trim()?"Send request":"Send without note"}</button>
       </div>
       <div style={{fontSize:12,color:C.textMuted,textAlign:"center",marginTop:11,lineHeight:1.5}}>A connection is mutual — {first} confirms before you’re connected.</div>
     </div>
