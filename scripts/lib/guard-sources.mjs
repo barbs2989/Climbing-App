@@ -202,6 +202,7 @@ export const MOVED = {
     "src/components/FloatPlan.tsx",
     "src/components/LogCatch.tsx",
     "src/components/Comments.tsx",
+    "src/components/Challenges.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
