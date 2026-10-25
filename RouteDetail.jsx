@@ -3101,7 +3101,7 @@ function ItineraryView({route,activity,onSeeReports,onContribute,myItin,onSaveMy
       <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.4,marginBottom:9}}>Build your own plan for this route — start from a suggested one or from scratch.</div>
       {!showBuilder?<div>
         {(myItin&&myItin.days&&myItin.days.length)?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 13px",marginBottom:ROUTE_GAP}}>
-          {myItin.days.map(function(d,i){return <div key={i} style={{marginBottom:i<myItin.days.length-1?7:0,paddingBottom:i<myItin.days.length-1?7:0,borderBottom:i<myItin.days.length-1?"1px solid "+C.borderLight:"none"}}><span style={{fontSize:13,fontWeight:700}}>{"Day "+(d.n||i+1)+(d.title?": "+d.title:"")}</span></div>;})}
+          {myItin.days.map(function(d,i){return <div key={i} style={{marginBottom:i<myItin.days.length-1?7:0,paddingBottom:i<myItin.days.length-1?7:0,borderBottom:i<myItin.days.length-1?"1px solid "+C.border:"none"}}><span style={{fontSize:13,fontWeight:700}}>{"Day "+(d.n||i+1)+(d.title?": "+d.title:"")}</span></div>;})}
         </div>:null}
         <div style={{display:"flex",gap:7,flexWrap:"wrap"}}>
           <button onClick={function(){startBuilder(myItin&&myItin.days&&myItin.days.length?myItin:null);}} style={{...BTN,background:C.card,color:C.blue,border:"1px solid "+C.border}}>{(myItin&&myItin.days&&myItin.days.length)?"Edit my plan":"+ Plan your own itinerary"}</button>
@@ -5016,7 +5016,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
       {h.missing.length?<div style={{fontSize:11.5,color:C.textMuted,marginTop:9,paddingLeft:9,borderLeft:"2px solid "+C.borderLight,lineHeight:1.5}}>{"Not measured, so left out of the score: "+h.missing.map(notMeasured).join("; ")+"."}{h.missing.indexOf("sun")>=0&&onAddAspect?<button onClick={onAddAspect} style={{display:"block",marginTop:4,padding:"3px 0",border:"none",background:"none",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer",textAlign:"left"}}>{"Know which way it faces? Add the wall direction →"}</button>:null}</div>:null}
     </div>:null}
     </div>)}
-    {sec("Day by day",<div style={condBox}>
+    {sec("Day by day",<div data-day-table="1" style={Object.assign({},condBox,{padding:0,overflow:"hidden"})}>
       {days.map(function(d,i){var on=i===Math.min(dayI,days.length-1);var trace=d.rain!=null&&d.rain>0&&uImp()&&d.rain<0.005;
         var tLine=d.hi!=null?uTemp(d.hi)+" / "+uTemp(d.lo)+(d.feelsHi!=null?", feels "+uTemp(d.feelsHi)+" / "+uTemp(d.feelsLo):""):"Temperature not measured";
         var rWhen=d.rain>0&&d.rainFrom!=null?clockHr(d.rainFrom)+"–"+clockHr(d.rainTo):"";
@@ -5025,8 +5025,8 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
         /* The day name and its stars sit on their OWN line above the boxes: beside them, at 390 px, three boxes
            shared what was left of a 50 px column and broke "52° / 38°" mid-number. A missing value is "—" here
            (the row's spoken label still says "not measured"); "Not measured" did not fit a third of a phone. */
-        return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+(d.stars==null?"no score":fmt(d.stars)+" stars")+". "+tLine+". "+rLine+". "+wLine+"."} style={{display:"block",width:"100%",textAlign:"left",padding:"8px 6px",margin:0,border:"none",borderTop:i?"1px solid "+C.borderLight:"none",borderRadius:on?8:0,background:on?C.greenBg:"transparent",color:C.text,cursor:"pointer",font:"inherit"}}>
-          <span style={{display:"flex",alignItems:"baseline",gap:8,marginBottom:5}}><span style={{fontSize:12.5,fontWeight:800}}>{dayName(d,i)}</span><span style={{fontSize:12,fontWeight:800,color:col(d.stars)}}>{fmt(d.stars)+" ★"}</span></span>
+        return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+(d.stars==null?"no score":fmt(d.stars)+" stars")+". "+tLine+". "+rLine+". "+wLine+"."} style={{display:"block",width:"100%",textAlign:"left",padding:"11px 14px",margin:0,border:"none",borderTop:i?"1px solid "+C.border:"none",borderRadius:0,background:on?C.greenBg:"transparent",boxShadow:on?"inset 3px 0 0 "+C.green:"none",color:C.text,cursor:"pointer",font:"inherit"}}>
+          <span style={{display:"flex",alignItems:"baseline",gap:8,marginBottom:6}}><span style={{fontSize:12.5,fontWeight:800}}>{dayName(d,i)}</span><span style={{fontSize:11.5,color:C.textMuted}}>{dayDate(d)}</span><span style={{fontSize:12,fontWeight:800,color:col(d.stars)}}>{fmt(d.stars)+" ★"}</span></span>
           <span style={{minWidth:0,display:"block"}}>
             <span style={{display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:5}}>
               <span style={dayBox}><span style={dayLbl}>Temp</span><span style={Object.assign({},dayVal,{color:d.hi!=null?wxTempColor(d.hi):C.textMuted})}>{d.hi!=null?uTemp(d.hi)+" / "+uTemp(d.lo):"—"}</span><span style={daySub}>{d.hi!=null?"high / low"+(d.feelsHi!=null?", feels "+uTemp(d.feelsHi)+" / "+uTemp(d.feelsLo):""):""}</span></span>
@@ -5036,7 +5036,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
             <span style={{display:"block",fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:4}}>{[d.rhMin!=null?"Humidity "+Math.round(d.rhMin)+"–"+Math.round(d.rhMax)+"%":null,d.cloudAvg!=null?skyWord(d.cloudAvg)+" ("+Math.round(d.cloudAvg)+"% cloud)":null].filter(Boolean).join(" · ")}</span>
           </span>
         </button>;})}
-      <div style={condNote}>Temperature and rain cover the whole day; wind, humidity and cloud its daylight hours. Tap a day to open it above and in the charts.</div>
+      <div style={Object.assign({},condNote,{marginTop:0,padding:"9px 14px 11px",borderTop:"1px solid "+C.border})}>Temperature and rain cover the whole day; wind, humidity and cloud its daylight hours. Tap a day to open it above and in the charts.</div>
     </div>)}
     {sec("Hour by hour",<div style={condBox}>
       <div role="group" aria-label="Day for the hourly charts" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:4,marginBottom:4}}>{days.slice(0,7).map(function(d,i){var on=i===Math.min(dayI,days.length-1);return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+dayDate(d)} style={{flex:"0 0 58px",width:58,minHeight:44,boxSizing:"border-box",padding:"6px 2px",borderRadius:9,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?"#fff":C.textSub,cursor:"pointer",textAlign:"center"}}><div style={{fontSize:12,fontWeight:on?800:700}}>{dayName(d,i)}</div><div style={{fontSize:10.5,color:on?C.blue:C.textMuted}}>{dayDate(d)}</div></button>;})}</div>
