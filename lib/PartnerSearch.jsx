@@ -6,7 +6,7 @@ import { ROUTE_PICK_LIM, dbRouteToCamel, useAreaSearch, useDiscoverableProfiles,
 import { partnersMyGenderPref, savePartnersMyGender } from "./partner-gender-pref.js";
 import { useRecentRouteIds } from "./recent";
 import { Fragment, useEffect, useMemo, useState } from "react";
-import { resumeClimbCount, ALL_CLIMBERS, AVAIL_FILTER_OPTS, CRAG_CATS, C, CAT, DB_UID, DbClimbPicker, DLOCALE, ME, MOUNTAINS, ROUTES, SZ6, areaPathNames, availFits, availLabel, availMatch, availOf, catOf, compat, crewPlace, condRep, crewAskedToJoin, crewSize, distMiles, fuzzyMatchAny, haveMyLoc, inArea, mutualCount, mutualFirstNames, mutualLabel, paceOf, pubName, rDiscs, uApproxDist, uDistMi, uDistMiUnitLong, uRate } from "../ClimbMatchCore.jsx";
+import { resumeClimbCount, ALL_CLIMBERS, AVAIL_FILTER_OPTS, CRAG_CATS, C, CAT, DB_UID, DLOCALE, ME, MOUNTAINS, ROUTES, SZ6, areaPathNames, availFits, availLabel, availMatch, availOf, catOf, compat, crewPlace, condRep, crewAskedToJoin, crewSize, distMiles, fuzzyMatchAny, haveMyLoc, inArea, mutualCount, mutualFirstNames, mutualLabel, paceOf, pubName, rDiscs, uApproxDist, uDistMi, uDistMiUnitLong, uRate } from "../ClimbMatchCore.jsx";
 import RealClimberRow from "../src/components/RealClimberRow.tsx";
 import AreaRegionSelect from "../src/components/AreaRegionSelect.tsx";
 import PlaceMatches from "../src/components/PlaceMatches.tsx";
@@ -15,6 +15,7 @@ import DiscIcon from "../src/components/DiscIcon.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import Lbl from "../src/components/Lbl.tsx";
 import DiscBadge from "../src/components/DiscBadge.tsx";
+import DbClimbPicker from "../src/components/DbClimbPicker.tsx";
 
 // Partners › Saved areas searches at most this many saved areas at once: one read each.
 const SAVED_SEARCH_LIM = 12;

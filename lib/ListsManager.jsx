@@ -4,7 +4,7 @@ import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
 import { createPortal } from "react-dom";
 import { useState } from "react";
-import { C, CRAG_CATS, DbClimbPicker, MOUNTAINS, ROUTES, SZ3, catOf, gradeLabel, inArea, routeLoc, routeLocText, isReady, listShareText, listSheetHtml, printSheet, routeCompleted, shareOrCopy } from "../ClimbMatchCore.jsx";
+import { C, CRAG_CATS, MOUNTAINS, ROUTES, SZ3, catOf, gradeLabel, inArea, routeLoc, routeLocText, isReady, listShareText, listSheetHtml, printSheet, routeCompleted, shareOrCopy } from "../ClimbMatchCore.jsx";
 import ShareExportRow from "../src/components/ShareExportRow.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
@@ -12,6 +12,7 @@ import Lbl from "../src/components/Lbl.tsx";
 import { gradeNumFor } from "./grade.js";
 import { POP_BACK, POP_CLOSE, POP_REMOVE, POP_CHIP_X } from "./popupChrome.js";
 import SearchSplit from "../src/components/SearchSplit.tsx";
+import DbClimbPicker from "../src/components/DbClimbPicker.tsx";
 import Chevron from "../src/components/Chevron.tsx";
 
 export default function ListsManager({notify,onShareList,listsUnavailable,objectivesUnavailable,logsUnavailable,userLists,setUserLists,logs,onOpen,crews,onFindPartners,onFindPartnersInArea,onOpenCrew,onOpenLog,onLogClimb,onPickLog,crewMsgs,routeById,objDates,onSetObjDate,onCreateList,onUpdateList,objSavedAt,onObjectivesChanged}){const routeGroup=function(r){var d=r.discipline;return d==="alpine"?"Alpine":d==="mountaineering"?"Mountaineering":d==="aid"?"Aid":(d==="ice"||d==="mixed")?"Ice & Mixed":d==="bouldering"?"Bouldering":(d==="scrambling"||d==="hiking")?"Scrambling":(d==="sport"||d==="toprope")?"Sport":"Trad";};const [discF,setDiscF]=useState("all");/* Names of the climbs picked in this session, so the chips can read "Gato Negro" rather
