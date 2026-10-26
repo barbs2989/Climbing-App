@@ -1063,7 +1063,8 @@ function TechStats({route,onEdit,part}){
   }else{
     const climbLabel=disc==="aid"?"Wall height":disc==="scrambling"?"Scramble section":"Route length";
     stats=climbDisp?[[climbLabel,climbDisp,C.teal]]:[];
-    if(route.pitches>0)stats.push(["Pitches",route.pitches,C.blue]);
+    /* A scramble is never roped, so it has no pitches: a stored count on a scrambling row is not printed here (owner note, 2026-10-25). Its climbing sections stay on Plan. */
+    if(route.pitches>0&&disc!=="scrambling")stats.push(["Pitches",route.pitches,C.blue]);
     if(hasAscent)stats.push([gainIsWholeOuting?"Total ascent":"Approach gain","↑ "+uElev(totalAscentFt),C.green]);
     if(distTile)stats.push(distTile);
     /* On sport, trad and top-rope the route's grade IS its crux (a YDS grade rates the hardest move), so a
