@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 84 tables, 829 columns, 425 keyed/checked constraints (151 foreign keys), 257 RLS policies.
+-- Counts: 84 tables, 831 columns, 427 keyed/checked constraints (151 foreign keys), 257 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -449,10 +449,14 @@ CREATE TABLE public.climber_resumes (
   courses jsonb NOT NULL DEFAULT '[]'::jsonb,
   climbs jsonb NOT NULL DEFAULT '[]'::jsonb,
   updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  conditioning text NOT NULL DEFAULT ''::text,
+  hidden_logs jsonb NOT NULL DEFAULT '[]'::jsonb,
   CONSTRAINT climber_resumes_pkey PRIMARY KEY (user_id),
   CONSTRAINT climber_resumes_climbs_check CHECK (((jsonb_typeof(climbs) = 'array'::text) AND (jsonb_array_length(climbs) <= 400))),
+  CONSTRAINT climber_resumes_conditioning_check CHECK ((char_length(conditioning) <= 400)),
   CONSTRAINT climber_resumes_courses_check CHECK (((jsonb_typeof(courses) = 'array'::text) AND (jsonb_array_length(courses) <= 60))),
   CONSTRAINT climber_resumes_headline_check CHECK ((char_length(headline) <= 200)),
+  CONSTRAINT climber_resumes_hidden_logs_check CHECK (((jsonb_typeof(hidden_logs) = 'array'::text) AND (jsonb_array_length(hidden_logs) <= 2000))),
   CONSTRAINT climber_resumes_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.climber_resumes ENABLE ROW LEVEL SECURITY;
