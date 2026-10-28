@@ -28,7 +28,7 @@ await build({
 });
 const { planTimes } = createRequire(import.meta.url)(bundle);
 
-const SELECT = "id,name,area_id,discipline,grade,pitches,length_m,gain_ft,loss_ft,dist_km,timing";
+const SELECT = "id,name,area_id,discipline,grade,pitches,length_m,gain_ft,loss_ft,dist_km,timing,itinerary,outing_shape";
 // Whole-table scans with a timing filter hit the statement timeout, so ids are the normal path
 // (--ids or --id-file, read 60 to a request to keep the URL short).
 const inList = (xs) => `in.(${xs.map((i) => `"${i}"`).join(",")})`;
@@ -46,7 +46,7 @@ for (const r of rows) {
     routeFt: r.length_m != null ? Math.round(r.length_m * 3.28084) : null,
     gainM: r.gain_ft != null ? Math.round(r.gain_ft / 3.28084) : null,
     lossM: r.loss_ft != null ? Math.round(r.loss_ft / 3.28084) : null,
-    distKm: r.dist_km, timing: r.timing,
+    distKm: r.dist_km, itinerary: r.itinerary, outingShape: r.outing_shape, timing: r.timing,
   };
   let p;
   try { p = planTimes(route, {}); } catch (e) { out.push({ id: r.id, error: String(e.message || e) }); continue; }
