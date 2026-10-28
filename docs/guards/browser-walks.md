@@ -1418,6 +1418,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Blind to**: what a screen reader does over time (focus order, what is announced on change),
     any state the walk never opens, contrast over a photo. Automated rules find about a third of
     real barriers — the manual pass is `docs/accessibility-testing.md`.
+- **`check:overflow` also measures an OPEN pitch** (2026-10-28): the route sub-tab walk only
+  ever saw ROUTE BREAKDOWN closed, and the pinned sample route has no pitch rows, so the pitch
+  card (belay / anchor / gear boxes, *Add a photo of this pitch*, clamped comments) had never
+  been measured. After the sub-tabs it reloads with `?zr=1&zrp=1` (the scaffold's pick of a
+  seed route WITH pitch detail), taps Plan, opens the first `[data-kind="pitch"]` row and scans
+  again as `route:Plan (pitch open)`. First run: 390/390, 0 offenders. "no pitch row reached"
+  in the log means the seed lost its pitched route — fix the seed, not the guard.
 - **`check:overflow`** asks whether the app still fits the phone it is built for. Every
   control here is hand-positioned with inline styles and there is no CSS framework, which is
   exactly the setup where one fixed `minWidth`, a `flex` row with `nowrap`, or a single

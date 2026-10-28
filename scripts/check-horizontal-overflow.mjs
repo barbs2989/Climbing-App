@@ -313,6 +313,29 @@ if (opened) {
     log(`  route:${sub}`.padEnd(28) + `page ${r.docScrollW}/${r.docClientW}${wide ? "  <-- SCROLLS SIDEWAYS" : ""}  offenders:${r.total}`);
     if (wide || r.total) findings.push({ screen: "route:" + sub, ...r });
   }
+  // An OPEN pitch is its own layout (owner note 2026-10-25: belay/anchor/gear boxes, the pitch
+  // photo button, clamped comments) and renders only after a tap, so the closed Plan scan above
+  // never measured it — and the pinned sample has no pitch rows. `zrp=1` makes the scaffold open
+  // a seed route that HAS pitch detail; open its first pitch on Plan and measure again.
+  await load("?zr=1&zrp=1");
+  await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 20000 }).catch(() => {});
+  await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
+  const onPlan = await tap("Plan");
+  const expanded = onPlan && await page.evaluate(() => {
+    const b = document.querySelector('[data-kind="pitch"] [aria-expanded="false"]');
+    if (!b) return false;
+    b.click();
+    return true;
+  });
+  if (!expanded) {
+    log(`  route:Plan (pitch open)`.padEnd(28) + (onPlan ? "no pitch row reached" : "Plan NOT REACHED"));
+  } else {
+    await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
+    const p = await scan();
+    const pWide = p.docScrollW > p.docClientW + 1;
+    log(`  route:Plan (pitch open)`.padEnd(28) + `page ${p.docScrollW}/${p.docClientW}${pWide ? "  <-- SCROLLS SIDEWAYS" : ""}  offenders:${p.total}`);
+    if (pWide || p.total) findings.push({ screen: "route:Plan (pitch open)", ...p });
+  }
 } else {
   // Now a FAILURE, not a note — recorded here and raised with the other hard failures below,
   // so the overlay walk still runs and reports whatever it finds.
