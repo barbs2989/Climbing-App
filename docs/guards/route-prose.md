@@ -1223,3 +1223,22 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **Selftest:** `--selftest` needs no network: the Dark Shadows sentence as applied is flagged,
     the same facts reworded are not, a short shared phrase is not, and `review`/`area`/labels are
     never walked.
+
+- **`audit:partner-grade`** asks whether a route's **Partner requirements** panel
+  (`partner_requirements.experienceLevel` + `.requiredSkills`) asks for a lead grade the route's
+  own grade contradicts. Reported by the owner 2026-10-28: Liberty Bell's Overexposure (5.8) read
+  *"Strong 5.10-5.11 free climber"* — already corrected by the WA contradictions pass (#1965,
+  `audits/wa-contradictions-rest/research/out/r182.json`), so the owner had seen a stale copy;
+  the CLASS had never been measured. Report-only; `scripts/audit-partner-grade.mjs`.
+  - The standard it enforces, and the research behind it, is in
+    [enrichment-prose.md](../codebase/enrichment-prose.md#partner_requirements-ask-for-the-grade-the-route-is):
+    lead the crux grade solidly, at most ONE step of margin (a number grade through 5.9, a letter
+    from 5.10a).
+  - **ABOVE** (more than one step over the route's highest 5.x), **BELOW** (highest named grade
+    under the crux), **NONE** (no 5.x on the route, a 5.x lead above 5.6 asked). A clause that
+    names an aided, French-freed, optional or variation section does not count as asked —
+    "Solid 5.10 leader; the 5.11a crux can be aided" is honest, not BELOW. `--selftest` holds 17 cases.
+  - **Not yet run against the catalog** — written 2026-10-28 while the database was answering
+    one-row reads in 30-180 s, so the census waited. The repo's enrichment files hold ~317
+    distinct `experienceLevel` strings, 49 naming a 5.x grade: expect a small class.
+  - Service key, `partner_requirements=not.is.null` in 100-row pages. Not a build gate.
