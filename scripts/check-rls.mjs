@@ -94,6 +94,8 @@ for (const f of files) {
 const tables = new Map();
 const functions = new Map();
 const policies = new Map();
+// views:     name -> { created: file, readOnly: file|null } — rule 5
+const views = new Map();
 
 // Matches `create policy "x" on t for insert with check ( ... );` — balanced to the final
 // semicolon at depth 0, because a policy body is full of parenthesised subqueries and a
@@ -173,6 +175,25 @@ for (const f of files) {
   for (const m of sql.matchAll(/drop\s+function\s+(?:if\s+exists\s+)?([a-z_0-9.]+)/gi)) {
     const name = m[1].replace(/^public\./, "");
     if (functions.has(name)) functions.get(name).dropped = true;
+  }
+
+  // Views, in statement order: a DROP then CREATE starts a fresh object, which Supabase's default
+  // privileges grant EVERYTHING to anon and authenticated; `create or replace` keeps the grants.
+  const vEvents = [];
+  for (const m of sql.matchAll(/create\s+(or\s+replace\s+)?view\s+([a-z_0-9.]+)/gi)) vEvents.push({ at: m.index, kind: m[1] ? "replace" : "create", name: m[2] });
+  for (const m of sql.matchAll(/drop\s+view\s+(?:if\s+exists\s+)?([a-z_0-9.]+)/gi)) vEvents.push({ at: m.index, kind: "drop", name: m[1] });
+  for (const m of sql.matchAll(/revoke\s+([a-z_,\s]+?)\s+on\s+(?:table\s+)?([a-z_0-9.,\s]+?)\s+from\s+([a-z_,\s]+?)\s*;/gi)) {
+    const privs = m[1].toLowerCase(), roles = m[3].toLowerCase();
+    if (!(/\ball\b/.test(privs) || ["insert", "update", "delete"].every((x) => privs.includes(x)))) continue;
+    if (!(/\banon\b/.test(roles) && /\bauthenticated\b/.test(roles))) continue;
+    for (const n of m[2].split(",")) vEvents.push({ at: m.index, kind: "revoke", name: n.trim() });
+  }
+  vEvents.sort((a, b) => a.at - b.at);
+  for (const e of vEvents) {
+    const n = e.name.replace(/^public\./, "");
+    if (e.kind === "drop") views.delete(n);
+    else if (e.kind === "revoke") { if (views.has(n)) views.get(n).readOnly = f; }
+    else if (e.kind === "create" || !views.has(n)) views.set(n, { created: f, readOnly: null });
   }
 
   // IN STATEMENT ORDER, not two passes. Migrations routinely read
@@ -290,11 +311,29 @@ for (const p of policies.values()) {
 if (writes < 50) dead(`only ${writes} write policies parsed — the command parse broke`);
 if (!unbound) ok(`all ${writes} permissive write policy(ies) bind the caller's identity`);
 
+// ── rule 5: every view is READ-ONLY to the client roles ───────────────────────
+// A view runs as its owner (postgres, which RLS does not hold) unless it is security_invoker, and
+// Supabase's default privileges grant anon and authenticated insert/update/delete on every new
+// view. A simple view (one table, no join) is writable THROUGH, so a `grant select` alone left
+// crew_listings and catalog_directory open to an anon-key DELETE of any crew or area past every
+// policy (found live 2026-10-28, closed by 0376). Each view must be followed by a
+// `revoke insert, update, delete ... from anon, authenticated`.
+let writableViews = 0;
+for (const [v, e] of views) {
+  if (e.readOnly) continue;
+  writableViews++;
+  fail(`${e.created}: view ${v} is never made read-only to anon/authenticated.`);
+  fail(`        Supabase grants them every privilege on a new view, and a view bypasses RLS. Add:`);
+  fail(`        revoke insert, update, delete, truncate, references, trigger on public.${v} from anon, authenticated;`);
+}
+if (views.size < 3) dead(`only ${views.size} view(s) parsed — the create-view parse broke`);
+if (!writableViews) ok(`all ${views.size} view(s) are read-only to anon and authenticated`);
+
 if (failures) {
   console.error(`\ncheck:rls FAILED — ${failures} problem(s).`);
   process.exit(1);
 }
-console.log("\ncheck:rls: ok — policies bind the right column, definer functions pin pg_temp, every table has RLS, every write asks who is calling.\n");
+console.log("\ncheck:rls: ok — policies bind the right column, definer functions pin pg_temp, every table has RLS, every write asks who is calling, every view is read-only.\n");
 
 // Injection tests (run by hand after any change to the parsing; each must FAIL the run):
 //   1. Reinstate 0042's `m.crew_id = crew_id` by deleting 0163  -> rule 1 names the policy.
@@ -309,3 +348,4 @@ console.log("\ncheck:rls: ok — policies bind the right column, definer functio
 //                                                               -> rule 4 names it.
 //   8. Strip auth.uid() from is_group_manager's latest body     -> rule 4 names the group policies
 //      that lean on it (a helper vouches only while it reads an identity itself).
+//   9. Delete 0376's revoke                                     -> rule 5 names the three views.
