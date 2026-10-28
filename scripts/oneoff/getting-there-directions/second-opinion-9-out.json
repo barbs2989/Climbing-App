@@ -1,0 +1,255 @@
+[
+ {
+  "i": 1,
+  "verdict": "confirmed",
+  "finalDirection": "From Marblemount, drive SR-20 east about 50 miles to Rainy Pass; the picnic area and Lake Ann trailhead lot is on the south side of the highway.",
+  "numbersUsed": [
+   "20",
+   "50"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/lake-ann-rainy-pass"
+  ],
+  "note": "Trail page gives Highway 20 through Marblemount, about 50 miles, south side."
+ },
+ {
+  "i": 8,
+  "verdict": "confirmed",
+  "finalDirection": "From Glacier, drive SR 542 east about 24 miles to the end of the highway at the large Artist Point parking lot.",
+  "numbersUsed": [
+   "542",
+   "24"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/table-mountain"
+  ],
+  "note": "Trail page gives about 24 miles east from Glacier to the end of SR 542."
+ },
+ {
+  "i": 14,
+  "verdict": "confirmed",
+  "finalDirection": "From Granite Falls, take the Mountain Loop Highway east 11 miles to the Verlot Ranger Station, then continue 19.3 miles to the Barlow Pass Trailhead at the end of the pavement; the lot is on the left.",
+  "numbersUsed": [
+   "11",
+   "19.3"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/gothic-basin"
+  ],
+  "note": "Trail page gives 11 miles to Verlot then 19.3 miles to Barlow Pass, lot on the left. Reworded on review so the shape detector reads the drive (facts unchanged)."
+ },
+ {
+  "i": 20,
+  "verdict": "confirmed",
+  "finalDirection": "Take the Mountain Loop Highway east from Granite Falls, pass the Verlot Ranger Station after about 10 miles, and continue about 14 miles to the signed turn for the Big Four picnic area on the right.",
+  "numbersUsed": [
+   "10",
+   "14"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/big-four-ice-caves"
+  ],
+  "note": "Trail page gives about 10 miles to Verlot then about 14 miles to the picnic area signs on the right."
+ },
+ {
+  "i": 21,
+  "verdict": "corrected",
+  "finalDirection": "From the gas station in Trout Lake, take the right fork north and follow the Mount Adams Recreation Area signs on the main road, which becomes Road 82, about 14.7 miles, past Mirror Lake; just past it take the left fork to the Bird Lake trailhead. The Yakama Nation closed the recreation area by order in August 2026 because of nearby fires, and it is open only part of the year, so confirm it is open before you go.",
+  "numbersUsed": [
+   "82",
+   "14.7",
+   "2026"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/bird-creek-meadows"
+  ],
+  "note": "Dropped the unfetched SR 141 number; closure order dated 8.26.26 on the trail page, current status unknown. Reworded on review so the shape detector reads the drive (facts unchanged)."
+ },
+ {
+  "i": 22,
+  "verdict": "corrected",
+  "finalDirection": "From Index on US-2, turn north onto Index-Galena Road (FR-63) and drive about 16 miles, bearing left at the junction for the final 2 miles of bumpy gravel. Bear left again at the second fork and climb a short hill to the parking area. Flood damage has closed Index-Galena Road between about milepost 10 and milepost 14 since December 2025 with no repair date, and Beckler River Road (FR-65) is closed as well, so the trailhead cannot be reached by car right now.",
+  "numbersUsed": [
+   "2",
+   "63",
+   "16",
+   "2",
+   "10",
+   "14",
+   "2025",
+   "65"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/blanca-lake",
+   "https://snohomishcountywa.gov/518/Road-Closures",
+   "https://snohomishcountywa.gov/624",
+   "https://hoodline.com/2025/12/flood-damage-forces-pre-winter-closure-of-index-galena-road-in-snohomish-county/",
+   "https://www.spokesman.com/stories/2026/jun/17/wa-mountain-access-faces-long-road-to-recovery-as-/"
+  ],
+  "note": "County closure page and June 2026 news say the milepost 6-7 repair reopened in Nov 2023 but new Dec 2025 washouts at mileposts 10-14 and a closed Beckler River Road block both ways."
+ },
+ {
+  "i": 45,
+  "verdict": "confirmed",
+  "finalDirection": "From Loomis, drive north on County Road 9425 for 2 miles, turn west onto County Road 4066, which becomes Forest Road 39, and follow it about 20 miles to Long Swamp Campground. Continue about 3 miles on Forest Road 3900-300 to the Cathedral Driveway trailhead.",
+  "numbersUsed": [
+   "9425",
+   "2",
+   "4066",
+   "39",
+   "20",
+   "3",
+   "3900",
+   "300"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/windy-peak",
+   "https://www.wta.org/go-hiking/hikes/cathedral-driveway"
+  ],
+  "note": "Loomis to Long Swamp is 2 plus 20 miles on 9425, 4066 then FR 39, and about 3 more miles on 3900-300 reaches the trailhead."
+ },
+ {
+  "i": 48,
+  "verdict": "corrected",
+  "finalDirection": "From SR 20 about 17 miles west of Winthrop, turn south onto Forest Road 200 and drive 0.8 mile to the Cedar Creek trailhead.",
+  "numbersUsed": [
+   "20",
+   "17",
+   "200",
+   "0.8"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/cedar-creek"
+  ],
+  "note": "Trail page confirms 17 miles from Winthrop and 0.8 mile on FR 200; removed the unverified Mazama reference."
+ },
+ {
+  "i": 49,
+  "verdict": "confirmed",
+  "finalDirection": "From Winthrop, drive SR 20 west about 17 miles, turn south onto Forest Road 200, and go 0.8 mile to the Cedar Creek trailhead at the road's end.",
+  "numbersUsed": [
+   "20",
+   "17",
+   "200",
+   "0.8"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/cedar-creek"
+  ],
+  "note": "Trail page confirms 17 miles west of Winthrop, south onto FR 200, 0.8 mile."
+ },
+ {
+  "i": 28,
+  "verdict": "confirmed",
+  "finalDirection": "From Seattle, drive I-5 north to Burlington, then WA-20 east through Marblemount, and turn onto Cascade River Road, following its paved-then-gravel surface about 21.7 miles to a small pullout at 3,200 ft that marks the unmaintained Boston Basin Trailhead (a different stop from the Eldorado trailhead about 2.5 miles down-road, and just before the road's end at Cascade Pass).",
+  "numbersUsed": [
+   "5",
+   "20",
+   "21.7",
+   "3",
+   "200",
+   "2.5"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/cascade-pass",
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.nps.gov/noca/planyourvisit/road-conditions.htm"
+  ],
+  "note": "Park road status page (updated July 3, 2026) lists the road open and no fetched agency page confirms a milepost 20 closure; only the trail page's 10.15.26 alert says so, so the old text stands."
+ },
+ {
+  "i": 29,
+  "verdict": "confirmed",
+  "finalDirection": "From Seattle, drive I-5 north to Burlington, then WA-20 east through Marblemount, and turn onto Cascade River Road, following its paved-then-gravel surface about 21.7 miles to a small pullout at 3,200 ft that marks the unmaintained Boston Basin Trailhead (a different, higher stop a couple of miles up-road of the Eldorado trailhead, and just before the road's end at Cascade Pass).",
+  "numbersUsed": [
+   "5",
+   "20",
+   "21.7",
+   "3",
+   "200"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/cascade-pass",
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.nps.gov/noca/planyourvisit/road-conditions.htm"
+  ],
+  "note": "Park road status page (updated July 3, 2026) lists the road open and no fetched agency page confirms a milepost 20 closure; only the trail page's 10.15.26 alert says so, so the old text stands."
+ },
+ {
+  "i": 39,
+  "verdict": "confirmed",
+  "finalDirection": "From SR 20 at Marblemount, drive the Cascade River Road about 23 miles to its end at the Cascade Pass Trailhead (~3,600 ft).",
+  "numbersUsed": [
+   "20",
+   "23",
+   "3",
+   "600"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/cascade-pass",
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.nps.gov/noca/planyourvisit/road-conditions.htm"
+  ],
+  "note": "Park road status page (updated July 3, 2026) lists the road open and no fetched agency page confirms a milepost 20 closure; only the trail page's 10.15.26 alert says so, so the old text stands."
+ },
+ {
+  "i": 41,
+  "verdict": "confirmed",
+  "finalDirection": "From State Route 20 at Marblemount, go straight onto the Cascade River Road where the highway turns, and drive it about 23 miles to its end at the Cascade Pass parking lot. The first third is paved, then gravel; the last few miles are narrow and steep.",
+  "numbersUsed": [
+   "20",
+   "23"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/cascade-pass",
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.nps.gov/noca/planyourvisit/road-conditions.htm"
+  ],
+  "note": "Park road status page (updated July 3, 2026) lists the road open and no fetched agency page confirms a milepost 20 closure; only the trail page's 10.15.26 alert says so, so the old text stands."
+ },
+ {
+  "i": 42,
+  "verdict": "confirmed",
+  "finalDirection": "From Marblemount take Cascade River Road ~23 miles to its end at the Cascade Pass Trailhead",
+  "numbersUsed": [
+   "23"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/cascade-pass",
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.nps.gov/noca/planyourvisit/road-conditions.htm"
+  ],
+  "note": "Park road status page (updated July 3, 2026) lists the road open and no fetched agency page confirms a milepost 20 closure; only the trail page's 10.15.26 alert says so, so the old text stands."
+ },
+ {
+  "i": 43,
+  "verdict": "confirmed",
+  "finalDirection": "From the Cascade Pass Trailhead at ~3,600 ft, at the end of the 23.1-mile Cascade River Road from Marblemount",
+  "numbersUsed": [
+   "3",
+   "600",
+   "23.1"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/cascade-pass",
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.nps.gov/noca/planyourvisit/road-conditions.htm"
+  ],
+  "note": "Park road status page (updated July 3, 2026) lists the road open and no fetched agency page confirms a milepost 20 closure; only the trail page's 10.15.26 alert says so, so the old text stands."
+ }
+]
