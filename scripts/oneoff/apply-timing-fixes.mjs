@@ -45,7 +45,7 @@ for (const f of fixes) {
   const live = rows[0].timing;
   if (same(live, f.to)) { console.log(`ALREADY ${f.id}`); continue; }
   if (!same(live, f.from)) { console.log(`REFUSED ${f.id}: live timing is not the researched 'from'`); refused++; continue; }
-  console.log(`${APPLY ? "WRITE" : "would write"} ${f.id}: ${JSON.stringify([f.from.approachTimeHrs, f.from.summitTimeHrs, f.from.descentTimeHrs, f.from.totalHrs])} -> ${JSON.stringify([f.to.approachTimeHrs, f.to.summitTimeHrs, f.to.descentTimeHrs, f.to.totalHrs])}  (${f.why})`);
+  console.log(`${APPLY ? "WRITE" : "would write"} ${f.id}: ${JSON.stringify([(f.from || {}).approachTimeHrs, (f.from || {}).summitTimeHrs, (f.from || {}).descentTimeHrs, (f.from || {}).totalHrs])} -> ${JSON.stringify([f.to.approachTimeHrs, f.to.summitTimeHrs, f.to.descentTimeHrs, f.to.totalHrs])}  (${f.why})`);
   if (APPLY) { await patchRow("routes", f.id, { timing: f.to }); rollback.push({ id: f.id, field: "timing", before: live, after: f.to }); }
   ok++;
 }

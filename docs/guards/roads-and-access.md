@@ -803,3 +803,81 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `expiredanswered`/`pastreport` must report zero under `expired`. **Re-run all six after touching
     the output path** — `--json` routes every report line through `say()`, so a mistake there is
     silent on stdout and invisible in the exit code.
+- **Getting there, batch 1 (owner note 2026-10-25): 64 missing DRIVES filled, 7 walks replaced.**
+  `scripts/oneoff/getting-there-directions/` holds the whole batch: `list-targets.mjs` (WA alpine
+  routes with a trailhead card and >=200 chars of approach prose but no `trailheadDirection` — 76),
+  the research per STORED trailhead string (`th-A-out.json`, `th-B-out.json`, 61 trailheads, each
+  with its source URLs for review, never in the text), and `apply-trailhead-directions-batch.mjs`.
+  - **Research the TRAILHEAD, not the route.** 76 routes needed only 61 strings and ~45 real places;
+    the drive to a trailhead is the same for every climb that starts there, so the shared text is
+    correct, not the pasted-paragraph fingerprint (that one is about the WALK).
+  - **The approach prose cannot be summarised into a drive.** It is a walk; the drive is usually not
+    in it at all, so a "one-line summary of the prose" would fail this file's shape detector. Every
+    direction was researched online.
+  - **Rails in the applier:** fills an absent value only; matches by the exact stored trailhead
+    string; writes only `found:true` at `high`/`medium` confidence; numbers in the text must equal
+    `numbersUsed`; no source name or URL; must pass `trailheadDirectionProblem()`; merges into
+    `approach_logistics`; refresh `routes.json` immediately before `--apply`, because the merge base
+    is that snapshot. Paced 1 s, reconciled by re-read (64/64).
+  - **Refused, so still open (12):** three trailheads no source could place (Cutthroat South Buttress
+    and West Ridge pullouts, Mount Crowder's "no separate trailhead"); High Bridge (Stehekin, no
+    road); Jack Mountain South Face (no stored trailhead name); and seven at LOW confidence —
+    Canyon Creek milepost (forum only), Cedar Creek (not shown to be the North Gardner access), the
+    Maynard Burn #816 (no trailhead of that name, the drive found was to Upper Dungeness), FR-6220 /
+    Anderson Creek (the drive found ends at the Mount Persis road end), Depot Creek x2 (newest source
+    ~2020 for a WASHED-OUT road). Lowered by hand on review, not by the agent: Anderson Creek and
+    Depot Creek. Corrected by hand: Pete Lake (FR-46 leaves BEFORE Salmon la Sac, not past it).
+  - **Two refusals were the detector being right about the WORDS:** Duckabush's "pavement ends at
+    3.6 miles" matches the on-foot `at N miles` rule, and Mineral Creek's "about 7 miles to Cooper
+    Pass" the to-a-Pass rule because "it" names no road. Reworded, facts unchanged — the rule stays.
+  - **Mount Robson's 7 routes** held "Via the Berg Lake Trail, from the north/south side of the peak",
+    the only failures of `check:trailhead-direction-shape --live`. `fix-robson-trailhead-direction.mjs`
+    swaps it for the drive (Hwy 16, visitor centre, 2 km road) by compare-and-swap on the exact old
+    string. The trail reopened in full in 2025 after the 2021 floods; the text says to check status.
+- **Getting there, the online ACCURACY check of the existing directions (owner note 2026-10-25).**
+  `getting-there-directions/list-existing.mjs` groups every live `trailheadDirection` by (trailhead,
+  text): 751 routes, **379 distinct drives**, so each is checked once (`verify-1..8.json`, brief in
+  `VERIFY_BRIEF.md`). Corrections go through `apply-direction-corrections.mjs`: compare-and-swap on
+  the exact old text, every rail of the batch-1 applier, merged, paced, reconciled.
+  - **One researcher is not enough; every correction gets a SECOND, independent check that must
+    FETCH the page** (`second-opinion-*.json`). Measured on batches 1–2: the first pass proposed a
+    "fix" to Cutthroat Lake (FR-400 is a LEFT turn) that was WRONG — the page it read was written for
+    EASTBOUND drivers; westbound from Winthrop it is a right, as the app already said. The second
+    check also cut unsourced mileages (Cathedral Rock's "12 gravel miles", Copper Glance's 7 -> 9.3).
+    Batch 1's researcher admitted fetching NO pages, which is why the brief now has an Evidence rule:
+    no verdict from a search snippet, `unverifiable` when no page opened.
+  - **Most "defects" are NAME-ONLY texts, not wrong ones** ("From the Cascade Pass Trailhead"). The
+    shape detector passes them (they end at the trailhead) and they are not false, but they tell a
+    driver nothing; they are replaced only where a fetched page gives the drive.
+  - Batches 1–2: 98 drives checked, 40 judged accurate (SHALLOW — batch 1 fetched nothing, so treat
+    those as unchecked), 17 corrections written over **71 routes**, 3 refused (Dosewallips washout
+    parking: low confidence, sources disagree on where the road ends).
+  - Batch 3 (fetched pages): 48 drives, 25 corrections confirmed by the second check, **59 routes**.
+    **It caught a defect this item's OWN batch 1 wrote:** Hannegan Pass read "FR-32 1.3 miles, then
+    the left fork 5.4 more" (6.7 mi, from two WTA pages); the Forest Service trailhead page and the
+    PNT both give **5.3 miles** in total, and WTA's own Goat Mountain page puts that trailhead 2.1 mi up
+    the same road. Batch-1 text is not exempt from the accuracy pass — it went through it like the rest.
+  - **A second source that DISAGREES is the reason for the second check**, not noise: WTA's 1.3 + 5.4
+    and the Forest Service's 5.3 cannot both be true. Prefer the land manager, and say why in the note.
+  - Batches 4–7: 192 drives, **49 corrections over 86 routes**, each confirmed by the second check.
+    The ones that change what a climber DOES: Mowich Lake (4 entries, one written by this item's own
+    batch 1) now says the road is closed at the Fairfax Bridge instead of describing a drive; Phelps
+    Creek, Smithbrook (FR 6700, order May 20 2026 through Dec 31 2027) and Deadhorse Road (FR 37,
+    closed at mile 3.1) carry their dated closures; Snowgrass Flat's FR 21 turn, Teneriffe's exit (32,
+    not 31), Pilchuck (ended at Verlot, not the trailhead), and a day-use fee at Skyline Lake that
+    no fetched page lists — removed.
+  - **The second check also SUBTRACTS.** It added an unproven "North Shore Road bridge out" note to
+    North Fork Quinault, which the first pass had already shown (park road page) this drive never
+    crosses; removed by hand. And a check that writes "per a Forest Service alert" is citing a source
+    in app text — reworded, and every written text scanned for citation phrasing (none left).
+  - **A TEMPORARY closure in a drive line is DATED** ("closed since August 2026 for the Little Giant
+    Fire; check the road status before you go") and keeps the normal drive, so the line is right again
+    the day the road reopens. A durable one (Mowich Lake: the Fairfax Bridge on SR-165, closed to all
+    traffic since April 2025, no funded replacement) replaces the drive outright.
+    - **OPEN — `audit:expiring-closures` cannot see these.** It reads `road.*` and `access.*`, never
+      `approach_logistics.trailheadDirection`. Adding that field was written and REVERTED on
+      2026-10-28 unrun: OR-ing the column into its query timed out (57014), and so did the audit's
+      own unchanged query, twice, under that day's load. Re-do it as a SEPARATE narrow read
+      (`dir:approach_logistics->>trailheadDirection`) when the database is quiet, and inject-test it.
+  - **numbersUsed compares as SETS.** A number used twice in a text ("SR 20 ... mile 20") was declared
+    twice and refused four checked corrections; duplicates are not untraceability.
