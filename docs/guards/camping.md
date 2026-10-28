@@ -909,3 +909,42 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - Section 11 pins the rule in **both** directions, because a rule that only ever ADMITS is
       indistinguishable from having no rule: trad on a peak renders, trad on a crag does not.
       Injection cases 9 and 10 are the pair (revert the gate; make `climbsAPeak` always true).
+- **`audit:camp-pins`** asks the owner's question of 2026-10-25 — *"Are all campgrounds waypoints
+  there and on the route track for all routes?"* — through the panel's **own** `campSites()`
+  (bundled with esbuild, the way `check:camping` imports it), never a copy of its pairing rule.
+  Per CAMPING & BIVY row: is a Campsite **pin** behind it, does the pin have a **coordinate**, and is
+  it within **500 m** (`audit:waypoints`' `WP_TOL`) of the route's **recorded** track
+  (`recordedTrackPts`)? Read-only, anon key; `--json` also carries every Campsite pin it read, which
+  the solver uses as its donor set. Report-only; not a build gate.
+  - **The first census (2026-10-28), 774 routes, 2,003 listed camps:** 375 backed by a pin (125 on
+    their track, 167 on routes with no recorded track, **48 with no coordinate** — still stamped
+    *"Marked on the track"*, because `onTrack` is `!!pin` — and 35 more than 500 m off), **1,028
+    single-place camps with no pin**, and **600 that cannot be one pin** (`camp-names.mjs`
+    `unresolvable()`: a dispersed zone, or two places in one name). The 600 are counted, never
+    "missing": a pin for a zone invents precision the record does not carry.
+  - **A camp BELOW its trailhead is reported ROADSIDE, not off-track.** It is a valley car-campground
+    you drive to (the 72% roadside-vocabulary measurement above); the walking track never passes it.
+  - **A "track" of fewer than two usable points is no track.** The first run measured a pin as
+    *Infinity* m off one (`wa_mount_adams_mazama_glacier_headwall`).
+  - **Its reads are ids first, columns by primary key.** One statement selecting `bivy`+`waypoints`
+    for every match hit the statement timeout whenever a dozen sessions shared the database.
+- **`scripts/oneoff/add-camp-pins.mjs`** is the repair half: it pins each camp it can PROVE and
+  lists the rest with the reason. **No coordinate is ever computed** — nothing snapped onto a track,
+  spaced between pins or derived from a height (the 427 interpolated pins this catalog already
+  repaired are why). A candidate comes from, in this order: an **official** camp point (NPS Olympic
+  wilderness camps KML, NPS North Cascades `ncampsp1`, USFS INFRA recreation sites — the agency that
+  issues the permit is the best record of where the camp is), a surveyed **donor** Campsite pin for
+  the same camp on a nearby route (name, or `samePlaceCamp`), an **OSM** feature by the camp's own
+  name (the `camp-names.mjs` gates plus an EXTENT gate: wider than 1 km has no point that is the
+  camp), **USGS GNIS** (point-like classes only, ±200 ft, never for a feature OSM refused for its
+  shape — Waptus Lake, 2 km long, came back through GNIS on the first run), or **research**. Every
+  candidate must then fit the **ground** (USGS 3DEP within 400 ft of the stated height) and, on a
+  route with a recorded track, lie **on it** (500 m) unless roadside. `distMi` is written only when
+  MEASURED along a recorded track from the trailhead's position on it, using the FIRST pass of an
+  out-and-back recording.
+  - **Writes:** one PATCH per route returning only `id` (patchRow's full-row echo carried the gpx),
+    re-read first and skipped if another session changed the waypoints, rollback file first,
+    1.1 s pace, a read-latency check every 20 writes, and a **stop** on any write over 15 s — two
+    runs stopped themselves on 112 s and 151 s writes with a dozen sessions on the database.
+  - **Compare jsonb with keys SORTED.** Postgres stores object keys in its own order, so the first
+    reconcile reported all 93 written routes as "changed by someone else" — every one had landed.

@@ -162,6 +162,7 @@ npm run audit:rack-items   # does any rack column, in ANY state, file NON-RACK g
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run audit:camp-elevations # are the camp elevations already ON SCREEN right? (99% are)
 npm run audit:camp-route-fit  # is this camp plausibly usable FOR THIS ROUTE? (6 candidates)
+npm run audit:camp-pins       # is every camp the panel lists a PIN on the map, with a coordinate, ON the recorded track?
 
 # ── Planner estimates, gain and rappels — notes: docs/guards/planner-and-rappels.md ──
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
