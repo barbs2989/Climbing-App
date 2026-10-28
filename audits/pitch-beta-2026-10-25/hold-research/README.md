@@ -23,3 +23,9 @@ Cascade Climbers pages return 403 or Cloudflare blocks to fetches.
 first-hand count would settle the rest.
 
 Files: hold-live.json (the 18 with stored and found counts), research-batch-1.json, research-batch-2.json.
+
+## Pass 2 (2026-10-28, extended search)
+- **wa_west_ridge_2 (Paisano Pinnacle): stored pitches 7 -> 8 (APPLIED, re-read verified).** The breakdown already covered pitches 1 to 8 (row "1-2" links two pitches); only the count was wrong. Sources: Steph Abegg report captions pitch 8 as final; Andrew Leader headings run to "Pitch 8 - 5.8"; Mountain Project says 8 (earlier read). One dissent: James Wolff implies about 7. Rollback: rollback-wa_west_ridge_2.json.
+- wa_forbidden_peak_west_ridge: KEEP 8 (high). Mountain School and Northwest Alpine Guides both say eight pitches; the Mountaineers says four (dissent).
+- wa_spontaneity_arete: KEEP 7 (medium). WTA report says "a nice 7-pitch route"; Mountain Project 6 plus optional 7th fits; Supertopo says 8.
+- wa_eldorado_peak_eldorado_glacier_nw: still UNCLEAR, stored 8 kept. No two sources agree.
