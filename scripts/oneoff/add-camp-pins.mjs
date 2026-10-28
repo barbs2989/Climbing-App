@@ -7,7 +7,11 @@
 //
 // A COORDINATE IS NEVER COMPUTED HERE. This catalog has already repaired 427 pins that were
 // interpolated on a line (fabricated-waypoint-pins hub), so nothing is snapped onto a track,
-// spaced between two pins, or derived from a height. A pin comes from exactly one of two records:
+// spaced between two pins, or derived from a height. A pin comes from exactly one of these records:
+//   OFFICIAL   a named camp point published by the land manager (NPS wilderness camps, USFS
+//              recreation sites — run dir/official/*.json), matched on the camp's name identity
+//              (camp-names.mjs ident(), which ignores a trailing "camp"). Tried first: the agency
+//              that issues the permit for a camp is the best record of where it is.
 //   DONOR      a surveyed Campsite pin for the same camp on another route nearby (same name, or
 //              samePlaceCamp's height-agreeing match — the panel's own rule), not itself computed.
 //   GAZETTEER  an OSM feature found by the camp's own name inside a box around the route, with
@@ -44,9 +48,9 @@ import { build } from "esbuild";
 import { createRequire } from "module";
 import os from "os";
 import { fileURLToPath } from "url";
-import { SUPABASE_URL, anonKey, headers, patchRow } from "../lib/supabase-env.mjs";
+import { SUPABASE_URL, anonKey, headers, requireServiceKey } from "../lib/supabase-env.mjs";
 import { elevationAt } from "../lib/terrain.mjs";
-import { norm, placeOf, searchCandidates, unresolvable, LINEAR, SUBFEATURE } from "../lib/camp-names.mjs";
+import { norm, ident, placeOf, searchCandidates, unresolvable, LINEAR, SUBFEATURE } from "../lib/camp-names.mjs";
 import { recordedTrackPts, pointOf, metresBetween, coordinateIsComputed } from "../../lib/track.js";
 import { orderWaypoints } from "../../lib/waypoints.js";
 import { GROUND_DISAGREEMENTS } from "../../lib/ground-checked-pins.js";
@@ -64,6 +68,19 @@ const proposals = new Map();
 if (RESEARCH) for (const x of JSON.parse(fs.readFileSync(RESEARCH, "utf8"))) {
   if (x && x.id && x.camp && Number.isFinite(Number(x.lat)) && Number.isFinite(Number(x.lng))) proposals.set(`${x.id}|${String(x.camp).trim().toLowerCase()}`, x);
 }
+// Official camp points, one JSON array per dataset: [{name, lat, lng, src}].
+const OFFICIAL_DIR = path.join(RUN, "official");
+const official = fs.existsSync(OFFICIAL_DIR)
+  ? fs.readdirSync(OFFICIAL_DIR).filter((f) => f.endsWith(".json")).flatMap((f) => JSON.parse(fs.readFileSync(path.join(OFFICIAL_DIR, f), "utf8")))
+      .filter((x) => x && x.name && Number.isFinite(x.lat) && Number.isFinite(x.lng)).map((x) => ({ ...x, id: ident(x.name) }))
+  : [];
+// USGS GNIS, point-like classes only (lake, gap, spring, flat, summit, falls) — the federal name
+// record. It carries no feature EXTENT, so a GNIS candidate must fit the ground at the camp's stated
+// height more tightly (GNIS_TOL_FT) than an OSM one whose extent was checked.
+const GNIS_FILE = path.join(RUN, "gnis", "gnis-wa.json");
+const gnis = fs.existsSync(GNIS_FILE) ? JSON.parse(fs.readFileSync(GNIS_FILE, "utf8")).map((x) => ({ ...x, id: ident(x.name) })) : [];
+const GNIS_TOL_FT = 200;
+const NOT_A_CAMP = /\b(no overnight|day[- ]use only|no camping|camping (is )?(prohibited|banned|not allowed))\b/i;
 const PACE_MS = Number(arg("pace-ms", "1100"));
 const TOL_FT = 400, WP_TOL = 500, EXTENT_M = 1000, ROADSIDE_KM = 25, NEAR_KM = 15, DONOR_ELEV_FT = 300;
 const UA = "ClimbMatch-camp-pin-solver/1.0 (climbing route catalog; contact via repo)";
@@ -102,12 +119,18 @@ async function nominatim(query, box) {
   const [minLat, maxLat, minLng, maxLng] = box;
   const u = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=10&viewbox=${minLng},${maxLat},${maxLng},${minLat}&bounded=1&q=${encodeURIComponent(query)}`;
   let out = null;
-  for (let t = 0; t < 3 && out == null; t++) {
+  for (let t = 0; t < 4 && out == null; t++) {
+    let status = "error";
     try {
       const r = await fetch(u, { headers: { "User-Agent": UA, Accept: "application/json" }, signal: AbortSignal.timeout(25000) });
+      status = r.status;
       if (r.ok) out = await r.json();
-    } catch { /* retried */ }
-    await sleep(1200 * (t + 1)); // Nominatim's policy is one request a second
+    } catch (e) { status = e.name; }
+    // Nominatim's policy is one request a second. A refusal (429/403) means slow down, not skip:
+    // retrying at 1 s would make it worse, and giving up would record "not in the gazetteer" for a
+    // name the gazetteer holds.
+    if (out == null) { console.error(`nominatim ${status} for "${query}" — backing off`); await sleep(60000 * (t + 1)); }
+    else await sleep(1100);
   }
   if (out != null) { cache.nom[k] = out; saveCache(); }
   return out;
@@ -176,7 +199,19 @@ async function candidates(r, site) {
   const out = [];
   const anchors = anchorsOf(r);
   if (!anchors.length) return out;
+  // A site that says it is NOT a place to sleep ("Alpine Lookout — day use only, no overnight") is
+  // listed as a warning; a Campsite pin for it would say the opposite on the map.
+  if (NOT_A_CAMP.test(site.name)) return [{ from: "name", refused: "the site says it is not a place to camp" }];
   const want = elevFt(site);
+  // OFFICIAL — the land manager's own point for a camp of this name near the route. Two same-named
+  // points both in reach is not an identity, so an ambiguous name is skipped rather than guessed.
+  const sid = ident(placeOf(site.name));
+  if (sid && sid.split(" ").length >= 1 && !unresolvable(site.name)) {
+    // The same camp published by two agencies (or twice in one file) is one hit, not an ambiguity.
+    const hits = official.filter((x) => x.id === sid && nearKm(x, anchors) <= NEAR_KM)
+      .filter((x, i, a) => a.findIndex((y) => metresBetween(x, y) < 300) === i);
+    if (hits.length === 1) out.push({ from: "official", lat: hits[0].lat, lng: hits[0].lng, official: `${hits[0].src}: ${hits[0].name}`, campLike: true });
+  }
   // DONOR — same camp pinned on another route nearby.
   for (const d of donors) {
     if (d.rid === r.id) continue;
@@ -206,7 +241,24 @@ async function candidates(r, site) {
       break;
     }
   }
-  // RESEARCH — a proposed coordinate, verified below exactly like the other two.
+  // GNIS — only when nothing above offered a usable point, through the same candidate names and
+  // shape refusals as the OSM search.
+  // A feature OSM already REFUSED for its shape (too wide, linear, a summit) is not rescued here:
+  // GNIS carries no extent, so it would hand back the same feature's centroid without the check —
+  // measured on the first full run, where Waptus Lake (2 km long) came back through GNIS.
+  if (!out.length && !unresolvable(site.name)) {
+    for (const cand of searchCandidates(site.name)) {
+      const id = ident(cand);
+      const hits = gnis.filter((x) => x.id === id && nearKm(x, anchors) <= NEAR_KM)
+        .filter((x, i, a) => a.findIndex((y) => metresBetween(x, y) < 300) === i);
+      if (!hits.length) continue;
+      if (hits.length > 1) { out.push({ from: "gnis", refused: `${hits.length} GNIS features of that name in reach`, query: cand }); break; }
+      if (hits[0].cls === "Summit" && SUBFEATURE.test(site.name)) { out.push({ from: "gnis", refused: "a summit, but the camp names a part of it", query: cand }); break; }
+      out.push({ from: "gnis", lat: hits[0].lat, lng: hits[0].lng, query: cand, gnis: hits[0].cls, tolFt: GNIS_TOL_FT, campLike: false });
+      break;
+    }
+  }
+  // RESEARCH — a proposed coordinate, verified below exactly like the others.
   const prop = proposals.get(`${r.id}|${key(site.name)}`);
   if (prop) out.push({ from: "research", lat: Number(prop.lat), lng: Number(prop.lng), campLike: false });
   return out;
@@ -224,7 +276,7 @@ async function judge(r, site, c) {
   const roadside = want != null && thFt != null && want < thFt;
   const track = trackOf(r);
   const near = track ? nearestOnTrack(p, track) : null;
-  if (want != null && Math.abs(g - want) > TOL_FT) return { ok: false, why: `ground ${g} ft vs stated ${Math.round(want)} ft` };
+  if (want != null && Math.abs(g - want) > (c.tolFt || TOL_FT)) return { ok: false, why: `ground ${g} ft vs stated ${Math.round(want)} ft` };
   if (track && !roadside && near.d > WP_TOL) return { ok: false, why: `${Math.round(near.d)} m off the recorded track` };
   if (roadside) {
     if (!th) return { ok: false, why: "below the trailhead, and no trailhead pin to measure the drive from" };
@@ -295,7 +347,7 @@ for (const item of work) {
     const pin = { type: "Campsite", name: site.name, ...p, elev: done.v.elev, ...(done.v.distMi != null ? { distMi: done.v.distMi } : {}) };
     cur.after = insert(cur.after, pin, done.v.roadside);
   }
-  cur.adds.push({ kind: item.kind, camp: item.pin || item.camp, ...p, from: done.c.from, donor: done.c.donor, osm: done.c.osm, query: done.c.query,
+  cur.adds.push({ kind: item.kind, camp: item.pin || item.camp, ...p, from: done.c.from, donor: done.c.donor, official: done.c.official, osm: done.c.osm, gnis: done.c.gnis, query: done.c.query,
     stated: elevFt(site) != null ? Math.round(elevFt(site)) : null, ground: done.v.ground, offTrackM: done.v.offTrackM, roadside: done.v.roadside, distMi: done.v.distMi });
   plan.set(r.id, cur);
   if (n % 25 === 0) console.error(`solved ${n}/${work.length}  routes ${plan.size}  refused ${refused.length}`);
@@ -305,7 +357,7 @@ const planFile = path.join(RUN, "plan.json");
 fs.writeFileSync(planFile, JSON.stringify({ made: new Date().toISOString(), routes: Object.fromEntries(plan), refused }, null, 1));
 const adds = [...plan.values()].flatMap((x) => x.adds);
 console.log(`camps worked : ${work.length}`);
-console.log(`pinnable     : ${adds.length} on ${plan.size} routes  (donor ${adds.filter((a) => a.from === "donor").length}, gazetteer ${adds.filter((a) => a.from === "gazetteer").length})`);
+console.log(`pinnable     : ${adds.length} on ${plan.size} routes  (${["official", "donor", "gazetteer", "gnis", "research"].map((f) => `${f} ${adds.filter((a) => a.from === f).length}`).join(", ")})`);
 console.log(`refused      : ${refused.length}`);
 const tally = {};
 for (const x of refused) { const k = String(x.why).replace(/[\d,.]+/g, "N").slice(0, 70); tally[k] = (tally[k] || 0) + 1; }
@@ -314,25 +366,59 @@ console.log(`plan: ${planFile}`);
 
 if (!APPLY) process.exit(0);
 
+// jsonb stores object keys in its OWN order, so what we write never string-equals what we read back.
+const canon = (v) => JSON.stringify(v, (k, x) => (x && typeof x === "object" && !Array.isArray(x) ? Object.fromEntries(Object.keys(x).sort().map((q) => [q, x[q]])) : x));
+
+// patchRow() asks for the whole changed row back — on a route that is the gpx track and every prose
+// column, hundreds of KB per write. Only the id is needed to prove exactly one row changed.
+async function patchWaypoints(id, waypoints) {
+  const key = requireServiceKey();
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?id=eq.${encodeURIComponent(id)}&select=id`, {
+    method: "PATCH", signal: AbortSignal.timeout(60000),
+    headers: headers(key, { "Content-Type": "application/json", Prefer: "return=representation" }),
+    body: JSON.stringify({ waypoints }),
+  });
+  const text = await res.text();
+  if (!res.ok) throw new Error(`PATCH ${id} -> ${res.status} ${text.slice(0, 200)}`);
+  const rows = JSON.parse(text);
+  if (!Array.isArray(rows) || rows.length !== 1) throw new Error(`PATCH ${id} changed ${Array.isArray(rows) ? rows.length : "?"} rows, expected 1 — wrong id, or RLS rejected it`);
+}
+
 // ---- apply: one PATCH per route, paced, each guarded by a re-read, rollback written first
 const rollbackFile = path.join(RUN, `rollback-camp-pins-${Date.now()}.json`);
 const rollback = {};
 let written = 0, skipped = 0;
 for (const [id, x] of plan) {
   const [now] = await q(`routes?select=id,waypoints&id=eq.${encodeURIComponent(id)}`);
-  if (JSON.stringify(now && now.waypoints) !== JSON.stringify(x.before)) { skipped++; console.error(`skip ${id}: waypoints changed since the plan was made`); continue; }
+  if (canon(now && now.waypoints) !== canon(x.before)) { skipped++; console.error(`skip ${id}: waypoints changed since the plan was made`); continue; }
   rollback[id] = x.before;
   fs.writeFileSync(rollbackFile, JSON.stringify(rollback));
   const t0 = Date.now();
   try {
-    await patchRow("routes", id, { waypoints: x.after });
+    await patchWaypoints(id, x.after);
   } catch (e) {
     console.error(`write failed ${id}: ${e.message} — backing off a minute`);
     delete rollback[id]; fs.writeFileSync(rollbackFile, JSON.stringify(rollback));
     await sleep(60000); continue;
   }
   written++;
+  // THE LIVE APP'S READS COME FIRST (owner's rule for bulk writes). Every 20 writes, time the
+  // cheapest read the app makes; if it is slow, stop writing until it is not.
+  if (written % 20 === 0) {
+    for (;;) {
+      const h0 = Date.now();
+      let ok = false;
+      try { const r = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=id&limit=1`, { headers: H, signal: AbortSignal.timeout(20000) }); await r.text(); ok = r.ok; } catch { ok = false; }
+      if (ok && Date.now() - h0 < 3000) break;
+      console.error(`app reads slow (${Date.now() - h0} ms) — pausing two minutes`);
+      await sleep(120000);
+    }
+    console.error(`written ${written}/${plan.size}`);
+  }
   const took = Date.now() - t0;
+  // A write this slow means the database is struggling: STOP, never push on (2026-10-28: one write
+  // took 112 s mid-run while a dozen sessions shared the database).
+  if (took > 15000) { console.error(`write took ${took} ms — STOPPING; rerun once the database is healthy`); break; }
   if (took > 4000) { console.error(`slow write (${took} ms) — pausing a minute so the app's reads are not starved`); await sleep(60000); }
   await sleep(PACE_MS);
 }
@@ -340,7 +426,7 @@ for (const [id, x] of plan) {
 let landed = 0;
 for (const id of Object.keys(rollback)) {
   const [now] = await q(`routes?select=id,waypoints&id=eq.${encodeURIComponent(id)}`);
-  if (JSON.stringify(now && now.waypoints) === JSON.stringify(plan.get(id).after)) landed++;
+  if (canon(now && now.waypoints) === canon(plan.get(id).after)) landed++;
   else console.error(`NOT LANDED ${id}`);
   await sleep(150);
 }

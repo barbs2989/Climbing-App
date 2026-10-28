@@ -68,18 +68,22 @@ async function q(p) {
   console.log(`FAIL: read failed (${p.slice(0, 80)}) — this is NOT "every camp is pinned".`);
   process.exit(1);
 }
-const COLS = "id,name,area_id,bivy,waypoints";
+// IDS FIRST, COLUMNS BY PRIMARY KEY. Selecting bivy + waypoints for every match in one statement
+// is a scan carrying ~750 rows of prose, and it hit the statement timeout whenever the database was
+// busy (2026-10-28, with a dozen sessions on it). The scans return only ids; the heavy columns come
+// in small primary-key chunks that cannot time out.
+const ids = [...new Set([
+  ...(await q(`routes?select=id&bivy=not.is.null&limit=5000`)).map((r) => r.id),
+  ...(await q(`routes?select=id&waypoints=cs.${encodeURIComponent('[{"type":"Campsite"}]')}&limit=5000`)).map((r) => r.id),
+])];
+if (!ids.length) { console.log("FAIL: read no routes carrying camps — an empty audit proves nothing"); process.exit(1); }
 const byId = new Map();
-for (const r of await q(`routes?select=${COLS}&bivy=not.is.null&limit=5000`)) byId.set(r.id, r);
-for (const r of await q(`routes?select=${COLS}&waypoints=cs.${encodeURIComponent('[{"type":"Campsite"}]')}&limit=5000`)) byId.set(r.id, r);
-const routes = [...byId.values()];
-if (!routes.length) { console.log("FAIL: read no routes carrying camps — an empty audit proves nothing"); process.exit(1); }
-// gpx is the heavy column; read it in small chunks so no single statement times out.
-const ids = routes.map((r) => r.id);
 for (let i = 0; i < ids.length; i += 15) {
   const chunk = ids.slice(i, i + 15).map((x) => `"${x}"`).join(",");
-  for (const g of await q(`routes?select=id,gpx&id=in.(${encodeURIComponent(chunk)})`)) byId.get(g.id).gpx = g.gpx;
+  for (const r of await q(`routes?select=id,name,area_id,bivy,waypoints,gpx&id=in.(${encodeURIComponent(chunk)})`)) byId.set(r.id, r);
 }
+const routes = [...byId.values()];
+if (routes.length !== ids.length) { console.log(`FAIL: matched ${ids.length} routes but read ${routes.length} — a partial read is not a clean catalog`); process.exit(1); }
 
 const key = (v) => String(v == null ? "" : v).trim().toLowerCase();
 const isCampPin = (w) => w && /^camp(site)?$/i.test(String(w.type || "").trim());
