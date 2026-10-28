@@ -71,6 +71,14 @@ the values from `.env` and `.env.local` into `process.env`. The relative import 
 one level down (`scripts/oneoff/`) is `../lib/`, and the top of `scripts/` is `./lib/`.
 `.env.example` lists the names. `npm run check:no-secrets` fails the build if a literal comes back.
 
+**The throttle rule is enforced in `supabase-env.mjs` (2026-10-28).** `patchRow` spaces writes at
+least 1000 ms apart across the process; `selectAll` pauses 200 ms between pages and backs off a
+minute after a page slower than 10 s; both time a request out at 30 s and, on a timeout or 5xx,
+back off a minute and retry ONCE, then throw "STOPPED … the database is not answering". Do not
+catch that and loop: it is the owner's stop-when-reads-slow rule. Overrides
+(`SUPABASE_WRITE_PACE_MS`, `SUPABASE_PAGE_PACE_MS`) are for a measured reason on a quiet database
+only. Added after a one-row read took 105 s while several sessions audited at once.
+
 Import `scripts/lib/supabase-env.mjs` — do not hand-roll env loading. The
 credentials are split across two gitignored files (`SUPABASE_SERVICE_KEY` in
 `.env`, the `VITE_*` url/anon key in `.env.local`), so a script that reads only

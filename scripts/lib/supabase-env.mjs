@@ -62,6 +62,32 @@ export function headers(key, extra) {
   return { apikey: key, Authorization: `Bearer ${key}`, ...(extra || {}) };
 }
 
+// THE THROTTLE RULE, ENFORCED HERE (owner, standing: bulk work must pace itself, back off a minute
+// on a timeout, and STOP when the live app's reads slow — Supabase's Disk IO budget has been
+// exhausted by bulk jobs more than once; on 2026-10-28 a one-row read took 105 s while several
+// sessions audited at once). Every script that writes or scans through this file now gets it
+// without remembering to: a 30 s request timeout; on a timeout, network error or 5xx, one
+// minute's back-off and ONE retry, then a hard stop naming the rule; at least WRITE_PACE_MS
+// between writes across the whole process; a short pause between scan pages, and a minute's
+// back-off after a page that took longer than SLOW_PAGE_MS. Env overrides exist for a measured
+// reason only (a guard on a quiet database), never to go faster during an incident.
+const WRITE_PACE_MS = Number(process.env.SUPABASE_WRITE_PACE_MS || 1000);
+const PAGE_PACE_MS = Number(process.env.SUPABASE_PAGE_PACE_MS || 200);
+const SLOW_PAGE_MS = 10000, BACKOFF_MS = 60000, REQUEST_TIMEOUT_MS = 30000;
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+let lastWriteAt = 0;
+async function gatedFetch(url, init, what) {
+  for (let attempt = 0; attempt < 2; attempt++) {
+    let res = null, err = null;
+    try { res = await fetch(url, { ...init, signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) }); }
+    catch (e) { err = e; }
+    if (res && res.status < 500) return res;
+    const why = err ? String(err.message || err).slice(0, 80) : `HTTP ${res.status}`;
+    if (attempt === 0) { console.error(`  ${what}: ${why} — database struggling; backing off ${BACKOFF_MS / 1000} s before one retry`); await sleep(BACKOFF_MS); continue; }
+    throw new Error(`${what}: ${why} twice — STOPPED. The database is not answering; per the owner's throttle rule, do not retry fast. Re-run once a one-row read answers in under 1.5 s.`);
+  }
+}
+
 // PATCH one row by primary key and prove it landed. PostgREST returns the rows
 // it actually changed under `return=representation`, so a length of 0 means the
 // filter matched nothing (wrong id) or RLS blocked it — both silent otherwise.
@@ -69,11 +95,14 @@ export async function patchRow(table, id, body, opts) {
   const key = requireServiceKey();
   const extraFilter = (opts && opts.filter) ? `&${opts.filter}` : "";
   const url = `${SUPABASE_URL}/rest/v1/${table}?id=eq.${encodeURIComponent(id)}${extraFilter}`;
-  const res = await fetch(url, {
+  const wait = lastWriteAt + WRITE_PACE_MS - Date.now();
+  if (wait > 0) await sleep(wait);
+  lastWriteAt = Date.now();
+  const res = await gatedFetch(url, {
     method: "PATCH",
     headers: headers(key, { "Content-Type": "application/json", Prefer: "return=representation" }),
     body: JSON.stringify(body),
-  });
+  }, `PATCH ${table} ${id}`);
   const text = await res.text();
   if (!res.ok) throw new Error(`PATCH ${table} ${id} -> ${res.status} ${text.slice(0, 200)}`);
   let rows;
@@ -95,9 +124,12 @@ export async function selectAll(table, select, filter, opts) {
   for (let guard = 0; guard < 5000; guard++) {
     const q = `${SUPABASE_URL}/rest/v1/${table}?select=${select}${filter ? `&${filter}` : ""}` +
       `${last ? `&id=gt.${encodeURIComponent(last)}` : ""}&order=id.asc&limit=${pageSize}`;
-    const res = await fetch(q, { headers: headers(key) });
+    if (guard) await sleep(PAGE_PACE_MS);
+    const t0 = Date.now();
+    const res = await gatedFetch(q, { headers: headers(key) }, `GET ${table} page ${guard + 1}`);
     const text = await res.text();
     if (!res.ok) throw new Error(`GET ${table} -> ${res.status} ${text.slice(0, 200)}`);
+    if (Date.now() - t0 > SLOW_PAGE_MS) { console.error(`  GET ${table} page ${guard + 1} took ${Math.round((Date.now() - t0) / 1000)} s — database struggling; backing off ${BACKOFF_MS / 1000} s`); await sleep(BACKOFF_MS); }
     const rows = JSON.parse(text);
     if (!Array.isArray(rows)) throw new Error(`GET ${table} -> ${text.slice(0, 200)}`);
     if (!rows.length) break;
