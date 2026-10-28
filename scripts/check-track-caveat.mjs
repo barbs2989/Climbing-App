@@ -30,7 +30,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
-import { trackStubCaveat, trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage, recordedTrackPts, withRecordedTrackOnly, exportedTrackNotes, reachesTheSummit } from "../lib/track.js";
+import { trackStubCaveat, trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage, recordedTrackPts, withRecordedTrackOnly, exportedTrackNotes, reachesTheSummit, lineIsBuiltFromPins } from "../lib/track.js";
 import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -464,6 +464,17 @@ console.log("\nThe route line is a recorded track or nothing:");
   else ok("recordedTrackPts drops a pin-join line");
   if (recordedTrackPts(REAL, WPS) !== REAL) fail("recordedTrackPts dropped a GENUINE recorded track");
   else ok("recordedTrackPts keeps a genuine recorded track untouched");
+  // PINS ADDED OFF A PIN-JOIN LINE MUST NOT PROMOTE IT (2026-10-28). A stored trailhead-to-summit
+  // chord passed while the route had two pins; two camp pins added off it failed the CAPTION's pin
+  // half, and the chord was drawn as a recorded track on 21 routes. Whether a line is a recording is
+  // the vertex half alone (lineIsBuiltFromPins).
+  const CHORD2 = [SYNTH[0], SYNTH[3]];
+  const OFF_PINS = WPS.concat([{ name: "Lake camp", type: "Campsite", lat: 48.51, lng: -121.15 }, { name: "Col camp", type: "Campsite", lat: 48.54, lng: -121.16 }]);
+  if (recordedTrackPts(CHORD2, OFF_PINS) !== null) fail("recordedTrackPts kept a trailhead-to-summit chord once two pins were added off it");
+  else ok("pins added off a pin-join chord do not turn it into a recorded track");
+  if (!lineIsBuiltFromPins(CHORD2, OFF_PINS)) fail("lineIsBuiltFromPins missed a 2-point line joining two of the route's pins");
+  if (lineIsBuiltFromPins(STUB, WPS)) fail("a stub piled on ONE pin was called a pin-join line — it is a placeholder, captioned by trackStubCaveat");
+  else ok("a stub on a single pin is left to the placeholder caveat");
   const dropped = withRecordedTrackOnly({ gpxPts: SYNTH, elevPts: [1, 2, 3, 4], waypoints: WPS });
   if (dropped.gpxPts || dropped.elevPts) fail("withRecordedTrackOnly left the pin-join line or its elevation profile on the route");
   else ok("withRecordedTrackOnly drops the pin-join line and the profile sampled along it");
