@@ -30,7 +30,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
-import { trackStubCaveat, trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage, recordedTrackPts, withRecordedTrackOnly, exportedTrackNotes } from "../lib/track.js";
+import { trackStubCaveat, trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage, recordedTrackPts, withRecordedTrackOnly, exportedTrackNotes, reachesTheSummit } from "../lib/track.js";
 import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -253,10 +253,12 @@ if (trackCoverage(ELSEWHERE, WPS.slice(0, 1))) {
   else ok("coverage: with a single pin it falls back to the ordinary partial wording rather than telling a story");
 }
 
+// A different-approach track that does not reach the summit is not used at all (owner, 2026-10-28),
+// so no "different way up" caveat is drawn for it. A track that reaches the summit always carries
+// the summit pin, so this caveat is not reachable from a route that reaches the top.
 const shownD = covText(route({ gpxPts: ELSEWHERE, waypoints: WPS }));
-if (!/different ways up this peak/i.test(shownD)) fail("the different-approach caveat does not reach the screen");
-else if (/walk in is not in this line|short of the summit/i.test(shownD)) fail("the different-approach route ALSO renders a partial caveat — two sentences contradicting each other");
-else ok("the different-approach caveat renders, and the partial wording does not");
+if (/different ways up this peak|short of the summit/i.test(shownD)) fail("a track that stops short of the summit is still captioned as a different way up");
+else ok("a different-approach track that stops short is not drawn, and no caveat describes it");
 
 const covS = trackCoverage(STOPS_SHORT, WPS);
 if (!covS || !covS.missingSummit) fail("coverage: a track stopping short of the summit was not detected — this is the dangerous half");
@@ -271,8 +273,10 @@ else if (!/\d/.test((shownA.match(/The walk in is not in this line[^.]*\./i) || 
 else ok("the climb-only caveat renders, with the gap measured");
 
 const shownS = covText(route({ gpxPts: STOPS_SHORT, waypoints: WPS }));
-if (!/stops .* short of the summit/i.test(shownS)) fail("the stops-short-of-the-summit caveat does not reach the screen");
-else ok("the stops-short caveat renders");
+// A track that stops short of the summit is not used at all (owner, 2026-10-28), so there is no
+// stops-short caveat to show: the route shows no track, and says nothing about the one it dropped.
+if (/stops .* short of the summit/i.test(shownS)) fail("a track that stops short of the summit is still drawn with a caveat — the owner's rule is that it is not used");
+else ok("a track that stops short of the summit is not drawn, and no caveat describes it");
 
 if (/walk in is not in this line|short of the summit/i.test(covText(route({ gpxPts: REAL, waypoints: WPS }))))
   fail("a complete track renders a partial-coverage caveat — a false warning on good data");
@@ -344,7 +348,9 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
 // AND IT REACHES THE SCREEN. A predicate proves the sentence; only a render proves the route page
 // asks for it — the split check:outage-copy and check:topo-outage-copy both record.
 {
-  const html = text(render(route({ gpxPts: STUB, waypoints: WPS }), "planner"));
+  // A route WITH a summit pin drops a stub that never reaches it (owner, 2026-10-28), so the caveat
+  // is shown on a route with no summit pin, which the reach rule cannot judge.
+  const html = text(render(route({ gpxPts: STUB, waypoints: WPS.filter(w => !/summit/i.test(String(w.type || ""))) }), "planner"));
   if (!/placeholder, not this route's track/.test(html)) fail("the placeholder caveat does not render on the route page");
   else ok("the placeholder caveat renders on the route page");
   const real = text(render(route({ gpxPts: REAL, waypoints: WPS }), "planner"));
@@ -461,6 +467,17 @@ console.log("\nThe route line is a recorded track or nothing:");
   const dropped = withRecordedTrackOnly({ gpxPts: SYNTH, elevPts: [1, 2, 3, 4], waypoints: WPS });
   if (dropped.gpxPts || dropped.elevPts) fail("withRecordedTrackOnly left the pin-join line or its elevation profile on the route");
   else ok("withRecordedTrackOnly drops the pin-join line and the profile sampled along it");
+  // A track must REACH the summit pin (owner, 2026-10-28). The fixture stops 1.4 km short of the
+  // summit pin; the second one ends 40 m from it. Neither is a pin-join line.
+  const SUMMIT_PINS = [{ lat: 47.99, lng: -121.02, type: "Trailhead" }, { lat: 48.0, lng: -121.0, type: "Summit" }];
+  const SHORT = [[47.99, -121.02], [47.995, -121.015], [47.998, -121.012], [48.0, -121.02]];
+  const TOP = [[47.99, -121.02], [47.995, -121.015], [47.998, -121.012], [48.0, -121.0005]];
+  if (recordedTrackPts(SHORT, SUMMIT_PINS) !== null) fail("recordedTrackPts kept a track that stops 1.4 km short of the summit pin");
+  else ok("recordedTrackPts drops a track that stops short of the summit");
+  if (recordedTrackPts(TOP, SUMMIT_PINS) !== TOP) fail("recordedTrackPts dropped a track that reaches the summit pin");
+  else ok("recordedTrackPts keeps a track that reaches the summit");
+  if (!reachesTheSummit(SHORT, [])) fail("a route with NO summit pin was dropped on a guess; it cannot be checked, so its track is kept");
+  else ok("a route with no summit pin keeps its track");
   if (exportedTrackNotes({ gpxPts: SYNTH, waypoints: WPS }).length) fail("the GPX export still writes a note about a pin-join line it no longer exports");
   else ok("the GPX export writes no note about a line it does not carry");
   const gpxMap = fs.readFileSync(path.join(ROOT, "src/components/GPXMap.tsx"), "utf8");

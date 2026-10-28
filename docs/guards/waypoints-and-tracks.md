@@ -369,6 +369,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     pins, and do not repair a track by moving vertices onto pins** (`audit:stranded-track-vertices`
     now says so too). `check:gpx-caveats` section 1 asserts the export side: a pin-join route's file
     has `<wpt>` and no `<trk>`.
+  - **Summit reach (owner, 2026-10-28: "only use gpx tracks where the person reached the summit").**
+    `reachesTheSummit` / `SUMMIT_REACH_M` (300 m) make a track that stops short of a summit pin count
+    as no track in `recordedTrackPts`. Measured 2026-10-25 over 444 non-pin-join tracks with a summit
+    pin: 375 within 150 m, 19 in 150-300 m, 50 beyond 300 m (Mount Rainier Emmons Glacier, Luna Peak,
+    Berdeen Peak, Mount Barnes, Himmelhorn). Audit table: `~/dev/mp-data/_tracks/route-track-audit-2026-10-25.json`.
+    Section 6 of `check:track-caveat` asserts the drop, the keep, and that a route with no summit pin
+    keeps its track. The old on-screen caveats for "stops short of the summit" and "different way up"
+    now assert the track is NOT drawn, because the owner's rule replaces the caveat with no track.
   - **The provenance chip does not already cover this, and the measurement says so in the worst
     way.** `auto_generated` is true on **45%** of the synthetic tracks and on **78%** of the routes
     whose track is genuine — it points the **wrong way**, so a climber reading the chip cannot tell
