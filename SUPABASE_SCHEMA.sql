@@ -620,7 +620,7 @@ CREATE TABLE public.contributions (
   result_id text,
   CONSTRAINT contributions_pkey PRIMARY KEY (id),
   CONSTRAINT contributions_applied_value_len_ck CHECK (((applied_value IS NULL) OR (length((applied_value)::text) <= 20000))),
-  CONSTRAINT contributions_area_field_ck CHECK (((NOT ((area_id IS NOT NULL) AND (route_id IS NULL) AND (kind = 'field'::text))) OR (field = ANY (ARRAY['blurb'::text, 'approach'::text, 'approach_min'::text, 'parking_note'::text, 'rock'::text, 'aspect'::text, 'season_months'::text])))),
+  CONSTRAINT contributions_area_field_ck CHECK (((NOT ((area_id IS NOT NULL) AND (route_id IS NULL) AND (kind = 'field'::text))) OR (field = ANY (ARRAY['blurb'::text, 'approach'::text, 'approach_min'::text, 'parking_note'::text, 'parking_pin'::text, 'rock'::text, 'aspect'::text, 'season_months'::text])))),
   CONSTRAINT contributions_pair_shape_ck CHECK (((kind IS DISTINCT FROM 'pair'::text) OR ((route_id IS NOT NULL) AND (jsonb_typeof(value) = 'object'::text) AND (COALESCE((value ->> 'with'::text), ''::text) <> ''::text) AND ((value ->> 'with'::text) <> route_id) AND (length(COALESCE((value ->> 'note'::text), ''::text)) <= 280)))),
   CONSTRAINT contributions_reason_len_ck CHECK (((reason IS NULL) OR (char_length(reason) <= 1000))),
   CONSTRAINT contributions_status_chk CHECK ((status = ANY (ARRAY['pending'::text, 'approved'::text, 'rejected'::text]))),

@@ -10,10 +10,12 @@ export interface WaypointMapPickerProps {
   onPick?: (lat: number, lng: number) => void;
   /** The peak's own coordinate: the dashed orange ring, and the view when no waypoint has one yet. */
   peakCoord?: Coord | null;
+  /** The caption over the map; the waypoint editor's "Tap the map to place Waypoint N" when absent. */
+  tapHint?: string;
 }
 
 /** The waypoint editor's map: tap to place the active waypoint; existing pins, the peak ring and a Sat/Topo/Street toggle. Leaflet is CDN-loaded (`loadLeaflet`), so the map may fail and say so. */
-export default function WaypointMapPicker({waypoints,activeIdx,onPick,peakCoord}: WaypointMapPickerProps){
+export default function WaypointMapPicker({waypoints,activeIdx,onPick,peakCoord,tapHint}: WaypointMapPickerProps){
   const mapDiv=useRef<HTMLDivElement | null>(null),mapRef=useRef<LeafletAny>(null),markersRef=useRef<LeafletAny[]>([]),tileRef=useRef<LeafletAny>(null);
   const [ready,setReady]=useState(false),[mapFail,setMapFail]=useState(false);
   const [baseLayer,setBaseLayer]=useState("sat");
@@ -57,6 +59,6 @@ export default function WaypointMapPicker({waypoints,activeIdx,onPick,peakCoord}
     <div ref={mapDiv} style={{height:190,borderRadius:9,border:"1px solid "+C.border,overflow:"hidden",background:"#0a0f1a",cursor:"crosshair"}}/>
     {!ready?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",color:C.textMuted,fontSize:12,pointerEvents:"none",textAlign:"center",padding:16}}>{mapFail?"Map couldn't load — enter coordinates manually below.":"Loading map…"}</div>:null}
     {ready?<div style={{position:"absolute",top:7,left:7,zIndex:1000,display:"flex",gap:3}}>{[["sat","Sat"],["topo","Topo"],["street","St"]].map(([k,lbl])=><button key={k} onClick={()=>setBaseLayer(k)} aria-current={baseLayer===k?"true":undefined} style={{padding:"4px 7px",borderRadius:6,border:"1px solid "+(baseLayer===k?C.blue:C.border),background:baseLayer===k?C.blueBg:C.surface,color:baseLayer===k?"#fff":C.textSub,fontSize:10,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 6px rgba(0,0,0,0.4)"}}>{lbl}</button>)}</div>:null}
-    {ready?<div style={{position:"absolute",bottom:7,left:7,right:7,background:"rgba(13,17,23,0.85)",borderRadius:7,padding:"4px 8px",fontSize:11,color:C.text,textAlign:"center",pointerEvents:"none"}}>{"Tap the map to place Waypoint "+((activeIdx!=null?activeIdx:0)+1)}</div>:null}
+    {ready?<div style={{position:"absolute",bottom:7,left:7,right:7,background:"rgba(13,17,23,0.85)",borderRadius:7,padding:"4px 8px",fontSize:11,color:C.text,textAlign:"center",pointerEvents:"none"}}>{tapHint||("Tap the map to place Waypoint "+((activeIdx!=null?activeIdx:0)+1))}</div>:null}
   </div>;
 }
