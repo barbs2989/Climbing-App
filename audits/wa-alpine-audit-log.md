@@ -34952,3 +34952,48 @@ as `wa_argonaut_peak_east_ridge`).
 0 confirmed errors fixed, 1 flagged for human review (new), 7 clean.
 `last_processed_id` advances to `wa_argonaut_peak_east_ridge` — pass 8 in
 progress.
+
+## Batch 468 (2026-10-28, pass 8)
+
+Checked: `wa_argonaut_peak_northeast_couloir`, `wa_around_the_cave_we_go`,
+`wa_arrowhead_mountain_south_route`, `wa_austera_peak`, `wa_austera_peak_southwest_ridge`,
+`wa_bacon_peak_diobsud`, `wa_bald_eagle_peak_daniel_glacier`, `wa_bald_eagle_peak_south_spur`.
+All eight were last touched in pass 7 (batches 380-381, 2026-10-05/07); this pass re-verified
+rather than re-researching from scratch, and caught one proposed fix that never landed.
+
+**Fixed (1, re-proposed):** `wa_austera_peak` — the elev-7900 waypoint still reads "Klawatti col"
+live. The rename to "Klawatti-Austera col" was already proposed in `audits/sql/2026-10-07-batch-381.sql`
+(same reasoning: AAC Publications and Mountaineers.org both distinguish this feature from the true
+Klawatti Col at ~7,800 ft, and sibling route `wa_austera_peak_southwest_ridge` already names it
+correctly) but the live row shows it was never applied. Re-emitted the same guarded `UPDATE` in
+`audits/sql/2026-10-28-batch-468.sql` rather than assuming it had landed.
+
+**Flagged for human review (3, all previously known, still unresolved):**
+- `wa_austera_peak_southwest_ridge` — the ~75 ft Klawatti-Austera col rappel still disagrees with
+  some trip reports' 40-50 ft figure. Already flagged batch 381 as genuine year-to-year moat
+  variability; unchanged this pass.
+- `wa_bacon_peak_diobsud` — the stored gpx track still sits east of the summit, away from the
+  Watson Lakes approach the waypoints describe (already flagged batch 381, still unresolved).
+  Additionally noticed this pass: the route's `high_point_ft` (7,070) matches Wikipedia's NAVD88
+  figure exactly, but the parent area row's `elevation_ft` (7,067) falls between that and
+  Peakbagger/Mountaineers.org's 7,061 ft, with TopoQuest (7,007) and TopoZone (6,965) giving yet
+  other figures. A genuine multi-source spread (not a typo) — left for a human to pick a datum
+  rather than guessing.
+- `wa_bald_eagle_peak_daniel_glacier` — still looks like a possible misfile (a documented Mount
+  Daniel glacier route filed under non-glaciated Bald Eagle Peak's `area_id`). Already flagged
+  batch 381; the row carries no other data to correct, and nothing new surfaced this pass.
+
+**Noted, not flagged:** `wa_around_the_cave_we_go`'s FA ("Kyle Bodamer") could not be confirmed or
+disproven online — no source found even names this route, consistent with an obscure,
+guidebook/Mountain-Project-only-documented variation rather than a database error. Its
+`high_point_ft` (7,569) matches 4 of 6 sibling Concord Tower routes and tracks the peak's own
+long-documented, still-unresolved 7,560 ft (guidebook-era) vs. 7,611-7,612 ft (LiDAR-era) summit
+dispute — not a new or internal inconsistency, so not re-flagged.
+
+**Clean (4):** `wa_argonaut_peak_northeast_couloir` (grade and 8,457 ft elevation re-confirmed
+against the area row and batch 380's sourcing), `wa_arrowhead_mountain_south_route` (elevation,
+coordinates, and rail-crossing hazard unchanged and consistent with batch 381), `wa_austera_peak`
+(FA, elevation, and description all unchanged aside from the pending waypoint fix above),
+`wa_bald_eagle_peak_south_spur` (still a bare stub with nothing on file to contradict).
+
+Pass 8 continues next run after `wa_bald_eagle_peak_south_spur`.
