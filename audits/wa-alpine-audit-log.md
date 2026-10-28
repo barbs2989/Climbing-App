@@ -34997,3 +34997,39 @@ coordinates, and rail-crossing hazard unchanged and consistent with batch 381), 
 `wa_bald_eagle_peak_south_spur` (still a bare stub with nothing on file to contradict).
 
 Pass 8 continues next run after `wa_bald_eagle_peak_south_spur`.
+
+## Batch 469 (2026-10-28, pass 8)
+
+Checked: `wa_bald_eagle_peak_southwest_route`, `wa_baldy_standard`,
+`wa_baring_mountain_east_face`, `wa_baring_mountain_oatmeal_man`, `wa_baring_mountain_r1`,
+`wa_bear_mountain_chilliwack_north_buttress`, `wa_bears_breast_mountain_infinite_beauty`,
+`wa_bears_breast_mountain_southwest_face`.
+
+**Fixed (1):** `wa_baldy_standard` — `high_point_ft` stored 6,827 ft, but the parent area row
+(`wa_baldy`, 6,808 ft), the route's own summit waypoint (6,808 ft), and the route's own
+`data_quality.gaps` note (which already states "6,808 ft was used as the most consistently
+repeated figure") all agree on 6,808 ft. The `high_point_ft` column alone had never been
+updated to match the entry's own documented research decision. Web search confirms outside
+sources for this peak genuinely spread 6,797-6,827 ft (SummitPost, Wikipedia, TopoQuest, trip
+reports all differ), so 6,808 ft is not asserted here as the single true elevation — only as
+the figure this entry already committed to internally and that its other fields already carry.
+SQL in `audits/sql/2026-10-28-batch-469.sql`, validated with `check-sql-targets.mjs`.
+
+**Checked, not flagged:** `wa_baring_mountain_r1`'s FA credit (Don Gordon/Claunch and Ed Cooper,
+July 1960) is corroborated by AAJ sources, though some AAJ accounts also credit Beckey on the
+final push — ordinary ambiguity for a Beckey-era route, not a clear database error. The same
+route's "rising roughly 3,000 feet above Barclay Lake" phrase is plausible given the lake's
+elevation and the summit's, and there's no precise stored lake elevation to pin an exact
+discrepancy against, so it's left alone rather than guessed at.
+
+**Clean (7):** `wa_bald_eagle_peak_southwest_route` (bare stub, nothing on file to contradict);
+`wa_baring_mountain_east_face` (FA/approach/waypoints internally consistent, and the entry
+already caveats itself as thinly documented); `wa_baring_mountain_oatmeal_man` (length_m, pitch
+count and gain all cross-consistent); `wa_baring_mountain_r1` (FA corroborated by AAJ; pitch,
+grade and waypoints consistent); `wa_bear_mountain_chilliwack_north_buttress` (FA date, aid
+grade, and ~2,200 ft buttress length all corroborated against AAJ/Steph Abegg sources);
+`wa_bears_breast_mountain_infinite_beauty` (length/gain internally consistent);
+`wa_bears_breast_mountain_southwest_face` (rappel count, waypoints and FA internally
+consistent).
+
+Pass 8 continues next run after `wa_bears_breast_mountain_southwest_face`.

@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_bald_eagle_peak_south_spur",
+  "last_processed_id": "wa_bears_breast_mountain_southwest_face",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 468 of a re-queried total. Continuing id-ascending scope from wa_bald_eagle_peak_south_spur.",
+  "pass_note": "Pass 8 in progress, batch 469. Continuing id-ascending scope from wa_bears_breast_mountain_southwest_face.",
   "batches": [
     {
       "batch_number": 1,
@@ -9304,6 +9304,26 @@
       "clean": 4,
       "sql_file": "audits/sql/2026-10-28-batch-468.sql",
       "note": "Fixed 1 (re-proposed): wa_austera_peak -- elev-7900 waypoint still reads \"Klawatti col\" live; the rename to \"Klawatti-Austera col\" was already proposed in batch 381's SQL (2026-10-07) but has not been applied to the live DB yet, so re-emitted the same guarded UPDATE in this batch's file rather than assuming it landed. Flagged 3: wa_austera_peak_southwest_ridge's ~75 ft Klawatti-Austera col rappel height (vs 40-50 ft in some trip reports, already flagged batch 381 as year-to-year moat variability, still unresolved and unchanged); wa_bacon_peak_diobsud's stored gpx track mismatch with its own approach waypoints (already flagged batch 381, still unresolved) plus a newly-noticed small elevation spread -- this route's high_point_ft (7070) matches Wikipedia's NAVD88 figure exactly, but the parent area row's elevation_ft (7067) sits between that and Peakbagger/Mountaineers.org's 7,061 ft, with TopoQuest/TopoZone giving still other figures (6,965-7,007 ft) -- a genuine multi-source spread, not a typo, left for human adjudication rather than picking a winner; wa_bald_eagle_peak_daniel_glacier's likely misfile (named for a documented Mount Daniel glacier route, not anything sourced on non-glaciated Bald Eagle Peak -- already flagged batch 381, still unresolved, row carries no other data to correct). Noted, not flagged: wa_around_the_cave_we_go's FA (\"Kyle Bodamer\") could not be confirmed or disproven online -- no source found even mentions this route by name, consistent with it being an obscure, guidebook/MP-only-documented variation rather than a database error; its high_point_ft (7569) is consistent with 4 of 6 sibling Concord Tower routes and the already-well-documented, still-genuinely-unresolved 7,560 ft (guidebook-era) vs 7,611-7,612 ft (LiDAR-era) summit elevation dispute on this peak, so not re-flagged as new. Verified clean: wa_argonaut_peak_northeast_couloir (grade, elevation 8,457 ft matching the area row exactly, and hazard/approach description all re-confirmed consistent with batch 380's Mountainproject/SummitPost/Lemke Climbs/Wenatchee Outdoors corroboration), wa_arrowhead_mountain_south_route (elevation, coordinates, rail-crossing hazard all unchanged and consistent with batch 381's corroboration), wa_bald_eagle_peak_south_spur (still a bare stub with nothing on file to contradict)."
+    },
+    {
+      "batch_number": 469,
+      "date": "2026-10-28",
+      "pass": 8,
+      "route_ids": [
+        "wa_bald_eagle_peak_southwest_route",
+        "wa_baldy_standard",
+        "wa_baring_mountain_east_face",
+        "wa_baring_mountain_oatmeal_man",
+        "wa_baring_mountain_r1",
+        "wa_bear_mountain_chilliwack_north_buttress",
+        "wa_bears_breast_mountain_infinite_beauty",
+        "wa_bears_breast_mountain_southwest_face"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 0,
+      "clean": 7,
+      "sql_file": "audits/sql/2026-10-28-batch-469.sql",
+      "note": "Fixed 1: wa_baldy_standard high_point_ft 6827 -> 6808, matching the area row, the route's own summit waypoint, and the route's own data_quality.gaps note (which already said 6,808 ft was the figure used, even though high_point_ft itself had never been updated to match). Verified via web search that external sources for this peak genuinely spread 6,797-6,827 ft, so 6808 is not asserted as the one true elevation -- only as what this entry already committed to internally. Checked but did NOT flag: wa_baring_mountain_r1's FA credit (Don Gordon/Claunch and Ed Cooper, July 1960) is corroborated by AAJ sources, though some accounts also credit Beckey on the final push -- common ambiguity for Beckey-era routes, not a clear error. Also checked a vague 'rising roughly 3,000 feet above Barclay Lake' phrase on that same route -- plausible given the lake-to-summit relief, left alone for lack of a precise lake elevation to pin an exact discrepancy. Clean (7): wa_bald_eagle_peak_southwest_route (bare stub, nothing on file to contradict), wa_baring_mountain_east_face (FA/approach/waypoints internally consistent, appropriately self-caveated as thinly documented), wa_baring_mountain_oatmeal_man (length_m/pitch count/gain all cross-consistent), wa_baring_mountain_r1 (FA corroborated by AAJ, pitch/grade/waypoints consistent), wa_bear_mountain_chilliwack_north_buttress (FA date, aid grade, and 2,200 ft buttress length all corroborated against AAJ/Steph Abegg), wa_bears_breast_mountain_infinite_beauty (length/gain internally consistent), wa_bears_breast_mountain_southwest_face (rappel count, waypoints, FA internally consistent)."
     }
   ]
 }
