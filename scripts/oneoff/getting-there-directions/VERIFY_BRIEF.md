@@ -38,6 +38,17 @@ Road numbers and mileages only as a source gives them. Your own words; no quotin
 to", never name or link a website, guidebook or app in the text. No coordinates, no emoji. Do not
 describe the walk, the trail or the climb.
 
+## Evidence rule (added after batches 1–2, which were too shallow)
+
+- **Fetch the page.** A verdict of `accurate`, `fix` or `not-directions` with a drive written needs
+  at least one page you actually opened with WebFetch (a search snippet is not enough). List only
+  fetched pages in `sourceUrls`. If no page could be opened, the verdict is `unverifiable`.
+- Do every entry. If you run out of time, mark the rest `unverifiable` with problem "not checked".
+- A text that only names the trailhead ("From the Cascade Pass Trailhead") is `not-directions`; it is
+  not wrong, so write a drive only when a fetched page gives one.
+- `numbersUsed` must list EXACTLY the digit groups in `correctedDirection` ("SR-20" -> "20",
+  "22.5 miles" -> "22.5", "FR-2610" -> "2610"), nothing else.
+
 ## Output
 
 Write a JSON array to `verify-N-out.json` (same folder, same N), one object per input entry, same
