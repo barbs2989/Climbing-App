@@ -1432,7 +1432,6 @@ function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onComme
    directions, and one compact row: Google Maps and Apple Maps (the same destination) + the copyable coordinates. Elevation and
    approach figures live in TECH STATS and are not repeated here. */
 function TrailheadCard({route,onEdit}){
-  const [copied,setCopied]=useState(false);
   const al=route.approachLogistics||{};
   const wp=(route.waypoints||[]).find(w=>wpIs(w,"Trailhead"))||null;
   /* THE DESTINATION COMES FROM trailheadPoint(), THE SAME FUNCTION THE MAP AND BOTH "Directions
@@ -1486,12 +1485,9 @@ function TrailheadCard({route,onEdit}){
      good values, which is what makes hiding safe (scripts/trailhead-directions-reviewed.json). */
   const dir=trailheadDirectionProblem(al.trailheadDirection)?null:al.trailheadDirection;
   const dup=dir&&(route.approach||"").slice(0,80).indexOf(dir.slice(0,40))!==-1;
-  const copy=function(){
-    if(!hasCoord)return;
-    var _p;var _no=function(){setCopied("fail");setTimeout(()=>setCopied(false),2400);};try{_p=navigator.clipboard&&navigator.clipboard.writeText(lat.toFixed(5)+", "+lng.toFixed(5));}catch(e){}if(_p&&_p.then)_p.then(function(){setCopied(true);setTimeout(()=>setCopied(false),1600);}).catch(_no);else _no();
-  };
-  return <div style={{background:C.surface,borderRadius:10,padding:"11px 12px",border:"1px solid "+C.border,marginTop:12,marginBottom:12}}>
-    <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,marginBottom:8}}>
+  const thLink={flex:"1 1 0",display:"flex",alignItems:"center",justifyContent:"center",boxSizing:"border-box",minHeight:44,padding:"8px 10px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"};
+  return <div style={{background:C.surface,borderRadius:12,padding:"12px 14px",border:"1px solid "+C.border,marginTop:12,marginBottom:12}}>
+    <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,marginBottom:10}}>
       <div style={{display:"flex",gap:8,minWidth:0,alignItems:"flex-start"}}>
         <span aria-hidden="true" style={{color:WP_STYLE.Trailhead.color,fontSize:14,lineHeight:1.35,flexShrink:0}}>{WP_STYLE.Trailhead.glyph}</span>
         <div style={{minWidth:0}}>
@@ -1501,12 +1497,17 @@ function TrailheadCard({route,onEdit}){
       </div>
       {onEdit?<EditIconButton onClick={onEdit} title="Edit trailhead and approach"/>:null}
     </div>
-    {(dir&&!dup)?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55,marginBottom:10}}>{_dirIsOther?<span style={{color:C.textMuted}}>{"Directions on file describe a different start \u2014 "+al.trailhead+": "}</span>:null}{dir}</div>:null}
-    {hasCoord?<div style={{display:"flex",gap:6,alignItems:"stretch"}}>
-      <a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" style={{flex:"0 0 auto",display:"flex",alignItems:"center",justifyContent:"center",padding:"7px 14px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"}}>Google Maps</a>
-      <a href={"https://maps.apple.com/?dirflg=d&daddr="+lat+","+lng} target="_blank" rel="noreferrer" style={{flex:"0 0 auto",display:"flex",alignItems:"center",justifyContent:"center",padding:"7px 14px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"}}>Apple Maps</a>
-      <button onClick={copy} aria-label={copied==="fail"?"Couldn’t copy — your browser blocked clipboard access":copied?"Coordinates copied":"Copy coordinates "+lat.toFixed(5)+", "+lng.toFixed(5)} style={{flex:"1 1 auto",minWidth:0,display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,padding:"7px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.textSub,cursor:"pointer",textAlign:"left"}}><span style={{fontSize:12,fontWeight:600,fontVariantNumeric:"tabular-nums",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",minWidth:0}}>{lat.toFixed(5)+", "+lng.toFixed(5)}</span><span style={{flexShrink:0,fontSize:10.5,fontWeight:700,letterSpacing:0.4,color:copied==="fail"?C.amber:copied?C.green:C.textMuted}}>{copied==="fail"?"BLOCKED":copied?"COPIED":"COPY"}</span></button>
-    </div>:<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45}}>No trailhead coordinates on file yet.</div>}
+    {(dir&&!dup)?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55,marginBottom:12}}>{_dirIsOther?<span style={{color:C.textMuted}}>{"Directions on file describe a different start \u2014 "+al.trailhead+": "}</span>:null}{dir}</div>:null}
+    {/* THE COORDINATES GET THEIR OWN ROW, the two maps apps the row under it (owner note, 2026-10-25:
+        "Directions to trailhead box doesn't have proper spacing"). With Apple Maps added beside Google
+        Maps (#2831) the three controls shared one line, and at 390px the coordinate shrank to
+        "48.85..." -- the one value on the card you read out or type into a GPS. Laid out as
+        CragLocationCard already is: a full-width copy row, then two equal 44px buttons. */}
+    {hasCoord?<><CopyCoordButton lat={lat} lng={lng} what="trailhead"/>
+    <div style={{display:"flex",gap:8,marginTop:8}}>
+      <a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" aria-label="Driving directions to the trailhead in Google Maps" style={thLink}>Google Maps</a>
+      <a href={"https://maps.apple.com/?dirflg=d&daddr="+lat+","+lng} target="_blank" rel="noreferrer" aria-label="Driving directions to the trailhead in Apple Maps" style={thLink}>Apple Maps</a>
+    </div></>:<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45}}>No trailhead coordinates on file yet.</div>}
   </div>;
 }
 /* TRAILHEAD TO SUMMIT · SUMMIT TO TRAILHEAD (owner, 2026-10-21): the two legs a party plans the day by, under
@@ -1659,14 +1660,14 @@ function CragLocationCard({route,mtn,onEditParking}){
   if(!crag&&!park&&!note)return null;
   const row=function(label,glyphColor,title,body,action){return <div style={{marginBottom:10}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:8,marginBottom:5}}><div style={{display:"flex",alignItems:"center",gap:7,minWidth:0}}><span aria-hidden="true" style={{width:8,height:8,borderRadius:4,background:glyphColor,flexShrink:0}}/><div style={{...SUB_LABEL,margin:0}}>{label}</div>{title?<div style={{fontSize:12.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",minWidth:0}}>{title}</div>:null}</div>{action||null}</div>{body}</div>;};
   const ll=dest?dest.lat+","+dest.lng:"";
-  const linkSt={flex:"1 1 0",display:"flex",alignItems:"center",justifyContent:"center",padding:"8px 10px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"};
-  return <div style={{background:C.surface,borderRadius:10,padding:"11px 12px",border:"1px solid "+C.border,marginTop:10,marginBottom:12}}>
+  const linkSt={flex:"1 1 0",display:"flex",alignItems:"center",justifyContent:"center",boxSizing:"border-box",minHeight:44,padding:"8px 10px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"};
+  return <div style={{background:C.surface,borderRadius:12,padding:"12px 14px",border:"1px solid "+C.border,marginTop:10,marginBottom:12}}>
     {row("CRAG",C.orange,null,crag?<CopyCoordButton lat={crag.lat} lng={crag.lng} what="crag"/>:<div style={{fontSize:11.5,color:C.textMuted}}>No crag coordinates on file yet.</div>)}
     {row("PARKING",C.green,park&&park.name&&park.name!=="Trailhead"?park.name:null,park?<>{note&&parkIsCrag?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:6}}>{note}</div>:null}{dir?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:6}}>{dir}</div>:null}<CopyCoordButton lat={park.lat} lng={park.lng} what="parking"/>{note&&!parkIsCrag?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:8}}><span style={{fontWeight:700,color:C.text}}>{"Crag-wide parking — "}</span>{note}</div>:null}</>:note?<><div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{note}</div>{onEditParking?<button onClick={onEditParking} style={addPin}>Add the pin</button>:null}</>:<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8}}><div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45}}>No parking spot on file yet.</div>{onEditParking?<button onClick={onEditParking} style={addPin}>Add parking</button>:null}</div>,park&&onEditParking?<EditIconButton onClick={onEditParking} title="Edit the parking pin"/>:null)}
     {dest?<div>
       <div style={{...SUB_LABEL,marginBottom:5}}>{park?"DIRECTIONS TO PARKING":"DIRECTIONS"}</div>
       {park?null:<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginBottom:6}}>{note?"No parking pin on file yet, so these go to the crag itself — the note above says where climbers park.":"No parking spot on file, so these go to the crag itself — your maps app will stop at the nearest road, which may not be where climbers park."}</div>}
-      <div style={{display:"flex",gap:6}}>
+      <div style={{display:"flex",gap:8}}>
         <a href={"https://www.google.com/maps/dir/?api=1&travelmode=driving&destination="+ll} target="_blank" rel="noreferrer" aria-label={"Driving directions to the "+(park?"parking":"crag")+" in Google Maps"} style={linkSt}>Google Maps</a>
         <a href={"https://maps.apple.com/?dirflg=d&daddr="+ll} target="_blank" rel="noreferrer" aria-label={"Driving directions to the "+(park?"parking":"crag")+" in Apple Maps"} style={linkSt}>Apple Maps</a>
       </div>
