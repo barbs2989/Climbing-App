@@ -14,6 +14,9 @@
 //   - `primary` on a route that already marks a different way in, unless the entry also sets
 //     `movePrimary: true` AND lists at least two sources: moving the mark overturns an earlier
 //     research decision, so it takes its own evidence (the settle pass, audits/approach-why/settle/)
+//   - `clearPrimary: true` (remove the mark, leave the route unmarked) without two sources: used
+//     where the only marked way in is one the app must not recommend, e.g. it enters the US on foot
+//     away from a port of entry and no lawful way in is stored
 //   - a sentence over 240 characters (it is one line on a card, the detail lives in `notes`), one
 //     that names a source (no sources anywhere in the app), one in ALL CAPS, or one that repeats 8+
 //     words of a page in review.sources (our own words only — scripts/lib/source-overlap.mjs)
@@ -58,7 +61,9 @@ for (const [id, spec] of Object.entries(BATCH)) {
     else if (marked >= 0 && marked !== p && !(spec.movePrimary === true && (spec.review?.sources || []).length >= 2)) errs.push(`already marks ${JSON.stringify(vars[marked].name)} as most used; moving it needs movePrimary:true and two sources`);
     else prim = p;
   }
-  if (prim < 0) errs.push("no way in is marked most used and the batch names none — a reason needs a most used way in to be an alternative TO");
+  const clear = spec.clearPrimary === true;
+  if (clear) { if ((spec.review?.sources || []).length < 2) errs.push("clearPrimary needs two sources"); prim = -1; }
+  if (prim < 0 && !clear) errs.push("no way in is marked most used and the batch names none — a reason needs a most used way in to be an alternative TO");
   const why = spec.why || {};
   for (const [n, s] of Object.entries(why)) {
     const i = idxOf(n);
@@ -81,21 +86,21 @@ for (const [id, spec] of Object.entries(BATCH)) {
   const next = vars.map((v, i) => {
     if (!v) return v;
     const o = { ...v };
-    if (spec.primary != null) { if (i === prim) o.primary = true; else delete o.primary; }
+    if (spec.primary != null || clear) { if (i === prim) o.primary = true; else delete o.primary; }
     const n = Object.keys(why).find(k => String(k).trim() === String(v.name || "").trim());
     if (n) o.whyThisWay = String(why[n]).trim();
     if (i === prim) delete o.whyThisWay; // the most used way in is not an alternative to itself
     return o;
   });
   if (JSON.stringify(next) === JSON.stringify(vars)) { console.log(`same ${id} — already says this`); continue; }
-  console.log(`${id}  (${before.name})${spec.primary != null && marked !== prim ? `  most used := ${vars[prim].name}${marked >= 0 ? ` (was ${vars[marked].name})` : ""}` : ""}`);
+  console.log(`${id}  (${before.name})${clear ? `  most used CLEARED (was ${marked >= 0 ? vars[marked].name : "none"})` : ""}${spec.primary != null && marked !== prim ? `  most used := ${vars[prim].name}${marked >= 0 ? ` (was ${vars[marked].name})` : ""}` : ""}`);
   for (const [n, s] of Object.entries(why)) console.log(`   ${n}: ${String(s).trim()}`);
   if (DRY) continue;
   rollback[id] = vars;
   await patchRow("routes", id, { approach_variants: next });
   const after = await read(id);
   if (!after || JSON.stringify(after.approach_variants) !== JSON.stringify(next)) { console.error(`MISMATCH ${id} — the re-read does not hold what was written; stopping`); process.exitCode = 1; break; }
-  applied[id] = { primary: next[prim].name, why };
+  applied[id] = { primary: prim >= 0 ? next[prim].name : null, why };
   wrote++;
 }
 if (!DRY && wrote) {
