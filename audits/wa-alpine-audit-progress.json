@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_big_snagtooth_west_ridge",
+  "last_processed_id": "wa_bonanza_peak_mary_green_glacier",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 471. Continuing id-ascending scope from wa_big_snagtooth_west_ridge.",
+  "pass_note": "Pass 8 in progress, batch 472. Continuing id-ascending scope from wa_bonanza_peak_mary_green_glacier.",
   "batches": [
     {
       "batch_number": 1,
@@ -9364,6 +9364,26 @@
       "clean": 6,
       "sql_file": null,
       "note": "wa_big_four_mountain_tower_route: stored fa 'Ben Guydelkon and Ron Miller, July 25, 1972' -- party/date-of-month confirmed via AAC Publications Climbs and Expeditions note, but that note ran in the 1972 AAJ annual (which reports the PRIOR season), and a 2005 trip report independently calls it 'the Miller/Guydelkon 1971 route'; likely off by one year but not confirmed against the primary AAJ text, so flagged rather than fixed. wa_big_snagtooth_west_ridge: route's own high_point_ft (8374) disagrees with its parent area row's elevation_ft (8379); external sources are split four ways (8330 Wikipedia/WTA, 8374 PeakVisor, 8379 ListsOfJohn LiDAR, 8340 ListsOfJohn map) with no clear winner -- flagged for a human to pick a figure. Clean: wa_big_four_mountain_spindrift_couloir (AAC confirms FA Paull/Littauer Mar 2 1996 exactly, grade IV+ 5.9 WI5 and length_m 1219 = 4000ft all match), wa_big_kangaroo_kearney_thomas (5.11a matches Mountain Project), wa_big_kangaroo_walkabout (AAC piece titled 'Big Kangaroo, south face, Walkabout' confirms the Aug 2012 FA party incl. Mark Allen), wa_big_kangaroo_west_face (FA Beckey/Beckey/Varney June 21 1942 confirmed exactly on Wikipedia and Mountain Project; stored 5.6 vs Mountaineers' 5.5 is ordinary half-grade variance, not flagged). wa_big_kangaroo_going_down_under and wa_big_kangaroo_skinny_start are consistent with general accounts of the 2010-2012 new-route flurry on this face by the same climbers but have no route-specific source to confirm or contradict."
+    },
+    {
+      "batch_number": 472,
+      "date": "2026-10-28",
+      "pass": 8,
+      "route_ids": [
+        "wa_big_snow_mountain_east_buttress",
+        "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+        "wa_big_snow_mountain_north_slope_dingford_route",
+        "wa_big_snow_mountain_southwest_ridge",
+        "wa_black_peak_northeast_ridge",
+        "wa_blizzard_peak_standard",
+        "wa_bonanza_peak_cascadian_route",
+        "wa_bonanza_peak_mary_green_glacier"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 3,
+      "clean": 5,
+      "sql_file": null,
+      "note": "No fixes. Flagged: wa_big_snow_mountain_southwest_ridge is a real but undocumented stub (enrichment gap, not an error); wa_blizzard_peak_standard high_point_ft 7622 vs ~7601-7602 on two USGS-topo sources (ListsOfJohn unreachable this run, DNS blocked, so not resolved); wa_bonanza_peak_mary_green_glacier high_point_ft 9511 vs area row's elevation_ft 9516, same unresolved-elevation-spread shape as wa_big_snagtooth_west_ridge in batch 471 (sources split both ways, no winner) -- also noted but not fixed, a minor area-blurb spelling mismatch (\"Curtis James\" vs the route's own \"Curtis Ijames\") outside this batch's table scope. Clean (5): wa_big_snow_mountain_east_buttress (FA Williamson/Dial May 11 1971 confirmed on SummitPost, which also corroborates the lower-Hardscrabble-Lake siting that distinguishes it from the East Ridge route), wa_big_snow_mountain_east_ridge_hardscrabble_route (high_point_ft and Dingford Creek Trailhead/Alpine Lakes Wilderness permit claims corroborated), wa_big_snow_mountain_north_slope_dingford_route (confirmed a real, separately-named line, gain_ft/dist_km match SummitPost exactly), wa_black_peak_northeast_ridge (high_point_ft and FA Jackson/Kennedy 9/1/1973 confirmed on two independent sources), wa_bonanza_peak_cascadian_route (confirmed via an AAC Publications piece by the FA climber himself and a matching 8/26/2023 trip report -- genuine distinct route on Bonanza's Southwest Summit, not confused with the unrelated Dragontail \"Cascadian Couloir\"). wa_blue_s_buttress (alphabetically in this range) sits on wa_poster_peak, a crag, and stayed out of scope."
     }
   ]
 }

@@ -35110,3 +35110,53 @@ new routes on this face by the same climbers (Pond/VanBein/Elder), but neither i
 documented by name in any source found, so there was nothing specific to confirm or contradict.
 
 Pass 8 continues next run after `wa_big_snagtooth_west_ridge`.
+
+## Batch 472 (pass 8) — 2026-10-28
+
+Checked: `wa_big_snow_mountain_east_buttress`, `wa_big_snow_mountain_east_ridge_hardscrabble_route`,
+`wa_big_snow_mountain_north_slope_dingford_route`, `wa_big_snow_mountain_southwest_ridge`,
+`wa_black_peak_northeast_ridge`, `wa_blizzard_peak_standard`, `wa_bonanza_peak_cascadian_route`,
+`wa_bonanza_peak_mary_green_glacier`. (`wa_blue_s_buttress`, alphabetically between
+`wa_black_peak_northeast_ridge` and `wa_bonanza_peak_cascadian_route`, sits on `wa_poster_peak`,
+a crag — out of scope.)
+
+**Fixed:** none.
+
+**Flagged for human review (3):**
+- `wa_big_snow_mountain_southwest_ridge` — a real route (SummitPost lists it, reached via the
+  Hester Lake trail with off-trail route-finding), but the row is a bare stub with no grade, FA,
+  approach or hazards stored. Not a data error — nothing stored contradicts anything — just an
+  enrichment gap worth a human's attention if this peak gets revisited.
+- `wa_blizzard_peak_standard` — `high_point_ft` 7,622 ft vs. two independent USGS-topo-derived
+  sources (TopoQuest and TopoZone, both citing the USGS Castle Peak quad at the stored
+  coordinates) giving ~7,601-7,602 ft, about 20 ft lower. ListsOfJohn, which usually breaks these
+  ties with a LiDAR figure, was unreachable this run (DNS blocked). Flagging rather than
+  guessing between the stored figure and the topo figure.
+- `wa_bonanza_peak_mary_green_glacier` — same shape as the `wa_big_snagtooth_west_ridge` flag two
+  batches ago: the route's own `high_point_ft` (9,511) doesn't match its parent
+  `wa_bonanza_peak` area row's `elevation_ft` (9,516), and external sources split on both sides —
+  Wikipedia's main infobox uses 9,516, its own county-highpoint list and SummitPost use 9,511,
+  ListsOfJohn gives 9,507 (LiDAR) or 9,511 (map), PeakVisor gives 9,495. No winner; a human
+  should pick one figure for both tables. Separately, and not worth its own fix: the route's `fa`
+  spells the first climber "Curtis Ijames" (matching a Mazama Bulletin source's own wording), while
+  the area's blurb instead says "Curtis James" — the area blurb looks like the less precise copy,
+  but that's a different table/column than this batch covers.
+
+**Clean (5):** `wa_big_snow_mountain_east_buttress` (FA "Don Williamson and Jeff Dial, May 11,
+1971," grade III 5.7, confirmed on SummitPost, which also corroborates the route dropping into
+*lower* Hardscrabble Lake — the detail that distinguishes it from the East Ridge route's *upper*-lake
+line); `wa_big_snow_mountain_east_ridge_hardscrabble_route` (`high_point_ft` 6,680 ft and the
+Dingford Creek Trailhead/Alpine Lakes Wilderness permit and gate claims corroborated by USFS and
+secondary sources; `gain_ft`/`dist_km` internally consistent with the route's own stored approach
+variant); `wa_big_snow_mountain_north_slope_dingford_route` (confirmed as a real, separately-named
+line distinct from the East Ridge route — Dingford Creek trail to Myrtle Lake, then off-trail past
+Big Snow and Snowflake Lakes to the NW-flank gullies — and SummitPost's own gain/distance figures
+match `gain_ft` 5,280 and `dist_km` 9.7 one-way exactly); `wa_black_peak_northeast_ridge`
+(`high_point_ft` 8,970 ft and FA "Roger Jackson and Michael Kennedy, 9/1/1973" both confirmed
+exactly on SummitPost and independently in a CanyoneeringUSA trip report); `wa_bonanza_peak_cascadian_route`
+(confirmed via an AAC Publications article by FA climber Eric Wehrly himself, and a Cascade
+Climbers trip report dated exactly 8/26/2023 — party, date, grade V 5.10+, 16 pitches and the
+~2,800 ft/853 m length all match; also confirmed as a genuine, distinct line on Bonanza's
+Southwest Summit buttress, not a mix-up with the unrelated "Cascadian Couloir" on Dragontail Peak).
+
+Pass 8 continues next run after `wa_bonanza_peak_mary_green_glacier`.
