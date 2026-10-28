@@ -1391,7 +1391,12 @@ function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onComme
            entry in the editor, the tiles that carry a value, and climbers' comments on the leg —
            Mountain Project ties beta to each pitch the same way. */
         const hasMore=true;
-        const stageTiles=isPitch?[]:[["Terrain",r.grade,C.amber],["Length",r.lengthM!=null?uLen(r.lengthM):null,C.blue],["Anchor / belay",r.anchor,C.blue]].filter(t=>t[1]);
+        /* A LONG terrain is a sentence, so it is drawn as one: a small full-width line under the leg's name, not a
+           right-aligned chip that wraps beside the label, and not a third-width bold tile when the row opens
+           (owner note 2026-10-28, Mount Logan's "Hiking, steep descent through alpine meadows and forest" read
+           stacked in both). A short one ("Class 2", "Scree, Class 2") is still a chip. */
+        const longTerrain=!isPitch&&!!r.grade&&(String(r.grade).length>18||String(r.grade).trim().split(/\s+/).length>3);
+        const stageTiles=isPitch?[]:[["Terrain",longTerrain?null:r.grade,C.amber],["Length",r.lengthM!=null?uLen(r.lengthM):null,C.blue],["Anchor / belay",r.anchor,C.blue]].filter(t=>t[1]);
         const accent=r.crux?C.amber:(isPitch?C.blue:C.border);
         return <div key={r._i} data-kind={r._kind} data-label={isPitch?("P"+r._badge+(r._title?" "+r._title:"")):r._label} id={isPitch?("pitch-"+r._pIdx):undefined} style={{display:"flex",gap:10,marginBottom:last?0:9,scrollMarginTop:"80px"}}>
           <div style={{display:"flex",flexDirection:"column",alignItems:"center",flexShrink:0}}>
@@ -1401,7 +1406,7 @@ function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onComme
           <div style={{flex:1,minWidth:0,background:C.surface,border:"1px solid "+C.border,borderLeft:"3px solid "+accent,borderRadius:10}}>
             <div {...(hasMore?clickable(function(){setOpen(isOpen?null:r._i);}):{})} aria-expanded={hasMore?isOpen:undefined} aria-label={hasMore?(isPitch?pitchRowName(r):stageRowName(r)):undefined} style={{padding:"9px 11px",cursor:hasMore?"pointer":"default"}}>
               {(isPitch&&r._title)?<div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:3,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r._title}</div>:null}
-              <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,flexWrap:"wrap",marginBottom:r._note?5:0}}>
+              <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,flexWrap:"wrap",marginBottom:(r._note&&!longTerrain)?5:0}}>
                 <span style={{fontSize:13,fontWeight:700,color:isPitch?C.amber:C.text,minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{isPitch?(r.grade||("Pitch "+r._badge)):r._label}{r.crux?<span style={{...SUB_LABEL,color:C.red,marginLeft:6,whiteSpace:"nowrap"}}>CRUX</span>:null}</span>
                 {/* A stage's `grade` is TERRAIN PROSE, not a grade token: measured across the
                     live catalog it runs to 51 characters ("Class 2-3 rock scramble (easy snow
@@ -1412,12 +1417,13 @@ function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onComme
                     restore whiteSpace:nowrap here — that is what a pitch grade wants, and a
                     stage is the other half of pitch_detail. */}
                 <span style={{display:"flex",alignItems:"center",gap:7,flexShrink:1,minWidth:0,flexWrap:"wrap",justifyContent:"flex-end",marginLeft:"auto"}}>
-                  {(!isPitch&&r.grade)?<span style={{fontSize:11.5,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:6,padding:"2px 7px",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r.grade}</span>:null}
+                  {(!isPitch&&r.grade&&!longTerrain)?<span style={{fontSize:11.5,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:6,padding:"2px 7px",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r.grade}</span>:null}
                   {(isPitch?hasPitchLen:(hasStageLen&&r.lengthM!=null))?<span style={{fontSize:11.5,color:C.textMuted,whiteSpace:"nowrap"}}>{r.lengthM!=null?uLen(r.lengthM):"—"}</span>:null}
                   {(isPitch&&hasPitchLen&&r._cum)?<span style={{fontSize:11.5,color:C.textMuted,opacity:0.6,whiteSpace:"nowrap"}}>{uLen(r._cum)+" up"}</span>:null}
                   {hasMore?<Chevron open={isOpen} size={16} color={C.blue}/>:null}
                 </span>
               </div>
+              {longTerrain?<div data-terrain="" style={{fontSize:11.5,fontWeight:600,color:C.amber,lineHeight:1.45,margin:"3px 0 "+(r._note?"4px":"0"),wordBreak:"break-word",overflowWrap:"break-word"}}>{r.grade}</div>:null}
               {r._note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,wordBreak:"break-word",overflowWrap:"break-word"}}>{r._note}</div>:null}
             </div>
             {isOpen?<div style={{padding:"0 11px 11px"}}>{onEdit?<button onClick={function(e){e.stopPropagation();onEdit(r._i);}} style={{...editBtnStyle(C),marginTop:8}}><EditPencil C={C}/>{isPitch?"Edit this pitch":"Edit this section"}</button>:null}
@@ -3183,7 +3189,7 @@ function splitItineraryDays(text){
   return {days:out.length?out:[{n:1,text:text.trim()}],multi:out.length>1};
 }
 function splitItinerarySteps(text){return text.split(/;\s+/).map(s=>s.trim()).filter(Boolean);}
-function ItineraryView({route,activity,onSeeReports,onContribute,myItin,onSaveMyItin,crewsForRoute,onShareItinToCrew,notify}){
+function ItineraryView({route,activity,onSeeReports,onSeeSeason,seasonOnConditions,onContribute,myItin,onSaveMyItin,crewsForRoute,onShareItinToCrew,notify}){
   const it=route.itinerary;const _acts=activity||route.activity||[];const k=routeKw(Object.assign({},route,{activity:_acts}));const repN=_acts.length;
   const [showBuilder,setShowBuilder]=useState(false);const [draft,setDraft]=useState(null);const [pickCrew,setPickCrew]=useState(false);const [pickedKey,setPickedKey]=useState(null);
   const avail=getAvailableItineraries(route);
@@ -3206,8 +3212,10 @@ function ItineraryView({route,activity,onSeeReports,onContribute,myItin,onSaveMy
   return <div>
     <SL>Trip plan</SL>
     {(days.length||parsed.multi||proseIt)?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:9}}>A <b style={{color:C.textSub}}>recommended</b> itinerary based on how parties commonly climb this route — not the only way to do it. Faster/slower parties, different camps, or a different order are all normal.</div>:null}
-    <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:8}}>{chip(conf+" confidence",confC)}{repN?<span {...clickable(()=>onSeeReports&&onSeeReports())} style={{cursor:"pointer"}} title="Jump to trip reports">{chip(repN+(repN===1?" trip report":" trip reports")+" →",C.blue)}</span>:chip("0 trip reports",C.textMuted)}{(route.season&&!["trad","sport"].includes(catOf(route)))?chip("Typical season: "+seasonShort(route.season),C.teal):null}</div>{(route.season&&!["trad","sport"].includes(catOf(route))&&seasonShort(route.season)!==seasonTidy(route.season))?<div style={{fontSize:12,color:C.textSub,margin:"6px 0 0",lineHeight:1.5}}>{route.season}</div>:null}{(route.bestSeason&&!route.seasonalGuidance&&!["trad","sport"].includes(catOf(route)))?<div style={{fontSize:12,color:C.textSub,margin:"6px 0 0",lineHeight:1.5}}><b style={{color:C.teal}}>When to go: </b>{route.bestSeason}</div>:null}{(route.seasonalGuidance&&!["trad","sport"].includes(catOf(route)))?<div style={{fontSize:12,color:C.textMuted,margin:"6px 0 0",lineHeight:1.5,fontStyle:"italic"}}>Full month-by-month seasonal guidance is further down this tab.</div>:null}
-    {it&&it.cal?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,marginBottom:4}}>{it.cal}</div>:null}
+    <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:8}}>{chip(conf+" confidence",confC)}{repN?<span {...clickable(()=>onSeeReports&&onSeeReports())} style={{cursor:"pointer"}} title="Jump to trip reports">{chip(repN+(repN===1?" trip report":" trip reports")+" →",C.blue)}</span>:chip("0 trip reports",C.textMuted)}{(route.season&&!["trad","sport"].includes(catOf(route)))?chip("Typical season: "+seasonShort(route.season),C.teal):null}{/* The month-by-month guide, as a chip that GOES there (owner note 2026-10-28). It was an italic
+      "Full month-by-month seasonal guidance is further down this tab." under the chips, which was false on every route with a
+      Conditions tab: SEASONAL GUIDANCE moved there (#2701) and the sentence stayed. */(route.seasonalGuidance&&onSeeSeason&&!["trad","sport"].includes(catOf(route)))?<span {...clickable(onSeeSeason)} style={{cursor:"pointer"}} title="Open the month-by-month season guide">{chip(seasonOnConditions?"Month by month · Conditions tab →":"Month by month →",C.blue)}</span>:null}</div>{(route.season&&!["trad","sport"].includes(catOf(route))&&seasonShort(route.season)!==seasonTidy(route.season))?<div style={{fontSize:12,color:C.textSub,margin:"6px 0 0",lineHeight:1.5}}>{route.season}</div>:null}{(route.bestSeason&&!route.seasonalGuidance&&!["trad","sport"].includes(catOf(route)))?<div style={{fontSize:12,color:C.textSub,margin:"6px 0 0",lineHeight:1.5}}><b style={{color:C.teal}}>When to go: </b>{route.bestSeason}</div>:null}
+    {/* `cal` holds what is left of the plan's note once its road and closure sentences moved to the road block GETTING THERE reads (owner note 2026-10-28, scripts/oneoff/move-cal-road-notes.mjs). */}{it&&it.cal?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,marginBottom:4}}>{it.cal}</div>:null}
     {it&&it.totalNote?<div style={{fontSize:12,color:C.textMuted,marginBottom:12}}>{it.totalNote}</div>:<div style={{marginBottom:12}}/>}
     {/* Where the hours actually came from. Populated on 544 routes and read by nothing until
         now, which mattered more than most unread fields: the day-by-day times above look
@@ -4676,7 +4684,7 @@ const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+
     {(hasTable&&note)?<div style={{background:C.card,borderRadius:10,padding:"10px 12px",border:`1px solid ${C.border}`,marginTop:ROUTE_GAP}}><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.7}}>{note}</div></div>:null}
     {crepCard}
   </div>;
-})()}{!cragOnly?<div style={{marginBottom:ROUTE_GAP}}><Capped><ItineraryView route={route} activity={activity} onContribute={()=>{openFix("itinerary");}} onSeeReports={()=>{setTab("conditions");setTimeout(()=>{if(typeof document!=="undefined"){var el=document.getElementById("trip-reports-section");if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"start"});}},60);}} myItin={myItin} onSaveMyItin={onSaveMyItin} crewsForRoute={crewsForRoute} onShareItinToCrew={onShareItinToCrew} notify={notify}/></Capped></div>:null}{/* CLIMATE & SEASON lives on the Conditions (`forecast`) tab (owner note 2026-10-24), after the
+})()}{!cragOnly?<div style={{marginBottom:ROUTE_GAP}}><Capped><ItineraryView route={route} activity={activity} seasonOnConditions={!!(condTab&&condPanels)} onSeeSeason={()=>{if(condTab&&condPanels)setTab("forecast");setTimeout(()=>{if(typeof document!=="undefined"){var el=document.getElementById("seasonal-guidance");if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"start"});}},60);}} onContribute={()=>{openFix("itinerary");}} onSeeReports={()=>{setTab("conditions");setTimeout(()=>{if(typeof document!=="undefined"){var el=document.getElementById("trip-reports-section");if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"start"});}},60);}} myItin={myItin} onSaveMyItin={onSaveMyItin} crewsForRoute={crewsForRoute} onShareItinToCrew={onShareItinToCrew} notify={notify}/></Capped></div>:null}{/* CLIMATE & SEASON lives on the Conditions (`forecast`) tab (owner note 2026-10-24), after the
     forecast: it is the weather a climber should EXPECT, read beside the weather coming. It sat here
     on Plan (and on a crag's Overview) since #2049; it renders here now only for a discipline with
     no Conditions tab, so no route loses it. */}{condTab?null:climateEl}{!cragOnly?<Capped><TripProfileCard route={route} calc={calcInputs}/></Capped>:null}{!cragOnly?<Calculator route={route} activity={activity} calc={calcInputs} onCalc={setCalcInputs}/>:null}{/* CAMPING & BIVY, moved off the Safety tab (see the note on the safety line). It sits directly
