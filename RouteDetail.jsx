@@ -1798,7 +1798,11 @@ function BreakdownHandoff({route}){
    out, a trail closed since 2003), and hanging it under the MOST USED card would put the long
    account, and its miles and gain, under the wrong way in. Without the mark they follow the main
    card, which is where the paragraph belongs on 771 of 796 routes.
-   The other ways in keep their season window, which is the reason to pick one.
+   The other ways in keep their season window, and each may carry `whyThisWay`: one sentence on
+   WHEN a party takes it instead of the most used one ("early season, while the gully still holds
+   snow"; "when the ford is running high"). Guidebooks print exactly this beside an alternative
+   approach; before it, the reason sat mid-paragraph in `notes`, where nobody choosing between two
+   cards would find it. It renders only on a card that is NOT the most used one.
    `baseFinding` gets its own highlighted block rather than a sentence inside `notes`: it is the
    answer to "how do I know I'm at the start of the climbing", which is the question that actually
    gets parties lost, and burying it mid-paragraph is exactly how it got lost before. */
@@ -1852,11 +1856,16 @@ export function ApproachVariants({route,onEdit,onEditProse}){
     const gainTxt=v.gainFt!=null?uElev(v.gainFt)+" gain":(own?routeFacts.gain:null);
     const facts=[hrsTxt,distTxt,gainTxt].filter(Boolean);
     const crossing=approachHasCrossing(haz);
+    const why=v.primary!==true&&marked&&vars.length>1?String(v.whyThisWay||"").trim():"";
     const badge=v.primary===true&&marked&&vars.length>1;/* the primary card, not the first one: with a way in picked, the picked card leads and must not inherit MOST USED */
     return <div key={i} data-approach-card={main?"main":"other"} style={{background:C.card,border:"1px solid "+(badge?C.greenDim:C.border),borderRadius:12,padding:"11px 13px",marginBottom:ROUTE_GAP}}>
       {seasonFull?<div data-approach-window="1" style={{fontSize:12.5,fontWeight:700,color:C.onSolid,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:10,padding:"6px 10px",lineHeight:1.5,marginBottom:9,overflowWrap:"anywhere"}}>{seasonFull}</div>:null}
       {badge?<div style={{fontSize:9.5,fontWeight:800,color:C.green,textTransform:"uppercase",letterSpacing:0.5,marginBottom:2}}>Most used</div>:null}
       {vars.length?<div style={{fontSize:13.5,fontWeight:800,color:C.text,wordBreak:"break-word",marginBottom:6}}>{v.name||("Approach "+(i+1))}</div>:null}
+      {why?<div data-approach-why="1" style={{borderLeft:"3px solid "+C.blue,background:C.surface,borderRadius:"0 9px 9px 0",padding:"6px 10px",marginBottom:8}}>
+        <div style={{fontSize:9.5,fontWeight:800,color:C.blue,textTransform:"uppercase",letterSpacing:0.5,marginBottom:2}}>Why go this way</div>
+        <div style={{fontSize:12.5,color:C.text,lineHeight:1.55}}>{why}</div>
+      </div>:null}
       {facts.length||crossing?<div style={{display:"flex",flexWrap:"wrap",gap:10,alignItems:"center",marginBottom:7}}>{facts.map((f,fi)=><span key={fi} style={{fontSize:11.5,color:C.textSub}}>{f}</span>)}{crossing?<span style={{display:"inline-flex",alignItems:"center",gap:4,fontSize:11,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:20,padding:"1px 8px"}}><ActionIcon name="alert" size={11} color={C.amber}/>Stream crossing</span>:null}</div>:null}
       {v.notes?splitParagraphs(v.notes).map((p,pi)=><p key={pi} style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:pi===0?"0 0 7px":"7px 0 0"}}>{p}</p>):null}
       {/* The full account renders IN FULL, never behind a "read more": check:field-renders proves
@@ -1876,7 +1885,7 @@ export function ApproachVariants({route,onEdit,onEditProse}){
   const editFn=vars.length?onEdit:onEditProse;
   return <div style={{marginBottom:12}}>
     <SL action={editFn?<EditIconButton onClick={editFn} title={vars.length?"Edit the approaches":"Edit approach information"}/>:null} wp="Approach">APPROACH</SL>
-    {vars.length>1?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,margin:"-4px 0 9px"}}>{vars.length+" ways in."+(marked?" Most parties take the first; the others are for when its season window says otherwise.":" Read the season window on each before you pick.")}</div>:null}
+    {vars.length>1?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,margin:"-4px 0 9px"}}>{vars.length+" ways in."+(marked?" Most parties take the one marked Most used"+(vars.every(v=>v.primary===true||String(v.whyThisWay||"").trim())?"; each other one says when to take it instead.":"."):" Read the season window on each before you pick.")}</div>:null}
     {order.map((i,k)=>card(i<0?{}:vars[i],i<0?-1:i,k===0))}
   </div>;
 }
@@ -3732,7 +3741,7 @@ export function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCo
   const MAX_SEC=24;
   const blankSec=function(){return {label:"",cls:"",notes:""};};
   const MAX_VAR=8;
-  const blankVar=function(){return Object.assign({name:"",season:"",distMi:"",gainFt:"",hours:"",notes:"",hazards:""},tripDraft({}));};
+  const blankVar=function(){return Object.assign({name:"",season:"",distMi:"",gainFt:"",hours:"",notes:"",whyThisWay:"",hazards:""},tripDraft({}));};
   /* WHERE A WAY IN STARTS, AND WHAT THE WHOLE TRIP IS VIA IT (lib/approaches.js). Without this a
      climber could add a way in only as a prose card: the page could not switch to it, so its
      trailhead, track and numbers never reached the map, the planner or the trip plan. A way in is
@@ -3793,7 +3802,7 @@ export function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCo
            this the card said 4.8 km and the box under it said 3. */
         distMi:itinDraftVal(v,"distMi"),gainFt:itinDraftVal(v,"gainFt"),
         _orig:{distMi:v.distMi,gainFt:v.gainFt},
-        hours:v.hours!=null?String(v.hours):"",notes:v.notes||"",
+        hours:v.hours!=null?String(v.hours):"",notes:v.notes||"",whyThisWay:v.whyThisWay||"",
         /* Not edited here, but CARRIED: the form has no box for them, and dropping them on submit
            meant any edit to a way in silently deleted its base-finding note, its MOST USED mark and
            the mark saying which way in the route's paragraph describes. */
@@ -3941,6 +3950,7 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
       <input aria-label={"Approach "+(idx+1)+" season"} value={av.season} onChange={function(e){setAvar(idx,"season",e.target.value);}} placeholder="Window, e.g. Jul-Sep" style={Object.assign({},fld,{marginBottom:7})}/>
       <textarea aria-label={"Approach "+(idx+1)+" hazards, one per line"} value={av.hazards} onChange={function(e){setAvar(idx,"hazards",e.target.value);}} rows={2} placeholder="Hazards, one per line" style={Object.assign({},fld,{marginBottom:7,resize:"vertical"})}/>
       <textarea aria-label={"Approach "+(idx+1)+" notes"} value={av.notes} onChange={function(e){setAvar(idx,"notes",e.target.value);}} rows={3} placeholder="What the walk in is actually like" style={Object.assign({},fld,{marginBottom:0,resize:"vertical"})}/>
+      {avars.length>1&&!av.primary?<textarea aria-label={"Approach "+(idx+1)+": why a party would go this way"} value={av.whyThisWay||""} onChange={function(e){setAvar(idx,"whyThisWay",e.target.value);}} rows={2} placeholder="Why go this way instead of the most used one, e.g. early season while the gully holds snow" style={Object.assign({},fld,{marginTop:7,marginBottom:0,resize:"vertical"})}/>:null}
       <div style={{marginTop:9,paddingTop:9,borderTop:"1px solid "+C.border}}>
         <div style={{fontSize:11,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:6}}>Where this way in starts</div>
         <select aria-label={"Approach "+(idx+1)+": where it starts"} value={av.mode==="via"&&av.viaRouteId?"via:"+av.viaRouteId:av.mode==="own"?"own":""} onChange={function(e){var x=e.target.value;if(x.indexOf("via:")===0){setAvar(idx,"mode","via");setAvar(idx,"viaRouteId",x.slice(4));}else{setAvar(idx,"mode",x);}}} style={Object.assign({},fld,{marginBottom:7})}>
@@ -4047,6 +4057,7 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
     var g=itinStoreVal(x,"gainFt");if(g!=null&&isFinite(g))o.gainFt=g;
     var h=String(x.hours||"").trim();if(h)o.hours=h;
     var bf=String(x.baseFinding||"").trim();if(bf)o.baseFinding=bf;
+    var wy=String(x.whyThisWay||"").trim();if(wy)o.whyThisWay=wy;
     if(x.primary===true)o.primary=true;
     if(x.longForm===true)o.longForm=true;
     if(x.storedRow===true)o.storedRow=true;
@@ -4435,10 +4446,12 @@ function ApproachPicker({route,opts,sel,onSel,sibs,sibsErr,finishes,showFinishes
   return <>
     {opts.length?<div data-approach-picker="1" style={card}>
       <CardHead tone={C.blue}>HOW YOU GET THERE</CardHead>
-      {many?<div role="radiogroup" aria-label="Your way in" style={{display:"flex",flexDirection:"column",gap:6,marginTop:8,marginBottom:10}}>{opts.map(function(o){var on=o.key===sel;return <button key={o.key} role="radio" aria-checked={on} onClick={function(){onSel(o.key);}} style={{display:"flex",alignItems:"center",gap:10,width:"100%",minHeight:40,padding:"7px 11px",borderRadius:10,border:"1px solid "+(on?C.green:C.border),background:on?C.greenBg:C.surface,color:on?C.green:C.text,fontSize:13,fontWeight:on?800:600,cursor:"pointer",textAlign:"left"}}><span aria-hidden="true" style={{flexShrink:0,width:16,height:16,borderRadius:"50%",border:"2px solid "+(on?C.green:C.textMuted),display:"flex",alignItems:"center",justifyContent:"center",boxSizing:"border-box"}}>{on?<span style={{width:8,height:8,borderRadius:"50%",background:C.green}}/>:null}</span><span style={{flex:1,minWidth:0}}>{o.variant.name||("Approach "+(o.index+1))}</span>{on?<span aria-hidden="true" style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.green}}>Showing</span>:null}</button>;})}</div>:null}
+      {many?<div role="radiogroup" aria-label="Your way in" style={{display:"flex",flexDirection:"column",gap:6,marginTop:8,marginBottom:10}}>{opts.map(function(o){var on=o.key===sel;return <button key={o.key} role="radio" aria-checked={on} onClick={function(){onSel(o.key);}} style={{display:"flex",alignItems:"center",gap:10,width:"100%",minHeight:40,padding:"7px 11px",borderRadius:10,border:"1px solid "+(on?C.green:C.border),background:on?C.greenBg:C.surface,color:on?C.green:C.text,fontSize:13,fontWeight:on?800:600,cursor:"pointer",textAlign:"left"}}><span aria-hidden="true" style={{flexShrink:0,width:16,height:16,borderRadius:"50%",border:"2px solid "+(on?C.green:C.textMuted),display:"flex",alignItems:"center",justifyContent:"center",boxSizing:"border-box"}}>{on?<span style={{width:8,height:8,borderRadius:"50%",background:C.green}}/>:null}</span><span style={{flex:1,minWidth:0}}>{o.variant.name||("Approach "+(o.index+1))}{o.variant.primary===true?<span style={{display:"block",fontSize:10,fontWeight:800,color:C.green,textTransform:"uppercase",letterSpacing:0.5,marginTop:1}}>{" Most used"}</span>:null}</span>{on?<span aria-hidden="true" style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.green}}>Showing</span>:null}</button>;})}</div>:null}
       {viaMissing?<div style={{fontSize:12,color:C.amber,lineHeight:1.5}}>{sibsErr?"Couldn’t load the route this approach follows, so the trailhead, map and numbers below are still the ones stored with this climb — try again in a moment.":"Loading the route this approach follows…"}</div>
       :<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55}}>
         {th?<div><span style={{color:C.textMuted}}>Trailhead: </span>{th}</div>:null}
+        {/* WHY THIS WAY, at the choice itself: the picker is on every tab and the APPROACH cards are on Plan only. */}
+        {many&&selOpt&&selOpt.variant.primary!==true&&(Array.isArray(route.approachVariants)?route.approachVariants:EMPTY_ARR).some(function(v){return v&&v.primary===true;})&&String(selOpt.variant.whyThisWay||"").trim()?<div data-approach-why="picker" style={{marginTop:6}}><span style={{color:C.textMuted}}>Why go this way: </span>{String(selOpt.variant.whyThisWay).trim()}</div>:null}
         {via&&ap&&ap.viaGrade?<div><span style={{color:C.textMuted}}>The way in: </span>{via.name+" · "+ap.viaGrade}</div>:null}
         {via?<div style={{marginTop:8}}>{chip(dbRouteToCamel(via),"Read the "+via.name+" route",via.id)}</div>:null}
         {line?<div data-whole-line="1" style={{marginTop:10,borderTop:"1px solid "+C.border,paddingTop:10}}>
