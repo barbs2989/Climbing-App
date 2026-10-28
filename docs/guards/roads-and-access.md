@@ -834,3 +834,23 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the only failures of `check:trailhead-direction-shape --live`. `fix-robson-trailhead-direction.mjs`
     swaps it for the drive (Hwy 16, visitor centre, 2 km road) by compare-and-swap on the exact old
     string. The trail reopened in full in 2025 after the 2021 floods; the text says to check status.
+- **Getting there, the online ACCURACY check of the existing directions (owner note 2026-10-25).**
+  `getting-there-directions/list-existing.mjs` groups every live `trailheadDirection` by (trailhead,
+  text): 751 routes, **379 distinct drives**, so each is checked once (`verify-1..8.json`, brief in
+  `VERIFY_BRIEF.md`). Corrections go through `apply-direction-corrections.mjs`: compare-and-swap on
+  the exact old text, every rail of the batch-1 applier, merged, paced, reconciled.
+  - **One researcher is not enough; every correction gets a SECOND, independent check that must
+    FETCH the page** (`second-opinion-*.json`). Measured on batches 1–2: the first pass proposed a
+    "fix" to Cutthroat Lake (FR-400 is a LEFT turn) that was WRONG — the page it read was written for
+    EASTBOUND drivers; westbound from Winthrop it is a right, as the app already said. The second
+    check also cut unsourced mileages (Cathedral Rock's "12 gravel miles", Copper Glance's 7 -> 9.3).
+    Batch 1's researcher admitted fetching NO pages, which is why the brief now has an Evidence rule:
+    no verdict from a search snippet, `unverifiable` when no page opened.
+  - **Most "defects" are NAME-ONLY texts, not wrong ones** ("From the Cascade Pass Trailhead"). The
+    shape detector passes them (they end at the trailhead) and they are not false, but they tell a
+    driver nothing; they are replaced only where a fetched page gives the drive.
+  - Batches 1–2: 98 drives checked, 40 judged accurate (SHALLOW — batch 1 fetched nothing, so treat
+    those as unchecked), 17 corrections written over **71 routes**, 3 refused (Dosewallips washout
+    parking: low confidence, sources disagree on where the road ends).
+  - **numbersUsed compares as SETS.** A number used twice in a text ("SR 20 ... mile 20") was declared
+    twice and refused four checked corrections; duplicates are not untraceability.

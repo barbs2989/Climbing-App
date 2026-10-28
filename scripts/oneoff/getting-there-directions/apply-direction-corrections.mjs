@@ -26,15 +26,20 @@ if (APPLY) requireServiceKey();
 
 const existing = JSON.parse(fs.readFileSync(path.join(here, "existing.json"), "utf8"));
 const nums = (s) => [...new Set(String(s || "").match(/\d+(?:[.,]\d+)?/g) || [])].map(n => n.replace(",", ""));
-const same = (a, b) => JSON.stringify([...a].sort()) === JSON.stringify([...b].sort());
+const same = (a, b) => JSON.stringify([...new Set(a)].sort()) === JSON.stringify([...new Set(b)].sort());
 const SOURCE_RE = /\b(https?:|www\.|\.com|\.org|\.gov|mountainproject|openbeta|summitpost|peakbagger|wta|wtahikers)\b/i;
 
 const fixes = [];
 const refused = [];
 const tally = {};
 for (const f of files) {
-  for (const e of JSON.parse(fs.readFileSync(path.resolve(here, f), "utf8"))) {
-    tally[e.verdict] = (tally[e.verdict] || 0) + 1;
+  for (const raw of JSON.parse(fs.readFileSync(path.resolve(here, f), "utf8"))) {
+    // A second-opinion file (second-opinion-*-out.json) carries finalDirection; only its confirmed or
+    // corrected entries are corrections, written with the checker's text and confidence.
+    const e = "finalDirection" in raw
+      ? { ...raw, verdict: ["confirmed", "corrected"].includes(raw.verdict) ? "fix" : raw.verdict, correctedDirection: raw.finalDirection, problem: raw.note }
+      : raw;
+    tally[raw.verdict] = (tally[raw.verdict] || 0) + 1;
     if (!["fix", "not-directions"].includes(e.verdict)) continue;
     const src = existing[e.i];
     const label = (src?.trailhead || "?") + " [" + e.i + "]";
