@@ -24,9 +24,19 @@ as *Belay station* in the pitch's Pitch gear card (PR #2851) and is editable in 
 `batch-NN.json` = what was applied · `batch-NN.verify.json` = the verdicts behind it ·
 `rollback-*.json` = each route's table before the write.
 
-## Coverage and where to resume
-Target set: the 424 routes that store per-pitch detail (2,275 entries). A quick pass by another
-session (job 818a462c, exited) covered 210 routes and filled 104 pitches, but its output lists no
-sources, so it cannot pass the copy check and was not applied. Its 162 empty routes are being worked
-here, most-pitches first (`deep-A`…). Remaining after this session: see the report for the item.
-Travel legs (approach, snowfield, walk-off) are skipped unless a source names a stance there.
+## Coverage (measured on the live table, 2026-10-28)
+Target set: the 424 routes that store per-pitch detail (2,275 entries). **415 pitches on 160 routes
+now carry a belay station**, every one researched, independently verified and copy-checked.
+- Every route with 2+ numbered (roped) pitches had a deep pass. What is left blank is blank because
+  no readable source places the belay, sources disagree, or the source numbers pitches differently.
+- Routes whose table is travel legs (approach, snowfield, glacier, walk-off) were not researched: a
+  leg has no belay station unless a source names a stance there.
+- `batch-10.json` is a peer session's checked set (818a462c verify-out), re-checked by this script.
+  Its rows on routes already written here were skipped, so two sources never mix on one route.
+- Refused by the apply checks (not written): 8-word copies of a source (~8 sentences) and routes
+  whose source would not load with a plain request (~6 routes). Listed in the apply output per batch.
+
+## Resuming
+To add more: research a batch with `DEEP-BRIEF.md`, verify it with `VERIFY-BRIEF.md`, build
+`{id: {review:{sources}, belay:{label: text}}}` from the kept verdicts, dry-run, then `--apply`.
+Climbers can also add or fix a belay station themselves in the pitch editor.

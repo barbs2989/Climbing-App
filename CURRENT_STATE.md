@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **Belay stations researched** (owner note 2026-10-25, data): 415 pitches on 160 routes now say where the belay is (*Belay station* in each pitch's Pitch gear card), every sentence researched online, checked against its source by a second pass, and refused if it copies 8+ words of the source. Method, batches and rollbacks: `audits/belay-stations/`. See `docs/features/route-page.md`.
 - **One section-card padding on the route page** (owner note 2026-10-25, box audit): the crag route page's section cards (CLIMATE & SEASON, the hazard and access boxes) were 13px × 15px while the alpine ones were 12px × 14px; all now use 12px × 14px. Tappable rows and tiles keep their own padding. See `docs/features/route-page.md`.
 - **Belay station per pitch** (owner note 2026-10-25): each pitch has a belay-station box (*Belay station*, typed in the pitch editor) above its anchor. Existing pitches have none yet; the research to fill them is not done. See `docs/features/route-page.md`.
 - **Résumé: conditioning and hide-a-climb** (owner note, 2026-10-25, 0375): Conditioning is now a stored, editable 400-character note on your résumé (it was shown but nothing could write it); each logged climb in Experience can be hidden from the résumé in Edit (the logbook and Sends by grade keep it), with a Show-again list. Share and Export PDF include Conditioning.
