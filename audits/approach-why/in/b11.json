@@ -1,0 +1,318 @@
+[
+ {
+  "id": "wa_ne_ridge",
+  "name": "NE Ridge",
+  "area_id": "wa_cathedral_peak_pasayten",
+  "discipline": "alpine",
+  "ways": [
+   {
+    "name": "Upper Cathedral Lake camp, then the grassy south-east slope onto the ridge",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Roughly Jul-Sep",
+    "notes": "Reach Upper Cathedral Lake at about 7,380 ft by any of the long trails — Andrews Creek #504 is the shortest drive, the Cathedral Driveway #510A the shortest walk, Thirtymile via the Chewuch #510 the middle option. All are multi-day and all put you in the same basin.\n\nFrom the Boundary Trail below the peak, this route does not go into the Cathedral–Monk gully at all. Scramble up the grassy south-east slope directly from the main trail to gain the ridge.",
+    "why": null
+   },
+   {
+    "name": "Cathedral Driveway trail #510A from Loomis via Toats Coulee",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "From the Cathedral Driveway Trailhead on the Toats Coulee road out of Loomis, the trail drops to join the Chewuch trail and then climbs the valley to the Cathedral Lakes basin. The eastern way in, with less climbing than Andrews Creek.",
+    "why": null
+   },
+   {
+    "name": "Thirtymile Trailhead and the Chewuch River trail toward Remmel Lake",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "Follow the Chewuch River trail north from the Thirtymile Trailhead nearly to Remmel Lake, then climb to the Cathedral Lakes basin. A longer way round than Andrews Creek, used when combining the Remmel Lake country with the climb.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": null
+ },
+ {
+  "id": "wa_north_face_3",
+  "name": "North Face",
+  "area_id": "wa_lexington_tower",
+  "discipline": "alpine",
+  "ways": [
+   {
+    "name": "Blue Lake Trail and the Concord-Lexington gully",
+    "primary": true,
+    "viaRouteId": null,
+    "season": "Jul-Sep",
+    "notes": "Start at the Blue Lake Trailhead (~5,400 ft) on SR-20 just under a mile west of Washington Pass. Follow the maintained Blue Lake Trail until the terrain opens up — around a mile and a half to two miles — and pick up the well-established climbers' path branching left at a large cairn.\n\nFrom there, leave the line most parties take toward the Liberty Bell-Concord notch and work up into the next gully south, the one that separates Lexington Tower from Concord Tower. As you gain height in that gully a decent boot path shows up along its left side; use it. It brings you to the Concord-Lexington col.\n\nCarry water from the trailhead. Snowmelt trickles low in the basin dry up by mid-summer.",
+    "why": null
+   },
+   {
+    "name": "Early-season snow to the Concord-Lexington col",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Highway opening through late Jun",
+    "notes": "Same approach, but the upper gully to the col commonly holds firm snow into early summer, which buries the boot path along its left side and turns the last stretch into a snow climb. Carry an axe, and crampons if it is refrozen.\n\nSR-20 is gated across Washington Pass through the winter — typically closing in late November or early December and reopening between mid-April and early May — so there is no drive-up access until the highway reopens.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": "Blue Lake Trail + Concord-Lexington gully in summer; variant 1 is the same line with early-season snow."
+ },
+ {
+  "id": "wa_north_face_left_buttress",
+  "name": "Fight or Flight",
+  "area_id": "wa_castle_peak_pasayten",
+  "discipline": "alpine",
+  "ways": [
+   {
+    "name": "Ross Lake boat crossing, Lightning Creek and the abandoned Freezeout Creek trail to the north-face glacier",
+    "primary": true,
+    "viaRouteId": null,
+    "season": "Summer; the documented ascent was made in early August",
+    "notes": "The approach that stays inside the United States, and much the longer of the two.\n\nFrom the highway pullout above the dam, a spur trail drops to the lake shore; cross by water taxi or by a boat portaged down it, and land near the head of the lake. Follow the Lightning Creek trail, then the abandoned and increasingly brushy Freezeout Creek trail. The steep rock-and-alder diagonal immediately above the trail junction is the hardest navigation on the whole walk; look for intermittent orange flagging. The cabin at about 3,600 ft is a waypoint and an emergency shelter, and tread mostly disappears around 4,200 ft.\n\nCamping in the lower corridor needs a park backcountry permit; the upper part is wilderness with a free self-issue permit.\n\nFrom the upper basin, work round to the north side and onto the glacier at the foot of the wall, which is mellow enough for easy travel.",
+    "why": null
+   },
+   {
+    "name": "Provincial park approach from the north over Frosty Mountain to Crow Creek",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Summer, once the divide traverse is clear enough to travel",
+    "notes": "Read the legal point first. This approach walks in from the provincial park on the northern side and crosses the international boundary cross-country. That is not a lawful crossing. Away from a port of entry it needs prior arrangement with the border authority, the corridor is patrolled, and casual parties cannot simply walk over. It is recorded because it is the commonly published line and the shorter of the two, not as a recommendation.\n\nAs described, it follows the marked trail from Lightning Lake up the Frosty Mountain area to a pass near 8,000 ft, then leaves the trail and travels cross-country south over the boundary, descending through the next creek basin and over the divide into the drainage below the peak's north face, finishing at the toe of the glacier.\n\nThe lawful alternatives are the boat crossing and abandoned creek trail from the east, or the crest trail from the west, both of which are considerably longer.",
+    "why": null
+   },
+   {
+    "name": "Pacific Crest Trail north from Harts Pass",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "Follow the Pacific Crest Trail north from Harts Pass along the crest, about 27 miles to Castle Pass, then go cross-country onto the peak and around to the north side. It needs no boat and stays in the United States, but it is a very long high walk and the Harts Pass road usually opens only in July.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": "On the facts, most published ascents of Castle Peak come in from Manning Park over Frosty (the paragraph calls it 'the more common approach'). But variant 1's own notes flag it as an unlawful cross-country border crossing. The caller should decide whether an app may present that approach as primary; if not, use 0 (Ross Lake/Freezeout). The paragraph describes both."
+ },
+ {
+  "id": "wa_north_ridge_2",
+  "name": "North Ridge",
+  "area_id": "wa_whatcom_peak",
+  "discipline": "scrambling",
+  "ways": [
+   {
+    "name": "From the west: Hannegan Pass, the Chilliwack River Trail and Brush Creek to Whatcom Pass",
+    "primary": true,
+    "viaRouteId": null,
+    "season": "Jul-Sep",
+    "notes": "About 16-17 miles one-way. Start at the Hannegan Pass Trailhead at the end of Hannegan Pass Road, FS-32, at about 3,100 ft, and follow Trail #674 about 4 miles and 2,000 ft to Hannegan Pass, then descend the far side to Boundary Camp in the Chilliwack River valley.\n\nContinue down-valley on the Chilliwack River Trail, unmaintained and rough in sections with stretches obliterated by avalanche debris, past Copper Creek Camp and US Cabin Camp, cross the Chilliwack by the hand-operated cable car just beyond US Cabin (or ford it), then turn up the Brush Creek Trail at its junction near mile 12 and climb past Graybeal Camp and Whatcom Camp to Whatcom Pass. Typically split over two days with a valley-bottom camp.",
+    "why": null
+   },
+   {
+    "name": "From the east: Ross Lake water taxi to Little Beaver, then 16 miles up-valley to Whatcom Pass",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Jul-Sep",
+    "notes": "Comparable in mileage to the western line. Hire a water taxi from Ross Lake Resort, near Diablo off SR-20, to the Little Beaver Creek trailhead at about 1,600 ft on Ross Lake, then follow the Little Beaver Trail roughly 16 miles up-valley, passing Perry Creek Camp at 4.6 miles and Twin Rocks Camp around mile 8, then the Big Beaver Trail junction at 10.5 miles, before the final steep switchback climb through big-fir forest up to Whatcom Pass.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": "Whatcom Peak's North Ridge is reached from Whatcom Pass. Hannegan (west) is the more common way there because it needs no water taxi, though the mileages are comparable. The paragraph describes both."
+ },
+ {
+  "id": "wa_north_ridge_3",
+  "name": "North Ridge",
+  "area_id": "wa_cutthroat_peak",
+  "discipline": "alpine",
+  "ways": [
+   {
+    "name": "The SR-20 South Buttress pullout, then bear right into the basin beneath the North Ridge Notch",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Jul-Sep",
+    "notes": "The standard approach uses the same SR-20 pullout as the South Buttress, on the north side of the highway about 1.5 miles west of Washington Pass. Follow the South Buttress approach: creek crossing, brushy climbers' path into the meadow, up into the boulder field.\n\nEight pitches at 5.7. It sees far less traffic than the South Buttress, the peak's classic line.",
+    "why": null
+   },
+   {
+    "name": "Rainy Pass and Porcupine Creek into the basin northwest of the peak",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "From Rainy Pass, follow the PCT north for about twenty minutes and leave it before the Porcupine Creek bridge, climbing through timber into the basin northwest of the peak. Two or three short low-fifth pitches reach the North Ridge notch. Longer than the south-side basin, but on cleaner rock to the notch; parties camped near Rainy Pass or combining objectives use it.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": null
+ },
+ {
+  "id": "wa_north_ridge_west_side",
+  "name": "North Ridge - West Side",
+  "area_id": "wa_molar_tooth",
+  "discipline": "alpine",
+  "ways": [
+   {
+    "name": "Rainy Pass, the PCT north and the ridge above Porcupine Creek",
+    "primary": true,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "Follow the PCT north from Rainy Pass about a mile and a half, to just before the Porcupine Creek bridge, then climb the ridge northeast for about two miles to the base. The shorter way, with the cleaner gully to the base.",
+    "why": null
+   },
+   {
+    "name": "Cutthroat Lake and Cutthroat Pass",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "The eastern way: on trail most of the way, to Cutthroat Lake and up to Cutthroat Pass, then south along the crest for about a mile.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": null
+ },
+ {
+  "id": "wa_north_star_mountain_east_route",
+  "name": "East Route",
+  "area_id": "wa_north_star_mountain",
+  "discipline": "mountaineering",
+  "ways": [
+   {
+    "name": "Lyman Lakes basin to the south flank",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Late July to September; axe early",
+    "notes": "Access is the hard part and it has changed. The classic way in is by passenger ferry up Lake Chelan and a village shuttle to the Railroad Creek trail, then a long valley walk to the Lyman Lakes basin — but that corridor has been shut by flood and landslide damage with no near-term reopening, so plan instead on the longer route in from the Phelps Creek side over Spider Gap, which is eleven or twelve miles one way and involves glacier travel with an axe. Either way this is a camp-in-the-basin objective, not a day out. Maintained tread effectively ends at the lakes; everything above is picked by eye with no path and no cairns. It is commonly paired with the lower summit less than a mile to its south from the same camp.",
+    "why": null
+   },
+   {
+    "name": "Phelps Creek over Spider Gap",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "The Phelps Creek trail to Spider Meadow, over Spider Gap and down to Lyman Lakes, then the same basin to the south flank. No boat needed.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": null
+ },
+ {
+  "id": "wa_phantom_peak_south_route",
+  "name": "South Route",
+  "area_id": "wa_phantom_peak",
+  "discipline": "mountaineering",
+  "ways": [
+   {
+    "name": "Hannegan Pass, Whatcom Pass and Perfect Pass to a camp on the Crooked Thumb Glacier moraine",
+    "primary": true,
+    "viaRouteId": null,
+    "season": "Late Jun-Aug",
+    "notes": "The northern option, favoured by several recent parties. From the Hannegan Trailhead at 3,100 ft, the Hannegan Pass Trail leads over the pass to the Chilliwack River Trail, which includes a cable-car crossing, then up the Brush Creek Trail to Whatcom Pass. From there the route leaves trail and goes off-trail via the Whatcom Glacier and Perfect Pass to a base camp on the Crooked Thumb Glacier moraine. Expect 2-3 days of travel each way.",
+    "why": null
+   },
+   {
+    "name": "Big Beaver Trail to Luna Camp, then the Luna Creek bushwhack up Phantom's south side",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Late Jun-Aug",
+    "notes": "From Ross Lake Resort, take the water taxi across Ross Lake, roughly $35 and saving about 6 miles, to the Big Beaver trailhead. From there it is about 9 to 10 miles of maintained, mostly flat, forested trail up the Big Beaver Creek drainage through old-growth cedar and past beaver ponds to Luna Camp, an established backcountry site where a wilderness permit is required. From Luna Camp the trail effectively ends. Climbers leave the tread and push cross-country up the Luna Creek drainage toward Phantom's south side, gaining roughly 4,000 ft over a few miles through some of the worst brush in the Cascades. Modern parties report huckleberry, devil's club, vine maple and slide alder dense enough that half a mile an hour is a good pace, with heavy insect pressure.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": "Prose describes both approaches at length; variant 0 (Hannegan/Whatcom/Perfect Pass) is described as favoured by recent parties, and Northern Pickets trip reports (e.g. Brisbine's Crooked Thumb/Phantom via Whatcom Pass) use it, versus the notorious Luna Creek bushwhack."
+ },
+ {
+  "id": "wa_pinnacle_mountain_entiat_scramble",
+  "name": "Standard Scramble",
+  "area_id": "wa_pinnacle_mountain_entiat",
+  "discipline": "scrambling",
+  "ways": [
+   {
+    "name": "North Fork Entiat over Saska Pass and Snow Brushy Creek",
+    "primary": true,
+    "viaRouteId": null,
+    "season": "Mid-July to September; axe early",
+    "notes": "A long, largely off-trail approach through burned country for a summit that is barely a scramble. From the North Fork Entiat road end the tread runs up-valley past the Fern Lake spur to the Pyramid Mountain junction, which is the usual last camp with water; fill there, because the drainages between it and the pass are seasonal and often dry. Gain Saska Pass by climbing the drainage directly rather than following the sidehill traverse, which is slower and more tiring across scree. From the pass you lose about 1,500 ft into the Snow Brushy burn, where the tread is gone entirely and ash-covered slopes and fallen snags erase any line, then regain nineteen hundred feet or so out of the creek — that descent and reclimb are what make the day long, not the peak. A separate approach exists up the Entiat River trail and the sheep driveway from the south, also through heavy fire blowdown.",
+    "why": null
+   },
+   {
+    "name": "Entiat River trail and Snow Brushy Creek to Borealis Pass",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "From the Entiat River trailhead just past Cottonwood Campground, walk the Entiat River trail about six and a half miles to the Snow Brushy Creek trail, then follow it up-valley about five miles; the creek crossing there is a reliable place for water. A faint, sometimes hard-to-follow trail branches north and climbs to Borealis Pass in about a mile, below the easy south slopes of the peak. Much of the valley is burned, so expect downed timber.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": null
+ },
+ {
+  "id": "wa_primus_peak_south_ridge",
+  "name": "South Ridge / McAllister Glacier",
+  "area_id": "wa_primus_peak",
+  "discipline": "mountaineering",
+  "ways": [
+   {
+    "name": "The far end of the Eldorado ice cap: five glaciers and a notch at the McAllister-Klawatti col",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Mid-July through August, when the glacier bridges are most consolidated and whiteout risk is lowest",
+    "notes": "This is the way to Primus's south side, and it comes from the opposite side of the mountain to the Thunder Creek approach. From the Eldorado Creek trailhead on Cascade River Road near 2,100 ft, cross the North Fork Cascade River, climb the steep root-laced boot path through timber, cross the boulder field around 4,000 ft following cairns on the right side of the talus, and reach the meadows of Eldorado Basin. Continue to the toe of the Eldorado Glacier and rope up — it is broken and thinly bridged in a normal-to-low snow year.\n\nFrom the upper Eldorado Glacier, traverse north below Eldorado's east ridge and continue on the Inspiration Glacier toward Klawatti Col near 7,800 ft. Parties describe crossing the Inspiration's crevasse fields with zero visibility, so plan for it.\n\nSummit day from a Klawatti Col camp: downclimb or make a short rappel of about 50 ft through the notch at the McAllister-Klawatti col onto the Klawatti Glacier, rope up, and traverse below the south side of Austera's east ridge, rounding its end near 6,800 ft onto the North Klawatti Glacier — probing, because this stretch has caught parties by surprise even in good visibility — to the foot of Primus's south side. Then unrope and walk.\n\nThe route crosses the Eldorado, Inspiration, McAllister, Klawatti and North Klawatti glaciers in sequence; Austera Towers is passed and bypassed on a short scree ramp along the glacier's eastern edge.",
+    "why": null
+   },
+   {
+    "name": "Thunder Creek and the Borealis Glacier: the east ridge from Lucky Pass",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "The other way onto Primus comes from the north, and it finishes on a different line: the east ridge, not this route's south side. From Colonial Creek Campground on the North Cascades Highway, walk the Thunder Creek Trail about six miles to McAllister Camp. The bridge over Thunder Creek there has washed out, so expect to ford cold, fast water or hunt for a log crossing.\n\nAcross the creek, a faint, steep boot path climbs the long, brushy lower north ridge of Tricouni Peak to the toe of the Borealis Glacier near 6,000 ft, where there is good camping. From camp, climb the glacier along its eastern edge, keeping clear of the icefall in its middle, to Lucky Pass, the col between Primus and Tricouni near 7,200 ft, and follow the east ridge to the summit on class 3 ground.\n\nThe brush on the ridge above Thunder Creek is slow going in either direction, and worse carrying skis or a long pack.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": null
+ },
+ {
+  "id": "wa_prusik_peak_der_sportsman",
+  "name": "Der Sportsman",
+  "area_id": "wa_prusik_peak",
+  "discipline": "alpine",
+  "ways": [
+   {
+    "name": "Aasgard Pass and the Core, fifty feet left of the standard south-face line",
+    "primary": true,
+    "viaRouteId": null,
+    "season": "Roughly Jul-Sep; the route is a hard rock climb and wants dry, warm granite",
+    "notes": "The Core Enchantments approach: Stuart Lake trailhead, Stuart Lake Trail 2.5 miles to the Colchuck Lake Trail junction, across Mountaineer Creek and up the switchbacks to Colchuck Lake at 5,570 ft. From the boulder field at the lake's south end, Aasgard Pass — 1.25 miles gaining about 2,000 ft of steep loose scree and dirt, the physical crux of the approach, with a hidden creek and moat under lingering snow into early July.\n\nFrom the pass at 7,841 ft, continue cross-country through the upper Core past Isolation and Tranquil Lake toward Prusik Pass and Gnome Tarn. Parties commonly bivy at the tarn, about twenty minutes from the base. There is no maintained trail for the last stretch.\n\nThe Snow Lakes trail is the longer alternative when Aasgard or the trailhead is closed: past Nada and Snow Lakes to Lake Viviane, then up and right toward Temple Lake and up climbers' paths through boulders to the base of the south face.",
+    "why": null
+   },
+   {
+    "name": "Snow Lakes and the lower Enchantments",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "The longer, more gradual way in from Icicle Creek Road: the Snow Lakes trail climbs past Nada and Snow lakes to Lake Vivianne, about ten miles with well over 5,000 ft of gain, looking straight at Prusik's south face. From Vivianne continue past the upper lakes to the base of the south face. It avoids the loose grind of Aasgard Pass at the cost of roughly two more miles and a thousand more feet.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": null
+ },
+ {
+  "id": "wa_prusik_peak_sail_away",
+  "name": "Sail Away",
+  "area_id": "wa_prusik_peak",
+  "discipline": "alpine",
+  "ways": [
+   {
+    "name": "Colchuck Lake and Aasgard Pass",
+    "primary": true,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "The usual way in. From the Stuart Lake trailhead walk the Colchuck Lake trail to Colchuck Lake, then climb the loose boulders and scree of Aasgard Pass into the Core Enchantments. Walk down through the basin past Perfection Lake toward Prusik Pass and scramble up to the base of the south face; Aasgard is steep and can hold snow into early summer.",
+    "why": null
+   },
+   {
+    "name": "Snow Lakes and the lower Enchantments",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "The longer, more gradual way in from Icicle Creek Road: the Snow Lakes trail climbs past Nada and Snow lakes to Lake Vivianne, about ten miles with well over 5,000 ft of gain, looking straight at Prusik's south face. From Vivianne continue past the upper lakes to the base of the south face. It avoids the loose grind of Aasgard Pass at the cost of roughly two more miles and a thousand more feet.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": null
+ }
+]

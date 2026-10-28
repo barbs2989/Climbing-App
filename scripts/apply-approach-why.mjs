@@ -3,7 +3,9 @@
 // "Declare which approach is most common per route and explain why others would use the other
 // approach."
 //
-//   node scripts/apply-approach-why.mjs batch.json [--dry]
+//   node scripts/apply-approach-why.mjs batch.json [more.json ...] [--dry]
+// Several files run IN ORDER, entry by entry, so a later file (the settle pass) acts on what an
+// earlier one (a research batch) wrote: each entry re-reads the live row first.
 //
 // A batch is { "<route id>": { primary?: "<way-in name>", why: { "<way-in name>": "<sentence>" },
 // review: { sources: [url...], notes } } }. Ways in are matched by their EXACT stored name, never by
@@ -11,8 +13,12 @@
 //
 // What it refuses, per route (the route is skipped, the rest of the batch goes on):
 //   - a name that matches no way in, or a `why` on the way in that is (or becomes) the most used one
-//   - `primary` on a route that already marks a different way in: moving the mark is a research
-//     decision the earlier pass already took, so it is not overwritten by a batch about reasons
+//   - `primary` on a route that already marks a different way in, unless the entry also sets
+//     `movePrimary: true` AND lists at least two sources: moving the mark overturns an earlier
+//     research decision, so it takes its own evidence (the settle pass, audits/approach-why/settle/)
+//   - `clearPrimary: true` (remove the mark, leave the route unmarked) without two sources: used
+//     where the only marked way in is one the app must not recommend, e.g. it enters the US on foot
+//     away from a port of entry and no lawful way in is stored
 //   - a sentence over 240 characters (it is one line on a card, the detail lives in `notes`), one
 //     that names a source (no sources anywhere in the app), one in ALL CAPS, or one that repeats 8+
 //     words of a page in review.sources (our own words only — scripts/lib/source-overlap.mjs)
@@ -24,23 +30,25 @@ import { checkEntry } from "./lib/source-overlap.mjs";
 import { shoutedStrings } from "./lib/shouted-prose.mjs";
 
 const DRY = process.argv.includes("--dry");
-const file = process.argv.slice(2).find(a => !a.startsWith("--"));
-if (!file) { console.error("usage: node scripts/apply-approach-why.mjs batch.json [--dry]"); process.exit(2); }
-const BATCH = JSON.parse(readFileSync(file, "utf8"));
+const files = process.argv.slice(2).filter(a => !a.startsWith("--"));
+if (!files.length) { console.error("usage: node scripts/apply-approach-why.mjs batch.json [more.json ...] [--dry]"); process.exit(2); }
+const ENTRIES = files.flatMap(f => Object.entries(JSON.parse(readFileSync(f, "utf8"))));
 const key = requireServiceKey();
 const SOURCE_RE = /\b(mountain ?project|summit ?post|cascade ?climbers|nwhikers|peakbagger|beckey(?! route|-tate)|nelson|guide ?book|trip report|according to|reported by|the mountaineers|wta|washington trails)\b/i;
 const PER_SOURCE_RE = /\b[Pp]er (?:the )?[A-Z]/;
 const MAX_LEN = 240;
 
-const read = async id => {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=id,name,approach_variants&id=eq.${encodeURIComponent(id)}`, { headers: headers(key), signal: AbortSignal.timeout(20000) });
+// One back-off, then stop: the owner's throttle rule forbids retrying fast into a struggling database.
+const read = async (id, retried) => {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=id,name,approach_variants&id=eq.${encodeURIComponent(id)}`, { headers: headers(key), signal: AbortSignal.timeout(20000) }).catch(e => ({ ok: false, status: e.name, text: async () => e.message }));
+  if (!res.ok && !retried && (res.status === "TimeoutError" || res.status >= 500)) { console.error(`read ${id} -> ${res.status}; backing off 60 s before one retry`); await new Promise(r => setTimeout(r, 60000)); return read(id, true); }
   if (!res.ok) throw new Error(`read ${id} -> ${res.status} ${(await res.text()).slice(0, 200)} — stopping`);
   return (await res.json())[0] || null;
 };
 
 const rollback = {}, applied = {};
 let wrote = 0, skipped = 0;
-for (const [id, spec] of Object.entries(BATCH)) {
+for (const [id, spec] of ENTRIES) {
   const errs = [];
   const before = await read(id);
   if (!before) { console.error(`skip ${id} — no such route`); skipped++; continue; }
@@ -52,10 +60,12 @@ for (const [id, spec] of Object.entries(BATCH)) {
   if (spec.primary != null) {
     const p = idxOf(spec.primary);
     if (p < 0) errs.push(`primary ${JSON.stringify(spec.primary)} matches no way in (${vars.map(v => v && v.name).join(" | ")})`);
-    else if (marked >= 0 && marked !== p) errs.push(`already marks ${JSON.stringify(vars[marked].name)} as most used; this batch does not move the mark`);
+    else if (marked >= 0 && marked !== p && !(spec.movePrimary === true && (spec.review?.sources || []).length >= 2)) errs.push(`already marks ${JSON.stringify(vars[marked].name)} as most used; moving it needs movePrimary:true and two sources`);
     else prim = p;
   }
-  if (prim < 0) errs.push("no way in is marked most used and the batch names none — a reason needs a most used way in to be an alternative TO");
+  const clear = spec.clearPrimary === true;
+  if (clear) { if ((spec.review?.sources || []).length < 2) errs.push("clearPrimary needs two sources"); prim = -1; }
+  if (prim < 0 && !clear) errs.push("no way in is marked most used and the batch names none — a reason needs a most used way in to be an alternative TO");
   const why = spec.why || {};
   for (const [n, s] of Object.entries(why)) {
     const i = idxOf(n);
@@ -78,20 +88,21 @@ for (const [id, spec] of Object.entries(BATCH)) {
   const next = vars.map((v, i) => {
     if (!v) return v;
     const o = { ...v };
-    if (i === prim && spec.primary != null) o.primary = true;
+    if (spec.primary != null || clear) { if (i === prim) o.primary = true; else delete o.primary; }
     const n = Object.keys(why).find(k => String(k).trim() === String(v.name || "").trim());
     if (n) o.whyThisWay = String(why[n]).trim();
+    if (i === prim) delete o.whyThisWay; // the most used way in is not an alternative to itself
     return o;
   });
   if (JSON.stringify(next) === JSON.stringify(vars)) { console.log(`same ${id} — already says this`); continue; }
-  console.log(`${id}  (${before.name})${spec.primary != null && marked < 0 ? `  most used := ${vars[prim].name}` : ""}`);
+  console.log(`${id}  (${before.name})${clear ? `  most used CLEARED (was ${marked >= 0 ? vars[marked].name : "none"})` : ""}${spec.primary != null && marked !== prim ? `  most used := ${vars[prim].name}${marked >= 0 ? ` (was ${vars[marked].name})` : ""}` : ""}`);
   for (const [n, s] of Object.entries(why)) console.log(`   ${n}: ${String(s).trim()}`);
   if (DRY) continue;
-  rollback[id] = vars;
+  if (!(id in rollback)) rollback[id] = vars; // the state before THIS run, not before its second file
   await patchRow("routes", id, { approach_variants: next });
   const after = await read(id);
   if (!after || JSON.stringify(after.approach_variants) !== JSON.stringify(next)) { console.error(`MISMATCH ${id} — the re-read does not hold what was written; stopping`); process.exitCode = 1; break; }
-  applied[id] = { primary: next[prim].name, why };
+  applied[id + (id in applied ? "#" + Object.keys(applied).length : "")] = { primary: prim >= 0 ? next[prim].name : null, why };
   wrote++;
 }
 if (!DRY && wrote) {
