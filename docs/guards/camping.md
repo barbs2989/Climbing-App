@@ -948,3 +948,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     runs stopped themselves on 112 s and 151 s writes with a dozen sessions on the database.
   - **Compare jsonb with keys SORTED.** Postgres stores object keys in its own order, so the first
     reconcile reported all 93 written routes as "changed by someone else" — every one had landed.
+    And a route with NO waypoints stores `null`, not `[]`: twelve such routes were skipped three
+    passes running until the guard read `null` as empty (#2874).
+  - **Agency spellings, after the exact identity fails** (`variantKey`): "Mt" is "Mount", a possessive
+    "s" goes, a plural last word is made singular (never a "-ss" word) — "Lewis Meadows Camp" is NPS
+    "Lewis Meadow", "Andrews Pass" is GNIS "Andrew Pass". Official points and GNIS only.
+  - **A zone-worded name gets the agency's camp point or nothing.** `unresolvable()`'s ZONE words
+    ("meadows", "camps", "sites") flag "Glacier Meadows" and "Honeymoon Meadows", which ARE NPS camps,
+    so an exact (or variant) OFFICIAL match places them. Nothing else may: on the first variant run 15
+    of 22 donor matches were zone names ("Perfect Pass cross-country zone"), and copying one route's
+    spot in a zone to every route invents a precision no record holds.
+  - **Never solve from a stale census.** A timed-out audit left the previous JSON in place and the
+    next run began re-pinning camps the last batch had pinned. `apply.sh` (in the run dir) stops on a
+    failed audit, the solver refuses a census older than the newest rollback, never pins a camp a live
+    pin already carries under its own name, and the audit reports PINNED TWICE (0 after every batch).
+  - **What stays unpinned, and why, is a file, not a count**: `remaining-camps.csv` in the run dir.
+    Of ~500 left, most are relative ("bench below the west face") with no published point; research
+    is near-exhausted (of 197 leftover names only 56 named a findable feature, all searched, 14 found).
