@@ -266,7 +266,7 @@ const CHAIN = [
    "App no longer hands the flag to RouteDetail"],
   ["RouteDetail.jsx", "comments,commentsUnavailable,commentApi={},",
    "RouteDetail no longer accepts the flag"],
-  ["RouteDetail.jsx", "commentsUnavailable={commentsUnavailable} onCommentAdd={commentApi.onAdd}",
+  ["RouteDetail.jsx", "commentsUnavailable={commentsUnavailable} onCommentAdd={commentApi.canPost===false?null:commentApi.onAdd}",
    "RouteDetail no longer hands the flag to RouteBreakdown"],
   ["RouteDetail.jsx", "function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd,dbPhotos,onAddPitchPhoto}){",
    "RouteBreakdown no longer accepts the flag"],
