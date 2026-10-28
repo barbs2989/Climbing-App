@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **Belay station per pitch** (owner note 2026-10-25): each pitch has a belay-station box (*Belay station*, typed in the pitch editor) above its anchor. Existing pitches have none yet; the research to fill them is not done. See `docs/features/route-page.md`.
 - **Résumé: conditioning and hide-a-climb** (owner note, 2026-10-25, 0375): Conditioning is now a stored, editable 400-character note on your résumé (it was shown but nothing could write it); each logged climb in Experience can be hidden from the résumé in Edit (the logbook and Sends by grade keep it), with a Show-again list. Share and Export PDF include Conditioning.
 - **A scramble shows no pitch count** (owner note, 2026-10-25): TECHNICAL STATS, the Climbs list row, Compare and the printed route sheet no longer print a pitch count on a scrambling route, since a scramble is never roped; the climbing sections on Plan are unchanged. → [route-page](docs/features/route-page.md)
 - **Difficulty breakdown per discipline (owner note, 2026-10-25)**: sport, trad and bouldering each get their own radar. Sport: Power, Technical, Endurance, Fingery, Mental. Trad: Protection, Technical, Sustained, Strenuous, Commitment. Bouldering: Power, Technical, Fingery, Height, Landing. Other disciplines keep the original five. Migration 0374 widens the stored axis list (old reads keep their meaning). → `docs/features/route-page.md`

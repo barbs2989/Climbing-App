@@ -1188,17 +1188,18 @@ function TechStats({route,onEdit,part}){
    editor, where anchor and gear are typed. Bolts stay in the tile row above. An empty card says so and offers the editor
    rather than vanishing, when the editor is open to the climber. */
 function PitchConsensus({p,onSuggestFix}){
-  const anchor=String(p.anchor||"").trim();const gear=String(p.gear||"").trim();
-  if(!anchor&&!gear&&!onSuggestFix)return null;
+  const anchor=String(p.anchor||"").trim();const gear=String(p.gear||"").trim();const belay=String(p.belay||"").trim();
+  if(!anchor&&!gear&&!belay&&!onSuggestFix)return null;
   const box=function(label,text,empty){return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:8,padding:"8px 10px",marginBottom:6}}>
     <div style={{fontSize:11,fontWeight:700,color:C.textMuted,letterSpacing:0.4,textTransform:"uppercase",marginBottom:3}}>{label}</div>
     <div style={{fontSize:13,color:text?C.text:C.textMuted,lineHeight:1.5,whiteSpace:"pre-wrap",wordBreak:"break-word",overflowWrap:"anywhere"}}>{text||empty}</div>
   </div>;};
   return <div style={{background:C.surface,borderRadius:8,padding:"10px 11px",marginBottom:9,border:"1px solid "+C.border}}>
     <CardHead tone={C.green} style={{marginBottom:8}}>Pitch gear</CardHead>
-    {box("Anchor / belay",anchor,"Not described yet — say where to belay from and what it is built of")}
+    {box("Belay station",belay,"Not described yet — say where the belayer stands and how to find it")}
+    {box("Anchor",anchor,"Not described yet — say what the anchor is built of")}
     {box("Gear for this pitch",gear,"Not described yet — say what to place, e.g. cams, nuts, slings")}
-    {onSuggestFix?<button onClick={onSuggestFix} style={{...BTN,marginTop:3,background:"transparent",color:C.textSub,border:"1px solid "+C.border}}>{(anchor||gear)?"Edit anchor & gear":"Add anchor & gear"}</button>:null}
+    {onSuggestFix?<button onClick={onSuggestFix} style={{...BTN,marginTop:3,background:"transparent",color:C.textSub,border:"1px solid "+C.border}}>{(anchor||gear||belay)?"Edit belay, anchor & gear":"Add belay, anchor & gear"}</button>:null}
   </div>;
 }
 function BetaDiff({route}){
@@ -3583,7 +3584,7 @@ export function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCo
      metric climber. Reverting any one of those edges is silent; see the injection suite. */
   /* Editor rows are keyed by IDENTITY, not index. With index keys, removing a middle pitch or waypoint handed every later row's DOM state (focus, IME composition, scroll) to the wrong row. A WeakMap gives each row object a number the first time it renders; an edit or a renumber copies it onto the replacement object (keep), so a row keeps its key while its text changes. The derived row lists are memoised so an untouched row is the same object from render to render. */
   const rowKeys=useRef(new WeakMap());const rowSeq=useRef(0);const keyFor=function(row){var k=rowKeys.current.get(row);if(k==null){k=++rowSeq.current;rowKeys.current.set(row,k);}return k;};const keep=function(from,to){var k=rowKeys.current.get(from);if(k!=null)rowKeys.current.set(to,k);return to;};
-  const blankPitch=function(n){return {pitch:n,grade:"",lengthM:"",gear:"",notes:"",anchor:"",bolts:"",crux:false};};const blankRap=function(n){return {n:n,lengthM:"",anchor:"",station:"",hazards:"",notes:""};};
+  const blankPitch=function(n){return {pitch:n,grade:"",lengthM:"",gear:"",belay:"",notes:"",anchor:"",bolts:"",crux:false};};const blankRap=function(n){return {n:n,lengthM:"",anchor:"",station:"",hazards:"",notes:""};};
   /* EVERY PITCH THE PAGE SHOWS (owner's note, 2026-10-24: "the pitch by pitch submission doesn't show all
      the current pitches"). Three ways it fell short of ROUTE BREAKDOWN: (1) a route claiming more pitches
      than it describes ("The route lists 8 pitches, so 5 are not described here") opened on the 3 described,
@@ -3592,7 +3593,7 @@ export function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCo
      different order from the page, which sorts only when every label is a number; (3) a named leg was
      headed "Pitch Approach gully". */
   const routePitches=useMemo(function(){return padPitchRows((route.pitchDetail&&route.pitchDetail.length)
-    ?route.pitchDetail.map(function(p,i){return {_src:i,pitch:p.pitch!=null?p.pitch:(p.n!=null?p.n:i+1),grade:p.grade||"",lengthM:p.lengthM!=null?uLenN(p.lengthM):"",gear:p.gear||"",notes:p.note!=null?p.note:(p.notes||""),anchor:p.anchor||"",bolts:p.bolts!=null?p.bolts:"",crux:!!p.crux};})
+    ?route.pitchDetail.map(function(p,i){return {_src:i,pitch:p.pitch!=null?p.pitch:(p.n!=null?p.n:i+1),grade:p.grade||"",lengthM:p.lengthM!=null?uLenN(p.lengthM):"",gear:p.gear||"",belay:p.belay||"",notes:p.note!=null?p.note:(p.notes||""),anchor:p.anchor||"",bolts:p.bolts!=null?p.bolts:"",crux:!!p.crux};})
     :[blankPitch(1)],{pitchDetail:route.pitchDetail,pitches:route.pitches},blankPitch);},[route.pitchDetail,route.pitches]);
   const pitches=vals.pitchDetail||routePitches;const setPitches=function(fn){setVals(function(v){return Object.assign({},v,{pitchDetail:fn(v.pitchDetail||routePitches)});});};
   const pitchStr=function(ps,sep){return ps.map(function(pp,i){var bits=[pp.grade,pp.lengthM?pp.lengthM+uLenUnit():"",pp.anchor?("anchor: "+pp.anchor):"",(pp.bolts!==""&&pp.bolts!=null)?(pp.bolts+" bolts"):"",pp.crux?"crux":"",pp.gear,pp.notes].filter(Boolean);return bits.length?("P"+(pp.pitch!=null?pp.pitch:i+1)+": "+bits.join(", ")):"";}).filter(Boolean).join(sep||"; ");};
@@ -3891,7 +3892,7 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
           station findable ("2-bolt anchor (alcove)", "gear (large ledge)"). */}
       <div style={{display:"flex",gap:4,flexWrap:"wrap",marginBottom:6}}>{PITCH_ANCHORS.map(function(a){/* Lit by KIND, so a stored "2-bolt anchor (alcove)" shows as Bolted rather than as no chip at all. */const on=(pp.anchor||"").toLowerCase()===a.toLowerCase()||anchorKind(pp.anchor)===a;return <button key={a} onClick={function(){setPitch(idx,"anchor",on?"":a);}} aria-pressed={on} style={{padding:"5px 9px",borderRadius:12,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.card,color:on?C.onSolid:C.textSub,fontSize:11,fontWeight:600,cursor:"pointer"}}>{a}</button>;})}</div>
       <input aria-label={"Pitch "+(idx+1)+" anchor"} value={pp.anchor} onChange={function(e){setPitch(idx,"anchor",e.target.value);}} placeholder="Anchor — e.g. 2-bolt anchor (alcove), tree (sling)" style={Object.assign({},fld,{marginBottom:6})}/>
-      <input aria-label={"Pitch "+(idx+1)+" gear"} value={pp.gear} onChange={function(e){setPitch(idx,"gear",e.target.value);}} placeholder="Gear (e.g. #0.3–#2, nuts)" style={Object.assign({},fld,{marginBottom:6})}/><input aria-label={"Pitch "+(idx+1)+" notes"} value={pp.notes} onChange={function(e){setPitch(idx,"notes",e.target.value);}} placeholder="Notes (belay stance, runout, route-finding…)" style={fld}/></div>;})}<button onClick={addPitch} style={{width:"100%",padding:"9px",borderRadius:9,border:"1px dashed "+C.blue,background:C.blueBg,color:C.onSolid,fontSize:13,fontWeight:700,cursor:"pointer"}}>{"+ Add pitch"}</button></div>;}
+      <input aria-label={"Pitch "+(idx+1)+" belay station"} value={pp.belay||""} onChange={function(e){setPitch(idx,"belay",e.target.value);}} placeholder="Belay station: where the belayer stands and how to find it" style={Object.assign({},fld,{marginBottom:6})}/><input aria-label={"Pitch "+(idx+1)+" gear"} value={pp.gear} onChange={function(e){setPitch(idx,"gear",e.target.value);}} placeholder="Gear (e.g. #0.3–#2, nuts)" style={Object.assign({},fld,{marginBottom:6})}/><input aria-label={"Pitch "+(idx+1)+" notes"} value={pp.notes} onChange={function(e){setPitch(idx,"notes",e.target.value);}} placeholder="Notes (belay stance, runout, route-finding…)" style={fld}/></div>;})}<button onClick={addPitch} style={{width:"100%",padding:"9px",borderRadius:9,border:"1px dashed "+C.blue,background:C.blueBg,color:C.onSolid,fontSize:13,fontWeight:700,cursor:"pointer"}}>{"+ Add pitch"}</button></div>;}
     if(OBJ_KEYS[f.type]){var _ks=OBJ_KEYS[f.type],_cur=(route[f.type]||{}),_val=OBJ_STATE[f.type][0],_set=OBJ_STATE[f.type][1];
       /* One labelled input per sub-key, each showing what is on file beneath it. Showing the
          current value matters more here than elsewhere: these blocks are usually PARTLY filled,
@@ -4063,7 +4064,7 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
        empty, so numbering by position would hand a filled-in P5 behind an empty P4 the number 4; and a
        named leg ("Approach gully") keeps its name rather than becoming a number. */
     var _lbl=isNumLbl(p.pitch)?+p.pitch:String(p.pitch==null?"":p.pitch).trim();
-    return {n:(_lbl===""||_lbl===0)?i+1:_lbl,grade:p.grade||"",lengthM:(_len!=null&&isFinite(_len))?_len:null,gear:p.gear||"",note:p.notes||"",bolts:isFinite(_bolts)?_bolts:0,anchor:String(p.anchor||"").trim(),crux:!!p.crux,photos:[],comments:[]};
+    return {n:(_lbl===""||_lbl===0)?i+1:_lbl,grade:p.grade||"",lengthM:(_len!=null&&isFinite(_len))?_len:null,gear:p.gear||"",belay:String(p.belay||"").trim(),note:p.notes||"",bolts:isFinite(_bolts)?_bolts:0,anchor:String(p.anchor||"").trim(),crux:!!p.crux,photos:[],comments:[]};
   }).filter(function(p){return p.grade||p.gear||p.note||p.lengthM||p.anchor||p.bolts||p.crux;});if(f.type==="waypoints")return (vals.waypoints||[]).filter(function(w){return w.name||w.lat||w.note||w.directions;}).map(function(w){return {type:w.type,name:w.name||w.type,lat:w.lat?parseFloat(w.lat):null,lng:w.lng?parseFloat(w.lng):null,elev:w.elev?(uImp()?parseInt(w.elev):Math.round(parseInt(w.elev)*3.28084)):null,distMi:w.distMi?(uImp()?parseFloat(w.distMi):Math.round(parseFloat(w.distMi)/1.60934*100)/100):null,note:w.note||"",directions:w.directions||""};});if(f.type==="itinerary")return itinDraftToStructured(vals.itinerary);if(f.type==="bivy")return (vals.bivy||[]).filter(function(b){return b.name&&String(b.name).trim();}).map(function(b){
   /* elev goes to the DB in FEET, converted from whatever the reader's units are — the same
      handling as a waypoint elevation two branches up. This matters more than it looks: the
