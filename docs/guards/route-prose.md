@@ -1179,6 +1179,11 @@ the correction knows the screen is wrong, and they have no way to report it.
     it read as one approach with two descriptions. No prose signal read a card's own `notes`. This one
     does, on switchable routes too, and a verdict never hides it. The fix is per route: split the text
     so each card narrates only its own way in, and give each its own data.
+    `CARD_TWO`'s ALT_RE caught 16 cards across 842 routes, and most were fair comparisons ("the
+    shorter of the two ways in"). A wider net (alternate/fallback/"also be reached", two named
+    trailheads in one card) gave 92 routes to read, and 23 really did narrate another way in
+    (`scripts/oneoff/approach-cards-one-way-each.plan.json`). So a CARD_TWO count of zero is not the
+    class closed: re-run that wider read before calling it done.
   - **A researched row is not a lead** (2026-10-01). Once WA was worked through, 440 rows still
     carried a signal, all already read and judged one way in, so every run buried anything new under
     them. The audit now reads the recorded verdicts (`audits/<state>-multi-approach/2026-10-01-research.json`,
