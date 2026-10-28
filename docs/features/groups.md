@@ -29,6 +29,7 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
 - **Recommended** order on Discover and For you: groups sharing a discipline with you first, then home state, then
   where you climb.
 - Private groups are listed only to their members; an invitee finds one under Requests.
+- **Long text opens in place** (2026-10-28): a post in *For you* (`groupPostPreview`) stops at five lines with *See more*, and a Discover card's blurb (`groupDiscoverCard`) at three. Both use the `groupPostMore` key the group's own post view uses, so a post opened in the feed is open in the group too.
 
 ## 2. How it works
 `useMyGroups` reads every group the viewer may see (RLS: public, or one you belong to) and copies it into
