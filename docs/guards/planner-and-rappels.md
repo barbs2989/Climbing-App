@@ -371,6 +371,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       would cost about 12 more research runs for an expected yield of nothing. Do not re-run them
       as a batch. A row like these gets a time when a climber logs one, or when a guidebook pass
       reaches its peak.
+    - **THE REST ALLOWANCE CANNOT BE CALIBRATED AGAINST LOGGED TIMES YET: THERE ARE NONE.** Read
+      with the service key on 2026-10-28, `climb_logs` held 2 rows, and neither had any of
+      `car_to_car_minutes`, `approach_minutes`, `climb_minutes` or `descent_minutes`. No other table
+      stores a climber's time. `REST_PER_MOVING_HR` therefore stays at #2820's figure, which was
+      set from published trip reports. `scripts/oneoff/measure-rest-allowance-vs-logs.mjs` does the
+      calibration when logs exist. It compares logged car-to-car times only against rows the Planner
+      MODELLED, because a stored leg carries no rest factor, and floors are excluded. Re-run it once
+      real climbers have logged timed climbs.
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)
