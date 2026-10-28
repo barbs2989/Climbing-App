@@ -140,7 +140,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
    and `loadDateFmt`/`saveDateFmt` (`lib/date-pref.js`); `currentDateLocale()` reads it outside React.
 7. **Notification and browse switches** are device-local flag sets: `loadNotifPrefs`/`saveNotifPrefs` (`lib/notif-pref.js`, `climbmatch-notif-prefs`),
    `visibleWhileBrowsingPref`/`saveVisibleWhileBrowsing` (`lib/browse-visibility-pref.js`), built on `lib/prefs.js` (`defineFlagSet`). Onboarding shown-once: `lib/onboard-pref.js`.
-8. **Your counted catches**: `useMyTrustCounts` (RPC `my_trust_counts`, 0203) feeds the Belay & Catch Record's counted total.
+8. **Your counted catches**: `useMyTrustCounts` (RPC `my_trust_counts`, 0203) feeds the Belay & Catch Record's counted total. Keyed on the user only; climb-log, vouch, catch and verification writes refresh it through their reader lists (never key it on another query's `dataUpdatedAt` — that fired the RPC on every logs refetch).
 
 ## 3. Files
 | File | Key symbols |
