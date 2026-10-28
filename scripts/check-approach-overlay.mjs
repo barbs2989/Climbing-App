@@ -69,6 +69,13 @@ const hc = applyApproach(hz, ho.find((o) => o.variant.name === "C"), null);
 check(hc.hazards.join() === "ROW crevasses", "a way in with no hazard list of its own keeps the row's, unchanged");
 const hA = applyApproach(hz, ho.find((o) => o.variant.name === "A"), null);
 check(hA.hazards.join() === "A rockfall" && hA.objHaz.join() === "rockfall", "the stored main way in's own list must be read too");
+/* THE CLIMB TO A VIA ROUTE'S START is named, not added: the sibling's approach hours (which already
+   include it) stay the total, and the approach tile says how much of that walk is climbing. */
+const sibC = { id: "s", name: "Sibling", timing: { approachTimeHrs: 7.5, summitTimeHrs: 5, descentTimeHrs: 6 } };
+const vc = applyApproach({ ...route, timing: { summitTimeHrs: 5.5 } }, { key: "s", index: 0, variant: { name: "Via", viaRouteId: "s", climbToStartHrs: 5 } }, sibC);
+check(vc.timing.climbToStartHrs === 5 && vc.timing.approachTimeHrs === 7.5, "a via way in names its climb to start and keeps the sibling's approach hours (no double count)");
+const vn = applyApproach({ ...route, timing: { summitTimeHrs: 5.5 } }, { key: "s", index: 0, variant: { name: "Via", viaRouteId: "s" } }, sibC);
+check(vn.timing.climbToStartHrs === undefined, "a via way in with no climb-to-start figure must not show one");
 for (const k of APPROACH_OWNED_KEYS) check(k in b, `owned key ${k} must be set (to a value or empty) by every linked pick`);
 const rc = { ...route, bivy: [{ name: "A camp" }, { name: "B camp" }, { name: "Shared camp" }], approachVariants: [{ name: "From A", primary: true, camps: ["A camp", "Shared camp"] }, route.approachVariants[1]] };
 const ac = applyApproach(rc, approachOptions(rc)[0], null);

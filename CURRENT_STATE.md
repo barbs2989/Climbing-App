@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **The approach tile names the climb it includes** (2026-10-28): a linked way in can carry `climbToStartHrs`, and the Shuksan SE Ridge's Fisher Chimneys way in reads "Approach · incl. 5 hr climbing to start". The total is unchanged (guidebooks cost a walk and the climbing on it separately; nothing is added here).
 - **How you get there: one way in at a time, its own hazards** (owner's note, 2026-10-25): the card is headed HOW YOU GET THERE with a blue rail and shows only the picked way in; the "Pick yours" intro and the Plan-tab time note are gone. KNOWN HAZARDS follows the pick: each of the 128 routes with more than one way in carries a per-way-in hazard list (`audit:approach-hazards`: 0 missing, 0 identical).
 - **One auth listener for the app** (owner to-do, 2026-10-25): `src/AuthContext.tsx` wraps the whole app in `main.jsx`. `useAuth()` gives any screen the signed-in `user` (or null), a `loading` flag until the stored session is read, and `login` / `logout` (the existing `lib/auth.js` calls). It is the only shared `onAuthStateChange` subscription in the app; the older `useSession()` hook still subscribes on its own, and its callers are unchanged. No visible change.
 
