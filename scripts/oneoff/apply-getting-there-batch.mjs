@@ -1,10 +1,9 @@
-// Write researched getting-there text (approach prose, trailhead, driving line, optional coordinate)
-// for a batch of routes that have NONE. --dry by default; pass --apply to write.
+// Write researched getting-there text (approach prose, trailhead, driving line) for a batch of routes
+// that have NONE. --dry by default; pass --apply to write.
 //
-// Input: a JSON array from a research batch (keys in docs/guards/roads-and-access.md: id, found,
-// trailhead, trailheadDirection, trailheadLat, trailheadLng, approach, numbersUsed, sources,
-// confidence, unverified) plus the routes file it was researched from (--routes), so each row's
-// area_id can be checked against the area the research was about.
+// Input: a JSON array from a research batch (id, found, trailhead, trailheadDirection, approach,
+// numbersUsed, confidence, sourceUrls, unverified) plus the routes file it was researched from
+// (--routes), and optionally --library (known trailhead coordinates; see below).
 //
 // Safety rails, each one a rule this repo learned the hard way:
 //   * a route is written only if it has NO approach prose and NO trailhead of its own today.
@@ -12,6 +11,10 @@
 //   * every number in trailheadDirection + approach must be in numbersUsed, and vice versa
 //     (traceability: the claim is checkable against the prose it was written from)
 //   * the trailhead name must appear in the approach prose (the card and the prose agree on one place)
+//   * only confidence high|medium; the drive must pass trailheadDirectionProblem(); and the prose must
+//     share no 8-word run with any cited page, which is fetched here (scripts/lib/source-overlap.mjs)
+//   * a coordinate is NEVER typed by research: it is copied only from --library, the coordinate other
+//     routes already store under the identical trailhead name, when those copies agree
 //   * writes approach_logistics ONLY, never a waypoints[] pin (a filled absence must not manufacture
 //     an agreement that blinds audit:trailhead-agreement)
 //   * MERGES into approach_logistics so no other key is lost
@@ -20,13 +23,18 @@
 //   * writes are paced at >= 1000 ms; any timeout backs off 60 s and stops the batch rather than
 //     retrying fast into a struggling database
 import fs from "fs";
-import { selectAll, patchRow, requireServiceKey, SUPABASE_URL, anonKey } from "../lib/supabase-env.mjs";
+import { patchRow, requireServiceKey, SUPABASE_URL, anonKey } from "../lib/supabase-env.mjs";
+import { htmlToText, sourceIndex, copiedRuns } from "../lib/source-overlap.mjs";
+import { trailheadDirectionProblem } from "../../lib/trailheadDirectionShape.js";
 
 const args = process.argv.slice(2);
 const APPLY = args.includes("--apply");
 const flag = (n) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : null; };
 const RESEARCH = flag("--research");
 const ROUTES = flag("--routes");
+// --library: known trailheads {name: {lat, lng}} built from coordinates OTHER routes already store under
+// that exact name (they must agree). A coordinate is only ever COPIED from it, never typed by research.
+const LIBRARY = flag("--library");
 if (!RESEARCH || !ROUTES) { console.error("usage: apply-getting-there-batch.mjs --research out.json --routes in.json [--apply]"); process.exit(2); }
 if (APPLY) requireServiceKey();
 
@@ -36,7 +44,19 @@ const inputRoutes = Array.isArray(input) ? input : input.routes;
 const inputById = new Map(inputRoutes.map(r => [r.id, r]));
 
 const nums = (s) => [...new Set(String(s || "").match(/\d+(?:[.,]\d+)?/g) || [])].map(n => n.replace(",", ""));
-const same = (a, b) => JSON.stringify([...a].map(String).sort()) === JSON.stringify([...b].map(String).sort());
+const same = (a, b) => JSON.stringify([...new Set(a.map(String))].sort()) === JSON.stringify([...new Set(b.map(String))].sort());
+const library = LIBRARY ? JSON.parse(fs.readFileSync(LIBRARY, "utf8")) : {};
+
+// Our own words only: every cited page is fetched and an 8-word run shared with it refuses the entry,
+// the same rule enrich:apply enforces. A batch whose sources could not be read at all is refused too.
+const pageText = new Map();
+async function readSource(url) {
+  if (pageText.has(url)) return pageText.get(url);
+  let t = null;
+  try { const res = await fetch(url, { headers: { "user-agent": "Mozilla/5.0" } }); if (res.ok) t = htmlToText(await res.text()); } catch { /* unreadable */ }
+  pageText.set(url, t);
+  return t;
+}
 
 const plan = [];
 const skipped = [];
@@ -44,6 +64,7 @@ for (const e of research) {
   const r = inputById.get(e.id);
   if (!r) { skipped.push([e.id, "not in the routes file"]); continue; }
   if (!e.found) { skipped.push([e.id, "research did not establish the way in: " + (e.unverified || "")]); continue; }
+  if (!["high", "medium"].includes(e.confidence)) { skipped.push([e.id, "confidence " + e.confidence + " is below the bar"]); continue; }
   if (!e.approach || !e.trailhead || !e.trailheadDirection) { skipped.push([e.id, "missing approach / trailhead / direction text"]); continue; }
   if (r.approach && String(r.approach).trim()) { skipped.push([e.id, "already has approach prose — not an absence"]); continue; }
   const cur = r.approach_logistics || {};
@@ -56,9 +77,17 @@ for (const e of research) {
   if (/\b(https?:|www\.|\.com|\.org|\.gov|mountainproject|openbeta|summitpost|peakbagger)\b/i.test(e.approach + e.trailheadDirection + e.trailhead)) {
     skipped.push([e.id, "a source name or URL leaked into app text"]); continue;
   }
+  const shape = trailheadDirectionProblem(e.trailheadDirection);
+  if (shape) { skipped.push([e.id, "shape detector: " + shape]); continue; }
+  const texts = (await Promise.all((e.sourceUrls || []).map(readSource))).filter(Boolean);
+  if (!texts.length) { skipped.push([e.id, "no cited source could be read, so the copy check cannot run"]); continue; }
+  const grams = sourceIndex(texts);
+  const runs = [...copiedRuns(e.approach, grams), ...copiedRuns(e.trailheadDirection, grams)];
+  if (runs.length) { skipped.push([e.id, "copies its source word for word: \"" + runs[0] + "\""]); continue; }
   const next = Object.assign({}, cur, { trailhead: e.trailhead, trailheadDirection: e.trailheadDirection });
-  const hasCoord = typeof e.trailheadLat === "number" && typeof e.trailheadLng === "number";
-  if (hasCoord) { next.trailheadLat = e.trailheadLat; next.trailheadLng = e.trailheadLng; }
+  const known = library[e.trailhead];
+  const hasCoord = !!known;
+  if (hasCoord) { next.trailheadLat = known.lat; next.trailheadLng = known.lng; }
   plan.push({ id: e.id, approach: e.approach, next, hasCoord, keptKeys: Object.keys(cur) });
 }
 
