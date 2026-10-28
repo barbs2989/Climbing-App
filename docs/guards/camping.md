@@ -922,6 +922,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     single-place camps with no pin**, and **600 that cannot be one pin** (`camp-names.mjs`
     `unresolvable()`: a dispersed zone, or two places in one name). The 600 are counted, never
     "missing": a pin for a zone invents precision the record does not carry.
+  - **The chip now needs a coordinate.** `campSites` sets `onTrack` only when the pin `pointOf()` can
+    draw, so neither a coordinate-less pin's own row nor a site it backs says *Marked on the track*, and
+    neither counts toward the intro's "also a pin under ROUTE TRACK". `check:camping` section 8b pins
+    both; injection (put back `!!p` / `true`) fails both.
   - **A camp BELOW its trailhead is reported ROADSIDE, not off-track.** It is a valley car-campground
     you drive to (the 72% roadside-vocabulary measurement above); the walking track never passes it.
   - **A "track" of fewer than two usable points is no track.** The first run measured a pin as

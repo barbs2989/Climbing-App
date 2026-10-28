@@ -209,6 +209,15 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   const onTrack = text(render(route("alpine", { waypoints: [WP] }), "planner"));
   if (/pin under ROUTE TRACK/.test(onTrack)) ok("the track-pin claim appears when a site IS on the track");
   else fail("a waypoint-derived site should say it is pinned on the track");
+  // A PIN WITH NO COORDINATE IS NOT ON THE MAP (2026-10-28, audit:camp-pins: 48 such pins wore the
+  // chip). Neither the pin's own row nor a researched site it backs may claim it.
+  const bare = { ...WP, lat: null, lng: null };
+  const own = text(render(route("alpine", { waypoints: [bare] }), "planner"));
+  if (!/Marked on the track/.test(own) && !/pin under ROUTE TRACK/.test(own)) ok("a pin with no coordinate does not claim to be on the track");
+  else fail("a Campsite pin with no lat/lng is stamped 'Marked on the track' — the map cannot draw it");
+  const backed = text(render(route("alpine", { waypoints: [bare], bivy: [{ name: WP.name, elev: 2360 }] }), "planner"));
+  if (!/Marked on the track/.test(backed)) ok("a site backed by a coordinate-less pin does not borrow the chip");
+  else fail("a researched site borrowed 'Marked on the track' from a pin with no coordinate");
 }
 
 // ── 8c. THE CONTRIBUTED SHAPE RENDERS. `bivy` became contributable, and structuredVal() emits a
