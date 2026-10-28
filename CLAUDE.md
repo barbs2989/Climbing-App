@@ -151,6 +151,7 @@ npm run check:area-page-honest # the area page prints only STORED facts, its cha
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:field-renders # every enriched route column actually reaches a screen
+npm run check:declination # the base-of-the-climb arrow turns a MAGNETIC phone compass into TRUE north, to NOAA's WMM2025 test values (in build)
 npm run check:summit-briefing # a peak page states only what its routes AGREE on — and does not withhold what they do
 npm run check:token-boxes  # no element shaped like a chip holds a paragraph
 npm run check:pitch-split # every pitch_detail entry is a row of ROUTE BREAKDOWN, in order (in build)
