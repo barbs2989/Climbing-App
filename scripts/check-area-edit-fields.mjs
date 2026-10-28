@@ -44,16 +44,32 @@ const migDir = path.join(ROOT, "supabase/migrations");
 const one = (re, label) => { const m = fs.readdirSync(migDir).filter((f) => re.test(f)); if (m.length !== 1) { fail(`expected one ${label} migration, found ${m.length} — ANCHOR LOST`); return ""; } return read("supabase/migrations/" + m[0]); };
 const sql04 = one(/area_pages_season_edits_and_stats\.sql$/, "area_pages_season_edits_and_stats");
 const sql18 = one(/area_edits_are_held_for_review\.sql$/, "area_edits_are_held_for_review");
+// A later migration may re-create any of the three (0378 added the parking pin to all of them), and the
+// LAST one in filename order is what a replay leaves standing, so each anchor is read from the newest
+// migration that defines it — not pinned to 0304/0319, which would keep passing on a list production
+// no longer runs.
+const allMigs = fs.readdirSync(migDir).filter((f) => /^\d{4}_.*\.sql$/.test(f)).sort();
+const newest = (re, fallback) => { for (let i = allMigs.length - 1; i >= 0; i--) { const src = read("supabase/migrations/" + allMigs[i]); if (re.test(src)) return src; } return fallback; };
+const sqlCk = newest(/add constraint contributions_area_field_ck/, sql04);
+const sqlApply = newest(/create or replace function public\.apply_approved_area_field/, sql18);
+const sqlApprove = newest(/create or replace function approve_field_contribution/, sql18);
 const listOf = (src, re, label) => {
   const m = src.match(re);
   if (!m) { fail(`${label} not found — ANCHOR LOST`); return []; }
   return [...m[1].matchAll(/'([a-z_]+)'/g)].map((x) => x[1]);
 };
-const ckKeys = listOf(sql04, /contributions_area_field_ck check \(\s*not \([^)]*\)\s*or field in \(([^)]*)\)/, "contributions_area_field_ck's field list (0304)");
-const allowKeys = listOf(sql18, /if p_field not in \(([^)]*)\) then return; end if;/, "apply_approved_area_field's allow-list (0319)");
-const approveKeys = listOf(sql18, /if c\.field not in \(([^)]*)\) then raise exception 'unknown area field/, "approve_field_contribution's area-field list (0319)");
-const applierBody = (sql18.match(/create or replace function public\.apply_approved_area_field[\s\S]*?\n\$\$;/) || [""])[0];
+const ckKeys = listOf(sqlCk, /contributions_area_field_ck check \(\s*not \([^)]*\)\s*or field in \(([^)]*)\)/, "contributions_area_field_ck's field list (0304)");
+const allowKeys = listOf(sqlApply, /if p_field not in \(([^)]*)\) then return; end if;/, "apply_approved_area_field's allow-list (0319)");
+const approveKeys = listOf(sqlApprove, /if c\.field not in \(([^)]*)\) then raise exception 'unknown area field/, "approve_field_contribution's area-field list (0319)");
+const applierBody = (sqlApply.match(/create or replace function public\.apply_approved_area_field[\s\S]*?\n\$\$;/) || [""])[0];
 const written = [...new Set([...applierBody.matchAll(/update areas set ([a-z_]+) =/g)].map((m) => m[1]))].sort();
+// One field may write more than one column: the parking pin (0378) is parking_lat + parking_lng + parking_name in one UPDATE.
+const MULTI = { parking_pin: ["parking_lat", "parking_lng", "parking_name"] };
+for (const [k, cols] of Object.entries(MULTI)) {
+  const upd = (applierBody.match(new RegExp("update areas set " + cols[0] + " = [^;]*;")) || [""])[0];
+  if (!jsKeys.includes(k)) continue;
+  for (const c of cols) if (!new RegExp("\\b" + c + " = ").test(upd)) fail(`apply_approved_area_field's ${k} UPDATE does not set ${c}`);
+}
 if (!written.length) fail("apply_approved_area_field writes no `update areas set <col> =` — ANCHOR LOST");
 if (!/after update of status on public\.contributions[\s\S]{0,80}when \(new\.status = 'approved'\)/.test(sql18)) fail("0319: the applier's trigger is not `after update of status … when (new.status = 'approved')` — an approval would not reach the area column");
 if (/after insert on public\.contributions[\s\S]{0,120}trg_apply_agreed_area_field/.test(sql18)) fail("0319 re-creates the insert-time applier trigger — area edits would land without the owner");
@@ -63,7 +79,7 @@ cmp(ckKeys, "contributions_area_field_ck");
 cmp(allowKeys, "apply_approved_area_field's allow-list");
 cmp(approveKeys, "approve_field_contribution's area branch");
 if (jsKeys.length && written.length) {
-  const want = [...jsKeys].sort();
+  const want = [...new Set(jsKeys.flatMap((k) => (MULTI[k] ? [MULTI[k][0]] : [k])))].sort();
   if (same(want, written)) ok("the applier writes exactly those columns");
   else fail(`apply_approved_area_field writes [${written.join(", ")}]; the table is [${want.join(", ")}]`);
 }
@@ -74,7 +90,8 @@ if (/import \{[^}]*\bAREA_EDIT_FIELDS\b[^}]*\} from "\.\/areaFields"/.test(edito
 else fail("lib/AreaSuggestFix.jsx does not render its rows from AREA_EDIT_FIELDS — a field could be editable in one place and not the other");
 const page = read("lib/DbAreaBrowser.jsx") + "\n" + read("lib/AreaPageSections.jsx");
 for (const k of jsKeys) {
-  if (!new RegExp("area\\." + k + "\\b").test(page)) fail(`no screen reads area.${k} — the field would be editable and shown nowhere (lib/DbAreaBrowser.jsx, lib/AreaPageSections.jsx)`);
+  const col = MULTI[k] ? MULTI[k][0] : k;
+  if (!new RegExp("area\\." + col + "\\b").test(page)) fail(`no screen reads area.${k} — the field would be editable and shown nowhere (lib/DbAreaBrowser.jsx, lib/AreaPageSections.jsx)`);
 }
 const queue = read("lib/RouteQualityQueues.jsx");
 if (!/import \{[^}]*\bAREA_EDIT_FIELDS\b[^}]*\} from "\.\/areaFields"/.test(queue)) fail("lib/RouteQualityQueues.jsx does not label area rows from AREA_EDIT_FIELDS — the owner would see raw column names");
@@ -83,12 +100,17 @@ if (!fails) ok("every editable field reaches the area page, and the owner's queu
 // ── 4. summary rule, by running the module ──
 const mod = await import(pathToFileURL(path.join(ROOT, "lib/areaFields.js")).href);
 const fields = mod.AREA_EDIT_FIELDS || [];
-const fixture = { blurb: { oops: 1 }, approach: ["a", "b"], approach_min: "45", parking_note: null, rock: { r: 1 }, aspect: { x: 1 }, season_months: [12, 1, 2, 2] };
+const fixture = { blurb: { oops: 1 }, approach: ["a", "b"], approach_min: "45", parking_note: null, parking_lat: { la: 1 }, parking_lng: "-121.5", parking_name: ["x"], rock: { r: 1 }, aspect: { x: 1 }, season_months: [12, 1, 2, 2] };
 for (const f of fields) {
   let s;
   try { s = f.cur(fixture); } catch (e) { fail(`AREA_EDIT_FIELDS.${f.k}.cur threw on an odd value: ${e.message}`); continue; }
   if (typeof s !== "string") fail(`AREA_EDIT_FIELDS.${f.k}.cur returned a ${typeof s}, not a string`);
   else if (s.includes("[object")) fail(`AREA_EDIT_FIELDS.${f.k}.cur prints "${s}" — the climber reads [object Object]`);
+  // A structured value (the parking pin) is shown through `fmt` in the sheet's "Awaiting review" and the owner's PROPOSED.
+  if (f.type === "pin") {
+    if (typeof f.fmt !== "function") fail(`AREA_EDIT_FIELDS.${f.k} is a pin with no fmt() — its held value would print as [object Object]`);
+    else { const t = f.fmt({ lat: 47.1, lng: -121.2, name: "Main lot" }); if (typeof t !== "string" || !/47\.1/.test(t) || t.includes("[object")) fail(`AREA_EDIT_FIELDS.${f.k}.fmt prints "${t}" for a real pin`); if (f.fmt({ oops: 1 }) !== "") fail(`AREA_EDIT_FIELDS.${f.k}.fmt prints something for a value with no coordinate`); }
+  }
 }
 if (typeof mod.myPendingAreaEdits !== "function") fail("lib/areaFields.js no longer exports myPendingAreaEdits — the page cannot show a climber their own held edit");
 else {
