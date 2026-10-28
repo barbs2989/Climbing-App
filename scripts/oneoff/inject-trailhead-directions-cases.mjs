@@ -54,9 +54,12 @@ const CASES = [
     expect: "fail",
   },
   {
+    // REPOINTED 2026-10-28: the card's copy control is the shared CopyCoordButton now (its own row,
+    // owner note on the box's spacing), so the coordinate text lives in lib/areaChrome.jsx. Dropping
+    // it from THIS card is the same defect, aimed where the card renders it.
     name: "3. the coordinates drop off the surviving control",
-    find: '>{lat.toFixed(5)+", "+lng.toFixed(5)}</span>',
-    repl: '>Coordinates</span>',
+    find: '<CopyCoordButton lat={lat} lng={lng} what="trailhead"/>',
+    repl: '<button>Coordinates</button>',
     expect: "fail",
   },
   {
@@ -96,8 +99,8 @@ const CASES = [
   },
   {
     name: "7. SILENT: a handler-only button is still a control (no href to count)",
-    find: '<a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" style={{flex:"0 0 auto",display:"flex",alignItems:"center",justifyContent:"center",padding:"7px 14px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"}}>Google Maps</a>',
-    repl: '<button onClick={()=>window.open("https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng,"_blank")} style={{flex:"0 0 auto",padding:"7px 14px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700}}>Google Maps</button>',
+    find: '<a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" aria-label="Driving directions to the trailhead in Google Maps" style={thLink}>Google Maps</a>',
+    repl: '<button onClick={()=>window.open("https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng,"_blank")} style={thLink}>Google Maps</button>',
     expect: "pass",
   },
   {
