@@ -11,8 +11,9 @@
 //
 // What it refuses, per route (the route is skipped, the rest of the batch goes on):
 //   - a name that matches no way in, or a `why` on the way in that is (or becomes) the most used one
-//   - `primary` on a route that already marks a different way in: moving the mark is a research
-//     decision the earlier pass already took, so it is not overwritten by a batch about reasons
+//   - `primary` on a route that already marks a different way in, unless the entry also sets
+//     `movePrimary: true` AND lists at least two sources: moving the mark overturns an earlier
+//     research decision, so it takes its own evidence (the settle pass, audits/approach-why/settle/)
 //   - a sentence over 240 characters (it is one line on a card, the detail lives in `notes`), one
 //     that names a source (no sources anywhere in the app), one in ALL CAPS, or one that repeats 8+
 //     words of a page in review.sources (our own words only — scripts/lib/source-overlap.mjs)
@@ -32,8 +33,10 @@ const SOURCE_RE = /\b(mountain ?project|summit ?post|cascade ?climbers|nwhikers|
 const PER_SOURCE_RE = /\b[Pp]er (?:the )?[A-Z]/;
 const MAX_LEN = 240;
 
-const read = async id => {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=id,name,approach_variants&id=eq.${encodeURIComponent(id)}`, { headers: headers(key), signal: AbortSignal.timeout(20000) });
+// One back-off, then stop: the owner's throttle rule forbids retrying fast into a struggling database.
+const read = async (id, retried) => {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=id,name,approach_variants&id=eq.${encodeURIComponent(id)}`, { headers: headers(key), signal: AbortSignal.timeout(20000) }).catch(e => ({ ok: false, status: e.name, text: async () => e.message }));
+  if (!res.ok && !retried && (res.status === "TimeoutError" || res.status >= 500)) { console.error(`read ${id} -> ${res.status}; backing off 60 s before one retry`); await new Promise(r => setTimeout(r, 60000)); return read(id, true); }
   if (!res.ok) throw new Error(`read ${id} -> ${res.status} ${(await res.text()).slice(0, 200)} — stopping`);
   return (await res.json())[0] || null;
 };
@@ -52,7 +55,7 @@ for (const [id, spec] of Object.entries(BATCH)) {
   if (spec.primary != null) {
     const p = idxOf(spec.primary);
     if (p < 0) errs.push(`primary ${JSON.stringify(spec.primary)} matches no way in (${vars.map(v => v && v.name).join(" | ")})`);
-    else if (marked >= 0 && marked !== p) errs.push(`already marks ${JSON.stringify(vars[marked].name)} as most used; this batch does not move the mark`);
+    else if (marked >= 0 && marked !== p && !(spec.movePrimary === true && (spec.review?.sources || []).length >= 2)) errs.push(`already marks ${JSON.stringify(vars[marked].name)} as most used; moving it needs movePrimary:true and two sources`);
     else prim = p;
   }
   if (prim < 0) errs.push("no way in is marked most used and the batch names none — a reason needs a most used way in to be an alternative TO");
@@ -78,13 +81,14 @@ for (const [id, spec] of Object.entries(BATCH)) {
   const next = vars.map((v, i) => {
     if (!v) return v;
     const o = { ...v };
-    if (i === prim && spec.primary != null) o.primary = true;
+    if (spec.primary != null) { if (i === prim) o.primary = true; else delete o.primary; }
     const n = Object.keys(why).find(k => String(k).trim() === String(v.name || "").trim());
     if (n) o.whyThisWay = String(why[n]).trim();
+    if (i === prim) delete o.whyThisWay; // the most used way in is not an alternative to itself
     return o;
   });
   if (JSON.stringify(next) === JSON.stringify(vars)) { console.log(`same ${id} — already says this`); continue; }
-  console.log(`${id}  (${before.name})${spec.primary != null && marked < 0 ? `  most used := ${vars[prim].name}` : ""}`);
+  console.log(`${id}  (${before.name})${spec.primary != null && marked !== prim ? `  most used := ${vars[prim].name}${marked >= 0 ? ` (was ${vars[marked].name})` : ""}` : ""}`);
   for (const [n, s] of Object.entries(why)) console.log(`   ${n}: ${String(s).trim()}`);
   if (DRY) continue;
   rollback[id] = vars;
