@@ -908,3 +908,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       (`dir:approach_logistics->>trailheadDirection`) when the database is quiet, and inject-test it.
   - **numbersUsed compares as SETS.** A number used twice in a text ("SR 20 ... mile 20") was declared
     twice and refused four checked corrections; duplicates are not untraceability.
+  - **The BACKLOG: WA alpine routes with NEITHER a trailhead card NOR approach prose (329 on
+    2026-10-28, 102 areas).** `getting-there-directions/list-neither.mjs` lists them without scanning
+    `areas` (routes filtered by id, discipline and empty prose; only their own areas and parents are
+    fetched by id), and builds `th-library.json`: trailhead coordinates OTHER routes already store,
+    kept only where every copy agrees within 200 m. `apply-getting-there-batch.mjs` now refuses an
+    entry whose drive fails `trailheadDirectionProblem()`, whose sources could not be FETCHED, or
+    whose approach or drive shares an 8-word run with a fetched source (`copiedRuns`), and it copies a
+    coordinate only from that library (`--library`), never from a typed research coordinate. Not
+    started: the database answered a 50-row read with 504 after 140 s that evening, so the batch
+    did not run (throttle rule). Mountain Project route pages fetch with curl and carry a per-route
+    Description; matching our route names to theirs is the hard part (3 of 16 at Dragontail matched
+    by name).
