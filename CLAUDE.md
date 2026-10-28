@@ -268,7 +268,7 @@ npm run check:schema # lib/db.js never reads a table or column the database lack
 npm run check:list-row-columns # the Climbs list's THIN ROW carries every column its readers read, and nothing they don't (in build)
 npm run check:migrations # two migrations must never share a number (in build)
 npm run check:migration-replay # does supabase/migrations rebuild an EMPTY database, as a Supabase preview does? (--compare-live: into the LIVE schema)
-npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS (in build)
+npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS; every write policy asks WHO is calling; every view is read-only to the app's keys (in build)
 ```
 
 There is no unit test suite; `check:types` type-checks `src/` (strict TypeScript), `lint` runs
