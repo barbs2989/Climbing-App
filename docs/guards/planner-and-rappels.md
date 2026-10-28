@@ -337,6 +337,31 @@ Part of the guard notes — see [README.md](README.md) for the full index.
           (the stored count is the published one, not a stand-in); a re-run would only re-confirm
           the listing against itself. Re-open this only with TIMED reports for a route whose
           count is in doubt, since the repair target is the time, not the count.
+  - **THE CATALOG PASS (2026-10-28, `audits/2026-10-28-route-timing-catalog.json`): 311 MORE WA
+    ROUTES RESEARCHED, 15 ROWS REPAIRED, ONE STRUCTURAL DEFECT FIXED.** The owner asked again
+    whether totals leave out rests. The 515 from 2026-10-08 were re-measured first (#2838), then
+    every WA alpine, mountaineering and scrambling row with a time that had never been researched
+    went to two Sonnet agents in 20 batches of 16, retrying in extended mode on a thin result.
+    - **THE STRUCTURAL DEFECT: A LONE STORED LEG WAS DROPPED (#2859).** A row storing an approach
+      or a descent with no summit leg is not `legsStored`, so the Planner walked the inputs and
+      threw the stored leg away (Golden Horn North Face: 1.7 hr walked down beside a researched
+      5.75). `loneApproachH` / `loneDescentH` now floor the walked leg; `check:return-leg` holds it.
+      Across WA, 27 routes got longer and none got shorter. That floor is what makes a researched
+      descent stored ALONE safe: the climb stays unknown and the total keeps its "≥".
+    - **THE YIELD IS LOW, AND THAT IS THE FINDING.** 75 of the 311 clear the evidence bar (a
+      published figure, 3 timed reports, or 2 that agree within 15%); 20 read more than 20% short,
+      and most of those rest only on BORROWED car-to-car times from a neighbouring route (the
+      Colchuck Balanced Rock lines, Concord), which are not evidence for a different climb. The
+      useful pass was the SHARED DESCENT one: a sibling whose own `descent_text` names a
+      well-timed reference descent from the same trailhead can take that descent's median
+      (Golden Horn ×2, Eldorado ×2, Chaval, Silver Star East Ridge, Adams NW Ridge, Goode NE Face).
+    - **ONE STORED DESCENT WAS SUMMIT-TO-CAMP ONLY** (Witches Tower SW Corner, 1 hr against its own
+      published camp-to-trailhead 4-5). Re-filed in the camp shape rather than as a push, because
+      approach 7 and descent 4.5 fall within `CAMP_LEG_MATCH` and the Planner reads it that way.
+    - **LEFT FOR THE OWNER, each with its reason in the audit file**: Golden Horn's walk inputs,
+      Mount Rahm's camp-to-summit whole day, Nooksack Tower's three confused rows, Mount Washington
+      (Olympics, two search-snippet club reports at 7-7.5 hr against 5), Stuart West Ridge (two
+      trailheads mixed; 14% short of the Longs Pass parties alone), and more.
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)
