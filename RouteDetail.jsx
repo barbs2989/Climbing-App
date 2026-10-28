@@ -14,7 +14,7 @@ import { DISC_LABELS as DL } from "./lib/discLabels";
    Moved verbatim; the correction-precedence rule and its history live beside them there. */
 import { rackFromText, _rackEdited, _ropeEdited, fmtRopeLen, contribRack, routeRackFor, rackLeftovers, DISC_RACK } from "./lib/rack";
 import { ropeworkFacts } from "./lib/ropework";
-import { waypointCaveat, trackCoverage, trackCoverageCaveat, trackStubCaveat, withRecordedTrackOnly } from "./lib/track";
+import { waypointCaveat, trackCoverage, trackCoverageCaveat, trackStubCaveat, withRecordedTrackOnly, pointOf } from "./lib/track";
 import { accessCheckedLine } from "./lib/road";
 import { trailheadDirectionProblem } from "./lib/trailheadDirectionShape";
 import { USE_DB, supabase } from "./lib/supabase";
@@ -2075,6 +2075,9 @@ export function campSites(route){
     const mi=campDistMi(w);
     return mi==null?null:cumMi(route.waypoints,Object.assign({},w,{distMi:mi}));
   };
+  /* "Marked on the track" (`onTrack`) means the camp is a pin the ROUTE TRACK map DRAWS, so it needs a
+     coordinate, not just a pin: audit:camp-pins found 48 Campsite pins with no lat/lng wearing the chip
+     (2026-10-28). A pin that cannot be drawn lends its name and distance, never that claim. */
   /* `type` is camp | bivy | hut on the 77 sites that carry it. It is the one field that says
      WHICH of the two things this section merges you are looking at, so it earns a chip. */
   /* The label for `camp` is deliberately the neutral "Camp", NOT "Established camp": a dispersed
@@ -2093,8 +2096,8 @@ export function campSites(route){
      role (a contribution from before the field existed, or one marked "Not sure") is null and carries
      no use tag (campRoleLabel). */
   const ROLE={main:"main",route:"route"};
-  return campRouteOrder(bivy.map(b=>{const p=pinOf(b);const el=campElevFt(b)!=null?campElevFt(b):(p?campElevFt(p):null);return {name:b&&b.name,elev:el,gainFt:gainOf(el),distMi:p?_campMi(p):null,kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:!!p,role:(b&&ROLE[String(b.role||"").toLowerCase()])||null,sorted:!!(b&&ROLE[String(b.role||"").toLowerCase()]),nights:campNightsOf(route,b&&b.name)};})
-    .concat(wps.map(w=>({name:w&&w.name,elev:campElevFt(w),gainFt:gainOf(campElevFt(w)),distMi:_campMi(w),kind:null,notes:(w&&w.directions)||"",onTrack:true,role:"route",nights:campNightsOf(route,w&&w.name)}))));
+  return campRouteOrder(bivy.map(b=>{const p=pinOf(b);const el=campElevFt(b)!=null?campElevFt(b):(p?campElevFt(p):null);return {name:b&&b.name,elev:el,gainFt:gainOf(el),distMi:p?_campMi(p):null,kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:!!(p&&pointOf(p)),role:(b&&ROLE[String(b.role||"").toLowerCase()])||null,sorted:!!(b&&ROLE[String(b.role||"").toLowerCase()]),nights:campNightsOf(route,b&&b.name)};})
+    .concat(wps.map(w=>({name:w&&w.name,elev:campElevFt(w),gainFt:gainOf(campElevFt(w)),distMi:_campMi(w),kind:null,notes:(w&&w.directions)||"",onTrack:!!pointOf(w),role:"route",nights:campNightsOf(route,w&&w.name)}))));
 }
 /* IN THE ORDER A PARTY REACHES THEM, walking in from the trailhead (owner, 2026-10-24: "ordered by
    where people would camp if they were doing the whole route"). It replaced three USE groups —
