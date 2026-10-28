@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 84 tables, 828 columns, 425 keyed/checked constraints (151 foreign keys), 257 RLS policies.
+-- Counts: 84 tables, 831 columns, 427 keyed/checked constraints (151 foreign keys), 257 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -422,6 +422,7 @@ CREATE TABLE public.climb_logs (
   moderation text NOT NULL DEFAULT 'visible'::text,
   nights_out integer,
   camp_names text[],
+  summited boolean,
   CONSTRAINT climb_logs_pkey PRIMARY KEY (id),
   CONSTRAINT climb_logs_camp_names_sane CHECK (((camp_names IS NULL) OR (((cardinality(camp_names) >= 1) AND (cardinality(camp_names) <= 10)) AND (char_length(array_to_string(camp_names, ''::text)) <= 1200)))),
   CONSTRAINT climb_logs_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
@@ -448,10 +449,14 @@ CREATE TABLE public.climber_resumes (
   courses jsonb NOT NULL DEFAULT '[]'::jsonb,
   climbs jsonb NOT NULL DEFAULT '[]'::jsonb,
   updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  conditioning text NOT NULL DEFAULT ''::text,
+  hidden_logs jsonb NOT NULL DEFAULT '[]'::jsonb,
   CONSTRAINT climber_resumes_pkey PRIMARY KEY (user_id),
   CONSTRAINT climber_resumes_climbs_check CHECK (((jsonb_typeof(climbs) = 'array'::text) AND (jsonb_array_length(climbs) <= 400))),
+  CONSTRAINT climber_resumes_conditioning_check CHECK ((char_length(conditioning) <= 400)),
   CONSTRAINT climber_resumes_courses_check CHECK (((jsonb_typeof(courses) = 'array'::text) AND (jsonb_array_length(courses) <= 60))),
   CONSTRAINT climber_resumes_headline_check CHECK ((char_length(headline) <= 200)),
+  CONSTRAINT climber_resumes_hidden_logs_check CHECK (((jsonb_typeof(hidden_logs) = 'array'::text) AND (jsonb_array_length(hidden_logs) <= 2000))),
   CONSTRAINT climber_resumes_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.climber_resumes ENABLE ROW LEVEL SECURITY;
@@ -1657,15 +1662,15 @@ CREATE TABLE public.route_difficulty_ratings (
   created_at timestamp with time zone DEFAULT now(),
   updated_at timestamp with time zone DEFAULT now(),
   CONSTRAINT route_difficulty_ratings_pkey PRIMARY KEY (id),
-  CONSTRAINT route_difficulty_ratings_axis_check CHECK ((axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text]))),
+  CONSTRAINT route_difficulty_ratings_axis_check CHECK ((axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text, 'power'::text, 'endurance'::text, 'fingery'::text, 'mental'::text, 'protection'::text, 'sustained'::text, 'strenuous'::text, 'height'::text, 'landing'::text]))),
   CONSTRAINT route_difficulty_ratings_rating_check CHECK (((rating >= 1) AND (rating <= 5))),
   CONSTRAINT route_difficulty_ratings_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.route_difficulty_ratings ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "difficulty ratings delete own" ON public.route_difficulty_ratings AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "difficulty ratings insert own" ON public.route_difficulty_ratings AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND ((rating >= 1) AND (rating <= 5)) AND (axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text]))));
+CREATE POLICY "difficulty ratings insert own" ON public.route_difficulty_ratings AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND ((rating >= 1) AND (rating <= 5)) AND (axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text, 'power'::text, 'endurance'::text, 'fingery'::text, 'mental'::text, 'protection'::text, 'sustained'::text, 'strenuous'::text, 'height'::text, 'landing'::text]))));
 CREATE POLICY "difficulty ratings public read" ON public.route_difficulty_ratings AS PERMISSIVE FOR SELECT TO public USING (true);
-CREATE POLICY "difficulty ratings update own" ON public.route_difficulty_ratings AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND ((rating >= 1) AND (rating <= 5)) AND (axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text]))));
+CREATE POLICY "difficulty ratings update own" ON public.route_difficulty_ratings AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND ((rating >= 1) AND (rating <= 5)) AND (axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text, 'power'::text, 'endurance'::text, 'fingery'::text, 'mental'::text, 'protection'::text, 'sustained'::text, 'strenuous'::text, 'height'::text, 'landing'::text]))));
 
 CREATE TABLE public.route_field_confidence (
   route_id text NOT NULL,

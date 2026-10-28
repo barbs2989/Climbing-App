@@ -4,7 +4,7 @@ import { DISC_LABELS as DL } from "./discLabels";
 import { clickable } from "./clickable";
 import { useState } from "react";
 import { useLeaderboard, useTopClimbs, useAreaChildren, useAreaPath, dbRouteToCamel, useVerifiedUsers } from "./db";
-import { C, CAT, CLIMBERS, DEMO_FILLERS, FILLER_CLIMBERS, ME, MOUNTAINS, NONCOMPLETION_TICKS, ROUTES, catOf, distMiles, haveMyLoc, inArea, lbRowName, pubName, routeAscentFt, seedHistoryFor, uDistMi, uDistMiUnitLong, uElev } from "../ClimbMatchCore.jsx";
+import { C, CAT, summitedLog, CLIMBERS, DEMO_FILLERS, FILLER_CLIMBERS, ME, MOUNTAINS, NONCOMPLETION_TICKS, ROUTES, catOf, distMiles, haveMyLoc, inArea, lbRowName, pubName, routeAscentFt, seedHistoryFor, uDistMi, uDistMiUnitLong, uElev } from "../ClimbMatchCore.jsx";
 import Av from "../src/components/Av.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
@@ -65,7 +65,7 @@ export default function Leaderboards({meLive,onView,onClimb,logs,connections,cat
       }
       if(NOT_SENT.indexOf(l.tickType)>=0)return;
       if(r.classic)classicIds.add(r.id);
-      if(l.tickType==="Summit"&&PEAK.includes(r.discipline)){peaks.life++;if(recent)peaks.yr++;}
+      if(summitedLog(l)&&PEAK.includes(r.discipline)){peaks.life++;if(recent)peaks.yr++;}
       const cat=catOf(r);const bucketKey=(cat==="trad"||cat==="sport")?"rock":cat;
       const bump=k=>{if(!sends[k])sends[k]={life:0,yr:0};sends[k].life++;if(recent)sends[k].yr++;};
       bump(bucketKey);if(bucketKey==="rock")bump(cat);
