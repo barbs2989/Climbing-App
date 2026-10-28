@@ -1,5 +1,6 @@
 import { C, DLOCALE, SL, SUB_LABEL } from "../ClimbMatchCore.jsx";
 import { useRouteStats } from "./db.js";
+import Chevron from "../src/components/Chevron.tsx";
 
 /* ROUTE STATS — the route page's numbers, as Mountain Project's sidebar and Stats page give them
    ("Page Views: N total · N/month", the star breakdown, ticks, "on N to-do lists") and theCrag's
@@ -17,15 +18,23 @@ const plural = (v, one, many) => n(v) + " " + (Number(v) === 1 ? one : many);
    off when there is nobody to split, or when the RPC predates 0371 and returns no figure. */
 const recent = (all, yr) => (Number(all) > 0 && yr != null ? " · " + n(yr) + " in the past 12 months" : "");
 
-function Tile({ label, value, sub }) {
-  return <div style={{ background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: "9px 11px", minWidth: 0 }}>
+/* A tile with onOpen is a button: its number leads to the climbers behind it, as Mountain Project's
+   Stats page lists who has a route on their to-do list. `go` is the link's own words, in blue. */
+function Tile({ label, value, sub, onOpen, go }) {
+  const body = <>
     <div style={{ ...SUB_LABEL, marginBottom: 2 }}>{label}</div>
     <div style={{ fontSize: 20, fontWeight: 800, color: C.text, lineHeight: 1.2 }}>{n(value)}</div>
     {sub ? <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.4, marginTop: 2 }}>{sub}</div> : null}
-  </div>;
+    {onOpen && go ? <div style={{ display: "flex", alignItems: "center", gap: 2, fontSize: 11.5, fontWeight: 700, color: C.blue, lineHeight: 1.4, marginTop: 3 }}>{go}<Chevron size={13} color={C.blue} /></div> : null}
+  </>;
+  const box = { background: C.surface, border: "1px solid " + (onOpen ? C.blueDim : C.border), borderRadius: 10, padding: "9px 11px", minWidth: 0 };
+  return onOpen ? <button type="button" onClick={onOpen} style={{ ...box, display: "block", width: "100%", textAlign: "left", font: "inherit", color: "inherit", cursor: "pointer" }}>{body}</button> : <div style={box}>{body}</div>;
 }
 
-export default function RouteStats({ routeId, cragOnly }) {
+/* onOpenPartners opens the route's Partners tab (owner's note, 2026-10-28: the objectives count leads
+   to the climbers looking for the same route). On an alpine route that tab lists the climbers who saved
+   it; a crag route's partners are found by the CRAG (0300/0303), so its link says that instead. */
+export default function RouteStats({ routeId, cragOnly, onOpenPartners }) {
   const q = useRouteStats(routeId);
   if (!routeId) return null;
   if (q.isError) return <div style={{ marginBottom: 12 }}><SL>ROUTE STATS</SL><div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>Route stats aren’t reachable right now. Try again in a moment.</div></div>;
@@ -44,7 +53,7 @@ export default function RouteStats({ routeId, cragOnly }) {
       <Tile label="Page views" value={s.views_total} sub={n(s.views_30d) + " in the last 30 days"} />
       <Tile label={sendWord} value={s.sends} sub={"by " + plural(s.senders, "climber", "climbers") + recent(s.senders, s.senders_12m)} />
       <Tile label="Logged climbs" value={s.climbs} sub={"by " + plural(s.climbers, "climber", "climbers") + recent(s.climbers, s.climbers_12m) + (last ? " · last " + last : "")} />
-      <Tile label="On objectives" value={s.objectives} sub={Number(s.objectives) === 1 ? "climber saved it" : "climbers saved it"} />
+      <Tile label="On objectives" value={s.objectives} sub={Number(s.objectives) === 1 ? "climber saved it" : "climbers saved it"} onOpen={onOpenPartners && (cragOnly || Number(s.objectives) > 0) ? onOpenPartners : null} go={cragOnly ? "Partners at this crag" : "See who"} />
     </div>
     {raters ? <div style={{ marginTop: 12 }}>
       <div style={{ ...SUB_LABEL, marginBottom: 5 }}>Star ratings · {plural(raters, "climber", "climbers")}</div>
