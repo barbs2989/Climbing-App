@@ -21,7 +21,7 @@ const CASES = [
     file: "RouteDetail.jsx",
     // The REAL defect, reproduced: put the raw season back in the pill.
     name: "1. approach variant season goes back into the nowrap pill (the real #4)",
-    edit: (s) => s.replace(">{seasonPill}</span>:null}", ">{seasonFull}</span>:null}"),
+    edit: (s) => s.replace('overflowWrap:"anywhere"}}>{seasonFull}</div>', 'whiteSpace:"nowrap"}}>{seasonFull}</div>'),
     want: /box\(es\) hold text too long for their shape/,
   },
   {
@@ -51,9 +51,9 @@ const CASES = [
     // carries word-break plus a wrapping parent, put there by someone who found this exact
     // problem. Reporting it would be telling an author to undo a correct fix.
     name: "4. long text in a box that explicitly wraps (must PASS)",
-    edit: (s) => s.replace(
-      '{seasonPill?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.onSolid,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{seasonPill}</span>:null}',
-      '{seasonFull?<span style={{flexShrink:1,fontSize:11,fontWeight:700,color:C.onSolid,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{seasonFull}</span>:null}'),
+    // The approach window box wraps by construction (overflowWrap + word-break), so adding the
+    // explicit word-break is still a box that has been thought about.
+    edit: (s) => s.replace('overflowWrap:"anywhere"}}>{seasonFull}</div>', 'wordBreak:"break-word",overflowWrap:"anywhere"}}>{seasonFull}</div>'),
     want: null,
   },
   {
@@ -61,9 +61,7 @@ const CASES = [
     // MUST PASS. A long line in a box that clips with an ellipsis is correct handling, not a
     // defect — excluding these is what took an earlier scan from 104 candidates to 54.
     name: "3. long text in an ellipsis-clipping nowrap box (must PASS)",
-    edit: (s) => s.replace(
-      '{seasonPill?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.onSolid,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{seasonPill}</span>:null}',
-      '{seasonFull?<span style={{flexShrink:0,fontSize:11,color:C.blue,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",maxWidth:120}}>{seasonFull}</span>:null}'),
+    edit: (s) => s.replace('overflowWrap:"anywhere"}}>{seasonFull}</div>', 'whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{seasonFull}</div>'),
     want: null, // expect a clean run
   },
   {

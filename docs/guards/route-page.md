@@ -600,6 +600,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **`check:trailhead-directions`** asserts a screen offers **exactly one way to drive to the
   trailhead**, that the **coordinates** are beside it, and that a **label describes the value under
   it**. Static (one esbuild bundle, five SSR renders), so it sits in `npm run build`.
+  - **SECTION 9 (2026-10-25 update): each leg carries its TIME, and the DESCENT strip repeats it.** The
+    time on *Summit to trailhead* must equal the time the DESCENT section's leg strip prints, because
+    both read one `planTimes()` call at the Planner's settings. The old assertion (`!\bhr\b`, "no time")
+    was retired: `\bhr\b` never matches `5.2hr` (no word boundary between a digit and `h`), so it passed
+    with a time on the page. The time regex is now `[≥]?\d+\.\d+hr`.
   - **SECTION 9: THE TWO LEGS SIT WITH GETTING THERE** (owner, 2026-10-21). `SummitLegsCard` renders
     *Trailhead to summit* / *Summit to trailhead* under `TrailheadCard`, and the section asserts both
     legs render between the coordinates and ACCESS & REGULATIONS, with `planTimes()`' times and the

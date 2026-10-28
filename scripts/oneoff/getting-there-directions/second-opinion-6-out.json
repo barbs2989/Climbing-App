@@ -1,0 +1,276 @@
+[
+ {
+  "i": 244,
+  "verdict": "confirmed",
+  "finalDirection": "From the Nisqually entrance of Mount Rainier National Park, drive Paradise Road about 15 miles to the Stevens Canyon Road junction, turn right and go 1.5 miles to the Reflection Lakes parking area.",
+  "numbersUsed": [
+   "15",
+   "1.5"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/pinnacle-saddle",
+   "https://www.nps.gov/mora/planyourvisit/road-status.htm"
+  ],
+  "note": "WTA gives exactly this drive; Stevens Canyon Road is only closed for the season per the park, so no closure is added."
+ },
+ {
+  "i": 245,
+  "verdict": "corrected",
+  "finalDirection": "From the Nisqually entrance of Mount Rainier National Park, drive Paradise Road about 15 miles to the Stevens Canyon Road junction, turn right and go about 1.5 miles to the Reflection Lakes parking area.",
+  "numbersUsed": [
+   "15",
+   "1.5"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/pinnacle-saddle",
+   "https://www.nps.gov/mora/planyourvisit/road-status.htm"
+  ],
+  "note": "WTA says 1.5 miles to the Reflection Lakes parking area, so wording changed from pullouts to parking area."
+ },
+ {
+  "i": 253,
+  "verdict": "corrected",
+  "finalDirection": "From Marblemount, drive SR-20 east about 50 miles to Rainy Pass, turn left across the highway from the Maple Pass lot and go less than half a mile to the unpaved Pacific Crest Trail parking lot.",
+  "numbersUsed": [
+   "20",
+   "50"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/maple-pass",
+   "https://www.wta.org/go-hiking/hikes/cutthroat-pass-via-pacific-crest-trail"
+  ],
+  "note": "The proposed north-side lot is right, but the PCT lot is a short side road off the highway, per the Cutthroat Pass page (51 miles) and Maple Pass page (about 50)."
+ },
+ {
+  "i": 256,
+  "verdict": "confirmed",
+  "finalDirection": "From Winthrop drive about 15 miles west on SR-20, turn right onto Lost River Road, keep left after half a mile, and follow it about 7.5 miles on pavement, then 1.25 miles on gravel Forest Road 5400 to the Robinson Creek Trailhead on the right.",
+  "numbersUsed": [
+   "15",
+   "20",
+   "7.5",
+   "1.25",
+   "5400"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/robinson-creek"
+  ],
+  "note": "Matches the WTA directions."
+ },
+ {
+  "i": 259,
+  "verdict": "confirmed",
+  "finalDirection": "From Newhalem, drive SR-20 east about 14 miles; the trailhead parking is on the right between mileposts 134 and 135.",
+  "numbersUsed": [
+   "20",
+   "14",
+   "134",
+   "135"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/ross-dam-trail"
+  ],
+  "note": "Matches WTA, which also notes it lies past the western winter gate."
+ },
+ {
+  "i": 261,
+  "verdict": "confirmed",
+  "finalDirection": "From Newhalem, drive SR-20 east about 14 miles; the trailhead parking is on the right between mileposts 134 and 135.",
+  "numbersUsed": [
+   "20",
+   "14",
+   "134",
+   "135"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/ross-dam-trail"
+  ],
+  "note": "Matches WTA."
+ },
+ {
+  "i": 266,
+  "verdict": "corrected",
+  "finalDirection": "From Burlington, take I-5 exit 230 and drive SR-20 east about 23 miles, turn left onto Baker Lake Road 0.4 miles past milepost 82 and follow it 12.3 miles, turn left onto Forest Road 12 for 3.7 miles, then right onto Forest Road 13 for 5.3 miles to the trailhead parking.",
+  "numbersUsed": [
+   "5",
+   "230",
+   "20",
+   "23",
+   "0.4",
+   "82",
+   "12.3",
+   "12",
+   "3.7",
+   "13",
+   "5.3"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/park-butte",
+   "https://www.fs.usda.gov/r06/mbs/alerts"
+  ],
+  "note": "Proposed text lacked the start; WTA starts in Burlington at I-5 exit 230, 23 miles on SR-20; no closure of these roads found (FR 12 repair alert was for August, a different stretch)."
+ },
+ {
+  "i": 267,
+  "verdict": "corrected",
+  "finalDirection": "From Burlington, take I-5 exit 230 and drive SR-20 east about 23 miles, turn left onto Baker Lake Road 0.4 miles past milepost 82 and follow it 12.3 miles, turn left onto Forest Road 12 for 3.7 miles, then right onto Forest Road 13 for 5.3 miles to the trailhead parking.",
+  "numbersUsed": [
+   "5",
+   "230",
+   "20",
+   "23",
+   "0.4",
+   "82",
+   "12.3",
+   "12",
+   "3.7",
+   "13",
+   "5.3"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/park-butte",
+   "https://www.fs.usda.gov/r06/mbs/alerts"
+  ],
+  "note": "Same as 266: added the Burlington start and distance."
+ },
+ {
+  "i": 270,
+  "verdict": "corrected",
+  "finalDirection": "From Glacier, drive Mt. Baker Highway (SR 542) east about 1 mile past the Glacier Public Service Center to Glacier Creek Road (Forest Road 39), turn right, then take an immediate left onto Deadhorse Road (Forest Road 37) and follow it 12.7 miles to the trailhead at the end of the road. Deadhorse Road is closed to vehicles at mile 3.1 by flood damage, a closure still in effect in June 2026; check the road status before you go.",
+  "numbersUsed": [
+   "542",
+   "1",
+   "39",
+   "37",
+   "12.7",
+   "3.1",
+   "2026"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.fs.usda.gov/r06/mbs/recreation/skyline-divide-trailhead",
+   "https://www.fs.usda.gov/r06/mbs/alerts",
+   "https://www.wta.org/go-hiking/hikes/skyline-divide"
+  ],
+  "note": "Closure confirmed (alert start June 1, 2026, no end date; trailhead page also cites 2021 flood damage at mile 3.1), and 12.7 miles to the trailhead added from the Forest Service page. Reworded on review: no source named in app text."
+ },
+ {
+  "i": 271,
+  "verdict": "corrected",
+  "finalDirection": "From the start of US 2 in Everett, drive US 2 east about 65 miles to Stevens Pass, pass under the pedestrian overpass and turn left into the large lot on the north side of the highway.",
+  "numbersUsed": [
+   "2",
+   "2",
+   "65"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/skyline-lake"
+  ],
+  "note": "WTA gives 65 miles from the start of US 2 in Everett; wording tightened."
+ },
+ {
+  "i": 272,
+  "verdict": "corrected",
+  "finalDirection": "Park in the large lot on the north side of US 2 at Stevens Pass, turning left after the pedestrian overpass when coming from the west or right just before it when coming from Leavenworth.",
+  "numbersUsed": [
+   "2"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/skyline-lake"
+  ],
+  "note": "WTA lists no pass or fee, so the fee claim is dropped; turns match."
+ },
+ {
+  "i": 276,
+  "verdict": "rejected",
+  "finalDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "fetchedUrls": [],
+  "note": "No fetched page supports the Harts Pass or Slate Peak Road figures (the nwhiker source was not opened), so it is not confirmed."
+ },
+ {
+  "i": 277,
+  "verdict": "corrected",
+  "finalDirection": "From Leavenworth, drive US 2 west about 31 miles, turn right onto Smithbrook Road (Forest Road 6700) and go about 3 miles to the trailhead on the left. Forest Road 6700 is closed to vehicles by a storm-damage order from May 20, 2026 through December 31, 2027, unless lifted sooner.",
+  "numbersUsed": [
+   "2",
+   "31",
+   "6700",
+   "3",
+   "20",
+   "2026",
+   "2027"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/smithbrook-trailhead",
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/storm-damaged-roads-closure-wenatchee-river-district"
+  ],
+  "note": "Order for FR 6700 effective May 20, 2026 through Dec 31, 2027 confirmed on the alert page; it describes the segment from the FR 6701 junction to the PCT without naming Smithbrook, and the trailhead page (which gives the drive) says Smithbrook Road is FR 6700. Reworded on review: no source named in app text."
+ },
+ {
+  "i": 279,
+  "verdict": "corrected",
+  "finalDirection": "From Leavenworth, drive US 2 west about 31 miles, turn right onto Smithbrook Road (Forest Road 6700) and go about 3 miles to the trailhead on the left. Forest Road 6700 is closed to vehicles by a storm-damage order from May 20, 2026 through December 31, 2027, unless lifted sooner.",
+  "numbersUsed": [
+   "2",
+   "31",
+   "6700",
+   "3",
+   "20",
+   "2026",
+   "2027"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/smithbrook-trailhead",
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/storm-damaged-roads-closure-wenatchee-river-district"
+  ],
+  "note": "Used the sourced Leavenworth drive plus the dated order; the 4.2-mile figure from the old text could not be confirmed on a fetched page. Reworded on review: no source named in app text."
+ },
+ {
+  "i": 284,
+  "verdict": "corrected",
+  "finalDirection": "From US 12 about 3 miles before Packwood, turn south onto Forest Road 21 and follow the gravel road about 13 miles, take a slight left onto Forest Road 2150, then go less than 3 miles and turn right into the Snowgrass Flat Trailhead parking loop.",
+  "numbersUsed": [
+   "12",
+   "3",
+   "21",
+   "13",
+   "2150",
+   "3"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/snowgrass"
+  ],
+  "note": "WTA matches the turn and mileage; final turn right into the loop lot added."
+ },
+ {
+  "i": 288,
+  "verdict": "confirmed",
+  "finalDirection": "From Port Angeles, head west on US 101 about 29 miles to Sol Duc Road, turn left and go 14 miles, passing the hot springs, to the parking lot at the end of the road.",
+  "numbersUsed": [
+   "101",
+   "29",
+   "14"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/sol-duc-falls",
+   "https://www.nps.gov/olym/planyourvisit/current-road-conditions.htm"
+  ],
+  "note": "Matches WTA; park page shows Sol Duc Road open."
+ }
+]

@@ -53,7 +53,7 @@ const ROWS = [
   ["Discipline", r => discLabel(catOf(r))],
   ["Where", r => routeLocText(r)],
   ["Length", r => r.routeFt != null ? uElev(r.routeFt) : null],
-  ["Pitches", r => r.pitches > 0 ? String(r.pitches) : null],
+  ["Pitches", r => r.pitches > 0 && r.discipline !== "scrambling" ? String(r.pitches) : null],
   // ONE WAY or the whole outing, said: a loop's stored figure is the whole trip, and the column
   // printed both under "Approach" as if they were the same measurement.
   ["Approach", r => { const d = effDistKm(r); return d != null ? uDist(d) + (effDistIsWholeTrip(r) ? " whole outing" : " one way") : null; }],

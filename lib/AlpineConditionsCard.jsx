@@ -4,7 +4,7 @@
 // climber's own units. The crag score (ConditionsScoreCard) is a different card for different
 // disciplines -- the two never render on one route.
 import { useState, useEffect, useMemo } from "react";
-import { C, DLOCALE, ROUTE_GAP, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, uImp, uDistMi, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
+import { C, DLOCALE, ROUTE_GAP, summitedLog, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, uImp, uDistMi, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
 import CardHead from "../src/components/CardHead.tsx";
 import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread, fetchCragAir, fetchPointAlerts, fetchGaugeSites, fetchGaugeFlow } from "./forecast.js";
 import { parseSites, nearestGauge, flowReading, gaugeName, STEADY_PCT, STEADY_STAGE_FT } from "./streams.js";
@@ -771,17 +771,17 @@ function SeasonSection({ pt }) {
    Nothing is inferred, and with no such report the section is absent rather than "no one summited". */
 export function recentOutcomes(activity, nowMs) {
   const cut = (nowMs != null ? nowMs : Date.now()) - 60 * 864e5;
-  return (activity || []).filter(function (a) { return a && /^(Summit|Attempt|Turned around)$/.test(a.tickType || "") && a.date && Date.parse(String(a.date).slice(0, 10) + "T12:00:00Z") >= cut; })
+  return (activity || []).filter(function (a) { return a && (summitedLog(a) || /^(Summit|Attempt|Turned around)$/.test(a.tickType || "")) && a.date && Date.parse(String(a.date).slice(0, 10) + "T12:00:00Z") >= cut; })
     .sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); });
 }
 function OutcomesSection({ activity }) {
   const rows = recentOutcomes(activity);
   if (!rows.length) return null;
-  const up = rows.filter(function (a) { return a.tickType === "Summit"; }).length;
+  const up = rows.filter(function (a) { return summitedLog(a); }).length;
   return <div style={{ marginTop: 14 }}><CardHead style={HEAD}>Recent outcomes</CardHead>
     <div style={{ fontSize: 12.5, color: C.text, marginBottom: 4 }}>{up + " of " + rows.length + " report" + (rows.length === 1 ? "" : "s") + " in the last 60 days summited."}</div>
     {rows.slice(0, 4).map(function (a, i) {
-      const back = a.tickType !== "Summit", why = back && Array.isArray(a.outcomeReasons) && a.outcomeReasons.length ? " — " + a.outcomeReasons.join(", ") : "";
+      const back = !summitedLog(a), why = back && Array.isArray(a.outcomeReasons) && a.outcomeReasons.length ? " — " + a.outcomeReasons.join(", ") : "";
       return <div key={(a._dbId || a.id || "") + "-" + i} style={{ fontSize: 12, color: C.textSub, lineHeight: 1.45 }}>{new Date(String(a.date).slice(0, 10) + "T12:00:00Z").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", timeZone: "UTC" }) + " · "}<b style={{ color: back ? C.amber : C.green }}>{back ? a.tickType : "Summited"}</b>{why}{back && a.outcomeNote ? ": " + String(a.outcomeNote).slice(0, 140) : ""}</div>;
     })}
   </div>;

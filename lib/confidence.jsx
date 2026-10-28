@@ -58,7 +58,7 @@ export function ConfChip({ level, label, onFlag, compact }) {
   const name = (label || "this detail").toString().replace(/\s+/g, " ").trim();
   return <span style={{ display: "inline-flex", alignItems: "center", gap: 4, flexShrink: 0, marginLeft: compact ? 4 : 6 }}>
     <span title={LEVEL_HELP[level]} aria-label={name + ": " + LEVEL_LABEL[level] + " confidence" + (level === "high" ? ", locked" : "")} style={{ fontSize: 10, fontWeight: 800, letterSpacing: 0.4, textTransform: "uppercase", color: col, background: bg, border: "1px solid " + bd, borderRadius: 6, padding: "1px 6px", lineHeight: 1.6, whiteSpace: "nowrap" }}>{LEVEL_LABEL[level] + (level === "high" ? " · locked" : "")}</span>
-    {onFlag ? <button onClick={function (e) { e.stopPropagation(); onFlag(); }} title={"Flag " + name + " as wrong"} aria-label={"Flag " + name + " as wrong"} style={{ background: "transparent", border: "1px solid " + C.border, color: C.textSub, borderRadius: 6, fontSize: 11, lineHeight: 1.4, padding: "1px 6px", cursor: "pointer", whiteSpace: "nowrap" }}>{"Flag"}</button> : null}
+    {onFlag ? <button onClick={function (e) { e.stopPropagation(); onFlag(); }} title={"Flag " + name + " as wrong"} aria-label={"Flag " + name + " as wrong"} style={{ background: "transparent", border: "1px solid " + C.border, color: C.textSub, borderRadius: 6, fontSize: 11, lineHeight: 1.4, padding: "1px 6px", cursor: "pointer", whiteSpace: "nowrap", pointerEvents: "auto" }}>{"Flag"}</button> : null}
   </span>;
 }
 

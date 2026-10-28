@@ -23,7 +23,7 @@ const HOW = {
   vert: "For each climb finished in the last 12 months: a peak’s gain from the trailhead, else the climb’s length.",
   days: "Different days with a logged climb in the last 12 months.",
   active: "Every climb logged, attempts included. Conditions reports are not climbs.",
-  peaksYr: "Different summits logged as Summit in the last 12 months.", peaksLife: "Different summits logged as Summit.",
+  peaksYr: "Different summits in the last 12 months: a Summit tick, or a climb you topped out on.", peaksLife: "Different summits: a Summit tick, or a climb you topped out on.",
   classics_b: "Different classic climbs sent.",
 };
 
