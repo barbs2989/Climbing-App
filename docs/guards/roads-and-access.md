@@ -803,3 +803,34 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `expiredanswered`/`pastreport` must report zero under `expired`. **Re-run all six after touching
     the output path** — `--json` routes every report line through `say()`, so a mistake there is
     silent on stdout and invisible in the exit code.
+- **Getting there, batch 1 (owner note 2026-10-25): 64 missing DRIVES filled, 7 walks replaced.**
+  `scripts/oneoff/getting-there-directions/` holds the whole batch: `list-targets.mjs` (WA alpine
+  routes with a trailhead card and >=200 chars of approach prose but no `trailheadDirection` — 76),
+  the research per STORED trailhead string (`th-A-out.json`, `th-B-out.json`, 61 trailheads, each
+  with its source URLs for review, never in the text), and `apply-trailhead-directions-batch.mjs`.
+  - **Research the TRAILHEAD, not the route.** 76 routes needed only 61 strings and ~45 real places;
+    the drive to a trailhead is the same for every climb that starts there, so the shared text is
+    correct, not the pasted-paragraph fingerprint (that one is about the WALK).
+  - **The approach prose cannot be summarised into a drive.** It is a walk; the drive is usually not
+    in it at all, so a "one-line summary of the prose" would fail this file's shape detector. Every
+    direction was researched online.
+  - **Rails in the applier:** fills an absent value only; matches by the exact stored trailhead
+    string; writes only `found:true` at `high`/`medium` confidence; numbers in the text must equal
+    `numbersUsed`; no source name or URL; must pass `trailheadDirectionProblem()`; merges into
+    `approach_logistics`; refresh `routes.json` immediately before `--apply`, because the merge base
+    is that snapshot. Paced 1 s, reconciled by re-read (64/64).
+  - **Refused, so still open (12):** three trailheads no source could place (Cutthroat South Buttress
+    and West Ridge pullouts, Mount Crowder's "no separate trailhead"); High Bridge (Stehekin, no
+    road); Jack Mountain South Face (no stored trailhead name); and seven at LOW confidence —
+    Canyon Creek milepost (forum only), Cedar Creek (not shown to be the North Gardner access), the
+    Maynard Burn #816 (no trailhead of that name, the drive found was to Upper Dungeness), FR-6220 /
+    Anderson Creek (the drive found ends at the Mount Persis road end), Depot Creek x2 (newest source
+    ~2020 for a WASHED-OUT road). Lowered by hand on review, not by the agent: Anderson Creek and
+    Depot Creek. Corrected by hand: Pete Lake (FR-46 leaves BEFORE Salmon la Sac, not past it).
+  - **Two refusals were the detector being right about the WORDS:** Duckabush's "pavement ends at
+    3.6 miles" matches the on-foot `at N miles` rule, and Mineral Creek's "about 7 miles to Cooper
+    Pass" the to-a-Pass rule because "it" names no road. Reworded, facts unchanged — the rule stays.
+  - **Mount Robson's 7 routes** held "Via the Berg Lake Trail, from the north/south side of the peak",
+    the only failures of `check:trailhead-direction-shape --live`. `fix-robson-trailhead-direction.mjs`
+    swaps it for the drive (Hwy 16, visitor centre, 2 km road) by compare-and-swap on the exact old
+    string. The trail reopened in full in 2025 after the 2021 floods; the text says to check status.
