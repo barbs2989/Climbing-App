@@ -5,7 +5,8 @@
 // decisions.json: [{ id, slug, fktTitle, why }]   (slug -> gpx/<slug>.gpx, the FKT file)
 import fs from "fs";
 import path from "path";
-const REPO = "/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/gpx-route-tracks-2026-10-25";
+import { fileURLToPath } from "url";
+const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const { assessTrack } = await import("./rule.mjs");
 const { SUPABASE_URL, anonKey, headers, patchRow } = await import(`${REPO}/scripts/lib/supabase-env.mjs`);
 

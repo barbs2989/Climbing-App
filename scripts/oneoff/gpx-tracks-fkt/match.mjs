@@ -2,8 +2,9 @@
 // Read-only. Output: candidates.json, one row per (route, FKT track) that passes the rule.
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import { assessTrack } from "./rule.mjs";
-const REPO = "/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/gpx-route-tracks-2026-10-25";
+const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const { SUPABASE_URL, anonKey, headers } = await import(`${REPO}/scripts/lib/supabase-env.mjs`);
 
 const here = path.dirname(new URL(import.meta.url).pathname);
