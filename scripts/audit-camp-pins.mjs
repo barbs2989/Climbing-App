@@ -59,12 +59,16 @@ await build({
 const { campSites, samePlaceCamp } = createRequire(import.meta.url)(out);
 
 const H = headers(anonKey());
-async function q(p) {
+let scanFailed = false;
+async function q(p, opts) {
   for (let t = 0; t < 4; t++) {
-    const r = await fetch(`${SUPABASE_URL}/rest/v1/${p}`, { headers: H });
-    if (r.ok) return r.json();
+    try {
+      const r = await fetch(`${SUPABASE_URL}/rest/v1/${p}`, { headers: H, signal: AbortSignal.timeout(60000) });
+      if (r.ok) return r.json();
+    } catch { /* backed off below */ }
     await new Promise((res) => setTimeout(res, 15000 * (t + 1)));
   }
+  if (opts && opts.soft) { scanFailed = true; return null; }
   console.log(`FAIL: read failed (${p.slice(0, 80)}) — this is NOT "every camp is pinned".`);
   process.exit(1);
 }
@@ -72,10 +76,22 @@ async function q(p) {
 // is a scan carrying ~750 rows of prose, and it hit the statement timeout whenever the database was
 // busy (2026-10-28, with a dozen sessions on it). The scans return only ids; the heavy columns come
 // in small primary-key chunks that cannot time out.
-const ids = [...new Set([
-  ...(await q(`routes?select=id&bivy=not.is.null&limit=5000`)).map((r) => r.id),
-  ...(await q(`routes?select=id&waypoints=cs.${encodeURIComponent('[{"type":"Campsite"}]')}&limit=5000`)).map((r) => r.id),
-])];
+// The two scans are sequential over 315k rows and can still time out on a busy database. With
+// --ids-cache, a successful run saves the id list and a failed scan falls back to it, SAYING SO —
+// the set of camp-bearing routes changes only when camps are added, and every row is still read live.
+const IDS_CACHE = (() => { const i = argv.indexOf("--ids-cache"); return i >= 0 ? argv[i + 1] : null; })();
+async function scanIds() {
+  return [...new Set([
+    ...(await q(`routes?select=id&bivy=not.is.null&limit=5000`, { soft: true }) || []).map((r) => r.id),
+    ...(await q(`routes?select=id&waypoints=cs.${encodeURIComponent('[{"type":"Campsite"}]')}&limit=5000`, { soft: true }) || []).map((r) => r.id),
+  ])];
+}
+let ids = await scanIds();
+if (scanFailed) {
+  if (!IDS_CACHE || !fs.existsSync(IDS_CACHE)) { console.log("FAIL: read failed — this is NOT \"every camp is pinned\"."); process.exit(1); }
+  ids = JSON.parse(fs.readFileSync(IDS_CACHE, "utf8"));
+  console.log(`WARNING: the id scan timed out; using the ${ids.length} route ids saved by the last successful run (rows themselves are read live)`);
+} else if (IDS_CACHE) fs.writeFileSync(IDS_CACHE, JSON.stringify(ids));
 if (!ids.length) { console.log("FAIL: read no routes carrying camps — an empty audit proves nothing"); process.exit(1); }
 const byId = new Map();
 for (let i = 0; i < ids.length; i += 15) {
@@ -90,11 +106,14 @@ const isCampPin = (w) => w && /^camp(site)?$/i.test(String(w.type || "").trim())
 const elevFt = (s) => (s == null ? null : s.elev != null ? Number(s.elev) : s.elevM != null ? Number(s.elevM) * 3.28084 : null);
 const thFt = (r) => { const w = (r.waypoints || []).find((x) => /trailhead/i.test(String(x && x.type || ""))); return w ? elevFt(w) : null; };
 
-const F = { missing: [], noPoint: [], noCoord: [], off: [], roadside: [] };
+const F = { missing: [], noPoint: [], noCoord: [], off: [], roadside: [], dup: [] };
 let sites = 0, pinned = 0, onLine = 0, noTrack = 0, routesWithFinding = new Set();
 for (const r of routes) {
   const route = { ...r, bivy: Array.isArray(r.bivy) ? r.bivy : [], waypoints: Array.isArray(r.waypoints) ? r.waypoints : [] };
   const pins = route.waypoints.filter(isCampPin);
+  // One camp pinned twice under one name draws two pins for one place (and is what a repair run from
+  // a stale census would leave behind).
+  for (const [k, n] of pins.reduce((m, w) => m.set(key(w.name), (m.get(key(w.name)) || 0) + 1), new Map())) if (k && n > 1) { F.dup.push({ id: r.id, pin: k, n }); routesWithFinding.add(r.id); }
   // A "track" of fewer than two usable points is no line at all (wa_mount_adams_mazama_glacier_headwall
   // measured its pin as Infinity m off one), so it counts with the routes that have none.
   const rec = recordedTrackPts(r.gpx, route.waypoints);
@@ -138,6 +157,7 @@ show("MISSING PIN — listed, not on the map", F.missing, (x) => `${x.id}  "${x.
 show("NO COORDINATE — a pin with no lat/lng, still stamped \"Marked on the track\"", F.noCoord, (x) => `${x.id}  "${x.pin}"`);
 show(`OFF THE TRACK — pin more than ${WP_TOL} m from the recorded track`, F.off, (x) => `${x.id}  "${x.pin}"  ${x.offM} m`);
 show("ROADSIDE — below the trailhead, off the walk (not a defect)", F.roadside, (x) => `${x.id}  "${x.pin}"  ${x.offM} m`);
+show("PINNED TWICE — two Campsite pins with one name", F.dup, (x) => `${x.id}  "${x.pin}" x${x.n}`);
 show("NO SINGLE POINT — a dispersed zone or two places (cannot be one pin)", F.noPoint, (x) => `${x.id}  "${x.camp}" — ${x.why}`);
 console.log(`\nroutes with a finding: ${routesWithFinding.size} of ${routes.length}`);
 // Every Campsite pin read, so the solver (scripts/oneoff/add-camp-pins.mjs) has its donor set without

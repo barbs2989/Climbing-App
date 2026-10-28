@@ -96,6 +96,13 @@ await build({
 const { samePlaceCamp } = createRequire(import.meta.url)(bundle);
 
 const audit = JSON.parse(fs.readFileSync(AUDIT, "utf8"));
+// A census older than the last write lists camps that write already pinned. Applying from it would
+// pin them twice (2026-10-28: a timed-out audit left the previous census in place and the next run
+// started solving from it). Refuse unless the census was taken after the newest rollback.
+if (APPLY) {
+  const rbs = fs.readdirSync(RUN).filter((f) => f.startsWith("rollback-camp-pins-")).map((f) => fs.statSync(path.join(RUN, f)).mtimeMs);
+  if (rbs.length && fs.statSync(AUDIT).mtimeMs < Math.max(...rbs)) throw new Error(`${AUDIT} predates the last write — rerun audit:camp-pins --json first`);
+}
 const H = headers(anonKey());
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function q(p) {
@@ -339,6 +346,9 @@ for (const item of work) {
   const cur = plan.get(r.id) || { before: r.waypoints || [], after: (r.waypoints || []).slice(), adds: [] };
   const p = { lat: Number(done.c.lat.toFixed(6)), lng: Number(done.c.lng.toFixed(6)) };
   // A second pin at the same spot reads as one place twice (dedupeWaypoints would merge them).
+  // Judged on the LIVE row, whatever the census said: a camp already pinned under its own name is
+  // never pinned again.
+  if (item.kind === "missing" && cur.after.some((w) => isCampPin(w) && key(w.name) === key(item.camp))) { refused.push({ ...item, why: "already pinned on the live route" }); continue; }
   const clash = cur.after.find((w) => isCampPin(w) && pointOf(w) && metresBetween(pointOf(w), p) < 150 && key(w.name) !== key(item.pin || item.camp));
   if (clash) { refused.push({ ...item, why: `another camp pin, "${clash.name}", already stands within 150 m` }); continue; }
   if (item.kind === "noCoord") {
