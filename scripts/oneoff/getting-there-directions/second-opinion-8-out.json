@@ -1,0 +1,224 @@
+[
+ {
+  "i": 338,
+  "verdict": "confirmed",
+  "finalDirection": "From US-2 at Coles Corner, turn north on SR 207 and go about 4.4 miles, turn right onto Chiwawa Loop Road, then take the second left onto Chiwawa River Road (Forest Road 6200). Follow it about 23 miles to the Trinity Trailhead; it turns to gravel at about 11 miles and the last stretch is very rough.",
+  "numbersUsed": [
+   "2",
+   "207",
+   "4.4",
+   "6200",
+   "23",
+   "11"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/chiwawa-river",
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trinity-trailhead"
+  ],
+  "note": "Both pages give the same drive; the fire closure on the page is of the trail, not the road, so none added."
+ },
+ {
+  "i": 342,
+  "verdict": "corrected",
+  "finalDirection": "From the Mountain Loop Highway near milepost 7, turn onto Tupso Pass Road (Forest Road 41). The road is washed out about 4.8 miles in and closed to vehicles beyond, so the trailhead at its end is reached only on foot or by bike.",
+  "numbersUsed": [
+   "7",
+   "41",
+   "4.8"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/three-fingers",
+   "https://www.fs.usda.gov/r06/mbs/recreation/trails/three-fingers-goat-flats-saddle-lake-trail-641"
+  ],
+  "note": "Pages disagree on the stop (washout 4.8 mi vs Canyon Creek bridge ~8 mi from trailhead); text keeps the washout and closure, which both support."
+ },
+ {
+  "i": 343,
+  "verdict": "corrected",
+  "finalDirection": "From the Mountain Loop Highway near milepost 7, turn onto Tupso Pass Road (Forest Road 41). The road is washed out about 4.8 miles in and closed to vehicles beyond, so the trailhead at its end is reached only on foot or by bike.",
+  "numbersUsed": [
+   "7",
+   "41",
+   "4.8"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/three-fingers",
+   "https://www.fs.usda.gov/r06/mbs/recreation/trails/three-fingers-goat-flats-saddle-lake-trail-641"
+  ],
+  "note": "Same as 342."
+ },
+ {
+  "i": 344,
+  "verdict": "corrected",
+  "finalDirection": "From the Mountain Loop Highway near milepost 7, turn onto Tupso Pass Road (Forest Road 41) and drive to the vehicle closure; park there, as the road is closed to vehicles beyond.",
+  "numbersUsed": [
+   "7",
+   "41"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/three-fingers",
+   "https://www.fs.usda.gov/r06/mbs/recreation/trails/three-fingers-goat-flats-saddle-lake-trail-641"
+  ],
+  "note": "Fetched pages disagree on where vehicles stop (washout at 4.8 mi vs Canyon Creek bridge), so the exact spot is not stated."
+ },
+ {
+  "i": 347,
+  "verdict": "confirmed",
+  "finalDirection": "From Glacier, drive east on SR 542 for about 12.5 miles to just past the highway maintenance facility and bear left onto Twin Lakes Road. Follow it about 7 miles to the parking between the two lakes; the road is rough and a high-clearance vehicle is needed beyond about 4.5 miles.",
+  "numbersUsed": [
+   "542",
+   "12.5",
+   "7",
+   "4.5"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/winchester-mountain"
+  ],
+  "note": "WTA gives 12.5 mi east of Glacier, Twin Lakes Road 7.0 mi, high clearance past 4.5 mi."
+ },
+ {
+  "i": 355,
+  "verdict": "confirmed",
+  "finalDirection": "From SR 20 near milepost 82, turn north onto Baker Lake Road (Forest Road 11) and go about 14 miles, turn right onto Baker Dam Road and cross Upper Baker Dam, then turn left onto FR 1107 and follow it about 8.9 miles to the Anderson and Watson Lakes junction and 1.1 miles more to the trailhead. A washout has closed FR 1107 to vehicles since July 2026.",
+  "numbersUsed": [
+   "20",
+   "82",
+   "11",
+   "14",
+   "1107",
+   "8.9",
+   "1.1",
+   "2026"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/anderson-and-watson-lakes",
+   "https://www.fs.usda.gov/r06/mbs/recreation/watson-lakes-trailhead"
+  ],
+  "note": "Drive matches both pages; closure alert dated 7.8.26 (FR 1107 closed at mile 3.8) and agency page says inaccessible due to washout."
+ },
+ {
+  "i": 356,
+  "verdict": "confirmed",
+  "finalDirection": "From SR 20 near milepost 82, turn north onto Baker Lake Road (Forest Road 11) and go about 14 miles, turn right onto Baker Dam Road and cross Upper Baker Dam, then turn left onto FR 1107 and follow it about 8.9 miles to the Anderson and Watson Lakes junction and 1.1 miles more to the trailhead. A washout has closed FR 1107 to vehicles since July 2026.",
+  "numbersUsed": [
+   "20",
+   "82",
+   "11",
+   "14",
+   "1107",
+   "8.9",
+   "1.1",
+   "2026"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/anderson-and-watson-lakes",
+   "https://www.fs.usda.gov/r06/mbs/recreation/watson-lakes-trailhead"
+  ],
+  "note": "Drive matches both pages; closure alert dated 7.8.26 (FR 1107 closed at mile 3.8) and agency page says inaccessible due to washout."
+ },
+ {
+  "i": 361,
+  "verdict": "confirmed",
+  "finalDirection": "From the Nisqually entrance of Mount Rainier National Park (SR 706), drive east on the Nisqually-Longmire Road for 1 mile and turn left onto Westside Road. Follow it 3.2 miles to the closed gate at Dry Creek and park short of the barricade.",
+  "numbersUsed": [
+   "706",
+   "1",
+   "3.2"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/westside-road",
+   "https://www.nps.gov/mora/planyourvisit/road-status.htm"
+  ],
+  "note": "Westside Road open now, park south of the Dry Creek barricade."
+ },
+ {
+  "i": 364,
+  "verdict": "confirmed",
+  "finalDirection": "From Enumclaw, drive SR 410 east about 43 miles to the White River entrance of Mount Rainier National Park, turn right onto Sunrise Road and go about 5 miles, cross the White River, then turn left onto White River Road and follow it to its end at White River Campground.",
+  "numbersUsed": [
+   "410",
+   "43",
+   "5"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/glacier-basin",
+   "https://www.nps.gov/mora/planyourvisit/road-status.htm"
+  ],
+  "note": "WTA drive matches; seasonal winter closure not mentioned as normal."
+ },
+ {
+  "i": 365,
+  "verdict": "confirmed",
+  "finalDirection": "From Enumclaw, drive SR 410 east about 43 miles to the White River entrance of Mount Rainier National Park, turn right onto Sunrise Road and go about 5 miles, cross the White River, then turn left onto White River Road and follow it to its end at White River Campground.",
+  "numbersUsed": [
+   "410",
+   "43",
+   "5"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/glacier-basin",
+   "https://www.nps.gov/mora/planyourvisit/road-status.htm"
+  ],
+  "note": "WTA drive matches; seasonal winter closure not mentioned as normal."
+ },
+ {
+  "i": 368,
+  "verdict": "confirmed",
+  "finalDirection": "From Enumclaw, drive SR 410 east about 43 miles to the White River entrance of Mount Rainier National Park, turn right onto Sunrise Road and go about 5 miles, cross the White River, then turn left onto White River Road and follow it to its end at White River Campground.",
+  "numbersUsed": [
+   "410",
+   "43",
+   "5"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/glacier-basin",
+   "https://www.nps.gov/mora/planyourvisit/road-status.htm"
+  ],
+  "note": "WTA drive matches; seasonal winter closure not mentioned as normal."
+ },
+ {
+  "i": 369,
+  "verdict": "confirmed",
+  "finalDirection": "From Enumclaw, drive SR 410 east about 43 miles to the White River entrance of Mount Rainier National Park, turn right onto Sunrise Road and go about 5 miles, cross the White River, then turn left onto White River Road and follow it to its end at White River Campground.",
+  "numbersUsed": [
+   "410",
+   "43",
+   "5"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/glacier-basin",
+   "https://www.nps.gov/mora/planyourvisit/road-status.htm"
+  ],
+  "note": "WTA drive matches; seasonal winter closure not mentioned as normal."
+ },
+ {
+  "i": 367,
+  "verdict": "corrected",
+  "finalDirection": "From Enumclaw, drive SR 410 east about 43 miles to the White River entrance of Mount Rainier National Park, turn right onto Sunrise Road and go about 5 miles, cross the White River, then turn left onto White River Road and follow it to its end at White River Campground. The Mowich Lake and Carbon River approaches to the northwest side have been closed at the SR 165 bridge since April 2025.",
+  "numbersUsed": [
+   "410",
+   "43",
+   "5",
+   "165",
+   "2025"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/glacier-basin",
+   "https://www.nps.gov/mora/planyourvisit/road-status.htm"
+  ],
+  "note": "Closure sentence supported by the park page (SR 165 bridge, April 2025 release) and relevant to the northwest side."
+ }
+]

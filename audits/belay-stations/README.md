@@ -25,12 +25,19 @@ as *Belay station* in the pitch's Pitch gear card (PR #2851) and is editable in 
 `rollback-*.json` = each route's table before the write.
 
 ## Coverage (measured on the live table, 2026-10-28)
-Target set: the 424 routes that store per-pitch detail (2,275 entries). **415 pitches on 160 routes
+Target set: the 424 routes that store per-pitch detail (2,275 entries). **449 pitches on 162 routes
 now carry a belay station**, every one researched, independently verified and copy-checked.
 - Every route with 2+ numbered (roped) pitches had a deep pass. What is left blank is blank because
   no readable source places the belay, sources disagree, or the source numbers pitches differently.
 - Routes whose table is travel legs (approach, snowfield, glacier, walk-off) were not researched: a
   leg has no belay station unless a source names a stance there.
+- Second pass (`SECOND-PASS.md`, batches 51–57): extended search, trip reports, journal articles and
+  blogs on the 303 routes still holding 2+ open numbered pitches, partly filled routes first. 30 routes
+  researched → 34 more pitches (S3+S4, partly filled routes, gave most; T1–T6 gave 2 after
+  verification). Stopped there: the sources that place belays plainly are used up, and what remains
+  fails on pitch numbering or inference. Reading SummitPost/CascadeClimbers/SuperTopo in a browser was
+  refused as working around their block on automated reads, and archive.org guidebook search is
+  loan-gated, so neither is an option.
 - `batch-10.json` is a peer session's checked set (818a462c verify-out), re-checked by this script.
   Its rows on routes already written here were skipped, so two sources never mix on one route.
 - Refused by the apply checks (not written): 8-word copies of a source (~8 sentences) and routes

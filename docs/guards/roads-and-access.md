@@ -866,6 +866,33 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     closed at mile 3.1) carry their dated closures; Snowgrass Flat's FR 21 turn, Teneriffe's exit (32,
     not 31), Pilchuck (ended at Verlot, not the trailhead), and a day-use fee at Skyline Lake that
     no fetched page lists — removed.
+  - Batch 8 and the RE-CHECK of batches 1–2 (9, 10 — 78 entries the shallow first pass had called
+    accurate or left): **40 corrections over 83 routes.** The re-check is what earned its cost: entries
+    batch 1 had passed as "accurate" without opening a page were WRONG — Cedar Creek's turnoff (17 mi
+    west of Winthrop, not "east of Klipchuck"), Cathedral Driveway's last road (FR 3900-300) — and
+    batch 1's own Blanca Lake drive now reads as it is: Index-Galena Road closed at mileposts 10–14 and
+    Beckler River Road (FR 65) closed, both since December 2025, so the trailhead cannot be reached by
+    car. Every other text that drives FR 65 (four) got the dated closure too, and so did batch 1's own
+    Lincoln Peak drive (FR 38, washout at milepost 7 since July 2026, found while checking Elbow Lake).
+  - **A closure found on one route is a QUESTION for every route on that road.** Fairfax Bridge,
+    Beckler River Road and FR 38 each surfaced on one entry and each reached others: grep
+    `existing.json` for the road before calling the closure done.
+  - **Whole pass, 2026-10-28:** all 379 distinct drives checked with fetched pages (457 checks with the
+    re-check): 216 accurate, 31 wrong, 132 name-only, 78 unverifiable (no page opened — left as they
+    are; most are SR-20 pullouts and Mountaineers pages that answer 403). **131 corrections written over
+    299 route rows**, every one compare-and-swapped and reconciled; `check:trailhead-direction-shape
+    --live` passes on all 751.
+  - **Left OPEN, deliberately:** Cascade River Road — a WTA alert (10.15.26) says closed at milepost 20
+    for maintenance, the park's road page says open; one non-agency alert does not override the land
+    manager, so the six texts are unchanged. Dosewallips washout parking (sources disagree on where
+    the road ends). SR-20 pullout distances east of Washington Pass that disagree with each other
+    (2.8 / 3 / 4 mi) with no page to settle them.
+  - **Fill batch 2** (`list-targets-2.mjs`, `th-C*.json`): the 23 WA alpine routes left with a
+    trailhead card but no drive, whatever their prose. 12 trailheads researched (the 8 batch 1 showed
+    unresolvable skipped), each checked a second time; **13 routes filled**, including both Jack
+    Mountain routes batch 1 refused (Canyon Creek now page-backed). Refused: White Salmon (only a
+    winter snowshoe page). The merge base was refreshed by an id read (`id=in.(…)`) instead of a
+    re-listing, because full scans were timing out that afternoon.
   - **The second check also SUBTRACTS.** It added an unproven "North Shore Road bridge out" note to
     North Fork Quinault, which the first pass had already shown (park road page) this drive never
     crosses; removed by hand. And a check that writes "per a Forest Service alert" is citing a source

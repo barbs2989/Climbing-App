@@ -1,0 +1,270 @@
+[
+ {
+  "i": 51,
+  "verdict": "confirmed",
+  "finalDirection": "From Trout Lake, drive north on Mount Adams Road to the V intersection with Forest Road 23, veer right and go about 1 mile, then turn left onto Forest Road 80 (signed South Climb) and follow it to its end. Turn right onto Forest Road 8040 and drive north past Morrison Creek Campground to the trailhead; the last 3 miles are very rough and narrow.",
+  "numbersUsed": [
+   "23",
+   "1",
+   "80",
+   "8040",
+   "3"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/mount-adams-south-climb"
+  ],
+  "note": "Matches the fetched hike page step for step."
+ },
+ {
+  "i": 79,
+  "verdict": "confirmed",
+  "finalDirection": "From Darrington, drive Highway 530 to the Suiattle River Road (Forest Road 26) and turn east; the trailhead is in a parking lot just past the Downey Creek bridge, about 20 miles from Highway 530. Since February 2026 the road has been closed to vehicles at milepost 4 (order in place to January 2028), so the last miles must be covered on foot or by bike.",
+  "numbersUsed": [
+   "530",
+   "26",
+   "20",
+   "530",
+   "2026",
+   "4",
+   "2028"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure",
+   "https://www.wta.org/go-hiking/hikes/downey-creek"
+  ],
+  "note": "Closure at milepost 4 since Feb 25 2026, order to Jan 1 2028, confirmed on the forest alert; the hike page's milepost 10.5 is stale."
+ },
+ {
+  "i": 80,
+  "verdict": "confirmed",
+  "finalDirection": "From Darrington, drive Highway 530 to the Suiattle River Road (Forest Road 26) and turn east; the trailhead is in a parking lot just past the Downey Creek bridge, about 20 miles from Highway 530. Since February 2026 the road has been closed to vehicles at milepost 4 (order in place to January 2028), so the last miles must be covered on foot or by bike.",
+  "numbersUsed": [
+   "530",
+   "26",
+   "20",
+   "530",
+   "2026",
+   "4",
+   "2028"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure",
+   "https://www.wta.org/go-hiking/hikes/downey-creek"
+  ],
+  "note": "Closure at milepost 4 since Feb 25 2026, order to Jan 1 2028, confirmed on the forest alert; the hike page's milepost 10.5 is stale."
+ },
+ {
+  "i": 81,
+  "verdict": "confirmed",
+  "finalDirection": "From Darrington, drive Highway 530 to the Suiattle River Road (Forest Road 26) and turn east; the trailhead is in a parking lot just past the Downey Creek bridge, about 20 miles from Highway 530. Since February 2026 the road has been closed to vehicles at milepost 4 (order in place to January 2028), so the last miles must be covered on foot or by bike.",
+  "numbersUsed": [
+   "530",
+   "26",
+   "20",
+   "530",
+   "2026",
+   "4",
+   "2028"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure",
+   "https://www.wta.org/go-hiking/hikes/downey-creek"
+  ],
+  "note": "Closure at milepost 4 since Feb 25 2026, order to Jan 1 2028, confirmed on the forest alert; the hike page's milepost 10.5 is stale."
+ },
+ {
+  "i": 86,
+  "verdict": "confirmed",
+  "finalDirection": "From the Nisqually Entrance of Mount Rainier National Park, drive to Longmire, pass the National Park Inn and turn right at the two-story building with the flagpole. Continue straight through the employee housing area and across the suspension bridge, which has a 3-ton vehicle limit; the trailhead is 300 feet past the bridge and parking is limited.",
+  "numbersUsed": [
+   "3",
+   "300"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://home.nps.gov/mora/planyourvisit/eagle-peak.htm"
+  ],
+  "note": "Matches park page."
+ },
+ {
+  "i": 89,
+  "verdict": "confirmed",
+  "finalDirection": "From Marblemount, drive SR-20 east about 45 miles and turn right between mileposts 151 and 152 onto the signed Easy Pass road to the trailhead.",
+  "numbersUsed": [
+   "20",
+   "45",
+   "151",
+   "152"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/easy-pass"
+  ],
+  "note": "Matches hike page."
+ },
+ {
+  "i": 90,
+  "verdict": "corrected",
+  "finalDirection": "From Highway 2 on the west side of Leavenworth, turn south onto Icicle Road and drive 8.4 miles, then turn left onto Forest Road 7601 (Eightmile Road, washboard and potholed) and go 3.1 miles to the Eightmile trailhead parking.",
+  "numbersUsed": [
+   "2",
+   "8.4",
+   "7601",
+   "3.1"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/eightmile-lake"
+  ],
+  "note": "Dropped 'on the right' since the page puts the lot on the left and trail signage on the right."
+ },
+ {
+  "i": 91,
+  "verdict": "confirmed",
+  "finalDirection": "From Sedro-Woolley, drive WA-9 north to Acme, turn right (east) onto Mosquito Lake Road and follow it about 9 miles, cross the Middle Fork Nooksack River and continue onto Forest Road 38 for about 11 miles to the Elbow Lake trailhead. Since July 2026 Forest Road 38 has been closed to vehicles by a washout at milepost 7.",
+  "numbersUsed": [
+   "9",
+   "9",
+   "38",
+   "11",
+   "2026",
+   "38",
+   "7"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/elbow-lake",
+   "https://www.fs.usda.gov/r06/mbs/alerts"
+  ],
+  "note": "Drive matches hike page; FR 38 washout at milepost 7 alert starts July 27 2026."
+ },
+ {
+  "i": 92,
+  "verdict": "confirmed",
+  "finalDirection": "From Acme on WA-9, turn east onto Mosquito Lake Road and follow it about 9 miles, cross the Middle Fork Nooksack River and continue onto Forest Road 38 for about 11 miles to the Elbow Lake trailhead. Since July 2026 Forest Road 38 has been closed to vehicles by a washout at milepost 7.",
+  "numbersUsed": [
+   "9",
+   "9",
+   "38",
+   "11",
+   "2026",
+   "38",
+   "7"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/elbow-lake",
+   "https://www.fs.usda.gov/r06/mbs/alerts"
+  ],
+  "note": "Same as 91."
+ },
+ {
+  "i": 93,
+  "verdict": "confirmed",
+  "finalDirection": "The Elbow Lake trailhead is about 11 miles up Forest Road 38 off Mosquito Lake Road, and the road is gated December 1 to June 15 for elk winter range. Since July 2026 Forest Road 38 has been closed to vehicles by a washout at milepost 7.",
+  "numbersUsed": [
+   "11",
+   "38",
+   "1",
+   "15",
+   "2026",
+   "38",
+   "7"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/elbow-lake",
+   "https://www.fs.usda.gov/r06/mbs/alerts"
+  ],
+  "note": "Closure confirmed; the elk gate dates come from old text and were not on a fetched page."
+ },
+ {
+  "i": 95,
+  "verdict": "confirmed",
+  "finalDirection": "From Marblemount, go straight past the last gas station onto Cascade River Road, cross the bridge and drive to the Eldorado Creek trailhead at mile 20, on the right; the last 10 miles are gravel.",
+  "numbersUsed": [
+   "20",
+   "10"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/eldorado-peak"
+  ],
+  "note": "Matches hike page."
+ },
+ {
+  "i": 112,
+  "verdict": "corrected",
+  "finalDirection": "Drive US-2 to Skykomish, then north on Beckler River Road (FR-65) for about 15 miles; turn left (west) onto FR-63 and follow it about 4.6 miles to where it crosses the North Fork Skykomish River again; park at the unmarked pullout on the rise just past the bridge, about a mile east of Galena. Beckler River Road has been reported closed to vehicles by flood damage since December 2025.",
+  "numbersUsed": [
+   "2",
+   "65",
+   "15",
+   "63",
+   "4.6",
+   "2025"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/north-fork-skykomish-river"
+  ],
+  "note": "Closure from a trailhead alert dated Dec 23 2025; the 15 miles agrees with the page's 12.5 plus 2.3 miles, FR-63 pullout itself not on a fetched page."
+ },
+ {
+  "i": 113,
+  "verdict": "corrected",
+  "finalDirection": "Via Beckler River Road (FR-65) into the FR-6510/6514/6517 spur network to road's end ~0.5 mile east of the summit. Beckler River Road has been reported closed to vehicles by flood damage since December 2025.",
+  "numbersUsed": [
+   "65",
+   "6510",
+   "6514",
+   "6517",
+   "0.5",
+   "2025"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/north-fork-skykomish-river"
+  ],
+  "note": "Closure added; spur roads not on any fetched page."
+ },
+ {
+  "i": 196,
+  "verdict": "corrected",
+  "finalDirection": "From the end of FS spur NF-6514-410 off Beckler River Road (FR-65). Beckler River Road has been reported closed to vehicles by flood damage since December 2025.",
+  "numbersUsed": [
+   "6514",
+   "410",
+   "65",
+   "2025"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/north-fork-skykomish-river"
+  ],
+  "note": "Closure added; spur not on any fetched page."
+ },
+ {
+  "i": 217,
+  "verdict": "corrected",
+  "finalDirection": "From US-2 at Skykomish, turn north onto Beckler River Road (FR-65) and drive about 12.5 miles to Jack Pass, take the second left and go 2.3 miles to FR-63, then turn right and go 4.2 miles to the large parking area at the North Fork Skykomish trailhead. Beckler River Road has been reported closed to vehicles by flood damage since December 2025.",
+  "numbersUsed": [
+   "2",
+   "65",
+   "12.5",
+   "2.3",
+   "63",
+   "4.2",
+   "2025"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/north-fork-skykomish-river"
+  ],
+  "note": "Fuller drive from the hike page, which carries the Dec 23 2025 closure alert."
+ }
+]
