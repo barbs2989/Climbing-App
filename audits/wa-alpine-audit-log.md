@@ -35160,3 +35160,18 @@ Climbers trip report dated exactly 8/26/2023 — party, date, grade V 5.10+, 16 
 Southwest Summit buttress, not a mix-up with the unrelated "Cascadian Couloir" on Dragontail Peak).
 
 Pass 8 continues next run after `wa_bonanza_peak_mary_green_glacier`.
+
+## Batch 473 — 2026-10-28 (pass 8)
+
+Checked: wa_bonanza_peak_northeast_buttress, wa_bonanza_peak_oregonian_route, wa_booker_mountain_northeast_face, wa_boston_peak_southeast_face, wa_boving_christensen, wa_boving_roofs, wa_bryant_peak_north_route, wa_bryant_peak_west_face.
+
+No fixes. 6 clean, confirmed against Wikipedia, AAC Publications, Mountain Project and trip reports:
+- Bonanza NE Buttress and Oregonian Route: FA parties/dates and summit elevations check out (9511/9320 resp.); NE Buttress's own `corrections` field already correctly discloses it's a descriptive name for the tri-summit-traverse's first leg, not an independently cataloged route — confirmed no such separate listing exists. The 9511-vs-9516 area-row elevation spread flagged in batch 472 recurs here (now independently corroborated toward 9511 by a SummitPost 2004 highpoint report) but is left for human reconciliation, not refought.
+- Booker Mountain NE Face: Wikipedia confirms FA (Davis/Holland, 8/22/1964) and elevation (8284ft) exactly.
+- Boston Peak SE Face: Wikipedia/Trek.zone/SummitPost confirm the 1938 Bressler/Clough/Cox/Myers FA and 8894ft elevation exactly.
+- Boving Roofs: Mountain Project's own route page confirms FA (Boving/Pollock) and the route's structure almost verbatim.
+- Boving-Christensen: grade/pitches/length/position all confirmed via trip reports; 1977 FA year only partially corroborated, not contradicted.
+
+Flagged for human review (2): wa_bryant_peak_north_route is a bare enrichment stub, not a factual error. wa_bryant_peak_west_face's 1938 Clough/Kirschner FA could not be confirmed or contradicted against any source found (Wikipedia's 1926 FA is for the peak's general ascent, not necessarily this technical route).
+
+Network note: cascadeclimbers.com and sites.google.com (a stephabegg.com mirror) did not resolve from this environment this run, limiting access to some primary trip-report threads.
