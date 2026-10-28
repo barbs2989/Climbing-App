@@ -35,6 +35,7 @@
     "audit:multi-approach": "node scripts/audit-multi-approach.mjs",
     "audit:camp-elevations": "node scripts/audit-camp-elevations.mjs",
     "audit:camp-route-fit": "node scripts/audit-camp-route-fit.mjs",
+    "audit:camp-pins": "node scripts/audit-camp-pins.mjs",
     "audit:waypoint-track": "node scripts/audit-waypoint-track.mjs",
     "audit:summit-pins": "node scripts/audit-summit-pins.mjs",
     "audit:summit-splits": "node scripts/audit-summit-splits.mjs",
