@@ -22,13 +22,13 @@ await build({
 });
 const { planTimes } = createRequire(import.meta.url)(bundle);
 const ids = fixes.map((f) => `"${f.id}"`).join(",");
-const rows = await selectAll("routes", "id,discipline,grade,pitches,length_m,gain_ft,loss_ft,dist_km,timing", `id=in.(${ids})`, { pageSize: 200 });
+const rows = await selectAll("routes", "id,discipline,grade,pitches,length_m,gain_ft,loss_ft,dist_km,timing,itinerary,outing_shape", `id=in.(${ids})`, { pageSize: 200 });
 const byId = Object.fromEntries(rows.map((r) => [r.id, r]));
 const legs = (r, timing) => {
   const p = planTimes({ id: r.id, discipline: r.discipline, grade: r.grade, pitches: r.pitches,
     routeFt: r.length_m != null ? Math.round(r.length_m * 3.28084) : null,
     gainM: r.gain_ft != null ? Math.round(r.gain_ft / 3.28084) : null, lossM: r.loss_ft != null ? Math.round(r.loss_ft / 3.28084) : null,
-    distKm: r.dist_km, timing }, {});
+    distKm: r.dist_km, itinerary: r.itinerary, outingShape: r.outing_shape, timing }, {});
   return `to summit ${p.totalH.toFixed(1)}  down ${p.downH.toFixed(1)}  car-to-car ${p.tripH.toFixed(1)}${p.legsFloor ? " (≥)" : ""}`;
 };
 for (const f of fixes) {
