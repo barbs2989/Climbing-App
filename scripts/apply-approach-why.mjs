@@ -3,7 +3,9 @@
 // "Declare which approach is most common per route and explain why others would use the other
 // approach."
 //
-//   node scripts/apply-approach-why.mjs batch.json [--dry]
+//   node scripts/apply-approach-why.mjs batch.json [more.json ...] [--dry]
+// Several files run IN ORDER, entry by entry, so a later file (the settle pass) acts on what an
+// earlier one (a research batch) wrote: each entry re-reads the live row first.
 //
 // A batch is { "<route id>": { primary?: "<way-in name>", why: { "<way-in name>": "<sentence>" },
 // review: { sources: [url...], notes } } }. Ways in are matched by their EXACT stored name, never by
@@ -28,9 +30,9 @@ import { checkEntry } from "./lib/source-overlap.mjs";
 import { shoutedStrings } from "./lib/shouted-prose.mjs";
 
 const DRY = process.argv.includes("--dry");
-const file = process.argv.slice(2).find(a => !a.startsWith("--"));
-if (!file) { console.error("usage: node scripts/apply-approach-why.mjs batch.json [--dry]"); process.exit(2); }
-const BATCH = JSON.parse(readFileSync(file, "utf8"));
+const files = process.argv.slice(2).filter(a => !a.startsWith("--"));
+if (!files.length) { console.error("usage: node scripts/apply-approach-why.mjs batch.json [more.json ...] [--dry]"); process.exit(2); }
+const ENTRIES = files.flatMap(f => Object.entries(JSON.parse(readFileSync(f, "utf8"))));
 const key = requireServiceKey();
 const SOURCE_RE = /\b(mountain ?project|summit ?post|cascade ?climbers|nwhikers|peakbagger|beckey(?! route|-tate)|nelson|guide ?book|trip report|according to|reported by|the mountaineers|wta|washington trails)\b/i;
 const PER_SOURCE_RE = /\b[Pp]er (?:the )?[A-Z]/;
@@ -46,7 +48,7 @@ const read = async (id, retried) => {
 
 const rollback = {}, applied = {};
 let wrote = 0, skipped = 0;
-for (const [id, spec] of Object.entries(BATCH)) {
+for (const [id, spec] of ENTRIES) {
   const errs = [];
   const before = await read(id);
   if (!before) { console.error(`skip ${id} — no such route`); skipped++; continue; }
@@ -96,11 +98,11 @@ for (const [id, spec] of Object.entries(BATCH)) {
   console.log(`${id}  (${before.name})${clear ? `  most used CLEARED (was ${marked >= 0 ? vars[marked].name : "none"})` : ""}${spec.primary != null && marked !== prim ? `  most used := ${vars[prim].name}${marked >= 0 ? ` (was ${vars[marked].name})` : ""}` : ""}`);
   for (const [n, s] of Object.entries(why)) console.log(`   ${n}: ${String(s).trim()}`);
   if (DRY) continue;
-  rollback[id] = vars;
+  if (!(id in rollback)) rollback[id] = vars; // the state before THIS run, not before its second file
   await patchRow("routes", id, { approach_variants: next });
   const after = await read(id);
   if (!after || JSON.stringify(after.approach_variants) !== JSON.stringify(next)) { console.error(`MISMATCH ${id} — the re-read does not hold what was written; stopping`); process.exitCode = 1; break; }
-  applied[id] = { primary: prim >= 0 ? next[prim].name : null, why };
+  applied[id + (id in applied ? "#" + Object.keys(applied).length : "")] = { primary: prim >= 0 ? next[prim].name : null, why };
   wrote++;
 }
 if (!DRY && wrote) {
