@@ -81,6 +81,15 @@ const GNIS_FILE = path.join(RUN, "gnis", "gnis-wa.json");
 const gnis = fs.existsSync(GNIS_FILE) ? JSON.parse(fs.readFileSync(GNIS_FILE, "utf8")).map((x) => ({ ...x, id: ident(x.name) })) : [];
 const GNIS_TOL_FT = 200;
 const NOT_A_CAMP = /\b(no overnight|day[- ]use only|no camping|camping (is )?(prohibited|banned|not allowed))\b/i;
+// THE SAME NAME AS AGENCIES SPELL IT, tried only after the exact identity fails: "Mt" is "Mount", a
+// possessive "s" is dropped ("Boston Charlie's" -> "boston charlie"), and a plural last word is made
+// singular ("Thornton Lakes" / NPS "Thornton Lake", "Andrews Pass" / GNIS "Andrew Pass"; never a
+// "-ss" word like "pass"). Null for a one-word key: one word is not an identity (camp-names.mjs).
+function variantKey(id) {
+  const t = String(id || "").replace(/\bmt\b/g, "mount").split(" ").filter((w) => w && w !== "s");
+  if (t.length < 2) return null;
+  return t.map((w) => (/[^s]s$/.test(w) && w.length > 3 ? w.slice(0, -1) : w)).join(" ");
+}
 const PACE_MS = Number(arg("pace-ms", "1100"));
 const TOL_FT = 400, WP_TOL = 500, EXTENT_M = 1000, ROADSIDE_KM = 25, NEAR_KM = 15, DONOR_ELEV_FT = 300;
 const UA = "ClimbMatch-camp-pin-solver/1.0 (climbing route catalog; contact via repo)";
@@ -154,6 +163,8 @@ async function ground(lat, lng) {
 const work = [
   ...audit.missing.map((x) => ({ ...x, kind: "missing" })),
   ...audit.noCoord.map((x) => ({ ...x, kind: "noCoord" })),
+  // Zone-worded names, for the OFFICIAL source only (candidates() admits nothing else for them).
+  ...(audit.noPoint || []).filter((x) => /^dispersed zone/.test(x.why)).map((x) => ({ ...x, kind: "missing" })),
 ].slice(0, LIMIT);
 const routeIds = [...new Set(work.map((x) => x.id))];
 const routes = new Map();
@@ -212,13 +223,26 @@ async function candidates(r, site) {
   const want = elevFt(site);
   // OFFICIAL — the land manager's own point for a camp of this name near the route. Two same-named
   // points both in reach is not an identity, so an ambiguous name is skipped rather than guessed.
+  // A name the ZONE vocabulary flags ("Glacier Meadows", "Royal Basin camps") is still ONE camp when
+  // the land manager publishes a camp point under exactly that name — the agency's record outranks a
+  // word list. Two places in one name, or a purely relative one, never are.
+  const why = unresolvable(site.name);
+  const officialOk = !why || /^dispersed zone/.test(why);
   const sid = ident(placeOf(site.name));
-  if (sid && sid.split(" ").length >= 1 && !unresolvable(site.name)) {
+  if (sid && officialOk) {
     // The same camp published by two agencies (or twice in one file) is one hit, not an ambiguity.
-    const hits = official.filter((x) => x.id === sid && nearKm(x, anchors) <= NEAR_KM)
+    const near = (pred) => official.filter((x) => pred(x) && nearKm(x, anchors) <= NEAR_KM)
       .filter((x, i, a) => a.findIndex((y) => metresBetween(x, y) < 300) === i);
-    if (hits.length === 1) out.push({ from: "official", lat: hits[0].lat, lng: hits[0].lng, official: `${hits[0].src}: ${hits[0].name}`, campLike: true });
+    let hits = near((x) => x.id === sid);
+    let how = "";
+    // Only when the exact identity finds nothing: the same name spelled the way agencies spell it.
+    if (!hits.length && variantKey(sid)) { hits = near((x) => variantKey(x.id) === variantKey(sid)); how = " (spelling variant)"; }
+    if (hits.length === 1) out.push({ from: "official", lat: hits[0].lat, lng: hits[0].lng, official: `${hits[0].src}: ${hits[0].name}${how}`, campLike: true });
   }
+  // A zone-worded name gets the agency's point or nothing: a donor pin for "Perfect Pass cross-country
+  // zone" is one arbitrary spot in a zone, and copying it spreads that spot to every route (measured on
+  // the first variant run: 15 of 22 donor matches were zone names).
+  if (why) return out.length ? out : [{ from: "official", refused: why }];
   // DONOR — same camp pinned on another route nearby.
   for (const d of donors) {
     if (d.rid === r.id) continue;
@@ -256,8 +280,10 @@ async function candidates(r, site) {
   if (!out.length && !unresolvable(site.name)) {
     for (const cand of searchCandidates(site.name)) {
       const id = ident(cand);
-      const hits = gnis.filter((x) => x.id === id && nearKm(x, anchors) <= NEAR_KM)
+      const inReach = (pred) => gnis.filter((x) => pred(x) && nearKm(x, anchors) <= NEAR_KM)
         .filter((x, i, a) => a.findIndex((y) => metresBetween(x, y) < 300) === i);
+      let hits = inReach((x) => x.id === id);
+      if (!hits.length && variantKey(id)) hits = inReach((x) => variantKey(x.id) === variantKey(id));
       if (!hits.length) continue;
       if (hits.length > 1) { out.push({ from: "gnis", refused: `${hits.length} GNIS features of that name in reach`, query: cand }); break; }
       if (hits[0].cls === "Summit" && SUBFEATURE.test(site.name)) { out.push({ from: "gnis", refused: "a summit, but the camp names a part of it", query: cand }); break; }
