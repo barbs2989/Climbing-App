@@ -1096,3 +1096,25 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     as *neither* rather than as non-rack, so a new kind of kit shows up in the second list, not the
     first. It is a WA audit by scope (`--state`), hand-run, exit 1 on any finding; `--selftest`
     asserts `DISC_RACK` and eight classifier cases with no database.
+
+- **`check:declination`** asserts that **the base-of-the-climb arrow turns a magnetic phone compass
+  into TRUE north**. *Point the way with your compass* (`BaseCheckinPanel`, 2026-10-28) rotates an
+  arrow toward the base from `bearingDeg`, which is TRUE, against the phone's heading, which is
+  MAGNETIC: WebKit fills `webkitCompassHeading` from `CLHeading.magneticHeading` and corrects nothing
+  (`WebCoreMotionManager.mm`, read 2026-10-28), and Android's absolute orientation follows the
+  geomagnetic field. In the Cascades the gap is ~15°, so without the correction the arrow points at
+  the wrong line from 100 m and looks exactly like a right one. The correction is `declinationDeg`
+  in **`lib/declination.js`**, a World Magnetic Model evaluator carrying NOAA's WMM2025 coefficient
+  file verbatim.
+  - **It EXECUTES the model** against NOAA's own 100 published test values (`WMM2025_TestValues.txt`,
+    shipped in the coefficient zip), each within 0.01° — NOAA prints two decimals, so the measured
+    worst case of 0.005° is rounding alone. It then runs the heading helpers in `lib/baseCheckin.js`
+    on constructed events: an iPhone heading plus the declination, Android's counter-clockwise
+    `alpha`, the screen-angle term, refusal of a non-absolute `alpha` (measured from wherever the
+    phone faced when listening began, never north) and of iOS's uncalibrated `-1`, the eight turn
+    words, and the circular average (359° and 1° → 0°, not 180°).
+  - **What it cannot see.** Whether a real phone's sensor is right: a magnetometer near a rack or
+    against rock is off by more than any declination, which is why the card tells the climber so,
+    shows iOS's own accuracy when it exceeds 25°, and stops pointing inside GPS error. The model is
+    valid 2025.0–2030.0; replace the `COF` table with WMM2030 when NOAA publishes it (the test file
+    in the new zip replaces `NOAA` here).

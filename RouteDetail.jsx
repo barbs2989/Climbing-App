@@ -44,7 +44,8 @@ import { gradeDetail, cruxGrade, displayGrade, singleGrade, gradeRangeNote } fro
 import { routeTerrain, fitGear, saysNotApplicable } from "./lib/terrain";
 import { rappelReportedMax, rappelHeaderLabel, rappelSingleRopeWarning } from "./lib/rappels";
 import { knownHazards } from "./lib/hazards";
-import { acquireBaseFix, baseCheckinMessage, baseGuide, pendingBaseCheckins, savePendingBaseCheckins, distM, BASE_CONFIRM_MIN } from "./lib/baseCheckin";
+import { acquireBaseFix, baseCheckinMessage, baseGuide, pendingBaseCheckins, savePendingBaseCheckins, distM, BASE_CONFIRM_MIN, bearingDeg, headingFromOrientation, relativeBearing, turnWord, smoothHeading } from "./lib/baseCheckin";
+import { declinationDeg } from "./lib/declination";
 import { routeTags } from "./lib/routeTags";
 import { planTimes, realPitches } from "./lib/planTimes";
 import { tripProfile, apportion } from "./lib/tripProfile.js";
@@ -366,8 +367,11 @@ function BaseCheckinPanel({route,who,spots,q}){
   const [st,setSt]=useState({phase:"idle"});const [prog,setProg]=useState(null);
   const [guide,setGuide]=useState(null);const guideRef=useRef(null);
   const stopGuide=useCallback(function(){if(guideRef.current!=null){try{navigator.geolocation.clearWatch(guideRef.current);}catch(e){}guideRef.current=null;}},[]);
-  useEffect(function(){return stopGuide;},[stopGuide]);
-  useEffect(function(){stopGuide();setGuide(null);},[route.id,stopGuide]);
+  /* POINT THE WAY: the phone's compass, corrected from magnetic to TRUE north by the declination at the base (lib/declination.js), turns an arrow toward the start. */
+  const [compass,setCompass]=useState(null);const compassRef=useRef(null);
+  const stopCompass=useCallback(function(){var c=compassRef.current;if(c){try{window.removeEventListener(c.type,c.fn);}catch(e){}clearTimeout(c.timer);compassRef.current=null;}},[]);
+  useEffect(function(){return function(){stopGuide();stopCompass();};},[stopGuide,stopCompass]);
+  useEffect(function(){stopGuide();setGuide(null);stopCompass();setCompass(null);},[route.id,stopGuide,stopCompass]);
   const area=route._dbArea||{};
   const baseWp=(route.waypoints||[]).find(function(w){return wpPlaced(w)&&wpType(w)==="Base";});
   const hasAnchor=(area.lat!=null&&area.lng!=null&&Number.isFinite(+area.lat)&&Number.isFinite(+area.lng))||!!baseWp;
@@ -400,7 +404,18 @@ function BaseCheckinPanel({route,who,spots,q}){
     guideRef.current=geo.watchPosition(function(pos){var c=pos.coords||{};setGuide({fix:{lat:c.latitude,lng:c.longitude,accuracy:c.accuracy}});},
       function(err){if(err&&err.code===1){stopGuide();setGuide({err:baseCheckinMessage({reason:"denied"},_baseDist)});}else setGuide(function(g){return g&&g.fix?g:{err:baseCheckinMessage({reason:"unavailable"},_baseDist)};});},
       {enableHighAccuracy:true,maximumAge:0,timeout:30000});};
+  /* iOS (and Chrome since 151) hand out orientation only after a permission asked from a tap, so this runs from the button. A reading that is not north-referenced is ignored (headingFromOrientation), and a phone that gives none in 4 s is told so. */
+  const startCompass=function(){if(!target||typeof window==="undefined")return;var DOE=window.DeviceOrientationEvent;if(!DOE){setCompass({err:"This browser can’t read a compass. Use the direction above."});return;}
+    var decl=declinationDeg(target.lat,target.lng);
+    var listen=function(){stopCompass();var type="ondeviceorientationabsolute" in window?"deviceorientationabsolute":"deviceorientation";
+      var angle=function(){var o=window.screen&&window.screen.orientation;return o&&Number.isFinite(o.angle)?o.angle:0;};
+      var fn=function(ev){var h=headingFromOrientation(ev,angle(),decl);if(!h)return;setCompass(function(c){var prev=c&&Number.isFinite(c.heading)?c.heading:null;var next=smoothHeading(prev,h.heading);return prev!=null&&Math.abs(((next-prev+540)%360)-180)<1.5&&c.acc===h.accuracy?c:{heading:next,acc:h.accuracy};});};
+      var timer=setTimeout(function(){setCompass(function(c){return c&&Number.isFinite(c.heading)?c:{err:"This phone isn’t giving a compass reading. Use the direction above."};});},4000);
+      window.addEventListener(type,fn);compassRef.current={type:type,fn:fn,timer:timer};setCompass({waiting:true});};
+    if(typeof DOE.requestPermission==="function")DOE.requestPermission().then(function(r){if(r==="granted")listen();else setCompass({err:"Compass access is off for this site. Allow motion and orientation in your browser settings to use it."});}).catch(function(){setCompass({err:"Couldn’t turn the compass on. Use the direction above."});});
+    else listen();};
   const g=guide&&guide.fix&&target?baseGuide(guide.fix,target,_baseDist):null;
+  const rel=g&&!g.arrived&&compass&&Number.isFinite(compass.heading)?relativeBearing(bearingDeg(guide.fix,target),compass.heading):null;
   const locNote=String(route.location||"").trim();
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:ROUTE_GAP,marginBottom:12}}>
     <CardHead style={{marginBottom:8}}>BASE OF THE CLIMB</CardHead>
@@ -415,11 +430,21 @@ function BaseCheckinPanel({route,who,spots,q}){
     :<div style={{fontSize:12.5,color:C.textSub,marginBottom:8}}>{baseWp?"Nobody has checked in at the base yet — the Base pin on the map is where this route records its start.":"Nobody has checked in at the base yet."}</div>}
     {target?<div style={{background:C.surface,border:`1px solid ${C.border}`,borderRadius:10,padding:"9px 11px",marginBottom:10}}>
       {!guide?<button onClick={startGuide} style={{...BTN,width:"100%",background:C.blueBg,color:C.blue,border:`1px solid ${C.blueDim}`}}>How far am I from the base?</button>
-      :<div role="status" aria-live="polite">
+      :<div><div role="status" aria-live="polite">
         <div style={{fontSize:13,color:guide.err?C.amber:g&&g.arrived?C.green:C.text,fontWeight:600,lineHeight:1.45}}>{guide.err?guide.err:g?g.line:"Finding you — this works best out in the open…"}</div>
         {g?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:3}}>{"Measured to "+target.what+". Updates as you walk."}</div>:null}
         {g&&locNote&&g.d<=100?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginTop:6}}><span style={{fontWeight:700,color:C.text}}>Where it starts: </span>{locNote}</div>:null}
-        <button onClick={function(){stopGuide();setGuide(null);}} style={{marginTop:7,padding:0,background:"none",border:"none",color:C.blue,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>Stop</button>
+        </div>
+        {/* Outside the live region: the arrow's words change with every turn of the phone, and announcing each would drown out the distance. */}
+        {g&&!g.arrived?(!compass?<button onClick={startCompass} style={{...BTN,width:"100%",marginTop:8,background:"transparent",color:C.blue,border:`1px solid ${C.blueDim}`}}>Point the way with your compass</button>
+          :compass.err?<div style={{fontSize:12,color:C.amber,lineHeight:1.45,marginTop:6}}>{compass.err}</div>
+          :rel!=null?<div style={{display:"flex",alignItems:"center",gap:10,marginTop:8}}>
+            <svg aria-hidden="true" width="44" height="44" viewBox="0 0 44 44" style={{flexShrink:0}}><circle cx="22" cy="22" r="20" fill="none" stroke={C.border} strokeWidth="2"/><path d="M22 5 L31 31 L22 25 L13 31 Z" fill={C.blue} transform={"rotate("+rel.toFixed(1)+" 22 22)"}/></svg>
+            <div style={{minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{turnWord(rel)}</div>
+              <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:2}}>{"Hold your phone flat in front of you. Metal gear and the rock itself can pull a compass off"+(Number.isFinite(compass.acc)&&compass.acc>25?" — it is unsure right now (±"+Math.round(compass.acc)+"°); move the phone in a figure eight to recalibrate":"")+"."}</div></div>
+          </div>
+          :<div style={{fontSize:12,color:C.textSub,marginTop:6}}>Waiting for the compass…</div>):null}
+        <button onClick={function(){stopGuide();setGuide(null);stopCompass();setCompass(null);}} style={{marginTop:7,padding:0,background:"none",border:"none",color:C.blue,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>Stop</button>
       </div>}
     </div>:null}
     {st.phase==="done"?<div role="status" style={{fontSize:12.5,color:C.green,fontWeight:600,marginBottom:8}}>{st.late?"✓ Your saved check-in was sent and accepted — thanks for marking the start.":"✓ You’re checked in at the base — thanks for marking the start for the next party."}</div>
