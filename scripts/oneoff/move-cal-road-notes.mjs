@@ -46,12 +46,16 @@ const plan = JSON.parse(fs.readFileSync(PLAN, "utf8"));
 const join = (a, b) => { a = (a || "").trim(); b = (b || "").trim(); if (!b) return a || null; if (!a) return b; return a + (/[.!?]$/.test(a) ? " " : ". ") + b; };
 const write = process.argv.includes("--write");
 const before = fs.existsSync(BEFORE) ? JSON.parse(fs.readFileSync(BEFORE, "utf8")) : {};
-let changed = 0, skipped = 0, bad = 0;
+let changed = 0, skipped = 0, bad = 0, fails = 0;
 for (const p of plan) {
   if (!p.gateAppend && !p.closuresAppend && !p.dropped) continue;
   const row = await readRow(p.id);
   const it = row.itinerary || {};
-  if (typeof it.cal !== "string" || it.cal.trim() !== p.orig.trim()) { console.log("SKIP (cal changed since read):", p.id); skipped++; continue; }
+  if (typeof it.cal !== "string" || it.cal.trim() !== p.orig.trim()) {
+    // Already written by an earlier run, or changed by someone else: say which.
+    const done = (p.cal && p.cal.trim()) ? it.cal === p.cal.trim() : it.cal === undefined;
+    console.log(done ? "DONE already:" : "SKIP (cal changed by someone else):", p.id); skipped++; continue;
+  }
   const ov = OVERRIDE[p.id];
   const nextIt = { ...it }; if (p.cal && p.cal.trim()) nextIt.cal = p.cal.trim(); else delete nextIt.cal;
   const body = { itinerary: nextIt };
@@ -60,7 +64,13 @@ for (const p of plan) {
   console.log(p.id, "| cal:", (p.cal || "").slice(0, 70), "| +gate:", ov === "drop-gate" ? "(dropped: contradicts road)" : (p.gateAppend || "").slice(0, 70), "| +closures:", (p.closuresAppend || "").slice(0, 50));
   if (!write) continue;
   if (!before[p.id]) { before[p.id] = { itinerary: row.itinerary, ...(body.road ? { road: row.road } : {}), ...(body.access ? { access: row.access } : {}) }; fs.writeFileSync(BEFORE, JSON.stringify(before, null, 1)); }
-  await patchRow("routes", p.id, body);
+  // A statement timeout rolls the statement back, so a retry cannot double-append. Back off long; two
+  // failed rows in a row means the database is struggling, and the run stops (re-run resumes it).
+  for (let t = 0; ; t++) {
+    try { await patchRow("routes", p.id, body); fails = 0; break; }
+    catch (e) { console.log("write failed:", String(e.message).slice(0, 120)); if (t >= 2) { if (++fails >= 2) { console.log("STOPPING: the database is failing writes"); process.exit(2); } break; } await sleep(90000); }
+  }
+  if (fails) continue;
   const after = await readRow(p.id);
   for (const k of Object.keys(body)) if (JSON.stringify(after[k]) !== JSON.stringify(body[k])) { bad++; console.log("RE-READ MISMATCH", p.id, k); }
   changed++;
