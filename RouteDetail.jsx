@@ -13,6 +13,7 @@ import { DISC_LABELS as DL } from "./lib/discLabels";
    the crew card can answer the same question without core importing this lazy-loaded file.
    Moved verbatim; the correction-precedence rule and its history live beside them there. */
 import { rackFromText, _rackEdited, _ropeEdited, fmtRopeLen, contribRack, routeRackFor, rackLeftovers, DISC_RACK } from "./lib/rack";
+import { ropeworkFacts } from "./lib/ropework";
 import { waypointCaveat, trackCoverage, trackCoverageCaveat, trackStubCaveat, withRecordedTrackOnly } from "./lib/track";
 import { accessCheckedLine } from "./lib/road";
 import { trailheadDirectionProblem } from "./lib/trailheadDirectionShape";
@@ -766,31 +767,23 @@ function RouteGearCheck({route,activity,onSeeReports,rack,onEditRack,onEditEssen
 // where nothing surfaces it. It is deliberately NOT inferred from grade: "parties commonly
 // simul-climb this" is a claim about a specific route, and deriving it from "4th class and
 // long" would manufacture that claim on 415 routes at once.
-const SIMUL_RE=/\bsimul[- ]?climb|\bsimul\b|moving together|move together|running belay/i;
-function simulMentioned(route){
-  if(!route)return false;
-  const parts=[route.ropeNote,route.beta,route.descentText];
-  const pd=Array.isArray(route.pitchDetail)?route.pitchDetail:[];
-  for(const p of pd) parts.push(p&&(p.notes||p.note),p&&p.anchor,p&&p.grade);
-  return parts.some(function(t){return t&&SIMUL_RE.test(String(t));});
-}
+// ROPEWORK holds three facts and no prose: the rope length, whether the pitches link, and whether the
+// party simul-climbs (lib/ropework.js). The rope NOTE is not printed in full: its other sentences
+// (rappel beta, gear, "no rope needed") have their own cards, and printing the note here repeated them.
 function RopeworkBox({route,onEdit}){
-  const note=route&&route.ropeNote&&String(route.ropeNote).trim();
-  const simul=simulMentioned(route);
+  const f=ropeworkFacts(route);
+  const any=!!(f.length||f.link||f.simul);
   /* Empty: a placeholder, where a rope is part of the route at all (not a scramble or a hike). */
-  if(!note&&!simul)return (onEdit&&!["scrambling","hiking","scramble","hike","bouldering"].includes(route&&route.discipline))?<div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}><CardHead style={{marginBottom:6}}>ROPEWORK</CardHead><GapNote what="No ropework notes yet" why="Nothing says what rope this needs, whether parties simul-climb, or how they rope up." cta="Add ropework notes" onFix={onEdit}/></div>:null;
+  if(!any)return (onEdit&&!["scrambling","hiking","scramble","hike","bouldering"].includes(route&&route.discipline))?<div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}><CardHead style={{marginBottom:6}}>ROPEWORK</CardHead><GapNote what="No ropework notes yet" why="Nothing says what rope this needs, whether the pitches link, or whether parties simul-climb." cta="Add ropework notes" onFix={onEdit}/></div>:null;
+  const row=function(label,value){return <div style={{display:"flex",gap:10,fontSize:12.5,lineHeight:1.55,marginTop:6}}><div style={{width:112,flexShrink:0,color:C.textMuted}}>{label}</div><div style={{color:C.textSub,wordBreak:"break-word",overflowWrap:"break-word",minWidth:0}}>{value||"Not stated"}</div></div>;};
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}>
-    <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:note?7:0,gap:10}}>
+    <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:3,gap:10}}>
       <CardHead>ROPEWORK</CardHead>
       {onEdit?<EditIconButton onClick={onEdit} title="Edit the ropework note"/>:null}
     </div>
-    {note?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55,wordBreak:"break-word",overflowWrap:"break-word"}}>{note}</div>:null}
-    {simul?<div style={{marginTop:note?10:8,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:10,padding:"9px 11px"}}>
-      <div style={{fontSize:12.5,fontWeight:700,color:C.blue,marginBottom:3}}>{"Parties move together on this one"}</div>
-      <div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>
-        {"This route's own notes mention simul-climbing or running belays. On long 4th- and low-5th-class ground that is often what makes the summit possible in a day — pitching it all out can cost more time than the route has. It is an advanced technique: a fall pulls both climbers, so it needs conditions, a rack you can keep between you, and a partner you have done it with."}
-      </div>
-    </div>:null}
+    {row("Rope length",f.length)}
+    {row("Pitches link",f.link)}
+    {row("Simul-climbing",f.simul)}
   </div>;
 }
   /* One SECTION heading over the group: RACK, ROPEWORK and GEAR & ESSENTIALS are card titles, and
@@ -1145,7 +1138,7 @@ function TechStats({route,onEdit,part}){
        which mount OFF the crag disciplines, so on a trad, sport or aid route all three reached no screen
        (122 crag routes carry one) and the editor's rope length had nowhere to show. Same precedence as
        the RACK box: an agreed correction wins, else the enrichment number. */
-    if(disc!=="bouldering"&&disc!=="toprope"){var _rc=route.ropeLen?fmtRopeLen(route.ropeLen):"";var _rl=(_ropeEdited(route)&&_rc)?_rc:(route.ropeLengthM?(route.ropeLengthM+"m"):_rc);var _rope=[route.ropeType,_rl].filter(Boolean).join(" ").trim();if(_rope)facts.push(["Rope",_rope]);var _rn=String(route.ropeNote||"").trim();if(_rn)facts.push(["Rope notes",_rn]);}
+    if(disc!=="bouldering"&&disc!=="toprope"){var _rc=route.ropeLen?fmtRopeLen(route.ropeLen):"";var _rl=(_ropeEdited(route)&&_rc)?_rc:(route.ropeLengthM?(route.ropeLengthM+"m"):_rc);var _rope=[route.ropeType,_rl].filter(Boolean).join(" ").trim();if(_rope)facts.push(["Rope",_rope]);var _rf=ropeworkFacts(route);if(_rf.link)facts.push(["Pitches link",_rf.link]);if(_rf.simul)facts.push(["Simul-climbing",_rf.simul]);}
     /* EMPTY IS A PLACEHOLDER (owner, 2026-10-07): every fact THIS DISCIPLINE has is listed whether or
        not the route states it, so a climber sees what is missing and can add it. Only facts that
        pertain to the discipline — no bolts on a boulder, no landing on a sport line. A missing fact
