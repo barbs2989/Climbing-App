@@ -362,6 +362,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       Mount Rahm's camp-to-summit whole day, Nooksack Tower's three confused rows, Mount Washington
       (Olympics, two search-snippet club reports at 7-7.5 hr against 5), Stuart West Ridge (two
       trailheads mixed; 14% short of the Longs Pass parties alone), and more.
+    - **THE 211 EMPTY ROWS WERE SAMPLED, NOT FINISHED, AND THAT WAS DELIBERATE.** After the pass,
+      211 WA alpine-family rows were left that store no time and no distance or gain. The first 32
+      (two batches of 16) were researched the same way. NONE has a timed report of its own. The
+      only figures were borrowed from a sibling route on the same peak (Black Peak East Buttress
+      took the NE Ridge's Wing Lake approach; Big Kangaroo Skinny Start took Beckey-Tate's), and
+      both were read only as search snippets, so nothing was written. At 0 of 32 the other 179
+      would cost about 12 more research runs for an expected yield of nothing. Do not re-run them
+      as a batch. A row like these gets a time when a climber logs one, or when a guidebook pass
+      reaches its peak.
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)
