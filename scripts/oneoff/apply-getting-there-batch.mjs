@@ -1,26 +1,20 @@
-// Write researched getting-there text (approach prose, trailhead, driving line, optional coordinate)
-// for a batch of routes that have NONE. --dry by default; pass --apply to write.
+// Write researched getting-there text (walk prose, trailhead, driving line, optional coordinate)
+// for routes that have NONE. --dry by default; pass --apply to write.
 //
-// Input: a JSON array from a research batch (keys in docs/guards/roads-and-access.md: id, found,
+// Input: the research JSON (keys in scripts/oneoff/getting-there-directions/ and the spec: id, found,
 // trailhead, trailheadDirection, trailheadLat, trailheadLng, approach, numbersUsed, sources,
-// confidence, unverified) plus the routes file it was researched from (--routes), so each row's
-// area_id can be checked against the area the research was about.
+// confidence, unverified) plus the routes file it was researched from (--routes).
 //
-// Safety rails, each one a rule this repo learned the hard way:
-//   * a route is written only if it has NO approach prose and NO trailhead of its own today.
-//     Filling an absence only. A route that already has either is reported and skipped.
-//   * every number in trailheadDirection + approach must be in numbersUsed, and vice versa
-//     (traceability: the claim is checkable against the prose it was written from)
-//   * the trailhead name must appear in the approach prose (the card and the prose agree on one place)
-//   * writes approach_logistics ONLY, never a waypoints[] pin (a filled absence must not manufacture
-//     an agreement that blinds audit:trailhead-agreement)
-//   * MERGES into approach_logistics so no other key is lost
-//   * patchRow throws unless exactly one row changed; a 200 is not evidence, so the whole batch is
-//     re-read afterwards and reconciled
-//   * writes are paced at >= 1000 ms; any timeout backs off 60 s and stops the batch rather than
-//     retrying fast into a struggling database
+// Rails:
+//   * writes only a route with NO approach prose and NO trailhead today (filling an absence)
+//   * writes only found:true at high or medium confidence
+//   * every number in trailheadDirection + approach must match numbersUsed as a SET
+//   * the trailhead name must appear in the approach prose; no source name or URL in app text
+//   * writes approach_logistics MERGED, and the approach column; never a waypoints[] pin
+//   * patchRow throws unless exactly one row changed; the batch is re-read and reconciled
+//   * paced at 1 s; a timeout backs off 60 s, then stops rather than retrying fast
 import fs from "fs";
-import { selectAll, patchRow, requireServiceKey, SUPABASE_URL, anonKey } from "../lib/supabase-env.mjs";
+import { patchRow, requireServiceKey, SUPABASE_URL, anonKey } from "../lib/supabase-env.mjs";
 
 const args = process.argv.slice(2);
 const APPLY = args.includes("--apply");
@@ -32,40 +26,34 @@ if (APPLY) requireServiceKey();
 
 const research = JSON.parse(fs.readFileSync(RESEARCH, "utf8"));
 const input = JSON.parse(fs.readFileSync(ROUTES, "utf8"));
-const inputRoutes = Array.isArray(input) ? input : input.routes;
-const inputById = new Map(inputRoutes.map(r => [r.id, r]));
+const inputById = new Map((Array.isArray(input) ? input : input.routes).map(r => [r.id, r]));
 
 const nums = (s) => [...new Set(String(s || "").match(/\d+(?:[.,]\d+)?/g) || [])].map(n => n.replace(",", ""));
-const same = (a, b) => JSON.stringify([...a].map(String).sort()) === JSON.stringify([...b].map(String).sort());
+const same = (a, b) => JSON.stringify([...a].sort()) === JSON.stringify([...b].sort());
+const LEAK = /\b(https?:|www\.|\.com|\.org|\.gov|mountainproject|openbeta|summitpost|peakbagger|wta|wtaorg)\b/i;
 
 const plan = [];
 const skipped = [];
 for (const e of research) {
   const r = inputById.get(e.id);
   if (!r) { skipped.push([e.id, "not in the routes file"]); continue; }
-  if (!e.found) { skipped.push([e.id, "research did not establish the way in: " + (e.unverified || "")]); continue; }
+  if (!e.found || !["high", "medium"].includes(e.confidence)) { skipped.push([e.id, "not established at high/medium: " + (e.unverified || "")]); continue; }
   if (!e.approach || !e.trailhead || !e.trailheadDirection) { skipped.push([e.id, "missing approach / trailhead / direction text"]); continue; }
-  if (r.approach && String(r.approach).trim()) { skipped.push([e.id, "already has approach prose — not an absence"]); continue; }
-  const cur = r.approach_logistics || {};
-  if (cur.trailhead) { skipped.push([e.id, "already has a trailhead — re-adjudicate, do not overwrite"]); continue; }
+  if (r.approach && String(r.approach).trim()) { skipped.push([e.id, "already has approach prose"]); continue; }
+  if ((r.approach_logistics || {}).trailhead) { skipped.push([e.id, "already has a trailhead"]); continue; }
   const used = nums(e.approach + " " + e.trailheadDirection);
-  if (!same(used, (e.numbersUsed || []).map(n => String(n).replace(",", "")))) {
-    skipped.push([e.id, "numbers do not match numbersUsed: text has " + used.join(",") + " / declared " + (e.numbersUsed || []).join(",")]); continue;
-  }
+  if (!same(used, nums((e.numbersUsed || []).join(" ")))) { skipped.push([e.id, "numbers do not match numbersUsed: " + used.join(",")]); continue; }
   if (!e.approach.includes(e.trailhead)) { skipped.push([e.id, "trailhead name is not in the approach prose"]); continue; }
-  if (/\b(https?:|www\.|\.com|\.org|\.gov|mountainproject|openbeta|summitpost|peakbagger)\b/i.test(e.approach + e.trailheadDirection + e.trailhead)) {
-    skipped.push([e.id, "a source name or URL leaked into app text"]); continue;
-  }
-  const next = Object.assign({}, cur, { trailhead: e.trailhead, trailheadDirection: e.trailheadDirection });
+  if (LEAK.test(e.approach + " " + e.trailheadDirection + " " + e.trailhead)) { skipped.push([e.id, "a source name or URL in app text"]); continue; }
+  const next = Object.assign({}, r.approach_logistics || {}, { trailhead: e.trailhead, trailheadDirection: e.trailheadDirection });
   const hasCoord = typeof e.trailheadLat === "number" && typeof e.trailheadLng === "number";
   if (hasCoord) { next.trailheadLat = e.trailheadLat; next.trailheadLng = e.trailheadLng; }
-  plan.push({ id: e.id, approach: e.approach, next, hasCoord, keptKeys: Object.keys(cur) });
+  plan.push({ id: e.id, approach: e.approach, next, hasCoord });
 }
 
 console.log((APPLY ? "APPLY" : "DRY") + ": " + plan.length + " to write, " + skipped.length + " skipped");
 for (const [id, why] of skipped) console.log("  skip " + id + " — " + why);
-for (const p of plan) console.log("  " + (APPLY ? "write" : "dry  ") + " " + p.id + (p.hasCoord ? "  [+coord]" : "") + "  keeps " + p.keptKeys.join(",") );
-
+for (const p of plan) console.log("  " + (APPLY ? "write" : "dry  ") + " " + p.id + (p.hasCoord ? "  [+coord]" : ""));
 if (!APPLY) process.exit(0);
 
 const sleep = (ms) => new Promise(res => setTimeout(res, ms));
@@ -86,9 +74,8 @@ for (const p of plan) {
 }
 console.log("written " + written);
 
-// Reconcile: re-read every written id and confirm the prose and direction landed.
-const ids = plan.map(p => p.id);
 let bad = 0;
+const ids = plan.map(p => p.id);
 for (let i = 0; i < ids.length; i += 20) {
   const chunk = ids.slice(i, i + 20);
   const q = `${SUPABASE_URL}/rest/v1/routes?select=id,approach,approach_logistics&id=in.(${chunk.map(encodeURIComponent).join(",")})`;
