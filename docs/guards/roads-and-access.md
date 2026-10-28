@@ -859,5 +859,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the same road. Batch-1 text is not exempt from the accuracy pass — it went through it like the rest.
   - **A second source that DISAGREES is the reason for the second check**, not noise: WTA's 1.3 + 5.4
     and the Forest Service's 5.3 cannot both be true. Prefer the land manager, and say why in the note.
+  - **A TEMPORARY closure in a drive line is DATED** ("closed since August 2026 for the Little Giant
+    Fire; check the road status before you go") and keeps the normal drive, so the line is right again
+    the day the road reopens. A durable one (Mowich Lake: the Fairfax Bridge on SR-165, closed to all
+    traffic since April 2025, no funded replacement) replaces the drive outright.
+    - **OPEN — `audit:expiring-closures` cannot see these.** It reads `road.*` and `access.*`, never
+      `approach_logistics.trailheadDirection`. Adding that field was written and REVERTED on
+      2026-10-28 unrun: OR-ing the column into its query timed out (57014), and so did the audit's
+      own unchanged query, twice, under that day's load. Re-do it as a SEPARATE narrow read
+      (`dir:approach_logistics->>trailheadDirection`) when the database is quiet, and inject-test it.
   - **numbersUsed compares as SETS.** A number used twice in a text ("SR 20 ... mile 20") was declared
     twice and refused four checked corrections; duplicates are not untraceability.
