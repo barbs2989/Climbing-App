@@ -35033,3 +35033,35 @@ grade, and ~2,200 ft buttress length all corroborated against AAJ/Steph Abegg so
 consistent).
 
 Pass 8 continues next run after `wa_bears_breast_mountain_southwest_face`.
+
+## Batch 470 (2026-10-28, pass 8)
+
+Checked: `wa_bears_breast_mountain_timeless_treasure`, `wa_beckey_davis`, `wa_beckey_tate`,
+`wa_beyond_redlining`, `wa_big_chiwaukum_mount_temple_ridge`,
+`wa_big_chiwaukum_three_musketeers_ridge`, `wa_big_craggy_peak_scramble`,
+`wa_big_four_mountain_northwest_ridge`.
+
+**Fixed:** none. **Flagged for human review:** none.
+
+**Checked, not flagged:** `wa_beyond_redlining` is filed under `wa_morning_star_peak`'s
+`area_id` even though its own text climbs "Vega North Tower (Eros Tower)," not Morning Star's
+main summit — looked like a possible misfile at first glance. An AAC publication on Vega Tower
+confirms it as a named sub-summit on Morning Star Peak's own north ridge at 6,020 ft, matching
+the parent area row's `elevation_ft` exactly, so the area placement is correct as filed; the
+route's own `high_point_ft` is left null, appropriately, since Vega Tower's point is not Morning
+Star's summit elevation.
+
+**Clean (6):** `wa_bears_breast_mountain_timeless_treasure` (grade 5.6, ~3,500 ft, and FA
+Leland Windham & Bryan Burdo, 8/2004 all confirmed on Mountain Project); `wa_beckey_davis`
+(`high_point_ft` 8,008 ft matches the `wa_prusik_peak` area row and is Prusik Peak's most-cited
+figure; 7 pitches/700 ft tracks `length_m`); `wa_beckey_tate` (6 pitches/900 ft matches Mountain
+Project; the already-documented 5.8-vs-5.9+ grade note still holds up against MP's classics
+listing); `wa_big_craggy_peak_scramble` (`high_point_ft` 8,478 ft matches the area row and is
+Wikipedia's current, most-cited figure for the peak); `wa_big_four_mountain_northwest_ridge`
+(FA "Forest Farr and Art Winder, July 19, 1931" confirmed exactly; `high_point_ft` 6,170 ft
+matches the area row; the ice-cave fatality years it cites, 1998/2010/2015, are all confirmed).
+Also clean, nothing to check: `wa_big_chiwaukum_mount_temple_ridge` and
+`wa_big_chiwaukum_three_musketeers_ridge` (bare stubs — name and discipline only, nothing on
+file to contradict).
+
+Pass 8 continues next run after `wa_big_four_mountain_northwest_ridge`.

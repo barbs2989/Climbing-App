@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_bears_breast_mountain_southwest_face",
+  "last_processed_id": "wa_big_four_mountain_northwest_ridge",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 469. Continuing id-ascending scope from wa_bears_breast_mountain_southwest_face.",
+  "pass_note": "Pass 8 in progress, batch 470. Continuing id-ascending scope from wa_big_four_mountain_northwest_ridge.",
   "batches": [
     {
       "batch_number": 1,
@@ -9324,6 +9324,26 @@
       "clean": 7,
       "sql_file": "audits/sql/2026-10-28-batch-469.sql",
       "note": "Fixed 1: wa_baldy_standard high_point_ft 6827 -> 6808, matching the area row, the route's own summit waypoint, and the route's own data_quality.gaps note (which already said 6,808 ft was the figure used, even though high_point_ft itself had never been updated to match). Verified via web search that external sources for this peak genuinely spread 6,797-6,827 ft, so 6808 is not asserted as the one true elevation -- only as what this entry already committed to internally. Checked but did NOT flag: wa_baring_mountain_r1's FA credit (Don Gordon/Claunch and Ed Cooper, July 1960) is corroborated by AAJ sources, though some accounts also credit Beckey on the final push -- common ambiguity for Beckey-era routes, not a clear error. Also checked a vague 'rising roughly 3,000 feet above Barclay Lake' phrase on that same route -- plausible given the lake-to-summit relief, left alone for lack of a precise lake elevation to pin an exact discrepancy. Clean (7): wa_bald_eagle_peak_southwest_route (bare stub, nothing on file to contradict), wa_baring_mountain_east_face (FA/approach/waypoints internally consistent, appropriately self-caveated as thinly documented), wa_baring_mountain_oatmeal_man (length_m/pitch count/gain all cross-consistent), wa_baring_mountain_r1 (FA corroborated by AAJ, pitch/grade/waypoints consistent), wa_bear_mountain_chilliwack_north_buttress (FA date, aid grade, and 2,200 ft buttress length all corroborated against AAJ/Steph Abegg), wa_bears_breast_mountain_infinite_beauty (length/gain internally consistent), wa_bears_breast_mountain_southwest_face (rappel count, waypoints, FA internally consistent)."
+    },
+    {
+      "batch_number": 470,
+      "date": "2026-10-28",
+      "pass": 8,
+      "route_ids": [
+        "wa_bears_breast_mountain_timeless_treasure",
+        "wa_beckey_davis",
+        "wa_beckey_tate",
+        "wa_beyond_redlining",
+        "wa_big_chiwaukum_mount_temple_ridge",
+        "wa_big_chiwaukum_three_musketeers_ridge",
+        "wa_big_craggy_peak_scramble",
+        "wa_big_four_mountain_northwest_ridge"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 0,
+      "clean": 8,
+      "sql_file": null,
+      "note": "All 8 clean; nothing confirmed wrong. Checked but did not flag: wa_beyond_redlining is filed under wa_morning_star_peak even though its text climbs Vega North Tower (Eros Tower), not the main summit -- an AAC source confirms Vega Tower is a named sub-summit on Morning Star Peaks own north ridge at 6020 ft, matching the parent area row exactly, so the area placement is correct; the routes own high_point_ft is appropriately left null since Vega Towers point is not Morning Stars own summit elevation. Verified clean: wa_bears_breast_mountain_timeless_treasure (grade/length/FA all confirmed on Mountain Project), wa_beckey_davis (high_point_ft 8008 matches wa_prusik_peak area row and Prusik Peaks most-cited figure; pitch count/length consistent), wa_beckey_tate (pitch count/length matches Mountain Project; already-documented 5.8-vs-5.9+ note still holds against MPs classics listing), wa_big_craggy_peak_scramble (high_point_ft 8478 matches area row and current Wikipedia), wa_big_four_mountain_northwest_ridge (FA Forest Farr and Art Winder, July 19 1931 confirmed exactly; high_point_ft 6170 matches area row; cited ice-cave fatality years 1998/2010/2015 all confirmed). wa_big_chiwaukum_mount_temple_ridge and wa_big_chiwaukum_three_musketeers_ridge are bare stubs with nothing on file to contradict."
     }
   ]
 }
