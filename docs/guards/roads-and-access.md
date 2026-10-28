@@ -887,6 +887,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     manager, so the six texts are unchanged. Dosewallips washout parking (sources disagree on where
     the road ends). SR-20 pullout distances east of Washington Pass that disagree with each other
     (2.8 / 3 / 4 mi) with no page to settle them.
+  - **Fill batch 2** (`list-targets-2.mjs`, `th-C*.json`): the 23 WA alpine routes left with a
+    trailhead card but no drive, whatever their prose. 12 trailheads researched (the 8 batch 1 showed
+    unresolvable skipped), each checked a second time; **13 routes filled**, including both Jack
+    Mountain routes batch 1 refused (Canyon Creek now page-backed). Refused: White Salmon (only a
+    winter snowshoe page). The merge base was refreshed by an id read (`id=in.(…)`) instead of a
+    re-listing, because full scans were timing out that afternoon.
   - **The second check also SUBTRACTS.** It added an unproven "North Shore Road bridge out" note to
     North Fork Quinault, which the first pass had already shown (park road page) this drive never
     crosses; removed by hand. And a check that writes "per a Forest Service alert" is citing a source
