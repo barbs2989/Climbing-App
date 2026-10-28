@@ -1,0 +1,479 @@
+[
+ {
+  "i": 0,
+  "verdict": "accurate",
+  "problem": "Park trail page confirms the trail starts at the end of Kinney Lake Road near the entrance and welcome centre, and reopened after the restoration; the paved-road detail was not independently confirmed.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://bcparks.ca/mount-robson-park/berg-lake-trail/"
+  ]
+ },
+ {
+  "i": 1,
+  "verdict": "not-directions",
+  "problem": "Text only names the trailhead and gives a milepost; no drive.",
+  "correctedDirection": "From Marblemount, drive SR-20 east about 50 miles to Rainy Pass; the picnic area and Lake Ann trailhead lot is on the south side of the highway.",
+  "numbersUsed": [
+   "20",
+   "50"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/lake-ann-rainy-pass"
+  ]
+ },
+ {
+  "i": 2,
+  "verdict": "accurate",
+  "problem": "Exit 52 and Alpental Road end match the trailhead page.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/snow-lake"
+  ]
+ },
+ {
+  "i": 3,
+  "verdict": "accurate",
+  "problem": "Exit 52 and Alpental Road end match the trailhead page.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/snow-lake"
+  ]
+ },
+ {
+  "i": 4,
+  "verdict": "accurate",
+  "problem": "Okanogan County Road 1213 (West Chewuch Road) joining Forest Road 51 north of Winthrop matches; text is a partial drive.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/andrews-creek"
+  ]
+ },
+ {
+  "i": 5,
+  "verdict": "accurate",
+  "problem": "West Chewuch Road / Forest Road 51 north of Winthrop matches the trailhead page.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/andrews-creek"
+  ]
+ },
+ {
+  "i": 6,
+  "verdict": "unverifiable",
+  "problem": "Could not open a page confirming the Illabot Creek Road switchback start.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 7,
+  "verdict": "accurate",
+  "problem": "Roughly 58 miles from the I-5 exit to the end of SR 542 per the page versus 55 from Bellingham, within tolerance; end-of-road parking matches.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/table-mountain"
+  ]
+ },
+ {
+  "i": 8,
+  "verdict": "not-directions",
+  "problem": "Text describes a walk from the lot, not a drive.",
+  "correctedDirection": "From Glacier, drive SR 542 east about 24 miles to the end of the highway at the large Artist Point parking lot.",
+  "numbersUsed": [
+   "542",
+   "24"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/table-mountain"
+  ]
+ },
+ {
+  "i": 9,
+  "verdict": "unverifiable",
+  "problem": "Could not open a page describing the Bacon Creek Road end.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 10,
+  "verdict": "not-directions",
+  "problem": "Text describes where the lot is, not a drive; no page opened that gives a drive.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 12,
+  "verdict": "accurate",
+  "problem": "Page gives 26.5 miles up Baker Lake Road (FS 11) to the lot versus 25.5 stored, within tolerance; vault toilet matches.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/baker-river"
+  ]
+ },
+ {
+  "i": 14,
+  "verdict": "not-directions",
+  "problem": "Text only names the pass and the gated road; no drive.",
+  "correctedDirection": "From Granite Falls, take the Mountain Loop Highway east 11 miles to the Verlot Ranger Station, then continue 19.3 miles to Barlow Pass at the end of the pavement; the lot is on the left.",
+  "numbersUsed": [
+   "11",
+   "19.3"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/gothic-basin"
+  ]
+ },
+ {
+  "i": 15,
+  "verdict": "accurate",
+  "problem": "19.3 miles east of Verlot to Barlow Pass matches the trailhead page.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/gothic-basin"
+  ]
+ },
+ {
+  "i": 16,
+  "verdict": "accurate",
+  "problem": "FR 4096 off the Mountain Loop Highway, 2 miles to the trailhead, matches.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/bedal-creek"
+  ]
+ },
+ {
+  "i": 17,
+  "verdict": "accurate",
+  "problem": "FR 4096 off the Mountain Loop Highway matches.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/bedal-creek"
+  ]
+ },
+ {
+  "i": 18,
+  "verdict": "accurate",
+  "problem": "FR 9737-112 off the North Fork Teanaway road matches; a fire closure of this road was reported in search results but not confirmed on any page opened.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/beverly-turnpike"
+  ]
+ },
+ {
+  "i": 19,
+  "verdict": "accurate",
+  "problem": "FR 9737-112 off the North Fork Teanaway road matches; a fire closure was reported in search results but not confirmed on any page opened.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/beverly-turnpike"
+  ]
+ },
+ {
+  "i": 20,
+  "verdict": "not-directions",
+  "problem": "Text only names the picnic area; no drive.",
+  "correctedDirection": "Take the Mountain Loop Highway east from Granite Falls, pass the Verlot Ranger Station after about 10 miles, and continue about 14 miles to the signed turn for the Big Four picnic area on the right.",
+  "numbersUsed": [
+   "10",
+   "14"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/big-four-ice-caves"
+  ]
+ },
+ {
+  "i": 21,
+  "verdict": "not-directions",
+  "problem": "Text is not a drive, and the area is currently closed.",
+  "correctedDirection": "From Trout Lake on SR 141, take the right fork north and follow the Mount Adams Recreation Area signs onto Road 82, about 14.7 miles to Mirror Lake; just past it take the left fork to Bird Lake. The recreation area was closed in August 2026 because of nearby fires, so confirm it is open before you go.",
+  "numbersUsed": [
+   "141",
+   "82",
+   "14.7",
+   "2026"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/bird-creek-meadows"
+  ]
+ },
+ {
+  "i": 22,
+  "verdict": "fix",
+  "problem": "The trailhead has been reported inaccessible since December 2025 because Beckler River Road is closed for flood damage; the normal drive is otherwise as stated.",
+  "correctedDirection": "From Index on US-2, turn north onto Index-Galena Road (FR-63) and drive about 16 miles, bearing left at the junction for the final 2 miles of bumpy gravel. Bear left again at the second fork and climb a short hill to the parking area. Since December 2025 flood damage on Beckler River Road (FR-65) has closed access to this trailhead, so check before going.",
+  "numbersUsed": [
+   "2",
+   "63",
+   "16",
+   "2025",
+   "65"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/blanca-lake"
+  ]
+ },
+ {
+  "i": 23,
+  "verdict": "accurate",
+  "problem": "Mileages from Newhalem (42.1) and Winthrop (31.3) and the side of the road match.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/blue-lake"
+  ]
+ },
+ {
+  "i": 28,
+  "verdict": "accurate",
+  "problem": "NPS places the Boston Basin parking at milepost 22.5 and Eldorado at 20; 21.7 is within tolerance. Matches the current road description; a trail-info page also lists a maintenance closure at milepost 20 dated October 2026 that the park road page does not show, so check before driving.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.wta.org/go-hiking/hikes/cascade-pass",
+   "https://www.nps.gov/noca/planyourvisit/road-conditions.htm"
+  ]
+ },
+ {
+  "i": 29,
+  "verdict": "accurate",
+  "problem": "NPS places the Boston Basin parking at milepost 22.5 and Eldorado at 20; 21.7 is within tolerance. Matches the current road description; a trail-info page also lists a maintenance closure at milepost 20 dated October 2026 that the park road page does not show, so check before driving.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.wta.org/go-hiking/hikes/cascade-pass",
+   "https://www.nps.gov/noca/planyourvisit/road-conditions.htm"
+  ]
+ },
+ {
+  "i": 30,
+  "verdict": "accurate",
+  "problem": "Milepost 22.5, first 10 miles paved, Eldorado at milepost 20 all match the park page.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.wta.org/go-hiking/hikes/cascade-pass"
+  ]
+ },
+ {
+  "i": 31,
+  "verdict": "accurate",
+  "problem": "FR 1131 reached via FR 1130 off Baker Lake Road matches the trailhead page.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/boulder-ridge"
+  ]
+ },
+ {
+  "i": 32,
+  "verdict": "unverifiable",
+  "problem": "Could not confirm FR 2551 or the spur; Forest Road 25 near Elk Pass was reported closed by a 2023 landslide in search results but no opened page confirmed it.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/giffordpinchot/recreation/forest-road-25"
+  ]
+ },
+ {
+  "i": 33,
+  "verdict": "accurate",
+  "problem": "Milepost 159 and just over a mile east of Rainy Pass are consistent with the Forest Service page (about 33 miles west of Winthrop).",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/bridge-creek-trailhead"
+  ]
+ },
+ {
+  "i": 34,
+  "verdict": "accurate",
+  "problem": "Mile marker 141 area on SR 20 and mileages are consistent; a fire closure of the trail itself was reported in search results.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/canyon-creek"
+  ]
+ },
+ {
+  "i": 35,
+  "verdict": "accurate",
+  "problem": "Near milepost 141 on Highway 20 matches the trailhead page.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/canyon-creek"
+  ]
+ },
+ {
+  "i": 39,
+  "verdict": "accurate",
+  "problem": "23-mile Cascade River Road from Marblemount matches. Matches the current road description; a trail-info page also lists a maintenance closure at milepost 20 dated October 2026 that the park road page does not show, so check before driving.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.wta.org/go-hiking/hikes/cascade-pass"
+  ]
+ },
+ {
+  "i": 41,
+  "verdict": "accurate",
+  "problem": "Straight onto Cascade River Road at Marblemount, 23 miles, first third paved, matches. Matches the current road description; a trail-info page also lists a maintenance closure at milepost 20 dated October 2026 that the park road page does not show, so check before driving.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.wta.org/go-hiking/hikes/cascade-pass"
+  ]
+ },
+ {
+  "i": 42,
+  "verdict": "accurate",
+  "problem": "23 miles from Marblemount matches. Matches the current road description; a trail-info page also lists a maintenance closure at milepost 20 dated October 2026 that the park road page does not show, so check before driving.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.wta.org/go-hiking/hikes/cascade-pass"
+  ]
+ },
+ {
+  "i": 43,
+  "verdict": "accurate",
+  "problem": "23.1 miles from Marblemount matches. Matches the current road description; a trail-info page also lists a maintenance closure at milepost 20 dated October 2026 that the park road page does not show, so check before driving.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.wta.org/go-hiking/hikes/cascade-pass"
+  ]
+ },
+ {
+  "i": 44,
+  "verdict": "unverifiable",
+  "problem": "Could not open a page confirming the washout location or the 14.2-mile figure; the road is now open to well past this point per the park page.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm"
+  ]
+ },
+ {
+  "i": 45,
+  "verdict": "fix",
+  "problem": "The last 3 miles after Long Swamp are on FR 3900-300, not FR-39.",
+  "correctedDirection": "From Loomis, drive north on County Road 9425 for 2 miles, turn west onto County Road 4066, which becomes Forest Road 39, and follow it about 20 miles to Long Swamp Campground. Continue about 3 miles on Forest Road 3900-300 to the Cathedral Driveway trailhead.",
+  "numbersUsed": [
+   "9425",
+   "2",
+   "4066",
+   "39",
+   "20",
+   "3",
+   "3900",
+   "300"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/windy-peak",
+   "https://www.wta.org/go-hiking/hikes/cathedral-driveway"
+  ]
+ },
+ {
+  "i": 48,
+  "verdict": "fix",
+  "problem": "The road is off SR 20 about 17 miles west of Winthrop, roughly 2.5 to 3 miles west of Mazama, not 4.25; the trailhead is 0.8 mile up it.",
+  "correctedDirection": "From SR 20 about 17 miles west of Winthrop, a few miles west of the Mazama turnoff, turn south onto Forest Road 200 and drive 0.8 mile to the Cedar Creek trailhead.",
+  "numbersUsed": [
+   "20",
+   "17",
+   "200",
+   "0.8"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/cedar-creek"
+  ]
+ },
+ {
+  "i": 49,
+  "verdict": "fix",
+  "problem": "Trailhead is about 17 miles west of Winthrop on FR 200, 0.8 mile off the highway; it is not next to the Klipchuck turnoff.",
+  "correctedDirection": "From Winthrop, drive SR 20 west about 17 miles, turn south onto Forest Road 200, and go 0.8 mile to the Cedar Creek trailhead at the road's end.",
+  "numbersUsed": [
+   "20",
+   "17",
+   "200",
+   "0.8"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/cedar-creek"
+  ]
+ },
+ {
+  "i": 50,
+  "verdict": "accurate",
+  "problem": "FR 90, FR 83, FR 81 and spur 830 from Cougar match; FR 83 has a posted work zone through 30 October 2026 and the trailhead road closes for snow in winter.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.oregonhikers.org/field_guide/Climber%27s_Bivouac_Trailhead",
+   "https://fs.usda.gov/r06/giffordpinchot/recreation/mount-st-helens-south-forest-roads-83-81",
+   "https://www.fs.usda.gov/r06/giffordpinchot/alerts/road-repairs-road-closures-2026"
+  ]
+ }
+]
