@@ -852,5 +852,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Batches 1–2: 98 drives checked, 40 judged accurate (SHALLOW — batch 1 fetched nothing, so treat
     those as unchecked), 17 corrections written over **71 routes**, 3 refused (Dosewallips washout
     parking: low confidence, sources disagree on where the road ends).
+  - Batch 3 (fetched pages): 48 drives, 25 corrections confirmed by the second check, **59 routes**.
+    **It caught a defect this item's OWN batch 1 wrote:** Hannegan Pass read "FR-32 1.3 miles, then
+    the left fork 5.4 more" (6.7 mi, from two WTA pages); the Forest Service trailhead page and the
+    PNT both give **5.3 miles** in total, and WTA's own Goat Mountain page puts that trailhead 2.1 mi up
+    the same road. Batch-1 text is not exempt from the accuracy pass — it went through it like the rest.
+  - **A second source that DISAGREES is the reason for the second check**, not noise: WTA's 1.3 + 5.4
+    and the Forest Service's 5.3 cannot both be true. Prefer the land manager, and say why in the note.
   - **numbersUsed compares as SETS.** A number used twice in a text ("SR 20 ... mile 20") was declared
     twice and refused four checked corrections; duplicates are not untraceability.
