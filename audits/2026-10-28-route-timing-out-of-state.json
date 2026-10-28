@@ -1,0 +1,91 @@
+{
+ "date": "2026-10-28",
+ "what": "Out-of-state pass of the route time audit (owner: \"yes audit routes outside WA too\"). The 52 alpine-family rows outside WA that store a time, a distance or gain, or are on a classics list were researched online in 4 batches; the remaining 5,133 out-of-state rows store none of those.",
+ "rule": "Same as audits/2026-10-28-route-timing-catalog.json.",
+ "counts": {
+  "researched": 52,
+  "withALegThatClearsTheBar": 18,
+  "readyToWrite": 3,
+  "written": 0
+ },
+ "status": "NOT WRITTEN. The fixes in audits/2026-10-28-route-timing-out-of-state-fixes.json previewed through planTimes and dry-ran clean (3 ok, 0 refused), but production reads were failing or taking 2-30 s for over an hour (20 single-row probes, 3 minutes apart, 2026-10-28 18:49-19:53 UTC), so under the owner's throttle rule nothing was applied. Apply with `node scripts/oneoff/apply-timing-fixes.mjs audits/2026-10-28-route-timing-out-of-state-fixes.json --apply` once a single-row read answers under 1.5 s; compare-and-set refuses any row that changed since.",
+ "fixes": [
+  {
+   "id": "bc_bugaboo_spire_east_ridge",
+   "before": null,
+   "after": [
+    3.5,
+    null,
+    null,
+    null
+   ],
+   "why": "Empty row. The Alpine Club of Canada's Conrad Kain Hut page gives the walk from the parking lot to the hut, the camp for this route, as 3-4 hr (4.6 km, ~720 m). Stored as a lone approach, which the Planner treats as a floor (#2859); the climb stays unknown."
+  },
+  {
+   "id": "co_south_face",
+   "before": null,
+   "after": [
+    2.1,
+    null,
+    null,
+    null
+   ],
+   "why": "Empty row (Petit Grepon South Face). Two timed reports from the Glacier Gorge trailhead agree on the walk to the base: 2 hr (2024) and 2 hr 15 (2020), median 2.1. Stored as a lone approach floor (#2859). Car to car in the same reports is 8-8.8 hr, but a lone total is not written."
+  },
+  {
+   "id": "or_mt_hood_south_side_hogsback",
+   "before": [
+    null,
+    7,
+    4,
+    12
+   ],
+   "after": [
+    0,
+    7,
+    4,
+    12
+   ],
+   "why": "The row stored 7 hr to the summit and 4 down but no approach, so the Planner added its own 4.8 hr walk-in IN FRONT of a summit leg that already starts at the Timberline lot (15.8 hr car to car beside a stored 12). Every source gives it as a day trip from Timberline Lodge with no separate approach; approach 0 makes the stored legs one convention. The stored 7 / 4 / 12 is the slow end of the evidence (typical parties 3.5-4 up, 2-3 down), and is kept: only an approach was added."
+  }
+ ],
+ "held": [
+  {
+   "route": "ab_mount_edith_cavell_north_face",
+   "why": "Published summit-to-road ~5 hr, but the page is 403 and was read only as a search snippet; held as Mount Washington (Olympics) was."
+  },
+  {
+   "route": "or_mt_hood_south_side_hogsback (beyond approach 0)",
+   "why": "The stored 7 / 4 / 12 is the SLOW end (typical 3.5-4 up, 2-3 down, 6-7 car to car); it is not short, so the rule does not move it."
+  },
+  {
+   "route": "wy_east_ridge_9 (Wolfs Head)",
+   "why": "The two agreeing descent times end at the Cirque of the Towers camp, not the car; the two approach times (5, 7) disagree."
+  },
+  {
+   "route": "wy_direct_south_buttress (Moran)",
+   "why": "The only approach figure is the canoe crossing, snippet only; the two car-to-car times (17.5, 27.2) disagree."
+  },
+  {
+   "route": "nt_lotus_flower_tower_southeast_face",
+   "why": "Fly-in expedition: no car leg exists."
+  },
+  {
+   "route": "rainier_central_mowich_face",
+   "why": "Approach 7.5 (one AAJ account) against 11 (one 2002 report): disagree."
+  },
+  {
+   "route": "ca_east_face_10 (Whitney East Face)",
+   "why": "Two agreeing car-to-summit times (4.9) but no descent: a lone summit leg is not written."
+  },
+  {
+   "route": "co_mount_elbert_northeast_ridge and the other 14ers",
+   "why": "Stored gain but no distance, so the Planner shows a floor (≥); the reports disagree (5 vs 8.5). Their published round-trip distances are a dist_km question, not timing, and dist_km holds two conventions (never filled in bulk)."
+  },
+  {
+   "route": "Alaska, Yukon, Waddington, Fairweather, Saint Elias, Logan, Huntington",
+   "why": "Expeditions measured in days and fly-ins: no leg in hours exists."
+  }
+ ],
+ "notYet": "The 5,133 empty out-of-state rows. The WA sample of the same kind found nothing in 32. A short list on well-climbed peaks (CO 14ers, state highpoints, volcanoes, Tetons) is worth one pass, but its listing query timed out against the struggling database and was not run."
+}

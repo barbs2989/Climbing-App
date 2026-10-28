@@ -1,0 +1,41 @@
+[
+ {
+  "id": "bc_bugaboo_spire_east_ridge",
+  "from": null,
+  "to": {
+   "approachTimeHrs": 3.5,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "totalHrs": null
+  },
+  "why": "Empty row. The Alpine Club of Canada's Conrad Kain Hut page gives the walk from the parking lot to the hut, the camp for this route, as 3-4 hr (4.6 km, ~720 m). Stored as a lone approach, which the Planner treats as a floor (#2859); the climb stays unknown."
+ },
+ {
+  "id": "co_south_face",
+  "from": null,
+  "to": {
+   "approachTimeHrs": 2.1,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "totalHrs": null
+  },
+  "why": "Empty row (Petit Grepon South Face). Two timed reports from the Glacier Gorge trailhead agree on the walk to the base: 2 hr (2024) and 2 hr 15 (2020), median 2.1. Stored as a lone approach floor (#2859). Car to car in the same reports is 8-8.8 hr, but a lone total is not written."
+ },
+ {
+  "id": "or_mt_hood_south_side_hogsback",
+  "from": {
+   "totalHrs": 12,
+   "summitTimeHrs": 7,
+   "descentTimeHrs": 4,
+   "recommendedStart": "1-3 AM"
+  },
+  "to": {
+   "approachTimeHrs": 0,
+   "totalHrs": 12,
+   "summitTimeHrs": 7,
+   "descentTimeHrs": 4,
+   "recommendedStart": "1-3 AM"
+  },
+  "why": "The row stored 7 hr to the summit and 4 down but no approach, so the Planner added its own 4.8 hr walk-in IN FRONT of a summit leg that already starts at the Timberline lot (15.8 hr car to car beside a stored 12). Every source gives it as a day trip from Timberline Lodge with no separate approach; approach 0 makes the stored legs one convention. The stored 7 / 4 / 12 is the slow end of the evidence (typical parties 3.5-4 up, 2-3 down), and is kept: only an approach was added."
+ }
+]
