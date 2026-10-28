@@ -400,7 +400,7 @@ const rollback = {};
 let written = 0, skipped = 0;
 for (const [id, x] of plan) {
   const [now] = await q(`routes?select=id,waypoints&id=eq.${encodeURIComponent(id)}`);
-  if (canon(now && now.waypoints) !== canon(x.before)) { skipped++; console.error(`skip ${id}: waypoints changed since the plan was made`); continue; }
+  if (canon((now && now.waypoints) || []) !== canon(x.before)) { skipped++; console.error(`skip ${id}: waypoints changed since the plan was made`); continue; }
   rollback[id] = x.before;
   fs.writeFileSync(rollbackFile, JSON.stringify(rollback));
   const t0 = Date.now();
@@ -436,7 +436,7 @@ for (const [id, x] of plan) {
 let landed = 0;
 for (const id of Object.keys(rollback)) {
   const [now] = await q(`routes?select=id,waypoints&id=eq.${encodeURIComponent(id)}`);
-  if (canon(now && now.waypoints) === canon(plan.get(id).after)) landed++;
+  if (canon((now && now.waypoints) || []) === canon(plan.get(id).after)) landed++;
   else console.error(`NOT LANDED ${id}`);
   await sleep(150);
 }
