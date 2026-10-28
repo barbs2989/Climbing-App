@@ -35065,3 +35065,48 @@ Also clean, nothing to check: `wa_big_chiwaukum_mount_temple_ridge` and
 file to contradict).
 
 Pass 8 continues next run after `wa_big_four_mountain_northwest_ridge`.
+
+## Batch 471 (pass 8) — 2026-10-28
+
+Checked: `wa_big_four_mountain_spindrift_couloir`, `wa_big_four_mountain_tower_route`,
+`wa_big_kangaroo_going_down_under`, `wa_big_kangaroo_kearney_thomas`,
+`wa_big_kangaroo_skinny_start`, `wa_big_kangaroo_walkabout`, `wa_big_kangaroo_west_face`,
+`wa_big_snagtooth_west_ridge`.
+
+**Fixed:** none.
+
+**Flagged for human review (2):**
+- `wa_big_four_mountain_tower_route` — stored `fa` reads "Ben Guydelkon and Ron Miller, July 25,
+  1972." The party and date-of-month are confirmed (AAC Publications' "North America, United
+  States, Washington—Cascade Mountains, Big Four, Tower Route," a Climbs and Expeditions note),
+  but that note ran in the *1972* AAJ annual, and a 2005 trip report on a neighboring line
+  independently refers to "the Miller/Guydelkon 1971 route" — AAJ's Climbs and Expeditions
+  section reports the prior season, so the climb itself was very likely done in 1971, not 1972.
+  A separate, unrelated AAC entry pairs the same two climbers on Big Four's North Headwall in
+  1973, which is a different route and not a source for this one. Two secondary sources point to
+  1971 against the stored 1972, but neither is the primary AAJ text itself, so this is a
+  "probably off by one year" flag, not a confirmed fix.
+- `wa_big_snagtooth_west_ridge` — the route's own `high_point_ft` (8,374) doesn't match its
+  parent `wa_big_snagtooth` area row's `elevation_ft` (8,379), and external sources don't settle
+  it either: Wikipedia/WTA give 8,330 ft, PeakVisor gives 8,374 ft (matching the route row),
+  ListsOfJohn gives 8,379 ft from LiDAR (matching the area row) or 8,340 ft from the map. Four
+  different numbers across sources with no clear authoritative winner — flagging the
+  route-vs-area mismatch for a human to pick a figure rather than guessing which of our own two
+  columns is right.
+
+**Clean (6):** `wa_big_four_mountain_spindrift_couloir` (AAC Publications confirms the FA
+exactly — Bart Paull & Doug Littauer, March 2, 1996 — and the grade/length: IV+ 5.9 WI5 over
+4,000 ft, matching `alpine_grade`/`rock_grade`/`ice_grade` and `length_m` 1219 m to the foot);
+`wa_big_kangaroo_kearney_thomas` (5.11a confirmed on Mountain Project's Big Kangaroo area page);
+`wa_big_kangaroo_walkabout` (FA party and date confirmed — an AAC Publications piece titled
+"Big Kangaroo, south face, Walkabout" describes the August 2012 push by Mike Pond, Matt VanBein,
+David Elder and Jon Schrock, matching the stored party, which also credits Mark Allen);
+`wa_big_kangaroo_west_face` (FA confirmed exactly — Fred Beckey, Helmy Beckey and Walt Varney,
+June 21, 1942 — on both Wikipedia and Mountain Project; the Mountaineers' club page grades it
+5.5 against our stored 5.6, but that's ordinary half-grade variance between sources on an old,
+sparsely-protected alpine line, not a contested fact). `wa_big_kangaroo_going_down_under` and
+`wa_big_kangaroo_skinny_start` are consistent with general accounts of the 2010-2012 flurry of
+new routes on this face by the same climbers (Pond/VanBein/Elder), but neither is individually
+documented by name in any source found, so there was nothing specific to confirm or contradict.
+
+Pass 8 continues next run after `wa_big_snagtooth_west_ridge`.

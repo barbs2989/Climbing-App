@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_big_four_mountain_northwest_ridge",
+  "last_processed_id": "wa_big_snagtooth_west_ridge",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 470. Continuing id-ascending scope from wa_big_four_mountain_northwest_ridge.",
+  "pass_note": "Pass 8 in progress, batch 471. Continuing id-ascending scope from wa_big_snagtooth_west_ridge.",
   "batches": [
     {
       "batch_number": 1,
@@ -9344,6 +9344,26 @@
       "clean": 8,
       "sql_file": null,
       "note": "All 8 clean; nothing confirmed wrong. Checked but did not flag: wa_beyond_redlining is filed under wa_morning_star_peak even though its text climbs Vega North Tower (Eros Tower), not the main summit -- an AAC source confirms Vega Tower is a named sub-summit on Morning Star Peaks own north ridge at 6020 ft, matching the parent area row exactly, so the area placement is correct; the routes own high_point_ft is appropriately left null since Vega Towers point is not Morning Stars own summit elevation. Verified clean: wa_bears_breast_mountain_timeless_treasure (grade/length/FA all confirmed on Mountain Project), wa_beckey_davis (high_point_ft 8008 matches wa_prusik_peak area row and Prusik Peaks most-cited figure; pitch count/length consistent), wa_beckey_tate (pitch count/length matches Mountain Project; already-documented 5.8-vs-5.9+ note still holds against MPs classics listing), wa_big_craggy_peak_scramble (high_point_ft 8478 matches area row and current Wikipedia), wa_big_four_mountain_northwest_ridge (FA Forest Farr and Art Winder, July 19 1931 confirmed exactly; high_point_ft 6170 matches area row; cited ice-cave fatality years 1998/2010/2015 all confirmed). wa_big_chiwaukum_mount_temple_ridge and wa_big_chiwaukum_three_musketeers_ridge are bare stubs with nothing on file to contradict."
+    },
+    {
+      "batch_number": 471,
+      "date": "2026-10-28",
+      "pass": 8,
+      "route_ids": [
+        "wa_big_four_mountain_spindrift_couloir",
+        "wa_big_four_mountain_tower_route",
+        "wa_big_kangaroo_going_down_under",
+        "wa_big_kangaroo_kearney_thomas",
+        "wa_big_kangaroo_skinny_start",
+        "wa_big_kangaroo_walkabout",
+        "wa_big_kangaroo_west_face",
+        "wa_big_snagtooth_west_ridge"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 2,
+      "clean": 6,
+      "sql_file": null,
+      "note": "wa_big_four_mountain_tower_route: stored fa 'Ben Guydelkon and Ron Miller, July 25, 1972' -- party/date-of-month confirmed via AAC Publications Climbs and Expeditions note, but that note ran in the 1972 AAJ annual (which reports the PRIOR season), and a 2005 trip report independently calls it 'the Miller/Guydelkon 1971 route'; likely off by one year but not confirmed against the primary AAJ text, so flagged rather than fixed. wa_big_snagtooth_west_ridge: route's own high_point_ft (8374) disagrees with its parent area row's elevation_ft (8379); external sources are split four ways (8330 Wikipedia/WTA, 8374 PeakVisor, 8379 ListsOfJohn LiDAR, 8340 ListsOfJohn map) with no clear winner -- flagged for a human to pick a figure. Clean: wa_big_four_mountain_spindrift_couloir (AAC confirms FA Paull/Littauer Mar 2 1996 exactly, grade IV+ 5.9 WI5 and length_m 1219 = 4000ft all match), wa_big_kangaroo_kearney_thomas (5.11a matches Mountain Project), wa_big_kangaroo_walkabout (AAC piece titled 'Big Kangaroo, south face, Walkabout' confirms the Aug 2012 FA party incl. Mark Allen), wa_big_kangaroo_west_face (FA Beckey/Beckey/Varney June 21 1942 confirmed exactly on Wikipedia and Mountain Project; stored 5.6 vs Mountaineers' 5.5 is ordinary half-grade variance, not flagged). wa_big_kangaroo_going_down_under and wa_big_kangaroo_skinny_start are consistent with general accounts of the 2010-2012 new-route flurry on this face by the same climbers but have no route-specific source to confirm or contradict."
     }
   ]
 }
