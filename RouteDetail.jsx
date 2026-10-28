@@ -2420,7 +2420,7 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
      worded the same way and sit together. */
   const gainShort=gainBelowOwnPins(route);
   const missHikeLabel=_missHike.length===1?_missHike[0]:_missHike.slice(0,-1).join(", ")+" or "+_missHike[_missHike.length-1];
-  const hasAnyEstimate=hasHikeInputs||hasPublishedSummitH||hasDerivedSummitH||realPitches(route)>0;
+  const hasAnyEstimate=hasHikeInputs||hasPublishedSummitH||hasDerivedSummitH||realPitches(route)>0||P.loneApproachH!=null||P.loneDescentH!=null;
   const {hikeH,techH,totalH,sumH,retH,storedApproachH}=P;
   const dayOf=h=>Math.floor(Math.round(h*60)/1440);const fmt=h=>{let total=Math.round(h*60);const day=dayOf(h);total=total%1440;const hr=Math.floor(total/60),mn=total%60,ap=hr>=12?"PM":"AM",h12=hr%12||12;return `${h12}:${String(mn).padStart(2,"0")} ${ap}${day>0?" (+"+day+"d)":""}`;};
   /* THE TWO RED LABELS BELOW ARE COMPARED AGAINST A CLOCK HOUR, AND sumH/retH ARE UNBOUNDED.
@@ -2533,7 +2533,7 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
     </div>
     <div style={{background:C.surface,borderRadius:10,padding:"12px 14px",marginBottom:10}}>
       <div style={{display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:8,marginBottom:10,textAlign:"center"}}>
-        <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{publishedIsWholeDay?"incl.":(hasHikeInputs||storedApproachH!=null)?(walkInKnown?"":"≥")+hikeH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Approach</div></div>
+        <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{publishedIsWholeDay?"incl.":(hasHikeInputs||storedApproachH!=null||P.loneApproachH!=null)?(walkInKnown?"":"≥")+hikeH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Approach</div></div>
         <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{climbKnown?techH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>{publishedIsWholeDay?"Car-to-car":"Climbing"}</div></div>
         {/* N/A, like the Approach tile beside it, when nothing describes the way down: no stored descent, no walk out (distance or gain) and no rappels (#2336 printed "≥0.0hr"). */}
         <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{publishedIsWholeDay?"incl.":hasAnyEstimate&&(P.downH>0||P.storedDescentH!=null)?((walkOutKnown||P.storedDescentH!=null)?"":"≥")+P.downH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Descent</div></div>
