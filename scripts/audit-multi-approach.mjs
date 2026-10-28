@@ -25,6 +25,7 @@
 // route no file has a verdict for — a NEW row, or one the research never reached, is what to read next.
 //
 // Signals (a row can carry several):
+//   CARD_TWO   an approach card whose OWN text describes more than one way in (switchable or not)
 //   VARIANTS   ≥2 approach_variants and none of them switchable
 //   PROSE      approach/overview/beta/road prose names an alternative approach, < 2 variants
 //   OTHER_TH   prose names a trailhead the stored trailhead does not
@@ -62,7 +63,7 @@ if (!rows.length) { console.error(`no routes matched ${STATE}_* — wrong state,
 const byId = new Set(rows.map((x) => x.id));
 const txt = (v) => v == null ? "" : typeof v === "string" ? v : JSON.stringify(v);
 const prose = (r) => [r.approach, r.overview, r.beta, r.description, txt(r.road)].map(txt).join("\n");
-const ALT_RE = /\b(?:alternate|alternative|alternatively|another|second|longer|shorter|other)\s+(?:\w+\s+){0,3}approach(?:es)?\b|\bapproach(?:ed|es)?\s+(?:\w+\s+){0,3}(?:via|from)\s+(?:either|both)\b|\b(?:either|both)\s+(?:the\s+)?[\w'’ -]{2,40}?\s+(?:or|and)\s+(?:the\s+)?[\w'’ -]{2,40}?\s+(?:approach|trailhead|route)s?\b|\breached\s+(?:via|by|from)\s+(?:either|the\s+[\w'’ -]{2,40}?\s+or)\b|\btwo\s+(?:common\s+|main\s+|standard\s+)?approaches\b|\b(?:can|may)\s+(?:also\s+)?be\s+approached\s+(?:via|from)\b/i;
+const ALT_RE = /\b(?:alternate|alternative|alternatively|another|second|longer|shorter|other)\s+(?:\w+\s+){0,3}approach(?:es)?\b|\bapproach(?:ed|es)?\s+(?:\w+\s+){0,3}(?:via|from)\s+(?:either|both)\b|\b(?:either|both)\s+(?:the\s+)?[\w'’ -]{2,40}?\s+(?:or|and)\s+(?:the\s+)?[\w'’ -]{2,40}?\s+(?:approach|trailhead|route)s?\b|\breached\s+(?:via|by|from)\s+(?:either|the\s+[\w'’ -]{2,40}?\s+or)\b|\btwo\s+(?:common\s+|main\s+|standard\s+)?approaches\b|\b(?:can|may)\s+(?:also\s+)?be\s+approached\s+(?:via|from)\b|\btwo\s+(?:\w+\s+)?ways\s+in\b/i;
 const TH_RE = /\b([A-Z][\w'’.]*(?:\s+[A-Z#][\w'’.#]*){0,4})\s+(?:Trailhead|TH)\b/g;
 const norm = (s) => String(s || "").toLowerCase().replace(/\btrail\s*head\b|\bth\b|\btrail\b|#\d+|\(.*?\)|[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
 const NAME_RE = /\bvia\b|\bvariation\b|\bvar\.|\bfinish\b|\blink-?up\b/i;
@@ -82,6 +83,15 @@ for (const r of rows) {
     // A linked route may sit on ANOTHER peak (the Fury ridge traverse starts on East Fury's
     // summit); RouteDetail reads it by id. Dangling means it exists nowhere in the state.
     if (!byId.has(v.viaRouteId)) { sig.push("DANGLING"); ev.DANGLING = v.viaRouteId; }
+  }
+  // A CARD THAT DESCRIBES TWO. Mount Logan's Banded Glacier drew one way in at a time, and the default
+  // card's own text began "Two ways in, and which one you use depends on whether SR-20 is open", then
+  // narrated the other way in as well (owner note 2026-10-28). Every prose read below skips a card's own
+  // notes, and this one is checked whether or not the route is already switchable: a linked route was
+  // exactly where it hid.
+  for (const v of vars) {
+    const c = txt(v.notes), cm = c.match(ALT_RE);
+    if (cm) { sig.push("CARD_TWO"); const i = Math.max(0, cm.index - 60); ev.CARD_TWO = `"${v.name}": ` + c.slice(i, cm.index + 100).replace(/\s+/g, " "); break; }
   }
   if (!linked.length) {
     if (vars.length >= 2) { sig.push("VARIANTS"); ev.VARIANTS = vars.map((v) => v.name).join(" | ").slice(0, 160); }
@@ -107,7 +117,7 @@ for (const r of rows) {
 const ALPINE = new Set(["alpine", "mountaineering", "scrambling", "ice", "mixed", "hiking"]);
 const score = (o) => (o.signals.includes("DANGLING") ? 100 : 0) + o.signals.length * 10 + (ALPINE.has(o.discipline) ? 5 : 0);
 out.sort((a, b) => score(b) - score(a) || a.id.localeCompare(b.id));
-const isResearched = (o) => SETTLED.has(verdictOf.get(o.id)) && !o.signals.includes("DANGLING");
+const isResearched = (o) => SETTLED.has(verdictOf.get(o.id)) && !o.signals.includes("DANGLING") && !o.signals.includes("CARD_TWO");
 const researched = out.filter(isResearched);
 const leads = SHOW_RESEARCHED ? researched : out.filter((o) => !isResearched(o));
 
@@ -115,7 +125,7 @@ const count = (s) => leads.filter((o) => o.signals.includes(s)).length;
 const linkedRoutes = rows.filter((r) => (r.approach_variants || []).some(switchable)).length;
 console.log(`audit:multi-approach — ${STATE}: ${rows.length} routes read, ${linkedRoutes} already switchable, ${SHOW_RESEARCHED ? researched.length + " already researched (listed)" : leads.length + " flagged to read"}`);
 if (!SHOW_RESEARCHED) console.log(`  (${researched.length} more carry a signal but were researched and judged one way in — --researched lists them)`);
-for (const s of ["DANGLING", "VARIANTS", "PROSE", "OTHER_TH", "FINISH", "NAME"]) console.log(`  ${s.padEnd(9)} ${count(s)}`);
+for (const s of ["DANGLING", "CARD_TWO", "VARIANTS", "PROSE", "OTHER_TH", "FINISH", "NAME"]) console.log(`  ${s.padEnd(9)} ${count(s)}`);
 console.log("");
 for (const o of ALL ? leads : leads.slice(0, 60)) {
   console.log(`${o.id}  [${o.signals.join(",")}]  ${o.name}`);

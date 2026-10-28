@@ -1173,6 +1173,12 @@ the correction knows the screen is wrong, and they have no way to report it.
     not the route being a finish. Research decides; never re-quote these counts, re-run it.
   - Linking is done per route after research (`viaRouteId` to an existing sibling, or a `trip`
     with a trailhead); see `check:approach-overlay` in route-page.md for what the page then does.
+  - **`CARD_TWO`: a card that describes two ways in** (owner note 2026-10-28). Mount Logan's Banded
+    Glacier was switchable, so every signal above skipped it, but its default card began "Two ways in,
+    and which one you use depends on whether SR-20 is open" and the page draws one way in at a time, so
+    it read as one approach with two descriptions. No prose signal read a card's own `notes`. This one
+    does, on switchable routes too, and a verdict never hides it. The fix is per route: split the text
+    so each card narrates only its own way in, and give each its own data.
   - **A researched row is not a lead** (2026-10-01). Once WA was worked through, 440 rows still
     carried a signal, all already read and judged one way in, so every run buried anything new under
     them. The audit now reads the recorded verdicts (`audits/<state>-multi-approach/2026-10-01-research.json`,
