@@ -230,7 +230,7 @@ const CASES = [
   {
     name: "placeholder-pitch-count-opens-an-estimate",
     why: "with no walk on file a placeholder count alone still made a '≥0.6hr' Total",
-    edits: [{ find: "hasDerivedSummitH||realPitches(route)>0;", repl: "hasDerivedSummitH||!!route.pitches;" }],
+    edits: [{ find: "hasDerivedSummitH||realPitches(route)>0||P.loneApproachH", repl: "hasDerivedSummitH||!!route.pitches||P.loneApproachH" }],
     expect: "fail",
     must: /leaves nothing to estimate/,
   },
