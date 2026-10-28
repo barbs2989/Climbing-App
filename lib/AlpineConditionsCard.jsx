@@ -393,7 +393,8 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
 function DayByDay({ days, di, pick, dayName, nWarn, nCaution, fc, legs, startOn }) {
   const cell = { background: C.surface, borderRadius: 8, padding: "5px 7px", display: "block", minWidth: 0 };
   const lbl = { display: "block", fontSize: 10.5, color: C.textMuted, fontWeight: 700 };
-  const val = { display: "block", fontSize: 12.5, color: C.text, fontWeight: 700, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" };
+  // Values WRAP (a freezing level "8,200 ft–10,900 ft" breaks after its dash): at 390px a one-line clip cut it to "8,200 ft–1…" on every day.
+  const val = { display: "block", fontSize: 12.5, color: C.text, fontWeight: 700, lineHeight: 1.3, overflowWrap: "anywhere" };
   const date = function (d) { return new Date(d.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", timeZone: "UTC" }); };
   return <div style={BOX}>
     <CardHead style={{ marginBottom: 8 }}>DAY BY DAY</CardHead>

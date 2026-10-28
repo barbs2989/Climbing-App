@@ -8,6 +8,7 @@
 //   - the chart's headline is the SUM OF ITS BARS, and a remainder the bars do not show is
 //     said in words ("+N not typed") rather than hidden in the headline;
 //   - the grade spread names how many climbs it left out ("12 of 15 list a grade").
+import { useState } from "react";
 import { AREA_EDIT_FIELDS, MONTH_ABBR, monthsLabel, myPendingAreaEdits } from "./areaFields";
 import { DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
@@ -18,12 +19,23 @@ const headRow = { display: "flex", justifyContent: "space-between", alignItems: 
 const Head = ({ children, C }) => <div role="heading" aria-level={3} style={{ fontSize: 12, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>{children}</div>;
 
 // ── ABOUT ──
+// A long description opens at about nine lines with a Read more (owner's note, 2026-10-28: "expand each section
+// with more detail and not take too much screen space") -- the route page's comment clamp, ClampText, is the
+// model. A short one renders whole, with no button.
+const ABOUT_CLAMP_CHARS = 600, ABOUT_CLAMP_PX = 188;
 export function AboutCard({ area, C, onEdit }) {
+  const [open, setOpen] = useState(false);
   const blurb = area.blurb && String(area.blurb).trim();
+  const long = !!blurb && blurb.length > ABOUT_CLAMP_CHARS;
   return <div style={card(C)}>
     <div style={headRow}><Head C={C}>About</Head>{onEdit ? <EditIconButton C={C} onClick={() => onEdit("blurb")} title={"Edit the description of " + area.name} /> : null}</div>
     {blurb
-      ? blurb.split(/\n{2,}/).map((p, i) => <div key={i} style={{ fontSize: 13, color: C.textSub, lineHeight: 1.6, marginTop: i ? 8 : 0 }}>{p}</div>)
+      ? <>
+        <div style={long && !open ? { maxHeight: ABOUT_CLAMP_PX, overflow: "hidden", WebkitMaskImage: "linear-gradient(to bottom, #000 70%, transparent)", maskImage: "linear-gradient(to bottom, #000 70%, transparent)" } : null}>
+          {blurb.split(/\n{2,}/).map((p, i) => <div key={i} style={{ fontSize: 13, color: C.textSub, lineHeight: 1.6, marginTop: i ? 8 : 0, overflowWrap: "anywhere" }}>{p}</div>)}
+        </div>
+        {long ? <button onClick={() => setOpen(!open)} aria-expanded={open} style={{ background: "none", border: "none", padding: "6px 0 0", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{open ? "Show less" : "Read more"}</button> : null}
+      </>
       : <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>{"No description yet. Climbed here? "}{onEdit ? <button onClick={() => onEdit("blurb")} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Tell people what it is like</button> : "Tell people what it is like"}{"."}</div>}
   </div>;
 }
