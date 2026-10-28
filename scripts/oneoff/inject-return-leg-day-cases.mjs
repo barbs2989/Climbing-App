@@ -173,7 +173,7 @@ const CASES = [
     file: PLAN,
     why: "THE DEFECT THIS CALIBRATION FIXED, restored: a push climbs its 0.59 and DROPS the 0.41, " +
          "so American Border Peak walked down in 2.9 hr against 7 online",
-    edits: [{ find: "const downH = Math.max((storedDescentH || 0) + legDownH, walkDownH * (1 + REST_PER_MOVING_HR) + rapH);", repl: "const downH = Math.max(storedDescentH || 0, walkDownH * (1 + REST_PER_MOVING_HR) + rapH);" }],
+    edits: [{ find: "const downH = Math.max((storedDescentH || 0) + legDownH, walkDownH * (1 + REST_PER_MOVING_HR) + rapH, loneDescentH || 0);", repl: "const downH = Math.max(storedDescentH || 0, walkDownH * (1 + REST_PER_MOVING_HR) + rapH, loneDescentH || 0);" }],
     expect: "fail",
     must: /DESCENT share \(0\.41\) is walked down/,
   },
@@ -230,7 +230,7 @@ const CASES = [
   {
     name: "placeholder-pitch-count-opens-an-estimate",
     why: "with no walk on file a placeholder count alone still made a '≥0.6hr' Total",
-    edits: [{ find: "hasDerivedSummitH||realPitches(route)>0;", repl: "hasDerivedSummitH||!!route.pitches;" }],
+    edits: [{ find: "hasDerivedSummitH||realPitches(route)>0||P.loneApproachH", repl: "hasDerivedSummitH||!!route.pitches||P.loneApproachH" }],
     expect: "fail",
     must: /leaves nothing to estimate/,
   },
