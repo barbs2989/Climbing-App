@@ -859,5 +859,25 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the same road. Batch-1 text is not exempt from the accuracy pass — it went through it like the rest.
   - **A second source that DISAGREES is the reason for the second check**, not noise: WTA's 1.3 + 5.4
     and the Forest Service's 5.3 cannot both be true. Prefer the land manager, and say why in the note.
+  - Batches 4–7: 192 drives, **49 corrections over 86 routes**, each confirmed by the second check.
+    The ones that change what a climber DOES: Mowich Lake (4 entries, one written by this item's own
+    batch 1) now says the road is closed at the Fairfax Bridge instead of describing a drive; Phelps
+    Creek, Smithbrook (FR 6700, order May 20 2026 through Dec 31 2027) and Deadhorse Road (FR 37,
+    closed at mile 3.1) carry their dated closures; Snowgrass Flat's FR 21 turn, Teneriffe's exit (32,
+    not 31), Pilchuck (ended at Verlot, not the trailhead), and a day-use fee at Skyline Lake that
+    no fetched page lists — removed.
+  - **The second check also SUBTRACTS.** It added an unproven "North Shore Road bridge out" note to
+    North Fork Quinault, which the first pass had already shown (park road page) this drive never
+    crosses; removed by hand. And a check that writes "per a Forest Service alert" is citing a source
+    in app text — reworded, and every written text scanned for citation phrasing (none left).
+  - **A TEMPORARY closure in a drive line is DATED** ("closed since August 2026 for the Little Giant
+    Fire; check the road status before you go") and keeps the normal drive, so the line is right again
+    the day the road reopens. A durable one (Mowich Lake: the Fairfax Bridge on SR-165, closed to all
+    traffic since April 2025, no funded replacement) replaces the drive outright.
+    - **OPEN — `audit:expiring-closures` cannot see these.** It reads `road.*` and `access.*`, never
+      `approach_logistics.trailheadDirection`. Adding that field was written and REVERTED on
+      2026-10-28 unrun: OR-ing the column into its query timed out (57014), and so did the audit's
+      own unchanged query, twice, under that day's load. Re-do it as a SEPARATE narrow read
+      (`dir:approach_logistics->>trailheadDirection`) when the database is quiet, and inject-test it.
   - **numbersUsed compares as SETS.** A number used twice in a text ("SR 20 ... mile 20") was declared
     twice and refused four checked corrections; duplicates are not untraceability.
