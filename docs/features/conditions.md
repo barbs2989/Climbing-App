@@ -45,6 +45,7 @@
 ## 5. Connections
 - Route page: sub-tab `forecast`; BestDayTile's `onOpen(r, sub)` sets a pending sub-tab and calls `openRoute`.
 - Planner: alpine start time uses `planTimes` (`lib/planTimes.js`).
+- Home *Finish setting up*: a *Set your conditions* row while `condPrefsSet()` is false (nothing chosen) and `useCondSync()` is past "loading"; it opens `condsOpen`.
 - Settings/Menu: `CondPrefsControls` (`only="temp"` on the alpine card); BestDayTile `onPrefs` opens it.
 - Units: displays through `uTemp/uWind/uElev/uSnowfall/uTempDelta`; `check:units` covers it.
 - Reports: separate tab; alpine card shows report freshness from trip reports.
