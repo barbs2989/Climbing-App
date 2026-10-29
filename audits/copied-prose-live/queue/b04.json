@@ -1,0 +1,921 @@
+[
+ {
+  "key": "s0211",
+  "text": "From US-101 about a mile south of Amanda Park, turn east onto South Shore Road and follow it 7.7 paved miles and 4.9 gravel miles to the junction at the Quinault River bridge, then continue right about 6 more gravel miles to the road-end trailhead.",
+  "runs": [
+   "mile south of amanda park turn east onto south shore road"
+  ],
+  "targets": [
+   {
+    "id": "wa_chimney_peak_standard",
+    "path": "approach_logistics.trailheadDirection"
+   }
+  ]
+ },
+ {
+  "key": "s0212",
+  "text": "From US 101 about 36 miles north of Hoquiam, one mile south of Amanda Park, turn east onto the Lake Quinault South Shore Road and follow it toward the head of the valley. The first 10 miles or so are paved and the rest is gravel, ending after roughly 20 miles at the Graves Creek Trailhead at 550 ft; allow about an hour for that final 20 miles. South Shore Road has been closed by a washout about 8 miles in, with Graves Creek Road reachable via the North Shore Road instead, so check park road conditions or the road hotline at 360-565-3131 before you drive. RVs and trailers are prohibited on Graves Creek Road.",
+  "runs": [
+   "one mile south of amanda park turn east onto"
+  ],
+  "targets": [
+   {
+    "id": "wa_chimney_peak_the_chimney",
+    "path": "waypoints[0].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0213",
+  "text": "From US 101 about 36 miles north of Hoquiam (one mile south of Amanda Park), turn east on the Lake Quinault South Shore Road and follow it toward the head of the valley; the first ~10 miles are paved and the remainder is gravel, ending after roughly 20 miles at the Graves Creek Trailhead (47.57255, -123.56997, 550 ft). Note the detour: South Shore Road has been closed by a washout about 8 miles from US 101, with Graves Creek Road reachable via the North Shore Road instead — check park road conditions or the road hotline at 360-565-3131 before you drive, and note that RVs and trailers are prohibited on Graves Creek Road. From the trailhead, follow the East Fork Quinault River (Enchanted Valley) Trail up the rainforest valley. It is 27.8 miles round trip and about 3,700 ft of gain to Enchanted Valley, so roughly 13.9 miles and a high point near 2,035 ft one way; the Enchanted Valley Chalet (47.67528, -123.38917) sits at about 2,000 ft directly beneath the peak's south wall. Chimney Peak's south side above the valley is a 4,800 ft wall of cliffs and waterfalls and is not the way up — the climbing approach leaves the trail and works around to the peak's southwest side to gain the Southwest Ridge, then traverses to the base of The Chimney on the west aspect. Expect to find your own way on the off-trail section.",
+  "runs": [
+   "one mile south of amanda park turn east"
+  ],
+  "targets": [
+   {
+    "id": "wa_chimney_peak_the_chimney",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0214",
+  "text": "The walk in is the same as for the East Face and is described in full there: Pete Lake trail #1323 up the Cooper River to Pete Lake, on to the Pacific Crest Trail, then roughly a mile of PCT to the hairpin in the old avalanche swathe at about 3,360 ft. Look west from that hairpin for twin waterfalls; the climbers' path leaves the forest between the two rounded outcrops right of the falls and the cliff band right of those. Camp below the moraine at roughly 4,650 to 4,800 ft.\n\nFrom camp, drop about two hundred feet to the lower Chimney Glacier, rope up, and cross it. Gain the upper glacier by the rock or snow gully in the cliff band just left of the icefall, by the snow finger out on the far left, or by the icefall itself if you are equipped for it.",
+  "runs": [
+   "feet to the lower chimney glacier rope up and"
+  ],
+  "targets": [
+   {
+    "id": "wa_chimney_rock_east_face_direct",
+    "path": "approach_variants[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0215",
+  "text": "From the upper Chimney Glacier, cross the moat at the foot of the rock and climb the face to the left of the main gully that drops from the notch between the central and south summits. About three pitches of wet, slippery fourth-class ground lead to a system of ledges, some of them very wide, that runs up to just below the notch, roughly 600 vertical ft above the glacier. From the notch, climb about 400 ft more to the South Peak. Stoppers and slings are enough protection.",
+  "runs": [
+   "the face to the left of the main gully"
+  ],
+  "targets": [
+   {
+    "id": "wa_chimney_rock_west_face",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0216",
+  "text": "Climb the face to the left of the main gully: about three pitches of wet, slippery fourth-class ground, then a system of ledges, some very wide, to just below the notch. Everything here stays wet, so the short fourth-class steps feel harder than their grade.",
+  "runs": [
+   "the face to the left of the main gully"
+  ],
+  "targets": [
+   {
+    "id": "wa_chimney_rock_west_face",
+    "path": "waypoints[6].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0217",
+  "text": "Wet, slippery fourth-class ground on the face to the left of the main gully; stoppers and slings for protection.",
+  "runs": [
+   "on the face to the left of the main gully"
+  ],
+  "targets": [
+   {
+    "id": "wa_chimney_rock_west_face",
+    "path": "pitch_detail[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0218",
+  "text": "Same approach as the East Face: Pete Lake trailhead to Pete Lake, join the PCT, then a climber's path up steep, brushy terrain to a bivy camp around 4,650-4,800 ft at the southern toe of the Chimney Glacier.",
+  "runs": [
+   "ft at the southern toe of the chimney glacier"
+  ],
+  "targets": [
+   {
+    "id": "wa_chimney_rock_west_face",
+    "path": "itinerary.days[0].note"
+   }
+  ]
+ },
+ {
+  "key": "s0219",
+  "text": "Ascend the southwest snowfield and scree slopes to reach the summit at 8,459 feet. The route follows the path of least resistance from Fortress-Chiwawa Col, traversing east-northeast aiming for the col, then ascending the final south ridge. Navigate snow or scree to within 100 feet of the summit, then traverse the west side to avoid steep rock sections on the final approach.",
+  "runs": [
+   "snow or scree to within 100 feet of the summit"
+  ],
+  "targets": [
+   {
+    "id": "wa_chiwawa_mountain_southwest",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0220",
+  "text": "Mountain Project route page: 'single rack to 2 inches, draws for fixed pins' — a set of nuts and cams 0.5-2in is sufficient; bring extra draws for the fixed gear on the chockstone-bypass pitch.",
+  "runs": [
+   "single rack to 2 inches draws for fixed pins"
+  ],
+  "targets": [
+   {
+    "id": "wa_chockstone_route",
+    "path": "corrections"
+   }
+  ]
+ },
+ {
+  "key": "s0221",
+  "text": "The start is at the very foot of the enormous chasm dividing North from South Early Winters Spire — it is the biggest single feature on this side of the group and it is unambiguous even in poor visibility, because nothing else on the west faces is a full-height cleft between two summits. The route opens with a short step of low-fifth-class slab and layback moves, and then it is walking up the gully bed; if you are pulling on anything hard in the first rope length you are on one of the face routes to either side, not in the gully. Pitch one takes cracks and ramps along the left edge of the gully rather than the middle. The house-sized chockstone that names the route sits much higher up the same gully, so do not expect to see it from the base as your confirmation.",
+  "runs": [
+   "with a short step of low fifth class",
+   "cracks and ramps along the left edge of the"
+  ],
+  "targets": [
+   {
+    "id": "wa_chockstone_route",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0222",
+  "text": "Start at the Elbow Lake Trailhead (USFS Trail #697), at the end of FS Road 38 (the Mosquito Lake Road / FS-38 drive from Deming/Acme). The trail immediately meets the Middle Fork Nooksack River — there is no bridge at the marked crossing, and fording can be dangerous or outright impassable during high water; many parties instead use an unofficial log crossing roughly 1/4 mile downstream from the official ford, made of logs lashed between two boulders. Once across, pick up the Elbow Lake Trail proper and climb through forest for about 1.5 miles to a switchback near Hildebrand Creek, where an unmaintained but well-trodden, blue-blazed 'Green Creek Climber's Trail' splits off to the left into the Green Creek cirque (look closely for the small blue markers — it's easy to walk past). Follow this climber's trail up into the basin; Green Creek itself runs clear and is a reliable water source along this stretch. Above treeline the trail gives way to talus and boulder fields and then loose, unstable scree, with class 3 rock steps required to reach the toe of the Green Creek (Sisters) Glacier — route-finding through this section is the crux of the approach, and parties should expect to hunt for the least-loose line. Cross the low-angle glacier (crevasse hazard is generally low here but rises later season; carry basic glacier gear) up to the low notch on the ridge between Cinderella and Little Sister, which is the jumping-off point for Cinderella's west ridge/north face. Elevation gain from the river crossing to this notch is substantial — roughly 4,000 ft over about five miles — and fit parties often go car-to-car in one long day, while others split it with a camp in the Green Creek basin.",
+  "runs": [
+   "the middle fork nooksack river there is no bridge"
+  ],
+  "targets": [
+   {
+    "id": "wa_cinderella_peak_scramble",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0223",
+  "text": "Everything turns on one feature and it is misdescribed by its own name. Published descriptions call it the one and only easy gully breaching the ridge — the way down off the spur into Clark's south basin — and it leaves the crest at about 7,200 to 7,300 ft. The correction, from a climber who found it: it is Class 2, and it feels more like a sloping ledge than a gully. Parties hunting for a defined cleft walk past it and get cliffed out. Two accounts both put it at 7,200 ft and both anchor it to the south spur of Point 8373, so the elevation is the reliable half of the identification and the word gully is the unreliable half. The positional cue that puts you in the right place to look: there is a flattish section of the spur at 7,200 ft that is reached easily on scree and grass. Stand on that flat and you can see the south slope of Clark, which looks easy — and it is. The difficulty is purely in getting down to it, which is what the ledge is for. Drop a couple of hundred feet down that ledge, then contour the upper south basin on broken rock and patches of permanent snow to the final south ridge and a short Class 3 scramble to the top. A note on names before you cross-reference anything: the Walrus Glacier is shown as the Clark Glacier on maps. They are one feature with two names.",
+  "runs": [
+   "then contour the upper south basin on broken rock and"
+  ],
+  "targets": [
+   {
+    "id": "wa_clark_mountain_west_ridge",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0224",
+  "text": "You cannot see the Walrus Glacier until you are committed to it. From the 6,700 ft bench you wrap around Clark's eastern arm, and only then does the glacier come into view for the first time. That is why the bench is the roping-up point rather than the glacier's edge — there is no convenient stopping place once you are round the corner.\n\nThe entry is specific and it is not the middle of the toe: go up a moderately steep chute on the left, southern margin of the glacier. Expect to step over several narrow crevasses and, in at least one recorded year, to cross a snowbridge over a large one.\n\nOnce on the gentle upper glacier the summit wedge is visible in the distance and the navigation problem is over. The finish skirts the upper south face of that wedge on a steep snowfield and ends with a short scramble onto the summit rocks — about six hours from camp.\n\nNegative marker, and this one matters because it would send you to the wrong landmark entirely: the famous one-and-only-easy-gully at 7,200 ft belongs to the south basin route, not to this one. If you are on the Walrus you never touch it. A published page titled for the Walrus Glacier in fact describes the south-basin line in its turn-by-turn, so read carefully which route a description is actually walking.",
+  "runs": [
+   "up a moderately steep chute on the left southern margin of the glacier"
+  ],
+  "targets": [
+   {
+    "id": "wa_clark_mountain_west_ridge",
+    "path": "approach_variants[1].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0225",
+  "text": "Drive the Paradise road (SR 706) inside Mount Rainier National Park to the Narada Falls pullout, just before the turnoff for the Paradise loop. This is the start to use while Stevens Canyon Road is snow-gated; when that road is open, roughly Memorial Day through mid-October, most parties park at the Reflection Lakes pullout instead and skip the first climb.",
+  "runs": [
+   "just before the turnoff for the paradise loop"
+  ],
+  "targets": [
+   {
+    "id": "wa_classic_route_3",
+    "path": "waypoints[0].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0226",
+  "text": "Skip the dirty right-facing corner and take the 3-inch crack up and right over a small roof, past a 4-inch horizontal, up a slab and over a second roof (about 5.10a). To keep it at 5.9, traverse left into the original corner instead of taking the second roof. Belay on a small ledge with a bushy tree.",
+  "runs": [
+   "crack up and right over a small roof"
+  ],
+  "targets": [
+   {
+    "id": "wa_clean_break",
+    "path": "pitch_detail[1].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0227",
+  "text": "A full rope length: up a chimney and then blocky ground to a tree belay beneath the Hercules Tower.",
+  "runs": [
+   "a full rope length up a chimney and then blocky"
+  ],
+  "targets": [
+   {
+    "id": "wa_clean_break",
+    "path": "pitch_detail[5].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0228",
+  "text": "A varied pitch. Take the ramp right to a steep wall and a left-sweeping crack that widens from 2 to 4 inches where it turns vertical (5.10a; a #4 cam is the one place it is really useful). Over the bulge, follow a ramp to a 5.10a slab traverse right to a thin crack, and climb it on fingertips to a jug, the pitch's crux.",
+  "runs": [
+   "varied pitch take the ramp right to a steep wall"
+  ],
+  "targets": [
+   {
+    "id": "wa_clean_break",
+    "path": "pitch_detail[6].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0229",
+  "text": "Pass through a hole and go right over the crest to a big ledge, then simul-climb mostly low- to mid-fifth-class ground, staying on or right of the crest. Many options exist and the upper rock is less travelled and lower quality than below, so it can feel ambiguous; keep heading up. A 5.10a hand crack is an optional finish near the top.",
+  "runs": [
+   "right over the crest to a big ledge"
+  ],
+  "targets": [
+   {
+    "id": "wa_clean_break",
+    "path": "pitch_detail[10].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0230",
+  "text": "The notch blocks the direct line, so traverse climber's-right around the east side of the summit block and keep going onto its north (back) side, where a short Class 3-4 weakness leads to the top. It is narrow with real exposure and is the technical crux of the route; cautious parties rope the last few moves.",
+  "runs": [
+   "the east side of the summit block and"
+  ],
+  "targets": [
+   {
+    "id": "wa_cloudy_peak_southwest_slopes",
+    "path": "waypoints[7].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0231",
+  "text": "Clip the first bolt overhead, mantle to a small ledge, and continue up the edge of a cobblestone staircase; 6 clips to a chain anchor.",
+  "runs": [
+   "small ledge and continue up the edge of a cobblestone staircase 6 clips to"
+  ],
+  "targets": [
+   {
+    "id": "wa_cobbles_101",
+    "path": "pitch_detail[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0232",
+  "text": "Climbs through the band of basalt to a chimney, then leftward up a chute to the summit; 5 clips.",
+  "runs": [
+   "through the band of basalt to a chimney"
+  ],
+  "targets": [
+   {
+    "id": "wa_cobbles_101",
+    "path": "pitch_detail[4].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0233",
+  "text": "Take the left fork staying high on the ridge/shoreline north, avoiding the many spurs that drop to the water.",
+  "runs": [
+   "take the left fork staying high on the"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+    "path": "waypoints[1].note"
+   }
+  ]
+ },
+ {
+  "key": "s0234",
+  "text": "This is the access route rather than a summit climb: stay high on the ridge past the north end of the lake, cross the outlet creek near the dam, then follow the cairned path throug…",
+  "runs": [
+   "the north end of the lake cross the"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+    "path": "timing.sectionBreakdown[0].note"
+   }
+  ]
+ },
+ {
+  "key": "s0235",
+  "text": "This is the access route rather than a summit climb: stay high on the ridge past the north end of the lake, cross the outlet creek near the dam, then follow the cairned path through talus and open forest up to the col — roughly an hour above the lake.",
+  "runs": [
+   "the north end of the lake cross the"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+    "path": "itinerary.days[0].note"
+   }
+  ]
+ },
+ {
+  "key": "s0236",
+  "text": "Take the left fork, staying high on the ridge, cross the outlet near the dam.",
+  "runs": [
+   "take the left fork staying high on the ridge"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+    "path": "itinerary.days[0].schedule[1].detail"
+   }
+  ]
+ },
+ {
+  "key": "s0237",
+  "text": "The alternative when you do not want to cross the outlet. Follow the lakeshore climbers' path counter-clockwise toward the slopes below Aasgard Pass, then cut north through a band of slide alder — look for cairns, because this is a genuine bushwhack — and climb the leftmost gully about 1,000 ft to its top. From there contour east on easy ground into the cirque.\n\nAn hour and a half to two hours from the lake, more gain than the outlet line and a lot more brush, but no ford. A winter/spring variation on the same idea follows a steepening gully starting near the lake's southwest edge.\n\nIn a heavy year the gully holds snow well into early summer and an axe or light traction is worth having.",
+  "runs": [
+   "follows a steepening gully starting near the lake's southwest edge"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_balanced_rock_west_face",
+    "path": "approach_variants[1].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0238",
+  "text": "Beckey's 'East Route,' almost universally known today as the Colchuck Glacier Route. From the base of the glacier, ascend easy snow on the left (east) lobe past the base of Dragontail's Serpentine and Backbone Ridge routes. The angle increases near the Colchuck-Dragontail saddle to roughly 100 ft of 40-degree snow, then eases into 3rd-class sandy scrambling to the 8,500 ft summit plateau and on to the true 8,705 ft summit. With good snow cover it's an easy 3-4 hour climb from a camp at Colchuck Lake, or is readily done car-to-car in a long day.",
+  "runs": [
+   "from the base of the glacier ascend easy snow on the left east lobe"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_peak_colchuck_glacier",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0239",
+  "text": "Gain the crest of the lateral moraine as soon as possible off the talus - the slopes below it are loose, unstable scree that's worse to descend.",
+  "runs": [
+   "gain the crest of the lateral moraine as soon as possible"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_peak_colchuck_glacier",
+    "path": "waypoints[3].note"
+   }
+  ]
+ },
+ {
+  "key": "s0240",
+  "text": "Work around the lake and up the talus on the south-west side, then gain the crest of the lateral moraine as soon as you reasonably can. The slopes below the crest are loose, unstable scree, and they are considerably worse to come down than to go up.",
+  "runs": [
+   "gain the crest of the lateral moraine as soon as"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_peak_colchuck_glacier",
+    "path": "waypoints[3].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0241",
+  "text": "Stuart Lake Trail #1599 from the FR 7601 road end for about 2.5 miles to the signed fork, then right onto the Colchuck Lake Trail for another 1.6 miles of steep switchbacks through boulders to Colchuck Lake at 5,570 ft. Call it four miles and 2,200 ft. This is the last reliable water.\n\nFollow the boot path along the east shore to the inlet at the south end, then leave the trail. Gain the crest of the lateral moraine as early as you can — the alternative is a long session in genuinely loose scree and talus, and parties consistently report an hour of boulder-hopping through it when they stay low.\n\nWith good snow cover much of this basin, and later much of the glacier, can be glissaded on the way out, which is why parties favour the early window. Aim to be off the glacier before early afternoon: it softens badly and post-holing plus wet-slide potential make a late descent both slow and unpleasant.",
+  "runs": [
+   "gain the crest of the lateral moraine as"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_peak_colchuck_glacier",
+    "path": "approach_variants[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0242",
+  "text": "The route starts with two 60m pitches of AI3 ice below a hidden couloir, then continues up and left on a few hundred feet of 50-60° snow. Two pitches of unconsolidated snow over moderate rock lead to a 30 ft leftward traverse into an M6 chimney (two pitches), followed by more steep snow and a final rock band to the summit area. A linkup variation ascends the Hidden Couloir and North Buttress to the northwest face.",
+  "runs": [
+   "a few hundred feet of 50 60 snow",
+   "followed by more steep snow and a final rock band"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_peak_holsten_hilden",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0243",
+  "text": "Leave the Hidden Couloir and climb a few hundred feet of 50–60° snow up and left toward a steep rock band. Protection is sparse, so carry a picket, and the slope loads with wind-drifted snow.",
+  "runs": [
+   "a few hundred feet of 50 60 snow"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_peak_holsten_hilden",
+    "path": "pitch_detail[1].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0244",
+  "text": "Out of the north-ridge notch, a tricky wide crack at M6 is the last hard move. From its top, traverse around to the west into the final couloir of the North Buttress Couloir route.",
+  "runs": [
+   "the final couloir of the north buttress couloir route"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_peak_holsten_hilden",
+    "path": "pitch_detail[5].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0245",
+  "text": "The Hidden Couloir is the marker and the route starts underneath it. This is the cleanest base identification on the whole face: find the Hidden Couloir, and the start is immediately below it — two 60 m pitches of good ice leading up to its base.\n\nPosition on the glacier, which is how you find the couloir in the first place: this line sits between the North Buttress Couloir and the Northeast Couloir. So walking up the glacier you pass the North Buttress Couloir first; the next thing is this. If you have already passed a second deep slot you have gone too high and are under the Northeast Couloir.\n\nThe positive test is the ice itself. This is the only line on the face that begins with two full rope-lengths of continuous ice off the deck. If the ground in front of you is snow, or mixed, or rock, it is not the start — whatever else it might be.\n\nAnd the divergence above, because it is decided a couple of pitches up and not at the bottom: from the top of the ice this route goes up and left from the base of the Hidden Couloir onto difficult mixed ground. The variation instead climbs into the Hidden Couloir. Both start on the same ice. One is M6; the other is sustained moderate. Know which you have come for before you leave the second belay.\n\nIf you cannot find a couloir above your ice, you are not below the Hidden Couloir and should not assume the ice is the right ice.",
+  "runs": [
+   "up and left from the base of the hidden couloir"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_peak_holsten_hilden",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0246",
+  "text": "The most direct couloir rising out of the Colchuck Glacier's moraine on Colchuck Peak's north side — a popular introduction to steep snow and easy mixed climbing, with conditions ranging from a straightforward snow slog to thin mixed rock-and-ice.",
+  "runs": [
+   "introduction to steep snow and easy mixed climbing"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_peak_north_buttress_couloir",
+    "path": "overview"
+   }
+  ]
+ },
+ {
+  "key": "s0247",
+  "text": "From the far side of Colchuck Lake, hike uphill to gain the moraine, follow it to the right, and drop into the large couloir at the edge of the Colchuck Glacier. In winter and early season it is continuous snow the entire way; later in summer, Class 4 rock can be exposed in a few short steps. The route can be climbed minimalist and fast, or fully protected with rock gear, pickets, and screws. Descent is via the Colchuck Glacier route on the peak's far side.",
+  "runs": [
+   "from the far side of colchuck lake hike uphill"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_peak_north_buttress_couloir",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0248",
+  "text": "From the far side of Colchuck Lake, hike up and gain the moraine, follow it right to the couloir entrance at the glacier's edge.",
+  "runs": [
+   "from the far side of colchuck lake hike"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_peak_north_buttress_couloir",
+    "path": "pitch_detail[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0249",
+  "text": "Stuart Lake Trailhead at the end of FR 7601 to Colchuck Lake — roughly four to four and a half miles and 2,200 ft, commonly two and a half hours. Before the road opens, add about four miles of Eightmile Road each way on foot or ski, which is the single biggest variable in the day.\n\nWhen the lake is frozen (typically until around mid-May) parties ski or walk straight across it. Otherwise take the boot path around to the far, south side; the large flat boulder there is the usual gear-up and pack-stash spot.\n\nFrom the south side, climb up and gain the lateral moraine. In spring there is often a boot pack this far and nothing beyond it. Follow the moraine crest right (west, toward the glacier) and then drop into the couloir. From the flat boulder to the couloir entrance is about an hour when trail-breaking is easy.\n\nOvernight parties camp at the south end of the lake.",
+  "runs": [
+   "camp at the south end of the lake"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_peak_north_buttress_couloir",
+    "path": "approach_variants[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0250",
+  "text": "Follow the couloir off the Colchuck Glacier as it winds upward and steepens; the gully hits a steep wall, so continue along the base of this wall to climber's left to find the exit, finishing on steep snow/ice to 60+ degrees that gains the summit ridge. Protection is a mix of snow gear and a small alpine rock rack including pitons. It is usually rated roughly Grade II with an elevation gain of about 1,500 ft from the glacier to the ridge; some grade it up to Grade III depending on conditions.",
+  "runs": [
+   "continue along the base of this wall to"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_peak_northeast_couloir",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0251",
+  "text": "Critical avalanche terrain: Slope angle of 35-45 degrees with extensive vertical relief and frequent terrain traps—couloir is prime avalanche slope with multiple fatal accidents (3 deaths in Feb 2023); only climb in ideal snow conditions with confirmed low/minimal avalanche hazard\nEntry and exit of steep couloir can be technical with snow or ice up to 60 degrees—difficult down-climbing if route-finding error occurs; requires excellent snow/ice judgment\nRock and ice fall from walls above couloir—stay alert and compact party; position out of direct fall line; watch for ice/rock loosening due to solar warming\nBergschrund crossing at glacier base—may be significant obstacle early/mid-season with potential fall hazard; probe and belay crossing if uncertain\nLate-season glacier becomes bare ice (July+)—surface becomes extremely difficult and icy; crampons and ice tools essential; increased rockfall risk from warming\nCrevasses on the Colchuck Glacier approach are few, but they open as the season goes on—rope up and probe if any are showing\nLimited escape options once committed to upper couloir—retreat can be hazardous in poor conditions; plan to turn back early if conditions deteriorate\nNavigation difficulty in whiteout conditions—few visual landmarks; GPS/map essential; descending in low visibility is particularly risky",
+  "runs": [
+   "with snow or ice up to 60 degrees"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_peak_northeast_couloir",
+    "path": "watch_out"
+   }
+  ]
+ },
+ {
+  "key": "s0252",
+  "text": "Start at the Stuart Lake Trailhead at the end of FS Road 7601 (Eightmile Road), elevation ~3,400 ft — in early season when Eightmile Road is gated/snowed in, tack on roughly 4 additional miles of road walking/skiing from the Bridge Creek Campground area on Icicle Road. From the trailhead, follow Stuart Lake Trail #1599 south along Mountaineer Creek about 2.5 miles and 1,100 ft of gain to the signed junction where the Colchuck Lake Trail forks left; the Stuart Lake Trail continues straight to Stuart Lake/Colchuck Pass and is not your route. Climb the steep, rooty switchbacks of the Colchuck Lake Trail through boulder fields for another 1.6 miles and 1,100 ft to Colchuck Lake (5,570 ft, ~4 miles and 2,200 ft from the car) — this is the only reliable water source below the basin, and it's your last easy resupply. Follow the trail and boot path along the lake's west shore to the inlet at the south end (~5 miles in). Leave the maintained trail here and ascend talus, heather benches, or lingering snow (highly season-dependent) up the basin toward the toe of the Colchuck Glacier at roughly 6,600–6,800 ft. Rather than heading up-glacier toward Colchuck/Banshee Col (that's the Colchuck Glacier route), traverse along the glacier's true-right (climber's right) margin toward Colchuck Peak's north side, staying well right of the main fall line under the north face and Northeast Buttress to limit rockfall and icefall exposure. The Northeast Couloir's entrance is the obvious narrow slot higher up the glacier than the North Buttress Couloir, directly below the Northeast Buttress; gaining it typically requires crossing a moat at the glacier's edge, which varies from a simple step-across in early season to an awkward downclimb by mid-to-late summer. Expect avalanche-prone slopes above the lake in spring/early-summer conditions, and increasing rockfall down the couloir itself as the day warms.",
+  "runs": [
+   "higher up the glacier than the north buttress"
+  ],
+  "targets": [
+   {
+    "id": "wa_colchuck_peak_northeast_couloir",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0253",
+  "text": "Colfax Peak is one of the Black Buttes, eroded remnants of an older Mount Baker volcanic cone on Baker's northwest shoulder above the Coleman Glacier. The Cosley-Houston is the easiest of Colfax's steep north-face ice lines: a meandering ~600 ft, 4-pitch WI4 route that starts just above the bergschrund with a low-angle ice ramp to a short, near-vertical crux pillar, then follows a gully system up and right through mixed ground to the summit ridge. It's a popular cold-weather testpiece, often in condition from late October into May.",
+  "runs": [
+   "starts just above the bergschrund with a low angle ice ramp"
+  ],
+  "targets": [
+   {
+    "id": "wa_colfax_peak_cosley_houston",
+    "path": "overview"
+   }
+  ]
+ },
+ {
+  "key": "s0254",
+  "text": "Approach via the Coleman Glacier to the base of Colfax Peak's north face. Start just above the bergschrund with a low-angle ice ramp trending up to the base of the crux pillar. The crux pillar is short and steep, slightly overhung, with approximately 30-40 feet of dead vertical or slightly overhanging water ice. After the crux, continue up a steep snow gully trending right, then simul-climb upper snow slopes to the summit ridge. A working knowledge of ice screw placement and anchor construction is essential.",
+  "runs": [
+   "just above the bergschrund with a low angle ice ramp",
+   "up to the base of the crux pillar the"
+  ],
+  "targets": [
+   {
+    "id": "wa_colfax_peak_cosley_houston",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0255",
+  "text": "If you can see your route from the bench, it is not Ford's Theatre. That is the single most useful fact about this climb and it is the one the first-ascent party chose to record: most of the route is hidden during the standard approach to the north face, because it sits in a cleft around the right side of a buttress. The other three lines are all visible from the approach. This one is not.\n\nSo the procedure is: walk right along the base of the face, past the Cosley-Houston line, until a buttress cuts the face off from view — then go around the right side of that buttress. The route is in the cleft behind it. A climber who stops at the first steep ice they can see has stopped on Cosley-Houston.\n\nLeft to right, the four lines are: Kimchi, Polish, Cosley-Houston, Ford's Theatre. This is the far right end of that list, which is why the instruction is always 'keep going'.\n\nConfirm on the climb: a steep ice step of three pitches, roughly one 70 m rope-length, then the angle eases into snow gullies; the whole line is roughly 500 ft. Belays are hard to find after the first pitch. If you get a comfortable stance every rope length, or if the route stays steep for far more than 500 ft, you are on something else.\n\nWhat being short looks like: Cosley-Houston starts with a low-angle ice ramp above the schrund leading to a crux pillar. If you are walking up a ramp, you are one line to the left of where you meant to be — which is a fine route and a different one.",
+  "runs": [
+   "most of the route is hidden during the standard approach to the north face",
+   "in a cleft around the right side of a buttress the"
+  ],
+  "targets": [
+   {
+    "id": "wa_colfax_peak_fords_theatre",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0256",
+  "text": "Climbs an independent line to the left of the Polish Route on Colfax's north face, following steep ice interspersed with rock steps that offer plentiful face holds, though protection isn't always straightforward. Regarded by its first ascensionists as one of the highest-quality alpine climbs they'd done in the Cascades, alongside the Cosley-Houston and Polish Route.",
+  "runs": [
+   "an independent line to the left of the polish route"
+  ],
+  "targets": [
+   {
+    "id": "wa_colfax_peak_kimchi_suicide_volcano",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0257",
+  "text": "Same approach as its three neighbours: Glacier Creek Road (FS-39) to the Heliotrope Ridge trailhead, Trail #677 through forest to the Coleman Glacier moraine, the Coleman-Deming boot track onto the ice, and climber's right to the bench beneath Colfax's north face. Rope up on the glacier.\n\nThe route itself is about 300 m at AI4+ M5 R. Its first-ascent party described it as more of a mixed climb than a pure ice climb, on rock that is well featured with plenty of face holds — which is what the M5 and the R are about.",
+  "runs": [
+   "more of a mixed climb than a pure ice climb"
+  ],
+  "targets": [
+   {
+    "id": "wa_colfax_peak_kimchi_suicide_volcano",
+    "path": "approach_variants[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0258",
+  "text": "This is the leftmost line on the face, and the test is whether you are climbing rock. Left to right the four lines are Kimchi, Polish, Cosley-Houston, Ford's Theatre. Kimchi takes an independent line to the left of the Polish Route, so from the bench you walk left, past the obvious continuous ice line up the middle of the face, and keep going.\n\nThe character of the ground is the confirmation, and it discriminates cleanly against the route next door. The Polish Route is continuous ice — that is its whole identity, and it is graded WI6 for it. This route is mixed: the first-ascent account is explicit that it is more mixed than pure ice, and that the rock is well featured with plenty of face holds. So the question to ask at the schrund is not 'which line is this' but 'am I about to use my hands on rock'. If the answer is no, you are on the Polish and on a much harder ice grade than you came for.\n\nThe R in the grade is part of the base finding. This is AI4+ M5 R, and R means the protection is poor enough that a fall has consequences beyond the fall. Being one line right of here — on continuous well-protected ice — is a materially different commitment. Confirm which you are on before the leader is 30 m up.\n\nWhat being too far right looks like, all the way across the face: a low-angle ice ramp to a crux pillar is Cosley-Houston, the easiest line here. A route you cannot see at all from the bench, tucked behind a buttress, is Ford's Theatre at the far right end.",
+  "runs": [
+   "takes an independent line to the left of the polish route"
+  ],
+  "targets": [
+   {
+    "id": "wa_colfax_peak_kimchi_suicide_volcano",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0259",
+  "text": "Approach via Coleman Glacier to the base of Colfax Peak's north face, directly below the middle of the face. Ascend the initial bergschrund crossing (may require traversal from the right if overhanging). Pitch 1: Long pitch of WI4+ to a snow slope. Pitch 2 (crux): Steep ice for approximately 30 feet, easing briefly, then rising to a free-hanging ice dagger grading WI6. This is the technical and psychological crux requiring bold movement and precise tool placement. Above the dagger: additional steep ice steps in a right-side gully. Final pitches: Upper snowfield with occasional blue ice patches, traversing between rock buttresses to gain the summit snowfield.",
+  "runs": [
+   "long pitch of wi4+ to a snow slope"
+  ],
+  "targets": [
+   {
+    "id": "wa_colfax_peak_polish_route",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0260",
+  "text": "The signature pitch: 30 ft of steep ice easing before a transfer onto a free-hanging ice dagger - back-step off the main wall, hang off both tools, and move onto the dagger's vertical-to-overhanging face, which eases after a couple of body lengths.",
+  "runs": [
+   "the main wall hang off both tools and"
+  ],
+  "targets": [
+   {
+    "id": "wa_colfax_peak_polish_route",
+    "path": "pitch_detail[1].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0261",
+  "text": "Drive SR-20 to the long pullout on the north side of the highway about 1.5 miles west of Washington Pass, at roughly 4,950 ft. It is the same pullout the standard South Buttress uses, and the cairned climbers' track leaves from its east end, dropping through timber toward State Creek. Reckon on a July-to-September season for this route.",
+  "runs": [
+   "long pullout on the north side of the highway"
+  ],
+  "targets": [
+   {
+    "id": "wa_complete_south_buttress",
+    "path": "waypoints[0].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0262",
+  "text": "Follow a left-facing edge for about 10 m to a bolt guarding a diagonal dike crossing. Good knobs and four bolts lead across a rock bridge around a hole in the slab; one more bolt and some gear finish at the anchor.",
+  "runs": [
+   "bridge around a hole in the slab one more bolt and"
+  ],
+  "targets": [
+   {
+    "id": "wa_concerto_in_c_for_drill_and_hammer",
+    "path": "pitch_detail[2].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0263",
+  "text": "Bolts protect the entry into a thin crack, very narrow at the bottom and widening as it rises; bring tiny nuts and cams (1/8 to 1/2 inch). From the top of the crack, two bolts lead left over a pair of overlaps; above the second overlap, go straight up a path through the bushes to the anchor.",
+  "runs": [
+   "from the top of the crack two bolts",
+   "the second overlap go straight up a path"
+  ],
+  "targets": [
+   {
+    "id": "wa_concerto_in_c_for_drill_and_hammer",
+    "path": "pitch_detail[5].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0264",
+  "text": "Move the belay first: walk through the Bubba Compactor (a ledge behind a big detached flake), step down and contour to a thin ledge with a belay bolt, backed up with a 2-inch piece. Clip a bolt, protect the big flakes with gear, then two bolts on top of the flake guard the crux step up a thin dike. Four bolts on the slab above reach the anchor.",
+  "runs": [
+   "through the bubba compactor a ledge behind a"
+  ],
+  "targets": [
+   {
+    "id": "wa_concerto_in_c_for_drill_and_hammer",
+    "path": "pitch_detail[6].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0265",
+  "text": "Step right past a bush to find the first bolt. Smear up and across a right-facing edge, trend right along bolts, then continue up thin ground past more bolts. A 1-inch piece in an overlap crack leads to the anchor.",
+  "runs": [
+   "in an overlap crack leads to the anchor"
+  ],
+  "targets": [
+   {
+    "id": "wa_concerto_in_c_for_drill_and_hammer",
+    "path": "pitch_detail[8].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0266",
+  "text": "The most delicate slab: smearing on small knobs past eight bolts to a horizontal crack that takes a 2-inch cam, then two more bolts to a left-facing corner with a gear placement. The anchor sits on top of a pedestal.",
+  "runs": [
+   "two more bolts to a left facing corner with"
+  ],
+  "targets": [
+   {
+    "id": "wa_concerto_in_c_for_drill_and_hammer",
+    "path": "pitch_detail[9].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0267",
+  "text": "Blocky, ledgy climbing up the right side of the buttress crest to an anchor on the crest.",
+  "runs": [
+   "up the right side of the buttress crest"
+  ],
+  "targets": [
+   {
+    "id": "wa_concerto_in_c_for_drill_and_hammer",
+    "path": "pitch_detail[11].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0268",
+  "text": "Scramble up the ridge until trees force a move right. Step down onto the slab layer just under the trees and follow its dihedral, which protects well, to an anchor on a small stance.",
+  "runs": [
+   "move right step down onto the slab layer just"
+  ],
+  "targets": [
+   {
+    "id": "wa_concerto_in_c_for_drill_and_hammer",
+    "path": "pitch_detail[12].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0269",
+  "text": "Step right past a clean 3-inch crack and around the bulge up and right. Climb a rib with a horizontal crack that takes a 1/2-inch piece, then a bolt; past bushes, a white rib has one more bolt. Go left of a tree with an old sling and through wide cracks between blocks to the summit chain anchor.",
+  "runs": [
+   "left of a tree with an old sling"
+  ],
+  "targets": [
+   {
+    "id": "wa_concerto_in_c_for_drill_and_hammer",
+    "path": "pitch_detail[13].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0270",
+  "text": "Blue Lake Trailhead (~5,400 ft) is 0.5 mile past milepost 162 on the south side of SR-20, about 31 miles west of Winthrop and roughly 1 mile west of Washington Pass Overlook (5,477 ft); vault toilet, ~20 parking spots, no potable water, parking fills early on weekends.",
+  "runs": [
+   "mile past milepost 162 on the south side of"
+  ],
+  "targets": [
+   {
+    "id": "wa_concord_tower_north_face",
+    "path": "road.driveNote"
+   },
+   {
+    "id": "wa_south_face_3",
+    "path": "road.driveNote"
+   }
+  ]
+ },
+ {
+  "key": "s0271",
+  "text": "This face stays wet after rain and can be icy early and late in the season, and the rappel stances are where that is felt.",
+  "runs": [
+   "rain and can be icy early and late"
+  ],
+  "targets": [
+   {
+    "id": "wa_concord_tower_north_face",
+    "path": "rappel_detail[0].hazards[1]"
+   }
+  ]
+ },
+ {
+  "key": "s0272",
+  "text": "Several notches exist on climber's right (north side) above the glacier — pick the easiest; this is the route-finding crux.",
+  "runs": [
+   "on climber's right north side above the glacier"
+  ],
+  "targets": [
+   {
+    "id": "wa_copper_peak_south_route",
+    "path": "itinerary.days[1].schedule[2].detail"
+   }
+  ]
+ },
+ {
+  "key": "s0273",
+  "text": "Cross the cirque and climb the southwest ridge to the top on blocky Class 3 with a few Class 4 moves and real exposure in places; some parties put the rope on for the last section. Fix the notch you came down in your mind before you start up — the descent reverses this line and the notch is easy to lose from above.",
+  "runs": [
+   "class 3 with a few class 4 moves"
+  ],
+  "targets": [
+   {
+    "id": "wa_corteo_peak_southwest_ridge",
+    "path": "waypoints[8].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0274",
+  "text": "From the paved pullout at Rainy Pass (4,855 ft) on SR-20 — signed 'Rainy Pass Trailhead,' 52 miles east of Marblemount, right where the PCT crosses the highway — start on the Lake Ann/Maple Pass Trail (well-graded, heavily used). At roughly 1.25 miles, stay right at the Lake Ann junction (the lake itself, just below the junction, is the last reliable on-trail water source) and continue climbing switchbacks through heather meadows to Heather Pass (~6,080 ft, about 2 miles in), Leave the maintained trail here and head west across talus, keeping south of Lewis Lake (~5,700 ft), to the crest of the Lewis Glacier's east lateral moraine near 6,400 ft. Follow the moraine onto the glacier remnant and climb southeast, bearing left near the top, to a notch in the ridge at about 7,500 ft. Work west along the ridge to a second notch, downclimb roughly 400 ft of dirt or snow into the cirque under the west face, then take an easy gully up to a large notch on the Southwest Ridge and follow the crest (exposed class 3 with a few class 4 moves) to the 8,107 ft summit. Loose talus and scree cover much of the off-trail travel, and the downclimb sheds rock onto anyone below, so a helmet is worth carrying. Snow lingers on the glacier and on the traverse out of Heather Pass well into July, so bring an axe and crampons for early-season attempts.",
+  "runs": [
+   "exposed class 3 with a few class 4 moves"
+  ],
+  "targets": [
+   {
+    "id": "wa_corteo_peak_southwest_ridge",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0275",
+  "text": "The standard descent reverses the same Southwest Ridge line used on ascent, down into the west-face cirque. From the summit, downclimb blocky, exposed class 3 (with a few class 4 moves) south/southwest along the ridge crest to a large notch roughly a third of the way down (approximately 7,600-7,700 ft), reached through an easy connecting gully. That gully has one distinctly steeper step, which is the crux of the way down: most parties downclimb it as class 4 on solid holds, but it is commonly protected with a single-strand rappel (one 30 m rope is sufficient) off natural gear — horns, chockstones, or a sling around a block; no fixed or bolted anchor has been reported here, so carry a few slings/cord. Treat this as optional but be ready for it, especially if the rock is wet or the party is not comfortable down-climbing exposed class 4. Below the step, follow the gully and talus down into the west-face cirque near the Lewis Glacier's east moraine (~6,400 ft), then pick up talus and intermittent boot path south past Lewis Lake to rejoin the trail near Heather Pass. From Heather Pass it's about 2 miles of maintained trail back down to the Rainy Pass Trailhead. This line involves glacier/snowfield travel past the Lewis Glacier remnant — rope up or use an axe/crampons if it's icy — and lingering snow on these slopes can be avalanche-prone in early summer. Total descent is roughly 5-6 miles with about 3,250 ft of net loss back to the car.",
+  "runs": [
+   "exposed class 3 with a few class 4 moves"
+  ],
+  "targets": [
+   {
+    "id": "wa_corteo_peak_southwest_ridge",
+    "path": "descent_text"
+   }
+  ]
+ },
+ {
+  "key": "s0276",
+  "text": "The route is a chain of notches, and the first one decides the day. From Heather Pass, head west across talus, passing south of Lewis Lake (about 5,700 ft), to the crest of the Lewis Glacier's east lateral moraine near 6,400 ft. Follow the moraine onto the glacier remnant and climb southeast, bearing left near the top, to a notch in the ridge at about 7,500 ft. Bearing right instead puts a party on narrow, sand-covered ledges and a steep, constricted snow gully — a much harder line.\n\nFrom the first notch, follow the ridge west to a second notch, then downclimb roughly 400 ft of dirt or snow into the cirque under the west face. The ground is loose; space the party out.\n\nFrom the cirque, an easy gully leads to a large notch on the Southwest Ridge, and the ridge crest — exposed class 3 with a few class 4 moves — goes to the 8,107 ft summit.\n\nSo the sequence of heights is 6,400, 7,500, the cirque below it, the ridge notch, 8,107: moraine, first notch, downclimb, ridge gained, summit.\n\nThe descent reverses the same line, including the climb back out of the cirque to the 7,500 ft notch. Fix the notches in your mind on the way up; they are easy to lose from above.",
+  "runs": [
+   "exposed class 3 with a few class 4 moves"
+  ],
+  "targets": [
+   {
+    "id": "wa_corteo_peak_southwest_ridge",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0277",
+  "text": "From the Lewis Glacier's east moraine near 6,400 ft, climb the glacier remnant southeast, bearing left near the top, to a ridge notch at about 7,500 ft. Follow the ridge west to a second notch, downclimb roughly 400 ft of dirt or snow into the west-face cirque, and take an easy gully up to a large notch on the southwest ridge. Crampons and an axe are needed while snow lingers, and the downclimb is loose, so space the party out.",
+  "runs": [
+   "7 500 ft follow the ridge west to a"
+  ],
+  "targets": [
+   {
+    "id": "wa_corteo_peak_southwest_ridge",
+    "path": "climbing_route[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0278",
+  "text": "Drop off the north side of the pass on roughly thirty switchbacks, losing nearly 1,400 ft into the Fisher Creek valley, then turn west and downstream on the Fisher Creek Trail along the north side of the creek. About three miles of valley walking brings you to this crossing.",
+  "runs": [
+   "trail along the north side of the creek"
+  ],
+  "targets": [
+   {
+    "id": "wa_cosho_peak_scramble",
+    "path": "waypoints[2].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0279",
+  "text": "Start at the Easy Pass Trailhead on the south side of SR 20 (Easy Pass Trail, North Cascades National Park, backcountry permit required for camping). The trail climbs steadily through forest, crossing Easy Pass Creek three times, and breaks out into subalpine meadows and heather benches before the final push to Easy Pass at about 6,550 ft — roughly 3.5-3.6 miles and 2,700-2,800 ft of gain, typically 2-3 hours. Steep snow can linger on this stretch well into July, and an ice axe is recommended; the tread can be hard to follow across snowfields, and the meadows are fragile, so stay on trail/rock where possible. From the pass, leave the high traverse and descend the Fisher Creek side: the trail switchbacks roughly 30 times, losing nearly 1,400 ft, into the Fisher Creek valley. Follow the Fisher Creek Trail west/downstream along the north side of the creek for about 3 miles (the creek itself is a reliable water source) to Cosho Camp (~3,900-4,200 ft, creekside, a designated NPS camping zone and the logical base camp for this peak). From Cosho Camp continue west on the trail roughly another mile until due south of the Cosho/Kimtah saddle, then leave the trail and begin climbing one of the gullies leading north, starting around 3,800 ft. This off-trail leg is the crux of the approach: steep talus, grass, and some solid rock for about 4,000 ft of gain to a saddle at roughly 7,830 ft, with sustained bushwhacking through trees and brush in the first thousand feet and loose, tedious scree higher up. Alternatively, some parties camp higher, in a basin south of Mesahchie Peak (~6,600 ft) reached by traversing south of the Easy Pass ridge at 6,600-6,700 ft across numerous small gullies and buttresses (~1 mile, ~5 hours from the trailhead), then climb about 800 ft to a 7,400 ft bench and traverse west to the Cosho/Kimtah col — a shorter final push at the cost of a longer, more exposed high traverse to reach camp. Expect this to be a full, long trekking day regardless of which camp is used; this is a remote, seldom-visited corner of the park and route-finding care is needed in poor visibility.",
+  "runs": [
+   "steep talus grass and some solid rock for"
+  ],
+  "targets": [
+   {
+    "id": "wa_cosho_peak_scramble",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0280",
+  "text": "From Cosho Camp continue west down the Fisher Creek Trail about a mile and leave it at one of the gullies due south of the Cosho-Kimtah saddle, starting around 3,800 ft. The climb up is the crux of the day: sustained bushwhacking through trees and brush for the first thousand feet, then loose, tedious scree and steep grass with occasional solid rock, roughly 4,000 ft of gain to the saddle at about 7,830 ft.",
+  "runs": [
+   "at one of the gullies due south of the"
+  ],
+  "targets": [
+   {
+    "id": "wa_cosho_peak_scramble",
+    "path": "approach_variants[0].notes"
+   }
+  ]
+ }
+]

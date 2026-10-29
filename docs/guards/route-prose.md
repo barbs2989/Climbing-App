@@ -1238,6 +1238,24 @@ the correction knows the screen is wrong, and they have no way to report it.
     `--fetch-only` warms the cache without touching the database). `review.source_texts` copies are
     used when a research file carries them. Cannot see: a route whose research cited no URL, and the
     sites that refuse scripts — the same blind spots as the batch check.
+  - **First run, 2026-10-29: 841 of 1,469 routes, 3,067 runs.** 6,355 of the 7,730 cited pages
+    were readable. 1,061 of the runs were names, not prose: an agency and ranger district, an
+    address, a road number, a first-ascent party and date (60%+ of the run's non-function words
+    capitalised or numeric — `scripts/oneoff/copied-prose-live/prepare.mjs`). Those were left as
+    they are. The rest were 1,657 distinct strings (1,754 placements on 690 routes), heaviest in
+    `access`, `approach_variants`, `pitch_detail`, `waypoints`, `approach` and `beta`: the waves
+    before the gate, including the contradiction and leftover passes. Every one was reworded clause
+    by clause, with the same facts and the same digits. Each was re-checked against the same cached
+    pages and written through `scripts/oneoff/rewrite-copied-prose.mjs` (an exact splice that refuses
+    a drifted row; re-read after each write; rollback files in `audits/copied-prose-live/rollback/`).
+    The writes go through `scripts/oneoff/copied-prose-live/apply-batches.mjs`. It probes a one-row
+    read before every batch and waits out an outage (10 min after a stop, giving up after 6 stops). A
+    re-run is safe: a row already rewritten reads back as ALREADY. 114 columns landed on 2026-10-29
+    before the database stopped taking writes; the rest resumes with
+    `node scripts/oneoff/copied-prose-live/apply-batches.mjs b01 b02 … b24` (delete `applied.txt` first
+    for a full pass that also catches rows refused on a failed read).
+    A few rewrites also dropped a sentence that credited a source by name. The rule is
+    [no-sources](../codebase/enrichment-prose.md).
   - **Selftest:** `--selftest` needs no network: the Dark Shadows sentence as applied is flagged,
     the same facts reworded are not, a short shared phrase is not, and `review`/`area`/labels are
     never walked.
