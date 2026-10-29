@@ -337,6 +337,79 @@ Part of the guard notes — see [README.md](README.md) for the full index.
           (the stored count is the published one, not a stand-in); a re-run would only re-confirm
           the listing against itself. Re-open this only with TIMED reports for a route whose
           count is in doubt, since the repair target is the time, not the count.
+  - **THE CATALOG PASS (2026-10-28, `audits/2026-10-28-route-timing-catalog.json`): 311 MORE WA
+    ROUTES RESEARCHED, 15 ROWS REPAIRED, ONE STRUCTURAL DEFECT FIXED.** The owner asked again
+    whether totals leave out rests. The 515 from 2026-10-08 were re-measured first (#2838), then
+    every WA alpine, mountaineering and scrambling row with a time that had never been researched
+    went to two Sonnet agents in 20 batches of 16, retrying in extended mode on a thin result.
+    - **THE STRUCTURAL DEFECT: A LONE STORED LEG WAS DROPPED (#2859).** A row storing an approach
+      or a descent with no summit leg is not `legsStored`, so the Planner walked the inputs and
+      threw the stored leg away (Golden Horn North Face: 1.7 hr walked down beside a researched
+      5.75). `loneApproachH` / `loneDescentH` now floor the walked leg; `check:return-leg` holds it.
+      Across WA, 27 routes got longer and none got shorter. That floor is what makes a researched
+      descent stored ALONE safe: the climb stays unknown and the total keeps its "≥".
+    - **THE YIELD IS LOW, AND THAT IS THE FINDING.** 75 of the 311 clear the evidence bar (a
+      published figure, 3 timed reports, or 2 that agree within 15%); 20 read more than 20% short,
+      and most of those rest only on BORROWED car-to-car times from a neighbouring route (the
+      Colchuck Balanced Rock lines, Concord), which are not evidence for a different climb. The
+      useful pass was the SHARED DESCENT one: a sibling whose own `descent_text` names a
+      well-timed reference descent from the same trailhead can take that descent's median
+      (Golden Horn ×2, Eldorado ×2, Chaval, Silver Star East Ridge, Adams NW Ridge, Goode NE Face).
+    - **ONE STORED DESCENT WAS SUMMIT-TO-CAMP ONLY** (Witches Tower SW Corner, 1 hr against its own
+      published camp-to-trailhead 4-5). Re-filed in the camp shape rather than as a push, because
+      approach 7 and descent 4.5 fall within `CAMP_LEG_MATCH` and the Planner reads it that way.
+    - **LEFT FOR THE OWNER, each with its reason in the audit file**: Golden Horn's walk inputs,
+      Mount Rahm's camp-to-summit whole day, Nooksack Tower's three confused rows, Mount Washington
+      (Olympics, two search-snippet club reports at 7-7.5 hr against 5), Stuart West Ridge (two
+      trailheads mixed; 14% short of the Longs Pass parties alone), and more.
+    - **THE 211 EMPTY ROWS WERE SAMPLED, NOT FINISHED, AND THAT WAS DELIBERATE.** After the pass,
+      211 WA alpine-family rows were left that store no time and no distance or gain. The first 32
+      (two batches of 16) were researched the same way. NONE has a timed report of its own. The
+      only figures were borrowed from a sibling route on the same peak (Black Peak East Buttress
+      took the NE Ridge's Wing Lake approach; Big Kangaroo Skinny Start took Beckey-Tate's), and
+      both were read only as search snippets, so nothing was written. At 0 of 32 the other 179
+      would cost about 12 more research runs for an expected yield of nothing. Do not re-run them
+      as a batch. A row like these gets a time when a climber logs one, or when a guidebook pass
+      reaches its peak.
+    - **THE REST ALLOWANCE CANNOT BE CALIBRATED AGAINST LOGGED TIMES YET: THERE ARE NONE.** Read
+      with the service key on 2026-10-28, `climb_logs` held 2 rows, and neither had any of
+      `car_to_car_minutes`, `approach_minutes`, `climb_minutes` or `descent_minutes`. No other table
+      stores a climber's time. `REST_PER_MOVING_HR` therefore stays at #2820's figure, which was
+      set from published trip reports. `scripts/oneoff/measure-rest-allowance-vs-logs.mjs` does the
+      calibration when logs exist. It compares logged car-to-car times only against rows the Planner
+      MODELLED, because a stored leg carries no rest factor, and floors are excluded. Re-run it once
+      real climbers have logged timed climbs.
+    - **OUT OF STATE AND THE SUMMIT-LEG CENSUS (2026-10-28,
+      `audits/2026-10-28-route-timing-out-of-state.json`): 166 RESEARCHED, 24 WRITTEN.** Only 52 of the
+      5,185 alpine-family rows outside WA store a time, a distance or gain, or sit on a classics list.
+      They gave 3 repairs: Bugaboo Spire's hut approach, Petit Grepon's approach, and Mount Hood South
+      Side's approach of 0. The writes waited out a 1.5-hour production outage that ended when the
+      owner restarted the project; reads hung even for `/auth/v1/health` while requests with no key
+      got an instant 401.
+      - **THE HOOD PATTERN IS A CLASS OF 30.** A row storing `summitTimeHrs` with `approachTimeHrs`
+        null gets the walk model put IN FRONT of its summit leg (whole-day rows excepted). That is
+        right when the summit leg starts at a camp and double-counts when it starts at the car.
+        Researched row by row: five started at the car (Ruby, Persis, Three Queens, Hozomeen,
+        Johannesburg NE Buttress) and now store approach 0. The rest are camp legs, or the evidence
+        is too thin to tell.
+      - **EMPTY TRADE ROUTES: 84 RESEARCHED, 16 WRITTEN.** 191 empty rows sit on
+        well-climbed peaks, matched by AREA name. They were narrowed to 84 scrambles, snow routes and
+        3rd/4th-class lines. Written: 3 full sets (Sherman, Capitol Knife-Edge, South Sister South
+        Side) and 3 lone approaches. Twenty more have only a strong car-to-car figure, such as Whitney
+        13 hr from 4 reports or Grays 5.5 hr. Storing a total alone on an empty row was outside the
+        rule, so it went to the owner, who said "do what you recommend based on research". Ten that
+        clear the bar now store `totalHrs` alone, which the Planner reads as one whole day: Whitney
+        Trail 13, Langley 11, Casaval 12.5, Shasta West Face Gully 18.25, Democrat 4, Oxford 11.2,
+        Yale 7.3, Sunshine 10, Thielsen West Ridge 7.5, Teewinot East Face 8.5. The other ten rest on a
+        blog, AllTrails, a search snippet or one report, and are held (`ownerDecision` in the audit file).
+      - The ids `rainier_*` and `adams_*` are Washington routes outside the `wa_` prefix: the WA pass
+        missed them, and this one covered the four that store anything.
+    - **WA ICE AND MIXED (2026-10-28, `audits/2026-10-28-route-timing-wa-ice.json`): 16 RESEARCHED, 0
+      WRITTEN.** The earlier passes covered alpine, mountaineering and scrambling only; these 16 WA ice
+      and mixed rows store trip times too. Most have no timed reports at all. Early Winter Couloir's
+      car-to-car reports (8, 12 and 18 hr) leave the stored 10 hr total 17% short, inside the 20% bar. New York Gully
+      is HELD: its stored whole-day 10 hr is 21% under a 12.7 hr median, but two of the three reports
+      are search snippets and one may be the wrong thread.
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)

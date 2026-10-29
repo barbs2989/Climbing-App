@@ -6,14 +6,16 @@ import fs from "fs"; import { spawnSync } from "child_process"; import crypto fr
 const W = new URL("../../", import.meta.url).pathname;
 const sha = s => crypto.createHash("sha1").update(s).digest("hex");
 const mig = re => W + fs.readdirSync(W + "supabase/migrations").filter(f => re.test(f)).map(f => "supabase/migrations/" + f)[0];
-const FILES = { js: W + "lib/areaFields.js", sql: mig(/area_pages_season_edits_and_stats\.sql$/), sql18: mig(/area_edits_are_held_for_review\.sql$/), sections: W + "lib/AreaPageSections.jsx", browser: W + "lib/DbAreaBrowser.jsx" };
+const FILES = { js: W + "lib/areaFields.js", sql: mig(/area_pages_season_edits_and_stats\.sql$/), sql18: mig(/area_edits_are_held_for_review\.sql$/), sql78: mig(/area_parking_pin_is_editable\.sql$/), sections: W + "lib/AreaPageSections.jsx", browser: W + "lib/DbAreaBrowser.jsx" };
 const orig = Object.fromEntries(Object.entries(FILES).map(([k, f]) => [k, fs.readFileSync(f, "utf8")]));
 const cases = [
   // [name, guard script, file key, find, replace, want exit (1 = must FAIL)]
-  ["a field dropped from the SQL constraint must FAIL", "check-area-edit-fields.mjs", "sql", "'parking_note','rock','aspect','season_months')\n);", "'parking_note','aspect','season_months')\n);", 1],
+  ["a field dropped from the SQL constraint must FAIL", "check-area-edit-fields.mjs", "sql78", "'parking_note','parking_pin','rock','aspect','season_months')\n);", "'parking_note','parking_pin','aspect','season_months')\n);", 1],
   ["a field added to the JS table alone must FAIL", "check-area-edit-fields.mjs", "js", '  { k: "season_months", label: "Season"', '  { k: "permits", label: "Permits", type: "text", min: 1, max: 40, hint: "", cur: a => "" },\n  { k: "season_months", label: "Season"', 1],
   ["a summary that prints an object must FAIL", "check-area-edit-fields.mjs", "js", 'cur: a => text(a.rock) }', 'cur: a => a.rock == null ? "" : "" + a.rock }', 1],
-  ["a field dropped from the approval applier must FAIL", "check-area-edit-fields.mjs", "sql18", "if p_field not in ('blurb','approach','approach_min','parking_note','rock','aspect','season_months') then return; end if;", "if p_field not in ('blurb','approach','approach_min','parking_note','rock','aspect') then return; end if;", 1],
+  ["a field dropped from the approval applier must FAIL", "check-area-edit-fields.mjs", "sql78", "if p_field not in ('blurb','approach','approach_min','parking_note','parking_pin','rock','aspect','season_months') then return; end if;", "if p_field not in ('blurb','approach','approach_min','parking_note','rock','aspect','season_months') then return; end if;", 1],
+  ["a pin UPDATE that drops a column must FAIL", "check-area-edit-fields.mjs", "sql78", "update areas set parking_lat = plat, parking_lng = plng, parking_name = pname", "update areas set parking_lat = plat, parking_lng = plng", 1],
+  ["a pin field with no fmt must FAIL", "check-area-edit-fields.mjs", "js", ", fmt: pinValueLabel }", " }", 1],
   ["the insert-time applier coming back must FAIL", "check-area-edit-fields.mjs", "sql18", "-- No backfill:", "create trigger x after insert on public.contributions for each row execute function trg_apply_agreed_area_field();\n-- No backfill:", 1],
   ["a fact pushed without its column gate must FAIL", "check-area-page-honest.mjs", "sections", '  if (area.rock) facts.push(["Rock"', '  facts.push(["Rock"', 1],
   ["a headline that prints the RPC total must FAIL", "check-area-page-honest.mjs", "sections", 'sum.toLocaleString() + " climb" + (sum !== 1 ? "s" : "")', 'total.toLocaleString() + " climb" + (total !== 1 ? "s" : "")', 1],

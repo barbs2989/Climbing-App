@@ -129,11 +129,10 @@ requires exactly ONE `export default function` per moved file, so a `memo(...)` 
 implementation wrapped in `memo` behind an exported function (`ElevChart`, PR10); a seam TypeScript infers wrongly from
 JS is typed on the JS side with JSDoc (`useFollowMe`'s options, the `POP_*` styles, `EMOJI_ICON`, `PhotoAltField`),
 never cast in the component; a boolean cannot narrow its source, so derive the narrowed value (`track`, `pk`) and a type
-predicate for a JS test (`placed` over `wpPlaced()`); ESLint is a build guard since #2487 and a ratchet
-(`eslint-suppressions.json`): a new `.tsx` is CLEAN — no `any` (Leaflet's type is the one declared `LeafletAny` in
+predicate for a JS test (`placed` over `wpPlaced()`); ESLint is a build guard since #2487, at ZERO with no
+baseline since 2026-10-28: a new `.tsx` is CLEAN — no `any` (Leaflet's type is the one declared `LeafletAny` in
 `src/types/leaflet-global.d.ts`), no empty block, and an effect that keys on a signature by design carries a per-line
-`exhaustive-deps` disable WITH THE REASON — and when a move removes legacy findings from core, run
-`npx eslint . --prune-suppressions`; a module-level helper in a component must not share a name with one in core, or
+`exhaustive-deps` disable WITH THE REASON, and a disable moves WITH the hook it covers; a module-level helper in a component must not share a name with one in core, or
 the stitched core will not PARSE (`escHtml`, PR13); before adding an export to core, check the export list by BUILDING —
 a duplicate name fails esbuild, not `tsc`; a 100+ line body is moved by a GENERATOR with asserted substitutions, never
 retyped; and after EVERY merge of `origin/main` into the branch, grep the tree again for

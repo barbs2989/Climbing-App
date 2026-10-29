@@ -29,6 +29,7 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
 - **Recommended** order on Discover and For you: groups sharing a discipline with you first, then home state, then
   where you climb.
 - Private groups are listed only to their members; an invitee finds one under Requests.
+- **Long text opens in place** (2026-10-28): a post in *For you* (`groupPostPreview`) stops at five lines with *See more*, and a Discover card's blurb (`groupDiscoverCard`) at three. Both use the `groupPostMore` key the group's own post view uses, so a post opened in the feed is open in the group too.
 
 ## 2. How it works
 `useMyGroups` reads every group the viewer may see (RLS: public, or one you belong to) and copies it into
@@ -41,7 +42,9 @@ your `partner_areas` paths matched against `useStates()`.
 A group's feed is live (0326): `useGroupFeed` is a `useLiveQuery` (`lib/live.js`) subscribed over Supabase Realtime to
 `group_posts` and `group_post_reactions`, so a post, edit, pin, delete or reaction another member makes refetches the
 feed within about a second. Realtime applies the same member-only RLS; a DELETE carries only the id, so it is matched
-against the posts already held.
+against the posts already held. A post ClimbMatch Safety takes down leaves every member's feed at once too (0380): RLS
+stops that UPDATE reaching them, so a trigger broadcasts the bare id on the public `moderation` topic and `lib/live.js`
+treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 
 ## 3. Files
 | File | Key symbols |

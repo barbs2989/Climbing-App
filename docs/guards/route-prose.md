@@ -1173,6 +1173,17 @@ the correction knows the screen is wrong, and they have no way to report it.
     not the route being a finish. Research decides; never re-quote these counts, re-run it.
   - Linking is done per route after research (`viaRouteId` to an existing sibling, or a `trip`
     with a trailhead); see `check:approach-overlay` in route-page.md for what the page then does.
+  - **`CARD_TWO`: a card that describes two ways in** (owner note 2026-10-28). Mount Logan's Banded
+    Glacier was switchable, so every signal above skipped it, but its default card began "Two ways in,
+    and which one you use depends on whether SR-20 is open" and the page draws one way in at a time, so
+    it read as one approach with two descriptions. No prose signal read a card's own `notes`. This one
+    does, on switchable routes too, and a verdict never hides it. The fix is per route: split the text
+    so each card narrates only its own way in, and give each its own data.
+    `CARD_TWO`'s ALT_RE caught 16 cards across 842 routes, and most were fair comparisons ("the
+    shorter of the two ways in"). A wider net (alternate/fallback/"also be reached", two named
+    trailheads in one card) gave 92 routes to read, and 23 really did narrate another way in
+    (`scripts/oneoff/approach-cards-one-way-each.plan.json`). So a CARD_TWO count of zero is not the
+    class closed: re-run that wider read before calling it done.
   - **A researched row is not a lead** (2026-10-01). Once WA was worked through, 440 rows still
     carried a signal, all already read and judged one way in, so every run buried anything new under
     them. The audit now reads the recorded verdicts (`audits/<state>-multi-approach/2026-10-01-research.json`,
@@ -1217,3 +1228,22 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **Selftest:** `--selftest` needs no network: the Dark Shadows sentence as applied is flagged,
     the same facts reworded are not, a short shared phrase is not, and `review`/`area`/labels are
     never walked.
+
+- **`audit:partner-grade`** asks whether a route's **Partner requirements** panel
+  (`partner_requirements.experienceLevel` + `.requiredSkills`) asks for a lead grade the route's
+  own grade contradicts. Reported by the owner 2026-10-28: Liberty Bell's Overexposure (5.8) read
+  *"Strong 5.10-5.11 free climber"* — already corrected by the WA contradictions pass (#1965,
+  `audits/wa-contradictions-rest/research/out/r182.json`), so the owner had seen a stale copy;
+  the CLASS had never been measured. Report-only; `scripts/audit-partner-grade.mjs`.
+  - The standard it enforces, and the research behind it, is in
+    [enrichment-prose.md](../codebase/enrichment-prose.md#partner_requirements-ask-for-the-grade-the-route-is):
+    lead the crux grade solidly, at most ONE step of margin (a number grade through 5.9, a letter
+    from 5.10a).
+  - **ABOVE** (more than one step over the route's highest 5.x), **BELOW** (highest named grade
+    under the crux), **NONE** (no 5.x on the route, a 5.x lead above 5.6 asked). A clause that
+    names an aided, French-freed, optional or variation section does not count as asked —
+    "Solid 5.10 leader; the 5.11a crux can be aided" is honest, not BELOW. `--selftest` holds 17 cases.
+  - **Not yet run against the catalog** — written 2026-10-28 while the database was answering
+    one-row reads in 30-180 s, so the census waited. The repo's enrichment files hold ~317
+    distinct `experienceLevel` strings, 49 naming a 5.x grade: expect a small class.
+  - Service key, `partner_requirements=not.is.null` in 100-row pages. Not a build gate.

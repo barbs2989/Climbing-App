@@ -90,6 +90,7 @@ room for side-panel ads later. The phone app keeps its own look.
 - **One Edit button, one chevron.** Every section's Edit control — route, area, Profile, a pitch row — is the outlined `editBtnStyle` with a blue pencil (`EditPencil`, `lib/areaChrome.jsx`), never a filled blue pill. Open/close markers and the arrow at the end of a tappable row are `Chevron` (an `inline` mode sits in a line of text), grey at a row's end; blue only on an active control. Screen titles are sentence case.
 - **No emoji, one button shape (polish round 3, 2026-10-25).** The app draws no emoji anywhere — an icon is an `ActionIcon` (`aria-hidden`, beside the words) or there is none; `Lbl` swaps a leading emoji it knows for its icon and drops one it does not; reactions are icon + word chips (`REACTIONS[].i`); route-tag chips, risk levels and challenge lists carry ActionIcon names. `check:no-emoji` holds the line. No typed › / → / ▸ / ▾ at a row end or on a toggle — `Chevron` everywhere (breadcrumb separators, month arrows and "→" inside a sentence stay text). A solid primary button takes its geometry from `lib/buttonStyles.js`: `BTN_SM` in a row, `BTN_LG` full width.
 - **Loading rows, empty states, one card corner, palette tokens (polish round 4, 2026-10-25).** A section whose read is in flight shows `LoadingRows` (`src/components/LoadingRows.tsx`): its "Loading …" line (kept as real text — `render-settle.mjs` and `check:zero` read it) over pulsing grey placeholder rows, still under reduced motion. A list with nothing in it shows `EmptyState` (`src/components/EmptyState.tsx`): a muted `ActionIcon` in a circle over the unchanged sentence, with an optional next step. Cards (`background:C.card` + a border) round at 12; smaller inner boxes keep 8–10. White text on a solid fill is `C.onSolid`, and a pop-up's backdrop is `C.scrim` (0.6) or `C.scrimStrong` (0.88, photo viewers) — `lib/GpsSubmissionModal.jsx` keeps its own local palette.
+- **A touch just off a small control still reaches it (2026-10-28).** Most controls are drawn under 44px (a route-page section toggle is 29px), so `installTapSlop` (`lib/tapSlop.js`, called once in `main.jsx`) sends a touch whose click landed on nothing tappable to the nearest control whose 44px box, centred on it, holds the touch. Every control competes on distance whatever its size, so a nearer big button keeps its tap; a tie, a mouse, a keyboard click, a hit on a control, and a tap inside a map, chart or field are left alone. The browser snaps a tap to a control under the finger first (Chrome and Safari both do), so this only reaches the taps that snap misses.
 
 ## 2. How it works
 `useWideScreen()` / `useFullWidth()` (in `lib/wideLayout.js`) are `matchMedia` hooks on `WIDE_MIN` (1024)
@@ -126,6 +127,7 @@ below the top bar) do not trip it. Any new fixed desktop panel must not either.
 | `lib/MonthGrid.jsx` | `MonthGrid` |
 | `lib/DesktopShell.jsx` | `WideSearch`, `WideRail`, `WideFooter`, `DocTitle` |
 | `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers` |
+| `lib/tapSlop.js` | `installTapSlop`, `slopTarget`, `TAP_MIN` |
 | `ClimbMatch.jsx` | `NAV`, `goTab`, `navBadge`, `_inChat`, `_known`, `_openMe`, `_closePages`, `_pageView` |
 | `index.html` | `#cm-boot`, `.b-nav`, `#cm-splash` |
 | `lib/BootSplash.jsx` | `BootSplash` |
@@ -142,9 +144,11 @@ Layout only. The footer reads the states list (`useStates`); the search reads th
 
 ## 6. Guards
 `check:boot` (boot NAV labels match `NAV`), `check:overlay-width-cap`, `check:bottom-panels`,
-`check:zindex`. The browser walks drive a phone-width window, so they cover the phone layout only.
+`check:zindex`, `check:tap-slop` (the touch widening stays installed). The browser walks drive a phone-width window, except `check:overflow -- --width 1280`, which walks every tab, the route page and every openable overlay on the desktop website (`render-guards.yml` runs it beside the 390px walk).
 
 ## 7. Last significant change
+- **The desktop website is walked** (2026-10-28): `check:overflow` takes `--width`, and CI runs it at 1280px as well as 390px, so a desktop screen that scrolls sideways fails a check.
+- **Small controls are easier to hit** (owner note 2026-10-28, "Some clicks links are small"): a touch that lands on nothing goes to the nearest small control within 44px (`lib/tapSlop.js`, installed in `main.jsx`); dropdowns are 44px tall, the waypoint map picker's layer buttons 34px, the fire map's layer chips and the Reports condition rows 36px, and sign-in's text links have a bigger touch box (`TEXT_TAP`). Measured with `scripts/oneoff/probe-tap-targets.mjs`.
 - **The sign-in look, app-wide** (owner, 2026-10-24): header glow, branded Home banner and Menu header, plain top-right icons, one chevron, one-line header text, Logbook sort & filter folded, Climbs regions as cards on a phone.
 - **Narrower desktop** (owner, 2026-10-22): 640px column, action buttons sized to their label, Messages pane 280px.
 - **Desktop phase 4e**: chats in the right rail (`RailChats` in `lib/DesktopShell.jsx`).
@@ -164,4 +168,4 @@ Layout only. The footer reads the states list (`useStates`); the search reads th
 - **Phase 3**: public route and area pages with real web addresses. **Phase 4**: printable route
   page, compare routes, full-month calendar, draw an approach → GPX, chat list in the rail, logbook
   CSV, embeddable route card.
-- No browser walk runs at desktop width.
+- Only `check:overflow` runs at desktop width; the other browser walks are phone-only.

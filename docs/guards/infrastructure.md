@@ -291,9 +291,24 @@ name their inputs, `assertCovered()` for the ones that walk the tree.
     pushes its file over the count and fails. Fixing an old one also fails ("unused
     suppressions") until `npx eslint . --prune-suppressions` shrinks the file, so the baseline can
     only go down. Never re-run `--suppress-all` to make a new finding go away.
-  - **Reading a failure in a legacy file:** once a file is over its count, ESLint prints EVERY
-    finding of that rule in the file, old ones included (58 lines for one new missing dep in
-    `ClimbMatch.jsx`). The new one is the line your diff touched; `git diff -U0` finds it.
+  - **The baseline is GONE (2026-10-28).** All 385 held findings (248 unused variables, 137
+    dependency arrays) were fixed file by file and `eslint-suppressions.json` was deleted; lint now
+    FAILS if that file exists, because ESLint reads it automatically and a `--suppress-all` would
+    hide any new finding behind it. How the dependency arrays were settled: a missing dep was ADDED
+    only when stable (setters, refs, module constants) or extracted when the array held an
+    expression (`hasPick`/`pickP` in `lib/mapKit.jsx`, `meId`/`meVisible` in `lib/presence.js`,
+    `selAreaId` in `App`); `x || []` became a module `NO_ITEMS`/`NO_ROWS` so the identity is stable;
+    every other omission (an effect keyed on an id or a signature like `ck`/`grid.key`, an
+    unmemoized parent callback, a Leaflet map built once) KEPT its array and carries a per-line
+    `eslint-disable-line react-hooks/exhaustive-deps -- <why>`, so no effect fires at a new time.
+    Dead code removed with it, kept here so nobody hunts for it: `toggleDisc`/`reconcileDisc` in
+    `App` (the old Climbs discipline chips; filters live in `DbAreaBrowser` now), CrewCard's
+    `addable`/`goodPeriod` (unused since the first upload), RouteDetail's `rappelLabel`/
+    `rappelCount`/`VerifyBadge` (no callers).
+  - **Every disable names its rule and a reason** (2026-10-28): a directive without a rule, or
+    without ` -- <why>`, fails lint. A bare `// eslint-disable-line` silences EVERY rule on its line —
+    one sat in `lib/MyPartnerAreas.jsx`. Injection-tested: a bare directive and a rule-without-reason
+    each failed; `/* … -- reason */` and `// … -- reason` passed; an empty `{}` suppressions file failed.
   - Fails closed on fewer than 40 files linted (an ignore edit that hides the app) and on an
     eslint run that produced no JSON report. Injection-tested on landing: an unused `const` in
     `lib/presence.js`, an effect reading `tab` with `[]` deps in `ClimbMatch.jsx`, and `: any` in a

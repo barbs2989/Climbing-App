@@ -10,15 +10,19 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb or area here?* (`AddHereFooter`: Add a climb · Add an area), `DbSuggestedClimbs`
   "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page).
   `DbAreaTree` / `DbAreaTreeNode` / `DbAreaTreeRoots` give an expandable tree to jump around.
-- **Area page sections** (0304, `lib/AreaPageSections.jsx`): on a crag, peak or wall — **ABOUT** (`areas.blurb`, or an invitation to write one),
+- **Area page sections** (0304, `lib/AreaPageSections.jsx`): on a crag, peak or wall — **ABOUT** (`areas.blurb`, or an invitation to write one; past 600 characters it opens at about nine lines with *Read more* / *Show less*, like the route page's comment clamp),
   **AREA FACTS** (rock, which way it faces, elevation, walk-in minutes, parking name, and a 12-month **Season** strip from `areas.season_months`;
   a fact that is not stored is not printed), **CLIMBS HERE** (`ClimbsChart`: one bar per discipline over the whole subtree via the
   `area_climb_stats` RPC, headline = the sum of its bars; a bar opens the Route finder preset to that discipline) with **GRADE SPREAD**
   (`GradeSpread`: columns over the area's main grading scale, saying how many climbs it left out), **GETTING THERE** (`AreaGettingThere`:
-  `parking_note` + the parking pin, `approach` + `approach_min`, Google/Apple Maps links — the page's ONE drive control), **TOP RATED HERE**
-  (up to five routes by `stars`), and **Suggest an edit** (`lib/AreaSuggestFix.jsx`: seven fields from `AREA_EDIT_FIELDS` in `lib/areaFields.js`,
+  `parking_note` + the parking pin, `approach` + `approach_min`, Google/Apple Maps links — the page's ONE drive control; *Add the parking pin* where none is
+  on file and *Move the pin* under one open the sheet at the pin), **TOP RATED HERE**
+  (up to five routes by `stars`), and **Suggest an edit** (`lib/AreaSuggestFix.jsx`: eight fields from `AREA_EDIT_FIELDS` in `lib/areaFields.js`, one of them the crag-wide
+  **Parking pin** (0378, `parking_pin`: tap `WaypointMapPicker` or type lat/lng, an optional name; one value `{lat, lng, name?}` written to
+  `parking_lat`/`parking_lng`/`parking_name`, the name on file kept when none is sent; a pin over 15 km from the crag is flagged before sending),
   each one a `contributions` row with `area_id`, HELD for the owner like a route edit (0319) and written to the `areas` column by `apply_approved_area_field` on approval;
-  the climber's own held edits show as "Awaiting review" (`PendingAreaEdits`); the owner reviews them in `lib/RouteQualityQueues.jsx`). The chart also runs on states, ranges and regions; not on
+  the climber's own held edits show as "Awaiting review" (`PendingAreaEdits`); the owner reviews them in `lib/RouteQualityQueues.jsx`, which reads the raw columns through `useAreaEditRowsByIds` so ON THE PAGE NOW is the page's
+  value, and links a proposed parking pin to Google Maps). The chart also runs on states, ranges and regions; not on
   world/country (the whole catalog in one call is ~2 s). Access stays on the route page (owner, 2026-10-04 / 2026-10-15).
 - **Wrong place?** (owner note, 2026-10-25; `lib/AreaWrongSpot.jsx`, button in `AreaPage`): a climber says where the area belongs (10–400 characters, optional *which place*). `submitAreaPlacementClaim` (`lib/db.js`) files a `contributions` row of kind `area_placement` (`area_id` = the area, `value` = `{note, suggested}`), a claim only. It shows nothing on the page; the owner's *Wrong place claims* queue (`AreaPlacementQueue` in `lib/RouteProposals.jsx`) lists it and `resolve_area_placement` (0372, admin only) marks it *approved* (moved) or *rejected* (already right). A signed-out climber gets a sign-in button and no write.
 - **Discipline areas are not areas** (owner note, 2026-10-25): ice, mixed and dry-tooling words name a discipline, not a place. A bucket such as *Adirondack Ice & Mixed*, *Vail Ice* or *Dry Tooling & Ice Climbing at Exit 38* is dissolved into the place above it: its crags move under that place and the empty bucket is deleted (`scripts/oneoff/plan-discipline-buckets.mjs` plans, `apply-discipline-buckets.mjs` applies, with `scripts/data/discipline-buckets-rollback.json`). Place names that carry the word stay (*Ice Park*, *Ice Box*, *Ice Pond*, *Ice Caves*). A bucket whose move would create a same-named sibling is held. A bucket that still holds a contribution, topo, saved area or partner area is held too, because those cascade on delete (`areas.area_id` is `ON DELETE CASCADE` for them). Leaf areas named by discipline still hold routes; those need a per-route place and are not moved by the script.
@@ -73,7 +77,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi, gain, trip, elev, prom, near, within }`). Active filters show as chips.
   *Save search* writes the account's `saved_searches` (see `docs/features/logbook-crews-home.md`); a saved one reopens the finder through `jumpToFinderReq` with its `initial` words and filters.
-  **Since 0369 (2026-10-24)** it also filters by **Distance away** (first in the sheet: *Use my location* or a town / zip through
+  **Since 0369 (2026-10-24)** it also filters by **Distance away** (second in the sheet, under Discipline: *Use my location* or a town / zip through
   `searchPlaces`, then Within 10/25/50/100 mi or 15/40/80/150 km, plus a *Nearest first* sort grouped by wall), **Elevation gain**
   and **Round trip** (ranges), **Peak elevation** and **Prominence** (minimums), as AllTrails does gain, length and Distance
   away and Peakbagger does elevation and prominence. Buckets are round numbers in BOTH unit systems (`GAIN_BUCKETS`,
@@ -120,7 +124,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Fire map** (`FireMap`, `lib/FireMap.jsx`; data in `lib/fire.js`): opens from an area page below the state (a range, peak, crag or wall — never a country or state page, the first screen after the picker) and a route's Safety tab. Layers, each a chip:
   Fires (WFIGS incident points — the point of ORIGIN, coloured by containment, sized by acres), Perimeters, Red flag (NWS fire-weather
   zones) and **Heat** (`useHeat`: VIIRS satellite detections from the last 48 h, newer brighter, drawn at their real ~375 m footprint
-  when zoomed in; queried only from zoom 7, `HEAT_MIN_ZOOM`). A **legend** under the map names every colour, grey (contained) included.
+  when zoomed in; queried only from zoom 7, `HEAT_MIN_ZOOM`) and **Smoke** (2026-10-28: the national surface-smoke FORECAST, an hour's average of fine smoke, painted as tiles in the EPA PM2.5 colour bands from 9 µg/m³ up — `smokeTileUrl`, `SMOKE_BANDS`; nothing painted under 9, so a clear day leaves the map clear). Under the legend, **‹ ›** step the smoke hour 3 h at a time through the hours the service holds (`useSmokeWindow`, `smokeHours`; about two days), named *Smoke forecast, now* / *Fri 3:00 PM*; a failed window read or tile says the smoke was not loaded and is not a clean-air reading. A **legend** under the map names every colour, grey (contained) included.
   **⤢** gives a map-only view (the list steps aside; ✕ returns to it). **📍 Me** is the area map's button. The banner's **Full text →**
   opens `FireAlertSheet`, which reads the product's own words from api.weather.gov (`useFireAlert`; an expired product says so) and
   links to weather.gov's page for the zone (`nwsPointPage`) — the old link opened api.weather.gov's raw JSON (2026-10-23).
@@ -170,10 +174,11 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `lib/offlineTiles.js` | `saveRouteMapOffline`, `removeRouteMapOffline`, `routeMapLines` |
 | `lib/SaveMapOffline.jsx` | `SaveMapOffline` (under the route map), `SavedRouteMaps` (Manage areas) |
 | `lib/FireMap.jsx` | default export `FireMap`, `FireAlertSheet` |
-| `lib/fire.js` | `useActiveFires`, `useFirePerimeters`, `useFireWeather`, `useHeat`, `useFireAlert`, `nwsPointPage`, `fireLevel` |
+| `lib/fire.js` | `useActiveFires`, `useFirePerimeters`, `useFireWeather`, `useHeat`, `useSmokeWindow`, `smokeHours`, `smokeTileUrl`, `SMOKE_BANDS`, `useFireAlert`, `nwsPointPage`, `fireLevel` |
 | `src/components/GPXMap.tsx` | `GPXMap` — the route page map (extracted from core, PR13) |
 | `ClimbMatchCore.jsx` | `OverviewMap` (seed/overview map), lazy `DbAreaBrowser` import |
-| `RouteDetail.jsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`, `BaseLayerToggle`) for the route and waypoint-picker maps |
+| `src/components/GPXMap.tsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`, `BaseLayerToggle`) for the route map |
+| `src/components/WaypointMapPicker.tsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`) for the waypoint-picker map |
 
 ## 4. Data
 - Supabase tables `areas` (parent_id, `path` ltree set by trigger, `area_type`, lat/lng, `route_count`; 0001; `blurb`; `approach`, `approach_min` (0247); `rock`, `rock_basis` (0248);

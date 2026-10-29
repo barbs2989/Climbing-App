@@ -156,3 +156,28 @@ keeping its order is not a rewrite.
   source that will not load (SummitPost and theCrag refuse scripts) is warned about, not counted as
   clean. Research from a book or a non-loading page still has to be reworded by hand.
 - **Check a batch before review:** `npm run audit:copied-prose -- <batch.json>`.
+
+## `partner_requirements`: ask for the grade the route IS
+
+The route page's **Partner requirements** panel prints `experienceLevel` and `requiredSkills` a
+scroll below the grade, so a lead grade written there is a second answer to *how hard is this?*
+Liberty Bell's Overexposure, a 5.8, read *"Strong 5.10-5.11 free climber"* (owner, 2026-10-28;
+the row had been corrected in #1965, and the class had never been measured).
+
+**The standard.** The leader should lead the route's crux grade **solidly, in its style** (trad or
+sport), at a crag. For alpine terrain (boots, a pack, commitment, route-finding) ask for **one step
+of margin** and say so: *"Solid 5.8 trad leader; 5.9 at the crag gives margin."* A step is a number
+grade through 5.9 and a letter from 5.10a up. Followers need to follow the crux grade cleanly. Never
+ask for a grade more than one step above the route, and never name a grade below the crux unless
+the text says how the crux is passed (aided, French-freed, an optional variation).
+
+**Why that standard** (researched 2026-10-28): guide services set the alpine-rock bar at the grade
+of the objective, not above it (an alpine 5.8 course asks you to follow 5.8; the Matterhorn asks for
+5.7 in boots; AMGA alpine-guide candidates need 5.8 alpine leads). The common rule of thumb among
+climbers is to lead about a grade below what you top-rope, because leading adds the fall and the
+gear; nothing published asks for two or three grades of headroom on lead. Mountain Project and
+theCrag print no partner requirement at all; this panel goes further than they do, so it has to be
+right.
+
+`npm run audit:partner-grade` lists rows that ask for more than one step above the route, less than
+its crux, or a 5.x lead on a route with no 5.x grade. Read each row before rewriting it.

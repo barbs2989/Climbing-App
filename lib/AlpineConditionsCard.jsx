@@ -59,11 +59,18 @@ function windowLabel(fc, a) {
   if (a.end == null) return a.start != null && a.start > now ? "from " + st(a.start) : "in effect";
   return (a.start != null && a.start > now ? "from " + st(a.start) + " " : "") + "until " + st(a.end);
 }
+// "1 PM–4 PM": a rain window at whole hours, in the forecast point's own clock.
+const hrSpan = (fc, from, to) => clockOf(fc, from).replace(":00", "") + "–" + clockOf(fc, to).replace(":00", "");
+/* THE HEIGHT WHEN THE ROUTE STATES NONE (census 2026-10-29: 4,903 of 6,208 alpine, mountaineering and scrambling routes
+   have no summit pin, no high point and no area elevation). Asked without one, Open-Meteo reads the ground at the
+   coordinate from its own terrain model and returns that height as `elevation` (metres): the height the forecast IS
+   for. Without it every flag that compares the freezing level with the summit stayed silent on four routes in five. */
+export const groundFt = (fc) => (fc && typeof fc.elevation === "number" && isFinite(fc.elevation) ? Math.round(fc.elevation * 3.28084) : null);
 // Round a start DOWN to the quarter hour: rounding up would start later than the arithmetic says.
 const floorQ = (s) => Math.floor(s / 900) * 900;
 const hrs = (h) => (Math.round(h * 2) / 2).toFixed(1).replace(/\.0$/, "") + " h";
 
-export function flagText(f) {
+export function flagText(f, fc) {
   const v = f.v || {};
   switch (f.key) {
     case "ice-warm-night": return "No freeze last night (low " + uTemp(v.low) + ") — warm nights destabilise ice most";
@@ -81,13 +88,13 @@ export function flagText(f) {
     case "fl-above": return "Freezing level " + uElev(Math.round(v.above / 100) * 100) + " above the summit by afternoon — expect rock and ice fall";
     case "verglas": return "Wet, then below freezing on the route — ice or snow on the holds";
     case "wet-rock": return uPrecip(v.inch) + " of rain in the last two days — wet rock climbs harder than its grade";
-    case "showers": return v.pct + "% chance of rain — retreating or rappelling wet is where things go wrong";
+    case "showers": return v.pct + "% chance of rain" + (v.inch == null ? "" : v.hrs ? ", about " + uPrecip(v.inch) + " over " + v.hrs + " h" + (fc && v.from != null ? " (" + hrSpan(fc, v.from, v.to) + ")" : "") : ", though no measurable rain is forecast in daylight") + " — retreating or rappelling wet is where things go wrong";
     case "new-snow": return uSnowfall(v.inch) + " of new snow at the summit" + (v.scramble ? " — a snowed-up scramble is a winter climb" : "");
     case "wind": return "Summit gusts to " + uWind(v.gust) + " in daylight";
     case "alert": return "Weather alert: " + v.event + " (" + String(v.severity).toLowerCase() + " severity), " + v.when + " — covers a whole forecast zone, not just this route";
     case "fog": return "Fog in the forecast: visibility under " + uDistMi(0.621371) + " for " + v.hours + " daylight hour" + (v.hours === 1 ? "" : "s") + " from " + v.from + " — a model estimate whose accuracy in the mountains is unchecked; no fog hour is not a clear day";
     case "smoke": return "Smoke and air quality: US AQI up to " + Math.round(v.aqi) + " (" + aqiWord(v.aqi).toLowerCase() + ") — a forecast for the area, not a reading at the route; smoke aloft or pooled in a valley is not seen";
-    case "models-disagree": return "Forecast models disagree on this day (" + [v.over.indexOf("gust") >= 0 ? "gusts " + uWind(v.gust[0]) + "–" + uWind(v.gust[1]) : null, v.over.indexOf("high") >= 0 ? "highs " + uTemp(v.high[0]) + "–" + uTemp(v.high[1]) : null, v.over.indexOf("fl") >= 0 ? "freezing level " + uElev(Math.round(v.fl[0] / 100) * 100) + "–" + uElev(Math.round(v.fl[1] / 100) * 100) : null].filter(Boolean).join(", ") + ") — read its flags as low confidence";
+    case "models-disagree": return "Forecast models disagree on this day (" + [v.over.indexOf("gust") >= 0 ? "gusts " + uWind(v.gust[0]) + "–" + uWind(v.gust[1]) : null, v.over.indexOf("high") >= 0 ? "highs " + uTemp(v.high[0]) + "–" + uTemp(v.high[1]) : null, v.over.indexOf("fl") >= 0 ? "freezing level " + uElev(Math.round(v.fl[0] / 100) * 100) + "–" + uElev(Math.round(v.fl[1] / 100) * 100) : null, v.over.indexOf("rain") >= 0 ? "rain " + uPrecip(v.rain[0]) + "–" + uPrecip(v.rain[1]) : null].filter(Boolean).join(", ") + ") — read its flags as low confidence";
     case "wind-chill": return "Wind chill " + uTemp(v.chill) + " — frostbite on exposed skin in about 30 minutes";
     default: return f.key;
   }
@@ -166,7 +173,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     let live = true; setWx(null);
     fetchAlpineForecast(pt.lat, pt.lng, pt.elevFt).then(function (j) { _alpWx[ck] = j; if (live) setWx({ data: j }); }, function () { if (live) setWx({ error: true }); });
     return function () { live = false; };
-  }, [ck, tries, kind]);
+  }, [ck, tries, kind]); // eslint-disable-line react-hooks/exhaustive-deps -- refetch only when the point key (ck) changes; pt is a fresh object each render and ck already encodes it
   // The models' spread: a second, optional read. Failing, it adds nothing -- never "they agree".
   const [sp, setSp] = useState(function () { return ck && _alpSp[ck] ? _alpSp[ck] : null; });
   useEffect(function () {
@@ -175,7 +182,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     let live = true; setSp(null);
     fetchAlpineSpread(pt.lat, pt.lng, pt.elevFt).then(function (j) { _alpSp[ck] = j; if (live) setSp(j); }, function () { if (live) setSp(null); });
     return function () { live = false; };
-  }, [ck, kind]);
+  }, [ck, kind]); // eslint-disable-line react-hooks/exhaustive-deps -- refetch only when the point key (ck) changes; pt is a fresh object each render and ck already encodes it
   // Air quality: a third, optional read. A failed one is "not measured" -- never "clean air".
   const [air, setAir] = useState(function () { return ck && _alpAir[ck] ? { data: _alpAir[ck] } : null; });
   const [airTries, setAirTries] = useState(0);
@@ -185,7 +192,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     let live = true; setAir(null);
     fetchCragAir(pt.lat, pt.lng).then(function (j) { _alpAir[ck] = j; if (live) setAir({ data: j }); }, function () { if (live) setAir({ error: true }); });
     return function () { live = false; };
-  }, [ck, kind, airTries]);
+  }, [ck, kind, airTries]); // eslint-disable-line react-hooks/exhaustive-deps -- refetch only when the point key (ck) changes; pt is a fresh object each render and ck already encodes it
   // Weather alerts: another optional read, US only. Outside it, or failed, says so -- never "no alerts".
   const [alerts, setAlerts] = useState(function () { const c = ck && _alpAlerts[ck]; return c && Date.now() - c.at < ALERT_TTL ? { data: c.data } : null; });
   const [alertTries, setAlertTries] = useState(0);
@@ -196,7 +203,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     let live = true; setAlerts(null);
     fetchPointAlerts(pt.lat, pt.lng).then(function (j) { _alpAlerts[ck] = { at: Date.now(), data: j }; if (live) setAlerts({ data: j }); }, function () { if (live) setAlerts({ error: true }); });
     return function () { live = false; };
-  }, [ck, kind, alertTries]);
+  }, [ck, kind, alertTries]); // eslint-disable-line react-hooks/exhaustive-deps -- refetch only when the point key (ck) changes; pt is a fresh object each render and ck already encodes it
   useEffect(function () { setDayI(0); }, [route.id]);
 
   /* The legs the start counts back from: the Planner's own estimate, at the Planner's own inputs. A
@@ -227,8 +234,8 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     days.forEach(function (d, k) {
       if (d.date < today) return;
       const fs = faceSun[d.date];
-      let r = dayFlags(fc, days, k, { kind, rockToo: kind === "glacier" && catOf(route) === "alpine", terrain, highFt: pt.elevFt, snowFt: floor ? floor.ft : null, legs, sun: fs && fs.bands ? fs : null });
-      const ms = sp ? modelSpread(sp, d.date) : null;
+      let r = dayFlags(fc, days, k, { kind, rockToo: kind === "glacier" && catOf(route) === "alpine", terrain, highFt: pt.elevFt != null ? pt.elevFt : groundFt(fc), snowFt: floor ? floor.ft : null, legs, sun: fs && fs.bands ? fs : null });
+      const ms = sp ? modelSpread(sp, d.date, null, daySummary(fc, d).precip) : null;
       if (ms && ms.over.length) r = Object.assign({}, r, { flags: r.flags.concat([{ key: "models-disagree", level: "caution", v: ms }]) });
       const al = alerts && alerts.data && !alerts.data.outside ? alertsForDay(normAlerts(alerts.data), d.date, fc) : [];
       if (al.length) r = Object.assign({}, r, { flags: r.flags.concat(al.map(function (a) { return { key: "alert", level: alertLevel(a), v: { event: a.event, severity: a.severity, when: windowLabel(fc, a) } }; })) });
@@ -243,7 +250,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       out.push(Object.assign({ date: d.date, sum: daySummary(fc, d), sunrise: d.sunrise, sunset: d.sunset, aqi: aq }, r, { daysEarly: daysEarly }));
     });
     return { fc, days: out.slice(0, 7) };
-  }, [wx, sp, air, alerts, kind, ck, floor && floor.ft, legs.up, legs.down, legs.floor, legs.fromCamp, legs.tech, legs.hike, faceSun]);
+  }, [wx, sp, air, alerts, kind, ck, floor && floor.ft, legs.up, legs.down, legs.floor, legs.fromCamp, legs.tech, legs.hike, faceSun]); // eslint-disable-line react-hooks/exhaustive-deps -- legs is rebuilt every render, so its fields are listed; route/terrain/pt.elevFt are covered by ck, kind and the weather reads
   const selDay = model && model.days.length ? model.days[Math.min(dayI, model.days.length - 1)] : null;
   useEffect(function () {
     if (!face || face.missing || legs.floor || !selDay || selDay.sunrise == null || selDay.sunset == null || faceSun[selDay.date]) return;
@@ -262,7 +269,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       }, 30);
     }, function () { if (live) put({ error: true }); });
     return function () { live = false; clearTimeout(tm); if (!done) setFaceSun(function (m) { if (!m[date] || !m[date].busy) return m; const n = Object.assign({}, m); delete n[date]; return n; }); };
-  }, [face, legs.floor, selDay && selDay.date]);
+  }, [face, legs.floor, selDay && selDay.date]); // eslint-disable-line react-hooks/exhaustive-deps -- faceSun is written by this effect (would loop); runs per selected day, selDay is a fresh object
 
   if (!kind) return null;
   const box = { background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", marginBottom: ROUTE_GAP };
@@ -353,13 +360,13 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     <DayHead title={"CONDITIONS · " + KIND_LABEL[kind].toUpperCase()} dayLabel={dayName(day, di)} nav={nav} />
     {startEl || sunEl ? <div style={{ background: C.surface, borderRadius: 10, padding: "10px 12px", marginBottom: 10 }}>{startEl}{pubStart ? <div style={{ fontSize: 12, color: C.text, lineHeight: 1.5, marginTop: 6 }}><b>{"This route’s usual start: "}</b>{pubStart}</div> : null}{sunEl}</div> : null}
     <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 10 }}>
-      {day.flags.length ? day.flags.map(function (f, i) { const col = f.level === "warn" ? C.red : C.amber; return <div key={f.key + i} style={{ display: "flex", gap: 8, alignItems: "flex-start", fontSize: 12.5, color: C.text, lineHeight: 1.45 }}><span aria-hidden="true" style={{ flexShrink: 0, marginTop: 5, width: 8, height: 8, borderRadius: "50%", background: col }} /><span><b style={{ color: col }}>{f.level === "warn" ? "Warning: " : "Caution: "}</b>{flagText(f)}</span></div>; })
+      {day.flags.length ? day.flags.map(function (f, i) { const col = f.level === "warn" ? C.red : C.amber; return <div key={f.key + i} style={{ display: "flex", gap: 8, alignItems: "flex-start", fontSize: 12.5, color: C.text, lineHeight: 1.45 }}><span aria-hidden="true" style={{ flexShrink: 0, marginTop: 5, width: 8, height: 8, borderRadius: "50%", background: col }} /><span><b style={{ color: col }}>{f.level === "warn" ? "Warning: " : "Caution: "}</b>{flagText(f, fc)}</span></div>; })
         : <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>Nothing in the forecast flags this day.</div>}
     </div>
     <RangeLine route={route} sum={day.sum} />
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 8 }}>{readout.map(function (r) { return <div key={r[0]} style={{ background: C.surface, borderRadius: 8, padding: "6px 8px" }}><div style={{ fontSize: 10.5, color: C.textMuted, fontWeight: 700 }}>{r[0]}</div><div style={{ fontSize: 12.5, color: C.text, fontWeight: 700 }}>{r[1]}</div>{r[2] ? <div style={{ fontSize: 11, color: C.textMuted, marginTop: 1 }}>{r[2]}</div> : null}</div>; })}</div>
     <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5 }}>
-      {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "halfway" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + BLIND[kind]}
+      {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : groundFt(fc) != null ? uElev(Math.round(groundFt(fc) / 10) * 10) + ", the ground height at the map point" : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "halfway" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + BLIND[kind]}
     </div>
   </div>
   <DayByDay days={days} di={di} pick={setDayI} dayName={dayName} nWarn={nWarn} nCaution={nCaution} fc={fc} legs={legs} startOn={kind !== "waterfall" && kind !== "cragmixed"} />
@@ -393,7 +400,8 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
 function DayByDay({ days, di, pick, dayName, nWarn, nCaution, fc, legs, startOn }) {
   const cell = { background: C.surface, borderRadius: 8, padding: "5px 7px", display: "block", minWidth: 0 };
   const lbl = { display: "block", fontSize: 10.5, color: C.textMuted, fontWeight: 700 };
-  const val = { display: "block", fontSize: 12.5, color: C.text, fontWeight: 700, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" };
+  // Values WRAP (a freezing level "8,200 ft–10,900 ft" breaks after its dash): at 390px a one-line clip cut it to "8,200 ft–1…" on every day.
+  const val = { display: "block", fontSize: 12.5, color: C.text, fontWeight: 700, lineHeight: 1.3, overflowWrap: "anywhere" };
   const date = function (d) { return new Date(d.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", timeZone: "UTC" }); };
   return <div style={BOX}>
     <CardHead style={{ marginBottom: 8 }}>DAY BY DAY</CardHead>
@@ -406,11 +414,15 @@ function DayByDay({ days, di, pick, dayName, nWarn, nCaution, fc, legs, startOn 
       const gust = s.gust != null ? uWind(s.gust) : "—";
       const start = startOn && !legs.floor && d.start && d.daysEarly < 2 ? (legs.fromCamp ? "Leave camp by " : "Start by ") + clockOf(fc, floorQ(d.start.at)) + (d.daysEarly === 1 ? " the night before" : "") : null;
       const extra = [s.snow != null ? uSnowfall(s.snow) + " new snow" : null, start].filter(Boolean).join(" · ");
-      return <button key={d.date} onClick={function () { pick(i); }} aria-pressed={on} aria-label={dayName(d, i) + ", " + flagWord + ". High / low " + temp + ". Freezing level " + fl + ". Gusts " + gust + ". " + extra + "."} style={{ display: "block", width: "100%", textAlign: "left", padding: "11px 14px", margin: 0, border: "none", borderTop: i ? "1px solid " + C.border : "none", borderRadius: 0, background: on ? C.blueBg : "transparent", boxShadow: on ? "inset 3px 0 0 " + C.blue : "none", color: C.text, cursor: "pointer", font: "inherit" }}>
+      // The AMOUNT, its hours and its window, with the chance beneath -- never the chance alone (owner's note, 2026-10-28).
+      const rain = s.precip == null ? "—" : s.precip === 0 ? "None" : uPrecip(s.precip);
+      const rainSub = [s.precipHrs ? s.precipHrs + " h" + (s.precipFrom != null ? ", " + hrSpan(fc, s.precipFrom, s.precipTo) : "") : null, s.popMax ? "hourly chance up to " + Math.round(s.popMax) + "%" : null, s.snow ? "snow melted in" : null].filter(Boolean).join(" · ");
+      return <button key={d.date} onClick={function () { pick(i); }} aria-pressed={on} aria-label={dayName(d, i) + ", " + flagWord + ". High / low " + temp + ". Freezing level " + fl + ". Gusts " + gust + ". " + (s.snow ? "Precipitation " : "Rain ") + rain + (rainSub ? ", " + rainSub : "") + ". " + extra + "."} style={{ display: "block", width: "100%", textAlign: "left", padding: "11px 14px", margin: 0, border: "none", borderTop: i ? "1px solid " + C.border : "none", borderRadius: 0, background: on ? C.blueBg : "transparent", boxShadow: on ? "inset 3px 0 0 " + C.blue : "none", color: C.text, cursor: "pointer", font: "inherit" }}>
         <span style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 6 }}><span style={{ fontSize: 12.5, fontWeight: 800 }}>{dayName(d, i)}</span><span style={{ fontSize: 11.5, color: C.textMuted }}>{date(d)}</span><span style={{ fontSize: 12, fontWeight: 700, color: w ? C.red : c ? C.amber : C.textSub }}>{flagWord}</span></span>
-        <span style={{ display: "grid", gridTemplateColumns: "repeat(3,minmax(0,1fr))", gap: 5 }}>
+        <span style={{ display: "grid", gridTemplateColumns: "repeat(2,minmax(0,1fr))", gap: 5 }}>
           <span style={cell}><span style={lbl}>High / low</span><span style={val}>{temp}</span></span>
           <span style={cell}><span style={lbl}>Freezing level</span><span style={val}>{fl}</span></span>
+          <span style={cell}><span style={lbl}>{s.snow ? "Precipitation" : "Rain"}</span><span style={Object.assign({}, val, { color: s.precip > 0 ? C.blue : C.text })}>{rain}</span>{rainSub ? <span style={{ display: "block", fontSize: 10.5, color: C.textMuted, lineHeight: 1.35 }}>{rainSub}</span> : null}</span>
           <span style={cell}><span style={lbl}>Gusts</span><span style={val}>{gust}</span></span>
         </span>
         <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 4 }}>{extra}</span>
@@ -465,7 +477,7 @@ function HourByHour({ fc, day, dayLabel, nav, pt, floor, legs, snowLegs }) {
   const vis = v("visibility", cur), lowc = v("cloud_cover_low", cur);
   const pop = v("precipitation_probability", cur), pr = v("precipitation", cur), sn = v("snowfall", cur), fl = v("freezing_level_height", cur), cl = v("cloud_cover", cur), code = v("weather_code", cur);
   const wc = t != null && w != null ? windChillF(t, w) : null, chilled = wc != null && t != null && t - wc >= 5;
-  const tops = pt.elevFt;
+  const tops = pt.elevFt != null ? pt.elevFt : groundFt(fc);
   const marks = marksIn(T);
   return <div style={BOX}>
     <DayHead title="HOUR BY HOUR" dayLabel={dayLabel} nav={nav} />

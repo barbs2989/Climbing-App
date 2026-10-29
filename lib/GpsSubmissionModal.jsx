@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { parseGpxXml, parseCoordinateList, validateGpxQuality, calculateQualityScore, detectGpxFormat, formatCoordinatesForDisplay } from './gpxParser'
+import { parseGpxXml, parseCoordinateList, validateGpxQuality, calculateQualityScore, detectGpxFormat } from './gpxParser'
 import { POP_CLOSE } from "./popupChrome.js";
 import TrailDrawMap from './TrailDrawMap'
 import ActionIcon from '../src/components/ActionIcon.tsx'

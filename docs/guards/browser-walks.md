@@ -1418,6 +1418,26 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Blind to**: what a screen reader does over time (focus order, what is announced on change),
     any state the walk never opens, contrast over a photo. Automated rules find about a third of
     real barriers — the manual pass is `docs/accessibility-testing.md`.
+- **`check:overflow -- --width 1280` walks the DESKTOP website** (2026-10-28): at 1024px and
+  wider the app is a different layout (top bar, sidebar, a 640px column, a right rail from
+  1280), built from inline styles the phone walk never draws, and the feature doc listed "No
+  browser walk runs at desktop width" as a known gap. `--width N` sets the viewport (height
+  900 at desktop widths, 844 on a phone); the default is still 390. `render-guards.yml` runs
+  the walk twice in the `horizontal-overflow` job, the 1280 step under `!cancelled()` so a red
+  phone walk does not hide a desktop finding. 1280 rather than 1024 because it draws the rail
+  too, so it measures the widest shell. The sub-tab taps (`tapByText`) skip fixed elements, so
+  the sidebar's own *Partners* row cannot steal the route page's *Partners* tap. The
+  self-test's injected boxes are now sized from the viewport (`vw+210`, `vw+130`, `vw+510`;
+  the same 600/520/900 at 390): the fixed sizes fit inside 1280, and the first desktop run
+  failed its own self-test, seeing 0 of 2. First run (seed data; the DB was answering 522):
+  8 tabs, 7 route views and 70 of 74 overlays, 1280/1280, 0 offenders.
+- **`check:overflow` also measures an OPEN pitch** (2026-10-28): the route sub-tab walk only
+  ever saw ROUTE BREAKDOWN closed, and the pinned sample route has no pitch rows, so the pitch
+  card (belay / anchor / gear boxes, *Add a photo of this pitch*, clamped comments) had never
+  been measured. After the sub-tabs it reloads with `?zr=1&zrp=1` (the scaffold's pick of a
+  seed route WITH pitch detail), taps Plan, opens the first `[data-kind="pitch"]` row and scans
+  again as `route:Plan (pitch open)`. First run: 390/390, 0 offenders. "no pitch row reached"
+  in the log means the seed lost its pitched route — fix the seed, not the guard.
 - **`check:overflow`** asks whether the app still fits the phone it is built for. Every
   control here is hand-positioned with inline styles and there is no CSS framework, which is
   exactly the setup where one fixed `minWidth`, a `flex` row with `nowrap`, or a single

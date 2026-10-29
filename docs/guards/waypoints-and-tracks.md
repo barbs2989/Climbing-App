@@ -369,6 +369,23 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     pins, and do not repair a track by moving vertices onto pins** (`audit:stranded-track-vertices`
     now says so too). `check:gpx-caveats` section 1 asserts the export side: a pin-join route's file
     has `<wpt>` and no `<trk>`.
+  - **Summit reach (owner, 2026-10-28: "only use gpx tracks where the person reached the summit").**
+    `reachesTheSummit` / `SUMMIT_REACH_M` (300 m) make a track that stops short of a summit pin count
+    as no track in `recordedTrackPts`. Measured 2026-10-25 over 444 non-pin-join tracks with a summit
+    pin: 375 within 150 m, 19 in 150-300 m, 50 beyond 300 m (Mount Rainier Emmons Glacier, Luna Peak,
+    Berdeen Peak, Mount Barnes, Himmelhorn). Audit table: `~/dev/mp-data/_tracks/route-track-audit-2026-10-25.json`.
+    Section 6 of `check:track-caveat` asserts the drop, the keep, and that a route with no summit pin
+    keeps its track. The old on-screen caveats for "stops short of the summit" and "different way up"
+    now assert the track is NOT drawn, because the owner's rule replaces the caveat with no track.
+  - **Is it a recording? asks the VERTEX half alone (`lineIsBuiltFromPins`, 2026-10-28).**
+    `recordedTrackPts` used `trackIsJustTheWaypoints`, whose PIN half (most pins sit on the line)
+    exists for the CAPTION. Adding two camp pins off a stored trailhead-to-summit chord failed that
+    half, so the chord was drawn as a recorded track (21 routes after the camp-pin run; any route a
+    climber adds two off-line pins to). Now: the line's points sit on at least TWO distinct pins (a
+    stub piled on one pin stays with `trackStubCaveat`). `measure-pin-promoted-lines.mjs` read all
+    608 routes carrying a gpx: drawn before 463, after 426, **37 no longer drawn, 0 gained** — every
+    one a 2-6 point line, none a recording. Injection: point `recordedTrackPts` back at
+    `trackIsJustTheWaypoints` and section 6's off-pin chord assertion fails.
   - **The provenance chip does not already cover this, and the measurement says so in the worst
     way.** `auto_generated` is true on **45%** of the synthetic tracks and on **78%** of the routes
     whose track is genuine — it points the **wrong way**, so a climber reading the chip cannot tell

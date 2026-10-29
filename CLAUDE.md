@@ -36,7 +36,7 @@ npm run check:guard-wiring # every guard RUNS, is named here, and this file agre
 npm run check:action-versions # no workflow pins an action below the version we moved to (in build)
 npm run check:types # every TypeScript file under src/ type-checks, strict — Vite strips types and checks nothing (in build)
 npm run type-check # the same as check:types, under the name the owner asked for
-npm run lint # ESLint, every rule an error: unused variables, `any`, rules-of-hooks + hook dependency arrays; legacy findings held in eslint-suppressions.json, which only shrinks (in build)
+npm run lint # ESLint, every rule an error: unused variables, `any`, rules-of-hooks + hook dependency arrays; ZERO findings, no baseline file, every disable names its rule and a reason (in build)
 npm run measure:guard-reach -- --out before.json # ...then --out after.json --compare before.json: did moving code make a guard go BLIND? (hand-run around every extraction)
 
 # ── Static code guards — notes: docs/guards/static-code.md ──
@@ -63,6 +63,7 @@ npm run check:a11y-names # every control a screen reader reaches has a name (in 
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:popup-chrome # ...and every ✕, ← Back and remove-✕ in the app look the SAME — lib/popupChrome.js (in build)
+npm run check:tap-slop # a touch just off a small control still reaches it — lib/tapSlop.js stays installed, 44px, and never steals a hit (in build)
 npm run check:doc-paths # every file path this document names still EXISTS (in build)
 npm run check:feature-docs # every docs/features doc names files and SYMBOLS that exist, and CURRENT_STATE.md indexes them all (in build)
 npm run check:injection-anchors # every INJECTION CASE still LANDS, so a guard's proof cannot rot (in build)
@@ -151,6 +152,7 @@ npm run check:area-page-honest # the area page prints only STORED facts, its cha
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:field-renders # every enriched route column actually reaches a screen
+npm run check:declination # the base-of-the-climb arrow turns a MAGNETIC phone compass into TRUE north, to NOAA's WMM2025 test values (in build)
 npm run check:summit-briefing # a peak page states only what its routes AGREE on — and does not withhold what they do
 npm run check:token-boxes  # no element shaped like a chip holds a paragraph
 npm run check:pitch-split # every pitch_detail entry is a row of ROUTE BREAKDOWN, in order (in build)
@@ -162,6 +164,7 @@ npm run audit:rack-items   # does any rack column, in ANY state, file NON-RACK g
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run audit:camp-elevations # are the camp elevations already ON SCREEN right? (99% are)
 npm run audit:camp-route-fit  # is this camp plausibly usable FOR THIS ROUTE? (6 candidates)
+npm run audit:camp-pins       # is every camp the panel lists a PIN on the map, with a coordinate, ON the recorded track?
 
 # ── Planner estimates, gain and rappels — notes: docs/guards/planner-and-rappels.md ──
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
@@ -221,6 +224,7 @@ npm run audit:approach-scope # does a route's approach text run past the base of
 npm run audit:mountaineering-rule # mountaineering is ONLY a walk-up and a scramble is never roped: no mountaineering or scrambling row carries a 5.x grade (alpine instead), and every disciplines list names its own primary; trigger 0280/0366 + catOf/rDiscs enforce it
 npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
 npm run audit:prose-length   # does a route's DESCRIPTION state a length or pitch count its own STATS contradict? (--selftest needs no DB)
+npm run audit:partner-grade  # does PARTNER REQUIREMENTS ask for a lead grade the route's own GRADE contradicts? (--selftest needs no DB)
 npm run audit:multi-approach # a climb reached MORE THAN ONE WAY that the page cannot switch between yet
 npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
 npm run check:enrichment-traceable # does a climbing_route batch invent anything?
@@ -267,7 +271,7 @@ npm run check:schema # lib/db.js never reads a table or column the database lack
 npm run check:list-row-columns # the Climbs list's THIN ROW carries every column its readers read, and nothing they don't (in build)
 npm run check:migrations # two migrations must never share a number (in build)
 npm run check:migration-replay # does supabase/migrations rebuild an EMPTY database, as a Supabase preview does? (--compare-live: into the LIVE schema)
-npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS (in build)
+npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS; every write policy asks WHO is calling; every view is read-only to the app's keys (in build)
 ```
 
 There is no unit test suite; `check:types` type-checks `src/` (strict TypeScript), `lint` runs
@@ -362,8 +366,9 @@ Four functions do the real work; everything else is UI around them. The code is 
   rule, 2026-10-15). Any finding about unused variables, implicit or explicit `any`, or a hook's dependency
   array is fixed in the code before the work is presented or merged — never silenced with a new
   `eslint-disable`, a cast to `any`, or `--suppress-all`. An omission from a dependency array that is
-  genuinely intended gets a `// eslint-disable-line react-hooks/exhaustive-deps -- <why>` naming the reason.
-  When a legacy finding is fixed, shrink the baseline: `npx eslint . --prune-suppressions`.
+  genuinely intended gets a `// eslint-disable-line react-hooks/exhaustive-deps -- <why>` naming the reason
+  (lint fails a directive with no rule or no ` -- `). The legacy backlog is cleared (2026-10-28): there is no
+  `eslint-suppressions.json`, and lint fails if one reappears.
 - When adding a feature, follow the existing pattern: add seed data to the relevant top-level `const`, add `useState` in `App`, and add a `tab===...`/sub-view branch in the render tree. Match the dense, inline-style formatting of surrounding code.
 - Styling is always inline `style={{...}}` referencing the `C` palette — do not introduce CSS files or a styling library.
 - For anything outside the DB-backed routes/areas/contributions/auth path (crews, messages, connections, vouches, logs, trip reports, etc.), "saving" means updating React state — don't reach for storage APIs unless explicitly asked to add persistence. For DB-backed data, use the existing `lib/db.js`/`lib/supabase.js` patterns (e.g. `submitContribution`) rather than writing new ad-hoc persistence.

@@ -339,7 +339,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     hiding in a build log.
   - Injection-tested; the four cases are named at the bottom of the script and are driven by
     `--inject=`, since the fault lives on GitHub and the checker cannot open pull requests.
-- **`check:rls`** guards three database-security invariants that were each broken in production,
+- **`check:rls`** guards five database-security invariants that were each broken in production,
   and which **58 existing guards could not see** — not one of them was about RLS. All six defects
   the 2026-08-19/20 audit found were on tables holding **zero rows**: a policy that has never been
   asked to refuse anything has never been tested, and 21 of the 32 tables `lib/db.js` writes were
@@ -373,6 +373,37 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     about the run looked wrong; it was caught only by diffing the parsed set against `pg_policy` on
     the live database — **79 parsed against 114 live**. Now 122 = 114 public + 8 `storage.objects`,
     with **zero** live-but-unparsed. Re-run that diff after any change to the parsing.
+  - **Rule 4 — every permissive WRITE policy asks who is calling (2026-10-15).** The owner asked
+    that a signed-in climber can insert, update and delete only their own rows. "Their own" is not
+    always a `user_id` column (a crew's organizer edits its members, a group's managers approve a
+    join), so the rule is the part that holds for all of them: an INSERT/UPDATE/DELETE/ALL policy
+    must contain `auth.uid()`/`auth.jwt()`/`auth.role()`, or call a helper whose **latest**
+    definition reads one (`is_group_manager`, `is_admin`, ...). Permissive policies OR together, so
+    one `with check (true)` defeats every careful policy beside it. RESTRICTIVE policies are skipped
+    (they only narrow), and SELECT is not judged: the public reads (`routes`, `areas`, `reviews`,
+    `contributions`, `objectives`, `crew_members`, `vouches`, ...) are deliberate. Audited live the
+    same day: 75/75 public tables RLS-on, 144 permissive write policies, every one bound; the only
+    write policies without a direct `auth.uid()` are the group-manager ones, whose helpers read it.
+    Parsed set re-diffed against `pg_policy`: identical (one name differs only by Postgres's 63-char
+    identifier truncation). Injections 7 (`with check (true)`) and 8 (strip a helper's
+    `auth.uid()`) both fire; a restrictive `with check (true)` correctly does not.
+  - **Rule 5 — every VIEW is read-only to `anon` and `authenticated` (2026-10-28, `0376`).** Rule 3
+    sees tables only, and a view is not held by RLS: it runs as its owner (`postgres`) unless it is
+    `security_invoker`. Supabase's default privileges give the client roles **every** privilege on a
+    new object in `public`, and the migrations that made `crew_listings` (0036) and
+    `catalog_directory`/`catalog_routes` (0214) only ever GRANTed select. `crew_listings` and
+    `catalog_directory` are one-table views, so Postgres writes **through** them
+    (`information_schema.views.is_updatable = YES`): the anon key could update or delete any crew or
+    any area, past every policy (`set local role anon; explain delete from crew_listings` planned
+    "Delete on crews"). Live re-audit the same day: 84/84 tables RLS-on, 257 policies, every
+    permissive write bound (rule 4); 4 tables have no policy at all (`connection_events`,
+    `edge_rate_events`, `route_base_pin_changes`, `route_views`) — deny-all to the app keys, written
+    only by service-role edge functions or definer RPCs. `0376` revokes everything but SELECT and
+    makes the two catalog views `security_invoker` (Supabase lint 0010); `crew_listings` stays
+    owner-rights on purpose (it reads the private `crews` table and re-exposes listing columns only).
+    After applying, the same EXPLAIN as anon fails `42501 permission denied`, and anon reads of all
+    three still return rows. A DROP then CREATE of a view starts fresh grants, `create or replace`
+    keeps them; the replay tracks both. Injection 9 (remove 0376's revoke) names the three views.
   - A dropped table takes its policies with it, or the guard keeps checking policies on tables
     nobody can fix (measured: `account_links` kept two after #1141 removed account linking).
   - Fails **closed** three ways — zero tables, zero policies or zero definer functions parsed are
@@ -382,7 +413,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     PostgREST does not expose `pg_catalog`, and this repo's rule is that CI never holds privileged
     credentials. Catching the shape where it is *written* is better than catching it in the
     database a day later anyway.
-  - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
+  - Injection-tested 9/9, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
 - **`check:catalog-duplicates`** asks whether the catalog can gain a **duplicate route** again, and
   whether one already has. Built 2026-09-25 after `import-route-grades --create-areas` filed MP's

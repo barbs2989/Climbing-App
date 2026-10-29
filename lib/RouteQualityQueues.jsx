@@ -21,7 +21,7 @@ import {
 } from "./db";
 import { C, DLOCALE, sameEditValue, pubNameRow } from "../ClimbMatchCore";
 import { AREA_EDIT_FIELDS, monthsLabel } from "./areaFields";
-import { useAreaCardsByIds } from "./db";
+import { useAreaEditRowsByIds } from "./db";
 import LoadingRows from "../src/components/LoadingRows.tsx";
 
 // An AREA edit (0319): area_id set, route_id null. Its field label and current value come from
@@ -116,14 +116,15 @@ function Msg({ msg }) {
 }
 
 // ── 1. Held route edits ──────────────────────────────────────────────────────────────
+const NO_ROWS = [];
 export function FieldContributionQueue({ onOpenRoute }) {
   const q = useFieldContributions("pending");
   const fieldsQ = useContributionFields();
-  const rows = q.data || [];
+  const rows = q.data || NO_ROWS;
   const routeIds = useMemo(() => Array.from(new Set(rows.map((r) => r.route_id).filter(Boolean))), [rows]);
   const routesQ = useRouteRowsByIds(routeIds);
   const areaIds = useMemo(() => Array.from(new Set(rows.filter(isAreaRow).map((r) => r.area_id))), [rows]);
-  const areasQ = useAreaCardsByIds(areaIds);
+  const areasQ = useAreaEditRowsByIds(areaIds);
   const names = useNames(rows.map((r) => r.contributor));
   const [busy, setBusy] = useState(null);
   const [msg, setMsg] = useState(null);
@@ -181,7 +182,7 @@ export function FieldContributionQueue({ onOpenRoute }) {
         // An area's current value is the column the page renders (lib/areaFields.js `cur`), shown
         // the way the sheet shows it; the proposed months read as "Mar–May" rather than [3,4,5].
         const cur = g.area_id ? (areaRow && area ? (area.cur(areaRow) || undefined) : undefined) : (f && f.column_name && routeRow ? routeRow[f.column_name] : undefined);
-        const proposed = g.area_id && area && area.type === "months" ? monthsLabel(r0.value) : r0.value;
+        const proposed = g.area_id && area && area.type === "months" ? monthsLabel(r0.value) : g.area_id && area && area.fmt ? (area.fmt(r0.value) || r0.value) : r0.value;
         const name = g.area_id ? ((r0.areas && r0.areas.name) || (areaRow && areaRow.name) || g.area_id) : ((r0.routes && r0.routes.name) || g.route_id);
         const isBusy = busy === g.key;
         const m = mode[g.key];
@@ -203,6 +204,8 @@ export function FieldContributionQueue({ onOpenRoute }) {
             <div><div style={{ fontSize: 11, color: C.green, fontWeight: 700, marginTop: 4 }}>PROPOSED</div><Val v={proposed} tone="new" /></div>
           </div>
           <RowDiff cur={cur} nxt={r0.value} />
+          {/* A proposed parking pin (0378) is checked by LOOKING at it: the satellite view shows whether there is a lot or a pullout there. */}
+          {area && area.type === "pin" && r0.value && isFinite(Number(r0.value.lat)) && isFinite(Number(r0.value.lng)) ? <a href={"https://www.google.com/maps/search/?api=1&query=" + Number(r0.value.lat) + "," + Number(r0.value.lng)} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", minHeight: 44, marginTop: 4, color: C.blue, fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>See the proposed pin in Google Maps</a> : null}
           {m === "edit" ? <div style={{ marginTop: 9 }}>
             <textarea aria-label={"Edit the value for " + label} value={draft[g.key] != null ? draft[g.key] : draftText(g)} onChange={(e) => setDraft((d) => ({ ...d, [g.key]: e.target.value }))} rows={4} style={fld} />
             <div style={{ display: "flex", gap: 8, marginTop: 7 }}>
@@ -235,7 +238,7 @@ export function RouteFlagQueue({ onOpenRoute }) {
   const [busy, setBusy] = useState(null);
   const [msg, setMsg] = useState(null);
   const [note, setNote] = useState({});
-  const rows = q.data || [];
+  const rows = q.data || NO_ROWS;
   if (q.isLoading) return <LoadingRows C={C} label="Loading flags…" style={{padding: "8px 0"}}/>;
   if (q.error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>Could not load the flags — {(q.error && q.error.message) || "the request failed"}. This is not a report that there are none.</div>;
   const act = async (id, status) => {
@@ -274,7 +277,7 @@ export function ContributorStandingQueue() {
   const [busy, setBusy] = useState(null);
   const [msg, setMsg] = useState(null);
   const [reason, setReason] = useState({});
-  const rows = q.data || [];
+  const rows = q.data || NO_ROWS;
   if (q.isLoading) return <LoadingRows C={C} label="Loading contributor standing…" style={{padding: "8px 0"}}/>;
   if (q.error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>Could not load contributor standing — {(q.error && q.error.message) || "the request failed"}. This is not a report that nobody has a strike.</div>;
   const act = async (uid, status, days) => {

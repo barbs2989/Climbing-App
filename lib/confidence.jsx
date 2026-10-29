@@ -58,13 +58,13 @@ export function ConfChip({ level, label, onFlag, compact }) {
   const name = (label || "this detail").toString().replace(/\s+/g, " ").trim();
   return <span style={{ display: "inline-flex", alignItems: "center", gap: 4, flexShrink: 0, marginLeft: compact ? 4 : 6 }}>
     <span title={LEVEL_HELP[level]} aria-label={name + ": " + LEVEL_LABEL[level] + " confidence" + (level === "high" ? ", locked" : "")} style={{ fontSize: 10, fontWeight: 800, letterSpacing: 0.4, textTransform: "uppercase", color: col, background: bg, border: "1px solid " + bd, borderRadius: 6, padding: "1px 6px", lineHeight: 1.6, whiteSpace: "nowrap" }}>{LEVEL_LABEL[level] + (level === "high" ? " · locked" : "")}</span>
-    {onFlag ? <button onClick={function (e) { e.stopPropagation(); onFlag(); }} title={"Flag " + name + " as wrong"} aria-label={"Flag " + name + " as wrong"} style={{ background: "transparent", border: "1px solid " + C.border, color: C.textSub, borderRadius: 6, fontSize: 11, lineHeight: 1.4, padding: "1px 6px", cursor: "pointer", whiteSpace: "nowrap" }}>{"Flag"}</button> : null}
+    {onFlag ? <button onClick={function (e) { e.stopPropagation(); onFlag(); }} title={"Flag " + name + " as wrong"} aria-label={"Flag " + name + " as wrong"} style={{ background: "transparent", border: "1px solid " + C.border, color: C.textSub, borderRadius: 6, fontSize: 11, lineHeight: 1.4, padding: "1px 6px", cursor: "pointer", whiteSpace: "nowrap", pointerEvents: "auto" }}>{"Flag"}</button> : null}
   </span>;
 }
 
 // One line under the route's first section explaining the three levels, shown once per page.
 export function ConfidenceLegend() {
   return <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, margin: "0 0 10px", padding: "7px 10px", background: C.surface, border: "1px solid " + C.border, borderRadius: 9 }}>
-    {"Every detail on this page carries a confidence level. "}<b style={{ color: C.green }}>High</b>{" is checked and locked — flag it if it has changed. "}<b style={{ color: C.amber }}>Medium</b>{" is on file and open to your edits. "}<b style={{ color: C.textSub }}>Low</b>{" is missing, inferred or flagged — your edit is most welcome there. Adding to an empty detail puts it on the page at once; a change goes live when a second climber sends the same, or once ClimbMatch checks it."}
+    {"Every detail on this page carries a confidence level. "}<b style={{ color: C.green }}>High</b>{" is checked and locked — flag it if it has changed. "}<b style={{ color: C.amber }}>Medium</b>{" is on file and open to your edits. "}<b style={{ color: C.textSub }}>Low</b>{" is missing, inferred or flagged — your edit is most welcome there. ClimbMatch checks every edit before it goes on the page."}
   </div>;
 }

@@ -200,6 +200,20 @@ eq("an inch or more of new snow on a scramble is flagged (it becomes a winter cl
 console.log("\n4. ALPINE ROCK — showers and storms anchor the start of the DESCENT");
 const shw = run(forecast((d, h) => (d === T && h >= 12 && h < 16 ? { pp: 50, fl: 12000 } : { fl: 12000 })), { kind: "alpinerock", terrain: { snow: "no" }, highFt: 8000, legs: LEGS });
 eq("a 50% afternoon chance of rain is a showers caution", keys(shw).includes("showers:caution"), true);
+// THE AMOUNT, NOT ONLY THE CHANCE (owner's note, 2026-10-28: "it usually says a percentage, but not an expected amount of rain").
+{
+  const wetFc = forecast((d, h) => (d === T && h >= 13 && h < 16 ? { pp: 60, rain: 0.04, fl: 12000 } : { fl: 12000 }));
+  const fs1 = run(wetFc, { kind: "alpinerock", terrain: { snow: "no" }, highFt: 8000, legs: LEGS }).flags.find((f) => f.key === "showers");
+  eq("the showers flag carries the day's AMOUNT, its wet hours and their window", fs1 && [Math.round(fs1.v.inch * 100) / 100, fs1.v.hrs, fs1.v.to - fs1.v.from], [0.12, 3, 3 * 3600]);
+  const txt = fs1 ? A.flagText(fs1, wetFc) : "";
+  eq("...and says it in words: chance, amount, hours and window", /^60% chance of rain, about 0\.12" over 3 h \(\d+ (AM|PM)–\d+ (AM|PM)\)/.test(txt), true);
+  const dry = run(forecast((d, h) => (d === T && h >= 12 && h < 16 ? { pp: 50, fl: 12000 } : { fl: 12000 })), { kind: "alpinerock", terrain: { snow: "no" }, highFt: 8000, legs: LEGS }).flags.find((f) => f.key === "showers");
+  eq("...a chance with no measurable rain says so instead of an amount", dry ? /no measurable rain/.test(A.flagText(dry, wetFc)) : false, true);
+  const days = A.localDays(wetFc), sm = A.daySummary(wetFc, days[T]);
+  eq("the day summary carries the total, wet hours, window and peak chance DAY BY DAY prints", [Math.round(sm.precip * 100) / 100, sm.precipHrs, sm.precipTo - sm.precipFrom, sm.popMax], [0.12, 3, 3 * 3600, 60]);
+  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  eq("DAY BY DAY prints the rain amount with its hours, window and chance beneath", /<span style=\{lbl\}>\{s\.snow \? "Precipitation" : "Rain"\}<\/span>/.test(card) && /s\.popMax \? "hourly chance up to " \+ Math\.round\(s\.popMax\) \+ "%"/.test(card), true);
+}
 const rstorm = run(forecast((d, h) => (d === T && h === 15 ? { code: 95, fl: 12000 } : { fl: 12000 })), { kind: "alpinerock", terrain: { snow: "no" }, highFt: 8000, legs: LEGS });
 eq("a storm day's start is anchored to starting DOWN, not to the summit", rstorm.start && rstorm.start.why, "storm-descent");
 
@@ -353,6 +367,26 @@ const msB = A.modelSpread(SPD([20, 25, 30], [30, 44, 31], [6000, 9500, null]), "
 eq("...as do highs 14 F apart and freezing levels 3,500 ft apart", msB && msB.over, ["high", "fl"]);
 const msC = A.modelSpread(SPD([20, 25, 30], [30, 32, 31], [8000, 8500, null]), "2026-01-15");
 eq("...and ordinary disagreement (gusts 10 mph apart) flags nothing", msC && msC.over, []);
+{
+  // RAIN totals (2026-10-28): Baker's models split 0.04" to 1.56" on one day while NWS sat at 0.06": the amount we print is one model's.
+  const rainy = (per) => { const s = SPD([20, 25, 30], [30, 32, 31], [8000, 8500, 8200]); ["gfs_seamless", "icon_seamless", "ecmwf_ifs025"].forEach((m, j) => { s.hourly["precipitation_" + m] = s.hourly.time.map(() => per[j] / 24); }); return s; };
+  const r1 = A.modelSpread(rainy([0.04, 0.9, 1.56]), "2026-01-15"), r2 = A.modelSpread(rainy([1.2, 1.5, 1.8]), "2026-01-15"), r3 = A.modelSpread(rainy([0.05, 0.1, 0.3]), "2026-01-15");
+  eq("models 0.04\"-1.56\" apart on the day's rain flag it; 1.2\"-1.8\" (all wet) and 0.05\"-0.3\" (all light) do not", [r1 && r1.over, r2 && r2.over, r3 && r3.over], [["rain"], [], []]);
+  // A wet day against a dry one, under the 0.5" gap; and the amount the CARD PRINTS joins the comparison (catalog audit 2026-10-29: Mount Adams 0.29" shown, 0.00-0.09" from the three models).
+  const r4 = A.modelSpread(rainy([0, 0.1, 0.25]), "2026-01-15"), r5 = A.modelSpread(rainy([0, 0.05, 0.09]), "2026-01-15", null, 0.29), r6 = A.modelSpread(rainy([0, 0.05, 0.09]), "2026-01-15");
+  eq("0\"-0.25\" (a wet day and a dry one) flags; the shown 0.29\" beside models at 0-0.09\" flags; the models alone at 0-0.09\" do not", [r4 && r4.over, r5 && r5.over, r5 && r5.rain, r6 && r6.over], [["rain"], ["rain"], [0, 0.29], []]);
+  eq("the card passes the amount it prints into the comparison", /modelSpread\(sp, d\.date, null, daySummary\(fc, d\)\.precip\)/.test(fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8")), true);
+  eq("...and the flag states the range", /rain 0\.04"–1\.56"/.test(A.flagText({ key: "models-disagree", level: "caution", v: r1 })), true);
+  eq("...from a spread read that asks for precipitation", /export function fetchAlpineSpread[\s\S]{0,700}freezing_level_height,precipitation&models=/.test(fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8")), true);
+}
+{
+  // NO STATED HEIGHT (census 2026-10-29: 4,903 of 6,208 alpine-kind routes): the forecast's own ground height stands in, so the summit flags can fire.
+  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  eq("with no stated height, the flags, the hour boxes and the 'Read at' line use the forecast's ground height",
+    [/highFt: pt\.elevFt != null \? pt\.elevFt : groundFt\(fc\)/.test(card), /const tops = pt\.elevFt != null \? pt\.elevFt : groundFt\(fc\);/.test(card), /"Read at " \+ \(pt\.elevFt != null \? uElev\(pt\.elevFt\) : groundFt\(fc\) != null \?[^\n]{0,120}the ground height at the map point"/.test(card)], [true, true, true]);
+  const fl = run(forecast(() => ({ fl: 9000 })), { kind: "glacier", terrain: {}, highFt: null, legs: LEGS }), flG = run(forecast(() => ({ fl: 9000 })), { kind: "glacier", terrain: {}, highFt: 8000, legs: LEGS });
+  eq("...which matters: a freezing level above the top flags only when a top height is known", [has(fl, "fl-above-night"), has(flG, "fl-above-night")], [false, true]);
+}
 eq("ONE model answering is no comparison: null, never 'they agree'", A.modelSpread(SPD([20, null, null], [30, null, null], [8000, null, null]), "2026-01-15"), null);
 eq("...and a day the spread does not cover is null too", A.modelSpread(SPD([20, 30, 65], [30, 32, 31], [8000, 8500, null]), "2026-01-16"), null);
 for (const units of ["imperial", "metric"]) {

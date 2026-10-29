@@ -1,0 +1,151 @@
+[
+ {
+  "i": 200,
+  "verdict": "confirmed",
+  "finalDirection": "From SR-530 at Whitehorse, about 5 miles west of Darrington, turn left (south) onto Old Mine Road (387th Ave NE) at the gas station and drive 0.6 miles to the dead end.",
+  "numbersUsed": [
+   "530",
+   "5",
+   "387",
+   "0.6"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/niederprum"
+  ],
+  "note": "Page gives the same start, turn and 0.6 miles to the dead end."
+ },
+ {
+  "i": 208,
+  "verdict": "corrected",
+  "finalDirection": "From US-101 at milepost 126, turn right onto South Shore Road and follow it about 12.9 miles to the Quinault River bridge; cross it, turn right onto North Shore Road, and drive 3.5 miles to the road end at the trailhead.",
+  "numbersUsed": [
+   "101",
+   "126",
+   "12.9",
+   "3.5"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/north-fork-quinault-river-halfway-house"
+  ],
+  "note": "Turn is right at the bridge junction per page; added dated winter bridge-out alert (Oct 22, 2026 WTA news item). Bridge note removed on review: that bridge is on the lower North Shore Road, which this drive does not use (park road page, 10/26/26)."
+ },
+ {
+  "i": 210,
+  "verdict": "corrected",
+  "finalDirection": "From US-101 at milepost 126, turn right onto South Shore Road and follow it about 12.9 miles to the Quinault River bridge; cross it, turn right onto North Shore Road, and drive 3.5 miles to the road end at the trailhead.",
+  "numbersUsed": [
+   "101",
+   "126",
+   "12.9",
+   "3.5"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/north-fork-quinault-river-halfway-house"
+  ],
+  "note": "Same as 208; dated temporary-bridge note added. Bridge note removed on review: that bridge is on the lower North Shore Road, which this drive does not use (park road page, 10/26/26)."
+ },
+ {
+  "i": 216,
+  "verdict": "confirmed",
+  "finalDirection": "From Darrington, drive south on the Mountain Loop Highway about 16 miles, then turn east onto FR-49 and follow it 6.4 miles to the North Fork Sauk parking area.",
+  "numbersUsed": [
+   "16",
+   "49",
+   "6.4"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/north-fork-sauk-river"
+  ],
+  "note": "Page gives 16 miles south of Darrington, then FR 49 east 6.4 miles."
+ },
+ {
+  "i": 220,
+  "verdict": "confirmed",
+  "finalDirection": "Drive SR-20 east through Marblemount; after about 50 miles the Rainy Pass trailhead lot is on the south (right) side of the highway.",
+  "numbersUsed": [
+   "20",
+   "50"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/maple-pass"
+  ],
+  "note": "Page says about 50 miles from Marblemount, south (right) side; highway closes seasonally."
+ },
+ {
+  "i": 233,
+  "verdict": "corrected",
+  "finalDirection": "From I-90 take Exit 52 (West Summit), turn left under the freeway onto Alpental Road, take the first right after 0.1 mile, and where the road splits after another 0.1 mile, bear right for the main lot.",
+  "numbersUsed": [
+   "90",
+   "52",
+   "0.1",
+   "0.1"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/kendall-katwalk"
+  ],
+  "note": "Facts match; reworded the garbled split instruction."
+ },
+ {
+  "i": 234,
+  "verdict": "corrected",
+  "finalDirection": "From I-90 take Exit 52 (West Summit), turn left under the freeway onto Alpental Road, take the first right after 0.1 mile, and where the road splits after another 0.1 mile, bear right for the main lot.",
+  "numbersUsed": [
+   "90",
+   "52",
+   "0.1",
+   "0.1"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/kendall-katwalk"
+  ],
+  "note": "Facts match; reworded the garbled split instruction."
+ },
+ {
+  "i": 240,
+  "verdict": "corrected",
+  "finalDirection": "From US-2 at Coles Corner take SR-207 north, then Chiwawa River Road (FR-62) about 22 miles and Phelps Creek Road (FR-6211) about 2.3 miles to the Phelps Creek Trailhead. Chiwawa River Road and Phelps Creek Road have been closed since August 2026 for the Little Giant Fire; check the road status before you go.",
+  "numbersUsed": [
+   "2",
+   "207",
+   "62",
+   "22",
+   "6211",
+   "2.3",
+   "2026"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/spider-meadows",
+   "https://www.wta.org/go-hiking/hikes/phelps-creek"
+  ],
+  "note": "Closure alert dated 8.7.26 on the Spider Meadows page; Phelps Creek page lists only a trail closure (7.30.26) and 2.3 miles for FR 6211."
+ },
+ {
+  "i": 241,
+  "verdict": "corrected",
+  "finalDirection": "From US-2 at Coles Corner take SR-207 north, then Chiwawa River Road (FR-62) about 22 miles and Phelps Creek Road (FR-6211) about 2.3 miles to the Phelps Creek Trailhead. Chiwawa River Road and Phelps Creek Road have been closed since August 2026 for the Little Giant Fire; check the road status before you go.",
+  "numbersUsed": [
+   "2",
+   "207",
+   "62",
+   "22",
+   "6211",
+   "2.3",
+   "2026"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/spider-meadows",
+   "https://www.wta.org/go-hiking/hikes/phelps-creek"
+  ],
+  "note": "Same closure alert; normal drive kept and closure dated August 2026."
+ }
+]

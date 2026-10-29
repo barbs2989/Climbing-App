@@ -12,12 +12,12 @@ import { useRecentRouteIds } from "./recent";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel, searchPlaces } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
-import { shortGrade, gradeNumFrom, displayGrade, gradeSystemForDiscipline } from "./grade";
+import { shortGrade, gradeNumFrom, displayGrade } from "./grade";
 import { clickable } from "./clickable";
 import { subdivisionNoun, countryOfArea } from "./countries";
 import { effDistKm } from "./outing";
 import { POP_BACK, POP_CLOSE, POP_CLOSE_MEDIA, POP_REMOVE, POP_CHIP_X } from "./popupChrome.js";
-import { BTN, BTN_LG, BTN_SM, BTN_LINK, CHIP } from "./buttonStyles.js";
+import { BTN, BTN_LG, BTN_LINK, CHIP } from "./buttonStyles.js";
 import { useWideScreen } from "./wideLayout.js";
 import { ScreenHero } from "./ScreenHero";
 import { AboutCard, AreaFactsCard, ClimbsChart, GradeSpread, PendingAreaEdits } from "./AreaPageSections";
@@ -91,8 +91,9 @@ const Pill = ({ label, color, bg, sm }) => <span style={{ background: bg, color,
 function RouteRow({ r, onOpen, C, areaName }) {
   const stars = r.stars ? Math.round(r.stars) : 0;
   // The PITCH COUNT sits beside the discipline, as Mountain Project's lists write it ("Trad, 5 pitches"):
-  // the stored count, exactly as the route page's Pitches stat shows it. A boulder has no pitches.
-  const pitches = r.pitches > 0 && r.discipline !== "bouldering" ? r.pitches + " pitch" + (r.pitches !== 1 ? "es" : "") : null;
+  // the stored count, exactly as the route page's Pitches stat shows it. A boulder has no pitches, and neither
+  // does a scramble (never roped: owner note, 2026-10-25), so a scrambling row shows none here either.
+  const pitches = r.pitches > 0 && r.discipline !== "bouldering" && r.discipline !== "scrambling" ?r.pitches + " pitch" + (r.pitches !== 1 ? "es" : "") : null;
   const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, pitches, r.sort_order != null ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
   return (
     <div {...clickable(() => onOpen(r))} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", marginBottom: 8, background: C.card, border: "1px solid " + C.border, borderRadius: 12, cursor: "pointer", flex: 1, minWidth: 0 }}>
@@ -505,9 +506,11 @@ function AreaGettingThere({ area, C, onEdit }) {
   const crag = area.lat != null && area.lng != null ? { lat: Number(area.lat), lng: Number(area.lng) } : null;
   const dest = park || crag;
   const lbl = { fontSize: 10.5, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
-  const linkSt = { flex: "1 1 0", display: "flex", alignItems: "center", justifyContent: "center", padding: "8px 10px", borderRadius: 8, border: "1px solid " + C.greenDim, background: C.greenBg, color: C.green, fontSize: 12.5, fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" };
+  const linkSt = { flex: "1 1 0", display: "flex", alignItems: "center", justifyContent: "center", boxSizing: "border-box", minHeight: 44, padding: "8px 10px", borderRadius: 8, border: "1px solid " + C.greenDim, background: C.greenBg, color: C.green, fontSize: 12.5, fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" };
   const ll = dest ? dest.lat + "," + dest.lng : "";
   const to = park ? "parking" : "crag";
+  // The crag-wide parking pin is a suggestable field (0378), so the page offers it where it is missing and where it sits.
+  const pinLink = { display: "inline-flex", alignItems: "center", minHeight: 44, background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" };
   return <div style={{ background: C.card, borderRadius: 12, padding: "12px 14px", border: "1px solid " + C.border, marginBottom: 14 }}>
     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 8 }}><div role="heading" aria-level={3} style={{ fontSize: 12, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>Getting there</div>{onEdit ? <EditIconButton C={C} onClick={() => onEdit(note ? "approach" : "parking_note")} title={"Edit how to get to " + area.name} /> : null}</div>
     {!note && !walk ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginBottom: dest ? 10 : 0 }}>{"No directions on file yet. Know the way in? "}{onEdit ? <button onClick={() => onEdit("parking_note")} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Add it</button> : "Add it"}{"."}</div> : null}
@@ -515,6 +518,7 @@ function AreaGettingThere({ area, C, onEdit }) {
       <div style={lbl}>{"Drive & park" + (area.parking_name && area.parking_name !== "Trailhead" ? " · " + area.parking_name : "")}</div>
       {note ? <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.55, marginBottom: park ? 6 : 0 }}>{note}</div> : null}
       {park ? <CopyCoordButton lat={park.lat} lng={park.lng} what="parking" C={C} /> : null}
+      {park && onEdit ? <button onClick={() => onEdit("parking_pin")} style={pinLink}>Move the pin</button> : null}
     </div> : null}
     {walk || area.approach_min ? <div style={{ marginBottom: 10 }}>
       <div style={lbl}>{"Walk in" + (area.approach_min ? " · about " + area.approach_min + " min" : "")}</div>
@@ -522,10 +526,10 @@ function AreaGettingThere({ area, C, onEdit }) {
     </div> : null}
     {dest ? <div>
       <div style={lbl}>{park ? "Directions to parking" : "Directions"}</div>
-      {park ? null : <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 6 }}>{note ? NO_PARKING_PIN_BUT_NOTE_LINE : NO_PARKING_PIN_LINE}</div>}
+      {park ? null : <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 6 }}>{note ? NO_PARKING_PIN_BUT_NOTE_LINE : NO_PARKING_PIN_LINE}{onEdit ? <>{" "}<button onClick={() => onEdit("parking_pin")} style={pinLink}>Add the parking pin</button></> : null}</div>}
       {area.coords_approx ? <div style={{ fontSize: 11.5, color: C.amber, lineHeight: 1.45, marginBottom: 6 }}>Coordinates are approximate, so these are rough.</div> : null}
       {/* The mount above is gated on ["crag", "peak", "wall"].includes(area.area_type) — a drive link is offered only where there is somewhere to park. */}
-      <div style={{ display: "flex", gap: 6 }}>
+      <div style={{ display: "flex", gap: 8 }}>
         <a href={"https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + ll} target="_blank" rel="noopener noreferrer" aria-label={"Driving directions to the " + to + " in Google Maps" + (area.coords_approx ? " (approximate location)" : "")} style={linkSt}>Google Maps</a>
         <a href={"https://maps.apple.com/?dirflg=d&daddr=" + ll} target="_blank" rel="noopener noreferrer" aria-label={"Driving directions to the " + to + " in Apple Maps" + (area.coords_approx ? " (approximate location)" : "")} style={linkSt}>Apple Maps</a>
       </div>
@@ -590,7 +594,7 @@ function NearbyPeaks({ area, onJumpToArea, C, uDistMi }) {
   // call, because a hook behind an `if` is the #377 shape check:hooks exists to catch.
   const { data } = useNearbyPeaks(bounds);
   const rows = useMemo(() => nearbyPeaksRows(area, data && data.rows, 6),
-    [data, area && area.id, area && area.lat, area && area.lng, area && area.area_type]);
+    [data, area && area.id, area && area.lat, area && area.lng, area && area.area_type]); // eslint-disable-line react-hooks/exhaustive-deps -- recompute when the area identity or position changes; area is a fresh parent object each render
   if (!rows.length) return null;
   return (
     <div style={{ marginBottom: 10 }}>
@@ -1430,7 +1434,10 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
           and the Discipline chips sat under the browser's own bar, and Show routes was the last
           thing in a long scroll. Now it fills the visible area like Mountain Project's filter
           screen — the title row clears the notch (safe-area-inset-top), the list scrolls between,
-          and Clear all / Show N routes are pinned at the bottom above the home indicator. */}
+          and Clear all / Show N routes are pinned at the bottom above the home indicator. 
+          Discipline is the FIRST row (owner, 2026-10-28): it is the filter climbers reach for, and
+          the Distance away block (a location button, a search box, its hits) above it pushed the
+          chips back below the fold on a phone. */}
       {sheet ? createPortal(
         <div onClick={() => setSheet(false)} role="dialog" aria-modal="true" aria-label="Filter routes" style={{ position: "fixed", inset: 0, background:C.scrim, zIndex: 300, display: "flex", alignItems: "stretch", justifyContent: "center" }}>
           <div onClick={e => e.stopPropagation()} style={{ background: C.bg, width: "100%", maxWidth: 520, height: "100%", display: "flex", flexDirection: "column", boxSizing: "border-box" }}>
@@ -1442,6 +1449,12 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
                 the page behind the sheet (the document is the scroller here), so the sheet reads as
                 stuck — the same chaining #684 fixed on the other sheets. */}
             <div style={{ padding: "0 16px 18px", overflowY: "auto", overscrollBehavior: "contain", flex: 1, minHeight: 0 }}>
+            {lab("Discipline")}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+              {/* Tick as many as you like; a range stays only while every ticked discipline shares its scale. */}
+              {DISCIPLINES.filter(d => d[0]).map(d => chip(d[1], df.discs.includes(d[0]), () => setDf(x => { const discs = x.discs.includes(d[0]) ? x.discs.filter(v => v !== d[0]) : [...x.discs, d[0]]; const keep = discs.length && gradeSysFor(discs, x.gSys) === gradeSysFor(x.discs, x.gSys) && gradeScalesFor(discs).length; return { ...x, discs, ...(keep ? {} : { gSys: "", gLo: "", gHi: "" }), sortBy: !discs.length && (x.sortBy === "grade_asc" || x.sortBy === "grade_desc") ? DEF.sortBy : x.sortBy }; })))}
+            </div>
+            {df.discs.length > 1 ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>{"Showing " + df.discs.map(discLabel).join(" + ") + " climbs."}</div> : null}
             {lab("Distance away")}
             {df.near ? <>
               <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: C.text, marginBottom: 8 }}>
@@ -1462,12 +1475,6 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
                 {nearSt.hits.map((h, i) => <button key={i} onClick={() => pickNear({ lat: h.lat, lng: h.lng, label: h.name })} style={{ ...BTN_LG, width: "100%", textAlign: "left", marginBottom: 6, border: "1px solid " + C.border, background: C.surface, color: C.text }}>{h.name}{h.sub ? <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, fontWeight: 500 }}>{h.sub}</span> : null}</button>)}
               </div> : null}
             </>}
-            {lab("Discipline")}
-            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-              {/* Tick as many as you like; a range stays only while every ticked discipline shares its scale. */}
-              {DISCIPLINES.filter(d => d[0]).map(d => chip(d[1], df.discs.includes(d[0]), () => setDf(x => { const discs = x.discs.includes(d[0]) ? x.discs.filter(v => v !== d[0]) : [...x.discs, d[0]]; const keep = discs.length && gradeSysFor(discs, x.gSys) === gradeSysFor(x.discs, x.gSys) && gradeScalesFor(discs).length; return { ...x, discs, ...(keep ? {} : { gSys: "", gLo: "", gHi: "" }), sortBy: !discs.length && (x.sortBy === "grade_asc" || x.sortBy === "grade_desc") ? DEF.sortBy : x.sortBy }; })))}
-            </div>
-            {df.discs.length > 1 ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>{"Showing " + df.discs.map(discLabel).join(" + ") + " climbs."}</div> : null}
             {lab("Grade")}
             {(() => {
               const sc = gradeScaleFor(df.discs, df.gSys);
@@ -1677,7 +1684,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
     loadLeaflet(init, () => setMapFail(true));
     const ft = setTimeout(() => { if (!cancelled && !mapRef.current) setMapFail(true); }, 9000);
     return () => { cancelled = true; clearTimeout(ft); if (ro) ro.disconnect(); if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; tileRef.current = null; placeMarkRef.current = null; } };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- builds the Leaflet map once; area type, base layer and centre are applied by their own effects and a rebuild would reset the view
   useEffect(() => { if (!mapRef.current) return; applyBaseLayer(mapRef.current, tileRef, baseLayer); }, [baseLayer]);
 
   // Screen-space clustering: at national/state scale a single viewport can hold
@@ -1732,7 +1739,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
         grp.addLayer(mk);
       }
     }
-  }, [ready, nearby]);
+  }, [ready, nearby]); // eslint-disable-line react-hooks/exhaustive-deps -- markers are redrawn only when the map is ready or the nearby list changes; theme colours are constants
 
   // Live, and refining: see useFollowMe in lib/mapKit.jsx. Only the FIRST fix re-centres the
   // nearby list -- re-querying on every step of a walk would refetch for nothing.
@@ -1745,7 +1752,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
   const locate = me.locate, locating = me.locating, geoErr = me.err;
   // Your dot is on the map from the start when location is already allowed -- without moving the
   // map off the area you opened it on. Never asks: the button above does that.
-  useEffect(() => { if (ready) me.showDot(); }, [ready]);
+  useEffect(() => { if (ready) me.showDot(); }, [ready]); // eslint-disable-line react-hooks/exhaustive-deps -- shows the dot once when the map becomes ready; me is a per-render hook result
 
   const goToPlace = p => {
     const L = window.L, map = mapRef.current;
@@ -1774,12 +1781,12 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
   // point the map opened at — otherwise, once you've panned somewhere else, the
   // "closest" areas at the top of the list stop matching what's actually
   // showing on screen, which reads as broken.
-  const viewCenter = bounds ? { lat: (bounds.minLat + bounds.maxLat) / 2, lng: (bounds.minLng + bounds.maxLng) / 2 } : center;
+  const viewCenter = useMemo(() => bounds ? { lat: (bounds.minLat + bounds.maxLat) / 2, lng: (bounds.minLng + bounds.maxLng) / 2 } : center, [bounds, center]);
   const sorted = useMemo(() => {
     if (!nearby) return [];
     const withDist = viewCenter ? nearby.map(a => ({ ...a, _mi: haversineMi(viewCenter, a) })) : nearby.map(a => ({ ...a, _mi: null }));
     return withDist.sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)).slice(0, 60);
-  }, [nearby, bounds, center]);
+  }, [nearby, viewCenter]);
   const discChip = (k, label, on) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
 
   const searchUI = (
@@ -2079,7 +2086,7 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
     onAreaContext(current
       ? { id: current.id, name: current.name, lat: current.lat != null ? current.lat : null, lng: current.lng != null ? current.lng : null, areaType: current.area_type }
       : null);
-  }, [onAreaContext, current && current.id, current && current.lat, current && current.lng]);
+  }, [onAreaContext, current && current.id, current && current.lat, current && current.lng]); // eslint-disable-line react-hooks/exhaustive-deps -- report the area context only when the area identity or position changes; current is a fresh object each render and onAreaContext is listed
 
   const jump = i => {
     setScreen("areas");

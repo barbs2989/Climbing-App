@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 84 tables, 831 columns, 427 keyed/checked constraints (151 foreign keys), 257 RLS policies.
+-- Counts: 85 tables, 839 columns, 434 keyed/checked constraints (153 foreign keys), 262 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -60,6 +60,8 @@
 -- crew_past_state (crew_past_state_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- crew_reads (crew_reads_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE
 -- crew_reads (crew_reads_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
+-- crew_rides (crew_rides_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE
+-- crew_rides (crew_rides_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- crew_safety_answers (crew_safety_answers_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE
 -- crew_safety_answers (crew_safety_answers_user_id_fkey): FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 -- crews (crews_area_id_fkey): FOREIGN KEY (area_id) REFERENCES areas(id)
@@ -620,7 +622,7 @@ CREATE TABLE public.contributions (
   result_id text,
   CONSTRAINT contributions_pkey PRIMARY KEY (id),
   CONSTRAINT contributions_applied_value_len_ck CHECK (((applied_value IS NULL) OR (length((applied_value)::text) <= 20000))),
-  CONSTRAINT contributions_area_field_ck CHECK (((NOT ((area_id IS NOT NULL) AND (route_id IS NULL) AND (kind = 'field'::text))) OR (field = ANY (ARRAY['blurb'::text, 'approach'::text, 'approach_min'::text, 'parking_note'::text, 'rock'::text, 'aspect'::text, 'season_months'::text])))),
+  CONSTRAINT contributions_area_field_ck CHECK (((NOT ((area_id IS NOT NULL) AND (route_id IS NULL) AND (kind = 'field'::text))) OR (field = ANY (ARRAY['blurb'::text, 'approach'::text, 'approach_min'::text, 'parking_note'::text, 'parking_pin'::text, 'rock'::text, 'aspect'::text, 'season_months'::text])))),
   CONSTRAINT contributions_pair_shape_ck CHECK (((kind IS DISTINCT FROM 'pair'::text) OR ((route_id IS NOT NULL) AND (jsonb_typeof(value) = 'object'::text) AND (COALESCE((value ->> 'with'::text), ''::text) <> ''::text) AND ((value ->> 'with'::text) <> route_id) AND (length(COALESCE((value ->> 'note'::text), ''::text)) <= 280)))),
   CONSTRAINT contributions_reason_len_ck CHECK (((reason IS NULL) OR (char_length(reason) <= 1000))),
   CONSTRAINT contributions_status_chk CHECK ((status = ANY (ARRAY['pending'::text, 'approved'::text, 'rejected'::text]))),
@@ -742,6 +744,34 @@ CREATE TABLE public.crew_reads (
 ALTER TABLE public.crew_reads ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "users manage own crew read marks" ON public.crew_reads AS PERMISSIVE FOR ALL TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
 
+CREATE TABLE public.crew_rides (
+  crew_id uuid NOT NULL,
+  user_id uuid NOT NULL DEFAULT auth.uid(),
+  mode text NOT NULL,
+  seats smallint,
+  from_area text NOT NULL DEFAULT ''::text,
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT crew_rides_pkey PRIMARY KEY (crew_id, user_id),
+  CONSTRAINT crew_rides_check CHECK (((mode = 'driving'::text) OR (seats IS NULL))),
+  CONSTRAINT crew_rides_from_area_check CHECK ((char_length(from_area) <= 60)),
+  CONSTRAINT crew_rides_mode_check CHECK ((mode = ANY (ARRAY['driving'::text, 'need'::text]))),
+  CONSTRAINT crew_rides_seats_check CHECK (((seats >= 1) AND (seats <= 8))),
+  CONSTRAINT crew_rides_crew_id_fkey FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE,
+  CONSTRAINT crew_rides_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
+);
+ALTER TABLE public.crew_rides ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "crew rides read by the crew" ON public.crew_rides AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = user_id) OR (EXISTS ( SELECT 1
+   FROM crew_members m
+  WHERE ((m.crew_id = crew_rides.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text))))));
+CREATE POLICY "own crew ride delete" ON public.crew_rides AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
+CREATE POLICY "own crew ride insert" ON public.crew_rides AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND (EXISTS ( SELECT 1
+   FROM crew_members m
+  WHERE ((m.crew_id = crew_rides.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text))))));
+CREATE POLICY "own crew ride update" ON public.crew_rides AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND (EXISTS ( SELECT 1
+   FROM crew_members m
+  WHERE ((m.crew_id = crew_rides.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text))))));
+CREATE POLICY "restricted accounts cannot post" ON public.crew_rides AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
+
 CREATE TABLE public.crew_safety_answers (
   crew_id uuid NOT NULL,
   user_id uuid NOT NULL,
@@ -781,6 +811,8 @@ CREATE TABLE public.crews (
   itinerary_by uuid,
   area_id text,
   discipline text,
+  share_token uuid NOT NULL DEFAULT gen_random_uuid(),
+  share_on boolean NOT NULL DEFAULT true,
   CONSTRAINT crews_pkey PRIMARY KEY (id),
   CONSTRAINT crews_area_needs_discipline CHECK (((area_id IS NULL) OR (discipline IS NOT NULL))),
   CONSTRAINT crews_discipline_values CHECK (((discipline IS NULL) OR (discipline = ANY (ARRAY['sport'::text, 'trad'::text, 'toprope'::text, 'aid'::text, 'bouldering'::text, 'scrambling'::text, 'hiking'::text, 'alpine'::text, 'mountaineering'::text, 'ice'::text, 'mixed'::text])))),
