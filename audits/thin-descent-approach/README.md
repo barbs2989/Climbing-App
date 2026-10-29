@@ -108,14 +108,16 @@ about thin descents, on the peaks people actually climb. Each peak is one contex
 | Incredible Hulk (CA) | 28 | 19 reviewed, dry-run clean, **not yet applied** | 9 | 3 with no top-out, 6 unplaced (not on the area page). No mileage given (single source). |
 | Spearhead (CO) | 20 | 14 reviewed (text scan clean), **dry-run and apply pending** | 6 | 3 not on any page, 3 with no stated top-out. The dry run hit the 504 outage. |
 | Notchtop (CO) | 13 | 9 reviewed (text scan clean), **dry-run and apply pending** | 4 | No page or no top-out. West Gully descent given as third to fourth class (sources split). |
+| Mt. Whitney (CA) | 18 | 16 reviewed (text scan + offline copy check clean), **dry-run and apply pending** | 2 | No mileage, gain or rappel counts (sources split). Whitney Zone permit named in general terms. Possible duplicate: Hairline vs Hairline Free (aid vs free of one line); both written, nothing deleted. |
+| Mt. Russell (CA) | 12 | 9 reviewed (text scan + offline copy check clean), **dry-run and apply pending** | 3 | Pilgrimage has no source; North Face and South Slope are single pages with no line. |
 
 **How to resume (database healthy again: a one-row read under 1.5 s):**
 1. `node scripts/enrich-approach-rappel-bivy.mjs --from audits/thin-descent-approach/oos/batch-co_hallett_peak.json`, then the same for
-   `batch-ca_incredible_hulk.json`, `batch-co_spearhead.json` and `batch-co_notchtop.json` (dry-run the last two first). Each must print one "verified on re-read" per written row (25, 19, 14, 9). Then move ONLY the new
+   `batch-ca_incredible_hulk.json`, `batch-co_spearhead.json`, `batch-co_notchtop.json`, `batch-ca_mt_whitney.json` and `batch-ca_mt_russell.json` (dry-run the last four first). Each must print one "verified on re-read" per written row (25, 19, 14, 9, 16, 9). Then move ONLY the new
    `audits/route-breakdown/rollback-<ms>.json` file(s) here, BY EXACT NAME (a glob sweeps other sessions' tracked files).
 2. Any further `oos/batch-*.json` without a row in the table above is an unreviewed research batch. Lead-review it (testimony,
    source names, single-source counts), dry-run it, then apply it.
-3. The next contexts are already built: `ctx-*.json` for Spearhead, Notchtop, Whitney, Russell, Middle Teton, Lone Pine Peak, Symmetry
+3. The next contexts are already built: `ctx-*.json` for Middle Teton, Lone Pine Peak, Symmetry
    Spire, Enclosure, Moran, Hooker, Temple Crag and Pingora. Brief one Sonnet agent per peak or pair with `oos/OOS-BRIEF.md`, plus the
    extra rules in this table's notes, at most two at a time.
 4. After the marquee list, build the rest with `scripts/oneoff/thin-da-context.mjs`, peak by peak, ordered by route count.
