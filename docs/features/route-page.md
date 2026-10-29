@@ -120,6 +120,12 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `src/components/EmptySection.tsx` | `EmptySection` — a route-page section with nothing in it yet (moved out of RouteDetail.jsx, PR54) |
 | `src/components/PitchPhotos.tsx` | `PitchPhotos` — a pitch's photos and its add button (moved out of RouteDetail.jsx, PR54) |
 | `src/components/CopyCoordButton.tsx` | `CopyCoordButton` — copy a coordinate (binds `C` to lib/areaChrome.jsx's shared button) (moved out of RouteDetail.jsx, PR54) |
+| `src/components/TopoZoomPhoto.tsx` | `TopoZoomPhoto` — the enlarged topo photo: pinch, wheel, double-tap or +/- zoom to 6x, pan, with the drawn line laid over it (moved out of RouteDetail.jsx, PR55) |
+| `src/components/TopoPhotoModal.tsx` | `TopoPhotoModal` — the enlarged topo dialog: the zooming photo, caption, key, and the buttons to edit or delete the line and the photo (moved out of RouteDetail.jsx, PR55) |
+| `src/components/AccessFold.tsx` | `AccessFold` — the closed-by-default ACCESS & REGULATIONS dropdown (moved out of RouteDetail.jsx, PR55) |
+| `src/components/CragRack.tsx` | `CragRack` — the crag route's rack card (rack_items rows, with a pad or quickdraw count) (moved out of RouteDetail.jsx, PR55) |
+| `src/components/CragLocationCard.tsx` | `CragLocationCard` — the crag route's CRAG and PARKING coordinates and the two drive-to links (moved out of RouteDetail.jsx, PR55) |
+| `src/components/PairsWellWith.tsx` | `PairsWellWith` — PAIRS WELL WITH: suggested and same-day-logged climbs, and the suggest form (moved out of RouteDetail.jsx, PR55) |
 | `lib/topoMarks.jsx` | `TOPO_RED`, `TOPO_VAR`, `PIN_CATEGORIES`, `PIN_GLYPHS`, `pinColor`, `pinLabel`, `pinNums`, `varTag`, `useImgAspect`, `TOPO_IMG`, `clampTopoView`, `zoomTopoView` — what a topo draws with: line colours, marker categories and glyphs, numbering, the photo-fitting rule, the zoom maths (moved out of RouteDetail.jsx, PR54) |
 | `src/components/GPXMap.tsx` | `GPXMap` — the route map: track, pins, one shared popup card, derived trailhead, base check-ins (extracted from core, PR13) |
 | `lib/Route3DView.jsx` | `Route3DView` — the route map's 3D view (MapLibre GL over terrain) |
