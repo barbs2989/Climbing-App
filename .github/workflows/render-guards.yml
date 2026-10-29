@@ -80,8 +80,9 @@ jobs:
     # A hung dev server or a browser that never launches should fail in minutes,
     # not sit for the default six hours.
     # 50 overlays since the scaffold's discovery was widened (was 28); walked twice since
-    # check:pinned-dismiss joined (2026-10-24), so the budget doubled.
-    timeout-minutes: 60
+    # check:pinned-dismiss joined (2026-10-24), so the budget doubled; three times since
+    # check:overlay-fullscreen joined (2026-10-29).
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -117,6 +118,16 @@ jobs:
       # scrolled to the end. A second walk of the same overlays, so the job's timeout covers both.
       - name: Popup close and back stay pinned
         run: npm run check:pinned-dismiss
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
+
+      # Third walk of the same overlays: on a phone each popup covers the screen as a page, and the
+      # app behind never shows through around a card (owner 2026-10-24, index.html's full-screen rules).
+      - name: Popups fill the phone screen
+        run: npm run check:overlay-fullscreen
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
