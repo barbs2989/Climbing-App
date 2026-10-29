@@ -44,7 +44,7 @@ export default function CrewInviteModal({climber,route,onClose,onSend}: CrewInvi
       </div>
       <div style={{display:"flex",alignItems:"center",gap:10,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:11,padding:"9px 11px",marginBottom:14}}>
         <div style={{width:40,height:40,borderRadius:8,overflow:"hidden",flexShrink:0}}><img loading="lazy" decoding="async" src={route.cover||undefined} className="cover-x" alt="" style={{width:"100%",height:"100%",objectFit:"cover"}} onError={onImgErr(FALLBACK_COVER)}/></div>
-        <div style={{minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{route.name}</div><div style={{fontSize:11.5,color:"#fff",fontWeight:600}}>{route.grade}</div></div>
+        <div style={{minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflowWrap:"anywhere"}}>{route.name}</div><div style={{fontSize:11.5,color:"#fff",fontWeight:600}}>{route.grade}</div></div>
       </div>
       <div style={{fontSize:13,color:C.text,fontWeight:800,textTransform:"uppercase",letterSpacing:0.4,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Add a note (optional)</div>
       <textarea aria-label="Add a note (optional)" value={note} onChange={e=>setNote(e.target.value.slice(0,MAX))} placeholder={suggested} rows={4} style={{width:"100%",padding:"11px 12px",borderRadius:11,border:"1px solid "+C.border,background:C.bg,color:C.text,fontSize:13.5,lineHeight:1.5,boxSizing:"border-box",resize:"vertical",fontFamily:"inherit",outline:"none"}}/>

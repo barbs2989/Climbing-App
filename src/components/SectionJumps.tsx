@@ -17,7 +17,7 @@ export interface SectionJumpsProps {
    A heading that WRAPS another heading (a fold whose button holds a CardHead and a summary line) is skipped
    for the inner one, and a fold heading whose title sits beside a summary marks the title `data-jump-label`:
    the whole heading's text welded the two into one pill ("Active fire nearby4 fires", "FLOAT PLANCommitting…"). */
-const jumpLabel = (t: string | null) => { let s = String(t || "").replace(/\s+/g, " ").trim().split(/ [·—] /)[0].replace(/^[^\p{L}\p{N}]+/u, "").trim(); if (s && s === s.toUpperCase() && /\p{L}/u.test(s)) s = s.charAt(0) + s.slice(1).toLowerCase(); return s.length > 30 ? s.slice(0, 29).trim() + "…" : s; };
+const jumpLabel = (t: string | null) => { let s = String(t || "").replace(/\s+/g, " ").trim().split(/ [·—] /)[0].replace(/^[^\p{L}\p{N}]+/u, "").trim(); if (s && s === s.toUpperCase() && /\p{L}/u.test(s)) s = s.charAt(0) + s.slice(1).toLowerCase(); return s; };
 
 /**
  * The route page's inline row of section jump pills (`<nav data-jumps aria-label="Jump to a section">`), built

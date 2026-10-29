@@ -77,7 +77,7 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
   return createPortal(<div role="dialog" aria-modal="true" aria-label="Draw the approach" style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", overscrollBehavior: "contain", maxWidth: 520, margin: "0 auto", boxSizing: "border-box" }}>
     <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "12px 16px", display: "flex", alignItems: "center", gap: 10, zIndex: 1100 }}>
       <button onClick={onClose} style={POP_BACK}>← Back</button>
-      <div style={{ fontSize: 15, fontWeight: 700, color: C.text, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{"Draw the approach · " + route.name}</div>
+      <div style={{ fontSize: 15, fontWeight: 700, color: C.text, minWidth: 0, overflowWrap: "anywhere" }}>{"Draw the approach · " + route.name}</div>
     </div>
     <div style={{ padding: "14px 16px 40px", color: C.text }}>
       <p style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5, margin: "0 0 12px" }}>{crag ? "Click along the way in, from where you park to the base of the crag. Download it as GPX, or suggest it as this crag’s trail." : "Click along the way in, from the trailhead toward the climb. Download it as GPX to plan with or load on your watch."}</p>

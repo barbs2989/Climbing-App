@@ -963,3 +963,24 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       crag base. **179 routes of the backlog remain** (81 peak, 83 crag, the 15 on Dragontail, Colchuck
       Peak and Mount Johnson left to the parallel session); `check:trailhead-direction-shape --live`
       passes on all 914.
+
+- **`audit:closure-distance`** (2026-10-29, owner note on Three Fingers South Peak via Lookout: "Description
+  said road was washed out so it adds extra miles but that isn't reflected in the technical stats distance").
+  Lists every route whose own prose (approach, `road.*`, `access.*`, approach-card notes and season, trailhead
+  pin text) says a road is washed out, gated or closed, next to the one-way miles the Distance tile prints
+  (`lib/outing.js` `effDistKm`, the tile's own reader) and the most-used card's distance. FLAG means the text
+  names extra miles and no stored distance is that long.
+  - **The FLAG count is not the backlog — ask its denominator.** On the first run 11 of 415 closure routes
+    flagged. A Sonnet classification of all 415 found **151 with an in-force closure on 34 roads** (136
+    IN_FORCE, 15 NO_ACCESS; 93 seasonal-only, 171 history-only). Most in-force rows name no mileage, so the
+    regex cannot flag them. The worklist is `audits/closure-distance/` (one plan + `.verdicts.json` per road;
+    `BRIEF.md` is the research procedure), not this audit's FLAG lines.
+  - **The fix's shape:** the stored distance starts where a climber can PARK, and `road.walkMi` (one way) /
+    `road.walkGainFt` (ascent the road adds) record how much of it is the road. TECHNICAL STATS says so in
+    its note (`roadWalkMi`). The applier (`scripts/oneoff/apply-closure-distance.mjs`) adds the miles to the
+    first and last itinerary day, or sets an explicit `dist_km` (never arithmetic on that column: it holds
+    two conventions). It refuses a row that already carries `walkMi`, so a re-run cannot add the road twice;
+    a reopening is undone by its rollback file or by subtracting `walkMi`.
+  - **It cannot see:** whether a closure is still in force (`audit:expiring-closures` and research decide);
+    a route whose closed road is on an ALTERNATE way in (that card gets its own `distMi`); a route with no
+    stored distance at all (nothing to extend — recorded NO_CHANGE).

@@ -37,7 +37,7 @@ export default function AccessFold({summary,onEdit,children}: AccessFoldProps){c
           through to the toggle; the Flag takes its own (pointer-events in ConfChip). */}
       <div style={{flex:1,minWidth:0,minHeight:44,position:"relative",display:"flex",alignItems:"center",gap:8}}>
         <button onClick={function(){setOpen(!open);}} aria-expanded={open} aria-label={(open?"Hide":"Show")+" access & regulations"+(!open&&summary?": "+summary:"")} style={{minHeight:44,position:"absolute",left:0,top:0,width:"100%",height:"100%",padding:0,background:"transparent",border:"none",cursor:"pointer"}}/>
-        <span style={{flex:1,minWidth:0,position:"relative",pointerEvents:"none"}}><CardHead style={{marginBottom:open?0:3}}>ACCESS & REGULATIONS</CardHead>{open?null:<span aria-hidden="true" style={{display:"block",fontSize:12,color:C.textMuted,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{summary}</span>}</span>
+        <span style={{flex:1,minWidth:0,position:"relative",pointerEvents:"none"}}><CardHead style={{marginBottom:open?0:3}}>ACCESS & REGULATIONS</CardHead>{open?null:<span aria-hidden="true" style={{display:"block",fontSize:12,color:C.textMuted,overflowWrap:"anywhere"}}>{summary}</span>}</span>
         <span aria-hidden="true" style={{position:"relative",pointerEvents:"none",display:"inline-flex"}}><Chevron open={open} size={16} color={C.blue}/></span>
       </div>
       <EditIconButton onClick={onEdit} title="Edit access & permit information"/>
