@@ -46,6 +46,12 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   Ours that MP does not list are **ANCHORED** right of their nearest left-hand neighbour in OpenBeta's older copy of MP's order, else
   **UNPLACED** (empty, listed last). Positions are renumbered 1..n. Dry run by default; `--apply` writes and reads back.
   First run, 2026-10-21: The Uberfall – left (Gunks), 45 matched, 3 added, 3 anchored, 1 for review, 6 unplaced (MP places 45 of 51).
+  Since 2026-10-29 a **boulder problem** (tagged Boulder, never roped, a V grade) is ordered and added too, as `bouldering` with
+  `grade_system` `v` (owner: "add new routes when you see we have a gap, even if it's not a classic"); ice, mixed, alpine and snow gaps
+  stay with `import-route-grades.mjs`. The re-check run reads freshly saved wall tables from `MP_DIR=~/dev/mp-fresh`.
+- **Which climbs are classics** (`routes.classic`, `scripts/pipeline/flag-classics.mjs`): a climb on a wall's MP classics page at 3+ of
+  4 stars from 5+ votes (matched by MP id, else by name on our wall; the rest written to a gaps file for the importer), and with
+  `--guidebook` every climb a guidebook rates 3 or 4 stars (`guide_stars`). Only the flag is stored; nothing on screen names where it came from.
   - **Whole state** (`--state <slug>`, resumable through `catalog/_mp/_order/<state>.jsonl`): every MP wall with a rock route
     (roped, not tagged Ice/Mixed/Snow — MP keeps a parallel "Ice & Mixed" tree under the same crag names) is matched to the area of
     ours its routes vote for (MP-id map, else a name unique in the state; ≥60% of votes). Two MP walls voting for one area: the one

@@ -637,16 +637,22 @@ function PartnersHereCard({ area, C, uid, myListings, onListMe, onFindPartnersIn
   const countQ = usePartnerAreaCount(area.id, on);
   const rowsQ = usePartnersInArea(area.id, null, null, on, 3);
   const [busy, setBusy] = useState(false);
-  const listed = !!(myListings || []).find((l) => l && l.areaId === area.id);
-  const count = countQ.data;
+  // OPTIMISTIC: the tap flips the button and the count at once; `optListed` holds the guess until the
+  // refetched listings agree (the effect drops it then), and a failed write drops it straight away.
+  const [optListed, setOptListed] = useState(null);
+  const serverListed = !!(myListings || []).find((l) => l && l.areaId === area.id);
+  useEffect(() => { setOptListed(null); }, [serverListed]);
+  const listed = optListed == null ? serverListed : optListed;
+  const count = countQ.data == null ? countQ.data : Math.max(0, countQ.data + (listed === serverListed ? 0 : listed ? 1 : -1));
   const rows = (rowsQ.data || []).filter((p) => p && p.id && String(p.id) !== String(uid));
   const toggle = async () => {
     if (!on || busy) return;
     setBusy(true);
+    setOptListed(!listed);
     try {
       if (listed) await removePartnerArea(uid, area.id);
       else await savePartnerArea(uid, { areaId: area.id, disciplines: (area.disciplines || []).filter((d) => CRAG_FAMILY.includes(d)) });
-    } catch (e) { notify && notify((listed ? "Couldn’t remove your listing — " : "Couldn’t list you here — ") + ((e && e.message) || "try again")); }
+    } catch (e) { setOptListed(null); notify && notify((listed ? "Couldn’t remove your listing — " : "Couldn’t list you here — ") + ((e && e.message) || "try again")); }
     finally { setBusy(false); }
   };
   const openAll = () => onFindPartnersInArea && onFindPartnersInArea({ id: area.id, name: area.name, areaType: area.area_type });
