@@ -44,8 +44,11 @@ room for side-panel ads later. The phone app keeps its own look.
   - A fixed **left sidebar** under it: Home · Climbs · Partners · Crews · Groups · Logbook · Ranks
     (Profile is the avatar at the top right, not a sidebar row), then *Your crews* (up to five, a red dot for unread). No site links: those are the footer's.
   - The **page column**, and at **1280px and wider** a 300px **right rail** (`WideRail`): *Coming up*
-    (agreed crew days) and *Alerts*, which starts **collapsed**: just the header (*Alerts · N new*, a blue dot when
-    any are unread) until you click it, like Home's Alerts row on a phone. *Best day to climb* is not here; it opens from the Menu. Ads, when they come, take slots in this rail
+    (agreed crew days) and *Alerts*, which starts **collapsed**: just the header (*Alerts · N new*; an amber dot when
+    something waits on you, blue when only notifications are unread) until you click it. It is the **same list as
+    Home's Alerts button** (`_alerts` in `ClimbMatch.jsx`, built once for both): what waits on you first (requests,
+    invites, unread chats, a day or a climb to confirm, up to five, amber), then unread notifications not already one
+    of those, and the SAME count. A guest is told to sign in. *Best day to climb* is not here; it opens from the Menu. Ads, when they come, take slots in this rail
     (desktop only).
   - Between 1024 and 1279px the sidebar shows **icons only** and there is no rail. The whole shell is
     capped at 1228px and centred (a 640px page column), so a big monitor gets plain background either side.
@@ -79,8 +82,8 @@ room for side-panel ads later. The phone app keeps its own look.
     button (and a lone `flex:1` one) in the page column or a page-view. List rows (space-between,
     left-aligned, flex-start) still run edge to edge; dialogs keep full-width footer buttons; on the route
     page the action buttons sit in one row across the header.
-  - The **bell** opens Notifications as a drop-down under it at the shell's right edge; Home stops
-    repeating its own Alerts list on desktop (the bell and the rail's Alerts card carry it).
+  - The **bell** opens Notifications as a drop-down under it at the shell's right edge. Home's Alerts button shows
+    at every width (#2734), so a desktop Home has it beside the rail's card; both read `_alerts` and agree.
   - **Popups that slide up from the bottom** on a phone open as **centred windows** (rounded, at most
     85% of the window tall).
   - Controls brighten under the mouse; the browser tab names the page (*Coleman-Deming – ClimbMatch*).
