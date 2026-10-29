@@ -182,6 +182,7 @@
     "check:area-name-embed": "node scripts/check-area-name-embed.mjs",
     "check:control-names": "node scripts/check-control-names.mjs",
     "check:axe": "node scripts/check-axe.mjs",
+    "check:blue-on-blue": "node scripts/check-blue-on-blue.mjs",
     "check:verification-fallback": "node scripts/check-verification-fallback.mjs",
     "check:profile-edit-gate": "node scripts/check-profile-edit-gate.mjs",
     "check:onboarding-reach": "node scripts/check-onboarding-reach.mjs",
