@@ -400,6 +400,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         rule, so they wait on the owner (`ownerDecision` in the audit file).
       - The ids `rainier_*` and `adams_*` are Washington routes outside the `wa_` prefix: the WA pass
         missed them, and this one covered the four that store anything.
+    - **WA ICE AND MIXED (2026-10-28, `audits/2026-10-28-route-timing-wa-ice.json`): 16 RESEARCHED, 0
+      WRITTEN.** The earlier passes covered alpine, mountaineering and scrambling only; these 16 WA ice
+      and mixed rows store trip times too. Most have no timed reports at all. Early Winter Couloir's
+      car-to-car reports (8, 12 and 18 hr) leave the stored 10 hr total 17% short, inside the 20% bar. New York Gully
+      is HELD: its stored whole-day 10 hr is 21% under a 12.7 hr median, but two of the three reports
+      are search snippets and one may be the wrong thread.
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)
