@@ -1084,6 +1084,33 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     and Friends FAIL, the hand-pinned vouch sheet and the Fire map (header outside its scroller) stay
     ok; (2) the sign-in portal undone → `loginOpen` FAILS "covered by Messages", the app header's chat
     button.
+- **`check:overlay-fullscreen`** opens every overlay (same scaffold and opener, 390x844) and asks the
+  two things the owner's note asks of a popup (2026-10-24: *"fill the whole screen. Like an actual page
+  on itself"* and *"You shouldn't be able to scroll on anything in the background"*). Runs in CI as the
+  third step of the overlay-scroll job in `render-guards.yml` (timeout raised 60 → 90 min); not in
+  `npm run build`.
+  - **Covers the screen:** a 3x7 grid of `elementFromPoint` samples on the TOPMOST layer; each must
+    land on an element inside it with an opaque background (alpha ≥ 0.9, a background image, or an
+    img/canvas/video) before reaching the layer's root. A point on the app, or on nothing but the
+    dimmed backdrop, is a hole. Exempt by the same opt-outs index.html honours: `data-sheet` =
+    `menu` / `alert` / `viewer`.
+  - **Holds the app behind still:** 3000px is appended to `#appscroll` (LATENT, as above — the demo's
+    tab may be too short to scroll), then 2,000px of wheel at the centre and at the header; `#appscroll`'s
+    top and `scrollY` must not change. A CALIBRATION pass first wheels a bare tab with the same 3000px
+    and fails the run if nothing moves, so the half cannot pass vacuously.
+  - **First run (2026-10-29): no findings** — 66 of 68 openable overlays pass; `postMenuFor` (menu) and
+    `confirmDelete` (alert) opt out; `alertsOpen` (an inline dropdown) and `legal` (a screen of its own)
+    are not fixed layers. It was built to verify #2692/#2728, which reach popups only through the
+    markup shapes their CSS names, and a new shape would have floated unnoticed.
+  - **Injection cases** (2026-10-29): (1) the card rule deleted from index.html → Settings (19 of 21
+    points the backdrop) and Feedback FAIL, the Menu (its own full-screen markup) stays ok; (2) the page
+    lock off (`setPageLock(false)` in `useDialogA11y`) alone → still ok, because the full-screen pane and
+    most backdrops carry `overscroll-behavior: contain` and stop the chain themselves — two independent
+    protections; (3) lock off AND `* { overscroll-behavior: auto !important }` → Settings, Feedback, About
+    us and Notifications FAIL with the app moved 4,000px behind them.
+  - **Cannot see:** overlays the scaffold cannot open (printed as skipped), a TOUCH drag on iOS (the
+    wheel is Chrome's; iOS is why the lock pins `<body>` — see `lib/dialogA11y.js`), and the desktop
+    layout, where a centred window is the design.
 - **`check:a11y-badges`** asks whether any control announces **two fragments welded into one
   token** — a badge count glued to its label, or one word glued to the next. The Crew sub-tab
   bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so Chrome computed the name
