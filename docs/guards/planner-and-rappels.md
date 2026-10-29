@@ -380,7 +380,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       MODELLED, because a stored leg carries no rest factor, and floors are excluded. Re-run it once
       real climbers have logged timed climbs.
     - **OUT OF STATE AND THE SUMMIT-LEG CENSUS (2026-10-28,
-      `audits/2026-10-28-route-timing-out-of-state.json`): 166 RESEARCHED, 24 WRITTEN.** Only 52 of the
+      `audits/2026-10-28-route-timing-out-of-state.json`): 166 RESEARCHED, 26 WRITTEN.** Only 52 of the
       5,185 alpine-family rows outside WA store a time, a distance or gain, or sit on a classics list.
       They gave 3 repairs: Bugaboo Spire's hut approach, Petit Grepon's approach, and Mount Hood South
       Side's approach of 0. The writes waited out a 1.5-hour production outage that ended when the
@@ -392,7 +392,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         Researched row by row: five started at the car (Ruby, Persis, Three Queens, Hozomeen,
         Johannesburg NE Buttress) and now store approach 0. The rest are camp legs, or the evidence
         is too thin to tell.
-      - **EMPTY TRADE ROUTES: 84 RESEARCHED, 16 WRITTEN.** 191 empty rows sit on
+      - **EMPTY TRADE ROUTES: 84 RESEARCHED, 18 WRITTEN.** 191 empty rows sit on
         well-climbed peaks, matched by AREA name. They were narrowed to 84 scrambles, snow routes and
         3rd/4th-class lines. Written: 3 full sets (Sherman, Capitol Knife-Edge, South Sister South
         Side) and 3 lone approaches. Twenty more have only a strong car-to-car figure, such as Whitney
@@ -402,14 +402,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         Trail 13, Langley 11, Casaval 12.5, Shasta West Face Gully 18.25, Democrat 4, Oxford 11.2,
         Yale 7.3, Sunshine 10, Thielsen West Ridge 7.5, Teewinot East Face 8.5. The other ten rest on a
         blog, AllTrails, a search snippet or one report, and are held (`ownerDecision` in the audit file).
+        A second research pass on those ten added Harvard 6.5 (3 agreeing day trips) and San Luis 7.4
+        (4 reports). The Crestones stay held: their only clean times are from the upper 4WD South
+        Colony lot, and the rows name no trailhead.
       - The ids `rainier_*` and `adams_*` are Washington routes outside the `wa_` prefix: the WA pass
         missed them, and this one covered the four that store anything.
-    - **WA ICE AND MIXED (2026-10-28, `audits/2026-10-28-route-timing-wa-ice.json`): 16 RESEARCHED, 0
+    - **WA ICE AND MIXED (2026-10-28, `audits/2026-10-28-route-timing-wa-ice.json`): 16 RESEARCHED, 1
       WRITTEN.** The earlier passes covered alpine, mountaineering and scrambling only; these 16 WA ice
       and mixed rows store trip times too. Most have no timed reports at all. Early Winter Couloir's
       car-to-car reports (8, 12 and 18 hr) leave the stored 10 hr total 17% short, inside the 20% bar. New York Gully
-      is HELD: its stored whole-day 10 hr is 21% under a 12.7 hr median, but two of the three reports
-      are search snippets and one may be the wrong thread.
+      was held on the first pass (two of three reports were snippets). A second pass read a report
+      with clock times (12.7 hr car to car), which agrees with a second (11 hr) within 15%, so its
+      whole-day 10 hr is now 12.7.
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)
