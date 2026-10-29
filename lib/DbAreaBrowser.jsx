@@ -95,8 +95,10 @@ const Pill = ({ label, color, bg, sm }) => <span style={{ background: bg, color,
 // climbers' stars, then name. An area with none falls back to TOP RATED HERE.
 const CLASSIC_GUIDE_STARS = 3, CLASSIC_CLIMBER_STARS = 3.5;
 function isAreaClassic(r) { return !!r.classic || (r.guide_stars != null && r.guide_stars >= CLASSIC_GUIDE_STARS) || (r.stars != null && r.stars >= CLASSIC_CLIMBER_STARS); }
+// Best first, as area_classics (0393) orders the areas above: the classic score, else guidebook stars, else ours.
+function classicQuality(r) { return Number(r.classic_score ?? r.guide_stars ?? r.stars ?? 0); }
 function areaClassics(routes) {
-  return routes.filter(isAreaClassic).sort((a, b) => (b.classic ? 1 : 0) - (a.classic ? 1 : 0) || (b.guide_stars || 0) - (a.guide_stars || 0) || (b.stars || 0) - (a.stars || 0) || a.name.localeCompare(b.name));
+  return routes.filter(isAreaClassic).sort((a, b) => (b.classic ? 1 : 0) - (a.classic ? 1 : 0) || classicQuality(b) - classicQuality(a) || (b.guide_stars || 0) - (a.guide_stars || 0) || (b.stars || 0) - (a.stars || 0) || a.name.localeCompare(b.name));
 }
 
 // EVERY classic, five at a time (owner, 2026-10-29: "just have a dropdown after 5 to show them all"). The first five
