@@ -17,10 +17,12 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   (`GradeSpread`: columns over the area's main grading scale, saying how many climbs it left out), **GETTING THERE** (`AreaGettingThere`:
   `parking_note` + the parking pin, `approach` + `approach_min`, Google/Apple Maps links — the page's ONE drive control; *Add the parking pin* where none is
   on file and *Move the pin* under one open the sheet at the pin), **CLASSIC CLIMBS HERE**
-  (on a wall, `areaClassics` over its loaded rows: up to eight climbs that carry the `classic` flag, 3+ guidebook stars (`guide_stars`)
+  (EVERY classic, drawn by `ClassicsList`: the count in the heading, five rows, then a *Show all N classic climbs* dropdown with the rest
+  (owner, 2026-10-29). On a wall, `areaClassics` over its loaded rows: climbs that carry the `classic` flag, 3+ guidebook stars (`guide_stars`)
   or a 3.5+ climber rating (`stars`), best first; with none, **TOP RATED HERE**, up to five routes by `stars`. On every area ABOVE a
-  wall — a crag of walls, a region, a state — `useAreaClassics` (0390 `area_classics`) lists up to ten `classic` routes from the whole
-  subtree, state classics first, then guidebook stars, climber stars and name, each row naming its wall; a failed read says
+  wall — a crag of walls, a region, a state — `useAreaClassics` (0391 `area_classics`, up to 500 rows plus the full `total`; the open list
+  says "The first 500 of N" when capped) lists the `classic` routes from the whole subtree — on a STATE's page only its top list
+  (`state_classics`, at most 100) — every row opening its route page, state classics first, then guidebook stars, climber stars and name, each row naming its wall; a failed read says
   *Couldn't load the classic climbs here*. Nothing on screen names where a classic came from), and **Suggest an edit** (`lib/AreaSuggestFix.jsx`: eight fields from `AREA_EDIT_FIELDS` in `lib/areaFields.js`, one of them the crag-wide
   **Parking pin** (0378, `parking_pin`: tap `WaypointMapPicker` or type lat/lng, an optional name; one value `{lat, lng, name?}` written to
   `parking_lat`/`parking_lng`/`parking_name`, the name on file kept when none is sent; a pin over 15 km from the crag is flagged before sending),
