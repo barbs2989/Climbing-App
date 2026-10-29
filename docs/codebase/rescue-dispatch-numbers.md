@@ -188,6 +188,52 @@ Rocks) 304-358-3271, Monongalia (Coopers Rock) 304-599-6382, Nicholas (Summersvi
 304-255-0911. **Other states may publish the same kind of list**, and it is the fastest way to
 cover a whole state.
 
+## Alaska, Hawaii and more (checked 2026-10-28)
+
+In Alaska, search and rescue outside the cities is run by the Alaska State Troopers, so each
+borough gets its Trooper region's dispatch line, read on dps.alaska.gov/ast/contacts:
+
+| Borough / census area | Number | Region named on the page |
+|---|---|---|
+| Matanuska-Susitna | (907) 352-5401 | Mat-Su Valley & Copper Valley |
+| Copper River | (907) 352-5401 | Mat-Su Valley & Copper Valley |
+| Kenai Peninsula | (907) 262-4453 | Kenai Peninsula & Southeast AK |
+| Fairbanks North Star | (907) 451-5100 | Interior & Western Alaska |
+| Denali | (907) 451-5100 | Interior & Western Alaska (Denali Borough is Interior) |
+
+Other states:
+
+| County | Number | Read on | Label on the page |
+|---|---|---|---|
+| Kauai, HI | (808) 241-1711 | kauai.gov county press release | Kaua'i Police Department's non-emergency dispatch line |
+| Kendall, TX | (830) 249-9721 | kendallcountysheriff.com/departments | Phone (24-Hour) |
+| Jackson, NC | (828) 586-1911 | jacksonnc.org/164/Sheriffs-Office | Dispatch |
+
+Not added: Anchorage, Juneau and Chugach (no Trooper region line names them); Honolulu (529-3111
+is unlabelled), Maui, Hawaii County; Hocking, Summit OH, Cuyahoga; Marquette, Alger, Keweenaw,
+Houghton; Monroe IN, Lawrence IN; Rockcastle, Estill, Menifee, Laurel, McCreary; Fentress,
+Morgan, Cumberland, Sequatchie, Rhea, Grundy; Chattooga, Habersham; Wilkes, Surry, Ashe, Avery,
+Caldwell, Polk NC, Swain; Rockbridge (540-463-7328 is likely; the page dropped the connection),
+Bland, Bath, Shenandoah, Smyth, Grayson; Maryland's Washington, Montgomery, Frederick and
+Garrett; Orange, Rockland, Clinton, Warren NY, Hamilton NY, Herkimer; Bucks, Allegheny, Fayette
+PA, Westmoreland, Adams; Norfolk, Franklin MA, Hampshire; Belknap, Sullivan, Cheshire; Rutland,
+Windsor, Bennington; Oxford, Franklin ME, Knox; Bandera, Medina, Bexar, Brewster, Llano; Comanche,
+Murray; Dawes; Lawrence SD, Meade; Billings ND; Douglas KS; Clayton, Dubuque; St. Louis MN, Pine,
+Carlton, Goodhue; Door, Douglas WI, Bayfield. Most of these were not reached yet, not refused.
+
+**Statewide lists, for the next pass.** Each of these could cover a whole state at once:
+- Pennsylvania: PEMA's *Directory of County PSAPs*, with a non-emergency line per county. It has
+  moved under pa.gov/agencies/pema.
+- Oregon: OEM's *PSAP Directory by County* (oregon.gov/oem/Documents/OEM_PSAP_Directory.pdf,
+  50 pages). It could not be read here.
+- Montana: DOJ's *Certified PSAP List* (July 2022).
+- Colorado: the PUC's PSAP page (403 to automated reads).
+- Arkansas: the 911 Board's PSAP contacts sheet (2022).
+
+Two lists were refused. Minnesota DPS lists each county's 10-digit 24-hour *emergency* line,
+not a non-emergency one. Washington's mil.wa.gov/alternative911 lists lines for use only when
+911 is down. Michigan's per-county list is a 2021 draft from a non-state association.
+
 ## Washington (checked 2026-10-28)
 
 | County | Number | Read on | Label on the page |
