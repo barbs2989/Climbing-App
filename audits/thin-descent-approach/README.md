@@ -118,6 +118,8 @@ about thin descents, on the peaks people actually climb. Each peak is one contex
 | Enclosure (WY) | 12 | **12 written** | 2 | NW Ridge described only in its upper third. |
 | Mount Hooker (WY) | 12 | **12 written** | 0 | 9 approach-only: no source says how to leave the top. |
 | Pingora (WY) | 9 | **7 written** | 2 | One page with no description, one unplaceable. |
+| Slesse Mountain (BC) | 27 | **14 written** | 13 | Lead review dropped two descents that assumed a summit finish. Some rows are on Mount Parkes or Labour Day Horn, other peaks of the massif. Road access is stated only as restricted, because the sources conflict. |
+| Longs/Meeker Cirque (CO) | 29 | **24 written**; 3 **apply pending** (DB stopped again) | 2 | Dark Star skipped (its own page says the description may be another line). Rappel counts left out; the sources split three ways. |
 
 **How to resume (database healthy again: a one-row read under 1.5 s):**
 On 2026-10-29 at 18:39 the database recovered. 102 rows were written (Hallett, Hulk, Whitney, Russell, Middle Teton and Moran in full,
