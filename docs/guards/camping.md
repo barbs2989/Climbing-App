@@ -966,6 +966,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     next run began re-pinning camps the last batch had pinned. `apply.sh` (in the run dir) stops on a
     failed audit, the solver refuses a census older than the newest rollback, never pins a camp a live
     pin already carries under its own name, and the audit reports PINNED TWICE (0 after every batch).
+  - **The 32 OFF-THE-TRACK pins were triaged and NONE was wrong** (`scripts/oneoff/triage-offtrack-camp-pins.mjs`,
+    2026-10-28). A pin moves only when an independent record of the same camp (official camp point,
+    GNIS, the same camp pinned on another route) sits ON the recorded track and fits the ground at the
+    stated height. Result: 19 OTHER WAY IN — an independent record puts the camp exactly where the pin
+    is, so the recording takes another approach or the camp is the descent camp (Camp Schurman on
+    Ptarmigan Ridge); 12 UNRESOLVED — no independent record exists; 1 PROTECTED — moved from an NPS
+    point by the camp-location session (its write log, `~/dev/camp-audit-06856cffd7/writes.jsonl`,
+    is honoured as a source). Some OTHER WAY IN camps sit kilometres off (Deer Lake 8 km off Mount
+    Ferry's track, Luna Camp 5.6 km off Fury's): whether those routes should LIST them is a removal,
+    which is always the owner's call — reported, not acted on. Per-pin verdicts:
+    `offtrack-triage.json` in the run dir.
   - **What stays unpinned, and why, is a file, not a count**: `remaining-camps.csv` in the run dir.
     Of ~500 left, most are relative ("bench below the west face") with no published point; research
     is near-exhausted (of 197 leftover names only 56 named a findable feature, all searched, 14 found).
