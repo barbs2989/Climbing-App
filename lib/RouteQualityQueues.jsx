@@ -23,6 +23,7 @@ import { C, DLOCALE, sameEditValue, pubNameRow } from "../ClimbMatchCore";
 import { AREA_EDIT_FIELDS, monthsLabel } from "./areaFields";
 import { useAreaEditRowsByIds } from "./db";
 import LoadingRows from "../src/components/LoadingRows.tsx";
+import { isRackItem, rackItemLine } from "./rack.js";
 
 // An AREA edit (0319): area_id set, route_id null. Its field label and current value come from
 // lib/areaFields.js (the one list the constraint, applier, sheet and page share), not from
@@ -47,6 +48,8 @@ function rowsOf(v) {
   if (!v.length || isPrim(v[0])) return null;
   return v.map(function (r, i) {
     if (!r || typeof r !== "object") return String(r);
+    // A rack row ({item, sizes, qty}) reads as the RACK card prints it: "Cams #1 ×2".
+    if (r.pitch == null && r.n == null && isRackItem(r)) return rackItemLine(r);
     const head = r.pitch != null ? "P" + r.pitch : r.n != null ? "#" + r.n : r.name || r.label || ("row " + (i + 1));
     const rest = Object.keys(r).filter((k) => ["pitch", "n", "name", "label", "photos", "comments"].indexOf(k) < 0 && r[k] != null && r[k] !== "" && !(Array.isArray(r[k]) && !r[k].length))
       .map((k) => k + ": " + (isPrim(r[k]) ? String(r[k]) : JSON.stringify(r[k]))).join(" · ");

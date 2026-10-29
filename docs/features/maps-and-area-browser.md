@@ -211,7 +211,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 `check:area-duplicates`, `check:area-sort-labels`, `check:generic-area-names`, `check:wp-styles`, `check:waypoint-placement`, `check:waypoint-dedupe`,
 `check:track-caveat`, `check:gpx-caveats`, `check:waypoint-caveat`, `check:bottom-panels`, `check:overlays`, `check:overflow`, `check:ui`, `check:zero`,
 `check:area-edit-fields` (the seven editable fields are one list), `check:area-page-honest` (gated facts, chart headline = its bars, one drive control), `check:write-readers`.
-A place filed twice is refused at insert by `refuse_duplicate_area` (0216/0218, a same-named area within 1.5 km) and `refuse_bucket_copy_area` (0340/0341, an area NAMED by a list of two or more places the state already files, spacing variants included — MP's "Cascade River Drainage (Eldorado, Forbidden, …)" beside North Cascades Core); `check:area-duplicates` sweeps for both daily, and also for names listing NEARBY places without brackets ("Devils Den, Gettysburg").
+A place filed twice is refused at insert by `refuse_duplicate_area` (0216/0218, a same-named area within 1.5 km; since 0385 also a same-named SIBLING under one parent, coordinate or not, by `catalog_sibling_key` — "Pine River" beside "Pine River Area", "X Ice" beside "X") and `refuse_bucket_copy_area` (0340/0341, an area NAMED by a list of two or more places the state already files, spacing variants included — MP's "Cascade River Drainage (Eldorado, Forbidden, …)" beside North Cascades Core); `check:area-duplicates` sweeps for both daily, and also for names listing NEARBY places without brackets ("Devils Den, Gettysburg").
 Notes: `docs/guards/README.md`.
 
 ## 7. Last significant change
