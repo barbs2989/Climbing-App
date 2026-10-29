@@ -104,25 +104,29 @@ about thin descents, on the peaks people actually climb. Each peak is one contex
 |---|---|---|---|---|
 | Grand Teton (WY) | 39 | 33 | 6 | 3 multi-peak traverses, 2 topo-only pages, 1 with no top-out. Lead review: the trail distance was single-source (6.4 mi); sources range 6–7.5 mi, so it reads "roughly 6.5 to 7 miles and about 5,000 ft". Removed one party-testimony clause. |
 | The Diamond (CO) | 30 | 22 | 8 | 4 with no route page, 4 with no stated top-out. Lead review: the Table Ledge to Broadway rappel count was "about six"; two sources say five, then four to the snowfield (the first on a single rope). Trail figure confirmed: 4.2 mi and 2,390 ft. |
-| Hallett Peak (CO) | 29 | 25 reviewed, **not yet applied** | 4 | The database stopped answering on the first write (2026-10-29, a one-row read took 170 s and returned 504). Lead review: stephabegg.com is firewalled, so its pages are cited as web.archive.org copies, which the copy check can read. That caught one copied phrase, now reworded, plus a "the park lists" source mention. |
-| Incredible Hulk (CA) | 28 | 19 reviewed, dry-run clean, **not yet applied** | 9 | 3 with no top-out, 6 unplaced (not on the area page). No mileage given (single source). |
-| Spearhead (CO) | 20 | 14 reviewed (text scan clean), **dry-run and apply pending** | 6 | 3 not on any page, 3 with no stated top-out. The dry run hit the 504 outage. |
-| Notchtop (CO) | 13 | 9 reviewed (text scan clean), **dry-run and apply pending** | 4 | No page or no top-out. West Gully descent given as third to fourth class (sources split). |
-| Mt. Whitney (CA) | 18 | 16 reviewed (text scan + offline copy check clean), **dry-run and apply pending** | 2 | No mileage, gain or rappel counts (sources split). Whitney Zone permit named in general terms. Possible duplicate: Hairline vs Hairline Free (aid vs free of one line); both written, nothing deleted. |
-| Mt. Russell (CA) | 12 | 9 reviewed (text scan + offline copy check clean), **dry-run and apply pending** | 3 | Pilgrimage has no source; North Face and South Slope are single pages with no line. |
-| Middle Teton (WY) | 14 | 13 reviewed (offline copy check clean), **apply pending** | 1 | A bundled multi-line north-wall row. |
-| Mount Moran (WY) | 12 | 10 reviewed (offline copy check clean), **apply pending** | 2 | Canoe approach across String and Leigh lakes; rappel counts left out (sources vague). Lead review cut an unsourced superlative. |
+| Hallett Peak (CO) | 29 | **25 written** | 4 | The database stopped answering on the first write (2026-10-29, a one-row read took 170 s and returned 504). Lead review: stephabegg.com is firewalled, so its pages are cited as web.archive.org copies, which the copy check can read. That caught one copied phrase, now reworded, plus a "the park lists" source mention. |
+| Incredible Hulk (CA) | 28 | **19 written** | 9 | 3 with no top-out, 6 unplaced (not on the area page). No mileage given (single source). |
+| Spearhead (CO) | 20 | 8 written; 6 refused by the copy check at apply, then rewritten (offline check clean), **apply pending** | 6 | 3 not on any page, 3 with no stated top-out. The dry run hit the 504 outage. |
+| Notchtop (CO) | 13 | 1 written; 8 refused by the copy check at apply, then rewritten (offline check clean), **apply pending** | 4 | No page or no top-out. West Gully descent given as third to fourth class (sources split). |
+| Mt. Whitney (CA) | 18 | **16 written** | 2 | No mileage, gain or rappel counts (sources split). Whitney Zone permit named in general terms. Possible duplicate: Hairline vs Hairline Free (aid vs free of one line); both written, nothing deleted. |
+| Mt. Russell (CA) | 12 | **9 written** | 3 | Pilgrimage has no source; North Face and South Slope are single pages with no line. |
+| Middle Teton (WY) | 14 | **13 written** | 1 | A bundled multi-line north-wall row. |
+| Mount Moran (WY) | 12 | **10 written** | 2 | Canoe approach across String and Leigh lakes; rappel counts left out (sources vague). Lead review cut an unsourced superlative. |
 | Lone Pine Peak (CA) | 14 | 11 reviewed (offline copy check clean), **apply pending** | 3 | Lead review removed six single-source elevations and distances. |
-| Temple Crag (CA) | 10 | 10 reviewed (offline copy check clean), **apply pending** | 0 | 5 approach-only (no stated top-out). Distances left out; MP's own pages disagree, 4.3 vs 5.5 mi. |
+| Temple Crag (CA) | 10 | 1 written (Moon Goddess Arete); 9 **apply pending** | 0 | 5 approach-only (no stated top-out). Distances left out; MP's own pages disagree, 4.3 vs 5.5 mi. |
 | Symmetry Spire (WY) | 12 | 11 reviewed, dry-run clean, **apply pending** | 1 | Reticent Wall has no route page. |
 | Enclosure (WY) | 12 | 10 reviewed, dry-run clean, **apply pending** | 2 | NW Ridge described only in its upper third. |
 | Mount Hooker (WY) | 12 | 12 reviewed (offline copy check clean), **apply pending** | 0 | 9 approach-only: no source says how to leave the top. |
 | Pingora (WY) | 9 | 7 reviewed (offline copy check clean), **apply pending** | 2 | One page with no description, one unplaceable. |
 
 **How to resume (database healthy again: a one-row read under 1.5 s):**
-1. `node scripts/enrich-approach-rappel-bivy.mjs --from audits/thin-descent-approach/oos/batch-co_hallett_peak.json`, then the same for
-   `batch-ca_incredible_hulk.json`, `batch-co_spearhead.json`, `batch-co_notchtop.json`, `batch-ca_mt_whitney.json` and `batch-ca_mt_russell.json` (dry-run the last four first), then `batch-wy_middle_teton.json`, `batch-wy_mount_moran.json`, `batch-ca_lone_pine_peak.json` and `batch-ca_temple_crag.json` (dry-run each first). Each must print one "verified on re-read" per written row (25, 19, 14, 9, 16, 9, 13, 10, 11, 10), then Symmetry Spire, Enclosure, Hooker and Pingora (11, 10, 12, 7). Then move ONLY the new
-   `audits/route-breakdown/rollback-<ms>.json` file(s) here, BY EXACT NAME (a glob sweeps other sessions' tracked files).
+On 2026-10-29 at 18:39 the database recovered. 102 rows were written (Hallett, Hulk, Whitney, Russell, Middle Teton and Moran in full,
+plus 8 Spearhead, 1 Notchtop and 1 Temple Crag), and then it stopped answering again on Temple Crag.
+1. Re-run `node scripts/enrich-approach-rappel-bivy.mjs --from audits/thin-descent-approach/oos/batch-<area>.json` for `co_spearhead`,
+   `co_notchtop`, `ca_lone_pine_peak`, `ca_temple_crag`, `wy_symmetry_spire`, `wy_enclosure`, `wy_mount_hooker` and `wy_pingora`. Re-applying a row
+   that already landed rewrites the same text, so it is harmless. Before you re-apply, clear each one with
+   `node scripts/oneoff/thin-da-offline-check.mjs <batch>`. The applier stops at the first copied phrase it finds in an entry, and the offline
+   check lists them all. Then move ONLY the new `audits/route-breakdown/rollback-<ms>.json` file(s) here, BY EXACT NAME.
 2. Any further `oos/batch-*.json` without a row in the table above is an unreviewed research batch. Lead-review it (testimony,
    source names, single-source counts), dry-run it, then apply it.
 3. The 17-peak marquee list is fully researched.
