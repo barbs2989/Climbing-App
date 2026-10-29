@@ -47,3 +47,16 @@ Mount Fairchild (the line follows Appleton Pass; sources name the Deer Lake / Hi
 9 and 13 (`scripts/oneoff/gpx-sparse-measure.mjs`). `recordedTrackPts` now refuses any line under
 `MIN_RECORDED_PTS` (10), so those routes show their pins with no line, a waypoints-only download, and
 the *Add a track* prompt.
+
+**Round 3: routes with no recorded track** (`scripts/oneoff/gpx-corridor-measure.mjs`,
+`corridor-offroute-pins-2026-10-29.json`). With no track to measure against, a pin counted as off
+the route when it sat more than 3 km from the trailhead-summit line and further than 60% of that
+line's length. 104 pins on 72 routes; 95 were drive-in campgrounds already listed in the route's
+CAMPING & BIVY section, and those 95 map pins (63 routes) were removed
+(`offroute-waypoints-round3-campgrounds-2026-10-29.json`, rollback
+`scripts/rollback-offroute-waypoints-round3-2026-10-29.json`, 0 reconcile failures). The other 9
+were kept: they are real camps on a long approach (Berg Lake on Robson, May Creek on Jack Mountain,
+Camp Kiser, Spike Camp), where the straight line is a poor stand-in for the trail.
+`audit:coord-origin` found nothing more than 50 km from its own area.
+
+Totals for 2026-10-29: 179 pins removed from 126 route rows across three rounds.
