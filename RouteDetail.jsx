@@ -1870,7 +1870,7 @@ export function ApproachVariants({route,onEdit,onEditProse}){
        printed twice. Now the WHOLE window sits at the top of the card, full width, and wraps. */
     const seasonFull=String(v.season||"").trim().replace(/\s+/g," ");
     const hrsTxt=v.hours?hrsFmt(v.hours):(own&&routeFacts.hours?hrsFmt(routeFacts.hours)+" approach":null);
-    const distTxt=v.distMi!=null?uDistMi(v.distMi):(own?routeFacts.dist:null);
+    const distTxt=v.distMi!=null?uDistMi(v.distMi)+" one way":(own?routeFacts.dist:null);/* "one way" like the route's own figure beside it: a bare "4.8 mi" on one card and "4.8 mi one way" on the next read as two different measurements. */
     const gainTxt=v.gainFt!=null?uElev(v.gainFt)+" gain":(own?routeFacts.gain:null);
     const facts=[hrsTxt,distTxt,gainTxt].filter(Boolean);
     const crossing=approachHasCrossing(haz);
@@ -3982,10 +3982,11 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
           compares these with a tolerance, so two climbers who measure 4.8 and 4.9 miles agree.
           A text box here would make the same fact unagreeable. `hours` stays text: 27% of its
           values are ranges ("3-4", "1-1.5"), which a single number cannot express. */}
+      <div style={{fontSize:11,color:C.textMuted,marginBottom:4}}>{"Trailhead to the base, one way — to two decimals if you know them"}</div>
       <div style={{display:"flex",gap:7,marginBottom:7}}>
         <input aria-label={"Approach "+(idx+1)+" distance in "+(uImp()?"miles":"kilometres")+", one way to the base"} inputMode="decimal" value={av.distMi} onChange={function(e){setAvar(idx,"distMi",e.target.value.replace(/[^0-9.]/g,""));}} placeholder={"one way "+uDistMiUnit()} style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
-        <input aria-label={"Approach "+(idx+1)+" gain in "+(uImp()?"feet":"metres")} inputMode="numeric" value={av.gainFt} onChange={function(e){setAvar(idx,"gainFt",e.target.value.replace(/[^0-9]/g,""));}} placeholder={"gain "+uElevUnit()} style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
-        <input aria-label={"Approach "+(idx+1)+" hours"} value={av.hours} onChange={function(e){setAvar(idx,"hours",e.target.value);}} placeholder="hrs, e.g. 3-4" style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
+        <input aria-label={"Approach "+(idx+1)+" gain in "+(uImp()?"feet":"metres")+", trailhead to the base"} inputMode="numeric" value={av.gainFt} onChange={function(e){setAvar(idx,"gainFt",e.target.value.replace(/[^0-9]/g,""));}} placeholder={"gain "+uElevUnit()} style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
+        <input aria-label={"Approach "+(idx+1)+" hours, trailhead to the base"} value={av.hours} onChange={function(e){setAvar(idx,"hours",e.target.value);}} placeholder="hrs, e.g. 3-4" style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
       </div>
       <input aria-label={"Approach "+(idx+1)+" season"} value={av.season} onChange={function(e){setAvar(idx,"season",e.target.value);}} placeholder="Window, e.g. Jul-Sep" style={Object.assign({},fld,{marginBottom:7})}/>
       <textarea aria-label={"Approach "+(idx+1)+" hazards, one per line"} value={av.hazards} onChange={function(e){setAvar(idx,"hazards",e.target.value);}} rows={2} placeholder="Hazards, one per line" style={Object.assign({},fld,{marginBottom:7,resize:"vertical"})}/>
