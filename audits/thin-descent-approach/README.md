@@ -93,3 +93,13 @@ Those rows stay blank, which keeps the contribute prompt. Don't retry them by we
 
 `scripts/lib/source-overlap.mjs` now accepts `review.source_texts` (URL → saved page text), so text drawn from a page
 read only in a browser is still copy-checked.
+
+### Out-of-state marquee peaks (`oos/`, method in `oos/OOS-BRIEF.md`)
+The owner asked for everything the 2026-10-24 session left (2026-10-28), and that report's open item was out of state, marquee peaks
+first. The 2026-08-07 hold on out-of-state route work covered the Phase 1 gear and hazards pass; this is the owner's own note
+about thin descents, on the peaks people actually climb. Each peak is one context (`ctx-<area>.json`) and one batch
+(`batch-<area>.json`), applied through `enrich-approach-rappel-bivy.mjs`, which asserts the area, copy-checks, and re-reads each row.
+
+| Peak | thin rows | written | skipped | notes |
+|---|---|---|---|---|
+| Grand Teton (WY) | 39 | 33 | 6 | 3 multi-peak traverses, 2 topo-only pages, 1 with no top-out. Lead review: the trail distance was single-source (6.4 mi); sources range 6–7.5 mi, so it reads "roughly 6.5 to 7 miles and about 5,000 ft". Removed one party-testimony clause. |
