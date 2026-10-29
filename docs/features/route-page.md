@@ -96,6 +96,19 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `src/components/PinNum.tsx` | `PinNum` — the numbered badge beside a topo pin (moved out of RouteDetail.jsx, PR52) |
 | `src/components/TopoSwatch.tsx` | `TopoSwatch` — a sample of a topo line for the topo's key (moved out of RouteDetail.jsx, PR52) |
 | `src/components/CragWalkIn.tsx` | `CragWalkIn` — the crag's WALK-IN card (moved out of RouteDetail.jsx, PR52) |
+| `src/components/EditIconButton.tsx` | `EditIconButton` — the route page's edit pencil (binds `C` to lib/areaChrome.jsx's shared button) (moved out of RouteDetail.jsx, PR53) |
+| `src/components/GapNote.tsx` | `GapNote` — the muted line a section draws for a field the route lacks, with a button to add it (moved out of RouteDetail.jsx, PR53) |
+| `src/components/VerifNote.tsx` | `VerifNote` — the Community-reported / Unverified line on Overview (moved out of RouteDetail.jsx, PR53) |
+| `src/components/TagChip.tsx` | `TagChip` — one route tag chip (a list or a style), toggling its blurb (moved out of RouteDetail.jsx, PR53) |
+| `src/components/RouteTagRow.tsx` | `RouteTagRow` — the route's tag chips and the open one's blurb (moved out of RouteDetail.jsx, PR53) |
+| `src/components/CragSafetyNotes.tsx` | `CragSafetyNotes` — Spot a bolt or anchor problem? on sport routes (moved out of RouteDetail.jsx, PR53) |
+| `src/components/RackBetaList.tsx` | `RackBetaList` — RACK BETA: what climbers said about the rack (moved out of RouteDetail.jsx, PR53) |
+| `src/components/PitchConsensus.tsx` | `PitchConsensus` — PITCH GEAR: belay station, anchor and gear for one pitch (moved out of RouteDetail.jsx, PR53) |
+| `src/components/FloatPlanFold.tsx` | `FloatPlanFold` — the folded FLOAT PLAN card on a committing objective (moved out of RouteDetail.jsx, PR53) |
+| `src/components/TopoCaption.tsx` | `TopoCaption` — the caption under an enlarged topo, folded past ~5 lines (moved out of RouteDetail.jsx, PR53) |
+| `src/components/ClampText.tsx` | `ClampText` — a comment clamped to three lines with Read more (moved out of RouteDetail.jsx, PR53) |
+| `src/components/ClimateSeasonCard.tsx` | `ClimateSeasonCard` — CLIMATE & SEASON (moved out of RouteDetail.jsx, PR53) |
+| `src/components/PhotoRow.tsx` | `PhotoRow` — a row of photo thumbnails with a full-screen viewer (moved out of RouteDetail.jsx, PR53) |
 | `src/components/GPXMap.tsx` | `GPXMap` — the route map: track, pins, one shared popup card, derived trailhead, base check-ins (extracted from core, PR13) |
 | `lib/Route3DView.jsx` | `Route3DView` — the route map's 3D view (MapLibre GL over terrain) |
 | `lib/RouteTracksPanel.jsx` | `RouteTracksPanel` — CLIMBERS' TRACKS under the route map: sort, season filter, show on map |
