@@ -312,11 +312,11 @@ jobs:
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
   horizontal-overflow:
-    name: The app fits a 390px phone
+    name: The app fits a 390px phone and a 1280px desktop
     runs-on: ubuntu-latest
     # Walks the same 6 tabs and ~43 openable overlays as its siblings; measured at ~6m
     # locally, so this is headroom rather than an expected duration.
-    timeout-minutes: 25
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -338,6 +338,18 @@ jobs:
         env:
           # Same reasoning as the jobs above: without these USE_DB is off and the app
           # under test is not the one that ships.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
+
+      - name: Nothing runs off the right-hand edge of the desktop website (1280px)
+        # Its own finding even when the phone walk above is red.
+        if: ${{ !cancelled() }}
+        run: npm run check:overflow -- --width 1280
+        env:
+          # The desktop layout (sidebar, 640px column, right rail) is its own set of inline
+          # styles that the phone walk never draws. Same env as the phone walk.
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           VITE_USE_DB: "true"

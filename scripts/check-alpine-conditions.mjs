@@ -370,8 +370,12 @@ eq("...and ordinary disagreement (gusts 10 mph apart) flags nothing", msC && msC
 {
   // RAIN totals (2026-10-28): Baker's models split 0.04" to 1.56" on one day while NWS sat at 0.06": the amount we print is one model's.
   const rainy = (per) => { const s = SPD([20, 25, 30], [30, 32, 31], [8000, 8500, 8200]); ["gfs_seamless", "icon_seamless", "ecmwf_ifs025"].forEach((m, j) => { s.hourly["precipitation_" + m] = s.hourly.time.map(() => per[j] / 24); }); return s; };
-  const r1 = A.modelSpread(rainy([0.04, 0.9, 1.56]), "2026-01-15"), r2 = A.modelSpread(rainy([1.2, 1.5, 1.8]), "2026-01-15"), r3 = A.modelSpread(rainy([0, 0.1, 0.3]), "2026-01-15");
-  eq("models 0.04\"-1.56\" apart on the day's rain flag it; 1.2\"-1.8\" (all wet) and 0\"-0.3\" (all light) do not", [r1 && r1.over, r2 && r2.over, r3 && r3.over], [["rain"], [], []]);
+  const r1 = A.modelSpread(rainy([0.04, 0.9, 1.56]), "2026-01-15"), r2 = A.modelSpread(rainy([1.2, 1.5, 1.8]), "2026-01-15"), r3 = A.modelSpread(rainy([0.05, 0.1, 0.3]), "2026-01-15");
+  eq("models 0.04\"-1.56\" apart on the day's rain flag it; 1.2\"-1.8\" (all wet) and 0.05\"-0.3\" (all light) do not", [r1 && r1.over, r2 && r2.over, r3 && r3.over], [["rain"], [], []]);
+  // A wet day against a dry one, under the 0.5" gap; and the amount the CARD PRINTS joins the comparison (catalog audit 2026-10-29: Mount Adams 0.29" shown, 0.00-0.09" from the three models).
+  const r4 = A.modelSpread(rainy([0, 0.1, 0.25]), "2026-01-15"), r5 = A.modelSpread(rainy([0, 0.05, 0.09]), "2026-01-15", null, 0.29), r6 = A.modelSpread(rainy([0, 0.05, 0.09]), "2026-01-15");
+  eq("0\"-0.25\" (a wet day and a dry one) flags; the shown 0.29\" beside models at 0-0.09\" flags; the models alone at 0-0.09\" do not", [r4 && r4.over, r5 && r5.over, r5 && r5.rain, r6 && r6.over], [["rain"], ["rain"], [0, 0.29], []]);
+  eq("the card passes the amount it prints into the comparison", /modelSpread\(sp, d\.date, null, daySummary\(fc, d\)\.precip\)/.test(fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8")), true);
   eq("...and the flag states the range", /rain 0\.04"–1\.56"/.test(A.flagText({ key: "models-disagree", level: "caution", v: r1 })), true);
   eq("...from a spread read that asks for precipitation", /export function fetchAlpineSpread[\s\S]{0,700}freezing_level_height,precipitation&models=/.test(fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8")), true);
 }
