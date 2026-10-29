@@ -191,10 +191,17 @@ By PRIMARY discipline: trad 1,430, ice 1,006, sport 578, mixed 148, mountaineeri
 
 | AK 1 | 40 | 25 | 15 | Mt Hunter "Deprivation" skipped: the row (1 pitch AI6 M5) doesn't match the 6,000 ft buttress the sources describe. |
 | AK 2 | 37 | 29 | 8 | Rime Peak carries Mt. Regal's coordinate; Peak 11,300 is filed under Denali NP but is in the Ruth Gorge. |
+| NH 1 | 35 | 26 | 9 | 4 Huntington rows already covered. Beaver Brook Falls is filed under Dixville Notch but sits north of Colebrook. |
+| NH 2 | 39 | 22 | 17 | Moosilauke, Lafayette, Tenny and Oliverian Notch share one placeholder coordinate (44.03683, -71.119). "5 Mt Huntington Ice" rows sit nowhere near the ravine. |
+| BC 1 | 40 | 30 | 10 | Lead review reworded one party-testimony sentence (Robson Roof Glacier). Mount Poland "Curtsy Call" / "Polish Peacock" can't be placed. |
+| BC 2 | 32 | 9 | 23 | Pigeon Spire "Toilet Seat" (5.15d WI8 M16+) looks like a joke row. "Ice caves at the Skillet Glacier" is filed under Mt Ulysses (BC); Skillet Glacier is on Mount Moran (WY). |
+| AB 1 | 36 | 33 | 3 | Lead review removed a single-source rappel count (Edge of the World). Maligne Canyon fire closure left out (current conditions). |
+| AB 2 | 25 | 20 | 5 | Nemesis high confidence (two sources). Amadeus is probably Amadeus Falls on Upper Barrier, filed under "Unsorted Ice routes". |
+| OR 1 | 40 | 36 | 4 | Mt. Hood, Three Sisters, Thielsen, Salt Creek Falls. Lead review removed an unsourced avalanche line (North Sister East Buttress). |
 
 **Applied so far (2026-10-29, 22:30):** all seven CO batches (210 rows, every one "verified on re-read", none refused); then the database
 stopped answering after 2 rows of UT 1. Rollbacks: `rollback/rollback-1793312990207.json` through `rollback-1793313279406.json` (8 files).
-**Still to apply:** UT 1 (re-run whole; re-applying a landed row is harmless), UT 2–4, MT 1–2, AK 1–2. Wait for a healthy one-row read,
+**Still to apply:** UT 1 (re-run whole; re-applying a landed row is harmless), UT 2–4, MT 1–2, AK 1–2, NH 1–2, BC 1–2, AB 1–2, OR 1. Wait for a healthy one-row read,
 run the applier per batch, then move each new `audits/route-breakdown/rollback-<ms>.json` here by exact name.
 
 **Ice-tier findings for review:**
