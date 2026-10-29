@@ -1227,6 +1227,17 @@ the correction knows the screen is wrong, and they have no way to report it.
     swaps one word in every seven. Prose already in the catalog with no batch file behind it — that
     is the #2142 audit's ground, measured then at ~1 verbatim lift per 160 sampled phrases, and
     deliberately NOT re-run here.
+  - **`--live` (2026-10-29): the catalog's side, not the batch's.** A batch check sees the text as
+    written; everything applied before the gate existed, and anything edited since, was never compared.
+    `--live` walks EVERY JSON file under `audits/` (2,601 files), credits each route id with every URL
+    anywhere beneath the object that names it (an `id` field, or the id as a key — the shapes differ
+    by wave: contradiction `results[]`, grade arrays, `{id: spec}` batches), then reads that route's
+    LIVE row (public key) and runs the same 8-word test over every string in it of 8+ words, except
+    ids, names and provenance columns. 1,469 routes, ~7,700 cited pages. Pages are fetched one at a
+    time per site, 1 s apart, eight sites at once (`--cache DIR` keeps them for a re-run;
+    `--fetch-only` warms the cache without touching the database). `review.source_texts` copies are
+    used when a research file carries them. Cannot see: a route whose research cited no URL, and the
+    sites that refuse scripts — the same blind spots as the batch check.
   - **Selftest:** `--selftest` needs no network: the Dark Shadows sentence as applied is flagged,
     the same facts reworded are not, a short shared phrase is not, and `review`/`area`/labels are
     never walked.
