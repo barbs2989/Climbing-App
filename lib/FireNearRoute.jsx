@@ -110,7 +110,7 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
           <span style={{ flex: 1, minWidth: 0 }}>
             <span style={{ ...hd, color: tone.c, borderLeftColor: tone.c, marginBottom: 3, display: "flex", alignItems: "center", gap: 6 }}>
               <ActionIcon name="fire" size={14} color={tone.c} />
-              {closeUncontained.length ? "Active fire nearby" : "Active fire in the area"}
+              <span data-jump-label="">{closeUncontained.length ? "Active fire nearby" : "Active fire in the area"}</span>
             </span>
             <span style={{ display: "block", fontSize: 12, color: C.textSub }}>{summary}</span>
           </span>
