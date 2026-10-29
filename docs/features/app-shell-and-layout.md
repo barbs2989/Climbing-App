@@ -26,6 +26,10 @@ room for side-panel ads later. The phone app keeps its own look.
     with `data-sheet`: the delete-account confirm (`"alert"` — Material keeps a small centred dialog
     for an urgent yes/no) and the photo viewers (`"viewer"`, already a black full-screen lightbox).
     The page behind is locked by `useDialogA11y` in `lib/dialogA11y.js`, as for every dialog.
+    `check:overlay-fullscreen` walks every popup at 390x844 and proves both halves: 21 sample points
+    each land on the popup's own opaque page (none on the app or a dimmed backdrop), and 2,000px of
+    wheel inside it leaves the app behind where it was (2026-10-29: 66 of 68 pass, the ⋯ menu and the
+    delete-account confirm opt out).
   - **A popup's ✕ and ← Back stay on screen** (owner 2026-10-24: "need to be sticky when a popup page
     comes up"): the header row holding a popup's Close…/Back… button is pinned to the top of the pane
     that scrolls, and the content scrolls under it — Material's full-screen dialog and iOS's sheet both
@@ -147,7 +151,7 @@ Layout only. The footer reads the states list (`useStates`); the search reads th
 
 ## 6. Guards
 `check:boot` (boot NAV labels match `NAV`), `check:overlay-width-cap`, `check:bottom-panels`,
-`check:zindex`, `check:tap-slop` (the touch widening stays installed). The browser walks drive a phone-width window, except `check:overflow -- --width 1280`, which walks every tab, the route page and every openable overlay on the desktop website (`render-guards.yml` runs it beside the 390px walk).
+`check:zindex`, `check:tap-slop` (the touch widening stays installed), `check:overlay-fullscreen` (a popup covers the phone screen and holds the app behind still). The browser walks drive a phone-width window, except `check:overflow -- --width 1280`, which walks every tab, the route page and every openable overlay on the desktop website (`render-guards.yml` runs it beside the 390px walk).
 
 ## 7. Last significant change
 - **The desktop website is walked** (2026-10-28): `check:overflow` takes `--width`, and CI runs it at 1280px as well as 390px, so a desktop screen that scrolls sideways fails a check.
