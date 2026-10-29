@@ -35,7 +35,7 @@ for (const e of edits) {
 
 // the rollback file is rewritten BEFORE every patch, so a crash mid-batch still leaves every prior value
 const rollback = [];
-const rbFile = `scripts/rollback-rewrite-copied-prose-${Date.now()}.json`;
+const rbFile = process.env.ROLLBACK_DIR ? `${process.env.ROLLBACK_DIR}/rollback-${Date.now()}.json` : `scripts/rollback-rewrite-copied-prose-${Date.now()}.json`;
 let ok = 0, refused = 0;
 for (const g of groups.values()) {
   const r = await fetch(`${SUPABASE_URL}/rest/v1/${g.table}?id=eq.${encodeURIComponent(g.id)}&select=id,${g.col}`, { headers: headers(key) });
@@ -43,9 +43,12 @@ for (const g of groups.values()) {
   if (!Array.isArray(rows) || rows.length !== 1) { console.log(`REFUSED ${g.id}: ${rows.length ?? "?"} rows`); refused++; continue; }
   const before = rows[0][g.col];
   const wrap = { [g.col]: structuredClone(before) };
-  let bad = null;
+  let bad = null, done = 0;
   for (const it of g.items) {
     let s = getAt(wrap, it.toks);
+    // a re-run after a stop: the live string is already the rewrite, so this item is done, not drifted
+    const want = it.edits.reduce((t, { old, new: nw }) => t.replace(old, () => nw), it.text);
+    if (s === want && s !== it.text) { done++; continue; }
     if (s !== it.text) { bad = `${it.path}: live string differs from the audited one`; break; }
     for (const { old, new: nw } of it.edits) {
       const n = s.split(old).length - 1;
@@ -57,6 +60,7 @@ for (const g of groups.values()) {
     console.log(`\n${g.id} ${it.path}`); for (const { old, new: nw } of it.edits) console.log(`  - ${old}\n  + ${nw}`);
   }
   if (bad) { console.log(`REFUSED ${g.id} ${bad}`); refused++; continue; }
+  if (done === g.items.length) { console.log(`ALREADY ${g.id} ${g.col}`); ok++; continue; }
   if (APPLY) {
     rollback.push({ table: g.table, id: g.id, col: g.col, before });
     fs.writeFileSync(rbFile, JSON.stringify(rollback));
