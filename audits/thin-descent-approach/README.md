@@ -114,13 +114,16 @@ about thin descents, on the peaks people actually climb. Each peak is one contex
 | Mount Moran (WY) | 12 | 10 reviewed (offline copy check clean), **apply pending** | 2 | Canoe approach across String and Leigh lakes; rappel counts left out (sources vague). Lead review cut an unsourced superlative. |
 | Lone Pine Peak (CA) | 14 | 11 reviewed (offline copy check clean), **apply pending** | 3 | Lead review removed six single-source elevations and distances. |
 | Temple Crag (CA) | 10 | 10 reviewed (offline copy check clean), **apply pending** | 0 | 5 approach-only (no stated top-out). Distances left out; MP's own pages disagree, 4.3 vs 5.5 mi. |
+| Symmetry Spire (WY) | 12 | 11 reviewed, dry-run clean, **apply pending** | 1 | Reticent Wall has no route page. |
+| Enclosure (WY) | 12 | 10 reviewed, dry-run clean, **apply pending** | 2 | NW Ridge described only in its upper third. |
+| Mount Hooker (WY) | 12 | 12 reviewed (offline copy check clean), **apply pending** | 0 | 9 approach-only: no source says how to leave the top. |
+| Pingora (WY) | 9 | 7 reviewed (offline copy check clean), **apply pending** | 2 | One page with no description, one unplaceable. |
 
 **How to resume (database healthy again: a one-row read under 1.5 s):**
 1. `node scripts/enrich-approach-rappel-bivy.mjs --from audits/thin-descent-approach/oos/batch-co_hallett_peak.json`, then the same for
-   `batch-ca_incredible_hulk.json`, `batch-co_spearhead.json`, `batch-co_notchtop.json`, `batch-ca_mt_whitney.json` and `batch-ca_mt_russell.json` (dry-run the last four first), then `batch-wy_middle_teton.json`, `batch-wy_mount_moran.json`, `batch-ca_lone_pine_peak.json` and `batch-ca_temple_crag.json` (dry-run each first). Each must print one "verified on re-read" per written row (25, 19, 14, 9, 16, 9, 13, 10, 11, 10). Then move ONLY the new
+   `batch-ca_incredible_hulk.json`, `batch-co_spearhead.json`, `batch-co_notchtop.json`, `batch-ca_mt_whitney.json` and `batch-ca_mt_russell.json` (dry-run the last four first), then `batch-wy_middle_teton.json`, `batch-wy_mount_moran.json`, `batch-ca_lone_pine_peak.json` and `batch-ca_temple_crag.json` (dry-run each first). Each must print one "verified on re-read" per written row (25, 19, 14, 9, 16, 9, 13, 10, 11, 10), then Symmetry Spire, Enclosure, Hooker and Pingora (11, 10, 12, 7). Then move ONLY the new
    `audits/route-breakdown/rollback-<ms>.json` file(s) here, BY EXACT NAME (a glob sweeps other sessions' tracked files).
 2. Any further `oos/batch-*.json` without a row in the table above is an unreviewed research batch. Lead-review it (testimony,
    source names, single-source counts), dry-run it, then apply it.
-3. The next contexts are already built: `ctx-*.json` for Symmetry Spire, Enclosure, Hooker and Pingora. Brief one Sonnet agent per peak or pair with `oos/OOS-BRIEF.md`, plus the
-   extra rules in this table's notes, at most two at a time.
+3. The 17-peak marquee list is fully researched.
 4. After the marquee list, build the rest with `scripts/oneoff/thin-da-context.mjs`, peak by peak, ordered by route count.
