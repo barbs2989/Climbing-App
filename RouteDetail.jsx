@@ -24,7 +24,7 @@ import { TRACK_COLORS, trackPoints, trackStats } from "./lib/routeTracks.js";
 import FireNearRoute from "./lib/FireNearRoute";
 import ShadeMap from "./lib/ShadeMap";
 import { savedAgo } from "./lib/offline";
-import { nwsHeightShiftF, fetchForecastRaw, fetchCragForecastMeasured, fetchCragAir, fetchCragClimate } from "./lib/forecast";
+import { nwsHeightShiftF, fetchForecastRaw, fetchCragForecastMeasured, fetchCragAir, fetchCragClimate, fetchAlpineSpread } from "./lib/forecast";
 import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, CRAG_SCORE_DISCIPLINES, OPEN_DAY, aqiCategory, clockAt, monthFit } from "./lib/conditionsScore";
 import { useCondPrefs, scorePrefs, CondPrefsControls } from "./lib/CondPrefs.jsx";
 import { routeRock, ROCK_OPTIONS } from "./lib/rockType";
@@ -50,7 +50,7 @@ import { routeTags } from "./lib/routeTags";
 import { planTimes, realPitches } from "./lib/planTimes";
 import { tripProfile, apportion } from "./lib/tripProfile.js";
 import AlpineConditionsCard, { forecastPoint } from "./lib/AlpineConditionsCard.jsx";
-import { ALPINE_COND_DISCIPLINES } from "./lib/alpineConditions.js";
+import { ALPINE_COND_DISCIPLINES, modelSpread } from "./lib/alpineConditions.js";
 import { Tile, TileGrid, NOT_MEASURED, clockHr, spanEnding, compass, HourStepper } from "./lib/HourTiles.jsx";
 import { usableFa } from "./lib/fa";
 import {routeLink,realProfileId,CRAG_CATS,parseGpxText,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,DISC,CAT,ME,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,seedAuthor,roadReportOf,isRoadTag,buildConsensus,SZ3,MONTHS,MOUNTAINS,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,uMass,RSL as SL,ROUTE_GAP,FOLD_GAP,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,ALL_CLIMBERS,ROUTES,isHazardTag,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,isRecent,RECENT_DAYS,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,rappelReportsOf,sunReadout,realAuthor,useRealAuthors} from "./ClimbMatchCore.jsx";
@@ -4887,7 +4887,7 @@ function metWxLabel(code){
    points line, a cap names its reason, and a factor with no input says "not measured" instead of
    counting as zero or as a pass. A failed fetch says so and shows no stars — it is not a rating;
    a failed air-quality or climate read says "not measured", never "clean" or "no season". */
-const _cragWx={},_cragAir={},_cragClim={};
+const _cragWx={},_cragAir={},_cragClim={},_cragSp={};
 const DIR8=["N","NE","E","SE","S","SW","W","NW"];
 const agoH=function(h){return h<48?h+" h ago":Math.round(h/24)+" days ago";};
 const condRow=function(k,v,tone,key){return <div key={key||k} style={{display:"grid",gridTemplateColumns:"104px minmax(0,1fr)",gap:10,padding:"7px 0",borderTop:"1px solid "+C.borderLight,fontSize:13,lineHeight:1.45}}><span style={{color:C.textMuted,fontSize:12}}>{k}</span><span style={{color:tone||C.text,minWidth:0}}>{v}</span></div>;};
@@ -5088,6 +5088,16 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
     fetchCragClimate(lat,lng).then(function(m){_cragClim[ck]=m;if(live)setClim({data:m});},function(){if(live)setClim({error:true});});
     return function(){live=false;};
   },[ck,climTries]); // eslint-disable-line react-hooks/exhaustive-deps -- keyed on the crag coordinate key (ck encodes lat/lng) and retry count; on/hasPt follow the route
+  /* A SECOND READ of three other models' rain (owner, 2026-10-28: the alpine card says when models disagree; a crag
+     never did). Adds a line when they split, and NOTHING when it fails: no read is not agreement, but it is no flag. */
+  const [sp,setSp]=useState(function(){return ck&&_cragSp[ck]?_cragSp[ck]:null;});
+  useEffect(function(){
+    if(!hasPt||!on)return;
+    if(_cragSp[ck]){setSp(_cragSp[ck]);return;}
+    let live=true;setSp(null);
+    fetchAlpineSpread(lat,lng,null).then(function(j){_cragSp[ck]=j;if(live)setSp(j);},function(){if(live)setSp(null);});
+    return function(){live=false;};
+  },[ck,hasPt,on,lat,lng]);
   useEffect(function(){setDayI(0);setHrI(null);},[route.id]);
   const [wantDate,setWantDate]=useState(function(){var d=OPEN_DAY.date;OPEN_DAY.date=null;return d;});
   const rk=routeRock(route);
@@ -5151,6 +5161,9 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
      days at 18 crags had red hours before 11 AM, most from the dew-point cap, on dry desert mornings at Vantage and
      Smith Rock). The first hour after the last dew-capped hour before the best 3 hours; null if the best hours are damp too. */
   const dewTill=(function(){if(!day.best)return null;var dew=function(x){return x.caps.some(function(c){return /dew point/.test(c.why);});};if(hrs.slice(day.best.i,day.best.i+3).some(dew))return null;var last=-1;for(var i=0;i<day.best.i;i++)if(dew(hrs[i]))last=i;return last>=0&&hrs[last+1]?hrs[last+1]:null;})();
+  // The day's rain, the amount this card prints among three other models' (modelSpread, the alpine card's rule): null unless they split.
+  const rainSplit=function(d){var m=sp&&d.rain!=null?modelSpread(sp,d.date,null,d.rain):null;return m&&m.over.indexOf("rain")>=0?m.rain:null;};
+  const dayRainSplit=rainSplit(day);
   const dryChip=(function(){if(!cur||cur.dryFrac==null||cur.dryFrac>=1||wetSand)return null;var y=dryAfter(cur),hrs=y?Math.max(1,Math.round((y.utc-Date.now())/3600e3)):null;
     var txt=cur.factors.dry&&cur.factors.dry.raining?"Raining — rock is wet":"Rock drying · about "+Math.round(cur.dryFrac*100)+"% dry";
     var when=y?(hrs<=36?"Dry in about "+hrs+" h ("+whenOf(y)+")":"Dry by "+whenOf(y)):"Not dry within the 7-day forecast";
@@ -5182,6 +5195,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
     <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:6}}><div style={{fontSize:34,fontWeight:800,lineHeight:1,color:C.text}}>{fmt(top)}</div><div><div aria-hidden="true" style={{fontSize:19,letterSpacing:1.5,lineHeight:1.1}}>{starRow(top)}</div><span style={{display:"inline-block",marginTop:3,padding:"2px 9px",borderRadius:20,fontSize:11.5,fontWeight:800,color:lblCol,background:top>=4?C.greenBg:top>=2.5?C.amberBg:C.redBg}}>{lbl}</span>{h?<div style={{fontSize:11,color:C.textMuted,marginTop:3}}>{"Overall score at "+clockHr(h.hr)+" · pick another hour below"}</div>:null}</div></div>
     <div style={{fontSize:13,color:C.text,marginBottom:day.capWhy.length?4:10}}>{day.best?<span>{"Best 3 hours "}<b>{clockHr(day.best.start)+" – "+clockHr(day.best.end)}</b>{" · "}<b style={{color:col(day.stars)}}>{fmt(day.stars)+" ★"}</b><span style={{color:C.textMuted}}>{" (the day’s score)"}</span></span>:(dayI===0?"Fewer than three daylight hours left to score":"Fewer than three daylight hours to score")}</div>
     {day.capWhy.length?<div style={{fontSize:12,color:C.amber,lineHeight:1.45,marginBottom:10}}>{"Held down by: "+day.capWhy.join(" · ")}</div>:null}
+    {dayRainSplit?<div data-rain-split="1" style={{fontSize:12,color:C.amber,lineHeight:1.45,marginBottom:10}}>{"Forecast models disagree on rain this day ("+uPrecip(dayRainSplit[0])+"–"+uPrecip(dayRainSplit[1])+"): treat the rain, and the drying after it, as uncertain."}</div>:null}
     {wetTill?<div data-wet-until="1" style={{fontSize:12,color:C.amber,lineHeight:1.45,marginBottom:10}}>{"Rock likely wet until "+clockHr(wetTill.hr)+": the hours before it score lower than the day. Tap one to see why."}</div>:null}
     {dewTill&&!(wetTill&&wetTill.hr>=dewTill.hr)?<div data-dew-until="1" style={{fontSize:12,color:C.amber,lineHeight:1.45,marginBottom:10}}>{"Air at its dew point until "+clockHr(dewTill.hr)+": dew may dampen the rock, so earlier hours score lower than the day. Tap one to see why."}</div>:null}
     {hrs.length?<div style={{marginBottom:10}}>
@@ -5215,7 +5229,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
           <span style={{minWidth:0,display:"block"}}>
             <span style={{display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:5}}>
               <span style={dayBox}><span style={dayLbl}>Temp</span><span style={Object.assign({},dayVal,{color:d.hi!=null?wxTempColor(d.hi):C.textMuted})}>{d.hi!=null?uTemp(d.hi)+" / "+uTemp(d.lo):"—"}</span><span style={daySub}>{d.hi!=null?"high / low"+(d.feelsHi!=null?", feels "+uTemp(d.feelsHi)+" / "+uTemp(d.feelsLo):""):""}</span></span>
-              <span style={dayBox}><span style={dayLbl}>Rain</span><span style={Object.assign({},dayVal,{color:d.rain==null?C.textMuted:d.rain>0?C.blue:C.text})}>{d.rain==null?"—":d.rain===0?"None":trace?"Trace":uPrecip(d.rain)}</span><span style={daySub}>{(d.rain>0?d.rainHrs+" h"+(rWhen?", "+rWhen:""):"")+(d.rain>0&&d.popMax?" · ":"")+(d.popMax?"hourly chance up to "+d.popMax+"%":"")}</span></span>
+              <span style={dayBox}><span style={dayLbl}>Rain</span><span style={Object.assign({},dayVal,{color:d.rain==null?C.textMuted:d.rain>0?C.blue:C.text})}>{d.rain==null?"—":d.rain===0?"None":trace?"Trace":uPrecip(d.rain)}</span><span style={daySub}>{(d.rain>0?d.rainHrs+" h"+(rWhen?", "+rWhen:""):"")+(d.rain>0&&d.popMax?" · ":"")+(d.popMax?"hourly chance up to "+d.popMax+"%":"")+(rainSplit(d)?" · models split "+uPrecip(rainSplit(d)[0])+"–"+uPrecip(rainSplit(d)[1]):"")}</span></span>
               <span style={dayBox}><span style={dayLbl}>Wind</span><span style={Object.assign({},dayVal,{color:d.windMax!=null?wxWindColor(d.windMax):C.textMuted})}>{d.windMax!=null?"to "+uWind(d.windMax):"—"}</span><span style={daySub}>{d.gustMax!=null&&d.windMax!=null&&uWindN(d.gustMax)>uWindN(d.windMax)?"gusts to "+uWind(d.gustMax):""}</span></span>
             </span>
             <span style={{display:"block",fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:4}}>{[d.rhMin!=null?"Humidity "+Math.round(d.rhMin)+"–"+Math.round(d.rhMax)+"%":null,d.cloudAvg!=null?skyWord(d.cloudAvg)+" ("+Math.round(d.cloudAvg)+"% cloud)":null].filter(Boolean).join(" · ")}</span>
