@@ -12,20 +12,21 @@ import { execSync } from "child_process";
 import crypto from "crypto";
 import fs from "fs";
 
-const FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx", "lib/ListsManager.jsx"];
+// PR57 moved ApproachVariants and CampSite out of RouteDetail.jsx; their cases aim at the new files.
+const FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx", "lib/ListsManager.jsx", "src/components/ApproachVariants.tsx", "src/components/CampSite.tsx"];
 const ORIGINAL = Object.fromEntries(FILES.map((f) => [f, fs.readFileSync(f, "utf8")]));
 const sum = (s) => crypto.createHash("sha1").update(s).digest("hex").slice(0, 8);
 
 const CASES = [
   {
-    file: "RouteDetail.jsx",
+    file: "src/components/ApproachVariants.tsx",
     // The REAL defect, reproduced: put the raw season back in the pill.
     name: "1. approach variant season goes back into the nowrap pill (the real #4)",
     edit: (s) => s.replace('overflowWrap:"anywhere"}}>{seasonFull}</div>', 'whiteSpace:"nowrap"}}>{seasonFull}</div>'),
     want: /box\(es\) hold text too long for their shape/,
   },
   {
-    file: "RouteDetail.jsx",
+    file: "src/components/CampSite.tsx",
     // The camping defect's shape, reproduced on a live panel: render prose in a chip.
     name: "2. a camping site's water prose rendered as a chip again",
     edit: (s) => s.replace(
@@ -45,7 +46,7 @@ const CASES = [
     want: /box\(es\) hold text too long for their shape/,
   },
   {
-    file: "RouteDetail.jsx",
+    file: "src/components/ApproachVariants.tsx",
     // MUST PASS. A box that explicitly accommodates long text has been thought about. The STAGES
     // table is the measured case — a stage's `grade` really is terrain prose, and its JSX already
     // carries word-break plus a wrapping parent, put there by someone who found this exact
@@ -57,7 +58,7 @@ const CASES = [
     want: null,
   },
   {
-    file: "RouteDetail.jsx",
+    file: "src/components/ApproachVariants.tsx",
     // MUST PASS. A long line in a box that clips with an ellipsis is correct handling, not a
     // defect — excluding these is what took an earlier scan from 104 candidates to 54.
     name: "3. long text in an ellipsis-clipping nowrap box (must PASS)",

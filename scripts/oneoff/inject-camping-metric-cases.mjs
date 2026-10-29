@@ -17,10 +17,13 @@ import { fileURLToPath } from "url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const FILE = path.join(ROOT, "RouteDetail.jsx");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
+// PR57 moved the camp helpers (campFromTrailhead, campSites, trailheadFt) to lib/camps.js.
+const CAMPS = path.join(ROOT, "lib/camps.js");
 const sum = (x) => crypto.createHash("sha1").update(x).digest("hex").slice(0, 10);
 
 const CASES = [
   {
+    file: CAMPS,
     name: "6. render the RAW gain instead of the 'below' wording",
     want: /below-trailhead|NEGATIVE number/i,
     edit: (s) => s.replace(
@@ -30,6 +33,7 @@ const CASES = [
                'const head=[d,g!=null?uElev(g):null].filter(Boolean).join(" \\u00b7 ");'),
   },
   {
+    file: CAMPS,
     name: "7. DERIVE a distance from lat/lng for bivy sites (a chord posing as a trail)",
     want: /DISTANCE rendered for a bivy site/i,
     // The tempting bug, written the tempting way: a great-circle distance from the trailhead pin.
@@ -41,6 +45,7 @@ const CASES = [
       .replace("distMi:p?_campMi(p):null,", "distMi:p?_campMi(p):_chord(b),"),
   },
   {
+    file: CAMPS,
     name: "8. trailheadFt() returns a CONSTANT instead of null (a gain with no anchor)",
     want: /gain rendered with no trailhead elevation/i,
     edit: (s) => s.replace(

@@ -4,7 +4,7 @@
 // dependency closure of RouteDetail minus everything reachable from any other
 // export); shared helpers stay in core and are imported below.
 import { tripRowToActivity, anonRowToActivity } from "./lib/tripReportRow.js";
-import { useState, useEffect, useLayoutEffect, useRef, useMemo, useCallback, useContext, Suspense, lazy} from "react";
+import { useState, useEffect, useRef, useMemo, useCallback, useContext, Suspense, lazy} from "react";
 import { ConfidenceCtx, ConfChip, ConfidenceLegend } from "./lib/confidence.jsx";
 import { ROAD_KEYS, ACCESS_KEYS, TIMING_KEYS, CROWDS_KEYS, PARTNER_KEYS, SEASONAL_KEYS, EMERGENCY_KEYS, LOGISTICS_KEYS, CLIMATE_KEYS, SEASHAZ_KEYS, MONTH_NAMES, cleanMonths } from "./lib/objKeys.js";
 import { createPortal } from "react-dom";
@@ -12,12 +12,11 @@ import { DISC_LABELS as DL } from "./lib/discLabels";
 /* rackFromText / _rackEdited / contribRack / routeRackFor / DISC_RACK moved to lib/rack.js so
    the crew card can answer the same question without core importing this lazy-loaded file.
    Moved verbatim; the correction-precedence rule and its history live beside them there. */
-import { _rackEdited, _ropeEdited, fmtRopeLen, contribRack, routeRackFor, rackLeftovers, DISC_RACK, rackRows, rackQty, rackItemLine, rackItemKind, isRackItem } from "./lib/rack";
+import { _rackEdited, _ropeEdited, fmtRopeLen, contribRack, routeRackFor, DISC_RACK, rackRows, rackQty, rackItemLine, rackItemKind, isRackItem } from "./lib/rack";
 import { ropeworkFacts } from "./lib/ropework";
-import { waypointCaveat, trackCoverage, trackCoverageCaveat, trackStubCaveat, withRecordedTrackOnly, pointOf } from "./lib/track";
+import { waypointCaveat, trackCoverage, trackCoverageCaveat, trackStubCaveat, withRecordedTrackOnly } from "./lib/track";
 import { accessCheckedLine } from "./lib/road";
 import { navTarget, navLinks } from "./lib/navLinks";
-import { trailheadDirectionProblem } from "./lib/trailheadDirectionShape";
 import { USE_DB} from "./lib/supabase";
 import {recordRouteView,useAreaPath,useRouteStarSummary,usePartnersByObjective,usePartnersInArea,useMatchObjectivesOfUsers,checkInAtRouteBase, withdrawBaseCheckin, useRouteBaseCheckins, dbRouteToCamel, useAreaRoutes, useProfilesByIds, useRoutesByIds, useRouteTopos, topoPhotoUrl, uploadTopoPhoto, updateTopoAlt, updateTopoCaption, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useObjectiveCounts, useProfileSearch, useRouteTripReports, useRoutePrivateConditions,    useMyContributionStanding, useRouteTracks, useRouteStats} from "./lib/db";
 import RouteTracksPanel from "./lib/RouteTracksPanel.jsx";
@@ -26,7 +25,7 @@ import FireNearRoute from "./lib/FireNearRoute";
 import ShadeMap from "./lib/ShadeMap";
 import { savedAgo } from "./lib/offline";
 import { nwsHeightShiftF, fetchForecastRaw, fetchCragForecastMeasured, fetchCragAir, fetchCragClimate, fetchAlpineSpread } from "./lib/forecast";
-import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, CRAG_SCORE_DISCIPLINES, OPEN_DAY, aqiCategory, clockAt, monthFit } from "./lib/conditionsScore";
+import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, CRAG_SCORE_DISCIPLINES, OPEN_DAY, aqiCategory, clockAt } from "./lib/conditionsScore";
 import { useCondPrefs, scorePrefs, CondPrefsControls } from "./lib/CondPrefs.jsx";
 import { routeRock, ROCK_OPTIONS } from "./lib/rockType";
 import { EditIconButton as AreaEditIconButton, editBtnStyle, EditPencil } from "./lib/areaChrome";
@@ -39,17 +38,16 @@ import { clickable } from "./lib/clickable";
 import { PeakMetadataPanel, splitParagraphs, monthRank } from "./EnrichmentPanels";
 
 import { gradeDetail, cruxGrade, displayGrade, singleGrade, gradeRangeNote } from "./lib/grade";
-import { routeTerrain, fitGear, saysNotApplicable } from "./lib/terrain";
-import { rappelHeaderLabel, rappelSingleRopeWarning } from "./lib/rappels";
+import { routeTerrain, saysNotApplicable } from "./lib/terrain";
 import { knownHazards } from "./lib/hazards";
 import { acquireBaseFix, baseCheckinMessage, baseGuide, pendingBaseCheckins, savePendingBaseCheckins, distM, BASE_CONFIRM_MIN, bearingDeg, headingFromOrientation, relativeBearing, turnWord, smoothHeading } from "./lib/baseCheckin";
 import { declinationDeg } from "./lib/declination";
 import { planTimes, realPitches } from "./lib/planTimes";
 import AlpineConditionsCard, { forecastPoint } from "./lib/AlpineConditionsCard.jsx";
 import { ALPINE_COND_DISCIPLINES, modelSpread } from "./lib/alpineConditions.js";
-import { Tile, TileGrid, NOT_MEASURED, clockHr, spanEnding, compass, HourStepper } from "./lib/HourTiles.jsx";
+import { clockHr, spanEnding, compass } from "./lib/HourTiles.jsx";
 import { usableFa } from "./lib/fa";
-import {routeLink,realProfileId,CRAG_CATS,parseGpxText,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,DISC,CAT,ME,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,seedAuthor,isRoadTag,buildConsensus,SZ3,MONTHS,MOUNTAINS,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,uMass,RSL as SL,ROUTE_GAP,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,ALL_CLIMBERS,ROUTES,isHazardTag,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,isRecent,RECENT_DAYS,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,rappelReportsOf,sunReadout,realAuthor,useRealAuthors} from "./ClimbMatchCore.jsx";
+import {routeLink,realProfileId,CRAG_CATS,parseGpxText,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,wpType,wpIs,wpPlaced,trailheadPoint,uImp,_uNum,catOf,DISC_GEAR,C,CAT,ME,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,seedAuthor,isRoadTag,buildConsensus,SZ3,MONTHS,MOUNTAINS,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,uMass,RSL as SL,ROUTE_GAP,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,intOnly,WP_SINGLE_TYPES,WP_TYPES,wpColor,wpGlyph,mtnOf,ALL_CLIMBERS,ROUTES,isHazardTag,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,isRecent,RECENT_DAYS,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,rappelReportsOf,sunReadout,realAuthor,useRealAuthors} from "./ClimbMatchCore.jsx";
 import CardHead from "./src/components/CardHead.tsx";
 import ShareVia from "./src/components/ShareVia.tsx";
 import Hr from "./src/components/Hr.tsx";
@@ -73,7 +71,7 @@ import ItineraryEditor from "./src/components/ItineraryEditor.tsx";
 import RealClimberRow from "./src/components/RealClimberRow.tsx";
 import RouteStats from "./lib/RouteStats.jsx";
 import { recShapeOf, effDistIsWholeTrip, effDistKm, isMultiDayOuting, itinDayCount } from "./lib/outing.js";
-import { approachOptions, defaultApproachKey, viaRouteOf, applyApproach, approachKeyOf, tripTrailheadDraft, tripTrailheadMerge, viaPitchSpans, spanLabel, wholeLine } from "./lib/approaches.js";
+import { approachOptions, defaultApproachKey, viaRouteOf, applyApproach, tripTrailheadDraft, tripTrailheadMerge, viaPitchSpans, spanLabel } from "./lib/approaches.js";
 import { POP_CLOSE, POP_BACK_MEDIA, POP_REMOVE } from "./lib/popupChrome.js";
 import { BTN, BTN_SM,  CHIP } from "./lib/buttonStyles.js";
 import { askConfirm } from "./lib/ConfirmSheet.jsx";
@@ -96,10 +94,8 @@ import GapNote from "./src/components/GapNote.tsx";
 import VerifNote from "./src/components/VerifNote.tsx";
 import RouteTagRow from "./src/components/RouteTagRow.tsx";
 import CragSafetyNotes from "./src/components/CragSafetyNotes.tsx";
-import RackBetaList from "./src/components/RackBetaList.tsx";
 import PitchConsensus from "./src/components/PitchConsensus.tsx";
 import FloatPlanFold from "./src/components/FloatPlanFold.tsx";
-import ClampText from "./src/components/ClampText.tsx";
 import ClimateSeasonCard from "./src/components/ClimateSeasonCard.tsx";
 import PhotoRow from "./src/components/PhotoRow.tsx";
 import EditIconButton from "./src/components/EditIconButton.tsx";
@@ -109,14 +105,12 @@ import TopoLineOverlay from "./src/components/TopoLineOverlay.tsx";
 import TopoThumb from "./src/components/TopoThumb.tsx";
 import EmptySection from "./src/components/EmptySection.tsx";
 import PitchPhotos from "./src/components/PitchPhotos.tsx";
-import CopyCoordButton from "./src/components/CopyCoordButton.tsx";
 import TopoPhotoModal from "./src/components/TopoPhotoModal.tsx";
 import AccessFold from "./src/components/AccessFold.tsx";
 import CragRack from "./src/components/CragRack.tsx";
 import CragLocationCard from "./src/components/CragLocationCard.tsx";
 import PairsWellWith from "./src/components/PairsWellWith.tsx";
 import WeatherIcon from "./src/components/WeatherIcon.tsx";
-import OvernightPermit from "./src/components/OvernightPermit.tsx";
 import BreakdownHandoff from "./src/components/BreakdownHandoff.tsx";
 import CragFactRows from "./src/components/CragFactRows.tsx";
 import CragFactSection from "./src/components/CragFactSection.tsx";
@@ -131,6 +125,31 @@ import { isPitched, breakdownRows } from "./lib/breakdownRows.js";
 import { EMPTY_ARR } from "./lib/emptyArr.js";
 import { FACT_FIELD } from "./lib/cragFactField.js";
 import { ROAD_TONE, roadReportsOf } from "./lib/roadReports.js";
+import { uLen } from "./lib/uLen.js";
+import ClimbingRouteTable from "./src/components/ClimbingRouteTable.tsx";
+import Capped from "./src/components/Capped.tsx";
+import GradePicker from "./src/components/GradePicker.tsx";
+import RappelTable from "./src/components/RappelTable.tsx";
+import PitchComments from "./src/components/PitchComments.tsx";
+import WaypointList from "./src/components/WaypointList.tsx";
+import { fmtSlingVal } from "./lib/slingFormat.js";
+import RouteGearCheck from "./src/components/RouteGearCheck.tsx";
+import DiffRadar from "./src/components/DiffRadar.tsx";
+import TrailheadCard from "./src/components/TrailheadCard.tsx";
+import ApproachPicker from "./src/components/ApproachPicker.tsx";
+import { wxTempColor, wxWindColor, skyWord } from "./lib/wxColors.js";
+import { condRow, condNote } from "./lib/condRows.jsx";
+import HourlyChart from "./src/components/HourlyChart.tsx";
+import SeasonChart from "./src/components/SeasonChart.tsx";
+import { samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campSites, campRouteOrder, campOrderNote, campRoleLabel, campFromPrev, campFromTrailhead, campDetail, campReportsOf, campSleptLine } from "./lib/camps.js";
+import CampingPanel from "./src/components/CampingPanel.tsx";
+import { APPROACH_CROSSING_RE, APPROACH_LOG_CROSSING_RE, approachHasCrossing, primaryApproachIndex, longFormApproachIndex } from "./lib/approachIndex.js";
+import ApproachVariants from "./src/components/ApproachVariants.tsx";
+export { ApproachVariants };
+export { APPROACH_CROSSING_RE, APPROACH_LOG_CROSSING_RE, approachHasCrossing, primaryApproachIndex, longFormApproachIndex };
+export { samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campSites, campRouteOrder, campOrderNote, campRoleLabel, campFromPrev, campFromTrailhead, campDetail, campReportsOf, campSleptLine };
+export { PitchComments };
+export { ClimbingRouteTable };
 export { overnightPermitOf } from "./lib/overnightPermit.js";
 const GpsSubmissionModal = lazy(() => import("./lib/GpsSubmissionModal"));
 const uGain=m=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
@@ -145,8 +164,6 @@ const SHAPE_LABEL={outback:"Out and back",loop:"Loop",point:"Point to point"};
 /* MOVED TO lib/outing.js, unchanged, so the peak page's ACROSS EVERY ROUTE HERE panel can ask the
    same question this page does. It read `dist_km` raw and therefore showed a different approach
    distance for the same climb — on 128 of the 198 WA peak pages, usually by a factor of two. */
-/* FORMATS what uLenN converts, so the metre<->foot arithmetic exists once. */
-const uLen=m=>{const n=uLenN(m);return n===null?NOVAL:n+" "+uLenUnit();};
 /* HOW MANY ROPED PITCHES the route has, by the larger of what it STATES (`pitches`) and what it DESCRIBES
    (the roped rows of pitchDetail). A gate that asks "is this multi-pitch?" reads this, not `pitches` alone:
    a route stored with 0 or 1 that a climber then describes pitch by pitch is multi-pitch from that moment,
@@ -250,85 +267,14 @@ const PATTERN_CHECKS={
 function patternStatus(label,rtags){const ck=PATTERN_CHECKS[label];if(!ck||!rtags||!rtags.size)return null;const m=(ck.match||[]).filter(t=>rtags.has(t));const c=(ck.counter||[]).filter(t=>rtags.has(t));if(!m.length&&!c.length)return null;return{matched:m,countered:c,status:(m.length&&c.length)?"mixed":m.length?"confirmed":"differs"};}
 const VOLATILE_DISC=["alpine","mountaineering","ice","mixed"];
 const COMMITMENT_EXPLAINERS={I:"A few hours — backing off is quick and low-consequence.",II:"Half a day — retreat is straightforward.",III:"Most of a day — retreat takes real time and planning.",IV:"Full day+ — committing. Retreat is difficult once you're in it.",V:"Multi-day — big commitment. Retreat can mean an overnight out.",VI:"Multi-day, remote, or high-altitude — retreat is a serious undertaking on its own."};
-function camFmt(z){return z.indexOf(".")>=0?z:("#"+z);}
-const GEAR_CATS=[
- {label:"Rope",kw:["rope"]},
- {label:"Trad rack / protection",kw:["rack","cam","nut","protection","stopper","hex","piton","big bro"]},
- {label:"Quickdraws",kw:["draw","quickdraw"]},
- {label:"Helmet",kw:["helmet"]},
- {label:"Harness",kw:["harness"]},
- {label:"Belay / rappel device",kw:["belay device","atc","grigri"]},
- {label:"Chalk & brush",kw:["chalk","brush"]},
- {label:"Crampons",kw:["crampon"]},
- {label:"Ice axe / tools",kw:["ice axe","ice tool"]},
- {label:"Ice screws",kw:["ice screw"]},
- {label:"Aiders / ascenders",kw:["aider","etrier","ascender","jumar"]},
- {label:"Trekking poles",kw:["trekking pole","poles"]},
- {label:"Microspikes",kw:["microspike","spike"]},
- {label:"Navigation (map / GPS)",kw:["map","gps","navigation","compass"]},
- {label:"Insulating layers & shell",kw:["layer","shell","insulation","puffy","down jacket"]},
- {label:"Satellite communicator",kw:["communicator","inreach","satellite","plb"]},
- {label:"Footwear (shoes / boots)",kw:["shoe","footwear","boot"]},
- {label:"Crash pad(s)",kw:["crash pad","crashpad"]},
- {label:"Shelter & sleep kit",kw:["shelter","tent","sleep","bivy"]},
- {label:"Water / filter",kw:["water","filter","treatment","hydration"]},
- {label:"Bear canister",kw:["bear","canister"]},
- {label:"Glacier / crevasse kit",kw:["glacier","crevasse","picket","prusik"]}
-];
 
-const DISC_ASSUMED={sport:["Rope","Quickdraws","Harness","Belay / rappel device","Personal anchor / sling","Helmet","Climbing shoes","Chalk"],trad:["Rope","Trad rack","Harness","Belay / rappel device","Helmet","Climbing shoes","Chalk","Nut tool"],bouldering:["Climbing shoes","Crash pads","Chalk","Brush"],aid:["Rope","Trad rack","Harness","Belay / rappel device","Helmet","Aiders / etriers","Daisy chains","Ascenders"],ice:["Harness","Belay / rappel device","Helmet","Ice tools","Crampons","Mountaineering boots","Warm layers"],mixed:["Harness","Belay / rappel device","Helmet","Ice tools","Crampons","Warm layers"],alpine:["Harness","Belay / rappel device","Helmet","Ice axe","Crampons","Mountaineering boots","Glacier / crevasse kit","Warm layers","Navigation"],mountaineering:["Ice axe","Crampons","Mountaineering boots","Harness","Helmet","Glacier / crevasse kit","Navigation","Warm layers"],scrambling:["Approach shoes","Helmet","Navigation (map / GPS)"]};
 // "alpine" spans a 5.8 rock rib at Washington Pass and a glaciated north face, so
 // assuming one kit for both put a glacier/crevasse kit, an ice axe, crampons and
 // mountaineering boots onto pure rock climbs that never touch snow — reported from
 // the app on South Early Winters Spire's SW Rib, whose own stored rack is correct.
-// Show the snow and glacier items only where the route gives evidence it needs them.
-const _GLACIER_RE=/glacier|crevasse|bergschrund|schrund|icefall|serac/i;
-const _SNOW_RE=/\bsnow|\bcouloir|\bnev[\u00e9e]|\bice\b|ice axe|crampon|posthol|cornice|glissad|\bfirn\b|\bmoat\b/i;
 // Joined with "; " rather than " " so each field, and each entry of a gear/hazard array, is
 // its own clause. The regexes above do not care, but _snowEvidence splits on sentence
 // punctuation, and a gear array flattened with spaces welds "ice axe and crampons in early
-// season" onto whatever field follows it — which is exactly the hedge that must stay isolated.
-const _routeGearText=function(r){if(!r)return "";var flat=function(v){return Array.isArray(v)?v.join("; "):(v==null?"":String(v));};return [r.name,r.grade,r.overview,r.approach,r.descentText,r.season,flat(r.hazards),flat(r.gear),flat(r.objHaz)].filter(Boolean).join("; ");};
-/* A route that says you MIGHT need snow gear is not a route that needs it.
-
-   Liberty Bell's Beckey Route — a 5.6 rock climb — stores "ice axe and crampons in early
-   season". Mountain Project says climbers "may want an axe and/or crampons depending on snow
-   conditions in the gully". North Cascade Mountain Guides lists boots, crampons and axe under
-   "TECHNICAL EQUIPMENT – SPRING" and notes that later in the season you "walk to the base in a
-   pair of lightweight hiking boots". So the stored data was right, and the RENDERING was
-   wrong: _SNOW_RE matched the route's own hedge, dropped the condition, and printed Ice axe,
-   Crampons AND Mountaineering boots as kit the climber is assumed to be carrying — boots
-   being asserted by no source whatsoever.
-
-   49 alpine/mountaineering routes are in this position, including Cutthroat West Ridge,
-   Prusik Peak West Ridge and Liberty Crack (scripts/oneoff/audit-conditional-snow-gear.mjs).
-   Hedged evidence now yields a CONDITIONAL tier quoting the route's own sentence, rather than
-   a silent promotion to required. */
-const _HEDGE_RE=/\b(early[- ]season|late[- ]season|in spring|spring only|depending on|if (?:there is |the )?snow|if snow|when snow|may want|optional|conditions? (?:dependent|permitting|vary)|as needed|sometimes|seasonal(?:ly)?|lingering|can be|occasionally)\b/i;
-function _snowEvidence(route){
-  var txt=_routeGearText(route);
-  if(!_SNOW_RE.test(txt))return {snowy:false,glaciated:false,hedged:false,quote:null};
-  var glaciated=_GLACIER_RE.test(txt);
-  var hits=String(txt).split(/(?<=[.;])\s+/).filter(function(s){return _SNOW_RE.test(s);});
-  // A glaciated route is never "conditional" — the glacier does not melt out in August.
-  var hedged=!glaciated&&hits.length>0&&hits.every(function(s){return _HEDGE_RE.test(s);});
-  /* Quote the sentence that tells the climber WHEN to carry it, not merely the first one
-     that happened to contain the word "snow". On Prusik Peak's West Ridge the first match is
-     an approach line about skirting Colchuck Lake, which explains nothing; the useful one
-     names the gear. Prefer a hit that mentions the kit, then fall back. */
-  var best=hits.find(function(s){return /ice axe|crampon|ice tool/i.test(s);})||hits[0];
-  return {snowy:true,glaciated:glaciated,hedged:hedged,quote:hedged?String(best).trim().replace(/^[;\s]+|[;\s]+$/g,""):null};
-}
-function assumedFor(route,disc){
-  var base=DISC_ASSUMED[disc]||[];
-  if(disc!=="alpine"&&disc!=="mountaineering")return base;
-  var ev=_snowEvidence(route);
-  return base.filter(function(item){
-    if(/glacier|crevasse/i.test(item))return ev.glaciated;
-    if(/ice axe|crampons|mountaineering boots/i.test(item))return ev.snowy&&!ev.hedged;
-    return true;
-  });
-}
 /* Hedged evidence still earns a line — a packing checklist should over-include rather than
    send someone up short — but as a condition to check before you drive, not as kit you are
    assumed to be carrying. Mountaineering boots are deliberately NOT carried over: the hedged
@@ -474,57 +420,7 @@ function BaseCheckinPanel({route,who,spots,q}){
     {who?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:8}}>Uses your phone’s GPS, and only works at the start of the climb: your position is checked against where this climb is on file. Other climbers see the spot and how many climbers stood there — never who, or when.</div>:null}
   </div>;
 }
-function gearKey(s){
-  var head=String(s==null?"":s).toLowerCase().split(/\s*[(—\[]|\s+--\s+|\s*[,;:]\s+|\s+–\s+/)[0];
-  return head.replace(/[^a-z0-9+/ ]/g," ").replace(/\s+/g," ").trim()
-    /* Crude singularisation, applied to BOTH sides, so "ropes"/"Rope" and
-       "boots"/"Mountaineering boots" meet. Words of 3 or fewer characters are left alone so
-       "gps" survives, and a double-s ending is left alone so "harness" does not become
-       "harnes" — which would still have matched itself, but only by accident. */
-    .split(" ").map(function(w){return (w.length>3&&/s$/.test(w)&&!/ss$/.test(w))?w.slice(0,-1):w;}).join(" ");
-}
-/* Two keys name the same item when one is the other with more said about it — "rope" inside
-   "light 30m rope for the crux slot". Whole-word, so "axe" cannot match inside a longer word,
-   and a floor of 3 characters so a stray short token cannot swallow half the list. */
-function sameGear(a,b){
-  var s=a.length<=b.length?a:b,l=a.length<=b.length?b:a;
-  if(s.length<3)return false;
-  return new RegExp("(^|\\s)"+s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"($|\\s)").test(l);
-}
-/* One list: the standard kit in its existing order, with any route-specific entry naming the
-   same item REPLACING the stock wording in place, and genuinely new entries appended. */
-function mergeGearList(assumed,extras,condItems){
-  var out=[],keys=[];
-  function push(txt){
-    var kk=gearKey(txt);if(!kk)return;
-    var i=-1;for(var j=0;j<keys.length;j++){if(keys[j]===kk||sameGear(keys[j],kk)){i=j;break;}}
-    if(i<0){keys.push(kk);out.push(txt);return;}
-    /* Keep the text that tells the climber more, but keep the SHORTER key — it is the one
-       that goes on matching further spellings of the same item further down the list. */
-    if(String(txt).length>String(out[i]).length)out[i]=txt;
-  }
-  (assumed||[]).forEach(push);
-  var condKeys=(condItems||[]).map(gearKey).filter(Boolean);
-  (extras||[]).forEach(function(x){
-    var kk=gearKey(x);if(!kk)return;
-    /* Anything the "only if there is snow" block owns stays there and nowhere else. Printing
-       it here as well would have one section assert both that the gear is standard kit and
-       that it is conditional — the "one Overview, two different racks" defect. */
-    for(var j=0;j<condKeys.length;j++){if(condKeys[j]===kk||sameGear(condKeys[j],kk))return;}
-    push(x);
-  });
-  return out;
-}
-function conditionalFor(route,disc){
-  if(disc!=="alpine"&&disc!=="mountaineering")return null;
-  var ev=_snowEvidence(route);
-  if(!ev.snowy||!ev.hedged)return null;
-  var items=(DISC_ASSUMED[disc]||[]).filter(function(i){return /ice axe|crampons/i.test(i);});
-  return items.length?{items:items,quote:ev.quote}:null;
-}
 const DISC_HAZ={sport:["Loose rock","Runout","Warms up / sun-affected"],trad:["Rockfall","Loose rock","Runout","Serious exposure","Warms up / sun-affected"],bouldering:["Bad landing zone","Loose rock","Warms up / sun-affected"],aid:["Rockfall","Loose rock","Runout","Serious exposure"],ice:["Avalanche terrain","Rockfall","Serious exposure"],mixed:["Rockfall","Loose rock","Avalanche terrain","Serious exposure"],alpine:["Rockfall","Loose rock","Lightning / storms","Avalanche terrain","Crevasse hazard","Cornices","Serious exposure","Complex route-finding","River / creek crossing"],mountaineering:["Rockfall","Lightning / storms","Avalanche terrain","Crevasse hazard","Cornices","Serious exposure","Complex route-finding","River / creek crossing"],hiking:["Avalanche terrain","River / creek crossing","Complex route-finding","Serious exposure"],scrambling:["Rockfall","Loose rock","Serious exposure"]};
-/* Judge each rack entry on its own and drop the negated or conditional ones. A researched rack says things like "ice screws are rarely used here and are not worth carrying" or "protected with rock gear, not screws"; read as a flat word list, those advertise exactly the gear the route says to leave behind. Anything matching a rack against keywords must go through this first. */
-const RACK_NEG=/\bnot worth\b|\bnot needed\b|\bnot necessary\b|\bnot required\b|\bno need\b|\bunnecessary\b|\brarely\b|\bseldom\b|\bnever\b|\bdon'?t\b|\bdo not\b|,\s*not\b|\bnot\s+(?:the\s+)?(?:screws|cams|nuts|pickets|pins|bolts)\b/i;
 /* Does this text ASSERT the agency, or disclaim it? Scans every occurrence and accepts
    the keyword only if at least one is not sitting behind a negation in the ~60 chars
    before it. Per-occurrence, not per-string, for the same reason rackMentions is:
@@ -549,39 +445,8 @@ const PERMIT_NEG=/\b(?:not|no|outside|other than|isn'?t|aren'?t|rather than|inst
    108 to shrink over time; suppression is right whether the mention is peripheral or wrong. */
 const PERMIT_PERIPHERAL=/\b(?:crossing into|crosses into|cross into|partly (?:in|within|inside)|partially (?:in|within)|some (?:upper )?routes?|upper routes?|adjacent to|borders?(?: on)?|boundary (?:of|with)|near(?:by)?|approach (?:partly )?crosses|just outside|edge of)\b[^.;]{0,60}$/i;
 function _pmSays(hay,re){if(!hay)return false;re.lastIndex=0;var m;while((m=re.exec(hay))!==null){var before=hay.slice(Math.max(0,m.index-70),m.index);if(!PERMIT_NEG.test(before)&&!PERMIT_PERIPHERAL.test(before))return true;if(m.index===re.lastIndex)re.lastIndex++;}return false;}
-/* Per-OCCURRENCE negation for keyword matching. Dropping a whole entry loses affirmative gear that shares a sentence with a negation — "belays are often pins rather than screws" genuinely calls for pins. A category counts as present if any single mention of it is not negated in its immediate context. */
-function rackMentions(rack,kw){var a=Array.isArray(rack)?rack:(rack?[String(rack)]:[]);
-  for(var i=0;i<a.length;i++){var e=a[i];if(typeof e!=="string")continue;var low=e.toLowerCase();
-    for(var k=0;k<kw.length;k++){var p=low.indexOf(kw[k]);while(p>=0){if(!RACK_NEG.test(low.slice(Math.max(0,p-45),p+kw[k].length+30)))return true;p=low.indexOf(kw[k],p+1);}}}
-  return false;}
-function gearReadout(route,owners){
-  /* The per-discipline defaults assume snow and glacier terrain for everything filed as
-     alpine or mountaineering, which put an ice axe and crampons on the packing list for dry
-     summer rock routes. Filter them against what the route's own row says it crosses; the
-     rack-derived additions below stay unconditional, since a rack naming crampons IS the
-     evidence that the route needs them. */
-  const disc=catOf(route);const base=fitGear(DISC_GEAR[disc]||[],routeTerrain(route)).items.slice();
-  /* Match per occurrence, or a rack saying "ice screws are not worth carrying" adds Ice screws to the packing checklist. */
-  const src=((route&&route.rack)||[]).concat(((route&&route.gearTiers&&route.gearTiers.required)||[]));
-  GEAR_CATS.forEach(c=>{if(rackMentions(src,c.kw)&&base.indexOf(c.label)<0)base.push(c.label);});
-  const owned=(owners||[]).map(g=>(g||[]).join(" ").toLowerCase());
-  return base.map(label=>{const c=GEAR_CATS.find(x=>x.label===label)||{kw:[label.toLowerCase()]};return {label:label,have:owned.some(t=>c.kw.some(k=>t.includes(k)))};});
-}
-/* GEAR & ESSENTIALS is one complete packing list. It used to end in a "Margin" picker
-   (Ultralight / Midweight / Extra cautious) whose items only appeared when a climber chose the
-   cautious tier, so the default view left out a first aid kit's companions: the headlamp, the
-   emergency shelter, the spare food and water. The essentials are now part of the list itself:
-   the core set on every climb, and the rest of the Ten Essentials wherever the climb is in the
-   backcountry. mergeGearList still dedupes them against the discipline kit ("Warm layers",
-   "Navigation") and the route's own entries. */
-const GEAR_ESSENTIALS_CORE=["Water","Food / snacks","First aid kit","Headlamp + spare batteries","Sun protection (sunscreen, sunglasses)"];
-const GEAR_ESSENTIALS_BACKCOUNTRY=["Rain shell","Warm layers","Navigation (map, compass / GPS)","Emergency bivy / space blanket","Knife / repair kit","Fire starter","Emergency food (beyond what you plan to eat)"];
-const GEAR_BACKCOUNTRY_DISCS={hiking:1,alpine:1,mountaineering:1,ice:1,mixed:1,aid:1,scrambling:1};
 /* [4,5,6] -> "May–Jul"; [10,11,0,1] -> "Nov–Feb" (a run may wrap the new year); gaps split with ", ". */
 function monthSpan(ms){var s=ms.slice().sort(function(a,b){return a-b;});if(!s.length)return "";var runs=[];s.forEach(function(m){var last=runs[runs.length-1];if(last&&m===last[1]+1)last[1]=m;else runs.push([m,m]);});if(runs.length>1&&runs[0][0]===0&&runs[runs.length-1][1]===11){var w=runs.pop();runs[0][0]=w[0];}return runs.map(function(r){return r[0]===r[1]?MONTHS[r[0]]:MONTHS[r[0]]+"–"+MONTHS[r[1]];}).join(", ");}
-function essentialsFor(disc){return GEAR_ESSENTIALS_CORE.concat(GEAR_BACKCOUNTRY_DISCS[disc]?GEAR_ESSENTIALS_BACKCOUNTRY:[]);}
-function fmtSlingVal(v){if(v==null||v===false||v==="")return null;if(typeof v==="string"||typeof v==="number")return String(v);if(Array.isArray(v)){var items=v.map(fmtSlingVal).filter(Boolean);return items.length?items.join("; "):null;}if(typeof v==="object"){/* A {size,count} pair is a QUANTITY, and the generic branch below read it out as the   pipeline's own shape: "size: #0 C3 to 0.75 in, count: 2". 16 of 242 stored values   rendered that way in the RACK box. A count of 1 adds nothing, and a NON-numeric count   ("a few extra") cannot be a multiplier, so it goes in brackets after the size rather   than in front of it. *//* A `note` RIDES ALONG WITH size/count ON 8 OF THE 242, and requiring the object to hold nothing else let all 8 fall through to the generic branch — so half the machine text survived a fix aimed at exactly it. The note is folded into the SAME bracket as a non-numeric count rather than given its own, because two parentheticals in a row read worse than the thing they replaced. *//* THE SAME SHAPE UNDER A SECOND SPELLING, and the allow-list above was what hid it. That branch recognised size/count/note; 15 bullets across 12 routes store the identical fact as length/quantity/purpose and fell through to the generic pair dump, so a climber read "Webbing — length: 60cm, purpose: tree-rap sling backup at the base, quantity: 2" — the pipeline's own key names, with the quantity LAST when it is the first thing somebody packing wants. A deny-list beaten by one more spelling, which is why the vocabulary is a list of synonyms rather than four literal comparisons. *//* A QUANTITY WITH NO SIZE now fires too (5 of the 15: "Cordelette", "Prusik cord", "Fixed gear draws"). Requiring a size was correct while the only known shape carried one, and it is exactly what left those five reading out their keys. With no size the count IS the head — the label beside it supplies the noun, so "Prusik cord — 2" reads as two of them. */var _SZK=["size","length"],_CTK=["count","quantity"],_NOK=["note","notes","purpose"];var _all=_SZK.concat(_CTK,_NOK);var _pick=function(ks){for(var _i=0;_i<ks.length;_i++){var _w=v[ks[_i]];if(_w!=null&&_w!=="")return _w;}return null;};if(Object.keys(v).every(function(k){return _all.indexOf(k)>=0;})&&(_pick(_SZK)!=null||_pick(_CTK)!=null||_pick(_NOK)!=null)){var _sz=fmtSlingVal(_pick(_SZK)),_ct=_pick(_CTK),_no=fmtSlingVal(_pick(_NOK)),_n=Number(_ct),_hasCt=(_ct!=null&&_ct!=="");/* A count of 1 adds nothing — the rule the size branch already applied by only multiplying above 1 — so with no size it must not become a bare "1" either. */var _mult=(_hasCt&&isFinite(_n)&&_n>1),_bare=(_hasCt&&!isFinite(_n));var _head=_sz?(_mult?(_n+"× "+_sz):_sz):(_mult?String(_n):(_bare?String(_ct):null));var _ex=[];if(_sz&&_bare)_ex.push(String(_ct));if(!_head)return _no||null;if(_no)_ex.push(_no);return _ex.length?(_head+" ("+_ex.join("; ")+")"):_head;}var parts=Object.keys(v).map(function(k){var sub=fmtSlingVal(v[k]);return sub?(k.replace(/_/g," ")+": "+sub):null;}).filter(Boolean);return parts.length?parts.join(", "):null;}return null;}
-function fmtSlingRack(sr){if(!sr)return null;if(Array.isArray(sr)){if(!sr.length)return null;if(sr[0]&&typeof sr[0]==="object"&&"sizeCm" in sr[0])return sr.map(function(s){return s.qty+"× "+s.sizeCm+"cm";}).join(", ");return sr.map(fmtSlingVal).filter(Boolean).join("; ");}if(typeof sr!=="object")return null;var parts=Object.keys(sr).map(function(k){var v=sr[k];if(v===false||v==null||v==="")return null;var label=k.replace(/_/g," ");if(/^\d+(\.\d+)?(cm|in|mm)$/i.test(k)&&(typeof v==="number"||/^\d+$/.test(v)))return v+"× "+k;var sub=fmtSlingVal(v);return sub?(label+": "+sub):null;}).filter(Boolean);return parts.length?parts.join(", "):null;}
 /* The Edit button used to open a textarea whose Save wrote to `gearEdits`, a bare
    useState({}) in App. It never reached `contributions`, never hit the DB, was invisible to
    every other climber and was gone on reload — an edit affordance on a route's most
@@ -604,43 +469,6 @@ function fmtSlingRack(sr){if(!sr)return null;if(Array.isArray(sr)){if(!sr.length
    scripts/oneoff/prove-gear-confidence-caption.mjs — it renders all three states and asserts
    the silent ones stay silent. Re-run it if you touch this caption; it fails if the caption
    text moves, rather than passing over a box it never mounted. */
-/* THE COLUMN IS CALLED `sling_rack` AND 84% OF IT IS NOT SLINGS. Measured over all 242 stored
-   values: 162 carry a `cams` key and 154 a `nuts` key, plus pickets, pitons, ice screws and
-   tricams — and every one of them rendered under a single bullet reading "Slings — ...". A wrong
-   label on a rack is worse than a long one: a climber scanning for what to bring reads the first
-   word.
-
-   It was also a paragraph in a bullet (p50 85, p90 172, max 454 characters), which is the
-   check:token-boxes question one element over. One bullet per gear type fixes both at once, and
-   fixes them from the data rather than by truncating: the keys are already there.
-
-   An ARRAY value keeps the "Slings" label, because there it is genuinely a sling list
-   ({qty,sizeCm} on 21 routes -> "5x 60cm, 2x 120cm"). Only the keyed-object shape was mislabelled.
-   A plain STRING still yields nothing — that is the recorded blocker on making this column
-   contributable, and it is deliberately NOT changed here. */
-function rackLines(sr){
-  if(!sr)return[];
-  if(Array.isArray(sr)){var _a=fmtSlingRack(sr);return _a?[{label:"Slings",text:_a}]:[];}
-  if(typeof sr!=="object")return[];
-  return Object.keys(sr).map(function(k){
-    var t=fmtSlingVal(sr[k]);
-    if(!t)return null;
-    var l=k.replace(/_/g," ");
-    return {label:l.charAt(0).toUpperCase()+l.slice(1),text:t};
-  }).filter(Boolean);
-}
-/* RACK BETA: what climbers say they BROUGHT, at the foot of the rack card it describes. ONE list for
-   both rack cards: RouteRackBox off CRAG_CATS and CragRack on them, bouldering aside (the log form
-   asks for gear beta on a roped climb only). It used to be written twice, here and in a `sport`
-   branch of RouteGearCheck that no route could reach, because RouteGearCheck is mounted only OFF
-   CRAG_CATS. So when CLIMBER BETA stopped repeating gearBeta (#2363), a trad, sport, toprope or aid
-   climber's gear beta reached no screen at all. check:bare renders it on each roped discipline.
-   `activity` is the merged list (seed + your reports + every other climber's DB rows); route.activity
-   alone is the seed, so a real climber's gear beta never reached the box that read only that. */
-function RouteRackBox({route,activity,onEditRack,rack,onSeeReports,rackGeneric}){const items=gearReadout(route,[]);const cams=(route&&route.cams)||[];const _rackLines=rackLines(route.slingRack);const lines=[];/* draws/screws/ropeLen are contributable in SuggestFix and were rendered NOWHERE — a climber could correct the quickdraw count, the screw count or the rope length, watch it pass the 3-agree gate, and never see it on the route. They belong on the same list as the alpine draws and the rope that were already here. ropeLen is the contributed spelling ("60 m"); ropeLengthM is the enrichment column, and they can disagree because NOTHING mirrors one onto the other. An agreed correction wins (_ropeEdited); absent one the enrichment number is the better value, since it is a number rather than free text. Never print two rope lines. *//* The COUNTED rack first (rackRows, lib/rack.js): rack_items' rows with the quickdraw, screw and alpine-draw boxes folded in, one count per item. rack_items reached no off-crag card before, so 11 alpine/mixed/ice routes whose only rack was counted rows printed the generic rack. */rackRows(route).forEach(function(x){lines.push(rackItemLine(x));});/* The bolt count was carried only by the PROTECTION section that used to sit above this card on Plan, which repeated the rest of this list; it lives here now. */if(+route.bolts>0)lines.push(Math.round(+route.bolts)+" bolts"+(rackQty(route,"quickdraws")?"":" — bring "+Math.round(+route.bolts)+"+ quickdraws"));_rackLines.forEach(function(rl){lines.push(rl.label+" — "+rl.text);});var _ropeContrib=route.ropeLen?fmtRopeLen(route.ropeLen):"";var _ropeLen=(_ropeEdited(route)&&_ropeContrib)?_ropeContrib:(route.ropeLengthM?(route.ropeLengthM+"m"):_ropeContrib);if(route.ropeType||_ropeLen)lines.push("Rope — "+[route.ropeType,_ropeLen].filter(Boolean).join(" "));/* ropeNote used to be appended here in brackets, which meant two things: a note on a route with no ropeType and no length rendered NOWHERE (63 WA routes), and the 381 that did render put a whole paragraph inside a bullet — median 186 chars, max 716. It has its own box below now. *//* No route-level anchor line: `anchorType` was deliberately removed from SS ("anchors are per-pitch
-   now"), `routes` has no anchor_type column, and no seed route carries the key — so this read could
-   never fire. The live anchor records are `station.anchorType` on a bailout and `wp.anchorType` on a
-   waypoint, both of which render elsewhere. */if(route.ascender&&route.ascender!=="Not needed")lines.push("Ascender — "+route.ascender);const specificItems=(rack&&rack.length)?rack:(rackRows(route).length?[]:items.map(x=>x.label));const allRack=lines.concat(cams.map(camFmt)).concat(specificItems);if(!allRack.length&&!onEditRack)return null;return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:3,gap:10}}><CardHead>RACK</CardHead>{onEditRack?<EditIconButton onClick={()=>onEditRack(/* Only what the rack box itself holds. Quickdraws, bolts, screws, alpine draws, rope and ascender each have their own box in the same section, and copying them into the free text made a saved rack print them twice; a GENERIC discipline rack is not this route's, so it is not offered as if it were. */_rackLines.map(function(rl){return rl.label+" — "+rl.text;}).concat(cams.map(camFmt)).concat(rackGeneric?[]:specificItems).join("\n"))} title={allRack.length?"Suggest a rack correction":"Add the rack for this route"}/>:null}</div><div style={{fontSize:12,color:C.textMuted,marginBottom:10,lineHeight:1.45}}>{rackGeneric?"Standard rack for this discipline — nobody has recorded what this route itself takes, so treat it as a starting point and check it in the field":(route&&route.gearConfidence==="inferred"?"Protection and technical gear — inferred from this route's own description, not confirmed against trip reports":"Protection and technical gear")}.</div>{allRack.length?<div style={{display:"flex",flexDirection:"column",gap:5}}>{allRack.map((gi,i)=><div key={i} style={{display:"flex",gap:8,fontSize:12.5,color:C.text,lineHeight:1.45}}><span style={{color:C.blue,flexShrink:0}}>•</span><span>{gi}</span></div>)}</div>:<div style={{fontSize:12.5,color:C.textMuted,lineHeight:1.5}}>No rack listed yet — climbed it? Add what you brought.</div>}<RackBetaList activity={activity} route={route} onSeeReports={onSeeReports}/></div>;}
 /* `essentials` is route.whatToBring, which is CATALOG ENRICHMENT — import-alpine.mjs maps it
    from catalog/ JSON, the same path as approach/descent/beta. It is not submitted by app
    users and there is no editor for it (the RACK box above has a pencil; this list has none).
@@ -650,180 +478,6 @@ function RouteRackBox({route,activity,onEditRack,rack,onSeeReports,rackGeneric})
    hash-fabricated user data before it — enrichment described as if a person said it. "on
    file" is the vocabulary the rest of the screen already uses for this, including the
    standard-kit caption two elements down. Do not warm it back up. */
-/* WAYPOINTS, rendered once. This markup existed TWICE — byte-identical for 2,300 characters
-   under `cragOnly` and under `!cragOnly`, differing only in the empty-state copy — so every
-   fix to it had to be made twice or silently applied to half the catalog. That is the shape
-   the four-grade-parsers note in CLAUDE.md is about, and the reason it is extracted here
-   rather than edited in place twice.
-
-   Two behaviours are new, and they are the two halves of "the waypoints aren't clickable":
-
-   1. A row with a coordinate is now a CONTROL. Tapping it pans the map above to that pin and
-      opens its popup. Before this the map's own pins were tappable (a 14px transparent hit
-      circle sits under each 6px marker for exactly that reason) but the list below it was
-      inert, so the obvious thing to tap — the named row, with the note on it — did nothing.
-   2. A row WITHOUT a coordinate says so. `GPXMap` skips `wp.lat == null` silently, so such a
-      waypoint is listed here and simply absent from the map above; tapping it could never
-      work and the climber had no way to know why. Measured on the live catalog: 44 pins
-      across 17 WA alpine routes. An honest line beats a dead control — and note which way
-      this points, since the alternative is a row that LOOKS tappable and is not. */
-/* A long section is CAPPED, so one section cannot take the whole screen. Every section on the
-   route tabs mounts inside one of these; it measures its own content and does nothing until that
-   content is taller than CAP_AT, at which point it shows the first CAP_SHOW px under a fade and a
-   "Show more" control. The threshold is deliberately well above CAP_SHOW: collapsing a section to
-   hide its last three lines costs a tap and saves nothing. The INNER box is what is observed —
-   the outer one is the clipped one, so its height would only ever report the cap.
-   Clipped content stays in the accessibility tree, so a screen reader reads all of it; a keyboard
-   user who tabs onto a control below the fold opens the section rather than focusing something
-   they cannot see. Collapsing again brings the section's top back into view if it scrolled off,
-   or "Show less" would drop the reader somewhere in the NEXT section.
-   Two ways the button could VANISH after "Show less" (reported 2026-10-07, not reproduced):
-   - The scroll ran inside the click handler, BEFORE React drew the collapse, so it measured the
-     expanded layout. It now runs in a layout effect AFTER the collapse is drawn, and checks that
-     the BUTTON is on screen, not just the section's top.
-   - The threshold had no memory. A section whose height drifts after mount (the forecast loads,
-     fails or re-wraps: 628px on one load, 1680px on another) could dip under CAP_AT and take the
-     button with it. Once a section has the button it KEEPS it while collapsing would still hide
-     something (more than CAP_SHOW + CAP_SLACK). A 0 height is a hidden ancestor, not an empty
-     section, so it is ignored.
-   A section can also CROSS the cap because the climber opened something in it: ROUTE BREAKDOWN is
-   short until a box is tapped, and the opened box pushed it past CAP_AT, so the section folded and
-   hid the very box just opened (measured 2026-10-29 on Big Four's Tower Route, P2). A tap inside a
-   section that has not folded yet marks it open, so growth the climber caused never folds on them. */
-const CAP_AT=620,CAP_SHOW=400,CAP_SLACK=60,NAV_CLEAR=80;/* NAV_CLEAR: the fixed bottom nav covers the last ~70px of the screen */
-function Capped({children}){const outer=useRef(null);const inner=useRef(null);const btn=useRef(null);const closing=useRef(false);const [tall,setTall]=useState(false);const [open,setOpen]=useState(false);
-  useEffect(function(){var el=inner.current;if(!el)return;function measure(){var h=el.offsetHeight;if(!h)return;setTall(function(t){return h>(t?CAP_SHOW+CAP_SLACK:CAP_AT);});}measure();if(typeof ResizeObserver==="undefined")return;var ro=new ResizeObserver(measure);ro.observe(el);return function(){ro.disconnect();};},[]);
-  const shut=tall&&!open;
-  function onFocusIn(e){if(!shut||!outer.current)return;var top=outer.current.getBoundingClientRect().top;if(e.target.getBoundingClientRect().bottom>top+CAP_SHOW)setOpen(true);}
-  useLayoutEffect(function(){if(open||!closing.current)return;closing.current=false;var o=outer.current,b=btn.current;if(!o)return;var r=b?b.getBoundingClientRect():null;if(o.getBoundingClientRect().top<0||!r||r.top<0||r.bottom>window.innerHeight-NAV_CLEAR)o.scrollIntoView({block:"start"});},[open]);
-  function toggle(){if(open){closing.current=true;setOpen(false);}else setOpen(true);}
-  return <div>
-    <div ref={outer} onFocus={onFocusIn} onClickCapture={function(){if(!tall&&!open)setOpen(true);}} style={{position:"relative",maxHeight:shut?CAP_SHOW:"none",overflow:shut?"hidden":"visible"}}>
-      <div ref={inner}>{children}</div>
-      {shut?<div aria-hidden="true" style={{position:"absolute",left:0,right:0,bottom:0,height:72,background:"linear-gradient(to bottom, transparent, "+C.bg+")",pointerEvents:"none"}}/>:null}
-    </div>
-    {tall?<button ref={btn} onClick={toggle} aria-expanded={open} style={{minHeight:44,display:"block",width:"100%",margin:"6px 0 14px",padding:"8px",background:"transparent",color:C.blue,border:"1px solid "+C.border,borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>{open?"Show less ":"Show more "}<Chevron inline open={open} size={14} color={C.blue}/></button>:null}
-  </div>;
-}
-/* The FLOAT PLAN on Safety is a DROPDOWN (owner, 2026-10-24: "Same with digital float plan"),
-   and the last section on the tab: it is what you do once the forecast, the fires and the hazards
-   have been read. Closed, it is one amber row that still says WHY — a committing objective, and
-   whether you will have signal — so the prompt is not lost by folding it. The body is HIDDEN,
-   not unmounted, like AccessFold. */
-function WaypointList({waypoints,onFocus,emptyCopy,onAdd}){
-  if(!(waypoints&&waypoints.length))return <div style={{background:C.card,borderRadius:12,padding:"14px 13px",border:`1px dashed ${C.border}`,textAlign:"center"}}><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,marginBottom:9}}>{emptyCopy}</div><button onClick={onAdd} style={{padding:"8px 14px",borderRadius:9,border:"none",background:C.blueSolid,color:C.onSolid,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Add waypoints</button></div>;
-  /* The affordance is taught ONCE, here, rather than repeated as a "Show on map" line on
-     every row. These rows look like content and behave like controls, and on a phone there
-     is no hover to reveal that — but eight identical hints is the clutter the row hint was
-     trying to avoid. One line above the list says it for all of them. */
-  const anyPlaced=waypoints.some(wpPlaced);
-  return <>{(onFocus&&anyPlaced)?<div style={{fontSize:11.5,color:C.textMuted,marginBottom:8,lineHeight:1.45}}>Tap a waypoint to find it on the map.</div>:null}{waypoints.map((wp,i)=>{
-    const _wt=wpType(wp),col=wpColor(_wt),ic=wpIs(wp,"Hazard")?<ActionIcon name="alert" size={16} color={col}/>:wpGlyph(_wt);
-    const prevWp=i>0?waypoints[i-1]:null;
-    const _samePt=!!(prevWp&&prevWp.lat!=null&&prevWp.lng!=null&&wp.lat!=null&&wp.lng!=null&&Number(prevWp.lat)===Number(wp.lat)&&Number(prevWp.lng)===Number(wp.lng));
-    const segMi=(!_samePt&&prevWp)?legMi(prevWp,wp):null;
-    const segFt=(!_samePt&&prevWp&&wp.elev!=null&&prevWp.elev!=null)?(wp.elev-prevWp.elev):null;
-    const placed=wpPlaced(wp);
-    const card={background:C.card,borderRadius:11,padding:"10px 12px",marginBottom:ROUTE_GAP,border:`1px solid ${C.border}`,display:"flex",gap:10};
-    const act=(placed&&onFocus)?{...clickable(function(){onFocus(i);}),"aria-label":"Show "+(wp.name||_wt||"this waypoint")+" on the map"}:{};
-    return <div key={i}>{prevWp&&(segMi!=null||segFt!=null)?<div style={{display:"flex",alignItems:"center",gap:6,padding:"1px 0 6px 17px",fontSize:11,color:C.textMuted}}><span style={{color:C.border}}>│</span><span>{[segMi!=null?uDistMi(Math.abs(segMi))+" from last":null,segFt!=null?((segFt>=0?"+":"−")+uElev(Math.abs(segFt))+(segFt>=0?" gain":" loss")):null].filter(Boolean).join(" · ")}</span></div>:null}<div {...act} style={(placed&&onFocus)?{...card,cursor:"pointer"}:card}><div style={{width:34,height:34,borderRadius:"50%",background:`${col}22`,border:`1.5px solid ${col}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:15}}>{ic}</div><div style={{flex:1,minWidth:0}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:2}}><span style={{fontWeight:700,fontSize:13.5}}>{wp.name}</span><div style={{textAlign:"right"}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>{uDistMi(cumMi(waypoints,wp))}</div><div style={{fontSize:12,color:C.textMuted}}>{uElev(wp.elev)}</div></div></div><Pill label={_wt} color={col} bg={`${col}22`} sm/>{wp.note?<div style={{fontSize:12,color:C.textSub,marginTop:4,lineHeight:1.5}}>{wp.note}</div>:null}{wp.directions?<div style={{fontSize:12,color:C.textSub,marginTop:6,lineHeight:1.5,paddingLeft:8,borderLeft:"2px solid "+col}}><span style={{fontWeight:700,color:C.text}}>{"Getting here — "}</span>{wp.directions}</div>:null}{placed?null:<div style={{fontSize:11,color:C.textMuted,marginTop:6,lineHeight:1.45}}>No coordinate on file — this point is not on the map above. Know where it is? Add it with the edit pencil.</div>}</div></div></div>;
-  })}</>;
-}
-function RouteGearEssentialsBox({route,essentials,onEdit}){const disc=catOf(route);const _multiDay=isMultiDayOuting(route);const assumed=assumedFor(route,disc).concat(essentialsFor(disc)).concat(_multiDay?["Tent / shelter","Sleeping bag","Sleeping pad","Stove + fuel","Extra food (overnight)"]:[]);const cond=conditionalFor(route,disc);const _hasOwn=!!(essentials&&essentials.length);const items=mergeGearList(assumed,essentials,cond?cond.items:[]);if(!items.length)return null;return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,marginBottom:3}}><CardHead>GEAR & ESSENTIALS</CardHead>{onEdit?<EditIconButton onClick={function(){onEdit();}} title={_hasOwn?"Suggest a correction to this route's essentials":"Add gear this route needs beyond the standard kit"}/>:null}</div><div style={{fontSize:12,color:C.textMuted,marginBottom:10,lineHeight:1.45}}>{_hasOwn?("Standard kit and essentials for "+(DISC[disc]&&DISC[disc].label?DISC[disc].label.toLowerCase():disc)+", merged with what this route's own notes add. Check it against the notes above, which take precedence."):("Standard kit and essentials for "+(DISC[disc]&&DISC[disc].label?DISC[disc].label.toLowerCase():disc)+" — check it against this route's own notes above, which take precedence.")}</div><div style={{display:"flex",flexDirection:"column",gap:5,marginBottom:11}}>{items.map((gi,i)=><div key={i} style={{display:"flex",gap:8,fontSize:12.5,color:C.text,lineHeight:1.45}}><span style={{color:C.blue,flexShrink:0}}>•</span><span>{gi}</span></div>)}</div>{(function(){const cond=conditionalFor(route,disc);if(!cond)return null;return <div style={{paddingTop:10,borderTop:`1px solid ${C.borderLight}`,marginBottom:11}}><div style={{...SUB_LABEL,color:C.amber,marginBottom:3}}>Only if there is snow</div><div style={{fontSize:11.5,color:C.textMuted,marginBottom:7,lineHeight:1.45}}>This route mentions snow gear conditionally, not as standard kit — check current conditions before you carry it.</div><div style={{display:"flex",flexDirection:"column",gap:5,marginBottom:cond.quote?8:0}}>{cond.items.map((gi,i)=><div key={i} style={{display:"flex",gap:8,fontSize:12.5,color:C.text,lineHeight:1.45}}><span style={{color:C.amber,flexShrink:0}}>?</span><span>{gi}</span></div>)}</div>{cond.quote?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,background:C.surface,borderRadius:8,padding:"7px 9px",fontStyle:"italic"}}>{"“"+cond.quote+"”"}</div>:null}</div>;})()}{/* The "Specific to this route" section used to sit here. It is gone deliberately: its
-       contents are merged into the single list above by mergeGearList, because measured against
-       real data it was mostly a second copy of that list under a heading claiming the opposite.
-       Do not reintroduce it — a route-specific entry now REPLACES the stock wording in place, so
-       the qualifier ("Crampons (early/mid-season)") survives without the duplicate line. */}</div>;}
-/* WALK-IN: the crag's own approach (`areas.approach`, 0247) — the walk from the trail to the base,
-   written once per crag and shown on every route there. Never roads, parking, permits or closures. */
-function RouteGearCheck({route,activity,onSeeReports,rack,onEditRack,onEditEssentials,essentials,rackGeneric,onEditRopeNote,afterRack}){
-  /* Mounted only OFF CRAG_CATS (alpine, mountaineering, ice, mixed, scrambling). It used to open with a
-     `bouldering` return and a `sport` branch (a computed quickdraw note plus "Rack beta"), and neither
-     could run: a crag route draws CragRack instead. The sport branch was also the second of two copies
-     of the rack beta list, which is now RackBetaList, shared with CragRack. */
-// `rope_note` is populated on 444 WA routes and had no reader of its own — it was appended
-// in brackets to the "Rope — " rack bullet, which only exists when ropeType or a rope length
-// is set, so 63 notes reached no screen at all. Same shape as descent_text (#707): the
-// column was right, the reader was missing.
-//
-// The simul line is DERIVED FROM THE ROUTE'S OWN WORDS and says so. 108 WA routes already
-// state it — "Most parties simul-climb much of the terrain and rope up only for the low-5th
-// sections" (Black Peak NE Ridge) — but it is buried in `beta` (42) or a per-pitch note (80),
-// where nothing surfaces it. It is deliberately NOT inferred from grade: "parties commonly
-// simul-climb this" is a claim about a specific route, and deriving it from "4th class and
-// long" would manufacture that claim on 415 routes at once.
-// ROPEWORK holds three facts and no prose: the rope length, whether the pitches link, and whether the
-// party simul-climbs (lib/ropework.js). The rope NOTE is not printed in full: its other sentences
-// (rappel beta, gear, "no rope needed") have their own cards, and printing the note here repeated them.
-function RopeworkBox({route,onEdit}){
-  const f=ropeworkFacts(route);
-  const any=!!(f.length||f.link||f.simul);
-  /* Empty: a placeholder, where a rope is part of the route at all (not a scramble or a hike). */
-  if(!any)return (onEdit&&!["scrambling","hiking","scramble","hike","bouldering"].includes(route&&route.discipline))?<div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}><CardHead style={{marginBottom:6}}>ROPEWORK</CardHead><GapNote what="No ropework notes yet" why="Nothing says what rope this needs, whether the pitches link, or whether parties simul-climb." cta="Add ropework notes" onFix={onEdit}/></div>:null;
-  const row=function(label,value){return <div style={{display:"flex",gap:10,fontSize:12.5,lineHeight:1.55,marginTop:6}}><div style={{width:112,flexShrink:0,color:C.textMuted}}>{label}</div><div style={{color:C.textSub,wordBreak:"break-word",overflowWrap:"break-word",minWidth:0}}>{value||"Not stated"}</div></div>;};
-  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}>
-    <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:3,gap:10}}>
-      <CardHead>ROPEWORK</CardHead>
-      {onEdit?<EditIconButton onClick={onEdit} title="Edit the ropework note"/>:null}
-    </div>
-    {row("Rope length",f.length)}
-    {row("Pitches link",f.link)}
-    {row("Simul-climbing",f.simul)}
-  </div>;
-}
-  /* One SECTION heading over the group: RACK, ROPEWORK and GEAR & ESSENTIALS are card titles, and
-     without it the three cards ran on from WAYPOINTS above as if they were part of it. */
-  /* rackLeftovers: what the rack sources name that is NOT rack (an ice axe filed in detailed_rack, a
-     helmet in gear). routeRackFor keeps it out of RACK; it joins the packing list here so a route
-     never loses something it states. mergeGearList dedupes it against the standard kit by item. */
-  return <><SL>GEAR</SL><RouteRackBox route={route} activity={activity} onEditRack={onEditRack} rack={rack} onSeeReports={onSeeReports} rackGeneric={rackGeneric}/>{afterRack}<RopeworkBox route={route} onEdit={onEditRopeNote}/><RouteGearEssentialsBox route={route} essentials={(essentials||[]).concat(rackLeftovers(route))} onEdit={onEditEssentials}/></>;
-}
-/* ProvenancePanel (the DATA CONFIDENCE box) was removed with its only call site: it and
-   DATA QUALITY both answered "how complete is this route's data" at the top of Overview,
-   and per-section GapNotes answer it where it is actionable instead. Its 'Confirm accurate'
-   action went with it — nothing else called onConfirmData, so that wiring is gone from
-   ClimbMatch.jsx too. */
-function axBlurb(key,disc){
-  const D={
-    physical:{_:"How hard your body has to work — power, stamina, and endurance.",bouldering:"Raw power and body tension — how hard you pull and squeeze on each move.",sport:"Sustained pump and power held over the whole pitch.",trad:"Strenuous climbing, plus hanging on long enough to place gear.",ice:"Calf and forearm endurance from swinging tools and kicking crampons.",mixed:"Power and core tension on steep tooling with little rest.",aid:"Less raw power, more grind — hauling, jugging, and long hours on the wall.",alpine:"Whole-day endurance: vertical gain, pack weight, altitude, and distance.",mountaineering:"Whole-day endurance: vertical gain, pack weight, altitude, and distance.",scrambling:"Aerobic effort — distance, elevation gain, and time on your feet.",hiking:"Aerobic effort — distance, elevation gain, and time on your feet."},
-    technical:{_:"How skilled and precise the movement and technique need to be.",bouldering:"Intricate, precise movement — balance, heel hooks, exact body positions.",sport:"Movement difficulty — how technical the hardest sequences are.",trad:"Hard moves, plus the skill to place solid protection while climbing.",ice:"Tool and crampon technique — reading the ice and placing tools cleanly.",mixed:"Dry-tooling precision and linking moves from rock to ice.",aid:"Aid craft — placing and trusting marginal gear and running the systems.",alpine:"Mixed skills — snow, rock, and route management while moving.",mountaineering:"Mixed skills — snow, rock, and route management while moving.",scrambling:"Hands-on moves and careful footwork on steep, exposed ground.",hiking:"Footing and balance on rough or steep trail."},
-    exposure:{_:"How airy the position feels and how consequential a fall would be.",bouldering:"Usually low — you are close to the pads, though highballs raise the stakes.",ice:"Airy positions, plus the danger of falling onto tools and ice.",mixed:"Airy positions, plus the danger of falling onto tools and ice.",aid:"How airy the wall feels and how serious a fall or gear failure would be.",alpine:"Big-mountain exposure — drop-offs where a slip has real consequences.",mountaineering:"Big-mountain exposure — drop-offs where a slip has real consequences.",scrambling:"Big drop-offs with no rope — a slip can be serious.",hiking:"Generally low; any notable drop-offs are flagged."},
-    commitment:{_:"How committing the route is and how hard it is to back off once started.",bouldering:"Low — you can step or down-climb off most problems anytime.",sport:"Moderate — retreat usually just means lowering off.",trad:"How hard it is to retreat once committed, and how much gear it takes.",ice:"Retreat can mean cold V-thread rappels; weather closes the window.",mixed:"Retreat can mean cold V-thread rappels; weather closes the window.",aid:"High — a wall commits you to the route and a planned descent.",alpine:"How much of a full day (or more) it demands, and how hard it is to turn back.",mountaineering:"How much of a full day (or more) it demands, and how hard it is to turn back.",scrambling:"Committing ground where reversing can be harder than going up.",hiking:"Mostly distance and daylight — turning back is usually straightforward."},
-    routefinding:{_:"How hard it is to find and follow the correct line.",bouldering:"Minimal — the problem and its holds are right in front of you.",sport:"Usually straightforward — follow the bolts.",trad:"Reading the line and the right gear placements as you go.",ice:"Picking and protecting a line through the ice features.",mixed:"Picking and protecting a line through ice and rock features.",aid:"Following the crack systems and the topo.",alpine:"Real navigation — glaciers, couloirs, and finding the way in changing conditions.",mountaineering:"Real navigation — glaciers, couloirs, and finding the way in changing conditions.",scrambling:"Easy to wander off the safe line; staying on route is a skill.",hiking:"Following the trail and any junctions or off-trail sections."},
-    power:{_:"How much raw strength the hardest moves demand.",bouldering:"Raw power and body tension — how hard you pull and squeeze on each move.",sport:"Big, strenuous moves — how much pull the crux needs."},
-    endurance:{_:"How long the pump lasts — many hard moves in a row, with little rest.",sport:"How long the pump lasts — many hard moves in a row, with little rest."},
-    fingery:{_:"How much the holds demand small edges, crimps and pinches.",bouldering:"How much the holds demand small edges, crimps and pinches.",sport:"How much the holds demand small edges, crimps and pinches."},
-    mental:{_:"How much headspace the route asks for.",sport:"How much headspace the route asks for — run-outs, fluttery moves or a big fall."},
-    protection:{_:"How far apart the gear is and how bad a fall would be.",trad:"How far apart the gear is and how bad a fall would be. Higher means bolder, with long runouts between placements."},
-    sustained:{_:"How long the difficulty lasts with few rests.",trad:"How long the difficulty lasts with few rests, from the first move to the anchor."},
-    strenuous:{_:"How hard the body works overall.",trad:"How hard the body works overall — pulling, jamming and stemming across the whole pitch."},
-    height:{_:"How far a fall would be.",bouldering:"How high the problem is, so how far a fall would be. Higher means more landing to worry about."},
-    landing:{_:"How rough the landing is and how well it is covered.",bouldering:"How rough or uneven the landing is, and how well the pads and spotters cover it. Higher means a worse landing."}
-  };
-  const m=D[key]||{};return m[disc]||m._;
-}
-/* The radar's axes are per discipline: sport, trad and bouldering each ask their own questions
-   (migration 0374 widened the stored axis list to match). Every other discipline keeps the
-   original five, so the ratings already stored for those routes still read the same way. */
-const DIFF_AXES_BY_DISC={
-  sport:[["power","Power","Pow"],["technical","Technical","Tech"],["endurance","Endurance","Endu"],["fingery","Fingery","Fing"],["mental","Mental","Ment"]],
-  trad:[["protection","Protection","Prot"],["technical","Technical","Tech"],["sustained","Sustained","Sust"],["strenuous","Strenuous","Stren"],["commitment","Commitment","Comm"]],
-  bouldering:[["power","Power","Pow"],["technical","Technical","Tech"],["fingery","Fingery","Fing"],["height","Height","Ht"],["landing","Landing","Land"]]
-};
-const DIFF_AXES_DEFAULT=[["physical","Physical","Phys"],["technical","Technical","Tech"],["exposure","Exposure","Expo"],["commitment","Commitment","Comm"],["routefinding","Route-finding","Route"]];
-function diffAxesFor(disc){return DIFF_AXES_BY_DISC[disc]||DIFF_AXES_DEFAULT;}
-/* DIFFICULTY BREAKDOWN is the CLIMBERS' read, and only theirs. It used to blend in a seeded
-   base profile (`route.difficulty`, written by enrichment on ~8k routes) at the weight of six
-   votes, so a route nobody had rated still printed a confident 4/5 and the first real climber's
-   read barely moved it. The owner reset it on 2026-09-30: every route starts unrated and the
-   score is the plain average of climbers' own reads, so it fills in as the app grows. The column
-   is still in the DB and deliberately unread here — check:field-renders records that in KNOWN. */
-function DiffRadar({disc,ratings,onRate,meta}){
-  const rt=ratings||{};const mt=meta||{};const myId=mt.myId!=null?mt.myId:ME.id;const votesOf=k=>Object.keys(rt[k]||{}).map(function(uid){return rt[k][uid];});const dv=k=>{const votes=votesOf(k);if(!votes.length)return null;return Math.round((votes.reduce(function(s,v){return s+v;},0)/votes.length)*10)/10;};
-  const ax=diffAxesFor(disc),N=ax.length,R=50,cx=70,cy=62,pt=(i,r)=>{const a=-Math.PI/2+i*2*Math.PI/N;return [cx+Math.cos(a)*r,cy+Math.sin(a)*r];},anyRated=ax.some(x=>dv(x[0])!=null),raters=new Set([].concat.apply([],ax.map(x=>Object.keys(rt[x[0]]||{})))).size,poly=ax.map((x,i)=>pt(i,((dv(x[0])||0)/5)*R).join(",")).join(" "),grid=[1,2,3,4,5].map(g=>ax.map((_,i)=>pt(i,(g/5)*R).join(",")).join(" "));
-  const dl=(CAT[disc]||{}).label||disc||"this route";const col=v=>v==null?C.textMuted:v>=4?C.red:v>=3?C.amber:C.green;
-  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}><CardHead style={{marginBottom:2}}>DIFFICULTY BREAKDOWN</CardHead><div style={{fontSize:12,color:C.textMuted,marginBottom:9,lineHeight:1.5}}>{anyRated?<>A 1–5 read on what makes this hard, and what each part means for {dl} — the average of {raters===1?"one climber's own read":raters+" climbers' own reads"} below.</>:mt.unavailable?<>Couldn’t load climbers' ratings for this route — try again in a moment.</>:mt.loading?<>Loading climbers' ratings…</>:<>Nobody has rated this one yet. Climbed it? Add your 1–5 read on each part below, and it fills in as more climbers do.</>}</div><div style={{marginBottom:8}}><svg width="200" height="186" viewBox="0 -6 140 130" style={{display:"block",margin:"0 auto 12px"}}>{grid.map((g,i)=><polygon key={i} points={g} fill="none" stroke={C.border} strokeWidth="1"/>)}{ax.map((x,i)=>{const[ex,ey]=pt(i,R);return <line key={i} x1={cx} y1={cy} x2={ex} y2={ey} stroke={C.border} strokeWidth="1"/>;})}{anyRated?<polygon points={poly} fill={`${C.blue}33`} stroke={C.blue} strokeWidth="2"/>:null}{ax.map((x,i)=>{const[lx,ly]=pt(i,R+10);return <text key={i} x={lx} y={ly} fontSize="7.5" fill={C.textSub} textAnchor="middle" dominantBaseline="middle">{x[2]}</text>;})}</svg><div>{ax.map(x=>{const cur=dv(x[0]);const mine=(rt[x[0]]||{})[myId];const nRated=votesOf(x[0]).length;return <div key={x[0]} style={{marginBottom:7}}><div style={{display:"flex",alignItems:"center",gap:6,marginBottom:2}}><span style={{fontSize:12,color:C.textSub,width:74,flexShrink:0}}>{x[1]}</span><div style={{flex:1}}><Bar val={cur||0} max={5} color={col(cur)} h={5}/></div><span style={{fontSize:13,fontWeight:600,color:cur==null?C.textMuted:C.textSub,width:34,textAlign:"right"}}>{cur==null?"—":cur+"/5"}</span></div><div style={{display:"flex",alignItems:"center",gap:7,paddingLeft:80,flexWrap:"wrap",marginTop:4}}><span style={{fontSize:11.5,color:C.textMuted,marginRight:2}}>your read</span>{[1,2,3,4,5].map(v=><button key={v} onClick={()=>onRate&&onRate(x[0],v)} aria-pressed={mine===v} aria-label={x[1]+": rate "+v+" of 5"} style={{width:44,height:44,margin:-7,display:"flex",alignItems:"center",justifyContent:"center",border:"none",background:"transparent",cursor:"pointer",padding:0,flexShrink:0}}><span style={{width:30,height:30,boxSizing:"border-box",borderRadius:"50%",border:"1.5px solid "+(mine===v?C.blue:C.border),background:mine===v?C.blueSolid:"transparent",color:mine===v?C.onSolid:C.textMuted,fontSize:14,fontWeight:700,lineHeight:1,display:"flex",alignItems:"center",justifyContent:"center"}}>{v}</span></button>)}{mine!=null?<span style={{fontSize:11.5,color:C.blue,marginLeft:3}}>{mt.shared?("✓ counted · "+(nRated>1?nRated+" climbers rated":"the first read")):"only you see this — sign in to share it"}</span>:(nRated?<span style={{fontSize:11.5,color:C.textMuted,marginLeft:3}}>{nRated+" climber"+(nRated!==1?"s":"")+" rated"}</span>:anyRated?<span style={{fontSize:11.5,color:C.textMuted,marginLeft:3}}>no reads yet</span>:null)}</div></div>;})}</div></div><div style={{marginTop:6,borderTop:`1px solid ${C.borderLight}`,paddingTop:8}}>{ax.map(x=><div key={x[0]} style={{marginBottom:7}}><div style={{display:"flex",alignItems:"baseline",gap:6}}><span style={{fontSize:12,fontWeight:700,color:col(dv(x[0]))}}>{x[1]}</span><span style={{fontSize:12,color:C.textMuted}}>{dv(x[0])==null?"not rated yet":dv(x[0])+"/5 · "+votesOf(x[0]).length+" rated"}</span></div><div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:1}}>{axBlurb(x[0],disc)}</div></div>)}</div></div>;
-}
 function fmtRappels(r){if(r==null)return null;if(typeof r!=="object")return r;var n=r.count!=null?r.count+"x":"";var len=r.lengthM!=null?r.lengthM+"m":(r.lengthFt!=null?r.lengthFt+"ft":"");return [n,len].filter(Boolean).join(" · ")||null;}
 /* The rappel summary worth printing NEXT TO the pitch-by-pitch table. `rappels` is either a
    count, a {count,lengthM} object, or free prose ("Typically 0-1 short rappel, or a
@@ -1313,285 +967,14 @@ function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onComme
     </div>
   </div>;
 }
-/* The trailhead was one line of text — `Trailhead: Killen Creek Trailhead (Trail #113,
-   FR-2329)` — followed by prose. Everything else the row already knew was somewhere else or
-   nowhere: the coordinates (650 routes carry trailheadLat/Lng and none of them rendered as a
-   number you could read out or paste into a GPS). The card is the trailhead's name, its driving
-   directions, and one compact row: Google Maps and Apple Maps (the same destination) + the copyable coordinates. Elevation and
-   approach figures live in TECH STATS and are not repeated here. */
-function TrailheadCard({route,onEdit}){
-  const al=route.approachLogistics||{};
-  const wp=(route.waypoints||[]).find(w=>wpIs(w,"Trailhead"))||null;
-  /* THE DESTINATION COMES FROM trailheadPoint(), THE SAME FUNCTION THE MAP AND BOTH "Directions
-     to…" BUTTONS USE. This card resolved approach_logistics FIRST and the pin second — the exact
-     opposite precedence — so on 290 routes the map drew a pin in one place while this card's
-     Directions link, its copy-to-clipboard value and its "To the peak" bearing all pointed
-     somewhere else. CLAUDE.md has recorded that split as user-visible since the trailhead sweep;
-     #1215 consolidated two of the three surfaces and this is the third.
-     Consistency is the whole fix. WHICH record is true stays a data question — CLAUDE.md is
-     explicit that swapping a priority to settle that would only move the error — but a page must
-     not offer two destinations for one trailhead. */
-  const tp=trailheadPoint(route);
-  const lat=tp?Number(tp.lat):null,lng=tp?Number(tp.lng):null;
-  const hasCoord=!!tp;
-  /* THE NAME DOES NOT SIMPLY FOLLOW THE COORDINATE, and measuring is what settled it: taking the
-     pin's name wholesale changed 530 cards and nearly all were DOWNGRADES — "Killen Creek
-     Trailhead (Trail #113, FR-2329)" losing its road and trail number to a bare "Killen Creek
-     Trailhead". approach_logistics.trailhead is the curated field and where both records mean the
-     same place it is simply better copy.
-     It is only wrong when the two records mean DIFFERENT places, and the measured distribution
-     says where that boundary is rather than leaving it to taste: the split runs CONTINUOUSLY to
-     457 m (p50 46, p90 290 — one trailhead recorded twice, imprecisely) and then jumps straight to
-     5,733 m. Nothing lies between. The four beyond it are peaks with two GENUINE approaches, where
-     the logistics name really is describing the other one, so those four take the pin's name. */
-  const _nameFollows=!!(tp&&!tp.derived&&tp.alt&&distMiles(tp,tp.alt)*1609.34>1000);
-  /* WHEN THE TITLE FOLLOWED THE PIN, THE DIRECTIONS PROSE BELOW IS ABOUT THE OTHER RECORD, and
-     unlabelled it makes the card contradict itself: #1231 correctly flipped the NAME on the four
-     routes past the 1,000 m gap and left `al.trailheadDirection` — which is the LOGISTICS record —
-     rendering underneath it. Measured on screen (probe-trailheadcard-name-vs-directions.mjs): 3 of
-     the 4 read as e.g. "Thirtymile Trailhead" titled above "From the Andrews Creek Trailhead…",
-     two starts 7.8 km apart on one card. The fourth is already honest, because its own prose says
-     "Two common trailheads on US-2 in Chelan County give access."
-     ATTRIBUTED RATHER THAN SUPPRESSED: on these routes the other approach is real and worth
-     keeping, and dropping it would lose the only description of it. And deliberately NOT worded as
-     "this peak has two approaches" — the rule fires on DISTANCE, and CLAUDE.md is explicit that a
-     disagreement says one record is wrong, not which. "Directions on file describe a different
-     start" is true either way. */
-  const _dirIsOther=_nameFollows&&!!al.trailhead;
-  const name=(_nameFollows&&tp.name)?tp.name:(al.trailhead||(wp&&wp.name)||(tp&&tp.name)||null);
-  /* NO STAT TILES. This card used to print Elevation, "Approach (one way)" and a straight-line
-     "To the peak" bearing above the directions. The first two restated TECH STATS a scroll away
-     and the third was a figure a climber could mistake for trail mileage, so the card now answers
-     only where the trailhead is and how to drive there. check:trailhead-directions section 7
-     keeps them from coming back. */
-  /* A value that describes the WALK is not shown here. This line sits under the trailhead's name as
-     its driving directions, and 230 routes once carried "backpack ~13 miles via the Whistler Cutoff",
-     "Skyline Trail to Camp Muir" or a bare "North" in it. Those rows were repaired and
-     check:trailhead-direction-shape scans the catalog daily, so this is the reader-side defence for
-     a row written since: the card falls back to the name, the coordinates and "Drive here", and the
-     walk is still on the page in the approach section. The rule refuses none of the 302 reviewed
-     good values, which is what makes hiding safe (scripts/trailhead-directions-reviewed.json). */
-  const dir=trailheadDirectionProblem(al.trailheadDirection)?null:al.trailheadDirection;
-  const dup=dir&&(route.approach||"").slice(0,80).indexOf(dir.slice(0,40))!==-1;
-  const thLink={flex:"1 1 0",display:"flex",alignItems:"center",justifyContent:"center",boxSizing:"border-box",minHeight:44,padding:"8px 10px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"};
-  return <div style={{background:C.surface,borderRadius:12,padding:"12px 14px",border:"1px solid "+C.border,marginTop:12,marginBottom:12}}>
-    <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,marginBottom:10}}>
-      <div style={{display:"flex",gap:8,minWidth:0,alignItems:"flex-start"}}>
-        <span aria-hidden="true" style={{color:WP_STYLE.Trailhead.color,fontSize:14,lineHeight:1.35,flexShrink:0}}>{WP_STYLE.Trailhead.glyph}</span>
-        <div style={{minWidth:0}}>
-          <div style={{...SUB_LABEL,marginBottom:2}}>TRAILHEAD</div>
-          <div style={{fontSize:13.5,fontWeight:700,color:C.text,lineHeight:1.4,wordBreak:"break-word"}}>{name||"Location on file"}</div>
-        </div>
-      </div>
-      {onEdit?<EditIconButton onClick={onEdit} title="Edit trailhead and approach"/>:null}
-    </div>
-    {(dir&&!dup)?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55,marginBottom:12}}>{_dirIsOther?<span style={{color:C.textMuted}}>{"Directions on file describe a different start \u2014 "+al.trailhead+": "}</span>:null}{dir}</div>:null}
-    {/* THE COORDINATES GET THEIR OWN ROW, the two maps apps the row under it (owner note, 2026-10-25:
-        "Directions to trailhead box doesn't have proper spacing"). With Apple Maps added beside Google
-        Maps (#2831) the three controls shared one line, and at 390px the coordinate shrank to
-        "48.85..." -- the one value on the card you read out or type into a GPS. Laid out as
-        CragLocationCard already is: a full-width copy row, then two equal 44px buttons. */}
-    {hasCoord?<><CopyCoordButton lat={lat} lng={lng} what="trailhead"/>
-    <div style={{display:"flex",gap:8,marginTop:8}}>
-      <a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" aria-label="Driving directions to the trailhead in Google Maps" style={thLink}>Google Maps</a>
-      <a href={"https://maps.apple.com/?dirflg=d&daddr="+lat+","+lng} target="_blank" rel="noreferrer" aria-label="Driving directions to the trailhead in Apple Maps" style={thLink}>Apple Maps</a>
-    </div></>:<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45}}>No trailhead coordinates on file yet.</div>}
-  </div>;
-}
 /* A coordinate you can read out, and one tap to copy it. Shared by both rows of CragLocationCard. */
 /* The pin editor's TYPES on a crag route. A crag has no summit or camp; it has a car park, the trail
    junctions to the wall, water and hazards. The stored type stays "Trailhead" -- trailheadPoint()
    reads that first -- and is SHOWN as Parking, which is what it is at a crag. */
 const WP_TYPES_CRAG=["Trailhead"];/* A crag climb carries no waypoints: the only pin a crag climber sets is where to PARK (stored Trailhead, shown as Parking). The walk in is the GPX line drawn on the CRAG MAP. A pin already stored with another type keeps its own chip (the concat below). */
 function wpTypeLbl(t,disc){return t==="Trailhead"&&CRAG_CATS.includes(disc)?"Parking":t;}
-function RappelTable({route,onEdit}){
-  if(!route.rappelDetail||!route.rappelDetail.length)return null;
-  const raps=route.rappelDetail.map((r,i)=>({...r,_n:r.n!=null?r.n:i+1})).sort((a,b)=>a._n-b._n);
-  /* `lengthM` is legitimately null where no source publishes a per-station distance — that is the
-     honest value, and writing the ROPE's capacity there instead is what made one route claim 560m
-     of rappel down a 244m face. But summing with `||0` then turns "unknown" into "zero", so a
-     table with 2 known rappels of 30m and 1 unknown printed "60 m total" and read as the whole
-     descent. Count what is actually known and say so when it is only part of the line. */
-  const known=raps.filter(r=>r.lengthM!=null);
-  const total=known.reduce((a,r)=>a+r.lengthM,0);
-  const partial=known.length>0&&known.length<raps.length;
-  /* The SECTION heading, as the no-table branch of the rappels block already had it: a table used
-     to demote RAPPELS to a card title, so the same section changed look with its data. */
-  return <><SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit rappel information"/>:null}>{rappelHeaderLabel(route)||"RAPPELS"}</SL><div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
-    {total>0?<div style={{fontSize:12,color:C.textMuted,marginBottom:9}}>{uLen(total)+(partial?(" across "+known.length+" of "+raps.length):" total")}</div>:null}
-    {(function(){var w=rappelSingleRopeWarning(route);return w?<div style={{fontSize:12,color:C.amber,lineHeight:1.5,marginBottom:9,background:C.amberBg,border:"1px solid "+C.amber,borderRadius:8,padding:"7px 9px"}}>{w}</div>:null;})()}
-    {route.rappelCountNote?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:9,background:C.surface,borderRadius:8,padding:"7px 9px"}}>{route.rappelCountNote}</div>:null}
-    {/* A rappel row answers four questions in the order you ask them on the ground:
-        WHERE is the station (`station`) — the one a party actually gets stuck on, and the one
-        a bare "60m, bolted" row never answered; HOW LONG and off WHAT (`lengthM`/`anchor`);
-        WHAT GOES WRONG (`hazards`) — pendulum swings, a pull that jams, a station you can
-        rappel straight past; and anything else (`notes`). Every key is optional and each
-        block is gated on its own value, so a route carrying only the old {lengthM, anchor,
-        notes} shape renders exactly as it did before. */}
-    {raps.map((r,idx)=><RappelRow key={r._n+"-"+idx} r={r} first={idx===0}/>)}
-  </div></>;
-}
-/* ONE RAPPEL, a dropdown like a CampSite (owner, 2026-10-24: "to reduce screen space"). The row
-   always shows what a party scans the list FOR — which rap, how long, off what — and the prose
-   (finding the station, hazards, the pull, notes) is one tap away. The first opens expanded, as
-   the first camp does, so the section proves its rows hold detail. A collapsed row still SAYS it
-   has hazards, in red with a count: a station's danger must not hide behind a tap unannounced. */
-function RappelRow({r,first}){
-  const [open,setOpen]=useState(!!first);
-  const _haz=Array.isArray(r.hazards)?r.hazards.filter(Boolean):(r.hazards?[r.hazards]:[]);
-  const more=!!(r.station||_haz.length||r.pull||r.notes);
-  const len=r.lengthM!=null?uLen(r.lengthM):"—";
-  const label="Rappel "+r._n+", "+len+(r.anchor?", "+r.anchor:"")+(_haz.length?", "+_haz.length+(_haz.length===1?" hazard":" hazards"):"");
-  return <div style={{border:"1px solid "+(open&&more?C.red+"55":C.border),borderRadius:10,marginBottom:8,overflow:"hidden"}}>
-    <div {...(more?clickable(function(){setOpen(!open);}):{})} aria-expanded={more?open:undefined} aria-label={more?((open?"Hide":"Show")+" detail for "+label):undefined} style={{minHeight:44,boxSizing:"border-box",display:"flex",gap:10,padding:"9px 11px",alignItems:"center",cursor:more?"pointer":"default"}}>
-      <div style={{width:26,height:26,borderRadius:7,background:C.surface,border:"1px solid "+C.border,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:C.textSub}}>{"R"+r._n}</div>
-      <div style={{flex:1,minWidth:0}}>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:8}}><span style={{fontSize:13,fontWeight:700,color:C.red,flexShrink:0,whiteSpace:"nowrap"}}>{len}</span><span style={{fontSize:11.5,fontWeight:600,color:/bolt/i.test(r.anchor||"")?C.green:C.blue,textAlign:"right",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r.anchor||"—"}</span></div>
-        {more?<div style={{display:"flex",alignItems:"center",gap:6,marginTop:4}}>
-          {_haz.length?<span style={{display:"inline-flex",alignItems:"center",gap:4,fontSize:11,fontWeight:700,color:C.red}}><ActionIcon name="alert" size={11} color={C.red}/>{_haz.length+(_haz.length===1?" hazard":" hazards")}</span>:null}
-          <span style={{fontSize:11.5,fontWeight:700,color:C.blue,marginLeft:"auto",whiteSpace:"nowrap"}}>{open?"Less ":"More "}<Chevron inline open={open} size={13} color={C.blue}/></span>
-        </div>:null}
-      </div>
-    </div>
-    {more&&open?<div style={{padding:"0 11px 9px 47px"}}>{r.station?<div style={{marginTop:0,marginBottom:_haz.length||r.notes||r.pull?6:0,background:C.surface,border:"1px solid "+C.border,borderRadius:8,padding:"6px 9px"}}><div style={{fontSize:9.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.5,marginBottom:2}}>Finding the station</div><div style={{fontSize:12,color:C.text,lineHeight:1.5}}>{r.station}</div></div>:null}{_haz.length?<div style={{marginBottom:r.notes||r.pull?6:0,display:"flex",flexDirection:"column",gap:4}}>{_haz.map((h,hi)=><div key={hi} style={{display:"flex",gap:6,alignItems:"flex-start",background:C.redBg,border:"1px solid "+C.red+"55",borderRadius:8,padding:"5px 8px"}}><span style={{flexShrink:0,marginTop:1}}><ActionIcon name="alert" size={12} color={C.red}/></span><span style={{fontSize:11.5,color:C.text,lineHeight:1.45}}>{h}</span></div>)}</div>:null}{r.pull?<div style={{fontSize:11.5,color:C.amber,lineHeight:1.45,marginBottom:r.notes?5:0}}><span style={{fontWeight:800,textTransform:"uppercase",letterSpacing:0.4,fontSize:9.5,color:C.textMuted,marginRight:5}}>Pull</span>{r.pull}</div>:null}{r.notes?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{r.notes}</div>:null}</div>:null}
-  </div>;
-}
-/* CLIMBING ROUTE — the pitch table's counterpart for terrain that has no pitches.
-   A scramble or a mountaineering line has an actual-climbing section every bit as real as a
-   pitched route's, and until now there was nowhere to put it: the only structured slot was
-   pitch_detail, which those routes legitimately leave empty. So that description went into
-   `approach` instead, which is why approach prose on unpitched routes so often walks you past
-   the base of the climb and keeps going to the summit — and why a party looking for where the
-   climbing STARTS had to reverse-engineer it out of a paragraph about a trail.
-   It renders wherever it is written and is drawn ABOVE ROUTE BREAKDOWN: this is the climb at a
-   glance, the breakdown is the same ground pitch by pitch (owner, 2026-10-22). It used to be gated
-   on isPitched() being false, which hid it on the 46 alpine routes that carry one. */
-export function ClimbingRouteTable({route,onEdit}){
-  const segs=Array.isArray(route.climbingRoute)?route.climbingRoute:[];
-  if(!segs.length)return null;
-  const list=segs.map((s,i)=>({...s,_n:s.n!=null?s.n:i+1})).sort((a,b)=>a._n-b._n);
-  return <><SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit the climbing route"/>:null}>{"CLIMBING ROUTE · "+list.length+" section"+(list.length!==1?"s":"")}</SL><div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
-    <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>From the base of the climbing to the top — the technical ground itself, not the walk in.</div>
-    {list.map((s,idx)=><div key={s._n+"-"+idx} style={{display:"flex",gap:10,padding:"9px 11px",alignItems:"flex-start",border:"1px solid "+C.border,borderRadius:10,marginBottom:8}}>
-      <div style={{width:26,height:26,borderRadius:7,background:C.surface,border:"1px solid "+C.border,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:C.textSub}}>{s._n}</div>
-      <div style={{flex:1,minWidth:0}}>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:8,marginBottom:s.notes?3:0}}>
-          <span style={{fontSize:13,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word"}}>{s.label||("Section "+s._n)}</span>
-          {s.class?<span style={{flexShrink:0,fontSize:11,fontWeight:800,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{s.class}</span>:null}
-        </div>
-        {s.notes?<div style={{fontSize:12,color:C.textSub,lineHeight:1.55}}>{s.notes}</div>:null}
-      </div>
-    </div>)}
-  </div></>;
-}
 
 
-/* APPROACH — ONE section, holding every way in. It used to be two: "APPROACHES · N ways in"
-   (the `approach_variants` cards) and, under it, a separate APPROACH box holding the `approach`
-   paragraph. Read top to bottom that paragraph looked like a THIRD way in, and nothing said which
-   of the ways in people actually take. Measured 2026-09-24: 796 routes carry both, and on 771 of
-   them the paragraph is the long-form account of the FIRST variant — so it now renders INSIDE
-   the main way in's card as its full description, not as a sibling of it.
-   The MAIN way in is the variant marked `primary:true`, else index 0 (the enrichment has always
-   written the standard way in first), and it is drawn first. It is badged MOST USED only when that
-   is a RECORDED decision — `primary:true` on a route with a choice to make — never on array order
-   alone: research on the 124 multi-way routes moved the answer off index 0 on 16 of them.
-   The paragraph and the route-level numbers follow `longForm:true` when a variant carries it: on
-   ~20 routes the paragraph describes a way in that is NOT the most used one (a road since washed
-   out, a trail closed since 2003), and hanging it under the MOST USED card would put the long
-   account, and its miles and gain, under the wrong way in. Without the mark they follow the main
-   card, which is where the paragraph belongs on 771 of 796 routes.
-   The other ways in keep their season window, and each may carry `whyThisWay`: one sentence on
-   WHEN a party takes it instead of the most used one ("early season, while the gully still holds
-   snow"; "when the ford is running high"). Guidebooks print exactly this beside an alternative
-   approach; before it, the reason sat mid-paragraph in `notes`, where nobody choosing between two
-   cards would find it. It renders only on a card that is NOT the most used one.
-   `baseFinding` gets its own highlighted block rather than a sentence inside `notes`: it is the
-   answer to "how do I know I'm at the start of the climbing", which is the question that actually
-   gets parties lost, and burying it mid-paragraph is exactly how it got lost before. */
-/* A crossing is read from the way in's own HAZARDS, never its notes or name: "Icicle Creek Road"
-   and "Mountaineer Creek trail" are places, not fords. The chip only repeats a hazard already
-   recorded on the card, so it can never claim a crossing nobody wrote down. */
-export const APPROACH_CROSSING_RE=/\b(?:ford(?:s|ed|ing)?|wad(?:e|es|ed|ing)|(?:creek|river|stream) crossings?|cross(?:es|ed|ing)? (?:the )?[\w'’ -]{0,30}?(?:creek|river|stream|fork))\b/i;
-/* A LOG bridge or log crossing over a creek is a crossing too, and the first pattern missed it:
-   "Slick or partly submerged log bridges over Mountaineer Creek early season" is the Colchuck
-   outlet hazard every Let it Burn party meets. It counts only when the same hazard names the water,
-   so "downed logs" in an avalanche path does not. Measured over all 4,634 stored hazards; the
-   remaining non-matches that say "crossing" are railway, glacier, moat, rib and border crossings. */
-export const APPROACH_LOG_CROSSING_RE=/\blog (?:bridges?|crossings?)\b/i;
-export const approachHasCrossing=haz=>haz.some(h=>{const t=String(h||"");return APPROACH_CROSSING_RE.test(t)||(APPROACH_LOG_CROSSING_RE.test(t)&&/\b(?:creek|river|stream)\b/i.test(t));});
-export const primaryApproachIndex=vars=>{const i=vars.findIndex(v=>v&&v.primary===true);return i>=0?i:0;};
-export const longFormApproachIndex=vars=>{const i=vars.findIndex(v=>v&&v.longForm===true);return i>=0?i:primaryApproachIndex(vars);};
-export function ApproachVariants({route,onEdit,onEditProse}){
-  const vars=Array.isArray(route.approachVariants)?route.approachVariants.filter(Boolean):[];
-  const prose=route.approach?String(route.approach):"";
-  if(!vars.length&&!prose)return null;
-  /* With a way in PICKED (lib/approaches.js), the paragraph and the route-level numbers are that
-     way in's — the overlay replaced them — so they hang under ITS card, and that card leads. */const _selIdx=route._approach?vars.findIndex(function(v,i){return approachKeyOf(v,i)===route._approach.key;}):-1;const pIdx=_selIdx>=0?_selIdx:primaryApproachIndex(vars);const lfIdx=_selIdx>=0?_selIdx:(vars.length?longFormApproachIndex(vars):-1);const marked=vars.some(v=>v.primary===true);
-  const order=vars.length?[pIdx,...vars.map((_,i)=>i).filter(i=>i!==pIdx)]:[-1];
-  /* Route-level numbers backfill ONE card — the one the paragraph describes — because they measure
-     the same approach the paragraph does, and
-     888 of 1,001 variants carry no distance of their own. Each keeps the label TechStats gives it on
-     Overview, because on a summit route gain_ft is the whole ascent, not the walk in, and printing it
-     as "approach gain" would claim the trail climbs 5,500 ft before the route starts. */
-  const disc=catOf(route);const summitDisc=disc==="alpine"||disc==="mountaineering"||disc==="hiking";
-  const rAsc=routeAscentFt(route);const rKm=effDistKm(route);const rHrs=route.timing&&route.timing.approachTimeHrs;
-  const routeFacts={
-    hours:rHrs!=null&&rHrs!==""?String(rHrs):null,
-    dist:rKm!=null&&rKm>0?uDist(rKm)+(effDistIsWholeTrip(route)?" whole outing":" one way"):null,
-    gain:rAsc!=null&&rAsc>0?"↑ "+uElev(rAsc)+(summitDisc||gainCoversWholeOuting(route)?" total ascent":" approach gain"):null};
-  /* `hours` is free text as often as a number: "Multi-day", "2 days", "4–5 from camp". Appending
-     " hr" to the END printed "Multi-day hr" and "4–5 from camp hr" (15 of 197 values). A value that
-     already names its unit is left alone; otherwise the unit goes after the FIRST number range
-     ("under 1" -> "under 1 hr"). The unit test is whole words: `\bh` matched "high camp". */
-  const hrsFmt=hv=>/\b(?:hrs?|hours?|days?)\b|\d\s*h\b/i.test(String(hv))?String(hv):String(hv).replace(/(~?\d+(?:\.\d+)?(?:\s*(?:[-–]|to)\s*\d+(?:\.\d+)?)?)/,"$1 hr");
-  const card=(v,i,main)=>{
-    const own=i===lfIdx;
-    const haz=Array.isArray(v.hazards)?v.hazards.filter(Boolean):(v.hazards?[v.hazards]:[]);
-    /* `season` on an approach variant is a WINDOW, and 534 of 801 variants (67%, across 470
-       routes) hold a paragraph instead — up to 392 characters. It used to sit in a nowrap pill
-       beside the name, cut to 48 characters, with the full sentence repeated as prose below: the
-       pill squeezed the name into a sliver on the left, the cut read as a bug, and its first clause
-       printed twice. Now the WHOLE window sits at the top of the card, full width, and wraps. */
-    const seasonFull=String(v.season||"").trim().replace(/\s+/g," ");
-    const hrsTxt=v.hours?hrsFmt(v.hours):(own&&routeFacts.hours?hrsFmt(routeFacts.hours)+" approach":null);
-    const distTxt=v.distMi!=null?uDistMi(v.distMi)+" one way":(own?routeFacts.dist:null);/* "one way" like the route's own figure beside it: a bare "4.8 mi" on one card and "4.8 mi one way" on the next read as two different measurements. */
-    const gainTxt=v.gainFt!=null?uElev(v.gainFt)+" gain":(own?routeFacts.gain:null);
-    const facts=[hrsTxt,distTxt,gainTxt].filter(Boolean);
-    const crossing=approachHasCrossing(haz);
-    const why=v.primary!==true&&marked&&vars.length>1?String(v.whyThisWay||"").trim():"";
-    const badge=v.primary===true&&marked&&vars.length>1;/* the primary card, not the first one: with a way in picked, the picked card leads and must not inherit MOST USED */
-    return <div key={i} data-approach-card={main?"main":"other"} style={{background:C.card,border:"1px solid "+(badge?C.greenDim:C.border),borderRadius:12,padding:"11px 13px",marginBottom:ROUTE_GAP}}>
-      {seasonFull?<div data-approach-window="1" style={{fontSize:12.5,fontWeight:700,color:C.onSolid,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:10,padding:"6px 10px",lineHeight:1.5,marginBottom:9,overflowWrap:"anywhere"}}>{seasonFull}</div>:null}
-      {badge?<div style={{fontSize:9.5,fontWeight:800,color:C.green,textTransform:"uppercase",letterSpacing:0.5,marginBottom:2}}>Most used</div>:null}
-      {vars.length?<div style={{fontSize:13.5,fontWeight:800,color:C.text,wordBreak:"break-word",marginBottom:6}}>{v.name||("Approach "+(i+1))}</div>:null}
-      {why?<div data-approach-why="1" style={{borderLeft:"3px solid "+C.blue,background:C.surface,borderRadius:"0 9px 9px 0",padding:"6px 10px",marginBottom:8}}>
-        <div style={{fontSize:9.5,fontWeight:800,color:C.blue,textTransform:"uppercase",letterSpacing:0.5,marginBottom:2}}>Why go this way</div>
-        <div style={{fontSize:12.5,color:C.text,lineHeight:1.55}}>{why}</div>
-      </div>:null}
-      {facts.length||crossing?<div style={{display:"flex",flexWrap:"wrap",gap:10,alignItems:"center",marginBottom:7}}>{facts.map((f,fi)=><span key={fi} style={{fontSize:11.5,color:C.textSub}}>{f}</span>)}{crossing?<span style={{display:"inline-flex",alignItems:"center",gap:4,fontSize:11,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:20,padding:"1px 8px"}}><ActionIcon name="alert" size={11} color={C.amber}/>Stream crossing</span>:null}</div>:null}
-      {v.notes?splitParagraphs(v.notes).map((p,pi)=><p key={pi} style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:pi===0?"0 0 7px":"7px 0 0"}}>{p}</p>):null}
-      {/* The full account renders IN FULL, never behind a "read more": check:field-renders proves
-          this column reaches a screen by server-rendering the page, and a collapsed paragraph is
-          not in that markup. It is labelled only when a summary sits above it. */}
-      {own&&prose?<div style={{marginTop:v.notes?9:0}}>
-        {v.notes?<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:4}}><div style={{fontSize:9.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.5}}>Full description</div>{onEditProse?<EditIconButton onClick={onEditProse} title="Edit the full approach description"/>:null}</div>:null}
-        {splitParagraphs(prose).map((p,pi)=><p key={pi} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:pi===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}
-      </div>:null}
-      {v.baseFinding?<div style={{marginTop:7,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:9,padding:"8px 10px"}}>
-        <div style={{fontSize:9.5,fontWeight:800,color:C.green,textTransform:"uppercase",letterSpacing:0.5,marginBottom:3}}>Finding the base of the climbing</div>
-        <div style={{fontSize:12.5,color:C.text,lineHeight:1.55}}>{v.baseFinding}</div>
-      </div>:null}
-      {haz.length?<div style={{marginTop:7,display:"flex",flexDirection:"column",gap:4}}>{haz.map((h,hi)=><div key={hi} style={{display:"flex",gap:6,alignItems:"flex-start",background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:8,padding:"5px 8px"}}><span style={{flexShrink:0,marginTop:1}}><ActionIcon name="alert" size={12} color={C.amber}/></span><span style={{fontSize:11.5,color:C.text,lineHeight:1.45}}>{h}</span></div>)}</div>:null}
-    </div>;
-  };
-  const editFn=vars.length?onEdit:onEditProse;
-  return <div style={{marginBottom:12}}>
-    <SL action={editFn?<EditIconButton onClick={editFn} title={vars.length?"Edit the approaches":"Edit approach information"}/>:null} wp="Approach">APPROACH</SL>
-    {vars.length>1?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,margin:"-4px 0 9px"}}>{vars.length+" ways in."+(marked?" Most parties take the one marked Most used"+(vars.every(v=>v.primary===true||String(v.whyThisWay||"").trim())?"; each other one says when to take it instead.":"."):" Read the season window on each before you pick.")}</div>:null}
-    {order.map((i,k)=>card(i<0?{}:vars[i],i<0?-1:i,k===0))}
-  </div>;
-}
 
 /* BIVY — where you sleep if the route runs long. Alpine and mountaineering only: the question
    "where would I spend the night" is not a real one on a single-pitch crag, and rendering an
@@ -1606,47 +989,6 @@ export function ApproachVariants({route,onEdit,onEditProse}){
    lists ONCE (matched on name, which is the only field both stores reliably carry).
    It renders on EVERY route that has a site, day-trippable or not: a party benighted on a
    "day route" is exactly who needs this, so absence of a bivy plan is not absence of a bivy. */
-/* `bivy[].elev` holds FEET and `bivy[].elevM` holds METRES, and the two NEVER co-occur —
-   measured on the live catalog: of 175 sites, 77 carry elev, 55 carry only elevM, 43 carry
-   neither, and 0 carry both. So this column holds two conventions, the shape dist_km and
-   gain_ft already record. uElev() takes feet, so reading `elev` alone silently rendered NO
-   elevation for 31% of sites. Converted at READ time, never normalised in the DB — the same
-   rule the waypoint vocabulary follows. */
-function campElevFt(s){
-  if(!s)return null;
-  if(s.elev!=null)return s.elev;
-  if(s.elevM!=null)return s.elevM*3.28084;
-  return null;
-}
-/* The TRAILHEAD is the only thing either number can be measured FROM, and the waypoint store is
-   its only record. Measured on the live catalog: of 800 routes carrying camping, 687 have a
-   trailhead elevation on a waypoint, ZERO have one only in `approach_logistics`, and the 2 that
-   carry both agree exactly — so there is no second source to reconcile and the figure cannot
-   depend on which record happened to be read. The other way this silently goes wrong is a route
-   with TWO trailheads, where "the" trailhead is arbitrary; measured at 0 of 757 camping routes,
-   so taking the first is safe here in a way it would not be catalog-wide. */
-function trailheadPin(route){
-  const ws=Array.isArray(route.waypoints)?route.waypoints:[];
-  for(let i=0;i<ws.length;i++)if(wpIs(ws[i],"Trailhead"))return ws[i];
-  return null;
-}
-function trailheadFt(route){
-  const w=trailheadPin(route);
-  return w?campElevFt(w):null;
-}
-/* TRAIL distance, and only trail distance. A campsite WAYPOINT records distMi/distKm — the walked
-   path — on 410 of 445 sites. The researched `bivy` store records no distance under any spelling
-   (measured: 5,083 sites, zero distance-ish keys) and carries a coordinate on 4 of them, so there
-   is nothing to read and nothing to compute. A straight line between two points is NOT this
-   number and must never be substituted for it: a trail cannot be SHORTER than its own chord,
-   which is the entire premise of audit:waypoint-distances. A site with no recorded distance
-   therefore shows none, which is the honest answer rather than a plausible one. */
-function campDistMi(w){
-  if(!w)return null;
-  if(w.distMi!=null&&w.distMi!=="")return Number(w.distMi);
-  if(w.distKm!=null&&w.distKm!=="")return Number(w.distKm)/1.60934;
-  return null;
-}
 /* "Trad is alpine when it climbs a peak." A 20-pitch line on an 8,322 ft Picket summit is filed
    `trad` in this catalog by convention, and catOf() folds trad into the crag family — so
    wa_mount_fury_east_direct_east_ridge recorded Access Creek Basin and Luna Col and showed them
@@ -1666,375 +1008,8 @@ export {climbsAPeak};
 export function campingGate(route){
   return ["alpine","mountaineering","scrambling","ice","mixed"].includes(catOf(route))||climbsAPeak(route);
 }
-/* A camp's distinctive words: the FIRST clause of its name ("Home Lake, below Constance Pass" ->
-   "Home Lake"), minus the landform and camp words every name shares. Upper/lower/middle are KEPT —
-   "Lower Blum Lake" and "Middle Blum Lake" are two lakes 100 ft apart on one route. */
-const CAMP_WORDS=new Set(["the","and","of","at","on","to","in","near","below","above","under","beside","basin","camp","camps","campsite","site","sites","bivy","bivies","bivouac","bivouacs","lake","lakes","pass","col","saddle","ridge","creek","glacier","valley","meadow","meadows","summit","peak","high","low","former","trail","end","base","area","mount","mt"]);
-function campWords(name){
-  const head=String(name||"").split(/[,(—–]|\s-\s/)[0].toLowerCase().replace(/[^a-z0-9]+/g," ");
-  return new Set(head.split(" ").filter(t=>t.length>2&&!CAMP_WORDS.has(t)));
-}
-/* ONE PLACE, TWO RECORDS: both carry a height, the heights agree within 150 ft, and every distinctive
-   word of the shorter name is in the longer. A name alone is not enough ("Eldorado Basin camp" and
-   "Eldorado East Ridge rock bivies" are a basin and a ridge), and a height alone is not either; so a
-   record with no height never matches, and the two stay listed rather than one being guessed away.
-   Exported so check:camping asks the rule directly. */
-export function samePlaceCamp(a,b){
-  const ea=campElevFt(a),eb=campElevFt(b);
-  if(ea==null||eb==null||Math.abs(ea-eb)>150)return false;
-  const x=campWords(a&&a.name),y=campWords(b&&b.name);
-  if(!x.size||!y.size)return false;
-  const [s,l]=x.size<=y.size?[x,y]:[y,x];
-  return [...s].every(t=>l.has(t));
-}
-/* WHICH NIGHT OF THE PUBLISHED TRIP PLAN SLEEPS HERE. A day's camp is where the day ENDS, so only
-   the destination half of a day is read: the text after the title's last " to " ("Approach to
-   Glacier Gap camp"), an objective that starts by naming an arrival ("Reach Camp Muir"), or what
-   follows "return to" ("Climb Mount Christie and return to Low Divide"). Reading the whole day
-   tagged the place a day LEAVES — "Ferry Basin to Queets Basin" would have put night 3 in Ferry
-   Basin. The last day is never a night. Returns the night numbers; empty when the plan does not
-   name this place, which is the common case and says nothing. */
-export function campNightsOf(route,name){
-  const days=(route&&route.itinerary&&Array.isArray(route.itinerary.days))?route.itinerary.days:[];
-  if(days.length<2)return [];
-  const place=String(name||"").split(/[,(—–]|\s-\s/)[0].trim().toLowerCase();
-  if(place.length<4)return [];
-  const low=v=>String(v==null?"":v).toLowerCase();
-  const out=[];
-  days.slice(0,-1).forEach(function(d,i){
-    const t=low(d&&d.title),o=low(d&&d.objective);
-    const k=t.lastIndexOf(" to "),r=o.indexOf("return to ");
-    const ends=[k>=0?t.slice(k+4):"",/^(reach|establish|set up|backpack in to|hike in to|camp at)\b/.test(o)?o:"",r>=0?o.slice(r+10):""];
-    if(ends.some(e=>e.includes(place)))out.push(i+1);
-  });
-  return out;
-}
-export function campNightsLabel(nights,dayCount){
-  if(!nights||!nights.length)return "";
-  const run=nights.length>1&&nights[nights.length-1]-nights[0]===nights.length-1;
-  return (nights.length>1?"Nights ":"Night ")+(run?nights[0]+"–"+nights[nights.length-1]:nights.join(", "))+" of the "+dayCount+"-day trip plan";
-}
-/* THE WALK IN, AT THE PACE THE CLIMBER SET IN THE PLANNER. The same scarfHrs() the planner's
-   approach tile uses, fed the camp's trail distance and its gain or loss from the trailhead — so it
-   moves when they change fitness or pack, which is what makes it THEIR number. Null unless BOTH are
-   known: a time from distance alone would leave out the climb, which is most of the effort to a high
-   camp, and would read fast in exactly the dangerous direction. */
-export function campWalkHrs(s,calc){
-  if(!s||s.distMi==null||!isFinite(s.distMi)||s.distMi<0.2||s.gainFt==null||!isFinite(s.gainFt))return null;
-  const c=calc||{};
-  return scarfHrs(s.distMi*1.60934,Math.max(s.gainFt,0)/3.28084,Math.max(-s.gainFt,0)/3.28084,c.fit||"intermediate",c.pack!=null?c.pack:10);
-}
-/* Exported so the log form asks WHERE YOU CAMPED from the same list the Planner draws. */
-export function campSites(route){
-  /* role "hidden" is a STUB naming a Campsite PIN that does not belong in this route's list (another
-     approach's camp, or a second pin for a place already listed). The pin stays on the map; only the
-     camping list skips it. It lives in `bivy`, not on the pin, because the waypoint editor rebuilds
-     every pin from a fixed key list and would wipe a flag the next time anybody edited a waypoint. */
-  const _all=Array.isArray(route.bivy)?route.bivy:[];
-  const _hk=v=>String((v==null?"":v)).trim().toLowerCase();
-  const hidden=new Set(_all.filter(b=>b&&String(b.role||"").toLowerCase()==="hidden").map(b=>_hk(b.name)));
-  const bivy=_all.filter(b=>!(b&&String(b.role||"").toLowerCase()==="hidden"));
-  const thFt=trailheadFt(route);
-  const gainOf=function(ft){return (ft==null||thFt==null)?null:ft-thFt;};
-  const key=v=>String((v==null?"":v)).trim().toLowerCase();
-  const seen=new Set(bivy.map(b=>key(b&&b.name)).filter(Boolean));
-  const wpAll=(Array.isArray(route.waypoints)?route.waypoints:[]).filter(w=>wpIs(w,"Campsite"));
-  /* THE SAME CAMP UNDER TWO SPELLINGS. An exact name is the only match the two stores used to
-     share, and on 2026-10-22 22 of 745 route lists still drew a place twice because the pin and the
-     researched site spelled it differently — Black Peak "Wing Lake" at 6,900 ft and "Wing Lake camp"
-     at 6,923, five Monk routes "Upper Cathedral Lake basin" and "Upper Cathedral Lake"
-     (scripts/oneoff/measure-camp-list-duplicates.mjs --strict). Glacier Peak's "Mackinaw Shelter
-     camp, North Fork Sauk" had been kept single only by a hidden stub, which also kept it from the
-     pin's 5-mile distance.
-     samePlaceCamp() pairs a pin with a site when both carry a height and they agree; that pin then
-     merges in exactly as a same-named one does, lending its distance. Even a pin a hidden stub keeps
-     out of the list may lend it — hiding it says "not its own row", not "not this place". */
-  const fuzzy=new Map();
-  bivy.forEach(function(b){
-    if(!b||wpAll.some(w=>key(w&&w.name)===key(b.name)))return;
-    let best=null;
-    wpAll.forEach(function(w){
-      if(seen.has(key(w&&w.name))||[...fuzzy.values()].includes(w)||!samePlaceCamp(b,w))return;
-      if(!best||Math.abs(campElevFt(w)-campElevFt(b))<Math.abs(campElevFt(best)-campElevFt(b)))best=w;
-    });
-    if(best)fuzzy.set(b,best);
-  });
-  const merged=new Set(fuzzy.values());
-  const wps=wpAll.filter(w=>!seen.has(key(w&&w.name))&&!hidden.has(key(w&&w.name))&&!merged.has(w));
-  /* A researched site and a Campsite PIN with the same name are one place, and the pin is the half
-     that knows how far up the trail it is (92% of pins carry a distance, 0 of the bivy store do).
-     The pin used to be DROPPED on a name match, taking its distance with it; now the site keeps
-     the researched prose and borrows the pin's distance and its "on the track" chip. */
-  const pinOf=function(b){const k=key(b&&b.name);return (k?wpAll.find(w=>key(w&&w.name)===k):null)||fuzzy.get(b)||null;};
-  /* AND THE SAME TEST THE WAYPOINT LIST APPLIES TO A LEG, applied to the whole walk in. A camp's
-     `distMi` is cumulative from the trailhead, so it cannot be less than the straight line from
-     the trailhead PIN either — and 35 of the 412 distances this panel prints are.
-     `wa_poltergeist_pinnacle` printed "Boundary Camp · 8.0 mi" for a camp 21.8 miles out. It
-     matters more here than in the list above: this is the number a party uses to decide whether
-     they can reach camp on day one. `legMi` is the same one-sided rule — the trailhead's own
-     `distMi` is 0, so |camp - trailhead| IS the cumulative distance. A site whose number cannot
-     be true shows none, never a substituted chord. */
-  const _campMi=function(w){
-    const mi=campDistMi(w);
-    return mi==null?null:cumMi(route.waypoints,Object.assign({},w,{distMi:mi}));
-  };
-  /* "Marked on the track" (`onTrack`) means the camp is a pin the ROUTE TRACK map DRAWS, so it needs a
-     coordinate, not just a pin: audit:camp-pins found 48 Campsite pins with no lat/lng wearing the chip
-     (2026-10-28). A pin that cannot be drawn lends its name and distance, never that claim. */
-  /* `type` is camp | bivy | hut on the 77 sites that carry it. It is the one field that says
-     WHICH of the two things this section merges you are looking at, so it earns a chip. */
-  /* The label for `camp` is deliberately the neutral "Camp", NOT "Established camp": a dispersed
-     basin site and a developed campground are both stored as `camp`, so the stronger word would
-     be a false claim on every dispersed site. The capacity chip carries that distinction. */
-  const TYPE={camp:"Camp",bivy:"Bivy",hut:"Hut"};
-  /* The waypoint half reads its elevation through campElevFt() too, not `w.elev` raw. Waypoints
-     carry the same two conventions the bivy store does, so reading one spelling silently rendered
-     no elevation for the sites that use the other — and an elevation missing is also a GAIN
-     missing, so the defect compounds now rather than merely showing one blank. */
-  /* `role` says what the site is FOR on this route: "main" = where a typical party on this route
-     sleeps, "route" = on the route's own line, kept for a slow party, weather or an emergency.
-     Researched per route (enrichment-wip/camping-roles), because one corridor-wide list had been
-     handed to every route in it — 799 routes shared 174 lists, up to 16 camps each. A Campsite
-     pin is on the route's own track by definition, so an unmatched pin is "route". A site with no
-     role (a contribution from before the field existed, or one marked "Not sure") is null and carries
-     no use tag (campRoleLabel). */
-  const ROLE={main:"main",route:"route"};
-  return campRouteOrder(bivy.map(b=>{const p=pinOf(b);const el=campElevFt(b)!=null?campElevFt(b):(p?campElevFt(p):null);return {name:b&&b.name,elev:el,gainFt:gainOf(el),distMi:p?_campMi(p):null,kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:!!(p&&pointOf(p)),role:(b&&ROLE[String(b.role||"").toLowerCase()])||null,sorted:!!(b&&ROLE[String(b.role||"").toLowerCase()]),nights:campNightsOf(route,b&&b.name)};})
-    .concat(wps.map(w=>({name:w&&w.name,elev:campElevFt(w),gainFt:gainOf(campElevFt(w)),distMi:_campMi(w),kind:null,notes:(w&&w.directions)||"",onTrack:!!pointOf(w),role:"route",nights:campNightsOf(route,w&&w.name)}))));
-}
-/* IN THE ORDER A PARTY REACHES THEM, walking in from the trailhead (owner, 2026-10-24: "ordered by
-   where people would camp if they were doing the whole route"). It replaced three USE groups —
-   where most parties sleep / other options / not yet sorted — under which a high camp could print
-   above the valley campground you sleep at the night before; the use is now a tag on each site.
-   Distance from the trailhead decides first: every site with one is a fixed point on the walk in.
-   A site with no distance is placed by its HEIGHT, before the first fixed site higher than it — a
-   walk in to a climb goes UP, and a campground below the trailhead is where the trip starts. A
-   site with neither keeps its stored place at the END, never guessed into the middle. Ties keep
-   the stored order, which the research wrote in walking order. Exported so check:camping asks it. */
-export function campRouteOrder(list){
-  const all=(list||[]).map(function(s,i){return {s:s,i:i};});
-  const num=function(v){return v!=null&&isFinite(v);};
-  const chain=all.filter(function(x){return num(x.s&&x.s.distMi);}).sort(function(a,b){return a.s.distMi-b.s.distMi||(num(a.s.elev)&&num(b.s.elev)?a.s.elev-b.s.elev:0)||a.i-b.i;});
-  const byElev=all.filter(function(x){return !num(x.s&&x.s.distMi)&&num(x.s&&x.s.elev);}).sort(function(a,b){return a.s.elev-b.s.elev||a.i-b.i;});
-  const rest=all.filter(function(x){return !num(x.s&&x.s.distMi)&&!num(x.s&&x.s.elev);});
-  const out=chain.slice();
-  byElev.forEach(function(x){
-    /* Before the first FIXED site above it, and after any height-placed site already there at or below its height. */
-    let at=out.findIndex(function(y){return num(y.s.distMi)&&num(y.s.elev)&&y.s.elev>x.s.elev;});
-    if(at<0)at=out.length;
-    while(at>0&&!num(out[at-1].s.distMi)&&out[at-1].s.elev>x.s.elev)at--;
-    out.splice(at,0,x);
-  });
-  return out.concat(rest).map(function(x){return x.s;});
-}
-/* The list SAYS it runs in walking order, and says which sites it could not place: a site with no
-   distance and no height on file sits last because nothing says where it is, not because it is the
-   highest. Nothing to say for one site, or when no site can be placed at all. */
-export function campOrderNote(sites){
-  const num=function(v){return v!=null&&isFinite(v);};
-  const placed=(sites||[]).filter(function(s){return s&&(num(s.distMi)||num(s.elev));}).length;
-  if((sites||[]).length<2||!placed)return "";
-  const loose=sites.length-placed;
-  return " Listed in the order you reach them walking in from the trailhead"+(loose?"; "+(loose===1?"the site":"the "+loose+" sites")+" with no distance or height on file "+(loose===1?"comes":"come")+" last.":".");
-}
-/* What the site is FOR on this route, as the tag the list carries in place of the old group heading.
-   The words are the contribute form's role options, so a climber who picks one sees it come back.
-   No role → no tag: an unsorted site claims no use (the 2026-10-14 entry in docs/guards/camping.md). */
-export function campRoleLabel(role){
-  return role==="main"?"Where most parties sleep":role==="route"?"Other option":"";
-}
-/* THE STRETCH FROM THE CAMP BEFORE — the number FarOut prints beside every tent site: how far on,
-   and how much higher, the next place to sleep is. Only from two known distances (and, for the
-   height, two known heights) — never a chord or a guess. Exported so check:camping asks it. */
-export function campFromPrev(s,prev){
-  if(!s||!prev||!String(prev.name||"").trim())return "";
-  if(s.distMi==null||prev.distMi==null||!isFinite(s.distMi)||!isFinite(prev.distMi)||s.distMi-prev.distMi<0.05)return "";
-  const dg=(s.elev!=null&&prev.elev!=null&&isFinite(s.elev)&&isFinite(prev.elev))?Math.round(s.elev-prev.elev):0;
-  return uDistMi(s.distMi-prev.distMi)+" on from "+String(prev.name).trim()+(dg?" · "+uElev(Math.abs(dg))+(dg>0?" higher":" lower"):"");
-}
-/* CAPACITY, WATER and PERMIT are PROSE, and they used to render as CHIPS. Measured on the live
-   catalog: median 130 / 136 / 297 characters, up to 1,386 — so 5,001 / 5,008 / 5,020 of 5,083
-   sites carried a paragraph inside a rounded pill. That is the failure CLAUDE.md already records
-   for `season` (a window that got a 232-char explanation) and `grade` (a grade that got a
-   qualifier): enrichment prose written into a DISPLAY field. The repair is the one those two
-   took — defend it on the READ side. The pill is gone and the prose renders as a labelled block
-   inside the disclosure, which is the right shape for a paragraph.
-   Exported because this is the half a static guard can actually prove: whether the prose is
-   SELECTED for display is a pure question; whether a tap reveals it is a browser one. */
-/* ONE chip, not two, because both numbers answer the same question — how far from the road is
-   this? — and repeating "the trailhead" on the same row reads as two unrelated facts.
-   A site BELOW the trailhead says "below" rather than rendering a negative gain. That is not
-   cosmetic: 527 of 3,243 comparable sites (16%) sit below their trailhead, and they are
-   overwhelmingly valley car-campgrounds — roadside vocabulary appears in 72% of them against 9%
-   of the sites above, a 63-point gap, so the population is real and not an artefact of bad
-   elevations. "-1,250 ft of gain" for a campground you DRIVE to is both ugly and the wrong
-   framing; "1,250 ft below the trailhead" is the same arithmetic worded as the fact it is, and
-   it tells a climber the useful thing — this is a valley basecamp, not a high camp.
-   A gain that rounds to zero is dropped rather than shown as "0 ft above", which is noise.
-   Exported for the same reason campDetail() is: what a site SAYS is a pure question a static
-   guard can answer, where whether it reaches the screen needs a render. */
-export function campFromTrailhead(s){
-  if(!s)return "";
-  const d=(s.distMi!=null&&isFinite(s.distMi))?uDistMi(s.distMi):null;
-  const g=(s.gainFt!=null&&isFinite(s.gainFt)&&Math.round(s.gainFt)!==0)?s.gainFt:null;
-  if(d==null&&g==null)return "";
-  const head=[d,g!=null?uElev(Math.abs(g)):null].filter(Boolean).join(" \u00b7 ");
-  return head+(g!=null?(g>0?" above":" below"):" from")+" the trailhead";
-}
-export function campDetail(b){
-  return [["Capacity",b&&b.capacity],["Water",b&&b.water],["Permit",b&&b.permit]]
-    .filter(function(r){return String(r[1]==null?"":r[1]).trim()!=="";});
-}
-/* One site, collapsed to the fields that are AUTHORED AND STRUCTURED — name, elevation, type,
-   and whether it is pinned on the track. Deliberately NOT a derived "water · no permit" summary,
-   which was the obvious design and was measured before being rejected
-   (scripts/oneoff/measure-camping-verdict-vocabulary.mjs): a keyword rule leaves 44% of permits
-   and 30% of waters in no bucket at all, and where it DOES fire it is wrong in the dangerous
-   direction — "Free self-issued wilderness permit at the Killen Creek trailhead" reads as *no
-   permit* to any negation rule, and a self-issued permit is one you still have to fill in.
-   Being wrong about a permit costs a fine; being wrong about water sends a party up dry. This is
-   the same refusal the rappel columns already record: do not read a fact out of English prose.
-   So the summary line carries only what somebody wrote into a field that holds a VALUE, and the
-   prose is one tap away rather than one guess away. */
-function CampSite({b,i,first,calc,dayCount,slept,prev}){
-  /* The FIRST site opens expanded: above it sits the overnight-permit panel, and a section that
-     shows only a permit and then a column of collapsed rows does not read as naming a place to
-     sleep. One full site (capacity, water, permit) proves the rest are real; the others stay one tap away. */
-  const [open,setOpen]=useState(!!first);
-  const detail=campDetail(b);
-  const more=detail.length>0||!!String((b&&b.notes)||"").trim();
-  const nm=(b&&b.name)||("Camp "+(i+1));
-  /* An explicit aria-label, because the row's own text nodes are a name and an elevation in
-     separate elements and this app has been bitten by "Friends2" — a count welded to a label in
-     the accessibility tree, where CSS margins do not exist. An authored name cannot glue. */
-  const fromTh=campFromTrailhead(b);
-  /* The two numbers a party picks a camp BY: which night the trip plan spends here, and how long the
-     walk in takes at the fitness and pack set in the planner above. */
-  const night=campNightsLabel(b&&b.nights,dayCount);
-  const walkH=campWalkHrs(b,calc);
-  const walk=walkH!=null?"\u2248"+(Math.round(walkH*2)/2).toFixed(1).replace(/\.0$/,"")+" h walk in at your planner pace":"";
-  /* What climbers who logged this route said: how many trip reports slept HERE (campReportsOf). */
-  const sleptLine=campSleptLine(slept);
-  /* Its place in the walk in: the stretch from the site above it in the list, and what parties use it for. */
-  const step=campFromPrev(b,prev);
-  const use=campRoleLabel(b&&b.role);
-  const label=nm+(b&&b.elev!=null?", "+uElev(b.elev):"")+(b&&b.kind?", "+b.kind:"")+(fromTh?", "+fromTh:"")+(step?", "+step:"")+(walk?", "+walk:"")+(night?", "+night:"")+(sleptLine?", "+sleptLine:"")+(use?", "+use:"");
-  /* Each kind gets its own accent so a scan down the list tells a camp from a bivy from a hut
-     before reading a word; the three detail fields get theirs so WATER is findable at a glance in
-     an open card — it is the field a party most needs and the longest one to wade through. */
-  const tone=(b&&{Camp:C.purple,Bivy:C.teal,Hut:C.amber}[b.kind])||C.purple;
-  const DTONE={Capacity:tone,Water:C.blue,Permit:C.amber};
-  const chip=function(c,bd){return {fontSize:11,fontWeight:700,color:c,background:C.surface,border:"1px solid "+bd,borderRadius:20,padding:"2px 9px"};};
-  return <div style={{background:C.card,border:"1px solid "+(open?tone+"66":C.border),borderLeft:"3px solid "+tone,borderRadius:12,marginBottom:ROUTE_GAP,overflow:"hidden"}}>
-    <div {...(more?clickable(function(){setOpen(!open);}):{})} aria-expanded={more?open:undefined} aria-label={more?((open?"Hide":"Show")+" camping detail for "+label):undefined} style={{minHeight:44,boxSizing:"border-box",padding:"11px 13px",cursor:more?"pointer":"default"}}>
-      <div style={{display:"flex",alignItems:"flex-start",gap:10}}>
-        <div aria-hidden="true" style={{width:30,height:30,borderRadius:8,background:tone+"22",color:tone,display:"flex",alignItems:"center",justifyContent:"center",fontSize:15,flexShrink:0}}>{"☾"}</div>
-        <div style={{flex:1,minWidth:0}}>
-          <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",gap:9}}>
-            <div style={{fontSize:14,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word",lineHeight:1.3}}>{nm}</div>
-            {b.elev!=null?<span style={{flexShrink:0,fontSize:12.5,fontWeight:800,color:tone,whiteSpace:"nowrap"}}>{uElev(b.elev)}</span>:null}
-          </div>
-          {fromTh?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:2}}>{fromTh}</div>:null}
-          {step?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:1}}>{step}</div>:null}
-          {walk?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:1}}>{walk}</div>:null}
-          {sleptLine?<div style={{fontSize:11.5,color:C.green,fontWeight:700,lineHeight:1.4,marginTop:1}}>{sleptLine}</div>:null}
-          {(b.kind||b.onTrack||more||night||use)?<div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:6,marginTop:7}}>
-            {night?<span style={chip(C.green,C.green+"55")}>{night}</span>:null}
-            {use?<span style={chip(b.role==="main"?C.blue:C.textSub,(b.role==="main"?C.blue:C.textSub)+"55")}>{use}</span>:null}
-            {b.kind?<span style={chip(tone,tone+"55")}>{b.kind}</span>:null}
-            {b.onTrack?<span style={chip(C.textMuted,C.border)}>{"Marked on the track"}</span>:null}
-            {more?<span style={{fontSize:11.5,fontWeight:700,color:C.blue,marginLeft:"auto",whiteSpace:"nowrap"}}>{open?"Less ":"More "}<Chevron inline open={open} size={13} color={C.blue}/></span>:null}
-          </div>:null}
-        </div>
-      </div>
-    </div>
-    {open&&more?<div style={{borderTop:"1px solid "+C.borderLight,background:C.surface,padding:"12px 13px 3px"}}>
-      {detail.concat(b.notes?[["Notes",b.notes]]:[]).map(function(r,ri){return <div key={ri} style={{display:"flex",gap:10,marginBottom:11}}><span aria-hidden="true" style={{width:3,borderRadius:2,background:DTONE[r[0]]||C.borderHi,flexShrink:0}}/><div style={{minWidth:0}}><div style={{fontSize:10.5,fontWeight:800,color:DTONE[r[0]]||C.textMuted,letterSpacing:0.6,marginBottom:3}}>{r[0].toUpperCase()}</div><div style={{fontSize:12.5,color:C.text,lineHeight:1.6,opacity:0.88}}>{r[1]}</div></div></div>;})}
-    </div>:null}
-  </div>;
-}
-/* WHERE CLIMBERS SAY THEY SLEPT. The log form's WHERE DID YOU CAMP? (cond.camps, 0358) names camps by
-   the names this list uses, so a report is matched to a site by its NAME, case aside; nothing fuzzier,
-   because a near-miss counted against the wrong camp is a false claim about where parties sleep. `by`
-   is keyed by the site's index in `sites`; `extra` holds the camps reports name that the list does not
-   have, which the panel offers to the next climber to ADD — through the contribute editor, never by
-   writing a report's typed name into the route. A count is of REPORTS, not parties: two partners who
-   each log the climb are two. Private reports arrive here anonymised (0329), so they count too.
-   Exported so check:camping asks it directly. */
-export function campReportsOf(sites,activity){
-  const key=v=>String(v==null?"":v).trim().toLowerCase();
-  const idx=new Map();(sites||[]).forEach(function(x,i){const k=key(x&&x.name);if(k&&!idx.has(k))idx.set(k,i);});
-  const by=new Map(),extra=new Map();
-  (activity||[]).forEach(function(a){
-    const cs=a&&a.cond&&Array.isArray(a.cond.camps)?a.cond.camps:[];
-    const seen=new Set();
-    cs.forEach(function(c){const k=key(c);if(!k||seen.has(k))return;seen.add(k);
-      const bump=function(m,id,name){const o=m.get(id)||{name:name,n:0,last:""};o.n++;if(a.date&&String(a.date)>o.last)o.last=String(a.date);m.set(id,o);};
-      if(idx.has(k))bump(by,idx.get(k),String(c).trim());else bump(extra,k,String(c).trim());
-    });
-  });
-  return {by:by,extra:[...extra.values()].sort(function(x,y){return y.n-x.n||y.last.localeCompare(x.last);})};
-}
-export function campSleptLine(r){
-  if(!r||!r.n)return "";
-  return "Slept here in "+r.n+" trip report"+(r.n===1?"":"s")+(r.last?(r.n===1?", ":", latest ")+shortDate(r.last):"");
-}
-function CampingPanel({route,onEdit,calc,activity}){
-  const sites=campSites(route);
-  const _days=(route&&route.itinerary&&Array.isArray(route.itinerary.days))?route.itinerary.days.length:0;
-  const slept=campReportsOf(sites,activity);
-  /* The camps trip reports name that this list lacks: the climber's answer coming back as a gap to fill. */
-  const named=slept.extra.length?<div style={{background:C.surface,border:"1px dashed "+C.purple+"66",borderRadius:12,padding:"11px 13px",marginTop:sites.length?ROUTE_GAP:0,marginBottom:sites.length?0:ROUTE_GAP}}>
-    <div style={{fontSize:11.5,fontWeight:800,color:C.purple,letterSpacing:0.6}}>{"NAMED IN TRIP REPORTS · NOT LISTED YET"}</div>
-    <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:2,marginBottom:8}}>{"Climbers logged a night at these. Know the spot? Add it with its height, water and permit so the next party can plan on it."}</div>
-    {slept.extra.slice(0,6).map(function(x){return <div key={x.name} style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",gap:10,padding:"5px 0",borderTop:"1px solid "+C.borderLight}}><span style={{fontSize:13,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word"}}>{x.name}</span><span style={{fontSize:11.5,color:C.textSub,flexShrink:0}}>{x.n+" report"+(x.n===1?"":"s")+(x.last?" \u00b7 "+shortDate(x.last):"")}</span></div>;})}
-    {onEdit?<button onClick={onEdit} style={{marginTop:9,padding:"8px 12px",background:C.card,color:C.blue,border:"1px solid "+C.border,borderRadius:9,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{"Add a camp"}</button>:null}
-  </div>:null;
-  /* campingGate() already decided this route is one you might sleep on, so empty is a placeholder. */
-  if(!sites.length)return <div style={{marginBottom:ROUTE_GAP}}><SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit camping and bivy sites"/>:null} wp="Campsite">CAMPING & BIVY</SL>{named}<GapNote what="No camps or bivy sites yet" why="Nothing says where parties sleep on the approach or the route." cta="Add a camp or bivy" onFix={onEdit}/></div>;
-  /* A SECTION heading (SL), not a card heading: this is a planner section in its own right, the
-     peer of ROUTE TRACK and RAPPELS beside it, and SL's top margin is what separates it from the
-     climate block above — inside a card it sat flush against it and read as part of it. Each site
-     is its own card, so the section is not wrapped in one: a card of cards just nests borders. */
-  return <div style={{marginBottom:ROUTE_GAP}}>
-    <SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit camping and bivy sites"/>:null} wp="Campsite">{"CAMPING & BIVY · "+sites.length}</SL>
-    {/* The "also a pin on the route track" sentence is CONDITIONAL, because it is only true of
-        waypoint-derived sites. Most researched bivy rows carry no coordinate at all — measured:
-        4 of 175 catalog-wide — so stating it unconditionally tells a climber to look for pins
-        that are not there. Claim it only when at least one site actually is on the track. */}
-    <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:12}}>{"Where you can sleep on this route — camps, approach bivies and high camps. Worth reading even if you plan to go car-to-car, for the day that runs long or the weather that turns."+(sites.some(s=>s.onTrack)?" Anything marked on the track is also a pin under ROUTE TRACK.":"")+campOrderNote(sites)}</div>
-    <OvernightPermit route={route}/>
-    {/* Capped HERE, around the sites only. It used to wrap the whole panel, and the intro plus the
-        permit panel alone fill the 400px a capped block shows — so the first thing under "Show more"
-        was every actual camp, and the section read as a permit and nothing else. */}
-    {(function(){
-      /* What the night chips and walk-in times are, said once, only when at least one site carries one. */
-      return (sites.some(function(s){return s.nights&&s.nights.length;})||sites.some(function(s){return campWalkHrs(s,calc)!=null;}))?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:10}}>{"Choosing a camp: "+[sites.some(function(s){return s.nights&&s.nights.length;})?"a green tag marks where the trip plan above spends each night":"",sites.some(function(s){return campWalkHrs(s,calc)!=null;})?"walk-in times use the fitness and pack set in the planner, so change those to see your own":""].filter(Boolean).join("; ")+". A higher camp shortens the summit day and lengthens the carry."}</div>:null;
-    })()}
-    {(function(){
-      /* The FIRST site sits outside the cap entirely, so one camp is always shown whole — a cap
-         that slices through it (its Notes cut off, the next camp hidden) leaves the same doubt the
-         cap was moved to remove. Everything after it is capped. ONE list, in the order the walk in
-         reaches the sites (campRouteOrder, applied by campSites); each says what parties use it for. */
-      var one=function(b,i){return <CampSite key={i} b={b} i={i} first={i===0} calc={calc} dayCount={_days} slept={slept.by.get(i)} prev={i?sites[i-1]:null}/>;};
-      var rest=sites.slice(1).map(function(b,k){return one(b,k+1);});
-      return <>{one(sites[0],0)}{rest.length?<Capped>{rest}</Capped>:null}</>;
-    })()}
-    {named}
-  </div>;
-}
 /* A COMMENT SOMEONE TYPED AT LENGTH opens at three lines with a Read more (owner's note, 2026-10-25: "if someone types
    too much so it doesn't fill the screen"). Short comments render whole, with no button. */
-/* MANY COMMENTS ON A PITCH: the newest three show, and "Show N earlier comments" opens the rest (owner's note, 2026-10-25:
-   "if many ppl comment on the pitch … a dropdown to read more"). The list is still counted in full in its heading. */
-const PITCH_COMMENTS_SHOWN=3;
-export function PitchComments({targetId,comments,commentsUnavailable,onAdd,title="Pitch comments"}){
-  const list=(comments||[]).filter(c=>c.targetId===targetId&&!c.parentId).slice().sort((a,b)=>new Date(a.ts).getTime()-new Date(b.ts).getTime());
-  const [txt,setTxt]=useState("");const [allOpen,setAllOpen]=useState(false);
-  const add=()=>{const t=txt.trim();if(!t)return;if(onAdd)onAdd(targetId,t);setTxt("");};
-  const collapsible=list.length>PITCH_COMMENTS_SHOWN;const shown=(!collapsible||allOpen)?list:list.slice(list.length-PITCH_COMMENTS_SHOWN);const earlier=list.length-shown.length;
-  return <div style={{marginTop:10}}><CardHead style={{marginBottom:8}}>{title+(list.length?" · "+list.length:"")}</CardHead>{list.length?<>{earlier>0?<button onClick={function(){setAllOpen(true);}} aria-expanded={false} style={{minHeight:44,background:"none",border:"none",padding:"2px 0 6px",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer",display:"inline-flex",alignItems:"center",gap:5}}>{"Show "+earlier+" earlier comment"+(earlier===1?"":"s")}<Chevron open={false} size={14} color={C.blue}/></button>:null}{shown.map((c,i)=><div key={c.id||i} style={{background:C.surface,borderRadius:8,padding:"8px 10px",marginBottom:6}}><div style={{fontSize:11.5,fontWeight:700,color:C.text}}>{(c.userId===0?ME:CLIMBERS.find(x=>x.id===c.userId)||{name:c.name||"Climber"}).name}<span style={{fontSize:11.5,color:C.textMuted,fontWeight:400,marginLeft:6}}>{ago(c.ts)}</span></div><ClampText text={c.text} style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:2}}/></div>)}{collapsible&&allOpen?<button onClick={function(){setAllOpen(false);}} aria-expanded={true} style={{minHeight:44,background:"none",border:"none",padding:"2px 0 6px",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer",display:"inline-flex",alignItems:"center",gap:5}}>Show fewer<Chevron open={true} size={14} color={C.blue}/></button>:null}</>:<div style={{fontSize:11.5,color:C.textMuted,marginBottom:7}}>{commentsUnavailable?"Couldn’t load the comments on this pitch — beta may already be here, so do not read this as none.":"No comments yet — be the first to add beta for this exact pitch."}</div>}{/* Signed out there is no `onAdd`: a guest's comment was kept in this tab only, shown as posted and lost on refresh. Say so instead, as the pitch's Photos box does. */}{onAdd?<div style={{display:"flex",gap:6,marginTop:2}}><input value={txt} onChange={e=>setTxt(e.target.value)} aria-label="Add a pitch comment" placeholder="Add a comment on this pitch…" style={{flex:1,minWidth:0,padding:"7px 9px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/><button onClick={add} style={{...BTN_SM,border:"none",background:C.blueSolid,color:C.onSolid,flexShrink:0}}>Post</button></div>:<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5}}>Sign in to add a comment.</div>}</div>;
-}
 /* THE PLANNER PRINTED ITS DAY PLAN TWICE, AND THE SECOND COPY WAS THE WORSE ONE.
    `timing.sectionBreakdown[i]` is `{section, fromTo, note, hrs}` and `itinerary.days[i]` is
    `{n, title, note, hours, miles, gainFt, lossFt, packLb, objective, schedule}` — and entry for
@@ -2958,38 +1933,6 @@ function itinSummaryStr(it){return (it&&it.days&&it.days.length)?it.days.map(fun
    away the most common (352), then bolted stations (48 + 32), walk-offs (36), ice screws,
    trees, slung horns and pickets. */
 const PITCH_ANCHORS=["Bolted","Gear","Tree","Slung horn / block","Fixed pin","Picket","Ice screws","Walk-off (no belay)"];
-/* Each variant chip reads as the whole grade ("5.9−", "5.9", "5.9+") rather than the bare
-   suffix: the plain grade used to be a lone "·", which read as a stray dot, not as "5.9". */
-const gradeChipLabel=function(g){return String(g).replace(/-$/,"−");};
-function GradePicker({scale,value,onChange,label}){
-  const groups=gradeGroups(scale);
-  const active=groups.find(function(g){return g.variants.some(function(x){return x[1]===value;});});
-  const [openStem,setOpenStem]=useState(active?active.stem:null);
-  const shown=groups.find(function(g){return g.stem===openStem;});
-  const chip=function(on){return {...CHIP,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.onSolid:C.textSub};};
-  const pickStem=function(g){
-    setOpenStem(g.stem);
-    // One variant means the stem IS the grade — selecting it needs no second question.
-    if(g.variants.length===1)onChange(value===g.variants[0][1]?"":g.variants[0][1]);
-  };
-  return <div>
-    <div style={{display:"flex",gap:5,flexWrap:"wrap",padding:"2px 0"}}>{groups.map(function(g){
-      const isSel=g.variants.some(function(x){return x[1]===value;});
-      return <button key={g.stem} aria-label={label+" "+g.stem} aria-pressed={isSel} onClick={function(){pickStem(g);}} style={chip(isSel||g.stem===openStem)}>{g.stem}</button>;
-    })}</div>
-    {(shown&&shown.variants.length>1)?<div style={{display:"flex",gap:5,flexWrap:"wrap",alignItems:"center",marginTop:7,padding:"7px 9px",background:C.surface,borderRadius:9,border:"1px solid "+C.border}}>
-            {/* From 5.10 up, YDS grades carry a letter (5.10a-d) or a +/-; a bare "5.10" is rarely
-        written, so it is not offered once letter options exist. It still shows if the route is
-        ALREADY stored as exactly that grade, so the value can be seen and cleared. The bare
-        grade stays in ADDR_YDS itself, which also orders grades for sorting. */}
-      {shown.variants.filter(function(x){return x[0]!==""||value===x[1]||!shown.variants.some(function(y){return /^[a-d]$/.test(y[0]);});}).map(function(x){
-        const on=value===x[1];
-        return <button key={x[1]} aria-label={label+" "+x[1]} aria-pressed={on} onClick={function(){onChange(on?"":x[1]);}} style={Object.assign({},chip(on),{minWidth:38,textAlign:"center",padding:"7px 10px"})}>{gradeChipLabel(x[1])}</button>;
-      })}
-      <span style={{fontSize:11.5,color:C.textMuted,marginLeft:"auto"}}>{value?value:"none set"}</span>
-    </div>:null}
-  </div>;
-}
 /* A REMOVAL IS NOT AN EDIT LIKE THE OTHERS (0351, owner 2026-10-22: "people shouldn't be able to delete waypoints when editing"). The same test the database runs at insert (_edit_removes): the page holds rows and the edit has fewer, or fewer that carry a map pin. The database is the gate — it holds such an edit for the owner however many climbers send it; this copy only lets the sheet say so BEFORE the climber sends, and ask why. The list fields are the ones whose editor has a remove ✕. */
 const REMOVABLE_LISTS={waypoints:function(r){return r.waypoints;},pitchDetail:function(r){return r.pitchDetail;},rappelDetail:function(r){return r.rappelDetail;},bivy:function(r){return r.bivy;},approachVariants:function(r){return r.approachVariants;},climbingRoute:function(r){return r.climbingRoute;},haz:function(r){return r.hazards;}};
 function listPins(a){return a.filter(function(w){return w&&typeof w==="object"&&w.lat!=null&&w.lat!==""&&w.lng!=null&&w.lng!=="";}).length;}
@@ -3780,75 +2723,6 @@ function strapTrim(s){return String(s||"").replace(/\s*·\s*$/,"").replace(/^\s*
    fills in keeps the SAME heading and pencil empty as full: the empty card says what is missing and
    opens the editor at that field, and the section does not move or rename itself when data arrives. */
 
-/* HOW YOU GET THERE — the approach picker (lib/approaches.js). Rendered only when choosing
-   CHANGES something: a variant pointing at a sibling route, or carrying its own trip data. The 125
-   routes whose ways in are prose cards keep the cards and get no control that would change nothing.
-   It sits UNDER the sub-tab bar, at the top of every tab (owner, 2026-10-21: above the bar it read as
-   part of the header and crowded the top of the page). It stays on every tab because the pick drives
-   every one of them — Plan's hours and trip plan, Overview's trailhead and map, the camps — and a
-   control on one tab that silently rewrites another is how a climber ends up reading the Sulphide's
-   camps under a Fisher Chimneys plan.
-   With more than one way in the choice is a RADIO GROUP of full-width rows, each with a radio dot,
-   under a heading that says how many there are and that you pick one: as a row of small chips it did
-   not read as a choice at all. One way in at a time, all of them visible, one pre-selected (the most
-   used) — the case design systems give a radio group, not a dropdown.
-   The sibling route is a LINK as well as a source: the way in is one tap from its own page, which
-   is where its chimneys and glacier are described pitch by pitch. `finishes` is the reverse: a
-   route that other routes are reached BY lists them, in a card of its own, on Overview only — it is
-   navigation, not a setting, and changes nothing on the other tabs. */
-function ApproachPicker({route,opts,sel,onSel,sibs,sibsErr,finishes,showFinishes,onOpenRoute}){
-  const showFin=!!(showFinishes&&finishes.length);
-  /* A finish whose way in records `viaPitches.after` rejoins THIS route: a variation of it, named as one. */
-  const finSpans=function(r){var v=(Array.isArray(r.approachVariants)?r.approachVariants:EMPTY_ARR).find(function(x){return x&&x.viaRouteId===route.id;});return v?viaPitchSpans(v):null;};
-  const allVar=showFin&&finishes.every(function(r){var sp=finSpans(r);return !!(sp&&sp.after);});
-  if(!opts.length&&!showFin)return null;
-  const ap=route._approach;const selOpt=opts.find(function(o){return o.key===sel;})||null;
-  const via=selOpt&&selOpt.variant.viaRouteId?(sibs||EMPTY_ARR).find(function(r){return r.id===selOpt.variant.viaRouteId;}):null;
-  const viaMissing=!!(selOpt&&selOpt.variant.viaRouteId&&!ap);
-  /* A VARIATION (lib/approaches.js wholeLine): the via route's pitches below and above this one's, in climbing order, on Overview. */
-  const line=via&&showFinishes?wholeLine(route,selOpt.variant,via):null;
-  const viaSp=via?viaPitchSpans(selOpt.variant):null;
-  const viaSpText=viaSp?[viaSp.before,viaSp.after].filter(Boolean).map(spanLabel).join(" and "):"";
-  const th=route.approachLogistics&&route.approachLogistics.trailhead;
-  const many=opts.length>1;
-  /* The picker is the page's first decision, so it reads as one: a blue rail and the section's own CardHead
-     heading, a tighter box than the cards below it. A box as loud as a card made the choice look like a
-     footnote of the title, and a padded box made the page feel as if it had two headers. */
-  const card={background:C.card,border:"1px solid "+C.border,borderLeft:"4px solid "+C.blue,borderRadius:12,padding:"11px 12px",marginBottom:ROUTE_GAP};
-  const head={fontSize:13.5,fontWeight:800,color:C.text,marginBottom:4};
-  const chip=function(r,label,key){return <button key={key} onClick={function(){onOpenRoute&&onOpenRoute(r);}} aria-label={"Open "+r.name} style={{display:"inline-flex",alignItems:"center",gap:4,padding:"7px 12px",minHeight:36,background:"transparent",color:C.blue,border:"1px solid "+C.blueDim,borderRadius:20,fontSize:12.5,fontWeight:700,cursor:"pointer",maxWidth:"100%",textAlign:"left"}}>{label} ›</button>;};
-  return <>
-    {opts.length?<div data-approach-picker="1" style={card}>
-      <CardHead tone={C.blue}>HOW YOU GET THERE</CardHead>
-      {many?<div role="radiogroup" aria-label="Your way in" style={{display:"flex",flexDirection:"column",gap:6,marginTop:8,marginBottom:10}}>{opts.map(function(o){var on=o.key===sel;return <button key={o.key} role="radio" aria-checked={on} onClick={function(){onSel(o.key);}} style={{display:"flex",alignItems:"center",gap:10,width:"100%",minHeight:40,padding:"7px 11px",borderRadius:10,border:"1px solid "+(on?C.green:C.border),background:on?C.greenBg:C.surface,color:on?C.green:C.text,fontSize:13,fontWeight:on?800:600,cursor:"pointer",textAlign:"left"}}><span aria-hidden="true" style={{flexShrink:0,width:16,height:16,borderRadius:"50%",border:"2px solid "+(on?C.green:C.textMuted),display:"flex",alignItems:"center",justifyContent:"center",boxSizing:"border-box"}}>{on?<span style={{width:8,height:8,borderRadius:"50%",background:C.green}}/>:null}</span><span style={{flex:1,minWidth:0}}>{o.variant.name||("Approach "+(o.index+1))}{o.variant.primary===true?<span style={{display:"block",fontSize:10,fontWeight:800,color:C.green,textTransform:"uppercase",letterSpacing:0.5,marginTop:1}}>{" Most used"}</span>:null}</span>{on?<span aria-hidden="true" style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.green}}>Showing</span>:null}</button>;})}</div>:null}
-      {viaMissing?<div style={{fontSize:12,color:C.amber,lineHeight:1.5}}>{sibsErr?"Couldn’t load the route this approach follows, so the trailhead, map and numbers below are still the ones stored with this climb — try again in a moment.":"Loading the route this approach follows…"}</div>
-      :<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55}}>
-        {th?<div><span style={{color:C.textMuted}}>Trailhead: </span>{th}</div>:null}
-        {/* WHY THIS WAY, at the choice itself: the picker is on every tab and the APPROACH cards are on Plan only. */}
-        {many&&selOpt&&selOpt.variant.primary!==true&&(Array.isArray(route.approachVariants)?route.approachVariants:EMPTY_ARR).some(function(v){return v&&v.primary===true;})&&String(selOpt.variant.whyThisWay||"").trim()?<div data-approach-why="picker" style={{marginTop:6}}><span style={{color:C.textMuted}}>Why go this way: </span>{String(selOpt.variant.whyThisWay).trim()}</div>:null}
-        {via&&ap&&ap.viaGrade?<div><span style={{color:C.textMuted}}>The way in: </span>{via.name+" · "+ap.viaGrade}</div>:null}
-        {via?<div style={{marginTop:8}}>{chip(dbRouteToCamel(via),"Read the "+via.name+" route",via.id)}</div>:null}
-        {line?<div data-whole-line="1" style={{marginTop:10,borderTop:"1px solid "+C.border,paddingTop:10}}>
-          <div style={{fontSize:12.5,fontWeight:800,color:C.text,marginBottom:3}}>{"The whole climb · "+line.rows.length+" pitches"}</div>
-          <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:8}}>{"This route is a variation of "+via.name+": you climb "+via.name+"’s "+viaSpText+" as well as this route’s own "+line.ownCount+"."}</div>
-          {line.rows.map(function(r){var mine=r.src==="own";return <div key={r.n} style={{display:"flex",gap:9,alignItems:"flex-start",padding:"6px 0",borderTop:r.n>1?"1px solid "+C.border:"none"}}>
-            <span style={{flexShrink:0,minWidth:30,textAlign:"center",fontSize:11.5,fontWeight:800,borderRadius:6,padding:"2px 5px",color:mine?C.onSolid:C.textSub,background:mine?C.blueBg:C.surface,border:"1px solid "+(mine?C.blueDim:C.border)}}>{"P"+r.n}</span>
-            <div style={{minWidth:0,flex:1}}>
-              <div style={{fontSize:12.5,fontWeight:700,color:mine?C.text:C.textSub}}>{[r.grade,mine?"This route, pitch "+r.pitch:via.name+", pitch "+r.pitch].filter(Boolean).join(" · ")}</div>
-              {r.notes?<div style={{fontSize:12,color:C.textMuted,lineHeight:1.45,marginTop:2}}>{r.notes}</div>:null}
-            </div>
-          </div>;})}
-          <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginTop:6}}>{"This route’s own pitches are in ROUTE BREAKDOWN below; "+via.name+"’s rack, hazards and descent are on its page."}</div>
-        </div>:null}
-      </div>}
-    </div>:null}
-    {showFin?<div data-approach-finishes="1" style={card}>
-      <div style={head}>{allVar?"Variations of this route":"Other finishes from this route"}</div>
-      <div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginBottom:9}}>{allVar?(finishes.length>1?"These climbs leave this route partway and rejoin it. Open one to see the whole line, pitch by pitch.":"This climb leaves this route partway and rejoins it. Open it to see the whole line, pitch by pitch."):(finishes.length>1?"These climbs start by climbing this route. Open one to see it.":"This climb starts by climbing this route. Open it to see it.")}</div>
-      <div style={{display:"flex",flexWrap:"wrap",gap:7}}>{finishes.map(function(r){var sp=finSpans(r);var g=displayGrade(r);return chip(r,[r.name,g,sp&&sp.before?"leaves after P"+sp.before[1]:null,sp&&sp.after?"rejoins at P"+sp.after[0]:null].filter(Boolean).join(" · "),r.id);})}</div>
-    </div>:null}
-  </>;
-}
 
 function RouteDetail({route:routeRow,onBlockClimber,cragPanels,condPanels,safetyPanels,who,onFloatPlan,presence,autoFix,onAutoFixDone,onAddPhotos,onRemovePhoto,onReportPhoto,canModeratePhotos,dbPhotos,photosUnavailable,onSubTab,initialSubTab,myReports,onBack,onPlan,onViewProfile,connections,onConnect,friendState,saved,saveHint,onToggleSave,onLog,onOpenReport,onOpenRoute,hzVotes,onVoteHazard,onShareRoute,onContribute,onRequestJoin,requested,dbCrews,blocked,onFindPartners,diffRatings,onRateDifficulty,diffMeta,logged,comments,commentsUnavailable,commentApi={},onAddTopo,topoConsensus,myItin,onSaveMyItin,crewsForRoute,onShareItinToCrew,myStars,onRateRoute,onOpenFireMap,notify,onFindPartnersInArea,onListMe,myListings,onOpenArea,inCompare,onToggleCompare}){/* THE WEBSITE (lib/wideLayout.js): at 1024px+ the header is facts beside a photo under a breadcrumb, and at 1280px+ the route map moves into the right rail (App renders #cm-route-rail there) so it stays in view on every tab. */const deskWide=useWideScreen(),deskFull=useFullWidth();const [drawOpen,setDrawOpen]=useState(false);const [gpsInitPts,setGpsInitPts]=useState(null);const crumbQ=useAreaPath(deskWide&&USE_DB&&routeRow&&routeRow._dbArea?routeRow.mountainId:null);const [railEl,setRailEl]=useState(null);useEffect(function(){setRailEl(deskWide&&deskFull?document.getElementById("cm-route-rail"):null);},[deskWide,deskFull]);
   /* WHICH WAY IN. `routeRow` is the route as stored (plus merged contributions); `route` is that
@@ -4197,8 +3071,6 @@ const WX_COMPASS=["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW"
 function degToCompass(deg){if(deg==null||isNaN(deg))return null;return WX_COMPASS[Math.round((((deg%360)+360)%360)/22.5)%16];}
 function circMeanDeg(arr){if(!arr||!arr.length)return null;let sx=0,sy=0;arr.forEach(function(d){const r=d*Math.PI/180;sx+=Math.cos(r);sy+=Math.sin(r);});return (Math.atan2(sy,sx)*180/Math.PI+360)%360;}
 function modeOf(arr){if(!arr||!arr.length)return null;const c={};let best=arr[0],bc=0;arr.forEach(function(v){c[v]=(c[v]||0)+1;if(c[v]>bc){bc=c[v];best=v;}});return best;}
-function wxTempColor(f){return f>=85?C.red:f>=70?C.amber:f>=50?C.green:f>=32?C.teal:C.blue;}
-function wxWindColor(mph){return mph>=30?C.red:mph>=15?C.amber:C.green;}
 /* THE SUSTAINED FIGURE ON THE WIND TILE IS THE 80 m WIND -- a ridge-level proxy -- while the
    only gust Open-Meteo publishes is a 10 m SURFACE figure. Gating the gust line on
    `gustMax > windMax` therefore compared two different HEIGHTS, and an 80 m sustained
@@ -4243,172 +3115,12 @@ function metWxLabel(code){
 const _cragWx={},_cragAir={},_cragClim={},_cragSp={};
 const DIR8=["N","NE","E","SE","S","SW","W","NW"];
 const agoH=function(h){return h<48?h+" h ago":Math.round(h/24)+" days ago";};
-const condRow=function(k,v,tone,key){return <div key={key||k} style={{display:"grid",gridTemplateColumns:"104px minmax(0,1fr)",gap:10,padding:"7px 0",borderTop:"1px solid "+C.borderLight,fontSize:13,lineHeight:1.45}}><span style={{color:C.textMuted,fontSize:12}}>{k}</span><span style={{color:tone||C.text,minWidth:0}}>{v}</span></div>;};
 const condBox={background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 14px"};
-const condNote={fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginTop:8};
 const dayBox={display:"block",background:C.surface,border:"1px solid "+C.border,borderRadius:9,padding:"6px 8px",minWidth:0,minHeight:68,boxSizing:"border-box"};
 const dayLbl={display:"block",fontSize:11.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4};
 const dayVal={display:"block",fontSize:14,fontWeight:800,marginTop:2,lineHeight:1.25,overflowWrap:"normal"};
 const daySub={display:"block",fontSize:11.5,color:C.textSub,marginTop:1,lineHeight:1.35};
-// Sky cover in the National Weather Service's words for eighths of sky (0-1, 2, 3-5, 6-7, 8 oktas).
-const skyWord=function(pct){return pct<=12?"Clear":pct<=37?"Mostly clear":pct<=62?"Partly cloudy":pct<=87?"Mostly cloudy":"Overcast";};
 const aqiTone=function(a){return a==null?C.textMuted:a<=50?C.green:a<=100?C.amber:a<=150?C.orange:C.red;};
-/* HOURLY — five small panels sharing one time axis: temperature with feels-like and dew point (one
-   unit, so one axis), rain AMOUNT, chance of rain with cloud cover (both percent), humidity, and
-   wind with gusts and the direction it blows from. Never two scales on one panel. One day at a
-   time: the day is picked above the charts. Hover or drag reads every value for an
-   hour; hours already gone are shaded. Rain and its chance are drawn over the hour BEFORE their
-   time stamp, which is the hour they describe. */
-const rainN=function(inch){return inch==null?null:uImp()?inch:inch*25.4;};
-/* One hourly chart, in its OWN card with its OWN scrubber: its readout (the boxes for the hour under your finger)
-   sits directly ABOVE the line it describes, so dragging a chart never moves a number somewhere off screen.
-   `selIdx` is the hour picked in the chips; a chart follows it until you drag that chart, and snaps back when the
-   chips move. */
-function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bars,extra,readout}){
-  const [hv,setHv]=useState(null),[hf,setHf]=useState(null);
-  const [pin,setPin]=useState(null);useEffect(function(){setPin(null);setHv(null);setHf(null);},[selIdx]);
-  const downRef=useRef(null);
-  const W=340,PH=130,L=34,R=58,n=all.length,xw=(W-L-R)/(n-1),x=function(i){return L+i*xw;};
-  const at=hv!=null&&hv<n?hv:(pin!=null&&pin<n?pin:(selIdx>=0?selIdx:0));const a=all[at];
-  const fAt=function(e){const r=e.currentTarget.getBoundingClientRect();if(!r.width)return null;const px=(e.clientX-r.left)/r.width*W;return Math.max(0,Math.min(n-1,(px-L)/xw));};
-  const idxAt=function(e){const f=fAt(e);return f==null?null:Math.round(f);};
-  const read=function(e){const f=fAt(e);if(f==null)return;setHf(f);setHv(Math.round(f));};
-  const unread=function(){setHv(null);setHf(null);};
-  /* A POINTER DOWN ONLY REMEMBERS WHERE IT STARTED. Pinning the hour there (#2357) moved the readout under every thumb
-     that was only scrolling the page past a chart. A finger moving mostly up or down is a scroll (the browser takes it
-     and sends pointercancel); one moving ACROSS at least 8 px scrubs; a tap (under 8 px) or a released scrub pins its
-     hour. A mouse still reads by hovering. */
-  /* ...AND A SCRUB HOLDS ON (owner, 2026-10-15: the wind and humidity charts "don't scroll nicely"). Once a drag is a
-     scrub the pointer is CAPTURED, so it keeps reading when a finger or mouse runs off the chart's edge instead of
-     dropping back to the picked hour; it starts after 6 px, not 8; the axis text can no longer be selected by the drag;
-     and the readout above never SHRINKS mid-drag (a shorter tile pulled the chart up under the finger). */
-  /* ...AND A PASSING THUMB NEVER READS (owner, 2026-10-21: on a phone "you can see the boxes above you as you scroll"
-     and "it's sticky to scroll"). The 6 px sideways rule above still claimed every swipe that STARTED a little
-     diagonal: the boxes above changed under a thumb that was only scrolling, and the page stopped moving. Safari also
-     ignores touch-action on an <svg>, so the pan-y on it bound nothing there. On touch the chart now asks what the
-     Stocks app asks: TOUCH AND HOLD (350 ms, finger still within 10 px) to scrub, then slide; a tap reads one hour; any
-     swipe is the page's, untouched. While a hold-scrub runs the page is held still (a non-passive touchmove on the
-     HTML wrapper, which also carries the touch-action). A mouse still reads by hovering and dragging. */
-  /* ...AND A SIDEWAYS DRAG SCRUBS AT ONCE, WITH THE CURSOR UNDER THE FINGER (owner, 2026-10-24: the hour by hour graph
-     "feels sticky when I move it left and right"). Hold-to-scrub made every plain left/right drag do NOTHING (the
-     10 px rule dropped it), and once a scrub ran the cursor jumped hour to hour 120 ms behind the finger. Weather apps
-     (widget weather, Magic Weather) scrub on a plain sideways drag with the marker following the finger, so: a touch
-     that moves at least 8 px ACROSS and more than twice as far across as up or down scrubs straight away (the hold
-     still works too). That ratio keeps the #2526 promise: a scroll that starts a little diagonal is the page's, and
-     touch-action pan-y lets the browser take it (pointercancel puts the boxes back). While a finger or mouse is on the
-     chart the line and dots sit exactly under it, with no glide; the boxes above read the nearest whole hour; on
-     release the cursor glides onto that hour. */
-  const cap=function(e){try{e.currentTarget.setPointerCapture(e.pointerId);}catch(_){}};
-  const holdT=useRef(null),wrapRef=useRef(null);
-  const unhold=function(){if(holdT.current){clearTimeout(holdT.current);holdT.current=null;}};
-  useEffect(function(){const el=wrapRef.current;if(!el)return;const tm=function(e){const d=downRef.current;if(d&&d.scrub&&e.cancelable)e.preventDefault();};el.addEventListener("touchmove",tm,{passive:false});return function(){el.removeEventListener("touchmove",tm);unhold();};},[]);
-  const down=function(e){unhold();const d={x:e.clientX,y:e.clientY,scrub:false};downRef.current=d;if(e.pointerType==="mouse"){d.scrub=true;cap(e);read(e);return;}const t=e.currentTarget,pid=e.pointerId,f0=fAt(e);holdT.current=setTimeout(function(){holdT.current=null;if(downRef.current!==d)return;d.scrub=true;try{t.setPointerCapture(pid);}catch(_){}if(f0!=null){setHf(f0);setHv(Math.round(f0));}try{if(navigator.vibrate)navigator.vibrate(8);}catch(_){}},350);};
-  const move=function(e){const d=downRef.current;if(e.pointerType==="mouse"){read(e);return;}if(!d)return;if(!d.scrub){const dx=Math.abs(e.clientX-d.x),dy=Math.abs(e.clientY-d.y);if(dx>=8&&dx>2*dy){unhold();d.scrub=true;cap(e);}else{if(dy>10){unhold();downRef.current=null;}return;}}read(e);};
-  const up=function(e){unhold();const d=downRef.current;downRef.current=null;if(!d)return;if(d.scrub||(Math.abs(e.clientX-d.x)<8&&Math.abs(e.clientY-d.y)<8)){const i=idxAt(e);if(i!=null){setPin(i);unread();}}};
-  const cancel=function(){unhold();downRef.current=null;unread();};
-  const readRef=useRef(null),readMax=useRef(0);
-  useLayoutEffect(function(){readMax.current=0;if(readRef.current)readRef.current.style.minHeight="";},[all]);
-  useLayoutEffect(function(){const el=readRef.current;if(!el)return;const h=el.offsetHeight;if(h>readMax.current){readMax.current=h;el.style.minHeight=h+"px";}});
-  // The cursor and its dots GLIDE to the next hour rather than teleport; the values themselves stay whole hours.
-  const glide=hf==null?{transition:"transform .12s ease-out"}:{};
-  const cx=hf!=null?L+hf*xw:x(at);
-  const vAt=function(vals){if(hf==null)return vals[at];const i0=Math.floor(hf),i1=Math.min(n-1,i0+1),v0=vals[i0],v1=vals[i1];return v0==null||v1==null?vals[at]:v0+(v1-v0)*(hf-i0);};
-  const lastPast=all.reduce(function(m,h,i){return h.past?i:m;},-1);
-  const path=function(vals,y){var d="",pen=false;vals.forEach(function(v,i){if(v==null){pen=false;return;}d+=(pen?"L":"M")+x(i).toFixed(1)+","+y(v).toFixed(1);pen=true;});return d;};
-  if(hi-lo<1e-9)hi=lo+1;
-  const y=function(v){return 8+(1-(v-lo)/(hi-lo))*(PH-16);};
-  const ends=series.map(function(s){var li=-1;s.vals.forEach(function(v,i){if(v!=null)li=i;});return li<0?null:{s:s,y:y(s.vals[li])};}).filter(Boolean).concat(bars?[{s:{name:bars.name},y:PH-8}]:[]).sort(function(p,q){return p.y-q.y;});
-  for(var k=1;k<ends.length;k++)if(ends[k].y-ends[k-1].y<14)ends[k].y=ends[k-1].y+14;
-  for(var k2=ends.length-1;k2>=0;k2--)ends[k2].y=Math.min(ends[k2].y,k2===ends.length-1?PH-8:ends[k2+1].y-14);
-  const axis=all.map(function(h,i){return h.hr%3===0?<text key={i} x={x(i)} y={PH+14} fontSize="11" fill={C.textMuted} textAnchor="middle">{h.hr===0?"12A":h.hr===12?"12P":(h.hr%12)+(h.hr<12?"A":"P")}</text>:null;});
-  return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 12px",marginTop:12}}>
-    <div style={{fontSize:14.5,fontWeight:800,color:C.text}}>{title}</div>
-    <div style={{marginTop:2}}>
-      <div style={{display:"flex",alignItems:"center",gap:8,minHeight:44,marginBottom:3}}><div style={{flex:1,minWidth:0,fontSize:12.5,fontWeight:700,color:C.textSub,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{clockHr(a.hr)}{a.past?<span style={{color:C.textMuted,fontWeight:600}}>{"  ·  already past"}</span>:null}</div>{at!==selIdx&&selIdx>=0?<button onClick={function(){setPin(null);setHv(null);}} style={{flexShrink:0,minHeight:44,padding:"0 12px",borderRadius:22,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.onSolid,fontSize:11.5,fontWeight:700,cursor:"pointer"}}>{"Back to "+clockHr(all[selIdx].hr)}</button>:null}</div>
-      <div ref={readRef}><TileGrid min={104}>{readout(a)}</TileGrid></div>
-    </div>
-    <div ref={wrapRef} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={cancel} onPointerLeave={function(e){if(e.pointerType==="mouse")unread();}} onContextMenu={function(e){e.preventDefault();}} style={{marginTop:8,touchAction:"pan-y",userSelect:"none",WebkitUserSelect:"none",WebkitTouchCallout:"none",WebkitTapHighlightColor:"transparent",cursor:"ew-resize"}}><svg width="100%" viewBox={"0 0 "+W+" "+(PH+20)} style={{display:"block"}} role="img" aria-label={title+" through the day; tap an hour, or slide along it, to read each hour"}>
-      {lastPast>=0?<rect x={L} y={0} width={Math.max(0,x(lastPast)-L)} height={PH} fill={C.borderHi} opacity={0.35}/>:null}
-      {lastPast>=0&&x(lastPast)-L>40?<text x={L+4} y={PH-4} fontSize="10.5" fill={C.textMuted}>already past</text>:null}
-      <line x1={L} x2={W-R} y1={y(lo)} y2={y(lo)} stroke={C.borderLight}/><line x1={L} x2={W-R} y1={y(hi)} y2={y(hi)} stroke={C.borderLight}/>
-      <text x={L-4} y={y(hi)+4} fontSize="11" fill={C.textMuted} textAnchor="end">{axisFmt(hi)}</text><text x={L-4} y={y(lo)+4} fontSize="11" fill={C.textMuted} textAnchor="end">{axisFmt(lo)}</text>
-      {bars?bars.vals.map(function(v,i){if(v==null||v<=0)return null;var top=y(Math.min(hi,v)),x0=Math.max(L,x(i)-xw*0.85),x1=Math.max(L,x(i)-xw*0.15);if(x1<=x0)return null;return <rect key={i} x={x0} y={top} width={Math.max(0.8,x1-x0)} height={Math.max(0.8,y(lo)-top)} rx={2} fill={bars.color} opacity={0.65}/>;}):null}
-      {series.map(function(s){return <path key={s.name} d={path(s.vals,y)} fill="none" stroke={s.color} strokeWidth={2.5} strokeDasharray={s.dash||undefined} strokeLinejoin="round"/>;})}
-      {extra?extra(y):null}
-      <line x1={0} x2={0} y1={0} y2={PH} stroke={C.text} strokeWidth="1.25" style={Object.assign({transform:"translate("+cx.toFixed(1)+"px,0px)"},glide)}/>
-      {series.map(function(s){var v=vAt(s.vals);return v==null?null:<circle key={s.name} cx={0} cy={0} r={4.5} fill={s.color} stroke={C.card} strokeWidth="2" style={Object.assign({transform:"translate("+cx.toFixed(1)+"px,"+y(v).toFixed(1)+"px)"},glide)}/>;})}
-      {ends.map(function(e){return <text key={e.s.name} x={W-R+6} y={e.y+4} fontSize="11.5" fill={C.textSub}>{e.s.name}</text>;})}
-      {axis}
-    </svg></div>
-  </div>;
-}
-function HourlyChart({all,selUtc}){
-  const [pin,setPin]=useState(null);useEffect(function(){setPin(null);},[selUtc]);
-  const n=all?all.length:0;
-  const sel=all?all.findIndex(function(h){return h.utc===selUtc;}):-1;
-  const selIdx=pin!=null&&pin<n?pin:(sel>=0?sel:0);
-  // The chip row opens on the picked hour, not on midnight; HourStepper scrolls the ROW (never the page) to keep it in view.
-  if(!all||all.length<2)return null;
-  const W=340,L=34,R=58,xw=(W-L-R)/(n-1),x=function(i){return L+i*xw;};
-  const T=all.map(function(h){return uTempN(h.temp);}),F=all.map(function(h){return uTempN(h.feels);}),D=all.map(function(h){return uTempN(h.dew);});
-  const tv=T.concat(F,D).filter(function(v){return v!=null;});
-  const PR=all.map(function(h){return rainN(h.precip);}),prMax=Math.max.apply(null,PR.map(function(v){return v||0;}));
-  const RH=all.map(function(h){return h.rh;}),POP=all.map(function(h){return h.pop;}),CL=all.map(function(h){return h.cloud;});
-  const Wd=all.map(function(h){return uWindN(h.wind);}),G=all.map(function(h){return uWindN(h.gust);});
-  const wv=Wd.concat(G).filter(function(v){return v!=null;});
-  // A wet hour's scale: never below 0.04" (1 mm), so a trace of drizzle reads as a trace.
-  const prTop=Math.max(uImp()?0.04:1,prMax);
-  const arrowStep=3;
-  const windArrows=function(y){return all.map(function(h,i){if(i%arrowStep!==0||h.windDir==null||Wd[i]==null)return null;return <g key={"a"+i} transform={"translate("+x(i).toFixed(1)+","+y(Wd[i]).toFixed(1)+") rotate("+Math.round(h.windDir+180)+") scale(.75)"} opacity=".8"><path d="M0,-7 L5,4.5 L0,2 L-5,4.5 Z" fill={C.text} stroke={C.indigo} strokeWidth="1"/></g>;});};
-  const spanOf=function(h){return spanEnding(h.hr);},atOf=function(h){return "at "+clockHr(h.hr);};
-  const card=function(key,title,series,lo,hi,axisFmt,bars,extra,readout){return <HourChartCard key={key} all={all} selIdx={selIdx} title={title} series={series} lo={lo} hi={hi} axisFmt={axisFmt} bars={bars} extra={extra} readout={readout}/>;};
-  return <div>
-    <div style={{marginBottom:6}}><HourStepper index={selIdx} count={n} onPick={setPin} label={function(i){return clockHr(all[i].hr);}}>{all.map(function(h,i){const on=i===selIdx;return <button key={h.utc} onClick={function(){setPin(i);}} aria-pressed={on} aria-label={clockHr(h.hr)+(h.past?", already past":"")} style={{flex:"0 0 auto",minWidth:58,minHeight:44,boxSizing:"border-box",padding:"8px 8px",borderRadius:8,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.onSolid:C.textSub,fontSize:12,fontWeight:on?800:600,cursor:"pointer",opacity:h.past?0.6:1}}>{clockHr(h.hr)}</button>;})}</HourStepper></div>
-    {tv.length?card("t","Temperature",[{name:"Temp",vals:T,color:C.orange},{name:"Feels",vals:F,color:C.yellow,dash:"2 3"},{name:"Dew pt",vals:D,color:C.cyan,dash:"4 3"}],Math.floor(Math.min.apply(null,tv)),Math.ceil(Math.max.apply(null,tv)),function(v){return v+"°";},null,null,function(h){const damp=h.temp!=null&&h.dew!=null&&h.temp-h.dew<5;return [
-      <Tile key="t" label="Temperature" when={atOf(h)} value={h.temp!=null?uTemp(h.temp):NOT_MEASURED} tone={h.temp!=null?wxTempColor(h.temp):null}/>,
-      <Tile key="f" label="Feels like" when={atOf(h)} value={h.feels!=null?uTemp(h.feels):NOT_MEASURED}/>,
-      <Tile key="d" label="Dew point" when={atOf(h)} value={h.dew!=null?uTemp(h.dew):NOT_MEASURED} tone={damp?C.amber:null} sub={h.temp!=null&&h.dew!=null?(damp?"Air within "+uTempDelta(h.temp-h.dew)+"° of it: damp":"Air "+uTempDelta(h.temp-h.dew)+"° above it"):null}/>];}):null}
-    {wv.length?card("w","Wind and gusts",[{name:"Wind",vals:Wd,color:C.indigo},{name:"Gusts",vals:G,color:C.indigo,dash:"4 3"}],0,Math.max(10,Math.ceil(Math.max.apply(null,wv))),function(v){return String(v);},null,windArrows,function(h){return [
-      <Tile key="w" label="Wind" when={atOf(h)} value={h.wind==null?NOT_MEASURED:uWind(h.wind)} tone={h.wind!=null?wxWindColor(h.wind):null} sub={h.windDir!=null?"from the "+compass(h.windDir):null}/>,
-      <Tile key="g" label="Gusts" when={spanOf(h)} value={h.gust==null?NOT_MEASURED:uWind(h.gust)} tone={h.gust!=null?wxWindColor(h.gust):null} sub={h.gust==null?null:(h.wind!=null&&uWindN(h.gust)<=uWindN(h.wind)?"no stronger than the wind":"strongest moment in that hour")}/>];}):null}
-    {card("r","Rain amount ("+(uImp()?"inches":"mm")+")",[],0,prTop,function(v){return v===0?"0":uImp()?v.toFixed(2):v.toFixed(1);},{name:"Rain",vals:PR,color:C.blue},null,function(h){const trace=h.precip!=null&&h.precip>0&&uImp()&&h.precip<0.005;return [
-      <Tile key="r" label="Rain" when={spanOf(h)} value={h.precip==null?NOT_MEASURED:h.precip===0?"None":trace?"Trace":uPrecip(h.precip)} tone={h.precip>0?C.blue:null} sub={trace?"under 0.01 in":null}/>];})}
-    {card("p","Chance of rain and cloud cover",[{name:"Cloud",vals:CL,color:C.textSub}],0,100,function(v){return v+"%";},{name:"Chance",vals:POP,color:C.blue},null,function(h){return [
-      <Tile key="p" label="Chance of rain" when={spanOf(h)} value={h.pop==null?NOT_MEASURED:h.pop+"%"} tone={h.pop>=50?C.blue:null} sub={h.pop==null?null:"of measurable rain"}/>,
-      <Tile key="c" label="Cloud" when={atOf(h)} value={h.cloud==null?NOT_MEASURED:Math.round(h.cloud)+"%"} sub={h.cloud==null?null:skyWord(h.cloud)}/>];})}
-    {card("h","Humidity",[{name:"Humidity",vals:RH,color:C.teal}],0,100,function(v){return v+"%";},null,null,function(h){return [
-      <Tile key="h" label="Humidity" when={atOf(h)} value={h.rh==null?NOT_MEASURED:Math.round(h.rh)+"%"}/>];})}
-  </div>;
-}
-/* SEASON — twelve months of average high and low at the crag, from the last five years. A bar is
-   one month's range; green months are PRIME for you (some of the climbing day, from the cool morning
-   up to the afternoon high, in your ideal band, in a dry month: monthFit), amber GOOD (within a few
-   degrees and under 16 wet days). Historical averages, never a forecast. */
-function SeasonChart({clim,band}){
-  const [hv,setHv]=useState(null);
-  const ms=clim.months;const W=340,H=104,L=28,R=6,cw=(W-L-R)/12;
-  const lo=Math.min.apply(null,ms.map(function(m){return uTempN(m.lo);}).concat([uTempN(band[0])]))-3,hi=Math.max.apply(null,ms.map(function(m){return uTempN(m.hi);}).concat([uTempN(band[1])]))+3;
-  const y=function(v){return 4+(1-(v-lo)/(hi-lo))*(H-8);};
-  const fitCol={prime:C.green,good:C.amber,off:C.borderHi};
-  const NAMES=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  const curM=new Date().getMonth();
-  const fits=ms.map(function(m){return monthFit(m,band);});
-  const prime=NAMES.filter(function(_,i){return fits[i]==="prime";}),good=NAMES.filter(function(_,i){return fits[i]==="good";});
-  const move=function(e){const r=e.currentTarget.getBoundingClientRect();if(!r.width)return;const px=(e.clientX-r.left)/r.width*W;setHv(Math.max(0,Math.min(11,Math.floor((px-L)/cw))));};
-  const m=hv!=null?ms[hv]:null;
-  return <div>
-    {condRow("Prime months",prime.length?prime.join(", "):"None — no dry month has a morning or afternoon in your range",prime.length?C.green:C.textSub)}
-    {good.length?condRow("Good months",good.join(", "),C.amber):null}
-    <div style={{marginTop:8}}><svg width="100%" viewBox={"0 0 "+W+" "+(H+14)} style={{display:"block",touchAction:"pan-y"}} onPointerMove={move} onPointerDown={move} onPointerLeave={function(){setHv(null);}} role="img" aria-label={"Average high and low by month. Prime: "+(prime.join(", ")||"none")+". Good: "+(good.join(", ")||"none")+"."}>
-      <rect x={L} y={y(uTempN(band[1]))} width={W-L-R} height={Math.max(0,y(uTempN(band[0]))-y(uTempN(band[1])))} fill={C.green} opacity={0.1}/>
-      <text x={L-4} y={y(uTempN(band[1]))+3} fontSize="9" fill={C.textMuted} textAnchor="end">{uTempN(band[1])+"°"}</text><text x={L-4} y={y(uTempN(band[0]))+3} fontSize="9" fill={C.textMuted} textAnchor="end">{uTempN(band[0])+"°"}</text>
-      {ms.map(function(mo,i){var cx=L+cw*i+cw/2,t=y(uTempN(mo.hi)),b=y(uTempN(mo.lo));return <g key={i}><rect x={cx-6} y={t} width={12} height={Math.max(2,b-t)} rx={4} fill={fitCol[fits[i]]} opacity={hv==null||hv===i?1:0.55}/><text x={cx} y={H+11} fontSize="9.5" fill={i===curM?C.text:C.textMuted} fontWeight={i===curM?800:400} textAnchor="middle">{NAMES[i][0]}</text></g>;})}
-    </svg></div>
-    <div aria-live="polite" style={{fontSize:12.5,color:C.text,minHeight:19,marginTop:4}}>{m?<span><b>{NAMES[hv]}</b>{" · high "+uTemp(m.hi)+", low "+uTemp(m.lo)+" · "+Math.round(m.wetDays)+" wet days · "+uPrecip(m.rain)+" rain"}</span>:<span style={{color:C.textMuted}}>Move along the chart to read a month.</span>}</div>
-    <div style={{display:"flex",flexWrap:"wrap",gap:"4px 12px",fontSize:11.5,color:C.textSub,marginTop:6}}>{[["prime","Prime"],["good","Good"],["off","Off season"]].map(function(p){return <span key={p[0]} style={{display:"inline-flex",alignItems:"center",gap:5}}><span aria-hidden="true" style={{width:9,height:9,borderRadius:3,background:fitCol[p[0]]}}/>{p[1]}</span>;})}<span>Shaded band: your ideal temperature</span></div>
-    <div style={condNote}>{"Averages for "+clim.years+" at the crag — a guide to the season, not a forecast."}</div>
-  </div>;
-}
 function ConditionsScoreCard({route,mtn,onAddAspect}){
   const disc=catOf(route);const on=CRAG_SCORE_DISCIPLINES.includes(disc);
   const lat=mtn&&typeof mtn.lat==="number"?mtn.lat:(mtn&&mtn.lat!=null?+mtn.lat:null),lng=mtn&&typeof mtn.lng==="number"?mtn.lng:(mtn&&mtn.lng!=null?+mtn.lng:null);

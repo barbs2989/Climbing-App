@@ -32,6 +32,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { scoreForecast, WEIGHTS, CRAG_SCORE_DISCIPLINES, aspectBearing, sunPosition, starsLabel, frictionOf, aqiCategory, seepRisk, WET_BANDS, DRY_RATE, mergeMeasuredRain, monthFit, TEMP_BANDS } from "../lib/conditionsScore.js";
 import { routeRock, DRY_HOURS } from "../lib/rockType.js";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 let failed = 0;
@@ -112,7 +113,7 @@ console.log("check:conditions-score");
 
 // 4. REACH
 {
-  const src = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const src = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   const mask = src.replace(/\/\*[\s\S]*?\*\//g, "");
   if (/tab==="forecast"&&showScore\?<div><ConditionsScoreCard route=\{route\} mtn=\{mtn\}.*?\/>/.test(mask) && /\["forecast","Conditions"\]/.test(mask)) ok("ConditionsScoreCard has its own Conditions tab (sub-tab `forecast`)");
   else fail("ConditionsScoreCard is no longer the body of its own Conditions tab (sub-tab `forecast`)");
@@ -151,7 +152,7 @@ console.log("check:conditions-score");
   const own = routeRock({ rock: "Granite", _dbArea: { rock: "gneiss", rockBasis: "mapped" } });
   if (r && r.basis === "mapped" && own && own.basis === "route" && own.label === "Granite") ok("a route's own rock outranks its crag's; a crag's mapped rock is marked mapped");
   else fail(`routeRock precedence is wrong: ${JSON.stringify(r)} / ${JSON.stringify(own)}`);
-  const src = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const src = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   const sites = src.match(/routeRock\(route\)/g) || [];
   const marked = (src.match(/\(mapped\)/g) || []).length;
   if (sites.length && !marked) ok(`${sites.length} place(s) render a rock type, and none labels it "(mapped)"`);
@@ -163,7 +164,7 @@ console.log("check:conditions-score");
 {
   const tile = fs.readFileSync(path.join(ROOT, "lib/BestDayTile.jsx"), "utf8");
   const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
-  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   if (/<BestDayTile ids=\{wishlist\} areaIds=\{bookmarks\} routeById=\{routeById\} onOpenArea=/.test(app) && /\{bestDayOpen&&<div[\s\S]{0,260}aria-label="Best day to climb"[\s\S]{0,1200}<BestDayTile/.test(app) && /\["calendar","Best day to climb",\(\)=>setBestDayOpen\(true\)\]/.test(app) && /\{"Jump back in"\}[\s\S]{0,3000}<BestDayTile ids=\{wishlist\} areaIds=\{bookmarks\}[\s\S]{0,800}<\/Suspense><div id="pinned-downloads">/.test(app) && (app.match(/<BestDayTile\b/g) || []).length === 2) ok("the Best day tile sits on Home under Jump back in and opens from the Menu (Plan & log), over the saved climbs and saved areas");
   else fail("the Best day tile is no longer on Home under Jump back in AND in the Menu over the saved climbs (owner 2026-10-15: both)");
   // With no saved crag climb or crag area the tile says how to get one, and prints no number: it rates nothing.
@@ -360,7 +361,7 @@ console.log("check:conditions-score");
   else fail("aspect 'varies' is not distinguished");
 
   // The card, the tile, Settings and the fetch.
-  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   const card = (rd.replace(/\/\*[\s\S]*?\*\//g, "").match(/function ConditionsScoreCard\([\s\S]*?\n}\n/) || [""])[0];
   const need = ["Wet sandstone is weak — holds can break. Stay off it until it’s dry", "Fewer than three daylight hours to score", "Capped at ", "not a clean-air reading", "This says nothing about its season", "the wall faces several ways", "Seepage risk", "<HourlyChart ", "<SeasonChart ", "Sun on the wall", "Right now", "Best time to climb", "Rock & drying", "Air quality", "Season"];
   const lost = need.filter((s) => !card.includes(s));
@@ -508,7 +509,7 @@ console.log("check:conditions-score");
   else fail(`the Season chart misjudges a month: ${seasonBad.join(" | ")}`);
 
   // The card and the fetch.
-  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   const card = (rd.replace(/\/\*[\s\S]*?\*\//g, "").match(/function ConditionsScoreCard\([\s\S]*?\n}\n/) || [""])[0];
   const chart = (rd.match(/function HourChartCard\([\s\S]*?\n}\n/) || [""])[0] + (rd.match(/function HourlyChart\([\s\S]*?\n}\n/) || [""])[0];
   const need = ["Day by day", "Hour by hour", "Day for the hourly charts", "Shade map", "<ShadeMap ", "Cloud cover", "feels like ", " from the ", "Rain not measured", "A trace of rain"];
@@ -534,7 +535,7 @@ console.log("check:conditions-score");
   else fail("the Aspect & sun card reads only the route's own aspect, so a crag whose facing is on its area says none is recorded under a score that used one");
   // A WET MORNING UNDER A GOOD DAY (owner's note, 2026-10-28): red morning tiles beside a Good day read as a contradiction
   // unless the card says the day is its best 3 hours and the rock is wet until a stated hour; each tile names its dryness.
-  const rd2 = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const rd2 = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   if (/data-wet-until="1"[^\n]{0,200}"Rock likely wet until "\+clockHr\(wetTill\.hr\)/.test(rd2) && /", rock about "\+Math\.round\(x\.dryFrac\*100\)\+"% dry"/.test(rd2)) ok("a day with wet morning hours says when the rock dries, and each wet hour tile says how dry it is");
   else fail("the wet-morning line or the hour tiles' dryness label is gone: red tiles under a Good day read as a contradiction again");
   if (/data-dew-until="1"[^\n]{0,200}"Air at its dew point until "\+clockHr\(dewTill\.hr\)/.test(rd2) && /const dewTill=[^\n]*\/dew point\/\.test\(c\.why\)/.test(rd2)) ok("...and a dew-capped morning under a Good day says until when, too (most red mornings were dew, not rain)");

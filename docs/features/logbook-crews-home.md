@@ -32,7 +32,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 - **Where you camped (0358)**: on a route where `campingGate(route)` is true, `LogAscent`'s *Getting there* asks *Nights out*
   (`cond.nights`, a STRING so a day trip "0" survives the save filter → `climb_logs.nights_out`) and *Where did you camp?*
   (`cond.camps`, the camps in the order slept in → `climb_logs.camp_names text[]`). The chips are the route's own CAMPING & BIVY
-  list (`campSites`, imported from `RouteDetail.jsx`); *Somewhere else* types a name. `TripReport` shows it under Getting there
+  list (`campSites`, from `lib/camps.js`, re-exported by `RouteDetail.jsx`); *Somewhere else* types a name. `TripReport` shows it under Getting there
   and `ReportStats` as a chip (`campSummary`/`campLabel` in core). Model: Peakbagger's ascent form asks "nights camped", WTA's
   trip reports tag day hike / overnight / multi-night; neither lets you pick the camp, which is what lets the route page count it.
 - **A logged climb and a trip report are ONE `climb_logs` row** (reviewed 2026-10-21). The difference is how much the climber filled in and which way they answered *DID YOU CLIMB IT?*:
