@@ -172,3 +172,34 @@ By PRIMARY discipline: trad 1,430, ice 1,006, sport 578, mixed 148, mountaineeri
 
 **Mountaineering tier DONE.** Next: primary ice and mixed (about 1,160 rows). Contexts come from `scripts/oneoff/thin-da-context-sql.mjs`
 (one SQL query; the PostgREST filter on disciplines times out), and agents follow `oos/ICE-BRIEF.md`.
+
+| Ice/mixed batch | thin rows | in batch | skipped | notes |
+|---|---|---|---|---|
+| CO 1 | 40 | 39 | 1 | |
+| CO 2 | 40 | 33 | 7 | |
+| CO 3 | 28 | 24 | 4 | Lead review dropped the Gestas descent (borrowed from neighbouring Dismas). |
+| CO 4 | 34 | 18 | 16 | 12 Longs rows already in the Longs/Meeker batch; Dark Star (own page doubts it). |
+| CO 5 | 40 | 39 | 1 | |
+| CO 6 | 40 | 30 | 10 | 8 already in the Hallett NE / Pikes batches, 2 carried-over skips. |
+| CO 7 | 27 | 26 | 1 | |
+| UT 1 | 37 | 37 | 0 | |
+| UT 2 | 40 | 37 | 3 | Temptation Wall is ice bouldering; Marvell Route's own page doubts it. |
+| UT 3 | 26 | 26 | 0 | Maple Canyon. |
+| UT 4 | 18 | 18 | 0 | |
+| MT 1 | 42 | 38 | 4 | |
+| MT 2 | 39 | 22 | 17 | 16 already in the Three Tiers batch. Granite Lake ski-in given as 9 to 10 mi (three sources). |
+
+**None of the ice batches is applied yet** (2026-10-29, evening): the database timed out on every probe (one-row reads over 30 s). Apply each with
+the applier when `waitdb.mjs`-style probes are healthy, then move the rollback files by exact name.
+
+**Ice-tier findings for review:**
+- `ut_monte_cristo` and `ut_broads_fork_2` share one coordinate (40.52763, -111.72408), right for neither: Monte Cristo's East Gully is in Little
+  Cottonwood near Alta, and Broads Fork is in Big Cottonwood.
+- `ut_7even_*` (6 rows) are bolted summer drytooling, filed as mixed.
+- `ut_*north_face_chimney`: our row (5.9+ WI3+ M5, 6 pitches) doesn't match its page (5.9 A2, 4 pitches).
+- `co_wheeler_mountain` "NW Couloir": its page puts it on the east face. `co_*southern_circus` is stored as ice at 5.6 but is described as mixed.
+- Navajo West Couloir, Pacific Peak N Face couloirs and Saint Sophia Faith, Hope and Love are alpine-rock pages filed as ice.
+- Waltzing Matilda (Oil Creek): page says WI2+, our row WI3-4.
+- Mertensia Falls is filed under "Wild Basin (bouldering)". Mt Bancroft rows sit under Indian Peaks (it is the James Peak Wilderness).
+- `mt_*unprotected_fourplay` on A Peak: its text names a "Blackwell Glacier" and a west face that don't fit A Peak, so it was probably copied
+  from another route.
