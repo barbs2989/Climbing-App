@@ -12,7 +12,7 @@ import { useRecentRouteIds } from "./recent";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel, searchPlaces } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
-import { shortGrade, gradeNumFrom, displayGrade } from "./grade";
+import { topGrade, gradeNumFrom, displayGrade } from "./grade";
 import { clickable } from "./clickable";
 import { subdivisionNoun, countryOfArea } from "./countries";
 import { effDistKm } from "./outing";
@@ -440,7 +440,7 @@ export function SummitBriefing({ area, routes, uElev, uDistMi, C }) {
     // class" across the top of a page whose other seven routes are Grade II-IV glacier and
     // ice reads as "this is a scramble". A denominator underneath does not undo a headline.
     if (gr && gr.said * 2 >= gr.of) {
-      const lo = shortGrade(gr.lo.r.rock_grade), hi = shortGrade(gr.hi.r.rock_grade);
+      const lo = topGrade(gr.lo.r.rock_grade), hi = topGrade(gr.hi.r.rock_grade);
       out.push(["Rock difficulty", (lo === hi || gr.lo.v === gr.hi.v) ? lo : lo + " to " + hi, gr.said < gr.of ? gr.said + " of " + gr.of + " routes list a rock grade" : null]);
     }
 
