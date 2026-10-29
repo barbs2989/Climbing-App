@@ -28,7 +28,8 @@ import crypto from "node:crypto";
 import { execFileSync } from "node:child_process";
 
 const KEYS = "lib/objKeys.js";
-const RD = "RouteDetail.jsx";
+// PR59 moved SuggestFix (which declares OBJ_KEYS) to src/components/SuggestFix.tsx.
+const RD = "src/components/SuggestFix.tsx";
 const GUARD = "scripts/check-units.mjs";
 const ARGS = [GUARD, "--only=keyed"];
 const sum = (f) => crypto.createHash("sha256").update(fs.readFileSync(f)).digest("hex");

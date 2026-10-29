@@ -19,6 +19,8 @@ const FILE = path.join(ROOT, "RouteDetail.jsx");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 // PR57 moved the camp helpers (campFromTrailhead, campSites, trailheadFt) to lib/camps.js.
 const CAMPS = path.join(ROOT, "lib/camps.js");
+// PR59 moved campingGate to lib/campingGate.js (case 9).
+const GATE = path.join(ROOT, "lib/campingGate.js");
 const sum = (x) => crypto.createHash("sha1").update(x).digest("hex").slice(0, 10);
 
 const CASES = [
@@ -57,6 +59,7 @@ const CASES = [
   },
   {
     name: "9. revert campingGate() to the bare catOf() list (the Fury defect)",
+    file: GATE,
     want: /trad on a peak does NOT render|trad-is-alpine rule is not wired/i,
     edit: (s) => s.replace(
       'return ["alpine","mountaineering","scrambling","ice","mixed"].includes(catOf(route))||climbsAPeak(route);',

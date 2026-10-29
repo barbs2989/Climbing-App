@@ -54,7 +54,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
-import { componentFiles, readCoreSource, MOVED_ALL, readAppFile } from "./lib/guard-sources.mjs";
+import { componentFiles, readCoreSource, MOVED_ALL, readAppFile, stripTypes } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -111,7 +111,7 @@ const APP_PATH = path.join(ROOT, "ClimbMatch.jsx");
 //   1  App's area search  -- renders the SEED `MOUNTAINS` tree, so its distance is a different
 //      defect entirely (the AddRoute area-picker class) and converting it would polish a
 //      surface that is showing the wrong data.
-//   2  rapStr (core) and fmtRappels (RouteDetail) -- the object branch of the rappels column.
+//   2  rapStr (core) and fmtRappels (lib/rappelEdits.js since PR59) -- the object branch of the rappels column.
 //      Measured: 733 of 733 rows are STRINGS, so neither branch can be reached. The unit there
 //      is chosen by WHICH COLUMN the value came from rather than by the climber, which is why
 //      it is recorded as a tripwire: the day something writes an object, this arms itself.
@@ -124,7 +124,7 @@ const RAW_IMPERIAL_OK = 6;
 // assertions below were written, so every core read must include them or it silently stops
 // looking at three whole screens while still printing ok.
 const readCoreAndMoved = () => readCoreSource();
-const RAW_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "lib/DbAreaBrowser.jsx", "lib/FireMap.jsx", "lib/FireNearRoute.jsx", ...MOVED_ALL];
+const RAW_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "lib/rappelEdits.js", "lib/DbAreaBrowser.jsx", "lib/FireMap.jsx", "lib/FireNearRoute.jsx", ...MOVED_ALL];
 // " in" is EXCLUDED: it is the English preposition far more often than inches, and including it
 // reported `"APPROACHES · "+n+" way"+(s)+" in"` as a defect on the first run. A count is only as
 // good as its tokeniser.
@@ -1019,12 +1019,13 @@ async function runVariants() {
   await loadBundle();
   const src = readAppFile(RD_PATH) /* stitched: the moved components (PR52 on) back in */;
 
-  const seedKey = "const routeVars=(Array.isArray(route.approachVariants)";
-  const seedAt = src.indexOf(seedKey);
+  // SuggestFix is TypeScript since PR59: the declaration may carry a type, and the lifted seed is type-stripped before it runs.
+  const seedM = /const routeVars(?:: [^=]+)?=\(Array\.isArray\(route\.approachVariants\)/.exec(src);
+  const seedAt = seedM ? seedM.index : -1;
   if (seedAt < 0) dead("the routeVars seed is not where this section reads it — re-read RouteDetail.jsx");
   const seedEnd = src.indexOf(":[blankVar()];", seedAt);
   if (seedEnd < 0) dead("could not bound the routeVars seed");
-  const seedExpr = src.slice(seedAt + "const routeVars=".length, seedEnd + ":[blankVar()]".length);
+  const seedExpr = await stripTypes(src.slice(src.indexOf("=", seedAt) + 1, seedEnd + ":[blankVar()]".length), { expression: true });
   // A SHAPE TEST, NOT A CONTENT ONE. The first version of this demanded the slice mention
   // `itinDraftVal` -- i.e. it was written from the FIX -- so any other seeding, INCLUDING A
   // DELIBERATELY WRONG ONE, reported ANCHOR LOST rather than being measured. An anchor written
@@ -1045,7 +1046,7 @@ async function runVariants() {
   if (storeEnd < 0) dead("could not bound the variants submit branch");
   const storeExpr = src.slice(storeAt + 'if(f.type==="variants")return '.length, storeEnd).replace(/;\s*$/, "");
   if (!/\.map\(/.test(storeExpr) || !/\.filter\(/.test(storeExpr)) dead("the variants branch is not the map/filter shape this section reads");
-  const store0 = new Function("vals", "itinStoreVal", "uImp", "return " + storeExpr + ";");
+  const store0 = new Function("vals", "itinStoreVal", "uImp", "return " + await stripTypes(storeExpr, { expression: true }) + ";");
   const store = (vals, isv) => store0(vals, isv, () => M.uImp ? M.uImp() : true);
 
   const blankVar = () => ({ name: "", season: "", distMi: "", gainFt: "", hours: "", notes: "", hazards: "" });
@@ -1198,7 +1199,7 @@ async function runPitches() {
   if (seedEnd < 0) dead("could not bound the routePitches seed");
   const seedExpr = src.slice(seedAt + seedKey.length - seedBody.length, seedEnd + ":[blankPitch(1)]".length);
   if (!/\.map\(/.test(seedExpr) || !/lengthM:/.test(seedExpr)) dead("the seed is not the map-over-pitchDetail shape this section reads");
-  const seed = new Function("route", "uLenN", "blankPitch", "return " + seedExpr + ";");
+  const seed = new Function("route", "uLenN", "blankPitch", "return " + await stripTypes(seedExpr, { expression: true }) + ";");
 
   const storeKey = 'if(f.type==="pitches")return (vals.pitchDetail||[])';
   const storeAt = src.indexOf(storeKey);
@@ -1211,7 +1212,7 @@ async function runPitches() {
   const numAt = src.indexOf("function isNumLbl(");
   if (numAt < 0) dead("isNumLbl is not where the pitches branch reads it");
   const numSrc = src.slice(numAt, src.indexOf("\n", numAt));
-  const store = new Function("vals", "uLenIn", numSrc + "\nreturn " + storeExpr + ";");
+  const store = new Function("vals", "uLenIn", await stripTypes(numSrc) + "\nreturn " + await stripTypes(storeExpr, { expression: true }) + ";");
 
   const blankPitch = (n) => ({ pitch: n, grade: "", lengthM: "", gear: "", notes: "", anchor: "", bolts: "", crux: false });
   const STORED = { pitch: 1, n: 1, grade: "5.10a", lengthM: 45, gear: "Yellow C4", note: "Sustained hands", anchor: "2 bolts", bolts: 4, crux: true };

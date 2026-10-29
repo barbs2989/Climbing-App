@@ -21,7 +21,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { appSources } from "./lib/guard-sources.mjs";
+import { appSources, readAppFile } from "./lib/guard-sources.mjs";
 import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -405,7 +405,7 @@ if (!inverted) ok(`alpine ${alpine} >= rock ${counts.rock}, bouldering ${counts.
    Fails closed: DROP must parse and evaluate for every type, and the edit sheet must keep >= 30
    keys per type, or nothing here was checked. */
 {
-  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx")) /* stitched: SuggestFix lives in src/components since PR59 */;
   const sfLine = rd.split("\n").find((l) => l.includes("const FIELDS=[{k:"));
   if (!sfLine) anchorLost("`const FIELDS=[{k:` — the edit sheet's field list in RouteDetail.jsx");
   const sheet = [...sfLine.matchAll(/\{k:"([a-zA-Z0-9_]+)"/g)].map((m) => m[1]);

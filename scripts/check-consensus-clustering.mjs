@@ -35,6 +35,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(ROOT, `.consensus-${process.pid}.mjs`);
@@ -66,7 +67,7 @@ if (typeof normEditStr !== "function") dead("ClimbMatchCore.jsx does not export 
 if (!SET_FIELDS || typeof SET_FIELDS !== "object") dead("ClimbMatchCore.jsx does not export SET_FIELDS — ANCHOR LOST");
 
 // ---- 1. every chip field must be a declared set, or its votes can never cluster ----
-const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx")) /* stitched: SuggestFix lives in src/components since PR59 */;
 const fi = rd.indexOf('const FIELDS=[{k:');
 if (fi < 0) dead("RouteDetail.jsx's FIELDS list moved — ANCHOR LOST");
 const seg = rd.slice(fi);

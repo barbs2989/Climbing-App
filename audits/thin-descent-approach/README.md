@@ -149,3 +149,20 @@ plus 8 Spearhead, 1 Notchtop and 1 Temple Crag), and then it stopped answering a
    (real alpine peaks first; many census rows are ice crags or boulders that carry an alpine tag): Slesse, Longs/Meeker Cirque, Snowpatch Spire,
    Bugaboos North Faces, Gimli, Yak, Nesakwatch, Athelstan, Hallett NE Buttress mixed, Pikes North Face, Huntington and Tuckerman, Blue Sky couloirs. **Lincoln Lake left out:** it is bouldering, which has no descent or approach per problem, and the same goes for the other boulders in the census.
 4. After the marquee list, build the rest with `scripts/oneoff/thin-da-context.mjs`, peak by peak, ordered by route count.
+
+### Scope of the long tail (decided 2026-10-29)
+After the marquee peaks and the next tier, about 3,400 out-of-state rows (alpine-tagged, not bouldering) were still thin, across 1,305 areas.
+By PRIMARY discipline: trad 1,430, ice 1,006, sport 578, mixed 148, mountaineering 144, aid 95, top-rope 61.
+- **Done first: primary mountaineering/alpine** (~146 rows, by state: `scripts/oneoff/thin-da-context-disc.mjs ctx-mtn-<st>_.json <st>_ mountaineering,alpine`).
+  Descents matter most here: walk-ups and snow routes on Shasta, Denali, the Sisters, Athabasca and similar peaks.
+- **Next: primary ice and mixed** (~1,150). An ice route has a real approach and a real way off (V-thread rappels, walk-offs).
+- **Not swept: sport and top-rope.** A sport route's descent is lowering off its anchor, and a crag's approach belongs to the crag, not to each route.
+  Writing the same sentence on 600 rows would be filler, which none of the competitors do: Mountain Project and theCrag keep approach at the crag level.
+  The crag-level approach lives on the area page (area fields).
+- **Trad:** only where the area is a peak, not a cliff. Sort that by area, not by the route's tag.
+- **Bouldering: out of scope** (Lincoln Lake and the boulders in the census).
+
+| Long tail batch | thin rows | written | skipped | notes |
+|---|---|---|---|---|
+| Mountaineering, California | 34 | **9 written** | 25 | Strict: single-page rows skipped. Possible Harwood/Thunder Mountain name swap; Shastina "Lightning couloir" may duplicate a Baldy import. Both are for review. |
+| Mountaineering, Colorado | 48 | **39 written** (4 re-applied) | 9 | Lead review dropped two inferred descents (Tuning Fork, First Star). |
