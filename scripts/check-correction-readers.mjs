@@ -41,7 +41,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { appSources } from "./lib/guard-sources.mjs";
+import { appSources, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GUARD = "check:correction-readers";
@@ -62,7 +62,8 @@ appSources(ROOT, GUARD);
    silently, one file at a time, is exactly the #547 shape this comment already warns about. */
 const FILES = ["RouteDetail.jsx", "lib/rappels.js", "lib/rack.js"];
 const FILE = FILES.join(" + ");
-const SRC = FILES.map((f) => fs.readFileSync(path.join(ROOT, f), "utf8")).join("\n");
+// readAppFile: RouteDetail.jsx is read STITCHED, with the components moved out of it (PR52 on) back in.
+const SRC = FILES.map((f) => readAppFile(path.join(ROOT, f))).join("\n");
 const APP = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
 
 // ---------------------------------------------------------------------------------------

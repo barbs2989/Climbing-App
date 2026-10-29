@@ -54,7 +54,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
-import { componentFiles, readCoreSource, MOVED_FROM_CORE } from "./lib/guard-sources.mjs";
+import { componentFiles, readCoreSource, MOVED_ALL } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -124,7 +124,7 @@ const RAW_IMPERIAL_OK = 6;
 // assertions below were written, so every core read must include them or it silently stops
 // looking at three whole screens while still printing ok.
 const readCoreAndMoved = () => readCoreSource();
-const RAW_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "lib/DbAreaBrowser.jsx", "lib/FireMap.jsx", "lib/FireNearRoute.jsx", ...MOVED_FROM_CORE];
+const RAW_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "lib/DbAreaBrowser.jsx", "lib/FireMap.jsx", "lib/FireNearRoute.jsx", ...MOVED_ALL];
 // " in" is EXCLUDED: it is the English preposition far more often than inches, and including it
 // reported `"APPROACHES · "+n+" way"+(s)+" in"` as a defect on the first run. A count is only as
 // good as its tokeniser.

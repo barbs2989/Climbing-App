@@ -19,7 +19,7 @@ import { accessCheckedLine } from "./lib/road";
 import { navTarget, navLinks } from "./lib/navLinks";
 import { trailheadDirectionProblem } from "./lib/trailheadDirectionShape";
 import { USE_DB} from "./lib/supabase";
-import {recordRouteView,useAreaPath,useRouteStarSummary,useRoutePairings,useRouteLoggedWith,submitRoutePairing,deleteRoutePairing,usePartnersByObjective,usePartnersInArea,useMatchObjectivesOfUsers,checkInAtRouteBase, withdrawBaseCheckin, useRouteBaseCheckins, dbRouteToCamel, useAreaRoutes, useProfilesByIds, useRoutesByIds, useRouteTopos, topoPhotoUrl, uploadTopoPhoto, updateTopoAlt, updateTopoCaption, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useObjectiveCounts, useProfileSearch, useRouteTripReports, useRoutePrivateConditions, useSavedMedia, useMediaSrc, useToggleSavedMedia, useMyContributionStanding, useRouteTracks, useRouteStats} from "./lib/db";
+import {recordRouteView,useAreaPath,useRouteStarSummary,useRoutePairings,useRouteLoggedWith,submitRoutePairing,deleteRoutePairing,usePartnersByObjective,usePartnersInArea,useMatchObjectivesOfUsers,checkInAtRouteBase, withdrawBaseCheckin, useRouteBaseCheckins, dbRouteToCamel, useAreaRoutes, useProfilesByIds, useRoutesByIds, useRouteTopos, topoPhotoUrl, uploadTopoPhoto, updateTopoAlt, updateTopoCaption, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useObjectiveCounts, useProfileSearch, useRouteTripReports, useRoutePrivateConditions,    useMyContributionStanding, useRouteTracks, useRouteStats} from "./lib/db";
 import RouteTracksPanel from "./lib/RouteTracksPanel.jsx";
 import { TRACK_COLORS, trackPoints, trackStats } from "./lib/routeTracks.js";
 import FireNearRoute from "./lib/FireNearRoute";
@@ -54,7 +54,7 @@ import AlpineConditionsCard, { forecastPoint } from "./lib/AlpineConditionsCard.
 import { ALPINE_COND_DISCIPLINES, modelSpread } from "./lib/alpineConditions.js";
 import { Tile, TileGrid, NOT_MEASURED, clockHr, spanEnding, compass, HourStepper } from "./lib/HourTiles.jsx";
 import { usableFa } from "./lib/fa";
-import {routeLink,realProfileId,CRAG_CATS,parseGpxText,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,DISC,CAT,ME,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,seedAuthor,roadReportOf,isRoadTag,buildConsensus,SZ3,MONTHS,MOUNTAINS,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,uMass,RSL as SL,ROUTE_GAP,FOLD_GAP,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,ALL_CLIMBERS,ROUTES,isHazardTag,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,isRecent,RECENT_DAYS,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,rappelReportsOf,sunReadout,realAuthor,useRealAuthors} from "./ClimbMatchCore.jsx";
+import {routeLink,realProfileId,CRAG_CATS,parseGpxText,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,DISC,CAT,ME,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,seedAuthor,roadReportOf,isRoadTag,buildConsensus,SZ3,MONTHS,MOUNTAINS,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,uMass,RSL as SL,ROUTE_GAP,FOLD_GAP,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,ALL_CLIMBERS,ROUTES,isHazardTag,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,isRecent,RECENT_DAYS,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,rappelReportsOf,sunReadout,realAuthor,useRealAuthors} from "./ClimbMatchCore.jsx";
 import PhotoDescribeBox from "./src/components/PhotoDescribeBox.tsx";
 import CardHead from "./src/components/CardHead.tsx";
 import ShareVia from "./src/components/ShareVia.tsx";
@@ -90,6 +90,15 @@ import { photoThumb} from "./lib/photoThumb";
 import { HINTS } from "./lib/fieldHints.js";
 import LoadingRows from "./src/components/LoadingRows.tsx";
 import EmptyState from "./src/components/EmptyState.tsx";
+import GradeTag from "./src/components/GradeTag.tsx";
+import PinNum from "./src/components/PinNum.tsx";
+import TopoSwatch from "./src/components/TopoSwatch.tsx";
+import MediaImg from "./src/components/MediaImg.tsx";
+import CragWalkIn from "./src/components/CragWalkIn.tsx";
+import SaveOfflineChip from "./src/components/SaveOfflineChip.tsx";
+import TopoCaptionBox from "./src/components/TopoCaptionBox.tsx";
+import BetaDiff from "./src/components/BetaDiff.tsx";
+import CRow from "./src/components/CRow.tsx";
 const GpsSubmissionModal = lazy(() => import("./lib/GpsSubmissionModal"));
 const uGain=m=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
 
@@ -764,9 +773,6 @@ function RouteGearEssentialsBox({route,essentials,onEdit}){const disc=catOf(rout
    stated means nothing drawn. A bouldering route's rack is its crash pads. */
 /* WALK-IN: the crag's own approach (`areas.approach`, 0247) — the walk from the trail to the base,
    written once per crag and shown on every route there. Never roads, parking, permits or closures. */
-function CragWalkIn({route}){const a=route&&route._dbArea;const t=a&&String(a.approach||"").trim();if(!t)return null;
-  const m=a.approachMin!=null&&+a.approachMin>=0?Math.round(+a.approachMin):null;
-  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8}}><CardHead>WALK-IN</CardHead>{m!=null?<span style={{fontSize:12,color:C.dim}}>{"about "+m+" min on foot"}</span>:null}</div><div style={{fontSize:13,color:C.text,lineHeight:1.5}}>{t}</div></div>;}
 function CragRack({route,onEditRack,activity,onSeeReports,facts}){const disc=catOf(route);
   const own=routeRackFor(route)||[];
   /* One counted list (rackRows): rack_items' rows, with a quickdraw or pad count from its own box REPLACING the row of that kind. It used to be rack_items OR the pads OR the draws, so on the 938 sport routes carrying rack_items a corrected quickdraw count reached no screen. A counted rack edit's text lines print under its rows; an uncorrected route keeps its rows alone. */
@@ -778,7 +784,7 @@ function CragRack({route,onEditRack,activity,onSeeReports,facts}){const disc=cat
   const beta=disc==="bouldering"?null:<RackBetaList activity={activity} route={route} onSeeReports={onSeeReports}/>;
   if(!rows.length&&!own.length)return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}><CardHead style={{marginBottom:6}}>{disc==="bouldering"?"PADS":"RACK"}</CardHead>{facts}<GapNote what={disc==="bouldering"?"No pad count yet":disc==="sport"?"No quickdraw count yet":"No rack listed yet"} why={disc==="bouldering"?"Nothing says how many crash pads the landing needs.":disc==="sport"?"Nothing says how many draws to bring.":"Nothing says what gear this takes."} cta={disc==="bouldering"?"Add the pads":disc==="sport"?"Add the quickdraws":"Add the rack"} onFix={onEditRack?function(){onEditRack(own.join(" "),sec);}:null}/>{beta}</div>;
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8}}><CardHead>RACK</CardHead>{onEditRack?<EditIconButton onClick={function(){onEditRack(own.join(" "),sec);}} title="Edit rack"/>:null}</div>
-    {facts}{rows.length?rows.map(function(x,i){return <div key={i} style={{display:"flex",justifyContent:"space-between",gap:12,padding:"5px 0",borderTop:i?`1px solid ${C.border}`:"none",fontSize:13}}><span style={{color:C.text}}>{x.item}{x.sizes?<span style={{color:C.dim}}> {x.sizes}</span>:null}</span>{x.qty!=null?<span style={{color:C.dim,fontVariantNumeric:"tabular-nums"}}>{"\u00d7"+x.qty}</span>:null}</div>;}):null}{extra.map(function(t,i){return <div key={"t"+i} style={{padding:"5px 0",borderTop:(i||rows.length)?`1px solid ${C.border}`:"none",fontSize:13,color:C.text}}>{t}</div>;})}{beta}</div>;}
+    {facts}{rows.length?rows.map(function(x,i){return <div key={i} style={{display:"flex",justifyContent:"space-between",gap:12,padding:"5px 0",borderTop:i?`1px solid ${C.border}`:"none",fontSize:13}}><span style={{color:C.text}}>{x.item}{x.sizes?<span style={{color:C.textMuted}}> {x.sizes}</span>:null}</span>{x.qty!=null?<span style={{color:C.textMuted,fontVariantNumeric:"tabular-nums"}}>{"\u00d7"+x.qty}</span>:null}</div>;}):null}{extra.map(function(t,i){return <div key={"t"+i} style={{padding:"5px 0",borderTop:(i||rows.length)?`1px solid ${C.border}`:"none",fontSize:13,color:C.text}}>{t}</div>;})}{beta}</div>;}
 function RouteGearCheck({route,activity,onSeeReports,rack,onEditRack,onEditEssentials,essentials,rackGeneric,onEditRopeNote,afterRack}){
   /* Mounted only OFF CRAG_CATS (alpine, mountaineering, ice, mixed, scrambling). It used to open with a
      `bouldering` return and a `sport` branch (a computed quickdraw note plus "Rack beta"), and neither
@@ -1226,15 +1232,6 @@ function PitchConsensus({p,onSuggestFix}){
     {box("Gear for this pitch",gear,"Not described yet — say what to place, e.g. cams, nuts, slings")}
     {onSuggestFix?<button onClick={onSuggestFix} style={{...BTN,marginTop:3,background:"transparent",color:C.textSub,border:"1px solid "+C.border}}>{(anchor||gear||belay)?"Edit belay, anchor & gear":"Add belay, anchor & gear"}</button>:null}
   </div>;
-}
-function BetaDiff({route}){
-  const acts=(route.activity||[]).slice().sort((a,b)=>(b.date||"").localeCompare(a.date||""));
-  if(!acts.length)return null;
-  const MN=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  const fmtShort=d=>{if(!d)return "recently";const q=String(d).split("-");return (MN[parseInt(q[1])]||"")+" "+(q[2]?parseInt(q[2]):"");};
-  const recent=acts.slice(0,6);const tagCount={};recent.forEach(a=>(a.condTags||[]).forEach(t=>{t=normTag(t);tagCount[t]=(tagCount[t]||0)+1;}));
-  const tags=Object.keys(tagCount).sort((a,b)=>tagCount[b]-tagCount[a]).slice(0,5);const latest=acts[0];
-  return <div style={{background:"linear-gradient(155deg,#0f1e14,#10241a)",border:"1px solid "+C.greenDim,borderRadius:13,padding:"13px 14px",marginBottom:ROUTE_GAP}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:7}}><CardHead tone={C.green}>What’s changed</CardHead><span style={{fontSize:11.5,fontWeight:700,color:C.green,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:6,padding:"2px 7px"}}>{"✓ "+acts.length+" report"+(acts.length!==1?"s":"")}</span></div><div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:tags.length?10:0}}>{recent.length+" recent part"+(recent.length!==1?"ies":"y")+" checked in. Latest: "+(latest.user?latest.user.split(" ")[0]:"a climber")+" on "+fmtShort(latest.date)+(latest.tickType?" · "+latest.tickType:"")+"."}</div>{tags.length?<div><CardHead style={{marginBottom:8}}>What recent parties are flagging</CardHead><div style={{display:"flex",flexWrap:"wrap",gap:6}}>{tags.map(t=><span key={t} style={{fontSize:11.5,fontWeight:600,color:C.text,background:C.card,border:"1px solid "+C.border,borderRadius:7,padding:"3px 8px"}}>{t}{tagCount[t]>1?" ×"+tagCount[t]:""}</span>)}</div></div>:null}</div>;
 }
 /* A PITCH ROW IS A CONTROL, and its "CRUX" badge is a separate <span> held off the grade by
    `marginLeft:6`. The accessibility tree has no margins, so a pitch graded "5.9" announced as
@@ -2615,7 +2612,6 @@ const SEASON_OF=m=>(m<=1||m===11)?"winter":m<=4?"spring":m<=7?"summer":"fall";
 function seasonSummary(months){if(!months||!months.length)return null;const u=[...new Set(months)].sort((a,b)=>a-b);const mn=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];const ss=[...new Set(u.map(SEASON_OF))];if(u.length>=7||ss.length>=3)return "year-round";if(u.length===1)return mn[u[0]];if(u.length<=3)return mn[u[0]]+"–"+mn[u[u.length-1]];return ss.map(x=>x[0].toUpperCase()+x.slice(1)).join(", ");}
 function kwScan(reports,vocab){const out={};const nowY=new Date().getFullYear();reports.forEach(r=>{const hay=((r.text||"")+" "+((r.condTags||[]).join(" "))).toLowerCase();const yr=r.date?new Date(r.date+"T12:00:00").getFullYear():null;const mo=r.date?new Date(r.date+"T12:00:00").getMonth():null;const w=r.crewId?1:0.72;Object.keys(vocab).forEach(lab=>{let pos=0,neg=0;vocab[lab].forEach(k=>{const h=_hits(hay,k);pos+=h.pos;neg+=h.neg;});if(!out[lab]&&(pos>0||neg>0))out[lab]={label:lab,count:0,weight:0,year:0,neg:0,months:[],reports:[]};if(pos>0){out[lab].count++;out[lab].weight+=w;if(yr&&yr>out[lab].year)out[lab].year=yr;if(mo!=null)out[lab].months.push(mo);out[lab].reports.push({user:r.user,date:r.date||null,avatar:r.avatar,stars:r.stars});}else if(neg>0){out[lab].neg++;}});});return Object.values(out).filter(o=>o.count>0).map(o=>({label:o.label,count:o.count,weight:o.weight,year:o.year||null,recent:o.year?(nowY-o.year)<=1:false,neg:o.neg,months:o.months,season:seasonSummary(o.months),seasons:[...new Set(o.months.map(SEASON_OF))].length,reports:o.reports})).sort((a,b)=>b.count-a.count||(b.year||0)-(a.year||0));}
 function routeKw(route){const reports=route.activity||[];const off=(route.hazards||[]).map(x=>x.toLowerCase());const hazards=kwScan(reports,HAZ_KW).map(h=>{const official=off.some(o=>HAZ_KW[h.label].some(k=>o.indexOf(k)>=0));const promoted=!official&&h.count>=5&&h.seasons>=2;return {...h,official,promoted};});const conditions=kwScan(reports,COND_KW);const byL={};conditions.forEach(c=>{byL[c.label]=c;});const dry=byL["Dry / clean"],wet=byL["Wet / damp"],icy=byL["Icy"];const conflicts=[];if(dry&&dry.count>=2&&((wet&&wet.count>=2)||(icy&&icy.count>=2)))conflicts.push("Some climbers report dry rock, others wet or icy — conditions vary or are changing fast. Check the most recent reports.");const dts=reports.map(r=>r.date).filter(Boolean).sort();const lastY=dts.length?new Date(dts[dts.length-1]+"T12:00:00").getFullYear():null;const nowY=new Date().getFullYear();const recentN=reports.filter(r=>r.date&&(nowY-new Date(r.date+"T12:00:00").getFullYear())<=1).length;let cs=Math.min(4,reports.length)+(recentN>=2?2:recentN===1?1:0)+((lastY&&nowY-lastY>=3)?-2:0);const confidence=cs>=7?"High":cs>=4?"Medium":"Low";return {total:reports.length,hazards,conditions,conflicts,confidence,recentN,lastY,nowY};}
-function CRow({item,kind,openK,setOpenK,routeId,hzVotes,onVote}){const key=kind+":"+item.label;const open=openK===key;const badge=item.promoted?{t:"community-verified",c:C.purple,b:C.purpleBg}:item.official?{t:"✓ in route info",c:C.green,b:C.greenBg}:kind==="h"?{t:"community-flagged",c:C.amber,b:C.amberBg}:null;return <div style={{marginBottom:2}}><div {...clickable(()=>setOpenK(open?null:key))} aria-expanded={open} style={{display:"flex",alignItems:"center",gap:6,flexWrap:"wrap",cursor:"pointer",minHeight:44}}><span style={{fontSize:12.5,color:C.text,fontWeight:600,flex:1,minWidth:84}}>{item.label}</span>{badge?<span style={{fontSize:12,fontWeight:700,color:badge.c,background:badge.b,borderRadius:6,padding:"2px 6px"}}>{badge.t}</span>:null}<span style={{fontSize:12,color:C.text,fontWeight:700}}>{item.count+(item.count===1?" report":" reports")}</span>{item.season?<span style={{fontSize:12,color:C.textMuted}}>{item.season}</span>:null}{item.year?<span style={{fontSize:12,color:item.recent?C.green:C.textMuted,fontWeight:600}}>{(item.recent?"● ":"")+item.year}</span>:null}<span aria-hidden="true" style={{display:"flex"}}><Chevron open={open} size={14} color={C.blue}/></span></div>{open?<div style={{margin:"5px 0 9px",paddingLeft:8,borderLeft:`2px solid ${C.border}`}}>{item.reports.slice(0,8).map((rp,ri)=><div key={ri} style={{display:"flex",alignItems:"center",gap:6,marginBottom:3}}><Av src={rp.avatar} size={16}/><span style={{fontSize:12,color:C.textSub,flex:1}}>{rp.user}</span><span style={{fontSize:12,color:C.textMuted}}>{rp.date||""}</span></div>)}{item.neg?<div style={{fontSize:12,color:C.amber,marginTop:4}}>{item.neg+" recent report"+(item.neg!==1?"s":"")+" said it was not present — may be resolving."}</div>:null}{kind==="h"&&onVote?(()=>{const vk=routeId+"|"+item.label;const v=(hzVotes&&hzVotes[vk])||{still:0,gone:0,mine:null};return <div style={{display:"flex",alignItems:"center",gap:6,marginTop:8,flexWrap:"wrap"}}><span style={{fontSize:12,color:C.textMuted}}>Still accurate?</span><button onClick={e=>{e.stopPropagation();onVote(routeId,item.label,"still");}} aria-pressed={v.mine==="still"} style={{...BTN_SM,border:`1px solid ${v.mine==="still"?C.green:C.border}`,background:v.mine==="still"?C.greenBg:"transparent",color:v.mine==="still"?C.green:C.textSub}}>{"Still there"+(v.still?" "+v.still:"")}</button><button onClick={e=>{e.stopPropagation();onVote(routeId,item.label,"gone");}} style={{...BTN_SM,border:`1px solid ${v.mine==="gone"?C.amber:C.border}`,background:v.mine==="gone"?C.amberBg:"transparent",color:v.mine==="gone"?C.amber:C.textSub}}>{"Gone now"+(v.gone?" "+v.gone:"")}</button></div>;})():null}</div>:null}</div>;}
 /* Exported for scripts/oneoff/probe-consensus-outage-copy.mjs, which renders it directly: it is
    the one surface here that takes the outage flag as a PROP, so it can be driven without a live
    query. Same reason seasonShort and campingGate are exported. */
@@ -2795,10 +2791,6 @@ const PIN_GLYPHS={
 /* A grade marker is its TEXT on the photo ("5.10-" beside the pitch), not an icon: the climber
    reads the grade straight off the rock, as on a printed topo. Bold white with a dark halo so it
    reads on snow and on shadowed rock alike. */
-function GradeTag({text,size,on,style}){
-  return <span aria-hidden="true" style={Object.assign({display:"inline-block",whiteSpace:"nowrap",fontSize:size||12,fontWeight:800,lineHeight:1.1,color:C.onSolid,padding:"1px 3px",borderRadius:4,
-    textShadow:"0 0 2px #000,0 0 3px #000,1px 1px 1px #000",background:on?"rgba(59,137,247,0.45)":"transparent",outline:on?"1.5px solid #fff":"none",pointerEvents:"none"},style||{})}>{text||"?"}</span>;
-}
 function PinIcon({cat,size,on}){
   var sz=size||18;
   if(cat==="grade")return <GradeTag text="5.9" size={Math.max(10,Math.round(sz*0.62))} on={on}/>;
@@ -2838,9 +2830,6 @@ const TOPO_IMG={position:"absolute",inset:0,width:"100%",height:"100%",objectFit
 /* The number a marker carries on the photo AND in the key beside it. Three belay stations on
    one line are three identical icons; without a shared number, a note ("2 bolts, chains") in
    the key cannot be matched to the station it describes. */
-function PinNum({n,style}){
-  return <span aria-hidden="true" style={Object.assign({display:"inline-flex",alignItems:"center",justifyContent:"center",minWidth:14,height:14,padding:"0 3px",borderRadius:7,background:"#111",color:C.onSolid,border:"1px solid #fff",fontSize:9,fontWeight:800,lineHeight:1,boxSizing:"border-box",pointerEvents:"none"},style||{})}>{n}</span>;
-}
 /* Every icon and what it means, so a climber reading a topo never has to guess one. */
 function TopoPinLegend({style}){
   return <div role="list" aria-label="Topo marker key" style={Object.assign({display:"flex",flexWrap:"wrap",gap:"6px 12px"},style||{})}>{[["Route line",TOPO_RED],["Variation",TOPO_VAR]].map(function(l){return <span key={l[0]} role="listitem" style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,color:C.textSub}}><TopoSwatch color={l[1]} dashed={l[1]===TOPO_VAR}/>{l[0]}</span>;})}{PIN_CATEGORIES.map(function(c){return <span key={c[0]} role="listitem" style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,color:C.textSub}}><PinIcon cat={c[0]} size={16}/>{c[1]}</span>;})}</div>;
@@ -2860,7 +2849,6 @@ function TopoStroke({points,color,w,dashed}){
   var d=topoPath(points);var sw=w||2.5;
   return <><path d={d} fill="none" stroke="rgba(0,0,0,0.75)" strokeWidth={sw*1.8} strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke"/><path d={d} fill="none" stroke={color} strokeWidth={sw} strokeDasharray={dashed?(sw*2.6)+" "+(sw*1.6):undefined} strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke"/></>;
 }
-function TopoSwatch({color,dashed}){return <span aria-hidden="true" style={{display:"inline-block",width:16,height:4,borderRadius:2,background:dashed?"repeating-linear-gradient(90deg,"+color+" 0 5px,transparent 5px 8px)":color,boxShadow:"0 0 0 1px rgba(0,0,0,0.6)",flexShrink:0}}/>;}
 /* The tag a variation wears on the photo — "V", or V1, V2… when there are several — so its row in
    the key ("V1 — 5.10a direct start") can be matched to the line it describes, as the pin numbers
    are. It sits on the line's middle vertex, where a variation is most clearly apart from the route. */
@@ -3452,14 +3440,9 @@ export function TopoSection({route}){
    width, which is the drift documented on TopoLineOverlay. */
 /* A photo or topo image that reads the ON-DEVICE copy when the climber saved one (lib/offline.js
    `media`), else the URL. Same props as <img>; only `src` is swapped. */
-function MediaImg(props){const {thumb,...rest}=props;const src=useMediaSrc(props.src);return <img {...rest} src={thumb&&src===props.src?photoThumb(src,thumb):src}/>;}/* thumb: draw a stored photo at that CSS width (lib/photoThumb.js); a saved offline copy is drawn as it is */
 /* SAVE ONE PHOTO OR TOPO TO THIS DEVICE (owner decision 2026-10-07: images are never part of a state
    download — each is chosen by hand). The label flips only once the bytes are stored, never before,
    and a failure is shown here beside the button rather than swallowed. */
-function SaveOfflineChip({entry,style}){const q=useSavedMedia();const t=useToggleSavedMedia();const [busy,setBusy]=useState(false);const [err,setErr]=useState(null);
-  const saved=!!(q.data||[]).find(function(m){return m.url===entry.url;});
-  const go=function(){if(busy)return;setBusy(true);setErr(null);(saved?t.remove(entry.url):t.save(entry)).catch(function(e){setErr((e&&e.message)||"Couldn’t save it — check your connection");}).finally(function(){setBusy(false);});};
-  return <div style={style}><button onClick={go} disabled={busy} aria-pressed={saved} aria-label={saved?"Saved offline on this device — remove it":"Save offline on this device"} style={{padding:"6px 11px",borderRadius:8,border:"1px solid "+(saved?C.blueDim:C.border),background:saved?C.blueBg:C.surface,color:saved?C.onSolid:C.text,fontSize:12,fontWeight:700,cursor:busy?"default":"pointer"}}>{busy?(saved?"Removing…":"Saving…"):saved?"✓ Saved offline":"Save offline"}</button>{saved&&!busy?<span style={{fontSize:11.5,color:C.textMuted,marginLeft:8}}>{"Opens with no signal · tap to remove"}</span>:null}{err?<div role="alert" style={{fontSize:11.5,color:C.red,marginTop:5}}>{err}</div>:null}</div>;}
 function TopoThumb({p,onOpen}){
   const [ar,arOnLoad]=useImgAspect();
   const canonical=p.lines[0];
@@ -3490,19 +3473,6 @@ function TopoCaption({text}){
 /* The uploader's caption box. Saves on an explicit tap and says what happened, like PhotoDescribeBox:
    "Caption saved" only once the write resolved. A plain text area (useRichTextareas grows it) with no
    maxLength, and the database column has no cap either. */
-function TopoCaptionBox({initial,onSave,style}){
-  const [v,setV]=useState(initial||"");const [busy,setBusy]=useState(false);const [msg,setMsg]=useState(null);
-  const dirty=String(v||"").trim()!==String(initial||"").trim();
-  return <div style={Object.assign({background:C.surface,border:"1px solid "+C.border,borderRadius:12,padding:"10px 12px"},style||{})}>
-    <label style={{display:"block",fontSize:12,fontWeight:700,color:C.text,marginBottom:3}}>{"Caption"}<span style={{fontWeight:400,color:C.textMuted}}>{" — everyone who opens this topo reads it"}</span>
-      <textarea aria-label="Caption — everyone who opens this topo reads it" value={v} onChange={function(e){setV(e.target.value);setMsg(null);}} rows={3} placeholder="Add context — which face this is, when you took it, where the line goes or what to watch for" style={{display:"block",width:"100%",boxSizing:"border-box",marginTop:6,padding:"8px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:13,fontWeight:400,lineHeight:1.45,fontFamily:"inherit",resize:"vertical",outline:"none"}}/>
-    </label>
-    <div style={{display:"flex",alignItems:"center",gap:10,marginTop:8}}>
-      <button disabled={!dirty||busy} onClick={function(){setBusy(true);setMsg(null);Promise.resolve(onSave(String(v||"").trim())).then(function(){setMsg({ok:true,t:"Caption saved"});},function(e){setMsg({ok:false,t:"Couldn’t save the caption — "+((e&&e.message)||"try again")});}).finally(function(){setBusy(false);});}} style={{padding:"7px 14px",borderRadius:8,border:"none",background:dirty&&!busy?C.blueSolid:C.border,color:dirty&&!busy?C.onSolid:C.textSub,fontSize:12.5,fontWeight:700,cursor:dirty&&!busy?"pointer":"default"}}>{busy?"Saving…":"Save caption"}</button>
-      {msg?<span role={msg.ok?"status":"alert"} style={{fontSize:12,color:msg.ok?C.green:C.red,lineHeight:1.4}}>{msg.t}</span>:null}
-    </div>
-  </div>;
-}
 /* THE ENLARGED TOPO ZOOMS AND PANS (owner's note, 2026-10-28: "Will uploaded topos be scrollable?").
    It used to be a still image capped at 58vh: a tall wall photo of a multi-pitch line shrank until
    the belays could not be read, and nothing let a climber look closer. Climbers complain of the
