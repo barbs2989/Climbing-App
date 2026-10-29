@@ -21,6 +21,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
   objectives only), By Area (listing-based; the region dropdown plus a search box for any crag, canyon or range inside the chosen
   state), By Route (a crag route redirects to its area), Anyone. By Route can pick from a search, your saved objectives,
   recently opened routes (the 3 newest; up to 2 more behind a "Show N more" toggle), crew routes, or a country > state > crag drill-down.
+- **A crew shared by link** (0381, owner, Gora audit 2026-10-28): `?crew=<share token>` opens Find partners → Join a crew with that crew pinned on top (`CrewShareCard`, `src/components/CrewShareCard.tsx`; not a dialog). It shows the place, the day, "3 of 4 · 1 spot left", and FIRST NAMES ONLY of members who show their name (`crew_share_preview`, callable signed out; everyone else is counted). *Ask to join* files the ordinary pending request (`addCrewMember` as `dbAddCrewMember`); a guest gets *Sign up to join*, and the link is kept on the device (`cm_crew_share`) until joined or dismissed. A link whose crew date has passed, or that the organiser turned off, says so; a failed read never reads as a dead link.
 - **Climbers on ClimbMatch** (signed-in + DB): real, listed climbers (`profiles.discoverable`, on by default since 0195;
   opt out in Settings). Distance chips: Near my zip / Near me now (browser geolocation, rounded to 2 decimals) / Anywhere,
   with a 10-500 mi radius slider (steps of 5, debounced 400 ms). Others see a **distance only**, never a zip.
