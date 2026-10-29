@@ -377,6 +377,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     Section 6 of `check:track-caveat` asserts the drop, the keep, and that a route with no summit pin
     keeps its track. The old on-screen caveats for "stops short of the summit" and "different way up"
     now assert the track is NOT drawn, because the owner's rule replaces the caveat with no track.
+  - **Enough points to be a recording (`MIN_RECORDED_PTS` = 10, 2026-10-29).** Measured over the 425
+    drawn tracks: 74 had 2-9 points at a median spacing of 1,392 m, two had 13 and 15, and the 314 of
+    100+ points sit 17 m apart (`scripts/oneoff/gpx-sparse-measure.mjs`). The earlier note that "the
+    spacing distribution is continuous" was measured over captioned and uncaptioned lines together;
+    by point count the void is between 9 and 13. `recordedTrackPts` refuses a line under the floor, so
+    `trackStubCaveat`'s two-point / three-point sentence could no longer render and was deleted; its
+    placeholder sentence (a line under 500 m across) still fires for a line of 10+ points.
+    `check:track-caveat` section 5 now pins both sides of the floor (a 2-point chord and a 9-point
+    line are no track, the dense fixture is kept) and renders the placeholder on a 10-point stub;
+    fixtures SHORT/TOP were densified to 13 points. `check:gpx-caveats` sections 3, 4 and 6 moved from
+    the chord to a PARTIAL fixture (a real line missing the walk in), which still exports a caption.
+  - **Ascent and descent (`splitAtSummit`, 2026-10-29).** `GPXMap` draws the way up wide blue and the
+    way down thin orange over it, NOT dashed: the `dashArray` ban in section 6 stands, since a dashed
+    line on this map meant one built from the pins.
   - **Is it a recording? asks the VERTEX half alone (`lineIsBuiltFromPins`, 2026-10-28).**
     `recordedTrackPts` used `trackIsJustTheWaypoints`, whose PIN half (most pins sit on the line)
     exists for the CAPTION. Adding two camp pins off a stored trailhead-to-summit chord failed that

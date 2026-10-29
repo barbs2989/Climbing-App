@@ -1,0 +1,2082 @@
+{
+ "cands": [
+  {
+   "id": "wa_accendo_lunae_lib_west_face_var",
+   "name": "Accendo Lunae (LiB/West Face Var.)",
+   "set": "B",
+   "variants": 0,
+   "judged": 1,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Colchuck Lake (outlet, north end) — camp and last water",
+     "type": "Campsite",
+     "offM": 604,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": []
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "name": "Rampart Ridge Scramble",
+   "set": "B",
+   "variants": 1,
+   "judged": 4,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Kachess Campground, I-90 exit 62",
+     "type": "Campsite",
+     "offM": 5695,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin",
+    "Kachess Campground, I-90 exit 62"
+   ]
+  },
+  {
+   "id": "wa_amphitheater_mountain_north_ridge",
+   "name": "North Ridge",
+   "set": "B",
+   "variants": 2,
+   "judged": 1,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Cathedral Pass (foot of the North Ridge)",
+     "type": "Junction",
+     "offM": 918,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Upper Cathedral Lake basin",
+    "Cathedral Pass benches and the tarn slabs",
+    "Andrews Pass"
+   ]
+  },
+  {
+   "id": "wa_baldy_standard",
+   "name": "Standard Route",
+   "set": "B",
+   "variants": 1,
+   "judged": 6,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Mueller Creek crossing",
+     "type": "Water",
+     "offM": 719,
+     "tolM": 400,
+     "off": true
+    }
+   ],
+   "bivyNames": []
+  },
+  {
+   "id": "wa_bonanza_peak_mary_green_glacier",
+   "name": "Mary Green Glacier (Standard Route)",
+   "set": "B",
+   "variants": 1,
+   "judged": 4,
+   "off": [
+    {
+     "i": 4,
+     "wp": "Mary Green Glacier, north edge",
+     "type": "Junction",
+     "offM": 656,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Holden Pass",
+    "Holden Lake",
+    "Holden Village ballfield campground",
+    "Bivy below the waterfall slabs",
+    "Holden Pass high camp"
+   ]
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "name": "Northeast Buttress",
+   "set": "B",
+   "variants": 1,
+   "judged": 6,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Railroad Creek Trail / Holden Lake Trail junction",
+     "type": "Junction",
+     "offM": 1099,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 3,
+     "wp": "Holden Pass high camp",
+     "type": "Campsite",
+     "offM": 844,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Holden Pass and the slab bivies above",
+    "Holden Lake",
+    "Holden Village",
+    "Holden Ballpark Campground",
+    "Holden Pass high camp"
+   ]
+  },
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "name": "South Ridge",
+   "set": "A",
+   "variants": 2,
+   "judged": 3,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Chiwawa River crossing",
+     "type": "Water",
+     "offM": 517,
+     "tolM": 400,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Buck Creek Pass and the High Pass camps",
+    "Buck Creek Pass"
+   ]
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "name": "North Face",
+   "set": "A",
+   "variants": 2,
+   "judged": 3,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Lone Fir Campground, SR 20",
+     "type": "Campsite",
+     "offM": 3047,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Burgundy Col high camp — west side, the Wine Spires",
+    "Burgundy Creek bench camp — west side",
+    "Lone Fir Campground, SR 20",
+    "Upper scree benches below Burgundy Col — west side"
+   ]
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "name": "North Face",
+   "set": "A",
+   "variants": 1,
+   "judged": 8,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Tinkham Campground, I-90 exit 42",
+     "type": "Campsite",
+     "offM": 9756,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 1,
+     "wp": "Denny Creek Campground, I-90 exit 47",
+     "type": "Campsite",
+     "offM": 4155,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Denny Creek Campground, I-90 exit 47",
+    "Tinkham Campground, I-90 exit 42",
+    "Source Lake basin, Alpental valley",
+    "Chair Peak basin snow camp"
+   ]
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "name": "Northeast Buttress",
+   "set": "B",
+   "variants": 2,
+   "judged": 7,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Tinkham Campground, I-90 exit 42",
+     "type": "Campsite",
+     "offM": 9857,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 1,
+     "wp": "Denny Creek Campground, I-90 exit 47",
+     "type": "Campsite",
+     "offM": 4048,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Denny Creek Campground, I-90 exit 47",
+    "Tinkham Campground, I-90 exit 42",
+    "Source Lake basin, Alpental valley",
+    "Chair Peak basin snow camp"
+   ]
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "name": "West Face",
+   "set": "B",
+   "variants": 2,
+   "judged": 4,
+   "off": [
+    {
+     "i": 2,
+     "wp": "Colchuck Lake",
+     "type": "Water",
+     "offM": 617,
+     "tolM": 400,
+     "off": true
+    }
+   ],
+   "bivyNames": []
+  },
+  {
+   "id": "wa_east_mcmillan_spire_west_ridge",
+   "name": "West Ridge / Southwest Face",
+   "set": "B",
+   "variants": 1,
+   "judged": 5,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Goodell Creek Campground, roadhead staging",
+     "type": "Campsite",
+     "offM": 1062,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Terror Basin camp",
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing"
+   ]
+  },
+  {
+   "id": "wa_east_slope",
+   "name": "East Slope",
+   "set": "B",
+   "variants": 1,
+   "judged": 5,
+   "off": [
+    {
+     "i": 3,
+     "wp": "Leave the trail for Lucky Ridge",
+     "type": "Junction",
+     "offM": 349,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 6,
+     "wp": "Lucky Pass (Primus-Tricouni col)",
+     "type": "Junction",
+     "offM": 608,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Borealis Glacier toe / Borealis Lake high camp",
+    "Colonial Creek South Campground, Thunder Creek trailhead",
+    "McAllister Hiker Camp, Thunder Creek trail",
+    "Lucky Pass bivy, Primus-Tricouni col",
+    "McAllister Camp",
+    "Bivy at toe of Borealis Glacier"
+   ]
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "name": "South Gully",
+   "set": "B",
+   "variants": 1,
+   "judged": 4,
+   "off": [
+    {
+     "i": 3,
+     "wp": "Core Enchantments",
+     "type": "Campsite",
+     "offM": 524,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Perfection Lake and Inspiration Lake basin camps",
+    "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+    "Colchuck Lake designated campsites",
+    "Core Enchantments"
+   ]
+  },
+  {
+   "id": "wa_full_tilt_tempest_wall_free_version",
+   "name": "Full Tilt (Tempest Wall Free Version)",
+   "set": "B",
+   "variants": 0,
+   "judged": 1,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Colchuck Lake (north end)",
+     "type": "Water",
+     "offM": 604,
+     "tolM": 400,
+     "off": true
+    }
+   ],
+   "bivyNames": []
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "name": "South Slopes",
+   "set": "B",
+   "variants": 1,
+   "judged": 4,
+   "off": [
+    {
+     "i": 5,
+     "wp": "Connecting saddle below Point 8,487",
+     "type": "Junction",
+     "offM": 797,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Gardner Meadows, Wolf Creek trail",
+    "High basin camp above Gardner Meadows",
+    "Gardner Meadows"
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "name": "Disappointment Peak Cleaver (Gerdine Ridge / Cool Glacier)",
+   "set": "B",
+   "variants": 1,
+   "judged": 6,
+   "off": [
+    {
+     "i": 3,
+     "wp": "Foam Creek Trail / ridge saddle crossing",
+     "type": "Junction",
+     "offM": 675,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 4,
+     "wp": "White Chuck Glacier basin crossing",
+     "type": "Hazard",
+     "offM": 966,
+     "tolM": 600,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Glacier Gap",
+    "Mackinaw Shelter camp, North Fork Sauk",
+    "White Pass and the Foam Creek benches under White Mountain",
+    "Mackinaw Shelter (former shelter site)"
+   ]
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "name": "East Ridge Scramble",
+   "set": "A",
+   "variants": 1,
+   "judged": 3,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Beckler River Campground",
+     "type": "Campsite",
+     "offM": 5385,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Beckler River Campground"
+   ]
+  },
+  {
+   "id": "wa_hibox_mountain_standard",
+   "name": "Standard Scramble",
+   "set": "A",
+   "variants": 1,
+   "judged": 1,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Kachess Campground, I-90 exit 62",
+     "type": "Campsite",
+     "offM": 5688,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Rachel Lake designated sites",
+    "Kachess Campground, I-90 exit 62"
+   ]
+  },
+  {
+   "id": "wa_horseshoe_peak_scramble",
+   "name": "Standard Route",
+   "set": "A",
+   "variants": 1,
+   "judged": 5,
+   "off": [
+    {
+     "i": 3,
+     "wp": "Secret Gully descent off Sahale Arm",
+     "type": "Hazard",
+     "offM": 959,
+     "tolM": 600,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Buckner cross-country zone bivy",
+    "Sahale Glacier Camp",
+    "Pelton Basin Camp",
+    "Basin Creek Camp",
+    "Doubtful Lake Camp"
+   ]
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "name": "South Ridge",
+   "set": "B",
+   "variants": 1,
+   "judged": 5,
+   "off": [
+    {
+     "i": 2,
+     "wp": "Pelton Basin Camp",
+     "type": "Campsite",
+     "offM": 645,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Kool-Aid Lake"
+   ]
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "name": "West Ridge",
+   "set": "B",
+   "variants": 1,
+   "judged": 6,
+   "off": [
+    {
+     "i": 4,
+     "wp": "Crescent Creek Basin camp",
+     "type": "Campsite",
+     "offM": 929,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Terror Basin camp",
+    "Crescent Creek Basin camp"
+   ]
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "name": "Southwest Slopes / Gully",
+   "set": "B",
+   "variants": 1,
+   "judged": 7,
+   "off": [
+    {
+     "i": 4,
+     "wp": "Ragged Ridge Camp",
+     "type": "Campsite",
+     "offM": 509,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 6,
+     "wp": "7,400 ft bench",
+     "type": "Junction",
+     "offM": 636,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Mesahchie basin, below the col",
+    "Easy Pass trailhead, SR 20",
+    "Ragged Ridge crest bivy, south of Mesahchie Col",
+    "Fisher Camp, Fisher Creek basin",
+    "Ragged Ridge Camp"
+   ]
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "name": "Standard Scramble",
+   "set": "B",
+   "variants": 2,
+   "judged": 5,
+   "off": [
+    {
+     "i": 2,
+     "wp": "Abandoned Pistol Ridge trail split",
+     "type": "Junction",
+     "offM": 689,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Lake of the Woods and the Eureka Falls camp",
+    "Lake of the Woods"
+   ]
+  },
+  {
+   "id": "wa_leche_la_vaca",
+   "name": "Leche La Vaca",
+   "set": "B",
+   "variants": 0,
+   "judged": 1,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Colchuck Lake — last reliable water",
+     "type": "Water",
+     "offM": 604,
+     "tolM": 400,
+     "off": true
+    }
+   ],
+   "bivyNames": []
+  },
+  {
+   "id": "wa_let_it_burn",
+   "name": "Let it Burn",
+   "set": "B",
+   "variants": 2,
+   "judged": 1,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Colchuck Lake (outlet / north dam crossing)",
+     "type": "Junction",
+     "offM": 604,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": []
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "name": "Southwest Route",
+   "set": "B",
+   "variants": 0,
+   "judged": 3,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Goodell Creek Campground, roadhead staging",
+     "type": "Campsite",
+     "offM": 1053,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Terror Basin camp",
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing"
+   ]
+  },
+  {
+   "id": "wa_merchant_peak_south_route",
+   "name": "South Route",
+   "set": "B",
+   "variants": 1,
+   "judged": 6,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Money Creek Campground",
+     "type": "Campsite",
+     "offM": 6950,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Money Creek Campground"
+   ]
+  },
+  {
+   "id": "wa_milk_n_honey",
+   "name": "Milk n' Honey",
+   "set": "B",
+   "variants": 0,
+   "judged": 1,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Colchuck Lake outlet / north end",
+     "type": "Junction",
+     "offM": 604,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": []
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "name": "Lake Ann Approach Scramble",
+   "set": "B",
+   "variants": 1,
+   "judged": 6,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Silver Fir Campground",
+     "type": "Campsite",
+     "offM": 6120,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 4,
+     "wp": "4,900-ft saddle NW of Lake Ann",
+     "type": "Junction",
+     "offM": 771,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Lake Ann",
+    "Silver Fir Campground"
+   ]
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "name": "Standard Route (Southeast Slopes)",
+   "set": "B",
+   "variants": 3,
+   "judged": 3,
+   "off": [
+    {
+     "i": 2,
+     "wp": "Cameron Creek meadow crossings",
+     "type": "Water",
+     "offM": 902,
+     "tolM": 400,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Cameron Basin",
+    "Cameron Basin camp"
+   ]
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "name": "South Route",
+   "set": "B",
+   "variants": 1,
+   "judged": 1,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Merritt Lake",
+     "type": "Campsite",
+     "offM": 531,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Merritt Lake",
+    "Nason Creek Campground and the Lake Wenatchee drive-in camps"
+   ]
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "name": "West Ridge",
+   "set": "B",
+   "variants": 1,
+   "judged": 4,
+   "off": [
+    {
+     "i": 4,
+     "wp": "Snow Dome high camp",
+     "type": "Campsite",
+     "offM": 576,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Glacier Meadows — the standard Blue Glacier base camp",
+    "Lewis Meadows Camp, Hoh River trail",
+    "Elk Lake Camp, Hoh River trail",
+    "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier",
+    "Snow Dome high camp"
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "name": "White Salmon Glacier",
+   "set": "B",
+   "variants": 2,
+   "judged": 4,
+   "off": [
+    {
+     "i": 4,
+     "wp": "Hell's Highway",
+     "type": "Junction",
+     "offM": 967,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Rock outcrop bivy, east edge of the lower White Salmon Glacier",
+    "Fisher Chimneys camps, White Salmon and above Winnie's Slide"
+   ]
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "name": "North Face / North Buttress",
+   "set": "B",
+   "variants": 1,
+   "judged": 3,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Goodell Creek Campground, roadhead staging",
+     "type": "Campsite",
+     "offM": 1060,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Crescent Creek Basin camp",
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench",
+    "Terror Basin bivy"
+   ]
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "name": "Glacier/Scramble Route",
+   "set": "B",
+   "variants": 1,
+   "judged": 6,
+   "off": [
+    {
+     "i": 4,
+     "wp": "Top of Blue Glacier lateral moraine",
+     "type": "Junction",
+     "offM": 1047,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 5,
+     "wp": "Blue Glacier crossing to Snow Dome",
+     "type": "Hazard",
+     "offM": 686,
+     "tolM": 600,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Glacier Meadows — the standard Blue Glacier base camp",
+    "Lewis Meadows Camp, Hoh River trail",
+    "Elk Lake Camp, Hoh River trail",
+    "Elk Lake camp",
+    "Glacier Meadows high camp"
+   ]
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "name": "Standard Scramble (above Lake Cushman)",
+   "set": "B",
+   "variants": 2,
+   "judged": 7,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Big Creek Campground, Lake Cushman",
+     "type": "Campsite",
+     "offM": 3561,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 3,
+     "wp": "Lower meadow",
+     "type": "Junction",
+     "offM": 354,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Big Creek Campground, Lake Cushman"
+   ]
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "name": "South/East Scramble",
+   "set": "B",
+   "variants": 1,
+   "judged": 4,
+   "off": [
+    {
+     "i": 4,
+     "wp": "Watson Lakes basin",
+     "type": "Water",
+     "offM": 627,
+     "tolM": 400,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Watson Lakes designated camps",
+    "Camp on slopes below Mount Watson (~5,400 ft)",
+    "Anderson Creek road end, Watson Lakes trailhead",
+    "Lower Anderson Lake"
+   ]
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "name": "Mount Olympus Traverse (West–Middle–East Peaks)",
+   "set": "B",
+   "variants": 1,
+   "judged": 4,
+   "off": [
+    {
+     "i": 4,
+     "wp": "Snow Dome",
+     "type": "Junction",
+     "offM": 576,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Glacier Meadows — the standard Blue Glacier base camp",
+    "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier",
+    "Lewis Meadows Camp, Hoh River trail",
+    "Elk Lake Camp, Hoh River trail"
+   ]
+  },
+  {
+   "id": "wa_pinnacle_mountain_entiat_scramble",
+   "name": "Standard Scramble",
+   "set": "B",
+   "variants": 2,
+   "judged": 4,
+   "off": [
+    {
+     "i": 3,
+     "wp": "Saska Pass",
+     "type": "Junction",
+     "offM": 315,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "The basin between Emerald and Saska, and Milham Pass",
+    "Cottonwood Camp and the Entiat River road campgrounds",
+    "Fox Camp, North Fork Entiat trail"
+   ]
+  },
+  {
+   "id": "wa_rikki_tikki_tavi",
+   "name": "Rikki Tikki Tavi",
+   "set": "B",
+   "variants": 0,
+   "judged": 1,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Colchuck Lake outlet / north end",
+     "type": "Junction",
+     "offM": 604,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": []
+  },
+  {
+   "id": "wa_sahale_mountain_r1",
+   "name": "Quien Sabe Glacier",
+   "set": "B",
+   "variants": 1,
+   "judged": 5,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Creek crossings through old-growth forest",
+     "type": "Water",
+     "offM": 426,
+     "tolM": 400,
+     "off": true
+    },
+    {
+     "i": 3,
+     "wp": "Boston Basin high camp",
+     "type": "Campsite",
+     "offM": 690,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Boston Basin high camp",
+    "Boston Basin low camp"
+   ]
+  },
+  {
+   "id": "wa_scarface_3",
+   "name": "Scarface",
+   "set": "B",
+   "variants": 0,
+   "judged": 1,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Colchuck Lake outlet / north end",
+     "type": "Junction",
+     "offM": 604,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": []
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "name": "Silver Star Glacier",
+   "set": "B",
+   "variants": 2,
+   "judged": 7,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Lone Fir Campground, SR 20",
+     "type": "Campsite",
+     "offM": 3112,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Burgundy Col high camp — west side, the Wine Spires",
+    "Burgundy Creek bench camp — west side",
+    "Lone Fir Campground, SR 20",
+    "Upper scree benches below Burgundy Col — west side",
+    "Larch bench camp (\"the Bench\")"
+   ]
+  },
+  {
+   "id": "wa_snoqualmie_mountain_standard_route",
+   "name": "Standard Route (Southwest Slopes)",
+   "set": "B",
+   "variants": 1,
+   "judged": 7,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Tinkham Campground, I-90 exit 42",
+     "type": "Campsite",
+     "offM": 11762,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 1,
+     "wp": "Denny Creek Campground, I-90 exit 47",
+     "type": "Campsite",
+     "offM": 4087,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 6,
+     "wp": "Ridge tarn",
+     "type": "Water",
+     "offM": 566,
+     "tolM": 400,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Denny Creek Campground, I-90 exit 47",
+    "Tinkham Campground, I-90 exit 42"
+   ]
+  },
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "name": "Table Mountain Trail (Standard)",
+   "set": "B",
+   "variants": 1,
+   "judged": 1,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Silver Fir Campground",
+     "type": "Campsite",
+     "offM": 6254,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Silver Fir Campground"
+   ]
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "name": "Glacier/Scramble Route",
+   "set": "B",
+   "variants": 1,
+   "judged": 5,
+   "off": [
+    {
+     "i": 3,
+     "wp": "High Pass Trail split off Winchester Mountain Trail",
+     "type": "Junction",
+     "offM": 371,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 5,
+     "wp": "High Pass",
+     "type": "Junction",
+     "offM": 1269,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Twin Lakes basin road-end camp",
+    "High Pass camp",
+    "Twin Lakes Road upper section and the Yellow Aster Butte trailhead pullouts",
+    "Isthmus between the Twin Lakes"
+   ]
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "name": "Ridge Traverse Route",
+   "set": "B",
+   "variants": 1,
+   "judged": 8,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Goodell Creek Campground, roadhead staging",
+     "type": "Campsite",
+     "offM": 1123,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Crescent Creek Basin camp",
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench",
+    "High bivouacs at the western end of the crest",
+    "Terror Creek Basin Camp",
+    "Crescent Creek Basin High Camp"
+   ]
+  },
+  {
+   "id": "wa_the_scoop_2",
+   "name": "The Scoop",
+   "set": "B",
+   "variants": 2,
+   "judged": 1,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Colchuck Lake (outlet / north dam crossing)",
+     "type": "Junction",
+     "offM": 604,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": []
+  },
+  {
+   "id": "wa_the_tempest",
+   "name": "The Tempest",
+   "set": "B",
+   "variants": 1,
+   "judged": 1,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Colchuck Lake (outlet / north dam crossing)",
+     "type": "Junction",
+     "offM": 604,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": []
+  },
+  {
+   "id": "wa_the_tooth_south_face",
+   "name": "South Face (Standard)",
+   "set": "B",
+   "variants": 2,
+   "judged": 8,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Tinkham Campground, I-90 exit 42",
+     "type": "Campsite",
+     "offM": 9696,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 1,
+     "wp": "Denny Creek Campground, I-90 exit 47",
+     "type": "Campsite",
+     "offM": 3866,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Denny Creek Campground, I-90 exit 47",
+    "Tinkham Campground, I-90 exit 42",
+    "Source Lake basin, Alpental valley"
+   ]
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "name": "Standard Scramble",
+   "set": "A",
+   "variants": 1,
+   "judged": 6,
+   "off": [
+    {
+     "i": 2,
+     "wp": "Old mine / end of mining-road tread",
+     "type": "Junction",
+     "offM": 404,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 4,
+     "wp": "Leave Mineral Creek Trail for brush/gully ascent",
+     "type": "Junction",
+     "offM": 417,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Park Lakes Basin"
+   ]
+  },
+  {
+   "id": "wa_treen_peak_scramble",
+   "name": "Standard Scramble",
+   "set": "B",
+   "variants": 1,
+   "judged": 7,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Middle Fork Campground",
+     "type": "Campsite",
+     "offM": 4879,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 2,
+     "wp": "Green Ridge Lake trail fork",
+     "type": "Junction",
+     "offM": 749,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 3,
+     "wp": "Point 4,840' ridge crest",
+     "type": "Junction",
+     "offM": 520,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Upper Garfield Mountain Lake",
+    "Middle Fork Campground",
+    "Green Ridge Lake"
+   ]
+  },
+  {
+   "id": "wa_union_peak_se_route",
+   "name": "Southeast Slopes Scramble",
+   "set": "B",
+   "variants": 1,
+   "judged": 3,
+   "off": [
+    {
+     "i": 2,
+     "wp": "Union Gap - PCT junction",
+     "type": "Junction",
+     "offM": 414,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Smithbrook trailhead and Union Gap"
+   ]
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "name": "Southeast Peak Standard (Home Lake approach)",
+   "set": "B",
+   "variants": 2,
+   "judged": 6,
+   "off": [
+    {
+     "i": 3,
+     "wp": "Home Lake",
+     "type": "Campsite",
+     "offM": 1488,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Home Lake, below Constance Pass — inside the park, and reached from the north",
+    "Boulder Shelter — the last camp outside the national park",
+    "Boulder Shelter",
+    "Home Lake"
+   ]
+  }
+ ],
+ "disagree": [
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "name": "Standard Scramble",
+   "set": "B",
+   "variants": 1,
+   "judged": 4,
+   "off": [
+    {
+     "i": 2,
+     "wp": "Leave-trail point for SE ridge",
+     "type": "Junction",
+     "offM": 345,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 3,
+     "wp": "Creek crossing in burned forest",
+     "type": "Water",
+     "offM": 560,
+     "tolM": 400,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Copper Glance Lake"
+   ]
+  },
+  {
+   "id": "wa_buckskin_mountain_southwest_slopes",
+   "name": "Southwest Slopes",
+   "set": "B",
+   "variants": 1,
+   "judged": 4,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Anthem Creek Trail junction",
+     "type": "Junction",
+     "offM": 1755,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 5,
+     "wp": "Entiat Meadows camp (5,100' clearing)",
+     "type": "Campsite",
+     "offM": 606,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Entiat Meadows camp (5,100' clearing)"
+   ]
+  },
+  {
+   "id": "wa_cardinal_peak_se_slopes",
+   "name": "Southeast Slopes",
+   "set": "B",
+   "variants": 1,
+   "judged": 5,
+   "off": [
+    {
+     "i": 2,
+     "wp": "Fern Lake Trail (#1436) junction",
+     "type": "Junction",
+     "offM": 944,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 3,
+     "wp": "West-side basin camp below Cardinal Peak",
+     "type": "Campsite",
+     "offM": 742,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 5,
+     "wp": "Saddle between north and middle summits",
+     "type": "Junction",
+     "offM": 341,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "West-side basin camp below Cardinal Peak",
+    "The basin between Emerald and Saska, and Milham Pass",
+    "Cottonwood Camp and the Entiat River road campgrounds",
+    "Fox Camp, North Fork Entiat trail"
+   ]
+  },
+  {
+   "id": "wa_chockstone_route",
+   "name": "Chockstone Route",
+   "set": "B",
+   "variants": 1,
+   "judged": 2,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Klipchuck Campground",
+     "type": "Campsite",
+     "offM": 13924,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 1,
+     "wp": "Lone Fir Campground",
+     "type": "Campsite",
+     "offM": 7722,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Blue Lake trailhead roadside bivy",
+    "Lone Fir Campground",
+    "Klipchuck Campground",
+    "Liberty Bell basin dispersed sites"
+   ]
+  },
+  {
+   "id": "wa_colonial_peak_west_ridge",
+   "name": "West Ridge / Colonial Glacier",
+   "set": "B",
+   "variants": 1,
+   "judged": 4,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Pyramid Lake",
+     "type": "Water",
+     "offM": 1032,
+     "tolM": 400,
+     "off": true
+    },
+    {
+     "i": 3,
+     "wp": "Basin camp below Colonial Glacier",
+     "type": "Campsite",
+     "offM": 1230,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Basin camp below Colonial Glacier",
+    "Colonial Basin bench camps, below the Pyramid-Colonial col"
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "name": "Northwest Couloir / Eldorado Glacier",
+   "set": "B",
+   "variants": 1,
+   "judged": 3,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Marble Creek Campground, Cascade River Road",
+     "type": "Campsite",
+     "offM": 10310,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 3,
+     "wp": "Base of northwest couloir",
+     "type": "Junction",
+     "offM": 498,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Eldorado-Inspiration snow arm high camp",
+    "Roush Creek Basin camp",
+    "Marble Creek Campground, Cascade River Road",
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp",
+    "Eldorado / Inspiration Glacier camp"
+   ]
+  },
+  {
+   "id": "wa_foggy_peak_scramble",
+   "name": "Standard Scramble",
+   "set": "B",
+   "variants": 1,
+   "judged": 7,
+   "off": [
+    {
+     "i": 2,
+     "wp": "Monte Cristo Townsite / Glacier Basin Trailhead",
+     "type": "Junction",
+     "offM": 326,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 4,
+     "wp": "Concentrator Ruins / Waterfalls",
+     "type": "Water",
+     "offM": 676,
+     "tolM": 400,
+     "off": true
+    },
+    {
+     "i": 5,
+     "wp": "Glacier Creek Crossing",
+     "type": "Hazard",
+     "offM": 1098,
+     "tolM": 600,
+     "off": true
+    },
+    {
+     "i": 6,
+     "wp": "Top of Timbered Ridge / Start of Traverse",
+     "type": "Junction",
+     "offM": 691,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Monte Cristo townsite campground, four miles up the closed road",
+    "Glacier Basin — Ray's Knoll and Mystery Hill",
+    "Barlow Pass roadhead"
+   ]
+  },
+  {
+   "id": "wa_forbidden_peak_east_ledges",
+   "name": "East Ledges",
+   "set": "B",
+   "variants": 0,
+   "judged": 3,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Boston Basin lower camp",
+     "type": "Campsite",
+     "offM": 1907,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 2,
+     "wp": "Boston Basin upper (high) camp",
+     "type": "Campsite",
+     "offM": 1183,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Boston Basin upper (high) camp",
+    "Boston Basin lower camp",
+    "Informal snow and rock bivouacs above the basins"
+   ]
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "name": "Northeast Face",
+   "set": "B",
+   "variants": 1,
+   "judged": 3,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Boston Basin lower camp",
+     "type": "Campsite",
+     "offM": 733,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 3,
+     "wp": "Sharkfin Col",
+     "type": "Junction",
+     "offM": 1294,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Boston Basin upper (high) camp",
+    "Boston Basin lower camp",
+    "Informal snow and rock bivouacs above the basins",
+    "Boston Basin High Camp"
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "name": "Wilkes-Booth (Northwest Face)",
+   "set": "B",
+   "variants": 1,
+   "judged": 6,
+   "off": [
+    {
+     "i": 2,
+     "wp": "Kulshan Cabin site",
+     "type": "Campsite",
+     "offM": 1196,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 3,
+     "wp": "Hogsback moraine camp",
+     "type": "Junction",
+     "offM": 873,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 5,
+     "wp": "Black Buttes basin camp",
+     "type": "Campsite",
+     "offM": 557,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Black Buttes basin camp"
+   ]
+  },
+  {
+   "id": "wa_monument_peak_pasayten_scramble",
+   "name": "Standard Scramble",
+   "set": "B",
+   "variants": 2,
+   "judged": 6,
+   "off": [
+    {
+     "i": 4,
+     "wp": "Lake Mountain South Ridge Saddle",
+     "type": "Junction",
+     "offM": 420,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 5,
+     "wp": "Lower Monument Basin",
+     "type": "Campsite",
+     "offM": 683,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 6,
+     "wp": "South Ridge Crest (Ramp System)",
+     "type": "Junction",
+     "offM": 372,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Lake of the Woods and the Eureka Falls camp",
+    "Lake of the Woods"
+   ]
+  },
+  {
+   "id": "wa_mount_despair_east_route",
+   "name": "East Route / Standard",
+   "set": "B",
+   "variants": 1,
+   "judged": 4,
+   "off": [
+    {
+     "i": 4,
+     "wp": "Triumph Pass",
+     "type": "Junction",
+     "offM": 690,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 6,
+     "wp": "Upper Despair Lake",
+     "type": "Campsite",
+     "offM": 1060,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Thornton Pass (camp knob)",
+    "Upper Despair Lake"
+   ]
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "name": "Standard Route",
+   "set": "B",
+   "variants": 1,
+   "judged": 7,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Sol Duc Hot Springs Resort campground",
+     "type": "Campsite",
+     "offM": 2625,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 3,
+     "wp": "Appleton Pass Trail junction",
+     "type": "Junction",
+     "offM": 1270,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 4,
+     "wp": "Appleton Pass",
+     "type": "Junction",
+     "offM": 1963,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 6,
+     "wp": "Boston Charlie's Camp",
+     "type": "Campsite",
+     "offM": 1196,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Eleven Bull Basin and the Cream Lake cross-country camps",
+    "Cat Basin",
+    "Sol Duc Hot Springs Resort campground",
+    "Deer Lake",
+    "Heart Lake",
+    "Boston Charlie's Camp"
+   ]
+  },
+  {
+   "id": "wa_mount_herman_standard_scramble",
+   "name": "Standard Scramble (South/East Slopes)",
+   "set": "A",
+   "variants": 1,
+   "judged": 6,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Silver Fir Campground",
+     "type": "Campsite",
+     "offM": 4285,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 3,
+     "wp": "Chain Lakes Trail — switchbacks toward Herman Saddle",
+     "type": "Junction",
+     "offM": 384,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 4,
+     "wp": "Herman Saddle",
+     "type": "Junction",
+     "offM": 325,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Silver Fir Campground"
+   ]
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "name": "Standard Route",
+   "set": "B",
+   "variants": 1,
+   "judged": 4,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Royal Basin Trail junction",
+     "type": "Junction",
+     "offM": 318,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 4,
+     "wp": "Upper Royal Basin",
+     "type": "Junction",
+     "offM": 1022,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 5,
+     "wp": "Clark-Johnson col",
+     "type": "Junction",
+     "offM": 322,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Upper Royal Basin",
+    "Royal Lake"
+   ]
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "name": "North Face",
+   "set": "B",
+   "variants": 2,
+   "judged": 2,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Leroy Creek Crossing",
+     "type": "Water",
+     "offM": 1076,
+     "tolM": 400,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Leroy Basin",
+    "Upper Ice Lake"
+   ]
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "name": "South Slopes",
+   "set": "A",
+   "variants": 1,
+   "judged": 3,
+   "off": [
+    {
+     "i": 2,
+     "wp": "Standup Creek Trail junction",
+     "type": "Junction",
+     "offM": 722,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 3,
+     "wp": "Upper meadow camp",
+     "type": "Campsite",
+     "offM": 1288,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 4,
+     "wp": "Navaho Pass",
+     "type": "Junction",
+     "offM": 1182,
+     "tolM": 300,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Stafford Creek meadow camps below Navaho Pass"
+   ]
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "name": "North Face (Beckey-Schmidtke Route)",
+   "set": "B",
+   "variants": 1,
+   "judged": 2,
+   "off": [
+    {
+     "i": 3,
+     "wp": "Moraine bivy at ~5,900 ft",
+     "type": "Campsite",
+     "offM": 1187,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+    "Nooksack Cirque river bottom, below the tower",
+    "Moraine bivy at ~5,900 ft"
+   ]
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "name": "NW Ridge",
+   "set": "B",
+   "variants": 1,
+   "judged": 2,
+   "off": [
+    {
+     "i": 2,
+     "wp": "Colchuck Lake",
+     "type": "Water",
+     "offM": 617,
+     "tolM": 400,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Colchuck Lake designated campsites",
+    "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+   ]
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "name": "Southwest Rib",
+   "set": "B",
+   "variants": 1,
+   "judged": 2,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Klipchuck Campground",
+     "type": "Campsite",
+     "offM": 14081,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 1,
+     "wp": "Lone Fir Campground",
+     "type": "Campsite",
+     "offM": 7289,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Blue Lake trailhead roadside bivy",
+    "Lone Fir Campground",
+    "Klipchuck Campground",
+    "Liberty Bell basin dispersed sites"
+   ]
+  },
+  {
+   "id": "wa_sperry_peak_standard",
+   "name": "Standard Scramble",
+   "set": "B",
+   "variants": 1,
+   "judged": 2,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Red Bridge Campground, Mountain Loop Highway",
+     "type": "Campsite",
+     "offM": 12070,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Sunrise Mine road end — the Sperry and Vesper Creek staging point",
+    "Red Bridge Campground, Mountain Loop Highway"
+   ]
+  },
+  {
+   "id": "wa_tenpeak_mountain_southeast",
+   "name": "Southeast Route / Standard",
+   "set": "B",
+   "variants": 2,
+   "judged": 5,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Boulder Creek crossing / Boulder Pass Trail junction",
+     "type": "Junction",
+     "offM": 1528,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 2,
+     "wp": "Old camp at Thunder Creek",
+     "type": "Campsite",
+     "offM": 1401,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 4,
+     "wp": "Thunder Basin high camp",
+     "type": "Campsite",
+     "offM": 1687,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Thunder Basin high camp"
+   ]
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "name": "South Slopes",
+   "set": "B",
+   "variants": 2,
+   "judged": 2,
+   "off": [
+    {
+     "i": 0,
+     "wp": "Cottonwood Camp",
+     "type": "Campsite",
+     "offM": 1580,
+     "tolM": 500,
+     "off": true
+    },
+    {
+     "i": 2,
+     "wp": "Trapper Lake",
+     "type": "Campsite",
+     "offM": 584,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Trapper Lake",
+    "Cottonwood Camp"
+   ]
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "name": "Windy Peak Trail (Standard Walk-up)",
+   "set": "B",
+   "variants": 3,
+   "judged": 3,
+   "off": [
+    {
+     "i": 1,
+     "wp": "Pasayten Wilderness Boundary",
+     "type": "Junction",
+     "offM": 607,
+     "tolM": 300,
+     "off": true
+    },
+    {
+     "i": 2,
+     "wp": "Two Bear Camp",
+     "type": "Campsite",
+     "offM": 837,
+     "tolM": 500,
+     "off": true
+    }
+   ],
+   "bivyNames": [
+    "Two Bear Camp"
+   ]
+  }
+ ]
+}
