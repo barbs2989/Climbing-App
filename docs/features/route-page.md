@@ -187,6 +187,8 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `lib/shortDist.js` | `_shortDist` — a short distance in the climber's units (moved out of RouteDetail.jsx, PR58) |
 | `lib/avyCenter.js` | `avyCenterFor` — which avalanche centre covers a route (moved out of RouteDetail.jsx, PR58) |
 | `lib/topoEmptyCopy.js` | `topoEmptyCopy` — what the topo box says when there is none, or the read failed (re-exported by RouteDetail.jsx) (moved out of RouteDetail.jsx, PR58) |
+| `lib/rappelEdits.js` | `_rapEdited`, `fmtRappels` — whether a climber's correction to the rappels is agreed, and how the rappels column prints (moved out of RouteDetail.jsx, PR59) |
+| `lib/campingGate.js` | `campingGate` — which routes get CAMPING & BIVY: the camping disciplines, plus trad that climbs a peak (re-exported by RouteDetail.jsx) (moved out of RouteDetail.jsx, PR59) |
 | `src/components/GPXMap.tsx` | `GPXMap` — the route map: track, pins, one shared popup card, derived trailhead, base check-ins (extracted from core, PR13) |
 | `lib/Route3DView.jsx` | `Route3DView` — the route map's 3D view (MapLibre GL over terrain) |
 | `lib/RouteTracksPanel.jsx` | `RouteTracksPanel` — CLIMBERS' TRACKS under the route map: sort, season filter, show on map |

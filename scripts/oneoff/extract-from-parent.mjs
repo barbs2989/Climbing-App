@@ -188,6 +188,42 @@ if (mode === "component") {
   if (used.length) src = addImport(src, `import { ${used.join(", ")} } from "./${file}";` + (reexp.length ? `\nexport { ${reexp.join(", ")} };` : ""));
   fs.writeFileSync(parentP, src);
   console.log(`moved ${names.join(", ")} -> ${file}; parent imports back ${used.join(", ") || "nothing"}`);
+} else if (mode === "branch") {
+  // node extract-from-parent.mjs branch <Name> '<anchor>' [--in RouteDetail]
+  // Lifts the CONSEQUENT of the conditional whose source starts with <anchor> (e.g. `tab==="photos"?`)
+  // inside function --in into src/components/<Name>.tsx, as `return <consequent>;`. Every binding it
+  // reads from the enclosing function becomes a prop of the same name, passed back as `name={name}`;
+  // module-scope reads become imports. REFUSES if the consequent assigns to a captured binding, calls
+  // a hook, reads a page-local module binding (move it to lib/ first), or captures `key`/`ref`.
+  const name = argv[1], anchor = argv[2], inFn = opt("--in") || "RouteDetail";
+  const outP = path.join(ROOT, "src/components", name + ".tsx"); if (fs.existsSync(outP)) die(outP + " exists");
+  let target = null;
+  an.prog.traverse({ ConditionalExpression(p) { if (src.slice(p.node.start, p.node.start + anchor.length) === anchor) { const fn = p.getFunctionParent(); let f = fn; while (f && !(f.node.id && f.node.id.name === inFn)) f = f.getFunctionParent(); if (f) { if (target) die(`anchor ${anchor} matches twice`); target = p; } } } });
+  if (!target) die(`no conditional inside ${inFn} starts with ${anchor}`);
+  const cons = target.get("consequent");
+  const props = new Set(), mods = new Set();
+  cons.traverse({
+    ReferencedIdentifier(ip) { const nm = ip.node.name; const b = ip.scope.getBinding(nm); if (!b) return;
+      if (b.scope === an.prog.scope) { mods.add(nm); return; }
+      // a binding declared inside the consequent stays inside it
+      if (b.path.findParent(q => q === cons) || b.path === cons) return;
+      props.add(nm); },
+    "AssignmentExpression|UpdateExpression"(ap) { const t = ap.node.left || ap.node.argument; if (t && t.type === "Identifier") { const b = ap.scope.getBinding(t.name); if (b && !b.path.findParent(q => q === cons)) die(`the branch assigns to captured \`${t.name}\` (line ${ap.node.loc.start.line})`); } },
+    CallExpression(cp) { const c = cp.node.callee; if (c.type === "Identifier" && /^use[A-Z]/.test(c.name)) die(`the branch calls hook ${c.name} (line ${cp.node.loc.start.line})`); },
+  });
+  for (const k of ["key", "ref"]) if (props.has(k)) die(`the branch captures \`${k}\`, which cannot be a prop`);
+  const specs = [], locals = [];
+  for (const m of mods) { const s = importSpec(an, m); if (s) specs.push(s); else locals.push(m); }
+  if (locals.length) die(`the branch reads page-local ${locals.join(", ")} — move to lib/ first (\`lib\` mode)`);
+  const ps = [...props].sort();
+  const body = src.slice(cons.node.start, cons.node.end);
+  const header = importLines(specs, path.join(ROOT, "src/components")).join("\n");
+  fs.writeFileSync(outP, `${header}\n\n/* ${anchor} — the body of that branch of ${inFn}, lifted verbatim by extract-from-parent.mjs (branch mode);\n   every binding it read from ${inFn} is a prop of the same name. */\nexport default function ${name}({${ps.join(",")}}){\n  return ${body};\n}\n`);
+  src = src.slice(0, cons.node.start) + `<${name} ${ps.map(p => `${p}={${p}}`).join(" ")}/>` + src.slice(cons.node.end);
+  src = prune(src, new Set(specs.map(s => s.local)));
+  src = addImport(src, `import ${name} from "./src/components/${name}.tsx";`);
+  fs.writeFileSync(parentP, src);
+  console.log(`lifted ${anchor} -> src/components/${name}.tsx (${ps.length} props, ${specs.length} imports)`);
 } else if (mode === "deps") {
   // node extract-from-parent.mjs deps <Name> — the transitive page-local closure of <Name>, and for
   // each helper in it the top-level declarations OUTSIDE the closure that also read it (those must
