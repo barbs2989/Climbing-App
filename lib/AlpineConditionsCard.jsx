@@ -134,7 +134,7 @@ function RangeLine({ route, sum }) {
     : "Both colder and warmer than your " + r + " range at times (" + uTemp(sum.lo) + " to " + uTemp(sum.hi) + ").";
   return <div style={{ marginBottom: 10 }}>
     {text ? <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginBottom: 4 }}>{text}</div> : null}
-    <button onClick={function () { setOpen(!open); }} aria-expanded={open} style={{ background: "none", border: "none", padding: "5px 0", minHeight: 28, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{open ? "Hide your temperature range" : range ? "Change your temperature range" : "Set a temperature range you like"}</button>
+    <button onClick={function () { setOpen(!open); }} aria-expanded={open} style={{ background: "none", border: "none", padding: "5px 0", minHeight: 44, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{open ? "Hide your temperature range" : range ? "Change your temperature range" : "Set a temperature range you like"}</button>
     {open ? <div style={{ background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: "10px 12px", marginTop: 6 }}><CondPrefsControls disc={disc} only="temp" /></div> : null}
   </div>;
 }
