@@ -140,6 +140,10 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
    at once (`saveProfileAvatar`, one column), and "Remove photo" clears it at once (`removeProfileAvatar`); both tell App through `onAvatarChange`.
    It used to wait for Save, so Cancel dropped an uploaded photo, and Save is disabled until the climber has a username, which no signup sets
    (`handle_new_user` stores only `id, name`). The empty-username reason now shows without touching the field.
+   Since 2026-10-28 a signed-in climber with no username opens the editor with one already suggested (`suggestUsername`: the name's
+   letters plus four digits, editable), so that first Save is never dead; and a username another climber holds (`23505` on the unique
+   column) no longer sinks the whole edit: `saveEdit` re-sends the rest without it and says the handle is taken.
+   `scripts/oneoff/audit-profile-photos-live.mjs` re-reads every stored avatar and strip photo over plain HTTP, as a stranger's `<img>` does.
    Walked end to end by `scripts/oneoff/probe-profile-photos-stick.mjs` (fixture accounts, headless Chrome).
 4. **Other climbers**: `useFullProfile(userId)` and `fetchProfilesByIds` (`lib/db.js`) feed `FullProfile` / `Resume`, and `useClimberResume(userId)` their résumé's hand-written parts (0342); `profiles` is public read, blocked users cannot read it (0095).
 5. **Résumé groups**: `Resume` maps `GROUPS` (the six labels above) over the climber's ticks; each tick resolves to a group via its discipline (`catOf`).

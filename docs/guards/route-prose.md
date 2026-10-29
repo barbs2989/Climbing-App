@@ -1221,7 +1221,9 @@ the correction knows the screen is wrong, and they have no way to report it.
     cheap to reword. Normalised for case, punctuation and hyphens, so "right-facing" ≡ "right facing".
   - **What it cannot see.** A source it could not load (SummitPost and theCrag 403 to scripts;
     some `review.sources` entries carry notes after the URL and fail to fetch) — named in the
-    output, never counted as clean. A copy from a page the batch did not list. A paraphrase that
+    output, never counted as clean. Since 2026-10-29 a researcher who read such a page in the real
+    browser saves the text it drew on and maps it in `review.source_texts` (URL → repo path); the
+    check then reads that copy instead of fetching, so a SummitPost-sourced entry is checked too. A copy from a page the batch did not list. A paraphrase that
     swaps one word in every seven. Prose already in the catalog with no batch file behind it — that
     is the #2142 audit's ground, measured then at ~1 verbatim lift per 160 sampled phrases, and
     deliberately NOT re-run here.
