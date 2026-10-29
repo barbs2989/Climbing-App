@@ -5,6 +5,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 `crew` by `crewView` (`crews`, `friends`, `requests`; Friends and Requests open from the Menu tiles).
 
 ## 1. What it does today
+- **Crew share link** (0381, 2026-10-28): under *+ Invite a partner*, a crew card shows *Copy share link* (any member; `appLink("crew="+shareToken)`) and, for the organiser only, a *Share link* On/Off switch (`crews.share_on`, through `updateCrewRow`). The link stops working on its own after the crew’s climb date. See `docs/features/partners.md` for what the link opens.
 - **Logbook > Objectives / Saved**: `ListsManager` (`lib/ListsManager.jsx`) holds the objectives (wishlist) and saved lists. The Objectives filter
   chips, in order: **Alpine, Mountaineering, Sport, Trad, Aid, Ice & Mixed, Boulder, Scrambling** — Alpine leads, and alpine,
   mountaineering and aid are each their own chip rather than folded into Alpine or Trad (#2409, then this split). A route with a 5.x grade is never on the Mountaineering chip, whatever its discipline list says (`rDiscs`). Saved no longer repeats a "Pinned states" card;
