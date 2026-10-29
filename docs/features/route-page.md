@@ -109,6 +109,18 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `src/components/ClampText.tsx` | `ClampText` — a comment clamped to three lines with Read more (moved out of RouteDetail.jsx, PR53) |
 | `src/components/ClimateSeasonCard.tsx` | `ClimateSeasonCard` — CLIMATE & SEASON (moved out of RouteDetail.jsx, PR53) |
 | `src/components/PhotoRow.tsx` | `PhotoRow` — a row of photo thumbnails with a full-screen viewer (moved out of RouteDetail.jsx, PR53) |
+| `src/components/TopoLineOverlay.tsx` | `TopoLineOverlay` — a topo's drawing over its photo: variations, route line, markers (moved out of RouteDetail.jsx, PR54) |
+| `src/components/TopoStroke.tsx` | `TopoStroke` — one drawn topo line (moved out of RouteDetail.jsx, PR54) |
+| `src/components/VarTag.tsx` | `VarTag` — the tag a variation wears (V, V1, V2) (moved out of RouteDetail.jsx, PR54) |
+| `src/components/PinIcon.tsx` | `PinIcon` — a topo marker's icon (a grade marker prints its grade) (moved out of RouteDetail.jsx, PR54) |
+| `src/components/TopoPinLegend.tsx` | `TopoPinLegend` — every line style and marker a topo can show (moved out of RouteDetail.jsx, PR54) |
+| `src/components/TopoVariantKey.tsx` | `TopoVariantKey` — the key's rows for a topo's variations (moved out of RouteDetail.jsx, PR54) |
+| `src/components/TopoPinKey.tsx` | `TopoPinKey` — the key's rows for a topo's stations (moved out of RouteDetail.jsx, PR54) |
+| `src/components/TopoThumb.tsx` | `TopoThumb` — one topo in the strip (moved out of RouteDetail.jsx, PR54) |
+| `src/components/EmptySection.tsx` | `EmptySection` — a route-page section with nothing in it yet (moved out of RouteDetail.jsx, PR54) |
+| `src/components/PitchPhotos.tsx` | `PitchPhotos` — a pitch's photos and its add button (moved out of RouteDetail.jsx, PR54) |
+| `src/components/CopyCoordButton.tsx` | `CopyCoordButton` — copy a coordinate (binds `C` to lib/areaChrome.jsx's shared button) (moved out of RouteDetail.jsx, PR54) |
+| `lib/topoMarks.jsx` | `TOPO_RED`, `TOPO_VAR`, `PIN_CATEGORIES`, `PIN_GLYPHS`, `pinColor`, `pinLabel`, `pinNums`, `varTag`, `useImgAspect`, `TOPO_IMG`, `clampTopoView`, `zoomTopoView` — what a topo draws with: line colours, marker categories and glyphs, numbering, the photo-fitting rule, the zoom maths (moved out of RouteDetail.jsx, PR54) |
 | `src/components/GPXMap.tsx` | `GPXMap` — the route map: track, pins, one shared popup card, derived trailhead, base check-ins (extracted from core, PR13) |
 | `lib/Route3DView.jsx` | `Route3DView` — the route map's 3D view (MapLibre GL over terrain) |
 | `lib/RouteTracksPanel.jsx` | `RouteTracksPanel` — CLIMBERS' TRACKS under the route map: sort, season filter, show on map |
