@@ -166,7 +166,7 @@ On a crag the list is headed *More at <crag>* and counts **routes** (sport, trad
 
 ## 8. Known gaps / open decisions
 
-- Live comments: Realtime applies RLS to an UPDATE, so a comment a moderator takes down is never SENT to other readers; it leaves their screen at the next refetch (refocus, reload, a write), not the instant it is removed.
+- Live comments: Realtime applies RLS to an UPDATE, so a comment a moderator takes down is never SENT to other readers as a change. Since 0380 a trigger on `comments` broadcasts the bare id on the public `moderation` topic instead, and `lib/live.js` drops it from every screen that holds it at once (probe: `scripts/oneoff/probe-live-takedown.mjs`). A *restore* needs no broadcast: the row is readable again, so its UPDATE arrives normally.
 
 - `SAR_BY_COUNTY` (`lib/sarByCounty.js`) holds one verified non-emergency dispatch line per county. Each was read on the sheriff's, the county's or the county's dispatch centre's own page, labelled for that purpose; the page and the date for each are in `docs/codebase/rescue-dispatch-numbers.md`, never in the app. A county with no such page has no entry and shows 911 guidance only until a climber adds its line through the pencil. A route's stored `emergency.county` is read in any spelling ("Okanogan", "Okanogan County, WA", "Chelan County, Washington") through `countyPlace`. Emergency contacts are per ROUTE, so a climber's edit on one Castleton line does not reach its neighbours.
 

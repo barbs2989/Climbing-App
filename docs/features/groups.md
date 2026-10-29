@@ -42,7 +42,9 @@ your `partner_areas` paths matched against `useStates()`.
 A group's feed is live (0326): `useGroupFeed` is a `useLiveQuery` (`lib/live.js`) subscribed over Supabase Realtime to
 `group_posts` and `group_post_reactions`, so a post, edit, pin, delete or reaction another member makes refetches the
 feed within about a second. Realtime applies the same member-only RLS; a DELETE carries only the id, so it is matched
-against the posts already held.
+against the posts already held. A post ClimbMatch Safety takes down leaves every member's feed at once too (0380): RLS
+stops that UPDATE reaching them, so a trigger broadcasts the bare id on the public `moderation` topic and `lib/live.js`
+treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 
 ## 3. Files
 | File | Key symbols |
