@@ -62,3 +62,11 @@ Camp Kiser, Spike Camp), where the straight line is a poor stand-in for the trai
 **Restored (same day):** 11 round-1 pins on 7 routes (Amphitheater N Ridge, Bonanza NE Buttress, East Slope, Shuksan White Salmon, Mount Tom, The Pleiades, Union Peak) had been judged against a line of 5-8 points, which `MIN_RECORDED_PTS` then ruled is not a recording, so "off the line" was no evidence; they were put back (`scripts/oneoff/gpx-offroute-restore.mjs`, 0 problems). The campground removals on Chockstone and Fairchild, judged against 4- and 9-point lines, stand: those camps are 2.6-14 km away and stay in the camping list.
 
 Totals for 2026-10-29: 168 pins removed from 119 routes across three rounds.
+
+**Road Trip Ryan as a source.** Its 12,000-page sitemap is Utah, Nevada and Wyoming (plus one
+Colorado and a few odds and ends), so it overlaps three of our peak routes. Two had no way-in at all
+and now have one, from facts confirmed on at least two fetched pages each and written in our own
+words (`ut-approach-batch-2026-10-29.json`, written with `enrich:apply`, copy check 0 overlaps,
+verified on re-read): Kings Peak / Anderson Pass (Henrys Fork Trail) and Twin Peaks via Broads Fork.
+The North Ridge of Monte Cristo was left out: the way from Lake Blanche to the foot of the ridge was
+on one page only. Not written either: the Henrys Fork fee (one page only).
