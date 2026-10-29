@@ -672,7 +672,11 @@ function RouteRackBox({route,activity,onEditRack,rack,onSeeReports,rackGeneric})
      fails or re-wraps: 628px on one load, 1680px on another) could dip under CAP_AT and take the
      button with it. Once a section has the button it KEEPS it while collapsing would still hide
      something (more than CAP_SHOW + CAP_SLACK). A 0 height is a hidden ancestor, not an empty
-     section, so it is ignored. */
+     section, so it is ignored.
+   A section can also CROSS the cap because the climber opened something in it: ROUTE BREAKDOWN is
+   short until a box is tapped, and the opened box pushed it past CAP_AT, so the section folded and
+   hid the very box just opened (measured 2026-10-29 on Big Four's Tower Route, P2). A tap inside a
+   section that has not folded yet marks it open, so growth the climber caused never folds on them. */
 const CAP_AT=620,CAP_SHOW=400,CAP_SLACK=60,NAV_CLEAR=80;/* NAV_CLEAR: the fixed bottom nav covers the last ~70px of the screen */
 function Capped({children}){const outer=useRef(null);const inner=useRef(null);const btn=useRef(null);const closing=useRef(false);const [tall,setTall]=useState(false);const [open,setOpen]=useState(false);
   useEffect(function(){var el=inner.current;if(!el)return;function measure(){var h=el.offsetHeight;if(!h)return;setTall(function(t){return h>(t?CAP_SHOW+CAP_SLACK:CAP_AT);});}measure();if(typeof ResizeObserver==="undefined")return;var ro=new ResizeObserver(measure);ro.observe(el);return function(){ro.disconnect();};},[]);
@@ -681,7 +685,7 @@ function Capped({children}){const outer=useRef(null);const inner=useRef(null);co
   useLayoutEffect(function(){if(open||!closing.current)return;closing.current=false;var o=outer.current,b=btn.current;if(!o)return;var r=b?b.getBoundingClientRect():null;if(o.getBoundingClientRect().top<0||!r||r.top<0||r.bottom>window.innerHeight-NAV_CLEAR)o.scrollIntoView({block:"start"});},[open]);
   function toggle(){if(open){closing.current=true;setOpen(false);}else setOpen(true);}
   return <div>
-    <div ref={outer} onFocus={onFocusIn} style={{position:"relative",maxHeight:shut?CAP_SHOW:"none",overflow:shut?"hidden":"visible"}}>
+    <div ref={outer} onFocus={onFocusIn} onClickCapture={function(){if(!tall&&!open)setOpen(true);}} style={{position:"relative",maxHeight:shut?CAP_SHOW:"none",overflow:shut?"hidden":"visible"}}>
       <div ref={inner}>{children}</div>
       {shut?<div aria-hidden="true" style={{position:"absolute",left:0,right:0,bottom:0,height:72,background:"linear-gradient(to bottom, transparent, "+C.bg+")",pointerEvents:"none"}}/>:null}
     </div>
@@ -1414,7 +1418,8 @@ function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onComme
            (owner note 2026-10-28, Mount Logan's "Hiking, steep descent through alpine meadows and forest" read
            stacked in both). A short one ("Class 2", "Scree, Class 2") is still a chip. */
         const longTerrain=!isPitch&&!!r.grade&&(String(r.grade).length>18||String(r.grade).trim().split(/\s+/).length>3);
-        const stageTiles=isPitch?[]:[["Terrain",longTerrain?null:r.grade,C.amber],["Length",r.lengthM!=null?uLen(r.lengthM):null,C.blue],["Anchor / belay",r.anchor,C.blue]].filter(t=>t[1]);
+        /* A pitch's tiles drop an empty value the same way a leg's do: a row of "—" told the climber nothing, and PitchConsensus below already asks for what is missing. */
+        const stageTiles=(isPitch?[["Length",r.lengthM!=null?uLen(r.lengthM):null,C.blue],["Bolts (this pitch)",r.bolts!=null?String(r.bolts):null,C.amber]]:[["Terrain",longTerrain?null:r.grade,C.amber],["Length",r.lengthM!=null?uLen(r.lengthM):null,C.blue],["Anchor / belay",r.anchor,C.blue]]).filter(t=>t[1]);
         const accent=r.crux?C.amber:(isPitch?C.blue:C.border);
         return <div key={r._i} data-kind={r._kind} data-label={isPitch?("P"+r._badge+(r._title?" "+r._title:"")):r._label} id={isPitch?("pitch-"+r._pIdx):undefined} style={{display:"flex",gap:10,marginBottom:last?0:9,scrollMarginTop:"80px"}}>
           <div style={{display:"flex",flexDirection:"column",alignItems:"center",flexShrink:0}}>
@@ -1445,11 +1450,8 @@ function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onComme
               {r._note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,wordBreak:"break-word",overflowWrap:"break-word"}}>{r._note}</div>:null}
             </div>
             {isOpen?<div style={{padding:"0 11px 11px"}}>{onEdit?<button onClick={function(e){e.stopPropagation();onEdit(r._i);}} style={{...editBtnStyle(C),marginTop:8}}><EditPencil C={C}/>{isPitch?"Edit this pitch":"Edit this section"}</button>:null}
-              {(isPitch||stageTiles.length)?<div style={{marginTop:2,paddingTop:9,borderTop:"1px solid "+C.borderLight,display:"grid",gridTemplateColumns:isPitch?"repeat(2,1fr)":"repeat(3,1fr)",gap:7,marginBottom:isPitch?9:0}}>
-                {(isPitch
-                  ?[["Length",r.lengthM!=null?uLen(r.lengthM):"—",C.blue],["Bolts (this pitch)",r.bolts!=null?String(r.bolts):"—",C.amber]]
-                  :stageTiles
-                ).map(function(s){return <div key={s[0]} style={{background:C.card,borderRadius:8,padding:"7px 9px",textAlign:"center",minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:s[2],overflowWrap:"anywhere"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{s[0]}</div></div>;})}
+              {stageTiles.length?<div style={{marginTop:2,paddingTop:9,borderTop:"1px solid "+C.borderLight,display:"grid",gridTemplateColumns:isPitch?"repeat(2,1fr)":"repeat(3,1fr)",gap:7,marginBottom:isPitch?9:0}}>
+                {stageTiles.map(function(s){return <div key={s[0]} style={{background:C.card,borderRadius:8,padding:"7px 9px",textAlign:"center",minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:s[2],overflowWrap:"anywhere"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{s[0]}</div></div>;})}
               </div>:null}
               {isPitch?<><PitchConsensus p={r} onSuggestFix={onEdit?function(){onEdit(r._i);}:null}/><CardHead style={{marginBottom:8}}>Photos</CardHead><PitchPhotos items={photosOf(r)} onAdd={onAddPitchPhoto?function(fs){return onAddPitchPhoto(fs,r._n);}:null}/><PitchComments targetId={route.id+"_pitch_"+r._n} comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}/></>:<PitchComments title="Comments on this section" targetId={route.id+"_pitch_"+r._n} comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}/>}
             </div>:null}
