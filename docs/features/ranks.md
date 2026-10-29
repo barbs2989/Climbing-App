@@ -38,7 +38,8 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
   Climbing type × every Ranking) and returns each climber who places in the TOP 100 of any of them, plus you — so each
   board's top 100 is exact however many climbers a scope holds. Your row carries `stats.standing`,
   `{"<all|backed>|<type>|<board>": [your rank or null, climbers ranked]}`; the app reads it for *You're #N of M*, your
-  pinned row's number and *The top 100 of N*, and falls back to counting the rows when it is absent. Checked with
+  pinned row's number and *The top 100 of N*, and falls back to counting the rows when it is absent. Its `_others` (0380) is how many other climbers the scope holds, which decides
+  *No climbing friends yet* / *No climbers logged near you yet*: a climber with nothing on any board does not come back. Checked with
   `scripts/oneoff/probe-ranks-0379.sql` (130 test climbers: exactly the 100 that belong come back; the caller reads #121 of 131).
 - **Which logs count**: `rankable_logs()` (0203/0208) — catalog routes only, no future dates, one log per route per
   day, 30 a day, a climb a tagged partner denied is dropped; each log is tiered confirmed (1.0) / evidence (0.75) /
@@ -79,7 +80,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 | `lib/Help.jsx` | `Help` (its `topic` prop opens one section) |
 | `lib/db.js` | `useLeaderboard`, `useTopClimbs`, `useRankBreakdown` |
 | `ClimbMatchCore.jsx` | `HELP_FEATS` (the Ranks section holds the scoring text), `tickTypesFor`, `NONCOMPLETION_TICKS`, `lbRowName` |
-| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333, 0338, 0357 (`rank_breakdown`), 0373, 0379 (top 100 per board) |
+| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333, 0338, 0357 (`rank_breakdown`), 0373, 0379 (top 100 per board), 0380 (`_others`) |
 
 ## 4. Data
 `climb_logs`, `climb_log_confirmations`, `routes` (`grade_system`, `grade_num`, `gain_ft`, `length_m`, `classic`,

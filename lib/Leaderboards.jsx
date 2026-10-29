@@ -104,7 +104,10 @@ export default function Leaderboards({meLive,onView,onClimb,logs,connections,cat
   const scopePeople=real?ALL:ALL.filter(pp=>scope==="near"?withinRadius(pp):scope==="friends"?friendIdSet.has(pp.id):scope==="area"?personInArea(pp,areaId):true);
   // Empty means nobody BUT you. Real friends are uuids the demo pool never held, so the old
   // `connections.length` test called a board of one full and ranked you #1 of 1.
-  const othersInScope=scopePeople.filter(pp=>pp.id!==0).length;
+  // Since 0379 a climber with nothing on any board does not come back, so the scope's size comes
+  // from your row (0380's standing._others), not from the rows that did.
+  const scopeOthers=real?((((lbRows.find(r=>r.is_me)||{}).stats||{}).standing||{})._others):undefined;
+  const othersInScope=typeof scopeOthers==="number"?scopeOthers:scopePeople.filter(pp=>pp.id!==0).length;
   const friendsEmpty=scope==="friends"&&othersInScope===0;
   const nearEmpty=scope==="near"&&othersInScope===0;
   // sport and trad are their own boards, so match on catOf — `r.discipline` is the coarse
