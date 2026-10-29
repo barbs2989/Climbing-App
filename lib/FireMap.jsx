@@ -26,6 +26,7 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { POP_CLOSE, POP_CLOSE_MEDIA } from "./popupChrome.js";
+import { TEXT_TAP } from "./buttonStyles.js";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, useFollowMe, locateLabel } from "./mapKit";
 import { useActiveFires, useFirePerimeters, useFireWeather, useHeat, useFireAlert, nwsPointPage, HEAT_MIN_ZOOM, HEAT_HOURS, fmtHoursAgo, useSmokeWindow, smokeHours, smokeTileUrl, fmtSmokeHour, SMOKE_BANDS, SMOKE_MAX_NATIVE_ZOOM, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi } from "./fire";
 import LoadingRows from "../src/components/LoadingRows.tsx";
@@ -398,7 +399,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
 
   const chip = (key, label, color, n) => (
     <button onClick={() => setShow(s => ({ ...s, [key]: !s[key] }))} aria-pressed={show[key]}
-      style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 9px", borderRadius: 8, cursor: "pointer", fontSize: 11, fontWeight: 700, background: show[key] ? C.card : C.surface, color: show[key] ? C.text : C.textMuted, border: "1px solid " + (show[key] ? color : C.border), boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
+      style={{ display: "flex", alignItems: "center", gap: 5, padding: "9px 11px", minHeight: 36, borderRadius: 8, cursor: "pointer", fontSize: 11.5, fontWeight: 700, background: show[key] ? C.card : C.surface, color: show[key] ? C.text : C.textMuted, border: "1px solid " + (show[key] ? color : C.border), boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
       <span style={{ width: 9, height: 9, borderRadius: 2, background: show[key] ? color : "transparent", border: "1.5px solid " + color, flexShrink: 0 }} />
       {label}{n != null && show[key] ? " " + n : ""}
     </button>
@@ -655,9 +656,9 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
               national feed for them. A fire far from your route can still close its access road. Check
               the managing agency before you drive.
               <div style={{ marginTop: 7, display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <a href="https://www.fs.usda.gov/alerts" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700 }}>Forest Service alerts →</a>
-                <a href="https://www.nps.gov/planyourvisit/alerts.htm" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700 }}>National Park alerts →</a>
-                <a href="https://inciweb.wildfire.gov/" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700 }}>InciWeb →</a>
+                <a href="https://www.fs.usda.gov/alerts" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700, ...TEXT_TAP }}>Forest Service alerts →</a>
+                <a href="https://www.nps.gov/planyourvisit/alerts.htm" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700, ...TEXT_TAP }}>National Park alerts →</a>
+                <a href="https://inciweb.wildfire.gov/" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700, ...TEXT_TAP }}>InciWeb →</a>
               </div>
             </div>
           </div>

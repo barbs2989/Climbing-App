@@ -4,6 +4,7 @@ import { BAND_PREF, RAIN_PREF, TEMP_RANGE_PREF, WIND_RANGE_PREF, TEMP_BANDS, WIN
 import { RangeSlider } from "./RangeSlider.jsx";
 import { useMyCondPrefs, saveMyCondPrefs } from "./db.js";
 import { DISC_LABELS } from "./discLabels.js";
+import { TEXT_TAP } from "./buttonStyles.js";
 
 /* "YOUR CONDITIONS" — the climber's ideal temperature RANGE (one for all climbing, and optionally
    one per discipline), the wind RANGE they are happy in, and how long they give rock after rain.
@@ -240,7 +241,7 @@ export function CondPrefsControls({ disc, only }) {
       <div style={NOTE}>{"Full marks inside your range, fading to nothing " + uWind(WIND_FADE_UP) + " above it and, if the bottom is above calm, " + uWind(WIND_FADE_DOWN) + " below it. A gust counts at 70%." + (p.wind ? "" : " Default: calm to " + uWind(WIND_DEFAULT[1]) + ".")}</div>
     </div>
     <div>
-      <button onClick={function () { setMore(!more); }} aria-expanded={more} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{(more ? "Fewer conditions" : "More conditions (optional)") + (hasExtras(p) && !more ? " · some set" : "")}</button>
+      <button onClick={function () { setMore(!more); }} aria-expanded={more} style={{ background: "none", border: "none", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", ...TEXT_TAP }}>{(more ? "Fewer conditions" : "More conditions (optional)") + (hasExtras(p) && !more ? " · some set" : "")}</button>
     </div>
     {more ? <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
       <div>

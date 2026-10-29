@@ -23,7 +23,7 @@ import { overlayStates, NEEDS_EXTRA_STATE } from "../lib/overlay-scaffold.mjs";
 import { MENU_SCREENS, openFromMenu } from "../lib/menu-screens.mjs";
 import { assertQuietBox } from "../lib/quiet-box.mjs";
 
-const box = assertQuietBox("probe:tap-targets"); void box;
+const box = assertQuietBox("probe-tap-targets.mjs"); void box;
 const ROOT = new URL("../..", import.meta.url).pathname;
 const argv = process.argv.slice(2);
 const ONLY = argv.includes("--only") ? argv[argv.indexOf("--only") + 1] : null;

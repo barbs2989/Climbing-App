@@ -1140,4 +1140,22 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     (`effW`/`effH`, and which side was `lost` to nothing vs `shared` with a neighbour). Controls
     packed tighter than 44px (inline links inside one sentence, the stars of a rating) are limited
     by their neighbours, not by the slop; those need spacing in the drawing, not a wider hit area.
+  - **Measured after** (same walk, 1px steps, 42px counted as reaching 44 because the walk rounds):
+    588 of 964 small controls now reach 44px, against 0 before. Of the 376 that do not, most stop
+    at 36-41px where two stacked chip rows TIE (a tie goes to nobody, by design) or a neighbour
+    is nearer; the rest were fixed in the drawing: every single-line `<select>` gets
+    `min-height: 44px` in index.html (the slop cannot open a native picker), WaypointMapPicker's
+    layer buttons went 22px -> 34px (a mis-tap there drops a waypoint, and the slop never acts
+    inside a map), the fire map's layer chips 27px -> 36px, Reports' condition rows (`CRow`)
+    24px -> 36px, and sign-in's text links got a touch box (`TEXT_TAP` / `TEXT_TAP_INLINE`,
+    lib/buttonStyles.js: padding the finger can hit, the equal negative margin handing the space
+    back). Do NOT spread `TEXT_TAP` next to a field: its 12px padding paints over the field's
+    edge and steals its taps (ConnectModal's "Use suggested note" sits 7px under a textarea, so
+    it was left to the slop, which counts the textarea as nearer).
+  - **The browser snaps a tap first.** Chrome (and Safari) adjust a touch's click target to a
+    control under the finger's contact area before any listener runs: an emulated tap 10px under
+    "Forgot password?" landed on the Sign in button 5px below it. So the slop only acts where that
+    snap found nothing, and it must agree with it: EVERY control competes on distance, and a
+    nearer big one wins (first draft only weighed small controls and forwarded that tap to the
+    link). `scripts/oneoff/touch-beside-control.mjs` therefore dispatches its events from the page.
   - **Injection-tested**: commenting out `installTapSlop();` in main.jsx FAILS the guard.

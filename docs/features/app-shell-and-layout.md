@@ -147,7 +147,7 @@ Layout only. The footer reads the states list (`useStates`); the search reads th
 `check:zindex`, `check:tap-slop` (the touch widening stays installed). The browser walks drive a phone-width window, so they cover the phone layout only.
 
 ## 7. Last significant change
-- **Small controls are easier to hit** (owner note 2026-10-28, "Some clicks links are small"): a touch that lands on nothing goes to the nearest small control within 44px (`lib/tapSlop.js`, installed in `main.jsx`); the tiniest standalone links also got a bigger touch box in the drawing. Measured with `scripts/oneoff/probe-tap-targets.mjs`.
+- **Small controls are easier to hit** (owner note 2026-10-28, "Some clicks links are small"): a touch that lands on nothing goes to the nearest small control within 44px (`lib/tapSlop.js`, installed in `main.jsx`); dropdowns are 44px tall, the waypoint map picker's layer buttons 34px, the fire map's layer chips and the Reports condition rows 36px, and sign-in's text links have a bigger touch box (`TEXT_TAP`). Measured with `scripts/oneoff/probe-tap-targets.mjs`.
 - **The sign-in look, app-wide** (owner, 2026-10-24): header glow, branded Home banner and Menu header, plain top-right icons, one chevron, one-line header text, Logbook sort & filter folded, Climbs regions as cards on a phone.
 - **Narrower desktop** (owner, 2026-10-22): 640px column, action buttons sized to their label, Messages pane 280px.
 - **Desktop phase 4e**: chats in the right rail (`RailChats` in `lib/DesktopShell.jsx`).

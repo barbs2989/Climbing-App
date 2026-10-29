@@ -28,6 +28,7 @@ import { useState } from "react";
 import { useFiresNear, NEAR_ROUTE_KM, fireLevel, fireColor, fmtAcres, fmtContained, fmtDiscovered } from "./fire";
 import { TILE_CREDIT } from "./mapKit";
 import Chevron from "../src/components/Chevron.tsx";
+import { TEXT_TAP } from "./buttonStyles.js";
 
 const MI_PER_KM = 0.621371;
 
@@ -160,7 +161,7 @@ function Foot({ C, coord, ActionIcon, onOpenFireMap }) {
         fire far from a route can still close its access road.
       </div>
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 8 }}>
-        <a href="https://www.fs.usda.gov/alerts" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontSize: 11.5, fontWeight: 700 }}>Forest Service alerts →</a>
+        <a href="https://www.fs.usda.gov/alerts" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontSize: 11.5, fontWeight: 700, ...TEXT_TAP }}>Forest Service alerts →</a>
       </div>
     </>
   );
