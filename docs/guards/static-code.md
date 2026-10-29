@@ -1120,3 +1120,24 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Injection-tested 7/7** with a throwaway `src/components/` file: a drawn emoji, a ternary's
     `"☀"` and a bare `"⚠ careful"` FAIL; a comment, a `{"🏆":"award"}` key, an `<Lbl s={"📍 "+x}/>`
     and `"✓ done ★"` PASS.
+- **`check:tap-slop`** (in build) keeps **lib/tapSlop.js** installed: a TOUCH whose click lands on
+  nothing tappable goes to the nearest small control whose 44px box (centred on it) holds the
+  touch. Owner note 2026-10-28, *"Some clicks links are small"*.
+  - **Measured first, across the 100 screens check:axe opens** (`scripts/oneoff/probe-tap-targets.mjs`,
+    hand-run): 1,051 distinct controls with a side under 44px — 62 under 24px (sign-in's legal
+    links 13px tall, the fire map's agency links 18px, a climber's name 18px), 469 at 24-31px
+    (nearly every route-page section toggle is 29px), 520 at 32-43px. axe passed all of them: WCAG
+    2.5.8's 24px floor excuses an undersized target with room around it. Apple asks 44pt of every
+    control, Material 48dp. Redrawing a thousand controls would change every screen, so the touch
+    area grows and the drawing stays — Android's TouchDelegate and Material's 48dp touch-target
+    overlay do the same.
+  - **The refusals are the point and the guard reads each one**: a hit is always the hit
+    (`onTappable`), a tie goes to nobody, a mouse or keyboard click (`detail 0`, which is also the
+    forwarded click itself) is never touched, the listener is capture-phase so the stray tap never
+    reaches a backdrop's close handler, and a map, chart or field (`OWN_TAPS`) keeps its own taps.
+    A control another layer covers is not reachable (`elementFromPoint` at the control must return it).
+  - **Blind to**: whether forwarding FEELS right — the probe measures reach per control in Chrome
+    (`effW`/`effH`, and which side was `lost` to nothing vs `shared` with a neighbour). Controls
+    packed tighter than 44px (inline links inside one sentence, the stars of a rating) are limited
+    by their neighbours, not by the slop; those need spacing in the drawing, not a wider hit area.
+  - **Injection-tested**: commenting out `installTapSlop();` in main.jsx FAILS the guard.

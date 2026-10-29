@@ -5,6 +5,7 @@ import AppErrorBoundary from "./AppErrorBoundary.jsx";
 import { AuthProvider } from "./src/AuthContext.tsx";
 import { restoreQueryCache, persistQueryCache } from "./lib/query-persist.js";
 import { setQueryClient } from "./lib/queryClientRef.js";
+import { installTapSlop } from "./lib/tapSlop.js";
 
 // networkMode "always" is load-bearing, not a tuning knob. React Query's default is
 // "online": when the browser reports itself offline it sets fetchStatus "paused" and
@@ -93,6 +94,8 @@ const queryClient = new QueryClient({
 //
 // Paint from the last visit's catalog if it is on the device (lib/query-persist.js), then
 // keep it current. The restore is capped at 150ms so a slow disk cannot hold the first paint.
+// A touch just off a small control still reaches it (lib/tapSlop.js).
+installTapSlop();
 setQueryClient(queryClient);
 restoreQueryCache(queryClient).finally(() => {
   persistQueryCache(queryClient);
