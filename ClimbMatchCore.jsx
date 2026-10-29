@@ -12,7 +12,7 @@ import { EditIconButton as AreaEditIconButton } from "./lib/areaChrome";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./lib/discLabels";
 import { USE_DB, supabase } from "./lib/supabase";
 import { exportedTrackNotes, waypointCaveat, recordedTrackPts } from "./lib/track";
-import {usePartnerSignals,useVerifiedUsers,useRoutesWithLists} from "./lib/db";
+import {usePartnerSignals,useVerifiedUsers,useRoutesWithLists,useStateClassics,useMyHomeStatePaths,useStates} from "./lib/db";
 import {searchClean, searchNorm} from "./lib/search";
 import { clickable } from "./lib/clickable"
 import { routeInList, listPeaks, peakClimbed, FIFTY_CLASSICS } from "./lib/lists";
@@ -2638,6 +2638,10 @@ function notifTarget(n){
    only decides whether Home shows it. */
 function useCuratedLists(logs,routeById){
   const listedQ=useRoutesWithLists();const SEED_OK=seedRoutesOn();
+  /* CLASSICS OF YOUR STATE (0390): the routes tagged state_classics under the climber's home state -- one state, so a
+     guest the browser's time zone places in several gets none. On the seed path the card keeps the seed's classics. */
+  const homePaths=useMyHomeStatePaths();const homePath=homePaths.length===1?homePaths[0]:null;const statesQ=useStates();
+  const homeName=((statesQ.data||[]).find(s=>s.path===homePath)||{}).name||null;const stateClassicsQ=useStateClassics(homePath);
   const done=Array.from(new Set(logs.map(l=>l.routeId))).filter(id=>routeCompleted(id,logs));const got=id=>done.includes(id);
   const uniq=done.map(id=>routeById?routeById(id):ROUTES.find(r=>r.id===id)).filter(Boolean);
   const sumD=["mountaineering","alpine","scrambling"];const winD=["ice","mixed"];
@@ -2672,7 +2676,7 @@ function useCuratedLists(logs,routeById){
   const peakObjectives=k=>{const roster=listPeaks(k);if(!roster)return null;
     return roster.map(p=>({id:p.id,name:p.name,ft:p.ft,mountainId:p.id,also:p.also,_peak:true}));};
   const peakDone=p=>peakClimbed(p,summitRoutes);
-  const classicRoutes=(SEED_OK?ROUTES.filter(r=>r.classic):[]).concat(uniq.filter(r=>r.classic&&!ROUTES.some(s=>s.id===r.id)));const cDone=classicRoutes.filter(r=>got(r.id)).length;
+  const classicRoutes=SEED_OK?ROUTES.filter(r=>r.classic).concat(uniq.filter(r=>r.classic&&!ROUTES.some(s=>s.id===r.id))):((stateClassicsQ.data)||[]);const cDone=classicRoutes.filter(r=>got(r.id)).length;
   // These four build their objectives from the seed ROUTES demo set rather than from the
   // catalog or the climber's own logs, so on a real account they present 14 sample climbs
   // as tick-list objectives — and each also claimed scope:"Your region" while listing
@@ -2681,10 +2685,10 @@ function useCuratedLists(logs,routeById){
   // launch and the sign-in reset never empties ROUTES. `quiver` is deliberately NOT here:
   // it reads the climber's own logged disciplines, and ROUTES gives it only the NAMES of
   // the disciplines, not climbs.
-  const SEED_ONLY_CARDS=new Set(["classics","summits","winter","crag_lcc"]);
+  const SEED_ONLY_CARDS=new Set(["summits","winter","crag_lcc"]);
   /** @type {import("./src/components/Challenges.tsx").ChallengeList[]} — contextual typing keeps `quiver:true` a literal, so Challenges.tsx can tell the roster lists from the quiver one. */
   const lists=[
-    {key:"classics",icon:"award",label:"Regional Classics",col:C.amber,scope:"Your region",routes:classicRoutes},
+    {key:"classics",icon:"award",label:SEED_OK||!homeName?"Regional Classics":"Classics of "+homeName,col:C.amber,scope:SEED_OK?"Your region":"State",blurb:SEED_OK||!homeName?undefined:"The best-loved climbs in "+homeName+", every discipline",routes:classicRoutes},
     {key:"quiver",icon:"target",label:"Discipline Quiver",col:C.blue,scope:"Your region",quiver:true},
     {key:"summits",icon:"mountain",label:"Peaks & Summits",col:C.green,scope:"Your region",routes:ROUTES.filter(isSum).concat(uniq.filter(r=>isSum(r)&&!ROUTES.some(s=>s.id===r.id)))},
     {key:"winter",icon:"snowflake",label:"Winter Season",col:C.teal,scope:"Your region",routes:ROUTES.filter(isWin).concat(uniq.filter(r=>isWin(r)&&!ROUTES.some(s=>s.id===r.id)))},{key:"crag_lcc",icon:"flag",label:"Little Cottonwood — full tick",col:C.purple,scope:"Your region",routes:ROUTES.filter(r=>r.id.indexOf("lcc_")===0)},
@@ -2701,7 +2705,7 @@ function useCuratedLists(logs,routeById){
     {key:"fifty",icon:"award",label:"Fifty Classic Climbs",col:C.amber,scope:"National",total:50,blurb:"Fifty classic North American climbs",routes:inList("fifty")},
     
     {key:"desert",icon:"mountain",label:"Desert Towers",col:C.orange,scope:"Regional",total:27,blurb:"Moab & Castle Valley towers",routes:peakObjectives("desert")||inList("desert"),doneBy:peakDone}
-  ].filter(function(L){return SEED_OK||!SEED_ONLY_CARDS.has(L.key);});
+  ].filter(function(L){return SEED_OK||(!SEED_ONLY_CARDS.has(L.key)&&(L.key!=="classics"||L.routes.length>0));});
   /* The FIFTY CLASSICS in the book's order and the book's words. Built from the tagged catalog rows, the list read
      "West Ridge" four times and "East Ridge" four times with no peak, printed "null" where a grade was missing, and
      sorted by a seed-only drive time. Each roster entry names its catalog row (lib/lists.js), so a row now reads
