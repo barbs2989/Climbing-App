@@ -380,7 +380,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       MODELLED, because a stored leg carries no rest factor, and floors are excluded. Re-run it once
       real climbers have logged timed climbs.
     - **OUT OF STATE AND THE SUMMIT-LEG CENSUS (2026-10-28,
-      `audits/2026-10-28-route-timing-out-of-state.json`): 166 RESEARCHED, 26 WRITTEN.** Only 52 of the
+      `audits/2026-10-28-route-timing-out-of-state.json`): 166 RESEARCHED, 28 WRITTEN.** Only 52 of the
       5,185 alpine-family rows outside WA store a time, a distance or gain, or sit on a classics list.
       They gave 3 repairs: Bugaboo Spire's hut approach, Petit Grepon's approach, and Mount Hood South
       Side's approach of 0. The writes waited out a 1.5-hour production outage that ended when the
@@ -392,7 +392,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         Researched row by row: five started at the car (Ruby, Persis, Three Queens, Hozomeen,
         Johannesburg NE Buttress) and now store approach 0. The rest are camp legs, or the evidence
         is too thin to tell.
-      - **EMPTY TRADE ROUTES: 84 RESEARCHED, 18 WRITTEN.** 191 empty rows sit on
+      - **EMPTY TRADE ROUTES: 84 RESEARCHED, 20 WRITTEN.** 191 empty rows sit on
         well-climbed peaks, matched by AREA name. They were narrowed to 84 scrambles, snow routes and
         3rd/4th-class lines. Written: 3 full sets (Sherman, Capitol Knife-Edge, South Sister South
         Side) and 3 lone approaches. Twenty more have only a strong car-to-car figure, such as Whitney
@@ -403,8 +403,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         Yale 7.3, Sunshine 10, Thielsen West Ridge 7.5, Teewinot East Face 8.5. The other ten rest on a
         blog, AllTrails, a search snippet or one report, and are held (`ownerDecision` in the audit file).
         A second research pass on those ten added Harvard 6.5 (3 agreeing day trips) and San Luis 7.4
-        (4 reports). The Crestones stay held: their only clean times are from the upper 4WD South
-        Colony lot, and the rows name no trailhead.
+        (4 reports). The Crestones' only clean times are from the upper 4WD South Colony lot, which
+        the rows did not name; on the owner's "go" they store totals from that lot (Needle 8.4, Peak
+        15.25), where 14ers.com measures its standard figures.
       - The ids `rainier_*` and `adams_*` are Washington routes outside the `wa_` prefix: the WA pass
         missed them, and this one covered the four that store anything.
     - **WA ICE AND MIXED (2026-10-28, `audits/2026-10-28-route-timing-wa-ice.json`): 16 RESEARCHED, 1
