@@ -47,6 +47,29 @@ export const NEEDS_EXTRA_STATE = {
   // no longer here either: it is opened with a LIFTED literal, see `lift` in OVERLAY_PAYLOADS.
 };
 
+// OPT-IN OPENERS for three of the four above, reached with `?zx=<name>` rather than `?z=`.
+//
+// Every guard reading NEEDS_EXTRA_STATE skips these names before it loads anything, and that does
+// not change: a guard has to ask for `zx` by name, so widening check:pinned-dismiss (owner note,
+// 2026-10-24: the ✕ / Back must stay on screen in EVERY popup) cannot turn axe, overflow or the
+// zero-state walk red on a popup they were never pointed at. Each `open` runs inside App, after the
+// same 1200ms the `z` opener waits.
+//   areaTreeOpen: renders as `areaTreeOpen&&selArea`, so a seed STATE is selected first; the tree
+//     opens expanded at it, the longest list it can show.
+//   compareOpen: renders as `wide&&compareOpen`, so the GUARD must also widen the viewport to
+//     `viewport` before loading, or `wide` is false and nothing mounts.
+//   reviewQueue: renders as `reviewQueue&&isAdmin`, and isAdmin is a DB query on a signed-in admin.
+//     A config that serves `zx` applies ADMIN_GATE, which lets window.__ovAdminGate stand in for it;
+//     only this opener sets that. The queue's own reads fail without an admin, which leaves its
+//     header (the subject) exactly as an admin sees it.
+// crewListOpen has no entry: it is an inline disclosure in the crew finder's results, not a popup.
+export const EXTRA_STATE_OPENERS = {
+  areaTreeOpen: { open: 'setSelArea(MOUNTAINS.find(function(m){return m.areaType==="state";})||null);setAreaTreeOpen(true);' },
+  compareOpen: { viewport: { width: 1280, height: 900 }, open: "setCompareList(ROUTES.slice(0,3));setCompareOpen(true);" },
+  reviewQueue: { open: 'window.__ovAdminGate=true;setReviewQueue("fieldEdits");' },
+};
+export const ADMIN_GATE = { from: "{reviewQueue&&isAdmin&&", to: "{reviewQueue&&(isAdmin||window.__ovAdminGate)&&" };
+
 // ---------------------------------------------------------------------------------------
 // Payloads for the dialog-shaped overlays.
 //
@@ -210,6 +233,11 @@ export function assertKnownOverlays(discovered, fail) {
   for (const name of Object.keys(NEEDS_EXTRA_STATE)) {
     if (!discovered.includes(name)) {
       fail("scaffold", `NEEDS_EXTRA_STATE lists ${JSON.stringify(name)}, which is no longer an overlay state — remove it from scripts/lib/overlay-scaffold.mjs`);
+    }
+  }
+  for (const name of Object.keys(EXTRA_STATE_OPENERS)) {
+    if (!NEEDS_EXTRA_STATE[name]) {
+      fail("scaffold", `EXTRA_STATE_OPENERS lists ${JSON.stringify(name)}, which NEEDS_EXTRA_STATE no longer exempts — every guard opens it with ?z= now, so remove its ?zx= opener`);
     }
   }
   for (const name of Object.keys(OVERLAY_PAYLOADS)) {
@@ -638,6 +666,9 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       // the route page as unreachable. Ready must mean "the thing that opens THIS screen has
       // run" — see the note below and #768.
       "var _zr=p.get('zr');" +
+      // `?zx=` opens an EXTRA_STATE_OPENERS entry, asked for by name (see that registry).
+      "var zx=p.get('zx');var __X={" + Object.entries(EXTRA_STATE_OPENERS).map(([n, e]) => JSON.stringify(n) + ":function(){" + e.open + "}").join(",") + "};" +
+      "if(zx&&__X[zx])setTimeout(function(){try{__X[zx]();}catch(e){(window.__overlayOpenErrors=window.__overlayOpenErrors||{})[zx]=String(e&&e.message||e);}window.__overlaysReady=true;},1200);" +
 "if(_zr){setTimeout(function(){openRoute(__zrPick());window.__routeOpen=true;window.__overlaysReady=true;},900);}" +
       // __overlaysReady means "the opener has RUN", not "the effect mounted". Every guard
       // waits on this flag and then asks what happened; setting it synchronously while the
@@ -660,7 +691,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       "if(z)setTimeout(function(){var _rd=__rdOv.indexOf(z)>=0;__ovOpen.current(z);" +
       "if(_rd)setTimeout(function(){window.__overlaysReady=true;},2500);" +
       "else window.__overlaysReady=true;},1200);" +
-      "else if(!_zr)window.__overlaysReady=true;},[]);",
+      "else if(!_zr&&!zx)window.__overlaysReady=true;},[]);",
   };
 }
 

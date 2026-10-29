@@ -1077,9 +1077,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     clamped to the screen — three `.cm-file-input`s (visually-hidden file pickers, `position:absolute`)
     belonged to the backdrop as their nearest positioned box, at their place deep in the form. Now
     `position:fixed` in `index.html`.
-  - **Cannot see:** overlays the scaffold cannot open (printed as skipped), popups whose only way out
-    is Cancel/Done (Edit profile's sticky Cancel·Save bar), and the desktop layout. Listed at the end
-    of every run: the overlays with no ✕ / Back at all.
+  - **The NEEDS_EXTRA_STATE popups are walked too (2026-10-29).** Three of the four no flag alone
+    opens are built by `EXTRA_STATE_OPENERS` in `scripts/lib/overlay-scaffold.mjs`, asked for with
+    `?zx=<name>` so no other guard starts walking them: All areas (a seed state selected first),
+    Compare (at 1280x900, since it renders only `wide`) and the Review queue (`overlay-scroll.config.mjs`
+    rewrites its `isAdmin` gate to also accept `window.__ovAdminGate`, which only that opener sets;
+    the anchor is asserted, like the opener's). All three pass on their OWN structure — Compare and the
+    Review queue hand-pin a sticky header, All areas keeps its header outside the list that scrolls —
+    so disabling `pinLayers()` alone leaves them green; an opener that mounts nothing FAILS rather than
+    reverting to "skipped". `crewListOpen` stays skipped: an inline disclosure, not a popup.
+  - **Cannot see:** popups whose only way out is Cancel/Done (Edit profile's sticky Cancel·Save bar),
+    and the desktop layout except Compare. Listed at the end of every run: the overlays with no ✕ /
+    Back at all.
   - **Injection cases** (2026-10-24): (1) `pinLayers()` disabled in `useDialogA11y` → Settings, Menu
     and Friends FAIL, the hand-pinned vouch sheet and the Fire map (header outside its scroller) stay
     ok; (2) the sign-in portal undone → `loginOpen` FAILS "covered by Messages", the app header's chat
