@@ -65,3 +65,31 @@ scripted fetches and are not in the Wayback Machine. The archive.org guidebook s
 - `wa_comb_the_toketie_lake_area`, `wa_three_queens_approach_routes`: area entries filed as routes.
 - `wa_mount_queets_south`: named south, but its stored approach describes the north ridge.
 - `wa_snoqualmie_mountain_west_ridge`: the only matching "West Ridge" found online is Lundin Peak's.
+
+## Follow-up, 2026-10-29 (the owner approved the session's recommendations in advance)
+
+### Catalog findings settled (`catalog-fixes-2026-10-29.sql`, full rows in `rollback/catalog-fixes-2026-10-29.json`)
+The SQL counted every table that names a route (`climb_logs`, `contributions`, `topos`, `objectives`, `user_lists` and 14
+more) and refused to run unless all were zero. All were zero. It then ran in one transaction:
+- **Deleted, the thin copy of a richer row:** `wa_lane_peak_fly_the` (→ `wa_lane_peak_r2`), `wa_mount_rainier_emmons_glacier_2`
+  (→ `_emmons_glacier`), `wa_mount_rainier_ingraham_glacier_direct` (→ `_ingraham_direct`), `wa_mount_roosevelt_southeast_route`
+  (→ `_standard`; the peak's only non-technical route is the SE gully, confirmed on its SummitPost page and Wikipedia),
+  `wa_nooksack_tower_beckey_schmidtke_route` (→ `_beckey_route`), `wa_glacier_peak_gerdine_ridge_cool_glacier`
+  (→ `_cool_glacier_gerdine`).
+- **Deleted, an area filed as a route (empty row):** `wa_comb_the_toketie_lake_area`, `wa_three_queens_approach_routes`.
+- **Moved to `wa_mount_rainier`:** `wa_glacier_peak_tahoma_cleaver`, `wa_glacier_peak_south_tahoma_headwall` (both are Rainier
+  routes; Rainier had neither). The ids keep their old prefix, because changing a primary key would orphan the text references.
+- `areas.route_count` re-read afterwards: all seven affected areas match their real counts.
+- **Left as they are:** `wa_lichen_rock_*` is correctly filed under Minnehaha (Spokane). It entered the census only because
+  its disciplines are empty, and that is outside this item. Possible duplicates (Summit Chief, Hinman, Hibox) were not confirmed by a
+  source, so they were not touched.
+
+### Washington retry with browser reads: the sources are dry
+The 145 remaining skipped WA rows were batched again (`retry/context-r01..r08.json`), this time reading SummitPost in the
+real browser (`retry/RETRY-BRIEF.md`). The first two batches (35 rows) yielded **one** entry. `wa_dome_peak_indian_summer`
+gained a descent, built from its first-ascent report. The browser extension refuses Mountaineers.org page text, and
+SummitPost's peak pages name these Beckey-guide lines without describing them. At 1 in 35, batches r03–r08 were not run.
+Those rows stay blank, which keeps the contribute prompt. Don't retry them by web research again.
+
+`scripts/lib/source-overlap.mjs` now accepts `review.source_texts` (URL → saved page text), so text drawn from a page
+read only in a browser is still copy-checked.
