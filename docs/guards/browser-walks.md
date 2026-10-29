@@ -599,6 +599,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the owner then signs in and opens the inbox. It asserts the inbox does not claim to be empty,
     the sender is **identified**, the body is previewed, the thread opens, and the body renders in
     the words the sender wrote — 9 assertions.
+  - **A SHARED CLIMB, too (2026-10-29, owner's sharing note).** Before the plain message the mate
+    sends a climb in the shape App's `onShareRoute` sends (`Check out this route: NAME …` plus a
+    `?route=` link built by `appLink`'s own rule: `VITE_PUBLIC_URL`, else this origin + the Vite
+    base — `chatText` draws only OUR address as a link). The owner's open thread must show it as
+    *Open the climb ›*, and tapping it must open that climb's route page **in place** (a window
+    marker set before the tap survives). 15 assertions now. Two traps met building it:
+    - **The climb's name is already in the chat bubble**, so "the name is on screen after the tap"
+      passed with nothing opened. It asserts the route page's own `<h1 title=NAME>`, with a
+      **control** that no such heading is showing before the tap.
+    - **The share is sent FIRST** because the thread-list preview shows the newest message and the
+      preview assertion reads `BODY_PROSE`. The link is found inside the bubble carrying this run's
+      tag, so a concurrent run's share cannot satisfy it; teardown deletes it by id with a read-back.
   - **Never the service key.** It bypasses RLS, and *what a second REAL account can do* is the
     entire question; a service-key insert would manufacture a state the app's own flow may not
     reach. This is the rule `check:signed-in` already records from the other side, where seeding as

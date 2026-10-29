@@ -123,7 +123,7 @@ const RUN_TAG = process.env.GITHUB_RUN_ID || `${process.pid}-${Date.now().toStri
 const BODY_PROSE = "Bringing the 60m and a light rack — meet at the pullout at five?";
 const BODY = `${BODY_PROSE} [${RUN_TAG}]`;
 
-let fixture = null, server = null, browser = null, msgId = null, mateTok = null;
+let fixture = null, server = null, browser = null, msgId = null, shareId = null, mateTok = null;
 
 try {
   const port = await claimPort(PORT);
@@ -168,6 +168,32 @@ try {
   } else {
     console.error("no mate session and no mate password — the message cannot be sent BY the mate, and sending it any other way would prove nothing.");
     process.exit(1);
+  }
+
+  // ---- FIRST, the mate SHARES A CLIMB, the way the route page's Share sheet sends one ----
+  // The owner's note (2026-10-23) asked where a route shared with a friend on the app GOES and
+  // whether they see what was shared. #2700 made the chat carry the link; until this leg nobody had
+  // watched one cross from a second real account. The body has the shape App's onShareRoute sends
+  // ("Check out this route: NAME … \n" + routeLink), and the link follows appLink's own rule
+  // (VITE_PUBLIC_URL, else this origin + the Vite base), because chatText draws only OUR address as
+  // a link. It is sent BEFORE the plain message, so the thread-list preview, which shows the newest
+  // message, still reads BODY_PROSE.
+  const pick = await fetch(`${SUPA}/rest/v1/routes?select=id,name&name=not.is.null&order=id&limit=1`, { headers: { apikey: ANON, Authorization: `Bearer ${mateTok}` } });
+  const picked = pick.ok ? (await pick.json())[0] : null;
+  must(!!(picked && picked.id && picked.name), `a climb to share could be read (HTTP ${pick.status})`);
+  const pubUrl = envVal("VITE_PUBLIC_URL");
+  const viteBase = (fs.readFileSync(path.join(ROOT, "vite.config.js"), "utf8").match(/base:\s*"([^"]+)"/) || [])[1] || "/";
+  const linkBase = pubUrl ? String(pubUrl).replace(/\/?$/, "/") : `http://127.0.0.1:${port}${viteBase}`;
+  const SHARE_BODY = picked ? `Check out this route: ${picked.name} [${RUN_TAG}]\n${linkBase}?route=${encodeURIComponent(picked.id)}` : null;
+  if (SHARE_BODY) {
+    const sh = await fetch(`${SUPA}/rest/v1/messages`, {
+      method: "POST",
+      headers: { apikey: ANON, Authorization: `Bearer ${mateTok}`, "Content-Type": "application/json", Prefer: "return=representation" },
+      body: JSON.stringify({ sender_id: fixture.mate.id, recipient_id: ownerId, body: SHARE_BODY }),
+    });
+    const shRows = await sh.json().catch(() => null);
+    must(sh.ok && Array.isArray(shRows) && shRows.length === 1, `the mate could share a climb into the owner's Messages (HTTP ${sh.status})`);
+    if (sh.ok && shRows && shRows[0]) shareId = shRows[0].id;
   }
 
   const sent = await fetch(`${SUPA}/rest/v1/messages`, {
@@ -275,6 +301,43 @@ try {
     }
   }
 
+  // ---- the SHARED CLIMB: it reads as a link, and the link opens that climb in place ----
+  // Run-attributable: the link is found inside the bubble that carries THIS run's tag, so a
+  // concurrent run's share cannot satisfy it.
+  if (openThread && SHARE_BODY) {
+    // CONTROL: the climb's page is NOT already showing, so the heading below is the tap's doing.
+    const before = await page.evaluate((n) => [...document.querySelectorAll("h1")].some((h) => h.getAttribute("title") === n && h.getBoundingClientRect().height > 0), picked.name);
+    must(!before, "control: the shared climb's page is not open before the link is tapped");
+    const tapped = await page.evaluate((tag) => {
+      window.__noReload = true;
+      const a = [...document.querySelectorAll("a[data-cm-applink]")].find((x) => {
+        let el = x.parentElement;
+        for (let i = 0; el && i < 4; i++, el = el.parentElement) if ((el.textContent || "").includes(tag)) return true;
+        return false;
+      });
+      if (!a) return null;
+      const label = a.textContent;
+      a.click();
+      return label;
+    }, `[${RUN_TAG}]`);
+    must(tapped === "Open the climb ›", `the shared climb arrives as a tappable "Open the climb ›" link (got ${JSON.stringify(tapped)})`);
+    if (tapped) {
+      // THE ROUTE PAGE'S OWN <h1>, never body text: the chat bubble already holds the climb's name,
+      // so "the name is on screen" passes with nothing opened at all.
+      const heading = (n) => [...document.querySelectorAll("h1")].some((h) => h.getAttribute("title") === n && h.getBoundingClientRect().height > 0);
+      await page.waitForFunction(heading, picked.name, { timeout: 90000 }).catch(() => {});
+      await settledText(page);
+      const opened = await page.evaluate((n) => ({ text: document.body.innerText, same: window.__noReload === true, h1: [...document.querySelectorAll("h1")].some((h) => h.getAttribute("title") === n && h.getBoundingClientRect().height > 0) }), picked.name);
+      must(opened.h1, `tapping it opens the climb that was shared — its route page, headed "${picked.name}"`);
+      must(opened.same, "it opens in place, without reloading the app");
+      if (!opened.h1) {
+        log("\n  --- after tapping the shared climb (first 700 chars) ---");
+        log(opened.text.slice(0, 700).replace(/\n{2,}/g, "\n"));
+        log("  --- end ---\n");
+      }
+    }
+  }
+
   must(pageErrors.length === 0, `no uncaught page errors${pageErrors.length ? ` — ${pageErrors[0].slice(0, 140)}` : ""}`);
 
 } catch (e) {
@@ -297,6 +360,12 @@ try {
     }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
     const gone = Array.isArray(still) && still.length === 0;
     log(`  removed the message: ${gone ? "ok" : `NO — HTTP ${d ? d.status : "?"} but the row is still there (messages has no delete policy). Locally the account delete cascades; this is why the guard is not wired into CI.`}`);
+  }
+  if (shareId && mateTok) {
+    await fetch(`${SUPA}/rest/v1/messages?id=eq.${shareId}`, { method: "DELETE", headers: { apikey: ANON, Authorization: `Bearer ${mateTok}` } }).catch(() => null);
+    const still = await fetch(`${SUPA}/rest/v1/messages?id=eq.${shareId}&select=id`, { headers: { apikey: ANON, Authorization: `Bearer ${mateTok}` } })
+      .then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    log(`  removed the shared climb: ${Array.isArray(still) && still.length === 0 ? "ok" : "NO — the row is still there"}`);
   }
   if (fixture) {
     const leaked = await fixture.cleanup().catch((e) => [`cleanup threw: ${e}`]);
