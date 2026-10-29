@@ -54,7 +54,7 @@ try {
   // avatar
   log("edit:", await clickText(page, "Edit profile"));
   await page.waitForTimeout(3000);
-  const avInput = page.locator("label:has-text('Change photo') input[type=file]");
+  const avInput = page.locator("label:has-text('Change photo') input[type=file], label:has-text('Add photo') input[type=file]");
   log("avatar inputs:", await avInput.count());
   page.on("response", async res => { if (/rest\/v1\/profiles/.test(res.url()) && res.request().method() === "PATCH") log("PATCH profiles", res.status(), (res.request().postData() || "").slice(0, 400)); });
   await avInput.first().setInputFiles({ name: "avatar.jpg", mimeType: "image/jpeg", buffer: jpeg });
@@ -88,12 +88,14 @@ try {
   // edit something else and save: does the avatar/strip survive an unrelated profile save?
   await clickText(page, "Edit profile"); await page.waitForTimeout(3000);
   await page.locator("textarea").first().fill("bio edited by probe").catch(e => log("no textarea", e.message));
-  await page.locator('input[aria-label="username"]').fill("probe" + Date.now().toString(36));
+  // NO username typed: a new account's editor must arrive with one suggested, or Save stays disabled (2026-10-29).
+  log("suggested username:", await page.locator('input[aria-label="username"]').inputValue());
   log("save2:", await clickText(page, "Save")); await page.waitForTimeout(5000);
   const r2 = await row();
   log("DB after unrelated save:", JSON.stringify(r2));
   const bio = (await (await fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${uid}&select=bio,username`, { headers: headers(svc) })).json())[0];
   log("bio/username:", JSON.stringify(bio)); if (bio.bio !== "bio edited by probe") { bad++; log("FAIL the unrelated save did not land"); }
+  if (!bio.username || bio.username.length < 3) { bad++; log("FAIL no username was suggested, so Save could not run"); }
   if (r2.avatar !== r.avatar) { bad++; log("FAIL avatar changed by an unrelated save"); }
   if (JSON.stringify(r2.photos) !== JSON.stringify(r.photos)) { bad++; log("FAIL strip changed by an unrelated save"); }
   await ctx.close();
