@@ -87,6 +87,8 @@ export function cleanPrefs(o) {
   return out;
 }
 const isDefault = function (p) { return p.rain === "normal" && !p.wind && p.rhMax == null && !p.sun && !p.aq && !p.window && !Object.keys(p.temp).length; };
+// True once a climber has set anything (Home's "Finish setting up" asks until then).
+export function condPrefsSet(p) { return !!p && !isDefault(p); }
 const hasExtras = function (p) { return p.rhMax != null || !!p.sun || !!p.aq || !!p.window; };
 
 let mem = null, acct = null, syncState = "local", saveTimer = null;

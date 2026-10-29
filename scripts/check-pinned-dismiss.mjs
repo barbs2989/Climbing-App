@@ -22,7 +22,10 @@
 // is appended to the block its header row sits in (what a long list or report does) and the same
 // question is asked. Without that, coverage would be a function of how much seed data exists.
 //
-// WHAT IT CANNOT SEE: popups the scaffold cannot open (listed as skipped, with why), a popup whose
+// The popups no flag alone opens (NEEDS_EXTRA_STATE) are built by EXTRA_STATE_OPENERS via `?zx=`
+// and walked after the rest; Compare at 1280px, the only width it renders at.
+//
+// WHAT IT CANNOT SEE: popups no opener can build (listed as skipped, with why), a popup whose
 // only way out is a Cancel/Done (Edit profile's sticky Cancel·Save bar is that shape and is fine),
 // and the desktop layout (it walks at phone width; the pinning is the same code at every width).
 //
@@ -34,7 +37,7 @@ import net from "node:net";
 import fs from "node:fs";
 import { chromium } from "playwright-core";
 import { assertQuietBox } from "./lib/quiet-box.mjs";
-import { overlayStates, NEEDS_EXTRA_STATE, assertKnownOverlays, buildRouteDetailOpener, routeDetailSource } from "./lib/overlay-scaffold.mjs";
+import { overlayStates, NEEDS_EXTRA_STATE, EXTRA_STATE_OPENERS, assertKnownOverlays, buildRouteDetailOpener, routeDetailSource } from "./lib/overlay-scaffold.mjs";
 
 assertQuietBox("check:pinned-dismiss");
 const ROOT = new URL("..", import.meta.url).pathname;
@@ -231,7 +234,7 @@ if (!booted.hasNav || booted.chars < 200) {
 
 for (const name of overlays) {
   if (NEEDS_EXTRA_STATE[name]) {
-    log(`  ${name}`.padEnd(26) + "skipped — " + NEEDS_EXTRA_STATE[name]);
+    if (!EXTRA_STATE_OPENERS[name]) log(`  ${name}`.padEnd(26) + "skipped — " + NEEDS_EXTRA_STATE[name]);
     continue;
   }
   let landed = null, empty = null, opened = null;
@@ -280,6 +283,10 @@ for (const name of overlays) {
     else notReached.push(name);
     continue;
   }
+  judge(name, landed);
+}
+
+function judge(name, landed) {
   checkedOverlays++;
   const rows = landed.rows.filter((x) => !x.noControl);
   if (!rows.length) noControl.push(name);
@@ -289,10 +296,24 @@ for (const name of overlays) {
   pinned += held; outside += out;
   if (!bad.length) {
     log(`  ${name}`.padEnd(26) + (rows.length ? `ok  (${landed.tab}; ${held ? "stays pinned scrolled to the end" : "its header is outside the pane that scrolls"})` : `--  (${landed.tab}; no ✕ or ← Back to test)`));
-    continue;
+    return;
   }
   for (const x of bad) fail(name, `"${x.ctl}" ${x.onScreen ? `is covered by ${x.over}` : `scrolls off the screen (top ${x.top}px)`} once the popup is scrolled ${x.travel}px to its end${x.latent ? " (3000px of content added: what a longer list or report does)" : ""} — lib/dialogA11y.js pinDismiss() did not reach it: a header row taller than 120px, an absolute ✕ over a photo (pin it in a zero-height sticky bar, as the trip report does), or a layer drawn over it.\n      header row: ${x.hint}`);
   log(`  ${name}`.padEnd(26) + `FAIL (${landed.tab})`);
+}
+
+// The popups no flag alone opens (NEEDS_EXTRA_STATE), each built by its EXTRA_STATE_OPENERS entry.
+// Walked here and nowhere else: the other guards still skip them. One that opens NOTHING fails,
+// because the opener is this guard's own and a silent miss would put the row back to "skipped".
+for (const name of overlays.filter((n) => EXTRA_STATE_OPENERS[n])) {
+  const x = EXTRA_STATE_OPENERS[name];
+  if (x.viewport) await page.setViewportSize(x.viewport);
+  await load(`?zt=routes&zx=${name}`, 2600);
+  const err = await page.evaluate((n) => (window.__overlayOpenErrors || {})[n], name);
+  const r = await scan();
+  if (x.viewport) await page.setViewportSize({ width: 390, height: 844 });
+  if (err || !r.roots) { fail(name, err ? `its opener threw: ${err}` : "its EXTRA_STATE_OPENERS entry opened nothing — the gate it builds has changed"); continue; }
+  judge(name, { tab: "routes" + (x.viewport ? ` @${x.viewport.width}px` : ""), ...r });
 }
 
 if (pageErrors.length) fail("page", `uncaught error(s): ${[...new Set(pageErrors)].join(" | ")}`);
