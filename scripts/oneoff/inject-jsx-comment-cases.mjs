@@ -27,9 +27,9 @@ const CASES = [
   // `<WaypointList` — but that sits inside `{…}`, an EXPRESSION container, where `/* */` really is
   // a comment. The guard correctly ignored it and the case read as a miss. Pick an anchor that is
   // genuinely between two sibling elements, or the case tests the opposite of what it claims.
-  { file: "RouteDetail.jsx", name: "a NEW leaked comment elsewhere, in real children position",
+  { file: "src/components/RoutePlanTab.tsx", name: "a NEW leaked comment elsewhere, in real children position",
     edit: s => s.replace(">Recent tracks & trip reports</SL><div", ">Recent tracks & trip reports</SL>/* injected leak */<div"),
-    wantFail: true, want: /RouteDetail\.jsx:\d+ renders a comment/ },
+    wantFail: true, want: /RoutePlanTab\.tsx:\d+ renders a comment/ },
 
   // Exercise the fail-closed path directly. Renaming the visitor key makes babel-traverse THROW
   // on an unknown node type, so the guard dies with a stack trace instead of reaching its own
@@ -40,7 +40,7 @@ const CASES = [
 
   // Precision: one delimiter is not a comment. The guard requires BOTH, so real copy containing a
   // stray slash-star is left alone — flagging it would be flagging correct work.
-  { file: "RouteDetail.jsx", name: "children text with only an opening /* and no closer must PASS",
+  { file: "src/components/RoutePlanTab.tsx", name: "children text with only an opening /* and no closer must PASS",
     edit: s => s.replace(">Recent tracks & trip reports</SL><div", ">Recent tracks & trip reports</SL>/* no closer here <div"),
     wantFail: false, want: /no comment is rendered as copy/ },
 ];

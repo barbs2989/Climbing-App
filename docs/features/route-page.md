@@ -84,7 +84,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 
 | File | What lives there |
 |---|---|
-| `RouteDetail.jsx` | The page: sub-tabs, `CRAG_CATS` (imported from core since 0300), `showPlan`, `cragOnly`, header stars UI, planner, photos tab and `photoLightbox`, edit pencils, the crag Partners sub-tab (`usePartnersInArea`, `areaPartners`) |
+| `RouteDetail.jsx` | The page: its state and queries, the sub-tab bar, and which sub-tab body to draw (each body is a component since PR60); `CRAG_CATS` (imported from core since 0300), `showPlan`, `cragOnly`, `photoLightbox` and `shareOpen` state, the crag Partners query (`usePartnersInArea`, `areaPartners`) |
 | `ClimbMatch.jsx` | `openRoute`, `selRoute`, `myStars`/`myRateQ`, route memo that merges `_contribFields`/`_pendingEdits`/`_contribAgreed` |
 | `ClimbMatchCore.jsx` | `scarfHrs`, `techHrs`, `buildConsensus`, `catOf`, `wpPlaced`, `WP_STYLE` |
 | `lib/TrailDrawMap.jsx` | `TrailDrawMap` — tap-to-trace the walk in from parking to the crag, inside the Add-the-trail sheet on crag routes |
@@ -189,6 +189,22 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `lib/topoEmptyCopy.js` | `topoEmptyCopy` — what the topo box says when there is none, or the read failed (re-exported by RouteDetail.jsx) (moved out of RouteDetail.jsx, PR58) |
 | `lib/rappelEdits.js` | `_rapEdited`, `fmtRappels` — whether a climber's correction to the rappels is agreed, and how the rappels column prints (moved out of RouteDetail.jsx, PR59) |
 | `lib/campingGate.js` | `campingGate` — which routes get CAMPING & BIVY: the camping disciplines, plus trad that climbs a peak (re-exported by RouteDetail.jsx) (moved out of RouteDetail.jsx, PR59) |
+| `src/components/RouteOverviewTab.tsx` | `RouteOverviewTab` — the Overview sub-tab's body: header facts, tags, beta and pro tips, and on a crag the Plan body below them (lifted out of RouteDetail.jsx's render, PR60) |
+| `src/components/RoutePlanTab.tsx` | `RoutePlanTab` — the Plan body: map, getting there, approach, gear, camping, planner and itinerary (once the `planBody` closure in RouteDetail.jsx, PR60) |
+| `src/components/RouteReportsTab.tsx` | `RouteReportsTab` — the Reports sub-tab: consensus, Recent tracks & trip reports, Log a climb (lifted out of RouteDetail.jsx's render, PR60) |
+| `src/components/RoutePhotosTab.tsx` | `RoutePhotosTab` — the Photos sub-tab: topos and the photo grid (lifted out of RouteDetail.jsx's render, PR60) |
+| `src/components/RoutePartnersTab.tsx` | `RoutePartnersTab` — the Partners sub-tab: climbers with this objective, the crag's area partners, crews heading here (lifted out of RouteDetail.jsx's render, PR60) |
+| `src/components/RouteSafetyTab.tsx` | `RouteSafetyTab` — the Safety sub-tab: known hazards, weather, fire and the float plan (lifted out of RouteDetail.jsx's render, PR60) |
+| `src/components/RouteShareSheet.tsx` | `RouteShareSheet` — the route's share sheet: friends first, then Text, Email, Copy and More (lifted out of RouteDetail.jsx's render, PR60) |
+| `src/components/RoutePhotoLightbox.tsx` | `RoutePhotoLightbox` — a route photo full screen, with like, report and remove (lifted out of RouteDetail.jsx's render, PR60) |
+| `lib/typicalPatterns.js` | `TYPICAL`, `typicalFor`, `routeHasGlacierTravel`, `PATTERN_CHECKS`, `patternStatus` — what a route of its kind typically involves, checked against its reports (moved out of RouteDetail.jsx, PR60) |
+| `lib/popInterest.js` | `popInterest` — the climbers with this route as an objective (moved out of RouteDetail.jsx, PR60) |
+| `lib/routeGaps.js` | `gapGear`, `gapPitches`, `gapTrack`, `_gapDist` — which facts a route is missing, for the add-it prompts (moved out of RouteDetail.jsx, PR60) |
+| `lib/permitMention.js` | `PERMIT_NEG`, `PERMIT_PERIPHERAL`, `_pmSays` — whether route text really says a permit applies (moved out of RouteDetail.jsx, PR60) |
+| `lib/descentBeta.js` | `descentBeta`, `_descEdited` — the descent prose, with an agreed correction winning (moved out of RouteDetail.jsx, PR60) |
+| `lib/rappelText.js` | `rappelNoteText`, `rappelsAreNone`, `rapProseAffirms`, `rappelHeadingCount` — how the rappels column reads as a note, a none, or a count for the heading (moved out of RouteDetail.jsx, PR60) |
+| `lib/pitchCount.js` | `pitchCountOf` — a route's pitch count, from the column or its pitch list (moved out of RouteDetail.jsx, PR60) |
+| `lib/seasonName.js` | `seasonName` — the season a date falls in (moved out of RouteDetail.jsx, PR60) |
 | `src/components/GPXMap.tsx` | `GPXMap` — the route map: track, pins, one shared popup card, derived trailhead, base check-ins (extracted from core, PR13) |
 | `lib/Route3DView.jsx` | `Route3DView` — the route map's 3D view (MapLibre GL over terrain) |
 | `lib/RouteTracksPanel.jsx` | `RouteTracksPanel` — CLIMBERS' TRACKS under the route map: sort, season filter, show on map |

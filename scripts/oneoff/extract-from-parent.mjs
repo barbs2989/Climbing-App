@@ -224,6 +224,50 @@ if (mode === "component") {
   src = addImport(src, `import ${name} from "./src/components/${name}.tsx";`);
   fs.writeFileSync(parentP, src);
   console.log(`lifted ${anchor} -> src/components/${name}.tsx (${ps.length} props, ${specs.length} imports)`);
+} else if (mode === "closure") {
+  // node extract-from-parent.mjs closure <Name> <fn> [--in RouteDetail]
+  // `const fn=(a,b)=><jsx>` declared inside --in becomes src/components/<Name>.tsx returning that
+  // body; its parameters AND every binding it reads from --in become props of the same name, and
+  // every call `fn(x,y)` becomes `<Name a={x} b={y} …/>`. Same refusals as branch mode, plus: the
+  // arrow must have an expression body and plain identifier parameters, and fn may only be CALLED.
+  const name = argv[1], fnName = argv[2], inFn = opt("--in") || "RouteDetail";
+  const outP = path.join(ROOT, "src/components", name + ".tsx"); if (fs.existsSync(outP)) die(outP + " exists");
+  let decl = null;
+  an.prog.traverse({ VariableDeclarator(p) { if (p.node.id.type === "Identifier" && p.node.id.name === fnName) { let f = p.getFunctionParent(); while (f && !(f.node.id && f.node.id.name === inFn)) f = f.getFunctionParent(); if (f) decl = p; } } });
+  if (!decl) die(`no \`const ${fnName}=\` inside ${inFn}`);
+  const fn = decl.get("init");
+  if (!fn.isArrowFunctionExpression() || fn.node.body.type === "BlockStatement") die(`${fnName} is not an arrow with an expression body`);
+  const params = fn.node.params.map(q => { if (q.type !== "Identifier") die(`${fnName} has a non-identifier parameter`); return q.name; });
+  const props = new Set(params), mods = new Set();
+  fn.get("body").traverse({
+    ReferencedIdentifier(ip) { const nm = ip.node.name; const b = ip.scope.getBinding(nm); if (!b) return;
+      if (b.scope === an.prog.scope) { mods.add(nm); return; }
+      if (b.scope === fn.scope && params.includes(nm)) return;
+      if (b.path.findParent(q => q === fn)) return;
+      props.add(nm); },
+    "AssignmentExpression|UpdateExpression"(ap) { const t = ap.node.left || ap.node.argument; if (t && t.type === "Identifier") { const b = ap.scope.getBinding(t.name); if (b && !b.path.findParent(q => q === fn)) die(`${fnName} assigns to captured \`${t.name}\``); } },
+    CallExpression(cp) { const c = cp.node.callee; if (c.type === "Identifier" && /^use[A-Z]/.test(c.name)) die(`${fnName} calls hook ${c.name}`); },
+  });
+  for (const k of ["key", "ref"]) if (props.has(k)) die(`${fnName} reads \`${k}\`, which cannot be a prop`);
+  const refs = decl.scope.getBinding(fnName).referencePaths;
+  for (const r of refs) if (!(r.parentPath.isCallExpression() && r.parentPath.node.callee === r.node)) die(`${fnName} is used other than by a call (line ${r.node.loc.start.line})`);
+  const specs = [], locals = [];
+  for (const m of mods) { const s = importSpec(an, m); if (s) specs.push(s); else locals.push(m); }
+  if (locals.length) die(`${fnName} reads page-local ${locals.join(", ")} — move to lib/ first (\`lib\` mode)`);
+  const captured = [...props].filter(p => !params.includes(p)).sort();
+  const body = src.slice(fn.node.body.start, fn.node.body.end);
+  const header = importLines(specs, path.join(ROOT, "src/components")).join("\n");
+  fs.writeFileSync(outP, `${header}\n\n/* ${fnName} — the body of that closure of ${inFn}, lifted verbatim by extract-from-parent.mjs (closure mode);\n   its parameters (${params.join(", ")}) and every binding it read from ${inFn} are props of the same name. */\nexport default function ${name}({${[...params, ...captured].join(",")}}){\n  return ${body};\n}\n`);
+  // Edit from the end so earlier offsets hold: each call, then the declaration.
+  const edits = refs.map(r => { const call = r.parentPath.node; return { s: call.start, e: call.end, t: `<${name} ${params.map((q, i) => `${q}={${call.arguments[i] ? src.slice(call.arguments[i].start, call.arguments[i].end) : "undefined"}}`).concat(captured.map(c => `${c}={${c}}`)).join(" ")}/>` }; });
+  const st = decl.parentPath.node; if (st.declarations.length !== 1) die(`${fnName} shares its const with other names`);
+  edits.push({ s: st.start, e: st.end, t: "" });
+  edits.sort((a, b) => b.s - a.s);
+  for (const e of edits) src = src.slice(0, e.s) + e.t + src.slice(e.e);
+  src = prune(src, new Set(specs.map(s => s.local)));
+  src = addImport(src, `import ${name} from "./src/components/${name}.tsx";`);
+  fs.writeFileSync(parentP, src);
+  console.log(`lifted ${fnName} -> src/components/${name}.tsx (${params.length} params + ${captured.length} captured props, ${refs.length} call(s) rewritten)`);
 } else if (mode === "deps") {
   // node extract-from-parent.mjs deps <Name> — the transitive page-local closure of <Name>, and for
   // each helper in it the top-level declarations OUTSIDE the closure that also read it (those must

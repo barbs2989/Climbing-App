@@ -111,6 +111,7 @@ const APP_PATH = path.join(ROOT, "ClimbMatch.jsx");
 //   1  App's area search  -- renders the SEED `MOUNTAINS` tree, so its distance is a different
 //      defect entirely (the AddRoute area-picker class) and converting it would polish a
 //      surface that is showing the wrong data.
+// (lib/routeGaps.js holds _gapDist, the gap prompt's distance, since PR60 -- scanned so it stays in view.)
 //   2  rapStr (core) and fmtRappels (lib/rappelEdits.js since PR59) -- the object branch of the rappels column.
 //      Measured: 733 of 733 rows are STRINGS, so neither branch can be reached. The unit there
 //      is chosen by WHICH COLUMN the value came from rather than by the climber, which is why
@@ -124,7 +125,7 @@ const RAW_IMPERIAL_OK = 6;
 // assertions below were written, so every core read must include them or it silently stops
 // looking at three whole screens while still printing ok.
 const readCoreAndMoved = () => readCoreSource();
-const RAW_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "lib/rappelEdits.js", "lib/DbAreaBrowser.jsx", "lib/FireMap.jsx", "lib/FireNearRoute.jsx", ...MOVED_ALL];
+const RAW_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "lib/rappelEdits.js", "lib/routeGaps.js", "lib/DbAreaBrowser.jsx", "lib/FireMap.jsx", "lib/FireNearRoute.jsx", ...MOVED_ALL];
 // " in" is EXCLUDED: it is the English preposition far more often than inches, and including it
 // reported `"APPROACHES · "+n+" way"+(s)+" in"` as a defect on the first run. A count is only as
 // good as its tokeniser.
