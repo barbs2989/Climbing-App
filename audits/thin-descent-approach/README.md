@@ -172,3 +172,39 @@ By PRIMARY discipline: trad 1,430, ice 1,006, sport 578, mixed 148, mountaineeri
 
 **Mountaineering tier DONE.** Next: primary ice and mixed (about 1,160 rows). Contexts come from `scripts/oneoff/thin-da-context-sql.mjs`
 (one SQL query; the PostgREST filter on disciplines times out), and agents follow `oos/ICE-BRIEF.md`.
+
+| Ice/mixed batch | thin rows | in batch | skipped | notes |
+|---|---|---|---|---|
+| CO 1 | 40 | 39 | 1 | |
+| CO 2 | 36 | 33 | 3 | |
+| CO 3 | 28 | 25 | 3 | Lead review dropped the Gestas descent (borrowed from neighbouring Dismas). |
+| CO 4 | 34 | 18 | 16 | 12 Longs rows already in the Longs/Meeker batch; Dark Star (own page doubts it). |
+| CO 5 | 40 | 39 | 1 | |
+| CO 6 | 40 | 30 | 10 | 8 already in the Hallett NE / Pikes batches, 2 carried-over skips. |
+| CO 7 | 27 | 26 | 1 | |
+| UT 1 | 37 | 37 | 0 | |
+| UT 2 | 40 | 37 | 3 | Temptation Wall is ice bouldering; Marvell Route's own page doubts it. |
+| UT 3 | 26 | 26 | 0 | Maple Canyon. |
+| UT 4 | 18 | 18 | 0 | |
+| MT 1 | 40 | 38 | 2 | Unprotected Fourplay skipped (text fits another peak). |
+| MT 2 | 39 | 22 | 17 | 16 already in the Three Tiers batch. Granite Lake ski-in given as 9 to 10 mi (three sources). |
+
+| AK 1 | 40 | 25 | 15 | Mt Hunter "Deprivation" skipped: the row (1 pitch AI6 M5) doesn't match the 6,000 ft buttress the sources describe. |
+| AK 2 | 37 | 29 | 8 | Rime Peak carries Mt. Regal's coordinate; Peak 11,300 is filed under Denali NP but is in the Ruth Gorge. |
+
+**Applied so far (2026-10-29, 22:30):** all seven CO batches (210 rows, every one "verified on re-read", none refused); then the database
+stopped answering after 2 rows of UT 1. Rollbacks: `rollback/rollback-1793312990207.json` through `rollback-1793313279406.json` (8 files).
+**Still to apply:** UT 1 (re-run whole; re-applying a landed row is harmless), UT 2–4, MT 1–2, AK 1–2. Wait for a healthy one-row read,
+run the applier per batch, then move each new `audits/route-breakdown/rollback-<ms>.json` here by exact name.
+
+**Ice-tier findings for review:**
+- `ut_monte_cristo` and `ut_broads_fork_2` share one coordinate (40.52763, -111.72408), right for neither: Monte Cristo's East Gully is in Little
+  Cottonwood near Alta, and Broads Fork is in Big Cottonwood.
+- `ut_7even_*` (6 rows) are bolted summer drytooling, filed as mixed.
+- `ut_*north_face_chimney`: our row (5.9+ WI3+ M5, 6 pitches) doesn't match its page (5.9 A2, 4 pitches).
+- `co_wheeler_mountain` "NW Couloir": its page puts it on the east face. `co_*southern_circus` is stored as ice at 5.6 but is described as mixed.
+- Navajo West Couloir, Pacific Peak N Face couloirs and Saint Sophia Faith, Hope and Love are alpine-rock pages filed as ice.
+- Waltzing Matilda (Oil Creek): page says WI2+, our row WI3-4.
+- Mertensia Falls is filed under "Wild Basin (bouldering)". Mt Bancroft rows sit under Indian Peaks (it is the James Peak Wilderness).
+- `mt_*unprotected_fourplay` on A Peak: its text names a "Blackwell Glacier" and a west face that don't fit A Peak, so it was probably copied
+  from another route.
