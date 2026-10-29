@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_colfax_peak_cosley_houston",
+  "last_processed_id": "wa_crater_mountain_standard_route",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 480 complete. Continuing id-ascending scope from wa_colfax_peak_cosley_houston.",
+  "pass_note": "Pass 8 in progress, batch 481 complete. Continuing id-ascending scope from wa_crater_mountain_standard_route.",
   "batches": [
     {
       "batch_number": 1,
@@ -9546,6 +9546,26 @@
       "clean": 7,
       "sql_file": null,
       "note": "No confirmed errors; no SQL. Clean (7): wa_colchuck_peak_colchuck_glacier (FA matches SummitPost/MP/Wikipedia exactly incl. the day), wa_colchuck_peak_holsten_hilden (FA matches MP and the FA party's own AAC report; existing grade-discrepancy correction note left as is), wa_colchuck_peak_north_buttress_couloir (FA matches SummitPost exactly), wa_colchuck_peak_northeast_couloir (FA matches MP exactly; the Feb 2023 fatal-avalanche watch_out note is accurate and well-hedged), wa_colchuck_peak_northeast_gully and wa_colchuck_peak_south_route (bare stubs, nothing to check), wa_colfax_peak_cosley_houston (FA matches MP exactly; 9,440 ft high point corroborated by countryhighpoints.com GPS surveys; road/access fields' Glacier Creek Road Dec-2025-washout-to-Aug-20-2026-reopening timeline independently confirmed via Cascadia Daily News -- already current, no fix needed). Flagged for human review (3), all routine uncorroborated-FA cases, none safety/access-relevant: wa_colchuck_balanced_rock_west_face (stored FA Boley/Lewis 1980 vs an unrelated-year AAC mention of a Twight/Johnston aid ascent -- likely a different, earlier ascent, not a contradiction; MP and stephabegg.com didn't resolve from this run's network), wa_colchuck_peak_south_face and wa_colchuck_peak_west_ridge (both bare FA-only stubs with no corroborating source found for either team/date). Method note: stephabegg.com, mountainproject.com and publications.americanalpineclub.org all failed DNS resolution this run."
+    },
+    {
+      "batch_number": 481,
+      "date": "2026-10-29",
+      "pass": 8,
+      "route_ids": [
+        "wa_colfax_peak_kimchi_suicide_volcano",
+        "wa_colfax_peak_polish_route",
+        "wa_colonial_peak_west_ridge",
+        "wa_complete_south_buttress",
+        "wa_concord_tower_north_face",
+        "wa_copper_peak_south_route",
+        "wa_corteo_peak_southwest_ridge",
+        "wa_crater_mountain_standard_route"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 1,
+      "clean": 7,
+      "sql_file": null,
+      "note": "No confirmed errors; no SQL. Clean (7): wa_colfax_peak_kimchi_suicide_volcano (FA 'Colin Haley and Sarah Hart, April 2015' matches Haley's own AAC/Skagit Alpinism writeups exactly -- April 9, 2015; grade AI4+/M5 matches sources' M5 R AI4+; high_point_ft 9440 matches Wikipedia/Black Buttes entry and is within a few feet of the Aug 2026 and 2024 countryhighpoints.com surveys), wa_colfax_peak_polish_route (FA 'Rogoz and partner, 2000 (attribution uncertain)' matches Mountain Project's own listing of 'Rogoz-partner, 2000' with no fuller name findable anywhere -- already correctly hedged, left as is), wa_colonial_peak_west_ridge (FA 'William Degenhardt & Herbert Strandberg (Seattle Mountaineers), July 31, 1931' matches Wikipedia exactly; high_point_ft 7771 matches Wikipedia/SummitPost/MyTopo exactly), wa_complete_south_buttress (bare FA, high_point_ft 8066 for Cutthroat Peak matches the current/better-supported Wikipedia+PeakVisor figure over an older 8,050 ft mirror tied to the lower south-peak reading), wa_copper_peak_south_route (FA 'Franklin Bennet, Edgar Courtwright, and Toivo Hagman, August 1937' matches Wikipedia/PeakVisor exactly; lat/lng 48.1745741/-120.803989 matches Wikipedia's 48\u00b010'30\"N 120\u00b048'13\"W to 5 decimal places; high_point_ft 8965 and '19th on the Bulger list' both match PeakVisor/Wikipedia/fastestknowntime.com), wa_corteo_peak_southwest_ridge (FA 'John Lehmann and Hermann Ulrichs, July 1935' and high_point_ft 8107 both match Wikipedia exactly), wa_crater_mountain_standard_route (bare FA; high_point_ft 8132 matches Wikipedia's NAVD88 figure over ListsOfJohn/SummitPost's older 8128 ft). Flagged for human review (1), not safety- or access-relevant: wa_concord_tower_north_face's stored high_point_ft (7611) matches no source found -- Mountain Project and WTA both give Concord Tower as 7560 ft, but that exact figure is also independently given for the neighboring, distinct Lexington Tower by Wikipedia, which smells like a copied figure between adjacent Liberty Bell Group spire pages rather than a reliable measurement, so overwriting 7611 with 7560 would not clearly be a correction. No USGS/LiDAR source was reachable this run to settle it either way."
     }
   ]
 }
