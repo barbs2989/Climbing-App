@@ -74,7 +74,10 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   mountaineering, scrambling) 10/25/50/100, counting ONLY a log ticked *Summit*; ice & mixed 10/25/50; pitches 100/500/1,000;
   a 6/12/24-month logging streak (`monthRuns`); 50/100 climbs in one calendar year (`yearCounts`); Onsight ace (10 onsights or
   flashes); All-rounder (5 disciplines); First ascent; Route developer; and one *finisher* badge per curated list. No badge for a
-  first send, a single peak or a vouch. Each earned badge carries `on`, the date of the log that crossed the line (a list: the last
+  first send, a single peak or a vouch. A PEAK list (Bulgers, 14ers, ADK 46, SPS…) counts a peak only when the climber stood on it:
+  a route that can be ticked Summit (alpine, mountaineering, scrambling, ice, mixed) counts only through `summitedLog` (a Summit tick or
+  the log's summit answer), and a crag climb on a list peak (a desert tower, a Half Dome face) counts when sent — `topped` in
+  `useCuratedLists`, read by the list card, its Hide done, and the finisher badge alike. Each earned badge carries `on`, the date of the log that crossed the line (a list: the last
   objective's first tick; null when that log has no date), shown as *✓ Earned <date>* when tapped. Tiers share a `fam`; a profile
   shows the highest earned tier of each, newest first. Your Logbook shows every badge, earned or not, with `cur / tgt` under a
   locked one (a list's finisher only once you have started it); another climber's shows only what they earned, and an empty trophy
