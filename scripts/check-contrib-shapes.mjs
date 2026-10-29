@@ -44,7 +44,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { appSources } from "./lib/guard-sources.mjs";
-import { readCoreSource } from "./lib/guard-sources.mjs";
+import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GUARD = "check:contrib-shapes";
@@ -52,7 +52,8 @@ appSources(ROOT, GUARD);
 
 const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
 const APP = read("ClimbMatch.jsx");
-const RD = read("RouteDetail.jsx");
+// Through readAppFile(): the stitched page, so the components moved out of it (PR52 on) stay read.
+const RD = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
 // Through readCoreSource(): AddRoute (whose `_nr` object this reads) moved to lib/ to load lazily.
 const CORE = readCoreSource();
 

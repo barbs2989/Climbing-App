@@ -208,10 +208,23 @@ export const MOVED = {
     "src/components/PolicyUpdateNotice.tsx",
   ],
   "ClimbMatch.jsx": [],
-  "RouteDetail.jsx": [],
+  "RouteDetail.jsx": [
+    "src/components/GradeTag.tsx",
+    "src/components/PinNum.tsx",
+    "src/components/TopoSwatch.tsx",
+    "src/components/MediaImg.tsx",
+    "src/components/CragWalkIn.tsx",
+    "src/components/SaveOfflineChip.tsx",
+    "src/components/TopoCaptionBox.tsx",
+    "src/components/BetaDiff.tsx",
+    "src/components/CRow.tsx",
+  ],
 };
 // The pre-2026-10 name, kept because 21 guards import it. Same array, same meaning.
 export const MOVED_FROM_CORE = MOVED["ClimbMatchCore.jsx"];
+// Every moved file under every parent — for a scan that lists the three app files by name and must
+// keep the components moved out of ANY of them in view (RouteDetail.jsx's since PR52, 2026-10-29).
+export const MOVED_ALL = Object.values(MOVED).flat();
 
 export function movedAsParentText(text, file = "a moved file") {
   const body = text.replace(/^import [^\n]*\n/gm, "");

@@ -27,7 +27,7 @@ import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
 import { settledText } from "../lib/render-settle.mjs";
 import { tapByText } from "../lib/tap-by-text.mjs";
-import { MOVED_FROM_CORE } from "../lib/guard-sources.mjs";
+import { MOVED_ALL } from "../lib/guard-sources.mjs";
 
 // A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
 // as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
@@ -37,7 +37,7 @@ assertQuietBox("probe-one-age-for-one-date.mjs");
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 // Components moved out of ClimbMatchCore.jsx to load lazily are still app source (see guard-sources.mjs).
-const FILES = ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx", ...MOVED_FROM_CORE];
+const FILES = ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx", ...MOVED_ALL];
 const problems = [];
 
 // =======================================================================================
@@ -64,7 +64,7 @@ const seen = new Set();
 let strings = 0;
 for (const f of FILES) {
   const src = fs.readFileSync(path.join(ROOT, f), "utf8");
-  const ast = parse(src, { sourceType: "module", plugins: ["jsx"] });
+  const ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] });
   const look = (value, start) => {
     strings++;
     if (/ verified report/.test(value)) {

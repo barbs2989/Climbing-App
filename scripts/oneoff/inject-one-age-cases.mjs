@@ -36,10 +36,10 @@ const CASES = [
   {
     name: "badge-verified-routedetail",
     why: "the What's changed badge calling a plain report count verified",
-    file: "RouteDetail.jsx",
+    file: "src/components/BetaDiff.tsx",
     find: '{"✓ "+acts.length+" report"+(acts.length!==1?"s":"")}',
     repl: '{"✓ "+acts.length+" verified report"+(acts.length!==1?"s":"")}',
-    expect: /RouteDetail\.jsx @\d+: ".* verified report/,
+    expect: /BetaDiff\.tsx @\d+: ".* verified report/,
     section: "static+screen",
   },
   {
