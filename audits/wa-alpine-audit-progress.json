@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_colchuck_balanced_rock_south_route",
+  "last_processed_id": "wa_colfax_peak_cosley_houston",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 479 complete. Continuing id-ascending scope from wa_colchuck_balanced_rock_south_route.",
+  "pass_note": "Pass 8 in progress, batch 480 complete. Continuing id-ascending scope from wa_colfax_peak_cosley_houston.",
   "batches": [
     {
       "batch_number": 1,
@@ -9524,6 +9524,28 @@
       "clean": 5,
       "sql_file": null,
       "note": "No confirmed errors; no SQL. Method note: combining discipline=in.(...) with an id range + order on the live DB reliably hit the server's statement timeout this run, regardless of page size -- worked around by paging a plain id-range scan (fast) and filtering alpine/mountaineering client-side, then confirming each candidate's parent area_type='peak' via individual id=eq. lookups. wa_clean_break (Juno Tower, area_type=crag) was skipped as out of scope. Clean (5): wa_chimney_rock_west_face (FA correctly hedged as unknown for this specific South-Peak/East-Gully line, distinct from the peak's main 1930 Farr/Winder/Byington FA, both confirmed via Wikipedia; 7,440 ft high point matches Wikipedia's 'minor south peak' figure), wa_chiwawa_mountain_southwest (FA 'Lorenz A. Nelson and a Mountaineers party, 1921' matches Wikipedia/Armchair Mountaineer; 8,459 ft matches Wikipedia; the Little Giant Fire closure order 06-17-07-2026-40 (Sept 3-Oct 31 2026) this row cites is now confirmed verbatim against the official fs.usda.gov alert page -- resolves the date ambiguity batches 474/477 flagged as unverifiable when that page wouldn't load for those runs), wa_chockstone_route (FA 'Wesley Grande, Pete Schoening, Dick Widrig, May 28 1950' matches Mountain Project/OpenBeta; this row's own 'historically also referenced as the Southwest Face Route' hedge already anticipates the SummitPost naming discrepancy found this run; 7,760 ft matches SummitPost/Wikipedia), wa_clark_mountain_west_ridge (8,602 ft matches SummitPost; same Little Giant Fire closure order confirmed as above), wa_classic_route_2 (Unicorn Peak rappel-anchor beta -- rock horn now standard, old snag deprecated -- matches recent Mountaineers trip reports almost verbatim; grade 5.4 matches Mountain Project though SummitPost says 5.6 for the same line, two primary databases disagree with no guidebook to adjudicate, not changed). No sources found (3, enrichment gaps not contradicted facts): wa_chimney_rock_southeast_shoulder, wa_colchuck_balanced_rock_east_route, wa_colchuck_balanced_rock_south_route are near-bare stubs with no SummitPost/Mountain Project/Mountaineers.org page naming these specific lines. Worth a human look (not a factual error): wa_chimney_rock_west_face and wa_clark_mountain_west_ridge both have an id that no longer matches their own stored name/content (East Gully/South Peak content under a '_west_face' id; Walrus Glacier content under a '_west_ridge' id) -- may just be the known id-vs-name drift CLAUDE.md already documents, but two in one batch of eight seemed worth flagging to whoever maintains route identity."
+    },
+    {
+      "batch_number": 480,
+      "date": "2026-10-29",
+      "pass": 8,
+      "route_ids": [
+        "wa_colchuck_balanced_rock_west_face",
+        "wa_colchuck_peak_colchuck_glacier",
+        "wa_colchuck_peak_holsten_hilden",
+        "wa_colchuck_peak_north_buttress_couloir",
+        "wa_colchuck_peak_northeast_couloir",
+        "wa_colchuck_peak_northeast_gully",
+        "wa_colchuck_peak_south_face",
+        "wa_colchuck_peak_south_route",
+        "wa_colchuck_peak_west_ridge",
+        "wa_colfax_peak_cosley_houston"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 3,
+      "clean": 7,
+      "sql_file": null,
+      "note": "No confirmed errors; no SQL. Clean (7): wa_colchuck_peak_colchuck_glacier (FA matches SummitPost/MP/Wikipedia exactly incl. the day), wa_colchuck_peak_holsten_hilden (FA matches MP and the FA party's own AAC report; existing grade-discrepancy correction note left as is), wa_colchuck_peak_north_buttress_couloir (FA matches SummitPost exactly), wa_colchuck_peak_northeast_couloir (FA matches MP exactly; the Feb 2023 fatal-avalanche watch_out note is accurate and well-hedged), wa_colchuck_peak_northeast_gully and wa_colchuck_peak_south_route (bare stubs, nothing to check), wa_colfax_peak_cosley_houston (FA matches MP exactly; 9,440 ft high point corroborated by countryhighpoints.com GPS surveys; road/access fields' Glacier Creek Road Dec-2025-washout-to-Aug-20-2026-reopening timeline independently confirmed via Cascadia Daily News -- already current, no fix needed). Flagged for human review (3), all routine uncorroborated-FA cases, none safety/access-relevant: wa_colchuck_balanced_rock_west_face (stored FA Boley/Lewis 1980 vs an unrelated-year AAC mention of a Twight/Johnston aid ascent -- likely a different, earlier ascent, not a contradiction; MP and stephabegg.com didn't resolve from this run's network), wa_colchuck_peak_south_face and wa_colchuck_peak_west_ridge (both bare FA-only stubs with no corroborating source found for either team/date). Method note: stephabegg.com, mountainproject.com and publications.americanalpineclub.org all failed DNS resolution this run."
     }
   ]
 }
