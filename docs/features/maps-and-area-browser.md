@@ -144,6 +144,9 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
    Routes for one area: `useAreaRoutes(areaId, { full })` (thin row by default; `check:list-row-columns` guards the columns).
 3. Subtree queries use RPCs: `routes_in_subtree` (`useSubtreeRoutes`, paged, 40 per page), `routes_in_subtree_count` (`useSubtreeRouteCount`),
    `areas_in_subtree` (`useAreaSearch(rootId, q, lim)`). Subtree membership rides the `areas.path` ltree.
+   Its ranking normalises each hit's name ONCE (a materialized `canon` CTE, 0389); before that it ran
+   `search_canon` per rung of the score ladder and timed out (57014, *Couldn't search areas*) on "rock" in
+   California / Colorado. Keep any new rung reading `lname` / `bname`, never calling `search_canon` again.
 4. Map bubbles: `useNearbyAreas(bounds)` selects `areas` where lat/lng fall in the live bounds box, `area_type` in (peak, crag),
    ordered by `route_count` desc, limit 500, and returns `{ rows, total }` so the UI can say it is capped. Refetches on pan/zoom. `useNearbyPeaks(bounds)` backs `NearbyPeaks`.
 5. Search spelling: `lib/search.js` (`SEARCH_FORMS`, `SEARCH_COMPOUND`, `searchNorm`, `searchCanon`, `searchMatches`, `searchBare`) is the JS twin of SQL `search_norm()`
