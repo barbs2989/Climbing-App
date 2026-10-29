@@ -35422,3 +35422,25 @@ Clean (7): wa_colfax_peak_kimchi_suicide_volcano (FA "Colin Haley and Sarah Hart
 Flagged for human review (1), not safety/access-relevant: wa_concord_tower_north_face's stored high_point_ft (7611) matches no source found. Mountain Project and WTA both list Concord Tower at 7560 ft, but Wikipedia independently gives that exact same 7560 ft figure to the neighboring, distinct Lexington Tower — which reads as a figure copied across adjacent Liberty Bell Group spire pages rather than a settled measurement, so replacing 7611 with 7560 would not clearly be a correction. No USGS/LiDAR source was reachable this run to resolve it either way; a future run with Peakbagger or guidebook access should revisit this one first.
 
 Method note: DNS for summitpost.org failed from this run's network (same pattern as prior batches for stephabegg.com/mountainproject.com/AAC publications) — a future run with access to any of these should also revisit the Concord Tower elevation question above.
+
+## 2026-10-29 — Run skipped (no batch, pass 8 unchanged): database unreachable
+
+This run could not reach the live database at all, so no routes were audited and
+`wa-alpine-audit-progress.json` was left exactly as batch 481 finished it (`last_processed_id`
+still `wa_crater_mountain_standard_route`, pass 8).
+
+Every `GET` against `${VITE_SUPABASE_URL}/rest/v1/routes` and `/rest/v1/areas` — via `curl`
+with the anon key, and via Node `fetch()` through `scripts/lib/supabase-env.mjs` — hung with
+zero bytes received across five separate attempts over several minutes (15s, 20s, 20s, 25s and
+30s timeouts), except one 90-second attempt that got a response: Cloudflare's own `522 Connection
+timed out` (`cf-ray` present, `server: cloudflare`, `retry-after: 120`), meaning Cloudflare's edge
+accepted the TCP/TLS connection but the origin (Supabase's PostgREST/Postgres) never answered
+within Cloudflare's own timeout. The REST gateway root (`/rest/v1/` with no table) answered
+instantly (401, "Secret API key required" — expected for the anon key against that path), so
+this is not a proxy or DNS problem on this session's end — the gateway is up, the query path to
+Postgres is not.
+
+No fix attempted — this audit has no write access and no project-dashboard access to restart or
+inspect the Supabase instance. Logged per the run's guardrails (nothing outside `audits/` touched,
+no SQL written for anything unverified) and reported to the project owner; next scheduled run
+should simply retry pass 8 from `wa_crater_mountain_standard_route` as if this run never happened.
