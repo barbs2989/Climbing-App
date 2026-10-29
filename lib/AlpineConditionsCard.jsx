@@ -230,7 +230,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       if (d.date < today) return;
       const fs = faceSun[d.date];
       let r = dayFlags(fc, days, k, { kind, rockToo: kind === "glacier" && catOf(route) === "alpine", terrain, highFt: pt.elevFt, snowFt: floor ? floor.ft : null, legs, sun: fs && fs.bands ? fs : null });
-      const ms = sp ? modelSpread(sp, d.date) : null;
+      const ms = sp ? modelSpread(sp, d.date, null, daySummary(fc, d).precip) : null;
       if (ms && ms.over.length) r = Object.assign({}, r, { flags: r.flags.concat([{ key: "models-disagree", level: "caution", v: ms }]) });
       const al = alerts && alerts.data && !alerts.data.outside ? alertsForDay(normAlerts(alerts.data), d.date, fc) : [];
       if (al.length) r = Object.assign({}, r, { flags: r.flags.concat(al.map(function (a) { return { key: "alert", level: alertLevel(a), v: { event: a.event, severity: a.severity, when: windowLabel(fc, a) } }; })) });
