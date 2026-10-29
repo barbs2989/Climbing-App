@@ -35175,3 +35175,20 @@ No fixes. 6 clean, confirmed against Wikipedia, AAC Publications, Mountain Proje
 Flagged for human review (2): wa_bryant_peak_north_route is a bare enrichment stub, not a factual error. wa_bryant_peak_west_face's 1938 Clough/Kirschner FA could not be confirmed or contradicted against any source found (Wikipedia's 1926 FA is for the peak's general ascent, not necessarily this technical route).
 
 Network note: cascadeclimbers.com and sites.google.com (a stephabegg.com mirror) did not resolve from this environment this run, limiting access to some primary trip-report threads.
+
+## Run skipped — 2026-10-29 (database unreachable)
+
+This run could not audit any routes: every REST query against `areas`/`routes`
+(`${VITE_SUPABASE_URL}/rest/v1/...`) returned Cloudflare error 522 ("connection
+timed out" between Cloudflare and the Supabase origin), consistently across
+~7 attempts over several minutes, with and without the `Authorization` header.
+Supabase's auth/edge layer itself answered fine and fast (a key-less request to
+`/rest/v1/` returned a normal 401 in well under a second) — only requests that
+need Postgres to actually run a query (any `select` against a real table) hung
+and then 522'd. That split points at the project's Postgres database being
+unresponsive or paused, not a network-policy or proxy issue on this environment's
+side.
+
+No batch was picked, no facts were checked, and `audits/wa-alpine-audit-progress.json`
+is unchanged — `last_processed_id` is still `wa_bryant_peak_west_face` (pass 8).
+The next run should resume from there as if this run never happened.
