@@ -120,6 +120,14 @@ about thin descents, on the peaks people actually climb. Each peak is one contex
 | Pingora (WY) | 9 | **7 written** | 2 | One page with no description, one unplaceable. |
 | Slesse Mountain (BC) | 27 | **14 written** | 13 | Lead review dropped two descents that assumed a summit finish. Some rows are on Mount Parkes or Labour Day Horn, other peaks of the massif. Road access is stated only as restricted, because the sources conflict. |
 | Longs/Meeker Cirque (CO) | 29 | **24 written**; 3 **apply pending** (DB stopped again) | 2 | Dark Star skipped (its own page says the description may be another line). Rappel counts left out; the sources split three ways. |
+| Bugaboos North Faces, Fairy Meadow (BC) | 19 | 17 reviewed (offline check clean), **apply pending** | 2 | Two pages doubt their own descriptions. Lead review removed single-source rope lengths. |
+| Snowpatch Spire (BC) | 19 | 13 reviewed (offline check clean), **apply pending** | 6 | Rappel counts left out (the MP pages share one wording, so they count as one source). Rockfall caution for the north end, in general terms. |
+| Mount Gimli (BC) | 13 | 11 reviewed (offline check clean), **apply pending** | 2 | |
+| Mount Athelstan (BC) | 13 | 10 reviewed (offline check clean), **apply pending** | 3 | Salal Creek walls, NW of Pemberton. |
+| Yak Peak (BC) | 15 | 15 reviewed (offline check clean), **apply pending** | 0 | 3 approach-only. |
+| Nesakwatch Spires (BC) | 15 | 12 reviewed (offline check clean), **apply pending** | 3 | |
+| Huntington Ravine (NH) | 14 | 14 reviewed (offline check clean), **apply pending** | 0 | Pinnacle Gully approach-only. No distances (sources say 1.3 vs 1.7 mi). Avalanche terrain in general terms only. |
+| Tuckerman Ravine (NH) | 18 | 18 reviewed (offline check clean), **apply pending** | 0 | 3 approach-only. |
 
 **How to resume (database healthy again: a one-row read under 1.5 s):**
 On 2026-10-29 at 18:39 the database recovered. 102 rows were written (Hallett, Hulk, Whitney, Russell, Middle Teton and Moran in full,
