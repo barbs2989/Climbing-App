@@ -36,7 +36,7 @@ npm run check:guard-wiring # every guard RUNS, is named here, and this file agre
 npm run check:action-versions # no workflow pins an action below the version we moved to (in build)
 npm run check:types # every TypeScript file under src/ type-checks, strict — Vite strips types and checks nothing (in build)
 npm run type-check # the same as check:types, under the name the owner asked for
-npm run lint # ESLint, every rule an error: unused variables, `any`, rules-of-hooks + hook dependency arrays; legacy findings held in eslint-suppressions.json, which only shrinks (in build)
+npm run lint # ESLint, every rule an error: unused variables, `any`, rules-of-hooks + hook dependency arrays; ZERO findings, no baseline file, every disable names its rule and a reason (in build)
 npm run measure:guard-reach -- --out before.json # ...then --out after.json --compare before.json: did moving code make a guard go BLIND? (hand-run around every extraction)
 
 # ── Static code guards — notes: docs/guards/static-code.md ──
@@ -366,8 +366,9 @@ Four functions do the real work; everything else is UI around them. The code is 
   rule, 2026-10-15). Any finding about unused variables, implicit or explicit `any`, or a hook's dependency
   array is fixed in the code before the work is presented or merged — never silenced with a new
   `eslint-disable`, a cast to `any`, or `--suppress-all`. An omission from a dependency array that is
-  genuinely intended gets a `// eslint-disable-line react-hooks/exhaustive-deps -- <why>` naming the reason.
-  When a legacy finding is fixed, shrink the baseline: `npx eslint . --prune-suppressions`.
+  genuinely intended gets a `// eslint-disable-line react-hooks/exhaustive-deps -- <why>` naming the reason
+  (lint fails a directive with no rule or no ` -- `). The legacy backlog is cleared (2026-10-28): there is no
+  `eslint-suppressions.json`, and lint fails if one reappears.
 - When adding a feature, follow the existing pattern: add seed data to the relevant top-level `const`, add `useState` in `App`, and add a `tab===...`/sub-view branch in the render tree. Match the dense, inline-style formatting of surrounding code.
 - Styling is always inline `style={{...}}` referencing the `C` palette — do not introduce CSS files or a styling library.
 - For anything outside the DB-backed routes/areas/contributions/auth path (crews, messages, connections, vouches, logs, trip reports, etc.), "saving" means updating React state — don't reach for storage APIs unless explicitly asked to add persistence. For DB-backed data, use the existing `lib/db.js`/`lib/supabase.js` patterns (e.g. `submitContribution`) rather than writing new ad-hoc persistence.

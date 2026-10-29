@@ -12,12 +12,12 @@ import { useRecentRouteIds } from "./recent";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel, searchPlaces } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
-import { shortGrade, gradeNumFrom, displayGrade, gradeSystemForDiscipline } from "./grade";
+import { shortGrade, gradeNumFrom, displayGrade } from "./grade";
 import { clickable } from "./clickable";
 import { subdivisionNoun, countryOfArea } from "./countries";
 import { effDistKm } from "./outing";
 import { POP_BACK, POP_CLOSE, POP_CLOSE_MEDIA, POP_REMOVE, POP_CHIP_X } from "./popupChrome.js";
-import { BTN, BTN_LG, BTN_SM, BTN_LINK, CHIP } from "./buttonStyles.js";
+import { BTN, BTN_LG, BTN_LINK, CHIP } from "./buttonStyles.js";
 import { useWideScreen } from "./wideLayout.js";
 import { ScreenHero } from "./ScreenHero";
 import { AboutCard, AreaFactsCard, ClimbsChart, GradeSpread, PendingAreaEdits } from "./AreaPageSections";
@@ -594,7 +594,7 @@ function NearbyPeaks({ area, onJumpToArea, C, uDistMi }) {
   // call, because a hook behind an `if` is the #377 shape check:hooks exists to catch.
   const { data } = useNearbyPeaks(bounds);
   const rows = useMemo(() => nearbyPeaksRows(area, data && data.rows, 6),
-    [data, area && area.id, area && area.lat, area && area.lng, area && area.area_type]);
+    [data, area && area.id, area && area.lat, area && area.lng, area && area.area_type]); // eslint-disable-line react-hooks/exhaustive-deps -- recompute when the area identity or position changes; area is a fresh parent object each render
   if (!rows.length) return null;
   return (
     <div style={{ marginBottom: 10 }}>
@@ -1681,7 +1681,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
     loadLeaflet(init, () => setMapFail(true));
     const ft = setTimeout(() => { if (!cancelled && !mapRef.current) setMapFail(true); }, 9000);
     return () => { cancelled = true; clearTimeout(ft); if (ro) ro.disconnect(); if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; tileRef.current = null; placeMarkRef.current = null; } };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- builds the Leaflet map once; area type, base layer and centre are applied by their own effects and a rebuild would reset the view
   useEffect(() => { if (!mapRef.current) return; applyBaseLayer(mapRef.current, tileRef, baseLayer); }, [baseLayer]);
 
   // Screen-space clustering: at national/state scale a single viewport can hold
@@ -1736,7 +1736,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
         grp.addLayer(mk);
       }
     }
-  }, [ready, nearby]);
+  }, [ready, nearby]); // eslint-disable-line react-hooks/exhaustive-deps -- markers are redrawn only when the map is ready or the nearby list changes; theme colours are constants
 
   // Live, and refining: see useFollowMe in lib/mapKit.jsx. Only the FIRST fix re-centres the
   // nearby list -- re-querying on every step of a walk would refetch for nothing.
@@ -1749,7 +1749,7 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
   const locate = me.locate, locating = me.locating, geoErr = me.err;
   // Your dot is on the map from the start when location is already allowed -- without moving the
   // map off the area you opened it on. Never asks: the button above does that.
-  useEffect(() => { if (ready) me.showDot(); }, [ready]);
+  useEffect(() => { if (ready) me.showDot(); }, [ready]); // eslint-disable-line react-hooks/exhaustive-deps -- shows the dot once when the map becomes ready; me is a per-render hook result
 
   const goToPlace = p => {
     const L = window.L, map = mapRef.current;
@@ -1778,12 +1778,12 @@ function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }
   // point the map opened at — otherwise, once you've panned somewhere else, the
   // "closest" areas at the top of the list stop matching what's actually
   // showing on screen, which reads as broken.
-  const viewCenter = bounds ? { lat: (bounds.minLat + bounds.maxLat) / 2, lng: (bounds.minLng + bounds.maxLng) / 2 } : center;
+  const viewCenter = useMemo(() => bounds ? { lat: (bounds.minLat + bounds.maxLat) / 2, lng: (bounds.minLng + bounds.maxLng) / 2 } : center, [bounds, center]);
   const sorted = useMemo(() => {
     if (!nearby) return [];
     const withDist = viewCenter ? nearby.map(a => ({ ...a, _mi: haversineMi(viewCenter, a) })) : nearby.map(a => ({ ...a, _mi: null }));
     return withDist.sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)).slice(0, 60);
-  }, [nearby, bounds, center]);
+  }, [nearby, viewCenter]);
   const discChip = (k, label, on) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
 
   const searchUI = (
@@ -2083,7 +2083,7 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
     onAreaContext(current
       ? { id: current.id, name: current.name, lat: current.lat != null ? current.lat : null, lng: current.lng != null ? current.lng : null, areaType: current.area_type }
       : null);
-  }, [onAreaContext, current && current.id, current && current.lat, current && current.lng]);
+  }, [onAreaContext, current && current.id, current && current.lat, current && current.lng]); // eslint-disable-line react-hooks/exhaustive-deps -- report the area context only when the area identity or position changes; current is a fresh object each render and onAreaContext is listed
 
   const jump = i => {
     setScreen("areas");
