@@ -42,7 +42,7 @@ function textProblems(s, field) {
 }
 
 const files = fs.readdirSync(DIR).filter((f) => f.endsWith(".json")).sort();
-const rows = [], problems = [];
+const rows = [], problems = [], unplaced = [];
 for (const f of files) {
   const list = JSON.parse(fs.readFileSync(path.join(DIR, f), "utf8"));
   for (const lu of list) {
@@ -57,7 +57,9 @@ for (const f of files) {
     // also_route_ids: catalog routes that ARE the whole link-up (a "Ptarmigan Traverse" route), so the
     // section shows on that page too without posing as one of its legs.
     const route_ids = [...new Set(legs.map((l) => l.route_id).concat(lu.also_route_ids || []).filter(Boolean))];
-    if (!route_ids.length) problems.push(`${where}: no leg resolves to a catalog climb, so it would render nowhere`);
+    // No catalog climb to show it on (the catalog does not hold these summits as alpine, mountaineering
+    // or scrambling routes): kept in the research log, not written, and counted so it is not lost.
+    if (!route_ids.length) { unplaced.push(where); continue; }
     rows.push({ id: lu.id, name: lu.name, state: lu.state, region: lu.region || null, route_ids, legs, duration: lu.duration || null, how: lu.how, descent: lu.descent || null, logistics: lu.logistics || null, checked_at: lu.checked_at || new Date().toISOString().slice(0, 10) });
   }
 }
@@ -77,6 +79,7 @@ for (const r of rows) for (const id of r.route_ids) if (!found.has(id)) problems
 
 console.log(`${files.length} file(s), ${rows.length} link-up(s), ${allIds.length} distinct climbs, ${problems.length} problem(s)`);
 problems.forEach((p) => console.log("  - " + p));
+if (unplaced.length) console.log(`${unplaced.length} link-up(s) resolve to no catalog climb and are not written:\n  ` + unplaced.join("\n  "));
 if (problems.length) process.exit(1);
 if (!WRITE) { console.log("dry run — nothing written (pass --write)"); process.exit(0); }
 
