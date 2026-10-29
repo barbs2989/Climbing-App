@@ -124,7 +124,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Fire map** (`FireMap`, `lib/FireMap.jsx`; data in `lib/fire.js`): opens from an area page below the state (a range, peak, crag or wall — never a country or state page, the first screen after the picker) and a route's Safety tab. Layers, each a chip:
   Fires (WFIGS incident points — the point of ORIGIN, coloured by containment, sized by acres), Perimeters, Red flag (NWS fire-weather
   zones) and **Heat** (`useHeat`: VIIRS satellite detections from the last 48 h, newer brighter, drawn at their real ~375 m footprint
-  when zoomed in; queried only from zoom 7, `HEAT_MIN_ZOOM`). A **legend** under the map names every colour, grey (contained) included.
+  when zoomed in; queried only from zoom 7, `HEAT_MIN_ZOOM`) and **Smoke** (2026-10-28: the national surface-smoke FORECAST, an hour's average of fine smoke, painted as tiles in the EPA PM2.5 colour bands from 9 µg/m³ up — `smokeTileUrl`, `SMOKE_BANDS`; nothing painted under 9, so a clear day leaves the map clear). Under the legend, **‹ ›** step the smoke hour 3 h at a time through the hours the service holds (`useSmokeWindow`, `smokeHours`; about two days), named *Smoke forecast, now* / *Fri 3:00 PM*; a failed window read or tile says the smoke was not loaded and is not a clean-air reading. A **legend** under the map names every colour, grey (contained) included.
   **⤢** gives a map-only view (the list steps aside; ✕ returns to it). **📍 Me** is the area map's button. The banner's **Full text →**
   opens `FireAlertSheet`, which reads the product's own words from api.weather.gov (`useFireAlert`; an expired product says so) and
   links to weather.gov's page for the zone (`nwsPointPage`) — the old link opened api.weather.gov's raw JSON (2026-10-23).
@@ -174,7 +174,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `lib/offlineTiles.js` | `saveRouteMapOffline`, `removeRouteMapOffline`, `routeMapLines` |
 | `lib/SaveMapOffline.jsx` | `SaveMapOffline` (under the route map), `SavedRouteMaps` (Manage areas) |
 | `lib/FireMap.jsx` | default export `FireMap`, `FireAlertSheet` |
-| `lib/fire.js` | `useActiveFires`, `useFirePerimeters`, `useFireWeather`, `useHeat`, `useFireAlert`, `nwsPointPage`, `fireLevel` |
+| `lib/fire.js` | `useActiveFires`, `useFirePerimeters`, `useFireWeather`, `useHeat`, `useSmokeWindow`, `smokeHours`, `smokeTileUrl`, `SMOKE_BANDS`, `useFireAlert`, `nwsPointPage`, `fireLevel` |
 | `src/components/GPXMap.tsx` | `GPXMap` — the route page map (extracted from core, PR13) |
 | `ClimbMatchCore.jsx` | `OverviewMap` (seed/overview map), lazy `DbAreaBrowser` import |
 | `RouteDetail.jsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`, `BaseLayerToggle`) for the route and waypoint-picker maps |
