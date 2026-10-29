@@ -6,7 +6,7 @@
 import { useMemo, useState, lazy, Suspense } from "react";
 import { clickable } from "./clickable";
 import { createPortal } from "react-dom";
-import { useSession } from "./auth";
+import { useSession } from "../src/AuthContext.tsx";
 import { searchMatches } from "./search";
 import {
   useGuides, useGuideCredentials, useGuideReviews, useMyInquiriesWithGuide,
