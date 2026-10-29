@@ -77,7 +77,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi, gain, trip, elev, prom, near, within }`). Active filters show as chips.
   *Save search* writes the account's `saved_searches` (see `docs/features/logbook-crews-home.md`); a saved one reopens the finder through `jumpToFinderReq` with its `initial` words and filters.
-  **Since 0369 (2026-10-24)** it also filters by **Distance away** (first in the sheet: *Use my location* or a town / zip through
+  **Since 0369 (2026-10-24)** it also filters by **Distance away** (second in the sheet, under Discipline: *Use my location* or a town / zip through
   `searchPlaces`, then Within 10/25/50/100 mi or 15/40/80/150 km, plus a *Nearest first* sort grouped by wall), **Elevation gain**
   and **Round trip** (ranges), **Peak elevation** and **Prominence** (minimums), as AllTrails does gain, length and Distance
   away and Peakbagger does elevation and prominence. Buckets are round numbers in BOTH unit systems (`GAIN_BUCKETS`,

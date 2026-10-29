@@ -1434,7 +1434,10 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
           and the Discipline chips sat under the browser's own bar, and Show routes was the last
           thing in a long scroll. Now it fills the visible area like Mountain Project's filter
           screen — the title row clears the notch (safe-area-inset-top), the list scrolls between,
-          and Clear all / Show N routes are pinned at the bottom above the home indicator. */}
+          and Clear all / Show N routes are pinned at the bottom above the home indicator. 
+          Discipline is the FIRST row (owner, 2026-10-28): it is the filter climbers reach for, and
+          the Distance away block (a location button, a search box, its hits) above it pushed the
+          chips back below the fold on a phone. */}
       {sheet ? createPortal(
         <div onClick={() => setSheet(false)} role="dialog" aria-modal="true" aria-label="Filter routes" style={{ position: "fixed", inset: 0, background:C.scrim, zIndex: 300, display: "flex", alignItems: "stretch", justifyContent: "center" }}>
           <div onClick={e => e.stopPropagation()} style={{ background: C.bg, width: "100%", maxWidth: 520, height: "100%", display: "flex", flexDirection: "column", boxSizing: "border-box" }}>
@@ -1446,6 +1449,12 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
                 the page behind the sheet (the document is the scroller here), so the sheet reads as
                 stuck — the same chaining #684 fixed on the other sheets. */}
             <div style={{ padding: "0 16px 18px", overflowY: "auto", overscrollBehavior: "contain", flex: 1, minHeight: 0 }}>
+            {lab("Discipline")}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+              {/* Tick as many as you like; a range stays only while every ticked discipline shares its scale. */}
+              {DISCIPLINES.filter(d => d[0]).map(d => chip(d[1], df.discs.includes(d[0]), () => setDf(x => { const discs = x.discs.includes(d[0]) ? x.discs.filter(v => v !== d[0]) : [...x.discs, d[0]]; const keep = discs.length && gradeSysFor(discs, x.gSys) === gradeSysFor(x.discs, x.gSys) && gradeScalesFor(discs).length; return { ...x, discs, ...(keep ? {} : { gSys: "", gLo: "", gHi: "" }), sortBy: !discs.length && (x.sortBy === "grade_asc" || x.sortBy === "grade_desc") ? DEF.sortBy : x.sortBy }; })))}
+            </div>
+            {df.discs.length > 1 ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>{"Showing " + df.discs.map(discLabel).join(" + ") + " climbs."}</div> : null}
             {lab("Distance away")}
             {df.near ? <>
               <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: C.text, marginBottom: 8 }}>
@@ -1466,12 +1475,6 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, p
                 {nearSt.hits.map((h, i) => <button key={i} onClick={() => pickNear({ lat: h.lat, lng: h.lng, label: h.name })} style={{ ...BTN_LG, width: "100%", textAlign: "left", marginBottom: 6, border: "1px solid " + C.border, background: C.surface, color: C.text }}>{h.name}{h.sub ? <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, fontWeight: 500 }}>{h.sub}</span> : null}</button>)}
               </div> : null}
             </>}
-            {lab("Discipline")}
-            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-              {/* Tick as many as you like; a range stays only while every ticked discipline shares its scale. */}
-              {DISCIPLINES.filter(d => d[0]).map(d => chip(d[1], df.discs.includes(d[0]), () => setDf(x => { const discs = x.discs.includes(d[0]) ? x.discs.filter(v => v !== d[0]) : [...x.discs, d[0]]; const keep = discs.length && gradeSysFor(discs, x.gSys) === gradeSysFor(x.discs, x.gSys) && gradeScalesFor(discs).length; return { ...x, discs, ...(keep ? {} : { gSys: "", gLo: "", gHi: "" }), sortBy: !discs.length && (x.sortBy === "grade_asc" || x.sortBy === "grade_desc") ? DEF.sortBy : x.sortBy }; })))}
-            </div>
-            {df.discs.length > 1 ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>{"Showing " + df.discs.map(discLabel).join(" + ") + " climbs."}</div> : null}
             {lab("Grade")}
             {(() => {
               const sc = gradeScaleFor(df.discs, df.gSys);
