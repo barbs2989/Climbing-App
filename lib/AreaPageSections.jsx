@@ -93,7 +93,7 @@ export function ClimbsChart({ stats, loading, error, C, discOptions, onDisc, chi
     {rows.map(d => {
       const label = DS[d.disc] || DL[d.disc] || d.disc, n = Number(d.n), pct = max ? Math.max(2, Math.round(n / max * 100)) : 0, col = DISC_COLORS[d.disc] || C.blue;
       const inner = <>
-        <span style={{ width: 92, flexShrink: 0, fontSize: 12.5, fontWeight: 600, color: C.text, textAlign: "left", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{label}</span>
+        <span style={{ width: 92, flexShrink: 0, fontSize: 12.5, fontWeight: 600, color: C.text, textAlign: "left", overflowWrap: "anywhere" }}>{label}</span>
         <span aria-hidden="true" style={{ flex: 1, minWidth: 0, height: 12, display: "flex", alignItems: "center" }}><span style={{ width: pct + "%", height: 12, borderRadius: "0 4px 4px 0", background: col }} /></span>
         <span style={{ width: 54, flexShrink: 0, fontSize: 12.5, fontWeight: 700, color: C.textSub, textAlign: "right", fontVariantNumeric: "tabular-nums" }}>{n.toLocaleString()}</span>
       </>;

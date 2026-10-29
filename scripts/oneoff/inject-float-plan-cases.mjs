@@ -24,6 +24,8 @@ const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("
 const RD = path.join(ROOT, "RouteDetail.jsx");
 // PR57 moved Calculator to src/components/Calculator.tsx.
 const CALC = path.join(ROOT, "src/components/Calculator.tsx");
+// PR59 moved SuggestFix (the contribute form) to src/components/SuggestFix.tsx.
+const SF = path.join(ROOT, "src/components/SuggestFix.tsx");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 // The form moved off the route page to Crews › Float plans; the "route" cases now target that call site.
 const HUB = path.join(ROOT, "lib/FloatPlans.jsx");
@@ -129,14 +131,14 @@ const CASES = [
      rendering dialog that simply throws typed beta away; no render assertion can see that. */
   {
     name: "backdrop-dismisses-dirty-form",
-    file: RD,
+    file: SF,
     why: "the backdrop closes unconditionally again, so one tap beside the panel discards up to 35 typed fields.",
     edit: (s) => s.replace("onClick={canSubmit?undefined:onClose} role=\"dialog\" aria-modal=\"true\" aria-label=\"Contribute info\"",
                            "onClick={onClose} role=\"dialog\" aria-modal=\"true\" aria-label=\"Contribute info\""),
   },
   {
     name: "backdrop-uses-a-second-dirty-signal",
-    file: RD,
+    file: SF,
     why: "MUST PASS is NOT the point here — keying the gate on something other than the form's own canSubmit is a drift risk, and the guard should say so.",
     edit: (s) => s.replace("const canSubmit=totalUpdates>0", "const canSubmit2=totalUpdates>0"),
   },

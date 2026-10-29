@@ -70,3 +70,30 @@ words (`ut-approach-batch-2026-10-29.json`, written with `enrich:apply`, copy ch
 verified on re-read): Kings Peak / Anderson Pass (Henrys Fork Trail) and Twin Peaks via Broads Fork.
 The North Ridge of Monte Cristo was left out: the way from Lake Blanche to the foot of the ridge was
 on one page only. Not written either: the Henrys Fork fee (one page only).
+
+**Round 4 (owner note "route tracks are still messed up", resumed): named pins against the gazetteer.**
+Bear Mountain North Buttress, the note's example, now draws no line: its stored `gpx` is 7 points
+built from its own pins, which `recordedTrackPts` refuses, so the map shows the pins alone. Its
+*Hannegan Pass* pin agrees with GNIS (108 m). Every pin whose whole name is a point feature
+(*X Pass / Gap / Col / Notch / Saddle / Lake*) was compared with GNIS in its own state
+(`scripts/oneoff/gpx-named-pins/`, results in `research-data/gpx-named-pins-2026-10-29/`): 388
+pins, 282 agree, 99 are climbers' names GNIS does not hold, 6 are namesakes 50+ km away (also
+climbers' names), 4 were off and were moved to the GNIS coordinate after a second source and the
+ground agreed (`fixes.json`, rollback `scripts/rollback-named-pins-gnis-54399.json`, 0 problems):
+Blizzard Peak's Castle Pass (2.5 km south on the PCT; WTA puts it at the Trail 749 junction west of
+Frosty Pass), Cathedral Peak's Cathedral Pass (on the wrong side of Upper Cathedral Lake), McClellan
+Peak's Nada Lake (1.3 km off; Wikipedia and WTA agree with GNIS) and The Tooth's Source Lake (it
+was the Alpental parking coordinate). Ground under the new pins: 5,457 / 7,617 / 4,936 / 3,750 ft
+against stated 5,451 / 7,600 / 5,100 / 4,100.
+
+**The two left open in round 2, settled.** Navaho Peak's recording climbs the south slopes from
+Stafford Creek and returns to the trailhead, 25 m from the summit; the route is *South Slopes* and
+its own descent text names that shortcut, so the track stays. Mount Fairchild's pins 2-3 named
+Appleton Pass, a different trail; the route's text, a 2011 trip report and WTA's Bailey Range
+article all go Deer Lake - High Divide - Catwalk - Boston Charlie's, and no source ties Appleton
+Pass to Fairchild. They were replaced with Deer Lake at its GNIS coordinate
+(`fix-fairchild.mjs`, rollback `scripts/rollback-fairchild-appleton-pins-2026-10-29.json`).
+
+**No more tracks to import.** OSM's public GPS traces were considered: their licence is argued
+about on OSM's own lists, and a trace carries no route name and no proof of a summit, so none were
+used. New tracks come from climbers' own uploads (*Add a track*) or an author's permission.

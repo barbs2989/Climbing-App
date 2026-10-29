@@ -289,6 +289,7 @@ export const MOVED = {
     "src/components/TechStats.tsx",
     "src/components/WeatherPanel.tsx",
     "src/components/ConditionsScoreCard.tsx",
+    "src/components/SuggestFix.tsx",
   ],
 };
 // The pre-2026-10 name, kept because 21 guards import it. Same array, same meaning.
@@ -304,6 +305,16 @@ export function movedAsParentText(text, file = "a moved file") {
   return body.replace(/^export default function /m, "function ");
 }
 export const movedAsCoreText = movedAsParentText;
+
+// For a guard that LIFTS code out of the stitched text and EVALUATES it (new Function): a moved
+// component is TypeScript, and `(o: unknown)` does not run. Returns the code with its types
+// stripped by esbuild (JS passes through unchanged). An expression is wrapped so it stays one.
+export async function stripTypes(code, { expression = false } = {}) {
+  const { transform } = await import("esbuild");
+  const src = expression ? `(${code})` : code;
+  const out = (await transform(src, { loader: "tsx", jsx: "preserve", minifyWhitespace: false })).code.trim();
+  return expression ? out.replace(/;$/, "") : out;
+}
 
 // For a guard that BUNDLES core to execute or render it: an entry file exporting everything core
 // exports PLUS each moved component under its old name (they are default exports now), so the

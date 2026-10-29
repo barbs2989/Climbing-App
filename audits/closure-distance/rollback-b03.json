@@ -1,0 +1,475 @@
+[
+ {
+  "id": "wa_dome_peak_dome_glacier",
+  "itinerary": {
+   "cal": "No permit is required, just a self-issue wilderness pass.",
+   "days": [
+    {
+     "n": 1,
+     "note": "From the Downey Creek trailhead (~1,450 ft), follow Downey Creek Trail then Bachelor Creek Trail (expect brush and downed trees) to Cub Lake, then continue up talus and snow to a camp on Itswoot Ridge with running water and the first full view of Dome Peak. This leg typically takes 7-9.5 hours depending on trail conditions and pace.",
+     "hours": 8.5,
+     "miles": 12,
+     "title": "Approach to high camp",
+     "gainFt": 4800,
+     "lossFt": 400,
+     "packLb": 42,
+     "schedule": [],
+     "objective": "Reach Itswoot Ridge / Cub Lake camp (~6,200 ft)"
+    },
+    {
+     "n": 2,
+     "note": "An alpine start to cross the basin and gain the Dome Glacier while the snow is firm, then rope up for the crevassed glacier crossing on roughly a 115° bearing to the notch at 8,560 ft, finishing with a short snow slope and a 500 ft rock arête to the summit. Trip reports agree this round trip from camp typically runs 6-8 hours.",
+     "hours": 7,
+     "miles": 5,
+     "title": "Summit day",
+     "gainFt": 2700,
+     "lossFt": 2700,
+     "packLb": 15,
+     "schedule": [
+      {
+       "time": "4:00 AM",
+       "label": "Alpine start from camp",
+       "detail": "Leave while overnight-refrozen snow is still firm."
+      },
+      {
+       "time": "5:30 AM",
+       "label": "Gain the Dome Glacier",
+       "detail": "Cross talus/snow basin below Itswoot Ridge to the glacier's toe (~7,600 ft)."
+      },
+      {
+       "time": "6:30 AM",
+       "label": "Rope up, cross the glacier",
+       "detail": "Travel roped on a ~115° bearing, working around crevasses."
+      },
+      {
+       "time": "8:00 AM",
+       "label": "Reach the 8,560 ft notch",
+       "detail": "Gain the notch just north/west of the true summit."
+      },
+      {
+       "time": "9:00 AM",
+       "label": "Snow slope + rock arête",
+       "detail": "300 ft of snow then a 500 ft rock arête to the summit."
+      },
+      {
+       "time": "~1:00 PM",
+       "label": "Back at camp",
+       "detail": "Rest, refill water, prep for the hike out."
+      }
+     ],
+     "objective": "Climb the Dome Glacier to the summit (8,926 ft)"
+    },
+    {
+     "n": 3,
+     "note": "Reverse Day 1: down off Itswoot Ridge past Cub Lake, then out Bachelor Creek and Downey Creek trails to the car. Parties commonly do this in one long push, sometimes leaving at first light if weather is moving in.",
+     "hours": 7.5,
+     "miles": 12,
+     "title": "Hike out",
+     "gainFt": 400,
+     "lossFt": 4800,
+     "packLb": 38,
+     "schedule": [],
+     "objective": "Return to the Downey Creek trailhead"
+    }
+   ],
+   "totalNote": "A 3-day round trip is the norm: ~29 miles and roughly 7,900-8,400 ft of cumulative gain, with one alpine-start summit day from a high camp near Cub Lake/Itswoot Ridge (~6,200 ft); very strong parties have done the whole thing in a single 31-hour push, and some link it into a longer 4-6 day trip by continuing north on the Ptarmigan Traverse over Cache Col."
+  },
+  "road": {
+   "name": "Suiattle River Road (FR 26)",
+   "status": "Closed to motor vehicles beyond roughly MP 4.5 (at the Suiattle Mountain Road junction) due to severe atmospheric-river flood damage; impassable to cars but open to foot and bike traffic beyond the closure.",
+   "driveNote": "USFS closure order 06-05-26-03 is in effect April 2, 2026 through January 1, 2028 (or until rescinded). Expect to walk or bike roughly 15-16 of the ~20 miles from Hwy 530 to Downey Creek Trailhead, adding a full day to the approach.",
+   "seasonalGate": "Even when open to vehicles, the road is snow-gated in winter/spring and historically not reliably drivable to the trailhead until June."
+  }
+ },
+ {
+  "id": "wa_gunsight_peak_standard",
+  "itinerary": {
+   "cal": "Most parties go in July, when the Dome and Chikamin glaciers are consolidated enough for reasonable travel; earlier trips mean more snow and harder creek crossings on the approach.",
+   "days": [
+    {
+     "n": 1,
+     "note": "From the Downey Creek Trailhead (~1,400 ft), follow the Downey Creek Trail then the Bachelor Creek Trail, crossing Bachelor Creek on foot logs and pushing through brushy, overgrown tread. Camp in the flats/meadows around 4,500 ft.",
+     "hours": 9.7,
+     "miles": 8,
+     "title": "Approach to Bachelor Flats",
+     "gainFt": 3800,
+     "lossFt": 300,
+     "packLb": 45,
+     "schedule": [],
+     "objective": "Reach Bachelor Flats camp"
+    },
+    {
+     "n": 2,
+     "note": "Climb through Bachelor Meadows, over Cub Pass, past Cub Lake, and up Itswoot Ridge onto the Dome Glacier, then traverse to the Chikamin-Dome col (~8,500 ft). This is the longest, most sustained climbing day of the approach and typically involves some glacier travel.",
+     "hours": 11.6,
+     "miles": 5.5,
+     "title": "Over Itswoot Ridge to high camp",
+     "gainFt": 5000,
+     "lossFt": 900,
+     "packLb": 42,
+     "schedule": [],
+     "objective": "Reach Chikamin-Dome col high camp"
+    },
+    {
+     "n": 3,
+     "note": "Descend from the col to a bench camp on the Chikamin Glacier (~7,000 ft), drop overnight gear, then push for the summit via the bergschrund, a basalt dike, and an exposed ridge crest with a short 5.6 crux. Many parties top out in the evening and return to camp after dark.",
+     "hours": 11,
+     "miles": 3.5,
+     "title": "Descend to the Chikamin Glacier and climb Gunsight Peak",
+     "gainFt": 2100,
+     "lossFt": 3200,
+     "packLb": 30,
+     "schedule": [
+      {
+       "time": "~7:00 AM",
+       "label": "Break high camp at the col",
+       "detail": ""
+      },
+      {
+       "time": "~8:30 AM",
+       "label": "Reach Chikamin Glacier bench, drop overnight gear",
+       "detail": "~1.5 hr descent from the col"
+      },
+      {
+       "time": "~11:00 AM",
+       "label": "Begin summit push",
+       "detail": "Cross the bergschrund via the walk-off route"
+      },
+      {
+       "time": "~4:00 PM",
+       "label": "Exposed 5.6 crux moves",
+       "detail": "Black rock crux above the basalt dike, then ridge scrambling"
+      },
+      {
+       "time": "6:30 PM",
+       "label": "Summit Gunsight Peak",
+       "detail": ""
+      },
+      {
+       "time": "~8:30-9:00 PM",
+       "label": "Back at glacier bench camp",
+       "detail": "~2.8 hr descent, often finishing by headlamp"
+      }
+     ],
+     "objective": "Summit Gunsight Peak"
+    },
+    {
+     "n": 4,
+     "note": "Climb Sinister Peak via the southwest snowfield, southwest gully, and upper/lower west ridge, then break camp, regain the Chikamin-Dome col, and descend back over Itswoot Ridge to Cub Lake Meadows. A long, full day combining a second summit with a camp move.",
+     "hours": 10,
+     "miles": 6,
+     "title": "Climb Sinister Peak, move camp to Cub Lake",
+     "gainFt": 2200,
+     "lossFt": 3300,
+     "packLb": 35,
+     "schedule": [
+      {
+       "time": "10:00 AM",
+       "label": "Leave glacier camp for Sinister Peak",
+       "detail": ""
+      },
+      {
+       "time": "~1:30 PM",
+       "label": "Summit Sinister Peak",
+       "detail": "~3.4 hr climb via SW snowfield/gully and west ridge"
+      },
+      {
+       "time": "afternoon",
+       "label": "Break camp, regain Chikamin-Dome col",
+       "detail": "~1,400 ft reclimb with full packs"
+      },
+      {
+       "time": "~8:30 PM",
+       "label": "Arrive Cub Lake Meadows camp",
+       "detail": "~6.5 hr from the col"
+      }
+     ],
+     "objective": "Summit Sinister Peak, relocate to Cub Lake Meadows"
+    },
+    {
+     "n": 5,
+     "note": "Reverse the approach from Cub Lake Meadows over Cub Pass and down through Bachelor Meadows. Many parties use the improved north-side boot path along Bachelor Creek rather than the original brushy route, camping a few miles above the trailhead.",
+     "hours": 9,
+     "miles": 8,
+     "title": "Exit toward the trailhead",
+     "gainFt": 800,
+     "lossFt": 3600,
+     "packLb": 45,
+     "schedule": [],
+     "objective": "Reach a forest camp near Downey Creek"
+    },
+    {
+     "n": 6,
+     "note": "A short final push down the Downey Creek Trail back to the car, typically finishing by mid-morning after an early start.",
+     "hours": 3.5,
+     "miles": 3,
+     "title": "Hike out",
+     "gainFt": 100,
+     "lossFt": 3100,
+     "packLb": 45,
+     "schedule": [
+      {
+       "time": "6:15 AM",
+       "label": "Break camp, hike final miles",
+       "detail": ""
+      },
+      {
+       "time": "mid-morning",
+       "label": "Reach Downey Creek Trailhead",
+       "detail": ""
+      }
+     ],
+     "objective": "Return to Downey Creek Trailhead"
+    }
+   ],
+   "totalNote": "A demanding 6-day, ~34-mile backpack-and-climb loop with roughly 14,000 ft of cumulative gain/loss: two days approaching to a high camp at the Chikamin-Dome col, two big days summiting Gunsight and Sinister Peaks with a glacier bench camp between them, and two days exiting."
+  },
+  "road": {
+   "name": "Suiattle River Road (Forest Road 26)",
+   "status": "Closed to vehicles at a flood washout near milepost 4; check the forest's alerts page before you go.",
+   "driveNote": "From Darrington, drive SR-530 north 7.5 miles, then FR-26 (paved then gravel) ~20.6 miles to the Downey Creek Trailhead, just past the Downey Creek bridge. The road has been closed to vehicles at a flood washout near milepost 4, which leaves the trailhead unreachable by car while it stays closed; check the forest's alerts page before you go."
+  }
+ },
+ {
+  "id": "wa_spire_point_southwest_face",
+  "itinerary": {
+   "cal": "Best climbed June-September once Bachelor Creek brush has leafed out and snow on Itswoot Ridge has consolidated; a North Cascades National Park backcountry permit may be required for the Spire Col camp depending on exact site.",
+   "days": [
+    {
+     "n": 1,
+     "note": "An easy, well-graded old-growth forest trail up the Downey Creek valley to the established Sixmile Camp, used as camp one by nearly every party heading for Spire Point or the Ptarmigan Traverse. Mellow day to bank energy for the brutal Bachelor Creek day ahead.",
+     "hours": 4.5,
+     "miles": 6.5,
+     "title": "Approach to Sixmile Camp",
+     "gainFt": 1300,
+     "lossFt": 0,
+     "packLb": 45,
+     "schedule": [],
+     "objective": "Reach Sixmile Camp on the Downey Creek Trail"
+    },
+    {
+     "n": 2,
+     "note": "The crux logistics day: cross Bachelor Creek and fight through notoriously dense, wet brush on the Bachelor Creek Trail to Bachelor Meadows, cross the Cub Lake pass, then follow Itswoot Ridge (staying on talus left/west of the crest to dodge towers) to the Spire Col saddle at ~7,760 ft. Crampons typically go on around 6,800 ft where snow covers the ridge; camp at the col with big views north to Dome Glacier and Dome Peak.",
+     "hours": 9,
+     "miles": 7.8,
+     "title": "Grind to Spire Col high camp",
+     "gainFt": 5000,
+     "lossFt": 300,
+     "packLb": 45,
+     "schedule": [
+      {
+       "time": "6:00 AM",
+       "label": "Leave Sixmile Camp",
+       "detail": "Early start expected given the brush and distance ahead."
+      },
+      {
+       "time": "",
+       "label": "Cross Bachelor Creek, ascend to Bachelor Meadows",
+       "detail": "Reportedly the wettest, brushiest section of the whole approach."
+      },
+      {
+       "time": "",
+       "label": "Cross Cub Lake pass onto Itswoot Ridge",
+       "detail": ""
+      },
+      {
+       "time": "~6,800 ft",
+       "label": "Rope up / crampons on",
+       "detail": "Where the ridge route hits continuous snow."
+      },
+      {
+       "time": "Late afternoon",
+       "label": "Arrive Spire Col, make camp",
+       "detail": "~7,760 ft; only the tip of Spire Point is visible from camp."
+      }
+     ],
+     "objective": "Reach Spire Col via Bachelor Meadows, Cub Lake pass, and Itswoot Ridge"
+    },
+    {
+     "n": 3,
+     "note": "A short, exposed technical climb from camp followed by a long hike back out. From the col, an ascending traverse onto the southeast face leads up slabs to the ridge crest, across to the west side, and along airy Class 3 ledges above 1,000+ ft of exposure to the base of the summit block, which goes at Class 4-5 to a horn that fits one person. Two 60m rappels return the party to the col, where camp is broken down before retracing Itswoot Ridge, Cub Lake, and Bachelor Meadows back to Sixmile Camp.",
+     "hours": 10,
+     "miles": 8.3,
+     "title": "Summit Spire Point, hike back to Sixmile Camp",
+     "gainFt": 500,
+     "lossFt": 5500,
+     "packLb": 40,
+     "schedule": [
+      {
+       "time": "6:00 AM",
+       "label": "Leave Spire Col camp for the base of the climb",
+       "detail": "~0.25 mi along the ridge to the start of the route."
+      },
+      {
+       "time": "~7:30 AM",
+       "label": "Reach the ridge crest, traverse west-side ledges",
+       "detail": "Class 3 with major exposure over the west face."
+      },
+      {
+       "time": "~9:00 AM",
+       "label": "Summit",
+       "detail": "Tiny horn, room for one; parties often take turns and linger over an hour total at the top in shifts."
+      },
+      {
+       "time": "~9:30-10:30 AM",
+       "label": "Two 60m rappels back to the col",
+       "detail": "Some parties rap from a lower ledge instead of the true summit horn."
+      },
+      {
+       "time": "11:00 AM",
+       "label": "Break camp, begin hike out",
+       "detail": "Reverse Itswoot Ridge / Cub Lake / Bachelor Meadows."
+      },
+      {
+       "time": "Evening",
+       "label": "Arrive Sixmile Camp",
+       "detail": "Long day; some strong parties push all the way to the trailhead instead (skipping this camp)."
+      }
+     ],
+     "objective": "Climb Spire Point via the southwest/southeast face, then descend to Sixmile Camp"
+    },
+    {
+     "n": 4,
+     "note": "A straightforward, mostly downhill walk back down the Downey Creek Trail to the car, closing out the ~29-mile round trip.",
+     "hours": 3.5,
+     "miles": 6.5,
+     "title": "Hike out to trailhead",
+     "gainFt": 0,
+     "lossFt": 1300,
+     "packLb": 40,
+     "schedule": [],
+     "objective": "Return to Downey Creek Trailhead"
+    }
+   ],
+   "totalNote": "A 4-day, roughly 29-mile round-trip backpack from Downey Creek Trailhead, gaining about 6,800 ft net to the 8,264 ft summit; the Bachelor Creek/Itswoot Ridge approach day is the crux of the logistics, and the summit itself is a short but airy Class 4-5 pitch with two 60m rappels to descend. Strong parties sometimes compress the return into a single long day instead of a second night at Sixmile Camp."
+  },
+  "road": {
+   "name": "Suiattle River Road (FR 26)",
+   "status": "Closed to all motorized vehicles at milepost 4.5 (Suiattle Mountain Road junction) due to severe atmospheric-river flood damage in December 2025; open beyond that point to foot or bike travel only.",
+   "driveNote": "From Darrington, take SR 530 north ~7.5 mi and turn onto FR 26. The trailhead is normally ~20.6 mi up FR 26, but the current washout closure at MP 4.5 adds roughly 16 miles each way (about 32 miles round trip) of road walking or biking to reach the Downey Creek trailhead.",
+   "seasonalGate": "Closure order in effect April 2, 2026 through January 1, 2028 unless rescinded sooner; in normal years the road is also snow-gated into early summer."
+  }
+ },
+ {
+  "id": "wa_sinister_peak_southwest_route",
+  "itinerary": {
+   "cal": "The SW route is normally in condition July-September once Cub Lake Pass snowfields consolidate (May-June trips are more ski-mountaineering oriented with heavier snow coverage).",
+   "days": [
+    {
+     "n": 1,
+     "note": "Hike the mostly gentle Downey Creek Trail to Sixmile Camp, then continue up the abandoned, brushy Bachelor Creek Trail to a flat camp near 4,500 ft. Expect slide-alder bushwhacking and a footlog crossing of Bachelor Creek; parties report this day taking most of a full day with full packs.",
+     "hours": 8,
+     "miles": 9,
+     "title": "Approach to Bachelor Creek",
+     "gainFt": 3200,
+     "lossFt": 200,
+     "packLb": 40,
+     "schedule": [],
+     "objective": "Reach forest camp near the Bachelor Creek crossing (Sixmile Camp / Bachelor Flats)"
+    },
+    {
+     "n": 2,
+     "note": "Climb steep forest and meadow above Bachelor Flats, cross the snow slopes of Cub Lake Pass (~5,700 ft), and drop to Cub Lake or climb onto Itswoot Ridge to camp with views of the Dome/Chickamin Glacier. This is normally the crux navigation day if snow-covered.",
+     "hours": 7,
+     "miles": 5.5,
+     "title": "Over Cub Lake Pass to high camp",
+     "gainFt": 2200,
+     "lossFt": 700,
+     "packLb": 36,
+     "schedule": [],
+     "objective": "Establish high camp on Itswoot Ridge or in the Cub Lake basin"
+    },
+    {
+     "n": 3,
+     "note": "An alpine-start glacier day: rope up and cross the Chickamin Glacier to the Dome-Sinister col, then climb the loose southwest gully and scramble the upper west ridge (Class 2-3) to the summit. Reverse the same line back to camp; parties reach the summit anywhere from late morning to early afternoon depending on party speed and whether Dome Peak is tagged the same day.",
+     "hours": 11,
+     "miles": 6,
+     "title": "Climb Sinister Peak",
+     "gainFt": 2500,
+     "lossFt": 2500,
+     "packLb": 16,
+     "schedule": [
+      {
+       "time": "4:30 AM",
+       "label": "Leave high camp",
+       "detail": "Rope up for glacier travel while crossing toward the Dome/Chickamin basin."
+      },
+      {
+       "time": "6:30 AM",
+       "label": "Cross the Chickamin Glacier",
+       "detail": "Rising traverse with crevasse detours toward the Dome-Sinister col."
+      },
+      {
+       "time": "8:00 AM",
+       "label": "Reach the Dome-Sinister col",
+       "detail": "~7,640 ft; begin the southwest gully, reported as loose and unpleasant."
+      },
+      {
+       "time": "10:00 AM",
+       "label": "Top out on the upper west ridge",
+       "detail": "Class 2-3 scrambling toward the summit block."
+      },
+      {
+       "time": "11:00 AM",
+       "label": "Summit",
+       "detail": "8,444 ft; roomy summit, views of Dome Peak and the Ptarmigan Traverse."
+      },
+      {
+       "time": "4:00 PM",
+       "label": "Back at high camp",
+       "detail": "Reverse the gully and glacier crossing."
+      }
+     ],
+     "objective": "Summit via the Southwest Route and return to high camp"
+    },
+    {
+     "n": 4,
+     "note": "Break camp and reverse the full approach in one long push: back over Cub Lake Pass, down Bachelor Creek, and out the Downey Creek Trail. Most parties treat this as a single long descent day rather than splitting it again.",
+     "hours": 9,
+     "miles": 15,
+     "title": "Hike out to trailhead",
+     "gainFt": 300,
+     "lossFt": 5000,
+     "packLb": 25,
+     "schedule": [],
+     "objective": "Descend from high camp to the Downey Creek trailhead"
+    }
+   ],
+   "totalNote": "A 4-day trip: ~33-35 miles and roughly 8,000-9,000 ft cumulative gain round trip, with one long alpine summit day off a high camp near Cub Lake/Itswoot Ridge."
+  },
+  "road": {
+   "name": "Suiattle River Road (Forest Road 26)",
+   "status": "Closed to motorized vehicles at approximately milepost 4.5 due to washout damage from a December 2025 atmospheric-river flood; USFS closure order in effect from April 2, 2026 through January 1, 2028 (subject to change)",
+   "driveNote": "Previously: paved then gravel FR 26 for about 20.6 miles east from Hwy 530 near Darrington to the Downey Creek Trailhead just past the Downey Creek bridge. With the current closure, climbers must walk or bike the closed road from the MP 4.5 gate, adding roughly 16 extra round-trip miles before even starting the Downey Creek Trail.",
+   "seasonalGate": "A hard multi-year closure (not a seasonal gate) under a Forest Service order in effect April 2, 2026 through January 1, 2028 — check the Mt. Baker-Snoqualmie NF alerts page before planning a trip."
+  }
+ },
+ {
+  "id": "wa_east_face",
+  "dist_km": 16.1,
+  "road": {
+   "name": "Downey Creek Trailhead via Suiattle River Road (FR 26)",
+   "status": "Suiattle River Road (FR 26) is washed out at about milepost 4.5 and closed to vehicles there under a Forest Service closure order that runs to January 1, 2028 unless lifted sooner, so the Downey Creek Trailhead, about 15 miles beyond the washout, cannot be driven to. Wildfire closures have also shut the Downey Creek Trail (the Miners Fire order runs through the end of 2026). Check current road and trail status before going.",
+   "driveNote": "Normally about 2.5-3 hours from Seattle via Darrington and the Suiattle River Road when fully open; while the road closure order (April 2, 2026 through January 1, 2028) stands, it requires walking or biking the closed road from the MP 4.5 closure gate, adding roughly 15 miles each way to the approach."
+  }
+ },
+ {
+  "id": "wa_gunrunner",
+  "dist_km": 16.1,
+  "road": {
+   "name": "Downey Creek Trailhead via Suiattle River Road (FR 26)",
+   "status": "Suiattle River Road (FR 26) suffered major flood/washout damage and has been closed to vehicles from milepost 4 since the December 2025 washouts; check its status before a trip. The Downey Creek Trail itself is also closed August 15 through December 31, 2026 under the Forest Service's Miner's Fire closure order. Vehicle access to the historic trailhead is not possible while the road order stands.",
+   "driveNote": "Normally about 2.5-3 hours from Seattle via Darrington and the Suiattle River Road when fully open; while the road stays closed it requires walking or biking the closed road from the milepost 4 closure, adding about 16 miles each way to the approach."
+  }
+ },
+ {
+  "id": "wa_dome_peak_indian_summer",
+  "dist_km": 16.1,
+  "road": {
+   "name": "Suiattle River Road (Forest Road 26)",
+   "status": "Closed to vehicles at approximately milepost 4-4.5 due to a December 2025 flood washout; closed under USFS order #06-05-26-03, in effect April 2, 2026 through January 1, 2028 unless rescinded sooner. Foot and bike access continues beyond the closure toward the trailhead.",
+   "driveNote": "From Darrington, drive Hwy 530 then Suiattle River Road (FR 26); verify current closure status with the Mt. Baker-Snoqualmie NF before driving.",
+   "seasonalGate": null
+  }
+ }
+]

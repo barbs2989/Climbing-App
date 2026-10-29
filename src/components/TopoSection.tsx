@@ -158,7 +158,7 @@ export default function TopoSection({route}: TopoSectionProps){
     :<div style={{display:"flex",gap:9,overflowX:"auto",paddingBottom:2}}>
       {photos.map(function(p,i){
         /* The caption's opening lines sit under the thumbnail, so a reader sees there IS context before opening it. */
-        return <div key={p.id} style={{flexShrink:0,width:132}}><TopoThumb p={p} onOpen={function(){setViewerIdx(i);}}/>{p.caption?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:5,display:"-webkit-box",WebkitLineClamp:2,WebkitBoxOrient:"vertical",overflow:"hidden",overflowWrap:"anywhere"}}>{p.caption}</div>:null}</div>;
+        return <div key={p.id} style={{flexShrink:0,width:132}}><TopoThumb p={p} onOpen={function(){setViewerIdx(i);}}/>{p.caption?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:5,overflowWrap:"anywhere"}}>{p.caption}</div>:null}</div>;
       })}
       <div {...clickable(pickFile)} style={{flexShrink:0,width:132,height:132,borderRadius:11,border:"1px dashed "+C.border,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",cursor:"pointer",color:C.blue,fontSize:12,fontWeight:700,gap:6}}>
         <span style={{fontSize:22}}>+</span>Add photo

@@ -42,6 +42,7 @@
     "audit:pin-elev-vs-own-prose": "node scripts/audit-pin-elev-vs-own-prose.mjs",
     "audit:prose-citations": "node scripts/audit-prose-citations.mjs",
     "audit:expiring-closures": "node scripts/audit-expiring-closures.mjs",
+    "audit:closure-distance": "node scripts/audit-closure-distance.mjs",
     "audit:trailhead-agreement": "node scripts/audit-trailhead-agreement.mjs",
     "audit:trailhead-road": "node scripts/audit-trailhead-road-agreement.mjs",
     "enrich:next-batch": "node scripts/next-climbing-route-batch.mjs",

@@ -39,7 +39,8 @@ if (!fs.existsSync(path.join(ROOT, "lib/objKeys.js"))) {
   console.error("live there and are shared by SuggestFix and AddRoute. Nothing below was checked.");
   process.exit(1);
 }
-const rd = read("RouteDetail.jsx"), cm = read("ClimbMatch.jsx");
+// stitched: the FIELDS list lives in SuggestFix.tsx since PR59
+const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx")), cm = read("ClimbMatch.jsx");
 
 // Anchored on the real declarations. A rename must fail loudly rather than yield an empty
 // set — an empty set on either side would make every comparison below pass vacuously, which
@@ -120,7 +121,8 @@ const objKeys = read("lib/objKeys.js");
 /* Every file that renders one of these objects. A reader outside this list is invisible, and an
    invisible reader reads as a dead sub-key — the direction that tells an author to delete working
    wiring, so a file that cannot be read is fatal rather than skipped. */
-const READER_FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx", "ClimbMatch.jsx", "EnrichmentPanels.jsx"];
+// lib/outing.js reads `road.walkMi` (roadWalkMi) for the TECHNICAL STATS card's distance note.
+const READER_FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx", "ClimbMatch.jsx", "EnrichmentPanels.jsx", "lib/outing.js"];
 const readerCorpus = READER_FILES.map((f) => {
   // readAppFile: each parent STITCHED, so a reader moved into src/components/ (ClimateSeasonCard, PR53) stays read.
   try { return readAppFile(path.join(ROOT, f)); } catch {
@@ -236,7 +238,7 @@ console.log(`  ${pencilIds.length} edit pencil(s) open a section that exists`);
    never rendered. Cheap to assert, invisible until somebody opens the sheet. */
 const objKeysTypes = [...(rd.match(/const OBJ_KEYS=\{([^}]*)\}/) || [, ""])[1]
   .matchAll(/([A-Za-z_$][\w$]*)\s*:/g)].map((m) => m[1]);
-const objStateTypes = [...(rd.match(/const OBJ_STATE=\{([^;]*?)\};/) || [, ""])[1]
+const objStateTypes = [...(rd.match(/const OBJ_STATE=\{([^;]*?)\}(?: as [^;]+)?;/) /* a moved .tsx types it with a trailing `as` (PR59) */ || [, ""])[1]
   .matchAll(/([A-Za-z_$][\w$]*)\s*:\s*\[/g)].map((m) => m[1]);
 if (objKeysTypes.length < 3) {
   console.error("check:contrib-fields: parsed fewer than 3 OBJ_KEYS types — ANCHOR LOST.");

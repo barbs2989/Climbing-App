@@ -61,6 +61,22 @@ for (const f of files) {
   const d = decls(fs.readFileSync(path.join(ROOT, f), "utf8"), true);
   for (const [name, node] of d) {
     const b = baseDecls.get(name);
+    // A component lifted by branch mode: its return value must be, as code, the base page's branch.
+    const lifted = /^\/\* (.+?) — the body of that branch of (\w+), lifted verbatim/m.exec(fs.readFileSync(path.join(ROOT, f), "utf8"));
+    if (!b && lifted && node.type === "FunctionDeclaration") {
+      const anchor = lifted[1];
+      const bast = parse(baseSrc, { sourceType: "module", plugins: ["jsx"] });
+      let cons = null, hits = 0;
+      traverse(bast, { ConditionalExpression(cp) { if (baseSrc.slice(cp.node.start, cp.node.start + anchor.length) === anchor) { cons = cp.node.consequent; hits++; } } });
+      const ret = node.body.body.length === 1 && node.body.body[0].type === "ReturnStatement" ? node.body.body[0].argument : null;
+      if (hits !== 1 || !ret) { console.log(`BRANCH  ${f}: ${name} — anchor ${anchor} matched ${hits} time(s) in the base, or the component is not a single return`); bad++; continue; }
+      const a = code(ret), c = code(cons);
+      if (a === c) { ok++; console.log(`BRANCH  ${f}: ${name} — identical to the base page's ${anchor} branch`); continue; }
+      if (!allowDiff.has(name)) bad++;
+      const al = a.split("\n"), cl = c.split("\n"); let i = 0; while (i < al.length && al[i] === cl[i]) i++;
+      console.log(`DIFFERS  ${f}: ${name} (branch) — first at line ${i + 1}:\n  base: ${cl[i]}\n  now:  ${al[i]}`);
+      continue;
+    }
     if (!b) { if (allowNew.has(name)) { console.log(`NEW (allowed)  ${f}: ${name}`); continue; } console.log(`NEW  ${f}: ${name} — no declaration of that name in ${base}:${parent}`); bad++; continue; }
     const a = code(node), c = code(b);
     if (a === c) { ok++; continue; }
@@ -68,6 +84,8 @@ for (const f of files) {
     const al = a.split("\n"), cl = c.split("\n"); let i = 0; while (i < al.length && al[i] === cl[i]) i++;
     const nd = al.filter((l, k) => l !== cl[k]).length + Math.abs(al.length - cl.length);
     console.log(`DIFFERS  ${f}: ${name} — ${nd} line(s) differ, first at line ${i + 1}:\n  base: ${cl[i]}\n  now:  ${al[i]}`);
+    // --show-all: every differing line (same line count only), to review an --allow-differs entry.
+    if (process.env.SHOW_ALL && al.length === cl.length) al.forEach((l, k) => { if (l !== cl[k]) console.log(`  ${k + 1}\n    base: ${cl[k].trim().slice(0, 200)}\n    now:  ${l.trim().slice(0, 200)}`); });
   }
 }
 console.log(`${ok} declaration(s) identical to ${base}:${parent} modulo types; ${bad} not.`);

@@ -52,6 +52,7 @@ export function levelColors(level) {
   return level === "high" ? [C.green, C.greenBg, C.greenDim] : level === "medium" ? [C.amber, C.amberBg, C.amber + "66"] : [C.textMuted, C.surface, C.border];
 }
 
+/** @param {{level: string, label?: unknown, onFlag?: unknown, compact?: boolean}} props */
 export function ConfChip({ level, label, onFlag, compact }) {
   if (!level) return null;
   const [col, bg, bd] = levelColors(level);
