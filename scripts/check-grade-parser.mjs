@@ -217,6 +217,12 @@ if (ran < CASES.length) { console.error("check:grade-parser: fewer cases ran tha
     [{ discipline: "mountaineering", grade_system: "class", grade: "Class 4", rock_grade: "Class 3-4" }, "Class 4", "Graded Class 4 for its hardest moves; easier sections down to Class 3."],
     [{ discipline: "mountaineering", grade_system: "class", grade: "Class 3", rock_grade: "Class 3-4 (3rd class, with 4th-class variations)" }, "Class 3", "Graded Class 3 on its standard line; some sections or variations reach Class 4."],
     [{ discipline: "mountaineering", grade_system: "class", grade: "Class 3", rock_grade: "Class 3 scramble" }, "Class 3", ""],
+    // The other scales (owner, 2026-10-29: "I still see routes that have 2 grades"): top grade, and a notice that claims no split.
+    [{ discipline: "bouldering", grade_system: "v", rock_grade: "V4-5" }, "V5", "Rated V4-5; shown at the harder of the two grades, V5."],
+    [{ discipline: "ice", grade_system: "wi", rock_grade: "WI3-4" }, "WI4", "Rated WI3-4; shown at the harder of the two grades, WI4."],
+    [{ discipline: "aid", grade_system: "yds", rock_grade: "5.9 A2-3 R" }, "5.9 A3 R", "Rated A2-3; shown at the harder of the two grades, A3."],
+    [{ discipline: "trad", grade_system: "yds", rock_grade: "5.10a/b" }, "5.10a/b", ""],
+    [{ discipline: "bouldering", grade_system: "v", rock_grade: "V0-" }, "V0-", ""],
   ];
   for (const [route, chip, note] of R) {
     const gotChip = singleGrade(route.rock_grade, route), gotNote = gradeRangeNote(route);
