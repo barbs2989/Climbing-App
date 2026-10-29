@@ -106,7 +106,7 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
   return (
     <div style={{ ...wrap, borderColor: tone.c, background: tone.bg, margin: "24px 0" }}>
       <div role="heading" aria-level={2} style={{ margin: 0 }}>
-        <button onClick={() => setOpen(!open)} aria-expanded={open} style={{ display: "flex", alignItems: "center", gap: 8, width: "100%", padding: 0, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}>
+        <button onClick={() => setOpen(!open)} aria-expanded={open} style={{minHeight:44, display: "flex", alignItems: "center", gap: 8, width: "100%", padding: 0, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}>
           <span style={{ flex: 1, minWidth: 0 }}>
             <span style={{ ...hd, color: tone.c, borderLeftColor: tone.c, marginBottom: 3, display: "flex", alignItems: "center", gap: 6 }}>
               <ActionIcon name="fire" size={14} color={tone.c} />

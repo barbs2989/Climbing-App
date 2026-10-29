@@ -1159,3 +1159,31 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     nearer big one wins (first draft only weighed small controls and forwarded that tap to the
     link). `scripts/oneoff/touch-beside-control.mjs` therefore dispatches its events from the page.
   - **Injection-tested**: commenting out `installTapSlop();` in main.jsx FAILS the guard.
+- **`check:dropdown-targets`** (in build) — every DROPDOWN toggle is DRAWN at least 44px tall. Owner
+  note 2026-10-29, *"On route beta, it's difficult to click the dropdown to view more info, audit
+  the whole app for issues on hard to click the dropdown"* ("route beta" is ROUTE BREAKDOWN: #1450
+  merged ROUTE BETA and PITCH-BY-PITCH into it).
+  - **Two rules.** (1) Every JSX tag carrying `aria-expanded` sets `minHeight` >= 44 in its OWN
+    inline style (an `<input>` combobox is a field and exempt; `ALLOW` holds BadgeGrid's 64x70 medal
+    tile and Chevron's doc comment). (2) Every `<Chevron open={live value}>` sits in a control (the
+    nearest `<button` / `clickable(` before it) that carries `aria-expanded` — a dropdown that does
+    not say it is one escapes rule 1, and the 19 found were the smallest drawn (Calendar's "Plan the
+    day", the area tree's 38px expanders, the crew-member chip, a list's state groups, the hourly
+    forecast, "Show N earlier comments"). A literal `open={true|false}` is a go-there arrow.
+  - **Why the drawing and not only #2909's slop**: the slop widens a small control's touch area only
+    where nothing else is nearer, and a tap between two stacked toggles TIES and goes to nobody;
+    ROUTE BREAKDOWN's rows (35-38px, stacked 9px apart) are exactly that. Apple asks 44pt of a
+    control, Material 48dp; Mountain Project's and AllTrails' collapsible rows are full-width
+    44px+ rows. A chip that must stay small keeps its look inside a transparent 44px control
+    (TagChip); a text link (`Show more`, `See more`, `Reply`) is a `<button>`, which centres its
+    label, so minHeight alone grows the target without moving the text off its line.
+  - **Before** (first run): 47 toggles under 44px plus 19 undeclared Chevron dropdowns. **After**:
+    70 toggles, all 44+. The same PR made ROUTE BREAKDOWN's "Tap for detail" a plain caption: it
+    was drawn as a filled blue chip beside the heading, looked like a button, and did nothing.
+  - **Blind to** a toggle that draws no Chevron and carries no `aria-expanded`, and to the DRAWN
+    height (a minHeight can be beaten by a parent's fixed height or `overflow:hidden`):
+    `scripts/oneoff/probe-dropdowns.mjs` (hand-run, quiet box) measures every dropdown in Chrome on
+    every tab, the seed and four real DB routes and every overlay, AND clicks each at its centre to
+    prove it opens there.
+  - **Injection-tested**: dropping `aria-expanded` from Calendar's "Plan the day" fails rule 2;
+    setting FriendsFeed's "Show all" to `minHeight:40` fails rule 1.

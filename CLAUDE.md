@@ -64,6 +64,7 @@ npm run check:flex-scroll # no scroll pane in a flex column that cannot actually
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:popup-chrome # ...and every ✕, ← Back and remove-✕ in the app look the SAME — lib/popupChrome.js (in build)
 npm run check:tap-slop # a touch just off a small control still reaches it — lib/tapSlop.js stays installed, 44px, and never steals a hit (in build)
+npm run check:dropdown-targets # every dropdown toggle is DRAWN 44px tall, and every turning chevron sits in a control that says aria-expanded (in build)
 npm run check:doc-paths # every file path this document names still EXISTS (in build)
 npm run check:feature-docs # every docs/features doc names files and SYMBOLS that exist, and CURRENT_STATE.md indexes them all (in build)
 npm run check:injection-anchors # every INJECTION CASE still LANDS, so a guard's proof cannot rot (in build)
