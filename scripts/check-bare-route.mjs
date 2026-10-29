@@ -370,9 +370,10 @@ for (const d of [...CRAG, "alpine"]) {
   // Season in the header strap for every crag discipline, the way bouldering always had it.
   for (const d of ["sport", "trad", "toprope", "aid"]) {
     const html = render({ ...bare(d, "5.9"), season: "ZZSEASONZZ" }, "overview");
-    const strap = (html.match(/WebkitLineClamp|-webkit-line-clamp/g) || []).length;
-    if (!strap) fail("ANCHOR LOST: the header strap's line-clamp style moved — update this guard");
-    if (!/-webkit-line-clamp:2[^>]*>[^<]*ZZSEASONZZ/.test(html)) fail(`${d}: season on file but not in the header strap`);
+    // Anchored on data-header-strap: the strap's 2-line clamp is gone (it wraps now, owner note 2026-10-29: text cut off).
+    const strap = (html.match(/data-header-strap="1"/g) || []).length;
+    if (!strap) fail("ANCHOR LOST: the header strap's data-header-strap marker moved — update this guard");
+    if (!/data-header-strap="1"[^>]*>[^<]*ZZSEASONZZ/.test(html)) fail(`${d}: season on file but not in the header strap`);
     else ok(`${d}: season shows in the header strap`);
   }
   // A crag route with a breakdown and a climate box but nothing that opens Plan: the breakdown on

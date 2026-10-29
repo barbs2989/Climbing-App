@@ -214,6 +214,7 @@ npm run audit:access-prose # road/permit sentences filed in a column that render
 npm run audit:road-coverage # a route that describes a WALK but nothing about the ROAD to it
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
 npm run audit:expiring-closures # does a route state a closure that has already expired? (--json for consumers)
+npm run audit:closure-distance # does the DISTANCE include the closed-road walk the route's own text describes? (--selftest needs no DB)
 npm run audit:trailhead-road # routes sharing ONE trailhead/road — open? same road? same gate?
 
 # ── Route prose and catalog structure — notes: docs/guards/route-prose.md ──

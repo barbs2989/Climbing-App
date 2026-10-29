@@ -1,0 +1,87 @@
+[
+ {
+  "id": "wa_dome_peak_dome_glacier",
+  "verdict": "PLAN",
+  "why": "16 mi each way added; see plan file why."
+ },
+ {
+  "id": "wa_gunsight_peak_standard",
+  "verdict": "PLAN",
+  "why": "16 mi each way added; see plan file why."
+ },
+ {
+  "id": "wa_spire_point_southwest_face",
+  "verdict": "PLAN",
+  "why": "16 mi each way added; see plan file why."
+ },
+ {
+  "id": "wa_sinister_peak_southwest_route",
+  "verdict": "PLAN",
+  "why": "16 mi each way added; see plan file why."
+ },
+ {
+  "id": "wa_east_face",
+  "verdict": "PLAN",
+  "why": "16 mi each way added; see plan file why."
+ },
+ {
+  "id": "wa_gunrunner",
+  "verdict": "PLAN",
+  "why": "16 mi each way added; see plan file why."
+ },
+ {
+  "id": "wa_dome_peak_indian_summer",
+  "verdict": "PLAN",
+  "why": "16 mi each way added; see plan file why."
+ },
+ {
+  "id": "wa_accidental_discharge_east_face",
+  "verdict": "ALTERNATE_ONLY",
+  "why": "Primary variant is Agnes Creek from Stehekin; Downey variant has no distMi so no patch."
+ },
+ {
+  "id": "wa_west_face",
+  "verdict": "NO_CHANGE",
+  "why": "Only Downey approach, but no distance, itinerary or gain stored; cannot add 16 mi without a base figure."
+ },
+ {
+  "id": "wa_west_face_2",
+  "verdict": "NO_CHANGE",
+  "why": "Downey approach but no dist_km or itinerary; no sourced road gain."
+ },
+ {
+  "id": "wa_south_ridge",
+  "verdict": "NO_CHANGE",
+  "why": "Downey approach, no stored distance or itinerary to extend."
+ },
+ {
+  "id": "wa_sinister_peak_north_face",
+  "verdict": "NO_CHANGE",
+  "why": "Downey approach, no stored distance or itinerary to extend."
+ },
+ {
+  "id": "wa_lizard_mountain_south_route",
+  "verdict": "ALTERNATE_ONLY",
+  "why": "Primary variant is Cascade Pass; Downey variant has no distMi."
+ },
+ {
+  "id": "wa_sentinel_peak_standard",
+  "verdict": "ALTERNATE_ONLY",
+  "why": "Primary is Cascade Pass; Suiattle only the alternate."
+ },
+ {
+  "id": "wa_old_guard_peak_southwest_route",
+  "verdict": "NO_CHANGE",
+  "why": "Starts at Cascade Pass; Downey exit is the traverse end, not the most-used start."
+ },
+ {
+  "id": "wa_old_guard_peak_east_side_route",
+  "verdict": "NO_CHANGE",
+  "why": "Cascade River Road approach; Suiattle only a mentioned alternate; nothing stored."
+ },
+ {
+  "id": "wa_mount_buckindy_scramble",
+  "verdict": "NO_CHANGE",
+  "why": "Primary is Green Mountain TH (FR 2680, also closed: ~16 mi + 6 mi) but stored days/dist describe the Kindy Creek route with null day miles; stored figure's start unclear, not guessing."
+ }
+]

@@ -417,7 +417,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
         <ActionIcon name="fire" size={19} color={C.red} />
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontSize: 15, fontWeight: 800, lineHeight: 1.2 }}>Fire map</div>
-          <div style={{ fontSize: 11, color: C.textMuted, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          <div style={{ fontSize: 11, color: C.textMuted, marginTop: 2, overflowWrap: "anywhere" }}>
             Active wildfires, smoke &amp; fire weather
           </div>
         </div>
@@ -622,7 +622,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
                 style={{ textAlign: "left", border: "1px solid " + (open ? color : C.border), background: open ? C.card : C.surface, borderRadius: 10, padding: "10px 12px", cursor: "pointer", display: "flex", flexDirection: "column", gap: 4, width: "100%" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
                   <span style={{ width: 9, height: 9, borderRadius: "50%", background: color, flexShrink: 0 }} />
-                  <span style={{ fontSize: 13.5, fontWeight: 700, color: C.text, flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{f.name}</span>
+                  <span style={{ fontSize: 13.5, fontWeight: 700, color: C.text, flex: 1, minWidth: 0, overflowWrap: "anywhere" }}>{f.name}</span>
                   {/* Formatted by the app's unit-aware formatter, and never suppressed:
                       the old `mi >= 1` guard hid the distance for the very nearest
                       fires, which is the one case where the number matters most. */}
