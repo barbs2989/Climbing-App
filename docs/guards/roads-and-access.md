@@ -941,3 +941,25 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       search snippets only — owner review before any move.
     - **A seasonal gate is stated as its yearly pattern** ("gated overnight from late October through
       the winter"), not as this year's start date, so the line does not go stale every November.
+  - **Backlog batch 2, the 219 CRAG routes (2026-10-29): 136 filled, on 25 crags.** Almost all are ice
+    and drytooling crags. Only 9 had a sibling with a card, so each CRAG was researched once
+    (`CRAG_BRIEF.md`: where to park, the drive, the walk to the base), checked a second time, and
+    `expand-crag-fill.mjs` put the same checked text on every backlog route at that crag; the route
+    applier then ran its rails per route (125 routes on 15 crags, 11 on 10).
+    - **Why the ROUTE rows, not `areas.approach`:** that column is the walk only, by design (never
+      roads, parking or permits), and `CragWalkIn` renders it only on rock categories
+      (`CRAG_CATS`). These crags' ice and mixed routes show their own trailhead card, so a crag
+      walk-in would have reached the area page and none of the routes. Do not "move" these fills to
+      the area without making the ice route page read it first — that is a page change, not data.
+    - The second check rejected the loose collections (the SW Cascades "waterfall ice" area has
+      several approaches) and McClellan Butte (no page describes the couloir's base); hand edits
+      removed winter-parking clauses that rested only on search snippets, and climbing advice from
+      a walk-in. Banks Lake and Devils Punch Bowl park on the SR 155 shoulder with no pass stated,
+      because no page states one outside the state park.
+    - **Wayne's World / Dark Side / Excellent Adventure Wall sit under an area literally named
+      "PUBLIC LAND FOR SALE-Wayne's World".** No page opened explains it; the lot is state DNR land
+      with a Discover Pass. Written, with the land status UNPROVEN — worth the owner's look.
+    - Not written (28 of 53 crags; 26 not found by research, 2 rejected): mostly a road hint with no parking or walk, or a summit hike rather than a
+      crag base. **179 routes of the backlog remain** (81 peak, 83 crag, the 15 on Dragontail, Colchuck
+      Peak and Mount Johnson left to the parallel session); `check:trailhead-direction-shape --live`
+      passes on all 914.
