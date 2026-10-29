@@ -4,8 +4,8 @@
  "rule": "Same as audits/2026-10-28-route-timing-catalog.json.",
  "counts": {
   "researched": 166,
-  "repaired": 24,
-  "writes": 24
+  "repaired": 26,
+  "writes": 26
  },
  "status": "WRITTEN. The project was restarted by the owner after the outage; every repair below was previewed through planTimes, dry-run, written compare-and-set 1000 ms apart with a rollback file (copied to the main checkout's scripts/), and re-run to reconcile (ALREADY).",
  "held": [
@@ -397,6 +397,30 @@
    ],
    "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Two timed parties agree (8 and 9 hr car to car from Lupine Meadows).",
    "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "co_mount_harvard_south_slopes",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    6.5
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Three timed day trips from North Cottonwood agree (6.5, 6.4, 6.5 hr car to car, about 14 mi and 4,600 ft); a fast party is left out. (second research pass)",
+   "rollback": "scripts/rollback-timing-fixes-1793252891044.json"
+  },
+  {
+   "id": "co_san_luis_peak_northeast_ridge",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    7.4
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Four single-peak day trips from Stewart Creek (6.25, 6.75, 8, 8 hr car to car; median 7.4). (second research pass)",
+   "rollback": "scripts/rollback-timing-fixes-1793252891044.json"
   }
  ],
  "ownerDecision": {
@@ -412,7 +436,9 @@
    "co_mount_yale_southwest_slopes",
    "co_sunshine_peak_via_redcloud_peak",
    "or_west_ridge_2",
-   "wy_east_face"
+   "wy_east_face",
+   "co_mount_harvard_south_slopes",
+   "co_san_luis_peak_northeast_ridge"
   ],
   "held": [
    {
@@ -420,70 +446,64 @@
     "route": "Via Castle Pass",
     "carToCarHrs": 3.25,
     "basis": "published",
-    "why": "a snippet range only"
+    "why": "a snippet range only",
+    "secondPass": "Second pass: a fast party and a snippet only."
    },
    {
     "id": "co_challenger_point_north_slope",
     "route": "North Slope",
     "carToCarHrs": 12,
     "basis": "published",
-    "why": "one report plus a guide-site range read as a snippet"
+    "why": "one report plus a guide-site range read as a snippet",
+    "secondPass": "Second pass: still one car-to-car figure."
    },
    {
     "id": "co_crestone_needle_south_face",
     "route": "South Face",
     "carToCarHrs": 11,
     "basis": "published",
-    "why": "a guide-site range read as a snippet, no reports"
+    "why": "a guide-site range read as a snippet, no reports",
+    "secondPass": "Second pass: clean times only from the upper 4WD South Colony lot (7.75, 9 hr); the row names no trailhead and a 2WD party walks about 11 mi more."
    },
    {
     "id": "co_crestone_peak_south_face",
     "route": "South Face",
     "carToCarHrs": 13,
     "basis": "published",
-    "why": "a guide-site range read as a snippet, no reports"
+    "why": "a guide-site range read as a snippet, no reports",
+    "secondPass": "Second pass: 15 and 15.5 hr agree, but both from the upper 4WD lot; the row names no trailhead."
    },
    {
     "id": "co_grays_peak_north_slopes",
     "route": "North Slopes",
     "carToCarHrs": 5.5,
     "basis": "published",
-    "why": "a hiking-blog range and one report"
+    "why": "a hiking-blog range and one report",
+    "secondPass": "Second pass: 5 and 7.5 hr, 33% apart."
    },
    {
     "id": "co_mount_antero_west_slopes",
     "route": "West Slopes",
     "carToCarHrs": 10.5,
     "basis": "published",
-    "why": "a hiking-blog range and one fast report"
-   },
-   {
-    "id": "co_mount_harvard_south_slopes",
-    "route": "South Slopes",
-    "carToCarHrs": 6.5,
-    "basis": "published",
-    "why": "a single trip report (6.5 hr) that was counted as published"
+    "why": "a hiking-blog range and one fast report",
+    "secondPass": "Second pass: 9 and 7.5 hr (snippet), 16% apart; a third was a fast party."
    },
    {
     "id": "co_mount_lincoln_west_ridge",
     "route": "West Ridge",
     "carToCarHrs": 4.75,
     "basis": "published",
-    "why": "an AllTrails figure and one report"
-   },
-   {
-    "id": "co_san_luis_peak_northeast_ridge",
-    "route": "Northeast Ridge",
-    "carToCarHrs": 7.75,
-    "basis": "published",
-    "why": "two reports 25% apart (6.25, 8) and a snippet"
+    "why": "an AllTrails figure and one report",
+    "secondPass": "Second pass: single-peak West Ridge reports are rare; nearly all are Decalibron days."
    },
    {
     "id": "co_wetterhorn_peak_southeast_ridge",
     "route": "Southeast Ridge",
     "carToCarHrs": 8,
     "basis": "published",
-    "why": "a snippet range and one report"
+    "why": "a snippet range and one report",
+    "secondPass": "Second pass: one more report with legs but no total."
    }
   ]
  }

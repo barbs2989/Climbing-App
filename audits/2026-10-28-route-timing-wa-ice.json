@@ -1,12 +1,12 @@
 {
  "date": "2026-10-28",
  "scope": "Washington ice and mixed routes that store a trip time (14 ice, 2 mixed), not covered by the alpine passes",
- "status": "RESEARCHED, NOTHING WRITTEN",
+ "status": "RESEARCHED TWICE, 1 WRITTEN",
  "rule": "Same evidence rule as audits/2026-10-28-route-timing-out-of-state.json: a published guidebook/club figure that could be read, or 3 timed reports, or 2 agreeing within 15%; only a leg more than 20% short moves.",
  "counts": {
   "researched": 16,
-  "repaired": 0,
-  "writes": 0
+  "repaired": 1,
+  "writes": 1
  },
  "routes": [
   {
@@ -187,7 +187,7 @@
     "summitToCar": null,
     "carToCar": 12.67
    },
-   "verdict": "HELD. Stored whole-day 10 hr is 21% under the 12.7 hr median of 3 car-to-car reports (11, 12.7, 14), but two are search snippets and one may be the wrong thread; the two firm figures differ by just over 15%."
+   "verdict": "WRITTEN on the second pass: Whole-day row 21% short. A winter party with clock times from the Alpental lot took 12.7 hr car to car (10.3 up, 2.4 down); a second gives 11 hr (agreeing within 15%) and a third about 14 hr. Kept as one whole day."
   },
   {
    "id": "wa_snoqualmie_mountain_the_snostril",
@@ -296,6 +296,25 @@
     "carToCar": null
    },
    "verdict": "Kept: no timed reports found."
+  }
+ ],
+ "repairs": [
+  {
+   "id": "wa_new_york_gully",
+   "before": [
+    null,
+    10,
+    null,
+    10
+   ],
+   "after": [
+    null,
+    12.7,
+    null,
+    12.7
+   ],
+   "why": "Whole-day row 21% short. A winter party with clock times from the Alpental lot took 12.7 hr car to car (10.3 up, 2.4 down); a second gives 11 hr (agreeing within 15%) and a third about 14 hr. Kept as one whole day.",
+   "rollback": "scripts/rollback-timing-fixes-1793252891044.json"
   }
  ]
 }
