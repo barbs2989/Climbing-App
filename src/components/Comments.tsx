@@ -28,6 +28,8 @@ export interface ThreadComment {
   reactions?: Record<string, string> | null;
   myReaction?: string | null;
   moderation?: string | null;
+  /** Sent and drawn at once, not yet stored: reads "Sending…" and offers no menu until it has a real id. */
+  pending?: boolean;
 }
 /** The person behind a comment: ME, a seed climber, or the stored author (id, name, avatar). */
 export interface CommentAuthor {
@@ -99,10 +101,10 @@ export default function Comments({targetId,comments,onAdd,onViewProfile,onEdit,o
   /* The reaction picker's entry point stays a real, named button (check:clickable records it was once inert on Enter). It
      shows the reaction you gave, so "React" does not read as less real than Like. */
   const reactBtn=(c: ThreadComment)=>{const mr=c.myReaction?REACTIONS.find(x=>x.k===c.myReaction):null;return <button onClick={()=>setReactFor(c.id)} aria-label={mr?"Change your reaction":"Add a reaction"} style={Object.assign({},lnk,{color:mr?C.blue:C.textMuted})}>{mr?<span style={{display:"inline-flex",alignItems:"center",gap:4}}>{mr.i?<ActionIcon name={mr.i} size={12} color="currentColor"/>:null}{mr.l}</span>:"React"}</button>;};
-  const whenBtn=(c: ThreadComment)=>{const f=fullAt===c.id;return <button onClick={()=>setFullAt(f?null:c.id)} aria-label={commentWhen(c.ts,true)+(c.edited?", edited":"")} style={Object.assign({},lnk,{fontWeight:600})}>{commentWhen(c.ts,f)+(c.edited?" · Edited":"")}</button>;};
+  const whenBtn=(c: ThreadComment)=>{if(c.pending)return <span role="status" style={Object.assign({},lnk,{fontWeight:600,cursor:"default"})}>Sending…</span>;const f=fullAt===c.id;return <button onClick={()=>setFullAt(f?null:c.id)} aria-label={commentWhen(c.ts,true)+(c.edited?", edited":"")} style={Object.assign({},lnk,{fontWeight:600})}>{commentWhen(c.ts,f)+(c.edited?" · Edited":"")}</button>;};
   /* ⋯ holds what used to be a row of text links. Report goes to the mount's own sheet where it passes one (a group's), and to
      the app-wide one (0263) for any stored comment otherwise, so no comment gets two. Block needs a person with an account. */
-  const menuItems=(c: ThreadComment,isReply: boolean)=>{const a=author(c);const mine=c.userId===0||!!c.mine;const w=isReply?"reply":"comment";const it: CommentMenuItem[]=[];
+  const menuItems=(c: ThreadComment,isReply: boolean)=>{if(c.pending)return [];const a=author(c);const mine=c.userId===0||!!c.mine;const w=isReply?"reply":"comment";const it: CommentMenuItem[]=[];
     if(mine)it.push(["Edit "+w,()=>{setEditId(c.id);setEditText(c.text||"");}]);
     if(mine&&onDelete)it.push(["Delete "+w,()=>{askConfirm({title:"Delete this "+w+"?",confirmLabel:"Delete "+w}).then(function(ok){if(ok)onDelete(c.id);});},true]);
     if(!mine&&!c.deleted){
