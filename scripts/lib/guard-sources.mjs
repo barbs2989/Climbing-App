@@ -290,6 +290,14 @@ export const MOVED = {
     "src/components/WeatherPanel.tsx",
     "src/components/ConditionsScoreCard.tsx",
     "src/components/SuggestFix.tsx",
+    "src/components/RoutePhotosTab.tsx",
+    "src/components/RouteReportsTab.tsx",
+    "src/components/RoutePartnersTab.tsx",
+    "src/components/RouteSafetyTab.tsx",
+    "src/components/RouteOverviewTab.tsx",
+    "src/components/RouteShareSheet.tsx",
+    "src/components/RoutePhotoLightbox.tsx",
+    "src/components/RoutePlanTab.tsx",
   ],
 };
 // The pre-2026-10 name, kept because 21 guards import it. Same array, same meaning.

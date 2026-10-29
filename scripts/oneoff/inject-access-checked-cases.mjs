@@ -12,7 +12,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const RD = path.join(ROOT, "RouteDetail.jsx");
+// PR59: the Plan sub-tab body moved out of RouteDetail.jsx into RoutePlanTab.tsx.
+const RD = path.join(ROOT, "src/components/RoutePlanTab.tsx");
 const ROAD = path.join(ROOT, "lib/road.js");
 const sum = (p) => crypto.createHash("sha1").update(fs.readFileSync(p)).digest("hex");
 

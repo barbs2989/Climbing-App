@@ -28,7 +28,10 @@ const files = argv;
 
 function decls(src, ts) {
   const ast = parse(src, { sourceType: "module", plugins: ts ? ["jsx", "typescript"] : ["jsx"] });
-  traverse(ast, {
+  traverse(ast, NORM);
+  return collect(ast);
+}
+const NORM = {
     enter(p) {
       const n = p.node;
       if (n.typeAnnotation && n.typeAnnotation.type?.startsWith("TS")) n.typeAnnotation = null;
@@ -44,7 +47,8 @@ function decls(src, ts) {
       if (["TSAsExpression", "TSNonNullExpression", "TSSatisfiesExpression", "TSTypeAssertion"].includes(n.type)) { p.replaceWith(n.expression); return; }
       if (["TSInterfaceDeclaration", "TSTypeAliasDeclaration"].includes(n.type)) { p.remove(); return; }
     },
-  });
+};
+function collect(ast) {
   const out = new Map();
   for (let st of ast.program.body) {
     if ((st.type === "ExportNamedDeclaration" || st.type === "ExportDefaultDeclaration") && st.declaration) st = st.declaration;
@@ -62,16 +66,31 @@ for (const f of files) {
   for (const [name, node] of d) {
     const b = baseDecls.get(name);
     // A component lifted by branch mode: its return value must be, as code, the base page's branch.
+    const closure = /^\/\* (\w+) — the body of that closure of (\w+), lifted verbatim/m.exec(fs.readFileSync(path.join(ROOT, f), "utf8"));
+    if (!b && closure && node.type === "FunctionDeclaration") {
+      const bast = parse(baseSrc, { sourceType: "module", plugins: ["jsx"] });
+      traverse(bast, NORM);
+      let body = null, hits = 0;
+      traverse(bast, { VariableDeclarator(vp) { if (vp.node.id.name === closure[1] && vp.node.init && vp.node.init.type === "ArrowFunctionExpression") { body = vp.node.init.body; hits++; } } });
+      const ret = node.body.body.length === 1 && node.body.body[0].type === "ReturnStatement" ? node.body.body[0].argument : null;
+      if (hits !== 1 || !ret) { console.log(`CLOSURE  ${f}: ${name} — ${closure[1]} found ${hits} time(s) in the base, or the component is not a single return`); bad++; continue; }
+      if (code(ret) === code(body)) { ok++; console.log(`CLOSURE  ${f}: ${name} — identical to the base page's ${closure[1]} body`); }
+      else { if (!allowDiff.has(name)) bad++; console.log(`DIFFERS  ${f}: ${name} (closure ${closure[1]})`); }
+      continue;
+    }
     const lifted = /^\/\* (.+?) — the body of that branch of (\w+), lifted verbatim/m.exec(fs.readFileSync(path.join(ROOT, f), "utf8"));
     if (!b && lifted && node.type === "FunctionDeclaration") {
       const anchor = lifted[1];
       const bast = parse(baseSrc, { sourceType: "module", plugins: ["jsx"] });
+      traverse(bast, NORM);
       let cons = null, hits = 0;
       traverse(bast, { ConditionalExpression(cp) { if (baseSrc.slice(cp.node.start, cp.node.start + anchor.length) === anchor) { cons = cp.node.consequent; hits++; } } });
       const ret = node.body.body.length === 1 && node.body.body[0].type === "ReturnStatement" ? node.body.body[0].argument : null;
       if (hits !== 1 || !ret) { console.log(`BRANCH  ${f}: ${name} — anchor ${anchor} matched ${hits} time(s) in the base, or the component is not a single return`); bad++; continue; }
       const a = code(ret), c = code(cons);
       if (a === c) { ok++; console.log(`BRANCH  ${f}: ${name} — identical to the base page's ${anchor} branch`); continue; }
+      // DUMP=dir: write both sides, to diff a reviewed --allow-differs branch in full.
+      if (process.env.DUMP) { fs.writeFileSync(path.join(process.env.DUMP, name + ".base.js"), c); fs.writeFileSync(path.join(process.env.DUMP, name + ".now.js"), a); }
       if (!allowDiff.has(name)) bad++;
       const al = a.split("\n"), cl = c.split("\n"); let i = 0; while (i < al.length && al[i] === cl[i]) i++;
       console.log(`DIFFERS  ${f}: ${name} (branch) — first at line ${i + 1}:\n  base: ${cl[i]}\n  now:  ${al[i]}`);

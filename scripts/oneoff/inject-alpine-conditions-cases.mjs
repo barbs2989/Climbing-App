@@ -71,7 +71,8 @@ const CASES = [
     expect: "fail", expectText: "the Conditions tab is offered and its card mounts" },
   /* Inverted 2026-10-24: the forecast now opens Safety on EVERY route (owner), so the defect is it leaving again. */
   { name: "7. the weather panel is gated off Safety for alpine routes again",
-    find: "*/}{wxEl()}{fireEl}", repl: "*/}{showScore||showAlpineCond?null:wxEl()}{fireEl}",
+    /* PR59: wxEl() is now rendered inside RouteSafetyTab (a prop), so the gate goes on the call site in RouteDetail.jsx, where showScore/showAlpineCond are in scope. */
+    find: "wxEl={wxEl}", repl: "wxEl={showScore||showAlpineCond?()=>null:wxEl}",
     expect: "fail", expectText: "the weather panel opens Safety on an alpine route" },
   { name: "8. a flag hard-codes mph", file: CARD,
     find: "case \"wind\": return \"Summit gusts to \" + uWind(v.gust) + \" in daylight\";", repl: "case \"wind\": return \"Summit gusts to \" + Math.round(v.gust) + \" mph in daylight\";",

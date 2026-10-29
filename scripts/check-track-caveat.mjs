@@ -31,7 +31,7 @@ import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
 import { trackStubCaveat, trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage, recordedTrackPts, withRecordedTrackOnly, exportedTrackNotes, reachesTheSummit, lineIsBuiltFromPins } from "../lib/track.js";
-import { readCoreSource } from "./lib/guard-sources.mjs";
+import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -425,7 +425,7 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
   // RouteDetail's source rather than restated here: a restated vocabulary is how this codebase got
   // four grade parsers, and a rename should have to update the FAQ rather than this guard.
   {
-    const rdSrc = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+    const rdSrc = readAppFile(path.join(ROOT, "RouteDetail.jsx")); // stitched: the tracks section moved to RouteReportsTab (PR60)
     const capAt = rdSrc.indexOf(CAP);
     const slMatches = capAt < 0 ? [] : [...rdSrc.slice(Math.max(0, capAt - 400), capAt).matchAll(/<SL>([^<]{4,60})<\/SL>/g)];
     const heading = slMatches.length ? slMatches[slMatches.length - 1][1] : null;
@@ -500,7 +500,7 @@ console.log("\nThe route line is a recorded track or nothing:");
   else ok("GPXMap draws no line from the waypoints");
   if (!/!trackIsJustTheWaypoints\(pts/.test(gpxMap)) fail("GPXMap no longer refuses a stored pin-join 'track' passed in by a caller that skipped the filter");
   else ok("GPXMap refuses a stored pin-join track from any caller");
-  const db = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8"), rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8"), core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+  const db = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8"), rd = readAppFile(path.join(ROOT, "RouteDetail.jsx")), core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
   if (!/recordedTrackPts\(r\.gpx,/.test(db)) fail("dbRouteToCamel no longer drops a pin-join gpx at the read");
   else ok("dbRouteToCamel drops a pin-join gpx at the read");
   if (!/withRecordedTrackOnly\(applyApproach\(/.test(rd)) fail("RouteDetail no longer drops a pin-join line after the approach overlay");
