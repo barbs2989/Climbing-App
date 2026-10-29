@@ -38,6 +38,9 @@ const FILES = ["lib/db.js", "lib/DbAreaBrowser.jsx", "lib/grade.js", "lib/outing
 // route and `sibs` the thin list, so only `sibs` counts there.
 const ENTRIES = [
   { file: "lib/DbAreaBrowser.jsx", fn: "RouteRow", rows: ["r"] },
+  // The area page's CLASSIC CLIMBS HERE ranks the same thin rows (classic, guide_stars, stars).
+  { file: "lib/DbAreaBrowser.jsx", fn: "isAreaClassic", rows: ["r"] },
+  { file: "lib/DbAreaBrowser.jsx", fn: "areaClassics", rows: ["routes"] },
   { file: "lib/DbAreaBrowser.jsx", fn: "SummitBriefing", rows: ["routes"] },
   { file: "RouteDetail.jsx", fn: "approachFinishes" },
   { file: "RouteDetail.jsx", fn: "approachSibOpts" },

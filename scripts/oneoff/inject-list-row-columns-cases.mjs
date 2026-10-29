@@ -27,8 +27,8 @@ const CASES = [
     says: /column "length_m" is read but useAreaRoutes' thin select does not include it/ },
   // The select loses a column a reader still reads.
   { name: "select-drops-a-column", file: DB, expect: "fail",
-    find: ",stars,sort_order,",
-    repl: ",sort_order,",
+    find: ",stars,guide_stars,",
+    repl: ",guide_stars,",
     says: /column "stars" is read but useAreaRoutes' thin select does not include it/ },
   // The select carries a column nobody renders — the bytes the trim exists to stop.
   { name: "select-carries-dead-weight", file: DB, expect: "fail",
