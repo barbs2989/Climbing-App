@@ -47,7 +47,6 @@ import { rappelHeaderLabel, rappelSingleRopeWarning } from "./lib/rappels";
 import { knownHazards } from "./lib/hazards";
 import { acquireBaseFix, baseCheckinMessage, baseGuide, pendingBaseCheckins, savePendingBaseCheckins, distM, BASE_CONFIRM_MIN, bearingDeg, headingFromOrientation, relativeBearing, turnWord, smoothHeading } from "./lib/baseCheckin";
 import { declinationDeg } from "./lib/declination";
-import { routeTags } from "./lib/routeTags";
 import { planTimes, realPitches } from "./lib/planTimes";
 import { tripProfile, apportion } from "./lib/tripProfile.js";
 import AlpineConditionsCard, { forecastPoint } from "./lib/AlpineConditionsCard.jsx";
@@ -80,7 +79,7 @@ import RealClimberRow from "./src/components/RealClimberRow.tsx";
 import RouteStats from "./lib/RouteStats.jsx";
 import { recShapeOf, effDistIsWholeTrip, effDistKm, isMultiDayOuting, itinDayCount } from "./lib/outing.js";
 import { approachOptions, defaultApproachKey, viaRouteOf, applyApproach, approachKeyOf, tripTrailheadDraft, tripTrailheadMerge, viaPitchSpans, spanLabel, wholeLine } from "./lib/approaches.js";
-import { POP_CLOSE, POP_CLOSE_MEDIA, POP_BACK_MEDIA, POP_REMOVE } from "./lib/popupChrome.js";
+import { POP_CLOSE, POP_BACK_MEDIA, POP_REMOVE } from "./lib/popupChrome.js";
 import { BTN, BTN_SM, BTN_LINK, CHIP } from "./lib/buttonStyles.js";
 import { askConfirm } from "./lib/ConfirmSheet.jsx";
 import WaypointMapPicker from "./src/components/WaypointMapPicker.tsx";
@@ -99,6 +98,18 @@ import SaveOfflineChip from "./src/components/SaveOfflineChip.tsx";
 import TopoCaptionBox from "./src/components/TopoCaptionBox.tsx";
 import BetaDiff from "./src/components/BetaDiff.tsx";
 import CRow from "./src/components/CRow.tsx";
+import GapNote from "./src/components/GapNote.tsx";
+import VerifNote from "./src/components/VerifNote.tsx";
+import RouteTagRow from "./src/components/RouteTagRow.tsx";
+import CragSafetyNotes from "./src/components/CragSafetyNotes.tsx";
+import RackBetaList from "./src/components/RackBetaList.tsx";
+import PitchConsensus from "./src/components/PitchConsensus.tsx";
+import FloatPlanFold from "./src/components/FloatPlanFold.tsx";
+import TopoCaption from "./src/components/TopoCaption.tsx";
+import ClampText from "./src/components/ClampText.tsx";
+import ClimateSeasonCard from "./src/components/ClimateSeasonCard.tsx";
+import PhotoRow from "./src/components/PhotoRow.tsx";
+import EditIconButton from "./src/components/EditIconButton.tsx";
 const GpsSubmissionModal = lazy(() => import("./lib/GpsSubmissionModal"));
 const uGain=m=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
 
@@ -632,7 +643,6 @@ function rackLines(sr){
    climber's gear beta reached no screen at all. check:bare renders it on each roped discipline.
    `activity` is the merged list (seed + your reports + every other climber's DB rows); route.activity
    alone is the seed, so a real climber's gear beta never reached the box that read only that. */
-function RackBetaList({activity,route,onSeeReports}){const _acts=activity||(route&&route.activity)||[];const _gbX=_acts.filter(a=>a&&a.gearBeta).map(a=>({who:a.user,avatar:a.avatar,date:a.date,note:a.gearBeta}));const beta=_gbX.concat((route&&route.gearBeta&&route.gearBeta.length)?route.gearBeta:(_acts.filter(a=>a&&a.text&&/(\bcams?\b|\brack\b|doubles|#\d|\bnuts?\b|draws|quickdraw|\bropes?\b|screws|pickets|\bset of\b)/i.test(a.text)).slice(0,3).map(a=>({who:a.user,avatar:a.avatar,date:a.date,note:a.text}))));if(!beta.length)return null;return <div style={{marginTop:11,paddingTop:10,borderTop:`1px solid ${C.borderLight}`}}><div style={{...SUB_LABEL,marginBottom:7}}>Rack beta</div>{beta.map((b,i)=><div key={i} style={{display:"flex",gap:8,marginBottom:8}}>{b.avatar?<Av src={b.avatar} size={24}/>:null}<div style={{flex:1,minWidth:0}}><div style={{fontSize:11.5,color:C.textMuted,marginBottom:1}}>{(b.who||"A climber")+(b.date?" · "+b.date:"")}</div><div style={{fontSize:12.5,color:C.text,lineHeight:1.5,fontStyle:"italic"}}>{"\""+b.note+"\""}</div></div></div>)}{onSeeReports?<button onClick={onSeeReports} style={{marginTop:2,padding:"7px 12px",background:C.surface,border:`1px solid ${C.border}`,borderRadius:9,color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer"}}>Reports →</button>:null}</div>;}
 function RouteRackBox({route,activity,onEditRack,rack,onSeeReports,rackGeneric}){const items=gearReadout(route,[]);const cams=(route&&route.cams)||[];const _rackLines=rackLines(route.slingRack);const lines=[];/* draws/screws/ropeLen are contributable in SuggestFix and were rendered NOWHERE — a climber could correct the quickdraw count, the screw count or the rope length, watch it pass the 3-agree gate, and never see it on the route. They belong on the same list as the alpine draws and the rope that were already here. ropeLen is the contributed spelling ("60 m"); ropeLengthM is the enrichment column, and they can disagree because NOTHING mirrors one onto the other. An agreed correction wins (_ropeEdited); absent one the enrichment number is the better value, since it is a number rather than free text. Never print two rope lines. *//* The COUNTED rack first (rackRows, lib/rack.js): rack_items' rows with the quickdraw, screw and alpine-draw boxes folded in, one count per item. rack_items reached no off-crag card before, so 11 alpine/mixed/ice routes whose only rack was counted rows printed the generic rack. */rackRows(route).forEach(function(x){lines.push(rackItemLine(x));});/* The bolt count was carried only by the PROTECTION section that used to sit above this card on Plan, which repeated the rest of this list; it lives here now. */if(+route.bolts>0)lines.push(Math.round(+route.bolts)+" bolts"+(rackQty(route,"quickdraws")?"":" — bring "+Math.round(+route.bolts)+"+ quickdraws"));_rackLines.forEach(function(rl){lines.push(rl.label+" — "+rl.text);});var _ropeContrib=route.ropeLen?fmtRopeLen(route.ropeLen):"";var _ropeLen=(_ropeEdited(route)&&_ropeContrib)?_ropeContrib:(route.ropeLengthM?(route.ropeLengthM+"m"):_ropeContrib);if(route.ropeType||_ropeLen)lines.push("Rope — "+[route.ropeType,_ropeLen].filter(Boolean).join(" "));/* ropeNote used to be appended here in brackets, which meant two things: a note on a route with no ropeType and no length rendered NOWHERE (63 WA routes), and the 381 that did render put a whole paragraph inside a bullet — median 186 chars, max 716. It has its own box below now. *//* No route-level anchor line: `anchorType` was deliberately removed from SS ("anchors are per-pitch
    now"), `routes` has no anchor_type column, and no seed route carries the key — so this read could
    never fire. The live anchor records are `station.anchorType` on a bailout and `wp.anchorType` on a
@@ -734,15 +744,6 @@ function AccessFold({summary,onEdit,children}){const [open,setOpen]=useState(fal
    have been read. Closed, it is one amber row that still says WHY — a committing objective, and
    whether you will have signal — so the prompt is not lost by folding it. The body is HIDDEN,
    not unmounted, like AccessFold. */
-function FloatPlanFold({coverage,onFile}){const [open,setOpen]=useState(false);
-  return <div style={{background:C.amberBg,border:`1px solid ${C.amber}55`,borderRadius:12,padding:"11px 13px",margin:FOLD_GAP+"px 0"}}>
-    <div role="heading" aria-level={2}><button onClick={function(){setOpen(!open);}} aria-expanded={open} style={{minHeight:44,display:"flex",alignItems:"center",gap:8,width:"100%",padding:0,background:"transparent",border:"none",color:C.text,cursor:"pointer",textAlign:"left"}}>
-      <span style={{flex:1,minWidth:0}}><CardHead style={{marginBottom:3}}>FLOAT PLAN</CardHead><span style={{display:"block",fontSize:12.5,color:C.text,lineHeight:1.5}}><b style={{color:C.amber}}>Committing objective.</b> {coverage==="good"?"File a float plan in case something still goes wrong.":"File a float plan before you lose cell service."}</span></span>
-      <Chevron open={open} size={16} color={C.amber}/>
-    </button></div>
-    <div hidden={!open} style={{marginTop:10}}>{onFile?<button onClick={onFile} style={{width:"100%",padding:11,background:C.amber,color:C.bg,border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",borderRadius:10,fontSize:14.5,cursor:"pointer",fontWeight:700}}>File a float plan for this climb →</button>:null}<div style={{fontSize:11.5,color:C.textMuted,marginTop:6,lineHeight:1.45}}>Float plans live under Crews › Float plans, with your crew's if you have one for this climb — then Share, Email or Save as PDF.</div></div>
-  </div>;
-}
 function WaypointList({waypoints,onFocus,emptyCopy,onAdd}){
   if(!(waypoints&&waypoints.length))return <div style={{background:C.card,borderRadius:12,padding:"14px 13px",border:`1px dashed ${C.border}`,textAlign:"center"}}><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,marginBottom:9}}>{emptyCopy}</div><button onClick={onAdd} style={{padding:"8px 14px",borderRadius:9,border:"none",background:C.blueSolid,color:C.onSolid,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Add waypoints</button></div>;
   /* The affordance is taught ONCE, here, rather than repeated as a "Show on map" line on
@@ -827,7 +828,6 @@ function RopeworkBox({route,onEdit}){
      never loses something it states. mergeGearList dedupes it against the standard kit by item. */
   return <><SL>GEAR</SL><RouteRackBox route={route} activity={activity} onEditRack={onEditRack} rack={rack} onSeeReports={onSeeReports} rackGeneric={rackGeneric}/>{afterRack}<RopeworkBox route={route} onEdit={onEditRopeNote}/><RouteGearEssentialsBox route={route} essentials={(essentials||[]).concat(rackLeftovers(route))} onEdit={onEditEssentials}/></>;
 }
-/* Shared with the area page since 2026-10-15 (lib/areaChrome.jsx); this binds the palette. */const EditIconButton=({onClick,title})=><AreaEditIconButton onClick={onClick} title={title} C={C}/>;
 function weatherIconKind(code){if(code==null)return null;if(code===0||code===1)return "sun";if(code===2)return "cloudSun";if(code===3)return "cloud";if(code===45||code===48)return "fog";if(code===95||code===96||code===99)return "storm";if([71,73,75,77,85,86].indexOf(code)>=0)return "snow";if([51,53,55,56,57,61,63,65,66,67,80,81,82].indexOf(code)>=0)return "rain";return "cloud";}
 function WeatherIcon({code,color,size}){const kind=weatherIconKind(code);if(!kind)return null;const s=size||16;const p={width:s,height:s,viewBox:"0 0 24 24",fill:"none",stroke:color||"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round",style:{flexShrink:0}};if(kind==="sun")return <svg {...p}><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="4.2" y1="4.2" x2="6" y2="6"/><line x1="18" y1="18" x2="19.8" y2="19.8"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.2" y1="19.8" x2="6" y2="18"/><line x1="18" y1="6" x2="19.8" y2="4.2"/></svg>;if(kind==="cloudSun")return <svg {...p}><circle cx="8" cy="8" r="3.2"/><line x1="8" y1="2.5" x2="8" y2="4"/><line x1="2.5" y1="8" x2="4" y2="8"/><line x1="3.8" y1="3.8" x2="4.8" y2="4.8"/><path d="M8.5 20h8a4 4 0 0 0 0-8 5.5 5.5 0 0 0-10.4-2A4.5 4.5 0 0 0 6.5 20z"/></svg>;if(kind==="cloud")return <svg {...p}><path d="M6.5 20h11a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.5-2A4.5 4.5 0 0 0 6.5 20z"/></svg>;if(kind==="fog")return <svg {...p}><path d="M6.5 15h11a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.5-2A4.5 4.5 0 0 0 6.5 15z"/><line x1="4" y1="19" x2="20" y2="19"/><line x1="6" y1="22" x2="18" y2="22"/></svg>;if(kind==="rain")return <svg {...p}><path d="M6.5 14h11a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.5-2A4.5 4.5 0 0 0 6.5 14z"/><line x1="8" y1="18" x2="7" y2="21"/><line x1="12" y1="18" x2="11" y2="21"/><line x1="16" y1="18" x2="15" y2="21"/></svg>;if(kind==="snow")return <svg {...p}><path d="M6.5 14h11a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.5-2A4.5 4.5 0 0 0 6.5 14z"/><line x1="8" y1="18" x2="8" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="16" y1="18" x2="16" y2="22"/><line x1="6.5" y1="20" x2="9.5" y2="20"/><line x1="10.5" y1="20" x2="13.5" y2="20"/><line x1="14.5" y1="20" x2="17.5" y2="20"/></svg>;if(kind==="storm")return <svg {...p}><path d="M6.5 13h11a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.5-2A4.5 4.5 0 0 0 6.5 13z"/><polyline points="13 13 10 18 13 18 11 23"/></svg>;return null;}
 /* ProvenancePanel (the DATA CONFIDENCE box) was removed with its only call site: it and
@@ -974,7 +974,6 @@ function rappelHeadingCount(route){
 }
 /* CLIMATE & SEASON. Renders on the Conditions tab after the forecast; on Plan / a crag's Overview
    only for a discipline with no Conditions tab. Gated on `climate`, NOT `season`. */
-function ClimateSeasonCard({route}){const cl=route.climate;if(!cl||typeof cl!=="object")return null;const _bs=(cl.bySeason&&typeof cl.bySeason==="object")?cl.bySeason:{};const sv=k=>cl[k]||_bs[k]||null;const SEAS=[["spring","Spring"],["summer","Summer"],["fall","Fall"],["winter","Winter"]].filter(s=>sv(s[0]));if(!cl.typical&&!SEAS.length&&!cl.forecastZone)return null;return <><SL>CLIMATE & SEASON</SL><div style={{background:C.card,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`1px solid ${C.border}`}}>{cl.typical?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55,marginBottom:SEAS.length?10:0}}>{cl.typical}</div>:null}{SEAS.map(function(s,i){return <div key={s[0]} style={{display:"flex",gap:9,alignItems:"flex-start",padding:"5px 0",borderTop:i===0?"none":`1px solid ${C.borderLight}`}}><span style={{fontSize:11,fontWeight:700,color:C.textMuted,width:52,flexShrink:0,paddingTop:1}}>{s[1]}</span><span style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,flex:1,minWidth:0}}>{sv(s[0])}</span></div>;})}{cl.forecastZone?<div style={{fontSize:11.5,color:C.textMuted,marginTop:9,paddingTop:8,borderTop:`1px solid ${C.borderLight}`,lineHeight:1.45}}>{"Forecast zone — "+cl.forecastZone}</div>:null}</div></>;}
 /* ROUTE FACTS label -> the SuggestFix field that fills it, so "Add what you know" opens on the first
    missing one rather than at Grade with every group collapsed. */
 const FACT_FIELD={"Pitches":"pitchCount","Route length":"length","Wall height":"length","Rope":"ropeLen","Location":"location","Bolts":"bolts","Protection":"protRating","Anchor":"anchor","Aspect":"aspect","Season":"season","Rock quality":"rockQuality","Wet":"wet","Fixed gear":"fixedGear","Landing":"landing","Crash pads":"pads","Start":"startType"};
@@ -1218,21 +1217,6 @@ function TechStats({route,onEdit,part}){
    lower off" was cut to its first few words. Both boxes now wrap in full, and the button beneath opens THIS pitch in the
    editor, where anchor and gear are typed. Bolts stay in the tile row above. An empty card says so and offers the editor
    rather than vanishing, when the editor is open to the climber. */
-function PitchConsensus({p,onSuggestFix}){
-  const anchor=String(p.anchor||"").trim();const gear=String(p.gear||"").trim();const belay=String(p.belay||"").trim();
-  if(!anchor&&!gear&&!belay&&!onSuggestFix)return null;
-  const box=function(label,text,empty){return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:8,padding:"8px 10px",marginBottom:6}}>
-    <div style={{fontSize:11,fontWeight:700,color:C.textMuted,letterSpacing:0.4,textTransform:"uppercase",marginBottom:3}}>{label}</div>
-    <div style={{fontSize:13,color:text?C.text:C.textMuted,lineHeight:1.5,whiteSpace:"pre-wrap",wordBreak:"break-word",overflowWrap:"anywhere"}}>{text||empty}</div>
-  </div>;};
-  return <div style={{background:C.surface,borderRadius:8,padding:"10px 11px",marginBottom:9,border:"1px solid "+C.border}}>
-    <CardHead tone={C.green} style={{marginBottom:8}}>Pitch gear</CardHead>
-    {box("Belay station",belay,"Not described yet — say where the belayer stands and how to find it")}
-    {box("Anchor",anchor,"Not described yet — say what the anchor is built of")}
-    {box("Gear for this pitch",gear,"Not described yet — say what to place, e.g. cams, nuts, slings")}
-    {onSuggestFix?<button onClick={onSuggestFix} style={{...BTN,marginTop:3,background:"transparent",color:C.textSub,border:"1px solid "+C.border}}>{(anchor||gear||belay)?"Edit belay, anchor & gear":"Add belay, anchor & gear"}</button>:null}
-  </div>;
-}
 /* A PITCH ROW IS A CONTROL, and its "CRUX" badge is a separate <span> held off the grade by
    `marginLeft:6`. The accessibility tree has no margins, so a pitch graded "5.9" announced as
    "5.9CRUX" — the #740 defect, on a row where the glued half is the word that says this is the
@@ -2366,12 +2350,6 @@ function OvernightPermit({route}){
 }
 /* A COMMENT SOMEONE TYPED AT LENGTH opens at three lines with a Read more (owner's note, 2026-10-25: "if someone types
    too much so it doesn't fill the screen"). Short comments render whole, with no button. */
-const COMMENT_CLAMP_CHARS=240;
-function ClampText({text,style}){const [open,setOpen]=useState(false);const t=String(text||"");const long=t.length>COMMENT_CLAMP_CHARS;
-  return <div style={style}>
-    <div style={long&&!open?{display:"-webkit-box",WebkitLineClamp:3,WebkitBoxOrient:"vertical",overflow:"hidden",whiteSpace:"pre-wrap",wordBreak:"break-word"}:{whiteSpace:"pre-wrap",wordBreak:"break-word"}}>{t}</div>
-    {long?<button onClick={function(){setOpen(!open);}} aria-expanded={open} style={{minHeight:44,background:"none",border:"none",padding:"4px 0 0",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer"}}>{open?"Show less":"Read more"}</button>:null}
-  </div>;}
 /* MANY COMMENTS ON A PITCH: the newest three show, and "Show N earlier comments" opens the rest (owner's note, 2026-10-25:
    "if many ppl comment on the pitch … a dropdown to read more"). The list is still counted in full in its heading. */
 const PITCH_COMMENTS_SHOWN=3;
@@ -2674,12 +2652,6 @@ function avyCenterFor(mountain){var st=mountain,g=0;while(st&&st.areaType!=="sta
 // general rather than about THIS climb. The Safety tab still carries the route's own hazards,
 // the forecast links and the nearby-fire panel. What stays here is the one control that acts
 // on this route: reporting a bad bolt or anchor on a sport climb.
-function CragSafetyNotes({route,onOpenHazards}){
-  const cat=catOf(route);
-  return <>
-    {cat==="sport"?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"12px 14px",marginBottom:12}}><div style={{fontSize:12,fontWeight:700,color:C.amber,marginBottom:3,display:"flex",alignItems:"center",gap:7}}><span aria-hidden="true" style={{display:"inline-flex"}}><ActionIcon name="alert" size={14} color={C.amber}/></span>Spot a bolt or anchor problem?</div><div style={{fontSize:11.5,color:C.textMuted,marginBottom:9,lineHeight:1.45}}>Flag worn or unsafe fixed gear so the next party — and local rebolters — know before they clip.</div><div style={{display:"flex",gap:6,flexWrap:"wrap"}}>{["Rusted","Spinner / loose","Missing hanger","Worn / sharp","Needs replacement"].map(o=><button key={o} onClick={()=>onOpenHazards&&onOpenHazards("Fixed gear: "+o)} style={{...CHIP,border:"1px solid "+C.border,background:C.surface,color:C.textSub}}>{o}</button>)}</div></div>:null}
-  </>;
-}
 function SafetyMatrix({route,activity,mountain,hzVotes,onVote,onOpenHazards,onEdit}){
   const [openK,setOpenK]=useState(null);
   const cat=catOf(route);/* The avalanche panel used to appear for every ice/mixed/alpine/mountaineering route with an
@@ -3193,12 +3165,6 @@ export function TopoDrawer({initial,onCancel,onSubmit,dirtyRef}){
     </div>
   </div>;
 }
-function PhotoRow({items,w,h}){
-  const [view,setView]=useState(null);
-  if(!items||!items.length)return null;
-  const W=w||128,H=h||96;
-  return <div><div style={{display:"flex",gap:8,overflowX:"auto",paddingBottom:6}}>{items.map((it,i)=>{const url=typeof it==="string"?it:(it.u||it.url);const a=(it&&it.a)||null;const cap=(it&&it.caption)||null;return <div key={i} style={{flexShrink:0,width:W}}><div {...clickable(()=>setView(url))} style={{position:"relative",cursor:"pointer"}}><img loading="lazy" decoding="async" src={photoThumb(url,W)} alt={cap||("Photo "+(i+1))} onError={onImgErr(FALLBACK_COVER)} style={{width:W,height:H,objectFit:"cover",borderRadius:11,border:`1px solid ${C.border}`}}/>{a&&a.user?<div style={{position:"absolute",left:6,bottom:6,display:"flex",alignItems:"center",gap:4,background:"rgba(0,0,0,0.55)",borderRadius:20,padding:"2px 8px 2px 2px"}}><Av src={a.avatar} size={18}/><span style={{fontSize:12,color:C.onSolid,fontWeight:600}}>{(a.user||"").split(" ")[0]}</span></div>:null}</div>{cap?<div style={{fontSize:12,color:C.textSub,marginTop:4,lineHeight:1.4}}>{cap}</div>:null}</div>;})}</div>{view?createPortal(<div onClick={()=>setView(null)} role="dialog" aria-label="Photo viewer" aria-modal="true" data-sheet="viewer" style={{position:"fixed",inset:0,background:C.scrimStrong,zIndex:99999,display:"flex",alignItems:"center",justifyContent:"center",padding:20}}><img loading="lazy" decoding="async" src={view} alt="Enlarged photo" onError={onImgErr(FALLBACK_COVER)} style={{maxWidth:"100%",maxHeight:"100%",borderRadius:12,objectFit:"contain"}}/><button onClick={()=>setView(null)}  style={Object.assign({},POP_CLOSE_MEDIA,{position:"absolute",top:16,right:16})} aria-label="Close">✕</button></div>,document.body):null}</div>;
-}
 function splitItineraryDays(text){
   if(!text)return {days:[],multi:false};
   const re=/\bDay\s+(\d+)\s*(?:of\s*\d+)?\s*[:—\-)]\s*/gi;
@@ -3460,16 +3426,6 @@ function TopoThumb({p,onOpen}){
    stays a separate box. Line breaks are kept; past ~5 lines it folds behind "Show more", the
    route page's own pattern for long text (#2206), so a long caption cannot push the photo's key
    off the sheet. */
-const CAPTION_FOLD=320;
-function TopoCaption({text}){
-  const [open,setOpen]=useState(false);
-  const t=String(text||"").trim();if(!t)return null;
-  const long=t.length>CAPTION_FOLD||t.split("\n").length>5;
-  return <div style={{marginBottom:12}}>
-    <div style={{fontSize:13,color:C.text,lineHeight:1.5,whiteSpace:"pre-wrap",overflowWrap:"anywhere",maxHeight:long&&!open?"7.5em":"none",overflow:"hidden"}}>{t}</div>
-    {long?<button onClick={function(){setOpen(!open);}} aria-expanded={open} style={{minHeight:44,background:"none",border:"none",padding:"6px 0",color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{open?"Show less":"Show more"}</button>:null}
-  </div>;
-}
 /* The uploader's caption box. Saves on an explicit tap and says what happened, like PhotoDescribeBox:
    "Caption saved" only once the write resolved. A plain text area (useRichTextareas grows it) with no
    maxLength, and the database column has no cap either. */
@@ -4403,17 +4359,6 @@ export function seasonShort(s,max){const lim=typeof max==="number"?max:30;if(!s)
    `aria-expanded` rather than `aria-pressed`: this is a disclosure, not a toggle that changes
    anything. The accessible NAME carries the blurb too, so a screen reader gets the meaning
    without having to open anything. */
-function TagChip({t,open,onToggle}){const col=C[t.color]||C.textSub;const bg=C[t.color+"Bg"]||C.surface;
-  const name=(t.label||t.short)+(t.detail?", "+t.detail:"")+(t.blurb?" - "+t.blurb:"");
-  /* The chip is drawn 26px tall; the control around it is 44 (check:dropdown-targets), transparent, so the row keeps its look. */
-  return <span {...clickable(onToggle)} aria-expanded={!!open} aria-label={name} title={(t.blurb||t.label)+(t.detail?" ("+t.detail+")":"")} style={{minHeight:44,display:"inline-flex",alignItems:"center",cursor:"pointer"}}><span style={{display:"inline-flex",alignItems:"center",gap:4,background:bg,border:"1px solid "+col+(open?"":"55"),borderRadius:20,padding:"4px 10px",fontSize:12,fontWeight:700,color:col,whiteSpace:"nowrap"}}><span aria-hidden="true" style={{display:"inline-flex"}}><ActionIcon name={t.icon} size={13} color={col}/></span>{t.short||t.label}{t.detail?<b style={{fontWeight:800,opacity:0.8,marginLeft:1}}>{t.detail}</b>:null}</span></span>;}
-function RouteTagRow({route}){const tags=routeTags(route);const [open,setOpen]=useState(null);
-  if(!tags.length)return null;
-  const shown=open!=null?tags[open]:null;
-  return <div>
-    <div style={{display:"flex",alignItems:"center",columnGap:7,rowGap:0,flexWrap:"wrap"}}>{tags.map(function(t,i){return <TagChip key={t.kind+":"+t.slug} t={t} open={open===i} onToggle={function(){setOpen(open===i?null:i);}}/>;})}</div>
-    {shown&&shown.blurb?<div style={{marginTop:8,background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"8px 11px",fontSize:12,color:C.textSub,lineHeight:1.5}}>{shown.blurb}</div>:null}
-  </div>;}
 /* trad and sport deliberately omit the season, which left the strap ending in a bare "3p · ". */
 function strapTrim(s){return String(s||"").replace(/\s*·\s*$/,"").replace(/^\s*·\s*/,"").trim();}
 /* A gap is now the *quietest* thing in its section, not a dashed card competing with the
@@ -4439,21 +4384,12 @@ function strapTrim(s){return String(s||"").replace(/\s*·\s*$/,"").replace(/^\s*
    and dropping the signal to remove the citation would be the wrong trade.
    It also stops calling a community-reported route "Unverified", which it did for every status
    that was not literally "verified". */
-function VerifNote({route}){
-  const v=route&&route.verif;
-  if(!v||typeof v!=="object")return null;
-  const st=String(v.status||"").toLowerCase();
-  if(!st||st==="verified")return null;
-  const note=st==="community"?"Community-reported":"Unverified";
-  return <div style={{margin:ROUTE_GAP+"px 0",paddingLeft:9,borderLeft:"2px solid "+C.amber+"66"}}><span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.55}}><b style={{color:C.amber,fontWeight:700}}>{note}</b></span></div>;
-}
 /* AN EMPTY SECTION IS STILL A SECTION (owner, 2026-10-15). A bare GapNote, one muted line with no
    heading, is what a missing pitch breakdown and missing rappels used to be, and on Castleton Tower's
    4-pitch Kor-Ingalls Route the owner read that as "the sections are not there". So a section a climber
    fills in keeps the SAME heading and pencil empty as full: the empty card says what is missing and
    opens the editor at that field, and the section does not move or rename itself when data arrives. */
 function EmptySection({title,what,why,cta,onFix,editTitle}){return <div style={{marginBottom:ROUTE_GAP}}><SL action={onFix?<EditIconButton onClick={onFix} title={editTitle||cta||"Add what you know"}/>:null}>{title}</SL><div style={{background:C.card,borderRadius:12,padding:"12px 14px 1px",border:`1px solid ${C.border}`}}><GapNote what={what} why={why} cta={cta} onFix={onFix}/></div></div>;}
-function GapNote({what,why,cta,onFix,mt}){return <div style={{marginTop:(mt||0)+2,marginBottom:11,paddingLeft:9,borderLeft:"2px solid "+C.borderLight}}><span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.55}}>{what}{why?" — "+why:""}</span>{onFix?<button onClick={onFix} style={{display:"block",marginTop:1,padding:"5px 0",border:"none",background:"none",color:C.blue,fontSize:11.5,fontWeight:700,cursor:"pointer",textAlign:"left"}}>{(cta||"Add what you know")+" →"}</button>:null}</div>;}
 /* PAIRS WELL WITH, from real climbers (0223). It used to render only on seven seed Little Cottonwood
    routes, from the hand-written ROUTE_EXTRAS.pairsWith, so no catalog route could ever have one. Now:
      - SUGGESTED: a climber picks another climb and says why (a `contributions` row of kind 'pair').

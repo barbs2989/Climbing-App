@@ -17,7 +17,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { appSources } from "./lib/guard-sources.mjs";
+import { appSources, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 // appSources returns the canonical app file list and bails if a REQUIRED source has been
@@ -122,7 +122,8 @@ const objKeys = read("lib/objKeys.js");
    wiring, so a file that cannot be read is fatal rather than skipped. */
 const READER_FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx", "ClimbMatch.jsx", "EnrichmentPanels.jsx"];
 const readerCorpus = READER_FILES.map((f) => {
-  try { return read(f); } catch {
+  // readAppFile: each parent STITCHED, so a reader moved into src/components/ (ClimateSeasonCard, PR53) stays read.
+  try { return readAppFile(path.join(ROOT, f)); } catch {
     console.error(`check:contrib-fields: cannot read ${f}, which holds panel readers — the scan would under-report.`);
     process.exit(1);
   }
