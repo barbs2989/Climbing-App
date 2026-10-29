@@ -81,7 +81,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 | `docs/codebase/algorithms.md` | `compat()` design history |
 
 ## 4. Data
-- **Supabase**: `profiles` (public read; `discoverable`, `level`, `avail_week`, `availability`, `hiking_speed_ft_hr`, grades), `profile_zips` (owner-only), `zip_centroids` (public Census gazetteer),
+- **Supabase**: `profiles` (public read; `discoverable`, `level`, `avail_week`, `availability`, `hiking_speed_ft_hr`, grades; `climb_grades` holds ice, mixed and aid -- `PARTNER_COLS` selects it, and rows from the partner RPCs, which do not return it, get it from `usePartnerClimbGrades` by id), `profile_zips` (owner-only), `zip_centroids` (public Census gazetteer),
   objectives per user, `verification_records` (owner-only; read via 0232).
 - **`partner_areas`** (0300): one row per climber and area (`disciplines text[]` within the crag family, one optional `free_from`/`free_to` window, `note`);
   owner-only RLS; a trigger refuses peak/world/country and caps 30 per climber. An expired window reads back as no window.

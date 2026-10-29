@@ -83,7 +83,7 @@ else ok("no `!onboarded`-gated card remains");
 // this file packs a whole screen onto one physical line, so "near" is not a scope.
 const greet = app.indexOf('{greetLine}');
 const card = app.indexOf('(accountNeedsOnboarding&&!homeDismiss.includes("climbsetup"))');
-const gaps = app.indexOf('{(()=>{const noGrades=(!ME.sportGrade||ME.sportGrade==="N/A")');
+const gaps = app.indexOf('{(()=>{const noGrades=');
 if (greet < 0 || gaps < 0) dead("ANCHOR LOST: Home's greeting or its setup checklist moved — this run proved nothing about placement.");
 if (greet < card && card < gaps) ok("the card renders on HOME, between the greeting and the setup checklist");
 else bad(`the card is not in Home's own region (greeting @${greet}, card @${card}, checklist @${gaps})`);
