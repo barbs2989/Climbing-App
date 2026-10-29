@@ -710,7 +710,9 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
 // Discovered from the source for the same reason the overlay list is: a hardcoded file list
 // silently narrows every time the code moves.
 export function lazyChunks(label) {
-  const files = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "main.jsx"];
+  // lib/lazyScreens.js holds App's lazy screens since PR61 of the component extraction; its
+  // specifiers are relative to lib/, so each is resolved against the directory of its own file.
+  const files = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "main.jsx", "lib/lazyScreens.js"];
   const out = new Set();
   for (const f of files) {
     let src;
@@ -720,10 +722,12 @@ export function lazyChunks(label) {
       // written extensionless ("./lib/DbAreaBrowser") and would warm NOTHING if passed
       // through. Resolve against disk and say so if one does not exist, rather than
       // shipping a warm list that quietly covers one file out of six.
+      const dir = f.includes("/") ? f.slice(0, f.lastIndexOf("/") + 1) : "";
       const spec = m[1];
       const cand = [spec, spec + ".jsx", spec + ".js", spec + "/index.jsx", spec + "/index.js"];
-      const hit = cand.find((c) => existsSync(new URL("../../" + c.replace(/^\.\//, ""), import.meta.url)));
-      if (hit) out.add(hit);
+      const rootRel = (c) => new URL(c, new URL("../../" + dir, import.meta.url)).href.slice(new URL("../../", import.meta.url).href.length);
+      const hit = cand.map(rootRel).find((c) => existsSync(new URL("../../" + c, import.meta.url)));
+      if (hit) out.add("./" + hit);
       else console.error(`${label} — lazy import ${JSON.stringify(spec)} did not resolve to a file; it will not be warmed.`);
     }
   }

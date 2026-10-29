@@ -198,9 +198,14 @@ if (mode === "component") {
   const name = argv[1], anchor = argv[2], inFn = opt("--in") || "RouteDetail";
   const outP = path.join(ROOT, "src/components", name + ".tsx"); if (fs.existsSync(outP)) die(outP + " exists");
   let target = null;
-  an.prog.traverse({ ConditionalExpression(p) { if (src.slice(p.node.start, p.node.start + anchor.length) === anchor) { const fn = p.getFunctionParent(); let f = fn; while (f && !(f.node.id && f.node.id.name === inFn)) f = f.getFunctionParent(); if (f) { if (target) die(`anchor ${anchor} matches twice`); target = p; } } } });
+  // An anchor ending in `?` names a conditional (its consequent is lifted); one ending in `&&` names a
+  // `cond&&<jsx>` (its right-hand JSX is lifted) — App draws most of its screens the second way.
+  const isJ = n => n && (n.type === "JSXElement" || n.type === "JSXFragment");
+  const inside = p => { let f = p.getFunctionParent(); while (f && !(f.node.id && f.node.id.name === inFn)) f = f.getFunctionParent(); return !!f; };
+  const hit = p => { if (src.slice(p.node.start, p.node.start + anchor.length) === anchor && inside(p)) { if (target) die(`anchor ${anchor} matches twice`); target = p; } };
+  an.prog.traverse({ ConditionalExpression(p) { if (!anchor.endsWith("&&")) hit(p); }, LogicalExpression(p) { if (anchor.endsWith("&&") && p.node.operator === "&&" && isJ(p.node.right)) hit(p); } });
   if (!target) die(`no conditional inside ${inFn} starts with ${anchor}`);
-  const cons = target.get("consequent");
+  const cons = target.get(target.isLogicalExpression() ? "right" : "consequent");
   const props = new Set(), mods = new Set();
   cons.traverse({
     ReferencedIdentifier(ip) { const nm = ip.node.name; const b = ip.scope.getBinding(nm); if (!b) return;
@@ -216,6 +221,7 @@ if (mode === "component") {
   for (const m of mods) { const s = importSpec(an, m); if (s) specs.push(s); else locals.push(m); }
   if (locals.length) die(`the branch reads page-local ${locals.join(", ")} — move to lib/ first (\`lib\` mode)`);
   const ps = [...props].sort();
+  if (argv.includes("--dry")) { console.log(`${ps.length} props: ${ps.join(",")}`); process.exit(0); }
   const body = src.slice(cons.node.start, cons.node.end);
   const header = importLines(specs, path.join(ROOT, "src/components")).join("\n");
   fs.writeFileSync(outP, `${header}\n\n/* ${anchor} — the body of that branch of ${inFn}, lifted verbatim by extract-from-parent.mjs (branch mode);\n   every binding it read from ${inFn} is a prop of the same name. */\nexport default function ${name}({${ps.join(",")}}){\n  return ${body};\n}\n`);

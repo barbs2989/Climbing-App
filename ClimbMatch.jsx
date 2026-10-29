@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo, useCallback, Suspense, lazy } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback, Suspense } from "react";
 import { BTN_SM } from "./lib/buttonStyles.js";
 import { createPortal } from "react-dom";
 import { USE_DB, supabase } from "./lib/supabase";
@@ -93,19 +93,6 @@ import DiscBadge from "./src/components/DiscBadge.tsx";
 import { POP_BACK, POP_CLOSE, POP_REMOVE, POP_REMOVE_MEDIA } from "./lib/popupChrome.js";
 import { askConfirm } from "./lib/ConfirmSheet.jsx";
 import { tripRowToActivity } from "./lib/tripReportRow.js";
-const RouteDetail = lazy(() => import("./RouteDetail.jsx"));
-// Three screens moved out of the first-paint bundle (see lib/<Name>.jsx). None is on the
-// Home tab, so a climber pays for them only when they open Partners, Ranks or Join a crew.
-const PartnerSearch = lazy(() => import("./lib/PartnerSearch.jsx"));
-const Leaderboards = lazy(() => import("./lib/Leaderboards.jsx"));
-const CrewFinder = lazy(() => import("./lib/CrewFinder.jsx"));
-// Six more, same reasoning: none renders on Home. The overlays fall back to a portalled scrim
-// rather than an inline skeleton, since they draw over the screen rather than in it.
-const CrewCard = lazy(() => import("./lib/CrewCard.jsx"));
-const MyPartnerAreas = lazy(() => import("./lib/MyPartnerAreas.jsx"));
-const StartCrewSheet = lazy(() => import("./lib/StartCrewSheet.jsx"));
-const ListsManager = lazy(() => import("./lib/ListsManager.jsx"));
-const BestDayTile = lazy(() => import("./lib/BestDayTile.jsx"));
 import { CondPrefsControls, useCondPrefsAccount, useCondPrefs, useCondSync, condPrefsSet } from "./lib/CondPrefs.jsx";
 import { photoThumb, thumbFallback } from "./lib/photoThumb";
 import { useWideScreen, useFullWidth, wideGeom, wideColumn, wideSidebar, wideRail, wideTopBar, wideTopRow, wideCss } from "./lib/wideLayout.js";
@@ -116,34 +103,13 @@ import SectionErrorBoundary from "./lib/SectionErrorBoundary.jsx";
 import LoadingRows from "./src/components/LoadingRows.tsx";
 import EmptyState from "./src/components/EmptyState.tsx";
 import { mergeObjEdit } from "./lib/objKeys.js";
-const EditProfileScreen = lazy(() => import("./lib/EditProfileScreen.jsx"));
-// Eleven more, none on Home: the full-screen views (legal, calendar, inbox), the Logbook's
-// climbs list and the crew safety plan fall back to a skeleton; the pop-ups to a portalled scrim.
-const LegalView = lazy(() => import("./lib/LegalView.jsx"));
-const Calendar = lazy(() => import("./lib/Calendar.jsx"));
-const Inbox = lazy(() => import("./lib/Inbox.jsx"));
-const MyAscents = lazy(() => import("./lib/MyAscents.jsx"));
-const SafetyTab = lazy(() => import("./lib/SafetyTab.jsx"));
-const FloatPlans = lazy(() => import("./lib/FloatPlans.jsx"));
-const Help = lazy(() => import("./lib/Help.jsx"));
-const FriendsList = lazy(() => import("./lib/FriendsList.jsx"));
-const GiveVouch = lazy(() => import("./lib/GiveVouch.jsx"));
-const Onboarding = lazy(() => import("./lib/Onboarding.jsx"));
+// The screens App loads on demand, declared once in lib/lazyScreens.js so the components lifted out
+// of App's render (src/components/) share the same lazy() objects.
+import { RouteDetail, PartnerSearch, Leaderboards, CrewFinder, CrewCard, MyPartnerAreas, StartCrewSheet, ListsManager, BestDayTile, EditProfileScreen, LegalView, Calendar, Inbox, MyAscents, SafetyTab, FloatPlans, Help, FriendsList, GiveVouch, Onboarding, ShareCard, NotifPanel, AddRoute, AreaSuggestFix, AddArea, LogAscent, TripReport, FireMap } from "./lib/lazyScreens.js";
 // A shared link the visitor arrived on, kept on this device until they are in the app (App's
 // shared-links effects). A day old and it is dropped: a link from last week is not what they came for.
 const SHARED_LINK_KEY = "cm.sharedLink";
 const readSharedStash = () => { try { const o = JSON.parse(localStorage.getItem(SHARED_LINK_KEY) || "null"); return o && Date.now() - (o.at || 0) < 86400000 && (o.rid || o.lid || o.lrep) ? o : null; } catch (_e) { return null; } };
-const ShareCard = lazy(() => import("./lib/ShareCard.jsx"));
-const NotifPanel = lazy(() => import("./lib/NotifPanel.jsx"));
-const AddRoute = lazy(() => import("./lib/AddRoute.jsx"));
-const AreaSuggestFix = lazy(() => import("./lib/AreaSuggestFix.jsx"));
-const AddArea = lazy(() => import("./lib/AddArea.jsx"));
-const LogAscent = lazy(() => import("./lib/LogAscent.jsx"));
-const TripReport = lazy(() => import("./lib/TripReport.jsx"));
-// The Fire map (lib/FireMap.jsx) is its own full-screen view over live federal
-// wildfire + fire-weather data. Lazy because it pulls in nothing the rest of the
-// app needs, and because most sessions never open it.
-const FireMap = lazy(() => import("./lib/FireMap.jsx"));
 // Toasts must outrank every modal/overlay in the app, because the moment you most
 // need to read one is when a modal action fails — "Couldn't save", "Upload failed".
 // The overlay stack currently tops out at 100000 (the Suggest-a-fix portal in
