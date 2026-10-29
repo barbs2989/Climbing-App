@@ -5335,13 +5335,17 @@ function pickForecastWaypoints(waypoints){
    sites (NWS, InciWeb) are not offered off US soil. OpenSnow is gone: it takes no coordinate in a URL, so
    its link could only ever open a search box. An unknown country keeps the US links, as before. */
 function countryOf(route,mtn){const p=route&&route._dbArea&&route._dbArea.path;if(p)return String(p).split(".")[0];var a=mtn,g=0;while(a&&a.areaType!=="country"&&a.parentId&&g<12){const pid=a.parentId;a=MOUNTAINS.find(function(x){return x.id===pid;});g++;}return a&&a.areaType==="country"?a.id:null;}
+/* InciWeb has no point URL, and its /state/<name> pages render empty; its incident table filters by state
+   name (?field_state_target_id=Washington lists that state's active incidents), so a US climb opens its OWN
+   state's fires rather than the national home page (owner note: links should open the page, not a search). */
+function usStateNameOf(route,mtn){const p=route&&route._dbArea&&route._dbArea.path;if(p){const seg=String(p).split(".");return seg[0]==="usa"&&seg[1]?seg[1].split("_").map(function(w){return w.charAt(0).toUpperCase()+w.slice(1);}).join(" "):null;}var a=mtn,g=0;while(a&&a.areaType!=="state"&&a.parentId&&g<12){const pid=a.parentId;a=MOUNTAINS.find(function(x){return x.id===pid;});g++;}return a&&a.areaType==="state"?a.name:null;}
 function forecastLinksOf(route,mtn,crag){const pt=crag?cragWxPointOf(route,mtn):forecastPoint(route,mtn);const cc=countryOf(route,mtn),us=cc==null||cc==="usa",ca=cc==="canada";const la=pt?(+pt.lat).toFixed(4):null,lo=pt?(+pt.lng).toFixed(4):null;
   const out=[];
   if(pt&&us){out.push({n:"NWS point forecast",u:"https://forecast.weather.gov/MapClick.php?lat="+la+"&lon="+lo});out.push({n:"NWS hourly graph",u:"https://forecast.weather.gov/MapClick.php?lat="+la+"&lon="+lo+"&FcstType=graphical"});}
   if(pt&&ca)out.push({n:"Environment Canada forecast",u:"https://weather.gc.ca/en/location/index.html?coords="+(+pt.lat).toFixed(3)+","+(+pt.lng).toFixed(3)});
   out.push({n:"Mountain-Forecast.com",u:pt?"https://www.mountain-forecast.com/location_search?lat="+la+"&lon="+lo:"https://www.mountain-forecast.com/"});
   out.push({n:"Fire & smoke — AirNow",u:pt?"https://fire.airnow.gov/#9/"+la+"/"+lo:"https://fire.airnow.gov/"});
-  if(us)out.push({n:"Active fires — InciWeb",u:"https://inciweb.wildfire.gov/"});
+  if(us){const stn=usStateNameOf(route,mtn);out.push({n:"Active fires — InciWeb",u:stn?"https://inciweb.wildfire.gov/accessible-view?field_state_target_id="+encodeURIComponent(stn):"https://inciweb.wildfire.gov/"});}
   if(mtn.avyZone)out.push({n:"Avalanche forecast ("+mtn.avyZone+")",u:avyCenterFor(mtn)[2]});
   return out;}
 function wxFallbackOf(route,mtn){const pt=forecastPoint(route,mtn);if(!pt||pt.pinned)return null;const a=route._dbArea||mtn||{};return {type:a.areaType==="peak"?"Summit":"Topout",name:pt.name,lat:pt.lat,lng:pt.lng,elev:pt.elevFt};}
