@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **BETA and PRO TIPS: compact ✎ Edit** (owner note, follow-up to #2592): their full-size *Suggest a fix* buttons are now the small header *✎ Edit* KNOWN HAZARDS and every other route card use; same Suggest-a-fix form on Beta. See `docs/features/route-page.md`.
 - **Route finder Filters: Discipline is the first row again** (owner note): the Distance away block added in 0369 sat above it, so on a phone the discipline chips were back below the fold. Discipline is first, as on Mountain Project's Route Finder. See `docs/features/maps-and-area-browser.md`.
 - **Crews tab: your crew comes first** (owner note, follow-up to #2531, 2026-10-28): *Climb again with a past crew* moved from above your crews to below them, beside *Past crews*; a crew card shows its first two join requests, then *Show N more requests*, with one help line under the heading instead of one per request. → [logbook-crews-home.md](docs/features/logbook-crews-home.md)
 - **Open in navigation app opens AT the climb** (owner note): Gaia GPS's *Open app →* opens the installed app at the route (it used to go to Gaia's download page); CalTopo, Google Maps and Apple Maps all land on the route's map area; AllTrails/USGS (home-page-only links) dropped (`lib/navLinks.js`). See `docs/features/route-page.md`.
