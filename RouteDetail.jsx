@@ -30,7 +30,7 @@ import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, CRAG_SCORE_DISCIPLINE
 import { useCondPrefs, scorePrefs, CondPrefsControls } from "./lib/CondPrefs.jsx";
 import { routeRock, ROCK_OPTIONS } from "./lib/rockType";
 import { EditIconButton as AreaEditIconButton, CopyCoordButton as AreaCopyCoordButton, editBtnStyle, EditPencil } from "./lib/areaChrome";
-import { useSession} from "./lib/auth";
+import { useSession } from "./src/AuthContext.tsx";
 import { ContributionStandingNotice } from "./lib/SafetyNotices.jsx";
 import { openAppeal } from "./lib/reportBus.js";
 

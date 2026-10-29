@@ -163,7 +163,8 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 | `src/components/FullProfile.tsx` | `FullProfile` (the climber profile sheet; moved from core in PR50) |
 | `src/components/Resume.tsx` | `Resume`, `shareText`, `exportResume`, `secEdit` (the résumé sheet; moved from core in PR49) |
 | `lib/EditProfileScreen.jsx` | `EditProfileScreen` (profile editor, zip field) |
-| `lib/auth.js` | `getProfile`, `saveProfile`, `useSession`, `signOut`, `sendEmailCode`, `confirmEmailCode`, `inboxProofFresh` |
+| `src/AuthContext.tsx` | `AuthProvider`, `useAuth`, `useSession` (the app's one auth listener; `session===undefined` until it first answers) |
+| `lib/auth.js` | `getProfile`, `saveProfile`, `signOut`, `sendEmailCode`, `confirmEmailCode`, `inboxProofFresh` |
 | `lib/VerifyEmailPanel.jsx` | `VerifyEmailPanel` (emailed-code verification on Profile, 0306) |
 | `lib/db.js` | `useClimberResume`, `saveClimberResume`, `uploadProfilePhoto`, `saveProfilePhotos`, `saveProfileAvatar`, `saveProfilePhotoAlts`, `removeProfilePhoto`, `useFullProfile`, `useMyZip`, `useMyEmergencyContact`, `useMyTrustCounts`, `useVerificationRecords`, `giveVouch`, `setAllMyTripReportVisibility`, `fetchProfilesByIds` |
 | `lib/GiveVouch.jsx` | vouch sheet |
