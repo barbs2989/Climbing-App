@@ -1,49 +1,35 @@
 # Route quality control
 
-How climber edits to route pages are held, agreed, checked, locked and flagged. Decided by the owner on
-2026-10-15: route data is safety data, so accuracy comes before speed — and, later the same day, that an
-empty field fills at once and two climbers who agree are enough to change one (0325).
+How climber edits to route pages are held, checked, locked and flagged. Decided by the owner on
+2026-10-15: route data is safety data, so accuracy comes before speed. 0325 (the same day) let an
+empty field fill at once and two agreeing climbers change one; the owner withdrew it on 2026-10-28
+(0382), so every edit waits for the owner again.
 
 ## 1. What it does today
 
-- **Area edits are held for review (0319)** — route edits follow the 0325 rule below. An area edit (About, Walk in, Walk-in time, Drive & park, Rock, Faces, Season; `lib/areaFields.js`) is a `contributions` row with `area_id` and no `route_id`; the same queue, approve/reject functions, notices and strikes apply. One difference: an approved AREA value is written to its `areas` column by `apply_approved_area_field` (there is no client overlay for area pages), and area rows get no confidence lock.
-- **A route edit goes live by itself in two cases (0325).** A climber's edit on the route page's
-  "Add or fix info" sheet is written to `contributions` (kind `field`). The database decides at
-  insert (`trg_contribution_vote` → `contribution_consensus`):
-  - **The field is empty** (`route_field_is_empty`: its column is empty and no edit to it was ever
-    approved) → the row is born `approved`, review note *Added to an empty field*. The page shows it
-    on the next read.
-  - **A second, different climber sends the same value** as a waiting edit (`_edit_value_norm`:
-    case-, whitespace- and trailing-full-stop-blind, a numeric string equals its number, no
-    tolerance on numbers — stricter than `sameEditValue`) → both rows become `approved`, review note
-    *Agreed by 2 climbers*, and the first climber gets a "Your route edit is live" notice. One
-    account can never agree with itself.
-  - **Otherwise** the row stays `pending`: the owner can still approve it alone from the queue.
-  Auto-applied rows keep `reviewed_by` NULL (the owner's approvals set it) and do **not** raise the
-  field to high — only the owner's check locks a field. A field a climber filled stops reading as
-  "empty → low". Area edits are unchanged: still held (0319).
+- **Every field edit is held for review — on routes and, since 0319, on areas.** An area edit (About, Walk in, Walk-in time, Drive & park, Rock, Faces, Season; `lib/areaFields.js`) is a `contributions` row with `area_id` and no `route_id`; the same queue, approve/reject functions, notices and strikes apply. One difference: an approved AREA value is written to its `areas` column by `apply_approved_area_field` (there is no client overlay for area pages), and area rows get no confidence lock.
+- **Every route edit is held for the owner (0382).** A climber's edit on the route page's "Add or fix
+  info" sheet is written to `contributions` (kind `field`) with status `pending` and shows nowhere
+  until the owner approves it — an empty field and a second climber sending the same value make no
+  difference. The sheet says "Sent for review — you’ll be told when it’s checked" and shows the
+  climber's own pending value as "Awaiting review". Other climbers' pending suggestions are not
+  shown on the page (there is no Agree button); they are the owner's to weigh. 0325 (2026-10-15 →
+  2026-10-28) approved an empty-field edit or a two-climber match at insert; rows it approved then
+  (review note *Added to an empty field* / *Agreed by 2 climbers*) stay live.
 - **A removal always waits for the owner (0351, owner note 2026-10-22: "people shouldn't be able to
   delete waypoints when editing").** An edit *removes something* when the page holds a value and the
   edit is empty, or both are lists and the edit has fewer rows, or fewer rows with a map pin
   (`_edit_removes`, against `route_field_page_value`: the latest approved edit, else the column).
-  Such a row stays `pending` however many climbers send it — it is never approved by agreement and
-  never counted as the second climber for another row — and carries `review_note` `REMOVAL_NOTE`
-  (`lib/db.js`). The edit sheet (`SuggestFix`, `editRemoves` / `REMOVABLE_LISTS` — waypoints,
+  Like every edit it stays `pending`; it also carries `review_note` `REMOVAL_NOTE` (stamped by
+  `contribution_consensus`, which since 0382 does nothing else; the constant is in `lib/db.js`). The edit sheet (`SuggestFix`, `editRemoves` / `REMOVABLE_LISTS` — waypoints,
   pitches, rappel stations, camps, ways in, climbing sections, hazards) says so before sending and
-  **requires a reason** (≥10 characters), sent as `contributions.reason`; the toast, the climber's
-  own waiting line and the Agree box say a removal waits for ClimbMatch. The owner's queue marks the
+  **requires a reason** (≥10 characters), sent as `contributions.reason`; the toast and the climber's
+  own waiting line say a removal waits for ClimbMatch. The owner's queue marks the
   card *Removes something from the page* in red above the struck-through rows and shows each
   climber's *Why*. A reckless removal the owner turns down is a strike like any other (3 →
   restricted, 5 → banned). Modelled on theCrag (no delete of a referenced route; merge instead),
   Mountain Project (deletions go to the regional admin) and OpenStreetMap's OSMCha (mass deletions
   flagged for review).
-- **Other climbers' waiting suggestions are shown in the edit sheet**, each with an **Agree**
-  button that sends the value verbatim — Google Maps' "Check the facts" model; that tap is the
-  second climber, so it goes live at once. The climber's own waiting value reads "You suggested: …
-  — it goes live when a second climber sends the same, or once ClimbMatch checks it". The toast
-  after a submit says what the database decided: "Added — it’s on the page now", "You and another
-  climber agree — it’s on the page now", or "Sent — it goes live when a second climber agrees, or
-  once ClimbMatch checks it".
 - **Approved edits reach the page**, as the owner applied them (`applied_value` when the owner
   adjusted the value, else `value`), through the same client-side overlay the page always used.
   An approved field becomes **high confidence**. A `grade` approval also writes `routes.grade`
@@ -218,7 +204,8 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `supabase/migrations/0308_field_confidence_and_edit_guards.sql` | `route_field_level`, `route_field_confidence_map`, `can_contribute_fields`, `can_flag`, `guard_field_contribution` |
 | `scripts/check-editable-coverage.mjs` | the guard that keeps every rendered column editable or explained |
 | `supabase/migrations/0317_seven_more_editable_fields.sql` | the seven field rows |
-| `supabase/migrations/0325_two_climbers_agree_or_an_empty_field.sql` | `_edit_value_norm`, `route_field_is_empty`, `contribution_consensus` (trigger `trg_contribution_vote`), the consensus exit in `guard_contribution_status`, the grade write-back on insert |
+| `supabase/migrations/0382_every_route_edit_waits_for_the_owner.sql` | `contribution_consensus` reduced to the removal mark, `guard_contribution_status` without the consensus exit, the insert-time grade write-back dropped |
+| `supabase/migrations/0325_two_climbers_agree_or_an_empty_field.sql` | withdrawn by 0382; still defines `_edit_value_norm`, `route_field_is_empty`, `contribution_consensus` (trigger `trg_contribution_vote`), the consensus exit in `guard_contribution_status`, the grade write-back on insert |
 | `supabase/migrations/0309_field_contribution_review.sql` | `approve_field_contribution`, `reject_field_contribution`, `set_contribution_standing`, `set_route_field_confidence`, `file_route_flag`, `resolve_route_flag`, `apply_agreed_grade`, `file_appeal`, `decide_appeal` |
 
 ## 4. Data
@@ -251,9 +238,10 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 
 ## 7. Last significant change
 
-0325 (2026-10-15): an empty route field fills on the first edit, and two climbers who send the same
-value change a filled one without the owner; the edit sheet shows other climbers' waiting
-suggestions with an Agree button. Before that, steps 2–5: the owner's three queues, the climber's standing notice, the confidence chips and the flag sheet on the route page, per-pitch editing and the rappel-table editor. Step 1 shipped
+0382 (2026-10-28): 0325 withdrawn at the owner's word — every route edit waits for the owner again,
+the Agree button and other climbers' waiting suggestions are gone from the edit sheet, and the
+toasts and help text say "checked by ClimbMatch". 0325 (2026-10-15) had let an empty field fill on
+the first edit and two agreeing climbers change a filled one. Before that, steps 2–5: the owner's three queues, the climber's standing notice, the confidence chips and the flag sheet on the route page, per-pitch editing and the rappel-table editor. Step 1 shipped
 the hold-for-review gate, the computed confidence rule with the server-side lock, strikes and
 standing, flags, and notices (0307–0309). The page chips follow.
 
