@@ -29,7 +29,7 @@ import { nwsHeightShiftF, fetchForecastRaw, fetchCragForecastMeasured, fetchCrag
 import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, CRAG_SCORE_DISCIPLINES, OPEN_DAY, aqiCategory, clockAt, monthFit } from "./lib/conditionsScore";
 import { useCondPrefs, scorePrefs, CondPrefsControls } from "./lib/CondPrefs.jsx";
 import { routeRock, ROCK_OPTIONS } from "./lib/rockType";
-import { EditIconButton as AreaEditIconButton, CopyCoordButton as AreaCopyCoordButton, editBtnStyle, EditPencil } from "./lib/areaChrome";
+import { EditIconButton as AreaEditIconButton, editBtnStyle, EditPencil } from "./lib/areaChrome";
 import { useSession } from "./src/AuthContext.tsx";
 import { ContributionStandingNotice } from "./lib/SafetyNotices.jsx";
 import { openAppeal } from "./lib/reportBus.js";
@@ -110,6 +110,16 @@ import ClampText from "./src/components/ClampText.tsx";
 import ClimateSeasonCard from "./src/components/ClimateSeasonCard.tsx";
 import PhotoRow from "./src/components/PhotoRow.tsx";
 import EditIconButton from "./src/components/EditIconButton.tsx";
+import PinIcon from "./src/components/PinIcon.tsx";
+import TopoPinLegend from "./src/components/TopoPinLegend.tsx";
+import TopoLineOverlay from "./src/components/TopoLineOverlay.tsx";
+import TopoVariantKey from "./src/components/TopoVariantKey.tsx";
+import TopoPinKey from "./src/components/TopoPinKey.tsx";
+import TopoThumb from "./src/components/TopoThumb.tsx";
+import EmptySection from "./src/components/EmptySection.tsx";
+import PitchPhotos from "./src/components/PitchPhotos.tsx";
+import CopyCoordButton from "./src/components/CopyCoordButton.tsx";
+import { TOPO_RED, TOPO_VAR, PIN_CATEGORIES, pinColor, pinLabel, useImgAspect, TOPO_IMG, pinNums, LOUPE_Z, TAP_SLOP, ZOOM_MAX, clampTopoView, zoomTopoView } from "./lib/topoMarks.jsx";
 const GpsSubmissionModal = lazy(() => import("./lib/GpsSubmissionModal"));
 const uGain=m=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
 
@@ -1334,15 +1344,6 @@ const pitchAnchorText=function(sum){return sum.map(function(x){return x[0]+" "+x
 /* A PITCH'S PHOTOS, WITH AN ADD BUTTON ON THE PITCH ITSELF (owner's note, 2026-10-25: "a photo right there of the pitch").
    The upload is a route photo tagged with the pitch's label (contributions value.pitch), so the route's Photos tab still
    lists it with the rest. Signed out there is no upload, and the box says so rather than offering a button that does nothing. */
-function PitchPhotos({items,onAdd}){
-  const [busy,setBusy]=useState(false);const inp=useRef(null);
-  return <div style={{marginBottom:9}}>
-    {items.length?<PhotoRow items={items} w={160} h={108}/>:null}
-    {onAdd?<div style={{marginTop:items.length?8:0}}>
-      <button disabled={busy} onClick={function(){if(inp.current)inp.current.click();}} style={{...BTN_SM,background:C.surface,color:C.blue,border:"1px solid "+C.border,display:"inline-flex",alignItems:"center",gap:6,opacity:busy?0.6:1,cursor:busy?"default":"pointer"}}><ActionIcon name="camera" size={14} color={C.blue}/>{busy?"Adding…":(items.length?"Add another photo of this pitch":"Add a photo of this pitch")}</button>
-      <input ref={inp} type="file" accept="image/*" multiple hidden aria-label="Add a photo of this pitch" onChange={function(e){const fs=Array.from(e.target.files||[]);e.target.value="";if(!fs.length)return;setBusy(true);Promise.resolve(onAdd(fs)).finally(function(){setBusy(false);});}}/>
-    </div>:(items.length?null:<div style={{background:C.card,borderRadius:8,padding:"12px",textAlign:"center",border:`1px dashed ${C.border}`,fontSize:12,color:C.textMuted,lineHeight:1.5}}>No photos of this pitch yet. Sign in to add one.</div>)}
-  </div>;}
 function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd,dbPhotos,onAddPitchPhoto,logged}){
   const [open,setOpen]=useState(null);
   const photosOf=function(r){return (dbPhotos||[]).filter(function(p){return p._pitch!=null&&String(p._pitch)===String(r._n);});};
@@ -1643,7 +1644,6 @@ function TripProfileCard({route,calc}){
   </div>;
 }
 /* A coordinate you can read out, and one tap to copy it. Shared by both rows of CragLocationCard. */
-const CopyCoordButton=({lat,lng,what})=><AreaCopyCoordButton lat={lat} lng={lng} what={what} C={C}/>;
 /* WHERE THE CLIMBING IS, AND WHERE YOU PARK — the two places a crag visit needs, side by side under
    the map. A crag route used to give neither as a number: the map drew the crag, and the only
    control was "Directions to crag (Google Maps)", which in fact resolved trailheadPoint() — the
@@ -2729,119 +2729,17 @@ const avyRelevant=["ice","mixed","alpine","mountaineering"].includes(cat)&&route
         section of Add or fix info and from the log form, and shown as START OF CLIMB on Overview. */}
   </div>;
 }
-/* The topo's own colours, after the overlays climbers already read (Steph Abegg's, the reference
-   the owner named): the route line is RED with a dark edge so it holds on pale granite, a
-   variation is YELLOW, and a pitch's grade is white text beside its pitch. Variations are LINES
-   (topo_lines.variants, 0330) drawn on the Draw line tab; they used to be a "Variant line" pin, a
-   dot standing in for a line. */
-const TOPO_RED="#e3261b";
-const TOPO_VAR=C.amber;
-/* Bolt and Crux joined the set on 2026-10-23 (owner: "specific icons that are easily recognized").
-   A printed topo marks a bolt with a small ×, and the alpine topo legend Ortovox teaches (belay,
-   abseil point, bolt, piton, variant) is the set climbers already read off guidebook topos; a crux
-   is the one move a topo most often has to point at. The hazard is the one marker that is not a
-   disc: a warning TRIANGLE, the shape every road sign and app uses for "careful here", so it
-   cannot be mistaken for a station at a glance. */
-const PIN_CATEGORIES=[["belay","Belay station",C.blue],["grade","Grade",C.onSolid],["bolt","Bolt","#6e7681"],["rappel","Rappel station",C.purple],["natural","Natural anchor",C.green],["crux","Crux",C.magenta],["bivy","Bivy",C.teal],["hazard","Hazard",C.red]];
-function pinColor(cat){var f=PIN_CATEGORIES.find(function(p){return p[0]===cat;});return f?f[2]:C.textMuted;}
-function pinLabel(cat){var f=PIN_CATEGORIES.find(function(p){return p[0]===cat;});return f?f[1]:"Marker";}
-/* Each pin category draws its own glyph. They used to be bare coloured dots, which asked a
-   climber to remember that blue meant a belay and purple a rappel — on a phone, on a wall, in
-   the sun. The glyphs follow the marks printed topos already use: two bolts joined at a master
-   point for a belay, a ring over a down-arrow for a rappel, a tree for a natural anchor. Drawn
-   in a 16-unit box of their own, NOT inside the topo's 0..100 SVG: that one is stretched by
-   preserveAspectRatio="none", which would squash every icon to the photo's shape. */
-const PIN_GLYPHS={
-  belay:<g><circle cx="4.5" cy="4.5" r="1.6" fill="#fff"/><circle cx="11.5" cy="4.5" r="1.6" fill="#fff"/><path d="M4.5 4.5 L8 11.5 L11.5 4.5" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round"/><circle cx="8" cy="12" r="1.9" fill="none" stroke="#fff" strokeWidth="1.5"/></g>,
-  rappel:<g><circle cx="8" cy="3.8" r="2.2" fill="none" stroke="#fff" strokeWidth="1.5"/><path d="M8 6 L8 13.5 M4.8 10.4 L8 13.6 L11.2 10.4" fill="none" stroke="#fff" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></g>,
-  natural:<g><path d="M8 2 L13 10 L3 10 Z" fill="#fff"/><rect x="7" y="10" width="2" height="4" fill="#fff"/></g>,
-  bivy:<g><path d="M1.5 13.5 L8 3 L14.5 13.5 Z" fill="#fff"/><path d="M5.8 13.5 L8 9.2 L10.2 13.5 Z" fill="#000" fillOpacity="0.45"/></g>,
-  bolt:<g><path d="M4 4 L12 12 M12 4 L4 12" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round"/></g>,
-  crux:<g><path d="M9.6 1.5 L4 9 L7.6 9 L6.4 14.5 L12 6.8 L8.4 6.8 Z" fill="#fff"/></g>,
-  hazard:<g><rect x="7" y="5" width="2" height="5.6" rx="1" fill="#fff"/><circle cx="8" cy="12.9" r="1.2" fill="#fff"/></g>
-};
 /* A grade marker is its TEXT on the photo ("5.10-" beside the pitch), not an icon: the climber
    reads the grade straight off the rock, as on a printed topo. Bold white with a dark halo so it
    reads on snow and on shadowed rock alike. */
-function PinIcon({cat,size,on}){
-  var sz=size||18;
-  if(cat==="grade")return <GradeTag text="5.9" size={Math.max(10,Math.round(sz*0.62))} on={on}/>;
-  if(cat==="hazard")return <span aria-hidden="true" style={{display:"inline-block",width:sz,height:sz,flexShrink:0,pointerEvents:"none",lineHeight:0,filter:on?"drop-shadow(0 0 3px "+C.blue+")":"drop-shadow(0 1px 2px rgba(0,0,0,0.8))"}}>
-    <svg viewBox="0 0 16 16" width={sz} height={sz} style={{display:"block",overflow:"visible"}}><path d="M8 1.2 L15.2 14.6 L0.8 14.6 Z" fill={C.red} stroke="#fff" strokeWidth={on?1.6:1.2} strokeLinejoin="round"/>{PIN_GLYPHS.hazard}</svg>
-  </span>;
-  return <span aria-hidden="true" style={{display:"inline-flex",alignItems:"center",justifyContent:"center",width:sz,height:sz,borderRadius:"50%",background:pinColor(cat),border:(on?2:1.5)+"px solid #fff",boxShadow:on?"0 0 0 3px "+C.blue+"66":"0 1px 3px rgba(0,0,0,0.7)",boxSizing:"border-box",flexShrink:0,pointerEvents:"none"}}>
-    <svg viewBox="0 0 16 16" width={Math.round(sz*0.74)} height={Math.round(sz*0.74)} style={{display:"block"}}>{PIN_GLYPHS[cat]||<circle cx="8" cy="8" r="2.5" fill="#fff"/>}</svg>
-  </span>;
-}
-/* A topo point is stored as a percentage, and TopoLineOverlay is `inset:0` with
-   preserveAspectRatio="none" — so a stored point means "this far across MY CONTAINER", not
-   "this far across the photo". Those are the same thing only when the container IS the
-   painted photo, and on all three surfaces that draw a topo it was not:
-
-     surface                     container     object-fit   stored x=10% landed at
-     editor  (TopoDrawer)        4:3           cover        14.4% of the photo
-     thumbnail (TopoSection)     132x132 (1:1) cover        23.3%
-     viewer  (TopoPhotoModal)    auto          contain      10.0%
-
-   (measured on a 3:2 photo — the middle of a line agrees at 50% because cover crops
-   symmetrically, which is precisely why the drift is easy to miss: the centre looks right
-   and both ends are wrong.) A belay pin placed on the correct flake in the editor rendered
-   on a different flake in the strip.
-
-   The fix is to make the container equal the painted photo everywhere: take the aspect ratio
-   from the image once it has loaded and fit it with `contain`, so painted rect == container
-   rect and a stored percentage means the same thing on every surface. `topos` and
-   `topo_lines` were both EMPTY when this changed, so no drawn line moved; once climbers
-   start drawing, changing this basis becomes a data migration. */
-function useImgAspect(){
-  const [ar,setAr]=useState(null);
-  const onLoad=function(e){const t=e.currentTarget;if(t&&t.naturalWidth&&t.naturalHeight)setAr(t.naturalWidth+" / "+t.naturalHeight);};
-  return [ar,onLoad];
-}
-const TOPO_IMG={position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"contain",display:"block"};
 /* The number a marker carries on the photo AND in the key beside it. Three belay stations on
    one line are three identical icons; without a shared number, a note ("2 bolts, chains") in
    the key cannot be matched to the station it describes. */
 /* Every icon and what it means, so a climber reading a topo never has to guess one. */
-function TopoPinLegend({style}){
-  return <div role="list" aria-label="Topo marker key" style={Object.assign({display:"flex",flexWrap:"wrap",gap:"6px 12px"},style||{})}>{[["Route line",TOPO_RED],["Variation",TOPO_VAR]].map(function(l){return <span key={l[0]} role="listitem" style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,color:C.textSub}}><TopoSwatch color={l[1]} dashed={l[1]===TOPO_VAR}/>{l[0]}</span>;})}{PIN_CATEGORIES.map(function(c){return <span key={c[0]} role="listitem" style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,color:C.textSub}}><PinIcon cat={c[0]} size={16}/>{c[1]}</span>;})}</div>;
-}
-/* The number each marker wears: grade labels are text, not stations, so they take none and the
-   belays still count 1, 2, 3 up the line. null for a grade. */
-function pinNums(pins){var n=0;return (pins||[]).map(function(p){return p&&p.category==="grade"?null:++n;});}
-/* One drawn line: a dark edge under the colour, the way a printed topo keeps a red line legible
-   on red rock and pale granite alike. Stroke widths are in screen pixels (non-scaling-stroke). */
-function topoPath(points){return (points||[]).map(function(p,i){return (i===0?"M":"L")+p.x+","+p.y;}).join(" ");}
 /* A variation is DASHED as well as yellow: colour alone fails a colour-blind climber and washes out
    on sunlit rock, and a dashed line is how theCrag's users and the alpine topo legends mark a
    variant. The dark edge stays solid so the dashes still read against pale granite. Dash lengths
    are screen pixels, like the widths (non-scaling-stroke). */
-function TopoStroke({points,color,w,dashed}){
-  if(!points||points.length<2)return null;
-  var d=topoPath(points);var sw=w||2.5;
-  return <><path d={d} fill="none" stroke="rgba(0,0,0,0.75)" strokeWidth={sw*1.8} strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke"/><path d={d} fill="none" stroke={color} strokeWidth={sw} strokeDasharray={dashed?(sw*2.6)+" "+(sw*1.6):undefined} strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke"/></>;
-}
-/* The tag a variation wears on the photo — "V", or V1, V2… when there are several — so its row in
-   the key ("V1 — 5.10a direct start") can be matched to the line it describes, as the pin numbers
-   are. It sits on the line's middle vertex, where a variation is most clearly apart from the route. */
-function varTag(i,n){return n>1?"V"+(i+1):"V";}
-function varMid(v){return v[Math.floor((v.length-1)/2)];}
-function VarTag({text,style}){return <span aria-hidden="true" style={Object.assign({display:"inline-flex",alignItems:"center",justifyContent:"center",minWidth:15,height:15,padding:"0 4px",borderRadius:4,background:TOPO_VAR,color:"#111",border:"1px solid #111",fontSize:9.5,fontWeight:800,lineHeight:1,boxSizing:"border-box",pointerEvents:"none",whiteSpace:"nowrap"},style||{})}>{text}</span>;}
-function TopoLineOverlay({points,pins,variants,pinSize,numbered,lineW}){
-  var vs=(variants||[]).filter(function(v){return v&&v.length>=2;});
-  if((!points||points.length<2)&&(!pins||!pins.length)&&!vs.length)return null;
-  var sz=pinSize||18;var nums=pinNums(pins);var lw=lineW||(sz<16?1.6:2.5);
-  return <>
-    <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{position:"absolute",inset:0,width:"100%",height:"100%",pointerEvents:"none"}}>
-      {vs.map(function(v,i){return <TopoStroke key={"v"+i} points={v} color={TOPO_VAR} w={lw} dashed/>;})}
-      <TopoStroke points={points} color={TOPO_RED} w={lw}/>
-    </svg>
-    {numbered?vs.map(function(v,i){var m=varMid(v);return <span key={"vt"+i} style={{position:"absolute",left:m.x+"%",top:m.y+"%",transform:"translate(-50%,-50%)",pointerEvents:"none",lineHeight:0}}><VarTag text={varTag(i,vs.length)}/></span>;}):null}
-    {(pins||[]).map(function(pn,i){
-      if(pn.category==="grade")return pn.note?<span key={i} style={{position:"absolute",left:pn.x+"%",top:pn.y+"%",transform:"translate(-50%,-50%)",pointerEvents:"none",lineHeight:0}}><GradeTag text={pn.note} size={Math.max(9,Math.round(sz*0.62))}/></span>:null;
-      return <span key={i} style={{position:"absolute",left:pn.x+"%",top:pn.y+"%",width:sz,height:sz,marginLeft:-sz/2,marginTop:-sz/2,pointerEvents:"none",lineHeight:0}}><PinIcon cat={pn.category} size={sz}/>{numbered?<PinNum n={nums[i]} style={{position:"absolute",right:-8,bottom:-6}}/>:null}</span>;})}
-  </>;
-}
 /* The key under an enlarged topo. A pin's note ("2 bolts, chains", "tree with slings") was
    collected by the editor and then drawn nowhere — the photo shows an icon, not text. Each row
    carries the number its marker wears on the photo (TopoLineOverlay `numbered`), in the order
@@ -2849,17 +2747,6 @@ function TopoLineOverlay({points,pins,variants,pinSize,numbered,lineW}){
 /* What each variation IS, beside the tag it wears on the photo. A yellow line with no words left a
    climber guessing whether it was a direct start, an escape or a mistake (owner, 2026-10-23). The
    labels are topo_lines.variant_labels (0362), aligned with variants by index. */
-function TopoVariantKey({variants,labels}){
-  var vs=[];(variants||[]).forEach(function(v,i){if(v&&v.length>=2)vs.push(i);});
-  if(!vs.length)return null;
-  return <div style={{marginBottom:10}}>{vs.map(function(vi,k){var t=String((labels||[])[vi]||"").trim();return <div key={k} style={{display:"flex",gap:8,alignItems:"flex-start",marginBottom:5,fontSize:12.5,lineHeight:1.4}}><VarTag text={varTag(k,vs.length)} style={{marginTop:2}}/><span style={{marginTop:7,lineHeight:0}}><TopoSwatch color={TOPO_VAR} dashed/></span><div style={{minWidth:0,overflowWrap:"anywhere"}}><span style={{fontWeight:600,color:C.text}}>Variation</span>{t?<span style={{color:C.textSub}}>{" — "+t}</span>:null}</div></div>;})}</div>;
-}
-function TopoPinKey({pins}){
-  /* Grade labels are already readable on the photo itself; the key lists the stations. */
-  var nums=pinNums(pins);
-  if(!pins||!pins.some(function(p){return p.category!=="grade";}))return null;
-  return <div style={{marginBottom:10}}>{pins.map(function(pn,i){if(pn.category==="grade")return null;return <div key={i} style={{display:"flex",gap:8,alignItems:"flex-start",marginBottom:5,fontSize:12.5,lineHeight:1.4}}><PinNum n={nums[i]} style={{marginTop:2}}/><PinIcon cat={pn.category} size={18}/><div style={{minWidth:0}}><span style={{fontWeight:600,color:C.text}}>{pinLabel(pn.category)}</span>{pn.note?<span style={{color:C.textSub}}>{" — "+pn.note}</span>:null}</div></div>;})}</div>;
-}
 /* The topo editor. What it could not do, each of them the difference between a line a climber
    trusts and one they redraw:
 
@@ -2882,20 +2769,6 @@ function TopoPinKey({pins}){
    the pitch as on Steph Abegg's overlays. Coordinates stay percentages of the photo: `at` reads
    the ZOOMED layer's on-screen box, so a tap at 3x stores the same 0..100 point it would at 1x,
    and a handle pulled off the edge is clamped onto the rock. */
-const LOUPE_Z = 3;            // magnification
-const TAP_SLOP = 8;           // px a press may wander and still be a tap rather than a pan
-const ZOOM_MAX = 6;
-/* The zoomed layer is scaled about its top-left corner; keep the photo covering the frame so a
-   pan can never drag empty space into view. */
-function clampTopoView(v,W,H){
-  const z=Math.min(ZOOM_MAX,Math.max(1,v.z));
-  return {z:z,tx:Math.min(0,Math.max(W-W*z,v.tx)),ty:Math.min(0,Math.max(H-H*z,v.ty))};
-}
-/* Zoom to z keeping the photo point under (px,py) — frame pixels — where it is. */
-function zoomTopoView(b,z,px,py,W,H){
-  const nz=Math.min(ZOOM_MAX,Math.max(1,z));
-  return clampTopoView({z:nz,tx:px-(px-b.tx)*nz/b.z,ty:py-(py-b.ty)*nz/b.z},W,H);
-}
 /* Exported for lib/LogAscent.jsx, which lets a climber draw a topo while logging the climb (lazy import, so the
    log form does not pull this file into its chunk until the control is tapped). */
 export function TopoDrawer({initial,onCancel,onSubmit,dirtyRef}){
@@ -3409,17 +3282,6 @@ export function TopoSection({route}){
 /* SAVE ONE PHOTO OR TOPO TO THIS DEVICE (owner decision 2026-10-07: images are never part of a state
    download — each is chosen by hand). The label flips only once the bytes are stored, never before,
    and a failure is shown here beside the button rather than swallowed. */
-function TopoThumb({p,onOpen}){
-  const [ar,arOnLoad]=useImgAspect();
-  const canonical=p.lines[0];
-  return <div {...clickable(onOpen)} aria-label={(canonical?"Open topo photo":"Open topo photo — no line drawn yet")+(p.alt?": "+p.alt:"")} style={{flexShrink:0,width:132,aspectRatio:ar||"1 / 1",position:"relative",borderRadius:12,overflow:"hidden",border:"1px solid "+C.border,cursor:"pointer",background:C.card}}>
-    <MediaImg loading="lazy" decoding="async" src={p.url} alt={photoAlt(p.alt,"Topo photo")} onLoad={arOnLoad} style={TOPO_IMG}/>
-    {canonical?<TopoLineOverlay points={canonical.points} variants={canonical.variants} pins={canonical.pins} pinSize={12}/>:null}
-    {!canonical?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(0,0,0,0.45)",color:C.onSolid,fontSize:11,fontWeight:700,textAlign:"center",padding:8}}>No line drawn</div>:null}
-    {p.lines.length>1?<span style={{position:"absolute",top:5,right:5,background:"rgba(0,0,0,0.65)",color:C.onSolid,fontSize:10,fontWeight:700,borderRadius:10,padding:"2px 6px"}}>{p.lines.length+" lines"}</span>:null}
-    {canonical&&canonical.label?<span style={{position:"absolute",left:5,right:5,bottom:5,background:"rgba(0,0,0,0.65)",color:C.onSolid,fontSize:10,fontWeight:700,borderRadius:6,padding:"2px 6px",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{canonical.label}</span>:null}
-  </div>;
-}
 /* A topo photo's CAPTION (topos.caption, 0362): context from the climber who posted it — which face,
    when, what has changed — for everyone who opens the topo. No length cap (owner, 2026-10-23: "no
    limit to the text amount"). Not the photo DESCRIPTION, which is alt text for a screen reader and
@@ -4389,7 +4251,6 @@ function strapTrim(s){return String(s||"").replace(/\s*·\s*$/,"").replace(/^\s*
    4-pitch Kor-Ingalls Route the owner read that as "the sections are not there". So a section a climber
    fills in keeps the SAME heading and pencil empty as full: the empty card says what is missing and
    opens the editor at that field, and the section does not move or rename itself when data arrives. */
-function EmptySection({title,what,why,cta,onFix,editTitle}){return <div style={{marginBottom:ROUTE_GAP}}><SL action={onFix?<EditIconButton onClick={onFix} title={editTitle||cta||"Add what you know"}/>:null}>{title}</SL><div style={{background:C.card,borderRadius:12,padding:"12px 14px 1px",border:`1px solid ${C.border}`}}><GapNote what={what} why={why} cta={cta} onFix={onFix}/></div></div>;}
 /* PAIRS WELL WITH, from real climbers (0223). It used to render only on seven seed Little Cottonwood
    routes, from the hand-written ROUTE_EXTRAS.pairsWith, so no catalog route could ever have one. Now:
      - SUGGESTED: a climber picks another climb and says why (a `contributions` row of kind 'pair').
