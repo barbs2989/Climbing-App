@@ -920,3 +920,24 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     did not run (throttle rule). Mountain Project route pages fetch with curl and carry a per-route
     Description; matching our route names to theirs is the hard part (3 of 16 at Dragontail matched
     by name).
+  - **Backlog batch 1, the 94 PEAK routes (2026-10-29)** — `build-batch-n.mjs` gives each route the
+    trailheads and drives its SIBLINGS on the same peak already carry (89 of 94 had one), research per
+    `FILL_BRIEF.md`, second check per `FILL_CHECK_BRIEF.md`, `prepare-fill-apply.mjs` re-reads the live
+    rows by id so the absence rail and merge base are today's. 24 found at high/medium by research, 22
+    sent to the second check, which rejected 6 (Hibox ×3, Mount Hinman, Old Snowy, Mount Roosevelt:
+    each tied to a named route by the route NAME alone) and dropped 3 to low (borrowed approaches).
+    The applier then refused 5 more until reworded (two drives and one approach shared an 8-word run
+    with a fetched page; two approaches did not contain their trailhead name exactly). **13 written**, each
+    re-read: Rainier (Emmons, Ingraham Direct, Wilson Headwall), Lane Peak, Bryant Peak (Hot Tubbs),
+    Glacier Peak (Gerdine Ridge), Table Mountain (2), Eldorado Main Peak, Mesahchie, Mount Adams
+    (Pinnacle Glacier Headwall), Mount Stuart (Always the Cowboy), Nooksack Tower. 315 remain.
+    - **Yield is the finding: research fills about 1 peak route in 7.** The rest have no fetchable page
+      that describes THAT route's start — SummitPost and mountaineers.org answer 403 to curl and
+      WebFetch, and Mountain Project often lists a peak's scrambles under other names or not at all.
+      A browser session could reach SummitPost; nothing else on the open web is left for these.
+    - **Misfiled, not researched (5):** "Tahoma Cleaver" and "South Tahoma Headwall" on Glacier Peak
+      (Mount Rainier routes); "Daniel Glacier" on Bald Eagle Peak (Mount Daniel); "Mount Temple Ridge"
+      and "Three Musketeers Ridge" on Big Chiwaukum (Enchantments). The last three were judged from
+      search snippets only — owner review before any move.
+    - **A seasonal gate is stated as its yearly pattern** ("gated overnight from late October through
+      the winter"), not as this year's start date, so the line does not go stale every November.
