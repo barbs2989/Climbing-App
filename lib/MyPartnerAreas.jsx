@@ -41,7 +41,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
   // The climber's home state, so the search box works the moment the screen opens.
   const homePaths = useMyHomeStatePaths();
   const homeId = homeStateId || ((states.find((s) => homePaths.includes(s.path)) || {}).id) || "";
-  useEffect(() => { if (!rootId && homeId) setRootId(homeId); }, [homeId]); // eslint-disable-line
+  useEffect(() => { if (!rootId && homeId) setRootId(homeId); }, [homeId]); // eslint-disable-line react-hooks/exhaustive-deps -- seed the root once from home; reading rootId would re-seed it after the climber clears it
   const searchQ = useAreaSearch(USE_DB && rootId ? rootId : null, q, 30);
   const hits = (searchQ.data || []).filter((a) => a && a.id);
   const listed = useMemo(() => new Set((listings || []).map((l) => l.areaId)), [listings]);

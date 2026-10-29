@@ -33,7 +33,6 @@ export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoa
   const row={display:"flex",alignItems:"center",gap:10,padding:"11px 12px",marginBottom:0,background:C.card,border:"1px solid "+C.border,borderRadius:12};
   const lbl={fontSize:12,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:7,fontWeight:700};
   const prev={fontSize:12.5,color:C.textSub,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",fontWeight:400,letterSpacing:0.1,marginTop:1};
-  const del={background:"transparent",border:"none",color:C.textMuted,fontSize:16,cursor:"pointer",flexShrink:0,padding:"4px 6px",lineHeight:1};
   return (<div ref={rootRef} style={pane?PANE_STYLE[pane]:{position:"fixed",inset:0,background:C.bg,zIndex:1100,overflowY:"auto",overscrollBehavior:"contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
     <div style={{position:"sticky",top:0,background:C.surface,borderBottom:"1px solid "+C.border,padding:"12px 16px",display:"flex",alignItems:"center",gap:10,zIndex:2}}>
       {pane==="drop"?null:<button onClick={onClose} style={POP_BACK}>← Back</button>}

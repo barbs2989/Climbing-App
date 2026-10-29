@@ -52,7 +52,8 @@ export default function BestDayTile({ ids, areaIds, routeById, onOpen, onOpenAre
   const { data: fetched } = useRoutesByIds(USE_DB ? missing : []);
   const routes = (ids || []).map(function (id) { const r = routeById(id); if (r) return r; const f = (fetched || []).find(function (x) { return x.id === id; }); return f ? dbRouteToCamel(f) : null; }).filter(Boolean);
   const routeKey = routes.map(function (r) { return r.id; }).join(",");
-  const crag = useMemo(function () { return routes.filter(function (r) { return CRAG_SCORE_DISCIPLINES.includes(catOf(r)); }); }, [routeKey]);
+  const crag = useMemo(function () { return routes.filter(function (r) { return CRAG_SCORE_DISCIPLINES.includes(catOf(r)); }); }, [routeKey]); // eslint-disable-line react-hooks/exhaustive-deps -- routes is rebuilt every render; routeKey (the joined ids) is the identity that matters
+
   // Saved areas: a seed area is read off MOUNTAINS, a DB one from the area-card read the Saved view
   // already makes; a region's disciplines come from the climbs under it.
   const aIds = areaIds || [];
@@ -94,7 +95,7 @@ export default function BestDayTile({ ids, areaIds, routeById, onOpen, onOpenAre
         function () { if (live) setWx(function (o) { return Object.assign({}, o, { [k]: { error: true } }); }); });
     }
     return function () { live = false; };
-  }, [keyStr, tries]);
+  }, [keyStr, tries]); // eslint-disable-line react-hooks/exhaustive-deps -- keys is rebuilt each render; keyStr is its joined identity
   // The climber's ideal conditions, from the ONE store the route page and Settings write through,
   // so a change made on a route re-scores this tile at once (lib/CondPrefs.jsx).
   const prefs = scorePrefs(useCondPrefs());
