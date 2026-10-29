@@ -126,7 +126,25 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `src/components/CragRack.tsx` | `CragRack` — the crag route's rack card (rack_items rows, with a pad or quickdraw count) (moved out of RouteDetail.jsx, PR55) |
 | `src/components/CragLocationCard.tsx` | `CragLocationCard` — the crag route's CRAG and PARKING coordinates and the two drive-to links (moved out of RouteDetail.jsx, PR55) |
 | `src/components/PairsWellWith.tsx` | `PairsWellWith` — PAIRS WELL WITH: suggested and same-day-logged climbs, and the suggest form (moved out of RouteDetail.jsx, PR55) |
+| `src/components/WeatherIcon.tsx` | `WeatherIcon` — a weather glyph (sun, cloud, fog, rain, snow, storm) drawn as inline SVG for a WMO code (moved out of RouteDetail.jsx, PR56) |
+| `src/components/OvernightPermit.tsx` | `OvernightPermit` — the OVERNIGHT PERMIT card: what is needed, where to get it, and the issuing agency's page (moved out of RouteDetail.jsx, PR56) |
+| `src/components/BreakdownHandoff.tsx` | `BreakdownHandoff` — the spine and one line between CLIMBING ROUTE and ROUTE BREAKDOWN, counted by `breakdownRows()` (moved out of RouteDetail.jsx, PR56) |
+| `src/components/CragFactRows.tsx` | `CragFactRows` — the rows of one crag fact section: what is on file first, then each missing fact with its own Add (moved out of RouteDetail.jsx, PR56) |
+| `src/components/CragFactSection.tsx` | `CragFactSection` — one crag fact section (WHERE IT STARTS, RACK, GEAR & SAFETY, CONDITIONS): heading with its pencil, then `CragFactRows` (moved out of RouteDetail.jsx, PR56) |
+| `src/components/WallNeighbours.tsx` | `WallNeighbours` — NEXT DOOR: the climbs either side of this one on the wall, by `sort_order` (moved out of RouteDetail.jsx, PR56) |
+| `src/components/BoulderNeighbours.tsx` | `BoulderNeighbours` — ON THIS BOULDER / IN THIS AREA: the problems either side of this one (moved out of RouteDetail.jsx, PR56) |
+| `src/components/RoadReports.tsx` | `RoadReports` — ROAD CONDITIONS: what climbers who drove in said about the road, newest first (moved out of RouteDetail.jsx, PR56) |
+| `src/components/SummitLegsCard.tsx` | `SummitLegsCard` — the TRAILHEAD TO SUMMIT / SUMMIT TO TRAILHEAD (or CAR TO CAR) leg card under GETTING THERE (moved out of RouteDetail.jsx, PR56) |
+| `src/components/DescentLegStrip.tsx` | `DescentLegStrip` — the SUMMIT TO TRAILHEAD leg at the top of the DESCENT section (moved out of RouteDetail.jsx, PR56) |
+| `src/components/TripProfileCard.tsx` | `TripProfileCard` — TRIP PROFILE: each leg between the route's own waypoints with its distance, climb or drop, and time (moved out of RouteDetail.jsx, PR56) |
 | `lib/topoMarks.jsx` | `TOPO_RED`, `TOPO_VAR`, `PIN_CATEGORIES`, `PIN_GLYPHS`, `pinColor`, `pinLabel`, `pinNums`, `varTag`, `useImgAspect`, `TOPO_IMG`, `clampTopoView`, `zoomTopoView` — what a topo draws with: line colours, marker categories and glyphs, numbering, the photo-fitting rule, the zoom maths (moved out of RouteDetail.jsx, PR54) |
+| `lib/tripLegs.js` | `tripLegGeometry`, `fmtLegKm`, `fmtLegHrs` — the leg geometry the Approach card and the Descent section share, and the two formats the leg cards print (moved out of RouteDetail.jsx, PR56) |
+| `lib/breakdownRows.js` | `isPitched`, `pitchEntryKind`, `breakdownRows` — how a pitch_detail entry is classified (roped pitch or travel section) and ordered for ROUTE BREAKDOWN (moved out of RouteDetail.jsx, PR56) |
+| `lib/overnightPermit.js` | `overnightPermitOf` — the overnight permit read off `access.overnight_permit` (re-exported by RouteDetail.jsx for `check:camping`) (moved out of RouteDetail.jsx, PR56) |
+| `lib/weatherIconKind.js` | `weatherIconKind` — which glyph a WMO weather code draws as (moved out of RouteDetail.jsx, PR56) |
+| `lib/emptyArr.js` | `EMPTY_ARR` — the stable empty array for query fallbacks (moved out of RouteDetail.jsx, PR56) |
+| `lib/cragFactField.js` | `FACT_FIELD` — which field the editor opens at for a crag fact row (moved out of RouteDetail.jsx, PR56) |
+| `lib/roadReports.js` | `ROAD_TONE`, `roadReportsOf` — the tone a road status is drawn in, and the road reports newest first (moved out of RouteDetail.jsx, PR56) |
 | `src/components/GPXMap.tsx` | `GPXMap` — the route map: track, pins, one shared popup card, derived trailhead, base check-ins (extracted from core, PR13) |
 | `lib/Route3DView.jsx` | `Route3DView` — the route map's 3D view (MapLibre GL over terrain) |
 | `lib/RouteTracksPanel.jsx` | `RouteTracksPanel` — CLIMBERS' TRACKS under the route map: sort, season filter, show on map |
