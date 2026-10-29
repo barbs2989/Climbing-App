@@ -176,8 +176,8 @@ By PRIMARY discipline: trad 1,430, ice 1,006, sport 578, mixed 148, mountaineeri
 | Ice/mixed batch | thin rows | in batch | skipped | notes |
 |---|---|---|---|---|
 | CO 1 | 40 | 39 | 1 | |
-| CO 2 | 40 | 33 | 7 | |
-| CO 3 | 28 | 24 | 4 | Lead review dropped the Gestas descent (borrowed from neighbouring Dismas). |
+| CO 2 | 36 | 33 | 3 | |
+| CO 3 | 28 | 25 | 3 | Lead review dropped the Gestas descent (borrowed from neighbouring Dismas). |
 | CO 4 | 34 | 18 | 16 | 12 Longs rows already in the Longs/Meeker batch; Dark Star (own page doubts it). |
 | CO 5 | 40 | 39 | 1 | |
 | CO 6 | 40 | 30 | 10 | 8 already in the Hallett NE / Pikes batches, 2 carried-over skips. |
@@ -186,7 +186,7 @@ By PRIMARY discipline: trad 1,430, ice 1,006, sport 578, mixed 148, mountaineeri
 | UT 2 | 40 | 37 | 3 | Temptation Wall is ice bouldering; Marvell Route's own page doubts it. |
 | UT 3 | 26 | 26 | 0 | Maple Canyon. |
 | UT 4 | 18 | 18 | 0 | |
-| MT 1 | 42 | 38 | 4 | |
+| MT 1 | 40 | 38 | 2 | Unprotected Fourplay skipped (text fits another peak). |
 | MT 2 | 39 | 22 | 17 | 16 already in the Three Tiers batch. Granite Lake ski-in given as 9 to 10 mi (three sources). |
 
 **None of the ice batches is applied yet** (2026-10-29, evening): the database timed out on every probe (one-row reads over 30 s). Apply each with
