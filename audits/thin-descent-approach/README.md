@@ -189,8 +189,13 @@ By PRIMARY discipline: trad 1,430, ice 1,006, sport 578, mixed 148, mountaineeri
 | MT 1 | 40 | 38 | 2 | Unprotected Fourplay skipped (text fits another peak). |
 | MT 2 | 39 | 22 | 17 | 16 already in the Three Tiers batch. Granite Lake ski-in given as 9 to 10 mi (three sources). |
 
-**None of the ice batches is applied yet** (2026-10-29, evening): the database timed out on every probe (one-row reads over 30 s). Apply each with
-the applier when `waitdb.mjs`-style probes are healthy, then move the rollback files by exact name.
+| AK 1 | 40 | 25 | 15 | Mt Hunter "Deprivation" skipped: the row (1 pitch AI6 M5) doesn't match the 6,000 ft buttress the sources describe. |
+| AK 2 | 37 | 29 | 8 | Rime Peak carries Mt. Regal's coordinate; Peak 11,300 is filed under Denali NP but is in the Ruth Gorge. |
+
+**Applied so far (2026-10-29, 22:30):** all seven CO batches (210 rows, every one "verified on re-read", none refused); then the database
+stopped answering after 2 rows of UT 1. Rollbacks: `rollback/rollback-1793312990207.json` through `rollback-1793313279406.json` (8 files).
+**Still to apply:** UT 1 (re-run whole; re-applying a landed row is harmless), UT 2–4, MT 1–2, AK 1–2. Wait for a healthy one-row read,
+run the applier per batch, then move each new `audits/route-breakdown/rollback-<ms>.json` here by exact name.
 
 **Ice-tier findings for review:**
 - `ut_monte_cristo` and `ut_broads_fork_2` share one coordinate (40.52763, -111.72408), right for neither: Monte Cristo's East Gully is in Little
