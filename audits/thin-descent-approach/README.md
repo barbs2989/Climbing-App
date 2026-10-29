@@ -119,21 +119,21 @@ about thin descents, on the peaks people actually climb. Each peak is one contex
 | Mount Hooker (WY) | 12 | **12 written** | 0 | 9 approach-only: no source says how to leave the top. |
 | Pingora (WY) | 9 | **7 written** | 2 | One page with no description, one unplaceable. |
 | Slesse Mountain (BC) | 27 | **14 written** | 13 | Lead review dropped two descents that assumed a summit finish. Some rows are on Mount Parkes or Labour Day Horn, other peaks of the massif. Road access is stated only as restricted, because the sources conflict. |
-| Longs/Meeker Cirque (CO) | 29 | **24 written**; 3 **apply pending** (DB stopped again) | 2 | Dark Star skipped (its own page says the description may be another line). Rappel counts left out; the sources split three ways. |
-| Bugaboos North Faces, Fairy Meadow (BC) | 19 | 17 reviewed (offline check clean), **apply pending** | 2 | Two pages doubt their own descriptions. Lead review removed single-source rope lengths. |
-| Snowpatch Spire (BC) | 19 | 13 reviewed (offline check clean), **apply pending** | 6 | Rappel counts left out (the MP pages share one wording, so they count as one source). Rockfall caution for the north end, in general terms. |
-| Mount Gimli (BC) | 13 | 11 reviewed (offline check clean), **apply pending** | 2 | |
-| Mount Athelstan (BC) | 13 | 10 reviewed (offline check clean), **apply pending** | 3 | Salal Creek walls, NW of Pemberton. |
-| Yak Peak (BC) | 15 | 15 reviewed (offline check clean), **apply pending** | 0 | 3 approach-only. |
-| Nesakwatch Spires (BC) | 15 | 12 reviewed (offline check clean), **apply pending** | 3 | |
-| Huntington Ravine (NH) | 14 | 14 reviewed (offline check clean), **apply pending** | 0 | Pinnacle Gully approach-only. No distances (sources say 1.3 vs 1.7 mi). Avalanche terrain in general terms only. |
-| Tuckerman Ravine (NH) | 18 | 18 reviewed (offline check clean), **apply pending** | 0 | 3 approach-only. |
-| Mt. Blue Sky couloirs (CO) | 26 | 18 reviewed (offline check clean), **apply pending** | 8 | Seasonal road stated in general terms. Lead review renamed "Mt. Evans road" to the Mount Blue Sky road. |
-| Pikes Peak North Face (CO) | 12 | 12 reviewed (offline check clean), **apply pending** | 0 | |
-| Hallett NE Buttress mixed/ice (CO) | 15 | 11 reviewed (offline check clean), **apply pending** | 4 | Englishman's Route here is the winter listing of `co_englishman_s_route` (kept: separate winter area, as MP lists it). |
-| Medicine Bow Peak Area (WY) | 26 | 25 reviewed (offline check clean), **apply pending** | 1 | Mostly approach-only (crag routes with no stated finish). |
-| Three Tiers (MT) | 21 | 21 reviewed (offline check clean), **apply pending** | 0 | Cabinet Mountains ice. No approach distance (sources say 6 to 10 mi). |
-| Mammoth Crest (CA) | 34 | 34 reviewed (offline check clean), **apply pending** | 0 | Sport/trad crag; 23 approach-only. |
+| Longs/Meeker Cirque (CO) | 29 | **27 written** | 2 | Dark Star skipped (its own page says the description may be another line). Rappel counts left out; the sources split three ways. |
+| Bugaboos North Faces, Fairy Meadow (BC) | 19 | **17 written** | 2 | Two pages doubt their own descriptions. Lead review removed single-source rope lengths. |
+| Snowpatch Spire (BC) | 19 | **13 written** | 6 | Rappel counts left out (the MP pages share one wording, so they count as one source). Rockfall caution for the north end, in general terms. |
+| Mount Gimli (BC) | 13 | **11 written** | 2 | |
+| Mount Athelstan (BC) | 13 | **10 written** | 3 | Salal Creek walls, NW of Pemberton. |
+| Yak Peak (BC) | 15 | **15 written** | 0 | 3 approach-only. |
+| Nesakwatch Spires (BC) | 15 | **12 written** | 3 | |
+| Huntington Ravine (NH) | 14 | **14 written** | 0 | Pinnacle Gully approach-only. No distances (sources say 1.3 vs 1.7 mi). Avalanche terrain in general terms only. |
+| Tuckerman Ravine (NH) | 18 | **18 written** | 0 | 3 approach-only. |
+| Mt. Blue Sky couloirs (CO) | 26 | **18 written** | 8 | Seasonal road stated in general terms. Lead review renamed "Mt. Evans road" to the Mount Blue Sky road. |
+| Pikes Peak North Face (CO) | 12 | **12 written** | 0 | |
+| Hallett NE Buttress mixed/ice (CO) | 15 | **11 written** | 4 | Englishman's Route here is the winter listing of `co_englishman_s_route` (kept: separate winter area, as MP lists it). |
+| Medicine Bow Peak Area (WY) | 26 | **25 written** | 1 | Mostly approach-only (crag routes with no stated finish). |
+| Three Tiers (MT) | 21 | **21 written** | 0 | Cabinet Mountains ice. No approach distance (sources say 6 to 10 mi). |
+| Mammoth Crest (CA) | 34 | **34 written** | 0 | Sport/trad crag; 23 approach-only. |
 
 **How to resume (database healthy again: a one-row read under 1.5 s):**
 On 2026-10-29 at 18:39 the database recovered. 102 rows were written (Hallett, Hulk, Whitney, Russell, Middle Teton and Moran in full,
