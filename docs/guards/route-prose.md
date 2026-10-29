@@ -1248,6 +1248,12 @@ the correction knows the screen is wrong, and they have no way to report it.
     by clause, with the same facts and the same digits. Each was re-checked against the same cached
     pages and written through `scripts/oneoff/rewrite-copied-prose.mjs` (an exact splice that refuses
     a drifted row; re-read after each write; rollback files in `audits/copied-prose-live/rollback/`).
+    The writes go through `scripts/oneoff/copied-prose-live/apply-batches.mjs`. It probes a one-row
+    read before every batch and waits out an outage (10 min after a stop, giving up after 6 stops). A
+    re-run is safe: a row already rewritten reads back as ALREADY. 114 columns landed on 2026-10-29
+    before the database stopped taking writes; the rest resumes with
+    `node scripts/oneoff/copied-prose-live/apply-batches.mjs b01 b02 … b24` (delete `applied.txt` first
+    for a full pass that also catches rows refused on a failed read).
     A few rewrites also dropped a sentence that credited a source by name. The rule is
     [no-sources](../codebase/enrichment-prose.md).
   - **Selftest:** `--selftest` needs no network: the Dark Shadows sentence as applied is flagged,
