@@ -177,7 +177,8 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `lib/fire.js` | `useActiveFires`, `useFirePerimeters`, `useFireWeather`, `useHeat`, `useSmokeWindow`, `smokeHours`, `smokeTileUrl`, `SMOKE_BANDS`, `useFireAlert`, `nwsPointPage`, `fireLevel` |
 | `src/components/GPXMap.tsx` | `GPXMap` — the route page map (extracted from core, PR13) |
 | `ClimbMatchCore.jsx` | `OverviewMap` (seed/overview map), lazy `DbAreaBrowser` import |
-| `RouteDetail.jsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`, `BaseLayerToggle`) for the route and waypoint-picker maps |
+| `src/components/GPXMap.tsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`, `BaseLayerToggle`) for the route map |
+| `src/components/WaypointMapPicker.tsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`) for the waypoint-picker map |
 
 ## 4. Data
 - Supabase tables `areas` (parent_id, `path` ltree set by trigger, `area_type`, lat/lng, `route_count`; 0001; `blurb`; `approach`, `approach_min` (0247); `rock`, `rock_basis` (0248);

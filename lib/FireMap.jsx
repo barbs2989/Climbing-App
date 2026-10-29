@@ -110,6 +110,7 @@ function bboxForView(el, lat, lng, zoom) {
 // in miles: a climber with metric selected was shown "mi" on every row, and the km
 // branch was unreachable. The default here is a formatter, not `true`, so a caller
 // that forgets to pass it degrades to imperial rather than crashing.
+const NO_ITEMS = [];
 export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.round(mi) + " mi", focus = null, locale = undefined }) {
   const mapDiv = useRef(null), mapRef = useRef(null), tileRef = useRef(null);
   const perimRef = useRef(null), wxRef = useRef(null), fireRef = useRef(null), heatRef = useRef(null), smokeRef = useRef(null);
@@ -136,7 +137,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
     const [vLat, vLng, vZoom] = viewFor(focus);
     const seed = bboxForView(mapDiv.current, vLat, vLng, vZoom);
     if (seed) setBbox(b => b || seed);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- seeds the viewport once on mount; later focus changes must not reset the bbox
 
   const firesQ = useActiveFires(bbox, show.fires);
   const perimQ = useFirePerimeters(bbox, show.perims);
@@ -152,9 +153,9 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
   const smokeAt = hours.length ? hours[Math.min(hourIx, hours.length - 1)] : null;
   const [smokeErr, setSmokeErr] = useState(false);
 
-  const fires = (firesQ.data && firesQ.data.fires) || [];
-  const perims = (perimQ.data && perimQ.data.perims) || [];
-  const zones = (wxQ.data && wxQ.data.zones) || [];
+  const fires = (firesQ.data && firesQ.data.fires) || NO_ITEMS;
+  const perims = (perimQ.data && perimQ.data.perims) || NO_ITEMS;
+  const zones = (wxQ.data && wxQ.data.zones) || NO_ITEMS;
   const heatData = heatQ.data;
   const heat = useMemo(() => (heatOn && heatData && heatData.heat) || [], [heatOn, heatData]);
 
@@ -209,7 +210,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
       if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} }
       mapRef.current = null; tileRef.current = null; perimRef.current = null; wxRef.current = null; fireRef.current = null; heatRef.current = null; smokeRef.current = null;
     };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- builds the Leaflet map once; baseLayer, focus and theme are applied by their own effects, and re-running would destroy the map
 
   useEffect(() => { if (mapRef.current) applyBaseLayer(mapRef.current, tileRef, baseLayer); }, [baseLayer]);
   // The map div changes size when the list steps aside; Leaflet only measures on resize.

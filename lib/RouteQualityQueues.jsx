@@ -116,10 +116,11 @@ function Msg({ msg }) {
 }
 
 // ── 1. Held route edits ──────────────────────────────────────────────────────────────
+const NO_ROWS = [];
 export function FieldContributionQueue({ onOpenRoute }) {
   const q = useFieldContributions("pending");
   const fieldsQ = useContributionFields();
-  const rows = q.data || [];
+  const rows = q.data || NO_ROWS;
   const routeIds = useMemo(() => Array.from(new Set(rows.map((r) => r.route_id).filter(Boolean))), [rows]);
   const routesQ = useRouteRowsByIds(routeIds);
   const areaIds = useMemo(() => Array.from(new Set(rows.filter(isAreaRow).map((r) => r.area_id))), [rows]);
@@ -237,7 +238,7 @@ export function RouteFlagQueue({ onOpenRoute }) {
   const [busy, setBusy] = useState(null);
   const [msg, setMsg] = useState(null);
   const [note, setNote] = useState({});
-  const rows = q.data || [];
+  const rows = q.data || NO_ROWS;
   if (q.isLoading) return <LoadingRows C={C} label="Loading flags…" style={{padding: "8px 0"}}/>;
   if (q.error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>Could not load the flags — {(q.error && q.error.message) || "the request failed"}. This is not a report that there are none.</div>;
   const act = async (id, status) => {
@@ -276,7 +277,7 @@ export function ContributorStandingQueue() {
   const [busy, setBusy] = useState(null);
   const [msg, setMsg] = useState(null);
   const [reason, setReason] = useState({});
-  const rows = q.data || [];
+  const rows = q.data || NO_ROWS;
   if (q.isLoading) return <LoadingRows C={C} label="Loading contributor standing…" style={{padding: "8px 0"}}/>;
   if (q.error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>Could not load contributor standing — {(q.error && q.error.message) || "the request failed"}. This is not a report that nobody has a strike.</div>;
   const act = async (uid, status, days) => {

@@ -79,7 +79,7 @@ export default function ShadeMap({ lat, lng, rise, set, at0, dayKey, clock, C, p
   const [steepOn, setSteepOn] = useState(!!steep);
   const boxRef = useRef(null), mapDiv = useRef(null), mapRef = useRef(null), tileRef = useRef(null), cvRef = useRef(null), imgRef = useRef(null), maskRef = useRef(null), rafRef = useRef(0), creditRef = useRef([]);
 
-  useEffect(function () { setT(snap(at0)); }, [dayKey, rise, set]);
+  useEffect(function () { setT(snap(at0)); }, [dayKey, rise, set]); // eslint-disable-line react-hooks/exhaustive-deps -- snap is a per-render closure over rise/set; reset the time only when the day or window changes, not when at0 drifts
   useEffect(function () {
     if (seen || !boxRef.current) return;
     if (typeof IntersectionObserver !== "function") { setSeen(true); return; }
@@ -92,7 +92,7 @@ export default function ShadeMap({ lat, lng, rise, set, at0, dayKey, clock, C, p
     let live = true; setTerr(null);
     loadTerrain(grid).then(function (d) { if (live) setTerr({ data: d }); }, function () { if (live) setTerr({ error: true }); });
     return function () { live = false; };
-  }, [seen, grid.key, tries]);
+  }, [seen, grid.key, tries]); // eslint-disable-line react-hooks/exhaustive-deps -- grid is memoized on lat/lng and identified by grid.key
 
   useEffect(function () {
     if (!seen) return;
@@ -125,7 +125,7 @@ export default function ShadeMap({ lat, lng, rise, set, at0, dayKey, clock, C, p
       if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} }
       mapRef.current = null; tileRef.current = null; cvRef.current = null; setReady(false);
     };
-  }, [seen, grid.key, ptsKey]);
+  }, [seen, grid.key, ptsKey]); // eslint-disable-line react-hooks/exhaustive-deps -- build the map once per terrain block and pin set (grid.key, ptsKey); baseLayer has its own effect and a rebuild would reset zoom
   useEffect(function () { if (mapRef.current) applyBaseLayer(mapRef.current, tileRef, baseLayer); }, [baseLayer]);
 
   // The credit a terrain licence requires, beside the map layer's own (lib/terrainShade.js).
@@ -137,7 +137,7 @@ export default function ShadeMap({ lat, lng, rise, set, at0, dayKey, clock, C, p
     creditRef.current.forEach(function (c) { ctl.addAttribution(c); });
   }, [ready, terr]);
 
-  const steepPx = useMemo(function () { return steep && terr && terr.data ? steepMask(terr.data.E, grid.W, grid.H, grid.pxM) : null; }, [steep, terr, grid.key]);
+  const steepPx = useMemo(function () { return steep && terr && terr.data ? steepMask(terr.data.E, grid.W, grid.H, grid.pxM) : null; }, [steep, terr, grid.key]); // eslint-disable-line react-hooks/exhaustive-deps -- grid is memoized on lat/lng and identified by grid.key
   useEffect(function () {
     if (!ready || !terr || !terr.data || !cvRef.current) return;
     cancelAnimationFrame(rafRef.current);
@@ -151,11 +151,11 @@ export default function ShadeMap({ lat, lng, rise, set, at0, dayKey, clock, C, p
       for (let i = 0; i < m.length; i++) u32[i] = m[i] === 1 ? SHADE_RGBA : st && m[i] === 0 && st[i] ? STEEP_RGBA : 0;
       ctx.putImageData(img, 0, 0);
     });
-  }, [ready, terr, t, grid.key, steepOn, steepPx]);
+  }, [ready, terr, t, grid.key, steepOn, steepPx]); // eslint-disable-line react-hooks/exhaustive-deps -- grid is memoized on lat/lng and identified by grid.key; lat/lng are the inputs of grid
 
   const d = terr && terr.data;
-  const pxs = useMemo(function () { return pts.map(function (p) { const px = gridPx(grid, p.lat, p.lng); return px && p.top && d ? highestNear(d.E, grid.W, grid.H, px, Math.round(SUMMIT_SNAP_M / grid.pxM)) : px; }); }, [terr, grid.key, ptsKey]);
-  const spans = useMemo(function () { return d ? pts.map(function (p, k) { return pxs[k] ? pinSunSpans(d, grid, lat, lng, rise, set, 10, pxs[k]) : undefined; }) : null; }, [terr, grid.key, ptsKey, rise, set]);
+  const pxs = useMemo(function () { return pts.map(function (p) { const px = gridPx(grid, p.lat, p.lng); return px && p.top && d ? highestNear(d.E, grid.W, grid.H, px, Math.round(SUMMIT_SNAP_M / grid.pxM)) : px; }); }, [terr, grid.key, ptsKey]); // eslint-disable-line react-hooks/exhaustive-deps -- grid is memoized on lat/lng and identified by grid.key; pts is identified by ptsKey
+  const spans = useMemo(function () { return d ? pts.map(function (p, k) { return pxs[k] ? pinSunSpans(d, grid, lat, lng, rise, set, 10, pxs[k]) : undefined; }) : null; }, [terr, grid.key, ptsKey, rise, set]); // eslint-disable-line react-hooks/exhaustive-deps -- grid is memoized on lat/lng and identified by grid.key; pts is identified by ptsKey
   const sun = sunPosition(lat, lng, t);
   const shAt = function (k) { return d && pxs[k] ? pointShaded(d.E, grid.W, grid.H, grid.pxM, pxs[k].c, pxs[k].r, sun.az, sun.alt, d.emax) : undefined; };
   const sunLine = sun.alt <= 0 ? "Sun below the horizon" : "Sun " + Math.round(sun.alt) + "° up in the " + DIR8[Math.round(sun.az / 45) % 8];

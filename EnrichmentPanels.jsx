@@ -8,7 +8,7 @@ function Head({C,style,children}){return <div role="heading" aria-level={2} styl
 export function PeakMetadataPanel({route, C, ActionIcon}) {
   const LBL={fontSize:10,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.6}; /* = core's SUB_LABEL, from this panel's own C prop */
   if (!route.peakMetadata) return null;
-  const {county, range, geology, firstAscent} = route.peakMetadata;
+  const {county, range, firstAscent} = route.peakMetadata;
   // Only surface facts that actually have data — county in particular is populated
   // for a handful of hand-curated peaks but has no DB source for most of the catalog,
   // so a permanent "—" placeholder there was misleading rather than informative.

@@ -168,7 +168,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     let live = true; setWx(null);
     fetchAlpineForecast(pt.lat, pt.lng, pt.elevFt).then(function (j) { _alpWx[ck] = j; if (live) setWx({ data: j }); }, function () { if (live) setWx({ error: true }); });
     return function () { live = false; };
-  }, [ck, tries, kind]);
+  }, [ck, tries, kind]); // eslint-disable-line react-hooks/exhaustive-deps -- refetch only when the point key (ck) changes; pt is a fresh object each render and ck already encodes it
   // The models' spread: a second, optional read. Failing, it adds nothing -- never "they agree".
   const [sp, setSp] = useState(function () { return ck && _alpSp[ck] ? _alpSp[ck] : null; });
   useEffect(function () {
@@ -177,7 +177,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     let live = true; setSp(null);
     fetchAlpineSpread(pt.lat, pt.lng, pt.elevFt).then(function (j) { _alpSp[ck] = j; if (live) setSp(j); }, function () { if (live) setSp(null); });
     return function () { live = false; };
-  }, [ck, kind]);
+  }, [ck, kind]); // eslint-disable-line react-hooks/exhaustive-deps -- refetch only when the point key (ck) changes; pt is a fresh object each render and ck already encodes it
   // Air quality: a third, optional read. A failed one is "not measured" -- never "clean air".
   const [air, setAir] = useState(function () { return ck && _alpAir[ck] ? { data: _alpAir[ck] } : null; });
   const [airTries, setAirTries] = useState(0);
@@ -187,7 +187,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     let live = true; setAir(null);
     fetchCragAir(pt.lat, pt.lng).then(function (j) { _alpAir[ck] = j; if (live) setAir({ data: j }); }, function () { if (live) setAir({ error: true }); });
     return function () { live = false; };
-  }, [ck, kind, airTries]);
+  }, [ck, kind, airTries]); // eslint-disable-line react-hooks/exhaustive-deps -- refetch only when the point key (ck) changes; pt is a fresh object each render and ck already encodes it
   // Weather alerts: another optional read, US only. Outside it, or failed, says so -- never "no alerts".
   const [alerts, setAlerts] = useState(function () { const c = ck && _alpAlerts[ck]; return c && Date.now() - c.at < ALERT_TTL ? { data: c.data } : null; });
   const [alertTries, setAlertTries] = useState(0);
@@ -198,7 +198,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     let live = true; setAlerts(null);
     fetchPointAlerts(pt.lat, pt.lng).then(function (j) { _alpAlerts[ck] = { at: Date.now(), data: j }; if (live) setAlerts({ data: j }); }, function () { if (live) setAlerts({ error: true }); });
     return function () { live = false; };
-  }, [ck, kind, alertTries]);
+  }, [ck, kind, alertTries]); // eslint-disable-line react-hooks/exhaustive-deps -- refetch only when the point key (ck) changes; pt is a fresh object each render and ck already encodes it
   useEffect(function () { setDayI(0); }, [route.id]);
 
   /* The legs the start counts back from: the Planner's own estimate, at the Planner's own inputs. A
@@ -245,7 +245,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       out.push(Object.assign({ date: d.date, sum: daySummary(fc, d), sunrise: d.sunrise, sunset: d.sunset, aqi: aq }, r, { daysEarly: daysEarly }));
     });
     return { fc, days: out.slice(0, 7) };
-  }, [wx, sp, air, alerts, kind, ck, floor && floor.ft, legs.up, legs.down, legs.floor, legs.fromCamp, legs.tech, legs.hike, faceSun]);
+  }, [wx, sp, air, alerts, kind, ck, floor && floor.ft, legs.up, legs.down, legs.floor, legs.fromCamp, legs.tech, legs.hike, faceSun]); // eslint-disable-line react-hooks/exhaustive-deps -- legs is rebuilt every render, so its fields are listed; route/terrain/pt.elevFt are covered by ck, kind and the weather reads
   const selDay = model && model.days.length ? model.days[Math.min(dayI, model.days.length - 1)] : null;
   useEffect(function () {
     if (!face || face.missing || legs.floor || !selDay || selDay.sunrise == null || selDay.sunset == null || faceSun[selDay.date]) return;
@@ -264,7 +264,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       }, 30);
     }, function () { if (live) put({ error: true }); });
     return function () { live = false; clearTimeout(tm); if (!done) setFaceSun(function (m) { if (!m[date] || !m[date].busy) return m; const n = Object.assign({}, m); delete n[date]; return n; }); };
-  }, [face, legs.floor, selDay && selDay.date]);
+  }, [face, legs.floor, selDay && selDay.date]); // eslint-disable-line react-hooks/exhaustive-deps -- faceSun is written by this effect (would loop); runs per selected day, selDay is a fresh object
 
   if (!kind) return null;
   const box = { background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", marginBottom: ROUTE_GAP };
