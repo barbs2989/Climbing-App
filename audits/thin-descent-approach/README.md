@@ -161,3 +161,8 @@ By PRIMARY discipline: trad 1,430, ice 1,006, sport 578, mixed 148, mountaineeri
   The crag-level approach lives on the area page (area fields).
 - **Trad:** only where the area is a peak, not a cliff. Sort that by area, not by the route's tag.
 - **Bouldering: out of scope** (Lincoln Lake and the boulders in the census).
+
+| Long tail batch | thin rows | written | skipped | notes |
+|---|---|---|---|---|
+| Mountaineering, California | 34 | **9 written** | 25 | Strict: single-page rows skipped. Possible Harwood/Thunder Mountain name swap; Shastina "Lightning couloir" may duplicate a Baldy import. Both are for review. |
+| Mountaineering, Colorado | 48 | **39 written** (4 re-applied) | 9 | Lead review dropped two inferred descents (Tuning Fork, First Star). |
