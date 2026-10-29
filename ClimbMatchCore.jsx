@@ -2658,10 +2658,16 @@ function useCuratedLists(logs,routeById){
   /* A PEAK list is ticked by standing on the summit, so its objectives are PEAKS and any route
      on one counts. Resolving it through `lists` instead would have to pick a single route per
      peak, and then Rainier — 20 lines in this catalog — would only tick via whichever one was
-     tagged. The roster lives in lib/lists.js as area ids; see the note there. */
+     tagged. The roster lives in lib/lists.js as area ids; see the note there.
+     A route that can be ticked Summit (alpine, mountaineering, scrambling, ice, mixed) counts only
+     when the log says the climber TOPPED OUT: a Lead or Follow on Liberty Ridge does not say they
+     stood on Rainier, the same rule the alpine-summit badges use (summitedLog). A crag climb on a
+     list peak -- a desert tower, a face route on Half Dome -- has no Summit tick and counts when sent. */
+  const topped=(l,r)=>!!l&&!!r&&(tickTypesFor(r).indexOf("Summit")>=0?summitedLog(l):routeCompleted(l.routeId,[l]));
+  const summitRoutes=uniq.filter(r=>logs.some(l=>l&&l.routeId===r.id&&topped(l,r)));
   const peakObjectives=k=>{const roster=listPeaks(k);if(!roster)return null;
     return roster.map(p=>({id:p.id,name:p.name,ft:p.ft,mountainId:p.id,also:p.also,_peak:true}));};
-  const peakDone=p=>peakClimbed(p,uniq);
+  const peakDone=p=>peakClimbed(p,summitRoutes);
   const classicRoutes=(SEED_OK?ROUTES.filter(r=>r.classic):[]).concat(uniq.filter(r=>r.classic&&!ROUTES.some(s=>s.id===r.id)));const cDone=classicRoutes.filter(r=>got(r.id)).length;
   // These four build their objectives from the seed ROUTES demo set rather than from the
   // catalog or the climber's own logs, so on a real account they present 14 sample climbs
@@ -2700,7 +2706,7 @@ function useCuratedLists(logs,routeById){
   const fiftyL=lists.find(L=>L.key==="fifty");if(fiftyL)fiftyL.routes=fiftyRoutes();
   /* d of t for one list, the same arithmetic the Logbook card draws. A peak list supplies its own test: `got(id)` matches a LOGGED ROUTE id, and a peak objective carries an AREA id, so the default would count zero forever. */
   const listProgress=L=>{const d=L.quiver?discsSent.length:L.routes.filter(L.doneBy||(r=>got(r.id))).length;const t=L.total||(L.quiver?allDiscs.length:L.routes.length);return {d:d,t:t,pct:t?Math.round(d/t*100):0,cpl:!!(t&&d>=t)};};
-  return {lists,got,uniq,isSum,isWin,discsSent,allDiscs,inList,peakObjectives,peakDone,cDone,listProgress};
+  return {lists,got,uniq,isSum,isWin,discsSent,allDiscs,inList,peakObjectives,peakDone,topped,cDone,listProgress};
 }
 
 /* BADGES: one builder for every surface that shows them -- Logbook › Challenges, the trophy case on a profile, and App's
@@ -2719,7 +2725,7 @@ function monthRuns(logs){var ms={};(logs||[]).forEach(function(l){var d=_logDay(
 function yearCounts(logs){var y={};(logs||[]).forEach(function(l){var d=_logDay(l);if(d)(y[d.slice(0,4)]=y[d.slice(0,4)]||[]).push(d);});var ks=Object.keys(y).sort();return {best:ks.reduce(function(a,k){return Math.max(a,y[k].length);},0),on:function(tgt){var k=ks.find(function(x){return y[x].length>=tgt;});return k?_nthDate(y[k],tgt):null;}};}
 const CRAG_SEND_CATS={sport:1,trad:1,toprope:1,"top-rope":1,bouldering:1,aid:1},SUMMIT_CATS={alpine:1,mountaineering:1,scrambling:1},ICE_CATS={ice:1,mixed:1};
 function useBadges(logs,routeById){
-  const {lists,allDiscs,listProgress}=useCuratedLists(logs,routeById);
+  const {lists,allDiscs,listProgress,topped}=useCuratedLists(logs,routeById);
   const rOf=id=>routeById?routeById(id):ROUTES.find(r=>r.id===id);
   /* The earliest dated log per key among the logs that pass; a key whose passing logs carry no date maps to null. */
   const firstBy=(pass,keyOf)=>{const m={};logs.forEach(l=>{if(!l)return;const r=rOf(l.routeId);if(!pass(l,r))return;const k=keyOf(l,r);if(k==null)return;const d=_logDay(l);if(!(k in m)||(d&&(!m[k]||d<m[k])))m[k]=d;});return m;};
@@ -2751,7 +2757,7 @@ function useBadges(logs,routeById){
     flag("developer","settings","Route developer","Log a climb you developed or bolted",dev)
   ];
   /* A list's finisher badge is dated by the LAST of its objectives to be ticked: the latest of each objective's first completion. */
-  const listOn=L=>{const ds=L.quiver?allDiscs.map(dc=>discs[dc]):L.routes.map(o=>{const m=firstBy((l,r)=>!!r&&done(l)&&(L.doneBy?peakClimbed(o,[r]):l.routeId===o.id),()=>"x");return "x" in m?m.x:null;});return ds.length&&ds.every(Boolean)?ds.slice().sort()[ds.length-1]:null;};
+  const listOn=L=>{const ds=L.quiver?allDiscs.map(dc=>discs[dc]):L.routes.map(o=>{const m=firstBy((l,r)=>!!r&&(L.doneBy?topped(l,r)&&peakClimbed(o,[r]):done(l)&&l.routeId===o.id),()=>"x");return "x" in m?m.x:null;});return ds.length&&ds.every(Boolean)?ds.slice().sort()[ds.length-1]:null;};
   lists.forEach(L=>{const p=listProgress(L);if(!p.t)return;
     badges.push({key:"done_"+L.key,fam:"list_"+L.key,list:true,icon:L.icon||"target",col:L.col,label:L.label+" finisher",desc:"Climb every one of "+L.label+" — all "+p.t,cur:p.d,tgt:p.t,got:p.cpl,on:p.cpl?listOn(L):null,started:p.d>0});});
   return badges;
