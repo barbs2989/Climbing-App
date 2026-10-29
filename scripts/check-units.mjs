@@ -54,7 +54,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
-import { componentFiles, readCoreSource, MOVED_ALL } from "./lib/guard-sources.mjs";
+import { componentFiles, readCoreSource, MOVED_ALL, readAppFile } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -405,7 +405,7 @@ async function runWeather() {
   // carry hard-coded imperial cut-offs; handing them a converted value would compile, render, and
   // mis-colour every reading -- 10°C would score as "below freezing" against a 32 threshold.
   // Nothing about the screen would look broken.
-  const src = fs.readFileSync(RD_PATH, "utf8");
+  const src = readAppFile(RD_PATH) /* stitched: the moved components (PR52 on) back in */;
   let ast;
   try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
   catch (e) { dead("RouteDetail.jsx did not parse: " + (e && e.message)); }
@@ -525,7 +525,9 @@ async function runWeather() {
   //    10 m satisfies every gust assertion below AND takes a 27 mph AMBER day to GREEN while a
   //    29 mph gust stands. A rule that only ever demands the gust appear is satisfied by the
   //    change that under-warns.
-  const gwSrc = /function gustWorthShowing\(dy\)\{.*?\}\n/.exec(src);
+  // The moved .tsx types its parameter (PR58); the lift drops the annotation so the JS runs.
+  const gwSrc = /function gustWorthShowing\(dy(?:: [^)]*)?\)\{.*?\}\n/.exec(src);
+  if (gwSrc) gwSrc[0] = gwSrc[0].replace(/^function gustWorthShowing\(dy[^)]*\)/, "function gustWorthShowing(dy)");
   if (!gwSrc) dead("ANCHOR LOST: gustWorthShowing is gone from RouteDetail.jsx — the gust gate cannot be executed, so nothing below would be proved");
   let gustWorthShowing;
   try { gustWorthShowing = new Function(gwSrc[0] + ";return gustWorthShowing;")(); }
@@ -1015,7 +1017,7 @@ async function runVariants() {
   section = "variants";
   console.log("\n== variants — the approach-variants editor, on both boundaries and in its labels\n");
   await loadBundle();
-  const src = fs.readFileSync(RD_PATH, "utf8");
+  const src = readAppFile(RD_PATH) /* stitched: the moved components (PR52 on) back in */;
 
   const seedKey = "const routeVars=(Array.isArray(route.approachVariants)";
   const seedAt = src.indexOf(seedKey);
@@ -1176,7 +1178,7 @@ async function runPitches() {
   section = "pitches";
   console.log("\n== pitches — the pitch-length box, on both boundaries and in its labels\n");
   await loadBundle();
-  const src = fs.readFileSync(RD_PATH, "utf8");
+  const src = readAppFile(RD_PATH) /* stitched: the moved components (PR52 on) back in */;
 
   // ── Lift the two boundaries. SHAPE TESTS, never content ones: an anchor written from the FIX
   //    refuses every change instead of judging it, which is the trap the variants section records.
@@ -1466,7 +1468,7 @@ async function runKeyed() {
   section = "keyed";
   // The registry is READ from the app, never restated here: a twelfth keyed editor added to
   // OBJ_KEYS must come into frame by itself, or this section silently stops covering it.
-  const rd = fs.readFileSync(RD_PATH, "utf8");
+  const rd = readAppFile(RD_PATH) /* stitched: the moved components (PR52 on) back in */;
   const m = rd.match(/const OBJ_KEYS\s*=\s*\{([^}]*)\}/);
   if (!m) dead("ANCHOR LOST: `const OBJ_KEYS={` is gone from RouteDetail.jsx — the keyed editors could not be enumerated, so this section proved nothing");
   const registered = [...m[1].matchAll(/([A-Za-z]+)\s*:\s*([A-Z_]+)/g)].map((x) => [x[1], x[2]]);

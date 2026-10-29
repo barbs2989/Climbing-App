@@ -24,7 +24,7 @@ const CASES = [
   {
     name: "fresh-ladder",
     why: "RouteDetail's private age ladder, restored exactly as it stood: rounds where ago() floors",
-    file: "RouteDetail.jsx",
+    file: "src/components/ConsensusPanel.tsx", // PR57 moved it from RouteDetail.jsx
     find: 'const _fresh=_latest?"Updated "+ago(_latest):"";',
     repl: 'const _dago=_latest?Math.round((new Date()-new Date(String(_latest).slice(0,10)+"T12:00:00"))/86400000):null;'
         + 'const _fresh=_dago==null?"":(_dago<=0?"Updated today":_dago===1?"Updated yesterday":'

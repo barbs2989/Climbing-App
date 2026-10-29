@@ -29,6 +29,8 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const RD = path.join(ROOT, "RouteDetail.jsx");
+// PR57 moved the planner tiles (the labels, multiDay gate, copy) into src/components/Calculator.tsx; cases default to it.
+const CALC = path.join(ROOT, "src", "components", "Calculator.tsx");
 const PLAN = path.join(ROOT, "lib", "planTimes.js");
 const GUARD = path.join(ROOT, "scripts", "check-return-leg.mjs");
 const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex").slice(0, 12);
@@ -93,6 +95,7 @@ const CASES = [
   },
   {
     name: "a-second-dayof",
+    file: RD,
     why: "a second next-day test declared beside the label. It renders identically today and is " +
          "free to drift from the '(+Nd)' suffix rendered inches away, which is the whole reason " +
          "the label and the suffix share one function",
@@ -289,7 +292,7 @@ if (clean.code !== 0) {
 
 let bad = 0;
 for (const c of CASES) {
-  const F = c.file || RD;
+  const F = c.file || CALC;
   const before = fs.readFileSync(F, "utf8");
   const beforeSum = sum(F);
   let mutated = before;
@@ -330,5 +333,5 @@ for (const c of CASES) {
 }
 
 console.log(`\n${CASES.length - bad}/${CASES.length} cases behaved as specified.`);
-for (const f of [RD, PLAN]) if (!fs.readFileSync(f, "utf8").length) { console.error("BROKEN: " + f + " is empty."); process.exit(1); }
+for (const f of [RD, CALC, PLAN]) if (!fs.readFileSync(f, "utf8").length) { console.error("BROKEN: " + f + " is empty."); process.exit(1); }
 if (bad) process.exit(1);

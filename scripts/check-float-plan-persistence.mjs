@@ -47,7 +47,7 @@ import path from "node:path";
 import fs from "node:fs";
 import os from "node:os";
 import { fileURLToPath } from "node:url";
-import { readCoreSource } from "./lib/guard-sources.mjs";
+import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -147,7 +147,8 @@ else fail("the uncontrolled path starts already saved");
 // wired app as broken — a guard failing on its own documentation, the trap check:ci-cancel
 // records.
 const strip = (t) => t.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/^[ \t]*\/\/.*$/gm, " ");
-const rdRaw = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+// readAppFile: RouteDetail.jsx with the components moved out of it (PR52 on) stitched back in.
+const rdRaw = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
 const rd = strip(rdRaw);
 const fpRaw = fs.readFileSync(path.join(ROOT, "lib", "FloatPlans.jsx"), "utf8");
 const fp = strip(fpRaw);

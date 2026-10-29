@@ -63,6 +63,7 @@ export function loadTerrain(grid) {
    gets its one unlabelled pin ("the pin"); an alpine route passes its own summit, base and camp, and
    the block of terrain is centred on (lat, lng), the climb. `steep` offers the STEEP SLOPES IN SUN
    overlay (routes with snow or ice); `place` names what the terrain surrounds, for the failure line. */
+/** @param {{lat: number, lng: number, rise: number, set: number, at0: number, dayKey: string, clock: (utc: number) => string, C: Record<string, string>, pins?: {key: string, label: string|null, lat: number, lng: number}[]|null, steep?: boolean, place?: string}} props */
 export default function ShadeMap({ lat, lng, rise, set, at0, dayKey, clock, C, pins, steep, place }) {
   const grid = useMemo(function () { return shadeGrid(lat, lng); }, [lat, lng]);
   const named = !!(pins && pins.length);

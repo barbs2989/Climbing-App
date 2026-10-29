@@ -48,6 +48,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { createRequire } from "node:module";
 import { build } from "esbuild";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -663,7 +664,8 @@ console.log("\n15. FOG, SNOWFALL, SNOW LEVEL, STREAM FLOW, REPORT FRESHNESS — 
 console.log("\n16. TEMPERATURE GAPS — shifted to the pin's height, stated, unknown heights never guessed");
 {
   const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
-  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  // stitched: the weather panel lives in WeatherPanel.tsx since PR58
+  const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   const cell = { properties: { elevation: { unitCode: "wmoUnit:m", value: 3889.8576 } } };
   const up = A.nwsHeightShiftF(cell, 14411);
   eq("a summit 1,650 ft above its cell reads colder: Rainier 14,411 ft vs the 3,890 m cell is about -5.9 F", Math.round(up * 10) / 10, -5.9);
@@ -672,7 +674,7 @@ console.log("\n16. TEMPERATURE GAPS — shifted to the pin's height, stated, unk
   eq("an unknown point height shifts nothing (never guessed)", [A.nwsHeightShiftF(cell, null), A.nwsHeightShiftF(cell, undefined), A.nwsHeightShiftF(cell, NaN)], [0, 0, 0]);
   eq("an unknown or non-metre cell height shifts nothing", [A.nwsHeightShiftF(null, 9000), A.nwsHeightShiftF({}, 9000), A.nwsHeightShiftF({ properties: { elevation: { unitCode: "wmoUnit:ft", value: 3000 } } }, 9000), A.nwsHeightShiftF({ properties: { elevation: { unitCode: "wmoUnit:m", value: null } } }, 9000)], [0, 0, 0, 0]);
   eq("the weather panel applies the shift to every NWS temperature it reads", /const nwsShift=nwsHeightShiftF\(nwsJson,w\.elev\);[\s\S]{0,400}push\(v\.value\*9\/5\+32\+nwsShift\)/.test(rd), true);
-  eq("...and says how far it adjusted, in the climber's units, when that is a degree or more", /Math\.abs\(dy\.nws\.adj\)>=1\?" · adjusted "\+uTempDelta\(Math\.abs\(dy\.nws\.adj\)\)\+"° "/.test(rd), true);
+  eq("...and says how far it adjusted, in the climber's units, when that is a degree or more", /Math\.abs\(\(?dy\.nws(?: as [^)]+\))?\.adj\)>=1\?" · adjusted "\+uTempDelta\(Math\.abs\(\(?dy\.nws(?: as [^)]+\))?\.adj\)\)\+"° "/.test(rd), true);
   eq("the alpine card states the measured station error through the unit helper, not a fixed Fahrenheit figure", /typically off by \{uTempDelta\(3\)\}–\{uTempDelta\(5\)\}°/.test(card) && !/off by 3–5 ?°F/.test(card), true);
   eq("...and no longer adds that forecast services can disagree (owner, 2026-10-24: not under the forecast)", /different services can differ/.test(card), false);
   eq("...and that winter is worse and reads too cold (measured: 53 station-seasons, winter median error 4.6 F, 90th percentile 8.5 F, 14 of 17 winter stations too cold), in the unit helper", /and in winter by up to \{uTempDelta\(9\)\}°, most often reading too cold/.test(card), true);
