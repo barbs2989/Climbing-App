@@ -97,7 +97,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `lib/tripProfile.js` | `tripProfile`, `apportion`, `PROFILE_SNAP_M` — the TRIP PROFILE's legs: each leg between the route's waypoints, measured on the recorded track and split from the route's own totals |
 | `lib/rack.js` | `routeRackFor`, `rackLeftovers`, `isRackEntry`, `isNonRackGear`, `DISC_RACK` — what the RACK card prints (rack only) and what moves to GEAR & ESSENTIALS |
 | `lib/baseCheckin.js` | `acquireBaseFix`, `baseCheckinMessage`, `baseGuide`, `bearingDeg`, `BASE_CONFIRM_MIN`: the base check-in's GPS rules and the find-the-base readout (the clustering is the database's, 0363) |
-| `lib/rescueCounty.js` | `useCountyAt`, `countyAt`, `climbPoint`, `sarFor`, `SAR_BY_COUNTY` — the Safety tab's county and its dispatch line |
+| `lib/rescueCounty.js` | `useCountyAt`, `countyAt`, `climbPoint`, `countyPlace`, `sarFor`, `SAR_BY_COUNTY` (data in `lib/sarByCounty.js`) — the Safety tab's county and its dispatch line |
 | `lib/FireNearRoute.jsx` | Nearby-fire panel (Safety tab) |
 | `EnrichmentPanels.jsx` | Panels for enriched route columns |
 | `lib/DbAreaBrowser.jsx` | The Climbs area browser that opens routes |
@@ -168,7 +168,7 @@ On a crag the list is headed *More at <crag>* and counts **routes** (sport, trad
 
 - Live comments: Realtime applies RLS to an UPDATE, so a comment a moderator takes down is never SENT to other readers; it leaves their screen at the next refetch (refocus, reload, a write), not the instant it is removed.
 
-- `SAR_BY_COUNTY` holds 3 Utah counties (Grand, Utah, Salt Lake), each checked against the agency's own page on 2026-10-15; every other county shows 911 guidance only until a climber adds its line through the pencil. Emergency contacts are per ROUTE, so a climber's edit on one Castleton line does not reach its neighbours.
+- `SAR_BY_COUNTY` (`lib/sarByCounty.js`) holds one verified non-emergency dispatch line per county. Each was read on the sheriff's, the county's or the county's dispatch centre's own page, labelled for that purpose; the page and the date for each are in `docs/codebase/rescue-dispatch-numbers.md`, never in the app. A county with no such page has no entry and shows 911 guidance only until a climber adds its line through the pencil. A route's stored `emergency.county` is read in any spelling ("Okanogan", "Okanogan County, WA", "Chelan County, Washington") through `countyPlace`. Emergency contacts are per ROUTE, so a climber's edit on one Castleton line does not reach its neighbours.
 
 - A base check-in at a CRAG is judged against the crag's coordinate (500 m), so the server cannot tell which of two neighbouring lines a climber stood under; a spot is trustworthy only as far as several climbers agree on it. The find-the-base readout says so by handing over to the `location` note inside GPS error.
 
