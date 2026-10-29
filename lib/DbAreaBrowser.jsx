@@ -88,6 +88,17 @@ const Pill = ({ label, color, bg, sm }) => <span style={{ background: bg, color,
 // do — this file must not import ClimbMatchCore, which lazy-imports this module and would make
 // the cycle static.
 
+// CLASSIC CLIMBS HERE: the area page's answer to "what should I climb here?", picked the way Mountain Project's
+// area Classic Climbs and theCrag's classics are — by quality ratings — but from OUR ratings only: the curated
+// `classic` flag, the guidebook's 3- and 4-star climbs (`guide_stars`, 0-4), and climbs our own climbers rate
+// 3.5+ (`stars`, 0294). Nothing here is read from another site. Best first: curated, then guidebook stars, then
+// climbers' stars, then name. An area with none falls back to TOP RATED HERE.
+const CLASSIC_GUIDE_STARS = 3, CLASSIC_CLIMBER_STARS = 3.5;
+function isAreaClassic(r) { return !!r.classic || (r.guide_stars != null && r.guide_stars >= CLASSIC_GUIDE_STARS) || (r.stars != null && r.stars >= CLASSIC_CLIMBER_STARS); }
+function areaClassics(routes) {
+  return routes.filter(isAreaClassic).sort((a, b) => (b.classic ? 1 : 0) - (a.classic ? 1 : 0) || (b.guide_stars || 0) - (a.guide_stars || 0) || (b.stars || 0) - (a.stars || 0) || a.name.localeCompare(b.name));
+}
+
 function RouteRow({ r, onOpen, C, areaName }) {
   const stars = r.stars ? Math.round(r.stars) : 0;
   // The PITCH COUNT sits beside the discipline, as Mountain Project's lists write it ("Trad, 5 pitches"):
@@ -923,10 +934,10 @@ function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSav
       </button>
       {wrongOpen ? <AreaWrongSpot area={area} C={C} onClose={() => setWrongOpen(false)} onSubmit={(note, place) => submitAreaPlacementClaim(area.id, note, place)} onSignIn={onSignIn} /> : null}
 
-      {/* TOP RATED HERE — Mountain Project's "Classic Climbing Routes". Only the rows that carry a
-          star rating (routes.stars, kept by 0294), best first; an area with no ratings shows
-          nothing rather than "no ratings yet". */}
-      {!loading && isLeaf && routes && routes.length > 1 ? (() => { const top = routes.filter(r => r.stars > 0).sort((a, b) => b.stars - a.stars || a.name.localeCompare(b.name)).slice(0, 5); return top.length ? <><SL C={C}>Top rated here</SL>{top.map(r => <RouteRow key={"top-" + r.id} r={r} onOpen={onOpenRoute} C={C} />)}</> : null; })() : null}
+      {/* CLASSIC CLIMBS HERE (areaClassics, up to eight); with none, TOP RATED HERE — the rows that carry a
+          climber star rating (routes.stars, kept by 0294), best first. An area with neither shows nothing
+          rather than "no ratings yet". */}
+      {!loading && isLeaf && routes && routes.length > 1 ? (() => { const cl = areaClassics(routes).slice(0, 8); if (cl.length) return <><SL C={C}>Classic climbs here</SL>{cl.map(r => <RouteRow key={"classic-" + r.id} r={r} onOpen={onOpenRoute} C={C} />)}</>; const top = routes.filter(r => r.stars > 0).sort((a, b) => b.stars - a.stars || a.name.localeCompare(b.name)).slice(0, 5); return top.length ? <><SL C={C}>Top rated here</SL>{top.map(r => <RouteRow key={"top-" + r.id} r={r} onOpen={onOpenRoute} C={C} />)}</> : null; })() : null}
 
       {/* Tail order is the owner's (2026-10-15): suggested climbs right under "Don't see a climb",
           then nearby peaks, then Top contributors LAST — App mounts the area Discussion directly
