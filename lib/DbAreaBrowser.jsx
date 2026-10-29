@@ -99,6 +99,29 @@ function areaClassics(routes) {
   return routes.filter(isAreaClassic).sort((a, b) => (b.classic ? 1 : 0) - (a.classic ? 1 : 0) || (b.guide_stars || 0) - (a.guide_stars || 0) || (b.stars || 0) - (a.stars || 0) || a.name.localeCompare(b.name));
 }
 
+// EVERY classic, five at a time (owner, 2026-10-29: "just have a dropdown after 5 to show them all"). The first five
+// always show; a toggle under them opens the rest. `total` is the whole count when the read was capped, and the open
+// list says so rather than presenting the cap as all of them. `withWall` names each row's wall (areas above a wall).
+const CLASSICS_SHOWN = 5;
+function ClassicsList({ rows, total, withWall, onOpen, C }) {
+  const [open, setOpen] = useState(false);
+  const all = Math.max(total || 0, rows.length), rest = rows.length - CLASSICS_SHOWN;
+  const shown = open ? rows : rows.slice(0, CLASSICS_SHOWN);
+  return (
+    <>
+      <SL C={C}>{"Classic climbs here · " + all.toLocaleString()}</SL>
+      {shown.map(r => <RouteRow key={"classic-" + r.id} r={r} areaName={withWall ? r.area_name : undefined} onOpen={onOpen} C={C} />)}
+      {open && all > rows.length ? <div style={{ fontSize: 12, color: C.textMuted, margin: "2px 2px 8px" }}>{"The first " + rows.length.toLocaleString() + " of " + all.toLocaleString() + " classic climbs here, best first."}</div> : null}
+      {rest > 0 ? (
+        <button onClick={() => setOpen(o => !o)} aria-expanded={open} style={{ minHeight: 44, width: "100%", display: "flex", alignItems: "center", gap: 9, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", cursor: "pointer", marginBottom: 8 }}>
+          <span style={{ flex: 1, textAlign: "left", fontSize: 13.5, fontWeight: 700, color: C.text }}>{open ? "Show fewer classic climbs" : "Show all " + all.toLocaleString() + " classic climbs"}</span>
+          <Chevron open={open} color={C.blue} />
+        </button>
+      ) : null}
+    </>
+  );
+}
+
 function RouteRow({ r, onOpen, C, areaName }) {
   const stars = r.stars ? Math.round(r.stars) : 0;
   // The PITCH COUNT sits beside the discipline, as Mountain Project's lists write it ("Trad, 5 pitches"):
@@ -817,10 +840,10 @@ function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSav
       {formation || (area.blurb && String(area.blurb).trim()) ? <AboutCard area={area} C={C} onEdit={editOn} /> : null}
       {formation ? <AreaFactsCard area={area} C={C} uElev={uElev} onEdit={editOn} /> : null}
       {chartable ? <ClimbsChart stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={DISCIPLINES.map(d => d[0]).filter(Boolean)} onDisc={onFinder}><GradeSpread stats={stats.data} C={C} /></ClimbsChart> : null}
-      {/* CLASSIC CLIMBS HERE above a wall: up to ten, each row naming the wall it is on. A failed read says so; an
-          area with no classics shows nothing rather than "none". */}
+      {/* CLASSIC CLIMBS HERE above a wall: all of them (ClassicsList: five, then a dropdown), each row naming the wall it
+          is on. A failed read says so; an area with no classics shows nothing rather than "none". */}
       {isLeaf === false && chartable ? (classicsUp.error ? <div role="status" style={{ fontSize: 12, color: C.textMuted, margin: "4px 2px 12px" }}>Couldn't load the classic climbs here.</div>
-        : classicsUp.data && classicsUp.data.length ? <><SL C={C}>Classic climbs here</SL>{classicsUp.data.map(r => <RouteRow key={"classic-up-" + r.id} r={r} areaName={r.area_name} onOpen={onOpenRoute} C={C} />)}</> : null) : null}
+        : classicsUp.data && classicsUp.data.length ? <ClassicsList rows={classicsUp.data} total={classicsUp.data[0].total} withWall onOpen={onOpenRoute} C={C} /> : null) : null}
 
       {area.route_count > 0 ? (
         <button onClick={onFinder} style={{ ...BTN_LG, width: "100%", marginBottom: 8, border: "1px solid " + C.blue, background: C.blueBg, color:C.onSolid, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
@@ -940,10 +963,10 @@ function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSav
       </button>
       {wrongOpen ? <AreaWrongSpot area={area} C={C} onClose={() => setWrongOpen(false)} onSubmit={(note, place) => submitAreaPlacementClaim(area.id, note, place)} onSignIn={onSignIn} /> : null}
 
-      {/* CLASSIC CLIMBS HERE (areaClassics, up to eight); with none, TOP RATED HERE — the rows that carry a
-          climber star rating (routes.stars, kept by 0294), best first. An area with neither shows nothing
+      {/* CLASSIC CLIMBS HERE (areaClassics, every one: five, then a dropdown); with none, TOP RATED HERE — the rows
+          that carry a climber star rating (routes.stars, kept by 0294), best first. An area with neither shows nothing
           rather than "no ratings yet". */}
-      {!loading && isLeaf && routes && routes.length > 1 ? (() => { const cl = areaClassics(routes).slice(0, 8); if (cl.length) return <><SL C={C}>Classic climbs here</SL>{cl.map(r => <RouteRow key={"classic-" + r.id} r={r} onOpen={onOpenRoute} C={C} />)}</>; const top = routes.filter(r => r.stars > 0).sort((a, b) => b.stars - a.stars || a.name.localeCompare(b.name)).slice(0, 5); return top.length ? <><SL C={C}>Top rated here</SL>{top.map(r => <RouteRow key={"top-" + r.id} r={r} onOpen={onOpenRoute} C={C} />)}</> : null; })() : null}
+      {!loading && isLeaf && routes && routes.length > 1 ? (() => { const cl = areaClassics(routes); if (cl.length) return <ClassicsList rows={cl} onOpen={onOpenRoute} C={C} />; const top = routes.filter(r => r.stars > 0).sort((a, b) => b.stars - a.stars || a.name.localeCompare(b.name)).slice(0, 5); return top.length ? <><SL C={C}>Top rated here</SL>{top.map(r => <RouteRow key={"top-" + r.id} r={r} onOpen={onOpenRoute} C={C} />)}</> : null; })() : null}
 
       {/* Tail order is the owner's (2026-10-15): suggested climbs right under "Don't see a climb",
           then nearby peaks, then Top contributors LAST — App mounts the area Discussion directly
