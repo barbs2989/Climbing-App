@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_chair_peak_north_face",
+  "last_processed_id": "wa_chianti_spire_east_face",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 476 complete. Continuing id-ascending scope from wa_chair_peak_north_face.",
+  "pass_note": "Pass 8 in progress, batch 477 complete. Continuing id-ascending scope from wa_chianti_spire_east_face.",
   "batches": [
     {
       "batch_number": 1,
@@ -9464,6 +9464,26 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-10-29-batch-476.sql",
       "note": "wa_cathedral_peak_pasayten_se_buttress: stored grade 5.10a contradicted by every independent source (SummitPost's dedicated SE Buttress page, lamountaineers.org NAC, a 2016 Steph Abegg trip report, a 2007 cascadeclimbers.com trip report matching this row's own 10 pitches, and the Wikipedia .com mirror), all converging on 5.9/5.9+ -- corrected to 5.9+. wa_chair_peak_east_face: stored grade 5.2 contradicted by SummitPost's dedicated 'East Face (Summer)' page (5.5) and a trip report ('5.6 I believe'), and inconsistent with the route's own pitch_detail P1 ('5.1-5.6') -- corrected to 5.5. Flagged (1): wa_cathedral_rock_southeast_face_chimney's FA (C. M. Holt, Randy Johnson, Terri Van Hollebeke, July 1 1973) could not be corroborated against any source found -- not contradicted either, just unverifiable; not fixed. Clean (5): wa_cathedral_peak_last_rites (FA Scott Bennett/Blake Herrington Aug 2011, grade 5.11+ and length 300m all confirmed exactly via an AAC Publications 2012 'Three New Routes' article on the Pasayten), wa_cathedral_rock_northeast_buttress (FA Paul Bellamy/Gary Speer Sept 17 1984 matches an AAC Publications 1985 report; elevation 6,724 ft matches SummitPost/Wikipedia/Peakbagger), wa_cathedral_rock_northeast_ridge_2003_variation (FA Mike Preiss/Mark Bunker 2003 corroborated by a cascadeclimbers.com thread describing a June 2003 climb starting at the 1984 route's own belay tree), wa_chair_bryant_traverse (FA Ari Schneider/Jason Linker confirmed exactly via OpenBeta), wa_chair_peak_north_face (FA Kit Lewis/Charlie Hampson/Rob Harris/Greg Jacobson, January 1975, and 4 pitches, both confirmed exactly via Mountain Project)."
+    },
+    {
+      "batch_number": 477,
+      "date": "2026-10-29",
+      "pass": 8,
+      "route_ids": [
+        "wa_chair_peak_northeast_buttress",
+        "wa_chair_peak_northwest_ridge",
+        "wa_chair_peak_south_ridge",
+        "wa_chair_peak_southeast_face",
+        "wa_chair_peak_west_ridge",
+        "wa_chalangin_peak_little_giant_pass_luahna_col",
+        "wa_chelan_butte_chelan_butte_trail",
+        "wa_chianti_spire_east_face"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 5,
+      "clean": 3,
+      "sql_file": null,
+      "note": "wa_chianti_spire_east_face: stored FA \"Mark Bebie, Jim Nelson - 1986\" could not be corroborated -- OpenBeta instead credits this East Face / Rebel Yell line to \"Jim Nelson and Carl Dietrich, 1986\" (no mention of Bebie in any source found), and separately a cascadeclimbers.com trip report describes a 2000 Aylward/Murphy East Face ascent (III 5.10b) with no first-ascent claim, while an AAC Publications index lists an unrelated 1989 \"Chianti Spire, East Face\" entry whose content could not be fetched (americanalpineclub.org did not resolve from this run's network). Two candidate second-climber names for the same year with no primary source resolving them -- not fixed, flagged. wa_chelan_butte_chelan_butte_trail: the route's own \"Chelan Butte Summit\" waypoint gives elev/elevFt 3835, contradicting this same row's high_point_ft (3812) and the area row's elevation_ft (3812); external sources scatter further still (TopoZone 3812, WillhiteWeb 3835, Daywireless 3821, Paul Dorpat's blog 3824), with no ListsOfJohn/LiDAR entry found for this summit to adjudicate -- four-plus numbers, no winner, not fixed. wa_chalangin_peak_little_giant_pass_luahna_col: repeats the same Little Giant Fire closure order (06-17-07-2026-40) already flagged in batch 474 as date-ambiguous; this run's own search corroborated the order number itself but found one secondary source giving Aug 1 (not this route's stated Sep 3) as the start date, and the primary fs.usda.gov page again would not resolve from this run's network -- still unverifiable, not fixed (moot in two days regardless, as the order expires 31 Oct 2026). wa_chair_peak_south_ridge: stored grade \"Class 2\" is in tension with independent trip reports (stevensong.com) and SummitPost describing the south-side/standard scramble route up Chair Peak as Class 3 with some Class 4 moves -- but this row is a near-bare stub (grade only, no waypoints/description to confirm it's describing the same line those sources mean), so flagged rather than changed. wa_chair_peak_southeast_face is also a near-bare stub (grade \"Steep Snow\", 0 pitches, nothing else) -- an enrichment gap, not a contradicted fact. Clean (3): wa_chair_peak_northeast_buttress (high_point_ft 6238 matches the area row and its own summit waypoint; grade/alpine_grade/commitment internally consistent, nothing found to contradict it), wa_chair_peak_northwest_ridge (FA Roger Jackson/Bonnie Krook, July 3 1965 confirmed via SummitPost's route page; elevation 6238 matches Wikipedia/lemkeclimbs.com), wa_chair_peak_west_ridge (FA \"Martin Volken and party, reported July 25, 2007\" -- already hedged as \"reported\" in our own field -- matches a cascadeclimbers.com trip report dated 7/25/2007 by Volken titled as a new route; grade 5.7 and crux confirmed via SummitPost)."
     }
   ]
 }
