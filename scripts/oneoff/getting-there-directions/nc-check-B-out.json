@@ -1,0 +1,220 @@
+[
+ {
+  "id": "wa_snoqualmie_mountain_climbs",
+  "verdict": "corrected",
+  "trailhead": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+  "trailheadDirection": "From Interstate 90 exit 52, turn onto State Route 906, then continue onto Erste Strasse (Alpental Access Road) and follow it for 1.1 miles to a left turn into the lot just below the main lodges. Parking in summer needs a Northwest Forest Pass or similar federal pass.",
+  "approach": "From the Alpental / Snow Lake Trailhead (I-90 Exit 52), take the Snow Lake trail, then branch north onto the climbers trail; the south side of the mountain is roughly 2 miles in.",
+  "numbersUsed": [
+   "90",
+   "52",
+   "906",
+   "1.1",
+   "2"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.mountainproject.com/area/111533537/snoqualmie-mountain",
+   "https://summitatsnoqualmie.com/directions",
+   "https://www.wta.org/go-hiking/hikes/snow-lake"
+  ],
+  "note": "Used the existing trailhead name (Snow Lake trail starts at the main Alpental lot); rewrote drive; dropped unsupported 'Northwest Forest Pass is needed' as flat claim, added winter parking caveat; South Face/West Ridge both on the mountain's south side walk but base of West Ridge not separately stated. | hand: snippet-only wording removed | hand: reworded a copied run"
+ },
+ {
+  "id": "wa_alpental_practice_ice",
+  "verdict": "corrected",
+  "trailhead": "Alpental main parking lot",
+  "trailheadDirection": "From Interstate 90 exit 52, turn onto State Route 906, then continue onto Erste Strasse (Alpental Access Road) and follow it for 1.1 miles to a left turn into the lot just below the main lodges.",
+  "approach": "From the Alpental main parking lot, the base of the Practice Wall is about 1,000 ft east-northeast. Another way is to go up the drainage that runs north-northeast between the two lodging buildings. Allow about 15 minutes, or 45 to 60 minutes through deep snow.",
+  "numbersUsed": [
+   "90",
+   "52",
+   "906",
+   "1.1",
+   "1000",
+   "15",
+   "45",
+   "60"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.mountainproject.com/route/112383006/practice-wall",
+   "https://summitatsnoqualmie.com/directions"
+  ],
+  "note": "Reworded to remove a 7-8 word run copied from the route page and the building name; facts unchanged."
+ },
+ {
+  "id": "wa_fuggs_falls_2",
+  "verdict": "corrected",
+  "trailhead": "Frenchman Coulee parking on Vantage Road",
+  "trailheadDirection": "From Seattle take Interstate 90 east over the Columbia River past Vantage to exit 143, turn left onto Silica Road, pass beneath the freeway, then turn left at the first chance onto Vantage Road and follow it 1.4 miles down the canyon to parking on the left. A Discover Pass is required. As of May 2026 the area was reported effectively closed because of problems with the main road in.",
+  "approach": "From the Frenchman Coulee parking on Vantage Road, reach the falls either from below by way of the Sunshine Wall, or from above by hiking south-southeast from the lot. The ice must be frozen to climb.",
+  "numbersUsed": [
+   "90",
+   "143",
+   "1.4",
+   "2026"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.mountainproject.com/area/116582064/fuggs-falls",
+   "https://www.mountainproject.com/area/105792231/frenchman-coulee-vantage"
+  ],
+  "note": "Removed the page reference from the drive, added the Discover Pass requirement (parent page), kept the dated May 2026 closure; added 'must be frozen' from the crag page. | hand: reworded a copied run"
+ },
+ {
+  "id": "wa_icicle_buttress",
+  "verdict": "confirmed",
+  "trailhead": "Icicle Buttress pullout",
+  "trailheadDirection": "From Leavenworth, drive Icicle Creek Road, reached from US-2, for about 6.5 miles; the pullout is on the right.",
+  "approach": "From the Icicle Buttress pullout, the crag rises right beside the road, so the base is a short walk up from the pullout.",
+  "numbersUsed": [
+   "2",
+   "6.5"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.mountainproject.com/area/111405403/icicle-buttress-and-bobs-wall",
+   "https://www.mountainproject.com/area/106582062/icicle-buttress",
+   "https://www.mountainproject.com/area/200472408/icicle-buttress-ice-climbs"
+  ],
+  "note": "Three area pages agree (6.4-6.5 mi, roadside). Icicle Road is plowed well past this point in winter per Mountaineers road page (search snippet only)."
+ },
+ {
+  "id": "wa_indian_canyon_falls_mystic_falls",
+  "verdict": "confirmed",
+  "trailhead": "Indian Canyon upper parking lot",
+  "trailheadDirection": "In Spokane, drive to Canyon Drive and use the upper of the two parking lots.",
+  "approach": "From the Indian Canyon upper parking lot, follow the trail for less than a mile to the creek bed, where the short flow forms.",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.mountainproject.com/area/123585678/indian-canyon-falls-mystic-falls"
+  ],
+  "note": "Single page; drive is only 'Canyon Drive in Spokane' so thin."
+ },
+ {
+  "id": "wa_mcclellan_butte",
+  "verdict": "rejected",
+  "trailhead": "Tinkham Road turnaround by the highway maintenance facility",
+  "trailheadDirection": "From Interstate 90 take exit 42 for Tinkham Road and drive a short distance southwest. In winter park at the turnaround beside the highway maintenance facility; the summer trailhead is further along and a Northwest Forest Pass applies there.",
+  "approach": "From the Tinkham Road turnaround by the highway maintenance facility, walk the short snow-covered road to the McClellan Butte trailhead and continue up the trail. The couloir is on the north and northeast side of the butte. The full climb is about 7 miles round trip with over 3000 ft of gain.",
+  "numbersUsed": [
+   "90",
+   "42",
+   "7",
+   "3000"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.mountainproject.com/area/122000104/mcclellan-butte",
+   "https://www.mountainproject.com/route/122000298/north-couloir",
+   "https://www.wta.org/go-hiking/hikes/mcclellan-butte"
+  ],
+  "note": "hand: no opened page describes the couloir base; summit-hike totals are not a walk-in"
+ },
+ {
+  "id": "wa_source_lake_ice",
+  "verdict": "corrected",
+  "trailhead": "Alpental upper parking lot",
+  "trailheadDirection": "From Interstate 90 exit 52, turn onto State Route 906, then continue onto Erste Strasse (Alpental Access Road) and follow it for 1.1 miles to a left turn into the Alpental lots.",
+  "approach": "From the Alpental upper parking lot, follow the well-worn trail to the small lake in the basin just east of Bryant Peak. The ice forms on the cliffs around the northwest side of the lake.",
+  "numbersUsed": [
+   "90",
+   "52",
+   "906",
+   "1.1"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.mountainproject.com/area/120246561/source-lake-ice",
+   "https://summitatsnoqualmie.com/directions"
+  ],
+  "note": "Dropped the unsupported claim that the upper lot is 'above the base area' and that the lodge lot is it; name left unchanged since the upper lot differs from the Snow Lake lot. | hand: snippet-only wording removed | hand: reworded a copied run"
+ },
+ {
+  "id": "wa_stellar_falls",
+  "verdict": "corrected",
+  "trailhead": "Alpental parking lot",
+  "trailheadDirection": "From Interstate 90 exit 52, turn onto State Route 906, then continue onto Erste Strasse (Alpental Access Road) and follow it for 1.1 miles to a left turn into the lot just below the main lodges.",
+  "approach": "From the Alpental parking lot, climb the slope on the left side of the chairlift, then drop down easy snow to the falls, which can be seen from the lift. In winter the falls are inside the ski area, so check its rules for uphill travel first.",
+  "numbersUsed": [
+   "90",
+   "52",
+   "906",
+   "1.1"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.mountainproject.com/route/125645538/butter-chicken-party",
+   "https://summitatsnoqualmie.com/directions"
+  ],
+  "note": "Reworded to avoid copied run; chair is an Alpental lift (confirmed by search, not by the route page); parking caveat added. | hand: snippet-only wording removed"
+ },
+ {
+  "id": "wa_stuart_lake_basin",
+  "verdict": "corrected",
+  "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+  "trailheadDirection": "From Leavenworth, follow Icicle Road about 8.5 miles and turn left onto Eightmile Road (Forest Road 7600); bear right onto Forest Road 7601 and go roughly 4 miles to the trailhead. A day-use fee of $5 per vehicle applies. Forest Road 7601 is closed to vehicles every winter.",
+  "approach": "From the Stuart Lake Trailhead (Trail #1599), follow the trail to the lake and continue to its west end. Push on through forest for about a quarter mile to a big open meadow, where the ice lines sit on your left below the north face of the mountain. In winter, with the road shut, the walk starts back at the closure and is much longer.",
+  "numbersUsed": [
+   "8.5",
+   "7600",
+   "7601",
+   "4",
+   "5",
+   "1599"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.mountainproject.com/area/118606552/stuart-lake-basin",
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead"
+  ],
+  "note": "Used existing trailhead name; removed the '8 miles each way from the Icicle Road gate' (unsupported: the FS closure is on road 7601, not the start of Icicle Road); rewrote to avoid a 10-word run copied from the FS page. | hand: reworded a copied run"
+ },
+ {
+  "id": "wa_the_gentlemen_s_club",
+  "verdict": "corrected",
+  "trailhead": "Fun Rocks parking lot",
+  "trailheadDirection": "Head northwest from the Mazama store on Lost River Road for 1.5 miles and pull into the big lot on the right-hand side. The lot is on private land that climbers may use by permission, so do not camp there.",
+  "approach": "From the Fun Rocks parking lot, follow the Spokane Gulch trail toward Mazama, bearing right at the base of Fun Rock. After the A-Wall the trail reaches a broad bench high above the valley. Just before the trail swings east, leave it and go north toward a patch of trees; a faint track over some rotten logs leads to the crag.",
+  "numbersUsed": [
+   "1.5"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.mountainproject.com/area/126915111/the-gentlemens-club",
+   "https://www.mountainproject.com/area/113680583/fun-phun-rocks"
+  ],
+  "note": "Original copied 13-word and 8-word runs from the two pages; rewritten. Facts unchanged. 'Do not camp' from the parent page. | hand: reworded a copied run"
+ },
+ {
+  "id": "wa_umtanum_creek_falls_ice",
+  "verdict": "confirmed",
+  "trailhead": "Umtanum Creek Falls trailhead",
+  "trailheadDirection": "From South Canyon Road in Ellensburg, drive Umtanum Road about 10 miles southwest to the trailhead.",
+  "approach": "From the Umtanum Creek Falls trailhead, walk alongside the creek to the falls, a drop in a forested gorge ringed by basalt columns.",
+  "numbersUsed": [
+   "10"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.mountainproject.com/area/123659107/umtanum-creek-falls-ice"
+  ],
+  "note": "Single page; no pass or winter road info found."
+ },
+ {
+  "id": "wa_waterfall_ice_and_mixed_routes_in_the_sw_cascades",
+  "verdict": "rejected",
+  "trailhead": "",
+  "trailheadDirection": "",
+  "approach": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.mountainproject.com/route/106709341/skookum-falls",
+   "https://www.mountainproject.com/area/114351291/waterfall-ice-and-mixed-routes-in-the-sw-cascades"
+  ],
+  "note": "Area is a loose collection ('various approaches'); one waterfall's pullout would show on every route there. Skookum pullout is also only a route-page comment."
+ }
+]
