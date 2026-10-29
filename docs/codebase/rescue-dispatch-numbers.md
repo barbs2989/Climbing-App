@@ -143,6 +143,51 @@ Grass; Bernalillo, Taos, Doña Ana, Otero, Rio Arriba, San Miguel NM; Pennington
 non-emergency line is Rapid City Police's), Custer SD (state directory only); Llano, Brewster,
 El Paso TX, Burnet, Travis; Comanche, Kiowa OK.
 
+## The East and Midwest (checked 2026-10-28)
+
+| County | Number | Read on | Label on the page |
+|---|---|---|---|
+| Essex, NY | (518) 873-2116 | oes.essexcountyny.gov | Non-Emergency 24 Hour Line (the sheriff's own line is not staffed 24/7) |
+| Carbon, PA | (570) 325-9123 | carboncountypa.gov emergency-management phone numbers; communication_center | Communications Center (non-emergency) |
+| Monroe, PA | (570) 992-9911 | monroeco911.com (linked from monroecountypa.gov) | NON-EMERGENCY |
+| Warren, NJ | (908) 475-6309 | wcsheriffnj.gov/faqs | Non-emergency contact information |
+| Albemarle, VA | (434) 977-9041 | cua911.gov | Non Emergency? Dial |
+| Fairfax, VA | (703) 691-2131 | fairfaxcounty.gov/911/Calling-non-emergency | non-emergency phone number |
+| Scott, VA | (276) 386-9111 | scottcountyvirginiasheriff.com/contact; scottcountye911.com/contact | NON-EMERGENCY |
+| Powell, KY | (606) 663-4116 | powellcounty.ky.gov Powell Dispatch page | Powell County Dispatch Center |
+| Hamilton, TN | (423) 622-0022 | hcsheriff.gov/LawEnforcement | Non-Emergency number 24/7 |
+| Marion, TN | (423) 942-2525 | marioncountytnsheriff.info/contact-us | Non Emergency number (also 942-3004) |
+| Henderson, NC | (828) 697-4911 | sheriffhendersoncounty.com/communications | Communications Center (emergency and non-emergency calls) |
+| Macon, NC | (828) 524-2020 | maconnc.org 911-communications and sheriffs-office | Non-Emergency Number |
+| Rutherford, NC | (828) 287-6247 | rutherfordcountync.gov sheriff | Non-emergency (the Communications Center's unlabelled 286-2911 may be the 24-hour line) |
+| Greenville, SC | (864) 271-5210 | gcso.org | NON-EMERGENCY |
+| Pickens, SC | (864) 898-5500 | pickenssheriff.com contact | Non-emergency |
+| DeKalb, AL | (256) 845-3801 | dekalbcountysheriff.org | Non-Emergency (24 hours) |
+| Jackson, AL | (256) 574-2610 | jacksoncountysheriffal.org/administration | Non-Emergency (24 hours) |
+| Pope, AR | (479) 968-0911 | popecountyar.gov Pope County 9-1-1 | Non-emergency dispatch |
+| Cook, MN | (218) 387-3030 | cookcountymn.gov sheriff | report to Cook County Dispatch by our admin line |
+| Iron, MO | (573) 546-4000 | icsomo.org/contact | Dispatch (24 hours) |
+
+Not added: Ulster, Westchester; Carroll NH (603-539-2284 is a strong candidate; the page would
+not load), Coos, Grafton; Chittenden, Lamoille; Hancock ME, Piscataquis (564-3304 appears only
+on town pages); Berkshire, Middlesex MA; Connecticut, which has no county agencies; Luzerne;
+Sussex NJ; Giles VA; Wolfe, Lee KY; Franklin TN; Burke, Stokes, Transylvania, Watauga,
+McDowell NC; Walker, Dade, Rabun GA; Madison AL; Newton, Searcy, Pulaski AR; Lake MN, Nicollet;
+Sauk WI; Johnson IL (658-8264 appears on a City of Vienna page only), Union IL, Jackson IL;
+St. Francois MO.
+
+## West Virginia (checked 2026-10-28)
+
+All 55 counties come from the West Virginia Emergency Management Division's *Local 911
+Non-Emergency 24-7 Contact Information* (emd.wv.gov/media/23/local-non-emergency-contacts, PDF
+dated December 19, 2025). It is a state agency's list of each county's 24/7 non-emergency line,
+which is exactly this purpose. Where a county lists two numbers (Clay, Kanawha), the first is
+used. Climbing counties covered: Fayette (New River Gorge) 304-574-3590, Pendleton (Seneca
+Rocks) 304-358-3271, Monongalia (Coopers Rock) 304-599-6382, Nicholas (Summersville Lake)
+304-872-4911, Tucker 304-478-2187, Grant 304-257-2140, Randolph 304-636-2000, Raleigh
+304-255-0911. **Other states may publish the same kind of list**, and it is the fastest way to
+cover a whole state.
+
 ## Washington (checked 2026-10-28)
 
 | County | Number | Read on | Label on the page |
