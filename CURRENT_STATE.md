@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **Home greeting appears once, already named** (owner note, 4th pass on the name flash): on a device that has not yet remembered your name, the greeting used to show your sign-up name ("Nathan") until your profile loaded, then your profile name ("Nate"). It now stays invisible until the profile arrives. → [profile-and-settings](docs/features/profile-and-settings.md)
 - **Open in navigation app opens AT the climb** (owner note): Gaia GPS's *Open app →* opens the installed app at the route (it used to go to Gaia's download page); CalTopo, Google Maps and Apple Maps all land on the route's map area; AllTrails/USGS (home-page-only links) dropped (`lib/navLinks.js`). See `docs/features/route-page.md`.
 - **Forecast at key points: less text under each day** (owner note, 2026-10-28): the NWS and MET comparison rows print only on a day that service differs by 6° or more, temperatures only; the hourly "At/During" explainer and the "Cross-check several forecasts" caption are gone. See `docs/features/conditions.md`.
 - **Share a crew by link** (0381, owner, Gora audit 2026-10-28): a crew card has *Copy share link*; the link opens Join a crew with the crew pinned on top, showing where, when, how full and first names only, with *Ask to join* (or *Sign up to join*). The organiser can turn the link off, and it stops working after the climb date. See `docs/features/partners.md`.
