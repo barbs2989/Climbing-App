@@ -507,6 +507,21 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         matching a different place ("The Lookout (main wall and shield)" vs Castleview's Main Wall).
     - **Still cannot see** a one-name list, a list split by words other than , / & + "and", or a copy
       whose listed places sit farther away than the grandparent.
+  - **SIBLINGS refused at insert/move (0385, 2026-10-28, same owner note)**: #2835 dissolved MP's ice/mixed
+    buckets by moving their crags up a level, which filed two places twice under ONE parent — Squamish's
+    "The Smoke Bluffs Ice" beside "The Smoke Bluffs", Durango's "Pine River" (ice) beside "Pine River Area".
+    The second pass caught both the next day; the trigger did not, because one side of each had NO coordinate
+    and 0216/0218 then compare peaks only (the Cascade River bucket had none either). `refuse_duplicate_area`
+    now first refuses a child whose `catalog_sibling_key` (search_canon minus the/area/areas/climbing/climbs/ice
+    — KEEPING mount/peak/crag, so Mount Wilson / Wilson Peak, Baker Crags / Mount Baker, Index / Mount Index
+    and Crested Butte / Mt. Crested Butte, all LISTED as different places, still go in) equals a sibling's.
+    Measured over the live catalog before the fold: exactly 3 sibling pairs on that key — the 2 copies and
+    Illinois' Jump For Jesus pair already LISTED. Proven live in a rolled-back run: re-adding "Pine River"
+    under Durango and "The Smoke Bluffs (Ice)" under Squamish refused; "Smoke Bluffs Bouldering", a bare
+    "Ice" and an unrelated name went in. The fold: the 3 Smoke Bluffs ice climbs onto the crags their MP
+    pages name (Frozen Zombie, Alice → Wall Area; Bughouse Heights Ice → Bughouse Heights), the copy deleted
+    after a 0-count of every referencing table; the Pine River ice leaf moved UNDER Pine River Area as
+    "Pine River Trail" (routes must sit on a leaf, and the two climbs are 3 and 9 miles up that trail).
     - **`--areas-file <dump>`** runs the passes on a saved `{rows:[…]}` dump instead of the live read, to
       prove a pass against the catalog BEFORE a fold. Include `lat,lng` in the dump, or the first pass
       sees no coordinates and goes quiet.
