@@ -522,6 +522,11 @@ console.log("check:conditions-score");
   const sunPanel = fs.readFileSync(path.join(ROOT, "src/components/AspectSunPanel.tsx"), "utf8");
   if (/route\._dbArea\.aspect/.test(sunPanel) && !/sunReadout\(route\.aspect/.test(sunPanel)) ok("the Aspect & sun card reads the crag's wall aspect as well as the route's, like the score does");
   else fail("the Aspect & sun card reads only the route's own aspect, so a crag whose facing is on its area says none is recorded under a score that used one");
+  // A WET MORNING UNDER A GOOD DAY (owner's note, 2026-10-28): red morning tiles beside a Good day read as a contradiction
+  // unless the card says the day is its best 3 hours and the rock is wet until a stated hour; each tile names its dryness.
+  const rd2 = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  if (/data-wet-until="1"[^\n]{0,200}"Rock likely wet until "\+clockHr\(wetTill\.hr\)/.test(rd2) && /", rock about "\+Math\.round\(x\.dryFrac\*100\)\+"% dry"/.test(rd2)) ok("a day with wet morning hours says when the rock dries, and each wet hour tile says how dry it is");
+  else fail("the wet-morning line or the hour tiles' dryness label is gone: red tiles under a Good day read as a contradiction again");
 }
 function sN0() { return scoreForecast(fixture(), WALL, null, NOW); }
 
