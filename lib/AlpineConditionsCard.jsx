@@ -59,11 +59,13 @@ function windowLabel(fc, a) {
   if (a.end == null) return a.start != null && a.start > now ? "from " + st(a.start) : "in effect";
   return (a.start != null && a.start > now ? "from " + st(a.start) + " " : "") + "until " + st(a.end);
 }
+// "1 PM–4 PM": a rain window at whole hours, in the forecast point's own clock.
+const hrSpan = (fc, from, to) => clockOf(fc, from).replace(":00", "") + "–" + clockOf(fc, to).replace(":00", "");
 // Round a start DOWN to the quarter hour: rounding up would start later than the arithmetic says.
 const floorQ = (s) => Math.floor(s / 900) * 900;
 const hrs = (h) => (Math.round(h * 2) / 2).toFixed(1).replace(/\.0$/, "") + " h";
 
-export function flagText(f) {
+export function flagText(f, fc) {
   const v = f.v || {};
   switch (f.key) {
     case "ice-warm-night": return "No freeze last night (low " + uTemp(v.low) + ") — warm nights destabilise ice most";
@@ -81,7 +83,7 @@ export function flagText(f) {
     case "fl-above": return "Freezing level " + uElev(Math.round(v.above / 100) * 100) + " above the summit by afternoon — expect rock and ice fall";
     case "verglas": return "Wet, then below freezing on the route — ice or snow on the holds";
     case "wet-rock": return uPrecip(v.inch) + " of rain in the last two days — wet rock climbs harder than its grade";
-    case "showers": return v.pct + "% chance of rain — retreating or rappelling wet is where things go wrong";
+    case "showers": return v.pct + "% chance of rain" + (v.inch == null ? "" : v.hrs ? ", about " + uPrecip(v.inch) + " over " + v.hrs + " h" + (fc && v.from != null ? " (" + hrSpan(fc, v.from, v.to) + ")" : "") : ", though no measurable rain is forecast in daylight") + " — retreating or rappelling wet is where things go wrong";
     case "new-snow": return uSnowfall(v.inch) + " of new snow at the summit" + (v.scramble ? " — a snowed-up scramble is a winter climb" : "");
     case "wind": return "Summit gusts to " + uWind(v.gust) + " in daylight";
     case "alert": return "Weather alert: " + v.event + " (" + String(v.severity).toLowerCase() + " severity), " + v.when + " — covers a whole forecast zone, not just this route";
@@ -353,7 +355,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     <DayHead title={"CONDITIONS · " + KIND_LABEL[kind].toUpperCase()} dayLabel={dayName(day, di)} nav={nav} />
     {startEl || sunEl ? <div style={{ background: C.surface, borderRadius: 10, padding: "10px 12px", marginBottom: 10 }}>{startEl}{pubStart ? <div style={{ fontSize: 12, color: C.text, lineHeight: 1.5, marginTop: 6 }}><b>{"This route’s usual start: "}</b>{pubStart}</div> : null}{sunEl}</div> : null}
     <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 10 }}>
-      {day.flags.length ? day.flags.map(function (f, i) { const col = f.level === "warn" ? C.red : C.amber; return <div key={f.key + i} style={{ display: "flex", gap: 8, alignItems: "flex-start", fontSize: 12.5, color: C.text, lineHeight: 1.45 }}><span aria-hidden="true" style={{ flexShrink: 0, marginTop: 5, width: 8, height: 8, borderRadius: "50%", background: col }} /><span><b style={{ color: col }}>{f.level === "warn" ? "Warning: " : "Caution: "}</b>{flagText(f)}</span></div>; })
+      {day.flags.length ? day.flags.map(function (f, i) { const col = f.level === "warn" ? C.red : C.amber; return <div key={f.key + i} style={{ display: "flex", gap: 8, alignItems: "flex-start", fontSize: 12.5, color: C.text, lineHeight: 1.45 }}><span aria-hidden="true" style={{ flexShrink: 0, marginTop: 5, width: 8, height: 8, borderRadius: "50%", background: col }} /><span><b style={{ color: col }}>{f.level === "warn" ? "Warning: " : "Caution: "}</b>{flagText(f, fc)}</span></div>; })
         : <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>Nothing in the forecast flags this day.</div>}
     </div>
     <RangeLine route={route} sum={day.sum} />
@@ -407,11 +409,15 @@ function DayByDay({ days, di, pick, dayName, nWarn, nCaution, fc, legs, startOn 
       const gust = s.gust != null ? uWind(s.gust) : "—";
       const start = startOn && !legs.floor && d.start && d.daysEarly < 2 ? (legs.fromCamp ? "Leave camp by " : "Start by ") + clockOf(fc, floorQ(d.start.at)) + (d.daysEarly === 1 ? " the night before" : "") : null;
       const extra = [s.snow != null ? uSnowfall(s.snow) + " new snow" : null, start].filter(Boolean).join(" · ");
-      return <button key={d.date} onClick={function () { pick(i); }} aria-pressed={on} aria-label={dayName(d, i) + ", " + flagWord + ". High / low " + temp + ". Freezing level " + fl + ". Gusts " + gust + ". " + extra + "."} style={{ display: "block", width: "100%", textAlign: "left", padding: "11px 14px", margin: 0, border: "none", borderTop: i ? "1px solid " + C.border : "none", borderRadius: 0, background: on ? C.blueBg : "transparent", boxShadow: on ? "inset 3px 0 0 " + C.blue : "none", color: C.text, cursor: "pointer", font: "inherit" }}>
+      // The AMOUNT, its hours and its window, with the chance beneath -- never the chance alone (owner's note, 2026-10-28).
+      const rain = s.precip == null ? "—" : s.precip === 0 ? "None" : uPrecip(s.precip);
+      const rainSub = [s.precipHrs ? s.precipHrs + " h" + (s.precipFrom != null ? ", " + hrSpan(fc, s.precipFrom, s.precipTo) : "") : null, s.popMax ? "up to " + Math.round(s.popMax) + "% chance" : null, s.snow ? "snow melted in" : null].filter(Boolean).join(" · ");
+      return <button key={d.date} onClick={function () { pick(i); }} aria-pressed={on} aria-label={dayName(d, i) + ", " + flagWord + ". High / low " + temp + ". Freezing level " + fl + ". Gusts " + gust + ". " + (s.snow ? "Precipitation " : "Rain ") + rain + (rainSub ? ", " + rainSub : "") + ". " + extra + "."} style={{ display: "block", width: "100%", textAlign: "left", padding: "11px 14px", margin: 0, border: "none", borderTop: i ? "1px solid " + C.border : "none", borderRadius: 0, background: on ? C.blueBg : "transparent", boxShadow: on ? "inset 3px 0 0 " + C.blue : "none", color: C.text, cursor: "pointer", font: "inherit" }}>
         <span style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 6 }}><span style={{ fontSize: 12.5, fontWeight: 800 }}>{dayName(d, i)}</span><span style={{ fontSize: 11.5, color: C.textMuted }}>{date(d)}</span><span style={{ fontSize: 12, fontWeight: 700, color: w ? C.red : c ? C.amber : C.textSub }}>{flagWord}</span></span>
-        <span style={{ display: "grid", gridTemplateColumns: "repeat(3,minmax(0,1fr))", gap: 5 }}>
+        <span style={{ display: "grid", gridTemplateColumns: "repeat(2,minmax(0,1fr))", gap: 5 }}>
           <span style={cell}><span style={lbl}>High / low</span><span style={val}>{temp}</span></span>
           <span style={cell}><span style={lbl}>Freezing level</span><span style={val}>{fl}</span></span>
+          <span style={cell}><span style={lbl}>{s.snow ? "Precipitation" : "Rain"}</span><span style={Object.assign({}, val, { color: s.precip > 0 ? C.blue : C.text })}>{rain}</span>{rainSub ? <span style={{ display: "block", fontSize: 10.5, color: C.textMuted, lineHeight: 1.35 }}>{rainSub}</span> : null}</span>
           <span style={cell}><span style={lbl}>Gusts</span><span style={val}>{gust}</span></span>
         </span>
         <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 4 }}>{extra}</span>

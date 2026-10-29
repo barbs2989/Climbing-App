@@ -200,6 +200,20 @@ eq("an inch or more of new snow on a scramble is flagged (it becomes a winter cl
 console.log("\n4. ALPINE ROCK — showers and storms anchor the start of the DESCENT");
 const shw = run(forecast((d, h) => (d === T && h >= 12 && h < 16 ? { pp: 50, fl: 12000 } : { fl: 12000 })), { kind: "alpinerock", terrain: { snow: "no" }, highFt: 8000, legs: LEGS });
 eq("a 50% afternoon chance of rain is a showers caution", keys(shw).includes("showers:caution"), true);
+// THE AMOUNT, NOT ONLY THE CHANCE (owner's note, 2026-10-28: "it usually says a percentage, but not an expected amount of rain").
+{
+  const wetFc = forecast((d, h) => (d === T && h >= 13 && h < 16 ? { pp: 60, rain: 0.04, fl: 12000 } : { fl: 12000 }));
+  const fs1 = run(wetFc, { kind: "alpinerock", terrain: { snow: "no" }, highFt: 8000, legs: LEGS }).flags.find((f) => f.key === "showers");
+  eq("the showers flag carries the day's AMOUNT, its wet hours and their window", fs1 && [Math.round(fs1.v.inch * 100) / 100, fs1.v.hrs, fs1.v.to - fs1.v.from], [0.12, 3, 3 * 3600]);
+  const txt = fs1 ? A.flagText(fs1, wetFc) : "";
+  eq("...and says it in words: chance, amount, hours and window", /^60% chance of rain, about 0\.12" over 3 h \(\d+ (AM|PM)–\d+ (AM|PM)\)/.test(txt), true);
+  const dry = run(forecast((d, h) => (d === T && h >= 12 && h < 16 ? { pp: 50, fl: 12000 } : { fl: 12000 })), { kind: "alpinerock", terrain: { snow: "no" }, highFt: 8000, legs: LEGS }).flags.find((f) => f.key === "showers");
+  eq("...a chance with no measurable rain says so instead of an amount", dry ? /no measurable rain/.test(A.flagText(dry, wetFc)) : false, true);
+  const days = A.localDays(wetFc), sm = A.daySummary(wetFc, days[T]);
+  eq("the day summary carries the total, wet hours, window and peak chance DAY BY DAY prints", [Math.round(sm.precip * 100) / 100, sm.precipHrs, sm.precipTo - sm.precipFrom, sm.popMax], [0.12, 3, 3 * 3600, 60]);
+  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  eq("DAY BY DAY prints the rain amount with its hours, window and chance beneath", /<span style=\{lbl\}>\{s\.snow \? "Precipitation" : "Rain"\}<\/span>/.test(card) && /s\.popMax \? "up to " \+ Math\.round\(s\.popMax\) \+ "% chance"/.test(card), true);
+}
 const rstorm = run(forecast((d, h) => (d === T && h === 15 ? { code: 95, fl: 12000 } : { fl: 12000 })), { kind: "alpinerock", terrain: { snow: "no" }, highFt: 8000, legs: LEGS });
 eq("a storm day's start is anchored to starting DOWN, not to the summit", rstorm.start && rstorm.start.why, "storm-descent");
 
