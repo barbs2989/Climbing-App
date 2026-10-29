@@ -2,6 +2,8 @@
 //
 //   node scripts/manual-test-accounts.mjs create   # make Avery, Blake, Casey and Drew + their data
 //   node scripts/manual-test-accounts.mjs status   # are they still there? (row counts)
+//   node scripts/manual-test-accounts.mjs link you@example.com   # show them in YOUR OWN account too
+//   node scripts/manual-test-accounts.mjs unlink you@example.com # take them back out of it
 //   node scripts/manual-test-accounts.mjs delete   # remove every row this script made, then the accounts
 //
 // Sign in as AVERY (the account the checklist is written for). The sign-in details are written to
@@ -29,6 +31,9 @@ const DOMAIN = "climbmatch-manual.invalid";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const STATE = process.env.MANUAL_ACCOUNTS_FILE || join(ROOT, "manual-test-accounts.local");
 const KEY = requireServiceKey();
+// Upcoming crews and events are dated from TODAY: fixed dates went stale within weeks, and a crew
+// whose days have passed reads as a past trip, not the plan the checklist asks you to agree to.
+const day = (n) => new Date(Date.now() + n * 86400000).toISOString().slice(0, 10);
 const SH = headers(KEY);
 
 const R = {
@@ -52,14 +57,27 @@ const IMG = {
   summit: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=400&h=280&fit=crop",
 };
 
-async function fetchRetry(url, opts, tries = 4) {
-  let last;
-  for (let i = 0; i < tries; i++) {
-    try { return await fetch(url, opts); } catch (e) { last = e; await new Promise((r) => setTimeout(r, 400 * (i + 1))); }
+// A 30 s timeout; on a timeout, network error or 5xx, a minute's back-off and ONE retry, then stop
+// (the throttle rule in scripts/lib/supabase-env.mjs -- never retry fast into a struggling database).
+async function fetchRetry(url, opts) {
+  for (let i = 0; i < 2; i++) {
+    try {
+      const r = await fetch(url, { ...opts, signal: AbortSignal.timeout(30000) });
+      if (r.status < 500 || i === 1) return r;
+    } catch (e) { if (i === 1) throw new Error(`database not answering (${e.message}) — stopped; try again later`); }
+    console.error("  slow or failing database — backing off a minute before one retry");
+    await new Promise((r) => setTimeout(r, 60000));
   }
-  throw last;
 }
+// The owner's throttle rule: writes to production are paced (SUPABASE_WRITE_PACE_MS, default 1 s).
+const WRITE_PACE_MS = Number(process.env.SUPABASE_WRITE_PACE_MS || 1000);
+let lastWriteAt = 0;
 async function call(base, path, opts = {}) {
+  if (opts.method && opts.method !== "GET") {
+    const wait = lastWriteAt + WRITE_PACE_MS - Date.now();
+    if (wait > 0) await new Promise((r) => setTimeout(r, wait));
+    lastWriteAt = Date.now();
+  }
   const r = await fetchRetry(`${SUPABASE_URL}/${base}/${path}`, { ...opts, headers: { ...SH, "Content-Type": "application/json", ...(opts.headers || {}) } });
   const text = await r.text();
   let body = null; try { body = text ? JSON.parse(text) : null; } catch { body = text; }
@@ -178,19 +196,19 @@ async function create() {
 
     // ── Crews ──
     const crew1 = await insert("crews", {
-      created_by: A.id, route_id: R.coleman, dates: ["2026-10-17", "2026-10-18"], meet_place: "Heliotrope Ridge Trailhead", meet_time: "05:00", cap: 4,
-      float_plan: { vehicle: "Grey Subaru Outback (test)", lot: "Heliotrope Ridge TH", depart: "2026-10-17 05:00", ret: "2026-10-18 18:00", contact: "Jordan 555-0100 (test)", notes: "Turnaround 1 pm. TEST DATA." },
+      created_by: A.id, route_id: R.coleman, dates: [day(18), day(19)], meet_place: "Heliotrope Ridge Trailhead", meet_time: "05:00", cap: 4,
+      float_plan: { vehicle: "Grey Subaru Outback (test)", lot: "Heliotrope Ridge TH", depart: `${day(18)} 05:00`, ret: `${day(19)} 18:00`, contact: "Jordan 555-0100 (test)", notes: "Turnaround 1 pm. TEST DATA." },
     });
     await insert("crew_members", { crew_id: crew1.id, user_id: A.id, status: "confirmed", invited_by: A.id, gear_claims: ["Rope", "Pickets"] }, ["crew_id", "user_id"]);
     await insert("crew_members", { crew_id: crew1.id, user_id: B.id, status: "confirmed", invited_by: A.id, gear_claims: ["Stove"] }, ["crew_id", "user_id"]);
     await insert("crew_members", { crew_id: crew1.id, user_id: C.id, status: "pending", invited_by: C.id, note: "Room for one more? I can bring a second rope." }, ["crew_id", "user_id"]);
-    await insert("crew_day_acks", { crew_id: crew1.id, user_id: A.id, date: "2026-10-17" }, ["crew_id", "user_id", "date"]);
-    await insert("crew_day_acks", { crew_id: crew1.id, user_id: B.id, date: "2026-10-17" }, ["crew_id", "user_id", "date"]);
-    await insert("crews_messages", { crew_id: crew1.id, user_id: A.id, body: "Saturday works for both of us — locking in the 17th.", created_at: "2026-09-29T17:00:00Z" });
+    await insert("crew_day_acks", { crew_id: crew1.id, user_id: A.id, date: day(18) }, ["crew_id", "user_id", "date"]);
+    await insert("crew_day_acks", { crew_id: crew1.id, user_id: B.id, date: day(18) }, ["crew_id", "user_id", "date"]);
+    await insert("crews_messages", { crew_id: crew1.id, user_id: A.id, body: "The first day works for both of us — locking it in.", created_at: "2026-09-29T17:00:00Z" });
     await insert("crews_messages", { crew_id: crew1.id, user_id: B.id, body: "Forecast looks clear. I'll bring the stove and fuel.", created_at: "2026-09-29T17:30:00Z" });
     await insert("crews_messages", { crew_id: crew1.id, user_id: B.id, body: "Casey asked to join — your call, Avery." });
 
-    const crew2 = await insert("crews", { created_by: B.id, route_id: R.stuart, dates: ["2026-10-24", "2026-10-25"], meet_place: "Stuart Lake Trailhead", meet_time: "04:30", cap: 3 });
+    const crew2 = await insert("crews", { created_by: B.id, route_id: R.stuart, dates: [day(25), day(26)], meet_place: "Stuart Lake Trailhead", meet_time: "04:30", cap: 3 });
     await insert("crew_members", { crew_id: crew2.id, user_id: B.id, status: "confirmed", invited_by: B.id }, ["crew_id", "user_id"]);
     await insert("crew_members", { crew_id: crew2.id, user_id: A.id, status: "invited", invited_by: B.id, note: "Want to lead the upper ridge?" }, ["crew_id", "user_id"]);
 
@@ -207,14 +225,14 @@ async function create() {
     const p2 = await insert("group_posts", { group_id: g1.id, author: B.id, body: "Coleman–Deming was in great shape on 9/14 — bergschrund easy to pass on climber's left.", photos: [IMG.glacier], photo_alts: { [IMG.glacier]: "Glacier on the Coleman–Deming (test photo)" } });
     await insert("group_post_reactions", { post_id: p2.id, user_id: A.id, reaction: "🔥" }, ["post_id", "user_id"]);
     await insert("comments", { target_id: "gp_" + p2.id, user_id: A.id, text: "Thanks — that's the beta I needed." });
-    const ev = await insert("group_events", { group_id: g1.id, host: A.id, title: "Crevasse rescue practice (TEST)", event_date: "2026-10-25", event_time: "9:00 am", location: "Mount Baker — Heliotrope Ridge", descr: "Bring a harness, two prusiks and a pulley.", capacity: 8 });
+    const ev = await insert("group_events", { group_id: g1.id, host: A.id, title: "Crevasse rescue practice (TEST)", event_date: day(11), event_time: "9:00 am", location: "Mount Baker — Heliotrope Ridge", descr: "Bring a harness, two prusiks and a pulley.", capacity: 8 });
     await insert("group_event_rsvps", { event_id: ev.id, user_id: B.id }, ["event_id", "user_id"]);
     void p1;
 
     const g2 = await insert("groups", { name: "Seattle Ice (TEST group)", created_by: B.id, blurb: "Private test group.", location: "Seattle, WA", disciplines: ["ice"], policy: "approval", event_policy: "mods", visibility: "private" });
     made.push({ table: "group_members", filter: `group_id=eq.${g2.id}` });
     await insert("group_members", { group_id: g2.id, user_id: A.id, role: "member", status: "invited" });
-    const ev2 = await insert("group_events", { group_id: g2.id, host: B.id, title: "Ice clinic day (TEST)", event_date: "2026-12-12", event_time: "8:00 am", location: "Alpental", descr: "Test event.", capacity: 0 });
+    const ev2 = await insert("group_events", { group_id: g2.id, host: B.id, title: "Ice clinic day (TEST)", event_date: day(45), event_time: "8:00 am", location: "Alpental", descr: "Test event.", capacity: 0 });
     await insert("group_event_invites", { event_id: ev2.id, invitee: A.id, invited_by: B.id }, ["event_id", "invitee"]);
 
     // ── Climb logs (dates in the past; tick types capitalised; stars null = conditions report) ──
@@ -292,7 +310,7 @@ async function create() {
 
     // ── A weekly repeating event: one row per week, one shared series_id, the host RSVP'd to each ──
     const series = randomUUID();
-    for (const d of ["2026-10-06", "2026-10-13", "2026-10-20", "2026-10-27"]) {
+    for (const d of [day(-14), day(-7), day(0), day(7), day(14)]) {
       const e = await insert("group_events", { group_id: g1.id, host: A.id, title: "Tuesday gym night (TEST)", event_date: d, event_time: "6:30 pm", location: "Vital Bellingham", descr: "Weekly training session.", capacity: 0, repeat: "weekly", series_id: series });
       await insert("group_event_rsvps", { event_id: e.id, user_id: A.id }, ["event_id", "user_id"]);
     }
@@ -353,11 +371,102 @@ async function remove() {
   }
 }
 
+// ── link <email>: put the example climbers into a REAL account's own screens ──
+// So the owner, signed in as themself, sees real database examples instead of the seed ones a
+// guest sees: a friend and a friend request, messages, a crew they are in and a crew invite, a group
+// and a group invite, an event invite, a vouch, and a tagged log to confirm. Every row is AUTHORED
+// by an example account (or is a membership the example account made); nothing is written as the
+// linked account -- no logs, no profile edits, no catches on its record. `unlink <email>` removes
+// exactly these rows; `delete` removes them too.
+async function userByEmail(email) {
+  const { status, body } = await auth("admin/users?per_page=1000");
+  if (status !== 200 || !Array.isArray(body?.users)) throw new Error(`could not list accounts (HTTP ${status}) — try again later.`);
+  const u = body.users.find((x) => (x.email || "").toLowerCase() === email.toLowerCase());
+  if (!u) throw new Error(`no account with the email ${email}`);
+  return u.id;
+}
+async function one(path) {
+  const { status, body } = await rest(path);
+  if (status !== 200 || !Array.isArray(body) || body.length !== 1) throw new Error(`expected one row for ${path} (${status}, ${Array.isArray(body) ? body.length : "?"} rows) — run create first`);
+  return body[0];
+}
+async function link(email) {
+  if (!email) throw new Error("usage: link <email of the account to show the examples to>");
+  if (!existsSync(STATE)) throw new Error(`no ${STATE} — run create first`);
+  const st = JSON.parse(readFileSync(STATE, "utf8"));
+  const O = await userByEmail(email);
+  if ((st.linked || []).some((l) => l.id === O)) throw new Error(`${email} is already linked — run unlink first`);
+  if (st.accounts.some((a) => a.id === O)) throw new Error(`${email} is one of the example accounts`);
+  const acct = (tag) => { const a = st.accounts.find((x) => x.email.startsWith(tag + "@")); if (!a) throw new Error(`example account ${tag} missing — run create`); return a; };
+  const A = acct("avery"), B = acct("blake"), C = acct("casey");
+  made.length = 0;
+  const save = () => {
+    const rest0 = (st.linked || []).filter((l) => l.id !== O);
+    st.linked = rest0.concat({ id: O, rows: made.slice() });
+    st.rows = (st.rows || []).filter((r) => !made.some((m) => m.table === r.table && m.filter === r.filter)).concat(made);
+    writeFileSync(STATE, JSON.stringify(st, null, 2) + "\n", { mode: 0o600 });
+  };
+  try {
+    const now = new Date().toISOString();
+    // Friends: Blake is a friend; Casey has sent a request to accept or decline.
+    await insert("connections", { requester: B.id, addressee: O, status: "accepted", responded_at: now });
+    await insert("connections", { requester: C.id, addressee: O, status: "pending" });
+    // Messages from Blake, the last one unread.
+    await insert("messages", { sender_id: B.id, recipient_id: O, body: "Hi! I'm Blake, an example climber (TEST account). Reply here to check messages reach me.", read: true, created_at: new Date(Date.now() - 86400000).toISOString() });
+    await insert("messages", { sender_id: B.id, recipient_id: O, body: "I've put you in a crew for the North Ridge — open it from Crews. (TEST)", read: false });
+    // A crew you are in (Blake's): two proposed days, Blake has picked the first -- pick it too and the crew is Ready.
+    const cr = await insert("crews", { created_by: B.id, route_id: R.bakerNR, dates: [day(32), day(33)], meet_place: "Heliotrope Ridge Trailhead", meet_time: "05:00", cap: 4 });
+    await insert("crew_members", { crew_id: cr.id, user_id: B.id, status: "confirmed", invited_by: B.id, gear_claims: ["Rope"] }, ["crew_id", "user_id"]);
+    await insert("crew_members", { crew_id: cr.id, user_id: O, status: "confirmed", invited_by: B.id }, ["crew_id", "user_id"]);
+    await insert("crew_day_acks", { crew_id: cr.id, user_id: B.id, date: day(32) }, ["crew_id", "user_id", "date"]);
+    await insert("crews_messages", { crew_id: cr.id, user_id: B.id, body: "The first day works for me — pick it too and we're set. (TEST)" });
+    // A crew invite (Casey's), waiting on your answer.
+    const ci = await insert("crews", { created_by: C.id, route_id: R.colchuck, dates: [day(40)], meet_place: "Stuart Lake Trailhead", meet_time: "04:00", cap: 3 });
+    await insert("crew_members", { crew_id: ci.id, user_id: C.id, status: "confirmed", invited_by: C.id }, ["crew_id", "user_id"]);
+    await insert("crew_members", { crew_id: ci.id, user_id: O, status: "invited", invited_by: C.id, note: "Want to come up the Colchuck Glacier? (TEST)" }, ["crew_id", "user_id"]);
+    // Groups: a member of Avery's public group, invited to Blake's private one, and to an event.
+    const g1 = await one(`groups?created_by=eq.${A.id}&visibility=eq.public&select=id`);
+    const g2 = await one(`groups?created_by=eq.${B.id}&visibility=eq.private&select=id`);
+    await insert("group_members", { group_id: g1.id, user_id: O, role: "member", status: "active" }, ["group_id", "user_id"]);
+    await insert("group_members", { group_id: g2.id, user_id: O, role: "member", status: "invited" }, ["group_id", "user_id"]);
+    const ev = await one(`group_events?group_id=eq.${g1.id}&series_id=is.null&select=id`);
+    await insert("group_event_invites", { event_id: ev.id, invitee: O, invited_by: A.id }, ["event_id", "invitee"]);
+    // A vouch from Blake, and Blake's log that tags you -- the confirm-this-climb prompt.
+    await insert("vouches", { from_id: B.id, to_id: O, reason: JSON.stringify({ route: "Coleman–Deming Glacier", ratings: { safety: 5, communication: 5, reliability: 4, preparation: 5, fitness: 4, teamwork: 5 }, skills: ["glacier"], text: "Example vouch from a TEST account.", wouldClimbAgain: true }) });
+    await insert("climb_logs", { user_id: B.id, route_id: R.coleman, discipline: "alpine", date_climbed: day(-20), tick_type: "Summit", stars: 4, partners: [O], trip_report_visibility: "public", notes: "Example trip report from a TEST account — it tags you as a partner, so you are asked to confirm it." });
+    save();
+    console.log(`Linked ${email}: ${made.length} example rows. Sign in as that account to see them.`);
+  } catch (e) {
+    save();
+    console.error("FAILED part-way: " + e.message);
+    console.error(`What was made is recorded; run "unlink ${email}" to remove it.`);
+    process.exitCode = 1;
+  }
+}
+async function unlink(email) {
+  if (!email) throw new Error("usage: unlink <email>");
+  const st = JSON.parse(readFileSync(STATE, "utf8"));
+  const O = await userByEmail(email);
+  const l = (st.linked || []).find((x) => x.id === O);
+  if (!l) throw new Error(`${email} is not linked`);
+  let failed = 0;
+  for (const { table, filter } of [...l.rows].reverse()) {
+    const { status } = await rest(`${table}?${filter}`, { method: "DELETE" });
+    if (status >= 300) { failed++; console.error(`  could not delete ${table}?${filter} (${status})`); }
+  }
+  if (failed) { process.exitCode = 1; console.error(`${failed} delete(s) failed — run unlink again.`); return; }
+  st.rows = st.rows.filter((r) => !l.rows.some((m) => m.table === r.table && m.filter === r.filter));
+  st.linked = st.linked.filter((x) => x.id !== O);
+  writeFileSync(STATE, JSON.stringify(st, null, 2) + "\n", { mode: 0o600 });
+  console.log(`Unlinked ${email}: removed ${l.rows.length} rows.`);
+}
+
 async function status() {
   const st = existsSync(STATE) ? JSON.parse(readFileSync(STATE, "utf8")) : null;
   const users = await existingUsers();
   console.log(`${users.length} test account(s) in the database: ${users.map((u) => u.email).join(", ") || "none"}`);
   console.log(st ? `${st.rows.length} rows recorded in ${STATE} (created ${st.created})` : `no ${STATE}`);
+  if (st && (st.linked || []).length) console.log(`linked to ${st.linked.length} real account(s): ${st.linked.map((l) => l.id + " (" + l.rows.length + " rows)").join(", ")}`);
   if (st && st.accounts[0]) {
     const r = await fetchRetry(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, { method: "POST", headers: { apikey: anonKey(), "Content-Type": "application/json" }, body: JSON.stringify({ email: st.accounts[0].email, password: st.accounts[0].password }) });
     console.log(`Avery can sign in with the saved password: ${r.ok ? "yes" : "NO (" + r.status + ")"}`);
@@ -369,7 +478,9 @@ try {
   if (cmd === "create") await create();
   else if (cmd === "delete") await remove();
   else if (cmd === "status") await status();
-  else { console.log("usage: node scripts/manual-test-accounts.mjs create | status | delete"); process.exitCode = 2; }
+  else if (cmd === "link") await link(process.argv[3]);
+  else if (cmd === "unlink") await unlink(process.argv[3]);
+  else { console.log("usage: node scripts/manual-test-accounts.mjs create | status | link <email> | unlink <email> | delete"); process.exitCode = 2; }
 } catch (e) {
   console.error(e.message);
   process.exitCode = 1;
