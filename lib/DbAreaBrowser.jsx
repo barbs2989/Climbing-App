@@ -7,7 +7,7 @@
 // far too large to hold in memory. Rendered only when USE_DB is on.
 import { createContext, Fragment, useContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { fetchArea, useArea, useAreaContributions, useAreaClimbStats, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb, usePartnerAreaCount, usePartnersInArea, savePartnerArea, removePartnerArea, useMySavedSearches, createSavedSearchRow, deleteSavedSearchRow } from "./db";
+import { fetchArea, useArea, useAreaClassics, useAreaContributions, useAreaClimbStats, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb, usePartnerAreaCount, usePartnersInArea, savePartnerArea, removePartnerArea, useMySavedSearches, createSavedSearchRow, deleteSavedSearchRow } from "./db";
 import { useRecentRouteIds } from "./recent";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel, searchPlaces } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
@@ -754,6 +754,8 @@ function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSav
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
   const isLeaf = Array.isArray(children) && children.length === 0;
+  // Above a wall the classics come from the whole subtree (0390); a wall ranks its own loaded rows (areaClassics).
+  const classicsUp = useAreaClassics(area.id, isLeaf === false && chartable);
   const loading = lc || (isLeaf && lr);
   const error = ec || er;
   // dominant_discipline used to reach only the map pin's colour and icon, so the DB
@@ -815,6 +817,10 @@ function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSav
       {formation || (area.blurb && String(area.blurb).trim()) ? <AboutCard area={area} C={C} onEdit={editOn} /> : null}
       {formation ? <AreaFactsCard area={area} C={C} uElev={uElev} onEdit={editOn} /> : null}
       {chartable ? <ClimbsChart stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={DISCIPLINES.map(d => d[0]).filter(Boolean)} onDisc={onFinder}><GradeSpread stats={stats.data} C={C} /></ClimbsChart> : null}
+      {/* CLASSIC CLIMBS HERE above a wall: up to ten, each row naming the wall it is on. A failed read says so; an
+          area with no classics shows nothing rather than "none". */}
+      {isLeaf === false && chartable ? (classicsUp.error ? <div role="status" style={{ fontSize: 12, color: C.textMuted, margin: "4px 2px 12px" }}>Couldn't load the classic climbs here.</div>
+        : classicsUp.data && classicsUp.data.length ? <><SL C={C}>Classic climbs here</SL>{classicsUp.data.map(r => <RouteRow key={"classic-up-" + r.id} r={r} areaName={r.area_name} onOpen={onOpenRoute} C={C} />)}</> : null) : null}
 
       {area.route_count > 0 ? (
         <button onClick={onFinder} style={{ ...BTN_LG, width: "100%", marginBottom: 8, border: "1px solid " + C.blue, background: C.blueBg, color:C.onSolid, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>

@@ -106,14 +106,17 @@ for (const st of states) {
     const read = walls.filter(w => stateSlug(w.root) === st).length;
     if (read < need && !process.argv.includes("--partial")) { console.log(`${st}: crawl has read ${read} of ${need} walls — not yet (pass --partial to flag what is read)`); continue; }
   }
-  const want = new Map(), gaps = [], why = { mpId: 0, name: 0, research: 0 };
+  const want = new Map(), gaps = [], why = { mpId: 0, name: 0, research: 0 }, resolved = new Map();
+  // The state's own top list (MP's state-level classics page, crawl-state-classics.mjs): its routes also get the
+  // `state_classics` list slug (0390), which the Challenges card and the route page's chip read.
+  const stateTop = new Set(((existsSync(CL_DIR + "/state-classics.json") ? JSON.parse(readFileSync(CL_DIR + "/state-classics.json", "utf8")) : {})[(mine[0] || {}).root] || { rows: [] }).rows?.map(r => r.mp) || []);
   for (const w of mine) for (const r of w.rows) {
-    if (!(r.stars >= MP_MIN_STARS && r.votes >= MP_MIN_VOTES)) continue;
+    if (!(r.stars >= MP_MIN_STARS && r.votes >= MP_MIN_VOTES) && !stateTop.has(r.mp)) continue;
     const ours = mp2ours.get(r.mp);
-    if (ours) { want.set(ours, "mp"); why.mpId++; continue; }
+    if (ours) { want.set(ours, "mp"); resolved.set(r.mp, ours); why.mpId++; continue; }
     const area = wall2area.get(w.id);
     const hit = area ? (await routesOf(area)).filter(x => key(x.name) === key(r.name)) : [];
-    if (hit.length === 1) { want.set(hit[0].id, "mp-name"); why.name++; }
+    if (hit.length === 1) { want.set(hit[0].id, "mp-name"); resolved.set(r.mp, hit[0].id); why.name++; }
     else gaps.push({ mpWall: w.id, mpRoute: r.mp, name: r.name, ourArea: area || null, why: hit.length > 1 ? "two of ours share the name" : area ? "not on our wall" : "no area of ours for this wall" });
   }
   // Guidebooks and other lists: matched inside the state by name, narrowed by the wall/peak when that resolves.
@@ -130,17 +133,26 @@ for (const st of states) {
     if (ids.size === 1) { const id = [...ids][0]; want.set(id, want.get(id) || "research"); why.research++; } else held.push({ ...r, candidates: [...ids] });
   } }
   const ids = [...want.keys()];
+  const topIds = new Set([...stateTop].map(m => resolved.get(m)).filter(Boolean));
   const now = [];
-  for (let i = 0; i < ids.length; i += 150) now.push(...await get(`routes?select=id,classic&id=in.(${ids.slice(i, i + 150).map(encodeURIComponent).join(",")})`));
-  const todo = now.filter(r => !r.classic).map(r => r.id);
+  for (let i = 0; i < ids.length; i += 150) now.push(...await get(`routes?select=id,classic,lists&id=in.(${ids.slice(i, i + 150).map(encodeURIComponent).join(",")})`));
+  // One write per route: `classic` and, for a state top-100 route, the list slug appended to whatever `lists` holds.
+  const todo = now.map(r => {
+    const body = {};
+    if (!r.classic) body.classic = true;
+    if (topIds.has(r.id) && !(r.lists || []).includes("state_classics")) body.lists = [...(r.lists || []), "state_classics"];
+    return Object.keys(body).length ? { id: r.id, body, before: { classic: r.classic, lists: r.lists } } : null;
+  }).filter(Boolean);
   writeFileSync(`${OUT}/${st}.gaps.json`, JSON.stringify(gaps, null, 1));
   writeFileSync(`${OUT}/${st}.held.json`, JSON.stringify(held, null, 1));
-  console.log(`${st}: ${mine.length} walls read; classics ${ids.length} (by MP id ${why.mpId}, by name ${why.name}, by research ${why.research}); ${todo.length} to flag; ${gaps.length} gaps; ${held.length} research held`);
+  console.log(`${st}: ${mine.length} walls read; classics ${ids.length} (by MP id ${why.mpId}, by name ${why.name}, by research ${why.research}); state top ${topIds.size} of ${stateTop.size}; ${todo.length} to write; ${gaps.length} gaps; ${held.length} research held`);
   if (!APPLY || !todo.length) continue;
-  writeFileSync(`${OUT}/rollback-${st}-${Date.now()}.json`, JSON.stringify({ set_true: todo }, null, 1));
+  writeFileSync(`${OUT}/rollback-${st}-${Date.now()}.json`, JSON.stringify(todo.map(t => ({ id: t.id, before: t.before })), null, 1));
   let n = 0;
-  for (const id of todo) { await patchRow("routes", id, { classic: true }); if (++n % 100 === 0) console.log(`  ${st}: ${n}/${todo.length}`); }
+  for (const t of todo) { await patchRow("routes", t.id, t.body); if (++n % 100 === 0) console.log(`  ${st}: ${n}/${todo.length}`); }
   const back = [];
-  for (let i = 0; i < todo.length; i += 150) back.push(...await get(`routes?select=id,classic&id=in.(${todo.slice(i, i + 150).map(encodeURIComponent).join(",")})`));
-  console.log(`  ${st}: wrote ${n}; re-read ${back.filter(r => r.classic).length}/${todo.length} classic`);
+  for (let i = 0; i < todo.length; i += 150) back.push(...await get(`routes?select=id,classic,lists&id=in.(${todo.slice(i, i + 150).map(t => encodeURIComponent(t.id)).join(",")})`));
+  const okRows = back.filter(r => r.classic && (!topIds.has(r.id) || (r.lists || []).includes("state_classics"))).length;
+  console.log(`  ${st}: wrote ${n}; re-read ${okRows}/${todo.length} as intended`);
+  if (okRows !== todo.length) { console.error(`  ${st}: re-read MISMATCH — stopping`); process.exit(1); }
 }
