@@ -527,6 +527,8 @@ console.log("check:conditions-score");
   const rd2 = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
   if (/data-wet-until="1"[^\n]{0,200}"Rock likely wet until "\+clockHr\(wetTill\.hr\)/.test(rd2) && /", rock about "\+Math\.round\(x\.dryFrac\*100\)\+"% dry"/.test(rd2)) ok("a day with wet morning hours says when the rock dries, and each wet hour tile says how dry it is");
   else fail("the wet-morning line or the hour tiles' dryness label is gone: red tiles under a Good day read as a contradiction again");
+  if (/data-dew-until="1"[^\n]{0,200}"Air at its dew point until "\+clockHr\(dewTill\.hr\)/.test(rd2) && /const dewTill=[^\n]*\/dew point\/\.test\(c\.why\)/.test(rd2)) ok("...and a dew-capped morning under a Good day says until when, too (most red mornings were dew, not rain)");
+  else fail("the dew-morning line is gone: a dew-capped red morning under a Good day is unexplained again");
 }
 function sN0() { return scoreForecast(fixture(), WALL, null, NOW); }
 
