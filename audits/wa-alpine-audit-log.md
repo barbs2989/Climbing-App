@@ -35329,3 +35329,22 @@ Note on method this batch: the live DB was reachable at the very start of this r
 **Flagged for human review (2):** wa_chimney_rock_east_face_direct's FA ("Cornelius Molenaar, Elvis R. Johnson, 1954") could not be corroborated or contradicted by any source found (a 2021 lemkeclimbs.com trip report does independently confirm this row's 9 pitches, and the route's 7,727 ft high point matches the area row and Wikipedia/Mountain Project exactly) — left as-is. wa_chianti_spire_north_face's 8,400 ft high point/area elevation is contradicted by a single secondary source (a Steph Abegg trip report giving 8,380 ft) but no second source or guidebook was found agreeing with either figure — not enough to act on per the "trip reports as secondary corroboration only" rule, so not fixed.
 
 **No sources found (4):** wa_chimney_rock_north_ridge, _northeast_ridge, _northwest_ridge and _southeast_ridge are near-bare stubs (grade/discipline only, little else populated) on a peak whose online route beta is thin — no SummitPost, Mountain Project or Mountaineers.org page was found describing any of these four named ridges specifically (only the East Face/East Face Direct and a general North Face are documented online). Nothing to confirm or contradict; would need a Beckey guidebook or similar primary source a future run should try to access.
+
+## 2026-10-29 — Blocked run (no batch audited)
+
+Could not reach the live DB this run. An initial single-row probe
+(`routes?select=id&limit=1`) succeeded once at the very start, but every subsequent request
+carrying the `apikey`/bearer header — via curl and via Node `fetch`, against both simple and
+filtered queries, with and without an id upper bound — hung to a full timeout with zero bytes
+back; the identical endpoint with no `apikey` header still returns PostgREST's normal fast 401.
+Four retries with exponential backoff (2s/4s/8s/16s) on the simplest possible query all failed
+the same way. This is the same signature batch 478 (2026-10-29 pass 8) noted mid-run as an
+apparent outbound block on this specific credential, except this time it blocked the *entire*
+run from the start rather than letting one query through first — so no routes were pulled and no
+batch could be selected this run.
+
+No files under `audits/sql/` added, `wa-alpine-audit-progress.json` left untouched (still at
+`last_processed_id: wa_chimney_rock_southeast_ridge`, pass 8) since nothing was actually audited.
+Flagging this as worth a human look if it recurs: it may be the anon key itself (rotated,
+rate-limited, or now flagged by the egress proxy on this specific credential pattern) rather than
+a transient network blip, since two consecutive runs have now hit it.
