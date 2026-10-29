@@ -75,7 +75,7 @@ npm run check:ui   # drives the real app in Chrome and asserts per-screen invari
 npm run check:overlay-discovery # every modal the app declares is still reachable by the guards (in build)
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
-npm run check:message-delivery # a message from a SECOND real account arrives, and names its sender
+npm run check:message-delivery # a message from a SECOND real account arrives, and names its sender; a climb it shares opens
 npm run check:block-guarantees # blocked: cannot read, message or crew-invite you (2 real accounts; hand-run)
 npm run check:new-climber-journey # a new climber onboards, opens a crew, removes a friend — did any of it reach the DB? (hand-run)
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
