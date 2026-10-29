@@ -1,0 +1,43 @@
+{
+  "wa_glacier_peak_cool_glacier_gerdine": {
+    "boxes": {
+      "Glacier Gap to ~8,400 ft": { "notes": "Head north from the gap, side-hilling the left slope, then cross to the right slope below Glacier Gap Peak (7,739 ft on some maps) to regain the ridge. Follow the ridge to about 8,400 ft. Terrain stays easy snow and ridge." },
+      "Traverse to upper Suiattle Glacier": { "notes": "From the ridge near 8,400 ft, traverse right (northeast) onto the upper Suiattle Glacier, passing below and right of some cliffs to reach the upper Cool Glacier near 9,200 ft. Disappointment Peak sheds large rocks, so keep a wide margin from its side." },
+      "Cool Glacier to summit ridge": { "notes": "Climb the Cool Glacier westward, rounding the west side of Disappointment Peak, and regain the ridge at the glacier's top. Crevasses widen as summer advances. Beyond, a pumice ridge leads north, finishing on a short, steep snow slope in early season." }
+    },
+    "review": {
+      "confidence": "medium",
+      "sources": ["https://mountainproject.com/route/107257991/gerdine-ridgecool-glacier", "https://www.turns-all-year.com/trip-reports/july-28-30-2012-glacier-peak"],
+      "changed": "Wrote all three boxes from two pages that agree on the line; no lengths or anchors stated. Kept stored NE traverse, rockfall and ridge-regain facts. Several other pages (Mountaineers reports, SummitPost, CascadeClimbers) refused or would not load.",
+      "other_findings": "The stored beta describes a Disappointment Peak variant over class 3-4 ground; the Mountain Project page describes it as a South Ridge alternative to Disappointment Peak with loose rock. The route name says 'Disappointment Peak Cleaver' but the stored line is Gerdine/Cool; those are related but distinct routes."
+    }
+  },
+  "wa_cashmere_mountain_se_route": {
+    "boxes": {
+      "Lower S/SE gully": { "notes": "Wide gully with no single line; the center and right stay around class 2-3. It is easy to drift left onto harder ground, especially in fog, so confirm you are still in the main gully. Early in the season thin ice can glaze some rock." }
+    },
+    "review": {
+      "confidence": "low",
+      "sources": ["https://climberkyle.com/2017/06/11/mt-cashmere-se-route/"],
+      "changed": "Wrote only the lower gully box, from one trip report that agrees with the stored note. Left the Upper gully headwall box out: no readable source added anything about it (SummitPost refused).",
+      "other_findings": "Stored summit elevation is 8,514 ft in the pitch note but 8,501 ft in the beta; the peak is usually given as 8,501 ft."
+    }
+  },
+  "wa_big_kangaroo_kearney_thomas": {
+    "boxes": {
+      "P3": { "notes": "Starts as a chimney with chockstones; the climbing is not hard but protection is awkward to place and the chockstone sections feel sketchy. Near the top the line moves right into a steep fist crack. Rock quality is variable." },
+      "P5": { "notes": "Steep, pumpy crack that takes a .75 cam with good placements; the corner above is easier but still steep." },
+      "P7": { "notes": "Short, powerful finger crack, the route's technical crux at about 5.11a, well protected." }
+    },
+    "review": {
+      "confidence": "low",
+      "sources": ["https://iannicholsonslife.blogspot.com/2010/10/kearney-thomas-route-iii-511b-ffa-or.html"],
+      "changed": "Single source, a 2010 trip blog for the same route on the south face of Big Kangaroo; wrote only P3, P5 and P7 where its numbered pitches match. P1, P2, P4 and P6 left out: no source detail. No lengths or anchors stated. Pitch numbering in the blog may differ from the stored breakdown (stored lists 7-8 pitches).",
+      "other_findings": "The blog rates the route III+ 5.11b (the author freed two former aid pitches, P5 at 5.11b and P7 at 5.11a/b); stored grade is 5.11a. The wall is about 800 ft tall and gets all-day sun."
+    }
+  },
+  "skip_reasons": {
+    "wa_big_four_mountain_tower_route": "No readable page describes this route beyond the stored text; SummitPost, CascadeClimbers and AAC pages refused or would not load.",
+    "wa_black_systems_solar": "Only search snippets and a failed OpenBeta fetch; no source adds anything about either pitch."
+  }
+}

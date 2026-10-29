@@ -83,6 +83,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   identifier is referenced. Only rendering can. It pulls a **real value from the live DB** per
   column, injects it onto a bare route, renders all six sub-tabs, and looks for it on screen.
   Runs on every PR via `render-guards.yml`; not a build gate (it reads the DB).
+  - **Every column in `FIELDS` needs a partial index `routes (id) where <col> is not null`**
+    (0387). The sample query is `<col>=not.is.null&order=id.asc&limit=8`; on a column filled on
+    under 6% of 315k routes, without that index the planner walks `routes_pkey` and discards rows
+    until it finds eight — 282,764 rows and ~1.8 GB of buffer reads for `climbing_route` alone,
+    61 times per run, on every PR push from every parallel session. That load was the likeliest
+    cause of the 2026-10-28 database stall. Adding a column to `FIELDS`? Add its index in a new
+    migration (`create index concurrently` by hand on production, then record the version).
   - It replaced `scripts/oneoff/measure-which-tab-renders-each-field.mjs`, which hardcoded
     `ROOT` to the `rappels-rack-filter-class-audit` worktree — so it silently measured a
     different branch's code than the one you ran it in.

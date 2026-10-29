@@ -920,3 +920,46 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     did not run (throttle rule). Mountain Project route pages fetch with curl and carry a per-route
     Description; matching our route names to theirs is the hard part (3 of 16 at Dragontail matched
     by name).
+  - **Backlog batch 1, the 94 PEAK routes (2026-10-29)** — `build-batch-n.mjs` gives each route the
+    trailheads and drives its SIBLINGS on the same peak already carry (89 of 94 had one), research per
+    `FILL_BRIEF.md`, second check per `FILL_CHECK_BRIEF.md`, `prepare-fill-apply.mjs` re-reads the live
+    rows by id so the absence rail and merge base are today's. 24 found at high/medium by research, 22
+    sent to the second check, which rejected 6 (Hibox ×3, Mount Hinman, Old Snowy, Mount Roosevelt:
+    each tied to a named route by the route NAME alone) and dropped 3 to low (borrowed approaches).
+    The applier then refused 5 more until reworded (two drives and one approach shared an 8-word run
+    with a fetched page; two approaches did not contain their trailhead name exactly). **13 written**, each
+    re-read: Rainier (Emmons, Ingraham Direct, Wilson Headwall), Lane Peak, Bryant Peak (Hot Tubbs),
+    Glacier Peak (Gerdine Ridge), Table Mountain (2), Eldorado Main Peak, Mesahchie, Mount Adams
+    (Pinnacle Glacier Headwall), Mount Stuart (Always the Cowboy), Nooksack Tower. 315 remain.
+    - **Yield is the finding: research fills about 1 peak route in 7.** The rest have no fetchable page
+      that describes THAT route's start — SummitPost and mountaineers.org answer 403 to curl and
+      WebFetch, and Mountain Project often lists a peak's scrambles under other names or not at all.
+      A browser session could reach SummitPost; nothing else on the open web is left for these.
+    - **Misfiled, not researched (5):** "Tahoma Cleaver" and "South Tahoma Headwall" on Glacier Peak
+      (Mount Rainier routes); "Daniel Glacier" on Bald Eagle Peak (Mount Daniel); "Mount Temple Ridge"
+      and "Three Musketeers Ridge" on Big Chiwaukum (Enchantments). The last three were judged from
+      search snippets only — owner review before any move.
+    - **A seasonal gate is stated as its yearly pattern** ("gated overnight from late October through
+      the winter"), not as this year's start date, so the line does not go stale every November.
+  - **Backlog batch 2, the 219 CRAG routes (2026-10-29): 136 filled, on 25 crags.** Almost all are ice
+    and drytooling crags. Only 9 had a sibling with a card, so each CRAG was researched once
+    (`CRAG_BRIEF.md`: where to park, the drive, the walk to the base), checked a second time, and
+    `expand-crag-fill.mjs` put the same checked text on every backlog route at that crag; the route
+    applier then ran its rails per route (125 routes on 15 crags, 11 on 10).
+    - **Why the ROUTE rows, not `areas.approach`:** that column is the walk only, by design (never
+      roads, parking or permits), and `CragWalkIn` renders it only on rock categories
+      (`CRAG_CATS`). These crags' ice and mixed routes show their own trailhead card, so a crag
+      walk-in would have reached the area page and none of the routes. Do not "move" these fills to
+      the area without making the ice route page read it first — that is a page change, not data.
+    - The second check rejected the loose collections (the SW Cascades "waterfall ice" area has
+      several approaches) and McClellan Butte (no page describes the couloir's base); hand edits
+      removed winter-parking clauses that rested only on search snippets, and climbing advice from
+      a walk-in. Banks Lake and Devils Punch Bowl park on the SR 155 shoulder with no pass stated,
+      because no page states one outside the state park.
+    - **Wayne's World / Dark Side / Excellent Adventure Wall sit under an area literally named
+      "PUBLIC LAND FOR SALE-Wayne's World".** No page opened explains it; the lot is state DNR land
+      with a Discover Pass. Written, with the land status UNPROVEN — worth the owner's look.
+    - Not written (28 of 53 crags; 26 not found by research, 2 rejected): mostly a road hint with no parking or walk, or a summit hike rather than a
+      crag base. **179 routes of the backlog remain** (81 peak, 83 crag, the 15 on Dragontail, Colchuck
+      Peak and Mount Johnson left to the parallel session); `check:trailhead-direction-shape --live`
+      passes on all 914.
