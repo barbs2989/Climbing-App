@@ -5,7 +5,7 @@ import { USE_DB } from "./supabase";
 import { POP_REMOVE } from "./popupChrome.js";
 import { removeProfileAvatar, saveProfileAvatar, uploadProfilePhoto, useZipCentroid, zipState } from "./db";
 import { useEffect, useState } from "react";
-import { C, GENDERS, FALLBACK_AV, DOW, AVAIL_SLOT_OPTS, availSlotOn, availSlotToggle, US_CITIES, US_ST, CA_PROV, hasVulgarity, SKILLS, SKILL_GROUPS, CERT_GROUPS, certMatches, PROFILE_GRADES, CLIMB_ROLES, BELAY_DEVICES, BELAY_LEVELS, certExpiryInfo, profileGradeRows, roleLabel } from "../ClimbMatchCore.jsx";
+import { C, GENDERS, FALLBACK_AV, DOW, AVAIL_SLOT_OPTS, availSlotOn, availSlotToggle, US_CITIES, US_ST, CA_PROV, hasVulgarity, SKILLS, SKILL_GROUPS, CERT_GROUPS, certMatches, PROFILE_GRADES, CLIMB_ROLES, BELAY_DEVICES, BELAY_LEVELS, certExpiryInfo, suggestUsername, profileGradeRows, roleLabel } from "../ClimbMatchCore.jsx";
 import Av from "../src/components/Av.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
 import Lbl from "../src/components/Lbl.tsx";
@@ -73,6 +73,8 @@ export default function EditProfileScreen({draft,setDraft,onSave,onCancel,onAvat
   const DISC=[["sport",DL.sport],["trad",DL.trad],["bouldering",DL.bouldering],["scrambling",DL.scrambling],["alpine",DL.alpine],["mountaineering",DL.mountaineering],["ice",DL.ice],["mixed",DL.mixed],["aid",DL.aid]];
   const LEVELS=["Beginner","Intermediate","Advanced","Expert"];
   const [uTouched,setUTouched]=useState(false);
+  /* NO USERNAME YET: signup asks only for a name, so every new account opens this editor with the field empty -- and Save stays disabled until it is filled, so a new climber's first edit could not be saved at all. Prefill a suggestion, as Instagram does at signup: the name's letters plus four digits, so two climbers called Alex rarely collide on the unique column. Signed-in only; the climber can change it before Save. */
+  useEffect(()=>{if(uid&&!(draft.username||"").trim())setDraft(d=>(d.username||"").trim()?d:{...d,username:suggestUsername(d.name)});},[uid]);// eslint-disable-line react-hooks/exhaustive-deps -- once, when the editor opens: re-suggesting after the climber clears the field would fight them
   const uErr=draft.username.trim().length<3?"Username must be at least 3 characters.":hasVulgarity(draft.username)?"Please choose a different username.":"";
   const nErr=draft.name.trim().length<1;
   const ok=!uErr&&!nErr;
