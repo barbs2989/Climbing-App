@@ -129,7 +129,7 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   sheet already offered that type (rock, style, crux grade, distance/gain/loss on ice and mixed,
   pitches on alpine…). `FIELDS` now carries per-crag-type extras (`trad`/`sport`/`toprope`) on top of
   `rock`, and `sf()` reads both. The gear steppers (quickdraws, ice screws, cams, nuts) and the ticked
-  items now become **rack lines** — they used to land only in the `gear` object, which no screen reads
+  items now become **rack rows** (`rackItems`, `{item, qty, sizes?}`, written to `rack_items` by `approve_new_route` since 0384; the ticked items stay text lines) — they used to land only in the `gear` object, which no screen reads
   — and a non-rack item (helmet, crampons) goes to Route-specific essentials; crag types are offered
   only rack items, since a crag page has no GEAR & ESSENTIALS card. The **Crux** box asks for a crux
   *grade*: `routes.crux` prints in a stat tile, and it used to ask for a sentence.

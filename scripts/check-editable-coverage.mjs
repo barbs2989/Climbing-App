@@ -52,7 +52,6 @@ const NEVER = {
   descent: "descent_text is the editable descent; descent is the enrichment stub descentBeta() falls back to",
   detailed_rack: "rack prose from enrichment; the RACK editor writes rack",
   pro_needs: "rack prose from enrichment; the RACK editor writes rack",
-  rack_items: "rack prose from enrichment; the RACK editor writes rack",
   sling_rack: "its own {cams,nuts,…} shape; the RACK editor covers the rack",
   assumed_gear: "pipeline bookkeeping, read by nothing on screen",
   gear_bucket: "pipeline bookkeeping, read by nothing on screen",
