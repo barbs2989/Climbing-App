@@ -35444,3 +35444,38 @@ No fix attempted — this audit has no write access and no project-dashboard acc
 inspect the Supabase instance. Logged per the run's guardrails (nothing outside `audits/` touched,
 no SQL written for anything unverified) and reported to the project owner; next scheduled run
 should simply retry pass 8 from `wa_crater_mountain_standard_route` as if this run never happened.
+
+## 2026-10-29 — Batch 482 (pass 8): Crooked Thumb Peak, Cutthroat Peak cluster, Dark Peak
+
+Checked 8 routes: wa_crooked_thumb_peak_east_face, wa_crooked_thumb_peak_south_route,
+wa_cutthroat_peak_cauthorn_wilson_couloir, wa_cutthroat_peak_northeast_face,
+wa_cutthroat_south_buttress, wa_cutthroat_the_swarm, wa_cutthroat_west_ridge,
+wa_dark_peak_dark_glacier_route.
+
+1 confirmed error fixed, SQL in `audits/sql/2026-10-29-batch-482.sql`: the **wa_cutthroat_peak
+area row's** `elevation_ft` was 8065. Wikipedia's current article and ListsOfJohn both give
+8,066 ft (LiDAR); the older 8,050 ft map figure pairs with a 1,730 ft prominence, not this row's
+1,766 ft, which already matches the current 8,066-ft entry — and all 5 of this area's own routes
+already carry `high_point_ft` 8,066. A lone stray digit, corrected to 8,066.
+
+Clean (4): wa_cutthroat_south_buttress (FA "Fred Beckey and Donald (Don) Gordon, 1958" matches
+Mountain Project exactly), wa_cutthroat_the_swarm (FA "Justin Willis and Alex Perz, July 2023"
+matches Willis's own AAC Publications report and Mountain Project almost exactly — grade, pitch
+count and length all agree), wa_cutthroat_peak_cauthorn_wilson_couloir (FA climbers match Mountain
+Project; the stored April 1984 date is neither confirmed nor contradicted by any source found, so
+left as is), wa_cutthroat_peak_northeast_face (re-confirms a prior pass's existing correction —
+still matches the real documented "East Face" line).
+
+Flagged for human review (3), none safety- or access-relevant: wa_crooked_thumb_peak_east_face
+and wa_crooked_thumb_peak_south_route's stored FAs (both dated July 31, 1963) could not be
+corroborated — the only comparable 1963 reference found is filed under a differently-named
+"Crooks Peak" with nothing confirming it's the same summit, and no source describes a "South
+Route" on this peak at all. wa_dark_peak_dark_glacier_route's own high_point_ft (8,507) disagrees
+with its parent area's elevation_ft (8,518) by 11 ft, and outside sources scatter further (8,500 /
+8,504 / 8,520 ft across three sources) with no exact match to either stored number — unlike this
+batch's Cutthroat fix, there's no clear winner here.
+
+Method note: WebFetch could not resolve summitpost.org, en.wikipedia.org or mountainproject.com
+from this run's network (DNS failure), so all research relied on WebSearch's own synthesized
+result snippets rather than fetching primary pages directly — the same constraint earlier batches'
+notes describe.

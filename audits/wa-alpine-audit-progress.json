@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_crater_mountain_standard_route",
+  "last_processed_id": "wa_dark_peak_dark_glacier_route",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 481 complete. Continuing id-ascending scope from wa_crater_mountain_standard_route.",
+  "pass_note": "Pass 8 in progress, batch 482 complete. Continuing id-ascending scope from wa_dark_peak_dark_glacier_route.",
   "batches": [
     {
       "batch_number": 1,
@@ -9566,6 +9566,26 @@
       "clean": 7,
       "sql_file": null,
       "note": "No confirmed errors; no SQL. Clean (7): wa_colfax_peak_kimchi_suicide_volcano (FA 'Colin Haley and Sarah Hart, April 2015' matches Haley's own AAC/Skagit Alpinism writeups exactly -- April 9, 2015; grade AI4+/M5 matches sources' M5 R AI4+; high_point_ft 9440 matches Wikipedia/Black Buttes entry and is within a few feet of the Aug 2026 and 2024 countryhighpoints.com surveys), wa_colfax_peak_polish_route (FA 'Rogoz and partner, 2000 (attribution uncertain)' matches Mountain Project's own listing of 'Rogoz-partner, 2000' with no fuller name findable anywhere -- already correctly hedged, left as is), wa_colonial_peak_west_ridge (FA 'William Degenhardt & Herbert Strandberg (Seattle Mountaineers), July 31, 1931' matches Wikipedia exactly; high_point_ft 7771 matches Wikipedia/SummitPost/MyTopo exactly), wa_complete_south_buttress (bare FA, high_point_ft 8066 for Cutthroat Peak matches the current/better-supported Wikipedia+PeakVisor figure over an older 8,050 ft mirror tied to the lower south-peak reading), wa_copper_peak_south_route (FA 'Franklin Bennet, Edgar Courtwright, and Toivo Hagman, August 1937' matches Wikipedia/PeakVisor exactly; lat/lng 48.1745741/-120.803989 matches Wikipedia's 48\u00b010'30\"N 120\u00b048'13\"W to 5 decimal places; high_point_ft 8965 and '19th on the Bulger list' both match PeakVisor/Wikipedia/fastestknowntime.com), wa_corteo_peak_southwest_ridge (FA 'John Lehmann and Hermann Ulrichs, July 1935' and high_point_ft 8107 both match Wikipedia exactly), wa_crater_mountain_standard_route (bare FA; high_point_ft 8132 matches Wikipedia's NAVD88 figure over ListsOfJohn/SummitPost's older 8128 ft). Flagged for human review (1), not safety- or access-relevant: wa_concord_tower_north_face's stored high_point_ft (7611) matches no source found -- Mountain Project and WTA both give Concord Tower as 7560 ft, but that exact figure is also independently given for the neighboring, distinct Lexington Tower by Wikipedia, which smells like a copied figure between adjacent Liberty Bell Group spire pages rather than a reliable measurement, so overwriting 7611 with 7560 would not clearly be a correction. No USGS/LiDAR source was reachable this run to settle it either way."
+    },
+    {
+      "batch_number": 482,
+      "date": "2026-10-29",
+      "pass": 8,
+      "route_ids": [
+        "wa_crooked_thumb_peak_east_face",
+        "wa_crooked_thumb_peak_south_route",
+        "wa_cutthroat_peak_cauthorn_wilson_couloir",
+        "wa_cutthroat_peak_northeast_face",
+        "wa_cutthroat_south_buttress",
+        "wa_cutthroat_the_swarm",
+        "wa_cutthroat_west_ridge",
+        "wa_dark_peak_dark_glacier_route"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 3,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-10-29-batch-482.sql",
+      "note": "Confirmed fix (1): the wa_cutthroat_peak AREA row's elevation_ft was stored as 8065. Wikipedia's current article and ListsOfJohn both give 8,066 ft from LiDAR (the older map-based figure is 8,050 ft, which pairs with a 1,730 ft prominence, not this row's); this area row's own prominence_ft (1,766) already matches the current Wikipedia entry exactly, which itself pairs with 8,066 ft, not 8,065 -- and all 5 of this area's own routes already carry high_point_ft 8,066, so 8,065 was a lone stray digit contradicted by both an external source and the area's own sibling rows. Corrected to 8,066. Clean (4): wa_cutthroat_south_buttress (FA 'Fred Beckey and Donald (Don) Gordon, 1958' matches Mountain Project's listing exactly, incl. grade 5.8/III and 12 pitches), wa_cutthroat_the_swarm (FA 'Justin Willis and Alex Perz, July 2023' matches Willis's own AAC Publications trip report (specifically July 3) and Mountain Project almost exactly -- grade 5.11c, 8 pitches, 850 ft all agree), wa_cutthroat_peak_cauthorn_wilson_couloir (FA climbers 'Dan Cauthorn and Tim Wilson' match Mountain Project's listing; the stored April 1984 date could not be independently confirmed or contradicted -- MP and SummitPost give no year at all for this route -- so left as is rather than guessed at), wa_cutthroat_peak_northeast_face (re-confirms a prior pass's existing correction note: FA Dale Bard/Yvon Chouinard/John Cunningham 1976, III 5.10, 6 pitches, still matches the real documented 'East Face' line; no new issue found). Flagged for human review (3), none safety- or access-relevant: wa_crooked_thumb_peak_east_face and wa_crooked_thumb_peak_south_route's stored FAs ('Jackson, Jensen, Marts, Schmechel' and 'Ardussi, Magnusson, Mech, Swanson', both July 31 1963) could not be corroborated by any source found -- the only 1963 Crooked-Thumb-area East Face reference turned up (SummitPost, crediting Fred Beckey and Rick Reese) is filed under a differently-named 'Crooks Peak' with nothing confirming it is the same summit, and no source at all describes a 'South Route' on this peak; not fixed, flagged as unverifiable rather than guessed at. wa_dark_peak_dark_glacier_route's own high_point_ft (8,507) disagrees with its parent area wa_dark_peak's elevation_ft (8,518) by 11 ft, and external sources scatter further still (countryhighpoints.com: 8,504 ft map / 8,520 ft LiDAR; TopoQuest: 8,500 ft) with neither of our two stored numbers an exact match to any of them -- four-plus numbers, no clear winner, not fixed (contrast with this batch's Cutthroat Peak fix, where the better-supported figure was unambiguous). Method note: WebFetch is not reachable from this run's network for any of summitpost.org, en.wikipedia.org, mountainproject.com, etc. (DNS does not resolve) -- all research this batch relied on WebSearch's own synthesized snippets rather than fetching primary pages directly, same constraint prior batches' notes describe."
     }
   ]
 }
