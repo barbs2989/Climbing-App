@@ -59,4 +59,6 @@ were kept: they are real camps on a long approach (Berg Lake on Robson, May Cree
 Camp Kiser, Spike Camp), where the straight line is a poor stand-in for the trail.
 `audit:coord-origin` found nothing more than 50 km from its own area.
 
-Totals for 2026-10-29: 179 pins removed from 126 route rows across three rounds.
+**Restored (same day):** 11 round-1 pins on 7 routes (Amphitheater N Ridge, Bonanza NE Buttress, East Slope, Shuksan White Salmon, Mount Tom, The Pleiades, Union Peak) had been judged against a line of 5-8 points, which `MIN_RECORDED_PTS` then ruled is not a recording, so "off the line" was no evidence; they were put back (`scripts/oneoff/gpx-offroute-restore.mjs`, 0 problems). The campground removals on Chockstone and Fairchild, judged against 4- and 9-point lines, stand: those camps are 2.6-14 km away and stay in the camping list.
+
+Totals for 2026-10-29: 168 pins removed from 119 routes across three rounds.
