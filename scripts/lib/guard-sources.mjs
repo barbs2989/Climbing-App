@@ -242,6 +242,12 @@ export const MOVED = {
     "src/components/EmptySection.tsx",
     "src/components/PitchPhotos.tsx",
     "src/components/CopyCoordButton.tsx",
+    "src/components/TopoZoomPhoto.tsx",
+    "src/components/TopoPhotoModal.tsx",
+    "src/components/AccessFold.tsx",
+    "src/components/CragRack.tsx",
+    "src/components/CragLocationCard.tsx",
+    "src/components/PairsWellWith.tsx",
   ],
 };
 // The pre-2026-10 name, kept because 21 guards import it. Same array, same meaning.

@@ -19,7 +19,7 @@ import { accessCheckedLine } from "./lib/road";
 import { navTarget, navLinks } from "./lib/navLinks";
 import { trailheadDirectionProblem } from "./lib/trailheadDirectionShape";
 import { USE_DB} from "./lib/supabase";
-import {recordRouteView,useAreaPath,useRouteStarSummary,useRoutePairings,useRouteLoggedWith,submitRoutePairing,deleteRoutePairing,usePartnersByObjective,usePartnersInArea,useMatchObjectivesOfUsers,checkInAtRouteBase, withdrawBaseCheckin, useRouteBaseCheckins, dbRouteToCamel, useAreaRoutes, useProfilesByIds, useRoutesByIds, useRouteTopos, topoPhotoUrl, uploadTopoPhoto, updateTopoAlt, updateTopoCaption, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useObjectiveCounts, useProfileSearch, useRouteTripReports, useRoutePrivateConditions,    useMyContributionStanding, useRouteTracks, useRouteStats} from "./lib/db";
+import {recordRouteView,useAreaPath,useRouteStarSummary,usePartnersByObjective,usePartnersInArea,useMatchObjectivesOfUsers,checkInAtRouteBase, withdrawBaseCheckin, useRouteBaseCheckins, dbRouteToCamel, useAreaRoutes, useProfilesByIds, useRoutesByIds, useRouteTopos, topoPhotoUrl, uploadTopoPhoto, updateTopoAlt, updateTopoCaption, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useObjectiveCounts, useProfileSearch, useRouteTripReports, useRoutePrivateConditions,    useMyContributionStanding, useRouteTracks, useRouteStats} from "./lib/db";
 import RouteTracksPanel from "./lib/RouteTracksPanel.jsx";
 import { TRACK_COLORS, trackPoints, trackStats } from "./lib/routeTracks.js";
 import FireNearRoute from "./lib/FireNearRoute";
@@ -53,8 +53,7 @@ import AlpineConditionsCard, { forecastPoint } from "./lib/AlpineConditionsCard.
 import { ALPINE_COND_DISCIPLINES, modelSpread } from "./lib/alpineConditions.js";
 import { Tile, TileGrid, NOT_MEASURED, clockHr, spanEnding, compass, HourStepper } from "./lib/HourTiles.jsx";
 import { usableFa } from "./lib/fa";
-import {routeLink,realProfileId,CRAG_CATS,parseGpxText,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,DISC,CAT,ME,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,seedAuthor,roadReportOf,isRoadTag,buildConsensus,SZ3,MONTHS,MOUNTAINS,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,uMass,RSL as SL,ROUTE_GAP,FOLD_GAP,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,ALL_CLIMBERS,ROUTES,isHazardTag,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,isRecent,RECENT_DAYS,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,rappelReportsOf,sunReadout,realAuthor,useRealAuthors} from "./ClimbMatchCore.jsx";
-import PhotoDescribeBox from "./src/components/PhotoDescribeBox.tsx";
+import {routeLink,realProfileId,CRAG_CATS,parseGpxText,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,DISC,CAT,ME,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,seedAuthor,roadReportOf,isRoadTag,buildConsensus,SZ3,MONTHS,MOUNTAINS,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,uMass,RSL as SL,ROUTE_GAP,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,ALL_CLIMBERS,ROUTES,isHazardTag,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,isRecent,RECENT_DAYS,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,rappelReportsOf,sunReadout,realAuthor,useRealAuthors} from "./ClimbMatchCore.jsx";
 import CardHead from "./src/components/CardHead.tsx";
 import ShareVia from "./src/components/ShareVia.tsx";
 import Hr from "./src/components/Hr.tsx";
@@ -83,7 +82,6 @@ import { POP_CLOSE, POP_BACK_MEDIA, POP_REMOVE } from "./lib/popupChrome.js";
 import { BTN, BTN_SM, BTN_LINK, CHIP } from "./lib/buttonStyles.js";
 import { askConfirm } from "./lib/ConfirmSheet.jsx";
 import WaypointMapPicker from "./src/components/WaypointMapPicker.tsx";
-import DbClimbPicker from "./src/components/DbClimbPicker.tsx";
 import Comments from "./src/components/Comments.tsx";
 import { photoThumb} from "./lib/photoThumb";
 import { HINTS } from "./lib/fieldHints.js";
@@ -105,7 +103,6 @@ import CragSafetyNotes from "./src/components/CragSafetyNotes.tsx";
 import RackBetaList from "./src/components/RackBetaList.tsx";
 import PitchConsensus from "./src/components/PitchConsensus.tsx";
 import FloatPlanFold from "./src/components/FloatPlanFold.tsx";
-import TopoCaption from "./src/components/TopoCaption.tsx";
 import ClampText from "./src/components/ClampText.tsx";
 import ClimateSeasonCard from "./src/components/ClimateSeasonCard.tsx";
 import PhotoRow from "./src/components/PhotoRow.tsx";
@@ -113,12 +110,15 @@ import EditIconButton from "./src/components/EditIconButton.tsx";
 import PinIcon from "./src/components/PinIcon.tsx";
 import TopoPinLegend from "./src/components/TopoPinLegend.tsx";
 import TopoLineOverlay from "./src/components/TopoLineOverlay.tsx";
-import TopoVariantKey from "./src/components/TopoVariantKey.tsx";
-import TopoPinKey from "./src/components/TopoPinKey.tsx";
 import TopoThumb from "./src/components/TopoThumb.tsx";
 import EmptySection from "./src/components/EmptySection.tsx";
 import PitchPhotos from "./src/components/PitchPhotos.tsx";
 import CopyCoordButton from "./src/components/CopyCoordButton.tsx";
+import TopoPhotoModal from "./src/components/TopoPhotoModal.tsx";
+import AccessFold from "./src/components/AccessFold.tsx";
+import CragRack from "./src/components/CragRack.tsx";
+import CragLocationCard from "./src/components/CragLocationCard.tsx";
+import PairsWellWith from "./src/components/PairsWellWith.tsx";
 import { TOPO_RED, TOPO_VAR, PIN_CATEGORIES, pinColor, pinLabel, useImgAspect, TOPO_IMG, pinNums, LOUPE_Z, TAP_SLOP, ZOOM_MAX, clampTopoView, zoomTopoView } from "./lib/topoMarks.jsx";
 const GpsSubmissionModal = lazy(() => import("./lib/GpsSubmissionModal"));
 const uGain=m=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
@@ -721,34 +721,6 @@ function Capped({children}){const outer=useRef(null);const inner=useRef(null);co
     {tall?<button ref={btn} onClick={toggle} aria-expanded={open} style={{minHeight:44,display:"block",width:"100%",margin:"6px 0 14px",padding:"8px",background:"transparent",color:C.blue,border:"1px solid "+C.border,borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>{open?"Show less ":"Show more "}<Chevron inline open={open} size={14} color={C.blue}/></button>:null}
   </div>;
 }
-/* ACCESS & REGULATIONS is a DROPDOWN, closed by default (owner, 2026-10-21: "it's too large").
-   With a permit, its details, fees, closures, rules, a group limit, the land manager, a pass, parking,
-   how to apply and two permit links it ran to a full phone screen on most alpine routes, ahead of
-   the approach a climber came to read. Closed, it is one row: the heading, then WHAT it holds (the
-   labels of the rows on file) so a climber can tell a permit is involved without opening it.
-   The body is HIDDEN, not unmounted: the text stays in the markup, so check:field-renders still
-   proves every access sub-key reaches the page. The edit pencil sits beside the toggle, not inside
-   it — a button inside a button is invalid and swallows the pencil's tap.
-   FOLD_GAP above it (owner, 2026-10-24: "clumping against box above"): closed, it is one row on its own
-   topic under the trailhead cards, and at the card gap it read as part of them. Only the card gap
-   below: a section rule always follows it, and that rule carries its own wide gap. */
-function AccessFold({summary,onEdit,children}){const [open,setOpen]=useState(false);
-  return <div style={{background:C.card,borderRadius:10,padding:"11px 12px",margin:FOLD_GAP+"px 0 "+ROUTE_GAP+"px",border:`1px solid ${C.border}`}}>
-    <div style={{display:"flex",alignItems:"center",gap:8}}>
-      {/* The toggle is STRETCHED BEHIND the row, not wrapped around it: CardHead carries the confidence
-          chip's Flag button, and a button inside a button is invalid HTML (React warns validateDOMNesting)
-          and leaves the Flag's tap to the browser. The title and summary sit above it and let taps fall
-          through to the toggle; the Flag takes its own (pointer-events in ConfChip). */}
-      <div style={{flex:1,minWidth:0,minHeight:44,position:"relative",display:"flex",alignItems:"center",gap:8}}>
-        <button onClick={function(){setOpen(!open);}} aria-expanded={open} aria-label={(open?"Hide":"Show")+" access & regulations"+(!open&&summary?": "+summary:"")} style={{minHeight:44,position:"absolute",left:0,top:0,width:"100%",height:"100%",padding:0,background:"transparent",border:"none",cursor:"pointer"}}/>
-        <span style={{flex:1,minWidth:0,position:"relative",pointerEvents:"none"}}><CardHead style={{marginBottom:open?0:3}}>ACCESS & REGULATIONS</CardHead>{open?null:<span aria-hidden="true" style={{display:"block",fontSize:12,color:C.textMuted,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{summary}</span>}</span>
-        <span aria-hidden="true" style={{position:"relative",pointerEvents:"none",display:"inline-flex"}}><Chevron open={open} size={16} color={C.blue}/></span>
-      </div>
-      <EditIconButton onClick={onEdit} title="Edit access & permit information"/>
-    </div>
-    <div hidden={!open} style={{marginTop:9}}>{children}</div>
-  </div>;
-}
 /* The FLOAT PLAN on Safety is a DROPDOWN (owner, 2026-10-24: "Same with digital float plan"),
    and the last section on the tab: it is what you do once the forecast, the fires and the hazards
    have been read. Closed, it is one amber row that still says WHY — a committing objective, and
@@ -778,24 +750,8 @@ function RouteGearEssentialsBox({route,essentials,onEdit}){const disc=catOf(rout
        real data it was mostly a second copy of that list under a heading claiming the opposite.
        Do not reintroduce it — a route-specific entry now REPLACES the stock wording in place, so
        the qualifier ("Crampons (early/mid-season)") survives without the duplicate line. */}</div>;}
-/* RACK for a sport, trad or boulder route: ONLY what this route itself takes, as item + quantity
-   (quickdraws x12, cams #0.5-#3 x1). `rack_items` (0247) first, then a rack already written for the
-   route; NEVER the per-discipline DISC_RACK, and no ROPEWORK / "what to bring" around it. Nothing
-   stated means nothing drawn. A bouldering route's rack is its crash pads. */
 /* WALK-IN: the crag's own approach (`areas.approach`, 0247) — the walk from the trail to the base,
    written once per crag and shown on every route there. Never roads, parking, permits or closures. */
-function CragRack({route,onEditRack,activity,onSeeReports,facts}){const disc=catOf(route);
-  const own=routeRackFor(route)||[];
-  /* One counted list (rackRows): rack_items' rows, with a quickdraw or pad count from its own box REPLACING the row of that kind. It used to be rack_items OR the pads OR the draws, so on the 938 sport routes carrying rack_items a corrected quickdraw count reached no screen. A counted rack edit's text lines print under its rows; an uncorrected route keeps its rows alone. */
-  const rows=rackRows(route);
-  const extra=rows.length?(route._rackCounted?own:[]):own;
-  const sec=disc==="bouldering"?"pads":disc==="sport"?"draws":"rack";
-  /* Rack beta shows on the placeholder card too: a climber who logged what they brought is the best
-     answer an empty rack has. */
-  const beta=disc==="bouldering"?null:<RackBetaList activity={activity} route={route} onSeeReports={onSeeReports}/>;
-  if(!rows.length&&!own.length)return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}><CardHead style={{marginBottom:6}}>{disc==="bouldering"?"PADS":"RACK"}</CardHead>{facts}<GapNote what={disc==="bouldering"?"No pad count yet":disc==="sport"?"No quickdraw count yet":"No rack listed yet"} why={disc==="bouldering"?"Nothing says how many crash pads the landing needs.":disc==="sport"?"Nothing says how many draws to bring.":"Nothing says what gear this takes."} cta={disc==="bouldering"?"Add the pads":disc==="sport"?"Add the quickdraws":"Add the rack"} onFix={onEditRack?function(){onEditRack(own.join(" "),sec);}:null}/>{beta}</div>;
-  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8}}><CardHead>RACK</CardHead>{onEditRack?<EditIconButton onClick={function(){onEditRack(own.join(" "),sec);}} title="Edit rack"/>:null}</div>
-    {facts}{rows.length?rows.map(function(x,i){return <div key={i} style={{display:"flex",justifyContent:"space-between",gap:12,padding:"5px 0",borderTop:i?`1px solid ${C.border}`:"none",fontSize:13}}><span style={{color:C.text}}>{x.item}{x.sizes?<span style={{color:C.textMuted}}> {x.sizes}</span>:null}</span>{x.qty!=null?<span style={{color:C.textMuted,fontVariantNumeric:"tabular-nums"}}>{"\u00d7"+x.qty}</span>:null}</div>;}):null}{extra.map(function(t,i){return <div key={"t"+i} style={{padding:"5px 0",borderTop:(i||rows.length)?`1px solid ${C.border}`:"none",fontSize:13,color:C.text}}>{t}</div>;})}{beta}</div>;}
 function RouteGearCheck({route,activity,onSeeReports,rack,onEditRack,onEditEssentials,essentials,rackGeneric,onEditRopeNote,afterRack}){
   /* Mounted only OFF CRAG_CATS (alpine, mountaineering, ice, mixed, scrambling). It used to open with a
      `bouldering` return and a `sport` branch (a computed quickdraw note plus "Rack beta"), and neither
@@ -1644,57 +1600,11 @@ function TripProfileCard({route,calc}){
   </div>;
 }
 /* A coordinate you can read out, and one tap to copy it. Shared by both rows of CragLocationCard. */
-/* WHERE THE CLIMBING IS, AND WHERE YOU PARK — the two places a crag visit needs, side by side under
-   the map. A crag route used to give neither as a number: the map drew the crag, and the only
-   control was "Directions to crag (Google Maps)", which in fact resolved trailheadPoint() — the
-   PARKING — so it was named for one place and drove to another.
-   CRAG is the route's own area coordinate, the point the map already draws as peakCoord.
-   PARKING is trailheadPoint(), the one function every trailhead surface resolves through
-   (see TrailheadCard). On 2026-10-07 it resolved for 85 of 290,855 crag-family routes, so the
-   card must be honest in the common case: it says parking is not on file, offers to add it, and
-   the Getting there links fall back to the crag itself — SAYING so, because a maps app routes to
-   the nearest road to a cliff, which is not always the lot climbers use.
-   This card replaces TrailheadCard on a crag route, so the parking coordinate and the drive
-   control are each offered once per page (check:trailhead-directions). */
 /* The pin editor's TYPES on a crag route. A crag has no summit or camp; it has a car park, the trail
    junctions to the wall, water and hazards. The stored type stays "Trailhead" -- trailheadPoint()
    reads that first -- and is SHOWN as Parking, which is what it is at a crag. */
 const WP_TYPES_CRAG=["Trailhead"];/* A crag climb carries no waypoints: the only pin a crag climber sets is where to PARK (stored Trailhead, shown as Parking). The walk in is the GPX line drawn on the CRAG MAP. A pin already stored with another type keeps its own chip (the concat below). */
 function wpTypeLbl(t,disc){return t==="Trailhead"&&CRAG_CATS.includes(disc)?"Parking":t;}
-function CragLocationCard({route,mtn,onEditParking}){
-  const crag=(mtn&&mtn.lat!=null&&mtn.lng!=null&&mtn.lat!==""&&mtn.lng!==""&&isFinite(Number(mtn.lat))&&isFinite(Number(mtn.lng)))?{lat:Number(mtn.lat),lng:Number(mtn.lng)}:null;
-  const tp=trailheadPoint(route);
-  const park=tp?{lat:Number(tp.lat),lng:Number(tp.lng),name:tp.name}:null;
-  const al=route.approachLogistics||{};
-  const dir=park&&!trailheadDirectionProblem(al.trailheadDirection)?al.trailheadDirection:null;
-  /* The note is the CRAG's (areas.parking_note), written about the crag's own parking pin
-     (areas.parking_*). trailheadPoint() reaches that pin LAST, after the route's own Trailhead pin,
-     its logistics trailhead and a parking-named pin, so the pin shown here can be a different spot
-     from the one the note describes. The note sits directly above the pin only when the pin IS the
-     crag's; under any other pin it is labelled crag-wide parking. With no pin at all the note is the
-     only answer to "where do I park", so the Directions line points at it instead of saying none. */
-  const ar=route._dbArea||{};
-  const note=(ar.parkingNote&&String(ar.parkingNote).trim())||null;
-  const parkIsCrag=!!(park&&wpPlaced({lat:ar.parkingLat,lng:ar.parkingLng})&&Number(ar.parkingLat)===park.lat&&Number(ar.parkingLng)===park.lng);
-  const addPin={display:"inline-flex",alignItems:"center",minHeight:44,flexShrink:0,background:"none",border:"none",padding:"0 2px",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer"};
-  const dest=park||crag;
-  if(!crag&&!park&&!note)return null;
-  const row=function(label,glyphColor,title,body,action){return <div style={{marginBottom:10}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:8,marginBottom:5}}><div style={{display:"flex",alignItems:"center",gap:7,minWidth:0}}><span aria-hidden="true" style={{width:8,height:8,borderRadius:4,background:glyphColor,flexShrink:0}}/><div style={{...SUB_LABEL,margin:0}}>{label}</div>{title?<div style={{fontSize:12.5,fontWeight:700,color:C.text,overflowWrap:"anywhere",minWidth:0}}>{title}</div>:null}</div>{action||null}</div>{body}</div>;};
-  const ll=dest?dest.lat+","+dest.lng:"";
-  const linkSt={flex:"1 1 0",display:"flex",alignItems:"center",justifyContent:"center",boxSizing:"border-box",minHeight:44,padding:"8px 10px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"};
-  return <div style={{background:C.surface,borderRadius:12,padding:"12px 14px",border:"1px solid "+C.border,marginTop:10,marginBottom:12}}>
-    {row("CRAG",C.orange,null,crag?<CopyCoordButton lat={crag.lat} lng={crag.lng} what="crag"/>:<div style={{fontSize:11.5,color:C.textMuted}}>No crag coordinates on file yet.</div>)}
-    {row("PARKING",C.green,park&&park.name&&park.name!=="Trailhead"?park.name:null,park?<>{note&&parkIsCrag?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:6}}>{note}</div>:null}{dir?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:6}}>{dir}</div>:null}<CopyCoordButton lat={park.lat} lng={park.lng} what="parking"/>{note&&!parkIsCrag?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:8}}><span style={{fontWeight:700,color:C.text}}>{"Crag-wide parking — "}</span>{note}</div>:null}</>:note?<><div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{note}</div>{onEditParking?<button onClick={onEditParking} style={addPin}>Add the pin</button>:null}</>:<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8}}><div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45}}>No parking spot on file yet.</div>{onEditParking?<button onClick={onEditParking} style={addPin}>Add parking</button>:null}</div>,park&&onEditParking?<EditIconButton onClick={onEditParking} title="Edit the parking pin"/>:null)}
-    {dest?<div>
-      <div style={{...SUB_LABEL,marginBottom:5}}>{park?"DIRECTIONS TO PARKING":"DIRECTIONS"}</div>
-      {park?null:<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginBottom:6}}>{note?"No parking pin on file yet, so these go to the crag itself — the note above says where climbers park.":"No parking spot on file, so these go to the crag itself — your maps app will stop at the nearest road, which may not be where climbers park."}</div>}
-      <div style={{display:"flex",gap:8}}>
-        <a href={"https://www.google.com/maps/dir/?api=1&travelmode=driving&destination="+ll} target="_blank" rel="noreferrer" aria-label={"Driving directions to the "+(park?"parking":"crag")+" in Google Maps"} style={linkSt}>Google Maps</a>
-        <a href={"https://maps.apple.com/?dirflg=d&daddr="+ll} target="_blank" rel="noreferrer" aria-label={"Driving directions to the "+(park?"parking":"crag")+" in Apple Maps"} style={linkSt}>Apple Maps</a>
-      </div>
-    </div>:null}
-  </div>;
-}
 function RappelTable({route,onEdit}){
   if(!route.rappelDetail||!route.rappelDetail.length)return null;
   const raps=route.rappelDetail.map((r,i)=>({...r,_n:r.n!=null?r.n:i+1})).sort((a,b)=>a._n-b._n);
@@ -3291,133 +3201,6 @@ export function TopoSection({route}){
 /* The uploader's caption box. Saves on an explicit tap and says what happened, like PhotoDescribeBox:
    "Caption saved" only once the write resolved. A plain text area (useRichTextareas grows it) with no
    maxLength, and the database column has no cap either. */
-/* THE ENLARGED TOPO ZOOMS AND PANS (owner's note, 2026-10-28: "Will uploaded topos be scrollable?").
-   It used to be a still image capped at 58vh: a tall wall photo of a multi-pitch line shrank until
-   the belays could not be read, and nothing let a climber look closer. Climbers complain of the
-   same thing on the big sites (a ~2.5x cap, lines that vanish when the photo is enlarged, no pan),
-   so this goes to the editor's 6x and keeps the line on. Pinch, ctrl/trackpad wheel, double-tap or
-   − / + zoom; a drag, a wheel or the arrow keys move around once zoomed. At 1x a swipe still
-   scrolls the sheet (touch-action pan-y), so the caption and key below stay reachable.
-   The zoomed layer is SIZED (W*z by H*z), not CSS-scaled: the overlay's percentages land on the
-   same rock at every zoom, its markers keep their size, and the strokes' non-scaling-stroke holds
-   against the viewBox stretch, which it cannot do against a transform (see TopoDrawer). */
-function TopoZoomPhoto({photo,active}){
-  const [ar,setAr]=useState(null);
-  const [view,setViewState]=useState({z:1,tx:0,ty:0,W:0,H:0});
-  const viewRef=useRef(view);
-  const vpRef=useRef(null);const ptrs=useRef(new Map());const gest=useRef(null);const lastTap=useRef(null);
-  const dims=function(){const el=vpRef.current;return el?{W:el.clientWidth,H:el.clientHeight}:{W:1,H:1};};
-  // The frame's size travels with the view, so the render never reads a ref.
-  const setView=function(v){const d=dims();const n={z:v.z,tx:v.tx,ty:v.ty,W:d.W,H:d.H};viewRef.current=n;setViewState(n);};
-  const fit=function(){setView({z:1,tx:0,ty:0});};
-  const local=function(cx,cy){const r=vpRef.current.getBoundingClientRect();return {x:cx-r.left,y:cy-r.top};};
-  const zoomAt=function(z,px,py){const d=dims();setView(zoomTopoView(viewRef.current,z,px,py,d.W,d.H));};
-  const zoomBy=function(f){const d=dims();zoomAt(viewRef.current.z*f,d.W/2,d.H/2);};
-  const panBy=function(dx,dy){const d=dims();const b=viewRef.current;setView(clampTopoView({z:b.z,tx:b.tx+dx,ty:b.ty+dy},d.W,d.H));};
-  useEffect(function(){
-    const el=vpRef.current;if(!el)return undefined;
-    // Registered by hand: React's onWheel is passive, so it could not stop the sheet scrolling too.
-    // A plain wheel at 1x is left alone, so the sheet still scrolls past the photo.
-    const onWheel=function(e){
-      const b=viewRef.current;
-      if(e.ctrlKey){e.preventDefault();const p=local(e.clientX,e.clientY);zoomAt(b.z*Math.exp(-e.deltaY*0.01),p.x,p.y);}
-      else if(b.z>1){e.preventDefault();panBy(-e.deltaX,-e.deltaY);}
-    };
-    el.addEventListener("wheel",onWheel,{passive:false});
-    return function(){el.removeEventListener("wheel",onWheel);};
-  },[]); // eslint-disable-line react-hooks/exhaustive-deps -- registered once; every helper it calls reads the view through viewRef
-  const two=function(){const a=Array.from(ptrs.current.values());return {d:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)||1,m:local((a[0].x+a[1].x)/2,(a[0].y+a[1].y)/2)};};
-  const onDown=function(e){
-    ptrs.current.set(e.pointerId,{x:e.clientX,y:e.clientY});
-    try{e.currentTarget.setPointerCapture(e.pointerId);}catch(_e){/* capture only keeps a drag that leaves the frame */}
-    if(ptrs.current.size===2){const t=two();gest.current={kind:"pinch",d0:t.d,m0:t.m,base:viewRef.current};return;}
-    gest.current={kind:"drag",sx:e.clientX,sy:e.clientY,base:viewRef.current,moved:false};
-  };
-  const onMove=function(e){
-    if(!ptrs.current.has(e.pointerId))return;
-    ptrs.current.set(e.pointerId,{x:e.clientX,y:e.clientY});
-    const g=gest.current;if(!g)return;const d=dims();
-    if(g.kind==="pinch"&&ptrs.current.size===2){const t=two();const nz=Math.min(ZOOM_MAX,Math.max(1,g.base.z*t.d/g.d0));setView(clampTopoView({z:nz,tx:t.m.x-(g.m0.x-g.base.tx)*nz/g.base.z,ty:t.m.y-(g.m0.y-g.base.ty)*nz/g.base.z},d.W,d.H));return;}
-    if(g.kind==="drag"){const dx=e.clientX-g.sx,dy=e.clientY-g.sy;if(Math.hypot(dx,dy)>TAP_SLOP)g.moved=true;if(g.moved&&g.base.z>1)setView(clampTopoView({z:g.base.z,tx:g.base.tx+dx,ty:g.base.ty+dy},d.W,d.H));}
-  };
-  const onUp=function(e){
-    if(!ptrs.current.has(e.pointerId))return;
-    ptrs.current.delete(e.pointerId);const g=gest.current;
-    // Lifting one finger of a pinch carries on as a drag from where the other finger is.
-    if(g&&g.kind==="pinch"){const r=Array.from(ptrs.current.values())[0];gest.current=r?{kind:"drag",sx:r.x,sy:r.y,base:viewRef.current,moved:true}:null;return;}
-    gest.current=null;
-    if(e.type!=="pointerup"||!g||g.moved)return;
-    // A double tap zooms in on the spot tapped, or back out to the whole photo.
-    const now=Date.now();const p=local(e.clientX,e.clientY);const lt=lastTap.current;
-    if(lt&&now-lt.t<320&&Math.hypot(p.x-lt.x,p.y-lt.y)<30){lastTap.current=null;if(viewRef.current.z>1)fit();else zoomAt(2.5,p.x,p.y);}
-    else lastTap.current={t:now,x:p.x,y:p.y};
-  };
-  const onKey=function(e){
-    const k=e.key;const step=48;
-    if(k==="+"||k==="=")zoomBy(1.6);else if(k==="-"||k==="_")zoomBy(1/1.6);else if(k==="0")fit();
-    else if(viewRef.current.z>1&&(k==="ArrowLeft"||k==="ArrowRight"||k==="ArrowUp"||k==="ArrowDown"))panBy(k==="ArrowLeft"?step:k==="ArrowRight"?-step:0,k==="ArrowUp"?step:k==="ArrowDown"?-step:0);
-    else return;
-    e.preventDefault();
-  };
-  const zoomed=view.z>1.001;
-  const zb={minWidth:34,height:32,padding:"0 10px",borderRadius:8,border:"1px solid rgba(255,255,255,0.35)",background:"rgba(0,0,0,0.6)",color:"#fff",fontSize:14,fontWeight:700,cursor:"pointer"};
-  return <div style={{background:"#000",position:"relative"}}>
-    <div ref={vpRef} tabIndex={0} role="group" aria-label="Topo photo. Plus and minus zoom in and out; arrow keys move around once zoomed" onKeyDown={onKey} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}
-      style={{position:"relative",overflow:"hidden",width:"100%",maxWidth:ar?"calc(58vh * "+ar+")":"100%",aspectRatio:ar?String(ar):"4 / 3",margin:"0 auto",touchAction:zoomed?"none":"pan-y",cursor:zoomed?"grab":"zoom-in",userSelect:"none",WebkitUserSelect:"none"}}>
-      <div style={zoomed?{position:"absolute",left:view.tx,top:view.ty,width:view.W*view.z,height:view.H*view.z}:{position:"absolute",inset:0}}>
-        <MediaImg decoding="async" draggable={false} src={photo.url} alt={photoAlt(photo.alt,"Topo photo, enlarged")} onLoad={function(e){const t=e.currentTarget;if(t&&t.naturalWidth&&t.naturalHeight)setAr(t.naturalWidth/t.naturalHeight);}} style={TOPO_IMG}/>
-        {active?<TopoLineOverlay points={active.points} variants={active.variants} pins={active.pins} pinSize={20} numbered/>:null}
-      </div>
-    </div>
-    <div style={{position:"absolute",right:8,bottom:8,display:"flex",gap:6}}>
-      <button onClick={function(){zoomBy(1/1.6);}} disabled={!zoomed} aria-label="Zoom out" style={Object.assign({},zb,{opacity:zoomed?1:0.45})}>−</button>
-      <button onClick={function(){zoomBy(1.6);}} disabled={view.z>=ZOOM_MAX} aria-label="Zoom in" style={Object.assign({},zb,{opacity:view.z>=ZOOM_MAX?0.45:1})}>+</button>
-      {/* Always drawn, disabled at 1x: if it appeared on the first zoom, + would slide left and a second tap on the same spot would hit Fit. */}
-      <button onClick={fit} disabled={!zoomed} aria-label="Fit the whole photo" style={Object.assign({},zb,{opacity:zoomed?1:0.45})}>Fit</button>
-    </div>
-  </div>;
-}
-function TopoPhotoModal({photo,pos,onClose,onDraw,onDescribe,onCaption,onEditLine,onDeleteLine,onDeletePhoto}){
-  const [altIdx,setAltIdx]=useState(0);const [editCap,setEditCap]=useState(false);
-  const active=photo.lines[altIdx]||null;const [delBusy,setDelBusy]=useState(false);
-  const del=function(fn){if(delBusy)return;setDelBusy(true);fn().then(function(ok){setDelBusy(false);if(ok)setAltIdx(0);});};
-  return createPortal(<div onClick={onClose} role="dialog" aria-modal="true" aria-label="Topo" style={{position:"fixed",inset:0,background:C.scrimStrong,zIndex:9400,display:"flex",alignItems:"center",justifyContent:"center",padding:16}}>
-    <div onClick={function(e){e.stopPropagation();}} style={{background:C.bg,borderRadius:16,width:"100%",maxWidth:520,border:"1px solid "+C.border,overflowX:"hidden",overflowY:"auto",maxHeight:"92vh",overscrollBehavior:"contain"}}>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"12px 14px",borderBottom:"1px solid "+C.border}}>
-        <div style={{fontSize:14,fontWeight:700}}>{pos&&pos.n>1?"Topo "+(pos.i+1)+" of "+pos.n:"Topo"}</div>
-        <div style={{display:"flex",alignItems:"center",gap:6}}>
-          {/* Every topo on the route from inside the viewer, as a photo lightbox steps through its set. */}
-          {pos&&pos.n>1?<button onClick={pos.onPrev} aria-label="Previous topo" style={{...CHIP,padding:"6px 11px",border:"1px solid "+C.border,background:C.surface,color:C.text}}>‹</button>:null}
-          {pos&&pos.n>1?<button onClick={pos.onNext} aria-label="Next topo" style={{...CHIP,padding:"6px 11px",border:"1px solid "+C.border,background:C.surface,color:C.text}}>›</button>:null}
-          <button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button>
-        </div>
-      </div>
-      {/* The photo's frame holds the photo's own aspect, capped at 58vh tall, so the overlay's
-          `inset:0` box IS the painted photo at 1x; TopoZoomPhoto sizes the layer for any zoom. */}
-      <TopoZoomPhoto photo={photo} active={active}/>
-      <div style={{padding:"12px 14px"}}>
-        {editCap&&onCaption?<TopoCaptionBox key={photo.id} initial={photo.caption} onSave={function(t){return onCaption(photo,t);}} style={{marginBottom:12}}/>:<TopoCaption key={photo.id} text={photo.caption}/>}
-        {(onCaption&&!editCap)?<button onClick={function(){setEditCap(true);}} style={{background:"none",border:"none",padding:"0 0 10px",color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{photo.caption?"Edit caption":"+ Add a caption"}</button>:null}
-        {photo.saveEntry?<SaveOfflineChip key={photo.url} entry={photo.saveEntry} style={{marginBottom:12}}/>:null}
-        {onDescribe?<PhotoDescribeBox key={photo.id} initial={photo.alt} onSave={function(d){return onDescribe(photo,d);}} style={{position:"static",left:"auto",right:"auto",margin:"0 0 12px",maxWidth:"none",background:C.surface}}/>:null}
-        {active?<TopoVariantKey variants={active.variants} labels={active.variant_labels}/>:null}
-        {active?<TopoPinKey pins={active.pins}/>:null}
-        {(active&&((active.pins&&active.pins.length)||(active.variants&&active.variants.length)))?<TopoPinLegend style={{paddingTop:9,marginBottom:12,borderTop:"1px solid "+C.border}}/>:null}
-        {!photo.lines.length?<div style={{fontSize:12.5,color:C.textMuted,marginBottom:10}}>No one has drawn this route's line on this photo yet.</div>:null}
-        {photo.lines.length>1?<div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:10}}>{photo.lines.map(function(l,i){return <button key={l.id||i} onClick={function(){setAltIdx(i);}} aria-current={i===altIdx?"true":undefined} style={{...CHIP,border:"1px solid "+(i===altIdx?C.blue:C.border),background:i===altIdx?C.blueBg:C.surface,color:i===altIdx?C.onSolid:C.textSub}}>{l.label||(i===0?"Latest":"Alt "+i)}</button>;})}</div>:null}
-        {(active&&active.label&&photo.lines.length<2)?<div style={{fontSize:12.5,color:C.textSub,marginBottom:10}}>{active.label}</div>:null}
-        {(active&&active.mine&&onEditLine)?<div style={{display:"flex",gap:8,marginBottom:8}}>
-          <button onClick={function(){onEditLine(photo,active);}} style={{...BTN,flex:2,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.onSolid}}>Edit your line</button>
-          {onDeleteLine?<button onClick={function(){del(function(){return onDeleteLine(photo,active);});}} disabled={delBusy} style={{...BTN,flex:1,border:"1px solid "+C.red+"66",background:C.surface,color:C.red}}>{delBusy?"Deleting…":"Delete line"}</button>:null}
-        </div>:null}
-        {(active&&active.mine&&onEditLine)?null:<button onClick={function(){onDraw(photo);}} style={{...BTN,width:"100%",border:"1px solid "+C.blueDim,background:C.blueBg,color:C.onSolid}}>{photo.lines.length?"Draw your own line":"Draw this route's line"}</button>}
-        {onDeletePhoto?(photo.othersDrew
-          ?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:10}}>Other climbers have drawn their lines on this photo, so it stays up for them.</div>
-          :<button onClick={function(){del(function(){return onDeletePhoto(photo);});}} disabled={delBusy} style={{background:"none",border:"none",padding:"12px 0 0",color:C.red,fontSize:12.5,fontWeight:700,cursor:delBusy?"default":"pointer"}}>{delBusy?"Deleting…":"Delete this photo"}</button>):null}
-      </div>
-    </div>
-  </div>,document.body);
-}
 function seasonName(d){var m=parseInt((d||"").slice(5,7),10)||0;return (m>=12||m<=2)?"Winter":m<=5?"Spring":m<=8?"Summer":"Fall";}
 /* shortDate now lives in ClimbMatchCore beside DLOCALE: three more surfaces needed it, and two
    copies of a date formatter is how this codebase ended up with four grade parsers. Its catch was
@@ -4251,69 +4034,6 @@ function strapTrim(s){return String(s||"").replace(/\s*·\s*$/,"").replace(/^\s*
    4-pitch Kor-Ingalls Route the owner read that as "the sections are not there". So a section a climber
    fills in keeps the SAME heading and pencil empty as full: the empty card says what is missing and
    opens the editor at that field, and the section does not move or rename itself when data arrives. */
-/* PAIRS WELL WITH, from real climbers (0223). It used to render only on seven seed Little Cottonwood
-   routes, from the hand-written ROUTE_EXTRAS.pairsWith, so no catalog route could ever have one. Now:
-     - SUGGESTED: a climber picks another climb and says why (a `contributions` row of kind 'pair').
-       A pairing shows on BOTH climbs' pages; several climbers suggesting the same one are counted
-       together, and you can take your own back.
-     - LOGGED TOGETHER: other climbs the same climber logged on the same day, from shared logs only,
-       as a count and never a name (route_logged_with reads with the viewer's own privileges).
-   The seed pairings still render on the seed routes, which are examples themselves. "More on <peak>"
-   below already lists the same area's routes, so nothing here is padded out with neighbours. */
-function PairsWellWith({route,onOpenRoute,notify}){
-  const _pwSess=useSession();const uid=(USE_DB&&_pwSess&&_pwSess.user)?_pwSess.user.id:null;
-  const pairQ=useRoutePairings(USE_DB?route.id:null);const withQ=useRouteLoggedWith(USE_DB?route.id:null);
-  const pairsUnavailable=!!(USE_DB&&pairQ.isError);
-  const [open,setOpen]=useState(false);const [pick,setPick]=useState(null);const [note,setNote]=useState("");const [busy,setBusy]=useState(false);
-  useEffect(function(){setOpen(false);setPick(null);setNote("");},[route.id]);
-  const seedCards=(rxOf(route.id).pairsWith||[]).map(function(pp){var r2=ROUTES.find(function(x){return x.id===pp.id;});return r2?{id:r2.id,note:pp.note,kind:"seed"}:null;}).filter(Boolean);
-  const sugg=useMemo(function(){var by={};(pairQ.data||[]).forEach(function(row){var v=row.value||{};var other=row.route_id===route.id?v.with:row.route_id;if(!other||other===route.id)return;var g=by[other]||(by[other]={id:other,kind:"sugg",people:{},n:0,note:"",noteAt:"",mine:null});if(row.contributor&&!g.people[row.contributor]){g.people[row.contributor]=1;g.n++;}if(v.note&&String(row.created_at||"")>=g.noteAt){g.note=v.note;g.noteAt=String(row.created_at||"");}if(uid&&row.contributor===uid)g.mine=row.id;});return Object.keys(by).map(function(k){return by[k];}).sort(function(a,b){return b.n-a.n;});},[pairQ.data,route.id,uid]);
-  const logged=useMemo(function(){return (withQ.data||[]).filter(function(r){return r.route_id&&r.route_id!==route.id&&!sugg.some(function(s){return s.id===r.route_id;});}).map(function(r){return {id:r.route_id,kind:"logged",n:r.climbers||0};});},[withQ.data,sugg,route.id]);
-  const needIds=useMemo(function(){var out=[];sugg.concat(logged).forEach(function(c){if(out.indexOf(c.id)<0&&!ROUTES.some(function(x){return x.id===c.id;}))out.push(c.id);});return out;},[sugg,logged]);
-  const pwRoutesQ=useRoutesByIds(needIds);
-  const pwById=useMemo(function(){var m={};(pwRoutesQ.data||[]).forEach(function(r){m[r.id]=dbRouteToCamel(r);});return m;},[pwRoutesQ.data]);
-  const resolve=function(id){return ROUTES.find(function(x){return x.id===id;})||pwById[id]||null;};
-  const cards=seedCards.concat(sugg,logged).map(function(c){var r2=resolve(c.id);return r2?Object.assign({},c,{r2:r2}):null;}).filter(Boolean);
-  const plural=function(n){return n+" climber"+(n===1?"":"s");};
-  async function save(){
-    if(!pick||busy)return;
-    if(pick.id===route.id){notify&&notify("Pick a different climb — this is the one you’re on.");return;}
-    if(sugg.some(function(s){return s.id===pick.id&&s.mine;})){notify&&notify("You’ve already suggested that pairing.");return;}
-    setBusy(true);
-    try{const row=await submitRoutePairing(route.id,pick,note);if(!row)throw new Error("the database is not connected");setOpen(false);setPick(null);setNote("");await pairQ.refetch();notify&&notify("Pairing added — it now shows on both climbs.");}
-    catch(e){notify&&notify(e&&e.code==="23505"?"You’ve already suggested that pairing.":"Couldn’t save the pairing — "+((e&&e.message)||"try again."));}
-    finally{setBusy(false);}
-  }
-  async function remove(rowId){
-    if(busy)return;setBusy(true);
-    try{await deleteRoutePairing(rowId);await pairQ.refetch();notify&&notify("Your suggestion was removed.");}
-    catch(e){notify&&notify("Couldn’t remove it — "+((e&&e.message)||"try again."));}
-    finally{setBusy(false);}
-  }
-  if(!cards.length&&!uid&&!pairsUnavailable)return null;
-  const btn={padding:"8px 12px",borderRadius:9,fontSize:12.5,fontWeight:700,cursor:busy?"default":"pointer"};
-  /* A section of its own, so it takes the route page's section header (RSL): the 30px gap and the rule every other section has. It used a card title 16px under the "Got beta?" box and read as part of it (owner, 2026-10-15). */
-  return <div style={{marginBottom:8}}><SL>PAIRS WELL WITH</SL>
-    {pairsUnavailable?<div style={{fontSize:12,color:C.amber,lineHeight:1.5,marginBottom:7}}>Couldn’t load the suggested pairings — this is not a claim that there are none. Check your connection and try again.</div>:null}
-    {!cards.length&&!pairsUnavailable?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:7}}>No pairings yet. Know a climb worth doing the same day? Suggest it and it shows here and on that climb.</div>:null}
-    {cards.map(function(o){return <div key={o.kind+o.id} {...clickable(function(){onOpenRoute&&onOpenRoute(o.r2);})} style={{background:C.card,borderRadius:10,padding:"10px 12px",marginBottom:ROUTE_GAP,border:"1px solid "+C.border,cursor:"pointer"}}>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}><span style={{fontSize:14,fontWeight:700,minWidth:0,overflowWrap:"anywhere"}}>{o.r2.name}</span><span style={{fontSize:12,color:C.blue,fontWeight:600,flexShrink:0,marginLeft:8,whiteSpace:"nowrap"}}>{(o.r2.grade?o.r2.grade+" ":"")+"→"}</span></div>
-      {o.note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:3}}>{o.note}</div>:null}
-      {o.kind!=="seed"?<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:12,marginTop:5}}><span style={{fontSize:11.5,color:C.textMuted}}>{o.kind==="logged"?"Logged the same day by "+plural(o.n):"Suggested by "+(o.mine?(o.n>1?"you and "+plural(o.n-1):"you"):plural(o.n))}</span>{o.mine?<button onClick={function(e){e.stopPropagation();remove(o.mine);}} disabled={busy} aria-label={"Remove your suggestion to pair with "+o.r2.name} style={{fontSize:11.5,fontWeight:700,color:C.textSub,background:"none",border:"none",padding:"8px 10px",margin:"-4px -6px -4px 4px",cursor:busy?"default":"pointer"}}>Remove</button>:null}</div>:null}
-    </div>;})}
-    {uid?(open?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:10,padding:"10px 12px",marginBottom:7}}>
-      {pick?<div>
-        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:8}}><span style={{fontSize:13.5,fontWeight:700,minWidth:0,overflowWrap:"anywhere"}}>{pick.name}</span><button onClick={function(){setPick(null);}} disabled={busy} style={Object.assign({},btn,{background:C.surface,color:C.textSub,border:"1px solid "+C.border,padding:"5px 10px"})}>Change</button></div>
-        <textarea value={note} onChange={function(e){setNote(e.target.value.slice(0,280));}} maxLength={280} rows={2} aria-label="Why these two climbs pair well" placeholder="Why do they pair well? (optional — e.g. same approach, both in the shade by noon)" style={{width:"100%",boxSizing:"border-box",background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:8,padding:"8px 10px",fontSize:13,fontFamily:"inherit",resize:"vertical"}}/>
-        <div style={{fontSize:11,color:C.textMuted,textAlign:"right",marginTop:2}}>{note.length+" / 280"}</div>
-      </div>:<div><div style={{fontSize:12.5,color:C.textSub,marginBottom:6}}>Pick the climb that pairs with this one.</div><DbClimbPicker onPickRoute={function(r){setPick(r);}}/></div>}
-      <div style={{display:"flex",gap:12,marginTop:8}}>
-        {pick?<button onClick={save} disabled={busy} aria-busy={busy?"true":undefined} style={Object.assign({},btn,{background:busy?C.border:C.blueSolid,color:C.onSolid,border:"none"})}>{busy?"Saving…":"Add pairing"}</button>:null}
-        <button onClick={function(){setOpen(false);setPick(null);setNote("");}} disabled={busy} style={Object.assign({},btn,{background:C.surface,color:C.textSub,border:"1px solid "+C.border})}>Cancel</button>
-      </div>
-    </div>:<button onClick={function(){setOpen(true);}} style={Object.assign({},btn,{width:"100%",background:C.surface,color:C.blue,border:"1px solid "+C.border,marginBottom:7})}>+ Suggest a climb that pairs with this</button>):null}
-  </div>;
-}
 
 /* HOW YOU GET THERE — the approach picker (lib/approaches.js). Rendered only when choosing
    CHANGES something: a variant pointing at a sibling route, or carrying its own trip data. The 125
