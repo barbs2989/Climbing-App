@@ -128,6 +128,9 @@ about thin descents, on the peaks people actually climb. Each peak is one contex
 | Nesakwatch Spires (BC) | 15 | 12 reviewed (offline check clean), **apply pending** | 3 | |
 | Huntington Ravine (NH) | 14 | 14 reviewed (offline check clean), **apply pending** | 0 | Pinnacle Gully approach-only. No distances (sources say 1.3 vs 1.7 mi). Avalanche terrain in general terms only. |
 | Tuckerman Ravine (NH) | 18 | 18 reviewed (offline check clean), **apply pending** | 0 | 3 approach-only. |
+| Mt. Blue Sky couloirs (CO) | 26 | 18 reviewed (offline check clean), **apply pending** | 8 | Seasonal road stated in general terms. Lead review renamed "Mt. Evans road" to the Mount Blue Sky road. |
+| Pikes Peak North Face (CO) | 12 | 12 reviewed (offline check clean), **apply pending** | 0 | |
+| Hallett NE Buttress mixed/ice (CO) | 15 | 11 reviewed (offline check clean), **apply pending** | 4 | Englishman's Route here is the winter listing of `co_englishman_s_route` (kept: separate winter area, as MP lists it). |
 
 **How to resume (database healthy again: a one-row read under 1.5 s):**
 On 2026-10-29 at 18:39 the database recovered. 102 rows were written (Hallett, Hulk, Whitney, Russell, Middle Teton and Moran in full,
