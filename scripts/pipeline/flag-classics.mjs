@@ -40,17 +40,23 @@ const KEY = requireServiceKey();
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 // The same name key order-from-mp.mjs matches walls by: case, accents, punctuation, a topo number and "The" do not count.
-const key = s => String(stripRouteTopoLabel(s || "")).normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[’`]/g, "'").replace(/[^a-z0-9']+/g, " ").split(" ").filter(w => w && w !== "the").join(" ").replace(/'/g, "");
+// MP appends " | <digits>" to some names on its pages; order-from-mp's mpRows strips it the same way.
+const key = s => String(stripRouteTopoLabel(String(s || "").replace(/\s*\|\s*\d+$/, ""))).normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[’`]/g, "'").replace(/[^a-z0-9']+/g, " ").split(" ").filter(w => w && w !== "the").join(" ").replace(/'/g, "");
 const slugOf = name => String(name || "").toLowerCase().replace(/ territory$/, "").replace(/[^a-z]+/g, "_").replace(/^_|_$/g, "");
 // Our state slugs where they are not the name's (Canada uses the province code).
 const SLUG = { british_columbia: "bc", alberta: "ab", quebec: "qc", ontario: "on", new_brunswick: "nb", nova_scotia: "ns", newfoundland_and_labrador: "nl", yukon: "yt", northwest_territories: "nt", nunavut: "nu", manitoba: "mb", saskatchewan: "sk" };
 const stateSlug = name => SLUG[slugOf(name)] || slugOf(name);
 
+// The wall-order re-check (MP_FRESH, run first, state by state) knows boulder walls the 2026-10-25 run never
+// touched; its maps and wall→area lines are read after the old ones, so they win.
+const MP_FRESH = process.env.MP_FRESH || "/Users/nathanbarber/dev/mp-fresh";
 const mp2ours = new Map();
 for (const f of readdirSync(MP_DIR + "/_map")) for (const [m, o] of Object.entries(JSON.parse(readFileSync(MP_DIR + "/_map/" + f, "utf8")))) mp2ours.set(m, o);
-for (const f of readdirSync(MP_DIR + "/_order").filter(f => f.endsWith(".adds.json"))) for (const [m, o] of Object.entries(JSON.parse(readFileSync(MP_DIR + "/_order/" + f, "utf8")))) mp2ours.set(m, o);
 const wall2area = new Map();
-for (const f of readdirSync(MP_DIR + "/_order").filter(f => f.endsWith(".jsonl") && !f.includes(".dry"))) for (const l of readFileSync(MP_DIR + "/_order/" + f, "utf8").split("\n")) { if (!l.trim()) continue; try { const x = JSON.parse(l); if (x.mp && x.area) wall2area.set(x.mp, x.area); } catch { /* a torn line */ } }
+for (const ord of [MP_DIR + "/_order", MP_FRESH + "/_order"].filter(existsSync)) {
+  for (const f of readdirSync(ord).filter(f => f.endsWith(".adds.json"))) for (const [m, o] of Object.entries(JSON.parse(readFileSync(ord + "/" + f, "utf8")))) mp2ours.set(m, o);
+  for (const f of readdirSync(ord).filter(f => f.endsWith(".jsonl") && !f.includes(".dry"))) for (const l of readFileSync(ord + "/" + f, "utf8").split("\n")) { if (!l.trim()) continue; try { const x = JSON.parse(l); if (x.mp && x.area) wall2area.set(x.mp, x.area); } catch { /* a torn line */ } }
+}
 
 // --guidebook: flag every route a guidebook rates 3 or 4 of 4 stars (`guide_stars`, written by the guidebook audits
 // from the books themselves). `guide_stars` has no index, so the one read goes over a direct connection
@@ -94,6 +100,12 @@ async function routesOf(areaId) {
 
 for (const st of states) {
   const mine = walls.filter(w => stateSlug(w.root) === st && Array.isArray(w.rows));
+  // A state is flagged only once the crawl has read every one of its walls (CLASSICS_DIR/leaves.jsonl lists them).
+  if (existsSync(CL_DIR + "/leaves.jsonl")) {
+    const need = readFileSync(CL_DIR + "/leaves.jsonl", "utf8").split("\n").filter(Boolean).map(l => JSON.parse(l)).filter(w => stateSlug(w.root) === st).length;
+    const read = walls.filter(w => stateSlug(w.root) === st).length;
+    if (read < need && !process.argv.includes("--partial")) { console.log(`${st}: crawl has read ${read} of ${need} walls — not yet (pass --partial to flag what is read)`); continue; }
+  }
   const want = new Map(), gaps = [], why = { mpId: 0, name: 0, research: 0 };
   for (const w of mine) for (const r of w.rows) {
     if (!(r.stars >= MP_MIN_STARS && r.votes >= MP_MIN_VOTES)) continue;
