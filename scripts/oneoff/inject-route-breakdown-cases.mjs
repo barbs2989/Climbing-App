@@ -21,11 +21,14 @@ import { fileURLToPath } from "url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const FILE = path.join(ROOT, "RouteDetail.jsx");
+// pitchEntryKind and breakdownRows moved to lib/breakdownRows.js (PR56); a case names the file its anchor lives in.
+const BREAKDOWN_LIB = path.join(ROOT, "lib", "breakdownRows.js");
 const sum = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 12);
 
 const CASES = [
   {
     name: "1. per-ROUTE verdict restored (the pre-#1042 classifier)",
+    file: BREAKDOWN_LIB,
     find: "function pitchEntryKind(p,route){\n",
     repl: "function pitchEntryKind(p,route){\n  return isPitched(route)?\"pitch\":\"stage\";\n",
     expect: "fail",
@@ -38,12 +41,14 @@ const CASES = [
   },
   {
     name: "3. travel legs dropped instead of drawn",
+    file: BREAKDOWN_LIB,
     find: "  return {rows:rows,pitchCount:nP,stageCount:nS};",
     repl: '  return {rows:rows.filter(r=>r._kind==="pitch"),pitchCount:nP,stageCount:nS};',
     expect: "fail",
   },
   {
     name: "4. ORDER lost — every section, then every pitch (the old two boxes, merged)",
+    file: BREAKDOWN_LIB,
     find: "  return {rows:rows,pitchCount:nP,stageCount:nS};",
     repl: '  return {rows:rows.filter(r=>r._kind==="stage").concat(rows.filter(r=>r._kind==="pitch")),pitchCount:nP,stageCount:nS};',
     expect: "fail",
@@ -65,8 +70,9 @@ const CASES = [
   },
 ];
 
-const original = fs.readFileSync(FILE, "utf8");
-const before = sum(original);
+const originals = new Map();
+for (const f of new Set([FILE, ...CASES.map((c) => c.file || FILE)])) originals.set(f, fs.readFileSync(f, "utf8"));
+const sums = new Map([...originals].map(([f, t]) => [f, sum(t)]));
 let bad = 0;
 
 // A clean tree must pass, or every "fail" below is meaningless.
@@ -74,12 +80,13 @@ if (run() !== "pass") { console.log("  BROKEN  check:pitch-split does not pass o
 console.log("  ok      clean tree: check:pitch-split passes");
 
 for (const c of CASES) {
+  const file = c.file || FILE; const original = originals.get(file); const before = sums.get(file);
   if (!original.includes(c.find)) { console.log(`  BROKEN  ${c.name}: anchor not found — re-anchor this case`); bad++; continue; }
-  fs.writeFileSync(FILE, original.replace(c.find, c.repl));
-  const landed = sum(fs.readFileSync(FILE, "utf8")) !== before;
+  fs.writeFileSync(file, original.replace(c.find, c.repl));
+  const landed = sum(fs.readFileSync(file, "utf8")) !== before;
   let got;
-  try { got = run(); } finally { fs.writeFileSync(FILE, original); }
-  if (sum(fs.readFileSync(FILE, "utf8")) !== before) { console.log("  BROKEN  restore did not return the file byte-identically"); process.exit(1); }
+  try { got = run(); } finally { fs.writeFileSync(file, original); }
+  if (sum(fs.readFileSync(file, "utf8")) !== before) { console.log("  BROKEN  restore did not return the file byte-identically"); process.exit(1); }
   if (!landed) { console.log(`  BROKEN  ${c.name}: edit never landed`); bad++; continue; }
   if (got === c.expect) console.log(`  ok      ${c.name} — guard ${got === "fail" ? "CAUGHT it" : "stayed quiet"}`);
   else { console.log(`  MISS    ${c.name} — guard ${got}ed, expected ${c.expect}`); bad++; }

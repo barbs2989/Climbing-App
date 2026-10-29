@@ -248,6 +248,17 @@ export const MOVED = {
     "src/components/CragRack.tsx",
     "src/components/CragLocationCard.tsx",
     "src/components/PairsWellWith.tsx",
+    "src/components/WeatherIcon.tsx",
+    "src/components/OvernightPermit.tsx",
+    "src/components/BreakdownHandoff.tsx",
+    "src/components/CragFactRows.tsx",
+    "src/components/CragFactSection.tsx",
+    "src/components/WallNeighbours.tsx",
+    "src/components/BoulderNeighbours.tsx",
+    "src/components/RoadReports.tsx",
+    "src/components/SummitLegsCard.tsx",
+    "src/components/DescentLegStrip.tsx",
+    "src/components/TripProfileCard.tsx",
   ],
 };
 // The pre-2026-10 name, kept because 21 guards import it. Same array, same meaning.

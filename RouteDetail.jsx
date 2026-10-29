@@ -35,9 +35,6 @@ import { ContributionStandingNotice } from "./lib/SafetyNotices.jsx";
 import { openAppeal } from "./lib/reportBus.js";
 
 
-// Stable empty array for query fallbacks — a fresh [] each render would change identity
-// every time and invalidate every useMemo that depends on it.
-const EMPTY_ARR=[];
 import { clickable } from "./lib/clickable";
 import { PeakMetadataPanel, splitParagraphs, monthRank } from "./EnrichmentPanels";
 
@@ -48,12 +45,11 @@ import { knownHazards } from "./lib/hazards";
 import { acquireBaseFix, baseCheckinMessage, baseGuide, pendingBaseCheckins, savePendingBaseCheckins, distM, BASE_CONFIRM_MIN, bearingDeg, headingFromOrientation, relativeBearing, turnWord, smoothHeading } from "./lib/baseCheckin";
 import { declinationDeg } from "./lib/declination";
 import { planTimes, realPitches } from "./lib/planTimes";
-import { tripProfile, apportion } from "./lib/tripProfile.js";
 import AlpineConditionsCard, { forecastPoint } from "./lib/AlpineConditionsCard.jsx";
 import { ALPINE_COND_DISCIPLINES, modelSpread } from "./lib/alpineConditions.js";
 import { Tile, TileGrid, NOT_MEASURED, clockHr, spanEnding, compass, HourStepper } from "./lib/HourTiles.jsx";
 import { usableFa } from "./lib/fa";
-import {routeLink,realProfileId,CRAG_CATS,parseGpxText,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,DISC,CAT,ME,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,seedAuthor,roadReportOf,isRoadTag,buildConsensus,SZ3,MONTHS,MOUNTAINS,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,uMass,RSL as SL,ROUTE_GAP,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,ALL_CLIMBERS,ROUTES,isHazardTag,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,isRecent,RECENT_DAYS,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,rappelReportsOf,sunReadout,realAuthor,useRealAuthors} from "./ClimbMatchCore.jsx";
+import {routeLink,realProfileId,CRAG_CATS,parseGpxText,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,DISC,CAT,ME,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,seedAuthor,isRoadTag,buildConsensus,SZ3,MONTHS,MOUNTAINS,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,uMass,RSL as SL,ROUTE_GAP,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,ALL_CLIMBERS,ROUTES,isHazardTag,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,isRecent,RECENT_DAYS,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,rappelReportsOf,sunReadout,realAuthor,useRealAuthors} from "./ClimbMatchCore.jsx";
 import CardHead from "./src/components/CardHead.tsx";
 import ShareVia from "./src/components/ShareVia.tsx";
 import Hr from "./src/components/Hr.tsx";
@@ -79,7 +75,7 @@ import RouteStats from "./lib/RouteStats.jsx";
 import { recShapeOf, effDistIsWholeTrip, effDistKm, isMultiDayOuting, itinDayCount } from "./lib/outing.js";
 import { approachOptions, defaultApproachKey, viaRouteOf, applyApproach, approachKeyOf, tripTrailheadDraft, tripTrailheadMerge, viaPitchSpans, spanLabel, wholeLine } from "./lib/approaches.js";
 import { POP_CLOSE, POP_BACK_MEDIA, POP_REMOVE } from "./lib/popupChrome.js";
-import { BTN, BTN_SM, BTN_LINK, CHIP } from "./lib/buttonStyles.js";
+import { BTN, BTN_SM,  CHIP } from "./lib/buttonStyles.js";
 import { askConfirm } from "./lib/ConfirmSheet.jsx";
 import WaypointMapPicker from "./src/components/WaypointMapPicker.tsx";
 import Comments from "./src/components/Comments.tsx";
@@ -119,7 +115,23 @@ import AccessFold from "./src/components/AccessFold.tsx";
 import CragRack from "./src/components/CragRack.tsx";
 import CragLocationCard from "./src/components/CragLocationCard.tsx";
 import PairsWellWith from "./src/components/PairsWellWith.tsx";
+import WeatherIcon from "./src/components/WeatherIcon.tsx";
+import OvernightPermit from "./src/components/OvernightPermit.tsx";
+import BreakdownHandoff from "./src/components/BreakdownHandoff.tsx";
+import CragFactRows from "./src/components/CragFactRows.tsx";
+import CragFactSection from "./src/components/CragFactSection.tsx";
+import WallNeighbours from "./src/components/WallNeighbours.tsx";
+import BoulderNeighbours from "./src/components/BoulderNeighbours.tsx";
+import RoadReports from "./src/components/RoadReports.tsx";
+import SummitLegsCard from "./src/components/SummitLegsCard.tsx";
+import DescentLegStrip from "./src/components/DescentLegStrip.tsx";
+import TripProfileCard from "./src/components/TripProfileCard.tsx";
 import { TOPO_RED, TOPO_VAR, PIN_CATEGORIES, pinColor, pinLabel, useImgAspect, TOPO_IMG, pinNums, LOUPE_Z, TAP_SLOP, ZOOM_MAX, clampTopoView, zoomTopoView } from "./lib/topoMarks.jsx";
+import { isPitched, breakdownRows } from "./lib/breakdownRows.js";
+import { EMPTY_ARR } from "./lib/emptyArr.js";
+import { FACT_FIELD } from "./lib/cragFactField.js";
+import { ROAD_TONE, roadReportsOf } from "./lib/roadReports.js";
+export { overnightPermitOf } from "./lib/overnightPermit.js";
 const GpsSubmissionModal = lazy(() => import("./lib/GpsSubmissionModal"));
 const uGain=m=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
 
@@ -135,40 +147,12 @@ const SHAPE_LABEL={outback:"Out and back",loop:"Loop",point:"Point to point"};
    distance for the same climb — on 128 of the 198 WA peak pages, usually by a factor of two. */
 /* FORMATS what uLenN converts, so the metre<->foot arithmetic exists once. */
 const uLen=m=>{const n=uLenN(m);return n===null?NOVAL:n+" "+uLenUnit();};
-function isPitched(r){return !["mountaineering","scrambling","hiking","scramble","hike","glacier","snow","bouldering"].includes((r&&r.discipline)||"");}
 /* HOW MANY ROPED PITCHES the route has, by the larger of what it STATES (`pitches`) and what it DESCRIBES
    (the roped rows of pitchDetail). A gate that asks "is this multi-pitch?" reads this, not `pitches` alone:
    a route stored with 0 or 1 that a climber then describes pitch by pitch is multi-pitch from that moment,
    and a contributed pitch count reaches `pitches` through routeEdits, so either way the multi-pitch
    sections (ROUTE BREAKDOWN, RAPPELS) appear as soon as the route gains a second pitch. */
 function pitchCountOf(r){if(!r)return 0;var n=+r.pitches>0?+r.pitches:0;var d=(Array.isArray(r.pitchDetail)&&r.pitchDetail.length)?breakdownRows(r).pitchCount:0;return Math.max(n,d);}
-// isPitched asks the DISCIPLINE, but whether a pitch_detail entry is a roped pitch is a
-// property of the ENTRY. 919 routes carry pitch_detail; classifying per route put 117 of
-// them under "PITCH-BY-PITCH" whose entries are a walking itinerary ("Trailhead to
-// Cathedral Pass", "Approach gully", "Summit snowfield") and 88 under "ROUTE STAGES"
-// whose entries are numbered pitches. Worse, 144 routes hold BOTH — wa_big_four_mountain_
-// tower_route is "Approach gully / First tower / Notch rappel / Second and third towers /
-// Summit snowfield" — so no per-route verdict can be right about it.
-// Classify per entry instead. Both kinds render in ROUTE BREAKDOWN, in the record's own
-// array order, because that order is the sequence of the climb and a mixed route interleaves
-// them; what the classification decides is how a row is DRAWN — a roped pitch gets the square
-// P-badge and the per-pitch detail, a travel leg gets a round badge and a terrain chip.
-// Nothing is dropped; 2,181 entries read as pitches and 1,388 as sections.
-const PITCH_NUM_RE=/^p?\s*\d+\s*(?:[-–]\s*p?\s*\d+)?$|^pitch(?:es)?\s*\d+/i;
-const TRAVEL_LBL_RE=/\b(approach|trailhead|trail\s?head|trail to|road|drive|parking|camp|bivy|bivouac|descent|descend|bushwhack|hike|walk|ford|shuttle|return)\b/i;
-const TECH_GRADE_RE=/\b5\.\d|\bV\d|\bAI\s?\d|\bWI\s?\d|\bM\d\b|\bA[0-5]\b|\bC[0-4]\b|\b(?:easy|low|mid|hard|moderate)\s+5th\b|\b5th\s+class\b/i;
-// Order matters. A label naming travel wins outright ("Approach gully" is graded "low 5th
-// class" and is still an approach). Then a real climbing grade, then bolts/anchor — only a
-// roped pitch carries those. A bare "1" is decided last and by discipline, because on a
-// walk-up it numbers a leg, not a pitch (wa_baldy_standard: "1","2", both Class 2).
-function pitchEntryKind(p,route){
-  const lbl=String((p&&(p.pitch!=null?p.pitch:p.n))||"").trim();
-  if(TRAVEL_LBL_RE.test(lbl))return "stage";
-  if(TECH_GRADE_RE.test(String((p&&p.grade)||"")))return "pitch";
-  if(p&&(p.bolts!=null||(p.anchor&&String(p.anchor).trim())))return "pitch";
-  if(PITCH_NUM_RE.test(lbl))return isPitched(route)?"pitch":"stage";
-  return "stage";
-}
 // A shortfall may only be claimed when the route claims more pitches than the page describes
 // ANYWHERE. The rule is older than the structure it now sits on, and the reasoning behind it is
 // worth keeping: while roped pitches and travel stages rendered in TWO boxes, the heading read
@@ -794,8 +778,6 @@ function RopeworkBox({route,onEdit}){
      never loses something it states. mergeGearList dedupes it against the standard kit by item. */
   return <><SL>GEAR</SL><RouteRackBox route={route} activity={activity} onEditRack={onEditRack} rack={rack} onSeeReports={onSeeReports} rackGeneric={rackGeneric}/>{afterRack}<RopeworkBox route={route} onEdit={onEditRopeNote}/><RouteGearEssentialsBox route={route} essentials={(essentials||[]).concat(rackLeftovers(route))} onEdit={onEditEssentials}/></>;
 }
-function weatherIconKind(code){if(code==null)return null;if(code===0||code===1)return "sun";if(code===2)return "cloudSun";if(code===3)return "cloud";if(code===45||code===48)return "fog";if(code===95||code===96||code===99)return "storm";if([71,73,75,77,85,86].indexOf(code)>=0)return "snow";if([51,53,55,56,57,61,63,65,66,67,80,81,82].indexOf(code)>=0)return "rain";return "cloud";}
-function WeatherIcon({code,color,size}){const kind=weatherIconKind(code);if(!kind)return null;const s=size||16;const p={width:s,height:s,viewBox:"0 0 24 24",fill:"none",stroke:color||"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round",style:{flexShrink:0}};if(kind==="sun")return <svg {...p}><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="4.2" y1="4.2" x2="6" y2="6"/><line x1="18" y1="18" x2="19.8" y2="19.8"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.2" y1="19.8" x2="6" y2="18"/><line x1="18" y1="6" x2="19.8" y2="4.2"/></svg>;if(kind==="cloudSun")return <svg {...p}><circle cx="8" cy="8" r="3.2"/><line x1="8" y1="2.5" x2="8" y2="4"/><line x1="2.5" y1="8" x2="4" y2="8"/><line x1="3.8" y1="3.8" x2="4.8" y2="4.8"/><path d="M8.5 20h8a4 4 0 0 0 0-8 5.5 5.5 0 0 0-10.4-2A4.5 4.5 0 0 0 6.5 20z"/></svg>;if(kind==="cloud")return <svg {...p}><path d="M6.5 20h11a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.5-2A4.5 4.5 0 0 0 6.5 20z"/></svg>;if(kind==="fog")return <svg {...p}><path d="M6.5 15h11a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.5-2A4.5 4.5 0 0 0 6.5 15z"/><line x1="4" y1="19" x2="20" y2="19"/><line x1="6" y1="22" x2="18" y2="22"/></svg>;if(kind==="rain")return <svg {...p}><path d="M6.5 14h11a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.5-2A4.5 4.5 0 0 0 6.5 14z"/><line x1="8" y1="18" x2="7" y2="21"/><line x1="12" y1="18" x2="11" y2="21"/><line x1="16" y1="18" x2="15" y2="21"/></svg>;if(kind==="snow")return <svg {...p}><path d="M6.5 14h11a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.5-2A4.5 4.5 0 0 0 6.5 14z"/><line x1="8" y1="18" x2="8" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="16" y1="18" x2="16" y2="22"/><line x1="6.5" y1="20" x2="9.5" y2="20"/><line x1="10.5" y1="20" x2="13.5" y2="20"/><line x1="14.5" y1="20" x2="17.5" y2="20"/></svg>;if(kind==="storm")return <svg {...p}><path d="M6.5 13h11a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.5-2A4.5 4.5 0 0 0 6.5 13z"/><polyline points="13 13 10 18 13 18 11 23"/></svg>;return null;}
 /* ProvenancePanel (the DATA CONFIDENCE box) was removed with its only call site: it and
    DATA QUALITY both answered "how complete is this route's data" at the top of Overview,
    and per-section GapNotes answer it where it is actionable instead. Its 'Confirm accurate'
@@ -942,7 +924,6 @@ function rappelHeadingCount(route){
    only for a discipline with no Conditions tab. Gated on `climate`, NOT `season`. */
 /* ROUTE FACTS label -> the SuggestFix field that fills it, so "Add what you know" opens on the first
    missing one rather than at Grade with every group collapsed. */
-const FACT_FIELD={"Pitches":"pitchCount","Route length":"length","Wall height":"length","Rope":"ropeLen","Location":"location","Bolts":"bolts","Protection":"protRating","Anchor":"anchor","Aspect":"aspect","Season":"season","Rock quality":"rockQuality","Wet":"wet","Fixed gear":"fixedGear","Landing":"landing","Crash pads":"pads","Start":"startType"};
 /* LOCATION, GEAR & SAFETY and CONDITIONS are their own Overview sections on a crag route (owner, 2026-10-15:
    "move lower, create individual sections"), the way Mountain Project heads a route page with its numbers and
    then gives Location and Protection a heading each further down. TechStats still builds every fact once, so a
@@ -954,30 +935,6 @@ const FACT_FIELD={"Pitches":"pitchCount","Route length":"length","Wall height":"
    RACK card, so a crag route states its protection in ONE place (owner note: "remove protection and just move
    that info to the rack section. Consolidate and remove duplicates"), as Mountain Project's one Protection box does. */
 const CRAG_FACT_SECTIONS=[["location","WHERE IT STARTS",["Location","Start"]],["rack","RACK",["Bolts","Protection"]],["gear","GEAR & SAFETY",["Anchor","Rope","Rope notes","Fixed gear","Landing","Crash pads","Descent"]],["cond","CONDITIONS",["Aspect","Sun","Season","Wet","Rock quality"]]];
-/* One section: what is on file first, then each missing fact with its own Add, which opens the editor AT
-   that field — one tap per gap rather than one link for the whole card. */
-function CragFactSection({title,rows,onEdit}){const have=rows.filter(function(f){return !f[2];}),miss=rows.filter(function(f){return f[2];});const first=(miss[0]||have[0])[0];
-  return <div style={{marginBottom:ROUTE_GAP}}><SL action={onEdit&&FACT_FIELD[first]?<EditIconButton onClick={function(){onEdit(FACT_FIELD[first]);}} title={"Edit "+title.toLowerCase()}/>:null}>{title}</SL><div style={{background:C.card,borderRadius:12,padding:"2px 14px",border:"1px solid "+C.border}}><CragFactRows rows={rows} onEdit={onEdit}/></div></div>;}
-function CragFactRows({rows,onEdit}){const have=rows.filter(function(f){return !f[2];}),miss=rows.filter(function(f){return f[2];});
-  return <>{have.concat(miss).map(function(f,i){var add=f[2]&&onEdit&&FACT_FIELD[f[0]];return <div key={f[0]} style={{display:"flex",gap:12,alignItems:"center",padding:"10px 0",borderTop:i===0?"none":"1px solid "+C.borderLight}}><span style={{fontSize:10.5,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,lineHeight:1.35,width:92,flexShrink:0}}>{f[0]}</span><span style={{fontSize:13,color:C.text,lineHeight:1.5,flex:1,minWidth:0,overflowWrap:"anywhere"}}>{f[1]}</span>{add?<button onClick={function(){onEdit(FACT_FIELD[f[0]]);}} aria-label={"Add "+f[0].toLowerCase()} style={{flexShrink:0,padding:"4px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.surface,color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer"}}>+ Add</button>:null}</div>;})}</>;}
-/* NEXT DOOR ON THE WALL (owner, 2026-10-21): the climbs either side of this one, by `sort_order`, the wall's
-   left-to-right position. Never on a boulder problem (owner, 2026-10-21): problems are not climbed along a wall in an order;
-   a problem gets BoulderNeighbours below instead.
-   `rows` are the crag's own rows (cragSibs, useAreaRoutes already converted), so it costs no query. A climb
-   with no position draws nothing: guessing a neighbour would send a climber to the wrong line. */
-function WallNeighbours({rows,routeId,onOpen}){const placed=(rows||EMPTY_ARR).filter(function(r){return r.sort_order!=null;}).sort(function(a,b){return a.sort_order-b.sort_order;});const i=placed.findIndex(function(r){return r.id===routeId;});if(i<0||placed.length<2)return null;const left=placed[i-1],right=placed[i+1];
-  const btn=function(r,side){return <button key={side} onClick={function(){onOpen&&onOpen(r);}} aria-label={"Open "+r.name+", the climb to the "+side} style={{flex:1,minWidth:0,display:"flex",flexDirection:"column",alignItems:side==="left"?"flex-start":"flex-end",gap:2,background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"9px 11px",cursor:"pointer",textAlign:side==="left"?"left":"right"}}><span style={{fontSize:11,fontWeight:700,color:C.textMuted,letterSpacing:0.4}}>{side==="left"?"← LEFT":"RIGHT →"}</span><span style={{fontSize:13.5,fontWeight:700,color:C.text,maxWidth:"100%",overflowWrap:"anywhere"}}>{r.name}</span>{r.grade?<span style={{fontSize:12,color:C.textSub}}>{r.grade}</span>:null}</button>;};
-  return <div style={{marginBottom:ROUTE_GAP}}><SL>NEXT DOOR</SL><div style={{background:C.card,borderRadius:12,padding:"11px 14px",border:"1px solid "+C.border}}><div style={{fontSize:12.5,color:C.textSub,marginBottom:9}}>{"#"+(i+1)+" of "+placed.length+" from the left on this wall"}</div><div style={{display:"flex",gap:8}}>{left?btn(left,"left"):<div style={{flex:1,fontSize:12,color:C.textMuted,alignSelf:"center"}}>Leftmost climb</div>}{right?btn(right,"right"):<div style={{flex:1,fontSize:12,color:C.textMuted,alignSelf:"center",textAlign:"right"}}>Rightmost climb</div>}</div></div></div>;}
-/* ON THIS BOULDER (owner's note, 2026-10-23): a boulder carries several problems and variations, so a problem page
-   steps to the others on the same boulder — never "next door" or left/right, which is the wall's language. The boulder
-   is the problem's own area, as Mountain Project files it ("Routes in Solitary Boulder"); an area whose NAME says it is
-   a group of boulders (a sector, a field) reads "in this area" instead, so the card never calls a sector a boulder.
-   Mountain Project's stored order goes first, then problems with none by name, the crag list's own convention. */
-const BOULDER_GROUP_RX=/\b(sector|area|boulders|blocs|field|circuit|zone|cluster|garden|park|woods|forest|hill|ridge|canyon|gulch|trail|valley)s?\b/i;
-function BoulderNeighbours({rows,routeId,areaName,onOpen}){const probs=(rows||EMPTY_ARR).filter(function(r){return catOf(r)==="bouldering";}).slice().sort(function(a,b){if(a.sort_order!=null&&b.sort_order!=null)return a.sort_order-b.sort_order;if(a.sort_order!=null)return -1;if(b.sort_order!=null)return 1;return String(a.name||"").localeCompare(String(b.name||""));});const i=probs.findIndex(function(r){return r.id===routeId;});if(i<0||probs.length<2)return null;const prev=probs[i-1],next=probs[i+1];
-  const group=!areaName||BOULDER_GROUP_RX.test(areaName),where=group?"in this area":"on this boulder";
-  const btn=function(r,side){var back=side==="prev";return <button key={side} onClick={function(){onOpen&&onOpen(r);}} aria-label={"Open "+r.name+", the "+(back?"previous":"next")+" problem "+where} style={{flex:1,minWidth:0,display:"flex",flexDirection:"column",alignItems:back?"flex-start":"flex-end",gap:2,background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"9px 11px",cursor:"pointer",textAlign:back?"left":"right"}}><span style={{fontSize:11,fontWeight:700,color:C.textMuted,letterSpacing:0.4}}>{back?"← PREVIOUS":"NEXT →"}</span><span style={{fontSize:13.5,fontWeight:700,color:C.text,maxWidth:"100%",overflowWrap:"anywhere"}}>{r.name}</span>{r.grade?<span style={{fontSize:12,color:C.textSub}}>{r.grade}</span>:null}</button>;};
-  return <div style={{marginBottom:ROUTE_GAP}}><SL>{group?"IN THIS AREA":"ON THIS BOULDER"}</SL><div style={{background:C.card,borderRadius:12,padding:"11px 14px",border:"1px solid "+C.border}}><div style={{fontSize:12.5,color:C.textSub,marginBottom:9}}>{"Problem "+(i+1)+" of "+probs.length+(areaName?(group?" in ":" on ")+areaName:" "+where)}</div><div style={{display:"flex",gap:8}}>{prev?btn(prev,"prev"):<div style={{flex:1,fontSize:12,color:C.textMuted,alignSelf:"center"}}>First problem</div>}{next?btn(next,"next"):<div style={{flex:1,fontSize:12,color:C.textMuted,alignSelf:"center",textAlign:"right"}}>Last problem</div>}</div></div></div>;}
 /* THE ONE DISTANCE A ROUTE LEADS WITH, and what it is: TechStats' tile and the header strip both
    print it. The strip printed the stored ONE-WAY figure under a bare "Dist" while the tile under it
    said "Round trip" and twice the number, so one page showed one climb two ways. */
@@ -1218,53 +1175,6 @@ function stageRowName(r){
   if(r.grade)bits.push(String(r.grade));
   return bits.filter(Boolean).join(", ");
 }
-/* ONE SECTION, ONE SEQUENCE. `pitch_detail` was rendered as two boxes stacked on the Plan tab —
-   ROUTE BETA (the travel legs) and then PITCH-BY-PITCH (the roped pitches) — and on the 144 routes
-   that hold both kinds that ordering is a claim the record never made. wa_big_four_mountain_tower_
-   route is "Approach gully / First tower / Notch rappel / Second and third towers / Summit
-   snowfield": travel, climbing, descent, climbing, travel. Split into two boxes it read as three
-   walks followed by two pitches, which is not the climb. The record's own array ORDER is the
-   sequence, and the only way to show it is one list.
-   WHAT DOES NOT MERGE IS THE VOCABULARY, and that was the explicit ask: a roped pitch and a walk
-   are different kinds of ground and must stay distinguishable at a glance. So a pitch keeps its
-   square P-badge, its blue accent and its full detail (length, bolts, anchor, per-pitch consensus,
-   photos, beta comments); a section keeps a round badge, a terrain chip and its own three tiles.
-   The spine down the left is what carries the integration — it runs through both kinds, in order.
-   `data-kind` / `data-label` are on each row for check:pitch-split, which used to tell the two
-   apart by which HEADING an entry landed under. With one heading the classification is only
-   visible in the markup, and asserting it per row also lets that guard check the ORDER, which is
-   the property this change is about. */
-function breakdownRows(route){
-  const pd=(route&&Array.isArray(route.pitchDetail))?route.pitchDetail:[];
-  let nP=0,nS=0,cum=0;
-  let rows=pd.map(function(p,i){
-    const kind=pitchEntryKind(p,route);
-    const raw=p.n!=null?p.n:(p.pitch!=null?p.pitch:i+1);
-    const lbl=String(raw==null?"":raw).trim();
-    // `_n` is the raw label and stays the comment key. `_badge` is what the 26px badge can
-    // actually hold and `_title` is the descriptive label — "Chimney pitch", "Gendarme" —
-    // which had no reader at all: the badge rendered "P"+label, i.e. "PChimney pitch".
-    const num=/^p?\s*(\d+)/i.exec(lbl);
-    const bare=/^p?\s*\d+\s*(?:[-–]\s*p?\s*\d+)?$/i.test(lbl);
-    const row=Object.assign({},p,{_i:i,_kind:kind,_n:raw,
-      _note:p.note!=null?p.note:(p.notes||"")});
-    if(kind==="pitch"){row._pIdx=nP++;row._badge=num?num[1]:String(nP);row._title=bare?"":lbl;}
-    else {row._seq=++nS;row._label=lbl||("Section "+nS);}
-    return row;
-  });
-  // Sort only when every label is a number and nothing is interleaved with it — descriptive
-  // labels ("Chimney pitch") are already in route order and `a._n-b._n` on them is NaN, which
-  // is not an ordering, and a mixed route's two label spaces ("1" and "Approach gully") cannot
-  // be compared at all. On a pure-pitch route this is exactly the old behaviour.
-  if(!nS){
-    const allNum=rows.every(p=>typeof p._n==="number"||(typeof p._n==="string"&&p._n.trim()!==""&&!isNaN(Number(p._n))));
-    if(allNum)rows=rows.slice().sort((a,b)=>Number(a._n)-Number(b._n));
-  }
-  // Cumulative height gained is a CLIMBING figure: it counts roped pitches and steps over the
-  // walking between them, which is what "N ft up" has always meant on this row.
-  rows.forEach(function(r){if(r._kind==="pitch"){cum+=(r.lengthM||0);r._cum=cum;}});
-  return {rows:rows,pitchCount:nP,stageCount:nS};
-}
 /* ANCHORS CHANGE BY PITCH (owner's note, 2026-10-24: "some use trees or gear and some are bolted").
    anchorKind() files a stored anchor string under the editor's own PITCH_ANCHORS vocabulary, so a
    "2-bolt anchor (alcove)" lights the Bolted chip and the page can say which pitches end where.
@@ -1488,117 +1398,6 @@ function TrailheadCard({route,onEdit}){
     </div></>:<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45}}>No trailhead coordinates on file yet.</div>}
   </div>;
 }
-/* TRAILHEAD TO SUMMIT · SUMMIT TO TRAILHEAD (owner, 2026-10-21): the two legs a party plans the day by, under
-   the trailhead card, so the drive, the coordinates and how long it is from the car to the top and back sit
-   together. Laid out the way The Mountaineers' route pages print their trip profile — one row per leg, each
-   with its time, gain and distance. The times come from planTimes() at the pace, pack, party and departure
-   the climber set in Full trip time (passed in as `calc`), so this card, the Descent section and Full trip
-   time are one estimate and cannot disagree. A stored leg wins there and here alike. It sits OUTSIDE
-   TrailheadCard on purpose: that card carries no stat tiles (check:trailhead-directions section 7).
-   GAIN only where the stored gain is the whole climb to the top — the rule TECH STATS labels it by — and
-   DISTANCE per leg only on a route that comes back the way it went; a loop or point-to-point gives the
-   whole outing once instead of inventing a split. */
-/* THE LEG GEOMETRY, ONCE. The Approach card and the Descent section both read it, so a leg's miles and
-   feet cannot differ between sections. Feet are the stored gain (see gainCoversWholeOuting) and the drop
-   the time model walks down: the larger of stored gain and loss, which is what planTimes() charges. */
-function tripLegGeometry(route){
-  const disc=catOf(route);
-  const ascent=routeAscentFt(route);
-  const gainFt=ascent>0&&(disc==="alpine"||disc==="mountaineering"||disc==="hiking"||gainCoversWholeOuting(route))?ascent:null;
-  const dropM=Math.max(route.lossM||0,route.gainM||0);
-  const dropFt=dropM>0?Math.round(dropM*3.28084):null;
-  const km=effDistKm(route);const hasKm=km!=null&&km>0;const whole=effDistIsWholeTrip(route);const rs=recShapeOf(route);
-  const outBack=rs?rs==="outback":shapeOf(route)==="outback";
-  const legKm=hasKm&&outBack?(whole?km/2:km):null;
-  return {disc,gainFt,dropFt,km,hasKm,whole,outBack,legKm};
-}
-const fmtLegKm=function(k){return uDist(Math.round(k*10)/10);};
-/* A time at the Full trip time card's own format, with "≥" where a leg has no input to count from. */
-const fmtLegHrs=function(h,floor){return (floor?"≥":"")+h.toFixed(1)+"hr";};
-function SummitLegsCard({route,calc}){
-  const pt=planTimes(route,calc);const g=tripLegGeometry(route);
-  const {disc,gainFt,dropFt,km,hasKm,whole,outBack,legKm}=g;
-  const top=climbsAPeak(route)||disc==="alpine"||disc==="mountaineering"||disc==="hiking"||disc==="scrambling"?"summit":"top of the climb";
-  const upFloor=!pt.walkInKnown||!pt.climbKnown;const downFloor=!pt.walkOutKnown;
-  const legs=pt.publishedIsWholeDay
-    ?[["CAR TO CAR",[gainFt?["Gain","↑ "+uElev(gainFt)]:null,hasKm?["Distance",fmtLegKm(outBack&&!whole?km*2:km)]:null,["Time",fmtLegHrs(pt.tripH,upFloor||downFloor)]]]]
-    :[["TRAILHEAD TO "+top.toUpperCase(),[gainFt?["Gain","↑ "+uElev(gainFt)]:null,legKm?["Distance","~"+fmtLegKm(legKm)]:null,["Time",fmtLegHrs(pt.totalH,upFloor)]]],
-      [top.toUpperCase()+" TO TRAILHEAD",[legKm?["Distance","~"+fmtLegKm(legKm)]:null,legKm&&dropFt?["Drop","↓ "+uElev(dropFt)]:null,["Time",fmtLegHrs(pt.downH,downFloor)]]]];
-  const shown=legs.map(function(l){return [l[0],l[1].filter(Boolean)];}).filter(function(l){return l[1].length;});
-  if(!shown.length)return null;
-  const days=itinDayCount(route);
-  const note="Times use the pace, pack and party set in Full trip time below."
-    +(!pt.publishedIsWholeDay&&hasKm&&!legKm?" This route does not come back the way it goes: "+fmtLegKm(km)+" for the whole outing.":"")
-    +(days>1?" Usually done over "+days+" days — the Trip plan below splits it by day.":"");
-  return <div style={{background:C.surface,borderRadius:10,padding:"4px 12px 11px",border:"1px solid "+C.border,marginBottom:12}}>
-    {shown.map(function(l,i){return <div key={l[0]} style={{padding:"8px 0",borderTop:i===0?"none":"1px solid "+C.borderLight}}>
-      <div style={{...SUB_LABEL,marginBottom:5}}>{l[0]}</div>
-      <div style={{display:"flex",flexWrap:"wrap",gap:"4px 18px"}}>{l[1].map(function(s){return <div key={s[0]} style={{minWidth:0}}><div style={{fontSize:14,fontWeight:700,color:C.text,fontVariantNumeric:"tabular-nums",whiteSpace:"nowrap"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted}}>{s[0]}</div></div>;})}</div>
-    </div>;})}
-    <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:4}}>{note}</div>
-  </div>;
-}
-/* THE DESCENT'S OWN LEG, at the top of the DESCENT section: the way down, timed and measured with the same
-   numbers SummitLegsCard prints under GETTING THERE (tripLegGeometry and planTimes at the same calc). It
-   gives a leg only where the route comes back the way it went; a loop or point-to-point has no split to
-   print, and its whole-day row is timed on the trip profile above. Renders nothing when there is no leg. */
-function DescentLegStrip({route,calc}){
-  const pt=planTimes(route,calc);const g=tripLegGeometry(route);
-  if(pt.publishedIsWholeDay||!g.legKm)return null;
-  const rows=[["Distance","~"+fmtLegKm(g.legKm)],g.dropFt?["Drop","↓ "+uElev(g.dropFt)]:null,["Time",fmtLegHrs(pt.downH,!pt.walkOutKnown)]].filter(Boolean);
-  return <div style={{background:C.surface,borderRadius:10,padding:"8px 12px",marginBottom:8,border:"1px solid "+C.border}}>
-    <div style={{...SUB_LABEL,marginBottom:5}}>{"SUMMIT TO TRAILHEAD"}</div>
-    <div style={{display:"flex",flexWrap:"wrap",gap:"4px 18px"}}>{rows.map(function(s){return <div key={s[0]} style={{minWidth:0}}><div style={{fontSize:14,fontWeight:700,color:C.text,fontVariantNumeric:"tabular-nums",whiteSpace:"nowrap"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted}}>{s[0]}</div></div>;})}</div>
-  </div>;
-}
-/* THE TRIP PROFILE (owner note, 2026-10-25: each leg of the route in the plan section detailed on timing,
-   matching the other sections). One row per leg between the route's own waypoints, with its miles, its
-   climb or drop, and its time, up and then down. The legs are a split of the route's own totals (see
-   lib/tripProfile.js), so they add up to GETTING THERE and the DESCENT strip exactly, at the same rounding.
-   Renders nothing when the route has no profile to give, and says nothing about why: the reason is in
-   tripProfile(), and a route with no recorded track simply has no legs to print. */
-function TripProfileCard({route,calc}){
-  const pt=planTimes(route,calc);const g=tripLegGeometry(route);
-  const tp=tripProfile(route,pt,g,calc);
-  if(!tp.legs)return null;
-  const imp=uImp();
-  const dispKm=function(k){return imp?k*0.621371:k;};
-  const dispFt=function(f){return imp?f:f/3.28084;};
-  const fmtD=function(v){return v.toFixed(1)+(imp?" mi":" km");};
-  const fmtG=function(v){return Math.round(v).toLocaleString()+(imp?" ft":" m");};
-  const legName=function(w){return (w&&(w.name||w.type))||"Waypoint";};
-  const cell=function(label,value){return <div key={label} style={{minWidth:0}}><div style={{fontSize:14,fontWeight:700,color:C.text,fontVariantNumeric:"tabular-nums",whiteSpace:"nowrap"}}>{value}</div><div style={{fontSize:11,color:C.textMuted}}>{label}</div></div>;};
-  const section=function(heading,legs,tot,gainOf,gainLabel,hasGain,timeFloor){
-    const km=apportion(legs.map(function(l){return dispKm(l.km);}),0.1);
-    const gn=hasGain?apportion(legs.map(function(l){return dispFt(gainOf(l));}),1):null;
-    const tm=apportion(legs.map(function(l){return l.timeH;}),0.1);
-    const sum=function(a){return a.reduce(function(s,x){return s+x;},0);};
-    const tKm=sum(km), tT=sum(tm), tG=gn?sum(gn):null;
-    const rows=legs.map(function(l,i){return {from:l.from,to:l.to,items:[cell("Distance",fmtD(km[i]))].concat(gn?[cell(gainLabel,(gainLabel==="Drop"?"↓ ":"↑ ")+fmtG(gn[i]))]:[]).concat([cell("Time",(timeFloor?"≥":"")+tm[i].toFixed(1)+"hr")])};});
-    const totItems=[cell("Distance",fmtD(tKm))].concat(gn?[cell(gainLabel,(gainLabel==="Drop"?"↓ ":"↑ ")+fmtG(tG))]:[]).concat([cell("Time",(timeFloor?"≥":"")+tT.toFixed(1)+"hr")]);
-    return <div key={heading} style={{padding:"6px 0 2px"}}>
-      <div style={{...SUB_LABEL,marginBottom:2}}>{heading}</div>
-      {rows.map(function(r,i){return <div key={i} style={{padding:"7px 0",borderTop:"1px solid "+C.borderLight}}>
-        <div style={{fontSize:12.5,color:C.textSub,lineHeight:1.4,marginBottom:4,minWidth:0,overflowWrap:"anywhere"}}>{legName(r.from)+" → "+legName(r.to)}</div>
-        <div style={{display:"flex",flexWrap:"wrap",gap:"4px 18px"}}>{r.items}</div>
-      </div>;})}
-      <div style={{padding:"7px 0",borderTop:"1px solid "+C.border}}>
-        <div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:4}}>{heading==="UP"?"Whole approach and climb":"Whole descent"}</div>
-        <div style={{display:"flex",flexWrap:"wrap",gap:"4px 18px"}}>{totItems}</div>
-      </div>
-    </div>;
-  };
-  const upHas=tp.climbBy!=null&&tp.totals.up.gainFt!=null, dnHas=tp.climbBy!=null&&tp.totals.down.dropFt!=null;
-  const upLegs=section("UP",tp.legs.up,tp.totals.up,function(l){return l.gainFt;},"Gain",upHas,tp.totals.up.floor);
-  const dnLegs=section("DOWN",tp.legs.down,tp.totals.down,function(l){return l.dropFt;},"Drop",dnHas,tp.totals.down.floor);
-  return <div>
-    <SL>{"TRIP PROFILE"}</SL>
-    <div style={{background:C.surface,borderRadius:10,padding:"4px 12px 11px",border:"1px solid "+C.border,marginBottom:12}}>
-      {upLegs}{dnLegs}
-      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:6}}>{"Each leg is measured along the recorded track between its own waypoints, and the whole approach and descent are the figures GETTING THERE and DESCENT print. "+(tp.climbBy==="track"?"Distance and climb are split by the track":tp.climbBy==="pins"?"Distance is split by the track, and climb by the height change between the waypoints":"Distance is split by the track; no climb is measured for the legs")+"; time is split by the walk model at the pace, pack and party in Full trip time."+(tp.offTrack?" "+tp.offTrack+(tp.offTrack===1?" waypoint sits":" waypoints sit")+" off the recorded track, so "+(tp.offTrack===1?"it has":"they have")+" no leg of "+(tp.offTrack===1?"its":"their")+" own.":"")}</div>
-    </div>
-  </div>;
-}
 /* A coordinate you can read out, and one tap to copy it. Shared by both rows of CragLocationCard. */
 /* The pin editor's TYPES on a crag route. A crag has no summit or camp; it has a car park, the trail
    junctions to the wall, water and hazards. The stored type stays "Trailhead" -- trailheadPoint()
@@ -1686,18 +1485,6 @@ export function ClimbingRouteTable({route,onEdit}){
   </div></>;
 }
 
-/* The join between CLIMBING ROUTE and the ROUTE BREAKDOWN drawn directly under it: a short spine
-   down from the overview and one line saying what the breakdown holds, counted by breakdownRows()
-   so it names the same pitches and legs the breakdown's own intro does. Text, not a control: the
-   breakdown is the very next section. */
-function BreakdownHandoff({route}){
-  const {pitchCount,stageCount}=breakdownRows(route);
-  if(!pitchCount&&!stageCount)return null;
-  const what=pitchCount
-    ?(pitchCount+" roped pitch"+(pitchCount!==1?"es":"")+(stageCount?" and "+stageCount+" leg"+(stageCount!==1?"s":""):""))
-    :(stageCount+" leg"+(stageCount!==1?"s":""));
-  return <div data-handoff="" style={{display:"flex",alignItems:"center",gap:10,padding:"0 0 0 24px"}}><div aria-hidden="true" style={{width:2,height:22,background:C.blueDim,flexShrink:0}}/><span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.4}}>{"↓ "+(pitchCount?"Pitch by pitch":"Leg by leg")+" below — "+what+" in the route breakdown."}</span></div>;
-}
 
 /* APPROACH — ONE section, holding every way in. It used to be two: "APPROACHES · N ways in"
    (the `approach_variants` cards) and, under it, a separate APPROACH box holding the `approach`
@@ -2236,28 +2023,6 @@ function CampingPanel({route,onEdit,calc,activity}){
     {named}
   </div>;
 }
-/* WHERE TO GET THE OVERNIGHT PERMIT for the zone this route sleeps in. `access.permit` answers the
-   DAY question on most rows ("None required for day climbing"), each site's own `permit` prose says
-   which permit without saying where to get it, and the ACCESS panel links only four agencies by a
-   name match. `access.overnight_permit` = {what, where, url} is researched per zone; `url` is the
-   issuing agency's own page and nothing else (check-camp-role-output.mjs enforces the host). */
-export function overnightPermitOf(route){
-  const p=route&&route.access&&route.access.overnight_permit;
-  if(!p||typeof p!=="object")return null;
-  const what=String(p.what||"").trim(),where=String(p.where||"").trim();
-  let url=null;try{const u=new URL(String(p.url||""));if(u.protocol==="https:")url=u.href;}catch(e){url=null;}
-  return (what||where)?{what:what,where:where,url:url}:null;
-}
-function OvernightPermit({route}){
-  const p=overnightPermitOf(route);
-  if(!p)return null;
-  return <div style={{background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"9px 11px",marginBottom:10}}>
-    <div style={{...SUB_LABEL,marginBottom:3}}>{"OVERNIGHT PERMIT"}</div>
-    {p.what?<div style={{fontSize:12.5,fontWeight:700,color:C.text,lineHeight:1.45}}>{p.what}</div>:null}
-    {p.where?<div style={{fontSize:12,color:C.textSub,lineHeight:1.55,marginTop:3}}>{p.where}</div>:null}
-    {p.url?<a href={p.url} target="_blank" rel="noopener noreferrer" style={{display:"block",marginTop:8,padding:"8px 12px",background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:9,color:C.onSolid,fontSize:12.5,fontWeight:700,textDecoration:"none",textAlign:"center"}}>{"Get the permit →"}</a>:null}
-  </div>;
-}
 /* A COMMENT SOMEONE TYPED AT LENGTH opens at three lines with a Read more (owner's note, 2026-10-25: "if someone types
    too much so it doesn't fill the screen"). Short comments render whole, with no button. */
 /* MANY COMMENTS ON A PITCH: the newest three show, and "Show N earlier comments" opens the rest (owner's note, 2026-10-25:
@@ -2503,26 +2268,6 @@ function routeKw(route){const reports=route.activity||[];const off=(route.hazard
 /* Exported for scripts/oneoff/probe-consensus-outage-copy.mjs, which renders it directly: it is
    the one surface here that takes the outage flag as a PROP, so it can be driven without a live
    query. Same reason seasonShort and campingGate are exported. */
-/* ROAD CONDITIONS — what climbers who drove in said about the road, newest first. The catalog's
-   own road block (GETTING THERE, on Plan) is researched once and goes stale with the season; this
-   is the part that changes week to week, so it is read off reports, never off the catalog. A
-   report counts when it answered any of ROAD TO THE TRAILHEAD in the log form, including the old
-   open/closed chips, which are the same strings (see ROAD_STATUS in core). */
-const ROAD_TONE=function(t){return t==="open"?[C.green,C.greenBg]:t==="gated"?[C.amber,C.amberBg]:t==="closed"?[C.red,C.redBg]:[C.textSub,C.surface];};
-function roadReportsOf(activity){return (activity||[]).map(function(a){var r=roadReportOf(a);return r?Object.assign({},r,{user:a.user,date:a.date}):null;}).filter(Boolean).sort(function(a,b){return String(b.date||"").localeCompare(String(a.date||""));});}
-function RoadReports({activity,reportsUnavailable,onReport}){
-  const [all,setAll]=useState(false);
-  const reps=useMemo(function(){return roadReportsOf(activity);},[activity]);
-  const lastStatus=reps.find(function(r){return r.status;});
-  const shown=all?reps:reps.slice(0,3);
-  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",marginBottom:12,border:"1px solid "+C.border}}>
-    <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:4}}><CardHead tone={C.teal}>ROAD CONDITIONS</CardHead>{onReport?<button onClick={onReport} style={{...BTN_SM,flexShrink:0,color:C.green,background:C.greenBg,border:"1px solid "+C.greenDim}}>Report the road</button>:null}</div>
-    <div style={{fontSize:11.5,color:C.textMuted,marginBottom:reps.length?10:0,lineHeight:1.5}}>{reps.length?"From climbers who drove in — newest first.":reportsUnavailable?"Couldn’t load road reports — try again in a moment.":"No one has reported the road yet. Driving in? Say whether it was open and what it took — the next party checks this before they leave home."}</div>
-    {lastStatus?(function(){var tc=ROAD_TONE(lastStatus.tone);return <div style={{marginBottom:10}}><span style={{display:"inline-block",fontSize:13,fontWeight:800,color:tc[0],background:tc[1],borderRadius:8,padding:"4px 10px"}}>{lastStatus.status}</span><span style={{fontSize:12,color:C.textMuted,marginLeft:8}}>{"reported "+ago(lastStatus.date)}</span>{!isRecent(lastStatus.date)?<div style={{fontSize:11.5,color:C.amber,marginTop:6,lineHeight:1.5}}>{"That is the newest report, and it is more than "+RECENT_DAYS+" days old. Roads change with the season — check with the land manager before you drive."}</div>:null}</div>;})():null}
-    {shown.map(function(r,i){var bits=[r.status,r.vehicle].concat(r.issues).filter(Boolean);return <div key={i} style={{borderTop:"1px solid "+C.border,padding:"8px 0"}}><div style={{fontSize:11.5,color:C.textMuted,marginBottom:3}}>{(r.date?shortDate(r.date)+" · ":"")+(r.user||"A climber")}</div>{bits.length?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{bits.join(" · ")}</div>:null}{r.note?<div style={{fontSize:12.5,color:C.text,lineHeight:1.5,marginTop:bits.length?3:0}}>{r.note}</div>:null}</div>;})}
-    {reps.length>3?<button onClick={function(){setAll(!all);}} aria-expanded={all} style={{minHeight:44,...BTN_LINK(C),marginTop:4,background:"transparent",border:"none",color:C.blue}}>{all?"Show fewer":"Show all "+reps.length+" road reports"}</button>:null}
-  </div>;
-}
 export function ConsensusPanel({route,activity,hzVotes,onVote,reportsUnavailable,starSum}){
   /* Road tags are left out of THIS panel's tallies: ROAD CONDITIONS sits on the same tab (at its foot) and
      says the same thing as sentences, so on a route with few reports TOP CONDITIONS REPORTED filled
