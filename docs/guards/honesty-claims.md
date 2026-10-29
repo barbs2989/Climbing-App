@@ -865,6 +865,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   trad / top-rope / bouldering only — `lib/conditionsScore.js`, card `ConditionsScoreCard` in
   `RouteDetail.jsx`) **adds up, leaves out what it did not measure, and is offered nowhere it cannot
   judge**. Static, no network, no credentials; in `npm run build`.
+  - **The SEASON chart's verdicts are pinned (2026-10-28)**: `monthFit` once read only the afternoon
+    high, so a Canadian July (Squamish 79 °F against the 45-68 band) read "Off season" (owner's note,
+    2026-10-24; fixed in #2784 without a pin). Eight measured months (Open-Meteo archive 2021-25) must
+    keep their verdicts: Squamish July prime for sport/trad AND bouldering, Squamish August good for
+    bouldering, Lake Louise July prime despite 12 thunderstorm days, wet Val-David July good, Red Rock
+    January prime, Red Rock July and Bishop August off. Reverting to the high alone fails five of them.
+    Measured and left as is: Ontario and Okanagan bouldering in July (Bon Echo, Niagara Glen, Skaha:
+    dawn already 61-68 °F, 3-10° above the 35-58 cool band) still reads off; they are as hot against
+    that band as Joshua Tree's August is against the standard one, so no rule can pass one and not the
+    other. A climber who boulders warmer sets their range under Your conditions.
   - **Arithmetic**: each factor is rounded to whole points BEFORE summing, so the "x of y points"
     line is exactly the sum of the rows printed under it, and stars are exactly 5 × points / measured
     points. There is **no clamp** anywhere — the same lesson as `compat()` (docs/codebase/algorithms.md).

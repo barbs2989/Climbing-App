@@ -30,7 +30,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { scoreForecast, WEIGHTS, CRAG_SCORE_DISCIPLINES, aspectBearing, sunPosition, starsLabel, frictionOf, aqiCategory, seepRisk, WET_BANDS, DRY_RATE, mergeMeasuredRain } from "../lib/conditionsScore.js";
+import { scoreForecast, WEIGHTS, CRAG_SCORE_DISCIPLINES, aspectBearing, sunPosition, starsLabel, frictionOf, aqiCategory, seepRisk, WET_BANDS, DRY_RATE, mergeMeasuredRain, monthFit, TEMP_BANDS } from "../lib/conditionsScore.js";
 import { routeRock, DRY_HOURS } from "../lib/rockType.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -479,6 +479,23 @@ console.log("check:conditions-score");
   const cr = terrainCredits(["ned13/imgn50w124_13.tif, nrcan_cdem/cdem_dem_092G.tif", "srtm/N25W101.tif", null]);
   if (cr.length === 1 && /Open Government Licence – Canada/.test(cr[0]) && terrainCredits(["ned/x.tif", "ned19/y.tif", "srtm/z.tif"]).length === 0) ok("the terrain credit appears only where its licence requires it (Canada yes; US 3DEP and SRTM, public domain, no)");
   else fail(`terrain credits are wrong: ${JSON.stringify(cr)}`);
+
+  // The SEASON chart's verdicts, pinned on measured months (Open-Meteo archive 2021-25, the chart's own
+  // source). Owner, 2026-10-24: July and August are perfect for sport, trad and bouldering in Canada,
+  // and the chart called them off because it read the afternoon high alone. A desert midsummer stays off.
+  const SEASON_PINS = [
+    ["Squamish July, sport/trad", { hi: 78.8, lo: 56.3, wetDays: 3.6, rain: 1.31 }, "standard", "prime"],
+    ["Squamish July, bouldering", { hi: 78.8, lo: 56.3, wetDays: 3.6, rain: 1.31 }, "cool", "prime"],
+    ["Squamish August, bouldering", { hi: 79.1, lo: 57.5, wetDays: 6.8, rain: 2.15 }, "cool", "good"],
+    ["Lake Louise July, 12 wet days of thunderstorms", { hi: 71.1, lo: 48.5, wetDays: 12.4, rain: 2.25 }, "standard", "prime"],
+    ["Val-David July, a wet month", { hi: 74.6, lo: 58.6, wetDays: 15.2, rain: 4.69 }, "standard", "good"],
+    ["Red Rock January", { hi: 49.7, lo: 37, wetDays: 3.6, rain: 1.04 }, "standard", "prime"],
+    ["Red Rock July", { hi: 98.4, lo: 75.2, wetDays: 1.8, rain: 0.41 }, "standard", "off"],
+    ["Bishop August, bouldering", { hi: 91.5, lo: 71.2, wetDays: 1.6, rain: 0.78 }, "cool", "off"],
+  ];
+  const seasonBad = SEASON_PINS.filter(([, mo, b, want]) => monthFit(mo, TEMP_BANDS[b]) !== want).map(([n, mo, b, want]) => `${n}: ${monthFit(mo, TEMP_BANDS[b])}, not ${want}`);
+  if (!seasonBad.length) ok(`the Season chart reads a Canadian July/August as climbable and a desert midsummer as off (${SEASON_PINS.length} measured months)`);
+  else fail(`the Season chart misjudges a month: ${seasonBad.join(" | ")}`);
 
   // The card and the fetch.
   const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
