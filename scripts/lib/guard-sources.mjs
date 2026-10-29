@@ -231,6 +231,17 @@ export const MOVED = {
     "src/components/ClampText.tsx",
     "src/components/ClimateSeasonCard.tsx",
     "src/components/PhotoRow.tsx",
+    "src/components/TopoStroke.tsx",
+    "src/components/VarTag.tsx",
+    "src/components/PinIcon.tsx",
+    "src/components/TopoPinLegend.tsx",
+    "src/components/TopoLineOverlay.tsx",
+    "src/components/TopoVariantKey.tsx",
+    "src/components/TopoPinKey.tsx",
+    "src/components/TopoThumb.tsx",
+    "src/components/EmptySection.tsx",
+    "src/components/PitchPhotos.tsx",
+    "src/components/CopyCoordButton.tsx",
   ],
 };
 // The pre-2026-10 name, kept because 21 guards import it. Same array, same meaning.
