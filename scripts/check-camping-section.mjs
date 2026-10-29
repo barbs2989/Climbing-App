@@ -43,6 +43,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -455,7 +456,7 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
 //    something else, so a climber chose one vocabulary and found their camp filed under another.
 //    Read from the source: the form is a modal a static render of the route page does not open.
 {
-  const src = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const src = readAppFile(path.join(ROOT, "RouteDetail.jsx")) /* stitched: SuggestFix lives in src/components since PR59 */;
   const sel = src.match(/aria-label=\{"Site "\+\(idx\+1\)\+" role"\}[\s\S]*?<\/select>/);
   if (!sel) { fail("ANCHOR LOST: the camping form's role <select> is gone or renamed — its labels were not checked"); }
   else {
