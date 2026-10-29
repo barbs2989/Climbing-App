@@ -153,7 +153,7 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 
 ## 2. How it works
 
-1. **Submit.** `SuggestFix` (`RouteDetail.jsx`) calls `onContribute` in `ClimbMatch.jsx`, which
+1. **Submit.** `SuggestFix` (`src/components/SuggestFix.tsx`) calls `onContribute` in `ClimbMatch.jsx`, which
    calls `submitContribution` (`lib/db.js`). The row is forced `pending` by `trg_contribution_status`
    (0127). `contributions_guard_field_edit` (0308) refuses a high field, the 21st edit of the day,
    and the restrictive policy "contribution standing allows field edits" refuses a restricted or
@@ -187,7 +187,8 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | File | What lives there |
 |---|---|
 | `ClimbMatch.jsx` | `onContribute` (submit + toast), the route memo's approved-only merge (`_contribFields`, `_pendingEdits`), `mergedNotifs` with notices |
-| `RouteDetail.jsx` | `SuggestFix`: the edit sheet, `FIELDS`, the "Awaiting review" line, the standing notice; `openFix` |
+| `src/components/SuggestFix.tsx` | `SuggestFix`: the edit sheet, `FIELDS`, the "Awaiting review" line, the standing notice (moved out of RouteDetail.jsx, PR59) |
+| `RouteDetail.jsx` | `openFix`, which opens the edit sheet |
 | `lib/RouteQualityQueues.jsx` | `FieldContributionQueue`, `RouteFlagQueue`, `ContributorStandingQueue` |
 | `lib/confidence.jsx` | `ConfidenceCtx`, `HEAD_KEYS`, `headKey`, `ConfChip`, `ConfidenceLegend` |
 | `lib/FlagRouteInfo.jsx` | `FlagRouteSheet` |

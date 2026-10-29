@@ -18,7 +18,7 @@
 // renamed local and a reworded placeholder are ordinary work, and a suite that fired on either
 // would tell an author to stop touching correct code.
 //
-// IT EDITS RouteDetail.jsx IN PLACE. Do not commit, and do not build, while it runs.
+// IT EDITS src/components/SuggestFix.tsx IN PLACE. Do not commit, and do not build, while it runs.
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
@@ -26,26 +26,31 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const abs = path.join(ROOT, "RouteDetail.jsx");
+// PR59 moved SuggestFix (the edit sheet) to src/components/SuggestFix.tsx, so every case edits that file.
+const abs = path.join(ROOT, "src", "components", "SuggestFix.tsx");
 const sum = () => crypto.createHash("sha1").update(fs.readFileSync(abs)).digest("hex");
 
-const SEED = 'lengthM:p.lengthM!=null?uLenN(p.lengthM):""';
-const STORE = "var _len=uLenIn(p.lengthM),_bolts=parseInt(p.bolts,10);";
+const SEED = 'lengthM:p.lengthM!=null?uLenN(p.lengthM) as number:""';
+const STORE = "const _len=uLenIn(p.lengthM),_bolts=parseInt(p.bolts as string,10);";
 
+// PR59: the pitch editor and the rappel editor now both sit in SuggestFix.tsx and spell the length label and
+// placeholder identically, and check-units tests the SOURCE with one regex over everything, so reverting only the
+// pitch one is hidden by its rappel sibling. Those cases set `all: true` and revert every copy (the guard cannot
+// tell the two apart: reported, not changed).
 const CASES = [
   // THE REAL HISTORICAL DEFECT: the box asked for metres whatever the setting, and stored raw.
   { name: "store-never-converts", expect: "fail",
-    find: STORE, repl: "var _len=parseInt(p.lengthM,10),_bolts=parseInt(p.bolts,10);",
+    find: STORE, repl: "const _len=parseInt(p.lengthM as string,10),_bolts=parseInt(p.bolts as string,10);",
     says: /the column holds metres|not converting|round-trips|was rewritten/ },
   // THE WORST EDGE: metres shown under a feet label, and an untouched save shrinks the pitch 3.28x.
   { name: "prefill-not-converted", expect: "fail",
     find: SEED, repl: 'lengthM:p.lengthM!=null?p.lengthM:""',
     says: /was rewritten|the box shows|seeded with the length/ },
   { name: "box-still-asks-for-metres", expect: "fail",
-    find: '"Pitch "+(idx+1)+" length in "+(uImp()?"feet":"metres")', repl: '"Pitch "+(idx+1)+" length in metres"',
+    all: true, find: '" length in "+(uImp()?"feet":"metres")', repl: '" length in metres"',
     says: /asks in the climber's own units/ },
   { name: "placeholder-reverts-to-fixed-text", expect: "fail",
-    find: 'placeholder={"Length ("+uLenUnit()+")"}', repl: 'placeholder="Length (m)"',
+    all: true, find: 'placeholder={"Length ("+uLenUnit()+")"}', repl: 'placeholder="Length (m)"',
     says: /placeholder follows the setting/ },
   { name: "summary-hardcodes-metres", expect: "fail",
     find: 'pp.lengthM?pp.lengthM+uLenUnit():""', repl: 'pp.lengthM?pp.lengthM+"m":""',
@@ -61,12 +66,12 @@ const CASES = [
     says: /was rewritten|the box shows|seeded with the length/ },
   // MUST STAY SILENT: a renamed local is not a change to what is stored.
   { name: "local-renamed", expect: "pass",
-    find: STORE, repl: "var _lm=uLenIn(p.lengthM),_bolts=parseInt(p.bolts,10);var _len=_lm;",
+    find: STORE, repl: "const _lm=uLenIn(p.lengthM),_bolts=parseInt(p.bolts as string,10);const _len=_lm;",
     says: null },
   // MUST STAY SILENT: a better placeholder is ordinary editorial work. It still consults the unit
   // helper, which is the property the section asserts — pinning the exact string would forbid this.
   { name: "placeholder-reworded", expect: "pass",
-    find: 'placeholder={"Length ("+uLenUnit()+")"}', repl: 'placeholder={"e.g. 30 "+uLenUnit()}',
+    all: true, find: 'placeholder={"Length ("+uLenUnit()+")"}', repl: 'placeholder={"e.g. 30 "+uLenUnit()}',
     says: null },
 ];
 
@@ -75,8 +80,8 @@ for (const c of CASES) {
   const before = fs.readFileSync(abs, "utf8");
   const beforeSum = sum();
   const hits = before.split(c.find).length - 1;
-  if (hits !== 1) { console.log(`  BROKEN CASE  ${c.name}: pattern matched ${hits} times — the case is wrong, not the probe`); bad++; continue; }
-  fs.writeFileSync(abs, before.replace(c.find, c.repl));
+  if (c.all ? hits < 1 : hits !== 1) { console.log(`  BROKEN CASE  ${c.name}: pattern matched ${hits} times — the case is wrong, not the probe`); bad++; continue; }
+  fs.writeFileSync(abs, before.split(c.find).join(c.repl));
   if (sum() === beforeSum) { console.log(`  BROKEN CASE  ${c.name}: edit did not change the file`); fs.writeFileSync(abs, before); bad++; continue; }
 
   let out = "", code = 0;

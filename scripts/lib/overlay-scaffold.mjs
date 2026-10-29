@@ -27,7 +27,7 @@
 // overlay. See dialogOverlays() for the two precision rules that keep it honest.
 
 import { readFileSync, existsSync } from "node:fs";
-import { readCoreSource } from "./guard-sources.mjs";
+import { readCoreSource, readParentSource } from "./guard-sources.mjs";
 
 // Overlays whose RENDERER is gated on state beyond their own flag, so flipping the flag
 // alone cannot mount them. These are correct code, not bugs: the walk simply cannot reach
@@ -453,7 +453,10 @@ export function routeDetailSource() {
 // "opened", rendered no dialog, and were reported as overlays that never mounted — noise that
 // looks exactly like a real finding. A name is not evidence; what it renders is.
 export function routeDetailOverlays(rdCode) {
-  const dlg = dialogComponents(rdCode);
+  // A dialog component the page renders may live in src/components/ now (SuggestFix, PR59): its
+  // role="dialog" is the evidence for the flag that opens it, so the evidence is read off the page
+  // STITCHED. The flags themselves, and the injection, stay on the raw page text.
+  const dlg = dialogComponents(rdCode, readParentSource(undefined, "RouteDetail.jsx", "overlay-scaffold"));
   const out = [];
   for (const m of rdCode.matchAll(/\[([a-zA-Z][\w$]*),(set[A-Z][\w$]*)\]=useState\(([^)]{0,30})/g)) {
     const [name, setter, init] = [m[1], m[2], m[3].trim()];
