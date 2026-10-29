@@ -78,7 +78,7 @@ export default function AddArea({ parent, C, onClose, onSubmit, onOpenArea }) {
         <div style={{ marginBottom: 14 }}>
           <div style={lbl}>What is it?</div>
           <div role="group" aria-label="What kind of area" style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            {KINDS.map(k => <button key={k[0]} onClick={() => setKind(k[0])} aria-pressed={kind === k[0]} style={{ ...CHIP, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, textAlign: "left", minHeight: 44, border: "1px solid " + (kind === k[0] ? C.blue : C.border), background: kind === k[0] ? C.blueBg : C.card, color: kind === k[0] ? C.blue : C.text, fontSize: 13, fontWeight: 700, cursor: "pointer" }}><span>{k[1]}</span><span style={{ fontSize: 11.5, fontWeight: 500, color: C.textMuted }}>{k[2]}</span></button>)}
+            {KINDS.map(k => <button key={k[0]} onClick={() => setKind(k[0])} aria-pressed={kind === k[0]} style={{ ...CHIP, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, textAlign: "left", minHeight: 44, border: "1px solid " + (kind === k[0] ? C.blue : C.border), background: kind === k[0] ? C.blueBg : C.card, color: kind === k[0] ? "#fff" : C.text, fontSize: 13, fontWeight: 700, cursor: "pointer" }}><span>{k[1]}</span><span style={{ fontSize: 11.5, fontWeight: 500, color: C.textMuted }}>{k[2]}</span></button>)}
           </div>
         </div>
 

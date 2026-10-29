@@ -1421,6 +1421,27 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     which proves both that the button is scanned at all and that `Lbl` is what names it; the
     no-op attribute edit it replaced proved neither and would have passed against a guard that
     never looked at that button.
+- **`check:blue-on-blue`** fails any element that owns text drawn in **blue on a blue box** (owner
+  note: "I don't like the blue text on blue boxes, change text to white"). It walks the screens
+  check:axe walks signed in, at 390px only, and reads the RENDERED colours: the text's computed
+  `color`, and the colour behind it, made by compositing every painted ancestor from the page down
+  (translucent washes and gradient stops included). Runs in `render-guards.yml`, not the build.
+  `--where` prints the inline style that SETS the colour and the one that paints the box, which is
+  what you grep for to fix one.
+  - **Why it is a browser walk, not a source scan.** #2752 rewrote 189 style objects that set a blue
+    fill and a blue colour in the same object. On 2026-10-29 the same text-level scan, widened to
+    conditional fills (`on?C.blueBg:C.surface` beside `on?C.blue:C.textSub`), found 71 more that
+    #2752's pattern missed, and the walk then found the shape no source scan can see: the blue box on
+    a WRAPPER and the blue text on a child inside it (the Ranks "You're #17 of 18" card, a partner
+    card's match percentage). Which ancestor paints is a property of the rendered tree.
+  - **The thresholds.** Blue text: blue ≥180 and leading red by ≥110 and green by ≥60 (C.blue,
+    C.blueSolid and the lifted `Pill` blues). A blue box: blue leading red by ≥35 and green by ≥20.
+    The app's neutral dark surfaces lean blue too (C.bg by 10, C.surface by 12, C.card by 20), so the
+    box threshold sits well clear of them; C.blueBg leads by 55, C.blueChip by 50, C.blueDim by 81.
+  - **The fix is white text (`"#fff"`)**, the owner's word, as #2752 chose; the blue fill and blue
+    border stay, so a selected control still reads as selected.
+  - **What it cannot see:** a state the walk does not land in (a chip that is blue only once tapped,
+    a row that only expands on a click), text inside an `<svg>`, and a box drawn by an image.
 - **`check:axe`** runs **axe-core's WCAG 2.2 A/AA rules** over every screen, in Chrome, signed in
   (8 NAV tabs and 7 route tabs at 390px and 1280px, plus every scaffold overlay at 390px) **and
   signed out** (sign-in, create-account, and the Accessibility statement with its guest report

@@ -60,7 +60,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
     }
     return out;
   }, [cardsQ.data, suggestIds, listed]);
-  const pill = (on, disabled) => ({ minHeight: 36, padding: "7px 13px", borderRadius: 20, border: "1px solid " + (on ? C.blueDim : C.border), background: on ? C.blueBg : C.surface, color: disabled ? C.textMuted : on ? C.blue : C.textSub, fontSize: 13, fontWeight: 700, cursor: disabled ? "default" : "pointer", opacity: disabled ? 0.55 : 1 });
+  const pill = (on, disabled) => ({ minHeight: 36, padding: "7px 13px", borderRadius: 20, border: "1px solid " + (on ? C.blueDim : C.border), background: on ? C.blueBg : C.surface, color: disabled ? C.textMuted : on ? "#fff" : C.textSub, fontSize: 13, fontWeight: 700, cursor: disabled ? "default" : "pointer", opacity: disabled ? 0.55 : 1 });
   const field = { width: "100%", boxSizing: "border-box", padding: "11px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.bg, color: C.text, fontSize: 15 };
   const card = { background: C.card, border: "1px solid " + C.border, borderRadius: 12 };
   const searchRef = useRef(null);

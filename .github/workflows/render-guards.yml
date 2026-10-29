@@ -654,3 +654,35 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           VITE_USE_DB: "true"
+
+  blue-on-blue:
+    name: No blue text on a blue box
+    runs-on: ubuntu-latest
+    # The same screens check:axe walks at phone width (8 tabs, 7 route tabs, ~55 overlays), one cheap
+    # in-page probe each.
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:blue-on-blue cannot drive anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      # Owner note (2026-10): "I don't like the blue text on blue boxes, change text to white". #2752
+      # fixed the style objects that set both; this reads the RENDERED colours, so a blue box on a
+      # wrapper with blue text in a child is caught too.
+      - name: Blue boxes carry white text
+        run: npm run check:blue-on-blue
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { C } from "../../ClimbMatchCore.jsx";
-import { readableOn } from "../../lib/contrast.js";
+import { blueOnBlue, readableOn } from "../../lib/contrast.js";
 
 export interface PillProps {
   /** The text (or node) inside the pill. */
@@ -17,13 +17,14 @@ export interface PillProps {
 
 /** The rounded tag every badge in the app is drawn with: a background, a colour, an optional icon, a label.
  *  The text is lifted to 4.5:1 against its own tinted background (WCAG 1.4.3): at 11px, purple and red
- *  on their own tint read 3.9:1 and 4.1:1. A colour that already passes is drawn as given. */
+ *  on their own tint read 3.9:1 and 4.1:1. A colour that already passes is drawn as given. Blue on a blue
+ *  tint is drawn white instead (owner note, 2026-10). */
 export default function Pill({ label, color, bg, sm, icon }: PillProps) {
   return (
     <span
       style={{
         background: bg,
-        color: color && bg ? readableOn(color, bg, C.card) : color,
+        color: color && bg ? (blueOnBlue(color, bg, C.card) ? "#fff" : readableOn(color, bg, C.card)) : color,
         padding: sm ? "2px 7px" : "3px 10px",
         borderRadius: 20,
         fontSize: sm ? 11 : 12,
