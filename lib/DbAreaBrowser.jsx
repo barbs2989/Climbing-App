@@ -646,7 +646,7 @@ function PartnersHereCard({ area, C, uid, myListings, onListMe, onFindPartnersIn
           <div style={{ fontSize: 13, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>Partners here</div>
           <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{!on ? "Sign in to see who climbs here." : countQ.isError ? "Couldn’t load who’s listed." : count == null ? "Counting…" : count === 0 ? "Nobody listed here yet — be the first." : count + " climber" + (count === 1 ? "" : "s") + " listed here or nearby"}</div>
         </div>
-        {on ? <button onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed at " + area.name + " — tap to remove" : "List me at " + area.name} style={{ flexShrink: 0, minHeight: 40, padding: "0 13px", borderRadius: 10, border: "1px solid " + (listed ? C.green : C.blueDim), background: listed ? C.greenBg : C.blueBg, color: listed ? C.green : C.blue, fontSize: 12.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Listed ✓" : "List me here"}</button> : null}
+        {on ? <button onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed at " + area.name + " — tap to remove" : "List me at " + area.name} style={{ flexShrink: 0, minHeight: 40, padding: "0 13px", borderRadius: 10, border: "1px solid " + (listed ? C.green : C.blueDim), background: listed ? C.greenBg : C.blueBg, color: listed ? C.green : "#fff", fontSize: 12.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Listed ✓" : "List me here"}</button> : null}
       </div>
       {/* Once listed, the follow-up — when you can climb here and what — is a real, full-width
           control, not a bare word. It and "See all" used to spread `BTN_LINK` as an object; it is a
@@ -864,7 +864,7 @@ function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSav
                 const shownAll = routes.filter(r => (!wallDisc || r.discipline === wallDisc) && (!wallStars || !(r.stars > 0) || r.stars >= wallStars));
                 const unplaced = (key === "lr" || key === "rl") ? shownAll.filter(r => r.sort_order == null).length : 0;
                 const filtersOn = (wallDisc ? 1 : 0) + (wallStars ? 1 : 0);
-                const wallChip = on => ({ ...CHIP, flexShrink: 0, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" });
+                const wallChip = on => ({ ...CHIP, flexShrink: 0, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" });
                 return <>
                   {routes.length > 1 ? <div style={{ marginBottom: 8 }}>
                     <button onClick={() => setWallFilterOpen(o => !o)} aria-expanded={wallFilterOpen} style={{ ...wallChip(filtersOn > 0), minHeight: 44 }}>{"Filters" + (filtersOn ? " (" + filtersOn + ")" : "")}</button>
@@ -876,7 +876,7 @@ function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSav
                       <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>{"Climbs nobody has rated yet stay in the list when a star minimum is set."}</div>
                     </div> : null}
                   </div> : null}
-                  {routes.length > 1 ? <div role="group" aria-label="Sort climbs" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 8 }}>{opts.map(o => <button key={o[0]} onClick={() => setListSort(o[0])} aria-pressed={key === o[0]} style={{ ...CHIP, flexShrink: 0, border: "1px solid " + (key === o[0] ? C.blue : C.border), background: key === o[0] ? C.blueBg : C.surface, color: key === o[0] ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{o[1]}</button>)}</div> : null}
+                  {routes.length > 1 ? <div role="group" aria-label="Sort climbs" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 8 }}>{opts.map(o => <button key={o[0]} onClick={() => setListSort(o[0])} aria-pressed={key === o[0]} style={{ ...CHIP, flexShrink: 0, border: "1px solid " + (key === o[0] ? C.blue : C.border), background: key === o[0] ? C.blueBg : C.surface, color: key === o[0] ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{o[1]}</button>)}</div> : null}
                   {unplaced ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, lineHeight: 1.45 }}>{unplaced + (unplaced !== 1 ? " climbs have" : " climb has") + " no position on the wall yet, so " + (unplaced !== 1 ? "they are" : "it is") + " listed last, by name."}</div> : null}
                   {shownAll.length ? (() => {
                     // By discipline: one heading per run of the same discipline, rows under it in name order.
