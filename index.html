@@ -215,6 +215,18 @@
          Planner's fitness and departure time, Settings' date format, onboarding's grades. Not
          !important, so a select that sets its own minHeight inline keeps it. */
       select:not([multiple]):not([size]) { min-height: 44px; }
+      /* ...and a BOX-shaped button is at least 40px tall (owner note: "the overall near me friends
+         and by area boxes should be bigger. Find other places where the box is too small"). A walk
+         of every tab, the route page and 70 popups (scripts/oneoff/measure-target-size.mjs) found
+         ~70 kinds of chip and row button drawn 25-31px tall by a 5-8px padding: skill and belay
+         chips, discipline and country pickers, Accept / Decline / Vouch / Remove, Fill in the
+         missing..., Report the road. lib/tapSlop.js already widens their TOUCH area; this makes the
+         box itself the size Material 3 draws a button (40dp). "Box" = it draws a border-radius, so
+         a text link styled as a button keeps its line height; a switch, anything with its own (a `line-height` is not one),
+         height, a map overlay (position: absolute) and a flex button that does not centre its
+         content (the text would sit at the top of the taller box) are left alone. Not !important,
+         so an inline minHeight still wins. */
+      button[style*="border-radius"]:not([role="switch"]):not([style^="height:"]):not([style*=" height:"]):not([style*="position: absolute"]):is([style*="padding: 3px"],[style*="padding: 4px"],[style*="padding: 5px"],[style*="padding: 6px"],[style*="padding: 7px"],[style*="padding: 8px"]):not([style*="display: flex"]:not([style*="align-items: center"])):not([style*="display: inline-flex"]:not([style*="align-items: center"])) { min-height: 40px; }
       select:not([multiple]):not([size]) { -webkit-appearance: none !important; -moz-appearance: none !important; appearance: none !important; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%232f81f7%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E') !important; background-repeat: no-repeat !important; background-position: right 12px center !important; background-size: 10px !important; padding-right: 34px !important; }
       /* iOS Safari draws a date/time input as a native control with its OWN minimum width and
          ignores width:100%, so DATE CLIMBED ran past the right edge of its card and its value sat
