@@ -144,9 +144,10 @@ Layout only. The footer reads the states list (`useStates`); the search reads th
 
 ## 6. Guards
 `check:boot` (boot NAV labels match `NAV`), `check:overlay-width-cap`, `check:bottom-panels`,
-`check:zindex`, `check:tap-slop` (the touch widening stays installed). The browser walks drive a phone-width window, so they cover the phone layout only.
+`check:zindex`, `check:tap-slop` (the touch widening stays installed). The browser walks drive a phone-width window, except `check:overflow -- --width 1280`, which walks every tab, the route page and every openable overlay on the desktop website (`render-guards.yml` runs it beside the 390px walk).
 
 ## 7. Last significant change
+- **The desktop website is walked** (2026-10-28): `check:overflow` takes `--width`, and CI runs it at 1280px as well as 390px, so a desktop screen that scrolls sideways fails a check.
 - **Small controls are easier to hit** (owner note 2026-10-28, "Some clicks links are small"): a touch that lands on nothing goes to the nearest small control within 44px (`lib/tapSlop.js`, installed in `main.jsx`); dropdowns are 44px tall, the waypoint map picker's layer buttons 34px, the fire map's layer chips and the Reports condition rows 36px, and sign-in's text links have a bigger touch box (`TEXT_TAP`). Measured with `scripts/oneoff/probe-tap-targets.mjs`.
 - **The sign-in look, app-wide** (owner, 2026-10-24): header glow, branded Home banner and Menu header, plain top-right icons, one chevron, one-line header text, Logbook sort & filter folded, Climbs regions as cards on a phone.
 - **Narrower desktop** (owner, 2026-10-22): 640px column, action buttons sized to their label, Messages pane 280px.
@@ -167,4 +168,4 @@ Layout only. The footer reads the states list (`useStates`); the search reads th
 - **Phase 3**: public route and area pages with real web addresses. **Phase 4**: printable route
   page, compare routes, full-month calendar, draw an approach → GPX, chat list in the rail, logbook
   CSV, embeddable route card.
-- No browser walk runs at desktop width.
+- Only `check:overflow` runs at desktop width; the other browser walks are phone-only.
