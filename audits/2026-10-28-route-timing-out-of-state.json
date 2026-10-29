@@ -4,8 +4,8 @@
  "rule": "Same as audits/2026-10-28-route-timing-catalog.json.",
  "counts": {
   "researched": 166,
-  "repaired": 26,
-  "writes": 26
+  "repaired": 28,
+  "writes": 28
  },
  "status": "WRITTEN. The project was restarted by the owner after the outage; every repair below was previewed through planTimes, dry-run, written compare-and-set 1000 ms apart with a rollback file (copied to the main checkout's scripts/), and re-run to reconcile (ALREADY).",
  "held": [
@@ -421,6 +421,30 @@
    ],
    "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Four single-peak day trips from Stewart Creek (6.25, 6.75, 8, 8 hr car to car; median 7.4). (second research pass)",
    "rollback": "scripts/rollback-timing-fixes-1793252891044.json"
+  },
+  {
+   "id": "co_crestone_needle_south_face",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    8.4
+   ],
+   "why": "Empty row; whole-day car-to-car total only, from the upper 4WD South Colony trailhead (owner, 2026-10-29: go; about 11.5 mi and 4,700 ft). Two timed day trips from that lot agree within 15% (7.75 and 9 hr); a party from the 2WD lot by bike is left out.",
+   "rollback": "scripts/rollback-timing-fixes-1793253921776.json"
+  },
+  {
+   "id": "co_crestone_peak_south_face",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    15.25
+   ],
+   "why": "Empty row; whole-day car-to-car total only, from the upper 4WD South Colony trailhead (owner, 2026-10-29: go). Two timed day trips from that lot agree (15 and 15.5 hr, via the Red Gully); a fast party is left out.",
+   "rollback": "scripts/rollback-timing-fixes-1793253921776.json"
   }
  ],
  "ownerDecision": {
@@ -438,7 +462,9 @@
    "or_west_ridge_2",
    "wy_east_face",
    "co_mount_harvard_south_slopes",
-   "co_san_luis_peak_northeast_ridge"
+   "co_san_luis_peak_northeast_ridge",
+   "co_crestone_needle_south_face",
+   "co_crestone_peak_south_face"
   ],
   "held": [
    {
@@ -456,22 +482,6 @@
     "basis": "published",
     "why": "one report plus a guide-site range read as a snippet",
     "secondPass": "Second pass: still one car-to-car figure."
-   },
-   {
-    "id": "co_crestone_needle_south_face",
-    "route": "South Face",
-    "carToCarHrs": 11,
-    "basis": "published",
-    "why": "a guide-site range read as a snippet, no reports",
-    "secondPass": "Second pass: clean times only from the upper 4WD South Colony lot (7.75, 9 hr); the row names no trailhead and a 2WD party walks about 11 mi more."
-   },
-   {
-    "id": "co_crestone_peak_south_face",
-    "route": "South Face",
-    "carToCarHrs": 13,
-    "basis": "published",
-    "why": "a guide-site range read as a snippet, no reports",
-    "secondPass": "Second pass: 15 and 15.5 hr agree, but both from the upper 4WD lot; the row names no trailhead."
    },
    {
     "id": "co_grays_peak_north_slopes",
@@ -505,6 +515,7 @@
     "why": "a snippet range and one report",
     "secondPass": "Second pass: one more report with legs but no total."
    }
-  ]
+  ],
+  "crestones": "Owner, 2026-10-29: \"go\" on writing the Crestones from the upper 4WD South Colony lot, where 14ers.com measures its standard figures."
  }
 }
