@@ -64,8 +64,8 @@ const CASES = {
   },
   home: {
     file: "ClimbMatch.jsx",
-    from: 'My objectives",objectivesUnavailable?"couldn’t load":objs.length',
-    to: 'My objectives",objs.length',
+    from: 'My objectives",objectivesUnavailable?"couldn’t load":wishlist.length',
+    to: 'My objectives",wishlist.length',
     expect: "fail",
     names: /Home:revisited/,
   },
