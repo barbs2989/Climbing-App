@@ -35192,3 +35192,48 @@ side.
 No batch was picked, no facts were checked, and `audits/wa-alpine-audit-progress.json`
 is unchanged — `last_processed_id` is still `wa_bryant_peak_west_face` (pass 8).
 The next run should resume from there as if this run never happened.
+
+## Batch 474 — 2026-10-29 (pass 8)
+
+Checked: wa_buckner_mountain_north_face, wa_buckner_mountain_southwest_face, wa_bulls_tooth_south_ridge, wa_burgundy_spire_north_face, wa_burnt_boot_peak_north_ridge, wa_cardinal_peak_nw_couloir_north_ridge, wa_cardinal_peak_se_slopes, wa_carne_mountain_trail_route.
+
+Database reachable again after yesterday's skipped run.
+
+**Fixed (1):** `wa_carne_mountain_trail_route` — the row's own `high_point_ft` (7,085), its own
+Summit waypoint (7,085), the parent `wa_carne_mountain` area row's `elevation_ft` (7,085), and the
+row's own `data_quality.gaps` note (citing WTA and a trip report for 7,085) all agree, but the
+row's own `climbing_route[0].notes` narrated the final push as topping out at "7,091 ft" — a
+number that appears nowhere else on the row and that no external source corroborates. Corrected
+to match the row's own already-agreed 7,085 ft.
+
+**Flagged for human review (2):**
+- `wa_bulls_tooth_south_ridge` — `high_point_ft` (6,840) and the parent `wa_bulls_tooth` area
+  row's `elevation_ft` (6,849) disagree with each other, and neither matches cleanly against
+  outside sources: ListsOfJohn's current LiDAR-based peak page gives 6,807 ft, Wikipedia gives
+  6,840 ft (citing an older ListsOfJohn entry titled "6,860'"), and MyTopo gives ~6,842 ft. Four
+  numbers, no clear winner — a human should pick one figure for both tables rather than this run
+  guessing.
+- `wa_cardinal_peak_nw_couloir_north_ridge` — the row's `access.closures` cites "Little Giant Fire
+  closure (Okanogan-Wenatchee order 06-17-07-2026-40, in effect since September 3, 2026 and
+  through October 31, 2026)." A web search surfaced a secondary source citing a different order
+  number (06-17-07-2026-28) and a different start date (August 1, 2026) for what appears to be the
+  same closure; the primary source (fs.usda.gov) could not be fetched from this run's network
+  (host not resolvable in this environment), so the discrepancy could not be resolved either way.
+  Wildfire closure orders are commonly amended/renumbered, so this is not treated as a confirmed
+  error — flagged for a human to check the primary USFS alert page directly. Also worth noting:
+  the closure window named in the row (through Oct 31, 2026) expires in two days from this run's
+  date, so it may already be stale by the time anyone reads this.
+
+**Clean (5):** `wa_buckner_mountain_north_face` and `wa_buckner_mountain_southwest_face`
+(`high_point_ft` 9,114 confirmed on Wikipedia/PeakVisor and matches the area row exactly; the
+Southwest route's `fa` "Lewis Ryan, August 1, 1901" confirmed as Buckner's first ascent — no
+source ties Lage Wernstedt to this peak's FA, only to an unrelated 1926 photograph of it taken
+from Sahale Mountain); `wa_burgundy_spire_north_face` (`fa` "Fred Beckey party, 1953" confirmed —
+AAC/AAJ 1953 and a 2006 trip report both independently name the full party as Beckey, Hane and
+Parrott, matching the row's three-day aid/fixed-rope account; the row's own already-disclosed
+8,400-vs-8,483/8,492 elevation-convention note from a prior pass is not relitigated here);
+`wa_burnt_boot_peak_north_ridge` (`fa` "Don Williamson, Bill Bucher, and Tom Oas, 1971" confirmed
+on Wikipedia, citing Beckey's Cascade Alpine Guide, for this specific north-ridge line — distinct
+from the peak's earlier 1963 overall FA); `wa_cardinal_peak_se_slopes` (`high_point_ft` 8,596
+matches the area row exactly; `gain_ft` 4,656 matches the row's own trailhead (3,940 ft) to summit
+(8,596 ft) elevation difference exactly).

@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_bryant_peak_west_face",
+  "last_processed_id": "wa_carne_mountain_trail_route",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 473. Continuing id-ascending scope from wa_bryant_peak_west_face.",
+  "pass_note": "Pass 8 in progress, batch 474 complete. Continuing id-ascending scope from wa_carne_mountain_trail_route.",
   "batches": [
     {
       "batch_number": 1,
@@ -9404,6 +9404,26 @@
       "clean": 6,
       "sql_file": null,
       "note": "No fixes. Clean (6): wa_bonanza_peak_northeast_buttress (FA party/date and V 5.7/5.8 grade match the cascadeclimbers account of the Buchwald/Avolio/Volken tri-summit traverse; the route's own corrections field already discloses that \"Northeast Buttress\" names this line descriptively rather than as an independently cataloged Mountain Project/SummitPost route, which checks out -- no separate listing exists anywhere under that name for this peak; high_point_ft 9511 is independently corroborated by a SummitPost July 2004 highpoint trip report citing \"9,511-foot Bonanza Peak\", the same unresolved 9511-vs-9516 spread already noted against the area row in batch 472, not re-litigated here), wa_bonanza_peak_oregonian_route (AAC Publications account by FA climber Seth Keena confirms the FA with Erik Bonnett, 9/4/2013, V 5.9+, 2200ft total, reaching the SW summit at 9320ft exactly matching high_point_ft), wa_booker_mountain_northeast_face (Wikipedia confirms FA Dan Davis/John Holland Aug 22 1964 and elevation 8284ft exactly; SummitPost's 8280ft is ordinary variance), wa_boston_peak_southeast_face (Wikipedia/Trek.zone/SummitPost confirm the 1938 Bressler/Clough/Cox/Myers FA and 8894ft elevation exactly; AAC's 8883ft is ordinary variance; the route's own data_quality field already discloses that this FA may be the peak's general FA rather than this specific line, matching what sources show), wa_boving_roofs (Mountain Project's own \"Boving Roofs\" route page confirms FA Paul Boving and Steve Pollock and the exact structure -- first 3 pitches of the Southwest Rib, then left at a ledge to the double-roof \"money pitch\", rejoining the Bear Hug pitch -- matching our beta nearly verbatim), wa_boving_christensen (grade/pitches/length and position \"100 ft right of Solid Gold\" all confirmed via trip reports; the 1977 FA year has partial corroboration via a cascadeclimbers reference to \"Paul's 1977 route\" but Matt Christensen's full participation isn't independently confirmable -- not contradicted either, so not flagged). Flagged for human review (2): wa_bryant_peak_north_route is a near-bare stub (name/discipline only, no researched content) -- an enrichment gap, not a contradicted fact; wa_bryant_peak_west_face's FA (Clough/Kirschner, July 10 1938) could not be confirmed or contradicted -- Wikipedia's 1926 FA (Anderson/Best/Maxwell/Shorrock/West/Wunderling) is for the peak's general/scramble ascent and doesn't necessarily conflict with a separate later technical-route FA, but no independent source names Clough/Kirschner on this peak. Note: cascadeclimbers.com and sites.google.com (stephabegg.com's trip-report mirror) were unreachable from this environment's network allowlist this run, which limited direct verification of some Bonanza/Enchantments primary-source threads."
+    },
+    {
+      "batch_number": 474,
+      "date": "2026-10-29",
+      "pass": 8,
+      "route_ids": [
+        "wa_buckner_mountain_north_face",
+        "wa_buckner_mountain_southwest_face",
+        "wa_bulls_tooth_south_ridge",
+        "wa_burgundy_spire_north_face",
+        "wa_burnt_boot_peak_north_ridge",
+        "wa_cardinal_peak_nw_couloir_north_ridge",
+        "wa_cardinal_peak_se_slopes",
+        "wa_carne_mountain_trail_route"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 2,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-10-29-batch-474.sql",
+      "note": "wa_carne_mountain_trail_route: climbing_route pitch notes stated the summit at 7,091 ft, contradicting the row's own high_point_ft/waypoint/area elevation (all 7,085) -- corrected to 7,085. Flagged: wa_bulls_tooth_south_ridge high_point_ft (6840) vs area elevation_ft (6849) vs external sources (ListsOfJohn LiDAR 6807, Wikipedia 6840, MyTopo ~6842) -- four numbers, no winner. wa_cardinal_peak_nw_couloir_north_ridge cites a Little Giant Fire closure order number/date that a secondary source gives differently (06-17-07-2026-40 since Sep 3 vs 06-17-07-2026-28 since Aug 1); fs.usda.gov did not resolve from this run's network to check the primary source. Clean (5): wa_buckner_mountain_north_face + wa_buckner_mountain_southwest_face (elevation 9114 and FA Lewis Ryan 1901 both confirmed, Wernstedt mix-up ruled out), wa_burgundy_spire_north_face (FA Beckey/Hane/Parrott 1953 confirmed), wa_burnt_boot_peak_north_ridge (FA Williamson/Bucher/Oas 1971 confirmed for this specific line), wa_cardinal_peak_se_slopes (elevation and gain_ft both confirmed exact)."
     }
   ]
 }
