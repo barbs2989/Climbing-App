@@ -259,7 +259,8 @@ const uMassIn=v=>{const n=_uNum(v);return n===null?null:Math.round(uImp()?n:n/0.
 const uMassUnit=()=>uImp()?"lb":"kg";
 const uSnowfall=inch=>{const n=_uNum(inch);return n===null?NOVAL:(uImp()?n.toFixed(1)+"\"":(n*2.54).toFixed(1)+" cm");};
 
-const uDistMi=mi=>{const n=_uNum(mi);return n===null?NOVAL:(uImp()?(Math.round(n*100)/100)+" mi":(n*1.60934).toFixed(1)+" km");};
+/* Under 1 km, two decimals, as uDist does: a 0.05 mi scramble-off printed "0.1 km" in metric while the same figure read "0.05 mi" in imperial. */
+const uDistMi=mi=>{const n=_uNum(mi);if(n===null)return NOVAL;const k=n*1.60934;return uImp()?(Math.round(n*100)/100)+" mi":(k>0&&k<1?String(Math.round(k*100)/100):k.toFixed(1))+" km";};
 /* A distance that is ALREADY approximate (partner search rounds to 5 mi) is shown whole: "16.1 km" would print a precision the number does not have. */
 const uApproxDist=mi=>{const n=_uNum(mi);return n===null?NOVAL:(uImp()?Math.round(n)+" mi":Math.round(n*1.60934)+" km");};
 
