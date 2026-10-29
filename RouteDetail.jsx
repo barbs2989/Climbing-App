@@ -3432,7 +3432,7 @@ export function TopoSection({route}){
     </div>}
     {toposSavedOnly?<div style={{fontSize:11.5,color:C.amber,lineHeight:1.45,marginTop:8}}>{"No signal — showing the "+photos.length+" topo"+(photos.length!==1?"s":"")+" you saved on this device. Any others need a connection."}</div>:null}
     {photos.some(function(p){return p.lines[0]&&((p.lines[0].pins&&p.lines[0].pins.length)||(p.lines[0].variants&&p.lines[0].variants.length));})?<TopoPinLegend style={{marginTop:8}}/>:null}
-    {(viewerIdx!=null&&photos[viewerIdx])?<TopoPhotoModal photo={photos[viewerIdx]} onClose={function(){setViewerIdx(null);}} onDraw={function(p){setDrawFor(p);}} onDescribe={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?function(p,d){return updateTopoAlt(p.id,d).then(function(){return dbTopos.refetch();});}:undefined} onCaption={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?saveCaption:undefined} onEditLine={USE_DB?editLine:undefined} onDeleteLine={USE_DB?removeLine:undefined} onDeletePhoto={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?removePhoto:undefined}/>:null}
+    {(viewerIdx!=null&&photos[viewerIdx])?<TopoPhotoModal key={photos[viewerIdx].id} photo={photos[viewerIdx]} pos={{i:viewerIdx,n:photos.length,onPrev:function(){setViewerIdx((viewerIdx+photos.length-1)%photos.length);},onNext:function(){setViewerIdx((viewerIdx+1)%photos.length);}}} onClose={function(){setViewerIdx(null);}} onDraw={function(p){setDrawFor(p);}} onDescribe={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?function(p,d){return updateTopoAlt(p.id,d).then(function(){return dbTopos.refetch();});}:undefined} onCaption={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?saveCaption:undefined} onEditLine={USE_DB?editLine:undefined} onDeleteLine={USE_DB?removeLine:undefined} onDeletePhoto={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?removePhoto:undefined}/>:null}
     {drawFor?createPortal(<div onClick={closeDraw} role="dialog" aria-modal="true" aria-label={drawFor.editLine?"Edit your line":"Draw this route's line"} style={{position:"fixed",inset:0,background:C.scrimStrong,zIndex:9500,display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
       <div onClick={function(e){e.stopPropagation();}} style={{background:C.bg,borderTopLeftRadius:18,borderTopRightRadius:18,width:"100%",maxWidth:520,padding:"16px 16px 22px",border:"1px solid "+C.border,maxHeight:"92vh",overflowY:"auto",overscrollBehavior:"contain",boxSizing:"border-box"}}>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
@@ -3503,27 +3503,110 @@ function TopoCaptionBox({initial,onSave,style}){
     </div>
   </div>;
 }
-function TopoPhotoModal({photo,onClose,onDraw,onDescribe,onCaption,onEditLine,onDeleteLine,onDeletePhoto}){
+/* THE ENLARGED TOPO ZOOMS AND PANS (owner's note, 2026-10-28: "Will uploaded topos be scrollable?").
+   It used to be a still image capped at 58vh: a tall wall photo of a multi-pitch line shrank until
+   the belays could not be read, and nothing let a climber look closer. Climbers complain of the
+   same thing on the big sites (a ~2.5x cap, lines that vanish when the photo is enlarged, no pan),
+   so this goes to the editor's 6x and keeps the line on. Pinch, ctrl/trackpad wheel, double-tap or
+   − / + zoom; a drag, a wheel or the arrow keys move around once zoomed. At 1x a swipe still
+   scrolls the sheet (touch-action pan-y), so the caption and key below stay reachable.
+   The zoomed layer is SIZED (W*z by H*z), not CSS-scaled: the overlay's percentages land on the
+   same rock at every zoom, its markers keep their size, and the strokes' non-scaling-stroke holds
+   against the viewBox stretch, which it cannot do against a transform (see TopoDrawer). */
+function TopoZoomPhoto({photo,active}){
+  const [ar,setAr]=useState(null);
+  const [view,setViewState]=useState({z:1,tx:0,ty:0,W:0,H:0});
+  const viewRef=useRef(view);
+  const vpRef=useRef(null);const ptrs=useRef(new Map());const gest=useRef(null);const lastTap=useRef(null);
+  const dims=function(){const el=vpRef.current;return el?{W:el.clientWidth,H:el.clientHeight}:{W:1,H:1};};
+  // The frame's size travels with the view, so the render never reads a ref.
+  const setView=function(v){const d=dims();const n={z:v.z,tx:v.tx,ty:v.ty,W:d.W,H:d.H};viewRef.current=n;setViewState(n);};
+  const fit=function(){setView({z:1,tx:0,ty:0});};
+  const local=function(cx,cy){const r=vpRef.current.getBoundingClientRect();return {x:cx-r.left,y:cy-r.top};};
+  const zoomAt=function(z,px,py){const d=dims();setView(zoomTopoView(viewRef.current,z,px,py,d.W,d.H));};
+  const zoomBy=function(f){const d=dims();zoomAt(viewRef.current.z*f,d.W/2,d.H/2);};
+  const panBy=function(dx,dy){const d=dims();const b=viewRef.current;setView(clampTopoView({z:b.z,tx:b.tx+dx,ty:b.ty+dy},d.W,d.H));};
+  useEffect(function(){
+    const el=vpRef.current;if(!el)return undefined;
+    // Registered by hand: React's onWheel is passive, so it could not stop the sheet scrolling too.
+    // A plain wheel at 1x is left alone, so the sheet still scrolls past the photo.
+    const onWheel=function(e){
+      const b=viewRef.current;
+      if(e.ctrlKey){e.preventDefault();const p=local(e.clientX,e.clientY);zoomAt(b.z*Math.exp(-e.deltaY*0.01),p.x,p.y);}
+      else if(b.z>1){e.preventDefault();panBy(-e.deltaX,-e.deltaY);}
+    };
+    el.addEventListener("wheel",onWheel,{passive:false});
+    return function(){el.removeEventListener("wheel",onWheel);};
+  },[]); // eslint-disable-line react-hooks/exhaustive-deps -- registered once; every helper it calls reads the view through viewRef
+  const two=function(){const a=Array.from(ptrs.current.values());return {d:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)||1,m:local((a[0].x+a[1].x)/2,(a[0].y+a[1].y)/2)};};
+  const onDown=function(e){
+    ptrs.current.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    try{e.currentTarget.setPointerCapture(e.pointerId);}catch(_e){/* capture only keeps a drag that leaves the frame */}
+    if(ptrs.current.size===2){const t=two();gest.current={kind:"pinch",d0:t.d,m0:t.m,base:viewRef.current};return;}
+    gest.current={kind:"drag",sx:e.clientX,sy:e.clientY,base:viewRef.current,moved:false};
+  };
+  const onMove=function(e){
+    if(!ptrs.current.has(e.pointerId))return;
+    ptrs.current.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    const g=gest.current;if(!g)return;const d=dims();
+    if(g.kind==="pinch"&&ptrs.current.size===2){const t=two();const nz=Math.min(ZOOM_MAX,Math.max(1,g.base.z*t.d/g.d0));setView(clampTopoView({z:nz,tx:t.m.x-(g.m0.x-g.base.tx)*nz/g.base.z,ty:t.m.y-(g.m0.y-g.base.ty)*nz/g.base.z},d.W,d.H));return;}
+    if(g.kind==="drag"){const dx=e.clientX-g.sx,dy=e.clientY-g.sy;if(Math.hypot(dx,dy)>TAP_SLOP)g.moved=true;if(g.moved&&g.base.z>1)setView(clampTopoView({z:g.base.z,tx:g.base.tx+dx,ty:g.base.ty+dy},d.W,d.H));}
+  };
+  const onUp=function(e){
+    if(!ptrs.current.has(e.pointerId))return;
+    ptrs.current.delete(e.pointerId);const g=gest.current;
+    // Lifting one finger of a pinch carries on as a drag from where the other finger is.
+    if(g&&g.kind==="pinch"){const r=Array.from(ptrs.current.values())[0];gest.current=r?{kind:"drag",sx:r.x,sy:r.y,base:viewRef.current,moved:true}:null;return;}
+    gest.current=null;
+    if(e.type!=="pointerup"||!g||g.moved)return;
+    // A double tap zooms in on the spot tapped, or back out to the whole photo.
+    const now=Date.now();const p=local(e.clientX,e.clientY);const lt=lastTap.current;
+    if(lt&&now-lt.t<320&&Math.hypot(p.x-lt.x,p.y-lt.y)<30){lastTap.current=null;if(viewRef.current.z>1)fit();else zoomAt(2.5,p.x,p.y);}
+    else lastTap.current={t:now,x:p.x,y:p.y};
+  };
+  const onKey=function(e){
+    const k=e.key;const step=48;
+    if(k==="+"||k==="=")zoomBy(1.6);else if(k==="-"||k==="_")zoomBy(1/1.6);else if(k==="0")fit();
+    else if(viewRef.current.z>1&&(k==="ArrowLeft"||k==="ArrowRight"||k==="ArrowUp"||k==="ArrowDown"))panBy(k==="ArrowLeft"?step:k==="ArrowRight"?-step:0,k==="ArrowUp"?step:k==="ArrowDown"?-step:0);
+    else return;
+    e.preventDefault();
+  };
+  const zoomed=view.z>1.001;
+  const zb={minWidth:34,height:32,padding:"0 10px",borderRadius:8,border:"1px solid rgba(255,255,255,0.35)",background:"rgba(0,0,0,0.6)",color:"#fff",fontSize:14,fontWeight:700,cursor:"pointer"};
+  return <div style={{background:"#000",position:"relative"}}>
+    <div ref={vpRef} tabIndex={0} role="group" aria-label="Topo photo. Plus and minus zoom in and out; arrow keys move around once zoomed" onKeyDown={onKey} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}
+      style={{position:"relative",overflow:"hidden",width:"100%",maxWidth:ar?"calc(58vh * "+ar+")":"100%",aspectRatio:ar?String(ar):"4 / 3",margin:"0 auto",touchAction:zoomed?"none":"pan-y",cursor:zoomed?"grab":"zoom-in",userSelect:"none",WebkitUserSelect:"none"}}>
+      <div style={zoomed?{position:"absolute",left:view.tx,top:view.ty,width:view.W*view.z,height:view.H*view.z}:{position:"absolute",inset:0}}>
+        <MediaImg decoding="async" draggable={false} src={photo.url} alt={photoAlt(photo.alt,"Topo photo, enlarged")} onLoad={function(e){const t=e.currentTarget;if(t&&t.naturalWidth&&t.naturalHeight)setAr(t.naturalWidth/t.naturalHeight);}} style={TOPO_IMG}/>
+        {active?<TopoLineOverlay points={active.points} variants={active.variants} pins={active.pins} pinSize={20} numbered/>:null}
+      </div>
+    </div>
+    <div style={{position:"absolute",right:8,bottom:8,display:"flex",gap:6}}>
+      <button onClick={function(){zoomBy(1/1.6);}} disabled={!zoomed} aria-label="Zoom out" style={Object.assign({},zb,{opacity:zoomed?1:0.45})}>−</button>
+      <button onClick={function(){zoomBy(1.6);}} disabled={view.z>=ZOOM_MAX} aria-label="Zoom in" style={Object.assign({},zb,{opacity:view.z>=ZOOM_MAX?0.45:1})}>+</button>
+      {/* Always drawn, disabled at 1x: if it appeared on the first zoom, + would slide left and a second tap on the same spot would hit Fit. */}
+      <button onClick={fit} disabled={!zoomed} aria-label="Fit the whole photo" style={Object.assign({},zb,{opacity:zoomed?1:0.45})}>Fit</button>
+    </div>
+  </div>;
+}
+function TopoPhotoModal({photo,pos,onClose,onDraw,onDescribe,onCaption,onEditLine,onDeleteLine,onDeletePhoto}){
   const [altIdx,setAltIdx]=useState(0);const [editCap,setEditCap]=useState(false);
   const active=photo.lines[altIdx]||null;const [delBusy,setDelBusy]=useState(false);
   const del=function(fn){if(delBusy)return;setDelBusy(true);fn().then(function(ok){setDelBusy(false);if(ok)setAltIdx(0);});};
   return createPortal(<div onClick={onClose} role="dialog" aria-modal="true" aria-label="Topo" style={{position:"fixed",inset:0,background:C.scrimStrong,zIndex:9400,display:"flex",alignItems:"center",justifyContent:"center",padding:16}}>
     <div onClick={function(e){e.stopPropagation();}} style={{background:C.bg,borderRadius:16,width:"100%",maxWidth:520,border:"1px solid "+C.border,overflowX:"hidden",overflowY:"auto",maxHeight:"92vh",overscrollBehavior:"contain"}}>
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"12px 14px",borderBottom:"1px solid "+C.border}}>
-        <div style={{fontSize:14,fontWeight:700}}>Topo</div>
-        <button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button>
-      </div>
-      {/* An inline-block shrink-wraps the <img> exactly, so the overlay's `inset:0` box IS the
-          painted photo — no aspect bookkeeping and, unlike a sized frame, nothing for the 58vh
-          cap to letterbox. The cap has to live on the image here: this is the one topo surface
-          with a maximum height, and applying it to a fixed-aspect frame would just move the
-          letterbox from the image to the frame. */}
-      <div style={{background:"#000",textAlign:"center",fontSize:0}}>
-        <div style={{position:"relative",display:"inline-block",maxWidth:"100%",lineHeight:0}}>
-          <MediaImg loading="lazy" decoding="async" src={photo.url} alt={photoAlt(photo.alt,"Topo photo, enlarged")} style={{display:"block",maxWidth:"100%",maxHeight:"58vh",width:"auto",height:"auto"}}/>
-          {active?<TopoLineOverlay points={active.points} variants={active.variants} pins={active.pins} pinSize={20} numbered/>:null}
+        <div style={{fontSize:14,fontWeight:700}}>{pos&&pos.n>1?"Topo "+(pos.i+1)+" of "+pos.n:"Topo"}</div>
+        <div style={{display:"flex",alignItems:"center",gap:6}}>
+          {/* Every topo on the route from inside the viewer, as a photo lightbox steps through its set. */}
+          {pos&&pos.n>1?<button onClick={pos.onPrev} aria-label="Previous topo" style={{...CHIP,padding:"6px 11px",border:"1px solid "+C.border,background:C.surface,color:C.text}}>‹</button>:null}
+          {pos&&pos.n>1?<button onClick={pos.onNext} aria-label="Next topo" style={{...CHIP,padding:"6px 11px",border:"1px solid "+C.border,background:C.surface,color:C.text}}>›</button>:null}
+          <button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button>
         </div>
       </div>
+      {/* The photo's frame holds the photo's own aspect, capped at 58vh tall, so the overlay's
+          `inset:0` box IS the painted photo at 1x; TopoZoomPhoto sizes the layer for any zoom. */}
+      <TopoZoomPhoto photo={photo} active={active}/>
       <div style={{padding:"12px 14px"}}>
         {editCap&&onCaption?<TopoCaptionBox key={photo.id} initial={photo.caption} onSave={function(t){return onCaption(photo,t);}} style={{marginBottom:12}}/>:<TopoCaption key={photo.id} text={photo.caption}/>}
         {(onCaption&&!editCap)?<button onClick={function(){setEditCap(true);}} style={{background:"none",border:"none",padding:"0 0 10px",color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{photo.caption?"Edit caption":"+ Add a caption"}</button>:null}
@@ -5335,13 +5418,17 @@ function pickForecastWaypoints(waypoints){
    sites (NWS, InciWeb) are not offered off US soil. OpenSnow is gone: it takes no coordinate in a URL, so
    its link could only ever open a search box. An unknown country keeps the US links, as before. */
 function countryOf(route,mtn){const p=route&&route._dbArea&&route._dbArea.path;if(p)return String(p).split(".")[0];var a=mtn,g=0;while(a&&a.areaType!=="country"&&a.parentId&&g<12){const pid=a.parentId;a=MOUNTAINS.find(function(x){return x.id===pid;});g++;}return a&&a.areaType==="country"?a.id:null;}
+/* InciWeb has no point URL, and its /state/<name> pages render empty; its incident table filters by state
+   name (?field_state_target_id=Washington lists that state's active incidents), so a US climb opens its OWN
+   state's fires rather than the national home page (owner note: links should open the page, not a search). */
+function usStateNameOf(route,mtn){const p=route&&route._dbArea&&route._dbArea.path;if(p){const seg=String(p).split(".");return seg[0]==="usa"&&seg[1]?seg[1].split("_").map(function(w){return w.charAt(0).toUpperCase()+w.slice(1);}).join(" "):null;}var a=mtn,g=0;while(a&&a.areaType!=="state"&&a.parentId&&g<12){const pid=a.parentId;a=MOUNTAINS.find(function(x){return x.id===pid;});g++;}return a&&a.areaType==="state"?a.name:null;}
 function forecastLinksOf(route,mtn,crag){const pt=crag?cragWxPointOf(route,mtn):forecastPoint(route,mtn);const cc=countryOf(route,mtn),us=cc==null||cc==="usa",ca=cc==="canada";const la=pt?(+pt.lat).toFixed(4):null,lo=pt?(+pt.lng).toFixed(4):null;
   const out=[];
   if(pt&&us){out.push({n:"NWS point forecast",u:"https://forecast.weather.gov/MapClick.php?lat="+la+"&lon="+lo});out.push({n:"NWS hourly graph",u:"https://forecast.weather.gov/MapClick.php?lat="+la+"&lon="+lo+"&FcstType=graphical"});}
   if(pt&&ca)out.push({n:"Environment Canada forecast",u:"https://weather.gc.ca/en/location/index.html?coords="+(+pt.lat).toFixed(3)+","+(+pt.lng).toFixed(3)});
   out.push({n:"Mountain-Forecast.com",u:pt?"https://www.mountain-forecast.com/location_search?lat="+la+"&lon="+lo:"https://www.mountain-forecast.com/"});
   out.push({n:"Fire & smoke — AirNow",u:pt?"https://fire.airnow.gov/#9/"+la+"/"+lo:"https://fire.airnow.gov/"});
-  if(us)out.push({n:"Active fires — InciWeb",u:"https://inciweb.wildfire.gov/"});
+  if(us){const stn=usStateNameOf(route,mtn);out.push({n:"Active fires — InciWeb",u:stn?"https://inciweb.wildfire.gov/accessible-view?field_state_target_id="+encodeURIComponent(stn):"https://inciweb.wildfire.gov/"});}
   if(mtn.avyZone)out.push({n:"Avalanche forecast ("+mtn.avyZone+")",u:avyCenterFor(mtn)[2]});
   return out;}
 function wxFallbackOf(route,mtn){const pt=forecastPoint(route,mtn);if(!pt||pt.pinned)return null;const a=route._dbArea||mtn||{};return {type:a.areaType==="peak"?"Summit":"Topout",name:pt.name,lat:pt.lat,lng:pt.lng,elev:pt.elevFt};}
