@@ -87,7 +87,15 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `ClimbMatch.jsx` | `openRoute`, `selRoute`, `myStars`/`myRateQ`, route memo that merges `_contribFields`/`_pendingEdits`/`_contribAgreed` |
 | `ClimbMatchCore.jsx` | `scarfHrs`, `techHrs`, `buildConsensus`, `catOf`, `wpPlaced`, `WP_STYLE` |
 | `lib/TrailDrawMap.jsx` | `TrailDrawMap` — tap-to-trace the walk in from parking to the crag, inside the Add-the-trail sheet on crag routes |
-| `src/components/BetaDiff.tsx` | `BetaDiff` — WHAT'S CHANGED: recent report count, the latest reporter and the most repeated condition tags (moved out of RouteDetail.jsx, PR52; so were `CRow` — one consensus row, `TopoCaptionBox`, `SaveOfflineChip`, `MediaImg`, `GradeTag`, `PinNum`, `TopoSwatch`, `CragWalkIn`, each in its own file beside it) |
+| `src/components/BetaDiff.tsx` | `BetaDiff` — WHAT'S CHANGED: recent report count, the latest reporter, the most repeated condition tags (moved out of RouteDetail.jsx, PR52) |
+| `src/components/CRow.tsx` | `CRow` — one row of the Reports consensus (conditions and hazards), opens to its reporters and the hazard vote (moved out of RouteDetail.jsx, PR52) |
+| `src/components/TopoCaptionBox.tsx` | `TopoCaptionBox` — the uploader's caption box under an enlarged topo (moved out of RouteDetail.jsx, PR52) |
+| `src/components/SaveOfflineChip.tsx` | `SaveOfflineChip` — Save offline / Saved offline for one photo or topo (moved out of RouteDetail.jsx, PR52) |
+| `src/components/MediaImg.tsx` | `MediaImg` — an image that draws the copy saved on this device when there is one (moved out of RouteDetail.jsx, PR52) |
+| `src/components/GradeTag.tsx` | `GradeTag` — the grade printed beside a line on a topo photo (moved out of RouteDetail.jsx, PR52) |
+| `src/components/PinNum.tsx` | `PinNum` — the numbered badge beside a topo pin (moved out of RouteDetail.jsx, PR52) |
+| `src/components/TopoSwatch.tsx` | `TopoSwatch` — a sample of a topo line for the topo's key (moved out of RouteDetail.jsx, PR52) |
+| `src/components/CragWalkIn.tsx` | `CragWalkIn` — the crag's WALK-IN card (moved out of RouteDetail.jsx, PR52) |
 | `src/components/GPXMap.tsx` | `GPXMap` — the route map: track, pins, one shared popup card, derived trailhead, base check-ins (extracted from core, PR13) |
 | `lib/Route3DView.jsx` | `Route3DView` — the route map's 3D view (MapLibre GL over terrain) |
 | `lib/RouteTracksPanel.jsx` | `RouteTracksPanel` — CLIMBERS' TRACKS under the route map: sort, season filter, show on map |
