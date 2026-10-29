@@ -4,8 +4,8 @@
  "rule": "Same as audits/2026-10-28-route-timing-catalog.json.",
  "counts": {
   "researched": 166,
-  "repaired": 14,
-  "writes": 14
+  "repaired": 24,
+  "writes": 24
  },
  "status": "WRITTEN. The project was restarted by the owner after the outage; every repair below was previewed through planTimes, dry-run, written compare-and-set 1000 ms apart with a rollback file (copied to the main checkout's scripts/), and re-run to reconcile (ALREADY).",
  "held": [
@@ -277,130 +277,213 @@
    ],
    "why": "Empty row. Day trip from the Devils Lake / South Sister trailhead (about 12.5 mi, 5,350 ft). Three timed parties to the summit (3.5, 5.3, 9 hr; median 5.3) and two agreeing descents (3.8, 4 hr). Full set 0 / 5.3 / 3.9 / 9.2, inside the typical 8-10 hr car to car.",
    "rollback": "scripts/rollback-timing-fixes-1793247866812.json"
+  },
+  {
+   "id": "ca_casaval_ridge",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    12.5
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Two timed parties agree (13 and 12 hr car to car from Bunny Flat); a fast party at 9 hr is left out.",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "ca_mt_langley_standard_route_south_slopes",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    11
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Three timed parties car to car from Cottonwood Lakes (11, 11.5, 10 hr; median 11); a fast party is left out.",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "ca_mt_shasta_west_face_gully",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    18.25
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Two timed single-push parties agree within 15% (19.5 and 17 hr car to car from Bunny Flat).",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "ca_mt_whitney_mount_whitney_trail_the",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    13
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Four timed day-hike parties from Whitney Portal (14.1, 12, 14, 11 hr; median 13).",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "co_mount_democrat_east_slope",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    4
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Two timed parties agree (4 and 4 hr car to car from Kite Lake).",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "co_mount_oxford_via_mount_belford",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    11.2
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Two timed parties agree within 15% (11.9 and 10.5 hr car to car from Missouri Gulch, over Belford).",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "co_mount_yale_southwest_slopes",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    7.3
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Three timed parties car to car from Denny Creek (8, 7.3, 6.9 hr; median 7.3).",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "co_sunshine_peak_via_redcloud_peak",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    10
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Three timed parties car to car from Silver Creek over Redcloud (10, 7.9, 11 hr; median 10); a fast party is left out.",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "or_west_ridge_2",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    7.5
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Club trip figure of 6-9 hr car to car (midpoint 7.5); four timed parties (8.5, 7.5, 6 fast, 9.5) sit inside that range.",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "wy_east_face",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    8.5
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Two timed parties agree (8 and 9 hr car to car from Lupine Meadows).",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
   }
  ],
  "ownerDecision": {
   "question": "Store a car-to-car total ALONE on an empty row (the whole-day shape the Planner already reads for many WA rows)? The rule used so far writes an empty row only as a full set or a lone approach/descent, so these were NOT written. Several 'published' figures are guide-site summaries read as search snippets.",
-  "routes": [
-   {
-    "id": "ca_casaval_ridge",
-    "route": "Casaval Ridge",
-    "carToCarHrs": 12.5,
-    "basis": "2 agreeing"
-   },
+  "answer": "Owner, 2026-10-28: \"do what you recommend based on research\". Recommended and done: store a car-to-car total alone (totalHrs only, which the Planner reads as one whole day) where it clears the usual bar (a readable guidebook or club figure, 3 timed reports, or 2 agreeing within 15%, fast parties left out). 10 written, 10 held.",
+  "written": [
+   "ca_casaval_ridge",
+   "ca_mt_langley_standard_route_south_slopes",
+   "ca_mt_shasta_west_face_gully",
+   "ca_mt_whitney_mount_whitney_trail_the",
+   "co_mount_democrat_east_slope",
+   "co_mount_oxford_via_mount_belford",
+   "co_mount_yale_southwest_slopes",
+   "co_sunshine_peak_via_redcloud_peak",
+   "or_west_ridge_2",
+   "wy_east_face"
+  ],
+  "held": [
    {
     "id": "ca_castle_peak_summit_via_castle_pass",
     "route": "Via Castle Pass",
     "carToCarHrs": 3.25,
-    "basis": "published"
-   },
-   {
-    "id": "ca_mt_langley_standard_route_south_slopes",
-    "route": "Standard Route - south slopes",
-    "carToCarHrs": 10.5,
-    "basis": "published"
-   },
-   {
-    "id": "ca_mt_shasta_west_face_gully",
-    "route": "West Face Gully",
-    "carToCarHrs": 18.25,
-    "basis": "2 agreeing"
-   },
-   {
-    "id": "ca_mt_whitney_mount_whitney_trail_the",
-    "route": "Mount Whitney Trail, The",
-    "carToCarHrs": 13,
-    "basis": "4 reports"
+    "basis": "published",
+    "why": "a snippet range only"
    },
    {
     "id": "co_challenger_point_north_slope",
     "route": "North Slope",
     "carToCarHrs": 12,
-    "basis": "published"
+    "basis": "published",
+    "why": "one report plus a guide-site range read as a snippet"
    },
    {
     "id": "co_crestone_needle_south_face",
     "route": "South Face",
     "carToCarHrs": 11,
-    "basis": "published"
+    "basis": "published",
+    "why": "a guide-site range read as a snippet, no reports"
    },
    {
     "id": "co_crestone_peak_south_face",
     "route": "South Face",
     "carToCarHrs": 13,
-    "basis": "published"
+    "basis": "published",
+    "why": "a guide-site range read as a snippet, no reports"
    },
    {
     "id": "co_grays_peak_north_slopes",
     "route": "North Slopes",
     "carToCarHrs": 5.5,
-    "basis": "published"
+    "basis": "published",
+    "why": "a hiking-blog range and one report"
    },
    {
     "id": "co_mount_antero_west_slopes",
     "route": "West Slopes",
     "carToCarHrs": 10.5,
-    "basis": "published"
-   },
-   {
-    "id": "co_mount_democrat_east_slope",
-    "route": "East Slope",
-    "carToCarHrs": 4,
-    "basis": "2 agreeing"
+    "basis": "published",
+    "why": "a hiking-blog range and one fast report"
    },
    {
     "id": "co_mount_harvard_south_slopes",
     "route": "South Slopes",
     "carToCarHrs": 6.5,
-    "basis": "published"
+    "basis": "published",
+    "why": "a single trip report (6.5 hr) that was counted as published"
    },
    {
     "id": "co_mount_lincoln_west_ridge",
     "route": "West Ridge",
     "carToCarHrs": 4.75,
-    "basis": "published"
-   },
-   {
-    "id": "co_mount_oxford_via_mount_belford",
-    "route": "Via Mount Belford",
-    "carToCarHrs": 11.21,
-    "basis": "2 agreeing"
-   },
-   {
-    "id": "co_mount_yale_southwest_slopes",
-    "route": "Southwest Slopes",
-    "carToCarHrs": 8,
-    "basis": "published"
+    "basis": "published",
+    "why": "an AllTrails figure and one report"
    },
    {
     "id": "co_san_luis_peak_northeast_ridge",
     "route": "Northeast Ridge",
     "carToCarHrs": 7.75,
-    "basis": "published"
-   },
-   {
-    "id": "co_sunshine_peak_via_redcloud_peak",
-    "route": "Via Redcloud Peak",
-    "carToCarHrs": 7,
-    "basis": "published"
+    "basis": "published",
+    "why": "two reports 25% apart (6.25, 8) and a snippet"
    },
    {
     "id": "co_wetterhorn_peak_southeast_ridge",
     "route": "Southeast Ridge",
     "carToCarHrs": 8,
-    "basis": "published"
-   },
-   {
-    "id": "or_west_ridge_2",
-    "route": "West Ridge",
-    "carToCarHrs": 7.5,
-    "basis": "published"
-   },
-   {
-    "id": "wy_east_face",
-    "route": "East Face",
-    "carToCarHrs": 8.5,
-    "basis": "2 agreeing"
+    "basis": "published",
+    "why": "a snippet range and one report"
    }
   ]
  }
