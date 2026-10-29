@@ -39,6 +39,12 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   *Your grades*: Sport, Trad and Boulder always, plus **Ice, Mixed and Aid once that discipline is tapped** (or a grade
   is already on file), on the profile editor's `PROFILE_GRADES` ladders. Those three are saved to `climb_grades`, merged
   with any lead/follow role already there, by the same `saveProfile` call as the rest.
+- **Every surface that prints a climber's grades reads all six** through `profileGradeRows` / `profileDiscGrades`
+  (`ClimbMatchCore.jsx`): the profile, the résumé (`src/components/Resume.tsx`), the share card (`lib/ShareCard.jsx`),
+  the Home *Add your climbing grades* gap and its bell reminder (an ice, mixed or aid grade alone now counts as having
+  grades), partner rows (`lib/PartnerSearch.jsx`, `src/components/RealClimberRow.tsx`) and the crew invite list
+  (`lib/CrewCard.jsx`, which prints the grade IN the crew's discipline, or none -- it used to print the sport grade as
+  "Ice 5.10a").
 - **Add a photo from Profile**: with no photo, the Profile header's avatar carries a **+** and opens the photo picker itself
   (`avaAdding`); it uploads and saves the avatar column at once (`uploadProfilePhoto` + `saveProfileAvatar`), as the editor
   does. Not offered until the profile has been read, so a loading or failed read cannot replace a stored photo.
