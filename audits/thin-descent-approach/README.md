@@ -166,3 +166,9 @@ By PRIMARY discipline: trad 1,430, ice 1,006, sport 578, mixed 148, mountaineeri
 |---|---|---|---|---|
 | Mountaineering, California | 34 | **9 written** | 25 | Strict: single-page rows skipped. Possible Harwood/Thunder Mountain name swap; Shastina "Lightning couloir" may duplicate a Baldy import. Both are for review. |
 | Mountaineering, Colorado | 48 | **39 written** (4 re-applied) | 9 | Lead review dropped two inferred descents (Tuning Fork, First Star). |
+| Mountaineering, Oregon | 11 | **9 written** | 2 | South Sister mileage given as the range two sources agree on (11 to 12 mi). |
+| Mountaineering, Alaska | 17 | **12 written** | 5 | Muldrow skipped (NPS no longer recommends it). Lead review removed a park-road landslide note (current conditions). Kahiltna Dome and Foraker share one coordinate in our areas (for review). |
+| Mountaineering, AB/BC/YT/UT/NH/WY/AZ/NV/VT | 38 | **14 written** | 24 | Mostly no readable source. Logan King Trench has only guide-company pages. |
+
+**Mountaineering tier DONE.** Next: primary ice and mixed (about 1,160 rows). Contexts come from `scripts/oneoff/thin-da-context-sql.mjs`
+(one SQL query; the PostgREST filter on disciplines times out), and agents follow `oos/ICE-BRIEF.md`.

@@ -18,7 +18,9 @@ const rows = [];
 for (const d of want) {
   rows.push(...await get(`routes?select=id,name,grade,disciplines,area_id,approach,descent,descent_text,approach_variants,pitches,description&area_id=like.${encodeURIComponent(prefix)}*&disciplines->>0=eq.${d}&order=id&limit=2000`));
 }
-const thin = rows.filter(r => Math.max(len(r.descent), len(r.descent_text)) < 150 || (len(r.approach) < 150 && !r.approach_variants));
+// The item's scope is the alpine catalog: a row must also carry alpine, mountaineering or scrambling in its list.
+const ALPINE = ["alpine", "mountaineering", "scrambling"];
+const thin = rows.filter(r => (r.disciplines || []).some(d => ALPINE.includes(d))).filter(r => Math.max(len(r.descent), len(r.descent_text)) < 150 || (len(r.approach) < 150 && !r.approach_variants));
 const areaIds = [...new Set(thin.map(r => r.area_id))];
 const areas = [];
 for (let i = 0; i < areaIds.length; i += 80) areas.push(...await get(`areas?select=id,name,parent_id,lat,lng,elevation_ft&id=in.(${areaIds.slice(i, i + 80).map(x => `"${x}"`).join(",")})`));
@@ -35,5 +37,14 @@ const targets = thin.map(r => {
     need_descent: Math.max(len(r.descent), len(r.descent_text)) < 150, need_approach: len(r.approach) < 150 && !r.approach_variants,
   };
 });
-fs.writeFileSync(out, JSON.stringify({ targets, richSiblingsOnSamePeak: {} }, null, 1));
-console.log(`${out}: ${targets.length} targets across ${areaIds.length} areas`);
+// Split into chunks of about CHUNK targets, never splitting one area across two files.
+const CHUNK = Number(process.env.CHUNK || 1e9);
+const byArea = {};
+for (const t of targets) (byArea[t.area_id] = byArea[t.area_id] || []).push(t);
+const chunks = [[]];
+for (const g of Object.values(byArea)) { if (chunks.at(-1).length && chunks.at(-1).length + g.length > CHUNK) chunks.push([]); chunks.at(-1).push(...g); }
+chunks.forEach((c, i) => {
+  const file = chunks.length > 1 ? out.replace(/\.json$/, `-${i + 1}.json`) : out;
+  fs.writeFileSync(file, JSON.stringify({ targets: c, richSiblingsOnSamePeak: {} }, null, 1));
+  console.log(`${file}: ${c.length} targets`);
+});
