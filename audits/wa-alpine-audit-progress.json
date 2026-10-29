@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_carne_mountain_trail_route",
+  "last_processed_id": "wa_castle_peak_tatoosh_southeast_face",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 474 complete. Continuing id-ascending scope from wa_carne_mountain_trail_route.",
+  "pass_note": "Pass 8 in progress, batch 475 complete. Continuing id-ascending scope from wa_castle_peak_tatoosh_southeast_face.",
   "batches": [
     {
       "batch_number": 1,
@@ -9424,6 +9424,26 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-10-29-batch-474.sql",
       "note": "wa_carne_mountain_trail_route: climbing_route pitch notes stated the summit at 7,091 ft, contradicting the row's own high_point_ft/waypoint/area elevation (all 7,085) -- corrected to 7,085. Flagged: wa_bulls_tooth_south_ridge high_point_ft (6840) vs area elevation_ft (6849) vs external sources (ListsOfJohn LiDAR 6807, Wikipedia 6840, MyTopo ~6842) -- four numbers, no winner. wa_cardinal_peak_nw_couloir_north_ridge cites a Little Giant Fire closure order number/date that a secondary source gives differently (06-17-07-2026-40 since Sep 3 vs 06-17-07-2026-28 since Aug 1); fs.usda.gov did not resolve from this run's network to check the primary source. Clean (5): wa_buckner_mountain_north_face + wa_buckner_mountain_southwest_face (elevation 9114 and FA Lewis Ryan 1901 both confirmed, Wernstedt mix-up ruled out), wa_burgundy_spire_north_face (FA Beckey/Hane/Parrott 1953 confirmed), wa_burnt_boot_peak_north_ridge (FA Williamson/Bucher/Oas 1971 confirmed for this specific line), wa_cardinal_peak_se_slopes (elevation and gain_ft both confirmed exact)."
+    },
+    {
+      "batch_number": 475,
+      "date": "2026-10-29",
+      "pass": 8,
+      "route_ids": [
+        "wa_cascade_peak_east_ridge",
+        "wa_cascade_peak_nw_chimney",
+        "wa_castle_in_the_sky",
+        "wa_castle_peak_pasayten_east_ridge",
+        "wa_castle_peak_pasayten_north_ridge",
+        "wa_castle_peak_pasayten_the_drawbridge",
+        "wa_castle_peak_tatoosh_la_villa",
+        "wa_castle_peak_tatoosh_southeast_face"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 3,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-10-29-batch-475.sql",
+      "note": "wa_cascade_peak_nw_chimney: approach and approach_variants[0].notes sent the party to the C-J col via the Cascade Pass trail + Mixup Arm + Cache Glacier, which is actually the route to Mixup Peak/Gunsight Notch (confirmed via Mountaineers.org/SummitPost) -- corrected both fields to the real C-J Couloir approach already documented correctly on the sibling wa_cascade_peak_east_ridge and corroborated by turns-all-year.com and cascadeclimbers.com trip reports. wa_castle_peak_tatoosh_la_villa: its own \"The Castle summit\" waypoint carried elev 6440 vs elevFt 6460 -- fixed elevFt to 6440 to match elev, the route's high_point_ft, the area row, the sibling southeast_face route, and Wikipedia/Mountaineers.org (SummitPost's 6460 was the lone outlier). Flagged (3): wa_castle_peak_pasayten_east_ridge and wa_castle_peak_pasayten_north_ridge are near-bare stubs (name/grade/fa only) -- enrichment gaps, not contradicted facts. wa_castle_peak_pasayten_the_drawbridge's FA (Zentler/Schilling, June 2017), grade (5.10+ A1), and 10 pitches are all confirmed via an AAC Publications article and a cascadeclimbers.com trip report, but its high_point_ft (8343, shared with the area row and the two stub routes above) is contested: WTA and SummitPost both give 8,306 ft, Wikipedia's own current figure is unclear and inconsistent across mirrors/snapshots (8,306 vs 8,343, both citing the same Peakbagger source), so this was not fixed. Clean (3): wa_cascade_peak_east_ridge (FA Beckey/Schoening/Sharpe, July 23 1950, and 7,428 ft both confirmed exactly via Wikipedia), wa_castle_in_the_sky (FA Boyce/Chapko, Aug 2022, IV 5.10b on Whatcom Peak's south buttress, confirmed via a cascadeclimbers.com trip report; Whatcom Peak's 7,574 ft matches Wikipedia), wa_castle_peak_tatoosh_southeast_face (The Castle's 6,440 ft and route details corroborated)."
     }
   ]
 }

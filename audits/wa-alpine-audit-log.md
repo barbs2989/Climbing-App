@@ -35237,3 +35237,40 @@ on Wikipedia, citing Beckey's Cascade Alpine Guide, for this specific north-ridg
 from the peak's earlier 1963 overall FA); `wa_cardinal_peak_se_slopes` (`high_point_ft` 8,596
 matches the area row exactly; `gain_ft` 4,656 matches the row's own trailhead (3,940 ft) to summit
 (8,596 ft) elevation difference exactly).
+
+## 2026-10-29 — Pass 8, Batch 475
+
+Eight routes across Cascade Peak, Whatcom Peak, Castle Peak (Pasayten) and The Castle (Tatoosh):
+East Ridge + NW Chimney (Cascade Peak); Castle in the Sky (Whatcom Peak); East Ridge, North
+Ridge + The Drawbridge (Castle Peak, Pasayten); La Villa + Southeast Face (The Castle, Tatoosh).
+
+**Fixed (2):** `wa_cascade_peak_nw_chimney`'s `approach`/`approach_variants` sent climbers to the
+Cascade-Johannesburg col via "the Cascade Pass trail to the pass at 5,392 ft, then... Mixup Arm
+and the Cache Glacier" — that is the approach to Mixup Peak/Gunsight Notch, a different objective
+entirely (confirmed via Mountaineers.org/SummitPost), not the C-J col. Corrected both fields to
+the direct trailhead → hairpin → river crossing → moraine → C-J Couloir approach already
+documented correctly on the sibling `wa_cascade_peak_east_ridge` and backed by independent trip
+reports (turns-all-year.com, cascadeclimbers.com). Separately flagged, not fixed: the East Ridge
+route's own `corrections` field says research found the East Ridge and NW Chimney to be "parts of
+the natural summit line, not separate climbing objectives" — `wa_cascade_peak_nw_chimney` still
+exists as its own catalog row, which may now be a stale duplicate; de-duplication is outside this
+audit's scope. `wa_castle_peak_tatoosh_la_villa`'s own "The Castle summit" waypoint disagreed with
+itself — `elev: 6440` vs `elevFt: 6460` in the same object. Fixed `elevFt` to 6440 to match `elev`,
+the route's `high_point_ft`, the area row, the sibling Southeast Face route, and
+Wikipedia/Mountaineers.org (SummitPost's 6,460 ft was the lone outlier).
+
+**Flagged for human review (3):** `wa_castle_peak_pasayten_east_ridge` and `_north_ridge` are
+near-bare stubs (name/grade/fa only) — an enrichment gap, not a contradicted fact.
+`wa_castle_peak_pasayten_the_drawbridge`'s FA (Morgan Zentler/Jason Schilling, June 2017), grade
+(5.10+ A1) and 10 pitches are all confirmed via an AAC Publications article and a
+cascadeclimbers.com trip report, but its `high_point_ft` (8,343 ft, shared with the area row and
+the two stub routes) is contested: WTA and SummitPost both give 8,306 ft, and Wikipedia's own
+figure is inconsistent across mirrors/snapshots (8,306 vs 8,343, both citing the same Peakbagger
+source) — not resolved, not fixed.
+
+**Clean (3):** `wa_cascade_peak_east_ridge` (FA "Beckey, Schoening, Sharpe, July 23 1950" and
+7,428 ft both confirmed exactly on Wikipedia), `wa_castle_in_the_sky` (FA "Sam Boyce, Lani
+Chapko, August 2022", IV 5.10b on Whatcom Peak's south buttress, confirmed via a
+cascadeclimbers.com trip report titled "Castle in the Sky... FA of the South Buttress of
+Whatcom... 5.10b"; Whatcom Peak's 7,574 ft matches Wikipedia), `wa_castle_peak_tatoosh_southeast_face`
+(The Castle's 6,440 ft and route/trailhead details corroborated).
