@@ -61,6 +61,11 @@ function windowLabel(fc, a) {
 }
 // "1 PM–4 PM": a rain window at whole hours, in the forecast point's own clock.
 const hrSpan = (fc, from, to) => clockOf(fc, from).replace(":00", "") + "–" + clockOf(fc, to).replace(":00", "");
+/* THE HEIGHT WHEN THE ROUTE STATES NONE (census 2026-10-29: 4,903 of 6,208 alpine, mountaineering and scrambling routes
+   have no summit pin, no high point and no area elevation). Asked without one, Open-Meteo reads the ground at the
+   coordinate from its own terrain model and returns that height as `elevation` (metres): the height the forecast IS
+   for. Without it every flag that compares the freezing level with the summit stayed silent on four routes in five. */
+export const groundFt = (fc) => (fc && typeof fc.elevation === "number" && isFinite(fc.elevation) ? Math.round(fc.elevation * 3.28084) : null);
 // Round a start DOWN to the quarter hour: rounding up would start later than the arithmetic says.
 const floorQ = (s) => Math.floor(s / 900) * 900;
 const hrs = (h) => (Math.round(h * 2) / 2).toFixed(1).replace(/\.0$/, "") + " h";
@@ -229,7 +234,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     days.forEach(function (d, k) {
       if (d.date < today) return;
       const fs = faceSun[d.date];
-      let r = dayFlags(fc, days, k, { kind, rockToo: kind === "glacier" && catOf(route) === "alpine", terrain, highFt: pt.elevFt, snowFt: floor ? floor.ft : null, legs, sun: fs && fs.bands ? fs : null });
+      let r = dayFlags(fc, days, k, { kind, rockToo: kind === "glacier" && catOf(route) === "alpine", terrain, highFt: pt.elevFt != null ? pt.elevFt : groundFt(fc), snowFt: floor ? floor.ft : null, legs, sun: fs && fs.bands ? fs : null });
       const ms = sp ? modelSpread(sp, d.date, null, daySummary(fc, d).precip) : null;
       if (ms && ms.over.length) r = Object.assign({}, r, { flags: r.flags.concat([{ key: "models-disagree", level: "caution", v: ms }]) });
       const al = alerts && alerts.data && !alerts.data.outside ? alertsForDay(normAlerts(alerts.data), d.date, fc) : [];
@@ -361,7 +366,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     <RangeLine route={route} sum={day.sum} />
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 8 }}>{readout.map(function (r) { return <div key={r[0]} style={{ background: C.surface, borderRadius: 8, padding: "6px 8px" }}><div style={{ fontSize: 10.5, color: C.textMuted, fontWeight: 700 }}>{r[0]}</div><div style={{ fontSize: 12.5, color: C.text, fontWeight: 700 }}>{r[1]}</div>{r[2] ? <div style={{ fontSize: 11, color: C.textMuted, marginTop: 1 }}>{r[2]}</div> : null}</div>; })}</div>
     <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5 }}>
-      {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "halfway" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + BLIND[kind]}
+      {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : groundFt(fc) != null ? uElev(Math.round(groundFt(fc) / 10) * 10) + ", the ground height at the map point" : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "halfway" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + BLIND[kind]}
     </div>
   </div>
   <DayByDay days={days} di={di} pick={setDayI} dayName={dayName} nWarn={nWarn} nCaution={nCaution} fc={fc} legs={legs} startOn={kind !== "waterfall" && kind !== "cragmixed"} />
@@ -472,7 +477,7 @@ function HourByHour({ fc, day, dayLabel, nav, pt, floor, legs, snowLegs }) {
   const vis = v("visibility", cur), lowc = v("cloud_cover_low", cur);
   const pop = v("precipitation_probability", cur), pr = v("precipitation", cur), sn = v("snowfall", cur), fl = v("freezing_level_height", cur), cl = v("cloud_cover", cur), code = v("weather_code", cur);
   const wc = t != null && w != null ? windChillF(t, w) : null, chilled = wc != null && t != null && t - wc >= 5;
-  const tops = pt.elevFt;
+  const tops = pt.elevFt != null ? pt.elevFt : groundFt(fc);
   const marks = marksIn(T);
   return <div style={BOX}>
     <DayHead title="HOUR BY HOUR" dayLabel={dayLabel} nav={nav} />

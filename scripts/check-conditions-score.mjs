@@ -256,6 +256,16 @@ console.log("check:conditions-score");
   const hDew = at(sDew, 12), dryOk = at(scoreForecast(fixture({ dew: 30 }), WALL, null, NOW), 12);
   if (hDew && hDew.stars <= 2 && hDew.factors.humidity.friction.key === "damp" && hDew.factors.dry.pts <= 0.25 * WEIGHTS.dry && dryOk.caps.length === 0 && dryOk.factors.humidity.friction.key === "crisp") ok(`air ${60 - 58}° above its dew point reads damp and is capped (${hDew.stars.toFixed(2)}); 30° above reads crisp and is not`);
   else fail(`dew point is not read: damp hour ${hDew && hDew.stars} friction ${hDew && JSON.stringify(hDew.factors.humidity.friction)}`);
+  // DEW NEEDS A CLEAR, CALM NIGHT, and sun burns it off (audit 2026-10-28: the flat 5° rule capped sunny desert mornings).
+  {
+    const dewCap = (h) => !!h && h.caps.some((c) => /dew point/.test(c.why));
+    const d2 = (o) => scoreForecast(fixture(Object.assign({ dew: 56 }, o)), WALL, null, NOW).days[1];
+    const clear = d2({}), windy = d2({ wind: 10, gust: 14 }), cloudy = d2({ cloud: 80 }), sat = d2({ dew: 58, wind: 10, gust: 14, cloud: 80 });
+    const first = (d) => d.hours[0], noon = (d) => d.hours.find((h) => h.hr === 12);
+    const got = [dewCap(first(clear)), dewCap(noon(clear)), dewCap(first(windy)), dewCap(first(cloudy)), dewCap(noon(sat))];
+    if (JSON.stringify(got) === JSON.stringify([true, false, false, false, true])) ok("4° from the dew point: damp at first light after a clear calm night, not by noon in sun, not after a windy or overcast night; 2° is damp whatever the sky");
+    else fail(`the dew rule is wrong: [clear dawn, clear noon, windy dawn, cloudy dawn, saturated noon] capped = ${JSON.stringify(got)}, want [true,false,false,false,true]`);
+  }
   if (frictionOf(60, 40, null, [45, 68]) && frictionOf(60, null, 50, [45, 68]) === null) ok("friction with no humidity is not measured (null), never a default");
   else fail("friction with a missing input was guessed");
   // The past: today's window and default hour must be still to come.
@@ -529,6 +539,9 @@ console.log("check:conditions-score");
   else fail("the wet-morning line or the hour tiles' dryness label is gone: red tiles under a Good day read as a contradiction again");
   if (/data-dew-until="1"[^\n]{0,200}"Air at its dew point until "\+clockHr\(dewTill\.hr\)/.test(rd2) && /const dewTill=[^\n]*\/dew point\/\.test\(c\.why\)/.test(rd2)) ok("...and a dew-capped morning under a Good day says until when, too (most red mornings were dew, not rain)");
   else fail("the dew-morning line is gone: a dew-capped red morning under a Good day is unexplained again");
+  // MODELS DISAGREE ON RAIN at a crag too, by the alpine card's rule, with the printed day total in the comparison; a failed read adds nothing.
+  if (/fetchAlpineSpread\(lat,lng,null\)\.then\(function\(j\)\{_cragSp\[ck\]=j;if\(live\)setSp\(j\);\},function\(\)\{if\(live\)setSp\(null\);\}\)/.test(rd2) && /modelSpread\(sp,d\.date,null,d\.rain\)/.test(rd2) && /data-rain-split="1"/.test(rd2)) ok("a crag day the forecast models split on rain says so, with the printed amount in the comparison");
+  else fail("the crag card lost its models-disagree-on-rain line, or reads it without the printed day total");
 }
 function sN0() { return scoreForecast(fixture(), WALL, null, NOW); }
 

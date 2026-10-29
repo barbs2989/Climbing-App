@@ -379,6 +379,14 @@ eq("...and ordinary disagreement (gusts 10 mph apart) flags nothing", msC && msC
   eq("...and the flag states the range", /rain 0\.04"–1\.56"/.test(A.flagText({ key: "models-disagree", level: "caution", v: r1 })), true);
   eq("...from a spread read that asks for precipitation", /export function fetchAlpineSpread[\s\S]{0,700}freezing_level_height,precipitation&models=/.test(fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8")), true);
 }
+{
+  // NO STATED HEIGHT (census 2026-10-29: 4,903 of 6,208 alpine-kind routes): the forecast's own ground height stands in, so the summit flags can fire.
+  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  eq("with no stated height, the flags, the hour boxes and the 'Read at' line use the forecast's ground height",
+    [/highFt: pt\.elevFt != null \? pt\.elevFt : groundFt\(fc\)/.test(card), /const tops = pt\.elevFt != null \? pt\.elevFt : groundFt\(fc\);/.test(card), /"Read at " \+ \(pt\.elevFt != null \? uElev\(pt\.elevFt\) : groundFt\(fc\) != null \?[^\n]{0,120}the ground height at the map point"/.test(card)], [true, true, true]);
+  const fl = run(forecast(() => ({ fl: 9000 })), { kind: "glacier", terrain: {}, highFt: null, legs: LEGS }), flG = run(forecast(() => ({ fl: 9000 })), { kind: "glacier", terrain: {}, highFt: 8000, legs: LEGS });
+  eq("...which matters: a freezing level above the top flags only when a top height is known", [has(fl, "fl-above-night"), has(flG, "fl-above-night")], [false, true]);
+}
 eq("ONE model answering is no comparison: null, never 'they agree'", A.modelSpread(SPD([20, null, null], [30, null, null], [8000, null, null]), "2026-01-15"), null);
 eq("...and a day the spread does not cover is null too", A.modelSpread(SPD([20, 30, 65], [30, 32, 31], [8000, 8500, null]), "2026-01-16"), null);
 for (const units of ["imperial", "metric"]) {
