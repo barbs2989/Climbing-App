@@ -33,6 +33,7 @@ export function whenText(when) {
   if (/^\d/.test(when)) return "During " + when;
   return when.charAt(0).toUpperCase() + when.slice(1);
 }
+/** @param {{label: string, when?: string|null, value?: import("react").ReactNode, sub?: import("react").ReactNode, tone?: string|null, wide?: boolean}} props */
 export function Tile({ label, when, value, sub, tone, wide }) {
   return <div style={{ background: C.surface, border: "1px solid " + (tone ? tone + "77" : C.border), borderLeft: "4px solid " + (tone || C.borderHi), borderRadius: 10, padding: "9px 11px", minWidth: 0, gridColumn: wide ? "1 / -1" : undefined }}>
     <div style={{ fontSize: 12, fontWeight: 800, color: C.textSub, textTransform: "uppercase", letterSpacing: 0.5 }}>{label}</div>

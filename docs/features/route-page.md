@@ -83,7 +83,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 
 | File | What lives there |
 |---|---|
-| `RouteDetail.jsx` | The page: sub-tabs, `CRAG_CATS` (imported from core since 0300), `showPlan`, `cragOnly`, header stars UI, planner, photos tab and `photoLightbox`, edit pencils, `DiffRadar` (its axes come from `DIFF_AXES_BY_DISC` / `diffAxesFor`: sport, trad and bouldering have their own five, every other discipline keeps the original five, widened for storage by migration 0374), the crag Partners sub-tab (`usePartnersInArea`, `areaPartners`) |
+| `RouteDetail.jsx` | The page: sub-tabs, `CRAG_CATS` (imported from core since 0300), `showPlan`, `cragOnly`, header stars UI, planner, photos tab and `photoLightbox`, edit pencils, the crag Partners sub-tab (`usePartnersInArea`, `areaPartners`) |
 | `ClimbMatch.jsx` | `openRoute`, `selRoute`, `myStars`/`myRateQ`, route memo that merges `_contribFields`/`_pendingEdits`/`_contribAgreed` |
 | `ClimbMatchCore.jsx` | `scarfHrs`, `techHrs`, `buildConsensus`, `catOf`, `wpPlaced`, `WP_STYLE` |
 | `lib/TrailDrawMap.jsx` | `TrailDrawMap` — tap-to-trace the walk in from parking to the crag, inside the Add-the-trail sheet on crag routes |
@@ -145,6 +145,30 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `lib/emptyArr.js` | `EMPTY_ARR` — the stable empty array for query fallbacks (moved out of RouteDetail.jsx, PR56) |
 | `lib/cragFactField.js` | `FACT_FIELD` — which field the editor opens at for a crag fact row (moved out of RouteDetail.jsx, PR56) |
 | `lib/roadReports.js` | `ROAD_TONE`, `roadReportsOf` — the tone a road status is drawn in, and the road reports newest first (moved out of RouteDetail.jsx, PR56) |
+| `src/components/ClimbingRouteTable.tsx` | `ClimbingRouteTable` — CLIMBING ROUTE: the technical ground section by section, each with its class chip (re-exported by RouteDetail.jsx) (moved out of RouteDetail.jsx, PR57) |
+| `src/components/Capped.tsx` | `Capped` — caps a long route-page section at 400px under a fade, with Show more / Show less (moved out of RouteDetail.jsx, PR57) |
+| `src/components/GradePicker.tsx` | `GradePicker` — the edit sheet's two-step grade picker: the number, then a-d or +/- (moved out of RouteDetail.jsx, PR57) |
+| `src/components/RappelTable.tsx` | `RappelTable` — RAPPELS: the station list with its known total and the single-rope warning (moved out of RouteDetail.jsx, PR57) |
+| `src/components/RappelRow.tsx` | `RappelRow` — one rappel station as a dropdown: R#, length and anchor, then station, hazards, pull and notes (moved out of RouteDetail.jsx, PR57) |
+| `src/components/PitchComments.tsx` | `PitchComments` — comments on one pitch: the newest three, Show earlier, and the add box when signed in (re-exported by RouteDetail.jsx) (moved out of RouteDetail.jsx, PR57) |
+| `src/components/RouteGearEssentialsBox.tsx` | `RouteGearEssentialsBox` — the essentials list under the rack: the route's own list merged with the discipline's assumed and conditional gear (moved out of RouteDetail.jsx, PR57) |
+| `src/components/RouteRackBox.tsx` | `RouteRackBox` — the RACK card: counted rack items, rope, slings and the gear the prose mentions (moved out of RouteDetail.jsx, PR57) |
+| `src/components/RouteGearCheck.tsx` | `RouteGearCheck` — GEAR on the Plan tab: `RouteRackBox` then `RouteGearEssentialsBox` (moved out of RouteDetail.jsx, PR57) |
+| `src/components/DiffRadar.tsx` | `DiffRadar` — the difficulty radar; its axes come from `DIFF_AXES_BY_DISC` / `diffAxesFor`: sport, trad and bouldering have their own five, every other discipline keeps the original five, widened for storage by migration 0374 (moved out of RouteDetail.jsx, PR57) |
+| `src/components/TrailheadCard.tsx` | `TrailheadCard` — the TRAILHEAD card under GETTING THERE: name, drive directions, coordinates and the two map links (moved out of RouteDetail.jsx, PR57) |
+| `src/components/ApproachPicker.tsx` | `ApproachPicker` — the way-in picker under the sub-tab bar (moved out of RouteDetail.jsx, PR57) |
+| `src/components/ApproachVariants.tsx` | `ApproachVariants` — APPROACH: every way in, the most-used first and marked (re-exported by RouteDetail.jsx) (moved out of RouteDetail.jsx, PR57) |
+| `src/components/HourlyChart.tsx` | `HourlyChart` — the conditions card's hour-by-hour forecast (moved out of RouteDetail.jsx, PR57) |
+| `src/components/HourChartCard.tsx` | `HourChartCard` — one hourly chart (temperature, wind, rain or sky) inside the hourly forecast (moved out of RouteDetail.jsx, PR57) |
+| `src/components/SeasonChart.tsx` | `SeasonChart` — SEASON: five years of monthly highs and lows at the crag, each month rated (moved out of RouteDetail.jsx, PR57) |
+| `src/components/CampingPanel.tsx` | `CampingPanel` — CAMPING & BIVY on the Plan tab: the merged camp list in walking order (moved out of RouteDetail.jsx, PR57) |
+| `src/components/CampSite.tsx` | `CampSite` — one camp as a dropdown: role, distance from the trailhead and the previous camp, nights, and who slept there (moved out of RouteDetail.jsx, PR57) |
+| `lib/uLen.js` | `uLen` — a length in the climber's units (moved out of RouteDetail.jsx, PR57) |
+| `lib/slingFormat.js` | `fmtSlingVal` — how a stored sling list prints, shared by the RACK card and the edit sheet (moved out of RouteDetail.jsx, PR57) |
+| `lib/wxColors.js` | `wxTempColor`, `wxWindColor`, `skyWord` — the forecast's temperature and wind colours and the cloud-cover word (moved out of RouteDetail.jsx, PR57) |
+| `lib/condRows.jsx` | `condRow`, `condNote` — a label/value row and the note style of the conditions card (moved out of RouteDetail.jsx, PR57) |
+| `lib/camps.js` | `campSites`, `samePlaceCamp`, `campNightsOf`, `campNightsLabel`, `campWalkHrs`, `campRouteOrder`, `campOrderNote`, `campRoleLabel`, `campFromPrev`, `campFromTrailhead`, `campDetail`, `campReportsOf`, `campSleptLine` — how camps are merged, ordered and described (re-exported by RouteDetail.jsx for `check:camping` and the log form) (moved out of RouteDetail.jsx, PR57) |
+| `lib/approachIndex.js` | `approachHasCrossing`, `primaryApproachIndex`, `longFormApproachIndex` — which way in is the main one, which carries the long paragraph, and whether a way in crosses water (re-exported by RouteDetail.jsx) (moved out of RouteDetail.jsx, PR57) |
 | `src/components/GPXMap.tsx` | `GPXMap` — the route map: track, pins, one shared popup card, derived trailhead, base check-ins (extracted from core, PR13) |
 | `lib/Route3DView.jsx` | `Route3DView` — the route map's 3D view (MapLibre GL over terrain) |
 | `lib/RouteTracksPanel.jsx` | `RouteTracksPanel` — CLIMBERS' TRACKS under the route map: sort, season filter, show on map |

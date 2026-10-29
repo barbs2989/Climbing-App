@@ -38,8 +38,9 @@ function liftBody(src, opener, label) {
   return src.slice(i, k + 1);
 }
 
-const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
-const ok = fs.readFileSync(path.join(ROOT, "lib/objKeys.js"), "utf8");
+// fmtSlingVal moved to lib/slingFormat.js (PR57); a lib/ helper is not stitched back by readAppFile.
+const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8") + "\n" + fs.readFileSync(path.join(ROOT, "lib/slingFormat.js"), "utf8");
+const ok =fs.readFileSync(path.join(ROOT, "lib/objKeys.js"), "utf8");
 
 // The three pieces the summary line is built from.
 const dgetSrc = liftBody(rd, "const _dget=", "_dget");
