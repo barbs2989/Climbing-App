@@ -17,7 +17,7 @@ CREATE OR REPLACE FUNCTION public.areas_in_subtree(root_id text, q text, lim int
  RETURNS TABLE(id text, name text, area_type text, route_count integer, parent_id text, parent_name text, total bigint)
  LANGUAGE sql
  STABLE
-AS $function$
+AS $$
   with needle as (
     -- `bare` drops a leading honorific so "baker" scores against "Mount Baker" the same way
     -- "mount baker" does. Compared on CANONICAL forms, so "mt" and "mount" are one honorific.
@@ -79,4 +79,4 @@ AS $function$
     left join areas pa on pa.id = s.parent_id
    order by s.score desc, s.sim desc, s.route_count desc nulls last, s.name
    limit lim;
-$function$;
+$$;
