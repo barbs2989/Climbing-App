@@ -35274,3 +35274,36 @@ Chapko, August 2022", IV 5.10b on Whatcom Peak's south buttress, confirmed via a
 cascadeclimbers.com trip report titled "Castle in the Sky... FA of the South Buttress of
 Whatcom... 5.10b"; Whatcom Peak's 7,574 ft matches Wikipedia), `wa_castle_peak_tatoosh_southeast_face`
 (The Castle's 6,440 ft and route/trailhead details corroborated).
+
+## 2026-10-29 — Pass 8, Batch 476
+
+Eight routes across Cathedral Peak (Pasayten), Cathedral Rock (Cle Elum) and Chair Peak
+(Snoqualmie Pass): Last Rites + Southeast Buttress (Cathedral Peak); Northeast Buttress,
+Northeast Ridge (2003 Variation) + Southeast Face Chimney (Cathedral Rock); Chair-Bryant
+Traverse, East Face + North Face (Chair Peak).
+
+**Fixed (2):** `wa_cathedral_peak_pasayten_se_buttress`'s stored grade (5.10a) is contradicted by
+every independent source found — SummitPost's dedicated "SE Buttress" page, the
+lamountaineers.org North American Classic Climbs entry, a 2016 Steph Abegg trip report, a 2007
+cascadeclimbers.com trip report titled "Southeast Buttress (5.9+, 10 pitches)" (matching this
+row's own `pitches: 10`), and the Wikipedia `.com` mirror — all converging on 5.9/5.9+; a Mountain
+Project comment on the area page even asks "Who changed the grade on this climb?" Corrected to
+5.9+. `wa_chair_peak_east_face`'s stored grade (5.2) is contradicted by SummitPost's dedicated
+"East Face (Summer)" page (5.5, crux through an overhanging band) and a trip report ("5.6 I
+believe"), and is inconsistent with the route's own `pitch_detail` P1, already recorded as
+"5.1-5.6" depending on which side of the chimney is climbed. Corrected the summary grade to 5.5.
+
+**Flagged for human review (1):** `wa_cathedral_rock_southeast_face_chimney`'s FA (C. M. Holt,
+Randy Johnson and Terri Van Hollebeke, July 1, 1973) could not be corroborated against any source
+found — not contradicted, just unverifiable — so left as-is.
+
+**Clean (5):** `wa_cathedral_peak_last_rites` (FA Scott Bennett/Blake Herrington, August 2011,
+grade 5.11+ and length 300m all confirmed exactly via an AAC Publications 2012 "Three New Routes"
+report on the Pasayten, which places the line on the south face between the Beckey and Doorish
+routes), `wa_cathedral_rock_northeast_buttress` (FA Paul Bellamy/Gary Speer, September 17 1984,
+matches an AAC Publications 1985 report; 6,724 ft matches SummitPost/Wikipedia/Peakbagger),
+`wa_cathedral_rock_northeast_ridge_2003_variation` (FA Mike Preiss/Mark Bunker, 2003, corroborated
+by a cascadeclimbers.com thread describing a June 2003 climb starting at the 1984 route's own
+belay tree before diverging), `wa_chair_bryant_traverse` (FA Ari Schneider/Jason Linker confirmed
+exactly via OpenBeta), `wa_chair_peak_north_face` (FA Kit Lewis/Charlie Hampson/Rob Harris/Greg
+Jacobson, January 1975, and 4 pitches, both confirmed exactly via Mountain Project).
