@@ -35348,3 +35348,55 @@ No files under `audits/sql/` added, `wa-alpine-audit-progress.json` left untouch
 Flagging this as worth a human look if it recurs: it may be the anon key itself (rotated,
 rate-limited, or now flagged by the egress proxy on this specific credential pattern) rather than
 a transient network blip, since two consecutive runs have now hit it.
+
+## 2026-10-29 — Batch 479 (pass 8)
+
+Routes: wa_chimney_rock_southeast_shoulder, wa_chimney_rock_west_face, wa_chiwawa_mountain_southwest, wa_chockstone_route, wa_clark_mountain_west_ridge, wa_classic_route_2, wa_colchuck_balanced_rock_east_route, wa_colchuck_balanced_rock_south_route.
+
+Note on method: the live DB (Supabase REST) was reachable this run but slow and
+filter-sensitive — a combined `discipline=in.(...)` + `id` range + `order by id` query
+reliably hit the server's statement timeout (57014) regardless of page size, while a plain
+`id` range scan (no discipline filter) returned in a few seconds. Worked around it by paging
+the `wa_` id range in batches of 50 and filtering for `alpine`/`mountaineering` client-side,
+then confirming each candidate's parent `area_type = 'peak'` with individual `id=eq.` lookups
+(all fast). `wa_clean_break` (Juno Tower) was skipped as out of scope — Juno Tower's
+`area_type` is `crag`, not `peak`.
+
+No confirmed errors; no SQL this batch.
+
+**Clean, well corroborated (5):** `wa_chimney_rock_west_face` ("South Peak via East Gully";
+FA correctly hedged as unknown — no source found documents a first ascent of this specific
+line, and the peak's main 1930 FA by Farr/Winder/Byington, which this row's own `fa` field
+already distinguishes from this route, is confirmed via Wikipedia; high point 7,440 ft matches
+Wikipedia's "minor south peak" figure exactly). `wa_chiwawa_mountain_southwest` (FA "Lorenz A.
+Nelson and a Mountaineers party, 1921" matches Wikipedia/Armchair Mountaineer, both of which
+hedge it the same way our row doesn't need to since the attribution itself isn't contradicted;
+elevation 8,459 ft matches Wikipedia exactly; the Little Giant Fire closure this row cites —
+order 06-17-07-2026-40, Sept 3 through Oct 31, 2026 — is now confirmed verbatim against the
+official fs.usda.gov alert page, which resolves the date ambiguity batches 474/477 flagged as
+unverifiable when that page wouldn't load for those runs). `wa_chockstone_route` (FA "Wesley
+Grande, Pete Schoening, Dick Widrig, May 28 1950" matches Mountain Project/OpenBeta's
+attribution for this exact route; this row's own hedge — "historically also referenced as the
+Southwest Face Route" — already anticipates the SummitPost naming discrepancy found this run;
+7,760 ft matches SummitPost/Wikipedia for North Early Winters Spire). `wa_clark_mountain_west_ridge`
+(route name "Walrus Glacier"; 8,602 ft matches SummitPost exactly; same Little Giant Fire
+closure order confirmed as above). `wa_classic_route_2` (Unicorn Peak; the rappel-anchor
+beta — rock horn on the south side now standard, old bleached snag deprecated — matches recent
+Mountaineers trip reports almost verbatim; grade 5.4 matches Mountain Project, though SummitPost
+gives 5.6 for the same line — two primary route databases disagree with no guidebook to
+adjudicate, so not changed).
+
+**No sources found (3):** `wa_chimney_rock_southeast_shoulder`, `wa_colchuck_balanced_rock_east_route`
+and `wa_colchuck_balanced_rock_south_route` are near-bare stubs (grade only, `wa_colchuck_balanced_rock_south_route`
+not even that) — no SummitPost/Mountain Project/Mountaineers.org page names a "Southeast
+Shoulder" on Chimney Rock or a named "East Route"/"South Route" on Colchuck Balanced Rock
+specifically (search results for the latter two kept surfacing the similarly-named but
+different Colchuck *Peak* East Route instead). Enrichment gaps, not contradicted facts.
+
+**Worth a human look (not a factual error, so not flagged as one above):** two of this batch's
+routes have an id that no longer matches their own stored name/content —
+`wa_chimney_rock_west_face`'s name and beta describe the East Gully line to the South Peak, not
+a west face, and `wa_clark_mountain_west_ridge`'s name and beta describe the Walrus Glacier
+route, not a west ridge. Per CLAUDE.md, ~91% of ids are name-derived and ids can legitimately
+drift from a later-renamed route, so this may just be that pattern rather than a bug — but two
+in one batch of eight seemed worth a one-line note for whoever maintains route identity.
