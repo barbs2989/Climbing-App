@@ -132,7 +132,8 @@ const STRUCTURED = new Set(["waypoints", "pitches", "itinerary", "road", "access
   // `rappels` builds rappel_detail's [{n,lengthM,anchor,station?,hazards?,notes}] the way `pitches` builds pitch_detail.
   "rappels"]);
 
-const readers = stripComments(RD + "\n" + CORE);
+// lib/routeKw.js holds the `hazards` reader since PR58 (a lib/ helper is not stitched into RD).
+const readers = stripComments(RD + "\n" + CORE + "\n" + fs.readFileSync(path.join(ROOT, "lib/routeKw.js"), "utf8"));
 // The stripper's own failure mode is silent: desynchronise on an apostrophe and it eats real
 // code, after which every pattern below is absent and the guard reports a clean sweep. Assert
 // a known live reader survives it before trusting a single result.

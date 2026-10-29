@@ -278,6 +278,17 @@ export const MOVED = {
     "src/components/CampSite.tsx",
     "src/components/CampingPanel.tsx",
     "src/components/ApproachVariants.tsx",
+    "src/components/TopoDrawer.tsx",
+    "src/components/TopoSection.tsx",
+    "src/components/RouteBreakdown.tsx",
+    "src/components/BaseCheckinPanel.tsx",
+    "src/components/ConsensusPanel.tsx",
+    "src/components/SafetyMatrix.tsx",
+    "src/components/ItineraryView.tsx",
+    "src/components/Calculator.tsx",
+    "src/components/TechStats.tsx",
+    "src/components/WeatherPanel.tsx",
+    "src/components/ConditionsScoreCard.tsx",
   ],
 };
 // The pre-2026-10 name, kept because 21 guards import it. Same array, same meaning.

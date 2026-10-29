@@ -1,0 +1,87 @@
+import { useMemo, useState, useCallback } from "react";
+import { isRoadTag, useRealAuthors, buildConsensus, C, ROUTE_GAP, ago, SZ3, SUB_LABEL, RECENT_DAYS, catOf, uTempU, uElev, MONTHS } from "../../ClimbMatchCore.jsx";
+import { routeKw } from "../../lib/routeKw.js";
+import CardHead from "./CardHead.tsx";
+import Pill from "./Pill.tsx";
+import Av from "./Av.tsx";
+import CRow from "./CRow.tsx";
+import type { CRowProps } from "./CRow.tsx";
+import ActionIcon from "./ActionIcon.tsx";
+import Stars from "./Stars.tsx";
+import Bar from "./Bar.tsx";
+import { photoThumb } from "../../lib/photoThumb";
+
+/** One trip report as this panel reads it. */
+interface ConsensusReport {
+  date?: string | null;
+  condTags?: string[] | null;
+  text?: string | null;
+  /** The reporter's account id, so verified status and level can be looked up. */
+  _authorId?: string | null;
+}
+/** One per-condition tally from buildConsensus (temperature, snow, water...). */
+interface CondTally {
+  value?: string | number | null;
+  n?: number;
+  stale?: boolean;
+  mostRecent?: string | null;
+}
+/** One month of the seasonal heatmap. */
+interface MonthTally {
+  count: number;
+  stars: number;
+  rated: number;
+}
+
+export interface ConsensusPanelProps {
+  /** The route; its id keys the hazard votes, and routeKw/catOf read the rest. */
+  route: Parameters<typeof catOf>[0] & { id: string; activity?: ConsensusReport[] | null; hazards?: string[] | null };
+  /** The reports to summarise (route + mine + the database's); none means the route's own. */
+  activity?: ConsensusReport[] | null;
+  /** Still-there / gone-now tallies, keyed `routeId|label`. */
+  hzVotes?: CRowProps["hzVotes"];
+  /** Casts a hazard vote; without it the vote buttons are not drawn. */
+  onVote?: CRowProps["onVote"];
+  /** The reports read failed, so the summary may be partial. */
+  reportsUnavailable?: boolean;
+  /** The shared star rating (one vote per climber); when anyone has cast one it replaces the report average. */
+  starSum?: { raters: number; stars: number | null } | null;
+}
+
+const VOLATILE_DISC=["alpine","mountaineering","ice","mixed"];
+/* Exported for scripts/oneoff/probe-consensus-outage-copy.mjs, which renders it directly: it is
+   the one surface here that takes the outage flag as a PROP, so it can be driven without a live
+   query. Same reason seasonShort and campingGate are exported.
+   Moved verbatim from RouteDetail.jsx (PR58); only the types were added. */
+export default function ConsensusPanel({route,activity,hzVotes,onVote,reportsUnavailable,starSum}: ConsensusPanelProps){
+  /* Road tags are left out of THIS panel's tallies: ROAD CONDITIONS sits on the same tab (at its foot) and
+     says the same thing as sentences, so on a route with few reports TOP CONDITIONS REPORTED filled
+     up with "Road/trailhead closed · Road: washout" and pushed the route's own conditions off it.
+     Overview's one-line summary still counts them — the road has no section of its own there. */
+  const activityAll=useMemo(function(){return (activity||route.activity||[]).map(function(a: ConsensusReport){return (a&&(a.condTags||[]).some(isRoadTag))?Object.assign({},a,{condTags:(a.condTags as string[]).filter(function(t: string){return !isRoadTag(t);})}):a;});},[activity,route.activity]);
+  const [openK,setOpenK]=useState<string|null>(null);const voteFor=useCallback(function(label: string){return hzVotes&&hzVotes[route.id+"|"+label];},[route.id,hzVotes]);/* Real reporters' verified status and level (useRealAuthors): both memos read them, so both re-run when they land. */const authorsV=useRealAuthors(activityAll.map(function(a: ConsensusReport){return a&&a._authorId;}));const c=useMemo(()=>buildConsensus(activityAll,voteFor),[activityAll,voteFor,authorsV]);const k=useMemo(()=>routeKw(Object.assign({},route,{activity:activityAll})),[route.id,activityAll,route.hazards,authorsV]);const kh=useMemo(()=>k.hazards.filter(x=>x.count>=2),[k.hazards]);const kc=useMemo(()=>k.conditions.filter(x=>x.count>=2),[k.conditions]); // eslint-disable-line react-hooks/exhaustive-deps -- authorsV is deliberate: the author cache (useRealAuthors) fills after render and buildConsensus reads it; route is keyed by route.id/route.hazards
+  if(!c)return <div style={{color:C.textMuted,fontSize:13,padding:10,marginBottom:ROUTE_GAP}}>{reportsUnavailable?"Couldn’t load this route's reports — try again in a moment.":"No reports yet — be the first to log this climb."}</div>;const _dates=(activityAll||[]).map(function(a: ConsensusReport){return a.date;}).filter(Boolean).sort();const _latest=_dates[_dates.length-1];/* ONE age ladder, not two. This was a private reimplementation of core's ago(), and the two
+     rendered the SAME DATE about 700px apart on this tab: "Updated 3mo ago" above "Most recent
+     report: 2mo ago - 2026-06-20", because this ROUNDED (Math.round(75/30) is 3) where ago()
+     FLOORS (2). Measured over every distinct date the seed catalog renders, the two disagreed on
+     34 of 35. It also had no year bucket at all, so a 2023 report read "44mo ago". The
+     four-grade-parsers shape, on dates. ago() is already imported here and already formats
+     c.lastDate below -- the very value _latest duplicates -- so this is a consolidation onto the
+     helper that was already right, not a third spelling. */
+  const _fresh=_latest?"Updated "+ago(_latest):"";const _rc=(activityAll||[]).slice().sort(function(a: ConsensusReport,b: ConsensusReport){return String(b.date).localeCompare(String(a.date));})[0];const _rtx=_rc?(((_rc.condTags||[]).join(" ")+" "+(_rc.text||"")).toLowerCase()):"";const _good=/(dry|perfect|firm|bluebird|tacky|cool|crisp|prime|stellar)/.test(_rtx);const _bad=/(wet|greasy|humid|snow|ice|verglas|slick|warm|hot|damp|muddy|seep|soaked)/.test(_rtx);const _trend=(_good&&!_bad)?{a:"↗",l:"trending good",c:C.green}:((_bad&&!_good)?{a:"↘",l:"trending poor",c:C.red}:{a:"→",l:"holding steady",c:C.textSub});
+  const confCol=c.confidence==="high"?C.green:c.confidence==="medium"?C.amber:C.red;
+  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginBottom:ROUTE_GAP}}>{/* A PARTIAL CONSENSUS IS NOT A CONSENSUS. `activity` is route.activity + myReports + dbReports, so a failed reports read silently drops the DB half and buildConsensus runs on what is left — the panel then presents a DERIVED SAFETY JUDGEMENT as if it had seen everything filed. `reportsUnavailable` was already passed in and was consulted ONLY on the empty branch, so exactly this case said nothing. Found by walking the Conditions sub-tab in check:outage for the first time: under a blanket outage the screen CHANGED (3,388 -> 3,384 chars) and acknowledged nothing, which is rule 1. */}{reportsUnavailable?<div style={{fontSize:11.5,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber,borderRadius:8,padding:"7px 9px",marginBottom:10,lineHeight:1.45}}>{"Some reports couldn’t load, so this is based on the ones that did — not on everything filed for this route."}</div>:null}{_fresh?<div style={{display:"flex",alignItems:"center",gap:8,marginBottom:11,fontSize:11.5,fontWeight:600}}><span style={{width:6,height:6,borderRadius:"50%",background:C.green,flexShrink:0,animation:"cm-pulse 2s infinite"}}/><span style={{color:C.textMuted}}>{_fresh}</span><span style={{color:_trend.c,fontWeight:700}}><span className="cm-pop" style={{display:"inline-block"}}>{_trend.a}</span>{" "+_trend.l}</span></div>:null}
+    <div style={SZ3}><CardHead>Community Consensus</CardHead><Pill label={`${c.confidence} confidence · ${c.reportCount} report${c.reportCount===1?"":"s"}`} color={confCol} bg={`${confCol}22`} sm/></div>{c.hazards&&c.hazards.length?<div style={{background:C.redBg,border:`1px solid ${C.red}55`,borderRadius:10,padding:"10px 12px",marginBottom:12}}><div style={{...SUB_LABEL,marginBottom:6,color:C.red}}>Recent hazard reports</div>{c.hazards.map((h: {avatar?: string | null; tags: string[]; user: string; date: string},i: number)=><div key={i} style={{display:"flex",alignItems:"center",gap:7,marginBottom:i<c.hazards.length-1?6:0}}><Av src={h.avatar} size={20}/><div style={{flex:1,minWidth:0}}><div style={{fontSize:12,color:C.text,fontWeight:600}}>{h.tags.join(" · ")}</div><div style={{fontSize:12,color:C.textMuted}}>{h.user+" · "+h.date}</div></div></div>)}</div>:null}{c.lastDate?<div style={{fontSize:12,color:C.textMuted,marginBottom:10}}>Most recent report: <span style={{color:C.textMuted}}>{ago(c.lastDate)+" · "+c.lastDate}</span>{c.verifiedCount?" · "+c.verifiedCount+" of "+c.reportCount+(c.reportCount===1?" report":" reports")+" from verified climbers":""}</div>:null}
+    {(kh.length||kc.length||k.conflicts.length)?<div style={{background:C.surface,border:`1px solid ${C.border}`,borderRadius:10,padding:"11px 12px",marginBottom:13}}><div style={{display:"flex",alignItems:"center",gap:7,marginBottom:9,flexWrap:"wrap"}}><CardHead style={{flex:1}}>What trip reports consistently mention</CardHead><span style={{fontSize:12,fontWeight:700,color:k.confidence==="High"?C.green:k.confidence==="Medium"?C.amber:C.red,background:(k.confidence==="High"?C.green:k.confidence==="Medium"?C.amber:C.redSolid)+"22",borderRadius:6,padding:"2px 7px"}}>{k.confidence+" confidence in these tags"}</span></div>{k.conflicts.length?<div style={{background:C.amberBg,border:`1px solid ${C.amber}55`,borderRadius:8,padding:"8px 10px",marginBottom:10,fontSize:11.5,color:C.amber,lineHeight:1.45}}>{k.conflicts[0]}</div>:null}{kh.length?<div style={{marginBottom:kc.length?11:0}}><div style={{...SUB_LABEL,marginBottom:7}}>Hazards climbers report</div>{kh.map(h=><CRow key={h.label} item={h} kind="h" routeId={route.id} hzVotes={hzVotes} onVote={onVote} openK={openK} setOpenK={setOpenK}/>)}</div>:null}{kc.length?<div><div style={{...SUB_LABEL,marginBottom:7}}>Conditions climbers report</div>{kc.slice(0,6).map(co=><CRow key={co.label} item={co} kind="c" routeId={route.id} hzVotes={hzVotes} onVote={onVote} openK={openK} setOpenK={setOpenK}/>)}</div>:null}<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:9,paddingTop:9,borderTop:`1px solid ${C.borderLight}`}}>From {k.total} report{k.total!==1?"s":""}; a signal needs 2+ to show. Tap a row to see its reports. <span style={{color:C.green,fontWeight:700}}>✓</span> official · <span style={{color:C.amber,display:"inline-flex",verticalAlign:"-0.15em"}}><ActionIcon name="flag" size={12} color={C.amber}/></span> community-flagged · <span style={{color:C.purple,fontWeight:700}}>✦</span> verified across seasons · ● within last year.</div></div>:null}
+    {c.conditions&&Object.keys(c.conditions).length?<div style={{marginBottom:14}}>{(function(){/* The consensus falls back to reports of ANY age when none is recent, which used to sit under "CONDITIONS NOW" looking current. Say which it is. */const ks=Object.keys(c.conditions),allOld=ks.every(function(k){return (c.conditions as Record<string,CondTally>)[k].stale;});const newest=ks.map(function(k){return (c.conditions as Record<string,CondTally>)[k].mostRecent;}).filter(Boolean).sort().slice(-1)[0];return <><div style={{fontSize:12,color:allOld?C.amber:C.blue,fontWeight:800,letterSpacing:0.4,marginBottom:6}}>{allOld?"LAST REPORTED CONDITIONS":"CONDITIONS NOW"}</div>{allOld?<div style={{fontSize:11.5,color:C.amber,lineHeight:1.45,marginBottom:8}}>{"No one has reported conditions in the last "+RECENT_DAYS+" days"+(newest?" — the newest of these is from "+ago(newest):"")+". Treat them as history, not as today."}</div>:null}</>;})()}{VOLATILE_DISC.indexOf(catOf(route))>=0?<div style={{display:"flex",alignItems:"center",gap:6,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:8,padding:"6px 9px",marginBottom:8,fontSize:11.5,color:C.amber,lineHeight:1.4}}><span aria-hidden="true" style={{display:"inline-flex"}}><ActionIcon name="alert" size={13} color={C.amber}/></span><span>This route's conditions can change fast — verify before you go.</span></div>:null}<div style={{display:"flex",gap:6,flexWrap:"wrap"}}>{[["carToCar","Car-to-car"],["tempF","Temp"],["snow","Snow"],["snowDepth","Postholing"],["freezingFt","Freezing lvl"],["freezing","Freezing lvl"],["water","Water"],["bugs","Bugs"],["trail","Trail"],["seepage","Seepage"],["mud","Mud"],["protection","Protection"],["crowds","Crowds"]].map(function(p){let cd: CondTally|null=(c.conditions as Record<string,CondTally>)[p[0]];/* a legacy prose freezing level only speaks when no NUMBER has been reported */if(p[0]==="freezing"&&(c.conditions as Record<string,CondTally>).freezingFt)cd=null;return cd?<div key={p[0]} style={{background:C.surface,border:"1px solid "+C.border,borderRadius:8,padding:"5px 9px",fontSize:12}}><span style={{color:C.textMuted}}>{p[1]+" "}</span><span style={{color:C.text,fontWeight:700}}>{p[0]==="tempF"?uTempU(cd.value):p[0]==="freezingFt"?uElev(cd.value):cd.value}</span>{cd.n?<span style={{color:cd.stale?C.amber:C.textMuted,fontSize:11}}>{" · "+cd.n+(cd.mostRecent?" · "+ago(cd.mostRecent):"")}</span>:null}</div>:null;})}</div></div>:null}<div style={{display:"flex",gap:12,alignItems:"center",marginBottom:14}}>
+      <div style={{textAlign:"center"}}>{(function(){/* The SAME star the route header shows: the shared rating (0294, one vote per climber) when anyone has cast one, else the trip-report average. Two different averages on one page read as a contradiction. */const _sh=starSum&&starSum.raters>0&&starSum.stars!=null;const _av=_sh?starSum.stars as number:c.avgStars;const _n=_sh?starSum.raters:c.ratedCount;return <><div style={{fontSize:29,fontWeight:700,color:_n?C.amber:C.textMuted}}>{_n?_av.toFixed(1):"—"}</div><Stars n={_av}/><div style={{fontSize:12,color:C.textMuted,marginTop:2}}>{!_n?"no star ratings yet":_sh?(_n+" climber"+(_n!==1?"s":"")+" rated"):("avg of "+_n+" rating"+(_n!==1?"s":""))}</div></>;})()}</div>
+      <div style={{flex:1}}><div style={{...SUB_LABEL,marginBottom:5}}>{"TOP CONDITIONS REPORTED · "+c.reportCount+" REPORT"+(c.reportCount!==1?"S":"")}</div>{c.topTags.map(t=><div key={t.tag} style={{marginBottom:9}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",gap:8,marginBottom:3}}><span style={{fontSize:12,color:C.text}}>{t.tag}</span><span style={{fontSize:12,fontWeight:700,color:C.teal,flexShrink:0}}>{t.pct}%</span></div><Bar val={t.pct} color={C.teal} h={6}/></div>)}</div>
+    </div>
+    <div style={{...SUB_LABEL,marginBottom:6}}>SEASONAL HEATMAP · REPORTS PER MONTH</div>
+    <div style={{display:"flex",gap:3}}>{MONTHS.map((mo,i)=>{const md=(c.byMonth as Record<number,MonthTally>)[i];const intensity=md&&md.rated?Math.min(1,(md.stars/md.rated)/5):0;const isBest=c.bestMonths.includes(mo);return <div key={mo} style={{flex:1,textAlign:"center"}}><div style={{height:32,borderRadius:4,background:intensity>0?`rgba(63,185,80,${0.15+intensity*0.85})`:`${C.border}44`,border:isBest?`1px solid ${C.green}`:"none",display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,color:intensity>0.5?"white":C.textMuted,fontWeight:600}}>{md?md.count:""}</div><div style={{fontSize:12,color:isBest?C.green:C.textMuted,marginTop:2,fontWeight:600}}>{mo}</div></div>;})}</div>
+    {c.bestMonths.length>0?<div style={{display:"flex",gap:6,flexWrap:"wrap",marginTop:10,alignItems:"center"}}><span style={{fontSize:12,color:C.textMuted}}>Best months (avg 4★+):</span>{c.bestMonths.map(mo=>{const _bm=(c.byMonth as Record<number,Partial<MonthTally>>)[MONTHS.indexOf(mo)]||{};return <span key={mo} style={{background:C.greenBg,color:C.green,padding:"2px 9px",borderRadius:7,fontSize:12,fontWeight:700}}>{mo}<span style={{fontWeight:500,opacity:0.8}}>{" · "+_bm.rated+" rated"}</span></span>;})}</div>:null}
+    {c.faCredits&&c.faCredits.length?<div style={{marginTop:14,background:C.surface,border:`1px solid ${C.border}`,borderRadius:10,padding:"10px 12px"}}><CardHead tone={C.amber} style={{marginBottom:6}}>First Ascent Credit</CardHead><div style={{display:"flex",gap:6,flexWrap:"wrap"}}>{c.faCredits.map((name: string)=><span key={name} style={{fontSize:12,color:C.amber,background:C.amberBg,border:`1px solid ${C.amber}55`,borderRadius:6,padding:"4px 9px",fontWeight:600}}>{name}</span>)}</div></div>:null}
+    {c.isDeveloped?<div style={{marginTop:12,background:C.greenBg,border:`1px solid ${C.green}55`,borderRadius:10,padding:"10px 12px"}}><div style={{...SUB_LABEL,color:C.green}}>Route Development</div><div style={{fontSize:12.5,color:C.textSub,marginTop:4}}>This route has been bolted or developed by climbers in the community.</div></div>:null}
+    {c.photos&&c.photos.length?<div style={{marginTop:14}}><CardHead style={{marginBottom:8}}>Recent Photos</CardHead><div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:6}}>{c.photos.map((p: {url: string; user?: string | null},i: number)=><div key={i} style={{position:"relative",paddingBottom:"100%",borderRadius:8,overflow:"hidden",background:C.card,cursor:"pointer",border:`1px solid ${C.border}`}}><img loading="lazy" decoding="async" src={photoThumb(p.url,180)} alt={"Recent condition photo"+(p.user?" by "+p.user:"")} style={{position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover"}} onError={()=>{}} />{p.user?<div style={{position:"absolute",left:0,right:0,bottom:0,padding:"8px 6px 4px",background:"linear-gradient(transparent,rgba(0,0,0,0.72))",fontSize:11,color:C.onSolid,fontWeight:600,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{p.user.split(" ")[0]}</div>:null}</div>)}</div></div>:null}
+  </div>;
+}

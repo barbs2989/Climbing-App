@@ -17,6 +17,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SOURCE_OF_TRUTH = "lib/grade.js";
@@ -231,7 +232,8 @@ if (ran < CASES.length) { console.error("check:grade-parser: fewer cases ran tha
       process.exit(1);
     }
   }
-  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  // stitched: the Composite Grade lives in TechStats.tsx since PR58
+  const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   if (!/singleGrade\(p\[1\],route\)/.test(rd) || !/gradeRangeNote\(route\)/.test(rd)) {
     console.error("check:grade-parser FAILED — RouteDetail.jsx's Composite Grade no longer draws its chips through singleGrade() and its notice through gradeRangeNote(): a class range would print as two grades again.");
     process.exit(1);

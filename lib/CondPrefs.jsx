@@ -192,6 +192,7 @@ const SYNC_TEXT = {
 /* The controls. `disc` is the route's discipline when shown on a route (so it opens on that
    discipline's range); in Settings and the Menu there is none, so it opens on All climbing.
    `only="temp"` shows the temperature range alone (the alpine Conditions tab). */
+/** @param {{disc?: string, only?: string}} props */
 export function CondPrefsControls({ disc, only }) {
   const p = useCondPrefs();
   const sync = useCondSync();

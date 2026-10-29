@@ -27,7 +27,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   the three logged legs as a proportional bar with the total; an avalanche rating below Considerable files under On the route as a
   reading, Considerable and above under Hazards. The form says, under typed partner names, that a typed name cannot confirm the climb.
   `LogAscent` also offers *Add topo photo* (signed in, DB on): the climber draws the route line with the route page's
-  `TopoDrawer` (lazy import from `RouteDetail.jsx`) and on save App's `addLogTopo` files the photo under the climb
+  `TopoDrawer` (lazy import from `RouteDetail.jsx`, which re-exports it from `src/components/TopoDrawer.tsx`) and on save App's `addLogTopo` files the photo under the climb
   (`uploadTopoPhoto`, `topos.route_id`, 0364) and the line on the route (`submitTopoLine`), so it reaches that climb's Photos tab for everyone, and no other climb's.
 - **Where you camped (0358)**: on a route where `campingGate(route)` is true, `LogAscent`'s *Getting there* asks *Nights out*
   (`cond.nights`, a STRING so a day trip "0" survives the save filter → `climb_logs.nights_out`) and *Where did you camp?*

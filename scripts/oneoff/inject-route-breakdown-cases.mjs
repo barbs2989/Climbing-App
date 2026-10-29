@@ -23,6 +23,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", ".
 const FILE = path.join(ROOT, "RouteDetail.jsx");
 // pitchEntryKind and breakdownRows moved to lib/breakdownRows.js (PR56); a case names the file its anchor lives in.
 const BREAKDOWN_LIB = path.join(ROOT, "lib", "breakdownRows.js");
+// PR57 moved the ROUTE BREAKDOWN card (badge, shortfall line) to src/components/RouteBreakdown.tsx.
+const BREAKDOWN_CARD = path.join(ROOT, "src", "components", "RouteBreakdown.tsx");
 const sum = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 12);
 
 const CASES = [
@@ -35,6 +37,7 @@ const CASES = [
   },
   {
     name: "2. glued badge — 'P'+raw label instead of 'P'+parsed number",
+    file: BREAKDOWN_CARD,
     find: '}}>{isPitch?("P"+r._badge):r._seq}</div>',
     repl: '}}>{isPitch?("P"+r._n):r._seq}</div>',
     expect: "fail",
@@ -58,12 +61,14 @@ const CASES = [
     // half of that predicate is inside the function, so handing it the roped count still refuses.
     // A first version did exactly that, landed by checksum and reproduced no defect at all.
     name: "5. #1440 reverted — shortfall measured against the ROPED count again",
+    file: BREAKDOWN_CARD,
     find: "const short=pitchShortfall(route,rows.length)?",
     repl: "const short=(route.pitches&&pitchCount&&route.pitches>pitchCount)?",
     expect: "fail",
   },
   {
     name: "6. #1440 satisfied by deletion — never claim a shortfall at all",
+    file: BREAKDOWN_CARD,
     find: "const short=pitchShortfall(route,rows.length)?",
     repl: "const short=false?",
     expect: "fail",

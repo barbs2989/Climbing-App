@@ -12,47 +12,32 @@ import { DISC_LABELS as DL } from "./lib/discLabels";
 /* rackFromText / _rackEdited / contribRack / routeRackFor / DISC_RACK moved to lib/rack.js so
    the crew card can answer the same question without core importing this lazy-loaded file.
    Moved verbatim; the correction-precedence rule and its history live beside them there. */
-import { _rackEdited, _ropeEdited, fmtRopeLen, contribRack, routeRackFor, DISC_RACK, rackRows, rackQty, rackItemLine, rackItemKind, isRackItem } from "./lib/rack";
-import { ropeworkFacts } from "./lib/ropework";
+import { _rackEdited, fmtRopeLen, contribRack, routeRackFor, DISC_RACK, rackRows, rackQty, rackItemLine, rackItemKind, isRackItem } from "./lib/rack";
 import { waypointCaveat, trackCoverage, trackCoverageCaveat, trackStubCaveat, withRecordedTrackOnly } from "./lib/track";
 import { accessCheckedLine } from "./lib/road";
 import { navTarget, navLinks } from "./lib/navLinks";
 import { USE_DB} from "./lib/supabase";
-import {recordRouteView,useAreaPath,useRouteStarSummary,usePartnersByObjective,usePartnersInArea,useMatchObjectivesOfUsers,checkInAtRouteBase, withdrawBaseCheckin, useRouteBaseCheckins, dbRouteToCamel, useAreaRoutes, useProfilesByIds, useRoutesByIds, useRouteTopos, topoPhotoUrl, uploadTopoPhoto, updateTopoAlt, updateTopoCaption, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useObjectiveCounts, useProfileSearch, useRouteTripReports, useRoutePrivateConditions,    useMyContributionStanding, useRouteTracks, useRouteStats} from "./lib/db";
+import {recordRouteView,useAreaPath,useRouteStarSummary,usePartnersByObjective,usePartnersInArea,useMatchObjectivesOfUsers,useRouteBaseCheckins, dbRouteToCamel, useAreaRoutes, useProfilesByIds, useRoutesByIds, useObjectiveCounts, useProfileSearch, useRouteTripReports, useRoutePrivateConditions,    useMyContributionStanding, useRouteTracks, useRouteStats} from "./lib/db";
 import RouteTracksPanel from "./lib/RouteTracksPanel.jsx";
 import { TRACK_COLORS, trackPoints, trackStats } from "./lib/routeTracks.js";
 import FireNearRoute from "./lib/FireNearRoute";
-import ShadeMap from "./lib/ShadeMap";
 import { savedAgo } from "./lib/offline";
-import { nwsHeightShiftF, fetchForecastRaw, fetchCragForecastMeasured, fetchCragAir, fetchCragClimate, fetchAlpineSpread } from "./lib/forecast";
-import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, CRAG_SCORE_DISCIPLINES, OPEN_DAY, aqiCategory, clockAt } from "./lib/conditionsScore";
-import { useCondPrefs, scorePrefs, CondPrefsControls } from "./lib/CondPrefs.jsx";
+import { CRAG_SCORE_DISCIPLINES } from "./lib/conditionsScore";
 import { routeRock, ROCK_OPTIONS } from "./lib/rockType";
-import { EditIconButton as AreaEditIconButton, editBtnStyle, EditPencil } from "./lib/areaChrome";
 import { useSession } from "./src/AuthContext.tsx";
 import { ContributionStandingNotice } from "./lib/SafetyNotices.jsx";
 import { openAppeal } from "./lib/reportBus.js";
 
 
 import { clickable } from "./lib/clickable";
-import { PeakMetadataPanel, splitParagraphs, monthRank } from "./EnrichmentPanels";
+import { PeakMetadataPanel, splitParagraphs } from "./EnrichmentPanels";
 
-import { gradeDetail, cruxGrade, displayGrade, singleGrade, gradeRangeNote } from "./lib/grade";
-import { routeTerrain, saysNotApplicable } from "./lib/terrain";
-import { knownHazards } from "./lib/hazards";
-import { acquireBaseFix, baseCheckinMessage, baseGuide, pendingBaseCheckins, savePendingBaseCheckins, distM, BASE_CONFIRM_MIN, bearingDeg, headingFromOrientation, relativeBearing, turnWord, smoothHeading } from "./lib/baseCheckin";
-import { declinationDeg } from "./lib/declination";
-import { planTimes, realPitches } from "./lib/planTimes";
 import AlpineConditionsCard, { forecastPoint } from "./lib/AlpineConditionsCard.jsx";
-import { ALPINE_COND_DISCIPLINES, modelSpread } from "./lib/alpineConditions.js";
-import { clockHr, spanEnding, compass } from "./lib/HourTiles.jsx";
-import { usableFa } from "./lib/fa";
-import {routeLink,realProfileId,CRAG_CATS,parseGpxText,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,wpType,wpIs,wpPlaced,trailheadPoint,uImp,_uNum,catOf,DISC_GEAR,C,CAT,ME,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,seedAuthor,isRoadTag,buildConsensus,SZ3,MONTHS,MOUNTAINS,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,uMass,RSL as SL,ROUTE_GAP,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,intOnly,WP_SINGLE_TYPES,WP_TYPES,wpColor,wpGlyph,mtnOf,ALL_CLIMBERS,ROUTES,isHazardTag,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,isRecent,RECENT_DAYS,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,rappelReportsOf,sunReadout,realAuthor,useRealAuthors} from "./ClimbMatchCore.jsx";
+import { ALPINE_COND_DISCIPLINES } from "./lib/alpineConditions.js";
+import {routeLink,realProfileId,CRAG_CATS,parseGpxText,SUB_LABEL,printSheet,climbsAPeak,photoAlt,wpPlaced,trailheadPoint,uImp,_uNum,catOf,DISC_GEAR,C,CAT,ME,routeAscentFt,uElev,uDist,uDistMi,CLIMBERS,ago,seedAuthor,isRoadTag,buildConsensus,MONTHS,MOUNTAINS,enrichRoute,onImgErr,FALLBACK_COVER,blankItinDay,itinDraftToStructured,RSL as SL,ROUTE_GAP,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,intOnly,WP_SINGLE_TYPES,WP_TYPES,mtnOf,ALL_CLIMBERS,ROUTES,isHazardTag,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,isRecent,RECENT_DAYS,rxOf,condRep,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,shapeOf,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,rappelReportsOf,realAuthor,useRealAuthors} from "./ClimbMatchCore.jsx";
 import CardHead from "./src/components/CardHead.tsx";
 import ShareVia from "./src/components/ShareVia.tsx";
-import Hr from "./src/components/Hr.tsx";
 import Stars from "./src/components/Stars.tsx";
-import Bar from "./src/components/Bar.tsx";
 import RouteMapProfile from "./src/components/RouteMapProfile.tsx";
 import { SaveMapOffline } from "./lib/SaveMapOffline.jsx";
 import Av from "./src/components/Av.tsx";
@@ -70,62 +55,41 @@ import ReportStats from "./src/components/ReportStats.tsx";
 import ItineraryEditor from "./src/components/ItineraryEditor.tsx";
 import RealClimberRow from "./src/components/RealClimberRow.tsx";
 import RouteStats from "./lib/RouteStats.jsx";
-import { recShapeOf, effDistIsWholeTrip, effDistKm, isMultiDayOuting, itinDayCount } from "./lib/outing.js";
+import { recShapeOf, effDistIsWholeTrip, effDistKm } from "./lib/outing.js";
 import { approachOptions, defaultApproachKey, viaRouteOf, applyApproach, tripTrailheadDraft, tripTrailheadMerge, viaPitchSpans, spanLabel } from "./lib/approaches.js";
 import { POP_CLOSE, POP_BACK_MEDIA, POP_REMOVE } from "./lib/popupChrome.js";
 import { BTN, BTN_SM,  CHIP } from "./lib/buttonStyles.js";
 import { askConfirm } from "./lib/ConfirmSheet.jsx";
 import WaypointMapPicker from "./src/components/WaypointMapPicker.tsx";
 import Comments from "./src/components/Comments.tsx";
-import { photoThumb} from "./lib/photoThumb";
 import { HINTS } from "./lib/fieldHints.js";
-import LoadingRows from "./src/components/LoadingRows.tsx";
 import EmptyState from "./src/components/EmptyState.tsx";
-import GradeTag from "./src/components/GradeTag.tsx";
-import PinNum from "./src/components/PinNum.tsx";
-import TopoSwatch from "./src/components/TopoSwatch.tsx";
 import MediaImg from "./src/components/MediaImg.tsx";
 import CragWalkIn from "./src/components/CragWalkIn.tsx";
 import SaveOfflineChip from "./src/components/SaveOfflineChip.tsx";
-import TopoCaptionBox from "./src/components/TopoCaptionBox.tsx";
 import BetaDiff from "./src/components/BetaDiff.tsx";
-import CRow from "./src/components/CRow.tsx";
 import GapNote from "./src/components/GapNote.tsx";
 import VerifNote from "./src/components/VerifNote.tsx";
 import RouteTagRow from "./src/components/RouteTagRow.tsx";
-import CragSafetyNotes from "./src/components/CragSafetyNotes.tsx";
-import PitchConsensus from "./src/components/PitchConsensus.tsx";
 import FloatPlanFold from "./src/components/FloatPlanFold.tsx";
 import ClimateSeasonCard from "./src/components/ClimateSeasonCard.tsx";
 import PhotoRow from "./src/components/PhotoRow.tsx";
 import EditIconButton from "./src/components/EditIconButton.tsx";
-import PinIcon from "./src/components/PinIcon.tsx";
-import TopoPinLegend from "./src/components/TopoPinLegend.tsx";
-import TopoLineOverlay from "./src/components/TopoLineOverlay.tsx";
-import TopoThumb from "./src/components/TopoThumb.tsx";
 import EmptySection from "./src/components/EmptySection.tsx";
-import PitchPhotos from "./src/components/PitchPhotos.tsx";
-import TopoPhotoModal from "./src/components/TopoPhotoModal.tsx";
 import AccessFold from "./src/components/AccessFold.tsx";
 import CragRack from "./src/components/CragRack.tsx";
 import CragLocationCard from "./src/components/CragLocationCard.tsx";
 import PairsWellWith from "./src/components/PairsWellWith.tsx";
-import WeatherIcon from "./src/components/WeatherIcon.tsx";
 import BreakdownHandoff from "./src/components/BreakdownHandoff.tsx";
-import CragFactRows from "./src/components/CragFactRows.tsx";
-import CragFactSection from "./src/components/CragFactSection.tsx";
 import WallNeighbours from "./src/components/WallNeighbours.tsx";
 import BoulderNeighbours from "./src/components/BoulderNeighbours.tsx";
 import RoadReports from "./src/components/RoadReports.tsx";
 import SummitLegsCard from "./src/components/SummitLegsCard.tsx";
 import DescentLegStrip from "./src/components/DescentLegStrip.tsx";
 import TripProfileCard from "./src/components/TripProfileCard.tsx";
-import { TOPO_RED, TOPO_VAR, PIN_CATEGORIES, pinColor, pinLabel, useImgAspect, TOPO_IMG, pinNums, LOUPE_Z, TAP_SLOP, ZOOM_MAX, clampTopoView, zoomTopoView } from "./lib/topoMarks.jsx";
 import { isPitched, breakdownRows } from "./lib/breakdownRows.js";
 import { EMPTY_ARR } from "./lib/emptyArr.js";
-import { FACT_FIELD } from "./lib/cragFactField.js";
 import { ROAD_TONE, roadReportsOf } from "./lib/roadReports.js";
-import { uLen } from "./lib/uLen.js";
 import ClimbingRouteTable from "./src/components/ClimbingRouteTable.tsx";
 import Capped from "./src/components/Capped.tsx";
 import GradePicker from "./src/components/GradePicker.tsx";
@@ -137,14 +101,32 @@ import RouteGearCheck from "./src/components/RouteGearCheck.tsx";
 import DiffRadar from "./src/components/DiffRadar.tsx";
 import TrailheadCard from "./src/components/TrailheadCard.tsx";
 import ApproachPicker from "./src/components/ApproachPicker.tsx";
-import { wxTempColor, wxWindColor, skyWord } from "./lib/wxColors.js";
-import { condRow, condNote } from "./lib/condRows.jsx";
-import HourlyChart from "./src/components/HourlyChart.tsx";
-import SeasonChart from "./src/components/SeasonChart.tsx";
 import { samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campSites, campRouteOrder, campOrderNote, campRoleLabel, campFromPrev, campFromTrailhead, campDetail, campReportsOf, campSleptLine } from "./lib/camps.js";
 import CampingPanel from "./src/components/CampingPanel.tsx";
 import { APPROACH_CROSSING_RE, APPROACH_LOG_CROSSING_RE, approachHasCrossing, primaryApproachIndex, longFormApproachIndex } from "./lib/approachIndex.js";
 import ApproachVariants from "./src/components/ApproachVariants.tsx";
+import { HAZ_KW, routeKw } from "./lib/routeKw.js";
+import { seasonTidy, seasonShort } from "./lib/seasonText.js";
+import { anchorKind, pitchShortfall } from "./lib/pitchAnchors.js";
+import { _shortDist } from "./lib/shortDist.js";
+import { avyCenterFor } from "./lib/avyCenter.js";
+import { topoEmptyCopy } from "./lib/topoEmptyCopy.js";
+import TopoDrawer from "./src/components/TopoDrawer.tsx";
+import TopoSection from "./src/components/TopoSection.tsx";
+import RouteBreakdown from "./src/components/RouteBreakdown.tsx";
+import BaseCheckinPanel from "./src/components/BaseCheckinPanel.tsx";
+import ConsensusPanel from "./src/components/ConsensusPanel.tsx";
+import SafetyMatrix from "./src/components/SafetyMatrix.tsx";
+import ItineraryView from "./src/components/ItineraryView.tsx";
+import Calculator from "./src/components/Calculator.tsx";
+import TechStats from "./src/components/TechStats.tsx";
+import WeatherPanel from "./src/components/WeatherPanel.tsx";
+import ConditionsScoreCard from "./src/components/ConditionsScoreCard.tsx";
+export { ConsensusPanel };
+export { TopoSection };
+export { TopoDrawer };
+export { topoEmptyCopy };
+export { seasonTidy, seasonShort };
 export { ApproachVariants };
 export { APPROACH_CROSSING_RE, APPROACH_LOG_CROSSING_RE, approachHasCrossing, primaryApproachIndex, longFormApproachIndex };
 export { samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campSites, campRouteOrder, campOrderNote, campRoleLabel, campFromPrev, campFromTrailhead, campDetail, campReportsOf, campSleptLine };
@@ -152,7 +134,6 @@ export { PitchComments };
 export { ClimbingRouteTable };
 export { overnightPermitOf } from "./lib/overnightPermit.js";
 const GpsSubmissionModal = lazy(() => import("./lib/GpsSubmissionModal"));
-const uGain=m=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
 
 /* The stored vocabulary is exactly three codes — measured against the live catalog, where
    outing_shape is populated on 172 routes and holds only outback (141), loop (20), point (11).
@@ -186,10 +167,6 @@ function pitchCountOf(r){if(!r)return 0;var n=+r.pitches>0?+r.pitches:0;var d=(A
 // becoming vacuous.
 //
 // The paragraph this replaces still described the two boxes and named `splitPitchDetail`, a
-// function the merge removed — so it sent a reader looking for a structure that no longer
-// exists. `check:pitch-split` pins both directions of the surviving rule.
-function pitchShortfall(route,shown){const described=(route&&Array.isArray(route.pitchDetail))?route.pitchDetail.length:0;return !!(route&&route.pitches>described&&route.pitches>shown);}
-const ENV_HAZ_RE=/raptor|nesting closure|nesting season|bear activity|black bear|grizzly|mountain goat|rattlesnake|tick season|poison oak|poison ivy|wasp nest|hornet|hunting season|elk rut/i;
 const TYPICAL={
 olympus_wf:{summary:"A 1,600-ft quartzite slab above Salt Lake — easy (around 5.4) but sustained and exposed, and often soloed. The crux is heat, dry rock, and a loose descent gully, not the climbing.",patterns:[{label:"Best window",when:"late spring to fall",detail:"Best once the slab and the approach couloir melt out and dry; spring and fall climb coolest."},{label:"Dry rock",detail:"The slab is pure friction — wet or icy rock turns an easy scramble serious. Wait for it to dry."},{label:"Early-season snow",when:"spring",detail:"Snow lingers in the shaded approach couloir into early summer, with weak snow bridges and old avalanche debris off the face above."},{label:"Afternoon sun bakes it",when:"summer",detail:"The west-facing slab bakes in the afternoon — start at dawn and carry plenty of water."},{label:"Loose descent gully",detail:"The descent couloir is loose, sandy 4th-class with rappel anchors; slow down and avoid knocking rock onto parties below."}]},
 angels_chains:{summary:"The chain-assisted spine to Angels Landing — a Class 3+ scramble on Navajo sandstone with enormous drop-offs. A timed-entry permit is required, and heat, ice, and crowds are the real hazards.",patterns:[{label:"Permit required",detail:"The chains section runs on a seasonal lottery — you need a timed-entry permit before you go."},{label:"Best window",when:"spring & fall",detail:"Spring and fall are ideal; midsummer is dangerously hot with almost no shade."},{label:"Heat & sun",when:"summer",detail:"The spine is fully exposed and bakes past 100°F in summer — start at dawn, carry water, and watch for heat illness."},{label:"Ice makes it deadly",when:"winter",detail:"When the sandstone or chains are wet, icy, or sandy the exposed scramble becomes very dangerous — skip it in those conditions."},{label:"Crowds & bottlenecks",detail:"The single chain line sees two-way traffic and bottlenecks; go early and be patient on the exposed sections."}]},
@@ -265,8 +242,6 @@ const PATTERN_CHECKS={
 "Fixed gear varies":{match:["Manky fixed gear","Missing gear","Bolts spinning"],counter:["Fixed gear good"]}
 };
 function patternStatus(label,rtags){const ck=PATTERN_CHECKS[label];if(!ck||!rtags||!rtags.size)return null;const m=(ck.match||[]).filter(t=>rtags.has(t));const c=(ck.counter||[]).filter(t=>rtags.has(t));if(!m.length&&!c.length)return null;return{matched:m,countered:c,status:(m.length&&c.length)?"mixed":m.length?"confirmed":"differs"};}
-const VOLATILE_DISC=["alpine","mountaineering","ice","mixed"];
-const COMMITMENT_EXPLAINERS={I:"A few hours — backing off is quick and low-consequence.",II:"Half a day — retreat is straightforward.",III:"Most of a day — retreat takes real time and planning.",IV:"Full day+ — committing. Retreat is difficult once you're in it.",V:"Multi-day — big commitment. Retreat can mean an overnight out.",VI:"Multi-day, remote, or high-altitude — retreat is a serious undertaking on its own."};
 
 // "alpine" spans a 5.8 rock rib at Washington Pass and a glaciated north face, so
 // assuming one kit for both put a glacier/crevasse kit, an ice axe, crampons and
@@ -300,126 +275,6 @@ const COMMITMENT_EXPLAINERS={I:"A few hours — backing off is quick and low-con
    claim a precision neither record has. uImp() is the real boolean — uDistMi is a FORMATTER
    and is always truthy, the #641 trap. */
 function _gapDist(m){return uImp()?((Math.round(m/1609.344*10)/10)+" mi"):((Math.round(m/100)/10)+" km");}
-/* A STUB IS MEASURED IN METRES, NOT IN TENTHS OF A KILOMETRE. _gapDist above is for the kilometre
-   scale a partial track is short by; feeding it seven metres prints "0 km", which undercuts the one
-   fact the sentence carries. uImp() is the real boolean here too — uDistMi is a FORMATTER and is
-   always truthy, the #641 trap this file records. */
-function _shortDist(m){return uImp()?(Math.round(m*3.28084)+" ft"):(Math.round(m)+" m");}
-/* A distance in the climber's units, switching to mi/km past a kilometre so "1,998 m" reads as "1.2 mi". */
-function _baseDist(m){return m>=1000?(uImp()?((m/1609.34).toFixed(1)+" mi"):((m/1000).toFixed(1)+" km")):_shortDist(m);}
-/* A request that never reached the server — the one failure worth keeping on the phone for later. */
-function _isNoSignal(e){if(typeof navigator!=="undefined"&&navigator.onLine===false)return true;var m=String((e&&e.message)||e||"");return /failed to fetch|network|load failed|fetch failed/i.test(m);}
-/* "I'm at the base" (0188). The phone judges whether its own GPS fix is good, steady and still; the
-   DATABASE judges whether that point is at this climb, because a rule the browser applies can be
-   skipped by a crafted request. So the screen reports the server's answer, never its own guess.
-   Other climbers see each checked-in spot and how many climbers stood there — never who, never when.
-   ONE CONSENSUS, THE DATABASE'S (0363 route_base_spots): the spots arrive already clustered, the
-   top one CONFIRMED once BASE_CONFIRM_MIN climbers agree and are a majority, and a confirmed spot
-   becomes the route's own Base pin — so the map, this card, the waypoint list and the GPX all read
-   the same start. An unconfirmed spot is shown as what it is and never outranks the recorded pin.
-   It sits UNDER THE ROUTE MAP, which draws the same spots (GPXMap's baseSpots); `q` and `spots` are
-   read once by RouteDetail and handed to both, so the map and this card cannot disagree.
-   FIND THE BASE: a live distance and compass direction from the phone to the best-known start — a
-   confirmed spot, else the Base pin the route records, else a spot not yet confirmed. Inside GPS error it
-   stops pointing and shows the route's own LOCATION note (0243), because that, not GPS, is what tells
-   two neighbouring lines apart. */
-function BaseCheckinPanel({route,who,spots,q}){
-  const [st,setSt]=useState({phase:"idle"});const [prog,setProg]=useState(null);
-  const [guide,setGuide]=useState(null);const guideRef=useRef(null);
-  const stopGuide=useCallback(function(){if(guideRef.current!=null){try{navigator.geolocation.clearWatch(guideRef.current);}catch(e){}guideRef.current=null;}},[]);
-  /* POINT THE WAY: the phone's compass, corrected from magnetic to TRUE north by the declination at the base (lib/declination.js), turns an arrow toward the start. */
-  const [compass,setCompass]=useState(null);const compassRef=useRef(null);
-  const stopCompass=useCallback(function(){var c=compassRef.current;if(c){try{window.removeEventListener(c.type,c.fn);}catch(e){}clearTimeout(c.timer);compassRef.current=null;}},[]);
-  useEffect(function(){return function(){stopGuide();stopCompass();};},[stopGuide,stopCompass]);
-  useEffect(function(){stopGuide();setGuide(null);stopCompass();setCompass(null);},[route.id,stopGuide,stopCompass]);
-  const area=route._dbArea||{};
-  const baseWp=(route.waypoints||[]).find(function(w){return wpPlaced(w)&&wpType(w)==="Base";});
-  const hasAnchor=(area.lat!=null&&area.lng!=null&&Number.isFinite(+area.lat)&&Number.isFinite(+area.lng))||!!baseWp;
-  /* Check-ins taken with no signal wait on this phone. Send them whenever this panel mounts with a
-     connection or the browser comes back online; the server still judges each one. */
-  const refetch=q.refetch;
-  const flush=useCallback(function(){if(!who||!USE_DB)return;var list=pendingBaseCheckins(who);if(!list.length)return;var keep=[];var chain=Promise.resolve();list.forEach(function(p){chain=chain.then(function(){return checkInAtRouteBase(p.routeId,p.fix).then(function(res){if(p.routeId===route.id)setSt(res.ok?{phase:"done",late:true}:{phase:"refused",res:res});}).catch(function(e){if(_isNoSignal(e))keep.push(p);});});});chain.then(function(){savePendingBaseCheckins(who,keep);if(refetch)refetch();});},[who,route.id,refetch]);
-  useEffect(function(){flush();if(typeof window==="undefined")return;window.addEventListener("online",flush);return function(){window.removeEventListener("online",flush);};},[flush]);
-  if(!USE_DB)return null;
-  const clusters=spots||EMPTY_ARR;const mineAny=clusters.some(function(p){return p.mine===true;});
-  if(!hasAnchor&&!clusters.length)return null;
-  const go=function(){if(!who||st.phase==="locating"||st.phase==="sending")return;setSt({phase:"locating"});setProg(null);
-    acquireBaseFix(typeof navigator!=="undefined"?navigator.geolocation:null,{onProgress:setProg}).then(function(fix){
-      if(!fix.ok){setSt({phase:"refused",res:fix});return;}
-      setSt({phase:"sending"});
-      checkInAtRouteBase(route.id,fix).then(function(res){setSt(res.ok?{phase:"done"}:{phase:"refused",res:res});if(res.ok&&refetch)refetch();}).catch(function(e){
-        if(_isNoSignal(e)){var list=pendingBaseCheckins(who).filter(function(p){return p.routeId!==route.id;}).concat([{routeId:route.id,fix:fix}]);setSt(savePendingBaseCheckins(who,list)?{phase:"queued"}:{phase:"error"});}
-        else setSt({phase:"error"});});});};
-  const withdraw=function(){if(!who)return;setSt({phase:"withdrawing"});withdrawBaseCheckin(who,route.id).then(function(){setSt({phase:"idle"});if(refetch)refetch();}).catch(function(){setSt({phase:"error",withdraw:true});});};
-  const busy=st.phase==="locating"||st.phase==="sending"||st.phase==="withdrawing";
-  const top=clusters[0];const confirmed=!!(top&&top.confirmed);
-  /* Held (0363): a confirmed spot more than 200 m from the recorded pin is a different place, not a correction, so the pin waits for a review. */
-  const pinGap=confirmed&&baseWp?distM(top,{lat:+baseWp.lat,lng:+baseWp.lng}):null;const held=pinGap!=null&&pinGap>200;
-  const target=confirmed?{lat:top.lat,lng:top.lng,what:"the spot "+top.n+" climbers confirmed on-site"}:baseWp?{lat:+baseWp.lat,lng:+baseWp.lng,what:"the start this route records"}:top?{lat:top.lat,lng:top.lng,what:"the spot "+(top.n===1?"one climber":top.n+" climbers")+" checked in at — not confirmed yet"}
-    /* Last, a CRAG's own coordinate: a base pin on a crag sits 0–1 m from it (measured for 0188), so it
-       gets a climber to the wall. Never a PEAK's — that is the summit, kilometres from any start. */
-    :(area.areaType==="crag"&&Number.isFinite(+area.lat)&&Number.isFinite(+area.lng)&&area.lat!=null&&area.lng!=null)?{lat:+area.lat,lng:+area.lng,what:"the crag’s location on file, not this climb’s own start — nobody has marked that yet"}:null;
-  const startGuide=function(){if(!target)return;var geo=typeof navigator!=="undefined"?navigator.geolocation:null;if(!geo||!geo.watchPosition){setGuide({err:baseCheckinMessage({reason:"unsupported"},_baseDist)});return;}
-    stopGuide();setGuide({phase:"locating"});
-    guideRef.current=geo.watchPosition(function(pos){var c=pos.coords||{};setGuide({fix:{lat:c.latitude,lng:c.longitude,accuracy:c.accuracy}});},
-      function(err){if(err&&err.code===1){stopGuide();setGuide({err:baseCheckinMessage({reason:"denied"},_baseDist)});}else setGuide(function(g){return g&&g.fix?g:{err:baseCheckinMessage({reason:"unavailable"},_baseDist)};});},
-      {enableHighAccuracy:true,maximumAge:0,timeout:30000});};
-  /* iOS (and Chrome since 151) hand out orientation only after a permission asked from a tap, so this runs from the button. A reading that is not north-referenced is ignored (headingFromOrientation), and a phone that gives none in 4 s is told so. */
-  const startCompass=function(){if(!target||typeof window==="undefined")return;var DOE=window.DeviceOrientationEvent;if(!DOE){setCompass({err:"This browser can’t read a compass. Use the direction above."});return;}
-    var decl=declinationDeg(target.lat,target.lng);
-    var listen=function(){stopCompass();var type="ondeviceorientationabsolute" in window?"deviceorientationabsolute":"deviceorientation";
-      var angle=function(){var o=window.screen&&window.screen.orientation;return o&&Number.isFinite(o.angle)?o.angle:0;};
-      var fn=function(ev){var h=headingFromOrientation(ev,angle(),decl);if(!h)return;setCompass(function(c){var prev=c&&Number.isFinite(c.heading)?c.heading:null;var next=smoothHeading(prev,h.heading);return prev!=null&&Math.abs(((next-prev+540)%360)-180)<1.5&&c.acc===h.accuracy?c:{heading:next,acc:h.accuracy};});};
-      var timer=setTimeout(function(){setCompass(function(c){return c&&Number.isFinite(c.heading)?c:{err:"This phone isn’t giving a compass reading. Use the direction above."};});},4000);
-      window.addEventListener(type,fn);compassRef.current={type:type,fn:fn,timer:timer};setCompass({waiting:true});};
-    if(typeof DOE.requestPermission==="function")DOE.requestPermission().then(function(r){if(r==="granted")listen();else setCompass({err:"Compass access is off for this site. Allow motion and orientation in your browser settings to use it."});}).catch(function(){setCompass({err:"Couldn’t turn the compass on. Use the direction above."});});
-    else listen();};
-  const g=guide&&guide.fix&&target?baseGuide(guide.fix,target,_baseDist):null;
-  const rel=g&&!g.arrived&&compass&&Number.isFinite(compass.heading)?relativeBearing(bearingDeg(guide.fix,target),compass.heading):null;
-  const locNote=String(route.location||"").trim();
-  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:ROUTE_GAP,marginBottom:12}}>
-    <CardHead style={{marginBottom:8}}>BASE OF THE CLIMB</CardHead>
-    {q.isError?<div style={{fontSize:12.5,color:C.textSub,marginBottom:8}}>Couldn’t load check-ins at the base — try again in a moment.</div>
-    :top?<div style={{marginBottom:9}}>
-      <div style={{fontSize:13,color:C.text,fontWeight:600,marginBottom:3}}>{top.lat.toFixed(5)+", "+top.lng.toFixed(5)}</div>
-      <div style={{fontSize:12,color:confirmed?C.green:C.textSub,fontWeight:confirmed?600:400,marginBottom:3}}>{(confirmed?"✓ Confirmed on-site by ":"Checked in on-site by ")+top.n+" climber"+(top.n!==1?"s":"")+(top.mine?", including you":"")+(clusters.length>1?" · "+(clusters.length-1)+" other spot"+(clusters.length-1!==1?"s":"")+" reported":"")}</div>
-      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginBottom:5}}>{confirmed?(held?"That is "+_baseDist(Math.round(pinGap))+" from the start this route records, so ClimbMatch checks it before the Base pin moves.":"The route’s Base pin on the map follows this spot."):(baseWp?"The Base pin on the map is still the start this route records. ":"")+"A spot becomes this route’s Base pin once "+BASE_CONFIRM_MIN+" climbers check in within 25 m of each other and are most of those who checked in."}</div>
-      <a href={"https://www.google.com/maps/search/?api=1&query="+top.lat.toFixed(6)+","+top.lng.toFixed(6)} target="_blank" rel="noopener noreferrer" style={{fontSize:12.5,color:C.blue,fontWeight:600,textDecoration:"none"}}>Open the base in maps ›</a>
-    </div>
-    :q.isPending?<LoadingRows C={C} label="Loading check-ins…" style={{marginBottom:8}}/>
-    :<div style={{fontSize:12.5,color:C.textSub,marginBottom:8}}>{baseWp?"Nobody has checked in at the base yet — the Base pin on the map is where this route records its start.":"Nobody has checked in at the base yet."}</div>}
-    {target?<div style={{background:C.surface,border:`1px solid ${C.border}`,borderRadius:10,padding:"9px 11px",marginBottom:10}}>
-      {!guide?<button onClick={startGuide} style={{...BTN,width:"100%",background:C.blueBg,color:"#fff",border:`1px solid ${C.blueDim}`}}>How far am I from the base?</button>
-      :<div><div role="status" aria-live="polite">
-        <div style={{fontSize:13,color:guide.err?C.amber:g&&g.arrived?C.green:C.text,fontWeight:600,lineHeight:1.45}}>{guide.err?guide.err:g?g.line:"Finding you — this works best out in the open…"}</div>
-        {g?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:3}}>{"Measured to "+target.what+". Updates as you walk."}</div>:null}
-        {g&&locNote&&g.d<=100?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginTop:6}}><span style={{fontWeight:700,color:C.text}}>Where it starts: </span>{locNote}</div>:null}
-        </div>
-        {/* Outside the live region: the arrow's words change with every turn of the phone, and announcing each would drown out the distance. */}
-        {g&&!g.arrived?(!compass?<button onClick={startCompass} style={{...BTN,width:"100%",marginTop:8,background:"transparent",color:C.blue,border:`1px solid ${C.blueDim}`}}>Point the way with your compass</button>
-          :compass.err?<div style={{fontSize:12,color:C.amber,lineHeight:1.45,marginTop:6}}>{compass.err}</div>
-          :rel!=null?<div style={{display:"flex",alignItems:"center",gap:10,marginTop:8}}>
-            <svg aria-hidden="true" width="44" height="44" viewBox="0 0 44 44" style={{flexShrink:0}}><circle cx="22" cy="22" r="20" fill="none" stroke={C.border} strokeWidth="2"/><path d="M22 5 L31 31 L22 25 L13 31 Z" fill={C.blue} transform={"rotate("+rel.toFixed(1)+" 22 22)"}/></svg>
-            <div style={{minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{turnWord(rel)}</div>
-              <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:2}}>{"Hold your phone flat in front of you. Metal gear and the rock itself can pull a compass off"+(Number.isFinite(compass.acc)&&compass.acc>25?" — it is unsure right now (±"+Math.round(compass.acc)+"°); move the phone in a figure eight to recalibrate":"")+"."}</div></div>
-          </div>
-          :<div style={{fontSize:12,color:C.textSub,marginTop:6}}>Waiting for the compass…</div>):null}
-        <button onClick={function(){stopGuide();setGuide(null);stopCompass();setCompass(null);}} style={{marginTop:7,padding:0,background:"none",border:"none",color:C.blue,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>Stop</button>
-      </div>}
-    </div>:null}
-    {st.phase==="done"?<div role="status" style={{fontSize:12.5,color:C.green,fontWeight:600,marginBottom:8}}>{st.late?"✓ Your saved check-in was sent and accepted — thanks for marking the start.":"✓ You’re checked in at the base — thanks for marking the start for the next party."}</div>
-    :st.phase==="refused"?<div role="status" style={{fontSize:12.5,color:C.amber,lineHeight:1.45,marginBottom:8}}>{baseCheckinMessage(st.res,_baseDist)}</div>
-    :st.phase==="queued"?<div role="status" style={{fontSize:12.5,color:C.textSub,lineHeight:1.45,marginBottom:8}}>No signal here — your GPS reading is saved on this phone and will be sent, and checked, the next time you open this climb with a connection.</div>
-    :st.phase==="error"?<div role="status" style={{fontSize:12.5,color:C.red,marginBottom:8}}>{st.withdraw?"Couldn’t remove your check-in — try again.":"Couldn’t check you in — try again."}</div>
-    :st.phase==="locating"?<div role="status" style={{fontSize:12.5,color:C.textSub,marginBottom:8}}>{"Getting a steady GPS fix — stand still"+(prog?" ("+prog.good+" good reading"+(prog.good!==1?"s":"")+")":"")+"…"}</div>
-    :st.phase==="sending"?<div role="status" style={{fontSize:12.5,color:C.textSub,marginBottom:8}}>Checking your position against this climb…</div>:null}
-    {who?<div style={{display:"flex",gap:12,flexWrap:"wrap"}}>
-      <button onClick={go} disabled={busy} aria-busy={busy?"true":undefined} style={{padding:"8px 12px",background:busy?C.border:C.blueSolid,color:C.onSolid,border:"none",borderRadius:9,fontSize:12.5,fontWeight:700,cursor:busy?"default":"pointer"}}>{mineAny?"I’m at the base — check in again":"I’m at the base — check in"}</button>
-      {mineAny?<button onClick={function(){askConfirm({title:"Remove your check-in?",body:"Checking in again means being back at the base of the climb.",confirmLabel:"Remove check-in"}).then(function(ok){if(ok)withdraw();});}} disabled={busy} style={{padding:"8px 12px",background:C.surface,color:C.textSub,border:`1px solid ${C.border}`,borderRadius:9,fontSize:12.5,fontWeight:600,cursor:busy?"default":"pointer"}}>Remove my check-in</button>:null}
-    </div>:<div style={{fontSize:12,color:C.textMuted}}>Sign in to check in when you’re standing at the start of the climb.</div>}
-    {who?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:8}}>Uses your phone’s GPS, and only works at the start of the climb: your position is checked against where this climb is on file. Other climbers see the spot and how many climbers stood there — never who, or when.</div>:null}
-  </div>;
-}
 const DISC_HAZ={sport:["Loose rock","Runout","Warms up / sun-affected"],trad:["Rockfall","Loose rock","Runout","Serious exposure","Warms up / sun-affected"],bouldering:["Bad landing zone","Loose rock","Warms up / sun-affected"],aid:["Rockfall","Loose rock","Runout","Serious exposure"],ice:["Avalanche terrain","Rockfall","Serious exposure"],mixed:["Rockfall","Loose rock","Avalanche terrain","Serious exposure"],alpine:["Rockfall","Loose rock","Lightning / storms","Avalanche terrain","Crevasse hazard","Cornices","Serious exposure","Complex route-finding","River / creek crossing"],mountaineering:["Rockfall","Lightning / storms","Avalanche terrain","Crevasse hazard","Cornices","Serious exposure","Complex route-finding","River / creek crossing"],hiking:["Avalanche terrain","River / creek crossing","Complex route-finding","Serious exposure"],scrambling:["Rockfall","Loose rock","Serious exposure"]};
 /* Does this text ASSERT the agency, or disclaim it? Scans every occurrence and accepts
    the keyword only if at least one is not sitting behind a negation in the ~60 chars
@@ -585,192 +440,10 @@ function rappelHeadingCount(route){
    a TILE when on file (Bolts, Protection, Landing, Crash pads, Start) moves into its section too, so a fact
    sits in ONE place whether or not the route states it. */
 /* The first section is WHERE THIS LINE STARTS on its wall (`location`, and the start type), drawn directly above BASE OF THE CLIMB, which marks that start on the ground. It is the route's, not the crag's: where the CRAG is and where to park is CragLocationCard (owner, 2026-10-21). */
-/* "rack" has no heading of its own: its rows (the bolt count and the G/PG-13/R/X protection rating) open the
-   RACK card, so a crag route states its protection in ONE place (owner note: "remove protection and just move
-   that info to the rack section. Consolidate and remove duplicates"), as Mountain Project's one Protection box does. */
-const CRAG_FACT_SECTIONS=[["location","WHERE IT STARTS",["Location","Start"]],["rack","RACK",["Bolts","Protection"]],["gear","GEAR & SAFETY",["Anchor","Rope","Rope notes","Fixed gear","Landing","Crash pads","Descent"]],["cond","CONDITIONS",["Aspect","Sun","Season","Wet","Rock quality"]]];
 /* THE ONE DISTANCE A ROUTE LEADS WITH, and what it is: TechStats' tile and the header strip both
    print it. The strip printed the stored ONE-WAY figure under a bare "Dist" while the tile under it
    said "Round trip" and twice the number, so one page showed one climb two ways. */
 function headlineDist(route){const km=effDistKm(route);if(!(km>0))return null;const rs=recShapeOf(route);const ob=rs?rs==="outback":shapeOf(route)==="outback";return ob?["Round trip",km*2]:effDistIsWholeTrip(route)?[rs==="point"?"Total distance":"Round trip",km]:["Distance",km];}
-function TechStats({route,onEdit,part}){
-  const disc=catOf(route);
-  const hasElevPts=route.elevPts&&route.elevPts.length>0;
-  const maxEl=hasElevPts?Math.max(...route.elevPts):(route.highPointFt||0),minEl=hasElevPts?Math.min(...route.elevPts):0,relief=maxEl-minEl;
-  const rawAscent=routeAscentFt(route);
-  const hasAscent=rawAscent!=null&&rawAscent>0;
-  const totalAscentFt=rawAscent||0;const gainIsWholeOuting=gainCoversWholeOuting(route);
-  const distKm=effDistKm(route);
-  const hasDist=distKm!=null&&distKm>0;
-  const roundTripKm=hasDist?distKm*2:null;
-  const avgGrade=(hasDist&&hasAscent)?((totalAscentFt/3.28084/(distKm*1000))*100):null;
-  const waterCount=(route.waypoints||[]).filter(w=>wpIs(w,"Water")).length;
-  const usePitchSumForLen=!route.routeFt&&route.pitchDetail&&route.pitchDetail.length;
-  const climbLenRaw=route.routeFt||(route.pitchDetail&&route.pitchDetail.length?route.pitchDetail.reduce((a,pp)=>a+(pp.lengthM||0),0):null);
-  const climbDisp=climbLenRaw?(usePitchSumForLen?uLen(climbLenRaw):uElev(climbLenRaw)):null;
-  // A loop or point-to-point outing has no "same trail back", so distKm*2 is not a round
-  // trip for it — show the distance without inventing a return leg.
-  //
-  // `outing_shape` (migration 0087) is the recorded answer and wins when a route has one.
-  // shapeOf() is the fallback guess, and it is a weak one: it reads name+blurb+summary, and
-  // `blurb`/`summary` have no column in `routes`, so on a DB route it sees the NAME alone and
-  // defaults to "outback" — 480 of 496 WA alpine routes with a distance, and its `loop` branch
-  // never fires because nothing is named "loop". Doubling is still right for most of them (the
-  // approach is retraced even when the CLIMB descends another line), which is why the fallback
-  // is left as-is rather than made stricter: a prose classifier over `descent` was measured and
-  // would have deleted 376 round-trip figures, most of them correct.
-  const recShape=recShapeOf(route);const distIsWholeTrip=effDistIsWholeTrip(route);
-  const isOutBack=recShape?recShape==="outback":shapeOf(route)==="outback";
-  const rtNote=isOutBack?(recShape?" Round trip: this route is recorded as retracing its approach.":" Round trip assumes the same trail back to the trailhead.")
-    :recShape==="loop"?" This route loops back to the trailhead by a different line, so doubling the approach would overstate it."
-    :recShape==="point"?" This route finishes at a different trailhead, so the total runs from one trailhead to the other."
-    :" This route is a loop or point-to-point outing, so no round-trip distance is shown.";
-  /* ONE distance tile, and never the one-way figure. It used to print "Distance"/"Approach"
-     (the walk IN) beside "Round trip" (the same number doubled) — two tiles for one fact, and the
-     one-way one is not what a party plans a day around. What shows now is the whole outing:
-     doubled for a route that retraces its approach, and as stored for a recorded loop/point,
-     whose distance is the whole outing (effDistIsWholeTrip records how that was established). A
-     loop/point GUESSED from the name alone keeps a plain "Distance": it claims neither. */
-  const distTile=!hasDist?null:isOutBack?["Round trip",uDist(roundTripKm),C.blue]
-    :distIsWholeTrip?[recShape==="point"?"Total distance":"Round trip",uDist(distKm),C.blue]
-    :["Distance",uDist(distKm),C.blue];
-  let stats,note;
-  if(disc==="bouldering"){
-    stats=[["Crux grade",cruxGrade(route.cruxGrade||route.grade),C.amber]];
-    if(distTile)stats.unshift(distTile);
-    if(route.routeFt)stats.unshift(["Boulder height",uElev(route.routeFt),C.orange]);
-    note="Height is the boulder itself. The distance is just the walk in and out — there is no meaningful elevation gain to a single boulder."+rtNote+"";
-  }else if(disc==="hiking"||disc==="mountaineering"){
-    stats=[];
-    if(hasAscent)stats.push(["Total ascent","↑ "+uElev(totalAscentFt),C.green]);
-    if(distTile)stats.push(distTile);
-    if(maxEl>0)stats.push(["High point",uElev(maxEl),C.amber]);
-    if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
-    if(avgGrade!=null)stats.push(["Avg grade",avgGrade.toFixed(1)+"%",C.textSub]);
-    if(hasElevPts)stats.push(["Vertical relief",uElev(relief),C.purple]);
-    if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
-    if(waterCount)stats.push(["Water sources",waterCount,C.blue]);
-    note="For a summit objective, total ascent from the trailhead is the number that matters most."+rtNote+"";
-  }else if(disc==="alpine"){
-    stats=[];
-    if(hasAscent)stats.push(["Total ascent","↑ "+uElev(totalAscentFt),C.green]);
-    if(climbDisp)stats.push(["Climb length",climbDisp,C.teal]);
-    if(route.pitches>0)stats.push(["Pitches",route.pitches,C.blue]);
-    if(distTile)stats.push(distTile);
-    if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
-    if(route.cruxGrade||route.grade)stats.push(["Crux grade",cruxGrade(route.cruxGrade||route.grade),C.amber]);
-    if(maxEl>0)stats.push(["High point",uElev(maxEl),C.purple]);
-    if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
-    /* The Rappels tile used to sit here, at the top of Overview, while every other rappel
-       fact — the table, its total length, the prose — sat further down the same tab. It said
-       the same thing the RAPPELS heading now says, and it said it on routes that have none:
-       rappelCount("0") is 0, not null, so 195 walk-offs rendered a red "0x". Count and
-       content are together in one place now; see rappelsAreNone. */
-    note="Total ascent is the whole day from the trailhead; climb length is just the technical climbing within it."+rtNote+"";
-  }else{
-    const climbLabel=disc==="aid"?"Wall height":disc==="scrambling"?"Scramble section":"Route length";
-    stats=climbDisp?[[climbLabel,climbDisp,C.teal]]:[];
-    /* A scramble is never roped, so it has no pitches: a stored count on a scrambling row is not printed here (owner note, 2026-10-25). Its climbing sections stay on Plan. */
-    if(route.pitches>0&&disc!=="scrambling")stats.push(["Pitches",route.pitches,C.blue]);
-    if(hasAscent)stats.push([gainIsWholeOuting?"Total ascent":"Approach gain","↑ "+uElev(totalAscentFt),C.green]);
-    if(distTile)stats.push(distTile);
-    /* On sport, trad and top-rope the route's grade IS its crux (a YDS grade rates the hardest move), so a
-       "Crux grade" tile repeated the Composite Grade panel above it, value for value. Mountain
-       Project and theCrag print one grade for these. The tile stays only when a stored crux
-       disagrees with the route's displayed grade (displayGrade, the header pill), which is
-       information rather than an echo. */
-    const _cx=(route.cruxGrade||route.grade)?cruxGrade(route.cruxGrade||route.grade):null;
-    const _cxEcho=_cx&&(disc==="sport"||disc==="trad"||disc==="toprope")&&displayGrade(route)===_cx;
-    if(_cx&&!_cxEcho)stats.push(["Crux grade",_cx,C.amber]);
-    if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
-    if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
-    /* Second copy of the Rappels tile — same reasoning as the pitched branch above. */
-    const _gainClause=!hasAscent?"":(gainIsWholeOuting?"Total ascent is the whole day from the trailhead, not just the walk in.":"Approach gain is the hike in to the base.");const _distClause=!hasDist?"":(distIsWholeTrip?" Distance is the whole outing, not just the walk in.":isOutBack?" Round trip is the walk in to the base and back out.":"");note=(hasAscent||hasDist)?(climbLabel+" is the climbing itself. "+(_gainClause+_distClause).trim()+rtNote+""):null;
-  }
-  /* Discipline-agnostic tiles, appended after BOTH branches above so they cannot be lost to
-     whichever branch a route falls into. Every one of these is offered in SuggestFix and, until
-     now, rendered nowhere at all: protRating (trad/sport), landing/pads/startType (the WHOLE
-     bouldering group of the contribute form). A contributor could pass the 3-agree gate on a
-     runout X-rated line and the route would still say nothing about it. protRating is coloured
-     by consequence rather than uniformly, because "R" and "X" are the reason the field exists. */
-  if(route.protRating)stats.push(["Protection",route.protRating,(/^(R|X)$/i.test(String(route.protRating).trim())?C.red:/PG/i.test(String(route.protRating))?C.amber:C.green)]);
-  if(route.startType)stats.push(["Start",route.startType,C.blue]);
-  if(route.landing)stats.push(["Landing",route.landing,(/bad|danger/i.test(String(route.landing))?C.red:/slop/i.test(String(route.landing))?C.amber:C.green)]);
-  if(route.pads!=null&&route.pads!=="")stats.push(["Crash pads",String(route.pads),C.teal]);
-  /* 0131 gave `rock` and `crux` columns. They join the tiles rather than getting a section of
-     their own, because both are a short noun or phrase — a rock type and "what the hard bit
-     is" — and a column that lands somewhere nothing reads is the failure this block was
-     written to fix. Neither is coloured: there is no hazard reading to make of "granite". */
-  /* Since 0248 the AREA carries a rock type too, so a route that states none still shows its crag's.
-     A MAPPED one (the bedrock at the crag's coordinate) reads plainly as "Rock", the way Mountain
-     Project and theCrag print a crag's rock: the owner removed the mapped qualifier 2026-10-15. */
-  const _rk=routeRock(route);
-  if(_rk)stats.push(["Rock",_rk.label,C.textSub]);
-  if(route.crux)stats.push(["Crux",String(route.crux),C.textSub]);
-  /* ROUTE FACTS. On a crag discipline (sport, trad, toprope, aid, bouldering) this card is the ONE
-     place the guidebook facts live, so every crag route reads the same set in the same order rather
-     than each discipline growing its own box. Every row is gated on its own value: a bare route —
-     name, grade, pitches — gains nothing here, because a row that says "unknown" under every fact
-     is a placeholder, not a fact. Bolts is `bolts` (0240), never counted out of pitch prose. Aspect
-     and season are here because a crag route without a Plan tab had nowhere else to show them.
-     STAR RATING, ALSO CALLED, VARIATIONS and the first FREE ascent are facts about any line, so they
-     render on every discipline. Star rating is `guide_stars` (0-4), a guidebook rating kept apart from
-     `stars` (a different scale, and the climbers' average falls back to it) and never attributed. */
-  const crag=CRAG_CATS.includes(disc);const facts=[];var _missN=0,_firstMiss=null;
-  const _gsRaw=route.guideStars!=null?route.guideStars:route.guide_stars;const _gs=(_gsRaw==null||_gsRaw===""||!isFinite(+_gsRaw))?null:Math.max(0,Math.min(4,Math.round(+_gsRaw)));
-  if(_gs!=null)stats.unshift(["Star rating","★".repeat(_gs)+"☆".repeat(4-_gs),C.amber]);
-  const _alt=(function(a){return (Array.isArray(a)?a:(a?[a]:[])).map(function(x){return String(x==null?"":x).trim();}).filter(Boolean);})(route.altNames!=null?route.altNames:route.alt_names);
-  if(_alt.length)facts.push(["Also called",_alt.join(", ")]);
-  const _vars=(Array.isArray(route.variations)?route.variations:[]).map(function(v){if(v==null)return "";if(typeof v!=="object")return String(v).trim();return [v.name,v.grade].filter(Boolean).join(" · ")+(v.note?" — "+v.note:"");}).filter(Boolean);
-  if(_vars.length)facts.push(["Variations",<>{_vars.map(function(v,i){return <div key={i} style={{marginTop:i?3:0}}>{v}</div>;})}</>]);
-  if(crag){
-    if(disc!=="bouldering"&&+route.bolts>0)stats.push(["Bolts",String(Math.round(+route.bolts)),C.blue]);
-    /* ANCHOR is `anchor` (0242): a short value ("2-bolt chains", "tree, walk off"), the route's TOP
-       anchor — a pitch's own anchor stays on its ROUTE BREAKDOWN row. Style is NOT here: `features`
-       already draws as the tag chips (RouteTagRow), and a row would print it twice. */
-    /* A multipitch crag line whose belays differ says so: the top anchor, then each kind by pitch. */
-    const _anc=String(route.anchor||"").trim();const _pAnc=disc!=="bouldering"?pitchAnchorSummary(route):null;if(disc!=="bouldering"&&((_anc&&_anc.length<=80)||_pAnc))facts.push(["Anchor",_pAnc?((_anc&&_anc.length<=80?_anc+" at the top · ":"")+"by pitch: "+pitchAnchorText(_pAnc)):_anc]);var _longOnFile=[];if(_anc.length>80)_longOnFile.push("Anchor");
-    /* LOCATION is `location` (0243): where the line starts on its wall, which is how a climber finds it
-       at the base. First among the facts, because it is the first thing needed at the crag. */
-    const _loc=String(route.location||"").trim();const _locAll=CRAG_CATS.includes(disc);/* on a crag it has a section of its own, so it is never too long to show */if(_loc&&(_locAll||_loc.length<=160))facts.unshift(["Location",_loc]);if(!_locAll&&_loc.length>160)_longOnFile.push("Location");
-    const _dsc=String(route.descent||"").trim();if(_dsc&&_dsc.length<=140)facts.push(["Descent",_dsc]);
-    /* SUN is `sun` (0247): when this wall is in sun or shade, as stated for it. Where it exists it
-       replaces the sun line computed from the aspect — the stated hours are the better fact. */
-    const _sun=String(route.sun||"").trim();
-    const _aspOwn=String(route.aspect||"").trim();const _aspWall=_aspOwn?"":String((route._dbArea&&route._dbArea.aspect)||"").trim();const _asp=_aspOwn||_aspWall;if(_asp){const _sr=_sun?null:sunReadout(_asp,disc);facts.push(["Aspect",(/^[NSEW]{1,3}([\/ -][NSEW]{1,3})*$/i.test(_asp)?_asp+"-facing":_asp.replace(/\.$/,""))+(_aspWall?" (the crag's wall)":"")+"."+(_sr&&_sr.line?" "+_sr.line:"")]);}
-    if(_sun)facts.push(["Sun",_sun]);
-    /* WET, ROCK QUALITY and FIXED GEAR (0247): seepage after rain, loose or polished rock, and the
-       pitons/bolt ladders already in place. Short stated values, so each is a facts row, not a tile. */
-    [["Wet",route.wet],["Rock quality",route.rockQuality],["Fixed gear",route.fixedGear]].forEach(function(f){const v=String(f[1]||"").trim();if(v&&v.length<=160)facts.push([f[0],v]);else if(v)_longOnFile.push(f[0]);});
-    const _sea=String(route.season||"").trim();if(_sea)facts.push(["Season",_sea]);
-    /* ROPE. Rope length, rope type and the ropework note were read only by RouteRackBox and RopeworkBox,
-       which mount OFF the crag disciplines, so on a trad, sport or aid route all three reached no screen
-       (122 crag routes carry one) and the editor's rope length had nowhere to show. Same precedence as
-       the RACK box: an agreed correction wins, else the enrichment number. */
-    if(disc!=="bouldering"&&disc!=="toprope"){var _rc=route.ropeLen?fmtRopeLen(route.ropeLen):"";var _rl=(_ropeEdited(route)&&_rc)?_rc:(route.ropeLengthM?(route.ropeLengthM+"m"):_rc);var _rope=[route.ropeType,_rl].filter(Boolean).join(" ").trim();if(_rope)facts.push(["Rope",_rope]);var _rf=ropeworkFacts(route);if(_rf.link)facts.push(["Pitches link",_rf.link]);if(_rf.simul)facts.push(["Simul-climbing",_rf.simul]);}
-    /* EMPTY IS A PLACEHOLDER (owner, 2026-10-07): every fact THIS DISCIPLINE has is listed whether or
-       not the route states it, so a climber sees what is missing and can add it. Only facts that
-       pertain to the discipline — no bolts on a boulder, no landing on a sport line. A missing fact
-       reads "Not on file yet", never "unknown" or a guess, and one link under the list opens the editor. */
-    const _have=new Set(facts.map(function(f){return f[0];}).concat(stats.map(function(t){return t[0];})).concat(_longOnFile));
-    /* Each of these is a field the contribute form offers for this discipline (its DROP rules match),
-       so every "Not on file yet" can actually be filled. Descent is not here: the DESCENT section
-       below carries its own placeholder. */
-    const _want=disc==="bouldering"?["Location","Landing","Crash pads","Start","Aspect","Season","Rock quality","Wet"]
-      :["Location"].concat(disc==="toprope"?[]:["Pitches",disc==="aid"?"Wall height":"Route length"]).concat(disc==="sport"?["Bolts"]:[]).concat(disc==="sport"||disc==="trad"?["Protection"]:[]).concat(["Anchor"]).concat(disc==="toprope"?[]:["Rope"]).concat(["Aspect","Season","Rock quality","Wet"]).concat(disc==="trad"||disc==="aid"?["Fixed gear"]:[]);
-    _want.forEach(function(k){if(_have.has(k))return;facts.push([k,<span style={{color:C.textMuted,fontStyle:"italic"}}>Not on file yet</span>,true]);});
-    const _secL=new Set(CRAG_FACT_SECTIONS.flatMap(function(s){return s[2];}));
-    for(let i=stats.length-1;i>=0;i--){if(_secL.has(stats[i][0])){facts.push([stats[i][0],<span style={{color:stats[i][2],fontWeight:700}}>{stats[i][1]}</span>]);stats.splice(i,1);}}
-    if(part){const sec=CRAG_FACT_SECTIONS.find(function(s){return s[0]===part;});const rows=sec?sec[2].map(function(l){return facts.find(function(f){return f[0]===l;});}).filter(Boolean):[];return !rows.length?null:part==="rack"?<div style={{marginTop:-6,marginBottom:6,borderBottom:"1px solid "+C.border}}><CragFactRows rows={rows} onEdit={onEdit}/></div>:<CragFactSection title={sec[1]} rows={rows} onEdit={onEdit}/>;}
-    facts.splice(0,facts.length,...facts.filter(function(f){return !_secL.has(f[0]);}));
-    const _mt=facts.filter(function(f){return f[2];});_missN=_mt.length;_firstMiss=_mt.length?_mt[0][0]:null;
-  }
-  if(part)return null;
-  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}><CardHead>{crag?"ROUTE FACTS":"TECHNICAL STATS"}</CardHead>{onEdit?<EditIconButton onClick={onEdit} title={crag?"Edit route facts":"Edit technical stats"}/>:null}</div>{(function(){var ag=route.alpineGrade||route.alpine_grade,rg=route.rockGrade||route.rock_grade,ig=route.iceGrade||route.ice_grade,adg=route.aidGrade||route.aid_grade,cm=route.commitment,gg=route.grade;var P=[];if(rg)P.push(["Rock",rg]);if(cm)P.push(["Commitment",cm]);if(ag)P.push(["Alpine",ag]);if(ig)P.push(["Ice",ig]);if(adg)P.push(["Aid",adg]);if(P.length<1&&gg)P.push(["Grade",gg]);var notes=[];[["Rock",rg],["Commitment",cm],["Alpine",ag],["Ice",ig],["Aid",adg],["Grade",gg]].forEach(function(p){var d=p[1]?gradeDetail(p[1]):"";if(!d||notes.some(function(n){return n[1]===d;}))return;notes.push([p[0],d]);});if(P.length<1)return null;/* A class RANGE is one grade on screen (its top, or the headline it contains) plus this notice — see gradeRangeNote. */var rangeNote=gradeRangeNote(route);var cmExp=cm?COMMITMENT_EXPLAINERS[String(cm).replace(/^Grade\s*/i,"").trim()]:null;return <div style={{marginBottom:11,paddingBottom:11,borderBottom:"1px solid "+C.border}}><div style={{...SUB_LABEL,marginBottom:7}}>Composite Grade</div><div style={{display:"flex",flexWrap:"wrap",gap:6}}>{P.map(function(p){return <span key={p[0]} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:13,fontWeight:700,color:C.text,background:C.surface,border:"1px solid "+C.border,borderRadius:8,padding:"3px 9px"}}><span style={{color:C.textMuted,fontSize:10,fontWeight:800,textTransform:"uppercase",letterSpacing:0.3}}>{p[0]}</span>{singleGrade(p[1],route)}</span>;})}</div>{rangeNote?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:8}}>{rangeNote}</div>:null}{notes.length?<div style={{marginTop:8}}>{notes.map(function(n){return <div key={n[0]} style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:4}}><span style={{fontSize:10,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.3}}>{n[0]}</span>{" · "+n[1]}</div>;})}</div>:null}{cmExp?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:8}}>{cmExp}</div>:null}{cmExp?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:4}}>{"Commitment counts the climb, not the walk in — a long approach can make a Grade II a multi-day trip."}</div>:null}</div>;})()}<div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:8}}>{stats.map(st=><div key={st[0]} style={{background:C.surface,borderRadius:9,padding:"8px 10px"}}><div style={{fontSize:15,fontWeight:700,color:st[2]}}><CountUp value={st[1]}/></div><div style={{fontSize:11,color:C.textMuted,marginTop:2,textTransform:"uppercase",letterSpacing:0.4}}>{st[0]}</div></div>)}</div>{facts.length?<div style={{marginTop:stats.length?14:4}}>{(function(){/* GROUPED, so ten facts do not read as one undifferentiated run: what the line IS, what protects it,
-     and when it is in shape. The label column is 92px and wraps at spaces — at 62px "PROTECTION" and
-     "ROCK QUALITY" ran under their own values. A heading shows only when more than one group renders. */var G=[["The line",["Also called","Variations","Location","Start"]],["Gear & safety",["Bolts","Protection","Anchor","Rope","Rope notes","Fixed gear","Landing","Crash pads","Descent"]],["Conditions",["Aspect","Sun","Season","Wet","Rock quality"]]];var placed=new Set();var groups=G.map(function(g){var rows=g[1].map(function(l){return facts.find(function(f){return f[0]===l;});}).filter(Boolean);rows.forEach(function(f){placed.add(f[0]);});return [g[0],rows];});var rest=facts.filter(function(f){return !placed.has(f[0]);});if(rest.length)groups[0][1]=groups[0][1].concat(rest);groups=groups.filter(function(g){return g[1].length;});return groups.map(function(g,gi){return <div key={g[0]} style={{marginTop:gi?14:0}}>{groups.length>1?<div style={{...SUB_LABEL,color:C.textSub,paddingBottom:6,marginBottom:2,borderBottom:"1px solid "+C.border}}>{g[0]}</div>:null}{g[1].map(function(f,i){return <div key={f[0]} style={{display:"flex",gap:12,alignItems:"baseline",padding:"8px 0",borderTop:i===0?"none":"1px solid "+C.borderLight}}><span style={{fontSize:10.5,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,lineHeight:1.35,width:92,flexShrink:0}}>{f[0]}</span><span style={{fontSize:13,color:C.text,lineHeight:1.5,flex:1,minWidth:0,overflowWrap:"anywhere"}}>{f[1]}</span></div>;})}</div>;});})()}</div>:null}{_missN&&onEdit?<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,flexWrap:"wrap",marginTop:12,paddingTop:10,borderTop:"1px solid "+C.border}}><span style={{fontSize:12,color:C.textMuted,lineHeight:1.4}}>{_missN+(_missN===1?" fact":" facts")+" not on file yet"}</span><button onClick={function(){onEdit(FACT_FIELD[_firstMiss]);}} style={{padding:"6px 0",border:"none",background:"none",color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer",textAlign:"left"}}>{"Add what you know →"}</button></div>:null}{route.fa&&!(route.peakMetadata&&route.peakMetadata.firstAscent)?<div style={{marginTop:10,fontSize:12.5,color:C.textSub,lineHeight:1.4}}><span style={{...SUB_LABEL}}>First Ascent</span>{" · "+route.fa}</div>:null}{(function(){/* The first FREE and first WINTER ascent sit under the first-ascent line, each only when present and
-   different from it. Both go through usableFa(), the same placeholder test `fa` gets ("unknown", "??"). */var fa0=String(route.fa||"").trim();var rows=[["First Free Ascent",route.ffa],["First Winter Ascent",route.fwa]].map(function(p){var v=usableFa(p[1]);return [p[0],v==null?"":String(v).trim()];}).filter(function(p){return p[1]&&p[1]!==fa0;});if(!rows.length)return null;return <>{rows.map(function(p,i){return <div key={p[0]} style={{marginTop:(i||route.fa)?4:10,fontSize:12.5,color:C.textSub,lineHeight:1.4}}><span style={{...SUB_LABEL}}>{p[0]}</span>{" · "+p[1]}</div>;})}</>;})()}{note?<div style={{fontSize:11.5,color:C.textMuted,marginTop:8,lineHeight:1.5}}>{note}</div>:null}</div>;
-}
 /* This panel called itself "Crowd-verified beta" and had no crowd, no verification and no
    beta leaving the component. Every part of it was local React state:
 
@@ -808,42 +481,6 @@ function TechStats({route,onEdit,part}){
    name cannot drift from the visible one.
    THE STAGE ROW IS A CONTROL TOO NOW (it used to expand only from its own tiny ▸), so it carries
    the same defence: its label and CRUX are also two spans held apart by a margin. */
-/* THE STATE IS `aria-expanded`, NOT WORDS IN THE NAME. These rows are disclosures — tapping one
-   reveals its own detail and changes nothing else — and this file already states the convention
-   on TagChip: "`aria-expanded` rather than `aria-pressed`: this is a disclosure, not a toggle
-   that changes anything". The stage row's old ▸ carried it and lost it when the whole row became
-   the control, which is a regression rather than a gap; the pitch row spelled "collapsed" into
-   its own label instead, which announces the state to a screen reader and to nothing else — no
-   automation, and no user agent that offers "expand" as an action. So the attribute carries it
-   and the name stops repeating it: with both, a reader hears "collapsed" twice. */
-function pitchRowName(p){
-  const bits=["Pitch "+p._badge];
-  if(p.grade)bits.push(String(p.grade));
-  if(p.crux)bits.push("crux");
-  if(p._title)bits.push(String(p._title));
-  return bits.join(", ");
-}
-function stageRowName(r){
-  const bits=["Section "+r._seq,r._label];
-  if(r.crux)bits.push("crux");
-  if(r.grade)bits.push(String(r.grade));
-  return bits.filter(Boolean).join(", ");
-}
-/* ANCHORS CHANGE BY PITCH (owner's note, 2026-10-24: "some use trees or gear and some are bolted").
-   anchorKind() files a stored anchor string under the editor's own PITCH_ANCHORS vocabulary, so a
-   "2-bolt anchor (alcove)" lights the Bolted chip and the page can say which pitches end where.
-   Walk-off first (a "walk off, no anchor" must not read as bolted), then fixed anchors, then the
-   natural ones; gear last because "gear" also appears as a qualifier. Null when nothing matches. */
-function anchorKind(s){const t=String(s||"").toLowerCase();if(!t.trim())return null;
-  if(/walk[\s-]?off|no belay|unroped/.test(t))return "Walk-off (no belay)";
-  if(/bolt|chain|ring|glue[\s-]?in|fixed anchor|rap station/.test(t))return "Bolted";
-  if(/tree|bush|shrub/.test(t))return "Tree";
-  if(/horn|block|chockstone|boulder/.test(t))return "Slung horn / block";
-  if(/piton|fixed pin|\bpins?\b/.test(t))return "Fixed pin";
-  if(/picket|deadman|snow anchor|bollard/.test(t))return "Picket";
-  if(/screw|v[\s-]?thread|abalakov/.test(t))return "Ice screws";
-  if(/gear|cam|nut|natural|trad/.test(t))return "Gear";
-  return null;}
 /* A pitch label that is a plain number (3, "3") — not a range ("3-4") or a named leg ("Approach gully"). */
 function isNumLbl(v){return typeof v==="number"?isFinite(v):(typeof v==="string"&&/^\s*\d+\s*$/.test(v));}
 /* The pitch editor's rows in the PAGE's order, plus a not-described row for each pitch the route
@@ -854,119 +491,6 @@ function padPitchRows(rows,r,blank){const pd=(r.pitchDetail&&r.pitchDetail.lengt
   const described=pd.length?breakdownRows(r).pitchCount:0;const claimed=+r.pitches>0?Math.round(+r.pitches):0;
   if(claimed>described&&(!pd.length||pitchShortfall(r,pd.length))&&(pd.length||claimed>1)){const top=out.reduce(function(m,x){return isNumLbl(x.pitch)?Math.max(m,+x.pitch):m;},0);for(let k=0;k<claimed-described;k++)out.push(Object.assign(blank(top+k+1),{_pad:true}));}
   return out.length?out:rows;}
-/* "P1–3, P5" from a list of pitch numbers. */
-function pitchSpanText(ns){const s=ns.slice().sort(function(a,b){return a-b;});const out=[];for(let i=0;i<s.length;i++){let j=i;while(j+1<s.length&&s[j+1]===s[j]+1)j++;out.push(j>i?"P"+s[i]+"–"+s[j]:"P"+s[i]);i=j;}return out.join(", ");}
-/* The route's anchors, pitch by pitch, grouped by kind in climbing order: [[kind, "P1–3, P5"], …].
-   Null unless at least two roped pitches carry a classifiable anchor AND they are not all one kind —
-   a route whose every belay is bolted says nothing a single Anchor value does not. */
-function pitchAnchorSummary(route){const rows=breakdownRows(route).rows.filter(function(r){return r._kind==="pitch"&&anchorKind(r.anchor);});if(rows.length<2)return null;const by={};const order=[];rows.forEach(function(r){const k=anchorKind(r.anchor);const n=parseInt(r._badge,10);if(!isFinite(n))return;if(!by[k]){by[k]=[];order.push(k);}by[k].push(n);});if(order.length<2)return null;return order.map(function(k){return [k,pitchSpanText(by[k])];});}
-const pitchAnchorText=function(sum){return sum.map(function(x){return x[0]+" "+x[1];}).join(" · ");};
-/* A PITCH'S PHOTOS, WITH AN ADD BUTTON ON THE PITCH ITSELF (owner's note, 2026-10-25: "a photo right there of the pitch").
-   The upload is a route photo tagged with the pitch's label (contributions value.pitch), so the route's Photos tab still
-   lists it with the rest. Signed out there is no upload, and the box says so rather than offering a button that does nothing. */
-function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd,dbPhotos,onAddPitchPhoto,logged}){
-  const [open,setOpen]=useState(null);
-  const photosOf=function(r){return (dbPhotos||[]).filter(function(p){return p._pitch!=null&&String(p._pitch)===String(r._n);});};
-  const {rows,pitchCount,stageCount}=breakdownRows(route);
-  useEffect(function(){if(focus==null)return;const hit=rows.filter(r=>r._kind==="pitch")[focus];if(hit)setOpen(hit._i);},[focus]); // eslint-disable-line react-hooks/exhaustive-deps -- opens the pitch row only when the focus request changes; rows is rebuilt every render and must not re-fire it
-  if(!rows.length)return null;
-  const hasPitchLen=rows.some(r=>r._kind==="pitch"&&r.lengthM!=null);
-  const hasStageLen=rows.some(r=>r._kind==="stage"&&r.lengthM!=null);
-  /* THE SHORTFALL IS pitchShortfall()'s, NOT A COUNT OF PITCHES. #1440 measured the mismatched
-     version on the live catalog: comparing `route.pitches` against the ROPED half told 55 routes
-     that entries were undescribed while every one of them was on screen, because the denominator
-     was counting the very stages the old table filtered out. Merging the two sections removes the
-     mechanism — everything described is in this list — but the rule stays the rule, and passing
-     `rows.length` is what says so: a shortfall may only be claimed when the route claims more
-     pitches than the page describes ANYWHERE. */
-  /* STATE THE GAP, not both totals. This read "The route lists 20 pitches and 18 sections are
-     described here." — a run-on whose "and" joins a noun phrase to a clause, and which then
-     REPEATS the count the intro has just given ("18 roped pitches, in route order.") under a
-     different noun. Captured verbatim on CI's demo walk. What a climber wants from this line is
-     the number of pitches with no description; `pitchCount` is the described roped pitches, so
-     the subtraction is in one unit. It cannot go zero or negative here: pitchShortfall only
-     fires when route.pitches exceeds pitchDetail.length, and pitchCount is at most that. */
-  const _anchors=pitchAnchorSummary(route);
-  const _undesc=route.pitches-pitchCount;
-  const short=pitchShortfall(route,rows.length)?(" The route lists "+route.pitches+" pitches, so "+_undesc+(_undesc===1?" is":" are")+" not described here."):"";
-  const intro=(pitchCount&&stageCount)
-    ?("The whole climb in order — "+rows.length+" sections, of which "+pitchCount+" are roped pitches and "+stageCount+" are travel or route-finding legs."+short)
-    :(pitchCount
-      ?(pitchCount+" roped pitch"+(pitchCount!==1?"es":"")+", in route order."+short)
-      :("How the route goes, section by section — "+stageCount+" leg"+(stageCount!==1?"s":"")+". These are stages of travel and route-finding, not roped pitches."));
-  return <div id="route-breakdown" style={{marginBottom:ROUTE_GAP,scrollMarginTop:"80px"}}>
-    <SL action={<div style={{display:"flex",alignItems:"center",gap:8}}><span style={{fontSize:11.5,color:C.textMuted,whiteSpace:"nowrap"}}>Tap a row for detail</span>{onEdit?<EditIconButton onClick={onEdit} title="Edit the route breakdown"/>:null}</div>}>ROUTE BREAKDOWN</SL>
-    <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
-      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>{intro}</div>
-      {/* ASK THE CLIMBER WHO WAS THERE (owner note 2026-10-25, belay stations; multipitch audit proposal 2,
-          "prompt for pitches after logging a multipitch"). Online research could place a belay on 449
-          pitches and no further, so the rest can only come from climbers. Someone who has logged this
-          route sees how many pitches still lack one and a button that opens the editor at the first. */}
-      {(function(){const _noBelay=rows.filter(function(r){return r._kind==="pitch"&&!String(r.belay||"").trim();});
-        if(!logged||!onEdit||!_noBelay.length)return null;
-        return <div data-belay-ask="" style={{background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:10,padding:"10px 12px",marginBottom:10}}>
-          <div style={{fontSize:12.5,fontWeight:700,color:C.onSolid,marginBottom:3}}>You've climbed this</div>
-          <div style={{fontSize:12,color:C.onSolid,lineHeight:1.5,marginBottom:8}}>{_noBelay.length+(_noBelay.length===1?" pitch has":" pitches have")+" no belay station yet. Say where you belayed, and the next party will find it."}</div>
-          <button onClick={function(){onEdit(_noBelay[0]._i);}} style={{...BTN_SM,background:C.blueSolid,color:C.onSolid,border:"none"}}>Add belay stations</button>
-        </div>;})()}
-      {_anchors?<div data-pitch-anchors="" style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:10,padding:"7px 9px",background:C.surface,borderRadius:8,border:"1px solid "+C.border}}><span style={{fontWeight:700,color:C.text}}>{"Anchors change by pitch: "}</span>{_anchors.map(function(x,i){return <span key={x[0]}>{i?" · ":""}<span style={{fontWeight:700,color:x[0]==="Bolted"?C.green:C.blue}}>{x[0]}</span>{" "+x[1]}</span>;})}</div>:null}
-      {rows.map(function(r,idx){
-        const isOpen=open===r._i;
-        const isPitch=r._kind==="pitch";
-        const last=idx===rows.length-1;
-        /* EVERY BOX OPENS (owner note 2026-10-22, "more information for each box"). A travel leg
-           used to open only when it had a terrain, length or anchor, and then showed three tiles
-           that were mostly "—". Now it opens like a pitch does: an edit button that lands on THIS
-           entry in the editor, the tiles that carry a value, and climbers' comments on the leg —
-           Mountain Project ties beta to each pitch the same way. */
-        const hasMore=true;
-        /* A LONG terrain is a sentence, so it is drawn as one: a small full-width line under the leg's name, not a
-           right-aligned chip that wraps beside the label, and not a third-width bold tile when the row opens
-           (owner note 2026-10-28, Mount Logan's "Hiking, steep descent through alpine meadows and forest" read
-           stacked in both). A short one ("Class 2", "Scree, Class 2") is still a chip. */
-        const longTerrain=!isPitch&&!!r.grade&&(String(r.grade).length>18||String(r.grade).trim().split(/\s+/).length>3);
-        /* A pitch's tiles drop an empty value the same way a leg's do: a row of "—" told the climber nothing, and PitchConsensus below already asks for what is missing. */
-        const stageTiles=(isPitch?[["Length",r.lengthM!=null?uLen(r.lengthM):null,C.blue],["Bolts (this pitch)",r.bolts!=null?String(r.bolts):null,C.amber]]:[["Terrain",longTerrain?null:r.grade,C.amber],["Length",r.lengthM!=null?uLen(r.lengthM):null,C.blue],["Anchor / belay",r.anchor,C.blue]]).filter(t=>t[1]);
-        const accent=r.crux?C.amber:(isPitch?C.blue:C.border);
-        return <div key={r._i} data-kind={r._kind} data-label={isPitch?("P"+r._badge+(r._title?" "+r._title:"")):r._label} id={isPitch?("pitch-"+r._pIdx):undefined} style={{display:"flex",gap:10,marginBottom:last?0:9,scrollMarginTop:"80px"}}>
-          <div style={{display:"flex",flexDirection:"column",alignItems:"center",flexShrink:0}}>
-            <div aria-hidden="true" style={{width:26,height:26,borderRadius:isPitch?7:13,background:r.crux?C.amberBg:(isPitch?C.blueBg:C.surface),border:"1px solid "+(r.crux?C.amber:(isPitch?C.blueDim:C.border)),display:"flex",alignItems:"center",justifyContent:"center",fontSize:isPitch?11.5:12,fontWeight:700,color:r.crux?C.amber:(isPitch?"#fff":C.textSub)}}>{isPitch?("P"+r._badge):r._seq}</div>
-            {last?null:<div style={{flex:1,width:2,background:C.border,marginTop:3,minHeight:14}}/>}
-          </div>
-          <div style={{flex:1,minWidth:0,background:C.surface,border:"1px solid "+C.border,borderLeft:"3px solid "+accent,borderRadius:10}}>
-            <div {...(hasMore?clickable(function(){setOpen(isOpen?null:r._i);}):{})} aria-expanded={hasMore?isOpen:undefined} aria-label={hasMore?(isPitch?pitchRowName(r):stageRowName(r)):undefined} style={{padding:"9px 11px",minHeight:44,boxSizing:"border-box",display:"flex",flexDirection:"column",justifyContent:"center",cursor:hasMore?"pointer":"default"}}>
-              {(isPitch&&r._title)?<div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:3,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r._title}</div>:null}
-              <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,flexWrap:"wrap",marginBottom:(r._note&&!longTerrain)?5:0}}>
-                <span style={{fontSize:13,fontWeight:700,color:isPitch?C.amber:C.text,minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{isPitch?(r.grade||("Pitch "+r._badge)):r._label}{r.crux?<span style={{...SUB_LABEL,color:C.red,marginLeft:6,whiteSpace:"nowrap"}}>CRUX</span>:null}</span>
-                {/* A stage's `grade` is TERRAIN PROSE, not a grade token: measured across the
-                    live catalog it runs to 51 characters ("Class 2-3 rock scramble (easy snow
-                    ridge in winter)", "Glacier travel to a bergschrund/moat"). Drawn as a
-                    nowrap chip in a flexShrink:0 group it measured 315px wide and put its own
-                    row's right edge at x=392 on a 390px phone, clipping the ▸ expander off
-                    screen. So this group SHRINKS and WRAPS, and only the ▸ is pinned. Do not
-                    restore whiteSpace:nowrap here — that is what a pitch grade wants, and a
-                    stage is the other half of pitch_detail. */}
-                <span style={{display:"flex",alignItems:"center",gap:7,flexShrink:1,minWidth:0,flexWrap:"wrap",justifyContent:"flex-end",marginLeft:"auto"}}>
-                  {(!isPitch&&r.grade&&!longTerrain)?<span style={{fontSize:11.5,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:6,padding:"2px 7px",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r.grade}</span>:null}
-                  {(isPitch?hasPitchLen:(hasStageLen&&r.lengthM!=null))?<span style={{fontSize:11.5,color:C.textMuted,whiteSpace:"nowrap"}}>{r.lengthM!=null?uLen(r.lengthM):"—"}</span>:null}
-                  {(isPitch&&hasPitchLen&&r._cum)?<span style={{fontSize:11.5,color:C.textMuted,opacity:0.6,whiteSpace:"nowrap"}}>{uLen(r._cum)+" up"}</span>:null}
-                  {hasMore?<Chevron open={isOpen} size={16} color={C.blue}/>:null}
-                </span>
-              </div>
-              {longTerrain?<div data-terrain="" style={{fontSize:11.5,fontWeight:600,color:C.amber,lineHeight:1.45,margin:"3px 0 "+(r._note?"4px":"0"),wordBreak:"break-word",overflowWrap:"break-word"}}>{r.grade}</div>:null}
-              {r._note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,wordBreak:"break-word",overflowWrap:"break-word"}}>{r._note}</div>:null}
-            </div>
-            {isOpen?<div style={{padding:"0 11px 11px"}}>{onEdit?<button onClick={function(e){e.stopPropagation();onEdit(r._i);}} style={{...editBtnStyle(C),marginTop:8}}><EditPencil C={C}/>{isPitch?"Edit this pitch":"Edit this section"}</button>:null}
-              {stageTiles.length?<div style={{marginTop:2,paddingTop:9,borderTop:"1px solid "+C.borderLight,display:"grid",gridTemplateColumns:isPitch?"repeat(2,1fr)":"repeat(3,1fr)",gap:7,marginBottom:isPitch?9:0}}>
-                {stageTiles.map(function(s){return <div key={s[0]} style={{background:C.card,borderRadius:8,padding:"7px 9px",textAlign:"center",minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:s[2],overflowWrap:"anywhere"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{s[0]}</div></div>;})}
-              </div>:null}
-              {isPitch?<><PitchConsensus p={r} onSuggestFix={onEdit?function(){onEdit(r._i);}:null}/><CardHead style={{marginBottom:8}}>Photos</CardHead><PitchPhotos items={photosOf(r)} onAdd={onAddPitchPhoto?function(fs){return onAddPitchPhoto(fs,r._n);}:null}/><PitchComments targetId={route.id+"_pitch_"+r._n} comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}/></>:<PitchComments title="Comments on this section" targetId={route.id+"_pitch_"+r._n} comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}/>}
-            </div>:null}
-          </div>
-        </div>;})}
-    </div>
-  </div>;
-}
 /* A coordinate you can read out, and one tap to copy it. Shared by both rows of CragLocationCard. */
 /* The pin editor's TYPES on a crag route. A crag has no summit or camp; it has a car park, the trail
    junctions to the wall, water and hazards. The stored type stays "Trailhead" -- trailheadPoint()
@@ -1010,355 +534,11 @@ export function campingGate(route){
 }
 /* A COMMENT SOMEONE TYPED AT LENGTH opens at three lines with a Read more (owner's note, 2026-10-25: "if someone types
    too much so it doesn't fill the screen"). Short comments render whole, with no button. */
-/* THE PLANNER PRINTED ITS DAY PLAN TWICE, AND THE SECOND COPY WAS THE WORSE ONE.
-   `timing.sectionBreakdown[i]` is `{section, fromTo, note, hrs}` and `itinerary.days[i]` is
-   `{n, title, note, hours, miles, gainFt, lossFt, packLb, objective, schedule}` — and entry for
-   entry, `fromTo` IS `title`, `hrs` IS `hours`, `note` IS `note`. Trip plan renders first, then
-   PUBLISHED TIMES repeats it a few hundred pixels down.
-
-   Measured across the catalog (scripts/oneoff/measure-timing-vs-itinerary-shape.mjs): of the 546
-   routes carrying a sectionBreakdown, **526 (96.3%) are mirrored entry-for-entry by the days**,
-   and on **497** of those the sectionBreakdown `note` is TRUNCATED mid-sentence with an ellipsis
-   — so the repeat is not merely redundant, it is a cut-off version of the paragraph already on
-   screen above it. The days also carry miles, gain, loss, pack weight and an objective that the
-   sections do not.
-
-   So the repair is to stop rendering the duplicate, NOT to merge two panels — which was the first
-   plan, and assumed the two carried different content. Nothing is dropped from the panel itself:
-   the four hour tiles and `recommendedStart` are its own fields and always render.
-
-   IT IS CONDITIONAL BECAUSE 20 ROUTES STILL NEED IT: 14 whose sectionBreakdown says something the
-   days do not, and 6 with no itinerary days at all, where this panel is the only place the
-   breakdown reaches a screen. Suppressing unconditionally would delete their only copy — the
-   [[changing-which-record-wins-leaves-the-neighbouring-field-behind]] shape. `section`
-   ("Approach") is deliberately NOT compared: it is a coarse category rather than content, and
-   demanding the day repeat it would keep every duplicate on screen. */
-function sectionsCoveredByItinerary(route){
-  const sb=(route&&route.timing&&Array.isArray(route.timing.sectionBreakdown))?route.timing.sectionBreakdown:[];
-  const days=(route&&route.itinerary&&Array.isArray(route.itinerary.days))?route.itinerary.days:[];
-  if(!sb.length||days.length!==sb.length)return false;
-  const n=function(x){return String(x==null?"":x).trim();};
-  return sb.every(function(sec,i){
-    const d=days[i]||{};
-    if(n(sec.fromTo)!==n(d.title))return false;
-    if(!((sec.hrs==null&&d.hours==null)||Number(sec.hrs)===Number(d.hours)))return false;
-    const sn=n(sec.note),dn=n(d.note);
-    // An ellipsis-terminated section note is the SHORTER copy; the day holds the full sentence,
-    // so a day that merely STARTS with it still covers it.
-    return !sn||dn===sn||dn.startsWith(sn.replace(/[\u2026.]+$/,""));
-  });
-}
-/* `activity` is passed in rather than read off `route`: the merged list RouteDetail builds is
-   seed reports + the reader's own logs + OTHER CLIMBERS' logs from the DB (#787), and only that
-   third source makes "what parties actually took" mean more than "what I took". Defaulted so a
-   caller that omits it renders the estimate exactly as before rather than throwing. */
-function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
-  /* THE PLANNER INPUTS SURVIVE A SUB-TAB SWITCH, which is the same fix #1581 gave FloatPlan one
-     sub-tab over. <Calculator/> renders ~17k characters inside the `tab==='planner'` branch, so
-     tapping Safety to check the hazards unmounted it and every input reverted: pack 10kg, party 2,
-     depart 06:00. The climber came back to a DIFFERENT estimated summit time than the one they had
-     just read, with nothing on screen saying it had changed — and a lighter pack reads FASTER, the
-     optimistic direction #641 records for the return tile.
-     ONE OF THE FOUR WAS ALREADY LIFTABLE AND THE MECHANISM WAS NEVER WIRED: `fit`/`setFit` props
-     existed and the single call site passed neither, so `fitProp` was undefined and it fell back to
-     local state like the other three. A lift nothing hands state to is not a lift. The props are
-     kept so a caller can still drive fitness alone; `calc`/`onCalc` carry all four. */
-  const [own,setOwn]=useState({fit:"intermediate",pack:10,party:2,depart:6});
-  const st=calc||own,setSt=onCalc||setOwn;
-  const setK=k=>v=>setSt(x=>({...x,[k]:v}));
-  const fit=fitProp||st.fit,setFit=setFitProp||setK("fit");
-  const pack=st.pack,setPack=setK("pack");
-  const party=st.party,setParty=setK("party");
-  const depart=st.depart,setDepart=setK("depart");
-  /* The time maths -- stored legs vs the walk model, the up/down split, the whole-day rows -- live in
-     lib/planTimes.js, because the Conditions tab's alpine start counts back from the same estimate. */
-  const P=planTimes(route,{fit,pack,party,depart});
-  const {hasPublishedSummitH,hasDerivedSummitH,publishedIsWholeDay}=P;
-  const hasHikeInputs=(route.distKm!=null&&route.distKm!=="")||(route.gainM!=null&&route.gainM!=="");
-  // hasHikeInputs is an OR, so ONE of the three is enough to render a confident total -- while
-  // scarfHrs still charges every missing component as 0. Measured on the live catalog: 950
-  // routes render a confident estimate and only 625 carry all three, so 325 of them (34%) were
-  // quoting a number with a silently free leg. Worst case is dist-only, which drops both the
-  // gain and the descent: a route with 1,200 m of climbing rendered a 1.8hr approach as fact,
-  // in green, against 5.6hr once the missing pieces are supplied. Name the components rather
-  // than saying "no approach data", because here most of it IS present.
-  const _missHike=[];
-  if(route.distKm==null||route.distKm==="")_missHike.push("approach distance");
-  if(route.gainM==null||route.gainM==="")_missHike.push("elevation gain");
-  if(route.lossM==null||route.lossM==="")_missHike.push("elevation loss");
-
-  /* There used to be a `hikeCoversWholeDay` flag here (gainCoversWholeOuting: gain and loss within
-     3%) that relabelled the Approach tile "On foot" and dropped the walk out from the return,
-     because the one walk leg charged gain AND loss and so was already the round trip on those rows.
-     The walk is split into its up and down legs now (lib/planTimes.js), so there is no round
-     trip to relabel and nothing counted twice: the tile is the walk IN on every row, and every
-     return walks out. check:return-leg holds both. */
-  /* A gain PRESENT and contradicted, as opposed to absent. _missHike above names what is
-     missing; this names what is impossible. Both make the number below a floor, so they are
-     worded the same way and sit together. */
-  const gainShort=gainBelowOwnPins(route);
-  const missHikeLabel=_missHike.length===1?_missHike[0]:_missHike.slice(0,-1).join(", ")+" or "+_missHike[_missHike.length-1];
-  const hasAnyEstimate=hasHikeInputs||hasPublishedSummitH||hasDerivedSummitH||realPitches(route)>0||P.loneApproachH!=null||P.loneDescentH!=null;
-  const {hikeH,techH,sumH,retH,storedApproachH}=P;
-  const dayOf=h=>Math.floor(Math.round(h*60)/1440);const fmt=h=>{let total=Math.round(h*60);const day=dayOf(h);total=total%1440;const hr=Math.floor(total/60),mn=total%60,ap=hr>=12?"PM":"AM",h12=hr%12||12;return `${h12}:${String(mn).padStart(2,"0")} ${ap}${day>0?" (+"+day+"d)":""}`;};
-  /* THE TWO RED LABELS BELOW ARE COMPARED AGAINST A CLOCK HOUR, AND sumH/retH ARE UNBOUNDED.
-     Both are absolute hours from midnight of the DEPARTURE day, so an estimate that crosses
-     midnight passes 18.5 (6:30 PM) and 13 (1:00 PM) permanently -- while `fmt`, declared one line
-     up, reduces the same value mod 1440 to render a clock time and appends "(+Nd)". The result was
-     a red "After dark" beside "Est. return 12:10 PM (+1d)", and "Leave earlier" beside a 4:28 AM
-     summit, where leaving earlier makes it DARKER. Measured across the WA catalog at the
-     calculator's default settings: 168 of 495 "After dark" labels annotated a return in broad
-     daylight (eight within 15 minutes of NOON, one of them wa_mount_stuart_north_ridge -- the
-     route check:ui pins as its sample), and 67 of 556 "Leave earlier" labels sat beside a morning
-     summit.
-
-     THE TESTS ARE RIGHT AND THE WORDING WAS WRONG, which is why neither threshold moves. `retH >
-     18.5` is exactly "this outing runs past dusk", which is the correct trigger for a warning on
-     any outing however long; what it cannot say is WHICH DAY the arrival lands on. So the trigger
-     is untouched -- no warning is added and none is suppressed -- and the LABEL gains the day.
-     "Overnight" is the stronger claim of the two, not a softer one, so this cannot under-warn in
-     the #641 direction: a party out past a second dawn is being told something larger than "after
-     dark", not something smaller. The tile stays red either way.
-
-     `dayOf` is the SAME function `fmt` uses for the "(+Nd)" suffix, deliberately: a second
-     next-day test written here could disagree with the suffix rendered inches away. */
-  /* `multiDay` WAS GATED ON `route.campOptions`, WHICH IS SEED-ONLY, SO THIS DISCLAIMER RENDERED
-     FOR NOBODY IN PRODUCTION — on exactly the routes whose single-push estimate is least
-     believable. The shared derivation and the measurement behind it are in lib/outing.js; note in
-     particular that porting the old gate to `bivy` would have LOOKED like a fix and changed
-     nothing, because 0 of the 796 WA routes carrying a bivy entry has a starred camp.
-     THE COPY MOVED WITH THE GATE, and it had to: it used to say "use the Plan tab for a realistic
-     day-by-day plan" while sitting ON the Plan tab, with <ItineraryView/>'s "Trip plan" rendered
-     directly above it — a pointer past the very thing it was pointing at, invisible for as long
-     as the box rendered for nobody. Ask what a newly-reachable surface SAYS, not only that it now
-     reaches somebody. */
-  const late=retH>18.5,sumLate=!publishedIsWholeDay&&sumH>13,multiDay=isMultiDayOuting(route);
-  // The N/A on the Approach tile was only half that fix. Total, Est. summit and Est. return
-  // all still add hikeH, and hikeH is 0 whenever the approach inputs are missing -- 204,469
-  // of the catalog's 205,492 routes. It used to be obvious (0.0hr Total, summit at the
-  // departure minute); once a pitch count made techH non-zero it merely looked plausible,
-  // so the tell went away and the fault did not. These are lower bounds, not estimates.
-  // Never paint one green either: a green "Est. return" asserts you are down before dark,
-  // and with the walk in and the walk out both counted as zero we cannot assert that.
-  /* A STORED approach or descent is not a hole: lib/planTimes.js uses the route's own leg where it
-     has one, so a leg is a floor only when it is neither stored nor fully walkable. */
-  const {walkInKnown,walkOutKnown}=P;
-  const approachUnknown=hasAnyEstimate&&!(walkInKnown&&walkOutKnown)&&!publishedIsWholeDay;
-  /* THE SAME DEFECT ON THE OTHER LEG. `techHrs(0,...)` is 0, so a roped route with no recorded
-     pitch count and no published or derived summit time contributes a climbing leg of ZERO to
-     Total, Est. summit and Est. return -- "unknown" counted as "none", which is exactly what the
-     comment above says about the walk. The catalog makes it look enormous (128,020 roped routes
-     store 0 or null pitches) and the SCREEN is what decides: `cragOnly` means trad and sport
-     never mount this calculator at all, `hasAnyEstimate` ends in `!!route.pitches` which is FALSY
-     at 0, and the Climbing tile already renders N/A. Measured 2026-09-23 by
-     scripts/oneoff/measure-zero-pitch-estimate-reach.mjs: SIX routes reach this state, three of
-     which `approachUnknown` was already hedging for its own reasons. This is the other three.
-
-     climbKnown IS THE CLIMBING TILE'S OWN TEST, not a second one written beside it. That tile
-     renders `techH` when `(hasPublishedSummitH||hasDerivedSummitH||route.pitches)` and N/A
-     otherwise, so deriving the marker from the same expression means the "N/A" and the ">=" can
-     never disagree -- the rule this file already applies to `_hfr`, `_memN` and `dayOf`.
-
-     NO `!publishedIsWholeDay` CLAUSE, deliberately: `publishedIsWholeDay` requires either
-     `summitTimeHrs != null` (`hasPublishedSummitH`) or a positive total with no legs
-     (`hasDerivedSummitH`), so it is a SUBSET of climbKnown and the guard could never fire. A redundant condition in a guard reads as
-     coverage and is not, so it is asserted in probe-climb-leg-lower-bound.mjs instead of
-     written here. */
-  const climbKnown=P.climbKnown;
-  const climbUnknown=hasAnyEstimate&&!climbKnown;
-  /* The AGGREGATES are lower bounds if EITHER leg is missing; the Approach tile keeps its own
-     flag, because an unrecorded pitch count says nothing about the walk. */
-  const lowerBound=approachUnknown||climbUnknown;
-  /* A section of the Plan tab like TRIP PLAN above it, so it takes the same section header (owner's note,
-     2026-10-25: "It should look like all the other headers"); it was a 14px blue title inside its own card. */
-  return <div><SL>Full trip time</SL><div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
-    {/* The heading used to read "PUBLISHED TIMES · CAR-TO-CAR", hardcoded on every route carrying a
-        timing object, and it never asked whether the published plan WAS car-to-car. Measured over
-        the 1,005 WA routes that have one: 404 contradict it in their own words ("5:30 AM from
-        camp", "Approach and climb to a bivy below the Gendarme", and one that says outright
-        "Pre-dawn if attempting car-to-car; otherwise plan a two-day overnight itinerary"), only
-        217 positively support it, and 384 say nothing either way. Car-to-car means no bivy, and a
-        climber reading "car-to-car, 23 hr" plans a single push.
-        DERIVING the label was measured and rejected: with 384 rows silent, any needle fails in the
-        direction that KEEPS the claim on a route that never earned it. The trip style is already
-        in the row's own words directly below — `recommendedStart` says "from camp" or a clock
-        time, and the section breakdown names each leg — so dropping the unearned half of the
-        heading loses nothing and asserts nothing. */}
-    {route.timing?(function(){var tm=route.timing;var sb=Array.isArray(tm.sectionBreakdown)?tm.sectionBreakdown:[];var _sbDup=sectionsCoveredByItinerary(route);var _sbShow=_sbDup?[]:sb;return <div style={{background:C.blueBg,borderRadius:10,padding:"10px 12px",margin:"4px 0 12px",border:`1px solid ${C.blueDim}`}}><div style={{...SUB_LABEL,marginBottom:6}}>PUBLISHED TIMES</div>{tm.recommendedStart?<div style={{fontSize:12.5,color:C.textSub,marginBottom:8}}>{"Recommended start: "}<b style={{color:C.text}}>{tm.recommendedStart}</b></div>:null}<div style={{display:"flex",flexWrap:"wrap",gap:6,marginBottom:_sbShow.length?8:0}}>{[["Approach",tm.approachTimeHrs],["Summit",tm.summitTimeHrs],["Descent",tm.descentTimeHrs],["Total",tm.totalHrs]].filter(function(x){return x[1]!=null;}).map(function(x,i){return <div key={i} style={{flex:"1 1 56px",background:C.surface,borderRadius:8,padding:"6px 4px",textAlign:"center"}}><div style={{fontSize:10,color:C.textMuted,fontWeight:700}}>{x[0].toUpperCase()}</div><div style={{fontSize:14,fontWeight:800,color:x[0]==="Total"?C.blue:C.text}}>{x[1]+" hr"}</div></div>;})}</div>{_sbShow.map(function(s,i){return <div key={i} style={{display:"flex",justifyContent:"space-between",gap:8,padding:"6px 0",borderTop:`1px solid ${C.borderLight}`}}><div style={{minWidth:0}}><div style={{fontSize:12.5,fontWeight:600,color:C.text}}>{s.section}{s.fromTo?<span style={{color:C.textMuted,fontWeight:400}}>{" · "+s.fromTo}</span>:null}</div>{s.note?<div style={{fontSize:11,color:C.textMuted,marginTop:1,lineHeight:1.4}}>{s.note}</div>:null}</div><div style={{fontSize:12.5,fontWeight:700,color:C.blue,flexShrink:0,whiteSpace:"nowrap"}}>{typeof s.hrs==="number"?s.hrs+" hr":null}</div></div>;})}</div>;})():null}
-    {/* What parties actually took, above the model that predicts it. Ordering is the point:
-        the guidebook figure first (route.timing), then measured reality, then the estimate —
-        so a formula never sits above evidence. Renders only when somebody has logged a real
-        number; there is no empty state, because "0 parties have logged this" is noise on the
-        204,000 routes nobody has logged. */}
-    {(function(){var _lt=loggedTimeStats(activity);if(!_lt)return null;var _spread=_lt.minMin!==_lt.maxMin?(fmtDurMin(_lt.minMin)+"–"+fmtDurMin(_lt.maxMin)):null;var _legLbl={approachMin:"approach",climbMin:"climb",descentMin:"descent"};var _legs=Object.keys(_lt.legs).map(function(k){return _legLbl[k]+" "+fmtDurMin(_lt.legs[k].medianMin);});
-      return <div style={{background:C.greenBg,borderRadius:10,padding:"10px 12px",margin:"4px 0 12px",border:"1px solid "+C.greenDim}}>
-        <div style={{...SUB_LABEL,marginBottom:4}}>{"WHAT PARTIES ACTUALLY TOOK"}</div>
-        <div style={{fontSize:13,color:C.text,fontWeight:700,marginBottom:2}}>{fmtDurMin(_lt.medianMin)+" car-to-car"+(_spread?" · "+_spread:"")}</div>
-        <div style={{fontSize:11.5,color:C.textSub,lineHeight:1.45}}>{"Median of "+_lt.n+" logged trip"+(_lt.n!==1?"s":"")+(_legs.length?" · "+_legs.join(", "):"")}</div>
-        <div style={{fontSize:11,color:C.textMuted,lineHeight:1.4,marginTop:4}}>{_lt.n===1?"One party, one day's conditions — treat it as a data point, not a forecast.":"Reported by climbers, not adjusted for your fitness or pack."}</div>
-      </div>;})()}
-    <div style={{fontSize:12,color:C.textMuted,marginBottom:12}}>{/* Names what this number IS, never how it is computed. The formula was on screen
-        ("Scarf's Rule + exponential technical grade penalty") and told a climber nothing
-        they could act on — the inputs below already say what it responds to. */}
-      {(route.timing?"Or estimate for your party":"Estimate for your party")+" · approach, climb and descent, car to car"}</div>
-    {P.legsStored?<div data-fit-party="1" style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:-8,marginBottom:12}}>{(publishedIsWholeDay?"The car-to-car time is this route’s published time":storedApproachH!=null?"The approach and climb are this route’s published times":"The climb is this route’s published time")+" for a fit party, so fitness and pack don’t change "+(publishedIsWholeDay||storedApproachH==null?"it":"them")+". Allow more if your party is slower."}</div>:null}
-    {multiDay?<div data-multiday={itinDayCount(route)} style={{background:C.amberBg,borderRadius:9,padding:"9px 11px",marginBottom:12,border:`1px solid ${C.amber}44`,fontSize:12,color:C.textSub,lineHeight:1.5}}>{"This route is typically done over "+itinDayCount(route)+" days. The single-push estimate below is a reference only — the "}<b style={{color:C.amber}}>Trip plan</b>{" above is the realistic one."}</div>:null}
-    <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:9,marginBottom:12}}>
-      <div><div style={{...SUB_LABEL,marginBottom:3}}>FITNESS</div><select aria-label="Your fitness level" value={fit} onChange={e=>setFit(e.target.value)} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13}}>{["beginner","intermediate","advanced","expert"].map(f=><option key={f} value={f}>{f[0].toUpperCase()+f.slice(1)}</option>)}</select></div>
-      {/* `pack` is kilograms because scarfHrs' penalty tiers are kg (>8, >15), but this was the one input in the app that ignored the unit setting — hardcoded "PACK (KG)" while UNITS defaults to imperial. A US climber typing 30 for a 30 lb pack had it read as 30 kg and got the heaviest slowdown applied to a planning estimate. Show and accept the reader's unit; keep kg in state. */}
-      <div><div style={{fontSize:12,color:C.textMuted,marginBottom:3,fontWeight:700}}>{uImp()?"PACK (LB)":"PACK (KG)"}</div><input aria-label="Pack weight" type="number" value={uImp()?Math.round(pack/0.4536):pack} onChange={e=>{var n=Number(e.target.value);if(isNaN(n))return;setPack(uImp()?n*0.4536:n);}} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13,boxSizing:"border-box",outline:"none"}}/></div>
-      <div><div style={{...SUB_LABEL,marginBottom:3}}>PARTY SIZE</div><input aria-label="Party size" type="number" value={party} onChange={e=>setParty(Number(e.target.value))} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13,boxSizing:"border-box",outline:"none"}}/></div>
-      <div><div style={{...SUB_LABEL,marginBottom:3}}>DEPART</div><select aria-label="Departure time" value={depart} onChange={e=>setDepart(Number(e.target.value))} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13}}>{Array.from({length:25},(_,i)=>2+i*0.5).map(h=><option key={h} value={h}>{fmt(h)}</option>)}</select></div>
-    </div>
-    <div style={{background:C.surface,borderRadius:10,padding:"12px 14px",marginBottom:10}}>
-      <div style={{display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:8,marginBottom:10,textAlign:"center"}}>
-        <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{publishedIsWholeDay?"incl.":(hasHikeInputs||storedApproachH!=null||P.loneApproachH!=null)?(walkInKnown?"":"≥")+hikeH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Approach</div></div>
-        <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{climbKnown?techH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>{publishedIsWholeDay?"Car-to-car":"Climbing"}</div></div>
-        {/* N/A, like the Approach tile beside it, when nothing describes the way down: no stored descent, no walk out (distance or gain) and no rappels (#2336 printed "≥0.0hr"). */}
-        <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{publishedIsWholeDay?"incl.":hasAnyEstimate&&(P.downH>0||P.storedDescentH!=null)?((walkOutKnown||P.storedDescentH!=null)?"":"≥")+P.downH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Descent</div></div>
-        <div><div style={{fontSize:17,fontWeight:700,color:C.amber}}>{hasAnyEstimate?(lowerBound?"≥":"")+P.tripH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Total trip</div></div>
-      </div>
-      <Hr/>
-      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:9}}>
-        <div style={{textAlign:"center",background:sumLate?C.redBg:lowerBound?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:sumLate?C.red:lowerBound?C.text:C.green}}>{publishedIsWholeDay?"N/A":hasAnyEstimate?(lowerBound?"≥":"")+fmt(sumH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. {route.discipline==="bouldering"?"top-out":["sport","trad","toprope","rock","aid","ice","mixed"].indexOf(route.discipline)>=0?"finish":"summit"}</div>{sumLate?<div style={{fontSize:12,color:C.red,marginTop:1}}>{dayOf(sumH)>0?"Overnight":"Leave earlier"}</div>:null}</div>
-        <div style={{textAlign:"center",background:late?C.redBg:lowerBound?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:late?C.red:lowerBound?C.text:C.green}}>{hasAnyEstimate?(lowerBound?"≥":"")+fmt(retH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. return</div>{late?<div style={{fontSize:12,color:C.red,marginTop:1}}>{dayOf(retH)>0?"Overnight":"After dark"}</div>:null}</div>{approachUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — this climb has no recorded "+missHikeLabel+", and anything missing counts as zero. Your real day will be longer."}</div>:null}{climbUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — nothing on file says how long the climbing takes on this route: no pitch count, no published summit time. It counts as zero in the figures above, so your real day will be longer."}</div>:null}{gainShort?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bound — the recorded gain of "+uElev(gainShort.gainFt)+" is less than the "+uElev(gainShort.riseFt)+" between this route’s own trailhead and summit pins. The times above are figured on the smaller number, so your real day will be longer."}</div>:null}{(!hasPublishedSummitH&&!hasDerivedSummitH&&route.pitches&&pitchedFraction(gn(route.grade))<1)?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Climbing time assumes a party moving continuously on ground this easy rather than belaying every pitch. That is an assumption inside the estimate, not something this route reports — if you plan to pitch it out, roughly double that figure."}</div>:null}
-      </div>
-    </div>
-    {(route.segments||[]).map((seg,i)=>{
-      const sh=scarfHrs(seg.distKm,seg.gainM,seg.lossM,fit,pack)+(seg.type==="technical"?techHrs(2,35,gn(route.grade)):0);
-      const cumH=depart+route.segments.slice(0,i+1).reduce((s,sg)=>s+scarfHrs(sg.distKm,sg.gainM,sg.lossM,fit,pack)+(sg.type==="technical"?techHrs(2,35,gn(route.grade)):0),0);
-      return <div key={i} style={{display:"flex",gap:10,alignItems:"center",padding:"6px 0",borderBottom:`1px solid ${C.borderLight}`}}><div style={{width:24,height:24,borderRadius:"50%",background:C.blueBg,border:`1px solid ${C.blueDim}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:"#fff"}}>{i+1}</div><div style={{flex:1}}><div style={{fontSize:13.5,fontWeight:700}}>{seg.name}</div><div style={{fontSize:12,color:C.textMuted}}>{uDist(seg.distKm)} · ↑{uGain(seg.gainM)} · {seg.type}</div></div><div style={{textAlign:"right"}}><div style={{fontSize:13,fontWeight:700,color:C.blue}}>{sh.toFixed(1)}hr</div><div style={{fontSize:12,color:C.textMuted}}>ETA {fmt(cumH)}</div></div></div>;
-    })}
-  </div></div>;
-}
-const HAZ_KW={"Rockfall":["rockfall","rock fall","falling rock","bowling alley"],"Loose rock":["loose rock","loose block","choss","crumbly","kitty litter"],"Verglas / thin ice":["verglas","thin ice","black ice"],"Runout / sparse pro":["runout","run-out","run out","sparse pro","sparse protection","poorly protected","scary lead"],"Deep / unstable snow":["posthol","deep snow","wallow","unconsolidated","rotten snow","sugar snow"],"Cornice":["cornice"],"Crevasse":["crevasse","crevass"],"Serac / icefall":["serac","icefall","ice fall","hanging ice"],"Avalanche":["avalanche","wind slab","wind-slab","wind loading"],"Wet / seeping rock":["wet rock","seeping","seepage","damp rock"],"Route-finding":["route-finding","route finding","routefinding","off-route","off route","got lost","hard to follow"],"High exposure":["exposed","exposure","no-fall","airy"],"Lightning / storms":["lightning","thunderstorm","afternoon storm","storm rolled"],"River / creek crossing":["river crossing","creek crossing","high water"],/* the rest are the log form's own hazard chips, which matched no category above and so could never reach KNOWN HAZARDS */"Moat / bergschrund":["moat","bergschrund","schrund"],"Weak snow bridges":["snow bridge"],"Loose scree / talus":["loose scree","loose talus"],"Parties above":["parties above","party above","climbers above"],"Bees / wasps":["wasps","bees","hornet","yellowjacket"],"Raptor closure":["raptor","nesting closure","peregrine"],"Bad landing":["bad landing","landing zone"]};
-const COND_KW={"Dry / clean":["dry","bluebird","clean rock"],"Wet / damp":["wet","damp","seeping","greasy"],"Snow on route":["snow","boot-pack","bootpack","boot pack"],"Firm névé / boot-pack":["firm neve","supportable","styrofoam","firm snow","good boot"],"Icy":["icy","verglas","glazed"],"Crowded":["crowd","busy","conga","queue","packed"],"Quiet":["quiet","to ourselves","solitude"],"Windy":["wind","gusts","blustery","gale"],"Hot":["hot","baking","scorching"],"Cold":["cold","frigid","freezing"]};
-const NEG_CUES=["no ","not ","n't ","without ","never ","free of ","zero ","none ","no sign of ","didn't see","did not see","didnt see","little to no","absent","wasn't any","were no ","no more "];
-function _negAt(hay,idx){const pre=hay.slice(Math.max(0,idx-24),idx);return NEG_CUES.some(ng=>pre.indexOf(ng)>=0);}
-function _hits(hay,k){let idx=hay.indexOf(k),pos=0,neg=0;while(idx>=0){if(_negAt(hay,idx))neg++;else pos++;idx=hay.indexOf(k,idx+1);}return {pos,neg};}
-const SEASON_OF=m=>(m<=1||m===11)?"winter":m<=4?"spring":m<=7?"summer":"fall";
-function seasonSummary(months){if(!months||!months.length)return null;const u=[...new Set(months)].sort((a,b)=>a-b);const mn=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];const ss=[...new Set(u.map(SEASON_OF))];if(u.length>=7||ss.length>=3)return "year-round";if(u.length===1)return mn[u[0]];if(u.length<=3)return mn[u[0]]+"–"+mn[u[u.length-1]];return ss.map(x=>x[0].toUpperCase()+x.slice(1)).join(", ");}
-function kwScan(reports,vocab){const out={};const nowY=new Date().getFullYear();reports.forEach(r=>{const hay=((r.text||"")+" "+((r.condTags||[]).join(" "))).toLowerCase();const yr=r.date?new Date(r.date+"T12:00:00").getFullYear():null;const mo=r.date?new Date(r.date+"T12:00:00").getMonth():null;const w=r.crewId?1:0.72;Object.keys(vocab).forEach(lab=>{let pos=0,neg=0;vocab[lab].forEach(k=>{const h=_hits(hay,k);pos+=h.pos;neg+=h.neg;});if(!out[lab]&&(pos>0||neg>0))out[lab]={label:lab,count:0,weight:0,year:0,neg:0,months:[],reports:[]};if(pos>0){out[lab].count++;out[lab].weight+=w;if(yr&&yr>out[lab].year)out[lab].year=yr;if(mo!=null)out[lab].months.push(mo);out[lab].reports.push({user:r.user,date:r.date||null,avatar:r.avatar,stars:r.stars});}else if(neg>0){out[lab].neg++;}});});return Object.values(out).filter(o=>o.count>0).map(o=>({label:o.label,count:o.count,weight:o.weight,year:o.year||null,recent:o.year?(nowY-o.year)<=1:false,neg:o.neg,months:o.months,season:seasonSummary(o.months),seasons:[...new Set(o.months.map(SEASON_OF))].length,reports:o.reports})).sort((a,b)=>b.count-a.count||(b.year||0)-(a.year||0));}
-function routeKw(route){const reports=route.activity||[];const off=(route.hazards||[]).map(x=>x.toLowerCase());const hazards=kwScan(reports,HAZ_KW).map(h=>{const official=off.some(o=>HAZ_KW[h.label].some(k=>o.indexOf(k)>=0));const promoted=!official&&h.count>=5&&h.seasons>=2;return {...h,official,promoted};});const conditions=kwScan(reports,COND_KW);const byL={};conditions.forEach(c=>{byL[c.label]=c;});const dry=byL["Dry / clean"],wet=byL["Wet / damp"],icy=byL["Icy"];const conflicts=[];if(dry&&dry.count>=2&&((wet&&wet.count>=2)||(icy&&icy.count>=2)))conflicts.push("Some climbers report dry rock, others wet or icy — conditions vary or are changing fast. Check the most recent reports.");const dts=reports.map(r=>r.date).filter(Boolean).sort();const lastY=dts.length?new Date(dts[dts.length-1]+"T12:00:00").getFullYear():null;const nowY=new Date().getFullYear();const recentN=reports.filter(r=>r.date&&(nowY-new Date(r.date+"T12:00:00").getFullYear())<=1).length;let cs=Math.min(4,reports.length)+(recentN>=2?2:recentN===1?1:0)+((lastY&&nowY-lastY>=3)?-2:0);const confidence=cs>=7?"High":cs>=4?"Medium":"Low";return {total:reports.length,hazards,conditions,conflicts,confidence,recentN,lastY,nowY};}
-/* Exported for scripts/oneoff/probe-consensus-outage-copy.mjs, which renders it directly: it is
-   the one surface here that takes the outage flag as a PROP, so it can be driven without a live
-   query. Same reason seasonShort and campingGate are exported. */
-export function ConsensusPanel({route,activity,hzVotes,onVote,reportsUnavailable,starSum}){
-  /* Road tags are left out of THIS panel's tallies: ROAD CONDITIONS sits on the same tab (at its foot) and
-     says the same thing as sentences, so on a route with few reports TOP CONDITIONS REPORTED filled
-     up with "Road/trailhead closed · Road: washout" and pushed the route's own conditions off it.
-     Overview's one-line summary still counts them — the road has no section of its own there. */
-  const activityAll=useMemo(function(){return (activity||route.activity||[]).map(function(a){return (a&&(a.condTags||[]).some(isRoadTag))?Object.assign({},a,{condTags:a.condTags.filter(function(t){return !isRoadTag(t);})}):a;});},[activity,route.activity]);
-  const [openK,setOpenK]=useState(null);const voteFor=useCallback(function(label){return hzVotes&&hzVotes[route.id+"|"+label];},[route.id,hzVotes]);/* Real reporters' verified status and level (useRealAuthors): both memos read them, so both re-run when they land. */const authorsV=useRealAuthors(activityAll.map(function(a){return a&&a._authorId;}));const c=useMemo(()=>buildConsensus(activityAll,voteFor),[activityAll,voteFor,authorsV]);const k=useMemo(()=>routeKw(Object.assign({},route,{activity:activityAll})),[route.id,activityAll,route.hazards,authorsV]);const kh=useMemo(()=>k.hazards.filter(x=>x.count>=2),[k.hazards]);const kc=useMemo(()=>k.conditions.filter(x=>x.count>=2),[k.conditions]); // eslint-disable-line react-hooks/exhaustive-deps -- authorsV is deliberate: the author cache (useRealAuthors) fills after render and buildConsensus reads it; route is keyed by route.id/route.hazards
-  if(!c)return <div style={{color:C.textMuted,fontSize:13,padding:10,marginBottom:ROUTE_GAP}}>{reportsUnavailable?"Couldn’t load this route's reports — try again in a moment.":"No reports yet — be the first to log this climb."}</div>;const _dates=(activityAll||[]).map(function(a){return a.date;}).filter(Boolean).sort();const _latest=_dates[_dates.length-1];/* ONE age ladder, not two. This was a private reimplementation of core's ago(), and the two
-     rendered the SAME DATE about 700px apart on this tab: "Updated 3mo ago" above "Most recent
-     report: 2mo ago - 2026-06-20", because this ROUNDED (Math.round(75/30) is 3) where ago()
-     FLOORS (2). Measured over every distinct date the seed catalog renders, the two disagreed on
-     34 of 35. It also had no year bucket at all, so a 2023 report read "44mo ago". The
-     four-grade-parsers shape, on dates. ago() is already imported here and already formats
-     c.lastDate below -- the very value _latest duplicates -- so this is a consolidation onto the
-     helper that was already right, not a third spelling. */
-  const _fresh=_latest?"Updated "+ago(_latest):"";const _rc=(activityAll||[]).slice().sort(function(a,b){return String(b.date).localeCompare(String(a.date));})[0];const _rtx=_rc?(((_rc.condTags||[]).join(" ")+" "+(_rc.text||"")).toLowerCase()):"";const _good=/(dry|perfect|firm|bluebird|tacky|cool|crisp|prime|stellar)/.test(_rtx);const _bad=/(wet|greasy|humid|snow|ice|verglas|slick|warm|hot|damp|muddy|seep|soaked)/.test(_rtx);const _trend=(_good&&!_bad)?{a:"↗",l:"trending good",c:C.green}:((_bad&&!_good)?{a:"↘",l:"trending poor",c:C.red}:{a:"→",l:"holding steady",c:C.textSub});
-  const confCol=c.confidence==="high"?C.green:c.confidence==="medium"?C.amber:C.red;
-  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginBottom:ROUTE_GAP}}>{/* A PARTIAL CONSENSUS IS NOT A CONSENSUS. `activity` is route.activity + myReports + dbReports, so a failed reports read silently drops the DB half and buildConsensus runs on what is left — the panel then presents a DERIVED SAFETY JUDGEMENT as if it had seen everything filed. `reportsUnavailable` was already passed in and was consulted ONLY on the empty branch, so exactly this case said nothing. Found by walking the Conditions sub-tab in check:outage for the first time: under a blanket outage the screen CHANGED (3,388 -> 3,384 chars) and acknowledged nothing, which is rule 1. */}{reportsUnavailable?<div style={{fontSize:11.5,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber,borderRadius:8,padding:"7px 9px",marginBottom:10,lineHeight:1.45}}>{"Some reports couldn’t load, so this is based on the ones that did — not on everything filed for this route."}</div>:null}{_fresh?<div style={{display:"flex",alignItems:"center",gap:8,marginBottom:11,fontSize:11.5,fontWeight:600}}><span style={{width:6,height:6,borderRadius:"50%",background:C.green,flexShrink:0,animation:"cm-pulse 2s infinite"}}/><span style={{color:C.textMuted}}>{_fresh}</span><span style={{color:_trend.c,fontWeight:700}}><span className="cm-pop" style={{display:"inline-block"}}>{_trend.a}</span>{" "+_trend.l}</span></div>:null}
-    <div style={SZ3}><CardHead>Community Consensus</CardHead><Pill label={`${c.confidence} confidence · ${c.reportCount} report${c.reportCount===1?"":"s"}`} color={confCol} bg={`${confCol}22`} sm/></div>{c.hazards&&c.hazards.length?<div style={{background:C.redBg,border:`1px solid ${C.red}55`,borderRadius:10,padding:"10px 12px",marginBottom:12}}><div style={{...SUB_LABEL,marginBottom:6,color:C.red}}>Recent hazard reports</div>{c.hazards.map((h,i)=><div key={i} style={{display:"flex",alignItems:"center",gap:7,marginBottom:i<c.hazards.length-1?6:0}}><Av src={h.avatar} size={20}/><div style={{flex:1,minWidth:0}}><div style={{fontSize:12,color:C.text,fontWeight:600}}>{h.tags.join(" · ")}</div><div style={{fontSize:12,color:C.textMuted}}>{h.user+" · "+h.date}</div></div></div>)}</div>:null}{c.lastDate?<div style={{fontSize:12,color:C.textMuted,marginBottom:10}}>Most recent report: <span style={{color:C.textMuted}}>{ago(c.lastDate)+" · "+c.lastDate}</span>{c.verifiedCount?" · "+c.verifiedCount+" of "+c.reportCount+(c.reportCount===1?" report":" reports")+" from verified climbers":""}</div>:null}
-    {(kh.length||kc.length||k.conflicts.length)?<div style={{background:C.surface,border:`1px solid ${C.border}`,borderRadius:10,padding:"11px 12px",marginBottom:13}}><div style={{display:"flex",alignItems:"center",gap:7,marginBottom:9,flexWrap:"wrap"}}><CardHead style={{flex:1}}>What trip reports consistently mention</CardHead><span style={{fontSize:12,fontWeight:700,color:k.confidence==="High"?C.green:k.confidence==="Medium"?C.amber:C.red,background:(k.confidence==="High"?C.green:k.confidence==="Medium"?C.amber:C.redSolid)+"22",borderRadius:6,padding:"2px 7px"}}>{k.confidence+" confidence in these tags"}</span></div>{k.conflicts.length?<div style={{background:C.amberBg,border:`1px solid ${C.amber}55`,borderRadius:8,padding:"8px 10px",marginBottom:10,fontSize:11.5,color:C.amber,lineHeight:1.45}}>{k.conflicts[0]}</div>:null}{kh.length?<div style={{marginBottom:kc.length?11:0}}><div style={{...SUB_LABEL,marginBottom:7}}>Hazards climbers report</div>{kh.map(h=><CRow key={h.label} item={h} kind="h" routeId={route.id} hzVotes={hzVotes} onVote={onVote} openK={openK} setOpenK={setOpenK}/>)}</div>:null}{kc.length?<div><div style={{...SUB_LABEL,marginBottom:7}}>Conditions climbers report</div>{kc.slice(0,6).map(co=><CRow key={co.label} item={co} kind="c" routeId={route.id} hzVotes={hzVotes} onVote={onVote} openK={openK} setOpenK={setOpenK}/>)}</div>:null}<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:9,paddingTop:9,borderTop:`1px solid ${C.borderLight}`}}>From {k.total} report{k.total!==1?"s":""}; a signal needs 2+ to show. Tap a row to see its reports. <span style={{color:C.green,fontWeight:700}}>✓</span> official · <span style={{color:C.amber,display:"inline-flex",verticalAlign:"-0.15em"}}><ActionIcon name="flag" size={12} color={C.amber}/></span> community-flagged · <span style={{color:C.purple,fontWeight:700}}>✦</span> verified across seasons · ● within last year.</div></div>:null}
-    {c.conditions&&Object.keys(c.conditions).length?<div style={{marginBottom:14}}>{(function(){/* The consensus falls back to reports of ANY age when none is recent, which used to sit under "CONDITIONS NOW" looking current. Say which it is. */var ks=Object.keys(c.conditions),allOld=ks.every(function(k){return c.conditions[k].stale;});var newest=ks.map(function(k){return c.conditions[k].mostRecent;}).filter(Boolean).sort().slice(-1)[0];return <><div style={{fontSize:12,color:allOld?C.amber:C.blue,fontWeight:800,letterSpacing:0.4,marginBottom:6}}>{allOld?"LAST REPORTED CONDITIONS":"CONDITIONS NOW"}</div>{allOld?<div style={{fontSize:11.5,color:C.amber,lineHeight:1.45,marginBottom:8}}>{"No one has reported conditions in the last "+RECENT_DAYS+" days"+(newest?" — the newest of these is from "+ago(newest):"")+". Treat them as history, not as today."}</div>:null}</>;})()}{VOLATILE_DISC.indexOf(catOf(route))>=0?<div style={{display:"flex",alignItems:"center",gap:6,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:8,padding:"6px 9px",marginBottom:8,fontSize:11.5,color:C.amber,lineHeight:1.4}}><span aria-hidden="true" style={{display:"inline-flex"}}><ActionIcon name="alert" size={13} color={C.amber}/></span><span>This route's conditions can change fast — verify before you go.</span></div>:null}<div style={{display:"flex",gap:6,flexWrap:"wrap"}}>{[["carToCar","Car-to-car"],["tempF","Temp"],["snow","Snow"],["snowDepth","Postholing"],["freezingFt","Freezing lvl"],["freezing","Freezing lvl"],["water","Water"],["bugs","Bugs"],["trail","Trail"],["seepage","Seepage"],["mud","Mud"],["protection","Protection"],["crowds","Crowds"]].map(function(p){var cd=c.conditions[p[0]];/* a legacy prose freezing level only speaks when no NUMBER has been reported */if(p[0]==="freezing"&&c.conditions.freezingFt)cd=null;return cd?<div key={p[0]} style={{background:C.surface,border:"1px solid "+C.border,borderRadius:8,padding:"5px 9px",fontSize:12}}><span style={{color:C.textMuted}}>{p[1]+" "}</span><span style={{color:C.text,fontWeight:700}}>{p[0]==="tempF"?uTempU(cd.value):p[0]==="freezingFt"?uElev(cd.value):cd.value}</span>{cd.n?<span style={{color:cd.stale?C.amber:C.textMuted,fontSize:11}}>{" · "+cd.n+(cd.mostRecent?" · "+ago(cd.mostRecent):"")}</span>:null}</div>:null;})}</div></div>:null}<div style={{display:"flex",gap:12,alignItems:"center",marginBottom:14}}>
-      <div style={{textAlign:"center"}}>{(function(){/* The SAME star the route header shows: the shared rating (0294, one vote per climber) when anyone has cast one, else the trip-report average. Two different averages on one page read as a contradiction. */var _sh=starSum&&starSum.raters>0&&starSum.stars!=null;var _av=_sh?starSum.stars:c.avgStars;var _n=_sh?starSum.raters:c.ratedCount;return <><div style={{fontSize:29,fontWeight:700,color:_n?C.amber:C.textMuted}}>{_n?_av.toFixed(1):"—"}</div><Stars n={_av}/><div style={{fontSize:12,color:C.textMuted,marginTop:2}}>{!_n?"no star ratings yet":_sh?(_n+" climber"+(_n!==1?"s":"")+" rated"):("avg of "+_n+" rating"+(_n!==1?"s":""))}</div></>;})()}</div>
-      <div style={{flex:1}}><div style={{...SUB_LABEL,marginBottom:5}}>{"TOP CONDITIONS REPORTED · "+c.reportCount+" REPORT"+(c.reportCount!==1?"S":"")}</div>{c.topTags.map(t=><div key={t.tag} style={{marginBottom:9}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",gap:8,marginBottom:3}}><span style={{fontSize:12,color:C.text}}>{t.tag}</span><span style={{fontSize:12,fontWeight:700,color:C.teal,flexShrink:0}}>{t.pct}%</span></div><Bar val={t.pct} color={C.teal} h={6}/></div>)}</div>
-    </div>
-    <div style={{...SUB_LABEL,marginBottom:6}}>SEASONAL HEATMAP · REPORTS PER MONTH</div>
-    <div style={{display:"flex",gap:3}}>{MONTHS.map((mo,i)=>{const md=c.byMonth[i];const intensity=md&&md.rated?Math.min(1,(md.stars/md.rated)/5):0;const isBest=c.bestMonths.includes(mo);return <div key={mo} style={{flex:1,textAlign:"center"}}><div style={{height:32,borderRadius:4,background:intensity>0?`rgba(63,185,80,${0.15+intensity*0.85})`:`${C.border}44`,border:isBest?`1px solid ${C.green}`:"none",display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,color:intensity>0.5?"white":C.textMuted,fontWeight:600}}>{md?md.count:""}</div><div style={{fontSize:12,color:isBest?C.green:C.textMuted,marginTop:2,fontWeight:600}}>{mo}</div></div>;})}</div>
-    {c.bestMonths.length>0?<div style={{display:"flex",gap:6,flexWrap:"wrap",marginTop:10,alignItems:"center"}}><span style={{fontSize:12,color:C.textMuted}}>Best months (avg 4★+):</span>{c.bestMonths.map(mo=>{const _bm=c.byMonth[MONTHS.indexOf(mo)]||{};return <span key={mo} style={{background:C.greenBg,color:C.green,padding:"2px 9px",borderRadius:7,fontSize:12,fontWeight:700}}>{mo}<span style={{fontWeight:500,opacity:0.8}}>{" · "+_bm.rated+" rated"}</span></span>;})}</div>:null}
-    {c.faCredits&&c.faCredits.length?<div style={{marginTop:14,background:C.surface,border:`1px solid ${C.border}`,borderRadius:10,padding:"10px 12px"}}><CardHead tone={C.amber} style={{marginBottom:6}}>First Ascent Credit</CardHead><div style={{display:"flex",gap:6,flexWrap:"wrap"}}>{c.faCredits.map(name=><span key={name} style={{fontSize:12,color:C.amber,background:C.amberBg,border:`1px solid ${C.amber}55`,borderRadius:6,padding:"4px 9px",fontWeight:600}}>{name}</span>)}</div></div>:null}
-    {c.isDeveloped?<div style={{marginTop:12,background:C.greenBg,border:`1px solid ${C.green}55`,borderRadius:10,padding:"10px 12px"}}><div style={{...SUB_LABEL,color:C.green}}>Route Development</div><div style={{fontSize:12.5,color:C.textSub,marginTop:4}}>This route has been bolted or developed by climbers in the community.</div></div>:null}
-    {c.photos&&c.photos.length?<div style={{marginTop:14}}><CardHead style={{marginBottom:8}}>Recent Photos</CardHead><div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:6}}>{c.photos.map((p,i)=><div key={i} style={{position:"relative",paddingBottom:"100%",borderRadius:8,overflow:"hidden",background:C.card,cursor:"pointer",border:`1px solid ${C.border}`}}><img loading="lazy" decoding="async" src={photoThumb(p.url,180)} alt={"Recent condition photo"+(p.user?" by "+p.user:"")} style={{position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover"}} onError={()=>{}} />{p.user?<div style={{position:"absolute",left:0,right:0,bottom:0,padding:"8px 6px 4px",background:"linear-gradient(transparent,rgba(0,0,0,0.72))",fontSize:11,color:C.onSolid,fontWeight:600,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{p.user.split(" ")[0]}</div>:null}</div>)}</div></div>:null}
-  </div>;
-}
-function avyCenterFor(mountain){var st=mountain,g=0;while(st&&st.areaType!=="state"&&st.parentId&&g<8){st=MOUNTAINS.find(function(x){return x.id===st.parentId;});g++;}var stateName=(st&&st.areaType==="state")?st.name:((mountain&&mountain.region)||"");var zone=(mountain&&mountain.avyZone)||"";var host=({Utah:"utahavalanchecenter.org",Washington:"nwac.us",Colorado:"avalanche.state.co.us",California:"sierraavalanchecenter.org"})[stateName]||"avalanche.org";var label=({Utah:"Utah Avalanche Center",Washington:"Northwest Avalanche Center",Colorado:"Colorado Avalanche Information Center",California:"Sierra Avalanche Center"})[stateName]||"avalanche.org";var path=host==="utahavalanchecenter.org"?(zone.indexOf("Uintas")>=0?"/forecast/uintas":zone.indexOf("Salt Lake")>=0?"/forecast/salt-lake":""):"";return [label,host,"https://"+host+path];}
 // The per-discipline safety boxes ("Spotting & landing", "Clipping & lowering", "Gear & anchors"…
 // and "Watch out for on this type of climb") were REMOVED: canned lines chosen by discipline
 // alone, the same four sentences on every route of a kind, which is advice about climbing in
 // general rather than about THIS climb. The Safety tab still carries the route's own hazards,
 // the forecast links and the nearby-fire panel. What stays here is the one control that acts
-// on this route: reporting a bad bolt or anchor on a sport climb.
-function SafetyMatrix({route,activity,mountain,hzVotes,onVote,onOpenHazards,onEdit}){
-  const [openK,setOpenK]=useState(null);
-  const cat=catOf(route);/* The avalanche panel used to appear for every ice/mixed/alpine/mountaineering route with an
-   avy zone on its area. A dry summer rock climb sits in a zone too, and printing a forecast
-   block for it reads as a hazard the route does not have — SEWS's own row says as much
-   ("N/A - non-glaciated summer rock route"). */
-const avyRelevant=["ice","mixed","alpine","mountaineering"].includes(cat)&&routeTerrain(route).avalanche!=="no";/* `activity` is the merged list (seed + yours + every climber’s DB report); route.activity alone is only your own logs on a DB route, so no other climber could ever flag a hazard here. */const _acts=activity||route.activity||[];const kcon=routeKw(Object.assign({},route,{activity:_acts}));const flaggedHaz=kcon.hazards.filter(h=>!h.official&&(h.count>=2||(h.reports||[]).some(rp=>isRecent(rp.date))));const confHaz=hstr=>kcon.hazards.find(h=>h.official&&h.count>=2&&HAZ_KW[h.label].some(kk=>hstr.toLowerCase().indexOf(kk)>=0));const envRelevant=["alpine","mountaineering"].includes(cat);const _objHaz=Array.isArray(route.objHaz)?route.objHaz:(route.objHaz?[route.objHaz]:[]);/* The box merges hazards, objHaz and watchOut. It used to de-duplicate the first two by exact
-     string equality and compare watchOut against neither, so Southwest Rib on SEWS printed
-     "runout slab" twice verbatim and a third time as a full sentence. mergeHazards drops an
-     entry only when every significant word in it appears in one that is kept, so the surviving
-     line always says at least as much.
-     It must be ONE merge over all three. Two — hazards+objHaz for the bullets, then all three for
-     the ⚠ lines — printed a hazards line AND the longer watchOut line that restates it, on 250
-     routes. knownHazards merges once and splits the survivors by field. */
-  const _known=knownHazards(route.hazards,_objHaz,route.watchOut);const _allHaz=_known.hazards;
-  const _watchOut=_known.watchOut;const envHaz=envRelevant?_allHaz.filter(h=>ENV_HAZ_RE.test(h)):[];const physHaz=envRelevant?_allHaz.filter(h=>!ENV_HAZ_RE.test(h)):_allHaz;const _rd=_acts.map(a=>a.date).filter(Boolean).sort();const repN=_acts.length;const lastRepY=_rd.length?new Date(_rd[_rd.length-1]).getFullYear():null;const nowY=new Date().getFullYear();const stale=lastRepY&&(nowY-lastRepY)>=2;const avyCenter=avyCenterFor(mountain);
-  return <div>
-    <CragSafetyNotes route={route} onOpenHazards={onOpenHazards}/>
-    {/* watchOut is rendered inside this box but was not part of its condition, so a route
-        carrying only watch-outs and no hazards printed none of them. */}
-    {(physHaz.length||flaggedHaz.length||_watchOut.length)?<div style={{background:C.redBg,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`1px solid ${C.red}44`}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8}}><div style={{display:"flex",alignItems:"center",gap:7,minWidth:0}}><CardHead tone={C.red}>KNOWN HAZARDS</CardHead></div>{/* The card-header edit control every other route-page card uses; a full-size BTN here outweighed the heading it sat beside. Wrapped so the click event never reaches onOpenHazards (#2584). */}{onOpenHazards?<EditIconButton onClick={function(){onOpenHazards();}} title="Suggest a fix to the known hazards"/>:null}</div>{physHaz.map((h,i)=>{const cf=confHaz(h);return <div key={i} style={{display:"flex",alignItems:"flex-start",gap:7,padding:"3px 0",flexWrap:"wrap"}}><span style={{fontSize:13,color:C.textSub,flex:1,minWidth:120,lineHeight:1.45}}>• {h}</span>{cf?<span style={{fontSize:12,fontWeight:700,color:C.green,background:C.greenBg,borderRadius:6,padding:"2px 7px",whiteSpace:"nowrap"}}>{"✓ confirmed · "+cf.count+" report"+(cf.count===1?"":"s")+(cf.season?" · "+cf.season:"")+(cf.year?" · "+cf.year:"")}</span>:null}</div>;})}{_watchOut.map((w,i)=><div key={"wo"+i} style={{display:"flex",alignItems:"flex-start",gap:7,padding:"3px 0"}}><span aria-hidden="true" style={{display:"inline-flex",flexShrink:0,marginTop:2}}><ActionIcon name="alert" size={13} color={C.amber}/></span><span style={{fontSize:13,color:C.textSub,lineHeight:1.5}}>{w}</span></div>)}{flaggedHaz.length?<div style={{marginTop:10,paddingTop:10,borderTop:`1px solid ${C.red}33`}}><div style={{fontSize:11.5,fontWeight:700,color:C.amber,marginBottom:7}}>Reported by climbers — not yet in official info</div>{flaggedHaz.map(h=><CRow key={h.label} item={h} kind="h" routeId={route.id} hzVotes={hzVotes} onVote={onVote} openK={openK} setOpenK={setOpenK}/>)}<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:7}}>Pulled from recent trip reports and not in the official list yet. Treat them seriously and verify before you commit.</div></div>:null}</div>:<GapNote what="No route-specific hazards recorded" why="The advice above is general to this discipline, not to this line. Nobody has recorded rockfall, cornices, moats or anything else particular to this route — that is missing information, not a clean bill of health." cta="Add what you know" onFix={onOpenHazards?function(){onOpenHazards();}:undefined}/>}{envHaz.length?<div style={{background:C.greenBg,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`1px solid ${C.green}44`}}><CardHead tone={C.green} style={{marginBottom:8}}>WILDLIFE & SEASONAL NOTICES</CardHead>{envHaz.map((h,i)=><div key={i} style={{display:"flex",alignItems:"flex-start",gap:7,padding:"3px 0"}}><span style={{fontSize:13,color:C.textSub,flex:1,lineHeight:1.45}}>• {h}</span></div>)}</div>:null}{kcon.conflicts.length?<div style={{display:"flex",alignItems:"flex-start",gap:8,background:C.amberBg,border:`1px solid ${C.amber}55`,borderRadius:10,padding:"9px 12px",marginBottom:12}}><span style={{flexShrink:0}}><ActionIcon name="alert" size={14} color={C.amber}/></span><div style={{fontSize:11.5,color:C.amber,lineHeight:1.45}}>{kcon.conflicts[0]}</div></div>:null}{repN?<div style={{display:"flex",alignItems:"flex-start",gap:8,background:stale?C.amberBg:C.surface,border:`1px solid ${stale?C.amber:C.border}`,borderRadius:10,padding:"9px 12px",marginBottom:12}}><span style={{flexShrink:0}}><ActionIcon name={stale?"alert":"check"} size={14} color={stale?C.amber:C.textSub}/></span><div style={{fontSize:11.5,color:C.textSub,lineHeight:1.45}}>{repN<2?("Only "+repN+" trip report so far — low confidence. Verify conditions yourself, and consider logging one for the climbers after you."):(stale?("Most recent trip report is from "+lastRepY+" — conditions and hazards can change year to year. Verify current conditions before you go."):("Based on "+repN+" trip reports"+(lastRepY?", most recent "+lastRepY:"")+" · "+kcon.confidence+" data confidence. Hazards and conditions update automatically as climbers log new reports."))}</div></div>:<div style={{display:"flex",alignItems:"flex-start",gap:8,background:C.surface,border:`1px solid ${C.border}`,borderRadius:10,padding:"9px 12px",marginBottom:12}}><span style={{flexShrink:0}}><ActionIcon name="doc" size={14} color={C.textMuted}/></span><div style={{fontSize:11.5,color:C.textSub,lineHeight:1.45}}>Add a trip report from your logbook — be the first to log conditions and hazards for the climbers after you.</div></div>}
-    {/* The rest of seasonal_hazards. The avalanche block below has been the column's only
-        reader, so `exposure` (504 WA routes), `weather.typical` (499) and `weather.probability`
-        (456) were researched, stored, and shown to nobody — the descent_text shape. `crevasses`
-        is read by lib/terrain.js as a glacier SIGNAL, which is use without display.
-        Not gated on avyZone: exposure and afternoon-storm risk apply to rock routes that have
-        no avalanche zone at all, and gating them the same way is what kept them invisible. */}
-    {(()=>{const sh=enrichRoute(route).seasonalHazards||{};const wx=sh.weather||{};
-      // crevasses holds TWO shapes — a string on most rows, {timing,location} on 34 of them.
-      const cv=sh.crevasses;const cvText=typeof cv==="string"?cv:(cv&&typeof cv==="object"?[cv.timing,cv.location].filter(Boolean).join(" "):"");
-      // "N/A - no glacier travel" is a positive statement of absence, and it is what most of
-      // these rows say. Valuable to terrain.js as evidence; noise as a bullet on hundreds of
-      // rock scrambles, so it is suppressed here rather than printed.
-      const rows=[["Exposure",sh.exposure],["Crevasses",saysNotApplicable(cvText)?"":cvText],["Typical weather",wx.typical],["Storm timing",wx.probability]]
-        .filter(r=>r[1]&&String(r[1]).trim());
-      /* EDITABLE (owner note, 2026-10-24: "seasonal hazards isn't editable"). The contribute form has
-         carried a Seasonal hazards field (SEASHAZ_KEYS) since it was built, but this card had no pencil,
-         and an empty one rendered nothing, so the only way in was hunting through Suggest a fix. Empty,
-         it stays a placeholder on the disciplines where exposure, storms and crevasses are the hazard;
-         a crag gets nothing rather than a prompt on every sport line. */
-      if(!rows.length)return onEdit&&!CRAG_CATS.includes(cat)?<div style={{background:C.card,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`1px solid ${C.border}`}}><CardHead style={{marginBottom:8}}>SEASONAL HAZARDS</CardHead><div style={{paddingLeft:9,borderLeft:"2px solid "+C.borderLight}}><span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.55}}>No exposure, weather or crevasse notes for this climb yet</span><button onClick={()=>onEdit("seasonalHazards")} style={{display:"block",marginTop:1,padding:"5px 0",border:"none",background:"none",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer",fontFamily:"inherit"}}>Add seasonal hazards</button></div></div>:null;
-      return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`1px solid ${C.border}`}}>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:8,marginBottom:8}}><CardHead>SEASONAL HAZARDS</CardHead>{onEdit?<AreaEditIconButton onClick={()=>onEdit("seasonalHazards")} title="Edit seasonal hazards" C={C}/>:null}</div>
-        {rows.map(([label,text],i)=><div key={label} style={{marginTop:i?9:0}}>
-          <div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:2}}>{label}</div>
-          <div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{String(text)}</div>
-        </div>)}
-      </div>;})()}
-    {avyRelevant?(()=>{const avy=(enrichRoute(route).seasonalHazards||{}).avalanche;const months=avy&&avy.byMonth?Object.entries(avy.byMonth).sort((a,b)=>monthRank(a[0])-monthRank(b[0])):[];
-  /* THE GATE READ THE AREA AND THE CONTENT LIVES ON THE ROUTE. It was
-     `mountain && mountain.avyZone && avyRelevant`, so a route carrying its own month-by-month
-     avalanche ratings showed NOTHING whenever the area it hangs under had no `avy_zone` string.
-     Measured: 146 of 184 avy-relevant routes with real ratings were hidden that way — Chair Peak's
-     north face has twelve months of them. Same shape as the fire map gated on the seed-only
-     selArea, fixed by reading `dbAreaCtx || selArea`.
-
-     The obvious repair — fall back to the ROUTE's own `avalanche.zone` in the label — is wrong,
-     and the data says so: that field is prose, not a zone name. 196 real values, p50 128
-     characters, 154 over 60, max 327 ("NWAC's daily avalanche forecast does not run during this
-     route's July-September climbing season..."). Putting it where `mountain.avyZone` goes is the
-     season/grade/bivy defect again: a display slot taking a paragraph.
-
-     So the LABEL keeps taking only the short area zone, the ratings gate on themselves, and the
-     route's prose renders as prose beneath the grid where it reads properly. */
-  const _realAvyMonths=months.filter(function(m){return !/^n\/?a$/i.test(String(m[1]||"").trim());});
-  /* Deliberately NOT an IIFE, for the reason the `_peakGeoPm` comment above records: check:fire
-     finds the fire panel's element by looking backwards from `<FireNearRoute` for a
-     `const <name>=(function(){`, so an IIFE-assigned const above `fireEl` makes the guard hunt
-     for the wrong symbol and report the panel missing. */
-  const _avyZoneRaw=avy&&avy.zone?String(avy.zone).trim():"",_avyNote=_avyZoneRaw&&!/^n\/?a\b/i.test(_avyZoneRaw)?_avyZoneRaw:"";
-  if(!(mountain&&mountain.avyZone)&&!_realAvyMonths.length)return null;const AVY_COL={Extreme:[C.red,C.redBg],High:[C.red,C.redBg],Considerable:[C.red,C.redBg],Moderate:[C.amber,C.amberBg],Low:[C.green,C.greenBg]};return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`1px solid ${C.border}`}}><div style={{display:"flex",alignItems:"center",gap:8,marginBottom:8}}><div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:6,flex:1,minWidth:0}}><CardHead>AVALANCHE FORECAST</CardHead>{mountain&&mountain.avyZone?<span style={{fontSize:12,color:C.textMuted}}>{mountain.avyZone}</span>:null}</div>{/* Its zone line and its month ratings are the Avalanche forecast zone and Avalanche danger by month rows of the Seasonal hazards field, so the pencil opens that. */onEdit?<AreaEditIconButton onClick={()=>onEdit("seasonalHazards")} title="Edit the avalanche forecast" C={C}/>:null}</div>{months.length?<div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:6,marginBottom:9}}>{months.map(([month,level])=>{const [col,bg]=AVY_COL[level]||[C.textMuted,C.surface];return <div key={month} style={{background:bg,border:"1px solid "+col+"55",borderRadius:8,padding:"6px 8px"}}><div style={{fontSize:11.5,fontWeight:700,color:col}}>{month}</div><div style={{fontSize:10.5,color:C.textSub}}>{level}</div></div>;})}</div>:null}{_avyNote?<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:7}}><span style={{fontWeight:700}}>{"Forecast coverage: "}</span>{_avyNote}</div>:null}<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>This app doesn't pull a live danger rating — check the forecast below before you go.</div><a href={avyCenter[2]} target="_blank" rel="noreferrer" style={{display:"block",marginTop:8,fontSize:12,color:C.blue,textDecoration:"none"}}>{"→ Full forecast at "+avyCenter[1]}</a></div>;})():null}
-    {/* The BAILOUT & TURNAROUND card was removed app-wide (owner, 2026-10-07), and the lone
-        "+ Add start location" button it left behind went too (owner, 2026-10-15): the start of a
-        climb is where to find it, not a hazard, and it is already filed from the Start of climb
-        section of Add or fix info and from the log form, and shown as START OF CLIMB on Overview. */}
-  </div>;
-}
 /* A grade marker is its TEXT on the photo ("5.10-" beside the pitch), not an icon: the climber
    reads the grade straight off the rock, as on a printed topo. Bold white with a dark halo so it
    reads on snow and on shadowed rock alike. */
@@ -1377,532 +557,8 @@ const avyRelevant=["ice","mixed","alpine","mountaineering"].includes(cat)&&route
 /* What each variation IS, beside the tag it wears on the photo. A yellow line with no words left a
    climber guessing whether it was a direct start, an escape or a mistake (owner, 2026-10-23). The
    labels are topo_lines.variant_labels (0362), aligned with variants by index. */
-/* The topo editor. What it could not do, each of them the difference between a line a climber
-   trusts and one they redraw:
-
-     · A mis-placed point could not be fixed. The only tools were "undo last" and "clear all",
-       so one bad point four points back cost you the four after it. Every point and pin is a
-       draggable handle now, and the selected one can be deleted on its own.
-     · No zoom, on a phone-sized image. A belay pin has to land on a specific ledge; at 390px
-       wide, 1% of the frame is under 4px. The photo zooms (pinch, the wheel, or − / +) and a
-       loupe follows a dragged handle at 3x.
-     · A finger moving across the photo DREW. The editor sampled a point every 1.5% of a drag,
-       so a climber pushing the photo around to see another part of the wall laid a line across
-       it (owner, 2026-10-21). Now only a TAP marks: a press that wanders more than TAP_SLOP
-       pixels pans the photo instead, and two fingers pinch-zoom — how every map app separates
-       "move the view" from "drop a pin", and how photo viewers zoom.
-     · Upload/save errors used alert() — a blocking dialog, in an app that has toasts and
-       inline notices everywhere else. Now an inline error inside the section.
-
-   The route line is red and its variations yellow, both drawn on the Draw line tab (a variation
-   is a line, not a pin); a pitch's grade is a Grade marker on the Add pins tab, printed beside
-   the pitch as on Steph Abegg's overlays. Coordinates stay percentages of the photo: `at` reads
-   the ZOOMED layer's on-screen box, so a tap at 3x stores the same 0..100 point it would at 1x,
-   and a handle pulled off the edge is clamped onto the rock. */
-/* Exported for lib/LogAscent.jsx, which lets a climber draw a topo while logging the climb (lazy import, so the
-   log form does not pull this file into its chunk until the control is tapped). */
-export function TopoDrawer({initial,onCancel,onSubmit,dirtyRef}){
-  // lines[0] is the route line; lines[1..] are its variations.
-  const [lines,setLines]=useState(function(){return [((initial&&initial.points)||[]).slice()].concat(((initial&&initial.variants)||[]).map(function(v){return v.slice();}));});
-  const [act,setAct]=useState(0);         // which line a tap extends
-  // varLabels[l-1] is what variation l is ("5.10a direct start"); saved as topo_lines.variant_labels (0362).
-  const [varLabels,setVarLabels]=useState(function(){return ((initial&&initial.variants)||[]).map(function(_v,i){return String(((initial&&initial.variantLabels)||[])[i]||"");});});
-  const [pins,setPins]=useState((initial&&initial.pins)||[]);const [ar,arOnLoad]=useImgAspect();
-  const [mode,setMode]=useState("line");const [pinCat,setPinCat]=useState(PIN_CATEGORIES[0][0]);
-  const [label,setLabel]=useState((initial&&initial.label)||"");  // optional: which line this is, when a wall holds several
-  const [sel,setSel]=useState(null);      // {kind:"point", l, i} | {kind:"pin", i} — the handle under edit
-  const [loupe,setLoupe]=useState(null);  // {x,y} while a handle is being dragged
-  const [kb,setKb]=useState(null);        // the keyboard cross {x,y}, shown while the photo has keyboard focus
-  const [kbMsg,setKbMsg]=useState("");    // what the last key did, read out (aria-live) and shown
-  const [view,setViewState]=useState({z:1,tx:0,ty:0});
-  const viewRef=useRef(view);
-  const setView=function(v){viewRef.current=v;setViewState(v);};
-  const vpRef=useRef(null);               // the fixed frame on screen
-  const frameRef=useRef(null);            // the zoomed layer: the photo and everything on it
-  const ptrs=useRef(new Map());           // pointerId -> {x,y}, for pinch
-  const gest=useRef(null);                // {kind:"tap"|"pinch"|"point"|"pin", …}
-  const focusPin=useRef(null);            // a new Grade marker's input takes focus, to type the grade
-  const photo=initial&&initial.photoUrl;
-  const points=lines[0];
-  /* UNSAVED WORK IS ASKED ABOUT, NOT DROPPED (topo audit, 2026-10-24). Cancel, the sheet's ✕ and a
-     stray tap on the dark backdrop all threw away every point and marker without a word — minutes of
-     zoomed-in placing gone to one mis-tap. The drawing as it first opened is the baseline; anything
-     different is unsaved, and dirtyRef lets the sheet around the editor ask before closing too. */
-  const snapNow=JSON.stringify([lines,varLabels,pins,label]);const [snap0]=useState(snapNow);const dirty=snapNow!==snap0;
-  useEffect(function(){if(dirtyRef)dirtyRef.current=dirty;},[dirty,dirtyRef]);
-  const cancel=function(){if(!dirty)return onCancel();askConfirm({title:"Discard this drawing?",body:"The points and markers you placed are not saved.",confirmLabel:"Discard"}).then(function(ok){if(ok)onCancel();});};
-
-  // A wheel zooms about the cursor on a desktop. Registered by hand: React's onWheel is passive,
-  // and without preventDefault the sheet behind scrolls as well.
-  useEffect(function(){
-    const el=vpRef.current;if(!el)return undefined;
-    const onWheel=function(e){
-      e.preventDefault();
-      const r=el.getBoundingClientRect();const b=viewRef.current;
-      const v=zoomTopoView(b,b.z*Math.exp(-e.deltaY*0.0015),e.clientX-r.left-el.clientLeft,e.clientY-r.top-el.clientTop,el.clientWidth,el.clientHeight);
-      viewRef.current=v;setViewState(v);
-    };
-    el.addEventListener("wheel",onWheel,{passive:false});
-    return function(){el.removeEventListener("wheel",onWheel);};
-  },[]);
-
-  // Clamped so a drag that leaves the frame parks the handle on the edge rather than storing
-  // a coordinate that is not on the photo.
-  const at=function(cx,cy){
-    const r=frameRef.current.getBoundingClientRect();
-    const c=(v,size)=>Math.min(100,Math.max(0,Math.round((v/size)*1000)/10));
-    return {x:c(cx-r.left,r.width),y:c(cy-r.top,r.height)};
-  };
-  const local=function(cx,cy){const el=vpRef.current;const r=el.getBoundingClientRect();return {x:cx-r.left-el.clientLeft,y:cy-r.top-el.clientTop};};
-  const zoomBy=function(f){const el=vpRef.current;if(!el)return;const b=viewRef.current;setView(zoomTopoView(b,b.z*f,el.clientWidth/2,el.clientHeight/2,el.clientWidth,el.clientHeight));};
-  const two=function(){const a=Array.from(ptrs.current.values());return {d:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)||1,m:local((a[0].x+a[1].x)/2,(a[0].y+a[1].y)/2)};};
-  const setLine=function(l,fn){setLines(function(ls){return ls.map(function(q,qi){return qi===l?fn(q):q;});});};
-  const moveTo=function(g,p){
-    if(g.kind==="point")setLine(g.l,function(a){return a.map(function(q,qi){return qi===g.i?{x:p.x,y:p.y}:q;});});
-    else setPins(function(a){return a.map(function(q,qi){return qi===g.i?Object.assign({},q,{x:p.x,y:p.y}):q;});});
-  };
-  const place=function(p){
-    if(mode==="line"){
-      const l=act<lines.length?act:0;
-      setSel({kind:"point",l:l,i:lines[l].length});
-      setLine(l,function(a){return a.concat([p]);});
-    }else{
-      if(pinCat==="grade")focusPin.current=pins.length;
-      setSel({kind:"pin",i:pins.length});
-      setPins(function(a){return a.concat([{x:p.x,y:p.y,category:pinCat,note:""}]);});
-    }
-  };
-  const onDown=function(e){
-    if(!frameRef.current||!vpRef.current)return;
-    ptrs.current.set(e.pointerId,{x:e.clientX,y:e.clientY});
-    try{e.currentTarget.setPointerCapture(e.pointerId);}catch(_e){}
-    if(ptrs.current.size>=2){                // a second finger: pinch, and nothing gets marked
-      const t=two();gest.current={kind:"pinch",d0:t.d,m0:t.m,base:viewRef.current};setLoupe(null);
-      return;
-    }
-    const h=e.target&&e.target.dataset&&e.target.dataset.h;   // "point:0:3" / "pin:1"
-    if(h){
-      const parts=h.split(":");
-      if(parts[0]==="point"){gest.current={kind:"point",l:+parts[1],i:+parts[2]};setSel({kind:"point",l:+parts[1],i:+parts[2]});setAct(+parts[1]);}
-      else{gest.current={kind:"pin",i:+parts[1]};setSel({kind:"pin",i:+parts[1]});}
-      setLoupe(at(e.clientX,e.clientY));
-      return;
-    }
-    gest.current={kind:"tap",sx:e.clientX,sy:e.clientY,base:viewRef.current,moved:false};
-  };
-  const onMove=function(e){
-    if(!ptrs.current.has(e.pointerId))return;
-    ptrs.current.set(e.pointerId,{x:e.clientX,y:e.clientY});
-    const g=gest.current;const el=vpRef.current;if(!g||!el||!frameRef.current)return;
-    if(g.kind==="pinch"){
-      if(ptrs.current.size<2)return;
-      const t=two();const b=g.base;const nz=Math.min(ZOOM_MAX,Math.max(1,b.z*t.d/g.d0));
-      setView(clampTopoView({z:nz,tx:t.m.x-(g.m0.x-b.tx)*nz/b.z,ty:t.m.y-(g.m0.y-b.ty)*nz/b.z},el.clientWidth,el.clientHeight));
-      return;
-    }
-    if(g.kind==="tap"){
-      const dx=e.clientX-g.sx,dy=e.clientY-g.sy;
-      if(!g.moved&&Math.hypot(dx,dy)<TAP_SLOP)return;
-      g.moved=true;
-      setView(clampTopoView({z:g.base.z,tx:g.base.tx+dx,ty:g.base.ty+dy},el.clientWidth,el.clientHeight));
-      return;
-    }
-    const p=at(e.clientX,e.clientY);setLoupe(p);moveTo(g,p);
-  };
-  const onUp=function(e){
-    if(!ptrs.current.has(e.pointerId))return;
-    ptrs.current.delete(e.pointerId);
-    const g=gest.current;
-    if(g&&g.kind==="pinch"){
-      // Lifting one finger of a pinch leaves a pan, never a tap: that finger never "tapped".
-      if(ptrs.current.size===1){const r=Array.from(ptrs.current.values())[0];gest.current={kind:"tap",sx:r.x,sy:r.y,base:viewRef.current,moved:true};}
-      else if(!ptrs.current.size)gest.current=null;
-      return;
-    }
-    if(ptrs.current.size)return;
-    gest.current=null;setLoupe(null);
-    if(e.type==="pointerup"&&g&&g.kind==="tap"&&!g.moved&&frameRef.current)place(at(e.clientX,e.clientY));
-  };
-
-  const delSel=function(){
-    if(!sel)return;
-    if(sel.kind==="point")setLine(sel.l,function(a){return a.filter(function(_q,i){return i!==sel.i;});});
-    else setPins(function(a){return a.filter(function(_q,i){return i!==sel.i;});});
-    setSel(null);
-  };
-  const lineName=function(l){return l===0?"Route line":(lines.length>2?"Variation "+l:"Variation");};
-  /* KEYBOARD DRAWING (WCAG 2.1.1). The photo used to take pointer input only, so a climber who cannot
-     use a pointer could correct a line (Undo, Delete) but never draw one. The photo frame now takes
-     focus: the arrow keys move a cross over the photo (Shift for bigger steps) and Enter or Space
-     places a point or marker there; [ and ] select the previous or next point, the arrow keys then
-     move it, Delete removes it and Escape lets it go. Each key says what it did in the line under
-     the photo, which is a live region, so a screen reader hears it too. */
-  const kbPos=function(){
-    if(sel&&sel.kind==="point")return lines[sel.l]&&lines[sel.l][sel.i];
-    if(sel&&sel.kind==="pin")return pins[sel.i];
-    return kb||{x:50,y:50};
-  };
-  const pct=function(v){return Math.round(v)+"%";};
-  const onKey=function(e){
-    const k=e.key;const step=e.shiftKey?5:1;
-    const d={ArrowLeft:[-step,0],ArrowRight:[step,0],ArrowUp:[0,-step],ArrowDown:[0,step]}[k];
-    if(d){
-      e.preventDefault();
-      const q=kbPos();if(!q)return;
-      const n={x:Math.min(100,Math.max(0,Math.round((q.x+d[0])*10)/10)),y:Math.min(100,Math.max(0,Math.round((q.y+d[1])*10)/10))};
-      if(sel){moveTo(sel,n);setKbMsg((sel.kind==="point"?lineName(sel.l)+", point "+(sel.i+1):"Marker "+(sel.i+1))+" moved to "+pct(n.x)+" across, "+pct(n.y)+" down.");}
-      else{setKb(n);setKbMsg("Cross at "+pct(n.x)+" across, "+pct(n.y)+" down.");}
-      return;
-    }
-    if(k==="Enter"||k===" "){
-      e.preventDefault();
-      if(sel){setSel(null);setKbMsg("Done moving. Arrow keys move the cross again.");return;}
-      const q=kb||{x:50,y:50};place(q);
-      setKbMsg(mode==="line"?("Point "+((lines[act<lines.length?act:0]||[]).length+1)+" added to the "+lineName(act<lines.length?act:0).toLowerCase()+"."):((pinText(pinCat)||"Marker")+" placed."));
-      return;
-    }
-    if(k==="["||k==="]"){
-      e.preventDefault();
-      const list=mode==="line"?(lines[act]||[]):pins;if(!list.length){setKbMsg("Nothing to select yet.");return;}
-      const cur=sel&&(mode==="line"?(sel.kind==="point"&&sel.l===act):sel.kind==="pin")?sel.i:(k==="]"?-1:list.length);
-      const i=(cur+(k==="]"?1:-1)+list.length)%list.length;
-      setSel(mode==="line"?{kind:"point",l:act,i:i}:{kind:"pin",i:i});
-      setKbMsg((mode==="line"?lineName(act)+", point "+(i+1):"Marker "+(i+1))+" of "+list.length+" selected. Arrow keys move it.");
-      return;
-    }
-    if((k==="Delete"||k==="Backspace")&&sel){e.preventDefault();delSel();setKbMsg("Deleted.");return;}
-    // Escape lets go of a selection (data-keeps-escape holds the dialog's own Escape back while one is
-    // held); with nothing selected it reaches the dialog, which closes as usual.
-    if(k==="Escape"&&sel){e.preventDefault();setSel(null);setKbMsg("Selection cleared.");}
-  };
-  const sm=on=>({...CHIP,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.onSolid:C.textSub});
-  const btn={flex:1,padding:8,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:12.5,cursor:"pointer"};
-  const nums=pinNums(pins);
-  const inv="translate(-50%,-50%) scale("+(1/view.z)+")";   // handles keep their size while the photo zooms
-  const handle=function(kind,l,i,x,y,col,cat){
-    const on=!!sel&&sel.kind===kind&&sel.i===i&&(kind!=="point"||sel.l===l);
-    if(kind==="pin"){
-      if(cat==="grade")return <span key={"pin"+i} data-h={"pin:"+i} title="Grade — drag to move"
-        style={{position:"absolute",left:x+"%",top:y+"%",transform:inv,lineHeight:0,cursor:"grab",touchAction:"none",padding:4}}><GradeTag text={pins[i].note||"Grade?"} size={13} on={on}/></span>;
-      const sz=on?26:20;return <span key={"pin"+i} data-h={"pin:"+i} title={pinLabel(cat)+" — drag to move"}
-      style={{position:"absolute",left:x+"%",top:y+"%",width:sz,height:sz,transform:inv,lineHeight:0,cursor:"grab",touchAction:"none"}}><PinIcon cat={cat} size={sz} on={on}/><PinNum n={nums[i]} style={{position:"absolute",right:-8,bottom:-6}}/></span>;}
-    /* SMALL DOT, BIG TARGET (owner, 2026-10-23: "make the dots smaller and more precise"). The dot a
-       climber sees is 7px (11 when selected, with a white ring) so it covers the hold it marks rather
-       than the ledge around it; the 28px transparent box around it is what a finger grabs, so it is
-       no harder to pick up. Its centre is the stored point. The inner dot ignores the pointer, so the
-       handle's data-h is what onDown reads. */
-    const dim=l!==act;const dd=on?11:7;
-    return <span key={"pt"+l+":"+i} data-h={"point:"+l+":"+i} title={lineName(l)+", point "+(i+1)+" — drag to move"}
-      style={{position:"absolute",left:x+"%",top:y+"%",width:28,height:28,marginLeft:-14,marginTop:-14,transform:"scale("+(1/view.z)+")",transformOrigin:"50% 50%",cursor:"grab",touchAction:"none"}}>
-      <span style={{position:"absolute",left:"50%",top:"50%",width:dd,height:dd,marginLeft:-dd/2,marginTop:-dd/2,boxSizing:"border-box",pointerEvents:"none",
-        borderRadius:"50%",background:col,opacity:dim&&!on?0.6:1,border:(on?2:1)+"px solid "+(on?C.onSolid:"rgba(0,0,0,0.85)"),
-        boxShadow:on?"0 0 0 2px "+C.blue+"99":"0 0 0 1px rgba(255,255,255,0.35)"}}/>
-    </span>;
-  };
-  const pinText=function(cat){return (PIN_CATEGORIES.find(function(c){return c[0]===cat;})||[])[1];};
-  // A Grade marker nobody typed a grade into is dropped on save rather than stored as "?".
-  const cleanPins=function(){return pins.filter(function(p){return p.category!=="grade"||(p.note||"").trim();}).map(function(p){return p.category==="grade"?Object.assign({},p,{note:p.note.trim()}):p;});};
-  // A variation with fewer than two points is not a line and is dropped; its label goes with it, so the two arrays stay aligned.
-  const keptVar=lines.slice(1).map(function(v,i){return {v:v,t:String(varLabels[i]||"").trim()};}).filter(function(o){return o.v.length>=2;});
-  const variants=keptVar.map(function(o){return o.v;});
-  const canSave=points.length>=2||variants.length>0||cleanPins().length>0;
-  const lastEmpty=lines.length>1&&!lines[lines.length-1].length;
-  const swatch=function(col,dashed){return <TopoSwatch color={col} dashed={dashed}/>;};
-  return <div>
-    <div style={{display:"flex",gap:6,marginBottom:8}}>{[["line","Draw line"],["pin","Add pins"]].map(function(m){return <button key={m[0]} onClick={function(){setMode(m[0]);setSel(null);}} style={sm(mode===m[0])}>{m[1]}</button>;})}</div>
-    {mode==="line"?<div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:8}}>
-      {lines.map(function(_l,l){var on=act===l;var col=l===0?TOPO_RED:TOPO_VAR;var vl=l>0?String(varLabels[l-1]||"").trim():"";return <button key={l} onClick={function(){setAct(l);setSel(null);}} aria-current={on?"true":undefined} style={{...CHIP,border:"1px solid "+(on?col:C.border),background:on?col+"22":C.surface,color:on?C.text:C.textSub,display:"inline-flex",alignItems:"center",gap:6,maxWidth:"100%"}}>{swatch(col,l>0)}<span style={{overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lineName(l)+(vl?" · "+vl:"")}</span></button>;})}
-      {lines.length<6?<button onClick={function(){if(lastEmpty){setAct(lines.length-1);}else{setLines(function(ls){return ls.concat([[]]);});setVarLabels(function(a){var n=a.slice();while(n.length<lines.length)n.push("");return n;});setAct(lines.length);}setSel(null);}} style={{...CHIP,border:"1px dashed "+C.border,background:C.surface,color:C.textSub}}>+ Variation</button>:null}
-    </div>:null}
-    {/* The caption that tells a reader what this yellow line IS. No cap: a variation's reason can take a sentence ("goes left at the roof to avoid the wet chimney — 5.10a, runout"). */}
-    {(mode==="line"&&act>0)?<input aria-label={"What is "+lineName(act).toLowerCase()+"? (optional)"} value={varLabels[act-1]||""} onChange={function(e){var v=e.target.value;setVarLabels(function(a){var n=a.slice();while(n.length<act)n.push("");n[act-1]=v;return n;});}} placeholder="What is this variation? e.g. 5.10a direct start (optional)" style={{width:"100%",boxSizing:"border-box",padding:"8px 10px",borderRadius:8,border:"1px solid "+TOPO_VAR+"88",background:C.card,color:C.text,fontSize:13,outline:"none",marginBottom:8}}/>:null}
-    {mode==="pin"?<div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:8}}>{PIN_CATEGORIES.map(function(c){return <button key={c[0]} onClick={function(){setPinCat(c[0]);}} aria-current={pinCat===c[0]?"true":undefined} style={{...CHIP,border:"1px solid "+(pinCat===c[0]?c[2]:C.border),background:pinCat===c[0]?c[2]+"22":C.surface,color:pinCat===c[0]?(c[0]==="grade"?C.text:c[2]):C.textSub,display:"inline-flex",alignItems:"center",gap:6}}><PinIcon cat={c[0]} size={16}/>{c[1]}</button>;})}</div>:null}
-    <div style={{fontSize:11.5,color:C.textMuted,marginBottom:6,lineHeight:1.45}}>{mode==="line"?("Tap the photo to add a point to the "+(act===0?"route line (red)":"variation (yellow, dashed)")+". Drag to move around the photo; pinch or use + to zoom in for a precise point. Drag a dot to move it."):(pinCat==="grade"?"Tap beside a pitch, then type its grade — e.g. 5.10-. Drag to move around the photo; pinch or use + to zoom.":"Pick a marker — belay station, rappel station… — then tap where it is on the rock. Drag to move around the photo; drag a marker to move it.")}</div>
-    <div style={{display:"flex",gap:6,justifyContent:"flex-end",alignItems:"center",marginBottom:6}}>
-      {view.z>1?<span style={{fontSize:11.5,color:C.textMuted,marginRight:"auto"}}>{(Math.round(view.z*10)/10)+"×"}</span>:null}
-      <button onClick={function(){zoomBy(1/1.6);}} disabled={view.z<=1} aria-label="Zoom out" style={Object.assign(sm(false),{minWidth:34,opacity:view.z<=1?0.45:1})}>−</button>
-      <button onClick={function(){zoomBy(1.6);}} disabled={view.z>=ZOOM_MAX} aria-label="Zoom in" style={Object.assign(sm(false),{minWidth:34,opacity:view.z>=ZOOM_MAX?0.45:1})}>+</button>
-      <button onClick={function(){setView({z:1,tx:0,ty:0});}} disabled={view.z<=1} aria-label="Fit the whole photo" style={Object.assign(sm(false),{opacity:view.z<=1?0.45:1})}>Fit</button>
-    </div>
-    {/* touchAction:"none" is load-bearing: without it the browser claims the gesture for
-        scrolling and pinching, and neither ever reaches these handlers on a touch screen.
-
-        HONEST NOTE ON check:clickable: this surface used to be a <div onClick> and was counted
-        in that guard's mouse-only baseline. Pointer handlers are not onClick, so the scanner no
-        longer sees it and the baseline drops by one — that is the guard losing sight of a
-        control, NOT the control becoming keyboard-operable. Placing points on a photo has no
-        sensible key-by-key equivalent, so it stayed pointer-driven -- until 2026-10-23, when the
-        accessibility audit counted it as the one thing in the app a keyboard user could not do.
-        The frame now takes focus and its own keys (onKey above): a cross to place points, [ and ]
-        to select one, arrows to move it. Undo last point, Delete selected, Clear all and the zoom
-        buttons are real <button>s, as are the mode, line and category chips. */}
-    <div ref={vpRef} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}
-      tabIndex={0} role="application" aria-label={"Topo photo. "+(mode==="line"?"Drawing the "+lineName(act).toLowerCase():"Placing "+((pinText(pinCat)||"markers").toLowerCase()))} aria-describedby="topo-kb-help"
-      onKeyDown={onKey} data-keeps-escape={sel?"true":undefined} onFocus={function(){if(!kb&&!sel)setKb({x:50,y:50});}} onBlur={function(){setKb(null);}}
-      style={{position:"relative",width:"100%",aspectRatio:ar||"4 / 3",background:C.card,borderRadius:9,overflow:"hidden",cursor:view.z>1?"grab":"crosshair",marginBottom:9,border:"1px solid "+C.border,touchAction:"none",userSelect:"none"}}>
-      <div ref={frameRef} style={{position:"absolute",inset:0,transformOrigin:"0 0",transform:"translate("+view.tx+"px,"+view.ty+"px) scale("+view.z+")"}}>
-        {photo?<img loading="lazy" decoding="async" src={photo} alt="Photo to draw the topo line on" onLoad={arOnLoad} draggable={false} style={TOPO_IMG}/>:<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,color:C.textMuted}}>Tap to place points</div>}
-        {/* The zoom is a CSS scale on this layer, which non-scaling-stroke does not undo: divide it out so the line stays a thin line at 6x. */}<TopoLineOverlay points={points} variants={lines.slice(1)} lineW={2/view.z}/>
-        {lines.map(function(ln,l){return ln.map(function(p,i){return handle("point",l,i,p.x,p.y,l===0?TOPO_RED:TOPO_VAR);});})}
-        {kb&&!sel?<span aria-hidden="true" style={{position:"absolute",left:kb.x+"%",top:kb.y+"%",width:26,height:26,transform:inv,pointerEvents:"none",boxSizing:"border-box",border:"2px solid #fff",borderRadius:"50%",boxShadow:"0 0 0 2px rgba(0,0,0,0.75)"}}><span style={{position:"absolute",left:"50%",top:-6,bottom:-6,width:2,marginLeft:-1,background:C.onSolid}}/><span style={{position:"absolute",top:"50%",left:-6,right:-6,height:2,marginTop:-1,background:C.onSolid}}/></span>:null}
-        {pins.map(function(p,i){return handle("pin",0,i,p.x,p.y,pinColor(p.category),p.category);})}
-      </div>
-      {(loupe&&photo)?<div style={{position:"absolute",top:8,right:8,width:104,height:104,borderRadius:"50%",overflow:"hidden",border:"2px solid "+C.blue,boxShadow:"0 6px 18px rgba(0,0,0,0.55)",pointerEvents:"none",
-        backgroundImage:"url("+photo+")",backgroundRepeat:"no-repeat",backgroundSize:(LOUPE_Z*view.z*100)+"% "+(LOUPE_Z*view.z*100)+"%",backgroundPosition:loupe.x+"% "+loupe.y+"%"}}>
-        <span style={{position:"absolute",left:"50%",top:"50%",width:11,height:11,marginLeft:-5.5,marginTop:-5.5,borderRadius:"50%",border:"1.5px solid "+C.blue,background:"rgba(255,255,255,0.25)"}}/>
-      </div>:null}
-    </div>
-    <div id="topo-kb-help" style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginBottom:4}}>Keyboard: Tab to the photo, then arrow keys move the cross (Shift for bigger steps) and Enter places a point. [ and ] select a point, the arrow keys move it, Delete removes it, Esc lets go.</div>
-    <div role="status" aria-live="polite" style={{fontSize:12,color:C.textSub,minHeight:kbMsg?17:0,marginBottom:kbMsg?6:0}}>{kbMsg}</div>
-    <div style={{display:"flex",gap:12,marginBottom:9}}>
-      <button onClick={function(){if(mode==="line")setLine(act,function(p){return p.slice(0,-1);});else setPins(function(p){return p.slice(0,-1);});setSel(null);}} style={btn}>{mode==="line"?"Undo last point":"Undo last marker"}</button>
-      <button onClick={delSel} disabled={!sel} style={Object.assign({},btn,{opacity:sel?1:0.45,cursor:sel?"pointer":"default"})}>{sel?("Delete "+(sel.kind==="point"?"point "+(sel.i+1):"marker")):"Delete selected"}</button>
-      <button onClick={function(){var _clr=function(){setLines([[]]);setVarLabels([]);setAct(0);setPins([]);setSel(null);};if(!lines.some(function(l){return l.length;})&&!pins.length)return _clr();askConfirm({title:"Clear the whole topo?",body:"Every line, point and marker you have drawn is removed.",confirmLabel:"Clear all"}).then(function(ok){if(ok)_clr();});}} style={btn}>Clear all</button>
-    </div>
-    {pins.length?<div style={{marginBottom:9}}>{pins.map(function(pn,i){var g=pn.category==="grade";var ph=g?"Grade — e.g. 5.10-":pinText(pn.category)+" — note (optional)";return <div key={i} style={{display:"flex",gap:6,alignItems:"center",marginBottom:6}}>{nums[i]!=null?<PinNum n={nums[i]}/>:null}<PinIcon cat={pn.category} size={18}/><input ref={function(el){if(el&&focusPin.current===i){focusPin.current=null;el.focus({preventScroll:true});}}} aria-label={ph} value={pn.note} maxLength={g?14:undefined} onChange={function(e){var v=e.target.value;setPins(function(p){return p.map(function(x,xi){return xi===i?Object.assign({},x,{note:v}):x;});});}} onFocus={function(){setSel({kind:"pin",i:i});}} placeholder={ph} style={{flex:1,padding:"6px 9px",borderRadius:8,border:"1px solid "+((sel&&sel.kind==="pin"&&sel.i===i)?C.blue:C.border),background:C.surface,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/></div>;})}</div>:null}
-    {/* Two topos of one wall used to be "Latest" and "Alt 1": nothing said which drew the direct start and which the ramp. Optional, 60 characters, stored in topo_lines.label, shown on the thumbnail and as the line's chip in the viewer. */}
-    <input aria-label="Name this line (optional)" value={label} maxLength={60} onChange={function(e){setLabel(e.target.value);}} placeholder="Name this line (optional) — e.g. direct start, left-hand variation" style={{width:"100%",boxSizing:"border-box",padding:"8px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:13,outline:"none",marginBottom:10}}/>
-    <div style={{display:"flex",gap:12}}>
-      <button onClick={cancel} style={{flex:1,padding:9,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
-      <button disabled={!canSave} onClick={function(){onSubmit({points:points,variants:variants,variantLabels:keptVar.map(function(o){return o.t;}),pins:cleanPins(),label:label.trim()||null});}} style={{flex:2,padding:9,background:canSave?C.blueSolid:C.border,color:C.onSolid,border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Save topo</button>
-    </div>
-  </div>;
-}
-function splitItineraryDays(text){
-  if(!text)return {days:[],multi:false};
-  const re=/\bDay\s+(\d+)\s*(?:of\s*\d+)?\s*[:—\-)]\s*/gi;
-  const marks=[];let m;
-  while((m=re.exec(text))){marks.push({idx:m.index,end:re.lastIndex,n:parseInt(m[1],10)});}
-  if(!marks.length)return {days:[{n:1,text:text.trim()}],multi:false};
-  const out=[];
-  for(let i=0;i<marks.length;i++){
-    const start=marks[i].end;const end=(i+1<marks.length)?marks[i+1].idx:text.length;
-    const seg=text.slice(start,end).trim().replace(/^[;,.\s]+/,"").replace(/[;,.\s]+$/,"");
-    if(seg)out.push({n:marks[i].n,text:seg});
-  }
-  return {days:out.length?out:[{n:1,text:text.trim()}],multi:out.length>1};
-}
-function splitItinerarySteps(text){return text.split(/;\s+/).map(s=>s.trim()).filter(Boolean);}
-function ItineraryView({route,activity,onSeeReports,onSeeSeason,seasonOnConditions,onContribute,myItin,onSaveMyItin,crewsForRoute,onShareItinToCrew,notify}){
-  const it=route.itinerary;const _acts=activity||route.activity||[];const k=routeKw(Object.assign({},route,{activity:_acts}));const repN=_acts.length;
-  const [showBuilder,setShowBuilder]=useState(false);const [draft,setDraft]=useState(null);const [pickCrew,setPickCrew]=useState(false);const [pickedKey,setPickedKey]=useState(null);
-  const avail=getAvailableItineraries(route);
-  const startBuilder=function(seedItin){setDraft(seedItin?{days:itinDaysToDraft(seedItin.days)}:{days:[blankItinDay()]});setPickedKey(null);setShowBuilder(true);};
-  const draftContentDays=function(){return (itinDraftToStructured(draft).days||[]).length;};
-  // itinDraftToStructured drops contentless days, so an untouched builder yields zero
-  // days. Saving that used to toast "Saved your plan — added to My Objectives", bump
-  // the objectives count and store nothing. Refuse instead of reporting success.
-  const saveDraft=function(){if(!draftContentDays())return;onSaveMyItin&&onSaveMyItin(itinDraftToStructured(draft));setShowBuilder(false);setDraft(null);setPickedKey(null);};
-  const days=(it&&it.days&&it.days.length)?it.days:[];const proseIt=(typeof it==="string"&&it.trim())?it.trim():null;
-  const parsed=(!days.length&&proseIt)?splitItineraryDays(proseIt):{days:[],multi:false};
-  const totG=days.reduce((a,d)=>a+(d.gainFt||0),0),totL=days.reduce((a,d)=>a+(d.lossFt||0),0),totMi=days.reduce((a,d)=>a+(d.miles||0),0);
-  const conf=k.confidence;const confC=conf==="High"?C.green:conf==="Medium"?C.amber:C.red;
-  const flagged=k.hazards.filter(h=>!h.official&&h.count>=2).length;
-  const chip=(t,col)=><span style={{fontSize:12,fontWeight:700,color:col,background:col+"22",borderRadius:7,padding:"3px 8px"}}>{t}</span>;
-  // `fill`: a day card's row. Five pills at the TOTAL row's padding need ~320px and a day card on a 390px phone has ~294, so the
-  // fifth (pack weight) wrapped onto a row of its own; tighter pills that share the row's width keep all five on one line down to
-  // a 360px phone (measured on Goode NE Buttress), and below that a wrapped pill stretches to fill its row rather than sit alone.
-  const stat=(k,ic,val,col,fill)=>val==null||val===""?null:<div key={k} style={{display:"flex",alignItems:"center",justifyContent:"center",gap:4,background:C.surface,borderRadius:8,padding:fill?"5px 5px":"5px 9px",...(fill?{flex:"1 1 auto",whiteSpace:"nowrap"}:null)}}>{ic?<span style={{fontSize:12}}>{ic}</span>:null}<span style={{fontSize:12,fontWeight:700,color:col||C.text}}>{val}</span></div>;
-  return <div>
-    <SL>Trip plan</SL>
-    {(days.length||parsed.multi||proseIt)?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:9}}>A <b style={{color:C.textSub}}>recommended</b> itinerary based on how parties commonly climb this route — not the only way to do it. Faster/slower parties, different camps, or a different order are all normal.</div>:null}
-    <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:8}}>{chip(conf+" confidence",confC)}{repN?<span {...clickable(()=>onSeeReports&&onSeeReports())} style={{cursor:"pointer"}} title="Jump to trip reports">{chip(repN+(repN===1?" trip report":" trip reports")+" →",C.blue)}</span>:chip("0 trip reports",C.textMuted)}{(route.season&&!["trad","sport"].includes(catOf(route)))?chip("Typical season: "+seasonShort(route.season),C.teal):null}{/* The month-by-month guide, as a chip that GOES there (owner note 2026-10-28). It was an italic
-      "Full month-by-month seasonal guidance is further down this tab." under the chips, which was false on every route with a
-      Conditions tab: SEASONAL GUIDANCE moved there (#2701) and the sentence stayed. */(route.seasonalGuidance&&onSeeSeason&&!["trad","sport"].includes(catOf(route)))?<span {...clickable(onSeeSeason)} style={{cursor:"pointer"}} title="Open the month-by-month season guide">{chip(seasonOnConditions?"Month by month · Conditions tab →":"Month by month →",C.blue)}</span>:null}</div>{(route.season&&!["trad","sport"].includes(catOf(route))&&seasonShort(route.season)!==seasonTidy(route.season))?<div style={{fontSize:12,color:C.textSub,margin:"6px 0 0",lineHeight:1.5}}>{route.season}</div>:null}{(route.bestSeason&&!route.seasonalGuidance&&!["trad","sport"].includes(catOf(route)))?<div style={{fontSize:12,color:C.textSub,margin:"6px 0 0",lineHeight:1.5}}><b style={{color:C.teal}}>When to go: </b>{route.bestSeason}</div>:null}
-    {/* `cal` holds what is left of the plan's note once its road and closure sentences moved to the road block GETTING THERE reads (owner note 2026-10-28, scripts/oneoff/move-cal-road-notes.mjs). */}{it&&it.cal?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,marginBottom:4}}>{it.cal}</div>:null}
-    {it&&it.totalNote?<div style={{fontSize:12,color:C.textMuted,marginBottom:12}}>{it.totalNote}</div>:<div style={{marginBottom:12}}/>}
-    {/* Where the hours actually came from. Populated on 544 routes and read by nothing until
-        now, which mattered more than most unread fields: the day-by-day times above look
-        equally authoritative whether they came from a trip report, from Beckey, or from
-        "no route-specific trip report was found ... timing estimated from its relationship to
-        Let it Burn/West Face". Sits beside the confidence chip because it is the sentence that
-        chip is summarising. */}
-    
-    {days.map((d,i)=><div key={i} style={{display:"flex",gap:10,marginBottom:ROUTE_GAP}}>
-      <div style={{display:"flex",flexDirection:"column",alignItems:"center",flexShrink:0}}><div style={{width:30,height:30,borderRadius:15,background:C.blueBg,color:C.onSolid,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,fontWeight:700}}>{d.n||i+1}</div>{i<days.length-1?<div style={{flex:1,width:2,background:C.border,marginTop:3,minHeight:18}}/>:null}</div>
-      <div style={{flex:1,background:C.card,border:`1px solid ${C.border}`,borderRadius:12,padding:"11px 13px"}}>
-        <div style={{fontSize:13.5,fontWeight:700,marginBottom:d.objective?5:8,lineHeight:1.35}}>{d.title}</div>{d.objective?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginBottom:9}}><span style={{color:C.blue,fontWeight:700}}>Objective · </span>{d.objective}</div>:null}
-        <div style={{display:"flex",gap:4,flexWrap:"wrap",justifyContent:"center",marginBottom:d.note?8:0}}>{[stat("gain","↑",d.gainFt!=null?uElev(d.gainFt):null,C.green,1),stat("loss","↓",d.lossFt!=null?uElev(d.lossFt):null,C.amber,1),stat("hours","",d.hours?d.hours+" hr":null,C.text,1),stat("miles","",d.miles?uDistMi(d.miles):null,C.text,1),stat("pack","",d.packLb?uMass(d.packLb):null,C.purple,1)]}</div>
-        {d.note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{d.note}</div>:null}{d.schedule&&d.schedule.length?<div style={{marginTop:d.note?10:9,borderTop:"1px solid "+C.borderLight,paddingTop:10,display:"flex",flexDirection:"column",gap:9}}>{d.schedule.map((st,si)=><div key={si} style={{display:"flex",gap:10,alignItems:"flex-start"}}><span style={{flexShrink:0,width:68,fontSize:12,fontWeight:700,color:st.time?C.blue:C.textMuted,lineHeight:1.35,paddingTop:1,textAlign:"right",wordBreak:"break-word"}}>{st.time||""}</span><div style={{flex:1,minWidth:0,borderLeft:"2px solid "+C.borderLight,paddingLeft:11}}><div style={{fontSize:12.5,color:C.text,lineHeight:1.4,fontWeight:600}}>{st.label}</div>{st.detail?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.45,marginTop:2}}>{st.detail}</div>:null}</div></div>)}</div>:null}
-      </div></div>)}
-    {(!days.length&&!parsed.multi)?<div style={{fontSize:12.5,color:C.textSub,background:C.card,border:`1px solid ${C.border}`,borderRadius:12,padding:"11px 13px",marginBottom:ROUTE_GAP}}>No day-by-day plan on file yet for this route.</div>:null}
-    {days.length?<div style={{display:"flex",gap:6,flexWrap:"wrap",justifyContent:"center",background:C.surface,borderRadius:10,padding:"9px 11px",marginBottom:ROUTE_GAP}}><span style={{...SUB_LABEL,alignSelf:"center",marginRight:2}}>TOTAL</span>{stat("days","",days.length+(days.length===1?" day":" days"),C.text)}{stat("gain","↑",uElev(totG),C.green)}{totL?stat("loss","↓",uElev(totL),C.amber):null}{totMi?stat("miles","",uDistMi(Math.round(totMi*10)/10),C.text):null}</div>:null}
-    {days.length?<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5}}>Times and pack weights are estimates for an average party — adjust for your fitness, conditions, and the latest <b style={{color:C.textSub}}>Reports</b> and <b style={{color:C.textSub}}>Safety</b> tabs.{flagged?" Climbers have flagged "+flagged+" hazard"+(flagged!==1?"s":"")+" not in the official info — check Safety before you commit.":""}</div>:null}{(!days.length&&parsed.multi)?<div>{parsed.days.map((d,i)=>{const steps=splitItinerarySteps(d.text);return <div key={i} style={{display:"flex",gap:10,marginBottom:ROUTE_GAP}}><div style={{display:"flex",flexDirection:"column",alignItems:"center",flexShrink:0}}><div style={{width:30,height:30,borderRadius:15,background:C.blueBg,color:C.onSolid,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,fontWeight:700}}>{d.n}</div>{i<parsed.days.length-1?<div style={{flex:1,width:2,background:C.border,marginTop:3,minHeight:18}}/>:null}</div><div style={{flex:1,background:C.card,border:`1px solid ${C.border}`,borderRadius:12,padding:"11px 13px"}}><div style={{fontSize:13.5,fontWeight:700,marginBottom:8}}>{"Day "+d.n}</div>{steps.length>1?<ul style={{margin:0,paddingLeft:18,display:"flex",flexDirection:"column",gap:6}}>{steps.map((s,si)=><li key={si} style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{s}</li>)}</ul>:<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55}}>{d.text}</div>}</div></div>;})}<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>Day-by-day timing is a general guide — adjust for your fitness, conditions, and the latest <b style={{color:C.textSub}}>Reports</b> and <b style={{color:C.textSub}}>Safety</b> tabs.{flagged?" Climbers have flagged "+flagged+" hazard"+(flagged!==1?"s":"")+" not in the official info — check Safety before you commit.":""}</div></div>:null}
-    {(!days.length&&!parsed.multi&&proseIt)?(()=>{const steps=splitItinerarySteps(parsed.days[0].text);return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"12px 14px"}}>{steps.length>1?<ul style={{margin:0,paddingLeft:18,display:"flex",flexDirection:"column",gap:7}}>{steps.map((s,si)=><li key={si} style={{fontSize:12.5,color:C.textSub,lineHeight:1.55}}>{s}</li>)}</ul>:<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.6}}>{parsed.days[0].text}</div>}</div>;})():null}
-    {(!days.length&&!proseIt)?<div style={{background:C.card,border:"1px dashed "+C.border,borderRadius:12,padding:"18px 14px",textAlign:"center"}}><div style={{fontSize:13,fontWeight:700,color:C.text,marginBottom:4}}>No trip plan yet</div><div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:11}}>Climbed this? Add the day-by-day timing — approach, camps, car-to-car — to help the next party.</div><button onClick={()=>onContribute&&onContribute()} style={{...BTN,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.onSolid}}>Add a trip plan</button></div>:null}
-    {onSaveMyItin?<div>
-      <SL>My itinerary</SL>
-      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.4,marginBottom:9}}>Build your own plan for this route — start from a suggested one or from scratch.</div>
-      {!showBuilder?<div>
-        {(myItin&&myItin.days&&myItin.days.length)?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 13px",marginBottom:ROUTE_GAP}}>
-          {myItin.days.map(function(d,i){return <div key={i} style={{marginBottom:i<myItin.days.length-1?7:0,paddingBottom:i<myItin.days.length-1?7:0,borderBottom:i<myItin.days.length-1?"1px solid "+C.border:"none"}}><span style={{fontSize:13,fontWeight:700}}>{"Day "+(d.n||i+1)+(d.title?": "+d.title:"")}</span></div>;})}
-        </div>:null}
-        <div style={{display:"flex",gap:7,flexWrap:"wrap"}}>
-          <button onClick={function(){startBuilder(myItin&&myItin.days&&myItin.days.length?myItin:null);}} style={{...BTN,background:C.card,color:C.blue,border:"1px solid "+C.border}}>{(myItin&&myItin.days&&myItin.days.length)?"Edit my plan":"+ Plan your own itinerary"}</button>
-          {(myItin&&myItin.days&&myItin.days.length)?<button onClick={function(){shareOrCopy(route.name+" — plan",itinShareText(myItin,route),notify);}} aria-label="Share my plan" style={{...BTN,background:C.card,color:C.blue,border:"1px solid "+C.border}}>{"Share…"}</button>:null}
-          {(myItin&&myItin.days&&myItin.days.length)?<button onClick={function(){printSheet(route.name+" — plan",itinSheetHtml(myItin,route),notify);}} aria-label="Save my plan as a PDF" style={{...BTN,background:C.card,color:C.blue,border:"1px solid "+C.border}}>{"Save as PDF"}</button>:null}
-          {(myItin&&myItin.days&&myItin.days.length&&crewsForRoute&&crewsForRoute.length)?(pickCrew?<div style={{display:"flex",gap:5,flexWrap:"wrap",alignItems:"center"}}>{crewsForRoute.map(function(c,ci){return <button key={c.id} onClick={function(){onShareItinToCrew(c.id,myItin);setPickCrew(false);}} style={{...BTN,background:C.blueBg,color:C.onSolid,border:"1px solid "+C.blueDim}}>{/* Crews have no name column, so every button used to read "→ Crew". The agreed day tells two crews on one route apart. */"→ "+(c.date?"Crew · "+shortDate(c.date):crewsForRoute.length>1?"Crew "+(ci+1):"Your crew")}</button>;})}</div>:<button onClick={function(){setPickCrew(true);}} style={{...BTN,background:C.card,color:C.green,border:"1px solid "+C.green+"55"}}>Share with crew</button>):null}
-        </div>
-      </div>:<div>
-        {avail.length?<div style={{marginBottom:11}}>
-          <div style={{...SUB_LABEL,marginBottom:6}}>START FROM A SUGGESTED PLAN</div>
-          <div style={{display:"flex",flexDirection:"column",gap:6}}>{avail.map(function(a){var on=pickedKey===a.key;return <button key={a.key} onClick={function(){setDraft({days:itinDaysToDraft(a.itin.days)});setPickedKey(a.key);}} aria-current={on?"true":undefined} style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:8,padding:"10px 12px",borderRadius:9,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.card,cursor:"pointer",textAlign:"left",width:"100%",boxSizing:"border-box"}}><div style={{minWidth:0}}><div style={{fontSize:13,fontWeight:700,color:on?C.blue:C.text}}>{a.label}</div>{a.sub?<div style={{fontSize:11.5,color:C.textMuted,marginTop:2}}>{a.sub}</div>:null}</div>{on?<span style={{color:C.blue,fontSize:15,fontWeight:700,flexShrink:0}}>{"✓"}</span>:null}</button>;})}</div>
-        </div>:null}
-        <ItineraryEditor itin={draft||{days:[blankItinDay()]}} onChange={setDraft}/>
-        <div style={{display:"flex",gap:12,marginTop:8}}>
-          <button onClick={function(){setShowBuilder(false);setDraft(null);setPickedKey(null);}} style={{flex:1,padding:9,background:C.card,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
-          <button onClick={saveDraft} disabled={!draftContentDays()} title={draftContentDays()?"":"Add a day title, a note or some numbers first"} style={{flex:2,padding:9,background:draftContentDays()?C.blueSolid:C.surface,color:draftContentDays()?C.onSolid:C.textMuted,border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:draftContentDays()?"pointer":"default"}}>Save my plan</button>
-        </div>
-      </div>}
-    </div>:null}
-  </div>;
-}
 function popInterest(r){return CLIMBERS.filter(c=>c.objectiveIds&&c.objectiveIds.indexOf(r.id)>=0).length;}
-/* The topo box's two states, as a function rather than two ternaries in the JSX, for the reason
-   seasonShort() and campDetail() are functions: it can be RUN. react-query does not surface a
-   cached error under renderToStaticMarkup -- it reports `pending` and masks it -- so a flag read
-   off a hook inside this component is unreachable to an SSR probe, which is exactly why every
-   sibling (ConsensusPanel, CatchLedger, FriendsList, Inbox) takes its flag as a PROP and is
-   provable. TopoSection owns its own query, so the decision comes out instead of the query going
-   up. check:topo-outage-copy executes both branches and renders the healthy one end to end.
 
-   The failing branch must not invite the first topo. The headline already flipped; the
-   explanation under it did not, so an outage read "Couldn't load the topos" and then "Got a clear
-   shot? Add it..." -- honest headline, and a body still presuming there is nothing there. */
-export function topoEmptyCopy(unavailable){
-  return unavailable
-    ?{head:"Couldn’t load the topos",
-      body:"A topo may already be on file for this route — this one list just didn’t load, so this is not a claim that there is none. Check your connection and try again."}
-    :{head:"No topo yet",
-      body:"A topo overlays the route line and markers on a photo of the wall, face, or line. Got a clear shot? Add it and draw the line so the next party can follow it."};
-}
-
-export function TopoSection({route}){
-  const areaId=route.mountainId;const _topoSess=useSession();const _topoUid=_topoSess&&_topoSess.user&&_topoSess.user.id;
-  const [localPhotos,setLocalPhotos]=useState([]);
-  const [localLines,setLocalLines]=useState({});
-  const [busy,setBusy]=useState(false);
-  /* alert() blocked the whole page for a failed upload, in an app that reports every other
-     write inline. It also hid WHICH photo failed, since the dialog outlives the row. This
-     renders in the section, next to the thing that failed, and clears on the next attempt.
-     Not swallowed either way — check:write-feedback exists because a silent failure behind
-     a success message is the worse bug. */
-  const [err,setErr]=useState(null);
-  const [viewerIdx,setViewerIdx]=useState(null);
-  const [drawFor,setDrawFor]=useState(null);
-  /* A topo belongs to the route page it was posted from (0364): areaId is the whole PEAK on an alpine route, so reading by it put a north-face photo on every south-side route. */const dbTopos=useRouteTopos(USE_DB?route.id:null,areaId);const toposUnavailable=!!(USE_DB&&dbTopos&&dbTopos.isError);const topoCopy=topoEmptyCopy(toposUnavailable);/* No signal: useRouteTopos answered with the topos SAVED on this device, which may be fewer than the crag has. */const toposSavedOnly=!!(dbTopos&&dbTopos.data&&dbTopos.data._savedFrom==="media");
-
-  const photos=USE_DB
-    ?(dbTopos.data||[]).map(function(t){var _u=topoPhotoUrl(t.storage_path);return {id:t.id,url:_u,db:true,storagePath:t.storage_path,alt:t.alt||null,caption:t.caption||null,mine:!!(_topoUid&&t.created_by===_topoUid),saveEntry:{url:_u,kind:"topo",areaId:areaId,routeId:route.id,row:t},
-        lines:(t.topo_lines||[]).filter(function(l){return l.route_id===route.id;}).slice().sort(function(a,b){return (b.created_at||"").localeCompare(a.created_at||"");}).map(function(l){return Object.assign({},l,{mine:!!(_topoUid&&l.created_by===_topoUid)});}),
-        /* Lines on this photo by anyone else, for ANY route: deleting the photo would take theirs with it (cascade). */
-        othersDrew:(t.topo_lines||[]).some(function(l){return l.created_by!==_topoUid;})};})
-    :localPhotos.map(function(p){return {id:p.id,url:p.url,db:false,
-        lines:(localLines[p.id]||[]).slice().sort(function(a,b){return b.ts-a.ts;})};});
-
-  const pickFile=function(){
-    const inp=document.createElement("input");inp.type="file";inp.accept="image/*";
-    inp.onchange=function(e){const f=e.target.files&&e.target.files[0];if(f)addPhoto(f);};
-    inp.click();
-  };
-  const addPhoto=function(file){
-    setErr(null);
-    if(USE_DB){
-      setBusy(true);
-      uploadTopoPhoto(areaId,route.id,file).then(function(t){
-        setBusy(false);dbTopos.refetch();
-        setDrawFor({id:t.id,url:topoPhotoUrl(t.storage_path),db:true,lines:[],fresh:true});
-      }).catch(function(e){setBusy(false);setErr((e&&e.message)||"Couldn't upload that photo.");});
-    } else {
-      const rd=new FileReader();
-      rd.onload=function(){
-        const id="local_"+Date.now()+"_"+Math.round(Math.random()*1e6);
-        setLocalPhotos(function(p){return p.concat([{id:id,url:rd.result}]);});
-        setDrawFor({id:id,url:rd.result,db:false,lines:[]});
-      };
-      rd.readAsDataURL(file);
-    }
-  };
-  const submitLine=function(photo,data){
-    setErr(null);
-    if(photo.db&&photo.editLine){
-      updateTopoLine(photo.editLine.id,{points:data.points,pins:data.pins,label:data.label||null,variants:data.variants||[],variant_labels:data.variantLabels||[]}).then(function(){
-        dbTopos.refetch();setDrawFor(null);
-      }).catch(function(e){setErr((e&&e.message)||"Couldn't save your changes.");});
-    } else if(photo.db){
-      submitTopoLine(photo.id,route.id,data.points,data.pins,data.label||null,data.variants,data.variantLabels).then(function(){
-        dbTopos.refetch();setDrawFor(null);
-      }).catch(function(e){setErr((e&&e.message)||"Couldn't save that line.");});
-    } else {
-      setLocalLines(function(m){
-        const o=Object.assign({},m);
-        o[photo.id]=(o[photo.id]||[]).concat([{id:"line_"+Date.now(),points:data.points,variants:data.variants||[],variant_labels:data.variantLabels||[],pins:data.pins,label:data.label||null,ts:Date.now()}]);
-        return o;
-      });
-      setDrawFor(null);
-    }
-  };
-
-  const saveCaption=function(p,t){return updateTopoCaption(p.id,t).then(function(){return dbTopos.refetch();});};
-  /* YOUR OWN TOPO CAN BE FIXED OR TAKEN DOWN (topo audit, 2026-10-24). updateTopoLine, deleteTopoLine
-     and deleteTopoPhoto were written with their RLS (0026: own update / own delete) and never called, so
-     a misplaced dot meant drawing a second line beside the first forever, and a photo posted on the
-     wrong route could not come down. Mountain Project and 27 Crags both let the uploader edit and
-     delete their own; like theirs, a photo other climbers have drawn on stays (it is theirs too) —
-     so its uploader cannot take it down. */
-  const drawDirty=useRef(false);
-  const closeDraw=function(){if(!drawDirty.current)return setDrawFor(null);askConfirm({title:"Discard this drawing?",body:"The points and markers you placed are not saved.",confirmLabel:"Discard"}).then(function(ok){if(ok){drawDirty.current=false;setDrawFor(null);}});};
-  const editLine=function(p,l){setViewerIdx(null);setDrawFor(Object.assign({},p,{editLine:l}));};
-  const removeLine=function(p,l){
-    return askConfirm({title:"Delete your line?",body:"Your line and its markers come off this photo for everyone. The photo stays.",confirmLabel:"Delete line"}).then(function(ok){
-      if(!ok)return false;setErr(null);
-      return deleteTopoLine(l.id).then(function(){return dbTopos.refetch();}).then(function(){return true;}).catch(function(e){setErr((e&&e.message)||"Couldn't delete that line.");return false;});
-    });
-  };
-  const removePhoto=function(p){
-    return askConfirm({title:"Delete this topo photo?",body:"The photo, and any line you drew on it, come down for everyone.",confirmLabel:"Delete photo"}).then(function(ok){
-      if(!ok)return false;setErr(null);
-      return deleteTopoPhoto(p.id,p.storagePath).then(function(){setViewerIdx(null);return dbTopos.refetch();}).then(function(){return true;}).catch(function(e){setErr((e&&e.message)||"Couldn't delete that photo.");return false;});
-    });
-  };
-
-  if(USE_DB&&dbTopos.isLoading)return <div style={{marginBottom:ROUTE_GAP}}><SL>TOPO</SL><LoadingRows C={C} label="Loading topo photos…" style={{padding:20}}/></div>;
-
-  return <div style={{marginBottom:ROUTE_GAP}}>
-    <SL action={<button onClick={pickFile} disabled={busy} style={{padding:"8px 12px",borderRadius:9,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.onSolid,fontSize:11.5,fontWeight:700,cursor:busy?"default":"pointer"}}>{busy?"Uploading…":"+ Add photo"}</button>}>TOPO</SL>
-    {err?<div role="alert" style={{background:C.redBg,border:"1px solid "+C.red+"66",borderRadius:10,padding:"9px 12px",marginBottom:9,display:"flex",alignItems:"center",gap:9}}><span style={{flex:1,fontSize:12.5,color:C.red,lineHeight:1.45}}>{err}</span><button onClick={function(){setErr(null);}} aria-label="Dismiss error" style={POP_CLOSE}>✕</button></div>:null}
-    {!photos.length?
-      <div style={{background:C.card,border:"1px dashed "+C.border,borderRadius:12,padding:"22px 16px",textAlign:"center"}}>
-        <div style={{marginBottom:6,opacity:0.75,display:"flex",justifyContent:"center"}}><ActionIcon name="camera" size={24} color={C.textMuted}/></div>
-        <div style={{fontSize:12,fontWeight:700,color:C.textMuted,marginBottom:4}}>{topoCopy.head}</div>
-        <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:11}}>{topoCopy.body}</div>
-        <button onClick={pickFile} disabled={busy} style={{padding:"8px 16px",borderRadius:9,border:"1px solid "+C.blueDim,background:busy?C.card:C.blueBg,color:busy?C.textMuted:"#fff",fontSize:12.5,fontWeight:700,cursor:busy?"default":"pointer"}}>{busy?"Uploading…":"Add a topo photo"}</button>
-      </div>
-    :<div style={{display:"flex",gap:9,overflowX:"auto",paddingBottom:2}}>
-      {photos.map(function(p,i){
-        /* The caption's opening lines sit under the thumbnail, so a reader sees there IS context before opening it. */
-        return <div key={p.id} style={{flexShrink:0,width:132}}><TopoThumb p={p} onOpen={function(){setViewerIdx(i);}}/>{p.caption?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:5,display:"-webkit-box",WebkitLineClamp:2,WebkitBoxOrient:"vertical",overflow:"hidden",overflowWrap:"anywhere"}}>{p.caption}</div>:null}</div>;
-      })}
-      <div {...clickable(pickFile)} style={{flexShrink:0,width:132,height:132,borderRadius:11,border:"1px dashed "+C.border,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",cursor:"pointer",color:C.blue,fontSize:12,fontWeight:700,gap:6}}>
-        <span style={{fontSize:22}}>+</span>Add photo
-      </div>
-    </div>}
-    {toposSavedOnly?<div style={{fontSize:11.5,color:C.amber,lineHeight:1.45,marginTop:8}}>{"No signal — showing the "+photos.length+" topo"+(photos.length!==1?"s":"")+" you saved on this device. Any others need a connection."}</div>:null}
-    {photos.some(function(p){return p.lines[0]&&((p.lines[0].pins&&p.lines[0].pins.length)||(p.lines[0].variants&&p.lines[0].variants.length));})?<TopoPinLegend style={{marginTop:8}}/>:null}
-    {(viewerIdx!=null&&photos[viewerIdx])?<TopoPhotoModal key={photos[viewerIdx].id} photo={photos[viewerIdx]} pos={{i:viewerIdx,n:photos.length,onPrev:function(){setViewerIdx((viewerIdx+photos.length-1)%photos.length);},onNext:function(){setViewerIdx((viewerIdx+1)%photos.length);}}} onClose={function(){setViewerIdx(null);}} onDraw={function(p){setDrawFor(p);}} onDescribe={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?function(p,d){return updateTopoAlt(p.id,d).then(function(){return dbTopos.refetch();});}:undefined} onCaption={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?saveCaption:undefined} onEditLine={USE_DB?editLine:undefined} onDeleteLine={USE_DB?removeLine:undefined} onDeletePhoto={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?removePhoto:undefined}/>:null}
-    {drawFor?createPortal(<div onClick={closeDraw} role="dialog" aria-modal="true" aria-label={drawFor.editLine?"Edit your line":"Draw this route's line"} style={{position:"fixed",inset:0,background:C.scrimStrong,zIndex:9500,display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
-      <div onClick={function(e){e.stopPropagation();}} style={{background:C.bg,borderTopLeftRadius:18,borderTopRightRadius:18,width:"100%",maxWidth:520,padding:"16px 16px 22px",border:"1px solid "+C.border,maxHeight:"92vh",overflowY:"auto",overscrollBehavior:"contain",boxSizing:"border-box"}}>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
-          <div style={{fontSize:14,fontWeight:800}}>{drawFor.editLine?"Edit your line":"Draw this route's line"}</div>
-          <button onClick={closeDraw} style={POP_CLOSE} aria-label="Close">✕</button>
-        </div>
-        {/* The photo was just posted: ask for its caption here, while the climber still remembers why they took it. Saved on its own, so cancelling the drawing keeps it. */}
-        {(drawFor.fresh&&drawFor.db)?<TopoCaptionBox key={drawFor.id} initial={null} onSave={function(t){return saveCaption(drawFor,t);}} style={{marginBottom:12}}/>:null}
-        <TopoDrawer key={drawFor.id+":"+(drawFor.editLine?drawFor.editLine.id:"new")} dirtyRef={drawDirty} initial={drawFor.editLine?{photoUrl:drawFor.url,points:drawFor.editLine.points,variants:drawFor.editLine.variants||[],variantLabels:drawFor.editLine.variant_labels||[],pins:drawFor.editLine.pins||[],label:drawFor.editLine.label||""}:{photoUrl:drawFor.url}} onCancel={function(){drawDirty.current=false;setDrawFor(null);}} onSubmit={function(data){drawDirty.current=false;submitLine(drawFor,data);}}/>
-      </div>
-    </div>,document.body):null}
-  </div>;
-}
 /* Its own component so it can hold the loaded photo's aspect ratio — a hook cannot live in
    the .map that renders the strip. 132 wide with the photo's own aspect rather than a 132
    square crop: the square cropped the sides away while the overlay still spanned the full
@@ -2625,29 +1281,6 @@ function _descEdited(r){return !!(r&&(r._contribFields||[]).indexOf("descentText
 
    The real instance of this class is `rack` -- see _rackEdited. */
 function descentBeta(r){if(!r)return "";const a=String(r.descent||"").trim(),b=String(r.descentText||"").trim();if(a&&_descEdited(r))return a;return b.length>a.length?b:a;}
-/* `routes.season` is not a month range. Enrichment writes prose into it — up to 232 characters on
-   wa_hourglass_gully_winter — and the hero header rendered it raw, so a paragraph about snow bridges
-   wrapped over the cover photo and pushed the box open. The full text still shows in the season chip
-   and CLIMATE & SEASON on the Conditions tab; the header only needs the window. */
-const _MON="Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sept?(?:ember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?";
-/* A window can end on a SEASON as well as a month. "August to autumn", "Spring to autumn",
-   "Late summer into early September" are all real windows a climber can act on, and the
-   month-only pattern saw none of them — 50 of the 132 approach seasons that fell through to
-   the blunt truncation had a perfectly good window sitting in the text. Kept separate from
-   _MON so the two can be reasoned about apart. */
-const _SEAS="spring|summer|autumn|fall|winter";
-const _WHEN="(?:"+_MON+"|"+_SEAS+")";
-const _QUAL="(?:mid\\/late|early\\/mid|early|mid|late)[- ]?";
-const _SEP="\\s*(?:[-\u2013\u2014]|to|through|thru|into)\\s*";
-const SEASON_WINDOW_RE=new RegExp("(?:"+_QUAL+")?(?:"+_MON+")"+_SEP+"(?:"+_QUAL+")?(?:"+_MON+")","i");
-/* The same shape, but allowing a SEASON at either end. It is deliberately a SECOND pattern
-   tried AFTER the clause cut, not a widening of the first, and that ordering is the whole
-   point: widening the primary pattern regressed the header strap, because it started firing
-   on values whose first clause was already the better answer.
-   "Summer (rock) or late winter-spring (ice/mixed)" showed "Summer" and became
-   "late winter-spring" — the strap telling a climber a summer rock route is a winter route.
-   Measured, not spotted by eye; 13 header values moved and that one was plainly wrong. */
-const SEASON_WINDOW_WIDE_RE=new RegExp("(?:"+_QUAL+")?"+_WHEN+_SEP+"(?:"+_QUAL+")?"+_WHEN,"i");
 /* `max` is per CALL, because the two places this renders have different room. The HEADER STRAP
    sits beside elevation and pitch count and wants 30; the APPROACHES pill owns its own row and
    can hold more, and 33 of the 132 approach seasons that were being truncated already fitted 48
@@ -2656,26 +1289,6 @@ const SEASON_WINDOW_WIDE_RE=new RegExp("(?:"+_QUAL+")?"+_WHEN+_SEP+"(?:"+_QUAL+"
    full here can never trip that guard.
    The last resort now breaks on a WORD boundary: "Roughly January through the…" reads as a
    sentence that stops, where "Roughly January through the e…" reads as a bug. */
-/* ONE spelling of a window. The header strap printed the same thing six ways ("Jul-Sep", "Jul–Sep",
-   "July-September", "Late June - September", "July through October", "Mid-July to September"), so
-   two routes side by side read as if they disagreed. Months are cut to three letters, the joint
-   between two months is a plain hyphen, a qualifier is its own word ("Mid Jul-Sep"). Only the
-   SPELLING changes: no window is widened, narrowed or invented. Only a month PAIR is respelled, so a
-   month in running prose ("Best in June while…") stays a word, and months are matched
-   case-sensitively so the verb "may" is never read as one. */
-const _MON_ABBR={january:"Jan",february:"Feb",march:"Mar",april:"Apr",june:"Jun",july:"Jul",august:"Aug",sept:"Sep",september:"Sep",october:"Oct",november:"Nov",december:"Dec"};
-const _MONF="Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|June?|July?|Aug(?:ust)?|Sept?(?:ember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?";
-const _QUALF="(?:[Ee]arly|[Mm]id|[Ll]ate)[- ]?";
-const SEASON_PAIR_RE=new RegExp("\\b("+_QUALF+")?("+_MONF+")\\b\\s*(?:[-\u2013\u2014]|to|through|thru)\\s*("+_QUALF+")?("+_MONF+")\\b","g");
-function _monAbbr(m){const k=m.toLowerCase();return _MON_ABBR[k]||m;}
-function _qualTidy(q){return q?q.replace(/[- ]$/,"")+" ":"";}
-function _cap(s){return s?s.charAt(0).toUpperCase()+s.slice(1):s;}
-export function seasonTidy(s){s=String(s||"").trim().replace(/\s+/g," ");if(!s)return "";s=s.replace(SEASON_PAIR_RE,function(_,q1,m1,q2,m2){return _qualTidy(q1)+_monAbbr(m1)+"-"+_qualTidy(q2)+_monAbbr(m2);});return _cap(s.replace(/\.$/,""));}
-/* A window the sentence tells you to AVOID is not the season. "good in cold weather; avoid May-Sep"
-   showed "May-Sep" in the header: the strap saying the opposite of the row (va_strawberry_fields,
-   2026-10-24). A window whose own clause negates it is skipped, and the next rung decides. */
-function seasonWin(s,re){const m=s.match(re);if(!m)return null;const pre=s.slice(0,m.index).split(/[;.]/).pop();return /\b(avoid|not|except|outside)\b/i.test(pre)?null:m[0];}
-export function seasonShort(s,max){const lim=typeof max==="number"?max:30;if(!s)return "";s=seasonTidy(s);if(s.length<=lim)return s;const m=seasonWin(s,SEASON_WINDOW_RE);if(m)return _cap(m);const cut=s.split(/[;.(]/)[0].trim();if(cut.length<=lim)return cut;const w2=seasonWin(s,SEASON_WINDOW_WIDE_RE);if(w2)return _cap(w2);const w=cut.lastIndexOf(" ",lim-1);const keep=w>Math.floor(lim/2)?cut.slice(0,w):cut.slice(0,lim-1);return keep.replace(/[\s,;-]+$/,"")+"…";}
 /* Route tags — list membership ("Fifty Classic Climbs", "Bulger"), what the climbing is
    like (from routes.features), and the derived warnings. Rendered from the SAME slugs
    Challenges and Lists match on, so a chip a climber can see is a chip a challenge can
@@ -3066,11 +1679,6 @@ const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+
     </div>
   </div>;
 }
-const WX_CODE_LABEL={0:"Clear",1:"Mostly clear",2:"Partly cloudy",3:"Overcast",45:"Fog",48:"Rime fog",51:"Light drizzle",53:"Drizzle",55:"Heavy drizzle",56:"Freezing drizzle",57:"Freezing drizzle",61:"Light rain",63:"Rain",65:"Heavy rain",66:"Freezing rain",67:"Freezing rain",71:"Light snow",73:"Snow",75:"Heavy snow",77:"Snow grains",80:"Light rain showers",81:"Rain showers",82:"Heavy rain showers",85:"Snow showers",86:"Heavy snow showers",95:"Thunderstorms",96:"Thunderstorms",99:"Thunderstorms"};
-const WX_COMPASS=["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
-function degToCompass(deg){if(deg==null||isNaN(deg))return null;return WX_COMPASS[Math.round((((deg%360)+360)%360)/22.5)%16];}
-function circMeanDeg(arr){if(!arr||!arr.length)return null;let sx=0,sy=0;arr.forEach(function(d){const r=d*Math.PI/180;sx+=Math.cos(r);sy+=Math.sin(r);});return (Math.atan2(sy,sx)*180/Math.PI+360)%360;}
-function modeOf(arr){if(!arr||!arr.length)return null;const c={};let best=arr[0],bc=0;arr.forEach(function(v){c[v]=(c[v]||0)+1;if(c[v]>bc){bc=c[v];best=v;}});return best;}
 /* THE SUSTAINED FIGURE ON THE WIND TILE IS THE 80 m WIND -- a ridge-level proxy -- while the
    only gust Open-Meteo publishes is a 10 m SURFACE figure. Gating the gust line on
    `gustMax > windMax` therefore compared two different HEIGHTS, and an 80 m sustained
@@ -3084,280 +1692,6 @@ function modeOf(arr){if(!arr||!arr.length)return null;const c={};let best=arr[0]
    under-warning direction on a safety panel.
    With no 10 m series at all (a partial response) it SHOWS the gust rather than hiding it:
    withholding a gust figure is the dangerous way for this to fail. */
-/* WHEN a day's rain falls, Mountain-Forecast style: " · mostly at night" when one part of the day holds 60% or more of
-   the rain its parts carry. The parts' night runs on to 6 AM, so this names a part, never a share of the day total. */
-const RAIN_PART_WORD={AM:"in the morning",PM:"in the afternoon",Night:"at night"};
-function rainMostly(dy){var ps=(dy.parts||[]).filter(function(p){return p.rain>0;});var tot=ps.reduce(function(a,p){return a+p.rain;},0);if(!(dy.precipIn>0)||!ps.length||tot<0.01)return "";var top=ps.reduce(function(a,p){return p.rain>a.rain?p:a;});return top.rain>=0.6*tot&&RAIN_PART_WORD[top.label]?" · mostly "+RAIN_PART_WORD[top.label]:"";}
-function gustWorthShowing(dy){const surf=dy.wind10Max;return !(typeof surf==="number"&&isFinite(surf))||dy.gustMax>surf;}
-function wxCondColor(code){if(code==null)return C.blue;if(code>=95)return C.red;if(code===0||code===1)return C.green;if(code===2||code===3||code===45||code===48)return C.textSub;return C.blue;}
-function wxUvColor(uv){return uv>=11?C.purple:uv>=8?C.red:uv>=6?C.amber:uv>=3?C.yellow||C.amber:C.green;}
-function wxUvLabel(uv){return uv>=11?"Extreme":uv>=8?"Very High":uv>=6?"High":uv>=3?"Moderate":"Low";}
-const FROSTBITE_WINDCHILL_F=-19;
-function metWxLabel(code){
-  if(!code)return null;
-  const s=code.replace(/_(day|night|polartwilight)$/,"");
-  const MAP={clearsky:"Clear",fair:"Fair",partlycloudy:"Partly cloudy",cloudy:"Cloudy",fog:"Fog",rain:"Rain",lightrain:"Light rain",heavyrain:"Heavy rain",rainshowers:"Rain showers",lightrainshowers:"Light rain showers",heavyrainshowers:"Heavy rain showers",sleet:"Sleet",lightsleet:"Light sleet",heavysleet:"Heavy sleet",sleetshowers:"Sleet showers",lightsleetshowers:"Light sleet showers",heavysleetshowers:"Heavy sleet showers",snow:"Snow",lightsnow:"Light snow",heavysnow:"Heavy snow",snowshowers:"Snow showers",lightsnowshowers:"Light snow showers",heavysnowshowers:"Heavy snow showers"};
-  if(MAP[s])return MAP[s];
-  if(s.indexOf("thunder")>=0)return "Thunderstorms";
-  return s;
-}
-/* CONDITIONS — the crag Conditions tab (sport, trad, top-rope, bouldering; never alpine, scrambling,
-   mountaineering, ice or mixed, where a dry-rock friction number would be wrong). The scoring is
-   lib/conditionsScore.js; this renders it as SECTIONS, each under its own heading and one idea per
-   row, because the tab is long and must read section by section:
-     RIGHT NOW · BEST TIME TO CLIMB · HOURLY · ROCK & DRYING · SUN ON THE WALL · AIR QUALITY · SEASON
-   (the route page then adds the weather sources and ROAD CONDITIONS below it).
-   The forecast is fetched at the CRAG's coordinate, so a crag route with no waypoints still gets one.
-   Every number is accountable: tapping an hour lists each factor's points, the rows add up to the
-   points line, a cap names its reason, and a factor with no input says "not measured" instead of
-   counting as zero or as a pass. A failed fetch says so and shows no stars — it is not a rating;
-   a failed air-quality or climate read says "not measured", never "clean" or "no season". */
-const _cragWx={},_cragAir={},_cragClim={},_cragSp={};
-const DIR8=["N","NE","E","SE","S","SW","W","NW"];
-const agoH=function(h){return h<48?h+" h ago":Math.round(h/24)+" days ago";};
-const condBox={background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 14px"};
-const dayBox={display:"block",background:C.surface,border:"1px solid "+C.border,borderRadius:9,padding:"6px 8px",minWidth:0,minHeight:68,boxSizing:"border-box"};
-const dayLbl={display:"block",fontSize:11.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4};
-const dayVal={display:"block",fontSize:14,fontWeight:800,marginTop:2,lineHeight:1.25,overflowWrap:"normal"};
-const daySub={display:"block",fontSize:11.5,color:C.textSub,marginTop:1,lineHeight:1.35};
-const aqiTone=function(a){return a==null?C.textMuted:a<=50?C.green:a<=100?C.amber:a<=150?C.orange:C.red;};
-function ConditionsScoreCard({route,mtn,onAddAspect}){
-  const disc=catOf(route);const on=CRAG_SCORE_DISCIPLINES.includes(disc);
-  const lat=mtn&&typeof mtn.lat==="number"?mtn.lat:(mtn&&mtn.lat!=null?+mtn.lat:null),lng=mtn&&typeof mtn.lng==="number"?mtn.lng:(mtn&&mtn.lng!=null?+mtn.lng:null);
-  const hasPt=lat!=null&&lng!=null&&isFinite(lat)&&isFinite(lng);
-  const ck=hasPt?lat.toFixed(3)+","+lng.toFixed(3):"";
-  const [wx,setWx]=useState(function(){return ck&&_cragWx[ck]?{data:_cragWx[ck]}:null;});
-  const [aq,setAq]=useState(function(){return ck&&_cragAir[ck]?{data:_cragAir[ck]}:null;});
-  const [clim,setClim]=useState(function(){return ck&&_cragClim[ck]?{data:_cragClim[ck]}:null;});
-  const [tries,setTries]=useState(0);const [aqTries,setAqTries]=useState(0);const [climTries,setClimTries]=useState(0);
-  const [dayI,setDayI]=useState(0);const [hrI,setHrI]=useState(null);const [showPrefs,setShowPrefs]=useState(false);
-  const cp=useCondPrefs();
-  useEffect(function(){
-    if(!hasPt||!on)return;
-    if(_cragWx[ck]){setWx({data:_cragWx[ck]});return;}
-    let live=true;setWx(null);
-    fetchCragForecastMeasured(lat,lng).then(function(j){_cragWx[ck]=j;if(live)setWx({data:j});},function(){if(live)setWx({error:true});});
-    return function(){live=false;};
-  },[ck,tries]); // eslint-disable-line react-hooks/exhaustive-deps -- keyed on the crag coordinate key (ck encodes lat/lng) and retry count; on/hasPt follow the route
-  useEffect(function(){
-    if(!hasPt||!on)return;
-    if(_cragAir[ck]){setAq({data:_cragAir[ck]});return;}
-    let live=true;setAq(null);
-    fetchCragAir(lat,lng).then(function(j){_cragAir[ck]=j;if(live)setAq({data:j});},function(){if(live)setAq({error:true});});
-    return function(){live=false;};
-  },[ck,aqTries]); // eslint-disable-line react-hooks/exhaustive-deps -- keyed on the crag coordinate key (ck encodes lat/lng) and retry count; on/hasPt follow the route
-  useEffect(function(){
-    if(!hasPt||!on)return;
-    if(_cragClim[ck]){setClim({data:_cragClim[ck]});return;}
-    let live=true;setClim(null);
-    fetchCragClimate(lat,lng).then(function(m){_cragClim[ck]=m;if(live)setClim({data:m});},function(){if(live)setClim({error:true});});
-    return function(){live=false;};
-  },[ck,climTries]); // eslint-disable-line react-hooks/exhaustive-deps -- keyed on the crag coordinate key (ck encodes lat/lng) and retry count; on/hasPt follow the route
-  /* A SECOND READ of three other models' rain (owner, 2026-10-28: the alpine card says when models disagree; a crag
-     never did). Adds a line when they split, and NOTHING when it fails: no read is not agreement, but it is no flag. */
-  const [sp,setSp]=useState(function(){return ck&&_cragSp[ck]?_cragSp[ck]:null;});
-  useEffect(function(){
-    if(!hasPt||!on)return;
-    if(_cragSp[ck]){setSp(_cragSp[ck]);return;}
-    let live=true;setSp(null);
-    fetchAlpineSpread(lat,lng,null).then(function(j){_cragSp[ck]=j;if(live)setSp(j);},function(){if(live)setSp(null);});
-    return function(){live=false;};
-  },[ck,hasPt,on,lat,lng]);
-  useEffect(function(){setDayI(0);setHrI(null);},[route.id]);
-  const [wantDate,setWantDate]=useState(function(){var d=OPEN_DAY.date;OPEN_DAY.date=null;return d;});
-  const rk=routeRock(route);
-  const aspectText=route.aspect||route.face||(route._dbArea&&route._dbArea.aspect)||null;
-  const score=useMemo(function(){
-    if(!wx||!wx.data)return null;
-    return scoreForecast(wx.data,{lat:lat,lng:lng,aspect:aspectText,family:rk?rk.family:null,rock:rk?rk.rock:null,discipline:disc},scorePrefs(cp),undefined,aq&&aq.data?aq.data:null);
-  },[wx,aq,cp,route.id,rk&&rk.family,aspectText]); // eslint-disable-line react-hooks/exhaustive-deps -- keyed on rock family and route id; lat/lng/disc/rk follow the route and rk is rebuilt each render
-  useEffect(function(){if(!wantDate||!score)return;var i=score.days.findIndex(function(d){return d.date===wantDate;});if(i>=0){setDayI(i);setHrI(null);}setWantDate(null);},[score,wantDate]);
-  if(!on)return null;
-  const box={background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"12px 14px",marginBottom:ROUTE_GAP};
-  const head=<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:8}}><CardHead style={{marginBottom:0}}>CONDITIONS SCORE</CardHead>{hasPt?<button onClick={function(){setShowPrefs(!showPrefs);}} aria-expanded={showPrefs} aria-label="Your ideal conditions" style={{minHeight:44,background:"none",border:"1px solid "+(showPrefs?C.blue:C.border),color:showPrefs?C.blue:C.textSub,borderRadius:8,padding:"5px 9px",fontSize:11.5,fontWeight:700,cursor:"pointer",display:"inline-flex",alignItems:"center",gap:5}}><ActionIcon name="settings" size={12} color="currentColor"/>Your conditions</button>:null}</div>;
-  if(!hasPt)return <div style={box}>{head}<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55}}>No score for this climb: the crag it is on has no location on file yet, so there is no forecast to score.</div></div>;
-  if(wx&&wx.error)return <div style={box}>{head}<div style={{fontSize:12.5,color:C.amber,lineHeight:1.55,marginBottom:8}}>Couldn’t load the forecast, so there is no score. This is not a rating of the conditions.</div><button onClick={function(){setTries(tries+1);}} style={{background:C.surface,color:C.blue,border:"1px solid "+C.border,borderRadius:8,padding:"7px 12px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Try again</button></div>;
-  if(!score)return <div style={box} aria-busy="true">{head}<LoadingRows C={C} label="Loading the forecast…"/></div>;
-  const days=score.days;const day=days[Math.min(dayI,days.length-1)];
-  if(!day)return <div style={box}>{head}<div style={{fontSize:12.5,color:C.textSub}}>The forecast came back with no days ahead to score.</div></div>;
-  const col=function(s){return s==null?C.border:s>=4?C.green:s>=2.5?C.amber:C.red;};
-  const fmt=function(s){return s==null?"–":s.toFixed(1);};
-  const starRow=function(s){var out=[];for(var i=1;i<=5;i++)out.push(<span key={i} style={{color:s!=null&&s>=i-0.25?col(s):C.borderHi}}>★</span>);return out;};
-  const dayName=function(d,i){if(i===0)return "Today";return new Date(d.date+"T12:00:00Z").toLocaleDateString(DLOCALE,{weekday:"short",timeZone:"UTC"});};
-  const dayDate=function(d){return new Date(d.date+"T12:00:00Z").toLocaleDateString(DLOCALE,{month:"short",day:"numeric",timeZone:"UTC"});};
-  const whenOf=function(x){var i=days.findIndex(function(d){return d.date===x.date;});return (i===0?"today":i===1?"tomorrow":i>0?dayName(days[i],i):x.date)+" "+clockHr(x.hr);};
-  const hrs=day.hours;
-  /* ONE CLOCK AXIS for every day's hour strip (owner, 2026-10-24: "the boxes aren't consistent size"): the columns
-     run from the earliest daylight hour any day offers to the latest, and each hour sits in its own clock column.
-     Sized by the day's own count, an evening's one remaining hour stretched across the whole card while a full day
-     drew eleven narrow tiles; and the best-three-hours mark, a shadow on top of those tiles, made them look taller. */
-  const hrLo=Math.min.apply(null,days.map(function(d){return d.hours.length?d.hours[0].hr:24;})),hrHi=Math.max.apply(null,days.map(function(d){return d.hours.length?d.hours[d.hours.length-1].hr:-1;}));
-  const hrCol=function(x){return x.hr-hrLo+1;};
-  const hrGrid={display:"grid",gridTemplateColumns:"repeat("+Math.max(1,hrHi-hrLo+1)+",minmax(0,1fr))",gap:3};
-  const selI=hrI!=null&&hrI<hrs.length?hrI:(day.best?day.best.i+1:0);const h=hrs[selI];
-  const top=h?h.stars:day.stars;const lbl=starsLabel(top);const lblCol=col(top);
-  const shadeAt=(function(){if(!day.sun||day.sun.set==null)return null;var r=day.sun.rise,st=day.sun.set,n=Date.now();if(n>=r&&n<=st)return n;var bh=day.best?day.hours[day.best.i]:null;return bh&&bh.utc>=r&&bh.utc<=st?bh.utc:Math.round((r+st)/2);})();
-  const rockLbl=rk?rk.label:"Rock unknown";
-  const facKeys=["temp","humidity","dry","wind","sun"];
-  const facNote=function(k,f){
-    if(k==="temp")return uTemp(f.val)+" · "+f.note;
-    if(k==="humidity")return Math.round(f.val)+"% humidity"+(f.dew!=null?" · dew point "+uTemp(f.dew):"")+(f.friction?" · "+f.friction.label:"");
-    if(k==="dry")return (f.raining?"Rain in the past hour ("+uPrecip(f.precip)+")":(f.atLeast?"No rain in the past 14 days":"Last rain "+agoH(f.val)))+" · "+rockLbl+" dries in about "+f.need+" h"+(!f.raining&&f.frac<1?" · about "+Math.round(f.frac*100)+"% dry":"")+(f.pop?" · "+f.pop+"% chance of rain":"")+(f.damp?" · air at its dew point":"");
-    if(k==="wind")return uWind(f.val)+(f.gust!=null&&f.gust>f.val+3?", gusts "+uWind(f.gust):"");
-    if(k==="sun")return (f.lit?"Wall in sun":"Wall in shade")+(f.want==="either"?"":" · you want "+f.want);
-    return "";
-  };
-  const notMeasured=function(k){
-    if(k==="sun")return score.aspectVaries?"Sun / shade: the wall faces several ways, so sun isn’t scored":"Sun / shade: this climb has no wall direction on file";
-    return FACTOR_LABEL[k]+": no forecast value for this hour";
-  };
-  const cur=score.now;
-  const wetSand=score.sandstone&&cur&&cur.dryFrac!=null&&cur.dryFrac<1;
-  const dryLine=score.dryFrom?whenOf(score.dryFrom):score.dryBeyond?"Not within the 7-day forecast":null;
-  /* WHEN WILL IT BE DRY — for any hour: the first later hour the drying model calls dry, or null when none does inside
-     the forecast. The countdown chip and the tapped hour both read it, so they cannot disagree with "Likely dry from". */
-  const dryAfter=function(x){if(!x||x.dryFrac==null||x.dryFrac>=1)return null;for(const d of days)for(const y of d.all)if(y.utc>x.utc&&y.dryFrac!=null&&y.dryFrac>=1)return y;return null;};
-  /* A WET MORNING UNDER A GOOD DAY (owner's note, 2026-10-28: "red boxes in the morning because the rock may still be
-     wet, but ... it says good conditions"). The day's score is its best 3 hours, so a dry afternoon makes it Good
-     beside red morning tiles; this line says so in words, and each tile's own score (and its tapped "Why") stays the
-     hour's. Null unless some daylight hour of the selected day is wet and the rock dries later that same day. */
-  const wetTill=(function(){var w=hrs.filter(function(x){return x.dryFrac!=null&&x.dryFrac<1;});if(!w.length||!day.best)return null;var y=dryAfter(w[w.length-1]);return y&&y.date===day.date&&y.daylight?y:null;})();
-  /* ...and the same for DEW: most red mornings under a Good day were not rain at all (audit, 2026-10-28: 24 of 71 Good
-     days at 18 crags had red hours before 11 AM, most from the dew-point cap, on dry desert mornings at Vantage and
-     Smith Rock). The first hour after the last dew-capped hour before the best 3 hours; null if the best hours are damp too. */
-  const dewTill=(function(){if(!day.best)return null;var dew=function(x){return x.caps.some(function(c){return /dew point/.test(c.why);});};if(hrs.slice(day.best.i,day.best.i+3).some(dew))return null;var last=-1;for(var i=0;i<day.best.i;i++)if(dew(hrs[i]))last=i;return last>=0&&hrs[last+1]?hrs[last+1]:null;})();
-  // The day's rain, the amount this card prints among three other models' (modelSpread, the alpine card's rule): null unless they split.
-  const rainSplit=function(d){var m=sp&&d.rain!=null?modelSpread(sp,d.date,null,d.rain):null;return m&&m.over.indexOf("rain")>=0?m.rain:null;};
-  const dayRainSplit=rainSplit(day);
-  const dryChip=(function(){if(!cur||cur.dryFrac==null||cur.dryFrac>=1||wetSand)return null;var y=dryAfter(cur),hrs=y?Math.max(1,Math.round((y.utc-Date.now())/3600e3)):null;
-    var txt=cur.factors.dry&&cur.factors.dry.raining?"Raining — rock is wet":"Rock drying · about "+Math.round(cur.dryFrac*100)+"% dry";
-    var when=y?(hrs<=36?"Dry in about "+hrs+" h ("+whenOf(y)+")":"Dry by "+whenOf(y)):"Not dry within the 7-day forecast";
-    return <div data-dry-countdown="1" style={{background:C.amberBg,border:"1px solid "+C.amber,borderRadius:10,padding:"8px 12px",marginBottom:8}}><div style={{fontSize:13,fontWeight:800,color:C.amber}}>{txt}</div><div style={{fontSize:12.5,color:C.text,marginTop:2}}>{when}</div></div>;})();
-  const sec=function(title,body,first){return <div key={title}><SL first={first}>{title}</SL>{body}</div>;};
-  const aqNow=aq&&aq.data&&cur&&cur.aqi!=null?cur.aqi:null;const aqCat=aqiCategory(aqNow);
-  const dayAqCat=aqiCategory(day.aqiMax);
-  const curF=cur&&cur.factors.dry;
-  const sandWarn=<div role="alert" style={{background:C.redBg,border:"1px solid "+C.red,borderRadius:10,padding:"9px 12px",marginBottom:8}}><div style={{fontSize:13,fontWeight:800,color:C.red}}>Wet sandstone is weak — holds can break. Stay off it until it’s dry</div><div style={{fontSize:12.5,color:C.text,marginTop:3,lineHeight:1.45}}>{dryLine?"Likely dry from "+dryLine+".":"Can’t tell yet when it will be dry."}</div></div>;
-  return <div data-conditions-score="1">
-    {cur?sec("Right now",<div style={condBox}>
-      {wetSand?sandWarn:dryChip}
-      <div style={{display:"flex",alignItems:"center",gap:10,paddingBottom:6}}><div style={{fontSize:26,fontWeight:800,lineHeight:1,color:C.text}}>{fmt(cur.stars)}</div><div><div aria-hidden="true" style={{fontSize:15,letterSpacing:1.2}}>{starRow(cur.stars)}</div><div style={{fontSize:12,color:col(cur.stars),fontWeight:800}}>{starsLabel(cur.stars)+" · "+clockHr(cur.hr)}</div></div></div>
-      {cur.caps.length?condRow("Held down by",cur.caps.map(function(c){return c.why;}).join(" · "),C.amber):null}
-      {condRow("Temperature",cur.temp!=null?uTemp(cur.temp)+(cur.feels!=null&&uTempN(cur.feels)!==uTempN(cur.temp)?" · feels like "+uTemp(cur.feels):""):"Not measured")}
-      {condRow("Friction",cur.friction?cur.friction.label:"Not measured",cur.friction?(cur.friction.key==="crisp"?C.green:cur.friction.key==="ok"?C.text:C.amber):C.textMuted)}
-      {condRow("Humidity",cur.rh!=null?Math.round(cur.rh)+"%"+(cur.dew!=null?" · dew point "+uTemp(cur.dew):""):"Not measured")}
-      {condRow("Wind",cur.wind!=null?uWind(cur.wind)+(cur.windDir!=null?" from the "+DIR8[Math.round(cur.windDir/45)%8]:"")+(cur.gust!=null&&uWindN(cur.gust)>uWindN(cur.wind)?", gusts "+uWind(cur.gust):""):"Not measured")}
-      {condRow("Cloud cover",cur.cloud!=null?Math.round(cur.cloud)+"% · "+skyWord(cur.cloud):"Not measured")}
-      {condRow("Rain",cur.precip==null?"Not measured":cur.precip>0?uPrecip(cur.precip)+" in the past hour":"None in the past hour")}
-      {condRow("Air quality",aqNow!=null?"AQI "+Math.round(aqNow)+" · "+aqCat.label:aq&&aq.error?"Not measured (didn’t load)":!aq?"Loading…":"Not measured",aqNow!=null?aqiTone(aqNow):C.textMuted)}
-    </div>,true):null}
-    {sec("Best time to climb",<div style={box}>{head}
-    {showPrefs?<div style={{background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"10px 12px",marginBottom:10}}>
-      <div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,marginBottom:8}}>They change the score on every crag route and in the Best day to climb view. Also in the Menu and Settings.</div>
-      <CondPrefsControls disc={disc}/>
-    </div>:null}
-    <div role="group" aria-label="Day" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:4,marginBottom:10}}>{days.map(function(d,i){var on=i===Math.min(dayI,days.length-1);return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+(d.stars==null?"no score":fmt(d.stars)+" stars")} style={{flex:"0 0 58px",width:58,boxSizing:"border-box",minHeight:58,padding:"6px 2px",borderRadius:9,border:"1px solid "+(on?C.green:C.border),background:on?C.greenBg:"transparent",color:C.text,cursor:"pointer",textAlign:"center"}}><div style={{fontSize:11.5,fontWeight:700}}>{dayName(d,i)}</div><div style={{fontSize:12,fontWeight:800,color:col(d.stars)}}>{fmt(d.stars)+" ★"}</div><div style={{fontSize:10.5,color:C.textMuted}}>{d.hi!=null?uTemp(d.hi)+"/"+uTemp(d.lo):""}</div></button>;})}</div>
-    <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:6}}><div style={{fontSize:34,fontWeight:800,lineHeight:1,color:C.text}}>{fmt(top)}</div><div><div aria-hidden="true" style={{fontSize:19,letterSpacing:1.5,lineHeight:1.1}}>{starRow(top)}</div><span style={{display:"inline-block",marginTop:3,padding:"2px 9px",borderRadius:20,fontSize:11.5,fontWeight:800,color:lblCol,background:top>=4?C.greenBg:top>=2.5?C.amberBg:C.redBg}}>{lbl}</span>{h?<div style={{fontSize:11,color:C.textMuted,marginTop:3}}>{"Overall score at "+clockHr(h.hr)+" · pick another hour below"}</div>:null}</div></div>
-    <div style={{fontSize:13,color:C.text,marginBottom:day.capWhy.length?4:10}}>{day.best?<span>{"Best 3 hours "}<b>{clockHr(day.best.start)+" – "+clockHr(day.best.end)}</b>{" · "}<b style={{color:col(day.stars)}}>{fmt(day.stars)+" ★"}</b><span style={{color:C.textMuted}}>{" (the day’s score)"}</span></span>:(dayI===0?"Fewer than three daylight hours left to score":"Fewer than three daylight hours to score")}</div>
-    {day.capWhy.length?<div style={{fontSize:12,color:C.amber,lineHeight:1.45,marginBottom:10}}>{"Held down by: "+day.capWhy.join(" · ")}</div>:null}
-    {dayRainSplit?<div data-rain-split="1" style={{fontSize:12,color:C.amber,lineHeight:1.45,marginBottom:10}}>{"Forecast models disagree on rain this day ("+uPrecip(dayRainSplit[0])+"–"+uPrecip(dayRainSplit[1])+"): treat the rain, and the drying after it, as uncertain."}</div>:null}
-    {wetTill?<div data-wet-until="1" style={{fontSize:12,color:C.amber,lineHeight:1.45,marginBottom:10}}>{"Rock likely wet until "+clockHr(wetTill.hr)+": the hours before it score lower than the day. Tap one to see why."}</div>:null}
-    {dewTill&&!(wetTill&&wetTill.hr>=dewTill.hr)?<div data-dew-until="1" style={{fontSize:12,color:C.amber,lineHeight:1.45,marginBottom:10}}>{"Air at its dew point until "+clockHr(dewTill.hr)+": dew may dampen the rock, so earlier hours score lower than the day. Tap one to see why."}</div>:null}
-    {hrs.length?<div style={{marginBottom:10}}>
-      <div style={{fontSize:10.5,fontWeight:800,color:C.textMuted,letterSpacing:0.5,textTransform:"uppercase",marginBottom:5}}>{dayI===0?"Pick an hour, rest of today ":"Pick an hour "}<span style={{textTransform:"none",letterSpacing:0,fontWeight:500}}>(daylight hours · colour is the overall score)</span></div>
-      <div style={hrGrid}>{hrs.map(function(x,i){return <button key={x.time} onClick={function(){setHrI(i);}} aria-pressed={i===selI} aria-label={clockHr(x.hr)+", overall score "+fmt(x.stars)+" stars"+(day.best&&i>=day.best.i&&i<day.best.i+3?", one of the best 3 hours":"")+(x.dryFrac!=null&&x.dryFrac<1?", rock about "+Math.round(x.dryFrac*100)+"% dry":"")+(x.precip>0?", "+uPrecip(x.precip)+" of rain":"")} style={{gridColumn:hrCol(x),boxSizing:"border-box",height:44,padding:0,borderRadius:5,cursor:"pointer",background:col(x.stars),opacity:0.6+(x.stars||0)/5*0.4,border:"2px solid "+(i===selI?C.text:"transparent")}}/>;})}</div>
-      {day.best?<div aria-hidden="true" style={Object.assign({},hrGrid,{marginTop:3})}>{hrs.slice(day.best.i,day.best.i+3).map(function(x){return <div key={x.time} style={{gridColumn:hrCol(x),height:3,borderRadius:2,background:C.green}}/>;})}</div>:null}
-      <div style={Object.assign({},hrGrid,{marginTop:3})}>{hrs.map(function(x,i){var c=hrCol(x);return <div key={x.time} style={{gridColumn:c,fontSize:9.5,color:C.textMuted,textAlign:"center",whiteSpace:"nowrap"}}>{i===0||((c-1)%3===0&&c-hrCol(hrs[0])>=3)?clockHr(x.hr).replace(" ",""):""}{score.bearing!=null?<div aria-hidden="true" style={{fontSize:10,color:x.lit?C.yellow:C.textMuted}}>{x.lit?"●":"▪"}</div>:null}{hrs.some(function(y){return y.precip>0;})?<div aria-hidden="true" style={{fontSize:10,color:C.blue,minHeight:13}}>{x.precip>0?"•":""}</div>:null}</div>;})}</div>
-    </div>:null}
-    {h?<div>
-      <div style={{fontSize:10.5,fontWeight:800,color:C.textMuted,letterSpacing:0.5,textTransform:"uppercase",marginBottom:6}}>{"Why "+clockHr(h.hr)+" scores "+fmt(h.stars)+" · "+h.pts+" of "+h.max+" points"}</div>
-      {h.dryFrac!=null&&h.dryFrac<1?(function(){var y=dryAfter(h);return <div data-hour-dry="1" style={{fontSize:12.5,color:C.amber,fontWeight:700,marginBottom:8}}>{(h.factors.dry&&h.factors.dry.raining?"Raining at "+clockHr(h.hr):"Rock about "+Math.round(h.dryFrac*100)+"% dry at "+clockHr(h.hr))+" · "+(y?"likely dry from "+whenOf(y):"not dry within the 7-day forecast")}</div>;})():null}
-      <div style={{display:"flex",flexDirection:"column",gap:7}}>{facKeys.filter(function(k){return h.factors[k];}).map(function(k){var f=h.factors[k],pc=f.pts/WEIGHTS[k];var fc=pc>=0.75?C.green:pc>=0.45?C.amber:C.red;return <div key={k} data-factor={k}>
-        <div style={{display:"grid",gridTemplateColumns:"92px minmax(0,1fr) 44px",gap:8,alignItems:"center",fontSize:12.5}}><span style={{color:C.text}}>{FACTOR_LABEL[k]}</span><div style={{height:7,background:C.borderLight,borderRadius:4,overflow:"hidden"}}><div style={{width:Math.round(pc*100)+"%",height:"100%",background:fc}}/></div><span style={{textAlign:"right",color:C.textSub,fontVariantNumeric:"tabular-nums"}}>{f.pts+"/"+WEIGHTS[k]}</span></div>
-        <div style={{fontSize:11.5,color:C.textMuted,marginLeft:100,lineHeight:1.45}}>{facNote(k,f)}</div>
-      </div>;})}</div>
-      {h.caps.length?<div data-caps="1" style={{fontSize:12,color:C.amber,marginTop:9,paddingLeft:9,borderLeft:"2px solid "+C.amber,lineHeight:1.5}}>{h.caps.map(function(c){return <div key={c.why}>{"Capped at "+c.stars+" ★ — "+c.why}</div>;})}<div style={{color:C.textMuted}}>{"The factors alone would give "+fmt(h.rawStars)+"."}</div></div>:null}
-      {h.missing.length?<div style={{fontSize:11.5,color:C.textMuted,marginTop:9,paddingLeft:9,borderLeft:"2px solid "+C.borderLight,lineHeight:1.5}}>{"Not measured, so left out of the score: "+h.missing.map(notMeasured).join("; ")+"."}{h.missing.indexOf("sun")>=0&&onAddAspect?<button onClick={onAddAspect} style={{display:"block",marginTop:4,padding:"3px 0",border:"none",background:"none",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer",textAlign:"left"}}>{"Know which way it faces? Add the wall direction →"}</button>:null}</div>:null}
-    </div>:null}
-    </div>)}
-    {sec("Day by day",<div data-day-table="1" style={Object.assign({},condBox,{padding:0,overflow:"hidden"})}>
-      {days.map(function(d,i){var on=i===Math.min(dayI,days.length-1);var trace=d.rain!=null&&d.rain>0&&uImp()&&d.rain<0.005;
-        var tLine=d.hi!=null?uTemp(d.hi)+" / "+uTemp(d.lo)+(d.feelsHi!=null?", feels "+uTemp(d.feelsHi)+" / "+uTemp(d.feelsLo):""):"Temperature not measured";
-        var rWhen=d.rain>0&&d.rainFrom!=null?clockHr(d.rainFrom)+"–"+clockHr(d.rainTo):"";
-        var rLine=(d.rain==null?"Rain not measured":d.rain===0?"No rain":(trace?"A trace of rain (under 0.01\") over "+d.rainHrs+" h":uPrecip(d.rain)+" of rain over "+d.rainHrs+" h")+(rWhen?", "+rWhen:""))+(d.popMax?" · hourly chance up to "+d.popMax+"%":"");
-        var wLine=[d.windMax!=null?"Wind to "+uWind(d.windMax)+(d.gustMax!=null&&uWindN(d.gustMax)>uWindN(d.windMax)?", gusts "+uWind(d.gustMax):""):"Wind not measured",d.rhMin!=null?"humidity "+Math.round(d.rhMin)+"–"+Math.round(d.rhMax)+"%":null,d.cloudAvg!=null?skyWord(d.cloudAvg).toLowerCase()+" ("+Math.round(d.cloudAvg)+"% cloud)":null].filter(Boolean).join(" · ");
-        /* The day name and its stars sit on their OWN line above the boxes: beside them, at 390 px, three boxes
-           shared what was left of a 50 px column and broke "52° / 38°" mid-number. A missing value is "—" here
-           (the row's spoken label still says "not measured"); "Not measured" did not fit a third of a phone. */
-        return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+(d.stars==null?"no score":fmt(d.stars)+" stars")+". "+tLine+". "+rLine+". "+wLine+"."} style={{display:"block",width:"100%",textAlign:"left",padding:"11px 14px",margin:0,border:"none",borderTop:i?"1px solid "+C.border:"none",borderRadius:0,background:on?C.greenBg:"transparent",boxShadow:on?"inset 3px 0 0 "+C.green:"none",color:C.text,cursor:"pointer",font:"inherit"}}>
-          <span style={{display:"flex",alignItems:"baseline",gap:8,marginBottom:6}}><span style={{fontSize:12.5,fontWeight:800}}>{dayName(d,i)}</span><span style={{fontSize:11.5,color:C.textMuted}}>{dayDate(d)}</span><span style={{fontSize:12,fontWeight:800,color:col(d.stars)}}>{fmt(d.stars)+" ★"}</span></span>
-          <span style={{minWidth:0,display:"block"}}>
-            <span style={{display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:5}}>
-              <span style={dayBox}><span style={dayLbl}>Temp</span><span style={Object.assign({},dayVal,{color:d.hi!=null?wxTempColor(d.hi):C.textMuted})}>{d.hi!=null?uTemp(d.hi)+" / "+uTemp(d.lo):"—"}</span><span style={daySub}>{d.hi!=null?"high / low"+(d.feelsHi!=null?", feels "+uTemp(d.feelsHi)+" / "+uTemp(d.feelsLo):""):""}</span></span>
-              <span style={dayBox}><span style={dayLbl}>Rain</span><span style={Object.assign({},dayVal,{color:d.rain==null?C.textMuted:d.rain>0?C.blue:C.text})}>{d.rain==null?"—":d.rain===0?"None":trace?"Trace":uPrecip(d.rain)}</span><span style={daySub}>{(d.rain>0?d.rainHrs+" h"+(rWhen?", "+rWhen:""):"")+(d.rain>0&&d.popMax?" · ":"")+(d.popMax?"hourly chance up to "+d.popMax+"%":"")+(rainSplit(d)?" · models split "+uPrecip(rainSplit(d)[0])+"–"+uPrecip(rainSplit(d)[1]):"")}</span></span>
-              <span style={dayBox}><span style={dayLbl}>Wind</span><span style={Object.assign({},dayVal,{color:d.windMax!=null?wxWindColor(d.windMax):C.textMuted})}>{d.windMax!=null?"to "+uWind(d.windMax):"—"}</span><span style={daySub}>{d.gustMax!=null&&d.windMax!=null&&uWindN(d.gustMax)>uWindN(d.windMax)?"gusts to "+uWind(d.gustMax):""}</span></span>
-            </span>
-            <span style={{display:"block",fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:4}}>{[d.rhMin!=null?"Humidity "+Math.round(d.rhMin)+"–"+Math.round(d.rhMax)+"%":null,d.cloudAvg!=null?skyWord(d.cloudAvg)+" ("+Math.round(d.cloudAvg)+"% cloud)":null].filter(Boolean).join(" · ")}</span>
-          </span>
-        </button>;})}
-      <div style={Object.assign({},condNote,{marginTop:0,padding:"9px 14px 11px",borderTop:"1px solid "+C.border})}>Temperature and rain cover the whole day; wind, humidity and cloud its daylight hours. Tap a day to open it above and in the charts.</div>
-    </div>)}
-    {sec("Hour by hour",<div style={condBox}>
-      <div role="group" aria-label="Day for the hourly charts" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:4,marginBottom:4}}>{days.slice(0,7).map(function(d,i){var on=i===Math.min(dayI,days.length-1);return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+dayDate(d)} style={{flex:"0 0 58px",width:58,minHeight:44,boxSizing:"border-box",padding:"6px 2px",borderRadius:9,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.onSolid:C.textSub,cursor:"pointer",textAlign:"center"}}><div style={{fontSize:12,fontWeight:on?800:700}}>{dayName(d,i)}</div><div style={{fontSize:10.5,color:on?C.blue:C.textMuted}}>{dayDate(d)}</div></button>;})}</div>
-      <HourlyChart all={day.all} selUtc={h?h.utc:null}/>
-    </div>)}
-    {sec("Rock & drying",<div style={condBox}>
-      {condRow("Rock",rockLbl,rk?C.text:C.textMuted)}
-      {condRow("Drying time","About "+score.dryNeed+" h after a typical rain"+(cp.rain==="cautious"?" (you give it longer)":"")+"; less after a drizzle, longer after a soaking")}
-      {condRow("Past rain",score.rainMeasured?(function(){var t=score.rainMeasured.through,l=score.local(t);return "Measured up to "+clockAt(score,t)+(l.date===days[0].date?" today":" "+new Date(l.date+"T12:00:00Z").toLocaleDateString(DLOCALE,{weekday:"long",timeZone:"UTC"}))+"; forecast after that";})():"Modelled — no rain measurements reach this crag",score.rainMeasured?C.text:C.textMuted)}
-      {curF?condRow("Last rain",curF.raining?"In the past hour":curF.atLeast?"None in the past 14 days":agoH(curF.val)+" · "+uPrecip(curF.rain24)+" in the day before it stopped"):null}
-      {cur&&cur.dryFrac!=null?condRow("Rock now",cur.dryFrac>=1?(cur.factors.dry&&cur.factors.dry.damp?"Dried out from rain, but the air is at its dew point — shaded rock may be damp":"Likely dry"):"Likely wet — about "+Math.round(cur.dryFrac*100)+"% dried",cur.dryFrac>=1?C.green:C.amber):null}
-      {dryLine?condRow("Likely dry from",dryLine):null}
-      {score.seep?condRow("Seepage risk",<span><b style={{color:score.seep.risk==="high"?C.red:score.seep.risk==="moderate"?C.amber:C.green}}>{score.seep.risk==="high"?"High":score.seep.risk==="moderate"?"Moderate":"Low"}</b>{" · "+uPrecip(score.seep.rain7)+" of rain in 7 days, "+uPrecip(score.seep.rain14)+" in "+(score.seep.short?"the days on record":"14 days")}</span>):null}
-      <div style={condNote}>Seepage is a risk from recent rain, not a reading: cracks, seams and overhangs can stay wet for days after the face is dry. Drying times are rules of thumb for the rock type.</div>
-    </div>)}
-    {sec("Sun on the wall",<div style={condBox}>
-      {day.sun?condRow("Sunrise",clockAt(score,day.sun.rise)):null}
-      {day.sun&&day.sun.set!=null?condRow("Sunset",clockAt(score,day.sun.set)):null}
-      {score.bearing!=null?condRow("Wall faces",DIR8[Math.round(score.bearing/45)%8]):null}
-      {score.bearing!=null&&day.wallSun?condRow("Sun on the wall",day.wallSun.on!=null?"Hits the wall at "+clockAt(score,day.wallSun.on)+" · leaves at "+clockAt(score,day.wallSun.off):"No direct sun on this wall today",day.wallSun.on!=null?C.yellow:C.textSub):null}
-      {score.bearing==null?condRow("Sun on the wall",(score.aspectVaries?"The wall faces several ways, so when the sun reaches it isn’t worked out, and sun isn’t scored":"No wall direction on file for this climb, so when the sun reaches it isn’t worked out")+". The shade map below shows where the terrain casts shadow.",C.textMuted):null}
-      {score.bearing!=null?<div style={condNote}>Times assume a clear sky; a yellow dot under the hours above marks the ones forecast to be in sun. Terrain and trees that shade the wall aren’t known.</div>:null}
-    </div>)}
-    {sec("Shade map",<div style={condBox}>{shadeAt!=null?<ShadeMap lat={lat} lng={lng} rise={day.sun.rise} set={day.sun.set} at0={shadeAt} dayKey={day.date} clock={function(u){return clockAt(score,u);}} C={C}/>:<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>The forecast has no sunrise and sunset for this day, so the shade can’t be drawn.</div>}</div>)}
-    {sec("Air quality",<div style={condBox}>
-      {!aq?<LoadingRows C={C} label="Loading air quality…"/>:aq.error?<div><div style={{fontSize:12.5,color:C.amber,lineHeight:1.5,marginBottom:8}}>Couldn’t load air quality, so smoke is not measured. This is not a clean-air reading.</div><button onClick={function(){setAqTries(aqTries+1);}} style={{background:C.surface,color:C.blue,border:"1px solid "+C.border,borderRadius:8,padding:"7px 12px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Try again</button></div>:<div>
-        {condRow("Now",aqNow!=null?"AQI "+Math.round(aqNow)+" · "+aqCat.label:"Not measured",aqNow!=null?aqiTone(aqNow):C.textMuted)}
-        {condRow(dayI===0?"Worst today":"Worst "+dayName(day,dayI),day.aqiMax!=null?"AQI "+Math.round(day.aqiMax)+" · "+dayAqCat.label:"No air-quality forecast this far ahead",day.aqiMax!=null?aqiTone(day.aqiMax):C.textMuted)}
-        {cur&&cur.pm25!=null?condRow("Fine smoke",Math.round(cur.pm25)+" µg/m³ of PM2.5 now"):null}
-        <div style={condNote}>{"Above AQI "+score.aqLimits[0]+" the score is held to 2 ★, above "+score.aqLimits[1]+" to 1 ★ — smoke makes hard breathing the day’s real hazard."+(cp.aq?" (Your air-quality setting.)":"")}</div>
-      </div>}
-    </div>)}
-    {sec("Season",<div style={condBox}>
-      {!clim?<LoadingRows C={C} label="Loading the climate history…"/>:clim.error?<div><div style={{fontSize:12.5,color:C.amber,lineHeight:1.5,marginBottom:8}}>Couldn’t load the climate history for this crag. This says nothing about its season.</div><button onClick={function(){setClimTries(climTries+1);}} style={{background:C.surface,color:C.blue,border:"1px solid "+C.border,borderRadius:8,padding:"7px 12px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Try again</button></div>:<SeasonChart clim={clim.data} band={score.band}/>}
-    </div>)}
-  </div>;
-}
-function pickForecastWaypoints(waypoints){
-  const wps=(waypoints||[]).filter(wpPlaced).map(function(w){return (typeof w.lat==="number"&&typeof w.lng==="number")?w:{...w,lat:+w.lat,lng:+w.lng};});
-  const trailhead=wps.find(function(w){return wpIs(w,"Trailhead");})||null;
-  const summit=wps.find(function(w){return wpIs(w,"Summit")||wpIs(w,"Topout");})||null;
-  const rest=wps.filter(function(w){return w!==trailhead&&w!==summit;});
-  const camps=rest.filter(function(w){return wpIs(w,"Campsite");});
-  var mid=null;
-  if(camps.length){
-    mid=camps.slice().sort(function(a,b){return (b.elev||0)-(a.elev||0);})[0]; // the highest camp is the most useful mid-mountain read
-  }else if(rest.length){
-    const midElev=(trailhead&&trailhead.elev!=null&&summit&&summit.elev!=null)?(trailhead.elev+summit.elev)/2:null;
-    const midDist=(trailhead&&trailhead.distMi!=null&&summit&&summit.distMi!=null)?(trailhead.distMi+summit.distMi)/2:null;
-    mid=rest.slice().sort(function(a,b){
-      const sa=midElev!=null&&a.elev!=null?Math.abs(a.elev-midElev):(midDist!=null&&a.distMi!=null?Math.abs(a.distMi-midDist)*1000:99999);
-      const sb=midElev!=null&&b.elev!=null?Math.abs(b.elev-midElev):(midDist!=null&&b.distMi!=null?Math.abs(b.distMi-midDist)*1000:99999);
-      return sa-sb;
-    })[0]; // no camp on the route — fall back to whichever waypoint sits closest to the trailhead/summit midpoint
-  }
-  return [trailhead,mid,summit].filter(Boolean);
-}
 /* A route with NO placed waypoints used to get "No forecast yet" here, which was most of the catalog.
    It now reads its area's own coordinate at the route's high point -- the point the Conditions tab's
    flags are read at (lib/AlpineConditionsCard.jsx forecastPoint) -- named as the area, not as a pin. */
@@ -3390,222 +1724,4 @@ function wxFallbackOf(route,mtn){const pt=forecastPoint(route,mtn);if(!pt||pt.pi
    so it gets ONE point: the crag's own coordinate, the one its CONDITIONS SCORE card reads (owner,
    2026-10-14: "forecast at crag"). Its pins are not consulted -- a parking pin is not where you climb. */
 function cragWxPointOf(route,mtn){const a=route._dbArea||mtn||{};const num=function(v){return v!=null&&v!==""&&isFinite(+v)?+v:null;};const lat=num(mtn&&mtn.lat)!=null?num(mtn.lat):num(a.lat),lng=num(mtn&&mtn.lng)!=null?num(mtn.lng):num(a.lng);if(lat==null||lng==null)return null;const el=num(a.elevation)!=null?num(a.elevation):num(mtn&&mtn.elevation);return {type:"Crag",name:a.name||(mtn&&mtn.name)||"The crag",lat:lat,lng:lng,elev:el};}
-function WeatherPanel({waypoints,showPlan,fallback,crag}){
-  const _picked=crag?[]:pickForecastWaypoints(waypoints);
-  const points=_picked.length||!fallback?_picked:[fallback];
-  const [data,setData]=useState({});
-  const [expandedDay,setExpandedDay]=useState({});
-  const key=points.map(function(w){return w.type+"_"+w.name;}).join("|");
-  useEffect(function(){
-    if(!points.length)return;
-    // Cancelled on cleanup: the three forecast fetches resolve after an unmount (leaving the route
-    // page) or after the waypoint set changes, and each used to write into a dead panel.
-    let live=true;
-    points.forEach(function(w){
-      const k=w.type+"_"+w.name;
-      // forecast_days=16 is Open-Meteo's max — pulls the full range it forecasts
-      // out to, not just the next 24 hours, so the panel below can lay it out
-      // day by day instead of a single next-day summary.
-      // precipitation_unit=inch also switches freezing_level_height (and other
-      // length fields) from meters to feet, so freezeMax arrives in CANONICAL
-      // FEET — never scale it by 3.28 again. DISPLAYING it still goes through
-      // uElev(), exactly like every other tile in this panel: converting the
-      // canonical value to the climber's own unit is a different operation
-      // from the re-conversion this warns about, and skipping it is what left
-      // the Freezing level tile reading feet to a metric climber.
-      // The three requests live in lib/forecast.js now (fetchForecastRaw), shared with the Safety tab.
-      // Open-Meteo, NWS, and MET Norway run different models from different
-      // organizations and can legitimately disagree by several degrees over
-      // complex mountain terrain — fetch both secondary sources' own series too
-      // so the panel can flag divergence instead of presenting one number as
-      // gospel. Both secondary sources are short-range (~4-7 days); Open-Meteo
-      // alone still drives the full 16-day view and is the only one broken into
-      // AM/PM/Night + hourly detail — the secondary sources stay lighter (a
-      // high/low, wind, and one weather label) by design, not full parity.
-      // MET Norway (api.met.no) — an independent forecast from a different
-      // national weather service (ECMWF-derived outside the Nordics), not
-      // affiliated with NOAA. Browsers won't let JS set a custom User-Agent
-      // (a forbidden fetch header), so this relies on the browser's own UA —
-      // fine at this request volume, but MET Norway's own guidance prefers an
-      // identifying one for high-traffic server-side use.
-      fetchForecastRaw(w).then(function(res){return {res:res};}).then(function(o){
-        const res=o.res;
-        const json=res[0],nwsJson=res[1],metJson=res[2];
-        const h=json&&json.hourly;
-        if(!h||!h.temperature_2m||!h.time)throw new Error("no data");
-        const offsetSec=json.utc_offset_seconds||0;
-        const toLocalDay=function(utcIso){return new Date(new Date(utcIso).getTime()+offsetSec*1000).toISOString().slice(0,10);};
-        const prevDayStr=function(dateStr){return new Date(new Date(dateStr+"T00:00:00Z").getTime()-86400000).toISOString().slice(0,10);};
-        // Group hourly samples by the local calendar date Open-Meteo returns
-        // (timezone=auto) rather than by 24-hour blocks from fetch time, so
-        // "today" lines up with the site's own day instead of drifting with
-        // whatever hour the request happened to go out. AM/PM/Night parts are
-        // bucketed separately: pre-dawn hours (0-5) join the PRECEDING day's
-        // "Night" bucket rather than starting a new one, since the coldest
-        // part of an overnight is usually just before dawn — matching how
-        // mountain-forecast sites group an alpine-start overnight window.
-        const byDay={},byPart={};
-        h.time.forEach(function(t,i){
-          const date=t.slice(0,10),hr=parseInt(t.slice(11,13),10);
-          if(!byDay[date])byDay[date]={temps:[],feels:[],codes:[],winds:[],winds10:[],gusts:[],pops:[],precips:[],snows:[],fz:[],uvs:[],hours:[]};
-          const dd=byDay[date];
-          dd.temps.push(h.temperature_2m[i]);
-          dd.feels.push(h.apparent_temperature[i]);
-          dd.codes.push(h.weather_code[i]);
-          dd.winds.push(h.wind_speed_80m[i]);
-          if(h.wind_speed_10m)dd.winds10.push(h.wind_speed_10m[i]);
-          dd.gusts.push(h.wind_gusts_10m[i]);
-          dd.pops.push(h.precipitation_probability[i]);
-          dd.precips.push(h.precipitation[i]);
-          dd.snows.push(h.snowfall[i]);
-          dd.fz.push(h.freezing_level_height[i]);
-          dd.uvs.push(h.uv_index[i]);
-          /* The HOURLY rows pair the wind with the gust beside it, and the only gust published is at 10 m -- so the hour's
-             wind (and its direction) is the 10 m one too. The 80 m figure in that box read a calm-looking 10 m gust as
-             weaker than its own wind. The day tile's headline stays at 80 m (check:units says why). An older saved
-             forecast without the 10 m series shows "Not measured", never an 80 m figure under a 10 m label. */
-          dd.hours.push({hr:hr,tempF:h.temperature_2m[i],code:h.weather_code[i],windMph:h.wind_speed_10m?h.wind_speed_10m[i]:null,dir:h.wind_direction_10m?h.wind_direction_10m[i]:null,pop:h.precipitation_probability[i],gustMph:h.wind_gusts_10m[i],precipIn:h.precipitation[i]});
-          const partKey=hr<6?"night":hr<12?"am":hr<18?"pm":"night";
-          const partDate=hr<6?prevDayStr(date):date;
-          const pk=partDate+"_"+partKey;
-          if(!byPart[pk])byPart[pk]={temps:[],codes:[],winds:[],dirs:[],precips:[],pops:[]};
-          /* RAIN BY PART OF THE DAY. precipitation[T] is the rain of the hour BEFORE T, so it belongs to the part that
-             hour BEGAN in: the 6 AM value is the night's, the noon value the morning's. */
-          const bHr=hr===0?23:hr-1,bDate=hr===0?prevDayStr(date):date;
-          const rk=(bHr<6?prevDayStr(bDate):bDate)+"_"+(bHr<6?"night":bHr<12?"am":bHr<18?"pm":"night");
-          if(!byPart[rk])byPart[rk]={temps:[],codes:[],winds:[],dirs:[],precips:[],pops:[]};
-          if(h.precipitation[i]!=null)byPart[rk].precips.push(h.precipitation[i]);
-          if(h.precipitation_probability[i]!=null)byPart[rk].pops.push(h.precipitation_probability[i]);
-          byPart[pk].temps.push(h.temperature_2m[i]);
-          byPart[pk].codes.push(h.weather_code[i]);
-          byPart[pk].winds.push(h.wind_speed_80m[i]);
-          byPart[pk].dirs.push(h.wind_direction_80m[i]);
-        });
-        const sum=function(arr){return arr.reduce(function(s,v){return s+(v||0);},0);};
-        const avg=function(arr){return arr.length?sum(arr)/arr.length:0;};
-        const buildPart=function(label,pk){const b=byPart[pk];if(!b||!b.temps.length)return null;const pCode=modeOf(b.codes);return {label:label,temp:Math.round(avg(b.temps)),wx:WX_CODE_LABEL[pCode]||null,wxCode:pCode,wind:Math.round(avg(b.winds)),dir:degToCompass(circMeanDeg(b.dirs)),rain:b.precips.length?Math.round(sum(b.precips)*1000)/1000:null,pop:b.pops.length?Math.round(Math.max.apply(null,b.pops)):null};};
-        // Secondary-source extras (wind + one weather label per day) — a
-        // lighter read than Open-Meteo's per-part/hourly breakdown, by design.
-        const nwsByDay={},nwsWindByDay={},nwsWxByDay={};
-        /* NWS temperatures are for THEIR grid cell's own height, not this point's. Raw, they read warmer than the
-           height-adjusted series beside them at every summit (Rainier: cell 3,890 m, pin 4,392 m) and tripped
-           "differs" on a difference of height, not of forecast. Shifted by the standard lapse rate, stated. */
-        const nwsShift=nwsHeightShiftF(nwsJson,w.elev);
-        if(nwsJson&&nwsJson.properties){
-          const tvals=nwsJson.properties.temperature&&nwsJson.properties.temperature.values;
-          if(tvals)tvals.forEach(function(v){if(typeof v.value!=="number")return;const day=toLocalDay(v.validTime.split("/")[0]);if(!nwsByDay[day])nwsByDay[day]=[];nwsByDay[day].push(v.value*9/5+32+nwsShift);});
-          const wvals=nwsJson.properties.windSpeed&&nwsJson.properties.windSpeed.values;
-          if(wvals)wvals.forEach(function(v){if(typeof v.value!=="number")return;const day=toLocalDay(v.validTime.split("/")[0]);if(!nwsWindByDay[day])nwsWindByDay[day]=[];nwsWindByDay[day].push(v.value*0.621371);});
-          const xvals=nwsJson.properties.weather&&nwsJson.properties.weather.values;
-          if(xvals)xvals.forEach(function(v){const w0=v.value&&v.value[0]&&v.value[0].weather;if(!w0)return;const day=toLocalDay(v.validTime.split("/")[0]);if(!nwsWxByDay[day])nwsWxByDay[day]=[];nwsWxByDay[day].push(w0);});
-        }
-        const metByDay={},metWindByDay={},metWxByDay={};
-        if(metJson&&metJson.properties&&metJson.properties.timeseries){
-          metJson.properties.timeseries.forEach(function(e){
-            const det=e&&e.data&&e.data.instant&&e.data.instant.details;
-            if(!det||typeof det.air_temperature!=="number")return;
-            const day=toLocalDay(e.time);
-            if(!metByDay[day])metByDay[day]=[];
-            metByDay[day].push(det.air_temperature*9/5+32);
-            if(typeof det.wind_speed==="number"){if(!metWindByDay[day])metWindByDay[day]=[];metWindByDay[day].push(det.wind_speed*2.23694);}
-            const sym=(e.data.next_1_hours&&e.data.next_1_hours.summary&&e.data.next_1_hours.summary.symbol_code)||(e.data.next_6_hours&&e.data.next_6_hours.summary&&e.data.next_6_hours.summary.symbol_code);
-            if(sym){if(!metWxByDay[day])metWxByDay[day]=[];metWxByDay[day].push(sym);}
-          });
-        }
-        const cap=function(s){return s?s.charAt(0).toUpperCase()+s.slice(1):null;};
-        /* NWS ships its weather values as snake_case English (rain_showers, freezing_rain,
-           blowing_snow), so replacing the separator LABELS THE WHOLE VOCABULARY rather than
-           the codes somebody remembered -- unlike metWxLabel, which needs a map because
-           `clearsky` and `partlycloudy` are not words. */
-        const nwsWxLabel=function(s){return s?cap(String(s).replace(/_/g," ")):null;};
-        const days=Object.keys(byDay).sort().map(function(date){
-          const d=byDay[date];
-          const parts=[buildPart("AM",date+"_am"),buildPart("PM",date+"_pm"),buildPart("Night",date+"_night")].filter(Boolean);
-          const nd=nwsByDay[date];
-          const nws=(nd&&nd.length>=3)?{adj:nwsShift,lo:Math.round(Math.min.apply(null,nd)),hi:Math.round(Math.max.apply(null,nd)),wind:nwsWindByDay[date]?Math.round(Math.max.apply(null,nwsWindByDay[date])):null,wx:nwsWxLabel(modeOf(nwsWxByDay[date]))}:null;
-          const md=metByDay[date];
-          const met=(md&&md.length>=3)?{lo:Math.round(Math.min.apply(null,md)),hi:Math.round(Math.max.apply(null,md)),wind:metWindByDay[date]?Math.round(Math.max.apply(null,metWindByDay[date])):null,wx:metWxLabel(modeOf(metWxByDay[date]))}:null;
-          const wxCode=modeOf(d.codes);
-          return {date:date,tempLo:Math.round(Math.min.apply(null,d.temps)),tempHi:Math.round(Math.max.apply(null,d.temps)),feelsLo:Math.round(Math.min.apply(null,d.feels)),feelsHi:Math.round(Math.max.apply(null,d.feels)),wx:WX_CODE_LABEL[wxCode]||null,wxCode:wxCode,windMax:Math.round(Math.max.apply(null,d.winds)),wind10Max:d.winds10.length?Math.round(Math.max.apply(null,d.winds10)):null,gustMax:Math.round(Math.max.apply(null,d.gusts)),popMax:Math.round(Math.max.apply(null,d.pops)),precipIn:Math.round(sum(d.precips)*1000)/1000,snowIn:Math.round(sum(d.snows)*100)/100,freezeMax:Math.round(Math.max.apply(null,d.fz)),uvMax:Math.round(Math.max.apply(null,d.uvs)*10)/10,parts:parts,hours:d.hours,nws:nws,met:met};
-        });
-        if(!live)return;
-        setData(function(p){return Object.assign({},p,{[k]:{days:days}});});
-      }).catch(function(){if(!live)return;setData(function(p){return Object.assign({},p,{[k]:{error:true}});});});
-    });
-    return function(){live=false;};
-  },[key]); // eslint-disable-line react-hooks/exhaustive-deps -- key is derived from points; refetch only when the point set changes, not on array identity
-  if(!points.length)return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"12px 14px"}}><CardHead style={{marginBottom:6}}>WEATHER FORECAST</CardHead><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.6}}>{crag?"No forecast yet — this crag has no location to forecast from.":"No forecast yet — this route has no named waypoints to forecast from. "+(showPlan?"Add a trailhead and summit waypoint on the Plan tab to unlock AM/PM/Night forecasts here.":"Once a trailhead and summit waypoint are added, AM/PM/Night forecasts appear here.")}</div></div>;
-  /* A fourth copy of the waypoint colour/icon map lived here, under its own names, which is
-     why the first sweep missed it: a grep for the other copies' variable name cannot find a
-     synonym. It happened to agree with them today and would not have for long — that is the
-     whole failure mode, three copies agreeing with each other while all three were wrong.
-     Reads from the shared WP_STYLE now, like everything else. */
-  return <div style={{marginBottom:ROUTE_GAP}}>
-    <SL>{crag?"Forecast at the crag":"Forecast at key points"}</SL>
-    <div style={{display:"flex",flexDirection:"column",gap:ROUTE_GAP}}>{points.map(function(w){const k=w.type+"_"+w.name;const d=data[k];const expDate=expandedDay[k];const _wty=wpType(w);const wCol=wpColor(_wty);return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 14px"}}>
-      <div style={{display:"flex",alignItems:"center",gap:9,marginBottom:10}}>
-        <div style={{width:28,height:28,borderRadius:"50%",background:wCol+"22",border:"1.5px solid "+wCol,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:wCol,flexShrink:0}}>{wpGlyph(_wty)}</div>
-        <div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</div>
-      </div>
-      {!d?<LoadingRows C={C} label="Loading forecast…"/>:d.error?<div style={{fontSize:12,color:C.textMuted}}>Forecast unavailable — check your connection.</div>:<><div style={{display:"flex",gap:9,overflowX:"auto",paddingBottom:3}}>{d.days.map(function(dy,di){
-        const dt=new Date(dy.date+"T12:00:00");
-        const lbl=di===0?"Today":dt.toLocaleDateString(DLOCALE,{weekday:"short"});
-        const sub=dt.toLocaleDateString(DLOCALE,{month:"short",day:"numeric"});
-        const chilly=dy.feelsLo<=dy.tempLo-5;
-        const frostbite=dy.feelsLo<=FROSTBITE_WINDCHILL_F;
-        const hasSnow=dy.snowIn>=0.05;
-        const omMid=(dy.tempHi+dy.tempLo)/2;
-        const nwsMid=dy.nws?(dy.nws.hi+dy.nws.lo)/2:null;
-        const diverges=nwsMid!=null&&Math.abs(nwsMid-omMid)>=6;
-        const metMid=dy.met?(dy.met.hi+dy.met.lo)/2:null;
-        const metDiverges=metMid!=null&&Math.abs(metMid-omMid)>=6;
-        const isExpanded=expDate===dy.date;
-        const condColor=wxCondColor(dy.wxCode);
-        return <div key={dy.date} style={{flexShrink:0,width:272,display:"flex",flexDirection:"column",background:C.surface,borderRadius:12,padding:"12px 13px",border:"1px solid "+C.border,borderTop:"3px solid "+wxTempColor(dy.tempLo)}}>
-          <div>
-          <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:9}}>
-            <div>
-              <div style={{fontSize:13.5,fontWeight:800,color:C.text}}>{lbl}</div>
-              <div style={{fontSize:10.5,color:C.textMuted}}>{sub}</div>
-            </div>
-            {dy.wx?<span style={{display:"flex",alignItems:"center",gap:4,fontSize:10,fontWeight:700,color:condColor,background:condColor+"1a",border:"1px solid "+condColor+"55",borderRadius:20,padding:"3px 9px",whiteSpace:"nowrap",flexShrink:0,marginLeft:8}}><WeatherIcon code={dy.wxCode} color={condColor} size={12}/>{dy.wx}</span>:null}
-          </div>
-          <div style={{fontSize:17,fontWeight:800,marginBottom:3}}><span style={{color:wxTempColor(dy.tempHi)}}>{"High "+uTemp(dy.tempHi)}</span><span style={{color:C.textMuted,fontWeight:600}}>{"  ·  "}</span><span style={{color:wxTempColor(dy.tempLo)}}>{"Low "+uTemp(dy.tempLo)}</span></div>
-          <div style={{fontSize:11,fontWeight:frostbite?700:400,color:frostbite?C.red:chilly?C.blue:C.textMuted,marginBottom:10}}>{"Feels like: High "+uTemp(dy.feelsHi)+" · Low "+uTemp(dy.feelsLo)+(chilly?" (wind chill)":"")+(frostbite?" — frostbite risk in 30 min":"")}</div>
-          {dy.parts.length?<div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:6,marginBottom:10}}>{dy.parts.map(function(p){return <div key={p.label} style={{background:C.card,borderRadius:9,padding:"7px 6px",border:"1px solid "+C.border}}>
-            <div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:3}}>{p.label}</div>
-            <div style={{display:"flex",alignItems:"center",gap:3,fontSize:9.5,color:C.textSub,marginBottom:5,minHeight:11,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}><WeatherIcon code={p.wxCode} color={C.textMuted} size={11}/>{p.wx||"—"}</div>
-            <div style={{fontSize:13.5,fontWeight:800,color:wxTempColor(p.temp)}}>{uTemp(p.temp)}</div>
-            <div style={{fontSize:9,fontWeight:600,color:wxWindColor(p.wind),marginTop:2}}>{uWind(p.wind)+(p.dir?" "+p.dir:"")}</div>
-            <div style={{fontSize:9.5,fontWeight:700,color:p.rain>0?C.blue:C.textMuted,marginTop:3}}>{p.rain==null?"Rain —":p.rain>0?uPrecip(p.rain)+(p.pop!=null?" · "+p.pop+"%":""):"No rain"+(p.pop?" · "+p.pop+"%":"")}</div>
-          </div>;})}</div>:null}
-          <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:6,marginBottom:diverges||metDiverges?10:0}}>
-            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Wind</div><div style={{fontSize:13,fontWeight:800,color:wxWindColor(dy.windMax)}}>{uWind(dy.windMax)}</div>{gustWorthShowing(dy)?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{"gusts to "+uWind(dy.gustMax)+", any hour"}</div>:null}</div>
-            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Precip</div><div style={{fontSize:13,fontWeight:800,color:dy.precipIn>0?C.blue:C.text}}>{dy.precipIn>0?uPrecip(dy.precipIn):"None"}</div><div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{dy.popMax+"% chance"+rainMostly(dy)}</div></div>
-            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>UV index</div><div style={{fontSize:13,fontWeight:800,color:wxUvColor(dy.uvMax)}}>{dy.uvMax}</div><div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{wxUvLabel(dy.uvMax)}</div></div>
-            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Freezing level</div><div style={{fontSize:13,fontWeight:800,color:C.text}}>{uElev(dy.freezeMax)}</div></div>
-            {hasSnow?<div style={{gridColumn:"span 2",background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border,display:"flex",alignItems:"center",justifyContent:"space-between",gap:8}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4}}>Snow expected</div><div style={{fontSize:13,fontWeight:800,color:C.blue}}>{uSnowfall(dy.snowIn)}</div></div>:null}
-          </div>
-          {diverges||metDiverges?<div style={{display:"flex",flexDirection:"column",gap:5}}>
-            {diverges?<div style={{display:"flex",alignItems:"flex-start",gap:6,fontSize:10.5}}><span style={{flexShrink:0,fontSize:9,fontWeight:800,color:C.textMuted,background:C.card,border:"1px solid "+C.border,borderRadius:5,padding:"1.5px 5px",marginTop:1}}>NWS</span><span style={{color:C.amber,lineHeight:1.4}}>{"High "+uTemp(dy.nws.hi)+" · Low "+uTemp(dy.nws.lo)+" — differs "+uTempDelta(Math.abs(nwsMid-omMid))+"°"+(Math.abs(dy.nws.adj)>=1?" · adjusted "+uTempDelta(Math.abs(dy.nws.adj))+"° "+(dy.nws.adj<0?"colder":"warmer")+" for this height":"")}</span></div>:null}
-            {metDiverges?<div style={{display:"flex",alignItems:"flex-start",gap:6,fontSize:10.5}}><span style={{flexShrink:0,fontSize:9,fontWeight:800,color:C.textMuted,background:C.card,border:"1px solid "+C.border,borderRadius:5,padding:"1.5px 5px",marginTop:1}}>MET</span><span style={{color:C.amber,lineHeight:1.4}}>{"High "+uTemp(dy.met.hi)+" · Low "+uTemp(dy.met.lo)+" — differs "+uTempDelta(Math.abs(metMid-omMid))+"°"}</span></div>:null}
-          </div>:null}
-          </div>
-          {dy.hours&&dy.hours.length?<div style={{marginTop:"auto",paddingTop:10}}>
-          <button onClick={function(){setExpandedDay(function(p){const o=Object.assign({},p);o[k]=isExpanded?null:dy.date;return o;});}} aria-expanded={isExpanded} style={{minHeight:44,width:"100%",padding:"8px",borderRadius:9,border:"1px solid "+C.blueDim,background:isExpanded?C.blueBg:C.card,color:isExpanded?"#fff":C.blue,fontSize:11,fontWeight:700,cursor:"pointer"}}>{isExpanded?"Hide hourly ":"Hourly forecast "}<Chevron inline open={isExpanded} size={12} color={C.blue}/></button>
-          {isExpanded?<div>
-            <div style={{marginTop:8,maxHeight:380,overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderRadius:9}}>{dy.hours.map(function(hh,hi){const t=typeof hh.tempF==="number"?Math.round(hh.tempF):null,wm=typeof hh.windMph==="number"?Math.round(hh.windMph):null,gm=typeof hh.gustMph==="number"?Math.round(hh.gustMph):null;return <div key={hi} style={{padding:"8px 9px",background:hi%2?"transparent":C.card,borderBottom:hi<dy.hours.length-1?"1px solid "+C.borderLight:"none"}}>
-              <div style={{display:"flex",alignItems:"center",gap:7,marginBottom:5}}><span style={{width:62,flexShrink:0,fontSize:15,fontWeight:800,color:C.text}}>{clockHr(hh.hr)}</span><span style={{flex:1,minWidth:0,display:"flex",alignItems:"center",gap:5,fontSize:12,color:C.textSub,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}><WeatherIcon code={hh.code} color={C.textMuted} size={14}/>{WX_CODE_LABEL[hh.code]||"—"}</span></div>
-              <div style={{display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:5}}>
-                <span style={dayBox}><span style={dayLbl}>Temp</span><span style={Object.assign({},dayVal,{color:t!=null?wxTempColor(t):C.textMuted})}>{t!=null?uTemp(t):"Not measured"}</span><span style={daySub}>{"At "+clockHr(hh.hr)}</span></span>
-                <span style={dayBox}><span style={dayLbl}>Wind</span><span style={Object.assign({},dayVal,{color:wm!=null?wxWindColor(wm):C.textMuted})}>{wm!=null?uWind(wm):"Not measured"}</span><span style={daySub}>{"At "+clockHr(hh.hr)+", 10 m up"+(wm!=null&&compass(hh.dir)?", from the "+compass(hh.dir):"")}</span></span>
-                <span style={dayBox}><span style={dayLbl}>Gusts</span><span style={Object.assign({},dayVal,{color:gm!=null?wxWindColor(gm):C.textMuted})}>{gm!=null?uWind(gm):"Not measured"}</span><span style={daySub}>{"During "+spanEnding(hh.hr)}</span></span>
-                <span style={dayBox}><span style={dayLbl}>Rain</span><span style={Object.assign({},dayVal,{color:hh.precipIn>0?C.blue:C.text})}>{hh.precipIn==null?"Not measured":hh.precipIn>0?uPrecip(hh.precipIn):"None"}</span><span style={daySub}>{(hh.pop!=null?hh.pop+"% chance, ":"")+"during "+spanEnding(hh.hr)}</span></span>
-              </div></div>;})}</div></div>:null}
-          </div>:null}
-        </div>;
-      })}</div></>}
-    </div>;})}</div>
-  </div>;
-}
 export default RouteDetail;

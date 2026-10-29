@@ -22,6 +22,8 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..",
 const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex");
 
 const RD = path.join(ROOT, "RouteDetail.jsx");
+// PR57 moved Calculator to src/components/Calculator.tsx.
+const CALC = path.join(ROOT, "src/components/Calculator.tsx");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 // The form moved off the route page to Crews › Float plans; the "route" cases now target that call site.
 const HUB = path.join(ROOT, "lib/FloatPlans.jsx");
@@ -110,7 +112,7 @@ const CASES = [
   },
   {
     name: "calc-local-copy-returns",
-    file: RD,
+    file: CALC,
     why: "a local pack/party/depart declaration comes back and shadows the lifted one — the exact pre-fix shape.",
     edit: (s) => s.replace('  const pack=st.pack,setPack=setK("pack");',
                            "  const [pack,setPack]=useState(10);"),

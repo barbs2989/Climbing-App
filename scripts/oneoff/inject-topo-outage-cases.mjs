@@ -19,40 +19,41 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const F = path.join(ROOT, "RouteDetail.jsx");
+// PR57 moved topoEmptyCopy to lib/topoEmptyCopy.js and TopoSection to src/components/TopoSection.tsx; a case names its own file.
+const COPY = path.join(ROOT, "lib/topoEmptyCopy.js");
+const SECTION = path.join(ROOT, "src/components/TopoSection.tsx");
 const GUARD = path.join(ROOT, "scripts/check-topo-outage-copy.mjs");
 const sum = (s) => crypto.createHash("sha1").update(s).digest("hex").slice(0, 12);
 
-const ORIGINAL = fs.readFileSync(F, "utf8");
-const BEFORE = sum(ORIGINAL);
+const ORIGINALS = new Map([COPY, SECTION].map((p) => [p, fs.readFileSync(p, "utf8")]));
 
 const INVITE = "A topo overlays the route line and markers on a photo of the wall, face, or line. Got a clear shot? Add it and draw the line so the next party can follow it.";
 const BROKEN_BODY = "A topo may already be on file for this route — this one list just didn’t load, so this is not a claim that there is none. Check your connection and try again.";
 
 const CASES = [
   {
-    name: "1 the real defect: the body ignores the flag and always invites",
+    file: COPY, name: "1 the real defect: the body ignores the flag and always invites",
     expect: "fail",
     edit: (s) => s.replace(`body:"${BROKEN_BODY}"}`, `body:"${INVITE}"}`),
   },
   {
-    name: "2 the headline ignores the flag too",
+    file: COPY, name: "2 the headline ignores the flag too",
     expect: "fail",
     edit: (s) => s.replace('?{head:"Couldn’t load the topos"', '?{head:"No topo yet"'),
   },
   {
-    name: "3 blanket rewrite: neither state invites the first topo",
+    file: COPY, name: "3 blanket rewrite: neither state invites the first topo",
     expect: "fail",
     edit: (s) => s.replace(`:{head:"No topo yet",\n      body:"${INVITE}"}`,
       `:{head:"No topo yet",\n      body:"${BROKEN_BODY}"}`),
   },
   {
-    name: "4 the JSX stops using the decision (copy reaches no screen)",
+    file: SECTION, name: "4 the JSX stops using the decision (copy reaches no screen)",
     expect: "fail",
     edit: (s) => s.replace("{topoCopy.body}</div>", "{\"A topo, once somebody adds one.\"}</div>"),
   },
   {
-    name: "5 an unrelated comment edit — must stay SILENT",
+    file: COPY, name: "5 an unrelated comment edit — must stay SILENT",
     expect: "pass",
     edit: (s) => s.replace("export function topoEmptyCopy(unavailable){",
       "/* injection case 5: a comment is not a regression */\nexport function topoEmptyCopy(unavailable){"),
@@ -61,6 +62,7 @@ const CASES = [
 
 let bad = 0;
 for (const c of CASES) {
+  const F = c.file, ORIGINAL = ORIGINALS.get(F), BEFORE = sum(ORIGINAL);
   const edited = c.edit(ORIGINAL);
   if (edited === ORIGINAL) {
     console.log(`  HARNESS  ${c.name}\n           EDIT NEVER LANDED — the pattern did not match. Fix the case, not the guard.`);
