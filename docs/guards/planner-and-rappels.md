@@ -379,17 +379,37 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       calibration when logs exist. It compares logged car-to-car times only against rows the Planner
       MODELLED, because a stored leg carries no rest factor, and floors are excluded. Re-run it once
       real climbers have logged timed climbs.
-    - **OUT OF STATE (2026-10-28, `audits/2026-10-28-route-timing-out-of-state.json`): 52
-      RESEARCHED, 3 READY, NONE WRITTEN.** Only 52 of the 5,185 alpine-family rows outside WA store a
-      time, a distance or gain, or sit on a classics list. Three repairs cleared the bar: Bugaboo
-      Spire's hut approach, Petit Grepon's approach, and Mount Hood South Side's approach of 0. All
-      three previewed and dry-ran clean, then were held, because production reads were failing for
-      an hour. **The Hood row is a pattern worth a census:** it stored a car-to-summit leg with no
-      approach, so the Planner put its walk model IN FRONT of the stored leg and read 15.8 hr against
-      a stored 12. Any row storing `summitTimeHrs` from the car with `approachTimeHrs` null
-      double-counts the same way. Fill in its approach of 0 from evidence, row by row, never as a
-      bulk fill. The ids `rainier_*` and `adams_*` are Washington routes outside the `wa_` prefix:
-      the WA pass missed them, and this one covered the four that store anything.
+    - **OUT OF STATE AND THE SUMMIT-LEG CENSUS (2026-10-28,
+      `audits/2026-10-28-route-timing-out-of-state.json`): 166 RESEARCHED, 24 WRITTEN.** Only 52 of the
+      5,185 alpine-family rows outside WA store a time, a distance or gain, or sit on a classics list.
+      They gave 3 repairs: Bugaboo Spire's hut approach, Petit Grepon's approach, and Mount Hood South
+      Side's approach of 0. The writes waited out a 1.5-hour production outage that ended when the
+      owner restarted the project; reads hung even for `/auth/v1/health` while requests with no key
+      got an instant 401.
+      - **THE HOOD PATTERN IS A CLASS OF 30.** A row storing `summitTimeHrs` with `approachTimeHrs`
+        null gets the walk model put IN FRONT of its summit leg (whole-day rows excepted). That is
+        right when the summit leg starts at a camp and double-counts when it starts at the car.
+        Researched row by row: five started at the car (Ruby, Persis, Three Queens, Hozomeen,
+        Johannesburg NE Buttress) and now store approach 0. The rest are camp legs, or the evidence
+        is too thin to tell.
+      - **EMPTY TRADE ROUTES: 84 RESEARCHED, 16 WRITTEN.** 191 empty rows sit on
+        well-climbed peaks, matched by AREA name. They were narrowed to 84 scrambles, snow routes and
+        3rd/4th-class lines. Written: 3 full sets (Sherman, Capitol Knife-Edge, South Sister South
+        Side) and 3 lone approaches. Twenty more have only a strong car-to-car figure, such as Whitney
+        13 hr from 4 reports or Grays 5.5 hr. Storing a total alone on an empty row was outside the
+        rule, so it went to the owner, who said "do what you recommend based on research". Ten that
+        clear the bar now store `totalHrs` alone, which the Planner reads as one whole day: Whitney
+        Trail 13, Langley 11, Casaval 12.5, Shasta West Face Gully 18.25, Democrat 4, Oxford 11.2,
+        Yale 7.3, Sunshine 10, Thielsen West Ridge 7.5, Teewinot East Face 8.5. The other ten rest on a
+        blog, AllTrails, a search snippet or one report, and are held (`ownerDecision` in the audit file).
+      - The ids `rainier_*` and `adams_*` are Washington routes outside the `wa_` prefix: the WA pass
+        missed them, and this one covered the four that store anything.
+    - **WA ICE AND MIXED (2026-10-28, `audits/2026-10-28-route-timing-wa-ice.json`): 16 RESEARCHED, 0
+      WRITTEN.** The earlier passes covered alpine, mountaineering and scrambling only; these 16 WA ice
+      and mixed rows store trip times too. Most have no timed reports at all. Early Winter Couloir's
+      car-to-car reports (8, 12 and 18 hr) leave the stored 10 hr total 17% short, inside the 20% bar. New York Gully
+      is HELD: its stored whole-day 10 hr is 21% under a 12.7 hr median, but two of the three reports
+      are search snippets and one may be the wrong thread.
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)

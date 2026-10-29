@@ -13,7 +13,10 @@ export interface SectionJumpsProps {
    outline (SL = aria-level 2, CardHead = 3), and a list beside them would drift the first time a section is
    added or gated on data. Section headings only when a tab has four; otherwise the card titles too, because
    Overview and Safety are mostly cards. Hidden under four links — a short tab is quicker to scroll than a
-   row of links about it is to read. Inline, not sticky: a fixed bar has covered controls here before. */
+   row of links about it is to read. Inline, not sticky: a fixed bar has covered controls here before.
+   A heading that WRAPS another heading (a fold whose button holds a CardHead and a summary line) is skipped
+   for the inner one, and a fold heading whose title sits beside a summary marks the title `data-jump-label`:
+   the whole heading's text welded the two into one pill ("Active fire nearby4 fires", "FLOAT PLANCommitting…"). */
 const jumpLabel = (t: string | null) => { let s = String(t || "").replace(/\s+/g, " ").trim().split(/ [·—] /)[0].replace(/^[^\p{L}\p{N}]+/u, "").trim(); if (s && s === s.toUpperCase() && /\p{L}/u.test(s)) s = s.charAt(0) + s.slice(1).toLowerCase(); return s.length > 30 ? s.slice(0, 29).trim() + "…" : s; };
 
 /**
@@ -30,10 +33,10 @@ export default function SectionJumps({ rootRef, tabKey }: SectionJumpsProps) {
     let t: ReturnType<typeof setTimeout> | null = null;
     const scan = function () {
       t = null;
-      const all = Array.from(root.querySelectorAll<HTMLElement>('[role="heading"][aria-level="2"],[role="heading"][aria-level="3"]')).filter(function (h) { return !h.closest("[data-jumps]") && h.getClientRects().length > 0; });
+      const all = Array.from(root.querySelectorAll<HTMLElement>('[role="heading"][aria-level="2"],[role="heading"][aria-level="3"]')).filter(function (h) { return !h.closest("[data-jumps]") && h.getClientRects().length > 0 && !h.querySelector('[role="heading"]'); });
       const l2 = all.filter(function (h) { return h.getAttribute("aria-level") === "2"; });
       const use: HTMLElement[] = [], labels: string[] = [];
-      (l2.length >= 4 ? l2 : all).forEach(function (h) { const l = jumpLabel(h.textContent); if (l && labels.indexOf(l) < 0) { labels.push(l); use.push(h); } });
+      (l2.length >= 4 ? l2 : all).forEach(function (h) { const l = jumpLabel((h.querySelector("[data-jump-label]") || h).textContent); if (l && labels.indexOf(l) < 0) { labels.push(l); use.push(h); } });
       els.current = use;
       setItems(function (prev) { return prev.join("\n") === labels.join("\n") ? prev : labels; });
     };
