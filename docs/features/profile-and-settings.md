@@ -66,6 +66,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   the résumé, showed instead.) Its climb picker searches the DB catalog (`useRouteSearch`) and stores the route NAME
   in the vouch's `reason` JSON. Skills come from `SKILLS`/`SKILL_GROUPS` in core (32 in six groups since
   2026-10-21; keys are never renamed or reused), the same list the profile editor's *Safety skills* uses.
+- **Safety skills**: one list, `SKILLS` grouped by `SKILL_GROUPS` in `ClimbMatchCore.jsx`, is what Edit profile offers and what a vouch can name. *Partner checks* was removed (2026-10-21, shipped 2026-10-28); `liveSkills()` drops it from any profile or vouch that saved it, so it never shows as an "other" skill.
 - **The ✕ on another climber's profile** sticks to the top while the profile scrolls (zero-height sticky row,
   `POP_CLOSE_MEDIA`; the card is `overflow:clip` because `hidden` would stop sticky working, which is also why the
   résumé's "sticky" header never stuck until now).
@@ -185,6 +186,7 @@ All present in `package.json`: `check:profile-edit-gate`, `check:profile-draft-p
 Notes: `docs/guards/settings-and-persistence.md`, `honesty-claims.md`, `units-and-formatting.md`, `seed-and-identity.md`, `outage-and-read-failures.md`.
 
 ## 7. Last significant change
+- **Partner checks removed from Safety skills** — no longer offered on Edit profile or the vouch form; saved copies are dropped on read (`liveSkills`).
 - **Feedback and Rate app actually reach the team** (0365) — Feedback sends a note (Something's broken / An idea / Something else, optional reply email for guests) instead of only copying it; Rate app records 1–5 stars and an optional comment. The owner reads both in Menu › Review › *Feedback & ratings*, with the app's average rating on top. **No review gating**: Apple 5.6.1 and Google Play forbid sending only happy raters to the store, which is what the old sheet's 4–5 stars → thanks / 1–3 → feedback split did; when a store listing exists for the climber's device (`VITE_APP_STORE_ID` for iPhone/iPad, `VITE_PLAY_STORE_ID` for Android, both unset today because ClimbMatch is a web app), *Rate us on the App Store / Google Play* shows first, to everyone. About us lost its "demo build" lines and gained Send feedback / Rate ClimbMatch buttons and the real version.
 - **Accessibility reports from guests, and a queue** (0354) — a signed-out visitor can file one with an email; the owner sees them in Menu › Review and its tile badge; the statement promises a reply within 5 business days.
 - **Accessibility reports reach someone** (0343) — the statement's report form saves to `accessibility_reports`; it used to point at the Feedback button, which only copies to the clipboard.
