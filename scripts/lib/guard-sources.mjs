@@ -221,6 +221,8 @@ export const MOVED = {
     "src/components/StatePicker.tsx",
     "src/components/DbAreaTree.tsx",
     "src/components/NearMePanel.tsx",
+    "src/components/AreaPage.tsx",
+    "src/components/RouteFinderPanel.tsx",
   ],
   "EnrichmentPanels.jsx": [
     "src/components/Head.tsx",
