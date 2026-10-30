@@ -44,7 +44,7 @@ const CASES = [
     find: '!["world","country","state"].includes(dbAreaCtx.areaType)', repl: "true",
     says: /no longer exclude world\/country\/state/,
     why: "a continent is not a conversation" },
-  { name: "directions: remove the link", file: BROWSER, expect: "fail",
+  { name: "directions: remove the link", file: path.join(ROOT, "src/components/AreaGettingThere.tsx") /* its component since PR65 */, expect: "fail",
     find: "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=", repl: "about:blank#",
     says: /Directions link is gone from lib\/DbAreaBrowser\.jsx/,
     why: "a climber cannot navigate to a crag again" },

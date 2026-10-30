@@ -23,6 +23,8 @@ const opt = k => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : null
 const mode = argv[0];
 const parent = opt("--parent") || "RouteDetail.jsx";
 const parentP = path.join(ROOT, parent);
+// An import written INTO the parent, relative to the parent's own directory (a parent may live in lib/).
+const fromParent = rel => { let r = path.relative(path.dirname(parentP), path.join(ROOT, rel)); if (!r.startsWith(".")) r = "./" + r; return r; };
 const die = m => { console.error("REFUSED: " + m); process.exit(1); };
 
 function analyse(src) {
@@ -169,7 +171,7 @@ if (mode === "component") {
   src = cut(src, idxs.map(i => [ownStart(src, an.stmts, i), ownEnd(src, an.stmts, i)]));
   src = prune(src, new Set(specs.map(s => s.local)));
   const stillRead = analyse(src).prog.scope.getBinding(name) === undefined && /\b/.test(name);
-  src = addImport(src, `import ${name} from "./src/components/${name}.tsx";` + (wasExported ? `\nexport { ${name} };` : ""));
+  src = addImport(src, `import ${name} from "${fromParent("src/components/" + name + ".tsx")}";` + (wasExported ? `\nexport { ${name} };` : ""));
   fs.writeFileSync(parentP, src);
   console.log(`moved ${idxs.map(i => an.stmts[i].names.join("+")).join(", ")} -> src/components/${name}.tsx (${specs.length} imports)${wasExported ? " — re-exported from " + parent : ""}${stillRead ? "" : ""}`);
 } else if (mode === "lib") {
@@ -188,7 +190,7 @@ if (mode === "component") {
   src = cut(src, idxs.map(i => [ownStart(src, an.stmts, i), ownEnd(src, an.stmts, i)]));
   src = prune(src, new Set(specs.map(s => s.local)));
   const reexp = names.filter(n => an.stmts[idxOf(n)].exported);
-  if (used.length) src = addImport(src, `import { ${used.join(", ")} } from "./${file}";` + (reexp.length ? `\nexport { ${reexp.join(", ")} };` : ""));
+  if (used.length) src = addImport(src, `import { ${used.join(", ")} } from "${fromParent(file)}";` + (reexp.length ? `\nexport { ${reexp.join(", ")} };` : ""));
   fs.writeFileSync(parentP, src);
   console.log(`moved ${names.join(", ")} -> ${file}; parent imports back ${used.join(", ") || "nothing"}`);
 } else if (mode === "branch") {
@@ -230,7 +232,7 @@ if (mode === "component") {
   fs.writeFileSync(outP, `${header}\n\n/* ${anchor} — the body of that branch of ${inFn}, lifted verbatim by extract-from-parent.mjs (branch mode);\n   every binding it read from ${inFn} is a prop of the same name. */\nexport default function ${name}({${ps.join(",")}}){\n  return ${body};\n}\n`);
   src = src.slice(0, cons.node.start) + `<${name} ${ps.map(p => `${p}={${p}}`).join(" ")}/>` + src.slice(cons.node.end);
   src = prune(src, new Set(specs.map(s => s.local)));
-  src = addImport(src, `import ${name} from "./src/components/${name}.tsx";`);
+  src = addImport(src, `import ${name} from "${fromParent("src/components/" + name + ".tsx")}";`);
   fs.writeFileSync(parentP, src);
   console.log(`lifted ${anchor} -> src/components/${name}.tsx (${ps.length} props, ${specs.length} imports)`);
 } else if (mode === "closure") {
@@ -278,7 +280,7 @@ if (mode === "component") {
   edits.sort((a, b) => b.s - a.s);
   for (const e of edits) src = src.slice(0, e.s) + e.t + src.slice(e.e);
   src = prune(src, new Set(specs.map(s => s.local)));
-  src = addImport(src, `import ${name} from "./src/components/${name}.tsx";`);
+  src = addImport(src, `import ${name} from "${fromParent("src/components/" + name + ".tsx")}";`);
   fs.writeFileSync(parentP, src);
   console.log(`lifted ${fnName} -> src/components/${name}.tsx (${params.length} params + ${captured.length} captured props, ${refs.length} call(s) rewritten)`);
 } else if (mode === "deps") {

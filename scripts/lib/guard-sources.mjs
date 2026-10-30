@@ -207,6 +207,21 @@ export const MOVED = {
     "src/components/FullProfile.tsx",
     "src/components/PolicyUpdateNotice.tsx",
   ],
+  "lib/DbAreaBrowser.jsx": [
+    "src/components/RouteRow.tsx",
+    "src/components/AddHereFooter.tsx",
+    "src/components/AreaGettingThere.tsx",
+    "src/components/ClassicsList.tsx",
+    "src/components/NearbyPeaks.tsx",
+    "src/components/DbSearchSplit.tsx",
+    "src/components/DbSuggestedClimbs.tsx",
+    "src/components/PartnersHereCard.tsx",
+    "src/components/SummitBriefing.tsx",
+    "src/components/ObjectivesPanel.tsx",
+    "src/components/StatePicker.tsx",
+    "src/components/DbAreaTree.tsx",
+    "src/components/NearMePanel.tsx",
+  ],
   "EnrichmentPanels.jsx": [
     "src/components/Head.tsx",
     "src/components/EmptyPanel.tsx",
@@ -393,6 +408,9 @@ export function coreModuleEntry(root = OWN_ROOT) {
 export function readAppFile(abs) {
   const name = path.basename(abs);
   if (MOVED[name] && MOVED[name].length) return readParentSource(path.dirname(abs), name);
+  // A parent inside lib/ (lib/DbAreaBrowser.jsx, PR65 on) is keyed by its path from the checkout root.
+  const rel = path.relative(OWN_ROOT, abs);
+  if (MOVED[rel] && MOVED[rel].length) return readParentSource(OWN_ROOT, rel);
   return fs.readFileSync(abs, "utf8");
 }
 

@@ -244,7 +244,7 @@ if (ran < CASES.length) { console.error("check:grade-parser: fewer cases ran tha
    still call it — and those are the exact two lines a stale-base squash restores. */
 for (const [rel, needle, what] of [
   ["ClimbMatchCore.jsx", /function gradeLabel\s*\(r\)\s*\{\s*return\s+displayGrade\(r\)/, "the route page's header pill and stat strip"],
-  ["lib/DbAreaBrowser.jsx", /function rowGrade\s*\(r\)\s*\{\s*return\s+displayGrade\(r\)/, "every row of an area list"],
+  ["lib/areaBrowserShared.js", /function rowGrade\s*\(r\)\s*\{\s*return\s+displayGrade\(r\)/, "every row of an area list"],
 ]) {
   const p = path.join(ROOT, rel);
   if (!fs.existsSync(p)) { console.error(`check:grade-parser: ${rel} does not exist`); process.exit(1); }
