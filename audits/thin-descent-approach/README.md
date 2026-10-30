@@ -219,10 +219,11 @@ through `rollback-1793313279406.json` (8 files) and `rollback-1793318126666.json
 | ID, YT, NC, NM (misc 1) | 41 | 27 | 14 | Lead review skipped Whiskey Peak "La Llorona" (identity unconfirmed). Mount Logan East Ridge's stored grade and pitches don't fit the expedition line. |
 | ON, ME, NV, VT, PA, NU, NT, MI (misc 2) | 32 | 14 | 18 | `me_kineo_ice_climbs_unknown` is a placeholder name for an unclimbed line. |
 
-**Second-round writes (2026-10-30):** WY 1 stopped after 12 rows (the database returned 500); rollback `rollback/rollback-1793319833226.json`.
-The rest of WY 1, and WY 2–3, CA 1–2, NB 1–2, NL 1, QC 1, NS 1 and misc 1–2, are queued for a healthy database (about 290 rows).
-**Ice research is complete:** every built context has a reviewed batch. Contexts for CA 2, NB 2, QC, NS, NL and two combined small-state files
-(`ctx-ice-misc-1.json`: ID, YT, NC, NM; `ctx-ice-misc-2.json`: ON, ME, NV, VT, PA, NU, NT, MI) are built.
+**Second-round writes (2026-10-30): all applied.** WY 1 stopped after 12 rows (the database returned 500; rollback `rollback/rollback-1793319833226.json`).
+After the database was restarted, every session went through the shared gate (`~/dev/db-throttle/dbslot.mjs`). This session's slot wrote all 12 second-round
+batches in one pass: 312 rows verified on re-read (12 of them WY 1 rows re-applied), none refused, with a health check before each batch (all under 1.1 s).
+Rollbacks: `rollback/rollback-1793327172562.json` through `rollback-1793327472485.json` (12 files).
+**Ice and mixed tier DONE: 893 routes written** (581 in the first round, 312 in the second).
 
 **Ice-tier findings for review:**
 - `ut_monte_cristo` and `ut_broads_fork_2` share one coordinate (40.52763, -111.72408), right for neither: Monte Cristo's East Gully is in Little
