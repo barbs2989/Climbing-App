@@ -82,18 +82,20 @@ for (const d of decisions) {
   }
   const raw = parseGpx(fs.readFileSync(path.join(GPX_DIR, d.slug + ".gpx"), "utf8"));
   const pts = raw.map(p => [p.lat, p.lng]);
+  // noSummitPin: the area at the track's top is not a summit (a crag's wall), so add no Summit pin
+  // there; the line is still written when the route's own pins say it reaches its top
   let best = Infinity; for (const q of pts) best = Math.min(best, haversineM(q, [d.peak.lat, d.peak.lng]));
-  if (best > SUMMIT_M) { console.log(`SKIP ${d.id}: track misses the peak coordinate by ${Math.round(best)} m`); continue; }
+  if (!d.noSummitPin && best > SUMMIT_M) { console.log(`SKIP ${d.id}: track misses the peak coordinate by ${Math.round(best)} m`); continue; }
   if (d.tier === "round" && haversineM(pts[0], pts.at(-1)) > LOOP_M) { console.log(`SKIP ${d.id}: not a round trip`); continue; }
   const rs = resample(raw);
   const summitPin = { type: "Summit", name: `${d.peak.name} summit`, lat: d.peak.lat, lng: d.peak.lng, ...(d.peak.elevation_ft ? { elev: d.peak.elevation_ft } : {}) };
   const hasTrailhead = wps.some(w => /trailhead/i.test(w.type || "") && w.lat != null && w.lng != null);
   const addTrailhead = !hasTrailhead && d.trailhead && d.trailhead.confirmed === true && d.trailhead.name;
   const thPin = addTrailhead ? { type: "Trailhead", name: d.trailhead.name, lat: rs.gpx[0][0], lng: rs.gpx[0][1] } : null;
-  const waypoints = [...(thPin ? [thPin] : []), ...wps, ...(hasSummit ? [] : [summitPin])];
-  if (!reachesTheSummit(rs.gpx, waypoints)) { console.log(`SKIP ${d.id}: the app would not count the resampled track as reaching the summit`); continue; }
-  plan.push({ d, row, rs, waypoints, addSummit: !hasSummit, addTrailhead: !!thPin });
-  console.log(`${d.id.padEnd(52)} ${d.slug.padEnd(40)} ${String(rs.gpx.length).padStart(5)} pts ${rs.km.toFixed(1).padStart(6)} km  ${d.tier}  ${!hasSummit ? "+summit pin " : ""}${thPin ? "+trailhead pin" : ""}`);
+  const waypoints = [...(thPin ? [thPin] : []), ...wps, ...(hasSummit || d.noSummitPin ? [] : [summitPin])];
+  if (!d.noSummitPin && !reachesTheSummit(rs.gpx, waypoints)) { console.log(`SKIP ${d.id}: the app would not count the resampled track as reaching the summit`); continue; }
+  plan.push({ d, row, rs, waypoints, addSummit: !hasSummit && !d.noSummitPin, addTrailhead: !!thPin });
+  console.log(`${d.id.padEnd(52)} ${d.slug.padEnd(40)} ${String(rs.gpx.length).padStart(5)} pts ${rs.km.toFixed(1).padStart(6)} km  ${d.tier}  ${!hasSummit && !d.noSummitPin ? "+summit pin " : ""}${thPin ? "+trailhead pin" : ""}`);
 }
 console.log(`plan: ${plan.length} writes (${plan.filter(p => p.addSummit).length} add a Summit pin, ${plan.filter(p => p.addTrailhead).length} a Trailhead pin)`);
 if (!WRITE) process.exit(0);
@@ -120,7 +122,7 @@ let bad = 0;
 for (const p of plan) {
   const now = await getRow(p.d.id);
   const ok = JSON.stringify(now.gpx) === JSON.stringify(p.rs.gpx) && (!(p.addSummit || p.addTrailhead) || canon(now.waypoints) === canon(p.waypoints));
-  const reaches = reachesTheSummit(now.gpx, now.waypoints);
+  const reaches = p.d.noSummitPin || reachesTheSummit(now.gpx, now.waypoints);
   if (!ok || !reaches) { bad++; console.log(`RECONCILE ${p.d.id}: stored=${ok} reaches=${reaches}`); }
 }
 console.log(`written ${plan.length - failures}, failed ${failures}, reconcile problems ${bad}`);

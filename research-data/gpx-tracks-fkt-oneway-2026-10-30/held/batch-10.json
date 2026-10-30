@@ -1,0 +1,4906 @@
+[
+ {
+  "slug": "atlantic-peak-wy",
+  "fktUrl": "https://fastestknowntime.com/route/atlantic-peak-wy",
+  "fktTitle": "Atlantic Peak (WY)",
+  "state": "WY",
+  "tier": "round",
+  "km": 31.2,
+  "summitArea": {
+   "note": "areas near the top: wy_leg_lake|Leg Lake|crag|3"
+  },
+  "routes": [
+   {
+    "id": "wy_by_choice_and_chance",
+    "name": "By Choice and Chance",
+    "area_id": "wy_leg_lake",
+    "discipline": "alpine",
+    "grade": "5.11"
+   },
+   {
+    "id": "wy_giant_s_bite_the_big_red_buttress",
+    "name": "Giant's Bite, The Big Red Buttress",
+    "area_id": "wy_leg_lake",
+    "discipline": "alpine",
+    "grade": "5.9+"
+   },
+   {
+    "id": "wy_zig_zag_sensei",
+    "name": "Zig Zag Sensei",
+    "area_id": "wy_leg_lake",
+    "discipline": "alpine",
+    "grade": "5.10+"
+   }
+  ]
+ },
+ {
+  "slug": "bighorn-peak-wy",
+  "fktUrl": "https://fastestknowntime.com/route/bighorn-peak-wy",
+  "fktTitle": "Bighorn Peak (WY)",
+  "state": "WY",
+  "tier": "oneway",
+  "km": 12.6,
+  "summitArea": {
+   "note": "areas near the top: wy_spiderweb_wall|Spiderweb Wall|crag|3 ; wy_thundercloud_wall|Thundercloud Wall|crag|0 ; wy_spider_s_slab|Spider's Slab|crag|2 ; wy_lost_twin_lakes|Lost Twin Lakes|region|8 ; wy_black_widow_buttress|Black Widow Buttress|crag|1 ; wy_spectator_buttress|Spectator Buttress|crag|2"
+  },
+  "routes": [
+   {
+    "id": "wy_state_of_mind",
+    "name": "State of Mind",
+    "area_id": "wy_black_widow_buttress",
+    "discipline": "alpine",
+    "grade": "5.8+"
+   },
+   {
+    "id": "wy_false_rock_john_3_16",
+    "name": "John 3:16",
+    "area_id": "wy_false_rock",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "wy_plattenmeer",
+    "name": "Plattenmeer",
+    "area_id": "wy_spectator_buttress",
+    "discipline": "alpine",
+    "grade": "5.7"
+   },
+   {
+    "id": "wy_five_free_parameters",
+    "name": "Five Free Parameters",
+    "area_id": "wy_spectator_buttress",
+    "discipline": "alpine",
+    "grade": "5.7"
+   },
+   {
+    "id": "wy_slap_crack",
+    "name": "Slap Crack",
+    "area_id": "wy_spider_s_slab",
+    "discipline": "alpine",
+    "grade": "5.6"
+   },
+   {
+    "id": "wy_great_arch",
+    "name": "Great Arch",
+    "area_id": "wy_spider_s_slab",
+    "discipline": "alpine",
+    "grade": "5.5"
+   },
+   {
+    "id": "wy_free_spirit",
+    "name": "Free Spirit",
+    "area_id": "wy_spiderweb_wall",
+    "discipline": "alpine",
+    "grade": "5.8+"
+   },
+   {
+    "id": "wy_coup_stick",
+    "name": "Coup Stick",
+    "area_id": "wy_spiderweb_wall",
+    "discipline": "alpine",
+    "grade": "5.10+"
+   },
+   {
+    "id": "wy_wandering_spirit",
+    "name": "Wandering Spirit",
+    "area_id": "wy_spiderweb_wall",
+    "discipline": "alpine",
+    "grade": "5.6"
+   }
+  ]
+ },
+ {
+  "slug": "blacketts-ridge-az",
+  "fktUrl": "https://fastestknowntime.com/route/blacketts-ridge-az",
+  "fktTitle": "Blackett's Ridge (AZ)",
+  "state": "AZ",
+  "tier": "round",
+  "km": 9.2,
+  "summitArea": {
+   "note": "areas near the top: az_acropolis|Acropolis|crag|15 ; az_lower_bear_canyon|Lower Bear Canyon|region|1 ; az_blind_man_s_bluff|Blind Man's Bluff|crag|1 ; az_sabino_canyon|Sabino Canyon|region|22 ; az_echo_dancer_buttress|Echo Dancer Buttress|crag|3 ; az_whipple_wall|Whipple Wall|crag|0"
+  },
+  "routes": [
+   {
+    "id": "az_acropolis_rigormortis",
+    "name": "Rigormortis",
+    "area_id": "az_acropolis",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "az_sisyphus_2",
+    "name": "Sisyphus",
+    "area_id": "az_acropolis",
+    "discipline": "trad",
+    "grade": "5.11"
+   },
+   {
+    "id": "az_pandora_s_tower",
+    "name": "Pandora’s Tower",
+    "area_id": "az_acropolis",
+    "discipline": "trad",
+    "grade": "5.5"
+   },
+   {
+    "id": "az_acropolis_orange_julius",
+    "name": "Orange Julius",
+    "area_id": "az_acropolis",
+    "discipline": "trad",
+    "grade": "5.11-"
+   },
+   {
+    "id": "az_acropolis_showtime",
+    "name": "Showtime",
+    "area_id": "az_acropolis",
+    "discipline": "trad",
+    "grade": "5.10-"
+   },
+   {
+    "id": "az_acropolis_medusa",
+    "name": "Medusa",
+    "area_id": "az_acropolis",
+    "discipline": "trad",
+    "grade": "5.7+"
+   },
+   {
+    "id": "az_mission_control",
+    "name": "Mission Control",
+    "area_id": "az_acropolis",
+    "discipline": "trad",
+    "grade": "5.10-"
+   },
+   {
+    "id": "az_colorado_crush",
+    "name": "Colorado Crush",
+    "area_id": "az_acropolis",
+    "discipline": "trad",
+    "grade": "5.10+"
+   },
+   {
+    "id": "az_acropolis_parker_s_chimneys",
+    "name": "Parker's Chimneys",
+    "area_id": "az_acropolis",
+    "discipline": "trad",
+    "grade": "5.6"
+   },
+   {
+    "id": "az_acropolis_zephyr",
+    "name": "Zephyr",
+    "area_id": "az_acropolis",
+    "discipline": "trad",
+    "grade": "5.10-"
+   },
+   {
+    "id": "az_acropolis_balin_orders_veal",
+    "name": "Balin Orders Veal",
+    "area_id": "az_acropolis",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "az_acropolis_moira",
+    "name": "Moira",
+    "area_id": "az_acropolis",
+    "discipline": "trad",
+    "grade": "5.11-"
+   },
+   {
+    "id": "az_acropolis_pissin_in_the_wind",
+    "name": "Pissin' in the Wind",
+    "area_id": "az_acropolis",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "az_acropolis_love_nor_money",
+    "name": "Love Nor Money",
+    "area_id": "az_acropolis",
+    "discipline": "trad",
+    "grade": "5.9+"
+   },
+   {
+    "id": "az_acropolis_death_and_taxes",
+    "name": "Death and Taxes",
+    "area_id": "az_acropolis",
+    "discipline": "trad",
+    "grade": "5.10-"
+   },
+   {
+    "id": "az_heart_of_a_rhombohedron",
+    "name": "Heart of a Rhombohedron",
+    "area_id": "az_blind_man_s_bluff",
+    "discipline": "trad",
+    "grade": "5.10+"
+   },
+   {
+    "id": "az_yabbadabbadoo",
+    "name": "Yabbadabbadoo!",
+    "area_id": "az_echo_dancer_buttress",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "az_echo_dancer",
+    "name": "Echo Dancer",
+    "area_id": "az_echo_dancer_buttress",
+    "discipline": "trad",
+    "grade": "5.9+"
+   },
+   {
+    "id": "az_tongue_of_death",
+    "name": "Tongue of Death",
+    "area_id": "az_echo_dancer_buttress",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "az_the_naked_prey",
+    "name": "The Naked Prey",
+    "area_id": "az_kor_wall",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "az_eroder_s_delight",
+    "name": "Eroder’s Delight",
+    "area_id": "az_kor_wall",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "az_hard_to_swallow",
+    "name": "Hard to Swallow",
+    "area_id": "az_kor_wall",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "az_kor_wall",
+    "name": "Kor Wall",
+    "area_id": "az_kor_wall",
+    "discipline": "trad",
+    "grade": "5.8+"
+   }
+  ]
+ },
+ {
+  "slug": "blaze-mountain-mt",
+  "fktUrl": "https://fastestknowntime.com/route/blaze-mountain-mt",
+  "fktTitle": "Blaze Mountain (MT)",
+  "state": "MT",
+  "tier": "round",
+  "km": 24.5,
+  "summitArea": {
+   "note": "areas near the top: mt_honey_bee_wall|Honey Bee Wall|crag|3 ; mt_prow_the_3|Prow, The|crag|1 ; mt_beehive_basin|Beehive Basin|region|13 ; mt_beehive_peak|Beehive Peak|crag|9"
+  },
+  "routes": [
+   {
+    "id": "mt_rastaman_route",
+    "name": "Rastaman Route",
+    "area_id": "mt_beehive_peak",
+    "discipline": "alpine",
+    "grade": "5.9"
+   },
+   {
+    "id": "mt_worker_bee",
+    "name": "Worker Bee",
+    "area_id": "mt_beehive_peak",
+    "discipline": "alpine",
+    "grade": "5.7"
+   },
+   {
+    "id": "mt_beehive_traverse",
+    "name": "Beehive Traverse",
+    "area_id": "mt_beehive_peak",
+    "discipline": "alpine",
+    "grade": "5.4"
+   },
+   {
+    "id": "mt_original_route_aka_javaman",
+    "name": "Original Route, aka Javaman",
+    "area_id": "mt_beehive_peak",
+    "discipline": "alpine",
+    "grade": "5.10b"
+   },
+   {
+    "id": "mt_4th_of_july_couloir",
+    "name": "4th of July Couloir",
+    "area_id": "mt_beehive_peak",
+    "discipline": "alpine",
+    "grade": "Easy 5th"
+   },
+   {
+    "id": "mt_bees_knees_variation",
+    "name": "Bees Knees Variation",
+    "area_id": "mt_beehive_peak",
+    "discipline": "alpine",
+    "grade": "5.10b"
+   },
+   {
+    "id": "mt_new_world_route",
+    "name": "New World Route",
+    "area_id": "mt_beehive_peak",
+    "discipline": "alpine",
+    "grade": "5.8"
+   },
+   {
+    "id": "mt_honey_bee_wall_prairie_chicken",
+    "name": "Prairie Chicken",
+    "area_id": "mt_honey_bee_wall",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "mt_honey_bee_wall_honey_bee",
+    "name": "Honey Bee",
+    "area_id": "mt_honey_bee_wall",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "mt_white_crystals_crack",
+    "name": "White Crystals Crack",
+    "area_id": "mt_prow_the_3",
+    "discipline": "alpine",
+    "grade": "5.7"
+   }
+  ]
+ },
+ {
+  "slug": "broken-top-or",
+  "fktUrl": "https://fastestknowntime.com/route/broken-top-or",
+  "fktTitle": "Broken Top (OR)",
+  "state": "OR",
+  "tier": "round",
+  "km": 19.8,
+  "summitArea": {
+   "note": "areas near the top: or_broken_top|Broken Top|crag|5"
+  },
+  "routes": [
+   {
+    "id": "or_northwest_ridge",
+    "name": "Northwest Ridge",
+    "area_id": "or_broken_top",
+    "discipline": "alpine",
+    "grade": "Easy 5th"
+   },
+   {
+    "id": "or_broken_top_nine_o_clock_gully",
+    "name": "Nine O'clock Gully",
+    "area_id": "or_broken_top",
+    "discipline": "mountaineering",
+    "grade": "Steep Snow"
+   },
+   {
+    "id": "or_eleven_o_clock_gully",
+    "name": "Eleven O'clock Gully",
+    "area_id": "or_broken_top",
+    "discipline": "alpine",
+    "grade": "3rd"
+   }
+  ]
+ },
+ {
+  "slug": "cascade-mtn-ab-canada",
+  "fktUrl": "https://fastestknowntime.com/route/cascade-mtn-ab-canada",
+  "fktTitle": "Cascade Mtn (AB, Canada)",
+  "state": "AB",
+  "tier": "round",
+  "km": 19,
+  "summitArea": {
+   "note": "areas near the top: ab_upper_norquay_slab|Upper Norquay Slab|crag|2 ; ab_arches|Arches|crag|4 ; ab_falls_area_rock|Falls Area Rock|crag|6 ; ab_cascade_mountain_ice|Cascade Mountain Ice|crag|4 ; ab_mothers_day_buttress|Mothers Day Buttress|crag|2 ; ab_cascadia|Cascadia|crag|7"
+  },
+  "routes": [
+   {
+    "id": "ab_mothers_day_buttress_oedipus_complex",
+    "name": "Oedipus Complex",
+    "area_id": "ab_mothers_day_buttress",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "ab_mothers_day_buttress_mothers_day_buttress",
+    "name": "Mothers Day Buttress",
+    "area_id": "ab_mothers_day_buttress",
+    "discipline": "trad",
+    "grade": "5.6"
+   },
+   {
+    "id": "ab_upper_norquay_slab_calamari_crack",
+    "name": "Calamari Crack",
+    "area_id": "ab_upper_norquay_slab",
+    "discipline": "trad",
+    "grade": "5.9- PG13"
+   },
+   {
+    "id": "ab_upper_norquay_slab_escargot_corner",
+    "name": "Escargot Corner",
+    "area_id": "ab_upper_norquay_slab",
+    "discipline": "trad",
+    "grade": "5.7"
+   }
+  ]
+ },
+ {
+  "slug": "chikamin-lollipop-wa",
+  "fktUrl": "https://fastestknowntime.com/route/chikamin-lollipop-wa",
+  "fktTitle": "Chikamin Lollipop (WA)",
+  "state": "WA",
+  "tier": "round",
+  "km": 51.1,
+  "summitArea": {
+   "note": "areas near the top: wa_four_brothers|Four Brothers|peak|1 ; wa_huckleberry_mountain|Huckleberry Mountain|peak|6 ; wa_chikamin_peak|Chikamin Peak|peak|1 ; wa_western_alpine_lakes|Western Alpine Lakes|region|86 ; wa_lemah_mountain|Lemah Mountain|peak|1 ; wa_lemah_two|Lemah Two|peak|1"
+  },
+  "routes": [
+   {
+    "id": "wa_alta_mountain_scramble",
+    "name": "Rampart Ridge Scramble",
+    "area_id": "wa_alta_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2"
+   },
+   {
+    "id": "wa_atrium_peak_big_chet_slab",
+    "name": "Big Chet Slab",
+    "area_id": "wa_atrium_peak",
+    "discipline": "trad",
+    "grade": "5.0 R"
+   },
+   {
+    "id": "wa_atrium_peak_big_chet_boulder_crack",
+    "name": "Big Chet Boulder Crack",
+    "area_id": "wa_atrium_peak",
+    "discipline": "trad",
+    "grade": "5.1"
+   },
+   {
+    "id": "wa_bald_eagle_peak_south_spur",
+    "name": "South Spur",
+    "area_id": "wa_bald_eagle_peak",
+    "discipline": "alpine",
+    "grade": null
+   },
+   {
+    "id": "wa_bald_eagle_peak_southwest_route",
+    "name": "Southwest Route",
+    "area_id": "wa_bald_eagle_peak",
+    "discipline": "alpine",
+    "grade": null
+   },
+   {
+    "id": "wa_bald_eagle_peak_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_bald_eagle_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3"
+   },
+   {
+    "id": "wa_bears_breast_mountain_southwest_face",
+    "name": "Southwest Face",
+    "area_id": "wa_bears_breast_mountain",
+    "discipline": "alpine",
+    "grade": "5.6"
+   },
+   {
+    "id": "wa_bears_breast_mountain_infinite_beauty",
+    "name": "Infinite Beauty",
+    "area_id": "wa_bears_breast_mountain",
+    "discipline": "alpine",
+    "grade": "5.6"
+   },
+   {
+    "id": "wa_bears_breast_mountain_timeless_treasure",
+    "name": "Timeless Treasure",
+    "area_id": "wa_bears_breast_mountain",
+    "discipline": "alpine",
+    "grade": "5.6"
+   },
+   {
+    "id": "wa_big_snow_mountain_east_buttress",
+    "name": "East Buttress",
+    "area_id": "wa_big_snow_mountain",
+    "discipline": "alpine",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_big_snow_mountain_southwest_ridge",
+    "name": "Southwest Ridge",
+    "area_id": "wa_big_snow_mountain",
+    "discipline": "alpine",
+    "grade": null
+   },
+   {
+    "id": "wa_big_snow_mountain_sasquatch_s_breath",
+    "name": "Sasquatch's Breath",
+    "area_id": "wa_big_snow_mountain",
+    "discipline": "trad",
+    "grade": "5.9 PG13"
+   },
+   {
+    "id": "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+    "name": "East Ridge (Hardscrabble) Route",
+    "area_id": "wa_big_snow_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2"
+   },
+   {
+    "id": "wa_big_snow_mountain_north_slope_dingford_route",
+    "name": "North Slope (Dingford) Route",
+    "area_id": "wa_big_snow_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 3"
+   },
+   {
+    "id": "wa_box_boulder_alta_vista",
+    "name": "Alta Vista",
+    "area_id": "wa_box_boulder",
+    "discipline": "trad",
+    "grade": "5.5 R"
+   },
+   {
+    "id": "wa_box_ridge_east_peak_east_box",
+    "name": "East Box",
+    "area_id": "wa_box_ridge_east_peak",
+    "discipline": "trad",
+    "grade": "5.0"
+   },
+   {
+    "id": "wa_burnt_boot_peak_north_route",
+    "name": "North Route",
+    "area_id": "wa_burnt_boot_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3"
+   },
+   {
+    "id": "wa_burnt_boot_peak_north_ridge",
+    "name": "North Ridge",
+    "area_id": "wa_burnt_boot_peak",
+    "discipline": "alpine",
+    "grade": "5.0"
+   },
+   {
+    "id": "wa_cathedral_rock_northeast_buttress",
+    "name": "Northeast Buttress",
+    "area_id": "wa_cathedral_rock",
+    "discipline": "alpine",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_cathedral_rock_standard",
+    "name": "Standard Route (Southwest Face)",
+    "area_id": "wa_cathedral_rock",
+    "discipline": "scrambling",
+    "grade": "Class 4"
+   },
+   {
+    "id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+    "name": "Northeast Ridge (2003 Variation)",
+    "area_id": "wa_cathedral_rock",
+    "discipline": "alpine",
+    "grade": "5.9"
+   },
+   {
+    "id": "wa_cathedral_rock_northwest_couloir",
+    "name": "Northwest Couloir",
+    "area_id": "wa_cathedral_rock",
+    "discipline": "scrambling",
+    "grade": "Class 3"
+   },
+   {
+    "id": "wa_cathedral_rock_southeast_face_chimney",
+    "name": "Southeast Face Chimney",
+    "area_id": "wa_cathedral_rock",
+    "discipline": "alpine",
+    "grade": "5.6"
+   },
+   {
+    "id": "wa_chikamin_peak_southeast_slopes",
+    "name": "Southeast Slopes",
+    "area_id": "wa_chikamin_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3"
+   },
+   {
+    "id": "wa_chimney_rock_west_face",
+    "name": "South Peak via East Gully",
+    "area_id": "wa_chimney_rock",
+    "discipline": "alpine",
+    "grade": "Class 4"
+   },
+   {
+    "id": "wa_chimney_rock_southeast_shoulder",
+    "name": "Southeast Shoulder",
+    "area_id": "wa_chimney_rock",
+    "discipline": "alpine",
+    "grade": "Class 3"
+   },
+   {
+    "id": "wa_chimney_rock_north_ridge",
+    "name": "North Ridge",
+    "area_id": "wa_chimney_rock",
+    "discipline": "alpine",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_chimney_rock_southeast_ridge",
+    "name": "Southeast Ridge",
+    "area_id": "wa_chimney_rock",
+    "discipline": "alpine",
+    "grade": "Class 2"
+   },
+   {
+    "id": "wa_chimney_rock_east_face_direct",
+    "name": "East Face Direct",
+    "area_id": "wa_chimney_rock",
+    "discipline": "alpine",
+    "grade": "5.6"
+   },
+   {
+    "id": "wa_chimney_rock_northwest_ridge",
+    "name": "Northwest Ridge",
+    "area_id": "wa_chimney_rock",
+    "discipline": "alpine",
+    "grade": null
+   },
+   {
+    "id": "wa_chimney_rock_northeast_ridge",
+    "name": "Northeast Ridge",
+    "area_id": "wa_chimney_rock",
+    "discipline": "alpine",
+    "grade": "Class 2"
+   },
+   {
+    "id": "wa_east_face_6",
+    "name": "East Face",
+    "area_id": "wa_chimney_rock",
+    "discipline": "alpine",
+    "grade": "5.3"
+   },
+   {
+    "id": "wa_floating_rock_south_ridge_direct",
+    "name": "South Ridge Direct",
+    "area_id": "wa_floating_rock",
+    "discipline": "trad",
+    "grade": "5.2"
+   },
+   {
+    "id": "wa_four_brothers_southwest_route",
+    "name": "Southwest Route",
+    "area_id": "wa_four_brothers",
+    "discipline": "mountaineering",
+    "grade": "Class 2"
+   },
+   {
+    "id": "wa_french_granite_crags_french_granite_bubble_slab",
+    "name": "French Granite Bubble Slab",
+    "area_id": "wa_french_granite_crags",
+    "discipline": "trad",
+    "grade": "5.3 R"
+   },
+   {
+    "id": "wa_goat_mountain_north_peak_generals_gathered_in_their_masses",
+    "name": "Generals Gathered In Their Masses",
+    "area_id": "wa_goat_mountain_north_peak",
+    "discipline": "trad",
+    "grade": "5.0 R"
+   },
+   {
+    "id": "wa_goat_mountain_north_peak_to_listen_to_our_top_jackass_s",
+    "name": "To Listen To Our Top Jackass's",
+    "area_id": "wa_goat_mountain_north_peak",
+    "discipline": "trad",
+    "grade": "5.0 R"
+   },
+   {
+    "id": "wa_hibox_mountain_east_route",
+    "name": "East Route",
+    "area_id": "wa_hibox_mountain",
+    "discipline": "alpine",
+    "grade": "Class 3"
+   },
+   {
+    "id": "wa_hibox_mountain_southeast_ridge",
+    "name": "Southeast Ridge",
+    "area_id": "wa_hibox_mountain",
+    "discipline": "alpine",
+    "grade": null
+   },
+   {
+    "id": "wa_hibox_mountain_southeast_shoulder",
+    "name": "Southeast Shoulder",
+    "area_id": "wa_hibox_mountain",
+    "discipline": "alpine",
+    "grade": null
+   },
+   {
+    "id": "wa_hibox_mountain_south_route",
+    "name": "South Route",
+    "area_id": "wa_hibox_mountain",
+    "discipline": "alpine",
+    "grade": null
+   },
+   {
+    "id": "wa_hibox_mountain_standard",
+    "name": "Standard Scramble",
+    "area_id": "wa_hibox_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3"
+   },
+   {
+    "id": "wa_hibox_mountain_northwest_ridge",
+    "name": "Northwest Ridge",
+    "area_id": "wa_hibox_mountain",
+    "discipline": "alpine",
+    "grade": "Class 2"
+   },
+   {
+    "id": "wa_hibox_mountain_south_face",
+    "name": "South Face",
+    "area_id": "wa_hibox_mountain",
+    "discipline": "trad",
+    "grade": "5.2"
+   },
+   {
+    "id": "wa_huckleberry_mountain_north_spur",
+    "name": "North Spur",
+    "area_id": "wa_huckleberry_mountain",
+    "discipline": "alpine",
+    "grade": null
+   },
+   {
+    "id": "wa_huckleberry_mountain_southwest_slope",
+    "name": "Southwest Slope",
+    "area_id": "wa_huckleberry_mountain",
+    "discipline": "alpine",
+    "grade": "Class 2"
+   },
+   {
+    "id": "wa_huckleberry_mountain_north_route",
+    "name": "North Route",
+    "area_id": "wa_huckleberry_mountain",
+    "discipline": "alpine",
+    "grade": null
+   },
+   {
+    "id": "wa_huckleberry_mountain_west_route",
+    "name": "West Face",
+    "area_id": "wa_huckleberry_mountain",
+    "discipline": "alpine",
+    "grade": "5.6"
+   },
+   {
+    "id": "wa_huckleberry_mountain_south_face",
+    "name": "South Face",
+    "area_id": "wa_huckleberry_mountain",
+    "discipline": "alpine",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_huckleberry_mountain_east_ridge",
+    "name": "East Ridge",
+    "area_id": "wa_huckleberry_mountain",
+    "discipline": "alpine",
+    "grade": "5.3"
+   },
+   {
+    "id": "wa_kayak_peak_little_east_face",
+    "name": "Little East Face",
+    "area_id": "wa_kayak_peak",
+    "discipline": "trad",
+    "grade": "5.0"
+   },
+   {
+    "id": "wa_lemah_mountain_east_route",
+    "name": "East Route (Main Peak)",
+    "area_id": "wa_lemah_mountain",
+    "discipline": "alpine",
+    "grade": "Class 4"
+   },
+   {
+    "id": "wa_lemah_two_goatshead_spire",
+    "name": "Goatshead Spire",
+    "area_id": "wa_lemah_two",
+    "discipline": "alpine",
+    "grade": "5.0"
+   },
+   {
+    "id": "wa_little_big_chief_mountain_southwest_face",
+    "name": "Southwest Face",
+    "area_id": "wa_little_big_chief_mountain",
+    "discipline": "alpine",
+    "grade": null
+   },
+   {
+    "id": "wa_little_big_chief_mountain_northeast_face",
+    "name": "Northeast Face",
+    "area_id": "wa_little_big_chief_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 4"
+   },
+   {
+    "id": "wa_northwest_face_4",
+    "name": "Northwest Face",
+    "area_id": "wa_little_big_chief_mountain",
+    "discipline": "alpine",
+    "grade": "5.9"
+   },
+   {
+    "id": "wa_little_big_chief_mountain_falcon_route",
+    "name": "Falcon Route",
+    "area_id": "wa_little_big_chief_mountain",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "wa_mount_daniel_daniel_glacier",
+    "name": "Daniel Glacier / Southeast Slopes",
+    "area_id": "wa_mount_daniel",
+    "discipline": "mountaineering",
+    "grade": "Class 3"
+   },
+   {
+    "id": "wa_mount_daniel_lynch_glacier",
+    "name": "Lynch Glacier",
+    "area_id": "wa_mount_daniel",
+    "discipline": "mountaineering",
+    "grade": "Class 3"
+   },
+   {
+    "id": "wa_mount_hinman_west_ridge",
+    "name": "West Ridge",
+    "area_id": "wa_mount_hinman",
+    "discipline": "mountaineering",
+    "grade": "Easy Snow"
+   },
+   {
+    "id": "wa_mount_hinman_southeast_route",
+    "name": "Southeast Route",
+    "area_id": "wa_mount_hinman",
+    "discipline": "alpine",
+    "grade": null
+   },
+   {
+    "id": "wa_mount_hinman_east_route",
+    "name": "East Route",
+    "area_id": "wa_mount_hinman",
+    "discipline": "alpine",
+    "grade": null
+   },
+   {
+    "id": "wa_mount_hinman_west_route",
+    "name": "West Route",
+    "area_id": "wa_mount_hinman",
+    "discipline": "alpine",
+    "grade": null
+   },
+   {
+    "id": "wa_mount_hinman_hinman_glacier",
+    "name": "Hinman Glacier / Standard",
+    "area_id": "wa_mount_hinman",
+    "discipline": "mountaineering",
+    "grade": "Class 3"
+   },
+   {
+    "id": "wa_east_ridge_6",
+    "name": "East Ridge",
+    "area_id": "wa_mount_thomson",
+    "discipline": "scrambling",
+    "grade": "Class 4"
+   },
+   {
+    "id": "wa_mount_thomson_west_ridge",
+    "name": "West Ridge",
+    "area_id": "wa_mount_thomson",
+    "discipline": "alpine",
+    "grade": "5.6"
+   },
+   {
+    "id": "wa_nimbus_mountain_crags_little_south_buttress",
+    "name": "Little South Buttress",
+    "area_id": "wa_nimbus_mountain_crags",
+    "discipline": "trad",
+    "grade": "5.5 PG13"
+   },
+   {
+    "id": "wa_nimbus_mountain_crags_nimbus_madness",
+    "name": "Nimbus Madness",
+    "area_id": "wa_nimbus_mountain_crags",
+    "discipline": "trad",
+    "grade": "5.6 R"
+   },
+   {
+    "id": "wa_nimbus_mountain_crags_east_nimbus_baby_tarn_crag_left",
+    "name": "East Nimbus Baby Tarn Crag Left",
+    "area_id": "wa_nimbus_mountain_crags",
+    "discipline": "trad",
+    "grade": "5.4 R"
+   },
+   {
+    "id": "wa_nimbus_mountain_crags_east_nimbus_baby_tarn_crag_right",
+    "name": "East Nimbus Baby Tarn Crag Right",
+    "area_id": "wa_nimbus_mountain_crags",
+    "discipline": "trad",
+    "grade": "5.6 R"
+   },
+   {
+    "id": "wa_overcoat_peak_north_face",
+    "name": "North Face",
+    "area_id": "wa_overcoat_peak",
+    "discipline": "alpine",
+    "grade": null
+   },
+   {
+    "id": "wa_overcoat_peak_southeast_route",
+    "name": "East Face",
+    "area_id": "wa_overcoat_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 4"
+   },
+   {
+    "id": "wa_peak_5771_no_kings_movement",
+    "name": "No Kings Movement",
+    "area_id": "wa_peak_5771",
+    "discipline": "trad",
+    "grade": "5.0"
+   },
+   {
+    "id": "wa_spark_plug_lake_spark_plug",
+    "name": "Spark Plug",
+    "area_id": "wa_spark_plug_lake",
+    "discipline": "trad",
+    "grade": "5.2"
+   },
+   {
+    "id": "wa_summit_chief_mountain_southeast_face",
+    "name": "Southeast Face",
+    "area_id": "wa_summit_chief_mountain",
+    "discipline": "alpine",
+    "grade": "Class 2"
+   },
+   {
+    "id": "wa_summit_chief_mountain_south_route",
+    "name": "South Route",
+    "area_id": "wa_summit_chief_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 4"
+   },
+   {
+    "id": "wa_swallow_tail_crags_mosquito_line",
+    "name": "Mosquito Line",
+    "area_id": "wa_swallow_tail_crags",
+    "discipline": "trad",
+    "grade": "5.4 X"
+   },
+   {
+    "id": "wa_swallow_tail_crags_swallow_slab_left",
+    "name": "Swallow Slab Left",
+    "area_id": "wa_swallow_tail_crags",
+    "discipline": "trad",
+    "grade": "5.4 X"
+   },
+   {
+    "id": "wa_swallow_tail_crags_white_spine",
+    "name": "White Spine",
+    "area_id": "wa_swallow_tail_crags",
+    "discipline": "trad",
+    "grade": "5.5 X"
+   },
+   {
+    "id": "wa_swallow_tail_crags_swallow_tail_arete",
+    "name": "Swallow Tail Arete",
+    "area_id": "wa_swallow_tail_crags",
+    "discipline": "trad",
+    "grade": "5.6 X"
+   },
+   {
+    "id": "wa_three_queens_middle_peak",
+    "name": "Middle Peak via South Face - South Chimney",
+    "area_id": "wa_three_queens",
+    "discipline": "mountaineering",
+    "grade": "Class 4"
+   },
+   {
+    "id": "wa_three_queens_west_peak",
+    "name": "West Peak via West Ridge - West Face",
+    "area_id": "wa_three_queens",
+    "discipline": "alpine",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_three_queens_standard",
+    "name": "Standard Scramble",
+    "area_id": "wa_three_queens",
+    "discipline": "scrambling",
+    "grade": "Class 4"
+   },
+   {
+    "id": "wa_tucquala_peak_east_nursery_view",
+    "name": "Nursery View",
+    "area_id": "wa_tucquala_peak_east",
+    "discipline": "trad",
+    "grade": "5.6"
+   }
+  ]
+ },
+ {
+  "slug": "denali-ak",
+  "fktUrl": "https://fastestknowntime.com/route/denali-ak",
+  "fktTitle": "Denali (AK)",
+  "state": "AK",
+  "tier": "round",
+  "km": 52.7,
+  "summitArea": {
+   "note": "areas near the top: "
+  },
+  "routes": [
+   {
+    "id": "ak_denali_muldrow_glacier",
+    "name": "Muldrow Glacier",
+    "area_id": "ak_denali",
+    "discipline": "mountaineering",
+    "grade": "Steep Snow"
+   },
+   {
+    "id": "ak_denali_west_buttress",
+    "name": "West Buttress",
+    "area_id": "ak_denali",
+    "discipline": "mountaineering",
+    "grade": "Mod. Snow"
+   },
+   {
+    "id": "ak_kahiltna_dome_ne_ridge",
+    "name": "NE Ridge",
+    "area_id": "ak_kahiltna_dome",
+    "discipline": "mountaineering",
+    "grade": "Easy Snow"
+   },
+   {
+    "id": "ak_mount_foraker_sultana_ridge",
+    "name": "Sultana Ridge",
+    "area_id": "ak_mount_foraker",
+    "discipline": "mountaineering",
+    "grade": "Steep Snow"
+   },
+   {
+    "id": "ak_mt_brooks_north_ridge",
+    "name": "North Ridge",
+    "area_id": "ak_mt_brooks",
+    "discipline": "mountaineering",
+    "grade": "Mod. Snow"
+   },
+   {
+    "id": "ak_east_ridge_from_kahiltna_pass",
+    "name": "East Ridge from Kahiltna Pass",
+    "area_id": "ak_mt_capps",
+    "discipline": "alpine",
+    "grade": "3rd"
+   },
+   {
+    "id": "ak_southwest_ridge",
+    "name": "Southwest Ridge",
+    "area_id": "ak_mt_frances",
+    "discipline": "alpine",
+    "grade": "5.8"
+   },
+   {
+    "id": "ak_radio_control_tower_standard_route_north_side",
+    "name": "Standard Route (North Side)",
+    "area_id": "ak_radio_control_tower",
+    "discipline": "mountaineering",
+    "grade": "Mod. Snow"
+   },
+   {
+    "id": "ak_morning_salutes",
+    "name": "Morning Salutes",
+    "area_id": "ak_radio_control_tower",
+    "discipline": "alpine",
+    "grade": "5.6"
+   },
+   {
+    "id": "ak_scott_peak_sunset_glacier",
+    "name": "Sunset Glacier",
+    "area_id": "ak_scott_peak",
+    "discipline": "mountaineering",
+    "grade": "Mod. Snow"
+   }
+  ]
+ },
+ {
+  "slug": "el-capitan-ca",
+  "fktUrl": "https://fastestknowntime.com/route/el-capitan-ca",
+  "fktTitle": "El Capitan (CA)",
+  "state": "CA",
+  "tier": "round",
+  "km": 23.1,
+  "summitArea": {
+   "note": "areas near the top: ca_r_the_widow_s_tears_area|The Widow's Tears Area|crag|7 ; ca_warbler_buttress|Warbler Buttress|crag|1 ; ca_fifi_buttress|Fifi Buttress|crag|12 ; ca_1_phantom_pinnacle|Phantom Pinnacle|crag|1 ; ca_q_leaning_tower_area|Leaning Tower Area|region|26 ; ca_leaning_tower_3|Leaning Tower|crag|7"
+  },
+  "routes": [
+   {
+    "id": "ca_southeast_face_8",
+    "name": "Southeast Face",
+    "area_id": "ca_3_higher_cathedral_spire",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "ca_wrong_arete",
+    "name": "Wrong Arete",
+    "area_id": "ca_2_church_tower",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "ca_stupid_pet_tricks",
+    "name": "Stupid Pet Tricks",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_coffee_snob",
+    "name": "Coffee Snob",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "ca_punny_people",
+    "name": "Punny People",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_tapestry_3",
+    "name": "Tapestry",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_fall_guy_3",
+    "name": "Fall Guy",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_the_pedestal",
+    "name": "The Pedestal",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "ca_home_run",
+    "name": "Home Run",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10d"
+   },
+   {
+    "id": "ca_mother_earth_2",
+    "name": "Mother Earth",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.11c"
+   },
+   {
+    "id": "ca_quicksilver_2",
+    "name": "Quicksilver",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_the_final_frontier_2",
+    "name": "The Final Frontier",
+    "area_id": "ca_fifi_buttress",
+    "discipline": "trad",
+    "grade": "5.13a/b"
+   },
+   {
+    "id": "ca_bircheff_williams",
+    "name": "Bircheff-Williams",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.11+"
+   },
+   {
+    "id": "ca_the_flakes_3",
+    "name": "The Flakes",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "ca_north_buttress_6",
+    "name": "North Buttress",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "ca_cat_dancing",
+    "name": "Cat Dancing",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "ca_stand_and_deliver_2",
+    "name": "Stand And Deliver",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "ca_lap_lobster",
+    "name": "Lap Lobster",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_no_butts_about_it",
+    "name": "No Butts About It",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_together_forever",
+    "name": "Together Forever",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_tears_of_joy",
+    "name": "Tears of Joy",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "ca_modern_alchemy",
+    "name": "Modern Alchemy",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_paradise_lost_2",
+    "name": "Paradise Lost",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "ca_desperate_for_doughnuts",
+    "name": "Desperate for Doughnuts",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.8+"
+   },
+   {
+    "id": "ca_scorpion_tale",
+    "name": "Scorpion Tale",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_ennui",
+    "name": "Ennui",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "ca_corner_pocket_2",
+    "name": "Corner Pocket",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_exodus_4",
+    "name": "Exodus",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_the_grand_wazoo",
+    "name": "The Grand Wazoo",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.12a"
+   },
+   {
+    "id": "ca_up_the_down_staircase",
+    "name": "Up the Down Staircase",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "ca_spank_your_monkey",
+    "name": "Spank Your Monkey",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_monogamish",
+    "name": "Monogamish",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.11c/d"
+   },
+   {
+    "id": "ca_hole_in_one_3",
+    "name": "Hole in One",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "ca_bottom_feeder_4",
+    "name": "Bottom Feeder",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "ca_direct_north_buttress_dnb",
+    "name": "Direct North Buttress (DNB)",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_kor_beck",
+    "name": "Kor-Beck",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_space_babble",
+    "name": "Space Babble",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "ca_pee_pee_pillar",
+    "name": "Pee Pee Pillar",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "ca_the_syllable",
+    "name": "The Syllable",
+    "area_id": "ca_5_higher_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "ca_perfect_vision",
+    "name": "Perfect Vision",
+    "area_id": "ca_5_higher_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.11d"
+   },
+   {
+    "id": "ca_sight_reader",
+    "name": "Sight Reader",
+    "area_id": "ca_5_higher_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10-"
+   },
+   {
+    "id": "ca_blind_man_s_bluff",
+    "name": "Blind Man's Bluff",
+    "area_id": "ca_5_higher_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_northeast_face_7",
+    "name": "Northeast Face",
+    "area_id": "ca_4_lower_cathedral_spire",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_blinded_by_the_light_2",
+    "name": "Blinded by the Light",
+    "area_id": "ca_5_higher_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "ca_east_corner_5",
+    "name": "East Corner",
+    "area_id": "ca_3_higher_cathedral_spire",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "ca_book_of_job",
+    "name": "Book of Job",
+    "area_id": "ca_5_higher_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "ca_braille_book",
+    "name": "Braille Book",
+    "area_id": "ca_5_higher_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.8+"
+   },
+   {
+    "id": "ca_power_point_2",
+    "name": "Power Point",
+    "area_id": "ca_5_higher_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.11+"
+   },
+   {
+    "id": "ca_freewheelin",
+    "name": "Freewheelin'",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_northeast_buttress_4",
+    "name": "Northeast Buttress",
+    "area_id": "ca_5_higher_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.9+"
+   },
+   {
+    "id": "ca_the_crucifix_2",
+    "name": "The Crucifix",
+    "area_id": "ca_5_higher_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.12b"
+   },
+   {
+    "id": "ca_mary_s_tears",
+    "name": "Mary's Tears",
+    "area_id": "ca_5_higher_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.11a/b"
+   },
+   {
+    "id": "ca_the_sequel",
+    "name": "The Sequel",
+    "area_id": "ca_5_higher_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "ca_the_last_crusade",
+    "name": "The Last Crusade",
+    "area_id": "ca_5_higher_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.12-"
+   },
+   {
+    "id": "ca_south_by_southwest",
+    "name": "South by Southwest",
+    "area_id": "ca_4_lower_cathedral_spire",
+    "discipline": "trad",
+    "grade": "5.10d"
+   },
+   {
+    "id": "ca_beggar_s_buttress",
+    "name": "Beggar's Buttress",
+    "area_id": "ca_mecca",
+    "discipline": "trad",
+    "grade": "5.11c"
+   },
+   {
+    "id": "ca_east_buttress_7",
+    "name": "East Buttress",
+    "area_id": "ca_gunsight",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "ca_the_myth_of_sessyphus",
+    "name": "The Myth of Sessyphus",
+    "area_id": "ca_gunsight",
+    "discipline": "trad",
+    "grade": "5.12b"
+   },
+   {
+    "id": "ca_pilgrimage_new_north_face",
+    "name": "Pilgrimage (New North Face)",
+    "area_id": "ca_mecca",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "ca_something_good_kung_fu_panda_in_sloan_guide",
+    "name": "Something Good [Kung Fu Panda in Sloan Guide]",
+    "area_id": "ca_lower_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_dream_team_2",
+    "name": "Dream Team",
+    "area_id": "ca_fifi_buttress",
+    "discipline": "trad",
+    "grade": "5.12c/d"
+   },
+   {
+    "id": "ca_dan_the_maestro",
+    "name": "Dan the Maestro",
+    "area_id": "ca_lower_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "ca_unnamed_but_beautiful",
+    "name": "Unnamed but Beautiful",
+    "area_id": "ca_lower_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "ca_76_degrees_in_the_shade",
+    "name": "76 Degrees in the Shade",
+    "area_id": "ca_north_buttress_base_routes",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "ca_overhang_overpass",
+    "name": "Overhang Overpass",
+    "area_id": "ca_lower_cathedral_west",
+    "discipline": "trad",
+    "grade": "5.11c"
+   },
+   {
+    "id": "ca_time_bandits",
+    "name": "Time Bandits",
+    "area_id": "ca_north_buttress_base_routes",
+    "discipline": "trad",
+    "grade": "5.12b"
+   },
+   {
+    "id": "ca_end_of_the_line_2",
+    "name": "End of The Line",
+    "area_id": "ca_north_buttress_base_routes",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "ca_flying_high",
+    "name": "Flying High",
+    "area_id": "ca_mecca",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "ca_overhang_bypass",
+    "name": "Overhang Bypass",
+    "area_id": "ca_lower_cathedral_west",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "ca_bird_of_prey_7",
+    "name": "Bird of Prey",
+    "area_id": "ca_fifi_buttress",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "ca_voyager_2",
+    "name": "Voyager",
+    "area_id": "ca_fifi_buttress",
+    "discipline": "trad",
+    "grade": "5.11c"
+   },
+   {
+    "id": "ca_regular_route_30",
+    "name": "Regular Route",
+    "area_id": "ca_4_lower_cathedral_spire",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_the_lurch",
+    "name": "The Lurch",
+    "area_id": "ca_r_the_widow_s_tears_area",
+    "discipline": "trad",
+    "grade": "5.12c/d"
+   },
+   {
+    "id": "ca_father_time",
+    "name": "Father Time",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.13b"
+   },
+   {
+    "id": "ca_reefer_cruise",
+    "name": "Reefer Cruise",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.11"
+   },
+   {
+    "id": "ca_sweet_thang",
+    "name": "Sweet Thang",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.11a/b"
+   },
+   {
+    "id": "ca_east_arete_9",
+    "name": "East Arete",
+    "area_id": "ca_2_church_tower",
+    "discipline": "trad",
+    "grade": "5.6"
+   },
+   {
+    "id": "ca_soul_sacrifice",
+    "name": "Soul Sacrifice",
+    "area_id": "ca_gunsight",
+    "discipline": "trad",
+    "grade": "5.11c"
+   },
+   {
+    "id": "ca_the_warbler",
+    "name": "The Warbler",
+    "area_id": "ca_warbler_buttress",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "ca_the_princess",
+    "name": "The Princess",
+    "area_id": "ca_watchtower_the_4",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_megaforce_aka_magnum_force",
+    "name": "Megaforce (aka Magnum Force)",
+    "area_id": "ca_watchtower_the_4",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "ca_westie_face",
+    "name": "Westie Face",
+    "area_id": "ca_leaning_tower_3",
+    "discipline": "trad",
+    "grade": "5.13-"
+   },
+   {
+    "id": "ca_the_thief_2",
+    "name": "The Thief",
+    "area_id": "ca_watchtower_the_4",
+    "discipline": "trad",
+    "grade": "5.10d"
+   },
+   {
+    "id": "ca_east_buttress_8",
+    "name": "East Buttress",
+    "area_id": "ca_4_east_buttress",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_the_dawn_wall",
+    "name": "The Dawn Wall",
+    "area_id": "ca_3_southeast_face",
+    "discipline": "trad",
+    "grade": "5.14c"
+   },
+   {
+    "id": "ca_golden_gate",
+    "name": "Golden Gate",
+    "area_id": "ca_2_southwest_face",
+    "discipline": "trad",
+    "grade": "5.13a"
+   },
+   {
+    "id": "ca_freeblast",
+    "name": "Freeblast",
+    "area_id": "ca_2_southwest_face",
+    "discipline": "trad",
+    "grade": "5.11"
+   },
+   {
+    "id": "ca_west_face_22",
+    "name": "West Face",
+    "area_id": "ca_2_southwest_face",
+    "discipline": "trad",
+    "grade": "5.11c"
+   },
+   {
+    "id": "ca_steck_route",
+    "name": "Steck Route",
+    "area_id": "ca_3_higher_cathedral_spire",
+    "discipline": "trad",
+    "grade": "5.10+"
+   },
+   {
+    "id": "ca_pee_pee_pillar_left",
+    "name": "Pee Pee Pillar Left",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "ca_center_of_the_universe",
+    "name": "Center of the Universe",
+    "area_id": "ca_fifi_buttress",
+    "discipline": "trad",
+    "grade": "5.11-"
+   },
+   {
+    "id": "ca_ho_chi_minh_trail",
+    "name": "Ho Chi Minh Trail",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "ca_regular_route_direct_start",
+    "name": "Regular Route - Direct Start",
+    "area_id": "ca_4_lower_cathedral_spire",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_long_live_the_chief_free_var_hail_to_the_chief_headwall",
+    "name": "Long Live The Chief (free var. Hail To The Chief headwall)",
+    "area_id": "ca_4_lower_cathedral_spire",
+    "discipline": "trad",
+    "grade": "5.11"
+   },
+   {
+    "id": "ca_mr_midwest",
+    "name": "Mr. Midwest",
+    "area_id": "ca_2_southwest_face",
+    "discipline": "trad",
+    "grade": "5.13"
+   },
+   {
+    "id": "ca_spire_it_up_first_2_pitches",
+    "name": "Spire it up (first 2 pitches)",
+    "area_id": "ca_3_higher_cathedral_spire",
+    "discipline": "trad",
+    "grade": "5.13-"
+   },
+   {
+    "id": "ca_regular_route_higher_cathedral_spire",
+    "name": "Regular Route (Higher Cathedral Spire)",
+    "area_id": "ca_3_higher_cathedral_spire",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_gunsight_2",
+    "name": "Gunsight",
+    "area_id": "ca_gunsight",
+    "discipline": "trad",
+    "grade": "4th"
+   },
+   {
+    "id": "ca_6_middle_cathedral_rock_micro_apron_far_left",
+    "name": "Micro-Apron Far Left",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10b R"
+   },
+   {
+    "id": "ca_6_middle_cathedral_rock_micro_apron_left",
+    "name": "Micro-Apron Left",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10b PG13"
+   },
+   {
+    "id": "ca_6_middle_cathedral_rock_micro_apron_far_right",
+    "name": "Micro-Apron Far Right",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10d R"
+   },
+   {
+    "id": "ca_6_middle_cathedral_rock_direct_start_to_central_pillar",
+    "name": "Direct Start to Central Pillar",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.11d R"
+   },
+   {
+    "id": "ca_6_middle_cathedral_rock_borealis",
+    "name": "Borealis",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.13a"
+   },
+   {
+    "id": "ca_mecca_tiger_stripes",
+    "name": "Tiger Stripes",
+    "area_id": "ca_mecca",
+    "discipline": "trad",
+    "grade": "5.12c"
+   },
+   {
+    "id": "ca_north_buttress_base_routes_something_good",
+    "name": "Something Good",
+    "area_id": "ca_north_buttress_base_routes",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_north_buttress_base_routes_north_by_northwest",
+    "name": "North By Northwest",
+    "area_id": "ca_north_buttress_base_routes",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_north_buttress_base_routes_unnamed_but_beautiful",
+    "name": "Unnamed but Beautiful",
+    "area_id": "ca_north_buttress_base_routes",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "ca_north_buttress_base_routes_labor_of_love",
+    "name": "Labor of Love",
+    "area_id": "ca_north_buttress_base_routes",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "ca_leaning_tower_3_east_face",
+    "name": "East Face",
+    "area_id": "ca_leaning_tower_3",
+    "discipline": "trad",
+    "grade": "5.5"
+   },
+   {
+    "id": "ca_the_cracker_area_drop_out",
+    "name": "Drop Out",
+    "area_id": "ca_the_cracker_area",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "ca_fifi_buttress_more_girly_than_burly",
+    "name": "More Girly than Burly",
+    "area_id": "ca_fifi_buttress",
+    "discipline": "trad",
+    "grade": "5.12c"
+   },
+   {
+    "id": "ca_2_southwest_face_el_corazon",
+    "name": "El Corazon",
+    "area_id": "ca_2_southwest_face",
+    "discipline": "trad",
+    "grade": "5.13b R"
+   },
+   {
+    "id": "ca_3_southeast_face_el_ni_o",
+    "name": "El Niño",
+    "area_id": "ca_3_southeast_face",
+    "discipline": "trad",
+    "grade": "5.13b/c"
+   },
+   {
+    "id": "ca_phantom_pinnacle_left",
+    "name": "Phantom Pinnacle, Left",
+    "area_id": "ca_1_phantom_pinnacle",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_the_nexus_aka_the_niels_tietze_memorial_route",
+    "name": "The Nexus AKA The Niels Tietze Memorial Route",
+    "area_id": "ca_fifi_buttress",
+    "discipline": "trad",
+    "grade": "5.13-"
+   },
+   {
+    "id": "ca_stoner_s_highway",
+    "name": "Stoner's Highway",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "ca_riding_on_the_wind",
+    "name": "Riding on the Wind",
+    "area_id": "ca_r_the_widow_s_tears_area",
+    "discipline": "trad",
+    "grade": "5.11+"
+   },
+   {
+    "id": "ca_windfall_2",
+    "name": "Windfall",
+    "area_id": "ca_r_the_widow_s_tears_area",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "ca_windjammer_3",
+    "name": "Windjammer",
+    "area_id": "ca_r_the_widow_s_tears_area",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "ca_windchill",
+    "name": "Windchill",
+    "area_id": "ca_r_the_widow_s_tears_area",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "ca_wayward_son",
+    "name": "Wayward Son",
+    "area_id": "ca_o_lost_brother",
+    "discipline": "trad",
+    "grade": "5.12"
+   },
+   {
+    "id": "ca_romulan_warbird",
+    "name": "Romulan Warbird",
+    "area_id": "ca_fifi_buttress",
+    "discipline": "trad",
+    "grade": "5.12c"
+   },
+   {
+    "id": "ca_lower_cathedral_rock_nwr_not_worth_repeating",
+    "name": "NWR (Not Worth Repeating)",
+    "area_id": "ca_lower_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_lower_cathedral_rock_exfoliator",
+    "name": "Exfoliator",
+    "area_id": "ca_lower_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "ca_sub_mission",
+    "name": "Sub-Mission",
+    "area_id": "ca_north_buttress_base_routes",
+    "discipline": "trad",
+    "grade": "5.10d"
+   },
+   {
+    "id": "ca_gash",
+    "name": "Gash",
+    "area_id": "ca_lower_cathedral_west",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_fifi_buttress_everybody_needs_a_thneed",
+    "name": "Everybody Needs a Thneed",
+    "area_id": "ca_fifi_buttress",
+    "discipline": "trad",
+    "grade": "5.12a"
+   },
+   {
+    "id": "ca_border_country",
+    "name": "Border Country",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.12c"
+   },
+   {
+    "id": "ca_brother_in_arms",
+    "name": "Brother in Arms",
+    "area_id": "ca_north_buttress_base_routes",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "ca_compass_rose",
+    "name": "Compass Rose",
+    "area_id": "ca_north_buttress_base_routes",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_walk_of_life",
+    "name": "Walk of Life",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.10d"
+   },
+   {
+    "id": "ca_mama_free_voices_of_the_drown",
+    "name": "Mama (Free Voices of the Drown)",
+    "area_id": "ca_wall_of_ages_the",
+    "discipline": "trad",
+    "grade": "5.12a"
+   },
+   {
+    "id": "ca_too_many_darts_free_ascent",
+    "name": "Too Many Darts (Free Ascent)",
+    "area_id": "ca_lower_cathedral_west",
+    "discipline": "trad",
+    "grade": "5.11"
+   },
+   {
+    "id": "ca_6_middle_cathedral_rock_gaia_1st_7_pitches",
+    "name": "Gaia (1st 7 pitches)",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.12c"
+   },
+   {
+    "id": "ca_bridalveil_falls_east",
+    "name": "Bridalveil Falls East",
+    "area_id": "ca_lower_cathedral_west",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "ca_central_pillar_of_frenzy",
+    "name": "Central Pillar of Frenzy",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_6_middle_cathedral_rock_northwest_face",
+    "name": "Northwest Face",
+    "area_id": "ca_6_middle_cathedral_rock",
+    "discipline": "trad",
+    "grade": "5.8"
+   }
+  ]
+ },
+ {
+  "slug": "emigrant-peak-mt",
+  "fktUrl": "https://fastestknowntime.com/route/emigrant-peak-mt",
+  "fktTitle": "Emigrant Peak (MT)",
+  "state": "MT",
+  "tier": "round",
+  "km": 12,
+  "summitArea": {
+   "note": "areas near the top: mt_phat_one_buttress|Phat One Buttress|crag|3 ; mt_emigrant_gulch|Emigrant Gulch|region|5 ; mt_britney_spears_ar_te|Britney Spears Arête|crag|2"
+  },
+  "routes": [
+   {
+    "id": "mt_oops_i_did_it_again",
+    "name": "Oops, I Did It Again",
+    "area_id": "mt_britney_spears_ar_te",
+    "discipline": "alpine",
+    "grade": "5.9"
+   },
+   {
+    "id": "mt_unknown_18",
+    "name": "Unknown",
+    "area_id": "mt_britney_spears_ar_te",
+    "discipline": "alpine",
+    "grade": "5.10b/c"
+   },
+   {
+    "id": "mt_standard_corner",
+    "name": "Standard Corner",
+    "area_id": "mt_phat_one_buttress",
+    "discipline": "alpine",
+    "grade": "5.8"
+   },
+   {
+    "id": "mt_standard_route_5",
+    "name": "Standard Route",
+    "area_id": "mt_phat_one_buttress",
+    "discipline": "alpine",
+    "grade": "5.7"
+   }
+  ]
+ },
+ {
+  "slug": "fremont-peak-wy",
+  "fktUrl": "https://fastestknowntime.com/route/fremont-peak-wy",
+  "fktTitle": "Fremont Peak (WY)",
+  "state": "WY",
+  "tier": "round",
+  "km": 54.2,
+  "summitArea": {
+   "note": "areas near the top: wy_elephant_head|Elephant Head|crag|2 ; wy_fremont_peak|Fremont Peak|crag|4 ; wy_green_toupee_boulder_the|Green Toupee Boulder, The|crag|5 ; wy_mt_helen|Mt. Helen|crag|4 ; wy_mt_sacagawea|Mt. Sacagawea|crag|4 ; wy_red_tower|Red Tower|crag|1"
+  },
+  "routes": [
+   {
+    "id": "wy_carpenter_s_corner",
+    "name": "Carpenter's Corner",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "wy_greystoke",
+    "name": "Greystoke",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.10d"
+   },
+   {
+    "id": "wy_morning_sickness",
+    "name": "Morning Sickness",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.11+"
+   },
+   {
+    "id": "wy_all_time_loser",
+    "name": "All Time Loser",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.11"
+   },
+   {
+    "id": "wy_working_for_the_weekend",
+    "name": "Working for the Weekend",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "wy_nubus",
+    "name": "Nubus",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "wy_erocktica",
+    "name": "Erocktica",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.10a/b"
+   },
+   {
+    "id": "wy_prince_of_darkness",
+    "name": "Prince of Darkness",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "wy_mary_ann",
+    "name": "Mary Ann",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "wy_flip_top",
+    "name": "Flip Top",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "wy_iron_bone_steel",
+    "name": "Iron, Bone, Steel",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "wy_donkey_kong",
+    "name": "Donkey Kong",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.8+"
+   },
+   {
+    "id": "wy_flare_to_meddling",
+    "name": "Flare to Meddling",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.11"
+   },
+   {
+    "id": "wy_superman",
+    "name": "Superman",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.11+"
+   },
+   {
+    "id": "wy_slim_pickins",
+    "name": "Slim Pickins",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.9-"
+   },
+   {
+    "id": "wy_january_embers",
+    "name": "January Embers",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "wy_halfway",
+    "name": "HalfWay",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "wy_easy_day_for_a_lady",
+    "name": "Easy Day for a Lady",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "wy_b_25",
+    "name": "B-25",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "wy_bushwacker",
+    "name": "Bushwacker",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "wy_star_plunge",
+    "name": "Star Plunge",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "wy_drew_s_corner",
+    "name": "Drew’s Corner",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "wy_stone_king",
+    "name": "Stone King",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "wy_wild_flower_arete",
+    "name": "Wild Flower Arete",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.11d"
+   },
+   {
+    "id": "wy_dillingham_blues",
+    "name": "Dillingham Blues",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.10+"
+   },
+   {
+    "id": "wy_imjin_scout",
+    "name": "Imjin Scout",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "wy_pet_semetary",
+    "name": "Pet Semetary",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "wy_captain_america",
+    "name": "Captain America",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.11d"
+   },
+   {
+    "id": "wy_raise_your_guts",
+    "name": "Raise Your Guts",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "wy_starman",
+    "name": "Starman",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "wy_hemeteria_right",
+    "name": "Hemeteria Right",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.8+"
+   },
+   {
+    "id": "wy_hemeteria_left",
+    "name": "Hemeteria Left",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "wy_first_blood",
+    "name": "First Blood",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "wy_peterman_s_variation",
+    "name": "Peterman's Variation",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "wy_peterman_s_route",
+    "name": "Peterman's Route",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.6"
+   },
+   {
+    "id": "wy_seven_heros",
+    "name": "Seven Heros",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "wy_bridge_the_south_chimney",
+    "name": "South Chimney",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.5 R"
+   },
+   {
+    "id": "wy_bridge_the_broken_hand_fitzgerald",
+    "name": "Broken Hand Fitzgerald",
+    "area_id": "wy_bridge_the",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "wy_west_northwest_face",
+    "name": "West-Northwest Face",
+    "area_id": "wy_elephant_head",
+    "discipline": "alpine",
+    "grade": "5.8"
+   },
+   {
+    "id": "wy_northwest_buttress",
+    "name": "Northwest Buttress",
+    "area_id": "wy_elephant_head",
+    "discipline": "alpine",
+    "grade": "5.6"
+   },
+   {
+    "id": "wy_north_ridge_6",
+    "name": "North Ridge",
+    "area_id": "wy_ellingwood_peak",
+    "discipline": "alpine",
+    "grade": "5.6"
+   },
+   {
+    "id": "wy_marmot_s_tooth_beginner_s_mind",
+    "name": "Marmot's Tooth - Beginner's Mind",
+    "area_id": "wy_fremont_peak",
+    "discipline": "alpine",
+    "grade": "5.11-"
+   },
+   {
+    "id": "wy_southwest_slope",
+    "name": "Southwest Slope",
+    "area_id": "wy_fremont_peak",
+    "discipline": "alpine",
+    "grade": "3rd"
+   },
+   {
+    "id": "wy_west_face_dihedral",
+    "name": "West Face Dihedral",
+    "area_id": "wy_fremont_peak",
+    "discipline": "alpine",
+    "grade": "5.12b"
+   },
+   {
+    "id": "wy_gauntlet_the_greased_lightning",
+    "name": "Greased Lightning",
+    "area_id": "wy_gauntlet_the",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "wy_funnel_web",
+    "name": "Funnel Web",
+    "area_id": "wy_gauntlet_the",
+    "discipline": "trad",
+    "grade": "5.11"
+   },
+   {
+    "id": "wy_kiss_of_the_spiderwoman",
+    "name": "Kiss of the Spiderwoman",
+    "area_id": "wy_gauntlet_the",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "wy_skin_bus_to_tuna_town",
+    "name": "Skin Bus to Tuna Town",
+    "area_id": "wy_gauntlet_the",
+    "discipline": "trad",
+    "grade": "5.12c"
+   },
+   {
+    "id": "wy_love_colored_alpinglow",
+    "name": "Love Colored Alpinglow",
+    "area_id": "wy_green_toupee_boulder_the",
+    "discipline": "alpine",
+    "grade": "5.12b/c"
+   },
+   {
+    "id": "wy_love_bug_s_arete",
+    "name": "Love Bug's Arete",
+    "area_id": "wy_green_toupee_boulder_the",
+    "discipline": "alpine",
+    "grade": "5.12c/d"
+   },
+   {
+    "id": "wy_mountain_lilly",
+    "name": "Mountain Lilly",
+    "area_id": "wy_green_toupee_boulder_the",
+    "discipline": "alpine",
+    "grade": "5.13a"
+   },
+   {
+    "id": "wy_the_green_toupee_open_project",
+    "name": "The Green Toupee (open project)",
+    "area_id": "wy_green_toupee_boulder_the",
+    "discipline": "alpine",
+    "grade": "5.13c/d"
+   },
+   {
+    "id": "wy_the_mccord_accord",
+    "name": "The McCord Accord",
+    "area_id": "wy_green_toupee_boulder_the",
+    "discipline": "alpine",
+    "grade": "5.12a"
+   },
+   {
+    "id": "wy_high_tide_green_eggs_and_ham",
+    "name": "Green Eggs and Ham",
+    "area_id": "wy_high_tide",
+    "discipline": "trad",
+    "grade": "5.6"
+   },
+   {
+    "id": "wy_high_tide_nikko_s_howling_dog_arch",
+    "name": "Nikko’s Howling Dog Arch",
+    "area_id": "wy_high_tide",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "wy_high_tide_legends_of_the_fall",
+    "name": "Legends of the Fall",
+    "area_id": "wy_high_tide",
+    "discipline": "trad",
+    "grade": "5.9+"
+   },
+   {
+    "id": "wy_high_tide_guardian_angel",
+    "name": "Guardian Angel",
+    "area_id": "wy_high_tide",
+    "discipline": "trad",
+    "grade": "5.11b/c"
+   },
+   {
+    "id": "wy_haagen_daz_dihedral",
+    "name": "Haagen Daz Dihedral",
+    "area_id": "wy_love_shack_the",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "wy_south_couloir",
+    "name": "South Couloir",
+    "area_id": "wy_mount_woodrow_wilson",
+    "discipline": "alpine",
+    "grade": "5.1"
+   },
+   {
+    "id": "wy_tower_1_west_face_center",
+    "name": "Tower 1 - West Face Center",
+    "area_id": "wy_mt_helen",
+    "discipline": "alpine",
+    "grade": "5.10"
+   },
+   {
+    "id": "wy_tower_ridge",
+    "name": "Tower Ridge",
+    "area_id": "wy_mt_helen",
+    "discipline": "alpine",
+    "grade": "5.7"
+   },
+   {
+    "id": "wy_northwest_ridge_of_tower_1",
+    "name": "Northwest Ridge of Tower 1",
+    "area_id": "wy_mt_helen",
+    "discipline": "alpine",
+    "grade": "5.10"
+   },
+   {
+    "id": "wy_west_face_right",
+    "name": "West Face-Right",
+    "area_id": "wy_mt_sacagawea",
+    "discipline": "alpine",
+    "grade": "5.9"
+   },
+   {
+    "id": "wy_wishbone_arete_right_side",
+    "name": "Wishbone Arete - Right Side",
+    "area_id": "wy_mt_sacagawea",
+    "discipline": "alpine",
+    "grade": "5.8"
+   },
+   {
+    "id": "wy_north_ridge_5",
+    "name": "North Ridge",
+    "area_id": "wy_mt_sacagawea",
+    "discipline": "alpine",
+    "grade": "Easy 5th"
+   },
+   {
+    "id": "wy_ne_face",
+    "name": "NE Face",
+    "area_id": "wy_mt_sacagawea",
+    "discipline": "alpine",
+    "grade": "5.4"
+   },
+   {
+    "id": "wy_hang_on_loosely",
+    "name": "Hang On Loosely",
+    "area_id": "wy_narrows_east_rim_the",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "wy_the_slab_route",
+    "name": "The Slab Route",
+    "area_id": "wy_narrows_east_rim_the",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "wy_facade",
+    "name": "Facade",
+    "area_id": "wy_power_tower_wall",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "wy_high_cost_of_climbing",
+    "name": "High Cost of Climbing",
+    "area_id": "wy_power_tower_wall",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "wy_psychedelic_wall_special_forces",
+    "name": "Special Forces",
+    "area_id": "wy_psychedelic_wall",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "wy_psychedelic_wall_is_it_yuk_or_yum",
+    "name": "Is it Yuk or Yum?",
+    "area_id": "wy_psychedelic_wall",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "wy_psychedelic_wall_psychedelic_psycho",
+    "name": "Psychedelic Psycho",
+    "area_id": "wy_psychedelic_wall",
+    "discipline": "trad",
+    "grade": "5.12c"
+   },
+   {
+    "id": "wy_red_eye_gringo",
+    "name": "Red Eye Gringo",
+    "area_id": "wy_red_tower",
+    "discipline": "alpine",
+    "grade": "5.9+"
+   },
+   {
+    "id": "wy_loose_effort",
+    "name": "Loose Effort",
+    "area_id": "wy_side_canyon_south_rim",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "wy_side_canyon_south_rim_green_crack_left",
+    "name": "Green Crack Left",
+    "area_id": "wy_side_canyon_south_rim",
+    "discipline": "trad",
+    "grade": "5.7+"
+   },
+   {
+    "id": "wy_side_canyon_south_rim_green_crack_right",
+    "name": "Green Crack Right",
+    "area_id": "wy_side_canyon_south_rim",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "wy_spearhead_pinnacle_north_ridge",
+    "name": "North Ridge",
+    "area_id": "wy_spearhead_pinnacle",
+    "discipline": "trad",
+    "grade": "5.4 Mod. Snow"
+   },
+   {
+    "id": "wy_northwest_ridge_4",
+    "name": "Northwest Ridge",
+    "area_id": "wy_sphinx_the",
+    "discipline": "alpine",
+    "grade": "4th"
+   },
+   {
+    "id": "wy_sphinx_traverse",
+    "name": "Sphinx Traverse",
+    "area_id": "wy_sphinx_the",
+    "discipline": "alpine",
+    "grade": "5.4"
+   },
+   {
+    "id": "wy_horn_a_plenty",
+    "name": "Horn a Plenty",
+    "area_id": "wy_twin_towers_wall_aka_low_voltage_wall",
+    "discipline": "trad",
+    "grade": "5.9+"
+   },
+   {
+    "id": "wy_aztec_camera",
+    "name": "Aztec Camera",
+    "area_id": "wy_west_canyon_south_rim_the",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "wy_temptation",
+    "name": "Temptation",
+    "area_id": "wy_west_canyon_south_rim_the",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "wy_summer_shade",
+    "name": "Summer Shade",
+    "area_id": "wy_west_canyon_south_rim_the",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "wy_west_canyon_south_rim_the_ode_d_tribute",
+    "name": "Ode D Tribute",
+    "area_id": "wy_west_canyon_south_rim_the",
+    "discipline": "trad",
+    "grade": "5.12a/b"
+   },
+   {
+    "id": "wy_cashew_corner",
+    "name": "Cashew Corner",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "wy_terminator_goes_to_the_prom",
+    "name": "Terminator Goes to the Prom",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "wy_power_behind_the_throne",
+    "name": "Power Behind the Throne",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.11+"
+   },
+   {
+    "id": "wy_cheyenne",
+    "name": "Cheyenne",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "wy_fiddler_on_the_roof",
+    "name": "Fiddler on the roof",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.13d"
+   },
+   {
+    "id": "wy_strappado",
+    "name": "Strappado",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.12a"
+   },
+   {
+    "id": "wy_what_no_rope",
+    "name": "What, No Rope?",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "wy_wine_and_roses",
+    "name": "Wine and Roses",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "wy_heroes_and_zeroes",
+    "name": "Heroes and Zeroes",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.11+"
+   },
+   {
+    "id": "wy_the_chief",
+    "name": "The Chief",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "wy_thanatos",
+    "name": "Thanatos",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "wy_exploding_boy",
+    "name": "Exploding Boy",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "wy_pale_face",
+    "name": "Pale Face",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "wy_wine_and_roses_greatest_hits",
+    "name": "Greatest Hits",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "wy_wine_and_roses_tribal_passage",
+    "name": "Tribal Passage",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "wy_wine_and_roses_catch_22",
+    "name": "Catch 22",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.11+ R"
+   },
+   {
+    "id": "wy_wine_and_roses_storming_intrepid",
+    "name": "Storming Intrepid",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.12b"
+   },
+   {
+    "id": "wy_wine_and_roses_guilty_as_charged",
+    "name": "Guilty as Charged",
+    "area_id": "wy_wine_and_roses",
+    "discipline": "trad",
+    "grade": "5.13a"
+   },
+   {
+    "id": "wy_zoo_station_dog_day_afternoon",
+    "name": "Dog Day Afternoon",
+    "area_id": "wy_zoo_station",
+    "discipline": "trad",
+    "grade": "5.9+"
+   },
+   {
+    "id": "wy_zoo_station_beauty_and_the_beast",
+    "name": "Beauty and the Beast",
+    "area_id": "wy_zoo_station",
+    "discipline": "trad",
+    "grade": "5.10c/d"
+   }
+  ]
+ },
+ {
+  "slug": "half-dome-yosemite-ca",
+  "fktUrl": "https://fastestknowntime.com/route/half-dome-yosemite-ca",
+  "fktTitle": "Half Dome, Yosemite (CA)",
+  "state": "CA",
+  "tier": "round",
+  "km": 22.2,
+  "summitArea": {
+   "note": "areas near the top: ca_magic_carpet_boulder|Magic Carpet Boulder|crag|1 ; ca_no_fox_given|No Fox Given|crag|1 ; ca_mist_trail_boulders|Mist Trail Boulders|region|10 ; ca_footbridge_area|Footbridge Area|crag|1 ; ca_cedar_eater_boulder|Cedar Eater Boulder|crag|4 ; ca_f_liberty_cap|Liberty Cap|crag|18"
+  },
+  "routes": [
+   {
+    "id": "ca_1_northwest_face_north_ridge",
+    "name": "North Ridge",
+    "area_id": "ca_1_northwest_face",
+    "discipline": "trad",
+    "grade": "5.10+ PG13"
+   },
+   {
+    "id": "ca_1_northwest_face_the_direct",
+    "name": "The Direct",
+    "area_id": "ca_1_northwest_face",
+    "discipline": "trad",
+    "grade": "5.14a PG13"
+   },
+   {
+    "id": "ca_snake_dike",
+    "name": "Snake Dike",
+    "area_id": "ca_3_southwest_face",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "ca_blond_ike",
+    "name": "Blond Ike",
+    "area_id": "ca_3_southwest_face",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "ca_eye_in_the_sky_2",
+    "name": "Eye in the Sky",
+    "area_id": "ca_3_southwest_face",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_two_hoofers",
+    "name": "Two Hoofers",
+    "area_id": "ca_3_southwest_face",
+    "discipline": "trad",
+    "grade": "5.12a"
+   },
+   {
+    "id": "ca_deuceldike",
+    "name": "Deuceldike",
+    "area_id": "ca_3_southwest_face",
+    "discipline": "trad",
+    "grade": "5.9-"
+   },
+   {
+    "id": "ca_the_southwest_face",
+    "name": "The Southwest Face",
+    "area_id": "ca_3_southwest_face",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "ca_3_sunshine_buttress_camp_four_toilet_stall",
+    "name": "Camp Four Toilet Stall",
+    "area_id": "ca_3_sunshine_buttress",
+    "discipline": "trad",
+    "grade": "5.10a PG13"
+   },
+   {
+    "id": "ca_3_sunshine_buttress_cold_rain_and_snow",
+    "name": "Cold, Rain, and Snow",
+    "area_id": "ca_3_sunshine_buttress",
+    "discipline": "trad",
+    "grade": "5.10d PG13"
+   },
+   {
+    "id": "ca_autobahn_3",
+    "name": "Autobahn",
+    "area_id": "ca_4_south_face",
+    "discipline": "trad",
+    "grade": "5.11+"
+   },
+   {
+    "id": "ca_a_clouds_rest_trail_clouds_rest_trail",
+    "name": "Clouds Rest Trail",
+    "area_id": "ca_a_clouds_rest_trail",
+    "discipline": "scrambling",
+    "grade": "Class 1"
+   },
+   {
+    "id": "ca_sugarloaf_dome_south_face",
+    "name": "Sugarloaf Dome - South Face",
+    "area_id": "ca_c_little_yosemite_valley",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_bunnell_boa",
+    "name": "Bunnell Boa",
+    "area_id": "ca_c_little_yosemite_valley",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "ca_bunnell_point_the_golden_bear",
+    "name": "Bunnell Point - The Golden Bear",
+    "area_id": "ca_c_little_yosemite_valley",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_bunnell_point_northwest_face",
+    "name": "Bunnell Point - Northwest Face",
+    "area_id": "ca_c_little_yosemite_valley",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_d_half_dome_cables_route_cables_route",
+    "name": "Cables Route",
+    "area_id": "ca_d_half_dome_cables_route",
+    "discipline": "scrambling",
+    "grade": "Class 3"
+   },
+   {
+    "id": "ca_unemployment_line_3",
+    "name": "Unemployment Line",
+    "area_id": "ca_e_mount_broderick",
+    "discipline": "trad",
+    "grade": "5.12-"
+   },
+   {
+    "id": "ca_mahtah",
+    "name": "Mahtah",
+    "area_id": "ca_f_liberty_cap",
+    "discipline": "trad",
+    "grade": "5.12+"
+   },
+   {
+    "id": "ca_scarface_free",
+    "name": "Scarface (Free)",
+    "area_id": "ca_f_liberty_cap",
+    "discipline": "trad",
+    "grade": "5.12"
+   },
+   {
+    "id": "ca_f_liberty_cap_vessels_of_wrath",
+    "name": "Vessels of Wrath",
+    "area_id": "ca_f_liberty_cap",
+    "discipline": "trad",
+    "grade": "5.11d"
+   },
+   {
+    "id": "ca_controlled_substance",
+    "name": "Controlled Substance",
+    "area_id": "ca_f_liberty_cap",
+    "discipline": "trad",
+    "grade": "5.12b"
+   },
+   {
+    "id": "ca_southwest_arete_6",
+    "name": "Southwest Arete",
+    "area_id": "ca_g_grizzly_peak",
+    "discipline": "trad",
+    "grade": "4th"
+   },
+   {
+    "id": "ca_leconte_gully",
+    "name": "LeConte Gully",
+    "area_id": "ca_g_grizzly_peak",
+    "discipline": "scrambling",
+    "grade": "4th"
+   },
+   {
+    "id": "ca_basket_case_2",
+    "name": "Basket Case",
+    "area_id": "ca_k_basket_dome",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "ca_back_to_the_slammer",
+    "name": "Back To The Slammer",
+    "area_id": "ca_l_apathy_buttress",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "ca_apathy_buttress",
+    "name": "Apathy Buttress",
+    "area_id": "ca_l_apathy_buttress",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_the_prude",
+    "name": "The Prude",
+    "area_id": "ca_m_mirror_lake",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "ca_werner_s_crack",
+    "name": "Werner's Crack",
+    "area_id": "ca_m_mirror_lake",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "ca_m_mirror_lake_unknown_5_8_pompous",
+    "name": "Unknown 5.8 (‘Pompous’)",
+    "area_id": "ca_m_mirror_lake",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "ca_my_favorite_things",
+    "name": "My Favorite Things",
+    "area_id": "ca_west_face_18",
+    "discipline": "trad",
+    "grade": "5.10a"
+   }
+  ]
+ },
+ {
+  "slug": "lakes-peak-western-approach-co",
+  "fktUrl": "https://fastestknowntime.com/route/lakes-peak-western-approach-co",
+  "fktTitle": "Lakes Peak Western Approach (CO)",
+  "state": "CO",
+  "tier": "round",
+  "km": 24.1,
+  "summitArea": {
+   "note": "areas near the top: "
+  },
+  "routes": [
+   {
+    "id": "co_tomorrow_s_borrowed_fun",
+    "name": "Tomorrow's Borrowed Fun",
+    "area_id": "co_borrowed_fun_crag",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "co_no_budget_for_a_bosch",
+    "name": "No Budget for a Bosch",
+    "area_id": "co_borrowed_fun_crag",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "co_the_good_the_bad_the_left_ver_crack",
+    "name": "The Good, the Bad, & the Leftӧver Crack",
+    "area_id": "co_borrowed_fun_crag",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "co_milk_bone_2",
+    "name": "Milk Bone",
+    "area_id": "co_dog_s_crag",
+    "discipline": "alpine",
+    "grade": "5.10b"
+   },
+   {
+    "id": "co_snowcap",
+    "name": "Snowcap",
+    "area_id": "co_dog_s_crag",
+    "discipline": "alpine",
+    "grade": "5.11a"
+   },
+   {
+    "id": "co_yellow_dog",
+    "name": "Yellow Dog",
+    "area_id": "co_dog_s_crag",
+    "discipline": "alpine",
+    "grade": "5.11a"
+   },
+   {
+    "id": "co_cobb_gobbler",
+    "name": "Cobb Gobbler",
+    "area_id": "co_dog_s_crag",
+    "discipline": "alpine",
+    "grade": "5.10+"
+   },
+   {
+    "id": "co_red_dog_2",
+    "name": "Red Dog",
+    "area_id": "co_dog_s_crag",
+    "discipline": "alpine",
+    "grade": "5.10+"
+   },
+   {
+    "id": "co_five_o_clock_jesse",
+    "name": "Five O'Clock Jesse",
+    "area_id": "co_dog_s_crag",
+    "discipline": "alpine",
+    "grade": "5.10d"
+   },
+   {
+    "id": "co_tundra",
+    "name": "Tundra",
+    "area_id": "co_dog_s_crag",
+    "discipline": "alpine",
+    "grade": "5.10d"
+   },
+   {
+    "id": "co_black_dog_2",
+    "name": "Black Dog",
+    "area_id": "co_dog_s_crag",
+    "discipline": "alpine",
+    "grade": "5.10c"
+   },
+   {
+    "id": "co_grazing_allotment_crag_bud_collins",
+    "name": "Bud Collins",
+    "area_id": "co_grazing_allotment_crag",
+    "discipline": "trad",
+    "grade": "5.8 PG13"
+   },
+   {
+    "id": "co_grazing_allotment_crag_mimi_s_mixed_moderate",
+    "name": "Mimi's Mixed Moderate",
+    "area_id": "co_grazing_allotment_crag",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "co_grazing_allotment_crag_little_leo_junebug_s_crack",
+    "name": "Little Leo Junebug's Crack",
+    "area_id": "co_grazing_allotment_crag",
+    "discipline": "trad",
+    "grade": "5.10a/b"
+   },
+   {
+    "id": "co_grazing_allotment_crag_soaring_crack",
+    "name": "Soaring Crack",
+    "area_id": "co_grazing_allotment_crag",
+    "discipline": "trad",
+    "grade": "5.11 PG13"
+   },
+   {
+    "id": "co_grazing_allotment_crag_lawyer_up",
+    "name": "Lawyer Up",
+    "area_id": "co_grazing_allotment_crag",
+    "discipline": "trad",
+    "grade": "5.12a/b"
+   },
+   {
+    "id": "co_sunshine_and_solitude",
+    "name": "Sunshine and Solitude",
+    "area_id": "co_grazing_allotment_crag",
+    "discipline": "trad",
+    "grade": "5.11a/b"
+   },
+   {
+    "id": "co_casanova_crack",
+    "name": "Casanova Crack",
+    "area_id": "co_grazing_allotment_crag",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "co_mower_blade",
+    "name": "Mower Blade",
+    "area_id": "co_grazing_allotment_crag",
+    "discipline": "trad",
+    "grade": "5.11c"
+   },
+   {
+    "id": "co_talon_scout",
+    "name": "Talon Scout",
+    "area_id": "co_grazing_allotment_crag",
+    "discipline": "trad",
+    "grade": "5.11c"
+   },
+   {
+    "id": "co_detox_dihedral",
+    "name": "Detox Dihedral",
+    "area_id": "co_grazing_allotment_crag",
+    "discipline": "trad",
+    "grade": "5.11a/b"
+   },
+   {
+    "id": "co_grazing_allotment_crag_blood_brothers",
+    "name": "Blood Brothers",
+    "area_id": "co_grazing_allotment_crag",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "co_lost_lake_jade_temple",
+    "name": "Jade Temple",
+    "area_id": "co_lost_lake",
+    "discipline": "trad",
+    "grade": "5.8 PG13"
+   },
+   {
+    "id": "co_pagosa_lakes_crag_you_did_good_lick",
+    "name": "You Did Good, $lick",
+    "area_id": "co_pagosa_lakes_crag",
+    "discipline": "trad",
+    "grade": "5.5 PG13"
+   }
+  ]
+ },
+ {
+  "slug": "little-white-mountain-bc-canada",
+  "fktUrl": "https://fastestknowntime.com/route/little-white-mountain-bc-canada",
+  "fktTitle": "Little White Mountain (BC, Canada)",
+  "state": "BC",
+  "tier": "oneway",
+  "km": 21.9,
+  "summitArea": {
+   "note": "areas near the top: "
+  },
+  "routes": [
+   {
+    "id": "bc_little_white_the_rest_is_inconsequential",
+    "name": "The Rest is Inconsequential",
+    "area_id": "bc_little_white",
+    "discipline": "trad",
+    "grade": "5.6"
+   },
+   {
+    "id": "bc_little_white_cornercopia",
+    "name": "Cornercopia",
+    "area_id": "bc_little_white",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "bc_little_white_muscles_and_testicles",
+    "name": "Muscles and Testicles",
+    "area_id": "bc_little_white",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "bc_little_white_biggus_dykus",
+    "name": "Biggus Dykus",
+    "area_id": "bc_little_white",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "bc_little_white_chimney_sweep_s_balls",
+    "name": "Chimney Sweep's Balls",
+    "area_id": "bc_little_white",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "bc_little_white_set_the_ganja_prisoners_free",
+    "name": "Set the Ganja Prisoners Free",
+    "area_id": "bc_little_white",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "bc_little_white_a_limestone_crack",
+    "name": "A Limestone Crack",
+    "area_id": "bc_little_white",
+    "discipline": "trad",
+    "grade": "5.10d"
+   },
+   {
+    "id": "bc_little_white_free_n_easy",
+    "name": "Free 'n Easy",
+    "area_id": "bc_little_white",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "bc_little_white_brace_yourself",
+    "name": "Brace Yourself",
+    "area_id": "bc_little_white",
+    "discipline": "trad",
+    "grade": "5.7"
+   }
+  ]
+ },
+ {
+  "slug": "marble-mountain-sangre-de-cristo-range-co",
+  "fktUrl": "https://fastestknowntime.com/route/marble-mountain-sangre-de-cristo-range-co",
+  "fktTitle": "Marble Mountain - Sangre De Cristo Range (CO)",
+  "state": "CO",
+  "tier": "round",
+  "km": 20.4,
+  "summitArea": {
+   "note": "areas near the top: co_music_mountain|Music Mountain|crag|1 ; co_humboldt_peak|Humboldt Peak|peak|1"
+  },
+  "routes": [
+   {
+    "id": "co_humboldt_peak_west_ridge",
+    "name": "West Ridge",
+    "area_id": "co_humboldt_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2"
+   },
+   {
+    "id": "co_madness",
+    "name": "Madness",
+    "area_id": "co_marble_wall",
+    "discipline": "trad",
+    "grade": "5.10-"
+   },
+   {
+    "id": "co_south_ridge",
+    "name": "South Ridge",
+    "area_id": "co_music_mountain",
+    "discipline": "alpine",
+    "grade": "4th"
+   }
+  ]
+ },
+ {
+  "slug": "mescalito-red-rock-canyon-nca-nv-0",
+  "fktUrl": "https://fastestknowntime.com/route/mescalito-red-rock-canyon-nca-nv-0",
+  "fktTitle": "Mescalito, Red Rock Canyon NCA (NV)",
+  "state": "NV",
+  "tier": "round",
+  "km": 13.8,
+  "summitArea": {
+   "note": "areas near the top: nv_horseshoe_wall|Horseshoe Wall|crag|10 ; nv_lower_east_side|Lower East Side|crag|15 ; nv_hey_bud_boulder|Hey Bud Boulder|crag|1 ; nv_whale_bacon|Whale Bacon|crag|3 ; nv_beehive_knoll_area|Beehive Knoll Area|region|5 ; nv_no_idea_boulder|No Idea Boulder|crag|1"
+  },
+  "routes": [
+   {
+    "id": "nv_the_wicked",
+    "name": "The Wicked",
+    "area_id": "nv_aeolian_wall",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "nv_cactus_connection",
+    "name": "Cactus Connection",
+    "area_id": "nv_aeolian_wall",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "nv_thanatos",
+    "name": "Thanatos",
+    "area_id": "nv_aeolian_wall",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "nv_pagan_sacrifice",
+    "name": "Pagan Sacrifice",
+    "area_id": "nv_aeolian_wall",
+    "discipline": "trad",
+    "grade": "5.11"
+   },
+   {
+    "id": "nv_gift_of_the_wind_gods",
+    "name": "Gift of the Wind Gods",
+    "area_id": "nv_aeolian_wall",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "nv_dream_of_wild_cheeseburgers",
+    "name": "Dream of Wild Cheeseburgers",
+    "area_id": "nv_aeolian_wall",
+    "discipline": "trad",
+    "grade": "5.9+"
+   },
+   {
+    "id": "nv_woman_of_mountain_dreams",
+    "name": "Woman of Mountain Dreams",
+    "area_id": "nv_aeolian_wall",
+    "discipline": "trad",
+    "grade": "5.11a/b"
+   },
+   {
+    "id": "nv_inti_watana",
+    "name": "Inti Watana",
+    "area_id": "nv_aeolian_wall",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "nv_the_original_sin",
+    "name": "The Original Sin",
+    "area_id": "nv_aeolian_wall",
+    "discipline": "trad",
+    "grade": "5.12a/b"
+   },
+   {
+    "id": "nv_aeolian_wall_cactus_joe_s_connection",
+    "name": "Cactus Joe's Connection",
+    "area_id": "nv_aeolian_wall",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_aeolian_wall_lady_wilson_s_bush",
+    "name": "Lady Wilson's Bush",
+    "area_id": "nv_aeolian_wall",
+    "discipline": "trad",
+    "grade": "5.9+ R"
+   },
+   {
+    "id": "nv_aeolian_wall_the_wind_god_tower",
+    "name": "The Wind God Tower",
+    "area_id": "nv_aeolian_wall",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "nv_aeolian_wall_poodle_party",
+    "name": "Poodle Party",
+    "area_id": "nv_aeolian_wall",
+    "discipline": "trad",
+    "grade": "5.11"
+   },
+   {
+    "id": "nv_aeolian_wall_woodrow",
+    "name": "Woodrow",
+    "area_id": "nv_aeolian_wall",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "nv_eliminator",
+    "name": "Eliminator",
+    "area_id": "nv_afterburner_wall",
+    "discipline": "trad",
+    "grade": "5.11d"
+   },
+   {
+    "id": "nv_afterburner_wall_maddie_s_route",
+    "name": "Maddie’s Route",
+    "area_id": "nv_afterburner_wall",
+    "discipline": "trad",
+    "grade": "5.9+"
+   },
+   {
+    "id": "nv_afterburner_wall_finger_fandango",
+    "name": "Finger Fandango",
+    "area_id": "nv_afterburner_wall",
+    "discipline": "trad",
+    "grade": "5.11-"
+   },
+   {
+    "id": "nv_afterburner_wall_afterburner",
+    "name": "Afterburner",
+    "area_id": "nv_afterburner_wall",
+    "discipline": "trad",
+    "grade": "5.12-"
+   },
+   {
+    "id": "nv_afterburner_wall_34_ford_with_flames",
+    "name": "'34 Ford With Flames",
+    "area_id": "nv_afterburner_wall",
+    "discipline": "trad",
+    "grade": "5.10+"
+   },
+   {
+    "id": "nv_the_secret_world_of_arrietty",
+    "name": "The Secret World of Arrietty",
+    "area_id": "nv_black_orpheus_amphitheater",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "nv_marijuana",
+    "name": "Marijuana",
+    "area_id": "nv_black_orpheus_amphitheater",
+    "discipline": "trad",
+    "grade": "5.11"
+   },
+   {
+    "id": "nv_howl_s_moving_castle",
+    "name": "Howl's Moving Castle",
+    "area_id": "nv_black_orpheus_amphitheater",
+    "discipline": "trad",
+    "grade": "5.11c"
+   },
+   {
+    "id": "nv_black_ops",
+    "name": "Black Ops",
+    "area_id": "nv_black_orpheus_amphitheater",
+    "discipline": "trad",
+    "grade": "5.12a"
+   },
+   {
+    "id": "nv_black_baby",
+    "name": "Black Baby",
+    "area_id": "nv_black_orpheus_amphitheater",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_the_black_widow",
+    "name": "The Black Widow",
+    "area_id": "nv_black_orpheus_amphitheater",
+    "discipline": "trad",
+    "grade": "5.12"
+   },
+   {
+    "id": "nv_eurydice",
+    "name": "Eurydice",
+    "area_id": "nv_black_orpheus_amphitheater",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "nv_offset_corners",
+    "name": "Offset Corners",
+    "area_id": "nv_black_orpheus_amphitheater",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "nv_tuscarora",
+    "name": "Tuscarora",
+    "area_id": "nv_black_orpheus_amphitheater",
+    "discipline": "trad",
+    "grade": "5.12"
+   },
+   {
+    "id": "nv_plate_of_fate",
+    "name": "Plate of Fate",
+    "area_id": "nv_black_orpheus_amphitheater",
+    "discipline": "trad",
+    "grade": "5.9+"
+   },
+   {
+    "id": "nv_black_orpheus",
+    "name": "Black Orpheus",
+    "area_id": "nv_black_orpheus_amphitheater",
+    "discipline": "trad",
+    "grade": "5.9+"
+   },
+   {
+    "id": "nv_black_orpheus_amphitheater_administrative_overreach",
+    "name": "Administrative Overreach",
+    "area_id": "nv_black_orpheus_amphitheater",
+    "discipline": "trad",
+    "grade": "5.6 R"
+   },
+   {
+    "id": "nv_black_orpheus_amphitheater_the_fortress_of_xanadu",
+    "name": "The Fortress of Xanadu",
+    "area_id": "nv_black_orpheus_amphitheater",
+    "discipline": "trad",
+    "grade": "5.13d"
+   },
+   {
+    "id": "nv_there_and_back_again",
+    "name": "There and Back Again",
+    "area_id": "nv_black_orpheus_amphitheater",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_the_glass_half_full",
+    "name": "The Glass Half Full",
+    "area_id": "nv_blood_wall",
+    "discipline": "trad",
+    "grade": "5.12c"
+   },
+   {
+    "id": "nv_impulse",
+    "name": "Impulse",
+    "area_id": "nv_blood_wall",
+    "discipline": "trad",
+    "grade": "5.10-"
+   },
+   {
+    "id": "nv_slow_bleed",
+    "name": "Slow Bleed",
+    "area_id": "nv_blood_wall",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "nv_venipuncture",
+    "name": "Venipuncture",
+    "area_id": "nv_blood_wall",
+    "discipline": "trad",
+    "grade": "5.12a/b"
+   },
+   {
+    "id": "nv_blood_meridian",
+    "name": "Blood Meridian",
+    "area_id": "nv_blood_wall",
+    "discipline": "trad",
+    "grade": "5.11d"
+   },
+   {
+    "id": "nv_crack_mcmuffin",
+    "name": "Crack McMuffin",
+    "area_id": "nv_blood_wall",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_bush_league",
+    "name": "Bush League",
+    "area_id": "nv_blood_wall",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_the_main_vein",
+    "name": "The Main Vein",
+    "area_id": "nv_blood_wall",
+    "discipline": "trad",
+    "grade": "5.12c"
+   },
+   {
+    "id": "nv_seppuku",
+    "name": "Seppuku",
+    "area_id": "nv_blood_wall",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "nv_bloodbath",
+    "name": "Bloodbath",
+    "area_id": "nv_blood_wall",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_transfusion",
+    "name": "Transfusion",
+    "area_id": "nv_blood_wall",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "nv_blood_on_the_tracks",
+    "name": "Blood on the Tracks",
+    "area_id": "nv_cactus_flower_tower_summit",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_cinnamon_hedgehog",
+    "name": "Cinnamon Hedgehog",
+    "area_id": "nv_cactus_flower_tower_summit",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "nv_east_arete",
+    "name": "East Arete",
+    "area_id": "nv_cactus_flower_tower_summit",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_the_warrior",
+    "name": "The Warrior",
+    "area_id": "nv_cactus_flower_tower_summit",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "nv_north_face_cactus_flower_tower",
+    "name": "North Face - Cactus Flower Tower",
+    "area_id": "nv_cactus_flower_tower_summit",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_coltrane",
+    "name": "Coltrane",
+    "area_id": "nv_celebration_wall",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_catwalk",
+    "name": "Catwalk",
+    "area_id": "nv_celebration_wall",
+    "discipline": "trad",
+    "grade": "5.6+"
+   },
+   {
+    "id": "nv_underhanging_overhang",
+    "name": "Underhanging Overhang",
+    "area_id": "nv_celebration_wall",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_chasing_shadows",
+    "name": "Chasing Shadows",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_peyote_power",
+    "name": "Peyote Power",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_extra_credit",
+    "name": "Extra Credit",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "nv_heart_of_darkness",
+    "name": "Heart of Darkness",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.11"
+   },
+   {
+    "id": "nv_dark_shadows_full",
+    "name": "Dark Shadows (Full)",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_sandstone_sandwich",
+    "name": "Sandstone Sandwich",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "nv_edge_dressing",
+    "name": "Edge Dressing",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.10b/c"
+   },
+   {
+    "id": "nv_parental_guidance",
+    "name": "Parental Guidance",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.12a"
+   },
+   {
+    "id": "nv_risky_business",
+    "name": "Risky Business",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "nv_short_circuit",
+    "name": "Short Circuit",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "nv_dark_shadows_wall_lost_voices",
+    "name": "Lost Voices",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.8 R"
+   },
+   {
+    "id": "nv_dark_shadows_wall_dream_safari",
+    "name": "Dream Safari",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.11- R"
+   },
+   {
+    "id": "nv_dark_shadows",
+    "name": "Dark Shadows",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_dark_shadows_wall_lethal_weapon",
+    "name": "Lethal Weapon",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.12"
+   },
+   {
+    "id": "nv_slot_machine",
+    "name": "Slot Machine",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "nv_negro_blanco",
+    "name": "Negro Blanco",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "nv_excellent_adventure",
+    "name": "Excellent Adventure",
+    "area_id": "nv_dark_shadows_wall",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "nv_ringtail",
+    "name": "Ringtail",
+    "area_id": "nv_eagle_wall",
+    "discipline": "trad",
+    "grade": "5.10d"
+   },
+   {
+    "id": "nv_mountain_beast",
+    "name": "Mountain Beast",
+    "area_id": "nv_eagle_wall",
+    "discipline": "trad",
+    "grade": "5.11-"
+   },
+   {
+    "id": "nv_rainbow_buttress",
+    "name": "Rainbow Buttress",
+    "area_id": "nv_eagle_wall",
+    "discipline": "trad",
+    "grade": "5.8+"
+   },
+   {
+    "id": "nv_kaleidoscope_cracks",
+    "name": "Kaleidoscope Cracks",
+    "area_id": "nv_eagle_wall",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_dances_with_beagles",
+    "name": "Dances with Beagles",
+    "area_id": "nv_eagle_wall",
+    "discipline": "trad",
+    "grade": "5.11+"
+   },
+   {
+    "id": "nv_levitation_29",
+    "name": "Levitation 29",
+    "area_id": "nv_eagle_wall",
+    "discipline": "trad",
+    "grade": "5.11b/c"
+   },
+   {
+    "id": "nv_pauligk_pillar",
+    "name": "Pauligk Pillar",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.7+"
+   },
+   {
+    "id": "nv_centerfold",
+    "name": "Centerfold",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "nv_y2k",
+    "name": "Y2K",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "nv_the_walker_spur",
+    "name": "The Walker Spur",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.10b/c"
+   },
+   {
+    "id": "nv_pine_nuts",
+    "name": "Pine Nuts",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "nv_black_widow_hollow",
+    "name": "Black Widow Hollow",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_splitting_hares",
+    "name": "Splitting Hares",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_too_many_tantrums",
+    "name": "Too Many Tantrums",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_pauline_s_pentacle",
+    "name": "Pauline's Pentacle",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "nv_cookie_monster",
+    "name": "Cookie Monster",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_c11h17no3",
+    "name": "C11H17NO3",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_the_wasp",
+    "name": "The Wasp",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "nv_the_next_century",
+    "name": "The Next Century",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "nv_crunchy_cat",
+    "name": "Crunchy Cat",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.8-"
+   },
+   {
+    "id": "nv_this_ain_t_no_disco",
+    "name": "This Ain't No Disco",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "nv_when_a_stranger_calls",
+    "name": "When A Stranger Calls",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_bloodline",
+    "name": "Bloodline",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.11-"
+   },
+   {
+    "id": "nv_left_of_disco",
+    "name": "Left of Disco",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.10b/c"
+   },
+   {
+    "id": "nv_mescalito_original_route",
+    "name": "Mescalito - Original Route",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_east_face_3_ebony_way",
+    "name": "Ebony Way",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_welcome_to_red_rocks",
+    "name": "Welcome to Red Rocks",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.12"
+   },
+   {
+    "id": "nv_deep_space",
+    "name": "Deep Space",
+    "area_id": "nv_east_face_3",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_boondoggle",
+    "name": "Boondoggle",
+    "area_id": "nv_friar_and_byrd_pinnacle_the",
+    "discipline": "trad",
+    "grade": "5.11+"
+   },
+   {
+    "id": "nv_unknown_6",
+    "name": "Unknown",
+    "area_id": "nv_friar_and_byrd_pinnacle_the",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "nv_wrangler_hero",
+    "name": "Wrangler Hero?",
+    "area_id": "nv_friar_and_byrd_pinnacle_the",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "nv_the_a_crack",
+    "name": "The A Crack",
+    "area_id": "nv_friar_and_byrd_pinnacle_the",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_j_j_groove",
+    "name": "J + J Groove",
+    "area_id": "nv_friar_and_byrd_pinnacle_the",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "nv_lemon_bomb",
+    "name": "Lemon Bomb",
+    "area_id": "nv_friar_and_byrd_pinnacle_the",
+    "discipline": "trad",
+    "grade": "5.11d"
+   },
+   {
+    "id": "nv_xyphoid_fever",
+    "name": "Xyphoid Fever",
+    "area_id": "nv_friar_and_byrd_pinnacle_the",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "nv_whoosh",
+    "name": "Whoosh",
+    "area_id": "nv_friar_and_byrd_pinnacle_the",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_trim",
+    "name": "Trim",
+    "area_id": "nv_friar_and_byrd_pinnacle_the",
+    "discipline": "trad",
+    "grade": "5.12b"
+   },
+   {
+    "id": "nv_v_formation",
+    "name": "V Formation",
+    "area_id": "nv_friar_and_byrd_pinnacle_the",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_xyphoid_left",
+    "name": "Xyphoid Left",
+    "area_id": "nv_friar_and_byrd_pinnacle_the",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_red_zinger",
+    "name": "Red Zinger",
+    "area_id": "nv_friar_and_byrd_pinnacle_the",
+    "discipline": "trad",
+    "grade": "5.10+"
+   },
+   {
+    "id": "nv_byrd_pinnacle_left",
+    "name": "Byrd Pinnacle Left",
+    "area_id": "nv_friar_and_byrd_pinnacle_the",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_the_friar",
+    "name": "The Friar",
+    "area_id": "nv_friar_and_byrd_pinnacle_the",
+    "discipline": "trad",
+    "grade": "5.9+"
+   },
+   {
+    "id": "nv_skyline",
+    "name": "Skyline",
+    "area_id": "nv_friar_and_byrd_pinnacle_the",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_lady_wilson_s_cleavage",
+    "name": "Lady Wilson's Cleavage",
+    "area_id": "nv_horseshoe_wall",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_dogma",
+    "name": "Dogma",
+    "area_id": "nv_horseshoe_wall",
+    "discipline": "trad",
+    "grade": "5.11c"
+   },
+   {
+    "id": "nv_head_of_state",
+    "name": "Head of State",
+    "area_id": "nv_horseshoe_wall",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "nv_gwondonna_land_boogie",
+    "name": "Gwondonna Land Boogie",
+    "area_id": "nv_horseshoe_wall",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "nv_just_missed_the_cleavage",
+    "name": "Just Missed the Cleavage",
+    "area_id": "nv_horseshoe_wall",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_sentimental_journey",
+    "name": "Sentimental Journey",
+    "area_id": "nv_horseshoe_wall",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_deangelo_duncan_route_aka_double_d",
+    "name": "DeAngelo/ Duncan Route (aka Double D)",
+    "area_id": "nv_horseshoe_wall",
+    "discipline": "trad",
+    "grade": "5.10+"
+   },
+   {
+    "id": "nv_pink_tornado_left",
+    "name": "Pink Tornado Left",
+    "area_id": "nv_horseshoe_wall",
+    "discipline": "trad",
+    "grade": "5.9+"
+   },
+   {
+    "id": "nv_horseshoe_wall_willy_s_wild_wide",
+    "name": "Willy's Wild Wide",
+    "area_id": "nv_horseshoe_wall",
+    "discipline": "trad",
+    "grade": "5.10+"
+   },
+   {
+    "id": "nv_horseshoe_wall_fin_bagging_society",
+    "name": "Fin Bagging Society",
+    "area_id": "nv_horseshoe_wall",
+    "discipline": "trad",
+    "grade": "5.11- PG13"
+   },
+   {
+    "id": "nv_league_of_notions",
+    "name": "League of Notions",
+    "area_id": "nv_league_of_notions_area",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_put_up_your_dukes",
+    "name": "Put Up Your Dukes",
+    "area_id": "nv_lost_world_the",
+    "discipline": "trad",
+    "grade": "5.12-"
+   },
+   {
+    "id": "nv_uptown_hustler",
+    "name": "Uptown Hustler",
+    "area_id": "nv_lower_east_side",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_canal_street",
+    "name": "Canal Street",
+    "area_id": "nv_lower_east_side",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_delancey_street",
+    "name": "Delancey Street",
+    "area_id": "nv_lower_east_side",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_working_class_heroes",
+    "name": "Working Class Heroes",
+    "area_id": "nv_lower_east_side",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_great_wide_way",
+    "name": "Great Wide Way",
+    "area_id": "nv_lower_east_side",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_lim_n",
+    "name": "Limón",
+    "area_id": "nv_lower_east_side",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_battery_park",
+    "name": "Battery Park",
+    "area_id": "nv_lower_east_side",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_sal",
+    "name": "Sal",
+    "area_id": "nv_lower_east_side",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_lincoln_tunnel",
+    "name": "Lincoln Tunnel",
+    "area_id": "nv_lower_east_side",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_brooklyn_bridge",
+    "name": "Brooklyn Bridge",
+    "area_id": "nv_lower_east_side",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_movin_on_up",
+    "name": "Movin' On Up",
+    "area_id": "nv_lower_east_side",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_bowery_bums",
+    "name": "Bowery Bums",
+    "area_id": "nv_lower_east_side",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_ten_dollar_toll",
+    "name": "Ten Dollar Toll",
+    "area_id": "nv_lower_east_side",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_clifford_route",
+    "name": "Clifford Route",
+    "area_id": "nv_lower_east_side",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_seventh_avenue_express",
+    "name": "Seventh Avenue Express",
+    "area_id": "nv_lower_east_side",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_summerset",
+    "name": "Summerset",
+    "area_id": "nv_oakey_buttress",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_okie_from_muskogee",
+    "name": "Okie from Muskogee",
+    "area_id": "nv_oakey_buttress",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_tres_bon",
+    "name": "Tres Bon",
+    "area_id": "nv_oakey_buttress",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_cheap_drills",
+    "name": "Cheap Drills",
+    "area_id": "nv_oakey_buttress",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_les_miserables",
+    "name": "Les Miserables",
+    "area_id": "nv_oakey_buttress",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_line_of_addiction",
+    "name": "Line Of Addiction",
+    "area_id": "nv_pirate_wall",
+    "discipline": "trad",
+    "grade": "5.11d"
+   },
+   {
+    "id": "nv_beelzebub",
+    "name": "Beelzebub",
+    "area_id": "nv_rainbow_mountain_east_face",
+    "discipline": "trad",
+    "grade": "5.11b"
+   },
+   {
+    "id": "nv_pure_snark",
+    "name": "Pure Snark",
+    "area_id": "nv_rainbow_mountain_east_face",
+    "discipline": "trad",
+    "grade": "5.10b/c"
+   },
+   {
+    "id": "nv_little_brown",
+    "name": "Little Brown",
+    "area_id": "nv_rainbow_mountain_east_face",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_da_boneyard",
+    "name": "Da Boneyard",
+    "area_id": "nv_rainbow_mountain_east_face",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "nv_the_growler",
+    "name": "The Growler",
+    "area_id": "nv_rainbow_mountain_east_face",
+    "discipline": "trad",
+    "grade": "5.9+"
+   },
+   {
+    "id": "nv_tickled_pink",
+    "name": "Tickled Pink",
+    "area_id": "nv_rainbow_mountain_east_face",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "nv_rockingstone_groove",
+    "name": "Rockingstone Groove",
+    "area_id": "nv_rainbow_mountain_east_face",
+    "discipline": "trad",
+    "grade": "5.9+"
+   },
+   {
+    "id": "nv_rainbow_mountain_east_face_enter_sandman",
+    "name": "Enter Sandman",
+    "area_id": "nv_rainbow_mountain_east_face",
+    "discipline": "trad",
+    "grade": "5.10+"
+   },
+   {
+    "id": "nv_wise_guys_off_size",
+    "name": "Wise Guys Off Size",
+    "area_id": "nv_rainbow_mountain_east_face",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "nv_rainbow_mountain_east_face_la_muerte",
+    "name": "La Muerte",
+    "area_id": "nv_rainbow_mountain_east_face",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "nv_dubious_flirtations",
+    "name": "Dubious Flirtations",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.10b/c"
+   },
+   {
+    "id": "nv_solar_slab_lower_tier_unknown_2",
+    "name": "Unknown",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "nv_some_handcrack",
+    "name": "Some handcrack",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.7+"
+   },
+   {
+    "id": "nv_tan_line",
+    "name": "Tan Line",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.7+"
+   },
+   {
+    "id": "nv_marble_madness",
+    "name": "Marble Madness",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "nv_frieda_s_flake",
+    "name": "Frieda's Flake",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_certain_air",
+    "name": "Certain Air",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.10b/c"
+   },
+   {
+    "id": "nv_some_fingercrack",
+    "name": "Some fingercrack",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "nv_horndog",
+    "name": "Horndog",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_solar_flare",
+    "name": "Solar Flare",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.10-"
+   },
+   {
+    "id": "nv_beulah_s_arete",
+    "name": "Beulah's Arete",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_corona",
+    "name": "Corona",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.10a"
+   },
+   {
+    "id": "nv_solar_slab_gully",
+    "name": "Solar Slab Gully",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.4"
+   },
+   {
+    "id": "nv_johnny_vegas",
+    "name": "Johnny Vegas",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_solar_slab_lower_tier_unknown",
+    "name": "Unknown",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.7+"
+   },
+   {
+    "id": "nv_solar_slab_lower_tier_shake_rattle_and_roll",
+    "name": "Shake, Rattle, and Roll",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.8 PG13"
+   },
+   {
+    "id": "nv_solar_slab_lower_tier_the_pamphlet",
+    "name": "The Pamphlet",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_solar_slab_lower_tier_walking_on_sunshine",
+    "name": "Walking on Sunshine",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "nv_beulah_s_book",
+    "name": "Beulah's Book",
+    "area_id": "nv_solar_slab_lower_tier",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_sundog",
+    "name": "Sundog",
+    "area_id": "nv_solar_slab_upper_tier",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_heliotrope",
+    "name": "Heliotrope",
+    "area_id": "nv_solar_slab_upper_tier",
+    "discipline": "trad",
+    "grade": "5.8+"
+   },
+   {
+    "id": "nv_going_nuts",
+    "name": "Going Nuts",
+    "area_id": "nv_solar_slab_upper_tier",
+    "discipline": "trad",
+    "grade": "5.6"
+   },
+   {
+    "id": "nv_sunburn",
+    "name": "Sunburn",
+    "area_id": "nv_solar_slab_upper_tier",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_kelly_s_heroes",
+    "name": "Kelly's Heroes",
+    "area_id": "nv_solar_slab_upper_tier",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_change_up",
+    "name": "Change Up",
+    "area_id": "nv_solar_slab_upper_tier",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_arch_enemy_2",
+    "name": "Arch Enemy",
+    "area_id": "nv_solar_slab_upper_tier",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_sunspot_ridge",
+    "name": "Sunspot Ridge",
+    "area_id": "nv_solar_slab_upper_tier",
+    "discipline": "trad",
+    "grade": "5.8-"
+   },
+   {
+    "id": "nv_sunflower",
+    "name": "Sunflower",
+    "area_id": "nv_solar_slab_upper_tier",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_solar_slab",
+    "name": "Solar Slab",
+    "area_id": "nv_solar_slab_upper_tier",
+    "discipline": "trad",
+    "grade": "5.6"
+   },
+   {
+    "id": "nv_mescalito_south_face",
+    "name": "Mescalito - South Face",
+    "area_id": "nv_south_face_3",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_ob_button",
+    "name": "OB Button",
+    "area_id": "nv_south_face_3",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "nv_mescalote_tower",
+    "name": "Mescalote Tower",
+    "area_id": "nv_south_face_3",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "nv_south_face_3_seeking_sietches",
+    "name": "Seeking Sietches",
+    "area_id": "nv_south_face_3",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_south_face_3_nakatomi_plaza",
+    "name": "Nakatomi Plaza",
+    "area_id": "nv_south_face_3",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_south_face_3_flight_of_floki",
+    "name": "Flight of Floki",
+    "area_id": "nv_south_face_3",
+    "discipline": "trad",
+    "grade": "5.10"
+   },
+   {
+    "id": "nv_ob_fist",
+    "name": "OB Fist",
+    "area_id": "nv_south_face_3",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "nv_cat_in_the_hat",
+    "name": "Cat in the Hat",
+    "area_id": "nv_southeast_buttress",
+    "discipline": "trad",
+    "grade": "5.6+"
+   },
+   {
+    "id": "nv_bed_of_nails",
+    "name": "Bed of Nails",
+    "area_id": "nv_southeast_buttress",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_rabbit_s_arete",
+    "name": "Rabbit's Arete",
+    "area_id": "nv_southeast_buttress",
+    "discipline": "trad",
+    "grade": "5.10d"
+   },
+   {
+    "id": "nv_cat_in_the_phat",
+    "name": "Cat in the Phat",
+    "area_id": "nv_southeast_buttress",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_unknown_thing_1",
+    "name": "Unknown (Thing 1)",
+    "area_id": "nv_southeast_buttress",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_southeast_buttress_thing_1",
+    "name": "Thing 1",
+    "area_id": "nv_southeast_buttress",
+    "discipline": "trad",
+    "grade": "5.8 PG13"
+   },
+   {
+    "id": "nv_southeast_buttress_lightning_rod_men",
+    "name": "Lightning-Rod Men",
+    "area_id": "nv_southeast_buttress",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_truth",
+    "name": "Truth",
+    "area_id": "nv_triad_the",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_wisdom",
+    "name": "Wisdom",
+    "area_id": "nv_triad_the",
+    "discipline": "trad",
+    "grade": "5.7"
+   },
+   {
+    "id": "nv_the_ugly_sister",
+    "name": "The Ugly Sister",
+    "area_id": "nv_triad_the",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_vegabondage",
+    "name": "Vegabondage",
+    "area_id": "nv_triad_the",
+    "discipline": "trad",
+    "grade": "5.11a"
+   },
+   {
+    "id": "nv_the_forgotten",
+    "name": "The Forgotten",
+    "area_id": "nv_triad_the",
+    "discipline": "trad",
+    "grade": "5.10b"
+   },
+   {
+    "id": "nv_virtue",
+    "name": "Virtue",
+    "area_id": "nv_triad_the",
+    "discipline": "trad",
+    "grade": "5.8"
+   },
+   {
+    "id": "nv_beauty",
+    "name": "Beauty",
+    "area_id": "nv_triad_the",
+    "discipline": "trad",
+    "grade": "5.10c"
+   },
+   {
+    "id": "nv_strawberry_sweat",
+    "name": "Strawberry Sweat",
+    "area_id": "nv_upper_painted_bowl",
+    "discipline": "trad",
+    "grade": "5.9"
+   },
+   {
+    "id": "nv_chicken_lips",
+    "name": "Chicken Lips",
+    "area_id": "nv_upper_painted_bowl",
+    "discipline": "trad",
+    "grade": "5.10a/b"
+   }
+  ]
+ },
+ {
+  "slug": "mosquito-gulch-cirque-co",
+  "fktUrl": "https://fastestknowntime.com/route/mosquito-gulch-cirque-co",
+  "fktTitle": "Mosquito Gulch Cirque (CO)",
+  "state": "CO",
+  "tier": "round",
+  "km": 12.4,
+  "summitArea": {
+   "note": "areas near the top: co_mount_buckskin|Mount Buckskin|peak|1 ; co_cecilville_slab_aka_cecil_rock|Cecilville Slab aka Cecil Rock|crag|10"
+  },
+  "routes": [
+   {
+    "id": "co_cecilville_slab_aka_cecil_rock_trad_crack",
+    "name": "Trad Crack",
+    "area_id": "co_cecilville_slab_aka_cecil_rock",
+    "discipline": "trad",
+    "grade": "5.8 PG13"
+   },
+   {
+    "id": "co_lone_wolf_2",
+    "name": "Lone Wolf",
+    "area_id": "co_cecilville_slab_aka_cecil_rock",
+    "discipline": "trad",
+    "grade": "5.9+"
+   },
+   {
+    "id": "co_mount_buckskin_northeast_slope",
+    "name": "Northeast Slope",
+    "area_id": "co_mount_buckskin",
+    "discipline": "scrambling",
+    "grade": "Class 2"
+   }
+  ]
+ }
+]
