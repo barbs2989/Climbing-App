@@ -236,3 +236,15 @@ Rollbacks: `rollback/rollback-1793327172562.json` through `rollback-179332747248
 - Mertensia Falls is filed under "Wild Basin (bouldering)". Mt Bancroft rows sit under Indian Peaks (it is the James Peak Wilderness).
 - `mt_*unprotected_fourplay` on A Peak: its text names a "Blackwell Glacier" and a west face that don't fit A Peak, so it was probably copied
   from another route.
+
+### Trad on peaks (started 2026-10-30)
+Thin primary-trad, alpine-tagged rows out of state: **1,438** across 709 areas. **Every one of those areas has `area_type = 'crag'`**: the out-of-state
+import filed real peaks as crags, so the area type cannot separate peaks from cliffs. The test used instead is a peak word in the area name
+(Mount, Peak, Spire, Tower, Dome, Pinnacle, Needle, Horn, Point, Butte, Summit or Ridge) or a stored prominence. That leaves **525 rows on 291 areas**:
+Slesse, Snowpatch, the Howser Towers, Goode, Sir Donald, Gimli and similar peaks. The other 913 trad rows are on cliffs and are not swept, for the
+same reason sport isn't (their descent is a crag matter).
+
+Contexts: `PEAKISH=1 CHUNK=40 node scripts/oneoff/thin-da-context-sql.mjs audits/thin-descent-approach/oos/ctx-trad-<st> <st>_ trad`. That gives
+BC 1–5, CA 1–4, AB 1, WY 1, CO 1–2, ID 1, AK 1 and misc 1 (UT, MT, OR, AZ, NM, NH, NY, QC, NT and YT combined): 516 targets. Agents follow
+`oos/TRAD-BRIEF.md`, which tells them to skip a one-pitch crag line that slipped through on a peak-like name.
+
