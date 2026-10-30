@@ -13,6 +13,7 @@ for (const f of fs.readdirSync("audits/season").filter(f => /^apply-.*\.json$/.t
   written.add(id);
   if (!/^apply-p/.test(f)) researched.set(id, JSON.stringify(e.season_months));
 }
+for (const id of (fs.existsSync("audits/season/cleared.json") ? JSON.parse(fs.readFileSync("audits/season/cleared.json", "utf8")) : [])) written.delete(id); // cleared since (season-clear-system.mjs)
 const units = new Set(JSON.parse(fs.readFileSync("audits/season/parents.json", "utf8")).map(e => e.id));
 const sys = new Map();
 for (const [id, w] of researched) { const p = byId.get(id)?.parent_id; if (!p) continue; const e = sys.get(p) || []; e.push([id, w]); sys.set(p, e); }

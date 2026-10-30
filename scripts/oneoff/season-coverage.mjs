@@ -10,6 +10,7 @@ import fs from "fs";
 const rows = JSON.parse(fs.readFileSync(process.argv[process.argv.indexOf("--cache") + 1], "utf8"));
 const set = new Set(rows.filter(a => Array.isArray(a.season_months) && a.season_months.length).map(a => a.id));
 for (const f of fs.readdirSync("audits/season").filter(f => /^apply-.*\.json$/.test(f))) for (const id of Object.keys(JSON.parse(fs.readFileSync("audits/season/" + f, "utf8")))) set.add(id);
+for (const id of (fs.existsSync("audits/season/cleared.json") ? JSON.parse(fs.readFileSync("audits/season/cleared.json", "utf8")) : [])) set.delete(id); // cleared since (season-clear-system.mjs)
 const byId = new Map(rows.map(a => [a.id, a]));
 const kids = new Map(); for (const a of rows) if (a.parent_id) kids.set(a.parent_id, (kids.get(a.parent_id) || 0) + (a.route_count || 0));
 let total = 0, cov = 0;

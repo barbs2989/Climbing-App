@@ -16,6 +16,7 @@ const done = new Set(fs.existsSync("audits/season/attempted.json") ? JSON.parse(
 // apply-*.json written since. State and country rows never count.
 const seasoned = new Set([...byId.values()].filter(a => Array.isArray(a.season_months) && a.season_months.length).map(a => a.id));
 for (const f of fs.readdirSync("audits/season").filter(f => /^apply-.*\.json$/.test(f))) for (const id of Object.keys(JSON.parse(fs.readFileSync("audits/season/" + f, "utf8")))) seasoned.add(id);
+for (const id of (fs.existsSync("audits/season/cleared.json") ? JSON.parse(fs.readFileSync("audits/season/cleared.json", "utf8")) : [])) seasoned.delete(id); // cleared since (season-clear-system.mjs)
 const inherits = id => { let p = byId.get(id); for (let d = 0; d < 3 && p && p.parent_id; d++) { p = byId.get(p.parent_id); if (p && seasoned.has(p.id) && !["state", "country"].includes(p.area_type)) return true; } return false; };
 const list = JSON.parse(fs.readFileSync("audits/season/parents.json", "utf8"))
   .filter(e => !["state", "country"].includes(e.type) && !done.has(e.id) && !inherits(e.id)).slice(0, n);
