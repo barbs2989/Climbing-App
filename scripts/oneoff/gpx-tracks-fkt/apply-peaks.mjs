@@ -71,7 +71,15 @@ for (const d of decisions) {
   const wps = Array.isArray(row.waypoints) ? row.waypoints : [];
   const hasSummit = wps.some(w => /summit/i.test(w.type || "") && w.lat != null && w.lng != null);
   const drawn = recordedTrackPts(row.gpx, row.waypoints);
-  if (drawn && (d.tier === "oneway" || haversineM(drawn[0], drawn.at(-1)) <= LOOP_M)) { console.log(`SKIP ${d.id}: already draws a recorded ${d.tier === "oneway" ? "track" : "round trip"}`); continue; }
+  // owner 2026-10-30: skip ONLY a stored track that is complete (a round trip reaching the summit) or
+  // already runs trailhead -> summit (starts within LOOP_M of a Trailhead pin and reaches the summit)
+  if (drawn) {
+    const reaches = reachesTheSummit(drawn, row.waypoints);
+    const ths = wps.filter(w => /trailhead/i.test(w.type || "") && w.lat != null && w.lng != null);
+    const fromTh = ths.some(w => haversineM(drawn[0], [w.lat, w.lng]) <= LOOP_M);
+    const round = haversineM(drawn[0], drawn.at(-1)) <= LOOP_M;
+    if (reaches && (fromTh || round)) { console.log(`SKIP ${d.id}: stored track is already ${fromTh ? "trailhead -> summit" : "a round trip"}`); continue; }
+  }
   const raw = parseGpx(fs.readFileSync(path.join(GPX_DIR, d.slug + ".gpx"), "utf8"));
   const pts = raw.map(p => [p.lat, p.lng]);
   let best = Infinity; for (const q of pts) best = Math.min(best, haversineM(q, [d.peak.lat, d.peak.lng]));
@@ -106,10 +114,12 @@ for (const p of plan) {
   }
   await new Promise(r => setTimeout(r, 1000));
 }
+// JSONB reorders an object's keys, so compare pins by content, not by their text
+const canon = v => JSON.stringify(v, (k, x) => x && typeof x === "object" && !Array.isArray(x) ? Object.fromEntries(Object.keys(x).sort().map(y => [y, x[y]])) : x);
 let bad = 0;
 for (const p of plan) {
   const now = await getRow(p.d.id);
-  const ok = JSON.stringify(now.gpx) === JSON.stringify(p.rs.gpx) && (!(p.addSummit || p.addTrailhead) || JSON.stringify(now.waypoints) === JSON.stringify(p.waypoints));
+  const ok = JSON.stringify(now.gpx) === JSON.stringify(p.rs.gpx) && (!(p.addSummit || p.addTrailhead) || canon(now.waypoints) === canon(p.waypoints));
   const reaches = reachesTheSummit(now.gpx, now.waypoints);
   if (!ok || !reaches) { bad++; console.log(`RECONCILE ${p.d.id}: stored=${ok} reaches=${reaches}`); }
 }

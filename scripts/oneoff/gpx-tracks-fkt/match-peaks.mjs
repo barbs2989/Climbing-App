@@ -7,6 +7,7 @@
 import fs from "fs";
 import { haversineM } from "./rule.mjs";
 const D = "research-data/gpx-tracks-fkt-peaks-2026-10-29";
+const OUT = process.env.FKT_OUT || D;   // FKT_OUT: write candidates elsewhere, keeping the round-trip wave's record
 const SUMMIT_M = 150, LOOP_M = 300;
 const routes = JSON.parse(fs.readFileSync(`${D}/routes.json`, "utf8"));
 const peaks = JSON.parse(fs.readFileSync(`${D}/peaks.json`, "utf8"));
@@ -21,24 +22,26 @@ for (const t of tracks) {
   let a = 90, b = -90, c = 180, d = -180;
   for (const p of t.pts) { if (p[0] < a) a = p[0]; if (p[0] > b) b = p[0]; if (p[1] < c) c = p[1]; if (p[1] > d) d = p[1]; }
   const loop = haversineM(t.pts[0], t.pts.at(-1)) <= LOOP_M;
-  if (!loop) continue;   // owner: only the full trailhead -> summit -> trailhead route, never one-way
   for (const pk of peakList) {
     if (pk.lat < a - 0.01 || pk.lat > b + 0.01 || pk.lng < c - 0.01 || pk.lng > d + 0.01) continue;
     let best = Infinity; for (const q of t.pts) { const m = haversineM(q, [pk.lat, pk.lng]); if (m < best) best = m; }
     if (best > SUMMIT_M) continue;
+    // owner 2026-10-30: one-way tracks are allowed too, but only trailhead -> summit: one that goes on
+    // past the summit is a traverse or another descent, so a one-way must END at the summit
+    if (!loop && haversineM(t.pts.at(-1), [pk.lat, pk.lng]) > LOOP_M) continue;
     out.push({ slug: t.slug, fktTitle: t.title, peak: pk.id, peakName: pk.name, summitM: Math.round(best), tier: loop ? "round" : "oneway",
       routes: byPeak[pk.id].map(r => ({ id: r.id, name: r.name, discipline: r.discipline, grade: r.grade })) });
   }
 }
-fs.writeFileSync(`${D}/candidates.json`, JSON.stringify(out, null, 1));
+fs.writeFileSync(`${OUT}/candidates.json`, JSON.stringify(out, null, 1));
 // PER PEAK (owner, 2026-10-30): one research item per peak, holding all our routes on it and every
 // FKT round trip that reaches its summit, so a reviewer assigns each track to the ONE route whose
 // line it follows, or to none.
 const peaksOut = {};
 for (const o of out) {
   const g = (peaksOut[o.peak] ||= { peak: o.peak, peakName: o.peakName, routes: o.routes, tracks: [] });
-  g.tracks.push({ slug: o.slug, fktTitle: o.fktTitle, summitM: o.summitM });
+  g.tracks.push({ slug: o.slug, fktTitle: o.fktTitle, summitM: o.summitM, tier: o.tier });
 }
-fs.writeFileSync(`${D}/peaks-to-research.json`, JSON.stringify(Object.values(peaksOut), null, 1));
+fs.writeFileSync(`${OUT}/peaks-to-research.json`, JSON.stringify(Object.values(peaksOut), null, 1));
 const nr = out.reduce((s, o) => s + o.routes.length, 0);
-console.log(`tracks ${tracks.length}; peaks with unpinned routes ${peakList.length}; track-peak pairs ${out.length} (round ${out.filter(o => o.tier === "round").length}); route candidates ${nr}; peaks reached ${new Set(out.map(o => o.peak)).size}`);
+console.log(`tracks ${tracks.length}; peaks with unpinned routes ${peakList.length}; track-peak pairs ${out.length} (round ${out.filter(o => o.tier === "round").length}, oneway ${out.filter(o => o.tier === "oneway").length}); route candidates ${nr}; peaks reached ${new Set(out.map(o => o.peak)).size}`);
