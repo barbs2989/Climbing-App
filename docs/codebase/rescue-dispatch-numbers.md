@@ -1214,6 +1214,27 @@ Refused in this pass:
   Greer, Allegany, Harding, Eaton, Gaston, Franklin MA, Wolfe, Jackson KY, St. Louis MN,
   Chittenden, Lamoille, Morgan TN, St. Francois, Montrose, Pope IL.
 
+## The last held pages read in Chrome (2026-10-30, eighth pass)
+
+The nine counties the seventh pass left unconfirmed or unreached. 5 added (579 in all).
+
+| State | County | Number | Read on | Label on the page |
+|---|---|---|---|---|
+| California | Alameda | (510) 667-7721 | alamedasheriff.gov/about-us/emergency-services-dispatch | Business Number of the Emergency Services Dispatch unit, which the page says takes 911 and non-emergency calls 24/7; the same site's tip page calls it the Non-Emergency Line |
+| Oregon | Hood River | (541) 386-2711 | hoodriversheriff.com/who-we-are/contact | 24 Hr. Non-Emergency |
+| New Mexico | Los Alamos | (505) 662-8222 | losalamosnm.gov Emergency Communication Center page | Phone of the ECC, which the page says handles 911 and non-emergency calls |
+| Arizona | Navajo | (928) 524-4050 | navajocountyaz.gov news flash (Rabid Animals Alert, 2024) | Navajo County Sheriff's Office dispatch |
+| Oklahoma | Pawnee | (918) 762-2565 | pawneecountysook.gov/contact-us (live site 503; read in the 2026-10-01 Wayback snapshot) | For Non-Emergencies; Dispatch 24/7 |
+
+- Refused: Bucks PA (the county page gives 215-340-8770 only as the Emergency Communications
+  office line, while township police pages give 215-328-8511 as county dispatch and a county page
+  gives 215-328-5015 as an after-hours radio room: three numbers, none labelled on the county's
+  own dispatch page), Nelson VA (the sheriff's page prints 434-263-7050 with no label; only 211
+  calls it dispatch), Saguache CO (office line only), Washington AR (444-5712 appears only in a
+  news story; no county page found).
+- Hood River's 211 listing and local radio give the same number; the City of Hood River's own
+  dispatch line (541-386-2121) belongs to the city police and is not used.
+
 ## Washington (checked 2026-10-28)
 
 | County | Number | Read on | Label on the page |
