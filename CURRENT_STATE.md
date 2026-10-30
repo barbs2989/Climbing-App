@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **Home no longer greets with the demo climber's name for a frame after sign-in**: the greeting waits for this account's own profile read (`pinsFor===uid`) before reading the profile's name, which starts as the seed climber's until a reset effect empties it.
 - **The alpine Conditions tab is components** (PR67, the last of the extraction series, which stops here by decision): each section of `lib/AlpineConditionsCard.jsx` (forecast box, day by day, hour by hour, avalanche, snow, streams, season, alerts…) moved to `src/components/`, and the wording they share to `lib/alpineConditionsShared.js`; the card is 4 KB (84 before). Nothing on screen changed.
 - **The two star numbers have two names**: a route's guidebook 0–4 stars read **Reputation** in Technical stats / Route facts (they were "Star rating", which read as climbers' votes on routes nobody had voted on); climbers' votes read *Climber votes* and *no climber votes yet*. See `docs/features/route-page.md`.
 - **The area browser is components** (PR66 of the same series): an area's page and the route finder, the last two pieces of `lib/DbAreaBrowser.jsx`, moved to `src/components/`; the file is 14 KB (198 KB before PR65). Nothing on screen changed.
