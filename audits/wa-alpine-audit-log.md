@@ -35642,3 +35642,66 @@ confirmed single-value errors:**
 Method note: as in prior runs, WebFetch could not resolve mountainproject.com, summitpost.org,
 open-tacos-*.vercel.app or alpineinstitute.com from this session's network — all cross-checks
 against those sites relied on WebSearch's synthesized snippets rather than direct page fetches.
+
+## 2026-10-30 — Batch 486 (pass 8): 8 routes, 6 fixes, 2 flagged
+
+Checked Witches Tower (E/SE Face), Eagle Rock (Standard Scramble), Earl Peak (Southwest Ridge,
+Standup Creek Route), Middle Peak/Gunsight Range (East Face), Chimney Rock (East Face), and East
+McMillan Spire (Northeast Buttress, West Ridge/Southwest Face).
+
+**Confirmed fixes → `sql/2026-10-30-batch-486.sql` (6):**
+- `wa_e_se_face` — `loss_ft` was NULL on a car-to-car round trip whose own `gain_ft` (5,700) and
+  `itinerary.days[0].lossFt` already agree on 5,700; filled from the record's own number. The
+  pass-1 batch-9 flag on this same route (descent/itinerary describing a mandatory roped "5.6"
+  pitch that contradicted the 4th-class grade fields) is no longer present in the current
+  `descent_text` — fixed in some intervening pass, no regression found.
+- `wa_east_face` (Middle Peak, Gunsight Range) — re-confirmed and re-proposed 5 fixes first found
+  in pass 2 (batch ~62/65) that never actually landed on the live row: `gain_ft` undercounted the
+  record's own day-by-day itinerary math (3,100 + 2,600 + 600 = 6,300, was 5,000); `rappels` sent
+  the descent to the Blue Glacier, the approach-side glacier, instead of the Chickamin Glacier the
+  record's own waypoints/approach place base camp on; `emergency.rangerStation` named the Chelan
+  Ranger District (Okanogan-Wenatchee NF, east of the crest) against this same row's own
+  `access.landManager`/`land_manager` (Darrington Ranger District, Mt. Baker-Snoqualmie NF) and
+  its Suiattle River Road approach; `emergency.nearestHospital` named a "Skykomish Valley
+  Hospital" that does not exist in Washington state (checked: no WA DOH/CMS/Wikipedia record) —
+  replaced with Skagit Valley Hospital (Mount Vernon) and Cascade Valley Hospital (Arlington), the
+  real hospitals serving that access side; and a NULL top-level `permit` filled from the record's
+  own already-correct `access.permit`/`access.overnight_permit` fields rather than researched
+  fresh. Two prior proposed fixes on this same row (the FA typo "Martins"→"Mahting Putelis" and
+  `access.parking_pass`) had landed with no regression — the first SQL application attempt wasn't
+  all-or-nothing.
+
+**Flagged for human review (2), no SQL:**
+- `wa_east_face` — a 3-way elevation split: the route's own `high_point_ft` (8,200), its own
+  summit waypoint (8,000), and the parent area's `elevation_ft` (8,185) all disagree, and no
+  source found gives Middle Peak (Gunsight Range) a precise figure — only a rough 8,000-8,200 ft
+  band (Alpinist/Wildsnow). Genuine source gap, not a confirmed single value.
+- `wa_east_mcmillan_spire_west_ridge` — `fa` ("Fred Beckey and Helmy Beckey, 1940") re-confirmed
+  misattributed: that date and party are well documented for the **West** McMillan Spire's West
+  Ridge (Terror Basin, 1940), not this East-summit route. No source gives East McMillan Spire its
+  own first-ascent record — the earliest documented route specific to it is the 1987 AAJ-reported
+  North Buttress. Same gap flagged unresolved in batches 9 and 62; left as-is again rather than
+  guess a replacement or null the field, consistent with how those two prior passes treated it.
+
+**Clean (5):** `wa_eagle_rock_scramble` (5,614 ft matches the area row; SummitPost's 5,615 ft is
+within survey noise; NE-aspect Class 3 standard route matches a SummitPost account of a Class 3/4
+crux on the northeast-side approach); `wa_earl_peak_southwest_ridge` and
+`wa_earl_peak_standup_creek_route` (7,036 ft and the Southwest Ridge route's own
+47.410011/-120.842858 coordinate both match Wikipedia/SummitPost/PeakVisor for Earl Peak,
+Teanaway); `wa_east_face_6` (Chimney Rock East Face — FA "Forest Farr, Art Winder, Laurence
+Byington, 1930" matches Wikipedia's August 27, 1930 ascent exactly; already correctly avoided the
+summit-mismatch error found on its West Face sibling back in batch 5); `wa_east_mcmillan_spire_northeast_buttress`
+("Come Over to the Dark Side" — FA Alan Kearney & Erik Johnson, Sept 6-8 2008, 25 pitches, 5.6-5.10-
+climbing matches independent search corroboration, including the specific, hard-to-fabricate
+detail that Kearney had attempted the same line in 1991 and 2003).
+
+Method note: `check:sql` flagged 2 of this batch's 4 write-target statements as not
+parser-checkable (quote-heavy `jsonb_set`/string-literal UPDATEs) — both manually verified against
+this same file's other, cleanly-checked statements for `wa_east_face`. It also warned the file
+(5.0KB) exceeds the SQL Editor's ~4KB safe-paste size — split into chunks before pasting. As in
+prior batches, mountainproject.com/summitpost.org/alpinist.com all failed to resolve from this
+session's network; all cross-checks against those sites relied on WebSearch's synthesized
+snippets.
+
+Next batch will continue alphabetically from `wa_east_mcmillan_spire_west_ridge` (see progress
+file).
