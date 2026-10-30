@@ -204,8 +204,25 @@ database stopped for about 25 minutes; the other 15 batches (371 rows) went in w
 (`fmr_fk_me_raw` for `fmr_f_k_me_raw`); the batch is corrected and that row written on its own. Rollbacks: `rollback/rollback-1793312990207.json`
 through `rollback-1793313279406.json` (8 files) and `rollback-1793318126666.json` through `rollback-1793318592761.json` (16 files).
 
-**Ice tier, what's left:** contexts for WY, CA, NB and the small states and provinces (qc, ns, nl, id, yt, nc, nm, on, me, nv, vt, pa, nu, nt, mi).
-Their SQL timed out while the database was degraded. Build them with `CHUNK=40 node scripts/oneoff/thin-da-context-sql.mjs audits/thin-descent-approach/oos/ctx-ice-<st> <st>_ ice,mixed`.
+| Ice/mixed batch (second round) | thin rows | in batch | skipped | notes |
+|---|---|---|---|---|
+| WY 1 | 36 | 36 | 0 | Cody (South Fork Shoshone). Lead review dropped a descent borrowed from a neighbouring route (Hunter Creek Falls). |
+| WY 2 | 39 | 29 | 10 | Boy Scout Cirque "Mixed Climbs Route List" is a list, not a route. Wyoming Wave overlaps Cabin Fever's upper pitches. |
+| WY 3 | 34 | 24 | 10 | 5 Upper Blacktail Butte summer drytool lines unplaceable. New Order (drytool/aid) filed as mixed. Prospector Falls: 2 pitches stored, 4 described. |
+| CA 1 | 36 | 19 | 17 | Harwood "Consolation Couloir" matches only a Colorado route. Galena Peak North Couloir is on private land. Right Mendel Couloir: AI5 on its page, WI3+ stored. |
+| NB 1 | 25 | 22 | 3 | Walton Glen. Three Lower Quiddy River rows carry grade-suffixed names and may belong to Quebec. |
+| CA 2 | 35 | 22 | 13 | Mostly Tahquitz ice rows with grade-only pages. Lead review removed a single-source distance (Tokopah Falls). |
+| NB 2 | 39 | 39 | 0 | Upper Quiddy River's stored coordinate (45.4486, -66.308) is far from the wall (~45.55, -65.23). Easy Street is stored as 23 pitches. |
+| NL 1 | 15 | 3 | 12 | Most Newfoundland rows have no source online. |
+| QC 1 | 29 | 29 | 0 | Lead review removed a source mention (park map / printed guide, Passion Tropicale) and a single-source distance. Astro (Mont de l'Ours) is a trad/mixed line filed as ice. |
+| NS 1 | 29 | 28 | 1 | Cape Chignecto: tide-timed beach approaches. |
+| ID, YT, NC, NM (misc 1) | 41 | 27 | 14 | Lead review skipped Whiskey Peak "La Llorona" (identity unconfirmed). Mount Logan East Ridge's stored grade and pitches don't fit the expedition line. |
+| ON, ME, NV, VT, PA, NU, NT, MI (misc 2) | 32 | 14 | 18 | `me_kineo_ice_climbs_unknown` is a placeholder name for an unclimbed line. |
+
+**Second-round writes (2026-10-30):** WY 1 stopped after 12 rows (the database returned 500); rollback `rollback/rollback-1793319833226.json`.
+The rest of WY 1, and WY 2–3, CA 1–2, NB 1–2, NL 1, QC 1, NS 1 and misc 1–2, are queued for a healthy database (about 290 rows).
+**Ice research is complete:** every built context has a reviewed batch. Contexts for CA 2, NB 2, QC, NS, NL and two combined small-state files
+(`ctx-ice-misc-1.json`: ID, YT, NC, NM; `ctx-ice-misc-2.json`: ON, ME, NV, VT, PA, NU, NT, MI) are built.
 
 **Ice-tier findings for review:**
 - `ut_monte_cristo` and `ut_broads_fork_2` share one coordinate (40.52763, -111.72408), right for neither: Monte Cristo's East Gully is in Little
