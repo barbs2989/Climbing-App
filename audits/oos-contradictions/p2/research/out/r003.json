@@ -1,0 +1,185 @@
+{
+ "file": "r003.json",
+ "results": [
+  {
+   "id": "bc_slesse_mountain_north_east_headwall_variation",
+   "fact": "pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The stored 16 pitches and 606 m describe the whole line from the ground (buttress to the bivy ledge, then the variation); the overview's six pitches counts only the detour that leaves the buttress at the bivy ledge. The route's own page says exactly this (a 6-pitch variation off the buttress, 2000 ft/16 pitches total). Nothing to correct.",
+   "sources": [
+    "https://www.mountainproject.com/route/120957252"
+   ],
+   "patches": []
+  },
+  {
+   "id": "bc_slesse_mountain_station_d_peak_north_buttress",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only source that describes the line (its own page) says 7 pitches in the header and 'nine pitches' in the text (455 m); the header and text are the same page so not independent. Searched summitpost (403), AAC/Alpinist, web searches for pitch count; no second source gives a count. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/119554730"
+   ],
+   "patches": []
+  },
+  {
+   "id": "bc_snowpatch_spire_sunshine_crack",
+   "fact": "pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The overview's 'six long pitches on a 60 m rope' is one party's way of splitting the ~900 ft line into long leads; the listing's 11 pitches and the guidebook's nine are other ways of splitting the same crack. Splitting convention, not a contradiction; sources disagree among themselves (6/9/11) so no change is justified.",
+   "sources": [
+    "https://www.mountainproject.com/route/105868170",
+    "https://gripped.com/?p=36554"
+   ],
+   "patches": []
+  },
+  {
+   "id": "bc_yak_peak_madness",
+   "fact": "pitch count",
+   "verdict": "fixed",
+   "correct_value": "null (blank)",
+   "evidence": "The route page describes about 300 m of solo slab approach, six long dihedral pitches to the Porcelain Chicken ledge, then several more pitches of loose rock to the summit on a 1,400 ft line; a second write-up likewise describes a six-pitch dihedral plus approach slabs. Both prove 1 is false but give no agreed count (the second says 7, the first implies more), so the header is blanked.",
+   "sources": [
+    "https://www.mountainproject.com/route/106517329",
+    "https://app.advcollective.com/climbing/madness-on-yak-peak-a-bold-alpine-trad-challenge"
+   ],
+   "patches": [
+    {
+     "id": "bc_yak_peak_madness",
+     "fact": "pitch count",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 1,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "bc_yak_peak_reality_check",
+   "fact": "pitch count",
+   "verdict": "fixed",
+   "correct_value": "13",
+   "evidence": "The route page's pitch-by-pitch text runs p1 to p13 (p13 is fourth class to trees, matching the row's descent text), and a magazine report on the Yak Peak classics calls it the 13-pitch Reality Check. Pitches set to 13.",
+   "sources": [
+    "https://www.mountainproject.com/route/106516558",
+    "https://gripped.com/?p=41663"
+   ],
+   "patches": [
+    {
+     "id": "bc_yak_peak_reality_check",
+     "fact": "pitch count",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 12,
+     "value": 13
+    }
+   ]
+  },
+  {
+   "id": "ca_charlotte_dome_sheepish",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only the route's own listing (1000 ft/303 m, text mentions the step across on P2, no pitch count) describes it. Searched for other sources (thecrag, openbeta, supertopo, AAC East Face article, MP area): none mention Sheepish. Stored 1 pitch on a 305 m line is doubtful but no second source, so left.",
+   "sources": [
+    "https://www.mountainproject.com/route/202770002"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ca_green_thunder",
+   "fact": "third-class ground before the first belay",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page says 'fifty feet of easy third class' before the 3-bolt slab seam (matching the overview's 50 ft); the approach says about 100 feet. Searched AAC, openbeta mirror (404/same text), Alpinist, stephabegg: no independent source gives the figure. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/120088039"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ca_green_thunder",
+   "fact": "pitch count (stored 0)",
+   "verdict": "fixed_internal_plus_one",
+   "discovered": true,
+   "correct_value": "5",
+   "evidence": "The overview lists five pitch grades, the route's page and the area listing say 5 pitches (30-35 m each, 213 m line); a stored 0 is wrong on a five-pitch line.",
+   "sources": [
+    "https://www.mountainproject.com/route/120088039",
+    "https://www.mountainproject.com/area/105852180/incredible-hulk"
+   ],
+   "patches": [
+    {
+     "id": "ca_green_thunder",
+     "fact": "pitch count (stored 0)",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 0,
+     "value": 5
+    }
+   ]
+  },
+  {
+   "id": "ca_airstream",
+   "fact": "which route Airstream shares its start with",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Both are true: the Solar Flare page says its first pitch is also the start for Airstream, and the same page says the Airstream/Sunspot line goes right at the bush where Solar Flare continues straight, so Airstream's opening is shared with Solar Flare's start and then with Sunspot Dihedral's line.",
+   "sources": [
+    "https://mountainproject.com/route/108253019/solar-flare",
+    "https://www.mountainproject.com/route/113606446"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ca_airstream",
+   "fact": "pitch count (stored 0)",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "11",
+   "evidence": "The route listing gives 11 pitches (grade V) and a magazine feature calls it an 11-pitch 5.13a/b. Stored 0 corrected.",
+   "sources": [
+    "https://www.mountainproject.com/route/113606446",
+    "https://gripped.com/?p=46608"
+   ],
+   "patches": [
+    {
+     "id": "ca_airstream",
+     "fact": "pitch count (stored 0)",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 0,
+     "value": 11
+    }
+   ]
+  },
+  {
+   "id": "ca_mammoth_crest_blood_sucker",
+   "fact": "pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route page says pitch 1 holds all the climbing (~45 m, 61 m listed) and pitch 2 is an easy fourth/fifth-class scramble to the top; one climbing pitch is consistent with the stored 1.",
+   "sources": [
+    "https://www.mountainproject.com/route/203845475"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ca_mammoth_crest_pain_killer",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only the route's own page describes two pitches (jugs and bulge then a long plates-and-jugs pitch 2); searches of Mammoth Crest area pages, AAC new routes and general web found no second source. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/203845603"
+   ],
+   "patches": []
+  }
+ ]
+}
