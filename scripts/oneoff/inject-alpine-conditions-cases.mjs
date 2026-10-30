@@ -144,7 +144,7 @@ const CASES = [
     expect: "fail", expectText: "says the split is ASSUMED" },
 ];
 
-const SNAP = new Map([FILE, LOGIC, CARD, AVY, SNOTEL, CORE, FORECAST].map((f) => [f, fs.readFileSync(f, "utf8")]));
+const SNAP = new Map([FILE, LOGIC, CARD, AVY, SNOTEL, CORE, FORECAST, SHARED, FCBOX, AVYSEC, SEASON].map((f) => [f, fs.readFileSync(f, "utf8")]));
 const restoreAll = () => { for (const pair of SNAP) fs.writeFileSync(pair[0], pair[1]); };
 const treeOk = () => [...SNAP].every((pair) => sum(fs.readFileSync(pair[0], "utf8")) === sum(pair[1]));
 let bad = 0;

@@ -17,10 +17,6 @@ import StreamsSection from "../src/components/StreamsSection.tsx";
 import ForecastBox from "../src/components/ForecastBox.tsx";
 export { reportFreshness, recentOutcomes, clockOf, sunPins, groundFt, KIND_LABEL, flagText, sunFace };
 
-
-
-
-
 /* The forecast point: the route's own summit/top-out pin, else its area's coordinate at the route's
    high point (high_point_ft agrees with the summit pin exactly on 83.5% of rows). */
 export function forecastPoint(route, mtn) {
@@ -35,7 +31,6 @@ export function forecastPoint(route, mtn) {
   if (lat == null || lng == null || !isFinite(lat) || !isFinite(lng)) return null;
   return { lat, lng, elevFt: elev != null && isFinite(elev) ? elev : null, campFt, name: top ? (top.name || "the summit") : (area.name || "the area"), pinned: !!top };
 }
-
 
 export default function AlpineConditionsCard({ route, mtn, calc, activity, reportsUnavailable }) {
   const terrain = useMemo(function () { return routeTerrain(route); }, [route]);
@@ -59,18 +54,4 @@ export default function AlpineConditionsCard({ route, mtn, calc, activity, repor
     </div> : null}
   </div>;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -737,7 +737,7 @@ console.log("\n18. A CLOCK CHANGE — local days, sunrise and today read in the 
 
   /* ── ...and the start's "days early" is counted ONCE (#2342): the start box said "Too long for one push" for a start
      two or more days early, while the hour strip below still printed "Start by 7:00 PM (the night before)". */
-  eq("the card counts the start's days early once, per day, from the forecast's own zone", /const daysEarly = r\.start \? Math\.round\(\(Date\.parse\(d\.date\) - Date\.parse\(localAt\(fc, floorQ\(r\.start\.at\)\)\.date\)\) \/ 864e5\) : null;/.test(card) && /, r, \{ daysEarly: daysEarly \}\)\);/.test(card), true);
+  eq("the card counts the start's days early once, per day, from the forecast's own zone", /const daysEarly = \(?r\.start \? Math\.round\(\(Date\.parse\(d\.date\) - Date\.parse\(localAt\(fc, floorQ\(r\.start\.at\)\)\.date\)\) \/ 864e5\) : null\)?(?: as number)?;/.test(card) && /, r, \{ daysEarly: daysEarly \}\)\);/.test(card), true);
   eq("...the start box reads that count", /const st = floorQ\(day\.start\.at\), daysEarly = day\.daysEarly;/.test(card) && /startEl = daysEarly >= 2/.test(card), true);
   eq("...and the hour strip shows NO start key time when it is 2+ days early, and 'the night before' only at exactly 1", /const startOn = day\.start && !\(legs && legs\.floor\) && !\(day\.daysEarly >= 2\);/.test(card) && /after: day\.daysEarly === 1 \? " \(the night before\)" : ""/.test(card) && /const startI = startOn \?/.test(card), true);
 }
