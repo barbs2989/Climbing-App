@@ -71,7 +71,8 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 |---|---|
 | `lib/PartnerSearch.jsx` | `PartnerSearch` (modes incl. Near my areas, Saved areas (`savedAreaIds`, `onOpenSaved`, `SAVED_SEARCH_LIM`) and listing-based By Area, filters, near/objective/area/browse lists, example cards, route picker, `initialArea` deep link) |
 | `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas screen (add/edit/remove a listing, `windowText`): a full-screen view in the 520px column, search first (pre-set to the home state via `useMyHomeStatePaths`), one-tap suggestions from the climber's own crag climbs and saved areas (`suggestIds`, a wall offered as its crag), date presets This weekend / Next weekend / Pick dates, an ended window flagged on its card |
-| `ClimbMatch.jsx` | `partnersMode` state and mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder`, `DbGuides`/`Guides`, `MyPartnerAreas`; `myAreasOpen`, `openMyAreas`, `onFindPartnersInArea`, `ME.matchObjectiveIds` |
+| `ClimbMatch.jsx` | `partnersMode` state, mounts `MyPartnerAreas`; `myAreasOpen`, `openMyAreas`, `onFindPartnersInArea`, `ME.matchObjectiveIds` |
+| `src/components/DiscoverTab.tsx` | `DiscoverTab`, the tab body (lifted from App, PR61): the mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder`, `DbGuides`/`Guides` |
 | `ClimbMatchCore.jsx` | `compat`, `compatParts`, `compatWhy`, `CMAX_*`/`COMPAT_*`, `CMAX_AREA`, `areaPathsOverlap`, `CRAG_CATS`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf`, `PARTNER_NUMBERS` (also read by `lib/Help.jsx`) |
 | `src/components/RealClimberRow.tsx` | `RealClimberRow` — the browse and name-search row for a REAL profile: match % or its refusal, ✓ Verified, the listed-areas line, pace and discipline chips |
 | `lib/partner-gender-pref.js` | `partnersMyGenderPref`, `savePartnersMyGender` |

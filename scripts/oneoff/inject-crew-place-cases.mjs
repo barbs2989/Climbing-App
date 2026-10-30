@@ -3,7 +3,7 @@
 import fs from "fs";
 import { execSync } from "child_process";
 
-const F = { app: "ClimbMatch.jsx", core: "ClimbMatchCore.jsx", card: "lib/CrewCard.jsx", finder: "lib/CrewFinder.jsx", inbox: "lib/Inbox.jsx", guard: "scripts/check-crew-place.mjs" };
+const F = { app: "ClimbMatch.jsx", me: "src/components/MeTab.tsx", core: "ClimbMatchCore.jsx", card: "lib/CrewCard.jsx", finder: "lib/CrewFinder.jsx", inbox: "lib/Inbox.jsx", guard: "scripts/check-crew-place.mjs" };
 const orig = Object.fromEntries(Object.entries(F).map(([k, f]) => [k, fs.readFileSync(f, "utf8")]));
 
 const CASES = [
@@ -21,7 +21,7 @@ const CASES = [
     edit: (s) => s.replace("filter(oc=>!oc._routeMissing&&!oc._areaMissing)", "filter(oc=>!oc._routeMissing)") },
   { name: "7. crewPlace stops answering null while an area card loads", file: "core", expect: "crewPlace resolves BOTH shapes",
     edit: (s) => s.replace("if(a===undefined)return crew._areaMissing?{kind:\"missing\"}:null;", "if(a===undefined)return {kind:\"missing\"};") },
-  { name: "8. a stale allowlist entry (its text gone)", file: "app", expect: "stale bookkeeping",
+  { name: "8. a stale allowlist entry (its text gone)", file: "me", expect: "stale bookkeeping",
     edit: (s) => s.replace("const r=routeById(c.routeId);const fn=c.friendName", "const r=routeById(c.routeId);const fn0=c.friendName") },
 ];
 

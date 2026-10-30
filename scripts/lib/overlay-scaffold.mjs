@@ -27,7 +27,7 @@
 // overlay. See dialogOverlays() for the two precision rules that keep it honest.
 
 import { readFileSync, existsSync } from "node:fs";
-import { readCoreSource, readParentSource } from "./guard-sources.mjs";
+import { readCoreSource, readParentSource, MOVED, movedAsParentText } from "./guard-sources.mjs";
 
 // Overlays whose RENDERER is gated on state beyond their own flag, so flipping the flag
 // alone cannot mount them. These are correct code, not bugs: the walk simply cannot reach
@@ -324,17 +324,27 @@ function firstRenderedTag(seg) {
 //     group view that contains a nested ReactionPicker: its `role="dialog"` sits 24,227
 //     characters in, behind 107 open tags. Counting that would classify every screen large
 //     enough to contain a modal as a modal.
+// App's render bodies live in src/components/ since PR61 (the tab bodies), so the EVIDENCE that a
+// state renders a dialog is read off App with them appended — `pastExpand`'s dialog is in
+// LogbookTab.tsx. The STATES and their offsets still come from `appCode` alone: the opener is
+// injected into App, and an offset into the appended text would place nothing.
+function withMovedApp(appCode) {
+  let s = appCode;
+  for (const f of MOVED["ClimbMatch.jsx"]) s += "\n" + movedAsParentText(readFileSync(new URL("../../" + f, import.meta.url), "utf8"), f);
+  return s;
+}
 export function dialogOverlays(appCode, coreCode) {
-  const dlg = dialogComponents(coreCode, appCode);
+  const ev = withMovedApp(appCode);
+  const dlg = dialogComponents(coreCode, ev);
   const found = [];
   for (const m of appCode.matchAll(/\[([a-zA-Z][\w$]*),(set[A-Z][\w$]*)\]=useState\(([^)]{0,30})/g)) {
     const [name, setter, init] = [m[1], m[2], m[3].trim()];
     if (name.endsWith("Open") && init === "false") continue; // shape 1
     let evidence = null;
-    for (const r of appCode.matchAll(new RegExp("\\{\\s*" + name + "\\s*(?:&&|\\?)", "g"))) {
-      const end = matchBrace(appCode, r.index);
+    for (const r of ev.matchAll(new RegExp("\\{\\s*" + name + "\\s*(?:&&|\\?)", "g"))) {
+      const end = matchBrace(ev, r.index);
       if (end < 0) continue;
-      const seg = appCode.slice(r.index, end);
+      const seg = ev.slice(r.index, end);
       const t = firstRenderedTag(seg);
       if (!t) continue;
       if (dlg.has(t[1])) { evidence = "renders <" + t[1] + ">"; break; }
@@ -710,7 +720,9 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
 // Discovered from the source for the same reason the overlay list is: a hardcoded file list
 // silently narrows every time the code moves.
 export function lazyChunks(label) {
-  const files = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "main.jsx"];
+  // lib/lazyScreens.js holds App's lazy screens since PR61 of the component extraction; its
+  // specifiers are relative to lib/, so each is resolved against the directory of its own file.
+  const files = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "main.jsx", "lib/lazyScreens.js"];
   const out = new Set();
   for (const f of files) {
     let src;
@@ -720,10 +732,12 @@ export function lazyChunks(label) {
       // written extensionless ("./lib/DbAreaBrowser") and would warm NOTHING if passed
       // through. Resolve against disk and say so if one does not exist, rather than
       // shipping a warm list that quietly covers one file out of six.
+      const dir = f.includes("/") ? f.slice(0, f.lastIndexOf("/") + 1) : "";
       const spec = m[1];
       const cand = [spec, spec + ".jsx", spec + ".js", spec + "/index.jsx", spec + "/index.js"];
-      const hit = cand.find((c) => existsSync(new URL("../../" + c.replace(/^\.\//, ""), import.meta.url)));
-      if (hit) out.add(hit);
+      const rootRel = (c) => new URL(c, new URL("../../" + dir, import.meta.url)).href.slice(new URL("../../", import.meta.url).href.length);
+      const hit = cand.map(rootRel).find((c) => existsSync(new URL("../../" + c, import.meta.url)));
+      if (hit) out.add("./" + hit);
       else console.error(`${label} — lazy import ${JSON.stringify(spec)} did not resolve to a file; it will not be warmed.`);
     }
   }

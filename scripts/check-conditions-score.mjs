@@ -163,7 +163,7 @@ console.log("check:conditions-score");
 //    climbs, so its number and the Conditions tab's must come from one function, under one gate.
 {
   const tile = fs.readFileSync(path.join(ROOT, "lib/BestDayTile.jsx"), "utf8");
-  const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+  const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
   const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   if (/<BestDayTile ids=\{wishlist\} areaIds=\{bookmarks\} routeById=\{routeById\} onOpenArea=/.test(app) && /\{bestDayOpen&&<div[\s\S]{0,260}aria-label="Best day to climb"[\s\S]{0,1200}<BestDayTile/.test(app) && /\["calendar","Best day to climb",\(\)=>setBestDayOpen\(true\)\]/.test(app) && /\{"Jump back in"\}[\s\S]{0,3000}<BestDayTile ids=\{wishlist\} areaIds=\{bookmarks\}[\s\S]{0,800}<\/Suspense><div id="pinned-downloads">/.test(app) && (app.match(/<BestDayTile\b/g) || []).length === 2) ok("the Best day tile sits on Home under Jump back in and opens from the Menu (Plan & log), over the saved climbs and saved areas");
   else fail("the Best day tile is no longer on Home under Jump back in AND in the Menu over the saved climbs (owner 2026-10-15: both)");
@@ -375,7 +375,7 @@ console.log("check:conditions-score");
   else fail("the crag fetch and what the score reads have drifted apart");
   const prefs = fs.readFileSync(path.join(ROOT, "lib/CondPrefs.jsx"), "utf8");
   const tile = fs.readFileSync(path.join(ROOT, "lib/BestDayTile.jsx"), "utf8");
-  const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+  const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
   const slider = fs.readFileSync(path.join(ROOT, "lib/RangeSlider.jsx"), "utf8");
   if (/<RangeSlider label=\{\(ownOnly \? "Temperatures I like, " : "Ideal temperature, "\) \+ scopeName\}/.test(prefs) && /<RangeSlider label="Ideal wind"/.test(prefs) && /\["cool", "standard", "warm"\]\.map\(/.test(prefs) && /setRange\(TEMP_BANDS\[k\]\.slice\(\)\)/.test(prefs)) ok("temperature (every scope) AND wind are drag-both-ends ranges; Cool / Mild / Warm are shortcuts that set one, not exclusive choices");
   else fail("the ideal temperature or wind is no longer a range, or the shortcuts stopped setting one");

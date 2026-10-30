@@ -181,7 +181,14 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 ## 3. Files
 | File | Key symbols |
 |---|---|
-| `ClimbMatch.jsx` | `tab` branches for `today`/`crew`/`logbook`, `logbookTab`, `crewView`, `pinnedStates`, `archiveCrew`, `clearPastCrew`, `givenVouches`, `activeCrews`, setup `gaps`, `alertsOpen`, `renderObjectives`, `mergedNotifs`, `markAllNotifsSeen`, `_actionNotifs` |
+| `ClimbMatch.jsx` | the state behind `today`/`crew`/`logbook` (each tab body is a component since PR61, below), `logbookTab`, `crewView`, `pinnedStates`, `givenVouches`, `activeCrews`, setup `gaps`, `alertsOpen`, `renderObjectives`, `mergedNotifs`, `markAllNotifsSeen`, `_actionNotifs` |
+| `src/components/TodayTab.tsx` | `TodayTab`, the Home tab body (lifted from App, PR61) |
+| `src/components/LogbookTab.tsx` | `LogbookTab`, the Logbook tab body (lifted from App, PR61) |
+| `src/components/CrewListView.tsx` | `CrewListView`, the crew tab's crews view: active and past crews, `archiveCrew`, `clearPastCrew` |
+| `src/components/CrewFriendsView.tsx` | `CrewFriendsView`, the Friends `crewView` |
+| `src/components/CrewRequestsView.tsx` | `CrewRequestsView`, the Requests `crewView` |
+| `src/components/DirectChatScreen.tsx` | `DirectChatScreen`, a direct chat |
+| `src/components/CrewChatScreen.tsx` | `CrewChatScreen`, a crew chat |
 | `src/components/Challenges.tsx` | `Challenges` — the Challenges & Lists panel (moved from core in PR48) |
 | `src/components/BadgeGrid.tsx` | `BadgeGrid` — the badges grid under Challenges and in the profile's trophy case |
 | `ClimbMatchCore.jsx` | `useCuratedLists`, `useBadges`, `trophies`, `BadgeWatcher`, `monthRuns`, `yearCounts`, `pitchesClimbed`, `datesAgreed`, `agreedDate`, `isArchivedCrew`, `crewPlace`, `placeTrip`, `placeCap`, `placeLabel`, `placeSub`, `placeMatchesLog` |

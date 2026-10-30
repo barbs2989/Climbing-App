@@ -52,6 +52,7 @@ treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 | File | Key symbols |
 |---|---|
 | `ClimbMatch.jsx` | `discoverGroupList`, `groupDiscoverCard`, `groupHomeRegion`, `groupClimbRegions`, `groupRegionRank`, `groupPlace`, `groupsTab`, `openGroupId` |
+| `src/components/GroupsTab.tsx` | `GroupsTab`, the Groups screen body (For you / Your groups / Your activity / Discover / Events), lifted from App in PR61; App passes it the helpers above |
 | `lib/db.js` | `useMyGroups`, `createGroupRow`, `updateGroupSettings`, `setGroupVisibility`, `createGroupEvents`, `regionOfPlace`, `regionAbbr`, `useMyPartnerAreas`, `useStates`, `useGroupFeed` |
 | `lib/search.js` | `searchMatches` |
 | `lib/live.js` | `useLiveQuery` — the Realtime subscription behind the live feed |

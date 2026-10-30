@@ -2904,6 +2904,7 @@ const COMMENTS = DEMO_FILLERS ? [
    spells out the day and time, which a tap on the time shows. ago() said "today" for anything under a day, in fixed English,
    and a reply showed no time at all. */
 function commentWhen(ts,full){if(!ts)return "";var t=typeof ts==="number"?ts:new Date(ts).getTime();if(isNaN(t))return "";var d=new Date(t);if(full)return d.toLocaleDateString(DLOCALE,{weekday:"long",month:"long",day:"numeric",year:"numeric"})+" at "+d.toLocaleTimeString(DLOCALE,{hour:"numeric",minute:"2-digit"});var s=Math.max(0,(Date.now()-t)/1000);if(s<60)return "now";if(s<3600)return Math.floor(s/60)+"m";if(s<86400)return Math.floor(s/3600)+"h";if(s<604800)return Math.floor(s/86400)+"d";return d.toLocaleDateString(DLOCALE,d.getFullYear()===new Date().getFullYear()?{month:"short",day:"numeric"}:{month:"short",day:"numeric",year:"numeric"});}
+/** @param {{ scopeId: string, excludeId?: string, onOpen: (r: (typeof ROUTES)[number]) => void, title?: string, broaden?: boolean }} props */
 function ClassicClimbs({scopeId,excludeId,onOpen,title,broaden}){
   let sid=scopeId,all=ROUTES.filter(r=>r.classic&&inArea(r.mountainId,sid)&&r.id!==excludeId);if(broaden){let _i=0;while(all.length<3&&_i<6){const par=MOUNTAINS.find(m=>m.id===sid);sid=par&&par.parentId;if(!sid)break;all=ROUTES.filter(r=>r.classic&&inArea(r.mountainId,sid)&&r.id!==excludeId);_i++;}}const list=all.slice(0,8);
   if(!list.length)return null;
