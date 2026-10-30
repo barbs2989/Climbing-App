@@ -8,17 +8,20 @@
    {
     "peak": "Wright Peak",
     "route": "Short spur off the main Algonquin trail",
-    "connect": ""
+    "connect": "",
+    "route_id": "ny_wright_peak_wright_peak_spur_trail_from_algonquin_trail"
    },
    {
     "peak": "Algonquin Peak",
     "route": "Algonquin Trail",
-    "connect": "Drop back down the spur to the junction, then climb the steep upper trail to the second highest peak in the state."
+    "connect": "Drop back down the spur to the junction, then climb the steep upper trail to the second highest peak in the state.",
+    "route_id": "ny_algonquin_van_hoevenberg_and_macintyre_range_trails"
    },
    {
     "peak": "Iroquois Peak",
     "route": "Iroquois herd path",
-    "connect": "Follow the short herd path past Boundary Peak, a bump on the ridge, with muddy stretches mostly bridged."
+    "connect": "Follow the short herd path past Boundary Peak, a bump on the ridge, with muddy stretches mostly bridged.",
+    "route_id": "ny_iroquois_peak_via_algonquin_peak"
    }
   ],
   "duration": "1 long day (8–10 hours)",
@@ -41,27 +44,32 @@
    {
     "peak": "Macomb Mountain",
     "route": "Macomb slide from the lean-to cairn",
-    "connect": ""
+    "connect": "",
+    "route_id": "ny_macomb_mountain_macomb_slide"
    },
    {
     "peak": "South Dix",
     "route": "Range herd path",
-    "connect": "Descend to the col, then climb open rock to the next summit."
+    "connect": "Descend to the col, then climb open rock to the next summit.",
+    "route_id": "ny_south_dix_dix_range_herd_path"
    },
    {
     "peak": "Grace Peak",
     "route": "Out-and-back spur from South Dix (formerly called East Dix)",
-    "connect": "Follow the herd path nearly a mile each way, through muddy low ground."
+    "connect": "Follow the herd path nearly a mile each way, through muddy low ground.",
+    "route_id": "ny_grace_peak_dix_range_herd_path"
    },
    {
     "peak": "Hough Peak",
     "route": "Dix Range Trail",
-    "connect": "Return toward South Dix and continue north along the crest."
+    "connect": "Return toward South Dix and continue north along the crest.",
+    "route_id": "ny_hough_peak_dix_range_herd_path"
    },
    {
     "peak": "Dix Mountain",
     "route": "Dix Range Trail",
-    "connect": "Continue on the main ridge trail to the highest summit."
+    "connect": "Continue on the main ridge trail to the highest summit.",
+    "route_id": null
    }
   ],
   "duration": "1 very long day, or 2 days",
@@ -84,17 +92,20 @@
    {
     "peak": "Mount Coe",
     "route": "Marston Trail to the Coe slide trail",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "South Brother",
     "route": "Short spur from the trail junction",
-    "connect": "Follow the narrow ridge, then take the short spur to the summit."
+    "connect": "Follow the narrow ridge, then take the short spur to the summit.",
+    "route_id": null
    },
    {
     "peak": "North Brother",
     "route": "North Brother Trail",
-    "connect": "Return to the junction and follow the trail on to the highest of the three; Fort Mountain beyond is a trailless bushwhack."
+    "connect": "Return to the junction and follow the trail on to the highest of the three; Fort Mountain beyond is a trailless bushwhack.",
+    "route_id": null
    }
   ],
   "duration": "1 long day (about 8–11 hours)",
@@ -117,12 +128,14 @@
    {
     "peak": "Mount Whiteface",
     "route": "Blueberry Ledge Trail",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Mount Passaconaway",
     "route": "Rollins Trail",
-    "connect": "Follow the ridge trail for a couple of miles, then a short spur left to the summit."
+    "connect": "Follow the ridge trail for a couple of miles, then a short spur left to the summit.",
+    "route_id": null
    }
   ],
   "duration": "1 long day",
