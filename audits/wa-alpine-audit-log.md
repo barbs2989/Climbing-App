@@ -35749,3 +35749,77 @@ network; cross-checks against those sites relied on WebSearch's synthesized snip
 
 Next batch will continue alphabetically from `wa_east_twin_needle_south_route` (see progress
 file).
+
+---
+
+## 2026-10-30 — Pass 8, Batch 488
+
+Eight routes continuing id-ascending from `wa_east_twin_needle_south_route`: Thread of Ice (East
+Twin Needle), four Eldorado Peak routes (East Ridge, Northwest Couloir/Eldorado Glacier, North
+Ridge, Northeast Face, West Arete), Elephant Butte Standard Route, and Energizer Bunny (Prusik
+Peak). Covered by 3 parallel research agents (3/3/2 split).
+
+**Confirmed errors fixed (9 across 6 routes) — `audits/sql/2026-10-30-batch-488.sql`:**
+
+All nine are internal-consistency fixes: in every case the row contradicted its own other fields
+(a waypoint, an `fa`/`data_quality`/`pitch_detail` field, or its own itinerary/bivy prose), so the
+correction came from the row's own data, corroborated where possible against an external source.
+
+- `wa_eldorado_peak_north_ridge` and `wa_eldorado_peak_west_arete`: each carried a stale 8,868 ft
+  summit-waypoint elevation contradicting their own `high_point_ft` (8,872) — on the West Arete
+  row, also contradicting its own `corrections` field, which already explains 8,868 is a nearby
+  USGS benchmark, not the true summit.
+- `wa_eldorado_peak_east_ridge`: the same 8,868→8,872 contradiction, in a `pitch_detail` prose
+  note rather than a waypoint.
+- `wa_eldorado_peak_west_arete`: `fa` date off by 5 days (Aug 24 → Aug 29, 1969) — Mountain
+  Project's West Arête page gives Aug 29 for Richard Emerson and Walter Gove; only the day
+  disagreed.
+- `wa_eldorado_peak_eldorado_glacier_nw`: `data_quality.gaps` falsely claimed no FA party is
+  known, when the row's own `fa` field already names one (Dan Cauthorn and Bill Pilling, per
+  Mountain Project) — corrected to say only the date is unconfirmed. Also: `pitches`/`length_m`
+  (8/480 m, i.e. exactly 8×60 m) contradicted the row's own overview, beta, `climbing_route` array
+  and its own 2-entry `pitch_detail` array, all of which describe a ~1,000 ft, 2-3-pitch couloir —
+  matching Mountain Project's "1000 ft (303 m)" listing. Set to 2 pitches / 305 m.
+- `wa_elephant_butte_standard_route` and `wa_energizer_bunny`: both had `dist_km` at almost
+  exactly half their own stated round-trip mileage — a one-way/round-trip mixup, confirmed against
+  each row's own itinerary/bivy text (Elephant Butte's bivy entry says "closer to twenty miles";
+  Energizer Bunny's itinerary totalNote says "~19.5 mi").
+- `wa_energizer_bunny`: a Gnome Tarn bivy-array entry gave elev 7,372 ft, contradicting the row's
+  own Gnome Tarn waypoint (7,415 ft) and USGS/Topozone data for the same tarn; the same wrong
+  figure was duplicated inside a nested `approach_variants[1].trip.bivy` list and fixed there too.
+
+**Clean (1):** `wa_eldorado_peak_northeast_face` — elevation, route beta/identity, permits, and
+gain/loss/distance internal consistency all checked out against SummitPost, Mountain Project and
+Mountaineers.org.
+
+**Flagged for human review (5), no SQL:**
+- `wa_eldorado_peak_north_ridge`'s `rope_note` explicitly references "the NE Face," a possible
+  copy-paste bleed from the Northeast Face route rather than this route's own gear rationale.
+- `wa_eldorado_peak_west_arete` has a real, sourced ambiguity: SummitPost commenters on the West
+  Arête page disagree about which ridge the route actually follows (one says the line is drawn a
+  ridge too far north; a trip report separately notes the guidebook and online beta describe
+  different toes of the same arête). Not a fabrication to fix — worth a human check against the
+  stored waypoints/GPX.
+- `wa_eldorado_peak_eldorado_glacier_nw` names the same col feature inconsistently ("Dean's
+  Spire" in some fields, "Dean's Tower" in others); a search turns up "Dean's Spire" as a real,
+  independently listed feature, but the row itself hedges with "sometimes called... Dean's Tower,"
+  so this needs a human to pick one name project-wide.
+- `wa_elephant_butte_standard_route` cites a specific Sourdough Mountain Trail reopening date
+  (May 12, 2026) after the 2023 Sourdough Fire closure; the closure itself is well documented, but
+  no primary NPS/WTA source was found confirming that exact reopening date or current (as of this
+  run) open status.
+- `wa_energizer_bunny`: the `pitch_detail` array's five `lengthM` values sum to ~541 ft, well over
+  the route's own confirmed total length (450 ft, matching Steph Abegg's AAJ write-up) — no sourced
+  per-pitch breakdown exists to correct the individual values, so left as-is. Also carries an
+  unreconciled A0-vs-C1 grade convention conflict (both appear in primary sources) and an
+  unconfirmable exact FA date (June 14, 2015 — the year and partnership are corroborated, but
+  Abegg's own listing marks the FA claim itself with a "(?)").
+
+**Method notes:** `check:sql` passed (8 write targets, all ids exist, no destructive deletes); 2
+of the quote-heavy `jsonb_set` statements were flagged not parser-checkable and were manually
+verified against freshly-fetched live values before writing. The file is 8.3KB, over the SQL
+Editor's ~4KB safe-paste size — split into chunks before pasting. As in prior batches,
+mountainproject.com/summitpost.org/alpineinstitute.com failed to resolve from this session's
+network; cross-checks relied on WebSearch's synthesized snippets.
+
+Next batch will continue alphabetically from `wa_energizer_bunny` (see progress file).

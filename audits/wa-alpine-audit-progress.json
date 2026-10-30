@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_east_twin_needle_south_route",
+  "last_processed_id": "wa_energizer_bunny",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 487 complete. Continuing id-ascending scope from wa_east_twin_needle_south_route.",
+  "pass_note": "Pass 8 in progress, batch 488 complete. Continuing id-ascending scope from wa_energizer_bunny.",
   "batches": [
     {
       "batch_number": 1,
@@ -9685,6 +9685,26 @@
       "clean": 5,
       "sql_file": null,
       "note": "No confirmed errors; no SQL. Flagged (3): wa_east_ridge_2 (Snowking Mtn East Ridge) has an internal contradiction -- its own data_quality.gaps says \"No confirmed first-ascent information\" while its fa column holds a specific, externally-corroborated FA (Ulrichs & Heath, 1938, matching a Mountain Project route page for this exact line) -- one of the two stored facts is stale, a reconciliation call for a human, not a sourced-fact error. wa_east_ridge_3 (Silver Star Mtn, Okanogan, East Ridge) has two unconfirmable historical claims in its prose: a \"1932 Ulrichs/Pennington\" south-face/east-ridge ascent and a \"Beckey & Beckstead, 1986\" NE Spur ascent, neither contradicted nor corroborated by any source found (Wikipedia/SummitPost/AAC); everything else on this route -- including its own FA (Childs & Goldie, Sept 14 2000, confirmed via an OpenBeta route page matching grade/style/date exactly) -- checked out. wa_east_twin_needle_south_route has one unconfirmable claim (\"East Arete 5.10a climbed during a 2003 Southern Picket Range enchainment\") with no corroborating or contradicting source found; expected given how obscure this peak is. Clean (5): wa_east_ridge_4 (Inspiration Peak -- FA, elevation, coordinates, current NPS permit fee all confirmed), wa_east_ridge_8 (Pinnacle Peak, Tatoosh -- elevation, grade and loose-rock hazard matched almost verbatim to an OpenBeta route page), wa_east_ridge_9 (Ingalls Peak -- FA, grade, elevation and GPX trailhead start all confirmed against USFS/SummitPost coordinates), wa_east_slope (Primus Peak -- elevation, Bulger-list status, Lucky Pass/Borealis Glacier route description and a washed-out-footbridge detail all independently corroborated, including a 2026 Mountaineers trip report), wa_east_twin_needle_north_buttress (\"Thread of Gneiss\" -- FA party/date, 1981 naming by John Roper, and runout/simul-climbing details all confirmed via an AAC Publications new-routes entry). As in prior batches, mountainproject.com/summitpost.org/alpineinstitute.com failed to resolve from this session's network; cross-checks against those sites relied on WebSearch's synthesized snippets. Three parallel research agents covered this batch (3-3-2 route split)."
+    },
+    {
+      "batch_number": 488,
+      "date": "2026-10-30",
+      "pass": 8,
+      "route_ids": [
+        "wa_east_twin_needle_thread_of_ice",
+        "wa_eldorado_peak_east_ridge",
+        "wa_eldorado_peak_eldorado_glacier_nw",
+        "wa_eldorado_peak_north_ridge",
+        "wa_eldorado_peak_northeast_face",
+        "wa_eldorado_peak_west_arete",
+        "wa_elephant_butte_standard_route",
+        "wa_energizer_bunny"
+      ],
+      "confirmed_errors_fixed": 9,
+      "flagged_for_human_review": 5,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-10-30-batch-488.sql",
+      "note": "Nine confirmed internal-consistency fixes across 6 of the 8 routes (none required an external replacement value beyond corroboration -- all were the row contradicting its own other fields): wa_eldorado_peak_north_ridge and wa_eldorado_peak_west_arete each had a stale 8868ft summit waypoint elev contradicting their own high_point_ft/corrections (8872); wa_eldorado_peak_east_ridge had the same 8868->8872 contradiction in a pitch_detail prose note; wa_eldorado_peak_west_arete additionally had its fa date off by 5 days (Aug 24 -> Aug 29, 1969, confirmed via Mountain Project) ; wa_eldorado_peak_eldorado_glacier_nw had a data_quality.gaps entry falsely claiming no FA party is known when the row own fa field already names one, plus pitches/length_m (8/480m) contradicting its own pitch_detail array and prose (now 2/305m, ~1000ft); wa_elephant_butte_standard_route and wa_energizer_bunny both had dist_km roughly half their own stated round-trip mileage (one-way/round-trip mixup, confirmed against each rows own itinerary/bivy text); wa_energizer_bunny also had a Gnome Tarn bivy elevation (7372) contradicting its own waypoint and USGS/Topozone data for the same tarn (7415), duplicated in a nested approach_variants bivy list. Clean (1): wa_eldorado_peak_northeast_face (elevation, route beta/identity, permits and internal numeric consistency all checked out against SummitPost/MP/Mountaineers.org). Flagged for human review (5), no SQL: wa_eldorado_peak_north_ridge rope_note references the NE Face by name, possible cross-contamination from that route; wa_eldorado_peak_west_arete has a sourced ambiguity (SummitPost commenters disagree which ridge is actually the West Arete); wa_eldorado_peak_eldorado_glacier_nw names the same col inconsistently (Deans Spire vs Deans Tower); wa_elephant_butte_standard_route cites a specific trail reopening date (May 12, 2026) with no primary source found confirming it; wa_energizer_bunny has a pitch_detail lengthM sum (~541ft) exceeding its own confirmed total length (450ft) with no sourced per-pitch breakdown to correct it, plus an A0-vs-C1 grade convention conflict and an unconfirmable exact FA date, both genuine source disagreements rather than fabrication. Three parallel research agents covered this batch (3-3-2 route split). As in prior batches, mountainproject.com/summitpost.org/alpineinstitute.com failed to resolve from this session network; cross-checks relied on WebSearch synthesized snippets. check:sql passed (8 write targets, all ids exist, no destructive deletes); 2 of the quote-heavy jsonb_set statements were not parser-checkable and were manually verified against freshly-fetched live values before writing. File is 8.3KB, over the ~4KB SQL Editor paste limit -- split into chunks when applying by hand."
     }
   ]
 }
