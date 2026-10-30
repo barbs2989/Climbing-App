@@ -1009,10 +1009,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       Drury Falls and The Pencil, not its other three climbs; Goat Wall's only The Standard; Moses
       Coulee's only Sundance Kid. 28 route rows queued (`nr-crags-routes-check.json`). McClellan
       Butte rejected again: FSR 9020 has been closed at miles 0.7–1.1 since June 2026.
-      **Not written yet:** the database stalled and was restarted that evening and the runner put
-      every session on a DB hold. To resume: `node prepare-fill-apply.mjs nr4 nr-crags-routes-check.json`,
-      then `node ../apply-getting-there-batch.mjs --research nr4-research.json --routes nr4-live.json
-      --library th-library.json --page-cache ~/dev/getting-there-page-cache` (dry), then `--apply`.
+      **All 28 written** that night, through the runner's DB slot gate (`~/dev/db-throttle/dbslot.mjs`),
+      after the applier refused 8 of them on the copy check until six crags' walks were reworded;
+      reconciled 28 of 28. Crags: Erikland, Hubba Hubba, Moses Coulee, Pee Wee's Playhouse (10),
+      Tumwater, Skookum Falls, Clear Creek Falls (White Pass), Demilitarized Zone, Goat Wall,
+      Eightmile Buttress, Keechelus Lake, Melakwa Flows, Upper Black Ice.
+    - **What is LEFT of the backlog: 88 peak routes and ~54 crag routes**, each researched twice
+      (2026-10-28 and this round) and refused for want of a page. Do not re-run web research on them;
+      the open web has nothing more. A guidebook (Beckey's Cascade Alpine Guide) is the only source left, and
+      archive.org's copy is loan-only: its search-inside servers still answered 403 on 2026-10-29.
 
 
 - **`audit:closure-distance`** (2026-10-29, owner note on Three Fingers South Peak via Lookout: "Description
