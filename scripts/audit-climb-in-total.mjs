@@ -16,7 +16,7 @@ import { selectAll } from "./lib/supabase-env.mjs";
 
 const asJson = process.argv.includes("--json");
 const CLIMB_WORDS = /\b(chimney|chimneys|couloir|gully|scramble|scrambling|pitch|pitches|rock climb|climb(?:ing)? (?:up|to|through)|glacier crossing|crevasse|bergschrund|ice (?:climb|step|pitch)|rope|belay)\b/i;
-const rows = await selectAll("routes", "id,name,pitches,discipline,timing,approach_variants", null, { pageSize: 1000 });
+const rows = await selectAll("routes", "id,name,pitches,length_m,discipline,timing,approach_variants", null, { pageSize: 1000 });
 
 const viaNoClimb = [];
 const noClimbOnFile = [];
@@ -25,8 +25,10 @@ for (const r of rows) {
   const hasSummit = tm.summitTimeHrs != null;
   const derivedSummit = !hasSummit && tm.totalHrs != null && (tm.totalHrs - (tm.approachTimeHrs || 0) - (tm.descentTimeHrs || 0)) > 0;
   const pitched = r.pitches > 0;
-  if (!hasSummit && !derivedSummit && !pitched && /alpine|mountaineer|scramble|ice|mixed|trad|climb/i.test(r.discipline || "")) {
-    noClimbOnFile.push({ id: r.id, name: r.name, discipline: r.discipline });
+  if (!hasSummit && !derivedSummit && !pitched && /^(alpine|ice|mixed|trad)\b/i.test(r.discipline || "")) {
+    // planTimes estimates the pitches from the length (lib/planTimes.js climbPitches); a route with
+    // neither a count nor a length has NO climb in its Total at all.
+    noClimbOnFile.push({ id: r.id, name: r.name, discipline: r.discipline, lengthM: r.length_m ?? null });
   }
   for (const v of Array.isArray(r.approach_variants) ? r.approach_variants : []) {
     if (!v || !v.viaRouteId || v.climbToStartHrs != null) continue;
@@ -40,6 +42,8 @@ else {
   console.log(`audit:climb-in-total — ${rows.length} routes read`);
   console.log(`VIA-NO-CLIMB: ${viaNoClimb.length} way(s) in whose text describes climbing and carry no climbToStartHrs`);
   for (const x of viaNoClimb) console.log(`  ${x.routeId}  via ${x.viaRouteId}  [${x.matched}]  ${x.text.slice(0, 160)}`);
-  console.log(`NO-CLIMB-ON-FILE: ${noClimbOnFile.length} climbing route(s) with no pitch count, summit time or derivable summit leg (Total stays a floor)`);
+  const byLength = noClimbOnFile.filter((x) => x.lengthM > 0).length;
+  console.log(`NO-CLIMB-ON-FILE: ${noClimbOnFile.length} climbing route(s) with no pitch count, summit time or derivable summit leg`);
+  console.log(`  of which ${byLength} have a length: the climb is estimated from it (climbPitches); ${noClimbOnFile.length - byLength} have neither, so their Total has NO climb in it`);
 }
 process.exit(viaNoClimb.length ? 1 : 0);

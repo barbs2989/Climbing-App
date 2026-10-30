@@ -371,6 +371,11 @@ console.log("\na pitch count of 1 beside 100+ m of climb is no pitch count -- no
   eq("climb to start: the climb is reported as its own figure", withClimb.climbToStartH, 5);
   eq("climb to start: a published whole-day total already includes it, so it is NOT added again", planTimes({ ...base, timing: { totalHrs: 12, climbToStartHrs: 5 } }).totalH, 12);
   eq("climb to start: no figure on file adds nothing", planTimes({ ...base, timing: { ...base.timing, climbToStartHrs: null } }).totalH, plain);
+  /* A climbing route with NO pitch count still carries its climb: the length gives the rope (1,150 ft is ten
+     pitches of the 35 m default), so the Total is longer than the same route with no length at all. */
+  const noCount = { discipline: "alpine", grade: "5.8", distKm: 6, gainM: 900, lossM: 900, timing: {} };
+  eq("no pitch count: a climbing route's length puts its climb in the Total", planTimes({ ...noCount, routeFt: 1150 }).totalH > planTimes(noCount).totalH, true);
+  eq("no pitch count: a walk-up (mountaineering) is not given a climb from its length", planTimes({ ...noCount, discipline: "mountaineering", routeFt: 1150 }).totalH, planTimes({ ...noCount, discipline: "mountaineering" }).totalH);
 }
 
 const FLOOR = 67;
