@@ -1,0 +1,273 @@
+{
+ "co_turkey_rocks": {
+  "name": "Turkey Rocks",
+  "region": "Colorado",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.westword.com/?p=40756699",
+   "https://api.theoutbound.com/colorado/rock-climbing/climb-at-turkey-rocks"
+  ],
+  "note": "Sources call it a south-facing, year-round crack venue good in winter; no source names months."
+ },
+ "nm_las_conchas": {
+  "name": "Las Conchas",
+  "region": "New Mexico",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.mountainproject.com/area/105845941/las-conchas",
+   "https://www.mountainproject.com/area/108769388/k-easy-bake-alcove"
+  ],
+  "note": "Main crags summer (high elevation), sun walls winter; sources split and name no months."
+ },
+ "or_mt_hood_national_forest": {
+  "name": "Mt. Hood National Forest",
+  "region": "Oregon",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://mountainproject.com/area/109531909/mt-hood-national-forest",
+   "https://www.fs.usda.gov/r06/mthood/recreation/opportunities/climbing-and-caving"
+  ],
+  "note": "MP says crags limited by snow/road closure Nov-Apr (implies about May-Oct) but no second source names months."
+ },
+ "tx_east_mountain": {
+  "name": "East Mountain",
+  "region": "Texas",
+  "season_months": [
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://mojagear.com/?p=6031",
+   "https://www.climbing.com/news/hueco-tanks-winter-dispatches/"
+  ],
+  "note": "Reviewer: Hueco Tanks window as written for North Mountain (round 1, high). Hueco climbing season mid-Nov to mid-Apr (peak Jan-Feb), heat unworkable after April; sources speak for the whole Hueco park."
+ },
+ "wv_summersville_lake_main": {
+  "name": "Summersville Lake (main)",
+  "region": "West Virginia",
+  "season_months": [
+   4,
+   5,
+   6,
+   9,
+   10,
+   11
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://wvtourism.com/adventure-play/more-outdoors/climbing-rappelling/",
+   "https://diyoutdoors.wvu.edu/rock-climbing"
+  ],
+  "note": "WV tourism names late Apr-mid Jun and mid Sep-early Nov; WVU says spring through fall. Lake level limits cliff-base access in summer; fall draw-down opens more."
+ },
+ "md_cumberland_narrows_aka_lover_s_leap": {
+  "name": "Cumberland Narrows aka Lover's Leap",
+  "region": "Maryland",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.mountainproject.com/area/106459043/cumberland-narrows-aka-lovers-leap",
+   "https://www.midatlanticclimbers.org/2026/02/2026-peregrine-falcon-closures-at-harpers-ferry-nps-and-the-narrows/"
+  ],
+  "note": "Only the Feb 15-Jul 31 falcon closure and 'pleasant most of the year, hot in summer'; no source names a season."
+ },
+ "or_terra_nova": {
+  "name": "Terra Nova",
+  "region": "Oregon",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://app.advcollective.com/climbing/rattlesnake-cove-solid-sport-climbing-in-southwest-oregon",
+   "https://app.advcollective.com/climbing/exploring-last-chance-ridge-idahos-quiet-morning-crag"
+  ],
+  "note": "Nearby crags tagged spring-fall in words only; no months found."
+ },
+ "oh_mrg_southeast_aka_darkside": {
+  "name": "MRG Southeast (aka Darkside)",
+  "region": "Ohio",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://app.advcollective.com/climbing/mrg-southeast-darkside-climbing-guide",
+   "https://app.advcollective.com/climbing/mikes-wall-climbing-guide-midway-wall-of-mad-river-gorge"
+  ],
+  "note": "Guides say spring through fall in words only; no months named."
+ },
+ "wi_east_bluff_03_west_of_the_quarry": {
+  "name": "East Bluff 03 - West of the Quarry",
+  "region": "Wisconsin",
+  "season_months": [
+   3,
+   4,
+   5,
+   6,
+   9,
+   10,
+   11
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://blog.kayaclimb.com/?p=619",
+   "https://www.devilslakeclimbingguides.com/blog/category/Blog"
+  ],
+  "note": "KAYA: Sep-Nov prime, Mar-Jun also good, summer hot/humid, winter off-season; another guide says spring and fall. Sources speak for all of Devil's Lake."
+ },
+ "az_paradise_forks": {
+  "name": "Paradise Forks",
+  "region": "Arizona",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://summitpost.org/paradise-forks/259741",
+   "https://www.mountainproject.com/area/107447440/northern-arizona"
+  ],
+  "note": "SummitPost gives Feb-Nov with snow risk Feb-Apr and late Oct-Nov; MP says spring/fall prime in words only; not firm enough."
+ },
+ "bc_harrison_bluffs": {
+  "name": "Harrison Bluffs",
+  "region": "British Columbia",
+  "season_months": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
+  ],
+  "confidence": "low",
+  "sources": [
+   "https://squamishclimbingmagazine.ca/development-news-simple-guide-for-harrison-bluffs-climbing-area/",
+   "https://www.theprogress.com/community/video-rock-climbers-clean-up-harrison-bluffs/"
+  ],
+  "note": "HELD by reviewer: second source is a news mention, not a season. Squamish Climbing Magazine: best roughly March-November, workable on sunny winter days; local news treats summer as in season. Second source is weak."
+ },
+ "co_morrison_evergreen_littleton": {
+  "name": "Morrison/Evergreen/Littleton",
+  "region": "Colorado",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://app.advcollective.com/destinations/morrison-colorado/climbing",
+   "https://app.advcollective.com/destinations/evergreen-colorado/climbing"
+  ],
+  "note": "Only generic travel pages with differing months (Mar-May/Sep-Nov vs Apr-Jun/Sep-Oct); no climbing source."
+ },
+ "ca_mammoth_lakes_area": {
+  "name": "Mammoth Lakes Area",
+  "region": "California",
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://mountainproject.com/area/106064821/mammoth-lakes-area",
+   "https://app.advcollective.com/climbing/mammoth-lakes-bouldering-guide-high-elevation-blocks-and-classic-problems"
+  ],
+  "note": "MP: late Apr/May into Nov depending on snow; other guide: late spring-early fall, May-Oct. Shared window May-Oct; low-elevation Hwy 395 spots climb year-round."
+ },
+ "ny_b_chapel_pond_pass": {
+  "name": "Chapel Pond Pass",
+  "region": "New York",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.mountainproject.com/area/105912143/chapel-pond-pass",
+   "https://www.lakeplacid.com/climbing"
+  ],
+  "note": "No source names rock months; only falcon closures and a winter ice season."
+ },
+ "tn_front_area": {
+  "name": "Front Area",
+  "region": "Tennessee",
+  "season_months": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://advcollective.com/travel-guides/Chattanooga/cracking-the-stone-bouldering-adventures-at-stone-fort-little-rock-city-chattanooga",
+   "https://www.visitchattanooga.com/blog/post/best-fall-climbing/"
+  ],
+  "note": "Reviewer: Stone Fort window already on Stone Fort Bouldering (area-page batch 2). Guide: best Nov-Mar, climbable early Sep-late May; another says Oct-Apr; summer hot/humid. Shared window Nov-Mar. Sources speak for all of Stone Fort."
+ },
+ "va_prospectors": {
+  "name": "Prospectors",
+  "region": "Virginia",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.blueridgeoutdoors.com/?p=67554",
+   "https://www.hipcamp.com/en-CA/discover/virginia/breaks-interstate"
+  ],
+  "note": "Sources say spring/fall (and fall/late winter/early spring) in words only; no months."
+ },
+ "az_central_arizona": {
+  "name": "Central Arizona",
+  "region": "Arizona",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.mountainproject.com/area/107447478/central-arizona",
+   "https://climbingaway.fr/en/climbing-areas/queen-creek"
+  ],
+  "note": "Region spans low desert (winter) and high Prescott (summer); no months named and no single season fits."
+ },
+ "co_black_wave_boulder_area": {
+  "name": "Black Wave Boulder Area",
+  "region": "Colorado",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.madboulder.org/unaweep-canyon",
+   "https://www.mountainproject.com/area/106571728/nine-mile-hill"
+  ],
+  "note": "Only 'spring and fall' for nearby Unaweep in words; no months for Nine Mile."
+ },
+ "co_cathedral_spires_area": {
+  "name": "Cathedral Spires Area",
+  "region": "Colorado",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.jeffco.us/1191",
+   "https://sites.google.com/stephabegg.com/coloradocragging/tripreports/cathedralspires"
+  ],
+  "note": "Raptor closure Mar 1-Jul 31 and 'fall and winter destination' in words; no month-naming season source."
+ },
+ "tn_lilly_boulders": {
+  "name": "Lilly Boulders",
+  "region": "Tennessee",
+  "season_months": [
+   4,
+   5,
+   10,
+   11
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://www.pressreader.com/canada/gripped/20160601/282084866017675",
+   "https://www.tripbase.com/destinations/obed-wild-usa/when-to-visit/"
+  ],
+  "note": "Gripped: all seasons workable, fall and spring best; travel site names Apr-May and Oct-Nov. Sources speak for the whole Obed; shaded boulders stay cooler in summer."
+ }
+}
