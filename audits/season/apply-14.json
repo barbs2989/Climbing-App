@@ -1,0 +1,101 @@
+{
+ "ca_stirrup_tank": {
+  "_expect": {
+   "name": "Stirrup Tank",
+   "region": "California"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "ca_main_formation": {
+  "_expect": {
+   "name": "Main Formation",
+   "region": "California"
+  },
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ]
+ },
+ "id_mccall_area": {
+  "_expect": {
+   "name": "McCall Area",
+   "region": "Idaho"
+  },
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9
+  ]
+ },
+ "id_massacre_rocks_state_park": {
+  "_expect": {
+   "name": "Massacre Rocks State Park",
+   "region": "Idaho"
+  },
+  "season_months": [
+   3,
+   4,
+   5,
+   9,
+   10,
+   11
+  ]
+ },
+ "ca_eagle_creek_canyon": {
+  "_expect": {
+   "name": "Eagle Creek Canyon",
+   "region": "California"
+  },
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
+  ]
+ },
+ "nh_whitehorse_ledge": {
+  "_expect": {
+   "name": "Whitehorse Ledge",
+   "region": "New Hampshire"
+  },
+  "season_months": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ]
+ },
+ "me_mdi_bouldering": {
+  "_expect": {
+   "name": "MDI Bouldering",
+   "region": "Maine"
+  },
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9
+  ]
+ }
+}
