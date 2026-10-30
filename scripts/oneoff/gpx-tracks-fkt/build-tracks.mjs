@@ -4,9 +4,11 @@
 // Usage: node build-tracks.mjs <gpx dir> <pages dir> <out tracks.json>
 import fs from "fs";
 import path from "path";
-const [gdir, pdir, out] = process.argv.slice(2);
+// optional 4th argument: a file of slugs, one per line, to build ONE state at a time
+const [gdir, pdir, out, only] = process.argv.slice(2);
+const keep = only ? new Set(fs.readFileSync(only, "utf8").split("\n").map(s => s.trim()).filter(Boolean)) : null;
 const tracks = [];
-for (const f of fs.readdirSync(gdir).filter(f => f.endsWith(".gpx"))) {
+for (const f of fs.readdirSync(gdir).filter(f => f.endsWith(".gpx") && (!keep || keep.has(f.slice(0, -4))))) {
   const slug = f.slice(0, -4);
   const xml = fs.readFileSync(path.join(gdir, f), "utf8");
   const pts = [];
@@ -15,6 +17,10 @@ for (const f of fs.readdirSync(gdir).filter(f => f.endsWith(".gpx"))) {
     if (la && lo) pts.push([+la[1], +lo[1]]);
   }
   if (pts.length < 10) continue;
+  // matching needs the shape to ~300 m, not every fix: thin to at most MAX_PTS, keeping both ends
+  // (2,166 full-resolution files did not fit in memory)
+  const MAX_PTS = 3000;
+  if (pts.length > MAX_PTS) { const step = pts.length / MAX_PTS, last = pts.at(-1); const thin = []; for (let i = 0; i < pts.length; i += step) thin.push(pts[Math.floor(i)]); thin.push(last); pts.length = 0; pts.push(...thin); }
   let title = slug;
   const page = path.join(pdir, slug + ".html");
   if (fs.existsSync(page)) { const t = /<title>([^<]*)/.exec(fs.readFileSync(page, "utf8")); if (t) title = t[1].replace(/\s*\|.*$/, "").trim(); }
