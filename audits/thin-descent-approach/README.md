@@ -259,6 +259,13 @@ BC 1–5, CA 1–4, AB 1, WY 1, CO 1–2, ID 1, AK 1 and misc 1 (UT, MT, OR, AZ,
 | CA 2 | 41 | 10 | 31 | Mt. Goode "No Goode": sources give 5.4 and 5.10a/b, so it may be two lines in one row. Lamarck "Nicole": its own page disagrees on pitches. |
 | CA 3 | 40 | 21 | 19 | 2 already in the Whitney batch, 5 crag lines. Ruby Peak North Ridge: the only page is a 4th-class scramble, while the row says 5.6. |
 | CA 4 | 24 | 7 | 17 | 10 crag lines. Wicked Pinnacle and Upper Siberia Creek Tower are crag routes on one San Bernardino formation. |
+| WY 1 | 40 | 18 | 22 | 14 already in the Medicine Bow/Hooker/Moran batches. Buck Mt. "Smith-Lepore Variation" is a variation row. |
+| AB 1 | 29 | 22 | 7 | Lead review dropped two Mount Louis descents taken from the area page (Gargoyle, Homage to the Spider). Morro Peak "Guide's Route": 8 pitches stored, one 130 ft pitch on its page. |
+| CO 1 | 38 | 11 | 27 | Jagged Mountain's Holladay-Schiavone and Trundling Trout are crag lines below Jagged Meadow, not on the peak. |
+| CO 2 | 15 | 14 | 1 | Lead review skipped Wheeler Mountain North Ridge (stored 5.3 trad; its only page is a class 3 hike). |
+| ID 1 | 17 | 9 | 8 | Lead review removed a single-source pitch count (Aerosmear). |
+| AK 1 | 14 | 4 | 10 | Mostly no source. |
+| UT, MT, OR, AZ, NM, NH, NY, QC, NT, YT (misc 1) | 42 | 31 | 11 | Lead review skipped Ruth's Tooth (a one-pitch pinnacle) and Matheson Peak (identity unconfirmed). Reynolds Mountain "Southwestern Talus Slope" is a hike filed as 5.9+ trad. |
 
-None of the trad batches is written yet: the database gate is first come, first served, and the database slowed again.
+**Trad-on-peaks research DONE: 186 routes in the batch files out of 516 rows.** The writes go through the DB gate in two runs (BC 1–2, then the other 14 batches).
 
