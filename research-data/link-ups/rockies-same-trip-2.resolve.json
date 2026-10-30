@@ -1,0 +1,83 @@
+[
+ {
+  "lu": "ut_lu_kings_south_kings",
+  "leg": 0,
+  "peak": "Kings Peak",
+  "route": "North Ridge from Anderson Pass",
+  "pick": {
+   "id": "ut_kings_peak_anderson_pass",
+   "name": "Anderson Pass",
+   "disc": "mountaineering",
+   "grade": "Easy Snow",
+   "area": "Kings Peak",
+   "score": 0.6666666666666666
+  },
+  "others": [
+   {
+    "id": "ut_kings_peak_anderson_pass",
+    "name": "Anderson Pass",
+    "disc": "mountaineering",
+    "grade": "Easy Snow",
+    "area": "Kings Peak",
+    "score": 0.6666666666666666
+   }
+  ]
+ },
+ {
+  "lu": "ut_lu_kings_south_kings",
+  "leg": 1,
+  "peak": "South Kings Peak",
+  "route": "Ridge south of Kings",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "mt_lu_granite_tempest",
+  "leg": 0,
+  "peak": "Tempest Mountain",
+  "route": "West Face",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "mt_lu_granite_tempest",
+  "leg": 1,
+  "peak": "Granite Peak",
+  "route": "East Ridge",
+  "pick": null,
+  "others": [
+   {
+    "id": "mt_huckleberry_creek_avalanche_lake_approach",
+    "name": "Huckleberry Creek / Avalanche Lake Approach",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Granite Peak",
+    "score": 0
+   },
+   {
+    "id": "mt_the_granite_peaks_traverse",
+    "name": "The Granite Peaks Traverse",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Granite Peak",
+    "score": 0
+   },
+   {
+    "id": "mt_phantom_creek_trail",
+    "name": "Phantom Creek Trail",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Granite Peak",
+    "score": 0
+   },
+   {
+    "id": "mt_lookers_left_labia",
+    "name": "Lookers Left Labia",
+    "disc": "alpine",
+    "grade": "5.8+",
+    "area": "Granite Peak",
+    "score": 0
+   }
+  ]
+ }
+]

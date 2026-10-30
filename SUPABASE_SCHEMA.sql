@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 85 tables, 840 columns, 435 keyed/checked constraints (153 foreign keys), 262 RLS policies.
+-- Counts: 86 tables, 852 columns, 442 keyed/checked constraints (153 foreign keys), 263 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -188,8 +188,8 @@ CREATE TABLE public.accessibility_reports (
   CONSTRAINT accessibility_reports_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.accessibility_reports ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "admin manages accessibility reports" ON public.accessibility_reports AS PERMISSIVE FOR UPDATE TO public USING (is_admin(auth.uid())) WITH CHECK (is_admin(auth.uid()));
-CREATE POLICY "read own accessibility reports" ON public.accessibility_reports AS PERMISSIVE FOR SELECT TO public USING (((user_id = auth.uid()) OR is_admin(auth.uid())));
+CREATE POLICY "admin manages accessibility reports" ON public.accessibility_reports AS PERMISSIVE FOR UPDATE TO public USING (is_admin(( SELECT auth.uid() AS uid))) WITH CHECK (is_admin(( SELECT auth.uid() AS uid)));
+CREATE POLICY "read own accessibility reports" ON public.accessibility_reports AS PERMISSIVE FOR SELECT TO public USING (((user_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 
 CREATE TABLE public.account_standing (
   user_id uuid NOT NULL,
@@ -205,7 +205,7 @@ CREATE TABLE public.account_standing (
   CONSTRAINT account_standing_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.account_standing ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "standing read own or admin" ON public.account_standing AS PERMISSIVE FOR SELECT TO public USING (((user_id = auth.uid()) OR is_admin(auth.uid())));
+CREATE POLICY "standing read own or admin" ON public.account_standing AS PERMISSIVE FOR SELECT TO public USING (((user_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 
 CREATE TABLE public.app_feedback (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -234,8 +234,8 @@ END),
   CONSTRAINT app_feedback_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.app_feedback ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "admin manages feedback" ON public.app_feedback AS PERMISSIVE FOR UPDATE TO public USING (is_admin(auth.uid())) WITH CHECK (is_admin(auth.uid()));
-CREATE POLICY "read own feedback" ON public.app_feedback AS PERMISSIVE FOR SELECT TO public USING (((user_id = auth.uid()) OR is_admin(auth.uid())));
+CREATE POLICY "admin manages feedback" ON public.app_feedback AS PERMISSIVE FOR UPDATE TO public USING (is_admin(( SELECT auth.uid() AS uid))) WITH CHECK (is_admin(( SELECT auth.uid() AS uid)));
+CREATE POLICY "read own feedback" ON public.app_feedback AS PERMISSIVE FOR SELECT TO public USING (((user_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 
 CREATE TABLE public.app_settings (
   key text NOT NULL,
@@ -243,7 +243,7 @@ CREATE TABLE public.app_settings (
   CONSTRAINT app_settings_pkey PRIMARY KEY (key)
 );
 ALTER TABLE public.app_settings ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "admins read app settings" ON public.app_settings AS PERMISSIVE FOR SELECT TO public USING (is_admin(auth.uid()));
+CREATE POLICY "admins read app settings" ON public.app_settings AS PERMISSIVE FOR SELECT TO public USING (is_admin(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.areas (
   id text NOT NULL,
@@ -307,8 +307,8 @@ CREATE TABLE public.belay_catches (
   CONSTRAINT belay_catches_filed_by_fkey FOREIGN KEY (filed_by) REFERENCES auth.users(id) ON DELETE SET NULL
 );
 ALTER TABLE public.belay_catches ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "log belay catches" ON public.belay_catches AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = belayer_id) OR (auth.uid() = climber_id)));
-CREATE POLICY "view own belay catches" ON public.belay_catches AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = belayer_id) OR (auth.uid() = climber_id)));
+CREATE POLICY "log belay catches" ON public.belay_catches AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = belayer_id) OR (( SELECT auth.uid() AS uid) = climber_id)));
+CREATE POLICY "view own belay catches" ON public.belay_catches AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) = belayer_id) OR (( SELECT auth.uid() AS uid) = climber_id)));
 
 CREATE TABLE public.blocked_users (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -321,9 +321,9 @@ CREATE TABLE public.blocked_users (
   CONSTRAINT blocked_users_blocker_fkey FOREIGN KEY (blocker) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.blocked_users ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "blocked delete own" ON public.blocked_users AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = blocker));
-CREATE POLICY "blocked insert own" ON public.blocked_users AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = blocker));
-CREATE POLICY "blocked read own" ON public.blocked_users AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = blocker));
+CREATE POLICY "blocked delete own" ON public.blocked_users AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = blocker));
+CREATE POLICY "blocked insert own" ON public.blocked_users AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = blocker));
+CREATE POLICY "blocked read own" ON public.blocked_users AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = blocker));
 
 CREATE TABLE public.cert_track_disciplines (
   cert_track text NOT NULL,
@@ -344,9 +344,9 @@ CREATE TABLE public.climb_log_confirmations (
   CONSTRAINT climb_log_confirmations_partner_id_fkey FOREIGN KEY (partner_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.climb_log_confirmations ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "confirmations read by either party" ON public.climb_log_confirmations AS PERMISSIVE FOR SELECT TO public USING (((partner_id = auth.uid()) OR (EXISTS ( SELECT 1
+CREATE POLICY "confirmations read by either party" ON public.climb_log_confirmations AS PERMISSIVE FOR SELECT TO public USING (((partner_id = ( SELECT auth.uid() AS uid)) OR (EXISTS ( SELECT 1
    FROM climb_logs l
-  WHERE ((l.id = climb_log_confirmations.log_id) AND (l.user_id = auth.uid()))))));
+  WHERE ((l.id = climb_log_confirmations.log_id) AND (l.user_id = ( SELECT auth.uid() AS uid)))))));
 
 CREATE TABLE public.climb_log_partner_names (
   log_id uuid NOT NULL,
@@ -360,14 +360,14 @@ CREATE TABLE public.climb_log_partner_names (
   CONSTRAINT climb_log_partner_names_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.climb_log_partner_names ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "partner names read by the climber" ON public.climb_log_partner_names AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
-CREATE POLICY "partner names removed by the climber" ON public.climb_log_partner_names AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "partner names updated by the climber" ON public.climb_log_partner_names AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND (EXISTS ( SELECT 1
+CREATE POLICY "partner names read by the climber" ON public.climb_log_partner_names AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "partner names removed by the climber" ON public.climb_log_partner_names AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "partner names updated by the climber" ON public.climb_log_partner_names AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (EXISTS ( SELECT 1
    FROM climb_logs l
-  WHERE ((l.id = climb_log_partner_names.log_id) AND (l.user_id = auth.uid()))))));
-CREATE POLICY "partner names written by the climber" ON public.climb_log_partner_names AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND (EXISTS ( SELECT 1
+  WHERE ((l.id = climb_log_partner_names.log_id) AND (l.user_id = ( SELECT auth.uid() AS uid)))))));
+CREATE POLICY "partner names written by the climber" ON public.climb_log_partner_names AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (EXISTS ( SELECT 1
    FROM climb_logs l
-  WHERE ((l.id = climb_log_partner_names.log_id) AND (l.user_id = auth.uid()))))));
+  WHERE ((l.id = climb_log_partner_names.log_id) AND (l.user_id = ( SELECT auth.uid() AS uid)))))));
 
 CREATE TABLE public.climb_logs (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -437,13 +437,13 @@ CREATE TABLE public.climb_logs (
   CONSTRAINT climb_logs_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.climb_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "manage own logs" ON public.climb_logs AS PERMISSIVE FOR ALL TO public USING ((user_id = auth.uid()));
-CREATE POLICY "moderation hides taken-down content" ON public.climb_logs AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (user_id = auth.uid()) OR is_admin(auth.uid())));
-CREATE POLICY "restricted accounts cannot post" ON public.climb_logs AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
+CREATE POLICY "manage own logs" ON public.climb_logs AS PERMISSIVE FOR ALL TO public USING ((user_id = ( SELECT auth.uid() AS uid)));
+CREATE POLICY "moderation hides taken-down content" ON public.climb_logs AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (user_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
+CREATE POLICY "restricted accounts cannot post" ON public.climb_logs AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
 CREATE POLICY "view crew logs" ON public.climb_logs AS PERMISSIVE FOR SELECT TO public USING (((trip_report_visibility = 'public'::text) OR ((trip_report_visibility = 'crew'::text) AND (crew_id IN ( SELECT crew_members.crew_id
    FROM crew_members
-  WHERE ((crew_members.user_id = auth.uid()) AND (crew_members.status = 'confirmed'::text))))) OR ((trip_report_visibility = 'friends'::text) AND is_my_friend(user_id))));
-CREATE POLICY "view own logs" ON public.climb_logs AS PERMISSIVE FOR SELECT TO public USING ((user_id = auth.uid()));
+  WHERE ((crew_members.user_id = ( SELECT auth.uid() AS uid)) AND (crew_members.status = 'confirmed'::text))))) OR ((trip_report_visibility = 'friends'::text) AND is_my_friend(user_id))));
+CREATE POLICY "view own logs" ON public.climb_logs AS PERMISSIVE FOR SELECT TO public USING ((user_id = ( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.climber_resumes (
   user_id uuid NOT NULL,
@@ -462,12 +462,12 @@ CREATE TABLE public.climber_resumes (
   CONSTRAINT climber_resumes_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.climber_resumes ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "resume owner delete" ON public.climber_resumes AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "resume owner insert" ON public.climber_resumes AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = user_id));
-CREATE POLICY "resume owner or public read" ON public.climber_resumes AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = user_id) OR (EXISTS ( SELECT 1
+CREATE POLICY "resume owner delete" ON public.climber_resumes AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "resume owner insert" ON public.climber_resumes AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "resume owner or public read" ON public.climber_resumes AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) = user_id) OR (EXISTS ( SELECT 1
    FROM profiles p
   WHERE ((p.id = climber_resumes.user_id) AND p.resume_public)))));
-CREATE POLICY "resume owner update" ON public.climber_resumes AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
+CREATE POLICY "resume owner update" ON public.climber_resumes AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.comment_reactions (
   comment_id uuid NOT NULL,
@@ -480,14 +480,14 @@ CREATE TABLE public.comment_reactions (
   CONSTRAINT comment_reactions_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.comment_reactions ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "comment reactions delete own" ON public.comment_reactions AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "comment reactions insert own" ON public.comment_reactions AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND (reaction ~ '^[a-z0-9]{1,24}$'::text) AND (EXISTS ( SELECT 1
+CREATE POLICY "comment reactions delete own" ON public.comment_reactions AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "comment reactions insert own" ON public.comment_reactions AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (reaction ~ '^[a-z0-9]{1,24}$'::text) AND (EXISTS ( SELECT 1
    FROM comments c
   WHERE (c.id = comment_reactions.comment_id)))));
 CREATE POLICY "comment reactions read where the comment is" ON public.comment_reactions AS PERMISSIVE FOR SELECT TO public USING ((EXISTS ( SELECT 1
    FROM comments c
   WHERE (c.id = comment_reactions.comment_id))));
-CREATE POLICY "comment reactions update own" ON public.comment_reactions AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND (reaction ~ '^[a-z0-9]{1,24}$'::text)));
+CREATE POLICY "comment reactions update own" ON public.comment_reactions AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (reaction ~ '^[a-z0-9]{1,24}$'::text)));
 
 CREATE TABLE public.comments (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -508,12 +508,12 @@ CREATE TABLE public.comments (
   CONSTRAINT comments_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.comments ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "authed can comment" ON public.comments AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND comment_target_readable(target_id)));
+CREATE POLICY "authed can comment" ON public.comments AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND comment_target_readable(target_id)));
 CREATE POLICY "comments read where the target is readable" ON public.comments AS PERMISSIVE FOR SELECT TO public USING (comment_target_readable(target_id));
-CREATE POLICY "delete own comment" ON public.comments AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "edit own comment" ON public.comments AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
-CREATE POLICY "moderation hides taken-down content" ON public.comments AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (user_id = auth.uid()) OR is_admin(auth.uid())));
-CREATE POLICY "restricted accounts cannot post" ON public.comments AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
+CREATE POLICY "delete own comment" ON public.comments AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "edit own comment" ON public.comments AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "moderation hides taken-down content" ON public.comments AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (user_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
+CREATE POLICY "restricted accounts cannot post" ON public.comments AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.connection_events (
   id bigint NOT NULL DEFAULT nextval('connection_events_id_seq'::regclass),
@@ -544,11 +544,11 @@ CREATE TABLE public.connections (
   CONSTRAINT connections_requester_fkey FOREIGN KEY (requester) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.connections ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "connections read own" ON public.connections AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = requester) OR (auth.uid() = addressee)));
-CREATE POLICY "connections remove either side" ON public.connections AS PERMISSIVE FOR DELETE TO public USING (((auth.uid() = requester) OR (auth.uid() = addressee)));
-CREATE POLICY "connections request own" ON public.connections AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = requester) AND (status = 'pending'::text)));
-CREATE POLICY "connections respond as addressee" ON public.connections AS PERMISSIVE FOR UPDATE TO public USING (((auth.uid() = addressee) AND (status = 'pending'::text))) WITH CHECK ((status = ANY (ARRAY['accepted'::text, 'declined'::text])));
-CREATE POLICY "restricted accounts cannot post" ON public.connections AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
+CREATE POLICY "connections read own" ON public.connections AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) = requester) OR (( SELECT auth.uid() AS uid) = addressee)));
+CREATE POLICY "connections remove either side" ON public.connections AS PERMISSIVE FOR DELETE TO public USING (((( SELECT auth.uid() AS uid) = requester) OR (( SELECT auth.uid() AS uid) = addressee)));
+CREATE POLICY "connections request own" ON public.connections AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = requester) AND (status = 'pending'::text)));
+CREATE POLICY "connections respond as addressee" ON public.connections AS PERMISSIVE FOR UPDATE TO public USING (((( SELECT auth.uid() AS uid) = addressee) AND (status = 'pending'::text))) WITH CHECK ((status = ANY (ARRAY['accepted'::text, 'declined'::text])));
+CREATE POLICY "restricted accounts cannot post" ON public.connections AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.content_reports (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -570,9 +570,9 @@ CREATE TABLE public.content_reports (
   CONSTRAINT content_reports_route_id_fkey FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE SET NULL
 );
 ALTER TABLE public.content_reports ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "file your own report" ON public.content_reports AS PERMISSIVE FOR INSERT TO public WITH CHECK (((reporter = auth.uid()) AND (status = 'open'::text)));
-CREATE POLICY "only an admin reviews" ON public.content_reports AS PERMISSIVE FOR UPDATE TO public USING (is_admin(auth.uid())) WITH CHECK (is_admin(auth.uid()));
-CREATE POLICY "your own reports, or an admin reads all" ON public.content_reports AS PERMISSIVE FOR SELECT TO public USING (((reporter = auth.uid()) OR is_admin(auth.uid())));
+CREATE POLICY "file your own report" ON public.content_reports AS PERMISSIVE FOR INSERT TO public WITH CHECK (((reporter = ( SELECT auth.uid() AS uid)) AND (status = 'open'::text)));
+CREATE POLICY "only an admin reviews" ON public.content_reports AS PERMISSIVE FOR UPDATE TO public USING (is_admin(( SELECT auth.uid() AS uid))) WITH CHECK (is_admin(( SELECT auth.uid() AS uid)));
+CREATE POLICY "your own reports, or an admin reads all" ON public.content_reports AS PERMISSIVE FOR SELECT TO public USING (((reporter = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 
 CREATE TABLE public.contribution_fields (
   form_key text NOT NULL,
@@ -602,7 +602,7 @@ CREATE TABLE public.contribution_standing (
   CONSTRAINT contribution_standing_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.contribution_standing ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "contribution standing read own or admin" ON public.contribution_standing AS PERMISSIVE FOR SELECT TO public USING (((user_id = auth.uid()) OR is_admin(auth.uid())));
+CREATE POLICY "contribution standing read own or admin" ON public.contribution_standing AS PERMISSIVE FOR SELECT TO public USING (((user_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 
 CREATE TABLE public.contributions (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -632,11 +632,11 @@ CREATE TABLE public.contributions (
   CONSTRAINT contributions_route_id_fkey FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
 );
 ALTER TABLE public.contributions ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "authed can contribute" ON public.contributions AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() IS NOT NULL) AND (contributor = (auth.uid())::text)));
-CREATE POLICY "contribution standing allows field edits" ON public.contributions AS RESTRICTIVE FOR INSERT TO public WITH CHECK (((kind <> 'field'::text) OR can_contribute_fields(auth.uid())));
+CREATE POLICY "authed can contribute" ON public.contributions AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) IS NOT NULL) AND (contributor = (( SELECT auth.uid() AS uid))::text)));
+CREATE POLICY "contribution standing allows field edits" ON public.contributions AS RESTRICTIVE FOR INSERT TO public WITH CHECK (((kind <> 'field'::text) OR can_contribute_fields(( SELECT auth.uid() AS uid))));
 CREATE POLICY "contributions public read" ON public.contributions AS PERMISSIVE FOR SELECT TO public USING (true);
-CREATE POLICY "own photo or pairing, or an admin" ON public.contributions AS PERMISSIVE FOR DELETE TO public USING ((((kind = ANY (ARRAY['photo'::text, 'pair'::text])) AND (contributor IS NOT NULL) AND (contributor = (auth.uid())::text)) OR is_admin(auth.uid())));
-CREATE POLICY "restricted accounts cannot post" ON public.contributions AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
+CREATE POLICY "own photo or pairing, or an admin" ON public.contributions AS PERMISSIVE FOR DELETE TO public USING ((((kind = ANY (ARRAY['photo'::text, 'pair'::text])) AND (contributor IS NOT NULL) AND (contributor = (( SELECT auth.uid() AS uid))::text)) OR is_admin(( SELECT auth.uid() AS uid))));
+CREATE POLICY "restricted accounts cannot post" ON public.contributions AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.crew_day_acks (
   crew_id uuid NOT NULL,
@@ -649,13 +649,13 @@ CREATE TABLE public.crew_day_acks (
 ALTER TABLE public.crew_day_acks ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "crew members can read acks" ON public.crew_day_acks AS PERMISSIVE FOR SELECT TO public USING (((EXISTS ( SELECT 1
    FROM crew_members m
-  WHERE ((m.crew_id = crew_day_acks.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text)))) OR (EXISTS ( SELECT 1
+  WHERE ((m.crew_id = crew_day_acks.crew_id) AND (m.user_id = ( SELECT auth.uid() AS uid)) AND (m.status = 'confirmed'::text)))) OR (EXISTS ( SELECT 1
    FROM crews c
-  WHERE ((c.id = crew_day_acks.crew_id) AND (c.created_by = auth.uid()))))));
-CREATE POLICY "members ack their own day" ON public.crew_day_acks AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND (EXISTS ( SELECT 1
+  WHERE ((c.id = crew_day_acks.crew_id) AND (c.created_by = ( SELECT auth.uid() AS uid)))))));
+CREATE POLICY "members ack their own day" ON public.crew_day_acks AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (EXISTS ( SELECT 1
    FROM crew_members m
-  WHERE ((m.crew_id = crew_day_acks.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text))))));
-CREATE POLICY "members un-ack their own day" ON public.crew_day_acks AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
+  WHERE ((m.crew_id = crew_day_acks.crew_id) AND (m.user_id = ( SELECT auth.uid() AS uid)) AND (m.status = 'confirmed'::text))))));
+CREATE POLICY "members un-ack their own day" ON public.crew_day_acks AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.crew_email_invites (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -673,13 +673,13 @@ CREATE TABLE public.crew_email_invites (
   CONSTRAINT crew_email_invites_invited_by_fkey FOREIGN KEY (invited_by) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.crew_email_invites ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "crew or invitee can read email invites" ON public.crew_email_invites AS PERMISSIVE FOR SELECT TO public USING (((invited_by = auth.uid()) OR (EXISTS ( SELECT 1
+CREATE POLICY "crew or invitee can read email invites" ON public.crew_email_invites AS PERMISSIVE FOR SELECT TO public USING (((invited_by = ( SELECT auth.uid() AS uid)) OR (EXISTS ( SELECT 1
    FROM crew_members m
-  WHERE ((m.crew_id = crew_email_invites.crew_id) AND (m.user_id = auth.uid())))) OR (lower(email) = lower(COALESCE((auth.jwt() ->> 'email'::text), ''::text)))));
-CREATE POLICY "inviter or organizer can withdraw" ON public.crew_email_invites AS PERMISSIVE FOR DELETE TO public USING (((invited_by = auth.uid()) OR (auth.uid() = ( SELECT crews.created_by
+  WHERE ((m.crew_id = crew_email_invites.crew_id) AND (m.user_id = ( SELECT auth.uid() AS uid))))) OR (lower(email) = lower(COALESCE((( SELECT auth.jwt() AS jwt) ->> 'email'::text), ''::text)))));
+CREATE POLICY "inviter or organizer can withdraw" ON public.crew_email_invites AS PERMISSIVE FOR DELETE TO public USING (((invited_by = ( SELECT auth.uid() AS uid)) OR (( SELECT auth.uid() AS uid) = ( SELECT crews.created_by
    FROM crews
   WHERE (crews.id = crew_email_invites.crew_id)))));
-CREATE POLICY "organizer can invite by email" ON public.crew_email_invites AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = ( SELECT crews.created_by
+CREATE POLICY "organizer can invite by email" ON public.crew_email_invites AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = ( SELECT crews.created_by
    FROM crews
   WHERE (crews.id = crew_email_invites.crew_id))));
 
@@ -701,19 +701,19 @@ CREATE TABLE public.crew_members (
 );
 ALTER TABLE public.crew_members ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "crew membership is public read" ON public.crew_members AS PERMISSIVE FOR SELECT TO public USING (true);
-CREATE POLICY "join or invite" ON public.crew_members AS PERMISSIVE FOR INSERT TO public WITH CHECK (((invited_by = auth.uid()) AND ((auth.uid() = ( SELECT crews.created_by
+CREATE POLICY "join or invite" ON public.crew_members AS PERMISSIVE FOR INSERT TO public WITH CHECK (((invited_by = ( SELECT auth.uid() AS uid)) AND ((( SELECT auth.uid() AS uid) = ( SELECT crews.created_by
    FROM crews
-  WHERE (crews.id = crew_members.crew_id))) OR ((auth.uid() = user_id) AND (status = 'pending'::text)))));
-CREATE POLICY "member updates own membership" ON public.crew_members AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND ((status <> 'confirmed'::text) OR (invited_by = ( SELECT crews.created_by
+  WHERE (crews.id = crew_members.crew_id))) OR ((( SELECT auth.uid() AS uid) = user_id) AND (status = 'pending'::text)))));
+CREATE POLICY "member updates own membership" ON public.crew_members AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND ((status <> 'confirmed'::text) OR (invited_by = ( SELECT crews.created_by
    FROM crews
   WHERE (crews.id = crew_members.crew_id))))));
-CREATE POLICY "organizer updates membership" ON public.crew_members AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = ( SELECT crews.created_by
+CREATE POLICY "organizer updates membership" ON public.crew_members AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = ( SELECT crews.created_by
    FROM crews
-  WHERE (crews.id = crew_members.crew_id)))) WITH CHECK ((auth.uid() = ( SELECT crews.created_by
+  WHERE (crews.id = crew_members.crew_id)))) WITH CHECK ((( SELECT auth.uid() AS uid) = ( SELECT crews.created_by
    FROM crews
   WHERE (crews.id = crew_members.crew_id))));
-CREATE POLICY "restricted accounts cannot post" ON public.crew_members AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
-CREATE POLICY "self or organizer can remove membership" ON public.crew_members AS PERMISSIVE FOR DELETE TO public USING (((auth.uid() = user_id) OR (auth.uid() = ( SELECT crews.created_by
+CREATE POLICY "restricted accounts cannot post" ON public.crew_members AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
+CREATE POLICY "self or organizer can remove membership" ON public.crew_members AS PERMISSIVE FOR DELETE TO public USING (((( SELECT auth.uid() AS uid) = user_id) OR (( SELECT auth.uid() AS uid) = ( SELECT crews.created_by
    FROM crews
   WHERE (crews.id = crew_members.crew_id)))));
 
@@ -728,10 +728,10 @@ CREATE TABLE public.crew_past_state (
   CONSTRAINT crew_past_state_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.crew_past_state ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "own past crew state delete" ON public.crew_past_state AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "own past crew state insert" ON public.crew_past_state AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = user_id));
-CREATE POLICY "own past crew state read" ON public.crew_past_state AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
-CREATE POLICY "own past crew state update" ON public.crew_past_state AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
+CREATE POLICY "own past crew state delete" ON public.crew_past_state AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "own past crew state insert" ON public.crew_past_state AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "own past crew state read" ON public.crew_past_state AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "own past crew state update" ON public.crew_past_state AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.crew_reads (
   crew_id uuid NOT NULL,
@@ -742,7 +742,7 @@ CREATE TABLE public.crew_reads (
   CONSTRAINT crew_reads_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.crew_reads ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "users manage own crew read marks" ON public.crew_reads AS PERMISSIVE FOR ALL TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
+CREATE POLICY "users manage own crew read marks" ON public.crew_reads AS PERMISSIVE FOR ALL TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.crew_rides (
   crew_id uuid NOT NULL,
@@ -760,17 +760,17 @@ CREATE TABLE public.crew_rides (
   CONSTRAINT crew_rides_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.crew_rides ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "crew rides read by the crew" ON public.crew_rides AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = user_id) OR (EXISTS ( SELECT 1
+CREATE POLICY "crew rides read by the crew" ON public.crew_rides AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) = user_id) OR (EXISTS ( SELECT 1
    FROM crew_members m
-  WHERE ((m.crew_id = crew_rides.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text))))));
-CREATE POLICY "own crew ride delete" ON public.crew_rides AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "own crew ride insert" ON public.crew_rides AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND (EXISTS ( SELECT 1
+  WHERE ((m.crew_id = crew_rides.crew_id) AND (m.user_id = ( SELECT auth.uid() AS uid)) AND (m.status = 'confirmed'::text))))));
+CREATE POLICY "own crew ride delete" ON public.crew_rides AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "own crew ride insert" ON public.crew_rides AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (EXISTS ( SELECT 1
    FROM crew_members m
-  WHERE ((m.crew_id = crew_rides.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text))))));
-CREATE POLICY "own crew ride update" ON public.crew_rides AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND (EXISTS ( SELECT 1
+  WHERE ((m.crew_id = crew_rides.crew_id) AND (m.user_id = ( SELECT auth.uid() AS uid)) AND (m.status = 'confirmed'::text))))));
+CREATE POLICY "own crew ride update" ON public.crew_rides AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (EXISTS ( SELECT 1
    FROM crew_members m
-  WHERE ((m.crew_id = crew_rides.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text))))));
-CREATE POLICY "restricted accounts cannot post" ON public.crew_rides AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
+  WHERE ((m.crew_id = crew_rides.crew_id) AND (m.user_id = ( SELECT auth.uid() AS uid)) AND (m.status = 'confirmed'::text))))));
+CREATE POLICY "restricted accounts cannot post" ON public.crew_rides AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.crew_safety_answers (
   crew_id uuid NOT NULL,
@@ -785,14 +785,14 @@ CREATE TABLE public.crew_safety_answers (
   CONSTRAINT crew_safety_answers_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.crew_safety_answers ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "own safety answers delete" ON public.crew_safety_answers AS PERMISSIVE FOR DELETE TO public USING ((user_id = auth.uid()));
-CREATE POLICY "own safety answers insert" ON public.crew_safety_answers AS PERMISSIVE FOR INSERT TO public WITH CHECK (((user_id = auth.uid()) AND (EXISTS ( SELECT 1
+CREATE POLICY "own safety answers delete" ON public.crew_safety_answers AS PERMISSIVE FOR DELETE TO public USING ((user_id = ( SELECT auth.uid() AS uid)));
+CREATE POLICY "own safety answers insert" ON public.crew_safety_answers AS PERMISSIVE FOR INSERT TO public WITH CHECK (((user_id = ( SELECT auth.uid() AS uid)) AND (EXISTS ( SELECT 1
    FROM crew_members m
-  WHERE ((m.crew_id = crew_safety_answers.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text))))));
-CREATE POLICY "own safety answers read" ON public.crew_safety_answers AS PERMISSIVE FOR SELECT TO public USING ((user_id = auth.uid()));
-CREATE POLICY "own safety answers update" ON public.crew_safety_answers AS PERMISSIVE FOR UPDATE TO public USING ((user_id = auth.uid())) WITH CHECK (((user_id = auth.uid()) AND (EXISTS ( SELECT 1
+  WHERE ((m.crew_id = crew_safety_answers.crew_id) AND (m.user_id = ( SELECT auth.uid() AS uid)) AND (m.status = 'confirmed'::text))))));
+CREATE POLICY "own safety answers read" ON public.crew_safety_answers AS PERMISSIVE FOR SELECT TO public USING ((user_id = ( SELECT auth.uid() AS uid)));
+CREATE POLICY "own safety answers update" ON public.crew_safety_answers AS PERMISSIVE FOR UPDATE TO public USING ((user_id = ( SELECT auth.uid() AS uid))) WITH CHECK (((user_id = ( SELECT auth.uid() AS uid)) AND (EXISTS ( SELECT 1
    FROM crew_members m
-  WHERE ((m.crew_id = crew_safety_answers.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text))))));
+  WHERE ((m.crew_id = crew_safety_answers.crew_id) AND (m.user_id = ( SELECT auth.uid() AS uid)) AND (m.status = 'confirmed'::text))))));
 
 CREATE TABLE public.crews (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -823,13 +823,13 @@ CREATE TABLE public.crews (
   CONSTRAINT crews_itinerary_by_fkey FOREIGN KEY (itinerary_by) REFERENCES profiles(id) ON DELETE SET NULL
 );
 ALTER TABLE public.crews ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "authenticated users can create crews" ON public.crews AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = created_by));
-CREATE POLICY "crew members can read" ON public.crews AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = created_by) OR (EXISTS ( SELECT 1
+CREATE POLICY "authenticated users can create crews" ON public.crews AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = created_by));
+CREATE POLICY "crew members can read" ON public.crews AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) = created_by) OR (EXISTS ( SELECT 1
    FROM crew_members m
-  WHERE ((m.crew_id = crews.id) AND (m.user_id = auth.uid()) AND (m.status <> 'pending'::text))))));
-CREATE POLICY "organizer can delete own crew" ON public.crews AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = created_by));
-CREATE POLICY "organizer can update own crew" ON public.crews AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = created_by));
-CREATE POLICY "restricted accounts cannot post" ON public.crews AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
+  WHERE ((m.crew_id = crews.id) AND (m.user_id = ( SELECT auth.uid() AS uid)) AND (m.status <> 'pending'::text))))));
+CREATE POLICY "organizer can delete own crew" ON public.crews AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = created_by));
+CREATE POLICY "organizer can update own crew" ON public.crews AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = created_by));
+CREATE POLICY "restricted accounts cannot post" ON public.crews AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.crews_messages (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -848,16 +848,16 @@ CREATE TABLE public.crews_messages (
 ALTER TABLE public.crews_messages ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "crew members can read messages" ON public.crews_messages AS PERMISSIVE FOR SELECT TO public USING (((EXISTS ( SELECT 1
    FROM crew_members m
-  WHERE ((m.crew_id = crews_messages.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text)))) OR (EXISTS ( SELECT 1
+  WHERE ((m.crew_id = crews_messages.crew_id) AND (m.user_id = ( SELECT auth.uid() AS uid)) AND (m.status = 'confirmed'::text)))) OR (EXISTS ( SELECT 1
    FROM crews c
-  WHERE ((c.id = crews_messages.crew_id) AND (c.created_by = auth.uid()))))));
-CREATE POLICY "crew members can send messages" ON public.crews_messages AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND ((EXISTS ( SELECT 1
+  WHERE ((c.id = crews_messages.crew_id) AND (c.created_by = ( SELECT auth.uid() AS uid)))))));
+CREATE POLICY "crew members can send messages" ON public.crews_messages AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND ((EXISTS ( SELECT 1
    FROM crew_members m
-  WHERE ((m.crew_id = crews_messages.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text)))) OR (EXISTS ( SELECT 1
+  WHERE ((m.crew_id = crews_messages.crew_id) AND (m.user_id = ( SELECT auth.uid() AS uid)) AND (m.status = 'confirmed'::text)))) OR (EXISTS ( SELECT 1
    FROM crews c
-  WHERE ((c.id = crews_messages.crew_id) AND (c.created_by = auth.uid())))))));
-CREATE POLICY "moderation hides taken-down content" ON public.crews_messages AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (user_id = auth.uid()) OR is_admin(auth.uid())));
-CREATE POLICY "restricted accounts cannot post" ON public.crews_messages AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
+  WHERE ((c.id = crews_messages.crew_id) AND (c.created_by = ( SELECT auth.uid() AS uid))))))));
+CREATE POLICY "moderation hides taken-down content" ON public.crews_messages AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (user_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
+CREATE POLICY "restricted accounts cannot post" ON public.crews_messages AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.data_requests (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -872,9 +872,9 @@ CREATE TABLE public.data_requests (
   CONSTRAINT data_requests_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.data_requests ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "admin manages data requests" ON public.data_requests AS PERMISSIVE FOR UPDATE TO public USING (is_admin(auth.uid())) WITH CHECK (is_admin(auth.uid()));
-CREATE POLICY "raise own data request" ON public.data_requests AS PERMISSIVE FOR INSERT TO public WITH CHECK (((user_id = auth.uid()) AND (status = 'open'::text)));
-CREATE POLICY "read own data requests" ON public.data_requests AS PERMISSIVE FOR SELECT TO public USING (((user_id = auth.uid()) OR is_admin(auth.uid())));
+CREATE POLICY "admin manages data requests" ON public.data_requests AS PERMISSIVE FOR UPDATE TO public USING (is_admin(( SELECT auth.uid() AS uid))) WITH CHECK (is_admin(( SELECT auth.uid() AS uid)));
+CREATE POLICY "raise own data request" ON public.data_requests AS PERMISSIVE FOR INSERT TO public WITH CHECK (((user_id = ( SELECT auth.uid() AS uid)) AND (status = 'open'::text)));
+CREATE POLICY "read own data requests" ON public.data_requests AS PERMISSIVE FOR SELECT TO public USING (((user_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 
 CREATE TABLE public.edge_rate_events (
   id bigint NOT NULL DEFAULT nextval('edge_rate_events_id_seq'::regclass),
@@ -909,8 +909,8 @@ CREATE TABLE public.gps_notifications (
   CONSTRAINT gps_notifications_submission_id_fkey FOREIGN KEY (submission_id) REFERENCES gps_submissions(id) ON DELETE CASCADE
 );
 ALTER TABLE public.gps_notifications ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Climbers can read their own notifications" ON public.gps_notifications AS PERMISSIVE FOR SELECT TO public USING (((auth.role() = 'authenticated'::text) AND (climber_email = (auth.jwt() ->> 'email'::text))));
-CREATE POLICY "Service role can manage notifications" ON public.gps_notifications AS PERMISSIVE FOR ALL TO public USING ((auth.role() = 'service_role'::text));
+CREATE POLICY "Climbers can read their own notifications" ON public.gps_notifications AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.role() AS role) = 'authenticated'::text) AND (climber_email = (( SELECT auth.jwt() AS jwt) ->> 'email'::text))));
+CREATE POLICY "Service role can manage notifications" ON public.gps_notifications AS PERMISSIVE FOR ALL TO public USING ((( SELECT auth.role() AS role) = 'service_role'::text));
 
 CREATE TABLE public.gps_submissions (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -935,7 +935,7 @@ CREATE TABLE public.gps_submissions (
 );
 ALTER TABLE public.gps_submissions ENABLE ROW LEVEL SECURITY;
 CREATE POLICY anyone_can_read_approved_gps ON public.gps_submissions AS PERMISSIVE FOR SELECT TO public USING ((status = 'approved'::text));
-CREATE POLICY users_can_read_own_gps ON public.gps_submissions AS PERMISSIVE FOR SELECT TO public USING ((climber_email = (auth.jwt() ->> 'email'::text)));
+CREATE POLICY users_can_read_own_gps ON public.gps_submissions AS PERMISSIVE FOR SELECT TO public USING ((climber_email = (( SELECT auth.jwt() AS jwt) ->> 'email'::text)));
 
 CREATE TABLE public.group_bans (
   group_id uuid NOT NULL,
@@ -964,9 +964,9 @@ CREATE TABLE public.group_event_invites (
   CONSTRAINT group_event_invites_invitee_fkey FOREIGN KEY (invitee) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.group_event_invites ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "event invites read by members or the invitee" ON public.group_event_invites AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = invitee) OR can_read_group_event(event_id)));
-CREATE POLICY "event invites sent by members as themselves" ON public.group_event_invites AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = invited_by) AND can_invite_to_group_event(event_id, invitee)));
-CREATE POLICY "event invites withdrawn by the sender or declined by the invite" ON public.group_event_invites AS PERMISSIVE FOR DELETE TO public USING (((auth.uid() = invited_by) OR (auth.uid() = invitee)));
+CREATE POLICY "event invites read by members or the invitee" ON public.group_event_invites AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) = invitee) OR can_read_group_event(event_id)));
+CREATE POLICY "event invites sent by members as themselves" ON public.group_event_invites AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = invited_by) AND can_invite_to_group_event(event_id, invitee)));
+CREATE POLICY "event invites withdrawn by the sender or declined by the invite" ON public.group_event_invites AS PERMISSIVE FOR DELETE TO public USING (((( SELECT auth.uid() AS uid) = invited_by) OR (( SELECT auth.uid() AS uid) = invitee)));
 
 CREATE TABLE public.group_event_rsvps (
   event_id uuid NOT NULL,
@@ -977,9 +977,9 @@ CREATE TABLE public.group_event_rsvps (
   CONSTRAINT group_event_rsvps_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.group_event_rsvps ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "rsvp as yourself" ON public.group_event_rsvps AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND can_read_group_event(event_id)));
+CREATE POLICY "rsvp as yourself" ON public.group_event_rsvps AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND can_read_group_event(event_id)));
 CREATE POLICY "rsvps read by whoever can read the event" ON public.group_event_rsvps AS PERMISSIVE FOR SELECT TO public USING (can_read_group_event(event_id));
-CREATE POLICY "withdraw your own rsvp" ON public.group_event_rsvps AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
+CREATE POLICY "withdraw your own rsvp" ON public.group_event_rsvps AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.group_events (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1007,14 +1007,14 @@ CREATE TABLE public.group_events (
   CONSTRAINT group_events_host_fkey FOREIGN KEY (host) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.group_events ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "group events cancelled by host or a manager" ON public.group_events AS PERMISSIVE FOR DELETE TO public USING (((auth.uid() = host) OR is_group_manager(group_id)));
-CREATE POLICY "group events created per the group's event policy" ON public.group_events AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = host) AND is_group_member(group_id) AND (is_group_manager(group_id) OR (EXISTS ( SELECT 1
+CREATE POLICY "group events cancelled by host or a manager" ON public.group_events AS PERMISSIVE FOR DELETE TO public USING (((( SELECT auth.uid() AS uid) = host) OR is_group_manager(group_id)));
+CREATE POLICY "group events created per the group's event policy" ON public.group_events AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = host) AND is_group_member(group_id) AND (is_group_manager(group_id) OR (EXISTS ( SELECT 1
    FROM groups g
   WHERE ((g.id = group_events.group_id) AND (COALESCE(g.event_policy, 'anyone'::text) = 'anyone'::text)))))));
-CREATE POLICY "group events edited by the host" ON public.group_events AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = host)) WITH CHECK ((auth.uid() = host));
+CREATE POLICY "group events edited by the host" ON public.group_events AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = host)) WITH CHECK ((( SELECT auth.uid() AS uid) = host));
 CREATE POLICY "group events read by members or invitees" ON public.group_events AS PERMISSIVE FOR SELECT TO public USING ((is_group_member(group_id) OR is_invited_to_group_event(id)));
-CREATE POLICY "moderation hides taken-down content" ON public.group_events AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (host = auth.uid()) OR is_admin(auth.uid())));
-CREATE POLICY "restricted accounts cannot post" ON public.group_events AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
+CREATE POLICY "moderation hides taken-down content" ON public.group_events AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (host = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
+CREATE POLICY "restricted accounts cannot post" ON public.group_events AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.group_join_answers (
   group_id uuid NOT NULL,
@@ -1026,7 +1026,7 @@ CREATE TABLE public.group_join_answers (
   CONSTRAINT group_join_answers_group_id_user_id_fkey FOREIGN KEY (group_id, user_id) REFERENCES group_members(group_id, user_id) ON DELETE CASCADE
 );
 ALTER TABLE public.group_join_answers ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "join answers read by the asker or a group manager" ON public.group_join_answers AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = user_id) OR is_group_manager(group_id)));
+CREATE POLICY "join answers read by the asker or a group manager" ON public.group_join_answers AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) = user_id) OR is_group_manager(group_id)));
 
 CREATE TABLE public.group_join_declines (
   group_id uuid NOT NULL,
@@ -1041,8 +1041,8 @@ CREATE TABLE public.group_join_declines (
   CONSTRAINT group_join_declines_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.group_join_declines ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "a decline is read by the climber and the group's managers" ON public.group_join_declines AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = user_id) OR is_group_manager(group_id)));
-CREATE POLICY "the climber dismisses their own decline" ON public.group_join_declines AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
+CREATE POLICY "a decline is read by the climber and the group's managers" ON public.group_join_declines AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) = user_id) OR is_group_manager(group_id)));
+CREATE POLICY "the climber dismisses their own decline" ON public.group_join_declines AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.group_member_prefs (
   group_id uuid NOT NULL,
@@ -1054,10 +1054,10 @@ CREATE TABLE public.group_member_prefs (
   CONSTRAINT group_member_prefs_group_id_user_id_fkey FOREIGN KEY (group_id, user_id) REFERENCES group_members(group_id, user_id) ON DELETE CASCADE
 );
 ALTER TABLE public.group_member_prefs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "group prefs are your own" ON public.group_member_prefs AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
-CREATE POLICY "group prefs changed by the member" ON public.group_member_prefs AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND is_group_member(group_id)));
-CREATE POLICY "group prefs cleared by the member" ON public.group_member_prefs AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "group prefs written by the member" ON public.group_member_prefs AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND is_group_member(group_id)));
+CREATE POLICY "group prefs are your own" ON public.group_member_prefs AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "group prefs changed by the member" ON public.group_member_prefs AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND is_group_member(group_id)));
+CREATE POLICY "group prefs cleared by the member" ON public.group_member_prefs AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "group prefs written by the member" ON public.group_member_prefs AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND is_group_member(group_id)));
 
 CREATE TABLE public.group_members (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1077,19 +1077,19 @@ CREATE TABLE public.group_members (
   CONSTRAINT group_members_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.group_members ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "group_members accept own invite" ON public.group_members AS PERMISSIVE FOR UPDATE TO public USING (((auth.uid() = user_id) AND (status = 'invited'::text))) WITH CHECK (((auth.uid() = user_id) AND (status = 'active'::text) AND (role = 'member'::text) AND ((rules_agreed_at IS NOT NULL) OR (NOT group_has_rules(group_id)))));
+CREATE POLICY "group_members accept own invite" ON public.group_members AS PERMISSIVE FOR UPDATE TO public USING (((( SELECT auth.uid() AS uid) = user_id) AND (status = 'invited'::text))) WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (status = 'active'::text) AND (role = 'member'::text) AND ((rules_agreed_at IS NOT NULL) OR (NOT group_has_rules(group_id)))));
 CREATE POLICY "group_members approve request" ON public.group_members AS PERMISSIVE FOR UPDATE TO public USING ((is_group_manager(group_id) AND (status = 'pending'::text))) WITH CHECK ((is_group_manager(group_id) AND (status = 'active'::text) AND (role = 'member'::text)));
-CREATE POLICY "group_members invite" ON public.group_members AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() <> user_id) AND (status = 'invited'::text) AND (role = 'member'::text) AND (invited_by = auth.uid()) AND (is_group_manager(group_id) OR (is_group_member(group_id) AND (group_invite_policy(group_id) = 'members'::text))) AND (NOT group_user_banned(group_id, user_id)) AND (NOT profile_owner_blocked_me(user_id))));
-CREATE POLICY "group_members join self" ON public.group_members AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND (role = 'member'::text) AND (NOT group_user_banned(group_id, auth.uid())) AND (((status = 'active'::text) AND (EXISTS ( SELECT 1
+CREATE POLICY "group_members invite" ON public.group_members AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) <> user_id) AND (status = 'invited'::text) AND (role = 'member'::text) AND (invited_by = ( SELECT auth.uid() AS uid)) AND (is_group_manager(group_id) OR (is_group_member(group_id) AND (group_invite_policy(group_id) = 'members'::text))) AND (NOT group_user_banned(group_id, user_id)) AND (NOT profile_owner_blocked_me(user_id))));
+CREATE POLICY "group_members join self" ON public.group_members AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (role = 'member'::text) AND (NOT group_user_banned(group_id, ( SELECT auth.uid() AS uid))) AND (((status = 'active'::text) AND (EXISTS ( SELECT 1
    FROM groups g
   WHERE ((g.id = group_members.group_id) AND (g.visibility = 'public'::text) AND (g.policy = 'open'::text) AND (jsonb_array_length(g.rules) = 0))))) OR ((status = 'pending'::text) AND (EXISTS ( SELECT 1
    FROM groups g
   WHERE ((g.id = group_members.group_id) AND (g.visibility = 'public'::text) AND (g.policy = ANY (ARRAY['approval'::text, 'trust'::text])) AND (jsonb_array_length(g.join_questions) = 0) AND (jsonb_array_length(g.rules) = 0))))))));
-CREATE POLICY "group_members leave or be removed" ON public.group_members AS PERMISSIVE FOR DELETE TO public USING ((((auth.uid() = user_id) AND (role <> 'owner'::text)) OR (is_group_owner(group_id) AND (role <> 'owner'::text)) OR (is_group_manager(group_id) AND (role = 'member'::text)) OR ((status = 'invited'::text) AND (auth.uid() = invited_by))));
+CREATE POLICY "group_members leave or be removed" ON public.group_members AS PERMISSIVE FOR DELETE TO public USING ((((( SELECT auth.uid() AS uid) = user_id) AND (role <> 'owner'::text)) OR (is_group_owner(group_id) AND (role <> 'owner'::text)) OR (is_group_manager(group_id) AND (role = 'member'::text)) OR ((status = 'invited'::text) AND (( SELECT auth.uid() AS uid) = invited_by))));
 CREATE POLICY "group_members promote by owner" ON public.group_members AS PERMISSIVE FOR UPDATE TO public USING ((is_group_owner(group_id) AND (role <> 'owner'::text) AND (status = 'active'::text))) WITH CHECK ((is_group_owner(group_id) AND (role = ANY (ARRAY['member'::text, 'moderator'::text])) AND (status = 'active'::text)));
-CREATE POLICY "group_members read own" ON public.group_members AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = user_id) OR (auth.uid() = invited_by)));
+CREATE POLICY "group_members read own" ON public.group_members AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) = user_id) OR (( SELECT auth.uid() AS uid) = invited_by)));
 CREATE POLICY "group_members read visible" ON public.group_members AS PERMISSIVE FOR SELECT TO public USING ((((status = 'active'::text) AND is_group_member(group_id)) OR is_group_manager(group_id)));
-CREATE POLICY "restricted accounts cannot post" ON public.group_members AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
+CREATE POLICY "restricted accounts cannot post" ON public.group_members AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.group_post_reactions (
   post_id uuid NOT NULL,
@@ -1101,12 +1101,12 @@ CREATE TABLE public.group_post_reactions (
   CONSTRAINT group_post_reactions_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.group_post_reactions ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "post reactions changed by their owner" ON public.group_post_reactions AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
-CREATE POLICY "post reactions cleared by their owner" ON public.group_post_reactions AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
+CREATE POLICY "post reactions changed by their owner" ON public.group_post_reactions AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "post reactions cleared by their owner" ON public.group_post_reactions AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
 CREATE POLICY "post reactions read by members" ON public.group_post_reactions AS PERMISSIVE FOR SELECT TO public USING ((EXISTS ( SELECT 1
    FROM group_posts p
   WHERE ((p.id = group_post_reactions.post_id) AND is_group_member(p.group_id)))));
-CREATE POLICY "post reactions set by members as themselves" ON public.group_post_reactions AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND (EXISTS ( SELECT 1
+CREATE POLICY "post reactions set by members as themselves" ON public.group_post_reactions AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (EXISTS ( SELECT 1
    FROM group_posts p
   WHERE ((p.id = group_post_reactions.post_id) AND is_group_member(p.group_id))))));
 
@@ -1119,11 +1119,11 @@ CREATE TABLE public.group_post_saves (
   CONSTRAINT group_post_saves_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.group_post_saves ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "save a post you can read" ON public.group_post_saves AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND (EXISTS ( SELECT 1
+CREATE POLICY "save a post you can read" ON public.group_post_saves AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (EXISTS ( SELECT 1
    FROM group_posts p
   WHERE (p.id = group_post_saves.post_id)))));
-CREATE POLICY "saved posts are your own" ON public.group_post_saves AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
-CREATE POLICY "unsave your own" ON public.group_post_saves AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
+CREATE POLICY "saved posts are your own" ON public.group_post_saves AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "unsave your own" ON public.group_post_saves AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.group_posts (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1148,12 +1148,12 @@ CREATE TABLE public.group_posts (
   CONSTRAINT group_posts_group_id_fkey FOREIGN KEY (group_id) REFERENCES groups(id) ON DELETE CASCADE
 );
 ALTER TABLE public.group_posts ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "group posts deleted by author or a manager" ON public.group_posts AS PERMISSIVE FOR DELETE TO public USING (((auth.uid() = author) OR is_group_manager(group_id)));
-CREATE POLICY "group posts edited by author or pinned by a manager" ON public.group_posts AS PERMISSIVE FOR UPDATE TO public USING (((auth.uid() = author) OR is_group_manager(group_id))) WITH CHECK (((auth.uid() = author) OR is_group_manager(group_id)));
+CREATE POLICY "group posts deleted by author or a manager" ON public.group_posts AS PERMISSIVE FOR DELETE TO public USING (((( SELECT auth.uid() AS uid) = author) OR is_group_manager(group_id)));
+CREATE POLICY "group posts edited by author or pinned by a manager" ON public.group_posts AS PERMISSIVE FOR UPDATE TO public USING (((( SELECT auth.uid() AS uid) = author) OR is_group_manager(group_id))) WITH CHECK (((( SELECT auth.uid() AS uid) = author) OR is_group_manager(group_id)));
 CREATE POLICY "group posts read by members" ON public.group_posts AS PERMISSIVE FOR SELECT TO public USING (is_group_member(group_id));
-CREATE POLICY "group posts written by members as themselves" ON public.group_posts AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = author) AND is_group_member(group_id)));
-CREATE POLICY "moderation hides taken-down content" ON public.group_posts AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (author = auth.uid()) OR is_admin(auth.uid())));
-CREATE POLICY "restricted accounts cannot post" ON public.group_posts AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
+CREATE POLICY "group posts written by members as themselves" ON public.group_posts AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = author) AND is_group_member(group_id)));
+CREATE POLICY "moderation hides taken-down content" ON public.group_posts AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (author = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
+CREATE POLICY "restricted accounts cannot post" ON public.group_posts AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.group_reports (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1181,8 +1181,8 @@ CREATE TABLE public.group_reports (
   CONSTRAINT group_reports_resolved_by_fkey FOREIGN KEY (resolved_by) REFERENCES auth.users(id) ON DELETE SET NULL
 );
 ALTER TABLE public.group_reports ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "a member reports as themselves" ON public.group_reports AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = reporter) AND (status = 'open'::text) AND is_group_member(group_id)));
-CREATE POLICY "reports are read by their reporter and the group's managers" ON public.group_reports AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = reporter) OR is_group_manager(group_id)));
+CREATE POLICY "a member reports as themselves" ON public.group_reports AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = reporter) AND (status = 'open'::text) AND is_group_member(group_id)));
+CREATE POLICY "reports are read by their reporter and the group's managers" ON public.group_reports AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) = reporter) OR is_group_manager(group_id)));
 CREATE POLICY "the group's managers close a report" ON public.group_reports AS PERMISSIVE FOR UPDATE TO public USING (is_group_manager(group_id)) WITH CHECK (is_group_manager(group_id));
 
 CREATE TABLE public.groups (
@@ -1214,11 +1214,11 @@ CREATE TABLE public.groups (
 );
 ALTER TABLE public.groups ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "groups delete by owner" ON public.groups AS PERMISSIVE FOR DELETE TO public USING (is_group_owner(id));
-CREATE POLICY "groups insert own" ON public.groups AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = created_by));
+CREATE POLICY "groups insert own" ON public.groups AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = created_by));
 CREATE POLICY "groups read public or member" ON public.groups AS PERMISSIVE FOR SELECT TO public USING (((visibility = 'public'::text) OR is_group_member(id) OR is_group_invited(id)));
 CREATE POLICY "groups update by manager" ON public.groups AS PERMISSIVE FOR UPDATE TO public USING (is_group_manager(id)) WITH CHECK (is_group_manager(id));
-CREATE POLICY "moderation hides taken-down content" ON public.groups AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (created_by = auth.uid()) OR is_admin(auth.uid())));
-CREATE POLICY "restricted accounts cannot post" ON public.groups AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
+CREATE POLICY "moderation hides taken-down content" ON public.groups AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (created_by = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
+CREATE POLICY "restricted accounts cannot post" ON public.groups AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.guide_credentials (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1246,12 +1246,12 @@ CREATE TABLE public.guide_credentials (
   CONSTRAINT guide_credentials_reviewed_by_fkey FOREIGN KEY (reviewed_by) REFERENCES profiles(id) ON DELETE SET NULL
 );
 ALTER TABLE public.guide_credentials ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "guide_credentials admin update" ON public.guide_credentials AS PERMISSIVE FOR UPDATE TO public USING (is_admin(auth.uid())) WITH CHECK (is_admin(auth.uid()));
-CREATE POLICY "guide_credentials read own or admin" ON public.guide_credentials AS PERMISSIVE FOR SELECT TO public USING (((guide_id = auth.uid()) OR is_admin(auth.uid()) OR (EXISTS ( SELECT 1
+CREATE POLICY "guide_credentials admin update" ON public.guide_credentials AS PERMISSIVE FOR UPDATE TO public USING (is_admin(( SELECT auth.uid() AS uid))) WITH CHECK (is_admin(( SELECT auth.uid() AS uid)));
+CREATE POLICY "guide_credentials read own or admin" ON public.guide_credentials AS PERMISSIVE FOR SELECT TO public USING (((guide_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid)) OR (EXISTS ( SELECT 1
    FROM guide_profiles gp
   WHERE ((gp.id = guide_credentials.guide_id) AND (gp.status = 'active'::text))))));
-CREATE POLICY "guide_credentials self insert pending" ON public.guide_credentials AS PERMISSIVE FOR INSERT TO public WITH CHECK (((guide_id = auth.uid()) AND (status = 'pending'::text) AND (verified_at IS NULL) AND (verified_expires_at IS NULL) AND (reviewed_by IS NULL)));
-CREATE POLICY "guide_credentials self resubmit" ON public.guide_credentials AS PERMISSIVE FOR UPDATE TO public USING (((guide_id = auth.uid()) AND (status = ANY (ARRAY['rejected'::text, 'lapsed'::text])))) WITH CHECK (((guide_id = auth.uid()) AND (status = 'pending'::text) AND (verified_at IS NULL) AND (verified_expires_at IS NULL)));
+CREATE POLICY "guide_credentials self insert pending" ON public.guide_credentials AS PERMISSIVE FOR INSERT TO public WITH CHECK (((guide_id = ( SELECT auth.uid() AS uid)) AND (status = 'pending'::text) AND (verified_at IS NULL) AND (verified_expires_at IS NULL) AND (reviewed_by IS NULL)));
+CREATE POLICY "guide_credentials self resubmit" ON public.guide_credentials AS PERMISSIVE FOR UPDATE TO public USING (((guide_id = ( SELECT auth.uid() AS uid)) AND (status = ANY (ARRAY['rejected'::text, 'lapsed'::text])))) WITH CHECK (((guide_id = ( SELECT auth.uid() AS uid)) AND (status = 'pending'::text) AND (verified_at IS NULL) AND (verified_expires_at IS NULL)));
 
 CREATE TABLE public.guide_documents (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1267,9 +1267,9 @@ CREATE TABLE public.guide_documents (
   CONSTRAINT guide_documents_guide_id_fkey FOREIGN KEY (guide_id) REFERENCES guide_profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.guide_documents ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "guide_documents admin update" ON public.guide_documents AS PERMISSIVE FOR UPDATE TO public USING (is_admin(auth.uid())) WITH CHECK (is_admin(auth.uid()));
-CREATE POLICY "guide_documents read own or admin" ON public.guide_documents AS PERMISSIVE FOR SELECT TO public USING (((guide_id = auth.uid()) OR is_admin(auth.uid())));
-CREATE POLICY "guide_documents self insert" ON public.guide_documents AS PERMISSIVE FOR INSERT TO public WITH CHECK ((guide_id = auth.uid()));
+CREATE POLICY "guide_documents admin update" ON public.guide_documents AS PERMISSIVE FOR UPDATE TO public USING (is_admin(( SELECT auth.uid() AS uid))) WITH CHECK (is_admin(( SELECT auth.uid() AS uid)));
+CREATE POLICY "guide_documents read own or admin" ON public.guide_documents AS PERMISSIVE FOR SELECT TO public USING (((guide_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
+CREATE POLICY "guide_documents self insert" ON public.guide_documents AS PERMISSIVE FOR INSERT TO public WITH CHECK ((guide_id = ( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.guide_profiles (
   id uuid NOT NULL,
@@ -1309,9 +1309,9 @@ CREATE TABLE public.guide_profiles (
   CONSTRAINT guide_profiles_id_fkey FOREIGN KEY (id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.guide_profiles ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "guide_profiles public read active" ON public.guide_profiles AS PERMISSIVE FOR SELECT TO public USING (((status = 'active'::text) OR (id = auth.uid()) OR is_admin(auth.uid())));
-CREATE POLICY "guide_profiles self insert unlisted" ON public.guide_profiles AS PERMISSIVE FOR INSERT TO public WITH CHECK (((id = auth.uid()) AND (status = ANY (ARRAY['draft'::text, 'submitted'::text]))));
-CREATE POLICY "guide_profiles self or admin update" ON public.guide_profiles AS PERMISSIVE FOR UPDATE TO public USING (((id = auth.uid()) OR is_admin(auth.uid()))) WITH CHECK (((id = auth.uid()) OR is_admin(auth.uid())));
+CREATE POLICY "guide_profiles public read active" ON public.guide_profiles AS PERMISSIVE FOR SELECT TO public USING (((status = 'active'::text) OR (id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
+CREATE POLICY "guide_profiles self insert unlisted" ON public.guide_profiles AS PERMISSIVE FOR INSERT TO public WITH CHECK (((id = ( SELECT auth.uid() AS uid)) AND (status = ANY (ARRAY['draft'::text, 'submitted'::text]))));
+CREATE POLICY "guide_profiles self or admin update" ON public.guide_profiles AS PERMISSIVE FOR UPDATE TO public USING (((id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid)))) WITH CHECK (((id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 
 CREATE TABLE public.hazard_votes (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1326,10 +1326,10 @@ CREATE TABLE public.hazard_votes (
   CONSTRAINT hazard_votes_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.hazard_votes ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "hazard votes delete own" ON public.hazard_votes AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "hazard votes insert own" ON public.hazard_votes AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND (vote = ANY (ARRAY['still'::text, 'gone'::text]))));
+CREATE POLICY "hazard votes delete own" ON public.hazard_votes AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "hazard votes insert own" ON public.hazard_votes AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (vote = ANY (ARRAY['still'::text, 'gone'::text]))));
 CREATE POLICY "hazard votes public read" ON public.hazard_votes AS PERMISSIVE FOR SELECT TO public USING (true);
-CREATE POLICY "hazard votes update own" ON public.hazard_votes AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND (vote = ANY (ARRAY['still'::text, 'gone'::text]))));
+CREATE POLICY "hazard votes update own" ON public.hazard_votes AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (vote = ANY (ARRAY['still'::text, 'gone'::text]))));
 
 CREATE TABLE public.inquiries (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1350,9 +1350,9 @@ CREATE TABLE public.inquiries (
   CONSTRAINT inquiries_guide_id_fkey FOREIGN KEY (guide_id) REFERENCES guide_profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.inquiries ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "inquiries climber insert new" ON public.inquiries AS PERMISSIVE FOR INSERT TO public WITH CHECK (((climber_id = auth.uid()) AND (status = 'new'::text) AND (guide_responded_at IS NULL)));
-CREATE POLICY "inquiries guide update status" ON public.inquiries AS PERMISSIVE FOR UPDATE TO public USING ((guide_id = auth.uid())) WITH CHECK ((guide_id = auth.uid()));
-CREATE POLICY "inquiries read own side or admin" ON public.inquiries AS PERMISSIVE FOR SELECT TO public USING (((climber_id = auth.uid()) OR (guide_id = auth.uid()) OR is_admin(auth.uid())));
+CREATE POLICY "inquiries climber insert new" ON public.inquiries AS PERMISSIVE FOR INSERT TO public WITH CHECK (((climber_id = ( SELECT auth.uid() AS uid)) AND (status = 'new'::text) AND (guide_responded_at IS NULL)));
+CREATE POLICY "inquiries guide update status" ON public.inquiries AS PERMISSIVE FOR UPDATE TO public USING ((guide_id = ( SELECT auth.uid() AS uid))) WITH CHECK ((guide_id = ( SELECT auth.uid() AS uid)));
+CREATE POLICY "inquiries read own side or admin" ON public.inquiries AS PERMISSIVE FOR SELECT TO public USING (((climber_id = ( SELECT auth.uid() AS uid)) OR (guide_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 
 CREATE TABLE public.kudos (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1370,11 +1370,11 @@ CREATE TABLE public.kudos (
   CONSTRAINT kudos_receiver_fkey FOREIGN KEY (receiver) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.kudos ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "kudos give as yourself" ON public.kudos AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = giver) AND (NOT profile_owner_blocked_me(receiver)) AND (EXISTS ( SELECT 1
+CREATE POLICY "kudos give as yourself" ON public.kudos AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = giver) AND (NOT profile_owner_blocked_me(receiver)) AND (EXISTS ( SELECT 1
    FROM climb_logs l
   WHERE ((l.id = kudos.climb_log_id) AND (l.user_id = kudos.receiver))))));
-CREATE POLICY "kudos read by giver or receiver" ON public.kudos AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = giver) OR (auth.uid() = receiver)));
-CREATE POLICY "kudos take back your own" ON public.kudos AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = giver));
+CREATE POLICY "kudos read by giver or receiver" ON public.kudos AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) = giver) OR (( SELECT auth.uid() AS uid) = receiver)));
+CREATE POLICY "kudos take back your own" ON public.kudos AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = giver));
 
 CREATE TABLE public.messages (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1391,12 +1391,12 @@ CREATE TABLE public.messages (
   CONSTRAINT messages_sender_id_fkey FOREIGN KEY (sender_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.messages ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "moderation hides taken-down content" ON public.messages AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (sender_id = auth.uid()) OR is_admin(auth.uid())));
-CREATE POLICY "restricted accounts cannot post" ON public.messages AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
-CREATE POLICY "users can delete their own messages" ON public.messages AS PERMISSIVE FOR DELETE TO public USING (((auth.uid() = sender_id) OR (auth.uid() = recipient_id)));
-CREATE POLICY "users can mark own received messages as read" ON public.messages AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = recipient_id));
-CREATE POLICY "users can read own messages" ON public.messages AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = sender_id) OR (auth.uid() = recipient_id)));
-CREATE POLICY "users can send messages" ON public.messages AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = sender_id));
+CREATE POLICY "moderation hides taken-down content" ON public.messages AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (sender_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
+CREATE POLICY "restricted accounts cannot post" ON public.messages AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
+CREATE POLICY "users can delete their own messages" ON public.messages AS PERMISSIVE FOR DELETE TO public USING (((( SELECT auth.uid() AS uid) = sender_id) OR (( SELECT auth.uid() AS uid) = recipient_id)));
+CREATE POLICY "users can mark own received messages as read" ON public.messages AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = recipient_id));
+CREATE POLICY "users can read own messages" ON public.messages AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) = sender_id) OR (( SELECT auth.uid() AS uid) = recipient_id)));
+CREATE POLICY "users can send messages" ON public.messages AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = sender_id));
 
 CREATE TABLE public.moderation_actions (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1414,7 +1414,7 @@ CREATE TABLE public.moderation_actions (
   CONSTRAINT moderation_actions_report_id_fkey FOREIGN KEY (report_id) REFERENCES user_reports(id) ON DELETE SET NULL
 );
 ALTER TABLE public.moderation_actions ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "admins read moderation actions" ON public.moderation_actions AS PERMISSIVE FOR SELECT TO public USING (is_admin(auth.uid()));
+CREATE POLICY "admins read moderation actions" ON public.moderation_actions AS PERMISSIVE FOR SELECT TO public USING (is_admin(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.moderation_appeals (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1434,7 +1434,7 @@ CREATE TABLE public.moderation_appeals (
   CONSTRAINT moderation_appeals_decided_by_fkey FOREIGN KEY (decided_by) REFERENCES auth.users(id) ON DELETE SET NULL
 );
 ALTER TABLE public.moderation_appeals ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "appeals read own or admin" ON public.moderation_appeals AS PERMISSIVE FOR SELECT TO public USING (((appellant = auth.uid()) OR is_admin(auth.uid())));
+CREATE POLICY "appeals read own or admin" ON public.moderation_appeals AS PERMISSIVE FOR SELECT TO public USING (((appellant = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 
 CREATE TABLE public.notification_state (
   user_id uuid NOT NULL,
@@ -1447,10 +1447,10 @@ CREATE TABLE public.notification_state (
   CONSTRAINT notification_state_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.notification_state ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "delete own notification state" ON public.notification_state AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "insert own notification state" ON public.notification_state AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = user_id));
-CREATE POLICY "read own notification state" ON public.notification_state AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
-CREATE POLICY "update own notification state" ON public.notification_state AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
+CREATE POLICY "delete own notification state" ON public.notification_state AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "insert own notification state" ON public.notification_state AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "read own notification state" ON public.notification_state AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "update own notification state" ON public.notification_state AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.objectives (
   user_id uuid NOT NULL,
@@ -1461,7 +1461,7 @@ CREATE TABLE public.objectives (
 );
 ALTER TABLE public.objectives ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "objectives public read" ON public.objectives AS PERMISSIVE FOR SELECT TO public USING (true);
-CREATE POLICY "users manage own objectives" ON public.objectives AS PERMISSIVE FOR ALL TO public USING ((auth.uid() = user_id));
+CREATE POLICY "users manage own objectives" ON public.objectives AS PERMISSIVE FOR ALL TO public USING ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.partner_areas (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1482,10 +1482,10 @@ CREATE TABLE public.partner_areas (
   CONSTRAINT partner_areas_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.partner_areas ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "owner lists own partner areas" ON public.partner_areas AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = user_id));
-CREATE POLICY "owner reads own partner areas" ON public.partner_areas AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
-CREATE POLICY "owner removes own partner areas" ON public.partner_areas AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "owner updates own partner areas" ON public.partner_areas AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
+CREATE POLICY "owner lists own partner areas" ON public.partner_areas AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "owner reads own partner areas" ON public.partner_areas AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "owner removes own partner areas" ON public.partner_areas AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "owner updates own partner areas" ON public.partner_areas AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.profile_condition_prefs (
   user_id uuid NOT NULL,
@@ -1496,10 +1496,10 @@ CREATE TABLE public.profile_condition_prefs (
   CONSTRAINT profile_condition_prefs_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.profile_condition_prefs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "delete own condition prefs" ON public.profile_condition_prefs AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "insert own condition prefs" ON public.profile_condition_prefs AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = user_id));
-CREATE POLICY "read own condition prefs" ON public.profile_condition_prefs AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
-CREATE POLICY "update own condition prefs" ON public.profile_condition_prefs AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
+CREATE POLICY "delete own condition prefs" ON public.profile_condition_prefs AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "insert own condition prefs" ON public.profile_condition_prefs AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "read own condition prefs" ON public.profile_condition_prefs AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "update own condition prefs" ON public.profile_condition_prefs AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.profile_emergency_contacts (
   user_id uuid NOT NULL,
@@ -1512,10 +1512,10 @@ CREATE TABLE public.profile_emergency_contacts (
   CONSTRAINT profile_emergency_contacts_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.profile_emergency_contacts ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "delete own emergency contact" ON public.profile_emergency_contacts AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "insert own emergency contact" ON public.profile_emergency_contacts AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = user_id));
-CREATE POLICY "read own emergency contact" ON public.profile_emergency_contacts AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
-CREATE POLICY "update own emergency contact" ON public.profile_emergency_contacts AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
+CREATE POLICY "delete own emergency contact" ON public.profile_emergency_contacts AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "insert own emergency contact" ON public.profile_emergency_contacts AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "read own emergency contact" ON public.profile_emergency_contacts AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "update own emergency contact" ON public.profile_emergency_contacts AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.profile_tracked_lists (
   user_id uuid NOT NULL,
@@ -1526,10 +1526,10 @@ CREATE TABLE public.profile_tracked_lists (
   CONSTRAINT profile_tracked_lists_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.profile_tracked_lists ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "delete own tracked lists" ON public.profile_tracked_lists AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "insert own tracked lists" ON public.profile_tracked_lists AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = user_id));
-CREATE POLICY "read own tracked lists" ON public.profile_tracked_lists AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
-CREATE POLICY "update own tracked lists" ON public.profile_tracked_lists AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
+CREATE POLICY "delete own tracked lists" ON public.profile_tracked_lists AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "insert own tracked lists" ON public.profile_tracked_lists AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "read own tracked lists" ON public.profile_tracked_lists AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "update own tracked lists" ON public.profile_tracked_lists AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.profile_zips (
   user_id uuid NOT NULL,
@@ -1540,10 +1540,10 @@ CREATE TABLE public.profile_zips (
   CONSTRAINT profile_zips_zip_fkey FOREIGN KEY (zip) REFERENCES zip_centroids(zip)
 );
 ALTER TABLE public.profile_zips ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "delete own zip" ON public.profile_zips AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "insert own zip" ON public.profile_zips AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = user_id));
-CREATE POLICY "read own zip" ON public.profile_zips AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
-CREATE POLICY "update own zip" ON public.profile_zips AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
+CREATE POLICY "delete own zip" ON public.profile_zips AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "insert own zip" ON public.profile_zips AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "read own zip" ON public.profile_zips AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "update own zip" ON public.profile_zips AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.profiles (
   id uuid NOT NULL,
@@ -1601,9 +1601,9 @@ CREATE TABLE public.profiles (
   CONSTRAINT profiles_primary_account_id_fkey FOREIGN KEY (primary_account_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "edit own profile" ON public.profiles AS PERMISSIVE FOR ALL TO public USING ((auth.uid() = id)) WITH CHECK ((auth.uid() = id));
-CREATE POLICY "profiles public read" ON public.profiles AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() IS NULL) OR (auth.uid() = id) OR (NOT profile_owner_blocked_me(id))));
-CREATE POLICY "restricted accounts cannot edit their profile" ON public.profiles AS RESTRICTIVE FOR UPDATE TO public USING (true) WITH CHECK ((is_active_user(auth.uid()) OR is_admin(auth.uid())));
+CREATE POLICY "edit own profile" ON public.profiles AS PERMISSIVE FOR ALL TO public USING ((( SELECT auth.uid() AS uid) = id)) WITH CHECK ((( SELECT auth.uid() AS uid) = id));
+CREATE POLICY "profiles public read" ON public.profiles AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) IS NULL) OR (( SELECT auth.uid() AS uid) = id) OR (NOT profile_owner_blocked_me(id))));
+CREATE POLICY "restricted accounts cannot edit their profile" ON public.profiles AS RESTRICTIVE FOR UPDATE TO public USING (true) WITH CHECK ((is_active_user(( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 
 CREATE TABLE public.restricted_users (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1616,9 +1616,9 @@ CREATE TABLE public.restricted_users (
   CONSTRAINT restricted_users_restrictor_fkey FOREIGN KEY (restrictor) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.restricted_users ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "restricted delete own" ON public.restricted_users AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = restrictor));
-CREATE POLICY "restricted insert own" ON public.restricted_users AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = restrictor));
-CREATE POLICY "restricted read own" ON public.restricted_users AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = restrictor));
+CREATE POLICY "restricted delete own" ON public.restricted_users AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = restrictor));
+CREATE POLICY "restricted insert own" ON public.restricted_users AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = restrictor));
+CREATE POLICY "restricted read own" ON public.restricted_users AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = restrictor));
 
 CREATE TABLE public.reviews (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1638,10 +1638,10 @@ CREATE TABLE public.reviews (
   CONSTRAINT reviews_inquiry_id_fkey FOREIGN KEY (inquiry_id) REFERENCES inquiries(id) ON DELETE CASCADE
 );
 ALTER TABLE public.reviews ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "reviews climber insert with real inquiry" ON public.reviews AS PERMISSIVE FOR INSERT TO public WITH CHECK (((climber_id = auth.uid()) AND (EXISTS ( SELECT 1
+CREATE POLICY "reviews climber insert with real inquiry" ON public.reviews AS PERMISSIVE FOR INSERT TO public WITH CHECK (((climber_id = ( SELECT auth.uid() AS uid)) AND (EXISTS ( SELECT 1
    FROM inquiries i
-  WHERE ((i.id = reviews.inquiry_id) AND (i.climber_id = auth.uid()) AND (i.guide_id = reviews.guide_id) AND (i.status <> 'withdrawn'::text))))));
-CREATE POLICY "reviews guide reply" ON public.reviews AS PERMISSIVE FOR UPDATE TO public USING ((guide_id = auth.uid())) WITH CHECK ((guide_id = auth.uid()));
+  WHERE ((i.id = reviews.inquiry_id) AND (i.climber_id = ( SELECT auth.uid() AS uid)) AND (i.guide_id = reviews.guide_id) AND (i.status <> 'withdrawn'::text))))));
+CREATE POLICY "reviews guide reply" ON public.reviews AS PERMISSIVE FOR UPDATE TO public USING ((guide_id = ( SELECT auth.uid() AS uid))) WITH CHECK ((guide_id = ( SELECT auth.uid() AS uid)));
 CREATE POLICY "reviews public read" ON public.reviews AS PERMISSIVE FOR SELECT TO public USING (true);
 
 CREATE TABLE public.route_base_checkins (
@@ -1665,8 +1665,8 @@ CREATE TABLE public.route_base_checkins (
   CONSTRAINT route_base_checkins_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.route_base_checkins ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "delete own base checkin" ON public.route_base_checkins AS PERMISSIVE FOR DELETE TO public USING ((user_id = auth.uid()));
-CREATE POLICY "read own base checkins" ON public.route_base_checkins AS PERMISSIVE FOR SELECT TO public USING ((user_id = auth.uid()));
+CREATE POLICY "delete own base checkin" ON public.route_base_checkins AS PERMISSIVE FOR DELETE TO public USING ((user_id = ( SELECT auth.uid() AS uid)));
+CREATE POLICY "read own base checkins" ON public.route_base_checkins AS PERMISSIVE FOR SELECT TO public USING ((user_id = ( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.route_base_pin_changes (
   id bigint NOT NULL GENERATED ALWAYS AS IDENTITY,
@@ -1699,10 +1699,10 @@ CREATE TABLE public.route_difficulty_ratings (
   CONSTRAINT route_difficulty_ratings_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.route_difficulty_ratings ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "difficulty ratings delete own" ON public.route_difficulty_ratings AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "difficulty ratings insert own" ON public.route_difficulty_ratings AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND ((rating >= 1) AND (rating <= 5)) AND (axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text, 'power'::text, 'endurance'::text, 'fingery'::text, 'mental'::text, 'protection'::text, 'sustained'::text, 'strenuous'::text, 'height'::text, 'landing'::text]))));
+CREATE POLICY "difficulty ratings delete own" ON public.route_difficulty_ratings AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "difficulty ratings insert own" ON public.route_difficulty_ratings AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND ((rating >= 1) AND (rating <= 5)) AND (axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text, 'power'::text, 'endurance'::text, 'fingery'::text, 'mental'::text, 'protection'::text, 'sustained'::text, 'strenuous'::text, 'height'::text, 'landing'::text]))));
 CREATE POLICY "difficulty ratings public read" ON public.route_difficulty_ratings AS PERMISSIVE FOR SELECT TO public USING (true);
-CREATE POLICY "difficulty ratings update own" ON public.route_difficulty_ratings AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND ((rating >= 1) AND (rating <= 5)) AND (axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text, 'power'::text, 'endurance'::text, 'fingery'::text, 'mental'::text, 'protection'::text, 'sustained'::text, 'strenuous'::text, 'height'::text, 'landing'::text]))));
+CREATE POLICY "difficulty ratings update own" ON public.route_difficulty_ratings AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND ((rating >= 1) AND (rating <= 5)) AND (axis = ANY (ARRAY['physical'::text, 'technical'::text, 'exposure'::text, 'commitment'::text, 'routefinding'::text, 'power'::text, 'endurance'::text, 'fingery'::text, 'mental'::text, 'protection'::text, 'sustained'::text, 'strenuous'::text, 'height'::text, 'landing'::text]))));
 
 CREATE TABLE public.route_field_confidence (
   route_id text NOT NULL,
@@ -1740,7 +1740,31 @@ CREATE TABLE public.route_flags (
   CONSTRAINT route_flags_route_id_fkey FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
 );
 ALTER TABLE public.route_flags ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "flags read own or admin" ON public.route_flags AS PERMISSIVE FOR SELECT TO public USING (((reporter = auth.uid()) OR is_admin(auth.uid())));
+CREATE POLICY "flags read own or admin" ON public.route_flags AS PERMISSIVE FOR SELECT TO public USING (((reporter = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
+
+CREATE TABLE public.route_link_ups (
+  id text NOT NULL,
+  name text NOT NULL,
+  state text NOT NULL,
+  region text,
+  route_ids text[] NOT NULL DEFAULT '{}'::text[],
+  legs jsonb NOT NULL,
+  duration text,
+  how text NOT NULL,
+  descent text,
+  logistics text,
+  checked_at date NOT NULL DEFAULT CURRENT_DATE,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT route_link_ups_pkey PRIMARY KEY (id),
+  CONSTRAINT route_link_ups_descent_check CHECK (((descent IS NULL) OR (char_length(descent) <= 900))),
+  CONSTRAINT route_link_ups_duration_check CHECK (((duration IS NULL) OR (char_length(duration) <= 40))),
+  CONSTRAINT route_link_ups_how_check CHECK (((char_length(how) >= 20) AND (char_length(how) <= 900))),
+  CONSTRAINT route_link_ups_legs_check CHECK (((jsonb_typeof(legs) = 'array'::text) AND (jsonb_array_length(legs) >= 2))),
+  CONSTRAINT route_link_ups_logistics_check CHECK (((logistics IS NULL) OR (char_length(logistics) <= 900))),
+  CONSTRAINT route_link_ups_name_check CHECK (((char_length(name) >= 3) AND (char_length(name) <= 120)))
+);
+ALTER TABLE public.route_link_ups ENABLE ROW LEVEL SECURITY;
+CREATE POLICY route_link_ups_read ON public.route_link_ups AS PERMISSIVE FOR SELECT TO anon, authenticated USING (true);
 
 CREATE TABLE public.route_ratings (
   route_id text NOT NULL,
@@ -1754,10 +1778,10 @@ CREATE TABLE public.route_ratings (
   CONSTRAINT route_ratings_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.route_ratings ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "route ratings delete own" ON public.route_ratings AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "route ratings insert own" ON public.route_ratings AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND ((stars >= 1) AND (stars <= 5))));
-CREATE POLICY "route ratings read own" ON public.route_ratings AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
-CREATE POLICY "route ratings update own" ON public.route_ratings AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND ((stars >= 1) AND (stars <= 5))));
+CREATE POLICY "route ratings delete own" ON public.route_ratings AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "route ratings insert own" ON public.route_ratings AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND ((stars >= 1) AND (stars <= 5))));
+CREATE POLICY "route ratings read own" ON public.route_ratings AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "route ratings update own" ON public.route_ratings AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND ((stars >= 1) AND (stars <= 5))));
 
 CREATE TABLE public.route_views (
   route_id text NOT NULL,
@@ -1910,9 +1934,9 @@ CREATE TABLE public.saved_areas (
   CONSTRAINT saved_areas_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.saved_areas ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "saved_areas delete own" ON public.saved_areas AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "saved_areas insert own" ON public.saved_areas AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = user_id));
-CREATE POLICY "saved_areas read own" ON public.saved_areas AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
+CREATE POLICY "saved_areas delete own" ON public.saved_areas AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "saved_areas insert own" ON public.saved_areas AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "saved_areas read own" ON public.saved_areas AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.saved_searches (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1925,10 +1949,10 @@ CREATE TABLE public.saved_searches (
   CONSTRAINT saved_searches_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.saved_searches ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "saved_searches delete own" ON public.saved_searches AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "saved_searches insert own" ON public.saved_searches AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = user_id));
-CREATE POLICY "saved_searches read own" ON public.saved_searches AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
-CREATE POLICY "saved_searches update own" ON public.saved_searches AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
+CREATE POLICY "saved_searches delete own" ON public.saved_searches AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "saved_searches insert own" ON public.saved_searches AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "saved_searches read own" ON public.saved_searches AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "saved_searches update own" ON public.saved_searches AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.screening_terms (
   term text NOT NULL,
@@ -1938,7 +1962,7 @@ CREATE TABLE public.screening_terms (
   CONSTRAINT screening_terms_term_check CHECK (((term = lower(term)) AND ((length(term) >= 2) AND (length(term) <= 60))))
 );
 ALTER TABLE public.screening_terms ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "admins manage screening terms" ON public.screening_terms AS PERMISSIVE FOR ALL TO public USING (is_admin(auth.uid())) WITH CHECK (is_admin(auth.uid()));
+CREATE POLICY "admins manage screening terms" ON public.screening_terms AS PERMISSIVE FOR ALL TO public USING (is_admin(( SELECT auth.uid() AS uid))) WITH CHECK (is_admin(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.topo_lines (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1957,9 +1981,9 @@ CREATE TABLE public.topo_lines (
   CONSTRAINT topo_lines_topo_id_fkey FOREIGN KEY (topo_id) REFERENCES topos(id) ON DELETE CASCADE
 );
 ALTER TABLE public.topo_lines ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "topo_lines authed insert" ON public.topo_lines AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() IS NOT NULL) AND (auth.uid() = created_by)));
-CREATE POLICY "topo_lines own delete" ON public.topo_lines AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = created_by));
-CREATE POLICY "topo_lines own update" ON public.topo_lines AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = created_by)) WITH CHECK ((auth.uid() = created_by));
+CREATE POLICY "topo_lines authed insert" ON public.topo_lines AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) IS NOT NULL) AND (( SELECT auth.uid() AS uid) = created_by)));
+CREATE POLICY "topo_lines own delete" ON public.topo_lines AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = created_by));
+CREATE POLICY "topo_lines own update" ON public.topo_lines AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = created_by)) WITH CHECK ((( SELECT auth.uid() AS uid) = created_by));
 CREATE POLICY "topo_lines public read" ON public.topo_lines AS PERMISSIVE FOR SELECT TO public USING (true);
 
 CREATE TABLE public.topos (
@@ -1982,11 +2006,11 @@ CREATE TABLE public.topos (
   CONSTRAINT topos_route_id_fkey FOREIGN KEY (route_id) REFERENCES routes(id) ON UPDATE CASCADE ON DELETE SET NULL
 );
 ALTER TABLE public.topos ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "moderation hides taken-down content" ON public.topos AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (created_by = auth.uid()) OR is_admin(auth.uid())));
-CREATE POLICY "restricted accounts cannot post" ON public.topos AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
-CREATE POLICY "topos authed insert" ON public.topos AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() IS NOT NULL) AND (auth.uid() = created_by) AND (route_id IS NOT NULL)));
-CREATE POLICY "topos own delete" ON public.topos AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = created_by));
-CREATE POLICY "topos own update" ON public.topos AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = created_by)) WITH CHECK ((auth.uid() = created_by));
+CREATE POLICY "moderation hides taken-down content" ON public.topos AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (created_by = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
+CREATE POLICY "restricted accounts cannot post" ON public.topos AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
+CREATE POLICY "topos authed insert" ON public.topos AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) IS NOT NULL) AND (( SELECT auth.uid() AS uid) = created_by) AND (route_id IS NOT NULL)));
+CREATE POLICY "topos own delete" ON public.topos AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = created_by));
+CREATE POLICY "topos own update" ON public.topos AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = created_by)) WITH CHECK ((( SELECT auth.uid() AS uid) = created_by));
 CREATE POLICY "topos public read" ON public.topos AS PERMISSIVE FOR SELECT TO public USING (true);
 
 CREATE TABLE public.user_itineraries (
@@ -1999,10 +2023,10 @@ CREATE TABLE public.user_itineraries (
   CONSTRAINT user_itineraries_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.user_itineraries ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "user_itineraries delete own" ON public.user_itineraries AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
-CREATE POLICY "user_itineraries insert own" ON public.user_itineraries AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = user_id));
-CREATE POLICY "user_itineraries read own" ON public.user_itineraries AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
-CREATE POLICY "user_itineraries update own" ON public.user_itineraries AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
+CREATE POLICY "user_itineraries delete own" ON public.user_itineraries AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "user_itineraries insert own" ON public.user_itineraries AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "user_itineraries read own" ON public.user_itineraries AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "user_itineraries update own" ON public.user_itineraries AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.user_lists (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -2021,11 +2045,11 @@ CREATE TABLE public.user_lists (
   CONSTRAINT user_lists_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.user_lists ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "moderation hides taken-down content" ON public.user_lists AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (user_id = auth.uid()) OR is_admin(auth.uid())));
-CREATE POLICY "restricted accounts cannot post" ON public.user_lists AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
-CREATE POLICY "user_lists insert own" ON public.user_lists AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = user_id));
-CREATE POLICY "user_lists read own or shared" ON public.user_lists AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = user_id) OR (shared = true)));
-CREATE POLICY "user_lists update own" ON public.user_lists AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
+CREATE POLICY "moderation hides taken-down content" ON public.user_lists AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (user_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
+CREATE POLICY "restricted accounts cannot post" ON public.user_lists AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
+CREATE POLICY "user_lists insert own" ON public.user_lists AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "user_lists read own or shared" ON public.user_lists AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) = user_id) OR (shared = true)));
+CREATE POLICY "user_lists update own" ON public.user_lists AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.user_notices (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -2043,9 +2067,9 @@ CREATE TABLE public.user_notices (
   CONSTRAINT user_notices_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.user_notices ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "notices delete own" ON public.user_notices AS PERMISSIVE FOR DELETE TO public USING ((user_id = auth.uid()));
-CREATE POLICY "notices mark own read" ON public.user_notices AS PERMISSIVE FOR UPDATE TO public USING ((user_id = auth.uid())) WITH CHECK ((user_id = auth.uid()));
-CREATE POLICY "notices read own" ON public.user_notices AS PERMISSIVE FOR SELECT TO public USING ((user_id = auth.uid()));
+CREATE POLICY "notices delete own" ON public.user_notices AS PERMISSIVE FOR DELETE TO public USING ((user_id = ( SELECT auth.uid() AS uid)));
+CREATE POLICY "notices mark own read" ON public.user_notices AS PERMISSIVE FOR UPDATE TO public USING ((user_id = ( SELECT auth.uid() AS uid))) WITH CHECK ((user_id = ( SELECT auth.uid() AS uid)));
+CREATE POLICY "notices read own" ON public.user_notices AS PERMISSIVE FOR SELECT TO public USING ((user_id = ( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.user_reports (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -2071,9 +2095,9 @@ CREATE TABLE public.user_reports (
   CONSTRAINT user_reports_reviewed_by_fkey FOREIGN KEY (reviewed_by) REFERENCES profiles(id) ON DELETE SET NULL
 );
 ALTER TABLE public.user_reports ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "anyone can file a report open" ON public.user_reports AS PERMISSIVE FOR INSERT TO public WITH CHECK (((status = 'open'::text) AND ((reporter IS NULL) OR (reporter = auth.uid())) AND (target_kind IS NULL) AND (target_id IS NULL) AND (snapshot IS NULL) AND (snapshot_media IS NULL)));
-CREATE POLICY "only an admin reviews a report" ON public.user_reports AS PERMISSIVE FOR UPDATE TO public USING (is_admin(auth.uid())) WITH CHECK (is_admin(auth.uid()));
-CREATE POLICY "your own reports, or an admin reads all" ON public.user_reports AS PERMISSIVE FOR SELECT TO public USING ((((reporter IS NOT NULL) AND (reporter = auth.uid())) OR is_admin(auth.uid())));
+CREATE POLICY "anyone can file a report open" ON public.user_reports AS PERMISSIVE FOR INSERT TO public WITH CHECK (((status = 'open'::text) AND ((reporter IS NULL) OR (reporter = ( SELECT auth.uid() AS uid))) AND (target_kind IS NULL) AND (target_id IS NULL) AND (snapshot IS NULL) AND (snapshot_media IS NULL)));
+CREATE POLICY "only an admin reviews a report" ON public.user_reports AS PERMISSIVE FOR UPDATE TO public USING (is_admin(( SELECT auth.uid() AS uid))) WITH CHECK (is_admin(( SELECT auth.uid() AS uid)));
+CREATE POLICY "your own reports, or an admin reads all" ON public.user_reports AS PERMISSIVE FOR SELECT TO public USING ((((reporter IS NOT NULL) AND (reporter = ( SELECT auth.uid() AS uid))) OR is_admin(( SELECT auth.uid() AS uid))));
 
 CREATE TABLE public.verification_records (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -2090,9 +2114,9 @@ CREATE TABLE public.verification_records (
   CONSTRAINT verification_records_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.verification_records ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "add own verification pending" ON public.verification_records AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND (status = 'pending'::text) AND (verified_at IS NULL)));
-CREATE POLICY "update own verification unverified" ON public.verification_records AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND (status <> 'verified'::text) AND (verified_at IS NULL)));
-CREATE POLICY "view own verification" ON public.verification_records AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
+CREATE POLICY "add own verification pending" ON public.verification_records AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (status = 'pending'::text) AND (verified_at IS NULL)));
+CREATE POLICY "update own verification unverified" ON public.verification_records AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (status <> 'verified'::text) AND (verified_at IS NULL)));
+CREATE POLICY "view own verification" ON public.verification_records AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.vouches (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -2107,9 +2131,9 @@ CREATE TABLE public.vouches (
   CONSTRAINT vouches_to_id_fkey FOREIGN KEY (to_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.vouches ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "delete own vouches" ON public.vouches AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = from_id));
-CREATE POLICY "edit own vouches" ON public.vouches AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = from_id)) WITH CHECK ((auth.uid() = from_id));
-CREATE POLICY "give vouches" ON public.vouches AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = from_id));
+CREATE POLICY "delete own vouches" ON public.vouches AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = from_id));
+CREATE POLICY "edit own vouches" ON public.vouches AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = from_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = from_id));
+CREATE POLICY "give vouches" ON public.vouches AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = from_id));
 CREATE POLICY "view vouches" ON public.vouches AS PERMISSIVE FOR SELECT TO public USING (true);
 
 CREATE TABLE public.zip_centroids (

@@ -1,0 +1,471 @@
+[
+ {
+  "id": "co_lu_shavano_tabeguache",
+  "name": "Mount Shavano and Tabeguache Peak",
+  "state": "Colorado",
+  "region": "Sawatch Range (Collegiate)",
+  "legs": [
+   {
+    "peak": "Mount Shavano",
+    "route": "Standard Route",
+    "connect": "",
+    "route_id": "co_mount_shavano_east_slopes"
+   },
+   {
+    "peak": "Tabeguache Peak",
+    "route": "Standard Route (shared with Shavano)",
+    "connect": "Drop from the Shavano summit down a rocky, windy ridge to the saddle (about an hour), then climb steeply over several false tops to Tabeguache.",
+    "route_id": "co_tabeguache_peak_via_mount_shavano"
+   }
+  ],
+  "duration": "1 long day",
+  "how": "Both peaks share one trail from the same trailhead, so the pairing is the normal way to climb either. Summit Shavano first, follow the ridge down to the saddle, and climb Tabeguache; the return climbs back toward Shavano before the trail drops off. Mostly class 2, with some easy scrambling reported on both summits. Expect roughly 11 to 12 miles and about 5,600 ft of gain for the pair, noticeably more than Shavano alone.",
+  "descent": "Retrace the ridge to the saddle and regain the Shavano side, then follow the Shavano trail down to the trailhead. There is no separate descent for Tabeguache, so the extra cost is the re-climb.",
+  "logistics": "A parking permit is needed at the trailhead and the peaks can be climbed year round, though winter brings avalanche terrain. Start before dawn: adding the second peak roughly doubles the time spent exposed above treeline.",
+  "sources": [
+   "https://www.cmc.org/education-adventure/trips/routes-places/shavano-tabeguache",
+   "https://www.14ers.com/php14ers/tripreport.php?trip=18918"
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "co_lu_massive_north_massive",
+  "name": "Mount Massive with North Massive and Massive Green",
+  "state": "Colorado",
+  "region": "Sawatch Range (Massive)",
+  "legs": [
+   {
+    "peak": "North Massive",
+    "route": "South ridge from the Halfmoon Lakes basin",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Massive",
+    "route": "Southwest Slopes (used as the descent)",
+    "connect": "Follow the crest south over the east tower (class 2 with some class 3 downclimbing), cross Massive Green, then walk the saddle to the true summit.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 long day",
+  "how": "From North Halfmoon Creek, climb through the Halfmoon Lakes basin to the south ridge of North Massive, with a few minor class 3 moves. Cross to the east summit, downclimb the east tower to the saddle, pass over Massive Green and finish at the main summit. A reported day of about 10.9 miles and 5,400 ft took roughly nine and a half hours. The longer ridge version from Windsor Lake adds an unranked 14,169 ft top and runs about 14.8 miles and 6,000 ft.",
+  "descent": "Drop from the summit to the top of the Southwest Slopes trail and follow it down to the trail junction and out. Early-season snow on this trail can be glissaded; microspikes help on the steep snow of the south ridge.",
+  "logistics": "The ridge between North Massive and the main summit takes at least two hours, so a late start or weather is a reason to turn around at North Massive. A car shuttle from Windsor Lake to the main trailhead makes the full traverse possible.",
+  "sources": [
+   "https://www.14ers.com/php14ers/tripreport.php?trip=20128",
+   "https://www.14ers.com/php14ers/tripreport.php?trip=17291",
+   "https://www.alanarnette.com/co14ers/massive.php"
+  ],
+  "confidence": "high",
+  "notes": "North Massive is about 14,340 ft and not officially ranked. Windsor Lake variant ends at the Mt. Massive trailhead; its only class 3 is the North Massive to Massive Green downclimb."
+ },
+ {
+  "id": "co_lu_kit_carson_challenger_columbia",
+  "name": "Kit Carson, Columbia Point and Challenger Point",
+  "state": "Colorado",
+  "region": "Sangre de Cristo Range",
+  "legs": [
+   {
+    "peak": "Kit Carson Peak",
+    "route": "North Ridge",
+    "connect": "",
+    "route_id": "co_kit_carson_peak_via_challenger"
+   },
+   {
+    "peak": "Columbia Point",
+    "route": "Ridge from the Kit Carson saddle",
+    "connect": "Descend to the Kit Carson-Columbia saddle; Columbia has a short gully, a class 4 downclimb and a jump-down move. Return to the saddle.",
+    "route_id": null
+   },
+   {
+    "peak": "Challenger Point",
+    "route": "Kit Carson Avenue",
+    "connect": "Reach the Avenue by downclimbing from Kit Carson, then follow it across and up to Challenger.",
+    "route_id": "co_challenger_point_north_slope"
+   }
+  ],
+  "duration": "1 long day",
+  "how": "The usual order from Willow Lake is the North Ridge of Kit Carson (about 45 minutes of steep class 3 with a little class 4), then Columbia Point, then back over Kit Carson to the Avenue and Challenger. A small unranked bump beside Columbia is a five-minute detour. A fast party can tag all of them in about 14 miles and 6,500 ft round trip, around 13 to 14 hours.",
+  "descent": "From Challenger, a scree field leads back toward Willow Lake and the lake trail. Many climbers find this scree the slowest part of the day. Some parties instead split the outing in two with a night at the lake.",
+  "logistics": "Willow Creek trailhead sits at the top of a rough road of about a mile. Start well before dawn; afternoon storms are the main hazard on this exposed ridge. The same peaks can also be reached from the South Colony side, a shorter distance but along longer ridges.",
+  "sources": [
+   "https://www.14ers.com/php14ers/tripreport.php?trip=12391",
+   "https://www.14ers.com/php14ers/tripreport.php?trip=7225"
+  ],
+  "confidence": "medium",
+  "notes": "Route names for Columbia Point and Challenger inferred from trip report narratives; no per-peak route name stated on the pages read."
+ },
+ {
+  "id": "co_lu_sherman_gemini_sheridan",
+  "name": "Mount Sherman with Gemini Peak, Dyer Mountain and Mount Sheridan",
+  "state": "Colorado",
+  "region": "Mosquito Range",
+  "legs": [
+   {
+    "peak": "Mount Sherman",
+    "route": "Standard Route",
+    "connect": "",
+    "route_id": "co_mount_sherman_southwest_ridge"
+   },
+   {
+    "peak": "Gemini Peak",
+    "route": "Ridge from Sherman",
+    "connect": "Walk the ridge down and cross country to the Gemini summit, about 45 minutes.",
+    "route_id": null
+   },
+   {
+    "peak": "Dyer Mountain",
+    "route": "East ridge (optional)",
+    "connect": "Descend a talus field with little trail, then climb the obvious ridge; once on Dyer the only quick exit drops into the gulch.",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Sheridan",
+    "route": "Ridge from the Sherman-Sheridan saddle",
+    "connect": "Return over Sherman, drop to the Sherman-Sheridan saddle, then climb the scree slope to Sheridan.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 long day",
+  "how": "Climbers who park at the Fourmile Creek trailhead commonly go Sherman, Gemini, then Sheridan, which came to about 7.6 miles and 3,100 ft in roughly six and a half hours. A more thorough version adds Dyer between Gemini and Sheridan, passing under a power line. Most of it is class 2, with a loose class 3 feel on the top of Gemini and loose scree on Sheridan.",
+  "descent": "Sheridan has a scree shortcut that rejoins the trail near the old mine, or you can return over the saddle to the standard trail. After Dyer you must either return over Sherman or contour down the gulch.",
+  "logistics": "Roads from the lower trailheads add several miles. These slopes are open and exposed, so storms and the Dyer exit decision matter.",
+  "sources": [
+   "https://theadventuringheidi.com/2022/08/19/colorado-hiked-mount-sherman-gemini-peak-mount-sheridan/",
+   "https://www.14ers.com/php14ers/tripreport.php?trip=19511"
+  ],
+  "confidence": "medium",
+  "notes": "Dyer and Sheridan are optional extras on the two pages read; Gemini is the most common add."
+ },
+ {
+  "id": "co_lu_culebra_red",
+  "name": "Culebra Peak and Red Mountain",
+  "state": "Colorado",
+  "region": "Sangre de Cristo Range (Culebra Range)",
+  "legs": [
+   {
+    "peak": "Culebra Peak",
+    "route": "Northwest Ridge",
+    "connect": "",
+    "route_id": "co_culebra_peak_northwest_ridge"
+   },
+   {
+    "peak": "Red Mountain",
+    "route": "Saddle and north ridge",
+    "connect": "From the Culebra summit drop about 600 ft to the saddle, then climb about 400 ft of steep, switchbacked scree.",
+    "route_id": "co_red_mountain_north_ridge_from_culebra_peak"
+   }
+  ],
+  "duration": "1 day",
+  "how": "Climbers reach a ridge north-west of Culebra on open grass and talus from the upper trailhead, then follow the crest to the false summit and the main summit (class 2 boulder hopping). Red Mountain is an add-on over the ridge: about an hour of walking and talus scrambling between summits, then steep scree to the top. Total gain is the Culebra climb plus roughly 400 ft extra.",
+  "descent": "Return over Culebra to the large cairn and the usual descent line to the upper trailhead. Some parties continue along a short ridge to a lower bump before dropping to the cars.",
+  "logistics": "Culebra sits on a private ranch, so you must book a permit and pay a fee, with a second fee for Red Mountain. Climbing is only on limited days, and the road to the upper trailhead needs high clearance or four-wheel drive. Check the ranch rules each year.",
+  "sources": [
+   "https://www.14ers.com/php14ers/tripreport.php?trip=2459",
+   "https://www.snwburd.com/bob/trip_reports/culebra_1.html"
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "co_lu_lindsey_iron_nipple_huerfano",
+  "name": "Mount Lindsey, Iron Nipple and Huerfano Peak",
+  "state": "Colorado",
+  "region": "Sangre de Cristo Range (Culebra Range)",
+  "legs": [
+   {
+    "peak": "Mount Lindsey",
+    "route": "Standard gully route and northwest ridge",
+    "connect": "",
+    "route_id": "co_mount_lindsey_northwest_gully"
+   },
+   {
+    "peak": "Iron Nipple",
+    "route": "Ridge from the Lindsey saddle",
+    "connect": "Return to the saddle between Lindsey and Huerfano and climb the short ridge; a knife edge near the top has an easy bypass.",
+    "route_id": null
+   },
+   {
+    "peak": "Huerfano Peak",
+    "route": "Ridge from Iron Nipple",
+    "connect": "Continue along the ridge to the summit.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 long day",
+  "how": "A common extension is to climb Lindsey first, then return to the saddle and tag Iron Nipple and Huerfano Peak before heading out. Iron Nipple has a short class 2+ climb with an optional knife edge, and Huerfano is straightforward. A long loop version starts on the Raspberry trail and strings more peaks together, with class 3 ridge sections, about 14.5 miles and 6,200 ft.",
+  "descent": "From the last summit return to the saddle and follow the standard Lindsey trail down. The loop version drops a peak's west ridge and rejoins the trail.",
+  "logistics": "Count on 9 to 12 hours for the longer version. Roads to the trailheads need high clearance for the final stretch, and the ridge is no place to be in a storm.",
+  "sources": [
+   "https://stavislost.com/?p=1931",
+   "https://www.14ers.com/php14ers/tripreport.php?trip=20902"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "co_lu_evans_spalding",
+  "name": "Mount Spalding and Mount Evans",
+  "state": "Colorado",
+  "region": "Front Range (Mount Evans)",
+  "legs": [
+   {
+    "peak": "Mount Spalding",
+    "route": "Ridge from Summit Lake",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Evans",
+    "route": "West Ridge",
+    "connect": "Drop a little from Spalding, climb broken granite slabs and a knife-edge section over West Evans, and finish on the main summit.",
+    "route_id": null
+   }
+  ],
+  "duration": "Half day to 1 day",
+  "how": "Starting from Summit Lake, climb Spalding on a trail with a couple of class 2+ moves, then follow the ridge over West Evans to the summit. The ridge crest has class 3 to 4 sections if you stay on the highest points, or class 2 on the trail below. A winter version starts from the pass road side and links the same peaks with the Sawtooth side trip.",
+  "descent": "Drop to the summit road from Evans, or reverse the ridge to Summit Lake.",
+  "logistics": "The ridge is short but above treeline; snow lingers on it into early summer. A winter approach from the south adds miles and avalanche exposure.",
+  "sources": [
+   "https://www.14ers.com/php14ers/tripreport.php?trip=19700",
+   "https://www.14ers.com/php14ers/tripreport.php?trip=20055"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "co_lu_holy_cross_halo_ridge",
+  "name": "Notch Mountain and Halo Ridge to Mount of the Holy Cross",
+  "state": "Colorado",
+  "region": "Sawatch Range",
+  "legs": [
+   {
+    "peak": "Notch Mountain",
+    "route": "East slope from Half Moon Pass",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Mount of the Holy Cross",
+    "route": "Halo Ridge",
+    "connect": "Pass the stone shelter and follow Halo Ridge over three 13,000 ft tops, then drop to a saddle and climb the back of Holy Cross.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 long day",
+  "how": "Walk to Half Moon Pass, take the faint branch to Notch Mountain, and boulder-hop up its east slope, with class 3 near the notch. From the shelter, Halo Ridge is long and tiring rather than difficult, crossing three 13,000 ft points before the summit. Reported loops are 13 to 15 miles with about 5,400 ft of gain.",
+  "descent": "Descend the North Ridge, whose cairns are well worn, then cross Half Moon Pass again to the trailhead. Some parties reverse the loop and climb the North Ridge first.",
+  "logistics": "Plan 10 to 12 hours. The notch below the shelter can hold snow and ice into summer. The ridge is exposed to weather with few escapes.",
+  "sources": [
+   "https://www.14ers.com/php14ers/tripreport.php?trip=15631",
+   "https://www.14ers.com/php14ers/tripreport.php?trip=2232",
+   "https://www.14ers.com/php14ers/tripreport.php?trip=9276"
+  ],
+  "confidence": "high",
+  "notes": "Trailhead differs between reports: Half Moon vs Fall Creek (13.8 to 15 mi loop)."
+ },
+ {
+  "id": "co_lu_vestal_arrow",
+  "name": "Vestal Peak and Arrow Peak",
+  "state": "Colorado",
+  "region": "San Juan Mountains (Grenadier Range)",
+  "legs": [
+   {
+    "peak": "Vestal Peak",
+    "route": "Wham Ridge",
+    "connect": "",
+    "route_id": "co_wham_ridge"
+   },
+   {
+    "peak": "Arrow Peak",
+    "route": "Northeast Ramp",
+    "connect": "After Vestal's south gully descent, cross the basin to the shared saddle and climb Arrow's long slab ramp.",
+    "route_id": null
+   }
+  ],
+  "duration": "2-3 days",
+  "how": "Climbers camp in the basin below both peaks. A typical day is Wham Ridge on Vestal (5.4 crux, then exposed class 4 and a short class 3 notch), a descent of the loose south gully to the saddle, then Arrow by its northeast ramp (mostly class 3 slab). Others do Arrow first, then Vestal's south face. The ramp is dangerous when wet.",
+  "descent": "Descend Vestal by the gully, which is loose class 2+ to 3, or retrace the slabs on Arrow. Return along the creek trail.",
+  "logistics": "Approach by the narrow gauge train to Elk Park or by a longer trail walk from the lake trailhead, both ending at a camp in Vestal Basin around 11,500 ft. The creek crossing can be hard early in the season.",
+  "sources": [
+   "https://exploringtherockies.com/2011/09/03/labor-day-weekend-in-the-grenadiers-vestal-and-arrow",
+   "https://www.14ers.com/php14ers/tripreport.php?trip=22255",
+   "https://www.sites.google.com/site/kaletbrian/peak-lists/vestal-peak"
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "co_lu_grenadier_traverse",
+  "name": "Arrow, Vestal and Trinity Peaks Traverse",
+  "state": "Colorado",
+  "region": "San Juan Mountains (Grenadier Range)",
+  "legs": [
+   {
+    "peak": "Arrow Peak",
+    "route": "Northeast Ramp",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Vestal Peak",
+    "route": "South face",
+    "connect": "Cross the saddle and take the south gully.",
+    "route_id": "co_vestal_peak_south_face"
+   },
+   {
+    "peak": "West Trinity",
+    "route": "West ridge",
+    "connect": "Cross the ridge east past a bump and climb the west ridge.",
+    "route_id": null
+   },
+   {
+    "peak": "Trinity Peak",
+    "route": "Ledge system and chimney",
+    "connect": "Use a ledge system to pass a gendarme, then a class 4 chimney.",
+    "route_id": null
+   },
+   {
+    "peak": "East Trinity",
+    "route": "West gully and south ridge",
+    "connect": "Drop the east gully and climb a sustained class 3 gully to an exposed ridge.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 very long day or 2 days from camp",
+  "how": "From a camp in Vestal Basin, the order is Arrow, Vestal, then west to east across the three Trinities. Rock is class 3 to 4 with a secure class 4 chimney on Trinity Peak and exposed class 3 on East Trinity. Once past West Trinity, bailing is very hard. One fit party did the whole line from the trailhead in a day at about 23 miles and 10,400 ft.",
+  "descent": "Descend East Trinity's east ridge, then scree to the upper lake and back to camp, with willow bashing and no clear trail. A saved track helps.",
+  "logistics": "Most parties camp in the basin and spend two or three days. Plan about 10 hours of climbing from camp. Weather exposure is high.",
+  "sources": [
+   "https://www.sites.google.com/site/kaletbrian/peak-lists/vestal-peak",
+   "https://www.14ers.com/php14ers/tripreport.php?trip=22255",
+   "https://exploringtherockies.com/2011/09/03/labor-day-weekend-in-the-grenadiers-vestal-and-arrow"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "co_lu_pigeon_turret",
+  "name": "Pigeon Peak and Turret Peak",
+  "state": "Colorado",
+  "region": "San Juan Mountains (Needle Mountains)",
+  "legs": [
+   {
+    "peak": "Turret Peak",
+    "route": "Ridge from the Pigeon-Turret saddle",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Pigeon Peak",
+    "route": "West gully and southwest slopes",
+    "connect": "Return to the saddle, descend about 800 ft and wrap around the south face, then climb the west gully to the summit block.",
+    "route_id": null
+   }
+  ],
+  "duration": "2-4 days",
+  "how": "The two summits are reached from a common basin and saddle. Turret is about 700 ft of class 2 from the saddle (class 2+ with optional class 3). Pigeon needs a loose descent and traverse before the final climb, with mostly class 3 and very loose terrain off route. Order varies: some do Turret at sunrise, others do Pigeon first.",
+  "descent": "Reverse the loose wrap-around back to the saddle and cross the rock glacier or meadow to camp. Descending Pigeon is slower than climbing it.",
+  "logistics": "Camp options are Ruby Lake, the meadow, or treeline. Approaches are by train to Needleton or across a high pass from the neighboring basin; a few parties day-trip it from the Purgatory side.",
+  "sources": [
+   "https://exploringtherockies.com/2012/09/01/laboring-in-the-weminuche-ruby-to-chicago-13ers/",
+   "https://www.14ers.com/php14ers/tripreport.php?trip=22337"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "co_lu_handies_whitecross",
+  "name": "Handies Peak with Whitecross Mountain",
+  "state": "Colorado",
+  "region": "San Juan Mountains (Lake City area)",
+  "legs": [
+   {
+    "peak": "Whitecross Mountain",
+    "route": "South ridge",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Handies Peak",
+    "route": "Ridge from Whitecross",
+    "connect": "Follow the ridge off-trail until you rejoin the standard trail high on Handies.",
+    "route_id": null
+   },
+   {
+    "peak": "Peak 13,795",
+    "route": "East ridge of Handies",
+    "connect": "Descend the east ridge, cross a saddle, and climb a final unranked peak (optional).",
+    "route_id": null
+   }
+  ],
+  "duration": "1 day",
+  "how": "Starting from Grizzly Gulch, climb Whitecross's south ridge, follow the ridge to Handies, then optionally continue east to the unranked 13,795 ft peak. Class 2+ with mild exposure and moderate navigation, about 11 miles and 5,000 ft. Others tag Whitecross and one 13er after Handies.",
+  "descent": "Return from the last peak to the high saddle and descend a steep grass ramp to a lake, then a short scree slide, and rejoin the Grizzly Gulch trail.",
+  "logistics": "The trailhead road needs high clearance. Almost all of the ridge has no trail. Allow a full day.",
+  "sources": [
+   "https://debravanwinegarden.blogspot.com/2016/07/whitecross-mountain-13542-handies-peak.html",
+   "https://14ers.com/forum/viewtopic.php?p=802276"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "co_lu_jones_american_niagara",
+  "name": "American Peak, Jones Mountain and Niagara Peak",
+  "state": "Colorado",
+  "region": "San Juan Mountains (Silverton area)",
+  "legs": [
+   {
+    "peak": "American Peak",
+    "route": "Slope to the American-Jones saddle",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Jones Mountain",
+    "route": "Ridge from the saddle",
+    "connect": "Return to the saddle and climb the high point of the ridge.",
+    "route_id": "co_jones_mountain_northeast_ridge"
+   },
+   {
+    "peak": "Niagara Peak",
+    "route": "Northwest ridge (optional class 3)",
+    "connect": "Continue along the ridge, then descend.",
+    "route_id": null
+   }
+  ],
+  "duration": "Half day",
+  "how": "These three share one ridge: American at one end, Jones in the middle, Niagara at the other. From Burns Gulch climb to the American-Jones saddle (loose), take American, return for Jones, then Niagara. Class 2+ overall, with a class 3 northwest ridge on Niagara and a short downclimb. About 6.3 miles and 3,500 ft in 5 to 7 hours.",
+  "descent": "From the Jones-Niagara saddle follow a marked trail through the basin and then the creek to the road. It is faster than the Jones descent.",
+  "logistics": "The trailhead needs high clearance, and the ford may not be passable, which adds walking. Some climbers also add Handies in the same day.",
+  "sources": [
+   "https://debravanwinegarden.blogspot.com/2016/08/american-peak-13806-jones-mountain.html",
+   "https://14ers.com/forum/viewtopic.php?p=802276"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "co_lu_audubon_paiute",
+  "name": "Mount Audubon and Paiute Peak",
+  "state": "Colorado",
+  "region": "Front Range (Indian Peaks)",
+  "legs": [
+   {
+    "peak": "Mount Audubon",
+    "route": "Mount Audubon Trail",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Paiute Peak",
+    "route": "South ridge along the divide",
+    "connect": "Descend talus to the saddle, then follow the crest or the class 2 south side to Paiute.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 day",
+  "how": "Take the trail to Audubon, then drop to the saddle and climb Paiute's ridge: mostly class 3 along the crest with a class 2 talus alternative, steep class 2+ near the top. The loop returns along the divide to a gully above the lake. About 9 miles. Some extend the traverse over Toll and Pawnee for about 10.5 miles and 4,500 ft.",
+  "descent": "From Paiute, go south along the divide to the talus gully, then follow the lake trail back to the trailhead. A class 2 gully on Paiute's southeast side is another way down.",
+  "logistics": "A day-use pass is needed in this recreation area. The saddle has no easy exit and wind is common.",
+  "sources": [
+   "https://backcountrypost.com/threads/mt-audubon-paiute-peak-loop-indian-peaks-wilderness.11770/",
+   "https://www.14ers.com/php14ers/tripreport.php?trip=16479",
+   "https://stavislost.com/?p=1174"
+  ],
+  "confidence": "medium"
+ }
+]

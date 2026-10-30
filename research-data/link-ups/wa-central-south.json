@@ -1,0 +1,376 @@
+[
+ {
+  "id": "wa_lu_stuart_range_traverse",
+  "name": "Stuart Range Traverse",
+  "state": "Washington",
+  "region": "Stuart Range",
+  "legs": [
+   {
+    "peak": "Mount Stuart",
+    "route": "North Ridge (or West Ridge)",
+    "connect": "",
+    "route_id": "wa_mount_stuart_north_ridge"
+   },
+   {
+    "peak": "Sherpa Peak",
+    "route": "West Ridge",
+    "connect": "Drop from Stuart toward the gap below Sherpa, then climb Sherpa's west ridge. Some parties climb Sherpa first and Stuart second; rappels are used on the way back down.",
+    "route_id": "wa_sherpa_peak_west_ridge"
+   },
+   {
+    "peak": "Argonaut Peak",
+    "route": "South gully (West Ridge is harder)",
+    "connect": "The ridge east of Sherpa is complex. Most parties skip the crest, traverse beneath it from Sherpa Pass and climb Argonaut by its south gully.",
+    "route_id": "wa_south_face_12"
+   },
+   {
+    "peak": "Colchuck Peak",
+    "route": "Colchuck Glacier route from Colchuck Col",
+    "connect": "Work east to Colchuck Col, the gap between Colchuck and Dragontail, then take the short south-side walk to the Colchuck summit.",
+    "route_id": "wa_colchuck_peak_colchuck_glacier"
+   },
+   {
+    "peak": "Dragontail Peak",
+    "route": "From Colchuck Col via the Pandora's Box notch",
+    "connect": "Return to the col, climb a steep gully to a notch on Dragontail's ridge, downclimb the far side and make a rising traverse to the top.",
+    "route_id": "wa_dragontail_peak_r3"
+   }
+  ],
+  "duration": "2–3 days",
+  "how": "Five summits are strung from west to east: the long north ridge of the highest peak, then Sherpa, Argonaut, Colchuck and Dragontail. The hard part is the stretch after Sherpa, where parties either follow the knife-edge or drop low and rejoin the ridge near Argonaut. Expect sustained alpine rock to about 5.9 on the first peak, easier 5.5 or class 3 and 4 terrain on the next, then glacier and snow near the col. Rappels cost time, so a light rope and a few slings are the norm.",
+  "descent": "From Dragontail, descend toward Aasgard Pass and Colchuck Lake and walk out to the Stuart Lake trailhead. Some parties instead drop through the Snow Lakes basin to the Snow Lakes trailhead.",
+  "logistics": "Parties usually start at the Esmeralda Basin trailhead on the Teanaway side (about 5 hours of walking to the base of Sherpa) and finish at an Icicle Creek road trailhead, so two cars or a long drive around are needed. The overnight permit for the Enchantment zones (mid May to end of October) is only needed to camp inside a zone; a bivy near Sherpa Pass or Ingalls Creek is outside the zones. Best late summer to early fall.",
+  "sources": [
+   "https://mountainproject.com/route/121570003/stuart-range-traverse",
+   "https://publications.americanalpineclub.org/articles/12198615402/North-America-United-States-WashingtonCascade-Mountains-Stuart-Range",
+   "https://wenatcheeoutdoors.org/2016/06/07/stuart-range-traverse/",
+   "https://www.nwhikers.net/forums/viewtopic.php?p=1143312",
+   "https://www.enchantmentsguide.com/planning/permits",
+   "https://campflare.com/permit/enchantment",
+   "https://stephabegg.com/trip-reports/washington/stuart-north-ridge/"
+  ],
+  "confidence": "high",
+  "notes": "Checked 2026-10-28. Peak order Stuart, Sherpa, Argonaut, Colchuck, Dragontail confirmed by the 1986 one-day traverse in the AAC Journal (north ridge of Stuart first, finish at Snow Lakes lot), MP listing, a 2011 two-day attempt (Esmeralda Basin to Lake Colchuck trailhead; Stuart W ridge, Sherpa W ridge, Argonaut S gully) and a 2018 three-day trip (Esmeralda to Snow Lakes; there Sherpa was climbed before Stuart, so order varies). Grade: MP gives V, 5.9 (higher than the other sources, kept). Sherpa W ridge 5.5 comes from a search title, not a full read; the 2018 report calls Sherpa E ridge class 3/4 with ~5.3. Fixed the old wrong 'Mountain Loop-side' trailhead. Permit rule (camping needs the zone permit, five zones, May 15 to Oct 31, Core permit is the only one valid in every zone) is from permit guides; day-use rules and the current self-issue day permit were not confirmed, check the agency. The exact way parties get from Stuart to Sherpa varies and was not described in detail by any source. One earlier line about camping on the ridge needing the quota permit was removed: sources say camp outside the zones."
+ },
+ {
+  "id": "wa_lu_dragontail_colchuck",
+  "name": "Colchuck Peak and Dragontail Peak",
+  "state": "Washington",
+  "region": "Stuart Range / Enchantments",
+  "legs": [
+   {
+    "peak": "Colchuck Peak",
+    "route": "Colchuck Glacier to Colchuck Col, then the south side",
+    "connect": "",
+    "route_id": "wa_colchuck_peak_colchuck_glacier"
+   },
+   {
+    "peak": "Dragontail Peak",
+    "route": "From Colchuck Col via the Pandora's Box notch",
+    "connect": "Go back to the col, climb a steep gully east to a notch on the ridge, downclimb the far side and make a rising traverse to the summit.",
+    "route_id": "wa_dragontail_peak_r3"
+   }
+  ],
+  "duration": "1 long day",
+  "how": "Both summits are reached from Colchuck Col, which is gained by the Colchuck Glacier above Colchuck Lake. Colchuck comes first because it is a short walk west from the col, class 2 to 3. Dragontail then needs class 3 scrambling around the Pandora's Box notch, with a steep snow finger just beyond it early in the season. An axe and crampons are standard for the glacier and snow; late in the season the glacier turns to hard ice and the route gets worse.",
+  "descent": "From Dragontail, go southeast to a pass and descend the snowfields and loose ground to Aasgard Pass, then walk around Colchuck Lake to the trailhead. This is steep and hard on the knees, about 2,000 feet of descent.",
+  "logistics": "Start from the Stuart Lake and Colchuck Lake trailhead on Icicle Creek Road. Expect roughly 12 to 15 miles, 6,200 to 7,000 feet of gain and 10 to 14 hours car to car. Camping in the Colchuck zone needs the overnight permit; the day trip does not. Best early summer to early fall once snow is firm.",
+  "sources": [
+   "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/",
+   "http://www.willhiteweb.com/enchantments/dragontail_peak/colchuck_lake_089.htm",
+   "https://www.mountaineers.org/activities/trip-reports/colchuck-peak-dragontail-peak-via-colchuck-col-and-pandoras-box",
+   "https://www.summitpost.org/dragontail-colchuck-peaks/205963"
+  ],
+  "confidence": "high",
+  "notes": "Checked 2026-10-28. Replaced the remembered route names ('Southwest Couloir', 'Backbone ridge') which no source supports; the link-up is the Colchuck Glacier to Colchuck Col, Colchuck, then Dragontail, down Aasgard Pass. Two full reads agree (class 3 on both; Colchuck a class 2 walk from the col per one, 2nd-3rd per the other; kept the higher). Descent 2,000 vs 2,200 ft differs between sources; prose uses about 2,000. Mountaineers and SummitPost pages were seen only as search snippets (403 on fetch); they match: Colchuck Col, Pandora's Box, Aasgard descent."
+ },
+ {
+  "id": "wa_lu_tooth_hemlock_bryant",
+  "name": "Bryant Peak and Hemlock Peak (with The Tooth)",
+  "state": "Washington",
+  "region": "Snoqualmie Pass",
+  "legs": [
+   {
+    "peak": "Bryant Peak",
+    "route": "Southwest side from Hemlock Pass",
+    "connect": "",
+    "route_id": "wa_bryant_peak_southeast_slopes"
+   },
+   {
+    "peak": "Hemlock Peak",
+    "route": "From Hemlock Pass on the basin side",
+    "connect": "Go back to Hemlock Pass and scramble to Hemlock's top, a short hop from the pass compared with Bryant.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 long day",
+  "how": "Bryant and Hemlock are paired because both start from Hemlock Pass above Melakwa Lake. Bryant is the harder of the two, with a short class 3 scramble on its summit block and steep brush on the way up. Hemlock is a simpler scramble on the other side of the pass. A longer loop from Snow Lake adds The Tooth first by its west or south side, which is class 4 with a short low fifth class face and needs a rope and a rappel back down; that version runs about 15 hours.",
+  "descent": "Descend Bryant's southwest side, follow the ridge down to Hemlock Pass over steep brushy slopes, and walk out past Melakwa Lake. The long Tooth loop instead crosses Melakwa Pass and circles Snow Lake.",
+  "logistics": "Start from the Denny Creek trailhead (about 10 miles round trip) or the Snow Lake trailhead for the loop with the Tooth. Snow can last on Bryant well into early summer, so an axe and microspikes are common then. Late summer to early fall is best; wear long pants for the brush.",
+  "sources": [
+   "https://apps.yellowleaf.org/scramble/g/r/2007-08-05-tooth.html",
+   "https://onehikeaweek.com/2013/06/29/bryant-peak/",
+   "http://www.willhiteweb.com/snoqualmie_pass/the_tooth/alpental_winter_207.htm",
+   "https://www.summitpost.org/bryant-peak-snoqualmie-pass/509739",
+   "https://www.mountaineers.org/activities/routes-places/bryant-hemlock-peaks"
+  ],
+  "confidence": "medium",
+  "notes": "Checked 2026-10-28. Only one full three-peak report exists (2007, Snow Lake trailhead: Tooth, Hemlock by NW heather slopes, Bryant SW side, Hemlock Pass, Melakwa Pass, circle Snow Lake; 15 h 13 min, 4,264 ft). A second source (2013 Denny Creek trip) climbed Bryant then Hemlock via Hemlock Pass; the Mountaineers route page pairs Bryant and Hemlock (9.5 mi, 3,900 ft, strenuous 3 / technical 4; seen in a search snippet, fetch 403). So the entry is re-scoped to the confirmed Bryant plus Hemlock pair with the Tooth as an add-on. The original text had Hemlock 'north of the Tooth' and Bryant's descent 'to Hemlock Pass' with Chair Peak and Kaleetan chains; those were removed as unsupported. Tooth grade: west ridge easy class 4 with a short low 5th face (kept higher than the 'south face' scramble class). No second full report of the Tooth combination was found."
+ },
+ {
+  "id": "wa_lu_bailey_range_traverse",
+  "name": "Bailey Range Traverse",
+  "state": "Washington",
+  "region": "Olympic Mountains",
+  "legs": [
+   {
+    "peak": "High Divide / Cat Peak",
+    "route": "Bailey Range high route from the Sol Duc trailhead",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Carrie",
+    "route": "The Catwalk and crest above Cream Lake",
+    "connect": "Follow the narrow ridge between Cat Peak and Carrie, then continue along the crest and its snowfields.",
+    "route_id": "wa_mount_carrie_se_route"
+   },
+   {
+    "peak": "Stephen Peak",
+    "route": "Bailey Range high route (an alternate bypasses the peak by Stephen Lake basin)",
+    "connect": "Cross the crest and snow slopes, or sidestep the peak through its lake basin when the crest is blocked.",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Ferry",
+    "route": "Bailey Range high route through Ferry Basin",
+    "connect": "Go on south through Ferry Basin toward Mount Ferry and Bear Pass, the usual last high camp area before the exit.",
+    "route_id": "wa_mount_ferry_standard"
+   }
+  ],
+  "duration": "4–6 days",
+  "how": "A remote off-trail line that starts at the Sol Duc trailhead and runs south along the range with Mount Olympus in view for much of it. Travel is mostly sidehilling, steep heather, snow and class 3 to 4 scrambling where a fall could be fatal, with an axe standard and crampons common. Water is scarce between Eleven Bull Basin and Cream Lake and again on the way from Mount Ferry to the far side, so carry extra.",
+  "descent": "The traditional exit is the Elwha Snowfinger from Bear Pass, but recent parties found it gone late in the season. Other ways out are Dodger Point to the Elwha valley (needs a shuttle), Low Divide down the North Fork Quinault, or a loop over Mount Olympus and the Hoh.",
+  "logistics": "Arrange the permit by phone with the park's wilderness information office, where rangers check experience. A bear canister is required, and loaners are free. Mid July to mid August gives the best snow; a shuttle is needed unless you loop back over the Hoh.",
+  "sources": [
+   "http://cwillett.imathas.com/local/bailey/index.html",
+   "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+   "https://xanderuyttendaele.substack.com/p/the-bailey-range-traverse",
+   "https://www.trailgroove.com/blogs/entry/498-a-bailey-range-traverse-hiking-in-olympic-national-park/",
+   "https://www.nps.gov/olym/planyourvisit/backpacking-faq.htm"
+  ],
+  "confidence": "high",
+  "notes": "Checked 2026-10-28. Direction north to south from Sol Duc confirmed by four reports; the earlier 'toward the Elwha' exit is the classic but two recent reports (2021, 2022) say the snowfinger is no longer viable late season, so the exit text now lists alternatives. A 2007 trip finished at the North Fork Quinault trailhead (class: easy class 4, a fall likely fatal; this grade kept as the higher). Permit by phone and bear canister requirement confirmed by the park FAQ and trip reports (loaners free per the park, rented for about $3 per older report). Peaks named by routes: Cat Peak, Carrie, Ruth, Stephen, Ferry, Pulitzer, Childs. Earlier source URL en.wikipedia.com and the Mountaineers route page were not read (403 / wrong domain) and are not cited."
+ },
+ {
+  "id": "wa_lu_bailey_olympus",
+  "name": "Bailey Range Traverse with Mount Olympus",
+  "state": "Washington",
+  "region": "Olympic Mountains",
+  "legs": [
+   {
+    "peak": "Bailey Range",
+    "route": "Northern and southern Baileys from Sol Duc",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Olympus",
+    "route": "Blue Glacier route via Snow Dome",
+    "connect": "From Queets Basin cross the Humes Glacier, go over Blizzard Pass to a camp above the Hoh Glacier, then cross Glacier Pass to the Blue Glacier and climb to the summit block.",
+    "route_id": "wa_mount_olympus_blue_glacier"
+   }
+  ],
+  "duration": "5 days at a fast pace; more with margin",
+  "how": "A clockwise loop from the Sol Duc trailhead: the Baileys, then south into Queets Basin and across the Humes Glacier, up to a camp above the Hoh Glacier, then over Glacier Pass and the Blue Glacier to Mount Olympus. The glacier work adds roped travel and crevasse rescue gear, and the Humes has steep crevassed bare ice later in the season. The summit block is a short pitch at about 5.7 followed by a rappel.",
+  "descent": "Come down the Blue Glacier to the Glacier Meadows trail and the Hoh River, then climb about 4,000 feet back up to the High Divide and return to Sol Duc, so no shuttle is needed.",
+  "logistics": "Arrange the permit by phone with rangers, who assess readiness. Bear canisters are required. Carry glacier gear: crampons, axe, a rope or light lines for glacier travel and the rappel, and a few nuts for the summit block. Mid July to mid August gives the best snow cover.",
+  "sources": [
+   "https://engineeredforadventure.com/bailey-range-traverse/",
+   "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+   "https://xanderuyttendaele.substack.com/p/the-bailey-range-traverse",
+   "https://www.nps.gov/olym/planyourvisit/backpacking-faq.htm"
+  ],
+  "confidence": "high",
+  "notes": "Checked 2026-10-28. The old text said exit by 'roughly 17 miles of Hoh trail' with a Sol Duc to Hoh shuttle; the two full reports instead describe a five-day loop back over High Divide with no shuttle (11 Bull Basin, Queets Basin, Humes Glacier, Camp Pan above the Hoh Glacier, Blue Glacier, Snow Dome, Hoh, High Divide). One report (2022) turned back at the Humes Glacier as steeper and more crevassed than expected and exited via Dodger Point. Summit block grade: one report states a short 5.7 pitch plus rappel, the other gives no grade; kept 5.7. Park FAQ says no special permit is needed for climbing in the Olympics beyond the wilderness permit."
+ },
+ {
+  "id": "wa_lu_persis_index",
+  "name": "Persis–Index Traverse",
+  "state": "Washington",
+  "region": "Highway 2 / Index",
+  "legs": [
+   {
+    "peak": "Mount Persis",
+    "route": "Trail past the tarns to the summit",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Persindex",
+    "route": "Gully to the tarns (optional side summit)",
+    "connect": "Drop off Persis into the gully and walk to the tarns under Persindex, where most parties camp. The small summit is a short side trip.",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Index (Main Peak)",
+    "route": "Persis–Index ridge traverse",
+    "connect": "Downclimb to a saddle near the 5212 point (class 3, maybe 4), then forest, heather and a rocky scramble (class 3, maybe 4) to the main summit.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 very long day, or 2 days",
+  "how": "A long, faint-trail ridge line that links the two peaks and the small peak between them. Expect steep forest, boulder fields, loose dirt on the downclimbs and one or two spots where a slip would matter. Many parties camp at the Persindex tarns and go to Index from there. A light rope is worth carrying as a handline for the loose descent to the saddle.",
+  "descent": "Most parties come back the way they went, over Persindex and Persis, and often use a glissade in the gully early in the season. With a car left at Lake Serene, an alternative is the Hourglass Gully, which needs rappels unless you can downclimb fifth class.",
+  "logistics": "The gated timber road to the Persis trailhead is closed to most drivers; a landowner permit and key avoids a walk or bike ride of 6 miles and 2,500 feet, though one report found the gates open. Tarns provide water on the first half, none from Persindex to Index, so carry about 2 liters. Late summer is best; early on there is a steep snowfield.",
+  "sources": [
+   "https://outdoors.ahelwer.ca/post/2019-09-06-persis-index/",
+   "https://www.nwhikers.net/forums/viewtopic.php?t=8029821",
+   "https://www.summitpost.org/persis-index-traverse/906517",
+   "https://www.wta.org/go-hiking/hikes/mount-persis"
+  ],
+  "confidence": "medium",
+  "notes": "Checked 2026-10-28. The earlier text said Index North Peak and a rappel-heavy descent toward Lake Serene as the standard; the two full reports both reach Index main summit, return by the same ridge, and used no rappels (the first used a rope as a handline). The Lake Serene exit via Hourglass Gully (rappels needed) comes from a search summary of the route page (fetch 403), so it is listed only as an alternative. Persis summit was skipped on the outbound leg in one report and visited on the return. Road permit/gate: one source says a permit and key are needed, a 2021 comment says gates were open; unresolved."
+ },
+ {
+  "id": "wa_lu_index_three_peaks",
+  "name": "Mount Index North–Middle–Main Traverse",
+  "state": "Washington",
+  "region": "Highway 2 / Index",
+  "legs": [
+   {
+    "peak": "Mount Index (North Peak)",
+    "route": "Skyline route from the Lake Serene side",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Index (Middle Peak)",
+    "route": "North to Middle ridge",
+    "connect": "Rappel from the North summit into the notch, climb the steep wall beyond it, and reach the Middle summit, the most remote and hardest-to-reach point of the three.",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Index (Main Peak)",
+    "route": "Middle to Main ridge",
+    "connect": "Downclimb, rappel into the next notch, climb the step beyond, then follow the exposed heather ridge to the highest point.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 long day to 2 days",
+  "how": "A serious ridge enchainment of the three summits, first done in 1950 and repeated many times since by parties wanting the middle point. Rock is mid fifth class with the hardest moves around 5.7, plus a lot of loose rock, steep gendarmes and committing rappels. Water is scarce and conditions vary with season: early year brings snow and rockfall, late year brings dry rock but little to drink.",
+  "descent": "Finish on the highest summit and use the walkers' route down. It is tiring, can need steep snow downclimbing early in the season, and brings you back toward the Lake Serene trail rather than retracing the ridge.",
+  "logistics": "Approach from the Lake Serene trail off Highway 2. Carry an alpine rack, two ropes if you want easy rappels, plenty of slings, and light bivy gear; modern parties often do it in one night, some in a single day. Summer to early fall.",
+  "sources": [
+   "https://www.mountainproject.com/route/120466607/traverse-of-mount-index",
+   "http://www.bclodge.com/Climbing/Index/index.htm",
+   "https://www.summitpost.org/mount-index/150645",
+   "https://cascadeclimbers.com/forum/topic/95228-tr-mount-index-traverse-of-north-middle-main-742014/",
+   "https://cascadeclimbers.com/forum/topic/107407-tr-mt-index-traverse-north-middle-main-06252023/",
+   "https://www.nwhikers.net/forums/viewtopic.php?t=7992852"
+  ],
+  "confidence": "high",
+  "notes": "Checked 2026-10-28. Repeated route: separate reports from 2010, 2011 (Middle and Main), 2014, 2021 and 2023 appear in search results; MP lists the traverse at 5.7+ (trad, snow, alpine, 4 pitches); the guidebook page rates it grade V. Search snippet gives a lower figure (SummitPost grade III, 5.7 on the easiest North and Middle options; Wikipedia North Face 5.6); kept 5.7+. Removed the vague 'aid-style moves' and 'bivouac near the middle summit is normal' claims: the 1950 first ascent took two nights and one 2010 push was single day; modern parties 'likely finish in one night' per MP. The CascadeClimbers pages returned only 'Loading' to fetch, so their details come from search snippets. A 2010 party reported a very committing rappel on the Middle to Main section."
+ },
+ {
+  "id": "wa_lu_old_snowy_ives_gilbert",
+  "name": "Old Snowy Mountain and Ives Peak",
+  "state": "Washington",
+  "region": "Goat Rocks",
+  "legs": [
+   {
+    "peak": "Old Snowy Mountain",
+    "route": "Pacific Crest Trail to the ridge and the climbers' path",
+    "connect": "",
+    "route_id": "wa_old_snowy_mountain_r1"
+   },
+   {
+    "peak": "Ives Peak",
+    "route": "Old Snowy–Ives ridge traverse",
+    "connect": "Follow the ridge between the two summits, which takes about an hour and a half, with a chimney at class 3 or 4. A lower alternative uses a scree slope to the low col between them.",
+    "route_id": "wa_ives_peak_r1"
+   }
+  ],
+  "duration": "1 long day",
+  "how": "Both summits are reached from the Pacific Crest Trail above Snowgrass Flat, and many parties link them on a single loop. Old Snowy is mostly a class 2 path with loose rock just below the top. The ridge to Ives is the harder part, class 3 with some route finding and a spot that can feel like class 4, and snowfields linger there into August. Gilbert Peak is a separate trip from the Conrad Meadows side, not part of this ridge.",
+  "descent": "Drop from the ridge to the trail toward Goat Lake and loop back to the trailhead through the basin and Snowgrass Flat. This avoids retracing the exposed ridge.",
+  "logistics": "Start at the Berry Patch trailhead at the end of a long gravel road off the Johnson Creek road near Packwood. The loop is about 16 miles with roughly 4,400 feet of gain. Water is limited on the ridge. Mid summer to early fall; microspikes help early.",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/pacific-crest-trail-routes/snowgrass-flat-goat-lake-basin",
+   "http://www.willhiteweb.com/washington/goat_rocks_climbing/ives_hawkeye_227.htm",
+   "https://www.oregonhikers.org/field_guide/Old_Snowy",
+   "https://www.cascadecrusades.org/hiking/goatrocks/goatrockstraverse2008/grocks2008.htm",
+   "https://www.turns-all-year.com/trip-reports/goat-rocks-traverse"
+  ],
+  "confidence": "medium",
+  "notes": "Checked 2026-10-28. Gilbert Peak dropped from this entry: it is not reached from Ives. The standard way is the Conrad Glacier / Meade Glacier from the Conrad Meadows or South Fork Tieton trailheads (two-plus days), and one trip crossed from Gilbert to a camp near Old Snowy via the Conrad Glacier and then did Ives. Old Snowy to Ives link: Mountaineers lists a 16-mile traverse, about 4,400 ft, strenuous/technical 3 (read as a search snippet; page 403). Classes: ridge chimney class 3-4 from a 2019 trip report and class 3 on both summits from a 2024 report (both search snippets; WTA pages 403); kept the higher. Packwood Glacier is mentioned by a 2025 report as lingering snow. Class 2 on Old Snowy is from the Mountaineers snippet; the Oregon Hikers page confirms a scramble on loose rock before the summit. Berry Patch trailhead and Goat Lake loop come from the Willhite page. Wilderness permit claim in the old text was unconfirmed and was removed. Entry id kept for the build; the display name no longer includes Gilbert."
+ },
+ {
+  "id": "wa_lu_chikamin_lemah",
+  "name": "Lemah Mountain and Chikamin Peak",
+  "state": "Washington",
+  "region": "Alpine Lakes",
+  "legs": [
+   {
+    "peak": "Lemah Mountain",
+    "route": "Southeast approach from Chikamin Lake",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Chikamin Peak",
+    "route": "Northeast slope from the Lemah–Chikamin saddle",
+    "connect": "Cross to the saddle between the two peaks and climb Chikamin's northeast flank, then use the southeast side and south ridge to come down.",
+    "route_id": "wa_chikamin_peak_southeast_slopes"
+   }
+  ],
+  "duration": "2–3 days",
+  "how": "Camp at the meadows by Chikamin Lake and climb both peaks from that single base. Lemah is the harder, with five separate summits, steep snow with a moat early on, loose rock and a class 4 crack on its lowest point; the main summit is reached across its glacier and has serious rockfall. Chikamin is a class 3 scramble with steep snow and rock slopes near the lake. An axe is essential in early season, and Lemah is closer to a basic alpine climb than a scramble.",
+  "descent": "Return to camp over the same snow and rock, then walk out the next day by the Glacier Lake side and the saddle above Mineral Creek rather than reversing the steep gully to the east col.",
+  "logistics": "Start from the Mineral Creek trailhead at the end of the Cooper Pass road; the climb past the Park Lakes to the saddle and Glacier Lake is long and brushy. A Pete Lake approach with a camp at Spectacle Lake is the other base. Summer is the usual window; a creek crossing can be mid thigh.",
+  "sources": [
+   "https://trailcatjim.com/lemah-thumb-chikamin-peak-via-glacier-lake-chikamin-lake/",
+   "https://www.lemkeclimbs.com/chikamin-peak.html",
+   "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-chikamin-peak-lemah-mtn",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-08.1033879780",
+   "https://www.summitpost.org/lemah-mountain/climbers-log/392789"
+  ],
+  "confidence": "medium",
+  "notes": "Checked 2026-10-28. Camp and trailhead were wrong in the first draft: parties pair these two from a camp at Chikamin Lake Meadows via Mineral Creek, not Spectacle Lake; one trip report read in full did Lemah Thumb in the morning and Chikamin the same afternoon via the saddle. Mountaineers (2019) and WTA (2022) outings camped at Chikamin Lake and climbed both on separate days (search snippets, pages 403). Pete Lake / Spectacle Lake is a second approach (Chikamin alone, class 3). A single-day 18.5-hour version exists. Lemah main summit via the glacier and south approach is only described in search snippets; that is why confidence stays medium. Permit statements were removed because none were found. The order was swapped to Lemah first, matching both reports that did both."
+ },
+ {
+  "id": "wa_lu_navaho_earl_bean",
+  "name": "Navaho Peak to Bean Peak via Earl Peak",
+  "state": "Washington",
+  "region": "Teanaway",
+  "drop": true,
+  "legs": [
+   {
+    "peak": "Navaho Peak",
+    "route": "Stafford Creek and Navaho Pass",
+    "connect": ""
+   },
+   {
+    "peak": "Earl Peak",
+    "route": "Ridge traverse",
+    "connect": "Follow the crest, rejoining it near 6,800 feet on rock and scree."
+   },
+   {
+    "peak": "Bean Peak",
+    "route": "Ridge traverse",
+    "connect": "Continue along the ridge to Bean Peak."
+   }
+  ],
+  "duration": "1 long day",
+  "how": "A ridge walk along the Teanaway divide that strings three peaks together. Most of it is class 2 to 3 with scree and rock, and the approach from Stafford Creek climbs about 3,000 feet to Navaho Pass. Route finding along the ridge matters, since parts are blocked and need low bypasses.",
+  "descent": "Descend a different drainage to complete a loop instead of returning over the ridge.",
+  "logistics": "A trailhead pass is needed. Water is scarce on the ridge. Mid summer through early fall is best.",
+  "sources": [
+   "https://kuresman.com/2020/Navaho_Peak/Report_Navaho_Peak.html",
+   "http://www.kuresman.com/2024/Bean_Peak_Loop/Report_Bean_Peak_Loop.html",
+   "https://en.wikipedia.org/wiki/Earl_Peak"
+  ],
+  "confidence": "medium",
+  "notes": "Checked 2026-10-28. DROPPED: no source describes a Navaho to Earl to Bean ridge traverse. The Navaho report (2020) climbed Navaho only via Stafford Creek / Navaho Pass (about 6 miles, 3,000 ft) and looped back by the east ridge and the Navaho-Little Navaho saddle; Earl and Bean were not climbed. The Bean Peak report starts at the Bean Creek trailhead (Beverly Creek Road) and descends via Fourth Creek Pass; the ridge between Bean and Earl is not described. WTA reports pair Earl with Navaho and Three Brothers on separate days, and one 2018 writer says they long wanted to loop Navaho Pass, Earl and Bean, which is an aspiration rather than a commonly done route. Earl Peak easiest route is class 2 (Earl is two miles southwest of Navaho). The mention of the Esmeralda descent, ridge bypass near 6,800 ft and a Northwest Forest Pass could not be verified. The WTA 2022 report on Bean and Earl (22 miles, two days) returned 403 and could not be read, so the true Bean-Earl ridge might be commonly done as a backpack; recheck if wanted."
+ }
+]

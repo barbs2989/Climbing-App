@@ -1,0 +1,115 @@
+[
+ {
+  "lu": "id_lu_lost_river_traverse",
+  "leg": 0,
+  "peak": "Borah Peak",
+  "route": "Chicken-Out Ridge from the standard trailhead",
+  "pick": null,
+  "others": [
+   {
+    "id": "id_mullladymillsap",
+    "name": "MullladyMillsap",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Mt. Borah",
+    "score": 0
+   },
+   {
+    "id": "id_southwest_ridge",
+    "name": "Southwest Ridge",
+    "disc": "alpine",
+    "grade": "3rd",
+    "area": "Mt. Borah",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "id_lu_lost_river_traverse",
+  "leg": 1,
+  "peak": "Mount Sacajawea",
+  "route": "Ridge from the Borah saddle",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "id_lu_lost_river_traverse",
+  "leg": 2,
+  "peak": "Mount Idaho",
+  "route": "North ridge and northwest face",
+  "pick": {
+   "id": "id_east_face_direct",
+   "name": "East Face Direct",
+   "disc": "alpine",
+   "grade": "5.10b/c",
+   "area": "Mt Idaho",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "id_east_face_direct",
+    "name": "East Face Direct",
+    "disc": "alpine",
+    "grade": "5.10b/c",
+    "area": "Mt Idaho",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "id_lu_lost_river_traverse",
+  "leg": 3,
+  "peak": "Peak 11967 and White Cap Peak",
+  "route": "South ridge of Idaho, then the pinnacled crest",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "id_lu_lost_river_traverse",
+  "leg": 4,
+  "peak": "Leatherman Peak",
+  "route": "Northwest ridge",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "id_lu_lost_river_traverse",
+  "leg": 5,
+  "peak": "Bad Rock Peak",
+  "route": "Northwest ridge",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "id_lu_lost_river_traverse",
+  "leg": 6,
+  "peak": "Mount Church and Donaldson Peak",
+  "route": "Church by the west or north face from the tarn basin; Donaldson by the connecting ridge",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "id_lu_lost_river_traverse",
+  "leg": 7,
+  "peak": "No Regret Peak",
+  "route": "Ridge from Donaldson (optional finish)",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "id_lu_church_donaldson",
+  "leg": 0,
+  "peak": "Mount Church",
+  "route": "Headwall from the tarn to the Church/Donaldson col, then the east ridge",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "id_lu_church_donaldson",
+  "leg": 1,
+  "peak": "Donaldson Peak",
+  "route": "Ridge from the col",
+  "pick": null,
+  "others": []
+ }
+]
