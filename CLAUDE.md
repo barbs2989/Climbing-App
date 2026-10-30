@@ -208,6 +208,7 @@ npm run audit:stranded-track-vertices # a pin repair left the DRAWN LINE behind,
 npm run audit:cross-route-pins # FIFTH waypoint audit — do TWO ROUTES disagree about one named point? (place, and height)
 npm run audit:travel-bearings # does the prose send a party the way its OWN pins say the summit is?
 npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
+npm run audit:water-pins    # is every water source a route NAMES (creek, lake, spring) a Water pin on its map, on the track?
 
 # ── Roads, trailheads and access — notes: docs/guards/roads-and-access.md ──
 npm run audit:access-prose # road/permit sentences filed in a column that renders elsewhere
