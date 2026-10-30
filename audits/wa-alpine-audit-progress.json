@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_energizer_bunny",
+  "last_processed_id": "wa_forbidden_peak_east_ridge",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 488 complete. Continuing id-ascending scope from wa_energizer_bunny.",
+  "pass_note": "Pass 8 in progress, batch 489 complete. Continuing id-ascending scope from wa_forbidden_peak_east_ridge.",
   "batches": [
     {
       "batch_number": 1,
@@ -9705,6 +9705,26 @@
       "clean": 1,
       "sql_file": "audits/sql/2026-10-30-batch-488.sql",
       "note": "Nine confirmed internal-consistency fixes across 6 of the 8 routes (none required an external replacement value beyond corroboration -- all were the row contradicting its own other fields): wa_eldorado_peak_north_ridge and wa_eldorado_peak_west_arete each had a stale 8868ft summit waypoint elev contradicting their own high_point_ft/corrections (8872); wa_eldorado_peak_east_ridge had the same 8868->8872 contradiction in a pitch_detail prose note; wa_eldorado_peak_west_arete additionally had its fa date off by 5 days (Aug 24 -> Aug 29, 1969, confirmed via Mountain Project) ; wa_eldorado_peak_eldorado_glacier_nw had a data_quality.gaps entry falsely claiming no FA party is known when the row own fa field already names one, plus pitches/length_m (8/480m) contradicting its own pitch_detail array and prose (now 2/305m, ~1000ft); wa_elephant_butte_standard_route and wa_energizer_bunny both had dist_km roughly half their own stated round-trip mileage (one-way/round-trip mixup, confirmed against each rows own itinerary/bivy text); wa_energizer_bunny also had a Gnome Tarn bivy elevation (7372) contradicting its own waypoint and USGS/Topozone data for the same tarn (7415), duplicated in a nested approach_variants bivy list. Clean (1): wa_eldorado_peak_northeast_face (elevation, route beta/identity, permits and internal numeric consistency all checked out against SummitPost/MP/Mountaineers.org). Flagged for human review (5), no SQL: wa_eldorado_peak_north_ridge rope_note references the NE Face by name, possible cross-contamination from that route; wa_eldorado_peak_west_arete has a sourced ambiguity (SummitPost commenters disagree which ridge is actually the West Arete); wa_eldorado_peak_eldorado_glacier_nw names the same col inconsistently (Deans Spire vs Deans Tower); wa_elephant_butte_standard_route cites a specific trail reopening date (May 12, 2026) with no primary source found confirming it; wa_energizer_bunny has a pitch_detail lengthM sum (~541ft) exceeding its own confirmed total length (450ft) with no sourced per-pitch breakdown to correct it, plus an A0-vs-C1 grade convention conflict and an unconfirmable exact FA date, both genuine source disagreements rather than fabrication. Three parallel research agents covered this batch (3-3-2 route split). As in prior batches, mountainproject.com/summitpost.org/alpineinstitute.com failed to resolve from this session network; cross-checks relied on WebSearch synthesized snippets. check:sql passed (8 write targets, all ids exist, no destructive deletes); 2 of the quote-heavy jsonb_set statements were not parser-checkable and were manually verified against freshly-fetched live values before writing. File is 8.3KB, over the ~4KB SQL Editor paste limit -- split into chunks when applying by hand."
+    },
+    {
+      "batch_number": 489,
+      "date": "2026-10-30",
+      "pass": 8,
+      "route_ids": [
+        "wa_esmeralda_peaks_scramble",
+        "wa_fifth_of_july_mountain_scramble",
+        "wa_fire_on_the_mountain",
+        "wa_fish_whistle",
+        "wa_flora_mountain_southwest_slope",
+        "wa_flycatcher_buttress",
+        "wa_forbidden_peak_east_ledges",
+        "wa_forbidden_peak_east_ridge"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 2,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-10-30-batch-489.sql",
+      "note": "Nine of the eleven routes (now 8, one fewer than the usual 10 since Esmeralda Peaks spans two conflicting elevation sources) re-confirmed clean or newly clean: wa_fifth_of_july_mountain_scramble (7,696 ft matches Wikipedia/TopoQuest within survey noise), wa_fire_on_the_mountain (FA Blake Herrington & Rad Roberts 2009 confirmed via a contemporaneous Cascade Climbers trip report; its own data_quality.gaps already carries the 7-vs-8-pitch source disagreement, nothing new to add), wa_flycatcher_buttress (FA Steve Marts/Don McPherson/King McPherson 1965 and FFA Bryan Burdo 1990 onsight free solo both confirmed via SummitPost/OpenBeta; a 9-vs-10-vs-11 pitch-count spread across sources is the same kind of route-finding/pitch-splitting variance already accepted elsewhere in this catalog), wa_forbidden_peak_east_ledges and wa_forbidden_peak_east_ridge (elevation 8,815 ft confirmed; the east_ridge row corrections field references a once-duplicate sibling wa_forbidden_peak_east_ridge_direct -- queried directly, no such row currently exists in the DB, so that rename/merge already landed and needed no further action). 1 confirmed fix: wa_flora_mountain_southwest_slope gain_ft/loss_ft (3150 ft) is below the 4,123 ft floor the row's own waypoints require (Bird Creek Camp 4,200 ft to the 8,323 ft summit it already stores) -- fixed to the floor value, with a note that the real total is likely higher given the saddle-then-Castle-Creek dip the route's own itinerary describes, which no source gives an exact elevation for. 2 flagged for human review, no SQL: wa_esmeralda_peaks_scramble has a genuine 3-way elevation conflict -- this row's own high_point_ft (6765) matches the figure most-cited externally (Wikipedia 6,765 ft), while its own West Summit waypoint and the parent area row both say 6776 ft and label it the true/high summit; SummitPost gives a third figure (6,767 ft); no source actually supports 6776, and sources also disagree on whether the east or west summit is higher, so this needs a human with a current USGS/GNIS figure, not a guess. wa_fish_whistle's own FA claim (Darin Berdinka, Sept 11 2017) fits the pattern of his other Vesper Peak North Face routes (Ragged Edge 2013, True Grit 2015) but could not be independently corroborated; OpenBeta's Vesper Peak FA entry instead names Jim Graham and Tony Grenko, 1985, for what may or may not be the same route -- genuinely conflicting, not confirmable either way from here."
     }
   ]
 }

@@ -35823,3 +35823,51 @@ mountainproject.com/summitpost.org/alpineinstitute.com failed to resolve from th
 network; cross-checks relied on WebSearch's synthesized snippets.
 
 Next batch will continue alphabetically from `wa_energizer_bunny` (see progress file).
+
+## Batch 489 (2026-10-30, pass 8)
+
+Checked 8 routes across 7 peaks: Esmeralda Peaks (Southwest Slope/De Roux Creek), Fifth of
+July Mountain (Standard Scramble), Sloan Peak (Fire on the Mountain), Vesper Peak (Fish &
+Whistle), Flora Mountain (Southwest Slope), North Early Winters Spire (Flycatcher Buttress),
+and Forbidden Peak (East Ledges, East Ridge Direct).
+
+**1 confirmed fix** — `audits/sql/2026-10-30-batch-489.sql`:
+- `wa_flora_mountain_southwest_slope`: `gain_ft`/`loss_ft` were stored as 3,150 ft, but the
+  row's own waypoints put Bird Creek Camp at 4,200 ft and the summit it already stores at
+  8,323 ft — 4,123 ft apart on their own, before the saddle-then-Castle-Creek dip the row's
+  own itinerary describes pushes the true one-way gain higher still. Fixed to 4,123 ft (the
+  floor the row's own data allows); the real total is probably somewhat more, but no source
+  gives the creek crossing's exact elevation, so a human with a track/DEM should tighten it
+  further if wanted.
+
+**Flagged for human review (2), no SQL:**
+- `wa_esmeralda_peaks_scramble`: a genuine 3-way elevation conflict. This row's own
+  `high_point_ft` (6,765 ft) matches the figure most external sources cite (Wikipedia: 6,765
+  ft), while this same row's own West Summit waypoint *and* the parent area row both say 6,776
+  ft and call it the true/high summit; SummitPost gives yet a third figure (6,767 ft). No
+  source actually supports 6,776 ft, and sources also disagree on whether the east or west
+  summit is the true high point — this needs a current USGS/GNIS figure, not a guess.
+- `wa_fish_whistle`: the FA claim (Darin Berdinka, Sept 11, 2017) fits the pattern of his other
+  Vesper Peak North Face routes (Ragged Edge 2013, True Grit 2015) but couldn't be
+  independently corroborated. OpenBeta's own Vesper Peak FA entry instead names Jim Graham and
+  Tony Grenko, 1985 — possibly a different, older route conflated in that database, possibly
+  not; genuinely unconfirmable either way from here.
+
+**Clean (5):** `wa_fifth_of_july_mountain_scramble` (7,696 ft confirmed against
+Wikipedia/TopoQuest). `wa_fire_on_the_mountain` (FA Blake Herrington & Rad Roberts, 2009,
+confirmed via a contemporaneous Cascade Climbers trip report; the row's own
+`data_quality.gaps` already notes sources splitting 7 vs. 8 pitches, nothing new to add).
+`wa_flycatcher_buttress` (FA Steve Marts/Don McPherson/King McPherson 1965 and FFA Bryan Burdo
+1990 onsight free solo both confirmed via SummitPost/OpenBeta; a 9-vs-10-vs-11 pitch-count
+spread across sources is the same kind of pitch-splitting variance already tolerated elsewhere
+in this catalog). `wa_forbidden_peak_east_ledges` and `wa_forbidden_peak_east_ridge` (elevation
+8,815 ft confirmed; the East Ridge row's own `corrections` field references a once-duplicate
+sibling `wa_forbidden_peak_east_ridge_direct` — queried directly, no such row exists in the
+live DB, so that rename/merge already landed with nothing left to do).
+
+**Method notes:** `check:sql` passed (1 write target, id exists, no destructive deletes).
+mountainproject.com/summitpost.org failed to resolve directly from this session's network, as
+in prior batches; cross-checks relied on WebSearch's synthesized snippets from cached/indexed
+copies of those pages.
+
+Next batch will continue id-ascending from `wa_forbidden_peak_east_ridge` (see progress file).
