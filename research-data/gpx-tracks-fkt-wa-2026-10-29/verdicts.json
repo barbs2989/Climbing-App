@@ -376,5 +376,101 @@
   "sources": [
    "https://fastestknowntime.com/route/enchantment-enchainment-wa"
   ]
+ },
+ {
+  "id": "wa_honeymoon_route",
+  "slug": "mount-deception-wa",
+  "verdict": "unclear",
+  "reason": "FKT page names no line (only a SummitPost link and 'route variation'), and the opened sources show the standard route and Honeymoon as separate lines.",
+  "sources": [
+   "https://fastestknowntime.com/route/mount-deception-wa",
+   "https://en.wikipedia.org/wiki/Mount_Deception_(Washington)",
+   "https://sverdina.com/Deception1.asp"
+  ]
+ },
+ {
+  "id": "wa_little_annapurna_south_slopes",
+  "slug": "little-annapurna-wa",
+  "verdict": "unclear",
+  "reason": "FKT line (Aasgard Pass, then west between Isolation and Tranquil Lakes, then south to summit) looks like the north slopes, but no independent source describing the route could be opened (SummitPost and Mountaineers returned 403).",
+  "sources": [
+   "https://fastestknowntime.com/route/little-annapurna-wa"
+  ]
+ },
+ {
+  "id": "wa_mount_adams_south_climb",
+  "slug": "mt-adams-mt-hood-wa-or",
+  "verdict": "reject",
+  "reason": "The FKT file is a 158-mile Adams-to-Hood link-up, not the South Climb alone.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-adams-mt-hood-wa-or"
+  ]
+ },
+ {
+  "id": "wa_mount_adams_south_climb",
+  "slug": "mt-adams-mt-st-helens-wa",
+  "verdict": "reject",
+  "reason": "The FKT file is a roughly 90-mile Adams-to-St Helens link-up, not the South Climb alone.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-adams-mt-st-helens-wa"
+  ]
+ },
+ {
+  "id": "wa_mount_adams_wilson_glacier_headwall",
+  "slug": "mt-adams-mt-hood-wa-or",
+  "verdict": "reject",
+  "reason": "A 158-mile link-up to Hood with no sign of an east-side Wilson Glacier headwall line.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-adams-mt-hood-wa-or"
+  ]
+ },
+ {
+  "id": "wa_mount_adams_wilson_glacier_headwall",
+  "slug": "mt-adams-mt-st-helens-wa",
+  "verdict": "reject",
+  "reason": "A roughly 90-mile link-up to St Helens with no sign of an east-side Wilson Glacier headwall line.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-adams-mt-st-helens-wa"
+  ]
+ },
+ {
+  "id": "wa_mount_cruiser_nw_face_corner",
+  "slug": "mount-cruiser-0",
+  "verdict": "reject",
+  "reason": "The FKT page describes the Mountaineers' south/southwest corner route via Needle Pass, not a northwest face line, and sources list no northwest face route.",
+  "sources": [
+   "https://fastestknowntime.com/route/mount-cruiser-0",
+   "https://en.wikipedia.org/wiki/Mount_Cruiser"
+  ]
+ },
+ {
+  "id": "wa_mount_cruiser_south_corner",
+  "slug": "mount-cruiser-0",
+  "verdict": "unclear",
+  "reason": "The FKT line (Staircase, Flapjack Lakes, Needle Pass, 5th-class corner) matches the South Corner, but the only opened independent source (Wikipedia) just lists South Corner as the easiest route and gives no line; Mountaineers and SummitPost pages were 403 or blank.",
+  "sources": [
+   "https://fastestknowntime.com/route/mount-cruiser-0",
+   "https://en.wikipedia.org/wiki/Mount_Cruiser"
+  ]
+ },
+ {
+  "id": "wa_mount_pugh_stujack",
+  "slug": "mount-pugh",
+  "verdict": "accept",
+  "reason": "FKT line (trail past Lake Metan to Stujack Pass, then Knife's Edge and hands-on scramble to the summit) matches WTA's description of the Pugh route and our Stujack Pass scramble.",
+  "sources": [
+   "https://fastestknowntime.com/route/mount-pugh",
+   "https://www.wta.org/go-hiking/hikes/mount-pugh"
+  ]
+ },
+ {
+  "id": "wa_mount_si_haystack_scramble",
+  "slug": "mount-si-wa",
+  "verdict": "accept",
+  "reason": "The FKT standard SE trail route requires the Haystack scramble to the true summit, and WTA confirms the Mount Si Trail plus a scramble to the Haystack as the summit route.",
+  "sources": [
+   "https://fastestknowntime.com/route/mount-si-wa",
+   "https://www.wta.org/go-hiking/hikes/mount-si"
+  ]
  }
 ]
