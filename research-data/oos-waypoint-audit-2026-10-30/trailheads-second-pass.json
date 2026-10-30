@@ -1,0 +1,352 @@
+[
+ {
+  "batch": "T1",
+  "id": "ab_mount_northover_south_ridge",
+  "i": 0,
+  "name": "Interlakes parking lot",
+  "from": [
+   50.60968,
+   -115.11895
+  ],
+  "state": "Alberta",
+  "ground_ft": 5632,
+  "pins": [
+   {
+    "id": "ab_mount_northover_south_ridge",
+    "i": 0,
+    "name": "Interlakes parking lot",
+    "elev": null
+   }
+  ],
+  "route_names": [
+   "South Ridge"
+  ],
+  "text": "{\"trailhead\":\"Interlakes parking area, Upper Kananaskis Lake\"}",
+  "first_pass": "unverified: Interlakes lot not published by name; OSM has only an unnamed parking way 262483234 at 50.612275,-115.119485 (291 m) and web search found no coordinate. No change."
+ },
+ {
+  "batch": "T1",
+  "id": "ab_mount_cline_southwest_ridge",
+  "i": 0,
+  "name": "Thompson Creek trailhead",
+  "from": [
+   52.01368,
+   -116.62894
+  ],
+  "state": "Alberta",
+  "ground_ft": 4521,
+  "pins": [
+   {
+    "id": "ab_mount_cline_southwest_ridge",
+    "i": 0,
+    "name": "Thompson Creek trailhead",
+    "elev": null
+   }
+  ],
+  "route_names": [
+   "Southwest Ridge"
+  ],
+  "text": "{\"trailhead\":\"Thompson Creek (across from the campground), David Thompson Highway\",\"trailheadLat\":52.0137,\"trailheadLng\":-116.6289}",
+  "first_pass": "unverified: Thompson Creek trailhead; OSM has only the campground node (52.012317,-116.625761, 265 m) and rec-area polygon, no trailhead/parking node for the Cline route start. No change."
+ },
+ {
+  "batch": "T3",
+  "id": "ca_northwest_arete_2",
+  "i": 0,
+  "name": "Happy Isles Trailhead",
+  "from": [
+   37.73539,
+   -119.56629
+  ],
+  "state": "California",
+  "ground_ft": 3995,
+  "pins": [
+   {
+    "id": "ca_northwest_arete_2",
+    "i": 0,
+    "name": "Happy Isles Trailhead",
+    "elev": 4009
+   }
+  ],
+  "route_names": [
+   "Northwest Arete"
+  ],
+  "text": "",
+  "first_pass": "not moved: stored point is 45 m from OSM parking way 24601910 'Valley Trailhead Parking' (37.735011,-119.566464), 801 m from the Happy Isles node; the route text is unavailable here, so this may be the valley parking lot rather than Happy Isles. Ground 3995 ft agrees with pin elev 4009 ft. Unverified which spot is meant."
+ },
+ {
+  "batch": "T3",
+  "id": "ca_northwest_buttress_2",
+  "i": 0,
+  "name": "Tenaya Lake Northeast Shore Pullout",
+  "from": [
+   37.83642,
+   -119.45423
+  ],
+  "state": "California",
+  "ground_ft": 8159,
+  "pins": [
+   {
+    "id": "ca_northwest_buttress_2",
+    "i": 0,
+    "name": "Tenaya Lake Northeast Shore Pullout",
+    "elev": 8151
+   }
+  ],
+  "route_names": [
+   "Northwest Buttress"
+  ],
+  "text": "",
+  "first_pass": "no published coordinate: 'Tenaya Lake Northeast Shore Pullout' is a roadside pullout; OSM/Photon list no such node (nearest named lot is Sunrise Lakes 1.9 km away, a different place)."
+ },
+ {
+  "batch": "T3",
+  "id": "ca_tenaya_matthes_cathedral_traverse",
+  "i": 0,
+  "name": "Tenaya Lake North Parking",
+  "from": [
+   37.83769,
+   -119.45173
+  ],
+  "state": "California",
+  "ground_ft": 8161,
+  "pins": [
+   {
+    "id": "ca_tenaya_matthes_cathedral_traverse",
+    "i": 0,
+    "name": "Tenaya Lake North Parking",
+    "elev": 8192
+   }
+  ],
+  "route_names": [
+   "Tenaya, Matthes, Cathedral Traverse"
+  ],
+  "text": "",
+  "first_pass": "no published coordinate: 'Tenaya Lake North Parking' is a roadside pullout; no OSM node for it (nearest named lot Sunrise Lakes 2.1 km away, a different place)."
+ },
+ {
+  "batch": "T3",
+  "id": "ca_north_arete_6",
+  "i": 0,
+  "name": "Twin Lakes (Mono Village) Trailhead",
+  "from": [
+   38.14573,
+   -119.37867
+  ],
+  "state": "California",
+  "ground_ft": 7100,
+  "pins": [
+   {
+    "id": "ca_north_arete_6",
+    "i": 0,
+    "name": "Twin Lakes (Mono Village) Trailhead",
+    "elev": 7133
+   }
+  ],
+  "route_names": [
+   "North Arete"
+  ],
+  "text": "",
+  "first_pass": "no published coordinate: OSM lists only the Mono Village marina (38.147507,-119.377186, 236 m), restaurant and store, no trailhead node. Unverified; no change."
+ },
+ {
+  "batch": "T4",
+  "id": "co_wham_ridge",
+  "i": 0,
+  "name": "Molas Trailhead",
+  "from": [
+   37.74762,
+   -107.68801
+  ],
+  "state": "Colorado",
+  "ground_ft": 10607,
+  "pins": [
+   {
+    "id": "co_wham_ridge",
+    "i": 0,
+    "name": "Molas Trailhead",
+    "elev": 10594
+   }
+  ],
+  "route_names": [
+   "Wham Ridge"
+  ],
+  "text": "",
+  "first_pass": "The only published point (about 1.5 km away, 3DEP 10,906 ft) is the Molas Pass Overlook, not this trailhead; stored pin ground 10,607 ft matches pin elev 10,594. No published coordinate for the actual trailhead: unverified, left."
+ },
+ {
+  "batch": "T6",
+  "id": "id_southwest_ridge",
+  "i": 0,
+  "name": "Borah Peak Trailhead",
+  "from": [
+   44.13256,
+   -113.83448
+  ],
+  "state": "Idaho",
+  "ground_ft": 7407,
+  "pins": [
+   {
+    "id": "id_southwest_ridge",
+    "i": 0,
+    "name": "Borah Peak Trailhead",
+    "elev": 7392
+   }
+  ],
+  "route_names": [
+   "Southwest Ridge"
+  ],
+  "text": "",
+  "first_pass": "Single weak listing matches stored to a few metres, so it may echo the same data; ground 7,407 ft vs pin 7,392 ft and the usual 7,200-7,400 ft trailhead height is consistent. Unverified independently; left."
+ },
+ {
+  "batch": "T7",
+  "id": "id_diamond_peak_east_ridge",
+  "i": 0,
+  "name": "Pass Creek Road End",
+  "from": [
+   44.14738,
+   -113.03906
+  ],
+  "state": "Idaho",
+  "ground_ft": 8137,
+  "pins": [
+   {
+    "id": "id_diamond_peak_east_ridge",
+    "i": 0,
+    "name": "Pass Creek Road End",
+    "elev": 8137
+   }
+  ],
+  "route_names": [
+   "East Ridge"
+  ],
+  "text": "{\"trailhead\":\"Pass Creek Road End\",\"trailheadLat\":44.14738,\"trailheadLng\":-113.03906}",
+  "first_pass": "No published coordinate found: guides describe the gate on Pass Creek Road (FS-181) by mileage only; unverified."
+ },
+ {
+  "batch": "T7",
+  "id": "id_thompson_peak_south_couloir",
+  "i": 0,
+  "name": "Redfish Trailhead",
+  "from": [
+   44.14842,
+   -114.91999
+  ],
+  "state": "Idaho",
+  "ground_ft": 6578,
+  "pins": [
+   {
+    "id": "id_thompson_peak_south_couloir",
+    "i": 0,
+    "name": "Redfish Trailhead",
+    "elev": 6571
+   }
+  ],
+  "route_names": [
+   "South Couloir"
+  ],
+  "text": "{\"trailhead\":\"Redfish Trailhead\",\"trailheadLat\":44.14842,\"trailheadLng\":-114.91999}",
+  "first_pass": "Unverified: the Redfish Lake trailhead pages found (fs.usda.gov Sawtooth) print no coordinate; third-party points (visitor center 44.1436,-114.9197, North Shore picnic area 44.143686,-114.915795) are different places."
+ },
+ {
+  "batch": "T7",
+  "id": "or_diamond_peak_south_ridge",
+  "i": 0,
+  "name": "Summit Lake Trailhead",
+  "from": [
+   43.46358,
+   -122.13479
+  ],
+  "state": "Oregon",
+  "ground_ft": 5593,
+  "pins": [
+   {
+    "id": "or_diamond_peak_south_ridge",
+    "i": 0,
+    "name": "Summit Lake Trailhead",
+    "elev": 5635
+   }
+  ],
+  "route_names": [
+   "South Ridge (from Summit Lake)"
+  ],
+  "text": "{\"trailhead\":\"Summit Lake Trailhead\",\"trailheadLat\":43.46358,\"trailheadLng\":-122.13479}",
+  "first_pass": "Unverified: a USFS trailhead record (SUMMIT LAKE TRAILHEAD, 43.46673,-122.11227, seen in search text only) is about 1.8 km from stored and several Summit Lake trailheads (Emigrant Pass, PCT) exist here; no fetched page confirmed which one the route means."
+ },
+ {
+  "batch": "T7",
+  "id": "or_mt_bachelor_trail",
+  "i": 0,
+  "name": "West Village Lodge",
+  "from": [
+   43.99402,
+   -121.66066
+  ],
+  "state": "Oregon",
+  "ground_ft": 6415,
+  "pins": [
+   {
+    "id": "or_mt_bachelor_trail",
+    "i": 0,
+    "name": "West Village Lodge",
+    "elev": 6416
+   }
+  ],
+  "route_names": [
+   "Mt. Bachelor Trail"
+  ],
+  "text": "",
+  "first_pass": "Unverified: only a TopoQuest point 44.00289,-121.67811 turned up, about 1.8 km away and not named West Village; no published coordinate confirmed."
+ },
+ {
+  "batch": "T8",
+  "id": "or_north_ridge_2",
+  "i": 0,
+  "name": "PCT trailhead, Old Santiam Wagon Road",
+  "from": [
+   44.38011,
+   -121.85595
+  ],
+  "state": "Oregon",
+  "ground_ft": 4685,
+  "pins": [
+   {
+    "id": "or_north_ridge_2",
+    "i": 0,
+    "name": "PCT trailhead, Old Santiam Wagon Road",
+    "elev": null
+   }
+  ],
+  "route_names": [
+   "North Ridge"
+  ],
+  "text": "",
+  "first_pass": "No published coordinate: no page prints one for the Old Santiam Wagon Road / PCT crossing."
+ },
+ {
+  "batch": "T8",
+  "id": "or_mt_hood_south_side_hogsback",
+  "i": 0,
+  "name": "Timberline Lodge",
+  "from": [
+   45.33177,
+   -121.7077
+  ],
+  "state": "Oregon",
+  "ground_ft": 5890,
+  "pins": [
+   {
+    "id": "or_mt_hood_south_side_hogsback",
+    "i": 0,
+    "name": "Timberline Lodge",
+    "elev": 5905
+   }
+  ],
+  "route_names": [
+   "South Side (Hogsback)"
+  ],
+  "text": "{\"trailhead\":\"Timberline Lodge\",\"trailheadLat\":45.33177,\"trailheadLng\":-121.7077}",
+  "first_pass": "Unverified: published points for the lodge building disagree (Wikipedia 45.3311,-121.71; latlong.net 45.33112,-121.711128; TopoQuest 45.3312,-121.7113), 190-290 m from stored, which sits east of the lodge near the parking/lift; no source publishes the climbers trailhead itself."
+ }
+]

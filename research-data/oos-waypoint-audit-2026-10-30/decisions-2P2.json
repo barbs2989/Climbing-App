@@ -1,0 +1,56 @@
+[
+ {
+  "id": "ca_northwest_arete_2",
+  "i": 0,
+  "name": "Happy Isles Trailhead",
+  "from": [
+   37.73539,
+   -119.56629
+  ],
+  "op": "move",
+  "to": [
+   37.7328208,
+   -119.5577795
+  ],
+  "reason": "Pin is named Happy Isles Trailhead but sits 801 m west at the valley parking lot (OSM way 24601910). Published Happy Isles trailhead moved there; 3DEP ground 4027 ft vs pin elev 4009 ft.",
+  "source": "https://api.openstreetmap.org/api/0.6/node/1742208425.json",
+  "quote": "node 1742208425 lat 37.7328208 lon -119.5577795 tags highway=trailhead name=Happy Isles Trailhead alt_name=Mist Trailhead"
+ },
+ {
+  "id": "ca_northwest_buttress_2",
+  "i": 0,
+  "name": "Tenaya Lake Northeast Shore Pullout",
+  "from": [
+   37.83642,
+   -119.45423
+  ],
+  "op": "none",
+  "coordinate_key": "37.83642,-119.45423",
+  "reason": "no published coordinate: roadside pullout on Tioga Road; OSM, Nominatim and web searches list no node for it."
+ },
+ {
+  "id": "ca_tenaya_matthes_cathedral_traverse",
+  "i": 0,
+  "name": "Tenaya Lake North Parking",
+  "from": [
+   37.83769,
+   -119.45173
+  ],
+  "op": "none",
+  "coordinate_key": "37.83769,-119.45173",
+  "reason": "no published coordinate: roadside parking along Tioga Road; no OSM node or agency coordinate found."
+ },
+ {
+  "id": "ca_north_arete_6",
+  "i": 0,
+  "name": "Twin Lakes (Mono Village) Trailhead",
+  "from": [
+   38.14573,
+   -119.37867
+  ],
+  "op": "none",
+  "reason": "Left as is (reviewer): the proposed OSM point is the Robinson Creek Trailhead, but Matterhorn Peak North Arete approaches by the Horse Creek trail from Twin Lakes, a different start; no published Horse Creek trailhead coordinate found. Mono Village trailhead is the Robinson Creek Trailhead; pin is 304 m east-southeast. 3DEP ground 7130 ft vs pin elev 7133 ft.",
+  "source": "https://nominatim.openstreetmap.org/search?q=Robinson+Creek+Trailhead (OSM node 4022818249)",
+  "quote": "Robinson Creek Trailhead, highway=trailhead, lat 38.1469946 lon -119.3817541"
+ }
+]
