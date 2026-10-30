@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_direct_west_face",
+  "last_processed_id": "wa_dragontail_peak_colchuck_col_buttress",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 483 complete. Continuing id-ascending scope from wa_direct_west_face.",
+  "pass_note": "Pass 8 in progress, batch 484 complete. Continuing id-ascending scope from wa_dragontail_peak_colchuck_col_buttress.",
   "batches": [
     {
       "batch_number": 1,
@@ -9606,6 +9606,26 @@
       "clean": 5,
       "sql_file": null,
       "note": "No confirmed errors; no SQL. Clean (5): wa_dark_side_of_liberty (FA/grade match the AAC's own published account by Shanjean Lee almost exactly), wa_davis_peak_nc_north_face (first-winter-ascent credit matches Ade Miller's own account and the AAC summary exactly, to the day), wa_davis_peak_nc_north_face_burdo_cairns (beta matches Bryan Burdo's own 1988 AAJ report of the climb almost verbatim), wa_direct_north_buttress (FA matches Kearney's own 1981 AAJ account exactly; FFA, length, pitch count and grade all match Mountain Project/OpenBeta), wa_direct_west_face (FA and exact date match a contemporaneous Cascade Climbers trip report; grade/pitch count match Mountain Project). Flagged for human review (3): wa_davis_peak_nc_north_face has a genuine 3-way FA-year conflict (1976 stored/Ade Miller vs 1972 SummitPost vs 1974 Burdo AAJ) with no clear winner; wa_der_dihedral's grade matches Mountain Project exactly but its FA credit (Layton/Wolfe, 2006) is unconfirmed by any source found; wa_direct_southwest_buttress's pitch count/grade match Mountain Project exactly but its FA credit (Preiss/Bunker, Sept 2006) is likewise unconfirmed. Also noted (not SQL'd, not a sourced-fact issue): wa_direct_north_buttress's rope_note column is a truncated sentence (\"The route tops out on the ridge \") -- a data-integrity defect, flagged for a human to complete or null out. WebFetch again could not resolve mountainproject.com/ademiller.com/publications.americanalpineclub.org from this run's network; relied on WebSearch's synthesized snippets."
+    },
+    {
+      "batch_number": 484,
+      "date": "2026-10-30",
+      "pass": 8,
+      "route_ids": [
+        "wa_dolphin_chimney",
+        "wa_dome_peak_dome_glacier",
+        "wa_dome_peak_indian_summer",
+        "wa_dorado_needle_east_ridge",
+        "wa_dot_mountain_scramble",
+        "wa_dragontail_peak_backbone_ridge",
+        "wa_dragontail_peak_boving_route",
+        "wa_dragontail_peak_colchuck_col_buttress"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 2,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-10-30-batch-484.sql",
+      "note": "Confirmed fix (1, 2 rows): wa_dome_peak_dome_glacier and wa_dome_peak_indian_summer both stored high_point_ft 8920 (the older map figure); the wa_dome_peak area row already carries the matched LiDAR pair elevation_ft 8926 / prominence_ft 3079 (listsofjohn.com's LiDAR entry for this exact peak, coords matching to 4 decimals), so raised both routes to 8926 to agree with their own parent area -- same shape as the batch-482 Cutthroat fix, area row correct this time. Clean (5): wa_dolphin_chimney (FA Beckey/Madsen 1967 matches OpenBeta; high_point_ft 7807 matches Wikipedia/SummitPost/MP for South Early Winters Spire), wa_dorado_needle_east_ridge (FA Firey/Firey/Hoesli/Knudson/Renz July 4 1971 matches AAI's profile citing Beckey exactly, already hedged 'attribution uncertain', left as is; high_point_ft 8440 matches Wikipedia exactly), wa_dome_peak_dome_glacier (FA George Freed and Eric Larson, Aug 1 1936 matches Wikipedia's credit for the peak's higher NE summit, beyond the elevation fix above), wa_dome_peak_indian_summer (FA 'approximately September 2, 2011 (party included Nate Farr)' matches a Cascade Climbers TR and the AAC's own Cascades summary almost exactly -- already correctly hedged since the second climber's name isn't published anywhere found), wa_dragontail_peak_backbone_ridge (FA Weigelt/Bonneville 1970 + Fin Direct variation Cruver/Lewis 1975 matches Mountain Project/OpenBeta/a Cascade Climbers TR exactly, over one outlier SummitPost page misattributing the 1970 FA; high_point_ft 8840 matches Dragontail Peak's standard elevation). Also clean, already self-disclosed: wa_dot_mountain_scramble's high_point_ft 8224 sits in a genuine source spread (SummitPost 8220 vs TopoQuest/TopoZone ~8139-8140) but the route's own data_quality.gaps already states the ~8,212-8,225 ft spread and that 8224 is within it. Flagged for human review (2): wa_dragontail_peak_boving_route (FA climbers/year match a 2014 TR but no source gives a month for the stored 'August 1977'), wa_dragontail_peak_colchuck_col_buttress (FA Steve Barnett/Keith Hansen July 1974 could not be confirmed or contradicted by any source found); both rows are also unusually sparse (name/grade/FA/pitches only) -- a completeness gap, not a sourced-fact error, so not SQL'd. WebSearch only this run (no WebFetch attempted)."
     }
   ]
 }

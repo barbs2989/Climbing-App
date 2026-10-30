@@ -35550,3 +35550,52 @@ No SQL written, no fix attempted, nothing audited — this audit has read-only D
 project-dashboard access to inspect or restart the Supabase instance. Logged per the run's
 guardrails (nothing outside `audits/` touched). Next scheduled run should simply retry pass 8
 from `wa_dark_peak_dark_glacier_route` as if this run never happened.
+
+## 2026-10-30 — Batch 484 (pass 8): 8 routes, 1 fix (2 rows), 2 flagged
+
+Checked `wa_dolphin_chimney`, `wa_dome_peak_dome_glacier`, `wa_dome_peak_indian_summer`,
+`wa_dorado_needle_east_ridge`, `wa_dot_mountain_scramble`, `wa_dragontail_peak_backbone_ridge`,
+`wa_dragontail_peak_boving_route`, `wa_dragontail_peak_colchuck_col_buttress`.
+
+**Confirmed fix** (`audits/sql/2026-10-30-batch-484.sql`): both Dome Peak routes
+(`wa_dome_peak_dome_glacier`, `wa_dome_peak_indian_summer`) store `high_point_ft = 8920`, the
+older map-based figure (Wikipedia "8,920+ ft", SummitPost). But the `wa_dome_peak` area row
+already carries the LiDAR-surveyed pair `elevation_ft 8926` / `prominence_ft 3079` —
+listsofjohn.com's LiDAR entry for this exact peak (coords match this area row's lat/lng to 4
+decimals) gives elevation 8,926 ft and rise 3,079 ft, so the area row is already internally
+self-consistent on the newer survey, and 8920 doesn't pair with this area's own prominence.
+Same shape as the Cutthroat Peak fix in batch 482, just with the area row on the correct side
+this time — raised both routes' `high_point_ft` to 8926 to match their own parent area.
+
+**Clean (4):** `wa_dolphin_chimney` (FA Fred Beckey and Jim Madsen, 1967 matches OpenBeta; the
+already-stored high_point_ft 7807 matches Wikipedia/SummitPost/Mountain Project for South Early
+Winters Spire); `wa_dorado_needle_east_ridge` (FA Joan and Joe Firey, Hans Hoesli, Dave Knudson
+and Peter Renz, July 4, 1971 matches the American Alpine Institute's route profile citing
+Beckey's guide exactly — already correctly hedged "(attribution uncertain)", left as is; grade
+5.7 matches Mountain Project's current rating over Beckey's original 5.5; high_point_ft 8440
+matches Wikipedia's Dorado Needle elevation exactly); `wa_dome_peak_dome_glacier` (FA George
+Freed and Eric Larson, August 1, 1936 matches Wikipedia's credit for the peak's higher
+northeast summit exactly, beyond the high_point_ft fix above); `wa_dragontail_peak_backbone_ridge`
+(FA "M. Weigelt and J. Bonneville 1970 / Fin Direct variation 1975 — P. Cruver and K. Lewis"
+matches Mountain Project, OpenBeta and a Cascade Climbers trip report exactly, over a single
+outlier SummitPost page that misattributes the 1970 FA to Cruver/Lewis — the climbers tied to
+the 1975 Fin Direct everywhere else; high_point_ft 8840 matches Dragontail Peak's standard
+elevation).
+
+**Also clean, already self-disclosed:** `wa_dot_mountain_scramble`'s high_point_ft 8224 sits
+in a genuine source spread (SummitPost's Pasayten list gives 8220; TopoQuest/TopoZone give
+~8139-8140, 85 ft lower) with no clear winner — the route's own `data_quality.gaps` already
+states the elevation varies "~8,212-8,225 ft" across sources and that 8224 is within that
+range, so this is already honestly hedged rather than a silent error.
+
+**Flagged for human review (2):** `wa_dragontail_peak_boving_route`'s FA climbers and 1977 year
+match a 2014 Cascade Climbers trip report, but no source gives a month, so the stored "August
+1977" has an unconfirmed month; `wa_dragontail_peak_colchuck_col_buttress`'s FA (Steve Barnett
+and Keith Hansen, July 1974) could not be confirmed or contradicted by any source found. Both
+rows are also unusually sparse (name/grade/FA/pitches only, no overview/beta/waypoints like
+their Dragontail siblings) — a completeness gap, not a sourced-fact error, so not SQL'd here.
+
+Also re-confirmed in passing: `wa_dome_peak_indian_summer`'s FA ("approximately September 2,
+2011 (party included Nate Farr)") matches a Cascade Climbers trip report and the AAC's own
+Cascades summary for that date almost exactly — already correctly hedged since the second
+climber's name isn't published anywhere found.
