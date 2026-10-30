@@ -1,0 +1,155 @@
+{
+ "file": "r004.json",
+ "results": [
+  {
+   "id": "ca_mammoth_crest_the_art_of_the_steal",
+   "fact": "route length",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": null,
+   "evidence": "The only listing found for this line gives a 12 ft (4 m) length that its own description contradicts: 7 bolts plus gear, a ledge and a lower-off. Searches for a second guide or database entry (route name with Mammoth Crest, Pump Up the Jams wall, McLeod Lake, FA party) found nothing independent; the area page just lists the route. 4 m is clearly a data-entry error but no second source gives a figure, so the blanking rule (2 sources) is not met; recommend nulling length_m at owner discretion. [Lead decision (owner pre-approval): a 7-bolt sport pitch cannot be 4 m; the row's own bolt count plus the listing prove the value false, and no source gives the true length, so length_m is blanked.]",
+   "sources": [
+    "https://www.mountainproject.com/route/203836583/the-art-of-the-steal",
+    "https://www.mountainproject.com/area/106648445/mammoth-crest"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "length_m",
+     "path": [],
+     "expect": 4,
+     "value": null,
+     "id": "ca_mammoth_crest_the_art_of_the_steal",
+     "fact": "route length"
+    }
+   ]
+  },
+  {
+   "id": "ca_mt_whitney_hairline_free",
+   "fact": "pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": "13 pitches is correct",
+   "evidence": "The descent text describes the parent route Hairline (12 pitches, aid) joining the East Face line above its ninth pitch; it is not a count for Hairline Free. Hairline Free is listed with 13 pitches on its own Mountain Project page, and the AAJ report of the 2023 free ascent and the Gripped article also give 13 pitches. Pitch count and length (606 m listed) are consistent with the row.",
+   "sources": [
+    "https://www.mountainproject.com/route/125006530/hairline-free",
+    "https://publications.americanalpineclub.org/articles/13201216781",
+    "https://gripped.com/?p=49935"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ca_southwest_edge",
+   "fact": "length of climbing",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Mountain Project lists the line as 600 ft (182 m) long, while its description says about +360 vertical feet upward; the stored 183 m is the line length and the prose figure is vertical gain, which are different quantities (OpenBeta mirrors the 360 vertical ft). The edge can be followed at varying distances so length exceeds vertical rise.",
+   "sources": [
+    "https://www.mountainproject.com/route/113462603/southwest-edge",
+    "https://stg.openbeta.io/climb/093a03d2-1802-503e-b3a2-b3cdd9e4848c/southwest-edge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ca_north_face_17_cowardice",
+   "fact": "pitch count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": null,
+   "evidence": "pitches=1 is provably false: overview describes two 70 m technical pitches then ~160 m of snow gullies, the approach text says 'the first pitch climbs the buttress', and length_m is 427 m; Mountain Project lists the route at 1400 ft (424 m), Grade III, with Pitch 1 and Pitch 2 described and no total count. No second independent source gives a total count (searches of AAJ, SummitPost, blogs found nothing on this line), so the false 1 is blanked.",
+   "sources": [
+    "https://www.mountainproject.com/route/114061154/cowardice",
+    "https://www.mountainproject.com/area/108421851/north-face"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 1,
+     "value": null,
+     "id": "ca_north_face_17_cowardice",
+     "fact": "pitch count"
+    }
+   ]
+  },
+  {
+   "id": "ca_royce_peak_north_ridge_direct",
+   "fact": "route length",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": null,
+   "evidence": "The first-ascent party's AAJ report gives 1,500 ft (about 457 m) for the route, and the row's own pitch breakdown (160+160+120 ft plus 400 ft ridge plus 800 ft scramble) totals about 1,640 ft; the stored 305 m (1,000 ft, the Mountain Project entry) conflicts with both. Sources do not give an agreed figure, so the length is blanked.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201216992",
+    "https://www.mountainproject.com/route/126756205/north-ridge-direct"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "length_m",
+     "path": [],
+     "expect": 305,
+     "value": null,
+     "id": "ca_royce_peak_north_ridge_direct",
+     "fact": "route length"
+    }
+   ]
+  },
+  {
+   "id": "ca_royce_peak_north_ridge_direct",
+   "fact": "pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": "5 pitches stands",
+   "evidence": "Overview P4 is 400 ft of ridge climbing (two rope lengths) after three steep pitches, giving 5 roped pitches, which matches the Mountain Project entry (5 pitches). The AAJ report says 6, counting differently; the sources differ by counting convention, not by error.",
+   "sources": [
+    "https://www.mountainproject.com/route/126756205/north-ridge-direct",
+    "https://publications.americanalpineclub.org/articles/13201216992"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ca_sky_blue_spire_hawg_ripper",
+   "fact": "route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project lists 700 ft (212 m), 5 pitches, matching the stored 213 m and the 5 pitches, while its pitch lengths sum to 157 m; the route weaves along an arete so the listed pitch lengths may be partial. Searches (route name with Sky Blue Spire/Miter Basin, Carpenter, AAJ, thecrag, SummitPost, Adventure Collective) found no independent source for length.",
+   "sources": [
+    "https://www.mountainproject.com/route/201756184/hawg-ripper",
+    "https://www.mountainproject.com/area/126604245/sky-blue-spire"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ca_sky_blue_spire_2_bofa_spire",
+   "fact": "route length",
+   "verdict": "not_a_contradiction",
+   "correct_value": "244 m stands",
+   "evidence": "Mountain Project lists 800 ft (242 m), 6 pitches. The four roped pitches total 155 m and the rest of the route is unroped scrambling and chimneys to the summit block, which accounts for the remaining length.",
+   "sources": [
+    "https://www.mountainproject.com/route/201898302/bofa-spire",
+    "https://www.mountainproject.com/area/201753137/sky-blue-spire-2"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ca_sky_blue_spire_2_bofa_spire",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project lists 6 pitches but describes four roped pitches then scrambling/chimneying 'until comfortable unroping'. No second source (searches for the route, the spire, FA party) gives a count, so the 6 vs 4 roped question stays open; it may count scramble pitches.",
+   "sources": [
+    "https://www.mountainproject.com/route/201898302/bofa-spire"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_the_gill_crack",
+   "fact": "how the route is climbed",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project types the line Trad, TR, Boulder (20 ft), says Gill first climbed it as a boulder problem and gives toprope setup via the neighbouring Black Crack anchors, with photos of both bouldering and toproping. 27crags lists it too. No source says which style is more common, so neither sentence can be proven wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/105749902/the-gill-crack",
+    "https://27crags.com/crags/castle-rock-co/routes/the-gill-crack"
+   ],
+   "patches": []
+  }
+ ]
+}

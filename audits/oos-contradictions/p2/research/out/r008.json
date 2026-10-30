@@ -1,0 +1,225 @@
+{
+ "file": "r008.json",
+ "results": [
+  {
+   "id": "or_salt_creek_falls_the_diamond_sea",
+   "fact": "length vs pitch lengths",
+   "verdict": "not_a_contradiction",
+   "correct_value": "length_m 98 is the vertical height",
+   "evidence": "The route's own page lists it as 320 ft (97 m), 3 pitches, matching length_m 98. The 65 m first pitch is a traverse behind the falls (spray cone) rather than vertical gain, and the waterfall itself is about 286 ft (87 m) high, so the 143 m of rope-length is not total height.",
+   "sources": [
+    "https://www.mountainproject.com/route/200489570/the-diamond-sea",
+    "https://en.wikipedia.org/wiki/Salt_Creek_Falls"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ut_american_fork_twins_saved_by_the_turf",
+   "fact": "route length",
+   "verdict": "not_a_contradiction",
+   "correct_value": "length_m 244 (800 ft) stays",
+   "evidence": "Route page lists 800 ft (242 m), 3 pitches and says that after the 20 m pitch 3 the party unroped and climbed about 500 ft of steep snow in Center Chute plus a short AI2/3 section to the ridge. The 115 m of roped pitches plus the unroped couloir accounts for the stated total. Searches for a second page found nothing independent, but no change is needed.",
+   "sources": [
+    "https://www.mountainproject.com/route/124995016/saved-by-the-turf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ut_blue_grama_cliff_closed_moon_goddess_revenge",
+   "fact": "rappel vs route length",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "descent: rappel or lower",
+   "evidence": "The route page (closed for cultural resource protection, no descent text) lists the route as 100 ft (30 m), matching length_m 30, so a 60 ft lower/rappel cannot reach the ground from the top. The 60 ft figure is the outlier and is removed. Searched the web for the name; only the area page and route page exist.",
+   "sources": [
+    "https://www.mountainproject.com/route/105812468/closed-moon-goddess-revenge",
+    "https://www.mountainproject.com/area/105716910/blue-gramma-cliff"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "rappel or lower 60 ft",
+     "replace": "rappel or lower",
+     "id": "ut_blue_grama_cliff_closed_moon_goddess_revenge",
+     "fact": "rappel vs route length"
+    }
+   ]
+  },
+  {
+   "id": "ut_mexican_hat_bandito_route",
+   "fact": "rappel vs route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page lists Bandito Route as Aid, 40 ft (12 m), a bolt ladder through the cap-rock roof to the summit, matching length_m 12; the visitutah page also calls it a bolted clip-up aid climb. No source states the summit rappel length. An 80 ft rappel could be the full drop from the summit to the base of the cap, which is longer than the roof climb, so I cannot prove it wrong. Searched mountainproject, summitpost, visitutah, roadtripryan.",
+   "sources": [
+    "https://www.mountainproject.com/route/105717295/bandito-route",
+    "https://www.visitutah.com/places-to-go/parks-outdoors/monument-valley-tribal-park/climbing-the-mexican-hat"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ut_the_moonlight_buttress_clean_aid",
+   "fact": "aid vs free description",
+   "verdict": "fixed",
+   "correct_value": "overview describes the aid line",
+   "evidence": "The aid route page (5.8 C1, Trad Aid) says this is the aided ascent of the same buttress as the free route; the Mountaineers and classic-climbs references give the aid version as 5.9 C1/A1. So the free-line overview is wrong for this row. The overview wording is replaced. Pitch count found 10 on one page and 11 on another, so pitches 0 (impossible) is blanked.",
+   "sources": [
+    "https://www.mountainproject.com/route/105717718/the-moonlight-buttress-clean-aid",
+    "https://www.mountaineers.org/activities/routes-places/moonlight-buttress",
+    "https://climbing-history.org/climb/2288/moonlight-buttress"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "Zion's classic free line: a stunning, very exposed climb of tough jamming and laybacking up the prominent buttress.",
+     "replace": "Zion's classic clean aid line: a stunning, very exposed climb up the prominent crack system of the buttress.",
+     "id": "ut_the_moonlight_buttress_clean_aid",
+     "fact": "aid vs free description"
+    }
+   ]
+  },
+  {
+   "id": "ut_the_moonlight_buttress_clean_aid",
+   "fact": "pitches is 0 on a multi-pitch route",
+   "verdict": "fixed",
+   "correct_value": "pitches blank (sources say 10 and 11)",
+   "evidence": "Route page lists 1,200 ft, 10 pitches; another database lists 11 pitches. They disagree, so the false 0 is blanked rather than replaced.",
+   "sources": [
+    "https://www.mountainproject.com/route/105717718/the-moonlight-buttress-clean-aid",
+    "https://climbing-history.org/climb/2288/moonlight-buttress"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 0,
+     "value": null,
+     "id": "ut_the_moonlight_buttress_clean_aid",
+     "fact": "pitches is 0 on a multi-pitch route"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "ut_pale_fire",
+   "fact": "rappel count vs wall length",
+   "verdict": "not_a_contradiction",
+   "correct_value": "no change",
+   "evidence": "Route page lists 600 ft (182 m), 4 pitches, and says the descent is double-rope raps back down the route (a comment says three). With two 60 m ropes each rappel is up to about 60 m, so four rappels cover 183 m; 'doubled ropes' means a two-rope system, and rope_length_m is the length of a single rope. A summit-post note also mentions a single 70 m rope as an option.",
+   "sources": [
+    "https://www.mountainproject.com/route/105718225/pale-fire",
+    "https://www.summitpost.org/moses-5-11-5-12c/500695"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wy_7_deer_creek_too_cold_to_fire",
+   "fact": "pitch count and length",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "pitch lengths are feet: 10, 5, 20, 35 (70 ft total = 21 m)",
+   "evidence": "The route page header gives 70 ft (21 m), 2 pitches, matching the row's length_m 21; its prose lists 10 + 5 + 20 + 35 = 70, which sums to exactly 70 ft, so the prose unit 'm' is a mislabel for feet. A trip blog also calls it a short two-pitch WI4. The pitch figures in the overview are changed to feet; pitches 2 is kept.",
+   "sources": [
+    "https://www.mountainproject.com/route/105900834/too-cold-to-fire",
+    "https://tenthousandtoofar.com/tag/south-fork-valley"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "a 10m ledge, then a 5m curtain",
+     "replace": "a 10 ft ledge, then a 5 ft curtain",
+     "id": "wy_7_deer_creek_too_cold_to_fire",
+     "fact": "pitch count and length"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "P2 is a 20m slab",
+     "replace": "P2 is a 20 ft slab",
+     "id": "wy_7_deer_creek_too_cold_to_fire",
+     "fact": "pitch count and length"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "The last pitch, 35m at the back",
+     "replace": "The last pitch, 35 ft at the back",
+     "id": "wy_7_deer_creek_too_cold_to_fire",
+     "fact": "pitch count and length"
+    }
+   ]
+  },
+  {
+   "id": "wy_disappointment_peak_almost_overhanging",
+   "fact": "pitch count",
+   "verdict": "fixed",
+   "correct_value": "seven pitches",
+   "evidence": "Route page lists 850 ft, 7 pitches and combines the ridge section as 'P6 & 7' (one long simul-climbed pitch of about 60 m); a separate trip report also calls it 850 ft, 7 pitch. The overview's 'P6-7' is one pitch, so the opening 'Eight pitches' should be seven.",
+   "sources": [
+    "https://www.mountainproject.com/route/122902245/almost-overhanging",
+    "https://tenthousandtoofar.com/2022/08/17/an-old-school-adventure-almost-overhanging-5-9-iii-almost-arete-disappointment-peak-grand-teton-nat-park-08-14-22/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "Eight pitches on a route",
+     "replace": "Seven pitches on a route",
+     "id": "wy_disappointment_peak_almost_overhanging",
+     "fact": "pitch count"
+    }
+   ]
+  },
+  {
+   "id": "wy_enclosure_vision_quest_couloir",
+   "fact": "length vs pitch count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "length_m blank",
+   "evidence": "A 1982 account describes the couloir as about 300 ft of ice ribbon, 300 ft of lower-angle ice and 100 ft more, ending about 100 ft below the Enclosure summit, i.e. roughly 700 ft (about 213 m). The stored 2134 m matches a '7000 ft' header on the route page that is plainly a typo for 700 ft, and is impossible for a 3-pitch couloir. Blanked since the exact figure (route page vs account, route including Valhalla traverse) is not stated by two sources.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12198215501/North-America-United-States-Wyoming-Tetons-Grand-Teton-Enclosure-Visionquest-Couloir",
+    "https://www.mountainproject.com/route/124437078/vision-quest-couloir"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "length_m",
+     "path": [],
+     "expect": 2134,
+     "value": null,
+     "id": "wy_enclosure_vision_quest_couloir",
+     "fact": "length vs pitch count"
+    }
+   ]
+  },
+  {
+   "id": "wy_gannett_peak_northeast_ridge",
+   "fact": "pitch count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "pitches blank",
+   "evidence": "Route page lists 1,400 ft (424 m), Grade III with no pitch count, and the prose lists five roped lengths (150, 150+, 170, 180, 170 ft) before the snowfield. pitches = 1 is therefore false. No second source gives a count, so it is blanked.",
+   "sources": [
+    "https://www.mountainproject.com/route/110939878/northeast-ridge"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 1,
+     "value": null,
+     "id": "wy_gannett_peak_northeast_ridge",
+     "fact": "pitch count"
+    }
+   ]
+  }
+ ]
+}

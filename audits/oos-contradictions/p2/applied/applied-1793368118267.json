@@ -1,0 +1,25 @@
+{
+ "applied": [
+  {
+   "id": "ab_edge_of_the_world_edge_of_the_world",
+   "column": "overview",
+   "path": [],
+   "fact": "length"
+  },
+  {
+   "id": "ab_edge_of_the_world_edge_of_the_world",
+   "column": "overview",
+   "path": [],
+   "fact": "length"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "ab_edge_of_the_world_edge_of_the_world",
+   "before": {
+    "overview": "Rappel the first pitch (~20 m) from solid trees or a bolted ring in the rock, landing on a broad snow terrace. Walk along the terrace to a large boulder outcrop with 2 bolt hangers and rappel the second pitch (~20 m). Afterward, climb both pitches on lead."
+   }
+  }
+ ]
+}

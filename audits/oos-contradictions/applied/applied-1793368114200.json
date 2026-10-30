@@ -1,0 +1,111 @@
+{
+ "applied": [
+  {
+   "id": "ut_fine_jade",
+   "column": "pitches",
+   "path": [],
+   "fact": "Number of pitches"
+  },
+  {
+   "id": "ut_fine_jade",
+   "column": "crux",
+   "path": [],
+   "fact": "Location of the crux"
+  },
+  {
+   "id": "ut_finger_of_fate",
+   "column": "pitch_detail",
+   "path": [
+    7,
+    "grade"
+   ],
+   "fact": "Aid grade of pitch 8"
+  },
+  {
+   "id": "wy_irene_s_arete",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Bail options"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "ut_fine_jade",
+   "before": {
+    "pitches": 4,
+    "crux": "sustained finger crack on pitch 2 (5.11a)"
+   }
+  },
+  {
+   "id": "ut_finger_of_fate",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "5.8 C1",
+      "notes": "Start in the crack system about 30 ft left of the descent gully. Aid the crack past a false belay to the real one, roughly 130 ft up. Much of it would go free at a moderate grade. If aiding without back-cleaning, carry three each of #2 and #3 and two #4s.",
+      "pitch": "1",
+      "lengthM": 40
+     },
+     {
+      "grade": "5.7 C2",
+      "notes": "Stay in the crack as it opens into a flared groove.",
+      "pitch": "2",
+      "lengthM": 24
+     },
+     {
+      "crux": true,
+      "grade": "5.8 C2+",
+      "notes": "Follow the clear line up to a ledge where the Finger begins. Right off the belay, old pin scars and holes give short but tricky aid, and some free moves are mandatory and committing.",
+      "pitch": "3",
+      "lengthM": 21
+     },
+     {
+      "belay": "Far side of the Finger, reached after the ledge traverse and the roof.",
+      "grade": "5.8 C2F",
+      "notes": "Traverse the ledge around the corner (about 5.6) to an ancient bolt, aid the tricky roof (about A2), and continue to a belay on the far side of the Finger. The traverse is protected by old drilled angles and a star drive; fixed tricams and fixed pins at the start of the roof are old and sketchy. A screamer helps for anchor falls. This gets you to the base of the Finger.",
+      "pitch": "4",
+      "lengthM": 15
+     },
+     {
+      "belay": "On the ridge that faces the Duck.",
+      "grade": "C1 or 5.10",
+      "notes": "Scramble to a drilled pin, then climb the strenuous flare (aid C1, or free about 5.10). At its top, 5.8 grovelling is needed to reach the belay, which is on the ridge facing the Duck.",
+      "pitch": "5",
+      "lengthM": 24
+     },
+     {
+      "belay": "Big ledge past the Duck that also serves as a bivy site.",
+      "grade": "5.8",
+      "notes": "Go around the Duck on its left. The anchor for the descent rappels is on its far side. Keep following the wide cracks up to a big ledge, which is a bivy site, and belay there.",
+      "pitch": "6",
+      "lengthM": 26
+     },
+     {
+      "grade": "5.7 C2",
+      "notes": "Move right around the arete to a seam and aid it (about A2) back to the crest. A mix of free climbing (5.7-5.8) and C2 aid on doubtful fixed gear reaches an exposed stance on the arete; placements and a fixed pin lead to many bolts to anchor.",
+      "pitch": "7",
+      "lengthM": 24
+     },
+     {
+      "grade": "5.8 A0",
+      "notes": "Mixed free (5.7-5.8) and aid (C2, long reaches) past old fixed gear to a wide crack. Continue up it, over a roof in the caprock with wild exposure, and mantle to the belay. Nearly a bolt ladder, with free moves and top steps.",
+      "pitch": "8",
+      "lengthM": 30
+     },
+     {
+      "grade": "4th class",
+      "notes": "Fourth-class scrambling to the summit.",
+      "pitch": "9"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wy_irene_s_arete",
+   "before": {
+    "detailed_rack": "Protection to 3\", and the route has some fixed pins. One rope is enough (one party used 60 m). The party saw no bail stations along the route."
+   }
+  }
+ ]
+}
