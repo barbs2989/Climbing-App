@@ -199,10 +199,13 @@ By PRIMARY discipline: trad 1,430, ice 1,006, sport 578, mixed 148, mountaineeri
 | AB 2 | 25 | 20 | 5 | Nemesis high confidence (two sources). Amadeus is probably Amadeus Falls on Upper Barrier, filed under "Unsorted Ice routes". |
 | OR 1 | 40 | 36 | 4 | Mt. Hood, Three Sisters, Thielsen, Salt Creek Falls. Lead review removed an unsourced avalanche line (North Sister East Buttress). |
 
-**Applied so far (2026-10-29, 22:30):** all seven CO batches (210 rows, every one "verified on re-read", none refused); then the database
-stopped answering after 2 rows of UT 1. Rollbacks: `rollback/rollback-1793312990207.json` through `rollback-1793313279406.json` (8 files).
-**Still to apply:** UT 1 (re-run whole; re-applying a landed row is harmless), UT 2–4, MT 1–2, AK 1–2, NH 1–2, BC 1–2, AB 1–2, OR 1. Wait for a healthy one-row read,
-run the applier per batch, then move each new `audits/route-breakdown/rollback-<ms>.json` here by exact name.
+**All 17 ice batches above are applied (2026-10-29): 581 rows, every one "verified on re-read", none refused.** CO went first (210 rows), then the
+database stopped for about 25 minutes; the other 15 batches (371 rows) went in when it recovered. One UT 4 row had a mistyped id in its batch
+(`fmr_fk_me_raw` for `fmr_f_k_me_raw`); the batch is corrected and that row written on its own. Rollbacks: `rollback/rollback-1793312990207.json`
+through `rollback-1793313279406.json` (8 files) and `rollback-1793318126666.json` through `rollback-1793318592761.json` (16 files).
+
+**Ice tier, what's left:** contexts for WY, CA, NB and the small states and provinces (qc, ns, nl, id, yt, nc, nm, on, me, nv, vt, pa, nu, nt, mi).
+Their SQL timed out while the database was degraded. Build them with `CHUNK=40 node scripts/oneoff/thin-da-context-sql.mjs audits/thin-descent-approach/oos/ctx-ice-<st> <st>_ ice,mixed`.
 
 **Ice-tier findings for review:**
 - `ut_monte_cristo` and `ut_broads_fork_2` share one coordinate (40.52763, -111.72408), right for neither: Monte Cristo's East Gully is in Little
