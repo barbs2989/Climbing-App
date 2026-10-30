@@ -1,0 +1,135 @@
+[
+ {
+  "id": "ca_a_clouds_rest_trail_clouds_rest_trail",
+  "i": 0,
+  "name": "Clouds Rest Trail summit",
+  "from": [
+   37.7677,
+   -119.4893
+  ],
+  "op": "none",
+  "source": "GNIS 254751 Clouds Rest [37.76783,-119.48921]",
+  "reason": "Pin 15 m from the GNIS Summit; 3DEP local max 9923 ft (published ~9,931)."
+ },
+ {
+  "id": "ca_d_half_dome_cables_route_cables_route",
+  "i": 1,
+  "name": "Cables Route summit",
+  "from": [
+   37.7457,
+   -119.5335
+  ],
+  "op": "none",
+  "source": "GNIS 253497 Half Dome; 3DEP 8834 ft at 37.7459,-119.5332",
+  "reason": "Pin ~30-60 m from the 3DEP high point (8812 vs 8834; Half Dome 8,839 ft); GNIS point itself sits on the slope. On the summit."
+ },
+ {
+  "id": "ca_mount_tallac_trail_mount_tallac_trail",
+  "i": 1,
+  "name": "Mount Tallac Trail summit",
+  "from": [
+   38.906,
+   -120.0989
+  ],
+  "op": "none",
+  "source": "GNIS 268072 Mount Tallac [38.90590,-120.09886]",
+  "reason": "Pin ~5 m from GNIS Summit; local max 9723 ft (published 9,735)."
+ },
+ {
+  "id": "ca_north_ar_te",
+  "i": 0,
+  "name": "North Arete summit",
+  "from": [
+   37.5926,
+   -119.0145
+  ],
+  "op": "move",
+  "to": [
+   37.59105,
+   -119.01374
+  ],
+  "source": "GNIS 258955 Crystal Crag",
+  "ground_ft_at_to": 10299,
+  "quote": "gaz_id 258955 Crystal Crag, Summit, CA",
+  "reason": "North Arete climbs Crystal Crag. Pin is 190 m off at 9933 ft and not a local max; GNIS Summit is a 3DEP local max at 10299 ft (Crystal Crag ~10,364)."
+ },
+ {
+  "id": "ca_north_ridge_4",
+  "i": 1,
+  "name": "Lone Pine Peak summit",
+  "from": [
+   36.5616,
+   -118.2251
+  ],
+  "op": "none",
+  "source": "GNIS 262806 Lone Pine Peak",
+  "reason": "Pin 57 m from GNIS Summit; sharp peak, 3DEP at GNIS 12917 ft vs published 12,944. Within tolerance."
+ },
+ {
+  "id": "ca_southeast_face_aka_the_waterfall_route",
+  "i": 1,
+  "name": "Mount Emerson",
+  "from": [
+   37.24246,
+   -118.65421
+  ],
+  "op": "none",
+  "source": "GNIS 1658498 Mount Emerson",
+  "ground_ft_at_to": 13224,
+  "reason": "Pin is the local max (13224 ft, published 13,204). GNIS point (550 m away) reads 13115 and is not a local max, so GNIS is the wrong one; keep pin."
+ },
+ {
+  "id": "co_arapaho_peaks_traverse",
+  "i": 2,
+  "name": "North Arapaho Peak",
+  "from": [
+   40.0265,
+   -105.65062
+  ],
+  "op": "none",
+  "source": "GNIS 178428 North Arapaho Peak",
+  "reason": "Pin 12 m from GNIS Summit; names the summit it is on; elev 13502 matches."
+ },
+ {
+  "id": "co_blitzen_ridge",
+  "i": 1,
+  "name": "Ypsilon Mountain summit",
+  "from": [
+   40.4569,
+   -105.681
+  ],
+  "op": "none",
+  "source": "GNIS 177605 Ypsilon Mountain",
+  "reason": "Pin 39 m from GNIS Summit; 3DEP 13478 ft near published 13,514."
+ },
+ {
+  "id": "co_mt_bierstadt_standard_route_west_slopes",
+  "i": 1,
+  "name": "Standard Route summit",
+  "from": [
+   39.5826,
+   -105.6689
+  ],
+  "op": "none",
+  "source": "GNIS 182467 Mount Bierstadt",
+  "reason": "Pin ~10 m from GNIS Summit; local max 14058 (published 14,065)."
+ },
+ {
+  "id": "co_pikes_peak_east_slopes",
+  "i": 1,
+  "name": "Pike's Peak Routes summit",
+  "from": [
+   38.841,
+   -105.0426
+  ],
+  "op": "move",
+  "to": [
+   38.84059,
+   -105.04491
+  ],
+  "source": "GNIS 204770 Pikes Peak",
+  "ground_ft_at_to": 14104,
+  "quote": "gaz_id 204770 Pikes Peak, Summit, CO",
+  "reason": "Pin 205 m east of the GNIS Summit on the broad flat top at 14094 ft (not a max); GNIS point reads 14104 vs published 14,115."
+ }
+]

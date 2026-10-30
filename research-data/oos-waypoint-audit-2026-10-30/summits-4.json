@@ -1,0 +1,174 @@
+[
+ {
+  "id": "co_quandary_peak_standard_route_east_ridge",
+  "route": "East Ridge",
+  "state": "Colorado",
+  "peak": null,
+  "i": 1,
+  "name": "Standard Route summit",
+  "at": [
+   39.3973,
+   -106.1064
+  ],
+  "elev": null,
+  "ground_ft": 14268,
+  "gap": null,
+  "isMax": true
+ },
+ {
+  "id": "co_solo_flight",
+  "route": "Solo Flight",
+  "state": "Colorado",
+  "peak": null,
+  "i": 1,
+  "name": "Lone Eagle Peak summit",
+  "at": [
+   40.0714,
+   -105.66
+  ],
+  "elev": null,
+  "ground_ft": 11842,
+  "gap": null,
+  "gnis": {
+   "id": 178451,
+   "name": "Lone Eagle Peak",
+   "lat": 40.0694047169238,
+   "lng": -105.66064640147204
+  },
+  "gnis_m": 229,
+  "isMax": false
+ },
+ {
+  "id": "nh_whitney_gilman_ridge",
+  "route": "Whitney Gilman Ridge",
+  "state": "New Hampshire",
+  "peak": null,
+  "i": 0,
+  "name": "Whitney-Gilman Area summit",
+  "at": [
+   44.15597,
+   -71.68713
+  ],
+  "elev": null,
+  "ground_ft": 2804,
+  "gap": null,
+  "isMax": false
+ },
+ {
+  "id": "ny_big_slide_mtn_the_brothers_trail",
+  "route": "The Brothers Trail",
+  "state": "New York",
+  "peak": null,
+  "i": 0,
+  "name": "Big Slide Mtn. summit",
+  "at": [
+   44.1822,
+   -73.8708
+  ],
+  "elev": null,
+  "ground_ft": 4236,
+  "gap": null,
+  "isMax": true
+ },
+ {
+  "id": "ut_south_ridge",
+  "route": "South Ridge",
+  "state": "Utah",
+  "peak": null,
+  "i": 0,
+  "name": "Mt. Superior / Monte Cristo summit",
+  "at": [
+   40.59001,
+   -111.66633
+  ],
+  "elev": null,
+  "ground_ft": 10706,
+  "gap": null,
+  "isMax": false
+ },
+ {
+  "id": "adams_avalanche_glacier",
+  "route": "Avalanche Glacier",
+  "state": "Washington",
+  "peak": {
+   "id": "wa_mount_adams",
+   "name": "Mount Adams",
+   "lat": 46.202494,
+   "lng": -121.490746,
+   "elev": 12276
+  },
+  "i": 2,
+  "name": "Mount Adams summit",
+  "at": [
+   46.202494,
+   -121.490746
+  ],
+  "elev": 12276,
+  "ground_ft": 12275,
+  "gap": -1,
+  "peak_m": 0,
+  "isMax": true
+ },
+ {
+  "id": "adams_northwest_ridge",
+  "route": "North Face of the Northwest Ridge",
+  "state": "Washington",
+  "peak": {
+   "id": "wa_mount_adams",
+   "name": "Mount Adams",
+   "lat": 46.202494,
+   "lng": -121.490746,
+   "elev": 12276
+  },
+  "i": 2,
+  "name": "Mount Adams summit",
+  "at": [
+   46.202494,
+   -121.490746
+  ],
+  "elev": 12276,
+  "ground_ft": 12275,
+  "gap": -1,
+  "peak_m": 0,
+  "isMax": true
+ },
+ {
+  "id": "wy_cathedral_traverse",
+  "route": "Cathedral Traverse",
+  "state": "Wyoming",
+  "peak": null,
+  "i": 1,
+  "name": "Teewinot Mountain",
+  "at": [
+   43.74669,
+   -110.78002
+  ],
+  "elev": 12330,
+  "ground_ft": 12185,
+  "gap": -145,
+  "gnis": {
+   "id": 1603547,
+   "name": "Teewinot Mountain",
+   "lat": 43.746890082258275,
+   "lng": -110.77969851569921
+  },
+  "gnis_m": 34,
+  "isMax": false
+ },
+ {
+  "id": "wy_cirque_of_the_towers_traverse",
+  "route": "Cirque of the Towers Traverse",
+  "state": "Wyoming",
+  "peak": null,
+  "i": 3,
+  "name": "Pingora",
+  "at": [
+   42.77912,
+   -109.22541
+  ],
+  "elev": 11889,
+  "ground_ft": 11843,
+  "gap": -46,
+  "isMax": true
+ }
+]

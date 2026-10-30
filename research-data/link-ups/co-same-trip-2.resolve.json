@@ -1,0 +1,212 @@
+[
+ {
+  "lu": "co_lu_chapin_chiquita_ypsilon",
+  "leg": 0,
+  "peak": "Mount Chapin",
+  "route": null,
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_chapin_chiquita_ypsilon",
+  "leg": 1,
+  "peak": "Mount Chiquita",
+  "route": null,
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_chapin_chiquita_ypsilon",
+  "leg": 2,
+  "peak": "Ypsilon Mountain",
+  "route": null,
+  "pick": null,
+  "others": [
+   {
+    "id": "co_y_couloir_left_branch",
+    "name": "Y Couloir (Left Branch)",
+    "disc": "alpine",
+    "grade": "5.0",
+    "area": "Ypsilon Mountain",
+    "score": 0
+   },
+   {
+    "id": "co_blitzen_ridge",
+    "name": "Blitzen Ridge",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Ypsilon Mountain",
+    "score": 0
+   },
+   {
+    "id": "co_y_couloir_right_branch",
+    "name": "Y Couloir (Right Branch)",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Ypsilon Mountain",
+    "score": 0
+   },
+   {
+    "id": "co_prancer_ridge",
+    "name": "Prancer Ridge",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Ypsilon Mountain",
+    "score": 0
+   },
+   {
+    "id": "co_blitzen_face",
+    "name": "Blitzen Face",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Ypsilon Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_chapin_chiquita_ypsilon",
+  "leg": 3,
+  "peak": "Fairchild Mountain",
+  "route": null,
+  "pick": {
+   "id": "co_honcho_boncho_buttress",
+   "name": "Honcho Boncho Buttress",
+   "disc": "alpine",
+   "grade": "5.7",
+   "area": "Fairchild Mountain",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_honcho_boncho_buttress",
+    "name": "Honcho Boncho Buttress",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Fairchild Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_gladstone_wilson_peak",
+  "leg": 0,
+  "peak": "Gladstone Peak",
+  "route": "North Ridge",
+  "pick": {
+   "id": "co_gladstone_peak_north_ridge",
+   "name": "North Ridge",
+   "disc": "mountaineering",
+   "grade": "Class 4",
+   "area": "Gladstone Peak",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "co_gladstone_peak_north_ridge",
+    "name": "North Ridge",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Gladstone Peak",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_gladstone_wilson_peak",
+  "leg": 1,
+  "peak": "Wilson Peak",
+  "route": null,
+  "pick": null,
+  "others": [
+   {
+    "id": "co_nne_ridge",
+    "name": "NNE Ridge",
+    "disc": "alpine",
+    "grade": "5.5",
+    "area": "Wilson Peak",
+    "score": 0
+   },
+   {
+    "id": "co_wilson_peak_southwest_ridge",
+    "name": "Southwest Ridge",
+    "disc": "scrambling",
+    "grade": "3rd",
+    "area": "Wilson Peak",
+    "score": 0
+   },
+   {
+    "id": "co_mount_wilson_southwest_slopes",
+    "name": "Southwest Slopes",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Mount Wilson",
+    "score": 0
+   },
+   {
+    "id": "co_wilson_group_luttrell_route",
+    "name": "Luttrell Route",
+    "disc": "mountaineering",
+    "grade": "Steep Snow",
+    "area": "Wilson Group",
+    "score": 0
+   },
+   {
+    "id": "co_nw_ridge",
+    "name": "NW Ridge",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Wilson Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_fletcher_drift",
+  "leg": 0,
+  "peak": "Fletcher Mountain",
+  "route": null,
+  "pick": {
+   "id": "co_fletcher_mountain_southeast_ridge",
+   "name": "Southeast Ridge",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Fletcher Mountain",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_fletcher_mountain_southeast_ridge",
+    "name": "Southeast Ridge",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Fletcher Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_fletcher_drift",
+  "leg": 1,
+  "peak": "Drift Peak",
+  "route": null,
+  "pick": {
+   "id": "co_sky_pilot",
+   "name": "Sky Pilot",
+   "disc": "alpine",
+   "grade": "5.10a",
+   "area": "Snowdrift Buttress",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_sky_pilot",
+    "name": "Sky Pilot",
+    "disc": "alpine",
+    "grade": "5.10a",
+    "area": "Snowdrift Buttress",
+    "score": 0
+   }
+  ]
+ }
+]

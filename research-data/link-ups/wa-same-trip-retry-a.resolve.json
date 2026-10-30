@@ -1,0 +1,156 @@
+[
+ {
+  "lu": "wa_lu_daniel_hinman",
+  "leg": 0,
+  "peak": "Mount Hinman",
+  "route": "West Ridge (class 2); ski parties also climb it by the Foss Glacier",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_mount_hinman_west_ridge",
+    "name": "West Ridge",
+    "disc": "mountaineering",
+    "grade": "Easy Snow",
+    "area": "Mount Hinman",
+    "score": 0.1111111111111111
+   },
+   {
+    "id": "wa_mount_hinman_west_route",
+    "name": "West Route",
+    "disc": "alpine",
+    "grade": null,
+    "area": "Mount Hinman",
+    "score": 0.1111111111111111
+   },
+   {
+    "id": "wa_mount_hinman_southeast_route",
+    "name": "Southeast Route",
+    "disc": "alpine",
+    "grade": null,
+    "area": "Mount Hinman",
+    "score": 0
+   },
+   {
+    "id": "wa_mount_hinman_east_route",
+    "name": "East Route",
+    "disc": "alpine",
+    "grade": null,
+    "area": "Mount Hinman",
+    "score": 0
+   },
+   {
+    "id": "wa_mount_hinman_hinman_glacier",
+    "name": "Hinman Glacier / Standard",
+    "disc": "mountaineering",
+    "grade": "Class 3",
+    "area": "Mount Hinman",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_daniel_hinman",
+  "leg": 1,
+  "peak": "Mount Daniel",
+  "route": "Lynch Glacier (class 3)",
+  "pick": {
+   "id": "wa_mount_daniel_lynch_glacier",
+   "name": "Lynch Glacier",
+   "disc": "mountaineering",
+   "grade": "Class 3",
+   "area": "Mount Daniel",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "wa_mount_daniel_lynch_glacier",
+    "name": "Lynch Glacier",
+    "disc": "mountaineering",
+    "grade": "Class 3",
+    "area": "Mount Daniel",
+    "score": 0.5
+   },
+   {
+    "id": "wa_mount_daniel_daniel_glacier",
+    "name": "Daniel Glacier / Southeast Slopes",
+    "disc": "mountaineering",
+    "grade": "Class 3",
+    "area": "Mount Daniel",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_little_annapurna_mcclellan",
+  "leg": 0,
+  "peak": "McClellan Peak",
+  "route": "Gully and ridge from the notch beside The Prong, with third and fourth class scrambling",
+  "pick": {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "name": "Southwest Scramble",
+   "disc": "scrambling",
+   "grade": "Class 3",
+   "area": "McClellan Peak Routes",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "wa_mcclellan_peak_southwest_scramble",
+    "name": "Southwest Scramble",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "McClellan Peak Routes",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_little_annapurna_mcclellan",
+  "leg": 1,
+  "peak": "Little Annapurna",
+  "route": "Direct slope from Crystal Lake",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_little_annapurna_south_face",
+    "name": "South Face",
+    "disc": "alpine",
+    "grade": "5.5",
+    "area": "Little Annapurna",
+    "score": 0
+   },
+   {
+    "id": "wa_little_annapurna_northwest_buttress",
+    "name": "Northwest Buttress",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Little Annapurna",
+    "score": 0
+   },
+   {
+    "id": "wa_little_annapurna_boola_boola_buttress",
+    "name": "Boola Boola Buttress",
+    "disc": "alpine",
+    "grade": null,
+    "area": "Little Annapurna",
+    "score": 0
+   },
+   {
+    "id": "wa_little_annapurna_northeast_face",
+    "name": "Northeast Face",
+    "disc": "alpine",
+    "grade": "5.8",
+    "area": "Little Annapurna",
+    "score": 0
+   },
+   {
+    "id": "wa_little_annapurna_south_slopes",
+    "name": "North Slopes",
+    "disc": "mountaineering",
+    "grade": "Class 2",
+    "area": "Little Annapurna",
+    "score": 0
+   }
+  ]
+ }
+]

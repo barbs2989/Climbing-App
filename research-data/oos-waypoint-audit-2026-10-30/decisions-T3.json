@@ -1,0 +1,159 @@
+[
+ {
+  "id": "ca_north_arete_4",
+  "i": 0,
+  "name": "Mosquito Flat Trailhead",
+  "from": [
+   37.43501,
+   -118.74736
+  ],
+  "op": "none",
+  "coordinate_key": "37.43501,-118.74736",
+  "source": "https://www.openstreetmap.org/node/8426865350",
+  "reason": "verified: OSM node 8426865350 'Little Lakes Valley Trailhead' at 37.435188,-118.747188, 25 m from stored (Mosquito Flat)."
+ },
+ {
+  "id": "ca_d_half_dome_cables_route_cables_route",
+  "i": 0,
+  "name": "Happy Isles Trailhead",
+  "from": [
+   37.73105,
+   -119.55853
+  ],
+  "op": "move",
+  "to": [
+   37.732821,
+   -119.557779
+  ],
+  "source": "https://www.openstreetmap.org/node/1742208425",
+  "quote": "OSM node 1742208425, highway=trailhead, name='Happy Isles Trailhead', 37.732821,-119.557779 (Nominatim search result)",
+  "ground_ft_at_to": 4027,
+  "reason": "Stored point 208 m from the OSM Happy Isles Trailhead node; moved. 3DEP 4027 ft at the new point (pin elev null).",
+  "coordinate_key": "37.73105,-119.55853"
+ },
+ {
+  "id": "ca_northwest_arete_2",
+  "i": 0,
+  "name": "Happy Isles Trailhead",
+  "from": [
+   37.73539,
+   -119.56629
+  ],
+  "op": "none",
+  "coordinate_key": "37.73539,-119.56629",
+  "source": "https://www.openstreetmap.org/way/24601910",
+  "reason": "not moved: stored point is 45 m from OSM parking way 24601910 'Valley Trailhead Parking' (37.735011,-119.566464), 801 m from the Happy Isles node; the route text is unavailable here, so this may be the valley parking lot rather than Happy Isles. Ground 3995 ft agrees with pin elev 4009 ft. Unverified which spot is meant."
+ },
+ {
+  "id": "ca_northwest_buttress_2",
+  "i": 0,
+  "name": "Tenaya Lake Northeast Shore Pullout",
+  "from": [
+   37.83642,
+   -119.45423
+  ],
+  "op": "none",
+  "coordinate_key": "37.83642,-119.45423",
+  "reason": "no published coordinate: 'Tenaya Lake Northeast Shore Pullout' is a roadside pullout; OSM/Photon list no such node (nearest named lot is Sunrise Lakes 1.9 km away, a different place)."
+ },
+ {
+  "id": "ca_tenaya_matthes_cathedral_traverse",
+  "i": 0,
+  "name": "Tenaya Lake North Parking",
+  "from": [
+   37.83769,
+   -119.45173
+  ],
+  "op": "none",
+  "coordinate_key": "37.83769,-119.45173",
+  "reason": "no published coordinate: 'Tenaya Lake North Parking' is a roadside pullout; no OSM node for it (nearest named lot Sunrise Lakes 2.1 km away, a different place)."
+ },
+ {
+  "id": "ca_southeast_buttress_2",
+  "i": 0,
+  "name": "Cathedral Lakes Trailhead",
+  "from": [
+   37.87317,
+   -119.38282
+  ],
+  "op": "move",
+  "to": [
+   37.872496,
+   -119.375096
+  ],
+  "source": "https://www.openstreetmap.org/node/10290274762",
+  "quote": "OSM node 10290274762, highway=trailhead, name='Cathedral Lakes Trailhead', 37.872496,-119.375096 (Photon geocoder result)",
+  "ground_ft_at_to": 8569,
+  "reason": "Stored point 682 m west of the OSM Cathedral Lakes Trailhead node on Tioga Road; moved. 3DEP 8569 ft vs pin elev 8588 ft.",
+  "coordinate_key": "37.87317,-119.38282"
+ },
+ {
+  "id": "ca_west_ridge_5",
+  "i": 0,
+  "name": "Saddlebag Lake Trailhead",
+  "from": [
+   37.96517,
+   -119.27238
+  ],
+  "op": "move",
+  "to": [
+   37.96583,
+   -119.270617
+  ],
+  "source": "https://www.openstreetmap.org/node/89761615",
+  "quote": "OSM node 89761615, highway=trailhead, name='Saddlebag Lake Trailhead', 37.9658296,-119.2706174 (Photon geocoder result)",
+  "ground_ft_at_to": 10124,
+  "reason": "Stored point 171 m from the OSM Saddlebag Lake Trailhead node; moved. 3DEP 10124 ft vs pin elev 10100 ft.",
+  "coordinate_key": "37.96517,-119.27238"
+ },
+ {
+  "id": "ca_tuolumne_alpine_triple_crown",
+  "i": 0,
+  "name": "Saddlebag Lake Trailhead",
+  "from": [
+   37.96522,
+   -119.27247
+  ],
+  "op": "move",
+  "to": [
+   37.96583,
+   -119.270617
+  ],
+  "source": "https://www.openstreetmap.org/node/89761615",
+  "quote": "OSM node 89761615, highway=trailhead, name='Saddlebag Lake Trailhead', 37.9658296,-119.2706174 (Photon geocoder result)",
+  "ground_ft_at_to": 10124,
+  "reason": "Stored point about 176 m from the OSM Saddlebag Lake Trailhead node; moved. 3DEP 10124 ft vs pin elev 10100 ft.",
+  "coordinate_key": "37.96522,-119.27247"
+ },
+ {
+  "id": "ca_north_arete_6",
+  "i": 0,
+  "name": "Twin Lakes (Mono Village) Trailhead",
+  "from": [
+   38.14573,
+   -119.37867
+  ],
+  "op": "none",
+  "coordinate_key": "38.14573,-119.37867",
+  "reason": "no published coordinate: OSM lists only the Mono Village marina (38.147507,-119.377186, 236 m), restaurant and store, no trailhead node. Unverified; no change."
+ },
+ {
+  "id": "ca_northwest_chute",
+  "i": 0,
+  "name": "Leavitt Meadows Trailhead",
+  "from": [
+   38.33418,
+   -119.55181
+  ],
+  "op": "move",
+  "to": [
+   38.331376,
+   -119.553735
+  ],
+  "source": "https://www.openstreetmap.org/node/8006987108",
+  "quote": "OSM node 8006987108, highway=trailhead, name='Leavitt Meadow Trailhead', 38.331376,-119.553735 (Photon geocoder result)",
+  "ground_ft_at_to": 7161,
+  "reason": "Stored point 354 m NNE of the OSM Leavitt Meadow Trailhead node (it sits at the campground, 99 m from the stored point); moved to the trailhead. 3DEP 7161 ft vs pin elev 7135 ft.",
+  "coordinate_key": "38.33418,-119.55181"
+ }
+]

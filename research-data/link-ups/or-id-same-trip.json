@@ -1,0 +1,155 @@
+[
+ {
+  "id": "id_lu_pioneer_trifecta",
+  "name": "Pioneer Trifecta (Old Hyndman, Cobb and Hyndman)",
+  "state": "Idaho",
+  "region": "Pioneer Mountains, near Hailey",
+  "legs": [
+   {
+    "peak": "Old Hyndman Peak",
+    "route": "Ridge scramble from the Big Basin side",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Cobb Peak",
+    "route": "Ridge from Old Hyndman",
+    "connect": "Follow the crest between the two summits, loose and exposed in places, then descend off Cobb to the trail below it.",
+    "route_id": null
+   },
+   {
+    "peak": "Hyndman Peak",
+    "route": "Standard route from the saddle",
+    "connect": "Rejoin the Hyndman Basin trail, reach the saddle between Hyndman and Old Hyndman, and go up and back down the summit slopes.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 long day",
+  "how": "All three summits are strung into one loop from the Hyndman Creek trailhead. The connecting ridge is roughly two miles of third and fourth class on rotten, shifting rock, and a helmet is worth wearing. Route-finding is not hard, but you need alpine-ridge experience and comfort off trail. Parties have gone both directions: one starts on Old Hyndman and ends with Hyndman as an out-and-back, another goes the opposite way.",
+  "descent": "Hyndman is the last summit in the usual order, so you drop back to the basin and follow the creek trail to the car. Early in the season the upper slopes can be glissaded with an axe; later no axe is needed.",
+  "logistics": "Loop of roughly 16 miles and 8,000 ft of gain, car to car. Streams along the trail make water easy. Late June to September is the normal window; the loose ridge is a poor place for inexperienced parties.",
+  "sources": [
+   "https://fastestknowntime.com/fkt/sam-linnet-nate-bender-pioneer-trifecta-id-2021-06-12",
+   "https://fastestknowntime.com/route/pioneer-trifecta-id",
+   "https://idahoaclimbingguide.com/bookupdates/old-hyndman-peak-11775"
+  ],
+  "confidence": "medium",
+  "notes": "Class not stated for the whole link-up by one source; 3rd-4th class taken from the 2021 report. Distance/gain from the route page. Cobb leg's own route name not found in a read page. The Old Hyndman guidebook page (read) lists the standard route as East Ridge/East Face (Black Dike), class 3, and a North Ridge tour linking Old Hyndman with Hyndman via the saddle. SummitPost pages 403."
+ },
+ {
+  "id": "id_lu_southern_lemhi_traverse",
+  "name": "Southern Lemhi Crest Traverse",
+  "state": "Idaho",
+  "region": "Lemhi Range, from Diamond Peak south",
+  "legs": [
+   {
+    "peak": "Diamond Peak",
+    "route": "Start of the crest traverse",
+    "connect": ""
+   },
+   {
+    "peak": "The Riddler",
+    "route": "Crest scramble",
+    "connect": "Follow the ridge south from Diamond Peak; this is the first of three technical cruxes."
+   },
+   {
+    "peak": "Big Boy Peak",
+    "route": "Crest scramble",
+    "connect": "Stay on the crest."
+   },
+   {
+    "peak": "Shoshone John Peak",
+    "route": "Crest scramble",
+    "connect": "The south side of this summit is another technical crux."
+   },
+   {
+    "peak": "Black and White Peak",
+    "route": "Crest scramble",
+    "connect": "Continue south along the crest."
+   },
+   {
+    "peak": "Little Diamond Peak",
+    "route": "Crest scramble",
+    "connect": "A short knife-edge between this peak and the previous one is the third crux."
+   },
+   {
+    "peak": "Swanson Peak",
+    "route": "Crest scramble",
+    "connect": "Continue along the high ridge."
+   },
+   {
+    "peak": "Marshals Mount",
+    "route": "Crest scramble",
+    "connect": "The road at Pass Creek Summit is the usual place for a support meeting."
+   },
+   {
+    "peak": "White Bird Peak",
+    "route": "Crest scramble",
+    "connect": ""
+   },
+   {
+    "peak": "Dome Peak",
+    "route": "Crest scramble",
+    "connect": ""
+   },
+   {
+    "peak": "Tyler Peak",
+    "route": "Crest scramble",
+    "connect": "Shril Benchmark and Striped Peak lie between; they are passed along the crest."
+   },
+   {
+    "peak": "Mount Hoopes",
+    "route": "Crest scramble",
+    "connect": ""
+   },
+   {
+    "peak": "Saddle Mountain",
+    "route": "North ridge (class 3 sections)",
+    "connect": "Finish on Saddle Mountain, the southern end of the traverse."
+   }
+  ],
+  "duration": "1 very long day (about 26 hours for the first push), or 2 days",
+  "how": "The crest holds around 15 summits above 10,000 ft, and the traverse is mostly exposed scrambling on questionable rock rather than a single named route. Three sections are the hardest: the start from Diamond Peak to The Riddler, the south side of Shoshone John, and a short knife-edge near Little Diamond. Most intermediate summits are optional, so many parties pick a subset. Expect to improvise route-finding as you go.",
+  "descent": "The finish is down Saddle Mountain, then a long deadfall-choked slog out of Middle Canyon; the first party did this in the dark.",
+  "logistics": "About 28 miles and 16,500 ft of gain. There is no water or snow on the crest in summer, so the first party used support: water and food met at Pass Creek Summit and cached on Saddle Mountain. A car or ride is needed at the south end.",
+  "sources": [
+   "https://fastestknowntime.com/route/southern-lemhi-crest-traverse-id",
+   "https://www.idahoaclimbingguide.com/southern-lemhi-traverse-by-daniel-todd/"
+  ],
+  "confidence": "medium",
+  "notes": "Both pages describe the same 2021 effort, so independence is weak; no second independent traverse report found. Peak list from the FKT route page (Pass Creek Summit is a road crossing, not a summit). Trailheads not stated in either page. Generic route text because pages gave no per-peak route names. Consider dropping under a strict two-independent-sources bar. DROPPED by reviewer: both sources describe one 2021 effort, so not a commonly done pairing.",
+  "drop": true
+ },
+ {
+  "id": "or_lu_three_fingered_jack_washington",
+  "name": "Three Fingered Jack and Mount Washington",
+  "state": "Oregon",
+  "region": "Central Oregon Cascades, Santiam Pass area",
+  "legs": [
+   {
+    "peak": "Three Fingered Jack",
+    "route": "South Ridge",
+    "connect": "",
+    "route_id": "or_south_ridge_route"
+   },
+   {
+    "peak": "Mount Washington",
+    "route": "North Ridge",
+    "connect": "Return to the Pacific Crest Trail and follow it to the Big Lake trailhead, then hike the PCT about three miles to the cairned turnoff for Washington's climbers' trail.",
+    "route_id": "or_north_ridge_2"
+   }
+  ],
+  "duration": "1 very long day, or 2 days",
+  "how": "Both are rock climbs on rotten volcanic plugs, linked by the PCT. Jack's south ridge is the shorter outing, with an exposed crawl section that is often fixed with a rope. Washington's north ridge is low fifth class: three pitches, with a fixed rope on the first pitch in some years and a light rack and slings needed. The one-day version is about 20 to 25 miles and is strenuous, so the two-day split is common.",
+  "descent": "Jack: reverse the climbers' route to the PCT. Washington: rappel and downclimb the plug, then descend the sandy slope and the climbers' trail back to the PCT.",
+  "logistics": "No reliable water on the PCT here; stash water at the climbers' trail junction on the Jack approach. Start from the Santiam Pass trailhead for Jack and from Big Lake for Washington. Two ropes are handy on Jack, and an early start is important on weekends.",
+  "sources": [
+   "https://mazamas.org/activity/instance/3186/detail/",
+   "https://mazamas.org/multi-activity/1006/",
+   "https://themtsarecalling.com/washington/",
+   "https://cascadeclimbers.com/forum/topic/87214-tr-three-finger-jack-mt-washington-south-ridge-north-ridge-6162012"
+  ],
+  "confidence": "medium",
+  "notes": "Two Mazamas pages read in full; Washington details from a separate trip report (read). CascadeClimbers thread title names South Ridge and North Ridge but its body did not load; SummitPost and Next Adventure link-up pages 403/404. The Mazamas two-day double was canceled in 2025. Washington North Ridge rated 5.3, Jack 5.2 in another report."
+ }
+]

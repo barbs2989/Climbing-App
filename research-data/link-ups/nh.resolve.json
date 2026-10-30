@@ -1,0 +1,260 @@
+[
+ {
+  "lu": "nh_lu_presidential_traverse",
+  "leg": 0,
+  "peak": "Mount Madison",
+  "route": "Valley Way to Madison Spring Hut, then Osgood Trail to the summit",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_presidential_traverse",
+  "leg": 1,
+  "peak": "Mount Adams",
+  "route": "Gulfside and Airline trails",
+  "pick": null,
+  "others": [
+   {
+    "id": "nh_3_king_ravine_mt_adams_ice_east_gully",
+    "name": "East Gully",
+    "disc": "mountaineering",
+    "grade": "Mod. Snow",
+    "area": "King Ravine (Mt. Adams)",
+    "score": 0
+   },
+   {
+    "id": "nh_3_king_ravine_mt_adams_ice_up_the_creek_without_a_paddle",
+    "name": "Up the Creek Without a Paddle",
+    "disc": "mountaineering",
+    "grade": "Mod. Snow R",
+    "area": "King Ravine (Mt. Adams)",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "nh_lu_presidential_traverse",
+  "leg": 2,
+  "peak": "Mount Jefferson",
+  "route": "Gulfside Trail, boulder climb to the summit (Mount Clay is an optional short detour)",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_presidential_traverse",
+  "leg": 3,
+  "peak": "Mount Washington",
+  "route": "Gulfside Trail and Crawford Path",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_presidential_traverse",
+  "leg": 4,
+  "peak": "Mount Monroe",
+  "route": "Crawford Path to Lakes of the Clouds Hut, then the Monroe loop",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_presidential_traverse",
+  "leg": 5,
+  "peak": "Mount Eisenhower",
+  "route": "Crawford Path",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_presidential_traverse",
+  "leg": 6,
+  "peak": "Mount Pierce",
+  "route": "Crawford Path; Mount Jackson and Mount Webster can be added by the Webster Cliff Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_franconia_ridge_loop",
+  "leg": 0,
+  "peak": "Little Haystack Mountain",
+  "route": "Falling Waters Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_franconia_ridge_loop",
+  "leg": 1,
+  "peak": "Mount Lincoln",
+  "route": "Franconia Ridge Trail",
+  "pick": {
+   "id": "nh_lincoln_s_pinnacle_s_via_guy_s_slide",
+   "name": "Lincoln's Pinnacle(s) via \"Guy's Slide\"",
+   "disc": "alpine",
+   "grade": "Easy 5th",
+   "area": "Mt Lincoln",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "nh_lincoln_s_pinnacle_s_via_guy_s_slide",
+    "name": "Lincoln's Pinnacle(s) via \"Guy's Slide\"",
+    "disc": "alpine",
+    "grade": "Easy 5th",
+    "area": "Mt Lincoln",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "nh_lu_franconia_ridge_loop",
+  "leg": 2,
+  "peak": "Mount Lafayette",
+  "route": "Franconia Ridge Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_pemi_loop",
+  "leg": 0,
+  "peak": "Bondcliff",
+  "route": "Bondcliff Trail from Lincoln Woods",
+  "pick": {
+   "id": "nh_007",
+   "name": "007",
+   "disc": "alpine",
+   "grade": "5.6",
+   "area": "Bondcliff",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "nh_007",
+    "name": "007",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Bondcliff",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "nh_lu_pemi_loop",
+  "leg": 1,
+  "peak": "Mount Bond",
+  "route": "Bondcliff Trail (West Bond is an optional spur)",
+  "pick": {
+   "id": "nh_007",
+   "name": "007",
+   "disc": "alpine",
+   "grade": "5.6",
+   "area": "Bondcliff",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "nh_007",
+    "name": "007",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Bondcliff",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "nh_lu_pemi_loop",
+  "leg": 2,
+  "peak": "Mount Guyot",
+  "route": "Bondcliff and Twinway trails",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_pemi_loop",
+  "leg": 3,
+  "peak": "South Twin Mountain",
+  "route": "Twinway Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_pemi_loop",
+  "leg": 4,
+  "peak": "Mount Garfield",
+  "route": "Garfield Ridge Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_pemi_loop",
+  "leg": 5,
+  "peak": "Mount Lafayette",
+  "route": "Garfield Ridge Trail and Franconia Ridge Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_pemi_loop",
+  "leg": 6,
+  "peak": "Mount Liberty",
+  "route": "Franconia Ridge Trail, over Lincoln and Little Haystack",
+  "pick": null,
+  "others": [
+   {
+    "id": "nh_ramp",
+    "name": "Ramp",
+    "disc": "alpine",
+    "grade": "5.5",
+    "area": "Mt. Liberty, Franconia Notch",
+    "score": 0
+   },
+   {
+    "id": "nh_north_one",
+    "name": "North one",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Mt. Liberty, Franconia Notch",
+    "score": 0
+   },
+   {
+    "id": "nh_the_deceiving_off_width",
+    "name": "The Deceiving Off Width",
+    "disc": "alpine",
+    "grade": "5.9+",
+    "area": "Mt. Liberty, Franconia Notch",
+    "score": 0
+   },
+   {
+    "id": "nh_favorite",
+    "name": "Favorite",
+    "disc": "alpine",
+    "grade": "5.8+",
+    "area": "Mt. Liberty, Franconia Notch",
+    "score": 0
+   },
+   {
+    "id": "nh_north_too",
+    "name": "North Too",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Mt. Liberty, Franconia Notch",
+    "score": 0
+   },
+   {
+    "id": "nh_crumble_stone_off_width",
+    "name": "Crumble Stone Off Width",
+    "disc": "alpine",
+    "grade": "5.9-",
+    "area": "Mt. Liberty, Franconia Notch",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "nh_lu_pemi_loop",
+  "leg": 7,
+  "peak": "Mount Flume",
+  "route": "Franconia Ridge Trail, then the Osseo Trail down",
+  "pick": null,
+  "others": []
+ }
+]

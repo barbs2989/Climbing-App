@@ -1,0 +1,372 @@
+[
+ {
+  "id": "ca_lu_north_peak_conness",
+  "name": "North Peak and Mount Conness",
+  "state": "California",
+  "region": "Sierra Nevada, Yosemite east side (Saddlebag Lake)",
+  "legs": [
+   {
+    "peak": "North Peak",
+    "route": "North Couloir (steep snow and ice, then a class 3 gully on solid rock)",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Conness",
+    "route": "North Ridge (mostly class 3 with a few class 4 moves and two short rappels)",
+    "connect": "Cross the knife-edge ridge between the two summits, which has a deep gap about halfway. Some parties instead cross the glacier and plateau to the summit.",
+    "route_id": "ca_north_ridge_13"
+   }
+  ],
+  "duration": "1-2 days from Saddlebag Lake",
+  "how": "The two summits share a saddle less than a mile apart, so climbers pair them from one camp or in one long day. North Peak comes first because its couloir is the more technical part: roped climbing on 40-45 degree ice with pickets and rock anchors is normal early in the season. Conness is then reached by its knife-edge north ridge, or by the easier plateau route if the ridge looks like too much.",
+  "descent": "From Conness take the class 2 route to the southeast plateau, then the east ridge, skirting the pinnacles by a sidehill traverse about 200 feet below them. Talus leads down to the lakes. Some parties go down the creek drainage instead.",
+  "logistics": "Start from the Saddlebag Lake dam; camp near Greenstone Lake (permit, and keep the required distance from trails), or do both in a day of roughly 12 hours. Ice axe, crampons and a rope for the couloir in early summer.",
+  "sources": [
+   "https://www.climber.org/reports/2001/798.html",
+   "https://www.climber.org/reports/1997/245.html"
+  ],
+  "confidence": "high",
+  "notes": "One party did the couloir and the ridge on separate days from a lake camp; another did both in one day via the glacier and returned by the creek. Conness North Ridge rated 5.6 only for the reverse direction."
+ },
+ {
+  "id": "ca_lu_mills_abbot",
+  "name": "Mount Mills and Mount Abbot",
+  "state": "California",
+  "region": "Sierra Nevada, Little Lakes Valley",
+  "legs": [
+   {
+    "peak": "Mount Mills",
+    "route": "East Face chute or the Van Dalsem variation beside it (class 3 rock, then a ledge to the summit plateau)",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Abbot",
+    "route": "North Couloir (snow or loose sand and scree, then class 3 ridge)",
+    "connect": "Return to the lake camp after Mills, then go up the next drainage to the couloir on another day.",
+    "route_id": "ca_north_couloir"
+   }
+  ],
+  "duration": "2 days",
+  "how": "Both peaks rise above Little Lakes Valley and are usually climbed as two separate day climbs from a lake camp near their bases. Mills is the more route-finding-heavy: the main chute has a chockstone at the bottom and a loose left fork above it, so parties are better off on the class 3 rib beside it. Abbot's couloir is loose, so helmets matter. Early in the season an ice axe and crampons are needed on both.",
+  "descent": "Both are descended by reversing the ascent; take care in the Mills chute, which is steep at the top. The Abbot couloir is the usual way back down to the lake.",
+  "logistics": "Begin at the Mosquito Flats trailhead and camp at Mills Lake or Ruby Lake, which needs a wilderness permit. Summer into early fall; rockfall from other parties is a hazard on Abbot.",
+  "sources": [
+   "https://www.climber.org/reports/2014/1852.html",
+   "https://www.climber.org/reports/1995/22.html"
+  ],
+  "confidence": "high",
+  "notes": "Sources disagree on Mills difficulty (class 3 on the Van Dalsem variation versus a class 5 headwall on the main chute); the harder figure is what the main chute holds, the variation avoids it."
+ },
+ {
+  "id": "ca_lu_gardiner_cotter_king",
+  "name": "Mount Gardiner, Mount Cotter and Clarence King",
+  "state": "California",
+  "region": "Sierra Nevada, Kings Canyon (Sixty Lakes Basin)",
+  "legs": [
+   {
+    "peak": "Mount Gardiner",
+    "route": null,
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Cotter",
+    "route": "Ridge from the base of Gardiner (class 2-3)",
+    "connect": "From the foot of Gardiner, walk back across the basin and climb to the ridge; optional and sometimes done the same day.",
+    "route_id": null
+   },
+   {
+    "peak": "Clarence King",
+    "route": null,
+    "connect": "Return toward the saddle area south of King on another day, then climb the south side with a rope and slings.",
+    "route_id": "ca_mt_clarence_king_standard_route"
+   }
+  ],
+  "duration": "3-4 days (base camp in the basin)",
+  "how": "The three summits are climbed from one camp over Rae Col and Glen Pass. Gardiner is a four-summit ridge with a deep chasm and extreme exposure, so a rope is carried; Cotter is a short scramble from its base. Clarence King is a separate day: a class 3-4 climb to the summit block, which parties protect with a thrown rope over the top and an anchor, then rappel or downclimb.",
+  "descent": "Gardiner and King are reversed; King involves a couple of rappels or downclimbs and a scree chute or ledges toward a lake. Cotter's east face is easy sand and slabs down to the basin.",
+  "logistics": "Approach over Kearsarge Pass from Onion Valley (permit and food storage rules apply); a car shuttle to a far trailhead is common for a loop. Summer only; carry a rope and slings.",
+  "sources": [
+   "https://www.climber.org/reports/2004/1372.html",
+   "https://www.climber.org/TripReports/1997/187.html"
+  ],
+  "confidence": "medium",
+  "notes": "One report climbed Gardiner and Cotter on the same day and King on another; the other did Gardiner and King from camp with Cotter only as a passing detour. Order for King is flexible."
+ },
+ {
+  "id": "ca_lu_balcony_disappointment_middle_palisade",
+  "name": "Balcony Peak, Disappointment Peak and Middle Palisade",
+  "state": "California",
+  "region": "Sierra Nevada, Palisades (Middle Palisade Glacier)",
+  "legs": [
+   {
+    "peak": "Balcony Peak",
+    "route": "Snow chute from the Middle Palisade Glacier to the crest, then easy ridge",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Disappointment Peak",
+    "route": "North-side traverse from Balcony (steep loose class 3-4) to the notch and summit chimney",
+    "connect": "Contour the steep loose north side below the Balcony summit to a notch east of Disappointment, then climb the class 3-4 chimney.",
+    "route_id": null
+   },
+   {
+    "peak": "Middle Palisade",
+    "route": "Northeast Face (reached by traversing the north face from Disappointment, class 4)",
+    "connect": "Cross the north face under Excitement Peak via chutes and ribs; the quarter mile can take several hours.",
+    "route_id": "ca_northeast_face_4"
+   }
+  ],
+  "duration": "1 very long day, or 2 days",
+  "how": "Parties go up a snow chute to the crest, tag Balcony, then follow the rubble-covered ridge to Disappointment and finally cross to Middle Palisade, ending on the standard northeast face. The ridge is mostly class 3 with a few class 4 moves, one short rappel and loose rock. Expect a rope for belays, helmets and, early in the year, an ice axe and crampons.",
+  "descent": "Descend Middle Palisade's northeast face to the glacier, then cross the glacier in crampons and glissade or hike down toward the lakes. Far faster than the traverse.",
+  "logistics": "Start at the South Fork Big Pine Creek trailhead, past Brainard and Finger Lakes; camp high or do it as a very long day. Summer; the glacier and chutes are snow-filled early.",
+  "sources": [
+   "https://www.climber.org/reports/2008/1665.html",
+   "https://www.snwburd.com/bob/trip_reports/balcony_1.html"
+  ],
+  "confidence": "high",
+  "notes": "Disappointment is class 4 by the north route in both reports; the crux of the traverse to Middle Palisade is class 4."
+ },
+ {
+  "id": "ca_lu_gilbert_johnson",
+  "name": "Mount Gilbert and Mount Johnson",
+  "state": "California",
+  "region": "Sierra Nevada, Bishop Pass (Treasure Lakes)",
+  "legs": [
+   {
+    "peak": "Mount Gilbert",
+    "route": "Treasure Col, then Southeast Slope (class 2 sand)",
+    "connect": "",
+    "route_id": "ca_south_east_slope_2"
+   },
+   {
+    "peak": "Mount Johnson",
+    "route": "North Ridge from Treasure Col (class 3 with a short knife edge)",
+    "connect": "Retrace to Treasure Col, downclimb about 50 feet on the north side and take a chute west of Johnson's ridge to reach its base.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 long day or 2 days",
+  "how": "Both summits flank Treasure Col, so climbers cross the col from the Treasure Lakes bowl, go up Gilbert's slopes, then return and climb Johnson's north ridge. The col chute is snow-filled early season and needs an ice axe and often crampons. The ridge is enjoyable class 3 with loose rock low and solid rock above.",
+  "descent": "From Johnson most go down the class 2 southeast slope into the canyon toward the lakes, which is easiest with gear on your back; retracing the ridge is the alternative.",
+  "logistics": "Begin at South Lake on the Bishop Pass trail, then leave for the Treasure Lakes. A long day from the trailhead takes about 10 hours; a camp at the lakes makes it easier.",
+  "sources": [
+   "https://www.snwburd.com/bob/trip_reports/gilbert_1.html",
+   "https://www.climber.org/TripReports/2000/599.html"
+  ],
+  "confidence": "medium",
+  "notes": "One party did Johnson one day and Gilbert the next from the same camp; the other did both in a day."
+ },
+ {
+  "id": "ca_lu_langley_cirque",
+  "name": "Mount Langley and Cirque Peak",
+  "state": "California",
+  "region": "Sierra Nevada, Cottonwood Lakes",
+  "legs": [
+   {
+    "peak": "Mount Langley",
+    "route": "Old Army Pass, then the class 2-3 southeast rocks",
+    "connect": "",
+    "route_id": "ca_mt_langley_standard_route_south_slopes"
+   },
+   {
+    "peak": "Cirque Peak",
+    "route": "Plateau walk south from New Army Pass (long boulder walk), or from the Pacific Crest Trail",
+    "connect": "Return down Old Army Pass, up New Army Pass and follow the plateau south for about two hours.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 very long day or 2-3 days",
+  "how": "Langley is the main objective; Cirque Peak is an easy extension south of the passes. Day parties combine them in one big loop from the Cottonwood Lakes trailhead, while backpackers usually camp near Long Lake or Chicken Spring Lake and take them on separate days. Both are non-technical, though Langley's last stretch has a little class 3.",
+  "descent": "After Cirque Peak a day party drops southeast through the cirque, follows the drainage to an old trail past a cabin and meets the lakes trail, which saves time compared with retracing the plateau.",
+  "logistics": "Start at the Cottonwood Lakes trailhead; overnight trips need a permit. Old Army Pass can hold ice and snow early in the season.",
+  "sources": [
+   "https://www.snwburd.com/bob/trip_reports/langley_1.html",
+   "https://www.climber.org/reports/2003/1067.html"
+  ],
+  "confidence": "medium",
+  "notes": "Pickering Peak was added on a multi-day trip in one report; not included as a leg."
+ },
+ {
+  "id": "ca_lu_hilgard_gabb",
+  "name": "Mount Hilgard and Mount Gabb",
+  "state": "California",
+  "region": "Sierra Nevada, Lake Italy",
+  "legs": [
+   {
+    "peak": "Mount Hilgard",
+    "route": "Southeast Chute (loose scree with class 2-3 ledges)",
+    "connect": "",
+    "route_id": "ca_mount_hilgard_standard_route"
+   },
+   {
+    "peak": "Mount Gabb",
+    "route": "West Ridge from the south bowl (class 2-3, with a class 3 gully)",
+    "connect": "Descend Hilgard's chute, then traverse about 11,600-11,800 feet across slabs and boulders to the south bowl of Gabb.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 day from a camp at Lake Italy",
+  "how": "Both peaks are climbed from the same camp near Lake Italy, usually Hilgard first and then a traverse over slabs to Gabb. The hardest part is the loose steep chute on Hilgard and the traverse, where staying high keeps it easier than dropping into rougher ground. Gabb's last stretch is a west-ridge scramble with huge blocks.",
+  "descent": "Descend Gabb's south bowl on sand, jog east to a gap between cliff bands and follow a creek through slabs to Lake Italy or Toe Lake, then the trail back to camp.",
+  "logistics": "Access is by the Bear Creek trailhead with a dirt 4WD road; camp near Lake Italy or Toe Lake (wilderness permit). Summer to early fall.",
+  "sources": [
+   "https://www.climber.org/reports/1999/508.html",
+   "https://www.climber.org/reports/2001/734.html"
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "ca_lu_gould_dragon",
+  "name": "Dragon Peak and Mount Gould",
+  "state": "California",
+  "region": "Sierra Nevada, Onion Valley",
+  "legs": [
+   {
+    "peak": "Dragon Peak",
+    "route": "Southwest chute to the crest, then north along the crest (class 3, with a short exposed slab below the summit)",
+    "connect": "",
+    "route_id": "ca_south_ridge_via_south_chute"
+   },
+   {
+    "peak": "Mount Gould",
+    "route": "South side from Gould Pass (class 3 summit blocks)",
+    "connect": "Traverse the rocky ridge to Gould Pass and a short stretch of poor talus onto the plateau, then walk south and circle to the summit blocks.",
+    "route_id": "ca_south_ridge_7"
+   }
+  ],
+  "duration": "1 day or a weekend from Onion Valley",
+  "how": "The two peaks are close neighbours above Golden Trout Lake, so day parties do Dragon first and traverse to Gould. The traverse is a fun scramble. Dragon's summit block is the harder of the two (a short exposed class 3 slab, sometimes belayed); Gould's blocks are easier. Others climb them on separate days from a camp below the lake.",
+  "descent": "Descend from Gould Pass down the headwall (class 3) to the trailhead, or via Kearsarge Pass, rather than retracing the Dragon route.",
+  "logistics": "Start at the Onion Valley trailhead; a camp in the meadow below Golden Trout Lake makes a weekend. Summer. Check for any seasonal wildlife closure on Dragon before going.",
+  "sources": [
+   "https://www.climber.org/TripReports/2004/1317.html",
+   "https://www.snwburd.com/bob/trip_reports/dragon_1.html"
+  ],
+  "confidence": "medium",
+  "notes": "A seasonal closure of Dragon Peak for bighorn sheep (from July 1) was reported in a search-result summary of another trip report only; confirm with the agency."
+ },
+ {
+  "id": "ca_lu_thompson_powell",
+  "name": "Mount Thompson and Point Powell",
+  "state": "California",
+  "region": "Sierra Nevada, Lake Sabrina",
+  "legs": [
+   {
+    "peak": "Point Powell",
+    "route": "Northeast Couloir (steep snow) to the plateau, then the summit",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Thompson",
+    "route": "Northwest Face or the snow chute to the summit block (class 3)",
+    "connect": "Glissade from Powell's plateau to the saddle or glacier and climb the chute to the Thompson plateau.",
+    "route_id": null
+   }
+  ],
+  "duration": "1-2 days from a high camp",
+  "how": "Both peaks rise above Sunset Lake and the Thompson-Powell glacier, so climbers camp at Sunset or Baboon Lakes and do one or both in a day. Powell's summit plateau is reached by a steep snow couloir needing ice axe and crampons; Thompson is a snow chute then a class 3 summit block. Powell's three points are a plateau stroll apart, but the third needs gnarly ridge moves.",
+  "descent": "Return to the Thompson-Powell col and descend the glacier and a snow drainage to the camp, glissading or skiing in spring.",
+  "logistics": "Begin at the Lake Sabrina trailhead and go cross-country past Blue Lake, camping at Sunset Lake or lower at Baboon Lakes (permit). Spring snow routes are the most common.",
+  "sources": [
+   "https://www.climber.org/reports/2000/655.html",
+   "https://www.climber.org/reports/2000/697.html"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "ca_lu_gayley_sill",
+  "name": "Mount Sill and Mount Gayley (from Glacier Notch)",
+  "state": "California",
+  "region": "Sierra Nevada, Palisades (Palisade Glacier)",
+  "legs": [
+   {
+    "peak": "Mount Sill",
+    "route": "North Couloir to the Sill-Gayley saddle, then the Southwest Ridge (class 4 section; Apex Peak is a ten-minute side trip)",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Gayley",
+    "route": "Southwest Ridge from Glacier Notch (class 3, about 25 minutes)",
+    "connect": "Descend the couloir, cross the boulders to Glacier Notch and climb the class 3 southwest ridge.",
+    "route_id": "ca_south_west_ridge_aka_yellow_brick_road"
+   }
+  ],
+  "duration": "1 long day or 2 days",
+  "how": "Both summits are reached from Glacier Notch after crossing the Palisade Glacier. The usual combination is Sill by its North Couloir, then back to the notch for the short Gayley scramble. Early season needs an ice axe and crampons, and the glacier has crevasses, a bergschrund and rockfall near the notch.",
+  "descent": "Down the couloir by snow or rock, to Glacier Notch, then the loose chute and the glacier back toward the lakes.",
+  "logistics": "Start at the Big Pine Creek North Fork trailhead past Third Lake and Sam Mack Meadow. A day from the trailhead takes about 12 hours; a high camp makes it easier.",
+  "sources": [
+   "https://www.snwburd.com/bob/trip_reports/sill_2.html",
+   "https://www.climber.org/reports/1991/3.html"
+  ],
+  "confidence": "medium",
+  "notes": "One party did Gayley first, then Sill on another day from the same camp; the other did Sill then Gayley in one day."
+ },
+ {
+  "id": "ca_lu_winchell_gayley",
+  "name": "Mount Winchell and Mount Gayley (Sam Mack Meadow)",
+  "state": "California",
+  "region": "Sierra Nevada, Palisades (North Fork Big Pine Creek)",
+  "legs": [
+   {
+    "peak": "Mount Winchell",
+    "route": "East Arete (class 3, solid rock)",
+    "connect": "",
+    "route_id": "ca_east_arete_7"
+   },
+   {
+    "peak": "Mount Gayley",
+    "route": "West Face gully to the Southwest Ridge, or Glacier Notch route (class 3)",
+    "connect": "Return to camp, then go up the Gayley approach from the meadow on another day.",
+    "route_id": "ca_south_west_ridge_aka_yellow_brick_road"
+   }
+  ],
+  "duration": "2-3 days from a camp at Sam Mack Meadow",
+  "how": "Climbers base at Sam Mack Meadow and take each peak on a separate day, Winchell by its east arete and Gayley by the glacier or the west face. The same camp serves Sill and Agassiz too, so a trip often adds a third summit. Rock is class 3; early season needs an ice axe and crampons.",
+  "descent": "Both are descended by their ascent routes, Winchell's south face to the Thunderbolt Glacier or the east arete, then the meadow.",
+  "logistics": "Start at the North Fork trailhead past Third Lake; camp at Sam Mack Meadow (permit). Summer.",
+  "sources": [
+   "https://www.climber.org/reports/2003/1206.html",
+   "https://www.climber.org/reports/1991/3.html",
+   "https://www.climber.org/reports/1999/404.html"
+  ],
+  "confidence": "medium",
+  "notes": "Agassiz and Winchell were also climbed on consecutive days from this camp in a third report (Agassiz via the southeast face, Winchell via the right-hand gully)."
+ },
+ {
+  "id": "ca_lu_brewer_north_guard",
+  "name": "Mount Brewer and North Guard",
+  "state": "California",
+  "region": "Sierra Nevada, Kings Canyon (Roads End)",
+  "legs": [
+   {
+    "peak": "Mount Brewer",
+    "route": "South Face (class 2 sand and scree, from Brewer Canyon)",
+    "connect": ""
+   },
+   {
+    "peak": "North Guard",
+    "route": "South-side gullies (class 3, sustained class 4 near the ridge on one line)",
+    "connect": "Descend Brewer's northwest face (class 2-3 rubble) into the canyon and climb the south gullies of North Guard, then retrieve the pack."
+   }
+  ],
+  "duration": "2 days",
+  "how": "The peaks are close neighbours on the crest. A full traverse takes South Guard, then Brewer, then North Guard; many parties do Brewer and North Guard on one trip and add South Guard if time allows. North Guard is the harder: class 3 with exposure, a notch to find, and a summit block of a few easy friction moves.",
+  "descent": "Crossing the pass into Sphinx Canyon from the lake below Brewer saves miles over Brewer Canyon, but the descent is a very long boulder slog.",
+  "logistics": "Start from Roads End on the Avalanche Pass trail and camp near Lake 10514 or Big Brewer Lake; permit required. Allow two days at minimum.",
+  "sources": [
+   "https://www.snwburd.com/bob/trip_reports/south_guard_1.html",
+   "https://www.climber.org/reports/1999/486.html"
+  ],
+  "confidence": "medium",
+  "notes": "Order for North Guard differs by source; the Brewer to North Guard connecting route was only described in one report. DROPPED by reviewer: one report only for the connection.",
+  "drop": true
+ }
+]
