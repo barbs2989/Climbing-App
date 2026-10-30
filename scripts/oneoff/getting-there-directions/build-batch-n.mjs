@@ -2,6 +2,7 @@
 // trailheads and drives its SIBLINGS on the same area already carry, so research starts from a
 // verified drive instead of a blank. Read-only; reads only the areas named, by area_id, in chunks.
 //   node build-batch-n.mjs <out-prefix> <areaType> [excludeAreaName ...]
+//   SRC=remaining.json node build-batch-n.mjs ...   (the live re-listing, list-remaining.mjs)
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -10,7 +11,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const [prefix, type, ...exclude] = process.argv.slice(2);
 const H = { apikey: anonKey(), Authorization: "Bearer " + anonKey() };
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-const groups = JSON.parse(fs.readFileSync(path.join(here, "neither.json"), "utf8"))
+const groups = JSON.parse(fs.readFileSync(path.join(here, process.env.SRC || "neither.json"), "utf8"))
   .filter(g => g.area_type === type && !exclude.includes(g.area));
 const sib = new Map();
 const ids = groups.map(g => g.area_id);
