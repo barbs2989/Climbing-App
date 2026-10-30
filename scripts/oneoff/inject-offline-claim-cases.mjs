@@ -68,6 +68,7 @@ for (const sig of ["SIGINT", "SIGTERM"]) process.on(sig, () => { unlock(); proce
 const TODAY = "src/components/TodayTab.tsx"; // Home's Pinned states card, lifted out of App in PR61
 const CM = "ClimbMatch.jsx", RD = "RouteDetail.jsx", CORE = "ClimbMatchCore.jsx", HELP = "lib/Help.jsx", DB = "lib/db.js", OFF = "lib/offline.js";
 
+const TRIGGER_FILES = ["src/components/ManageAreasSheet.tsx", "src/components/TodayTab.tsx", "src/components/LogbookTab.tsx"];
 const CASES = [
   /* THE SILENT HALF. Write, copy and hydration all stay; only the fallback goes. Nothing renders
    * differently, no name moves, and the pack empties the moment there is no signal. */
@@ -87,13 +88,14 @@ const CASES = [
     find: "() => orOfflineExact(async () => {\n      const { data, error } = await supabase.rpc(\"routes_in_subtree\",",
     repl: "() => (async () => {\n      const { data, error } = await supabase.rpc(\"routes_in_subtree\"," },
 
-  { name: "killreal", file: CM, must: "fail", expect: "is gone. A downloaded state IS on the device",
+  { name: "killreal", file: "src/components/ManageAreasSheet.tsx", must: "fail", expect: "is gone. A downloaded state IS on the device",
     why: "§6 — deleting the state download's TRUE claim to satisfy a rule about routes",
     find: "is saved on this device and keeps working with no signal", repl: "is downloaded" },
 
   { name: "bookmarks-gone", file: CM, must: "fail", expect: "nothing calls saveAreaIds",
     why: "§7 — saved areas go back to being lost on every reload",
-    find: "saveAreaIds(uid,next)", repl: "Promise.resolve(next)" },
+    // App writes saved areas at two sites (the toggle and the account hydrate): both must go
+    rx: [[/(?<![A-Za-z0-9_$])saveAreaIds\(/g, "Promise.resolve("]] },
 
   /* §10 — the readers a downloaded state's reports, corrections and names come back through. Each
    * edit leaves every render and every name intact online; the loss shows only with no signal. */
@@ -134,7 +136,7 @@ const CASES = [
     find: "Photos and map tiles aren’t saved. ", repl: "Photos and map tiles are not saved to this device. " },
 
   /* §5 — one live claim per scanned surface. */
-  { name: "claims-photos-manage", file: CM, must: "fail", expect: "claims something is on the device",
+  { name: "claims-photos-manage", file: "src/components/ManageAreasSheet.tsx", must: "fail", expect: "claims something is on the device",
     why: "§5 — Manage areas promises photos and map tiles the download never stores",
     find: "\" downloads it: the full catalog — areas,", repl: "\" downloads it with every photo and map tile to this device: the full catalog — areas," },
   { name: "claims-photos-home", file: TODAY, must: "fail", expect: "claims something is on the device",
@@ -150,10 +152,11 @@ const CASES = [
 
   /* Fail closed — a rename blinds a surface. The Manage areas dialog is found by its aria-label,
    * and the trigger regions alone would keep ClimbMatch's floor satisfied without it. */
-  { name: "manage-areas-renamed", file: CM, must: "fail", expect: "state-download dialog(s) by aria-label",
+  { name: "manage-areas-renamed", file: "src/components/ManageAreasSheet.tsx", must: "fail", expect: "state-download dialog(s) by aria-label",
     why: "fail closed — Manage areas' own copy would drop out of the scan",
     find: "aria-label=\"Manage areas\"", repl: "aria-label=\"Your areas\"" },
-  { name: "download-state-renamed", file: CM, must: "fail", expect: "region(s) and",
+  // since PR62 the state-download triggers also live in the lifted sheets/tabs: `moreFiles` lists the extra files the same rename is applied to
+  { name: "download-state-renamed", file: CM, moreFiles: TRIGGER_FILES, must: "fail", expect: "region(s) and",
     why: "fail closed — ClimbMatch's state-download triggers renamed, so Home's card goes unscanned",
     rx: [[/(?<![A-Za-z0-9_$])downloadedStates(?![A-Za-z0-9_$])/g, "dlStates"],
          [/(?<![A-Za-z0-9_$])setDownloadedStates(?![A-Za-z0-9_$])/g, "setDlStates"],
@@ -205,7 +208,7 @@ const failText = (r) => r.out.split("\n").filter((l) => /^\s*FAIL/.test(l)).join
 /* Every file the suite may touch, checksummed BEFORE anything runs and re-checked at the end. A
  * per-case restore already runs, but a crash between write and restore leaves the tree edited and
  * nothing would say so — the failure this suite has already caused once. */
-const TOUCHED = [...new Set(CASES.map((c) => c.file))];
+const TOUCHED = [...new Set(CASES.flatMap((c) => [c.file, ...(c.moreFiles || [])]))];
 const BASELINE = new Map(TOUCHED.map((f) => [f, sum(f)]));
 
 let pass = 0, fail = 0;
@@ -228,11 +231,14 @@ for (const c of CASES) {
     next = c.all ? orig.split(c.find).join(c.repl) : orig.replace(c.find, c.repl);
   }
   fs.writeFileSync(P(c.file), next);
+  const extra = (c.moreFiles || []).map((f) => ({ f, orig: fs.readFileSync(P(f), "utf8"), before: sum(f) }));
+  for (const x of extra) fs.writeFileSync(P(x.f), c.rx.reduce((t, [re, r]) => t.replace(re, r), x.orig));
   const landed = sum(c.file) !== before;
 
   const r = runGuard();
   fs.writeFileSync(P(c.file), orig);
-  const restored = sum(c.file) === before;
+  for (const x of extra) fs.writeFileSync(P(x.f), x.orig);
+  const restored = sum(c.file) === before && extra.every((x) => sum(x.f) === x.before);
 
   const wanted = c.must === "fail" ? !r.ok : r.ok;
   const named = c.must !== "fail" || !c.expect || failText(r).includes(c.expect);

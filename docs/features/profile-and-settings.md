@@ -159,6 +159,12 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 | File | Key symbols |
 |---|---|
 | `ClimbMatch.jsx` | `profile`/`setProfile`, `editDraft`, `saveEdit`, `settingsOpen`, `menuOpen`, `units`/`dateFmt`, `meLive`, `myVerificationQ`, `FALLBACK_AV` |
+| `src/components/SettingsMenuSheet.tsx` | `SettingsMenuSheet`, the Settings menu (lifted from App, PR62) |
+| `src/components/SettingsPrivacySheet.tsx` | `SettingsPrivacySheet`, Settings › Privacy |
+| `src/components/SettingsDataSheet.tsx` | `SettingsDataSheet`, Settings › Account & data |
+| `src/components/PrivacySheet.tsx` | `PrivacySheet`, the in-app privacy summary sheet |
+| `src/components/OnboardingSheet.tsx` | `OnboardingSheet`, the onboarding sheet |
+| `src/components/ReviewQueueSheet.tsx` | `ReviewQueueSheet`, the admin review queues |
 | `src/components/MeTab.tsx` | `MeTab`, the Profile tab body, lifted from App in PR61 |
 | `ClimbMatchCore.jsx` | `ME`, `UNITS`, `__set_UNITS`, `__set_DLOCALE`, `RESUME_STYLES` |
 | `src/components/FullProfile.tsx` | `FullProfile` (the climber profile sheet; moved from core in PR50) |

@@ -1,7 +1,6 @@
 {
   "note": "Success messages beside a session-gated write that are intentional (local-only state that really did change). Shrink this list; never grow it without a reason in the PR.",
   "allowed": [
-    "ClimbMatch.jsx :: \"Conditions report deleted\")",
     "ClimbMatch.jsx :: \"Crew removed\")",
     "ClimbMatch.jsx :: \"Group deleted from this device\")",
     "ClimbMatch.jsx :: \"Group deleted\")",
@@ -14,7 +13,6 @@
     "ClimbMatch.jsx :: \"Request to \"+_first+\" withdrawn\")",
     "ClimbMatch.jsx :: \"Request to join \"+cl.name+\" withdrawn\")",
     "ClimbMatch.jsx :: \"Shared your plan with the crew\")",
-    "ClimbMatch.jsx :: \"Trip report deleted\")",
     "ClimbMatch.jsx :: \"Vouch for \"+_first+\" withdrawn\")",
     "ClimbMatch.jsx :: \"You and \"+pubFirst(c)+\" are now connected\")",
     "ClimbMatch.jsx :: \"You run this group, so you can’t leave it — you can delete it from Gr",
@@ -24,6 +22,8 @@
     "ClimbMatch.jsx :: _send?\"Thanks — your report helps the next climber\":\"Your vote was wit",
     "ClimbMatch.jsx :: _ubn+\" unblocked — they can message you and invite you to crews again\"",
     "ClimbMatch.jsx :: _wasIn?\"Removed your pick for that day\":\"You're in — that day works fo",
-    "ClimbMatch.jsx :: to.name+\" now owns \"+ecl.name+\" — you’re a moderator\")"
+    "ClimbMatch.jsx :: to.name+\" now owns \"+ecl.name+\" — you’re a moderator\")",
+    "src/components/LogClimbSheet.tsx :: \"Conditions report deleted\")",
+    "src/components/LogClimbSheet.tsx :: \"Trip report deleted\")"
   ]
 }

@@ -328,6 +328,18 @@ function firstRenderedTag(seg) {
 // state renders a dialog is read off App with them appended — `pastExpand`'s dialog is in
 // LogbookTab.tsx. The STATES and their offsets still come from `appCode` alone: the opener is
 // injected into App, and an offset into the appended text would place nothing.
+// The render of each lifted App body: `<GiveVouchSheet …/>` in App is what that file returns, so the
+// evidence test looks THROUGH it (once) as it looks through a <Suspense>, to the element it draws.
+function movedAppBodies() {
+  const out = new Map();
+  for (const f of MOVED["ClimbMatch.jsx"]) {
+    const src = readFileSync(new URL("../../" + f, import.meta.url), "utf8");
+    const m = /^export default function ([A-Z][\w$]*)\(/m.exec(src);
+    const at = m ? src.indexOf("\n  return ", m.index) : -1;
+    if (m && at >= 0) out.set(m[1], src.slice(at + "\n  return ".length));
+  }
+  return out;
+}
 function withMovedApp(appCode) {
   let s = appCode;
   for (const f of MOVED["ClimbMatch.jsx"]) s += "\n" + movedAsParentText(readFileSync(new URL("../../" + f, import.meta.url), "utf8"), f);
@@ -336,6 +348,7 @@ function withMovedApp(appCode) {
 export function dialogOverlays(appCode, coreCode) {
   const ev = withMovedApp(appCode);
   const dlg = dialogComponents(coreCode, ev);
+  const bodies = movedAppBodies();
   const found = [];
   for (const m of appCode.matchAll(/\[([a-zA-Z][\w$]*),(set[A-Z][\w$]*)\]=useState\(([^)]{0,30})/g)) {
     const [name, setter, init] = [m[1], m[2], m[3].trim()];
@@ -344,9 +357,10 @@ export function dialogOverlays(appCode, coreCode) {
     for (const r of ev.matchAll(new RegExp("\\{\\s*" + name + "\\s*(?:&&|\\?)", "g"))) {
       const end = matchBrace(ev, r.index);
       if (end < 0) continue;
-      const seg = ev.slice(r.index, end);
-      const t = firstRenderedTag(seg);
+      let seg = ev.slice(r.index, end);
+      let t = firstRenderedTag(seg);
       if (!t) continue;
+      if (bodies.has(t[1]) && !dlg.has(t[1])) { seg = bodies.get(t[1]); t = firstRenderedTag(seg); if (!t) continue; }
       if (dlg.has(t[1])) { evidence = "renders <" + t[1] + ">"; break; }
       const d = seg.indexOf('role="dialog"');
       if (d >= 0 && (seg.slice(0, d).match(/<[A-Za-z][\w$.]*/g) || []).length <= 1) {

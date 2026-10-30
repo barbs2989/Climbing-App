@@ -36,7 +36,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { coreModuleEntry } from "./lib/guard-sources.mjs";
+import { coreModuleEntry, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(ROOT, `.outage-copy-${process.pid}.mjs`);
@@ -254,12 +254,14 @@ try {
      "the Manage areas line no longer passes the loading flag to stateCatalogLine"],
     /* With the database on, a state's count is the DATABASE's or nothing: the seed tree holds four
        states, and Washington's one seed climb read as "1 climb in the catalog" during an outage. */
-    ["ClimbMatch.jsx", "var cnt=USE_DB?(dbSt?(dbSt.route_count||0):0):",
+    ["ClimbMatch.jsx", "cnt=USE_DB?(dbSt?(dbSt.route_count||0):0):",
      "Manage areas counts a state from the seed tree again while the database is on"],
   ];
   for (const [f, needle, why] of CHAIN) {
     ran++;
-    if (fs.readFileSync(path.join(ROOT, f), "utf8").includes(needle)) {
+    // App is read stitched: the Manage areas sheet is ManageAreasSheet.tsx since PR62.
+    const text = f === "ClimbMatch.jsx" ? readAppFile(path.join(ROOT, f)) : fs.readFileSync(path.join(ROOT, f), "utf8");
+    if (text.includes(needle)) {
       ok(`wiring: ${f} — ${why.replace("no longer ", "")}`);
     } else {
       fail(`wiring: ${why} (${f} no longer contains \`${needle}\`)`);

@@ -52,6 +52,13 @@ treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 | File | Key symbols |
 |---|---|
 | `ClimbMatch.jsx` | `discoverGroupList`, `groupDiscoverCard`, `groupHomeRegion`, `groupClimbRegions`, `groupRegionRank`, `groupPlace`, `groupsTab`, `openGroupId` |
+| `src/components/GroupDiscussionTab.tsx` | `GroupDiscussionTab`, an open group's Discussion tab (lifted from App, PR62) |
+| `src/components/GroupAboutTab.tsx` | `GroupAboutTab`, an open group's About tab |
+| `src/components/GroupMembersTab.tsx` | `GroupMembersTab`, an open group's Members tab (roster and member requests) |
+| `src/components/GroupEventsTab.tsx` | `GroupEventsTab`, an open group's Events tab |
+| `src/components/GroupMediaTab.tsx` | `GroupMediaTab`, an open group's Media grid |
+| `src/components/GroupEventForm.tsx` | `GroupEventForm`, the create-an-event sheet |
+| `lib/groupRules.js` | `groupVisOf`, `groupCanHostEvent`, `groupJoinPath`, `groupJoinLabel`, `GROUP_TOPICS`, `groupWhere` (moved out of `ClimbMatch.jsx`, PR62) |
 | `src/components/GroupsTab.tsx` | `GroupsTab`, the Groups screen body (For you / Your groups / Your activity / Discover / Events), lifted from App in PR61; App passes it the helpers above |
 | `lib/db.js` | `useMyGroups`, `createGroupRow`, `updateGroupSettings`, `setGroupVisibility`, `createGroupEvents`, `regionOfPlace`, `regionAbbr`, `useMyPartnerAreas`, `useStates`, `useGroupFeed` |
 | `lib/search.js` | `searchMatches` |

@@ -174,7 +174,8 @@ else {
 // =======================================================================================
 // SECTION 3 -- THE WIRING. Sections 1 and 2 both survive a squash that keeps the module and
 // drops the call sites: loadDateFmt would work perfectly while nothing called it.
-const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+// since PR62 the Data settings sheet (where the format select WRITES) lives in SettingsDataSheet.tsx
+const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8") + "\n" + fs.readFileSync(path.join(ROOT, "src", "components", "SettingsDataSheet.tsx"), "utf8");
 for (const [re, what] of [
   [/\[dateFmt,setDateFmt\]=useState\(loadDateFmt\)/, "the date-format state is SEEDED from storage"],
   [/setDateFmt\(e\.target\.value\);saveDateFmt\(e\.target\.value\)/, "choosing a format WRITES it"],

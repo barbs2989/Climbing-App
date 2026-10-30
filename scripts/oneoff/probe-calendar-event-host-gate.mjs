@@ -28,7 +28,9 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const src = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+// The predicate moved out of ClimbMatch.jsx into lib/groupRules.js (PR62 of the component extraction);
+// App and the Calendar still import it from there. Read both, so its call sites stay in view.
+const src = fs.readFileSync(path.join(ROOT, "lib/groupRules.js"), "utf8").replace("export function groupCanHostEvent(", "function groupCanHostEvent(") + "\n" + fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
 
 let bad = 0;
 const ok = (m) => console.log("  ok    " + m);
