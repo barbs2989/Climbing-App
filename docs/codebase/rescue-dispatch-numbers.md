@@ -424,6 +424,92 @@ Still refused after the browser read:
 - Gallatin: its dispatch page prints 406-582-2092 with 8-5 hours.
 - Custer ID: no official page was read.
 
+## More counties (checked 2026-10-29)
+
+Each number was read on the agency's own page (WebFetch or a browser), with the label shown.
+Three are joint city-county centres whose page sits on the city's site: Dubuque, WHITCOM
+(Whitman) and the Mesilla Valley Regional Dispatch Authority (Doña Ana). Each page says that
+centre dispatches for the whole county, so it is not a city-only line. Pennington's line is the
+county 911 page's own "NON-EMERGENCY NUMBER", for the joint Rapid City and Pennington centre.
+
+| State | County | Number | Read on | Label on the page |
+|---|---|---|---|---|
+| North Carolina | Transylvania | (828) 884-3188 | transylvaniacounty.org/departments/communications-911 | Non Emergency (Communications 911 page) |
+| North Carolina | Stokes | (336) 593-8139 | co.stokes.nc.us/departments/non_emergency_numbers.php; /patrol.php | NON Emergency Numbers: Communications Center (first of its lines; Patrol page names it) |
+| Alabama | Madison | (256) 722-7181 | madisoncountysheriffal.org/contact | Non-emergency (24 hours) |
+| Ohio | Hocking | (740) 385-2131 | hockingsheriff.org/contact-us | Non-Emergency Dispatch |
+| Michigan | Marquette | (906) 475-9912 | co.marquette.mi.us/departments/central_dispatch | Central Dispatch Non-Emergency Calls |
+| Minnesota | Pine | (320) 629-8380 | pinecountymn.gov sheriff when_not_to_call_9-1-1 | The non-emergency number for the Pine County Sheriff |
+| Minnesota | Carlton | (218) 384-3632 | carltoncountymn.gov/266/Dispatch-Information | In a non-emergency: Call ... (Dispatch Information) |
+| Minnesota | Goodhue | (651) 385-3155 | goodhuecountymn.gov/262 | Non Emergency (Emergency Communications Division) |
+| Wisconsin | Sauk | (608) 356-4895 | co.sauk.wi.us sheriffs-office-contacts | Non-Emergency/Dispatch |
+| Wisconsin | Door | (920) 746-2400 | co.door.wi.gov/844/Resources | Non-Emergency |
+| Texas | Travis | (512) 974-0845, option 3 | tcsheriff.org/about/about-tcso/contact-us | 24/7 Non-Emergency Dispatch |
+| Texas | Bexar | (210) 335-6000 | bexar.org/770/Report-a-Crime | Dispatch Office (Report a Crime page); county directory entry Non-Emergency Dispatch |
+| South Dakota | Pennington | (605) 394-4131 | pennco.org/law_public_safety/911_communications | NON-EMERGENCY NUMBER (county 911 page; the joint Emergency Services Communications Center) |
+| Iowa | Dubuque | (563) 589-4415 | cityofdubuque.org/397 | Non-Emergency Dispatch (the centre serves all of Dubuque County) |
+| New York | Ulster | (845) 338-3640 | trafficsafety.ny.gov/location/ulster-county-sheriffs-office | 24/7 Dispatch (NY State traffic-safety agency's listing of the sheriff's office) |
+| Maine | Franklin | (207) 778-6140 | franklincountymaine.gov/communications | For non-emergency concerns contact the Franklin County Regional Communications Center |
+| Maine | Knox | (207) 593-9132 | knoxcountymaine.gov knox_regional_communications_center | For non-emergencies dial |
+| Maine | Oxford | (207) 743-9554 | oxfordcounty.org/contact | REGIONAL COMMUNICATIONS CENTER (DISPATCH); the page says these numbers are non-emergency only |
+| Maryland | Washington | (240) 313-4345 | washco-md.net/emergency-services/emerg-coms-911 | Non-Emergency Phone Number (Emergency Communications Center) |
+| Maryland | Frederick | (301) 600-2071 | frederickcosheriff.com/phone-numbers-fcso | Non-Emergency Dispatch |
+| Maryland | Garrett | (301) 334-1911 | garrettcountymd.gov emergency-management news 2025-12 | the Garrett County Sheriff's Office non-emergency line (fire/rescue communications: 301-334-1929) |
+| Maryland | Montgomery | (301) 279-8000 | montgomerycountymd.gov/OPI/make_right_call.html | Police Non-Emergency Number (the county's own police) |
+| Pennsylvania | Westmoreland | (724) 600-7300 | westmorelandcountypa.gov/m/faq?cat=49 | the Westmoreland County non-emergency phone number (county 9-1-1 FAQ) |
+| Montana | Park | (406) 222-2050 | parkcountymt.gov Sheriff-s-Office | Non-Emergency Dispatch |
+| Montana | Carbon | (406) 446-1234 | carbonmt.gov/sheriff | non-emergency/dispatch |
+| Oregon | Klamath | (541) 884-4876, ext. 4 | klamath911.gov/contact-us | Non-Emergency Line, ext. 4 (Klamath 911 district) |
+| Hawaii | Hawaii | (808) 935-3311 | hawaiipolice.gov/contact-us/hotlines | NON-EMERGENCY / the HPD's non-emergency telephone number |
+| North Carolina | Wilkes | (336) 838-9111 | wilkescounty.net/174/Field-Operations | 336-838-9111 for non-emergency calls (sheriff's Field Operations page) |
+| Washington | Grays Harbor | (360) 533-8765 | graysharbor.gov/government/sheriff | Dispatch Non-Emergency (sheriff's page, marked under construction) |
+| Washington | Whitman | (509) 332-2521 | pullman-wa.gov/services/police/whitcom_911.php | Non-Emergency Reporting (WHITCOM serves Whitman and Asotin counties; page hosted by Pullman) |
+| New Mexico | Doña Ana | (575) 526-0795 | lascruces.gov/?p=1240 | For non-emergencies, call ... (MVRDA answers and dispatches 911; page hosted by Las Cruces) |
+
+Refused or not reached in the South and Midwest (2026-10-29):
+- Custer SD: a state directory page only.
+- Minnesota's DPS "24-Hour Telephone" list (Lake, St. Louis, Nicollet): refused, as on 2026-10-28.
+- Search snippets only: Laurel KY (606-878-7000), Walker GA (706-375-7810; the county page is
+  404), Douglas KS (785-843-0250), Bayfield (715-373-6120, a town page), Summit OH (a township
+  page).
+- Office lines only: Wolfe, Powell, Rockcastle, Marion TN, Sequatchie, Cumberland, Rabun (its
+  page is 403), Llano and Brewster.
+- Refused: Comanche OK (Nixle), Monroe IN (a 2015 city list) and Burke (a 2016 city document; 403).
+- Nothing found: Watauga, Cuyahoga, Union IL and Johnson IL.
+- Not reached yet: Lee KY, Estill, Menifee, McCreary; Franklin TN, Fentress, Morgan TN, Rhea,
+  Grundy; McDowell, Wilkes, Surry, Ashe, Avery, Caldwell, Polk NC, Swain; Dade, Chattooga,
+  Habersham; Jackson IL, Lawrence IN, St. Francois, Alger, Keweenaw, Houghton, Douglas WI;
+  Burnet, El Paso TX, Bandera, Medina; Kiowa, Murray; Lawrence SD, Meade; Billings, Dawes,
+  Clayton.
+
+Refused or not reached in the East (2026-10-29):
+- Carroll NH: 603-539-2284 is shown as "Dispatch" in search text, but the county site reset
+  every connection, so the page itself could not be read.
+- Office lines only, no label: Warren NY, Rockland, Coos, Belknap, Cheshire, Hancock ME, Sussex
+  NJ, and the Vermont State Police barracks.
+- Number seen only on a town, city or news page: Grafton, Piscataquis (564-3304; the "24/7
+  non-emergency, option 1" label is on Dover-Foxcroft's page), Berkshire, Luzerne, Allegheny
+  and Adams PA.
+- Bucks: its only line is the 911-outage alternate.
+- Not reached: Orange NY, Clinton, Hamilton NY, Herkimer, Westchester, Sullivan NH, the
+  Massachusetts counties other than Berkshire, Fayette PA, Bland, Bath, Shenandoah, Smyth,
+  Grayson and Giles VA.
+
+Refused or not reached in the West (2026-10-29):
+- Unlabelled lines: Madison MT, Sweet Grass, Fremont WY, Natrona, Honolulu (529-3111) and
+  Stillwater (a sheriff's office line).
+- The page returned 404: Gallatin (582-2100) and Mono.
+- Number seen only in search text: Maui, McDowell, Klickitat (773-4545).
+- No line found: Bandera, Custer ID, Inyo.
+- Blocked (403): Jefferson OR, Douglas OR, Skamania.
+- No official page found: Twin Falls, Glacier, Hood River, Josephine, Otero, Crook, Elko,
+  Mohave, Gila, San Juan UT, Burnet, Surry, Lawrence SD.
+- Not reached: Boise, Owyhee, Idaho County; Rio Arriba, San Miguel NM, Grant NM; Wallowa,
+  Columbia OR, Wasco; Ferry, Garfield WA; Duchesne, Box Elder; Lincoln NV, Nye; Carbon WY, Big
+  Horn WY; Alpine, Mariposa, Monterey, Santa Clara, Los Angeles; and the southern leftovers.
+- Lewis and Clark also has the Helena-Lewis & Clark 911 Center's non-emergency line,
+  406-457-8866 (on the city site). The card uses the sheriff's own line.
+
 ## Washington (checked 2026-10-28)
 
 | County | Number | Read on | Label on the page |
