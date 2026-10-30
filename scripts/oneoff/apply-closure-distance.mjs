@@ -55,7 +55,8 @@ for (const p of plan) {
     if (ends !== "first" && (nd.length > 1 || ends === "last")) last.miles = +((last.miles || 0) + p.walkMi).toFixed(1);
     if (p.walkGainFt && first.gainFt != null && ends !== "last") first.gainFt = first.gainFt + p.walkGainFt;
     // The day's note must say the miles it now counts, or 12.5 mi sits over a note that starts at the trailhead.
-    if (p.dayNotePrefix && typeof first.note === "string" && !first.note.startsWith(p.dayNotePrefix)) first.note = p.dayNotePrefix + " " + first.note;
+    if (p.dayNotePrefix && ends !== "last" && typeof first.note === "string" && !first.note.startsWith(p.dayNotePrefix)) first.note = p.dayNotePrefix + " " + first.note;
+    if (p.dayNoteSuffix && ends === "last" && typeof last.note === "string" && !last.note.endsWith(p.dayNoteSuffix)) last.note = last.note + " " + p.dayNoteSuffix;
     body.itinerary = { ...r.itinerary, days: nd };
   } else if (p.distKmNew != null) body.dist_km = p.distKmNew;
   else { console.error(`REFUSE ${p.id}: no itinerary day miles and no distKmNew in the plan`); process.exit(1); }
