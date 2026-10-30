@@ -1,0 +1,785 @@
+{
+ "batches": [
+  "b003.json",
+  "b004.json"
+ ],
+ "routes_read": 47,
+ "routes": [
+  {
+   "id": "co_mount_yale_southwest_slopes",
+   "name": "Southwest Slopes",
+   "area": "Mount Yale",
+   "contradictions": []
+  },
+  {
+   "id": "co_childhood_s_end",
+   "name": "Childhood's End",
+   "area": "Big Rock Candy Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "co_quandary_peak_standard_route_east_ridge",
+   "name": "East Ridge",
+   "area": "Standard Route",
+   "contradictions": []
+  },
+  {
+   "id": "id_diamond_peak_east_ridge",
+   "name": "East Ridge",
+   "area": "Diamond Peak",
+   "contradictions": [
+    {
+     "fact": "Highest grade of terrain on the route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "easy scrambling with a handful of class 4 moves, maybe low class 5"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Sustained Class 3 on the upper ridge crest"
+      },
+      {
+       "field": "grade",
+       "says": "3rd"
+      }
+     ],
+     "why": "Rack text says class 4 to low 5 moves are on the route while grade, rock_grade, pitch_detail and overview top out at Class 3 (the Class 4-5 is only off-crest in hazards/bail).",
+     "internal_resolution": "grade, rock_grade, overview, pitch_detail and beta agree on Class 3; the detailed_rack sentence is the outlier (likely generic text)",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "id_southwest_ridge",
+   "name": "Southwest Ridge",
+   "area": "Mt. Borah",
+   "contradictions": []
+  },
+  {
+   "id": "id_thompson_peak_south_couloir",
+   "name": "South Couloir",
+   "area": "Thompson Peak",
+   "contradictions": []
+  },
+  {
+   "id": "ky_cutthroat",
+   "name": "Cutthroat",
+   "area": "GMC Wall",
+   "contradictions": [
+    {
+     "fact": "Name of the access road",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Motherlode parking lot on Bald Rock Fork Rd"
+      },
+      {
+       "field": "access.notes",
+       "says": "Access road (Bald Mountain Rd) is rough, unmaintained gravel"
+      }
+     ],
+     "why": "Two different road names are given for getting to the Motherlode parking.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "mt_phantom_creek_trail",
+   "name": "Phantom Creek Trail",
+   "area": "Granite Peak",
+   "contradictions": []
+  },
+  {
+   "id": "mt_sacagawea_direct",
+   "name": "Sacagawea Direct",
+   "area": "Sacagawea Peak",
+   "contradictions": []
+  },
+  {
+   "id": "mt_cutthroats_don_t_wear_plaid",
+   "name": "Cutthroats Don't Wear Plaid",
+   "area": "Ladyfingers Buttress",
+   "contradictions": []
+  },
+  {
+   "id": "nv_epinephrine",
+   "name": "Epinephrine",
+   "area": "Black Velvet Wall",
+   "contradictions": [
+    {
+     "fact": "Number of pitches",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "6"
+      },
+      {
+       "field": "pitch_detail[7].pitch",
+       "says": "8-10 (pitch_detail rows number up to pitch 10)"
+      }
+     ],
+     "why": "The pitches column says 6 but the ROUTE BREAKDOWN is numbered through pitch 10.",
+     "internal_resolution": "pitch_detail runs to 10 pitches and has several lengthy rows; the column of 6 is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "nv_prince_of_darkness",
+   "name": "Prince of Darkness",
+   "area": "Black Velvet Wall",
+   "contradictions": [
+    {
+     "fact": "Whether any belay is a standing stance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "Every belay is hanging."
+      },
+      {
+       "field": "pitch_detail[5].belay",
+       "says": "A roomy ledge at the top of the route, the only stance on the climb where you can stand instead of hanging."
+      }
+     ],
+     "why": "Overview says every belay hangs; the last pitch says the top ledge is a standing stance.",
+     "internal_resolution": "Overview is imprecise; pitch_detail row 6 is explicit about the single exception",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "nv_dark_shadows",
+   "name": "Dark Shadows",
+   "area": "Dark Shadows Wall",
+   "contradictions": []
+  },
+  {
+   "id": "nv_cat_in_the_hat",
+   "name": "Cat in the Hat",
+   "area": "Southeast Buttress",
+   "contradictions": [
+    {
+     "fact": "Number of pitches",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "7"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "rows numbered 1-2, 3, 4, 5, 6 (no pitch 7)"
+      }
+     ],
+     "why": "Seven pitches stated but the breakdown stops at pitch 6 (pitch 6 note says most parties go down from there, so a 7th is unrecorded).",
+     "internal_resolution": "The 7th pitch is simply missing from pitch_detail",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "nv_mount_rose_mount_rose_trail",
+   "name": "Mount Rose Trail",
+   "area": "Mount Rose",
+   "contradictions": []
+  },
+  {
+   "id": "nh_whitney_gilman_ridge",
+   "name": "Whitney Gilman Ridge",
+   "area": "Whitney-Gilman Area",
+   "contradictions": []
+  },
+  {
+   "id": "nh_thin_air",
+   "name": "Thin Air",
+   "area": "Thin Air Face",
+   "contradictions": [
+    {
+     "fact": "Anchor / fixed-gear type at the first belay and bolt count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "arriving at a piton-equipped stance"
+      },
+      {
+       "field": "pitch_detail[0].anchor",
+       "says": "2 bolts"
+      },
+      {
+       "field": "fixed_gear",
+       "says": "Pitons on the first stance; three bolts on the big ledge belay"
+      },
+      {
+       "field": "pitch_detail[1].belay",
+       "says": "at a pair of bolts"
+      }
+     ],
+     "why": "First stance is pitons in beta/fixed_gear but two bolts in pitch 1, and the big-ledge belay is three bolts vs a pair of bolts.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "ny_allen_mountain_allen_brook_herd_path",
+   "name": "Allen Brook herd path",
+   "area": "Allen Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "ny_big_slide_mtn_the_brothers_trail",
+   "name": "The Brothers Trail",
+   "area": "Big Slide Mtn.",
+   "contradictions": []
+  },
+  {
+   "id": "or_european_vacation",
+   "name": "European Vacation",
+   "area": "Northeast Face",
+   "contradictions": [
+    {
+     "fact": "Route grade vs hardest pitch",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.11a"
+      },
+      {
+       "field": "pitch_detail[2].grade",
+       "says": "5.10d"
+      },
+      {
+       "field": "pitch_detail[6].grade",
+       "says": "5.10d (crux: true)"
+      }
+     ],
+     "why": "Headline grade 5.11a but no pitch row exceeds 5.10d, and the crux pitch is itself 5.10d.",
+     "internal_resolution": "pitch_detail is detailed and self-consistent; either a pitch grade is missing or the headline grade is high",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "or_wherever_i_may_roam",
+   "name": "Wherever I May Roam",
+   "area": "Northwest Face",
+   "contradictions": []
+  },
+  {
+   "id": "or_hurwal_divide_traverse",
+   "name": "Hurwal Divide Traverse",
+   "area": "Wallowa Mountains Traverses",
+   "contradictions": []
+  },
+  {
+   "id": "or_krag_peak_traverse",
+   "name": "Krag Peak Traverse",
+   "area": "Wallowa Mountains Traverses",
+   "contradictions": []
+  },
+  {
+   "id": "or_mt_hood_south_side_hogsback",
+   "name": "South Side (Hogsback)",
+   "area": "South Side",
+   "contradictions": [
+    {
+     "fact": "Climbing permit: free or paid",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].directions",
+       "says": "Fill out the free self-issued climbing permit at the climbers' register"
+      },
+      {
+       "field": "access.fees",
+       "says": "$20 for 3 days or $50 annual; wilderness permit and registration free"
+      }
+     ],
+     "why": "Trailhead directions call the climbing permit free while access.fees charges $20/$50 for the Mt. Hood climbing permit.",
+     "internal_resolution": "The self-issued register is the free wilderness permit; the climbing permit is the paid pass. Directions should say 'wilderness permit'",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "5.2 (3.2 mi, equal to the one-way summit distMi)"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "3.2 (one-way)"
+      }
+     ],
+     "why": "dist_km is a one-way figure; with 5,300 ft gain and a 12-hour day the page presents it as the route distance.",
+     "internal_resolution": "one-way vs round-trip convention only",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "or_diamond_peak_south_ridge",
+   "name": "South Ridge (from Summit Lake)",
+   "area": "Diamond Peak",
+   "contradictions": [
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "9 (5.6 mi)"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "5.5 one-way"
+      },
+      {
+       "field": "approach",
+       "says": "about 4.5 mi of PCT to the climbers' path plus the climb"
+      }
+     ],
+     "why": "dist_km (9 km) appears to be the one-way distance while the trip is about 11 miles round trip.",
+     "internal_resolution": "one-way vs round-trip convention only",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "or_mt_bachelor_trail",
+   "name": "Mt. Bachelor Trail",
+   "area": "Mt. Bachelor",
+   "contradictions": []
+  },
+  {
+   "id": "or_west_ridge_2",
+   "name": "West Ridge",
+   "area": "Mt. Thielsen",
+   "contradictions": []
+  },
+  {
+   "id": "or_north_ridge_2",
+   "name": "North Ridge",
+   "area": "Mt. Washington",
+   "contradictions": [
+    {
+     "fact": "Approach distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "12 miles out and back"
+      },
+      {
+       "field": "waypoints[0].distMi",
+       "says": "4.1 (Summit)"
+      }
+     ],
+     "why": "Summit distMi of 4.1 conflicts with a 12-mile round trip (about 6 mi one way).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent method",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Downclimb easy rock or rappel from a slung boulder; two ropes reach the notch"
+      },
+      {
+       "field": "overview",
+       "says": "Three raps descend."
+      }
+     ],
+     "why": "Descent field offers a downclimb/one rappel to the notch while the overview says three raps descend.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "or_south_ridge_route",
+   "name": "South Ridge Route",
+   "area": "Three Fingered Jack",
+   "contradictions": []
+  },
+  {
+   "id": "or_northwest_ridge",
+   "name": "Northwest Ridge",
+   "area": "Broken Top",
+   "contradictions": []
+  },
+  {
+   "id": "or_middle_sister_north_ridge_hayden_glacier",
+   "name": "North Ridge (Hayden Glacier)",
+   "area": "Middle Sister",
+   "contradictions": []
+  },
+  {
+   "id": "or_middle_sister_southeast_ridge",
+   "name": "Southeast Ridge",
+   "area": "Middle Sister",
+   "contradictions": []
+  },
+  {
+   "id": "or_south_sister_south_side_route",
+   "name": "South Side Route",
+   "area": "South Sister",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "it totals 12.5 miles round trip"
+      },
+      {
+       "field": "approach",
+       "says": "The round trip is roughly 11 to 12 miles"
+      }
+     ],
+     "why": "12.5 mi falls outside the 11-12 mi range stated in approach.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "or_three_sisters_traverse",
+   "name": "Three Sisters Traverse",
+   "area": "Three Sisters Traverses",
+   "contradictions": []
+  },
+  {
+   "id": "ut_kings_peak_anderson_pass",
+   "name": "Anderson Pass",
+   "area": "Kings Peak",
+   "contradictions": []
+  },
+  {
+   "id": "ut_kor_ingalls_route",
+   "name": "Kor-Ingalls Route",
+   "area": "Castleton Tower",
+   "contradictions": []
+  },
+  {
+   "id": "ut_fine_jade",
+   "name": "Fine Jade",
+   "area": "The Rectory",
+   "contradictions": [
+    {
+     "fact": "Number of pitches",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "4"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "five rows, pitch 1 through pitch 5"
+      }
+     ],
+     "why": "Four pitches stated but the breakdown lists five.",
+     "internal_resolution": "pitch_detail has five fully described pitches; the column is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Location of the crux",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "crux",
+       "says": "sustained finger crack on pitch 2 (5.11a)"
+      },
+      {
+       "field": "pitch_detail[0].crux",
+       "says": "true (pitch 1, 5.10+)"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "The hardest moves (pitch 3, 5.11)"
+      }
+     ],
+     "why": "Crux is placed on pitch 2 at 5.11a in one field, on pitch 1 in the breakdown, and the breakdown says pitch 3 has the hardest moves; pitch 2 is 5.10.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Grade of the roof on the regular finish",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[4].notes",
+       "says": "traverses left under a roof (about 5.7 and airy)"
+      },
+      {
+       "field": "variations[0]",
+       "says": "then left under a roof (5.9+)"
+      }
+     ],
+     "why": "The same roof traverse is 5.7 in one field and 5.9+ in another.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "ut_finger_of_fate",
+   "name": "Finger of Fate",
+   "area": "The Titan",
+   "contradictions": [
+    {
+     "fact": "Route grade vs free alternative on a pitch",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.8 C2+"
+      },
+      {
+       "field": "pitch_detail[4].grade",
+       "says": "C1 or 5.10"
+      }
+     ],
+     "why": "Pitch 5 free alternative is 5.10, harder than the stated 5.8 free grade.",
+     "internal_resolution": "Free alternative to aid; route grade refers to the aid line",
+     "needs_research": false
+    },
+    {
+     "fact": "Aid grade of pitch 8",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[7].grade",
+       "says": "5.8 A0"
+      },
+      {
+       "field": "pitch_detail[7].notes",
+       "says": "Mixed free (5.7-5.8) and aid (C2, long reaches)"
+      }
+     ],
+     "why": "Pitch 8 grade is A0 but its notes describe C2 aid.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "8"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "rows for pitches 1-9 (9 is fourth-class scramble)"
+      }
+     ],
+     "why": "Eight pitches stated vs a nine-row breakdown (pitch 9 is the summit scramble).",
+     "internal_resolution": "Pitch 9 is a scramble, so 8 roped pitches is defensible",
+     "needs_research": false
+    },
+    {
+     "fact": "Climb length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "270"
+      },
+      {
+       "field": "pitch_detail[*].lengthM",
+       "says": "40+24+21+15+24+26+24+30 = 204 m"
+      }
+     ],
+     "why": "Stated length 270 m is well over the sum of pitch lengths (about 204 m).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "ut_prodigal_sun",
+   "name": "Prodigal Sun",
+   "area": "Angel's Landing",
+   "contradictions": [
+    {
+     "fact": "Pitches carrying C2 aid",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "crux",
+       "says": "C2 placements, found on three of the pitches (4, 5, 7)"
+      },
+      {
+       "field": "pitch_detail[3].grade",
+       "says": "C2 (pitch 4)"
+      },
+      {
+       "field": "pitch_detail[4].grade",
+       "says": "C1 (pitch 5)"
+      },
+      {
+       "field": "pitch_detail[5].grade",
+       "says": "C2 (pitch 7)"
+      }
+     ],
+     "why": "Crux field puts C2 on pitch 5 but pitch 5 is graded C1; the C2 pitches in the breakdown are 4 and 7.",
+     "internal_resolution": "pitch_detail rows are explicit; the crux sentence is imprecise",
+     "needs_research": false
+    },
+    {
+     "fact": "Free grade vs breakdown",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.8"
+      },
+      {
+       "field": "pitch_detail[8].grade",
+       "says": "5.5 (hardest free grade in breakdown)"
+      }
+     ],
+     "why": "Headline free grade 5.8 is not reached by any pitch in the breakdown (aid route; hardest free is 5.5).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "ut_south_ridge",
+   "name": "South Ridge",
+   "area": "Mt. Superior / Monte Cristo",
+   "contradictions": []
+  },
+  {
+   "id": "wy_irene_s_arete",
+   "name": "Irene's Arete",
+   "area": "Disappointment Peak",
+   "contradictions": [
+    {
+     "fact": "Pitch layout in the overview vs pitch_detail",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "the fourth pitch is hard (a jam-and-lieback crack past a flake, or a traverse right under an overhang)... The seventh pitch traverses left, crosses an overhang and laybacks to another step"
+      },
+      {
+       "field": "pitch_detail[3].grade",
+       "says": "5.8 (pitch 4: traverse left, black rock, quartz)"
+      },
+      {
+       "field": "pitch_detail[6].notes",
+       "says": "Easy ground for a couple of hundred feet up and left, then back right... The walk-off appears obvious"
+      }
+     ],
+     "why": "Overview describes pitch 7 as an overhang with a layback and pitch 4 as the hard crack, while pitch_detail makes pitch 2 the crux and pitch 7 easy 5th ground with a walk-off.",
+     "internal_resolution": "pitch_detail is internally consistent and detailed; the overview was written for a differently numbered breakdown",
+     "needs_research": false
+    },
+    {
+     "fact": "Bail options",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "The party saw no bail stations along the route."
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "It is possible to escape right from here with two rappels"
+      }
+     ],
+     "why": "One field says there are no bail stations, another describes a two-rappel escape from the pitch 2 ledge.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wy_owen_spalding",
+   "name": "Owen Spalding",
+   "area": "Grand Teton",
+   "contradictions": [
+    {
+     "fact": "Rope needed for the Upper Saddle rappel",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gear[2]",
+       "says": "A 60 m rope is too short for that rappel in one go and forces a stop at an intermediate anchor in Sargent's Chimney"
+      },
+      {
+       "field": "descent_text",
+       "says": "A single 60 m rope can manage the rappel from the slung horn if you trend right"
+      }
+     ],
+     "why": "Kit says a 60 m rope cannot do the 120 ft rappel in one go; descent says a single 60 m rope manages it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance to summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1].distMi",
+       "says": "7 (Summit)"
+      },
+      {
+       "field": "approach",
+       "says": "the Garnet Canyon trail climbs roughly 6.5 to 7 miles ... to the Lower Saddle"
+      }
+     ],
+     "why": "The summit is listed 7 mi from the trailhead, but the Lower Saddle alone is 6.5-7 mi, with the Upper Saddle scramble and the route above still to go.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wy_cathedral_traverse",
+   "name": "Cathedral Traverse",
+   "area": "Grand Teton Traverses",
+   "contradictions": []
+  },
+  {
+   "id": "wy_southwest_couloir_3",
+   "name": "Southwest Couloir",
+   "area": "Middle Teton",
+   "contradictions": []
+  },
+  {
+   "id": "wy_east_face",
+   "name": "East Face",
+   "area": "Teewinot",
+   "contradictions": []
+  },
+  {
+   "id": "wy_cutthroat",
+   "name": "Cutthroat",
+   "area": "Killer Cave",
+   "contradictions": []
+  },
+  {
+   "id": "wy_cirque_of_the_towers_traverse",
+   "name": "Cirque of the Towers Traverse",
+   "area": "Pingora",
+   "contradictions": []
+  }
+ ]
+}

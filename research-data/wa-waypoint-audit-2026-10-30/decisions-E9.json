@@ -1,0 +1,63 @@
+[
+ {
+  "id": "wa_winchester_mountain_south_trail",
+  "i": 0,
+  "name": "Twin Lakes Trailhead",
+  "from": [
+   48.9526,
+   -121.6358
+  ],
+  "op": "none",
+  "coordinate_key": "48.9526,-121.6358",
+  "reason": "Verified: WTA Winchester Mountain page geo 48.9526333,-121.635783 (hike.trailhead), 3 m from stored pin.",
+  "source": "https://www.wta.org/go-hiking/hikes/winchester-mountain"
+ },
+ {
+  "id": "wa_bearpaw_mountain_scramble",
+  "i": 0,
+  "name": "FS Road 3160 End Trailhead",
+  "from": [
+   48.957,
+   -121.851
+  ],
+  "op": "none",
+  "coordinate_key": "48.957,-121.851",
+  "reason": "No published coordinate: WTA/others cover Damfino Lakes TH (48.9593,-121.8070, FR-31 end), a different spot; FS-3160 road-end wide spot is unpublished. Left as is."
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_north_route",
+  "i": 0,
+  "name": "Hozomeen Campground / Hozomeen Lake Trailhead (upper loop)",
+  "from": [
+   48.98374,
+   -121.07278
+  ],
+  "op": "none",
+  "coordinate_key": "48.98374,-121.07278",
+  "reason": "Unverified: no NPS-published coordinate found; only commercial campground listings (~48.9871,-121.0711, ~370 m off; one older listing differs by 1 km), too inconsistent to move on."
+ },
+ {
+  "id": "wa_mount_custer_standard",
+  "i": 0,
+  "name": "Depot Creek Road turnout, Chilliwack Lake Road",
+  "from": [
+   49.0294,
+   -121.4019
+  ],
+  "op": "none",
+  "coordinate_key": "49.0294,-121.4019",
+  "reason": "No published coordinate: a roadside turnout on the BC side, no source publishes it."
+ },
+ {
+  "id": "wa_mount_redoubt_south_face",
+  "i": 0,
+  "name": "Depot Creek Road washout",
+  "from": [
+   49.033,
+   -121.4025
+  ],
+  "op": "none",
+  "coordinate_key": "49.033,-121.4025",
+  "reason": "No published coordinate: washout parking on Depot Creek FSR (BC side) is a climbers spot no source publishes; shared by 4 routes (redoubt, spickard, nw mox, se mox)."
+ }
+]

@@ -1,0 +1,116 @@
+{
+ "id": "wa_mount_formidable_south_face",
+ "name": "South Face / Southeast Ledges",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_mount_formidable",
+  "name": "Mount Formidable",
+  "lat": 48.4164,
+  "lng": -121.0672,
+  "elevation_ft": 8325,
+  "parent_id": "wa_north_cascades_core",
+  "ground_ft": 8270
+ },
+ "dist_km": 16.1,
+ "gain_ft": 6100,
+ "high_point_ft": 8325,
+ "approach_logistics": {
+  "peakLat": 48.4164,
+  "peakLng": -121.0672,
+  "trailhead": "Cascade Pass Trailhead (Cascade River Road)",
+  "trailheadLat": 48.475497,
+  "trailheadLng": -121.075031,
+  "trailheadDirection": "From SR 20 at Marblemount, follow Cascade River Road about 23 miles to its end at the Cascade Pass parking lot. The first 10 miles are paved and the rest is gravel."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.4754,
+   "lng": -121.0751,
+   "elev": 3600,
+   "name": "Cascade Pass Trailhead",
+   "note": "End of Cascade River Road (FR 15); day-use register at the kiosk, overnight climbers need a backcountry permit from the Marblemount Wilderness Information Center.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "The trailhead sits at the very end of Cascade River Road (Forest Road 15), at about 3,600 feet. Day users sign in at the register on the kiosk there. Climbers staying out overnight need a backcountry permit from the Marblemount Wilderness Information Center before starting up the trail.",
+   "ground_ft": 3648
+  },
+  {
+   "i": 1,
+   "lat": 48.466623,
+   "lng": -121.059953,
+   "elev": 5392,
+   "name": "Cascade Pass",
+   "note": "Maintained trail ends at this saddle; climbers leave the trail here and traverse cross-country up Mixup Arm toward the Cache Glacier.",
+   "type": "Junction",
+   "distMi": 3.7,
+   "ground_ft": 5530
+  },
+  {
+   "i": 2,
+   "lat": 48.4484594,
+   "lng": -121.0528892,
+   "elev": 6903,
+   "name": "Cache Col",
+   "note": "Rocky notch atop the Cache Glacier on the Skagit/Chelan county line; crampons/axe recommended for the glacier crossing just below it early season.",
+   "type": "Junction",
+   "distMi": 5.7,
+   "ground_ft": 6935
+  },
+  {
+   "i": 3,
+   "lat": 48.442368,
+   "lng": -121.048085,
+   "elev": 6320,
+   "name": "Kool-Aid Lake",
+   "note": "Small, heavily-used tarn camp in the cirque below Cache Col at the head of the Middle Fork Cascade River; running water nearby.",
+   "type": "Campsite",
+   "distMi": 6.3,
+   "ground_ft": 6115
+  },
+  {
+   "i": 4,
+   "lat": 48.415738,
+   "lng": -121.047297,
+   "elev": 7320,
+   "name": "Spider-Formidable Col",
+   "note": "Reached via a traverse of the Middle Cascade Glacier to this notch between Spider Mountain and Formidable; watch for crevasses on the glacier approach.",
+   "type": "Junction",
+   "distMi": 8.7,
+   "ground_ft": 6960
+  },
+  {
+   "i": 5,
+   "lat": 48.3925907,
+   "lng": -121.056917,
+   "elev": 5833,
+   "name": "Yang Yang Lakes",
+   "note": "Alternate camp in the Flat Creek cirque reached by dropping south off the col; base for the traverse onto Formidable's south face.",
+   "type": "Campsite",
+   "distMi": null,
+   "ground_ft": 5839
+  },
+  {
+   "i": 6,
+   "lat": 48.412041,
+   "lng": -121.063793,
+   "elev": 7800,
+   "name": "Red Ledges (below Art's Knoll)",
+   "note": "Broad Class 3 sandstone ledge system that's benign when dry but has serious exposure and route-finding trouble if snow-covered.",
+   "type": "Hazard",
+   "distMi": 10.6,
+   "ground_ft": 7023
+  },
+  {
+   "i": 7,
+   "lat": 48.41639,
+   "lng": -121.06722,
+   "elev": 8325,
+   "name": "Mount Formidable",
+   "note": "True summit gained via a sandstone ramp and a short, exposed Class 4-5 cleft just below the top; loose rock has been the scene of at least one fatality here.",
+   "type": "Summit",
+   "distMi": 11.2,
+   "ground_ft": 8291
+  }
+ ]
+}

@@ -150,6 +150,10 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   drawn between waypoints carries a "sketch" caveat rather than posing as GPS. A point the app worked out rather than one somebody
   pinned — the crag/peak coordinate (the orange ▲ on a crag map) and a derived trailhead — draws hollow and DASHED (`wpDivIcon`'s
   `derived`), on an opaque dark disc with a 3px type-colour ring and a white halo so it stays visible over any base layer.
+  **Water pins** (blue): every water source a route's own text names (`scripts/lib/water-sources.mjs`) should be a Water pin —
+  `npm run audit:water-pins` lists the ones that are not. The Water pins `scripts/oneoff/add-water-pins.mjs` adds are measured from
+  OpenStreetMap geometry (where the named creek crosses the RECORDED track or a mapped trail; a lake's shore nearest the track), never
+  placed on our own lines; water named without a place ("snowmelt at camp") is never pinned.
 
 ## 2. How it works
 1. `App` mounts `DbAreaBrowser` (props include `onOpenRoute`, `bookmarks`, `wishlist`, `completedIds`, `jumpToState`) when `USE_DB`; otherwise the seed tree.

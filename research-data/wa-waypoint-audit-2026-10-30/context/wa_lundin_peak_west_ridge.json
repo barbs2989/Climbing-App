@@ -1,0 +1,123 @@
+{
+ "id": "wa_lundin_peak_west_ridge",
+ "name": "West Ridge",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_lundin_peak",
+  "name": "Lundin Peak",
+  "lat": 47.4628774,
+  "lng": -121.400379,
+  "elevation_ft": 6057,
+  "parent_id": "wa_snoqualmie_pass_area",
+  "ground_ft": 6026
+ },
+ "dist_km": 6.76,
+ "gain_ft": 3400,
+ "high_point_ft": 6057,
+ "approach_logistics": {
+  "peakLat": 47.4628774,
+  "peakLng": -121.400379,
+  "trailhead": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+  "trailheadLat": 47.44542,
+  "trailheadLng": -121.42353,
+  "trailheadDirection": "From the Alpental / Snow Lake Trailhead (~3,100 ft), at the end of Alpental Road off I-90 Exit 52"
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 47.44542,
+   "lng": -121.42353,
+   "elev": 3040,
+   "name": "PCT North (Snoqualmie Pass) Trailhead",
+   "note": "I-90 Exit 52 dirt-road trailhead; Northwest Forest Pass for parking plus a free self-issue Alpine Lakes Wilderness permit at the kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Take I-90 to Exit 52 and follow Alpental Road, a dirt road, to the PCT North / Commonwealth Basin trailhead at about 3,000 ft. A Northwest Forest Pass is required for parking, and there's a free self-issue Alpine Lakes Wilderness permit to fill out at the trailhead kiosk.",
+   "ground_ft": 3127
+  },
+  {
+   "i": 1,
+   "lat": 47.439598,
+   "lng": -121.397241,
+   "elev": 3600,
+   "name": "Commonwealth Basin Trail junction",
+   "note": "Signed fork where the route leaves the PCT and drops left onto Commonwealth Basin Trail #1033 into the basin.",
+   "type": "Junction",
+   "distMi": 2.5,
+   "directions": "From the trailhead follow the Pacific Crest Trail northbound. It climbs at a gradual grade across forested slopes for about two and a half miles to the signed fork at the north end of the basin, where the old Commonwealth Basin trail drops away to the left. Turn off there and descend into the basin.",
+   "ground_ft": 3811
+  },
+  {
+   "i": 2,
+   "lat": 47.44843376470588,
+   "lng": -121.40578176470588,
+   "elev": 3800,
+   "name": "Commonwealth Creek crossing",
+   "note": "Rock-hop/ford Commonwealth Creek in the basin bottom; the one reliable water source before the high, dry ridge.",
+   "type": "Water",
+   "distMi": 3,
+   "directions": "The basin trail loses a little height and then runs up the valley beside Commonwealth Creek through old-growth forest. Rock-hop or ford the creek where the tread crosses it. Fill up here — this is the last dependable water, and there is none in Lundin Basin or anywhere on the ridge above.",
+   "ground_ft": 4766
+  },
+  {
+   "i": 3,
+   "lat": 47.453936101960785,
+   "lng": -121.40372356862746,
+   "elev": 4200,
+   "name": "Red Pass contour (~4,200 ft)",
+   "note": "Contour below Red Pass rather than topping it; this is where the route breaks off northwest toward Lundin Basin instead of following the main Red Pass trail.",
+   "type": "Junction",
+   "distMi": 3.8,
+   "directions": "Keep climbing as the trail starts switchbacking up out of the basin toward Red Pass, but do not follow it to the pass. A few hundred feet above the first right-turning switchback, somewhere around 4,200 to 4,300 ft, leave the tread and cut left and west, making a descending traverse into the valley that opens toward Lundin's south face.",
+   "ground_ft": 4672
+  },
+  {
+   "i": 4,
+   "lat": 47.4573750627451,
+   "lng": -121.40243719607844,
+   "elev": 4700,
+   "name": "Lundin Basin",
+   "note": "Open basin beneath Lundin's south face; cross northwest here aiming for the base of the south couloir.",
+   "type": "Junction",
+   "distMi": 4.3,
+   "directions": "Cross northwest through the basin beneath Red Mountain's south side, aiming for the foot of Lundin's steep south face. Once the snow has gone this is slow boulder-hopping and brushy route-finding, so allow noticeably more time for it late in the season than early.",
+   "ground_ft": 4826
+  },
+  {
+   "i": 5,
+   "lat": 47.45943843921569,
+   "lng": -121.40166537254902,
+   "elev": 5000,
+   "name": "South couloir base",
+   "note": "Broad snow/scree couloir below the steep south face; ascend it to gain the west ridge saddle above (avoid when icy — no rope-up option below).",
+   "type": "Junction",
+   "distMi": 4.6,
+   "directions": "Head for the broad couloir splitting the south face and gain its base. Judge the conditions before starting up: early in the season it is a snow climb wanting an axe and crampons if it is firm, and it sluffs and runs wet under afternoon sun; later it is loose scree and talus. There is nowhere to belay inside it, so the whole party has to be comfortable moving unroped on whatever it holds.",
+   "ground_ft": 5098
+  },
+  {
+   "i": 6,
+   "lat": 47.461501815686276,
+   "lng": -121.40089354901961,
+   "elev": 5700,
+   "name": "West ridge saddle",
+   "note": "Obvious notch where the couloir tops out on the west ridge; from here the route follows exposed, blocky Class 4 terrain toward the summit block.",
+   "type": "Junction",
+   "distMi": 4.9,
+   "directions": "Climb the couloir the full way to where it tops out at the obvious notch on the ridge. Rope, harness and helmet go on here — the ground above is exposed Class 4 with a short low-fifth step — and this is the last flat ground for sorting a rack.",
+   "ground_ft": 5465
+  },
+  {
+   "i": 7,
+   "lat": 47.46282,
+   "lng": -121.4004,
+   "elev": 6057,
+   "name": "Lundin Peak summit",
+   "note": "A short class 5.0 step gains the true summit, the westernmost of Lundin's three rock horns.",
+   "type": "Summit",
+   "distMi": 5.1,
+   "directions": "From the notch stay on the north side of the crest and contour up over large blocks and horns rather than forcing the crest itself, which is looser and dirtier. Higher up the line crosses onto exposed ledges on the south side for the last stretch, with a slabby depression of roughly a hundred feet as the technical crux and a short Class 5.0 step onto the true summit, the westernmost of the three horns. The moves stay easy but the exposure on that final section is serious and it is where this route's accidents have happened, so most parties belay it rather than solo on instinct.",
+   "ground_ft": 6013
+  }
+ ]
+}

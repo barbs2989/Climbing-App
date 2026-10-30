@@ -1,0 +1,19 @@
+{
+ "applied": [
+  {
+   "id": "or_pioneer_route",
+   "column": "grade",
+   "path": [],
+   "fact": "aid grade"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "or_pioneer_route",
+   "before": {
+    "grade": "5.7 C0"
+   }
+  }
+ ]
+}

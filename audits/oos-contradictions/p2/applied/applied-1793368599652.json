@@ -1,0 +1,19 @@
+{
+ "applied": [
+  {
+   "id": "nb_lsr_north_easy_street",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitch count vs length"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "nb_lsr_north_easy_street",
+   "before": {
+    "pitches": 23
+   }
+  }
+ ]
+}

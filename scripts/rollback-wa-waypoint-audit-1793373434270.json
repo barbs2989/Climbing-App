@@ -1,0 +1,1357 @@
+[
+ {
+  "table": "routes",
+  "id": "wa_mount_adams_south_climb",
+  "waypoints": [
+   {
+    "lat": 46.136024,
+    "lng": -121.495265,
+    "elev": 5600,
+    "name": "South Climb / Cold Springs Trailhead",
+    "type": "Trailhead",
+    "elevFt": 5600,
+    "directions": "From Trout Lake, drive north on Mt Adams Road to the FR 23 junction and bear right about a mile to the signed FR 80 turn for South Climb. Follow FR 80 for 3.7 miles to FR 8040, then FR 8040 for 8.1 miles to its end at the South Climb / Cold Springs trailhead; it is steep and narrow with sharp switchbacks, so no RVs or trailers. Self-issue a free wilderness permit at the trailhead, and buy the Cascade Volcano Pass online beforehand to go above 7,000 ft."
+   },
+   {
+    "lat": 46.202621,
+    "lng": -121.4906384,
+    "elev": 12276,
+    "name": "Mount Adams Summit",
+    "type": "Summit",
+    "elevFt": 12276,
+    "directions": "Follow South Climb Trail #183 up an old roadbed through the burn, across the Round the Mountain Trail and the PCT, and up Crescent Ridge beside the Crescent Glacier to the Lunch Counter, a rocky bench at about 9,250-9,400 ft. Climb the south-facing snowfield of the South Spur about 2,400 ft to Piker's Peak, the false summit, then drop to the saddle and climb the last 600 ft or so of the summit cone to the old lookout on top."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_mount_adams_wilson_glacier_headwall",
+  "waypoints": [
+   {
+    "lat": 46.136024,
+    "lng": -121.495265,
+    "elev": 5600,
+    "name": "South Climb / Cold Springs Trailhead",
+    "note": "End of FR-8040 north of Trout Lake, on the mountain's south side. This route's approach, its descent and its stored logistics all use this trailhead: the Wilson Glacier basin is reached by a long, mostly off-trail traverse east and then north around the mountain's eastern flank, not by a north-side approach.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Trout Lake, drive north on Mt Adams Road to the FR 23 junction and bear right about a mile to the signed FR 80 turn for South Climb. Follow FR 80 for 3.7 miles to FR 8040, then FR 8040 for 8.1 miles to its end at the South Climb / Cold Springs trailhead; it is steep and narrow with sharp switchbacks, so no RVs or trailers. Self-issue a free wilderness permit at the trailhead, and buy the Cascade Volcano Pass online beforehand to go above 7,000 ft."
+   },
+   {
+    "lat": 46.2125,
+    "lng": -121.4667,
+    "name": "Wilson Glacier (reference point)",
+    "type": "Junction",
+    "distMi": null,
+    "elevFt": null
+   },
+   {
+    "lat": 46.202494,
+    "lng": -121.490746,
+    "elev": "12276",
+    "name": "Mount Adams summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": "12276"
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_castle_peak_tatoosh_la_villa",
+  "waypoints": [
+   {
+    "lat": 46.7695191,
+    "lng": -121.7299897,
+    "elev": 4859,
+    "name": "Reflection Lakes trailhead area",
+    "type": "Trailhead",
+    "distMi": null,
+    "elevFt": 4859,
+    "directions": "From Ashford, follow SR 706 east through the Nisqually Entrance and drive about 15 miles toward Paradise to the Stevens Canyon Road junction; turn right and drive 1.5 miles to the Reflection Lakes parking. From the east, take Stevens Canyon Road west about 18 miles from SR 123. The Pinnacle Peak Trail starts on the south side of the road. A park entrance pass is required; Stevens Canyon Road is closed by snow from fall to late spring."
+   },
+   {
+    "lat": 46.757715,
+    "lng": -121.728505,
+    "elev": 6440,
+    "name": "The Castle summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 6460,
+    "directions": "Take the Pinnacle Peak Trail 1.3 miles and about 1,050 ft to Pinnacle Saddle, then leave the trail and contour east across Pinnacle's south-face scree to the base of The Castle's southeast side. Scramble exposed third-class broken ground to the foot of the summit block and climb the dihedral on the taller spire (5.7, 5.8 crux) to a ledge about 10 ft left of the true summit, then step right to the top."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_kaleetan_peak_south_ridge",
+  "waypoints": [
+   {
+    "lat": 47.41595,
+    "lng": -121.4411528,
+    "elev": 2280,
+    "name": "Denny Creek Trailhead",
+    "note": "Large paved lot off FS 58; Northwest Forest Pass or $5 self-pay day-use fee required at the kiosk.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Take I-90 Exit 47 and follow Denny Creek Road (Forest Road 58) up-valley to the large paved lot at about 2,280 ft."
+   },
+   {
+    "lat": 47.43097,
+    "lng": -121.45283,
+    "elev": 3140,
+    "name": "Keekwulee Falls viewpoint",
+    "note": "Trail crosses a boulder field with a trailside view down onto Keekwulee Falls on Denny Creek; reliable water.",
+    "type": "Water",
+    "distMi": 2,
+    "directions": "Head north and east up the valley on Denny Creek Trail #1014. Around 1.2-1.3 miles in, the trail crosses Denny Creek on the smooth cascading bedrock of the Slippery Slab — the last easy water before the grade picks up — then climbs away from the creek through forest and out onto talus and boulder slopes."
+   },
+   {
+    "lat": 47.43444,
+    "lng": -121.45491,
+    "elev": 3520,
+    "name": "Snowshoe Falls",
+    "note": "Second waterfall glimpsed through trees just beyond Keekwulee; footing gets rootier and steeper past here.",
+    "type": "Water",
+    "distMi": 2.5,
+    "directions": "Continue across the boulder slopes; the second falls comes into view through the trees only a short way past the first, and the tread gets rootier and steeper from here."
+   },
+   {
+    "lat": 47.448166,
+    "lng": -121.469137,
+    "elev": 4510,
+    "name": "Hemlock Pass",
+    "note": "Trail crests a small forested notch before dropping into the Melakwa Lake basin; can hold snow into July, making the pass hard to find in whiteout/early season.",
+    "type": "Junction",
+    "distMi": 3.6,
+    "directions": "Above the falls the trail turns to switchbacks and climbs for roughly another mile to the notch. Snow lingers here into July, and with the tread buried the pass itself is easy to walk past or lose entirely in cloud."
+   },
+   {
+    "lat": 47.450093,
+    "lng": -121.468619,
+    "elev": 4505,
+    "name": "Melakwa Lake",
+    "note": "Established backcountry campsites and pit toilet near the outlet; filter water here before starting the ridge climb.",
+    "type": "Campsite",
+    "distMi": 4,
+    "directions": "At the pass the Melakwa Lake Trail #1011 junction sends its right/east fork toward Lower Tuscohatchie Lake — take the other branch and descend gently about half a mile into the lake basin beneath Chair and Kaleetan Peaks."
+   },
+   {
+    "lat": 47.4494,
+    "lng": -121.47,
+    "elev": 4497,
+    "name": "South ridge gain point",
+    "note": "Climbers' path leaves the lake basin just past the toilet, crosses the outlet stream, and switchbacks through steep talus/heather to gain Kaleetan's south ridge.",
+    "type": "Junction",
+    "distMi": 4.6,
+    "directions": "Leave the maintained trail at the lake, cross the outlet stream past the toilet, and pick up the well-defined but unmaintained climbers' path that heads steeply northwest through subalpine trees, heather and talus."
+   },
+   {
+    "lat": 47.459,
+    "lng": -121.4775,
+    "elev": 5540,
+    "name": "White Ledges traverse",
+    "note": "Exposed class 3-4 ledge system traversing below the ridge crest with loose rock on the footholds; helmet recommended, root belays help on the steep wooded step below it.",
+    "type": "Hazard",
+    "distMi": 5.1,
+    "directions": "The boot path climbs over Kaleetan Knoll (Peak 5,700), then drops several hundred feet down its west side into a rocky, west-facing talus bowl beneath the saddle separating the knoll from Kaleetan's south ridge. Cairns mark the crossing but there is no continuous tread, and this is the stretch parties lose in cloud or on early-season snow. Regain the crest at the saddle and follow the path north, just below the ridgeline."
+   },
+   {
+    "lat": 47.4624576,
+    "lng": -121.4782337,
+    "elev": 6260,
+    "name": "Kaleetan Peak",
+    "note": "Class 3 summit block gained via the final talus gully to a notch in the ridge; sweeping views over the Alpine Lakes Wilderness.",
+    "type": "Summit",
+    "distMi": 5.5,
+    "directions": "Continue north below the crest a few hundred yards to the base of an obvious gully and ledge system splitting the south face — this is the standard finish, roughly 400-600 vertical feet of class 2-3 on loose, exfoliating rock. The finish faces northwest and holds snow well into early summer, so an ice axe and light traction are often wanted here into June and July. The gully exits onto a short summit ridge with one more brief scramble to the top."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_andersons_thumb_standard",
+  "waypoints": [
+   {
+    "lat": 47.740259,
+    "lng": -123.065764,
+    "elev": 530,
+    "name": "Dosewallips Road washout parking (FR-2610)",
+    "type": "Trailhead",
+    "elevFt": 530,
+    "directions": "There is no drive to the trailhead proper — the Dosewallips River Road (FR-2610), off Hwy 101 near Brinnon, has been closed to vehicles at a washout since 2002, and the washout parking is where your car stops. From here it is roughly 6.5 miles of old roadbed up to the former ranger station and trailhead, which nearly every party bikes rather than walks; that stretch works out to about 13 miles over the round trip, so plan for it before you leave home. Sort out an Olympic National Park wilderness permit for the Anderson Pass / Camp Siberia zone in advance, since there is nothing to arrange at this parking spot."
+   },
+   {
+    "lat": 47.703671,
+    "lng": -123.314173,
+    "elev": 3527,
+    "name": "Honeymoon Meadows",
+    "note": "Forested backcountry camp with reliable creek water; the West Fork ford here can run high and hazardous in spring or after heavy rain, and mosquitoes are thick in summer.",
+    "type": "Water",
+    "distMi": 14.15,
+    "directions": "Ride or walk the closed Dosewallips Road to the old ranger station, then follow the Dosewallips River Trail to Dose Forks and turn onto the West Fork Dosewallips Trail. It climbs the valley through old-growth forest past Big Timber and Diamond Meadows camps to Honeymoon Meadows, about 15 miles from the washout. The West Fork crossing at Honeymoon Meadows can be hazardous in spring or after heavy rain."
+   },
+   {
+    "lat": 47.7079,
+    "lng": -123.3104,
+    "elev": 3527,
+    "name": "Honeymoon Meadows",
+    "type": "Campsite"
+   },
+   {
+    "lat": 47.69592,
+    "lng": -123.32628,
+    "elev": 4464,
+    "name": "Anderson Pass",
+    "note": "Trail junction where the West Fork Dosewallips and East Fork Quinault routes cross; the Anderson Pass Shelter (Camp Siberia) sits just below at roughly 4,180 ft.",
+    "type": "Junction",
+    "distMi": 16,
+    "directions": "Continue up the West Fork Dosewallips Trail past the La Crosse Pass junction and Camp Siberia, switchbacking to Anderson Pass at 4,464 ft, the Dosewallips-Quinault divide, where the trail meets the one descending to Enchanted Valley. This is the end of maintained tread."
+   },
+   {
+    "lat": 47.701764,
+    "lng": -123.330884,
+    "elev": 5100,
+    "name": "Anderson Tarn high camp",
+    "note": "Small tarn camp reached via a steep mile of wildflower slopes above the pass; last reliable camp before committing to the glacier.",
+    "type": "Campsite",
+    "distMi": 17,
+    "directions": "At the pass leave the main trail and follow the climbers' boot path north over talus and heather benches, about a mile and 700 ft of gain, to the small tarn camp on the old Anderson Glacier moraine near 5,100 ft. Fill water here; above the moraine there is only snowmelt."
+   },
+   {
+    "lat": 47.715925,
+    "lng": -123.341845,
+    "elev": 6700,
+    "name": "Anderson's Thumb summit",
+    "note": "",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "From the tarn camp work up the moraine crest and the old glacier margin toward Flypaper Pass. Below the pass, bear west under Echo Rock to where talus and ledges under the tooth level into a short col, then climb the one exposed sandstone pitch to the top."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_inner_constance_standard",
+  "waypoints": [
+   {
+    "lat": 47.740259,
+    "lng": -123.065764,
+    "elev": 700,
+    "name": "Dosewallips Road washout parking (FR-2610)",
+    "note": "Vehicle-accessible road end at the 2002 washout (~8.5 mi from Hwy 101); self-issue wilderness permit kiosk here before biking/hiking the closed roadbed.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive Dosewallips Road inland from US-101, roughly 8.5 miles, to the vehicle-accessible road end at the 2002 washout. Fill in a self-issue wilderness permit at the kiosk before starting up the closed roadbed."
+   },
+   {
+    "lat": 47.7296,
+    "lng": -123.1417,
+    "elev": 1425,
+    "name": "Lake Constance Trailhead",
+    "note": "Unmaintained climbers' path splits off the old Dosewallips roadbed and climbs steeply up the narrow Constance Creek canyon; unsigned and easy to walk past.",
+    "type": "Junction",
+    "distMi": 5,
+    "directions": "The road beyond has been closed to motor vehicles since the 2002 flood but stays open to foot and bicycle, and most parties ride it; a short riverside bypass gets around the washed-out section before the old roadbed resumes. About 5 miles up, an unmaintained climbers' path splits off the roadbed and starts up the narrow Constance Creek canyon. It is unsigned and easy to walk straight past, so watch for it."
+   },
+   {
+    "lat": 47.74720416666667,
+    "lng": -123.14216875,
+    "elev": 3100,
+    "name": "Creekside Camp Bench",
+    "note": "Trail briefly levels crossing the valley floor beside Constance Creek; flat spot with an established fire ring and reliable running water, a common rest/camp break before the final steep push.",
+    "type": "Water",
+    "distMi": 6,
+    "directions": "The climbers' path climbs steeply and directly up the canyon, unmaintained and choked with blowdown, and this lower section is the hardest walking of the trip. At around 3,100 ft the tread briefly levels out on the valley floor beside Constance Creek at a flat bench with an established fire ring and reliable running water."
+   },
+   {
+    "lat": 47.75073,
+    "lng": -123.14226,
+    "elev": 4800,
+    "name": "Lake Constance",
+    "note": "Emerald backcountry lake cupped in a rock bowl at the mouth of Avalanche Canyon; camping permits are quota-limited, so use existing sites to protect the fragile basin.",
+    "type": "Campsite",
+    "distMi": 7.2,
+    "directions": "From the bench the path resumes its steep push, gaining the last 1,700 ft to the lake at 4,800 ft, cupped in a rock bowl at the mouth of Avalanche Canyon. Camping is quota-limited, so use the existing sites."
+   },
+   {
+    "lat": 47.75713266666667,
+    "lng": -123.14367333333334,
+    "elev": 5400,
+    "name": "Avalanche Canyon / The Thumb",
+    "note": "Barren, rocky Avalanche Canyon opens north from the lake, a stark contrast to the rainforest below; the Thumb rock formation marks where the South Chute (Mount Constance) and South Gully (Inner Constance) lines diverge on faint, intermittent climbers' track.",
+    "type": "Junction",
+    "distMi": 7.8,
+    "directions": "Head north out of the lake basin into Avalanche Canyon, barren and rocky in contrast to the rainforest below, on faint and intermittent climbers' track and snow patches. Continue up-canyon to the broad couloir below the Thumb, the rock formation that marks where the South Chute on Mount Constance and the South Gully on Inner Constance diverge."
+   },
+   {
+    "lat": 47.76247238888889,
+    "lng": -123.14484902777778,
+    "elev": 6400,
+    "name": "South Defile Snow Choke",
+    "note": "Snow-filled defile narrows to a roughly 2-ft gap with 5-10 ft deep moats opening on each side by mid-late season; parties have reported refrigerator-size snow blocks calving here, so move through quickly and probe snow bridges before committing.",
+    "type": "Hazard",
+    "distMi": 8.3,
+    "directions": "From the mouth of the canyon follow the faint, intermittent climbers' track and snow patches north up Avalanche Canyon to the broad couloir below the Thumb, then take the Inner Constance branch and veer right into a steeper secondary couloir that narrows into the defile. Snow blocks calve out of this constriction as the day warms, so move through it quickly and probe the bridges over the moats before committing weight to them."
+   },
+   {
+    "lat": 47.76674416666667,
+    "lng": -123.14578958333334,
+    "elev": 7200,
+    "name": "East Ridge Notch",
+    "note": "A steep, discontinuous snow finger tops out at this notch on Inner Constance's East Ridge; a short Class 3 rock step gains the ridge crest before the summit scramble.",
+    "type": "Junction",
+    "distMi": 8.7,
+    "directions": "Above the defile the gully continues on discontinuous snow, with repeated stemming between the snow finger and the rock walls to get around the moats and a few short up- and downclimbs on rock where the snow runs out. A steep snow finger tops out at the notch; exit the gully onto the crest by way of a short Class 3-4 rock step."
+   },
+   {
+    "lat": 47.770235,
+    "lng": -123.145435,
+    "elev": 7672,
+    "name": "Inner Constance",
+    "note": "True summit (7,672 ft), the Olympics' 4th/5th-highest peak; final approach is fun Class 2-3 scrambling on pillow basalt along the East Ridge.",
+    "type": "Summit",
+    "distMi": 9,
+    "directions": "Follow the East Ridge crest from the notch on Class 2-3 scrambling over pillow basalt to the top. Rock across this massif is notoriously rotten, so keep the party tight and out of each other's fall line. Do not let the line pull you toward the southwest summit — it has no easy connection across to the true northeast high point."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_mount_constance_north_chute",
+  "waypoints": [
+   {
+    "lat": 47.740259,
+    "lng": -123.065764,
+    "elev": 550,
+    "name": "Dosewallips Road washout parking",
+    "type": "Trailhead",
+    "distMi": null,
+    "elevFt": 550,
+    "directions": "From US 101 at Brinnon, turn west onto Dosewallips Road (FR 2610) at milepost 306, just north of Dosewallips State Park, and drive about 8.5 miles to where the road is closed to vehicles at the washout; park along the roadside. A Northwest Forest Pass or America the Beautiful pass is required to park."
+   },
+   {
+    "lat": 47.75073,
+    "lng": -123.14226,
+    "elev": 4667,
+    "name": "Lake Constance",
+    "note": "",
+    "type": "Campsite",
+    "distMi": null,
+    "directions": "Walk or bike the closed Dosewallips roadbed about 5 miles up the valley to the Lake Constance climbers' path. The steep, unmaintained path gains about 3,300 ft in roughly 2 miles, past Half Acre Rock and over exposed rock ledges and short cliff bands, to the lake; camps are at its north end."
+   },
+   {
+    "lat": 47.772826,
+    "lng": -123.127336,
+    "elev": 7756,
+    "name": "Mount Constance summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 7756,
+    "directions": "From camp at the north end of the lake, head north up Avalanche Canyon past the Cat Ears and the mouth of the South Chute to the North Chute, the last major chute on the canyon's east side, and climb it to the ledge where the South Chute line joins. Cross the Finger Traverse (or the Terrible Traverse) and finish over the summit block."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_mount_constance_north_chimney",
+  "waypoints": [
+   {
+    "lat": 47.7403,
+    "lng": -123.0658,
+    "elev": 550,
+    "name": "Dosewallips Road washout parking",
+    "note": "Same approach as the other standard-route variants; see Finger Traverse note.",
+    "type": "Trailhead",
+    "elevFt": 550,
+    "directions": "From US 101 at Brinnon, turn west onto Dosewallips Road (FR 2610) at milepost 306, just north of Dosewallips State Park, and drive about 8.5 miles to where the road is closed to vehicles at the washout; park along the roadside. A Northwest Forest Pass or America the Beautiful pass is required to park."
+   },
+   {
+    "lat": 47.75073,
+    "lng": -123.14226,
+    "elev": 4667,
+    "name": "Lake Constance",
+    "type": "Campsite",
+    "distMi": null,
+    "elevFt": 4667,
+    "directions": "Walk or bike the closed Dosewallips roadbed about 5 miles up the valley to the Lake Constance climbers' path at about 1,400 ft. The steep, unmaintained path gains about 3,300 ft in roughly 2 miles, past Half Acre Rock at 0.8 mile and over exposed rock ledges and short cliff bands above 1.3 miles, to the lake; camps are at its north end."
+   },
+   {
+    "lat": 47.772826,
+    "lng": -123.127336,
+    "elev": 7756,
+    "name": "Mount Constance (true/main summit)",
+    "type": "Summit",
+    "elevFt": 7756,
+    "directions": "From the north end of the lake, head into Avalanche Canyon and turn east up the South Chute as soon as the Cat Ears come into view, climbing about 1,900 ft of scree to the saddle near 6,600 ft. Drop about 150 ft, climb a second scree gully to the notch near 7,300 ft, cross the Terrible or Finger Traverse to the base of the summit block, and climb the chimney on its north side to the top."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_mount_constance_west_arete",
+  "waypoints": [
+   {
+    "lat": 47.7403,
+    "lng": -123.0658,
+    "elev": 550,
+    "name": "Dosewallips Road washout parking",
+    "note": "Same Dosewallips Road / Lake Constance approach as the other Constance routes, diverging higher up at Crystal Pass.",
+    "type": "Trailhead",
+    "elevFt": 550,
+    "directions": "From US 101 at Brinnon, turn west onto Dosewallips Road (FR 2610) at milepost 306, just north of Dosewallips State Park, and drive about 8.5 miles to where the road is closed to vehicles at the washout; park along the roadside. A Northwest Forest Pass or America the Beautiful pass is required to park."
+   },
+   {
+    "lat": 47.75073,
+    "lng": -123.14226,
+    "elev": 4667,
+    "name": "Lake Constance",
+    "type": "Campsite",
+    "distMi": null,
+    "elevFt": 4667,
+    "directions": "Walk or bike the closed Dosewallips roadbed about 5 miles up the valley to the Lake Constance climbers' path at about 1,400 ft. The steep, unmaintained path gains about 3,300 ft in roughly 2 miles, past Half Acre Rock at 0.8 mile and over exposed rock ledges and short cliff bands above 1.3 miles, to the lake; camps are at its north end."
+   },
+   {
+    "lat": 47.772826,
+    "lng": -123.127336,
+    "elev": 7756,
+    "name": "Mount Constance (true/main summit)",
+    "type": "Summit",
+    "elevFt": 7756,
+    "directions": "From camp, go north up Avalanche Canyon past the Thumb, staying in the canyon past the South Chute turnoff, for about 1.5 miles of loose talus or firm snow to Crystal Pass at its head. From the pass, climb the West Arete, starting around a small tower and up a crack with fixed webbing, for about five pitches of mostly class 3-4 rock with a few low-fifth steps to the summit ridge, then scramble to the true summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_big_four_mountain_dry_creek_route",
+  "waypoints": [
+   {
+    "lat": 48.06823,
+    "lng": -121.51329,
+    "elev": 1640,
+    "name": "Big Four Picnic Area / Ice Caves Trailhead",
+    "type": "Trailhead",
+    "distMi": null,
+    "elevFt": 1640,
+    "directions": "From Granite Falls, drive the Mountain Loop Highway east about 26 mi (about 14.5 mi past the Verlot Public Service Center) to the Big Four Picnic Area and Ice Caves Trailhead, at about 1,640 ft. A Northwest Forest Pass is required to park."
+   },
+   {
+    "lat": 48.042355,
+    "lng": -121.523305,
+    "elev": 6170,
+    "name": "Big Four Mountain Summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 6170,
+    "directions": "Take the ice caves trail, then leave it and cross the South Fork Stillaguamish on a sound fallen log (no bridge). Go southeast about a mile through pathless forest to Dry Creek and follow its bed to the headwall. Climb into the upper basin by class 3-4 ledges and ramps when dry, or a hidden snow chute in snow. The couloir system and an exposed class 4 traverse on red slabs gain the summit ridge; follow it over the first bump to the higher true summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_big_four_mountain_northwest_ridge",
+  "waypoints": [
+   {
+    "lat": 48.06823,
+    "lng": -121.51329,
+    "elev": 1640,
+    "name": "Big Four Picnic Area / Ice Caves Trailhead",
+    "type": "Trailhead",
+    "distMi": null,
+    "elevFt": 1640,
+    "directions": "From Granite Falls, follow the Mountain Loop Highway east past the Verlot Public Service Center and about 13 miles beyond the bridge just past it to the Big Four turnoffs on the right. Pass the picnic area entrance and turn in a quarter mile later at the Ice Caves Trailhead lot, at about 1,640 ft. A Northwest Forest Pass or day pass is required to park; day passes are sold at the lot."
+   },
+   {
+    "lat": 48.042355,
+    "lng": -121.523305,
+    "elev": 6170,
+    "name": "Big Four Mountain Summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 6170
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_big_four_mountain_spindrift_couloir",
+  "waypoints": [
+   {
+    "lat": 48.06823,
+    "lng": -121.51329,
+    "elev": 1640,
+    "name": "Big Four Picnic Area / Ice Caves Trailhead",
+    "type": "Trailhead",
+    "distMi": null,
+    "elevFt": 1640,
+    "directions": "From Granite Falls, follow the Mountain Loop Highway east past the Verlot Public Service Center and about 13 miles beyond the bridge just past it to the Big Four turnoffs on the right. Pass the picnic area entrance and turn in a quarter mile later at the Ice Caves Trailhead lot, at about 1,640 ft. A Northwest Forest Pass or day pass is required to park; day passes are sold at the lot."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": null,
+    "name": "Top of Spindrift Couloir (summit ridge)",
+    "note": "The couloir tops out through the cornices onto the summit ridge well west of the true summit. The descent goes northwest from here to the Big Four–Hall Peak col, not over the summit.",
+    "type": "Topout",
+    "distMi": null,
+    "directions": "Walk the nature trail toward the ice caves to the open basin below the north face. Move right through the break in the lower cliff band, climb the thin ice ribbon on the initial slabs, and cross the snow bowl to the avalanche fan below the couloir. Climb the couloir through its three steep steps, the steepest at about three-quarters height, then the upper névé slopes and the cornice exit to the ridge."
+   },
+   {
+    "lat": 48.042355,
+    "lng": -121.523305,
+    "elev": 6170,
+    "name": "Big Four Mountain Summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 6170
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_big_four_mountain_tower_route",
+  "waypoints": [
+   {
+    "lat": 48.06823,
+    "lng": -121.51329,
+    "elev": 1640,
+    "name": "Big Four Picnic Area / Ice Caves Trailhead",
+    "type": "Trailhead",
+    "distMi": null,
+    "elevFt": 1640,
+    "directions": "From Granite Falls, follow the Mountain Loop Highway east past the Verlot Public Service Center and about 13 miles beyond the bridge just past it to the Big Four turnoffs on the right. Pass the picnic area entrance and turn in a quarter mile later at the Ice Caves Trailhead lot, at about 1,640 ft. A Northwest Forest Pass or day pass is required to park; day passes are sold at the lot."
+   },
+   {
+    "lat": 48.042355,
+    "lng": -121.523305,
+    "elev": 6170,
+    "name": "Big Four Mountain Summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 6170,
+    "directions": "Follow the Ice Caves trail toward the basin below the north face, then traverse to the base of the prominent gully on the northeast side. Climb the gully to the first tower, work west onto it and up, rappel into the notch, and climb the remaining two towers; a long, steep, exposed snowfield then leads to the summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_diamond_in_the_rough",
+  "waypoints": [
+   {
+    "lat": 48.09702,
+    "lng": -121.387058,
+    "elev": 1246,
+    "name": "Bedal Campground, Mountain Loop Highway",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.0719,
+    "lng": -121.3765,
+    "elev": 2800,
+    "name": "Bedal Creek/Sloan Creek Trailhead",
+    "note": "End of FR-4096, ~3 mi off the Mountain Loop Highway south of Bedal Campground.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Take the Mountain Loop Highway to FR 4096, about 18.25 miles south of Darrington and roughly a mile south of Bedal Campground. The spur is rough and narrow and runs about 3 miles to its end at the Bedal Creek Trailhead, around 2,790 ft, so bring high clearance or 4WD. Bedal Creek Trail #705 starts from the road end. This is the preferred trailhead for this side of Sloan because it avoids the river fords; the Cougar Creek / North Fork Sauk alternative off FR 49 reaches the same basin from the north but makes you ford the North Fork Sauk."
+   },
+   {
+    "lat": 48.05601,
+    "lng": -121.36307,
+    "elev": 3500,
+    "name": "Climber's trail junction (leaves Bedal Creek trail for the basin)",
+    "type": "Junction",
+    "distMi": 1.5,
+    "elevFt": 3500,
+    "directions": "Hike Bedal Creek Trail #705 through old growth and along the creek's steep banks until the maintained tread ends at a large washout, roughly 1.5-2.5 miles in. Scramble the washout — loose boulders and blowdown — to a cairned exit where the climbers' path leaves left under pink flagging at about 3,500 ft."
+   },
+   {
+    "lat": 48.04149,
+    "lng": -121.34012,
+    "elev": 7835,
+    "name": "Sloan Peak Summit",
+    "note": "Shared summit for Sloan Peak's technical routes.",
+    "type": "Summit",
+    "distMi": 4.5,
+    "directions": "Follow the climbers' path in steep switchbacks up through the forest band to about 4,900 ft, then talus and meadow to the 5,300 ft Bedal-Sloan saddle, the last reliable water before the wall. From the saddle cross the low connecting ridge into the Southwest Face basin and gain the base of the wall from meadow and talus rather than continuing onto the glacier — glacier ice means you are on the Corkscrew approach, not this one — then climb the nine pitches to the heather ledge where technical climbing ends and scramble 3rd-class terrain to the summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_fire_on_the_mountain",
+  "waypoints": [
+   {
+    "lat": 48.09702,
+    "lng": -121.387058,
+    "elev": 1246,
+    "name": "Bedal Campground, Mountain Loop Highway",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.0719,
+    "lng": -121.3765,
+    "elev": 2800,
+    "name": "Bedal Creek/Sloan Creek Trailhead",
+    "note": "End of FR-4096, ~3 mi off the Mountain Loop Highway south of Bedal Campground.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Leave the Mountain Loop Highway on FR 4096, the Bedal Creek spur, about three miles south of Bedal Campground, and drive it to the trailhead at road's end, roughly 2,790 to 2,800 ft."
+   },
+   {
+    "lat": 48.05601,
+    "lng": -121.36307,
+    "elev": 3500,
+    "name": "Climber's trail junction (leaves Bedal Creek trail for the basin)",
+    "type": "Junction",
+    "distMi": 1.5,
+    "elevFt": 3500,
+    "directions": "Take the Bedal Creek Trail #705 through old growth along the steep banks of the creek. Somewhere between 1.5 and 2.5 miles in the maintained tread gives out at a large brushy washout draining the basin under Sloan's West Face; scramble up the boulder- and blowdown-choked washout, which is the hardest route-finding on the approach, until a cairn marks the exit onto a climbers' path, often flagged with pink tape, at about 3,500 ft."
+   },
+   {
+    "lat": 48.04149,
+    "lng": -121.34012,
+    "elev": 7835,
+    "name": "Sloan Peak Summit",
+    "note": "8-pitch 5.10d route up the southwest face, topping out at the shared summit.",
+    "type": "Summit",
+    "distMi": 4.5,
+    "directions": "The climbers' path switchbacks steeply through forest from 3,500 to 4,900 ft, then crosses talus and a meadow bench with summit views, passing a stagnant tarn at the 5,300 ft saddle between Bedal and Sloan — last dependable water is there or at the streams just below. Rocky, exposed scrambling continues to about 5,800 ft at the toe of the glacier, and here this route parts from the standard Corkscrew: rather than stepping onto the glacier, cross the low ridge dividing the West Face basin from the Southwest Face basin to reach the foot of the face. Eight sustained pitches to 5.10d finish on a heather ledge, from which about 500 ft of 3rd and 4th class on the upper Corkscrew line reaches the true summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_northwest_buttress",
+  "waypoints": [
+   {
+    "lat": 48.09702,
+    "lng": -121.387058,
+    "elev": 1246,
+    "name": "Bedal Campground, Mountain Loop Highway",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.0719,
+    "lng": -121.3765,
+    "elev": 2800,
+    "name": "Bedal Creek/Sloan Creek Trailhead",
+    "note": "End of FR-4096, ~3 mi off the Mountain Loop Highway south of Bedal Campground.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From the Mountain Loop Highway take FR-4096 and follow the spur about 3 miles to its end, south of Bedal Campground, at the Bedal Creek Trailhead around 2,790 ft. Bedal Creek Trail #705 leaves from the parking at the road end. Aim for mid-to-late season, July through September, once snowmelt has cleared the lower approach."
+   },
+   {
+    "lat": 48.05601,
+    "lng": -121.36307,
+    "elev": 3500,
+    "name": "Climber's trail junction (leaves Bedal Creek trail for the basin)",
+    "type": "Junction",
+    "distMi": 1.5,
+    "elevFt": 3500,
+    "directions": "Follow Bedal Creek Trail #705 up the creek through old growth until the maintained tread ends at a washout below the West Face basin. Scramble the washout to the cairned exit, usually flagged pink, where the climbers' path leaves left around 3,500 ft."
+   },
+   {
+    "lat": 48.04149,
+    "lng": -121.34012,
+    "elev": 7835,
+    "name": "Sloan Peak Summit",
+    "note": "Longest route on the peak; shared summit with good bivy spots along the buttress.",
+    "type": "Summit",
+    "distMi": 4.5,
+    "directions": "Climb the path steeply through forest to about 4,900 ft, cross talus and a meadow bench to the Bedal-Sloan saddle, and stay in the meadows below the West Face rather than heading toward the glacier. Start on the corner of darker rock at the lowest, leftmost point of the face, climb nine pitches up the buttress, exit by a short hand crack, and scramble third and fourth class to the sub-summit and summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_whitehorse_mountain_nw_shoulder",
+  "waypoints": [
+   {
+    "lat": 48.259498,
+    "lng": -121.708682,
+    "elev": 537,
+    "name": "Old Mine Road gate (parking for Niederprum Trail #653)",
+    "type": "Trailhead",
+    "distMi": 0.04,
+    "elevFt": null,
+    "distFrom": "track",
+    "directions": "From Darrington, drive SR 530 west about 5 miles to the community of Whitehorse and turn left (south) onto 387th Ave NE, also called Old Mine Road, at the gas station and convenience store. Follow it 0.6 mile to its dead end at a steel gate and a barricade of large boulders, at about 540 ft, and park there. A free self-issued Boulder River Wilderness permit applies."
+   },
+   {
+    "lat": 48.210935,
+    "lng": -121.677415,
+    "elev": 6850.5,
+    "name": "Whitehorse Mountain Summit",
+    "type": "Summit",
+    "distMi": 5.94,
+    "elevFt": 6850.5,
+    "distFrom": "track",
+    "directions": "Cross the boulders and wooden bridge on foot and walk the old road about 1.25 miles to the signed start of Trail #653, which switchbacks up to the flat near 3,200 ft. A brushy boot path continues to snow; traverse south into a broad snow couloir and climb it to Lone Tree Pass, go east and drop southeast to a small lake bench, make the long rising traverse east to High Pass, then cross the glacier to the summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_devore_peak_west_ridge",
+  "waypoints": [
+   {
+    "lat": 48.3476353,
+    "lng": -120.7137122,
+    "elev": 1234,
+    "name": "Harlequin Bridge / Campground shuttle stop",
+    "note": "NPS shuttle stop where Stehekin Valley Road crosses the Stehekin River; start of the Stehekin River Trail approach toward Weaver Point.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "There is no road into Stehekin. Drive to Fields Point Landing or Chelan and take the Lady of the Lake II or Lady Express up-lake — two to four hours depending on which boat — then ride the National Park Service shuttle up the Stehekin Valley Road to the Harlequin Bridge stop. Some parties bike or walk the road instead. Sailings drop to a few a week outside peak summer, so build the trip around the boat schedule rather than the other way round."
+   },
+   {
+    "lat": 48.31596,
+    "lng": -120.68181,
+    "elev": 1500,
+    "name": "Stehekin River Trail / Devore Creek Trail junction",
+    "note": "Leave the flat Stehekin River Trail here and turn onto Devore Creek Trail #1244, which climbs steeply through rock bluffs into the Glacier Peak Wilderness.",
+    "type": "Junction",
+    "distMi": 3,
+    "directions": "Cross Harlequin Bridge at the end of the airstrip and pick up the Stehekin River Trail on the far bank, heading downvalley. It is three essentially flat miles along the river to the junction, which sits about half a mile short of Weaver Point — parties who come in by water taxi to Weaver Point instead join this point from the other direction."
+   },
+   {
+    "lat": 48.2809,
+    "lng": -120.7303,
+    "elev": 4170,
+    "name": "Bird Creek Camp",
+    "note": "Small established bivy/camp used as base for Devore and Tupshin climbs; reliable water from Bird Creek nearby, last easy flat tent sites before the open basin.",
+    "type": "Campsite",
+    "distMi": 8,
+    "directions": "Turn uphill and climb hard: roughly 30 switchbacks in about two miles carry the trail through rock bluffs and open forest to the Wilderness boundary near 2,300 ft, and the grade stays relentless for another three-plus miles alongside Devore Creek. The tread through here sees little maintenance and is brushy underfoot. The creek is crossed and paralleled repeatedly and is the water source for the whole stretch."
+   },
+   {
+    "lat": 48.279175,
+    "lng": -120.762533,
+    "elev": 7000,
+    "name": "Upper Bird Creek basin (~7,000 ft)",
+    "note": "Open basin with small lakes below Devore; cross Bird Creek near the northern lake and head southeast toward the bench/gully leading to Devore's ridge.",
+    "type": "Junction",
+    "distMi": 9.5,
+    "directions": "Leave the maintained trail and follow use paths and animal trails up along Bird Creek, gaining about a mile to an unofficial bench camp near 5,400 ft — parties wanting one big summit day often push to there instead. Gaining a hundred feet or so of hillside before sidehilling keeps the brush manageable; fighting up the creekbed does not. Above the bench the ground steepens into heather benches and a talus staircase, then a second looser gully of scree and dirt, before opening into the lake basin."
+   },
+   {
+    "lat": 48.28001978636364,
+    "lng": -120.7627641909091,
+    "elev": 7500,
+    "name": "Saddle west of Point 7657",
+    "note": "Col on Devore's southeast ridge reached via a snowfield/talus scramble from the basin; from here the route works west and traverses onto the peak's southeast face.",
+    "type": "Junction",
+    "distMi": 10.5,
+    "directions": "Cross Bird Creek near the northern lake and climb loose Class 2-3 talus and scree southeast out of the basin to the col. Snow lingers here well into July and can leave a short traverse of around 40 degrees, so carry an axe and take crampons if it is likely to be firm. Loose rock and old avalanche debris are the other hazards on this stretch."
+   },
+   {
+    "lat": 48.27744395727273,
+    "lng": -120.76463283818183,
+    "elev": 8200,
+    "name": "Exposed traverse below summit block",
+    "note": "Class 3-4 ledge traverse across the southeast face to the summit ridge; very exposed 3rd class (possibly 4th), and the crux of the descent (reverse or short rappel).",
+    "type": "Hazard",
+    "distMi": 10.9,
+    "directions": "From the col, scramble west along the ridge crest, passing the pair of rock towers known locally as the Bottles. The crest then pushes you out onto the southeast face where it steepens and the ledge line begins. Rock quality is mixed — some of it solid, some of it slab under a layer of gravel."
+   },
+   {
+    "lat": 48.27661,
+    "lng": -120.765,
+    "elev": 8383,
+    "name": "Devore Peak summit",
+    "note": "True summit at 8,383 ft on the long north-south ridge dividing Company/Hilgard Creek from Devore Creek; summit block requires a short downclimb or rappel on descent.",
+    "type": "Summit",
+    "distMi": 11,
+    "directions": "Once across the traverse, scramble easier Class 2-3 ground up an obvious gully to the edge of the summit ridge. The last obstacle is a short, unavoidable rock face of about 20 ft, vertical and exposed. It is the one move on the route that most parties choose to rappel on the way down rather than downclimb."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_agnes_mountain_south_ridge",
+  "waypoints": [
+   {
+    "lat": 48.38,
+    "lng": -120.8381,
+    "elev": 1576,
+    "name": "High Bridge (PCT/Stehekin Valley Road)",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 1576,
+    "directions": "No road reaches High Bridge from outside the valley. Take the passenger ferry or a floatplane up Lake Chelan to Stehekin, then the seasonal shuttle bus about 11 miles up the Stehekin Valley Road to High Bridge at about 1,600 ft, where the Agnes Creek Trail (PCT) starts."
+   },
+   {
+    "lat": 48.3176,
+    "lng": -120.9685,
+    "elev": 8119,
+    "name": "Agnes Mountain summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 8119,
+    "directions": "Follow the PCT/Agnes Creek Trail south 8-10 miles to the Spruce Creek confluence. Cross Agnes and Spruce Creeks on logs and climb steeply northwest off-trail through brush, talus and slabs to Upper Blue Basin and a high camp near Icy-Spruce Pass (about 6,760 ft). Then go over Point 7458, climb the south-side snow couloir to the south col (about 7,480 ft), and follow the ridge and summit-block chimney to the top."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_mcgregor_mountain_scramble",
+  "waypoints": [
+   {
+    "lat": 48.38,
+    "lng": -120.8372,
+    "elev": 1627,
+    "name": "High Bridge Trailhead",
+    "note": "Reached via NPS shuttle from Stehekin Landing (11 mi up-valley); no facilities at trailhead, backcountry permit required for overnight stays, arranged before you travel (there is no permit office in Stehekin).",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "There is no road to this trailhead from outside: reach Stehekin at the head of Lake Chelan by the Lady of the Lake ferry, floatplane or trail, then ride the valley shuttle, bike or walk 11 miles up the Stehekin Valley Road from Stehekin Landing to High Bridge, around 1,600 ft. Arrange any overnight backcountry permit before you travel, since there is no permit office in Stehekin."
+   },
+   {
+    "lat": 48.3886,
+    "lng": -120.83345,
+    "elev": 2200,
+    "name": "Howard Lake junction",
+    "note": "Trail passes Howard Lake then reaches a signed junction where the McGregor Mountain Trail splits off from the Howard Lake/PCT connector.",
+    "type": "Junction",
+    "distMi": 1.3,
+    "directions": "From High Bridge follow the Old Wagon Road and PCT north; the tread climbs steadily and reaches Howard Lake. The signed McGregor Mountain junction is a short way past the lake, just before the PCT tips over and starts back downhill, so if you are losing elevation you have gone too far. Howard Lake is reliable water and a useful confirmation you are on route."
+   },
+   {
+    "lat": 48.393419727692304,
+    "lng": -120.82478245076923,
+    "elev": 3700,
+    "name": "2.9-mile viewpoint and falls",
+    "note": "Valley viewpoint after the first sustained climb (2,100 ft gained from the trailhead); a short scramble path drops to a seasonal falls for water.",
+    "type": "Water",
+    "distMi": 2.9,
+    "directions": "Turn off the PCT onto the McGregor Mountain Trail. It winds around and behind the lake, then commits to one long switchback across a hot, dusty open slope before settling into the grind. Roughly 2,100 ft of climbing brings you out at a valley viewpoint, where a short scramble path drops to a seasonal falls; it is worth the detour, because shade and water are both scarce from here on."
+   },
+   {
+    "lat": 48.404365,
+    "lng": -120.80496,
+    "elev": 7000,
+    "name": "Heaton Camp",
+    "note": "Only established campsite on the mountain, in subalpine forest just below treeline; single-party site, water from a seasonal snowmelt stream a short distance below camp on the trail.",
+    "type": "Campsite",
+    "distMi": 6.8,
+    "directions": "This is the long stretch: close to a hundred switchbacks up an open southwest-facing shoulder that bakes in the afternoon, then into stunted subalpine fir and pine. The trail crosses a clear creek and reaches the lower of two glacial cirques on rocky, sandy moraine, with the camp just above the terminal moraine among larches. Start early, because there is essentially no shade and no dependable water until the seasonal snowmelt stream just below camp."
+   },
+   {
+    "lat": 48.407274432307695,
+    "lng": -120.79986410923077,
+    "elev": 7143,
+    "name": "Trail end / base of summit scramble",
+    "note": "Maintained tread ends here on the high shoulder below the summit block; route-finding begins across talus toward the base of the scree slope.",
+    "type": "Junction",
+    "distMi": 7.5,
+    "directions": "Above camp the tread throws another set of tight switchbacks at you and ends in about a third of a mile at a rocky outcropping. There is no maintained trail past this point. Talus leads on toward the base of the summit block, and the route-finding starts here."
+   },
+   {
+    "lat": 48.40787681076923,
+    "lng": -120.79878070307691,
+    "elev": 7900,
+    "name": "Summit block scramble ledges",
+    "note": "Class 3 hand-and-foot scramble up loose talus and exposed rock ledges to a notch left of the true summit, marked only by faint, intermittent red-painted arrows; carry an ice axe if snow lingers.",
+    "type": "Hazard",
+    "distMi": 7.7,
+    "directions": "The last 1,000-1,100 ft is exposed class 2-3 scrambling on loose rock, marked only by faded red arrows painted on the rock: the line loops right, then back left behind a lower sub-summit, then crosses a snowfield and talus shelf above the Sandalee Glacier. Staying precisely on the arrows matters, because the ground gets noticeably worse off-route and gravelly slab sits directly above serious exposure. Carry an ice axe if snow still covers the talus or the shelf, which is common into midsummer, and a helmet is worth it on this section."
+   },
+   {
+    "lat": 48.40818,
+    "lng": -120.79815,
+    "elev": 8143,
+    "name": "McGregor Mountain summit",
+    "note": "True summit gained from the backside through the notch; views of Bonanza, Glacier, and Dome peaks and the Stehekin valley.",
+    "type": "Summit",
+    "distMi": 7.8,
+    "directions": "From the top of the ledges the ground levels onto a shoulder running past an old radio installation to the true summit and former lookout site, gained from the back through a notch beside the high point. Downclimbing this scramble is the more dangerous half of the day, so fix the line in your head on the way up rather than working it out again from above."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_corteo_peak_southwest_ridge",
+  "waypoints": [
+   {
+    "lat": 48.51791,
+    "lng": -120.73483,
+    "elev": 4855,
+    "name": "Rainy Pass / Lake Ann–Maple Pass Trailhead (Trail #740)",
+    "note": "South side of SR 20 at Rainy Pass, ~40-car lot with privy; Northwest Forest Pass required to park.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive SR-20 to Rainy Pass, about 52 miles east of Marblemount, and turn into the paved lot on the south side of the highway where the PCT crosses. Start on the Lake Ann/Maple Pass trail, which is well graded and heavily used the whole way to the pass."
+   },
+   {
+    "lat": 48.519444,
+    "lng": -120.733889,
+    "elev": 4860,
+    "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.515038,
+    "lng": -120.749524,
+    "elev": 5475,
+    "name": "Lake Ann Trail junction",
+    "note": "Trail forks here — Lake Ann is 0.3 mi east while the Heather–Maple Pass Trail keeps climbing north/west toward Heather Pass.",
+    "type": "Junction",
+    "distMi": 1.25,
+    "directions": "A bit over a mile of gentle forest climbing brings you to the fork. Stay right on the Heather-Maple Pass trail; the left branch is the short spur down to the lake, which is worth the detour only because it is the last reliable on-trail water — fill here."
+   },
+   {
+    "lat": 48.5093,
+    "lng": -120.76288,
+    "elev": 6080,
+    "name": "Heather Pass",
+    "note": "High point of the maintained trail; leave the trail here and drop west off-trail toward Lewis Lake — can hold snow into July.",
+    "type": "Junction",
+    "distMi": 2.25,
+    "directions": "About another mile of switchbacks through open heather meadow above the Lake Ann basin. This stretch faces north and holds snow later than the trail below it, so an ice axe earns its weight in June and early July when the tread disappears under snowfields."
+   },
+   {
+    "lat": 48.513576,
+    "lng": -120.784168,
+    "elev": 5707,
+    "name": "Lewis Lake larch bench",
+    "note": "Established camp on the larch bench above the lake's south shore; reliable water, but goats here are salt-habituated and bold around packs.",
+    "type": "Campsite",
+    "distMi": 4.5,
+    "directions": "Leave the maintained trail at the pass and drop west off the far side on talus and lingering snow, then work around the south side of Lewis Lake to the larch bench above the shore. There is no maintained tread here, but a boot path is usually visible."
+   },
+   {
+    "lat": 48.51167,
+    "lng": -120.79722,
+    "elev": 6400,
+    "name": "Lewis Glacier / east moraine crossing",
+    "note": "Crampon up snow/glacier remnants on Corteo's north flank to the glacier's east lateral moraine; the glacier is retreating fast and late-season crevasse/moat gaps can open.",
+    "type": "Hazard",
+    "distMi": 5.3,
+    "directions": "From the bench continue west across talus and snow, picking up the boot path onto the crest of the glacier's east lateral moraine near 6,400 ft. Early season this is a clean snow slope; by late summer expect bare ice, more exposed rock than the older descriptions imply, and moats where the snow has pulled back from the moraine."
+   },
+   {
+    "lat": 48.508796,
+    "lng": -120.793718,
+    "elev": 7500,
+    "name": "~7,500 ft notch atop the moraine",
+    "note": "Gain the ridge crest here and traverse west toward a second notch; narrow, sand-covered ledges with exposure on this stretch.",
+    "type": "Junction",
+    "distMi": 5.7,
+    "directions": "Follow the moraine crest onto the snow and climb southeast, bearing left near the top to reach the notch on the ridge at about 7,500 ft. This is the decision point of the route: bearing right instead of left leads onto narrow, sand-covered ledges with severe exposure and a steep, constricted snow gully above — a substantially harder line that parties have ended up on by mistake."
+   },
+   {
+    "lat": 48.506641,
+    "lng": -120.791091,
+    "elev": 7200,
+    "name": "Second notch / cirque downclimb",
+    "note": "Downclimb from the second notch into Corteo's west-facing cirque below the Southwest Ridge; loose rock underfoot, stay alert for parties below.",
+    "type": "Hazard",
+    "distMi": 6,
+    "directions": "From the first notch follow the ridge crest west to a second notch, then downclimb roughly 400 ft of dirt or snow into the cirque under the peak's west face. The ground is loose enough that anything dislodged runs the full length of the downclimb, so space the party out or move one at a time."
+   },
+   {
+    "lat": 48.50446,
+    "lng": -120.78843,
+    "elev": 8107,
+    "name": "Corteo Peak summit",
+    "note": "True summit (8,107 ft) topped via Class 3-4 scrambling up the Southwest Ridge; views across Ragged Ridge to Black Peak and Buckner.",
+    "type": "Summit",
+    "distMi": 6.3,
+    "directions": "Cross the cirque and climb the southwest ridge to the top on blocky Class 3 with a few Class 4 moves and real exposure in places; some parties put the rope on for the last section. Fix the notch you came down in your mind before you start up — the descent reverses this line and the notch is easy to lose from above."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_black_peak_east_buttress",
+  "waypoints": [
+   {
+    "lat": 48.5182,
+    "lng": -120.7339,
+    "elev": 4855,
+    "name": "Rainy Pass / Lake Ann-Maple Pass Trailhead",
+    "type": "Trailhead",
+    "distMi": null,
+    "elevFt": 4855,
+    "directions": "Drive SR-20 to Rainy Pass at about milepost 157.5 and turn into the Rainy Pass Picnic Site on the south side of the highway. The Lake Ann-Maple Pass trailhead (Trail 740) leaves from the paved lot at about 4,855 ft. A Northwest Forest Pass is required to park; day passes are sold at the trailhead."
+   },
+   {
+    "lat": 48.519444,
+    "lng": -120.733889,
+    "elev": 4860,
+    "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.5093,
+    "lng": -120.76288,
+    "elev": 6094,
+    "name": "Heather Pass",
+    "note": "Leave the maintained trail here for the unmarked climbers' path to Lewis and Wing Lakes.",
+    "type": "Junction",
+    "distMi": null,
+    "directions": "Take the Lake Ann trail and keep right at the signed fork toward Heather Pass, climbing through meadows to the pass."
+   },
+   {
+    "lat": 48.5141,
+    "lng": -120.78237,
+    "elev": 5705,
+    "name": "Lewis Lake",
+    "note": "A few tent sites in the timber on the north shore.",
+    "type": "Campsite",
+    "distMi": null,
+    "directions": "From Heather Pass follow the unmarked, cairned climbers' path west across two loose talus fields, then drop to Lewis Lake. The cairns are easy to lose in fog or early-season snow."
+   },
+   {
+    "lat": 48.5185,
+    "lng": -120.807,
+    "elev": 6923,
+    "name": "Wing Lake",
+    "note": "The usual base camp for Black Peak; the East Buttress rises from the east side of the basin.",
+    "type": "Campsite",
+    "distMi": null,
+    "directions": "From Lewis Lake climb about 1,200 ft of meadow and talus west to Wing Lake."
+   },
+   {
+    "lat": 48.523611,
+    "lng": -120.816193,
+    "elev": 8970,
+    "name": "Black Peak summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 8970,
+    "directions": "From Wing Lake, climb the easy lower portion of the East Buttress above the east side of the basin, then follow the gully system above it through a series of Class 3 and 4 steps on fairly solid rock to the summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_black_peak_northeast_ridge",
+  "waypoints": [
+   {
+    "lat": 48.5182,
+    "lng": -120.7339,
+    "elev": 4855,
+    "name": "Rainy Pass / Lake Ann-Maple Pass Trailhead",
+    "type": "Trailhead",
+    "distMi": null,
+    "elevFt": 4855,
+    "directions": "From Marblemount or Winthrop, drive SR-20 to the signed Rainy Pass Picnic Area trailhead at milepost 157, on the south side of the highway at Rainy Pass. A Northwest Forest Pass, interagency pass or day-use fee is required to park; overflow parking is along the highway."
+   },
+   {
+    "lat": 48.519444,
+    "lng": -120.733889,
+    "elev": 4860,
+    "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.5093,
+    "lng": -120.76288,
+    "elev": 6094,
+    "name": "Heather Pass",
+    "note": "Leave the maintained trail here for the unmarked climbers' path to Lewis and Wing Lakes.",
+    "type": "Junction",
+    "distMi": null,
+    "directions": "Take the Lake Ann trail and keep right at the signed fork toward Heather Pass, climbing through meadows to the pass."
+   },
+   {
+    "lat": 48.5141,
+    "lng": -120.78237,
+    "elev": 5705,
+    "name": "Lewis Lake",
+    "note": "A few tent sites in the timber on the north shore.",
+    "type": "Campsite",
+    "distMi": null,
+    "directions": "From Heather Pass follow the unmarked, cairned climbers' path west across two loose talus fields, then drop to Lewis Lake. The cairns are easy to lose in fog or early-season snow."
+   },
+   {
+    "lat": 48.5185,
+    "lng": -120.807,
+    "elev": 6923,
+    "name": "Wing Lake camp",
+    "note": "The usual base camp for the Northeast Ridge.",
+    "type": "Campsite",
+    "distMi": null,
+    "directions": "From Lewis Lake climb about 1,200 ft of meadow and talus west to Wing Lake."
+   },
+   {
+    "lat": 48.523611,
+    "lng": -120.816193,
+    "elev": 8970,
+    "name": "Black Peak summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 8970,
+    "directions": "From Wing Lake, climb snow toward the low notch in the Northeast Ridge, following the moraine wide right before traversing back left, then climb the ridge, about five pitches of loose low-5th terrain, to the summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_azurite_peak_southeast",
+  "waypoints": [
+   {
+    "lat": 48.64865809,
+    "lng": -120.5711978,
+    "elev": 2700,
+    "name": "Rattlesnake Trailhead (West Fork Methow Trail #480)",
+    "note": "Self-issue Northwest Forest Pass ($5/day) required at the kiosk; the trail was avalanche-damaged in 2014, but the first ~3 miles to Trout Creek were logged out and cleared in 2025 and are now in good shape -- beyond Trout Creek it remains brushy (last logged out/brushed in 2021) with encroaching vegetation and occasional downed trees.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive Lost River Road out of Mazama, then Harts Pass Road 5400 past Ballard and River Bend campgrounds, staying left to the rough road end at about 2,700 ft. There is a signboard, vault toilet and stock ramp here. The Monument Creek and Robinson Creek trails leave from the same stretch of road, so check the sign before starting."
+   },
+   {
+    "lat": 48.640799,
+    "lng": -120.595768,
+    "elev": 3090,
+    "name": "Trout Creek crossing",
+    "note": "Ford Trout Creek here — the footbridge collapsed in 2017, making this a dangerous high-water crossing in spring or a rock-hop by late summer.",
+    "type": "Hazard",
+    "distMi": 2.4,
+    "directions": "The trail runs up-valley on old, storm-damaged tread. A wide rockslide crosses it within the first couple of miles and long stretches of blowdown are normal, with clearing only intermittent — the first few miles have seen recent logging-out but do not count on the rest. Trout Creek has no bridge: a serious ford at high water, a rock-hop once flows drop."
+   },
+   {
+    "lat": 48.642474,
+    "lng": -120.697781,
+    "elev": 4280,
+    "name": "PCT junction at Brush Creek",
+    "note": "West Fork Methow Trail tops out at the Pacific Crest Trail; turn south (left/west) toward Jet Creek and Horse Heaven Camp.",
+    "type": "Junction",
+    "distMi": 7.9,
+    "directions": "Keep climbing gently up the West Fork Methow valley. This is the brushy, log-strewn part of the day and it goes far slower than the mileage suggests. At about eight miles the beaten-up valley trail meets the well-graded PCT near Brush Creek."
+   },
+   {
+    "lat": 48.640965,
+    "lng": -120.728229,
+    "elev": 4350,
+    "name": "Horse Heaven Camp",
+    "note": "Marked as Horse Heaven Camp on the USGS topo, a meadow site about 2 miles south of the Brush Creek PCT junction; the unsigned Mill Creek/Azurite Pass path leaves the PCT roughly 120 yards east of Jet Creek, flagged by a small rock cairn.",
+    "type": "Campsite",
+    "distMi": 10,
+    "directions": "Turn south and west on the PCT and follow it roughly two miles, crossing Jet Creek, to the timbered meadow camp near the river. This is the last easy water before the climb — treat it, and expect flows to drop off sharply late in the season."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 5300,
+    "name": "Jet Creek crossing",
+    "note": "Old Azurite Pass trail crosses Jet Creek multiple times here; reports note there is likely no reliable water above this point in late season.",
+    "type": "Water",
+    "distMi": 10.3,
+    "directions": "Leave the PCT at a small cairn about 120 yards east of the Jet Creek crossing; it is unsigned and easy to walk straight past, and a GPS track earns its keep here. The old Mill Creek path switchbacks up through slide alder — roughly an hour of thrashing — firms into real tread near 5,000 ft, then traverses to this higher ford of Jet Creek."
+   },
+   {
+    "lat": 48.645435,
+    "lng": -120.755836,
+    "elev": 6700,
+    "name": "Azurite Pass",
+    "note": "Brushy, largely abandoned Mill Creek Trail tops out here; leave the trail and climb north through krummholz, sand, scree, and talus to gain the south ridge.",
+    "type": "Junction",
+    "distMi": 12,
+    "directions": "Above the ford the old trail climbs eroded, brushy benches before breaking out into heather meadows and granite slabs below the pass, about three and a half hours from camp. The tread is faint and braided in places through the benches."
+   },
+   {
+    "lat": 48.653661,
+    "lng": -120.751703,
+    "elev": 7900,
+    "name": "Southwest gullies below the summit tower",
+    "note": "Stick to the ducked and cairned ribs/gullies southwest of the summit tower — the rock is highly weathered, disintegrating granite, and the southwest face itself is Class 4 and best avoided.",
+    "type": "Hazard",
+    "distMi": 12.8,
+    "directions": "From the pass leave the trail and climb north through krummholz, sand, scree and talus to a shoulder near 7,400 ft, then follow the crest to about 7,600 ft, where a lower south summit forces you off it. Traverse left (west) on a gently rising line across ribs, gullies and sandy slopes, following ducks and cairns. Drift too far north and you end up under the southwest face, which steepens to Class 4 quickly — back off and take the last gully to the south instead."
+   },
+   {
+    "lat": 48.65732,
+    "lng": -120.752147,
+    "elev": 8445,
+    "name": "Azurite Peak",
+    "note": "True summit gained via the south ridge's ~7,400-ft shoulder and the final summit gullies; broad views over the Pasayten Wilderness and North Cascades.",
+    "type": "Summit",
+    "distMi": 13.2,
+    "directions": "The gully runs roughly the last 200 ft to the top: loose underfoot but no harder than Class 3 on dry rock. The lower mountain is weathered granite crumbling to pebbly sand and the upper peak harder basalt, and small slides are easy to trigger, so keep the party tight or well out of the fall line. Firm snow can fill the gully into midsummer, when an axe is worth carrying."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_dot_mountain_scramble",
+  "waypoints": [
+   {
+    "lat": 48.737833,
+    "lng": -120.6785,
+    "elev": 6900,
+    "name": "Slate Pass / Buckskin Ridge Trailhead",
+    "note": "On FR 5400-600 about 3.5 miles beyond Harts Pass; self-issue Pasayten Wilderness permit at the kiosk, no fee required.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive the Harts Pass Road (FR 5400) up from Mazama and turn right at Harts Pass onto FR 5400-600 toward Slate Peak for about 3.5 miles to the Slate Pass trailhead at a switchback. It is one of the highest drivable roads in the state and typically does not clear of snow until early to mid summer, so check its status before committing."
+   },
+   {
+    "lat": 48.7697,
+    "lng": -120.6393,
+    "elev": 5280,
+    "name": "Whistler Cutoff – Middle Fork Pasayten Trail Junction",
+    "note": "Buckskin Ridge Trail drops via the Whistler Cutoff to meet the Middle Fork Pasayten River (Robinson Creek) Trail #478 in the valley bottom; steep, dusty descent losing ~1,900 ft.",
+    "type": "Junction",
+    "distMi": 4,
+    "directions": "Head north on Buckskin Ridge Trail #498 and take the cutoff that splits off about half a mile in. It drops steeply and dustily off the ridge, losing around 1,900 ft, to meet the Middle Fork Pasayten (Robinson Creek) Trail #478 on the valley floor."
+   },
+   {
+    "lat": 48.82437169117647,
+    "lng": -120.57357022058824,
+    "elev": 7100,
+    "name": "Fred's Pass",
+    "note": "Trail climbs from Berk Creek over this ridge-crest pass to drop into the upper Eureka Creek drainage — the standard link between the Middle Fork Pasayten valley and Eureka Creek basin on the shortest road approach to Lago/Dot.",
+    "type": "Junction",
+    "distMi": 13,
+    "directions": "Turn down-valley and follow the Middle Fork trail for roughly nine miles. The grade is easy but the going is slow — burn zones and hundreds of downed logs to step over or around — and the tread deteriorates the farther in you get. Near the head of the section the route turns up Berk Creek and climbs to the pass on the ridge crest."
+   },
+   {
+    "lat": 48.83049,
+    "lng": -120.54762,
+    "elev": 7600,
+    "name": "Lago–Carru Col",
+    "note": "Broad talus saddle between Mount Lago and Mount Carru at the head of Eureka Creek basin; can hold névé into midsummer and is the crux navigation point of the approach.",
+    "type": "Junction",
+    "distMi": null,
+    "directions": "Drop off the pass into the upper Eureka Creek drainage and follow the basin through open meadows and larch groves. This is the last running water of the day, so fill here. Where the basin heads, leave the trail and climb off-trail up talus to the broad saddle between Carru and Lago."
+   },
+   {
+    "lat": 48.835469,
+    "lng": -120.528159,
+    "elev": 7400,
+    "name": "7,400 ft Tarn Camp, Mount Lago north side",
+    "note": "Exposed alpine tarn camp used as high camp for the Lago/Dot traverse, reached by dropping off the col across Lago's rocky north slopes; intermittent snowmelt water only, no wood.",
+    "type": "Campsite",
+    "distMi": 16,
+    "directions": "Contour east off the col across Mount Lago's north slopes, losing a couple of hundred feet to reach the tarn. The whole traverse is loose plate talus in the 6-12 inch range — worth wearing a helmet, since a party strung out across it will knock rock down onto itself."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 8207,
+    "name": "Point 8207",
+    "note": "Ridge high point passed on its north/climber's side above the tarn camp; easy dirt-and-rock walking with no route-finding issues above treeline.",
+    "type": "Junction",
+    "distMi": 16.7,
+    "directions": "Regain the crest above camp and follow it north. Taken direct, Point 8207 is the technical crux of the traverse: exposed Class 3-4 on rock that is surprisingly solid, with one short Class 4 step. Skirting it on the north side keeps the leg to easy dirt-and-rock walking. Either way there is no route-finding problem this high above treeline."
+   },
+   {
+    "lat": 48.84988514705882,
+    "lng": -120.5428963235294,
+    "elev": 8165,
+    "name": "Point 8165 Ledge Bypass",
+    "note": "An improbable, exposed 3rd-class ledge threads through cliffs on Point 8165's west side — the one technical move on an otherwise mellow ridge traverse toward Dot Mountain.",
+    "type": "Hazard",
+    "distMi": 17.2,
+    "directions": "Continue north along the crest, which narrows and turns knife-edged in places with sustained Class 3 moves. Most parties skip Point 8165's true summit and cut onto its west side to pick up the ledge through the cliff band."
+   },
+   {
+    "lat": 48.85227,
+    "lng": -120.5398,
+    "elev": 8224,
+    "name": "Dot Mountain",
+    "note": "Talus-strewn summit at the north end of the Lago ridge system, gained via the final short traverse off Point 8165; broad, easy footing at the top.",
+    "type": "Summit",
+    "distMi": 17.6,
+    "directions": "Beyond the cliff band the ridge relents into a pleasant, mostly-dirt walk above treeline. The summit is an easy, non-technical walk-up along the crest — the difficulties of the traverse are all behind you."
+   },
+   {
+    "lat": 48.856667,
+    "lng": -120.535278,
+    "elev": 7800,
+    "name": "Ptarmigan-Dot Col",
+    "type": "Saddle",
+    "distMi": null,
+    "elevFt": 7800,
+    "directions": "Only parties continuing to Ptarmigan Peak carry on past the summit. Follow the crest down off Dot over mild ground, losing about 400 ft to the saddle. There is no water anywhere on this ridge until a small tarn on Ptarmigan's south shoulder, roughly a mile further on."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_the_pleiades_scramble",
+  "waypoints": [
+   {
+    "lat": 48.9512139,
+    "lng": -121.6383778,
+    "elev": 5200,
+    "name": "Twin Lakes Trailhead",
+    "note": "End of the rough, high-clearance-only FS-3065 spur past the Yellow Aster Butte/Tomyhoi trailhead; Northwest Forest Pass required and self-issue Mt. Baker Wilderness permit at the kiosk.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Glacier, drive east on SR 542 (Mt. Baker Highway) about 12 miles to the WSDOT Shuksan maintenance facility and turn onto Twin Lakes Road (FS-3065). The first 4.5 miles are passenger-car friendly, reaching the Yellow Aster Butte/Tomyhoi Lake trailhead; beyond that the road narrows, turns rocky, and is not maintained for passenger vehicles, so high-clearance is recommended and 4WD helps for the final two miles to the road's end at Twin Lakes, 6.5 miles total from the highway. The road is often snow-covered or rough into early summer, with conditions typically best in August and September; if the upper stretch is washed out, park instead at the Yellow Aster Butte/Tomyhoi Lake trailhead, which adds roughly 4 miles round trip and 1,500 feet of gain to the day. A Northwest Forest Pass is required, along with a self-issue Mount Baker Wilderness permit at the kiosk."
+   },
+   {
+    "lat": 48.949307,
+    "lng": -121.638795,
+    "elev": 5180,
+    "name": "Isthmus between the Twin Lakes",
+    "note": "Established primitive camp on the strip of ground between the two lakes; reliable water from both lakes but treat before drinking (basin often holds snow into July).",
+    "type": "Campsite",
+    "distMi": 0.2,
+    "directions": "The isthmus camp sits on the strip of ground between the two Twin Lakes, a few minutes' walk from the road end."
+   },
+   {
+    "lat": 48.9512,
+    "lng": -121.6384,
+    "elev": 5200,
+    "name": "Twin Lakes basin road-end camp",
+    "type": "Campsite",
+    "distMi": 0
+   },
+   {
+    "lat": 48.954491,
+    "lng": -121.635256,
+    "elev": 5350,
+    "name": "High Pass Trail split off Winchester Mountain Trail",
+    "note": "Bear right onto High Pass Trail 676 here; the left fork climbs 1,300 ft to the Winchester Mountain fire lookout.",
+    "type": "Junction",
+    "distMi": 0.5,
+    "directions": "Start up the Winchester Mountain Trail #685 from between the lakes and, a short way up, bear right at the signed junction onto High Pass Trail #676; the left fork climbs to the Winchester lookout."
+   },
+   {
+    "lat": 48.95851892105263,
+    "lng": -121.63697073684212,
+    "elev": 5300,
+    "name": "Avalanche chute / Low Pass traverse below Winchester",
+    "note": "Trail drops about 300 ft to cross a steep chute below Winchester Mountain; snow lingers here into August and requires an ice axe and solid snow-travel skills before then.",
+    "type": "Hazard",
+    "distMi": null,
+    "directions": "Follow High Pass Trail #676 as it traverses below Winchester Mountain, dropping about 300 ft to cross a steep avalanche chute that can hold snow into August."
+   },
+   {
+    "lat": 48.97179,
+    "lng": -121.64903,
+    "elev": 5960,
+    "name": "High Pass",
+    "note": "Broad saddle on the ridge crest; a faint boot path and cairns continue north toward Mt. Larrabee and the Pleiades ridge, while the old Gargett Mine tailings are visible in the basin below to the north.",
+    "type": "Junction",
+    "distMi": 2,
+    "directions": "Continue on the trail past the chute, climbing over Low Pass and on to High Pass, the broad saddle on the ridge crest."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7000,
+    "name": "Notch between the first and second Pleiades peaks",
+    "note": "Exposed 4th-class notch and knife-edge rock traverse linking the Pleiades summits on notoriously loose, 'garbage' rock; helmet essential and expect route-finding.",
+    "type": "Hazard",
+    "distMi": 3.5,
+    "directions": "Leave the trail and climb the scree or snow slope NNE about 400-500 ft to the col in Larrabee's south arm. Descend slightly from the col, traverse the basin about half a mile, then climb the loose, narrow gully to the notch between the first and second Pleiades."
+   },
+   {
+    "lat": 48.98135,
+    "lng": -121.632,
+    "elev": 7371,
+    "name": "The Pleiades (Peak 3, high point)",
+    "note": "True/high summit of the four-peak Pleiades group, reached via 3rd/4th-class gully and ridge scrambling continuing from High Pass along Mt. Larrabee's east ridge extension.",
+    "type": "Summit",
+    "distMi": 4,
+    "directions": "From the notch, scramble up to the goat ledge and traverse it east; a little over halfway along, leave the ledge and scramble loose 3rd/4th-class rock to the third Pleiad, the high point of the group."
+   }
+  ]
+ }
+]
