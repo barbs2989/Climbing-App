@@ -29,7 +29,9 @@ for (const f of files) for (const [sid, r] of Object.entries(JSON.parse(fs.readF
   const kids = [...byId.values()].filter(a => a.parent_id === sid).map(a => a.id);
   if (!ok) { held.push(`SYSTEM ${sid} (${r.confidence}): ${r.note || ""}`); }
   else {
-    put(sid, m, "system");
+    // The header walks four ancestors (#3076): a window on the system reaches EVERY sub-area without
+    // one, so the system itself gets it only when the researcher excluded none.
+    if (!Object.keys(r.excluded || {}).length) put(sid, m, "system"); else held.push(`${sid}: system window not written on the system itself (sub-areas excluded)`);
     for (const id of r.applies_to || []) { if (kids.includes(id)) put(id, m, "applies_to"); else held.push(`${id}: listed under ${sid} but is not its child`); }
   }
   for (const [id, w] of Object.entries(r.own_windows || {})) {

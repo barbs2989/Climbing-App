@@ -11,8 +11,15 @@ const opt = (k, d) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] :
 const n = Number(opt("--n", 24));
 const byId = new Map(JSON.parse(fs.readFileSync(opt("--cache"), "utf8")).map(a => [a.id, a]));
 const done = new Set(fs.existsSync("audits/season/attempted.json") ? JSON.parse(fs.readFileSync("audits/season/attempted.json", "utf8")) : []);
+// A unit already inherits a season when one of its first three ancestors has one (the header walks
+// four levels up from a route's own area, and a unit is that area's parent): census cache plus every
+// apply-*.json written since. State and country rows never count.
+const seasoned = new Set([...byId.values()].filter(a => Array.isArray(a.season_months) && a.season_months.length).map(a => a.id));
+for (const f of fs.readdirSync("audits/season").filter(f => /^apply-.*\.json$/.test(f))) for (const id of Object.keys(JSON.parse(fs.readFileSync("audits/season/" + f, "utf8")))) seasoned.add(id);
+for (const id of (fs.existsSync("audits/season/cleared.json") ? JSON.parse(fs.readFileSync("audits/season/cleared.json", "utf8")) : [])) seasoned.delete(id); // cleared since (season-clear-system.mjs)
+const inherits = id => { let p = byId.get(id); for (let d = 0; d < 3 && p && p.parent_id; d++) { p = byId.get(p.parent_id); if (p && seasoned.has(p.id) && !["state", "country"].includes(p.area_type)) return true; } return false; };
 const list = JSON.parse(fs.readFileSync("audits/season/parents.json", "utf8"))
-  .filter(e => !["state", "country"].includes(e.type) && !done.has(e.id)).slice(0, n);
+  .filter(e => !["state", "country"].includes(e.type) && !done.has(e.id) && !inherits(e.id)).slice(0, n);
 const nm = id => (byId.get(id) || {}).name || null;
 const out = list.map(e => {
   const a = byId.get(e.id) || {}, p = a.parent_id ? byId.get(a.parent_id) : null;
