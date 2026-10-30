@@ -1,0 +1,119 @@
+[
+ {
+  "id": "mt_lu_skyline_experience",
+  "name": "Skyline Experience (Wynn, Peak 9190, Cracker, Siyeh)",
+  "state": "Montana",
+  "region": "Glacier National Park, Many Glacier",
+  "legs": [
+   {
+    "peak": "Wynn Mountain",
+    "route": "Cracker Lake trail, then the drainage and slopes to the summit (class 2, a few class 3 moves)",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Peak 9190",
+    "route": "Ridge route along the skyline (class 3, can reach class 4 on crumbly rock)",
+    "connect": "Follow the high ridge from Wynn; the walking is exposed and the stone is loose mudstone.",
+    "route_id": null
+   },
+   {
+    "peak": "Cracker Peak",
+    "route": "Ridge route (class 3 on the upper part)",
+    "connect": "Keep following the crest; a small cliff on the way down from 9190 is skirted on foot.",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Siyeh",
+    "route": "Final ridge to the summit block (class 4)",
+    "connect": "Continue along the crest to the highest summit in the chain; the last stretch has a few stemming moves.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 very long day",
+  "how": "A single-day ridge walk of about five and a half miles that strings four summits together from the Cracker Lake trail. After a slimy, brushy gully to gain the crest, the climbing stays at class 2 to 3, with the crumbly middle peak the most technical and exposed and a class 4 finish on Siyeh. Expect snow or rime on shaded parts early and loose rock throughout. A helmet is wise, and grizzlies have been met on the ridge.",
+  "descent": "Drop from Siyeh by a steep gully system with several cliff bands and one class 3 downclimb to find, then cross tundra to the Siyeh or Piegan Pass trail and walk out. This descent is the hardest part of the day, far more than the normal Siyeh walk-down.",
+  "logistics": "A full loop can take 17 hours, so start well before dawn. Go in the snow-free summer season; carry an ice axe and crampons if snow lingers on the ridge. The park shuttle stop at Siyeh Bend serves the point-to-point version.",
+  "sources": [
+   "https://outtherewithtom.blogspot.com/2008/07/skyline-ridge-walk-wynn-cracker-and.html",
+   "https://www.14ers.com/php14ers/tripreport.php?trip=17330",
+   "https://www.theoutbound.com/montana/hiking/hike-the-skyline-experience"
+  ],
+  "confidence": "medium",
+  "notes": "Sources disagree on mileage (12.6 to 21+), on the Siyeh descent gully (west couloir vs south face) and on the middle peak's grade (class 3 vs class 4 on the 'Red Peak'); higher grade kept, distances left out of prose."
+ },
+ {
+  "id": "wy_lu_perception_traverse",
+  "name": "Perception Traverse (Moran to Albright)",
+  "state": "Wyoming",
+  "region": "Teton Range, Grand Teton National Park",
+  "legs": [
+   {
+    "peak": "Mount Moran",
+    "route": "CMC route (about 5.5)",
+    "connect": ""
+   },
+   {
+    "peak": "Mount Woodring",
+    "route": "Southeast ridge",
+    "connect": "Work south along the range crest from Moran on the same long first day."
+   },
+   {
+    "peak": "Rockchuck Peak",
+    "route": "East face",
+    "connect": "Continue south along the crest."
+   },
+   {
+    "peak": "Mount Saint John",
+    "route": "North ridge",
+    "connect": "Cross the connecting ridge to the next peak south."
+   },
+   {
+    "peak": "Symmetry Spire",
+    "route": "North couloir",
+    "connect": "Keep heading south along the divide."
+   },
+   {
+    "peak": "Ice Point",
+    "route": "Northwest ridge",
+    "connect": "Continue south along the range."
+   },
+   {
+    "peak": "Storm Point",
+    "route": "Northwest ridge",
+    "connect": "Continue south to finish the first day."
+   },
+   {
+    "peak": "Teewinot Mountain",
+    "route": "East face",
+    "connect": "Start day two here; from this point the line follows the Cathedral and Grand Traverse peaks."
+   },
+   {
+    "peak": "Grand Teton",
+    "route": "North ridge (about 5.8, roped)",
+    "connect": "Reached after Peak 11,840 and Mount Owen on the Cathedral section."
+   },
+   {
+    "peak": "Buck Mountain",
+    "route": "East face",
+    "connect": "Late in the trip, after Nez Perce, the line goes through Wister and Peak 10,696 to Buck."
+   },
+   {
+    "peak": "Albright Peak",
+    "route": "Final summit, after Static Peak",
+    "connect": "Finish via Static Peak, then descend to Death Canyon."
+   }
+  ],
+  "duration": "4 days",
+  "how": "This extends the Grand Traverse by adding the northern peaks on day one and the southern ones on day four, for roughly two dozen summits over four days. Most of it is fifth-class scrambling, no harder than 5.6 apart from the Moran route and about four pitches of 5.8 on the north ridge of the Grand, which call for a rope. A single 60 m rope and a small alpine rack cover the Cathedral section and the Grand. Loose rock and long days make it a very serious undertaking.",
+  "descent": "Finish on Albright Peak and descend to the Death Canyon trailhead in about two hours, rather than coming down a single peak's normal route.",
+  "logistics": "Best done in late summer in stable weather; route finding and bivouacs are up to the party, and park overnight rules apply. The line ends far from where it begins, so arrange a pick-up or second vehicle.",
+  "sources": [
+   "https://www.mountainproject.com/v/perception-traverse/111858228",
+   "https://wyofile.com/jackson-resident-climbs-24-peaks-four-days/"
+  ],
+  "confidence": "medium",
+  "notes": "Only key summits listed as legs; full line is about 24-25 peaks (also Enclosure, Middle/South Teton, Ice Cream Cone, Gilkey, Spalding, Cloudveil, Nez Perce, Wister, Static). Overlaps existing wy_lu_grand_traverse. Grade 5.8- (MP) vs 5.8 (news report); higher kept. Mileage differs so left out. DROPPED (session 2026-10-30): a rare multi-day feat rather than a commonly done link-up, and its core is the existing wy_lu_grand_traverse.",
+  "drop": true
+ }
+]
