@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-10-29",
+  "generatedAt": "2026-10-30",
   "tables": {
     "accessibility_reports": [
       "assistive",
@@ -823,6 +823,20 @@
       "resolved_by",
       "route_id",
       "status"
+    ],
+    "route_link_ups": [
+      "checked_at",
+      "created_at",
+      "descent",
+      "duration",
+      "how",
+      "id",
+      "legs",
+      "logistics",
+      "name",
+      "region",
+      "route_ids",
+      "state"
     ],
     "route_ratings": [
       "created_at",
