@@ -35479,3 +35479,26 @@ Method note: WebFetch could not resolve summitpost.org, en.wikipedia.org or moun
 from this run's network (DNS failure), so all research relied on WebSearch's own synthesized
 result snippets rather than fetching primary pages directly — the same constraint earlier batches'
 notes describe.
+
+## 2026-10-30 — Run skipped (no batch, pass 8 unchanged): database unreachable
+
+This run could not reliably reach the live database, so no routes were audited and
+`wa-alpine-audit-progress.json` is left exactly as batch 482 finished it (`last_processed_id`
+still `wa_dark_peak_dark_glacier_route`, pass 8).
+
+The run's first query — a single-row `id=eq.wa_dark_peak_dark_glacier_route` lookup made only
+to re-confirm the live column names before picking the next batch — succeeded normally and
+returned no new data (it just re-read the already-processed last row). Every query attempted
+after that, including the identical eq-by-id lookup repeated moments later, failed: two attempts
+came back after ~2m6s and ~2m51s with a plain-text `upstream request timeout` body (not a
+Postgres `57014` statement-timeout JSON error, and not the `522`/zero-bytes pattern from the prior
+skipped run), and three further attempts with 25s/30s/90s client timeouts received zero bytes.
+The REST gateway root (`/rest/v1/` with no table) answered instantly with the expected 401
+("Secret API key required" for the anon key against that path) throughout, so — as in the prior
+skip — this reads as the query path to Postgres being unavailable or badly degraded, not a proxy,
+DNS, or gateway problem on this session's end.
+
+No SQL written, no fix attempted, nothing audited — this audit has read-only DB access and no
+project-dashboard access to inspect or restart the Supabase instance. Logged per the run's
+guardrails (nothing outside `audits/` touched). Next scheduled run should simply retry pass 8
+from `wa_dark_peak_dark_glacier_route` as if this run never happened.
