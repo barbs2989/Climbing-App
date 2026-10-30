@@ -510,6 +510,45 @@ Refused or not reached in the West (2026-10-29):
 - Lewis and Clark also has the Helena-Lewis & Clark 911 Center's non-emergency line,
   406-457-8866 (on the city site). The card uses the sheriff's own line.
 
+## Last sweep (checked 2026-10-29)
+
+San Juan County, Utah (Indian Creek and Bluff) is dispatched by the Utah Department of Public
+Safety's Price Communications Center. That centre serves Carbon, Emery, Grand and San Juan
+counties (dps.utah.gov/dispatch). Its page labels 435-637-0890 "Main Dispatch", the same label
+the card already takes for the Cedar and Uintah Basin centres. Before this, San Juan had no
+line, because the sheriff's page shows only an office number.
+
+| State | County | Number | Read on | Label on the page |
+|---|---|---|---|---|
+| North Carolina | Polk | (828) 894-0187 | polknc.gov/communications_911.php | Non-emergency line: (828) 894-0187 or 0188 (E-911 Communications, 24 hours) |
+| Utah | Box Elder | (435) 856-7023 | boxeldercountyut.gov/257/Frequently-Dialed-Numbers; dps.utah.gov/dispatch/box-elder-communications | Box Elder County Non-Emergency Dispatch Phone Number (eight numbers under it; the state DPS page names 856-7023 the Communications Center's main number) |
+| Nevada | Nye | (775) 751-7000 | nyecountynv.gov/109 | Non-Emergencies (sheriff's page; Tonopah 482-8101 and Beatty 553-2345 also listed) |
+| Utah | San Juan | (435) 637-0890 | dps.utah.gov/dispatch/price-communications; dps.utah.gov/dispatch | Main Dispatch (Utah DPS Price Communications Center, which serves Carbon, Emery, Grand and San Juan counties) |
+| Utah | Carbon | (435) 637-0890 | dps.utah.gov/dispatch/price-communications | Main Dispatch (Utah DPS Price Communications Center) |
+| Oregon | Jefferson | (541) 384-2080 | jeffersoncountyor.gov/sheriff | 24-hour non-emergency Dispatch |
+| Oregon | Douglas | (541) 440-4471 | dcso.com/Directory.aspx?did=12; dcso.com/276/Making-a-Report | Dispatch (Non-Emergency); call our dispatch center at |
+| Washington | Skamania | (509) 427-9490 | skamaniacounty.gov county-clerk/protection-orders | for non-emergency calls to the Sheriff's Department (county clerk's page) |
+| Nevada | Elko | (775) 777-7300 | elkocountynv.net sheriff/phone_directory.php | Non-Emergency Dispatch (sheriff staff directory) |
+| Kansas | Douglas | (785) 843-0250 | dgcoks.gov/emergency-communications-911 | For non-emergency situations ... (24 hour, non-emergency) |
+| California | Mono | (760) 932-7549, ext. 7 | monocounty.ca.gov/1278/Bridgeport-Main-Office | Dispatch 760-932-7549, ext. 7 |
+| Arizona | Gila | (928) 402-4449 | gilacountyaz.gov short-term-rental page | Sheriff Department Non-Emergency Line (county page) |
+
+Refused in the 2026-10-29 sweep of counties not reached before:
+- Unlabelled ("Phone" only): Idaho County (208-983-1100, probably dispatch), Owyhee, Inyo,
+  Los Angeles, Alger, Houghton, Medina TX and Ferry.
+- Search, Nixle or town pages only: Mariposa, Watauga, Shenandoah (540-459-6101), Grayson,
+  Giles, Meade, Carbon WY and Wallowa.
+- Blocked or 404: Boise County, Orange NY, Clinton NY and El Paso TX.
+- McDowell NC: 828-659-2241 is the 911 centre's contact "Phone", with no non-emergency label.
+- Blocked even in a browser: Klickitat, Maui, Gallatin, Natrona, Walker GA, Carroll NH.
+- Unlabelled lines: Burke (437-1911), Rabun, Piscataquis, Twin Falls, Mohave.
+- Hood River: (541) 386-2711 is labelled "Non-Emergency" only in an image-only county brochure
+  that could not be read.
+- Josephine: its line needs a menu choice (474-5123, option 3), and the page could not be read.
+- Laurel KY: a community directory only.
+- Grand County, Utah keeps the sheriff's Search & Rescue line (259-8115). The Price centre
+  (637-0890) dispatches for Grand too, but the Moab line is the more local of the two.
+
 ## Washington (checked 2026-10-28)
 
 | County | Number | Read on | Label on the page |
@@ -545,7 +584,6 @@ Notes:
 - A route's own stored `emergency.sheriffDispatch` still wins over this table; the table is
   shown only when the route has none.
 
-No official page found (left out; a climber can add one through Edit): Skamania (the sheriff site
-lists only an unlabelled 509-427-9490), Klickitat, Garfield, Ferry (only an unlabelled 509-775-3132), Grays Harbor (533-8765
+No official page found (left out; a climber can add one through Edit): Klickitat, Garfield, Ferry (only an unlabelled 509-775-3132), Grays Harbor (533-8765
 appears only on a radio-station page), and Whitman (its only non-emergency number is on a City
 of Pullman page).
