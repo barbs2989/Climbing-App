@@ -549,6 +549,68 @@ Refused in the 2026-10-29 sweep of counties not reached before:
 - Grand County, Utah keeps the sheriff's Search & Rescue line (259-8115). The Price centre
   (637-0890) dispatches for Grand too, but the Moab line is the more local of the two.
 
+## Which counties our routes sit in (census, 2026-10-29)
+
+Each area's direct route count (its `route_count` minus its children's) was placed at its own
+coordinate, or its nearest ancestor's, and tested against the census county outlines
+(point in polygon). 287,011 routes landed in 1,082 US counties; 28,741 sit outside any US county
+and 6 have no coordinate. Before the last two batches, 176,781 routes (61.6%) sat in a county
+with a line. 831 counties holding 110,230 routes had none; 132 of them hold 200 routes or more.
+The counties left over are mostly ones whose agencies print only an office line. Connecticut and
+Rhode Island have no county government, so a climb there can only list 911.
+
+The script and its output are kept outside the repo, in the note session's report folder
+(`b871f8c831-census/census.mjs`). It reads `areas` once, under the DB gate.
+
+## The busiest uncovered counties (checked 2026-10-29)
+
+Taken from the census above, most routes first. Rockland's page labels its line "Communications
+Division (24 hours)", the county's own dispatch centre, which the rule takes as a 24-hour dispatch
+line. Richmond, Anchorage and Juneau are county-equivalents run by one city government, so the
+city police line is the county's.
+
+| State | County | Number | Read on | Label on the page |
+|---|---|---|---|---|
+| Virginia | Wise County | (276) 328-3756 | wisecounty.org/directory.aspx?did=18 | Dispatch Non-Emergency Phone |
+| Pennsylvania | Lancaster County | (717) 664-1180 | lcwc911.us/quick-links | non-emergency numbers: Police Dispatch |
+| Alaska | Anchorage Municipality | (907) 786-8900 | anchoragepolice.com/news | Non-Emergency Dispatch (the municipality is the county-equivalent) |
+| New Mexico | Socorro County | (575) 835-0941 | socorrocounty.net/elected-officials/sheriffs-office | Sheriff's Office phone (non-emergency number) |
+| Alabama | St. Clair County | (205) 884-3333 | stclairsheriff.org/services | Non-Emergency; Dispatch |
+| California | San Luis Obispo County | (805) 781-4550, option 3 | slosheriff.org/contact | To Report a Non-Emergency Crime; Dispatch (Patrol Headquarters) |
+| Oklahoma | Tulsa County | (918) 596-5600 | tcso.org/?p=1946 | Non-Emergency Line |
+| Alabama | Cherokee County | (256) 927-3365 | cherokeecountyalsheriff.com/page.php?id=6 | Non-Emergency (24 hours) |
+| Idaho | Bannock County | (208) 236-7111 | bannockcounty.gov/sheriff | Non-Emergencies (Search and Rescue 236-7114 on the same page) |
+| New Hampshire | Strafford County | (603) 742-4960 | straffordcountyso.gov/index.php/contact-us | Non-Emergency |
+| California | Amador County | (209) 223-6513 | amadorsheriff.org/contact-us | NON-EMERGENCY DISPATCH |
+| Pennsylvania | Berks County | (610) 655-4911 | berkspa.gov 911-communications-branch | Non-Emergency Number (county 911 Communications) |
+| Ohio | Guernsey County | (740) 439-4455 | guernseysheriff.gov/?p=59 | Dispatch (sheriff's own page) |
+| Virginia | Richmond City | (804) 646-5100 | rva.gov/police/contact-us | Richmond Police Non-Emergency Number (an independent city, its own county-equivalent) |
+| Alaska | Juneau City and Borough | (907) 586-0600 | juneau.org/?p=307942 | JPD non-emergency number (City and Borough page) |
+| South Dakota | Custer County | (605) 673-8176 | custercountysd.com/sheriff | Non-Emergency Dispatch |
+| Wisconsin | Iowa County | (608) 930-9500 | iowacountywi.gov/directory/sheriff | Non-Emergency |
+| Montana | Jefferson County | (406) 225-4075 | jeffersoncountysheriffmt.gov/contact | Non-Emergency (24/7) |
+| Maine | Hancock County | (207) 667-7575 | hancockcountymaine.gov sheriff tip page | our non-emergency number |
+| Wisconsin | Polk County | (715) 485-8300 | polkcountywi.gov sheriff page | Dispatch (beside Records and Jail lines) |
+| New York | Rockland County | (845) 364-8600 | rocklandsheriffny.gov/communications.html | Communications Division (24 hours), the county's dispatch centre |
+
+Refused in this pass:
+- Philadelphia: the page gives 311, not a dispatch line.
+- Sanpete UT: the Richfield centre's page labels its number only "Phone".
+- Rockingham NH: the sheriff's FAQ prints two different "Dispatch" numbers.
+- Lee KY: "Dispatch" sits beside the animal-control officer, so it is unclear whose line it is.
+- Carroll NH, Fayette PA, Bucks PA: seen only in a search extract; the county pages would not
+  load or do not label the line non-emergency.
+- Unlabelled office or main lines only: Power ID, Washakie, Humboldt, Inyo, Essex MA, Grafton,
+  Mariposa, Fremont WY, Middlesex, Norfolk, Grayson, Comanche, Lawrence SD, Jackson IL, Warren
+  NY, Mohave, Alpine, Menifee (its 24-hour line belongs to the jailer).
+- Pages blocked or broken: Contra Costa, Baltimore County, Nelson VA, Napa, Navajo, San Benito,
+  Santa Cruz, Rockingham VA, Lebanon PA, Plumas, Gallatin (the FAQ page is 404), El Paso TX,
+  Fulton and Walker GA, Burke.
+- No official page found: Los Alamos, Lassen (fire line only), Minnehaha, Bell, Worcester,
+  Roanoke, Hillsborough NH, Dickenson, Butte ID, Trinity, Etowah, Penobscot, Orleans VT, Augusta,
+  Greer, Allegany, Harding, Eaton, Gaston, Franklin MA, Wolfe, Jackson KY, St. Louis MN,
+  Chittenden, Lamoille, Morgan TN, St. Francois, Montrose, Pope IL.
+
 ## Washington (checked 2026-10-28)
 
 | County | Number | Read on | Label on the page |
