@@ -376,5 +376,301 @@
   "sources": [
    "https://fastestknowntime.com/route/enchantment-enchainment-wa"
   ]
+ },
+ {
+  "id": "wa_honeymoon_route",
+  "slug": "mount-deception-wa",
+  "verdict": "unclear",
+  "reason": "FKT page names no line (only a SummitPost link and 'route variation'), and the opened sources show the standard route and Honeymoon as separate lines.",
+  "sources": [
+   "https://fastestknowntime.com/route/mount-deception-wa",
+   "https://en.wikipedia.org/wiki/Mount_Deception_(Washington)",
+   "https://sverdina.com/Deception1.asp"
+  ]
+ },
+ {
+  "id": "wa_little_annapurna_south_slopes",
+  "slug": "little-annapurna-wa",
+  "verdict": "unclear",
+  "reason": "FKT line (Aasgard Pass, then west between Isolation and Tranquil Lakes, then south to summit) looks like the north slopes, but no independent source describing the route could be opened (SummitPost and Mountaineers returned 403).",
+  "sources": [
+   "https://fastestknowntime.com/route/little-annapurna-wa"
+  ]
+ },
+ {
+  "id": "wa_mount_adams_south_climb",
+  "slug": "mt-adams-mt-hood-wa-or",
+  "verdict": "reject",
+  "reason": "The FKT file is a 158-mile Adams-to-Hood link-up, not the South Climb alone.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-adams-mt-hood-wa-or"
+  ]
+ },
+ {
+  "id": "wa_mount_adams_south_climb",
+  "slug": "mt-adams-mt-st-helens-wa",
+  "verdict": "reject",
+  "reason": "The FKT file is a roughly 90-mile Adams-to-St Helens link-up, not the South Climb alone.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-adams-mt-st-helens-wa"
+  ]
+ },
+ {
+  "id": "wa_mount_adams_wilson_glacier_headwall",
+  "slug": "mt-adams-mt-hood-wa-or",
+  "verdict": "reject",
+  "reason": "A 158-mile link-up to Hood with no sign of an east-side Wilson Glacier headwall line.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-adams-mt-hood-wa-or"
+  ]
+ },
+ {
+  "id": "wa_mount_adams_wilson_glacier_headwall",
+  "slug": "mt-adams-mt-st-helens-wa",
+  "verdict": "reject",
+  "reason": "A roughly 90-mile link-up to St Helens with no sign of an east-side Wilson Glacier headwall line.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-adams-mt-st-helens-wa"
+  ]
+ },
+ {
+  "id": "wa_mount_cruiser_nw_face_corner",
+  "slug": "mount-cruiser-0",
+  "verdict": "reject",
+  "reason": "The FKT page describes the Mountaineers' south/southwest corner route via Needle Pass, not a northwest face line, and sources list no northwest face route.",
+  "sources": [
+   "https://fastestknowntime.com/route/mount-cruiser-0",
+   "https://en.wikipedia.org/wiki/Mount_Cruiser"
+  ]
+ },
+ {
+  "id": "wa_mount_cruiser_south_corner",
+  "slug": "mount-cruiser-0",
+  "verdict": "unclear",
+  "reason": "The FKT line (Staircase, Flapjack Lakes, Needle Pass, 5th-class corner) matches the South Corner, but the only opened independent source (Wikipedia) just lists South Corner as the easiest route and gives no line; Mountaineers and SummitPost pages were 403 or blank.",
+  "sources": [
+   "https://fastestknowntime.com/route/mount-cruiser-0",
+   "https://en.wikipedia.org/wiki/Mount_Cruiser"
+  ]
+ },
+ {
+  "id": "wa_mount_pugh_stujack",
+  "slug": "mount-pugh",
+  "verdict": "accept",
+  "reason": "FKT line (trail past Lake Metan to Stujack Pass, then Knife's Edge and hands-on scramble to the summit) matches WTA's description of the Pugh route and our Stujack Pass scramble.",
+  "sources": [
+   "https://fastestknowntime.com/route/mount-pugh",
+   "https://www.wta.org/go-hiking/hikes/mount-pugh"
+  ]
+ },
+ {
+  "id": "wa_mount_si_haystack_scramble",
+  "slug": "mount-si-wa",
+  "verdict": "accept",
+  "reason": "The FKT standard SE trail route requires the Haystack scramble to the true summit, and WTA confirms the Mount Si Trail plus a scramble to the Haystack as the summit route.",
+  "sources": [
+   "https://fastestknowntime.com/route/mount-si-wa",
+   "https://www.wta.org/go-hiking/hikes/mount-si"
+  ]
+ },
+ {
+  "id": "wa_cosho_peak_scramble",
+  "slug": "ragged-ridge-wa",
+  "verdict": "reject",
+  "reason": "The FKT is a 21-mile four-peak link-up (Mesachie, Katsuk, Kimtah, Cosho) from Easy Pass, not a Cosho-only scramble.",
+  "sources": []
+ },
+ {
+  "id": "wa_east_ridge_6",
+  "slug": "mt-thomson-west-ridge-wa",
+  "verdict": "reject",
+  "reason": "The FKT page is for Thomson's West Ridge (low-fifth technical), a different line from our East Ridge walk-up.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-thomson-west-ridge-wa"
+  ]
+ },
+ {
+  "id": "wa_gorillas_direct",
+  "slug": "mt-stuart",
+  "verdict": "reject",
+  "reason": "The FKT follows the Cascadian Couloir via Longs Pass, not the 5.10d West Face Wall Gorillas Direct.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-stuart"
+  ]
+ },
+ {
+  "id": "wa_kendall_peak_standard",
+  "slug": "mt-thomson-west-ridge-wa",
+  "verdict": "reject",
+  "reason": "The FKT is named for Mt Thomson's West Ridge, a different peak from Kendall Peak.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-thomson-west-ridge-wa"
+  ]
+ },
+ {
+  "id": "wa_king_kong_gorillas_direct_direct",
+  "slug": "mt-stuart",
+  "verdict": "reject",
+  "reason": "The FKT follows the Cascadian Couloir, not the 5.12a West Face Wall route.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-stuart"
+  ]
+ },
+ {
+  "id": "wa_mount_daniel_daniel_glacier",
+  "slug": "mt-daniel-wa",
+  "verdict": "accept",
+  "reason": "FKT describes Cathedral Pass, PCT, Peggy's Pond, SE ridge to the West Peak; WTA's Mount Daniel page describes the same Peggy's Pond ridge route ending in a few class 3 moves.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-daniel-wa",
+   "https://www.wta.org/go-hiking/hikes/mount-daniel"
+  ]
+ },
+ {
+  "id": "wa_mount_pilchuck_standard_route",
+  "slug": "mt-pilchuck",
+  "verdict": "accept",
+  "reason": "FKT goes trailhead to lookout and back; WTA describes the same trail to the summit lookout as the page's single main route.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-pilchuck",
+   "https://www.wta.org/go-hiking/hikes/mount-pilchuck"
+  ]
+ },
+ {
+  "id": "wa_mount_shuksan_sulphide_glacier",
+  "slug": "mt-shuksan-sulphide-glacier-wa",
+  "verdict": "accept",
+  "reason": "FKT is the Sulphide Glacier route car to car; WTA confirms the Shannon Ridge trail is the approach climbers use for the Sulphide Glacier.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-shuksan-sulphide-glacier-wa",
+   "https://www.wta.org/go-hiking/hikes/shannon-ridge"
+  ]
+ },
+ {
+  "id": "wa_mount_st_helens_monitor_ridge",
+  "slug": "mt-st-helens-wa",
+  "verdict": "accept",
+  "reason": "The page's GPS track is a Monitor Ridge file with a trailhead-summit-trailhead category, and WTA describes Ptarmigan Trail then Monitor Ridge to the rim from Climbers Bivouac.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-st-helens-wa",
+   "https://www.wta.org/go-hiking/hikes/mount-st-helens-monitor-ridge"
+  ]
+ },
+ {
+  "id": "wa_mount_stuart_cascadian_couloir",
+  "slug": "mt-stuart",
+  "verdict": "accept",
+  "reason": "FKT's primary route is Ingalls trailhead over Longs Pass up the Cascadian Couloir, and Wikipedia names the Cascadian Couloir as Stuart's standard route.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-stuart",
+   "https://en.wikipedia.org/wiki/Mount_Stuart",
+   "https://www.wta.org/go-hiking/hikes/longs-pass"
+  ]
+ },
+ {
+  "id": "wa_mount_stuart_west_ridge",
+  "slug": "mt-stuart",
+  "verdict": "reject",
+  "reason": "The FKT track climbs the Cascadian Couloir and descends the same way, while its page treats the West Ridge as a separate route.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-stuart"
+  ]
+ },
+ {
+  "id": "wa_mount_washington_olympic_standard",
+  "slug": "mt-washington-olympic-peninsula",
+  "verdict": "accept",
+  "reason": "The FKT trail-to-summit scramble (steep forest, scree, meadow, ridge walk) is the single walk-up route from the Forest Road 2419 trailhead that WTA describes with exposed class 3-4 ridge walking, matching our standard scramble.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-washington-olympic-peninsula",
+   "https://www.wta.org/go-hiking/hikes/mount-washington",
+   "https://www.10adventures.com/hikes/olympic-national-park/mount-washington-hike/"
+  ]
+ },
+ {
+  "id": "wa_navaho_peak_south_slopes",
+  "slug": "navaho-peak-wa",
+  "verdict": "accept",
+  "reason": "Both the FKT page and WTA take the Stafford Creek trailhead to Navaho Pass then the County Line trail up to the summit, which is our route's line.",
+  "sources": [
+   "https://fastestknowntime.com/route/navaho-peak-wa",
+   "https://www.wta.org/go-hiking/hikes/navaho-peak"
+  ]
+ },
+ {
+  "id": "wa_painted_traverse",
+  "slug": "painted-traverse-wa",
+  "verdict": "accept",
+  "reason": "The FKT loop traverses Painted to White Mountain and our route is that same traverse from the North Fork Sauk trailhead, exiting via White Pass and the Sauk trail, with a trip report confirming the line and White Mountain as the traditional finish.",
+  "sources": [
+   "https://fastestknowntime.com/route/painted-traverse-wa",
+   "https://trailcatjim.com/painted-traverse-painted-mountain-to-portal-peak-2025/"
+  ]
+ },
+ {
+  "id": "wa_ragged_ridge",
+  "slug": "ragged-ridge-wa",
+  "verdict": "accept",
+  "reason": "The FKT is the Easy Pass round trip linking Mesahchie, Katsuk, Kimtah and Cosho, the same Ragged Ridge traverse our route describes, and a trip report confirms the line and Fisher Creek exit.",
+  "sources": [
+   "https://fastestknowntime.com/route/ragged-ridge-wa",
+   "https://www.nwhikers.net/forums/viewtopic.php?p=957347"
+  ]
+ },
+ {
+  "id": "wa_robinson_mountain_southeast_ridge",
+  "slug": "robinson-mountain-wa",
+  "verdict": "unclear",
+  "reason": "Opened WTA and trip-report pages confirm the Beauty Creek approach and southeast ridge line, but the FKT page never names its line and no opened source states this is the standard route.",
+  "sources": [
+   "https://fastestknowntime.com/route/robinson-mountain-wa",
+   "https://www.wta.org/go-hiking/hikes/robinson-mountain",
+   "https://trailcatjim.com/robinson-mountain-southern-pasayten-mountains/"
+  ]
+ },
+ {
+  "id": "wa_se_ridge_aka_shield_wall",
+  "slug": "mt-washington-olympic-peninsula",
+  "verdict": "reject",
+  "reason": "The FKT track is the standard walk-up scramble, not the 5.7 technical Shield Wall on the southeast ridge.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-washington-olympic-peninsula"
+  ]
+ },
+ {
+  "id": "wa_south_headwall",
+  "slug": "mt-stuart",
+  "verdict": "reject",
+  "reason": "The FKT ascends the Cascadian Couloir, not the South Headwall rock climb.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-stuart"
+  ]
+ },
+ {
+  "id": "wa_southeast_ridge_se_corner",
+  "slug": "mt-shuksan-sulphide-glacier-wa",
+  "verdict": "reject",
+  "reason": "The FKT follows the Sulphide Glacier standard route, a different line from the Southeast Ridge corner.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-shuksan-sulphide-glacier-wa"
+  ]
+ },
+ {
+  "id": "wa_upper_north_ridge_w_great_gendarme",
+  "slug": "mt-stuart",
+  "verdict": "reject",
+  "reason": "The FKT ascends the Cascadian Couloir, not the technical Upper North Ridge via the Great Gendarme.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-stuart"
+  ]
+ },
+ {
+  "id": "wa_washington_ellinor_traverse_ridge",
+  "slug": "mt-washington-olympic-peninsula",
+  "verdict": "reject",
+  "reason": "The FKT track ends at Mount Washington's summit and does not follow the ridge traverse over to Mount Ellinor.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-washington-olympic-peninsula"
+  ]
  }
 ]

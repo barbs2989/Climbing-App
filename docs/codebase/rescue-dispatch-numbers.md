@@ -74,10 +74,73 @@ is moving to Weber).
 | Ouray | (970) 249-9110 | ouraycountyco.gov/152/Sheriff | Non-Emergency Dispatch |
 | Teller | (719) 687-9652 | tellercounty.gov/514/Sheriffs-Office | Non-emergency requests |
 
-Not added (no official page that could be read labels a line for this purpose): Chaffee,
-Gunnison, San Miguel, San Juan, La Plata, Eagle, Summit, Lake, Fremont, Pitkin, Grand, Routt,
-Mineral, Rio Grande, Saguache, Montrose. Park was also left out: its line (719-836-4121,
-option 5) shares that option with Animal Control on the same page.
+Left out on 2026-10-28 for want of a labelled county page: Chaffee, Gunnison, San Miguel, San
+Juan, La Plata, Eagle, Summit, Lake, Fremont, Pitkin, Grand, Routt, Park. All of them are now
+filled from the state list below. Still not added: Mineral, Rio Grande, Saguache, Alamosa,
+Conejos, Costilla (see below) and Montrose (Western Colorado Regional Dispatch answers for
+Montrose and Ouray, but the City of Montrose announced its own centre in 2024, so which line
+reaches the county is unsettled).
+
+## Colorado: the state list (checked 2026-10-29)
+
+Read on puc.colorado.gov/public-safety-answering-point-psap (Colorado Public Utilities
+Commission, 403 to scripts, read in a browser). The page calls itself "a list of every active
+Public Safety Answering Point (PSAP), or 9-1-1 call center, in Colorado, along with each
+center's non-emergency administrative line". It is a state agency's list, labelled for this
+purpose, the way West Virginia's is. It matches the county's own page for Boulder, El Paso,
+Huerfano, Jefferson, Larimer, Mesa, Ouray and Teller.
+
+| County | Number | PSAP row on the list |
+|---|---|---|
+| Adams | (303) 289-2235 | Adams County Communications Center Authority (Adcom) |
+| Arapahoe | (303) 795-4711 | Arapahoe County Sheriff's Office |
+| Archuleta | (970) 731-2160 | Archuleta County Combined Dispatch |
+| Baca | (719) 523-4511 | Baca County Sheriff's Office |
+| Bent | (719) 456-1363 | Bent County Communications Center |
+| Chaffee | (719) 539-2596 | Chaffee County Emergency Communications Center |
+| Crowley | (719) 267-5235 | Crowley County Sheriff's Office |
+| Delta | (970) 874-2015 | Delta County 911 |
+| Denver | (720) 913-2000 | Denver 911 Communications Center |
+| Eagle | (970) 479-2201 | Vail Public Safety Communications Center |
+| Fremont | (719) 276-5555 | Combined Regional Communications Authority (CRCA - Fremont and Custer Counties) |
+| Gilpin | (303) 582-5500 | Gilpin County |
+| Grand | (970) 725-3343 | Grand County Communications - Hot Sulphur Springs |
+| Gunnison | (970) 641-8200, then 1 | Gunnison Regional Communications Center |
+| Jackson | (970) 723-4242 | Jackson County Sheriff's Office |
+| Kit Carson | (719) 346-9325 | Kit Carson County Communications Center |
+| La Plata | (970) 385-2900 | Durango Emergency Communications Center |
+| Lake | (719) 486-1249 | Lake County Emergency Communications Center |
+| Las Animas | (719) 846-4441 | Las Animas County E911 Authority |
+| Lincoln | (719) 743-2846 | Lincoln County Sheriff's Office |
+| Morgan | (970) 867-8531 | Morgan County Communications Center |
+| Park | (719) 836-4121, option 5 | Park County Communications |
+| Phillips | (970) 854-2735 | Phillips County Communications Center |
+| Pitkin | (970) 920-5310 | Pitkin County Regional Emergency Dispatch Center |
+| Prowers | (719) 336-3977 | Prowers County Combined Communications Center |
+| Pueblo | (719) 583-6250 | Pueblo County Sheriff's Office |
+| Routt | (970) 879-1090 | Routt County Communications |
+| San Juan | (970) 249-4392 | Colorado State Patrol - Montrose (Answering 911 for San Juan County) |
+| San Miguel | (970) 728-1911 | San Miguel County Sheriff's Office |
+| Sedgwick | (970) 474-3355 | Sedgwick County Communication Center |
+| Summit | (970) 668-8600 | Summit County 911 Communications Center |
+| Washington | (970) 848-0464 | Washington-Yuma Combined Communications Center |
+| Yuma | (970) 848-0464 | Washington-Yuma Combined Communications Center |
+| Weld | (970) 356-4015 | Weld County Regional Communications Center |
+
+Notes:
+- Eagle: the Vail Public Safety Communications Center is Eagle County's dispatch. La Plata:
+  the Durango centre is the Durango-La Plata County one. San Juan: the State Patrol answers 911
+  for San Juan County (Silverton), and the list says so.
+- Gunnison is printed "xt 1" and Park "x5", and the card writes them as menu choices. Park was
+  refused on 2026-10-28 because the county page shares option 5 with Animal Control; the state
+  list names it as the dispatch centre's own line, so it goes in.
+- Three counties already on the card differ from the state list, and keep the county's own
+  labelled line: Douglas (state list 303-660-7500), Garfield (625-8095, which the sheriff's page
+  names as Patrol & Dispatch) and Montezuma (Cortez centre 565-8441).
+- Not used: the San Luis Valley row ("San Luis Valley E-911/Colorado State Patrol - Alamosa",
+  719-589-5807). It names two agencies at once, so it is not clear that it is the six valley
+  counties' own dispatch line. Eastern Rio Blanco only (878-9600) and every city, campus and
+  base row are also left out.
 
 ## California, Nevada, Arizona, Wyoming (checked 2026-10-28)
 
@@ -221,18 +284,231 @@ Windsor, Bennington; Oxford, Franklin ME, Knox; Bandera, Medina, Bexar, Brewster
 Murray; Dawes; Lawrence SD, Meade; Billings ND; Douglas KS; Clayton, Dubuque; St. Louis MN, Pine,
 Carlton, Goodhue; Door, Douglas WI, Bayfield. Most of these were not reached yet, not refused.
 
+## Arkansas: the state list (checked 2026-10-29)
+
+Read on the Arkansas 911 Board's *List of PSAP Contacts* (911board.arkansas.gov/psap-contacts),
+spreadsheet EXTERNAL-PSAP-CONTACTS-05.16.2022.xlsx. It is a state agency's list, and its column
+is headed "PSAP Non-Emergency 24/7". The card uses only rows for the county's own PSAP (sheriff,
+county 911 or county central dispatch). It uses no city police, EMS or campus row. The file is
+dated May 2022, so re-check it first when the list is next reviewed.
+
+| County | Number | PSAP row |
+|---|---|---|
+| Ashley | (870) 853-2040 | Ashley County Sheriff |
+| Baxter | (870) 425-2361 | Baxter County 911 |
+| Benton | (479) 271-1005 | Benton County · CENCOM dispatch |
+| Boone | (870) 365-0797 | Boone County 911 |
+| Calhoun | (870) 798-2323 | Calhoun County Sheriff |
+| Carroll | (870) 423-7373 | Carroll County Sheriff |
+| Clark | (870) 246-2222 | Clark County Sheriff |
+| Clay | (870) 598-2270 | Clay County Sheriff |
+| Cleburne | (501) 362-8291 | Cleburne County 911 |
+| Cleveland | (870) 325-6222 | Cleveland County 911 |
+| Columbia | (870) 234-5655 | Columbia County Central Dispatch |
+| Conway | (501) 215-2911 | Conway County 911 |
+| Craighead | (870) 935-5551 | Craighead County · Jonesboro Regional 911 |
+| Crawford | (479) 474-2261 | Crawford County Emergency Communications |
+| Crittenden | (870) 702-2000 | Crittenden County Sheriff |
+| Cross | (870) 238-5700 | Cross County Sheriff |
+| Dallas | (870) 352-2002 | Dallas County 911 |
+| Desha | (870) 222-3636 | Desha County 911 |
+| Drew | (870) 367-3411 | Drew County 911 |
+| Faulkner | (501) 328-5906 | Faulkner County 911 |
+| Fulton | (870) 895-2601 | Fulton County 911 |
+| Garland | (501) 622-3666 | Garland County Emergency Communications |
+| Grant | (870) 942-2101 | Grant County 911 |
+| Hot Spring | (501) 337-8451 | Hot Spring County 911 |
+| Howard | (870) 845-3541 | Howard County Sheriff |
+| Independence | (870) 698-2436 | Independence County Central Dispatch |
+| Izard | (870) 368-4203 | Izard County Sheriff |
+| Jefferson | (870) 541-5300 | Jefferson County 911 (MECA) |
+| Johnson | (479) 774-6911 | Johnson County 911 |
+| Lafayette | (870) 921-4252 | Lafayette County 911 |
+| Little River | (870) 898-5115 | Little River County Sheriff |
+| Logan | (479) 963-3271 | Logan County 911 |
+| Marion | (870) 449-6666 | Marion County Sheriff |
+| Miller | (870) 361-1010 | Miller County Sheriff |
+| Monroe | (870) 747-3381 | Monroe County Sheriff |
+| Montgomery | (870) 867-3151 | Montgomery County 911 |
+| Nevada | (870) 887-4911 | Nevada County 911 |
+| Newton | (870) 446-5124 | Newton County 911 (Jasper) |
+| Ouachita | (870) 231-5300, ext. 1 | Ouachita County 911 |
+| Perry | (501) 889-2333 | Perry County 911 |
+| Phillips | (870) 338-5555 | Phillips County Sheriff |
+| Poinsett | (870) 578-2116 | Poinsett County Sheriff |
+| Polk | (479) 394-2511 | Polk County Sheriff (Mena) |
+| Prairie | (870) 256-4137 | Prairie County Sheriff |
+| Pulaski | (501) 340-6963 | Pulaski County Sheriff |
+| St. Francis | (870) 633-2611 | St. Francis County Sheriff |
+| Saline | (501) 303-5648 | Saline County Emergency Communications |
+| Scott | (479) 637-4155 | Scott County Sheriff |
+| Searcy | (870) 448-2340 | Searcy County Sheriff (Marshall) |
+| Sebastian | (479) 783-1051 | Sebastian County Sheriff |
+| Sevier | (870) 642-2125 | Sevier County 911 |
+| Sharp | (870) 994-2211 | Sharp County Sheriff |
+| Stone | (870) 269-3825 | Stone County Sheriff |
+| Van Buren | (501) 884-6005 | Van Buren County 911 |
+| White | (501) 279-6241 | White County 911 |
+| Woodruff | (870) 347-3003 | Woodruff County 911 |
+| Yell | (479) 495-4881 | Yell County 911 |
+
+Not added: counties whose only PSAP row is a city police department (Arkansas, Bradley,
+Hempstead, Jackson, Lee, Greene, Union's El Dorado row), and rows with an empty non-emergency
+cell (Chicot, Franklin, Lawrence, Lincoln, Lonoke, Madison, Pike, Randolph, Union Sheriff,
+Mississippi). Washington County's only county row is Central EMS, an ambulance service, so it
+is not used either.
+
 **Statewide lists, for the next pass.** Each of these could cover a whole state at once:
-- Pennsylvania: PEMA's *Directory of County PSAPs*, with a non-emergency line per county. It has
-  moved under pa.gov/agencies/pema.
-- Oregon: OEM's *PSAP Directory by County* (oregon.gov/oem/Documents/OEM_PSAP_Directory.pdf,
-  50 pages). It could not be read here.
-- Montana: DOJ's *Certified PSAP List* (July 2022).
-- Colorado: the PUC's PSAP page (403 to automated reads).
-- Arkansas: the 911 Board's PSAP contacts sheet (2022).
+Colorado and Arkansas were read on 2026-10-29, above. The other three were read and refused:
+- Pennsylvania: the PEMA directory now lives at pa.gov/agencies/ready/contact/county-911, read
+  in a browser. It lists each county's **911 coordinator**, a named person with an office
+  number, not a dispatch line.
+- Oregon: OEM's *PSAP Directory by County* (dated 10/8/2026) labels its numbers only "Tel:" and
+  "24hr:". Where the county publishes its own line, the "24hr" number disagrees with it.
+  Deschutes's 24hr line is 541-693-7911, but the county's own non-emergency line is 693-6911.
+  Clackamas's is 655-8911 against 655-8211. These look like internal lines, so the list is
+  not used.
+- Montana: DOJ's *Certified Primary PSAPs* (April 2025) labels only a manager's "Phone:".
+- No other state was found to publish a usable list. Virginia, North Carolina, Vermont and New
+  Hampshire were checked: their lists name contact people or no lines at all.
 
 Two lists were refused. Minnesota DPS lists each county's 10-digit 24-hour *emergency* line,
 not a non-emergency one. Washington's mil.wa.gov/alternative911 lists lines for use only when
 911 is down. Michigan's per-county list is a 2021 draft from a non-state association.
+
+## Read in a browser (checked 2026-10-29)
+
+These county sites refused scripted reads on 2026-10-28. Each was read in Chrome on the
+agency's own page. Rockbridge's and Sublette's pages label the line only "Dispatch", on the
+sheriff's own page, which the rule accepts.
+
+| State | County | Number | Read on | Label on the page |
+|---|---|---|---|---|
+| Wyoming | Teton | (307) 733-2331 | tetonsheriff.org/FAQ.aspx; /174/Communications-Center | the non-emergency line, 307-733-2331 (Communications Center, staffed 24/7) |
+| Wyoming | Sublette | (307) 367-4378 | sublettecountywy.gov/directory.aspx?did=23 | Dispatch (county directory, sheriff's office) |
+| Nevada | Clark | (702) 828-3111 | lvmpd.com/services/when-to-call-9-1-1-or-3-1-1 | To reach our Dispatch Center you can also call (702) 828-3111 (beside: call 3-1-1 for police non-emergency) |
+| California | San Diego | (858) 868-3200 | sdsheriff.gov/i-want-to/report | Non-emergency dispatch |
+| California | Kern | (661) 861-3110 | kernsheriff.org/online-reporting; /Contact | For non-emergencies, call ...; Contact page: Dispatch |
+| California | Tuolumne | (209) 533-5815 | tuolumnecounty.ca.gov/Directory.aspx?did=35 | Dispatch Ph, Open 24/7 |
+| California | Placer | (530) 886-5375 | placer.ca.gov/2533/Dispatch | The non-emergency phone line (Dispatch Center, 24/7) |
+| California | Tulare | (559) 733-6218 | tularecounty.ca.gov/sheriff/about-us/contact-us | Communications – Non Emergency Dispatch |
+| California | Shasta | (530) 245-6540 | shastacounty.gov/sheriff/page/vine | for non-emergencies, please call |
+| California | Madera | (559) 675-7770 | maderacounty.com/government/sheriff/online-reporting | non-emergency |
+| Arizona | Coconino | (928) 774-4523, option 1 | coconino.az.gov Sheriff contact form page | call our Dispatch Center at ..., option 1 |
+| Arizona | Yavapai | (928) 771-3260 | ycsoaz.gov/Contact-Information | Non-Emergency |
+| Arizona | Pinal | (520) 866-5111 | pinal.gov/m/directory/department?did=126 | Non-Emergency |
+| New Mexico | Taos | (575) 758-2216 | taoscounty.org/217/Sheriffs-Office; /294/Taos-Central-Dispatch | For non-emergency calls, please call Central Dispatch (24/7) |
+| New Mexico | Bernalillo | (505) 798-7000 | bernco.gov/bernalillo-county-sheriff/numbers | Sheriff's Office (Non-Emergency) |
+| Virginia | Rockbridge | (540) 463-7328 | rockbridgecountyva.gov/147/Sheriff | Dispatch (sheriff's page) |
+| Washington | Stevens | (509) 684-2555 | stevenscountywa.gov/21252/sheriffs-office-faqs | If it's a non-emergency, contact Stevens County Dispatch |
+| Idaho | Blaine | (208) 578-3831 | blainecountyid.gov/m/faq?cat=27 | please call our non-emergency line (Emergency Communications FAQ) |
+| Idaho | Kootenai | (208) 446-1854 | kcsheriff.com/Directory.aspx?did=18 | Kootenai County 911 Non-Emergency Line |
+| Idaho | Teton | (208) 776-8200 | tetoncountyidaho.gov emergency contact information | (Non-Emergency Line) |
+
+Still refused after the browser read:
+- Inyo: only a weekday admin line (760-878-0383).
+- Mono: (760) 932-7549 ext. 7, with no label; the pages that would label it return 404.
+- Los Angeles: station lines only, with no countywide line.
+- Mariposa: office line only.
+- Alpine: department phone only.
+- Mohave: main line only.
+- Gila: the contact page would not load.
+- Gunnison: the sheriff's page shows only an office line. It is filled from the Colorado state
+  list instead.
+- Eagle: main line only. It is filled from the state list.
+- Fremont WY: office lines only.
+- Carroll NH: the site errored twice.
+- Coos NH: 404.
+- Grafton NH: no county page.
+- Ulster: an unlabelled 338-3640.
+- Gallatin: its dispatch page prints 406-582-2092 with 8-5 hours.
+- Custer ID: no official page was read.
+
+## More counties (checked 2026-10-29)
+
+Each number was read on the agency's own page (WebFetch or a browser), with the label shown.
+Three are joint city-county centres whose page sits on the city's site: Dubuque, WHITCOM
+(Whitman) and the Mesilla Valley Regional Dispatch Authority (Doña Ana). Each page says that
+centre dispatches for the whole county, so it is not a city-only line. Pennington's line is the
+county 911 page's own "NON-EMERGENCY NUMBER", for the joint Rapid City and Pennington centre.
+
+| State | County | Number | Read on | Label on the page |
+|---|---|---|---|---|
+| North Carolina | Transylvania | (828) 884-3188 | transylvaniacounty.org/departments/communications-911 | Non Emergency (Communications 911 page) |
+| North Carolina | Stokes | (336) 593-8139 | co.stokes.nc.us/departments/non_emergency_numbers.php; /patrol.php | NON Emergency Numbers: Communications Center (first of its lines; Patrol page names it) |
+| Alabama | Madison | (256) 722-7181 | madisoncountysheriffal.org/contact | Non-emergency (24 hours) |
+| Ohio | Hocking | (740) 385-2131 | hockingsheriff.org/contact-us | Non-Emergency Dispatch |
+| Michigan | Marquette | (906) 475-9912 | co.marquette.mi.us/departments/central_dispatch | Central Dispatch Non-Emergency Calls |
+| Minnesota | Pine | (320) 629-8380 | pinecountymn.gov sheriff when_not_to_call_9-1-1 | The non-emergency number for the Pine County Sheriff |
+| Minnesota | Carlton | (218) 384-3632 | carltoncountymn.gov/266/Dispatch-Information | In a non-emergency: Call ... (Dispatch Information) |
+| Minnesota | Goodhue | (651) 385-3155 | goodhuecountymn.gov/262 | Non Emergency (Emergency Communications Division) |
+| Wisconsin | Sauk | (608) 356-4895 | co.sauk.wi.us sheriffs-office-contacts | Non-Emergency/Dispatch |
+| Wisconsin | Door | (920) 746-2400 | co.door.wi.gov/844/Resources | Non-Emergency |
+| Texas | Travis | (512) 974-0845, option 3 | tcsheriff.org/about/about-tcso/contact-us | 24/7 Non-Emergency Dispatch |
+| Texas | Bexar | (210) 335-6000 | bexar.org/770/Report-a-Crime | Dispatch Office (Report a Crime page); county directory entry Non-Emergency Dispatch |
+| South Dakota | Pennington | (605) 394-4131 | pennco.org/law_public_safety/911_communications | NON-EMERGENCY NUMBER (county 911 page; the joint Emergency Services Communications Center) |
+| Iowa | Dubuque | (563) 589-4415 | cityofdubuque.org/397 | Non-Emergency Dispatch (the centre serves all of Dubuque County) |
+| New York | Ulster | (845) 338-3640 | trafficsafety.ny.gov/location/ulster-county-sheriffs-office | 24/7 Dispatch (NY State traffic-safety agency's listing of the sheriff's office) |
+| Maine | Franklin | (207) 778-6140 | franklincountymaine.gov/communications | For non-emergency concerns contact the Franklin County Regional Communications Center |
+| Maine | Knox | (207) 593-9132 | knoxcountymaine.gov knox_regional_communications_center | For non-emergencies dial |
+| Maine | Oxford | (207) 743-9554 | oxfordcounty.org/contact | REGIONAL COMMUNICATIONS CENTER (DISPATCH); the page says these numbers are non-emergency only |
+| Maryland | Washington | (240) 313-4345 | washco-md.net/emergency-services/emerg-coms-911 | Non-Emergency Phone Number (Emergency Communications Center) |
+| Maryland | Frederick | (301) 600-2071 | frederickcosheriff.com/phone-numbers-fcso | Non-Emergency Dispatch |
+| Maryland | Garrett | (301) 334-1911 | garrettcountymd.gov emergency-management news 2025-12 | the Garrett County Sheriff's Office non-emergency line (fire/rescue communications: 301-334-1929) |
+| Maryland | Montgomery | (301) 279-8000 | montgomerycountymd.gov/OPI/make_right_call.html | Police Non-Emergency Number (the county's own police) |
+| Pennsylvania | Westmoreland | (724) 600-7300 | westmorelandcountypa.gov/m/faq?cat=49 | the Westmoreland County non-emergency phone number (county 9-1-1 FAQ) |
+| Montana | Park | (406) 222-2050 | parkcountymt.gov Sheriff-s-Office | Non-Emergency Dispatch |
+| Montana | Carbon | (406) 446-1234 | carbonmt.gov/sheriff | non-emergency/dispatch |
+| Oregon | Klamath | (541) 884-4876, ext. 4 | klamath911.gov/contact-us | Non-Emergency Line, ext. 4 (Klamath 911 district) |
+| Hawaii | Hawaii | (808) 935-3311 | hawaiipolice.gov/contact-us/hotlines | NON-EMERGENCY / the HPD's non-emergency telephone number |
+| North Carolina | Wilkes | (336) 838-9111 | wilkescounty.net/174/Field-Operations | 336-838-9111 for non-emergency calls (sheriff's Field Operations page) |
+| Washington | Grays Harbor | (360) 533-8765 | graysharbor.gov/government/sheriff | Dispatch Non-Emergency (sheriff's page, marked under construction) |
+| Washington | Whitman | (509) 332-2521 | pullman-wa.gov/services/police/whitcom_911.php | Non-Emergency Reporting (WHITCOM serves Whitman and Asotin counties; page hosted by Pullman) |
+| New Mexico | Doña Ana | (575) 526-0795 | lascruces.gov/?p=1240 | For non-emergencies, call ... (MVRDA answers and dispatches 911; page hosted by Las Cruces) |
+
+Refused or not reached in the South and Midwest (2026-10-29):
+- Custer SD: a state directory page only.
+- Minnesota's DPS "24-Hour Telephone" list (Lake, St. Louis, Nicollet): refused, as on 2026-10-28.
+- Search snippets only: Laurel KY (606-878-7000), Walker GA (706-375-7810; the county page is
+  404), Douglas KS (785-843-0250), Bayfield (715-373-6120, a town page), Summit OH (a township
+  page).
+- Office lines only: Wolfe, Powell, Rockcastle, Marion TN, Sequatchie, Cumberland, Rabun (its
+  page is 403), Llano and Brewster.
+- Refused: Comanche OK (Nixle), Monroe IN (a 2015 city list) and Burke (a 2016 city document; 403).
+- Nothing found: Watauga, Cuyahoga, Union IL and Johnson IL.
+- Not reached yet: Lee KY, Estill, Menifee, McCreary; Franklin TN, Fentress, Morgan TN, Rhea,
+  Grundy; McDowell, Wilkes, Surry, Ashe, Avery, Caldwell, Polk NC, Swain; Dade, Chattooga,
+  Habersham; Jackson IL, Lawrence IN, St. Francois, Alger, Keweenaw, Houghton, Douglas WI;
+  Burnet, El Paso TX, Bandera, Medina; Kiowa, Murray; Lawrence SD, Meade; Billings, Dawes,
+  Clayton.
+
+Refused or not reached in the East (2026-10-29):
+- Carroll NH: 603-539-2284 is shown as "Dispatch" in search text, but the county site reset
+  every connection, so the page itself could not be read.
+- Office lines only, no label: Warren NY, Rockland, Coos, Belknap, Cheshire, Hancock ME, Sussex
+  NJ, and the Vermont State Police barracks.
+- Number seen only on a town, city or news page: Grafton, Piscataquis (564-3304; the "24/7
+  non-emergency, option 1" label is on Dover-Foxcroft's page), Berkshire, Luzerne, Allegheny
+  and Adams PA.
+- Bucks: its only line is the 911-outage alternate.
+- Not reached: Orange NY, Clinton, Hamilton NY, Herkimer, Westchester, Sullivan NH, the
+  Massachusetts counties other than Berkshire, Fayette PA, Bland, Bath, Shenandoah, Smyth,
+  Grayson and Giles VA.
+
+Refused or not reached in the West (2026-10-29):
+- Unlabelled lines: Madison MT, Sweet Grass, Fremont WY, Natrona, Honolulu (529-3111) and
+  Stillwater (a sheriff's office line).
+- The page returned 404: Gallatin (582-2100) and Mono.
+- Number seen only in search text: Maui, McDowell, Klickitat (773-4545).
+- No line found: Bandera, Custer ID, Inyo.
+- Blocked (403): Jefferson OR, Douglas OR, Skamania.
+- No official page found: Twin Falls, Glacier, Hood River, Josephine, Otero, Crook, Elko,
+  Mohave, Gila, San Juan UT, Burnet, Surry, Lawrence SD.
+- Not reached: Boise, Owyhee, Idaho County; Rio Arriba, San Miguel NM, Grant NM; Wallowa,
+  Columbia OR, Wasco; Ferry, Garfield WA; Duchesne, Box Elder; Lincoln NV, Nye; Carbon WY, Big
+  Horn WY; Alpine, Mariposa, Monterey, Santa Clara, Los Angeles; and the southern leftovers.
+- Lewis and Clark also has the Helena-Lewis & Clark 911 Center's non-emergency line,
+  406-457-8866 (on the city site). The card uses the sheriff's own line.
 
 ## Washington (checked 2026-10-28)
 
@@ -270,7 +546,6 @@ Notes:
   shown only when the route has none.
 
 No official page found (left out; a climber can add one through Edit): Skamania (the sheriff site
-lists only an unlabelled 509-427-9490), Stevens (509-684-2555 appears only on non-official
-lists), Klickitat, Garfield, Ferry (only an unlabelled 509-775-3132), Grays Harbor (533-8765
+lists only an unlabelled 509-427-9490), Klickitat, Garfield, Ferry (only an unlabelled 509-775-3132), Grays Harbor (533-8765
 appears only on a radio-station page), and Whitman (its only non-emergency number is on a City
 of Pullman page).
