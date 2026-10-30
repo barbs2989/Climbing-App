@@ -116,8 +116,9 @@ for (const [id, patch] of byRow) {
   const body = await ask(`${SUPABASE_URL}/rest/v1/routes?id=eq.${encodeURIComponent(id)}`, { method: "PATCH", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(set) });
   if (!Array.isArray(body) || body.length !== 1) throw new Error(`write ${id}: ${Array.isArray(body) ? body.length : "?"} rows changed`);
   patch.__set = set; wrote++;
-  // Paced like order-from-mp (bulk writes saturated production on 2026-10-22): 400 ms after each write.
-  await new Promise(res => setTimeout(res, 400));
+  // Paced like order-from-mp (bulk writes saturated production on 2026-10-22): one write a second at most (owner,
+  // 2026-10-29), so 1000 ms after each write.
+  await new Promise(res => setTimeout(res, 1000));
 }
 let bad = 0;
 for (const [id, patch] of byRow) {
