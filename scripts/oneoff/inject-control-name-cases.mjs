@@ -17,7 +17,7 @@ import { createHash } from "node:crypto";
 const ROOT = new URL("../..", import.meta.url).pathname;
 const sum = (s) => createHash("sha1").update(s).digest("hex").slice(0, 12);
 
-const SWITCH_FILES = ["src/components/SettingsPrivacySheet.tsx", "lib/EditProfileScreen.jsx", "lib/Leaderboards.jsx", "lib/PartnerSearch.jsx", "lib/Onboarding.jsx"];
+const SWITCH_FILES = ["src/components/SettingsPrivacySheet.tsx", "src/components/SettingsNotifsSheet.tsx", "lib/EditProfileScreen.jsx", "lib/Leaderboards.jsx", "lib/PartnerSearch.jsx", "lib/Onboarding.jsx"];
 const CASES = [
   {
     name: "1 unnamed switch",
@@ -65,9 +65,10 @@ const CASES = [
   },
   {
     name: "6 shape test matches nothing",
-    file: "ClimbMatch.jsx",
-    // since PR62 most switches live in SettingsPrivacySheet.tsx: `moreFiles` lists the other files the same all-edit is applied to
-    moreFiles: SWITCH_FILES,
+    // since PR63 App draws no switch of its own: the edit lands in the first switch file, and
+    // `moreFiles` lists the others the same all-edit is applied to
+    file: SWITCH_FILES[0],
+    moreFiles: SWITCH_FILES.slice(1),
     find: "width:46,height:26,borderRadius:13",
     repl: "width:47,height:26,borderRadius:13",
     all: true,

@@ -75,7 +75,8 @@ for (const f of files) {
       const ret = node.body.body.length === 1 && node.body.body[0].type === "ReturnStatement" ? node.body.body[0].argument : null;
       if (hits !== 1 || !ret) { console.log(`CLOSURE  ${f}: ${name} — ${closure[1]} found ${hits} time(s) in the base, or the component is not a single return`); bad++; continue; }
       if (code(ret) === code(body)) { ok++; console.log(`CLOSURE  ${f}: ${name} — identical to the base page's ${closure[1]} body`); }
-      else { if (!allowDiff.has(name)) bad++; console.log(`DIFFERS  ${f}: ${name} (closure ${closure[1]})`); }
+      else { if (!allowDiff.has(name)) bad++; console.log(`DIFFERS  ${f}: ${name} (closure ${closure[1]})`);
+        if (process.env.DUMP) { fs.writeFileSync(path.join(process.env.DUMP, name + ".base.js"), code(body)); fs.writeFileSync(path.join(process.env.DUMP, name + ".now.js"), code(ret)); } }
       continue;
     }
     const lifted = /^\/\* (.+?) — the body of that branch of (\w+), lifted verbatim/m.exec(fs.readFileSync(path.join(ROOT, f), "utf8"));

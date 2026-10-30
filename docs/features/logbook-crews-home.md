@@ -185,6 +185,9 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 | `src/components/TodayTab.tsx` | `TodayTab`, the Home tab body (lifted from App, PR61) |
 | `src/components/LogClimbSheet.tsx` | `LogClimbSheet`, the log-a-climb sheet around `LogAscent` (lifted from App, PR62) |
 | `src/components/GiveVouchSheet.tsx` | `GiveVouchSheet`, the vouch sheet around `GiveVouch` |
+| `src/components/ObjectivesList.tsx` | `ObjectivesList`, your objectives list (App's `renderObjectives` closure now returns it; Logbook and Climbs › Saved draw it) |
+| `src/components/FriendsSheet.tsx` | `FriendsSheet`, the All friends sheet |
+| `src/components/CrewSafetyScreen.tsx` | `CrewSafetyScreen`, a crew's safety plan screen (around `SafetyTab`) |
 | `src/components/LogbookTab.tsx` | `LogbookTab`, the Logbook tab body (lifted from App, PR61) |
 | `src/components/CrewListView.tsx` | `CrewListView`, the crew tab's crews view: active and past crews, `archiveCrew`, `clearPastCrew` |
 | `src/components/CrewFriendsView.tsx` | `CrewFriendsView`, the Friends `crewView` |

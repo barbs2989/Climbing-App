@@ -1,0 +1,16 @@
+import type { Dispatch, SetStateAction } from "react";
+import { C, SL } from "../../ClimbMatchCore.jsx";
+import { POP_BACK } from "../../lib/popupChrome.js";
+import { saveNotifPrefs } from "../../lib/notif-pref";
+
+/* settingsNotifsOpen&& — the body of that branch of App, lifted verbatim by extract-from-parent.mjs (branch mode);
+   every binding it read from App is a prop of the same name. */
+export interface SettingsNotifsSheetProps {
+  /** Which notification kinds are switched on, keyed by kind. */
+  notifPrefs: Record<string, boolean>;
+  setNotifPrefs: Dispatch<SetStateAction<Record<string, boolean>>>;
+  setSettingsNotifsOpen: Dispatch<SetStateAction<boolean>>;
+}
+export default function SettingsNotifsSheet({notifPrefs,setNotifPrefs,setSettingsNotifsOpen}: SettingsNotifsSheetProps){
+  return <div onClick={()=>setSettingsNotifsOpen(false)} onKeyDown={e=>{if(e.key==="Escape")setSettingsNotifsOpen(false);}} tabIndex={-1} role="dialog" aria-modal="true" aria-label="Notifications" style={{position:"fixed",inset:0,background:C.bg,zIndex:1250,overflowY:"auto",overscrollBehavior:"contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}><div onClick={e=>e.stopPropagation()} style={{minHeight:"100%"}}><div style={{position:"sticky",top:0,background:C.surface,borderBottom:"1px solid "+C.border,padding:"12px 16px",display:"flex",alignItems:"center",gap:10,zIndex:2}}><button onClick={()=>setSettingsNotifsOpen(false)} style={POP_BACK}>← Back</button><div style={{fontSize:15,fontWeight:700}}>Notifications</div></div><div style={{padding:"14px 16px 40px"}}><div style={{marginBottom:16}}><SL>Notifications</SL>{[["crew","Crew updates","Day proposals, members joining, ready to climb"],["conditions","Condition reports","Your condition reports and logged climbs"],["objectives","Your objectives","Another climber logs a climb you saved"],["requests","Requests & vouches","Friend / crew requests, vouches and belay catches"]].map(function(o){const on=notifPrefs[o[0]];return <div key={o[0]} style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,background:C.card,borderRadius:12,padding:"10px 13px",border:"1px solid "+C.border,marginBottom:8}}><div style={{minWidth:0}}><div style={{fontSize:13,fontWeight:700,color:C.text}}>{o[1]}</div><div style={{fontSize:11.5,color:C.textMuted,marginTop:1,lineHeight:1.35}}>{o[2]}</div></div><button onClick={function(){setNotifPrefs(function(p){const n=Object.assign({},p);n[o[0]]=!p[o[0]];saveNotifPrefs(n);return n;});}} aria-label={"Toggle "+o[1]} role="switch" aria-checked={on} style={{flexShrink:0,position:"relative",width:46,height:26,borderRadius:13,border:"none",background:on?C.green:C.border,cursor:"pointer"}}><span style={{position:"absolute",top:3,left:on?23:3,width:20,height:20,borderRadius:"50%",background:C.onSolid}}/></button></div>;})}</div></div></div></div>;
+}

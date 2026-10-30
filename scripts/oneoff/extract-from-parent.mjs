@@ -256,7 +256,11 @@ if (mode === "component") {
   });
   for (const k of ["key", "ref"]) if (props.has(k)) die(`${fnName} reads \`${k}\`, which cannot be a prop`);
   const refs = decl.scope.getBinding(fnName).referencePaths;
-  for (const r of refs) if (!(r.parentPath.isCallExpression() && r.parentPath.node.callee === r.node)) die(`${fnName} is used other than by a call (line ${r.node.loc.start.line})`);
+  // --keep: the closure stays, its body becomes the element — for a render closure App also hands
+  // to other components as a value (renderObjectives), whose callers must not change.
+  const keep = argv.includes("--keep");
+  if (keep && params.length) die(`--keep needs a closure with no parameters`);
+  if (!keep) for (const r of refs) if (!(r.parentPath.isCallExpression() && r.parentPath.node.callee === r.node)) die(`${fnName} is used other than by a call (line ${r.node.loc.start.line})`);
   const specs = [], locals = [];
   for (const m of mods) { const s = importSpec(an, m); if (s) specs.push(s); else locals.push(m); }
   if (locals.length) die(`${fnName} reads page-local ${locals.join(", ")} — move to lib/ first (\`lib\` mode)`);
@@ -265,9 +269,9 @@ if (mode === "component") {
   const header = importLines(specs, path.join(ROOT, "src/components")).join("\n");
   fs.writeFileSync(outP, `${header}\n\n/* ${fnName} — the body of that closure of ${inFn}, lifted verbatim by extract-from-parent.mjs (closure mode);\n   its parameters (${params.join(", ")}) and every binding it read from ${inFn} are props of the same name. */\nexport default function ${name}({${[...params, ...captured].join(",")}}){\n  return ${body};\n}\n`);
   // Edit from the end so earlier offsets hold: each call, then the declaration.
-  const edits = refs.map(r => { const call = r.parentPath.node; return { s: call.start, e: call.end, t: `<${name} ${params.map((q, i) => `${q}={${call.arguments[i] ? src.slice(call.arguments[i].start, call.arguments[i].end) : "undefined"}}`).concat(captured.map(c => `${c}={${c}}`)).join(" ")}/>` }; });
+  const edits = keep ? [] : refs.map(r => { const call = r.parentPath.node; return { s: call.start, e: call.end, t: `<${name} ${params.map((q, i) => `${q}={${call.arguments[i] ? src.slice(call.arguments[i].start, call.arguments[i].end) : "undefined"}}`).concat(captured.map(c => `${c}={${c}}`)).join(" ")}/>` }; });
   const st = decl.parentPath.node; if (st.declarations.length !== 1) die(`${fnName} shares its const with other names`);
-  edits.push({ s: st.start, e: st.end, t: "" });
+  edits.push(keep ? { s: fn.node.body.start, e: fn.node.body.end, t: `<${name} ${captured.map(c => `${c}={${c}}`).join(" ")}/>` } : { s: st.start, e: st.end, t: "" });
   edits.sort((a, b) => b.s - a.s);
   for (const e of edits) src = src.slice(0, e.s) + e.t + src.slice(e.e);
   src = prune(src, new Set(specs.map(s => s.local)));
