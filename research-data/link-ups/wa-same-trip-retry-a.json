@@ -5,8 +5,18 @@
   "state": "Washington",
   "region": "Alpine Lakes Wilderness, Cle Elum River headwaters",
   "legs": [
-   {"peak": "Mount Hinman", "route": "West Ridge (class 2); ski parties also climb it by the Foss Glacier", "connect": ""},
-   {"peak": "Mount Daniel", "route": "Lynch Glacier (class 3)", "connect": "Leave Hinman by its northeast shoulder, drop across glacier slabs to the tarns and Pea Soup Lake, then climb the ridge southwest of the lake to reach the Lynch Glacier. The two summits cannot be joined along the ridge between them."}
+   {
+    "peak": "Mount Hinman",
+    "route": "West Ridge (class 2); ski parties also climb it by the Foss Glacier",
+    "connect": "",
+    "route_id": "wa_mount_hinman_west_ridge"
+   },
+   {
+    "peak": "Mount Daniel",
+    "route": "Lynch Glacier (class 3)",
+    "connect": "Leave Hinman by its northeast shoulder, drop across glacier slabs to the tarns and Pea Soup Lake, then climb the ridge southwest of the lake to reach the Lynch Glacier. The two summits cannot be joined along the ridge between them.",
+    "route_id": "wa_mount_daniel_lynch_glacier"
+   }
   ],
   "duration": "2–3 days",
   "how": "Climbers camp in the high basin near Pea Soup Lake or up by the peaks and take the two summits on separate pushes, in either order. There is no walkable crest between them: the cliffs on Daniel's west side are rotten, so the link goes down to Pea Soup Lake and back up. Late in summer the Lynch Glacier carries crevasses and bare ice, and the snowfield below it can force class 3–4 scrambling on the rock beside it. In spring the same pair is done on skis.",
@@ -27,8 +37,18 @@
   "state": "Washington",
   "region": "The Enchantments, Alpine Lakes Wilderness",
   "legs": [
-   {"peak": "McClellan Peak", "route": "Gully and ridge from the notch beside The Prong, with third and fourth class scrambling", "connect": ""},
-   {"peak": "Little Annapurna", "route": "Direct slope from Crystal Lake", "connect": "Descend the short snowfield back from the notch, then traverse west across the basin toward Crystal Lake and climb straight up Little Annapurna."}
+   {
+    "peak": "McClellan Peak",
+    "route": "Gully and ridge from the notch beside The Prong, with third and fourth class scrambling",
+    "connect": "",
+    "route_id": "wa_mcclellan_peak_southwest_scramble"
+   },
+   {
+    "peak": "Little Annapurna",
+    "route": "Direct slope from Crystal Lake",
+    "connect": "Descend the short snowfield back from the notch, then traverse west across the basin toward Crystal Lake and climb straight up Little Annapurna.",
+    "route_id": null
+   }
   ],
   "duration": "1 long day, or 2–3 days from a camp",
   "how": "Both summits sit above the core Enchantment basin and are usually taken on one outing, either in a long day through the core or from a camp. Coming from Snow Lake, McClellan comes first: cross-country past Leprechaun Lake, a short steep snowfield to the notch by The Prong, then a ridge scramble that includes third and fourth class moves. Little Annapurna is the steeper walk but not technical. Campers often add Dragontail, Cannon and Enchantment Peak on neighbouring days.",

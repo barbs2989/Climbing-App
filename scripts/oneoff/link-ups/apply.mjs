@@ -41,7 +41,7 @@ function textProblems(s, field) {
   return BAD_TEXT.filter((re) => re.test(s)).map((re) => `${field} matches ${re}`);
 }
 
-const files = fs.readdirSync(DIR).filter((f) => f.endsWith(".json")).sort();
+const files = fs.readdirSync(DIR).filter((f) => f.endsWith(".json") && !f.endsWith(".resolve.json")).sort();
 const rows = [], problems = [], unplaced = [];
 for (const f of files) {
   const list = JSON.parse(fs.readFileSync(path.join(DIR, f), "utf8"));
@@ -52,6 +52,10 @@ for (const f of files) {
     if (!/^[a-z]{2}_lu_[a-z0-9_]+$/.test(lu.id || "")) problems.push(`${where}: bad id`);
     if (legs.length < 2 || legs.some((l) => !l.peak)) problems.push(`${where}: needs 2+ legs, each with a peak`);
     if (!lu.how || lu.how.length < 20 || lu.how.length > 900) problems.push(`${where}: how must be 20-900 chars`);
+    // The table's own checks (0395), so the dry run catches what the upsert would refuse.
+    if (lu.duration && lu.duration.length > 40) problems.push(`${where}: duration over 40 chars`);
+    if (!lu.name || lu.name.length < 3 || lu.name.length > 120) problems.push(`${where}: name must be 3-120 chars`);
+    for (const fld of ["descent", "logistics"]) if (lu[fld] && lu[fld].length > 900) problems.push(`${where}: ${fld} over 900 chars`);
     for (const fld of ["how", "descent", "logistics"]) problems.push(...textProblems(lu[fld], fld).map((p) => `${where}: ${p}`));
     legs.forEach((l, i) => problems.push(...textProblems(l.connect, `legs[${i}].connect`).map((p) => `${where}: ${p}`)));
     // also_route_ids: catalog routes that ARE the whole link-up (a "Ptarmigan Traverse" route), so the

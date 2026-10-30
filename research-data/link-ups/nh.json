@@ -1,32 +1,147 @@
 [
-{"id":"nh_lu_presidential_traverse","name":"Presidential Traverse","state":"New Hampshire","region":"Presidential Range, White Mountains",
-"legs":[
-{"peak":"Mount Madison","route":"Valley Way to Madison Spring Hut, then Osgood Trail to the summit","connect":""},
-{"peak":"Mount Adams","route":"Gulfside and Airline trails","connect":"Drop back to the hut area, then follow the high trails about a mile over rocky ground."},
-{"peak":"Mount Jefferson","route":"Gulfside Trail, boulder climb to the summit (Mount Clay is an optional short detour)","connect":"Descend from Adams, then climb roughly 800 feet over boulders."},
-{"peak":"Mount Washington","route":"Gulfside Trail and Crawford Path","connect":"Continue south along the high trail for about two miles to the highest summit, which has a visitor building."},
-{"peak":"Mount Monroe","route":"Crawford Path to Lakes of the Clouds Hut, then the Monroe loop","connect":"Descend toward the hut, then climb a short loop of about 400 feet."},
-{"peak":"Mount Eisenhower","route":"Crawford Path","connect":"Rejoin the main trail and climb roughly 500 feet on easy ground."},
-{"peak":"Mount Pierce","route":"Crawford Path; Mount Jackson and Mount Webster can be added by the Webster Cliff Trail","connect":"Continue on the Crawford Path; trees limit the view. Jackson is the usual last summit before the Crawford Notch finish."}
-],
-"duration":"1 very long day, or 2–4 days with hut stays","how":"Usually walked north to south, though the northbound order is gentler for a hut trip. The ridge stays above treeline for roughly twelve miles, so every summit is a trail walk over rock with no bail-out except steep valley trails. It is a hiking link-up, not a technical climb, but weather turns fast and winter ascents need full winter-mountaineering skills, navigation and gear.","descent":"The finish is down a valley trail to Crawford Notch, not back over the summits. A shuttle or a second car at the far end replaces the out-and-back used for single peaks.","logistics":"Needs two cars or a shuttle between the northern trailhead and Crawford Notch. Three huts sit on the route and usually close by October; camping is not allowed above treeline or near the huts, so backcountry sites lie in the valleys.","sources":["https://en.wikipedia.org/wiki/Presidential_Traverse","https://myoutdoorbasecamp.com/presidential-traverse/","https://bmhatfield.github.io/white-mountains/hut-traverse.html"],"confidence":"high","notes":"Distance sources vary (19.8 to 23.8 miles, 8,500 to 10,000+ ft gain depending on Jackson/Webster/side trips); numbers left out of prose. Winter traverse is the same line, not split into its own entry."},
-{"id":"nh_lu_franconia_ridge_loop","name":"Franconia Ridge Loop (Little Haystack, Lincoln, Lafayette)","state":"New Hampshire","region":"Franconia Notch, White Mountains",
-"legs":[
-{"peak":"Little Haystack Mountain","route":"Falling Waters Trail","connect":""},
-{"peak":"Mount Lincoln","route":"Franconia Ridge Trail","connect":"Follow the open crest north with gentle ups and downs."},
-{"peak":"Mount Lafayette","route":"Franconia Ridge Trail","connect":"Continue along the same crest to the highest point of the ridge."}
-],
-"duration":"1 day (about 6–9 hours)","how":"The usual loop goes counterclockwise: the steeper, waterfall-lined trail up, then the crest, then a longer, gentler trail down. The crest between the three summits is the easy part, but it is fully exposed to wind and cold even in summer. Slick rock on the lower ascent and ice in the cold months call for good traction.","descent":"From Lafayette, drop steeply past a hut on a rocky trail, then follow a longer trail that eases after the first mile back to the parking area. This differs from retracing the ascent.","logistics":"The lot is small and fills early, so arrive at dawn on summer weekends; a seasonal shuttle runs from a larger lot. Water can be refilled at the hut. Avoid the crest in storms since there is no cover.","sources":["https://en.wikipedia.org/wiki/Franconia_Ridge","https://www.earthtrekkers.com/franconia-ridge-loop-trail"],"confidence":"high","notes":"Loop length given as 8.27 to 8.9 miles; gain 3,900 to 4,154 ft. Left out of prose."},
-{"id":"nh_lu_pemi_loop","name":"Pemigewasset (Pemi) Loop","state":"New Hampshire","region":"Pemigewasset Wilderness, White Mountains",
-"legs":[
-{"peak":"Bondcliff","route":"Bondcliff Trail from Lincoln Woods","connect":""},
-{"peak":"Mount Bond","route":"Bondcliff Trail (West Bond is an optional spur)","connect":"Continue along the open ridge."},
-{"peak":"Mount Guyot","route":"Bondcliff and Twinway trails","connect":"Carry on to the junction summit, with a campsite nearby."},
-{"peak":"South Twin Mountain","route":"Twinway Trail","connect":"Follow the ridge trail onward; a hut sits just off the route."},
-{"peak":"Mount Garfield","route":"Garfield Ridge Trail","connect":"Descend and follow the ridge trail past a pond to the next summit."},
-{"peak":"Mount Lafayette","route":"Garfield Ridge Trail and Franconia Ridge Trail","connect":"Climb to the north end of the crest."},
-{"peak":"Mount Liberty","route":"Franconia Ridge Trail, over Lincoln and Little Haystack","connect":"Walk the crest south over Lincoln and Little Haystack to Liberty."},
-{"peak":"Mount Flume","route":"Franconia Ridge Trail, then the Osseo Trail down","connect":"Continue south along the ridge to the last summit."}
-],
-"duration":"1 very long day (12–16 hours) or 2–4 days","how":"A loop of roughly thirty miles that strings many of the 4,000-foot summits around one wilderness. Counterclockwise is the favoured direction for a backpack because the steepest trail sections are climbed rather than descended. Footing includes rock scrambling and some ladders; leaving the ridgeline puts you far from a road, so bailing out is slow.","descent":"The loop finishes by descending a steep trail and then walking a flat old railroad bed back to the start. No retracing of summits is needed.","logistics":"Starts and ends at one trailhead with a parking fee. Three managed campsite areas and a hut serve the route, first-come with a caretaker fee; water is scarce along the crests. A fast party needs a full day.","sources":["https://www.stavislost.com/hikes/trail/pemigewasset-loop","https://justin-lightcap-rr25.squarespace.com/trail-guides/pemi-loop-backpacking-guide"],"confidence":"medium","notes":"Sources differ on distance (29.8 to 32 miles), gain (9,400 to 10,508 ft) and direction: the day-hike report went clockwise, the backpacking guide counterclockwise. Leg order here is the counterclockwise order; both agree on the summit set. West Bond, Galehead, Zealand and North Twin are side trips."}
+ {
+  "id": "nh_lu_presidential_traverse",
+  "name": "Presidential Traverse",
+  "state": "New Hampshire",
+  "region": "Presidential Range, White Mountains",
+  "legs": [
+   {
+    "peak": "Mount Madison",
+    "route": "Valley Way to Madison Spring Hut, then Osgood Trail to the summit",
+    "connect": ""
+   },
+   {
+    "peak": "Mount Adams",
+    "route": "Gulfside and Airline trails",
+    "connect": "Drop back to the hut area, then follow the high trails about a mile over rocky ground."
+   },
+   {
+    "peak": "Mount Jefferson",
+    "route": "Gulfside Trail, boulder climb to the summit (Mount Clay is an optional short detour)",
+    "connect": "Descend from Adams, then climb roughly 800 feet over boulders."
+   },
+   {
+    "peak": "Mount Washington",
+    "route": "Gulfside Trail and Crawford Path",
+    "connect": "Continue south along the high trail for about two miles to the highest summit, which has a visitor building."
+   },
+   {
+    "peak": "Mount Monroe",
+    "route": "Crawford Path to Lakes of the Clouds Hut, then the Monroe loop",
+    "connect": "Descend toward the hut, then climb a short loop of about 400 feet."
+   },
+   {
+    "peak": "Mount Eisenhower",
+    "route": "Crawford Path",
+    "connect": "Rejoin the main trail and climb roughly 500 feet on easy ground."
+   },
+   {
+    "peak": "Mount Pierce",
+    "route": "Crawford Path; Mount Jackson and Mount Webster can be added by the Webster Cliff Trail",
+    "connect": "Continue on the Crawford Path; trees limit the view. Jackson is the usual last summit before the Crawford Notch finish."
+   }
+  ],
+  "duration": "1 very long day, or 2–4 days",
+  "how": "Usually walked north to south, though the northbound order is gentler for a hut trip. The ridge stays above treeline for roughly twelve miles, so every summit is a trail walk over rock with no bail-out except steep valley trails. It is a hiking link-up, not a technical climb, but weather turns fast and winter ascents need full winter-mountaineering skills, navigation and gear.",
+  "descent": "The finish is down a valley trail to Crawford Notch, not back over the summits. A shuttle or a second car at the far end replaces the out-and-back used for single peaks.",
+  "logistics": "Needs two cars or a shuttle between the northern trailhead and Crawford Notch. Three huts sit on the route and usually close by October; camping is not allowed above treeline or near the huts, so backcountry sites lie in the valleys.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Presidential_Traverse",
+   "https://myoutdoorbasecamp.com/presidential-traverse/",
+   "https://bmhatfield.github.io/white-mountains/hut-traverse.html"
+  ],
+  "confidence": "high",
+  "notes": "Distance sources vary (19.8 to 23.8 miles, 8,500 to 10,000+ ft gain depending on Jackson/Webster/side trips); numbers left out of prose. Winter traverse is the same line, not split into its own entry."
+ },
+ {
+  "id": "nh_lu_franconia_ridge_loop",
+  "name": "Franconia Ridge Loop (Little Haystack, Lincoln, Lafayette)",
+  "state": "New Hampshire",
+  "region": "Franconia Notch, White Mountains",
+  "legs": [
+   {
+    "peak": "Little Haystack Mountain",
+    "route": "Falling Waters Trail",
+    "connect": ""
+   },
+   {
+    "peak": "Mount Lincoln",
+    "route": "Franconia Ridge Trail",
+    "connect": "Follow the open crest north with gentle ups and downs."
+   },
+   {
+    "peak": "Mount Lafayette",
+    "route": "Franconia Ridge Trail",
+    "connect": "Continue along the same crest to the highest point of the ridge."
+   }
+  ],
+  "duration": "1 day (about 6–9 hours)",
+  "how": "The usual loop goes counterclockwise: the steeper, waterfall-lined trail up, then the crest, then a longer, gentler trail down. The crest between the three summits is the easy part, but it is fully exposed to wind and cold even in summer. Slick rock on the lower ascent and ice in the cold months call for good traction.",
+  "descent": "From Lafayette, drop steeply past a hut on a rocky trail, then follow a longer trail that eases after the first mile back to the parking area. This differs from retracing the ascent.",
+  "logistics": "The lot is small and fills early, so arrive at dawn on summer weekends; a seasonal shuttle runs from a larger lot. Water can be refilled at the hut. Avoid the crest in storms since there is no cover.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Franconia_Ridge",
+   "https://www.earthtrekkers.com/franconia-ridge-loop-trail"
+  ],
+  "confidence": "high",
+  "notes": "Loop length given as 8.27 to 8.9 miles; gain 3,900 to 4,154 ft. Left out of prose."
+ },
+ {
+  "id": "nh_lu_pemi_loop",
+  "name": "Pemigewasset (Pemi) Loop",
+  "state": "New Hampshire",
+  "region": "Pemigewasset Wilderness, White Mountains",
+  "legs": [
+   {
+    "peak": "Bondcliff",
+    "route": "Bondcliff Trail from Lincoln Woods",
+    "connect": ""
+   },
+   {
+    "peak": "Mount Bond",
+    "route": "Bondcliff Trail (West Bond is an optional spur)",
+    "connect": "Continue along the open ridge."
+   },
+   {
+    "peak": "Mount Guyot",
+    "route": "Bondcliff and Twinway trails",
+    "connect": "Carry on to the junction summit, with a campsite nearby."
+   },
+   {
+    "peak": "South Twin Mountain",
+    "route": "Twinway Trail",
+    "connect": "Follow the ridge trail onward; a hut sits just off the route."
+   },
+   {
+    "peak": "Mount Garfield",
+    "route": "Garfield Ridge Trail",
+    "connect": "Descend and follow the ridge trail past a pond to the next summit."
+   },
+   {
+    "peak": "Mount Lafayette",
+    "route": "Garfield Ridge Trail and Franconia Ridge Trail",
+    "connect": "Climb to the north end of the crest."
+   },
+   {
+    "peak": "Mount Liberty",
+    "route": "Franconia Ridge Trail, over Lincoln and Little Haystack",
+    "connect": "Walk the crest south over Lincoln and Little Haystack to Liberty."
+   },
+   {
+    "peak": "Mount Flume",
+    "route": "Franconia Ridge Trail, then the Osseo Trail down",
+    "connect": "Continue south along the ridge to the last summit."
+   }
+  ],
+  "duration": "1 very long day, or 2–4 days",
+  "how": "A loop of roughly thirty miles that strings many of the 4,000-foot summits around one wilderness. Counterclockwise is the favoured direction for a backpack because the steepest trail sections are climbed rather than descended. Footing includes rock scrambling and some ladders; leaving the ridgeline puts you far from a road, so bailing out is slow.",
+  "descent": "The loop finishes by descending a steep trail and then walking a flat old railroad bed back to the start. No retracing of summits is needed.",
+  "logistics": "Starts and ends at one trailhead with a parking fee. Three managed campsite areas and a hut serve the route, first-come with a caretaker fee; water is scarce along the crests. A fast party needs a full day.",
+  "sources": [
+   "https://www.stavislost.com/hikes/trail/pemigewasset-loop",
+   "https://justin-lightcap-rr25.squarespace.com/trail-guides/pemi-loop-backpacking-guide"
+  ],
+  "confidence": "medium",
+  "notes": "Sources differ on distance (29.8 to 32 miles), gain (9,400 to 10,508 ft) and direction: the day-hike report went clockwise, the backpacking guide counterclockwise. Leg order here is the counterclockwise order; both agree on the summit set. West Bond, Galehead, Zealand and North Twin are side trips."
+ }
 ]

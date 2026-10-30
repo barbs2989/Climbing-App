@@ -8,12 +8,14 @@
    {
     "peak": "Vesper Peak",
     "route": "Via Headlee Pass and the ridge above Vesper Lake",
-    "connect": ""
+    "connect": "",
+    "route_id": "wa_vesper_peak_standard_route"
    },
    {
     "peak": "Sperry Peak",
     "route": "South side of the west ridge",
-    "connect": "Drop west along Vesper's ridge to the low pass between the two, scrambling the steeper bits, then pick up a trail again at the base of Sperry and climb its steep dirt and brush."
+    "connect": "Drop west along Vesper's ridge to the low pass between the two, scrambling the steeper bits, then pick up a trail again at the base of Sperry and climb its steep dirt and brush.",
+    "route_id": "wa_sperry_peak_standard"
    }
   ],
   "duration": "1 long day",
@@ -38,15 +40,17 @@
    {
     "peak": "Del Campo Peak",
     "route": "South face / south gully from Foggy Lake",
-    "connect": ""
+    "connect": "",
+    "route_id": "wa_del_campo_peak_standard"
    },
    {
     "peak": "Gothic Peak",
     "route": "West ridge from the Gothic–Del Campo saddle",
-    "connect": "Descend from Del Campo to the saddle between the two peaks, above Crater Lake, then cross glacier-polished slabs to a notch below Gothic."
+    "connect": "Descend from Del Campo to the saddle between the two peaks, above Crater Lake, then cross glacier-polished slabs to a notch below Gothic.",
+    "route_id": "wa_gothic_peak_standard"
    }
   ],
-  "duration": "1 long day, or a weekend with a camp in Gothic Basin",
+  "duration": "1 long day, or a weekend",
   "how": "Gothic Basin serves both summits, so they pair naturally. Del Campo goes first because it is the harder and more exposed scramble (class 3, called class 4 by some). Gothic follows by slabs to a notch, a short wall step, a traverse across the steep upper west face and then easy scrambling. A few snow patches or a moat near the Gothic summit block can complicate things earlier in summer.",
   "descent": "Come down Gothic's southeast ridge to talus and slabs above Crater Lake, walk down to the lakeshore and the lower lake, and rejoin the approach trail. This avoids retracing the Del Campo scramble.",
   "logistics": "Start at Barlow Pass: about a mile of old road to Monte Cristo, then the steep trail up through the waterfall section into the basin. Reported day times run from about eight hours to just over nine. Camping at Foggy Lake splits it into two easier days. No car shuttle.",
@@ -68,12 +72,14 @@
    {
     "peak": "South Ingalls Peak",
     "route": "From the col between the north and south summits, class 3 on the final section",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Fortune Peak",
     "route": "Ridge from South Ingalls",
-    "connect": "Follow the ridge toward Fortune; it is rugged enough that the line drops to about 7,200 feet before climbing to the summit."
+    "connect": "Follow the ridge toward Fortune; it is rugged enough that the line drops to about 7,200 feet before climbing to the summit.",
+    "route_id": null
    }
   ],
   "duration": "1 day",
@@ -97,12 +103,14 @@
    {
     "peak": "Cannon Mountain",
     "route": "Northeast ridge, class 3",
-    "connect": ""
+    "connect": "",
+    "route_id": "wa_cannon_mountain_northeast_ridge"
    },
    {
     "peak": "Enchantment Peak",
     "route": "From Prusik Pass, class 3 with a short steeper pillar near the top",
-    "connect": "Cross the Druid Plateau, passing the tarns above Shield Lake and Coney Lake, to Prusik Pass, then walk west to the peak."
+    "connect": "Cross the Druid Plateau, passing the tarns above Shield Lake and Coney Lake, to Prusik Pass, then walk west to the peak.",
+    "route_id": "wa_enchantment_peak_east_ridge"
    }
   ],
   "duration": "1 long day",
@@ -126,17 +134,20 @@
    {
     "peak": "Pinnacle Peak",
     "route": "Scramble from the Pinnacle–Plummer saddle",
-    "connect": ""
+    "connect": "",
+    "route_id": "wa_pinnacle_peak_tatoosh_r1"
    },
    {
     "peak": "Plummer Peak",
     "route": "From the saddle, a short heather scramble",
-    "connect": "Go back down to the saddle and climb the short walk-up on the other side."
+    "connect": "Go back down to the saddle and climb the short walk-up on the other side.",
+    "route_id": "wa_plummer_peak_r1"
    },
    {
     "peak": "Denman Peak",
     "route": "Ridge scramble",
-    "connect": "Follow the ridge west from Plummer, dropping to the saddle before Denman and scrambling the last stretch."
+    "connect": "Follow the ridge west from Plummer, dropping to the saddle before Denman and scrambling the last stretch.",
+    "route_id": null
    }
   ],
   "duration": "1 day",
@@ -160,12 +171,14 @@
    {
     "peak": "Mount Washington",
     "route": "Standard climbers trail to the upper basin, then the summit block by ledges",
-    "connect": ""
+    "connect": "",
+    "route_id": "wa_mount_washington_olympic_standard"
    },
    {
     "peak": "Mount Ellinor",
     "route": "Ridge east from Washington",
-    "connect": "Cross the ridge: a knife edge, a string of small gendarmes, a loose 50-foot downclimb to the low point, then snow or rock up to the saddle and on to the summit."
+    "connect": "Cross the ridge: a knife edge, a string of small gendarmes, a loose 50-foot downclimb to the low point, then snow or rock up to the saddle and on to the summit.",
+    "route_id": null
    }
   ],
   "duration": "1 day",
@@ -177,7 +190,10 @@
    "https://www.mountainproject.com/route/119255389/washington-ellinor-traverse-ridge?print=1"
   ],
   "confidence": "medium",
-  "notes": "Checked 2026-10-30. Direction, features and times from a 2023 report; the route database lists it as easy 5th, grade II, with poor rock and severe exposure. Higher grade kept. A search snippet says a lower traverse through the west basin is the more common way to link the two (not read in detail)."
+  "notes": "Checked 2026-10-30. Direction, features and times from a 2023 report; the route database lists it as easy 5th, grade II, with poor rock and severe exposure. Higher grade kept. A search snippet says a lower traverse through the west basin is the more common way to link the two (not read in detail).",
+  "also_route_ids": [
+   "wa_washington_ellinor_traverse_ridge"
+  ]
  },
  {
   "id": "wa_lu_anderson_east_west",

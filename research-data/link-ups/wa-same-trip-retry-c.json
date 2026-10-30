@@ -8,17 +8,20 @@
    {
     "peak": "Liberty Bell",
     "route": "Beckey Route",
-    "connect": ""
+    "connect": "",
+    "route_id": "wa_liberty_bell_beckey_route"
    },
    {
     "peak": "Concord Tower",
     "route": "North Face",
-    "connect": "Drop from the Liberty Bell summit to the notch between the two spires, then climb the neighbouring tower from there."
+    "connect": "Drop from the Liberty Bell summit to the notch between the two spires, then climb the neighbouring tower from there.",
+    "route_id": "wa_concord_tower_north_face"
    },
    {
     "peak": "Lexington Tower",
     "route": "North Face",
-    "connect": "Rappel from the top of Concord into the next notch to the east, then follow the ridge crest to Lexington's summit."
+    "connect": "Rappel from the top of Concord into the next notch to the east, then follow the ridge crest to Lexington's summit.",
+    "route_id": "wa_north_face_3"
    }
   ],
   "duration": "1 long day",
@@ -41,20 +44,23 @@
    {
     "peak": "Golden Horn",
     "route": "Snowy Lakes route from Upper Snowy Lake",
-    "connect": ""
+    "connect": "",
+    "route_id": "wa_golden_horn_southwest_route"
    },
    {
     "peak": "Tower Mountain",
     "route": "South gully past the cave",
-    "connect": "Walk back toward Lower Snowy Lake and pick up the climbers' path across talus to the big gully below the summit."
+    "connect": "Walk back toward Lower Snowy Lake and pick up the climbers' path across talus to the big gully below the summit.",
+    "route_id": null
    },
    {
     "peak": "Mount Hardy",
     "route": "Via Methow Pass, climbers' path along the ridge",
-    "connect": "Return to the Snowy Lakes trail, rejoin the Pacific Crest Trail toward Methow Pass and leave it on the climbers' path. Overnight gear can stay at the pass while you climb."
+    "connect": "Return to the Snowy Lakes trail, rejoin the Pacific Crest Trail toward Methow Pass and leave it on the climbers' path. Overnight gear can stay at the pass while you climb.",
+    "route_id": "wa_mount_hardy_snow_scramble"
    }
   ],
-  "duration": "2 days (Hardy is an optional extra on the walk out)",
+  "duration": "2 days",
   "how": "Camp at Upper Snowy Lake, which is close to both of the first two peaks. Golden Horn is a long scramble to a notch, then an awkward wrap-around to a summit block with a short mantle that some parties protect with a rope. Tower is a continuous class 3 gully, then a short exposed move to the ridge. Hardy is non-technical but loose and lies on the way back along the Pacific Crest Trail. Two peaks from the lake is the common outing; adding Hardy makes the exit a very long day.",
   "descent": "Golden Horn needs a short rappel, about 40 feet with a 30 metre rope, then retrace to the notch. Tower and Hardy are descended by their ascent routes. From Methow Pass the Pacific Crest Trail leads about 11 miles south to Rainy Pass.",
   "logistics": "Start at Rainy Pass on the Pacific Crest Trail (about 10 miles to the lake junction) or from Swamp Creek on the highway for a shorter, steeper way in to Hardy. A 30 metre rope and a few small rock pieces are enough. Snow-free late July to September.",
