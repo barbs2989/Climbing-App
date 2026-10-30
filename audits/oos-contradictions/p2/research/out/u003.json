@@ -1,0 +1,123 @@
+{
+ "file": "u003.json",
+ "results": [
+  {
+   "id": "mt_sphinx_helmet_area_the_earl_trimble",
+   "fact": "length vs pitch lengths",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Re-searched Mountain Project, TenThousandTooFar trip report and general web. Only the route page gives 1500 ft/5 pitches; the overview pitch lengths cover ice only and no source gives per-pitch totals, so the length cannot be proven wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/202078409/the-earl-trimble"
+   ],
+   "patches": []
+  },
+  {
+   "id": "mt_the_thunderdome_mega_mega",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Extended search for Mega Mega, Costa, Lunceford found only the MP page (42 m, no pitch count) and the AAC Thunderdome article, which does not cover this route. Prose says two approach pitches precede the pillar, but the 1-pitch pillar is the graded line, so the 1 is not provably wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/200395245/mega-mega",
+    "https://publications.americanalpineclub.org/articles/13201215025"
+   ],
+   "patches": []
+  },
+  {
+   "id": "nb_lsr_north_the_jolly_rancher",
+   "fact": "pitch count vs length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Repeated searches (route name, LSR North, New Brunswick ice) return only the MP page: 650 ft, 2 pitches. Two long pitches or simul-climbing is possible; not provably wrong and no second source.",
+   "sources": [
+    "https://www.mountainproject.com/route/118314290/the-jolly-rancher"
+   ],
+   "patches": []
+  },
+  {
+   "id": "or_pioneer_route",
+   "fact": "aid grade",
+   "verdict": "fixed",
+   "correct_value": "5.7 C1",
+   "evidence": "Header says 5.7 C0 while aid_grade says C1. SuperTopo and Watts' guide (3rd ed., quoted in a trip write-up) give 5.7 C1; MP and one blog give C0, theCrag/Smith Rock site give A1. Guidebook wins and the higher aid grade is kept, so the header is raised to C1 to match aid_grade.",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/Smith-Rocks-Monkey-Face-Pioneer-Route",
+    "https://gethighonaltitude.com/2022/09/08/monkey-face-pioneer-route/",
+    "https://www.thecrag.com/en/climbing/united-states/smith-rocks-state-park/route/16806901"
+   ],
+   "patches": [
+    {
+     "id": "or_pioneer_route",
+     "fact": "aid grade",
+     "op": "replace_text",
+     "column": "grade",
+     "path": [],
+     "find": "5.7 C0",
+     "replace": "5.7 C1"
+    }
+   ]
+  },
+  {
+   "id": "qc_08_mont_de_l_equerre_la_ru_e_vers_l_or",
+   "fact": "mixed grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "MP page gives M7 in header and M7+/8 on its last pitch; an EscaladeQuebec write-up says the three Equerre routes span WI5+ to M7 collectively. No source settles whether the top pitch is M7+/8; keeping the higher grade rule forbids lowering, and raising the header on one page is unsupported.",
+   "sources": [
+    "https://www.mountainproject.com/route/120115457/la-ruee-vers-lor",
+    "https://www.escaladequebec.com/la-pomme-la-ruee-et-la-loutre-en-20h/",
+    "https://www.escaladequebec.com/ma-ruee-vers-lor/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ut_mexican_hat_bandito_route",
+   "fact": "rappel vs route length",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The 40 ft figure is the bolt-ladder roof only; the rappel descends from the summit to the foot of the whole formation, which is taller than the roof section. No source states the rappel length either way, so the two numbers measure different things.",
+   "sources": [
+    "https://www.mountainproject.com/route/105717295/bandito-route",
+    "https://www.visitutah.com/places-to-go/parks-outdoors/monument-valley-tribal-park/climbing-the-mexican-hat",
+    "https://www.roadtripryan.com/go/t/utah/cedar-mesa/mexicanhat"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wy_medicine_bow_peak_area_guillotine",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only MP lists this (two entries, one empty): header 3 pitches and 350 ft, text says three pitches to the ridge plus two along it. No second source found; header may count face pitches only.",
+   "sources": [
+    "https://www.mountainproject.com/route/201333184/guillotine",
+    "https://www.mountainproject.com/route/113111914/guillotine"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wy_table_mountain_29_fingers",
+   "fact": "length vs pitch lengths",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "MP and the AAJ article both give 660 ft and 9 pitches; the AAJ gives no per-pitch lengths. Overview pitch lengths sum to about 295 m, but no source corrects them, so no prose number can be fixed.",
+   "sources": [
+    "https://www.mountainproject.com/route/200638110/29-fingers",
+    "https://publications.americanalpineclub.org/articles/13201216042"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wy_upper_canyon_south_side_spyin_n_flyin",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "MP header says 5 pitches; its text lists six entries, one only 7 m before the trail. No second source with a breakdown found (SuperTopo, MP area, trip reports).",
+   "sources": [
+    "https://www.mountainproject.com/route/106082991/spyin-n-flyin"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "id": "wa_liberty_crack",
+ "name": "Liberty Crack",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_liberty_bell",
+  "name": "Liberty Bell Mountain",
+  "lat": 48.515435,
+  "lng": -120.658365,
+  "elevation_ft": 7720,
+  "parent_id": "wa_liberty_bell_group",
+  "ground_ft": 7745
+ },
+ "dist_km": 4.02,
+ "gain_ft": 2546,
+ "high_point_ft": 7746,
+ "approach_logistics": {
+  "peakLat": 48.515435,
+  "peakLng": -120.658365,
+  "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+  "trailheadLat": 48.51454,
+  "trailheadLng": -120.64332,
+  "trailheadDirection": "From the hairpin-turn/pond pullout on SR-20 just east of Washington Pass (~5,100 ft), via the cairned climbers' paths"
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.51454,
+   "lng": -120.64332,
+   "elev": 5200,
+   "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 5200,
+   "directions": "Park in the pullout on the north side of SR-20 at the hairpin curve, roughly 0.3 to 0.5 mile past the Washington Pass Overlook turnoff and a short distance east of Washington Pass. SR-20 is gated for the winter and typically doesn't reopen until mid-to-late April or early May, so this approach isn't accessible until the highway opens for the season.",
+   "ground_ft": 5151
+  },
+  {
+   "i": 1,
+   "lat": 48.5158,
+   "lng": -120.657,
+   "elev": 6600,
+   "name": "Base of east face",
+   "type": "Junction",
+   "distMi": 1,
+   "elevFt": 6600,
+   "directions": "Walk back west along the SR-20 shoulder toward the pass to the small pond on the south side of the highway, skirt the pond's east end, and pick up the cairned boot path heading north into the timber. It climbs steeply through forest for 15-20 minutes before breaking out onto talus directly beneath the East Face; the cairns are genuinely hard to follow before dawn, and there is no water between the car and the wall.",
+   "ground_ft": 7038
+  },
+  {
+   "i": 2,
+   "lat": 48.515435,
+   "lng": -120.658365,
+   "elev": "7720",
+   "name": "Liberty Bell Mountain summit",
+   "type": "Summit",
+   "distMi": 1.3,
+   "elevFt": "7720",
+   "directions": "From the talus, pick the line by the huge roof above you — the Lithuanian Lip — with Liberty Crack the continuous crack passing to its right; do not scramble straight up the fall line beneath it, which lands parties on the neighbouring East Face routes. The standard entry traverses in from the left for roughly 40 feet on third- and fourth-class ledges to the ledges under the true first-pitch crack, and twelve pitches then lead to the bolted alcove near the summit shoulder.",
+   "ground_ft": 7745
+  }
+ ]
+}

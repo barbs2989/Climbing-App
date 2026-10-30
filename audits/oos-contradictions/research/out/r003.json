@@ -1,0 +1,110 @@
+{
+ "file": "r003.json",
+ "results": [
+  {
+   "id": "or_european_vacation",
+   "fact": "Route grade vs hardest pitch",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Pitch 8 (the water-streak finish over questionable rock) has no grade in the breakdown, so the headline 5.11a is not contradicted by the graded pitches; the published route grade is 5.11a R, with the hardest listed graded pitches at 5.10d, and the unrated last pitch is the likely carrier. No source assigns a different grade.",
+   "sources": [
+    "https://www.mountainproject.com/route/109071980",
+    "https://smithrock.com/smith-rock-group/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "or_diamond_peak_south_ridge",
+   "fact": "Distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach figure by catalog convention (9 km is about 5.6 mi, matching the summit waypoint's 5.5 mi); the roughly 11 mi in published trip listings is the round trip, which the row does not claim.",
+   "sources": [
+    "https://mazamas.org/activity/instance/10856/detail/",
+    "https://www.summitpost.org/diamond-peak-southern-route-via-crescent-summit-lakes/1001742"
+   ],
+   "patches": []
+  },
+  {
+   "id": "or_north_ridge_2",
+   "fact": "Approach distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Overview says 12 miles out and back (a trailhead-to-summit hike of about 6 mi one way per one source), but the summit waypoint distMi is 4.1. Other sources only confirm the 3.5 mi PCT leg to the climbers' trail turnoff and give conflicting totals (4.8 mi vs 2.4 mi on tracking sites), so no second source agrees on either figure.",
+   "sources": [
+    "https://www.willhiteweb.com/oregon_climbing/mount_washington/trail_280.htm",
+    "https://www.bivy.com/adventures/us/Oregon/mt-washington---north-ridge-1316004"
+   ],
+   "patches": []
+  },
+  {
+   "id": "or_north_ridge_2",
+   "fact": "Descent method",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Overview describes the rappels that parties commonly make (three using a 60 m rope per one report, one per another); the descent field presents downclimbing the easy rock or rappelling as options. Published accounts vary exactly this way, so the two fields describe options, not conflicting facts.",
+   "sources": [
+    "https://www.willhiteweb.com/oregon_climbing/mount_washington/trail_280.htm",
+    "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/mt_washington.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "or_mt_hood_south_side_hogsback",
+   "fact": "Climbing permit: free or paid",
+   "verdict": "fixed",
+   "correct_value": "free self-issued wilderness permit at the register; paid climbing permit separately",
+   "evidence": "The Forest Service climbing permit above 9,500 ft is paid ($20 for 3 days, $50 annual) from 2024, while the free self-issue form completed at Timberline Lodge is the wilderness permit. The trailhead directions call the free form a 'climbing permit', which conflicts with access.fees; access and what_to_bring already say wilderness permit.",
+   "sources": [
+    "https://gorgeradio.com/?p=42612",
+    "https://www.katu.com/news/local/new-mt-hood-climbing-permit-required-from-2024-for-elevations-above-9500-feet"
+   ],
+   "patches": [
+    {
+     "id": "or_mt_hood_south_side_hogsback",
+     "fact": "Climbing permit: free or paid",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "free self-issued climbing permit",
+     "replace": "free self-issued wilderness permit"
+    }
+   ]
+  },
+  {
+   "id": "or_mt_hood_south_side_hogsback",
+   "fact": "Distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach distance by catalog convention (5.2 km = 3.2 mi, matching the summit waypoint distMi); the screen labels it as one way.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "ut_prodigal_sun",
+   "fact": "Pitches carrying C2 aid",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The crux line says C2 on pitches 4, 5 and 7 while the breakdown grades pitch 5 as C1 (4 and 7 are C2). No external page found gives pitch-by-pitch aid grades, so there is no source to decide which side is wrong.",
+   "sources": [
+    "https://www.mountainproject.com/forum/message/110491390",
+    "https://stg.openbeta.io/climb/35944566-0ffb-55ee-8791-a5f07ee11ca6/prodigal-sun"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ut_prodigal_sun",
+   "fact": "Free grade vs breakdown",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The headline 5.8 is the published free grade for the route (listed as 5.8 C2 on Angels Landing, Zion); the breakdown's hardest free pitch is not a per-pitch rating of the route's free grade, so the headline is not contradicted.",
+   "sources": [
+    "https://stg.openbeta.io/climb/35944566-0ffb-55ee-8791-a5f07ee11ca6/prodigal-sun"
+   ],
+   "patches": []
+  }
+ ]
+}

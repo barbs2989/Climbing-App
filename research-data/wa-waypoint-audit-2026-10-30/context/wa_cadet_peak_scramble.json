@@ -1,0 +1,130 @@
+{
+ "id": "wa_cadet_peak_scramble",
+ "name": "Standard Scramble",
+ "discipline": "scrambling",
+ "area": {
+  "id": "wa_cadet_peak",
+  "name": "Cadet Peak",
+  "lat": 47.985145,
+  "lng": -121.349405,
+  "elevation_ft": 7186,
+  "parent_id": "wa_monte_cristo_group",
+  "ground_ft": 7177
+ },
+ "dist_km": 12.9,
+ "gain_ft": 4826,
+ "high_point_ft": 7186,
+ "approach_logistics": {
+  "peakLat": 47.985145,
+  "peakLng": -121.349405,
+  "trailhead": "Barlow Pass Trailhead (Mountain Loop Highway)",
+  "trailheadLat": 48.02639,
+  "trailheadLng": -121.44389,
+  "trailheadDirection": "From Granite Falls, take the Mountain Loop Highway east 11 miles to the Verlot Ranger Station, then continue 19.3 miles to the Barlow Pass Trailhead at the end of the pavement; the lot is on the left."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.0268,
+   "lng": -121.4422917,
+   "elev": 2360,
+   "name": "Barlow Pass Trailhead",
+   "note": "Gated old Monte Cristo Road starts here; $5/day or Northwest Forest/Interagency pass required at the self-issue kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Barlow Pass is where the pavement ends on the Mountain Loop Highway. The old Monte Cristo road beyond the gate is closed to cars but open to bikes, and most parties ride it to save their legs for the scramble.",
+   "ground_ft": 2344
+  },
+  {
+   "i": 1,
+   "lat": 48.028536,
+   "lng": -121.445021,
+   "elev": 2361,
+   "name": "Barlow Pass roadhead",
+   "type": "Campsite",
+   "ground_ft": 2316
+  },
+  {
+   "i": 2,
+   "lat": 47.9847,
+   "lng": -121.3897,
+   "elev": 2800,
+   "name": "Monte Cristo Townsite",
+   "note": "End of the 4-mile gated gravel road (bike or hike); pick up the Glacier Basin/Glacier Creek trail heading east out of the old mining townsite.",
+   "type": "Junction",
+   "distMi": 4,
+   "directions": "Four miles of gently rising gravel road following the South Fork Sauk River. There is a bike rack under the trees at the townsite end; leave the bike there and walk through the old town. Bridges and creek crossings on this stretch have washed out before, so expect the odd detour.",
+   "ground_ft": 2876
+  },
+  {
+   "i": 3,
+   "lat": 47.98556,
+   "lng": -121.39389,
+   "elev": 2800,
+   "name": "Monte Cristo townsite campground, four miles up the closed road",
+   "type": "Campsite",
+   "distMi": 4.2,
+   "ground_ft": 2769
+  },
+  {
+   "i": 4,
+   "lat": null,
+   "lng": null,
+   "elev": 4500,
+   "name": "Ray's Knoll, Glacier Basin",
+   "note": "Timbered knoll in the middle of the basin used as the standard camp; treat water carefully as old mine tailings have contaminated basin runoff with heavy metals.",
+   "type": "Campsite",
+   "distMi": 6.2,
+   "directions": "Cross the footbridge on the far side of the townsite and follow signs onto the Glacier Basin Trail, which climbs steadily beside Glacier Creek past a prominent waterfall before easing off into the basin. Aim for the prominent hummock in the middle of the basin. Early in the season the last of this holds patchy snow.",
+   "ground_ft": null
+  },
+  {
+   "i": 5,
+   "lat": 47.985263170731706,
+   "lng": -121.36942219512196,
+   "elev": 6500,
+   "name": "Erosion gully to headwall waterfall",
+   "note": "Ascend the obvious mine-tailings-colored erosion gully on Cadet's SW face to a headwall with a small waterfall; loose rock underfoot, stay climbers' left of the falls.",
+   "type": "Hazard",
+   "distMi": 7.3,
+   "directions": "Find a safe place to ford Glacier Creek — it can be a swift, cold wade during snowmelt — then navigate by the two large boulders: an approximately 15-ft one marks the start of the scramble, and a bigger one across the basin is the next mark. From there start up the reddish blown-out gully, climbing the rib that separates it from the deeper gully immediately to its left. Cairns and occasional flagging carry on where the maintained tread ends.",
+   "ground_ft": 4222
+  },
+  {
+   "i": 6,
+   "lat": 47.98522585365854,
+   "lng": -121.36310097560975,
+   "elev": 6650,
+   "name": "Cliff-band crux ledge",
+   "note": "Traverse sharply left on a moderately exposed Class 3 ledge to find the correct notch through the cliff band; easy to lose on the way down.",
+   "type": "Hazard",
+   "distMi": 7.6,
+   "directions": "About 25 ft below the waterfall headwall, break out of the gully to climber's left onto a band of red rock. It reads as a dead end from below, and it is the one feature parties lose on the way down — worth building a duck or cairn as you pass through it.",
+   "ground_ft": 4526
+  },
+  {
+   "i": 7,
+   "lat": 47.98518853658537,
+   "lng": -121.35677975609757,
+   "elev": 6900,
+   "name": "Southwest ridge crest",
+   "note": "Climber's path exits the brush/scrub onto the ridge crest here; follow heather slopes northeast toward the summit block.",
+   "type": "Junction",
+   "distMi": 7.9,
+   "directions": "Traverse the ledges upward through scrub trees and brush, then pick up the faint climbers' path that switchbacks the rest of the way onto the crest.",
+   "ground_ft": 5769
+  },
+  {
+   "i": 8,
+   "lat": 47.98518,
+   "lng": -121.34948,
+   "elev": 7186,
+   "name": "Cadet Peak",
+   "note": "True summit register; the subsidiary South Cadet high point is a short detour back along the SW ridge.",
+   "type": "Summit",
+   "distMi": 8.25,
+   "directions": "Follow the crest northeast — loose in places, but easy route-finding. Do not be drawn into the deep gully well to climber's left; it is a hazardous false lead. Around 6,500 ft a distinctive hobbit-like rock feature marks a sharp left turn onto a loose talus traverse that runs below the rock and out to the summit ridge. One or two short class 3-4 moves are typical near the top, and everything up here throws rock, so avoid stacking directly below another party.",
+   "ground_ft": 7165
+  }
+ ]
+}

@@ -1,0 +1,568 @@
+[
+ {
+  "id": "wa_mount_carru_scramble",
+  "i": 0,
+  "name": "Slate Pass Trailhead (Buckskin Ridge Trail)",
+  "from": [
+   48.73283,
+   -120.66895
+  ],
+  "coordinate_key": "48.73283,-120.66895",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/buckskin-ridge",
+  "quote": "WTA buckskin-ridge page trailhead geo: latitude 48.73225, longitude -120.66827",
+  "reason": "Stored is 82 m from the WTA Buckskin Ridge trailhead coordinate (48.73225,-120.66827; Slate Pass TH); ground 6867 ft vs elev 6932."
+ },
+ {
+  "id": "wa_mount_baker_boulder_glacier",
+  "i": 0,
+  "name": "Boulder Ridge Trailhead",
+  "from": [
+   48.73521,
+   -121.71027
+  ],
+  "coordinate_key": "48.73521,-121.71027",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/boulder-ridge",
+  "quote": "WTA boulder-ridge page trailhead geo: latitude 48.71398, longitude -121.69028",
+  "reason": "WTA Boulder Ridge point (48.7140,-121.6903) is 2779 m away and grounds at 988 ft vs pin elev 2700 (stored grounds at 2721); WTA point marks a different spot, so split evidence; stored matches own elev and road-end text. No change."
+ },
+ {
+  "id": "wa_mount_baker_boulder_park_cleaver",
+  "i": 0,
+  "name": "Boulder Ridge Trailhead (Trail #605, FR-1131)",
+  "from": [
+   48.73525,
+   -121.71027
+  ],
+  "coordinate_key": "48.73525,-121.71027",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/boulder-ridge",
+  "quote": "WTA boulder-ridge page trailhead geo: latitude 48.71398, longitude -121.69028",
+  "reason": "Same as Boulder Ridge entry: WTA geo grounds at 988 ft vs elev 2700 (stored 2721 ft); split evidence, none."
+ },
+ {
+  "id": "wa_dot_mountain_scramble",
+  "i": 0,
+  "name": "Slate Pass / Buckskin Ridge Trailhead",
+  "from": [
+   48.737833,
+   -120.6785
+  ],
+  "op": "move",
+  "to": [
+   48.73225,
+   -120.66827
+  ],
+  "source": "https://www.wta.org/go-hiking/hikes/buckskin-ridge",
+  "quote": "WTA buckskin-ridge page trailhead geo: latitude 48.73225, longitude -120.66827",
+  "ground_ft_at_to": 6867,
+  "reason": "Stored is 974 m from the WTA-published Slate Pass / Buckskin Ridge trailhead; ground there 6867 ft vs stored elev 6900 (stored point grounds at 7162 ft, 262 ft too high)."
+ },
+ {
+  "id": "wa_big_craggy_peak_scramble",
+  "i": 0,
+  "name": "Copper Glance Trailhead",
+  "from": [
+   48.740889,
+   -120.292
+  ],
+  "coordinate_key": "48.740889,-120.292",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/copper-glance-lake",
+  "quote": "WTA copper-glance-lake page trailhead geo: latitude 48.74108, longitude -120.29228",
+  "reason": "Stored is 30 m from WTA Copper Glance Lake trailhead (48.7410833,-120.2922833)."
+ },
+ {
+  "id": "wa_west_craggy_peak_standard_route",
+  "i": 0,
+  "name": "Copper Glance Trailhead",
+  "from": [
+   48.7411,
+   -120.2923
+  ],
+  "coordinate_key": "48.7411,-120.2923",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/copper-glance-lake",
+  "quote": "WTA copper-glance-lake page trailhead geo: latitude 48.74108, longitude -120.29228",
+  "reason": "Stored is 2 m from WTA Copper Glance Lake trailhead."
+ },
+ {
+  "id": "wa_mount_blum_north_ridge",
+  "i": 0,
+  "name": "Baker River Trailhead",
+  "from": [
+   48.75029,
+   -121.5556
+  ],
+  "coordinate_key": "48.75029,-121.5556",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/baker-river",
+  "quote": "WTA baker-river page trailhead geo: latitude 48.75065, longitude -121.55602",
+  "reason": "Stored is 50 m from WTA Baker River trailhead (48.75065,-121.556017)."
+ },
+ {
+  "id": "wa_hagan_mountain_south",
+  "i": 0,
+  "name": "Baker River Trailhead",
+  "from": [
+   48.7507,
+   -121.556
+  ],
+  "coordinate_key": "48.7507,-121.556",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/baker-river",
+  "quote": "WTA baker-river page trailhead geo: latitude 48.75065, longitude -121.55602",
+  "reason": "Stored is 6 m from WTA Baker River trailhead."
+ },
+ {
+  "id": "wa_north_twin_sister_west_ridge",
+  "i": 0,
+  "name": "Middle Fork Nooksack River Bridge / FR 38 Gate",
+  "from": [
+   48.7669,
+   -122.0394
+  ],
+  "coordinate_key": "48.7669,-122.0394",
+  "op": "none",
+  "reason": "No published coordinate for the FR 38 gate / Middle Fork Nooksack bridge parking; unverified."
+ },
+ {
+  "id": "wa_mount_shuksan_sulphide_glacier",
+  "i": 0,
+  "name": "Shannon Ridge Trailhead",
+  "from": [
+   48.76723,
+   -121.61808
+  ],
+  "coordinate_key": "48.76723,-121.61808",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/shannon-ridge",
+  "quote": "WTA shannon-ridge page trailhead geo: latitude 48.754378, longitude -121.59668",
+  "reason": "WTA Shannon Ridge geo (48.7544,-121.5967) is 2122 m away and grounds at 1420 ft vs pin elev 2551 (stored grounds 2556); WTA point does not match the trailhead elevation, split evidence, none."
+ },
+ {
+  "id": "wa_southeast_ridge_se_corner",
+  "i": 0,
+  "name": "Shannon Ridge TH",
+  "from": [
+   48.76727,
+   -121.61795
+  ],
+  "coordinate_key": "48.76727,-121.61795",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/shannon-ridge",
+  "quote": "WTA shannon-ridge page trailhead geo: latitude 48.754378, longitude -121.59668",
+  "reason": "Same as Shannon Ridge entry: WTA geo grounds at 1420 ft vs elev 2500 (stored matches); none."
+ },
+ {
+  "id": "wa_amphitheater_mountain_west_route",
+  "i": 0,
+  "name": "Andrews Creek Trailhead",
+  "from": [
+   48.7837,
+   -120.1086
+  ],
+  "coordinate_key": "48.7837,-120.1086",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/andrews-creek",
+  "quote": "WTA andrews-creek page trailhead geo: latitude 48.784247, longitude -120.108805",
+  "reason": "Stored is 63 m from WTA Andrews Creek trailhead (48.7842471,-120.1088047)."
+ },
+ {
+  "id": "wa_cathedral_peak_pasayten_se_buttress",
+  "i": 0,
+  "name": "Andrews Creek Trailhead",
+  "from": [
+   48.7838,
+   -120.1088
+  ],
+  "coordinate_key": "48.7838,-120.1088",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/andrews-creek",
+  "quote": "WTA andrews-creek page trailhead geo: latitude 48.784247, longitude -120.108805",
+  "reason": "Stored is 40 m from WTA Andrews Creek trailhead."
+ },
+ {
+  "id": "wa_amphitheater_mountain_finger_of_fatwa",
+  "i": 0,
+  "name": "Andrews Creek Trailhead",
+  "from": [
+   48.7842,
+   -120.1088
+  ],
+  "coordinate_key": "48.7842,-120.1088",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/andrews-creek",
+  "quote": "WTA andrews-creek page trailhead geo: latitude 48.784247, longitude -120.108805",
+  "reason": "Stored is 5 m from WTA Andrews Creek trailhead."
+ },
+ {
+  "id": "wa_mount_baker_coleman_headwall",
+  "i": 0,
+  "name": "Heliotrope Ridge Trailhead",
+  "from": [
+   48.80201,
+   -121.89597
+  ],
+  "coordinate_key": "48.80201,-121.89597",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/heliotrope-ridge",
+  "quote": "WTA heliotrope-ridge page trailhead geo: latitude 48.802083, longitude -121.895667",
+  "reason": "Stored is 24 m from WTA Heliotrope Ridge trailhead (48.8020833,-121.8956667)."
+ },
+ {
+  "id": "wa_colfax_peak_kimchi_suicide_volcano",
+  "i": 0,
+  "name": "Heliotrope Ridge Trailhead (Trail #677, FR-39)",
+  "from": [
+   48.80218056,
+   -121.894725
+  ],
+  "coordinate_key": "48.80218056,-121.894725",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/heliotrope-ridge",
+  "quote": "WTA heliotrope-ridge page trailhead geo: latitude 48.802083, longitude -121.895667",
+  "reason": "Stored is 70 m from WTA Heliotrope Ridge trailhead."
+ },
+ {
+  "id": "wa_colfax_peak_cosley_houston",
+  "i": 0,
+  "name": "Heliotrope Ridge Trailhead",
+  "from": [
+   48.80223,
+   -121.895575
+  ],
+  "coordinate_key": "48.80223,-121.895575",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/heliotrope-ridge",
+  "quote": "WTA heliotrope-ridge page trailhead geo: latitude 48.802083, longitude -121.895667",
+  "reason": "Stored is about 15 m from WTA Heliotrope Ridge trailhead."
+ },
+ {
+  "id": "wa_mount_baker_cockscomb_ridge",
+  "i": 0,
+  "name": "Heliotrope Ridge Trailhead",
+  "from": [
+   48.80224,
+   -121.89567
+  ],
+  "coordinate_key": "48.80224,-121.89567",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/heliotrope-ridge",
+  "quote": "WTA heliotrope-ridge page trailhead geo: latitude 48.802083, longitude -121.895667",
+  "reason": "Stored is about 17 m from WTA Heliotrope Ridge trailhead."
+ },
+ {
+  "id": "wa_remmel_mountain_southeast_slope",
+  "i": 0,
+  "name": "Thirtymile Trailhead",
+  "from": [
+   48.8228,
+   -120.0197
+  ],
+  "coordinate_key": "48.8228,-120.0197",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/chewuch",
+  "quote": "WTA chewuch page trailhead geo: latitude 48.82305, longitude -120.01972",
+  "reason": "Stored is about 30 m from WTA Chewuch River (Thirtymile) trailhead at 48.82305,-120.01972; Cathedral Pass Loop page gives 48.821961,-120.0197863."
+ },
+ {
+  "id": "wa_wolframite_mountain_scramble",
+  "i": 0,
+  "name": "Thirtymile Trailhead",
+  "from": [
+   48.822956,
+   -120.019819
+  ],
+  "coordinate_key": "48.822956,-120.019819",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/chewuch",
+  "quote": "WTA chewuch page trailhead geo: latitude 48.82305, longitude -120.01972",
+  "reason": "Stored is about 12 m from WTA Chewuch River (Thirtymile) trailhead."
+ },
+ {
+  "id": "wa_mount_baker_park_glacier_headwall",
+  "i": 0,
+  "name": "Artist Point Trailhead (Chain Lakes/Ptarmigan Ridge Trail)",
+  "from": [
+   48.8463,
+   -121.6927
+  ],
+  "coordinate_key": "48.8463,-121.6927",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/ptarmigan-ridge",
+  "quote": "WTA ptarmigan-ridge page trailhead geo: latitude 48.846333, longitude -121.692667",
+  "reason": "Stored is 4 m from WTA Ptarmigan Ridge / Artist Point trailhead (48.8463333,-121.6926667)."
+ },
+ {
+  "id": "wa_table_mountain_standard_scramble",
+  "i": 0,
+  "name": "Artist Point Trailhead / Parking Lot",
+  "from": [
+   48.8468,
+   -121.6926
+  ],
+  "coordinate_key": "48.8468,-121.6926",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/table-mountain",
+  "quote": "WTA table-mountain page trailhead geo: latitude 48.846842, longitude -121.692559",
+  "reason": "Stored is 6 m from WTA Table Mountain trailhead (48.8468417,-121.6925592)."
+ },
+ {
+  "id": "wa_mount_shuksan_fisher_chimneys",
+  "i": 1,
+  "name": "Lake Ann Trailhead",
+  "from": [
+   48.8500241,
+   -121.6861633
+  ],
+  "coordinate_key": "48.8500241,-121.6861633",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/lake-ann",
+  "quote": "WTA lake-ann page trailhead geo: latitude 48.851097, longitude -121.68608",
+  "reason": "Stored is 119 m from WTA Lake Ann (Mount Baker Highway) trailhead (48.8510965,-121.6860796)."
+ },
+ {
+  "id": "wa_mount_ann_scramble",
+  "i": 0,
+  "name": "Lake Ann Trailhead (Austin Pass)",
+  "from": [
+   48.8511,
+   -121.6861
+  ],
+  "coordinate_key": "48.8511,-121.6861",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/lake-ann",
+  "quote": "WTA lake-ann page trailhead geo: latitude 48.851097, longitude -121.68608",
+  "reason": "Stored is 1 m from WTA Lake Ann trailhead."
+ },
+ {
+  "id": "wa_windy_peak_trail",
+  "i": 0,
+  "name": "Windy Peak Trailhead / Long Swamp Campground",
+  "from": [
+   48.855663,
+   -119.946697
+  ],
+  "coordinate_key": "48.855663,-119.946697",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/windy-peak",
+  "quote": "WTA windy-peak page trailhead geo: latitude 48.85548, longitude -119.94525",
+  "reason": "Stored is 108 m from WTA Windy Peak trailhead (48.85548,-119.94525)."
+ },
+ {
+  "id": "wa_mount_shuksan_hanging_glacier",
+  "i": 0,
+  "name": "White Salmon Road (hairpin) TH",
+  "from": [
+   48.8589,
+   -121.6591
+  ],
+  "coordinate_key": "48.8589,-121.6591",
+  "op": "none",
+  "reason": "No published coordinate: White Salmon Road hairpin pull-off / old lodge site; unpublished."
+ },
+ {
+  "id": "wa_mount_shuksan_white_salmon_glacier",
+  "i": 0,
+  "name": "White Salmon Lodge road gate (Mount Baker Highway hairpin)",
+  "from": [
+   48.8589,
+   -121.659
+  ],
+  "coordinate_key": "48.8589,-121.659",
+  "op": "none",
+  "reason": "No published coordinate: White Salmon Road gate pull-off; unpublished."
+ },
+ {
+  "id": "wa_mount_herman_standard_scramble",
+  "i": 0,
+  "name": "Bagley Lakes Trailhead / Heather Meadows",
+  "from": [
+   48.861419,
+   -121.682622
+  ],
+  "op": "move",
+  "to": [
+   48.8631799,
+   -121.6793076
+  ],
+  "source": "https://www.wta.org/go-hiking/hikes/bagley-lakes",
+  "quote": "WTA bagley-lakes page trailhead geo: latitude 48.8631799, longitude -121.6793076",
+  "ground_ft_at_to": 4231,
+  "reason": "Stored is 312 m from WTA Bagley Lakes trailhead (parking lot signed Bagley Lakes, the same lot the route text describes); ground there 4231 ft vs stored elev 4200."
+ },
+ {
+  "id": "wa_hadley_peak_cougar_divide",
+  "i": 0,
+  "name": "Cougar Divide Trailhead",
+  "from": [
+   48.86773,
+   -121.80637
+  ],
+  "coordinate_key": "48.86773,-121.80637",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/cougar-divide",
+  "quote": "WTA cougar-divide page trailhead geo: latitude 48.8677, longitude -121.806471",
+  "reason": "Stored is 8 m from WTA Cougar Divide trailhead."
+ },
+ {
+  "id": "wa_hadley_peak_skyline_divide",
+  "i": 0,
+  "name": "Skyline Divide Trailhead",
+  "from": [
+   48.88083333,
+   -121.8633333
+  ],
+  "coordinate_key": "48.88083333,-121.8633333",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/skyline-divide",
+  "quote": "WTA skyline-divide page trailhead geo: latitude 48.88095, longitude -121.864617",
+  "reason": "Stored is 95 m from WTA Skyline Divide trailhead (48.88095,-121.8646167)."
+ },
+ {
+  "id": "wa_mount_shuksan_price_glacier",
+  "i": 0,
+  "name": "Nooksack Cirque Trailhead",
+  "from": [
+   48.894,
+   -121.651
+  ],
+  "coordinate_key": "48.894,-121.651",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/nooksack-cirque",
+  "quote": "WTA nooksack-cirque page trailhead geo: latitude 48.889883, longitude -121.674917",
+  "reason": "WTA Nooksack Cirque geo (48.8899,-121.6749) is 1807 m away and grounds at 2415 ft vs pin elev 2200 (stored grounds 2258); stored matches own elev and route text (end of FR-34 near Hannegan Rd), so split evidence, none."
+ },
+ {
+  "id": "wa_mount_sefrit_southwest_ridge",
+  "i": 0,
+  "name": "Nooksack Cirque Trailhead",
+  "from": [
+   48.89401,
+   -121.65259
+  ],
+  "coordinate_key": "48.89401,-121.65259",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/nooksack-cirque",
+  "quote": "WTA nooksack-cirque page trailhead geo: latitude 48.889883, longitude -121.674917",
+  "reason": "Same as Nooksack Cirque entry: WTA geo 1696 m away, grounds 2415 ft vs elev 2140-2200 (stored 2144); none."
+ },
+ {
+  "id": "wa_goat_mountain_south_ridge",
+  "i": 0,
+  "name": "Goat Mountain Trailhead",
+  "from": [
+   48.897635,
+   -121.646195
+  ],
+  "coordinate_key": "48.897635,-121.646195",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/goat-mountain-mount-baker",
+  "quote": "WTA goat-mountain-mount-baker page trailhead geo: latitude 48.8977, longitude -121.6455",
+  "reason": "Stored is about 55 m from WTA Goat Mountain trailhead (48.8977,-121.6455)."
+ },
+ {
+  "id": "wa_windy_peak_iron_gate_trail",
+  "i": 0,
+  "name": "Iron Gate Trailhead",
+  "from": [
+   48.908308,
+   -119.903845
+  ],
+  "coordinate_key": "48.908308,-119.903845",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/windy-peak-loop",
+  "quote": "WTA windy-peak-loop page trailhead geo: latitude 48.908329, longitude -119.903878",
+  "reason": "Stored is about 4 m from WTA Windy Peak Loop (Iron Gate) trailhead (48.908329,-119.903878)."
+ },
+ {
+  "id": "wa_bear_mountain_chilliwack_north_buttress",
+  "i": 0,
+  "name": "Hannegan Pass Trailhead (Trail 674)",
+  "from": [
+   48.9101,
+   -121.5927
+  ],
+  "coordinate_key": "48.9101,-121.5927",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/hannegan-pass",
+  "quote": "WTA hannegan-pass page trailhead geo: latitude 48.9101482, longitude -121.5926627",
+  "reason": "Stored is 6 m from WTA Hannegan Pass trailhead (48.9101482,-121.5926627)."
+ },
+ {
+  "id": "wa_ghost_peak_south_route",
+  "i": 0,
+  "name": "Hannegan Trailhead",
+  "from": [
+   48.910185,
+   -121.591971
+  ],
+  "coordinate_key": "48.910185,-121.591971",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/hannegan-pass",
+  "quote": "WTA hannegan-pass page trailhead geo: latitude 48.9101482, longitude -121.5926627",
+  "reason": "Stored is about 50 m from WTA Hannegan Pass trailhead."
+ },
+ {
+  "id": "wa_castle_in_the_sky",
+  "i": 0,
+  "name": "Hannegan Trailhead",
+  "from": [
+   48.9101854,
+   -121.59197074
+  ],
+  "coordinate_key": "48.9101854,-121.59197074",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/hannegan-pass",
+  "quote": "WTA hannegan-pass page trailhead geo: latitude 48.9101482, longitude -121.5926627",
+  "reason": "Stored is about 50 m from WTA Hannegan Pass trailhead."
+ },
+ {
+  "id": "wa_tomyhoi_peak_southeast_ridge",
+  "i": 0,
+  "name": "Tomyhoi Lake / Yellow Aster Butte Trailhead",
+  "from": [
+   48.9435,
+   -121.6625
+  ],
+  "coordinate_key": "48.9435,-121.6625",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/yellow-aster-butte",
+  "quote": "WTA yellow-aster-butte page trailhead geo: latitude 48.9435167, longitude -121.66245",
+  "reason": "Stored is 2 m from WTA Yellow Aster Butte / Tomyhoi Lake trailhead (48.9435167,-121.66245)."
+ },
+ {
+  "id": "wa_the_pleiades_scramble",
+  "i": 0,
+  "name": "Twin Lakes Trailhead",
+  "from": [
+   48.9512139,
+   -121.6383778
+  ],
+  "op": "move",
+  "to": [
+   48.9522965,
+   -121.6358185
+  ],
+  "source": "https://www.wta.org/go-hiking/hikes/high-pass-1",
+  "quote": "WTA high-pass-1 page trailhead geo: latitude 48.9522965, longitude -121.6358185",
+  "ground_ft_at_to": 5168,
+  "reason": "Stored is 224 m from the WTA High Pass (Twin Lakes Road end) trailhead; ground there 5168 ft vs stored elev 5200."
+ },
+ {
+  "id": "wa_american_border_peak_southeast_face",
+  "i": 0,
+  "name": "Twin Lakes Trailhead",
+  "from": [
+   48.95176,
+   -121.63534
+  ],
+  "coordinate_key": "48.95176,-121.63534",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/high-pass-1",
+  "quote": "WTA high-pass-1 page trailhead geo: latitude 48.9522965, longitude -121.6358185",
+  "reason": "Stored is about 70 m from WTA High Pass (Twin Lakes) trailhead."
+ }
+]
