@@ -1872,3 +1872,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       never draws it.
     - audit:cross-route-pins can answer HTTP 500 on its FIRST page while the database is healthy
       (a 300-row jsonb page). It passed on a single retry both times.
+  - **Follow-up, same day.** (a) A second research pass on the unverified trailheads
+    (`decisions-G.json`, `trailheads-unverified.json`) verified 9, found 5 that nothing publishes and
+    left 3 unverified. It moved Davis Peak's two Gorge Creek pins from the creek mouth to GNIS
+    1529797 Gorge Creek Falls (ground 1,096 ft, the pins' own elev). (b) The 19 routes in
+    audit:waypoints' TRACK DOES NOT REACH THE SUMMIT were checked for a track recorded somewhere
+    else (`track-ends.mjs`: where it starts, ends and tops out on the ground). Only ONE was:
+    Berdeen Peak's 100-point "track" was the drive up Bacon Creek Road from SR 20 to the trailhead
+    (high point 795 ft for a 6,420 ft summit), so its `gpx` was nulled
+    (`remove-offroute-tracks.mjs`, rollback `scripts/rollback-wa-offroute-tracks-*.json`). The rest
+    are the route's own approach stopping short, which the app already captions. Goode NE Face,
+    Gibraltar Ledges, Summit Chief and Mix-up start 2-11 km from the stored trailhead, but they end
+    on their own peak, so the difference is a different way in, not a different mountain. Curtis Ridge
+    and Emmons share one White River -> Camp Schurman recording, which Curtis Ridge's own pins follow.
+    Do not re-derive these.
