@@ -1,12 +1,13 @@
 // Match the Washington FKT tracks to WA routes by GEOMETRY. Read-only, no database.
 //   round   — starts AND ends within 300 m of a Trailhead pin and passes within 300 m of the Summit
-//   oneway  — starts within 300 m of a Trailhead pin and passes within 300 m of the Summit
+//   oneway  — starts within 300 m of a Trailhead pin and ENDS within 300 m of the Summit
 // Geometry only says the track visits the same two points. Whether it is the same ROUTE is decided
 // afterwards, by research (owner, 2026-10-29: "make sure the route is the same").
 // Usage: node match-wa.mjs <tracks.json>   -> research-data/gpx-tracks-fkt-wa-2026-10-29/candidates.json
 import fs from "fs";
 import { haversineM } from "./rule.mjs";
 const D = process.env.FKT_DIR || "research-data/gpx-tracks-fkt-wa-2026-10-29";   // FKT_DIR: another state set
+const OUT = process.env.FKT_OUT || D;   // FKT_OUT: write candidates elsewhere, keeping an earlier wave's record
 const targets = JSON.parse(fs.readFileSync(`${D}/targets.json`, "utf8"));
 const tracks = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
 const TOL = 300, PAD = 0.01;
@@ -28,11 +29,14 @@ for (const r of targets) {
     if (startM > TOL || s.m > TOL) continue;
     // a track whose summit visit is its LAST point and that ends at the trailhead is not possible;
     // one that ends far from the trailhead is one-way
-    if (endM > TOL) continue;   // owner: only the full trailhead -> summit -> trailhead route, never one-way
+    // owner 2026-10-30: one-way tracks are allowed too, but only trailhead -> summit: a line that goes
+    // on past the summit is a traverse or another descent, so a one-way must END at the summit
+    const endSumM = Math.min(...sm.map(p => haversineM(t.pts.at(-1), p)));
+    if (endM > TOL && endSumM > TOL) continue;
     out.push({ id: r.id, name: r.name, discipline: r.discipline, slug: t.slug, fktTitle: t.title, tier: endM <= TOL ? "round" : "oneway",
       startM: Math.round(startM), endM: Math.round(endM), summitM: Math.round(s.m), points: t.pts.length });
   }
 }
-fs.writeFileSync(`${D}/candidates.json`, JSON.stringify(out, null, 1));
+fs.writeFileSync(`${OUT}/candidates.json`, JSON.stringify(out, null, 1));
 const ids = new Set(out.map(o => o.id));
 console.log(`targets ${targets.length}; tracks ${tracks.length}; pairs ${out.length} (round ${out.filter(o => o.tier === "round").length}, oneway ${out.filter(o => o.tier === "oneway").length}); routes ${ids.size}`);
