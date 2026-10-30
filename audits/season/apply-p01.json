@@ -1,0 +1,728 @@
+{
+ "ca_joshua_tree_national_park": {
+  "_expect": {
+   "name": "Joshua Tree National Park",
+   "region": "California"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "ca_central_joshua_tree": {
+  "_expect": {
+   "name": "Central Joshua Tree",
+   "region": "California"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "ca_indian_cove": {
+  "_expect": {
+   "name": "Indian Cove",
+   "region": "California"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "ca_quail_springs_area": {
+  "_expect": {
+   "name": "Quail Springs Area",
+   "region": "California"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "ky_red_river_gorge": {
+  "_expect": {
+   "name": "Red River Gorge",
+   "region": "Kentucky"
+  },
+  "season_months": [
+   3,
+   4,
+   9,
+   10,
+   11
+  ]
+ },
+ "ky_brrp_bald_rock_recreational_preserve": {
+  "_expect": {
+   "name": "(BRRP) Bald Rock Recreational Preserve",
+   "region": "Kentucky"
+  },
+  "season_months": [
+   3,
+   4,
+   9,
+   10,
+   11
+  ]
+ },
+ "ky_cathedral_domain": {
+  "_expect": {
+   "name": "Cathedral Domain",
+   "region": "Kentucky"
+  },
+  "season_months": [
+   3,
+   4,
+   9,
+   10,
+   11
+  ]
+ },
+ "ky_crp_cliffview_recreational_preserve": {
+  "_expect": {
+   "name": "(CRP) Cliffview Recreational Preserve",
+   "region": "Kentucky"
+  },
+  "season_months": [
+   3,
+   4,
+   9,
+   10,
+   11
+  ]
+ },
+ "ky_red_river_gorge_bouldering": {
+  "_expect": {
+   "name": "Red River Gorge Bouldering",
+   "region": "Kentucky"
+  },
+  "season_months": [
+   3,
+   4,
+   9,
+   10,
+   11
+  ]
+ },
+ "ky_southern_region_crags_miscellaneous": {
+  "_expect": {
+   "name": "Southern Region Crags (Miscellaneous)",
+   "region": "Kentucky"
+  },
+  "season_months": [
+   3,
+   4,
+   9,
+   10,
+   11
+  ]
+ },
+ "ny_the_gunks": {
+  "_expect": {
+   "name": "The Gunks",
+   "region": "New York"
+  },
+  "season_months": [
+   4,
+   5,
+   9,
+   10,
+   11
+  ]
+ },
+ "ny_antlion_cliff": {
+  "_expect": {
+   "name": "Antlion Cliff",
+   "region": "New York"
+  },
+  "season_months": [
+   4,
+   5,
+   9,
+   10,
+   11
+  ]
+ },
+ "ny_white_dot": {
+  "_expect": {
+   "name": "White Dot",
+   "region": "New York"
+  },
+  "season_months": [
+   4,
+   5,
+   9,
+   10,
+   11
+  ]
+ },
+ "wv_beauty_mountain": {
+  "_expect": {
+   "name": "Beauty Mountain",
+   "region": "West Virginia"
+  },
+  "season_months": [
+   4,
+   5,
+   6,
+   9,
+   10
+  ]
+ },
+ "wv_bridge_area": {
+  "_expect": {
+   "name": "Bridge Area",
+   "region": "West Virginia"
+  },
+  "season_months": [
+   4,
+   5,
+   6,
+   9,
+   10
+  ]
+ },
+ "wv_cotton_hill": {
+  "_expect": {
+   "name": "Cotton Hill",
+   "region": "West Virginia"
+  },
+  "season_months": [
+   4,
+   5,
+   6,
+   9,
+   10
+  ]
+ },
+ "wv_fern_buttress": {
+  "_expect": {
+   "name": "Fern Buttress",
+   "region": "West Virginia"
+  },
+  "season_months": [
+   4,
+   5,
+   6,
+   9,
+   10
+  ]
+ },
+ "wv_interp_boulders": {
+  "_expect": {
+   "name": "Interp Boulders",
+   "region": "West Virginia"
+  },
+  "season_months": [
+   4,
+   5,
+   6,
+   9,
+   10
+  ]
+ },
+ "wv_junkyard_area": {
+  "_expect": {
+   "name": "Junkyard Area",
+   "region": "West Virginia"
+  },
+  "season_months": [
+   4,
+   5,
+   6,
+   9,
+   10
+  ]
+ },
+ "wv_kaymoor": {
+  "_expect": {
+   "name": "Kaymoor",
+   "region": "West Virginia"
+  },
+  "season_months": [
+   4,
+   5,
+   6,
+   9,
+   10
+  ]
+ },
+ "wv_needleseye_boulder_park": {
+  "_expect": {
+   "name": "Needleseye Boulder Park",
+   "region": "West Virginia"
+  },
+  "season_months": [
+   4,
+   5,
+   6,
+   9,
+   10
+  ]
+ },
+ "wv_sunshine_boulders": {
+  "_expect": {
+   "name": "Sunshine Boulders",
+   "region": "West Virginia"
+  },
+  "season_months": [
+   4,
+   5,
+   6,
+   9,
+   10
+  ]
+ },
+ "wv_treasure_planet": {
+  "_expect": {
+   "name": "Treasure Planet",
+   "region": "West Virginia"
+  },
+  "season_months": [
+   4,
+   5,
+   6,
+   9,
+   10
+  ]
+ },
+ "wy_crag_6": {
+  "_expect": {
+   "name": "Crag 6",
+   "region": "Wyoming"
+  },
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ]
+ },
+ "wy_downtown": {
+  "_expect": {
+   "name": "Downtown",
+   "region": "Wyoming"
+  },
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ]
+ },
+ "wy_dry_wall": {
+  "_expect": {
+   "name": "Dry Wall",
+   "region": "Wyoming"
+  },
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ]
+ },
+ "wy_french_cattle_ranch": {
+  "_expect": {
+   "name": "French Cattle Ranch",
+   "region": "Wyoming"
+  },
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ]
+ },
+ "wy_lake_point": {
+  "_expect": {
+   "name": "Lake Point",
+   "region": "Wyoming"
+  },
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ]
+ },
+ "wy_mecca": {
+  "_expect": {
+   "name": "Mecca",
+   "region": "Wyoming"
+  },
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ]
+ },
+ "wy_mondo_beyondo": {
+  "_expect": {
+   "name": "Mondo Beyondo",
+   "region": "Wyoming"
+  },
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ]
+ },
+ "wy_resurrection_rocks": {
+  "_expect": {
+   "name": "Resurrection Rocks",
+   "region": "Wyoming"
+  },
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ]
+ },
+ "wy_salt_lick": {
+  "_expect": {
+   "name": "Salt Lick",
+   "region": "Wyoming"
+  },
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ]
+ },
+ "wy_sphinx_sector": {
+  "_expect": {
+   "name": "Sphinx Sector",
+   "region": "Wyoming"
+  },
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ]
+ },
+ "tx_hueco_tanks": {
+  "_expect": {
+   "name": "Hueco Tanks",
+   "region": "Texas"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   11,
+   12
+  ]
+ },
+ "tx_east_spur": {
+  "_expect": {
+   "name": "East Spur",
+   "region": "Texas"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   11,
+   12
+  ]
+ },
+ "tx_west_mountain": {
+  "_expect": {
+   "name": "West Mountain",
+   "region": "Texas"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   11,
+   12
+  ]
+ },
+ "tn_jungle_gym_fromundathunda_area": {
+  "_expect": {
+   "name": "Jungle Gym/ Fromundathunda Area",
+   "region": "Tennessee"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "tn_main_area": {
+  "_expect": {
+   "name": "Main Area",
+   "region": "Tennessee"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "tn_moss_man_area": {
+  "_expect": {
+   "name": "Moss Man Area",
+   "region": "Tennessee"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "tn_sternum_area": {
+  "_expect": {
+   "name": "Sternum Area",
+   "region": "Tennessee"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "tn_super_mario_area": {
+  "_expect": {
+   "name": "Super Mario Area",
+   "region": "Tennessee"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "tn_the_destroyer_boulders": {
+  "_expect": {
+   "name": "The Destroyer Boulders",
+   "region": "Tennessee"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "tn_the_fairways": {
+  "_expect": {
+   "name": "The Fairways",
+   "region": "Tennessee"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "tn_the_hidden_area": {
+  "_expect": {
+   "name": "The Hidden Area",
+   "region": "Tennessee"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "nv_red_rock_bouldering": {
+  "_expect": {
+   "name": "Red Rock Bouldering",
+   "region": "Nevada"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "nv_first_pullout_boulders": {
+  "_expect": {
+   "name": "First Pullout Boulders",
+   "region": "Nevada"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "nv_gateway_canyon_boulders": {
+  "_expect": {
+   "name": "Gateway Canyon Boulders",
+   "region": "Nevada"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "nv_mustang_canyon": {
+  "_expect": {
+   "name": "Mustang Canyon",
+   "region": "Nevada"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "nv_red_spring_boulders": {
+  "_expect": {
+   "name": "Red Spring Boulders",
+   "region": "Nevada"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "nv_second_pullout_boulders": {
+  "_expect": {
+   "name": "Second Pullout Boulders",
+   "region": "Nevada"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "nv_willow_springs_boulders": {
+  "_expect": {
+   "name": "Willow Springs Boulders",
+   "region": "Nevada"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ },
+ "nv_windy_canyon_boulders": {
+  "_expect": {
+   "name": "Windy Canyon Boulders",
+   "region": "Nevada"
+  },
+  "season_months": [
+   1,
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ]
+ }
+}
