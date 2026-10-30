@@ -207,6 +207,14 @@ export const MOVED = {
     "src/components/FullProfile.tsx",
     "src/components/PolicyUpdateNotice.tsx",
   ],
+  "EnrichmentPanels.jsx": [
+    "src/components/Head.tsx",
+    "src/components/EmptyPanel.tsx",
+    "src/components/PeakMetadataPanel.tsx",
+    "src/components/SeasonalGuidancePanel.tsx",
+    "src/components/CrowdsPanel.tsx",
+    "src/components/PartnerRequirementsPanel.tsx",
+  ],
   "ClimbMatch.jsx": [
     "src/components/CrewRequestsView.tsx",
     "src/components/CrewFriendsView.tsx",

@@ -49,6 +49,9 @@ function ownStart(src, stmts, i) {
   const cs = (st.leadingComments || []).filter(c => c.start >= prevEnd && (!prevEnd || /\n/.test(src.slice(prevEnd, c.start))));
   const c = cs[cs.length - 1];
   if (c && !src.slice(c.end, st.start).trim() && (src.slice(c.end, st.start).match(/\n/g) || []).length <= 1) start = c.start;
+  // A block of `//` lines is one comment node PER LINE: take the whole contiguous run, not only its
+  // last line (PR64 found three such blocks orphaned in the parent by the old rule).
+  if (start === (c && c.start)) for (let k = cs.length - 2; k >= 0; k--) { const gap = src.slice(cs[k].end, cs[k + 1].start); if (gap.trim() || (gap.match(/\n/g) || []).length !== 1) break; start = cs[k].start; }
   return start;
 }
 // A comment after the declaration on its own line (and nothing else there) goes with it.

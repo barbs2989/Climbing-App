@@ -1,35 +1,16 @@
 // Enrichment data display components
 // Used on route detail page, Details and Safety tabs
-import { blueOnBlue } from "./lib/contrast.js";
+import { monthRank, seasonWindowMonths } from "./lib/seasonWindow.js";
+import PeakMetadataPanel from "./src/components/PeakMetadataPanel.tsx";
+import SeasonalGuidancePanel from "./src/components/SeasonalGuidancePanel.tsx";
+import CrowdsPanel from "./src/components/CrowdsPanel.tsx";
+import PartnerRequirementsPanel from "./src/components/PartnerRequirementsPanel.tsx";
+export { PartnerRequirementsPanel };
+export { CrowdsPanel };
+export { SeasonalGuidancePanel };
+export { PeakMetadataPanel };
+export { monthRank, seasonWindowMonths };
 
-/* = core's CardHead, drawn from this file's own C prop: core imports this file, so importing
-   CardHead back would be circular. Keep the two in step. */
-function Head({C,style,children}){return <div role="heading" aria-level={2} style={Object.assign({display:"flex",alignItems:"center",gap:7,minWidth:0,fontSize:12,fontWeight:800,color:C.text,letterSpacing:0.5,textTransform:"uppercase"},style)}><span aria-hidden="true" style={{width:3,height:12,borderRadius:2,background:C.blueSolid,flexShrink:0}}/><span style={{minWidth:0}}>{children}</span></div>;}
-
-export function PeakMetadataPanel({route, C, ActionIcon}) {
-  const LBL={fontSize:10,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.6}; /* = core's SUB_LABEL, from this panel's own C prop */
-  if (!route.peakMetadata) return null;
-  const {county, range, firstAscent} = route.peakMetadata;
-  // Only surface facts that actually have data — county in particular is populated
-  // for a handful of hand-curated peaks but has no DB source for most of the catalog,
-  // so a permanent "—" placeholder there was misleading rather than informative.
-  // Elevation and prominence are intentionally omitted here — TechStats' "High point"
-  // and "Prominence" stats right above already show the same figures for peak routes.
-  const meta = [
-    range ? ["Range", range] : null,
-    county ? ["County", county] : null,
-  ].filter(Boolean);
-  // `geology` is deliberately NOT rendered here any more — it is the "About this peak"
-  // prose, and it now sits in the route's top description card so all the narrative on the
-  // page is in one place. It stays destructured only so this comment has something to point
-  // at; the panel is range/county/first-ascent. If you re-add it here it will render twice.
-  if (!meta.length && !firstAscent) return null;
-  return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 15px",marginBottom:13}}>
-    <Head C={C} style={{marginBottom:10}}><span style={{display:"inline-flex",alignItems:"center",gap:7}}><ActionIcon name="mountain" size={14} color={C.text}/>PEAK</span></Head>
-    {meta.length?<div style={{display:"flex",flexWrap:"wrap",gap:14,marginBottom:firstAscent?12:0}}>{meta.map(([label,val])=><div key={label} style={{fontSize:12.5,color:C.textSub}}><span style={{color:C.textMuted}}>{label}: </span>{val}</div>)}</div>:null}
-    {firstAscent?<div style={{paddingTop:meta.length?11:0,borderTop:meta.length?"1px solid "+C.borderLight:"none"}}><div style={{...LBL,marginBottom:3}}>First Ascent</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.5}}>{firstAscent.date||""}{ firstAscent.date?" by ":""}{(firstAscent.climbers||[]).join(", ")}{firstAscent.notes?<div style={{marginTop:4,fontSize:12,color:C.textMuted,fontStyle:"italic"}}>{firstAscent.notes}</div>:null}</div></div>:null}
-  </div>;
-}
 
 // Long hand-written/generated blurbs (peak geology blurbs, approach/descent narrative, etc.)
 // are stored as one dense paragraph. Break them into readable paragraphs on 2-4 sentence
@@ -68,89 +49,6 @@ export function splitParagraphs(text) {
   return paras.filter(Boolean);
 }
 
-export function monthRank(name){
-  const n=String(name).trim().toLowerCase();
-  const full=["january","february","march","april","may","june","july","august","september","october","november","december"];
-  let i=full.indexOf(n);
-  if(i>=0)return i;
-  const abbr=["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
-  i=abbr.indexOf(n.slice(0,3));
-  return i>=0?i:99;
-}
-
-// A route's `season` column is a WINDOW ("Jun-Sep", "Mid-July to September"), and on 535 of the
-// 584 routes whose SEASONAL GUIDANCE had no researched monthBreakdown it is the only month-level
-// fact there is. Those panels printed one sentence while 502 others printed a month grid, so the
-// same section read differently from route to route. This reads the window STRICTLY: a leading
-// month range (or "year-round") and nothing else, or null. Season words ("Summer-Fall") and prose
-// ("Dec-Apr on ski; Jul-Oct on foot") are refused rather than guessed into months, and so is a
-// lone month followed by commentary — "Jul (best); serviceable Jun-Aug" and "Aug (first ascent
-// conditions)" are notes about ONE month, not the season. An end named early/mid/late is only
-// partly in season and is returned in `partial`.
-const SEASON_MON="(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\\.?";
-const SEASON_Q="(?:(early|mid|late)[- ])?";
-const SEASON_RANGE_RE=new RegExp("^"+SEASON_Q+SEASON_MON+"(?:\\s*(?:[-–—]|to|through|thru)\\s*"+SEASON_Q+SEASON_MON+")?\\s*($|[(;,.])");
-const MONTH_ABBR=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-export function seasonWindowMonths(season){
-  if(!season)return null;
-  const s=String(season).trim().toLowerCase().replace(/^~\s*/,"");
-  if(/^(year[- ]round|all year)\b/.test(s))return {months:[0,1,2,3,4,5,6,7,8,9,10,11],partial:[]};
-  const m=s.match(SEASON_RANGE_RE);
-  if(!m)return null;
-  const [,q1,m1,q2,m2,tail]=m;
-  if(!m2&&tail)return null;
-  const a=monthRank(m1),b=m2?monthRank(m2):a;
-  if(a>11||b>11)return null;
-  const months=[];
-  for(let i=a,g=0;g<12;g++,i=(i+1)%12){months.push(i);if(i===b)break;}
-  const partial=[];if(q1)partial.push(a);if(q2&&m2)partial.push(b);
-  return {months,partial};
-}
-
-// The empty state of a section that pertains to the route: the same card and heading, with a prompt
-// to fill it, so a gap reads as a gap a climber can close rather than a missing section.
-function EmptyPanel({C, ActionIcon, icon, title, what, cta, onAdd}) {
-  return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 15px",marginBottom:13}}><Head C={C} style={{marginBottom:8}}><span style={{display:"inline-flex",alignItems:"center",gap:7}}><ActionIcon name={icon} size={14} color={C.text}/>{title}</span></Head><div style={{paddingLeft:9,borderLeft:"2px solid "+C.borderLight}}><span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.55}}>{what}</span><button onClick={onAdd} style={{display:"block",marginTop:1,padding:"5px 0",border:"none",background:"none",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer",fontFamily:"inherit"}}>{cta}</button></div></div>;
-}
-
-export function SeasonalGuidancePanel({route, C, ActionIcon, onAdd}) {
-  const LBL={fontSize:10,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.6}; /* = core's SUB_LABEL, from this panel's own C prop */
-  const {optimalWindow, monthBreakdown} = route.seasonalGuidance || {};
-  const sortedMonths = monthBreakdown ? Object.entries(monthBreakdown).sort((a,b)=>monthRank(a[0])-monthRank(b[0])) : [];
-  // With no researched breakdown the calendar comes from the route's own season window, and says so.
-  const win = sortedMonths.length ? null : seasonWindowMonths(route.season);
-  // Empty: a placeholder a climber can fill, when the caller can open the form (onAdd); otherwise nothing.
-  if (!optimalWindow && !sortedMonths.length && !win) return onAdd ? <EmptyPanel C={C} ActionIcon={ActionIcon} icon="calendar" title="SEASONAL GUIDANCE" what="No season information for this climb yet" cta="Add the best season" onAdd={onAdd}/> : null;
-  const colors={optimal:[C.green,C.greenBg],good:[C.blue,C.blueBg],marginal:[C.amber,C.amberBg],risky:[C.red,C.redBg]};
-  const byIdx={};sortedMonths.forEach(([month,info])=>{const i=monthRank(month);if(i<12&&info)byIdx[i]=info;});
-  // One 12-month calendar on every panel that has month-level data, so the section has the same
-  // shape on every route. Each cell carries its status as a WORD, not only a colour.
-  const cells = sortedMonths.length ? MONTH_ABBR.map((mn,i)=>{const info=byIdx[i];if(!info)return [mn,"—",C.textMuted,C.surface];const [col,bg]=colors[info.status]||[C.textMuted,C.surface];return [mn,info.status||"—",col,bg];})
-    : win ? MONTH_ABBR.map((mn,i)=>win.months.includes(i)?(win.partial.includes(i)?[mn,"part",C.green,C.surface]:[mn,"in season",C.green,C.greenBg]):[mn,"off",C.textMuted,C.surface]) : null;
-  // Each month carries {status, reason} and only `status` was ever printed, so a tile read
-  // "July / good" — a verdict with its justification sitting unused in the same object, on 501
-  // routes. The calendar now carries the status; the reasons are listed under it.
-  const reasons = sortedMonths.filter(([,info])=>info&&info.reason);
-  return <div id="seasonal-guidance" style={{scrollMarginTop:"80px",background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 15px",marginBottom:13}}><Head C={C} style={{marginBottom:10}}><span style={{display:"inline-flex",alignItems:"center",gap:7}}><ActionIcon name="calendar" size={14} color={C.text}/>SEASONAL GUIDANCE</span></Head>{optimalWindow?<div style={{background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:9,padding:"10px 12px",marginBottom:12}}><div style={{...LBL,marginBottom:3,color:C.green}}>Optimal window</div><div style={{fontSize:13,color:C.text}}>{optimalWindow}</div></div>:null}{cells?<div role="list" aria-label="Month by month" style={{display:"grid",gridTemplateColumns:"repeat(6,minmax(0,1fr))",gap:5,marginBottom:reasons.length||win?10:0}}>{cells.map(([mn,word,col,bg])=><div key={mn} role="listitem" style={{background:bg,border:"1px solid "+col+"55",borderRadius:7,padding:"5px 2px",textAlign:"center",minWidth:0}}><div style={{fontSize:11.5,fontWeight:700,color:blueOnBlue(col,bg,C.card)?"#fff":col}}>{mn}</div><div style={{fontSize:9.5,color:C.textSub,overflowWrap:"anywhere"}}>{word}</div></div>)}</div>:null}{win?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45}}>{"From this route's season ("+String(route.season).split(/[(;]/)[0].trim().replace(/[,.]$/,"")+"). No month-by-month notes for this route yet."}</div>:null}{reasons.length?<div style={{display:"grid",gridTemplateColumns:"1fr",gap:8}}>{reasons.map(([month,info])=>{const [col,bg]=colors[info.status]||[C.textMuted,C.surface];return <div key={month} style={{background:bg,border:"1px solid "+col+"55",borderRadius:9,padding:"8px 10px"}}><div style={{display:"flex",alignItems:"baseline",gap:7}}><div style={{fontSize:12,fontWeight:700,color:blueOnBlue(col,bg,C.card)?"#fff":col}}>{month}</div><div style={{fontSize:11,color:C.textSub}}>{info.status}</div></div><div style={{fontSize:11.5,color:C.textSub,lineHeight:1.45,marginTop:4}}>{info.reason}</div></div>;})}</div>:null}</div>;
-}
-
-// `reported` is what climbers who logged it said about the crowds ({value, n, of, when, stale}),
-// computed in App from every trip report. It renders even where the catalog has no crowd
-// estimate at all -- that is most routes, and a real party's word is the better answer anyway.
-export function CrowdsPanel({route, reported, C, ActionIcon, onAdd}) {
-  const LBL={fontSize:10,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.6}; /* = core's SUB_LABEL, from this panel's own C prop */
-  if (!route.crowds && !reported) return onAdd ? <EmptyPanel C={C} ActionIcon={ActionIcon} icon="user" title="CROWDS & SOLITUDE" what="No crowd reports for this climb yet" cta="Add what you know" onAdd={onAdd}/> : null;
-  const {estimatePerSeason, peakTraffic, solitudeRating} = route.crowds || {};
-  return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 15px",marginBottom:13}}><Head C={C} style={{marginBottom:10}}><span style={{display:"inline-flex",alignItems:"center",gap:7}}><ActionIcon name="user" size={14} color={C.text}/>CROWDS & SOLITUDE</span></Head>{reported?<div style={{background:reported.stale?C.amberBg:C.blueBg,border:"1px solid "+(reported.stale?C.amber+"55":C.blueDim),borderRadius:9,padding:"9px 11px",marginBottom:10}}><div style={{fontSize:11.5,fontWeight:700,color:reported.stale?C.amber:C.blue,marginBottom:2}}>{reported.stale?"Last reported by climbers":"Climbers report"}</div><div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{reported.value}</div><div style={{fontSize:11.5,color:C.textMuted,marginTop:2}}>{reported.n+" of "+reported.of+(reported.of===1?" report":" reports")+(reported.when?" · newest "+reported.when:"")}</div></div>:null}{estimatePerSeason?<div style={{marginBottom:10}}><div style={{...LBL,marginBottom:2}}>Parties per season</div><div style={{fontSize:typeof estimatePerSeason==="number"?14:13,fontWeight:typeof estimatePerSeason==="number"?700:400,color:typeof estimatePerSeason==="number"?C.text:C.textSub,lineHeight:1.5}}>{typeof estimatePerSeason==="number"?estimatePerSeason+"+":estimatePerSeason}</div></div>:null}{peakTraffic?<div style={{marginBottom:10}}><div style={{...LBL,marginBottom:2}}>Peak traffic</div><div style={{fontSize:13,color:C.textSub}}>{peakTraffic}</div></div>:null}{solitudeRating?(()=>{const _sr=Math.max(0,Math.min(5,Math.round(Number(solitudeRating))||0));return _sr?<div><div style={{...LBL,marginBottom:3}}>Solitude rating</div><div style={{fontSize:16}}>{'★'.repeat(_sr)+'☆'.repeat(5-_sr)}</div></div>:null;})():null}</div>;
-}
-
-
-export function PartnerRequirementsPanel({route, C, ActionIcon}) {
-  const LBL={fontSize:10,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.6}; /* = core's SUB_LABEL, from this panel's own C prop */
-  if (!route.partnerRequirements) return null;
-  const {experienceLevel, fitnessSpec, requiredSkills, approachTime} = route.partnerRequirements;
-  return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 15px",marginBottom:13}}><Head C={C} style={{marginBottom:10}}><span style={{display:"inline-flex",alignItems:"center",gap:7}}><ActionIcon name="partners" size={14} color={C.text}/>PARTNER REQUIREMENTS</span></Head>{experienceLevel?<div style={{marginBottom:10}}><div style={{...LBL,marginBottom:2}}>Experience level</div><div style={{fontSize:13,color:C.textSub}}>{experienceLevel}</div></div>:null}{fitnessSpec?<div style={{marginBottom:10}}><div style={{...LBL,marginBottom:2}}>Fitness specs</div>{typeof fitnessSpec==="string"?<div style={{fontSize:13,color:C.textSub}}>{fitnessSpec}</div>:<div style={{fontSize:12.5,color:C.textSub}}>{Object.entries(fitnessSpec).map(([k,v])=>k+": "+v).join(" · ")}</div>}</div>:null}{requiredSkills&&requiredSkills.length?<div style={{marginBottom:10}}><div style={{...LBL,marginBottom:3}}>Required skills</div><div style={{display:"flex",gap:4,flexWrap:"wrap"}}>{requiredSkills.map(s=><span key={s} style={{fontSize:11.5,color:C.onSolid,background:C.blueBg,padding:"3px 8px",borderRadius:6}}>{s}</span>)}</div></div>:null}{approachTime?<div><div style={{...LBL,marginBottom:2}}>Approach time</div><div style={{fontSize:13,color:C.textSub}}>{approachTime}</div></div>:null}</div>;
-}
 
 // DataQualityPanel (the DATA QUALITY box) was removed along with DATA CONFIDENCE: both
 // reported how complete a route's data was, at the top of Overview, and per-section
