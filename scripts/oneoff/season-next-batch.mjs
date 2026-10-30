@@ -14,7 +14,16 @@ const done = new Set(fs.existsSync("audits/season/attempted.json") ? JSON.parse(
 const list = JSON.parse(fs.readFileSync("audits/season/parents.json", "utf8"))
   .filter(e => !["state", "country"].includes(e.type) && !done.has(e.id)).slice(0, n);
 const nm = id => (byId.get(id) || {}).name || null;
-console.log(JSON.stringify(list.map(e => {
+const out = list.map(e => {
   const a = byId.get(e.id) || {}, p = a.parent_id ? byId.get(a.parent_id) : null;
   return { id: e.id, name: e.name, region: e.region, type: e.type, inside: [p && p.name, p && p.parent_id && nm(p.parent_id)].filter(Boolean).join(" < "), lat: e.lat, lng: e.lng, routes: e.uncovered };
-}), null, 1));
+});
+// --round NN writes audits/season/pick-NN.json and one text list per agent (pick-NNa.txt, -b) instead.
+const round = opt("--round", null);
+if (!round) { console.log(JSON.stringify(out, null, 1)); process.exit(0); }
+fs.writeFileSync(`audits/season/pick-${round}.json`, JSON.stringify(out, null, 1));
+const line = e => `${e.id} | ${e.name} | ${e.region} | inside: ${e.inside} | ${e.lat == null ? "?" : e.lat.toFixed(3)},${e.lng == null ? "?" : e.lng.toFixed(3)}`;
+const half = Math.ceil(out.length / 2);
+fs.writeFileSync(`audits/season/pick-${round}a.txt`, out.slice(0, half).map(line).join("\n") + "\n");
+fs.writeFileSync(`audits/season/pick-${round}b.txt`, out.slice(half).map(line).join("\n") + "\n");
+console.log(`round ${round}: ${out.length} areas, ${out.reduce((s, e) => s + e.routes, 0)} routes`);

@@ -14,7 +14,9 @@ How to research (WebSearch — use mode "extended" when a standard search is thi
   second that is consistent with it). If sources disagree, take the window most of them share and
   say so in the note.
 - Map season words to months only when a source gives no months: spring = Mar-May, summer =
-  Jun-Aug, fall/autumn = Sep-Nov, winter = Dec-Feb. If a source is more precise ("late March to
+  Jun-Aug, fall/autumn = Sep-Nov, winter = Dec-Feb — and only when at least ONE other source names
+  months that agree. Season words alone are "low". Watch the climate: in the north or at altitude
+  "spring" seldom means March (snow), so prefer the months a source actually names. If a source is more precise ("late March to
   early June"), use the months it names (a month named as a partial start or end counts).
 - "Year-round" = all 12 months only when sources say so plainly.
 - The area is identified by name, state, its parent areas and a coordinate. Make sure each source is
