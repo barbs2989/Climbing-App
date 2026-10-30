@@ -1956,3 +1956,52 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     on their own peak, so the difference is a different way in, not a different mountain. Curtis Ridge
     and Emmons share one White River -> Camp Schurman recording, which Curtis Ridge's own pins follow.
     Do not re-derive these.
+- **OUT-OF-STATE WAYPOINT AUDIT + WA SUMMITS ONE BY ONE, 2026-10-30** (owner note: "Way points
+  markers are still way off for many routes. Start with just researching trailhead location and
+  audit the map. Do summit then do each 1 by 1 in smaller batches"). Washington had been done the
+  same day (above); this pass took every route OUTSIDE Washington that has waypoints, then the WA
+  summit pins that pass had not researched one by one. Scripts: `scripts/oneoff/oos-waypoint-audit/`
+  (`apply.mjs` is the WA one with its paths changed, so the same gates hold). Data and every
+  decision with its source: `research-data/oos-waypoint-audit-2026-10-30/`.
+  - **Census (`snapshot.mjs`, `census.mjs`):** only 112 non-WA routes carry waypoints, with 213 pins:
+    90 trailhead pins (83 distinct coordinates), 103 summit pins and 20 others. No impossible
+    distance pair and no non-summit pin off its stated height. Only 14 of the routes have more than
+    two pins.
+  - **Trailheads (`trailhead-batches.mjs`, batches T1-T9 plus a second pass 2P1-2P4):** every one of
+    the 83 coordinates checked against a published point: OSM `highway=trailhead` nodes, USFS, NPS,
+    GNIS buildings, Oregon Hikers, and others. 14 pins moved, by 170 m to 1.7 km: Whitney Portal,
+    Meysan, Happy Isles x2, Cathedral Lakes, Saddlebag x2, Leavitt Meadow, Bear Lake (+ elev 9,475),
+    Adirondak Loj, Devils Lake, Mt Bachelor West Village, and Timberline's climbers' start, converted
+    from the USFS's published UTM point. Refused on review:
+    - Lupine Meadows: listing sites only, and the other route on that lot stays, so one lot would
+      have become two points.
+    - Twin Lakes: the proposed point is the Robinson Creek trailhead, but Matterhorn's North Arete
+      starts up Horse Creek.
+    Nothing publishes Interlakes, the two Tenaya pullouts, Pass Creek road end, or the PCT/Old
+    Santiam crossing.
+  - **Summits (`summits-*.json`, S1-S4):** 39 flagged pins researched. Most "not a 3DEP local max"
+    flags are DEM smoothing on big glaciated peaks; Robson, Lefroy and the Canadian Rockies are on
+    their CGNDB points. Changes:
+    - South Pioneer Peak's pin AND area row sat on a 5,182 ft ridge bump 1.2 km from the summit.
+      Both moved to Peakbagger's point (3DEP local max at 6,291 ft), elev 6,299 (Hiking Project).
+    - Crystal Crag, Pikes Peak, Lone Eagle and Mount Superior moved to their GNIS Summit.
+    - Wedge and Athabasca elevations filled.
+    - Mount Emerson and Half Dome keep their pins: GNIS is the one off there.
+  - **Other pins (`other-pins.mjs`, P3):** the 20 camps, water and junctions all sit on their
+    published points: Robson's campgrounds on OSM, Helen Lake, Tower Lake and Big Sandy Lake on
+    GNIS. Pole Creek is the Three Sisters traverse's finish trailhead, not a defect.
+  - **WA summit pins not researched one by one by #3083 (`wa-summit-triage.mjs`, WS1-WS11):** 252
+    pins, 161 coordinates. These are the ones 100-300 m from GNIS, or whose name matched no GNIS
+    Summit. Each was probed for a 3DEP local max and its ground against its elev. 119 were clean.
+    The rest were researched.
+    - 13 pins moved: Tiffany x2 (pin ground 525 ft low), Mount Stuart x2 (470 ft low; now 17-69 m
+      from the other 14 Stuart routes' pins), Hinman, Booker x3, Bacon, Ferry, Frenzel Spitz,
+      East Wilmans Spire, and Spectre (pin ground 1,000 ft low).
+    - Dorado Needle's elev was set to 8,440.
+    - Left, with no published figure: Slippery Slab, Chablis, Middle Gunsight, Le Petit Cheval
+      (the two routes disagree, 6,386 vs 6,480; both are published) and Dolomite Tower (the pin IS
+      Mountain Project's coordinate, and the ground there reads 366 ft above its printed 5,708).
+  - **Written:** 21 + 14 rows, every one re-read. Rollbacks are
+    `scripts/rollback-oos-waypoint-audit-1793390785776.json` and `-1793390876664.json`.
+    audit:summit-splits timed out on `areas` (57014) right after. The same check was done locally
+    against the summit census: no moved summit opened a split.
