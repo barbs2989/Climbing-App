@@ -171,8 +171,11 @@ if (!values.length) { console.error(`FAIL — ${rows.length} ${STATE} routes car
    an OR on the query above: OR-ing the jsonb column in timed out (57014) on 2026-10-28, and pulling
    the whole approach_logistics object for every row would be the heavy read the throttle rule is
    about. `dir:` extracts the one string server-side. */
-const drives = await selectAll("routes", "id,name,area_id,access_checked_at,dir:approach_logistics->>trailheadDirection",
-  `id=like.${STATE}_*&approach_logistics->>trailheadDirection=not.is.null`, { pageSize: 1000 });
+// NO filter on the jsonb column: `approach_logistics->>trailheadDirection=not.is.null` cannot use an
+// index, and over the ~200k-row table it answered HTTP 500 twice on a HEALTHY database
+// (2026-10-29). Keyset pages on the id index, filtered here, are what the database can serve.
+const drives = (await selectAll("routes", "id,name,area_id,access_checked_at,dir:approach_logistics->>trailheadDirection",
+  `id=like.${STATE}_*`, { pageSize: 500 })).filter(r => r.dir);
 let driveValues = 0;
 for (const r of drives) if (typeof r.dir === "string" && r.dir.trim()) { driveValues++; values.push({ id: r.id, name: r.name, area: r.area_id, checked: r.access_checked_at || null, field: "approach_logistics.trailheadDirection", text: r.dir.replace(/\s+/g, " ").trim(), roadName: null }); }
 if (STATE === "wa" && !driveValues) { console.error(`FAIL — read 0 wa drive lines; 898 existed on 2026-10-29. A clean result would be about data this never saw.`); process.exit(1); }
