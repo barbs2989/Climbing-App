@@ -9,7 +9,7 @@ import Chevron from "../src/components/Chevron.tsx";
    on how to do that ... the route will be different and plan for those that want to do that").
    Mountain Project files the famous enchainments as routes of their own and leaves the rest to a
    sentence in a peak's description, so a climber on the second peak never finds them; here ONE row
-   (route_link_ups, 0380) renders on EVERY member climb's page, with the order, what joins each leg
+   (route_link_ups, 0395) renders on EVERY member climb's page, with the order, what joins each leg
    to the next, how the descent changes and the logistics. Researched, in our own words
    (research-data/link-ups/), never naming a source.
    Mounted only on alpine, mountaineering and scrambling pages, beside PAIRS WELL WITH: a crag's

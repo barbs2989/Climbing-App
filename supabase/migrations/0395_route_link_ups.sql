@@ -1,4 +1,4 @@
--- 0380 — LINK-UPS on the route page (owner's note, 2026-10-28: "For routes that people often link
+-- 0395 — LINK-UPS on the route page (owner's note, 2026-10-28: "For routes that people often link
 -- up, we should provide information on those routes on how to do that ... the route will be
 -- different and plan for those that want to do that").
 --

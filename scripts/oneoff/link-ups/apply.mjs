@@ -1,4 +1,4 @@
-// Write the researched LINK-UPS (research-data/link-ups/*.json) into route_link_ups (0380).
+// Write the researched LINK-UPS (research-data/link-ups/*.json) into route_link_ups (0395).
 //
 //   node scripts/oneoff/link-ups/apply.mjs            # dry run: validates every file, writes nothing
 //   node scripts/oneoff/link-ups/apply.mjs --write    # upserts, one row per second, then re-reads
