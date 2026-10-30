@@ -1,0 +1,286 @@
+{
+ "ca_lake_ramona": {
+  "name": "Lake Ramona",
+  "region": "California",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://kaya-app.kayaclimb.com/location/Lake-Ramona-10400507"
+  ],
+  "note": "No Lake Ramona-specific month source; only San Diego/Mt Woodson season words (spring/fall best, summer hot)."
+ },
+ "ok_mount_scott": {
+  "name": "Mount Scott",
+  "region": "Oklahoma",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://mountainproject.com/forum/topic/127311724/wichita-mountains-oklahoma-best-time-to-camp-and-climb"
+  ],
+  "note": "Spring and fall named as best, summer hot, winter windy; no source names months."
+ },
+ "or_southwest_oregon": {
+  "name": "Southwest Oregon",
+  "region": "Oregon",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.mountainproject.com/area/109532066/southwest-oregon",
+   "https://1859oregonmagazine.com/live/a-guides-list-of-oregons-best-climbing-destinations/"
+  ],
+  "note": "Late spring-early fall / spring and fall in words only; no months named, region-wide."
+ },
+ "ut_left_fork_2": {
+  "name": "Left Fork",
+  "region": "Utah",
+  "season_months": [
+   3,
+   4,
+   5,
+   9,
+   10,
+   11
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://blog.kayaclimb.com/joes-valley-bouldering-guide-how-when-and-where/",
+   "https://climbingaway.fr/en/climbing-areas/joe-s-valley-left-fork"
+  ],
+  "note": "KAYA: fall Sep-Nov prime, spring Mar-May; ClimbingAway lists Jan-Jun for Left Fork (spring part agrees); summer too hot."
+ },
+ "az_3_windy_point_east": {
+  "name": "Windy Point East",
+  "region": "Arizona",
+  "season_months": [
+   2,
+   3,
+   4,
+   5,
+   9,
+   10,
+   11
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://freshairjunkie.com/?p=8132",
+   "https://www.summitpost.org/mt-lemmon/151231",
+   "https://www.tucsonlifestyle.com/local/rocking-out/article_08d90557-4ca1-47e7-99f7-a00f9ab684d9.html"
+  ],
+  "note": "A guide names Feb, Apr, May, Sep, Oct, Nov for Mt Lemmon; SummitPost and Tucson press say spring and fall (Mar filled in); summer cooler but stormy."
+ },
+ "ca_bishop_peak": {
+  "name": "Bishop Peak",
+  "region": "California",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://app.advcollective.com/climbing/bishop-peak-central-coast-classic-climbing-in-san-luis-obispo"
+  ],
+  "note": "South-facing, spring/fall comfortable in words only; no months named."
+ },
+ "me_camden_hills": {
+  "name": "Camden Hills",
+  "region": "Maine",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://equinoxguidingservice.com/blog/camden-hills",
+   "https://equinoxguidingservice.com/blog/fall-rock-climbing-maine"
+  ],
+  "note": "Late spring to early fall, fall best, in words (May festival opens season); no month list."
+ },
+ "va_dc_northern_va_region": {
+  "name": "DC & Northern VA Region",
+  "region": "Virginia",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.summitpost.org/great-falls-carderock/283338"
+  ],
+  "note": "Spring and fall in words; no months named."
+ },
+ "co_clear_creek_canyon_bouldering": {
+  "name": "Clear Creek Canyon Bouldering",
+  "region": "Colorado",
+  "season_months": [
+   3,
+   4,
+   5,
+   9,
+   10,
+   11
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://www.madboulder.org/clear-creek-canyon",
+   "https://app.advcollective.com/destinations/golden-colorado/climbing"
+  ],
+  "note": "Madboulder: fall through spring (summer heat); Golden guide names Apr, May, Sep, Oct best; winter dry days possible on sunny walls."
+ },
+ "wa_mclellan_rocks": {
+  "name": "McLellan Rocks",
+  "region": "Washington",
+  "season_months": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountainproject.com/area/105794255/mclellan-rocks",
+   "https://sendage.com/area/mcclellan-rocks-wa-usa"
+  ],
+  "note": "MP: April through October; Sendage: long season, hot July-August."
+ },
+ "ca_castle_rock_area": {
+  "name": "Castle Rock Area",
+  "region": "California",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.treelinereview.com/where-to-go/climbing-castle-rock",
+   "https://mojagear.com/?p=29894"
+  ],
+  "note": "Fall through spring in words, year-round possible; no months named."
+ },
+ "co_uncompahgre_gorge_aka_ouray_ice_park": {
+  "name": "Uncompahgre Gorge aka Ouray Ice Park",
+  "region": "Colorado",
+  "season_months": [
+   12,
+   1,
+   2,
+   3
+  ],
+  "confidence": "high",
+  "sources": [
+   "https://ourayicepark.com/",
+   "https://summitpost.org/history-and-facts-of-ouray-ice-park/768804"
+  ],
+  "note": "Ice-only venue: park says mid-December to late March; SummitPost mid-Dec to ~Apr 1; opening varies by year (2026 opened Jan 21). Ice season, not rock."
+ },
+ "ny_crane_mountain": {
+  "name": "Crane Mountain",
+  "region": "New York",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.mountainproject.com/area/106172924/crane-mountain",
+   "https://www.climbing.com/places/9-secluded-fall-climbing-destinations/"
+  ],
+  "note": "Fall best by general advice, bugs bad May-June; no month-naming climbing source."
+ },
+ "ca_pine_creek_canyon": {
+  "name": "Pine Creek Canyon",
+  "region": "California",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.mountainproject.com/v/106520042",
+   "https://www.summitpost.org/pine-creek-canyon/907966"
+  ],
+  "note": "Late spring to late fall / spring and fall in words only; no months named."
+ },
+ "ca_roadside_rocks_4": {
+  "name": "Roadside Rocks",
+  "region": "California",
+  "season_months": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://www.joshuatree.guide/climbing",
+   "https://rove.me/to/los-angeles/joshua-tree-rock-climbing"
+  ],
+  "note": "Joshua Tree: mid-October to early May, fall and spring prime, winter viable, summer too hot."
+ },
+ "co_eagle_vail_minturn_red_cliff": {
+  "name": "Eagle/Vail/Minturn/Red Cliff",
+  "region": "Colorado",
+  "season_months": [
+   6,
+   7,
+   8,
+   9
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://discovervail.com/things-to-do/rock-climbing-in-vail/",
+   "https://www.uncovercolorado.com/rock-climbing/apex-mountain-school"
+  ],
+  "note": "Discover Vail: June through September, late spring to early fall; ice Dec-Mar not counted; one guide service says rock year-round."
+ },
+ "qc_chez_roger": {
+  "name": "Chez Roger",
+  "region": "Quebec",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://lanaudiere.ca/en/activities-lanaudiere/parc-falaise-cachee/"
+  ],
+  "note": "No season or months found for the park's climbing."
+ },
+ "ab_kananaskis": {
+  "name": "Kananaskis",
+  "region": "Alberta",
+  "season_months": [
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://www.explorecanmore.ca/blog/when-is-the-best-time-of-year-to-visit-canmore-and-kananaskis/",
+   "https://gripped.com/?p=27472"
+  ],
+  "note": "One guide: June to late fall; another: mid-spring to mid-October; shared window Jun-Oct. Ice not counted."
+ },
+ "bc_vancouver": {
+  "name": "Vancouver",
+  "region": "British Columbia",
+  "season_months": [
+   6,
+   7,
+   8,
+   9
+  ],
+  "confidence": "low",
+  "sources": [
+   "https://squamishrockguides.com/info/",
+   "https://www.canada-spirit.com/guides/rock-climbing-squamish/"
+  ],
+  "note": "HELD by reviewer: Squamish sources applied to Vancouver crags; no Vancouver source. Squamish-area sources: driest June-Sept (Jun-Aug best); season early spring to late fall; wet Nov-Mar. Region-wide, shoulder months excluded."
+ },
+ "nv_sandstone_quarry": {
+  "name": "Sandstone Quarry",
+  "region": "Nevada",
+  "season_months": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://kaya-app.kayaclimb.com/location/Red-Rocks-331387",
+   "https://lasvegasweekly.com/news/2018/feb/01/the-winters-a-perfect-time-for-climbing-red-rock/"
+  ],
+  "note": "Red Rocks: October to early April, Nov-Mar prime; others cite Mar-May and Sep-Nov; summer too hot. Area-specific source not found."
+ }
+}

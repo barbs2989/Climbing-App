@@ -1,0 +1,258 @@
+{
+ "co_pagosa_springs": {
+  "name": "Pagosa Springs",
+  "region": "Colorado",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.mountainproject.com/area/106221644/pagosa-springs"
+  ],
+  "note": "No climbing source names months; only generic weather inference (roughly May-Oct)."
+ },
+ "ar_lake_lincoln": {
+  "name": "Lake Lincoln",
+  "region": "Arkansas",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://climbingaway.fr/en/climbing-areas/lake-lincoln",
+   "https://climb-europe.com/pages/rock-climbing-united-states-arkansas"
+  ],
+  "note": "Lake Lincoln listing names every month; only a statewide guide says mid-Sep to mid-May. No area-specific agreement."
+ },
+ "az_7_upper_highway": {
+  "name": "Upper Highway",
+  "region": "Arizona",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.mountainproject.com/area/106824468/7-upper-highway"
+  ],
+  "note": "Sources say spring and fall, winter too cold/snowbound; no month-naming climbing source for this crag."
+ },
+ "oh_chippewa_creek": {
+  "name": "Chippewa Creek",
+  "region": "Ohio",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://madboulder.org/chippewa-creek"
+  ],
+  "note": "Spring and fall / fall through spring only; no months. Climbing here is also reported prohibited by Cleveland Metroparks."
+ },
+ "ut_kane_springs_canyon": {
+  "name": "Kane Springs Canyon",
+  "region": "Utah",
+  "season_months": [
+   3,
+   4,
+   5,
+   9,
+   10
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://skywardmountaineering.com/rock-climbing/moab",
+   "https://www.mountainproject.com/area/105716793/kane-springs-canyon"
+  ],
+  "note": "Moab guide names March to early May and Sep-Oct; MP/other say spring and fall best, summer too hot. Winter possible but not counted."
+ },
+ "wi_west_bluff_central": {
+  "name": "West Bluff Central",
+  "region": "Wisconsin",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://blog.kayaclimb.com/?p=619"
+  ],
+  "note": "Only KAYA (Devil's Lake generally) names fall Sep-Nov; no second source for the West Bluff."
+ },
+ "id_swan_falls": {
+  "name": "Swan Falls",
+  "region": "Idaho",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://app.advcollective.com/boise_adventures/Climbing/best-bouldering-spots-in-boise,-idaho",
+   "https://www.madboulder.org/swan-falls"
+  ],
+  "note": "Spring, fall and winter named as words; no months; midsummer too hot."
+ },
+ "nc_1_southern_mountains_region": {
+  "name": "Southern Mountains Region",
+  "region": "North Carolina",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.mountainproject.com/area/105873294/looking-glass-rock"
+  ],
+  "note": "Region-wide; sources about Looking Glass only (fall/winter vs fall/spring disagree). Too broad to set."
+ },
+ "ca_central_pinnacles": {
+  "name": "Central Pinnacles",
+  "region": "California",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://summitpost.org/holcomb-valley-pinnacles/154468"
+  ],
+  "note": "Spring and fall at ~7,500 ft; summer shade, winter sunny days; no months named."
+ },
+ "co_east_animas": {
+  "name": "East Animas",
+  "region": "Colorado",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.durango.org/things-to-do/outdoor-adventure/climbing/",
+   "https://www.mountainproject.com/area/105819665/durango"
+  ],
+  "note": "Spring and fall per MP and Durango.org; no months named."
+ },
+ "co_thunder_ridge": {
+  "name": "Thunder Ridge",
+  "region": "Colorado",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://climbingaway.fr/en/climbing-areas/thunder-ridge"
+  ],
+  "note": "Only ClimbingAway names Jan-Apr; no second source (south-facing walls only suggest cool months)."
+ },
+ "ny_central_park": {
+  "name": "Central Park",
+  "region": "New York",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://climbingaway.fr/en/climbing-areas/central-park-rat-rock"
+  ],
+  "note": "Single source lists Jan-Aug (odd); no second confirmation."
+ },
+ "tn_walden_s_ridge_park": {
+  "name": "Walden's Ridge Park",
+  "region": "Tennessee",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.seclimbers.org/?p=17005"
+  ],
+  "note": "Only a hint to wait for cooler temps; no months."
+ },
+ "oh_whipps_ledges": {
+  "name": "Whipps Ledges",
+  "region": "Ohio",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.clevelandmetroparks.com/parks/visit/parks/hinckley-reservation/whipp-s-ledges"
+  ],
+  "note": "No climbing season text found; permit-only site."
+ },
+ "az_superstition_mountains": {
+  "name": "Superstition Mountains",
+  "region": "Arizona",
+  "season_months": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/superstition-mountains/171173",
+   "https://app.advcollective.com/travel-agent/Apache Junction/superstition-mountains"
+  ],
+  "note": "One source Oct-May, another Oct-Apr; took shared Oct-Apr; summer avoided."
+ },
+ "bc_stawamus_chief": {
+  "name": "Stawamus Chief",
+  "region": "British Columbia",
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://www.canada-spirit.com/guides/rock-climbing-squamish/",
+   "https://www.whentobewhere.com/travel-listing/stawamus-chief"
+  ],
+  "note": "June-Sep driest; late May-Sep best weather; May-June good; early fall ok; winter wet. Sources are travel-oriented."
+ },
+ "mi_wetmore_landing": {
+  "name": "Wetmore Landing",
+  "region": "Michigan",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.mountainproject.com/area/120752491/550-bouldering"
+  ],
+  "note": "No months found; only spring-through-fall for a different Marquette crag."
+ },
+ "wa_icicle_creek": {
+  "name": "Icicle Creek",
+  "region": "Washington",
+  "season_months": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://mojagear.com/?p=32334",
+   "https://app.advcollective.com/climbing/the-balcony-serene-cliff-climbing-over-bedrock-washington"
+  ],
+  "note": "One guide: best rock April-Nov; others: late spring-early fall, crisp fall days good, aspect-dependent in summer."
+ },
+ "nv_first_creek_canyon": {
+  "name": "First Creek Canyon",
+  "region": "Nevada",
+  "season_months": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://www.visitlasvegas.com/experience/post/climbing-red-rock-canyon/",
+   "https://lasvegasweekly.com/news/2018/feb/01/the-winters-a-perfect-time-for-climbing-red-rock/",
+   "https://www.mountainproject.com/forum/message/112243385"
+  ],
+  "note": "Red Rocks system: Oct-early Apr and Nov-Mar prime with Apr/Oct shoulders; shady higher trad canyons like Pine Creek favour Oct/Apr and warmer days. Canyon-specific text not found."
+ },
+ "nv_pine_creek_canyon": {
+  "name": "Pine Creek Canyon",
+  "region": "Nevada",
+  "season_months": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://www.visitlasvegas.com/experience/post/climbing-red-rock-canyon/",
+   "https://lasvegasweekly.com/news/2018/feb/01/the-winters-a-perfect-time-for-climbing-red-rock/",
+   "https://www.mountainproject.com/forum/message/112243385"
+  ],
+  "note": "Red Rocks system: Oct-early Apr and Nov-Mar prime with Apr/Oct shoulders; shady higher trad canyons like Pine Creek favour Oct/Apr and warmer days. Canyon-specific text not found."
+ }
+}

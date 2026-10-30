@@ -1,0 +1,402 @@
+[
+ {
+  "id": "ca_lake_ramona",
+  "name": "Lake Ramona",
+  "region": "California",
+  "type": "region",
+  "inside": "North San Diego County < San Diego County",
+  "lat": 33.0235898,
+  "lng": -116.9832464,
+  "routes": 193
+ },
+ {
+  "id": "ok_mount_scott",
+  "name": "Mount Scott",
+  "region": "Oklahoma",
+  "type": "region",
+  "inside": "Wichita Mountains Wildlife Refuge < Oklahoma",
+  "lat": 34.74502425,
+  "lng": -98.5312519583333,
+  "routes": 193
+ },
+ {
+  "id": "or_southwest_oregon",
+  "name": "Southwest Oregon",
+  "region": "Oregon",
+  "type": "region",
+  "inside": "Oregon < United States",
+  "lat": 42.8776368442532,
+  "lng": -123.002418296828,
+  "routes": 193
+ },
+ {
+  "id": "ut_left_fork_2",
+  "name": "Left Fork",
+  "region": "Utah",
+  "type": "region",
+  "inside": "Joe's Valley < Central Utah",
+  "lat": 39.2769055652174,
+  "lng": -111.212811478261,
+  "routes": 192
+ },
+ {
+  "id": "az_3_windy_point_east",
+  "name": "Windy Point East",
+  "region": "Arizona",
+  "type": "region",
+  "inside": "Mount Lemmon (Catalina Highway) < Mount Lemmon (Santa Catalina Mountains)",
+  "lat": 32.3672096551724,
+  "lng": -110.714733793103,
+  "routes": 191
+ },
+ {
+  "id": "ca_bishop_peak",
+  "name": "Bishop Peak",
+  "region": "California",
+  "type": "region",
+  "inside": "San Luis Obispo < Central Coast",
+  "lat": 35.3023246428571,
+  "lng": -120.696045892857,
+  "routes": 191
+ },
+ {
+  "id": "me_camden_hills",
+  "name": "Camden Hills",
+  "region": "Maine",
+  "type": "region",
+  "inside": "Maine < United States",
+  "lat": 44.2392955208333,
+  "lng": -69.0766726822916,
+  "routes": 191
+ },
+ {
+  "id": "va_dc_northern_va_region",
+  "name": "DC & Northern VA Region",
+  "region": "Virginia",
+  "type": "region",
+  "inside": "Virginia < United States",
+  "lat": 38.8156035042151,
+  "lng": -77.3782364507861,
+  "routes": 191
+ },
+ {
+  "id": "co_clear_creek_canyon_bouldering",
+  "name": "Clear Creek Canyon Bouldering",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Clear Creek Canyon < Golden",
+  "lat": 39.7401585625,
+  "lng": -105.355171270833,
+  "routes": 190
+ },
+ {
+  "id": "wa_mclellan_rocks",
+  "name": "McLellan Rocks",
+  "region": "Washington",
+  "type": "region",
+  "inside": "Spokane Area < Northeast Corner & Spokane",
+  "lat": 47.836879047619,
+  "lng": -117.723624285714,
+  "routes": 190
+ },
+ {
+  "id": "ca_castle_rock_area",
+  "name": "Castle Rock Area",
+  "region": "California",
+  "type": "region",
+  "inside": "San Francisco Bay Area < California",
+  "lat": 37.2472088047716,
+  "lng": -122.113563012886,
+  "routes": 189
+ },
+ {
+  "id": "co_uncompahgre_gorge_aka_ouray_ice_park",
+  "name": "Uncompahgre Gorge aka Ouray Ice Park",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Ouray < Colorado",
+  "lat": 38.0160878571429,
+  "lng": -107.673550714286,
+  "routes": 189
+ },
+ {
+  "id": "ny_crane_mountain",
+  "name": "Crane Mountain",
+  "region": "New York",
+  "type": "region",
+  "inside": "Indian Lake Region < Adirondacks",
+  "lat": 43.5401647152778,
+  "lng": -73.9635220555555,
+  "routes": 189
+ },
+ {
+  "id": "ca_pine_creek_canyon",
+  "name": "Pine Creek Canyon",
+  "region": "California",
+  "type": "region",
+  "inside": "Bishop Area < Sierra Eastside",
+  "lat": 37.3805295634921,
+  "lng": -118.678175984568,
+  "routes": 188
+ },
+ {
+  "id": "ca_roadside_rocks_4",
+  "name": "Roadside Rocks",
+  "region": "California",
+  "type": "region",
+  "inside": "Hidden Valley Area < Joshua Tree National Park",
+  "lat": 34.0205438095238,
+  "lng": -116.171687857143,
+  "routes": 188
+ },
+ {
+  "id": "co_eagle_vail_minturn_red_cliff",
+  "name": "Eagle/Vail/Minturn/Red Cliff",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Colorado < United States",
+  "lat": 39.529718537037,
+  "lng": -106.426723153846,
+  "routes": 188
+ },
+ {
+  "id": "qc_chez_roger",
+  "name": "Chez Roger",
+  "region": "Quebec",
+  "type": "region",
+  "inside": "Parc de la falaise cachée < Lanaudiere",
+  "lat": null,
+  "lng": null,
+  "routes": 188
+ },
+ {
+  "id": "ab_kananaskis",
+  "name": "Kananaskis",
+  "region": "Alberta",
+  "type": "region",
+  "inside": "Alberta < Canada",
+  "lat": null,
+  "lng": null,
+  "routes": 187
+ },
+ {
+  "id": "bc_vancouver",
+  "name": "Vancouver",
+  "region": "British Columbia",
+  "type": "region",
+  "inside": "British Columbia < Canada",
+  "lat": null,
+  "lng": null,
+  "routes": 187
+ },
+ {
+  "id": "nv_sandstone_quarry",
+  "name": "Sandstone Quarry",
+  "region": "Nevada",
+  "type": "region",
+  "inside": "Red Rocks < Southern Nevada",
+  "lat": 36.1664528042328,
+  "lng": -115.449502698413,
+  "routes": 187
+ },
+ {
+  "id": "tn_foster_falls",
+  "name": "Foster Falls",
+  "region": "Tennessee",
+  "type": "region",
+  "inside": "Tennessee < United States",
+  "lat": 35.1782468421053,
+  "lng": -85.6832205263158,
+  "routes": 187
+ },
+ {
+  "id": "az_stewart_pocket",
+  "name": "Stewart Pocket",
+  "region": "Arizona",
+  "type": "region",
+  "inside": "Central Arizona < Arizona",
+  "lat": 34.2206723611111,
+  "lng": -111.269824027778,
+  "routes": 186
+ },
+ {
+  "id": "ma_eastern_ma",
+  "name": "Eastern, MA",
+  "region": "Massachusetts",
+  "type": "region",
+  "inside": "Massachusetts < United States",
+  "lat": 42.313647403356,
+  "lng": -71.299477591663,
+  "routes": 186
+ },
+ {
+  "id": "or_broughton_bluff",
+  "name": "Broughton Bluff",
+  "region": "Oregon",
+  "type": "region",
+  "inside": "Portland & The Gorge < Oregon",
+  "lat": 45.539018,
+  "lng": -122.374817,
+  "routes": 186
+ },
+ {
+  "id": "ar_east_side",
+  "name": "East Side",
+  "region": "Arkansas",
+  "type": "region",
+  "inside": "Horseshoe Canyon Ranch < North-Central Arkansas",
+  "lat": 36.0074717647059,
+  "lng": -93.2872350588235,
+  "routes": 185
+ },
+ {
+  "id": "ny_peterskill",
+  "name": "Peterskill",
+  "region": "New York",
+  "type": "region",
+  "inside": "The Gunks < New York",
+  "lat": 41.7397600952381,
+  "lng": -74.2161042857143,
+  "routes": 185
+ },
+ {
+  "id": "tn_king_s_bluff",
+  "name": "King's Bluff",
+  "region": "Tennessee",
+  "type": "region",
+  "inside": "Tennessee < United States",
+  "lat": 36.501284,
+  "lng": -87.3221333333333,
+  "routes": 185
+ },
+ {
+  "id": "id_east_idaho",
+  "name": "East Idaho",
+  "region": "Idaho",
+  "type": "region",
+  "inside": "Idaho < United States",
+  "lat": 43.2097038150394,
+  "lng": -111.847041957735,
+  "routes": 184
+ },
+ {
+  "id": "md_northwest_branch",
+  "name": "Northwest Branch",
+  "region": "Maryland",
+  "type": "region",
+  "inside": "Maryland < United States",
+  "lat": 39.0287243421053,
+  "lng": -77.00264625,
+  "routes": 184
+ },
+ {
+  "id": "nv_willow_spring",
+  "name": "Willow Spring",
+  "region": "Nevada",
+  "type": "region",
+  "inside": "Red Rocks < Southern Nevada",
+  "lat": 36.1580215789474,
+  "lng": -115.499441578947,
+  "routes": 184
+ },
+ {
+  "id": "on_rattlesnake_point",
+  "name": "Rattlesnake Point",
+  "region": "Ontario",
+  "type": "region",
+  "inside": "Golden Horseshoe < Ontario South Bouldering and Rock",
+  "lat": null,
+  "lng": null,
+  "routes": 184
+ },
+ {
+  "id": "ca_texas_canyon",
+  "name": "Texas Canyon",
+  "region": "California",
+  "type": "region",
+  "inside": "Angeles National Forest < Los Angeles Basin",
+  "lat": 34.5136064393939,
+  "lng": -118.402692045455,
+  "routes": 183
+ },
+ {
+  "id": "sd_palisades_state_park",
+  "name": "Palisades State Park",
+  "region": "South Dakota",
+  "type": "region",
+  "inside": "East Side SD < South Dakota",
+  "lat": 43.6878783630953,
+  "lng": -96.5209029464286,
+  "routes": 183
+ },
+ {
+  "id": "mn_he_mni_can_barn_bluff_red_wing",
+  "name": "He Mni Can - Barn Bluff (Red Wing)",
+  "region": "Minnesota",
+  "type": "region",
+  "inside": "Minnesota < United States",
+  "lat": 44.56941,
+  "lng": -92.5223414285714,
+  "routes": 181
+ },
+ {
+  "id": "wv_bubba_city",
+  "name": "Bubba City",
+  "region": "West Virginia",
+  "type": "region",
+  "inside": "New River Gorge Proper < New River Gorge, The",
+  "lat": 38.0939138461538,
+  "lng": -81.0930515384615,
+  "routes": 180
+ },
+ {
+  "id": "ar_cowell",
+  "name": "Cowell",
+  "region": "Arkansas",
+  "type": "region",
+  "inside": "Cowell/Deer Area < North-Central Arkansas",
+  "lat": 35.8670231746032,
+  "lng": -93.1248459259259,
+  "routes": 179
+ },
+ {
+  "id": "ca_riverside_quarry",
+  "name": "Riverside Quarry",
+  "region": "California",
+  "type": "region",
+  "inside": "Riverside Area < Inland Empire",
+  "lat": 34.0167364814815,
+  "lng": -117.416394444444,
+  "routes": 179
+ },
+ {
+  "id": "co_colorado_national_monument",
+  "name": "Colorado National Monument",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Grand Junction Area < Colorado",
+  "lat": 39.080068,
+  "lng": -108.701996886364,
+  "routes": 179
+ },
+ {
+  "id": "pa_birdsboro_quarry",
+  "name": "Birdsboro Quarry",
+  "region": "Pennsylvania",
+  "type": "region",
+  "inside": "Southeastern Lowlands < Pennsylvania",
+  "lat": 40.2502176923077,
+  "lng": -75.8239676923077,
+  "routes": 179
+ },
+ {
+  "id": "ga_mount_yonah",
+  "name": "Mount Yonah",
+  "region": "Georgia",
+  "type": "region",
+  "inside": "Georgia < United States",
+  "lat": 34.6369956018519,
+  "lng": -83.7160283333333,
+  "routes": 178
+ }
+]
