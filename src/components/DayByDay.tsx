@@ -1,6 +1,8 @@
 import { C, DLOCALE, uTemp, uElev, uWind, uSnowfall, uPrecip } from "../../ClimbMatchCore.jsx";
 import { BOX, clockOf, floorQ, hrSpan } from "../../lib/alpineConditionsShared.js";
 import CardHead from "./CardHead.tsx";
+import type { daySummary } from "../../lib/alpineConditions.js";
+import type { CSSProperties } from "react";
 
 /* HOUR BY HOUR for the selected day, at the forecast's own point and height (owner, 2026-10-08: "more of an
    hour by hour breakdown" for alpine, mountaineering and scrambling). It adds NO judgement: every marker
@@ -21,16 +23,36 @@ import CardHead from "./CardHead.tsx";
    forecast's own height, plus new snow and the start. It adds NO judgement -- every number is the day's own
    daySummary, every count the flags the card already raised, and the start the same one the card's start box
    shows (none past a one-day push or on a minimum estimate). Tapping a row opens that day in every section. */
-export default function DayByDay({ days, di, pick, dayName, nWarn, nCaution, fc, legs, startOn }) {
-  const cell = { background: C.surface, borderRadius: 8, padding: "5px 7px", display: "block", minWidth: 0 };
-  const lbl = { display: "block", fontSize: 10.5, color: C.textMuted, fontWeight: 700 };
+export interface DayByDayDay {
+  date: string;
+  start?: { at: number } | null;
+  daysEarly: number;
+  /** The day's daySummary figures. */
+  sum: ReturnType<typeof daySummary>;
+}
+export interface DayByDayProps<D extends DayByDayDay = DayByDayDay> {
+  days: D[];
+  /** Index of the selected day. */
+  di: number;
+  pick: (i: number) => void;
+  dayName: (d: D, i: number) => string;
+  nWarn: (d: D) => number;
+  nCaution: (d: D) => number;
+  fc: object;
+  legs: { floor: boolean; fromCamp: boolean };
+  /** False on kinds that show no start (waterfall, mixed). */
+  startOn: boolean;
+}
+export default function DayByDay<D extends DayByDayDay>({ days, di, pick, dayName, nWarn, nCaution, fc, legs, startOn }: DayByDayProps<D>) {
+  const cell: CSSProperties = { background: C.surface, borderRadius: 8, padding: "5px 7px", display: "block", minWidth: 0 };
+  const lbl: CSSProperties = { display: "block", fontSize: 10.5, color: C.textMuted, fontWeight: 700 };
   // Values WRAP (a freezing level "8,200 ft–10,900 ft" breaks after its dash): at 390px a one-line clip cut it to "8,200 ft–1…" on every day.
-  const val = { display: "block", fontSize: 12.5, color: C.text, fontWeight: 700, lineHeight: 1.3, overflowWrap: "anywhere" };
-  const date = function (d) { return new Date(d.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", timeZone: "UTC" }); };
+  const val: CSSProperties = { display: "block", fontSize: 12.5, color: C.text, fontWeight: 700, lineHeight: 1.3, overflowWrap: "anywhere" };
+  const date = function (d: DayByDayDay) { return new Date(d.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", timeZone: "UTC" }); };
   return <div style={BOX}>
     <CardHead style={{ marginBottom: 8 }}>DAY BY DAY</CardHead>
     <div data-day-table="1" style={{ margin: "0 -14px -12px", borderTop: "1px solid " + C.border }}>
-    {days.map(function (d, i) {
+    {days.map(function (d: D, i: number) {
       const on = i === di, w = nWarn(d), c = nCaution(d), s = d.sum;
       const flagWord = w + c === 0 ? "No flags" : [w ? w + " warning" + (w === 1 ? "" : "s") : null, c ? c + " caution" + (c === 1 ? "" : "s") : null].filter(Boolean).join(" · ");
       const temp = s.hi != null ? uTemp(s.hi) + " / " + uTemp(s.lo) : "—";

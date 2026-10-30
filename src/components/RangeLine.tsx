@@ -7,7 +7,12 @@ import { rangeNote } from "../../lib/alpineConditions.js";
    climber set for alpine, or for ice and mixed. Neutral colour on purpose: it is a preference, not a
    hazard, so it never reads like a warning and never feeds the flags above it (rangeNote). Without a
    range it shows only the way to set one. */
-export default function RangeLine({ route, sum }) {
+export interface RangeLineProps {
+  route: Parameters<typeof catOf>[0];
+  /** The day's daySummary: only the high and low are read. */
+  sum: { hi: number | null; lo: number | null };
+}
+export default function RangeLine({ route, sum }: RangeLineProps) {
   const p = useCondPrefs();
   const [open, setOpen] = useState(false);
   const disc = catOf(route), scope = scopeForDiscipline(disc);

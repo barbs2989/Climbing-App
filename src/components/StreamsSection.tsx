@@ -8,7 +8,7 @@ import LoadingRows from "./LoadingRows.tsx";
 import { TileGrid, Tile, NOT_MEASURED } from "../../lib/HourTiles.jsx";
 
 // Stream flow in the climber's units (discharge ft³/s <-> m³/s; stage ft <-> m).
-function flowText(v, kind) {
+function flowText(v: number, kind: string) {
   if (kind === "stage") return uImp() ? v.toFixed(2) + " ft" : (v * 0.3048).toFixed(2) + " m";
   if (uImp()) return Math.round(v).toLocaleString() + " ft³/s";
   const m3 = v * 0.0283168; return m3.toFixed(m3 < 10 ? 2 : 1) + " m³/s";
@@ -16,12 +16,20 @@ function flowText(v, kind) {
 /* STREAM FLOW near the trailhead: what the nearest gauge measured in the last 24 hours, never a verdict.
    (lib/streams.js has the limits: stage vs a fitted discharge, the cross-section at the gauge, the 10 to 20
    ft²/s depth-times-speed range at which adults lose their footing, snowmelt peaking in the warm hours.) */
-export default function StreamsSection({ pt, base }) {
-  const [st, setSt] = useState(null), [tries, setTries] = useState(0);
+export interface StreamsSectionProps {
+  /** The forecast point, used when there is no base. */
+  pt: { lat: number; lng: number };
+  /** The trailhead the gauge is searched around; its name words the distance line. */
+  base: { lat: number; lng: number; name: string | null } | null;
+}
+type StreamsSectionGauge = NonNullable<ReturnType<typeof nearestGauge>>;
+type StreamsSectionState = { none: true; error?: undefined; g?: undefined; f?: undefined } | { error: true; none?: undefined; g?: undefined; f?: undefined } | { g: StreamsSectionGauge; f: ReturnType<typeof flowReading>; none?: undefined; error?: undefined };
+export default function StreamsSection({ pt, base }: StreamsSectionProps) {
+  const [st, setSt] = useState<StreamsSectionState | null>(null), [tries, setTries] = useState(0);
   const at = base || pt;
   useEffect(function () {
     let live = true; setSt(null);
-    fetchGaugeSites(at.lat, at.lng).then(function (rdb) {
+    fetchGaugeSites(at.lat, at.lng).then(function (rdb: Parameters<typeof parseSites>[0]): StreamsSectionState | Promise<StreamsSectionState> {
       const g = nearestGauge(parseSites(rdb), at.lat, at.lng, 25);
       if (!g) return { none: true };
       return fetchGaugeFlow(g.no).then(function (j) { return { g: g, f: flowReading(j) }; });
@@ -32,7 +40,7 @@ export default function StreamsSection({ pt, base }) {
   const f = st && st.f;
   // A gauge can stop reporting for hours (a transmitter, a frozen sensor): an old "now" says how old it is.
   const ageH = f && f.now && isFinite(f.now.at) ? (Date.now() - f.now.at) / 3600e3 : null;
-  const sgn = function (d) { return d > 0 ? "+" : d < 0 ? "−" : "±"; };
+  const sgn = function (d: number) { return d > 0 ? "+" : d < 0 ? "−" : "±"; };
   return <div>
     <CardHead style={HEAD}>Stream flow near the approach</CardHead>
     {!st ? <LoadingRows C={C} label="Loading stream flow…"/>

@@ -156,6 +156,8 @@ function rawImperialUnits() {
           const parent = cur.parentPath;
           if (!parent) break;
           if (parent.isConditionalExpression() && RAW_GUARD.test(JSON.stringify(parent.node.test))) return;
+          // ...or an `if (uImp()) return ... + " ft³/s"` (StreamsSection's flowText, first scanned when it moved out of lib/).
+          if (parent.isIfStatement() && cur.key === "consequent" && RAW_GUARD.test(JSON.stringify(parent.node.test))) return;
           cur = parent;
         }
         let fn = p.getFunctionParent(); let owner = null;

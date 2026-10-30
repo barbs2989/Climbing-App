@@ -8,6 +8,7 @@ import { catOf, C, ROUTE_GAP, DLOCALE, uElev, uTemp, uWind, uSnowfall } from "..
 import { shadeGrid, gridPx, highestNear, SUMMIT_SNAP_M, faceSunBands } from "../../lib/terrainShade.js";
 import { loadTerrain } from "../../lib/ShadeMap.jsx";
 import CardHead from "./CardHead.tsx";
+import type { HourByHourFc } from "./HourByHour.tsx";
 import LoadingRows from "./LoadingRows.tsx";
 import DayHead from "./DayHead.tsx";
 import RangeLine from "./RangeLine.tsx";
@@ -18,7 +19,32 @@ import SnowfallSection from "./SnowfallSection.tsx";
 import AirSection from "./AirSection.tsx";
 import SunShadeSection from "./SunShadeSection.tsx";
 
-const _alpWx = {}, _alpSp = {}, _alpAir = {}, _alpAlerts = {};
+/** One flag on a day: `level` is "warn" or "caution"; `v` carries the figures flagText prints. */
+export interface ForecastBoxFlag { key: string; level: string; v?: object }
+/** The day sun-on-the-face read (lib/terrainShade.js faceSunBands), per date: busy, failed, or banded. */
+export interface ForecastBoxFaceSun { busy?: boolean; error?: boolean; bands?: { ft: number; at: number }[]; topFt?: number; fromFt?: number }
+/** One forecast day with its flags, start and summary, as the card builds it. */
+export interface ForecastBoxDay {
+  date: string;
+  sum: ReturnType<typeof daySummary>;
+  sunrise: number | null;
+  sunset: number | null;
+  aqi: { max: number; at: number; pm: number | null } | null;
+  flags: ForecastBoxFlag[];
+  /** The start counted back from the forecast; every reader tests it before reading. */
+  start: { at: number; why: string; backBy: number; forecast?: { at: number } | null; sun: { ft: number; sunAt: number } };
+  daysEarly: number;
+  softAt: number;
+  noFreeze?: boolean;
+  thunder?: { at: number; likely?: boolean } | null;
+  sun?: { ft: number; sunAt: number } | null;
+  sunCold?: boolean;
+}
+/** One alert as normAlerts shapes it. */
+export interface ForecastBoxAlert { event: string; severity: string; start: number | null; end: number | null }
+/** A read that is loading (null), failed (`error`), or done (`data`). */
+export type ForecastBoxRead<T> = { data: T; error?: undefined } | { error: true; data?: undefined };
+const _alpWx: Record<string, HourByHourFc> = {}, _alpSp: Record<string, object> = {}, _alpAir: Record<string, object> = {}, _alpAlerts: Record<string, { at: number; data: { outside?: boolean } }> = {};
 const ALERT_TTL = 10 * 60 * 1000; // alerts are issued and cancelled within the hour: a session-long cache would hide a new one
 // What a forecast cannot see for each kind (research 2026-10-07): said every time, so a day with no
 // flags never reads as "it's in" or "it's safe".
@@ -30,10 +56,20 @@ const BLIND = {
   scramble: "A forecast can’t see whether the rock is dry or snow lingers in the gullies — check recent reports.",
   alpinerock: "A forecast can’t see seeps, verglas on the pitches or snow in the descent gully — check recent reports.",
 };
-const hrs = (h) => (Math.round(h * 2) / 2).toFixed(1).replace(/\.0$/, "") + " h";
-export default function ForecastBox({ route, calc, kind, terrain, pt }) {
+const hrs = (h: number) => (Math.round(h * 2) / 2).toFixed(1).replace(/\.0$/, "") + " h";
+export interface ForecastBoxProps {
+  route: { id: string; timing?: { recommendedStart?: unknown } | null };
+  /** The Planner's inputs (fitness, pack weight...), passed straight to planTimes. */
+  calc?: Parameters<typeof planTimes>[1] | null;
+  /** The alpine condition kind (lib/alpineConditions.js condKind); null when the climb gets no card. */
+  kind: keyof typeof KIND_LABEL | null;
+  terrain: Parameters<typeof hasSnowLegs>[1];
+  /** The forecast point: the climb's own pin, else its area's. Falsy when neither has a location (tested before every read below). */
+  pt: { lat: number; lng: number; elevFt?: number | null; campFt?: number | null; pinned?: boolean; name: string };
+}
+export default function ForecastBox({ route, calc, kind, terrain, pt }: ForecastBoxProps) {
   const ck =pt ? pt.lat.toFixed(3) + "," + pt.lng.toFixed(3) + "@" + (pt.elevFt != null ? Math.round(pt.elevFt) : "") : "";
-  const [wx, setWx] = useState(function () { return ck && _alpWx[ck] ? { data: _alpWx[ck] } : null; });
+  const [wx, setWx] = useState<ForecastBoxRead<HourByHourFc> | null>(function () { return ck && _alpWx[ck] ? { data: _alpWx[ck] } : null; });
   const [tries, setTries] = useState(0);
   const [dayI, setDayI] = useState(0);
   useEffect(function () {
@@ -44,7 +80,7 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }) {
     return function () { live = false; };
   }, [ck, tries, kind]); // eslint-disable-line react-hooks/exhaustive-deps -- refetch only when the point key (ck) changes; pt is a fresh object each render and ck already encodes it
   // The models' spread: a second, optional read. Failing, it adds nothing -- never "they agree".
-  const [sp, setSp] = useState(function () { return ck && _alpSp[ck] ? _alpSp[ck] : null; });
+  const [sp, setSp] = useState<object | null>(function () { return ck && _alpSp[ck] ? _alpSp[ck] : null; });
   useEffect(function () {
     if (!pt || !kind) return;
     if (_alpSp[ck]) { setSp(_alpSp[ck]); return; }
@@ -53,7 +89,7 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }) {
     return function () { live = false; };
   }, [ck, kind]); // eslint-disable-line react-hooks/exhaustive-deps -- refetch only when the point key (ck) changes; pt is a fresh object each render and ck already encodes it
   // Air quality: a third, optional read. A failed one is "not measured" -- never "clean air".
-  const [air, setAir] = useState(function () { return ck && _alpAir[ck] ? { data: _alpAir[ck] } : null; });
+  const [air, setAir] = useState<ForecastBoxRead<object> | null>(function () { return ck && _alpAir[ck] ? { data: _alpAir[ck] } : null; });
   const [airTries, setAirTries] = useState(0);
   useEffect(function () {
     if (!pt || !kind) return;
@@ -63,7 +99,7 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }) {
     return function () { live = false; };
   }, [ck, kind, airTries]); // eslint-disable-line react-hooks/exhaustive-deps -- refetch only when the point key (ck) changes; pt is a fresh object each render and ck already encodes it
   // Weather alerts: another optional read, US only. Outside it, or failed, says so -- never "no alerts".
-  const [alerts, setAlerts] = useState(function () { const c = ck && _alpAlerts[ck]; return c && Date.now() - c.at < ALERT_TTL ? { data: c.data } : null; });
+  const [alerts, setAlerts] = useState<ForecastBoxRead<{ outside?: boolean }> | null>(function () { const c = ck && _alpAlerts[ck]; return c && Date.now() - c.at < ALERT_TTL ? { data: c.data } : null; });
   const [alertTries, setAlertTries] = useState(0);
   useEffect(function () {
     if (!pt || !kind) return;
@@ -87,19 +123,19 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }) {
   const legs = wd ? { up: wd.up, down: wd.down, fromCamp: false, floor: false, tech: wd.up, hike: 0, wholeDay: wd.total }
     : { up: fromCamp ? P.techH : P.hikeH + P.techH, down: P.downH, fromCamp, floor: P.legsFloor || P.publishedIsWholeDay, tech: P.techH, hike: fromCamp ? 0 : P.hikeH };
   const snowLegs = hasSnowLegs(kind, terrain);
-  const floor = snowLegs ? snowFloorFt(route, pt && pt.campFt) : null;
+  const floor = (snowLegs ? snowFloorFt(route, pt && pt.campFt) : null) as { ft: number; basis: string };
 
   /* SUN ON THE FACE for the selected day (lib/terrainShade.js faceSunBands), so the start can count
      back from it: glacier and alpine ice, with a summit pin, a one-direction aspect and a height the
      push starts from. Read for the day on screen only — the start is shown for no other. */
   const face = useMemo(function () { return sunFace(route, kind, pt, fromCamp); }, [route, kind, pt, fromCamp]);
-  const [faceSun, setFaceSun] = useState({});
+  const [faceSun, setFaceSun] = useState<Record<string, ForecastBoxFaceSun>>({});
   useEffect(function () { setFaceSun({}); }, [route.id]);
 
   const model = useMemo(function () {
     if (!wx || !wx.data || !kind) return null;
     const fc = wx.data, days = localDays(fc), today = todayOf(fc);
-    const out = [];
+    const out: ForecastBoxDay[] = [];
     days.forEach(function (d, k) {
       if (d.date < today) return;
       const fs = faceSun[d.date];
@@ -107,7 +143,7 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }) {
       const ms = sp ? modelSpread(sp, d.date, null, daySummary(fc, d).precip) : null;
       if (ms && ms.over.length) r = Object.assign({}, r, { flags: r.flags.concat([{ key: "models-disagree", level: "caution", v: ms }]) });
       const al = alerts && alerts.data && !alerts.data.outside ? alertsForDay(normAlerts(alerts.data), d.date, fc) : [];
-      if (al.length) r = Object.assign({}, r, { flags: r.flags.concat(al.map(function (a) { return { key: "alert", level: alertLevel(a), v: { event: a.event, severity: a.severity, when: windowLabel(fc, a) } }; })) });
+      if (al.length) r = Object.assign({}, r, { flags: r.flags.concat(al.map(function (a: ForecastBoxAlert) { return { key: "alert", level: alertLevel(a), v: { event: a.event, severity: a.severity, when: windowLabel(fc, a) } }; })) });
       const fg = fogHours(fc, d);
       if (fg) r = Object.assign({}, r, { flags: r.flags.concat([{ key: "fog", level: "caution", v: { hours: fg.hours, from: clockOf(fc, fg.first) } }]) });
       const aq = air && air.data ? airDay(air.data, d.date) : null, sf = smokeFlag(aq);
@@ -115,7 +151,7 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }) {
       /* How many days before this one the start falls, counted ONCE here: the start box and the hour-by-hour
          key times both read it, and two counts let the hour strip say "Start by 7 PM (the night before)" under
          a box that said the push is too long for one day (#2342). */
-      const daysEarly = r.start ? Math.round((Date.parse(d.date) - Date.parse(localAt(fc, floorQ(r.start.at)).date)) / 864e5) : null;
+      const daysEarly = (r.start ? Math.round((Date.parse(d.date) - Date.parse(localAt(fc, floorQ(r.start.at)).date)) / 864e5) : null) as number;
       out.push(Object.assign({ date: d.date, sum: daySummary(fc, d), sunrise: d.sunrise, sunset: d.sunset, aqi: aq }, r, { daysEarly: daysEarly }));
     });
     return { fc, days: out.slice(0, 7) };
@@ -125,9 +161,9 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }) {
     if (!face || face.missing || legs.floor || !selDay || selDay.sunrise == null || selDay.sunset == null || faceSun[selDay.date]) return;
     const date = selDay.date, rise = selDay.sunrise * 1000, set = selDay.sunset * 1000, grid = shadeGrid(face.ctr.lat, face.ctr.lng);
     let live = true, done = false, tm = 0;
-    const put = function (v) { done = true; setFaceSun(function (m) { const n = Object.assign({}, m); n[date] = v; return n; }); };
+    const put = function (v: ForecastBoxFaceSun) { done = true; setFaceSun(function (m) { const n = Object.assign({}, m); n[date] = v; return n; }); };
     setFaceSun(function (m) { const n = Object.assign({}, m); n[date] = { busy: true }; return n; });
-    loadTerrain(grid).then(function (T) {
+    loadTerrain(grid).then(function (T: Awaited<ReturnType<typeof loadTerrain>>) {
       if (!live) return;
       // A tick later, so the card paints first: ~0.5 s of arithmetic on a phone.
       tm = setTimeout(function () {
@@ -137,6 +173,7 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }) {
         put(b ? { bands: b.map(function (x) { return { ft: x.e * 3.28084, at: Math.round(x.at / 1000) }; }), topFt: T.E[top.r * grid.W + top.c] * 3.28084, fromFt: face.fromFt } : { error: true });
       }, 30);
     }, function () { if (live) put({ error: true }); });
+    // eslint-disable-next-line @typescript-eslint/no-dynamic-delete -- the key is the selected date, dropped so a cancelled read can run again
     return function () { live = false; clearTimeout(tm); if (!done) setFaceSun(function (m) { if (!m[date] || !m[date].busy) return m; const n = Object.assign({}, m); delete n[date]; return n; }); };
   }, [face, legs.floor, selDay && selDay.date]); // eslint-disable-line react-hooks/exhaustive-deps -- faceSun is written by this effect (would loop); runs per selected day, selDay is a fresh object
 
@@ -149,18 +186,18 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }) {
   const days = model.days, fc = model.fc;
   if (!days.length) return <div style={box}>{head}<div style={{ fontSize: 12.5, color: C.textSub }}>The forecast came back with no days ahead to read.</div></div>;
   const day = days[Math.min(dayI, days.length - 1)];
-  const dayName = function (d, i) { return i === 0 ? "Today" : new Date(d.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { weekday: "short", timeZone: "UTC" }); };
-  const nWarn = function (d) { return d.flags.filter(function (f) { return f.level === "warn"; }).length; };
-  const nCaution = function (d) { return d.flags.filter(function (f) { return f.level === "caution"; }).length; };
-  const dot = function (col) { return <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: "50%", background: col, margin: "0 1.5px" }} />; };
+  const dayName = function (d: ForecastBoxDay, i: number) { return i === 0 ? "Today" : new Date(d.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { weekday: "short", timeZone: "UTC" }); };
+  const nWarn = function (d: ForecastBoxDay) { return d.flags.filter(function (f: ForecastBoxFlag) { return f.level === "warn"; }).length; };
+  const nCaution = function (d: ForecastBoxDay) { return d.flags.filter(function (f: ForecastBoxFlag) { return f.level === "caution"; }).length; };
+  const dot = function (col: string) { return <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: "50%", background: col, margin: "0 1.5px" }} />; };
 
   let startEl = null, sunEl = null;
   const faceDir = face && !face.missing ? ["N", "NE", "E", "SE", "S", "SW", "W", "NW"][Math.round(face.deg / 45) % 8] : "";
   /* What the start did with the sun on the face, said every time: it counted it, or why it could not.
      A deadline counted from a model must carry the model's limits (research 2026-10-08). */
   if (face && !legs.floor) {
-    const fs = faceSun[day.date], noFrz = day.noFreeze || day.flags.some(function (f) { return f.key === "fl-above-night"; });
-    const MISSING = { ridge: "it climbs a ridge, and what sheds off either side falls away from the crest", summit: "the route has no summit pin on file", aspect: "its aspect on file isn’t one direction", from: legs.fromCamp ? "no camp height is on file" : "no trailhead height is on file" };
+    const fs = faceSun[day.date], noFrz = day.noFreeze || day.flags.some(function (f: ForecastBoxFlag) { return f.key === "fl-above-night"; });
+    const MISSING: Record<string, string> = { ridge: "it climbs a ridge, and what sheds off either side falls away from the crest", summit: "the route has no summit pin on file", aspect: "its aspect on file isn’t one direction", from: legs.fromCamp ? "no camp height is on file" : "no trailhead height is on file" };
     const line = face.missing ? "This start doesn’t count in sun on the face: " + MISSING[face.missing] + "."
       : !fs || fs.busy ? "Checking when the sun reaches the face…"
       : fs.error ? "Couldn’t load the terrain, so this start doesn’t count in sun on the face."
@@ -217,7 +254,7 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }) {
   const fullDay = new Date(day.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { weekday: "long", month: "short", day: "numeric", timeZone: "UTC" });
   return <div><div style={{ padding: "2px 0 4px", marginBottom: 6 }}>
     <div aria-live="polite" style={{ fontSize: 12, color: C.textSub, marginBottom: 5 }}>{"Showing "}<b style={{ color: C.text }}>{(Math.min(dayI, days.length - 1) === 0 ? "today, " : "") + fullDay}</b>{" — every section below is for this day."}</div>
-    <div role="group" aria-label="Day" style={{ display: "flex", gap: 5, overflowX: "auto", paddingBottom: 4 }}>{days.map(function (d, i) {
+    <div role="group" aria-label="Day" style={{ display: "flex", gap: 5, overflowX: "auto", paddingBottom: 4 }}>{days.map(function (d: ForecastBoxDay, i: number) {
       const on = i === Math.min(dayI, days.length - 1), w = nWarn(d), c = nCaution(d);
       return <button key={d.date} onClick={function () { setDayI(i); }} aria-pressed={on} aria-label={dayName(d, i) + ", " + (w + c === 0 ? "no flags" : (w ? w + " warning" + (w === 1 ? "" : "s") : "") + (w && c ? " and " : "") + (c ? c + " caution" + (c === 1 ? "" : "s") : ""))} style={{ flex: "0 0 58px", width: 58, boxSizing: "border-box", minHeight: 58, padding: "6px 2px", borderRadius: 9, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : "transparent", color: C.text, cursor: "pointer", textAlign: "center" }}>
         <div style={{ fontSize: 11.5, fontWeight: 700 }}>{dayName(d, i)}</div>
@@ -229,7 +266,7 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }) {
     <DayHead title={"CONDITIONS · " + KIND_LABEL[kind].toUpperCase()} dayLabel={dayName(day, di)} nav={nav} />
     {startEl || sunEl ? <div style={{ background: C.surface, borderRadius: 10, padding: "10px 12px", marginBottom: 10 }}>{startEl}{pubStart ? <div style={{ fontSize: 12, color: C.text, lineHeight: 1.5, marginTop: 6 }}><b>{"This route’s usual start: "}</b>{pubStart}</div> : null}{sunEl}</div> : null}
     <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 10 }}>
-      {day.flags.length ? day.flags.map(function (f, i) { const col = f.level === "warn" ? C.red : C.amber; return <div key={f.key + i} style={{ display: "flex", gap: 8, alignItems: "flex-start", fontSize: 12.5, color: C.text, lineHeight: 1.45 }}><span aria-hidden="true" style={{ flexShrink: 0, marginTop: 5, width: 8, height: 8, borderRadius: "50%", background: col }} /><span><b style={{ color: col }}>{f.level === "warn" ? "Warning: " : "Caution: "}</b>{flagText(f, fc)}</span></div>; })
+      {day.flags.length ? day.flags.map(function (f: ForecastBoxFlag, i: number) { const col = f.level === "warn" ? C.red : C.amber; return <div key={f.key + i} style={{ display: "flex", gap: 8, alignItems: "flex-start", fontSize: 12.5, color: C.text, lineHeight: 1.45 }}><span aria-hidden="true" style={{ flexShrink: 0, marginTop: 5, width: 8, height: 8, borderRadius: "50%", background: col }} /><span><b style={{ color: col }}>{f.level === "warn" ? "Warning: " : "Caution: "}</b>{flagText(f, fc)}</span></div>; })
         : <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>Nothing in the forecast flags this day.</div>}
     </div>
     <RangeLine route={route} sum={day.sum} />

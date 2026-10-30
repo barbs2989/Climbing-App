@@ -7,15 +7,21 @@ import { C, uImp, uElev, uSnowfall, DLOCALE } from "../../ClimbMatchCore.jsx";
 
 /* SNOW ON THE GROUND at the nearest snow station within 30 km. One point, usually far below the
    route -- the section says how far away and how much lower, every time. */
-export default function SnowSection({ pt }) {
-  const [st, setSt] = useState(null), [tries, setTries] = useState(0);
+export interface SnowSectionProps {
+  /** The forecast point: the nearest snow station within 30 km is read for it, and elevFt says how far below the top it sits. */
+  pt: { lat: number; lng: number; elevFt: number | null };
+}
+type SnowSectionStation = NonNullable<ReturnType<typeof nearestStation>>;
+type SnowSectionState = { none: true; error?: undefined } | { error: true; none?: undefined } | { st: SnowSectionStation; r: ReturnType<typeof snowReading>; none?: undefined; error?: undefined };
+export default function SnowSection({ pt }: SnowSectionProps) {
+  const [st, setSt] = useState<SnowSectionState | null>(null), [tries, setTries] = useState(0);
   useEffect(function () {
     let live = true; setSt(null);
-    fetchSnotelStations().then(function (s) {
+    fetchSnotelStations().then(function (s: Parameters<typeof nearestStation>[0]) {
       const n = nearestStation(s, pt.lat, pt.lng, 30);
       if (!n) return { none: true };
       return fetchSnotelDepth(n.id).then(function (v) { return { st: n, r: snowReading(v) }; });
-    }).then(function (x) { if (live) setSt(x); }, function () { if (live) setSt({ error: true }); });
+    }).then(function (x: SnowSectionState) { if (live) setSt(x); }, function () { if (live) setSt({ error: true }); });
     return function () { live = false; };
   }, [pt.lat, pt.lng, tries]);
   const head = <CardHead style={HEAD}>Snow on the ground</CardHead>;
@@ -25,7 +31,7 @@ export default function SnowSection({ pt }) {
   const s = st.st, r = st.r, below = pt.elevFt != null && s.elevFt != null ? pt.elevFt - s.elevFt : null;
   const where = "Snow station " + (uImp() ? (s.km < 1.609 ? "under 1 mi" : Math.round(s.km / 1.60934) + " mi") : s.km < 1 ? "under 1 km" : Math.round(s.km) + " km") + " away at " + uElev(s.elevFt) + (below != null && below > 300 ? ", " + uElev(Math.round(below / 100) * 100) + " below the top of this climb" : "");
   if (!r) return <div>{head}<div style={MUTED}>{where + ". It has not reported this week."}</div></div>;
-  const ch = function (d, w) { return d == null ? null : (d > 0 ? "+" : d < 0 ? "−" : "±") + uSnowfall(Math.abs(d)) + " " + w; };
+  const ch = function (d: number | null, w: string) { return d == null ? null : (d > 0 ? "+" : d < 0 ? "−" : "±") + uSnowfall(Math.abs(d)) + " " + w; };
   const stale = Date.now() - Date.parse(r.date + "T12:00:00Z") > 2.5 * 864e5;
   return <div>{head}
     <div style={{ fontSize: 12.5, color: C.text, lineHeight: 1.5 }}><b>{uSnowfall(r.depth) + " on the ground"}</b>{[ch(r.d24, "in a day"), ch(r.d7, "in a week")].filter(Boolean).map(function (x) { return " · " + x; }).join("")}</div>

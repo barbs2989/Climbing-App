@@ -51,6 +51,8 @@ import { build } from "esbuild";
 import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+// flagText (the words every flag prints) moved to the shared lib in PR67; the wording checks read both.
+const FLAG_WORDS = fs.readFileSync(path.join(ROOT, "lib", "alpineConditionsShared.js"), "utf8");
 const require_ = createRequire(import.meta.url);
 const ENTRY = `
 import React from "react";
@@ -146,7 +148,7 @@ eq("a night with the freezing level above the snow is flagged: no refreeze (warn
 eq("...and that day gets NO snow-anchored start: there is no frozen window to be back down in", [warm.start, warm.noFreeze], [null, true]);
 const nfText = (kind, terrain) => { const r = run(forecast(() => ({ fl: 9000 })), { kind, terrain, highFt: 10000, snowFt: 7000, legs: LEGS }); const f = r.flags.find((x) => x.key === "no-refreeze"); return f ? A.flagText(f) : null; };
 eq("'bridges are weak' only where there may be a glacier: yes on a glacier, no on a snow scramble with none", [/bridges/.test(nfText("glacier", { snow: "yes", glacier: "yes" }) || ""), /bridges/.test(nfText("scramble", { snow: "yes", glacier: "no" }) || "x bridges")], [true, false]);
-eq("...and the card says why, instead of a start beside a warning that the snow starts soft", /day\.noFreeze && floor\)[\s\S]{0,200}didn’t freeze overnight at[\s\S]{0,80}no frozen window to be back down in/.test(fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8")), true);
+eq("...and the card says why, instead of a start beside a warning that the snow starts soft", /day\.noFreeze && floor\)[\s\S]{0,200}didn’t freeze overnight at[\s\S]{0,80}no frozen window to be back down in/.test(readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))), true);
 const hot = run(forecast(() => ({ fl: 12000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
 eq("the freezing level above the SUMMIT all night is its own warning", has(hot, "fl-above-night"), true);
 const frozen = run(forecast(() => ({ fl: 4000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
@@ -164,7 +166,7 @@ const scPractice = run(forecast(() => ({ fl: 4000 })), { kind: "scramble", terra
 eq("the noon rule is glacier and alpine ice only: a snowy scramble on a cold day gets none", scPractice.start, null);
 const iceP = run(forecast(() => ({ fl: 4000 })), { kind: "alpineice", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
 eq("...and alpine ice gets it too", iceP.start && iceP.start.why, "snow-noon");
-const cardSrc = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+const cardSrc = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
 eq("the card says WHY the noon start, and shows the later start the forecast alone allows", /why === "snow-noon"[\s\S]{0,700}plan to be off the snow by midday[\s\S]{0,300}The forecast alone would allow a start as late as/.test(cardSrc), true);
 eq("the day strip says every section below is for that day", /every section below is for this day[\s\S]{0,200}role="group" aria-label="Day"/.test(cardSrc), true);
 /* Not sticky: #appscroll is overflow:auto yet grows to its content, so a sticky strip binds to a box that never
@@ -175,7 +177,7 @@ eq("...each passed the one shared nav, so every section moves the SAME day", (ca
 /* Owner, 2026-10-24: "we have hour by hour, but not day to day ... change the day above each section". The flags
    card and Sun and shade step the day from their own heading too, and DAY BY DAY lists all seven days. */
 eq("the flags card and Sun and shade carry the ‹ › day step in their own heading", /<DayHead title=\{"CONDITIONS · "[^\n]*nav=\{nav\} \/>/.test(cardSrc) && /<DayHead title="SUN AND SHADE" dayLabel=\{dayLabel\} nav=\{nav\} \/>/.test(cardSrc) && /<SunShadeSection [^\n]*nav=\{nav\} \/>/.test(cardSrc), true);
-eq("DAY BY DAY renders every forecast day, each a button that opens it in every section", /<DayByDay days=\{days\} di=\{di\} pick=\{setDayI\}/.test(cardSrc) && /function DayByDay\([\s\S]{0,1200}DAY BY DAY[\s\S]{0,200}days\.map\([\s\S]{0,2000}onClick=\{function \(\) \{ pick\(i\); \}\} aria-pressed=\{on\}/.test(cardSrc), true);
+eq("DAY BY DAY renders every forecast day, each a button that opens it in every section", /<DayByDay days=\{days\} di=\{di\} pick=\{setDayI\}/.test(cardSrc) && /function DayByDay(?:<[^>]*>)?\([\s\S]{0,1400}DAY BY DAY[\s\S]{0,200}days\.map\([\s\S]{0,2000}onClick=\{function \(\) \{ pick\(i\); \}\} aria-pressed=\{on\}/.test(cardSrc), true);
 eq("...and its start is the start box's own: none on a minimum estimate or past a one-day push", /startOn && !legs\.floor && d\.start && d\.daysEarly < 2/.test(cardSrc), true);
 eq("...and a missing neighbour day is a DISABLED button with a name, never a gap", /disabled=\{!n\} aria-label=\{n \? dir \+ " day: " \+ n\.name : "No "/.test(cardSrc), true);
 
@@ -212,7 +214,7 @@ eq("a 50% afternoon chance of rain is a showers caution", keys(shw).includes("sh
   eq("...a chance with no measurable rain says so instead of an amount", dry ? /no measurable rain/.test(A.flagText(dry, wetFc)) : false, true);
   const days = A.localDays(wetFc), sm = A.daySummary(wetFc, days[T]);
   eq("the day summary carries the total, wet hours, window and peak chance DAY BY DAY prints", [Math.round(sm.precip * 100) / 100, sm.precipHrs, sm.precipTo - sm.precipFrom, sm.popMax], [0.12, 3, 3 * 3600, 60]);
-  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const card = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
   eq("DAY BY DAY prints the rain amount with its hours, window and chance beneath", /<span style=\{lbl\}>\{s\.snow \? "Precipitation" : "Rain"\}<\/span>/.test(card) && /s\.popMax \? "hourly chance up to " \+ Math\.round\(s\.popMax\) \+ "%"/.test(card), true);
 }
 const rstorm = run(forecast((d, h) => (d === T && h === 15 ? { code: 95, fl: 12000 } : { fl: 12000 })), { kind: "alpinerock", terrain: { snow: "no" }, highFt: 8000, legs: LEGS });
@@ -283,7 +285,7 @@ const fcHtml = A.render(Object.assign({}, BASE, { discipline: "mountaineering", 
 eq("a route with NO waypoints still gets a weather panel (its area's point), not 'No forecast yet'", /No forecast yet/.test(fcHtml), false);
 const noLoc = A.render(Object.assign({}, BASE, { discipline: "mountaineering", _dbArea: Object.assign({}, BASE._dbArea, { lat: null, lng: null }) }), "forecast");
 eq("a route with no location at all says so, rather than loading forever", /neither it nor the area it is on has a location/.test(noLoc), true);
-const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+const card = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
 eq("a failed forecast shows NO flags and says it is not a reading of the conditions", /wx && wx\.error\) return[\s\S]{0,300}This is not a reading of the conditions/.test(card), true);
 eq("a day with no flags never says 'safe' or 'good' — it says nothing flagged it", /Nothing in the forecast flags this day\./.test(card) && !/>\s*(Safe|Good to go)/i.test(card), true);
 eq("every kind states what a forecast cannot see", Object.keys(A.KIND_LABEL).every((kk) => new RegExp(kk + ": \"A forecast can’t see").test(card)), true);
@@ -376,13 +378,13 @@ eq("...and ordinary disagreement (gusts 10 mph apart) flags nothing", msC && msC
   // A wet day against a dry one, under the 0.5" gap; and the amount the CARD PRINTS joins the comparison (catalog audit 2026-10-29: Mount Adams 0.29" shown, 0.00-0.09" from the three models).
   const r4 = A.modelSpread(rainy([0, 0.1, 0.25]), "2026-01-15"), r5 = A.modelSpread(rainy([0, 0.05, 0.09]), "2026-01-15", null, 0.29), r6 = A.modelSpread(rainy([0, 0.05, 0.09]), "2026-01-15");
   eq("0\"-0.25\" (a wet day and a dry one) flags; the shown 0.29\" beside models at 0-0.09\" flags; the models alone at 0-0.09\" do not", [r4 && r4.over, r5 && r5.over, r5 && r5.rain, r6 && r6.over], [["rain"], ["rain"], [0, 0.29], []]);
-  eq("the card passes the amount it prints into the comparison", /modelSpread\(sp, d\.date, null, daySummary\(fc, d\)\.precip\)/.test(fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8")), true);
+  eq("the card passes the amount it prints into the comparison", /modelSpread\(sp, d\.date, null, daySummary\(fc, d\)\.precip\)/.test(readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))), true);
   eq("...and the flag states the range", /rain 0\.04"–1\.56"/.test(A.flagText({ key: "models-disagree", level: "caution", v: r1 })), true);
   eq("...from a spread read that asks for precipitation", /export function fetchAlpineSpread[\s\S]{0,700}freezing_level_height,precipitation&models=/.test(fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8")), true);
 }
 {
   // NO STATED HEIGHT (census 2026-10-29: 4,903 of 6,208 alpine-kind routes): the forecast's own ground height stands in, so the summit flags can fire.
-  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const card = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
   eq("with no stated height, the flags, the hour boxes and the 'Read at' line use the forecast's ground height",
     [/highFt: pt\.elevFt != null \? pt\.elevFt : groundFt\(fc\)/.test(card), /const tops = pt\.elevFt != null \? pt\.elevFt : groundFt\(fc\);/.test(card), /"Read at " \+ \(pt\.elevFt != null \? uElev\(pt\.elevFt\) : groundFt\(fc\) != null \?[^\n]{0,120}the ground height at the map point"/.test(card)], [true, true, true]);
   const fl = run(forecast(() => ({ fl: 9000 })), { kind: "glacier", terrain: {}, highFt: null, legs: LEGS }), flG = run(forecast(() => ({ fl: 9000 })), { kind: "glacier", terrain: {}, highFt: 8000, legs: LEGS });
@@ -509,14 +511,14 @@ console.log("\n11. WHOLE-DAY ROWS — one published total counts back where the 
    numbers for one thing. */
 console.log("\n12. HOUR BY HOUR — each box names its own period; the day's gust is stated once, with its window");
 {
-  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const card = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
   const tiles = fs.readFileSync(path.join(ROOT, "lib", "HourTiles.jsx"), "utf8");
   const day = { hours: [0, 1, 2] }, fc = { utc_offset_seconds: 0, hourly: { time: [0, 3600, 7200], temperature_2m: [30, 40, 50], freezing_level_height: [9000, 9000, 9000], wind_gusts_10m: [10, 50, 20], is_day: [1, 0, 1], snowfall: [0, 0, 0], precipitation: [0, 0, 0] } };
   const sm = A.daySummary(fc, day);
   eq("the day's gust counts EVERY hour of the day (the summit forecast's own window): 50, the night hour included", sm.gust, 50);
   eq("...and the daylight maximum is kept beside it, so the card can state both: 20", sm.gustDay, 20);
   eq("the top tile says which window it is and prints the daylight figure under it", /\["Gusts, any hour", s\.gust != null \? uWind\(s\.gust\) : "—", s\.gust != null && s\.gustDay != null \? "daylight hours: " \+ uWind\(s\.gustDay\) : null\]/.test(card), true);
-  eq("the wind FLAG says it is a daylight reading, because that is the window the flag is judged on", /case "wind": return "Summit gusts to " \+ uWind\(v\.gust\) \+ " in daylight";/.test(card), true);
+  eq("the wind FLAG says it is a daylight reading, because that is the window the flag is judged on", /case "wind": return "Summit gusts to " \+ uWind\(v\.gust\) \+ " in daylight";/.test(card + FLAG_WORDS), true);
   eq("the hour boxes for gusts and rain/snow carry the hour BEFORE the stamp (spanEnding)", /label="Gusts" when=\{spanEnding\(hr\)\}/.test(card) && /when=\{spanEnding\(hr\)\} value=\{sn != null && sn > 0/.test(card), true);
   eq("...and temperature, wind and the freezing level carry the reading AT the stamp", /label="Temperature" when=\{"at " \+ clockHr\(hr\)\}/.test(card) && /label="Wind" when=\{"at " \+ clockHr\(hr\)\}/.test(card) && /label="Freezing level" when=\{"at " \+ clockHr\(hr\)\}/.test(card), true);
   eq("the hour before 1 PM is '12–1 PM', and across noon and midnight it names both halves", /11 AM–12 PM/.test(tiles) && /11 PM–12 AM/.test(tiles), true);
@@ -530,7 +532,7 @@ console.log("\n12. HOUR BY HOUR — each box names its own period; the day's gus
    the PRECEDING 24 h and the grid is ~45 km (11 km in Europe): a number for the area, never for the route. */
 console.log("\n13. SMOKE AND AIR QUALITY — flagged on the EPA's bands, never read as clean when it was not read");
 {
-  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const card = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
   const off = -25200, base = Date.UTC(2026, 9, 8, 7, 0, 0) / 1000; // 00:00 local on 2026-10-08 at UTC-7
   const air = (aqis) => ({ utc_offset_seconds: off, hourly: { time: aqis.map((_, i) => base + i * 3600), us_aqi: aqis, pm2_5: aqis.map((a) => a / 3) } });
   const day1 = Array(24).fill(40), day2 = Array(24).fill(60);
@@ -545,7 +547,7 @@ console.log("\n13. SMOKE AND AIR QUALITY — flagged on the EPA's bands, never r
   eq("AQI above 150 is a WARNING", A.smokeFlag({ max: 160, at: 0, pm: 60 }).level, "warn");
   eq("an unread day gets NO flag (no claim either way)", A.smokeFlag(null), null);
   eq("the EPA's word for 101-150 and 151-200", [A.aqiWord(120), A.aqiWord(160)], ["Unhealthy for sensitive groups", "Unhealthy"]);
-  eq("the flag says it is the AREA's forecast and what it cannot see", /smoke aloft or pooled in a valley is not seen/.test(card), true);
+  eq("the flag says it is the AREA's forecast and what it cannot see", /smoke aloft or pooled in a valley is not seen/.test(card + FLAG_WORDS), true);
   eq("a failed air read says smoke is NOT MEASURED and is not a clean-air reading, with a retry", /Couldn’t load air quality, so smoke is not measured\. This is not a clean-air reading\./.test(card) && /onClick=\{onRetry\}/.test(card), true);
   eq("a day beyond the forecast says smoke is not measured for it", /does not reach this day[^"]*so smoke is not measured for it/.test(card), true);
   eq("the smoke flag joins the day's flags (and so the day chips' dots)", /if \(sf\) r = Object\.assign\(\{\}, r, \{ flags: r\.flags\.concat\(\[sf\]\) \}\);/.test(card), true);
@@ -557,7 +559,7 @@ console.log("\n13. SMOKE AND AIR QUALITY — flagged on the EPA's bands, never r
    due to be reissued. Reading `expires` would drop a live alert hours early. */
 console.log("\n14. WEATHER ALERTS — each on the right local day, by its event window; unread is never 'none'");
 {
-  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const card = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
   const fcSrc2 = fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8");
   const feat = (event, severity, onset, ends, expires, description) => ({ id: "urn:" + event, properties: { event, severity, urgency: "Expected", certainty: "Likely", onset, effective: onset, ends, expires, description } });
   const json = { features: [
@@ -588,7 +590,7 @@ console.log("\n14. WEATHER ALERTS — each on the right local day, by its event 
    Shapes are the live responses (waterservices.usgs.gov, 2026-10-08). */
 console.log("\n15. FOG, SNOWFALL, SNOW LEVEL, STREAM FLOW, REPORT FRESHNESS — published cuts, stated limits, nothing read as zero");
 {
-  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const card = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
   const ST = await import(pathToFileURL(path.join(ROOT, "lib", "streams.js")).href);
   const off = 0, t0 = Date.UTC(2026, 9, 1) / 1000;
   const mk = (n, f) => Array.from({ length: n }, (_, i) => f(i));
@@ -643,7 +645,7 @@ console.log("\n15. FOG, SNOWFALL, SNOW LEVEL, STREAM FLOW, REPORT FRESHNESS — 
   eq("the card states that a gauge is not the crossing, the depth-times-speed range, and early crossing", /different stream from the one you cross/.test(card) && /depth times speed/.test(card) && /cross early/.test(card), true);
   eq("a flagged gauge reading shows NO number", /so no number is shown/.test(card), true);
   eq("no provider is named in the new sections (the gauge's agency never prints)", !/USGS|Open-Meteo|NWS|SNOTEL/.test(card.slice(card.indexOf("function SnowfallSection"), card.indexOf("/* WEATHER ALERTS for the selected day:"))), true);
-  eq("fog is a CAUTION that says the model is unchecked in mountains and no fog hour is not a clear day", /whose accuracy in the mountains is unchecked; no fog hour is not a clear day/.test(card), true);
+  eq("fog is a CAUTION that says the model is unchecked in mountains and no fog hour is not a clear day", /whose accuracy in the mountains is unchecked; no fog hour is not a clear day/.test(card + FLAG_WORDS), true);
   eq("the snow section hands snowLevel the RAW local day (it has `hours`); the card's per-day summary has none and crashed the route page", /const raw = localDays\(fc\)\.find\(function \(d\) \{ return d\.date === day\.date; \}\);[\s\S]{0,120}lvl = raw \? snowLevel\(fc, raw\) : null/.test(card), true);
   eq("...and snowLevel on a day shape WITHOUT hours would throw, which is why it must not be handed one", (() => { try { A.snowLevel(fc, { date: "2026-10-08" }); return false; } catch (e) { return true; } })(), true);
   eq("the snow section says the history is modelled, flags nothing, and that stability depends on the layers beneath", /not a measurement on the route/.test(card) && /depends on the layers beneath it/.test(card), true);
@@ -663,7 +665,7 @@ console.log("\n15. FOG, SNOWFALL, SNOW LEVEL, STREAM FLOW, REPORT FRESHNESS — 
    121 hours each): bias -3.7 to +1.9 F, typical hourly error 3.3-4.8 F, so no summit-cold bias exists to correct. */
 console.log("\n16. TEMPERATURE GAPS — shifted to the pin's height, stated, unknown heights never guessed");
 {
-  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const card = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
   // stitched: the weather panel lives in WeatherPanel.tsx since PR58
   const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   const cell = { properties: { elevation: { unitCode: "wmoUnit:m", value: 3889.8576 } } };
@@ -688,7 +690,7 @@ console.log("\n17. YOUR RANGE — the climber's own, one neutral line, never a f
 //     already a flag). So the range is the climber's OWN, has no preset and no default, and adds ONE
 //     neutral sentence. It must never become a flag, a count, a colour or a start time.
 {
-  const card2 = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const card2 = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
   const alpSrc = fs.readFileSync(path.join(ROOT, "lib", "alpineConditions.js"), "utf8");
   const prefsSrc = fs.readFileSync(path.join(ROOT, "lib", "CondPrefs.jsx"), "utf8");
   eq("rangeNote: a day wholly under, wholly over and wholly inside the range", [A.rangeNote([15, 50], 8, -5).rel, A.rangeNote([15, 50], 70, 55).rel, A.rangeNote([15, 50], 40, 20).rel], ["below", "above", "within"]);
@@ -697,7 +699,8 @@ console.log("\n17. YOUR RANGE — the climber's own, one neutral line, never a f
   const call = (card2.match(/dayFlags\(fc, days, k, \{[^}]*\}\)/) || [""])[0];
   eq("the range is not an input to dayFlags: its call carries no preference", call.length > 20 && !/range|pref|temp\b|cond/i.test(call.replace(/tempera/gi, "")), true);
   eq("alpineConditions.js never imports the preferences (a flag cannot read them)", !/CondPrefs|useCondPrefs|scorePrefs/.test(alpSrc), true);
-  const rl = (card2.match(/function RangeLine[\s\S]*?\nexport default function AlpineConditionsCard/) || [""])[0];
+  // RangeLine lives in src/components since PR67: stitched AFTER the card, so it runs to the next component or the end.
+  const rl = (card2.match(/function RangeLine[\s\S]*?(?=\nfunction [A-Z]|\nexport default function|$)/) || [""])[0];
   eq("the range line is neutral: no red, amber or warning words", rl.length > 200 && !/C\.red|C\.amber|Warning|Caution/.test(rl), true);
   eq("the line mounts once, after the day's flags, from that day's own summary", (card2.match(/<RangeLine route=\{route\} sum=\{day\.sum\} \/>/g) || []).length === 1 && /Nothing in the forecast flags this day\.<\/div>\}\s*<\/div>\s*<RangeLine/.test(card2), true);
   eq("alpine and ice/mixed are their own scopes with no preset and no inherited default", /RANGE_ONLY = \{ alpine:/.test(prefsSrc) && /ice: "Ice & mixed"/.test(prefsSrc) && /ownOnly \? \(p\.temp\[scope\] \|\| null\)/.test(prefsSrc) && /scopeForDiscipline/.test(card2), true);
@@ -714,7 +717,7 @@ console.log("\n17. YOUR RANGE — the climber's own, one neutral line, never a f
    Shaped like the live response: unixtime, `timezone`, and the offset that was current when it was fetched. */
 console.log("\n18. A CLOCK CHANGE — local days, sunrise and today read in the forecast's own zone across DST");
 {
-  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const card = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
   const judge = fs.readFileSync(path.join(ROOT, "lib", "alpineConditions.js"), "utf8");
   const t0 = Date.UTC(2025, 9, 31, 7) / 1000, t1 = Date.UTC(2025, 10, 4, 8) / 1000; // 00:00 PDT Oct 31 .. 00:00 PST Nov 4
   const time = []; for (let t = t0; t < t1; t += 3600) time.push(t);

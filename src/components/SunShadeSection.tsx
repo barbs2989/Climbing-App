@@ -2,10 +2,23 @@ import { useMemo } from "react";
 import { sunPins, BOX, clockOf } from "../../lib/alpineConditionsShared.js";
 import { hasSnowLegs } from "../../lib/alpineConditions.js";
 import DayHead from "./DayHead.tsx";
+import type { DayHeadNav } from "./DayHead.tsx";
 import ShadeMap from "../../lib/ShadeMap.jsx";
 import { C } from "../../ClimbMatchCore.jsx";
 
-export default function SunShadeSection({ route, kind, terrain, pt, fc, day, isToday, dayLabel, nav }) {
+export interface SunShadeSectionProps {
+  route: Parameters<typeof sunPins>[0];
+  kind: string | null;
+  terrain: Parameters<typeof hasSnowLegs>[1];
+  /** The forecast point; null when the climb has no location. */
+  pt: { lat: number; lng: number } | null;
+  fc: object;
+  day: { sunrise: number | null; sunset: number | null; date: string } | null;
+  isToday: boolean;
+  dayLabel: string;
+  nav: DayHeadNav | null;
+}
+export default function SunShadeSection({ route, kind, terrain, pt, fc, day, isToday, dayLabel, nav }: SunShadeSectionProps) {
   const pins = useMemo(function () { return sunPins(route); }, [route]);
   if (!pt || !day || day.sunrise == null || day.sunset == null) return null;
   // The terrain is centred on the CLIMB: its base, else its top, else the forecast point.

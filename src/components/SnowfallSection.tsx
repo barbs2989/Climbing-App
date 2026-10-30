@@ -1,6 +1,7 @@
 import { localDays, snowHistory, todayOf, snowLevel, LIMITS } from "../../lib/alpineConditions.js";
 import { BOX } from "../../lib/alpineConditionsShared.js";
 import DayHead from "./DayHead.tsx";
+import type { DayHeadNav } from "./DayHead.tsx";
 import { TileGrid, Tile, NOT_MEASURED } from "../../lib/HourTiles.jsx";
 import { uSnowfall, DLOCALE, uElev, C } from "../../ClimbMatchCore.jsx";
 
@@ -9,12 +10,20 @@ import { uSnowfall, DLOCALE, uElev, C } from "../../ClimbMatchCore.jsx";
    instability depends on the weak layers beneath new snow and can last days to weeks. The snow level is the
    freezing level over the day's wet hours less the 500 to 1500 ft the NWS-cited studies put snow below the
    0 C line; it is a rule of thumb with its range stated, and it needs precipitation to mean anything. */
-export default function SnowfallSection({ fc, day, dayLabel, nav }) {
+export interface SnowfallSectionProps {
+  /** The raw forecast; its hours are the model's own past and future. */
+  fc: object;
+  /** The card's per-day summary; only its date is read. */
+  day: { date: string };
+  dayLabel: string;
+  nav: DayHeadNav;
+}
+export default function SnowfallSection({ fc, day, dayLabel, nav }: SnowfallSectionProps) {
   /* `day` is the card's per-day SUMMARY (flags, start, sunrise...): it carries no `hours`. The raw local day does, so
      it is looked up by date -- passing the summary to snowLevel() crashed the whole route page (live, 2026-10-08). */
   const raw = localDays(fc).find(function (d) { return d.date === day.date; });
   const hist = snowHistory(fc, todayOf(fc)), lvl = raw ? snowLevel(fc, raw) : null;
-  const when = function (n) { return n === 0 ? "today" : n === 1 ? "yesterday" : n + " days ago"; };
+  const when = function (n: number) { return n === 0 ? "today" : n === 1 ? "yesterday" : n + " days ago"; };
   return <div style={BOX}>
     <DayHead title="SNOWFALL & SNOW LEVEL" dayLabel={dayLabel} nav={nav} />
     <TileGrid min={150}>

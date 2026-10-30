@@ -1,6 +1,8 @@
 import { alertsForDay, normAlerts, alertLevel } from "../../lib/alpineConditions.js";
 import { BOX, RETRY, MUTED, windowLabel } from "../../lib/alpineConditionsShared.js";
 import DayHead from "./DayHead.tsx";
+import type { DayHeadNav } from "./DayHead.tsx";
+import type { ForecastBoxRead } from "./ForecastBox.tsx";
 import LoadingRows from "./LoadingRows.tsx";
 import { C } from "../../ClimbMatchCore.jsx";
 
@@ -8,7 +10,19 @@ import { C } from "../../ClimbMatchCore.jsx";
    its WHAT line verbatim in the units it was issued in -- not paraphrased, because a paraphrase of a wind speed
    is a wrong wind speed. Outside the US nothing is checked, and it says so; a failed read is "not measured";
    a day with no alert says that none is not an all-clear. */
-export default function AlertsSection({ day, dayLabel, nav, alerts, fc, onRetry }) {
+export interface AlertsSectionProps {
+  /** The card's per-day summary; only its date is read. */
+  day: { date: string };
+  dayLabel: string;
+  nav: DayHeadNav;
+  /** null while loading; `outside` marks a place the US alert service does not cover. */
+  alerts: ForecastBoxRead<{ outside?: boolean }> | null;
+  /** The raw forecast the alert windows are read in the clock of. */
+  fc: object;
+  onRetry: () => void;
+}
+type AlertsSectionAlert = ReturnType<typeof normAlerts>[number];
+export default function AlertsSection({ day, dayLabel, nav, alerts, fc, onRetry }: AlertsSectionProps) {
   const list = alerts && alerts.data && !alerts.data.outside ? alertsForDay(normAlerts(alerts.data), day.date, fc) : [];
   return <div style={BOX}>
     <DayHead title="WEATHER ALERTS" dayLabel={dayLabel} nav={nav} />
@@ -16,7 +30,7 @@ export default function AlertsSection({ day, dayLabel, nav, alerts, fc, onRetry 
       : alerts.error ? <div><div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>Couldn’t load weather alerts, so they are not measured. This is not a report of none.</div><button onClick={onRetry} style={RETRY}>Try again</button></div>
       : alerts.data.outside ? <div style={MUTED}>Weather alerts are only checked for places in the United States. Nothing was checked for this route.</div>
       : !list.length ? <div style={MUTED}>{"No weather alert is in effect for this area " + (dayLabel === "Today" ? "today" : "on " + dayLabel) + "."}</div>
-      : <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>{list.map(function (a, i) {
+      : <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>{list.map(function (a: AlertsSectionAlert, i: number) {
         const col = alertLevel(a) === "warn" ? C.red : C.amber;
         return <div key={a.id + i} style={{ background: C.surface, border: "1px solid " + col + "77", borderRadius: 10, padding: "9px 11px" }}>
           <div style={{ fontSize: 14, fontWeight: 800, color: col }}>{a.event}</div>

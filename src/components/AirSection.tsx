@@ -2,13 +2,22 @@ import { LIMITS, aqiWord } from "../../lib/alpineConditions.js";
 import { C } from "../../ClimbMatchCore.jsx";
 import { BOX, RETRY, MUTED, clockOf } from "../../lib/alpineConditionsShared.js";
 import DayHead from "./DayHead.tsx";
+import type { DayHeadNav } from "./DayHead.tsx";
 import LoadingRows from "./LoadingRows.tsx";
 import { TileGrid, Tile, NOT_MEASURED } from "../../lib/HourTiles.jsx";
 
 /* AIR QUALITY for the selected day. The crag card has had this since the conditions score; the alpine card
    had none, and wildfire smoke is a first-order reason to change a plan in the West. A day the forecast
    does not reach says so; a failed read says "not measured" and offers a retry, never "clean air". */
-export default function AirSection({ day, dayLabel, nav, air, onRetry }) {
+export interface AirSectionProps {
+  day: { aqi: { max: number; at: number; pm: number | null } | null };
+  dayLabel: string;
+  nav: DayHeadNav | null;
+  /** The air-quality read: null while loading, `{ error }` when it failed, else `{ data }`. */
+  air: { data?: object | null; error?: boolean } | null;
+  onRetry: () => void;
+}
+export default function AirSection({ day, dayLabel, nav, air, onRetry }: AirSectionProps) {
   const a = day.aqi;
   const tone = a ? (a.max > LIMITS.aqiWarn ? C.red : a.max > LIMITS.aqiCaution ? C.amber : a.max > 50 ? C.yellow : C.green) : null;
   return <div style={BOX}>

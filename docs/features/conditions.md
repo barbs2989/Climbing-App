@@ -29,7 +29,10 @@
 | `lib/rockType.js` | `DRY_HOURS`, `DRY_HOURS_UNKNOWN`, `routeRock` |
 | `lib/forecast.js` | Open-Meteo/NWS/USGS fetchers, `visibilityInMetres`, `SPREAD_MODELS`, `blendModels` |
 | `lib/alpineConditions.js` | alpine kinds, flags, snow, fog, alerts, start-time helpers |
-| `lib/AlpineConditionsCard.jsx` | alpine Conditions UI |
+| `lib/AlpineConditionsCard.jsx` | alpine Conditions UI: the card shell, which picks the kind and the forecast point |
+| `src/components/ForecastBox.tsx` | the forecast, flags, start box and day strip; renders `DayByDay`, `HourByHour`, `AlertsSection`, `SnowfallSection`, `AirSection`, `SunShadeSection`, `RangeLine` (each its own file, since PR67) |
+| `src/components/AvalancheSection.tsx`, `SnowSection.tsx`, `StreamsSection.tsx`, `SeasonSection.tsx`, `OutcomesSection.tsx`, `ReportFreshness.tsx` | the card's other sections |
+| `lib/alpineConditionsShared.js` | wording and helpers the sections share: `flagText`, `clockOf`, `reportFreshness`, `recentOutcomes`, `sunFace` |
 | `lib/streams.js` | USGS gauge parsing, `nearestGauge`, `flowReading` |
 | `lib/CondPrefs.jsx` | "Your conditions" store, `CondPrefsControls`, `scorePrefs`, `useCondPrefsAccount` |
 | `lib/BestDayTile.jsx` | Best day to climb |

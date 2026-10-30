@@ -3,16 +3,44 @@ import { useState } from "react";
 import { C, uElev, uTemp, uWind, uSnowfall, uPrecip, uImp, uTempDelta } from "../../ClimbMatchCore.jsx";
 import { floorQ, groundFt, BOX, clockOf, visText } from "../../lib/alpineConditionsShared.js";
 import DayHead from "./DayHead.tsx";
+import type { DayHeadNav } from "./DayHead.tsx";
 import { HourStepper, clockHr, spanEnding, TileGroup, Tile, NOT_MEASURED, compass } from "../../lib/HourTiles.jsx";
 
-export default function HourByHour({ fc, day, dayLabel, nav, pt, floor, legs, snowLegs }) {
+/** The forecast read: Open-Meteo hourly series keyed by name, `time` in unix seconds. */
+export interface HourByHourFc {
+  hourly: { time: number[]; is_day?: number[] } & Record<string, number[]>;
+  elevation?: number;
+}
+export interface HourByHourKeyTime { at: number; label: string; tone: string; after?: string }
+export interface HourByHourProps {
+  fc: HourByHourFc;
+  /** The selected day: its sunrise, sunset, start, snow-soften hour and first thunder hour, all unix seconds. */
+  day: {
+    date: string;
+    sunrise: number | null;
+    sunset: number | null;
+    start: { at: number };
+    daysEarly: number;
+    softAt?: number | null;
+    noFreeze?: boolean;
+    thunder?: { at: number; likely?: boolean } | null;
+  };
+  dayLabel: string;
+  nav: DayHeadNav | null;
+  pt: { elevFt?: number | null };
+  /** The lowest snow the route crosses, in feet; null when it has no snow legs. */
+  floor: { ft: number } | null;
+  legs: { floor: boolean; fromCamp: boolean };
+  snowLegs: boolean;
+}
+export default function HourByHour({ fc, day, dayLabel, nav, pt, floor, legs, snowLegs }: HourByHourProps) {
   const h = fc.hourly;
   const found = localDays(fc).find(function (d) { return d.date === day.date; });
   const endT = day.sunset != null ? day.sunset + 3600 : null;
-  const idx = (found ? found.hours : []).filter(function (i) { return localHour(fc, i) >= 3 && (endT == null ? localHour(fc, i) <= 21 : h.time[i] <= endT); });
-  const [sel, setSel] = useState(null);
+  const idx = (found ? found.hours : []).filter(function (i: number) { return localHour(fc, i) >= 3 && (endT == null ? localHour(fc, i) <= 21 : h.time[i] <= endT); });
+  const [sel, setSel] = useState<number | null>(null);
   if (!idx.length) return null;
-  const kt = [];
+  const kt: HourByHourKeyTime[] = [];
   if (day.sunrise != null) kt.push({ at: day.sunrise, label: "Sunrise", tone: C.yellow });
   // No start key time when the start box says the push is too long for one day (2+ days early): one count, day.daysEarly.
   const startOn = day.start && !(legs && legs.floor) && !(day.daysEarly >= 2);
@@ -21,12 +49,12 @@ export default function HourByHour({ fc, day, dayLabel, nav, pt, floor, legs, sn
   if (day.thunder) kt.push({ at: day.thunder.at, label: day.thunder.likely ? "Thunderstorms in the forecast from" : "Thunderstorms possible from", tone: C.red });
   if (day.sunset != null) kt.push({ at: day.sunset, label: "Sunset", tone: C.yellow });
   kt.sort(function (a, b) { return a.at - b.at; });
-  const marksIn = function (T) { return kt.filter(function (k) { return k.at >= T && k.at < T + 3600; }); };
-  const startI = startOn ? idx.find(function (i) { const st = floorQ(day.start.at); return st >= h.time[i] && st < h.time[i] + 3600; }) : null;
-  const firstDay = idx.find(function (i) { return !h.is_day || h.is_day[i] === 1; });
+  const marksIn = function (T: number) { return kt.filter(function (k) { return k.at >= T && k.at < T + 3600; }); };
+  const startI = startOn ? idx.find(function (i: number) { const st = floorQ(day.start.at); return st >= h.time[i] && st < h.time[i] + 3600; }) : null;
+  const firstDay = idx.find(function (i: number) { return !h.is_day || h.is_day[i] === 1; });
   const cur = sel != null && idx.indexOf(sel) >= 0 ? sel : (startI != null ? startI : (firstDay != null ? firstDay : idx[0]));
-  const v = function (k, i) { return h[k] && typeof h[k][i] === "number" && isFinite(h[k][i]) ? h[k][i] : null; };
-  const sev = function (i) {
+  const v = function (k: string, i: number) { return h[k] && typeof h[k][i] === "number" && isFinite(h[k][i]) ? h[k][i] : null; } as (k: string, i: number) => number;
+  const sev = function (i: number) {
     const g = v("wind_gusts_10m", i), code = v("weather_code", i);
     if ((g != null && g >= LIMITS.gustWarn) || (code != null && code >= 95)) return C.red;
     if ((g != null && g >= LIMITS.gustCaution) || (day.thunder && h.time[i] >= day.thunder.at && h.time[i] < day.thunder.at + 3600)) return C.amber;
@@ -41,7 +69,7 @@ export default function HourByHour({ fc, day, dayLabel, nav, pt, floor, legs, sn
   return <div style={BOX}>
     <DayHead title="HOUR BY HOUR" dayLabel={dayLabel} nav={nav} />
     <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 10 }}>{kt.map(function (k, j) { return <span key={j} style={{ fontSize: 12, fontWeight: 700, color: C.text, background: C.surface, border: "1px solid " + k.tone + "99", borderRadius: 20, padding: "4px 10px", lineHeight: 1.3 }}>{k.label + " " + clockOf(fc, k.at) + (k.after || "")}</span>; })}</div>
-    <div style={{ marginBottom: 8 }}><HourStepper index={idx.indexOf(cur)} count={idx.length} onPick={function (j) { setSel(idx[j]); }} label={function (j) { return clockHr(localHour(fc, idx[j])); }}>{idx.map(function (i) {
+    <div style={{ marginBottom: 8 }}><HourStepper index={idx.indexOf(cur)} count={idx.length} onPick={function (j: number) { setSel(idx[j]); }} label={function (j: number) { return clockHr(localHour(fc, idx[j])); }}>{idx.map(function (i: number) {
       const on = i === cur, sv = sev(i), mk = marksIn(h.time[i]).length;
       return <button key={h.time[i]} onClick={function () { setSel(i); }} aria-pressed={on} aria-label={clockHr(localHour(fc, i)) + (sv === C.red ? ", strong wind or thunderstorm in the forecast" : sv ? ", caution" : "") + (mk ? ", a key time falls in this hour" : "")} style={{ flex: "0 0 auto", minWidth: 58, minHeight: 44, boxSizing: "border-box", padding: "8px 8px 6px", borderRadius: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : "transparent", color: on ? C.onSolid : C.textSub, fontSize: 12, fontWeight: on ? 800 : 600, cursor: "pointer" }}>
         {clockHr(localHour(fc, i))}

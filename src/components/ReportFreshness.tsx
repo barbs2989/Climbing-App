@@ -2,7 +2,13 @@ import { reportFreshness, HEAD, MUTED } from "../../lib/alpineConditionsShared.j
 import CardHead from "./CardHead.tsx";
 import { C, DLOCALE } from "../../ClimbMatchCore.jsx";
 
-export default function ReportFreshness({ activity, unavailable }) {
+export interface ReportFreshnessProps {
+  /** The route's trip reports; only each one's `date` is read. */
+  activity: ReadonlyArray<{ date?: string | null } | null> | null | undefined;
+  /** The trip-report read failed. */
+  unavailable?: boolean;
+}
+export default function ReportFreshness({ activity, unavailable }: ReportFreshnessProps) {
   const fr = reportFreshness(activity);
   return <div style={{ marginTop: 14 }}><CardHead style={HEAD}>How recent the reports are</CardHead>
     {unavailable && !fr ? <div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>Couldn’t load the trip reports, so how recent they are is not known. This is not a report that there are none.</div>

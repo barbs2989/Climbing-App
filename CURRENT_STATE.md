@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **The alpine Conditions tab is components** (PR67, the last of the extraction series, which stops here by decision): each section of `lib/AlpineConditionsCard.jsx` (forecast box, day by day, hour by hour, avalanche, snow, streams, season, alerts…) moved to `src/components/`, and the wording they share to `lib/alpineConditionsShared.js`; the card is 4 KB (84 before). Nothing on screen changed.
 - **The area browser is components** (PR66 of the same series): an area's page and the route finder, the last two pieces of `lib/DbAreaBrowser.jsx`, moved to `src/components/`; the file is 14 KB (198 KB before PR65). Nothing on screen changed.
 - **The Climbs tab's area browser starts coming apart** (PR65 of the same series): 13 of `lib/DbAreaBrowser.jsx`'s components — the climb row, Pick a state, Near me, the area tree, search results, the peak summary, classics, nearby peaks, partners here and others — moved to `src/components/`, and its shared helpers to five `lib/` modules. Nothing on screen changed.
 - **The enrichment panels are components** (PR64 of the same series): the route page's peak facts, seasonal guidance, crowds and partner-requirements panels moved out of `EnrichmentPanels.jsx` into `src/components/`, and the season-window helpers to `lib/seasonWindow.js`. Nothing on screen changed.
