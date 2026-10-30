@@ -1,37 +1,71 @@
 [
-{
-"id":"or_lu_three_sisters_traverse",
-"name":"Three Sisters Traverse",
-"state":"Oregon",
-"region":"Three Sisters Wilderness, Oregon Cascades",
-"legs":[
-{"peak":"North Sister","route":"Southeast ridge, crossing the Terrible Traverse and the Bowling Alley","connect":""},
-{"peak":"Middle Sister","route":"North ridge, from the col south of North Sister","connect":"Descend North Sister's south ridge to the col, then climb the short glaciated north ridge of Middle Sister; late-season conditions showed no crevasse trouble."},
-{"peak":"South Sister","route":"Northwest ridge","connect":"Drop Middle Sister's southeast ridge to the glacier-melt stream at its base, then head west and climb South Sister's northwest ridge, skirting a steep rock step by touching the upper Eugene Glacier."}
-],
-"duration":"1 very long day, or 2 days with a camp",
-"how":"Usually done north to south so the technical peak comes first, while you are fresh: North Sister is the only one with real route-finding and loose rock on the Terrible Traverse and in the Bowling Alley. Middle Sister adds a short glacier crossing that needs an axe, crampons and a helmet. South Sister is a long talus slog by comparison. The fast version is about 19 miles and 9,400 ft of gain trailhead to trailhead. The reverse direction is also done.",
-"descent":"Walk out South Sister's graded climbers' trail to the Cascade Lakes Highway side, which is a different trailhead from the one on the north side where you start.",
-"logistics":"Needs a car at each end (Pole Creek on the north side, Devils Lake on the south) or a ride. Water can be refilled from glacier melt below Middle Sister. Best in late summer when the snow has thinned; a ski version is done in spring.",
-"sources":["https://climber.org/reports/2003/1131.html","https://fastestknowntime.com/comment/3012","https://climberkyle.com/2021/04/06/three-sisters-traverse/"],
-"confidence":"high",
-"notes":"Climber.org report rates the whole outing class 4 with glacier travel. FKT page gives 18.7 mi and 9,400 ft trailhead to trailhead, either direction. A user comment there says a permit is needed to summit; left out of app text, check current rules. Climberkyle report is a spring ski version that turned back below North Sister's summit."
-},
-{
-"id":"or_lu_matterhorn_sacajawea",
-"name":"Matterhorn and Sacajawea",
-"state":"Oregon",
-"region":"Wallowa Mountains, Eagle Cap Wilderness",
-"legs":[
-{"peak":"Matterhorn","route":"Ice Lake climbers' path","connect":""},
-{"peak":"Sacajawea Peak","route":"Ridge from Matterhorn","connect":"Follow the crest over several gendarmes and an unofficial high point, passing most on the west side; a few moves may need the hands."}
-],
-"duration":"1 long day, or part of a 2–3 day trip",
-"how":"Most parties start from the Wallowa Lake side, hike to Ice Lake, then climb Matterhorn on a cairned path. The ridge to Sacajawea is class 3, with a few exposed class 4 moves that can be avoided; the rock is jagged and loose in places and a helmet is wise. Expect the ridge to take longer than its length suggests. Going the other way, from a Hurricane Creek camp, is also done.",
-"descent":"From Sacajawea, return to Ice Lake by scree and a creek, then out by the lake trail. If you finish on Matterhorn instead, the way down to the lake is steeper than it looks.",
-"logistics":"Many camp at Ice Lake and do the ridge as a day trip. Snow often lingers into early summer; water is available along the approach and at the lake. A one-way option from Hurricane Creek to the lake trail needs a shuttle.",
-"sources":["https://fastestknowntime.com/fkt/jackson-wolf-alps-oregon-matterhorn-sacajawea-or-2020-06-27","https://www.oregonhikers.org/forum/viewtopic.php?p=233137","https://www.oregonhikers.org/forum/viewtopic.php?p=184699","https://peakery.com/matterhorn-peak-oregon/"],
-"confidence":"high",
-"notes":"Class 3 per several reports; peakery commenter says class 3/4 and others mention exposed class 4 moves; higher kept as 'few class 4 moves'. Direction varies between reports. SummitPost pages returned 403 and were not read."
-}
+ {
+  "id": "or_lu_three_sisters_traverse",
+  "name": "Three Sisters Traverse",
+  "state": "Oregon",
+  "region": "Three Sisters Wilderness, Oregon Cascades",
+  "legs": [
+   {
+    "peak": "North Sister",
+    "route": "Southeast ridge, crossing the Terrible Traverse and the Bowling Alley",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Middle Sister",
+    "route": "North ridge, from the col south of North Sister",
+    "connect": "Descend North Sister's south ridge to the col, then climb the short glaciated north ridge of Middle Sister; late-season conditions showed no crevasse trouble.",
+    "route_id": "or_middle_sister_north_ridge_hayden_glacier"
+   },
+   {
+    "peak": "South Sister",
+    "route": "Northwest ridge",
+    "connect": "Drop Middle Sister's southeast ridge to the glacier-melt stream at its base, then head west and climb South Sister's northwest ridge, skirting a steep rock step by touching the upper Eugene Glacier.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 very long day, or 2 days with a camp",
+  "how": "Usually done north to south so the technical peak comes first, while you are fresh: North Sister is the only one with real route-finding and loose rock on the Terrible Traverse and in the Bowling Alley. Middle Sister adds a short glacier crossing that needs an axe, crampons and a helmet. South Sister is a long talus slog by comparison. The fast version is about 19 miles and 9,400 ft of gain trailhead to trailhead. The reverse direction is also done.",
+  "descent": "Walk out South Sister's graded climbers' trail to the Cascade Lakes Highway side, which is a different trailhead from the one on the north side where you start.",
+  "logistics": "Needs a car at each end (Pole Creek on the north side, Devils Lake on the south) or a ride. Water can be refilled from glacier melt below Middle Sister. Best in late summer when the snow has thinned; a ski version is done in spring.",
+  "sources": [
+   "https://climber.org/reports/2003/1131.html",
+   "https://fastestknowntime.com/comment/3012",
+   "https://climberkyle.com/2021/04/06/three-sisters-traverse/"
+  ],
+  "confidence": "high",
+  "notes": "Climber.org report rates the whole outing class 4 with glacier travel. FKT page gives 18.7 mi and 9,400 ft trailhead to trailhead, either direction. A user comment there says a permit is needed to summit; left out of app text, check current rules. Climberkyle report is a spring ski version that turned back below North Sister's summit."
+ },
+ {
+  "id": "or_lu_matterhorn_sacajawea",
+  "name": "Matterhorn and Sacajawea",
+  "state": "Oregon",
+  "region": "Wallowa Mountains, Eagle Cap Wilderness",
+  "legs": [
+   {
+    "peak": "Matterhorn",
+    "route": "Ice Lake climbers' path",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Sacajawea Peak",
+    "route": "Ridge from Matterhorn",
+    "connect": "Follow the crest over several gendarmes and an unofficial high point, passing most on the west side; a few moves may need the hands.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 long day, or part of a 2–3 day trip",
+  "how": "Most parties start from the Wallowa Lake side, hike to Ice Lake, then climb Matterhorn on a cairned path. The ridge to Sacajawea is class 3, with a few exposed class 4 moves that can be avoided; the rock is jagged and loose in places and a helmet is wise. Expect the ridge to take longer than its length suggests. Going the other way, from a Hurricane Creek camp, is also done.",
+  "descent": "From Sacajawea, return to Ice Lake by scree and a creek, then out by the lake trail. If you finish on Matterhorn instead, the way down to the lake is steeper than it looks.",
+  "logistics": "Many camp at Ice Lake and do the ridge as a day trip. Snow often lingers into early summer; water is available along the approach and at the lake. A one-way option from Hurricane Creek to the lake trail needs a shuttle.",
+  "sources": [
+   "https://fastestknowntime.com/fkt/jackson-wolf-alps-oregon-matterhorn-sacajawea-or-2020-06-27",
+   "https://www.oregonhikers.org/forum/viewtopic.php?p=233137",
+   "https://www.oregonhikers.org/forum/viewtopic.php?p=184699",
+   "https://peakery.com/matterhorn-peak-oregon/"
+  ],
+  "confidence": "high",
+  "notes": "Class 3 per several reports; peakery commenter says class 3/4 and others mention exposed class 4 moves; higher kept as 'few class 4 moves'. Direction varies between reports. SummitPost pages returned 403 and were not read."
+ }
 ]

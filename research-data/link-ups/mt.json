@@ -1,23 +1,56 @@
 [
-{
-"id":"mt_lu_logan_pass_summits",
-"name":"Logan Pass Summits Link-up",
-"state":"Montana",
-"region":"Glacier National Park, Logan Pass",
-"legs":[
-{"peak":"Mount Oberlin","route":"Col between Oberlin and Clements, then reddish cliff bands","connect":""},
-{"peak":"Clements Mountain","route":"Ledge system to the southeast face, then a couloir; north ridge down","connect":"Return to the saddle and take the exposed ledge line onto Clements."},
-{"peak":"Mount Cannon","route":"Ridge from Clements","connect":"Follow the well-used ridge, then drop to the Hidden Lake trail."},
-{"peak":"Bearhat Mountain","route":"Southeast flank above the lake basin","connect":"Walk past the lake and up the canyon to the upper basin; the flank is a maze of ledges."},
-{"peak":"Dragon's Tail","route":"Class 3 ridge from the basin","connect":"Cross the basin, then climb up the ridge."},
-{"peak":"Reynolds Mountain","route":"Goat trail to the southwest face","connect":"From Dragon's Tail head north on goat trails, then up the climbers' trail over loose rock."}
-],
-"duration":"1 very long day",
-"how":"Six summits ring Hidden Lake and can be strung together from the Logan Pass parking area in either direction. Everything is scrambling, with some fourth and low fifth class moves, but a rope is not needed on the usual lines. Loose rock is the main hazard, and the exposed Clements couloir is the usual crux. Heavy Runner is sometimes added, but its true summit is harder.",
-"descent":"Finish down Reynolds's trail to the car. In the reverse direction the finish is a social trail from Oberlin to the parking lot.",
-"logistics":"Starts and ends at the Logan Pass lot. Early starts avoid afternoon storms; the park road is open mainly in summer. Roughly 16 to 22 miles and 10,000 to 11,700 ft of gain depending on the line.",
-"sources":["https://fastestknowntime.com/route/romp-reynolds-oberlin-mtn-path","https://whale-pomegranate-6gly.squarespace.com/blog/2022/01/30/logan-pass-seven-summits-scramble-gnp"],
-"confidence":"medium",
-"notes":"Two sources read; direction and detail differ (FKT page runs Reynolds first, trip report Oberlin first; mileage 16 vs 22). Mostly a fast-and-light objective rather than a standard guidebook day. A SummitPost report returned 403."
-}
+ {
+  "id": "mt_lu_logan_pass_summits",
+  "name": "Logan Pass Summits Link-up",
+  "state": "Montana",
+  "region": "Glacier National Park, Logan Pass",
+  "legs": [
+   {
+    "peak": "Mount Oberlin",
+    "route": "Col between Oberlin and Clements, then reddish cliff bands",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Clements Mountain",
+    "route": "Ledge system to the southeast face, then a couloir; north ridge down",
+    "connect": "Return to the saddle and take the exposed ledge line onto Clements.",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Cannon",
+    "route": "Ridge from Clements",
+    "connect": "Follow the well-used ridge, then drop to the Hidden Lake trail.",
+    "route_id": null
+   },
+   {
+    "peak": "Bearhat Mountain",
+    "route": "Southeast flank above the lake basin",
+    "connect": "Walk past the lake and up the canyon to the upper basin; the flank is a maze of ledges.",
+    "route_id": null
+   },
+   {
+    "peak": "Dragon's Tail",
+    "route": "Class 3 ridge from the basin",
+    "connect": "Cross the basin, then climb up the ridge.",
+    "route_id": null
+   },
+   {
+    "peak": "Reynolds Mountain",
+    "route": "Goat trail to the southwest face",
+    "connect": "From Dragon's Tail head north on goat trails, then up the climbers' trail over loose rock.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 very long day",
+  "how": "Six summits ring Hidden Lake and can be strung together from the Logan Pass parking area in either direction. Everything is scrambling, with some fourth and low fifth class moves, but a rope is not needed on the usual lines. Loose rock is the main hazard, and the exposed Clements couloir is the usual crux. Heavy Runner is sometimes added, but its true summit is harder.",
+  "descent": "Finish down Reynolds's trail to the car. In the reverse direction the finish is a social trail from Oberlin to the parking lot.",
+  "logistics": "Starts and ends at the Logan Pass lot. Early starts avoid afternoon storms; the park road is open mainly in summer. Roughly 16 to 22 miles and 10,000 to 11,700 ft of gain depending on the line.",
+  "sources": [
+   "https://fastestknowntime.com/route/romp-reynolds-oberlin-mtn-path",
+   "https://whale-pomegranate-6gly.squarespace.com/blog/2022/01/30/logan-pass-seven-summits-scramble-gnp"
+  ],
+  "confidence": "medium",
+  "notes": "Two sources read; direction and detail differ (FKT page runs Reynolds first, trip report Oberlin first; mileage 16 vs 22). Mostly a fast-and-light objective rather than a standard guidebook day. A SummitPost report returned 403."
+ }
 ]

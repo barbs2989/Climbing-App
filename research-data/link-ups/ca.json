@@ -8,27 +8,32 @@
    {
     "peak": "Thunderbolt Peak",
     "route": "Southwest Chute to the crest notch, then the 5.9 summit block (the Northeast Couloir is the other way to the crest)",
-    "connect": ""
+    "connect": "",
+    "route_id": "ca_southwest_chute_1"
    },
    {
     "peak": "Starlight Peak",
     "route": "Underhill Couloir bypass (class 3 chimneys and slabs) to the Milk Bottle summit block, 5.4",
-    "connect": "Rappel back to the base of Thunderbolt's summit tower, then climb the class 3 chimney system on the Starlight side to the next summit."
+    "connect": "Rappel back to the base of Thunderbolt's summit tower, then climb the class 3 chimney system on the Starlight side to the next summit.",
+    "route_id": null
    },
    {
     "peak": "North Palisade",
     "route": "Ridge from Starlight, around the 5.6 chimney via slabs, then the east slopes and a final chimney",
-    "connect": "Three rappels and about 100 feet of low fifth class lead to a notch; one rappel crosses a slot, then you angle left onto slabs below the top."
+    "connect": "Three rappels and about 100 feet of low fifth class lead to a notch; one rappel crosses a slot, then you angle left onto slabs below the top.",
+    "route_id": null
    },
    {
     "peak": "Polemonium Peak",
     "route": "Fourth class down to the U-Notch, then ridge scrambling up Polemonium",
-    "connect": "Downclimb fourth class and a 5.2 chimney, with two full-length rappels, to the U-Notch; the hardest moves come right out of the notch."
+    "connect": "Downclimb fourth class and a 5.2 chimney, with two full-length rappels, to the U-Notch; the hardest moves come right out of the notch.",
+    "route_id": null
    },
    {
     "peak": "Mount Sill",
     "route": "East ridge, easy class 2 talus",
-    "connect": "Rappel the last class 4 step off Polemonium, then walk easy talus along the ridge to the summit."
+    "connect": "Rappel the last class 4 step off Polemonium, then walk easy talus along the ridge to the summit.",
+    "route_id": null
    }
   ],
   "duration": "3-5 days",
@@ -40,7 +45,10 @@
    "https://themtsarecalling.com/northpal/"
   ],
   "confidence": "high",
-  "notes": "Sources differ on the overall grade (5.6 to 5.9 depending on the variation); the hardest figure (5.9 on Thunderbolt) is used. The guided itinerary climbs Thunderbolt's Northeast Couloir, the solo report used the Southwest Chute."
+  "notes": "Sources differ on the overall grade (5.6 to 5.9 depending on the variation); the hardest figure (5.9 on Thunderbolt) is used. The guided itinerary climbs Thunderbolt's Northeast Couloir, the solo report used the Southwest Chute.",
+  "also_route_ids": [
+   "ca_thunderbolt_to_sill_traverse"
+  ]
  },
  {
   "id": "ca_lu_russell_carillon",
@@ -51,12 +59,14 @@
    {
     "peak": "Mount Russell",
     "route": "East Ridge from the Russell-Carillon saddle (class 3, very exposed)",
-    "connect": ""
+    "connect": "",
+    "route_id": "ca_east_arete_3"
    },
    {
     "peak": "Mount Carillon",
     "route": "Sandy class 2 from the saddle with a little class 3",
-    "connect": "Return along the ridge to the saddle where packs were left, then walk east up the sandy slope to the summit and come back."
+    "connect": "Return along the ridge to the saddle where packs were left, then walk east up the sandy slope to the summit and come back.",
+    "route_id": null
    }
   ],
   "duration": "1 day from a high camp; 2 days in all",
@@ -80,12 +90,14 @@
    {
     "peak": "Mount Muir",
     "route": "West side class 3 scramble from the Whitney Trail near Trail Crest",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Mount Whitney",
     "route": "Whitney Trail to the summit (or Mountaineer's Route if you climbed that way)",
-    "connect": "Return to the trail and continue along it to the summit of Whitney."
+    "connect": "Return to the trail and continue along it to the summit of Whitney.",
+    "route_id": "ca_mt_whitney_mount_whitney_trail_the"
    }
   ],
   "duration": "1 long day or part of a 2-3 day trip",
@@ -108,12 +120,14 @@
    {
     "peak": "Mount Lyell",
     "route": "Lyell Glacier to the Lyell-Maclure saddle, then class 3 rock to the summit",
-    "connect": ""
+    "connect": "",
+    "route_id": "ca_lyell_glacier"
    },
    {
     "peak": "Mount Maclure",
     "route": "Southeast ridge from the saddle, class 2-3 talus and ledges",
-    "connect": "From the Lyell summit descend the ridge toward the saddle between the two peaks, using rock or snow, then climb the ridge of Maclure."
+    "connect": "From the Lyell summit descend the ridge toward the saddle between the two peaks, using rock or snow, then climb the ridge of Maclure.",
+    "route_id": "ca_mount_maclure_standard_route"
    }
   ],
   "duration": "1 very long day or 2 days",
@@ -136,12 +150,14 @@
    {
     "peak": "Mount Dana",
     "route": "Tioga Pass use trail up the northwest side (class 1-2)",
-    "connect": ""
+    "connect": "",
+    "route_id": "ca_mount_dana_2_standard_route"
    },
    {
     "peak": "Mount Gibbs",
     "route": "Northeast ridge or east face chute from the Dana-Gibbs saddle (class 2)",
-    "connect": "Drop about 1,200 feet of steep talus on Dana's south side to the saddle, then climb the jagged talus ridge toward Gibbs."
+    "connect": "Drop about 1,200 feet of steep talus on Dana's south side to the saddle, then climb the jagged talus ridge toward Gibbs.",
+    "route_id": "ca_mount_gibbs_standard_route"
    }
   ],
   "duration": "1 long day",
@@ -164,12 +180,14 @@
    {
     "peak": "Mount Ritter",
     "route": "Southeast Glacier route via the Secor chute (snow/class 3-4)",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Banner Peak",
     "route": "Southwest slopes from the Ritter-Banner saddle (class 2)",
-    "connect": "Descend from Ritter to the saddle between the two peaks, then climb a steep snow chute to the col and walk about 1,000 feet of talus to Banner."
+    "connect": "Descend from Ritter to the saddle between the two peaks, then climb a steep snow chute to the col and walk about 1,000 feet of talus to Banner.",
+    "route_id": null
    }
   ],
   "duration": "2 days (long 1-day push possible)",
@@ -193,12 +211,14 @@
    {
     "peak": "Mount Tyndall",
     "route": "North Rib (class 3), descend the northwest ridge",
-    "connect": ""
+    "connect": "",
+    "route_id": "ca_north_rib"
    },
    {
     "peak": "Mount Williamson",
     "route": "West Face (class 3) via the Williamson Bowl",
-    "connect": "Return to the camp near Shepherd Pass, rest, then cross the bowl boulder field the next morning to the base of the face."
+    "connect": "Return to the camp near Shepherd Pass, rest, then cross the bowl boulder field the next morning to the base of the face.",
+    "route_id": "ca_west_face_11"
    }
   ],
   "duration": "3-4 days",
@@ -221,12 +241,14 @@
    {
     "peak": "Cathedral Peak",
     "route": "Southeast Buttress (5.6) or the class 4 north side",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Eichorn Pinnacle",
     "route": "North Face (5.4)",
-    "connect": "Move across the ridge north of Cathedral on class 4 terrain to the small spire on the west side."
+    "connect": "Move across the ridge north of Cathedral on class 4 terrain to the small spire on the west side.",
+    "route_id": "ca_north_face_23"
    }
   ],
   "duration": "1 day",
@@ -250,27 +272,32 @@
    {
     "peak": "Cathedral Peak",
     "route": "Class 4 north side or Southeast Buttress (5.6)",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Echo Peaks",
     "route": "Arete over the first peaks, easy class 3",
-    "connect": "Follow the crest northwest from Cathedral over Echo Peak 3 and the lower Echo summits."
+    "connect": "Follow the crest northwest from Cathedral over Echo Peak 3 and the lower Echo summits.",
+    "route_id": null
    },
    {
     "peak": "Echo Ridge",
     "route": "East arete, class 4",
-    "connect": "Continue along the crest from the Echo Peaks."
+    "connect": "Continue along the crest from the Echo Peaks.",
+    "route_id": null
    },
    {
     "peak": "Cockscomb",
     "route": "Class 4 crest",
-    "connect": "Keep to the crest northwest, scrambling over the granite crest."
+    "connect": "Keep to the crest northwest, scrambling over the granite crest.",
+    "route_id": null
    },
    {
     "peak": "Unicorn Peak",
     "route": "Class 4 notch to the north summit, with a short roped pitch for some",
-    "connect": "Follow the ridge to the final peak."
+    "connect": "Follow the ridge to the final peak.",
+    "route_id": "ca_unicorn_peak_normal_route"
    }
   ],
   "duration": "1 long day (about 12 hours)",
@@ -282,7 +309,10 @@
    "https://climber.org/reports/2004/1339.html"
   ],
   "confidence": "high",
-  "notes": "Direction varies by source: one starts at Unicorn, the other at Cathedral. Summit list also includes Althuski in one source."
+  "notes": "Direction varies by source: one starts at Unicorn, the other at Cathedral. Summit list also includes Althuski in one source.",
+  "also_route_ids": [
+   "ca_cathedral_range_traverse"
+  ]
  },
  {
   "id": "ca_lu_sawtooth_traverse",
@@ -293,37 +323,44 @@
    {
     "peak": "Blacksmith Peak",
     "route": "Start of the crest (some parties begin at the Cleaver instead)",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "The Cleaver",
     "route": "Serrated knife-edge, traversed along the left side",
-    "connect": "Follow the crest, down-climbing the col."
+    "connect": "Follow the crest, down-climbing the col.",
+    "route_id": "ca_se_arete_2"
    },
    {
     "peak": "The Sawblade",
     "route": "Exposed fifth class crest; many rappel and traverse low on the east side",
-    "connect": "Continue along the crest south."
+    "connect": "Continue along the crest south.",
+    "route_id": null
    },
    {
     "peak": "The Three Teeth",
     "route": "Northwest, middle and southeast teeth (5.5-5.9)",
-    "connect": "Climb over the three teeth and rappel the far side."
+    "connect": "Climb over the three teeth and rappel the far side.",
+    "route_id": null
    },
    {
     "peak": "The Doodad",
     "route": "Summit block chimney, 5.2-5.6",
-    "connect": "Rappel from the Three Teeth and continue along the crest."
+    "connect": "Rappel from the Three Teeth and continue along the crest.",
+    "route_id": null
    },
    {
     "peak": "The Dragtooth",
     "route": "Crest climbing",
-    "connect": "Continue from the Doodad."
+    "connect": "Continue from the Doodad.",
+    "route_id": null
    },
    {
     "peak": "Matterhorn Peak",
     "route": "Northwest face, or the south side trail",
-    "connect": "Finish on the highest summit of the range."
+    "connect": "Finish on the highest summit of the range.",
+    "route_id": null
    }
   ],
   "duration": "2 days",
@@ -346,42 +383,50 @@
    {
     "peak": "Mount Mendel",
     "route": "Crest from the north end; headwall up to 5.6",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Mount Darwin",
     "route": "Crest, up to 5.8",
-    "connect": "Follow the crest south."
+    "connect": "Follow the crest south.",
+    "route_id": null
    },
    {
     "peak": "Peak 13,332",
     "route": "Knife-edge descent from Darwin (5.9 or a rappel), the hardest section",
-    "connect": "Drop off Darwin and work along the crest, with several rappels."
+    "connect": "Drop off Darwin and work along the crest, with several rappels.",
+    "route_id": null
    },
    {
     "peak": "Mount Haeckel",
     "route": "Mostly fourth class, northwest arete",
-    "connect": "Continue along the crest."
+    "connect": "Continue along the crest.",
+    "route_id": "ca_northwest_ridge_4"
    },
    {
     "peak": "Mount Wallace",
     "route": "Third class",
-    "connect": "Walk the crest from Haeckel."
+    "connect": "Walk the crest from Haeckel.",
+    "route_id": null
    },
    {
     "peak": "Mount Fiske",
     "route": "Third class to 5.5",
-    "connect": "Continue south."
+    "connect": "Continue south.",
+    "route_id": null
    },
    {
     "peak": "Mount Warlow",
     "route": "Low fifth class northeast ridge",
-    "connect": "Continue along the crest."
+    "connect": "Continue along the crest.",
+    "route_id": null
    },
    {
     "peak": "Mount Huxley",
     "route": "5.5-5.7",
-    "connect": "Finish on the last summit."
+    "connect": "Finish on the last summit.",
+    "route_id": null
    }
   ],
   "duration": "1 very long day to about 4 days",
@@ -393,6 +438,9 @@
    "https://stephabegg.com/?p=7621"
   ],
   "confidence": "medium",
-  "notes": "Peak lists differ by source (one includes a starting peak 13,360, another starts at Gould). Pitch-by-pitch beta is disputed. Fastest times are around 15 hours car to car."
+  "notes": "Peak lists differ by source (one includes a starting peak 13,360, another starts at Gould). Pitch-by-pitch beta is disputed. Fastest times are around 15 hours car to car.",
+  "also_route_ids": [
+   "ca_evolution_traverse"
+  ]
  }
 ]

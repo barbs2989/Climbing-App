@@ -8,17 +8,20 @@
    {
     "peak": "Old Hyndman Peak",
     "route": "Ridge scramble from the Big Basin side",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Cobb Peak",
     "route": "Ridge from Old Hyndman",
-    "connect": "Follow the crest between the two summits, loose and exposed in places, then descend off Cobb to the trail below it."
+    "connect": "Follow the crest between the two summits, loose and exposed in places, then descend off Cobb to the trail below it.",
+    "route_id": null
    },
    {
     "peak": "Hyndman Peak",
     "route": "Standard route from the saddle",
-    "connect": "Rejoin the Hyndman Basin trail, reach the saddle between Hyndman and Old Hyndman, and go up and back down the summit slopes."
+    "connect": "Rejoin the Hyndman Basin trail, reach the saddle between Hyndman and Old Hyndman, and go up and back down the summit slopes.",
+    "route_id": null
    }
   ],
   "duration": "1 long day",
@@ -126,12 +129,14 @@
    {
     "peak": "Three Fingered Jack",
     "route": "South Ridge",
-    "connect": ""
+    "connect": "",
+    "route_id": "or_south_ridge_route"
    },
    {
     "peak": "Mount Washington",
     "route": "North Ridge",
-    "connect": "Return to the Pacific Crest Trail and follow it to the Big Lake trailhead, then hike the PCT about three miles to the cairned turnoff for Washington's climbers' trail."
+    "connect": "Return to the Pacific Crest Trail and follow it to the Big Lake trailhead, then hike the PCT about three miles to the cairned turnoff for Washington's climbers' trail.",
+    "route_id": "or_north_ridge_2"
    }
   ],
   "duration": "1 very long day, or 2 days",

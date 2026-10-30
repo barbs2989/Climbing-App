@@ -8,12 +8,14 @@
    {
     "peak": "North Kinsman",
     "route": "Lonesome Lake Trail, Fishin' Jimmy Trail, then the Kinsman Ridge Trail",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "South Kinsman",
     "route": "Kinsman Ridge Trail",
-    "connect": "Follow the wooded ridge trail onward to the second summit, which carries the cairn."
+    "connect": "Follow the wooded ridge trail onward to the second summit, which carries the cairn.",
+    "route_id": null
    }
   ],
   "duration": "1 long day (about 7 hours)",
@@ -36,12 +38,14 @@
    {
     "peak": "Mount Osceola",
     "route": "Mount Osceola Trail",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "East Osceola",
     "route": "Short ridge trail from Osceola, past the Chimney",
-    "connect": "Drop into the col by the trail, taking either the bypass or the steep rock step known as the Chimney, then climb to the wooded second summit."
+    "connect": "Drop into the col by the trail, taking either the bypass or the steep rock step known as the Chimney, then climb to the wooded second summit.",
+    "route_id": null
    }
   ],
   "duration": "1 day (about 4–5 hours)",
@@ -64,12 +68,14 @@
    {
     "peak": "South Hancock",
     "route": "Hancock Notch Trail, Cedar Brook Trail, then the Hancock Loop Trail",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "North Hancock",
     "route": "Hancock Loop Trail along the ridge",
-    "connect": "Walk the short ridge between the two, crossing muddy patches (a bypass path exists) and gaining a few hundred feet."
+    "connect": "Walk the short ridge between the two, crossing muddy patches (a bypass path exists) and gaining a few hundred feet.",
+    "route_id": null
    }
   ],
   "duration": "1 day (about 6–7 hours)",
@@ -93,17 +99,20 @@
    {
     "peak": "North Tripyramid",
     "route": "North Slide, from Livermore Road via the Mount Tripyramid Trail",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Middle Tripyramid",
     "route": "Mount Tripyramid Trail along the ridge",
-    "connect": "Follow the ridge trail south, about a mile, mostly in trees with one viewpoint near the middle summit."
+    "connect": "Follow the ridge trail south, about a mile, mostly in trees with one viewpoint near the middle summit.",
+    "route_id": null
    },
    {
     "peak": "South Tripyramid",
     "route": "Mount Tripyramid Trail",
-    "connect": "Continue a short distance, under half a mile, to the last summit."
+    "connect": "Continue a short distance, under half a mile, to the last summit.",
+    "route_id": null
    }
   ],
   "duration": "1 long day (about 7–8 hours)",
@@ -126,12 +135,14 @@
    {
     "peak": "Wildcat D",
     "route": "Wildcat Ridge Trail, with a bushwhack to the true high point",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Wildcat A",
     "route": "Wildcat Ridge Trail",
-    "connect": "Walk the ridge over the small rounded intermediate summits (B and C), about two miles."
+    "connect": "Walk the ridge over the small rounded intermediate summits (B and C), about two miles.",
+    "route_id": null
    }
   ],
   "duration": "1 day (about 6 hours)",
@@ -155,32 +166,38 @@
    {
     "peak": "Wildcat D",
     "route": "Wildcat Ridge Trail from the highway lot (optional: the traverse can start at the notch)",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Wildcat A",
     "route": "Wildcat Ridge Trail",
-    "connect": "Cross the ridge over the bumps in between, then continue."
+    "connect": "Cross the ridge over the bumps in between, then continue.",
+    "route_id": null
    },
    {
     "peak": "Carter Dome",
     "route": "Carter-Moriah Trail from Carter Notch",
-    "connect": "Drop steeply to the notch hut, then climb about a mile on rough trail to a wooded summit."
+    "connect": "Drop steeply to the notch hut, then climb about a mile on rough trail to a wooded summit.",
+    "route_id": null
    },
    {
     "peak": "Mount Hight",
     "route": "Carter-Moriah Trail (optional spur; a bypass skips it)",
-    "connect": "Follow the ridge to the bald summit with the best views, then descend steeply."
+    "connect": "Follow the ridge to the bald summit with the best views, then descend steeply.",
+    "route_id": null
    },
    {
     "peak": "South, Middle and North Carter",
     "route": "Carter-Moriah Trail",
-    "connect": "Follow easy grades along the wooded crest past an alpine meadow."
+    "connect": "Follow easy grades along the wooded crest past an alpine meadow.",
+    "route_id": null
    },
    {
     "peak": "Mount Moriah",
     "route": "Carter-Moriah Trail",
-    "connect": "Descend a steep boulder and wet slab section to the col with the shelter, then climb to a ledgy summit."
+    "connect": "Descend a steep boulder and wet slab section to the col with the shelter, then climb to a ledgy summit.",
+    "route_id": null
    }
   ],
   "duration": "1 very long day, or 2 days",
@@ -204,17 +221,20 @@
    {
     "peak": "Seward Mountain",
     "route": "Herd path from the Blueberry side",
-    "connect": ""
+    "connect": "",
+    "route_id": "ny_seward_mountain_seward_herd_path"
    },
    {
     "peak": "Donaldson Peak",
     "route": "Herd path along the ridge",
-    "connect": "Drop to the col and climb the next summit on the same path."
+    "connect": "Drop to the col and climb the next summit on the same path.",
+    "route_id": "ny_donaldson_mountain_seward_range_herd_path"
    },
    {
     "peak": "Emmons Peak",
     "route": "Herd path",
-    "connect": "Continue along the ridge to the third summit, then return to Donaldson."
+    "connect": "Continue along the ridge to the third summit, then return to Donaldson.",
+    "route_id": "ny_mount_emmons_seward_range_herd_path"
    }
   ],
   "duration": "1 very long day, or 2 days",
@@ -237,12 +257,14 @@
    {
     "peak": "Giant Mountain",
     "route": "Trail from the Chapel Pond side (past the Washbowl) or from the falls",
-    "connect": ""
+    "connect": "",
+    "route_id": "ny_giant_mountain_ridge_trail"
    },
    {
     "peak": "Rocky Peak Ridge",
     "route": "Ridge trail from Giant",
-    "connect": "Drop to the col, then climb gradually along the ridge over rocky and open terrain."
+    "connect": "Drop to the col, then climb gradually along the ridge over rocky and open terrain.",
+    "route_id": null
    }
   ],
   "duration": "1 long day (about 9 hours)",
@@ -294,27 +316,32 @@
    {
     "peak": "Little Bigelow",
     "route": "Long-distance trail from the east road (some skip it)",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Avery Peak",
     "route": "Long-distance trail",
-    "connect": "Climb past a boulder field and cliffs on the main trail."
+    "connect": "Climb past a boulder field and cliffs on the main trail.",
+    "route_id": null
    },
    {
     "peak": "West Peak",
     "route": "Long-distance trail",
-    "connect": "Descend through the col, then climb the highest of the range."
+    "connect": "Descend through the col, then climb the highest of the range.",
+    "route_id": null
    },
    {
     "peak": "South Horn",
     "route": "Long-distance trail along the ridge",
-    "connect": "Walk the exposed ridge about two miles, then a steep final climb."
+    "connect": "Walk the exposed ridge about two miles, then a steep final climb.",
+    "route_id": null
    },
    {
     "peak": "Cranberry Peak",
     "route": "Blue-blaze side trail (end of the full range)",
-    "connect": "On a full crossing, continue over a side trail to the last peak."
+    "connect": "On a full crossing, continue over a side trail to the last peak.",
+    "route_id": null
    }
   ],
   "duration": "1 very long day, or 2–3 days",

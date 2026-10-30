@@ -8,12 +8,14 @@
    {
     "peak": "Temple Crag",
     "route": "Contact Crack (5.2) from Contact Pass, or the southeast face chute to the summit ridge; Moon Goddess Arete is the long roped alternative",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Mount Gayley",
     "route": "Ridge from Glacier Notch, class 3 on solid blocks just right of the crest",
-    "connect": "Drop back toward the South Fork drainage, then climb the big gully beside the north faces to the glacier and Glacier Notch; usually a separate day or a long afternoon push."
+    "connect": "Drop back toward the South Fork drainage, then climb the big gully beside the north faces to the glacier and Glacier Notch; usually a separate day or a long afternoon push.",
+    "route_id": "ca_south_west_ridge_aka_yellow_brick_road"
    }
   ],
   "duration": "2-3 days from the South Fork trailhead",
@@ -37,17 +39,20 @@
    {
     "peak": "Mount Kaweah",
     "route": "Class 2 talus and sand from the valley side",
-    "connect": ""
+    "connect": "",
+    "route_id": "ca_mount_kaweah_standard_route"
    },
    {
     "peak": "Black Kaweah",
     "route": "Southwest face: ramp and chute system, class 3 with a short steeper wall",
-    "connect": "Return to the high camp above the valley, then climb the next morning up the chutes below the peak."
+    "connect": "Return to the high camp above the valley, then climb the next morning up the chutes below the peak.",
+    "route_id": "ca_southwest_chute_5"
    },
    {
     "peak": "Red Kaweah",
     "route": "Main chute then left branch, class 2 with a few low class 3 moves, finishing up the north ridge",
-    "connect": "Another morning from the same high camp via the chutes beside Black Kaweah."
+    "connect": "Another morning from the same high camp via the chutes beside Black Kaweah.",
+    "route_id": "ca_red_kaweah_west_face"
    }
   ],
   "duration": "4-5 days from Mineral King",
@@ -70,12 +75,14 @@
    {
     "peak": "Mount Hoffmann",
     "route": "South slope from May Lake (class 2), or the east side with class 3 steps",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Tuolumne Peak",
     "route": "Southeast slopes, class 2 (a short class 3 south face is the alternative)",
-    "connect": "Cross the summit plateau and follow the northeast ridge down, class 3-4 blocky scrambling with a chimney and a knife edge, then easier talus to Tuolumne Peak. Other parties go the opposite way along the ridge over lower bumps."
+    "connect": "Cross the summit plateau and follow the northeast ridge down, class 3-4 blocky scrambling with a chimney and a knife edge, then easier talus to Tuolumne Peak. Other parties go the opposite way along the ridge over lower bumps.",
+    "route_id": null
    }
   ],
   "duration": "1 day, about 6 to 7 hours",
@@ -98,12 +105,14 @@
    {
     "peak": "Mount Stanford (north)",
     "route": "East slope from the Hilton Creek lake basin, class 2 with easy class 3 near the top",
-    "connect": ""
+    "connect": "",
+    "route_id": "ca_mount_stanford_north_standard_route"
    },
    {
     "peak": "Mount Morgan (north)",
     "route": "Ridge over several high points, then the talus fan to the north summit",
-    "connect": "Follow the roughly one-mile ridge southward, staying on the crest over snow, drop to the broad saddle and climb the rocky slope to the north summit."
+    "connect": "Follow the roughly one-mile ridge southward, staying on the crest over snow, drop to the broad saddle and climb the rocky slope to the north summit.",
+    "route_id": null
    }
   ],
   "duration": "1 long day, or 2 days",

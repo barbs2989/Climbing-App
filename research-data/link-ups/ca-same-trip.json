@@ -8,12 +8,14 @@
    {
     "peak": "North Peak",
     "route": "North Couloir (steep snow and ice, then a class 3 gully on solid rock)",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Mount Conness",
     "route": "North Ridge (mostly class 3 with a few class 4 moves and two short rappels)",
-    "connect": "Cross the knife-edge ridge between the two summits, which has a deep gap about halfway. Some parties instead cross the glacier and plateau to the summit."
+    "connect": "Cross the knife-edge ridge between the two summits, which has a deep gap about halfway. Some parties instead cross the glacier and plateau to the summit.",
+    "route_id": "ca_north_ridge_13"
    }
   ],
   "duration": "1-2 days from Saddlebag Lake",
@@ -36,12 +38,14 @@
    {
     "peak": "Mount Mills",
     "route": "East Face chute or the Van Dalsem variation beside it (class 3 rock, then a ledge to the summit plateau)",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Mount Abbot",
     "route": "North Couloir (snow or loose sand and scree, then class 3 ridge)",
-    "connect": "Return to the lake camp after Mills, then go up the next drainage to the couloir on another day."
+    "connect": "Return to the lake camp after Mills, then go up the next drainage to the couloir on another day.",
+    "route_id": "ca_north_couloir"
    }
   ],
   "duration": "2 days",
@@ -64,17 +68,20 @@
    {
     "peak": "Mount Gardiner",
     "route": null,
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Mount Cotter",
     "route": "Ridge from the base of Gardiner (class 2-3)",
-    "connect": "From the foot of Gardiner, walk back across the basin and climb to the ridge; optional and sometimes done the same day."
+    "connect": "From the foot of Gardiner, walk back across the basin and climb to the ridge; optional and sometimes done the same day.",
+    "route_id": null
    },
    {
     "peak": "Clarence King",
     "route": null,
-    "connect": "Return toward the saddle area south of King on another day, then climb the south side with a rope and slings."
+    "connect": "Return toward the saddle area south of King on another day, then climb the south side with a rope and slings.",
+    "route_id": null
    }
   ],
   "duration": "3-4 days (base camp in the basin)",
@@ -97,17 +104,20 @@
    {
     "peak": "Balcony Peak",
     "route": "Snow chute from the Middle Palisade Glacier to the crest, then easy ridge",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Disappointment Peak",
     "route": "North-side traverse from Balcony (steep loose class 3-4) to the notch and summit chimney",
-    "connect": "Contour the steep loose north side below the Balcony summit to a notch east of Disappointment, then climb the class 3-4 chimney."
+    "connect": "Contour the steep loose north side below the Balcony summit to a notch east of Disappointment, then climb the class 3-4 chimney.",
+    "route_id": null
    },
    {
     "peak": "Middle Palisade",
     "route": "Northeast Face (reached by traversing the north face from Disappointment, class 4)",
-    "connect": "Cross the north face under Excitement Peak via chutes and ribs; the quarter mile can take several hours."
+    "connect": "Cross the north face under Excitement Peak via chutes and ribs; the quarter mile can take several hours.",
+    "route_id": "ca_northeast_face_4"
    }
   ],
   "duration": "1 very long day, or 2 days",
@@ -130,12 +140,14 @@
    {
     "peak": "Mount Gilbert",
     "route": "Treasure Col, then Southeast Slope (class 2 sand)",
-    "connect": ""
+    "connect": "",
+    "route_id": "ca_south_east_slope_2"
    },
    {
     "peak": "Mount Johnson",
     "route": "North Ridge from Treasure Col (class 3 with a short knife edge)",
-    "connect": "Retrace to Treasure Col, downclimb about 50 feet on the north side and take a chute west of Johnson's ridge to reach its base."
+    "connect": "Retrace to Treasure Col, downclimb about 50 feet on the north side and take a chute west of Johnson's ridge to reach its base.",
+    "route_id": null
    }
   ],
   "duration": "1 long day or 2 days",
@@ -158,12 +170,14 @@
    {
     "peak": "Mount Langley",
     "route": "Old Army Pass, then the class 2-3 southeast rocks",
-    "connect": ""
+    "connect": "",
+    "route_id": "ca_mt_langley_standard_route_south_slopes"
    },
    {
     "peak": "Cirque Peak",
     "route": "Plateau walk south from New Army Pass (long boulder walk), or from the Pacific Crest Trail",
-    "connect": "Return down Old Army Pass, up New Army Pass and follow the plateau south for about two hours."
+    "connect": "Return down Old Army Pass, up New Army Pass and follow the plateau south for about two hours.",
+    "route_id": null
    }
   ],
   "duration": "1 very long day or 2-3 days",
@@ -186,12 +200,14 @@
    {
     "peak": "Mount Hilgard",
     "route": "Southeast Chute (loose scree with class 2-3 ledges)",
-    "connect": ""
+    "connect": "",
+    "route_id": "ca_mount_hilgard_standard_route"
    },
    {
     "peak": "Mount Gabb",
     "route": "West Ridge from the south bowl (class 2-3, with a class 3 gully)",
-    "connect": "Descend Hilgard's chute, then traverse about 11,600-11,800 feet across slabs and boulders to the south bowl of Gabb."
+    "connect": "Descend Hilgard's chute, then traverse about 11,600-11,800 feet across slabs and boulders to the south bowl of Gabb.",
+    "route_id": null
    }
   ],
   "duration": "1 day from a camp at Lake Italy",
@@ -213,12 +229,14 @@
    {
     "peak": "Dragon Peak",
     "route": "Southwest chute to the crest, then north along the crest (class 3, with a short exposed slab below the summit)",
-    "connect": ""
+    "connect": "",
+    "route_id": "ca_south_ridge_via_south_chute"
    },
    {
     "peak": "Mount Gould",
     "route": "South side from Gould Pass (class 3 summit blocks)",
-    "connect": "Traverse the rocky ridge to Gould Pass and a short stretch of poor talus onto the plateau, then walk south and circle to the summit blocks."
+    "connect": "Traverse the rocky ridge to Gould Pass and a short stretch of poor talus onto the plateau, then walk south and circle to the summit blocks.",
+    "route_id": "ca_south_ridge_7"
    }
   ],
   "duration": "1 day or a weekend from Onion Valley",
@@ -241,12 +259,14 @@
    {
     "peak": "Point Powell",
     "route": "Northeast Couloir (steep snow) to the plateau, then the summit",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Mount Thompson",
     "route": "Northwest Face or the snow chute to the summit block (class 3)",
-    "connect": "Glissade from Powell's plateau to the saddle or glacier and climb the chute to the Thompson plateau."
+    "connect": "Glissade from Powell's plateau to the saddle or glacier and climb the chute to the Thompson plateau.",
+    "route_id": null
    }
   ],
   "duration": "1-2 days from a high camp",
@@ -268,12 +288,14 @@
    {
     "peak": "Mount Sill",
     "route": "North Couloir to the Sill-Gayley saddle, then the Southwest Ridge (class 4 section; Apex Peak is a ten-minute side trip)",
-    "connect": ""
+    "connect": "",
+    "route_id": null
    },
    {
     "peak": "Mount Gayley",
     "route": "Southwest Ridge from Glacier Notch (class 3, about 25 minutes)",
-    "connect": "Descend the couloir, cross the boulders to Glacier Notch and climb the class 3 southwest ridge."
+    "connect": "Descend the couloir, cross the boulders to Glacier Notch and climb the class 3 southwest ridge.",
+    "route_id": "ca_south_west_ridge_aka_yellow_brick_road"
    }
   ],
   "duration": "1 long day or 2 days",
@@ -296,12 +318,14 @@
    {
     "peak": "Mount Winchell",
     "route": "East Arete (class 3, solid rock)",
-    "connect": ""
+    "connect": "",
+    "route_id": "ca_east_arete_7"
    },
    {
     "peak": "Mount Gayley",
     "route": "West Face gully to the Southwest Ridge, or Glacier Notch route (class 3)",
-    "connect": "Return to camp, then go up the Gayley approach from the meadow on another day."
+    "connect": "Return to camp, then go up the Gayley approach from the meadow on another day.",
+    "route_id": "ca_south_west_ridge_aka_yellow_brick_road"
    }
   ],
   "duration": "2-3 days from a camp at Sam Mack Meadow",

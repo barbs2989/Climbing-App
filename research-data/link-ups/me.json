@@ -1,8 +1,32 @@
 [
-{"id":"me_lu_katahdin_knife_edge","name":"Katahdin via the Knife Edge (Pamola to Baxter Peak)","state":"Maine","region":"Baxter State Park",
-"legs":[
-{"peak":"Pamola Peak","route":"Helon Taylor Trail from Roaring Brook","connect":""},
-{"peak":"Baxter Peak","route":"Knife Edge Trail","connect":"Cross the narrow granite ridge over Chimney Peak and South Peak, with a hands-on downclimb into the Chimney notch."}
-],
-"duration":"1 long day (8–12 hours)","how":"A loop that climbs the open ridge to Pamola, crosses the Knife Edge to the state high point, then comes down a gentler trail. The ridge is sustained scrambling with continuous exposure and no rails; the notch is the hardest move and retreating after it is difficult. Wind, wet rock, ice or cloud make it unsafe, and the sides are no escape.","descent":"From Baxter Peak, descend by the Saddle Trail to the basin lake, then the approach trail back to the campground. The steep Cathedral Trail is not advised as a descent.","logistics":"Day use needs a reserved parking pass; camping is booked separately. Lots fill and a morning gate cutoff applies. Parties are limited in size, no dogs, no water on the ridge. Hamlin Peak is a separate optional add-on.","sources":["https://maine.com/guides/katahdin-knife-edge","https://hikewithryan.com/katahdin-hike/"],"confidence":"medium","notes":"Ridge length 1.1 miles, loop 9 to 10 miles with about 4,000 ft gain per one source. The Hamlin leg was not confirmed by either page so is omitted. Class is a hiker's scramble, not roped climbing."}
+ {
+  "id": "me_lu_katahdin_knife_edge",
+  "name": "Katahdin via the Knife Edge (Pamola to Baxter Peak)",
+  "state": "Maine",
+  "region": "Baxter State Park",
+  "legs": [
+   {
+    "peak": "Pamola Peak",
+    "route": "Helon Taylor Trail from Roaring Brook",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Baxter Peak",
+    "route": "Knife Edge Trail",
+    "connect": "Cross the narrow granite ridge over Chimney Peak and South Peak, with a hands-on downclimb into the Chimney notch.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 long day (8–12 hours)",
+  "how": "A loop that climbs the open ridge to Pamola, crosses the Knife Edge to the state high point, then comes down a gentler trail. The ridge is sustained scrambling with continuous exposure and no rails; the notch is the hardest move and retreating after it is difficult. Wind, wet rock, ice or cloud make it unsafe, and the sides are no escape.",
+  "descent": "From Baxter Peak, descend by the Saddle Trail to the basin lake, then the approach trail back to the campground. The steep Cathedral Trail is not advised as a descent.",
+  "logistics": "Day use needs a reserved parking pass; camping is booked separately. Lots fill and a morning gate cutoff applies. Parties are limited in size, no dogs, no water on the ridge. Hamlin Peak is a separate optional add-on.",
+  "sources": [
+   "https://maine.com/guides/katahdin-knife-edge",
+   "https://hikewithryan.com/katahdin-hike/"
+  ],
+  "confidence": "medium",
+  "notes": "Ridge length 1.1 miles, loop 9 to 10 miles with about 4,000 ft gain per one source. The Hamlin leg was not confirmed by either page so is omitted. Class is a hiker's scramble, not roped climbing."
+ }
 ]

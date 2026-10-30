@@ -8,27 +8,32 @@
    {
     "peak": "Teewinot Mountain",
     "route": "East Face",
-    "connect": ""
+    "connect": "",
+    "route_id": "wy_east_face"
    },
    {
     "peak": "Peak 11,840",
     "route": "Ridge traverse over the top, passed on its north side",
-    "connect": "Drop west from Teewinot through notches and a snowfield, then follow a flat bench to the next summit; a chimney downclimb or rappels gets you off its far side."
+    "connect": "Drop west from Teewinot through notches and a snowfield, then follow a flat bench to the next summit; a chimney downclimb or rappels gets you off its far side.",
+    "route_id": null
    },
    {
     "peak": "East Prong",
     "route": "East Ridge",
-    "connect": "Cross a small ridge hump on its north side over loose ledges and sometimes steep snow, finishing on easy fifth class."
+    "connect": "Cross a small ridge hump on its north side over loose ledges and sometimes steep snow, finishing on easy fifth class.",
+    "route_id": null
    },
    {
     "peak": "Mount Owen",
     "route": "Koven Route",
-    "connect": "Cross steep snow to the base of the Owen climb; Owen is reached by its chimney system, and the route is easy to lose."
+    "connect": "Cross steep snow to the base of the Owen climb; Owen is reached by its chimney system, and the route is easy to lose.",
+    "route_id": "wy_koven_route"
    },
    {
     "peak": "Grand Teton",
     "route": "North Ridge (Italian Cracks), via Gunsight Notch and the Grandstand",
-    "connect": "Descend gullies from Owen's shoulder with several rappels into the notch, climb out via a 5.7 pitch up the Grandstand, then fourth class to the North Ridge."
+    "connect": "Descend gullies from Owen's shoulder with several rappels into the notch, climb out via a 5.7 pitch up the Grandstand, then fourth class to the North Ridge.",
+    "route_id": null
    }
   ],
   "duration": "1 very long day",
@@ -52,62 +57,74 @@
    {
     "peak": "Teewinot Mountain",
     "route": "East Face",
-    "connect": ""
+    "connect": "",
+    "route_id": "wy_east_face"
    },
    {
     "peak": "Peak 11,840",
     "route": "East Slope",
-    "connect": "Optional intermediate summit; west side descends by rappel or downclimb."
+    "connect": "Optional intermediate summit; west side descends by rappel or downclimb.",
+    "route_id": null
    },
    {
     "peak": "East Prong",
     "route": "East Ridge",
-    "connect": "Optional intermediate summit; traverse mostly on its north side, drop west by rappel or a 5.4 downclimb."
+    "connect": "Optional intermediate summit; traverse mostly on its north side, drop west by rappel or a 5.4 downclimb.",
+    "route_id": null
    },
    {
     "peak": "Mount Owen",
     "route": "Koven Route",
-    "connect": "Climb a corkscrew chimney system that is easy to miss; leave packs on the shoulder."
+    "connect": "Climb a corkscrew chimney system that is easy to miss; leave packs on the shoulder.",
+    "route_id": "wy_koven_route"
    },
    {
     "peak": "Grand Teton",
     "route": "Italian Cracks on the North Ridge",
-    "connect": "Descend gullies from Owen's shoulder with several rappels into Gunsight Notch, then two or three pitches out of it."
+    "connect": "Descend gullies from Owen's shoulder with several rappels into Gunsight Notch, then two or three pitches out of it.",
+    "route_id": null
    },
    {
     "peak": "Middle Teton",
     "route": "North Ridge (5.6)",
-    "connect": "Down the Owen-Spalding route to the Lower Saddle, then the Southwest Couloir to the col with Middle Teton."
+    "connect": "Down the Owen-Spalding route to the Lower Saddle, then the Southwest Couloir to the col with Middle Teton.",
+    "route_id": null
    },
    {
     "peak": "South Teton",
     "route": "Northwest Ridge",
-    "connect": "Cross the Middle-South col and climb third class; descend the East Ridge (fourth class)."
+    "connect": "Cross the Middle-South col and climb third class; descend the East Ridge (fourth class).",
+    "route_id": null
    },
    {
     "peak": "Ice Cream Cone",
     "route": "West Face crack (5.6)",
-    "connect": "Follow the ridge east from South Teton; downclimb the east face at third class."
+    "connect": "Follow the ridge east from South Teton; downclimb the east face at third class.",
+    "route_id": null
    },
    {
     "peak": "Gilkey Tower",
     "route": "West Ridge (fourth class)",
-    "connect": "Traverse around an intervening feature; short rappels are possible."
+    "connect": "Traverse around an intervening feature; short rappels are possible.",
+    "route_id": null
    },
    {
     "peak": "Spalding Peak",
     "route": "West Ridge (fourth class)",
-    "connect": "Descend Gilkey's east face at third class; cross a snowfield if it is present."
+    "connect": "Descend Gilkey's east face at third class; cross a snowfield if it is present.",
+    "route_id": null
    },
    {
     "peak": "Cloudveil Dome",
     "route": "West Ridge (third class)",
-    "connect": "Descend Spalding's east ridge and stay on the crest."
+    "connect": "Descend Spalding's east ridge and stay on the crest.",
+    "route_id": null
    },
    {
     "peak": "Nez Perce",
     "route": "Northwest Couloir (fourth class with a low fifth crux)",
-    "connect": "Descend Cloudveil's east ridge to a col, then contour on the north side to the couloir."
+    "connect": "Descend Cloudveil's east ridge to a col, then contour on the north side to the couloir.",
+    "route_id": null
    }
   ],
   "duration": "1 very long day or 2 days",
@@ -131,12 +148,14 @@
    {
     "peak": "South Teton",
     "route": "Northwest Ridge / Northwest Couloir",
-    "connect": ""
+    "connect": "",
+    "route_id": "wy_northwest_couloir"
    },
    {
     "peak": "Middle Teton",
     "route": "Southwest Couloir",
-    "connect": "Drop back to the col between the two peaks and cross a flat spot to the base of the couloir."
+    "connect": "Drop back to the col between the two peaks and cross a flat spot to the base of the couloir.",
+    "route_id": "wy_southwest_couloir_3"
    }
   ],
   "duration": "1 long day",
@@ -159,47 +178,56 @@
    {
     "peak": "Pingora Peak",
     "route": "South Buttress (K-Cracks variation)",
-    "connect": ""
+    "connect": "",
+    "route_id": "wy_south_buttress"
    },
    {
     "peak": "Tiger Tower",
     "route": "Optional side summit via short rappels from the Pingora col",
-    "connect": "Optional; two short rappels off the west side."
+    "connect": "Optional; two short rappels off the west side.",
+    "route_id": null
    },
    {
     "peak": "Wolf's Head",
     "route": "East Ridge (5.6)",
-    "connect": "Rappel from Pingora to the col with Tiger Tower or Wolf's Head and follow the crest."
+    "connect": "Rappel from Pingora to the col with Tiger Tower or Wolf's Head and follow the crest.",
+    "route_id": null
    },
    {
     "peak": "Overhanging Tower",
     "route": "Northeast Ridge (5.2)",
-    "connect": "Scramble from the Wolf's Head col; rappel the southwest face afterward."
+    "connect": "Scramble from the Wolf's Head col; rappel the southwest face afterward.",
+    "route_id": "wy_north_east_ridge"
    },
    {
     "peak": "Shark's Nose",
     "route": "Thoroughfare to the north summit, then the summit traverse (5.8)",
-    "connect": "Cross the col from Overhanging Tower."
+    "connect": "Cross the col from Overhanging Tower.",
+    "route_id": null
    },
    {
     "peak": "Block Tower",
     "route": "Upper East Face (5.5)",
-    "connect": "Three long rappels to the col."
+    "connect": "Three long rappels to the col.",
+    "route_id": null
    },
    {
     "peak": "Watchtower",
     "route": "Loose third class to the shoulder and summit",
-    "connect": "Three long rappels from Block Tower to the next col."
+    "connect": "Three long rappels from Block Tower to the next col.",
+    "route_id": null
    },
    {
     "peak": "Pylon Peak",
     "route": "Ridge scramble, passing South Watchtower",
-    "connect": "Optional South Watchtower on third class on the way."
+    "connect": "Optional South Watchtower on third class on the way.",
+    "route_id": null
    },
    {
     "peak": "Warbonnet",
     "route": "Ridge via Warrior II and Warrior I",
-    "connect": "Follow saddles over the two Warriors; beware a false summit."
+    "connect": "Follow saddles over the two Warriors; beware a false summit.",
+    "route_id": null
    }
   ],
   "duration": "1 long day from camp, or 2 days",
@@ -211,6 +239,9 @@
    "https://publications.americanalpineclub.org/articles/12196542302/North-America-United-States-Wyoming-Wind-River-Range-Cirque-of-the-Towers-Traverse"
   ],
   "confidence": "medium",
-  "notes": "The 1960s account ends at Pylon Peak (and mentions Warbonnet in its opening); the modern write-up includes the Warriors and Warbonnet. Overall grade IV 5.9 from the full-traverse report; the older report gave IV F7. Pingora and Wolf's Head are rock climbs, which sit at the edge of the 'alpine' scope; kept because this is a ridge traverse of named summits."
+  "notes": "The 1960s account ends at Pylon Peak (and mentions Warbonnet in its opening); the modern write-up includes the Warriors and Warbonnet. Overall grade IV 5.9 from the full-traverse report; the older report gave IV F7. Pingora and Wolf's Head are rock climbs, which sit at the edge of the 'alpine' scope; kept because this is a ridge traverse of named summits.",
+  "also_route_ids": [
+   "wy_cirque_of_the_towers_traverse"
+  ]
  }
 ]
