@@ -1,0 +1,244 @@
+{
+ "pa_wissahickon_valley_park": {
+  "name": "Wissahickon Valley Park",
+  "region": "Pennsylvania",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [],
+  "note": "No readable month-naming source found; MP chart is an image."
+ },
+ "ut_crawdad_canyon_veyo": {
+  "name": "Crawdad Canyon / Veyo",
+  "region": "Utah",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://mountainproject.com/area/105788851/crawdad-canyon-veyo"
+  ],
+  "note": "Open year round by reservation; summer hot; no source names climbing months."
+ },
+ "ar_fern": {
+  "name": "Fern",
+  "region": "Arkansas",
+  "season_months": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://www.fayettechill.com/blogs/news/rock-climbing-in-arkansas-a-lowdown-on-outdoor-indoor-gear?page=4",
+   "https://www.madboulder.org/states/arkansas"
+  ],
+  "note": "Arkansas guides name Oct-Apr (another mid-Sep to mid-May); local climber: fall/winter is the season, summer humid. Statewide/NW Arkansas sandstone sources, not Fern-specific."
+ },
+ "nm_northern_box_areas": {
+  "name": "Northern Box areas",
+  "region": "New Mexico",
+  "season_months": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://socorronm.org/wp-content/uploads/2024/03/Enchantment-Tower-Socorro-Climbing-Area-1.pdf",
+   "https://www.nmt.edu/in-the-news/2024/box-canyon-climbing.php"
+  ],
+  "note": "Socorro guide: best conditions early Oct to mid-April; Climbing magazine lists the Box as a winter destination. Taken from the whole Box system."
+ },
+ "ok_narrows_the": {
+  "name": "The Narrows",
+  "region": "Oklahoma",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.summitpost.org/the-narrows/152430"
+  ],
+  "note": "Only season words (spring and fall); no month-naming source."
+ },
+ "qc_03_quebec_city": {
+  "name": "Quebec City",
+  "region": "Quebec",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [],
+  "note": "Only ice season (Jan-mid-Mar Montmorency) found; no rock season source."
+ },
+ "wy_shady_side": {
+  "name": "Shady Side",
+  "region": "Wyoming",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.mountainproject.com/area/112070619/shady-side"
+  ],
+  "note": "Summer/early-fall crag, too cold in winter, but no month-naming source."
+ },
+ "ca_mickey_s_beach": {
+  "name": "Mickey's Beach",
+  "region": "California",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://climbingaway.fr/en/climbing-areas/mickey-s-beach"
+  ],
+  "note": "Any time of year depending on wind, tide, wet; no months."
+ },
+ "co_fern_canyon": {
+  "name": "Fern Canyon",
+  "region": "Colorado",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.mountainproject.com/area/105874737/fern-canyon"
+  ],
+  "note": "South-facing, good on sunny fall and winter days; raptor closures; no months named."
+ },
+ "il_a_north_canyon": {
+  "name": "North Canyon",
+  "region": "Illinois",
+  "season_months": [
+   3,
+   4,
+   5,
+   9,
+   10,
+   11
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://mountainproject.com/area/106017458/jackson-falls",
+   "https://climbinghouse.com/jackson-falls-guide/"
+  ],
+  "note": "Reviewer: Jackson Falls window (area-page batch 2), which this note leans on. Jackson Falls: MP says Oct-Nov; Climbing House says Sep-Dec (spring Mar-May enjoyable but wetter). Shared window Oct-Nov. Sub-area takes Jackson Falls' season."
+ },
+ "nm_la_cueva_canyon_upper": {
+  "name": "La Cueva Canyon, Upper",
+  "region": "New Mexico",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://friendsofthesandias.org/recreation/rock-climbing"
+  ],
+  "note": "Sandias described as year round; one page says Apr-Sep for the Sentinel; sources conflict."
+ },
+ "vt_smugglers_notch": {
+  "name": "Smugglers' Notch",
+  "region": "Vermont",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.madboulder.org/smugglers-notch"
+  ],
+  "note": "Late spring to early fall / spring and fall in words; too cold by November; no exact months."
+ },
+ "vt_shipyard": {
+  "name": "Shipyard",
+  "region": "Vermont",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [],
+  "note": "No season text found."
+ },
+ "bc_squamish": {
+  "name": "Squamish",
+  "region": "British Columbia",
+  "season_months": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://squamishrockguides.com/info/",
+   "https://www.planetmountain.com/en/news/climbing/rock-climbing-in-squamish-canada.html"
+  ],
+  "note": "Reviewer: aligned to Smoke Bluffs / Chek (rounds 1, 3). Reviewer: aligned to Smoke Bluffs / Chek (rounds 1, 3). Sources: late May to September best weather; April-September accepted season; Squamish Rock Guides says Feb/Mar-Oct is possible. Shared core May-Sep; Jul-Aug driest."
+ },
+ "ca_lizard_s_mouth_the": {
+  "name": "Lizard's Mouth, The",
+  "region": "California",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [],
+  "note": "Listed as year-round; no months named."
+ },
+ "ca_jumbo_rock_area": {
+  "name": "Jumbo Rock Area",
+  "region": "California",
+  "season_months": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://www.joshuatree.guide/seasons",
+   "https://kaya-app.kayaclimb.com/location/Joshua-Tree-317008"
+  ],
+  "note": "Joshua Tree sources: season early/mid Oct to late Apr/early May; best late Oct-early Dec and Mar-Apr; summer too hot. Park-wide, not Jumbo-specific."
+ },
+ "nj_cranberry_hollow": {
+  "name": "Cranberry Hollow",
+  "region": "New Jersey",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [],
+  "note": "No season source found."
+ },
+ "nv_kraft_mountain_area": {
+  "name": "Kraft Mountain Area",
+  "region": "Nevada",
+  "season_months": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4
+  ],
+  "confidence": "medium",
+  "sources": [
+   "https://mojagear.com/?p=1943",
+   "https://nextadventure.net/blog/trip-report-rock-climbing-calico-basin-in-red-rocks-canyon-nv/"
+  ],
+  "note": "Red Rocks/Calico Basin: Oct to early April; spring (Mar-May) and fall (Sep-Nov) best; summer too hot. Shared window Oct-Apr; Sep and May named by one source."
+ },
+ "wa_lookout_point_area": {
+  "name": "Lookout Point Area",
+  "region": "Washington",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.mountainproject.com/forum/message/126051213"
+  ],
+  "note": "Index: late Sep and late Jun cited, spring/fall in words; no month range."
+ },
+ "bc_comox_lake_2": {
+  "name": "Comox Lake",
+  "region": "British Columbia",
+  "season_months": null,
+  "confidence": "low",
+  "sources": [
+   "https://kaya-app.kayaclimb.com/location/Comox-Valley-Vancouver-Island-BC-7882675"
+  ],
+  "note": "Spring, summer, fall in words only."
+ }
+}

@@ -50,7 +50,8 @@ function validate(id, e) {
 }
 
 const key = requireServiceKey();
-const ROLLBACK = `scripts/rollback-area-page-${Date.now()}.json`;
+const RBDIR = (() => { const i = args.indexOf("--rollback-dir"); return i >= 0 ? args[i + 1] : "scripts"; })();
+const ROLLBACK = `${RBDIR}/rollback-area-page-${Date.now()}.json`;
 const rollback = {};
 let wrote = 0, skipped = 0, failed = 0;
 for (const [id, e] of Object.entries(batch)) {
@@ -78,6 +79,8 @@ for (const [id, e] of Object.entries(batch)) {
   const back = (await (await fetch(`${SUPABASE_URL}/rest/v1/areas?id=eq.${encodeURIComponent(id)}&select=${Object.keys(patch).join(",")}`, { headers: headers(key) })).json())[0];
   const drift = Object.keys(patch).filter(k => JSON.stringify(back[k]) !== JSON.stringify(patch[k]));
   if (drift.length) { console.log(`✗ ${id}: re-read differs on ${drift.join(", ")}`); failed++; } else wrote++;
+  // Production writes are paced (owner rule: at least 1 s per write; a season pass runs to thousands).
+  await new Promise(res => setTimeout(res, 1100));
 }
 console.log(`\n${DRY ? "dry run" : "done"}: ${wrote} written, ${skipped} unchanged, ${failed} refused${wrote ? ` · rollback: ${ROLLBACK}` : ""}`);
 process.exit(failed ? 1 : 0);

@@ -1,0 +1,402 @@
+[
+ {
+  "id": "id_table_rock",
+  "name": "Table Rock",
+  "region": "Idaho",
+  "type": "region",
+  "inside": "West Idaho < Idaho",
+  "lat": 43.5942628571429,
+  "lng": -116.146047857143,
+  "routes": 116
+ },
+ {
+  "id": "mo_1_south_climber_s_left_of_stairs",
+  "name": "South, Climber's Left of Stairs",
+  "region": "Missouri",
+  "type": "region",
+  "inside": "Robinson Bluff < Missouri",
+  "lat": 38.0102145454545,
+  "lng": -90.6284736363636,
+  "routes": 116
+ },
+ {
+  "id": "or_trout_creek",
+  "name": "Trout Creek",
+  "region": "Oregon",
+  "type": "region",
+  "inside": "Central Oregon < Oregon",
+  "lat": 44.80075,
+  "lng": -121.10911,
+  "routes": 116
+ },
+ {
+  "id": "wa_ozone",
+  "name": "Ozone",
+  "region": "Washington",
+  "type": "region",
+  "inside": "Columbia Gorge < South-West & Tacoma",
+  "lat": 45.5668754545455,
+  "lng": -122.211030909091,
+  "routes": 116
+ },
+ {
+  "id": "ak_valdez_2",
+  "name": "Valdez",
+  "region": "Alaska",
+  "type": "region",
+  "inside": "Anchorage & South Central Alaska < Alaska",
+  "lat": 61.114083452381,
+  "lng": -145.963311071429,
+  "routes": 115
+ },
+ {
+  "id": "ca_middle_earth_4",
+  "name": "Middle Earth",
+  "region": "California",
+  "type": "region",
+  "inside": "Fairview Mountain < Apple Valley Area",
+  "lat": 34.5617996666667,
+  "lng": -117.121514,
+  "routes": 115
+ },
+ {
+  "id": "co_other_side_of_road_area",
+  "name": "Other Side Of Road Area",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Mecca Boulder Area < Nine Mile Bouldering",
+  "lat": 38.8900020512821,
+  "lng": -108.504694871795,
+  "routes": 115
+ },
+ {
+  "id": "co_south_platte",
+  "name": "South Platte",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Colorado < United States",
+  "lat": 39.2023836438042,
+  "lng": -105.311530118032,
+  "routes": 115
+ },
+ {
+  "id": "co_sheep_mountain",
+  "name": "Sheep Mountain",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Narrows, The < Poudre Canyon",
+  "lat": 40.678886,
+  "lng": -105.424035,
+  "routes": 115
+ },
+ {
+  "id": "co_golden_gate_canyon_sp",
+  "name": "Golden Gate Canyon SP",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Golden < Colorado",
+  "lat": 39.8625416363636,
+  "lng": -105.420926545455,
+  "routes": 115
+ },
+ {
+  "id": "mo_em_elephant_rocks_sp",
+  "name": "Elephant Rocks SP",
+  "region": "Missouri",
+  "type": "region",
+  "inside": "Missouri < United States",
+  "lat": 37.6545608333333,
+  "lng": -90.6881766666667,
+  "routes": 115
+ },
+ {
+  "id": "mo_sw_peter_s_branch",
+  "name": "Peter's Branch",
+  "region": "Missouri",
+  "type": "region",
+  "inside": "Missouri < United States",
+  "lat": 36.964558,
+  "lng": -92.938754,
+  "routes": 115
+ },
+ {
+  "id": "tx_mckinney_falls_state_park",
+  "name": "McKinney Falls State Park",
+  "region": "Texas",
+  "type": "region",
+  "inside": "Austin Area < Texas",
+  "lat": 30.55128875,
+  "lng": -97.61211,
+  "routes": 115
+ },
+ {
+  "id": "ut_big_bend_bouldering_area",
+  "name": "Big Bend Bouldering Area",
+  "region": "Utah",
+  "type": "region",
+  "inside": "River Road < Southeast Utah",
+  "lat": 38.6507417647059,
+  "lng": -109.484248823529,
+  "routes": 115
+ },
+ {
+  "id": "wa_frenchman_coulee_aka_vantage",
+  "name": "Frenchman Coulee, AKA Vantage",
+  "region": "Washington",
+  "type": "region",
+  "inside": "Central Region < Washington",
+  "lat": 47.0247082095238,
+  "lng": -119.968465857143,
+  "routes": 115
+ },
+ {
+  "id": "nh_sundown_ledge",
+  "name": "Sundown Ledge",
+  "region": "New Hampshire",
+  "type": "region",
+  "inside": "Kancamagus (Eastern) < New Hampshire",
+  "lat": 44.00671,
+  "lng": -71.233258989899,
+  "routes": 114
+ },
+ {
+  "id": "ca_rocklin_deer_creek_park",
+  "name": "Rocklin (Deer Creek Park)",
+  "region": "California",
+  "type": "region",
+  "inside": "I-80 Corridor < Lake Tahoe",
+  "lat": 38.7870521428571,
+  "lng": -121.239480714286,
+  "routes": 113
+ },
+ {
+  "id": "ca_backcountry_bouldering",
+  "name": "Backcountry Bouldering",
+  "region": "California",
+  "type": "region",
+  "inside": "San Jacinto Mountains < California",
+  "lat": 33.777619375,
+  "lng": -116.709035,
+  "routes": 113
+ },
+ {
+  "id": "wa_lower_lump_area",
+  "name": "Lower Lump Area",
+  "region": "Washington",
+  "type": "region",
+  "inside": "Index < Skykomish Valley",
+  "lat": 47.81697,
+  "lng": -121.576723333333,
+  "routes": 113
+ },
+ {
+  "id": "ca_needles_kern_river_the",
+  "name": "Needles / Kern River, The",
+  "region": "California",
+  "type": "region",
+  "inside": "Western Sierra < California",
+  "lat": 35.9141505375394,
+  "lng": -118.514436713671,
+  "routes": 112
+ },
+ {
+  "id": "ca_western_sierra",
+  "name": "Western Sierra",
+  "region": "California",
+  "type": "region",
+  "inside": "California < United States",
+  "lat": 37.0239223320715,
+  "lng": -119.146664695659,
+  "routes": 112
+ },
+ {
+  "id": "or_madrone_wall",
+  "name": "Madrone Wall",
+  "region": "Oregon",
+  "type": "region",
+  "inside": "Portland & The Gorge < Oregon",
+  "lat": 45.3906583333333,
+  "lng": -122.457506666667,
+  "routes": 112
+ },
+ {
+  "id": "az_west_stronghold",
+  "name": "West Stronghold",
+  "region": "Arizona",
+  "type": "region",
+  "inside": "Cochise Stronghold < Southern Arizona",
+  "lat": 31.9261853452381,
+  "lng": -110.035382732143,
+  "routes": 111
+ },
+ {
+  "id": "co_long_s_peak",
+  "name": "Long's Peak",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Rocky Mountain National Park < Colorado",
+  "lat": 40.254743,
+  "lng": -105.6141,
+  "routes": 111
+ },
+ {
+  "id": "me_shagg_crag",
+  "name": "Shagg Crag",
+  "region": "Maine",
+  "type": "region",
+  "inside": "Maine < United States",
+  "lat": 44.43277,
+  "lng": -70.52743,
+  "routes": 111
+ },
+ {
+  "id": "az_munchkinland_area",
+  "name": "Munchkinland Area",
+  "region": "Arizona",
+  "type": "region",
+  "inside": "Mid-Mountain < Mount Lemmon (Catalina Highway)",
+  "lat": 32.3886585714286,
+  "lng": -110.716994285714,
+  "routes": 110
+ },
+ {
+  "id": "co_palace_the_2",
+  "name": "Palace, The",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Poudre Canyon < Fort Collins",
+  "lat": 40.6924486666667,
+  "lng": -105.378960666667,
+  "routes": 110
+ },
+ {
+  "id": "ma_weetamoo_area",
+  "name": "Weetamoo Area",
+  "region": "Massachusetts",
+  "type": "region",
+  "inside": "Lynn Woods < North Shore",
+  "lat": 42.498621875,
+  "lng": -70.9964178125,
+  "routes": 110
+ },
+ {
+  "id": "ga_palisades_the",
+  "name": "Palisades, The",
+  "region": "Georgia",
+  "type": "region",
+  "inside": "Metro-Atlanta Area < Georgia",
+  "lat": 33.8912892307692,
+  "lng": -84.4413007692308,
+  "routes": 109
+ },
+ {
+  "id": "pa_lost_crag_the",
+  "name": "Lost Crag, The",
+  "region": "Pennsylvania",
+  "type": "region",
+  "inside": "Southwestern Highlands < Pennsylvania",
+  "lat": 39.9198385714286,
+  "lng": -79.5809114285714,
+  "routes": 109
+ },
+ {
+  "id": "ut_black_rocks",
+  "name": "Black Rocks",
+  "region": "Utah",
+  "type": "region",
+  "inside": "Saint George < Southwest Utah",
+  "lat": 37.154525,
+  "lng": -113.6078975,
+  "routes": 109
+ },
+ {
+  "id": "wi_rib_mountain",
+  "name": "Rib Mountain",
+  "region": "Wisconsin",
+  "type": "region",
+  "inside": "Northern Highlands < Wisconsin",
+  "lat": 44.921066,
+  "lng": -89.6945806666667,
+  "routes": 109
+ },
+ {
+  "id": "co_north_rim_routes",
+  "name": "North Rim Routes",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Black Canyon of the Gunnison < Gunnison",
+  "lat": 38.5817772727273,
+  "lng": -107.706725454545,
+  "routes": 108
+ },
+ {
+  "id": "nv_lower_canyon",
+  "name": "Lower Canyon",
+  "region": "Nevada",
+  "type": "region",
+  "inside": "Keyhole Canyon < Southern Nevada",
+  "lat": 35.7149061538462,
+  "lng": -114.925654615385,
+  "routes": 108
+ },
+ {
+  "id": "or_main_area_boulders",
+  "name": "Main Area Boulders",
+  "region": "Oregon",
+  "type": "region",
+  "inside": "East < Cline Falls Bouldering",
+  "lat": 44.278475,
+  "lng": -121.255945,
+  "routes": 108
+ },
+ {
+  "id": "ca_mountaineer_walls",
+  "name": "Mountaineer Walls",
+  "region": "California",
+  "type": "region",
+  "inside": "El Cajon Mountain < South San Diego County",
+  "lat": 32.8991603846154,
+  "lng": -116.824770384615,
+  "routes": 107
+ },
+ {
+  "id": "co_beige_tube_area_the_narrows",
+  "name": "Beige Tube Area / The Narrows",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Big Thompson Canyon < Estes Park Valley",
+  "lat": 40.4215927777778,
+  "lng": -105.239742222222,
+  "routes": 107
+ },
+ {
+  "id": "nc_cedar_rock",
+  "name": "Cedar Rock",
+  "region": "North Carolina",
+  "type": "region",
+  "inside": "Southern Mountains Region < North Carolina",
+  "lat": 35.2537933333333,
+  "lng": -82.8049316666667,
+  "routes": 107
+ },
+ {
+  "id": "nh_wm_pinkham_presidentials",
+  "name": "Pinkham / Presidentials",
+  "region": "New Hampshire",
+  "type": "region",
+  "inside": "New Hampshire < United States",
+  "lat": 44.2754058214286,
+  "lng": -71.26116325,
+  "routes": 107
+ },
+ {
+  "id": "nm_dona_ana_mountains",
+  "name": "Dona Ana Mountains",
+  "region": "New Mexico",
+  "type": "region",
+  "inside": "Las Cruces Area Climbing < New Mexico",
+  "lat": 32.4683442807018,
+  "lng": -106.786712491228,
+  "routes": 107
+ }
+]
