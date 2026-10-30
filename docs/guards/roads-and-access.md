@@ -901,11 +901,31 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     Fire; check the road status before you go") and keeps the normal drive, so the line is right again
     the day the road reopens. A durable one (Mowich Lake: the Fairfax Bridge on SR-165, closed to all
     traffic since April 2025, no funded replacement) replaces the drive outright.
-    - **OPEN — `audit:expiring-closures` cannot see these.** It reads `road.*` and `access.*`, never
-      `approach_logistics.trailheadDirection`. Adding that field was written and REVERTED on
-      2026-10-28 unrun: OR-ing the column into its query timed out (57014), and so did the audit's
-      own unchanged query, twice, under that day's load. Re-do it as a SEPARATE narrow read
-      (`dir:approach_logistics->>trailheadDirection`) when the database is quiet, and inject-test it.
+    - **`audit:expiring-closures` now reads the drive line too (2026-10-29)**, as a SEPARATE narrow
+      read (`dir:approach_logistics->>trailheadDirection`, never an OR on the road/access query — that
+      timed out with 57014 on 2026-10-28), and its open-ended tier matches the dated shape this pass
+      writes ("closed since July 2026", "Since December 2025 … has been closed"; the "since" must be
+      followed by a DATE, so "closed for culvert work … and has since reopened" stays history). New
+      injection case `--inject=drivesince`. The rule was tested offline against 7 sample texts; the
+      LIVE run and the six injection runs did not complete that day — every whole-WA scan answered
+      HTTP 500 twice and the audit stopped itself, as it should. **Run them when the database is
+      quiet:** plain, then `--inject=drivesince` (open-ended == drive lines), `clean`, `yearonly`,
+      `expiredanswered`, `pastreport`.
+    - **Dated closures RE-CHECKED against the land manager, 2026-10-29** (`closure-recheck.json`,
+      `apply-closure-recheck.mjs`: compare-and-swap on the exact live text, paced, re-read). Every road
+      a drive line dated a closure on was checked by a researcher and again by a fetched page. **17
+      routes corrected:** Chiwawa River Road (7 — the storm-damage order closes FR 6200 north of
+      Atkinson Flats May 20, 2026 – Dec 31, 2027 and lists the Phelps Creek Trailhead; the Little
+      Giant Fire order runs only to Oct 31), Deadhorse Road (closed at its START since June 2026 for
+      repair, not "at mile 3.1"), Tupso Pass Road (the Sep 29 – Dec 31, 2026 timber closure from FR
+      4110 added), Beckler River Road (4 — open to Jack Pass, closed beyond, North Fork Skykomish bridge
+      on FR 63 out; FR 6514 gated at its start, FR 6510 at mile 1), Vantage Road (rockslides since
+      May 2026), FR 38 (the "elk winter range" reason no page supports, removed). **Confirmed as
+      written:** Suiattle (order runs to Jan 1, 2028), FR 1107 (washout at MP 3.8), FR 38 washout
+      at MP 7, Index-Galena MP 10-14, Smith Brook order dates, Fairfax Bridge, Madison Falls, Westside
+      Road at Dry Creek, the Mount Adams Recreation Area closure order (Aug 26), SR 542 gated Oct 25.
+      **Still open:** Cascade River Road (park page "open", dated July; WTA alert Oct 15 "closed at
+      MP 20") — unchanged, as before; Dosewallips washout parking (no page says where the road ends).
   - **numbersUsed compares as SETS.** A number used twice in a text ("SR 20 ... mile 20") was declared
     twice and refused four checked corrections; duplicates are not untraceability.
   - **The BACKLOG: WA alpine routes with NEITHER a trailhead card NOR approach prose (329 on
@@ -935,10 +955,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       that describes THAT route's start — SummitPost and mountaineers.org answer 403 to curl and
       WebFetch, and Mountain Project often lists a peak's scrambles under other names or not at all.
       A browser session could reach SummitPost; nothing else on the open web is left for these.
-    - **Misfiled, not researched (5):** "Tahoma Cleaver" and "South Tahoma Headwall" on Glacier Peak
-      (Mount Rainier routes); "Daniel Glacier" on Bald Eagle Peak (Mount Daniel); "Mount Temple Ridge"
-      and "Three Musketeers Ridge" on Big Chiwaukum (Enchantments). The last three were judged from
-      search snippets only — owner review before any move.
+    - **Misfiled (5), all REFILED by 2026-10-29.** "Tahoma Cleaver" and "South Tahoma Headwall" had
+      already been moved to Mount Rainier by another pass. The other three were empty stubs
+      (`misfiled-fix.sql`, rollback in `misfiled-rollback.json`): "Daniel Glacier" on Bald Eagle Peak
+      was a DUPLICATE of Mount Daniel's own "Daniel Glacier / Southeast Slopes" and was deleted after a
+      count showed 0 rows in every table pointing at it; "Mount Temple Ridge" moved to The Temple;
+      "Three Musketeers Ridge", an Enchantments summit above Nada Lake that the catalog lacked under any
+      spelling, got its own peak under the Stuart Range (coordinate marked approximate — the ground is
+      7,574 ft there against a published ~7,700; Peakbagger and ListsOfJohn are behind a bot check).
     - **A seasonal gate is stated as its yearly pattern** ("gated overnight from late October through
       the winter"), not as this year's start date, so the line does not go stale every November.
   - **Backlog batch 2, the 219 CRAG routes (2026-10-29): 136 filled, on 25 crags.** Almost all are ice
