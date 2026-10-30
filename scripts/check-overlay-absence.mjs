@@ -63,7 +63,12 @@ const core = maskComments(coreRaw, "ClimbMatchCore.jsx");
    row's own data, or a comment. So this adds coverage without adding findings — which is the
    result, not a disappointment. */
 const libSrc = componentFiles(ROOT, { guard: "check:overlay-absence" })
-  .map((rel) => maskComments(fs.readFileSync(path.join(ROOT, rel), "utf8"), rel, 1));
+  .map((rel) => {
+    /* The comment floor applies only where a comment is expected: a few-line lib module (condRows.jsx,
+       4 lines, no comments) is correctly terse. Files under 4 kB keep the parse check but need no comment. */
+    const raw = fs.readFileSync(path.join(ROOT, rel), "utf8");
+    return maskComments(raw, rel, raw.length >= 4000 ? 1 : 0);
+  });
 
 /* lib/ SPELLS ITS GATE DIFFERENTLY, and following these bodies without knowing that would report
    correctly-gated components as ungated — the guard-flags-correct-work failure, introduced by the
@@ -218,7 +223,13 @@ if (!rows.some((r) => r.name === "inboxOpen")) {
    Each entry is a REASON, verified by reading the component, not a pass. A name here that starts
    naming a flag is stale bookkeeping and is reported as such below. */
 const CHECKED = {
-  reviewQueue: "the Menu's admin review queues (moved off Profile 2026-10-23); each queue component returns its own `error` copy (\"Couldn't load … Do not read this as 'no reports'\") BEFORE its empty copy — AccessibilityReportQueue and AreaProposalQueue gate inside the component, where this file's App-side flag search cannot see it",
+  dataReq: 'the "No areas" copy is AreaTree\'s in-memory seed search (no DB read); "no route carries one yet" and "no longer message" are static Help / Legal prose, not counts of the reader\'s own data (same components as privacyOpen)',
+  settingsOpen: 'the "No crew invites" copy is an <option> value in SettingsPrivacySheet (a setting, not a count); the one empty-state with that text is CrewRequestsView, which shows "Couldn’t load your crew invites" instead whenever the invites read errored (crewInvitesUnavailable, ClimbMatch.jsx) — the error branch is checked first',
+  feedbackOpen: 'the "No areas" phrases are search-result copy: AreaTree\'s "No areas match" filters the seed MOUNTAINS tree in memory (no DB read to fail); DbAreaTree\'s "No areas." sits beneath its own `if (error)` branch ("Couldn’t load the area tree.")',
+  privacyOpen: 'the "no route carries one yet" and "no longer message" phrases are static Help / Legal prose about the catalog and blocking, not counts of the reader\'s own data; the "No areas" copy is AreaTree\'s in-memory seed search (see feedbackOpen)',
+  rateOpen: 'the "no route carries one yet" and "no longer message" phrases are static Help / Legal prose (lib/Help.jsx, lib/LegalView.jsx), not counts of the reader\'s own data',
+  contribOpen: 'the "No areas" phrases are the in-memory seed search and DbAreaTree\'s error-guarded empty state (see feedbackOpen); no per-account read renders an empty line here',
+  eventForm: '"No climbs on this list yet." (SharedListView) sits after its `(!given&&q.isError)` branch ("Couldn’t load this list…") and the missing-list branch, so a failed read cannot reach it; ListsManager\'s empty copy sits after its error branch ("Couldn’t load your objectives…")',
   areaTreeOpen: "AreaTree is gated on `selArea`, which is written only on the SEED catalog path — dead in production (VITE_USE_DB=true renders DbAreaBrowser)",
   logPickOpen: "LogRoutePicker filters the seed ROUTES/MOUNTAINS module constants; no DB read to fail",
   logCatchWith: 'the copy is "No climbs match." — a statement about the filter the user just typed, true during an outage',

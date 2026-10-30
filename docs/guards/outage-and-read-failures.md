@@ -1473,3 +1473,14 @@ that they had none — on the one screen whose whole subject is who you climb wi
     `check:read-failures` for why this repo refuses those). The helper is the fix; the probe is the
     measurement to re-run if the fan-out is ever in question. Every other table the app reads holds
     under ten rows pre-launch, so nothing else can approach the cap before the catalog does.
+
+- **`check:overlay-absence` comment floor and the six CHECKED reasons (2026-10-30, PR #2879).** The lib
+  floor was 1 comment for every lib file, so the terse `lib/condRows.jsx` (4 lines, no comments) failed as
+  a "broken parse". The floor now applies to files of 4 kB and over; smaller files keep the parse check.
+  Clearing the guard then meant reading the copy behind seven overlays that had no recorded reason:
+  settingsOpen, feedbackOpen, privacyOpen, rateOpen, contribOpen, eventForm, dataReq. Each now has a
+  CHECKED entry naming where its copy lives. Verdicts came from a read-only review: the "No crew invites"
+  empty state is CrewRequestsView, which shows the error copy first; "No areas" is AreaTree's in-memory
+  seed search; "no route carries one yet" and "no longer message" are static Help/Legal prose; the
+  SharedListView and ListsManager empty copy sit after their error branches. The stale `reviewQueue`
+  entry was removed because that overlay no longer asserts absence.
