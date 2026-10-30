@@ -1842,6 +1842,39 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the candidate must be within 1.5 km of one of the route's real pins. The chord between sparse
     pins put Fortress Mountain's Chiwawa crossing 4.3 km upstream of the bridge the route uses.
     First run: 150 pins on 126 routes, all re-read and confirmed. MISSING went 634 → 484.
+  - **Second pass, same day:**
+    - Two coordinate-less Water pins had their place read from their own name ("Jet Creek crossing"):
+      4 were measured (`--nocoord`).
+    - Two matcher fixes, sentence-opening "Ford …" / "Both …" and "Lake Stuart Trail", made 5 more
+      pinnable.
+    - Then research ADJUDICATED, never located. `--candidates` lists every measured point (each
+      mapped-trail crossing of the named creek within 4 km of a real pin, with its trail name and
+      height), research picks one cid or null, and `--picks` runs the pick through the same height
+      gates.
+    - **The first research pass answered from memory with no web lookups.** Its 37 picks were not
+      written. A second pass had to cite a fetched page for every pick. It confirmed 16 and
+      overturned 13: three "Killen Creek" crossings on Adams were the PCT, not the Killen Creek
+      trail, and Mildred Lakes is not on the Skokomish route.
+    - Two weakly-sourced picks were dropped. 14 were written.
+    - **Final census, 1,070 routes:** 368 Water pins (199 before) on 295 routes (189 before), 250
+      sources pinned as Water, and MISSING 634 → 462.
+    - The 462 left each carry their refusal, in `~/dev/water-pins-run/remaining-water.csv`:
+      - 115: no trail and no track, so no measured point
+      - 107: not under that name near the route
+      - 89: the track runs beside the source and never crosses it
+      - 51: below the trailhead, i.e. roadside
+      - 34: ambiguous, and research could not settle it
+      - the rest: lakes off the route
+    - Do not re-run the research on these: of 46 candidate sets, only 14 could be confirmed from a
+      fetched page.
+  - **The 15 OFF-TRACK Water pins were triaged, not moved:**
+    - 11 stand within 300 m of the OSM feature they are named for, so the recorded track is another
+      way in. KEEP.
+    - 2 name no feature.
+    - 3 do not sit on their named feature: `wa_cloudy_peak_southwest_slopes` "Leroy Creek crossing"
+      (1.8 km off the creek), `wa_lundin_peak_west_ridge` "Commonwealth Creek crossing" (608 m) and
+      `wa_skookum_peak_twinsisters_scramble` "Green Creek at the cirque mouth" (1.3 km). Those three
+      belong to the WA waypoint-location audit, which owns moving existing pins.
 - **WA ALPINE WAYPOINT AUDIT, 2026-10-30** (owner note: "audit and review all waypoints exact location
   for all WA alpine, mountaineering and scramble routes"). Every waypoint audit was re-run on WA ONE AT
   A TIME (a parallel run timed the database out on 2026-10-28), against 854 routes in scope.

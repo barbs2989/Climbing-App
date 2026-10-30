@@ -28,7 +28,7 @@ const PREFIX_RE = new RegExp(`\\b((?:Lake|Tarn) ${WORD}(?: ${WORD})?)\\b`, "g");
 const AFTER_NOT_WATER = /^\s*(?:Road|Rd\.?|Trail|Trailhead|Highway|Hwy|Campground|Way|Drive|Ranger|Lodge|Resort|Store|Bridge|Basin|Valley|Glacier|Ridge|Pass|Peak|Mountain|Wilderness|Recreation|Sno-?Park|Forest|Divide|Route|Couloir|Gully|Spire|Tower|Wall|Dome|Butte|Cirque|drainage|valley|basin|trail|road)\b/;
 // A capitalised sentence-opener is not part of a name ("Fill at Boulder Creek" must not read as
 // "Fill Boulder Creek"; "Water at Snow Lake" must not read as "Water Snow Lake").
-const OPENERS = new Set(["the", "fill", "refill", "water", "at", "from", "below", "above", "past", "cross", "follow", "reach", "last", "carry", "filter", "no", "there", "beyond", "near", "via", "along", "after", "before", "until", "up", "down", "upper", "lower", "north", "south", "east", "west", "middle", "a", "an", "and", "or", "to", "on", "in", "of", "by", "is", "camp", "this", "that", "it", "its", "if", "when", "drink", "treat", "get", "find", "obtain", "available", "reliable", "seasonal", "plenty", "plan", "note", "bring", "head", "continue", "descend", "ascend", "climb", "hike", "walk", "cross"]);
+const OPENERS = new Set(["the", "fill", "refill", "water", "at", "from", "below", "above", "past", "cross", "follow", "reach", "last", "carry", "filter", "no", "there", "beyond", "near", "via", "along", "after", "before", "until", "up", "down", "upper", "lower", "north", "south", "east", "west", "middle", "a", "an", "and", "or", "to", "on", "in", "of", "by", "is", "camp", "this", "that", "it", "its", "if", "when", "drink", "treat", "get", "find", "obtain", "available", "reliable", "seasonal", "plenty", "plan", "note", "bring", "head", "continue", "descend", "ascend", "climb", "hike", "walk", "cross", "ford", "both", "wade", "rock-hop", "hop", "use", "take", "top", "pump"]);
 
 const sentences = (t) => String(t || "").split(/(?<=[.!?;])\s+|\n+/).map((s) => s.trim()).filter(Boolean);
 
@@ -39,7 +39,7 @@ function trimOpeners(name) {
   return toks.join(" ");
 }
 // "Lake Trail", "Lake Road": the prefix form caught the road, not a lake.
-const NOT_A_LAKE_NAME = /^(?:Lake|Tarn) (?:Trail|Trailhead|Road|Rd|Highway|Hwy|Campground|Basin|Drive|Way|Area|Shore|Outlet|Inlet)\b/;
+const NOT_A_LAKE_NAME = /^(?:Lake|Tarn) (?:Trail|Trailhead|Road|Rd|Highway|Hwy|Campground|Basin|Drive|Way|Area|Shore|Outlet|Inlet)\b|\b(?:Trail|Trailhead|Road|Highway)$/;
 
 /** Every named water feature in a piece of text, with the sentence that names it. `waterOnly`
     false is for bivy[].water, which is about water by construction. */
