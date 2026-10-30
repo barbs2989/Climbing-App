@@ -47,10 +47,19 @@ export function ydsSteps(s) {
   const out = [];
   if (typeof s !== "string") return out;
   YDS.lastIndex = 0;
-  for (let m; (m = YDS.exec(s)); ) if (parseInt(m[1], 10) <= 15) out.push({ v: steps(m), t: m[0] });
+  for (let m; (m = YDS.exec(s)); ) if (parseInt(m[1], 10) <= 15) out.push({ v: steps(m), ...span(m), t: m[0] });
   return out;
 }
-export const label = (v) => v < 10 ? `5.${Math.round(v)}` : `5.${10 + Math.floor((v - 10) / 4)}${"abcd"[Math.round(v - 10) % 4] || ""}`;
+// A BARE letter grade in requirement text ("a solid 5.11 leader") names the whole number grade, a
+// to d: it asks for no more than 5.11a and promises up to 5.11d. Reading it as its b/c middle made
+// "Solid 5.11 trad leader" on a 5.11a or 5.11- route an ABOVE, which it is not.
+export function span(m) {
+  const n = parseInt(m[1], 10), v = steps(m);
+  if (n < 10 || m[2] || m[3]) return { lo: v, hi: v };
+  const base = 10 + (n - 10) * 4;
+  return { lo: base, hi: base + 3 };
+}
+export const label = (v) => v < 10 ? `5.${Math.floor(v)}${v % 1 > 0 ? "+" : ""}` : `5.${10 + Math.floor((v - 10) / 4)}${"abcd"[Math.round(v - 10) % 4] || ""}`;
 
 // The text that renders as a REQUIREMENT. fitnessSpec and approachTime never name a lead grade.
 export function reqText(pr) {
@@ -61,29 +70,45 @@ export function reqText(pr) {
   return parts.join(" | ");
 }
 
-// The route's own grade: rock_grade when it holds a YDS grade, else grade. The HIGHEST 5.x in it is
-// the crux, which is what a leader must be able to climb.
-export function routeSteps(r) {
-  for (const g of [r.rock_grade, r.grade]) { const s = ydsSteps(g); if (s.length) return Math.max(...s.map(x => x.v)); }
-  return null;
+// A 5.x in requirement text that is NOT a lead requirement: a pitch or section described ("the 5.10
+// crux can be aided", "a 5.9 variation", "loose 5.7 rock if off-route"), which must not count as
+// asked of the leader. The same words in a GRADE string ("5.10a; a 5.11 headwall has a 5.7 bypass")
+// name a section the line does not have to climb.
+const NOT_ASKED = /\b(aid(?:ed|ing)?|french[- ]?free|pull(?:ing)? on gear|variations?|variants?|alternatives?|option(?:al)?|avoid(?:ed|s|ing)?|bypass(?:ed|es|ing)?|instead|harder|direct (?:start|finish)|skip(?:ped|s)?|off[- ]route)\b/i;
+const clauses = (s) => typeof s === "string" ? s.split(/[|;,(]|\.\s/).filter(c => !NOT_ASKED.test(c)) : [];
+
+// A GRADE string's parenthesis either qualifies a grade INSIDE it ("5.4 (5.6 on the variation)": the
+// 5.6 is not the line) or, holding no grade of its own, qualifies the grade BEFORE it ("5.7
+// (unprotectable, usually bypassed)": the 5.7 is not the line).
+function gradeSteps(g) {
+  if (typeof g !== "string") return [];
+  const head = g.split("(")[0], groups = [...g.matchAll(/\(([^)]*)\)?/g)].map(m => m[1]);
+  const headOff = groups.some(t => NOT_ASKED.test(t) && !ydsSteps(t).length);
+  return [...(headOff ? [] : clauses(head)), ...groups.flatMap(clauses)].flatMap(ydsSteps);
 }
 
-// A 5.x in requirement text that is NOT a lead requirement: a pitch or section described ("the 5.10
-// crux can be aided", "a 5.9 variation"), which must not count as asked of the leader.
-const NOT_ASKED = /\b(aid(?:ed|ing)?|french[- ]?free|pull(?:ing)? on gear|variation|alternative|option(?:al)?|avoid|bypass|instead|harder|direct (?:start|finish)|skip)\b/i;
+// The route's crux: the HIGHEST 5.x in rock_grade, grade, and its own pitch list. The pitches count
+// because a header can lag them (a "5.4" whose last pitch is 5.6): a partner text asking for that
+// 5.6 is right, and the header is the thing to look at, which is a different audit's question.
+export function routeSteps(r) {
+  const pitches = Array.isArray(r.pitch_detail) ? r.pitch_detail.map(p => p && p.grade) : [];
+  const s = [r.rock_grade, r.grade, ...pitches].flatMap(gradeSteps);
+  return s.length ? Math.max(...s.map(x => x.v)) : null;
+}
 
 export function classify(r) {
   const text = reqText(r.partner_requirements);
   if (!text) return null;
   // Only count grades in clauses that do not describe an optional or aidable section.
-  const asked = text.split(/[|;,(]|\.\s/).filter(c => !NOT_ASKED.test(c)).flatMap(ydsSteps);
+  const asked = clauses(text).flatMap(ydsSteps);
   if (!asked.length) return null;
-  const hi = Math.max(...asked.map(x => x.v));
+  const hi = Math.max(...asked.map(x => x.lo)), top = Math.max(...asked.map(x => x.hi));
   const route = routeSteps(r);
   const base = { id: r.id, name: r.name, grade: r.rock_grade || r.grade, discipline: r.discipline, asked: label(hi), text };
   if (route == null) return hi > 6 ? { ...base, kind: "NONE" } : null;
   if (hi > route + 1) return { ...base, kind: "ABOVE", by: hi - route };
-  if (hi < route) return { ...base, kind: "BELOW", by: route - hi };
+  // A "+" is half a step: "Solid 5.9" for a 5.9+ crux is the same number grade, not a lower one.
+  if (top <= route - 1) return { ...base, kind: "BELOW", by: route - top };
   return null;
 }
 
@@ -105,19 +130,34 @@ function selftest() {
     [R("II 5.6", "Solid 5.6 leader; the 5.9 direct start is optional"), null],
     [R("5.9+", "Solid 5.10a leader"), null],
     [R("5.9", "Solid 5.10+ leader"), "ABOVE"],
+    [R("5.11a", "Solid 5.11 trad leader"), null],
+    [R("5.13-", "Elite 5.13 slab specialist"), null],
+    [R("5.11-", "Solid 5.11 trad/face leader"), null],
+    [R("5.11d", "Solid 5.10 leader"), "BELOW"],
+    [R("5.10d", "Solid 5.10 leader"), null],
+    [R("5.10a", "5.12 sport fitness leader"), "ABOVE"],
+    [R("5.4", "Solid 5.6 leader", null, { pitch_detail: [{ grade: "5.4" }, { grade: "5.6" }] }), null],
+    [R("5.4", "Solid 5.8 leader", null, { pitch_detail: [{ grade: "5.6" }] }), "ABOVE"],
+    [R("5.4", "Solid 5.4 leader", ["Comfort on loose 5.6-5.7 rock if off-route"]), null],
+    [R("5.10a (a 5.11 headwall has a 5.7 bypass)", "Confident 5.10 leader"), null],
+    [R("5.4 (5.6 on the popular variation)", "Solid 5.4 leader"), null],
+    [R("5.9", "Solid 5.9 leader", null, { pitch_detail: [{ grade: "5.9+ R" }] }), null],
+    [R("5.5", "trad leading to 5.6", null, { pitch_detail: [{ grade: "5.7 (unprotectable, usually bypassed)" }] }), null],
+    [R("5.7", "5.7 rock in boots", null, { pitch_detail: [{ grade: "5.7 (5.8 variant reported)" }] }), null],
+    [R("5.10a", "Solid 5.9 leader"), "BELOW"],
     [{ id: "t", grade: "Grade II", rock_grade: "5.7", partner_requirements: { experienceLevel: "5.10 leader" } }, "ABOVE"],
     [{ id: "t", grade: "5.8", partner_requirements: { fitnessSpec: "5.12 fitness" } }, null],
   ];
   let bad = 0;
   for (const [row, want] of cases) { const got = classify(row)?.kind ?? null; if (got !== want) { bad++; console.error(`FAIL ${JSON.stringify(row.partner_requirements)} on ${row.rock_grade || row.grade}: want ${want}, got ${got}`); } }
-  if (label(steps(["5.10a", "10", "a"])) !== "5.10a" || label(8) !== "5.8") { bad++; console.error("FAIL label()"); }
+  if (label(steps(["5.10a", "10", "a"])) !== "5.10a" || label(8) !== "5.8" || label(9.5) !== "5.9+") { bad++; console.error("FAIL label()"); }
   console.log(bad ? `audit:partner-grade --selftest: ${bad} FAILED` : `audit:partner-grade --selftest: ${cases.length} cases pass`);
   process.exit(bad ? 1 : 0);
 }
 if (process.argv.includes("--selftest")) selftest();
 
 const rows = FIXTURE ? JSON.parse(readFileSync(FIXTURE, "utf8"))
-  : await selectAll("routes", "id,name,area_id,discipline,grade,rock_grade,partner_requirements",
+  : await selectAll("routes", "id,name,area_id,discipline,grade,rock_grade,pitch_detail,partner_requirements",
       `partner_requirements=not.is.null${STATE ? `&id=like.${STATE}_*` : ""}`, { key: requireServiceKey(), pageSize: 100 });
 const found = rows.map(classify).filter(Boolean);
 if (JSON_OUT) { console.log(JSON.stringify(found, null, 1)); process.exit(0); }

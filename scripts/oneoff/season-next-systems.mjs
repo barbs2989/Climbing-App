@@ -10,16 +10,20 @@ const args = process.argv.slice(2);
 const opt = (k, d) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : d; };
 const n = Number(opt("--n", 10)), round = opt("--round");
 const skip = new Set((opt("--skip", "") || "").split(",").filter(Boolean));
+// Regions a reviewer judged too varied for one window (audits/season/systems-too-broad.json).
+if (fs.existsSync("audits/season/systems-too-broad.json")) for (const id of JSON.parse(fs.readFileSync("audits/season/systems-too-broad.json", "utf8")).ids) skip.add(id);
 const byId = new Map(JSON.parse(fs.readFileSync(opt("--cache"), "utf8")).map(a => [a.id, a]));
 const done = new Set(fs.existsSync("audits/season/attempted.json") ? JSON.parse(fs.readFileSync("audits/season/attempted.json", "utf8")) : []);
 const sdone = new Set(fs.existsSync("audits/season/systems-attempted.json") ? JSON.parse(fs.readFileSync("audits/season/systems-attempted.json", "utf8")) : []);
 const units = JSON.parse(fs.readFileSync("audits/season/parents.json", "utf8"));
-const pick = JSON.parse(fs.readFileSync("audits/season/systems.json", "utf8")).filter(s => !sdone.has(s.id) && !skip.has(s.id)).slice(0, n);
+// --from audits/season/systems-v2.json ranks by routes a season would reach through the ancestor walk.
+const pick = JSON.parse(fs.readFileSync(opt("--from", "audits/season/systems.json"), "utf8")).filter(s => !sdone.has(s.id) && !skip.has(s.id)).slice(0, n);
 const out = pick.map(s => {
   const sa = byId.get(s.id) || {};
   const gp = sa.parent_id ? byId.get(sa.parent_id) : null;
-  const subs = units.filter(u => { const a = byId.get(u.id); return a && a.parent_id === s.id && !["state", "country"].includes(u.type); })
-    .map(u => ({ id: u.id, name: u.name, routes: u.uncovered, open: !done.has(u.id), lat: u.lat, lng: u.lng }));
+  // Every direct child that holds climbs: a season on the system reaches all of them.
+  const subs = [...byId.values()].filter(a => a.parent_id === s.id && (a.route_count || 0) > 0)
+    .map(a => ({ id: a.id, name: a.name, routes: a.route_count, open: !done.has(a.id), lat: a.lat, lng: a.lng }));
   return { id: s.id, name: s.name, region: s.region, inside: gp ? gp.name : "", lat: sa.lat, lng: sa.lng, units: subs };
 });
 fs.writeFileSync(`audits/season/sys-${round}.json`, JSON.stringify(out, null, 1));
