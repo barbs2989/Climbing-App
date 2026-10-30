@@ -20,10 +20,50 @@ import AddHereFooter from "./AddHereFooter.tsx";
 import AreaWrongSpot from "../../lib/AreaWrongSpot";
 import DbSuggestedClimbs from "./DbSuggestedClimbs.tsx";
 import NearbyPeaks from "./NearbyPeaks.tsx";
+import type { ComponentType, ReactNode } from "react";
+import type { C as Palette } from "../../ClimbMatchCore.jsx";
+import type { RouteRowRoute } from "./RouteRow.tsx";
+import type { ClassicsListRow } from "./ClassicsList.tsx";
+import type { NearbyPeaksRow } from "./NearbyPeaks.tsx";
+import type { PartnersHereCardProps } from "./PartnersHereCard.tsx";
+import type { DbSearchSplitArea, DbSearchSplitRoute } from "./DbSearchSplit.tsx";
+import type { AreaGettingThereArea } from "./AreaGettingThere.tsx";
+import type { AddHereFooterArea } from "./AddHereFooter.tsx";
 
-const CHILD_NOUN = { crag: "Areas", peak: "Peaks", canyon: "Canyons", range: "Ranges", region: "Areas", wall: "Areas", state: "States", country: "Countries" };
-function childNoun(children) {
-  const types = [...new Set((children || []).map(c => c.area_type))];
+/** A row of the area page's climb list (useAreaRoutes). */
+export interface AreaPageRoute extends Omit<RouteRowRoute, "stars"> {
+  /** The climbers' mean rating; an unrated climb is null or 0 in the database and compares as 0 here. */
+  stars: number;
+  id: string | number;
+  name: string;
+  classic?: boolean | null;
+  guide_stars?: number | null;
+  classic_score?: number | string | null;
+  [column: string]: unknown;
+}
+/** An areas row, as the drill stack holds it. */
+export interface AreaPageArea extends Omit<AreaGettingThereArea, "area_type" | "lat" | "lng">, AddHereFooterArea {
+  area_type: keyof typeof ATYPE;
+  region?: string | null;
+  elevation_ft?: number | null;
+  prominence_ft?: number | null;
+  avy_zone?: string | null;
+  dominant_discipline?: keyof typeof DL | null;
+  parent_peak?: string | null;
+  blurb?: string | null;
+  lat?: number | null;
+  lng?: number | null;
+  [column: string]: unknown;
+}
+/** The fields of a react-query result this page reads. */
+interface AreaPageQuery<T> { data?: T | null; isLoading?: boolean; error?: unknown }
+/** An area_classics row: a list row plus the whole count the read was capped from. */
+interface AreaPageClassic extends ClassicsListRow { total?: number | null }
+/** What a row of the page's lists or the nearby peaks hands to the jump. */
+type AreaPageJump = DbSearchSplitArea | NearbyPeaksRow["a"];
+const CHILD_NOUN: Record<string, string> = { crag: "Areas", peak: "Peaks", canyon: "Canyons", range: "Ranges", region: "Areas", wall: "Areas", state: "States", country: "Countries" };
+function childNoun(children: { area_type: string }[] | null | undefined) {
+  const types = [...new Set((children || []).map((c: { area_type: string }) => c.area_type))];
   return (types.length === 1 && CHILD_NOUN[types[0]]) || "Areas";
 }
 // CLASSIC CLIMBS HERE: the area page's answer to "what should I climb here?", picked the way Mountain Project's
@@ -32,11 +72,11 @@ function childNoun(children) {
 // 3.5+ (`stars`, 0294). Nothing here is read from another site. Best first: curated, then guidebook stars, then
 // climbers' stars, then name. An area with none falls back to TOP RATED HERE.
 const CLASSIC_GUIDE_STARS = 3, CLASSIC_CLIMBER_STARS = 3.5;
-function isAreaClassic(r) { return !!r.classic || (r.guide_stars != null && r.guide_stars >= CLASSIC_GUIDE_STARS) || (r.stars != null && r.stars >= CLASSIC_CLIMBER_STARS); }
+function isAreaClassic(r: AreaPageRoute) { return !!r.classic || (r.guide_stars != null && r.guide_stars >= CLASSIC_GUIDE_STARS) || (r.stars != null && r.stars >= CLASSIC_CLIMBER_STARS); }
 // Best first, as area_classics (0393) orders the areas above: the classic score, else guidebook stars, else ours.
-function classicQuality(r) { return Number(r.classic_score ?? r.guide_stars ?? r.stars ?? 0); }
-function areaClassics(routes) {
-  return routes.filter(isAreaClassic).sort((a, b) => (b.classic ? 1 : 0) - (a.classic ? 1 : 0) || classicQuality(b) - classicQuality(a) || (b.guide_stars || 0) - (a.guide_stars || 0) || (b.stars || 0) - (a.stars || 0) || a.name.localeCompare(b.name));
+function classicQuality(r: AreaPageRoute) { return Number(r.classic_score ?? r.guide_stars ?? r.stars ?? 0); }
+function areaClassics(routes: AreaPageRoute[]) {
+  return routes.filter(isAreaClassic).sort((a: AreaPageRoute, b: AreaPageRoute) => (b.classic ? 1 : 0) - (a.classic ? 1 : 0) || classicQuality(b) - classicQuality(a) || (b.guide_stars || 0) - (a.guide_stars || 0) || (b.stars || 0) - (a.stars || 0) || a.name.localeCompare(b.name));
 }
 // PARTNERS HERE (0300): who is listed as an available partner at this area, inside it, or across a wider
 // area that contains it — and the one-tap "List me here". Crag-family areas and their ancestors below the
@@ -49,18 +89,54 @@ const PARTNER_CARD_TYPES = ["region", "range", "canyon", "crag", "wall"];
 // position stays LAST in both wall orders, by name, rather than being guessed into the line.
 // "By discipline" groups the list under one heading per discipline (in DISCIPLINES order), each A → Z.
 const AREA_LIST_SORTS = [["lr", "Left → right"], ["rl", "Right → left"], ["az", "A → Z"], ["za", "Z → A"], ["disc", "By discipline"]];
-function sortAreaRoutes(routes, key) {
-  const byName = (a, b) => String(a.name || "").localeCompare(String(b.name || ""));
+function sortAreaRoutes(routes: AreaPageRoute[], key: string) {
+  const byName = (a: AreaPageRoute, b: AreaPageRoute) => String(a.name || "").localeCompare(String(b.name || ""));
   if (key === "az") return [...routes].sort(byName);
-  if (key === "za") return [...routes].sort((a, b) => byName(b, a));
+  if (key === "za") return [...routes].sort((a: AreaPageRoute, b: AreaPageRoute) => byName(b, a));
   if (key === "disc") {
-    const rank = d => { const i = DISCIPLINES.findIndex(x => x[0] === d); return i < 0 ? 999 : i; };
-    return [...routes].sort((a, b) => rank(a.discipline) - rank(b.discipline) || byName(a, b));
+    const rank = (d: string | undefined) => { const i = DISCIPLINES.findIndex(x => x[0] === d); return i < 0 ? 999 : i; };
+    return [...routes].sort((a: AreaPageRoute, b: AreaPageRoute) => rank(a.discipline) - rank(b.discipline) || byName(a, b));
   }
   const dir = key === "rl" ? -1 : 1;
-  return [...routes].sort((a, b) => Number(a.sort_order == null) - Number(b.sort_order == null) || (a.sort_order != null && b.sort_order != null ? dir * (a.sort_order - b.sort_order) : 0) || byName(a, b));
+  return [...routes].sort((a: AreaPageRoute, b: AreaPageRoute) => Number(a.sort_order == null) - Number(b.sort_order == null) || (a.sort_order != null && b.sort_order != null ? dir * (a.sort_order - b.sort_order) : 0) || byName(a, b));
 }
-export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt}) {
+export interface AreaPageProps {
+  /** The drill-stack row; the page reads the live row over it. */
+  area: AreaPageArea;
+  onSignIn?: () => void;
+  uElev?: ((ft: number) => string) | null;
+  uDistMi?: (mi: number) => string;
+  /** Whether this area is in Saved. */
+  booked?: boolean;
+  onToggleSave: () => void;
+  onDrill: (a: AreaPageArea) => void;
+  /** Opens the route finder, optionally preset to a discipline. */
+  onFinder: (disc?: unknown) => void;
+  onNear: () => void;
+  onObjectives: () => void;
+  onAllAreas: () => void;
+  onOpenRoute: (r: RouteRowRoute | DbSearchSplitRoute) => void;
+  onJumpToArea: (a: AreaPageJump) => void;
+  C: typeof Palette;
+  onAddClimb?: ((area: AddHereFooterArea) => void) | null;
+  onAddArea?: ((area: AddHereFooterArea) => void) | null;
+  TopContributors?: ComponentType<{ areaId: string; mb?: number }> | null;
+  onFireMap?: ((area: AreaPageArea) => void) | null;
+  /** Absent hides every edit control; null opens the editor with no field chosen. */
+  onSuggestAreaEdit?: ((area: AreaPageArea, field: string | null) => void) | null;
+  myId?: string | null;
+  PartnerRow?: PartnersHereCardProps["PartnerRow"];
+  uid?: PartnersHereCardProps["uid"];
+  myListings?: PartnersHereCardProps["myListings"];
+  onListMe?: PartnersHereCardProps["onListMe"];
+  onFindPartnersInArea?: PartnersHereCardProps["onFindPartnersInArea"];
+  onViewProfile?: PartnersHereCardProps["onViewProfile"];
+  notify?: PartnersHereCardProps["notify"];
+  onStartCrew?: PartnersHereCardProps["onStartCrew"];
+  onCrewsHere?: PartnersHereCardProps["onCrewsHere"];
+  openCrewCountAt?: PartnersHereCardProps["openCrewCountAt"];
+}
+export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt}: AreaPageProps) {
   const [searchMode, setSearchMode] = useState("areas");
   const [wrongOpen, setWrongOpen] = useState(false);
   const listEndRef = useRef(null);
@@ -73,7 +149,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // The row in the drill stack is a snapshot of a CHILD row read when its parent was opened. An
   // agreed edit rewrites the areas row on the server (0304) and refreshes ["area", id] — so the
   // page reads the live row over the snapshot, or a climber's own fill would never show.
-  const { data: liveArea } = useArea(areaRow.id);
+  const { data: liveArea }: AreaPageQuery<AreaPageArea> = useArea(areaRow.id);
   const area = liveArea && liveArea.id === areaRow.id ? liveArea : areaRow;
   const formation = ["crag", "peak", "wall"].includes(area.area_type);
   // The chart runs on everything below a country: the whole catalog in one call is ~2 s against
@@ -81,12 +157,12 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const chartable = !["world", "country"].includes(area.area_type);
   const stats = useAreaClimbStats(chartable ? area.id : null);
   const areaEdits = useAreaContributions(formation && onSuggestAreaEdit ? area.id : null);
-  const editOn = formation && onSuggestAreaEdit ? (k) => onSuggestAreaEdit(area, k) : null;
-  const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
-  const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
+  const editOn = formation && onSuggestAreaEdit ? (k: string | null) => onSuggestAreaEdit(area, k) : null;
+  const { data: children, isLoading: lc, error: ec }: AreaPageQuery<AreaPageArea[]> = useAreaChildren(area.id);
+  const { data: routes, isLoading: lr, error: er }: AreaPageQuery<AreaPageRoute[]> = useAreaRoutes(area.id);
   const isLeaf = Array.isArray(children) && children.length === 0;
   // Above a wall the classics come from the whole subtree (0390); a wall ranks its own loaded rows (areaClassics).
-  const classicsUp = useAreaClassics(area.id, isLeaf === false && chartable);
+  const classicsUp: AreaPageQuery<AreaPageClassic[]> = useAreaClassics(area.id, isLeaf === false && chartable);
   const loading = lc || (isLeaf && lr);
   const error = ec || er;
   // dominant_discipline used to reach only the map pin's colour and icon, so the DB
@@ -100,7 +176,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // than printing "wa_mount_anderson_olympic" at someone.
   const rawParent = area.parent_peak || null;
   const parentIsId = !!rawParent && /^[a-z]{2}_[a-z0-9_]+$/.test(rawParent);
-  const { data: parentNames } = useAreaNamesByIds(parentIsId ? [rawParent] : []);
+  const { data: parentNames }: AreaPageQuery<Record<string, string>> = useAreaNamesByIds(parentIsId ? [rawParent] : []);
   const parentPeak = !rawParent ? null : parentIsId ? (parentNames && parentNames[rawParent]) || null : String(rawParent).split(" — ")[0].trim();
 
   return (
@@ -218,7 +294,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
                 const shownAll = routes.filter(r => (!wallDisc || r.discipline === wallDisc) && (!wallStars || !(r.stars > 0) || r.stars >= wallStars));
                 const unplaced = (key === "lr" || key === "rl") ? shownAll.filter(r => r.sort_order == null).length : 0;
                 const filtersOn = (wallDisc ? 1 : 0) + (wallStars ? 1 : 0);
-                const wallChip = on => ({ ...CHIP, flexShrink: 0, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" });
+                const wallChip = (on: boolean) => ({ ...CHIP, flexShrink: 0, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" });
                 return <>
                   {routes.length > 1 ? <div style={{ marginBottom: 8 }}>
                     <button onClick={() => setWallFilterOpen(o => !o)} aria-expanded={wallFilterOpen} style={{ ...wallChip(filtersOn > 0), minHeight: 44 }}>{"Filters" + (filtersOn ? " (" + filtersOn + ")" : "")}</button>
@@ -226,7 +302,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
                       <div id="wall-filter-disc" style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6 }}>Discipline</div>
                       <div role="group" aria-labelledby="wall-filter-disc" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 10 }}>{[["", "All"], ...discsHere.map(d => [d, discLabel(d)])].map(o => <button key={o[0] || "all"} onClick={() => setWallDisc(o[0])} aria-pressed={wallDisc === o[0]} style={wallChip(wallDisc === o[0])}>{o[1]}</button>)}</div>
                       <div id="wall-filter-stars" style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6 }}>Stars</div>
-                      <div role="group" aria-labelledby="wall-filter-stars" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3 }}>{[[0, "Any"], [2, "2+ stars"], [3, "3+ stars"]].map(o => <button key={o[0]} onClick={() => setWallStars(o[0])} aria-pressed={wallStars === o[0]} style={wallChip(wallStars === o[0])}>{o[1]}</button>)}</div>
+                      <div role="group" aria-labelledby="wall-filter-stars" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3 }}>{[[0, "Any"] as [number, string], [2, "2+ stars"] as [number, string], [3, "3+ stars"] as [number, string]].map(o => <button key={o[0]} onClick={() => setWallStars(o[0])} aria-pressed={wallStars === o[0]} style={wallChip(wallStars === o[0])}>{o[1]}</button>)}</div>
                       <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>{"Climbs nobody has rated yet stay in the list when a star minimum is set."}</div>
                     </div> : null}
                   </div> : null}
@@ -234,7 +310,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
                   {unplaced ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, lineHeight: 1.45 }}>{unplaced + (unplaced !== 1 ? " climbs have" : " climb has") + " no position on the wall yet, so " + (unplaced !== 1 ? "they are" : "it is") + " listed last, by name."}</div> : null}
                   {shownAll.length ? (() => {
                     // By discipline: one heading per run of the same discipline, rows under it in name order.
-                    const out = []; let last = null;
+                    const out: ReactNode[] = []; let last: string | undefined | null = null;
                     sortAreaRoutes(shownAll, key).forEach(r => {
                       if (key === "disc" && r.discipline !== last) out.push(<SL key={"h-" + r.discipline} C={C}>{discLabel(r.discipline)}</SL>);
                       last = r.discipline;
@@ -269,7 +345,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
       <button onClick={() => setWrongOpen(true)} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.border, background: C.surface, color: C.textSub, marginBottom: 14 }}>
         {"Wrong place? Tell us where " + area.name + " belongs"}
       </button>
-      {wrongOpen ? <AreaWrongSpot area={area} C={C} onClose={() => setWrongOpen(false)} onSubmit={(note, place) => submitAreaPlacementClaim(area.id, note, place)} onSignIn={onSignIn} /> : null}
+      {wrongOpen ? <AreaWrongSpot area={area} C={C} onClose={() => setWrongOpen(false)} onSubmit={(note: string, place: string) => submitAreaPlacementClaim(area.id, note, place)} onSignIn={onSignIn} /> : null}
 
       {/* CLASSIC CLIMBS HERE (areaClassics, every one: five, then a dropdown); with none, TOP RATED HERE — the rows
           that carry a climber star rating (routes.stars, kept by 0294), best first. An area with neither shows nothing

@@ -15,6 +15,52 @@ import { ATYPE, DISCIPLINES } from "../../lib/areaBrowserShared.js";
 import RouteRow from "./RouteRow.tsx";
 import AddHereFooter from "./AddHereFooter.tsx";
 import { createPortal } from "react-dom";
+import type { C as Palette } from "../../ClimbMatchCore.jsx";
+import type { RouteRowRoute, RouteRowProps } from "./RouteRow.tsx";
+import type { AddHereFooterArea, AddHereFooterProps } from "./AddHereFooter.tsx";
+
+type RouteFinderPanelPair = [null, number] | [number, null] | [number, number];
+type RouteFinderPanelLen = [string, number | null, number | null, number | null, number | null];
+type RouteFinderPanelRange = [string, ...RouteFinderPanelPair[]];
+type RouteFinderPanelMin = [string, ...number[]];
+type RouteFinderPanelGrade = [string, number, number];
+type RouteFinderPanelNear = { lat: number; lng: number; label: string };
+/** One filter state: the sheet's draft (`df`) and the applied filters (`af`) share this shape. */
+export type RouteFinderPanelFilters = { discs: string[]; sortBy: string; minStars: number; minPitches: number; len: string; gSys: string; gLo: string; gHi: string; gain: string; trip: string; elev: string; prom: string; near: RouteFinderPanelNear | null; within: string } & Record<string, unknown>;
+type RouteFinderPanelRow = RouteRowRoute & { id: string | number; name: string; area_id: string };
+type RouteFinderPanelSaveFor = RouteFinderPanelRow & { wall?: string | null };
+type RouteFinderPanelPlace = { name: string; sub: string; lat: number; lng: number };
+type RouteFinderPanelNearSt = { busy: boolean; err: string; hits: RouteFinderPanelPlace[] };
+type RouteFinderPanelAreaHit = { id: string; name: string; area_type: keyof typeof ATYPE; parent_name?: string | null; route_count: number };
+type RouteFinderPanelChip = { k: string; label: string; clear: () => void };
+type RouteFinderPanelSortKey = "name" | "name_desc" | "area" | "lr" | "rl" | "grade_asc" | "grade_desc" | "stars_desc" | "near";
+type RouteFinderPanelSaved = { id: string; _dbId: string; name: string; kind?: string; q?: string; filters: Partial<RouteFinderPanelFilters>; loc?: AddHereFooterArea };
+type RouteFinderPanelList = { id: string; name: string; routeIds?: Array<string | number> };
+type RouteFinderPanelJump = { id: string; name: string };
+export interface RouteFinderPanelProps {
+  /** The area the finder was opened from; the panel is keyed by its id. */
+  scope: AddHereFooterArea;
+  onOpen: RouteRowProps["onOpen"];
+  onJumpToArea: (a: RouteFinderPanelJump) => void;
+  C: typeof Palette;
+  /** Metric/imperial elevation formatter; arrives as a prop because this file must not import ClimbMatchCore. */
+  uElevN: (ft: number | null | undefined) => number | null;
+  uElevUnit: () => string;
+  /** A chart bar on the area page opens the finder narrowed to this discipline. */
+  presetDisc?: string | null;
+  bookmarks?: Array<string | number> | null;
+  onToggleBookmark?: ((areaId: string) => void) | null;
+  onToggleWish?: ((routeId: string | number) => void) | null;
+  userLists?: RouteFinderPanelList[] | null;
+  onToggleListRoute?: ((listId: string, routeId: string | number) => void) | null;
+  onAddClimb?: AddHereFooterProps["onAddClimb"];
+  onAddArea?: AddHereFooterProps["onAddArea"];
+  /** A saved search being reopened. */
+  initial?: { id?: string; q?: string; filters?: Partial<RouteFinderPanelFilters> } | null;
+  uid?: string | null;
+  notify?: ((msg: string) => void) | null;
+  onSignIn?: (() => void) | null;
+}
 
 // ── Route finder: search + Filters sheet (discipline, grade, sort, stars, pitches,
 // length), paged via routes_in_subtree (0015; filters added in 0018). ──
@@ -49,11 +95,11 @@ import { createPortal } from "react-dom";
 // 600-1499) while these are HALF-OPEN METRES, so a 600 ft (182.88 m) route is in this bucket and
 // that helper would label it "201–599 ft". Sharing the vocabulary would trade a units defect for an
 // off-by-one one. Reconciling the two bound sets is a separate change.
-const LEN_BUCKETS = [["any", null, null, null, null], ["u200", null, 200, null, 61], ["200", 200, 600, 61, 183], ["600", 600, 1500, 183, 457], ["1500", 1500, null, 457, null]];
+const LEN_BUCKETS: RouteFinderPanelLen[] = [["any", null, null, null, null], ["u200", null, 200, null, 61], ["200", 200, 600, 61, 183], ["600", 600, 1500, 183, 457], ["1500", 1500, null, 457, null]];
 // `uElevN`/`uElevUnit` arrive as PROPS, like `C` and `ActionIcon`, because this file must not
 // import ClimbMatchCore — core lazy-imports this module, and a static import would make that cycle
 // static. That is this file's own recorded rule, not a new one.
-const lenLabel = (o, uElevN, uElevUnit) => {
+const lenLabel = (o: RouteFinderPanelLen, uElevN: RouteFinderPanelProps["uElevN"], uElevUnit: RouteFinderPanelProps["uElevUnit"]) => {
   if (o[0] === "any") return "Any";
   const u = uElevUnit();
   if (o[1] == null) return "< " + uElevN(o[2]) + " " + u;
@@ -68,21 +114,21 @@ const lenLabel = (o, uElevN, uElevUnit) => {
 // one set converted, which would offer a metric climber "305–914 m". The key is shared, so a saved
 // search keeps its meaning when the unit setting changes. What each reads is 0369's header.
 const FT_PER_M = 3.28084, KM_PER_MI = 1.60934;
-const GAIN_BUCKETS = [["any"], ["g1", [null, 1000], [null, 300]], ["g2", [1000, 3000], [300, 900]], ["g3", [3000, 5000], [900, 1500]], ["g4", [5000, null], [1500, null]]];
-const TRIP_BUCKETS = [["any"], ["t1", [null, 5], [null, 8]], ["t2", [5, 10], [8, 16]], ["t3", [10, 15], [16, 25]], ["t4", [15, null], [25, null]]];
-const PEAK_ELEV_MINS = [["any"], ["e1", 5000, 1500], ["e2", 8000, 2500], ["e3", 10000, 3000], ["e4", 12000, 3500], ["e5", 14000, 4000]];
-const PROM_MINS = [["any"], ["p1", 1000, 300], ["p2", 2000, 600], ["p3", 3000, 1000], ["p4", 5000, 1500]];
-const WITHIN = [["w1", 10, 15], ["w2", 25, 40], ["w3", 50, 80], ["w4", 100, 150]];
-const isMetric = uElevUnit => uElevUnit() === "m";
-const fmtN = n => n.toLocaleString("en-US");
-const rangeLabel = (o, metric, unit) => {
+const GAIN_BUCKETS: RouteFinderPanelRange[] = [["any"], ["g1", [null, 1000], [null, 300]], ["g2", [1000, 3000], [300, 900]], ["g3", [3000, 5000], [900, 1500]], ["g4", [5000, null], [1500, null]]];
+const TRIP_BUCKETS: RouteFinderPanelRange[] = [["any"], ["t1", [null, 5], [null, 8]], ["t2", [5, 10], [8, 16]], ["t3", [10, 15], [16, 25]], ["t4", [15, null], [25, null]]];
+const PEAK_ELEV_MINS: RouteFinderPanelMin[] = [["any"], ["e1", 5000, 1500], ["e2", 8000, 2500], ["e3", 10000, 3000], ["e4", 12000, 3500], ["e5", 14000, 4000]];
+const PROM_MINS: RouteFinderPanelMin[] = [["any"], ["p1", 1000, 300], ["p2", 2000, 600], ["p3", 3000, 1000], ["p4", 5000, 1500]];
+const WITHIN: [string, number, number][] = [["w1", 10, 15], ["w2", 25, 40], ["w3", 50, 80], ["w4", 100, 150]];
+const isMetric = (uElevUnit: () => string) => uElevUnit() === "m";
+const fmtN = (n: number) => n.toLocaleString("en-US");
+const rangeLabel = (o: RouteFinderPanelRange | null, metric: boolean, unit: string) => {
   if (!o || o[0] === "any") return "Any";
   const [lo, hi] = metric ? o[2] : o[1];
   return lo == null ? "< " + fmtN(hi) + " " + unit : hi == null ? fmtN(lo) + "+ " + unit : fmtN(lo) + "–" + fmtN(hi) + " " + unit;
 };
-const minLabel = (o, metric, unit) => !o || o[0] === "any" ? "Any" : fmtN(metric ? o[2] : o[1]) + "+ " + unit;
-const withinLabel = (o, metric, unit) => (metric ? o[2] : o[1]) + " " + unit;
-const findB = (list, k) => list.find(o => o[0] === k) || null;
+const minLabel = (o: RouteFinderPanelMin | null, metric: boolean, unit: string) => !o || o[0] === "any" ? "Any" : fmtN(metric ? o[2] : o[1]) + "+ " + unit;
+const withinLabel = (o: [string, number, number], metric: boolean, unit: string) => (metric ? o[2] : o[1]) + " " + unit;
+const findB = <T extends [string, ...unknown[]]>(list: T[], k: string | undefined) => list.find(o => o[0] === k) || null;
 /* The grade options a range can be set from, per grading system, on the SAME number line as
    gradeNumFrom (lib/grade.js). Each entry is [label, lo, hi]: `lo` is the bound used when the
    grade is the MINIMUM, `hi` when it is the MAXIMUM, so a pick means "this grade" at either end.
@@ -90,16 +136,16 @@ const findB = (list, k) => list.find(o => o[0] === k) || null;
    convention). A bare "5.10" stores 10, so 5.10a as the MINIMUM uses 10 — otherwise a route
    written without a letter falls out of the 5.10 band it belongs to. The one collision is in the
    DATA, not here: 5.10d and a bare 5.11 are both stored as 11, so they travel together there. */
-const GRADE_SCALES = (() => {
-  const yds = [];
+const GRADE_SCALES: Record<string, RouteFinderPanelGrade[]> = (() => {
+  const yds: RouteFinderPanelGrade[] = [];
   for (let i = 0; i <= 9; i++) yds.push(["5." + i, i, i]);
   for (let b = 10; b <= 15; b++) for (let k = 0; k < 4; k++) yds.push(["5." + b + "abcd"[k], k === 0 ? b : b + (k + 1) / 4, b + (k + 1) / 4]);
-  const ints = (pre, a, z) => { const o = []; for (let i = a; i <= z; i++) o.push([pre + i, i, i]); return o; };
+  const ints = (pre: string, a: number, z: number) => { const o: RouteFinderPanelGrade[] = []; for (let i = a; i <= z; i++) o.push([pre + i, i, i]); return o; };
   // A/C: aid and clean-aid grades share one number (A2 and C2 are both 2), so one option covers both.
-  const aid = []; for (let i = 0; i <= 5; i++) aid.push(["A" + i + "/C" + i, i, i]);
+  const aid: RouteFinderPanelGrade[] = []; for (let i = 0; i <= 5; i++) aid.push(["A" + i + "/C" + i, i, i]);
   return { yds, v: [["VB", -1, -1], ...ints("V", 0, 17)], class: ints("Class ", 1, 5), wi: ints("WI", 1, 7), m: ints("M", 1, 14), aid, snow: [["Easy Snow", 1, 1], ["Mod. Snow", 2, 2], ["Steep Snow", 3, 3]] };
 })();
-const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice", m: "M mixed", aid: "A/C aid", snow: "Snow" };
+const SCALE_NAMES: Record<string, string> = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice", m: "M mixed", aid: "A/C aid", snow: "Snow" };
 // AN ALLOW-LIST, each entry MEASURED rather than assumed (2026-09-24, all 205,543 routes —
 // scripts/oneoff/measure-grade-num-coverage-by-discipline.mjs and measure-typed-grade-columns.mjs).
 //   sport / trad / toprope / bouldering: 100% graded on one scale; scrambling 90.6% on Class.
@@ -113,33 +159,33 @@ const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice", m: 
 //     (an ice final also fills ice_grade_num, which the WI range reads). Both also offer Snow:
 //     Mountain Project's Easy / Mod. / Steep Snow, read from snow_grade_num (0246), which a route
 //     carries BESIDE its Class or 5.x grade — the owner wanted both (2026-10-04).
-const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "snow", "yds", "wi"], alpine: ["yds", "class", "wi", "snow"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
+const DISC_GRADE_SCALES: Record<string, string[]> = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "snow", "yds", "wi"], alpine: ["yds", "class", "wi", "snow"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
 // The disciplines whose grade_system says which scale grade_num is on, so a range there passes it
 // as grade_sys: ice/mixed/aid since 0196, and the three mountain disciplines since their labels
 // were corrected (above). The rock disciplines keep #1811's behaviour — one scale each, no label
 // needed.
-const GRADE_SYS_FILTERED = { ice: 1, mixed: 1, aid: 1, mountaineering: 1, alpine: 1, scrambling: 1 };
+const GRADE_SYS_FILTERED: Record<string, number> = { ice: 1, mixed: 1, aid: 1, mountaineering: 1, alpine: 1, scrambling: 1 };
 // SEVERAL DISCIPLINES can be picked at once (0334), as Mountain Project ticks Trad, Sport and Toprope
 // together. A range is then offered on the scales EVERY picked discipline shares — sport + trad on
 // 5.x, ice + mixed on 5.x, bouldering + sport on none — because one number means one grade only
 // within one scale.
-const gradeScalesFor = discs => { const ls = (discs || []).map(d => DISC_GRADE_SCALES[d] || []); return ls.length ? ls[0].filter(s => ls.every(l => l.indexOf(s) >= 0)) : []; };
-const gradeScaleFor = (discs, sys) => { const ss = gradeScalesFor(discs); if (!ss.length) return null; return GRADE_SCALES[ss.indexOf(sys) >= 0 ? sys : ss[0]] || null; };
-const gradeSysFor = (discs, sys) => { const ss = gradeScalesFor(discs); return ss.indexOf(sys) >= 0 ? sys : (ss[0] || ""); };
+const gradeScalesFor = (discs: string[] | null | undefined) => { const ls = (discs || []).map(d => DISC_GRADE_SCALES[d] || []); return ls.length ? ls[0].filter(s => ls.every(l => l.indexOf(s) >= 0)) : []; };
+const gradeScaleFor = (discs: string[] | null | undefined, sys: string) => { const ss = gradeScalesFor(discs); if (!ss.length) return null; return GRADE_SCALES[ss.indexOf(sys) >= 0 ? sys : ss[0]] || null; };
+const gradeSysFor = (discs: string[] | null | undefined, sys: string) => { const ss = gradeScalesFor(discs); return ss.indexOf(sys) >= 0 ? sys : (ss[0] || ""); };
 // Wall order first (owner, 2026-10-21: "grouped by area such as crag or wall so they show up in
 // order"): each wall's climbs together, left to right, under the wall's name.
 const FINDER_SORTS = [["lr", "By wall, left → right"], ["rl", "By wall, right → left"], ["name", "Name A→Z"], ["name_desc", "Name Z→A"], ["stars_desc", "Most starred"]];
-const SORT_PHRASE = { name: "name", name_desc: "name (Z→A)", area: "wall", lr: "wall, left to right", rl: "wall, right to left", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred", near: "nearest first" };
-const GROUPED_SORTS = { area: 1, lr: 1, rl: 1, near: 1 };
+const SORT_PHRASE: Record<string, string> = { name: "name", name_desc: "name (Z→A)", area: "wall", lr: "wall, left to right", rl: "wall, right to left", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred", near: "nearest first" };
+const GROUPED_SORTS: Record<string, number> = { area: 1, lr: 1, rl: 1, near: 1 };
 // A whole state (or more) is not listed until an area in it is picked or a name is typed: an
 // unfiltered California list took 3.3 s in the database (2026-10-21), and nobody pages through
 // 44,000 climbs. Mountain Project's Route Finder starts from a Location the same way.
-const FINDER_NEEDS_AREA = { world: 1, country: 1, state: 1 };
-const gradeRangeLabel = (lo, hi) => lo && hi ? (lo === hi ? lo : lo + "–" + hi) : lo ? lo + " and up" : hi ? "Up to " + hi : "";
+const FINDER_NEEDS_AREA: Record<string, number> = { world: 1, country: 1, state: 1 };
+const gradeRangeLabel = (lo: string | null | undefined, hi: string | null | undefined) => lo && hi ? (lo === hi ? lo : lo + "–" + hi) : lo ? lo + " and up" : hi ? "Up to " + hi : "";
 // One filter state -> the RPC's arguments. Shared by the applied query and the sheet's draft
 // count, so the number on "Show N routes" is the number the list then shows.
 // `metric` decides which of a bucket's two bound sets is meant; the RPC always takes feet and km.
-const finderArgs = (q, f, metric) => {
+const finderArgs = (q: string, f: RouteFinderPanelFilters, metric: boolean) => {
   const len = LEN_BUCKETS.find(l => l[0] === f.len) || LEN_BUCKETS[0];
   const sc = gradeScaleFor(f.discs, f.gSys);
   const lo = sc && f.gLo ? sc.find(o => o[0] === f.gLo) : null, hi = sc && f.gHi ? sc.find(o => o[0] === f.gHi) : null;
@@ -154,40 +200,40 @@ const finderArgs = (q, f, metric) => {
 // Filters that narrow the AREAS before any climb is read (0369) make a whole state cheap to search,
 // so they lift FINDER_NEEDS_AREA. Gain and round trip are read climb by climb and do not: alone
 // over California they took 3.6 s cold, past the 3 s statement timeout (2026-10-24).
-const narrowsAreas = f => !!(f.near || (f.elev && f.elev !== "any") || (f.prom && f.prom !== "any"));
+const narrowsAreas = (f: RouteFinderPanelFilters) => !!(f.near || (f.elev && f.elev !== "any") || (f.prom && f.prom !== "any"));
 // A saved search's identity: the words, the filters and where it looks. Keys are sorted because the
 // filters come back from a jsonb column, which does not keep the order they were written in.
-const searchKey = (q, f, locId) => JSON.stringify([(q || "").trim(), Object.keys(f || {}).sort().map(k => [k, f[k]]), locId]);
-export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute, onAddClimb, onAddArea, initial, uid, notify, onSignIn }) {
+const searchKey = (q: string | undefined, f: Record<string, unknown>, locId: string | undefined) => JSON.stringify([(q || "").trim(), Object.keys(f || {}).sort().map(k => [k, f[k]]), locId]);
+export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute, onAddClimb, onAddArea, initial, uid, notify, onSignIn }: RouteFinderPanelProps) {
   const { wishlist } = useContext(ClimberCtx);
-  const DEF = { discs: [], sortBy: "lr", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "", gain: "any", trip: "any", elev: "any", prom: "any", near: null, within: "w2" };
+  const DEF: RouteFinderPanelFilters = { discs: [], sortBy: "lr", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "", gain: "any", trip: "any", elev: "any", prom: "any", near: null, within: "w2" };
   const metric = isMetric(uElevUnit);
   // A chart bar on the area page opens the finder already narrowed to its discipline.
   const DEF0 = presetDisc ? { ...DEF, discs: [presetDisc] } : DEF;
   // LOCATION: where the search runs. Starts as the area the finder was opened from; on a state it
   // must be narrowed to an area inside it first (FINDER_NEEDS_AREA). The panel is keyed by the
   // scope's id, so a new scope starts a new Location.
-  const [loc, setLoc] = useState(scope);
+  const [loc, setLoc] = useState<AddHereFooterArea>(scope);
   // A saved search opened from Logbook › Saved or the Menu arrives as `initial`: its words and
   // filters, on the area it was saved in (which is this panel's scope).
   const [q, setQ] = useState(initial ? initial.q || "" : "");
   // The query follows the box a beat behind, so typing "castle" is one search, not six.
   const [qD, setQD] = useState(initial ? initial.q || "" : "");
   useEffect(() => { const t = setTimeout(() => setQD(q), 250); return () => clearTimeout(t); }, [q]);
-  const needsAreaFor = f => !!FINDER_NEEDS_AREA[loc.area_type] && !qD.trim() && !narrowsAreas(f);
-  const [saveFor, setSaveFor] = useState(null);
+  const needsAreaFor = (f: RouteFinderPanelFilters) => !!FINDER_NEEDS_AREA[loc.area_type] && !qD.trim() && !narrowsAreas(f);
+  const [saveFor, setSaveFor] = useState<RouteFinderPanelSaveFor | null>(null);
   const { wrapRef: barWrap, barRef, pin } = usePinnedBar();
   // Routes | Areas. One text box serves both, so switching carries what you typed across.
   const [mode, setMode] = useState("routes");
   const AF0 = initial && initial.filters ? { ...DEF, ...initial.filters } : DEF0;
-  const [af, setAf] = useState(AF0);
-  const [df, setDf] = useState(AF0);
+  const [af, setAf] = useState<RouteFinderPanelFilters>(AF0);
+  const [df, setDf] = useState<RouteFinderPanelFilters>(AF0);
   const needsArea = needsAreaFor(af);
   const [sheet, setSheet] = useState(false);
   // DISTANCE AWAY's point: your device's location, or a town / zip you type (AllTrails offers both).
   const [nearQ, setNearQ] = useState("");
-  const [nearSt, setNearSt] = useState({ busy: false, err: "", hits: [] });
-  const pickNear = pt => { setNearSt({ busy: false, err: "", hits: [] }); setNearQ(""); setDf(d => ({ ...d, near: pt, sortBy: "near" })); };
+  const [nearSt, setNearSt] = useState<RouteFinderPanelNearSt>({ busy: false, err: "", hits: [] });
+  const pickNear = (pt: RouteFinderPanelNear) => { setNearSt({ busy: false, err: "", hits: [] }); setNearQ(""); setDf(d => ({ ...d, near: pt, sortBy: "near" })); };
   const locateMe = () => {
     if (typeof navigator === "undefined" || !navigator.geolocation) { setNearSt({ busy: false, err: "Location isn’t available on this device — type a town or zip code instead.", hits: [] }); return; }
     setNearSt({ busy: true, err: "", hits: [] });
@@ -210,11 +256,11 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   // saved here was gone the moment the finder closed, never reached the Logbook, and the table held
   // no row at all (0 on 2026-10-24). Only finder searches are listed here; their `kind` says so.
   const mySearchesQ = useMySavedSearches(uid);
-  const savedSearches = (mySearchesQ.data || []).filter(s => s.kind === "finder");
+  const savedSearches: RouteFinderPanelSaved[] = (mySearchesQ.data || []).filter(s => s.kind === "finder");
   const [showSaved, setShowSaved] = useState(false);
   const [savingSearch, setSavingSearch] = useState(false);
   const [page, setPage] = useState(0);
-  const [all, setAll] = useState([]);
+  const [all, setAll] = useState<RouteFinderPanelRow[]>([]);
   const lenRange = (LEN_BUCKETS.find(l => l[0] === af.len) || LEN_BUCKETS[0]);
   // Resolved against the APPLIED discipline's scale, so a label saved under one discipline can
   // never be read on another's number line (a "V5" bound is not a 5.5 bound).
@@ -226,7 +272,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   const { data: total } = useSubtreeRouteCount(needsArea ? null : loc.id, queryArgs);
   // A disabled query can still report loading; while the area picker shows, nothing is loading.
   const isLoading = !needsArea && lr0;
-  const { data: locKids, isLoading: lk, error: ek } = useAreaChildren(loc.id, { enabled: needsArea });
+  const { data: locKids, isLoading: lk, error: ek }: { data?: AddHereFooterArea[] | null; isLoading: boolean; error: unknown } = useAreaChildren(loc.id, { enabled: needsArea });
   // The sheet's button says how many routes the DRAFT would show ("Show 212 routes"), as
   // Mountain Project's filter screen does — so a tap on it visibly does something, and a
   // combination that matches nothing is seen before the sheet is left. Queried only while open.
@@ -241,7 +287,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
     return () => { el.style.overflow = prev; };
   }, [sheet]);
 
-  const loadSearch = (search) => {
+  const loadSearch = (search: RouteFinderPanelSaved) => {
     setQ(search.q || "");
     setAf({ ...DEF, ...(search.filters || {}) });
     setLoc(search.loc && search.loc.id ? search.loc : scope);
@@ -249,7 +295,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
     setPage(0);
     setAll([]);
   };
-  const deleteSearch = (s) => {
+  const deleteSearch = (s: RouteFinderPanelSaved) => {
     deleteSavedSearchRow(s._dbId).then(() => { if (notify) notify("Saved search removed"); },
       () => { if (notify) notify("Couldn’t delete that search — try again."); });
   };
@@ -260,10 +306,10 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   }, [batch, page]);
   const areaIds = useMemo(() => [...new Set(all.map(r => r.area_id).filter(Boolean))], [all]);
   const { data: areaNames } = useAreaNamesByIds(areaIds);
-  const { data: areaHits, isLoading: la, error: ea } = useAreaSearch(scope.id, mode === "areas" ? qD.trim() : "");
+  const { data: areaHits, isLoading: la, error: ea }: { data?: RouteFinderPanelAreaHit[] | null; isLoading: boolean; error: unknown } = useAreaSearch(scope.id, mode === "areas" ? qD.trim() : "");
 
   const nF = af.discs.length + (gLoO || gHiO ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== DEF.sortBy ? 1 : 0) + ["gain", "trip", "elev", "prom"].filter(k => af[k] && af[k] !== "any").length + (af.near ? 1 : 0);
-  const afChips = [];
+  const afChips: RouteFinderPanelChip[] = [];
   // One chip per discipline; removing one keeps the grade range only if the disciplines left still
   // share its scale.
   af.discs.forEach(d => afChips.push({ k: "d-" + d, label: discLabel(d), clear: () => setAf(a => { const discs = a.discs.filter(x => x !== d); const keep = discs.length && gradeSysFor(discs, a.gSys) === gradeSysFor(a.discs, a.gSys); return { ...a, discs, ...(keep ? {} : { gSys: "", gLo: "", gHi: "" }), sortBy: !discs.length && (a.sortBy === "grade_asc" || a.sortBy === "grade_desc") ? DEF.sortBy : a.sortBy }; }) }));
@@ -279,7 +325,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   if (af.elev && af.elev !== "any") afChips.push({ k: "elev", label: "Peak " + minLabel(findB(PEAK_ELEV_MINS, af.elev), metric, eU), clear: () => setAf(a => ({ ...a, elev: "any" })) });
   if (af.prom && af.prom !== "any") afChips.push({ k: "prom", label: minLabel(findB(PROM_MINS, af.prom), metric, eU) + " prominence", clear: () => setAf(a => ({ ...a, prom: "any" })) });
   if (af.near) afChips.push({ k: "near", label: "Within " + withinLabel(findB(WITHIN, af.within) || WITHIN[1], metric, dU) + " of " + af.near.label, clear: () => setAf(a => ({ ...a, near: null, sortBy: a.sortBy === "near" ? DEF.sortBy : a.sortBy })) });
-  if (af.sortBy !== DEF.sortBy) afChips.push({ k: "sort", label: { name: "A→Z", name_desc: "Z→A", area: "By area", lr: "Left → right", rl: "Right → left", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred", near: "Nearest first" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: DEF.sortBy })) });
+  if (af.sortBy !== DEF.sortBy) afChips.push({ k: "sort", label: { name: "A→Z", name_desc: "Z→A", area: "By area", lr: "Left → right", rl: "Right → left", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred", near: "Nearest first" }[af.sortBy as RouteFinderPanelSortKey], clear: () => setAf(a => ({ ...a, sortBy: DEF.sortBy })) });
   const curKey = searchKey(q, af, loc.id);
   const isSavedSearch = savedSearches.some(s => searchKey(s.q, s.filters, s.loc && s.loc.id) === curKey);
   const saveSearch = () => {
@@ -295,15 +341,15 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
         () => { if (notify) notify("Couldn’t save that search — check your connection and try again."); })
       .finally(() => setSavingSearch(false));
   };
-  const inList = (l, id) => (l.routeIds || []).includes(id);
+  const inList = (l: RouteFinderPanelList, id: string | number) => (l.routeIds || []).includes(id);
   const customLists = (userLists || []).filter(l => l.id !== "ul_obj");
-  const isSaved = id => (wishlist || []).includes(id) || customLists.some(l => inList(l, id));
+  const isSaved = (id: string | number) => (wishlist || []).includes(id) || customLists.some(l => inList(l, id));
 
-  const rowBtn = on => ({ ...BTN_LG, flex: 1, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.text });
-  const chip = (label, on, fn) => <button key={label} onClick={fn} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
-  const lab = s => <SL C={C}>{s}</SL>;
+  const rowBtn = (on: unknown) => ({ ...BTN_LG, flex: 1, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.text });
+  const chip = (label: string, on: boolean, fn: () => void) => <button key={label} onClick={fn} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
+  const lab = (s: string) => <SL C={C}>{s}</SL>;
 
-  const savePill = on => ({ ...CHIP, flexShrink: 0, padding: "5px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.textSub });
+  const savePill = (on: boolean) => ({ ...CHIP, flexShrink: 0, padding: "5px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.textSub });
   const nRes = total != null ? total : all.length;
 
   return (
@@ -438,14 +484,14 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
             </div>
             <div style={{ padding: "6px 16px 18px", overflowY: "auto", overscrollBehavior: "contain", flex: 1, minHeight: 0 }}>
               {(() => {
-                const row = (key, label, sub, on, fn) => (
+                const row = (key: string, label: string, sub: string | null, on: boolean, fn: () => void) => (
                   <button key={key} onClick={fn} aria-pressed={on} style={{ ...BTN_LG, width: "100%", display: "flex", alignItems: "center", gap: 10, textAlign: "left", marginTop: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: C.text }}>
                     <span style={{ flex: 1, minWidth: 0 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700 }}>{label}</span>{sub ? <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, fontWeight: 500, marginTop: 2, lineHeight: 1.4 }}>{sub}</span> : null}</span>
                     <span aria-hidden="true" style={{ flexShrink: 0, fontSize: 12.5, fontWeight: 700, color: on ? C.blue : C.textSub }}>{on ? "✓ Saved" : "+ Add"}</span>
                   </button>
                 );
                 return <>
-                  {row("obj", "My Objectives", "Climbs you want to do. Partners who want the same climb can find you.", (wishlist || []).includes(saveFor.id), () => onToggleWish(saveFor.id))}
+                  {row("obj", "My Objectives", "Climbs you want to do. Partners who want the same climb can find you.", (wishlist || []).includes(saveFor.id), () => (onToggleWish as (routeId: string | number) => void)(saveFor.id))}
                   {onToggleListRoute ? customLists.map(l => row("l-" + l.id, l.name, null, inList(l, saveFor.id), () => onToggleListRoute(l.id, saveFor.id))) : null}
                   {onToggleBookmark && saveFor.area_id ? row("area", "Save the area: " + (saveFor.wall || "this wall"), "Saved areas are listed under Logbook → Saved.", (bookmarks || []).includes(saveFor.area_id), () => onToggleBookmark(saveFor.area_id)) : null}
                   {!customLists.length ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 12, lineHeight: 1.45 }}>Make your own lists under Logbook → Saved, and they show up here.</div> : null}
@@ -519,7 +565,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
               if (!sc) return <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.45 }}>{df.discs.map(discLabel).join(" and ") + " are graded on different scales, so a grade range can't cover them together. Pick disciplines that share a scale, such as Sport and Trad."}</div>;
               const scales = gradeScalesFor(df.discs), curSys = gradeSysFor(df.discs, df.gSys);
               const iLo = df.gLo ? sc.findIndex(o => o[0] === df.gLo) : -1, iHi = df.gHi ? sc.findIndex(o => o[0] === df.gHi) : -1;
-              const sel = (label, val, opts, set) => (
+              const sel = (label: string, val: string, opts: RouteFinderPanelGrade[], set: (v: string) => void) => (
                 <label style={{ flex: 1, display: "flex", flexDirection: "column", gap: 5, fontSize: 11.5, color: C.textMuted, fontWeight: 700 }}>{label}
                   <select aria-label={label + " grade"} value={val} onChange={e => set(e.target.value)} style={{ padding: "10px 10px", borderRadius: 10, border: "1px solid " + (val ? C.blue : C.border), background: val ? C.blueBg : C.surface, color: val ? C.onSolid : C.text, fontSize: 14, fontWeight: 700 }}>
                     <option value="">Any</option>
@@ -550,12 +596,12 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
             </div>
             {!df.discs.length ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Pick a discipline above to sort by grade.</div> : null}
             {lab("Minimum stars")}
-            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{[[0, "Any"], [2, "★★+"], [3, "★★★+"], [4, "★★★★+"]].map(o => chip(o[1], df.minStars === o[0], () => setDf(d => ({ ...d, minStars: o[0] }))))}</div>
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{([[0, "Any"], [2, "★★+"], [3, "★★★+"], [4, "★★★★+"]] as [number, string][]).map(o => chip(o[1], df.minStars === o[0], () => setDf(d => ({ ...d, minStars: o[0] }))))}</div>
             {/* 0334: an unrated climb is not ruled out. 2 of 90,084 sport climbs had a rating when this
                 was written, so the old rule turned every star search into an empty list. */}
             <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Few climbs have a star rating yet, so climbs nobody has rated always show. This hides only climbs rated below the minimum.</div>
             {lab("Pitches")}
-            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{[[0, "Any"], [1, "1+ (single)"], [2, "2+ (multi-pitch)"], [3, "3+"], [5, "5+"], [10, "10+"]].map(o => chip(o[1], df.minPitches === o[0], () => setDf(d => ({ ...d, minPitches: o[0] }))))}</div>
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{([[0, "Any"], [1, "1+ (single)"], [2, "2+ (multi-pitch)"], [3, "3+"], [5, "5+"], [10, "10+"]] as [number, string][]).map(o => chip(o[1], df.minPitches === o[0], () => setDf(d => ({ ...d, minPitches: o[0] }))))}</div>
             {lab("Length")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{LEN_BUCKETS.map(o => chip(lenLabel(o, uElevN, uElevUnit), df.len === o[0], () => setDf(d => ({ ...d, len: o[0] }))))}</div>
             {/* Recorded mostly on mountain routes (0369's header has the counts), so each says what a
