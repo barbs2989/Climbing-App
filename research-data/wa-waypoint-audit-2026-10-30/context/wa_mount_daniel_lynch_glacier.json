@@ -1,0 +1,45 @@
+{
+ "id": "wa_mount_daniel_lynch_glacier",
+ "name": "Lynch Glacier",
+ "discipline": "mountaineering",
+ "area": {
+  "id": "wa_mount_daniel",
+  "name": "Mount Daniel",
+  "lat": 47.565031,
+  "lng": -121.180891,
+  "elevation_ft": 7960,
+  "parent_id": "wa_western_alpine_lakes",
+  "ground_ft": 7969
+ },
+ "dist_km": null,
+ "gain_ft": null,
+ "high_point_ft": null,
+ "approach_logistics": {
+  "trailhead": "Deception Pass Trailhead",
+  "trailheadLat": 47.5435,
+  "trailheadLng": -121.0966,
+  "trailheadDirection": "From the Deception Pass Trailhead"
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 47.55617,
+   "lng": -121.141647,
+   "elev": 5560,
+   "name": "Peggy's Pond, below Cathedral Rock",
+   "type": "Campsite",
+   "ground_ft": 5558
+  },
+  {
+   "i": 1,
+   "lat": 47.565031,
+   "lng": -121.180891,
+   "elev": 7960,
+   "name": "Mount Daniel summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 7960,
+   "ground_ft": 7969
+  }
+ ]
+}

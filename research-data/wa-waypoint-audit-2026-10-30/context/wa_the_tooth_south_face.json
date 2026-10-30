@@ -1,0 +1,121 @@
+{
+ "id": "wa_the_tooth_south_face",
+ "name": "South Face (Standard)",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_the_tooth_climbs",
+  "name": "The Tooth Routes",
+  "lat": 47.445869,
+  "lng": -121.45449,
+  "elevation_ft": null,
+  "parent_id": "wa_the_tooth",
+  "ground_ft": 5599
+ },
+ "dist_km": 4.8,
+ "gain_ft": 2500,
+ "high_point_ft": 5606,
+ "approach_logistics": {
+  "peakLat": 47.445869,
+  "peakLng": -121.45449,
+  "trailhead": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+  "trailheadLat": 47.44542,
+  "trailheadLng": -121.42353,
+  "trailheadDirection": "From the Alpental / Snow Lake Trailhead (~3,100 ft), at the end of Alpental Road off I-90 Exit 52"
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 47.44565,
+   "lng": -121.42365,
+   "elev": 3100,
+   "name": "Alpental / Snow Lake Trailhead",
+   "note": "Large gravel lot at the end of Alpental Road (1.5 mi past I-90 Exit 52); Northwest Forest Pass required to park.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Take I-90 to Exit 52 and follow Alpental Road to its end, about 1.5 miles, where a large gravel lot at roughly 3,100 ft serves as the trailhead. A Northwest Forest Pass is required to park.",
+   "ground_ft": 3141
+  },
+  {
+   "i": 1,
+   "lat": 47.455605,
+   "lng": -121.452107,
+   "elev": 3780,
+   "name": "Source Lake basin, Alpental valley",
+   "type": "Campsite",
+   "distMi": 1.8,
+   "ground_ft": 3750
+  },
+  {
+   "i": 2,
+   "lat": 47.456863,
+   "lng": -121.443809,
+   "elev": 4100,
+   "name": "Source Lake junction",
+   "note": "Signed spur splits toward the Source Lake overlook; leave the Snow Lake Trail here and head off-trail toward Great Scott Bowl for the South Face approach.",
+   "type": "Junction",
+   "distMi": 1.8,
+   "directions": "From the lot follow the Snow Lake Trail (#1013) north, climbing steadily through forest for about two miles and 1,000 ft to the small signed fork where the Source Lake spur splits off. Bear toward Source Lake. This is the last of the maintained tread — everything above it is off-trail.",
+   "ground_ft": 3726
+  },
+  {
+   "i": 3,
+   "lat": 47.455841,
+   "lng": -121.455524,
+   "elev": 4700,
+   "name": "Great Scott Bowl talus/snow field",
+   "note": "Off-trail talus (snow-covered into early summer) beneath The Tooth's south side; loose rock and overhead rockfall risk from parties above, helmet recommended once you leave the trail.",
+   "type": "Hazard",
+   "distMi": 2.7,
+   "directions": "Watch on the left as the trail curves for the point where a continuous talus field starts running alongside it, and leave the tread there. Traverse west into the boulders, losing a little height at first, then climb back up toward The Tooth's obvious south-facing wall by whatever line through talus and lingering snow gives least resistance. Helmets go on here: the bowl is loose and parties above will knock rock down it.",
+   "ground_ft": 3995
+  },
+  {
+   "i": 4,
+   "lat": 47.448642,
+   "lng": -121.453493,
+   "elev": 5100,
+   "name": "Notch south of Pineapple Pass",
+   "note": "Gain this notch on the ridge just south of the true pass, then contour clockwise (exposed sidewalk traverse) to reach Pineapple Pass proper.",
+   "type": "Junction",
+   "distMi": 3.4,
+   "directions": "Work up the bowl aiming for the gully just left (south) of the prominent pointed rock partway up, and take that to the second notch south of the south face rather than trying to gain the pass directly. Early in the season this is a sustained steep snow climb that warrants an axe and sometimes crampons. A moat where the snow has pulled back from the rock often guards the last step onto the crest.",
+   "ground_ft": 4625
+  },
+  {
+   "i": 5,
+   "lat": 47.44534,
+   "lng": -121.45407,
+   "elev": 5280,
+   "name": "Pineapple Pass",
+   "note": "Named saddle where pitch 1 of the South Face begins; a moat where seasonal snow pulls away from the rock can make the final step onto the col tricky into midsummer.",
+   "type": "Junction",
+   "distMi": 3.7,
+   "directions": "From the notch drop a short way down the far side, contour clockwise around beneath The Tooth, and climb back up to the pass. It is Class 3 to 4 but short and not exposed. The col is where the first pitch starts, so this is the place to rope up and sort the rack.",
+   "ground_ft": 5282
+  },
+  {
+   "i": 6,
+   "lat": 47.445106,
+   "lng": -121.454253,
+   "elev": 5550,
+   "name": "The Catwalk",
+   "note": "Narrow, exposed rock traverse near the top of pitch 4 — the real crux of the climb despite the 5.4 rating; stay roped and protect it well.",
+   "type": "Hazard",
+   "distMi": 3.9,
+   "directions": "Four short pitches of low fifth-class lead up from the pass: a groove trending right on juggy rock, connecting ledges past a pair of trees, an easy fourth-class ramble, then the steeper headwall. The Catwalk is the left-hand finish of that last pitch — a narrow, balancy ledge with a great deal of air beneath it. Two easier finishes exist to the right, and a steeper crack further left for parties wanting harder climbing.",
+   "ground_ft": 5198
+  },
+  {
+   "i": 7,
+   "lat": 47.44595,
+   "lng": -121.454655,
+   "elev": 5606,
+   "name": "The Tooth summit",
+   "note": "Small, exposed summit block with views of Chair Peak, Bryant Peak and the Alpental valley; begin the four-rappel descent back to Pineapple Pass from anchors here.",
+   "type": "Summit",
+   "distMi": 4,
+   "directions": "From the end of the Catwalk a few metres of unroped scrambling tops out on the small summit block. There is no continuation off the far side — everyone comes back down the face they climbed — so keep the party gathered and organised for the rappels rather than spread across the top.",
+   "ground_ft": 5571
+  }
+ ]
+}

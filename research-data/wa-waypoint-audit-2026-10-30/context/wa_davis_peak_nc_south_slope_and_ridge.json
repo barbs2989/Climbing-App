@@ -1,0 +1,44 @@
+{
+ "id": "wa_davis_peak_nc_south_slope_and_ridge",
+ "name": "South Slope and Ridge",
+ "discipline": "scrambling",
+ "area": {
+  "id": "wa_davis_peak_nc",
+  "name": "Davis Peak",
+  "lat": 48.729454,
+  "lng": -121.202814,
+  "elevation_ft": 7054,
+  "parent_id": "wa_picket_range",
+  "ground_ft": 7050
+ },
+ "dist_km": 4.8,
+ "gain_ft": 5955,
+ "high_point_ft": 7054,
+ "approach_logistics": null,
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.7118,
+   "lng": -121.2002,
+   "elev": 1096,
+   "name": "Gorge Creek bridge / Gorge Creek Falls parking, SR 20 (~MP 123)",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 1096,
+   "directions": "Drive SR 20 to the bridge over Gorge Creek, about 2.6 miles east of Newhalem and about the same distance west of the Gorge Lake causeway and the Diablo turnoff. Watch the sharp curve at the east end of the bridge. Park in the lot at the west end; the east lot is signed for motorhomes and oversize vehicles. There is no trail: the route leaves the highway directly.",
+   "ground_ft": 4356
+  },
+  {
+   "i": 1,
+   "lat": 48.72945,
+   "lng": -121.20281,
+   "elev": 7054,
+   "name": "Davis Peak summit",
+   "type": "Summit",
+   "distMi": 3.1,
+   "elevFt": 7054,
+   "directions": "From the east end of the bridge, cross the highway and head straight uphill into the woods. Climb the brushy lower gully and steep, trackless timber, where cliff bands near 2,400 and 2,800 ft must be turned, to granite slabs at about 4,850 ft. Scramble the Class 2-3 South Buttress, passing Point 5872 on its north side, to the 5,720 ft saddle, climb about 200 ft of slab to the sharp ridge, then follow the broad ridge to the summit.",
+   "ground_ft": 7050
+  }
+ ]
+}
