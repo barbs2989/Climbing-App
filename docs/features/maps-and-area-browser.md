@@ -178,7 +178,9 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 ## 3. Files
 | File | Key symbols |
 |---|---|
-| `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, `AreaPage`, `PARTNER_CARD_TYPES`, `RouteFinderPanel` (its other components moved to `src/components/` in PR65, below) |
+| `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, the browser shell (its components moved to `src/components/` in PR65 and PR66, below) |
+| `src/components/AreaPage.tsx` | `AreaPage`, an area's page; `PARTNER_CARD_TYPES` |
+| `src/components/RouteFinderPanel.tsx` | `RouteFinderPanel`, the route finder and its filters |
 | `src/components/PartnersHereCard.tsx` | `PartnersHereCard`, the area page's partners card |
 | `src/components/StatePicker.tsx` | `StatePicker`, Pick a state |
 | `src/components/DbSearchSplit.tsx` | `DbSearchSplit`, area search results split into areas and climbs |

@@ -903,14 +903,16 @@ async function runFilters() {
   //    layer, and the question here needs neither -- only the bucket table and its formatter.
   const dbSrc = readAppFile(path.join(ROOT, "lib/DbAreaBrowser.jsx"));
   const dbMask = dbSrc.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
-  const bm = dbMask.match(/const LEN_BUCKETS = (\[[^\n]*\]);/);
+  // Since PR66 the table and formatter are in RouteFinderPanel.tsx (stitched in by readAppFile), typed:
+  // the annotation is skipped here and the formatter's types are stripped before it is evaluated.
+  const bm = dbMask.match(/const LEN_BUCKETS(?::[^=\n]*)? = (\[[^\n]*\]);/);
   if (!bm) dead("ANCHOR LOST: LEN_BUCKETS in lib/DbAreaBrowser.jsx — the live filter went unchecked.");
   const li = dbMask.indexOf("const lenLabel = (");
   if (li < 0) dead("ANCHOR LOST: lenLabel in lib/DbAreaBrowser.jsx — the live filter went unchecked.");
   // It takes (bucket, uElevN, uElevUnit) — the helpers are PARAMETERS, because the app passes them
   // as props. Injecting them as a closure instead lets the arrow's own params shadow them to
   // undefined, which is how the first version of this died.
-  const lenLabel = new Function("return " + dbMask.slice(li + "const lenLabel = ".length).split("\n};")[0] + "\n};")();
+  const lenLabel = new Function("return " + await stripTypes(dbMask.slice(li + "const lenLabel = ".length).split("\n};")[0] + "\n}", { expression: true }))();
   const lbl = (b) => lenLabel(b, M.uElevN, M.uElevUnit);
   const LB = JSON.parse(bm[1].replace(/'/g, '"'));
   if (LB.length < 4) dead("fewer than 4 live length buckets — the table moved.");
