@@ -41,7 +41,26 @@ const shouts = s => (s.match(/\b[A-Z]{5,}\b/g) || []).some(w => !/^(?:PG13|WI\d|
 // rule refused it (Colorado, 2026-10-22), so rewrites dropped useful neighbours. Names of three or more words of the
 // climbs on the batch's walls are masked out of both texts before the overlap is measured.
 const NAMES = { list: [] };
-const maskNames = t => { let x = " " + words(t).join(" ") + " "; for (const n of NAMES.list) x = x.split(" " + n + " ").join(" zz "); return x; };
+const maskNames = (t, list = NAMES.list) => { let x = " " + words(t).join(" ") + " "; for (const n of list) x = x.split(" " + n + " ").join(" zz "); return x; };
+// ...and so are the PROPER NAMES in a field's own source — a wall, a feature, a neighbouring climb of one or two
+// words, a person: "left of Steel Pulse" is a direction, and the overlap rule refused it (2026-10-30, about a third
+// of a clean-room rewrite's refusals). A capitalised word that does not start a sentence, or a run of capitalised
+// words ("Fern Point ladders"), joined by of/the/and/de/la, is a name, masked out of both texts like the list above.
+const properNames = src => {
+  const toks = String(src || "").split(/\s+/).filter(Boolean), out = [];
+  let cur = [], start = true;
+  const isCap = t => /^[("'“‘]*[A-Z]/.test(t || "");
+  const flush = () => { const w = words(cur.join(" ")).join(" "); if (w) out.push(w); cur = []; };
+  for (let i = 0; i < toks.length; i++) {
+    const t = toks[i];
+    if (isCap(t) && (!start || isCap(toks[i + 1]) || cur.length)) cur.push(t);
+    else if (cur.length && /^(?:of|the|and|de|du|la|le|des)$/i.test(t) && isCap(toks[i + 1])) cur.push(t);
+    else flush();
+    if (/[.!?:]["'”’)]*$/.test(t)) { flush(); start = true; } else { start = false; if (/[,;)]$/.test(t)) flush(); }
+  }
+  flush();
+  return out;
+};
 const problems = (field, val, src) => {
   const p = [];
   if (typeof val !== "string" || !val.trim()) return ["empty"];
@@ -53,7 +72,8 @@ const problems = (field, val, src) => {
   const plain = unnamed.normalize("NFKD").replace(/[̀-ͯ]/g, "");
   if (field !== "fa") for (const [re, why] of BAD) if (re.test(plain)) p.push(why);
   if (field !== "fa") {
-    const ms = maskNames(src || ""), mv = maskNames(val);
+    const LOCAL = [...new Set([...NAMES.list, ...properNames(src)])].sort((a, b) => b.length - a.length);
+    const ms = maskNames(src || "", LOCAL), mv = maskNames(val, LOCAL);
     const have = grams(ms, 4), have6 = grams(ms, 6);
     const hit = [...grams(mv, 4)].filter(g => have.has(g) && g.split(" ").filter(w => !STOP.has(w) && !/^\d+$/.test(w)).length >= 3);
     for (const g of grams(mv, 6)) if (have6.has(g) && !hit.some(h => g.includes(h))) hit.push(g);
