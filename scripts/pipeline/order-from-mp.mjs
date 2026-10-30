@@ -241,10 +241,13 @@ if (FACTS) {
   const adds = Object.entries(JSON.parse(readFileSync(addsFile, "utf8")));
   const rows = new Map();
   for (let i = 0; i < adds.length; i += 200) for (const r of await retrying(() => rest(`routes?select=id,length_m,pitches,lat,lng,stars&id=in.(${adds.slice(i, i + 200).map(([, id]) => encodeURIComponent(id)).join(",")})`))) rows.set(r.id, r);
-  let n = 0, patched = 0;
+  let n = 0, patched = 0, gone = 0;
   for (const [mpId, id] of adds) {
     const r = rows.get(id); if (!r) continue;
-    const html = await page("route", mpId, `${ROUTES}/${mpId}.html`); n++;
+    // A climb MP has since taken down answers 404: skip it, or one missing page stops the whole state (California, 2026-10-30).
+    const html = await page("route", mpId, `${ROUTES}/${mpId}.html`).catch(e => { if (/HTTP 404/.test(e.message)) return null; throw e; });
+    if (html == null) { gone++; continue; }
+    n++;
     const type = unent((html.match(/<td>Type:<\/td>\s*<td>([\s\S]*?)<\/td>/) || [])[1] || "");
     const gps = (html.match(/<td>GPS:<\/td>\s*<td>\s*(-?\d+\.\d+),\s*(-?\d+\.\d+)/) || []);
     const ft = type.match(/(\d[\d,]*) ft/), pitches = type.match(/(\d+) pitches/), avg = html.match(/Avg:\s*([\d.]+)\s+from\s+(\d[\d,]*)\s+votes?/);
@@ -258,7 +261,7 @@ if (FACTS) {
     patched++;
     if (!APPLY && patched <= 10) console.log(id, JSON.stringify(p));
   }
-  console.log(`${STATE}: ${n} route pages read, ${patched} rows ${APPLY ? "given" : "would gain"} facts. Prose next: node scripts/pipeline/extract-route-details.mjs ${STATE}`);
+  console.log(`${STATE}: ${n} route pages read${gone ? `, ${gone} gone from MP` : ""}, ${patched} rows ${APPLY ? "given" : "would gain"} facts. Prose next: node scripts/pipeline/extract-route-details.mjs ${STATE}`);
   process.exit(0);
 }
 
