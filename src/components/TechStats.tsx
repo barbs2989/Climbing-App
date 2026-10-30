@@ -192,12 +192,13 @@ export default function TechStats({route,onEdit,part}: TechStatsProps){
      name, grade, pitches — gains nothing here, because a row that says "unknown" under every fact
      is a placeholder, not a fact. Bolts is `bolts` (0240), never counted out of pitch prose. Aspect
      and season are here because a crag route without a Plan tab had nowhere else to show them.
-     STAR RATING, ALSO CALLED, VARIATIONS and the first FREE ascent are facts about any line, so they
-     render on every discipline. Star rating is `guide_stars` (0-4), a guidebook rating kept apart from
-     `stars` (a different scale, and the climbers' average falls back to it) and never attributed. */
+     REPUTATION, ALSO CALLED, VARIATIONS and the first FREE ascent are facts about any line, so they
+     render on every discipline. Reputation is `guide_stars` (0-4), a guidebook rating kept apart from
+     `stars` (the climbers' own 1-5 votes) and never attributed. It was labelled "Quality", then "Star rating";
+     both read as the climbers' votes, which a route with no votes yet then seemed to have (owner, 2026-10-30). */
   const crag=CRAG_CATS.includes(disc);const facts: CragFact[]=[];let _missN=0,_firstMiss: string|null=null;
   const _gsRaw=route.guideStars!=null?route.guideStars:route.guide_stars;const _gs=(_gsRaw==null||_gsRaw===""||!isFinite(+_gsRaw))?null:Math.max(0,Math.min(4,Math.round(+_gsRaw)));
-  if(_gs!=null)stats.unshift(["Star rating","★".repeat(_gs)+"☆".repeat(4-_gs),C.amber]);
+  if(_gs!=null)stats.unshift(["Reputation","★".repeat(_gs)+"☆".repeat(4-_gs),C.amber]);
   const _alt=(function(a: unknown){return (Array.isArray(a)?a:(a?[a]:[])).map(function(x: unknown){return String(x==null?"":x).trim();}).filter(Boolean);})(route.altNames!=null?route.altNames:route.alt_names);
   if(_alt.length)facts.push(["Also called",_alt.join(", ")]);
   const _vars=(Array.isArray(route.variations)?route.variations:[]).map(function(v){if(v==null)return "";if(typeof v!=="object")return String(v).trim();return [v.name,v.grade].filter(Boolean).join(" · ")+(v.note?" — "+v.note:"");}).filter(Boolean);

@@ -56,7 +56,7 @@ export default function RouteStats({ routeId, cragOnly, onOpenPartners }) {
       <Tile label="On objectives" value={s.objectives} sub={Number(s.objectives) === 1 ? "climber saved it" : "climbers saved it"} onOpen={onOpenPartners && (cragOnly || Number(s.objectives) > 0) ? onOpenPartners : null} go={cragOnly ? "Partners at this crag" : "See who"} />
     </div>
     {raters ? <div style={{ marginTop: 12 }}>
-      <div style={{ ...SUB_LABEL, marginBottom: 5 }}>Star ratings · {plural(raters, "climber", "climbers")}</div>
+      <div style={{ ...SUB_LABEL, marginBottom: 5 }}>Climber votes · {plural(raters, "climber", "climbers")}</div>
       {[5, 4, 3, 2, 1].map((k) => <div key={k} role="img" aria-label={k + " star" + (k === 1 ? "" : "s") + ": " + plural(stars[k - 1], "climber", "climbers")} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 3 }}>
         <span style={{ width: 26, fontSize: 12, color: C.textSub, flexShrink: 0 }}>{k}★</span>
         <span style={{ flex: 1, height: 8, background: C.surface, borderRadius: 4, overflow: "hidden" }}><span style={{ display: "block", height: "100%", width: (stars[k - 1] / topStar * 100) + "%", background: C.amber, borderRadius: 4 }} /></span>
