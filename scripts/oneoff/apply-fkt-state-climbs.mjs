@@ -24,8 +24,11 @@ const arg = f => { const i = process.argv.indexOf(f); return i > 0 ? process.arg
 const ST = (arg("--state") || "").toLowerCase();
 if (!/^[a-z]{2}$/.test(ST)) { console.error("usage: --state <two-letter code>"); process.exit(2); }
 const WRITE = process.argv.includes("--write");
-const data = JSON.parse(fs.readFileSync(new URL(`./data/${ST}-fkt-climbs.json`, import.meta.url)));
-const ROLLBACK = new URL(`../rollback-${ST}-fkt-climbs.json`, import.meta.url);
+// --wave <name>: a later wave's file, data/<st>-fkt-climbs-<name>.json, with its own rollback
+const WAVE = arg("--wave") ? `-${arg("--wave")}` : "";
+const data = JSON.parse(fs.readFileSync(new URL(`./data/${ST}-fkt-climbs${WAVE}.json`, import.meta.url)));
+const ROLLBACK = new URL(`../rollback-${ST}-fkt-climbs${WAVE}.json`, import.meta.url);
+if (fs.existsSync(ROLLBACK) && process.argv.includes("--write")) { console.error(`${ROLLBACK.pathname} exists — this wave was already written`); process.exit(1); }
 const k = requireServiceKey();
 const get = async p => { const r = await fetch(`${SUPABASE_URL}/rest/v1/${p}`, { headers: headers(k) }); const t = await r.text(); if (!r.ok) throw new Error(`${p} -> ${r.status} ${t.slice(0, 200)}`); return JSON.parse(t); };
 const post = async (table, row) => {

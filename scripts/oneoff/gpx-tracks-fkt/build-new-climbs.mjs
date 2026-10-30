@@ -15,7 +15,9 @@ const { reachesTheSummit } = await import(`${REPO}/lib/track.js`);
 const { gradeNumFor } = await import(`${REPO}/lib/grade.js`);
 const GPX_DIR = process.env.FKT_GPX_DIR;
 // held back: no Hawaii in the area tree yet (adding a state is the owner's call)
-const HOLD = new Set(["mount-olomana-hi"]);
+const HOLD = new Set(["mount-olomana-hi", "mt-landale-bc-canada"]);   // Landale: its one grade source can no longer be read
+// FKT_CLIMBS_WAVE: a later wave writes <st>-fkt-climbs-<wave>.json beside an earlier wave's file
+const WAVE = process.env.FKT_CLIMBS_WAVE ? `-${process.env.FKT_CLIMBS_WAVE}` : "";
 const MAX_PTS = 3000;
 
 function parseGpx(xml) {
@@ -71,7 +73,7 @@ for (const f of process.argv.slice(2)) for (const v of JSON.parse(fs.readFileSyn
   console.log(`${st} ${row.id.padEnd(42)} ${row.discipline.padEnd(14)} ${String(row.grade).padEnd(4)} num ${row.grade_num}  ${rs.gpx.length} pts  under ${v.area.parent_id}${th ? "  +TH " + th.name : ""}`);
 }
 for (const [st, d] of Object.entries(byState)) {
-  const f = `${REPO}/scripts/oneoff/data/${st}-fkt-climbs.json`;
+  const f = `${REPO}/scripts/oneoff/data/${st}-fkt-climbs${WAVE}.json`;
   if (fs.existsSync(f)) throw new Error(`${f} exists — refusing to overwrite another wave's record`);
   fs.writeFileSync(f, JSON.stringify(d, null, 1));
 }
