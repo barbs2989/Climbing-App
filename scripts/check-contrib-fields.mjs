@@ -121,7 +121,8 @@ const objKeys = read("lib/objKeys.js");
 /* Every file that renders one of these objects. A reader outside this list is invisible, and an
    invisible reader reads as a dead sub-key — the direction that tells an author to delete working
    wiring, so a file that cannot be read is fatal rather than skipped. */
-const READER_FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx", "ClimbMatch.jsx", "EnrichmentPanels.jsx"];
+// lib/outing.js reads `road.walkMi` (roadWalkMi) for the TECHNICAL STATS card's distance note.
+const READER_FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx", "ClimbMatch.jsx", "EnrichmentPanels.jsx", "lib/outing.js"];
 const readerCorpus = READER_FILES.map((f) => {
   // readAppFile: each parent STITCHED, so a reader moved into src/components/ (ClimateSeasonCard, PR53) stays read.
   try { return readAppFile(path.join(ROOT, f)); } catch {

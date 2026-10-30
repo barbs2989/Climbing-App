@@ -172,3 +172,49 @@ By PRIMARY discipline: trad 1,430, ice 1,006, sport 578, mixed 148, mountaineeri
 
 **Mountaineering tier DONE.** Next: primary ice and mixed (about 1,160 rows). Contexts come from `scripts/oneoff/thin-da-context-sql.mjs`
 (one SQL query; the PostgREST filter on disciplines times out), and agents follow `oos/ICE-BRIEF.md`.
+
+| Ice/mixed batch | thin rows | in batch | skipped | notes |
+|---|---|---|---|---|
+| CO 1 | 40 | 39 | 1 | |
+| CO 2 | 36 | 33 | 3 | |
+| CO 3 | 28 | 25 | 3 | Lead review dropped the Gestas descent (borrowed from neighbouring Dismas). |
+| CO 4 | 34 | 18 | 16 | 12 Longs rows already in the Longs/Meeker batch; Dark Star (own page doubts it). |
+| CO 5 | 40 | 39 | 1 | |
+| CO 6 | 40 | 30 | 10 | 8 already in the Hallett NE / Pikes batches, 2 carried-over skips. |
+| CO 7 | 27 | 26 | 1 | |
+| UT 1 | 37 | 37 | 0 | |
+| UT 2 | 40 | 37 | 3 | Temptation Wall is ice bouldering; Marvell Route's own page doubts it. |
+| UT 3 | 26 | 26 | 0 | Maple Canyon. |
+| UT 4 | 18 | 18 | 0 | |
+| MT 1 | 40 | 38 | 2 | Unprotected Fourplay skipped (text fits another peak). |
+| MT 2 | 39 | 22 | 17 | 16 already in the Three Tiers batch. Granite Lake ski-in given as 9 to 10 mi (three sources). |
+
+| AK 1 | 40 | 25 | 15 | Mt Hunter "Deprivation" skipped: the row (1 pitch AI6 M5) doesn't match the 6,000 ft buttress the sources describe. |
+| AK 2 | 37 | 29 | 8 | Rime Peak carries Mt. Regal's coordinate; Peak 11,300 is filed under Denali NP but is in the Ruth Gorge. |
+| NH 1 | 35 | 26 | 9 | 4 Huntington rows already covered. Beaver Brook Falls is filed under Dixville Notch but sits north of Colebrook. |
+| NH 2 | 39 | 22 | 17 | Moosilauke, Lafayette, Tenny and Oliverian Notch share one placeholder coordinate (44.03683, -71.119). "5 Mt Huntington Ice" rows sit nowhere near the ravine. |
+| BC 1 | 40 | 30 | 10 | Lead review reworded one party-testimony sentence (Robson Roof Glacier). Mount Poland "Curtsy Call" / "Polish Peacock" can't be placed. |
+| BC 2 | 32 | 9 | 23 | Pigeon Spire "Toilet Seat" (5.15d WI8 M16+) looks like a joke row. "Ice caves at the Skillet Glacier" is filed under Mt Ulysses (BC); Skillet Glacier is on Mount Moran (WY). |
+| AB 1 | 36 | 33 | 3 | Lead review removed a single-source rappel count (Edge of the World). Maligne Canyon fire closure left out (current conditions). |
+| AB 2 | 25 | 20 | 5 | Nemesis high confidence (two sources). Amadeus is probably Amadeus Falls on Upper Barrier, filed under "Unsorted Ice routes". |
+| OR 1 | 40 | 36 | 4 | Mt. Hood, Three Sisters, Thielsen, Salt Creek Falls. Lead review removed an unsourced avalanche line (North Sister East Buttress). |
+
+**All 17 ice batches above are applied (2026-10-29): 581 rows, every one "verified on re-read", none refused.** CO went first (210 rows), then the
+database stopped for about 25 minutes; the other 15 batches (371 rows) went in when it recovered. One UT 4 row had a mistyped id in its batch
+(`fmr_fk_me_raw` for `fmr_f_k_me_raw`); the batch is corrected and that row written on its own. Rollbacks: `rollback/rollback-1793312990207.json`
+through `rollback-1793313279406.json` (8 files) and `rollback-1793318126666.json` through `rollback-1793318592761.json` (16 files).
+
+**Ice tier, what's left:** contexts for WY, CA, NB and the small states and provinces (qc, ns, nl, id, yt, nc, nm, on, me, nv, vt, pa, nu, nt, mi).
+Their SQL timed out while the database was degraded. Build them with `CHUNK=40 node scripts/oneoff/thin-da-context-sql.mjs audits/thin-descent-approach/oos/ctx-ice-<st> <st>_ ice,mixed`.
+
+**Ice-tier findings for review:**
+- `ut_monte_cristo` and `ut_broads_fork_2` share one coordinate (40.52763, -111.72408), right for neither: Monte Cristo's East Gully is in Little
+  Cottonwood near Alta, and Broads Fork is in Big Cottonwood.
+- `ut_7even_*` (6 rows) are bolted summer drytooling, filed as mixed.
+- `ut_*north_face_chimney`: our row (5.9+ WI3+ M5, 6 pitches) doesn't match its page (5.9 A2, 4 pitches).
+- `co_wheeler_mountain` "NW Couloir": its page puts it on the east face. `co_*southern_circus` is stored as ice at 5.6 but is described as mixed.
+- Navajo West Couloir, Pacific Peak N Face couloirs and Saint Sophia Faith, Hope and Love are alpine-rock pages filed as ice.
+- Waltzing Matilda (Oil Creek): page says WI2+, our row WI3-4.
+- Mertensia Falls is filed under "Wild Basin (bouldering)". Mt Bancroft rows sit under Indian Peaks (it is the James Peak Wilderness).
+- `mt_*unprotected_fourplay` on A Peak: its text names a "Blackwell Glacier" and a west face that don't fit A Peak, so it was probably copied
+  from another route.

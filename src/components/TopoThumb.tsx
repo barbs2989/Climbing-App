@@ -25,6 +25,6 @@ export default function TopoThumb({p,onOpen}: TopoThumbProps){
     {canonical?<TopoLineOverlay points={canonical.points} variants={canonical.variants} pins={canonical.pins} pinSize={12}/>:null}
     {!canonical?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(0,0,0,0.45)",color:C.onSolid,fontSize:11,fontWeight:700,textAlign:"center",padding:8}}>No line drawn</div>:null}
     {p.lines.length>1?<span style={{position:"absolute",top:5,right:5,background:"rgba(0,0,0,0.65)",color:C.onSolid,fontSize:10,fontWeight:700,borderRadius:10,padding:"2px 6px"}}>{p.lines.length+" lines"}</span>:null}
-    {canonical&&canonical.label?<span style={{position:"absolute",left:5,right:5,bottom:5,background:"rgba(0,0,0,0.65)",color:C.onSolid,fontSize:10,fontWeight:700,borderRadius:6,padding:"2px 6px",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{canonical.label}</span>:null}
+    {canonical&&canonical.label?<span style={{position:"absolute",left:5,right:5,bottom:5,background:"rgba(0,0,0,0.65)",color:C.onSolid,fontSize:10,fontWeight:700,borderRadius:6,padding:"2px 6px",overflowWrap:"anywhere"}}>{canonical.label}</span>:null}
   </div>;
 }

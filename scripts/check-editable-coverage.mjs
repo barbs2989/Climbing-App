@@ -57,6 +57,7 @@ const NEVER = {
   gear_bucket: "pipeline bookkeeping, read by nothing on screen",
   elev_pts: "derived from the gpx track",
   guide_stars: "the guidebook's own rating; a climber's rating is route_ratings",
+  classic_score: "a sort key for the classics lists (0393), written by flag-classics.mjs; never printed, a climber's rating is route_ratings",
   bail: "removed from the page 2026-10-07",
   turnaround: "removed from the page 2026-10-07",
 };
