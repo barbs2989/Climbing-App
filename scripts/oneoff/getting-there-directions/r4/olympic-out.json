@@ -1,0 +1,378 @@
+[
+ {
+  "id": "wa_mount_olson_standard",
+  "field": "access.closures",
+  "verdict": "fix",
+  "problem": "The 'through Oct 1, 2026' end date has passed; the Forest Service still lists Copper Creek Trail and FS-2451 as closed (order since July 8, 2026, no end date) and no page I could open mentions Mt. Rose, Mildred Lakes or Dry Creek.",
+  "corrected": "The 2025 Bear Gulch Fire (~20,000+ acres) burned into the Staircase/Lake Cushman and North Fork Skokomish area. FS-24 and the Forest Service sites around Lake Cushman reopened July 8, 2026; only FS-2451 and the Copper Creek Trail stay closed under the burn-area order, with no end date. This is a different drainage from the South Fork Skokomish/Six Ridge approach used for Olson and doesn’t directly affect it, but verify current trail and road status before a trip.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/olympic/fire/info/bear-gulch-fire",
+   "https://www.fs.usda.gov/r06/olympic/alerts"
+  ],
+  "secondCheck": "2026-10-29 main session refetched"
+ },
+ {
+  "id": "wa_mount_anderson_eel_glacier",
+  "field": "road.status",
+  "verdict": "accurate",
+  "problem": "Park page still says the Dosewallips Road is washed out east of the campground (adds 6.5 miles of walking); foot/bike/horse access consistent.",
+  "corrected": "",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+   "https://www.wta.org/go-hiking/hikes/dosewallips-river"
+  ]
+ },
+ {
+  "id": "wa_mount_barnes_scramble",
+  "field": "road.status",
+  "verdict": "accurate",
+  "problem": "Park conditions page (updated Oct 27, 2026) confirms vehicle closure at Madison Falls parking area, open to walkers and bikes.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_barnes_scramble",
+  "field": "road.driveNote",
+  "verdict": "accurate",
+  "problem": "Elwha road closure at Madison Falls confirmed Oct 27, 2026.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_barnes_scramble",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "Elwha closure confirmed; park trail page lists no Cat Basin or Dodger Point closure now, so the conditional wording holds.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_cameron_standard",
+  "field": "road.driveNote",
+  "verdict": "accurate",
+  "problem": "Dosewallips Road washout still listed by the park.",
+  "corrected": "",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_cruiser_nw_face_corner",
+  "field": "road.status",
+  "verdict": "accurate",
+  "problem": "Staircase developed area open; Flapjack Lakes and North Fork Skokomish trails closed (status 9/30/26), FS-24 reopened July 8, 2026. Cited page-update dates are older than the current ones (trail page Oct 14, fire page Oct 16) but the substance is unchanged.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+   "https://home.nps.gov/olym/planyourvisit/fire-conditions-and-updates.htm",
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+   "https://www.fs.usda.gov/r06/olympic/fire/info/bear-gulch-fire"
+  ]
+ },
+ {
+  "id": "wa_mount_cruiser_nw_face_corner",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "Staircase developed area open; Flapjack Lakes and North Fork Skokomish trails closed (status 9/30/26), FS-24 reopened July 8, 2026. Cited page-update dates are older than the current ones (trail page Oct 14, fire page Oct 16) but the substance is unchanged.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+   "https://home.nps.gov/olym/planyourvisit/fire-conditions-and-updates.htm",
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+   "https://www.fs.usda.gov/r06/olympic/fire/info/bear-gulch-fire"
+  ]
+ },
+ {
+  "id": "wa_mount_cruiser_south_corner",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "Staircase developed area open; Flapjack Lakes and North Fork Skokomish trails closed (status 9/30/26), FS-24 reopened July 8, 2026. Cited page-update dates are older than the current ones (trail page Oct 14, fire page Oct 16) but the substance is unchanged.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+   "https://home.nps.gov/olym/planyourvisit/fire-conditions-and-updates.htm",
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+   "https://www.fs.usda.gov/r06/olympic/fire/info/bear-gulch-fire"
+  ]
+ },
+ {
+  "id": "wa_mount_duckabush_standard",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "Duckabush River Trail not listed closed (downed trees and a hazardous ford noted); Staircase-side closures stand.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_hopper_standard",
+  "field": "road.driveNote",
+  "verdict": "accurate",
+  "problem": "Staircase developed area open; Flapjack Lakes and North Fork Skokomish trails closed (status 9/30/26), FS-24 reopened July 8, 2026. Cited page-update dates are older than the current ones (trail page Oct 14, fire page Oct 16) but the substance is unchanged.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+   "https://home.nps.gov/olym/planyourvisit/fire-conditions-and-updates.htm",
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+   "https://www.fs.usda.gov/r06/olympic/fire/info/bear-gulch-fire"
+  ]
+ },
+ {
+  "id": "wa_mount_hopper_standard",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "Staircase developed area open; Flapjack Lakes and North Fork Skokomish trails closed (status 9/30/26), FS-24 reopened July 8, 2026. Cited page-update dates are older than the current ones (trail page Oct 14, fire page Oct 16) but the substance is unchanged.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+   "https://home.nps.gov/olym/planyourvisit/fire-conditions-and-updates.htm",
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+   "https://www.fs.usda.gov/r06/olympic/fire/info/bear-gulch-fire"
+  ]
+ },
+ {
+  "id": "wa_mount_lincoln_standard",
+  "field": "road.status",
+  "verdict": "accurate",
+  "problem": "Staircase developed area open; Flapjack Lakes and North Fork Skokomish trails closed (status 9/30/26), FS-24 reopened July 8, 2026. Cited page-update dates are older than the current ones (trail page Oct 14, fire page Oct 16) but the substance is unchanged.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+   "https://home.nps.gov/olym/planyourvisit/fire-conditions-and-updates.htm",
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+   "https://www.fs.usda.gov/r06/olympic/fire/info/bear-gulch-fire"
+  ]
+ },
+ {
+  "id": "wa_mount_lincoln_standard",
+  "field": "road.driveNote",
+  "verdict": "accurate",
+  "problem": "Staircase developed area open; Flapjack Lakes and North Fork Skokomish trails closed (status 9/30/26), FS-24 reopened July 8, 2026. Cited page-update dates are older than the current ones (trail page Oct 14, fire page Oct 16) but the substance is unchanged.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+   "https://home.nps.gov/olym/planyourvisit/fire-conditions-and-updates.htm",
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+   "https://www.fs.usda.gov/r06/olympic/fire/info/bear-gulch-fire"
+  ]
+ },
+ {
+  "id": "wa_mount_lincoln_standard",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "Staircase developed area open; Flapjack Lakes and North Fork Skokomish trails closed (status 9/30/26), FS-24 reopened July 8, 2026. Cited page-update dates are older than the current ones (trail page Oct 14, fire page Oct 16) but the substance is unchanged.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+   "https://home.nps.gov/olym/planyourvisit/fire-conditions-and-updates.htm",
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+   "https://www.fs.usda.gov/r06/olympic/fire/info/bear-gulch-fire"
+  ]
+ },
+ {
+  "id": "wa_mount_lincoln_standard",
+  "field": "access.closureNote",
+  "verdict": "fix",
+  "problem": "Cites a stale 6/5/26 update; the trail page now shows these trails still closed with a 9/30/26 status.",
+  "corrected": "As of the September 30, 2026 trail status, the Flapjack Lakes Trail and North Fork Skokomish River Trail are closed due to the 2025 Bear Gulch Fire, with no reopening date given — verify current status with Olympic National Park before this trip.",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm"
+  ],
+  "secondCheck": "2026-10-29 main session refetched: both trails 9/30/26 closed"
+ },
+ {
+  "id": "wa_mount_meany_standard",
+  "field": "road.driveNote",
+  "verdict": "fix",
+  "problem": "South Shore Road reopened Oct 8, 2026, so North Shore is no longer the only way in.",
+  "corrected": "From US-101 at Lake Quinault take North Shore Road about 14 miles to the North/South Shore intersection, then North Fork Quinault Road about 4 miles to the trailhead and ranger station. South Shore Road, washed out since 2024, reopened Oct 8, 2026 and leads to Graves Creek; the temporary bridge joining the two shore roads is removed for the winter. The Elwha approach via Whiskey Bend is a genuine alternative but is foot and bike only: Olympic Hot Springs Road has been shut to vehicles beyond Madison Falls since November 2017 flood damage, adding roughly 7 miles each way.",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.co.jefferson.wa.us/m/newsflash/Home/Detail/1799",
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm"
+  ],
+  "secondCheck": "2026-10-29 main session refetched"
+ },
+ {
+  "id": "wa_mount_meany_standard",
+  "field": "access.closures",
+  "verdict": "fix",
+  "problem": "The South Shore washout is repaired (reopened Oct 8, 2026); Graves Creek Road is open and reached from South Shore Road.",
+  "corrected": "Whiskey Bend Road has been closed to vehicles since November 2017 flood damage washed out Olympic Hot Springs Road beyond Madison Falls. On the Quinault side, South Shore Road reopened Oct 8, 2026 after a washout closure of nearly two years, and Graves Creek Road is open. Check the NPS Current Road Conditions page before any trip.",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.co.jefferson.wa.us/m/newsflash/Home/Detail/1799",
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm"
+  ],
+  "secondCheck": "2026-10-29 main session refetched"
+ },
+ {
+  "id": "wa_mount_norton_scramble",
+  "field": "road.status",
+  "verdict": "accurate",
+  "problem": "Park conditions page (updated Oct 27, 2026) confirms vehicle closure at Madison Falls parking area, open to walkers and bikes.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_noyes_standard",
+  "field": "road.driveNote",
+  "verdict": "fix",
+  "problem": "South Shore Road reopened Oct 8, 2026, so North Shore is not the only way in.",
+  "corrected": "From US-101 at Lake Quinault take North Shore Road about 14 miles to the North/South Shore intersection, then North Fork Quinault Road about 4 miles to the trailhead and ranger station. South Shore Road, washed out since 2024, reopened Oct 8, 2026 and leads to Graves Creek; the temporary bridge joining the two shore roads is removed for the winter.",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.co.jefferson.wa.us/m/newsflash/Home/Detail/1799",
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm"
+  ],
+  "secondCheck": "2026-10-29 main session refetched"
+ },
+ {
+  "id": "wa_mount_noyes_standard",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "Elwha closure still stands (Oct 27, 2026 page); only the cited page-update date is older.",
+  "corrected": "",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_pulitzer_standard",
+  "field": "road.status",
+  "verdict": "accurate",
+  "problem": "Park conditions page (updated Oct 27, 2026) confirms vehicle closure at Madison Falls parking area, open to walkers and bikes.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_pulitzer_standard",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "Elwha-side vehicle closure confirmed Oct 27, 2026; Sol Duc not re-verified but no closure listed.",
+  "corrected": "",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_queets_south",
+  "field": "road.status",
+  "verdict": "accurate",
+  "problem": "Park conditions page (updated Oct 27, 2026) confirms vehicle closure at Madison Falls parking area, open to walkers and bikes.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_seattle_south",
+  "field": "access.closures",
+  "verdict": "fix",
+  "problem": "The South Shore Road washout closure ended with the Oct 8, 2026 reopening.",
+  "corrected": "Olympic Hot Springs Road beyond Madison Falls is closed to vehicles by a washout, with no reopening date, adding roughly 7 miles each way of walking or biking to reach the Whiskey Bend trailhead on the Elwha approach. On the Quinault side, South Shore Road reopened Oct 8, 2026 after a washout closure of nearly two years. Call the park's Road and Weather Hotline (360-565-3131) or check the park's road conditions page for current status before committing to either approach.",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.co.jefferson.wa.us/m/newsflash/Home/Detail/1799",
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm"
+  ],
+  "secondCheck": "2026-10-29 main session refetched"
+ },
+ {
+  "id": "wa_mount_wilder_scramble",
+  "field": "road.status",
+  "verdict": "accurate",
+  "problem": "Park conditions page (updated Oct 27, 2026) confirms vehicle closure at Madison Falls parking area, open to walkers and bikes.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_wilder_scramble",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "Elwha closure still stands (Oct 27, 2026 page); only the cited page-update date is older.",
+  "corrected": "",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_the_fin_northeast_face",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "Staircase developed area open; Flapjack Lakes and North Fork Skokomish trails closed (status 9/30/26), FS-24 reopened July 8, 2026. Cited page-update dates are older than the current ones (trail page Oct 14, fire page Oct 16) but the substance is unchanged.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+   "https://home.nps.gov/olym/planyourvisit/fire-conditions-and-updates.htm",
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+   "https://www.fs.usda.gov/r06/olympic/fire/info/bear-gulch-fire"
+  ]
+ },
+ {
+  "id": "wa_the_horn_scramble",
+  "field": "road.driveNote",
+  "verdict": "accurate",
+  "problem": "Staircase developed area open; Flapjack Lakes and North Fork Skokomish trails closed (status 9/30/26), FS-24 reopened July 8, 2026. Cited page-update dates are older than the current ones (trail page Oct 14, fire page Oct 16) but the substance is unchanged.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+   "https://home.nps.gov/olym/planyourvisit/fire-conditions-and-updates.htm",
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+   "https://www.fs.usda.gov/r06/olympic/fire/info/bear-gulch-fire"
+  ]
+ },
+ {
+  "id": "wa_the_horn_scramble",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "Staircase developed area open; Flapjack Lakes and North Fork Skokomish trails closed (status 9/30/26), FS-24 reopened July 8, 2026. Cited page-update dates are older than the current ones (trail page Oct 14, fire page Oct 16) but the substance is unchanged.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+   "https://home.nps.gov/olym/planyourvisit/fire-conditions-and-updates.htm",
+   "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+   "https://www.fs.usda.gov/r06/olympic/fire/info/bear-gulch-fire"
+  ]
+ }
+]

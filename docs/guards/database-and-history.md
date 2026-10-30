@@ -858,6 +858,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     wall's name), Horse Flats' "Y Crack Boulder" / "A Boulder", "Y - North/South Side" kept (the crag
     is The Y), "N. Red-Yellow" and "B. School" kept as unsettled. Only 150 renames had no labelled
     sibling to vouch for them; those were the ones read.
+  - **A protest label is stripped the same way** (2026-10-29): Mountain Project carried an area named
+    "PUBLIC LAND FOR SALE-Wayne's World" (North Bend dry-tooling), from a 2025 campaign asking
+    climbers to put that phrase on route and area names. It is not the place's name. The one
+    WA area that had it was renamed to "Wayne's World"
+    (`scripts/oneoff/getting-there-directions/fix-protest-area-names.mjs`). The rule only strips it when a
+    dash or colon follows it, so a wall truly named "Public Land Wall" keeps its name.
   - **The rule must be IDEMPOTENT** — the importer strips names the rename already stripped. The
     first run broke it three ways ("V3 - " read as a letter-dash label, ". . more" as dot markers,
     "Z1:1:" stacked); tested since: f(f(x)) === f(x) for all 58,515 distinct names.

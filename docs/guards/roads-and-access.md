@@ -926,6 +926,31 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       Road at Dry Creek, the Mount Adams Recreation Area closure order (Aug 26), SR 542 gated Oct 25.
       **Still open:** Cascade River Road (park page "open", dated July; WTA alert Oct 15 "closed at
       MP 20") — unchanged, as before; Dosewallips washout parking (no page says where the road ends).
+    - **Round 4, 2026-10-29: the live run, and every tier re-checked** (`getting-there-directions/r4/`).
+      The plain run read 2,373 WA routes, 931 drive lines, 6,258 values; 94 flagged (1 expired, 85
+      open-ended, 8 as-of-period). All five injection runs behaved: `drivesince` reported exactly
+      931 = 931, and `clean`, `yearonly`, `expiredanswered` and `pastreport` reported 0 in every tier.
+      The 25 values round 3 had just checked were left alone. The other 65 were researched (one
+      Sonnet researcher each for the Olympics and the Cascades), and every fix got a second fetched
+      page. **26 values on 20 routes rewritten** (`r4/final.json`, `r4/apply-final.mjs`, which
+      compares against the exact live text first):
+      - **Silver-Skagit Road reopened Oct 26, 2026.** DriveBC's advisory only renders in a browser;
+        it was read in Chrome. That changed every Hozomeen note and Castle Peak. DriveBC now calls
+        Oct 15 – Apr 15 *unmaintained*, not shut, so the stale "2025-26 winter shutdown" windows
+        were rewritten to say that.
+      - **Quinault South Shore Road reopened Oct 8, 2026** (Meany, Noyes, Seattle). The temporary
+        bridge joining the two shore roads is out for the winter. The researcher's "either road
+        reaches both" was wrong on that point, and the second check rewrote it.
+      - **Mount Olson's expired "closed through Oct 1"** now reads: only FS-2451 and Copper Creek
+        stay shut. The Forest Service reopened every other site on July 8.
+      - **Mount Berge:** the storm-damage order's dates were added and the lapsing fire order
+        dropped.
+      - **Mount Lincoln:** the trail-status date moved to Sep 30.
+      - **Cascade River Road** is now "closed at the Eldorado gate since at least mid-October 2026".
+        The park page is still dated July. Two October sources agree on the closure, so the stale
+        land-manager page does not out-vote them.
+      - **Unverifiable:** Alpental roads, the Olney Creek gate, and the FR 32 bypass. These were left
+        as written.
   - **numbersUsed compares as SETS.** A number used twice in a text ("SR 20 ... mile 20") was declared
     twice and refused four checked corrections; duplicates are not untraceability.
   - **The BACKLOG: WA alpine routes with NEITHER a trailhead card NOR approach prose (329 on
