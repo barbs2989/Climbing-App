@@ -24,6 +24,7 @@ const PROBE = path.join(ROOT, "scripts/oneoff/probe-a-requester-is-not-on-the-cr
 const FILES = {
   core: path.join(ROOT, "ClimbMatchCore.jsx"),
   app: path.join(ROOT, "ClimbMatch.jsx"),
+  crews: path.join(ROOT, "src/components/CrewListView.tsx"), // the crew tab's list, lifted out of App in PR61
   ps: path.join(ROOT, "lib/PartnerSearch.jsx"),
   CrewCard: path.join(ROOT, "lib/CrewCard.jsx"),
 };
@@ -75,9 +76,9 @@ const CASES = [
     find: 'const roster=ex?crewSize(ex):0;',
     repl: 'const roster=ex?ex.members.length+1:0;' },
 
-  { name: "quick-list-denominator", file: "app", expect: "the crew-tab quick list denominator",
-    find: 'const otherMem=crewInCrew(cr).filter(m=>m.climberId!==0);',
-    repl: 'const otherMem=cr.members.filter(m=>m.climberId!==0);' },
+  { name: "quick-list-denominator", file: "crews", expect: "the crew-tab quick list denominator",
+    find: 'const otherMem=crewInCrew(cr).filter((m: CrewListViewMember)=>m.climberId!==0);',
+    repl: 'const otherMem=cr.members.filter((m: CrewListViewMember)=>m.climberId!==0);' },
 
   // OVER-REACH. A fix that only ever removes requesters is satisfied by removing them everywhere.
   { name: "OVER-REACH-sweep-the-roster", file: "CrewCard", expect: "member LIST still shows the requester",

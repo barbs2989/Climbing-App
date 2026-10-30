@@ -13,13 +13,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { appSources } from "./lib/guard-sources.mjs";
+import { appSources, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GUARD = "check:area-surfaces";
 appSources(ROOT, GUARD);
 
-const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
 const browser = fs.readFileSync(path.join(ROOT, "lib/DbAreaBrowser.jsx"), "utf8");
 const problems = [];
 const ok = (m) => console.log(`  ok    ${m}`);

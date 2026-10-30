@@ -85,6 +85,12 @@ function scan() {
         // The App body contains every handler; scanning it would attribute every toast to
         // every write. Only look at handler-sized functions.
         if (src.length > 60000) return;
+        // A RENDER BODY is not a handler either: a component that is one `return <jsx>` (the tab
+        // bodies lifted out of App in PR61) holds every handler of its screen, and attributing all
+        // their toasts to one of their writes is the App-body error above. Its handlers are
+        // functions of their own and are still visited.
+        const only = p.node.body.body;
+        if (only.length === 1 && only[0].type === "ReturnStatement" && only[0].argument && /^JSX/.test(only[0].argument.type)) return;
         const viaHelper = [...gated].find(h => new RegExp(`\\b${h}\\s*\\(`).test(src));
         const viaInline = /if\s*\(\s*uid\s*[&)]/.test(src);
         if (!viaHelper && !viaInline) return;

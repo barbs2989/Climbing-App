@@ -47,7 +47,7 @@ const CASES = [
     // A no-op attribute edit proved neither -- it would have passed against a guard that never
     // looked at the button. Swapping Lbl for a component that renders NO text must therefore FAIL.
     name: "4 Lbl is what names a back button",
-    file: "ClimbMatch.jsx",
+    file: "src/components/RoutesTab.tsx",
     find: 'setRouteView("areas")} style={POP_BACK}',
     repl: 'setRouteView("areas")} data-inj="1" style={POP_BACK}',
     then: { find: '{<Lbl s={"\u2190 Back"}/>}</button>', repl: '{<ActionIcon name="back" size={14}/>}</button>' },

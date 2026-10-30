@@ -33,7 +33,7 @@ const CASES = [
   {
     name: "noremove",
     why: "the call site stops passing onRemove — the control silently disappears and nothing else notices",
-    file: "ClimbMatch.jsx",
+    file: "src/components/MeTab.tsx",
     find: " onRemove={function(url){",
     repl: " onRemoveZZ={function(url){",
     expect: /exactly one call site may offer removal; 0 do/,

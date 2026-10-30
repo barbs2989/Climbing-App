@@ -27,9 +27,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
 const mod = fs.readFileSync(path.join(ROOT, "lib", "notif-pref.js"), "utf8");
 
 let failures = 0, cases = 0;

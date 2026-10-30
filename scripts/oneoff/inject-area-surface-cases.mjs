@@ -36,7 +36,7 @@ const CASES = [
     find: ".concat(areaCommentTargets)", repl: "",
     says: /no longer includes areaCommentTargets/,
     why: "the section would render an empty box for ever — with `comments` at 0 rows that is indistinguishable from a feature nobody has used" },
-  { name: "render: ungate the comments section", file: APP, expect: "fail",
+  { name: "render: ungate the comments section", file: path.join(ROOT, "src/components/RoutesTab.tsx"), expect: "fail",
     find: "areaCommentTargets.length?<div style={{marginTop:4}}><Comments", repl: "false?<div style={{marginTop:4}}><Comments",
     says: /no longer gated on `areaCommentTargets\.length`/,
     why: "the section disappears while the fetch keeps running" },

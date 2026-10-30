@@ -21,6 +21,7 @@ export const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07), 0 10px 26px -14
 // phone screen. Quiet keeps the title as a visually hidden <h1> (screen readers still get the screen's
 // name), and keeps the one-line caption as plain muted text, with `right` beside it. Nothing else changes.
 const SR_ONLY = { position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0 };
+/** @param {{ C: Record<string, string>, title?: import("react").ReactNode, sub?: import("react").ReactNode, right?: import("react").ReactNode, children?: import("react").ReactNode, mb?: number, quiet?: boolean }} props */
 export function ScreenHero({ C, title, sub, right, children, mb = 14, quiet = false }) {
   if (quiet) return (
     <div style={{ position: "relative", marginBottom: mb }}>
