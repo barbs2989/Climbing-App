@@ -1,0 +1,98 @@
+[
+ {
+  "id": "wa_spire_mountain_scramble",
+  "i": 6,
+  "name": "Spire Mountain",
+  "from": [
+   47.865705,
+   -121.406065
+  ],
+  "op": "none",
+  "reason": "Only one GNIS Spire Mountain in WA (1526373, same Stevens Pass peak). 3DEP at the pin is a clear local max 6228 ft, matching the published 6217 ft; the GNIS point sits on a lower shoulder at 6055 ft. Pin is on the summit; GNIS coordinate is the imprecise one."
+ },
+ {
+  "id": "wa_storm_king_southwest_scramble",
+  "i": 9,
+  "name": "Storm King summit",
+  "from": [
+   48.4913,
+   -120.9228
+  ],
+  "op": "none",
+  "reason": "Pin equals Peakbagger's stated coordinate (48.491345, -120.922765; 8,564.6 ft, https://www.peakbagger.com/peak.aspx?pid=1833). 3DEP: pin 8422 ft, GNIS 1526595 point 8510 ft (both local maxima, 555 m apart, both below published height, DEM under-reads). Two published coordinates disagree, evidence split, so leave. Stated elev 8520 is within 100 ft of 8565."
+ },
+ {
+  "id": "wa_mount_cameron_standard",
+  "i": 4,
+  "name": "Mount Cameron summit",
+  "from": [
+   47.825825,
+   -123.33409
+  ],
+  "op": "move",
+  "to": [
+   47.82536799936158,
+   -123.32846678390986
+  ],
+  "source": "GNIS gaz_id 1517247 (Mount Cameron, Summit)",
+  "quote": "Wikipedia Mount Cameron: 7,190 ft (2,192 m); 47\u00b049\u203231\u2033N 123\u00b019\u203242\u2033W / 47.8253625\u00b0N 123.3284517\u00b0W",
+  "second_source": "https://en.wikipedia.org/wiki/Mount_Cameron_(Washington)",
+  "ground_ft_at_to": 7152,
+  "reason": "Two independent published coordinates (GNIS and Wikipedia) agree on a point 423 m east of the pin. 3DEP: that point lies on the higher crest (7152 ft, with 7178 ft one cell east) while the stored pin is a separate lower bump (7160 ft) 18 ft below it. Pin is not on the published summit."
+ },
+ {
+  "id": "wa_merchant_peak_south_route",
+  "i": 6,
+  "name": "Merchant Peak Summit",
+  "from": [
+   47.8013243,
+   -121.4316972
+  ],
+  "op": "none",
+  "reason": "3DEP: pin is a clear local max at 6065 ft (published 6113); GNIS 1523005 point is lower at 5812 ft on a shoulder. Pin is the summit."
+ },
+ {
+  "id": "wa_mount_duckabush_standard",
+  "i": 7,
+  "name": "Mount Duckabush",
+  "from": [
+   47.630462,
+   -123.361639
+  ],
+  "op": "none",
+  "reason": "Pin equals Wikipedia's stated coordinate (47.630462N 123.361639W, 6,254 ft NAVD88). 3DEP local max 6190 ft at pin; GNIS 1518989 point 345 m away reads 6220 ft. Evidence split, pin kept. Stated elev 6254 matches."
+ },
+ {
+  "id": "wa_mount_daniel_daniel_glacier",
+  "i": 4,
+  "name": "Mount Daniel (true/West Summit)",
+  "from": [
+   47.565031,
+   -121.180891
+  ],
+  "op": "none",
+  "reason": "Wikipedia: West Summit is highest; its coordinate 47.564924N 121.180877W is the pin (within 12 m). 3DEP pin is a local max 7969 ft. GNIS 1518479 point is the East Peak (7,899 ft), which GNIS names Mount Daniel though it is not highest (3DEP 7894 ft there). Pin is on the true summit."
+ },
+ {
+  "id": "wa_mount_daniel_lynch_glacier",
+  "i": 1,
+  "name": "Mount Daniel summit",
+  "from": [
+   47.565031,
+   -121.180891
+  ],
+  "op": "none",
+  "reason": "Same pin as Daniel Glacier route: West Summit, the true high point. GNIS point is the lower East Peak. Pin kept."
+ },
+ {
+  "id": "wa_esmeralda_peaks_scramble",
+  "i": 3,
+  "name": "Esmeralda Peaks - West Summit (true/high summit)",
+  "from": [
+   47.440662,
+   -120.968166
+  ],
+  "op": "none",
+  "reason": "Pin equals Wikipedia's stated coordinate (47.440662, -120.968166; 6,765 ft). 3DEP local max 6734 ft. GNIS 1519380 point, 1,551 m east, reads 6484 ft and matches Wikipedia's 6,480-ft east peak, not the high summit. Pin is on the true summit."
+ }
+]

@@ -1,0 +1,122 @@
+{
+ "id": "wa_cloudy_peak_southwest_slopes",
+ "name": "Southwest Slopes",
+ "discipline": "scrambling",
+ "area": {
+  "id": "wa_cloudy_peak",
+  "name": "Cloudy Peak",
+  "lat": 48.2121012,
+  "lng": -120.9115203,
+  "elevation_ft": 7915,
+  "parent_id": "wa_chiwawa_entiat_region",
+  "ground_ft": 7897
+ },
+ "dist_km": 23,
+ "gain_ft": 7550,
+ "high_point_ft": 7915,
+ "approach_logistics": {
+  "peakLat": 48.2121012,
+  "peakLng": -120.9115203,
+  "trailhead": "Phelps Creek Trailhead",
+  "trailheadLat": 48.083107,
+  "trailheadLng": -120.834805
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.083107,
+   "lng": -120.834805,
+   "elev": 3500,
+   "name": "Phelps Creek Trailhead",
+   "note": "Trail #1511 starts on an old mining road; self-issue Glacier Peak Wilderness permit and Northwest Forest Pass required at the kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US-2 at Coles Corner take WA-207 north, then Chiwawa River Road (FR-62) about 22 miles — paved for the first eleven, gravel and rough after that — and finish with 2.3 miles up Phelps Creek Road (FR-6211) to the road end. Low-clearance vehicles struggle on the last stretch. Cloudy Pass can also be reached from Holden Village up Railroad Creek or from Trinity over Buck Creek Pass, but both are longer multi-day alternatives; the waypoints below follow the Phelps Creek line.",
+   "ground_ft": 3477
+  },
+  {
+   "i": 1,
+   "lat": 48.133732,
+   "lng": -120.862635,
+   "elev": 4550,
+   "name": "Leroy Creek crossing",
+   "note": "Largest of roughly 16 creek crossings on the approach and often the wettest ford; an unmaintained climbers' path branches here toward Leroy Basin.",
+   "type": "Water",
+   "distMi": 4.5,
+   "directions": "Follow Phelps Creek Trail #1511 up the valley on an old mining grade, crossing into the Glacier Peak Wilderness around the two-and-a-half-mile mark. The grade is gentle and Phelps Creek runs alongside the whole way, so water is never a concern. Leroy Creek is the largest of the tributary crossings and the one most likely to soak your feet; the unmaintained path climbing toward Leroy Basin leaves here and is not your turn.",
+   "ground_ft": 6099
+  },
+  {
+   "i": 2,
+   "lat": 48.14707,
+   "lng": -120.85343,
+   "elev": 4800,
+   "name": "Spider Meadow",
+   "note": "Broad subalpine meadow with established camps at its upper end; no campfires allowed (prohibited above 4,000 ft).",
+   "type": "Campsite",
+   "distMi": 6.5,
+   "directions": "Stay on #1511 as the valley opens out — roughly 1,900 ft of gain over the six and a half miles from the car, so this is easy ground. The meadow is the last flat, sheltered camping before the climb to the gap, and it is the obvious place to stage from if you are not going car-to-car.",
+   "ground_ft": 4773
+  },
+  {
+   "i": 3,
+   "lat": 48.16985,
+   "lng": -120.88232,
+   "elev": 7100,
+   "name": "Spider Gap / Spider Glacier remnant",
+   "note": "Unmaintained, cairned route climbs steep loose scree then crosses a permanent snowfield (the shrinking Spider Glacier) to the gap; microspikes and an ice axe are recommended even in summer.",
+   "type": "Hazard",
+   "distMi": 7.7,
+   "directions": "Above the meadow the trail climbs into upper Phelps Basin and the maintained tread gives out; a cairned, unmaintained line goes up steep loose scree to the base of the snow around 5,300 ft. From there about half a mile of permanent snowfield leads to the gap. It generally boots or plunge-steps easily in summer, but early season brings open crevasses and firm refrozen snow, and a whiteout or a morning refreeze turns the axe and traction from optional into necessary.",
+   "ground_ft": 7038
+  },
+  {
+   "i": 4,
+   "lat": 48.20263,
+   "lng": -120.92538,
+   "elev": 6440,
+   "name": "Cloudy Pass",
+   "note": "Broad meadow saddle above the Lyman Lakes basin where the climbers' trail toward Cloudy Peak's southwest ridge leaves the maintained Cloudy Pass Trail #1256.",
+   "type": "Junction",
+   "distMi": 13,
+   "directions": "Descend the north side of the gap. The first hundred vertical feet are the steepest, with the softer, less sun-affected snow usually on the climber's-left (north) side, and it eases into scree and then a gentler snowfield. Follow the basin down past the Lyman Glacier and the Upper Lyman Lakes to Lower Lyman Lake, then climb back up through open meadows to the pass — several miles for a modest net loss and regain, and the pass is the normal camp for the peak.",
+   "ground_ft": 6454
+  },
+  {
+   "i": 5,
+   "lat": 48.208416,
+   "lng": -120.916887,
+   "elev": 7300,
+   "name": "Southwest ridge gain point",
+   "note": "Climbers' path through meadows fades into heather benches and then talus; aim for the broad crest of the southwest ridge above the pass.",
+   "type": "Junction",
+   "distMi": 13.8,
+   "directions": "Leave the maintained trail at the pass and head roughly north-northeast up open wildflower meadows on an obvious boot path. The path fades onto heather benches and then talus; keep working toward the broad crest of the southwest ridge rather than contouring across the slopes below it.",
+   "ground_ft": 6948
+  },
+  {
+   "i": 6,
+   "lat": 48.210587,
+   "lng": -120.913702,
+   "elev": 7800,
+   "name": "Notch below the summit block",
+   "note": "A notch separates the ridge from the summit block, blocking the direct line; traverse climber's-right around to the north side of the block to find the scramble route (helmet recommended - falls here would be serious).",
+   "type": "Hazard",
+   "distMi": 14.1,
+   "directions": "Follow the crest of the ridge itself. Straying onto the flanking slopes drops you into seriously unstable scree that is both slower and harder to reverse, and the crest falls away sharply on its far (north) side. Pick a deliberate line through the loose talus blocks — this is exactly the terrain for knocking rock onto a partner, so spread out and keep helmets on.",
+   "ground_ft": 7594
+  },
+  {
+   "i": 7,
+   "lat": 48.21206,
+   "lng": -120.91145,
+   "elev": 7915,
+   "name": "Cloudy Peak summit",
+   "note": "True summit gained by a short, exposed Class 3-4 scramble on the north side of the block; first climbed in 1921 by a Mountaineers party.",
+   "type": "Summit",
+   "distMi": 14.3,
+   "directions": "The notch blocks the direct line, so traverse climber's-right around the east side of the summit block and keep going onto its north (back) side, where a short Class 3-4 weakness leads to the top. It is narrow with real exposure and is the technical crux of the route; cautious parties rope the last few moves.",
+   "ground_ft": 7864
+  }
+ ]
+}

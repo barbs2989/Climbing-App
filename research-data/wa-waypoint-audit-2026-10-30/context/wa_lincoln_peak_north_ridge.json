@@ -1,0 +1,123 @@
+{
+ "id": "wa_lincoln_peak_north_ridge",
+ "name": "Wilkes-Booth (Northwest Face)",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_lincoln_peak",
+  "name": "Lincoln Peak",
+  "lat": 48.768354,
+  "lng": -121.858532,
+  "elevation_ft": 9085,
+  "parent_id": "wa_shuksan_baker_neighbors",
+  "ground_ft": 9050
+ },
+ "dist_km": 9,
+ "gain_ft": 5500,
+ "high_point_ft": 9085,
+ "approach_logistics": {
+  "peakLat": 48.768354,
+  "peakLng": -121.858532,
+  "trailhead": "Heliotrope Ridge Trailhead (Trail #677, FR-39)",
+  "trailheadLat": 48.80218056,
+  "trailheadLng": -121.894725,
+  "trailheadDirection": "From Mount Baker Highway (SR-542) about 1 mile past the Glacier Public Service Center, turn right onto Glacier Creek Road (FR-39), follow it about 8 miles, then turn left at the junction and go less than half a mile to the trailhead."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.802181,
+   "lng": -121.894725,
+   "elev": 3700,
+   "name": "Heliotrope Ridge Trailhead",
+   "note": "FS Trail 677 off Glacier Creek Rd (FS-39); Northwest Forest Pass or digital day-use pass required at the kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Glacier on the Mount Baker Highway (SR-542), drive about 1 mile east and turn right onto Glacier Creek Road (FS Road 39). Follow it about 8 miles to the Heliotrope Ridge Trailhead parking on the left side of the road. A Northwest Forest Pass is required.",
+   "ground_ft": 3587
+  },
+  {
+   "i": 1,
+   "lat": 48.790503692307695,
+   "lng": -121.88274915384616,
+   "elev": 4600,
+   "name": "Heliotrope Creek crossing",
+   "note": "Fast, rock-hopped crossing that worsens with afternoon snowmelt; real injuries have happened here — cross early in the day.",
+   "type": "Water",
+   "distMi": 1.8,
+   "directions": "Trail #677 leaves the lot and climbs steadily through old growth, the lower creeks bridged and no junctions to think about for the first couple of miles. The grade is relentless but it is plain walking; on the pre-dawn start this route needs, it is the stretch you cover in the dark.",
+   "ground_ft": 5533
+  },
+  {
+   "i": 2,
+   "lat": 48.79734,
+   "lng": -121.87015,
+   "elev": 4700,
+   "name": "Kulshan Cabin site",
+   "note": "Established camp at the old 1925 Kulshan Cabin site, just before the signed Climbers' Trail junction.",
+   "type": "Campsite",
+   "distMi": 2,
+   "directions": "A short, steepening 0.2 mi carries on through thinning forest to the flat bench where the cabin stood, with a backcountry toilet as the obvious landmark. That toilet and the one at Harrison Camp are the only ones on this side — everything above here is pack-it-out.",
+   "ground_ft": 4634
+  },
+  {
+   "i": 3,
+   "lat": 48.7893,
+   "lng": -121.867771,
+   "elev": 6000,
+   "name": "Hogsback moraine camp",
+   "note": "Climbers' Trail switchbacks up the Hogsback moraine crest to a common high camp just below the Coleman Glacier toe.",
+   "type": "Junction",
+   "distMi": 3,
+   "directions": "Just past the cabin site the trail reaches a well-signed fork: take the right branch, the Climbers' Trail. The left branch is the hikers' continuation toward the Heliotrope Ridge viewpoint and is the common wrong turn here. The right fork gains roughly 1,000 ft in about a mile, steep and direct up the moraine crest.",
+   "ground_ft": 5897
+  },
+  {
+   "i": 4,
+   "lat": 48.77942884615385,
+   "lng": -121.87064057692308,
+   "elev": 7000,
+   "name": "Coleman Glacier toe / rope-up point",
+   "note": "Rope up here for glacier travel; crevasse hazard increases traversing beneath the Black Buttes cirque toward Lincoln Peak.",
+   "type": "Junction",
+   "distMi": 3.5,
+   "directions": "Stay on the moraine crest above camp as it narrows and runs out at the glacier's edge, another ~1,000 ft over about half a mile. Footing is loose rock and sand on the crest, and the ground turns to ice and rubble where the moraine meets the toe.",
+   "ground_ft": 6779
+  },
+  {
+   "i": 5,
+   "lat": 48.778849,
+   "lng": -121.860647,
+   "elev": 7200,
+   "name": "Black Buttes basin camp",
+   "note": "High camp used for Black Buttes objectives, tucked below the Buttes off the standard Coleman Glacier line.",
+   "type": "Campsite",
+   "distMi": 4,
+   "directions": "From the toe the travel is roped glacier across to the 7,200 ft bench beneath the Black Buttes. The line passes under serac bands on the Coleman's icefall, so it is a stretch to keep moving through rather than rest in, and it wants crossing early while the glacier is still frozen — timing matters more on this side than on the peak's southwest approach.",
+   "ground_ft": 7171
+  },
+  {
+   "i": 6,
+   "lat": 48.77291423076923,
+   "lng": -121.86351788461538,
+   "elev": 7800,
+   "name": "NW Face start / hanging glacier icefall",
+   "note": "Same start as Assassin Spire's Shooting Gallery route: a 60m WI4 pitch right of a prominent hanging glacier — icefall and rockfall exposure.",
+   "type": "Hazard",
+   "distMi": 4.5,
+   "directions": "From the bench, continue roped south across the glacier below the Black Buttes to the start of Lincoln's northwest face, just right of the prominent hanging glacier, the same start as the Assassin Spire routes.",
+   "ground_ft": 6907
+  },
+  {
+   "i": 7,
+   "lat": 48.76814,
+   "lng": -121.85868,
+   "elev": 9085,
+   "name": "Lincoln Peak summit",
+   "note": "Rime-covered summit ridge gains the top; descend via the SW face (snow/ice to 65°) rather than reversing the NW Face.",
+   "type": "Summit",
+   "distMi": 5.2,
+   "directions": "The ground above the base is roped ice and mixed climbing, not a snow slog: a 60 m WI4 pitch immediately right of the hanging glacier is the technical crux, after which parties simul-climb across the upper amphitheater basin. Above that expect roughly four more roped pitches on steeper ice separated by snowfields up to 70 degrees, finishing on rime-plastered ridge and an icy chimney. The rock off the ice is rotten volcanic choss with no fixed gear, so anchors come off slung horns and blocks and every one of them should be treated as suspect.",
+   "ground_ft": 9029
+  }
+ ]
+}
