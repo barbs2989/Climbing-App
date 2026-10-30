@@ -8,6 +8,54 @@ scope out of 557 total WA rows tagged alpine/mountaineering.
 
 ---
 
+## 2026-10-30 — Pass 8, Batch 483
+
+Eight routes across 7 peaks, continuing id-ascending from `wa_dark_peak_dark_glacier_route`:
+Liberty Bell Mountain (Dark Side of Liberty), Davis Peak NC (Northeast Face Couloir; North
+Face/Burdo-Cairns), Dragontail Peak (Der Dihedral), Sloan Peak (Diamond In The Rough), Bear
+Mountain Chilliwack (Direct North Buttress), Dorado Needle (Direct Southwest Buttress), Pernod
+Spire (Direct West Face).
+
+No confirmed errors; no SQL. WebFetch again could not resolve mountainproject.com,
+ademiller.com or publications.americanalpineclub.org from this run's network, so verification
+relied on WebSearch's own synthesized snippets rather than fetching primary pages — same
+constraint as prior batches.
+
+Clean/confirmed (5): wa_dark_side_of_liberty (FA "Shanjean Lee and Mikey Schaefer, Aug 2019"
+and grade IV 5.13+/~1,100 ft match the AAC's own published account by Lee almost exactly; a
+separate blogger's "5.13d, 11 pitches, 350m" is a looser secondary account and doesn't outweigh
+the FA party's own AAC write-up). wa_davis_peak_nc_north_face's stored first-winter-ascent credit
+("Stuart Taylor and Ade Miller, March 13, 2005") matches Ade Miller's own winter trip account and
+the AAC's summary exactly, down to the day. wa_davis_peak_nc_north_face_burdo_cairns's beta
+(four pitches up a central chimney, three more onto an exposed rib, a final gully choked with
+large chockstones, and the chimney being "probably a melted-out form of the older Kloke-Simon
+couloir line") matches Bryan Burdo's own 1988 AAJ report of his and Andy Cairns's climb almost
+verbatim. wa_direct_north_buttress's FA ("Alan Kearney and Bobby Knight, September 1980") matches
+Kearney's own 1981 AAJ account exactly (2.5 days, Sept 1980), and its stated 1985 Burdo/Merrand
+free ascent matches Mountain Project and OpenBeta; length/pitch count (670m/21 vs sources'
+667m/21) and grade (V, 5.10-) also match. wa_direct_west_face's FA ("Tony Bentley and Ross
+Peritore, July 2006") and the overview's specific "July 15, 2006" match a contemporaneous Cascade
+Climbers trip report posted days later, and grade/pitch count (III/IV 5.10+, 8 pitches) match
+Mountain Project.
+
+Needs human verification, none safety- or access-relevant (3): wa_davis_peak_nc_north_face's FA
+year has a genuine 3-way source conflict found this run — stored "July 12, 1976" matches Ade
+Miller's own account, but a SummitPost page gives 1972 and Burdo's 1988 AAJ report (on the
+neighboring Burdo-Cairns route) cites 1974 for the same Kloke-Simon line — no source clearly wins,
+left as is. wa_der_dihedral's grade (5.9+) matches Mountain Project's Dragontail listing exactly,
+but its FA credit ("Layton/Wolfe, 2006") could not be found in any source turned up this run
+(not contradicted either — just unconfirmed). wa_direct_southwest_buttress's pitch count and
+grade (8 pitches, 5.10a) match Mountain Project's Dorado Needle listing exactly, but its FA
+credit ("Mike Preiss and Mark Bunker, September 2006") is likewise unconfirmed by any source
+found.
+
+Also noted, not a sourced-fact issue so not SQL'd: wa_direct_north_buttress's `rope_note` column
+is a truncated sentence — `"The route tops out on the ridge "` (32 chars, trailing space, no
+period, no second clause) — a data-integrity defect rather than something an authoritative
+source could confirm or deny. Flagging for a human to either complete or null out the field.
+
+---
+
 ## 2026-10-23 — Pass 7, Batch 436
 
 Nine routes across 7 peaks (Mount Rainier ×2, Mount Redoubt, Mount Roosevelt, Mount Sefrit ×2,
