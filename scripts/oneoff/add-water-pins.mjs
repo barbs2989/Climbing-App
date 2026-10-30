@@ -32,6 +32,7 @@ import os from "os";
 import { SUPABASE_URL, anonKey, headers, requireServiceKey } from "../lib/supabase-env.mjs";
 import { elevationAt } from "../lib/terrain.mjs";
 import { ident } from "../lib/camp-names.mjs";
+import { namedFeatures } from "../lib/water-sources.mjs";
 import { recordedTrackPts, pointOf, metresBetween } from "../../lib/track.js";
 import { orderWaypoints } from "../../lib/waypoints.js";
 import { nearestOnTrack, trackLine } from "../lib/track-geometry.mjs";
@@ -45,7 +46,7 @@ const AUDIT = arg("audit", path.join(RUN, "audit-before.json"));
 const LIMIT = Number(arg("limit", "100000"));
 const ONLY = arg("only", null); // comma list of route ids
 const PACE_MS = Number(arg("pace-ms", "1100"));
-const WP_TOL = 500, CORRIDOR_M = 1200, EXTENT_M = 1000, SLACK_FT = 100, MERGE_M = 150, NEAR_PINS_M = 300, PIN_NEAR_M = 1500;
+const WP_TOL = 500, CORRIDOR_M = 1200, EXTENT_M = 1000, SLACK_FT = 100, MERGE_M = 150, NEAR_PINS_M = 300, PIN_NEAR_M = 1500, PICK_NEAR_M = 4000;
 const UA = "ClimbMatch-water-pin-solver/1.0 (climbing route catalog)";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -145,7 +146,10 @@ async function solve(r, src) {
   const la = corridor.map((p) => p.lat), ln = corridor.map((p) => p.lng);
   const box = `${Math.min(...la) - 0.03},${Math.min(...ln) - 0.04},${Math.max(...la) + 0.03},${Math.max(...ln) + 0.04}`;
   const isLake = /\b(lakes?|tarns?|pond)\b/i.test(src.name) && !/\b(creek|river|brook|fork)$/i.test(src.name);
-  const rx = src.name.replace(/['’]/g, "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "['’]?\\s*").replace(/^Mount\b|^Mt\b/, "M(oun)?t\\.?");
+  // A PICK is one of the measured candidates --candidates listed, chosen by research for which one
+  // the route actually uses. It skips only the choosing; the ground gates below still decide.
+  if (src.pick) return gates(r, pins, placed, track, { p: src.pick.p, how: `research picked: ${src.pick.desc}`, crossing: !!src.pick.crossing }, PICK_NEAR_M);
+  const rx =src.name.replace(/['’]/g, "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "['’]?\\s*").replace(/^Mount\b|^Mt\b/, "M(oun)?t\\.?");
   const local = localIn(box);
   const els = local ? local.filter((e) => e.kind !== "path" && nameKey(e.name) === nameKey(src.name)).map(asElement)
     : await overpass(`[out:json][timeout:90];(way["waterway"]["name"~"^${rx}$",i](${box});way["natural"="water"]["name"~"^${rx}$",i](${box});relation["natural"="water"]["name"~"^${rx}$",i](${box});way["water"]["name"~"^${rx}$",i](${box});node["natural"="spring"]["name"~"^${rx}$",i](${box}););out geom;`);
@@ -176,6 +180,7 @@ async function solve(r, src) {
       const g = gnis.filter((x) => x.id === nameKey(src.name) && metresBetween(x, mean) < 1500);
       cand = g.length === 1 ? { p: { lat: g[0].lat, lng: g[0].lng }, how: "GNIS lake point (OSM outline confirms)" } : { p: mean, how: "OSM lake outline" };
       const d = distToLine(cand.p, placed);
+      if (src.collect && d <= PICK_NEAR_M) return { collect: [{ ...cand, desc: `${cand.how}, ${nearestPinDesc(cand.p, pins)}` }] };
       if (d > CORRIDOR_M) return { why: `lake ${Math.round(d)} m from the route's own pins` };
     }
   } else {
@@ -187,13 +192,20 @@ async function solve(r, src) {
       cand = { p: xs[0].p, how: "where the stream crosses the recorded track", alongM: xs[0].alongM, crossing: true };
     } else {
       const la2 = placed.map((p) => p.lat), ln2 = placed.map((p) => p.lng);
-      const box2 = `${Math.min(...la2) - 0.02},${Math.min(...ln2) - 0.025},${Math.max(...la2) + 0.02},${Math.max(...ln2) + 0.025}`;
+      const pad = src.collect ? 0.04 : 0.02;
+      const box2 = `${Math.min(...la2) - pad},${Math.min(...ln2) - pad * 1.25},${Math.max(...la2) + pad},${Math.max(...ln2) + pad * 1.25}`;
       const loc2 = localIn(box2);
-      const paths = loc2 ? loc2.filter((e) => e.kind === "path").map(asElement)
-        : await overpass(`[out:json][timeout:90];way["highway"~"^(path|footway|track|bridleway)$"](${box2});out geom;`);
+      const paths = loc2 ? loc2.filter((e) => e.kind === "path").map((f) => ({ ...asElement(f), trail: f.name || null }))
+        : await overpass(`[out:json][timeout:90];way["highway"~"^(path|footway|bridleway)$"](${box2});out geom;`);
       if (paths == null) return { why: "overpass unavailable" };
       let xs = [];
-      for (const pth of paths.map(geomOf)) for (const l of lines) xs.push(...crossings(pth, l).map((x) => x.p));
+      for (const pth of paths) for (const l of lines) xs.push(...crossings(geomOf(pth), l).map((x) => ({ ...x.p, trail: pth.trail || (pth.tags && pth.tags.name) || null })));
+      if (src.collect) {
+        // Every distinct crossing within PICK_NEAR_M of a real pin, for research to choose among.
+        const near = xs.filter((p) => Math.min(...placed.map((q) => metresBetween(q, p))) <= PICK_NEAR_M);
+        const dist = near.filter((p, i) => near.findIndex((q) => metresBetween(p, q) < 150) === i);
+        return { collect: await Promise.all(dist.slice(0, 8).map(async (p) => ({ p: { lat: p.lat, lng: p.lng }, crossing: true, desc: `crosses trail "${p.trail || "unnamed path"}" at ${await ground(p)} ft, ${nearestPinDesc(p, pins)}` }))) };
+      }
       xs = xs.filter((p) => distToLine(p, placed) <= CORRIDOR_M);
       let distinct = xs.filter((p, i) => xs.findIndex((q) => metresBetween(p, q) < 400) === i);
       if (!distinct.length) return { why: "no mapped trail crosses it near the route, and no recorded track" };
@@ -204,13 +216,22 @@ async function solve(r, src) {
       cand = { p: distinct[0], how: "where a mapped trail crosses the stream", crossing: true };
     }
   }
+  return gates(r, pins, placed, track, cand, PIN_NEAR_M);
+}
+
+const nearestPinDesc = (p, pins) => {
+  const n = pins.filter((w) => pointOf(w)).map((w) => ({ w, d: metresBetween(pointOf(w), p) })).sort((a, b) => a.d - b.d)[0];
+  return n ? `${Math.round(n.d)} m from the ${n.w.type} pin "${n.w.name}"` : "no pin nearby";
+};
+
+async function gates(r, pins, placed, track, cand, pinNear) {
   // WITHOUT A TRACK, A PIN OF THE ROUTE MUST STAND NEAR IT. The chord between two sparse pins is
   // not where the trail goes: on Fortress Mountain the only crossing within 300 m of the chord was
   // the Chiwawa 4.3 km upstream of the bridge the route actually uses (first full run, 2026-10-30).
   if (!track) {
     const dPin = Math.min(...placed.map((q) => metresBetween(q, cand.p)));
-    if (dPin > PIN_NEAR_M) return { why: `no recorded track, and ${Math.round(dPin)} m from every pin of the route` };
-  }
+    if (dPin > pinNear) return { why: `no recorded track, and ${Math.round(dPin)} m from every pin of the route` };
+  } else if (distToLine(cand.p, track) > WP_TOL) return { why: `${Math.round(distToLine(cand.p, track))} m from the recorded track` };
   // GROUND and HEIGHT BAND
   const p = { lat: Number(cand.p.lat.toFixed(6)), lng: Number(cand.p.lng.toFixed(6)) };
   const g = await ground(p);
@@ -244,7 +265,29 @@ function insert(wps, pin) {
 }
 
 // ---- solve
-let work = audit.missing;
+// --nocoord: the Water pins the audit found with no lat/lng. The feature is read from the pin's own
+// name ("Jet Creek crossing" -> Jet Creek); a name that names no place ("Stream crossing near
+// meadow") stays as it is. A pin that states a height must agree with the ground within TOL_FT.
+const NOCOORD = argv.includes("--nocoord");
+const TOL_FT = 400;
+// --candidates <out.json>: list the measured points research may choose among (see the loop).
+// --picks <candidates.json> <picks.json>: picks = [{key, cid}] from research; only those are solved.
+const CAND_OUT = arg("candidates", null);
+const candOut = [];
+const PICKS = (() => {
+  const i = argv.indexOf("--picks");
+  if (i < 0) return null;
+  const cands = new Map(JSON.parse(fs.readFileSync(argv[i + 1], "utf8")).map((x) => [x.key, x]));
+  const m = new Map();
+  for (const pk of JSON.parse(fs.readFileSync(argv[i + 2], "utf8"))) {
+    const c = cands.get(pk.key), x = c && c.candidates.find((y) => y.cid === Number(pk.cid));
+    if (x) m.set(pk.key, { p: { lat: x.lat, lng: x.lng }, crossing: x.crossing, desc: x.desc });
+  }
+  return m;
+})();
+let work = NOCOORD
+  ? (audit.noCoord || []).map((x) => ({ ...x, source: (namedFeatures(x.pin, false)[0] || {}).name || null }))
+  : audit.missing;
 if (ONLY) { const s = new Set(ONLY.split(",")); work = work.filter((x) => s.has(x.id)); }
 work = work.slice(0, LIMIT);
 const plan = new Map(), refused = [];
@@ -253,9 +296,33 @@ for (const item of work) {
   n++;
   const r = byId.get(item.id);
   if (!r) { refused.push({ ...item, why: "route not in the dump" }); continue; }
-  const v = await solve(r, { name: item.source });
-  if (!v.ok) { refused.push({ ...item, why: v.why }); continue; }
+  if (!item.source) { refused.push({ ...item, why: "the pin's name names no place" }); continue; }
+  const pick = PICKS && PICKS.get(`${item.id}|${item.pin || item.source}`);
+  if (PICKS && !pick) continue;
+  const v = await solve(r, { name: item.source, pick });
+  if (!v.ok) {
+    refused.push({ ...item, why: v.why });
+    // A refusal research can settle — which of several measured points the route uses — is listed
+    // with every candidate, for --picks to choose among.
+    if (CAND_OUT && !pick && /no recorded track|no mapped trail|ambiguous without a track|from the route's own pins/.test(v.why)) {
+      const c = await solve(r, { name: item.source, collect: true });
+      if (c.collect && c.collect.length) candOut.push({ key: `${item.id}|${item.pin || item.source}`, id: item.id, route: r.name, source: item.source, pin: item.pin || null, sentence: item.sentence || null, why: v.why,
+        pins: (r.waypoints || []).filter((w) => w && pointOf(w)).map((w) => `${w.type}: ${w.name} (${w.elev ?? "?"} ft) ${w.lat},${w.lng}`),
+        candidates: c.collect.map((x, i) => ({ cid: i + 1, lat: Number(x.p.lat.toFixed(6)), lng: Number(x.p.lng.toFixed(6)), crossing: !!x.crossing, desc: x.desc })) });
+    }
+    continue;
+  }
   const cur = plan.get(r.id) || { before: r.waypoints || [], after: (r.waypoints || []).slice(), adds: [] };
+  if (NOCOORD) {
+    const i = cur.after.findIndex((w) => isWaterPin(w) && w.name === item.pin && !pointOf(w));
+    if (i < 0) { refused.push({ ...item, why: "the coordinate-less pin is no longer on the route" }); continue; }
+    const stated = elevFt(cur.after[i]);
+    if (stated != null && Math.abs(stated - v.elev) > TOL_FT) { refused.push({ ...item, why: `ground ${v.elev} ft vs the pin's stated ${Math.round(stated)} ft` }); continue; }
+    cur.after = cur.after.map((w, j) => (j === i ? { ...w, ...v.p, ...(stated == null ? { elev: v.elev } : {}), ...(w.distMi == null && v.distMi != null ? { distMi: v.distMi } : {}) } : w));
+    cur.adds.push({ source: item.source, name: item.pin, ...v.p, elev: v.elev, distMi: v.distMi, how: v.how + " (coordinate for an existing pin)" });
+    plan.set(r.id, cur);
+    continue;
+  }
   const clash = cur.after.find((w) => isWaterPin(w) && pointOf(w) && metresBetween(pointOf(w), v.p) < MERGE_M);
   if (clash) { refused.push({ ...item, why: `Water pin "${clash.name}" already stands within ${MERGE_M} m` }); continue; }
   const name = v.crossing && !/\bcrossing\b/i.test(item.source) ? `${item.source} crossing` : item.source;
@@ -264,6 +331,7 @@ for (const item of work) {
   plan.set(r.id, cur);
   if (n % 25 === 0) console.error(`solved ${n}/${work.length}  routes ${plan.size}  refused ${refused.length}`);
 }
+if (CAND_OUT) { fs.writeFileSync(CAND_OUT, JSON.stringify(candOut, null, 1)); console.log(`candidates: ${candOut.length} sources, ${candOut.reduce((s, x) => s + x.candidates.length, 0)} points -> ${CAND_OUT}`); }
 const planFile = path.join(RUN, `plan-${Date.now()}.json`);
 fs.writeFileSync(planFile, JSON.stringify({ made: new Date().toISOString(), routes: Object.fromEntries(plan), refused }, null, 1));
 const adds = [...plan.values()].flatMap((x) => x.adds);
