@@ -236,3 +236,29 @@ Rollbacks: `rollback/rollback-1793327172562.json` through `rollback-179332747248
 - Mertensia Falls is filed under "Wild Basin (bouldering)". Mt Bancroft rows sit under Indian Peaks (it is the James Peak Wilderness).
 - `mt_*unprotected_fourplay` on A Peak: its text names a "Blackwell Glacier" and a west face that don't fit A Peak, so it was probably copied
   from another route.
+
+### Trad on peaks (started 2026-10-30)
+Thin primary-trad, alpine-tagged rows out of state: **1,438** across 709 areas. **Every one of those areas has `area_type = 'crag'`**: the out-of-state
+import filed real peaks as crags, so the area type cannot separate peaks from cliffs. The test used instead is a peak word in the area name
+(Mount, Peak, Spire, Tower, Dome, Pinnacle, Needle, Horn, Point, Butte, Summit or Ridge) or a stored prominence. That leaves **525 rows on 291 areas**:
+Slesse, Snowpatch, the Howser Towers, Goode, Sir Donald, Gimli and similar peaks. The other 913 trad rows are on cliffs and are not swept, for the
+same reason sport isn't (their descent is a crag matter).
+
+Contexts: `PEAKISH=1 CHUNK=40 node scripts/oneoff/thin-da-context-sql.mjs audits/thin-descent-approach/oos/ctx-trad-<st> <st>_ trad`. That gives
+BC 1–5, CA 1–4, AB 1, WY 1, CO 1–2, ID 1, AK 1 and misc 1 (UT, MT, OR, AZ, NM, NH, NY, QC, NT and YT combined): 516 targets. Agents follow
+`oos/TRAD-BRIEF.md`, which tells them to skip a one-pitch crag line that slipped through on a peak-like name.
+
+| Trad-on-peaks batch | thin rows | in batch | skipped | notes |
+|---|---|---|---|---|
+| BC 1 | 40 | 24 | 16 | Bugaboos (Crescent, Eastpost, Bugaboo, Brenta). Crescent descents are stated by the rappel line's own page for those routes. |
+| BC 2 | 37 | 12 | 25 | 6 already in the Gimli/Athelstan batches. Rice Cooker (filed under Mount Bryce) is a roadside cliff; Mount Land "South Ridge" carries a Mount Sloan route's text; Arjuna NE Ridge is believed unclimbed. |
+| BC 3 | 39 | 5 | 34 | Obscure lines with no source. Uto Peak SW Ridge is filed under Mount Sir Donald. |
+| BC 4 | 39 | 9 | 30 | 26 already in the Slesse/Snowpatch batches. |
+| BC 5 | 22 | 2 | 20 | 4 already in the Yak batch. |
+| CA 1 | 40 | 18 | 22 | 8 one-pitch crag lines skipped. Lead review skipped Arm and Hammer (Blacksmith Peak): only a peak-level approach. |
+| CA 2 | 41 | 10 | 31 | Mt. Goode "No Goode": sources give 5.4 and 5.10a/b, so it may be two lines in one row. Lamarck "Nicole": its own page disagrees on pitches. |
+| CA 3 | 40 | 21 | 19 | 2 already in the Whitney batch, 5 crag lines. Ruby Peak North Ridge: the only page is a 4th-class scramble, while the row says 5.6. |
+| CA 4 | 24 | 7 | 17 | 10 crag lines. Wicked Pinnacle and Upper Siberia Creek Tower are crag routes on one San Bernardino formation. |
+
+None of the trad batches is written yet: the database gate is first come, first served, and the database slowed again.
+

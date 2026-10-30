@@ -28,6 +28,8 @@ import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "./lib/supabase-env.mjs";
 import { checkEntry } from "./lib/source-overlap.mjs";
 import { shoutedStrings } from "./lib/shouted-prose.mjs";
+// A key-order-free JSON form: jsonb returns object keys in its own order, not the order they were written in.
+const canon = v => JSON.stringify(v, (k, x) => (x && typeof x === "object" && !Array.isArray(x) ? Object.fromEntries(Object.keys(x).sort().map(n => [n, x[n]])) : x));
 
 const DRY = process.argv.includes("--dry");
 const files = process.argv.slice(2).filter(a => !a.startsWith("--"));
@@ -94,14 +96,16 @@ for (const [id, spec] of ENTRIES) {
     if (i === prim) delete o.whyThisWay; // the most used way in is not an alternative to itself
     return o;
   });
-  if (JSON.stringify(next) === JSON.stringify(vars)) { console.log(`same ${id} — already says this`); continue; }
+  if (canon(next) === canon(vars)) { console.log(`same ${id} — already says this`); continue; }
   console.log(`${id}  (${before.name})${clear ? `  most used CLEARED (was ${marked >= 0 ? vars[marked].name : "none"})` : ""}${spec.primary != null && marked !== prim ? `  most used := ${vars[prim].name}${marked >= 0 ? ` (was ${vars[marked].name})` : ""}` : ""}`);
   for (const [n, s] of Object.entries(why)) console.log(`   ${n}: ${String(s).trim()}`);
   if (DRY) continue;
   if (!(id in rollback)) rollback[id] = vars; // the state before THIS run, not before its second file
   await patchRow("routes", id, { approach_variants: next });
   const after = await read(id);
-  if (!after || JSON.stringify(after.approach_variants) !== JSON.stringify(next)) { console.error(`MISMATCH ${id} — the re-read does not hold what was written; stopping`); process.exitCode = 1; break; }
+  // jsonb stores object keys in its own order, so compare with keys sorted: a byte compare reported the
+  // first write of the 2026-10-29 run as a MISMATCH although every value had landed.
+  if (!after || canon(after.approach_variants) !== canon(next)) { console.error(`MISMATCH ${id} — the re-read does not hold what was written; stopping`); process.exitCode = 1; break; }
   applied[id + (id in applied ? "#" + Object.keys(applied).length : "")] = { primary: prim >= 0 ? next[prim].name : null, why };
   wrote++;
 }

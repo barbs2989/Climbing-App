@@ -59,3 +59,30 @@ Never write more than a few hundred rows without pacing: `patchRow` paces itself
 **No sourced distance, so record NO_CHANGE:** White Chuck, Depot Creek, Index-Galena, Stehekin, Eagle Creek, Smithbrook, Olney Creek. FR 21 Snowgrass has no closure notice, so re-check its route text.
 
 **Still NO_ACCESS:** Silver-Skagit, SR 165 Fairfax Bridge (and so the Carbon River), Holden, Bacon Creek, Vantage Rd SW.
+
+## Status after the third pass (2026-10-29 night): ALL 151 HAVE A VERDICT
+
+**Written to the database and re-read:** 44 routes, plus 3 road-text corrections.
+
+| Batch | Road | Routes written |
+|---|---|---|
+| b01 | FR 41 | 3 |
+| b02 | Chiwawa | 14 |
+| b03 | Suiattle | 7 |
+| b05 | FR 38 | 7 |
+| b06 | Olympic Hot Springs | 5 |
+| b08 | Cascade River | 3 |
+| b08b | Forbidden, Earl, Triad East, Watson, Bacon | 5 |
+
+- **b06:** includes 2 Sol Duc to Whiskey Bend traverses, written with `ends:"last"`.
+- **Glacier Creek reopened 2026-08-20.** `scripts/oneoff/glacier-creek-reopened.mjs` corrected the stale "closed" text on 3 rows; the other 2 already said it had reopened.
+
+**Every other route has a recorded verdict** in the `*.verdicts.json` files: ALREADY_INCLUDED, ALTERNATE_ONLY, NO_CHANGE or NO_ACCESS. `b09-no-sourced-distance.verdicts.json` covers the roads with no sourced mileage and the NO_ACCESS roads. A coverage check over `closure-by-road.json` finds 151 of 151.
+
+**Open, for the owner's eye** (none is a writable number today):
+- `wa_mount_constance_north_chute`: `dist_km` 9.7 with no itinerary. One way or round trip can't be told.
+- `wa_mount_ferry_standard`: its traverse exit mileage does not fit the Elwha trail.
+- `wa_east_wilmans_spire`: its trailhead can't be told from the row.
+- Hadley Peak, Skyline Divide: FS 37 is gated for about two years, and no source says walkers may pass.
+
+**Re-run** this pass when a closure changes: `npm run audit:closure-distance`, then this folder's BRIEF.md.

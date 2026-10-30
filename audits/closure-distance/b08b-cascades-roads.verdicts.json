@@ -1,0 +1,97 @@
+[
+ {
+  "id": "wa_forbidden_peak_east_ridge",
+  "verdict": "PLAN",
+  "why": "NPS Cascade River Road map (nps.gov/noca/planyourvisit/cascade-river-road.htm, via search 2026-10-29): Eldorado parking at MP 20, Boston Basin parking at about MP 22.5, Cascade Pass TH at road end (~23.1). WTA 2026-10-15 reports gate at MP 20. So the Boston Basin trailhead lies ABOVE the gate by about 2.5 mi (22.5-20); it is not the Cascade Pass 3 mi. Row day1 (3.5 mi) and day2 (4.8) start at the Boston Basin trailhead, so the road is not included. MP 22.5 is a map figure marked about; no sourced gain so walkGainFt omitted."
+ },
+ {
+  "id": "wa_earl_peak_southwest_ridge",
+  "verdict": "PLAN",
+  "why": "Mountaineers Bean Creek Basin page: spur about 1.4 mi long; WTA trip report 2025-05-10 (entry labelled 9.22.26): trailhead cannot be reached by vehicle due to washout/closure of FR 9737-112; Cle Elum road table 2026-09-08 lists it closed (per research file). Barricade is at the bottom of the spur, so the whole 1.4 mi is walked (research gave 1.0-1.4; barricade position along the spur not stated precisely). Row day1 is 7.5 mi car-to-car starting at the Beverly Turnpike trailhead, so road not included. No sourced gain."
+ },
+ {
+  "id": "wa_the_triad_east_peak",
+  "verdict": "PLAN",
+  "why": "FS alert fs.usda.gov/r06/mbs/alerts/sibley-creek-hidden-lake-trailhead-road-fsr-1540-closure-mt-baker-ranger-district (washout MP 2.6, from 2026-07-08, no end date, still listed 2026-10); FS Hidden Lake Lookout page (2026-09-23) says road is 4.5 mi and washed out at 2.4. 4.5-2.6=1.9 (2.1 using 2.4). Row: single day, 9.3 mi car-to-car from Hidden Lake TH (dist_km 7.5), road not included; applier adds 2x1.9. Foot access past the washout not stated in the alert. No sourced gain. Row status said several miles; corrected."
+ },
+ {
+  "id": "wa_mount_watson_scramble",
+  "verdict": "PLAN",
+  "why": "FS alert fs.usda.gov/r06/mbs/alerts/anderson-watson-road-fsr-1107-closure-mt-baker-ranger-district (MP 3.8, 2026-07-08, no end date, still posted 2026-09-25); WTA Anderson and Watson Lakes: 8.9 mi on FR 1107 + 1.1 mi to trailhead. 8.9-3.8+1.1=6.2 mi one way. Row day1 4.7 + day2 6.2 start at the trailhead, road not included. Foot access not stated by sources. No sourced gain."
+ },
+ {
+  "id": "wa_bacon_peak_diobsud",
+  "verdict": "PLAN",
+  "why": "Same closure as Watson: FR 1107 washout MP 3.8, 6.2 mi to Watson Lakes trailhead (FS alert 2026-07-08; WTA). Row has itinerary days with no miles, so the tile uses dist_km 13.04 (8.1 mi). The primary (first) variant and approach text start at Watson Lakes trailhead via Anderson Lakes; the Bacon Creek Rd approach in the timing notes is the alternate. Row text describes a 3-day traverse reversed on the way out, and 8.1 mi cannot be a round trip with 6261 ft gain, so dist_km is read as ONE WAY (the tile convention). New = 13.04 + 6.2*1.609 = 23.0 km one way. CAVEAT: convention inferred, not stated by the row. No sourced gain."
+ },
+ {
+  "id": "wa_mount_rainier_sunset_ridge",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Day1 begins at the Westside Road gate (Dry Creek) and walks the road 3.8 mi to Round Pass; NPS road status 2026-10-29 confirms barricade at Dry Creek, vehicles stop there. Day miles include the road."
+ },
+ {
+  "id": "wa_mount_rainier_tahoma_glacier",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Day1 8 mi and exit day 11 mi start/end at the Westside Road gate; approach text starts at the Dry Creek gate and walks the road to Round Pass (3.8 mi per NPS)."
+ },
+ {
+  "id": "wa_point_success_south_side",
+  "verdict": "NO_CHANGE",
+  "why": "Approaches from Longmire via the Wonderland Trail, not Westside Road; the closure does not lie on its route."
+ },
+ {
+  "id": "wa_mount_shuksan_price_glacier",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Day1 starts at the Ruth Creek washout parking (FS 34 end) and follows the old roadbed ~2 mi; no FS closure alert on FR 32 itself (FS page 2026-09-19). Stored 5.5 mi day1 includes the roadbed."
+ },
+ {
+  "id": "wa_nooksack_tower_beckey_route",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Approach text parks at the Ruth Creek washout (2.3 mi from highway, 2,156 ft) and day1 5 mi starts there on the old roadbed; research: ~2 mi roadbed, row already counts it."
+ },
+ {
+  "id": "wa_nooksack_tower_south_face",
+  "verdict": "NO_CHANGE",
+  "why": "No stored distance or itinerary (dist_km null); gain 6130 left alone. Same Ruth Creek access as Beckey route, FR 32/34 open per FS."
+ },
+ {
+  "id": "wa_the_triad_traverse",
+  "verdict": "NO_CHANGE",
+  "why": "Same Sibley Creek FR 1540 washout (1.9 mi walk) but the row has no distance, no itinerary and no gain, so there is nothing to correct and the traverse end points are not stored."
+ },
+ {
+  "id": "wa_hadley_peak_skyline_divide",
+  "verdict": "NO_ACCESS",
+  "why": "FS Road 37 is gated at mile 0.03 for flood repair (FS alert 2026-06-01, two-year timeline per Cascadia Daily 2026-06-16); trailhead is 12.7 mi up. Sources do not say walkers may pass the equipment gate, and the walk would be 12.7 mi (or 9.6 from the milepost 3.1 washout) each way, so no number is added. Row already says the trailhead may not be reachable."
+ },
+ {
+  "id": "wa_big_snow_mountain_east_buttress",
+  "verdict": "NO_CHANGE",
+  "why": "No stored distance or itinerary; gain null. Approach text already states the closed road; nothing to correct."
+ },
+ {
+  "id": "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "dist_km 20.1 = 12.5 mi, equal to the primary variant distMi 12.5 which starts at the Dingford gate and walks ~7 mi of closed road to the boot path. Road length: the 7-7.7 mi is supported by outside sources (Alpine Washington: about 8 mi gate to Hardscrabble Horse Camp; a Middle Fork ride and a 2017 climbing route: about 7 mi), bracketing the 7.5 in our text."
+ },
+ {
+  "id": "wa_big_snow_mountain_north_slope_dingford_route",
+  "verdict": "NO_CHANGE",
+  "why": "Route starts on the Dingford Creek Trail at the gate and never uses the closed road; the MP 17.3 washout is below the gate and its effect is unknown, so nothing is added."
+ },
+ {
+  "id": "wa_burnt_boot_peak_north_ridge",
+  "verdict": "NO_CHANGE",
+  "why": "No stored distance, itinerary or gain; approach text already states ~7.7 mi of closed road to Hardscrabble Horse Camp."
+ },
+ {
+  "id": "wa_burnt_boot_peak_north_route",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Day1 7.5 mi and day3 7.5 mi are the closed-road walk from the Dingford gate to the old road end. 7.5 mi is within the 7-8 mi range in outside sources (Alpine Washington about 8; other ride/route reports about 7)."
+ },
+ {
+  "id": "wa_overcoat_peak_southeast_route",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Day1 15 mi starts at the Dingford Creek trailhead and includes the 7-8 mi of closed road (biked); day3 14 mi exits to the trailhead."
+ }
+]

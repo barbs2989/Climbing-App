@@ -171,8 +171,15 @@ if (!values.length) { console.error(`FAIL — ${rows.length} ${STATE} routes car
    an OR on the query above: OR-ing the jsonb column in timed out (57014) on 2026-10-28, and pulling
    the whole approach_logistics object for every row would be the heavy read the throttle rule is
    about. `dir:` extracts the one string server-side. */
-const drives = await selectAll("routes", "id,name,area_id,access_checked_at,dir:approach_logistics->>trailheadDirection",
-  `id=like.${STATE}_*&approach_logistics->>trailheadDirection=not.is.null`, { pageSize: 1000 });
+// NO filter on the jsonb column (`approach_logistics->>trailheadDirection=not.is.null` cannot use an
+// index), and the state is a RANGE on the id, not only `like`: with `order=id`, a bare prefix `like`
+// let the planner walk the primary key from the very first id ('ak_…') to 'wa_', and page ONE answered
+// HTTP 500 twice on a healthy database (2026-10-29, at 500 and at 100 rows). The range seeks straight
+// to the state; keyset pages on it, filtered here, are what the database can serve. The bounds are
+// LETTERS ('wa' to 'wb'): in this database's collation '_' and '~' do not sort as in ASCII, and an
+// upper bound of 'wa_~' returned 0 drive lines.
+const drives = (await selectAll("routes", "id,name,area_id,access_checked_at,dir:approach_logistics->>trailheadDirection",
+  `id=gte.${STATE}&id=lt.${STATE.slice(0, -1)}${String.fromCharCode(STATE.charCodeAt(STATE.length - 1) + 1)}&id=like.${STATE}_*`, { pageSize: 200 })).filter(r => r.dir);
 let driveValues = 0;
 for (const r of drives) if (typeof r.dir === "string" && r.dir.trim()) { driveValues++; values.push({ id: r.id, name: r.name, area: r.area_id, checked: r.access_checked_at || null, field: "approach_logistics.trailheadDirection", text: r.dir.replace(/\s+/g, " ").trim(), roadName: null }); }
 if (STATE === "wa" && !driveValues) { console.error(`FAIL — read 0 wa drive lines; 898 existed on 2026-10-29. A clean result would be about data this never saw.`); process.exit(1); }
