@@ -100,8 +100,10 @@ for (const d of decisions) {
   const row = await getRow(d.id);
   // what the MAP draws today: a line made from the pins, or under MIN_RECORDED_PTS, is no track
   const drawn = recordedTrackPts(row.gpx, row.waypoints);
-  if (drawn && assessTrack(drawn.map(p => [p[0], p[1]]), row.waypoints || []).complete) { console.log(`SKIP ${d.id}: stored track already complete`); continue; }
-  if (d.tier === "oneway" && drawn) { console.log(`SKIP ${d.id}: one-way track, and the route already draws a recorded track`); continue; }
+  // replaceDrawn: the stored "complete" line is an FKT route file with no timestamps — a DRAWN line,
+  // not a recording (audit-recorded.mjs) — so an athlete's recorded round trip replaces it
+  if (!d.replaceDrawn && drawn && assessTrack(drawn.map(p => [p[0], p[1]]), row.waypoints || []).complete) { console.log(`SKIP ${d.id}: stored track already complete`); continue; }
+  if (d.tier === "oneway") { console.log(`SKIP ${d.id}: one-way track (owner: only the full trailhead-summit-trailhead route)`); continue; }
   const xml = fs.readFileSync(path.join(GPX_DIR || path.join(here, "gpx"), d.slug + ".gpx"), "utf8");
   const raw = parseGpx(xml);
   if (raw.length < 2) throw new Error(`${d.id}: ${d.slug} has no track points`);
