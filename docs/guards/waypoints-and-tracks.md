@@ -1805,6 +1805,43 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 
       Magic Mountain's Kool-Aid Lake distance (5.5 mi, set by #2130) is the owner's decision. The
       evidence is in that row's `none` reason.
+
+- **`audit:water-pins`** asks the owner's question of 2026-10-28 — *"Audit water waypoints. Make sure
+  we have all of them per route."* "All of them" is read as: every water source the route's **own
+  record names** is a Water pin (types `water` / `lake` / `lake/basin`, `WP_TYPE_MAP`). What counts
+  as a named source lives in `scripts/lib/water-sources.mjs`, shared with the solver
+  (`scripts/oneoff/add-water-pins.mjs`), so the two cannot disagree. A source is a capitalised
+  Creek / Lake / Tarn / Spring / River / Pond / Falls / Brook / Fork in a sentence about drinking water,
+  in `approach`, `approach_logistics`, `itinerary`, `description`, `overview`, `descent_text`,
+  `approach_variants`, a camp's `bivy[].water`, or a pin's note. Classes: MISSING, AT ANOTHER PIN (a
+  camp or a crossing already stands there — not a defect), NO COORDINATE, OFF THE TRACK (500 m, the
+  `audit:waypoints` tolerance), UNNAMED ONLY (water promised, no place — never pinned), NO WATER STATED
+  (the denominator). Reads `--from` a dump or live in primary-key windows. Report-only; not a build gate.
+  - **What it structurally cannot see:** water a route never mentions, and water named in prose with
+    no capital ("the creek"). It also over-reads: a river a campground sits beside, named in a camp's
+    `water` note, is a "source" even when the walk never touches it. The solver's track and
+    height gates are what separate those, so MISSING is a worklist, not a defect count.
+  - **Traps met building it** (each one was a wrong answer on the first census):
+    - A name built from capitalised words ate the sentence opener ("Fill Boulder Creek") and a
+      compass word lost its Fork ("Fork Teanaway River").
+    - "Holden Lake Trail" read as a lake called "Lake Trail".
+    - "Ross Lake Resort water taxi" read as drinking water.
+    - A Trailhead or Campground NAMED after a creek ("Killen Creek Trailhead") was counted as the
+      creek's pin. It is not where you get water.
+    - A Hazard that only MENTIONS a lake ("Scree scramble to La Bohn Lakes") was too.
+  - **First census, 2026-10-30, 1,070 routes:** 917 named sources. 80 were pinned as Water, 203
+    were at another pin, and 634 were missing on 443 routes. There were also 34 Water pins with no
+    coordinate, 15 off the track, 195 routes promising only unnamed water, and 174 alpine routes
+    naming none.
+  - **The solver** measures, never computes, from a local Geofabrik WA extract (Overpass answered in
+    ~35 s a query). Where a creek crosses the RECORDED track (first crossing walking in), it pins the
+    crossing. With no track, it pins the one place a mapped `path`/`footway` crosses the creek; a
+    forest road (`highway=track`) is not a trail. For a lake, it pins the shore vertex nearest the
+    track; with no track, a lake under 1 km across takes its GNIS/OSM point. Every candidate is then
+    gated by 3DEP height (not below the trailhead, not above the summit). On a route with no track,
+    the candidate must be within 1.5 km of one of the route's real pins. The chord between sparse
+    pins put Fortress Mountain's Chiwawa crossing 4.3 km upstream of the bridge the route uses.
+    First run: 150 pins on 126 routes, all re-read and confirmed. MISSING went 634 → 484.
 - **WA ALPINE WAYPOINT AUDIT, 2026-10-30** (owner note: "audit and review all waypoints exact location
   for all WA alpine, mountaineering and scramble routes"). Every waypoint audit was re-run on WA ONE AT
   A TIME (a parallel run timed the database out on 2026-10-28), against 854 routes in scope.
