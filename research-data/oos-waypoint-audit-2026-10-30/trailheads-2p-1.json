@@ -1,0 +1,77 @@
+[
+ {
+  "batch": "T1",
+  "id": "ab_mount_northover_south_ridge",
+  "i": 0,
+  "name": "Interlakes parking lot",
+  "from": [
+   50.60968,
+   -115.11895
+  ],
+  "state": "Alberta",
+  "ground_ft": 5632,
+  "pins": [
+   {
+    "id": "ab_mount_northover_south_ridge",
+    "i": 0,
+    "name": "Interlakes parking lot",
+    "elev": null
+   }
+  ],
+  "route_names": [
+   "South Ridge"
+  ],
+  "text": "{\"trailhead\":\"Interlakes parking area, Upper Kananaskis Lake\"}",
+  "first_pass": "unverified: Interlakes lot not published by name; OSM has only an unnamed parking way 262483234 at 50.612275,-115.119485 (291 m) and web search found no coordinate. No change."
+ },
+ {
+  "batch": "T1",
+  "id": "ab_mount_cline_southwest_ridge",
+  "i": 0,
+  "name": "Thompson Creek trailhead",
+  "from": [
+   52.01368,
+   -116.62894
+  ],
+  "state": "Alberta",
+  "ground_ft": 4521,
+  "pins": [
+   {
+    "id": "ab_mount_cline_southwest_ridge",
+    "i": 0,
+    "name": "Thompson Creek trailhead",
+    "elev": null
+   }
+  ],
+  "route_names": [
+   "Southwest Ridge"
+  ],
+  "text": "{\"trailhead\":\"Thompson Creek (across from the campground), David Thompson Highway\",\"trailheadLat\":52.0137,\"trailheadLng\":-116.6289}",
+  "first_pass": "unverified: Thompson Creek trailhead; OSM has only the campground node (52.012317,-116.625761, 265 m) and rec-area polygon, no trailhead/parking node for the Cline route start. No change."
+ },
+ {
+  "batch": "T4",
+  "id": "co_wham_ridge",
+  "i": 0,
+  "name": "Molas Trailhead",
+  "from": [
+   37.74762,
+   -107.68801
+  ],
+  "state": "Colorado",
+  "ground_ft": 10607,
+  "pins": [
+   {
+    "id": "co_wham_ridge",
+    "i": 0,
+    "name": "Molas Trailhead",
+    "elev": 10594
+   }
+  ],
+  "route_names": [
+   "Wham Ridge"
+  ],
+  "text": "",
+  "first_pass": "The only published point (about 1.5 km away, 3DEP 10,906 ft) is the Molas Pass Overlook, not this trailhead; stored pin ground 10,607 ft matches pin elev 10,594. No published coordinate for the actual trailhead: unverified, left."
+ }
+]
