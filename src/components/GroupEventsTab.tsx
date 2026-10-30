@@ -2,8 +2,33 @@ import { daysUntil, C, groupEventsEmptyLine } from "../../ClimbMatchCore.jsx";
 
 /* _gpt==="events"? — the body of that branch of App, lifted verbatim by extract-from-parent.mjs (branch mode);
    every binding it read from App is a prop of the same name. */
-export default function GroupEventsTab({cl,eventsAll,groupEvMin,groupEventRow,groupEventsQ,grpPastAll,isMod,joined,setEventForm,setGrpPastAll}){
+import type { Dispatch, ReactNode, SetStateAction } from "react";
+
+/** The group, as the events tab reads it. */
+interface GroupEventsTabGroup { id: string; _db?: boolean; eventPolicy?: string | null }
+/** One event on a group's calendar. */
+interface GroupEventsTabEvent { date: string; time?: string | null }
+/** The blank form the Create event button opens. */
+interface GroupEventsTabForm { groupId: string; title: string; date: string; time: string; location: string; desc: string; capacity: string }
+
+export interface GroupEventsTabProps {
+  cl: GroupEventsTabGroup;
+  /** Every group's events, keyed by group id. */
+  eventsAll: Record<string, GroupEventsTabEvent[] | undefined>;
+  /** Minutes since midnight for an event time string; 9999 when unreadable. */
+  groupEvMin: (time: string | null | undefined) => number;
+  groupEventRow: (cl: GroupEventsTabGroup, ev: GroupEventsTabEvent, o?: { inGroup?: boolean; past?: boolean }) => ReactNode;
+  groupEventsQ: { isError?: boolean };
+  /** The group id whose past events are fully expanded, if any. */
+  grpPastAll: string | null;
+  isMod: boolean;
+  joined: boolean;
+  setEventForm: Dispatch<SetStateAction<GroupEventsTabForm | null>>;
+  setGrpPastAll: Dispatch<SetStateAction<string | null>>;
+}
+
+export default function GroupEventsTab({cl,eventsAll,groupEvMin,groupEventRow,groupEventsQ,grpPastAll,isMod,joined,setEventForm,setGrpPastAll}: GroupEventsTabProps){
   return <div>{(()=>{/* Matches the heading above it: "upcoming events". It used to list every event oldest-first, so
      a group's upcoming calendar opened with a meetup that had already happened. Past events sit in their own section under it. */
-                    var _allEvs=(eventsAll[cl.id]||[]);var evs=_allEvs.filter(function(e){return e&&e.date&&daysUntil(e.date)>=0;}).sort(function(a,b){return a.date===b.date?groupEvMin(a.time)-groupEvMin(b.time):(a.date<b.date?-1:1);});var past=_allEvs.filter(function(e){var du=e&&e.date?daysUntil(e.date):null;return du!==null&&du<0;}).sort(function(a,b){return a.date<b.date?1:-1;});var pastAll=grpPastAll===cl.id;var canCreate=joined&&((cl.eventPolicy||"anyone")!=="mods"||isMod);return <div style={{marginBottom:20}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:10}}><div style={{fontSize:12,fontWeight:800,color:C.textSub,textTransform:"uppercase",letterSpacing:0.4}}>{"Upcoming events"+(evs.length?" · "+evs.length:"")}</div>{canCreate?<button onClick={()=>setEventForm({groupId:cl.id,title:"",date:"",time:"",location:"",desc:"",capacity:""})} style={{padding:"8px 12px",borderRadius:8,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:12,fontWeight:700,cursor:"pointer"}}>+ Create event</button>:null}</div>{joined&&!isMod&&(cl.eventPolicy||"anyone")==="mods"?<div style={{fontSize:12,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.4}}>{"Moderators host this group’s events. Have an idea? Post it, or ask a moderator."}</div>:null}{evs.length?evs.map(function(ev){return groupEventRow(cl,ev,{inGroup:true});}):<div style={{fontSize:12,color:C.textMuted,textAlign:"center",padding:"14px 0",background:C.card,border:"1px solid "+C.border,borderRadius:12}}>{(cl._db&&!joined)?"The group’s calendar is for members — join to see its events.":(cl._db&&groupEventsQ.isError)?"Couldn’t load this group’s events just now.":groupEventsEmptyLine(_allEvs.length,evs.length)}</div>}{past.length?<div style={{marginTop:18}}><div style={Object.assign({marginBottom:10},{fontSize:12,fontWeight:800,color:C.textSub,textTransform:"uppercase",letterSpacing:0.4})}>{"Past events · "+past.length}</div>{(pastAll?past:past.slice(0,3)).map(function(ev){return groupEventRow(cl,ev,{inGroup:true,past:true});})}{past.length>3?<button aria-expanded={pastAll} onClick={()=>setGrpPastAll(pastAll?null:cl.id)} style={{minHeight:44,width:"100%",padding:"10px",borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{pastAll?"Show fewer past events":"See all "+past.length+" past events"}</button>:null}</div>:null}</div>;})()}</div>;
+                    const _allEvs=(eventsAll[cl.id]||[]);const evs=_allEvs.filter(function(e){return e&&e.date&&(daysUntil(e.date) as number)>=0;}).sort(function(a,b){return a.date===b.date?groupEvMin(a.time)-groupEvMin(b.time):(a.date<b.date?-1:1);});const past=_allEvs.filter(function(e){const du=e&&e.date?daysUntil(e.date):null;return du!==null&&du<0;}).sort(function(a,b){return a.date<b.date?1:-1;});const pastAll=grpPastAll===cl.id;const canCreate=joined&&((cl.eventPolicy||"anyone")!=="mods"||isMod);return <div style={{marginBottom:20}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:10}}><div style={{fontSize:12,fontWeight:800,color:C.textSub,textTransform:"uppercase",letterSpacing:0.4}}>{"Upcoming events"+(evs.length?" · "+evs.length:"")}</div>{canCreate?<button onClick={()=>setEventForm({groupId:cl.id,title:"",date:"",time:"",location:"",desc:"",capacity:""})} style={{padding:"8px 12px",borderRadius:8,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:12,fontWeight:700,cursor:"pointer"}}>+ Create event</button>:null}</div>{joined&&!isMod&&(cl.eventPolicy||"anyone")==="mods"?<div style={{fontSize:12,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.4}}>{"Moderators host this group’s events. Have an idea? Post it, or ask a moderator."}</div>:null}{evs.length?evs.map(function(ev){return groupEventRow(cl,ev,{inGroup:true});}):<div style={{fontSize:12,color:C.textMuted,textAlign:"center",padding:"14px 0",background:C.card,border:"1px solid "+C.border,borderRadius:12}}>{(cl._db&&!joined)?"The group’s calendar is for members — join to see its events.":(cl._db&&groupEventsQ.isError)?"Couldn’t load this group’s events just now.":groupEventsEmptyLine(_allEvs.length,evs.length)}</div>}{past.length?<div style={{marginTop:18}}><div style={Object.assign({marginBottom:10},{fontSize:12,fontWeight:800,color:C.textSub,textTransform:"uppercase",letterSpacing:0.4})}>{"Past events · "+past.length}</div>{(pastAll?past:past.slice(0,3)).map(function(ev){return groupEventRow(cl,ev,{inGroup:true,past:true});})}{past.length>3?<button aria-expanded={pastAll} onClick={()=>setGrpPastAll(pastAll?null:cl.id)} style={{minHeight:44,width:"100%",padding:"10px",borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{pastAll?"Show fewer past events":"See all "+past.length+" past events"}</button>:null}</div>:null}</div>;})()}</div>;
 }

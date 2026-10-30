@@ -183,6 +183,8 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 |---|---|
 | `ClimbMatch.jsx` | the state behind `today`/`crew`/`logbook` (each tab body is a component since PR61, below), `logbookTab`, `crewView`, `pinnedStates`, `givenVouches`, `activeCrews`, setup `gaps`, `alertsOpen`, `renderObjectives`, `mergedNotifs`, `markAllNotifsSeen`, `_actionNotifs` |
 | `src/components/TodayTab.tsx` | `TodayTab`, the Home tab body (lifted from App, PR61) |
+| `src/components/LogClimbSheet.tsx` | `LogClimbSheet`, the log-a-climb sheet around `LogAscent` (lifted from App, PR62) |
+| `src/components/GiveVouchSheet.tsx` | `GiveVouchSheet`, the vouch sheet around `GiveVouch` |
 | `src/components/LogbookTab.tsx` | `LogbookTab`, the Logbook tab body (lifted from App, PR61) |
 | `src/components/CrewListView.tsx` | `CrewListView`, the crew tab's crews view: active and past crews, `archiveCrew`, `clearPastCrew` |
 | `src/components/CrewFriendsView.tsx` | `CrewFriendsView`, the Friends `crewView` |
