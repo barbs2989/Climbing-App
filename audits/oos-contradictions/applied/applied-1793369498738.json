@@ -1,0 +1,186 @@
+{
+ "applied": [
+  {
+   "id": "ab_weeping_wall_area_polar_circus",
+   "column": "overview",
+   "path": [],
+   "fact": "route length"
+  },
+  {
+   "id": "ca_castle_dome_4th_class_route",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitches 0 on a multi-pitch line"
+  },
+  {
+   "id": "co_a_walk_in_the_park",
+   "column": "length_m",
+   "path": [],
+   "fact": "route length"
+  },
+  {
+   "id": "co_castle_peak_northeast_ridge",
+   "column": "overview",
+   "path": [],
+   "fact": "elevation where route gains the northeast ridge"
+  },
+  {
+   "id": "co_castle_peak_northeast_ridge",
+   "column": "waypoints",
+   "path": [
+    1,
+    "directions"
+   ],
+   "fact": "elevation where route gains the northeast ridge"
+  },
+  {
+   "id": "ky_cutthroat",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Name of the access road"
+  },
+  {
+   "id": "nh_thin_air",
+   "column": "beta",
+   "path": [],
+   "fact": "Anchor / fixed-gear type at the first belay and bolt count"
+  },
+  {
+   "id": "nh_thin_air",
+   "column": "fixed_gear",
+   "path": [],
+   "fact": "Anchor / fixed-gear type at the first belay and bolt count"
+  },
+  {
+   "id": "nv_epinephrine",
+   "column": "pitches",
+   "path": [],
+   "fact": "Number of pitches"
+  },
+  {
+   "id": "nv_prince_of_darkness",
+   "column": "overview",
+   "path": [],
+   "fact": "Whether any belay is a standing stance"
+  },
+  {
+   "id": "or_north_ridge_2",
+   "column": "overview",
+   "path": [],
+   "fact": "Approach distance"
+  },
+  {
+   "id": "or_north_ridge_2",
+   "column": "waypoints",
+   "path": [
+    0,
+    "distMi"
+   ],
+   "fact": "Approach distance"
+  },
+  {
+   "id": "ut_prodigal_sun",
+   "column": "crux",
+   "path": [],
+   "fact": "Pitches carrying C2 aid"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "ab_weeping_wall_area_polar_circus",
+   "before": {
+    "overview": "This big stepped frozen waterfall runs roughly 700 m and has the hardest ice saved for the end, spread across nine pitches. The Pencil, a detached icicle high on the route, is normally gone, so parties head up and to the right to a belay with bolts."
+   }
+  },
+  {
+   "id": "ca_castle_dome_4th_class_route",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "id": "co_a_walk_in_the_park",
+   "before": {
+    "length_m": 5
+   }
+  },
+  {
+   "id": "co_castle_peak_northeast_ridge",
+   "before": {
+    "overview": "Walk up the upper Montezuma Basin valley, then near 13,400 ft cut south onto the northeast ridge and follow its crest to the top.",
+    "waypoints": [
+     {
+      "lat": 39.02918,
+      "lng": -106.80777,
+      "elev": 9678,
+      "name": "Castle Creek Road (end of pavement)",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From the roundabout on Highway 82 just west of Aspen, take Castle Creek Road south about 12.5 miles to the end of the pavement, where passenger cars park. Beyond here the road continues as Forest Road 102, a rough road suited only to high-clearance 4WD vehicles."
+     },
+     {
+      "lat": 39.00977,
+      "lng": -106.86128,
+      "elev": 14265,
+      "name": "Castle Peak",
+      "type": "Summit",
+      "distMi": 6,
+      "directions": "Follow Forest Road 102 about 1.3 miles to a footbridge creek crossing, then nearly 2 more miles to the Pearl Pass junction near 11,150 ft and turn right into Montezuma Basin. Walk the road to its end near 12,800 ft, climb the headwall into the upper basin, take the path to the northeast ridge crest near 13,700 ft, and follow the ridge to the summit; the final 250 ft is steep and loose."
+     }
+    ]
+   }
+  },
+  {
+   "id": "ky_cutthroat",
+   "before": {
+    "access": {
+     "notes": "Land owned by the Red River Gorge Climbers' Coalition (RRGCC), purchased 2017 to secure climbing access -- no permit or fee. Access road (Bald Mountain Rd) is rough, unmaintained gravel; can be difficult when wet. Typical RRG approach hazards: mud, loose rock, poison ivy. Elevation ~1,059 ft."
+    }
+   }
+  },
+  {
+   "id": "nh_thin_air",
+   "before": {
+    "beta": "Start slightly left where it is easier, or ascend directly on solid holds for roughly fifty feet, arriving at a piton-equipped stance. The second pitch is a long traverse rightward; use whatever fixed gear is there and look after your second.",
+    "fixed_gear": "Pitons on the first stance; three bolts on the big ledge belay"
+   }
+  },
+  {
+   "id": "nv_epinephrine",
+   "before": {
+    "pitches": 6
+   }
+  },
+  {
+   "id": "nv_prince_of_darkness",
+   "before": {
+    "overview": "An impressive, very heavily bolted line in the middle of the broad smooth face, tracking along the left margin of a dark water stain. Some call it overbolted. Every belay is hanging."
+   }
+  },
+  {
+   "id": "or_north_ridge_2",
+   "before": {
+    "overview": "The approach, fairly easy but 12 miles out and back, is the crux. Where the climbers trail leaves the PCT, follow it east, slightly north, to timberline on the north ridge, then follow the ridge-top trail over scree and loose boulders to the notch before the summit plug. Climb crumbly, very loose pseudo-chimney rock and belay where convenient; two rap stations (the first and the second) should be in view. Easier ground continues to a spot beyond the second station, where the second belay goes. Pitch three goes up the steepest rock on the right, then a short scramble reaches the top rap station and summit. Three raps descend. Beware rockfall; helmets are needed. Pro may be runout or suspect.",
+    "waypoints": [
+     {
+      "lat": 44.33216,
+      "lng": -121.83857,
+      "elev": 7751,
+      "name": "Mount Washington",
+      "type": "Summit",
+      "distMi": 4.1
+     }
+    ]
+   }
+  },
+  {
+   "id": "ut_prodigal_sun",
+   "before": {
+    "crux": "C2 placements, found on three of the pitches (4, 5, 7)"
+   }
+  }
+ ]
+}
