@@ -65,7 +65,7 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
-export { realPitches, MAX_PITCH_FT } from ${JSON.stringify(path.join(ROOT, "lib", "planTimes.js"))};
+export { realPitches, MAX_PITCH_FT, planTimes } from ${JSON.stringify(path.join(ROOT, "lib", "planTimes.js"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route) {
@@ -82,7 +82,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render, realPitches, MAX_PITCH_FT } = require_(out);
+const { render, realPitches, MAX_PITCH_FT, planTimes } = require_(out);
 
 const text = (h) => h.replace(/<[^>]+>/g, " ").replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 const FT = 3.28084;
@@ -361,6 +361,16 @@ console.log("\na pitch count of 1 beside 100+ m of climb is no pitch count -- no
   eq("a placeholder count with NO walk either leaves nothing to estimate: Total reads N/A, not '≥0.6hr'", tileOf(bare, "Total trip"), "N/A");
   eq("realPitches: a count of 1 stands up to the cap and is 0 over it; a longer count and none are untouched", [realPitches({ pitches: 1, routeFt: MAX_PITCH_FT }), realPitches({ pitches: 1, routeFt: MAX_PITCH_FT + 1 }), realPitches({ pitches: 6, routeFt: 99999 }), realPitches({ pitches: 0 }), realPitches({}), realPitches(null)].join(","), "1,0,6,0,0,0");
   eq("...and a route with no length keeps its count (seed routes carry none)", realPitches({ pitches: 3 }), 3);
+  /* CLIMBING IS ALWAYS IN THE TOTAL (owner rule, 2026-10-30). A stored climb to the start of a way in
+     is added to the Total once: the Total moves by exactly that climb, and the walk and summit legs do not. */
+  const base = { distKm: 6, gainM: 900, lossM: 900, pitches: 4, timing: { approachTimeHrs: 7.5, summitTimeHrs: 4, descentTimeHrs: 3 } };
+  const plain = planTimes(base).totalH;
+  const withClimb = planTimes({ ...base, timing: { ...base.timing, climbToStartHrs: 5 } });
+  eq("climb to start: the Total carries the stored climb, once", Math.round((withClimb.totalH - plain) * 100), 500);
+  eq("climb to start: the Total-trip clock carries it too (the return moves by the same climb)", Math.round((withClimb.tripH - planTimes(base).tripH) * 100), 500);
+  eq("climb to start: the climb is reported as its own figure", withClimb.climbToStartH, 5);
+  eq("climb to start: a published whole-day total already includes it, so it is NOT added again", planTimes({ ...base, timing: { totalHrs: 12, climbToStartHrs: 5 } }).totalH, 12);
+  eq("climb to start: no figure on file adds nothing", planTimes({ ...base, timing: { ...base.timing, climbToStartHrs: null } }).totalH, plain);
 }
 
 const FLOOR = 67;

@@ -63,6 +63,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     turns "unknown" into "zero": a table with two known 30m rappels and one unknown printed "60 m
     total" and read as the whole descent. It now sums only known stations and says "60 m across 2
     of 3" when the line is partial.
+- **THE TOTAL ALWAYS INCLUDES CLIMBING** (owner rule, 2026-10-30). Every planner Total carries the climb: a stored summit leg, a derived one, or the pitch model (`techH`), plus a stored `climbToStartHrs` on a via way in (the climb up a chimney or couloir to reach a linked route's base), added once in `planTimes`. A published whole-day total already includes it and is not added again. The guard is `check:return-leg`'s last five assertions (the Total moves by exactly the stored climb, the return clock with it, and a whole-day total is not double-counted). Where a climb is NOT on file (a scramble or alpine route with no pitch count and no summit time) the Total stays a floor, marked "≥", because inventing a climb time is the dangerous error.
 - **`check:return-leg`** holds the planner's time maths, which live in **`lib/planTimes.js`** since
   2026-10-07 (the Conditions tab's alpine start counts back from the same estimate, so neither may
   compute it for itself). Static SSR through the real `<Calculator/>`, so it sits in `npm run build`.
