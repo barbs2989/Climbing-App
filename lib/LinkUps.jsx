@@ -27,7 +27,7 @@ function LinkUpCard({ lu, routeId, byId, onOpenRoute }) {
   const legs = Array.isArray(lu.legs) ? lu.legs : [];
   const para = { fontSize: 12.5, color: C.textSub, lineHeight: 1.55, margin: "3px 0 0" };
   return <div style={{ background: C.card, borderRadius: 10, border: "1px solid " + C.border, marginBottom: ROUTE_GAP, overflow: "hidden" }}>
-    <button type="button" onClick={function () { setOpen(!open); }} aria-expanded={open} style={{ display: "flex", alignItems: "center", gap: 10, width: "100%", padding: "10px 12px", border: "none", background: "none", font: "inherit", color: "inherit", textAlign: "left", cursor: "pointer" }}>
+    <button type="button" onClick={function () { setOpen(!open); }} aria-expanded={open} style={{ display: "flex", alignItems: "center", gap: 10, width: "100%", minHeight: 44, padding: "10px 12px", border: "none", background: "none", font: "inherit", color: "inherit", textAlign: "left", cursor: "pointer" }}>
       <span style={{ flex: 1, minWidth: 0 }}>
         <span style={{ display: "block", fontSize: 14, fontWeight: 700, color: C.text, overflowWrap: "anywhere" }}>{lu.name}</span>
         <span style={{ display: "block", fontSize: 12, color: C.textSub, lineHeight: 1.45, marginTop: 2, overflowWrap: "anywhere" }}>{legs.map(function (l) { return l.peak; }).join(" → ")}{lu.duration ? <span style={{ color: C.textMuted }}>{" · " + lu.duration}</span> : null}</span>
