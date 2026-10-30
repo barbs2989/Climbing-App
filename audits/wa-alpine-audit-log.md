@@ -35871,3 +35871,52 @@ in prior batches; cross-checks relied on WebSearch's synthesized snippets from c
 copies of those pages.
 
 Next batch will continue id-ascending from `wa_forbidden_peak_east_ridge` (see progress file).
+
+## Batch 490 (2026-10-30, pass 8)
+
+Checked 8 routes across 3 peaks: Forbidden Peak (North Ridge, Northeast Face, Northwest Face,
+West Ridge), Fortress Mountain (East Ridge, Northeast Face, Southwest Face), and Fortune Peak
+(East Slope Route).
+
+**No confirmed fixes this batch.**
+
+**Flagged for human review (2), no SQL:**
+- `wa_fortress_mountain_east_ridge` and `wa_fortress_mountain_southwest_face` both store the
+  identical `dist_km` (22.55 km / 14.02 mi) despite describing two different approach trails
+  (East Ridge via the Chiwawa River Trail; Southwest Face via the Buck Creek Trail/Pass No Pass)
+  from the same Trinity Trailhead. That figure is implausibly short: WTA independently gives
+  9.6 mi one-way / 19.2 mi round-trip from Trinity to Buck Creek Pass alone (6,000 ft), and the
+  Southwest Face route's own `approach` text describes continuing ~9-9.5 mi one-way past that to
+  the Pass No Pass basin before the summit scramble even starts -- so the stored round-trip
+  figure is shorter than the round trip to the pass by itself. Almost certainly a duplication/copy
+  bug (same pattern fixed in batch 488 on two other routes), but neither row carries a `gpx` track
+  or waypoint-derived distance to compute a confident replacement number from, so this is left for
+  a human with a track/DEM rather than guessed.
+
+**Clean (6):** `wa_forbidden_peak_north_ridge` (FA Beckey/Schwabland/Wilde 1952 confirmed via
+Mountain Project/OpenBeta, matching this row's own spelling of "Schwabland"). `wa_forbidden_peak_west_ridge`
+(FA Lloyd Anderson, Fred Beckey, Helmy Beckey, Jim Crooks, Dave Lind, June 1, 1940 -- confirmed
+verbatim via Wikipedia/Mountain Project, the peak's own first ascent). `wa_forbidden_peak_northwest_face`
+(FA Fred Beckey & Ed Cooper, July 15, 1959, confirmed via Mountain Project/OpenBeta/a dated Ed
+Cooper photo caption; a separate June 21, 1959 Beckey/Cooper/Don Gordon route up the face's center
+is a distinct line, not this row). `wa_forbidden_peak_northeast_face` -- see above; FA confirmed
+via a matching AAC Publications article rather than flagged. `wa_fortress_mountain_northeast_face`
+(the row's own `corrections` field already documents that every source calls this a "Northeast
+Ridge," not "Northeast Face," and treats them as the same feature deliberately; a fresh search
+turned up nothing to add beyond that existing note). `wa_fortune_peak_east_slope` (elevation
+7,382 ft and Teanaway/Ingalls-area location confirmed via Wikipedia/PeakVisor; coordinates already
+reconciled against Wikipedia in the row's own `corrections` field).
+
+All four Forbidden Peak high_point_ft values re-confirmed at 8,815 ft, consistent with every prior
+batch covering this peak. Fortress Mountain's own 8,679 ft elevation remains a genuine 3+-way
+source conflict (Wikipedia/Peakbagger 8,679; TopoZone/TopoQuest 8,671; ListsOfJohn LiDAR 8,684) --
+already self-documented in each row's `corrections` field with no single authoritative figure
+found this pass either, so left as-is per existing guidance rather than re-flagged.
+
+**Method notes:** No write targets this batch, so `check:sql` was not run. mountainproject.com,
+summitpost.org, and publications.americanalpineclub.org all failed to resolve directly from this
+session's network, as in prior batches; cross-checks relied on WebSearch's synthesized snippets,
+including one from an AAC Publications page that could not be fetched directly but whose search
+snippet corroborated this row's own stored route description closely enough to confirm the FA.
+
+Next batch will continue id-ascending from `wa_fortune_peak_east_slope` (see progress file).

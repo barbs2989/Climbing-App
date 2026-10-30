@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_forbidden_peak_east_ridge",
+  "last_processed_id": "wa_fortune_peak_east_slope",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 489 complete. Continuing id-ascending scope from wa_forbidden_peak_east_ridge.",
+  "pass_note": "Pass 8 in progress, batch 490 complete. Continuing id-ascending scope from wa_fortune_peak_east_slope.",
   "batches": [
     {
       "batch_number": 1,
@@ -9725,6 +9725,26 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-10-30-batch-489.sql",
       "note": "Nine of the eleven routes (now 8, one fewer than the usual 10 since Esmeralda Peaks spans two conflicting elevation sources) re-confirmed clean or newly clean: wa_fifth_of_july_mountain_scramble (7,696 ft matches Wikipedia/TopoQuest within survey noise), wa_fire_on_the_mountain (FA Blake Herrington & Rad Roberts 2009 confirmed via a contemporaneous Cascade Climbers trip report; its own data_quality.gaps already carries the 7-vs-8-pitch source disagreement, nothing new to add), wa_flycatcher_buttress (FA Steve Marts/Don McPherson/King McPherson 1965 and FFA Bryan Burdo 1990 onsight free solo both confirmed via SummitPost/OpenBeta; a 9-vs-10-vs-11 pitch-count spread across sources is the same kind of route-finding/pitch-splitting variance already accepted elsewhere in this catalog), wa_forbidden_peak_east_ledges and wa_forbidden_peak_east_ridge (elevation 8,815 ft confirmed; the east_ridge row corrections field references a once-duplicate sibling wa_forbidden_peak_east_ridge_direct -- queried directly, no such row currently exists in the DB, so that rename/merge already landed and needed no further action). 1 confirmed fix: wa_flora_mountain_southwest_slope gain_ft/loss_ft (3150 ft) is below the 4,123 ft floor the row's own waypoints require (Bird Creek Camp 4,200 ft to the 8,323 ft summit it already stores) -- fixed to the floor value, with a note that the real total is likely higher given the saddle-then-Castle-Creek dip the route's own itinerary describes, which no source gives an exact elevation for. 2 flagged for human review, no SQL: wa_esmeralda_peaks_scramble has a genuine 3-way elevation conflict -- this row's own high_point_ft (6765) matches the figure most-cited externally (Wikipedia 6,765 ft), while its own West Summit waypoint and the parent area row both say 6776 ft and label it the true/high summit; SummitPost gives a third figure (6,767 ft); no source actually supports 6776, and sources also disagree on whether the east or west summit is higher, so this needs a human with a current USGS/GNIS figure, not a guess. wa_fish_whistle's own FA claim (Darin Berdinka, Sept 11 2017) fits the pattern of his other Vesper Peak North Face routes (Ragged Edge 2013, True Grit 2015) but could not be independently corroborated; OpenBeta's Vesper Peak FA entry instead names Jim Graham and Tony Grenko, 1985, for what may or may not be the same route -- genuinely conflicting, not confirmable either way from here."
+    },
+    {
+      "batch_number": 490,
+      "date": "2026-10-30",
+      "pass": 8,
+      "route_ids": [
+        "wa_forbidden_peak_north_ridge",
+        "wa_forbidden_peak_northeast_face",
+        "wa_forbidden_peak_northwest_face",
+        "wa_forbidden_peak_west_ridge",
+        "wa_fortress_mountain_east_ridge",
+        "wa_fortress_mountain_northeast_face",
+        "wa_fortress_mountain_southwest_face",
+        "wa_fortune_peak_east_slope"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 2,
+      "clean": 6,
+      "sql_file": null,
+      "note": "No SQL this batch. The four Forbidden Peak routes all re-confirmed clean, including a first-ascent claim (wa_forbidden_peak_northeast_face: Ed Cooper and Stuart Ferguson, Sept 15 1961) that looked unverifiable on an initial pass -- a direct search for Cooper+Ferguson found nothing, but a more specific search surfaced an AAC Publications article titled exactly 'Forbidden Peak, Northeast Face' (Washington-Cascades) whose snippet describes Stuart Ferguson and the author leaving at dawn on September 15 to attack the face directly from the Boston Glacier, climbing rock left of the ice patch then a 50-degree ice patch -- matching this row's own pitch_detail/climbing_route prose almost verbatim, so the FA stands confirmed rather than flagged. Two of the three Fortress Mountain routes (wa_fortress_mountain_east_ridge, wa_fortress_mountain_southwest_face) are flagged, not fixed: both store the identical dist_km (22.55 km / 14.02 mi) despite describing two different approach trails from the same trailhead, and that figure is less than the round trip to Buck Creek Pass alone (WTA: 9.6 mi one way / 19.2 mi RT to the pass, which is short of this route's own Pass No Pass basin and summit) -- almost certainly a copy/duplication bug, but fixing it needs a real distance computed from a track or waypoints, which neither row has, so no guessed number was written."
     }
   ]
 }
