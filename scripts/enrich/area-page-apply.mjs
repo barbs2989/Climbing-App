@@ -50,7 +50,8 @@ function validate(id, e) {
 }
 
 const key = requireServiceKey();
-const ROLLBACK = `scripts/rollback-area-page-${Date.now()}.json`;
+const RBDIR = (() => { const i = args.indexOf("--rollback-dir"); return i >= 0 ? args[i + 1] : "scripts"; })();
+const ROLLBACK = `${RBDIR}/rollback-area-page-${Date.now()}.json`;
 const rollback = {};
 let wrote = 0, skipped = 0, failed = 0;
 for (const [id, e] of Object.entries(batch)) {
