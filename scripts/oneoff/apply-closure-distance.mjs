@@ -49,9 +49,11 @@ for (const p of plan) {
   if (days && days.length && daysWithMiles * 2 >= days.length) {
     const nd = days.map(d => ({ ...d }));
     const first = nd[0], last = nd[nd.length - 1];
-    first.miles = +((first.miles || 0) + p.walkMi + (nd.length === 1 ? p.walkMi : 0)).toFixed(1);
-    if (nd.length > 1) last.miles = +((last.miles || 0) + p.walkMi).toFixed(1);
-    if (p.walkGainFt && first.gainFt != null) first.gainFt = first.gainFt + p.walkGainFt;
+    // `ends`: "both" (default, there and back), or "first"/"last" for a traverse that meets the closed road at one end only.
+    const ends = p.ends || "both";
+    if (ends !== "last") first.miles = +((first.miles || 0) + p.walkMi + (nd.length === 1 && ends === "both" ? p.walkMi : 0)).toFixed(1);
+    if (ends !== "first" && (nd.length > 1 || ends === "last")) last.miles = +((last.miles || 0) + p.walkMi).toFixed(1);
+    if (p.walkGainFt && first.gainFt != null && ends !== "last") first.gainFt = first.gainFt + p.walkGainFt;
     // The day's note must say the miles it now counts, or 12.5 mi sits over a note that starts at the trailhead.
     if (p.dayNotePrefix && typeof first.note === "string" && !first.note.startsWith(p.dayNotePrefix)) first.note = p.dayNotePrefix + " " + first.note;
     body.itinerary = { ...r.itinerary, days: nd };
