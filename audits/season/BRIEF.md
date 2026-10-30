@@ -23,6 +23,8 @@ How to research (WebSearch — use mode "extended" when a standard search is thi
   about THIS place (e.g. "Lower Highway" is the lower Mount Lemmon highway above Tucson). Sibling
   areas in one crag system (several Red River Gorge preserves) may share one season if the sources
   speak for the whole system.
+- Research the season of the ROCK climbing (sport, trad, bouldering) unless the area is an ice-only
+  venue. An ice season is wrong for a crag whose routes are rock; say so in the note instead.
 - If you cannot confirm with two sources, return confidence "low" and season_months null. Do not
   guess and do not fall back on climate reasoning alone.
 
