@@ -1110,6 +1110,48 @@ Refused in this pass:
 - Sumner County, Tennessee: No official page found
 - Sheboygan County, Wisconsin: County pages 403; number not read on an official page
 
+## Blocked pages re-read, and the busiest refusals re-checked (2026-10-30, seventh pass)
+
+The 23 county pages earlier passes could not load were read in Chrome. The ~50 uncovered
+counties holding the most routes were also searched again from scratch. 15 added (574 in all).
+
+| State | County | Number | Read on | Label on the page |
+|---|---|---|---|---|
+| Alaska | Haines Borough | (907) 766-6430 | hainesalaska.gov/police | (Non-emergency) |
+| New Jersey | Mercer | (609) 989-6111 | mercercounty.org sheriff telephone-numbers | Communication Center; After Business Hours |
+| New Mexico | Mora | (505) 425-6771 | countyofmora.com/county-sheriff | NMSP/MCSO Dispatch |
+| California | Solano | (707) 421-7090 | solanocounty.gov county-directory-contacts | Sheriff's Office Emergency Communications Center: Non-Emergency |
+| Virginia | Fauquier | (540) 347-3300 | fauquiercounty.gov sheriff Communications Division | Non-Emergencies |
+| Ohio | Lucas | (419) 255-8443 | 911lucascountyoh.gov/contact-us | NON-EMERGENCY NUMBER |
+| Minnesota | Chisago | (651) 257-4100 | chisagocountymn.gov/238/Emergency-Communications-Center | Phone of the 24/7 ECC, which the page says takes 911 and non-emergency calls |
+| North Carolina | Dare | (252) 473-3444 | darenc.gov sheriff locations-contact | Dare Central Communications Non-Emergency |
+| Florida | Broward | (954) 764-4357 | sheriff.org/inbso/regional-communications | In non-emergency situations contact |
+| Pennsylvania | Cambria | (814) 472-2100 | cambriacountypa.gov department-of-emergency-services | Non-Emergency Dispatch |
+| Oregon | Clatsop | (503) 325-2061 | clatsopcounty.gov/sheriff/page/scams | Non-Emergency; non-emergency dispatch |
+| Colorado | Montrose | (970) 249-9110 | montrosecountysheriffsoffice.com (the county's /412/Sheriff redirects there) | Non-Emergency Dispatch |
+| Utah | Sanpete | (435) 835-2345 | sanpetecountyutah.gov/292/Contact-Information | Dispatch; "call 9-1-1 or Dispatch at 435-835-2345" |
+| Texas | Llano | (325) 247-5767 | Llano County Sheriff page on the state-hosted county site (newtools.cira.state.tx.us/page/llano.Sheriff) | For non-emergency ... please call dispatch |
+| Montana | Gallatin | (406) 582-2100 | gallatinmt.gov/885/FAQs (911 Dispatch Center) | non-emergency number for the Gallatin County Sheriff's Office |
+
+- Montrose had been held because the city announced its own dispatch centre in 2024. The sheriff's
+  own page now prints this line as its Non-Emergency Dispatch, which settles it.
+- Refused after the browser read: Hudson NJ (the sheriff domain is parked), Somerset NJ (jail and
+  911-centre office lines only), Skagway (two unlabelled lines), Harney OR and Shelby TN (two
+  different non-emergency numbers on one page), Durham NC (a city line only), Yates, Pettis, Rice
+  and Sheboygan (office lines only), and Alameda and Pawnee OK (the pages would not load in Chrome
+  or by fetch).
+- Refused again on the fresh search: Rockingham NH (one page prints two different "Dispatch"
+  numbers), Inyo, Mariposa, Fremont WY, Los Angeles, Grayson, Comanche, Power, Jackson IL,
+  Washakie, St. Louis MN, Warren NY, Santa Cruz, Fayette PA, Burke, Mohave, Humboldt, Menifee,
+  Alpine, Trinity and Lassen (office, records or fire lines only, or two unlabelled lines). No
+  official page found for Wolfe, Morgan TN, Fulton GA, Rio Arriba, Dickenson, Chittenden and
+  Lamoille. Massachusetts sheriffs run jails, not dispatch, so Middlesex, Worcester, Norfolk and
+  Essex have no county line to give.
+- Not settled: Hood River OR (541-386-2711 is called the sheriff's 24/7 non-emergency dispatch by
+  211info and the local radio station, but the only county page read labels it the public-health
+  after-hours contact), Los Alamos (the page's "Police Non-Emergency" label has no number beside
+  it), and Bucks PA, Navajo, Saguache, Nelson and Washington AR (pages blocked).
+
 ## Which counties our routes sit in (census, 2026-10-29)
 
 Each area's direct route count (its `route_count` minus its children's) was placed at its own
