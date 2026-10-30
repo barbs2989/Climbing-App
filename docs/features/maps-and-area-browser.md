@@ -67,7 +67,8 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   - **Added climbs get full details**: `--state <slug> --facts --apply` reads each added climb's route page and stores length,
     pitches, GPS and the star average where empty; `extract-route-details.mjs <state> --adds` batches the description, protection,
     location and first ascent for REWRITING (under `_details/<state>/adds/`), and `apply-route-details.mjs` refuses any field that
-    repeats four words of the page. Nothing is stored as fetched.
+    repeats four words of the page (proper names, the walls, features, neighbouring climbs and people its source names, are
+    masked first: they are facts, not prose). Nothing is stored as fetched.
   - New York, 2026-10-21: 406 walls ordered (3,780 matched, 68 anchored, 102 unplaced), 25 climbs added, 11 adds refused by the
     duplicate trigger (all on near-duplicate walls of ours, e.g. "The Guides' Wall" beside "The Guides' Wall (Madame G's)"),
     21 for review, 6 walls skipped (2 shared, 3 with no area of ours, 1 split).

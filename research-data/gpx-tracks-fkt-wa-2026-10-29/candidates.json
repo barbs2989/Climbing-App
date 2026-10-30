@@ -1,5 +1,17 @@
 [
  {
+  "id": "adams_northwest_ridge",
+  "name": "North Face of the Northwest Ridge",
+  "discipline": "alpine",
+  "slug": "mount-adams-traverse-wa",
+  "fktTitle": "Mount Adams Traverse (WA)",
+  "tier": "round",
+  "startM": 10,
+  "endM": 22,
+  "summitM": 8,
+  "points": 11948
+ },
+ {
   "id": "wa_abernathy_peak_south_ridge",
   "name": "South Ridge (Scatter Lake)",
   "discipline": "mountaineering",
@@ -130,6 +142,18 @@
   "endM": 14,
   "summitM": 0,
   "points": 49913
+ },
+ {
+  "id": "wa_classic_route_2",
+  "name": "Classic Route",
+  "discipline": "alpine",
+  "slug": "tatoosh-traverse-wa",
+  "fktTitle": "Tatoosh Traverse (WA)",
+  "tier": "round",
+  "startM": 73,
+  "endM": 87,
+  "summitM": 1,
+  "points": 48137
  },
  {
   "id": "wa_colchuck_peak_colchuck_glacier",
@@ -384,6 +408,18 @@
   "points": 11845
  },
  {
+  "id": "wa_east_mcmillan_spire_west_ridge",
+  "name": "West Ridge / Southwest Face",
+  "discipline": "mountaineering",
+  "slug": "west-mcmillan-spire",
+  "fktTitle": "West McMillan Spire",
+  "tier": "round",
+  "startM": 18,
+  "endM": 5,
+  "summitM": 199,
+  "points": 33834
+ },
+ {
   "id": "wa_east_ridge_6",
   "name": "East Ridge",
   "discipline": "scrambling",
@@ -538,6 +574,90 @@
   "endM": 35,
   "summitM": 1,
   "points": 11845
+ },
+ {
+  "id": "wa_fish_whistle",
+  "name": "Fish & Whistle",
+  "discipline": "alpine",
+  "slug": "vesper-peak",
+  "fktTitle": "Vesper Peak",
+  "tier": "round",
+  "startM": 19,
+  "endM": 26,
+  "summitM": 1,
+  "points": 11593
+ },
+ {
+  "id": "wa_forbidden_peak_east_ledges",
+  "name": "East Ledges",
+  "discipline": "mountaineering",
+  "slug": "west-ridge-forbidden-peak-c2c",
+  "fktTitle": "West Ridge of Forbidden Peak C2C",
+  "tier": "oneway",
+  "startM": 31,
+  "endM": 3793,
+  "summitM": 45,
+  "points": 298
+ },
+ {
+  "id": "wa_forbidden_peak_east_ridge",
+  "name": "East Ridge Direct",
+  "discipline": "alpine",
+  "slug": "west-ridge-forbidden-peak-c2c",
+  "fktTitle": "West Ridge of Forbidden Peak C2C",
+  "tier": "oneway",
+  "startM": 31,
+  "endM": 3793,
+  "summitM": 45,
+  "points": 298
+ },
+ {
+  "id": "wa_forbidden_peak_north_ridge",
+  "name": "North Ridge",
+  "discipline": "alpine",
+  "slug": "west-ridge-forbidden-peak-c2c",
+  "fktTitle": "West Ridge of Forbidden Peak C2C",
+  "tier": "oneway",
+  "startM": 31,
+  "endM": 3793,
+  "summitM": 8,
+  "points": 298
+ },
+ {
+  "id": "wa_forbidden_peak_northeast_face",
+  "name": "Northeast Face",
+  "discipline": "alpine",
+  "slug": "west-ridge-forbidden-peak-c2c",
+  "fktTitle": "West Ridge of Forbidden Peak C2C",
+  "tier": "oneway",
+  "startM": 31,
+  "endM": 3793,
+  "summitM": 8,
+  "points": 298
+ },
+ {
+  "id": "wa_forbidden_peak_northwest_face",
+  "name": "Northwest Face",
+  "discipline": "alpine",
+  "slug": "west-ridge-forbidden-peak-c2c",
+  "fktTitle": "West Ridge of Forbidden Peak C2C",
+  "tier": "oneway",
+  "startM": 31,
+  "endM": 3793,
+  "summitM": 8,
+  "points": 298
+ },
+ {
+  "id": "wa_forbidden_peak_west_ridge",
+  "name": "West Ridge",
+  "discipline": "alpine",
+  "slug": "west-ridge-forbidden-peak-c2c",
+  "fktTitle": "West Ridge of Forbidden Peak C2C",
+  "tier": "oneway",
+  "startM": 31,
+  "endM": 3793,
+  "summitM": 45,
+  "points": 298
  },
  {
   "id": "wa_gardner_mountain_west_ridge",
@@ -816,6 +936,18 @@
   "points": 7970
  },
  {
+  "id": "wa_little_mac_spire_southwest_route",
+  "name": "Southwest Route",
+  "discipline": "alpine",
+  "slug": "west-mcmillan-spire",
+  "fktTitle": "West McMillan Spire",
+  "tier": "round",
+  "startM": 15,
+  "endM": 18,
+  "summitM": 175,
+  "points": 33834
+ },
+ {
   "id": "wa_little_tahoma_east_shoulder",
   "name": "East Shoulder",
   "discipline": "mountaineering",
@@ -1018,6 +1150,30 @@
   "endM": 43,
   "summitM": 10,
   "points": 16972
+ },
+ {
+  "id": "wa_mount_bigelow_scramble",
+  "name": "Standard Scramble",
+  "discipline": "scrambling",
+  "slug": "sawtooth-ridge-slam-wa",
+  "fktTitle": "Sawtooth Ridge Slam (WA)",
+  "tier": "round",
+  "startM": 109,
+  "endM": 211,
+  "summitM": 1,
+  "points": 10561
+ },
+ {
+  "id": "wa_mount_bigelow_tribute_to_richard",
+  "name": "Tribute to Richard",
+  "discipline": "alpine",
+  "slug": "sawtooth-ridge-slam-wa",
+  "fktTitle": "Sawtooth Ridge Slam (WA)",
+  "tier": "round",
+  "startM": 122,
+  "endM": 229,
+  "summitM": 17,
+  "points": 10561
  },
  {
   "id": "wa_mount_cruiser_nw_face_corner",
@@ -1416,6 +1572,18 @@
   "points": 5336
  },
  {
+  "id": "wa_mount_shuksan_sulphide_glacier",
+  "name": "Sulphide Glacier",
+  "discipline": "mountaineering",
+  "slug": "shuksan-baker-grand-double-wa",
+  "fktTitle": "Shuksan-Baker Grand Double (WA)",
+  "tier": "round",
+  "startM": 15,
+  "endM": 33,
+  "summitM": 15,
+  "points": 24286
+ },
+ {
   "id": "wa_mount_si_haystack_scramble",
   "name": "Haystack Scramble",
   "discipline": "scrambling",
@@ -1560,6 +1728,18 @@
   "points": 6640
  },
  {
+  "id": "wa_mount_torment_torment_forbidden_traverse",
+  "name": "Torment-Forbidden Traverse",
+  "discipline": "alpine",
+  "slug": "west-ridge-forbidden-peak-c2c",
+  "fktTitle": "West Ridge of Forbidden Peak C2C",
+  "tier": "oneway",
+  "startM": 31,
+  "endM": 3793,
+  "summitM": 45,
+  "points": 298
+ },
+ {
   "id": "wa_mount_washington_olympic_standard",
   "name": "Standard Scramble (above Lake Cushman)",
   "discipline": "scrambling",
@@ -1644,6 +1824,18 @@
   "points": 63434
  },
  {
+  "id": "wa_open_book_2",
+  "name": "Open Book",
+  "discipline": "alpine",
+  "slug": "tatoosh-traverse-wa",
+  "fktTitle": "Tatoosh Traverse (WA)",
+  "tier": "round",
+  "startM": 73,
+  "endM": 87,
+  "summitM": 1,
+  "points": 48137
+ },
+ {
   "id": "wa_painted_mountain_scramble",
   "name": "Painted Mountain Scramble",
   "discipline": "scrambling",
@@ -1680,6 +1872,30 @@
   "points": 63434
  },
  {
+  "id": "wa_pyramid_peak_colonial_standard",
+  "name": "Standard Route / Southeast Scramble",
+  "discipline": "scrambling",
+  "slug": "snowfield-peak-wa",
+  "fktTitle": "Snowfield Peak (WA)",
+  "tier": "round",
+  "startM": 14,
+  "endM": 3,
+  "summitM": 296,
+  "points": 30803
+ },
+ {
+  "id": "wa_ragged_edge",
+  "name": "Ragged Edge",
+  "discipline": "alpine",
+  "slug": "vesper-peak",
+  "fktTitle": "Vesper Peak",
+  "tier": "round",
+  "startM": 16,
+  "endM": 23,
+  "summitM": 1,
+  "points": 11593
+ },
+ {
   "id": "wa_ragged_ridge",
   "name": "Ragged Ridge",
   "discipline": "mountaineering",
@@ -1692,6 +1908,18 @@
   "points": 56546
  },
  {
+  "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+  "name": "Southeast Ridge (Crater Lake Approach)",
+  "discipline": "mountaineering",
+  "slug": "sawtooth-ridge-slam-wa",
+  "fktTitle": "Sawtooth Ridge Slam (WA)",
+  "tier": "round",
+  "startM": 122,
+  "endM": 229,
+  "summitM": 4,
+  "points": 10561
+ },
+ {
   "id": "wa_robinson_mountain_southeast_ridge",
   "name": "Southeast Ridge",
   "discipline": "scrambling",
@@ -1702,6 +1930,18 @@
   "endM": 21,
   "summitM": 8,
   "points": 22344
+ },
+ {
+  "id": "wa_ruth_mountain_south_slopes",
+  "name": "North Face / Ruth Glacier",
+  "discipline": "mountaineering",
+  "slug": "ruth-mountain-wa",
+  "fktTitle": "Ruth Mountain (WA)",
+  "tier": "round",
+  "startM": 159,
+  "endM": 159,
+  "summitM": 16,
+  "points": 7787
  },
  {
   "id": "wa_se_ridge_aka_shield_wall",
@@ -1750,6 +1990,18 @@
   "endM": 13,
   "summitM": 3,
   "points": 11845
+ },
+ {
+  "id": "wa_snowfield_peak_neve_glacier",
+  "name": "Neve Glacier / Standard Route",
+  "discipline": "mountaineering",
+  "slug": "snowfield-peak-wa",
+  "fktTitle": "Snowfield Peak (WA)",
+  "tier": "round",
+  "startM": 18,
+  "endM": 3,
+  "summitM": 3,
+  "points": 30803
  },
  {
   "id": "wa_south_headwall",
@@ -1812,6 +2064,18 @@
   "points": 5336
  },
  {
+  "id": "wa_southeast_ridge_se_corner",
+  "name": "Southeast Ridge (SE Corner)",
+  "discipline": "alpine",
+  "slug": "shuksan-baker-grand-double-wa",
+  "fktTitle": "Shuksan-Baker Grand Double (WA)",
+  "tier": "round",
+  "startM": 9,
+  "endM": 29,
+  "summitM": 49,
+  "points": 24286
+ },
+ {
   "id": "wa_southwest_buttress",
   "name": "Southwest Buttress",
   "discipline": "alpine",
@@ -1872,6 +2136,30 @@
   "points": 5060
  },
  {
+  "id": "wa_the_roof",
+  "name": "The Roof",
+  "discipline": "alpine",
+  "slug": "tatoosh-traverse-wa",
+  "fktTitle": "Tatoosh Traverse (WA)",
+  "tier": "round",
+  "startM": 73,
+  "endM": 87,
+  "summitM": 1,
+  "points": 48137
+ },
+ {
+  "id": "wa_true_grit_2",
+  "name": "True Grit",
+  "discipline": "alpine",
+  "slug": "vesper-peak",
+  "fktTitle": "Vesper Peak",
+  "tier": "round",
+  "startM": 19,
+  "endM": 26,
+  "summitM": 1,
+  "points": 11593
+ },
+ {
   "id": "wa_upper_north_ridge_w_great_gendarme",
   "name": "Upper North Ridge w/Great Gendarme",
   "discipline": "alpine",
@@ -1882,6 +2170,18 @@
   "endM": 0,
   "summitM": 51,
   "points": 2926
+ },
+ {
+  "id": "wa_vesper_peak_standard_route",
+  "name": "Standard Route (Headlee Pass)",
+  "discipline": "scrambling",
+  "slug": "vesper-peak",
+  "fktTitle": "Vesper Peak",
+  "tier": "round",
+  "startM": 0,
+  "endM": 7,
+  "summitM": 0,
+  "points": 11593
  },
  {
   "id": "wa_washington_ellinor_traverse_ridge",
@@ -1906,6 +2206,30 @@
   "endM": 4,
   "summitM": 31,
   "points": 22502
+ },
+ {
+  "id": "wa_windy_peak_trail",
+  "name": "Windy Peak Trail (Standard Walk-up)",
+  "discipline": "scrambling",
+  "slug": "windy-cathedral-loop-wa",
+  "fktTitle": "Windy Cathedral Loop (WA)",
+  "tier": "round",
+  "startM": 66,
+  "endM": 101,
+  "summitM": 274,
+  "points": 52573
+ },
+ {
+  "id": "wa_windy_peak_trail",
+  "name": "Windy Peak Trail (Standard Walk-up)",
+  "discipline": "scrambling",
+  "slug": "windy-peak-lollipop-wa",
+  "fktTitle": "Windy Peak Lollipop (WA)",
+  "tier": "round",
+  "startM": 4,
+  "endM": 11,
+  "summitM": 3,
+  "points": 6975
  },
  {
   "id": "wa_witches_tower_south_face",
