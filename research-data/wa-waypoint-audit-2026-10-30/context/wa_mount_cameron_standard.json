@@ -1,0 +1,87 @@
+{
+ "id": "wa_mount_cameron_standard",
+ "name": "Standard Route (Southeast Slopes)",
+ "discipline": "mountaineering",
+ "area": {
+  "id": "wa_mount_cameron",
+  "name": "Mount Cameron",
+  "lat": 47.825825,
+  "lng": -123.33409,
+  "elevation_ft": 7190,
+  "parent_id": "wa_north_central_olympics",
+  "ground_ft": 7160
+ },
+ "dist_km": 5.3,
+ "gain_ft": 3170,
+ "high_point_ft": 7190,
+ "approach_logistics": {
+  "peakLat": 47.825825,
+  "peakLng": -123.33409,
+  "trailhead": "Obstruction Point Trailhead",
+  "trailheadLat": 47.9183,
+  "trailheadLng": -123.3822,
+  "trailheadDirection": "From Port Angeles, take Race Street south onto Hurricane Ridge Road and climb to the Hurricane Ridge parking area; turn sharply left onto the gravel Obstruction Point Road and follow it about 8 miles to its end at the trailhead. The gravel road is generally open only from mid-July to October."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 47.9183,
+   "lng": -123.3822,
+   "elev": 6135,
+   "name": "Obstruction Point Trailhead",
+   "note": "End of Obstruction Point Road (highest road in Olympic NP, gravel, no trailers), 8 mi east of Hurricane Ridge Visitor Center; Grand Pass Trail begins here.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Obstruction Point Road is the way in, and it is the highest road in Olympic National Park: from the Hurricane Ridge Visitor Center follow it 8 miles east to its end at the Obstruction Point trailhead, topping out around 6,135 ft. It is narrow, one-lane gravel the whole way and no place for trailers. The road is usually open only from early-to-mid July through mid-October, so it is not a road you can count on before July — confirm it is open before committing to the drive. The Grand Pass Trail starts at the road end, and an online wilderness camping permit plus a bear canister are required for the Cameron Basin camp zone.",
+   "ground_ft": 6114
+  },
+  {
+   "i": 1,
+   "lat": 47.86565,
+   "lng": -123.35546,
+   "elev": 6450,
+   "name": "Grand Pass",
+   "note": "Grand Pass Trail crests the divide here between the Grand/Lillian River drainages and Cameron Creek; the descent to the Cameron side is steep and can be dangerously slick in wet weather or lingering snow.",
+   "type": "Junction",
+   "distMi": 6,
+   "directions": "From Obstruction Point follow the Grand Pass Trail south along the open crest of Lillian Ridge, descend into Grand Valley and follow the trail up the valley past Moose and Gladys Lakes to Grand Pass, about 6 miles from the trailhead.",
+   "ground_ft": 6348
+  },
+  {
+   "i": 2,
+   "lat": null,
+   "lng": null,
+   "elev": 6000,
+   "name": "Cameron Basin camp",
+   "note": "Established backcountry sites in the upper basin below Cameron Pass along Cameron Creek; bear canister required (no trees to hang food), no campfires above 3,500 ft, and an online wilderness camping permit is mandatory.",
+   "type": "Campsite",
+   "distMi": 8.3,
+   "directions": "Continue up along Cameron Creek into the upper basin below Cameron Pass to the established camp sites at about 6,000 ft. A bear canister is required and there are no fires.",
+   "ground_ft": null
+  },
+  {
+   "i": 3,
+   "lat": 47.825718,
+   "lng": -123.358249,
+   "elev": 6448,
+   "name": "Cameron Pass snow slopes",
+   "note": "Steep snow can persist on the pass into late July or August; ice axe and self-arrest skills recommended, and the climbers' path is frequently obscured under snow here.",
+   "type": "Hazard",
+   "distMi": 9.3,
+   "directions": "Continue up the Cameron Pass Trail from the basin to Cameron Pass. Steep snow can cover the climbers' path on the final slopes into late July or August, so carry an ice axe.",
+   "ground_ft": 6491
+  },
+  {
+   "i": 4,
+   "lat": 47.825825,
+   "lng": -123.33409,
+   "elev": 7190,
+   "name": "Mount Cameron summit",
+   "note": "True 7,190 ft highpoint of triple-summited Mount Cameron, reached from Cameron Basin/Pass by Class 2 scree and talus along the ridge that rises east from the pass.",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "From Cameron Pass leave the trail and follow the broad ridge crest east and up on Class 1-2 scree and talus. The ridge crosses many false summits, so do not stop at the first high point; the true top is still easy ground, and Class 3-4 steps mean you have passed it and started the traverse toward the Middle Peak.",
+   "ground_ft": 7160
+  }
+ ]
+}

@@ -1,0 +1,93 @@
+{
+ "id": "wa_martin_peak_west_ridge",
+ "name": "West Ridge",
+ "discipline": "mountaineering",
+ "area": {
+  "id": "wa_martin_peak",
+  "name": "Martin Peak",
+  "lat": 48.2416775,
+  "lng": -120.8159911,
+  "elevation_ft": 8509,
+  "parent_id": "wa_chiwawa_entiat_region",
+  "ground_ft": 8496
+ },
+ "dist_km": null,
+ "gain_ft": 5300,
+ "high_point_ft": 8509,
+ "approach_logistics": {
+  "peakLat": 48.2416775,
+  "peakLng": -120.8159911,
+  "trailhead": "Holden Village (Railroad Creek)",
+  "trailheadLat": 48.1993,
+  "trailheadLng": -120.7741,
+  "trailheadDirection": "From Holden Village — reached by Lake Chelan ferry to Lucerne and the village shuttle"
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.1993,
+   "lng": -120.7741,
+   "elev": 3212,
+   "name": "Holden Village (Railroad Creek Trail)",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": null,
+   "directions": "There is no road to this trailhead. Take the Lake Chelan ferry from Chelan or Field's Point Landing up-lake to Lucerne Landing, then ride the Holden Village bus 11 miles up the gravel road into Holden Village, where the Railroad Creek Trail starts. The road from Lucerne and the Lucerne dock have been closed to all vehicle and foot traffic since the December 2025 mudslides and the bus is not running; check with the Chelan Ranger District before you plan the trip. A free self-issue Glacier Peak Wilderness permit is required.",
+   "ground_ft": 3212
+  },
+  {
+   "i": 1,
+   "lat": 48.200402,
+   "lng": -120.79099,
+   "elev": 3300,
+   "name": "Holden Ballpark Campground",
+   "type": "Campsite",
+   "ground_ft": 3281
+  },
+  {
+   "i": 2,
+   "lat": 48.2312,
+   "lng": -120.8331,
+   "elev": 5253,
+   "name": "Holden Lake",
+   "note": "Lake below Holden Pass; campsites and water.",
+   "type": "Water",
+   "distMi": 5,
+   "directions": "Follow Railroad Creek Trail #1256 about a mile up-valley to the fork, then take the Holden Lake Trail about four miles and 1,700 ft up to Holden Lake.",
+   "ground_ft": 5253
+  },
+  {
+   "i": 3,
+   "lat": 48.23148,
+   "lng": -120.83355,
+   "elev": 5278,
+   "name": "Holden Lake",
+   "type": "Campsite",
+   "ground_ft": 5253
+  },
+  {
+   "i": 4,
+   "lat": 48.241,
+   "lng": -120.8414,
+   "elev": 6357,
+   "name": "Holden Pass",
+   "note": "Saddle between Bonanza Peak and Martin Peak; camp shared with Bonanza parties. Martin's West Ridge rises east straight out of the pass.",
+   "type": "Campsite",
+   "distMi": null,
+   "directions": "Above the lake a climbers' path gains about 1,100 ft over heather benches and rocky terraces to Holden Pass, the saddle between Bonanza and Martin. Fill water before leaving the lake basin.",
+   "ground_ft": 6357
+  },
+  {
+   "i": 5,
+   "lat": 48.2416775,
+   "lng": -120.8159911,
+   "elev": 8509,
+   "name": "Martin Peak Summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 8509,
+   "directions": "Go east straight up the ridge out of the pass, linking gullies on the right (south) side of the crest by cairns, to a steep, exposed Class 4 gully about 100 ft below the summit.",
+   "ground_ft": 8496
+  }
+ ]
+}

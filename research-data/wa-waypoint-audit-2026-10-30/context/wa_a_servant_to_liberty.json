@@ -1,0 +1,51 @@
+{
+ "id": "wa_a_servant_to_liberty",
+ "name": "A Servant To Liberty",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_liberty_bell",
+  "name": "Liberty Bell Mountain",
+  "lat": 48.515435,
+  "lng": -120.658365,
+  "elevation_ft": 7720,
+  "parent_id": "wa_liberty_bell_group",
+  "ground_ft": 7745
+ },
+ "dist_km": 8.05,
+ "gain_ft": 2400,
+ "high_point_ft": 7720,
+ "approach_logistics": {
+  "peakLat": 48.515435,
+  "peakLng": -120.658365,
+  "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+  "trailheadLat": 48.51454,
+  "trailheadLng": -120.64332,
+  "trailheadDirection": "From the hairpin-turn/pond pullout on SR-20 just east of Washington Pass (~5,100 ft), via the cairned climbers' paths"
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.5143,
+   "lng": -120.6425,
+   "elev": 5160,
+   "name": "Washington Pass Hairpin Turnout",
+   "note": "This route starts from the East Face hairpin pullout, not the Blue Lake Trailhead, which serves the Beckey Route. Same hairpin turnout as the neighboring Kangaroo Temple routes.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive SR-20 over Washington Pass and continue east a short way down to the big hairpin turn below the pass, and park off the road at the curve at about 5,100 ft. The highway over the pass is closed in winter.",
+   "ground_ft": 5175
+  },
+  {
+   "i": 1,
+   "lat": 48.5155,
+   "lng": -120.6588,
+   "elev": 7720,
+   "name": "Liberty Bell Mountain",
+   "note": "True summit of Liberty Bell Mountain.",
+   "type": "Summit",
+   "distMi": 2,
+   "directions": "Walk back up the road toward the pass to a pond on its south side, and from the pond's east end follow the cairned climbers' path about a mile through forest to the East Face talus. Follow Freedom or Death for its first three pitches, step right onto Thin Red Line just below its third anchor, and follow this route's eight pitches; from the top, scramble to the summit roped.",
+   "ground_ft": 7672
+  }
+ ]
+}

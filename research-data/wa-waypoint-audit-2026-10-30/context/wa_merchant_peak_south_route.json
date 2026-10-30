@@ -1,0 +1,111 @@
+{
+ "id": "wa_merchant_peak_south_route",
+ "name": "South Route",
+ "discipline": "scrambling",
+ "area": {
+  "id": "wa_merchant_peak",
+  "name": "Merchant Peak",
+  "lat": 47.8013243,
+  "lng": -121.4316972,
+  "elevation_ft": 6113,
+  "parent_id": "wa_stevens_pass_region",
+  "ground_ft": 6065
+ },
+ "dist_km": 9.66,
+ "gain_ft": 3833,
+ "high_point_ft": 6113,
+ "approach_logistics": {
+  "peakLat": 47.8013243,
+  "peakLng": -121.4316972,
+  "trailhead": "Barclay Lake Trailhead (FR-6024)",
+  "trailheadLat": 47.7923,
+  "trailheadLng": -121.4592,
+  "trailheadDirection": "From US 2 at Baring, near milepost 41, head north on 635th Place NE over the railroad tracks, keeping left at the junction, and continue onto Forest Road 6024 for about 4 miles to the Barclay Lake trailhead."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 47.7923,
+   "lng": -121.4592,
+   "elev": 2200,
+   "name": "Barclay Lake Trailhead (FR-6024)",
+   "note": "FR-6024 (Barclay Creek Road) dead-ends here; self-pay day-use fee ($5) or Northwest Forest Pass required at the kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Leave US 2 near Baring and follow FR-6024, the Barclay Creek Road, to where it dead-ends at the Barclay Lake trailhead. A Northwest Forest Pass or the $5 self-pay day-use fee is required at the kiosk. Barclay Creek runs past the trailhead, so you can top off water here before starting up Barclay Lake Trail #1055 — treat it before drinking.",
+   "ground_ft": 2289
+  },
+  {
+   "i": 1,
+   "lat": 47.78892,
+   "lng": -121.43633,
+   "elev": 2500,
+   "name": "Y-shaped creek / gully departure",
+   "note": "Leave the Barclay Lake trail a few hundred feet past the Barclay Creek bridge at this Y-shaped creek fork (not the drainage closer to the lake) to start the south gully scramble.",
+   "type": "Junction",
+   "distMi": 1.3,
+   "directions": "Follow the maintained Barclay Lake Trail #1055 east through old-growth on easy, well-graded tread beside Barclay Creek. The creek mouth you are aiming for has grown in badly; the tell is a faint boot path of piled rocks running a hundred or two hundred feet into the trees to reach the creek bed proper. This is the most commonly missed point on the route, so identify it against a GPS track or a route photo rather than by feel.",
+   "ground_ft": 2341
+  },
+  {
+   "i": 2,
+   "lat": 47.792534,
+   "lng": -121.437611,
+   "elev": 2900,
+   "name": "Lower waterfalls (Waterfall 1 & 2)",
+   "note": "First two pour-offs in the gully are bypassed on brushy ledges to the side; footing is loose and slick when wet.",
+   "type": "Hazard",
+   "distMi": 1.7,
+   "directions": "From here the drainage is the trail: boulder-hop and scramble straight up the creek bed. The first pour-off is turned on climbers-left on an established boot path; the second is passed by working right toward the cliff band and traversing over the top of the falls. Put helmets on before you start up — the gully is narrow and anything a party above dislodges comes down it.",
+   "ground_ft": 2820
+  },
+  {
+   "i": 3,
+   "lat": 47.795419,
+   "lng": -121.436323,
+   "elev": 3700,
+   "name": "Waterfall 3 chockstone crux",
+   "note": "Crux of the route: jammed boulders form a 15-20 ft chimney with small holds on very loose rock over sandy mud; most parties downclimb this same spot on descent.",
+   "type": "Hazard",
+   "distMi": 2,
+   "directions": "Continue up the gully to where large jammed boulders block it completely. The way through is a Class 3-4 line on climbers-left: a 15-20 ft chimney squeeze on small holds set in loose, sandy rock, with real exposure. Many parties carry a 30m rope for this step even when they intend to downclimb it, and a fixed rap ring has been reported at the top of the falls — treat it as aged gear of unknown condition and back it up with your own natural anchor if you use it.",
+   "ground_ft": 3454
+  },
+  {
+   "i": 4,
+   "lat": 47.797786,
+   "lng": -121.43466,
+   "elev": 4400,
+   "name": "Cave feature / gully exit",
+   "note": "A small cave-like rock feature marks where to leave the main gully onto a faint climbers' path through forest and open heather slopes.",
+   "type": "Junction",
+   "distMi": 2.3,
+   "directions": "Above the chockstone the gully eases and opens out into brush and then forest for another 800 ft of gain. Stay in the main drainage the whole way rather than being drawn into side branches, and fix in your mind where you leave it — coming back down into the wrong drainage is the standard descent mistake here.",
+   "ground_ft": 4351
+  },
+  {
+   "i": 5,
+   "lat": 47.798429,
+   "lng": -121.429995,
+   "elev": 5300,
+   "name": "Upper alpine meadows/bowl",
+   "note": "Trail fades out in the upper heather meadows; angle climbers' left across talus toward the summit block and final ridge.",
+   "type": "Junction",
+   "distMi": 2.6,
+   "directions": "Pick up the faint climbers' path where it leaves the drainage and follow it up through forest onto open heather, trending climbers-left. It is thin and comes and goes, so treat it as a hint rather than a trail.",
+   "ground_ft": 5137
+  },
+  {
+   "i": 6,
+   "lat": 47.8013243,
+   "lng": -121.4316972,
+   "elev": 6113,
+   "name": "Merchant Peak Summit",
+   "note": "True summit is the northwest high point of the ridge; a lower east peak nearby is commonly mislabeled as Merchant Peak on older maps.",
+   "type": "Summit",
+   "distMi": 3,
+   "directions": "Cross the talus out of the bowl and gain the East Ridge, then follow the crest for a final 300 ft or so. The rock here is solid and the scrambling is straightforward Class 3 — a marked change from the loose, sandy ground everywhere below.",
+   "ground_ft": 6065
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "file": "r005.json",
+ "results": [
+  {
+   "id": "nb_lsr_north_easy_street",
+   "fact": "pitch count vs length",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "pitches blank (unknown); length about 107 m",
+   "evidence": "Mountain Project lists the route at about 350 ft (106 m) with a pitch count of 23, which is the same typo-like figure as the row; a 106 m ice flow cannot have 23 pitches (about 5 m each). Searches (route name + Little Salmon River, the NB ice guide PDF from neice.com whose text is compressed/unreadable, general web) found no second source stating a pitch count, so the right value is not known. Blanking the provably false number.",
+   "sources": [
+    "https://www.mountainproject.com/route/114031114/easy-street",
+    "https://www.mountainproject.com/area/112555310/lsr-north",
+    "https://www.neice.com/wp-content/uploads/2018/09/NB-iceguide.pdf"
+   ],
+   "patches": [
+    {
+     "id": "nb_lsr_north_easy_street",
+     "fact": "pitch count vs length",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 23,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "nb_lsr_north_the_jolly_rancher",
+   "fact": "pitch count vs length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project lists 650 ft (197 m), 2 pitches, same as the row; the neighbouring UB40 is 600 ft in 3 pitches on the same page, which suggests the pitch count or length is off, but 2 pitches of ~100 m is not strictly impossible with simul-climbing or a walk between ice steps. Searched route name, area, NB ice guide PDF (unreadable compressed text) and general web: no second source. Left unchanged.",
+   "sources": [
+    "https://www.mountainproject.com/route/118314290/the-jolly-rancher",
+    "https://www.mountainproject.com/area/112555310/lsr-north",
+    "https://www.neice.com/wp-content/uploads/2018/09/NB-iceguide.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "qc_08_mont_de_l_equerre_la_ru_e_vers_l_or",
+   "fact": "mixed grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Mountain Project route page gives headline WI5-6 M7 and its own description lists pitches P4 M7, P5 M7, P6 M7+/8, so the page itself is internally split and is the only source (the stored overview is from it). Gripped confirms only the 2001 FA by Morin and Peloquin; the FQME Charlevoix PDF and other searches (thecrag, French-language, guide blog) gave no grade. No second source, so neither the header nor the prose is changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/120115457/la-ruee-vers-lor",
+    "https://gripped.com/news/huge-350-metre-wi5-quebec-mixed-route-forms-as-pure-ice/",
+    "https://www.adventurespiritguides.com/blog/post/climbing-quebecs-ice-giants"
+   ],
+   "patches": []
+  }
+ ]
+}

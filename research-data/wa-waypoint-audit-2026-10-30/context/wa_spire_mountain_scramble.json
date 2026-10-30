@@ -1,0 +1,101 @@
+{
+ "id": "wa_spire_mountain_scramble",
+ "name": "Standard Route",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_spire_mountain",
+  "name": "Spire Mountain",
+  "lat": 47.865705,
+  "lng": -121.406065,
+  "elevation_ft": 6217,
+  "parent_id": "wa_stevens_pass_region",
+  "ground_ft": 6228
+ },
+ "dist_km": 9.7,
+ "gain_ft": 5000,
+ "high_point_ft": 6213,
+ "approach_logistics": {
+  "peakLat": 47.865705,
+  "peakLng": -121.406065,
+  "trailhead": "FR-63 roadside pullout east of Galena",
+  "trailheadLat": 47.89686,
+  "trailheadLng": -121.42226,
+  "trailheadDirection": "Drive US-2 to Skykomish, then north on Beckler River Road (FR-65) for about 15 miles; turn left (west) onto FR-63 and follow it about 4.6 miles to where it crosses the North Fork Skykomish River again; park at the unmarked pullout on the rise just past the bridge, about a mile east of Galena. Since the December 2025 floods Beckler River Road has been closed beyond Jack Pass and the North Fork Skykomish bridge on FR-63 is out, so this pullout cannot be reached by car right now."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 47.89686,
+   "lng": -121.42226,
+   "elev": 1169,
+   "name": "Index-Galena Road / North Fork Skykomish River Access (FR-63, ~Mile 10)",
+   "note": "Park at the snowplow turnaround by the bridge about 1 mile east of Galena; this is the last reliable water, none is found once you leave the road.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive US 2 to Skykomish, then head north on the Beckler River Road (FR-65) for about 15 miles and turn left (west) onto FR-63. A high-clearance vehicle is worth having for the last few miles. Park at the turnaround by the river crossing near Galena at about 1,150 feet; the pullout is unmarked and easy to drive past. No permits are needed, and the river here is the last dependable water, since there is none once you leave the road.",
+   "ground_ft": 1169
+  },
+  {
+   "i": 1,
+   "elev": 2300,
+   "name": "Old Logging Road / 2300-ft Saddle",
+   "note": "After a steep, brush-free first 600 ft through downed timber, cross an old overgrown logging road at this saddle on the lower north slopes.",
+   "type": "Junction",
+   "distMi": 0.7,
+   "directions": "Leave the road on the side away from the river and climb steeply, off-trail, through downed timber; the first 600 ft are steep but brush-free. After crossing an old logging road, traverse obliquely left to a saddle at about 2,300 ft, where you cross a second old overgrown logging road.",
+   "ground_ft": null
+  },
+  {
+   "i": 2,
+   "elev": 3300,
+   "name": "Hogsback Ridge Top",
+   "note": "The well-defined hogsback you've been following since ~2700 ft terminates here; continue straight uphill toward the cliff bands above.",
+   "type": "Junction",
+   "distMi": 1.4,
+   "directions": "Continue uphill from the saddle; at about 2,700 ft the slope narrows into a well-defined, fairly brush-free hogsback. Follow its crest to where it ends at about 3,300 ft.",
+   "ground_ft": null
+  },
+  {
+   "i": 3,
+   "elev": 4300,
+   "name": "Cliff Band Traverse",
+   "note": "Large cliff bands block the north end of the peak between roughly 4200-4400 ft; traverse southeast below them to reach the mountain's west/northwest side.",
+   "type": "Hazard",
+   "distMi": 2,
+   "directions": "From the top of the hogsback, continue straight uphill as the slope steepens toward the large cliff bands that block the north end of the peak at roughly 4,200 to 4,400 ft.",
+   "ground_ft": null
+  },
+  {
+   "i": 4,
+   "elev": 5940,
+   "name": "5940-ft Saddle Northwest of Summit",
+   "note": "Gain this saddle via the traverse; a possible schrund/moat forms here depending on season and snow cover before you turn onto the final ridge.",
+   "type": "Hazard",
+   "distMi": 3.1,
+   "directions": "Traverse southeast beneath the cliff bands onto the mountain's west and northwest side to about 5,400 ft below the summit spires, then turn uphill and climb the wide gully and slope to the saddle just northwest of the summit. Watch for a moat or schrund as you near the saddle, depending on the season.",
+   "ground_ft": null
+  },
+  {
+   "i": 5,
+   "elev": 6100,
+   "name": "Class 5 Step",
+   "note": "The final ridge is mostly Class 3, but two short sections here are Class 4-5; many parties place a rope for this exposed step.",
+   "type": "Hazard",
+   "distMi": 3.2,
+   "directions": "From the saddle, scramble southeast along the airy crest, mostly class 3, to a short exposed mantle step of about ten feet near 6,100 ft where many parties rope up. Stay on the crest; ground to the north and east steepens quickly into permanent snow and cliffs.",
+   "ground_ft": null
+  },
+  {
+   "i": 6,
+   "lat": 47.865705,
+   "lng": -121.406065,
+   "elev": 6217,
+   "name": "Spire Mountain",
+   "note": "True summit at the top of the west/northwest ridge scramble, with views over the Monte Cristo peaks and North Fork Skykomish valley.",
+   "type": "Summit",
+   "distMi": 3.25,
+   "directions": "Above the step, continue a short way up the ridge to the summit.",
+   "ground_ft": 6228
+  }
+ ]
+}

@@ -1842,3 +1842,70 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the candidate must be within 1.5 km of one of the route's real pins. The chord between sparse
     pins put Fortress Mountain's Chiwawa crossing 4.3 km upstream of the bridge the route uses.
     First run: 150 pins on 126 routes, all re-read and confirmed. MISSING went 634 → 484.
+- **WA ALPINE WAYPOINT AUDIT, 2026-10-30** (owner note: "audit and review all waypoints exact location
+  for all WA alpine, mountaineering and scramble routes"). Every waypoint audit was re-run on WA ONE AT
+  A TIME (a parallel run timed the database out on 2026-10-28), against 854 routes in scope.
+  Research data, decisions and scripts live in `research-data/wa-waypoint-audit-2026-10-30/` and
+  `scripts/oneoff/wa-waypoint-audit/`. `apply.mjs` writes only a published coordinate (`move`),
+  `clear`, `setElev`/`nullElev`, `setDist`/`nullDist` or `areaMove`. It refuses when the live pin
+  differs from the researched one, when a moved pin's ground is more than max(300 ft, 15%) from its
+  height, when the route's impossible-distance pairs grow or a new one appears, or when an `areaMove`
+  is not a 3DEP local maximum within 250 ft. Rollbacks: `scripts/rollback-wa-waypoint-audit-*.json`.
+  - **What the re-run found clean, so do not re-derive it:** audit:coord-origin 0;
+    audit:waypoint-elevations --ground BEYOND 0; audit:travel-bearings 0 opposed;
+    audit:cross-route-pins 1 split (Andrews Pass, fixed).
+  - **Contradictions (batches A and B, 15 rows):**
+    - The impossible distances #3017's GNIS moves left behind: Fairchild's Deer Lake (setDist 4.0,
+      half WTA's 8.0 mi round trip), Spider Gap and the Tooth's Source Lake junction (nullDist).
+    - Pins on the wrong ground cleared, with no published point to move to: Lincoln's Heliotrope
+      crossing, Cadet's two hazards, the Barrier crossing, Oval Creek junction, the Tooth's Catwalk,
+      and Chianti's base, which sat on its summit.
+    - Davis Peak's Gorge Creek bridge (ground 4,356 ft for a 1,096 ft bridge) moved to GNIS 1520163,
+      Gorge Creek's mouth at Gorge Lake, where SR 20 bridges it.
+    - Middle Peak, Gunsight Range: the area row and two summit pins moved to Mountain Project's
+      published 48.30639,-120.99403 (8,200 ft). The old point stood on 7,764 ft ground.
+    - Rimrock Ridge's area row moved onto its summit pin (GNIS 1525058, a local maximum).
+  - **Summit pins against GNIS (`summit-gnis.mjs`):** 809 summit pins, 538 within 100 m and 584
+    within 300 m. Of those over 300 m, ONE moved: Mount Cameron, to the point GNIS and Wikipedia
+    share. The rest are on the true summit, where GNIS is the one off: Daniel's West Summit,
+    Esmeralda's West Summit, Spire, Merchant, Duckabush, Storm King, and named sub-summits.
+  - **Trailheads.**
+    - **Same name, placed apart (batch D):** 11 pins moved. Cinderella's FR-38 "Elbow Lake" pin was
+      REFUSED on review: its text is the north trailhead, and WTA's point is the south one.
+    - **Off the track by 1 km+ (batch C2):** 2 moved, Lundin's PCT North and Osceola's Slate Pass.
+    - **Every remaining trailhead (batches E1-E9, 325 coordinates):** checked against the WTA
+      hike page's `geo` trailhead coordinate, or USFS/NPS. Results are in `decisions-E*.json`.
+      About 250 sit within 150 m of the published point, 37 are spots nothing publishes (washouts,
+      pullouts, gates) and 18 are unverified. 27 pins were proposed for a move of 160 m to 1.4 km and 26 moved: Dosewallips
+      washout x5, Big Four x4, Bedal/Sloan x3, Rainy Pass Maple Pass lot x3, High Bridge x2,
+      Mount Adams x2, Denny Creek, Reflection Lakes, Old Mine Road gate, Harlequin, Rattlesnake,
+      Slate Pass (Dot), Twin Lakes (Pleiades). Mount Herman's Bagley Lakes move was REFUSED by the
+      distance gate: that pin is the other Heather Meadows lot. A
+      single WTA point that is far higher or lower than a stored pin matching its own height is
+      SPLIT evidence and was not moved: Foggy Dew, Boulder Ridge, Shannon Ridge, Nooksack Cirque,
+      Eldorado Creek, Bridge Creek, West Fork Buttermilk. Some WTA `geo` points mark the
+      destination, not the parking.
+    - **Road screen (`trailhead-roads.mjs`):** OpenStreetMap, used only as a check, never as a
+      source. 12 of 356 trailhead coordinates had no road within 150 m. All are covered by the
+      batches above, and most are washout parking OSM does not map.
+  - **Left as recorded, not defects:**
+    - The 443 unplaced pins: their names are not point features (hazards, junctions, crux
+      ledges). `unplaced-gnis.mjs` found 2 GNIS matches, both Lane Peak couloir topouts that end at a
+      notch, not the summit.
+    - Summit pins off a recorded track while matching GNIS within 25 m (American Border, Copper,
+      Preacher, Barnes, Magic). That is a TRACK question, not a pin question.
+    - Rainy Pass's two lots (USFS and WTA disagree by 380 m, and each pin matches one).
+    - Goodell's two camps, the Squire Creek washout and the Cutthroat and Wine Spires pullouts.
+      Nothing publishes them.
+  - **AFTER (re-run 2026-10-30, every write re-read):** 55 rows written (53 routes, 2 areas).
+    - audit:waypoint-distances WA: 5 routes -> 1, the one left an ice route out of scope.
+    - audit:cross-route-pins: split candidates 1 -> 0.
+    - audit:summit-pins section 1: Rimrock is out. Mount Cameron is IN, because its pin moved to
+      GNIS but the area row's `areaMove` was refused: the GNIS point is on a flat crest with one ring
+      neighbour 5 ft higher, so it is not a strict local maximum. Leave the area row; the gate is
+      right not to bend.
+    - audit:stranded-track-vertices: 32 -> 34 adrift on +1 route (Diamond in the Rough). The audit
+      reads it as CAVEAT LOST, but that line has 4 vertices, under `MIN_RECORDED_PTS`, so the app
+      never draws it.
+    - audit:cross-route-pins can answer HTTP 500 on its FIRST page while the database is healthy
+      (a 300-row jsonb page). It passed on a single retry both times.

@@ -1,0 +1,155 @@
+{
+ "file": "u002.json",
+ "results": [
+  {
+   "id": "ca_charlotte_dome_sheepish",
+   "fact": "pitch count",
+   "verdict": "fixed",
+   "correct_value": null,
+   "evidence": "The route listing gives a 1000 ft (303 m) face line and the overview itself refers to a step across on pitch 2, so a count of 1 is false; no source gives the real count (searches of thecrag, AAC East Face article, SuperTopo, extended web search found nothing on this line). Blanked rather than guessed.",
+   "sources": [
+    "https://www.mountainproject.com/route/202770002",
+    "https://publications.americanalpineclub.org/articles/12197135103/Charlotte-Dome-East-Face"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 1,
+     "value": null,
+     "id": "ca_charlotte_dome_sheepish",
+     "fact": "pitch count"
+    }
+   ]
+  },
+  {
+   "id": "ca_green_thunder",
+   "fact": "third-class ground before the first belay",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page says fifty feet of third class before the bolted slab seam; the Incredible Hulk area page says about 100 feet. Two sources genuinely disagree; openbeta, AAC, Gripped, UKC and extended search give no third figure.",
+   "sources": [
+    "https://www.mountainproject.com/route/120088039",
+    "https://www.mountainproject.com/area/105852180/incredible-hulk"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ca_mammoth_crest_pain_killer",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Route page describes pitch 1 and an optional long pitch 2 (the first anchor is a valid stop), so 1 is not provably wrong. Searches of Mammoth Crest area pages, thecrag, SummitPost, and extended web search found no second source or count.",
+   "sources": [
+    "https://www.mountainproject.com/route/203845603",
+    "https://www.mountainproject.com/area/106648445/mammoth-crest"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ca_sky_blue_spire_hawg_ripper",
+   "fact": "route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Route page and a route-finder export both give 700 ft (212 m), 5 pitches; stored 213 m matches. The row's pitch lengths sum to 157 m, but the line weaves along an arete so the figures are not provably in conflict. No independent length source found on thecrag, SummitPost, AAJ or extended search.",
+   "sources": [
+    "https://www.mountainproject.com/route/201756184",
+    "https://www.mountainproject.com/area/121411812/miter-basin"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ca_sky_blue_spire_2_bofa_spire",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Listing says 800 ft, 6 pitches, while its description details four roped pitches then scrambling to the summit; the listed count may include scramble pitches. Extended searches (Miter Basin, Sky Blue Spire 2, northeast ridge) returned only the same listing.",
+   "sources": [
+    "https://www.mountainproject.com/route/201898302",
+    "https://www.mountainproject.com/area/201753137/sky-blue-spire-2"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_the_gill_crack",
+   "fact": "how the route is climbed",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Listing tags it Trad, TR and Boulder (20 ft) and says Gill first did it as a boulder problem, with a toprope set-up on the neighbouring anchors; UKC logbook also lists it. No source says which style is more common, so neither the overview nor the beta line is provably wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/105749902",
+    "https://www.ukclimbing.com/logbook/crags/castle_rock_-_boulder_canyon-3579/the_gill_crack-97943"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_north_star_yukon_jack",
+   "fact": "length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Listing gives 400 ft (121 m) overall with two 150 ft pitches described; the 100 ft gap could be approach ice or ground below, and the stored 122 m matches the listing. No second source on area page, extended search or UKC Colorado guide.",
+   "sources": [
+    "https://www.mountainproject.com/route/108356987",
+    "https://www.mountainproject.com/area/106716473/north-star"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_east_face_standard",
+   "fact": "pitches is 0 on a multi-pitch route",
+   "verdict": "fixed",
+   "correct_value": "8",
+   "evidence": "The route listing and an independent Boulder magazine feature both describe the standard East Face as an 8 pitch route; stored 0 is wrong. Rope length can cut it shorter but 8 is the stated count.",
+   "sources": [
+    "https://www.mountainproject.com/route/105748047",
+    "https://thebouldermag.com/climbing-boulder-s-third"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 0,
+     "value": 8,
+     "id": "co_east_face_standard",
+     "fact": "pitches is 0 on a multi-pitch route"
+    }
+   ]
+  },
+  {
+   "id": "co_twin_owls_2_copperhead",
+   "fact": "aid grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "C3",
+   "evidence": "grade, grade_num, aid_grade_num and the crux line (fixed heads in place) all say C3; the stored A4 is the old grade that applies only when the heads are gone. Copperhead's listing and the neighbouring Viper listing both describe C3 with fixed heads and A4 only without them.",
+   "sources": [
+    "https://www.mountainproject.com/route/105759474",
+    "https://www.mountainproject.com/route/105761631/viper"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "aid_grade",
+     "path": [],
+     "expect": "A4",
+     "value": "C3",
+     "id": "co_twin_owls_2_copperhead",
+     "fact": "aid grade"
+    }
+   ]
+  },
+  {
+   "id": "ga_the_lowers_fourteen",
+   "fact": "aid grade",
+   "verdict": "unresolved",
+   "correct_value": "A0",
+   "evidence": "grade (5.8 A0) and aid_grade_num (0) agree against aid_grade A1; the route listing and the Lowers area list both give A0 (first bolt aided, then free). [Lead review: patch dropped — standing rule 'keep the higher grade' forbids lowering A1 to A0 on one source.]",
+   "sources": [
+    "https://www.mountainproject.com/route/200326501",
+    "https://www.mountainproject.com/area/106086327/the-lowers"
+   ],
+   "patches": []
+  }
+ ]
+}
