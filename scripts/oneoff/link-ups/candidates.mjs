@@ -16,7 +16,7 @@ if (!file) throw new Error("usage: candidates.mjs <research file name without .j
 const list = JSON.parse(fs.readFileSync(path.join(ROOT, "research-data/link-ups", file + ".json"), "utf8"));
 const key = requireServiceKey();
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const STATE2 = { Washington: "wa", Oregon: "or", California: "ca", Colorado: "co", Wyoming: "wy", Montana: "mt", Idaho: "id", Utah: "ut", Nevada: "nv", "New Mexico": "nm", Alaska: "ak", Arizona: "az", "New Hampshire": "nh", "New York": "ny", Maine: "me", Vermont: "vt" };
+const STATE2 = { Washington: "wa", Oregon: "or", California: "ca", Colorado: "co", Wyoming: "wy", Montana: "mt", Idaho: "id", Utah: "ut", Nevada: "nv", "New Mexico": "nm", Alaska: "ak", Arizona: "az", "New Hampshire": "nh", "New York": "ny", Maine: "me", Vermont: "vt", "British Columbia": "bc", Alberta: "ab" };
 
 // The distinctive word(s) of a summit name: "Mount Index (North Peak)" -> "Index".
 function core(peak) {

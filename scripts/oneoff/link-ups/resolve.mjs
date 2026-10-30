@@ -19,7 +19,7 @@ if (!file) throw new Error("usage: resolve.mjs <research file name without .json
 const list = JSON.parse(fs.readFileSync(path.join(ROOT, "research-data/link-ups", file + ".json"), "utf8"));
 const key = requireServiceKey();
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const STATE2 = { Washington: "wa", Oregon: "or", California: "ca", Colorado: "co", Wyoming: "wy", Montana: "mt", Idaho: "id", Utah: "ut", Nevada: "nv", "New Mexico": "nm", Alaska: "ak", Arizona: "az", "New Hampshire": "nh", "New York": "ny", Maine: "me", Vermont: "vt" };
+const STATE2 = { Washington: "wa", Oregon: "or", California: "ca", Colorado: "co", Wyoming: "wy", Montana: "mt", Idaho: "id", Utah: "ut", Nevada: "nv", "New Mexico": "nm", Alaska: "ak", Arizona: "az", "New Hampshire": "nh", "New York": "ny", Maine: "me", Vermont: "vt", "British Columbia": "bc", Alberta: "ab" };
 const STOP = new Set(["mount", "mt", "peak", "mountain", "the", "of", "via", "route", "and", "from", "to", "standard", "ridge", "glacier", "face", "side", "trail", "approach", "a"]);
 
 function core(peak) {
