@@ -1,0 +1,12 @@
+[
+ {"id": "wa_mount_appleton_standard", "verdict": "ALTERNATE_ONLY", "why": "Primary variant is the Sol Duc River Trail (day1 17 mi from Sol Duc). The Boulder Creek/Elwha variant would add ~8 road miles (NPS) but stores no distMi and no published trailhead-to-objective total exists, so no variantPatch (never guess)."},
+ {"id": "wa_mount_barnes_scramble", "verdict": "NO_CHANGE", "why": "Sol Duc to Whiskey Bend traverse (shape point): the road is on the exit end only (+6.5 mi once), but the applier adds walkMi to both first and last days, which would double it. Owner may add 6.5 to day 6 by hand."},
+ {"id": "wa_mount_christie_west", "verdict": "ALTERNATE_ONLY", "why": "Primary is North Fork Quinault (5 days); the Whiskey Bend variant is the alternate and stores no distMi; no sourced total, so no patch."},
+ {"id": "wa_mount_ferry_standard", "verdict": "NO_CHANGE", "why": "Most common approach starts at Sol Duc; Elwha is only the exit of the traverse, and the day5 exit of 5 mi does not fit the Elwha trail, so the itinerary cannot be corrected from sources; the applier also cannot add the road at one end only."},
+ {"id": "wa_mount_norton_scramble", "verdict": "PLAN", "why": "+6.5 mi each way (NPS); stored miles start at Whiskey Bend (16.8 mi = row's ~16 mi to Hayes River). No sourced gain."},
+ {"id": "wa_mount_noyes_standard", "verdict": "ALTERNATE_ONLY", "why": "Standard approach is North Fork Quinault (~16 mi one way, dist_km 46.03). The Elwha approach (~28 mi plus the road) is the alternate and stores no distMi; no patch."},
+ {"id": "wa_mount_pulitzer_standard", "verdict": "NO_CHANGE", "why": "Sol Duc start, Whiskey Bend exit: the road adds ~6.5 mi at the exit end only, which the applier cannot express (it adds both ends). Owner may add 6.5 to day 5 by hand."},
+ {"id": "wa_mount_queets_south", "verdict": "PLAN", "why": "+6.5 mi each way (NPS); stored miles start at Whiskey Bend (26 mi to Chicago Camp). No sourced gain."},
+ {"id": "wa_mount_seattle_south", "verdict": "ALTERNATE_ONLY", "why": "Primary is Low Divide via North Fork Quinault; Elwha is the alternate and stores no distMi; no patch."},
+ {"id": "wa_mount_wilder_scramble", "verdict": "PLAN", "why": "+6.5 mi each way (NPS); stored miles start at Whiskey Bend. No sourced gain."}
+]
