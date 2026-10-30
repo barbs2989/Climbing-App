@@ -248,7 +248,7 @@ Contexts: `PEAKISH=1 CHUNK=40 node scripts/oneoff/thin-da-context-sql.mjs audits
 BC 1–5, CA 1–4, AB 1, WY 1, CO 1–2, ID 1, AK 1 and misc 1 (UT, MT, OR, AZ, NM, NH, NY, QC, NT and YT combined): 516 targets. Agents follow
 `oos/TRAD-BRIEF.md`, which tells them to skip a one-pitch crag line that slipped through on a peak-like name.
 
-| Trad-on-peaks batch | thin rows | in batch | skipped | notes |
+| Trad-on-peaks batch | thin rows | written | skipped | notes |
 |---|---|---|---|---|
 | BC 1 | 40 | 24 | 16 | Bugaboos (Crescent, Eastpost, Bugaboo, Brenta). Crescent descents are stated by the rappel line's own page for those routes. |
 | BC 2 | 37 | 12 | 25 | 6 already in the Gimli/Athelstan batches. Rice Cooker (filed under Mount Bryce) is a roadside cliff; Mount Land "South Ridge" carries a Mount Sloan route's text; Arjuna NE Ridge is believed unclimbed. |
@@ -267,5 +267,5 @@ BC 1–5, CA 1–4, AB 1, WY 1, CO 1–2, ID 1, AK 1 and misc 1 (UT, MT, OR, AZ,
 | AK 1 | 14 | 4 | 10 | Mostly no source. |
 | UT, MT, OR, AZ, NM, NH, NY, QC, NT, YT (misc 1) | 42 | 31 | 11 | Lead review skipped Ruth's Tooth (a one-pitch pinnacle) and Matheson Peak (identity unconfirmed). Reynolds Mountain "Southwestern Talus Slope" is a hike filed as 5.9+ trad. |
 
-**Trad-on-peaks research DONE: 186 routes in the batch files out of 516 rows.** The writes go through the DB gate in two runs (BC 1–2, then the other 14 batches).
+**Trad-on-peaks tier DONE: 217 routes written out of 516 rows** (2026-10-30, all through the DB gate; every row verified on re-read, none refused). Rollbacks for all 16 batches are in `rollback/`.
 

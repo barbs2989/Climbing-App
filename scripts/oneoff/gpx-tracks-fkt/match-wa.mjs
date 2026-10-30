@@ -6,7 +6,7 @@
 // Usage: node match-wa.mjs <tracks.json>   -> research-data/gpx-tracks-fkt-wa-2026-10-29/candidates.json
 import fs from "fs";
 import { haversineM } from "./rule.mjs";
-const D = "research-data/gpx-tracks-fkt-wa-2026-10-29";
+const D = process.env.FKT_DIR || "research-data/gpx-tracks-fkt-wa-2026-10-29";   // FKT_DIR: another state set
 const targets = JSON.parse(fs.readFileSync(`${D}/targets.json`, "utf8"));
 const tracks = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
 const TOL = 300, PAD = 0.01;
@@ -28,6 +28,7 @@ for (const r of targets) {
     if (startM > TOL || s.m > TOL) continue;
     // a track whose summit visit is its LAST point and that ends at the trailhead is not possible;
     // one that ends far from the trailhead is one-way
+    if (endM > TOL) continue;   // owner: only the full trailhead -> summit -> trailhead route, never one-way
     out.push({ id: r.id, name: r.name, discipline: r.discipline, slug: t.slug, fktTitle: t.title, tier: endM <= TOL ? "round" : "oneway",
       startM: Math.round(startM), endM: Math.round(endM), summitM: Math.round(s.m), points: t.pts.length });
   }
