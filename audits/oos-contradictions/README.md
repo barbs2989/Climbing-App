@@ -20,12 +20,12 @@ Every one of the 3,358 rows was read (coverage checked by id). Out-of-state rows
 |---|---|---|
 | Contradictions found by readers | 45 | 94 |
 | Fixed, 2+ agreeing sources | 17 | 20 |
-| Fixed, row's own fields + 1 source | 5 | 18 |
+| Fixed, row's own fields + 1 source | 5 | 19 |
 | Not actually a contradiction | 18 | 28 |
-| **Still open** (`unresolved.txt`) | 0 | 19 |
-| Patches applied live | 26 on 17 routes | 43 on 36 routes |
+| **Still open** (`unresolved.txt`) | 0 | 18 |
+| Patches applied live | 26 on 17 routes | 44 on 37 routes |
 
-**69 patches on 53 routes**, each compare-and-set against the live row, paced ≥1.2 s, re-read after
+**70 patches on 54 routes**, each compare-and-set against the live row, paced ≥1.2 s, re-read after
 writing; rollback values in `applied/` and `p2/applied/`. `verify-live.mjs` re-read all 66 patched
 columns at the end: all hold.
 
@@ -46,11 +46,13 @@ columns at the end: all hold.
 ## Decisions made on the owner's behalf (pre-approved 2026-10-28)
 - **Blank a provably false header value** rather than leave it or guess (Mountain Project and theCrag show no
   pitch count when unknown; a missing tile misleads nobody, "1 pitch" on a 1,000 m face does).
-- **Never lower a grade on one source** (standing rule: keep the higher) — the Fourteen A1→A0 patch was dropped.
+- **Keep the higher grade** protects a PUBLISHED grade. The Fourteen (Lowers, GA) is the exception that proves it: its
+  `aid_grade` A1 appears in no source, while both listings and the row's own grade say A0. So it was set to A0
+  under the owner's one-source rule for leftovers (2026-10-01).
 - First-ascent contradictions are out of scope (owner, 2026-10-30).
 - The Prow (Peyto Tower) stays 5.9: the 5.10b is one climber's pitch note, not a published grade.
 
-## Still open (19, phase 2) — `p2/unresolved.txt`
+## Still open (18, phase 2) — `p2/unresolved.txt`
 Single-source routes where the route's only page contradicts itself (Station D North Buttress, Guillotine,
 Spyin' n Flyin', 29 Fingers' per-pitch metres, La Ruée vers l'Or) or sources split (Athabasca North Face
 var., Illusion Traverse au cheval end, Green Thunder's 3rd-class length). A guidebook settles them; do not

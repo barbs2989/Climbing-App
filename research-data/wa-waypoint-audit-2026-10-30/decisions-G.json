@@ -1,0 +1,283 @@
+[
+ {
+  "id": "wa_bears_breast_mountain_infinite_beauty",
+  "i": 0,
+  "name": "Salmon La Sac Trailhead",
+  "from": [
+   47.4092,
+   -121.1038
+  ],
+  "op": "none",
+  "coordinate_key": "47.4092,-121.1038",
+  "source": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/salmon-la-sac-trailhead",
+  "quote": "Latitude: 47.4092 / Longitude: -121.1038",
+  "second_source": "https://www.wta.org/go-hiking/hikes/waptus-river",
+  "reason": "Verified 0 m: the Forest Service Salmon La Sac Trailhead page (Waptus River #1310 / Cooper River #1311 trailhead) publishes exactly the stored point; WTA Waptus River page prints the same 47.4092,-121.1038. A Greenway Trust listing gives 47.409431,-121.107165 (about 250 m from it); the Forest Service point is the one used. 3DEP at stored point is consistent with 2,500 ft."
+ },
+ {
+  "id": "wa_washington_ellinor_traverse_ridge",
+  "i": 3,
+  "name": "Mount Ellinor Upper Trailhead",
+  "from": [
+   47.51022,
+   -123.24815
+  ],
+  "op": "none",
+  "coordinate_key": "47.51022,-123.24815",
+  "source": "https://www.fs.usda.gov/r06/olympic/recreation/mt-ellinor-upper-trailhead",
+  "quote": "Latitude: 47.510466 / Longitude: -123.247912",
+  "reason": "Verified 33 m: Forest Service Mt Ellinor Upper Trailhead page publishes 47.510466,-123.247912. 3DEP: stored 3536 ft, published 3519 ft, pin elev 3500."
+ },
+ {
+  "id": "wa_mount_ellinor_standard",
+  "i": 1,
+  "name": "Mount Ellinor Upper Trailhead (NFR 24)",
+  "from": [
+   47.5103014,
+   -123.2477182
+  ],
+  "op": "none",
+  "coordinate_key": "47.5103014,-123.2477182",
+  "source": "https://www.fs.usda.gov/r06/olympic/recreation/mt-ellinor-upper-trailhead",
+  "quote": "Latitude: 47.510466 / Longitude: -123.247912",
+  "reason": "Verified 23 m: Forest Service Mt Ellinor Upper Trailhead page publishes 47.510466,-123.247912. 3DEP: stored 3525 ft, published 3519 ft, pin elev 3500."
+ },
+ {
+  "id": "wa_mount_pershing_standard",
+  "i": 0,
+  "name": "Jefferson Creek Crossing (FR 2401)",
+  "from": [
+   47.545078,
+   -123.228973
+  ],
+  "op": "none",
+  "coordinate_key": "47.545078,-123.228973",
+  "source": "https://www.fs.usda.gov/r06/olympic/recreation/jefferson-lake-trailhead",
+  "quote": "Latitude: 47.5611 / Longitude: -123.19814",
+  "reason": "No published coordinate for the Jefferson Creek crossing pullout on FR 2401 (road crossing, no sign). The Forest Service Jefferson Lake Trailhead page (47.5611,-123.19814) is the trailhead at the end of the road, 2.9 km away and at 1,834 ft, a different spot from the pin the route describes; stored point's 3DEP ground is 2517 ft against the pin's 2440 ft. Left alone."
+ },
+ {
+  "id": "wa_grotto_mountain_e_route",
+  "i": 0,
+  "name": "NF-6514-410 road's end",
+  "from": [
+   47.76305,
+   -121.39002
+  ],
+  "op": "none",
+  "coordinate_key": "47.76305,-121.39002",
+  "source": "",
+  "quote": "",
+  "reason": "No published coordinate for the NF-6514-410 road-end pullout. USGS GNIS Grotto Mountain summit is at 47.76322,-121.42059 (not a trailhead). SummitPost (via search snippet; the page itself blocked fetch) puts an unofficial, unmarked Eagle Lake trailhead near N47 46.688 W121 23.077 = 47.77813,-121.38462, a different spot from this road end. Left alone."
+ },
+ {
+  "id": "wa_spinnaker_peak_s_route",
+  "i": 0,
+  "name": "Yodelin Trailhead / US 2 Pullout",
+  "from": [
+   47.765955,
+   -121.078176
+  ],
+  "op": "none",
+  "coordinate_key": "47.765955,-121.078176",
+  "source": "",
+  "quote": "",
+  "reason": "No published coordinate for the Yodelin lot. WTA Skyline Lake gives 47.7473,-121.0885 (Stevens Pass Nordic area) and WTA Spinnaker gives 47.7833,-121.1103; a Welldiggers Ass write-up lists N47 46.158 W121 3.018 (47.7693,-121.0503) as the route, not the lot. None is the lot. Unverified, left alone."
+ },
+ {
+  "id": "wa_eagle_rock_scramble",
+  "i": 0,
+  "name": "FR6517 Roadside Parking",
+  "from": [
+   47.776833,
+   -121.344633
+  ],
+  "op": "none",
+  "coordinate_key": "47.776833,-121.344633",
+  "source": "https://summitpost.org/eagle-rock/805280",
+  "quote": "parking area ... N47 46.610 W121 20.678 (from search snippet)",
+  "reason": "Stored point equals the parking coordinate SummitPost's Eagle Rock page publishes (N47 46.610 W121 20.678 = 47.776833,-121.344633; reached via the search result snippet, since summitpost.org served only a challenge page to a direct fetch, so no verbatim quote from the page itself), 0 m. 3DEP 4103 ft vs pin elev 4150 (47 ft). Verified against that one source only; no second source."
+ },
+ {
+  "id": "wa_baldy_standard",
+  "i": 0,
+  "name": "Maynard Burn (Tyler Peak) Trailhead",
+  "from": [
+   47.882612,
+   -123.143167
+  ],
+  "op": "none",
+  "coordinate_key": "47.882612,-123.143167",
+  "source": "https://www.wta.org/go-hiking/hikes/tyler-peak-trail",
+  "quote": "Co-ordinates: 47.8823, -123.1436",
+  "second_source": "https://www.wta.org/go-hiking/hikes/baldy",
+  "reason": "Verified 47 m: WTA Tyler Peak Trail page publishes Co-ordinates 47.8823,-123.1436 (Hood Canal RD, Maynard Burn / Tyler Peak trailhead); the WTA Baldy page 47.8829,-123.1427 is 40 m away. 3DEP: stored 3182 ft, published 3176 ft, pin elev 3300."
+ },
+ {
+  "id": "wa_gray_wolf_ridge_se_slopes",
+  "i": 0,
+  "name": "Lower Maynard Burn Trail #816 Trailhead",
+  "from": [
+   47.8829,
+   -123.1427
+  ],
+  "op": "none",
+  "coordinate_key": "47.8829,-123.1427",
+  "source": "https://www.wta.org/go-hiking/hikes/baldy",
+  "quote": "Co-ordinates: 47.8829, -123.1427",
+  "second_source": "https://www.wta.org/go-hiking/hikes/tyler-peak-trail",
+  "reason": "Verified 0 m: WTA Baldy page publishes Co-ordinates 47.8829,-123.1427 and lists the Lower Maynard Burn Trail (#816) trailhead. 3DEP at the point 3185 ft vs pin elev 3300."
+ },
+ {
+  "id": "wa_courtney_peak_scramble",
+  "i": 0,
+  "name": "West Fork Buttermilk Trailhead",
+  "from": [
+   48.3114,
+   -120.3365
+  ],
+  "op": "none",
+  "coordinate_key": "48.3114,-120.3365",
+  "source": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/west-fork-buttermilk-trailhead",
+  "quote": "Latitude: 48.3114 / Longitude: -120.3365",
+  "second_source": "https://www.wta.org/go-hiking/hikes/west-fork-buttermilk-river",
+  "reason": "Verified 0 m: Forest Service West Fork Buttermilk Trailhead page (Trail #411) publishes exactly the stored point (a second Forest Service page gives 48.311379,-120.336524, 3 m away); WTA West Fork Buttermilk page gives 48.3111,-120.3368 (39 m). The earlier WTA Star Peak point 2.76 km away was a different place and rightly not used. Stored 3DEP 3954 ft vs pin elev 3960-4000."
+ },
+ {
+  "id": "wa_goode_mountain_megalodon_ridge",
+  "i": 1,
+  "name": "Bridge Creek Trailhead",
+  "from": [
+   48.5049,
+   -120.7191
+  ],
+  "op": "none",
+  "coordinate_key": "48.5049,-120.7191",
+  "source": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/bridge-creek-trailhead",
+  "quote": "Latitude: 48.5049 / Longitude: -120.7191",
+  "reason": "Verified 0 m: Forest Service Bridge Creek Trailhead page publishes exactly the stored point (elevation 4,500 ft on that page). The WTA/other point 930 m away that the first pass found sits near Rainy Pass and is a different spot; the Forest Service point fits the text (just over a mile east of Rainy Pass, north side of SR-20). Stored 3DEP 4543 ft vs pin elev 4400-4500."
+ },
+ {
+  "id": "wa_clean_break",
+  "i": 0,
+  "name": "Silver Star Creek pullout (SR-20, milepost 171)",
+  "from": [
+   48.5986,
+   -120.5879
+  ],
+  "op": "none",
+  "coordinate_key": "48.5986,-120.5879",
+  "source": "GNIS gaz_id 1525794",
+  "quote": "Silver Star Creek, Stream",
+  "reason": "No published coordinate for the SR-20 MP 171 Silver Star Creek pullout. GNIS Silver Star Creek (gaz_id 1525794) starts at 48.59959,-120.58428, 288 m off, which is the stream's end, not the pullout (3DEP 3380 ft vs stored 3427 ft, pin elev 3450). WTA's Silver Star Mountain point 48.5500,-120.6306 is the MP 165 pullout, a different place. Left alone."
+ },
+ {
+  "id": "wa_berdeen_peak_scramble",
+  "i": 0,
+  "name": "Bacon Creek Road End",
+  "from": [
+   48.64467,
+   -121.42308
+  ],
+  "op": "none",
+  "coordinate_key": "48.64467,-121.42308",
+  "source": "",
+  "quote": "",
+  "reason": "Unverified: no published coordinate for the Bacon Creek Road end after searches of USFS/WTA/NPS/SummitPost/Mountaineers; the drivable end shifts with washouts. Left alone."
+ },
+ {
+  "id": "wa_himmelhorn_southeast_route",
+  "i": 1,
+  "name": "Goodell Creek Trailhead",
+  "from": [
+   48.68276,
+   -121.26928
+  ],
+  "op": "none",
+  "coordinate_key": "48.68276,-121.26928",
+  "source": "https://www.recreation.gov/api/camps/campgrounds/246852",
+  "quote": "facility_latitude 48.673, facility_longitude -121.267 (Goodell Creek Campground)",
+  "second_source": "https://www.recreation.gov/api/camps/campgrounds/234089",
+  "reason": "Not moved. Recreation.gov (RIDB) publishes Goodell Creek Campground at 48.673,-121.267 and Upper Goodell Group Campground at 48.6733333,-121.2658333 (rounded to whole seconds), 1.08-1.10 km south of the stored point; GNIS Goodell Creek (gaz_id 1520131) mouth is 48.67263,-121.26486. Those are campground-level points (3DEP 483-487 ft); the stored point reads 606-607 ft against the pins' 600 ft and the route text puts climbers at the Upper Group Campground, which lies up Goodell Creek north of SR-20, so the published points describe a different spot from the one the pins mark. No published coordinate for that spot."
+ },
+ {
+  "id": "wa_east_mcmillan_spire_west_ridge",
+  "i": 0,
+  "name": "Goodell Creek Trail Trailhead (climbers' access near Upper Group Campground)",
+  "from": [
+   48.6828,
+   -121.2693
+  ],
+  "op": "none",
+  "coordinate_key": "48.6828,-121.2693",
+  "source": "https://www.recreation.gov/api/camps/campgrounds/234089",
+  "quote": "facility_latitude 48.6733333, facility_longitude -121.2658333",
+  "reason": "Not moved: same reasoning as 48.68276,-121.26928 (7 m from it). Recreation.gov Upper Goodell Group Campground 48.6733333,-121.2658333 is 1.08 km south at 483 ft vs stored 606 ft (pin elev 600); no published coordinate for the climbers' access behind the Upper Group Campground."
+ },
+ {
+  "id": "wa_davis_peak_nc_south_slope_and_ridge",
+  "i": 0,
+  "name": "Gorge Creek bridge / Gorge Creek Falls parking, SR 20 (~MP 123)",
+  "from": [
+   48.70013,
+   -121.20819
+  ],
+  "op": "move",
+  "to": [
+   48.70152,
+   -121.2104
+  ],
+  "source": "GNIS gaz_id 1529797 (Gorge Creek Falls, Falls)",
+  "quote": "gaz_name Gorge Creek Falls, gaz_featureclass Falls, geometry x -121.2104163812373, y 48.70152149911297",
+  "ground_ft_at_to": 1096,
+  "coordinate_key": "48.70013,-121.20819",
+  "reason": "Stored point is the Gorge Creek stream's mouth in GNIS (gaz_id 1520163, exactly 48.70013,-121.20819), at Gorge Lake level: 3DEP 903 ft against the pin's 1096 ft. The pin is the SR-20 bridge / Gorge Creek Falls parking, and the highway bridge spans the falls; the GNIS falls point is 225 m away and reads 1096 ft, exactly the pin elev. Medium confidence: the falls point is the feature the bridge crosses, not a surveyed parking-lot coordinate; no source publishes the lot itself."
+ },
+ {
+  "id": "wa_north_twin_sister_west_ridge",
+  "i": 0,
+  "name": "Middle Fork Nooksack River Bridge / FR 38 Gate",
+  "from": [
+   48.7669,
+   -122.0394
+  ],
+  "op": "none",
+  "coordinate_key": "48.7669,-122.0394",
+  "source": "https://www.wta.org/go-hiking/hikes/middle-fork-nooksack-river-snowshoe",
+  "quote": "Co-ordinates: 48.7281, -121.9025",
+  "reason": "No published coordinate for the FR 38 gate / Middle Fork Nooksack bridge parking. WTA Middle Fork Nooksack River Snowshoe publishes 48.7281,-121.9025 (Road 38, a different spot about 10 km away). Unverified, left alone."
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_north_route",
+  "i": 0,
+  "name": "Hozomeen Campground / Hozomeen Lake Trailhead (upper loop)",
+  "from": [
+   48.98374,
+   -121.07278
+  ],
+  "op": "none",
+  "coordinate_key": "48.98374,-121.07278",
+  "source": "https://www.recreation.gov/api/search?q=Hozomeen",
+  "quote": "\"latitude\":\"48.98710000000000\",\"longitude\":\"-121.07110000000000\",\"location\":\"Hozomeen Campground, Rockport, Washington\"",
+  "reason": "Not moved. Recreation.gov (RIDB entity 10149323) publishes Hozomeen Campground at 48.9871,-121.0711, 393 m north-northeast of the stored point; NPS GIS and GNIS Hozomeen Creek (gaz_id 1521008, mouth 48.98680,-121.07153) agree on that area. That is the campground's single point; the pin is explicitly the UPPER LOOP, a different part of the campground, and the stored point reads 1675 ft (pin 1650) against 1622 ft at the published point, both within 300 ft. NPS says its campground sites were hand-drawn and approximate. Left alone."
+ },
+ {
+  "id": "wa_davis_peak_nc_north_face",
+  "i": 2,
+  "name": "Gorge Creek bridge, SR 20 (~MP 123) — descent exit and shuttle car",
+  "from": [
+   48.70013,
+   -121.20819
+  ],
+  "op": "move",
+  "to": [
+   48.70152,
+   -121.2104
+  ],
+  "source": "GNIS gaz_id 1529797 (Gorge Creek Falls, Falls)",
+  "quote": "gaz_name Gorge Creek Falls, gaz_featureclass Falls, geometry x -121.2104163812373, y 48.70152149911297",
+  "ground_ft_at_to": 1096,
+  "coordinate_key": "48.70013,-121.20819",
+  "reason": "Same bridge as the South Slope route pin 0; batch A had moved both to the stream mouth. Stored point is the Gorge Creek stream's mouth in GNIS (gaz_id 1520163, exactly 48.70013,-121.20819), at Gorge Lake level: 3DEP 903 ft against the pin's 1096 ft. The pin is the SR-20 bridge / Gorge Creek Falls parking, and the highway bridge spans the falls; the GNIS falls point is 225 m away and reads 1096 ft, exactly the pin elev. Medium confidence: the falls point is the feature the bridge crosses, not a surveyed parking-lot coordinate; no source publishes the lot itself."
+ }
+]
