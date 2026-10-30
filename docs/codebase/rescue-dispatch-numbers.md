@@ -829,6 +829,115 @@ Refused in this pass:
 - Alleghany County, Virginia: no official county page with a labelled dispatch/non-emergency number found; 540-965-1770 seen only on directories; 540-863-6600 is Public Safety admin
 - Centre County, Pennsylvania: no official county page with a current non-emergency number could be opened; 800-479-0050 only on a 2016 flyer
 
+## Hueco Tanks, Spearfish, and the 10-24 route tail (checked 2026-10-30, fifth pass)
+
+Two more of the busiest refused counties re-read, and the 83 uncovered counties holding 10 to 24
+routes that no pass had named. 41 added.
+
+- **El Paso TX (Hueco Tanks) is now covered.** The sheriff's Communications page reads
+  "Non-Emergency: (915) 832-4408". The (915) 546-2280 that search engines still show comes from a
+  page the county has deleted.
+- **Lawrence SD (Spearfish Canyon) is now covered.** The sheriff's PSAP page gives 605-578-2230,
+  and the state DPS contact sheet lists the same number as the sheriff's after-5pm line.
+- Re-read and still refused: Comanche OK, Washakie WY (the sheriff's page lists 307-347-2242
+  only as "Phone"), Jackson IL (office line only), Mariposa (Nixle only).
+- Weak labels taken: Waldo ME (its 24/7 communications centre's own phone), Quay NM ("Dispatch"),
+  Elk ("911 Center"), Leon FL (the joint Tallahassee-Leon dispatch agency). Tazewell VA's page
+  prints "Non-Emergency - 988-0902" with no area code; every other number on it is 276. Where a
+  page prints two or three lines (Mahaska, Cibola, Martin, Kitsap), the first labelled line, or
+  the one not described as a switchboard, is used. Nome takes the Troopers' Interior & Western
+  Alaska line.
+
+| State | County | Number | Read on | Label on the page |
+|---|---|---|---|---|
+| Alaska | Nome Census Area | (907) 451-5100 | dps.alaska.gov/AWT/Contact | Interior & Western Alaska Non-Emergency Dispatch |
+| Colorado | Broomfield | (303) 438-6400 | broomfield.org/1232/Police-Services | non-emergency communications line |
+| Florida | Leon | (850) 606-5800 | tlccda.org/contact-us | NON-EMERGENCIES |
+| Florida | Martin | (772) 220-7170 | mcsofl.org/231/Contact | Non-Emergency and After Hours: 772-220-7000 and 772-220-7170 |
+| Florida | Miami-Dade | (305) 743-7433 | mdso.com | Non-Emergency Phone number 305-Sheriff (743-7433) |
+| Iowa | Mahaska | (641) 672-2557 | mahaskacountyia.gov/911_communications | Non-Emergency (Dispatch) - Dispatch Center: (641) 672-2557, (641) 673-8403 |
+| Kentucky | Edmonson | (270) 597-2729 | edmonsoncounty.org/emergency-dispatch.html | For non-emergency calls, dial 270-597-2729 |
+| Louisiana | Caddo Parish | (318) 675-2170 | caddosheriff.org/content.php?c=92 | Communications (Non-Emergency) |
+| Maine | Waldo | (207) 338-2040 | waldocountyme.gov/185/Communications | Communications - Phone (center open 24 hours, 365 days) |
+| Massachusetts | Dukes | (508) 693-1212 | dukescountysheriff.com/recc | Regional Emergency Comm. Center Non-Emergency |
+| Michigan | Alpena | (989) 354-9830 | alpenacounty.org/235/Non-Emergency-Public-Safety-Local-Utilit | Alpena County Sheriff Department non-emergency |
+| Minnesota | Beltrami | (218) 333-9111 | beltramicountymn.gov/services/public-safety-law-enforcement/emergency-communications | call the non-emergency number at 218-333-9111 |
+| Minnesota | Hennepin | (952) 258-5321 | hennepinsheriff.org/contact | 24/7 dispatch non-emergency |
+| Minnesota | Ramsey | (651) 767-0640 | ramseycountymn.gov/residents/emergency-response-preparedness/reporting-emergency/report-non-emergency | the non-emergency number |
+| Missouri | Ste. Genevieve | (573) 883-5215 | stegencounty.gov/faq | Ste. Genevieve County Central Dispatch (24/7, non-emergency crime reports) |
+| Montana | Meagher | (406) 547-3397 | meagherco.com/sheriff-s-office | Non-Emergency Contact Line |
+| New Mexico | Cibola | (505) 287-9476 | cibolacountynm.com/departments/sheriffs_office/index.php | Non-emergency calls 24-hour Dispatch |
+| New Mexico | Quay | (575) 461-2280 | quaycounty-nm.gov/departments/dispatch | Dispatch |
+| New York | Dutchess | (845) 486-3800 | dutchessny.gov/emergency-services | Non-Emergency Police Contact: Dutchess County Sheriff's Office |
+| North Carolina | Haywood | (828) 452-6666 | haywoodncsheriff.com/about-us | Haywood County Communications (Dispatch), 24 hours daily |
+| North Carolina | Nash | (252) 459-4121 | nashcountync.gov/251/Sheriffs-Office | non-emergency calls and general Sheriff's Office inquiries |
+| North Carolina | Stanly | (704) 986-3700 | stanlycountync.gov/180/Communications-911 | Non-Emergency Phone Number |
+| North Dakota | McKenzie | (701) 444-3654 | mckenziesheriff.net | NON-EMERGENCY DISPATCH LINE |
+| Ohio | Butler | (513) 785-1300 | butlersheriff.org/communications | Non-Emergency Dispatch |
+| Ohio | Geauga | (440) 286-1234 | sheriff.co.geauga.oh.us | Dispatch |
+| Oregon | Curry | (541) 247-3242 | currycountyor.gov/government/county_sheriff/sheriff_s_office_contacts1.php | Non-Emergency: |
+| Oregon | Yamhill | (503) 434-6500 | ycom911.gov/non-emergency-calls | Yamhill County: Area 24/7 Non-Emergency Reporting Numbers |
+| Pennsylvania | Dauphin | (717) 558-6900 | dauphincounty.gov/government/support-services/public-safety/emergency-communications | Non-emergency calls |
+| Pennsylvania | Elk | (814) 776-4601 | countyofelkpa.gov/directories/elk-county-control | 911 Center |
+| Pennsylvania | McKean | (814) 887-4911 | mckeancountypa.gov/departments/emergency_services/index.php | 911 Center Non Emergency |
+| South Dakota | Lawrence | (605) 578-2230 | lawrence.sd.us/228/Division-III---PSAP; dps.sd.gov contact sheet (download_file/441/452) | PSAP (answers 911 and non-emergency calls) Contact Us Phone: 605-578-2230; the state DPS sheet lists the same number as the sheriff's After 5pm line |
+| Texas | Comal | (830) 620-3400 | comalcounty.gov/FAQ.aspx?QID=309 | If non-emergency, call 830-620-3400 |
+| Texas | El Paso | (915) 832-4408 | epcounty.com/1171/Communications | Non-Emergency: (915) 832-4408 (Sheriff's Office Communications Section; the 546-2280 line in search results is from a deleted page) |
+| Texas | Guadalupe | (830) 379-1224 | guadalupetx.gov/page/cosheriff.911 emergency dispatch | non-emergency line at (830) 379-1224 / 24-Hour |
+| Virginia | Chesterfield | (804) 748-1251 | chesterfield.gov/3960/Contact-ECC---911 | Emergency Communications Center non-emergency number |
+| Virginia | Hanover | (804) 365-6140 | hanoversheriff.com/faq | call our non-emergency number, 804-365-6140 |
+| Virginia | Tazewell | (276) 988-0902 | tazewellcountyva.org/246/Sheriffs-Office | Non-Emergency - 988-0902 (printed without area code) |
+| Washington | Kitsap | (360) 328-7711 | kitsap.gov/sheriff/Pages/KCSO-Online-Reporting.aspx | Kitsap 911 non-emergency line |
+| Wisconsin | Ashland | (715) 682-7023 | ashlandcountywi.gov/sheriff_communications | Non Emergency Dispatch |
+| Wisconsin | Eau Claire | (715) 839-4972 | eauclairecounty.gov/departments/sheriff/contact_us | Non-emergency or after hours (after 4:30 pm, weekends, and holidays) |
+| Wisconsin | Waukesha | (262) 446-5070 | waukeshacounty.gov/emergency-preparedness/waukesha-county-communications/important-numbers | Non-Emergency Phone Number (24/7) |
+
+Refused in this pass:
+- Mercer County, New Jersey: Sheriff and communications-centre pages on mercercounty.org returned 403; number seen only in search snippets
+- Pershing County, Nevada: Official sheriff page lists only an unlabelled P: (775) 273-2641
+- Venango County, Pennsylvania: No official county page with a labelled 911/non-emergency number found
+- Portage County, Ohio: Sheriff page (portagecounty-oh.gov) returned 403; (330) 296-5100 option 9 seen only in snippet
+- Clatsop County, Oregon: Number (503) 325-2061 labelled Sheriff Non-Emergency Dispatch only on City of Astoria page, not county/sheriff page; clatsopcounty.gov lists only main (503) 325-8635
+- Kodiak Island Borough, Alaska: Kodiak is a city police area, not covered by a named AST region on dps.alaska.gov/AWT/Contact; no borough-published line
+- Champaign County, Illinois: Sheriff contacts page returned 403; (217) 333-8911 seen only in snippet
+- Stearns County, Minnesota: Official page could not be opened; 320-251-4240 seen only in snippets
+- Mora County, New Mexico: County sheriff page 403; only snippet showing NMSP/MCSO dispatch line
+- Prince George's County, Maryland: County non-emergency dispatch page returned 403; (301) 352-1200 seen only in snippets
+- Amherst County, Virginia: County pages opened list only general (434) 946-9400
+- Tippecanoe County, Indiana: Official sheriff page lists only unlabelled Phone 765-423-9388
+- Shoshone County, Idaho: County directory lists only Sheriff (208) 556-1114, unlabelled
+- Bullitt County, Kentucky: No official page with labelled dispatch number found
+- Gasconade County, Missouri: No official page found
+- Whitfield County, Georgia: Only third-party sources found
+- Love County, Oklahoma: No official page found
+- Ector County, Texas: Only unlabelled main line in directories
+- Dolores County, Colorado: County sheriff page returned 403; number seen only in snippet
+- Reynolds County, Missouri: No official page found
+- Greenlee County, Arizona: Official pages show only main/unlabelled sheriff line (928) 865-4149
+- Waushara County, Wisconsin: No official sheriff/county page found; only news outage notice and city page
+- Pawnee County, Oklahoma: Official site returned 503 on every fetch; (918) 762-2565 seen only in snippet
+- Schuylkill County, Pennsylvania: No county page found; number only on township/Penn State pages
+- Yellow Medicine County, Minnesota: Only unlabelled main sheriff number (320-564-2130) on county page; no dispatch/non-emergency label
+- Judith Basin County, Montana: County page labels numbers non-emergency but they are office-hours (M-F 8-5) admin/dispatcher extensions only
+- Bear Lake County, Idaho: County sheriff page shows (208) 945-2121 with no label
+- Armstrong County, Texas: County page shows sheriff phone with no label
+- Ketchikan Gateway Borough, Alaska: Borough has no police; city PD is a city line; not a census area, no official borough number
+- Dodge County, Wisconsin: Official sheriff site prints (920) 386-3726 with no label (only Emergency: 911 is labelled); county page 404/blocked
+- Hays County, Texas: County pages 403 to fetch; number (512) 393-7896 seen only in search snippets
+- Apache County, Arizona: County pages 403; number/option seen only in search snippet
+- Haines Borough, Alaska: Borough police pages 403; (907) 766-6430 seen only in search snippet
+- Lumpkin County, Georgia: No official page reachable; only third-party/news numbers
+- Forsyth County, Georgia: Official county and sheriff pages 403; numbers seen only in snippets
+- Rusk County, Wisconsin: Official pages show no dispatch/non-emergency number
+- Ontonagon County, Michigan: Official emergency services page lists only director office/cell; no dispatch number
+- Natchitoches Parish, Louisiana: Only news (Parish Journal) states the line; sheriff site shows an unlabelled number
+- Hudson County, New Jersey: Sheriff site renders empty to fetcher; (201) 915-1300 seen only in search snippets
+- Stanislaus County, California: Could not open an official page showing the labelled number (PDFs unreadable)
+- Phelps County, Missouri: County directory lists unlabelled sheriff number; sheriff site 403
+- Ellsworth County, Kansas: County page lists sheriff number as 'Ph.' only; no dispatch label
+- Cullman County, Alabama: Sheriff site labels 785... number only 'Phone'; non-emergency label seen only on Nixle
+- Latah County, Idaho: Official pages show no dispatch/non-emergency number
+
 ## Which counties our routes sit in (census, 2026-10-29)
 
 Each area's direct route count (its `route_count` minus its children's) was placed at its own
