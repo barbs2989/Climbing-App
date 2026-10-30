@@ -35920,3 +35920,55 @@ including one from an AAC Publications page that could not be fetched directly b
 snippet corroborated this row's own stored route description closely enough to confirm the FA.
 
 Next batch will continue id-ascending from `wa_fortune_peak_east_slope` (see progress file).
+
+## Batch 491 (2026-10-30, pass 8)
+
+Checked 8 routes across 6 peaks: Fortune Peak (Standard Route), Four Brothers (Southwest Route),
+South Early Winters Spire (Free Mojo), Frenzel Spitz (South Route), Colchuck Balanced Rock
+(Full Tilt / Tempest Wall Free Version), and Garfield Mountain (East Rib, Infinite Bliss,
+Leaning Spire West Route).
+
+**No confirmed fixes this batch.**
+
+**Flagged for human review (3), no SQL:**
+- `wa_garfield_mountain_infinite_bliss` stores `high_point_ft: 4804`, which is exactly its own
+  trailhead elevation (1,174 ft) plus its own `gain_ft` (3,630) -- an internally self-consistent
+  number, but SummitPost's Garfield Mountain page independently lists the West Peak this route
+  tops out on at 4,896 ft (a 92 ft gap), and no second source could be reached to break the tie
+  (listsofjohn/Peakbagger have no page for this specific sub-summit under any name). Mountain
+  Project's own "2600 ft" figure for the route is pitch length along a low-angle slab, not
+  vertical gain, so it doesn't settle this either way. Left unfixed per a single-source conflict
+  rather than guessed.
+- `wa_full_tilt_tempest_wall_free_version`'s FA credit (nine named climbers, first reported May
+  2013) could not be corroborated or contradicted -- searches surfaced the Tempest Wall's own 2008
+  aid FA (Herrington/Wertkin) and its 2010 team free ascent (Gilkison/Philbin and a separate
+  5.12d team free ascent), but no record of a "Full Tilt" free variation specifically. Plausibly
+  just an obscure, lightly-documented line, consistent with the pattern on other low-traffic
+  Stuart Range free variations; not disputed, just unverified.
+- `wa_garfield_mountain_leaning_spire_west_route`'s FA (Fred Beckey, Lois Graham & Walt Varney,
+  November 9, 1941) is partially corroborated: Mountain Project independently credits Beckey with
+  the West Route's first ascent, matching this row, but names no co-climbers or date, so the full
+  party and the specific November 1941 date remain unconfirmed either way.
+
+**Clean (4):** `wa_fortune_peak_standard_route` (elevation 7,382 ft confirmed via
+Wikipedia/PeakVisor/Mountaineers' Teanaway Twenty list). `wa_four_brothers_southwest_route`
+(elevation 6,485 ft confirmed via Wikipedia, matching Chikamin Ridge/Chikamin Peak parentage;
+the row's own `data_quality.gaps` already documents the Wikipedia-vs-PeakVisor prominence
+disagreement, nothing new to add). `wa_free_mojo` (elevation 7,807 ft for South Early Winters
+Spire confirmed consistent across Wikipedia/SummitPost/Mountain Project; FA credit to Blake
+Herrington and Graham Zimmerman corroborated by a contemporaneous post on Herrington's own
+climbing blog describing the two establishing a free variation of Mojo Rising). `wa_frenzel_spitz_south_route`
+(FA party -- Ed Cooper, Glen Denny, Joan Firey, Joe Firey, George Whitmore, September 1961 --
+confirmed via a dated Mountain Project forum post reproducing Glen Denny's own climbing
+timeline, matching this row's party list exactly).
+
+`wa_garfield_mountain_east_rib` carries almost no stored data beyond `pitches: 3` -- nothing
+present to fact-check against a source, so left alone rather than treated as either clean or
+flagged.
+
+**Method notes:** No write targets this batch, so `check:sql` was not run. en.wikipedia.org,
+www.summitpost.org, and mountainproject.com all failed to resolve directly from this session's
+network (WebFetch), as in prior batches; cross-checks relied on WebSearch's synthesized snippets
+from cached/indexed copies of those pages.
+
+Next batch will continue id-ascending from `wa_garfield_mountain_leaning_spire_west_route` (see progress file).
