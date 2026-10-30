@@ -1,13 +1,24 @@
 import { useState } from "react";
 import { SL } from "../../lib/areaBrowserParts.jsx";
 import RouteRow from "./RouteRow.tsx";
+import type { RouteRowRoute } from "./RouteRow.tsx";
+import type { C as Palette } from "../../ClimbMatchCore.jsx";
 import Chevron from "./Chevron.tsx";
 
 // EVERY classic, five at a time (owner, 2026-10-29: "just have a dropdown after 5 to show them all"). The first five
 // always show; a toggle under them opens the rest. `total` is the whole count when the read was capped, and the open
 // list says so rather than presenting the cap as all of them. `withWall` names each row's wall (areas above a wall).
 const CLASSICS_SHOWN = 5;
-export default function ClassicsList({ rows, total, withWall, onOpen, C }) {
+export interface ClassicsListRow extends RouteRowRoute { id: string | number; area_name?: string | null }
+export interface ClassicsListProps {
+  rows: ClassicsListRow[];
+  /** The whole count when the read was capped. */
+  total?: number | null;
+  withWall?: boolean;
+  onOpen: (r: RouteRowRoute) => void;
+  C: typeof Palette;
+}
+export default function ClassicsList({ rows, total, withWall, onOpen, C }: ClassicsListProps) {
   const [open, setOpen] = useState(false);
   const all = Math.max(total || 0, rows.length), rest = rows.length - CLASSICS_SHOWN;
   const shown = open ? rows : rows.slice(0, CLASSICS_SHOWN);

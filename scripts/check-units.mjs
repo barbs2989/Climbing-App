@@ -901,7 +901,7 @@ async function runFilters() {
   //
   //    Lifted from source rather than bundled: DbAreaBrowser pulls in supabase and the whole DB
   //    layer, and the question here needs neither -- only the bucket table and its formatter.
-  const dbSrc = fs.readFileSync(path.join(ROOT, "lib/DbAreaBrowser.jsx"), "utf8");
+  const dbSrc = readAppFile(path.join(ROOT, "lib/DbAreaBrowser.jsx"));
   const dbMask = dbSrc.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
   const bm = dbMask.match(/const LEN_BUCKETS = (\[[^\n]*\]);/);
   if (!bm) dead("ANCHOR LOST: LEN_BUCKETS in lib/DbAreaBrowser.jsx — the live filter went unchecked.");

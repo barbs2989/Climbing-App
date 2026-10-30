@@ -177,7 +177,22 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 ## 3. Files
 | File | Key symbols |
 |---|---|
-| `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, `AreaPage`, `PartnersHereCard`, `PARTNER_CARD_TYPES`, `StatePicker`, `DbSearchSplit`, `RouteFinderPanel`, `NearMePanel`, `NearbyPeaks`, `ObjectivesPanel`, `DbAreaTree`, `DbSuggestedClimbs`, `SummitBriefing`, `nearbyPeaksBounds` |
+| `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, `AreaPage`, `PARTNER_CARD_TYPES`, `RouteFinderPanel` (its other components moved to `src/components/` in PR65, below) |
+| `src/components/PartnersHereCard.tsx` | `PartnersHereCard`, the area page's partners card |
+| `src/components/StatePicker.tsx` | `StatePicker`, Pick a state |
+| `src/components/DbSearchSplit.tsx` | `DbSearchSplit`, area search results split into areas and climbs |
+| `src/components/NearMePanel.tsx` | `NearMePanel`, Near me, the live map |
+| `src/components/NearbyPeaks.tsx` | `NearbyPeaks`, nearby peaks on an area page |
+| `src/components/ObjectivesPanel.tsx` | `ObjectivesPanel`, Saved objectives in the browser |
+| `src/components/DbAreaTree.tsx` | `DbAreaTree`, the area tree |
+| `src/components/DbSuggestedClimbs.tsx` | `DbSuggestedClimbs`, More climbs in this area |
+| `src/components/SummitBriefing.tsx` | `SummitBriefing`, the peak summary above an area's route list |
+| `src/components/RouteRow.tsx` | `RouteRow`, one climb row in an area list |
+| `src/components/ClassicsList.tsx` | `ClassicsList`, Classic climbs here |
+| `src/components/AreaGettingThere.tsx` | `AreaGettingThere`, an area's Getting there card |
+| `src/components/AddHereFooter.tsx` | `AddHereFooter`, the add-a-climb footer |
+| `lib/nearbyPeaks.js` | `nearbyPeaksBounds`, `nearbyPeaksRows`, `nearbyPeaksLive` |
+| `lib/areaBrowserShared.js` | `rowGrade`, `placeOf`, `haversineMi`, `ATYPE`, `DISCIPLINES` (shared by the area browser's components) |
 | `lib/mapKit.jsx` | `MAP_TILE_URLS`, `TILE_CREDIT`, `loadLeaflet`, `baseTileLayer`, `applyBaseLayer`, `BaseLayerToggle`, `ViewToggle`, `pinHtml`, `useFollowMe`, `acceptFix`, `searchPlaces` |
 | `lib/AreaPageSections.jsx` | `AboutCard`, `AreaFactsCard`, `ClimbsChart`, `GradeSpread`, `MonthStrip`, `PendingAreaEdits`, `bucketLabel` |
 | `src/components/ManageAreasSheet.tsx` | `ManageAreasSheet`, Manage areas (pin and download a state; lifted from App, PR62) |

@@ -5,10 +5,17 @@ import { ScreenHero } from "../../lib/ScreenHero";
 import LoadingRows from "./LoadingRows.tsx";
 import EmptyState from "./EmptyState.tsx";
 import RouteRow from "./RouteRow.tsx";
+import type { RouteRowRoute } from "./RouteRow.tsx";
+import type { C as Palette } from "../../ClimbMatchCore.jsx";
 import { placeOf } from "../../lib/areaBrowserShared.js";
 
 // ── Objectives: your wishlisted routes that fall within the current area ──
-export default function ObjectivesPanel({ area, onOpen, C }) {
+export interface ObjectivesPanelProps {
+  area: { name: string } | null | undefined;
+  onOpen: (r: RouteRowRoute) => void;
+  C: typeof Palette;
+}
+export default function ObjectivesPanel({ area, onOpen, C }: ObjectivesPanelProps) {
   const { wishlist } = useContext(ClimberCtx);
   const { data, isLoading, error } = useScopedWishlistRoutes(area, wishlist);
   return (

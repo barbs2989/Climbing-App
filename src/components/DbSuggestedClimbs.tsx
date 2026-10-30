@@ -5,13 +5,23 @@ import { useScopedWishlistRoutes, useSubtreeRoutes, useRoutesByIds } from "../..
 import { DISCIPLINES, placeOf } from "../../lib/areaBrowserShared.js";
 import Chevron from "./Chevron.tsx";
 import RouteRow from "./RouteRow.tsx";
+import type { RouteRowRoute } from "./RouteRow.tsx";
+import type { C as Palette } from "../../ClimbMatchCore.jsx";
+
+interface DbSuggestedClimbsRow extends RouteRowRoute { id: string | number }
+export interface DbSuggestedClimbsProps {
+  /** The area page the suggestions sit on. */
+  area: { id: string; name?: string };
+  onOpen: (r: RouteRowRoute) => void;
+  C: typeof Palette;
+}
 
 // Suggested Climbs: mirrors the static catalog's SuggestedClimbs (ClimbMatch.jsx)
 // — same layout/copy, but sourced from useScopedWishlistRoutes/useSubtreeRoutes
 // instead of the in-memory ROUTES array. `profile`/`completedIds`/`rankSuggested`
 // are computed once in App (grade/gain scoring lives in ClimbMatch.jsx, which
 // this file doesn't import — see its own header comment on why) and read from ClimberCtx.
-export default function DbSuggestedClimbs({ area, onOpen, C }) {
+export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbsProps) {
   const { profile, completedIds, wishlist, rankSuggested, discSlots } = useContext(ClimberCtx);
   // Collapsed until the climber opens it — the user's call (2026-09-30): the rows are one tap
   // away behind the "Suggested climbs · N" header, never spread across the area page by default.
@@ -37,18 +47,18 @@ export default function DbSuggestedClimbs({ area, onOpen, C }) {
   /* Keep the click order the climber actually produced. The query returns rows in whatever
      order Postgres hands back, and "recent" is a claim about sequence — sorting by the stored
      position is the only thing that makes the heading true. */
-  const recentPos = {}; (recentIds || []).forEach((id, i) => { recentPos[id] = i; });
+  const recentPos: Record<string, number> = {}; (recentIds || []).forEach((id, i) => { recentPos[id] = i; });
   const recent = (recentScoped || [])
-    .filter(r => !completedIds.has(r.id) && !objIds.has(r.id))
+    .filter((r: DbSuggestedClimbsRow) => !completedIds.has(r.id) && !objIds.has(r.id))
     .sort((a, b) => (recentPos[a.id] ?? 99) - (recentPos[b.id] ?? 99))
     .slice(0, 5);
   const recentSet = new Set(recent.map(r => r.id));
-  const candidates = (pool || []).filter(r => !completedIds.has(r.id) && !(wishlist || []).includes(r.id) && !recentSet.has(r.id));
+  const candidates = (pool || []).filter((r: DbSuggestedClimbsRow) => !completedIds.has(r.id) && !(wishlist || []).includes(r.id) && !recentSet.has(r.id));
   /* One climb, one row — two slots can rank the same route and a repeated name reads as a bug. */
   const slots = discSlots ? discSlots(profile, recentAll || []) : [];
-  const claimed = {};
+  const claimed: Record<string | number, number> = {};
   const bands = slots.map(s => {
-    const rows = rankSuggested(candidates.filter(r => !claimed[r.id]), s, { limit: 5 });
+    const rows = rankSuggested(candidates.filter((r: DbSuggestedClimbsRow) => !claimed[r.id]), s, { limit: 5 });
     rows.forEach(r => { claimed[r.id] = 1; });
     return { slot: s, rows };
   }).filter(b => b.rows.length);
@@ -56,10 +66,11 @@ export default function DbSuggestedClimbs({ area, onOpen, C }) {
   const total = objectives.length + recent.length + bands.reduce((n, b) => n + b.rows.length, 0) + popular.length;
   if (!total) return null;
   const lbl = { fontSize: 11.5, fontWeight: 700, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.3, margin: "2px 0 7px" };
-  const discLabel = d => (DISCIPLINES.find(x => x[0] === d) || [, d])[1];
+  // eslint-disable-next-line no-sparse-arrays -- the hole is the fallback pair [, d]: label is d itself
+  const discLabel = (d: string) => (DISCIPLINES.find(x => x[0] === d) || [, d])[1];
   /* Two headings, because they are two different claims and only one of them can be true of a
      climb you have actually done. Never say "you've been climbing X" off a page view. */
-  const bandTitle = s => (s.src === "viewed" ? "Because you've been looking at " : "Because you've been climbing ") + discLabel(s.disc);
+  const bandTitle = (s: { src?: string; disc: string }) => (s.src === "viewed" ? "Because you've been looking at " : "Because you've been climbing ") + discLabel(s.disc);
   return (
     <div style={{ marginTop: 14 }}>
       <button onClick={() => setOpen(o => !o)} aria-expanded={open} style={{minHeight:44, width: "100%", display: "flex", alignItems: "center", gap: 9, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", cursor: "pointer" }}>

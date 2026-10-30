@@ -17,7 +17,8 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
-const FILE = join(ROOT, "lib/DbAreaBrowser.jsx");
+// SummitBriefing is its own component since PR65 (lifted from lib/DbAreaBrowser.jsx).
+const FILE = join(ROOT, "src/components/SummitBriefing.tsx");
 const sum = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 12);
 const ORIGINAL = fs.readFileSync(FILE, "utf8");
 const BEFORE = sum(ORIGINAL);

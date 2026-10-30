@@ -1,12 +1,22 @@
 import { useAreaChildren } from "../../lib/db";
 import { BTN_LG } from "../../lib/buttonStyles.js";
 import Chevron from "./Chevron.tsx";
+import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
 // "Don't see a climb or area here?" — under the list on an area page AND under the route finder's
 // results (owner, 2026-10-23). Add an area is Mountain Project's "Add to Page → Sub-Area", under the
 // same rule MP and our trg_areas_leaf_xor share: an area holds sub-areas OR climbs, so a crag that
 // already lists climbs offers only Add a climb; a country (its states are fixed) offers no new area.
-export default function AddHereFooter({ area, onAddClimb, onAddArea, C }) {
+export interface AddHereFooterArea { id: string; name: string; route_count: number; area_type: string }
+export interface AddHereFooterProps {
+  area: AddHereFooterArea | null | undefined;
+  /** Absent hides "Add a climb". */
+  onAddClimb?: ((area: AddHereFooterArea) => void) | null;
+  /** Absent hides "Add an area". */
+  onAddArea?: ((area: AddHereFooterArea) => void) | null;
+  C: typeof Palette;
+}
+export default function AddHereFooter({ area, onAddClimb, onAddArea, C }: AddHereFooterProps) {
   const { data: kids } = useAreaChildren(onAddArea && area ? area.id : null);
   if (!area || (!onAddClimb && !onAddArea)) return null;
   const holdsClimbs = Array.isArray(kids) && kids.length === 0 && area.route_count > 0;

@@ -1,15 +1,22 @@
 import { useCountries, useStates } from "../../lib/db";
 import { useState } from "react";
+import type { CSSProperties } from "react";
 import { useWideScreen } from "../../lib/wideLayout.js";
 import { subdivisionNoun, countryOfArea } from "../../lib/countries";
 import { SL } from "../../lib/areaBrowserParts.jsx";
 import LoadingRows from "./LoadingRows.tsx";
+import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
 // ── state picker: exact match for the static "Pick a state" AreaBrowse ──
 // The subdivision noun and the country an area sits in come from ./countries, shared with
 // the add-a-climb and list/log pickers so the three cannot drift.
 
-export default function StatePicker({ onPick, C }) {
+export interface StatePickerState { id: string; name: string; route_count?: number | null }
+export interface StatePickerProps {
+  onPick: (state: StatePickerState) => void;
+  C: typeof Palette;
+}
+export default function StatePicker({ onPick, C }: StatePickerProps) {
   const { data: countries, isLoading: lc, error: ec } = useCountries();
   const { data: states, isLoading, error } = useStates();
   const [countryId, setCountryId] = useState("");
@@ -29,13 +36,13 @@ export default function StatePicker({ onPick, C }) {
   const noCountryStep = !!only || !!ec;
   const country = countryId || only || "";
   const noun = subdivisionNoun(country);
-  const inCountry = (states || []).filter(x => !country || countryOfArea(x) === country);
+  const inCountry = (states || []).filter((x: StatePickerState) => !country || countryOfArea(x) === country);
   // THE WEBSITE (lib/wideLayout.js): a desktop has the room to SHOW the regions instead of hiding
   // them in a select, the way Mountain Project's location directory does — the countries as
   // buttons (only when there are two or more) and every region as a card with its climb count.
   // Same data, same onPick, same loading and failure wording as the phone selects below.
   if (wide) {
-    const card = { textAlign: "left", background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", cursor: "pointer", color: C.text };
+    const card: CSSProperties = { textAlign: "left", background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", cursor: "pointer", color: C.text };
     return (
       <div style={{ marginBottom: 14 }}>
         {only ? null : (
@@ -49,18 +56,18 @@ export default function StatePicker({ onPick, C }) {
         <SL C={C}>{`Pick a ${noun}`}</SL>
         {!country && !noCountryStep ? <div style={{ color: C.textMuted, fontSize: 13 }}>{"Choose a country above to see its " + noun + "s."}</div>
           : isLoading ? <div style={{ color: C.textMuted, fontSize: 13 }}>{`Loading ${noun}s…`}</div>
-          : inCountry.length ? <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(190px, 1fr))", gap: 10 }}>{inCountry.map(s => <button key={s.id} onClick={() => onPick(s)} style={card}><div style={{ fontSize: 14.5, fontWeight: 700, overflowWrap: "anywhere" }}>{s.name}</div>{s.route_count != null ? <div style={{ fontSize: 12.5, color: C.textMuted, marginTop: 3 }}>{s.route_count.toLocaleString() + (s.route_count === 1 ? " climb" : " climbs")}</div> : null}</button>)}</div>
+          : inCountry.length ? <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(190px, 1fr))", gap: 10 }}>{inCountry.map((s: StatePickerState) => <button key={s.id} onClick={() => onPick(s)} style={card}><div style={{ fontSize: 14.5, fontWeight: 700, overflowWrap: "anywhere" }}>{s.name}</div>{s.route_count != null ? <div style={{ fontSize: 12.5, color: C.textMuted, marginTop: 3 }}>{s.route_count.toLocaleString() + (s.route_count === 1 ? " climb" : " climbs")}</div> : null}</button>)}</div>
           : error ? <div style={{ color: C.red, fontSize: 12.5 }}>{"Couldn't load " + noun + "s — check your connection and try again."}</div>
           : <div style={{ color: C.textMuted, fontSize: 13 }}>{`No ${noun}s found`}</div>}
         {error && states && states.length ? <div style={{ color: C.textMuted, fontSize: 12.5, marginTop: 8 }}>Couldn't refresh just now — showing the list from your last load.</div> : null}
       </div>
     );
   }
-  const phoneGrid = { display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 8 };
-  const phoneCard = { textAlign: "left", minWidth: 0, minHeight: 56, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", cursor: "pointer", color: C.text, fontFamily: "inherit" };
-  const phoneCardName = { fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" };
+  const phoneGrid: CSSProperties = { display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 8 };
+  const phoneCard: CSSProperties = { textAlign: "left", minWidth: 0, minHeight: 56, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", cursor: "pointer", color: C.text, fontFamily: "inherit" };
+  const phoneCardName: CSSProperties = { fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" };
   const phoneCardSub = { fontSize: 12, color: C.textMuted, marginTop: 2 };
-  const selStyle = { width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600 };
+  const selStyle: CSSProperties = { width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600 };
   return (
     <div style={{ marginBottom: 14 }}>
       {only ? null : (
@@ -80,7 +87,7 @@ export default function StatePicker({ onPick, C }) {
           forever, directly above the error message saying it could not load. Two statements
           contradicting each other, and the app looks hung rather than broken. This is the
           poor-signal path, which for a climbing app is not an edge case. */}
-      <select aria-label={`Select a ${noun}`} value="" disabled={isLoading || !states || (!country && !noCountryStep)} onChange={e => { const s = (states || []).find(x => x.id === e.target.value); if (s) onPick(s); }} style={{ ...selStyle, opacity: (country || noCountryStep) ? 1 : 0.55, cursor: isLoading || !states || (!country && !noCountryStep) ? "default" : "pointer" }}>
+      <select aria-label={`Select a ${noun}`} value="" disabled={isLoading || !states || (!country && !noCountryStep)} onChange={e => { const s = (states || []).find((x: StatePickerState) => x.id === e.target.value); if (s) onPick(s); }} style={{ ...selStyle, opacity: (country || noCountryStep) ? 1 : 0.55, cursor: isLoading || !states || (!country && !noCountryStep) ? "default" : "pointer" }}>
         {/* Data outranks error. A failed REFETCH leaves the previous list intact, so the
             options below are still listed and still work — saying "Couldn’t load states"
             above a populated dropdown contradicts what the user can plainly see, and
@@ -88,7 +95,7 @@ export default function StatePicker({ onPick, C }) {
             nothing to show. Offline this is the common case, not a rare one: the refetch
             cannot succeed, and the list it already has is exactly what was wanted. */}
         <option value="">{!country ? "Choose a country first" : isLoading ? `Loading ${noun}s…` : inCountry.length ? `Select a ${noun}…` : error ? `Couldn’t load ${noun}s` : `No ${noun}s found`}</option>
-        {inCountry.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
+        {inCountry.map((s: StatePickerState) => <option key={s.id} value={s.id}>{s.name}</option>)}
       </select>
       <div style={{ fontSize: 12, color: C.textMuted, marginTop: 9, lineHeight: 1.5 }}>Tap through to drill in to its crags and climbs. Open any area's route list to filter and search by type, grade, stars and more.</div>
       {/* THE SAME LIST AS CARDS under the selects (2026-10-24). On a phone this screen was two
@@ -105,7 +112,7 @@ export default function StatePicker({ onPick, C }) {
       {(country || noCountryStep) && inCountry.length ? (
         <div style={{ marginTop: 16 }}>
           <SL C={C}>{`All ${noun}s`}</SL>
-          <div style={phoneGrid}>{inCountry.map(s => <button key={s.id} onClick={() => onPick(s)} style={phoneCard}><div style={phoneCardName}>{s.name}</div>{s.route_count != null ? <div style={phoneCardSub}>{s.route_count.toLocaleString() + (s.route_count === 1 ? " climb" : " climbs")}</div> : null}</button>)}</div>
+          <div style={phoneGrid}>{inCountry.map((s: StatePickerState) => <button key={s.id} onClick={() => onPick(s)} style={phoneCard}><div style={phoneCardName}>{s.name}</div>{s.route_count != null ? <div style={phoneCardSub}>{s.route_count.toLocaleString() + (s.route_count === 1 ? " climb" : " climbs")}</div> : null}</button>)}</div>
         </div>
       ) : null}
       {isLoading ? <LoadingRows C={C} label="Loading states…" style={{marginTop: 8}}/> : null}

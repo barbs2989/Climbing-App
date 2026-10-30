@@ -1,8 +1,25 @@
 import { DISC_LABELS as DL } from "../../lib/discLabels";
 import { clickable } from "../../lib/clickable";
 import { rowGrade } from "../../lib/areaBrowserShared.js";
+import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
-export default function RouteRow({ r, onOpen, C, areaName }) {
+export interface RouteRowRoute {
+  id?: string | number;
+  name?: string;
+  stars?: number | null;
+  pitches: number;
+  discipline?: keyof typeof DL;
+  sort_order?: number | null;
+}
+export interface RouteRowProps {
+  r: RouteRowRoute;
+  onOpen: (r: RouteRowRoute) => void;
+  C: typeof Palette;
+  /** Names the wall/area the row sits in; null or absent shows none. */
+  areaName?: string | null;
+}
+
+export default function RouteRow({ r, onOpen, C, areaName }: RouteRowProps) {
   const stars = r.stars ? Math.round(r.stars) : 0;
   // The PITCH COUNT sits beside the discipline, as Mountain Project's lists write it ("Trad, 5 pitches"):
   // the stored count, exactly as the route page's Pitches stat shows it. A boulder has no pitches, and neither

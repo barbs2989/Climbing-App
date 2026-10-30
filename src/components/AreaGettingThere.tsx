@@ -1,14 +1,36 @@
 import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_BUT_NOTE_LINE, NO_PARKING_PIN_LINE } from "../../lib/areaChrome";
+import type { CSSProperties } from "react";
+import type { C as Palette } from "../../ClimbMatchCore.jsx";
+
+export interface AreaGettingThereArea {
+  name: string;
+  area_type?: string | null;
+  parking_note?: string | null;
+  approach?: string | null;
+  approach_min?: number | null;
+  parking_name?: string | null;
+  parking_lat?: number | string | null;
+  parking_lng?: number | string | null;
+  lat?: number | string | null;
+  lng?: number | string | null;
+  coords_approx?: boolean | null;
+}
+export interface AreaGettingThereProps {
+  area: AreaGettingThereArea;
+  C: typeof Palette;
+  /** Opens the editor on a field ("approach", "parking_note", "parking_pin"); absent hides every edit control. */
+  onEdit?: ((field: string) => void) | null;
+}
 
 // ── GETTING THERE: drive & park, walk in, and the maps links — the area's own columns only ──
-export default function AreaGettingThere({ area, C, onEdit }) {
+export default function AreaGettingThere({ area, C, onEdit }: AreaGettingThereProps) {
   const note = area.parking_note && String(area.parking_note).trim();
   const walk = area.approach && String(area.approach).trim();
   const park = area.parking_lat != null && area.parking_lng != null && isFinite(Number(area.parking_lat)) && isFinite(Number(area.parking_lng)) ? { lat: Number(area.parking_lat), lng: Number(area.parking_lng) } : null;
   const crag = area.lat != null && area.lng != null ? { lat: Number(area.lat), lng: Number(area.lng) } : null;
   const dest = park || crag;
-  const lbl = { fontSize: 10.5, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
-  const linkSt = { flex: "1 1 0", display: "flex", alignItems: "center", justifyContent: "center", boxSizing: "border-box", minHeight: 44, padding: "8px 10px", borderRadius: 8, border: "1px solid " + C.greenDim, background: C.greenBg, color: C.green, fontSize: 12.5, fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" };
+  const lbl: CSSProperties = { fontSize: 10.5, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
+  const linkSt: CSSProperties = { flex: "1 1 0", display: "flex", alignItems: "center", justifyContent: "center", boxSizing: "border-box", minHeight: 44, padding: "8px 10px", borderRadius: 8, border: "1px solid " + C.greenDim, background: C.greenBg, color: C.green, fontSize: 12.5, fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" };
   const ll = dest ? dest.lat + "," + dest.lng : "";
   const to = park ? "parking" : "crag";
   // The crag-wide parking pin is a suggestable field (0378), so the page offers it where it is missing and where it sits.

@@ -18,6 +18,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
+// rowGrade lives in lib/areaBrowserShared.js since PR65 (moved out of lib/DbAreaBrowser.jsx).
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const sum = (p) => crypto.createHash("sha256").update(fs.readFileSync(p)).digest("hex");
 const run = () => {
@@ -30,7 +31,7 @@ const CLEAN = run();
 if (exits() !== 0) { console.error("REFUSING TO RUN: check:grade-parser is already failing. A dirty tree makes every case unattributable."); process.exit(1); }
 
 const CASES = [
-  { name: "rowgrade-chain-restored", file: "lib/DbAreaBrowser.jsx",
+  { name: "rowgrade-chain-restored", file: "lib/areaBrowserShared.js",
     find: "function rowGrade(r) { return displayGrade(r) || \"—\"; }",
     repl: "function rowGrade(r) { return shortGrade(r.rock_grade || r.ice_grade || r.alpine_grade || r.grade || r.commitment || \"\") || \"—\"; }",
     expect: "the displayed-grade column chain is written more than once", why: "the real second copy, restored verbatim" },
@@ -56,12 +57,12 @@ const CASES = [
     repl: "export function displayGradeX(route) {",
     expect: "no longer exports displayGrade", why: "fails CLOSED rather than skipping the section" },
 
-  { name: "SILENT-comment-naming-the-chain", file: "lib/DbAreaBrowser.jsx",
+  { name: "SILENT-comment-naming-the-chain", file: "lib/areaBrowserShared.js",
     find: "function rowGrade(r) { return displayGrade(r) || \"—\"; }",
     repl: "// was: r.rock_grade || r.ice_grade || r.alpine_grade || r.grade || r.commitment\nfunction rowGrade(r) { return displayGrade(r) || \"—\"; }",
     silent: true, why: "this guard's own documentation quotes the chain; failing on it is a trap" },
 
-  { name: "SILENT-two-spellings-of-one-column", file: "lib/DbAreaBrowser.jsx",
+  { name: "SILENT-two-spellings-of-one-column", file: "lib/areaBrowserShared.js",
     find: "function rowGrade(r) { return displayGrade(r) || \"—\"; }",
     repl: "function _rawAlpine(r) { return r.alpineGrade || r.alpine_grade; }\nfunction _rawRock(r) { return r.rockGrade || r.rock_grade; }\nfunction rowGrade(r) { return displayGrade(r) || \"—\"; }",
     silent: true, why: "two SPELLINGS of one column is what RouteDetail's COMPOSITE GRADE block correctly does" },

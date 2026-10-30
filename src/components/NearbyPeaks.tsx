@@ -4,7 +4,17 @@ import { useMemo } from "react";
 import { SL } from "../../lib/areaBrowserParts.jsx";
 import { clickable } from "../../lib/clickable";
 
-export default function NearbyPeaks({ area, onJumpToArea, C, uDistMi }) {
+import type { C as Palette } from "../../ClimbMatchCore.jsx";
+
+export interface NearbyPeaksRow { a: { id: string; name: string; route_count?: number | null }; mi: number }
+export interface NearbyPeaksProps {
+  area: { id: string; lat?: number | null; lng?: number | null; area_type?: string | null } | null | undefined;
+  onJumpToArea: (a: { id: string; name: string; route_count?: number | null }) => void;
+  C: typeof Palette;
+  /** Formats miles in the climber's units; absent falls back to miles. */
+  uDistMi?: (mi: number) => string;
+}
+export default function NearbyPeaks({ area, onJumpToArea, C, uDistMi }: NearbyPeaksProps) {
   const bounds = nearbyPeaksBounds(area);
   // Called unconditionally — the hook is gated by `enabled: !!bounds`, not by a conditional
   // call, because a hook behind an `if` is the #377 shape check:hooks exists to catch.
@@ -16,7 +26,7 @@ export default function NearbyPeaks({ area, onJumpToArea, C, uDistMi }) {
     <div style={{ marginBottom: 10 }}>
       <SL C={C}>Nearby peaks</SL>
       <div style={{ fontSize: 11.5, color: C.textMuted, margin: "-4px 0 9px", lineHeight: 1.5 }}>Other peaks with routes on file, by straight-line distance from this summit — not driving distance, and not a claim they share a trailhead.</div>
-      {rows.map(({ a, mi }) => (
+      {rows.map(({ a, mi }: NearbyPeaksRow) => (
         <div key={a.id} {...clickable(() => onJumpToArea(a))} style={{ background: C.card, borderRadius: 12, padding: "11px 14px", marginBottom: 9, border: "1px solid " + C.borderHi, cursor: "pointer" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8 }}>
             <span style={{ fontWeight: 700, fontSize: 14.5, color: C.text, minWidth: 0, lineHeight: 1.3, overflowWrap: "anywhere" }}>{a.name}</span>

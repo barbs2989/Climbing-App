@@ -20,7 +20,7 @@ const GUARD = "check:area-surfaces";
 appSources(ROOT, GUARD);
 
 const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
-const browser = fs.readFileSync(path.join(ROOT, "lib/DbAreaBrowser.jsx"), "utf8");
+const browser = readAppFile(path.join(ROOT, "lib/DbAreaBrowser.jsx"));
 const problems = [];
 const ok = (m) => console.log(`  ok    ${m}`);
 

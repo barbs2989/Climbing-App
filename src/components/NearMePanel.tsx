@@ -1,4 +1,5 @@
 import { useRef, useState, useLayoutEffect, useEffect, useMemo } from "react";
+import type { FormEvent } from "react";
 import { useNearbyAreas } from "../../lib/db";
 import { applyBaseLayer, loadLeaflet, pinHtml, useFollowMe, searchPlaces, BaseLayerToggle, locateLabel, ViewToggle } from "../../lib/mapKit";
 import { DISC_COLORS, discIconMarkup } from "../../lib/disciplines";
@@ -10,6 +11,7 @@ import { clickable } from "../../lib/clickable";
 import { createPortal } from "react-dom";
 import LoadingRows from "./LoadingRows.tsx";
 import { DISC_LABELS as DL } from "../../lib/discLabels";
+import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
 // ── Near me: real Leaflet map (same CDN as the static OverviewMap), geolocated,
 // pins from useNearbyAreas driven by the LIVE map viewport — panning/zooming
@@ -24,12 +26,29 @@ import { DISC_LABELS as DL } from "../../lib/discLabels";
 // fixed zoom for every level (the old behavior) zoomed a state-scale "View
 // map" in absurdly tight since it centered on the state's single lat/lng
 // point at the same zoom used for a crag.
-const ZOOM_BY_AREA_TYPE = { world: 2, country: 3, state: 6, range: 8, region: 8, canyon: 10, peak: 12, crag: 13, wall: 14 };
-export default function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }) {
-  const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), tileRef = useRef(null), placeMarkRef = useRef(null);
+const ZOOM_BY_AREA_TYPE: Record<string, number> = { world: 2, country: 3, state: 6, range: 8, region: 8, canyon: 10, peak: 12, crag: 13, wall: 14 };
+export type NearMePanelDisc = keyof typeof DL;
+export interface NearMePanelBounds { minLat: number; maxLat: number; minLng: number; maxLng: number }
+export interface NearMePanelPlace { name: string; sub: string; lat: number; lng: number; bbox: number[][] | null }
+export interface NearMePanelArea { id: string; name: string; lat: number; lng: number; route_count: number; dominant_discipline: NearMePanelDisc; disciplines?: NearMePanelDisc[] | null }
+export interface NearMePanelPick { areas: NearMePanelArea[]; cluster: boolean }
+export interface NearMePanelProps {
+  /** Where the map opens; null opens on the whole country. */
+  center0: { lat: number; lng: number } | null;
+  /** The area_type the map was opened from; picks the first zoom. */
+  areaType: string;
+  name?: string | null;
+  onBack: () => void;
+  onOpenArea: (a: NearMePanelArea) => void;
+  C: typeof Palette;
+  /** Formats miles in the climber's units; absent falls back to miles. */
+  uDistMi?: (mi: number) => string;
+}
+export default function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }: NearMePanelProps) {
+  const mapDiv = useRef<HTMLDivElement | null>(null), mapRef = useRef<LeafletAny>(null), markRef = useRef<LeafletAny>(null), tileRef = useRef<LeafletAny>(null), placeMarkRef = useRef<LeafletAny>(null);
   const [ready, setReady] = useState(false);
   const [mapFail, setMapFail] = useState(false);
-  const [bounds, setBounds] = useState(null);
+  const [bounds, setBounds] = useState<NearMePanelBounds | null>(null);
   const [center, setCenter] = useState(center0 || null);
   const [baseLayer, setBaseLayer] = useState("street");
   // WHAT YOU TAPPED, listed BELOW the map (2026-10-24, owner: "Sometimes when you click on the circle,
@@ -40,16 +59,16 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   // zoom) nothing happened at all. Now a circle zooms AND lists its areas here, and a single pin
   // lists its one area here instead of a card over the map. The list survives the zoom it causes:
   // it is cleared by its own ✕, a tap on the bare map, or a tap on another circle.
-  const [pick, setPick] = useState(null);
+  const [pick, setPick] = useState<NearMePanelPick | null>(null);
   // Go to a town, county, or zip/postal code (US and Canada). `alts` are the other matches, offered as "Not it?".
   const [placeQ, setPlaceQ] = useState("");
-  const [place, setPlace] = useState({ busy: false, err: "", alts: [] });
+  const [place, setPlace] = useState<{ busy: boolean; err: string; alts: NearMePanelPlace[] }>({ busy: false, err: "", alts: [] });
   const [fullscreen, setFullscreen] = useState(false);
   // Type-of-climbing filter over what is in view. Matches EVERY type an area holds
   // (`disciplines`, 0198: any type with at least one climb; on a peak, crag types count as
   // alpine; top rope is its own type since 0202), so a mostly-sport crag with trad lines shows under both.
   // Falls back to the main type for a row read before that column existed.
-  const [disc, setDisc] = useState(null);
+  const [disc, setDisc] = useState<NearMePanelDisc | null>(null);
 
   // FULL SCREEN IS A REAL FULL-SCREEN VIEW, drawn over the whole app like the route map's. It used
   // to stretch the map in place, in the page's flow: on a phone it ran on under the bottom bar, the
@@ -60,7 +79,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   // back drops you exactly where you were. The map is rendered through a portal into `host`, a div
   // this panel owns, and only `host` moves: into document.body for full screen, back into the
   // inline slot for the page. Moving a node keeps everything inside it, Leaflet included.
-  const hostRef = useRef(null), slotRef = useRef(null), wasFullRef = useRef(false);
+  const hostRef = useRef<HTMLDivElement | null>(null), slotRef = useRef<HTMLDivElement | null>(null), wasFullRef = useRef(false);
   if (!hostRef.current && typeof document !== "undefined") hostRef.current = document.createElement("div");
   // Layout, not passive: the map div must be in the document before Leaflet's init effect measures it.
   useLayoutEffect(() => {
@@ -70,33 +89,33 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
     else if (slotRef.current) {
       slotRef.current.appendChild(host);
       // While the map was away the page was shorter and its scroll clamped: put the map back in view.
-      if (wasFullRef.current) { wasFullRef.current = false; try { slotRef.current.scrollIntoView({ block: "nearest" }); } catch (e) {} }
+      if (wasFullRef.current) { wasFullRef.current = false; try { slotRef.current.scrollIntoView({ block: "nearest" }); } catch (e) { /* the map is gone or not laid out yet; nothing to update */ } }
     }
-    if (mapRef.current) { try { mapRef.current.invalidateSize(); } catch (e) {} }
+    if (mapRef.current) { try { mapRef.current.invalidateSize(); } catch (e) { /* the map is gone or not laid out yet; nothing to update */ } }
   }, [fullscreen]);
   useEffect(() => () => { if (hostRef.current) hostRef.current.remove(); }, []);
   useEffect(() => {
     if (!fullscreen) return;
-    const onKey = e => { if (e.key === "Escape") setFullscreen(false); };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setFullscreen(false); };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [fullscreen]);
   const { data, isLoading, error } = useNearbyAreas(bounds);
-  const nearbyAll = data && data.rows;
-  const typesOf = a => Array.isArray(a.disciplines) ? a.disciplines : (a.dominant_discipline ? [a.dominant_discipline] : []);
+  const nearbyAll: NearMePanelArea[] | undefined = data && data.rows;
+  const typesOf = (a: NearMePanelArea) => Array.isArray(a.disciplines) ? a.disciplines : (a.dominant_discipline ? [a.dominant_discipline] : []);
   const nearby = useMemo(() => nearbyAll && (disc ? nearbyAll.filter(a => typesOf(a).includes(disc)) : nearbyAll), [nearbyAll, disc]);
   const discsInView = useMemo(() => {
-    const n = {};
+    const n: Record<string, number> = {};
     (nearbyAll || []).forEach(a => typesOf(a).forEach(d => { n[d] = (n[d] || 0) + 1; }));
     if (disc && !n[disc]) n[disc] = 0; // keep the active chip on screen so it can be cleared
-    return Object.entries(n).sort((a, b) => b[1] - a[1]);
+    return (Object.entries(n) as [NearMePanelDisc, number][]).sort((a, b) => b[1] - a[1]);
   }, [nearbyAll, disc]);
 
-  const readBounds = map => {
+  const readBounds = (map: LeafletAny) => {
     try {
       const b = map.getBounds();
       setBounds({ minLat: b.getSouth(), maxLat: b.getNorth(), minLng: b.getWest(), maxLng: b.getEast() });
-    } catch (e) {}
+    } catch (e) { /* the map is gone or not laid out yet; nothing to update */ }
   };
 
   useEffect(() => {
@@ -115,7 +134,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
       setReady(true);
       map.on("moveend", () => readBounds(map));
       map.on("click", () => setPick(null));
-      setTimeout(() => { try { map.invalidateSize(); readBounds(map); } catch (e) {} }, 150);
+      setTimeout(() => { try { map.invalidateSize(); readBounds(map); } catch (e) { /* the map is gone or not laid out yet; nothing to update */ } }, 150);
       // ...and again whenever the map's box really changes size. On a slow phone the box can still
       // be unlaid-out at 150ms: the query then asked for a near-zero box, got no areas, and the
       // map said "No climbs in view" over a whole state until the climber panned.
@@ -125,15 +144,15 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
           const k = Math.round(e.contentRect.width) + "x" + Math.round(e.contentRect.height);
           if (k === last || !mapRef.current) return;
           last = k;
-          try { map.invalidateSize(); readBounds(map); } catch (err) {}
+          try { map.invalidateSize(); readBounds(map); } catch (err) { /* the map is gone or not laid out yet; nothing to update */ }
         });
         ro.observe(mapDiv.current);
       }
     };
-    let ro = null;
+    let ro: ResizeObserver | null = null;
     loadLeaflet(init, () => setMapFail(true));
     const ft = setTimeout(() => { if (!cancelled && !mapRef.current) setMapFail(true); }, 9000);
-    return () => { cancelled = true; clearTimeout(ft); if (ro) ro.disconnect(); if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; tileRef.current = null; placeMarkRef.current = null; } };
+    return () => { cancelled = true; clearTimeout(ft); if (ro) ro.disconnect(); if (mapRef.current) { try { mapRef.current.remove(); } catch (e) { /* the map is gone or not laid out yet; nothing to update */ } mapRef.current = null; markRef.current = null; tileRef.current = null; placeMarkRef.current = null; } };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps -- builds the Leaflet map once; area type, base layer and centre are applied by their own effects and a rebuild would reset the view
   useEffect(() => { if (!mapRef.current) return; applyBaseLayer(mapRef.current, tileRef, baseLayer); }, [baseLayer]);
 
@@ -184,7 +203,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
         mk.bindTooltip(n + " areas · " + climbs + (climbs === 1 ? " climb" : " climbs") + " — tap to zoom in", { direction: "top" });
         mk.on("click", () => {
           setPick({ areas, cluster: true });
-          try { map.fitBounds(L.latLngBounds(areas.map(a => [a.lat, a.lng])), { padding: [50, 50], maxZoom: 15 }); } catch (e) {}
+          try { map.fitBounds(L.latLngBounds(areas.map(a => [a.lat, a.lng])), { padding: [50, 50], maxZoom: 15 }); } catch (e) { /* the map is gone or not laid out yet; nothing to update */ }
         });
         grp.addLayer(mk);
       }
@@ -204,7 +223,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   // map off the area you opened it on. Never asks: the button above does that.
   useEffect(() => { if (ready) me.showDot(); }, [ready]); // eslint-disable-line react-hooks/exhaustive-deps -- shows the dot once when the map becomes ready; me is a per-render hook result
 
-  const goToPlace = p => {
+  const goToPlace = (p: NearMePanelPlace) => {
     const L = window.L, map = mapRef.current;
     if (!L || !map || !p) return;
     me.release();
@@ -213,9 +232,9 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
       if (placeMarkRef.current) map.removeLayer(placeMarkRef.current);
       const html = "<div style='width:16px;height:16px;border-radius:50%;background:" + C.blueSolid + ";border:3px solid #fff;box-shadow:0 0 0 4px " + C.blueSolid + "55,0 2px 7px rgba(0,0,0,0.6);'></div>";
       placeMarkRef.current = L.marker([p.lat, p.lng], { icon: L.divIcon({ html, className: "", iconSize: [16, 16], iconAnchor: [8, 8] }), zIndexOffset: 1000 }).bindTooltip(p.name, { direction: "top", permanent: true }).addTo(map);
-    } catch (e) {}
+    } catch (e) { /* the map is gone or not laid out yet; nothing to update */ }
   };
-  const findPlace = e => {
+  const findPlace = (e?: FormEvent) => {
     if (e) e.preventDefault();
     const q = placeQ.trim();
     if (!q || place.busy) return;
@@ -237,7 +256,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
     const withDist = viewCenter ? nearby.map(a => ({ ...a, _mi: haversineMi(viewCenter, a) })) : nearby.map(a => ({ ...a, _mi: null }));
     return withDist.sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)).slice(0, 60);
   }, [nearby, viewCenter]);
-  const discChip = (k, label, on) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
+  const discChip = (k: NearMePanelDisc | null, label: string, on: boolean) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
 
   const searchUI = (
     <>
@@ -334,7 +353,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
             </div>
           ) : null}
           {data && data.total != null && !disc && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
-          {disc && (nearby.length > sorted.length || (data && data.total > nearbyAll.length)) ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing " + sorted.length + " " + (DL[disc] || disc).toLowerCase() + (sorted.length === 1 ? " area" : " areas") + " — zoom in to see more."}</div> : null}
+          {disc && ((nearby as unknown[]).length > sorted.length || (data && (data.total as number) > (nearbyAll as unknown[]).length)) ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing " + sorted.length + " " + (DL[disc] || disc).toLowerCase() + (sorted.length === 1 ? " area" : " areas") + " — zoom in to see more."}</div> : null}
           {sorted.map(a => (
             <div key={a.id} {...clickable(() => onOpenArea(a))} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontWeight: 700, fontSize: 14.5, color: C.text }}>{a.name}</span>

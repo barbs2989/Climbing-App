@@ -3,6 +3,28 @@ import { DISC_LABELS as DL } from "../../lib/discLabels";
 import { gradeNumFrom, topGrade } from "../../lib/grade";
 import { effDistKm } from "../../lib/outing";
 import { CardHead } from "../../lib/areaBrowserParts.jsx";
+import type { C as Palette } from "../../ClimbMatchCore.jsx";
+
+export interface SummitBriefingRoute {
+  name?: string;
+  discipline?: string | null;
+  rock_grade?: string | null;
+  gain_ft?: number | string | null;
+  high_point_ft?: number | string | null;
+  [column: string]: unknown;
+}
+interface SummitBriefingSpanEntry { r: SummitBriefingRoute; v: number }
+export interface SummitBriefingProps {
+  /** The peak's area row. */
+  area: { elevation_ft?: number | null };
+  /** The rows the page has already fetched for this area. */
+  routes: SummitBriefingRoute[] | null | undefined;
+  /** Elevation formatter in the climber's units; absent falls back to feet. */
+  uElev?: ((ft: number) => string) | null;
+  /** Distance (miles) formatter in the climber's units; absent falls back to km. */
+  uDistMi?: ((mi: number) => string) | null;
+  C: typeof Palette;
+}
 
 // ── SUMMIT BRIEFING: what a peak page knows that its route rows never say ──
 //
@@ -19,18 +41,18 @@ import { CardHead } from "../../lib/areaBrowserParts.jsx";
 // Everything here comes from `useAreaRoutes`, which the page has already fetched and which
 // selects `*` — so this is a new READING of rows already in memory, not a new query, and it
 // cannot fail separately from the route list it sits above.
-const ALPINE_FAMILY = ["alpine", "mountaineering", "scrambling", "ice", "mixed"];
+const ALPINE_FAMILY: Array<string | null | undefined> = ["alpine", "mountaineering", "scrambling", "ice", "mixed"];
 // Smallest and largest of a numeric column, each with the route it came from.
-function numericSpan(routes, pick) {
-  const vals = routes.map(r => ({ r, v: Number(pick(r)) })).filter(x => Number.isFinite(x.v) && x.v > 0);
+function numericSpan(routes: SummitBriefingRoute[], pick: (r: SummitBriefingRoute) => unknown) {
+  const vals = routes.map((r): SummitBriefingSpanEntry => ({ r, v: Number(pick(r)) })).filter((x: SummitBriefingSpanEntry) => Number.isFinite(x.v) && x.v > 0);
   if (!vals.length) return null;
-  vals.sort((a, b) => a.v - b.v);
+  vals.sort((a: SummitBriefingSpanEntry, b: SummitBriefingSpanEntry) => a.v - b.v);
   return { lo: vals[0], hi: vals[vals.length - 1], said: vals.length, of: routes.length };
 }
 // Exported so it can be rendered on its own against real catalog rows. Everything it
 // claims is a reading of other rows, and the only way to check a reading is to render it
 // — the lesson `check:field-renders` is built on.
-export default function SummitBriefing({ area, routes, uElev, uDistMi, C }) {
+export default function SummitBriefing({ area, routes, uElev, uDistMi, C }: SummitBriefingProps) {
   const rows = useMemo(() => {
     const rs = routes || [];
     if (rs.length < 2) return null;
@@ -44,9 +66,9 @@ export default function SummitBriefing({ area, routes, uElev, uDistMi, C }) {
 
     // How many ways up, and of what kind. `discipline` is populated on every catalog row,
     // so this is a count rather than a derivation.
-    const byDisc = {};
+    const byDisc: Record<string, number> = {};
     rs.forEach(r => { if (r.discipline) byDisc[r.discipline] = (byDisc[r.discipline] || 0) + 1; });
-    const discList = Object.entries(byDisc).sort((a, b) => b[1] - a[1]).map(([d, n]) => n + " " + (DL[d] || d).toLowerCase());
+    const discList = Object.entries(byDisc).sort((a, b) => b[1] - a[1]).map(([d, n]) => n + " " + ((DL as Record<string, string>)[d] || d).toLowerCase());
     if (discList.length) out.push(["Ways up", discList.length === 1 ? discList[0] + " route" + (rs.length !== 1 ? "s" : "") : rs.length + " routes — " + discList.join(" · "), null]);
 
     // Hardest rock pitch, from `rock_grade` ONLY.
@@ -86,12 +108,12 @@ export default function SummitBriefing({ area, routes, uElev, uDistMi, C }) {
        conventions and must not be normalised in bulk is unaffected. */
     const ap = numericSpan(rs, effDistKm);
     if (ap) {
-      const mi = km => uDistMi ? uDistMi(km * 0.621371) : (Math.round(km * 10) / 10) + " km";
+      const mi = (km: number) => uDistMi ? uDistMi(km * 0.621371) : (Math.round(km * 10) / 10) + " km";
       out.push(["Approach", ap.lo.v === ap.hi.v ? mi(ap.lo.v) : mi(ap.lo.v) + " to " + mi(ap.hi.v), "Shortest is " + ap.lo.r.name + (ap.said < ap.of ? " · " + ap.said + " of " + ap.of + " routes give a distance" : "")]);
     }
     const gain = numericSpan(rs, r => r.gain_ft);
     if (gain) {
-      const e = ft => uElev ? uElev(ft) : Math.round(ft).toLocaleString() + " ft";
+      const e = (ft: number) => uElev ? uElev(ft) : Math.round(ft).toLocaleString() + " ft";
       out.push(["Elevation gain", gain.lo.v === gain.hi.v ? e(gain.lo.v) : e(gain.lo.v) + " to " + e(gain.hi.v), gain.said < gain.of ? gain.said + " of " + gain.of + " routes give a figure" : null]);
     }
 
