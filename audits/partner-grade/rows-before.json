@@ -1,0 +1,1870 @@
+[
+ {
+  "id": "wa_forbidden_peak_east_ridge",
+  "name": "East Ridge Direct",
+  "area_id": "wa_forbidden_peak",
+  "discipline": "alpine",
+  "grade": "5.8-",
+  "rock_grade": "5.8-",
+  "pitches": 6,
+  "length_m": null,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Strenuous - same Boston Basin approach as the West Ridge (~7 mi, 3,100+ ft gain) plus a longer technical day (8 pitches, ~10.5 hr).",
+    "packWeight": "Overnight alpine pack, roughly 25-35 lb."
+   },
+   "approachTime": "~5-6 hrs to Boston Basin camp, plus additional approach time to gain the east ridge proper.",
+   "requiredSkills": [
+    "multi-pitch trad leading at 5.6 on loose rock",
+    "route-finding through towers and gendarmes",
+    "rappelling",
+    "stamina for a long, sustained technical day",
+    "sound retreat judgment on an exposed crest in changing weather"
+   ],
+   "experienceLevel": "Experienced alpine trad leader comfortable with longer, more sustained routes and loose-rock route-finding among gendarmes."
+  },
+  "pitch_detail": [
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "From the notch, simul-climb easy blocks to gain the ridge crest proper on clean granite.",
+    "pitch": 1,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.6",
+    "notes": "Surmount the first, steepest gendarme tower directly on solid rock; exposed on both sides of the narrow crest.",
+    "pitch": 2,
+    "anchor": "Gear (horn/block)",
+    "lengthM": 55
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.5",
+    "notes": "A short rappel off the back of the gendarme drops into a narrow notch before the ridge continues.",
+    "pitch": 3,
+    "anchor": "Gear, short rap into notch",
+    "lengthM": 50
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4 (low 5th)",
+    "notes": "Weave around or over the next gendarme; a bypass on the north side avoids some of the smaller, unnamed towers not always shown on topos.",
+    "pitch": 4,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.6",
+    "notes": "Climb a steep gendarme flank on solid stone, staying close to the crest for the best rock quality.",
+    "pitch": 5,
+    "anchor": "Gear",
+    "lengthM": 55
+   },
+   {
+    "crux": true,
+    "bolts": 0,
+    "grade": "5.8",
+    "notes": "The crux pitch and the best climbing on the route: protect off a horn before the hard moves, then a skinny vertical crack takes small cams through the crux bulge.",
+    "pitch": 6,
+    "anchor": "Gear (horn + thin crack)",
+    "lengthM": 60
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4 (low 5th)",
+    "notes": "Easier simul-climbing terrain closes the gap toward the summit convergence area.",
+    "pitch": 7,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Final crest moves cross the true summit; most parties descend via the West Ridge or the East Ledges rather than reversing this route.",
+    "pitch": 8,
+    "anchor": "Walk-off to summit (scramble)",
+    "lengthM": 40
+   }
+  ],
+  "climbing_route": null,
+  "finding": "BELOW"
+ },
+ {
+  "id": "wa_ingalls_peak_south_ridge",
+  "name": "South Ridge",
+  "area_id": "wa_ingalls_peak",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "rock_grade": "5.4 (5.6 on the popular 'Beckey line' variation)",
+  "pitches": 3,
+  "length_m": 91,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Roundtrip on the order of 6-9 miles with ~2,800-3,200 ft of gain, including a pass crossing (Ingalls Pass) and off-trail talus/slab travel to the base of the ridge",
+    "packWeight": "Light alpine rack (small rack + a few slings, approach shoes swapped for rock shoes), roughly 15-20 lbs"
+   },
+   "approachTime": "Roughly 3-4 hours from the Esmeralda Basin trailhead via Ingalls Pass and the Ingalls Lake basin to the start of the ridge",
+   "requiredSkills": [
+    "Leading/following 5.4 traditional or alpine rock",
+    "Multi-pitch rope management and efficient transitions",
+    "Routefinding on talus, slab, and an unmarked alpine ridge to gain and follow the route",
+    "Comfort on loose blocky rock and exposed, airy ridge terrain",
+    "Basic self-rescue / rappel competence for the descent"
+   ],
+   "experienceLevel": "Intermediate alpine rock climber - comfortable leading low 5th class (5.4) alpine rock with loose rock and moderate exposure, and competent scrambling on class 2-3 talus/slabs for the approach"
+  },
+  "pitch_detail": [
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "A full rope-length lead up the obvious crack from the base, easy ground on good rock to a belay at a fixed piton on the slab.",
+    "pitch": 1,
+    "anchor": "Fixed piton (slab)",
+    "lengthM": 50
+   },
+   {
+    "crux": true,
+    "bolts": 2,
+    "grade": "5.6",
+    "notes": "A short pitch and left leads to a belay cove under the dark horns; the harder 5.6 variation climbs the middle crack rather than the easier 5.4 line on the left.",
+    "pitch": 2,
+    "anchor": "2-bolt anchor (ledge)",
+    "lengthM": 20
+   },
+   {
+    "crux": false,
+    "bolts": 3,
+    "grade": "5.4",
+    "notes": "Goes up and right from the right side of the cove to a notch on the left skyline; scramble from here to the true summit.",
+    "pitch": 3,
+    "anchor": "3-bolt anchor (summit)",
+    "lengthM": 20
+   }
+  ],
+  "climbing_route": null,
+  "finding": "BELOW"
+ },
+ {
+  "id": "wa_liberty_bell_independence_route",
+  "name": "The Independence Route",
+  "area_id": "wa_liberty_bell",
+  "discipline": "alpine",
+  "grade": "5.12a",
+  "rock_grade": "5.12a",
+  "pitches": 12,
+  "length_m": 366,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Short, steep forest and talus approach from the SR-20 hairpin to the East Face",
+    "packWeight": "Trad rack for sustained crack/face climbing, roughly 18-22 lb"
+   },
+   "approachTime": "Roughly 1 hour from the SR-20 hairpin pullout to the East Face",
+   "requiredSkills": [
+    "5.11+ crack and face leading",
+    "multi-pitch endurance across 12 pitches in a day",
+    "route-finding among adjacent East Face lines",
+    "efficient descent management",
+    "comfort with serious commitment typical of a grade V route"
+   ],
+   "experienceLevel": "Strong 5.11+ trad/free climber comfortable with sustained face and crack pitches and the commitment of a grade V, 12-pitch outing"
+  },
+  "pitch_detail": [
+   {
+    "crux": false,
+    "belay": "On a ledge beside a pine tree.",
+    "bolts": 0,
+    "grade": "5.8",
+    "notes": "Climbs the right edge of the East Face on horizontal breaks and cracks to a belay near a yellow lichen patch by a pine tree.",
+    "pitch": 1,
+    "anchor": "Gear",
+    "lengthM": 30
+   },
+   {
+    "crux": false,
+    "belay": "Beneath a nice left-facing corner.",
+    "bolts": 3,
+    "grade": "5.10a/b",
+    "notes": "Crimp right then traverse left on a flake through a bolted section that follows the historic aid pendulum's line.",
+    "pitch": 2,
+    "anchor": "Bolted anchor",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "belay": "On a long ledge with a big horn, at a two-bolt anchor.",
+    "bolts": 2,
+    "grade": "5.10b",
+    "notes": "A left-facing quartz corner with a hard right-stemming sequence near two bolts.",
+    "pitch": 3,
+    "anchor": "Gear (ledge with large horn)",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.8",
+    "notes": "Chimney/offwidth climbing for about 40 ft to a small alcove below the red 'Baer Ceiling,' an original aid pitch.",
+    "pitch": 4,
+    "anchor": "Gear (small alcove)",
+    "lengthM": 30
+   },
+   {
+    "crux": true,
+    "belay": "Just to the right of the Block Ceiling.",
+    "bolts": 0,
+    "grade": "5.11c",
+    "notes": "A ramp into a shallow corner with cruxy face moves protected by a fixed pin and copperheads; a mantle and slab move reach the belay. A sneaky, often-underrated crux.",
+    "pitch": 5,
+    "anchor": "Gear (flake belay)",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.11b/c",
+    "notes": "A thin, piton-protected crack passes three stacked 'Cascade Ceilings' via a mantle move.",
+    "pitch": 6,
+    "anchor": "Gear",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.11",
+    "notes": "A technical rightward traverse into a shallow corner above a pine tree, with a reach-dependent boulder-problem section -- the original crux before the route's belays were repositioned.",
+    "pitch": 7,
+    "anchor": "Gear (above pine tree)",
+    "lengthM": 35
+   },
+   {
+    "crux": true,
+    "bolts": 4,
+    "grade": "5.12a",
+    "notes": "Technical, classic granite stemming and jamming up an exposed corner beneath the 'Well Hung Ceiling' -- the route's overall crux pitch, matching its full free grade.",
+    "pitch": 8,
+    "anchor": "Bolted hanging belay (aging bolts)",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "belay": "At the highest point of M&M Ledge, up and left of the previous stance.",
+    "bolts": 0,
+    "grade": "5.5",
+    "notes": "Short pitch moving the belay left onto M&M Ledge, shared with Liberty Crack and Thin Red Line.",
+    "pitch": 9,
+    "anchor": "M&M Ledge (large, sloping)",
+    "lengthM": 20
+   },
+   {
+    "crux": false,
+    "belay": "On a small terrace beneath a hand crack.",
+    "bolts": 0,
+    "grade": "5.8",
+    "notes": "Chimney and blocky corner climbing past red roofs to the base of a splitter wide crack; an alternate left-trending ramp also exists.",
+    "pitch": 10,
+    "anchor": "Gear",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "belay": "At the bolted anchor on the clean slab beneath the Hercan Roofs.",
+    "bolts": 2,
+    "grade": "5.10",
+    "notes": "A nice splitter 2-3 inch crack leads to a clean slab and bolted anchor beneath the Hercan Roofs.",
+    "pitch": 11,
+    "anchor": "Bolted anchor (below Hercan Roofs)",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.8",
+    "notes": "A slab traverse up and right gains the ridge crest, followed by 3rd-class scrambling to the summit.",
+    "pitch": 12,
+    "anchor": "Walk-off (no belay)",
+    "lengthM": 40
+   }
+  ],
+  "climbing_route": null,
+  "finding": "BELOW"
+ },
+ {
+  "id": "wa_mount_challenger_challenger_glacier",
+  "name": "Challenger Glacier",
+  "area_id": "wa_mount_challenger",
+  "discipline": "alpine",
+  "grade": "5.5",
+  "rock_grade": "5.5",
+  "pitches": 1,
+  "length_m": 427,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Strong, sustained multi-day backcountry fitness for off-trail, brushy travel (Devil's club and heavy brush reported on all approach options: Easy Ridge, Eiley-Wiley Ridge, Whatcom Pass) with elevation loss/regain to reach Perfect Pass",
+    "packWeight": "Heavy - full glacier mountaineering rack plus 3-5 days of camping/food for an approach-heavy trip"
+   },
+   "approachTime": "2-3 days to a camp near Perfect Pass via Easy Ridge, Eiley-Wiley Ridge, or Whatcom Pass before the glacier climb itself",
+   "requiredSkills": [
+    "glacier travel and crevasse rescue (roped travel across the Challenger Glacier around 7,000-7,200 ft)",
+    "off-trail routefinding through sustained brush and 'gnarly, Picket-ey' terrain",
+    "basic 5th-class rock competence for the summit pitch (5.5-5.7, with some fixed protection) and a bergschrund crossing",
+    "wilderness backcountry permit logistics (North Cascades NP permit)",
+    "self-sufficient multi-day expedition/camp management given the remoteness"
+   ],
+   "experienceLevel": "Advanced - multi-day glaciated alpine objective with a serious trail-less approach; not a beginner or first-glacier-climb route"
+  },
+  "pitch_detail": [
+   {
+    "grade": "5.5-5.7",
+    "notes": "Roughly 40 feet of climbing leads to the top of the summit rocks. Fixed pitons and an old fixed cam are present but should not be relied upon as the sole anchor. The crux is a brief section, rated 5.7+, on reasonably solid rock. Belayed ascent is standard; an inverted V rappel anchor is established at the top by modern parties. Excellent protection available from both natural features and fixed gear. The moves are sustained and exposed.",
+    "pitch": "1 (Summit Pitch)"
+   }
+  ],
+  "climbing_route": [
+   {
+    "n": 1,
+    "class": "Class 4",
+    "label": "Gaining the Challenger Glacier from Perfect Pass",
+    "notes": "Drop onto the glacier at about 7,000-7,200 ft from Perfect Pass or the Wiley Lake basin; the exact entry point shifts year to year with crevasse conditions. Depending on melt-out, getting off Perfect Pass camp can involve roughly 200 ft of wet class 4 downclimbing and sometimes a short rappel across a moat."
+   },
+   {
+    "n": 2,
+    "label": "Bergschrund and glacier snow to the summit rocks",
+    "notes": "Cross a bergschrund, then climb steepening snow — a snow arete in late season — toward the base of the summit rocks. Late-season hazard just below the summit rocks: a moat reported up to about 5 ft wide and occasionally impassable, forcing a detour to find a snow bridge."
+   },
+   {
+    "n": 3,
+    "class": "Class 3",
+    "label": "Scramble to the base of the summit pitch",
+    "notes": "A clean 3rd-class scramble takes the final approach to the true summit rock."
+   },
+   {
+    "n": 4,
+    "class": "5.5-5.7",
+    "label": "Summit rock pitch",
+    "notes": "A short pitch, roughly 50 ft, well protected on solid unbroken rock. Many parties fix a handline from the summit rappel anchor down to the top of the scramble to manage the exposure."
+   }
+  ],
+  "finding": "ABOVE"
+ },
+ {
+  "id": "wa_mount_fury_east_mongo_ridge",
+  "name": "Mongo Ridge (Southwest Buttress)",
+  "area_id": "wa_mount_fury_west",
+  "discipline": "alpine",
+  "grade": "5.10",
+  "rock_grade": "5.10a (one pitch to 5.10; a 5.11 headwall has a 5.7 bypass)",
+  "pitches": 25,
+  "length_m": 1219,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Extreme - a multi-day, trail-less approach precedes thousands of feet of sustained technical ridge climbing over gendarmes and towers",
+    "packWeight": "Heavy alpine rack plus multi-day bivy and food (roughly 40-50+ lbs), carried over technical terrain including belayed pitches"
+   },
+   "approachTime": "Multi-day approach (2+ days) through remote, trail-less terrain to reach the base of the ridge; historic ascents have run 4+ days car-to-car",
+   "requiredSkills": [
+    "confident 5.10 traditional multi-pitch leading on variable/loose rock",
+    "route-finding through unmarked gendarmes and towers",
+    "committing rappels and downclimbing",
+    "self-rescue and multi-day bivouac management",
+    "sound judgment for retreat given the extreme remoteness"
+   ],
+   "experienceLevel": "Elite alpine rock climber with substantial Grade VI, multi-day big-terrain experience and proven self-rescue capability; this is not an objective for a climber without an extensive alpine resume"
+  },
+  "pitch_detail": [
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Chimney system gains the crest off the col on solid rock — the one clean pitch before the ridge turns loose. Rack up here; this is the last easy gear placement before the runout traversing begins.",
+    "pitch": 1,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.6",
+    "notes": "Runout, blocky traverse along the initial crest. Protection is thin and spaced; test every block before weighting it.",
+    "pitch": 2,
+    "anchor": "Gear (sparse)",
+    "lengthM": 50
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.8",
+    "notes": "A well-protected, genuinely fun overhang bulge — the one bright spot of solid gear and solid rock in an otherwise chossy opening section.",
+    "pitch": 3,
+    "anchor": "Gear",
+    "lengthM": 40
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.7",
+    "notes": "Loose, runout traversing rock continues; route-finding favors staying right on the crest to avoid the worst of the rubble below.",
+    "pitch": 4,
+    "anchor": "Gear (sparse)",
+    "lengthM": 50
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.6",
+    "notes": "Widely regarded as the most time-consuming and chossiest stretch of the whole buttress — expect loose flakes and careful, deliberate movement over speed.",
+    "pitch": 5,
+    "anchor": "Gear (sparse)",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.5",
+    "notes": "Easier ridge-crest climbing gains the base of the first true tower; a natural break to reassess pace before the rope-stretching pitches ahead.",
+    "pitch": 6,
+    "anchor": "Gear",
+    "lengthM": 40
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.8",
+    "notes": "First of three rope-stretching pitches toward Tower 1; sustained, steady 5.8 climbing on improving rock over the choss of the approach section.",
+    "pitch": 7,
+    "anchor": "Gear",
+    "lengthM": 60
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.8",
+    "notes": "Continued full-rope-length pitch up Tower 1's flank; exposure builds steadily as the ridge narrows.",
+    "pitch": 8,
+    "anchor": "Gear",
+    "lengthM": 60
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.7",
+    "notes": "Final pitch to the summit of Tower 1 — a short rappel (about 30 m) off improvised anchors follows to continue the traverse, typical of how each tower on this ridge is climbed and then abandoned on its far side.",
+    "pitch": 9,
+    "anchor": "Gear",
+    "lengthM": 55
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.6",
+    "notes": "Lower pitch up Tower 2, two short pitches in total on this tower; rock quality noticeably better than the initial approach section.",
+    "pitch": 10,
+    "anchor": "Gear",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.5",
+    "notes": "Second and final pitch to Tower 2's summit; another rappel (40-50m) down the far side gets the party to the base of Tower 3.",
+    "pitch": 11,
+    "anchor": "Gear",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "A long, near-horizontal traverse from the notch to the base of Tower 3 — easy grade but serious, unprotected exposure on both sides.",
+    "pitch": 12,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": true,
+    "bolts": 0,
+    "grade": "5.10a",
+    "notes": "The technical crux: steep, sustained ridge climbing with thousands of feet of air dropping away on either side and gear that is thin and far between. This is the pitch that gives the route its 5.10 grade.",
+    "pitch": 13,
+    "anchor": "Gear (thin, R)",
+    "lengthM": 40
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.9",
+    "notes": "Sustained 5.9 climbing continues up Tower 3's upper wall; protection remains sparse, demanding comfort running it out on solid but featureless rock.",
+    "pitch": 14,
+    "anchor": "Gear (sparse)",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.9",
+    "notes": "More sustained climbing on Tower 3, thin gear placements in shallow seams; pace slows here as parties place what little protection is available.",
+    "pitch": 15,
+    "anchor": "Gear (sparse)",
+    "lengthM": 40
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.6",
+    "notes": "Easier finish to Tower 3's broad, flat summit — the standout bivy spot on the route and roughly the halfway point of the buttress. A rappel (~40m) follows to reach Tower 4.",
+    "pitch": 16,
+    "anchor": "Gear",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.6",
+    "notes": "Short leftward traverse off the notch into a corner system at the base of Tower 4.",
+    "pitch": 17,
+    "anchor": "Gear",
+    "lengthM": 25
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.9",
+    "notes": "Corner-system climbing up Tower 4 with sparse protection; sustained enough to be one of the harder pitches outside Tower 3.",
+    "pitch": 18,
+    "anchor": "Gear (sparse)",
+    "lengthM": 40
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Long, easy final pitch to Tower 4's summit — the last of the four major towers before the rooster-comb terrain. A 50m rappel down the far side follows.",
+    "pitch": 19,
+    "anchor": "Gear",
+    "lengthM": 55
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "Class 4",
+    "notes": "A snow gully marks the start of the Rooster Comb bypass section, a lower-angle stretch stitched together after the four towers are behind you.",
+    "pitch": 20,
+    "anchor": "Walk/scramble (minimal pro)",
+    "lengthM": 55
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "Low 5th",
+    "notes": "Loose fourth-class terrain, commonly simul-climbed for 300-plus feet with only occasional protection — one of the more serious, unprotected stretches on the whole ridge given the terrain offers little to anchor to.",
+    "pitch": 21,
+    "anchor": "Simul (running gear)",
+    "lengthM": 60
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "Low 5th",
+    "notes": "Continued simul-climbing across broken, blocky ground; a small stream nearby is the only water source on the entire ridge traverse.",
+    "pitch": 22,
+    "anchor": "Simul (running gear)",
+    "lengthM": 55
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "Class 4",
+    "notes": "Final scrambling approach across the Rooster Comb toward the base of the Pole of Remoteness, the ridge's most storied summit.",
+    "pitch": 23,
+    "anchor": "Walk/scramble (minimal pro)",
+    "lengthM": 50
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.7",
+    "notes": "Climbs to the summit of the Pole of Remoteness itself, a tower named for its reputation as one of the most inaccessible points in the Lower 48; the final 20 feet are notably choss-covered and angular. The rappel off its far side is where a rope was famously severed by rockfall on the first ascent.",
+    "pitch": 24,
+    "anchor": "Gear",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "Low 5th",
+    "notes": "Full rope-length low-fifth-class pitch across a final snow-gully traverse to the false summit, the last roped climbing before easier ground leads toward West Fury's summit proper.",
+    "pitch": 25,
+    "anchor": "Gear",
+    "lengthM": 60
+   }
+  ],
+  "climbing_route": null,
+  "finding": "BELOW"
+ },
+ {
+  "id": "wa_mount_olympus_west_ridge",
+  "name": "West Ridge",
+  "area_id": "wa_mount_olympus",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "rock_grade": "5.4",
+  "pitches": 7,
+  "length_m": 212,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Very strong; same long Blue Glacier approach as the standard route",
+    "packWeight": "35-45 lb glacier kit plus a rock rack sized for 7 pitches of PG13 climbing"
+   },
+   "approachTime": "Same multi-day approach to Glacier Meadows/Blue Glacier as the standard route, then a roughly level glacier crossing southwest from Snow Dome to the foot of the West Ridge",
+   "requiredSkills": [
+    "Glacier travel and crevasse rescue",
+    "Traditional gear placement on run-out (PG13) protection",
+    "Route-finding without cairns or rappel stations",
+    "Comfort on loose 5.6-5.7 rock if off-route",
+    "Efficient 7-pitch multi-pitch movement",
+    "Crossing/negotiating a moat to gain the ridge"
+   ],
+   "experienceLevel": "Advanced alpine rock/glacier climber - notably harder than the standard route due to loose off-route rock, run-out protection, and a lack of established route-finding aids"
+  },
+  "pitch_detail": [
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "class 3-5.4",
+    "notes": "Gain the ridge via a moat at ~7,260 ft; ridge climbing stays just below the crest on better rock, avoiding the loose crest itself.",
+    "pitch": 1,
+    "anchor": "Gear",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "class 3-4",
+    "notes": "Traverse just below the crest on the south side, threading broken class 3-4 rock; staying too low puts you on loose, unprotectable ledges.",
+    "pitch": 2,
+    "anchor": "Horn",
+    "lengthM": 20
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "class 4",
+    "notes": "Continue along the south flank below the ridgeline on sound but variable rock, watching for occasional loose blocks as the angle steepens.",
+    "pitch": 3,
+    "anchor": "Gear",
+    "lengthM": 30
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "class 4-5.2",
+    "notes": "Enter the first of several shallow gullies as the ridge steepens; work up broken class 4 rock and short steps just south of the crest.",
+    "pitch": 4,
+    "anchor": "Block",
+    "lengthM": 25
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.2-5.4",
+    "notes": "Trend right (south) away from a tall tower on the ridge proper, exposed low-5th climbing on solid rock avoiding the loose 5.6-5.7 crest above.",
+    "pitch": 5,
+    "anchor": "Horn",
+    "lengthM": 20
+   },
+   {
+    "crux": true,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Steepest pitch before the final traverse; sustained 5.4 moves on compact rock just south of the crest, then angle back north toward the snowfield.",
+    "pitch": 6,
+    "anchor": "Gear",
+    "lengthM": 25
+   },
+   {
+    "crux": true,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Final ~100 ft summit block via West Face (mostly class 3) or North Face (5.4); route-finding to stay on the easiest line is the real crux of the day.",
+    "pitch": 7,
+    "anchor": "Block",
+    "lengthM": 30
+   }
+  ],
+  "climbing_route": null,
+  "finding": "ABOVE"
+ },
+ {
+  "id": "wa_mount_stuart_girth_pillar",
+  "name": "Girth Pillar",
+  "area_id": "wa_mount_stuart",
+  "discipline": "alpine",
+  "grade": "5.11-",
+  "rock_grade": "5.11-",
+  "pitches": 11,
+  "length_m": 610,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Excellent — a remote glacier approach followed by sustained hard climbing",
+    "packWeight": "Alpine rack plus glacier-travel gear, ~25-30 lb"
+   },
+   "approachTime": "Long, remote approach up the Ice Cliff Glacier to the base of the pillar; likely requires a bivy",
+   "requiredSkills": [
+    "sustained hard crack climbing (5.10+)",
+    "glacier travel",
+    "self-sufficient multi-day alpine climbing",
+    "committing-retreat/rappel management"
+   ],
+   "experienceLevel": "Expert alpine rock climber and 5.10+ crack specialist with glacier-approach experience"
+  },
+  "pitch_detail": [
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "snow/4th class",
+    "notes": "Rope up for the access ramp off the lower North Ridge onto the upper Ice Cliff Glacier; belay off pickets or rock gear as terrain dictates.",
+    "pitch": 1,
+    "anchor": "Picket/gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "4th-5.4",
+    "notes": "Continue up moderate glacier-margin rock, staying alert to icefall from the ice cliff above.",
+    "pitch": 2,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "snow/4th class",
+    "notes": "Cross benches toward the base of the pillar; the 'ice cliff' step itself (10-100+ ft of 50-70° snow/ice) is passed nearby depending on the season's line.",
+    "pitch": 3,
+    "anchor": "Picket/gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "4th-5.4",
+    "notes": "Final easy pitch reaching the actual base of the Girth Pillar proper around 8,200-8,400 ft.",
+    "pitch": 4,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "belay": "Belay on a small ledge at the top of the steep handcrack, just after the crack jogs right.",
+    "bolts": 0,
+    "grade": "5.10",
+    "notes": "A nice but immediately steep hand crack that jogs right at the top; belay on a crappy, tiny ledge.",
+    "pitch": 5,
+    "anchor": "Gear (tiny ledge)",
+    "lengthM": 40
+   },
+   {
+    "crux": true,
+    "bolts": 0,
+    "grade": "5.11-",
+    "notes": "Shuffle left about 10 feet to a thin crack; finger jams lead to a rest right before the crux, protected by a fixed stopper, then thin hands to a hand crack and a better belay.",
+    "pitch": 6,
+    "anchor": "Gear (fixed stopper mid-pitch)",
+    "lengthM": 30
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.10+",
+    "notes": "Perfect hands on very steep, somewhat dirty rock lead to the top of the pillar; beware some very large loose blocks.",
+    "pitch": 7,
+    "anchor": "Gear",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.9",
+    "notes": "Easier crack and face climbing off the top of the pillar toward the upper glacier basin.",
+    "pitch": 8,
+    "anchor": "Gear",
+    "lengthM": 40
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.8",
+    "notes": "Continued moderate rock leading toward the false summit above the Ice Cliff Glacier.",
+    "pitch": 9,
+    "anchor": "Gear",
+    "lengthM": 40
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "4th-5.6",
+    "notes": "Broken, easier terrain closing in on the false summit.",
+    "pitch": 10,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "4th class",
+    "notes": "Easy scrambling to the main false summit above the Ice Cliff Glacier, joining Stuart's standard upper North Ridge/summit terrain; there is no reasonable way to reverse the route given the glacier's icefall hazard below.",
+    "pitch": 11,
+    "anchor": "Walk-off (no belay)",
+    "lengthM": 45
+   }
+  ],
+  "climbing_route": [
+   {
+    "n": 1,
+    "label": "Ice Cliff Glacier",
+    "notes": "From the moraine camp, rope up and climb the Ice Cliff Glacier itself. This is the route's main objective hazard, with significant icefall, spindrift, and crevasse danger — parties typically stay left to dodge falling ice and swing wide right to avoid the glacier's largest crevasses."
+   },
+   {
+    "n": 2,
+    "label": "The ice cliff step",
+    "notes": "At the top of the glacier, the 'ice cliff' step itself: anywhere from 10 to 100+ feet of 50-70° snow/ice, easier and shorter early season, steeper and more likely bare ice as the season progresses."
+   },
+   {
+    "n": 3,
+    "label": "Four moderate rock pitches to the pillar",
+    "notes": "Above the step, four moderate pitches of rock lead to the base of the Girth Pillar proper (~8,200-8,400'). No water source above the moraine camp — carry what you need, or plan to melt snow/ice."
+   }
+  ],
+  "finding": "BELOW"
+ },
+ {
+  "id": "wa_mount_stuart_west_ridge",
+  "name": "West Ridge",
+  "area_id": "wa_mount_stuart",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "rock_grade": "5.6",
+  "pitches": 10,
+  "length_m": 671,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Very strong — a ~13hr car-to-car day with large elevation gain/loss",
+    "packWeight": "Light day/alpine pack, ~15-20 lb"
+   },
+   "approachTime": "Long — over Longs Pass and Ingalls Creek similar to the Cascadian approach, then gaining and following the west ridge over the False Summit",
+   "requiredSkills": [
+    "easy trad multi-pitch leading (5.4)",
+    "extended 3rd/4th-class scrambling and route-finding among towers and notches",
+    "long alpine-day endurance",
+    "comfort with sustained exposure on an unmaintained ridge crest"
+   ],
+   "experienceLevel": "Competent 5.4 trad climber with extensive alpine scrambling stamina and exposure tolerance"
+  },
+  "pitch_detail": [
+   {
+    "grade": "Class 3 gully",
+    "notes": "From the talus shoulder below the ridge, head up the second prominent gully of the parallel set on the south flank rather than the first one encountered. Sandy Class 3 on good granite gives way to steeper scrambling; a short 4th-class chimney exits the top, after which traverse right and slightly down into the next gully, the one beneath Long John Tower. Snow can linger here into midsummer and is often icy early in the day.",
+    "pitch": "Ingalls Creek → west ridge crest"
+   },
+   {
+    "grade": "Class 4",
+    "notes": "Climb to the notch behind Long John Tower. The right side of the face under the tower is the easier way; the alternative is a chimney left of the tower with a chockstone near its start and one strenuous pull. The rock looks steep and loose from below but is solid, sustained Class 4 in reality. Many parties rope up here if the gully holds snow.",
+    "pitch": "Lower west ridge"
+   },
+   {
+    "grade": "Exposed Class 3–4",
+    "notes": "The route-finding crux. From the notch, go nearly straight up, then drift right along ledges toward the West Horn rather than following the crest. Pass the Horn on its south side on a broad, very exposed ledge roughly 50 ft below its top; a short belay or handline is common here. Cairns exist on several lines, so follow the terrain rather than the nearest cairn.",
+    "pitch": "Long John Tower notch → West Horn"
+   },
+   {
+    "grade": "Class 3–4 ledges",
+    "notes": "Keep working right across gullies and ledges to the West Ridge Notch, the second big notch past the Horn, where a small bivy ledge looks straight down onto the Stuart Glacier. Scrambling ends here; most parties rope up for the rest of the climb.",
+    "pitch": "West Horn → West Ridge Notch"
+   },
+   {
+    "grade": "4th class",
+    "notes": "From the notch, climb easy Class 4 a short way, then step left around a blind corner onto the north side of the ridge. Exposure jumps sharply here with the Stuart Glacier far below. Protection is small to medium cams and nuts; a short rope is enough for the whole upper section. Belay where the terrain steepens left of the crest.",
+    "pitch": "Onto the north face",
+    "lengthM": 30
+   },
+   {
+    "grade": "low 5th",
+    "notes": "Climb steep, blocky low-5th ground just left of the crest to a notch, then cross back to the south side of the ridge. Above, a short low-angle chimney with wide cracks and a brief awkward downclimb lead toward the summit block; several parallel options exist, some harder than the standard line. Keep rope drag down by belaying often.",
+    "pitch": "Short 5th-class steps",
+    "lengthM": 30
+   },
+   {
+    "crux": true,
+    "grade": "5.6",
+    "notes": "The technical crux: a short, well-protected pitch up twin finger-to-hand cracks, with a stuck piton at the hardest move. Most parties find it soft for the grade and well protected. Above, easy ground reaches the true summit directly. The descent then heads east along the summit ridge to the false summit to find the Cascadian Couloir.",
+    "pitch": "Summit block"
+   }
+  ],
+  "climbing_route": null,
+  "finding": "BELOW"
+ },
+ {
+  "id": "wa_mount_terror_southeast_face",
+  "name": "East Ridge",
+  "area_id": "wa_mount_terror",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "rock_grade": "5.8",
+  "pitches": 4,
+  "length_m": null,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Very high - multi-day trailless approach to Crescent Creek basin with sustained off-trail travel and elevation gain",
+    "packWeight": "Heavy multi-day alpine kit typically 35-45+ lb for the approach"
+   },
+   "approachTime": "Multi-day approach to Crescent Creek basin given extreme remoteness of the range; not a single-push objective",
+   "requiredSkills": [
+    "off-trail/bushwhack route-finding in trailless terrain",
+    "5.6 rock climbing on ledges and short rock steps, often in mountain boots with a pack",
+    "route-finding among towers to avoid wrong-summit errors",
+    "basic multi-pitch rope work",
+    "self-sufficiency for remote extraction"
+   ],
+   "experienceLevel": "Experienced alpine climbers with North Cascades approach experience; the moderate rock grade (5.6) makes this the more accessible of Mount Terror's two routes, but the remoteness and route-finding demands still rule out newer alpine climbers"
+  },
+  "pitch_detail": [
+   {
+    "crux": true,
+    "bolts": 0,
+    "grade": "5.6",
+    "notes": "Climb begins right off the Terror-Degenhardt saddle with a steep hand/off-width crack (offwidth on the left, a narrower finger seam on the right per some parties) — the recognized crux of the route. At least one party rated this section a stout 5.8, though the standard published rating for the climb is 5.6.",
+    "pitch": 1,
+    "anchor": "Gear (crack)",
+    "lengthM": 40
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Continues directly up the crest of the narrow East Ridge on blocky terrain. Rock quality on this ridge is consistently described as some of the loosest, choss-iest in the Pickets, so test every hold and manage rope drag/rockfall for the second.",
+    "pitch": 2,
+    "anchor": "Gear",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.2",
+    "notes": "The ridge is abandoned here for a rising traverse onto the south face to bypass a steeper step, on more loose rock; low-angle but exposed, with limited natural gear placements.",
+    "pitch": 3,
+    "anchor": "Gear / rock horn",
+    "lengthM": 30
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.5",
+    "notes": "Wraps back up from the south-face traverse for a final section mixing in easy 5th-class moves before topping out directly on Mount Terror's summit, with its small register and exposed views into McMillan Cirque to the north.",
+    "pitch": 4,
+    "anchor": "Walk-off (no belay) at summit",
+    "lengthM": 35
+   }
+  ],
+  "climbing_route": null,
+  "finding": "BELOW"
+ },
+ {
+  "id": "wa_mount_torment_south_ridge",
+  "name": "South Ridge",
+  "area_id": "wa_mount_torment",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "rock_grade": "5.4",
+  "pitches": 4,
+  "length_m": 305,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Strong; sustained approach with an overnight pack into Boston Basin followed by a glacier approach to the base of the ridge the next day",
+    "packWeight": "Overnight/multi-day pack (camp gear, rack, glacier gear), roughly 35-45 lb"
+   },
+   "approachTime": "~4-6 hrs to a Boston Basin camp, then ~1-2 hrs of glacier/snow approach to the base of the south ridge on climbing day",
+   "requiredSkills": [
+    "glacier travel and crevasse rescue (approach crosses a glaciated basin)",
+    "5.6 traditional multi-pitch leading on alpine rock",
+    "route-finding among towers on the ridge crest",
+    "basic snow travel with axe and crampons",
+    "comfort downclimbing/rappelling on loose, blocky terrain"
+   ],
+   "experienceLevel": "Solid intermediate alpine climber with prior glacier-travel and multi-pitch alpine-rock experience; comfortable with loose rock and route-finding without a well-beaten path"
+  },
+  "pitch_detail": [
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Climb an open book angling left off the notch that starts the ridge, turning right at its top to a ledge, then a short second open book gains the crest.",
+    "pitch": 1,
+    "anchor": "Gear",
+    "lengthM": 40
+   },
+   {
+    "crux": true,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Surmount a steeper tower via sloping, exposed ledges beneath a steep face; protection is sparse here.",
+    "pitch": 2,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Weave among towers on the exposed crest, continuing leftward on the southwest face.",
+    "pitch": 3,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Sustained low-5th and 4th-class climbing on good granite finishes the ridge to the summit; many parties simul-climb this last stretch.",
+    "pitch": 4,
+    "anchor": "Walk-off (no belay)",
+    "lengthM": 45
+   }
+  ],
+  "climbing_route": null,
+  "finding": "ABOVE"
+ },
+ {
+  "id": "wa_mushroom_tower_standard",
+  "name": "Standard Route / South Side",
+  "area_id": "wa_mushroom_tower",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "rock_grade": "5.5",
+  "pitches": 2,
+  "length_m": null,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Moderate off-trail approach fitness for the Kangaroo Ridge basin approach off SR 20, including talus/scree and brush",
+    "packWeight": "Light alpine rack (single rope, small trad rack, rap gear) - no glacier or heavy overnight gear needed for this short route"
+   },
+   "approachTime": "Roughly 1.5-2.5 hours from the SR 20 pullout near the Hairpin turn up into the Kangaroo Ridge basin, consistent with other short Kangaroo Ridge approaches",
+   "requiredSkills": [
+    "5.4 trad/multi-pitch rock leading",
+    "rappelling and anchor evaluation",
+    "loose-rock/choss management and careful movement",
+    "basic alpine route-finding on an infrequently-climbed line",
+    "thunderstorm awareness/bail judgment given exposed summit moves"
+   ],
+   "experienceLevel": "Comfortable multi-pitch trad rock climber with prior alpine rock experience; should be unfazed by loose rock and unfamiliar/older rappel anchors, and capable of independent route-finding since this isn't a heavily-trafficked line"
+  },
+  "pitch_detail": [
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.2",
+    "notes": "From the notch below the tower (reached via the snowfinger traverse), climb low-fifth-class blocky granite up the south side, picking the path of least resistance on generally solid but sometimes lichen-dusted rock. Gear placements in the horizontal breaks are straightforward and this pitch is mostly a rope-up formality over what would otherwise be Class 4 scrambling.",
+    "pitch": 1,
+    "anchor": "Gear",
+    "lengthM": 15
+   },
+   {
+    "crux": true,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "The pitch is short but ends at the route's namesake feature: an exposed step-across a gap to gain the overhanging, mushroom-capped summit block, which is the technical crux and can feel harder when wet or still verglassed from lingering snow. Top out directly at the two original 1/4-inch bolts placed by Fred and Helmy Beckey's party on the 1942 first ascent of the Kangaroo Ridge towers, used today as the descent rap anchor.",
+    "pitch": 2,
+    "anchor": "Fixed anchor (2 old 1/4-inch bolts, placed 1942)",
+    "lengthM": 10
+   }
+  ],
+  "climbing_route": null,
+  "finding": "BELOW"
+ },
+ {
+  "id": "wa_nooksack_tower_beckey_route",
+  "name": "North Face (Beckey-Schmidtke Route)",
+  "area_id": "wa_nooksack_tower",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "rock_grade": "5.4",
+  "pitches": 10,
+  "length_m": 610,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Very high - a brutal, mostly off-trail approach via the Nooksack Cirque with brush, river fords, talus, and glacier travel to a high camp around 5,900 ft, followed by a very long (often 18-21 hour) summit push and descent",
+    "packWeight": "Moderate-heavy overnight alpine load (glacier travel gear, technical rock rack, camp/bivy gear) carried through bushwhacking and boulder-hopping terrain, not maintained trail"
+   },
+   "approachTime": "Multi-day: typically a full day (6-10+ hrs) up the Nooksack Cirque via brush, river fords, and glacier travel to high camp, followed by a very long summit day (often 18-21 hrs round trip from high camp) that includes roughly ten rappels back down to the glacier",
+   "requiredSkills": [
+    "Glacier travel and crevasse rescue (East Nooksack/Price Glacier approach)",
+    "Multi-pitch traditional leading up to 5.6 on loose, featured alpine rock",
+    "Route-finding on complex, unmarked, loose terrain",
+    "Steep snow/ice couloir climbing (reported up to ~50 degrees)",
+    "Building and trusting rappel anchors, including deadman/picket anchors, for a long multi-rappel descent",
+    "Strong off-trail navigation and bushwhacking stamina",
+    "Self-sufficiency and sound judgment - this is a remote committing objective with no realistic quick rescue"
+   ],
+   "experienceLevel": "Experienced alpine climbing team only - a serious Grade IV North Cascades objective; partners should have prior success on remote, multi-day alpine rock routes with glacier approaches before attempting this"
+  },
+  "pitch_detail": [
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "snow/ice",
+    "notes": "Kick steps up the initial snow/ice apron below the ridge proper — historically up to about 45-50 degrees — the ice-couloir start of the historic Beckey-Schmidtke line.",
+    "pitch": 1,
+    "anchor": "Picket/gear",
+    "lengthM": null
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "4th class",
+    "notes": "Easier rock leads into the hidden rock trough on the north arête.",
+    "pitch": 2,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "4th-5.2",
+    "notes": "Continued fourth-class climbing along the arête with occasional harder moves; loose rock throughout demands care and continual belaying.",
+    "pitch": 3,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": true,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "The ridge's technical crux: a short, exposed wall/crack section on otherwise blocky terrain.",
+    "pitch": 4,
+    "anchor": "Gear",
+    "lengthM": 40
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "4th-5.0",
+    "notes": "Loose fourth-class climbing continues along the exposed arête crest with a dramatic drop to the glacier below.",
+    "pitch": 5,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "4th class",
+    "notes": "More sustained, loose fourth-class terrain typical of this committing tower.",
+    "pitch": 6,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "low 5th",
+    "notes": "Continued careful climbing on generally poor-quality rock along the ridge.",
+    "pitch": 7,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "4th-5.3",
+    "notes": "Blocky climbing with occasional fifth-class moves closing in on the upper tower.",
+    "pitch": 8,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "low 5th",
+    "notes": "Loose traverse pitch toward the summit, with continued exposure over the glacier.",
+    "pitch": 9,
+    "anchor": "Gear",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "4th class",
+    "notes": "Final easy pitch to the summit of this serious, remote spire.",
+    "pitch": 10,
+    "anchor": "Walk-off (no belay)",
+    "lengthM": 40
+   }
+  ],
+  "climbing_route": null,
+  "finding": "ABOVE"
+ },
+ {
+  "id": "wa_northwest_arete",
+  "name": "Northwest Arete",
+  "area_id": "wa_argonaut_peak",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "rock_grade": "5.6",
+  "pitches": 7,
+  "length_m": 213,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": "Fit for a long, full-value day (~14.5-hr summit-and-exit day)",
+   "requiredSkills": [
+    "Real snow/ice competence — self-arrest, crampon/axe on firm 30-40°+ approach couloir terrain that can hold firm snow/ice into July",
+    "Route-finding judgment — a ledge/gendarme maze near the top is repeatedly cited as the navigation crux",
+    "Brush/bushwhack tolerance on the Mountaineer Creek approach"
+   ],
+   "experienceLevel": "Solid 5.7-5.8 trad leader (crux can reportedly feel stiffer than 5.6)"
+  },
+  "pitch_detail": [
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "Class 4/5.2",
+    "notes": "From the notch, descend briefly then climb back up through trees and over blocks; loose in spots right at the start near the bivy sites.",
+    "pitch": 1,
+    "anchor": "Gear",
+    "lengthM": 30
+   },
+   {
+    "crux": false,
+    "belay": "Belay from a comfortable stance on easier ground at the foot of the steeper face.",
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Ascend a right-facing corner to reach easy ground and a good stance at the base of a steeper face.",
+    "pitch": 2,
+    "anchor": "Gear",
+    "lengthM": 30
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.3",
+    "notes": "Diagonal traverse up and rightward across ledges, then straight up to a good ledge system; belayer needs to reposition left along the ledge to manage rope drag.",
+    "pitch": 3,
+    "anchor": "Gear",
+    "lengthM": 30
+   },
+   {
+    "crux": false,
+    "belay": "Belay on the highest large ledge on the route, reached after the ramp, one tricky move and easy ground.",
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "An easy ramp leads up and right into one tricky move, then easier traversing terrain to the highest large ledge on the route.",
+    "pitch": 4,
+    "anchor": "Gear",
+    "lengthM": 30
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.5",
+    "notes": "The best pitch on the route: a steep, well-protected corner with good holds, ending below another right-facing corner.",
+    "pitch": 5,
+    "anchor": "Gear",
+    "lengthM": 35
+   },
+   {
+    "crux": true,
+    "belay": "Belay on a good ledge above the flake and its one awkward move.",
+    "bolts": 0,
+    "grade": "5.6",
+    "notes": "Diagonal traverse on easier ground to a flake requiring an au cheval (straddle) move, followed by one insecure, tricky move up to a good ledge — the route's technical crux.",
+    "pitch": 6,
+    "anchor": "Gear",
+    "lengthM": 30
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Two corner options at the top; the right-hand corner is the mellower choice, but resist the urge to beeline for the skyline — traverse left off it to reach the summit ridge cleanly.",
+    "pitch": 7,
+    "anchor": "Gear (summit ridge)",
+    "lengthM": 30
+   }
+  ],
+  "climbing_route": null,
+  "finding": "ABOVE"
+ },
+ {
+  "id": "wa_northwest_mox_peak_standard",
+  "name": "Standard Route / Northwest Spire",
+  "area_id": "wa_northwest_mox_peak",
+  "discipline": "alpine",
+  "grade": "5.5",
+  "rock_grade": "5.5",
+  "pitches": 3,
+  "length_m": 500,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Very strong - multi-day approach (Chilliwack Lake/Depot Creek Road to Lake Ouzel to high camp) with sustained elevation gain, brush, and talus/scrambling before any technical climbing begins",
+    "packWeight": "Heavy overnight/multi-day alpine load: camping gear for a high camp, basic glacier kit, and a light rock rack in addition to food/water for a remote multi-day trip"
+   },
+   "approachTime": "2+ days to reach a high camp before summit day (long approach via Chilliwack Lake Road/Depot Creek Road and Lake Ouzel)",
+   "requiredSkills": [
+    "Confident 5.7 traditional/alpine rock leading on loose rock",
+    "Multi-pitch rappel setup, backup, and rope management for a complex descent",
+    "Basic glacier travel and crevasse-awareness (Redoubt Glacier crossing on approach)",
+    "Strong route-finding on loose, complex, unmarked terrain",
+    "Self-sufficiency for a remote, committing objective far from help, including cross-border wilderness travel logistics"
+   ],
+   "experienceLevel": "Advanced alpine climber with multi-day expedition experience; not a route for a first alpine outing"
+  },
+  "pitch_detail": [
+   {
+    "grade": "5.7",
+    "notes": "150-200 feet. Wet, lichen-covered slabs. Crux involves manteling slab (mid-5th class). Protection from small cams and nuts. Test all holds.",
+    "pitch": "1 (Headwall)"
+   },
+   {
+    "grade": "4-5",
+    "notes": "200+ feet. Exposed ridge traverse. Mixed rock quality, loose holds. Class 3-4 scrambling with serious exposure. Place protection on runout sections.",
+    "pitch": "2 (Ridge traverse)"
+   },
+   {
+    "grade": "3-4",
+    "notes": "200+ feet. Ridge scramble to summit. Low 5th class move required. Down-climb awkward 40-foot chimney (exposed).",
+    "pitch": "3 (Summit)"
+   }
+  ],
+  "climbing_route": null,
+  "finding": "ABOVE"
+ },
+ {
+  "id": "wa_pernod_spire_standard",
+  "name": "Standard Rock Route",
+  "area_id": "wa_pernod_spire",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "rock_grade": "5.5-5.7",
+  "pitches": 6,
+  "length_m": 213,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Strong - steep, sustained climber's trail and talus/scramble approach to Burgundy Col with significant elevation gain before any roped climbing begins",
+    "packWeight": "Moderate-heavy alpine rack (25-35 lb) for the approach, cached or carried on the climb"
+   },
+   "approachTime": "Multi-hour steep approach to Burgundy Col and the Wine Spires bench camp (6,500 ft) before the technical climbing starts; typically a full day if climbing car-to-car, or an overnight camp for parties combining multiple spires",
+   "requiredSkills": [
+    "trad leading on loose/suspect rock",
+    "multi-pitch anchor building and belay transitions",
+    "rappelling on loose rock (rope management, rockfall avoidance)",
+    "route-finding on an unmarked alpine approach and descent",
+    "comfort retreating/bailing from a committing position if weather turns"
+   ],
+   "experienceLevel": "Solid alpine rock leader comfortable at 5.8-5.9 on loose, run-out terrain; prior Grade III multi-pitch alpine rock experience (e.g. Liberty Bell group or similar North Cascades objectives) strongly recommended before attempting the Wine Spires"
+  },
+  "pitch_detail": [
+   {
+    "grade": "4th-5th class",
+    "notes": "From below the east walls, climb obliquely up and around to the notch between Pernod and Chianti; roughly three pitches, mostly 4th and 5th class.",
+    "pitch": "East side to the Pernod–Chianti notch"
+   },
+   {
+    "grade": "5.5-5.7",
+    "notes": "From the notch the line goes up the northeast corner. The first-ascent party used aid, a bolt to protect an insecure section and a bolt for an 8-foot pendulum around an overhanging corner, and reached the small summit block with bolts placed from a shoulder stand; the old fixed bolts are worth inspecting and backing up.",
+    "pitch": "Notch to the summit"
+   }
+  ],
+  "climbing_route": null,
+  "finding": "ABOVE"
+ },
+ {
+  "id": "wa_prusik_peak_south_face_burgner_stanley",
+  "name": "South Face (Burgner-Stanley)",
+  "area_id": "wa_prusik_peak",
+  "discipline": "alpine",
+  "grade": "5.10a",
+  "rock_grade": "5.10a",
+  "pitches": 6,
+  "length_m": 152,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Strenuous — long Enchantments approach via Snow Lakes or Colchuck/Aasgard Pass",
+    "packWeight": "Moderate-heavy on approach (rack, rope, overnight gear if camping); light for the climb day"
+   },
+   "approachTime": "Long — via Snow Lakes or Colchuck/Aasgard Pass to a Core Enchantments camp before gaining the south face",
+   "requiredSkills": [
+    "Leading sustained 5.9 crack systems on alpine granite",
+    "Multi-pitch efficiency and route-finding on a long alpine face",
+    "Rope management and anchor-building on exposed rappels",
+    "Weather judgment for the long committing approach and climb",
+    "Wilderness permit planning for the Enchantment Permit Area"
+   ],
+   "experienceLevel": "Intermediate-advanced alpine rock climber comfortable leading sustained 5.9 crack pitches with real exposure"
+  },
+  "pitch_detail": [
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.8",
+    "notes": "Wide crack (a #4 cam protects the crux size) and low fifth-class terrain up to trees; often combined with pitch 2.",
+    "pitch": 1,
+    "anchor": "Tree",
+    "lengthM": 55
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.6",
+    "notes": "Crack climbing exiting right on knobs, belaying at the highest trees before the gully.",
+    "pitch": 2,
+    "anchor": "Tree (highest trees)",
+    "lengthM": 30
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.8",
+    "notes": "Sustained gully climbing, belaying just below an obvious chockstone.",
+    "pitch": 3,
+    "anchor": "Gear (below chockstone)",
+    "lengthM": 55
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.8",
+    "notes": "Steep double cracks lead to a tunnel behind the giant chockstone; belay at the top or in the squeeze chimney.",
+    "pitch": 4,
+    "anchor": "Gear/chockstone tunnel",
+    "lengthM": 18
+   },
+   {
+    "crux": true,
+    "belay": "On top of the chimney; the belay then moves right to start the final pitch.",
+    "bolts": 0,
+    "grade": "5.9+",
+    "notes": "The flaring squeeze chimney crux — demanding for many parties, knee protection is useful; belay above on a ledge.",
+    "pitch": 5,
+    "anchor": "Gear (ledge)",
+    "lengthM": 24
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.9+",
+    "notes": "The 'amazing left-facing corner' pitch, sustained stemming on knobs, straight to the summit.",
+    "pitch": 6,
+    "anchor": "Walk-off (summit)",
+    "lengthM": 55
+   }
+  ],
+  "climbing_route": null,
+  "finding": "BELOW"
+ },
+ {
+  "id": "wa_sharkfin_tower_southeast_ridge",
+  "name": "Southeast Ridge",
+  "area_id": "wa_sharkfin_tower",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "rock_grade": "5.0",
+  "pitches": 3,
+  "length_m": 61,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Strenuous off-trail alpine approach with sustained steep elevation gain to Boston Basin camp, plus further gain across the Quien Sabe Glacier to the base of the ridge — comparable to a full mountaineering day even before the climbing starts.",
+    "packWeight": "Overnight/multi-day pack (camping gear, rope, rack, glacier travel and crevasse-rescue kit) — moderate-heavy, roughly 30-40 lb, since most parties camp in Boston Basin rather than day-tripping."
+   },
+   "approachTime": "Multi-hour approach: steep off-trail hike from the Cascade River Road trailhead to Boston Basin camp (the standard overnight base for this route), then a further glacier crossing to reach the base of the ridge — most parties treat this as a 1-2 night trip rather than a single push. Exact mileage/elevation figures are not recorded.",
+   "requiredSkills": [
+    "Glacier travel and crevasse rescue (crossing the Quien Sabe Glacier is required)",
+    "Roped/simul-climbing on moderate (5.4) exposed alpine rock",
+    "Comfort with sustained exposure on a knife-edge ridge crest",
+    "Judgment around loose rock/loose blocks on ledges",
+    "Off-trail routefinding and North Cascades NP wilderness permit logistics",
+    "Ability to recognize and retreat from building afternoon thunderstorms"
+   ],
+   "experienceLevel": "Intermediate-to-advanced alpine climber: needs prior glacier travel experience and comfort simul-climbing exposed low-5th-class rock while still roped/geared for glacier crossing."
+  },
+  "pitch_detail": [
+   {
+    "crux": false,
+    "belay": "On the ridge crest, at the top of the dihedral above the notch.",
+    "bolts": 0,
+    "grade": "5.0",
+    "notes": "Skirts the ridge on its climber's-right side across large blocks, then follows a short dihedral to the crest for the belay, onto the north face before reaching the notch at the base of the steep south-facing ridge; solid, featured granite throughout.",
+    "pitch": 1,
+    "anchor": "Gear (block/horn)",
+    "lengthM": 30
+   },
+   {
+    "crux": true,
+    "bolts": 0,
+    "grade": "5.0",
+    "notes": "Continues up the exposed crest on solid rock with good gear, staying a few feet left of the crest; passes an old fixed rappel anchor about 30 ft below where the ridge steepens into a layback. It is graded 5.0, but several parties feel it climbs nearer 5.4, harder and more awkward than the route's nominal grade, making it the pitch most people remember.",
+    "pitch": 2,
+    "anchor": "Gear (near an old fixed rap anchor)",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.0",
+    "notes": "Combines the route's final rope-lengths: moderate class-4/low-5th climbing at or just right of the crest through the summit blocks, finishing with a few reachy, exposed moves to the small, airy summit (8,120 ft) with views into the Ptarmigan Traverse country.",
+    "pitch": 3,
+    "anchor": "Walk-off (no belay)",
+    "lengthM": 30
+   }
+  ],
+  "climbing_route": [
+   {
+    "n": 1,
+    "class": "5.0",
+    "label": "Notch to the ridge crest",
+    "notes": "From the notch at the top of the approach gully, skirt the ridge on climber's right over large blocks, then take a dihedral for a couple of moves back up to the crest and belay. The granite here is solid — the tower is regarded as some of the best rock in the state — and the pitch protects well with a light alpine rack. The blocks at the start are the loosest thing on the route and sit directly above anyone still in the gully."
+   },
+   {
+    "n": 2,
+    "class": "5.0",
+    "label": "Exposed crest pitch",
+    "notes": "The crux, following the ridge proper on clean rock with good gear. Sources split on the grade: the route is often given 5.0 overall but this pitch is commonly felt to be nearer 5.4, largely because of how exposed it is rather than how hard the moves are. A weakness slightly left of the crest offers the same difficulty with less air under your feet if the position is unwelcome."
+   },
+   {
+    "n": 3,
+    "class": "4th-low 5th",
+    "label": "Upper crest to the summit",
+    "notes": "Scramble at or just right of the crest to the summit on continued solid rock. Exposure increases toward the top while the climbing eases. Descent reverses the route with some downclimbing plus several rappels; fixed tat and rings exist at various stances but are of unknown age and blocky terrain means anchor choice matters — a 2005 accident on this peak involved a rappel anchor failure after a party had already committed to the wrong gully on approach, so build or back up your own anchors rather than trusting what is there."
+   }
+  ],
+  "finding": "ABOVE"
+ },
+ {
+  "id": "wa_sherpa_peak_west_ridge",
+  "name": "West Ridge",
+  "area_id": "wa_sherpa_peak",
+  "discipline": "alpine",
+  "grade": "5.5",
+  "rock_grade": "5.5",
+  "pitches": 5,
+  "length_m": 152,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Strong - long approach with roughly 7,000+ ft of cumulative gain (Longs Pass, drop to Ingalls Creek, climb to basin camp) typically split over 2 days, or pushed as a 14+ hour car-to-car day",
+    "packWeight": "Moderate-heavy: rope, rack, and overnight/bivy kit carried over talus and boulder fields"
+   },
+   "approachTime": "Long, multi-stage approach (Longs Pass -> Ingalls Creek -> upper basin camp at ~7,400 ft); usually done as a 2-day trip",
+   "requiredSkills": [
+    "exposed 4th-class scrambling",
+    "short 5.4 rock leading with gear placement",
+    "rappel and anchor building for the descent",
+    "judgment on loose/blocky rock"
+   ],
+   "experienceLevel": "Intermediate alpine climber - comfortable moving quickly on exposed 4th class and leading short pitches of low 5th class rock in a remote setting"
+  },
+  "pitch_detail": [
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "4th/5.0",
+    "notes": "From the Stuart-Sherpa col, ascend broad, blocky class-4 ridge terrain trending climber's left to the base of the technical face; a 60m rope is needed to reach the first real belay.",
+    "pitch": 1,
+    "anchor": "Gear",
+    "lengthM": 60
+   },
+   {
+    "crux": true,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Broken rock leads to a small cave about a third of the way up the southwest face; the crack/crux moving out of the cave is the route's technical crux - published 5.4 but commonly felt as 5.6-5.7.",
+    "pitch": 2,
+    "anchor": "Gear (cave belay)",
+    "lengthM": 40
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.2",
+    "notes": "Above the cave, go right on a jam crack/flake into a chimney or left on face holds and mantle into a gully - both reach a ledge/platform used as a rappel station on descent.",
+    "pitch": 3,
+    "anchor": "Gear (rap-station ledge)",
+    "lengthM": 45
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "4th",
+    "notes": "Downclimb/scramble across a short gully, then climb to gain the lowest point of the summit ridge.",
+    "pitch": 4,
+    "anchor": "Gear",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "4th",
+    "notes": "A short class-4 scramble along the exposed summit ridge to the top; the East Ridge descent option is visible below to climber's left.",
+    "pitch": 5,
+    "anchor": "Walk-off (summit)",
+    "lengthM": 25
+   }
+  ],
+  "climbing_route": null,
+  "finding": "BELOW"
+ },
+ {
+  "id": "wa_skookum_peak_twinsisters_scramble",
+  "name": "North Ridge via Jaws' Tooth",
+  "area_id": "wa_skookum_peak_twinsisters",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "rock_grade": "5.6",
+  "pitches": null,
+  "length_m": null,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "strong all-day fitness - long approach/scramble day on an unmaintained climbers' path",
+    "packWeight": "light day-pack, roughly 15-25 lbs (water, layers, light rack if linking with roped sections)"
+   },
+   "approachTime": "long - several hours to the ridge under normal conditions, plus an unbridged ford of the Middle Fork Nooksack near the trailhead",
+   "requiredSkills": [
+    "Leading or simul-climbing easy fifth-class rock with real exposure",
+    "confident downclimbing / exposure tolerance",
+    "route-finding on sparsely marked climbers' paths",
+    "navigation via map/GPS through brush and talus off-trail",
+    "judging whether a river ford is safe at the current flow"
+   ],
+   "experienceLevel": "solid alpine rock experience: comfortable on exposed 5.4 ridge terrain, building a rappel anchor, and downclimbing loose third-class gullies on the descent"
+  },
+  "pitch_detail": null,
+  "climbing_route": null,
+  "finding": "BELOW"
+ },
+ {
+  "id": "wa_south_face_12",
+  "name": "South Face",
+  "area_id": "wa_argonaut_peak",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "rock_grade": "5.6",
+  "pitches": 3,
+  "length_m": 91,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": "Fit for a 17.5-hour car-to-car day",
+   "requiredSkills": [
+    "Comfortable on runout, blocky, loose terrain",
+    "Competent unroped 3rd/4th-class scrambling for the approach gully",
+    "Creek ford (Ingalls Creek) plus off-trail approach navigation",
+    "No snow/ice skills needed in-season"
+   ],
+   "experienceLevel": "Trad leader solid at 5.7-5.8 (variable rock quality near the base)"
+  },
+  "pitch_detail": [
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Start in the short left-facing corner with a crack in it and follow blocky, generally solid granite up the lower face; watch for loose blocks right at the base.",
+    "pitch": 1,
+    "anchor": "Gear",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.6",
+    "notes": "Continue up the broad face on good rock — climbers can pick their own line here since the face is featured almost anywhere.",
+    "pitch": 2,
+    "anchor": "Gear",
+    "lengthM": 35
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "up to 5.6",
+    "notes": "Finish up the upper face on blocky rock to the summit. The face goes almost anywhere, so the difficulty depends on the line you pick.",
+    "pitch": 3,
+    "anchor": "Gear",
+    "lengthM": 20
+   }
+  ],
+  "climbing_route": null,
+  "finding": "ABOVE"
+ },
+ {
+  "id": "wa_south_face_8",
+  "name": "South Face",
+  "area_id": "wa_lundin_peak",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "rock_grade": "Easy 5th class",
+  "pitches": 4,
+  "length_m": 152,
+  "description": null,
+  "partner_requirements": {
+   "requiredSkills": [
+    "Comfort with an approximate, not precisely documented route line"
+   ],
+   "experienceLevel": "5.4-5.6 trad leader"
+  },
+  "pitch_detail": [
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Low-angle low-5th-class climbing straight off the basin on solid, featured rock.",
+    "pitch": 1,
+    "anchor": "Gear",
+    "lengthM": 40
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.4",
+    "notes": "Continues in the same easy vein, working up toward a broad slab band.",
+    "pitch": 2,
+    "anchor": "Gear",
+    "lengthM": 40
+   },
+   {
+    "crux": false,
+    "bolts": 0,
+    "grade": "5.5",
+    "notes": "Cross the slab on knobby, low-angle granite; protection is sparser here than on the crack pitches below.",
+    "pitch": 3,
+    "anchor": "Gear",
+    "lengthM": 40
+   },
+   {
+    "crux": true,
+    "bolts": 0,
+    "grade": "5.6",
+    "notes": "The final pitch above the slab steepens noticeably before topping out near Lundin's true summit — the route's crux, per the original 1941 line's own description.",
+    "pitch": 4,
+    "anchor": "Gear, belay near the true (westernmost) summit",
+    "lengthM": 35
+   }
+  ],
+  "climbing_route": null,
+  "finding": "ABOVE"
+ },
+ {
+  "id": "wa_south_headwall",
+  "name": "South Headwall",
+  "area_id": "wa_mount_stuart",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "rock_grade": "5.8",
+  "pitches": 5,
+  "length_m": null,
+  "description": null,
+  "partner_requirements": {
+   "requiredSkills": [
+    "Tolerance for 1,000s of feet of loose scree approach to ~8,700 ft — the real crux of the route"
+   ],
+   "experienceLevel": "Modest technical bar (5.7)"
+  },
+  "pitch_detail": [
+   {
+    "grade": "low 5th",
+    "notes": "From the cirque below the steep south-side cliffs at about 8,700 ft, start up the centre of the headwall. A large crack in clean white granite gives the first fifth-class climbing; the line trends a little left. Ledges are available for a belay on every pitch, and the approach gullies below shed rock onto this start.",
+    "pitch": "Lower headwall"
+   },
+   {
+    "crux": true,
+    "grade": "5.7",
+    "notes": "Two short steep sections, each 20–30 ft, are the hardest climbing on the route. Both take good gear. Between them the ground mixes face climbing and small chimneys; the rest is 4th and low 5th class. No fixed gear has been reported, so bring cams, nuts and long slings.",
+    "pitch": "Crux sections (x2)"
+   },
+   {
+    "grade": "low 5th",
+    "notes": "Gain the upper South Rib and follow it back rightward. A chute leads onto a large ledge overlooking the west face, then a slab traverse leads toward the summit pyramid. Loose blocks sit on the ledges and rockfall is frequent, so keep the rope clear of them.",
+    "pitch": "Upper South Rib"
+   },
+   {
+    "grade": "Scramble",
+    "notes": "The route tops out just southwest of the true summit; a short scramble reaches the top. Descend south by the Cascadian Couloir.",
+    "pitch": "Summit scramble"
+   }
+  ],
+  "climbing_route": null,
+  "finding": "BELOW"
+ },
+ {
+  "id": "wa_spire_point_southwest_face",
+  "name": "Southeast Face",
+  "area_id": "wa_spire_point",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "rock_grade": "5.4",
+  "pitches": 5,
+  "length_m": 102,
+  "description": null,
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Multi-day backpacking fitness for the Ptarmigan Traverse approach (10-20+ miles with substantial elevation gain/loss over talus, heather, and glaciated terrain to reach an Itswoot Ridge/Cub Lake camp) plus a summit day",
+    "packWeight": "Multi-day glacier/alpine kit (30-45 lb) for the approach; light rack/day pack for the summit pitch itself"
+   },
+   "approachTime": "Multi-day approach (typically 2+ days in via the Ptarmigan Traverse to an Itswoot Ridge or Cub Lake camp) before a summit day on the southwest face",
+   "requiredSkills": [
+    "5.6 rock climbing on a short face with exposure",
+    "glacier travel and crevasse-crossing competence for the approach along the Ptarmigan Traverse",
+    "route-finding on remote, lightly-traveled terrain",
+    "self-sufficiency (rescue is far away; see remoteness/exposure hazards)",
+    "comfort on loose rock/blocks near the summit"
+   ],
+   "experienceLevel": "Solid alpine climber comfortable with multi-day glaciated approaches and unroped 5.6 rock with real exposure; not a beginner objective given the remoteness and commitment of reaching it"
+  },
+  "pitch_detail": [
+   {
+    "grade": "Class 2-3",
+    "notes": "Scrambling talus and snow approach from Spire Col at 7,760 feet, trending northwest along glacier edge to base of southeast face at 8,000 feet.",
+    "pitch": "1-2"
+   },
+   {
+    "grade": "Class 4",
+    "notes": "Short chimney section, roughly 30 feet of climbing; solid granite with good holds.",
+    "pitch": "3"
+   },
+   {
+    "grade": "Class 3",
+    "notes": "Ledge traverse across southeast face, exposed but lower angle terrain, class 3 scrambling with exposure.",
+    "pitch": "4"
+   },
+   {
+    "grade": "5.6",
+    "notes": "Final pitch to summit—either friction slab climb (5.6) on open face or alternate route via cracks left of slab with decent holds. Only 50 feet but extremely exposed, narrow summit horn requires careful foot placement and rope belays for safety.",
+    "pitch": "5 (Crux)"
+   }
+  ],
+  "climbing_route": null,
+  "finding": "ABOVE"
+ }
+]

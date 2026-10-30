@@ -1273,8 +1273,30 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **ABOVE** (more than one step over the route's highest 5.x), **BELOW** (highest named grade
     under the crux), **NONE** (no 5.x on the route, a 5.x lead above 5.6 asked). A clause that
     names an aided, French-freed, optional or variation section does not count as asked —
-    "Solid 5.10 leader; the 5.11a crux can be aided" is honest, not BELOW. `--selftest` holds 17 cases.
-  - **Not yet run against the catalog** — written 2026-10-28 while the database was answering
-    one-row reads in 30-180 s, so the census waited. The repo's enrichment files hold ~317
-    distinct `experienceLevel` strings, 49 naming a 5.x grade: expect a small class.
+    "Solid 5.10 leader; the 5.11a crux can be aided" is honest, not BELOW. `--selftest` holds 32 cases.
+  - **The route's crux is the highest 5.x in `rock_grade`, `grade` AND its own `pitch_detail[].grade`**
+    (2026-10-30). Headers lag their pitches: Spire Point's SW Face reads 5.4 with two 5.6 pitches,
+    Mox's standard 5.5 with a 5.7 pitch, Lundin's south face 5.0 with a 5.6 last pitch. A partner
+    text asking for that 5.6 is RIGHT; the header is a different audit's question (not changed here —
+    no outside source settled those three).
+  - **A bare letter grade is its whole range** ("a solid 5.11 leader" asks for 5.11a and promises up
+    to 5.11d). Read as the b/c middle, it flagged "Solid 5.11 trad leader" on a 5.11a route.
+  - A "+" is half a step: "Solid 5.9" on a 5.9+ crux is not BELOW; BELOW needs a full step.
+  - In a GRADE string, a parenthesis with no grade of its own qualifies the grade before it
+    ("5.7 (unprotectable, usually bypassed)" is not the line); one WITH a grade qualifies that
+    grade ("5.4 (5.6 on the variation)"). `off-route`, `variant`, `bypassed` count as not asked.
+  - **Census and outcome, 2026-10-30** (service key): **470** routes carry partner requirements,
+    **109** name a 5.x grade, all in WA. First run (old parser): 18 ABOVE, 13 BELOW, 0 NONE;
+    7 ABOVE were the bare-grade misreading. Every remaining row was researched (two Sonnet batches,
+    `audits/partner-grade/proposals{A,B}.json`) and **20 rows rewritten** in our own words by
+    `scripts/oneoff/fix-partner-grade.mjs` (16) and `fix-partner-grade-2.mjs` (4, the rows the
+    pitch-grade crux surfaced); rollbacks `scripts/rollback-partner-grade-*.json`. Now:
+    **0 ABOVE, 1 BELOW, 0 NONE**.
+  - **The one accepted row:** `wa_ingalls_peak_south_ridge` — pitch 2's grade field reads 5.6, but
+    its own note says that is the harder crack and the left line goes at 5.4; the partner text names
+    both. The audit reads pitch GRADES, not pitch notes, so it will keep listing it. Not a finding.
+  - Stored grades kept despite a lower outside listing, by the keep-the-higher rule: Terror's East
+    Ridge 5.8 (one listing 5.6), Stuart's West Ridge 5.6 (older listings 5.4), Burgner-Stanley 5.10a
+    (5.9+ to 5.10b). Sharkfin Tower stays 5.0 (near-universal) with its text naming "a couple of
+    harder moves near 5.4".
   - Service key, `partner_requirements=not.is.null` in 100-row pages. Not a build gate.
