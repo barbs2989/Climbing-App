@@ -17,6 +17,9 @@ of its sub-areas. Guidebooks and land agencies usually publish one season for a 
    - it is an ice/mixed venue, or you cannot tell what or where it is.
    If the system is too big or varied for one window (a whole mountain range, a region spanning
    desert and alpine), return season_months null and say so.
+   IMPORTANT: a window written on the system reaches EVERY sub-area (and everything below it) that
+   has no season of its own. So it is written on the system only when you exclude nothing; when you
+   exclude any sub-area, only the sub-areas in applies_to get it.
 3. Sub-areas that are excluded may get their own window ONLY if a source names months for them.
 
 Output: write a JSON file (the path is in your task) shaped
