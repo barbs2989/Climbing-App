@@ -221,7 +221,14 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `lib/baseCheckin.js` | `acquireBaseFix`, `baseCheckinMessage`, `baseGuide`, `bearingDeg`, `BASE_CONFIRM_MIN`: the base check-in's GPS rules and the find-the-base readout (the clustering is the database's, 0363) |
 | `lib/rescueCounty.js` | `useCountyAt`, `countyAt`, `climbPoint`, `countyPlace`, `sarFor`, `SAR_BY_COUNTY` (data in `lib/sarByCounty.js`) — the Safety tab's county and its dispatch line |
 | `lib/FireNearRoute.jsx` | Nearby-fire panel (Safety tab) |
-| `EnrichmentPanels.jsx` | Panels for enriched route columns |
+| `EnrichmentPanels.jsx` | `splitParagraphs`, and re-exports of the panels below and of `monthRank` / `seasonWindowMonths` (since PR64 the panels are components) |
+| `src/components/PeakMetadataPanel.tsx` | `PeakMetadataPanel` |
+| `src/components/SeasonalGuidancePanel.tsx` | `SeasonalGuidancePanel` |
+| `src/components/CrowdsPanel.tsx` | `CrowdsPanel` |
+| `src/components/PartnerRequirementsPanel.tsx` | `PartnerRequirementsPanel` |
+| `src/components/EmptyPanel.tsx` | `EmptyPanel`, the empty state the seasonal and crowds panels share |
+| `src/components/Head.tsx` | `Head`, those panels' card heading |
+| `lib/seasonWindow.js` | `monthRank`, `seasonWindowMonths`, `MONTH_ABBR` (a route's season WINDOW read strictly into months) |
 | `lib/DbAreaBrowser.jsx` | The Climbs area browser that opens routes |
 | `supabase/migrations/0294_route_star_ratings_persist.sql` | `route_ratings`, `route_star_summary`, triggers |
 | `lib/RouteStats.jsx` | `RouteStats` — the ROUTE STATS card (page views, sends, logged climbs, objectives, star breakdown, sends by month) |
