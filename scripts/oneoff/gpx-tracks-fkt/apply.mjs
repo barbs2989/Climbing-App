@@ -20,18 +20,22 @@ const WRITE = process.argv.includes("--write");
 const PACE_MS = 1000;
 const MAX_PTS = 3000;
 
+// track points; a file holding only route points (<rtept>, some FKT uploads) falls back to those
 function parseGpx(xml) {
-  const pts = [];
-  // attributes in either order, and self-closing points
-  const re = /<trkpt\b([^>]*?)(\/>|>([\s\S]*?)<\/trkpt>)/g;
-  let m;
-  while ((m = re.exec(xml))) {
-    const la = /\blat="([-\d.]+)"/.exec(m[1]), lo = /\blon="([-\d.]+)"/.exec(m[1]);
-    if (!la || !lo) continue;
-    const e = m[3] ? /<ele>([-\d.]+)<\/ele>/.exec(m[3]) : null;
-    pts.push({ lat: +la[1], lng: +lo[1], ele: e ? +e[1] : null });
+  for (const tag of ["trkpt", "rtept"]) {
+    const pts = [];
+    // attributes in either order, and self-closing points
+    const re = new RegExp(`<${tag}\\b([^>]*?)(\\/>|>([\\s\\S]*?)<\\/${tag}>)`, "g");
+    let m;
+    while ((m = re.exec(xml))) {
+      const la = /\blat="([-\d.]+)"/.exec(m[1]), lo = /\blon="([-\d.]+)"/.exec(m[1]);
+      if (!la || !lo) continue;
+      const e = m[3] ? /<ele>([-\d.]+)<\/ele>/.exec(m[3]) : null;
+      pts.push({ lat: +la[1], lng: +lo[1], ele: e ? +e[1] : null });
+    }
+    if (pts.length >= 2) return pts;
   }
-  return pts;
+  return [];
 }
 const R = 6371000, rad = d => d * Math.PI / 180;
 const dist = (a, b) => {
