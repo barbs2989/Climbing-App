@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 // How many routes now show a season in the header? The census cache plus every apply-*.json
 // written since (the applier only fills empty columns, so a batch id is a season on that area).
+// The header reads the route's own area, then up to four ancestors (lib/seasonText.js
+// routeSeasonShort, lib/db.js ancestorSeason); a state or country never carries one.
 // Routes with their own routes.season are not counted here (1,035 at the 2026-10-28 census).
 // No DB.   node scripts/oneoff/season-coverage.mjs --cache <areas.json>
 import fs from "fs";
@@ -13,6 +15,7 @@ const kids = new Map(); for (const a of rows) if (a.parent_id) kids.set(a.parent
 let total = 0, cov = 0;
 for (const a of rows) {
   const n = Math.max(0, (a.route_count || 0) - (kids.get(a.id) || 0)); if (!n) continue;
-  total += n; if (set.has(a.id) || (a.parent_id && set.has(byId.get(a.parent_id)?.id))) cov += n;
+  total += n;
+  for (let p = a, d = 0; p && d < 5; d++, p = byId.get(p.parent_id)) if (set.has(p.id) && !["state", "country"].includes(p.area_type)) { cov += n; break; }
 }
 console.log(`areas with a season: ${set.size}; routes whose header shows an area season: ${cov} of ${total} (${(100 * cov / total).toFixed(1)}%)`);
