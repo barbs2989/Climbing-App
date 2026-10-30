@@ -38,3 +38,24 @@ Rollback files: `rollback-b01..b03.json`, plus `scripts/rollback-closure-distanc
 4. **NO_ACCESS groups** (Silver-Skagit, SR 165 Fairfax Bridge, FR 8301 Holden, Baker Lake Rd, Bacon Creek, Vantage Rd SW). There is no walk to add. Only confirm that the text says there is no access, and record a verdict.
 
 Never write more than a few hundred rows without pacing: `patchRow` paces itself. Stop if a keyed read takes more than about 10 s.
+
+## Road research done without the database (2026-10-29, second pass)
+
+`roads-research-1.json` (8 roads) and `roads-research-2.json` (20 roads) hold, for each road, the current status, the closure point, whether foot and bike traffic are allowed, the extra miles one way to each trailhead (each with its derivation), and the sources. The per-route decision is left to the next session, which needs database reads.
+
+**Useful mileages:**
+- Olympic Hot Springs: 6.5 mi to Whiskey Bend, 8 mi to Boulder Creek.
+- Dosewallips: 5.5 mi. The NPS also says 6.5 mi; pick the figure that matches each row's own trailhead.
+- Monte Cristo: 4 mi and 700 ft to the townsite.
+- Cascade River: about 3 mi past the MP 20 gate.
+- Westside: 3.8 mi Dry Creek to Round Pass.
+- Sibley Creek: about 2 mi.
+- Anderson-Watson: 6.2 mi.
+- Deadhorse: 9.6 mi from the MP 3.1 washout.
+- FR 9737-112: 1.0-1.4 mi.
+
+**REOPENED:** Glacier Creek Road FR 39 reopened on 2026-08-20. Its 5 routes need their stale "closed" road text corrected, with no miles added. Baker Lake Road has probably reopened, but unconfirmed.
+
+**No sourced distance, so record NO_CHANGE:** White Chuck, Depot Creek, Index-Galena, Stehekin, Eagle Creek, Smithbrook, Olney Creek. FR 21 Snowgrass has no closure notice, so re-check its route text.
+
+**Still NO_ACCESS:** Silver-Skagit, SR 165 Fairfax Bridge (and so the Carbon River), Holden, Bacon Creek, Vantage Rd SW.

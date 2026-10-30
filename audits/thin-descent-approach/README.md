@@ -211,9 +211,17 @@ through `rollback-1793313279406.json` (8 files) and `rollback-1793318126666.json
 | WY 3 | 34 | 24 | 10 | 5 Upper Blacktail Butte summer drytool lines unplaceable. New Order (drytool/aid) filed as mixed. Prospector Falls: 2 pitches stored, 4 described. |
 | CA 1 | 36 | 19 | 17 | Harwood "Consolation Couloir" matches only a Colorado route. Galena Peak North Couloir is on private land. Right Mendel Couloir: AI5 on its page, WI3+ stored. |
 | NB 1 | 25 | 22 | 3 | Walton Glen. Three Lower Quiddy River rows carry grade-suffixed names and may belong to Quebec. |
+| CA 2 | 35 | 22 | 13 | Mostly Tahquitz ice rows with grade-only pages. Lead review removed a single-source distance (Tokopah Falls). |
+| NB 2 | 39 | 39 | 0 | Upper Quiddy River's stored coordinate (45.4486, -66.308) is far from the wall (~45.55, -65.23). Easy Street is stored as 23 pitches. |
+| NL 1 | 15 | 3 | 12 | Most Newfoundland rows have no source online. |
+| QC 1 | 29 | 29 | 0 | Lead review removed a source mention (park map / printed guide, Passion Tropicale) and a single-source distance. Astro (Mont de l'Ours) is a trad/mixed line filed as ice. |
+| NS 1 | 29 | 28 | 1 | Cape Chignecto: tide-timed beach approaches. |
+| ID, YT, NC, NM (misc 1) | 41 | 27 | 14 | Lead review skipped Whiskey Peak "La Llorona" (identity unconfirmed). Mount Logan East Ridge's stored grade and pitches don't fit the expedition line. |
+| ON, ME, NV, VT, PA, NU, NT, MI (misc 2) | 32 | 14 | 18 | `me_kineo_ice_climbs_unknown` is a placeholder name for an unclimbed line. |
 
 **Second-round writes (2026-10-30):** WY 1 stopped after 12 rows (the database returned 500); rollback `rollback/rollback-1793319833226.json`.
-The rest of WY 1–3, CA 1 and NB 1 are queued for a healthy database. Contexts for CA 2, NB 2, QC, NS, NL and two combined small-state files
+The rest of WY 1, and WY 2–3, CA 1–2, NB 1–2, NL 1, QC 1, NS 1 and misc 1–2, are queued for a healthy database (about 290 rows).
+**Ice research is complete:** every built context has a reviewed batch. Contexts for CA 2, NB 2, QC, NS, NL and two combined small-state files
 (`ctx-ice-misc-1.json`: ID, YT, NC, NM; `ctx-ice-misc-2.json`: ON, ME, NV, VT, PA, NU, NT, MI) are built.
 
 **Ice-tier findings for review:**

@@ -987,6 +987,33 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       crag base. **179 routes of the backlog remain** (81 peak, 83 crag, the 15 on Dragontail, Colchuck
       Peak and Mount Johnson left to the parallel session); `check:trailhead-direction-shape --live`
       passes on all 914.
+  - **Backlog round 3, 2026-10-29: the BROWSER lever.** `list-remaining.mjs` re-read the backlog by
+    id (no scans): 144 of 328 filled, 9 rows gone, **175 still empty** (93 peak routes, 82 crag
+    routes on 29 crags). Researchers read mountaineers.org in Chrome (SummitPost turned on a bot
+    check part-way through the day; Peakbagger and ListsOfJohn always show one), saved each page to
+    `~/dev/getting-there-page-cache/` (outside the repo — not our text to commit), and
+    `apply-getting-there-batch.mjs --page-cache DIR` runs the 8-word copy check against those
+    copies and REFUSES an entry citing a page it could read neither way. `NR_BRIEF.md` is the addendum.
+    - **Peaks: 5 written of 93** (Dragontail West Route, Ingalls North Peak SW Face, Mount Hinman West
+      Route, Tahoma Cleaver from the Dry Creek barricade, Luna Peak SW Ridge), every one re-read.
+      The second check rejected Hibox South Route and Preacher North Route (a peak page's one line
+      matched to a named route by where it ends up) and lowered Dragontail Direct North Buttress,
+      Sherpa NE Face, Rainier East Success Couloir and Three Musketeers Ridge to low. The applier then
+      refused three until reworded (two drives shared an 8-word run with a page, one numbersUsed
+      missed a "2"). **Yield is the finding again: about 1 peak route in 19.** The Mountaineers
+      route pages that exist describe a peak's standard line; the variations in our catalog
+      (Colchuck ×4, Little Annapurna ×3, Mount Johnson ×6, Gunsight ×4…) have no page anywhere
+      that says where they start.
+    - **Crags: 13 of 29 passed the second check**, which also had to say WHICH routes a page shows
+      the walk reaching (`appliesTo`; `expand-crag-fill.mjs` honours it) — Tumwater's walk reaches
+      Drury Falls and The Pencil, not its other three climbs; Goat Wall's only The Standard; Moses
+      Coulee's only Sundance Kid. 28 route rows queued (`nr-crags-routes-check.json`). McClellan
+      Butte rejected again: FSR 9020 has been closed at miles 0.7–1.1 since June 2026.
+      **Not written yet:** the database stalled and was restarted that evening and the runner put
+      every session on a DB hold. To resume: `node prepare-fill-apply.mjs nr4 nr-crags-routes-check.json`,
+      then `node ../apply-getting-there-batch.mjs --research nr4-research.json --routes nr4-live.json
+      --library th-library.json --page-cache ~/dev/getting-there-page-cache` (dry), then `--apply`.
+
 
 - **`audit:closure-distance`** (2026-10-29, owner note on Three Fingers South Peak via Lookout: "Description
   said road was washed out so it adds extra miles but that isn't reflected in the technical stats distance").

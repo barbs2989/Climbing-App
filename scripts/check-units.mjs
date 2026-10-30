@@ -324,7 +324,7 @@ async function runPersist() {
 
   // THE WIRING. Restoring happens in a useState initializer and persisting in an onClick --
   // neither of which a render can reach, so both are read from source.
-  const app = fs.readFileSync(APP_PATH, "utf8");
+  const app = readAppFile(APP_PATH);
   if (!/from "\.\/lib\/units-pref"/.test(app)) fail("ClimbMatch.jsx does not import the units preference");
   else ok("ClimbMatch.jsx imports it");
 
@@ -477,7 +477,7 @@ async function runWeather() {
   //    number and both hydrations rendered it as `+" ft"`, which is another climber's report
   //    read in the wrong unit. check:log guards which COLUMNS each hydration carries and is
   //    blind to what unit one of them is rendered in.
-  const appMask = fs.readFileSync(APP_PATH, "utf8")
+  const appMask = readAppFile(APP_PATH)
     .replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
   //    THE CONTRACT MOVED (log-form rework): both hydrations now carry the RAW NUMBER as
   //    `freezingFt`, and the conversion happens where it is DRAWN. Hydrating to uElev()'s string
@@ -962,7 +962,7 @@ async function runFilters() {
   //    NEITHER DIRECTION OF check:dead-props SEES THIS: the component references the prop, and the
   //    call site passes nothing unread — the exact hole this file records for the float plan. Four
   //    links, asserted as source, the way check:topo-outage-copy pins its own.
-  const appMask = fs.readFileSync(APP_PATH, "utf8")
+  const appMask = readAppFile(APP_PATH)
     .replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
   // A JSX tag here cannot be sliced with [^>]*: these props hold ARROW FUNCTIONS, so `=>` puts a
   // `>` inside the tag and the match stops in the middle of it. That is not hypothetical — it

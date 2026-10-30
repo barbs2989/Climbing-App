@@ -56,27 +56,29 @@ const sum = (p) => crypto.createHash("sha1").update(fs.readFileSync(p)).digest("
 
 const CASES = {
   partners: {
-    file: "ClimbMatch.jsx",
+    file: "src/components/DiscoverTab.tsx",
     from: "objectivesUnavailable={objectivesUnavailable} meListed={",
     to: "meListed={",
     expect: "fail",
     names: /Partners/,
   },
   home: {
-    file: "ClimbMatch.jsx",
+    file: "src/components/TodayTab.tsx",
     from: 'My objectives",objectivesUnavailable?"couldn’t load":wishlist.length',
     to: 'My objectives",wishlist.length',
     expect: "fail",
     names: /Home:revisited/,
   },
   logbook: {
-    file: "ClimbMatch.jsx",
+    file: "src/components/LogbookTab.tsx",
     from: "<MyAscents logsUnavailable={logsUnavailable} routeById={routeById}",
     to: "<MyAscents routeById={routeById}",
     // TWO call sites, and the harness refused this case until it said so. MyAscents is mounted
     // from both the Logbook tab and the Me tab; reverting one leaves the other wired, so the
     // screen under test would have kept its fix and the run would have read as a MISS.
-    hits: 2,
+    // Since PR61 the two call sites are in two files (LogbookTab.tsx and RoutesTab.tsx); the walk's
+    // Logbook:Completed screen draws the LogbookTab one, so that is the one reverted.
+    hits: 1,
     expect: "fail",
     names: /Logbook:Completed/,
   },
@@ -93,7 +95,7 @@ const CASES = {
     names: /Crew:Friends/,
   },
   groups: {
-    file: "ClimbMatch.jsx",
+    file: "src/components/GroupsTab.tsx",
     // For you is the tab the walk lands on. Neutralise the CONDITION, as friends does, so the JSX
     // stays balanced; the same flag guards the other four tabs, which the walk never opens.
     from: '{groupsTab==="foryou"?<div>{groupsUnavailable?note(notLoaded):mine.length?',
@@ -117,7 +119,7 @@ const CASES = {
   // is the coverage arriving, which is exactly what the PASS was there to prompt -- so the case
   // becomes expect:"fail" rather than being quietly deleted.
   invites: {
-    file: "ClimbMatch.jsx",
+    file: "src/components/CrewRequestsView.tsx",
     from: '>{crewInvitesUnavailable?"Couldn’t load your crew invites":"No crew invites"}</div>',
     to: '>No crew invites</div>',
     expect: "fail",

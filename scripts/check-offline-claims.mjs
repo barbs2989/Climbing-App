@@ -62,7 +62,7 @@ const dead = (m) => { console.error("FAIL: " + m); process.exit(1); };
 
 let cm, rd, core, help, db, off, snap;
 try {
-  cm = read("ClimbMatch.jsx"); rd = readAppFile(path.join(ROOT, "RouteDetail.jsx")); core = read("ClimbMatchCore.jsx");
+  cm = readAppFile(path.join(ROOT, "ClimbMatch.jsx")); rd = readAppFile(path.join(ROOT, "RouteDetail.jsx")); core = read("ClimbMatchCore.jsx");
   help = read("lib/Help.jsx");
   db = read("lib/db.js"); off = read("lib/offline.js");
   snap = read("scripts/build-state-snapshots.mjs");

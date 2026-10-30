@@ -37,9 +37,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const src = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+// Read stitched: Home's gate moved into TodayTab (PR61); the builder and the names it follows stay in App.
+const src = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
 
 let failures = 0, cases = 0;
 const ok = (m) => console.log("ok    " + m);
@@ -85,7 +87,10 @@ const dead = (m) => { console.error("\nBROKEN GUARD: " + m + "\n(this run proved
       let grew = false;
       for (const n of names) {
         if (seen.has(n)) continue;
-        const d = src.indexOf("const " + n + "=");
+        // The nearest definition BEFORE the gate wins: since PR61 the stitched text holds other
+        // components that declare a local of the same name (CrewListView has its own `reqN`).
+        let d = src.lastIndexOf("const " + n + "=", g);
+        if (d < 0) d = src.indexOf("const " + n + "=");
         if (d < 0) continue;
         const e = src.indexOf(";", d);
         if (e < 0 || e - d > 400) continue;   // an arithmetic helper, never a component

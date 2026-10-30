@@ -84,7 +84,9 @@ for (const f of files) {
       const bast = parse(baseSrc, { sourceType: "module", plugins: ["jsx"] });
       traverse(bast, NORM);
       let cons = null, hits = 0;
-      traverse(bast, { ConditionalExpression(cp) { if (baseSrc.slice(cp.node.start, cp.node.start + anchor.length) === anchor) { cons = cp.node.consequent; hits++; } } });
+      const isJ = n => n && (n.type === "JSXElement" || n.type === "JSXFragment");
+      traverse(bast, { ConditionalExpression(cp) { if (!anchor.endsWith("&&") && baseSrc.slice(cp.node.start, cp.node.start + anchor.length) === anchor) { cons = cp.node.consequent; hits++; } },
+        LogicalExpression(cp) { if (anchor.endsWith("&&") && cp.node.operator === "&&" && isJ(cp.node.right) && baseSrc.slice(cp.node.start, cp.node.start + anchor.length) === anchor) { cons = cp.node.right; hits++; } } });
       const ret = node.body.body.length === 1 && node.body.body[0].type === "ReturnStatement" ? node.body.body[0].argument : null;
       if (hits !== 1 || !ret) { console.log(`BRANCH  ${f}: ${name} — anchor ${anchor} matched ${hits} time(s) in the base, or the component is not a single return`); bad++; continue; }
       const a = code(ret), c = code(cons);
