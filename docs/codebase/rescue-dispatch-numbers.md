@@ -691,6 +691,40 @@ Refused or not reached in this pass:
 - Blount County, Alabama: Official county page labels sheriff only 'Phone'
 - Carson City, Nevada: Official carsoncity.gov pages returned 403; not read
 
+## Blocked pages re-read in a browser (checked 2026-10-29, third pass)
+
+The counties the second pass refused only because the official page returned 403, a certificate
+error or a reset, read in Chrome. 13 added. Bedford VA and La Crosse take the county
+911 / communications centre's own contact line, as Barnstable and Morris did. Buncombe's line was
+read in the county site's own search results, which print the page text (its 911 page says
+"call the non-emergency number").
+
+| State | County | Number | Read on | Label on the page |
+|---|---|---|---|---|
+| Delaware | New Castle | (302) 573-2800 | newcastlede.gov/1302/Investigations | Non-Emergency: 302-573-2800 (county police; the City of New Castle says it is staffed 24 hours) |
+| Nevada | Carson City | (775) 887-2677 | carsoncity.gov/government/departments-g-z/sheriff-s-office/contact-us-6597 | To report a crime, please contact non-emergency dispatch at 775-887-COPS (2677). |
+| New Jersey | Passaic | (973) 881-2470 | passaiccountynj.org/departments/health | or Non-Emergency Sheriff's Department: Passaic County Sheriff's Department 973-881-2470 |
+| North Carolina | Buncombe | (828) 250-6670 | buncombenc.gov/455/Public-Safety-Communications-911 (also directory DID=80) | call the non-emergency number, 828-250-6670, for the public safety agency you wish to reach |
+| North Carolina | Chatham | (919) 542-2911 | chathamcountync.gov emergency-communications/when-to-call-not-to-call-911 | For non-emergency situations you can call our 24/7 administrative line at 919-542-2911 |
+| Pennsylvania | Lehigh | (610) 437-5252 | lehighcounty.org/Departments/Emergency-Management/Sections/911-Center | For non-emergency calls: 610-437-5252 (the City of Bethlehem has its own, 610-865-7171) |
+| Texas | McLennan | (254) 757-5222 | mclennan.gov/156/Precinct-1 | To contact our office after hours please call 254-757-5222 for 24 Hour Sheriff's Office Dispatch |
+| Texas | Williamson | (512) 864-8282 | wilcotx.gov/so | Phone: 512-943-1300 / 512-864-8282 - Non-Emergency |
+| Virginia | Bedford | (540) 586-7827 | bedfordcountyva.gov/government/departments-and-offices-e-n/emergency-communications-911 | Emergency Communications (911) department: Phone Number (540) 586-7827 (the sheriff also points non-emergency callers to it) |
+| Virginia | Clarke | (540) 955-1234 | clarkecounty.gov/government/sheriff-s-office/emergency-communications | The Emergency Communications Center is responsible for around-the-clock dispatch of emergency (911) and non-emergency (540-955-1234) calls |
+| Wisconsin | La Crosse | (608) 782-7575 | lacrossecounty.org/publicsafetycommunications | Contact Us: Public Safety Communications (24/7 call-taking and dispatch) Phone: 608-782-7575 |
+| Wisconsin | Marathon | (715) 261-1200 | marathoncounty.gov sheriff-s-office-divisions/communications | E911 Dispatch / Communications Division: 715-261-1200 |
+| Wisconsin | Milwaukee | (414) 278-4788 | county.milwaukee.gov/EN/Sheriff/Contact/Telephone-Directory | Non-Emergency Number: (414) 278-4788 |
+
+Still refused after the browser read:
+- Alameda: the sheriff's dispatch page shows an error page; the county DA's directory PDF could not
+  be searched.
+- Solano: no official page labels a line (non-emergency numbers seen only on a congressional page
+  and blogs).
+- Somerset NJ: the county lists 908-231-7140 only as "Sheriff".
+- Skagway: the line (907-983-2232) appears only on Nixle.
+- Broadwater: only the state's 911-manager list and third-party guides.
+- Not re-read: Buchanan VA, Somerset PA (county sites unreachable).
+
 ## Which counties our routes sit in (census, 2026-10-29)
 
 Each area's direct route count (its `route_count` minus its children's) was placed at its own
