@@ -128,6 +128,12 @@ element, which is how it spots a popup. The sidebar is all three, so it froze ev
 #2560 taught the lock to skip `role="navigation"`. The top bar (not full height) and the rail (starts
 below the top bar) do not trip it. Any new fixed desktop panel must not either.
 
+**Focus on open and close.** When a dialog opens, the same hook moves focus to its first control,
+unless the dialog already holds focus (an `autoFocus` field, such as the Name box of *New custom
+list*): that field keeps it. On close, focus goes back to the control that opened the dialog. That
+control is read from the last `focusout` outside any dialog, because an `autoFocus` field has already
+taken focus from it by the time the hook looks.
+
 ## 3. Files
 | File | Key symbols |
 |---|---|
