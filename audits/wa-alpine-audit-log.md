@@ -35972,3 +35972,53 @@ network (WebFetch), as in prior batches; cross-checks relied on WebSearch's synt
 from cached/indexed copies of those pages.
 
 Next batch will continue id-ascending from `wa_garfield_mountain_leaning_spire_west_route` (see progress file).
+
+## Batch 492 (2026-10-30, pass 8)
+
+Checked 8 routes across 3 peaks: Garfield Mountain (North Route, Preiss Route, South Route,
+Southeast Face, Southwest Ledges), Ghost Peak (South Route), and Gilbert Peak (Conrad Glacier,
+Meade Glacier).
+
+**No confirmed fixes this batch.**
+
+**Flagged for human review (4), no SQL:**
+- `wa_garfield_mountain_north_route`'s FA ("Richard Berge and Pete Schoening, 1950 or 1951") could
+  not be confirmed for Garfield. Those same two names are independently and specifically documented
+  attempting Mount Baring's north face in 1951-1952 (Berge died there in a 1952 fall) — a real
+  possibility this FA was copied from the wrong peak, but no source confirms or denies it for
+  Garfield, so left flagged rather than guessed at.
+- `wa_garfield_mountain_southeast_face`'s FA ("Pete Doorish, solo, September 1989") is unverified
+  either way; Doorish is a real, well-documented bold Cascades soloist of that era (confirmed via
+  Mountain Project on a different nearby route, DWI, with Bryan Burdo in 1990), so plausible but
+  not independently corroborated for this specific route and date.
+- `wa_garfield_mountain_preiss_route` and `wa_garfield_mountain_southwest_ledges` both store
+  `high_point_ft: 4804` for the West Peak sub-summit — the same discrepancy already flagged in
+  batch 491 on `wa_garfield_mountain_infinite_bliss`, where SummitPost alone gave 4,896 ft. This
+  batch found a second independent source (mountaineers.org's own Garfield West Peak/South Face
+  route page) also giving 4,896 ft, so two independent sources now agree against zero supporting
+  4804 beyond this catalog's own trailhead+gain_ft arithmetic. Left unfixed rather than fixed here
+  because at least three rows share the 4804 figure (including the already-flagged
+  `infinite_bliss`, not in this batch) and fixing only some would leave the rest inconsistent — a
+  human should correct all affected rows together.
+- `wa_garfield_mountain_southwest_ledges`'s FA ("Steve Martin & Leland Windham, September 2002",
+  as a link-up) is also unconfirmed: Martin and Windham are real, verified partners active on
+  Garfield's West Peak, but for a different named route (Infinite Bliss, FA dated August 2003 per
+  Mountain Project) — a plausible near-match (same pair, same peak, adjacent era) but not a direct
+  confirmation of this route or date.
+
+**Clean (4):** `wa_garfield_mountain_south_route` (FA Jim Crooks & Judson Nelson, August 27 1940,
+confirmed via Wikipedia; 5,519 ft summit confirmed). `wa_ghost_peak_south_route` (FA Carla Firey,
+Joan Firey, David Knudson, Peter Renz, July 17 1970, confirmed exactly via Wikipedia, and the
+row's own "Carpetbaggers Traverse"/Goodell Creek framing is independently corroborated by the
+party's own AAJ 1971 report — stronger confirmation than the row's own `corrections` field
+expected, despite it hedging that Mountain Project has no established route entries; 8,000 ft high
+point consistent with Wikipedia and listsofjohn's 7,993-8,020 ft LiDAR/map range).
+`wa_gilbert_peak_conrad_glacier` and `wa_gilbert_peak_meade_glacier` (both 8,184 ft, the
+modern/benchmark-matching figure per SummitPost; meade_glacier's own `corrections` field already
+documents the 8,201 ft older-map alternate, nothing new to add).
+
+**Method notes:** No write targets this batch, so `check:sql` was not run. mountainproject.com
+failed to resolve directly from this session's network (WebFetch), as in prior batches; cross-checks
+relied on WebSearch's synthesized snippets from cached/indexed copies of those pages.
+
+Next batch will continue id-ascending from `wa_gilbert_peak_meade_glacier` (see progress file).
