@@ -1837,7 +1837,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       REFUSED on review: its text is the north trailhead, and WTA's point is the south one.
     - **Off the track by 1 km+ (batch C2):** 2 moved, Lundin's PCT North and Osceola's Slate Pass.
     - **Every remaining trailhead (batches E1-E9, 325 coordinates):** checked against the WTA
-      hike page's `geo` trailhead coordinate, or USFS/NPS. Results are in `decisions-E*.json`. A
+      hike page's `geo` trailhead coordinate, or USFS/NPS. Results are in `decisions-E*.json`.
+      About 250 sit within 150 m of the published point, 37 are spots nothing publishes (washouts,
+      pullouts, gates) and 18 are unverified. 27 pins were proposed for a move of 160 m to 1.4 km and 26 moved: Dosewallips
+      washout x5, Big Four x4, Bedal/Sloan x3, Rainy Pass Maple Pass lot x3, High Bridge x2,
+      Mount Adams x2, Denny Creek, Reflection Lakes, Old Mine Road gate, Harlequin, Rattlesnake,
+      Slate Pass (Dot), Twin Lakes (Pleiades). Mount Herman's Bagley Lakes move was REFUSED by the
+      distance gate: that pin is the other Heather Meadows lot. A
       single WTA point that is far higher or lower than a stored pin matching its own height is
       SPLIT evidence and was not moved: Foggy Dew, Boulder Ridge, Shannon Ridge, Nooksack Cirque,
       Eldorado Creek, Bridge Creek, West Fork Buttermilk. Some WTA `geo` points mark the
@@ -1854,3 +1860,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - Rainy Pass's two lots (USFS and WTA disagree by 380 m, and each pin matches one).
     - Goodell's two camps, the Squire Creek washout and the Cutthroat and Wine Spires pullouts.
       Nothing publishes them.
+  - **AFTER (re-run 2026-10-30, every write re-read):** 55 rows written (53 routes, 2 areas).
+    - audit:waypoint-distances WA: 5 routes -> 1, the one left an ice route out of scope.
+    - audit:cross-route-pins: split candidates 1 -> 0.
+    - audit:summit-pins section 1: Rimrock is out. Mount Cameron is IN, because its pin moved to
+      GNIS but the area row's `areaMove` was refused: the GNIS point is on a flat crest with one ring
+      neighbour 5 ft higher, so it is not a strict local maximum. Leave the area row; the gate is
+      right not to bend.
+    - audit:stranded-track-vertices: 32 -> 34 adrift on +1 route (Diamond in the Rough). The audit
+      reads it as CAVEAT LOST, but that line has 4 vertices, under `MIN_RECORDED_PTS`, so the app
+      never draws it.
+    - audit:cross-route-pins can answer HTTP 500 on its FIRST page while the database is healthy
+      (a 300-row jsonb page). It passed on a single retry both times.
