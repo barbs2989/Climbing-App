@@ -165,6 +165,14 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 | `src/components/PrivacySheet.tsx` | `PrivacySheet`, the in-app privacy summary sheet |
 | `src/components/OnboardingSheet.tsx` | `OnboardingSheet`, the onboarding sheet |
 | `src/components/ReviewQueueSheet.tsx` | `ReviewQueueSheet`, the admin review queues |
+| `src/components/SettingsNotifsSheet.tsx` | `SettingsNotifsSheet`, Settings › Notifications (lifted from App, PR63) |
+| `src/components/SettingsLegalSheet.tsx` | `SettingsLegalSheet`, Settings › Legal & help |
+| `src/components/DeleteAccountConfirm.tsx` | `DeleteAccountConfirm`, the delete-account confirmation |
+| `src/components/DataRequestSheet.tsx` | `DataRequestSheet`, the data export / deletion request |
+| `src/components/BlockedClimbersSheet.tsx` | `BlockedClimbersSheet`, Blocked climbers |
+| `src/components/ReportUserSheet.tsx` | `ReportUserSheet`, report a climber |
+| `src/components/AboutSheet.tsx` | `AboutSheet`, About us |
+| `src/components/ClimberProfileSheet.tsx` | `ClimberProfileSheet`, another climber's profile (around `FullProfile`) |
 | `src/components/MeTab.tsx` | `MeTab`, the Profile tab body, lifted from App in PR61 |
 | `ClimbMatchCore.jsx` | `ME`, `UNITS`, `__set_UNITS`, `__set_DLOCALE`, `RESUME_STYLES` |
 | `src/components/FullProfile.tsx` | `FullProfile` (the climber profile sheet; moved from core in PR50) |

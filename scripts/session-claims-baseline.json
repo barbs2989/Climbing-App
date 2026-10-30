@@ -17,12 +17,12 @@
     "ClimbMatch.jsx :: \"You and \"+pubFirst(c)+\" are now connected\")",
     "ClimbMatch.jsx :: \"You run this group, so you can’t leave it — you can delete it from Gr",
     "ClimbMatch.jsx :: \"✓ You’re marked safety-ready — your crew can see it\")",
-    "ClimbMatch.jsx :: _first+\" removed from friends\")",
     "ClimbMatch.jsx :: _org?\"You left — the crew is disbanded for everyone\":\"You left the cre",
     "ClimbMatch.jsx :: _send?\"Thanks — your report helps the next climber\":\"Your vote was wit",
-    "ClimbMatch.jsx :: _ubn+\" unblocked — they can message you and invite you to crews again\"",
     "ClimbMatch.jsx :: _wasIn?\"Removed your pick for that day\":\"You're in — that day works fo",
     "ClimbMatch.jsx :: to.name+\" now owns \"+ecl.name+\" — you’re a moderator\")",
+    "src/components/BlockedClimbersSheet.tsx :: _ubn+\" unblocked — they can message you and invite you to crews again\"",
+    "src/components/FriendsSheet.tsx :: _first+\" removed from friends\")",
     "src/components/LogClimbSheet.tsx :: \"Conditions report deleted\")",
     "src/components/LogClimbSheet.tsx :: \"Trip report deleted\")"
   ]

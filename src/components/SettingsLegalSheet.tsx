@@ -1,8 +1,16 @@
+import type { Dispatch, SetStateAction } from "react";
 import { C, SL } from "../../ClimbMatchCore.jsx";
 import { POP_BACK } from "../../lib/popupChrome.js";
 
 /* settingsLegalOpen&& — the body of that branch of App, lifted verbatim by extract-from-parent.mjs (branch mode);
    every binding it read from App is a prop of the same name. */
-export default function SettingsLegalSheet({closeSettings,setHelpOpen,setLegal,setSettingsLegalOpen}){
+export interface SettingsLegalSheetProps {
+  closeSettings: () => void;
+  setHelpOpen: Dispatch<SetStateAction<boolean>>;
+  /** Opens one legal document: guidelines, terms, privacy or accessibility. */
+  setLegal: Dispatch<SetStateAction<string | null>>;
+  setSettingsLegalOpen: Dispatch<SetStateAction<boolean>>;
+}
+export default function SettingsLegalSheet({closeSettings,setHelpOpen,setLegal,setSettingsLegalOpen}: SettingsLegalSheetProps){
   return <div onClick={()=>setSettingsLegalOpen(false)} onKeyDown={e=>{if(e.key==="Escape")setSettingsLegalOpen(false);}} tabIndex={-1} role="dialog" aria-modal="true" aria-label="Legal & help" style={{position:"fixed",inset:0,background:C.bg,zIndex:1250,overflowY:"auto",overscrollBehavior:"contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}><div onClick={e=>e.stopPropagation()} style={{minHeight:"100%"}}><div style={{position:"sticky",top:0,background:C.surface,borderBottom:"1px solid "+C.border,padding:"12px 16px",display:"flex",alignItems:"center",gap:10,zIndex:2}}><button onClick={()=>setSettingsLegalOpen(false)} style={POP_BACK}>← Back</button><div style={{fontSize:15,fontWeight:700}}>Legal & help</div></div><div style={{padding:"14px 16px 40px"}}><div style={{marginBottom:16}}><SL>Legal</SL><button onClick={()=>setLegal("guidelines")} style={{width:"100%",padding:10,background:C.card,color:C.textSub,border:"1px solid "+C.border,borderRadius:10,fontSize:13,fontWeight:600,cursor:"pointer",marginBottom:8,textAlign:"left"}}>Community Guidelines</button><button onClick={()=>setLegal("terms")} style={{width:"100%",padding:10,background:C.card,color:C.textSub,border:"1px solid "+C.border,borderRadius:10,fontSize:13,fontWeight:600,cursor:"pointer",marginBottom:8,textAlign:"left"}}>Terms of Service</button><button onClick={()=>setLegal("privacy")} style={{width:"100%",padding:10,background:C.card,color:C.textSub,border:"1px solid "+C.border,borderRadius:10,fontSize:13,fontWeight:600,cursor:"pointer",marginBottom:8,textAlign:"left"}}>Privacy Policy</button><button onClick={()=>setLegal("accessibility")} style={{width:"100%",padding:10,background:C.card,color:C.textSub,border:"1px solid "+C.border,borderRadius:10,fontSize:13,fontWeight:600,cursor:"pointer",textAlign:"left"}}>Accessibility</button></div><div style={{marginBottom:16}}><SL>Help</SL><button onClick={()=>{closeSettings();setHelpOpen(true);}} style={{width:"100%",padding:10,background:C.card,color:C.textSub,border:"1px solid "+C.border,borderRadius:10,fontSize:13,fontWeight:600,cursor:"pointer",textAlign:"left"}}>How ClimbMatch works</button></div></div></div></div>;
 }

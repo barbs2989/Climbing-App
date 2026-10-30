@@ -97,7 +97,11 @@ cases++;
 {
   // BALANCED, never a character class: the handler body contains `Object.assign({},p)`, so a
   // `[^}]*` stops at the first brace INSIDE it and reports a correct toggle as unwired.
-  const at = app.indexOf("setNotifPrefs(function(p){");
+  // Inside Settings › Notifications (SettingsNotifsSheet.tsx since PR63): the stitched text also
+  // holds the ONBOARDING sheet's handler of the same shape, and it comes first.
+  const sheetAt = app.indexOf("function SettingsNotifsSheet(");
+  if (sheetAt < 0) dead("SettingsNotifsSheet is gone from the stitched App — the switches' wiring cannot be read");
+  const at = app.indexOf("setNotifPrefs(function(p){", sheetAt);
   if (at < 0) dead("the notification toggle handler moved — its wiring cannot be read");
   const from = app.indexOf("{", app.indexOf("(", at) + 1);
   let d = 0, body = null;

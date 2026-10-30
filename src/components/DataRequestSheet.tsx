@@ -1,10 +1,22 @@
+import type { Dispatch, SetStateAction } from "react";
 import { C } from "../../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "../../lib/popupChrome.js";
 import { raiseDataRequest } from "../../lib/db";
 
 /* dataReq? — the body of that branch of App, lifted verbatim by extract-from-parent.mjs (branch mode);
    every binding it read from App is a prop of the same name. */
-export default function DataRequestSheet({dataReq,dataReqBusy,dataReqNote,setDataReq,setDataReqBusy,setDataReqNote,showToast,uid}){
+export interface DataRequestSheetProps {
+  /** Which request is open: "export" or an opt-out. */
+  dataReq: string | null;
+  dataReqBusy: boolean;
+  dataReqNote: string;
+  setDataReq: Dispatch<SetStateAction<string | null>>;
+  setDataReqBusy: Dispatch<SetStateAction<boolean>>;
+  setDataReqNote: Dispatch<SetStateAction<string>>;
+  showToast: (msg: string, ms?: number) => void;
+  uid: string | null;
+}
+export default function DataRequestSheet({dataReq,dataReqBusy,dataReqNote,setDataReq,setDataReqBusy,setDataReqNote,showToast,uid}: DataRequestSheetProps){
   return <div role="dialog" aria-label="Data request" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.72)",zIndex:1400,display:"flex",alignItems:"center",justifyContent:"center",padding:16,boxSizing:"border-box"}}><div style={{background:C.surface,width:"100%",maxWidth:420,borderRadius:16,border:"1px solid "+C.borderHi,boxShadow:"0 20px 60px rgba(0,0,0,0.65)",padding:18,maxHeight:"85vh",overflowY:"auto",overscrollBehavior:"contain",boxSizing:"border-box"}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}><div style={{color:C.text,fontSize:17,fontWeight:700,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{dataReq==="export"?"Export my data":"Opt out of non-essential processing"}</div><button aria-label="Close data request" onClick={()=>setDataReq(null)} style={POP_CLOSE}>✕</button></div><div style={{fontSize:13,color:C.textSub,lineHeight:1.6,marginBottom:12}}>{uid?(dataReq==="export"?"We'll put together a copy of your account, climbs and trip reports and get back to you. This is handled by hand, so it isn't instant.":"Tell us what you'd rather we didn't use your data for. This is handled by hand, so it isn't instant."):"You're not signed in, so there's no account to raise a request against. Sign in first."}</div>{uid?<><textarea value={dataReqNote} onChange={e=>setDataReqNote(e.target.value)} placeholder="Anything you want to add (optional)" rows={3} style={{width:"100%",boxSizing:"border-box",background:C.card,border:"1px solid "+C.border,borderRadius:10,padding:"10px 12px",color:C.text,fontSize:13.5,resize:"vertical",fontFamily:"inherit",marginBottom:12}}/><button disabled={dataReqBusy} onClick={async()=>{setDataReqBusy(true);let r=null;try{r=await raiseDataRequest(uid,dataReq,dataReqNote);}catch(_e){r="failed";}setDataReqBusy(false);setDataReq(null);setDataReqNote("");
       /* Three outcomes, three messages. "unavailable" is the migration not having run yet, which
          is NOT the same as a failure and must not read as one — and neither may be dressed up as
