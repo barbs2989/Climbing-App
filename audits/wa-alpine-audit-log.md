@@ -35599,3 +35599,46 @@ Also re-confirmed in passing: `wa_dome_peak_indian_summer`'s FA ("approximately 
 2011 (party included Nate Farr)") matches a Cascade Climbers trip report and the AAC's own
 Cascades summary for that date almost exactly — already correctly hedged since the second
 climber's name isn't published anywhere found.
+
+## 2026-10-30 — Batch 485 (pass 8): 8 routes, 0 fixes, 3 flagged
+
+Checked all 8 WA mountaineering/alpine routes on Dragontail Peak (Stuart Range) in id-ascending
+order: `wa_dragontail_peak_east_ridge_aasgard_pass`, `wa_dragontail_peak_east_route`,
+`wa_dragontail_peak_northwest_face`, `wa_dragontail_peak_r2` (Gerber-Sink), `wa_dragontail_peak_r3`
+(Pandora's Box), `wa_dragontail_peak_r4` (Triple Couloirs), `wa_dragontail_peak_serpentine_arete`,
+`wa_dragontail_peak_west_route`. The area row's `elevation_ft` 8,840 matches Wikipedia/SummitPost/
+Mountain Project, and every route's own `high_point_ft` already agrees with it — no elevation fix
+needed this batch.
+
+**Clean (5):** East Ridge via Aasgard Pass (already carries its own prior correction confirming
+8,840 ft against four sources); Gerber-Sink (Mountain Project's "2000 ft / 10 pitches" matches this
+row's 610 m / 10 pitches; FA already correctly hedged as "exact names/year not recorded"); Pandora's
+Box (its own `data_quality.gaps` documents a 2026-07-15 correction away from a fabricated
+description, independently corroborated this run by a firsthand account at
+engineeredforadventure.com); Triple Couloirs (FA "Bill Joiner, Leslie Nelson, and Dave Seman, May
+1974" matches the American Alpine Institute's route profile, the only source found with a full FA
+team/date, nothing conflicting); Serpentine Arête (FA "Tom Hargis and Jay Ossiander, 1973" matches
+both Mountain Project and OpenBeta exactly; a 13-vs-14 pitch count difference against MP is within
+normal party-to-party pitch-splitting variance, not treated as an error).
+
+**Flagged for human review (3), no SQL — these are source conflicts or identity questions, not
+confirmed single-value errors:**
+- `wa_dragontail_peak_northwest_face`'s FA "Fred Beckey and Dan Davis on June 28, 1962" could not be
+  confirmed. The only primary source found for a 1962 Beckey/Davis Dragontail ascent is a 1963
+  American Alpine Journal note describing a long-crack-system, mostly 4th-class route on the *north*
+  face reaching the *north summit* — not a 5.9 Grade III, 3-pitch Northwest Face. A genuine
+  conflict with no clear correct replacement, so left as is.
+- `wa_dragontail_peak_east_route` and `wa_dragontail_peak_west_route` read as legacy duplicate
+  entries rather than factual errors. East Route's beta ("Once atop Aasgard Pass... bends left
+  toward the obvious saddle... NW over class 2 terrain, ~300 ft... to the summit") is close to a
+  paraphrase of `wa_dragontail_peak_east_ridge_aasgard_pass`'s own beta for the same saddle-and-
+  scramble finish; West Route's description (Colchuck Col, southern snow gully to a notch, traverse
+  NE to the summit) closely parallels `wa_dragontail_peak_r3`'s Pandora's Box line from the same col.
+  A source found also credits Beckey's actual named "East Route" to *Colchuck* Peak, not Dragontail,
+  adding to the naming confusion. Both are sparse, `auto_generated:false` legacy rows. A possible
+  duplicate/misnamed-route merge is a route-identity decision for a human (which id survives, what
+  re-points to it), not a field-level SQL fix, so nothing was written.
+
+Method note: as in prior runs, WebFetch could not resolve mountainproject.com, summitpost.org,
+open-tacos-*.vercel.app or alpineinstitute.com from this session's network — all cross-checks
+against those sites relied on WebSearch's synthesized snippets rather than direct page fetches.
