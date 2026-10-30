@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_east_mcmillan_spire_west_ridge",
+  "last_processed_id": "wa_east_twin_needle_south_route",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 486 complete. Continuing id-ascending scope from wa_east_mcmillan_spire_west_ridge.",
+  "pass_note": "Pass 8 in progress, batch 487 complete. Continuing id-ascending scope from wa_east_twin_needle_south_route.",
   "batches": [
     {
       "batch_number": 1,
@@ -9666,6 +9666,25 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-10-30-batch-486.sql",
       "note": "wa_east_face (Middle Peak, Gunsight Range) re-confirmed 5 fixes first proposed in pass 2 (batch ~62) that never landed on the live row: gain_ft 5000->6300 (own itinerary math), rappels' wrong descent glacier (Blue->Chickamin), emergency.rangerStation (Chelan->Darrington, contradicted this row's own landManager field), emergency.nearestHospital (dropped the nonexistent 'Skykomish Valley Hospital'), and a NULL top-level permit filled from this row's own access block. wa_e_se_face (Witches Tower) had one new small fix: NULL loss_ft filled from its own itinerary (5700, matching gain_ft on a car-to-car round trip) -- the pass-1 batch-9 descent/grade contradiction flagged on this same route is no longer present, confirming it was fixed in an intervening pass. Flagged for human review (2), no SQL: wa_east_face's own high_point_ft (8200), its summit waypoint elev (8000), and its parent area's elevation_ft (8185) are a 3-way split with no authoritative source giving an exact figure for Middle Peak specifically (search only narrows it to an 8,000-8,200 ft band); wa_east_mcmillan_spire_west_ridge's fa ('Fred Beckey and Helmy Beckey, 1940') is re-confirmed misattributed -- that date/party is well documented for the WEST McMillan Spire's West Ridge, not this East-summit route, same gap already flagged unresolved in batches 9 and 62; left as-is rather than guessing a replacement or nulling it, consistent with those prior passes' treatment. Clean (5): wa_eagle_rock_scramble (5,614 ft matches area row and SummitPost's 5,615 ft within noise); wa_earl_peak_southwest_ridge and wa_earl_peak_standup_creek_route (7,036 ft and coordinates both match Wikipedia/SummitPost); wa_east_face_6 (Chimney Rock East Face FA -- Forest Farr, Art Winder, Laurence Byington, 1930 -- matches Wikipedia exactly); wa_east_mcmillan_spire_northeast_buttress ('Come Over to the Dark Side' -- FA Alan Kearney & Erik Johnson, Sept 6-8 2008, 25 pitches, grade matches independent search corroboration of the route's history, including the specific detail that Kearney had attempted the line in 1991 and 2003). check:sql flagged 2 of the 4 write-target statements as not-parser-checkable (quote-heavy jsonb_set/string literals), both manually verified against this file's other, cleanly-checked statements for the same id; also warned the file (5.0KB) exceeds the SQL Editor's ~4KB safe-paste size -- split into chunks when applying by hand."
+    },
+    {
+      "batch_number": 487,
+      "date": "2026-10-30",
+      "route_ids": [
+        "wa_east_ridge_2",
+        "wa_east_ridge_3",
+        "wa_east_ridge_4",
+        "wa_east_ridge_8",
+        "wa_east_ridge_9",
+        "wa_east_slope",
+        "wa_east_twin_needle_north_buttress",
+        "wa_east_twin_needle_south_route"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 3,
+      "clean": 5,
+      "sql_file": null,
+      "note": "No confirmed errors; no SQL. Flagged (3): wa_east_ridge_2 (Snowking Mtn East Ridge) has an internal contradiction -- its own data_quality.gaps says \"No confirmed first-ascent information\" while its fa column holds a specific, externally-corroborated FA (Ulrichs & Heath, 1938, matching a Mountain Project route page for this exact line) -- one of the two stored facts is stale, a reconciliation call for a human, not a sourced-fact error. wa_east_ridge_3 (Silver Star Mtn, Okanogan, East Ridge) has two unconfirmable historical claims in its prose: a \"1932 Ulrichs/Pennington\" south-face/east-ridge ascent and a \"Beckey & Beckstead, 1986\" NE Spur ascent, neither contradicted nor corroborated by any source found (Wikipedia/SummitPost/AAC); everything else on this route -- including its own FA (Childs & Goldie, Sept 14 2000, confirmed via an OpenBeta route page matching grade/style/date exactly) -- checked out. wa_east_twin_needle_south_route has one unconfirmable claim (\"East Arete 5.10a climbed during a 2003 Southern Picket Range enchainment\") with no corroborating or contradicting source found; expected given how obscure this peak is. Clean (5): wa_east_ridge_4 (Inspiration Peak -- FA, elevation, coordinates, current NPS permit fee all confirmed), wa_east_ridge_8 (Pinnacle Peak, Tatoosh -- elevation, grade and loose-rock hazard matched almost verbatim to an OpenBeta route page), wa_east_ridge_9 (Ingalls Peak -- FA, grade, elevation and GPX trailhead start all confirmed against USFS/SummitPost coordinates), wa_east_slope (Primus Peak -- elevation, Bulger-list status, Lucky Pass/Borealis Glacier route description and a washed-out-footbridge detail all independently corroborated, including a 2026 Mountaineers trip report), wa_east_twin_needle_north_buttress (\"Thread of Gneiss\" -- FA party/date, 1981 naming by John Roper, and runout/simul-climbing details all confirmed via an AAC Publications new-routes entry). As in prior batches, mountainproject.com/summitpost.org/alpineinstitute.com failed to resolve from this session's network; cross-checks against those sites relied on WebSearch's synthesized snippets. Three parallel research agents covered this batch (3-3-2 route split)."
     }
   ]
 }

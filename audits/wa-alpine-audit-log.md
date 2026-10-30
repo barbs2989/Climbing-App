@@ -35705,3 +35705,47 @@ snippets.
 
 Next batch will continue alphabetically from `wa_east_mcmillan_spire_west_ridge` (see progress
 file).
+
+---
+
+## 2026-10-30 — Pass 8, Batch 487
+
+Eight routes continuing id-ascending from `wa_east_mcmillan_spire_west_ridge`: Snowking Mountain
+(East Ridge), Silver Star Mountain/Okanogan (East Ridge), Inspiration Peak (East Ridge), Pinnacle
+Peak/Tatoosh (East Ridge), Ingalls Peak (East Ridge), Primus Peak (East Slope), East Twin Needle
+(North Buttress "Thread of Gneiss"; South Route).
+
+No confirmed errors; no SQL.
+
+**Flagged for human review (3), no SQL:**
+- `wa_east_ridge_2` (Snowking Mtn) — internal contradiction: its `data_quality.gaps` says "No
+  confirmed first-ascent information," but its own `fa` column already holds a specific,
+  externally-corroborated FA (Ulrichs & Heath, 1938, matching a Mountain Project page for this
+  exact East Ridge/Kindy Ridge line). One of the two stored facts is stale; a reconciliation call,
+  not a sourced-fact error.
+- `wa_east_ridge_3` (Silver Star Mtn, Okanogan) — two historical claims in the route prose
+  ("1932 Ulrichs/Pennington" ascent; "Beckey & Beckstead, 1986" NE Spur ascent) found neither
+  corroborated nor contradicted by any accessible source. Everything else on this route — including
+  its own FA (Childs & Goldie, Sept 14 2000) — matched an OpenBeta route page for this line almost
+  exactly.
+- `wa_east_twin_needle_south_route` — one unconfirmable claim ("East Arête 5.10a climbed during a
+  2003 Southern Picket Range enchainment"); no corroborating or contradicting source found, expected
+  given how obscure this peak is.
+
+**Clean (5):** `wa_east_ridge_4` (Inspiration Peak — FA, elevation, coordinates and the current
+2026 NPS backcountry permit fee all confirmed); `wa_east_ridge_8` (Pinnacle Peak, Tatoosh —
+elevation, grade and loose-rock hazard matched an OpenBeta route page almost verbatim);
+`wa_east_ridge_9` (Ingalls Peak — FA, grade, elevation and GPX trailhead start all confirmed
+against USFS/SummitPost coordinates); `wa_east_slope` (Primus Peak — elevation, Bulger-list status,
+Lucky Pass/Borealis Glacier route description and a washed-out-footbridge detail all independently
+corroborated, including a 2026 Mountaineers trip report); `wa_east_twin_needle_north_buttress`
+("Thread of Gneiss" — FA party/date, the 1981 John Roper naming, and runout/simul-climbing details
+all confirmed via an AAC Publications new-routes entry).
+
+Method note: this batch was split across 3 parallel research passes (3/3/2 routes) to keep
+sourcing depth consistent across all 8 routes in one session. As in prior batches,
+mountainproject.com/summitpost.org/alpineinstitute.com failed to resolve from this session's
+network; cross-checks against those sites relied on WebSearch's synthesized snippets.
+
+Next batch will continue alphabetically from `wa_east_twin_needle_south_route` (see progress
+file).
