@@ -29,6 +29,7 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
 - **Recommended** order on Discover and For you: groups sharing a discipline with you first, then home state, then
   where you climb.
 - Private groups are listed only to their members; an invitee finds one under Requests.
+- **Long text opens in place** (2026-10-28): a post in *For you* (`groupPostPreview`) stops at five lines with *See more*, and a Discover card's blurb (`groupDiscoverCard`) at three. Both use the `groupPostMore` key the group's own post view uses, so a post opened in the feed is open in the group too.
 
 ## 2. How it works
 `useMyGroups` reads every group the viewer may see (RLS: public, or one you belong to) and copies it into
@@ -41,12 +42,25 @@ your `partner_areas` paths matched against `useStates()`.
 A group's feed is live (0326): `useGroupFeed` is a `useLiveQuery` (`lib/live.js`) subscribed over Supabase Realtime to
 `group_posts` and `group_post_reactions`, so a post, edit, pin, delete or reaction another member makes refetches the
 feed within about a second. Realtime applies the same member-only RLS; a DELETE carries only the id, so it is matched
-against the posts already held.
+against the posts already held. A post ClimbMatch Safety takes down leaves every member's feed at once too (0380): RLS
+stops that UPDATE reaching them, so a trigger broadcasts the bare id on the public `moderation` topic and `lib/live.js`
+treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
+
+- **Optimistic taps (2026-10-29).** On a real group, a post's reaction, pin and edit, an event RSVP and declining an event invite change the cached rows (`group-feed`, `group-events`, `my-event-invites`) through `patchQueries()` before the write, and the returned undo restores them if it fails. Joining a group, accepting a group invite and *Approve all* still wait for the server, because the server decides the outcome (approval needed, invite withdrawn, how many were approved).
 
 ## 3. Files
 | File | Key symbols |
 |---|---|
 | `ClimbMatch.jsx` | `discoverGroupList`, `groupDiscoverCard`, `groupHomeRegion`, `groupClimbRegions`, `groupRegionRank`, `groupPlace`, `groupsTab`, `openGroupId` |
+| `src/components/GroupDiscussionTab.tsx` | `GroupDiscussionTab`, an open group's Discussion tab (lifted from App, PR62) |
+| `src/components/GroupAboutTab.tsx` | `GroupAboutTab`, an open group's About tab |
+| `src/components/GroupMembersTab.tsx` | `GroupMembersTab`, an open group's Members tab (roster and member requests) |
+| `src/components/GroupEventsTab.tsx` | `GroupEventsTab`, an open group's Events tab |
+| `src/components/GroupMediaTab.tsx` | `GroupMediaTab`, an open group's Media grid |
+| `src/components/GroupJoinQuestionsEditor.tsx` | `GroupJoinQuestionsEditor`, the membership-questions editor in the create-group form (PR63) |
+| `src/components/GroupEventForm.tsx` | `GroupEventForm`, the create-an-event sheet |
+| `lib/groupRules.js` | `groupVisOf`, `groupCanHostEvent`, `groupJoinPath`, `groupJoinLabel`, `GROUP_TOPICS`, `groupWhere` (moved out of `ClimbMatch.jsx`, PR62) |
+| `src/components/GroupsTab.tsx` | `GroupsTab`, the Groups screen body (For you / Your groups / Your activity / Discover / Events), lifted from App in PR61; App passes it the helpers above |
 | `lib/db.js` | `useMyGroups`, `createGroupRow`, `updateGroupSettings`, `setGroupVisibility`, `createGroupEvents`, `regionOfPlace`, `regionAbbr`, `useMyPartnerAreas`, `useStates`, `useGroupFeed` |
 | `lib/search.js` | `searchMatches` |
 | `lib/live.js` | `useLiveQuery` — the Realtime subscription behind the live feed |

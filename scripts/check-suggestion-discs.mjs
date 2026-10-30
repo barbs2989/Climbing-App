@@ -18,10 +18,10 @@
 // Static: the pure functions are lifted out of the real source and run with stubbed
 // dependencies, so this cannot drift from the app. No browser, no DB — it sits in the build.
 import { readFileSync } from "node:fs";
-import { readCoreSource } from "./lib/guard-sources.mjs";
+import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
 
 const CORE = readCoreSource();
-const DBB = readFileSync(new URL("../lib/DbAreaBrowser.jsx", import.meta.url), "utf8");
+const DBB = readAppFile(new URL("../lib/DbAreaBrowser.jsx", import.meta.url).pathname);
 
 // Fail closed: an empty read makes every assertion below pass vacuously.
 if (CORE.length < 100000 || DBB.length < 10000) {

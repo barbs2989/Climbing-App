@@ -52,7 +52,7 @@ export function assessTrack(gpx, waypoints) {
 }
 
 async function main() {
-  const rows = (await selectAll("routes", "id,name,gpx,waypoints,discipline", "gpx=not.is.null", { pageSize: 1000 }))
+  const rows = (await selectAll("routes", "id,name,gpx,waypoints,discipline", "gpx=not.is.null", { pageSize: 200 }))
     .filter((r) => Array.isArray(r.gpx) && r.gpx.length > 1);
   const results = rows.map((r) => ({ id: r.id, name: r.name, discipline: r.discipline, ...assessTrack(r.gpx, r.waypoints) }));
   const complete = results.filter((r) => r.complete).length;

@@ -1,0 +1,46 @@
+
+wa_bears_breast_mountain_infinite_beauty approach_variants[0].notes
+  - Where the trail joins the PCT, head southbound (west).
+  + Once the trail meets the PCT, turn southbound (west).
+  - Shortly before the PCT crosses the Waptus River, leave the trail
+  + Just ahead of where the PCT crosses the Waptus River, leave the trail
+  - follow it toward Shovel Creek, then up and over the bench
+  + follow it toward Shovel Creek and climb over the bench
+  - Easy talus walking brings you to Shovel Creek; cross where convenient.
+  + A stretch of easy talus walking leads to Shovel Creek, which you can cross wherever suits you.
+
+wa_bears_breast_mountain_infinite_beauty approach_variants[0].baseFinding
+  - one of the longest continuous sandstone slabs in North America
+  + among the longest unbroken sandstone slabs anywhere in North America
+  - Infinite Beauty begins at the lowest part of the slab, on a shallow rib.
+  + Infinite Beauty starts from the slab's lowest point, on a shallow rib.
+  - the line naturally angles right and joins Timeless Treasure for brief, unexposed low-fifth moves up overlaps trending up and right to the southeast shoulder
+  + the line naturally angles right and joins Timeless Treasure, taking brief, unexposed low-fifth moves over overlaps that trend up and right toward the southeast shoulder
+
+wa_bears_breast_mountain_southwest_face detailed_rack
+  - Ten stoppers, two small cams, and six runners were adequate for the whole route on one recorded ascent.
+  + One recorded ascent got by with ten stoppers plus two small cams and six runners for the whole route.
+
+wa_bears_breast_mountain_southwest_face pro_tips[0]
+  - Ten stoppers, two small cams, and six runners were adequate for the whole route
+  + Ten stoppers plus two small cams and six runners were enough for the whole route
+
+wa_bears_breast_mountain_timeless_treasure pitch_detail[0].notes
+  - up the center of the slab, left of the giant corner
+  + straight up the middle of the slab, to the left of the giant corner
+
+wa_beckey_davis waypoints[0].directions
+  - follow the rough dirt road 3.7 miles to the Stuart Lake Trailhead at about 3,400 ft
+  + stay on the rough dirt road for 3.7 miles to reach the Stuart Lake Trailhead at about 3,400 ft
+  PATCH routes wa_beckey_davis: The operation was aborted due to timeout — database struggling; backing off 60 s before one retry
+file:///Users/nathanbarber/dev/Climbing-App/.claude/worktrees/copied-prose-live/scripts/lib/supabase-env.mjs:87
+    throw new Error(`${what}: ${why} twice — STOPPED. The database is not answering; per the owner's throttle rule, do not retry fast. Re-run once a one-row read answers in under 1.5 s.`);
+          ^
+
+Error: PATCH routes wa_beckey_davis: The operation was aborted due to timeout twice — STOPPED. The database is not answering; per the owner's throttle rule, do not retry fast. Re-run once a one-row read answers in under 1.5 s.
+    at gatedFetch (file:///Users/nathanbarber/dev/Climbing-App/.claude/worktrees/copied-prose-live/scripts/lib/supabase-env.mjs:87:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async patchRow (file:///Users/nathanbarber/dev/Climbing-App/.claude/worktrees/copied-prose-live/scripts/lib/supabase-env.mjs:101:15)
+    at async file:///Users/nathanbarber/dev/Climbing-App/.claude/worktrees/copied-prose-live/scripts/oneoff/rewrite-copied-prose.mjs:67:5
+
+Node.js v20.20.2

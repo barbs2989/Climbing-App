@@ -17,6 +17,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SOURCE_OF_TRUTH = "lib/grade.js";
@@ -217,7 +218,23 @@ if (ran < CASES.length) { console.error("check:grade-parser: fewer cases ran tha
     [{ discipline: "mountaineering", grade_system: "class", grade: "Class 4", rock_grade: "Class 3-4" }, "Class 4", "Graded Class 4 for its hardest moves; easier sections down to Class 3."],
     [{ discipline: "mountaineering", grade_system: "class", grade: "Class 3", rock_grade: "Class 3-4 (3rd class, with 4th-class variations)" }, "Class 3", "Graded Class 3 on its standard line; some sections or variations reach Class 4."],
     [{ discipline: "mountaineering", grade_system: "class", grade: "Class 3", rock_grade: "Class 3 scramble" }, "Class 3", ""],
+    // The other scales (owner, 2026-10-29: "I still see routes that have 2 grades"): top grade, and a notice that claims no split.
+    [{ discipline: "bouldering", grade_system: "v", rock_grade: "V4-5" }, "V5", "Rated V4-5; shown at the harder of the two grades, V5."],
+    [{ discipline: "ice", grade_system: "wi", rock_grade: "WI3-4" }, "WI4", "Rated WI3-4; shown at the harder of the two grades, WI4."],
+    [{ discipline: "aid", grade_system: "yds", rock_grade: "5.9 A2-3 R" }, "5.9 A3 R", "Rated A2-3; shown at the harder of the two grades, A3."],
+    [{ discipline: "trad", grade_system: "yds", rock_grade: "5.10a/b" }, "5.10a/b", ""],
+    [{ discipline: "bouldering", grade_system: "v", rock_grade: "V0-" }, "V0-", ""],
+    // A slash is a range too (2026-10-30): the census found "V1/2", "5.9/10", "5.11/5.12" still printing two grades.
+    [{ discipline: "bouldering", grade_system: "v", rock_grade: "V1/2" }, "V2", "Rated V1/2; shown at the harder of the two grades, V2."],
+    [{ discipline: "trad", grade_system: "yds", rock_grade: "5.9/10" }, "5.10", "Rated 5.9/10; shown at the harder of the two grades, 5.10."],
+    [{ discipline: "trad", grade_system: "yds", rock_grade: "5.11/5.12" }, "5.12", "Rated 5.11/5.12; shown at the harder of the two grades, 5.12."],
+    [{ discipline: "trad", grade_system: "yds", rock_grade: "5.9 / 15m" }, "5.9 / 15m", ""],
   ];
+  // ...and the sortable number files the slash at its top too, as the filter does.
+  const { gradeNumFor } = await import(pathToFileURL(truth).href);
+  for (const [g, d, want] of [["V1/2", "bouldering", 2], ["5.9/10", "trad", 10], ["5.6/7", "sport", 7], ["WI3/4", "ice", 4], ["5.10a/b", "sport", 10.25], ["5.9 / 15m", "trad", 9]]) {
+    if (gradeNumFor(g, d) !== want) { console.error(`check:grade-parser FAILED — gradeNumFor(${JSON.stringify(g)}, ${d}) = ${gradeNumFor(g, d)}, expected ${want}: a slash range must sort at its top grade.`); process.exit(1); }
+  }
   for (const [route, chip, note] of R) {
     const gotChip = singleGrade(route.rock_grade, route), gotNote = gradeRangeNote(route);
     if (gotChip !== chip || gotNote !== note) {
@@ -225,7 +242,8 @@ if (ran < CASES.length) { console.error("check:grade-parser: fewer cases ran tha
       process.exit(1);
     }
   }
-  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  // stitched: the Composite Grade lives in TechStats.tsx since PR58
+  const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   if (!/singleGrade\(p\[1\],route\)/.test(rd) || !/gradeRangeNote\(route\)/.test(rd)) {
     console.error("check:grade-parser FAILED — RouteDetail.jsx's Composite Grade no longer draws its chips through singleGrade() and its notice through gradeRangeNote(): a class range would print as two grades again.");
     process.exit(1);
@@ -236,7 +254,7 @@ if (ran < CASES.length) { console.error("check:grade-parser: fewer cases ran tha
    still call it — and those are the exact two lines a stale-base squash restores. */
 for (const [rel, needle, what] of [
   ["ClimbMatchCore.jsx", /function gradeLabel\s*\(r\)\s*\{\s*return\s+displayGrade\(r\)/, "the route page's header pill and stat strip"],
-  ["lib/DbAreaBrowser.jsx", /function rowGrade\s*\(r\)\s*\{\s*return\s+displayGrade\(r\)/, "every row of an area list"],
+  ["lib/areaBrowserShared.js", /function rowGrade\s*\(r\)\s*\{\s*return\s+displayGrade\(r\)/, "every row of an area list"],
 ]) {
   const p = path.join(ROOT, rel);
   if (!fs.existsSync(p)) { console.error(`check:grade-parser: ${rel} does not exist`); process.exit(1); }

@@ -1173,6 +1173,17 @@ the correction knows the screen is wrong, and they have no way to report it.
     not the route being a finish. Research decides; never re-quote these counts, re-run it.
   - Linking is done per route after research (`viaRouteId` to an existing sibling, or a `trip`
     with a trailhead); see `check:approach-overlay` in route-page.md for what the page then does.
+  - **`CARD_TWO`: a card that describes two ways in** (owner note 2026-10-28). Mount Logan's Banded
+    Glacier was switchable, so every signal above skipped it, but its default card began "Two ways in,
+    and which one you use depends on whether SR-20 is open" and the page draws one way in at a time, so
+    it read as one approach with two descriptions. No prose signal read a card's own `notes`. This one
+    does, on switchable routes too, and a verdict never hides it. The fix is per route: split the text
+    so each card narrates only its own way in, and give each its own data.
+    `CARD_TWO`'s ALT_RE caught 16 cards across 842 routes, and most were fair comparisons ("the
+    shorter of the two ways in"). A wider net (alternate/fallback/"also be reached", two named
+    trailheads in one card) gave 92 routes to read, and 23 really did narrate another way in
+    (`scripts/oneoff/approach-cards-one-way-each.plan.json`). So a CARD_TWO count of zero is not the
+    class closed: re-run that wider read before calling it done.
   - **A researched row is not a lead** (2026-10-01). Once WA was worked through, 440 rows still
     carried a signal, all already read and judged one way in, so every run buried anything new under
     them. The audit now reads the recorded verdicts (`audits/<state>-multi-approach/2026-10-01-research.json`,
@@ -1210,10 +1221,60 @@ the correction knows the screen is wrong, and they have no way to report it.
     cheap to reword. Normalised for case, punctuation and hyphens, so "right-facing" ≡ "right facing".
   - **What it cannot see.** A source it could not load (SummitPost and theCrag 403 to scripts;
     some `review.sources` entries carry notes after the URL and fail to fetch) — named in the
-    output, never counted as clean. A copy from a page the batch did not list. A paraphrase that
+    output, never counted as clean. Since 2026-10-29 a researcher who read such a page in the real
+    browser saves the text it drew on and maps it in `review.source_texts` (URL → repo path); the
+    check then reads that copy instead of fetching, so a SummitPost-sourced entry is checked too. A copy from a page the batch did not list. A paraphrase that
     swaps one word in every seven. Prose already in the catalog with no batch file behind it — that
     is the #2142 audit's ground, measured then at ~1 verbatim lift per 160 sampled phrases, and
     deliberately NOT re-run here.
+  - **`--live` (2026-10-29): the catalog's side, not the batch's.** A batch check sees the text as
+    written; everything applied before the gate existed, and anything edited since, was never compared.
+    `--live` walks EVERY JSON file under `audits/` (2,601 files), credits each route id with every URL
+    anywhere beneath the object that names it (an `id` field, or the id as a key — the shapes differ
+    by wave: contradiction `results[]`, grade arrays, `{id: spec}` batches), then reads that route's
+    LIVE row (public key) and runs the same 8-word test over every string in it of 8+ words, except
+    ids, names and provenance columns. 1,469 routes, ~7,700 cited pages. Pages are fetched one at a
+    time per site, 1 s apart, eight sites at once (`--cache DIR` keeps them for a re-run;
+    `--fetch-only` warms the cache without touching the database). `review.source_texts` copies are
+    used when a research file carries them. Cannot see: a route whose research cited no URL, and the
+    sites that refuse scripts — the same blind spots as the batch check.
+  - **First run, 2026-10-29: 841 of 1,469 routes, 3,067 runs.** 6,355 of the 7,730 cited pages
+    were readable. 1,061 of the runs were names, not prose: an agency and ranger district, an
+    address, a road number, a first-ascent party and date (60%+ of the run's non-function words
+    capitalised or numeric — `scripts/oneoff/copied-prose-live/prepare.mjs`). Those were left as
+    they are. The rest were 1,657 distinct strings (1,754 placements on 690 routes), heaviest in
+    `access`, `approach_variants`, `pitch_detail`, `waypoints`, `approach` and `beta`: the waves
+    before the gate, including the contradiction and leftover passes. Every one was reworded clause
+    by clause, with the same facts and the same digits. Each was re-checked against the same cached
+    pages and written through `scripts/oneoff/rewrite-copied-prose.mjs` (an exact splice that refuses
+    a drifted row; re-read after each write; rollback files in `audits/copied-prose-live/rollback/`).
+    The writes go through `scripts/oneoff/copied-prose-live/apply-batches.mjs`. It probes a one-row
+    read before every batch and waits out an outage (10 min after a stop, giving up after 6 stops). A
+    re-run is safe: a row already rewritten reads back as ALREADY. 114 columns landed on 2026-10-29
+    before the database stopped taking writes; the rest resumes with
+    `node scripts/oneoff/copied-prose-live/apply-batches.mjs b01 b02 … b24` (delete `applied.txt` first
+    for a full pass that also catches rows refused on a failed read).
+    A few rewrites also dropped a sentence that credited a source by name. The rule is
+    [no-sources](../codebase/enrichment-prose.md).
   - **Selftest:** `--selftest` needs no network: the Dark Shadows sentence as applied is flagged,
     the same facts reworded are not, a short shared phrase is not, and `review`/`area`/labels are
     never walked.
+
+- **`audit:partner-grade`** asks whether a route's **Partner requirements** panel
+  (`partner_requirements.experienceLevel` + `.requiredSkills`) asks for a lead grade the route's
+  own grade contradicts. Reported by the owner 2026-10-28: Liberty Bell's Overexposure (5.8) read
+  *"Strong 5.10-5.11 free climber"* — already corrected by the WA contradictions pass (#1965,
+  `audits/wa-contradictions-rest/research/out/r182.json`), so the owner had seen a stale copy;
+  the CLASS had never been measured. Report-only; `scripts/audit-partner-grade.mjs`.
+  - The standard it enforces, and the research behind it, is in
+    [enrichment-prose.md](../codebase/enrichment-prose.md#partner_requirements-ask-for-the-grade-the-route-is):
+    lead the crux grade solidly, at most ONE step of margin (a number grade through 5.9, a letter
+    from 5.10a).
+  - **ABOVE** (more than one step over the route's highest 5.x), **BELOW** (highest named grade
+    under the crux), **NONE** (no 5.x on the route, a 5.x lead above 5.6 asked). A clause that
+    names an aided, French-freed, optional or variation section does not count as asked —
+    "Solid 5.10 leader; the 5.11a crux can be aided" is honest, not BELOW. `--selftest` holds 17 cases.
+  - **Not yet run against the catalog** — written 2026-10-28 while the database was answering
+    one-row reads in 30-180 s, so the census waited. The repo's enrichment files hold ~317
+    distinct `experienceLevel` strings, 49 naming a 5.x grade: expect a small class.
+  - Service key, `partner_requirements=not.is.null` in 100-row pages. Not a build gate.

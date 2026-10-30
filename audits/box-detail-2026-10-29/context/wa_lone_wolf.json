@@ -1,0 +1,48 @@
+{
+ "id": "wa_lone_wolf",
+ "name": "Lone Wolf",
+ "area_id": "wa_obelisk_the",
+ "discipline": "sport",
+ "grade": "5.10a",
+ "pitches": 2,
+ "pitch_detail": [
+  {
+   "grade": "5.10a",
+   "notes": "Follows the obvious bolt line up the lower main face to a bolted chain anchor.",
+   "pitch": "1"
+  },
+  {
+   "grade": "5.10a",
+   "notes": "Continues the bolt line up the remainder of the main face to a bolted chain anchor at the top.",
+   "pitch": "2"
+  }
+ ],
+ "rappel_detail": [
+  {
+   "n": 1,
+   "notes": "Rappel (or lower) 1 of 2, about 30 m, to the chain anchor atop pitch 1.",
+   "anchor": "bolted chain anchor",
+   "lengthM": 30,
+   "station": "The chain anchor at the top of pitch 2."
+  },
+  {
+   "n": 2,
+   "notes": "Rappel 2 of 2, about 30 m, to the base of the face.",
+   "anchor": "bolted chain anchor",
+   "lengthM": 30,
+   "station": "The chain anchor at the top of pitch 1."
+  }
+ ],
+ "rappels": "Lower or rappel from the chain anchors atop each pitch (~30m per pitch); no separate walk-off is documented for this route.",
+ "descent_text": "From the top of pitch 2, rappel (or lower with a sufficiently long rope) to the bolted chain anchor atop pitch 1, then rappel again to the base of the face. No walk-off descent has been documented for this route.",
+ "approach": "From I-90 Exit 54 (Hyak), follow Hyak Drive onto Forest Service Road NF-9070, continuing past where the pavement ends to the junction at Ollallie Meadow where the Pacific Crest Trail crosses the road. Take the left fork of NF-9070 and follow it until the road terminates in a large turnaround just below Silver Basin. From that turnaround, it's roughly a 20-30 minute approach on foot up into Silver Basin to reach the base of The Citadel's walls, including Sofa King Buttress on the NW side of the basin's east wall. The road is not plowed and is generally only clear of snow from around July through November.",
+ "overview": "A 2-pitch, 200-ft bolted sport line straight up the main face of The Obelisk, a distinctive pinnacle-like rock embossment protruding from the mountainside in Silver Basin near Snoqualmie Pass.",
+ "beta": "Lone Wolf follows the obvious, continuous bolt line up The Obelisk's main face for two pitches of 5.10a climbing to bolted chain anchors. It is currently the only documented route on this formation, established in 2020 as part of a small, still-developing crag alongside the neighboring Sofa King Buttress.",
+ "gear": [
+  "Quickdraws (8-10)",
+  "60m+ single rope",
+  "Helmet"
+ ],
+ "fa": "Wylie Moreshead, 2020",
+ "face": "Main face"
+}

@@ -14,6 +14,8 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const APP = path.join(ROOT, "ClimbMatch.jsx");
+// The notification switches are Settings › Notifications, SettingsNotifsSheet.tsx since PR63.
+const NOTIFS = path.join(ROOT, "src/components/SettingsNotifsSheet.tsx");
 const MOD = path.join(ROOT, "lib", "notif-pref.js");
 const sum = (p) => crypto.createHash("sha256").update(fs.readFileSync(p)).digest("hex");
 
@@ -21,7 +23,7 @@ const CASES = [
   {
     name: "messages-switch-restored",
     why: "THE REAL DEFECT: a switch whose category no notification carries. Restored verbatim.",
-    file: APP,
+    file: NOTIFS,
     edit: (s) => s.replace(
       '[["crew","Crew updates","Day proposals, members joining, ready to climb"],',
       '[["crew","Crew updates","Day proposals, members joining, ready to climb"],["messages","Messages","New direct & crew messages"],'),
@@ -37,7 +39,7 @@ const CASES = [
   {
     name: "toggle-does-not-save",
     why: "the choice is read back but never written — it lasts exactly one session",
-    file: APP,
+    file: NOTIFS,
     edit: (s) => s.replace("saveNotifPrefs(n);return n;", "return n;"),
     expect: /does not call saveNotifPrefs/,
   },
@@ -51,17 +53,20 @@ const CASES = [
   {
     name: "switch-the-module-does-not-store",
     why: "a switch added to the UI and not to the module — it would revert on every reload",
-    file: APP,
+    file: NOTIFS,
     // TWO edits, and both are needed to test the rule this case NAMES. A new switch whose key no
     // notification carries trips rule 1 ("suppresses nothing") instead, and the run then proves
     // nothing about the stored-keys comparison — my first version did exactly that and reported a
     // MISS against a guard that was working. So the case also TAGS a notification with the new
     // key, which is what an author adding a switch properly would do, leaving the module as the
     // only thing out of step.
+    // Since PR63 the switch list is SettingsNotifsSheet.tsx and the tagged notification stays in App,
+    // so the second edit is `also` an edit of App (applied, checked and restored the same way).
     edit: (s) => s
       .replace('["requests","Requests & vouches","Friend / crew requests, vouches and belay catches"]]',
-               '["requests","Requests & vouches","Friend / crew requests, vouches and belay catches"],["photos","Photo tags","Someone tagged you in a route photo"]]')
-      .replace('{id:"nk",icon:"",climberId:1,', '{id:"nk",icon:"",cat:"photos",climberId:1,'),
+               '["requests","Requests & vouches","Friend / crew requests, vouches and belay catches"],["photos","Photo tags","Someone tagged you in a route photo"]]'),
+    alsoFile: APP,
+    alsoEdit: (s) => s.replace('{id:"nk",icon:"",climberId:1,', '{id:"nk",icon:"",cat:"photos",climberId:1,'),
     expect: /does not store it/,
     skipIf: (s) => !s.includes('["requests","Requests & vouches","Friend / crew requests, vouches and belay catches"]]'),
   },
@@ -97,12 +102,20 @@ for (const c of CASES) {
   if (after === before) { console.log(`HARNESS BUG  ${c.name}: the edit changed nothing — it proves nothing about the guard`); fail++; continue; }
   fs.writeFileSync(c.file, after);
   if (sum(c.file) === beforeSum) { console.log(`HARNESS BUG  ${c.name}: checksum unmoved`); fs.writeFileSync(c.file, before); fail++; continue; }
+  let alsoBefore = null;
+  if (c.alsoFile) {
+    alsoBefore = fs.readFileSync(c.alsoFile, "utf8");
+    const alsoAfter = c.alsoEdit(alsoBefore);
+    if (alsoAfter === alsoBefore) { console.log(`HARNESS BUG  ${c.name}: the second edit changed nothing`); fs.writeFileSync(c.file, before); fail++; continue; }
+    fs.writeFileSync(c.alsoFile, alsoAfter);
+  }
 
   let out = "", code = 0;
   try { out = execFileSync("node", [path.join(ROOT, "scripts", "check-notification-switches.mjs")], { cwd: ROOT, encoding: "utf8" }); }
   catch (e) { out = (e.stdout || "") + (e.stderr || ""); code = e.status ?? 1; }
 
   fs.writeFileSync(c.file, before);
+  if (alsoBefore !== null) fs.writeFileSync(c.alsoFile, alsoBefore);
   if (sum(c.file) !== beforeSum) { console.log(`HARNESS BUG  ${c.name}: file not restored byte-identically`); fail++; continue; }
 
   if (c.expect === null) {

@@ -1,0 +1,49 @@
+[
+ {
+  "id": "wa_mount_norton_scramble",
+  "walkMi": 6.5,
+  "dayNotePrefix": "Walk or bike the closed 6.5 miles of Olympic Hot Springs Road from the Madison Falls lot to the Whiskey Bend trailhead first.",
+  "roadPatch": {
+   "status": "As of late October 2026 the Elwha road stays closed to vehicles at the Madison Falls parking area because of a washout, with walkers and cyclists allowed through and no reopening date set."
+  },
+  "why": "Sources read 2026-10-29: NPS wilderness trail conditions page nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm (closed at Madison Falls, adds ~6.5 mi to Whiskey Bend, ~8 to Boulder Creek); NPS current-road-conditions entry nps.gov/olym/planyourvisit/current-road-conditions.htm (updated 2021-05-07, no reopening date). A third-party figure says 6.2; NPS 6.5 used. No source gives the road-walk gain, so walkGainFt omitted. Stored day1+day2 = 11.5+5.3 = 16.8 mi matches the row's own approach text (~16 mi Whiskey Bend to Hayes River), so stored miles start at Whiskey Bend even though the day-1 note names Madison Falls; day4 out is 16.8 too. Road added to first and last days."
+ },
+ {
+  "id": "wa_mount_queets_south",
+  "walkMi": 6.5,
+  "dayNotePrefix": "Walk or bike the closed 6.5 miles of Olympic Hot Springs Road from the Madison Falls lot to the Whiskey Bend trailhead first.",
+  "roadPatch": {
+   "status": "As of late October 2026 the Elwha road stays closed to vehicles at the Madison Falls parking area because of a washout, with walkers and cyclists allowed through and no reopening date set."
+  },
+  "why": "Sources read 2026-10-29: NPS wilderness trail conditions page (adds ~6.5 mi to Whiskey Bend); NPS current-road-conditions entry (updated 2021-05-07). Third-party 6.2 vs NPS 6.5; 6.5 used. No sourced road gain. Day1+day2 = 12+14 = 26 mi to Chicago Camp, consistent with 28.4 mi Whiskey Bend to Low Divide, and the day-1 text starts at Whiskey Bend; day5 exit 12 mirrors day1. Road added to first and last days."
+ },
+ {
+  "id": "wa_mount_wilder_scramble",
+  "walkMi": 6.5,
+  "dayNotePrefix": "Walk or bike the closed 6.5 miles of Olympic Hot Springs Road from the Madison Falls lot to the Whiskey Bend trailhead first.",
+  "roadPatch": {
+   "status": "As of late October 2026 the Elwha road stays closed to vehicles at the Madison Falls parking area because of a washout, with walkers and cyclists allowed through and no reopening date set."
+  },
+  "why": "Sources read 2026-10-29: NPS wilderness trail conditions page (adds ~6.5 mi to Whiskey Bend); NPS current-road-conditions entry (updated 2021-05-07). 6.5 used over third-party 6.2. No sourced road gain. Day1 (9 mi) is described from the Whiskey Bend trailhead and the approach text puts the ~7-mi road walk before it; day5 mirrors. Road added to first and last days."
+ },
+ {
+  "id": "wa_mount_barnes_scramble",
+  "walkMi": 6.5,
+  "ends": "last",
+  "dayNoteSuffix": "Then walk or bike the 6.5 closed miles of Olympic Hot Springs Road from Whiskey Bend down to the Madison Falls parking.",
+  "roadPatch": {
+   "status": "As of late October 2026 the Elwha road stays closed to vehicles at the Madison Falls parking area because of a washout, with walkers and cyclists allowed through and no reopening date set."
+  },
+  "why": "Traverse Sol Duc to Whiskey Bend (outing_shape point; last day ends at Whiskey Bend). NPS wilderness trail conditions (read 2026-10-29): road closed at Madison Falls, +6.5 mi to Whiskey Bend. Added to the exit day only."
+ },
+ {
+  "id": "wa_mount_pulitzer_standard",
+  "walkMi": 6.5,
+  "ends": "last",
+  "dayNoteSuffix": "Then walk or bike the 6.5 closed miles of Olympic Hot Springs Road from Whiskey Bend down to the Madison Falls parking.",
+  "roadPatch": {
+   "status": "As of late October 2026 the Elwha road stays closed to vehicles at the Madison Falls parking area because of a washout, with walkers and cyclists allowed through and no reopening date set."
+  },
+  "why": "Traverse Sol Duc to Whiskey Bend (outing_shape point; last day ends at Whiskey Bend). NPS wilderness trail conditions (read 2026-10-29): road closed at Madison Falls, +6.5 mi to Whiskey Bend. Added to the exit day only."
+ }
+]

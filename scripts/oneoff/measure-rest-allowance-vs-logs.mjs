@@ -28,7 +28,7 @@ const logs = await selectAll("climb_logs", "id,user_id,route_id,date_climbed,car
 console.log(`${logs.length} logs carry a time; ${new Set(logs.map((l) => l.user_id)).size} climbers, ${new Set(logs.map((l) => l.route_id)).size} routes`);
 const ids = [...new Set(logs.map((l) => l.route_id))];
 const rows = [];
-for (let i = 0; i < ids.length; i += 150) rows.push(...await selectAll("routes", "id,name,state,discipline,grade,pitches,length_m,gain_ft,loss_ft,dist_km,timing,itinerary,outing_shape",
+for (let i = 0; i < ids.length; i += 150) rows.push(...await selectAll("routes", "id,name,discipline,grade,pitches,length_m,gain_ft,loss_ft,dist_km,timing,itinerary,outing_shape",
   `id=in.(${ids.slice(i, i + 150).map((x) => `"${x}"`).join(",")})`, { pageSize: 200 }));
 const byId = Object.fromEntries(rows.map((r) => [r.id, r]));
 const plan = (r) => planTimes({ id: r.id, discipline: r.discipline, grade: r.grade, pitches: r.pitches,
@@ -40,7 +40,7 @@ for (const l of logs) {
   const r = byId[l.route_id]; if (!r || l.car_to_car_minutes == null) continue;
   const p = plan(r), t = r.timing || {};
   const stored = p.legsStored || t.totalHrs != null || (t.approachTimeHrs != null && t.descentTimeHrs != null);
-  out.push({ route: r.name, state: r.state, logged: l.car_to_car_minutes / 60, planner: p.tripH, floor: !!p.legsFloor, kind: stored ? "stored" : "modelled" });
+  out.push({ route: r.name, state: r.id.split("_")[0], logged: l.car_to_car_minutes / 60, planner: p.tripH, floor: !!p.legsFloor, kind: stored ? "stored" : "modelled" });
 }
 const med = (xs) => { const s = [...xs].sort((a, b) => a - b), k = Math.floor(s.length / 2); return s.length ? (s.length % 2 ? s[k] : (s[k - 1] + s[k]) / 2) : null; };
 for (const kind of ["modelled", "stored"]) {

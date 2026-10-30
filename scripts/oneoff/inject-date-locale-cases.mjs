@@ -13,21 +13,22 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const RD = "RouteDetail.jsx", ALP = "lib/AlpineConditionsCard.jsx", CAL = "lib/Calendar.jsx";
+const RD = "src/components/ConditionsScoreCard.tsx", ALP = "src/components/SeasonSection.tsx", CAL = "lib/Calendar.jsx";
 const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex");
 
 const CASES = [
+  // PR57 moved the day label to src/components/ConditionsScoreCard.tsx.
   // The route page's day label back on the device default — the shape found on 2026-10-07 (then on the
   // week chart's `wkDay`, removed 2026-10-14 with the "All 7 days" view; now the hourly day picker's date).
   { name: "weekday-back-to-device-default", file: RD, expect: "fail",
-    find: 'const dayDate=function(d){return new Date(d.date+"T12:00:00Z").toLocaleDateString(DLOCALE,{month:"short",day:"numeric",timeZone:"UTC"});};',
-    repl: 'const dayDate=function(d){return new Date(d.date+"T12:00:00Z").toLocaleDateString(undefined,{month:"short",day:"numeric",timeZone:"UTC"});};',
-    says: /RouteDetail\.jsx:\d+: \.toLocaleDateString\(undefined/ },
+    find: 'const dayDate=function(d: {date: string}){return new Date(d.date+"T12:00:00Z").toLocaleDateString(DLOCALE,{month:"short",day:"numeric",timeZone:"UTC"});};',
+    repl: 'const dayDate=function(d: {date: string}){return new Date(d.date+"T12:00:00Z").toLocaleDateString(undefined,{month:"short",day:"numeric",timeZone:"UTC"});};',
+    says: /ConditionsScoreCard\.tsx:\d+: \.toLocaleDateString\(undefined/ },
   // A hard-coded locale is the other way to ignore the preference.
   { name: "alpine-card-hardcodes-us", file: ALP, expect: "fail",
     find: 'return new Date(Date.UTC(2026, i, 15)).toLocaleDateString(DLOCALE, { month: "short", timeZone: "UTC" });',
     repl: 'return new Date(Date.UTC(2026, i, 15)).toLocaleDateString("en-US", { month: "short", timeZone: "UTC" });',
-    says: /AlpineConditionsCard\.jsx:\d+: \.toLocaleDateString\("en-US"/ },
+    says: /SeasonSection\.tsx:\d+: \.toLocaleDateString\("en-US"/ },
   // No argument at all.
   { name: "no-argument-at-all", file: CAL, expect: "fail",
     find: 'const fSun=d=>d.toLocaleTimeString(DLOCALE,{hour:"numeric",minute:"2-digit"});',

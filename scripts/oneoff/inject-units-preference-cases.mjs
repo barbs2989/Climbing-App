@@ -34,7 +34,7 @@ const CASES = [
   {
     name: "nopersist",
     why: "the toggle stops writing, so the restore has nothing to restore",
-    file: "ClimbMatch.jsx",
+    file: "src/components/SettingsDataSheet.tsx",
     find: `onClick={()=>{setUnits(u[0]);saveUnits(u[0]);}}`,
     repl: `onClick={()=>setUnits(u[0])}`,
     expect: /does not call saveUnits/,
@@ -67,7 +67,7 @@ const CASES = [
     // two-option shape.
     name: "thirdunit",
     why: "a third unit system is offered by the toggle but cannot be stored — it would silently fall back to imperial",
-    file: "ClimbMatch.jsx",
+    file: "src/components/SettingsDataSheet.tsx",
     find: `[["imperial","ft · mi"],["metric","m · km"]]`,
     repl: `[["imperial","ft · mi"],["metric","m · km"],["nautical","nm"]]`,
     expect: /which VALID_UNITS does not accept/,

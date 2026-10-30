@@ -1,7 +1,7 @@
 // Moved out of ClimbMatchCore.jsx verbatim so it can load lazily, off the first-paint
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
 import { useState } from "react";
-import { C, HERO_BG, HERO_SHEEN, pubName } from "../ClimbMatchCore.jsx";
+import { C, HERO_BG, HERO_SHEEN, profileGradeRows, pubName } from "../ClimbMatchCore.jsx";
 import Av from "../src/components/Av.tsx";
 import { POP_CLOSE } from "./popupChrome.js";
 
@@ -11,7 +11,7 @@ export default function ShareCard({climber,selfUid,onClose,logsUnavailable,catch
      if they turned it on, else their handle. */const _nm=selfUid?pubName(climber):(climber.name||"");
   const slug=_nm.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
   const link="climbmatch.app/climber/"+slug;
-  const grades=[["Sport",climber.sportGrade],["Trad",climber.tradGrade],["Boulder",climber.boulderGrade]].filter(g=>g[1]&&g[1]!=="N/A").map(g=>g[0]+" "+g[1]).join(" · ");
+  /* Every grade on the profile, ice, mixed and aid included (they live in climbGrades, not a column of their own). */const grades=profileGradeRows(climber).filter(g=>g.grade).map(g=>g.label+" "+g.grade).join(" · ");
   const hl=(climber.highlights||[]).slice(0,3).map(h=>"• "+h).join("\n");
   /* Every field below is blank on a profile nobody has filled in yet, and this text is
      copied to the clipboard, mailed, texted and tweeted — so an absent level or age has
@@ -35,7 +35,7 @@ export default function ShareCard({climber,selfUid,onClose,logsUnavailable,catch
           <div style={{display:"flex",gap:7}}>{[["Years",climber.years||"—"],["Logged",logsUnavailable?"—":climber.routesLogged],["Catches",catchesUnavailable?"—":climber.catchLedger.totalCatches]].map(x=><div key={x[0]} style={{flex:1,background:"rgba(255,255,255,0.06)",borderRadius:9,padding:"7px 4px",textAlign:"center"}}><div style={{fontSize:16,fontWeight:700,color:C.blue}}>{x[1]}</div><div style={{fontSize:12,color:C.textMuted}}>{x[0]}</div></div>)}</div>
         </div>
         <div style={{fontSize:12,color:C.textMuted,fontWeight:700,marginBottom:5,letterSpacing:0.4}}>PUBLIC LINK</div>
-        <div style={{display:"flex",gap:7,marginBottom:14}}><div style={{flex:1,background:C.card,border:`1px solid ${C.border}`,borderRadius:9,padding:"9px 11px",fontSize:13,color:C.blue,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{link}</div><button onClick={()=>copy("https://"+link,"link")} style={{padding:"9px 14px",background:C.blueChip,color:C.onSolid,border:"none",borderRadius:9,fontSize:13,cursor:"pointer",fontWeight:700,whiteSpace:"nowrap"}}>{copied==="link"?"✓ Copied":copied==="fail:link"?"Couldn’t copy":"Copy"}</button></div>
+        <div style={{display:"flex",gap:7,marginBottom:14}}><div style={{flex:1,background:C.card,border:`1px solid ${C.border}`,borderRadius:9,padding:"9px 11px",fontSize:13,color:C.blue,overflowWrap:"anywhere"}}>{link}</div><button onClick={()=>copy("https://"+link,"link")} style={{padding:"9px 14px",background:C.blueChip,color:C.onSolid,border:"none",borderRadius:9,fontSize:13,cursor:"pointer",fontWeight:700,whiteSpace:"nowrap"}}>{copied==="link"?"✓ Copied":copied==="fail:link"?"Couldn’t copy":"Copy"}</button></div>
         <div style={{fontSize:12,color:C.textMuted,fontWeight:700,marginBottom:5,letterSpacing:0.4}}>SHARE VIA</div>
         <div style={{display:"flex",gap:7,marginBottom:14}}>
           <a href={mailto} style={{flex:1,textDecoration:"none",textAlign:"center",padding:"10px 6px",background:C.card,border:`1px solid ${C.border}`,borderRadius:10,fontSize:13,color:C.text}}>Email</a>

@@ -56,6 +56,7 @@ async function readAll() {
     if (!rows.length) break;
     out.push(...rows); last = rows[rows.length - 1].id;
     if (rows.length < 1000) break;
+    await new Promise((r) => setTimeout(r, 200)); // paced: a whole-catalog read must not crowd the live app
   }
   return out;
 }

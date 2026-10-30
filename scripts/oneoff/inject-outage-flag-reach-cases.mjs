@@ -15,9 +15,11 @@ import path from "path";
 import crypto from "crypto";
 import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
+import { MOVED_ALL } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const RD = path.join(ROOT, "RouteDetail.jsx");
+// PR57 moved the topo section (the flag, its read and topoEmptyCopy call) to src/components/TopoSection.tsx.
+const TOPO = "src/components/TopoSection.tsx";
 const GUARD = path.join(ROOT, "scripts", "check-outage-flag-reach.mjs");
 
 const sum = (s) => crypto.createHash("sha1").update(s).digest("hex").slice(0, 12);
@@ -71,7 +73,9 @@ const CASES = [
     expect: "fail",
     want: /found only \d+ flag\(s\)/,
     edit: (s) => s.replace(/Unavailable\b/g, "Unavail"),
-    files: ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"],
+    // Every file the guard reads that holds a flag: the two app files and each moved component (it reads them
+    // stitched). Core itself holds none since its components moved out, so naming it made the edit never land.
+    files: ["ClimbMatch.jsx", "RouteDetail.jsx", ...MOVED_ALL.filter((f) => /Unavailable\b/.test(fs.readFileSync(path.join(ROOT, f), "utf8")))],
   },
   {
     // Section 2. ONE flag renamed off-convention, consistently, so the app still works and section
@@ -84,7 +88,8 @@ const CASES = [
 ];
 
 const baseline = {};
-for (const f of ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"]) {
+// Every file any case touches, so the restore check covers each one.
+for (const f of new Set(["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", TOPO, ...CASES.flatMap((c) => c.files || [TOPO])])) {
   baseline[f] = fs.readFileSync(path.join(ROOT, f), "utf8");
 }
 
@@ -99,7 +104,7 @@ console.log("clean tree: guard passes\n");
 
 let bad = 0;
 for (const c of CASES) {
-  const targets = c.files || ["RouteDetail.jsx"];
+  const targets = c.files || [TOPO];
   const before = {};
   let landed = true;
   for (const f of targets) {

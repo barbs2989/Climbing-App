@@ -14,6 +14,7 @@ import { signIn, signUp, rememberEmail, recallEmail, requestPasswordReset, updat
 const MIN_PASSWORD = 8;
 import { POLICY_VERSION } from "./policy";
 import { POP_CLOSE } from "./popupChrome.js";
+import { TEXT_TAP, TEXT_TAP_INLINE } from "./buttonStyles.js";
 import { CAPTCHA_ON, Turnstile } from "./captcha.jsx";
 import BrandMark from "../src/components/BrandMark.tsx";
 
@@ -177,7 +178,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
     if (error) setErr(error.message);
   };
 
-  const legalLink = { background: "none", border: "none", color: c.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: 0, textDecoration: "underline", textUnderlineOffset: "2px" };
+  const legalLink = { background: "none", border: "none", color: c.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer", textDecoration: "underline", textUnderlineOffset: "2px", ...TEXT_TAP_INLINE };
   const legalLine = (verb) => onLegal ? (
     <div style={{ marginTop: 12, fontSize: 11.5, color: c.sub, lineHeight: 1.5, textAlign: "center" }}>
       By {verb} you agree to our{" "}
@@ -278,7 +279,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
         {mode === "up" && password2 && password2 !== password && <div style={hint}>The passwords don't match yet.</div>}
         {mode === "in" && (
           <div style={{ textAlign: "right", marginTop: -4, marginBottom: 12 }}>
-            <button onClick={() => { setErr(""); setInfo(""); setPassword(""); setMode("forgot"); }} style={{ background: "none", border: "none", color: c.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", padding: 0 }}>Forgot password?</button>
+            <button onClick={() => { setErr(""); setInfo(""); setPassword(""); setMode("forgot"); }} style={{ background: "none", border: "none", color: c.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", ...TEXT_TAP }}>Forgot password?</button>
           </div>
         )}
         {/* A NATIVE checkbox, deliberately. The main app hand-builds controls out of divs and
@@ -286,13 +287,13 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
             its own styles and already uses real inputs, so a native one is keyboard-operable
             and announced correctly with nothing added. */}
         {mode === "up" && (
-          <label style={{ display: "flex", alignItems: "flex-start", gap: 9, marginBottom: 12, fontSize: 12.5, color: c.sub, lineHeight: 1.45, cursor: "pointer" }}>
+          <label style={{ display: "flex", alignItems: "flex-start", gap: 9, padding: "8px 0", margin: "-8px 0 4px", fontSize: 12.5, color: c.sub, lineHeight: 1.45, cursor: "pointer" }}>
             <input type="checkbox" checked={adult} onChange={(e) => { setAdult(e.target.checked); if (e.target.checked) setErr(""); }} style={{ marginTop: 2, width: 16, height: 16, accentColor: c.blue, flexShrink: 0, cursor: "pointer" }} />
             <span>I am 18 or older.</span>
           </label>
         )}
         {mode === "up" && (
-          <label style={{ display: "flex", alignItems: "flex-start", gap: 9, marginBottom: 12, fontSize: 12.5, color: c.sub, lineHeight: 1.45, cursor: "pointer" }}>
+          <label style={{ display: "flex", alignItems: "flex-start", gap: 9, padding: "8px 0", margin: "-8px 0 4px", fontSize: 12.5, color: c.sub, lineHeight: 1.45, cursor: "pointer" }}>
             <input type="checkbox" checked={agreed} onChange={(e) => { setAgreed(e.target.checked); if (e.target.checked) setErr(""); }} style={{ marginTop: 2, width: 16, height: 16, accentColor: c.blue, flexShrink: 0, cursor: "pointer" }} />
             <span>I agree to the Terms of Service and Community Guidelines. ClimbMatch has zero tolerance for objectionable content or abusive users.</span>
           </label>
@@ -323,7 +324,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
         ) : mode === "reset" ? null : (
           <div style={{ textAlign: "center", marginTop: 14, fontSize: 13, color: c.sub }}>
             {mode === "in" ? "New here? " : "Already have an account? "}
-            <button onClick={() => { setErr(""); setInfo(""); setMode(mode === "in" ? "up" : "in"); }} style={{ background: "none", border: "none", color: c.blue, fontWeight: 700, cursor: "pointer", fontSize: 13, padding: 0 }}>
+            <button onClick={() => { setErr(""); setInfo(""); setMode(mode === "in" ? "up" : "in"); }} style={{ background: "none", border: "none", color: c.blue, fontWeight: 700, cursor: "pointer", fontSize: 13, ...TEXT_TAP }}>
               {mode === "in" ? "Create an account" : "Sign in"}
             </button>
           </div>

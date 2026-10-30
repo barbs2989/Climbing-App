@@ -445,8 +445,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     NEIGHBOURING line on the same peak, or a rock-feature chip on a Class 2-4 scramble. Six
     more, where the text disagrees with itself, were left alone. No guard can see this class.
 
-- **`check:area-edit-fields`** asserts that the seven AREA fields a climber may suggest an edit to
-  are **one list, read five ways** (since 0319: the constraint in 0304; `apply_approved_area_field`'s
+- **`check:area-edit-fields`** asserts that the eight AREA fields a climber may suggest an edit to
+  are **one list, read five ways**. **Since 0378** (the crag's parking pin, `parking_pin`) each SQL
+  anchor is read from the NEWEST migration that defines it, not pinned to 0304/0319: a later
+  `create or replace` is what a replay leaves standing, so a pinned read would keep passing on a
+  list production no longer runs. One field may write several columns (`MULTI`: `parking_pin` →
+  `parking_lat` + `parking_lng` + `parking_name` in one UPDATE, each checked), and a `pin` field
+  must carry `fmt()` so its held value never prints `[object Object]`. Before 0378 (since 0319: the constraint in 0304; `apply_approved_area_field`'s
   allow-list and `update areas set` targets and `approve_field_contribution`'s area branch in 0319;
   the editor; the page; the owner's queue labels). It also refuses an `after insert` applier trigger
   coming back and requires the `after update of status … when approved` shape. The threshold rule

@@ -1120,3 +1120,70 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Injection-tested 7/7** with a throwaway `src/components/` file: a drawn emoji, a ternary's
     `"☀"` and a bare `"⚠ careful"` FAIL; a comment, a `{"🏆":"award"}` key, an `<Lbl s={"📍 "+x}/>`
     and `"✓ done ★"` PASS.
+- **`check:tap-slop`** (in build) keeps **lib/tapSlop.js** installed: a TOUCH whose click lands on
+  nothing tappable goes to the nearest small control whose 44px box (centred on it) holds the
+  touch. Owner note 2026-10-28, *"Some clicks links are small"*.
+  - **Measured first, across the 100 screens check:axe opens** (`scripts/oneoff/probe-tap-targets.mjs`,
+    hand-run): 1,051 distinct controls with a side under 44px — 62 under 24px (sign-in's legal
+    links 13px tall, the fire map's agency links 18px, a climber's name 18px), 469 at 24-31px
+    (nearly every route-page section toggle is 29px), 520 at 32-43px. axe passed all of them: WCAG
+    2.5.8's 24px floor excuses an undersized target with room around it. Apple asks 44pt of every
+    control, Material 48dp. Redrawing a thousand controls would change every screen, so the touch
+    area grows and the drawing stays — Android's TouchDelegate and Material's 48dp touch-target
+    overlay do the same.
+  - **The refusals are the point and the guard reads each one**: a hit is always the hit
+    (`onTappable`), a tie goes to nobody, a mouse or keyboard click (`detail 0`, which is also the
+    forwarded click itself) is never touched, the listener is capture-phase so the stray tap never
+    reaches a backdrop's close handler, and a map, chart or field (`OWN_TAPS`) keeps its own taps.
+    A control another layer covers is not reachable (`elementFromPoint` at the control must return it).
+  - **Blind to**: whether forwarding FEELS right — the probe measures reach per control in Chrome
+    (`effW`/`effH`, and which side was `lost` to nothing vs `shared` with a neighbour). Controls
+    packed tighter than 44px (inline links inside one sentence, the stars of a rating) are limited
+    by their neighbours, not by the slop; those need spacing in the drawing, not a wider hit area.
+  - **Measured after** (same walk, 1px steps, 42px counted as reaching 44 because the walk rounds):
+    588 of 964 small controls now reach 44px, against 0 before. Of the 376 that do not, most stop
+    at 36-41px where two stacked chip rows TIE (a tie goes to nobody, by design) or a neighbour
+    is nearer; the rest were fixed in the drawing: every single-line `<select>` gets
+    `min-height: 44px` in index.html (the slop cannot open a native picker), WaypointMapPicker's
+    layer buttons went 22px -> 34px (a mis-tap there drops a waypoint, and the slop never acts
+    inside a map), the fire map's layer chips 27px -> 36px, Reports' condition rows (`CRow`)
+    24px -> 36px, and sign-in's text links got a touch box (`TEXT_TAP` / `TEXT_TAP_INLINE`,
+    lib/buttonStyles.js: padding the finger can hit, the equal negative margin handing the space
+    back). Do NOT spread `TEXT_TAP` next to a field: its 12px padding paints over the field's
+    edge and steals its taps (ConnectModal's "Use suggested note" sits 7px under a textarea, so
+    it was left to the slop, which counts the textarea as nearer).
+  - **The browser snaps a tap first.** Chrome (and Safari) adjust a touch's click target to a
+    control under the finger's contact area before any listener runs: an emulated tap 10px under
+    "Forgot password?" landed on the Sign in button 5px below it. So the slop only acts where that
+    snap found nothing, and it must agree with it: EVERY control competes on distance, and a
+    nearer big one wins (first draft only weighed small controls and forwarded that tap to the
+    link). `scripts/oneoff/touch-beside-control.mjs` therefore dispatches its events from the page.
+  - **Injection-tested**: commenting out `installTapSlop();` in main.jsx FAILS the guard.
+- **`check:dropdown-targets`** (in build) — every DROPDOWN toggle is DRAWN at least 44px tall. Owner
+  note 2026-10-29, *"On route beta, it's difficult to click the dropdown to view more info, audit
+  the whole app for issues on hard to click the dropdown"* ("route beta" is ROUTE BREAKDOWN: #1450
+  merged ROUTE BETA and PITCH-BY-PITCH into it).
+  - **Two rules.** (1) Every JSX tag carrying `aria-expanded` sets `minHeight` >= 44 in its OWN
+    inline style (an `<input>` combobox is a field and exempt; `ALLOW` holds BadgeGrid's 64x70 medal
+    tile and Chevron's doc comment). (2) Every `<Chevron open={live value}>` sits in a control (the
+    nearest `<button` / `clickable(` before it) that carries `aria-expanded` — a dropdown that does
+    not say it is one escapes rule 1, and the 19 found were the smallest drawn (Calendar's "Plan the
+    day", the area tree's 38px expanders, the crew-member chip, a list's state groups, the hourly
+    forecast, "Show N earlier comments"). A literal `open={true|false}` is a go-there arrow.
+  - **Why the drawing and not only #2909's slop**: the slop widens a small control's touch area only
+    where nothing else is nearer, and a tap between two stacked toggles TIES and goes to nobody;
+    ROUTE BREAKDOWN's rows (35-38px, stacked 9px apart) are exactly that. Apple asks 44pt of a
+    control, Material 48dp; Mountain Project's and AllTrails' collapsible rows are full-width
+    44px+ rows. A chip that must stay small keeps its look inside a transparent 44px control
+    (TagChip); a text link (`Show more`, `See more`, `Reply`) is a `<button>`, which centres its
+    label, so minHeight alone grows the target without moving the text off its line.
+  - **Before** (first run): 47 toggles under 44px plus 19 undeclared Chevron dropdowns. **After**:
+    70 toggles, all 44+. The same PR made ROUTE BREAKDOWN's "Tap for detail" a plain caption: it
+    was drawn as a filled blue chip beside the heading, looked like a button, and did nothing.
+  - **Blind to** a toggle that draws no Chevron and carries no `aria-expanded`, and to the DRAWN
+    height (a minHeight can be beaten by a parent's fixed height or `overflow:hidden`):
+    `scripts/oneoff/probe-dropdowns.mjs` (hand-run, quiet box) measures every dropdown in Chrome on
+    every tab, the seed and four real DB routes and every overlay, AND clicks each at its centre to
+    prove it opens there.
+  - **Injection-tested**: dropping `aria-expanded` from Calendar's "Plan the day" fails rule 2;
+    setting FriendsFeed's "Show all" to `minHeight:40` fails rule 1.

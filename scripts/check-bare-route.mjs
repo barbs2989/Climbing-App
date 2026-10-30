@@ -325,10 +325,10 @@ for (const d of [...CRAG, "alpine"]) {
 //    as "Not on file yet" with an "Add what you know" link — a placeholder for climbers to fill, never
 //    an "unknown" that reads as a fact, and never a value the route does not have. Facts the
 //    discipline does not have (bolts on a boulder, landing on a sport line) and facts that are not
-//    a discipline question (Star rating, Also called, Variations, FFA/FWA, Sun, Descent) stay absent.
+//    a discipline question (Reputation, Also called, Variations, FFA/FWA, Sun, Descent) stay absent.
 //    Still: no "Season TBD", and a crag route's breakdown/climate render on Overview.
 {
-  const FACT_LABELS = ["Star rating", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent", "Sun", "Wet", "Rock quality", "Fixed gear"];
+  const FACT_LABELS = ["Reputation", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent", "Sun", "Wet", "Rock quality", "Fixed gear"];
   const segs = (h) => h.replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, "\n").split("\n").map((x) => x.trim()).filter(Boolean);
   for (const d of CRAG) {
     const html = cache.get(d + "/overview") || render(bare(d, "5.9"), "overview");
@@ -360,7 +360,7 @@ for (const d of [...CRAG, "alpine"]) {
       altNames: ["ZZALTNAMEZZ"], variations: ["ZZVARIATIONZZ 5.11a"], fa: "A. Climber 1970", ffa: "B. Free 1980", fwa: "C. Winter 1990" };
     const html = render(r, "overview");
     const t = text(html), sg = segs(html);
-    const want = ["Star rating", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"].filter((l) => !sg.includes(l));
+    const want = ["Reputation", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"].filter((l) => !sg.includes(l));
     if (want.length) fail(`enriched ${d} route: ROUTE FACTS is missing ${want.join(", ")}`);
     else if (!t.includes("★★★☆") || !t.includes("ZZALTNAMEZZ") || !t.includes("ZZVARIATIONZZ 5.11a") || !t.includes("SW-facing") || !t.includes("B. Free 1980") || !t.includes("C. Winter 1990"))
       fail(`enriched ${d} route: a ROUTE FACTS label rendered without its value`);
@@ -370,9 +370,10 @@ for (const d of [...CRAG, "alpine"]) {
   // Season in the header strap for every crag discipline, the way bouldering always had it.
   for (const d of ["sport", "trad", "toprope", "aid"]) {
     const html = render({ ...bare(d, "5.9"), season: "ZZSEASONZZ" }, "overview");
-    const strap = (html.match(/WebkitLineClamp|-webkit-line-clamp/g) || []).length;
-    if (!strap) fail("ANCHOR LOST: the header strap's line-clamp style moved — update this guard");
-    if (!/-webkit-line-clamp:2[^>]*>[^<]*ZZSEASONZZ/.test(html)) fail(`${d}: season on file but not in the header strap`);
+    // Anchored on data-header-strap: the strap's 2-line clamp is gone (it wraps now, owner note 2026-10-29: text cut off).
+    const strap = (html.match(/data-header-strap="1"/g) || []).length;
+    if (!strap) fail("ANCHOR LOST: the header strap's data-header-strap marker moved — update this guard");
+    if (!/data-header-strap="1"[^>]*>[^<]*ZZSEASONZZ/.test(html)) fail(`${d}: season on file but not in the header strap`);
     else ok(`${d}: season shows in the header strap`);
   }
   // A crag route with a breakdown and a climate box but nothing that opens Plan: the breakdown on

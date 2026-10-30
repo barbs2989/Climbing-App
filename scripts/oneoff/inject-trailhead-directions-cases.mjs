@@ -38,16 +38,22 @@ import { fileURLToPath } from "url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const FILE = path.join(ROOT, "RouteDetail.jsx");
+// PR57 moved TrailheadCard to its own file; the cases that edit the card (2, 3, 6, 7, 8) aim there.
+const CARD = path.join(ROOT, "src", "components", "TrailheadCard.tsx");
+// PR59: the Plan sub-tab body (TrailheadCard call site, drive notes, seasonal gate) moved here.
+const PLANTAB = path.join(ROOT, "src", "components", "RoutePlanTab.tsx");
 const sum = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 12);
 
 const CASES = [
   {
+    file: PLANTAB,
     name: "1. the standalone 'Directions to trailhead' button is back beside the card",
     find: '<TrailheadCard route={route} onEdit={()=>{openFix("approach");}}/>',
     repl: '<TrailheadCard route={route} onEdit={()=>{openFix("approach");}}/><button onClick={()=>window.open("https://maps.example","_blank")}>Directions to trailhead (Google Maps)</button>',
     expect: "fail",
   },
   {
+    file: CARD,
     name: "2. TrailheadCard restates the road again",
     find: '    {(dir&&!dup)?<div style={{fontSize:12.5,',
     repl: '    <div>{"Road \\u00b7 "}{route.road&&route.road.name}</div>\n    {(dir&&!dup)?<div style={{fontSize:12.5,',
@@ -57,8 +63,9 @@ const CASES = [
     // REPOINTED 2026-10-28: the card's copy control is the shared CopyCoordButton now (its own row,
     // owner note on the box's spacing), so the coordinate text lives in lib/areaChrome.jsx. Dropping
     // it from THIS card is the same defect, aimed where the card renders it.
+    file: CARD,
     name: "3. the coordinates drop off the surviving control",
-    find: '<CopyCoordButton lat={lat} lng={lng} what="trailhead"/>',
+    find: '<CopyCoordButton lat={lat as number} lng={lng as number} what="trailhead"/>',
     repl: '<button>Coordinates</button>',
     expect: "fail",
   },
@@ -69,6 +76,7 @@ const CASES = [
     // has a Plan tab and the Overview panel no longer renders its road at all. Injected there the
     // case MISSED — correctly, because there was nothing on that render to mislabel. It aims at
     // the surface that does render the note, which is the same defect in the place it can occur.
+    file: PLANTAB,
     name: "4. the drive note is labelled \"Trailhead\" again, on the tab that prints it",
     find: 'row("Drive notes",road.driveNote)',
     repl: 'row("Trailhead",road.driveNote)',
@@ -79,6 +87,7 @@ const CASES = [
     // this case reverted is gone. The same defect — one destination offered twice on one crag page —
     // now has one way back: TrailheadCard's "Drive here" returning beside CragLocationCard's
     // Google Maps / Apple Maps pair on the crag Overview.
+    file: PLANTAB,
     name: "4b. a crag offers TrailheadCard's drive control AND the crag card's again",
     find: '{cragOnly?null:<Capped><TrailheadCard',
     repl: '{<Capped><TrailheadCard',
@@ -86,18 +95,21 @@ const CASES = [
     expectText: "expected exactly the Google Maps + Apple Maps pair",
   },
   {
+    file: PLANTAB,
     name: "5. the seasonal gate loses its only remaining render site",
     find: 'row("Seasonal gate",road.seasonalGate)}',
     repl: "null}",
     expect: "fail",
   },
   {
+    file: CARD,
     name: "6. SILENT: trailhead PROSE that says \"Drive here\" is content, not a control",
-    find: "function TrailheadCard({route,onEdit}){",
-    repl: "function TrailheadCard({route,onEdit}){\n  route=Object.assign({},route,{approachLogistics:Object.assign({},route.approachLogistics,{trailheadDirection:\"Drive here and park at the gate; Directions to trailhead (Google Maps) is not what this sentence is.\"})});",
+    find: "function TrailheadCard({route,onEdit}: TrailheadCardProps){",
+    repl: "function TrailheadCard({route,onEdit}: TrailheadCardProps){\n  route=Object.assign({},route,{approachLogistics:Object.assign({},route.approachLogistics,{trailheadDirection:\"Drive here and park at the gate; Directions to trailhead (Google Maps) is not what this sentence is.\"})});",
     expect: "pass",
   },
   {
+    file: CARD,
     name: "7. SILENT: a handler-only button is still a control (no href to count)",
     find: '<a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" aria-label="Driving directions to the trailhead in Google Maps" style={thLink}>Google Maps</a>',
     repl: '<button onClick={()=>window.open("https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng,"_blank")} style={thLink}>Google Maps</button>',
@@ -106,9 +118,10 @@ const CASES = [
   {
     /* The stat tiles come back. TECH STATS already states the elevation and approach, and the
        user asked for the TRAILHEAD card to carry only where it is and how to drive there. */
+    file: CARD,
     name: "8. the TRAILHEAD card prints an Elevation / Approach tile again",
     find: '    {(dir&&!dup)?<div style={{fontSize:12.5,',
-    repl: '    <div><div>{uElev(2400)}</div><div>Elevation</div><div>Approach (one way)</div></div>\n    {(dir&&!dup)?<div style={{fontSize:12.5,',
+    repl: '    <div><div>{"2,400 ft"}</div><div>Elevation</div><div>Approach (one way)</div></div>\n    {(dir&&!dup)?<div style={{fontSize:12.5,',
     expect: "fail",
     expectText: "the TRAILHEAD card prints stat tiles again",
   },
@@ -158,7 +171,7 @@ const OUTING = path.join(ROOT, "lib", "outing.js");
 /* lib/planTimes.js holds the planner's time maths since the Conditions tab's alpine start began
    reading the same estimate, so the hike-leg cases (11, 12) edit it rather than the app file. */
 const PLAN = path.join(ROOT, "lib", "planTimes.js");
-const SNAP = new Map([[FILE, fs.readFileSync(FILE, "utf8")], [OUTING, fs.readFileSync(OUTING, "utf8")], [PLAN, fs.readFileSync(PLAN, "utf8")]]);
+const SNAP = new Map([[FILE, fs.readFileSync(FILE, "utf8")], [PLANTAB, fs.readFileSync(PLANTAB, "utf8")], [CARD, fs.readFileSync(CARD, "utf8")], [OUTING, fs.readFileSync(OUTING, "utf8")], [PLAN, fs.readFileSync(PLAN, "utf8")]]);
 const restoreAll = () => { for (const pair of SNAP) fs.writeFileSync(pair[0], pair[1]); };
 const treeOk = () => [...SNAP].every((pair) => sum(fs.readFileSync(pair[0], "utf8")) === sum(pair[1]));
 let bad = 0;

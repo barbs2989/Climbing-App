@@ -33,6 +33,7 @@ export function whenText(when) {
   if (/^\d/.test(when)) return "During " + when;
   return when.charAt(0).toUpperCase() + when.slice(1);
 }
+/** @param {{label: string, when?: string|null, value?: import("react").ReactNode, sub?: import("react").ReactNode, tone?: string|null, wide?: boolean}} props */
 export function Tile({ label, when, value, sub, tone, wide }) {
   return <div style={{ background: C.surface, border: "1px solid " + (tone ? tone + "77" : C.border), borderLeft: "4px solid " + (tone || C.borderHi), borderRadius: 10, padding: "9px 11px", minWidth: 0, gridColumn: wide ? "1 / -1" : undefined }}>
     <div style={{ fontSize: 12, fontWeight: 800, color: C.textSub, textTransform: "uppercase", letterSpacing: 0.5 }}>{label}</div>
@@ -42,6 +43,7 @@ export function Tile({ label, when, value, sub, tone, wide }) {
   </div>;
 }
 // A titled group of tiles ("Temperature", "Wind", ...) so a dozen readings read as three small topics.
+/** @param {{title: string, children?: import("react").ReactNode, min?: number}} props */
 export function TileGroup({ title, children, min }) {
   return <div style={{ marginTop: 12 }}>
     <div style={{ fontSize: 12.5, fontWeight: 800, color: C.text, margin: "0 0 6px", paddingBottom: 4, borderBottom: "1px solid " + C.borderLight }}>{title}</div>
@@ -51,6 +53,7 @@ export function TileGroup({ title, children, min }) {
 // A reading the forecast did not carry: said, never a blank and never a zero.
 export const NOT_MEASURED = <span style={{ color: C.textMuted, fontSize: 13, fontWeight: 600 }}>Not measured</span>;
 
+/** @param {{children?: import("react").ReactNode, min?: number}} props */
 export function TileGrid({ children, min }) {
   // A lone tile keeps a tile's width instead of stretching across the whole card.
   const lone = [children].flat(Infinity).filter(Boolean).length === 1;
@@ -63,6 +66,7 @@ export function TileGrid({ children, min }) {
    INSTANT scrollLeft jump, so the chip you meant to tap next leapt out from under your finger. Now the row only
    moves when the picked chip (with a neighbour either side) is not already in view, and it glides there; a new
    day, or the first paint, still lands at once. `children` are the chips, one per index, in order. */
+/** @param {{index: number, count: number, onPick: (j: number) => void, label: (j: number) => string, children?: import("react").ReactNode}} props */
 export function HourStepper({ index, count, onPick, label, children }) {
   const rowRef = useRef(null), seen = useRef(null);
   useEffect(function () {

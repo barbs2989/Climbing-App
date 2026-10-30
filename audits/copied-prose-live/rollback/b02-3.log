@@ -1,0 +1,64 @@
+ALREADY wa_bears_breast_mountain_infinite_beauty approach_variants
+ALREADY wa_bears_breast_mountain_southwest_face detailed_rack
+ALREADY wa_bears_breast_mountain_southwest_face pro_tips
+ALREADY wa_bears_breast_mountain_timeless_treasure pitch_detail
+ALREADY wa_beckey_davis waypoints
+ALREADY wa_boving_christensen waypoints
+ALREADY wa_beckey_davis descent_text
+ALREADY wa_beckey_davis pitch_detail
+ALREADY wa_beckey_davis access
+ALREADY wa_boving_christensen access
+ALREADY wa_prusik_peak_solid_gold access
+ALREADY wa_beckey_davis approach_variants
+ALREADY wa_beckey_tate beta
+ALREADY wa_beckey_tate waypoints
+ALREADY wa_beckey_tate descent_text
+ALREADY wa_beckey_tate approach_variants
+ALREADY wa_beyond_redlining overview
+ALREADY wa_beyond_redlining approach
+ALREADY wa_beyond_redlining pitch_detail
+ALREADY wa_beyond_redlining corrections
+ALREADY wa_beyond_redlining rappel_detail
+ALREADY wa_beyond_redlining approach_variants
+ALREADY wa_big_chiwaukum_west_ridge beta
+ALREADY wa_big_craggy_peak_scramble approach_logistics
+ALREADY wa_big_four_mountain_dry_creek_route approach_variants
+ALREADY wa_big_four_mountain_dry_creek_route climbing_route
+ALREADY wa_big_four_mountain_northwest_ridge beta
+ALREADY wa_big_four_mountain_spindrift_couloir beta
+ALREADY wa_big_four_mountain_spindrift_couloir descent_text
+ALREADY wa_big_four_mountain_spindrift_couloir pitch_detail
+ALREADY wa_big_four_mountain_tower_route beta
+ALREADY wa_big_four_mountain_tower_route pitch_detail
+
+wa_big_kangaroo_going_down_under beta
+  - the route traverses hard right across overlaps to reach a big ledge below an open-book corner
+  + the route traverses sharply right over overlaps to a big ledge below an open-book corner
+
+wa_big_kangaroo_skinny_start beta
+  - this variation climbs solid granite splitters and left-facing corners (5.10+) before trending left
+  + this variation follows solid granite splitters and corners that face left (5.10+), then trends left
+
+wa_big_kangaroo_walkabout pitch_detail[2].notes
+  - climbing to the base of the large roof system called the Kangaroofs
+  + which gains the foot of the big roof system known as the Kangaroofs
+
+wa_big_snagtooth_west_ridge rappels
+  - one off the summit block to the base of the boulder move, then scramble
+  + one from the summit block down to the start of the boulder move, then scramble
+
+wa_big_snagtooth_west_ridge waypoints[0].directions
+  - park in the long pullout on the right side of the road at about 4,320 ft
+  + park in the long pullout at about 4,320 ft, on the road's right-hand side
+  PATCH routes wa_big_snagtooth_west_ridge: HTTP 500 — database struggling; backing off 60 s before one retry
+file:///Users/nathanbarber/dev/Climbing-App/.claude/worktrees/copied-prose-live/scripts/lib/supabase-env.mjs:87
+    throw new Error(`${what}: ${why} twice — STOPPED. The database is not answering; per the owner's throttle rule, do not retry fast. Re-run once a one-row read answers in under 1.5 s.`);
+          ^
+
+Error: PATCH routes wa_big_snagtooth_west_ridge: The operation was aborted due to timeout twice — STOPPED. The database is not answering; per the owner's throttle rule, do not retry fast. Re-run once a one-row read answers in under 1.5 s.
+    at gatedFetch (file:///Users/nathanbarber/dev/Climbing-App/.claude/worktrees/copied-prose-live/scripts/lib/supabase-env.mjs:87:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async patchRow (file:///Users/nathanbarber/dev/Climbing-App/.claude/worktrees/copied-prose-live/scripts/lib/supabase-env.mjs:101:15)
+    at async file:///Users/nathanbarber/dev/Climbing-App/.claude/worktrees/copied-prose-live/scripts/oneoff/rewrite-copied-prose.mjs:67:5
+
+Node.js v20.20.2

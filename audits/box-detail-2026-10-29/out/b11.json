@@ -1,0 +1,20 @@
+{
+ "wa_mount_spickard_southwest": {
+  "boxes": {
+   "Traverse to Southwest Glacier": {"notes": "From the Ouzel Lake basin, head up toward the Silver Lake pass, then bear climber's right across heather and moraine at about 6,800 ft to reach the foot of the small southwest glacier."},
+   "Southwest Glacier": {"notes": "A small glacier, climbed on foot toward a saddle near 8,000 ft on the crest. Early-season it travels well on firm snow; the line above is easy to misjudge, so watch for a wrong turn that forces a downclimb."}
+  },
+  "review": {"confidence": "low", "sources": ["https://turns-all-year.com/trip-reports/july-3-5-2004-mount-spickard-n-cascades"], "changed": "Wrote two boxes from one trip report (traverse at ~6800 ft, small SW glacier, saddle ~8000 ft, one party took a wrong turn and downclimbed). Left out Ouzel Lake to Silver Lake saddle: only search snippets, pages that would confirm it would not load.", "other_findings": "Report places the saddle at ~8000 ft; stored row's 'Class 3 rock gully to col' not independently confirmed. Most sources describe the Silver Lake (north) glacier, a different line."}
+ },
+ "wa_northeast_face_direct": {
+  "boxes": {
+   "P8-P9": {"notes": "A couple of rope lengths past the offwidth boulder, the line reaches the north ridge crest. From there the ridge is followed to the summit, typically simul-climbed on low-angle terrain."}
+  },
+  "review": {"confidence": "low", "sources": ["https://www.mountainproject.com/v/ne-face-direct/108629745"], "changed": "Only P8-P9 written, from one page. P3-P4 and P5 left out: nothing new that a fetched page confirmed (summitpost second-ascent report returned 403).", "other_findings": "Stored P1 says 4th class muddy moves; source says about 80 m of dirty low-angle fourth class with no protection. Source says couloir 50-60 degrees with a chockstone pull at the top; beta text says past 65 degrees."}
+ },
+ "skip_reasons": {
+  "wa_north_ridge_7": "Fetched pages only repeat what is stored (40 ft 5.5 tower pitch, one rappel); nothing new for box 4. Another MP page for a North Ridge there lists 5.3 with a 50-60 ft fourth-class crux and no 5.5 pitch, so grade/pitch structure is disputed.",
+  "wa_poltergeist_pinnacle": "Only trip report/summitpost pages would describe P2/P3; cascadeclimbers loaded empty and summitpost gave 403. Nothing verifiable.",
+  "wa_roofer_madness": "Only source (MP) says nothing about pitch 2 beyond what is stored."
+ }
+}

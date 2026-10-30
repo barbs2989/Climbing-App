@@ -36,7 +36,7 @@ npm run check:guard-wiring # every guard RUNS, is named here, and this file agre
 npm run check:action-versions # no workflow pins an action below the version we moved to (in build)
 npm run check:types # every TypeScript file under src/ type-checks, strict — Vite strips types and checks nothing (in build)
 npm run type-check # the same as check:types, under the name the owner asked for
-npm run lint # ESLint, every rule an error: unused variables, `any`, rules-of-hooks + hook dependency arrays; legacy findings held in eslint-suppressions.json, which only shrinks (in build)
+npm run lint # ESLint, every rule an error: unused variables, `any`, rules-of-hooks + hook dependency arrays; ZERO findings, no baseline file, every disable names its rule and a reason (in build)
 npm run measure:guard-reach -- --out before.json # ...then --out after.json --compare before.json: did moving code make a guard go BLIND? (hand-run around every extraction)
 
 # ── Static code guards — notes: docs/guards/static-code.md ──
@@ -63,6 +63,8 @@ npm run check:a11y-names # every control a screen reader reaches has a name (in 
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:popup-chrome # ...and every ✕, ← Back and remove-✕ in the app look the SAME — lib/popupChrome.js (in build)
+npm run check:tap-slop # a touch just off a small control still reaches it — lib/tapSlop.js stays installed, 44px, and never steals a hit (in build)
+npm run check:dropdown-targets # every dropdown toggle is DRAWN 44px tall, and every turning chevron sits in a control that says aria-expanded (in build)
 npm run check:doc-paths # every file path this document names still EXISTS (in build)
 npm run check:feature-docs # every docs/features doc names files and SYMBOLS that exist, and CURRENT_STATE.md indexes them all (in build)
 npm run check:injection-anchors # every INJECTION CASE still LANDS, so a guard's proof cannot rot (in build)
@@ -74,15 +76,17 @@ npm run check:ui   # drives the real app in Chrome and asserts per-screen invari
 npm run check:overlay-discovery # every modal the app declares is still reachable by the guards (in build)
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
-npm run check:message-delivery # a message from a SECOND real account arrives, and names its sender
+npm run check:message-delivery # a message from a SECOND real account arrives, and names its sender; a climb it shares opens
 npm run check:block-guarantees # blocked: cannot read, message or crew-invite you (2 real accounts; hand-run)
 npm run check:new-climber-journey # a new climber onboards, opens a crew, removes a friend — did any of it reach the DB? (hand-run)
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:pinned-dismiss # a popup's ✕ / ← Back stays on screen, and tappable, scrolled to the end
+npm run check:overlay-fullscreen # on a phone every popup COVERS the screen as a page; the app behind never shows through
 npm run check:a11y-badges # no control announces two fragments welded into one token
 npm run check:selected-state # a control that LOOKS selected must SAY it is selected
 npm run check:control-names # a control says WHAT IT IS; a switch says what it is SET TO (in build)
 npm run check:axe # every screen, signed in AND signed out, passes axe-core's WCAG 2.2 A/AA rules (render-guards.yml)
+npm run check:blue-on-blue # no blue TEXT on a blue BOX: the RENDERED colours, a fill on a wrapper included (render-guards.yml)
 npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
 
@@ -151,6 +155,7 @@ npm run check:area-page-honest # the area page prints only STORED facts, its cha
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:field-renders # every enriched route column actually reaches a screen
+npm run check:declination # the base-of-the-climb arrow turns a MAGNETIC phone compass into TRUE north, to NOAA's WMM2025 test values (in build)
 npm run check:summit-briefing # a peak page states only what its routes AGREE on — and does not withhold what they do
 npm run check:token-boxes  # no element shaped like a chip holds a paragraph
 npm run check:pitch-split # every pitch_detail entry is a row of ROUTE BREAKDOWN, in order (in build)
@@ -209,6 +214,7 @@ npm run audit:access-prose # road/permit sentences filed in a column that render
 npm run audit:road-coverage # a route that describes a WALK but nothing about the ROAD to it
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
 npm run audit:expiring-closures # does a route state a closure that has already expired? (--json for consumers)
+npm run audit:closure-distance # does the DISTANCE include the closed-road walk the route's own text describes? (--selftest needs no DB)
 npm run audit:trailhead-road # routes sharing ONE trailhead/road — open? same road? same gate?
 
 # ── Route prose and catalog structure — notes: docs/guards/route-prose.md ──
@@ -218,10 +224,12 @@ npm run audit:prose-citations   # does rendered prose still name a third party a
 npm run audit:misplaced-prose # ...is ANY rendered string the pipeline talking, NAMING A SOURCE (every state + area blurbs), or a FIRST ASCENT that argues?
 npm run audit:shouted-prose # does any rendered string SHOUT in ALL CAPS? (enrich:apply refuses it too)
 npm run audit:copied-prose -- batch.json # does a research batch repeat its OWN SOURCES word for word? (enrich:apply refuses it too; --selftest needs no network)
+npm run audit:copied-prose -- --live # ...and does the LIVE text of every route our research cited a page for repeat that page? (--cache DIR keeps fetched pages)
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run audit:mountaineering-rule # mountaineering is ONLY a walk-up and a scramble is never roped: no mountaineering or scrambling row carries a 5.x grade (alpine instead), and every disciplines list names its own primary; trigger 0280/0366 + catOf/rDiscs enforce it
 npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
 npm run audit:prose-length   # does a route's DESCRIPTION state a length or pitch count its own STATS contradict? (--selftest needs no DB)
+npm run audit:partner-grade  # does PARTNER REQUIREMENTS ask for a lead grade the route's own GRADE contradicts? (--selftest needs no DB)
 npm run audit:multi-approach # a climb reached MORE THAN ONE WAY that the page cannot switch between yet
 npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
 npm run check:enrichment-traceable # does a climbing_route batch invent anything?
@@ -268,7 +276,7 @@ npm run check:schema # lib/db.js never reads a table or column the database lack
 npm run check:list-row-columns # the Climbs list's THIN ROW carries every column its readers read, and nothing they don't (in build)
 npm run check:migrations # two migrations must never share a number (in build)
 npm run check:migration-replay # does supabase/migrations rebuild an EMPTY database, as a Supabase preview does? (--compare-live: into the LIVE schema)
-npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS (in build)
+npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS; every write policy asks WHO is calling; every view is read-only to the app's keys (in build)
 ```
 
 There is no unit test suite; `check:types` type-checks `src/` (strict TypeScript), `lint` runs
@@ -336,8 +344,8 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 Read it in three bands:
 
 1. **`ClimbMatchCore.jsx`, top: constants + pure helpers.** The `C` object is the shared dark-theme color palette used everywhere via inline styles (there are no CSS files or Tailwind). Domain helpers live here: `catOf`/`tripOf` (discipline categorization), `compat` (partner compatibility scoring), `scarfHrs`/`techHrs` (time estimates), `sunReadout`/`aspectDirs` (sun/shade by wall aspect and time of day), `buildConsensus` (aggregates trip reports into conditions consensus weighted by `trustScore`), `gpxDownload`, `passesFilters`, `distMiles`, `fuzzyMatch`.
-2. **`ClimbMatchCore.jsx`, bottom: presentational components** — `OverviewMap` and the other larger panels. The small ones (`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`, `ActionIcon`, `ElevChart`, `DiscIcon`, `Av`, `SwipeRow`, `ChatComposer`, the two loading skeletons, the chat bubble and typing indicator, `Hr`, `Stars`, `Bar`, `CardHead`, the photo alt-text field and describe box, `ShareExportRow`, `ReactionPicker`, `PullToRefresh`, `TopContribBadge`, `RetryReminder`, `PlaceMatches`, `SectionJumps`, `MiniCalendar`, `SunCorrect`, `StartLocationForm`, `AreaRegionSelect`, `TopContributors`, `PhotoStrip`, `ReportStats`, `ItineraryEditor`, `RealClimberRow`, `CommentMenu`, `DbAreaLevel`, `DbCountryAreaHits`, `BadgeGrid`, `VouchCard`, `SpeedCompat`, `TrackedLists`, `SpeedProfile`, `QuickLog`, `TickList`, `CrewInviteModal`, `SearchSplit`, `WaypointMapPicker`, `SharedListView`, `ConnectModal`, `AspectSunPanel`, `Questionnaire`, `RichEditor`, `AreaTree`, `LogRoutePicker`, `ReportModal`, `FriendsFeed`, `Contributions`, `CatchLedger`, `DbAreaPicker`, `AscentPyramid`, `DbClimbPicker`, `LoginScreen`, `FloatPlan`, `LogCatch`, `Comments`, `Challenges`, `Resume`, `FullProfile`, `PolicyUpdateNotice`) and the route map (`GPXMap`) have moved to band 4; `VerifyBadge`, `ProvenancePanel` and `RouteGearCheck`, once listed here, no longer live in core (`RouteGearCheck` is in `RouteDetail.jsx`).
-3. **`ClimbMatch.jsx`: `App`** — all stateful screen logic and the big inline-JSX render tree, gated by `tab===...` and `selRoute`.
+2. **`ClimbMatchCore.jsx`, bottom: presentational components** — `OverviewMap` and the other larger panels. The small ones (`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`, `ActionIcon`, `ElevChart`, `DiscIcon`, `Av`, `SwipeRow`, `ChatComposer`, the two loading skeletons, the chat bubble and typing indicator, `Hr`, `Stars`, `Bar`, `CardHead`, the photo alt-text field and describe box, `ShareExportRow`, `ReactionPicker`, `PullToRefresh`, `TopContribBadge`, `RetryReminder`, `PlaceMatches`, `SectionJumps`, `MiniCalendar`, `SunCorrect`, `StartLocationForm`, `AreaRegionSelect`, `TopContributors`, `PhotoStrip`, `ReportStats`, `ItineraryEditor`, `RealClimberRow`, `CommentMenu`, `DbAreaLevel`, `DbCountryAreaHits`, `BadgeGrid`, `VouchCard`, `SpeedCompat`, `TrackedLists`, `SpeedProfile`, `QuickLog`, `TickList`, `CrewInviteModal`, `SearchSplit`, `WaypointMapPicker`, `SharedListView`, `ConnectModal`, `AspectSunPanel`, `Questionnaire`, `RichEditor`, `AreaTree`, `LogRoutePicker`, `ReportModal`, `FriendsFeed`, `Contributions`, `CatchLedger`, `DbAreaPicker`, `AscentPyramid`, `DbClimbPicker`, `LoginScreen`, `FloatPlan`, `LogCatch`, `Comments`, `Challenges`, `Resume`, `FullProfile`, `PolicyUpdateNotice`) and the route map (`GPXMap`) have moved to band 4; `VerifyBadge`, `ProvenancePanel` and `RouteGearCheck`, once listed here, no longer live in core (`RouteGearCheck` is in `src/components/RouteGearCheck.tsx`).
+3. **`ClimbMatch.jsx`: `App`** — all stateful screen logic (state, data reads, handlers) and the render switch, gated by `tab===...` and `selRoute`. Since PR61–63 each screen and overlay body is its own component in `src/components/` (`TodayTab`, `CrewListView`, `SettingsPrivacySheet`…), handed App's values as props of the same name.
 4. **`src/components/<Name>.tsx`: single-job components being extracted from the three files above** (since 2026-10; first: `RiskBadge`). Strict TypeScript, one `export default function` each, props declared as an `interface`. The guards still see each one as its parent file's code — every move is registered in `MOVED` in `scripts/lib/guard-sources.mjs`, or the text-reading guards go blind to it. Conventions and the per-PR procedure: [docs/refactor-progress.md](docs/refactor-progress.md). A JS function's destructured params are inferred as REQUIRED props; type the seam with a JSDoc `@param` on the JS side (as `Pill` has), not with casts in the component.
 
 ### Domain concepts to know
@@ -363,8 +371,9 @@ Four functions do the real work; everything else is UI around them. The code is 
   rule, 2026-10-15). Any finding about unused variables, implicit or explicit `any`, or a hook's dependency
   array is fixed in the code before the work is presented or merged — never silenced with a new
   `eslint-disable`, a cast to `any`, or `--suppress-all`. An omission from a dependency array that is
-  genuinely intended gets a `// eslint-disable-line react-hooks/exhaustive-deps -- <why>` naming the reason.
-  When a legacy finding is fixed, shrink the baseline: `npx eslint . --prune-suppressions`.
+  genuinely intended gets a `// eslint-disable-line react-hooks/exhaustive-deps -- <why>` naming the reason
+  (lint fails a directive with no rule or no ` -- `). The legacy backlog is cleared (2026-10-28): there is no
+  `eslint-suppressions.json`, and lint fails if one reappears.
 - When adding a feature, follow the existing pattern: add seed data to the relevant top-level `const`, add `useState` in `App`, and add a `tab===...`/sub-view branch in the render tree. Match the dense, inline-style formatting of surrounding code.
 - Styling is always inline `style={{...}}` referencing the `C` palette — do not introduce CSS files or a styling library.
 - For anything outside the DB-backed routes/areas/contributions/auth path (crews, messages, connections, vouches, logs, trip reports, etc.), "saving" means updating React state — don't reach for storage APIs unless explicitly asked to add persistence. For DB-backed data, use the existing `lib/db.js`/`lib/supabase.js` patterns (e.g. `submitContribution`) rather than writing new ad-hoc persistence.

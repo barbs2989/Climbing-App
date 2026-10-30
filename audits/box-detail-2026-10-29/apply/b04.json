@@ -1,0 +1,43 @@
+{
+ "wa_mount_rainier_ingraham_direct": {
+  "area": "wa_mount_rainier",
+  "pitch_detail": [
+   {
+    "grade": "snow slog",
+    "notes": "Skyline Trail past Glacier Vista and Panorama Point, then the Muir Snowfield once the trail ends near 7,200 ft; about 4,600 ft of gain to Muir. Fog and whiteout are common and wind can erase the boot track, so carry navigation. Weather-exposed but not glaciated.",
+    "pitch": "Paradise → Camp Muir"
+   },
+   {
+    "grade": "glacier",
+    "notes": "Rope up on the Cowlitz Glacier, where crevasses are a constant hazard, and cross it gently east to Cathedral Gap, which holds snow early in the season.",
+    "pitch": "Camp Muir → Cathedral Gap"
+   },
+   {
+    "grade": "glacier",
+    "notes": "Crevassed bench near 11,100 ft, a common place to rest or camp before the summit push. Here the Direct parts from the Disappointment Cleaver line and heads straight up the Ingraham Glacier; crevasse widths change through the season.",
+    "pitch": "Ingraham Flats"
+   },
+   {
+    "grade": "steep snow/ice 40–50°",
+    "notes": "climb directly up the headwall past the bergschrund, under the icefall — the crux and the hazard",
+    "pitch": "Ingraham Glacier headwall (direct)"
+   },
+   {
+    "grade": "snow 30–40°",
+    "notes": "Weave through crevasses on the established line to the southeast crater rim. Early in the season ladders and fixed pickets may be in place, and bridges sag as the day warms. From the rim, Columbia Crest (14,411 ft) is a short walk across the crater.",
+    "pitch": "Upper glacier to crater rim"
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2026/05/ingraham-direct-route-update-52626.html",
+    "https://www.turns-all-year.com/trip-reports/may-11-12-2010-mt-rainier-ingraham-direct",
+    "https://timberlinetrails.com/RainierApproachClimb.html"
+   ],
+   "changed": "Wrote 4 thin boxes with elevations and hazards; no lengths or anchors stated by sources. Ladder/picket details marked conditions-dependent because the 2026 update describes ladders at 11,600-11,800 ft, below the stored headwall.",
+   "other_findings": "Stored Muir elevation 10,080 ft vs 10,188 ft in one report (sources differ). Stored 'Class 2' grade for a glaciated route with 40-50 degree headwall looks low."
+  }
+ }
+}

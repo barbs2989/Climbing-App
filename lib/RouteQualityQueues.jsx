@@ -21,8 +21,9 @@ import {
 } from "./db";
 import { C, DLOCALE, sameEditValue, pubNameRow } from "../ClimbMatchCore";
 import { AREA_EDIT_FIELDS, monthsLabel } from "./areaFields";
-import { useAreaCardsByIds } from "./db";
+import { useAreaEditRowsByIds } from "./db";
 import LoadingRows from "../src/components/LoadingRows.tsx";
+import { isRackItem, rackItemLine } from "./rack.js";
 
 // An AREA edit (0319): area_id set, route_id null. Its field label and current value come from
 // lib/areaFields.js (the one list the constraint, applier, sheet and page share), not from
@@ -47,6 +48,8 @@ function rowsOf(v) {
   if (!v.length || isPrim(v[0])) return null;
   return v.map(function (r, i) {
     if (!r || typeof r !== "object") return String(r);
+    // A rack row ({item, sizes, qty}) reads as the RACK card prints it: "Cams #1 ×2".
+    if (r.pitch == null && r.n == null && isRackItem(r)) return rackItemLine(r);
     const head = r.pitch != null ? "P" + r.pitch : r.n != null ? "#" + r.n : r.name || r.label || ("row " + (i + 1));
     const rest = Object.keys(r).filter((k) => ["pitch", "n", "name", "label", "photos", "comments"].indexOf(k) < 0 && r[k] != null && r[k] !== "" && !(Array.isArray(r[k]) && !r[k].length))
       .map((k) => k + ": " + (isPrim(r[k]) ? String(r[k]) : JSON.stringify(r[k]))).join(" · ");
@@ -116,14 +119,15 @@ function Msg({ msg }) {
 }
 
 // ── 1. Held route edits ──────────────────────────────────────────────────────────────
+const NO_ROWS = [];
 export function FieldContributionQueue({ onOpenRoute }) {
   const q = useFieldContributions("pending");
   const fieldsQ = useContributionFields();
-  const rows = q.data || [];
+  const rows = q.data || NO_ROWS;
   const routeIds = useMemo(() => Array.from(new Set(rows.map((r) => r.route_id).filter(Boolean))), [rows]);
   const routesQ = useRouteRowsByIds(routeIds);
   const areaIds = useMemo(() => Array.from(new Set(rows.filter(isAreaRow).map((r) => r.area_id))), [rows]);
-  const areasQ = useAreaCardsByIds(areaIds);
+  const areasQ = useAreaEditRowsByIds(areaIds);
   const names = useNames(rows.map((r) => r.contributor));
   const [busy, setBusy] = useState(null);
   const [msg, setMsg] = useState(null);
@@ -181,7 +185,7 @@ export function FieldContributionQueue({ onOpenRoute }) {
         // An area's current value is the column the page renders (lib/areaFields.js `cur`), shown
         // the way the sheet shows it; the proposed months read as "Mar–May" rather than [3,4,5].
         const cur = g.area_id ? (areaRow && area ? (area.cur(areaRow) || undefined) : undefined) : (f && f.column_name && routeRow ? routeRow[f.column_name] : undefined);
-        const proposed = g.area_id && area && area.type === "months" ? monthsLabel(r0.value) : r0.value;
+        const proposed = g.area_id && area && area.type === "months" ? monthsLabel(r0.value) : g.area_id && area && area.fmt ? (area.fmt(r0.value) || r0.value) : r0.value;
         const name = g.area_id ? ((r0.areas && r0.areas.name) || (areaRow && areaRow.name) || g.area_id) : ((r0.routes && r0.routes.name) || g.route_id);
         const isBusy = busy === g.key;
         const m = mode[g.key];
@@ -203,6 +207,8 @@ export function FieldContributionQueue({ onOpenRoute }) {
             <div><div style={{ fontSize: 11, color: C.green, fontWeight: 700, marginTop: 4 }}>PROPOSED</div><Val v={proposed} tone="new" /></div>
           </div>
           <RowDiff cur={cur} nxt={r0.value} />
+          {/* A proposed parking pin (0378) is checked by LOOKING at it: the satellite view shows whether there is a lot or a pullout there. */}
+          {area && area.type === "pin" && r0.value && isFinite(Number(r0.value.lat)) && isFinite(Number(r0.value.lng)) ? <a href={"https://www.google.com/maps/search/?api=1&query=" + Number(r0.value.lat) + "," + Number(r0.value.lng)} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", minHeight: 44, marginTop: 4, color: C.blue, fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>See the proposed pin in Google Maps</a> : null}
           {m === "edit" ? <div style={{ marginTop: 9 }}>
             <textarea aria-label={"Edit the value for " + label} value={draft[g.key] != null ? draft[g.key] : draftText(g)} onChange={(e) => setDraft((d) => ({ ...d, [g.key]: e.target.value }))} rows={4} style={fld} />
             <div style={{ display: "flex", gap: 8, marginTop: 7 }}>
@@ -210,7 +216,7 @@ export function FieldContributionQueue({ onOpenRoute }) {
               <button disabled={isBusy} style={btn("plain", isBusy)} onClick={() => setMode((x) => ({ ...x, [g.key]: null }))}>Cancel</button>
             </div>
           </div> : m === "reject" ? <div style={{ marginTop: 9 }}>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 6 }}>{REASONS.map((t) => <button key={t} onClick={() => setReason((x) => ({ ...x, [g.key]: t }))} style={{ padding: "5px 8px", borderRadius: 14, border: "1px solid " + (reason[g.key] === t ? C.blue : C.border), background: reason[g.key] === t ? C.blueBg : C.surface, color: reason[g.key] === t ? C.blue : C.textSub, fontSize: 11.5, cursor: "pointer" }}>{t}</button>)}</div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 6 }}>{REASONS.map((t) => <button key={t} onClick={() => setReason((x) => ({ ...x, [g.key]: t }))} style={{ padding: "5px 8px", borderRadius: 14, border: "1px solid " + (reason[g.key] === t ? C.blue : C.border), background: reason[g.key] === t ? C.blueBg : C.surface, color: reason[g.key] === t ? "#fff" : C.textSub, fontSize: 11.5, cursor: "pointer" }}>{t}</button>)}</div>
             <textarea aria-label="Why this edit is turned down (the climber reads this)" value={reason[g.key] || ""} onChange={(e) => setReason((x) => ({ ...x, [g.key]: e.target.value }))} rows={2} placeholder="Why? The climber is shown this (at least 10 characters)." style={fld} />
             <label style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 12, color: C.textSub, marginTop: 6 }}><input type="checkbox" checked={!!noStrike[g.key]} onChange={(e) => setNoStrike((x) => ({ ...x, [g.key]: e.target.checked }))} /> Honest mistake — don’t count it as a strike</label>
             <div style={{ display: "flex", gap: 8, marginTop: 7 }}>
@@ -235,7 +241,7 @@ export function RouteFlagQueue({ onOpenRoute }) {
   const [busy, setBusy] = useState(null);
   const [msg, setMsg] = useState(null);
   const [note, setNote] = useState({});
-  const rows = q.data || [];
+  const rows = q.data || NO_ROWS;
   if (q.isLoading) return <LoadingRows C={C} label="Loading flags…" style={{padding: "8px 0"}}/>;
   if (q.error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>Could not load the flags — {(q.error && q.error.message) || "the request failed"}. This is not a report that there are none.</div>;
   const act = async (id, status) => {
@@ -274,7 +280,7 @@ export function ContributorStandingQueue() {
   const [busy, setBusy] = useState(null);
   const [msg, setMsg] = useState(null);
   const [reason, setReason] = useState({});
-  const rows = q.data || [];
+  const rows = q.data || NO_ROWS;
   if (q.isLoading) return <LoadingRows C={C} label="Loading contributor standing…" style={{padding: "8px 0"}}/>;
   if (q.error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>Could not load contributor standing — {(q.error && q.error.message) || "the request failed"}. This is not a report that nobody has a strike.</div>;
   const act = async (uid, status, days) => {

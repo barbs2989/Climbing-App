@@ -24,7 +24,7 @@ const CASES = [
   {
     name: "fresh-ladder",
     why: "RouteDetail's private age ladder, restored exactly as it stood: rounds where ago() floors",
-    file: "RouteDetail.jsx",
+    file: "src/components/ConsensusPanel.tsx", // PR57 moved it from RouteDetail.jsx
     find: 'const _fresh=_latest?"Updated "+ago(_latest):"";',
     repl: 'const _dago=_latest?Math.round((new Date()-new Date(String(_latest).slice(0,10)+"T12:00:00"))/86400000):null;'
         + 'const _fresh=_dago==null?"":(_dago<=0?"Updated today":_dago===1?"Updated yesterday":'
@@ -36,10 +36,10 @@ const CASES = [
   {
     name: "badge-verified-routedetail",
     why: "the What's changed badge calling a plain report count verified",
-    file: "RouteDetail.jsx",
+    file: "src/components/BetaDiff.tsx",
     find: '{"✓ "+acts.length+" report"+(acts.length!==1?"s":"")}',
     repl: '{"✓ "+acts.length+" verified report"+(acts.length!==1?"s":"")}',
-    expect: /RouteDetail\.jsx @\d+: ".* verified report/,
+    expect: /BetaDiff\.tsx @\d+: ".* verified report/,
     section: "static+screen",
   },
   {
@@ -54,11 +54,11 @@ const CASES = [
   {
     name: "feed-ladder",
     why: "Home's friend feed, the third ladder — also off the Reports tab",
-    file: "ClimbMatch.jsx",
-    find: "var when=ago(x.a.date);",
-    repl: 'var dago=Math.round((new Date()-new Date(String(x.a.date)+"T12:00:00"))/86400000);'
-        + 'var when=dago<=0?"today":dago===1?"yesterday":(dago<30?dago+"d ago":Math.round(dago/30)+"mo ago");',
-    expect: /ClimbMatch\.jsx @\d+: "mo ago" — a second age ladder/,
+    file: "src/components/TodayTab.tsx", // PR61 lifted Home out of App; lint made the var a const
+    find: "const when=ago(x.a.date);",
+    repl: 'const dago=Math.round((new Date()-new Date(String(x.a.date)+"T12:00:00"))/86400000);'
+        + 'const when=dago<=0?"today":dago===1?"yesterday":(dago<30?dago+"d ago":Math.round(dago/30)+"mo ago");',
+    expect: /(?:ClimbMatch\.jsx|src\/components\/TodayTab\.tsx) @\d+: "mo ago" — a second age ladder/,
     section: "static only — this is why the static half exists",
   },
   {

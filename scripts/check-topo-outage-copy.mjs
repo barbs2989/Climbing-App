@@ -63,6 +63,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 // scripts/, not scripts/oneoff/ — one level up since the promotion.
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -268,13 +269,14 @@ const CHAIN = [
    "RouteDetail no longer accepts the flag"],
   ["RouteDetail.jsx", "commentsUnavailable={commentsUnavailable} onCommentAdd={commentApi.canPost===false?null:commentApi.onAdd}",
    "RouteDetail no longer hands the flag to RouteBreakdown"],
-  ["RouteDetail.jsx", "function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd,dbPhotos,onAddPitchPhoto}){",
+  ["RouteDetail.jsx", "function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd,dbPhotos,onAddPitchPhoto,logged}", // no `){`: the moved .tsx types the props (PR58)
    "RouteBreakdown no longer accepts the flag"],
   ["RouteDetail.jsx", "comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}",
    "RouteBreakdown no longer hands the flag to PitchComments"],
 ];
 const SRC = {};
-for (const [f] of CHAIN) if (!SRC[f]) SRC[f] = fs.readFileSync(path.join(ROOT, f), "utf8");
+// readAppFile: RouteDetail.jsx is read with its moved components (TopoSection, RouteBreakdown — PR58) stitched back in.
+for (const [f] of CHAIN) if (!SRC[f]) SRC[f] = readAppFile(path.join(ROOT, f));
 for (const [f, needle, why] of CHAIN) {
   cases++;
   if (SRC[f].includes(needle)) ok(`wiring: ${f} — ${why.replace("no longer ", "")}`);

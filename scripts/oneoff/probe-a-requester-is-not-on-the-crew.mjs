@@ -24,7 +24,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { readCoreSource } from "../lib/guard-sources.mjs";
+import { readCoreSource, readAppFile } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 let bad = 0;
@@ -34,7 +34,8 @@ const dead = (m) => { console.error("\nBROKEN PROBE: " + m); process.exit(2); };
 
 // Through readCoreSource(): CrewCard and the partner screens moved out of core to load lazily.
 const core = readCoreSource(ROOT);
-const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+// Stitched: the crew tab's list and the friend rows were lifted out of App into src/components/ (PR61).
+const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
 
 // ---------------------------------------------------------------- 1. the rule itself
 // Balance braces from the declaration rather than anchoring on the start and end of a LINE.
@@ -123,7 +124,7 @@ const READERS = [
   ["core", "isReady asks the same question",
     'function isReady(c,hasMessages){return !!(c&&crewAllConfirmed(c)&&'],
   ["app", "the crew-tab quick list denominator",
-    'const otherMem=crewInCrew(cr).filter(m=>m.climberId!==0);'],
+    'const otherMem=crewInCrew(cr).filter((m: CrewListViewMember)=>m.climberId!==0);'], // CrewListView.tsx since PR61, typed
   ["app", "“Invite X to one of your crews” counts the crew",
     'count:crewSize(cr),max:crewMax(r)'],
   ["app", "the invite prompt's size",

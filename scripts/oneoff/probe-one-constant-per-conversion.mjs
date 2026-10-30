@@ -21,12 +21,12 @@ import path from "node:path";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
 import { fileURLToPath } from "node:url";
-import { MOVED_FROM_CORE } from "../lib/guard-sources.mjs";
+import { MOVED_ALL } from "../lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 // Components moved out of ClimbMatchCore.jsx to load lazily are still app source (see guard-sources.mjs).
-const FILES = ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx", ...MOVED_FROM_CORE];
+const FILES = ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx", ...MOVED_ALL];
 const problems = [];
 
 // =======================================================================================
@@ -48,7 +48,7 @@ const BAD = new Map([
 let numbers = 0;
 for (const f of FILES) {
   const src = fs.readFileSync(path.join(ROOT, f), "utf8");
-  const ast = parse(src, { sourceType: "module", plugins: ["jsx"] });
+  const ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] });
   traverse(ast, {
     NumericLiteral(p) {
       numbers++;

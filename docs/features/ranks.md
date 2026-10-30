@@ -34,6 +34,12 @@
 
 ## 2. How it works — the scoring (audited 2026-10-15, 0323)
 Every number for a real climber comes from `leaderboard()` on the server; the client only picks a column and sorts.
+- **Who comes back (0379)**: the server values every board the tab offers (both *Backed climbs only* settings × every
+  Climbing type × every Ranking) and returns each climber who places in the TOP 100 of any of them, plus you — so each
+  board's top 100 is exact however many climbers a scope holds. Your row carries `stats.standing`,
+  `{"<all|backed>|<type>|<board>": [your rank or null, climbers ranked]}`; the app reads it for *You're #N of M*, your
+  pinned row's number and *The top 100 of N*, and falls back to counting the rows when it is absent. Checked with
+  `scripts/oneoff/probe-ranks-0379.sql` (130 test climbers: exactly the 100 that belong come back; the caller reads #121 of 131).
 - **Which logs count**: `rankable_logs()` (0203/0208) — catalog routes only, no future dates, one log per route per
   day, 30 a day, a climb a tagged partner denied is dropped; each log is tiered confirmed (1.0) / evidence (0.75) /
   self (0.5). A **Conditions** tick (a scouting report) is not a climb and counts on no board.
@@ -73,7 +79,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 | `lib/Help.jsx` | `Help` (its `topic` prop opens one section) |
 | `lib/db.js` | `useLeaderboard`, `useTopClimbs`, `useRankBreakdown` |
 | `ClimbMatchCore.jsx` | `HELP_FEATS` (the Ranks section holds the scoring text), `tickTypesFor`, `NONCOMPLETION_TICKS`, `lbRowName` |
-| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333, 0338, 0357 (`rank_breakdown`) |
+| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333, 0338, 0357 (`rank_breakdown`), 0373, 0379 (top 100 per board) |
 
 ## 4. Data
 `climb_logs`, `climb_log_confirmations`, `routes` (`grade_system`, `grade_num`, `gain_ft`, `length_m`, `classic`,
@@ -89,7 +95,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 ## 6. Guards
 `check:grade-parser` holds `lib/rankGrade.js` equal to `rank_grade()` in the newest migration that defines it.
 Hand-run probes: `scripts/oneoff/probe-ranks-anti-padding.sql`, `probe-ranks-anti-collusion.sql`,
-`probe-ranks-0323.sql`; `scripts/oneoff/probe-ranks-renders.mjs`.
+`probe-ranks-0323.sql`, `probe-ranks-0379.sql`; `scripts/oneoff/probe-ranks-renders.mjs`.
 
 ## 7. Last significant change
 - **Ranks audit (0323)**: one grade scale across V/WI/M, top-rope/follow a letter lower, conditions reports out,
@@ -97,12 +103,12 @@ Hand-run probes: `scripts/oneoff/probe-ranks-anti-padding.sql`, `probe-ranks-ant
   ranks, a table layout with ⚑ in its own column, the scoring text moved into Help › Ranks behind the header's `?`.
 
 - **The climbs behind a number (0357)**: a row's value opens the counted climbs and what each scored.
+- **True top 100 (0379)**: the 500-climber cap is gone; every board is ranked on the server, and your standing comes with your row.
 
 ## 8. Known gaps
 - `rank_breakdown()` copies `leaderboard()`'s counting rather than sharing it; a change to the scoring must
   change both (no guard holds them equal yet).
-- `leaderboard()` returns at most 500 climbers per scope, ordered by climbs logged, and each board is ranked from
-  those. Correct while a scope holds ≤ 500 visible climbers (3 profiles on 2026-10-15); past that, a climber
-  outside the 500 who leads, say, Vouched is missed. Ranking per board on the server is the fix.
+- The board values `leaderboard()` ranks (0379's `scored` CTE) mirror the `val` of each board in `B` in
+  `lib/Leaderboards.jsx`; a new board, or a board whose value changes, must change both (no guard holds them equal).
 - Grade conversions between systems are approximate by nature (theCrag and 8a.nu publish their own tables).
 - A Peaks count is per summit AREA; two faces of one peak filed as two areas count twice.

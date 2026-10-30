@@ -1,0 +1,103 @@
+[
+ {
+  "id": "wa_big_craggy_peak_scramble",
+  "verdict": "UNSURE",
+  "removePinIdx": [],
+  "reason": "Trailhead, mine ruins and summit agree with the dense track, and Mountaineers/SummitPost confirm Copper Glance TH and a leave-trail point for the SE ridge. Pins 2-4 sit 345-560 m from the recorded line in the same valley, which is cross-country line variance that the sources do not settle.",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/big-craggy-west-craggy-peaks",
+   "https://www.summitpost.org/the-craggies/153369"
+  ]
+ },
+ {
+  "id": "wa_buckskin_mountain_southwest_slopes",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [],
+  "reason": "Stored track has only 6 vertices (coarse straight-line sketch), so offTrackM is inflated by chords; the Entiat River Trail approach from the Entiat River TH matches the text (Anthem Creek junction at 2.2 mi is ~3.3 km from the TH, where pin 1 sits). Pins follow the same valley, so none removed.",
+  "sources": []
+ },
+ {
+  "id": "wa_cardinal_peak_se_slopes",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [
+   2,
+   3
+  ],
+  "reason": "Dense track starts at the correct North Fork Entiat TH (WTA 48.0112,-120.5719) and reaches the Fern Lake junction at ~6.1 mi along-track (about 48.087,-120.595), exactly where WTA puts it; pin 2 sits ~3 km west of that, a wrong place. Pin 3 'west-side' camp lies east/south of the summit while the track approaches from the west, and it is in bivyNames.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/fern-lake",
+   "https://www.wta.org/go-hiking/hikes/north-fork-entiat-river"
+  ]
+ },
+ {
+  "id": "wa_chockstone_route",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [
+   0,
+   1
+  ],
+  "reason": "Track runs Blue Lake TH to North Early Winters Spire, as the text says. Klipchuck and Lone Fir are road campgrounds 8-14 km away and both are in bivyNames, so remove the pins.",
+  "sources": []
+ },
+ {
+  "id": "wa_colonial_peak_west_ridge",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [],
+  "reason": "Stored track has only 6 vertices (coarse straight-line sketch), so offTrackM is inflated by chords; it chords from the TH past Pyramid Lake (pin 1 is ~1 km off the chord). The described Pyramid Lake Trail approach fits the pins; none removed.",
+  "sources": []
+ },
+ {
+  "id": "wa_eldorado_peak_eldorado_glacier_nw",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [
+   0
+  ],
+  "reason": "Dense track starts at the Eldorado TH and ends at the summit, with glacier camp and summit pins on it. Marble Creek Campground is a road campground ~10 km off and is in bivyNames, so remove pin 0; pin 3 (couloir base, 498 m) is the route's own start and stays.",
+  "sources": []
+ },
+ {
+  "id": "wa_foggy_peak_scramble",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [],
+  "reason": "Stored track has only 6 vertices (coarse straight-line sketch), so offTrackM is inflated by chords; it runs Barlow Pass TH to Monte Cristo to Foggy summit, matching the text. The Barlow roadhead camp pin is only 280 m from the start, so kept.",
+  "sources": []
+ },
+ {
+  "id": "wa_forbidden_peak_east_ledges",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [],
+  "reason": "Stored track has only 7 vertices (coarse straight-line sketch), so offTrackM is inflated by chords; a straight TH-to-summit chord that skips the Boston Basin camps (1-2 km off the chord). The pins fit the described Boston Basin approach; none removed.",
+  "sources": []
+ },
+ {
+  "id": "wa_forbidden_peak_northeast_face",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [],
+  "reason": "Stored track has only 6 vertices (coarse straight-line sketch), so offTrackM is inflated by chords; vertices are out of walking order (summit then back to high camp). Pins (Boston Basin camps, Sharkfin Col) fit the described approach; none removed.",
+  "sources": []
+ },
+ {
+  "id": "wa_lincoln_peak_north_ridge",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [],
+  "reason": "Stored track has only 8 vertices (coarse straight-line sketch), so offTrackM is inflated by chords; it chords from Heliotrope Ridge TH to the Coleman Glacier and Lincoln summit. Pins (Kulshan Cabin site, Hogsback camp) lie 0.9-1.2 km from the chord on the Heliotrope Ridge side; none removed.",
+  "sources": []
+ },
+ {
+  "id": "wa_monument_peak_pasayten_scramble",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [],
+  "reason": "Dense track (699 pts) follows the Monument Creek Trail No. 484 line; TH, Eureka Creek ford, Pistol Pass, Lake of the Woods and summit pins sit 1-72 m from it and match sources. Pins 4-6 (cross-country saddle, basin, ramp) are 370-680 m off, which is line variance, not another approach.",
+  "sources": [
+   "https://mountaineers.org/activities/routes-places/monument-peak-lake-mountain",
+   "https://www.summitpost.org/monument-peak/151494"
+  ]
+ },
+ {
+  "id": "wa_mount_despair_east_route",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [],
+  "reason": "Stored track has only 8 vertices (coarse straight-line sketch), so offTrackM is inflated by chords; vertices zigzag in list order, not a walked line. Thornton Lakes TH, Triumph Pass, Lake Regret and Upper Despair Lake pins fit the described route; none removed.",
+  "sources": []
+ }
+]

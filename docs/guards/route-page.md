@@ -83,6 +83,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   identifier is referenced. Only rendering can. It pulls a **real value from the live DB** per
   column, injects it onto a bare route, renders all six sub-tabs, and looks for it on screen.
   Runs on every PR via `render-guards.yml`; not a build gate (it reads the DB).
+  - **Every column in `FIELDS` needs a partial index `routes (id) where <col> is not null`**
+    (0387). The sample query is `<col>=not.is.null&order=id.asc&limit=8`; on a column filled on
+    under 6% of 315k routes, without that index the planner walks `routes_pkey` and discards rows
+    until it finds eight — 282,764 rows and ~1.8 GB of buffer reads for `climbing_route` alone,
+    61 times per run, on every PR push from every parallel session. That load was the likeliest
+    cause of the 2026-10-28 database stall. Adding a column to `FIELDS`? Add its index in a new
+    migration (`create index concurrently` by hand on production, then record the version).
   - It replaced `scripts/oneoff/measure-which-tab-renders-each-field.mjs`, which hardcoded
     `ROOT` to the `rappels-rack-filter-class-audit` worktree — so it silently measured a
     different branch's code than the one you ran it in.
@@ -1096,3 +1103,25 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     as *neither* rather than as non-rack, so a new kind of kit shows up in the second list, not the
     first. It is a WA audit by scope (`--state`), hand-run, exit 1 on any finding; `--selftest`
     asserts `DISC_RACK` and eight classifier cases with no database.
+
+- **`check:declination`** asserts that **the base-of-the-climb arrow turns a magnetic phone compass
+  into TRUE north**. *Point the way with your compass* (`BaseCheckinPanel`, 2026-10-28) rotates an
+  arrow toward the base from `bearingDeg`, which is TRUE, against the phone's heading, which is
+  MAGNETIC: WebKit fills `webkitCompassHeading` from `CLHeading.magneticHeading` and corrects nothing
+  (`WebCoreMotionManager.mm`, read 2026-10-28), and Android's absolute orientation follows the
+  geomagnetic field. In the Cascades the gap is ~15°, so without the correction the arrow points at
+  the wrong line from 100 m and looks exactly like a right one. The correction is `declinationDeg`
+  in **`lib/declination.js`**, a World Magnetic Model evaluator carrying NOAA's WMM2025 coefficient
+  file verbatim.
+  - **It EXECUTES the model** against NOAA's own 100 published test values (`WMM2025_TestValues.txt`,
+    shipped in the coefficient zip), each within 0.01° — NOAA prints two decimals, so the measured
+    worst case of 0.005° is rounding alone. It then runs the heading helpers in `lib/baseCheckin.js`
+    on constructed events: an iPhone heading plus the declination, Android's counter-clockwise
+    `alpha`, the screen-angle term, refusal of a non-absolute `alpha` (measured from wherever the
+    phone faced when listening began, never north) and of iOS's uncalibrated `-1`, the eight turn
+    words, and the circular average (359° and 1° → 0°, not 180°).
+  - **What it cannot see.** Whether a real phone's sensor is right: a magnetometer near a rack or
+    against rock is off by more than any declination, which is why the card tells the climber so,
+    shows iOS's own accuracy when it exceeds 25°, and stops pointing inside GPS error. The model is
+    valid 2025.0–2030.0; replace the `COF` table with WMM2030 when NOAA publishes it (the test file
+    in the new zip replaces `NOAA` here).

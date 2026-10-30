@@ -21,6 +21,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile, stripTypes } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const die = (w) => { console.error(`\ncheck:contrib-summary FAILED — ${w}\n`); process.exit(1); };
@@ -38,8 +39,9 @@ function liftBody(src, opener, label) {
   return src.slice(i, k + 1);
 }
 
-const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
-const ok = fs.readFileSync(path.join(ROOT, "lib/objKeys.js"), "utf8");
+// fmtSlingVal moved to lib/slingFormat.js (PR57); a lib/ helper is not stitched back by readAppFile.
+const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx")) /* stitched: SuggestFix lives in src/components since PR59 */ + "\n" + fs.readFileSync(path.join(ROOT, "lib/slingFormat.js"), "utf8");
+const ok =fs.readFileSync(path.join(ROOT, "lib/objKeys.js"), "utf8");
 
 // The three pieces the summary line is built from.
 const dgetSrc = liftBody(rd, "const _dget=", "_dget");
@@ -48,8 +50,9 @@ const objStrSrc = liftBody(rd, "objStr=function(", "objStr");
 
 let objStr;
 try {
-  objStr = new Function("var " + dgetSrc.replace(/^const /, "") + ";\n" + slingValSrc +
-    "\nvar " + objStrSrc + ";\nreturn objStr;")();
+  // The lifted pieces come from a TypeScript file since PR59 (SuggestFix.tsx): types stripped before they run.
+  objStr = new Function(await stripTypes("var " + dgetSrc.replace(/^const /, "") + ";\n" + slingValSrc +
+    "\nvar " + objStrSrc + ";\nreturn objStr;"))();
 } catch (e) { die("the lifted source did not evaluate: " + (e && e.message)); }
 if (typeof objStr !== "function") die("objStr did not lift as a function");
 

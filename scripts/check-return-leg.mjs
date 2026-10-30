@@ -55,6 +55,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -270,7 +271,7 @@ eq("...while its next-day return is worded like a next-day return", split.ret, n
 
 /* The label and the "(+Nd)" suffix come from ONE function, so they cannot disagree. Asserted
    rather than assumed: a second next-day test written beside the label is the drift this guards. */
-const dayOfDecls = (fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8").match(/const dayOf=/g) || []).length;
+const dayOfDecls = (readAppFile(path.join(ROOT, "RouteDetail.jsx")).match(/const dayOf=/g) || []).length;
 eq("dayOf is declared exactly once", dayOfDecls, 1);
 
 /* -- 3. a multi-day route SAYS SO, and points at something that is on the screen ----------------

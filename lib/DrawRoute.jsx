@@ -77,7 +77,7 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
   return createPortal(<div role="dialog" aria-modal="true" aria-label="Draw the approach" style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", overscrollBehavior: "contain", maxWidth: 520, margin: "0 auto", boxSizing: "border-box" }}>
     <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "12px 16px", display: "flex", alignItems: "center", gap: 10, zIndex: 1100 }}>
       <button onClick={onClose} style={POP_BACK}>← Back</button>
-      <div style={{ fontSize: 15, fontWeight: 700, color: C.text, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{"Draw the approach · " + route.name}</div>
+      <div style={{ fontSize: 15, fontWeight: 700, color: C.text, minWidth: 0, overflowWrap: "anywhere" }}>{"Draw the approach · " + route.name}</div>
     </div>
     <div style={{ padding: "14px 16px 40px", color: C.text }}>
       <p style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5, margin: "0 0 12px" }}>{crag ? "Click along the way in, from where you park to the base of the crag. Download it as GPX, or suggest it as this crag’s trail." : "Click along the way in, from the trailhead toward the climb. Download it as GPX to plan with or load on your watch."}</p>
@@ -87,7 +87,7 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
         <div style={stat}><div style={lbl}>Gain · loss</div><div style={{ fontSize: 16, fontWeight: 800, marginTop: 2 }}>{pts.length < 2 ? "—" : !p ? <span style={{ fontSize: 13, color: C.textMuted, fontWeight: 600 }}>Measuring…</span> : p.error ? <span style={{ fontSize: 13, color: C.amber, fontWeight: 600 }}>Couldn’t read the terrain</span> : "↑" + uElev(p.gain) + " · ↓" + uElev(p.loss)}</div></div>
       </div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12 }}>
-        <button onClick={download} disabled={pts.length < 2} style={{ padding: "10px 14px", borderRadius: 10, border: "1px solid " + C.blueDim, background: C.blueBg, color: pts.length < 2 ? C.textMuted : C.blue, fontSize: 13.5, fontWeight: 700, cursor: pts.length < 2 ? "default" : "pointer" }}>⤓ Download GPX</button>
+        <button onClick={download} disabled={pts.length < 2} style={{ padding: "10px 14px", borderRadius: 10, border: "1px solid " + C.blueDim, background: C.blueBg, color: pts.length < 2 ? C.textMuted : "#fff", fontSize: 13.5, fontWeight: 700, cursor: pts.length < 2 ? "default" : "pointer" }}>⤓ Download GPX</button>
         {crag && onSuggest ? <button onClick={function () { onSuggest(pts); }} disabled={pts.length < 3} title={pts.length < 3 ? "Draw at least three points" : undefined} style={{ padding: "10px 14px", borderRadius: 10, border: "none", background: pts.length < 3 ? C.card : C.blueSolid, color: pts.length < 3 ? C.textMuted : "#fff", fontSize: 13.5, fontWeight: 700, cursor: pts.length < 3 ? "default" : "pointer" }}>Suggest this as the trail</button> : null}
       </div>
       <p style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.5, margin: "12px 0 0" }}>The gain and loss are read from terrain heights along your line, so they follow the ground, not the trail’s switchbacks. A drawn line is a sketch — check it against the map and the ground before you rely on it.</p>

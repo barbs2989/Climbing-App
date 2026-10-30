@@ -80,8 +80,9 @@ jobs:
     # A hung dev server or a browser that never launches should fail in minutes,
     # not sit for the default six hours.
     # 50 overlays since the scaffold's discovery was widened (was 28); walked twice since
-    # check:pinned-dismiss joined (2026-10-24), so the budget doubled.
-    timeout-minutes: 60
+    # check:pinned-dismiss joined (2026-10-24), so the budget doubled; three times since
+    # check:overlay-fullscreen joined (2026-10-29).
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -117,6 +118,16 @@ jobs:
       # scrolled to the end. A second walk of the same overlays, so the job's timeout covers both.
       - name: Popup close and back stay pinned
         run: npm run check:pinned-dismiss
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
+
+      # Third walk of the same overlays: on a phone each popup covers the screen as a page, and the
+      # app behind never shows through around a card (owner 2026-10-24, index.html's full-screen rules).
+      - name: Popups fill the phone screen
+        run: npm run check:overlay-fullscreen
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
@@ -312,11 +323,11 @@ jobs:
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
   horizontal-overflow:
-    name: The app fits a 390px phone
+    name: The app fits a 390px phone and a 1280px desktop
     runs-on: ubuntu-latest
     # Walks the same 6 tabs and ~43 openable overlays as its siblings; measured at ~6m
     # locally, so this is headroom rather than an expected duration.
-    timeout-minutes: 25
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -338,6 +349,18 @@ jobs:
         env:
           # Same reasoning as the jobs above: without these USE_DB is off and the app
           # under test is not the one that ships.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
+
+      - name: Nothing runs off the right-hand edge of the desktop website (1280px)
+        # Its own finding even when the phone walk above is red.
+        if: ${{ !cancelled() }}
+        run: npm run check:overflow -- --width 1280
+        env:
+          # The desktop layout (sidebar, 640px column, right rail) is its own set of inline
+          # styles that the phone walk never draws. Same env as the phone walk.
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           VITE_USE_DB: "true"
@@ -627,6 +650,38 @@ jobs:
       # itself: "true" for the signed-in walk, "false" for the signed-out one, so it is not set here.
       - name: WCAG 2.2 A/AA on every screen
         run: npm run check:axe
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+
+  blue-on-blue:
+    name: No blue text on a blue box
+    runs-on: ubuntu-latest
+    # The same screens check:axe walks at phone width (8 tabs, 7 route tabs, ~55 overlays), one cheap
+    # in-page probe each.
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:blue-on-blue cannot drive anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      # Owner note (2026-10): "I don't like the blue text on blue boxes, change text to white". #2752
+      # fixed the style objects that set both; this reads the RENDERED colours, so a blue box on a
+      # wrapper with blue text in a child is caught too.
+      - name: Blue boxes carry white text
+        run: npm run check:blue-on-blue
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}

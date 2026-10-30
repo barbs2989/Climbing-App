@@ -67,7 +67,11 @@ const FIELDS = [["road", "status"], ["road", "seasonalGate"], ["road", "driveNot
 const RESEARCH_ACT = /as of (this|the most recent|the latest|my|our)\s*(writing|research|update|check|report|reports|available|information|pass)|at the time of (writing|research)|as of this research/i;
 
 // T2. An open-ended closure. The world resolves this one and nothing here notices. The Hopper shape.
-const OPEN_ENDED = /indefinitel|until further notice|no (confirmed |announced |published |estimated |reopening )?(re)?open(ing)? (date|estimate)|no reopening|no estimated (repair|reopening)|still closed|remains? closed/i;
+// "closed since July 2026" / "since December 2025 … has been closed" is the same claim: a closure
+// with a start and no end. The getting-there pass (2026-10-28) writes temporary closures into drive
+// lines in exactly that DATED shape, so the reopening is the day this text goes wrong. The "since"
+// must be followed by a DATE: "closed for culvert work … and has since reopened" is history.
+const OPEN_ENDED = /indefinitel|until further notice|no (confirmed |announced |published |estimated |reopening )?(re)?open(ing)? (date|estimate)|no reopening|no estimated (repair|reopening)|still closed|remains? closed|\bclosed\b[^.;]{0,80}\bsince (?:(?:early|mid|late) )?(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|20\d\d)|\bsince (?:(?:early|mid|late) )?(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|20\d\d)[^.;]{0,60}\bclosed\b/i;
 
 // T3. Dated to a period rather than a date. "As of mid-2026" tells a reader nothing about whether
 // it has expired unless they know when it was written, and nothing on screen says.
@@ -162,6 +166,24 @@ for (const r of rows) for (const [col, key] of FIELDS) {
 }
 if (!values.length) { console.error(`FAIL — ${rows.length} ${STATE} routes carry road/access, and 0 carry any prose in them. Every test below would be vacuous.`); process.exit(1); }
 
+/* The DRIVE LINE (approach_logistics.trailheadDirection, the GETTING THERE card) carries closures
+   too, and the getting-there pass dates them there on purpose. It is a SEPARATE narrow read, never
+   an OR on the query above: OR-ing the jsonb column in timed out (57014) on 2026-10-28, and pulling
+   the whole approach_logistics object for every row would be the heavy read the throttle rule is
+   about. `dir:` extracts the one string server-side. */
+// NO filter on the jsonb column (`approach_logistics->>trailheadDirection=not.is.null` cannot use an
+// index), and the state is a RANGE on the id, not only `like`: with `order=id`, a bare prefix `like`
+// let the planner walk the primary key from the very first id ('ak_…') to 'wa_', and page ONE answered
+// HTTP 500 twice on a healthy database (2026-10-29, at 500 and at 100 rows). The range seeks straight
+// to the state; keyset pages on it, filtered here, are what the database can serve. The bounds are
+// LETTERS ('wa' to 'wb'): in this database's collation '_' and '~' do not sort as in ASCII, and an
+// upper bound of 'wa_~' returned 0 drive lines.
+const drives = (await selectAll("routes", "id,name,area_id,access_checked_at,dir:approach_logistics->>trailheadDirection",
+  `id=gte.${STATE}&id=lt.${STATE.slice(0, -1)}${String.fromCharCode(STATE.charCodeAt(STATE.length - 1) + 1)}&id=like.${STATE}_*`, { pageSize: 200 })).filter(r => r.dir);
+let driveValues = 0;
+for (const r of drives) if (typeof r.dir === "string" && r.dir.trim()) { driveValues++; values.push({ id: r.id, name: r.name, area: r.area_id, checked: r.access_checked_at || null, field: "approach_logistics.trailheadDirection", text: r.dir.replace(/\s+/g, " ").trim(), roadName: null }); }
+if (STATE === "wa" && !driveValues) { console.error(`FAIL — read 0 wa drive lines; 898 existed on 2026-10-29. A clean result would be about data this never saw.`); process.exit(1); }
+
 if (INJECT === "expiring") { values[0].text = "Closed indefinitely since October 2025 due to fire damage; no confirmed 2026 reopening as of the most recent update."; console.log(`[inject] ${values[0].id} ${values[0].field}: the Hopper sentence verbatim`); }
 if (INJECT === "clean") { for (const v of values) v.text = "Paved to the trailhead. Gate opens as snow clears."; console.log("[inject] every value rewritten as a durable statement; every tier must report 0"); }
 if (INJECT === "yearonly") { for (const v of values) v.text = "Impassable to vehicles at milepost 3.1 due to 2021 flood damage."; console.log("[inject] every value carries a YEAR naming a durable cause; every tier must report 0 — a year is not a shelf life"); }
@@ -169,6 +191,9 @@ if (INJECT === "yearonly") { for (const v of values) v.text = "Impassable to veh
    satisfied `expired` on its own, and it is the quiet pair that pins the precision. */
 if (INJECT === "expired") { for (const v of values) v.text = "Closed MP 3.7 to end per Forest Order (flood damage; in effect through at least Dec 31, 2020)."; console.log("[inject] every value asserts an ONGOING closure past its own stated end -> the expired tier must report all of them"); }
 if (INJECT === "expiredanswered") { for (const v of values) v.text = "Closed MP 3.7 to end per Forest Order (in effect through at least Dec 31, 2020, and still active per the latest alerts)."; console.log("[inject] the same value, but it ANSWERS its own expiry -> expired must report 0"); }
+/* The drive-line shape the getting-there pass writes. Without the narrow read above, or with the
+   "closed since" rule gone, this reports 0 — which is how the drive lines went unread until now. */
+if (INJECT === "drivesince") { for (const v of values) v.text = v.field === "approach_logistics.trailheadDirection" ? "Drive FR 38 about 11 miles to the trailhead. Since July 2026 Forest Road 38 has been closed to vehicles by a washout at milepost 7." : "Paved to the trailhead."; console.log(`[inject] every DRIVE LINE (${driveValues}) carries a dated open-ended closure, every road/access value is durable -> open-ended must report exactly ${driveValues}`); }
 if (INJECT === "pastreport") { for (const v of values) v.text = "The road was closed for culvert replacement July 9-Sept 22, 2020, and has since reopened."; console.log("[inject] a PAST-TENSE report naming a lapsed range -> expired must report 0; a date in the past is not an expired claim"); }
 
 const seen = new Set(), buckets = new Map(TIERS.map(t => [t.key, []]));
@@ -194,7 +219,7 @@ for (const v of values) {
 
 const flagged = TIERS.reduce((n, t) => n + buckets.get(t.key).length, 0);
 const routes = new Set(TIERS.flatMap(t => buckets.get(t.key)).map(v => v.id));
-say(`${rows.length} ${STATE} routes carry a road/access object; ${values.length} prose values across ${FIELDS.length} rendered fields.`);
+say(`${rows.length} ${STATE} routes carry a road/access object and ${driveValues} a drive line; ${values.length} prose values across ${FIELDS.length + 1} rendered fields.`);
 say(`${flagged} value(s) on ${routes.size} route(s) state something with a shelf life.`);
 say(`excluded, and NOT silently: ${selfLimiting} name an explicit end date, ${permanent} describe a permanent closure.\n`);
 
@@ -256,6 +281,7 @@ process.exitCode = process.exitCode || 0;
 //   --inject=expired    every value asserts an ongoing closure past its stated end -> ALL reported
 //   --inject=expiredanswered  the same value, self-answered ("still active")   -> expired reports 0
 //   --inject=pastreport a past-tense report naming a lapsed range              -> expired reports 0
+//   --inject=drivesince every drive line dated-closed, the rest durable -> open-ended == drive lines
 // The last two are the ones that matter. `expired` alone is satisfied by a rule that fires on any
 // past date, and that rule returns 16 values here of which 15 are correct past-tense prose. Only
 // the quiet pair pins the difference between "names an old date" and "asserts something untrue".

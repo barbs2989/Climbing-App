@@ -16,6 +16,8 @@
 //   3. MOST USED lands on the `primary:true` entry when that entry is not index 0, and that card
 //      is drawn first. It needs a RECORDED mark: unmarked ways in keep their order but no badge, and
 //      a single way in carries none — there is no choice to rank.
+//   3c. WHY GO THIS WAY (`whyThisWay`) renders on a way in that is NOT the most used one, and only
+//      when a most used one is recorded: on the primary, or with no mark, there is no "instead of".
 //   3b. The paragraph, and the route-level numbers, follow `longForm:true` when the paragraph
 //      describes a way in that is NOT the most used one.
 //   4. The stream-crossing chip reads HAZARDS only. A crossing in the hazards trips it; "Icicle
@@ -124,6 +126,14 @@ check(pc[0] && pc[0].text.includes(V1.name) && pc[0].text.includes("Most used"),
 check(pc[1] && pc[1].text.includes(V0.name) && !pc[1].text.includes("Most used"), "...and the unmarked one loses the badge");
 check(pc[0] && pc[0].text.includes(PROSE), "...and the paragraph follows the main way in");
 check(!text(single).includes("Most used"), "a single way in carries no badge — there is no choice to rank");
+
+console.log("3c. why go this way");
+const WHY = "Probe reason: take the gully early season while it still holds snow.";
+const W1 = Object.assign({}, V1, { whyThisWay: WHY });
+const wc = cards(render(ROUTE({ approachVariants: [Object.assign({}, V0, { primary: true, whyThisWay: "Probe primary reason." }), W1] }), "planner"));
+check(wc[1] && wc[1].text.includes("Why go this way") && wc[1].text.includes(WHY), "an alternative's whyThisWay renders on ITS card, labelled Why go this way");
+check(wc[0] && !wc[0].text.includes("Why go this way") && !wc[0].text.includes("Probe primary reason."), "...and never on the Most used card");
+check(!text(render(ROUTE({ approachVariants: [V0, W1] }), "planner")).includes(WHY), "...nor with no recorded Most used way in to be an alternative TO");
 
 console.log("3b. the paragraph follows longForm");
 const lf = render(ROUTE({ gainFt: 1200, discipline: "trad", areaType: "peak", approachVariants: [Object.assign({}, V0, { primary: true }), Object.assign({}, V1, { longForm: true })] }), "planner");

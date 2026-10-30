@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-10-25",
+  "generatedAt": "2026-10-29",
   "tables": {
     "accessibility_reports": [
       "assistive",
@@ -324,6 +324,14 @@
       "last_read_at",
       "user_id"
     ],
+    "crew_rides": [
+      "crew_id",
+      "from_area",
+      "mode",
+      "seats",
+      "updated_at",
+      "user_id"
+    ],
     "crew_safety_answers": [
       "answers",
       "crew_id",
@@ -348,7 +356,9 @@
       "itinerary_by",
       "meet_place",
       "meet_time",
-      "route_id"
+      "route_id",
+      "share_on",
+      "share_token"
     ],
     "crews_messages": [
       "body",
@@ -849,6 +859,7 @@
       "bivy",
       "bolts",
       "classic",
+      "classic_score",
       "climate",
       "climbing_route",
       "commitment",

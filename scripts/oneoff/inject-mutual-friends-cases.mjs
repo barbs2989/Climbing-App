@@ -97,7 +97,7 @@ const CASES = [
     expect: "fail", must: /asks only about uuids/,
   },
   {
-    file: "ClimbMatch.jsx", name: "prop-dropped-at-one-call-site",
+    file: "src/components/ClimberProfileSheet.tsx", name: "prop-dropped-at-one-call-site", // App's profile sheet, lifted in PR63
     why: "App stops handing FullProfile the map, so that ONE screen quietly reports nobody while " +
          "every other screen is fine. Neither direction of check:dead-props sees it",
     edit: (s) => s.replace("vouched={!!givenVouches.some(v=>v._targetId===profileModal.id)} mutuals={mutuals}",

@@ -27,7 +27,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { readCoreSource, coreModuleEntry } from "./lib/guard-sources.mjs";
+import { readCoreSource, coreModuleEntry, readAppFile } from "./lib/guard-sources.mjs";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { parse } from "@babel/parser";
@@ -44,7 +44,7 @@ const bad = (m) => { failed++; console.log("  FAIL  " + m); };
 const dead = (m) => { console.error("\ncheck:policy-claims BROKEN: " + m + "\n(reporting nothing is not a pass.)"); process.exit(2); };
 
 const core = readCoreSource();
-const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
 
 // ── 1. NO LEGAL SURFACE PROMISES A CONTROL THE APP WITHHOLDS ────────────────────────────────
 // The durable half: it catches the NEXT instance, not just the one that was fixed.

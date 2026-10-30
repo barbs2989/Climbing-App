@@ -922,6 +922,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     single-place camps with no pin**, and **600 that cannot be one pin** (`camp-names.mjs`
     `unresolvable()`: a dispersed zone, or two places in one name). The 600 are counted, never
     "missing": a pin for a zone invents precision the record does not carry.
+  - **The chip now needs a coordinate.** `campSites` sets `onTrack` only when the pin `pointOf()` can
+    draw, so neither a coordinate-less pin's own row nor a site it backs says *Marked on the track*, and
+    neither counts toward the intro's "also a pin under ROUTE TRACK". `check:camping` section 8b pins
+    both; injection (put back `!!p` / `true`) fails both.
   - **A camp BELOW its trailhead is reported ROADSIDE, not off-track.** It is a valley car-campground
     you drive to (the 72% roadside-vocabulary measurement above); the walking track never passes it.
   - **A "track" of fewer than two usable points is no track.** The first run measured a pin as
@@ -948,3 +952,31 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     runs stopped themselves on 112 s and 151 s writes with a dozen sessions on the database.
   - **Compare jsonb with keys SORTED.** Postgres stores object keys in its own order, so the first
     reconcile reported all 93 written routes as "changed by someone else" — every one had landed.
+    And a route with NO waypoints stores `null`, not `[]`: twelve such routes were skipped three
+    passes running until the guard read `null` as empty (#2874).
+  - **Agency spellings, after the exact identity fails** (`variantKey`): "Mt" is "Mount", a possessive
+    "s" goes, a plural last word is made singular (never a "-ss" word) — "Lewis Meadows Camp" is NPS
+    "Lewis Meadow", "Andrews Pass" is GNIS "Andrew Pass". Official points and GNIS only.
+  - **A zone-worded name gets the agency's camp point or nothing.** `unresolvable()`'s ZONE words
+    ("meadows", "camps", "sites") flag "Glacier Meadows" and "Honeymoon Meadows", which ARE NPS camps,
+    so an exact (or variant) OFFICIAL match places them. Nothing else may: on the first variant run 15
+    of 22 donor matches were zone names ("Perfect Pass cross-country zone"), and copying one route's
+    spot in a zone to every route invents a precision no record holds.
+  - **Never solve from a stale census.** A timed-out audit left the previous JSON in place and the
+    next run began re-pinning camps the last batch had pinned. `apply.sh` (in the run dir) stops on a
+    failed audit, the solver refuses a census older than the newest rollback, never pins a camp a live
+    pin already carries under its own name, and the audit reports PINNED TWICE (0 after every batch).
+  - **The 32 OFF-THE-TRACK pins were triaged and NONE was wrong** (`scripts/oneoff/triage-offtrack-camp-pins.mjs`,
+    2026-10-28). A pin moves only when an independent record of the same camp (official camp point,
+    GNIS, the same camp pinned on another route) sits ON the recorded track and fits the ground at the
+    stated height. Result: 19 OTHER WAY IN — an independent record puts the camp exactly where the pin
+    is, so the recording takes another approach or the camp is the descent camp (Camp Schurman on
+    Ptarmigan Ridge); 12 UNRESOLVED — no independent record exists; 1 PROTECTED — moved from an NPS
+    point by the camp-location session (its write log, `~/dev/camp-audit-06856cffd7/writes.jsonl`,
+    is honoured as a source). Some OTHER WAY IN camps sit kilometres off (Deer Lake 8 km off Mount
+    Ferry's track, Luna Camp 5.6 km off Fury's): whether those routes should LIST them is a removal,
+    which is always the owner's call — reported, not acted on. Per-pin verdicts:
+    `offtrack-triage.json` in the run dir.
+  - **What stays unpinned, and why, is a file, not a count**: `remaining-camps.csv` in the run dir.
+    Of ~500 left, most are relative ("bench below the west face") with no published point; research
+    is near-exhausted (of 197 leftover names only 56 named a findable feature, all searched, 14 found).

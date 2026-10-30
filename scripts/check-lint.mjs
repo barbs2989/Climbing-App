@@ -5,13 +5,15 @@
 // variables, `any` types, and hooks (rules-of-hooks + exhaustive-deps dependency arrays). Every
 // rule is an ERROR, and `--max-warnings 0` makes a stray warning fail too.
 //
-// LEGACY FINDINGS ARE A RATCHET, NOT A PASS. When this was added (2026-10-15) the three big JSX
-// files and some of lib/ already held ~260 unused variables and ~150 incomplete dependency arrays.
-// Those are recorded per file and per rule in eslint-suppressions.json (ESLint's bulk
-// suppressions). A NEW finding in any file fails, because it pushes that file's count over the
-// recorded one. Fixing a legacy finding also fails until the file is shrunk to match, so the
-// baseline can only go down:  npx eslint . --prune-suppressions
-// Never run `--suppress-all` again to make a new finding go away — fix the code.
+// ZERO, WITH NO BASELINE. When this was added (2026-10-15) ~260 unused variables and ~150 incomplete
+// dependency arrays already sat in the code; they were held in eslint-suppressions.json (ESLint's
+// bulk suppressions) as a count that could only shrink. All 385 were cleared on 2026-10-28 and the
+// file deleted. ESLint reads that file automatically whenever it exists, so this script FAILS if it
+// comes back: `eslint --suppress-all` would otherwise hide a new finding behind a fresh baseline.
+//
+// A disable comment must name its rule(s) and say why: `// eslint-disable-line react-hooks/exhaustive-deps
+// -- <reason>`. A bare `eslint-disable-line` silences EVERY rule on its line (one sat in
+// lib/MyPartnerAreas.jsx until 2026-10-28), so a directive without a rule or without ` -- ` fails.
 //
 // It is a `node scripts/*.mjs` entry, not a bare `eslint`, because run-build-guards.mjs parses the
 // build chain for exactly that shape and would silently skip anything else (same as check:types).
@@ -25,6 +27,11 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const bin = path.join(ROOT, "node_modules", "eslint", "bin", "eslint.js");
 if (!fs.existsSync(bin)) { console.error("lint FAILED — eslint is not installed (npm install)."); process.exit(1); }
+
+if (fs.existsSync(path.join(ROOT, "eslint-suppressions.json"))) {
+  console.error("lint FAILED — eslint-suppressions.json exists. The legacy backlog was cleared to zero on 2026-10-28; a baseline file hides findings from this check. Fix the code and delete the file.");
+  process.exit(1);
+}
 
 const r = spawnSync(process.execPath, [bin, ".", "--max-warnings", "0", "--format", "json"], { cwd: ROOT, encoding: "utf8", maxBuffer: 256 * 1024 * 1024 });
 if (r.stderr) process.stderr.write(r.stderr);
@@ -46,8 +53,20 @@ for (const f of results) {
     console.log(`${path.relative(ROOT, f.filePath)}:${m.line}:${m.column}  ${m.severity === 2 ? "error" : "warning"}  ${m.message}  ${m.ruleId || ""}`);
   }
 }
+// Every disable directive names its rule(s) and gives a reason after ` -- `.
+const DIRECTIVE = /(?:\/\/|\/\*)\s*eslint-disable(?:-next-line|-line)?(?![\w-])([^\n]*)/g;
+for (const f of results) {
+  fs.readFileSync(f.filePath, "utf8").split("\n").forEach((ln, i) => {
+    for (const m of ln.matchAll(DIRECTIVE)) {
+      const rest = m[1].replace(/\*\/.*$/, "").trim();
+      if (/^[@\w/-]+(?:\s*,\s*[@\w/-]+)*\s+--\s+\S/.test(rest)) continue;
+      n++;
+      console.log(`${path.relative(ROOT, f.filePath)}:${i + 1}  error  an eslint-disable directive must name its rule(s) and give a reason: \`eslint-disable-line <rule> -- <why>\``);
+    }
+  });
+}
 if (r.status !== 0 || n) {
-  console.error(`\nlint FAILED — ${n} finding(s) over ${results.length} file(s)${r.status !== 0 && !n ? ` (eslint exited ${r.status}; if it names unused suppressions, a legacy finding was fixed: run  npx eslint . --prune-suppressions  and commit eslint-suppressions.json)` : ""}.`);
+  console.error(`\nlint FAILED — ${n} finding(s) over ${results.length} file(s)${r.status !== 0 && !n ? ` (eslint exited ${r.status})` : ""}.`);
   process.exit(1);
 }
-console.log(`lint — ${results.length} file(s) clean under eslint.config.js (legacy findings held in eslint-suppressions.json).`);
+console.log(`lint — ${results.length} file(s) clean under eslint.config.js, no baseline.`);

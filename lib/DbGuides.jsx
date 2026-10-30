@@ -6,7 +6,7 @@
 import { useMemo, useState, lazy, Suspense } from "react";
 import { clickable } from "./clickable";
 import { createPortal } from "react-dom";
-import { useSession } from "./auth";
+import { useSession } from "../src/AuthContext.tsx";
 import { searchMatches } from "./search";
 import {
   useGuides, useGuideCredentials, useGuideReviews, useMyInquiriesWithGuide,
@@ -42,7 +42,7 @@ function GuideCard({ g, verified, onOpen, C }) {
             <span style={{ fontSize: 14.5, fontWeight: 700, color: C.text }}>{g.name}</span>
             {verified ? <span style={{ fontSize: 11, fontWeight: 700, color: C.green, background: C.greenBg, border: "1px solid " + C.greenDim, borderRadius: 6, padding: "1px 6px" }}>{"✓ Verified"}</span> : null}
           </div>
-          <div style={{ fontSize: 12, color: C.textSub, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{g.title}</div>
+          <div style={{ fontSize: 12, color: C.textSub, marginTop: 2, overflowWrap: "anywhere" }}>{g.title}</div>
         </div>
         <div style={{ textAlign: "right", flexShrink: 0 }}>
           <div style={{ fontSize: 13, fontWeight: 700, color: C.text }}>{"$" + g.rate + "/day"}</div>

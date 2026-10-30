@@ -17,10 +17,11 @@ import { createHash } from "node:crypto";
 const ROOT = new URL("../..", import.meta.url).pathname;
 const sum = (s) => createHash("sha1").update(s).digest("hex").slice(0, 12);
 
+const SWITCH_FILES = ["src/components/SettingsPrivacySheet.tsx", "src/components/SettingsNotifsSheet.tsx", "lib/EditProfileScreen.jsx", "lib/Leaderboards.jsx", "lib/PartnerSearch.jsx", "lib/Onboarding.jsx"];
 const CASES = [
   {
     name: "1 unnamed switch",
-    file: "ClimbMatch.jsx",
+    file: "src/components/SettingsPrivacySheet.tsx",
     find: 'role="switch" aria-checked={showOnRanks} aria-label="Show me on leaderboards" ',
     repl: 'role="switch" aria-checked={showOnRanks} ',
     expect: "fail",
@@ -28,7 +29,7 @@ const CASES = [
   },
   {
     name: "2 switch loses aria-checked",
-    file: "ClimbMatch.jsx",
+    file: "src/components/SettingsPrivacySheet.tsx",
     find: 'role="switch" aria-checked={locPrecise} ',
     repl: 'role="switch" ',
     expect: "fail",
@@ -36,7 +37,7 @@ const CASES = [
   },
   {
     name: "3 switch loses role",
-    file: "ClimbMatch.jsx",
+    file: "src/components/SettingsPrivacySheet.tsx",
     find: '<button onClick={()=>setShowOnline(v=>!v)} aria-label="Toggle online status" role="switch" ',
     repl: '<button onClick={()=>setShowOnline(v=>!v)} aria-label="Toggle online status" ',
     expect: "fail",
@@ -47,7 +48,7 @@ const CASES = [
     // A no-op attribute edit proved neither -- it would have passed against a guard that never
     // looked at the button. Swapping Lbl for a component that renders NO text must therefore FAIL.
     name: "4 Lbl is what names a back button",
-    file: "ClimbMatch.jsx",
+    file: "src/components/RoutesTab.tsx",
     find: 'setRouteView("areas")} style={POP_BACK}',
     repl: 'setRouteView("areas")} data-inj="1" style={POP_BACK}',
     then: { find: '{<Lbl s={"\u2190 Back"}/>}</button>', repl: '{<ActionIcon name="back" size={14}/>}</button>' },
@@ -56,7 +57,7 @@ const CASES = [
   },
   {
     name: "5 aria-pressed accepted as state",
-    file: "ClimbMatch.jsx",
+    file: "src/components/SettingsPrivacySheet.tsx",
     find: 'role="switch" aria-checked={resumePublic} ',
     repl: 'role="switch" aria-pressed={resumePublic} ',
     expect: "pass",
@@ -64,7 +65,10 @@ const CASES = [
   },
   {
     name: "6 shape test matches nothing",
-    file: "ClimbMatch.jsx",
+    // since PR63 App draws no switch of its own: the edit lands in the first switch file, and
+    // `moreFiles` lists the others the same all-edit is applied to
+    file: SWITCH_FILES[0],
+    moreFiles: SWITCH_FILES.slice(1),
     find: "width:46,height:26,borderRadius:13",
     repl: "width:47,height:26,borderRadius:13",
     all: true,
@@ -90,6 +94,8 @@ for (const c of CASES) {
     edited = edited.replace(c.then.find, c.then.repl);
   }
   writeFileSync(path, edited);
+  const extra = (c.moreFiles || []).map((f) => ({ p: ROOT + f, o: readFileSync(ROOT + f, "utf8") }));
+  for (const x of extra) writeFileSync(x.p, x.o.split(c.find).join(c.repl));
   const landed = sum(readFileSync(path, "utf8")) !== before;
 
   let exit = 0;
@@ -98,7 +104,8 @@ for (const c of CASES) {
   } catch (e) { exit = e.status || 1; }
 
   writeFileSync(path, original);
-  const restored = sum(readFileSync(path, "utf8")) === before;
+  for (const x of extra) writeFileSync(x.p, x.o);
+  const restored = sum(readFileSync(path, "utf8")) === before && extra.every((x) => sum(readFileSync(x.p, "utf8")) === sum(x.o));
 
   const got = exit === 0 ? "pass" : "fail";
   const ok = landed && restored && got === c.expect;
