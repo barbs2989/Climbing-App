@@ -1,0 +1,19 @@
+{
+ "applied": [
+  {
+   "id": "ga_the_lowers_fourteen",
+   "column": "aid_grade",
+   "path": [],
+   "fact": "aid grade"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "ga_the_lowers_fourteen",
+   "before": {
+    "aid_grade": "A1"
+   }
+  }
+ ]
+}
