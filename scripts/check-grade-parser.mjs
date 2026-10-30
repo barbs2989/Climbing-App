@@ -224,7 +224,17 @@ if (ran < CASES.length) { console.error("check:grade-parser: fewer cases ran tha
     [{ discipline: "aid", grade_system: "yds", rock_grade: "5.9 A2-3 R" }, "5.9 A3 R", "Rated A2-3; shown at the harder of the two grades, A3."],
     [{ discipline: "trad", grade_system: "yds", rock_grade: "5.10a/b" }, "5.10a/b", ""],
     [{ discipline: "bouldering", grade_system: "v", rock_grade: "V0-" }, "V0-", ""],
+    // A slash is a range too (2026-10-30): the census found "V1/2", "5.9/10", "5.11/5.12" still printing two grades.
+    [{ discipline: "bouldering", grade_system: "v", rock_grade: "V1/2" }, "V2", "Rated V1/2; shown at the harder of the two grades, V2."],
+    [{ discipline: "trad", grade_system: "yds", rock_grade: "5.9/10" }, "5.10", "Rated 5.9/10; shown at the harder of the two grades, 5.10."],
+    [{ discipline: "trad", grade_system: "yds", rock_grade: "5.11/5.12" }, "5.12", "Rated 5.11/5.12; shown at the harder of the two grades, 5.12."],
+    [{ discipline: "trad", grade_system: "yds", rock_grade: "5.9 / 15m" }, "5.9 / 15m", ""],
   ];
+  // ...and the sortable number files the slash at its top too, as the filter does.
+  const { gradeNumFor } = await import(pathToFileURL(truth).href);
+  for (const [g, d, want] of [["V1/2", "bouldering", 2], ["5.9/10", "trad", 10], ["5.6/7", "sport", 7], ["WI3/4", "ice", 4], ["5.10a/b", "sport", 10.25], ["5.9 / 15m", "trad", 9]]) {
+    if (gradeNumFor(g, d) !== want) { console.error(`check:grade-parser FAILED — gradeNumFor(${JSON.stringify(g)}, ${d}) = ${gradeNumFor(g, d)}, expected ${want}: a slash range must sort at its top grade.`); process.exit(1); }
+  }
   for (const [route, chip, note] of R) {
     const gotChip = singleGrade(route.rock_grade, route), gotNote = gradeRangeNote(route);
     if (gotChip !== chip || gotNote !== note) {
