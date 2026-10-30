@@ -7,7 +7,7 @@
 import fs from "fs";
 import path from "path";
 import { SUPABASE_URL, headers, anonKey } from "../../lib/supabase-env.mjs";
-const D = "research-data/gpx-tracks-fkt-wa-2026-10-29", OLD = "research-data/gpx-tracks-fkt-2026-10-28";
+const D = process.env.FKT_DIR || "research-data/gpx-tracks-fkt-wa-2026-10-29", OLD = "research-data/gpx-tracks-fkt-2026-10-28";
 const [pdir, sizeArg] = process.argv.slice(2);
 const SIZE = +sizeArg || 10;
 const cands = JSON.parse(fs.readFileSync(`${D}/candidates.json`, "utf8"));
