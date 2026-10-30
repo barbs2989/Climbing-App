@@ -36022,3 +36022,40 @@ failed to resolve directly from this session's network (WebFetch), as in prior b
 relied on WebSearch's synthesized snippets from cached/indexed copies of those pages.
 
 Next batch will continue id-ascending from `wa_gilbert_peak_meade_glacier` (see progress file).
+
+## Batch 493 (2026-10-30, pass 8)
+
+Checked 8 routes across 3 peaks: Gilbert Peak (West Route), Glacier Peak (Disappointment Peak
+Cleaver / Gerdine Ridge / Cool Glacier, Frostbite Ridge, Kennedy Glacier, Sitkum Glacier), two
+Mount Rainier routes carrying a `glacier_peak`-prefixed id but correctly pointed at
+`wa_mount_rainier` via `area_id` (South Tahoma Headwall, Tahoma Cleaver), and Goat Mountain
+(Eastern Route).
+
+Confirmed clean (6): Glacier Peak's 10,541 ft summit elevation, stored identically on
+`wa_glacier_peak_cool_glacier_gerdine`, `wa_glacier_peak_frostbite_ridge`,
+`wa_glacier_peak_kennedy_glacier` and `wa_glacier_peak_sitkum_glacier`, matches USGS's own volcano
+page, SummitPost and RMI Guides (Wikipedia's infobox shows a newer, inconsistently-cited NAVD88
+figure near 10,525 ft alongside body text that still uses 10,541 ft — not a clear majority
+correction, left as-is). The shared 1897 USGS survey-party FA (Gerdine, Strom, Dubor, Bard) on
+`wa_glacier_peak_cool_glacier_gerdine` and `wa_glacier_peak_sitkum_glacier` is independently
+corroborated by Mountain Project (names and June 1897 date match exactly) and Cascades
+climbing-history sources. `wa_gilbert_peak_west_route`'s 8,184 ft high point confirmed via
+Wikipedia/SummitPost; its own `corrections` field already documents a pre-existing
+Mazamas-vs-Mountain-Project route-identity ambiguity (Klickton Divide vs. Snowgrass approach) —
+re-reviewed, nothing new to add. `wa_glacier_peak_tahoma_cleaver` confirmed as a real named feature
+on Mount Rainier via TopoZone/USGS quad; its stored Success-Cleaver approach description is
+plausible for Rainier's southwest side.
+
+Flagged for human review (1): `wa_glacier_peak_south_tahoma_headwall`'s FA ("Steve Marts and Fred
+Beckey, July 12 1963") — the route itself is real and well-documented (CascadeClimbers.com forum,
+~4,000 ft via Success Cleaver) but no source found confirms or denies this specific date/pair;
+Beckey's well-documented 1963 FAs turned up in searches (Mt. Stuart Complete North Ridge w/ Marts,
+Musembeah Peak w/ Kor) don't include it. Would need a primary source (e.g. the AAJ 1963/64 Climbs &
+Expeditions section) to settle.
+
+Not checked: `wa_goat_mountain_eastern_route` carries no stored data beyond its name — nothing to
+fact-check.
+
+**Method notes:** No write targets this batch, so `check:sql` was not run. No SQL file produced.
+
+Next batch will continue id-ascending from `wa_goat_mountain_eastern_route` (see progress file).

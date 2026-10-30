@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_gilbert_peak_meade_glacier",
+  "last_processed_id": "wa_goat_mountain_eastern_route",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 492 complete. Continuing id-ascending scope from wa_gilbert_peak_meade_glacier.",
+  "pass_note": "Pass 8 in progress, batch 493 complete. Continuing id-ascending scope from wa_goat_mountain_eastern_route.",
   "batches": [
     {
       "batch_number": 1,
@@ -9785,6 +9785,26 @@
       "clean": 4,
       "sql_file": null,
       "note": "No SQL this batch. Clean (4): wa_garfield_mountain_south_route (FA Jim Crooks & Judson Nelson, Aug 27 1940, confirmed via Wikipedia; 5,519 ft summit confirmed); wa_ghost_peak_south_route (FA Carla Firey, Joan Firey, David Knudson, Peter Renz, July 17 1970, confirmed exactly via Wikipedia, and the row's own \"Carpetbaggers Traverse\" / Goodell Creek framing is independently corroborated by the party's own AAJ 1971 report -- stronger confirmation than the row's own corrections field expected, despite it hedging that MP has no established route entries; 8,000 ft high point consistent with Wikipedia and listsofjohn's 7,993-8,020 ft LiDAR/map range); wa_gilbert_peak_conrad_glacier and wa_gilbert_peak_meade_glacier (both 8,184 ft, the modern/benchmark-matching figure per SummitPost; meade_glacier's own corrections field already documents the 8,201 ft older-map alternate, nothing new to add). Flagged for human review (4), no SQL: wa_garfield_mountain_north_route's FA (\"Richard Berge and Pete Schoening, 1950 or 1951\") could not be confirmed for Garfield, and those same two names are independently and specifically documented attempting Mount Baring's north face in 1951-1952 (Berge died there in a 1952 fall) -- a real possibility this FA was copied from the wrong peak, but no source confirms or denies it for Garfield, so left flagged rather than guessed at. wa_garfield_mountain_southeast_face's FA (\"Pete Doorish, solo, September 1989\") is unverified either way; Doorish is a real, well-documented bold Cascades soloist of that era (confirmed via Mountain Project on a different nearby route, DWI, with Bryan Burdo in 1990), so plausible but not independently corroborated for this specific route and date. wa_garfield_mountain_preiss_route and wa_garfield_mountain_southwest_ledges both store high_point_ft 4804 for the West Peak sub-summit -- the same discrepancy already flagged in batch 491 on wa_garfield_mountain_infinite_bliss, where SummitPost alone gave 4,896 ft; this batch found a second independent source (mountaineers.org's own Garfield West Peak/South Face route page) also giving 4,896 ft, so two independent sources now agree against zero supporting 4804 beyond this catalog's own trailhead+gain_ft arithmetic. Left unfixed rather than fixed here because at least three rows share the 4804 figure (including the already-flagged infinite_bliss from a prior batch, not in this batch) and fixing only some would leave the rest inconsistent -- a human should correct all affected rows together. wa_garfield_mountain_southwest_ledges's FA (\"Steve Martin & Leland Windham, September 2002\", as a link-up) is also unconfirmed: Martin and Windham are real, verified partners active on Garfield's West Peak, but for a different named route (Infinite Bliss, FA dated August 2003 per Mountain Project) -- a plausible near-match (same pair, same peak, adjacent era) but not a direct confirmation of this route or date."
+    },
+    {
+      "batch_number": 493,
+      "date": "2026-10-30",
+      "pass": 8,
+      "route_ids": [
+        "wa_gilbert_peak_west_route",
+        "wa_glacier_peak_cool_glacier_gerdine",
+        "wa_glacier_peak_frostbite_ridge",
+        "wa_glacier_peak_kennedy_glacier",
+        "wa_glacier_peak_sitkum_glacier",
+        "wa_glacier_peak_south_tahoma_headwall",
+        "wa_glacier_peak_tahoma_cleaver",
+        "wa_goat_mountain_eastern_route"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 1,
+      "clean": 6,
+      "sql_file": null,
+      "note": "No SQL this batch. Glacier Peak's 10,541 ft elevation (used across wa_glacier_peak_cool_glacier_gerdine, wa_glacier_peak_frostbite_ridge, wa_glacier_peak_kennedy_glacier, wa_glacier_peak_sitkum_glacier) confirmed correct via USGS's own volcano page, SummitPost, and RMI Guides (Wikipedia's infobox shows a newer, inconsistently-cited NAVD88 figure around 10,525 ft alongside body text still using 10,541 ft -- not a clear majority correction, left as-is). The shared 1897 USGS survey-party FA (Gerdine, Strom, Dubor, Bard) stored identically on wa_glacier_peak_cool_glacier_gerdine and wa_glacier_peak_sitkum_glacier is independently corroborated by Mountain Project (names + June 1897 date match exactly) and Cascades climbing-history sources. wa_gilbert_peak_west_route's 8,184 ft high point confirmed via Wikipedia/SummitPost; its corrections field already documents a pre-existing Mazamas-vs-Mountain-Project route-identity ambiguity (Klickton Divide vs Snowgrass approach) -- re-reviewed, nothing new to add. wa_glacier_peak_tahoma_cleaver (really a Mount Rainier route despite its glacier_peak-prefixed id -- area_id correctly points to wa_mount_rainier) confirmed as a real named feature via TopoZone/USGS quad, its stored Success-Cleaver approach description plausible for Rainier's southwest side -- audited clean. Flagged for human review, not fixed: wa_glacier_peak_south_tahoma_headwall's FA ('Steve Marts and Fred Beckey, July 12 1963') -- the route itself is real and well-documented (CascadeClimbers.com forum, ~4,000 ft via Success Cleaver) but no source found confirms or denies this specific date/pair; Beckey's well-documented 1963 FAs turned up in searches don't include it. wa_goat_mountain_eastern_route carries no stored data beyond its name -- nothing to fact-check."
     }
   ]
 }
