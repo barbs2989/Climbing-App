@@ -11,9 +11,9 @@ import { createPortal } from "react-dom";
    the crew card can answer the same question without core importing this lazy-loaded file.
    Moved verbatim; the correction-precedence rule and its history live beside them there. */
 import { _rackEdited } from "./lib/rack";
-import { withRecordedTrackOnly } from "./lib/track";
+import { withRecordedTrackOnly, withCragWalkIn } from "./lib/track";
 import { USE_DB} from "./lib/supabase";
-import {recordRouteView,useAreaPath,useRouteStarSummary,usePartnersByObjective,usePartnersInArea,useMatchObjectivesOfUsers,useRouteBaseCheckins, dbRouteToCamel, useAreaRoutes, useProfilesByIds, useRoutesByIds, useObjectiveCounts, useProfileSearch, useRouteTripReports, useRoutePrivateConditions,    useRouteTracks, useRouteStats} from "./lib/db";
+import {useArea,recordRouteView,useAreaPath,useRouteStarSummary,usePartnersByObjective,usePartnersInArea,useMatchObjectivesOfUsers,useRouteBaseCheckins, dbRouteToCamel, useAreaRoutes, useProfilesByIds, useRoutesByIds, useObjectiveCounts, useProfileSearch, useRouteTripReports, useRoutePrivateConditions,    useRouteTracks, useRouteStats} from "./lib/db";
 import RouteTracksPanel from "./lib/RouteTracksPanel.jsx";
 import { TRACK_COLORS, trackPoints, trackStats } from "./lib/routeTracks.js";
 import FireNearRoute from "./lib/FireNearRoute";
@@ -397,7 +397,7 @@ function RouteDetail({route:routeRow,onBlockClimber,cragPanels,condPanels,safety
   const [approachKey,setApproachKey]=useState(function(){var l=routeRow._linkApproach;return l&&approachOpts.some(function(o){return o.key===l;})?l:defaultApproachKey(approachOpts);});
   const approachOpt=approachOpts.find(function(o){return o.key===approachKey;})||null;
   const approachVia=useMemo(function(){return viaRouteOf(approachOpt&&approachOpt.variant,_apSibs,dbRouteToCamel);},[approachOpt,_apSibs]);
-  /* withRecordedTrackOnly: the route line is a recorded track or nothing (owner, 2026-10-25), so a stored line that is only the pins joined up leaves here, AFTER the approach overlay, which can swap in another row's line. */const route=useMemo(function(){return withRecordedTrackOnly(applyApproach(routeRow,approachOpt,approachVia));},[routeRow,approachOpt,approachVia]);
+  /* withRecordedTrackOnly: the route line is a recorded track or nothing (owner, 2026-10-25), so a stored line that is only the pins joined up leaves here, AFTER the approach overlay, which can swap in another row's line. *//* ONE WALK-IN PER CRAG (0397): an approved trail to the crag is saved on the crag's AREA (areas.walkin_gpx), as theCrag attaches an approach path to the crag, so every climb there draws it. A crag climb with a recorded line of its own keeps that line (it may run on to this climb's start); the area's line fills only an empty map, under the same recorded-track-or-nothing test. */const _walkQ=useArea(USE_DB&&CRAG_CATS.includes(catOf(routeRow))?routeRow.mountainId:null);const _walkGpx=_walkQ.data&&_walkQ.data.walkin_gpx,_walkKind=_walkQ.data&&_walkQ.data.walkin_kind;const route=useMemo(function(){return withCragWalkIn(withRecordedTrackOnly(applyApproach(routeRow,approachOpt,approachVia)),_walkGpx,_walkKind);},[routeRow,approachOpt,approachVia,_walkGpx,_walkKind]);
   /* "N lists saved" counted the example CLIMBERS' objectives only, so real climbers saving this climb never moved it.
      objectives is public-read (0031): one grouped count for this route. */
   const savedCountQ=useObjectiveCounts(routeRow&&routeRow.id?[routeRow.id]:[]);

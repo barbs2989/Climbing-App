@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { parseGpxXml, parseCoordinateList, validateGpxQuality, calculateQualityScore, detectGpxFormat } from './gpxParser'
 import { POP_CLOSE } from "./popupChrome.js";
 import TrailDrawMap from './TrailDrawMap'
+import { MIN_RECORDED_PTS } from './track'
 import ActionIcon from '../src/components/ActionIcon.tsx'
 
 const C = {
@@ -134,8 +135,10 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
     setError('')
 
     // Client-side validation
-    if (drawing ? drawPts.length < 3 : coordinates.trim().length === 0) {
-      setError(drawing ? 'Tap at least 3 points along the trail' : 'Please paste or upload GPS coordinates')
+    // MIN_RECORDED_PTS: the map draws no line under 10 points (lib/track.js), and review_gps_submission
+    // (0397) refuses one, so a shorter trace is stopped here rather than approved into nothing.
+    if (drawing ? drawPts.length < MIN_RECORDED_PTS : coordinates.trim().length === 0) {
+      setError(drawing ? 'Tap at least ' + MIN_RECORDED_PTS + ' points along the trail, one at every bend and fork (you have ' + drawPts.length + ')' : 'Please paste or upload GPS coordinates')
       return
     }
 
@@ -164,8 +167,8 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
       parsed = parseCoordinateList(coordinates)
     }
 
-    if (!drawing && parsed.length < 5) {
-      setError('Track needs at least 5 waypoints')
+    if (!drawing && parsed.length < MIN_RECORDED_PTS) {
+      setError('Track needs at least ' + MIN_RECORDED_PTS + ' points')
       return
     }
 
@@ -269,7 +272,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
               </div>
             </div>}
             <p style={{...styles.textSmall, color: C.text70}}>
-              {crag ? "Once it's approved the trail shows on this climb's crag map." : "Once it's approved your track shows up on this route's page."} Thank you for helping the climbing community!
+              {crag ? "Once it's approved the trail shows on the crag map of every climb at this crag." : "Once it's approved your track shows up on this route's page."} Thank you for helping the climbing community!
               {emailed ? " We've emailed you a receipt." : ""}
             </p>
             <button style={{...styles.button, ...styles.buttonPrimary}} onClick={onClose}>

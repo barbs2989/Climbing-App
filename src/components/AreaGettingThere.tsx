@@ -1,5 +1,8 @@
 import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_BUT_NOTE_LINE, NO_PARKING_PIN_LINE } from "../../lib/areaChrome";
 import type { CSSProperties } from "react";
+import WalkInMap, { walkInPts } from "../../lib/WalkInMap.jsx";
+import { fmtTrailLen, trailLenM } from "../../lib/TrailDrawMap.jsx";
+import { MIN_RECORDED_PTS } from "../../lib/track.js";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
 export interface AreaGettingThereArea {
@@ -14,6 +17,9 @@ export interface AreaGettingThereArea {
   lat?: number | string | null;
   lng?: number | string | null;
   coords_approx?: boolean | null;
+  /** The crag's approved walk in (0397), [[lat,lng],...], and whether it was recorded or traced. */
+  walkin_gpx?: unknown[] | null;
+  walkin_kind?: string | null;
 }
 export interface AreaGettingThereProps {
   area: AreaGettingThereArea;
@@ -29,6 +35,9 @@ export default function AreaGettingThere({ area, C, onEdit }: AreaGettingTherePr
   const park = area.parking_lat != null && area.parking_lng != null && isFinite(Number(area.parking_lat)) && isFinite(Number(area.parking_lng)) ? { lat: Number(area.parking_lat), lng: Number(area.parking_lng) } : null;
   const crag = area.lat != null && area.lng != null ? { lat: Number(area.lat), lng: Number(area.lng) } : null;
   const dest = park || crag;
+  // The same recorded-track-or-nothing floor the climbs' maps apply (MIN_RECORDED_PTS).
+  const trailPts = walkInPts(area.walkin_gpx);
+  const trail = trailPts.length >= MIN_RECORDED_PTS ? trailPts : null;
   const lbl: CSSProperties = { fontSize: 10.5, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
   const linkSt: CSSProperties = { flex: "1 1 0", display: "flex", alignItems: "center", justifyContent: "center", boxSizing: "border-box", minHeight: 44, padding: "8px 10px", borderRadius: 8, border: "1px solid " + C.greenDim, background: C.greenBg, color: C.green, fontSize: 12.5, fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" };
   const ll = dest ? dest.lat + "," + dest.lng : "";
@@ -47,6 +56,11 @@ export default function AreaGettingThere({ area, C, onEdit }: AreaGettingTherePr
     {walk || area.approach_min ? <div style={{ marginBottom: 10 }}>
       <div style={lbl}>{"Walk in" + (area.approach_min ? " · about " + area.approach_min + " min" : "")}</div>
       {walk ? <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.55 }}>{walk}</div> : null}
+    </div> : null}
+    {trail ? <div style={{ marginBottom: 10 }}>
+      <div style={lbl}>{"Trail to the crag · " + fmtTrailLen(trailLenM(trail))}</div>
+      <WalkInMap pts={trail} park={park} crag={crag} />
+      <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 6 }}>{"From the parking (P) to the crag (C). " + (area.walkin_kind === "traced" ? "A climber traced it on the map; it is not a GPS recording. " : "") + "Every climb here shows it on its crag map."}</div>
     </div> : null}
     {dest ? <div>
       <div style={lbl}>{park ? "Directions to parking" : "Directions"}</div>

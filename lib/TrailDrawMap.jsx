@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { loadLeaflet, applyBaseLayer } from "./mapKit";
 import { loadUnits } from "./units-pref";
+import { MIN_RECORDED_PTS } from "./track";
 
 // TRACE THE WALK IN ON THE MAP. A crag's trail used to be addable only as a recorded GPX, so the
 // line reached a crag only after someone had walked it with a watch running AND thought to export
@@ -79,7 +80,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks }) {
         <div ref={mapDiv} role="application" aria-label="Map: tap to add a point to the trail" style={{ height: 300, borderRadius: 9, border: "1px solid " + C.border, overflow: "hidden", background: "#0a0f1a", cursor: "crosshair" }} />
         {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.text70, fontSize: 13, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "The map couldn't load. Upload or paste a recorded track instead." : "Loading map…"}</div> : null}
         {ready ? <div style={{ position: "absolute", top: 7, left: 7, zIndex: 1000, display: "flex", gap: 3 }}>{[["topo", "Topo"], ["sat", "Satellite"], ["street", "Street"]].map(([k, lbl]) => <button key={k} onClick={() => setBaseLayer(k)} aria-current={baseLayer === k ? "true" : undefined} style={{ padding: "5px 8px", borderRadius: 6, border: "1px solid " + (baseLayer === k ? C.accent : C.border), background: C.bg, color: baseLayer === k ? C.accent : C.text70, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 6px rgba(0,0,0,0.4)" }}>{lbl}</button>)}</div> : null}
-        {ready ? <div style={{ position: "absolute", bottom: 7, left: 7, right: 7, zIndex: 1000, background: "rgba(13,17,23,0.85)", borderRadius: 7, padding: "4px 8px", fontSize: 12, color: "#fff", textAlign: "center", pointerEvents: "none" }}>{pts.length ? pts.length + " points · " + fmtTrailLen(lenM(pts)) + " · tap to keep going" : start ? "Tap the map along the trail, starting at P (parking)" : "Tap where you park, then along the trail to the crag"}</div> : null}
+        {ready ? <div style={{ position: "absolute", bottom: 7, left: 7, right: 7, zIndex: 1000, background: "rgba(13,17,23,0.85)", borderRadius: 7, padding: "4px 8px", fontSize: 12, color: "#fff", textAlign: "center", pointerEvents: "none" }}>{pts.length ? (pts.length < MIN_RECORDED_PTS ? pts.length + " of at least " + MIN_RECORDED_PTS + " points" : pts.length + " points") + " · " + fmtTrailLen(lenM(pts)) + " · tap to keep going" : start ? "Tap the map along the trail, starting at P (parking)" : "Tap where you park, then along the trail to the crag"}</div> : null}
       </div>
       <div style={{ display: "flex", gap: 6, marginTop: 8, flexWrap: "wrap" }}>
         {start ? <button onClick={() => setPts((p) => (p.length ? p : [[start.lat, start.lng]]))} disabled={pts.length > 0} style={pts.length ? { ...btn, ...off } : btn}>{"Start at " + mk.start}</button> : null}
