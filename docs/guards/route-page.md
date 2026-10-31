@@ -20,6 +20,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   "Watch out for on this type of climb" were the same canned lines on every route of a kind,
   advice about climbing in general rather than this climb — and section 3 pins that they stay
   gone on every discipline. The sport bolt-problem reporter survives: it acts on this route.
+  **Section 7 (2026-10-31): a boulder line is a PROBLEM.** Every tab of a bare boulder problem, and of the same
+  problem with a description, a season and one report (the branches a bare row never opens), must not say
+  "route" in visible text or in an aria-label / title / placeholder; "route-finding" and "Route finder" are
+  allowed. Its anchor is the filled problem's *Problem description* card. Injection: put "Route description"
+  back in `RouteOverviewTab` and it fails twice (the word, and the lost anchor). It cannot see a string that
+  renders only with data it does not seed (a photo, a topo, a crew), nor the forms (LogAscent, AddRoute,
+  SuggestFix), which were fixed by reading. A ConsensusPanel string is gated on `VOLATILE_DISC`, which has no
+  bouldering, so an injection there is correctly silent.
   Both were invisible to a guard that
   only renders a populated route. Gated by `npm run build`. Injection-tested: restoring the
   pre-#641 file trips 6 assertions, and renaming a UI anchor trips `ANCHOR LOST` rather than

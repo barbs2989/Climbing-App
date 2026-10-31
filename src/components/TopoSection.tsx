@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import { useRouteTopos, topoPhotoUrl, uploadTopoPhoto, updateTopoLine, submitTopoLine, updateTopoCaption, deleteTopoLine, deleteTopoPhoto, updateTopoAlt } from "../../lib/db";
 import { USE_DB } from "../../lib/supabase";
 import { topoEmptyCopy } from "../../lib/topoEmptyCopy.js";
+import { climbNoun } from "../../lib/discLabels.js";
 import { askConfirm } from "../../lib/ConfirmSheet.jsx";
 import { ROUTE_GAP, RSL as SL, C } from "../../ClimbMatchCore.jsx";
 import LoadingRows from "./LoadingRows.tsx";
@@ -21,7 +22,7 @@ import type { TopoModalLine, TopoModalPhoto } from "./TopoPhotoModal.tsx";
 
 export interface TopoSectionProps {
   /** The route page the topos belong to; the area is the peak or crag it hangs under. */
-  route: {id: string; mountainId: string};
+  route: {id: string; mountainId: string; /** bouldering calls its line a PROBLEM (lib/discLabels climbNoun) */ discipline?: string | null; };
 }
 /** A line as a `topo_lines` row carries it. */
 interface TopoDbLine extends TopoModalLine {
@@ -67,7 +68,7 @@ export default function TopoSection({route}: TopoSectionProps){
   const [err,setErr]=useState<string|null>(null);
   const [viewerIdx,setViewerIdx]=useState<number|null>(null);
   const [drawFor,setDrawFor]=useState<TopoSectionPhoto|null>(null);
-  /* A topo belongs to the route page it was posted from (0364): areaId is the whole PEAK on an alpine route, so reading by it put a north-face photo on every south-side route. */const dbTopos=useRouteTopos(USE_DB?route.id:null,areaId);const toposUnavailable=!!(USE_DB&&dbTopos&&dbTopos.isError);const topoCopy=topoEmptyCopy(toposUnavailable);/* No signal: useRouteTopos answered with the topos SAVED on this device, which may be fewer than the crag has. */const toposSavedOnly=!!(dbTopos&&dbTopos.data&&dbTopos.data._savedFrom==="media");
+  /* A topo belongs to the route page it was posted from (0364): areaId is the whole PEAK on an alpine route, so reading by it put a north-face photo on every south-side route. */const dbTopos=useRouteTopos(USE_DB?route.id:null,areaId);const toposUnavailable=!!(USE_DB&&dbTopos&&dbTopos.isError);const topoCopy=topoEmptyCopy(toposUnavailable, climbNoun(route));/* No signal: useRouteTopos answered with the topos SAVED on this device, which may be fewer than the crag has. */const toposSavedOnly=!!(dbTopos&&dbTopos.data&&dbTopos.data._savedFrom==="media");
 
   const photos: TopoSectionPhoto[]=USE_DB
     ?(dbTopos.data||[]).map(function(t: TopoRow){const _u=topoPhotoUrl(t.storage_path);return {id:t.id,url:_u,db:true,storagePath:t.storage_path,alt:t.alt||null,caption:t.caption||null,mine:!!(_topoUid&&t.created_by===_topoUid),saveEntry:{url:_u,kind:"topo",areaId:areaId,routeId:route.id,row:t},
@@ -167,10 +168,10 @@ export default function TopoSection({route}: TopoSectionProps){
     {toposSavedOnly?<div style={{fontSize:11.5,color:C.amber,lineHeight:1.45,marginTop:8}}>{"No signal — showing the "+photos.length+" topo"+(photos.length!==1?"s":"")+" you saved on this device. Any others need a connection."}</div>:null}
     {photos.some(function(p){return p.lines[0]&&((p.lines[0].pins&&p.lines[0].pins.length)||(p.lines[0].variants&&p.lines[0].variants.length));})?<TopoPinLegend style={{marginTop:8}}/>:null}
     {(viewerIdx!=null&&photos[viewerIdx])?<TopoPhotoModal key={photos[viewerIdx].id} photo={photos[viewerIdx]} pos={{i:viewerIdx,n:photos.length,onPrev:function(){setViewerIdx((viewerIdx+photos.length-1)%photos.length);},onNext:function(){setViewerIdx((viewerIdx+1)%photos.length);}}} onClose={function(){setViewerIdx(null);}} onDraw={function(p){setDrawFor(p as TopoSectionPhoto);}} onDescribe={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?function(p,d){return updateTopoAlt(p.id,d).then(function(){return dbTopos.refetch();});}:undefined} onCaption={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?saveCaption:undefined} onEditLine={USE_DB?editLine:undefined} onDeleteLine={USE_DB?removeLine:undefined} onDeletePhoto={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?removePhoto:undefined}/>:null}
-    {drawFor?createPortal(<div onClick={closeDraw} role="dialog" aria-modal="true" aria-label={drawFor.editLine?"Edit your line":"Draw this route's line"} style={{position:"fixed",inset:0,background:C.scrimStrong,zIndex:9500,display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
+    {drawFor?createPortal(<div onClick={closeDraw} role="dialog" aria-modal="true" aria-label={drawFor.editLine?"Edit your line":"Draw this "+climbNoun(route)+"'s line"} style={{position:"fixed",inset:0,background:C.scrimStrong,zIndex:9500,display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
       <div onClick={function(e){e.stopPropagation();}} style={{background:C.bg,borderTopLeftRadius:18,borderTopRightRadius:18,width:"100%",maxWidth:520,padding:"16px 16px 22px",border:"1px solid "+C.border,maxHeight:"92vh",overflowY:"auto",overscrollBehavior:"contain",boxSizing:"border-box"}}>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
-          <div style={{fontSize:14,fontWeight:800}}>{drawFor.editLine?"Edit your line":"Draw this route's line"}</div>
+          <div style={{fontSize:14,fontWeight:800}}>{drawFor.editLine?"Edit your line":"Draw this "+climbNoun(route)+"'s line"}</div>
           <button onClick={closeDraw} style={POP_CLOSE} aria-label="Close">✕</button>
         </div>
         {/* The photo was just posted: ask for its caption here, while the climber still remembers why they took it. Saved on its own, so cancelling the drawing keeps it. */}
