@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_himmelhorn_wild_hair_crack",
+  "last_processed_id": "wa_hozomeen_mountain_south_peak_southwest_route",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 497 complete. Continuing id-ascending scope from wa_himmelhorn_wild_hair_crack (next batch starts after it).",
+  "pass_note": "Pass 8 in progress, batch 498 complete. Continuing id-ascending scope from wa_hozomeen_mountain_south_peak_southwest_route (next batch starts after it).",
   "batches": [
     {
       "batch_number": 1,
@@ -9885,6 +9885,26 @@
       "clean": 8,
       "sql_file": null,
       "note": "Four of five Hibox Mountain routes store only name/grade, nothing to cross-check. wa_hibox_mountain_east_route approach text (Rachel Lake TH/FR 4930/Trail #1313, ~2.2mi to boot path, 3,800-3,900 ft gain) matches WTA/Mountaineers.org trip reports. All three Himmelhorn routes high_point_ft=7880 matches Wikipedia/AAC majority figure (vs a minority listsofjohn.com 7,900 ft). wa_himmelhorn_southeast_route summit waypoint (48.77639,-121.31472) matches Wikipedia-mirror coords closely; FA (Cooper/Denny/Firey/Firey/Whitmore, Sept 8 1961) matches AAJ 1962 record. Stonehenge and Wild Hair Crack FA/beta plausible but too obscure to independently verify either way -- not flagged per the no-contradicting-evidence rule. 0 fixes, 0 flagged, 8 clean."
+    },
+    {
+      "batch_number": 498,
+      "date": "2026-10-31",
+      "pass": 8,
+      "route_ids": [
+        "wa_honeymoon_route",
+        "wa_hoodoo_peak_sawtooth_raven_ridge_traverse",
+        "wa_hoodoo_peak_sawtooth_scramble",
+        "wa_horseshoe_peak_scramble",
+        "wa_hourglass_gully_winter",
+        "wa_hozomeen_mountain_south_peak_north_ridge",
+        "wa_hozomeen_mountain_south_peak_southeast_buttress",
+        "wa_hozomeen_mountain_south_peak_southwest_route"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 1,
+      "clean": 7,
+      "sql_file": null,
+      "note": "No SQL this batch. Flagged: wa_hoodoo_peak_sawtooth_raven_ridge_traverse's high_point_ft (8475, Hoodoo's own elevation) is almost certainly too low -- the route's own beta describes climbing Raven Ridge to Hoodoo, and Raven Ridge is independently documented (Wikipedia, listsofjohn LiDAR, SummitPost) as 8,555-8,597 ft, 80-120 ft higher than stored -- but sources spread over a 42 ft range for Raven Ridge's own summit, so no single replacement value was confident enough to write as SQL; left for human judgment. Seven routes clean: Hoodoo's own scramble route correctly stores 8475 (matches current best Wikipedia/listsofjohn figure); all three Hozomeen South Peak routes' shared high_point_ft=8003 matches Wikipedia/AAJ exactly (distinct from the area row's 8071, which is the higher North Peak -- not a conflict); the Southwest Route FA (Beckey/Marcus/O'Neil/Prestrud/Staley/Welsh, May 30 1947) matches Wikipedia's six-name roster; Horseshoe Peak's high_point_ft=8480 matches SummitPost/TopoZone; Mount Index's Hourglass Gully high_point_ft=5991 matches Wikipedia's most-cited figure for Main Peak. Two route-specific FAs (Honeymoon Route's 1965 Bloomer credit, Hourglass Gully's 1963 Pritchard/Jensen/Bailey credit) could not be confirmed or contradicted -- too obscure for Wikipedia/AAJ/SummitPost, which only cover the peaks' overall first ascents -- not flagged per the no-contradicting-evidence rule."
     }
   ]
 }

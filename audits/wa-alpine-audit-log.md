@@ -36240,3 +36240,49 @@ not flagged, consistent with this audit's rule not to flag what can't be verifie
 
 Next batch will continue id-ascending from `wa_himmelhorn_wild_hair_crack` (see progress
 file).
+
+## Batch 498 (pass 8) — 2026-10-31
+
+Checked 8 routes: `wa_honeymoon_route` (Mount Deception), `wa_hoodoo_peak_sawtooth_raven_ridge_traverse`
+and `wa_hoodoo_peak_sawtooth_scramble` (Hoodoo Peak), `wa_horseshoe_peak_scramble` (Horseshoe Peak /
+Ripsaw Ridge), `wa_hourglass_gully_winter` (Mount Index Main Peak), and all three Hozomeen Mountain
+South Peak routes (`north_ridge`, `southeast_buttress`, `southwest_route`).
+
+One flagged for human review, not fixed: `wa_hoodoo_peak_sawtooth_raven_ridge_traverse` stores
+`high_point_ft: 8475` — Hoodoo Peak's own elevation — but the route's own beta describes climbing
+from Raven Ridge's ridge crest over to Hoodoo's summit ("best done Raven Ridge to Hoodoo"), and
+Raven Ridge is independently and consistently documented as the HIGHER of the two: Wikipedia gives
+~8,572 ft (Libby Peak, the west-end high point, at 8,555 ft), listsofjohn's LiDAR figure for the
+east-end Corax Peak is 8,590-8,597 ft, and SummitPost cites 8,580 ft off the USGS Martin Peak quad —
+every source puts Raven Ridge 80-120 ft above the stored 8,475. The direction of the error is clear;
+the exact replacement value is not, since those three sources spread across a 42 ft range for Raven
+Ridge's own summit. Per this audit's rule not to guess a fix when sources disagree, this is flagged
+rather than corrected — a human should pick a sourced figure (8,555 / 8,580 / 8,590) and update
+`high_point_ft` (and possibly `waypoints`/`approach_logistics` if a Raven Ridge summit coordinate is
+added). `wa_hoodoo_peak_sawtooth_scramble`'s own `high_point_ft: 8475` is correct — that route only
+climbs Hoodoo, matching the most-recent Wikipedia/listsofjohn figure for Hoodoo itself (older sources
+give 8,431-8,464 ft; 8,475 is the best-supported current figure).
+
+Seven routes check out clean. All three Hozomeen Mountain South Peak routes share
+`high_point_ft: 8003`, which matches Wikipedia/AAJ exactly for the South Peak (distinct from the
+area row's `elevation_ft: 8071`, which is the higher North Peak — correct, not a conflict, since
+these are explicitly "(South Peak)" routes). `wa_hozomeen_mountain_south_peak_southwest_route`'s FA
+("Fred Beckey, Melvin Marcus, Jerry O'Neil, Ken Prestrud, Herb Staley, Charles Welsh, May 30 1947")
+matches Wikipedia's six-name roster exactly, though Beckey's own AAJ account only names Staley and
+Marcus on the final buttress — Wikipedia is the only source giving the full six, so left as-is per
+prior-pass handling of single-best-source FAs. `wa_horseshoe_peak_scramble`'s `high_point_ft: 8480`
+(waypoint 8481) matches SummitPost/TopoZone almost exactly; its own `data_quality.gaps` already
+self-discloses the SummitPost-noted cartographic mislabeling of which bump is "really" Horseshoe
+Peak, so there's nothing new to flag there. `wa_hourglass_gully_winter`'s `high_point_ft: 5991`
+matches Wikipedia's most-widely-cited figure for Mount Index Main Peak (vs a minority SummitPost
+5,979 ft and a low outlier TopoZone 5,948 ft). `wa_honeymoon_route`'s FA ("1965 Arnie & Diane
+Bloomer") and `wa_hourglass_gully_winter`'s FA ("Jim Pritchard, Stan Jensen & Cecil Bailey, 1963")
+could not be independently confirmed or contradicted in this pass (route-specific FAs this obscure
+don't show up in Wikipedia/AAJ/SummitPost search results, which cover only the peaks' overall first
+ascents) — not flagged per the no-contradicting-evidence rule; the Honeymoon Route's own
+`data_quality.gaps` already discloses this FA as single-source/unverified from a prior pass.
+
+0 fixes, 1 flagged, 7 clean.
+
+Next batch will continue id-ascending from `wa_hozomeen_mountain_southwest_buttress` (see progress
+file).
