@@ -1,1 +1,1 @@
-Researched but NOT yet applied (DB gate backed off): t55 t56 and any later batch files without a matching rollback. Apply: node scripts/enrich/area-page-apply.mjs --from audits/area-pages/tier30/batch-tNN-*.json (safe to re-run).
+All tier-30 batch files here are applied up to t66.
