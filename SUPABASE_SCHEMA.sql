@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 86 tables, 852 columns, 442 keyed/checked constraints (153 foreign keys), 263 RLS policies.
+-- Counts: 86 tables, 855 columns, 443 keyed/checked constraints (154 foreign keys), 263 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -100,6 +100,7 @@
 -- group_reports (group_reports_reported_user_fkey): FOREIGN KEY (reported_user) REFERENCES auth.users(id) ON DELETE SET NULL
 -- group_reports (group_reports_reporter_fkey): FOREIGN KEY (reporter) REFERENCES auth.users(id) ON DELETE CASCADE
 -- group_reports (group_reports_resolved_by_fkey): FOREIGN KEY (resolved_by) REFERENCES auth.users(id) ON DELETE SET NULL
+-- groups (groups_area_id_fkey): FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE SET NULL
 -- groups (groups_created_by_fkey): FOREIGN KEY (created_by) REFERENCES auth.users(id) ON DELETE CASCADE
 -- guide_credentials (guide_credentials_guide_id_fkey): FOREIGN KEY (guide_id) REFERENCES guide_profiles(id) ON DELETE CASCADE
 -- guide_credentials (guide_credentials_reviewed_by_fkey): FOREIGN KEY (reviewed_by) REFERENCES profiles(id) ON DELETE SET NULL
@@ -1201,6 +1202,9 @@ CREATE TABLE public.groups (
   rules jsonb NOT NULL DEFAULT '[]'::jsonb,
   invite_policy text NOT NULL DEFAULT 'members'::text,
   moderation text NOT NULL DEFAULT 'visible'::text,
+  area_id text,
+  lat double precision,
+  lng double precision,
   CONSTRAINT groups_pkey PRIMARY KEY (id),
   CONSTRAINT groups_event_policy_check CHECK ((event_policy = ANY (ARRAY['anyone'::text, 'mods'::text]))),
   CONSTRAINT groups_invite_policy_check CHECK ((invite_policy = ANY (ARRAY['members'::text, 'mods'::text]))),
@@ -1210,6 +1214,7 @@ CREATE TABLE public.groups (
   CONSTRAINT groups_policy_check CHECK ((policy = ANY (ARRAY['open'::text, 'approval'::text, 'trust'::text]))),
   CONSTRAINT groups_rules_valid CHECK (group_rules_valid(rules)),
   CONSTRAINT groups_visibility_check CHECK ((visibility = ANY (ARRAY['public'::text, 'private'::text]))),
+  CONSTRAINT groups_area_id_fkey FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE SET NULL,
   CONSTRAINT groups_created_by_fkey FOREIGN KEY (created_by) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 ALTER TABLE public.groups ENABLE ROW LEVEL SECURITY;

@@ -23,11 +23,13 @@ export interface PartnersHereCardProps {
   notify?: (msg: string) => void;
   onStartCrew?: (area: PartnersHereCardArea) => void;
   onCrewsHere?: (area: PartnersHereCardArea) => void;
+  /** Opens Groups Discover listing the groups near this area (0396). */
+  onGroupsHere?: (area: PartnersHereCardArea) => void;
   openCrewCountAt?: (areaId: string) => number;
 }
 
 const CRAG_FAMILY = ["trad", "sport", "toprope", "aid", "bouldering"];
-export default function PartnersHereCard({ area, C, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, PartnerRow, notify, onStartCrew, onCrewsHere, openCrewCountAt }: PartnersHereCardProps) {
+export default function PartnersHereCard({ area, C, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, PartnerRow, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt }: PartnersHereCardProps) {
   // CREWS HERE (0302): a crag session is a crew bound to this area. Start one from the page you are on, or
   // see the open ones in Join a crew → By Area, preset to this area.
   const crewN = openCrewCountAt ? openCrewCountAt(area.id) : 0;
@@ -85,6 +87,8 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
         {onStartCrew ? <button onClick={() => onStartCrew(area)} style={{ ...BTN, flex: 1, border: "1px solid " + C.blueDim, background: C.blueBg, color:C.onSolid }}>Start a crew here</button> : null}
         {onCrewsHere ? <button onClick={() => onCrewsHere(area)} style={{ ...BTN, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>{"Crews here" + (crewN ? " · " + crewN : "")}</button> : null}
       </div> : null}
+      {/* GROUPS NEAR HERE (0396): a climber looking at a crag they are travelling to can find the local groups from it. */}
+      {onGroupsHere ? <button onClick={() => onGroupsHere(area)} style={{ ...BTN_LINK(C), padding: "10px 0 0", fontSize: 12.5 }}>{"Climbing groups near " + area.name + " →"}</button> : null}
     </div>
   );
 }
