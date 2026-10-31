@@ -36198,3 +36198,45 @@ resulting SQL file with no findings.
 
 Next batch will continue id-ascending from `wa_hibox_mountain_east_route` (see progress
 file).
+
+## Batch 497 (2026-10-31, pass 8)
+
+Eight routes across 2 peaks, continuing id-ascending from `wa_hibox_mountain_east_route`:
+Hibox Mountain (East Route, Northwest Ridge, South Route, Southeast Ridge, Southeast Shoulder)
+and Himmelhorn (Southeast/Standard Route, Stonehenge, Wild Hair Crack).
+
+No confirmed errors; no SQL. WebFetch could not resolve en.wikipedia.org, wta.org,
+listsofjohn.com or peakvisor.com from this run's network (same DNS block hit by prior
+batches); verification relied on WebSearch's synthesized snippets of those pages rather than
+direct fetches.
+
+Clean/confirmed (8): four of the five Hibox Mountain routes (`wa_hibox_mountain_northwest_ridge`,
+`_south_route`, `_southeast_ridge`, `_southeast_shoulder`) store only name/grade — no
+elevation, coordinates, or prose to cross-check, so there is nothing stored that could be
+wrong. `wa_hibox_mountain_east_route`'s approach text ("Rachel Lake Trailhead at the end of
+Box Canyon Road/FR 4930," "Rachel Lake Trail #1313... about 2.2 miles" to the boot path, then
+"roughly 3,800 to 3,900 ft of gain from the car") matches WTA/Mountaineers.org trip-report
+descriptions of the standard route closely enough to leave as-is — Mountaineers.org's own
+figure is 3,900 ft gain over an 8 mi round trip, squarely inside the stored range, even though
+other secondary sources (Hiiker.app) run as high as ~4,100 ft. (Hibox's own summit elevation
+is not stored on any of its five routes, so there was no elevation claim to check against the
+~6,538-6,560 ft range sources give for it.)
+
+All three Himmelhorn routes' shared `high_point_ft` of 7,880 ft matches the most-repeated
+figure across Wikipedia and the AAC (a competing listsofjohn.com figure of 7,900 ft exists but
+is the minority figure, consistent with prior-pass handling of similar small LiDAR/map
+spreads elsewhere in this catalog). `wa_himmelhorn_southeast_route`'s summit waypoint
+(48.77639, -121.31472) matches a Wikipedia-mirror coordinate (48.776, -121.315) essentially
+exactly, and its FA credit ("Ed Cooper, Glen Denny, Joan Firey, Joe Firey, George Whitmore,
+September 8, 1961 — also the peak's overall first ascent") matches the AAC/Mountain Project
+record of the Cooper-Denny-Firey-Firey-Whitmore route cited in AAJ 1962. That route's own
+`corrections` field (flagging that exact SE-route beta wasn't found and the rack/rope were
+sized from comparable Southern Pickets Grade IV routes instead) is a pre-existing,
+self-disclosed caveat from a prior pass, not a new finding, so left alone.
+`wa_himmelhorn_stonehenge`'s and `wa_himmelhorn_wild_hair_crack`'s FA credits and route-specific
+beta (gully/col approach, moat-dependent descent) are plausible and internally consistent but
+too obscure for a direct secondary source in this run — no contradicting evidence found, so
+not flagged, consistent with this audit's rule not to flag what can't be verified either way.
+
+Next batch will continue id-ascending from `wa_himmelhorn_wild_hair_crack` (see progress
+file).
