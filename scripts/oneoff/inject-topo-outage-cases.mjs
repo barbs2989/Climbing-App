@@ -27,8 +27,8 @@ const sum = (s) => crypto.createHash("sha1").update(s).digest("hex").slice(0, 12
 
 const ORIGINALS = new Map([COPY, SECTION].map((p) => [p, fs.readFileSync(p, "utf8")]));
 
-const INVITE = "A topo overlays the route line and markers on a photo of the wall, face, or line. Got a clear shot? Add it and draw the line so the next party can follow it.";
-const BROKEN_BODY = "A topo may already be on file for this route — this one list just didn’t load, so this is not a claim that there is none. Check your connection and try again.";
+const INVITE = 'A topo overlays the "+n+" line and markers on a photo of the wall, face, or line. Got a clear shot? Add it and draw the line so the next party can follow it.';
+const BROKEN_BODY = 'A topo may already be on file for this "+n+" — this one list just didn’t load, so this is not a claim that there is none. Check your connection and try again.';
 
 const CASES = [
   {
@@ -55,8 +55,8 @@ const CASES = [
   {
     file: COPY, name: "5 an unrelated comment edit — must stay SILENT",
     expect: "pass",
-    edit: (s) => s.replace("export function topoEmptyCopy(unavailable){",
-      "/* injection case 5: a comment is not a regression */\nexport function topoEmptyCopy(unavailable){"),
+    edit: (s) => s.replace("export function topoEmptyCopy(unavailable, noun){",
+      "/* injection case 5: a comment is not a regression */\nexport function topoEmptyCopy(unavailable, noun){"),
   },
 ];
 

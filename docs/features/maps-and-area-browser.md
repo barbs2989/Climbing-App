@@ -38,6 +38,9 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Sorting a crag's own climb list** (`AREA_LIST_SORTS` / `sortAreaRoutes`, leaf areas only): chips over the list read **Left → right**
   (default, as Mountain Project and theCrag list a wall), **Right → left**, **A → Z**, **Z → A**. The wall orders read `routes.sort_order` and are
   offered only when at least one climb in the list has one; climbs without a position go last, by name, under a line counting them.
+  A **boulder problem** is never part of the wall order (owner's note, 2026-10-21: "there's no left to right or right to left order ... with
+  bouldering"): its stored `sort_order` (MP's) does not make a list offer Left → right, a problem sorts with the unplaced, by name, is not
+  counted as "no position on the wall yet", and its row prints no "#n in this area" (`RouteRow`). A list of problems sorts A → Z by default.
   Neither import kept a position (the OpenBeta ETL dropped `metadata.leftRightIndex`; MP's route-finder CSV has none), so on 2026-10-21
   **1 of 314,360 routes** had one.
 - **Filters on a wall's list** (owner note, 2026-10-25): **Filters** over a leaf area's climb list narrows it by discipline (the disciplines the wall holds, plus All) and a star minimum (Any / 2+ / 3+ stars; a climb nobody has rated stays in). It filters the rows `useAreaRoutes` already loaded, so it costs no query. The sort adds **By discipline** (one heading per discipline, in `DISCIPLINES` order, A → Z under each). Grade is deliberately NOT a sort key: `grade_num` is only comparable within one scale.
@@ -122,6 +125,8 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   Mirrors Mountain Project's set, nothing extra (standing decision), except the sort, which offers **Left → right** / **Right → left**
   in place of *By area* (owner, 2026-10-21): `routes_in_subtree` `sort_by` `lr` / `rl` (0332) group the climbs by wall and order each wall
   by `sort_order`, no position last; `area` is still accepted. The offline twin is `subtreeComparer` in `lib/offline.js`.
+  With **Bouldering the only type picked** (`boulderOnly` / `sortsFor` / `sortFor` in `RouteFinderPanel.tsx`) the two wall orders become
+  **By boulder** (`sort_by` `area`: each boulder's problems together, by name) and the counts read *problems* (`finderNoun`).
 - **Near me / area map** (`NearMePanel`): Leaflet map of peak/crag area bubbles with route counts, list/map toggle (`ViewToggle`),
   Street / Satellite / Topo / snow base layers (`BaseLayerToggle`), a live location dot, and a place search box
   ("Go to a town, county or zip/postal code") covering the US and Canada (provinces, towns, US zip, Canadian postal codes).

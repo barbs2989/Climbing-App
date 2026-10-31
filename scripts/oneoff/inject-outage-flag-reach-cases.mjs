@@ -31,8 +31,8 @@ const DECL = "const toposUnavailable=!!(USE_DB&&dbTopos&&dbTopos.isError);";
 // the branches could be executed rather than rendered. All four cases anchored on the old form and
 // matched nothing, so every one reported "edit never landed" and this guard's whole rule set was
 // proven by nobody. Keep this pair pointing at whatever the single READ of the flag is.
-const READ = 'const topoCopy=topoEmptyCopy(toposUnavailable);';
-const READ_GONE = 'const topoCopy=topoEmptyCopy(false);';
+const READ = 'const topoCopy=topoEmptyCopy(toposUnavailable, climbNoun(route));';
+const READ_GONE = 'const topoCopy=topoEmptyCopy(false, climbNoun(route));';
 
 function runGuard() {
   try {
