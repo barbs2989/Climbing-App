@@ -269,3 +269,26 @@ BC 1–5, CA 1–4, AB 1, WY 1, CO 1–2, ID 1, AK 1 and misc 1 (UT, MT, OR, AZ,
 
 **Trad-on-peaks tier DONE: 217 routes written out of 516 rows** (2026-10-30, all through the DB gate; every row verified on re-read, none refused). Rollbacks for all 16 batches are in `rollback/`.
 
+
+### Aid, cliff trad and crag tiers (owner reopened 2026-10-30; done 2026-10-31)
+Order decided by the owner: aid, then cliff trad, then sport/top-rope by crag. Briefs: `oos/CLIFF-BRIEF.md` plus the session prompts
+(source access: find Mountain Project's real URL by search, open it with WebFetch, never curl a guessed slug).
+
+| Tier | distinct rows | written | notes |
+|---|---|---|---|
+| Aid | 95 | **14** | `oos/batch-aid-*`. Bugaboo Spire (Kain Route descent), North Howser west face, Lotus Flower Tower, Scott Route, Angel Wings, Cannon. 81 obscure walls: no source. |
+| Cliff trad (all) | 811 | **98** | `oos/batch-cliff-*`, `batch-cliff2-*`. The 44 `ctx-cliff-*` chunks held 811 distinct ids, not 965 (154 repeated across chunks). |
+| Cliff trad, multi-pitch remainder | 199 | **41** | `oos/batch-cliff3-*`. **Owner 2026-10-31: finish cliffs for MULTI-PITCH only** (yield ~1 in 10, ~130k tokens per job); one-pitch cliff rows left. |
+| Crag (sport + top-rope) | 577 on 195 crags | **436** | `oos/batch-crag2-*`, one researched approach per crag written on its thin rows; 9 descents only where stated. |
+
+All writes through dbslot, verified on re-read, 0 refusals. Rollbacks: `rollback/rollback-1793405595646.json` (aid),
+`rollback-1793407703339.json` (cliff), `rollback-1793438630048.json` (multi-pitch), `rollback-1793438787838.json` (crag).
+
+**Lead review caught, and the batches were corrected before writing:** a researcher that skipped all 80 rows as "no source"
+without reading the crags (sent back: 39 written); search-only "no source" skips relabelled `not researched in this pass` /
+`could not reach a source` (retry lists — grep those spellings); one crag's approach given to a different wall (Miner Wall)
+and a road-fork-only "approach" (Preschool Rock), both skipped; single-source numbers removed (a 20 m rappel, an 80 m wall);
+a single-page "build your own anchors" rappel option dropped.
+**Findings for review:** `ca_east_face_17` (16 rows) and `ca_north_face_the` Riffraff / Well Met in Chappaqua look misfiled
+(Mt Hoffman vs Tuolumne Peak); `nt_fairly_meadows_cragging_the_penguin` attribution doubtful; Lion's Head "Standard" 5.7
+(NH) has no matching route; Possibility Wall "Corner Route (original aid)" is aid filed as trad.
