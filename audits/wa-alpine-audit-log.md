@@ -36286,3 +36286,45 @@ ascents) — not flagged per the no-contradicting-evidence rule; the Honeymoon R
 
 Next batch will continue id-ascending from `wa_hozomeen_mountain_southwest_buttress` (see progress
 file).
+
+## Batch 499 (pass 8) — 2026-10-31
+
+Checked 8 routes: both Hozomeen Mountain North Peak technical lines (`southwest_buttress`,
+`west_face`), and five Huckleberry Mountain routes (`east_ridge`, `north_route`, `north_spur`,
+`south_face`, `southwest_slope`, `west_route`) — `north_route`, `north_spur` and `southwest_slope`
+store only name/grade/discipline, nothing to cross-check.
+
+One fix: `wa_huckleberry_mountain_west_route`'s own `data_quality.gaps[1]` note says a prior pass
+"left on-file value (6,327 ft) unchanged" — but the row's actual `high_point_ft` (and its own
+summit waypoint) is 6,320 ft, not 6,327 ft, so the note no longer describes what is on file. 6,320 ft
+is itself correct — confirmed via Wikipedia and PeakVisor (both 6,320 ft; a minority
+TopoQuest/SummitPost figure runs 6,230-6,279 ft) and matches the other two Huckleberry routes this
+batch — so only the stale note text needed correcting, not the number. SQL fixes the note's
+"(6,327 ft)" to "(6,320 ft)".
+
+Seven routes check out clean. `wa_hozomeen_mountain_southwest_buttress`'s FA ("Dick Culbert and
+Alice Purdey, August 1968") is confirmed via Wikipedia and a Cascade Climbers trip report citing
+CAJ 1969. `wa_hozomeen_mountain_west_face`'s FA ("Rolf Larson and Eric Wehrly, August 31 -
+September 1, 2013") is confirmed via AAC/AAJ 2014 and a skisickness.com trip report dated 8/31/2013
+— both routes' shared `high_point_ft: 8071` for Hozomeen's North Peak matches the figure already
+reconfirmed in batch 498 against the area row. `wa_huckleberry_mountain_east_ridge`'s
+`high_point_ft: 6320` and `gain_ft: 5850` are internally consistent with its own waypoints
+(3,000 ft trailhead to 6,320 ft summit) and itinerary total ("~20+ mile round trip and ~5,800+ ft of
+cumulative gain"); its FA credit ("Charles Hazlehurst & Thomas Acheson, May 1915") matches the
+mountain's documented 1915 first ascent, though which exact line (a Beckey-attributed gully vs. the
+modern East Ridge) the 1915 party took could not be pinned down from available sources — SummitPost
+and Mountain Project describe the two as having converged/evolved over time without stating which
+was original, so this is left as-is per the no-contradicting-evidence rule rather than flagged.
+`wa_huckleberry_mountain_south_face`'s `high_point_ft: 6320` matches the same figure; its FA
+("Mark Bunker & Mike Press, 1998") is too obscure to confirm or contradict in Wikipedia/AAJ/
+SummitPost, which don't cover route-specific FAs this minor — not flagged.
+`wa_huckleberry_mountain_west_route`'s `gain_ft`/`loss_ft` of 6,320 each initially looked like a
+copy-paste of the summit elevation, but its own `itinerary.days[].gainFt`/`lossFt` sum to exactly
+6,320/6,320 across the two-day trip (2,700+3,620 gained, 100+6,220 lost over the Kendall
+Katwalk/Ridge Lake/Joe Lake rolling profile) — the coincidence with `high_point_ft` is real but not a
+bug.
+
+0 fixes besides the one `data_quality` text correction above, 0 flagged, 7 clean.
+
+Next batch will continue id-ascending from `wa_huckleberry_mountain_west_route` (see progress
+file).
