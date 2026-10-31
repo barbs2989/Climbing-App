@@ -1,0 +1,61 @@
+{
+ "targets": [
+  {
+   "approach": null,
+   "area_id": "me_02_north_basin",
+   "descent": null,
+   "descent_text": null,
+   "description": null,
+   "discipline": "trad",
+   "grade": "5.8 PG13",
+   "id": "me_02_north_basin_hanta_yo",
+   "name": "Hanta Yo",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Katahdin",
+   "peak": "North Basin",
+   "peak_elev": null,
+   "peak_lat": 45.92772,
+   "peak_lng": -68.90673,
+   "pitches": 6
+  },
+  {
+   "approach": "Start at the point where the golf course's north shore runs into the cliff, past the final pond, and scramble up the hill and left toward the cliff face. The climb starts where the wall protrudes the furthest, to the right of a broken oak tree that lost its top, below a dark streak crossed by gridlines.",
+   "area_id": "me_cliff_s_right",
+   "descent": null,
+   "descent_text": "The route tops out on a ledge with webbing and rap rings, which are used to rappel back to the base.",
+   "description": null,
+   "discipline": "trad",
+   "grade": "5.7+ R",
+   "id": "me_cliff_s_right_bite_the_pillow_we_re_going_in_dry",
+   "name": "Bite the pillow, we're going in dry",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Mt Kineo",
+   "peak": "Cliff's Right",
+   "peak_elev": null,
+   "peak_lat": 45.6981,
+   "peak_lng": -69.7324,
+   "pitches": 3
+  },
+  {
+   "approach": null,
+   "area_id": "me_cliff_s_right",
+   "descent": null,
+   "descent_text": null,
+   "description": null,
+   "discipline": "trad",
+   "grade": "5.10a X",
+   "id": "me_cliff_s_right_headboard_direct",
+   "name": "Headboard direct",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Mt Kineo",
+   "peak": "Cliff's Right",
+   "peak_elev": null,
+   "peak_lat": 45.6981,
+   "peak_lng": -69.7324,
+   "pitches": 3
+  }
+ ]
+}

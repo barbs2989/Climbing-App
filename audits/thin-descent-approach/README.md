@@ -339,3 +339,14 @@ crag's own walk-in (`areas.approach`) on any crag climb with none of its own, so
 per route. Outside Washington, **50,386 areas hold routes and 695 have a walk-in** (80+ characters). 283,653 routes sit on areas without
 one; **8,299 bare areas hold 10+ routes** (CA 1,254, CO 992, UT 571, AZ 428, BC 362). One area id has the prefix `shorty` instead of a
 state: a finding for review. Sweeping this is an owner decision.
+
+### A second, parallel pass over the same tiers (session of 2026-10-31; files in `oos/session-2026-10-31b/`)
+The runner had marked this follow-up done ("its report names no work left"), so a second session took up the same
+aid / cliff / crag tiers without seeing #3099, which was running at the same time. **#3099's writes are the record.**
+- That session wrote 14 aid, 98 cliff, 41 multi-pitch cliff and 436 crag rows. Its applier checked thinness when the
+  contexts were BUILT, not at write time, so **486 fields replaced text #3099 had already written** (measured from the
+  `before` values in its four rollbacks: `rollback-1793405595646`, `-1793407703339`, `-1793438630048`, `-1793438787838`).
+- **Those 486 fields are restored to #3099's text** (`scripts/oneoff/thin-da-restore-parallel.mjs`, only where the live
+  value was still this session's own text). The fields this session found really thin keep its text.
+- Lesson: re-read the live row at write time (#3099's `thin-da-live-filter.mjs` does) and check `git log origin/main`
+  for the item before starting; a runner's "done" can be wrong in either direction.

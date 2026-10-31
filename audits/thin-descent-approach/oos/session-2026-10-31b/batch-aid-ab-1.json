@@ -1,0 +1,23 @@
+{
+ "ab_mount_louis_bucking_horse_rider": {
+  "area": "ab_mount_louis",
+  "skip_reason": "identity in doubt: no route page found, only a news mention of a new line on the north side"
+ },
+ "ab_mount_temple_greenwood_locke": {
+  "area": "ab_mount_temple",
+  "set": {
+   "descent_text": "The usual descent is the southwest ridge, the hikers' route, which leads down to Moraine Lake."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106997577/greenwood-locke"
+   ],
+   "confidence": "medium",
+   "notes": "Route page states the descent. It does not name the lake that the approach starts from, so approach omitted."
+  }
+ },
+ "ab_the_ship_s_prow_the_shinning_path": {
+  "area": "ab_the_ship_s_prow",
+  "skip_reason": "no source describes this route"
+ }
+}
