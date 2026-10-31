@@ -98,7 +98,9 @@ function sortAreaRoutes(routes: AreaPageRoute[], key: string) {
     return [...routes].sort((a: AreaPageRoute, b: AreaPageRoute) => rank(a.discipline) - rank(b.discipline) || byName(a, b));
   }
   const dir = key === "rl" ? -1 : 1;
-  return [...routes].sort((a: AreaPageRoute, b: AreaPageRoute) => Number(a.sort_order == null) - Number(b.sort_order == null) || (a.sort_order != null && b.sort_order != null ? dir * (a.sort_order - b.sort_order) : 0) || byName(a, b));
+  // A boulder problem has no place in a wall's left-to-right line, so it sorts with the unplaced, by name.
+  const pos = (r: AreaPageRoute) => r.discipline === "bouldering" ? null : r.sort_order;
+  return [...routes].sort((a: AreaPageRoute, b: AreaPageRoute) => { const pa = pos(a), pb = pos(b); return Number(pa == null) - Number(pb == null) || (pa != null && pb != null ? dir * (pa - pb) : 0) || byName(a, b); });
 }
 export interface AreaPageProps {
   /** The drill-stack row; the page reads the live row over it. */
@@ -134,9 +136,10 @@ export interface AreaPageProps {
   notify?: PartnersHereCardProps["notify"];
   onStartCrew?: PartnersHereCardProps["onStartCrew"];
   onCrewsHere?: PartnersHereCardProps["onCrewsHere"];
+  onGroupsHere?: PartnersHereCardProps["onGroupsHere"];
   openCrewCountAt?: PartnersHereCardProps["openCrewCountAt"];
 }
-export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, openCrewCountAt}: AreaPageProps) {
+export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt}: AreaPageProps) {
   const [searchMode, setSearchMode] = useState("areas");
   const [wrongOpen, setWrongOpen] = useState(false);
   const listEndRef = useRef(null);
@@ -251,7 +254,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
           state centroid, which is noise at best and misleading at worst. A crag, peak or wall has
           somewhere you can actually park (check:area-surfaces reads this gate). */}
       {["crag", "peak", "wall"].includes(area.area_type) ? <AreaGettingThere area={area} C={C} onEdit={editOn} /> : null}
-      {PARTNER_CARD_TYPES.includes(area.area_type) ? <PartnersHereCard area={area} C={C} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} PartnerRow={PartnerRow} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} openCrewCountAt={openCrewCountAt} /> : null}
+      {PARTNER_CARD_TYPES.includes(area.area_type) ? <PartnersHereCard area={area} C={C} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} PartnerRow={PartnerRow} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} onGroupsHere={onGroupsHere} openCrewCountAt={openCrewCountAt} /> : null}
       {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} endRef={listEndRef} /> : null}
 
       {/* Sits directly above the route rows it summarises, so the page reads: this is the
@@ -286,13 +289,16 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
               <SL C={C}>{routes.length + " climb" + (routes.length !== 1 ? "s" : "")}</SL>
               {(() => {
                 // Left/right is offered only where a wall order is stored: on a list with no
-                // positions both wall orders would be A → Z under another name.
-                const placed = routes.filter(r => r.sort_order != null).length;
+                // positions both wall orders would be A → Z under another name. A boulder problem's
+                // stored position is NOT a wall order (owner's note, 2026-10-21: "there's no left to
+                // right or right to left order ... with bouldering"), so a list of problems is never
+                // offered one, and a problem never counts as a climb missing its place on the wall.
+                const placed = routes.filter(r => r.sort_order != null && r.discipline !== "bouldering").length;
                 const opts = placed ? AREA_LIST_SORTS : AREA_LIST_SORTS.filter(o => o[0] === "az" || o[0] === "za" || o[0] === "disc");
                 const key = opts.some(o => o[0] === listSort) ? listSort : opts[0][0];
                 const discsHere = [...new Set(routes.map(r => r.discipline).filter(Boolean))];
                 const shownAll = routes.filter(r => (!wallDisc || r.discipline === wallDisc) && (!wallStars || !(r.stars > 0) || r.stars >= wallStars));
-                const unplaced = (key === "lr" || key === "rl") ? shownAll.filter(r => r.sort_order == null).length : 0;
+                const unplaced = (key === "lr" || key === "rl") ? shownAll.filter(r => r.sort_order == null && r.discipline !== "bouldering").length : 0;
                 const filtersOn = (wallDisc ? 1 : 0) + (wallStars ? 1 : 0);
                 const wallChip = (on: boolean) => ({ ...CHIP, flexShrink: 0, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" });
                 return <>
@@ -323,7 +329,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
             </>
           /* Only claim the crag is empty when the load actually succeeded — otherwise a
              failed refetch reports "no routes" about a crag it never managed to read. */
-          : !error ? <div style={{ color: C.textMuted, fontSize: 12 }}>No routes in this crag yet.</div> : null
+          : !error ? <div style={{ color: C.textMuted, fontSize: 12 }}>No climbs in this crag yet.</div> : null
       )}
 
       {/* The seed browser has had "Don't see a climb? Add it" since forever, but it lives

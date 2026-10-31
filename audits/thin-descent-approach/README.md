@@ -269,26 +269,84 @@ BC 1–5, CA 1–4, AB 1, WY 1, CO 1–2, ID 1, AK 1 and misc 1 (UT, MT, OR, AZ,
 
 **Trad-on-peaks tier DONE: 217 routes written out of 516 rows** (2026-10-30, all through the DB gate; every row verified on re-read, none refused). Rollbacks for all 16 batches are in `rollback/`.
 
+### Aid, trad on cliffs, and sport/top-rope crags (owner reopened 2026-10-30)
+The owner put the excluded tiers back in scope and fixed the order: aid first, then trad on cliffs, then sport/top-rope with one researched
+crag approach shared across that crag's rows. A one-pitch route gets a descent **only where its own page, or its own crag or wall page, states
+it** (lower from anchors that name the method, rappel the route, walk off); a bare "two-bolt anchor" is not a descent. Method:
+`oos/CLIFF-BRIEF.md` and `oos/CRAG-AGENT.md`. Contexts: `ctx-aid-*`, `ctx-cliff-*` (`PEAKISH=not`) and `ctx-crag-*`.
 
-### Aid, cliff trad and crag tiers (owner reopened 2026-10-30; done 2026-10-31)
-Order decided by the owner: aid, then cliff trad, then sport/top-rope by crag. Briefs: `oos/CLIFF-BRIEF.md` plus the session prompts
-(source access: find Mountain Project's real URL by search, open it with WebFetch, never curl a guessed slug).
+Before each batch, `scripts/oneoff/thin-da-live-filter.mjs` re-read the live rows and dropped any field already 150+ characters, so text a
+parallel session wrote in the meantime was never overwritten (it dropped nothing). Every write went through the DB gate.
 
-| Tier | distinct rows | written | notes |
-|---|---|---|---|
-| Aid | 95 | **14** | `oos/batch-aid-*`. Bugaboo Spire (Kain Route descent), North Howser west face, Lotus Flower Tower, Scott Route, Angel Wings, Cannon. 81 obscure walls: no source. |
-| Cliff trad (all) | 811 | **98** | `oos/batch-cliff-*`, `batch-cliff2-*`. The 44 `ctx-cliff-*` chunks held 811 distinct ids, not 965 (154 repeated across chunks). |
-| Cliff trad, multi-pitch remainder | 199 | **41** | `oos/batch-cliff3-*`. **Owner 2026-10-31: finish cliffs for MULTI-PITCH only** (yield ~1 in 10, ~130k tokens per job); one-pitch cliff rows left. |
-| Crag (sport + top-rope) | 577 on 195 crags | **436** | `oos/batch-crag2-*`, one researched approach per crag written on its thin rows; 9 descents only where stated. |
+| Tier | thin rows | written | with a descent | skipped |
+|---|---|---|---|---|
+| Aid (15 batches) | 95 | **44** | 25 | 51 |
+| Trad on cliffs (44 batches) | 913 | **845** | 420 | 68 |
+| Sport/top-rope crags (29 batches) | 577 | **558** | 153 | 19 |
+| **Total** | 1,585 | **1,447** | 598 | 138 |
 
-All writes through dbslot, verified on re-read, 0 refusals. Rollbacks: `rollback/rollback-1793405595646.json` (aid),
-`rollback-1793407703339.json` (cliff), `rollback-1793438630048.json` (multi-pitch), `rollback-1793438787838.json` (crag).
+Every written row was verified on re-read; none was refused. Rollbacks: 85 files `rollback/rollback-{aid,cliff,crag}-<st>-<n>.json`
+(the NH, QC and YT aid batches were all skips). Lead review cut single-source counts (pitches, rappels, rope lengths, distances, bolts),
+grades in prose, superlatives, hedges, testimony, page/photo references, an inferred access line, and descents borrowed from a neighbour.
 
-**Lead review caught, and the batches were corrected before writing:** a researcher that skipped all 80 rows as "no source"
-without reading the crags (sent back: 39 written); search-only "no source" skips relabelled `not researched in this pass` /
-`could not reach a source` (retry lists — grep those spellings); one crag's approach given to a different wall (Miner Wall)
-and a road-fork-only "approach" (Preschool Rock), both skipped; single-source numbers removed (a 20 m rappel, an 80 m wall);
-a single-page "build your own anchors" rappel option dropped.
-**Findings for review:** `ca_east_face_17` (16 rows) and `ca_north_face_the` Riffraff / Well Met in Chappaqua look misfiled
-(Mt Hoffman vs Tuolumne Peak); `nt_fairly_meadows_cragging_the_penguin` attribution doubtful; Lion's Head "Standard" 5.7
-(NH) has no matching route; Possibility Wall "Corner Route (original aid)" is aid filed as trad.
+**Catalog findings for review (nothing changed):**
+- **Mt. Hoffman / Tuolumne Peak swapped:** the 17 `ca_east_face_17_*` rows sit under Tuolumne Peak but every name resolves only to
+  Mt. Hoffman › East Face; three `ca_north_face_the_*` rows sit under Hoffman but belong to Tuolumne Peak North Face. All skipped.
+- **Cannon Cliff aid (`nh_*`):** 11 rows are variations, fragments, or match no page on pitch count and grade. All skipped.
+- **Peaks filed as cliffs / not a route:** `co_eagle_s_nest_naa_ohn_kara` is a multi-day Gore Range traverse filed as a one-pitch 5.6.
+- **Misplaced crags:** `wy_the_mouth_of_the_clark_s_fork_*` is filed under Cody (it belongs under Clarks Fork Canyon);
+  `nt_fairly_meadows_cragging` misspells Fairy Meadows.
+- **Rows that don't match their page:** `bc_triple_peak_permanent_structures` holds the 8-pitch summit route's grade; Hinkey Summit
+  "Time Collapse" starts partway up another route; `ak_panorama_point_panorama_point` carries a different line's page.
+
+**Census after all tiers** (`node scripts/oneoff/thin-da-census.mjs`, read-only, 2026-10-30; report only, not swept):
+
+| primary discipline | alpine tag | routes | thin descent | thin approach | thin either |
+|---|---|---|---|---|---|
+| (none) | no | 197,018 | 196,770 | 196,740 | 196,808 |
+| bouldering | no | 42,411 | 42,411 | 42,411 | 42,411 |
+| sport | no | 29,291 | 29,291 | 29,288 | 29,291 |
+| trad | no | 19,463 | 19,459 | 19,460 | 19,460 |
+| ice | no | 4,195 | 4,190 | 4,188 | 4,191 |
+| toprope | no | 2,445 | 2,445 | 2,445 | 2,445 |
+| bouldering | yes | 1,469 | 1,469 | 1,469 | 1,469 |
+| trad | yes | 1,517 | 1,164 | 382 | 1,190 |
+| mixed | no | 1,016 | 1,016 | 1,016 | 1,016 |
+| aid | no | 1,006 | 1,006 | 1,005 | 1,006 |
+| ice | yes | 1,054 | 858 | 201 | 862 |
+| sport | yes | 578 | 541 | 16 | 541 |
+| mixed | yes | 157 | 113 | 35 | 115 |
+| mountaineering | yes | 155 | 103 | 60 | 105 |
+| aid | yes | 101 | 77 | 48 | 79 |
+| toprope | yes | 63 | 63 | 63 | 63 |
+
+Of 301,941 routes outside Washington, 301,053 are still thin on one field. Nearly all are the bulk crag import with **no alpine tag**: their
+approach and descent were never imported per route, and the crag-level approach belongs on the area page. Within the alpine-tagged rows these
+tiers covered, the approach is now mostly filled (thin approach: trad 382, ice 201, sport 16); what remains thin is the **descent of
+one-pitch routes whose sources state none**, which by the rule above is left blank rather than guessed.
+
+**Top-rope, added after the census** (the crag contexts held sport only, so the 63 alpine-tagged top-rope rows were researched
+separately as `ctx-crag-tr-<st>-1.json`): **62 written, 10 with a descent, 1 skipped** (`wy_lower_blacktail_butte_you_might_be_lost`: no
+page anywhere). Lead review dropped 17 descents that only said how to reach the top anchor, not how to get down. Rollbacks:
+`rollback/rollback-crag-tr-*.json`. Findings: Shitter Crack (Bugaboos) and Dang Along Ling Long are boulder problems filed as top-ropes;
+Layback Corner (Lamoille) may be two routes.
+
+**Item DONE (2026-10-30): 1,509 routes written across aid, cliff trad, sport and top-rope**, every one verified on re-read. The untagged
+bulk import in the census is the next decision, not a backlog.
+
+**Crag walk-in census** (`node scripts/oneoff/area-approach-census.mjs`, read-only, 2026-10-31; report only). The route page shows the
+crag's own walk-in (`areas.approach`) on any crag climb with none of its own, so the untagged rows are best served one crag at a time, not
+per route. Outside Washington, **50,386 areas hold routes and 695 have a walk-in** (80+ characters). 283,653 routes sit on areas without
+one; **8,299 bare areas hold 10+ routes** (CA 1,254, CO 992, UT 571, AZ 428, BC 362). One area id has the prefix `shorty` instead of a
+state: a finding for review. Sweeping this is an owner decision.
+
+### A second, parallel pass over the same tiers (session of 2026-10-31; files in `oos/session-2026-10-31b/`)
+The runner had marked this follow-up done ("its report names no work left"), so a second session took up the same
+aid / cliff / crag tiers without seeing #3099, which was running at the same time. **#3099's writes are the record.**
+- That session wrote 14 aid, 98 cliff, 41 multi-pitch cliff and 436 crag rows. Its applier checked thinness when the
+  contexts were BUILT, not at write time, so **486 fields replaced text #3099 had already written** (measured from the
+  `before` values in its four rollbacks: `rollback-1793405595646`, `-1793407703339`, `-1793438630048`, `-1793438787838`).
+- **Those 486 fields are restored to #3099's text** (`scripts/oneoff/thin-da-restore-parallel.mjs`, only where the live
+  value was still this session's own text). The fields this session found really thin keep its text.
+- Lesson: re-read the live row at write time (#3099's `thin-da-live-filter.mjs` does) and check `git log origin/main`
+  for the item before starting; a runner's "done" can be wrong in either direction.

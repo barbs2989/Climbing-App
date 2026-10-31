@@ -15,7 +15,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   a fact that is not stored is not printed), **CLIMBS HERE** (`ClimbsChart`: one bar per discipline over the whole subtree via the
   `area_climb_stats` RPC, headline = the sum of its bars; a bar opens the Route finder preset to that discipline) with **GRADE SPREAD**
   (`GradeSpread`: columns over the area's main grading scale, saying how many climbs it left out), **GETTING THERE** (`AreaGettingThere`:
-  `parking_note` + the parking pin, `approach` + `approach_min`, Google/Apple Maps links — the page's ONE drive control; *Add the parking pin* where none is
+  `parking_note` + the parking pin, `approach` + `approach_min`, Google/Apple Maps links — the page's ONE drive control; and, when the crag has an approved walk in (`areas.walkin_gpx`, 0397), *Trail to the crag* with its length and a `WalkInMap` of the line over P and C; *Add the parking pin* where none is
   on file and *Move the pin* under one open the sheet at the pin), **CLASSIC CLIMBS HERE**
   (EVERY classic, drawn by `ClassicsList`: the count in the heading, five rows, then a *Show all N classic climbs* dropdown with the rest
   (owner, 2026-10-29). On a wall, `areaClassics` over its loaded rows: climbs that carry the `classic` flag, 3+ guidebook stars (`guide_stars`)
@@ -38,6 +38,9 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Sorting a crag's own climb list** (`AREA_LIST_SORTS` / `sortAreaRoutes`, leaf areas only): chips over the list read **Left → right**
   (default, as Mountain Project and theCrag list a wall), **Right → left**, **A → Z**, **Z → A**. The wall orders read `routes.sort_order` and are
   offered only when at least one climb in the list has one; climbs without a position go last, by name, under a line counting them.
+  A **boulder problem** is never part of the wall order (owner's note, 2026-10-21: "there's no left to right or right to left order ... with
+  bouldering"): its stored `sort_order` (MP's) does not make a list offer Left → right, a problem sorts with the unplaced, by name, is not
+  counted as "no position on the wall yet", and its row prints no "#n in this area" (`RouteRow`). A list of problems sorts A → Z by default.
   Neither import kept a position (the OpenBeta ETL dropped `metadata.leftRightIndex`; MP's route-finder CSV has none), so on 2026-10-21
   **1 of 314,360 routes** had one.
 - **Filters on a wall's list** (owner note, 2026-10-25): **Filters** over a leaf area's climb list narrows it by discipline (the disciplines the wall holds, plus All) and a star minimum (Any / 2+ / 3+ stars; a climb nobody has rated stays in). It filters the rows `useAreaRoutes` already loaded, so it costs no query. The sort adds **By discipline** (one heading per discipline, in `DISCIPLINES` order, A → Z under each). Grade is deliberately NOT a sort key: `grade_num` is only comparable within one scale.
@@ -122,6 +125,8 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   Mirrors Mountain Project's set, nothing extra (standing decision), except the sort, which offers **Left → right** / **Right → left**
   in place of *By area* (owner, 2026-10-21): `routes_in_subtree` `sort_by` `lr` / `rl` (0332) group the climbs by wall and order each wall
   by `sort_order`, no position last; `area` is still accepted. The offline twin is `subtreeComparer` in `lib/offline.js`.
+  With **Bouldering the only type picked** (`boulderOnly` / `sortsFor` / `sortFor` in `RouteFinderPanel.tsx`) the two wall orders become
+  **By boulder** (`sort_by` `area`: each boulder's problems together, by name) and the counts read *problems* (`finderNoun`).
 - **Near me / area map** (`NearMePanel`): Leaflet map of peak/crag area bubbles with route counts, list/map toggle (`ViewToggle`),
   Street / Satellite / Topo / snow base layers (`BaseLayerToggle`), a live location dot, and a place search box
   ("Go to a town, county or zip/postal code") covering the US and Canada (provinces, towns, US zip, Canadian postal codes).
@@ -262,5 +267,6 @@ Area pages (0304): ABOUT, AREA FACTS, CLIMBS HERE + GRADE SPREAD, GETTING THERE,
 - The area bubbles query is capped at 500 rows (`limit(500)`), so a zoomed-out view shows only the highest route counts; the UI is told via `total`.
 - Place search is restricted to `us,ca`; anywhere else returns nothing.
 - 462 of 67,276 areas carry a `blurb`, 529 an `approach`, 9,637 a parking pin (2026-10-15); the sections invite the edit on the rest, and a research pass fills the busiest areas first.
+  By 2026-10-31, 268 of the 279 crags, peaks and walls with 50+ climbs carry a researched `blurb` (batches in `audits/area-pages/`). The rest were skipped: either the place could not be confirmed from two pages, or it is closed to climbing. `scripts/enrich/area-page-apply.mjs` writes these batches. Each entry must list `review.sources`, an entry repeating 8+ words of one is refused, and writes are paced 1 s apart.
 - The chart runs on the area's stored `discipline`; a route filed with none is counted in the headline's "+N filed with no type" line, not in a bar.
 - Only 5-digit values are sent as `postalcode=`; Canadian postal codes go through the free-text `q=` path.

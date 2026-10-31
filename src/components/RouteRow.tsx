@@ -25,7 +25,7 @@ export default function RouteRow({ r, onOpen, C, areaName }: RouteRowProps) {
   // the stored count, exactly as the route page's Pitches stat shows it. A boulder has no pitches, and neither
   // does a scramble (never roped: owner note, 2026-10-25), so a scrambling row shows none here either.
   const pitches = r.pitches > 0 && r.discipline !== "bouldering" && r.discipline !== "scrambling" ?r.pitches + " pitch" + (r.pitches !== 1 ? "es" : "") : null;
-  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, pitches, r.sort_order != null ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
+  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, pitches, r.sort_order != null && r.discipline !== "bouldering" ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
   return (
     <div {...clickable(() => onOpen(r))} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", marginBottom: 8, background: C.card, border: "1px solid " + C.border, borderRadius: 12, cursor: "pointer", flex: 1, minWidth: 0 }}>
       <div style={{ flex: 1, minWidth: 0 }}>

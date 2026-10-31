@@ -4,11 +4,12 @@
 // with a rollback file. The same seven fields a climber can edit (lib/areaFields.js), so a
 // research pass and a contribution land in the same columns and render in the same sections.
 //
-//   node scripts/enrich/area-page-apply.mjs --from audits/area-pages/<batch>.json [--dry] [--overwrite]
+//   node scripts/enrich/area-page-apply.mjs --from audits/area-pages/<batch>.json [--dry] [--overwrite] [--unchecked-ok]
 //
 // Batch shape: { "<area id>": { "_expect": { "name": "...", "region": "..." }, "blurb": "...",
 //   "parking_note": "...", "approach": "...", "approach_min": 60, "season_months": [3,4,5],
-//   "rock": "sandstone", "aspect": "varies" } }
+//   "rock": "sandstone", "aspect": "varies", "review": { "sources": ["https://…"] } },
+//   "_skipped": { "<area id>": "why" } }
 //
 // Rules, each one a rule this repo learned the hard way:
 //   * The id is asserted against `_expect` (name, region) before anything is written — ~91% of
@@ -17,6 +18,10 @@
 //     out-vote what a climber or an earlier pass put there.
 //   * No sentence names a source, says "according to", or SHOUTS (audit:misplaced-prose,
 //     audit:shouted-prose refuse the same things); prose is written here in our own words.
+//   * Every entry lists the pages it was researched from in `review.sources`, and an entry whose
+//     prose shares a run of 8+ words with one of them is refused — enrich:apply's rule for routes
+//     (scripts/lib/source-overlap.mjs). An entry none of whose sources could be read is refused
+//     too, unless --unchecked-ok: an unread source is not a clean one. `review` is never written.
 //   * Column limits are the database's (0247 / 0248 / 0249 / 0282 / 0304); a value the column
 //     would refuse fails the whole entry before any write.
 //   * patchRow throws unless exactly one row changed; the row is re-read and reconciled, and
@@ -24,10 +29,12 @@
 import fs from "fs";
 import { patchRow, SUPABASE_URL, headers, requireServiceKey } from "../lib/supabase-env.mjs";
 import { shoutedStrings } from "../lib/shouted-prose.mjs";
+import { checkEntry } from "../lib/source-overlap.mjs";
 
 const args = process.argv.slice(2);
 const DRY = args.includes("--dry");
 const OVER = args.includes("--overwrite");
+const UNCHECKED_OK = args.includes("--unchecked-ok");
 const from = (() => { const i = args.indexOf("--from"); return i >= 0 ? args[i + 1] : null; })();
 if (!from) { console.error("usage: --from <batch.json> [--dry] [--overwrite]"); process.exit(2); }
 const batch = JSON.parse(fs.readFileSync(from, "utf8"));
@@ -54,9 +61,17 @@ const RBDIR = (() => { const i = args.indexOf("--rollback-dir"); return i >= 0 ?
 const ROLLBACK = `${RBDIR}/rollback-area-page-${Date.now()}.json`;
 const rollback = {};
 let wrote = 0, skipped = 0, failed = 0;
+// Paced (owner's rule for bulk writes to production): at least 1000 ms between writes, so a long batch cannot spend
+// the Disk IO budget the live app reads from.
+const sleep = ms => new Promise(r => setTimeout(r, ms));
 for (const [id, e] of Object.entries(batch)) {
+  if (id.startsWith("_")) continue; // the batch's _skipped block
   const bad = validate(id, e);
   if (bad.length) { console.log(`✗ ${id}: ${bad.join("; ")}`); failed++; continue; }
+  const copy = await checkEntry({ ...e, _expect: undefined }); // the area's own name is not prose and never renders from here
+  if (!copy.listed) { console.log(`✗ ${id}: no review.sources — a researched entry names the pages it came from`); failed++; continue; }
+  if (copy.hits.length) { console.log(`✗ ${id}: repeats a source word for word — ${copy.hits.map(h => `${h.path}: "${h.runs[0]}"`).join("; ")}`); failed++; continue; }
+  if (!copy.read && !UNCHECKED_OK) { console.log(`✗ ${id}: none of its ${copy.listed} source(s) could be read, so the copy check did not run (--unchecked-ok to accept)`); failed++; continue; }
   const r = await fetch(`${SUPABASE_URL}/rest/v1/areas?id=eq.${encodeURIComponent(id)}&select=id,name,region,area_type,${FIELDS.join(",")},rock_basis`, { headers: headers(key) });
   const rows = await r.json();
   if (!Array.isArray(rows) || rows.length !== 1) { console.log(`✗ ${id}: ${Array.isArray(rows) ? rows.length : "?"} rows — not written`); failed++; continue; }
@@ -76,6 +91,7 @@ for (const [id, e] of Object.entries(batch)) {
   rollback[id] = Object.fromEntries(Object.keys(patch).map(k => [k, row[k] ?? null]));
   fs.writeFileSync(ROLLBACK, JSON.stringify(rollback, null, 1));
   await patchRow("areas", id, patch);
+  await sleep(1000);
   const back = (await (await fetch(`${SUPABASE_URL}/rest/v1/areas?id=eq.${encodeURIComponent(id)}&select=${Object.keys(patch).join(",")}`, { headers: headers(key) })).json())[0];
   const drift = Object.keys(patch).filter(k => JSON.stringify(back[k]) !== JSON.stringify(patch[k]));
   if (drift.length) { console.log(`✗ ${id}: re-read differs on ${drift.join(", ")}`); failed++; } else wrote++;

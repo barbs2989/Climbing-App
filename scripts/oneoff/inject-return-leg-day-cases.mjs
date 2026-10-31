@@ -226,7 +226,7 @@ const CASES = [
     name: "placeholder-pitch-count-still-timed",
     file: PLAN,
     why: "the tile says N/A but the totals still add the 0.6 hr the length contradicts",
-    edits: [{ find: "techHrs(realPitches(route), route.avgPitchLength || 35,", repl: "techHrs(route.pitches, route.avgPitchLength || 35," }],
+    edits: [{ find: "techHrs(climbPitches(route), route.avgPitchLength || 35,", repl: "techHrs(route.pitches, route.avgPitchLength || 35," }],
     expect: "fail",
     must: /identical to a route with NO pitch count at all/,
   },

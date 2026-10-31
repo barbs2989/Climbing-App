@@ -108,8 +108,9 @@ check(wl && wl.rows.map((r) => r.src + r.pitch).join() === "via1,via2,via3,own1,
 const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
 check(/function RouteDetail\(\{route:routeRow,/.test(rd), "RouteDetail must receive the stored row as `routeRow`");
 // withRecordedTrackOnly wraps the overlay since 2026-10-25 (the route line is a recorded track or
-// nothing); it only drops a pin-join gpx, so `route` is still the applyApproach overlay.
-check(/const route=useMemo\(function\(\)\{return (?:withRecordedTrackOnly\()?applyApproach\(routeRow,/.test(rd), "RouteDetail's `route` must be the applyApproach overlay");
+// nothing); it only drops a pin-join gpx, so `route` is still the applyApproach overlay. withCragWalkIn
+// (0397) wraps that: it only fills an EMPTY line with the crag's walk in, never touches the overlay's fields.
+check(/const route=useMemo\(function\(\)\{return (?:withCragWalkIn\()?(?:withRecordedTrackOnly\()?applyApproach\(routeRow,/.test(rd), "RouteDetail's `route` must be the applyApproach overlay");
 const sf = rd.match(/<SuggestFix route=\{(\w+)\}/g) || [];
 check(sf.length >= 1 && sf.every((m) => m === "<SuggestFix route={routeRow}"), `SuggestFix must be handed the STORED row (found ${sf.join(", ") || "no mount"})`);
 check(/<ApproachPicker /.test(rd), "the approach picker must be mounted");
