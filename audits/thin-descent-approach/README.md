@@ -269,3 +269,61 @@ BC 1–5, CA 1–4, AB 1, WY 1, CO 1–2, ID 1, AK 1 and misc 1 (UT, MT, OR, AZ,
 
 **Trad-on-peaks tier DONE: 217 routes written out of 516 rows** (2026-10-30, all through the DB gate; every row verified on re-read, none refused). Rollbacks for all 16 batches are in `rollback/`.
 
+### Aid, trad on cliffs, and sport/top-rope crags (owner reopened 2026-10-30)
+The owner put the excluded tiers back in scope and fixed the order: aid first, then trad on cliffs, then sport/top-rope with one researched
+crag approach shared across that crag's rows. A one-pitch route gets a descent **only where its own page, or its own crag or wall page, states
+it** (lower from anchors that name the method, rappel the route, walk off); a bare "two-bolt anchor" is not a descent. Method:
+`oos/CLIFF-BRIEF.md` and `oos/CRAG-AGENT.md`. Contexts: `ctx-aid-*`, `ctx-cliff-*` (`PEAKISH=not`) and `ctx-crag-*`.
+
+Before each batch, `scripts/oneoff/thin-da-live-filter.mjs` re-read the live rows and dropped any field already 150+ characters, so text a
+parallel session wrote in the meantime was never overwritten (it dropped nothing). Every write went through the DB gate.
+
+| Tier | thin rows | written | with a descent | skipped |
+|---|---|---|---|---|
+| Aid (15 batches) | 95 | **44** | 25 | 51 |
+| Trad on cliffs (44 batches) | 913 | **845** | 420 | 68 |
+| Sport/top-rope crags (29 batches) | 577 | **558** | 153 | 19 |
+| **Total** | 1,585 | **1,447** | 598 | 138 |
+
+Every written row was verified on re-read; none was refused. Rollbacks: 85 files `rollback/rollback-{aid,cliff,crag}-<st>-<n>.json`
+(the NH, QC and YT aid batches were all skips). Lead review cut single-source counts (pitches, rappels, rope lengths, distances, bolts),
+grades in prose, superlatives, hedges, testimony, page/photo references, an inferred access line, and descents borrowed from a neighbour.
+
+**Catalog findings for review (nothing changed):**
+- **Mt. Hoffman / Tuolumne Peak swapped:** the 17 `ca_east_face_17_*` rows sit under Tuolumne Peak but every name resolves only to
+  Mt. Hoffman › East Face; three `ca_north_face_the_*` rows sit under Hoffman but belong to Tuolumne Peak North Face. All skipped.
+- **Cannon Cliff aid (`nh_*`):** 11 rows are variations, fragments, or match no page on pitch count and grade. All skipped.
+- **Peaks filed as cliffs / not a route:** `co_eagle_s_nest_naa_ohn_kara` is a multi-day Gore Range traverse filed as a one-pitch 5.6.
+- **Misplaced crags:** `wy_the_mouth_of_the_clark_s_fork_*` is filed under Cody (it belongs under Clarks Fork Canyon);
+  `nt_fairly_meadows_cragging` misspells Fairy Meadows.
+- **Rows that don't match their page:** `bc_triple_peak_permanent_structures` holds the 8-pitch summit route's grade; Hinkey Summit
+  "Time Collapse" starts partway up another route; `ak_panorama_point_panorama_point` carries a different line's page.
+
+**Census after all tiers** (`node scripts/oneoff/thin-da-census.mjs`, read-only, 2026-10-30; report only, not swept):
+
+| primary discipline | alpine tag | routes | thin descent | thin approach | thin either |
+|---|---|---|---|---|---|
+| (none) | no | 197,018 | 196,770 | 196,740 | 196,808 |
+| bouldering | no | 42,411 | 42,411 | 42,411 | 42,411 |
+| sport | no | 29,291 | 29,291 | 29,288 | 29,291 |
+| trad | no | 19,463 | 19,459 | 19,460 | 19,460 |
+| ice | no | 4,195 | 4,190 | 4,188 | 4,191 |
+| toprope | no | 2,445 | 2,445 | 2,445 | 2,445 |
+| bouldering | yes | 1,469 | 1,469 | 1,469 | 1,469 |
+| trad | yes | 1,517 | 1,164 | 382 | 1,190 |
+| mixed | no | 1,016 | 1,016 | 1,016 | 1,016 |
+| aid | no | 1,006 | 1,006 | 1,005 | 1,006 |
+| ice | yes | 1,054 | 858 | 201 | 862 |
+| sport | yes | 578 | 541 | 16 | 541 |
+| mixed | yes | 157 | 113 | 35 | 115 |
+| mountaineering | yes | 155 | 103 | 60 | 105 |
+| aid | yes | 101 | 77 | 48 | 79 |
+| toprope | yes | 63 | 63 | 63 | 63 |
+
+Of 301,941 routes outside Washington, 301,053 are still thin on one field. Nearly all are the bulk crag import with **no alpine tag**: their
+approach and descent were never imported per route, and the crag-level approach belongs on the area page. Within the alpine-tagged rows these
+tiers covered, the approach is now mostly filled (thin approach: trad 382, ice 201, sport 16); what remains thin is the **descent of
+one-pitch routes whose sources state none**, which by the rule above is left blank rather than guessed.
+
+**Top-rope was missed by the crag contexts** (they held sport only): the 63 alpine-tagged top-rope rows are being researched as
+`ctx-crag-tr-<st>-1.json` (CA 34, the other 12 states 29).
