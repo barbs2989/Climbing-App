@@ -36058,4 +36058,33 @@ fact-check.
 
 **Method notes:** No write targets this batch, so `check:sql` was not run. No SQL file produced.
 
-Next batch will continue id-ascending from `wa_goat_mountain_eastern_route` (see progress file).
+## Batch 494 (2026-10-31, pass 8)
+
+Checked 8 routes across 2 peaks: Goat Mountain (South Ridge / Standard Scramble, Southeast Face,
+Southeast Route, Southwest Route) and Golden Horn (East Face, North Face, Northeast Arête,
+Southwest Route).
+
+Confirmed clean (6): `wa_golden_horn_east_face`'s FA ("Joe Sambataro and Jason Schilling, June 27
+2015", route name "F*ck the Pain Away") confirmed via Alpinist's newswire piece and a
+matching-dated cascadeclimbers.com trip report. `wa_golden_horn_north_face`'s FA (Fred Beckey and
+Roe "Duke" Watson, 1958) confirmed via AAJ 1959 and a guidebook-quoting forum post giving the
+precise date July 27 1958. `wa_golden_horn_northeast_arete`'s FA (Gordy Skoog and Jim Walseth,
+August 8 1979, 5.8) confirmed exactly via skisickness.com (Lowell Skoog, who distinguishes it from
+a later KOMO-TV-filmed repeat). `wa_golden_horn_southwest_route`'s FA (Fred Beckey, Keith Rankin,
+Charles Welsh, September 18 1946 — first ascent of the peak) confirmed via Wikipedia and Alpinist;
+sources split on Welsh vs. Walsh spelling, stored "Welsh" matches the majority.
+`wa_goat_mountain_southeast_route` and `wa_goat_mountain_southwest_route` carry no stored data
+beyond their names — nothing to fact-check.
+
+Flagged for human review (2): `wa_goat_mountain_south_ridge`'s stored `high_point_ft` of 6,891 is
+sourced only to SummitPost — Wikipedia/Peakbagger give 6,844 ft (NAVD88), and TopoZone/TopoQuest/a
+USGS-quad citation all independently cluster in the 6,807–6,820 ft range, roughly 70–90 ft below
+the stored figure. No single source commands a clear majority (likely different summit points or
+datums), so left as-is pending human review rather than guessing which figure to adopt.
+`wa_goat_mountain_southeast_face`'s FA ("Pete Doorish and Ross Guffey, September 1985") could not
+be corroborated in AAJ, Mountain Project, SummitPost, or general search — not disproven, just
+unverifiable from available sources, so flagged rather than altered.
+
+**Method notes:** No write targets this batch, so `check:sql` was not run. No SQL file produced.
+
+Next batch will continue id-ascending from `wa_golden_horn_southwest_route` (see progress file).

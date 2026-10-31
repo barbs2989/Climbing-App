@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_goat_mountain_eastern_route",
+  "last_processed_id": "wa_golden_horn_southwest_route",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 493 complete. Continuing id-ascending scope from wa_goat_mountain_eastern_route.",
+  "pass_note": "Pass 8 in progress, batch 494 complete. Continuing id-ascending scope from wa_golden_horn_southwest_route.",
   "batches": [
     {
       "batch_number": 1,
@@ -9805,6 +9805,26 @@
       "clean": 6,
       "sql_file": null,
       "note": "No SQL this batch. Glacier Peak's 10,541 ft elevation (used across wa_glacier_peak_cool_glacier_gerdine, wa_glacier_peak_frostbite_ridge, wa_glacier_peak_kennedy_glacier, wa_glacier_peak_sitkum_glacier) confirmed correct via USGS's own volcano page, SummitPost, and RMI Guides (Wikipedia's infobox shows a newer, inconsistently-cited NAVD88 figure around 10,525 ft alongside body text still using 10,541 ft -- not a clear majority correction, left as-is). The shared 1897 USGS survey-party FA (Gerdine, Strom, Dubor, Bard) stored identically on wa_glacier_peak_cool_glacier_gerdine and wa_glacier_peak_sitkum_glacier is independently corroborated by Mountain Project (names + June 1897 date match exactly) and Cascades climbing-history sources. wa_gilbert_peak_west_route's 8,184 ft high point confirmed via Wikipedia/SummitPost; its corrections field already documents a pre-existing Mazamas-vs-Mountain-Project route-identity ambiguity (Klickton Divide vs Snowgrass approach) -- re-reviewed, nothing new to add. wa_glacier_peak_tahoma_cleaver (really a Mount Rainier route despite its glacier_peak-prefixed id -- area_id correctly points to wa_mount_rainier) confirmed as a real named feature via TopoZone/USGS quad, its stored Success-Cleaver approach description plausible for Rainier's southwest side -- audited clean. Flagged for human review, not fixed: wa_glacier_peak_south_tahoma_headwall's FA ('Steve Marts and Fred Beckey, July 12 1963') -- the route itself is real and well-documented (CascadeClimbers.com forum, ~4,000 ft via Success Cleaver) but no source found confirms or denies this specific date/pair; Beckey's well-documented 1963 FAs turned up in searches don't include it. wa_goat_mountain_eastern_route carries no stored data beyond its name -- nothing to fact-check."
+    },
+    {
+      "batch_number": 494,
+      "date": "2026-10-31",
+      "pass": 8,
+      "route_ids": [
+        "wa_goat_mountain_south_ridge",
+        "wa_goat_mountain_southeast_face",
+        "wa_goat_mountain_southeast_route",
+        "wa_goat_mountain_southwest_route",
+        "wa_golden_horn_east_face",
+        "wa_golden_horn_north_face",
+        "wa_golden_horn_northeast_arete",
+        "wa_golden_horn_southwest_route"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 2,
+      "clean": 6,
+      "sql_file": null,
+      "note": "No SQL this batch. Golden Horn's four routes all check out clean: wa_golden_horn_east_face's FA ('Joe Sambataro and Jason Schilling, June 27 2015', route name 'F*ck the Pain Away') confirmed via Alpinist's newswire piece and a matching-dated cascadeclimbers.com trip report. wa_golden_horn_north_face's FA (Fred Beckey and Roe 'Duke' Watson, 1958) confirmed via AAJ 1959 and a guidebook-quoting forum post giving the precise date July 27 1958. wa_golden_horn_northeast_arete's FA (Gordy Skoog and Jim Walseth, August 8 1979, 5.8) confirmed exactly via skisickness.com (Lowell Skoog, who distinguishes it from a later KOMO-TV-filmed repeat). wa_golden_horn_southwest_route's FA (Fred Beckey, Keith Rankin, Charles Welsh, September 18 1946 -- first ascent of the peak) confirmed via Wikipedia and Alpinist; sources split on Welsh vs Walsh spelling, stored 'Welsh' matches the majority. Flagged for human review, not fixed: wa_goat_mountain_south_ridge's stored high_point_ft of 6,891 is sourced only to SummitPost -- Wikipedia/Peakbagger give 6,844 ft (NAVD88), and TopoZone/TopoQuest/a USGS-quad citation all independently cluster in the 6,807-6,820 ft range, roughly 70-90 ft below the stored figure. No single source commands a clear majority (likely different summit points or datums), so left as-is pending human review rather than guessing which figure to adopt. wa_goat_mountain_southeast_face's FA ('Pete Doorish and Ross Guffey, September 1985') could not be corroborated in AAJ, Mountain Project, SummitPost, or general search -- not disproven, just unverifiable from available sources, so flagged rather than altered. wa_goat_mountain_southeast_route and wa_goat_mountain_southwest_route carry no stored data beyond their names -- nothing to fact-check."
     }
   ]
 }
