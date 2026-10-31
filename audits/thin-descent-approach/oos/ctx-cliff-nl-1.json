@@ -1,16 +1,16 @@
 {
  "targets": [
   {
-   "approach": null,
+   "approach": "Blow Me Down is a south-facing granite dome rising from Devil's Bay, reached by taking a ferry out of Hermitage or Burgeo to the isolated village of Francois, then chartering a fishing boat across to the bay. The route starts at the far right end of the traverse ledge, at its two-bolt rappel anchor.",
    "area_id": "nl_blow_me_down",
    "descent": null,
-   "descent_text": null,
+   "descent_text": "The route finishes with easy fourth- and low fifth-class ground, and the way down is an easy walk off toward the west.",
    "description": null,
    "discipline": "trad",
    "grade": "5.12a",
    "id": "nl_blow_me_down_leviathan",
    "name": "Leviathan",
-   "need_approach": true,
+   "need_approach": false,
    "need_descent": true,
    "parent": "Southwest Coast Fiords",
    "peak": "Blow Me Down",
@@ -20,7 +20,7 @@
    "pitches": 9
   },
   {
-   "approach": null,
+   "approach": "Blow Me Down is a south-facing granite dome rising from Devil's Bay. Reach Francois by ferry from Hermitage or Burgeo, then charter a fishing boat out to the bay. Lucifer's Lighthouse is on the face above the bay.",
    "area_id": "nl_blow_me_down",
    "descent": null,
    "descent_text": null,
@@ -29,7 +29,7 @@
    "grade": "5.12c",
    "id": "nl_blow_me_down_lucifer_s_lighthouse",
    "name": "Lucifer's Lighthouse",
-   "need_approach": true,
+   "need_approach": false,
    "need_descent": true,
    "parent": "Southwest Coast Fiords",
    "peak": "Blow Me Down",
@@ -39,7 +39,7 @@
    "pitches": 12
   },
   {
-   "approach": null,
+   "approach": "Blow Me Down is a south-facing granite dome rising from Devil's Bay. Reach Francois by ferry from Hermitage or Burgeo, then charter a fishing boat out to the bay. The route lies immediately to the right of Lucifer's Lighthouse, with a common beginning.",
    "area_id": "nl_blow_me_down",
    "descent": null,
    "descent_text": null,
@@ -48,7 +48,7 @@
    "grade": "5.12",
    "id": "nl_blow_me_down_the_betrayer_of_hope",
    "name": "The Betrayer of Hope",
-   "need_approach": true,
+   "need_approach": false,
    "need_descent": true,
    "parent": "Southwest Coast Fiords",
    "peak": "Blow Me Down",
@@ -58,7 +58,7 @@
    "pitches": 12
   },
   {
-   "approach": null,
+   "approach": "Begin at the Tablelands parking area, walk east to the viewing deck, ford the river and keep heading east beyond the obvious canyon. Stay along the foot of the mountain over scree, then grind uphill to the wall. Sounds Gouda follows the ridge in the middle of the obvious stepped buttress, to the right of the steep feature that gives the area its name.",
    "area_id": "nl_the_cathedral",
    "descent": null,
    "descent_text": null,
@@ -67,7 +67,7 @@
    "grade": "5.7",
    "id": "nl_the_cathedral_sounds_gouda",
    "name": "Sounds Gouda",
-   "need_approach": true,
+   "need_approach": false,
    "need_descent": true,
    "parent": "Tablelands",
    "peak": "The Cathedral",
@@ -77,7 +77,7 @@
    "pitches": 6
   },
   {
-   "approach": null,
+   "approach": "Park at the Tablelands trailhead and follow the trail to the lookout platform. Continue into Winterhouse Gorge and follow the brook along its west bank until the talus slope up to the wall can be climbed. The route is under the left end of the big wall at the back of the gorge, on its western side.",
    "area_id": "nl_winterhouse_wall",
    "descent": null,
    "descent_text": null,
@@ -86,7 +86,7 @@
    "grade": "5.8",
    "id": "nl_winterhouse_wall_diamond_in_the_rough",
    "name": "Diamond in the Rough",
-   "need_approach": true,
+   "need_approach": false,
    "need_descent": true,
    "parent": "Tablelands",
    "peak": "Winterhouse Wall",
@@ -96,35 +96,16 @@
    "pitches": 5
   },
   {
-   "approach": null,
+   "approach": "Hike the Tablelands trail to the viewing platform in Winterhouse Brook Gorge and continue into the gorge, heading for the waterfall that comes down the center of the western wall. Its first pitch goes up the corner beside the foot of the waterfall.",
    "area_id": "nl_winterhouse_wall",
    "descent": null,
-   "descent_text": null,
-   "description": null,
-   "discipline": "trad",
-   "grade": "5.10b PG13",
-   "id": "nl_winterhouse_wall_nest_of_serpents",
-   "name": "Nest of Serpents",
-   "need_approach": true,
-   "need_descent": true,
-   "parent": "Tablelands",
-   "peak": "Winterhouse Wall",
-   "peak_elev": null,
-   "peak_lat": 49.4562,
-   "peak_lng": -57.96754,
-   "pitches": 5
-  },
-  {
-   "approach": null,
-   "area_id": "nl_winterhouse_wall",
-   "descent": null,
-   "descent_text": null,
+   "descent_text": "Cross the top of the plateau toward the northwest, then drop into the big north-facing bowl by either its west side or its east side.",
    "description": null,
    "discipline": "trad",
    "grade": "5.7",
    "id": "nl_winterhouse_wall_spa_day",
    "name": "Spa Day",
-   "need_approach": true,
+   "need_approach": false,
    "need_descent": true,
    "parent": "Tablelands",
    "peak": "Winterhouse Wall",
@@ -134,7 +115,7 @@
    "pitches": 6
   },
   {
-   "approach": null,
+   "approach": "Park at the Tablelands trailhead and follow the trail to the lookout platform, then continue into Winterhouse Gorge along the river until under the left end of the big wall at the back of the gorge, on its western side. Approach the wall and scramble around to the right to the top of a short bench, which leads to the ledge at the base of the route.",
    "area_id": "nl_winterhouse_wall",
    "descent": null,
    "descent_text": null,
@@ -143,7 +124,7 @@
    "grade": "5.8 R",
    "id": "nl_winterhouse_wall_sunset_boulevard",
    "name": "Sunset Boulevard",
-   "need_approach": true,
+   "need_approach": false,
    "need_descent": true,
    "parent": "Tablelands",
    "peak": "Winterhouse Wall",
@@ -153,7 +134,7 @@
    "pitches": 5
   },
   {
-   "approach": null,
+   "approach": "Park at the Tablelands trailhead and follow the trail to the lookout platform. Continue into Winterhouse Gorge to the big wall at the back of the gorge on the west, then climb the talus to its base.",
    "area_id": "nl_winterhouse_wall",
    "descent": null,
    "descent_text": null,
@@ -162,7 +143,7 @@
    "grade": "5.6",
    "id": "nl_winterhouse_wall_the_coconut_bangers_ball",
    "name": "The Coconut Bangers Ball",
-   "need_approach": true,
+   "need_approach": false,
    "need_descent": true,
    "parent": "Tablelands",
    "peak": "Winterhouse Wall",
