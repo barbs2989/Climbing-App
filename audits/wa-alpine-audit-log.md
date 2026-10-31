@@ -36088,3 +36088,50 @@ unverifiable from available sources, so flagged rather than altered.
 **Method notes:** No write targets this batch, so `check:sql` was not run. No SQL file produced.
 
 Next batch will continue id-ascending from `wa_golden_horn_southwest_route` (see progress file).
+
+## Batch 495 (2026-10-31, pass 8)
+
+Checked 8 routes across 5 peaks: Mount Goode (Megalodon Ridge, Northeast Face, Southwest Couloir),
+Mount Stuart (Gorillas Direct), Gray Wolf Ridge (Southeast Slopes), Gunnshy Peak (Standard Route),
+and the Gunsight Range's Middle Peak (Gunrunner, Standard Route).
+
+Confirmed clean (3): `wa_gorillas_direct`'s FA ("Sol Wertkin, Jens Holsten & Mark Westman, 2011")
+confirmed via Mountain Project and OpenBeta, with grade (5.10d), pitch count (8) and length
+(274m/900ft) all matching; Mount Stuart's 9,415 ft elevation confirmed.
+`wa_gunnshy_peak_standard_route`'s 6,218 ft elevation confirmed (SummitPost's own page is titled
+"Gunnshy Peak (Peak 6218)"; listsofjohn.com agrees), and its unofficial Barclay Lake Trailhead
+approach confirmed via WTA. `wa_gunrunner`'s FA (Blake Herrington & Dan Hilden, July 9 2007),
+grade/pitch count, and Chickamin Glacier approach all confirmed via AAC Publications, Alpinist and
+Mountain Project; its descent's "Blue Glacier" reference — specifically investigated on suspicion
+of confusion with Mount Olympus's famous Blue Glacier — turned out to be CORRECT, not an error:
+there is a genuine, separate "Blue Glacier (Chelan County, Washington)" on Gunsight Peak's own east
+side, disambiguated by Wikipedia for exactly this reason.
+
+Also confirmed, though filed under flagged peaks below for their other fields:
+`wa_goode_mountain_megalodon_ridge`'s and `wa_goode_mountain_southwest_couloir`'s FAs confirmed
+(Herrington/Wertkin, Sept 6 2007; and the peak's own 1936 FA by Bauer/Dickert/Halwax/Hossack/
+MacGowan via this same couloir, respectively), both via Wikipedia/Alpinist/AAC/SummitPost.
+`wa_goode_mountain_northeast_face`'s FA (Fred Beckey and John Parrott, 1954) was specifically
+flagged going in as a possible conflation with Goode's famous Northeast Buttress — confirmed
+instead as a real, distinct route: Beckey's own 1967 AAC account states "In 1954 John Parrott and
+I climbed the ice apron and steep slabs of the direct northeast face," separate from the Buttress
+(Beckey & Tom Stewart, 1966). Mount Goode's own 9,220 ft elevation reconfirmed.
+
+Flagged for human review (5): `wa_gray_wolf_ridge_se_slopes`'s FA ("Leigh B. Lint, 1928") rests only
+on Wikipedia text with no independent corroborating source found (its own elevation, 7,218 ft, is
+confirmed via listsofjohn.com/TopoQuest). `wa_gunsight_peak_standard`'s stored grading (5.6, 6
+pitches, AD) could not be matched to any source — other South Peak/ridge lines found cite 5.7–5.8,
+Grade II, 3 pitches, but may describe a different line; its high_point_ft (8,198 ft) and approach
+(Downey Creek/Chikamin Glacier/Chikamin-Dome col) are confirmed, and its existing
+`rappel_count_note` (already correctly excluding an unrelated North Gunsight route's descent)
+reconfirmed as already handled from a prior pass. `wa_goode_mountain_megalodon_ridge`'s pitch
+count/length and `wa_goode_mountain_southwest_couloir`'s and `wa_goode_mountain_northeast_face`'s
+exact grade/pitch/length/season figures are plausible (likely Beckey's Cascade Alpine Guide-derived)
+but could not be independently corroborated in this pass.
+
+**Method notes:** No write targets this batch, so `check:sql` was not run. No SQL file produced.
+Several sources (Wikipedia, Mountain Project, SummitPost, AAC Publications direct fetch) were
+blocked by this session's network policy for direct WebFetch; findings relied on WebSearch result
+snippets of those pages instead.
+
+Next batch will continue id-ascending from `wa_gunsight_peak_standard` (see progress file).
