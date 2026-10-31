@@ -325,5 +325,11 @@ approach and descent were never imported per route, and the crag-level approach 
 tiers covered, the approach is now mostly filled (thin approach: trad 382, ice 201, sport 16); what remains thin is the **descent of
 one-pitch routes whose sources state none**, which by the rule above is left blank rather than guessed.
 
-**Top-rope was missed by the crag contexts** (they held sport only): the 63 alpine-tagged top-rope rows are being researched as
-`ctx-crag-tr-<st>-1.json` (CA 34, the other 12 states 29).
+**Top-rope, added after the census** (the crag contexts held sport only, so the 63 alpine-tagged top-rope rows were researched
+separately as `ctx-crag-tr-<st>-1.json`): **62 written, 10 with a descent, 1 skipped** (`wy_lower_blacktail_butte_you_might_be_lost`: no
+page anywhere). Lead review dropped 17 descents that only said how to reach the top anchor, not how to get down. Rollbacks:
+`rollback/rollback-crag-tr-*.json`. Findings: Shitter Crack (Bugaboos) and Dang Along Ling Long are boulder problems filed as top-ropes;
+Layback Corner (Lamoille) may be two routes.
+
+**Item DONE (2026-10-30): 1,509 routes written across aid, cliff trad, sport and top-rope**, every one verified on re-read. The untagged
+bulk import in the census is the next decision, not a backlog.
