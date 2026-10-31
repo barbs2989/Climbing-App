@@ -333,3 +333,9 @@ Layback Corner (Lamoille) may be two routes.
 
 **Item DONE (2026-10-30): 1,509 routes written across aid, cliff trad, sport and top-rope**, every one verified on re-read. The untagged
 bulk import in the census is the next decision, not a backlog.
+
+**Crag walk-in census** (`node scripts/oneoff/area-approach-census.mjs`, read-only, 2026-10-31; report only). The route page shows the
+crag's own walk-in (`areas.approach`) on any crag climb with none of its own, so the untagged rows are best served one crag at a time, not
+per route. Outside Washington, **50,386 areas hold routes and 695 have a walk-in** (80+ characters). 283,653 routes sit on areas without
+one; **8,299 bare areas hold 10+ routes** (CA 1,254, CO 992, UT 571, AZ 428, BC 362). One area id has the prefix `shorty` instead of a
+state: a finding for review. Sweeping this is an owner decision.
