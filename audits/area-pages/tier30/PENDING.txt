@@ -1,0 +1,4 @@
+Batches researched and committed but NOT yet applied to the database (the DB gate was queued):
+t17 t19 t20 t21 t22 t23 t24 t25 t26 t27 t28 t29 t30 t31 t32, plus ca_eagle_lake_cliff in t18.
+Apply each with: node scripts/enrich/area-page-apply.mjs --from audits/area-pages/tier30/batch-tNN-*.json
+(an already-applied entry is skipped as "already set", so re-running a batch is safe).
