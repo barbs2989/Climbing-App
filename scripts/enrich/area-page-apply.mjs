@@ -68,7 +68,7 @@ for (const [id, e] of Object.entries(batch)) {
   if (id.startsWith("_")) continue; // the batch's _skipped block
   const bad = validate(id, e);
   if (bad.length) { console.log(`✗ ${id}: ${bad.join("; ")}`); failed++; continue; }
-  const copy = await checkEntry(e);
+  const copy = await checkEntry({ ...e, _expect: undefined }); // the area's own name is not prose and never renders from here
   if (!copy.listed) { console.log(`✗ ${id}: no review.sources — a researched entry names the pages it came from`); failed++; continue; }
   if (copy.hits.length) { console.log(`✗ ${id}: repeats a source word for word — ${copy.hits.map(h => `${h.path}: "${h.runs[0]}"`).join("; ")}`); failed++; continue; }
   if (!copy.read && !UNCHECKED_OK) { console.log(`✗ ${id}: none of its ${copy.listed} source(s) could be read, so the copy check did not run (--unchecked-ok to accept)`); failed++; continue; }
