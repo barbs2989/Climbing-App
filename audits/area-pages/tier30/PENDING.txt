@@ -1,1 +1,1 @@
-All tier-30 batches in this folder through t34 are applied. Newer batch files may still be pending: re-run area-page-apply on them (an applied entry is skipped as already set).
+Researched but NOT yet applied (DB gate backed off): t55 t56 and any later batch files without a matching rollback. Apply: node scripts/enrich/area-page-apply.mjs --from audits/area-pages/tier30/batch-tNN-*.json (safe to re-run).
