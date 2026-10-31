@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_gunsight_peak_standard",
+  "last_processed_id": "wa_helmet_butte_standard_route",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 495 complete. Continuing id-ascending scope from wa_gunsight_peak_standard.",
+  "pass_note": "Pass 8 in progress, batch 496 complete. Continuing id-ascending scope from wa_helmet_butte_standard_route (next batch starts at wa_hibox_mountain_east_route).",
   "batches": [
     {
       "batch_number": 1,
@@ -9845,6 +9845,26 @@
       "clean": 3,
       "sql_file": null,
       "note": "No SQL this batch. Three routes across two peaks check out fully clean: wa_gorillas_direct's FA ('Sol Wertkin, Jens Holsten & Mark Westman, 2011') confirmed via Mountain Project and OpenBeta, with grade (5.10d), pitch count (8) and length (274m/900ft) all matching; Mount Stuart's 9,415ft elevation confirmed. wa_gunnshy_peak_standard_route's 6,218ft elevation confirmed (SummitPost's own page is titled 'Gunnshy Peak (Peak 6218)'; listsofjohn.com agrees), and its unofficial Barclay Lake Trailhead approach confirmed via WTA. wa_gunrunner's FA (Blake Herrington & Dan Hilden, July 9 2007), grade/pitch count, and Chickamin Glacier approach all confirmed via AAC Publications, Alpinist and Mountain Project; its descent's 'Blue Glacier' reference -- specifically investigated on suspicion of confusion with Mount Olympus's famous Blue Glacier -- turned out to be CORRECT, not an error: there is a genuine, separate 'Blue Glacier (Chelan County, Washington)' on Gunsight Peak's own east side, disambiguated by Wikipedia for exactly this reason. wa_goode_mountain_megalodon_ridge's and wa_goode_mountain_southwest_couloir's FAs confirmed (Herrington/Wertkin, Sept 6 2007; and the peak's own 1936 FA by Bauer/Dickert/Halwax/Hossack/MacGowan via this same couloir, respectively), both via Wikipedia/Alpinist/AAC/SummitPost. wa_goode_mountain_northeast_face's FA (Fred Beckey and John Parrott, 1954) was specifically flagged going in as a possible conflation with Goode's famous Northeast Buttress -- confirmed instead as a real, distinct route: Beckey's own 1967 AAC account states 'In 1954 John Parrott and I climbed the ice apron and steep slabs of the direct northeast face,' separate from the Buttress (Beckey & Tom Stewart, 1966). Mount Goode's own 9,220ft elevation reconfirmed. Flagged for human review, not fixed: wa_gray_wolf_ridge_se_slopes's FA ('Leigh B. Lint, 1928') rests only on Wikipedia text with no independent corroborating source found (its own elevation, 7,218ft, is confirmed via listsofjohn.com/TopoQuest). wa_gunsight_peak_standard's stored grading (5.6, 6 pitches, AD) could not be matched to any source -- other South Peak/ridge lines found cite 5.7-5.8, Grade II, 3 pitches, but may describe a different line; its high_point_ft (8,198ft) and approach (Downey Creek/Chikamin Glacier/Chikamin-Dome col) are confirmed, and its existing rappel_count_note (already correctly excluding an unrelated North Gunsight route's descent) reconfirmed as already handled from a prior pass. wa_goode_mountain_megalodon_ridge's pitch count/length and wa_goode_mountain_southwest_couloir's and wa_goode_mountain_northeast_face's exact grade/pitch/length/season figures are plausible (likely Beckey's Cascade Alpine Guide-derived) but could not be independently corroborated in this pass."
+    },
+    {
+      "batch_number": 496,
+      "date": "2026-10-31",
+      "pass": 8,
+      "route_ids": [
+        "wa_guye_peak_improbable_traverse",
+        "wa_guye_peak_r1",
+        "wa_guye_peak_r2",
+        "wa_hadley_peak_cougar_divide",
+        "wa_hadley_peak_skyline_divide",
+        "wa_hagan_mountain_south",
+        "wa_half_moon_southwest_slopes",
+        "wa_helmet_butte_standard_route"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 1,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-10-31-batch-496.sql",
+      "note": "One fix: wa_hadley_peak_skyline_divide's gain_ft/loss_ft (2818) fell 447 ft short of the 3,265 ft floor implied by its own trailhead (4,250 ft) and summit (7,515 ft) waypoints on a route its own text describes as a steady, non-dipping climb -- confirmed via scripts/audit-gain-vs-waypoints.mjs; fixed both fields to 3,265. Six routes check out clean: wa_guye_peak_improbable_traverse's FA (Dave Hiser and Mike Borghoff, 1960; first winter ascent Kit Lewis, 1975) confirmed via Mountain Project/OpenBeta; wa_guye_peak_r2's FA (Hazlehurst/Abel/Dubuar/Hard, October 6 1912, first ascent of the peak) confirmed via Wikipedia; Guye Peak's 5,168 ft elevation (and the ~5,168-5,169 ft figures on all three Guye routes, a documented south-vs-north-summit difference of a few feet already explained in wa_guye_peak_r1's own descent_text) confirmed via Wikipedia/listsofjohn.com; wa_guye_peak_r1's own prior-pass corrections field correctly excludes an unrelated Mountain Project 'West Face' page for a different peak (North Peak, Gunsight Range) -- reconfirmed, nothing to add. Hadley Peak's 7,515 ft elevation and both routes' trailhead coordinates (Cougar Divide FS Road 33 seasonal Nov1-Jul7 closure; Skyline Divide FS Road 37's 2021 flood-washout closure at milepost 3.1) confirmed current via the USFS's own trailhead alert page and WTA trip reports. Hagan Mountain's 7,080 ft elevation and summit coordinates confirmed via Wikipedia/PeakVisor (its own waypoint/route text already correctly flags the 7,067-7,080 ft true-high-point ambiguity among several similar-height summit bumps, so not a new finding). wa_half_moon_southwest_slopes's name/id mismatch (id says southwest_slopes, name and content describe the North Ridge) was already resolved in a prior pass per its own corrections field ('Half Moon has no scramble route, and the previous description matched no documented line') -- reviewed per this batch's instructions and reconfirmed as already-handled, not a new issue; its FA (Beckey brothers and Varney, June 17 1942) and the North Ridge's 7-pitch/III 5.7+ description both check out. wa_helmet_butte_standard_route's 7,400 ft elevation (already corrected from a null in a prior pass per its own corrections field, vs. a 7,420 ft secondary figure) reconfirmed via Wikipedia as the better-corroborated figure. Flagged for human review, not fixed: Half Moon's stored 7,960 ft elevation is the majority Wikipedia/SummitPost (older map-derived) figure, but a specific Sept 2025 survey-grade DGPS resurvey (countryhighpoints.com) plus independent LiDAR (listsofjohn.com) converge on ~7,980-7,992 ft -- a real, ~30 ft gap not yet reflected by the majority of secondary sources, left as-is pending wider citation rather than adopted from a single recent survey, same caution as prior passes' handling of Redoubt/Spickard/Sentinel LiDAR-vs-map conflicts."
     }
   ]
 }

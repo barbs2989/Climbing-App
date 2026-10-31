@@ -36135,3 +36135,66 @@ blocked by this session's network policy for direct WebFetch; findings relied on
 snippets of those pages instead.
 
 Next batch will continue id-ascending from `wa_gunsight_peak_standard` (see progress file).
+
+## Batch 496 (2026-10-31, pass 8)
+
+Checked 8 routes across 5 peaks: Guye Peak (Improbable Traverse, West Face, North Route),
+Hadley Peak (Cougar Divide, Skyline Divide), Hagan Mountain (South Slopes), Half Moon
+(North Ridge), and Helmet Butte (Standard Route).
+
+Confirmed one error and fixed it: `wa_hadley_peak_skyline_divide`'s `gain_ft`/`loss_ft`
+were stored as 2,818, but the route's own waypoints give a trailhead (Skyline Divide
+Trailhead, 4,250 ft) and summit (Hadley Peak, 7,515 ft) 3,265 ft apart on a line its own
+approach text describes as a steady climb — trail to the ridge crest, then a cross-country
+ridge walk, with no descent anywhere in between — so 2,818 ft falls 447 ft short of the
+floor its own data demands. Caught via `scripts/audit-gain-vs-waypoints.mjs` (which flagged
+it specifically; it did not flag the sibling `wa_hadley_peak_cougar_divide`, whose stored
+3,600 ft gain already exceeds its own 2,595 ft floor — correctly, since its approach text
+describes real up-and-down along the divide). Fixed both fields to 3,265, the floor value;
+a human with a track/DEM could tighten this further if the ridge undulates more than the
+route's prose implies. SQL in `audits/sql/2026-10-31-batch-496.sql`.
+
+Confirmed clean (6): `wa_guye_peak_improbable_traverse`'s FA (Dave Hiser and Mike Borghoff,
+1960; first winter ascent Kit Lewis, 1975) confirmed via Mountain Project and OpenBeta.
+`wa_guye_peak_r2`'s FA (Charles Hazlehurst, Hector Abel, Paul Dubuar, and Mary Hard, October
+6 1912 — first ascent of the peak) confirmed via Wikipedia. Guye Peak's ~5,168-5,169 ft
+elevation, consistent across all three routes, confirmed via Wikipedia/listsofjohn.com — the
+1 ft spread between routes is the same documented south-vs-north-summit difference already
+called out in `wa_guye_peak_r1`'s own `descent_text`, not an error. `wa_guye_peak_r1`'s own
+prior-pass `corrections` field (excluding an unrelated Mountain Project "West Face" page
+that actually describes a different peak, North Peak in the Gunsight Range) reconfirmed
+correct. Hadley Peak's 7,515 ft elevation and both routes' trailhead coordinates confirmed,
+including that FS Road 33's Nov 1-Jul 7 wildlife closure (Cougar Divide) and FS Road 37's
+2021 flood-washout closure at milepost 3.1 (Skyline Divide) are both still current per the
+USFS's own trailhead alert pages and recent WTA trip reports. Hagan Mountain's 7,080 ft
+elevation and summit coordinates confirmed via Wikipedia/PeakVisor; the route's own text
+already correctly flags a 7,067-7,080 ft true-high-point ambiguity among several
+similar-height summit bumps on the crest, so the waypoint's 7,067 ft pin next to the row's
+7,080 ft `high_point_ft` is pre-existing, disclosed ambiguity, not a new finding.
+`wa_half_moon_southwest_slopes`'s id/name mismatch flagged in this batch's own task
+description (id says `southwest_slopes`, but the name and all content describe the North
+Ridge) was specifically checked and found already resolved: the row's own `corrections`
+field already documents a prior-pass rewrite ("Half Moon has no scramble route, and the
+previous description matched no documented line") — reconfirmed as already-handled, not a
+new issue to fix here (renaming the id itself is out of scope per this audit's id-stability
+rule). Its FA (Fred and Helmy Beckey with Walt Varney, June 17 1942) and the North Ridge's
+7-pitch, III 5.7+ description both check out against Wikipedia/SummitPost.
+`wa_helmet_butte_standard_route`'s 7,400 ft elevation (already corrected from a null in a
+prior pass, per its own `corrections` field, over a competing 7,420 ft secondary figure)
+reconfirmed as the better-corroborated figure via Wikipedia.
+
+Flagged for human review (1): Half Moon's stored 7,960 ft elevation is the majority
+Wikipedia/SummitPost figure (older, map-derived), but a specific September 2025 survey-grade
+differential-GPS resurvey (countryhighpoints.com) plus independent LiDAR (listsofjohn.com)
+converge on roughly 7,980-7,992 ft — a real ~30 ft gap not yet reflected by the majority of
+secondary sources. Left as-is rather than adopted from a single recent survey not yet widely
+cited, the same caution prior passes applied to the Redoubt/Spickard/Sentinel LiDAR-vs-map
+conflicts.
+
+**Method notes:** `scripts/audit-gain-vs-waypoints.mjs` was run against the live DB and
+scoped to this batch's ids to catch the Skyline Divide gain-floor violation independently of
+manual arithmetic; no other in-batch route tripped it. `npm run check:sql` passed on the
+resulting SQL file with no findings.
+
+Next batch will continue id-ascending from `wa_hibox_mountain_east_route` (see progress
+file).
