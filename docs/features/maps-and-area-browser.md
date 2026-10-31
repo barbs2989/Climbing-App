@@ -15,7 +15,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   a fact that is not stored is not printed), **CLIMBS HERE** (`ClimbsChart`: one bar per discipline over the whole subtree via the
   `area_climb_stats` RPC, headline = the sum of its bars; a bar opens the Route finder preset to that discipline) with **GRADE SPREAD**
   (`GradeSpread`: columns over the area's main grading scale, saying how many climbs it left out), **GETTING THERE** (`AreaGettingThere`:
-  `parking_note` + the parking pin, `approach` + `approach_min`, Google/Apple Maps links — the page's ONE drive control; *Add the parking pin* where none is
+  `parking_note` + the parking pin, `approach` + `approach_min`, Google/Apple Maps links — the page's ONE drive control; and, when the crag has an approved walk in (`areas.walkin_gpx`, 0397), *Trail to the crag* with its length and a `WalkInMap` of the line over P and C; *Add the parking pin* where none is
   on file and *Move the pin* under one open the sheet at the pin), **CLASSIC CLIMBS HERE**
   (EVERY classic, drawn by `ClassicsList`: the count in the heading, five rows, then a *Show all N classic climbs* dropdown with the rest
   (owner, 2026-10-29). On a wall, `areaClassics` over its loaded rows: climbs that carry the `classic` flag, 3+ guidebook stars (`guide_stars`)
