@@ -1,0 +1,86 @@
+{
+ "ak_eye_of_sauron_eye_of_sauron": {
+  "area": "ak_eye_of_sauron",
+  "skip_reason": "no source describes this route (searched MP + AAJ)"
+ },
+ "ak_new_mother_nature": {
+  "area": "ak_gargoyle_the_2",
+  "set": {
+   "approach": "The Gargoyle is a west-facing granite wall at the north entrance of the Ruth Gorge, on the east side of the glacier directly across from Mount Barille. The base is reached over the Ruth Glacier, best done on skis, and how easy the crossing is depends on the state of the glacier."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107939102/the-gargoyle",
+    "https://www.mountainproject.com/route/107939135/new-mother-nature"
+   ],
+   "confidence": "medium",
+   "notes": "Approach only, from the area page; wall height omitted as sources differ. No source states a descent."
+  }
+ },
+ "ak_mt_dickey_crime_of_the_century": {
+  "area": "ak_mt_dickey",
+  "skip_reason": "no source describes this route (searched MP + AAJ)"
+ },
+ "ak_northwest_ridge_2": {
+  "area": "ak_munchkin_the",
+  "set": {
+   "approach": "Little Switzerland is reached by flying to the Pika Glacier, where the base camp sits. The Munchkin's northwest ridge has a very short approach from that camp."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/110470085/northwest-ridge",
+    "https://publications.americanalpineclub.org/articles/12200224200"
+   ],
+   "confidence": "medium",
+   "notes": "Approach only; route page says very short approach from Pika base camp, AAJ report confirms the Pika Glacier flight. No descent source."
+  }
+ },
+ "ak_di_s_surprise": {
+  "area": "ak_royal_tower_the",
+  "set": {
+   "approach": "Little Switzerland is reached by flying to the Pika Glacier airstrip, which also serves as base camp. From camp, ski or snowshoe west to the foot of the Royal Tower, where steep snow and a bergschrund below the wall may call for an ice axe and crampons. This route takes the southernmost buttress of the east face, the one that forms the east end of the south face."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/110470729/dis-surprise",
+    "https://www.mountainproject.com/area/108152245/the-royal-tower"
+   ],
+   "confidence": "medium",
+   "notes": "Approach only; no source states a descent for this route."
+  }
+ },
+ "ak_the_chase": {
+  "area": "ak_royal_tower_the",
+  "set": {
+   "descent_text": "Rappel the route. The lower belays are bolted.",
+   "approach": "Little Switzerland is reached by flying to the Pika Glacier airstrip, which also serves as base camp. From camp, ski or snowshoe west to the foot of the Royal Tower. Depending on the line and conditions, an ice axe and crampons are likely needed for the steep snow slopes and the bergschrund at the base. The Chase climbs the east buttress of the tower."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/110470928/the-chase",
+    "https://www.mountainproject.com/area/108152245/the-royal-tower"
+   ],
+   "confidence": "medium",
+   "notes": "Route page states 'rappel the route' and bolted belays on the first nine pitches; approach from the Royal Tower area page. Walking time omitted (single source)."
+  }
+ },
+ "ak_smaug_s_hoard": {
+  "area": "ak_throne_the",
+  "set": {
+   "descent_text": "From the top, the party descends the west face of The Throne by a series of rappels down a drainage that carries running water, with large bergschrunds to cross lower down.",
+   "approach": "Fly to the Pika Glacier and ski to the foot of The Throne's south face. The first pitch starts at the snow apex on the left edge of the face; the line then works up a dihedral system that leans right, on the west side of the wall."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/110470888/smaugs-hoard",
+    "https://publications.americanalpineclub.org/articles/12200224200"
+   ],
+   "confidence": "medium",
+   "notes": "Route page gives the start; the AAJ report of the first ascent describes the flight to Pika Glacier, ski to the base and the rappel descent of the west-face drainage. Rappel count omitted."
+  }
+ },
+ "ak_southwest_buttress": {
+  "area": "ak_throne_the",
+  "skip_reason": "no source gives a descent or base approach for this row; the Mountain Project page describes about 9 pitches against 20 stored (searched MP + AAJ)"
+ }
+}

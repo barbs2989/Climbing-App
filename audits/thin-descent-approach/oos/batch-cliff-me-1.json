@@ -1,0 +1,25 @@
+{
+ "me_02_north_basin_hanta_yo": {
+  "area": "me_02_north_basin",
+  "skip_reason": "identity in doubt: its own page says it may share ground with another route"
+ },
+ "me_cliff_s_right_bite_the_pillow_we_re_going_in_dry": {
+  "area": "me_cliff_s_right",
+  "set": {
+   "approach": "Start at the point where the golf course's north shore runs into the cliff, past the final pond, and scramble up the hill and left toward the cliff face. The climb starts where the wall protrudes the furthest, to the right of a broken oak tree that lost its top, below a dark streak crossed by gridlines.",
+   "descent_text": "The route tops out on a ledge with webbing and rap rings, which are used to rappel back to the base."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/123355889/bite-the-pillow-were-going-in-dry",
+    "https://www.mountainproject.com/area/106960021/cliffs-right"
+   ],
+   "confidence": "medium",
+   "notes": "Route page; rope length and count left out (single source)."
+  }
+ },
+ "me_cliff_s_right_headboard_direct": {
+  "area": "me_cliff_s_right",
+  "skip_reason": "identity in doubt: MP gives its start only as the top of Bite the Pillow, lists one pitch as unclimbed and describes no top-out"
+ }
+}
