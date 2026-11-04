@@ -610,3 +610,43 @@ still break main between them.
 Landmark assertions in `check:ui` match whole lines, never substrings — a
 substring test passes `"RACK"` on the strength of `"ROUTE TRACK"`, which is exactly
 how a live section gets deleted while the check stays green.
+
+## Running the guards on Windows (since 2026-11-04)
+
+Every guard was written on a Mac. The first `npm run build` on a Windows machine failed **92 of
+122** build guards before any of them checked anything, and every browser walk left its Vite server
+running after it exited. Five causes, all fixed in scripts only (behaviour on macOS/Linux unchanged):
+
+- **`new URL("..", import.meta.url).pathname` as a file path** (164 scripts) gives `/C:/Users/…`
+  on Windows. `git` spawned with it as `cwd` reported `ENOENT`, which read like a missing git.
+  Written now as `fileURLToPath(new URL(…))`. `check:injection-anchors` resolves suite targets from
+  that spelling too, so it learned to read `fileURLToPath(…)` as the same file.
+- **`spawn("npx", …)`** (150 scripts): Windows ships `npx.cmd`, and Node will not spawn a `.cmd`
+  without a shell (CVE-2024-27980), which would re-split the SQL and paths the guards pass. Every
+  site now spawns `NPX, [...NPX_PRE, …]` from `scripts/lib/npx.mjs`. That is plain `npx` off
+  Windows. On Windows it is `node scripts/lib/npx-shim.cjs`, which loads a tool installed in this
+  repo (vite, esbuild) IN ITS OWN PROCESS. That part matters: through npm's npx, `server.kill()`
+  killed only the wrapper and every walk orphaned a Vite server on its port. Tools not installed
+  here (the supabase CLI) fall through to npm's `npx-cli.js`.
+- **`await import(path)`** of a computed absolute path (100 sites): `C:` reads as a URL scheme
+  (`ERR_UNSUPPORTED_ESM_URL_SCHEME`). Now `import(fileHref(path))`, from `scripts/lib/file-href.mjs`.
+- **`path.relative()` / `path.join()` output compared against `"src/components/X.tsx"` keys** (48
+  sites): Windows separators are `\`. `relative()` results are now normalised to `/`. Guards that
+  compare paths failed CLOSED on coverage ("the source walk covered 4 file(s) but not lib/fire.js"),
+  which is how this class was found. No guard went quietly blind on it.
+- **Worktrees:** `ln -s` needs Developer Mode on Windows. Link credentials with hardlinks and
+  directories with junctions instead (PowerShell: `New-Item -ItemType HardLink` for `.env` and
+  `.env.local`, `-ItemType Junction` for `supabase/.temp` and `node_modules`). Neither needs admin.
+
+- **`check:portable-scripts`** (in build, static) fails on the first three spellings anywhere under
+  `scripts/`. Comments are stripped first, because `npx.mjs` and the guard itself describe the bad
+  spellings. The guard's own file is skipped, since its RULES spell every bad pattern; `--selftest`
+  covers it instead. Measured false positives, now excluded: `import(` followed by `${` (template
+  text), `?` (a regex group such as `/import(?:ed)?/`) and `s)` (prose such as "import(s)"). The
+  sweep missed one real site, `return import(out)` in `probe-pinned-states-follow-the-account.mjs`,
+  because it only matched `await import(`; the guard's first run found it. Not checked: `\`
+  separators. They have no single spelling, and the coverage floors already catch them.
+- **Running injection suites concurrently on one box gives false MISSes.** A suite that passes 7/7
+  alone reported 1/7 while a second batch of browser walks ran beside it (its subprocess timed out,
+  so the failure carried no SELF-TEST text and read as a pass). Run suites one at a time, and re-run
+  any batch failure alone before diagnosing it.
