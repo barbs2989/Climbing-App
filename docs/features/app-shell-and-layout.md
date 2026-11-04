@@ -100,8 +100,9 @@ room for side-panel ads later. The phone app keeps its own look.
   - **No emoji in the Calendar** (owner, 2026-10-23): its rows read *Drive from you* and *Daylight* as
     plain labels, its two notes carry the app's line `info` icon, and the empty state a line `calendar` icon
     (`lib/Calendar.jsx`). The meeting place keeps its `pin` line icon through `Lbl`.
-  - **Chats in the rail** (1280px+): under Coming up and Alerts, your direct messages and crew chats, newest
-    first, unread counts on each; one opens the conversation. The same threads the inbox shows (`RailChats`,
+  - **Chats in the rail** (1280px+): under Coming up and Alerts, two folding sections — *Crews*, then
+    *Direct* (owner 2026-11-04) — each a 44px header with a chevron and the section's unread count, five
+    newest conversations apiece and "See all N" past that, both open by default; one opens the conversation. The same threads the inbox shows (`RailChats`,
     App's `_dmCounts` keeps blocked and restricted people out).
   - **Three button looks, and green** (owner 2026-11-04, phone too): `lib/buttonStyles.js`' `BTN_PRIMARY`
     (the app's navy — the one main action), `BTN_SECONDARY` (bordered, plain text), `BTN_LINK` (no box), and
