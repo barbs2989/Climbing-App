@@ -36444,3 +36444,33 @@ No SQL file this batch — nothing confirmed wrong enough to fix.
 
 Next batch will continue id-ascending from `wa_johannesburg_mountain_northeast_buttress` (see
 progress file).
+
+## Batch 503 (pass 8) — 2026-11-04
+
+Checked 8 routes: `wa_johannesburg_mountain_northeast_rib_1951_route`, `wa_kangaroo_temple_north_face`,
+`wa_kimtah_peak_scramble`, `wa_king_kong_gorillas_direct_direct`, three Klawatti Peak routes
+(`north_ridge`, `southeast_face`, `sw_buttress`), and `wa_koala_krack`.
+
+All eight clean — no SQL, nothing flagged. Johannesburg NE Rib (1951 Route)'s own beta, describing
+a faster 1951 start with a "scary" 5.7 pitch versus a lower, easier 1957 start adding ~500 ft, is
+corroborated almost verbatim by a 2020 spokalpine.com trip report; its FA ("party not identified")
+is honest — no source names either start's first party. Kangaroo Temple's 7,572 ft and its North
+Face FA (Crain, Gordon, McGowan & Miller, 1954) are confirmed via Mountain Project/SummitPost/
+Yellowleaf (the peak's own 1942 FA by the Beckey brothers was a different route, the Northwest
+Face, and is undisturbed). Kimtah Peak's `high_point_ft: 8649` matches Peakbagger (8,648.6 ft) and
+rhinoclimbs.com's LiDAR figure (8,649 ft) almost exactly; its FA (John Roper and Jerry Swanson, June
+1970) is confirmed by rhinoclimbs.com — John Roper's own first-ascents site, naming Swanson as his
+bivy partner on this climb. Mount Stuart's 9,415 ft and King Kong - Gorillas Direct Direct's FA/FFA
+(Wertkin & Johnson FA, Wertkin & Gleason FFA, September 2016) are confirmed via Mountain Project/
+OpenBeta/the FA climber's own trip account; the stored "5.11d-5.12a" grade note matches a real
+split between Mountain Project's 5.12a and the FA climber's own 5.11d. Klawatti Peak's 8,485 ft and
+its July 7, 1940 FA (Anderson, Boyer, Gorton) match Wikipedia/SummitPost/ListsOfJohn identically on
+all three of its routes in this batch. Koala Krack's 5.4 grade and its pitch description (traverse
+the slab, climb the wide left-trending crack to a sandy ledge, go left to the bolted/cairned rap
+station) match Mountain Project's own Koala Krack page almost word for word.
+
+Worth a human note, not SQL: Koala Krack's own `corrections` field says no Mountain Project page
+could be found for it — untrue today (one exists and corroborates the route's beta). That's a stale
+provenance note, not a wrong climbing fact, so nothing was written for it.
+
+Next batch will continue id-ascending from `wa_koala_krack` (see progress file).

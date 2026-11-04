@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_johannesburg_mountain_northeast_buttress",
+  "last_processed_id": "wa_koala_krack",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 502 complete. Continuing id-ascending scope from wa_johannesburg_mountain_northeast_buttress (next batch starts after it).",
+  "pass_note": "Pass 8 in progress, batch 503 complete. Continuing id-ascending scope from wa_koala_krack (next batch starts after it).",
   "batches": [
     {
       "batch_number": 1,
@@ -9985,6 +9985,26 @@
       "clean": 7,
       "sql_file": null,
       "note": "All eight verified against authoritative sources, no confirmed errors. Iron Peak (Teanaway) 6,510 ft matches Mountaineers/SummitPost/Yellowleaf. Jack Mountain East Ridge FA (Carl & Gordon Skoog, 16 Jul 1984) confirmed via Wikipedia and a Cascade Climbers post from Lowell Skoog, a relative of the pair. Jack Mountain NE Glacier FA (Beckey/Kloke/Tindall, 19 Jul 1978) confirmed via Wikipedia citing Cascade Alpine Guide. Johannesburg Mountain 8,200 ft (both routes) matches SummitPost/Wikipedia (TopoZone/USGS give 8,100 ft -- minor datum variance, not flagged). CJ Couloir FA (Bressler/Cox/Clough/Myers, 26 Jul 1938, Ptarmigan Traverse party -- also the peak's FA) confirmed via Wikipedia/SummitPost. Flagged, no SQL: Jack Mountain high_point_ft=9075 is set on 4 of these 5 routes with no caveat, but sources genuinely disagree (9,032-9,075 ft across TopoQuest/ListsOfJohn/SummitPost/Wikipedia/MyTopo) -- south_face already carries a data_quality gap noting this; the other four (east_ridge, nohokomeen_headwall, northeast_glacier, southeast_ridge_direct) do not, which is an inconsistent documentation of the same known ambiguity, not a wrong number -- left for human judgment on whether to propagate the same caveat."
+    },
+    {
+      "batch_number": 503,
+      "date": "2026-11-04",
+      "pass": 8,
+      "route_ids": [
+        "wa_johannesburg_mountain_northeast_rib_1951_route",
+        "wa_kangaroo_temple_north_face",
+        "wa_kimtah_peak_scramble",
+        "wa_king_kong_gorillas_direct_direct",
+        "wa_klawatti_peak_north_ridge",
+        "wa_klawatti_peak_southeast_face",
+        "wa_klawatti_peak_sw_buttress",
+        "wa_koala_krack"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 0,
+      "clean": 8,
+      "sql_file": null,
+      "note": "All eight verified against authoritative sources, no confirmed errors and nothing flagged. Johannesburg NE Rib (1951 Route)'s framing of a faster-but-5.7 1951 start vs. a lower, easier 1957 start on the same rib is corroborated almost verbatim by a 2020 spokalpine.com trip report; its FA 'party not identified' matches that no source names the 1957 or 1951 summit parties (AAJ names only a 1951 reconnaissance by Tom Miller's party). Kangaroo Temple's 7,572 ft and its North Face FA (Crain, Gordon, McGowan & Miller, 1954) both confirmed via Mountain Project/SummitPost/Yellowleaf; the peak's own 1942 FA (Beckey brothers, different route) is undisturbed. Kimtah Peak's high_point_ft=8649 matches Peakbagger (8,648.6 ft) and rhinoclimbs.com's LiDAR figure (8649 ft) almost exactly; its FA (John Roper and Jerry Swanson, June 1970) is confirmed by rhinoclimbs.com (Roper's own first-ascents site), which names Swanson as his bivy partner on this climb -- SummitPost/Peakbagger corroborate the Roper party and month but don't name Swanson, and sources split 6 vs. 7 June, which the DB's month-only date sidesteps. Mount Stuart's 9,415 ft and King Kong - Gorillas Direct Direct's FA/FFA (Wertkin & Johnson FA, Wertkin & Gleason FFA, Sept 2016) both confirmed via Mountain Project/OpenBeta/Wertkin's own trip account; the stored 5.11d-5.12a grade split in the prose matches the same split across Mountain Project (5.12a) vs. the FA climber's own account (5.11d). Klawatti Peak's 8,485 ft and its 1940 FA (Anderson, Boyer, Gorton, July 7) match Wikipedia/SummitPost/ListsOfJohn on all three routes on the peak (north_ridge, southeast_face, sw_buttress). Koala Krack's 5.4 grade and its beta/pitch description (traverse the slab, climb the wide left-trending crack to a sandy ledge, go left to the bolted/cairned rap station) match Mountain Project's own Koala Krack route page almost word for word -- worth a human note that the route's own corrections field says no Mountain Project page could be found for it, which is no longer true (one exists and corroborates the route), but that's a stale provenance note, not a wrong climbing fact, so no SQL was written for it."
     }
   ]
 }
