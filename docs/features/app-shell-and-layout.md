@@ -101,6 +101,11 @@ room for side-panel ads later. The phone app keeps its own look.
   - **Chats in the rail** (1280px+): under Coming up and Alerts, your direct messages and crew chats, newest
     first, unread counts on each; one opens the conversation. The same threads the inbox shows (`RailChats`,
     App's `_dmCounts` keeps blocked and restricted people out).
+  - **Three button looks, and green** (owner 2026-11-04, phone too): `lib/buttonStyles.js`' `BTN_PRIMARY`
+    (the app's navy — the one main action), `BTN_SECONDARY` (bordered, plain text), `BTN_LINK` (no box), and
+    `BTN_GO` (green, only Accept and Log). Applied to crew join requests, the partner card's Form crew / +
+    Invite to crew, the Logbook list's actions and the profile's actions; the profile's four actions sit in
+    ONE row on the website (Edit primary). The ✕ and ← Back stay popupChrome's (owner's look).
   - **Nothing stretches across the page** (owner 2026-10-22): the page column is 700px (720 → 640 on
     2026-10-22, → 700 with the zoom on 2026-11-04), and an
     action button sizes to its label instead of filling the column — `wideCss`' rule for a `width:100%`
