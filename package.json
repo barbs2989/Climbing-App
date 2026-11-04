@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "node scripts/run-build-guards.mjs && vite build",
     "preview": "vite preview",
+    "clean:worktrees": "node scripts/clean-worktrees.mjs",
     "check:jsx-comments": "node scripts/check-jsx-comments.mjs",
     "check:screen-lists": "node scripts/check-screen-lists.mjs",
     "check:refs": "node scripts/check-undefined-refs.mjs",
@@ -247,7 +248,7 @@
     "playwright-core": "^1.61.1",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.71.2",
-    "vite": "^6.4.3",
+    "vite": "^6.4.5",
     "ws": "^8.21.1"
   },
   "engines": {
