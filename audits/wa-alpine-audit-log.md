@@ -36474,3 +36474,44 @@ could be found for it — untrue today (one exists and corroborates the route's 
 provenance note, not a wrong climbing fact, so nothing was written for it.
 
 Next batch will continue id-ascending from `wa_koala_krack` (see progress file).
+
+## Batch 504 (pass 8) — 2026-11-04
+
+Checked 8 routes: `wa_kololo_peaks_standard`, two Kyes Peak routes (`glaciated_scramble`,
+`northeast_ridge`), `wa_labor_pains` (North Early Winters Spire), `wa_lake_mountain_pasayten_scramble`,
+and all three Lane Peak north-face couloirs (`r1` The Zipper, `r2` The Fly, `r3` Lover's Lane).
+
+One confirmed error, fixed: Lake Mountain's `overview` and `approach` prose both state "8,377 ft",
+while the row's own `high_point_ft` (8371) matches the only authoritative figure found (SummitPost:
+8,371 ft). The prose was out of sync with the row's own verified field — SQL above fixes the prose,
+leaves `high_point_ft` untouched.
+
+Everything else checked out: Kyes Peak's 7,280+ ft and its Northeast Ridge FA (Mike Heath, September
+14, 1968) are both confirmed by Heath's own AAJ 1969 route note, whose description of the line (Quartz
+Creek Trail to Curry Gap, NE base ~6,000 ft, Class 3 along the Pride Glacier's left edge to the SE
+corner) matches the DB's own approach/beta almost exactly. Kyes' road-status claim (Index-Galena Road
+FR-63 closed mileposts 10-14 since Dec 2025 flood damage, no repair timeline) is corroborated
+near-verbatim by Snohomish County's own Dec 29, 2025 closure notice. Kololo Peaks' 8,240 ft falls
+within the normal published spread (8,200-8,243 ft across Wikipedia/ListsOfJohn/Yellowleaf) — ordinary
+source variance, not an error. Labor Pains' grade/pitch count (5.11a, 5 pitches) match Mountain
+Project's own page exactly; its descent claim (newer bolted rappel line down the West Face) is loosely
+corroborated by a 2016 Mountaineers trip report. All three Lane Peak elevations (6,012 ft) and the
+Zipper/Fly/Lover's Lane relative difficulty-and-position framing check out against Mountain
+Project/Wikipedia/trip-report sourcing; the Fly's cited NWAC near-miss detail ("6 people in two
+parties... Feb 25, 2017") matches the real NWAC near-miss report for that date exactly.
+
+Flagged for human review, no SQL: (1) Labor Pains' FA (Steve Risse and Donna McBain, Sept 1988) is
+plausible — SummitPost names that exact pair/date for *a* North Early Winters Spire route — but
+search snippets couldn't pin it specifically to Labor Pains (SummitPost's own page is network-blocked
+from this session); (2) Labor Pains' stored location "between the Chockstone Route and The West Face"
+conflicts with SummitPost search snippets, which describe it as sitting "between the West Face Route
+and the Southwest Face Route" — only one unconfirmed source either way, so not acted on; (3) the
+Zipper's cited NWAC figure ("13 climbers/skiers across Zipper and Fly" on Feb 25, 2017) — the
+underlying report is real and the date is right, but secondary sourcing of the primary PDF (itself
+unreachable this session — S3 returned 503, archive.org is network-blocked) suggests the true total
+is closer to 9 (6 in the Fly, matching the Fly route's own stored figure, + 3 who skied the Zipper),
+not 13; a human should pull the actual PDF and confirm; (4) Kololo Peaks' claim that the Mountain Loop
+Hwy/FR-49 landslide closure "was repaired and reopened mid-May 2026" has no 2026 reporting either way
+— too recent/narrow to verify from search.
+
+Next batch will continue id-ascending from `wa_lane_peak_r3` (see progress file).
