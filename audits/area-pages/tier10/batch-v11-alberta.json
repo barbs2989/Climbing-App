@@ -1,0 +1,39 @@
+{
+ "ab_paintings_wall": {
+  "_expect": { "name": "Paintings Wall", "region": "Alberta" },
+  "blurb": "A short way past the better-known Water and Hemingway walls, Paintings Wall sits where Grotto Canyon pinches in, near Canmore and Exshaw. It is a sport-only crag of about fifteen bolted lines, reached on foot along the canyon floor. The grades start with a single 5.8 and a handful of 5.9s, then build through 5.10 and 5.11 to a few 5.12s and one 5.13, so there is a middle-grade core with some hard options on top. The limestone is in a canyon where the walls hold plenty of shade, which suits hot days. Many climbs in the canyon are polished from traffic, so expect slick holds on the popular lines.",
+  "review": { "sources": ["https://sendage.com/area/paintings-wall-grotto-canyon-ab-canada", "https://mountainproject.com/area/113323819/grotto-canyon"] }
+ },
+ "ab_university_wall": {
+  "_expect": { "name": "University Wall", "region": "Alberta" },
+  "blurb": "University Wall is a steep, compact limestone face up McGillivray Canyon, east of Canmore in the Bow Valley. It is a hard-sport venue for strong climbers: of the fifteen routes, most fall at 5.13, with a few at 5.12 and a small group at 5.14 and 5.15. The wall runs from vertical to slightly overhanging, with thin, fingery holds and some pocket sections, and the rock is very tight and clean. It faces west inside a narrow canyon, so it sees only a brief spell of sun late in the day and stays cool for much of it. Expect a longer walk up the canyon floor to reach it and little company.",
+  "review": { "sources": ["https://www.mountainproject.com/area/121044117/university-wall", "https://gripped.com/?p=36857"] }
+ },
+ "ab_jupiter_rock": {
+  "_expect": { "name": "Jupiter Rock", "region": "Alberta" },
+  "blurb": "Jupiter Rock is one of the sport walls in the Heart Creek valley, east of Canmore. It lies a few minutes upstream of First Rock, on the right-hand side of the trail. Fifteen bolted limestone routes make up the wall, and nearly all of them are 5.10 with a smaller set of 5.11s, which makes it a good stop for climbers working through the 5.10 range. It tends to be less crowded and less polished than the neighbouring First Rock. Heart Creek is a warm-weather area that fills up on weekends once the lower snow has melted, and the walk in from the trailhead is short and easy.",
+  "review": { "sources": ["https://www.mountainproject.com/area/109293803/jupiter-rock", "https://mountainproject.com/area/107142418/heart-creek"] }
+ },
+ "ab_the_apocalypse_cave": {
+  "_expect": { "name": "The Apocalypse Cave", "region": "Alberta" },
+  "blurb": "The Apocalypse Cave is a steep limestone cave in the middle grotto of Grotto Mountain, above the Bow Valley near Canmore, in the same drainage as the Playground. It is a hard sport venue, not a dry-tooling spot: the fifteen routes here are mostly 5.12, with a few 5.11s and a handful of 5.13 and 5.14 lines. Climbs are generally under 30 m, so a 60 m rope covers them. The cave catches sun from mid-morning through to evening for much of the year, which makes it one of the warmer walls in the valley. Parts of the slope have loose rock, so wear a helmet. The approach is a long, steep uphill hike.",
+  "review": { "sources": ["https://sendage.com/area/apocalypse-cave-ab-canada", "https://gripped.com/?p=15003"] }
+ },
+ "ab_the_drive_in": {
+  "_expect": { "name": "The Drive-In", "region": "Alberta" },
+  "blurb": "The Drive-In is a small cliff at the mouth of Jura Creek, just east of Exshaw in the Bow Valley, set up for dry tooling. The fifteen bolted mixed lines run from M5 to M7, with most of them at M6, and every one ends at a fixed lower-off, so it makes an easy, low-commitment session. Lines start from a ledge on the right side, while the left side holds summer rock climbs that begin on the ground. Routes are roughly 10 to 25 m and the walls are mostly vertical to slabby with the odd small roof. The walk in is brief but steep and loose near the end, and the crag is small enough to fill up quickly.",
+  "review": { "sources": ["https://www.mountainproject.com/area/118051086/the-drive-in", "https://gripped.com/?p=18982"] }
+ },
+ "ab_gardener_s_wall": {
+  "_expect": { "name": "Gardener's Wall", "region": "Alberta" },
+  "blurb": "Gardener's Wall is a pocketed limestone sport face in the Grassi Lakes area above Canmore, directly opposite Golf Course Wall. Its fourteen routes are friendly: one 5.8, most of the rest around 5.9, and five or so at 5.10. Many lines are closely bolted with plenty of holds, so it works well for climbers new to leading who want to step up their grade. The wall is mostly in shade, which helps on warm days but can feel cool early or late in the season. The walk from the main Grassi Lakes trail is short, heading down the hill and turning right at the stairs.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108995907/gardeners-wall", "https://sendage.com/area/gardeners-wall-grassi-lakes-ab-canada"] }
+ },
+ "_skipped": {
+  "ab_cinquefoil_right": "no fetched page about Cinquefoil Right itself; only a page for the parent Cinquefoil crag (which does not mention a Right sector) and a trip-report snippet",
+  "ab_north_ghost": "only one fetchable page about North Ghost (Mountain Project); summitpost and tabvar blocked or erroring, so could not fetch a second"
+ },
+ "_conflicts": {
+  "ab_the_drive_in": "aspect is empty in the input and the pages disagree: gripped.com/?p=18982 says west-facing, app.advcollective.com/climbing/the-drive-in-albertas-accessible-dry-tooling-playground says south-facing; parking also differs (locked yellow gate on mountainproject vs drive-in/pull-on on gripped). Left unfilled."
+ }
+}
