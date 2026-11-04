@@ -1,0 +1,112 @@
+{
+ "ca_crystal_lake_crag": {
+  "verdict": "keep",
+  "why": "Demoted on review: the mapped bedrock at the point includes gneiss, so the stored value is not plainly wrong. Was: MP says decomposing granite, Wikipedia says granite crags around Mount Islip, macrostrat maps Mesozoic granitic rocks at the point",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107313311/crystal-lake-crag?print=1",
+    "https://en.wikipedia.org/wiki/Crystal_Lake_Recreation_Area",
+    "https://macrostrat.org/api/v2/geologic_units/map?lat=34.3181&lng=-117.8491"
+   ]
+  }
+ },
+ "ok_lichen_wall": {
+  "verdict": "unsure",
+  "why": "Rock already corrected to granite in batch-c10; the area coordinate still has one source only, so it is not moved. Was: Wichita Mountains climbing is granite; macrostrat maps Wichita Granite at the MP Lichen Wall point; coordinates left unchanged (single source)",
+  "review": {
+   "sources": [
+    "https://www.theoutbound.com/oklahoma/rock-climbing/climb-at-the-wichita-mountains-wildlife-refuge",
+    "https://macrostrat.org/api/v2/geologic_units/map?lat=34.69598&lng=-98.66703"
+   ]
+  }
+ },
+ "tn_lower_middle_creek": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Lower Middle Creek",
+   "region": "Tennessee"
+  },
+  "rock": "sandstone",
+  "review": {
+   "sources": [
+    "https://madboulder.org/middle-creek",
+    "https://www.visitchattanooga.com/blog/post/winter-climbing-chattanooga/"
+   ]
+  },
+  "why": "Middle Creek boulders are sandstone (madboulder; Visit Chattanooga on Upper Middle Creek, Signal Mountain)"
+ },
+ "mn_casket_quarry_ice_mixed": {
+  "verdict": "keep",
+  "why": "Demoted on review: diorite vs gabbro/anorthosite is a finer classification, not a plain error. Was: Quarry cliff is black gabbro; macrostrat maps anorthositic (Duluth Complex) intrusions, not diorite",
+  "review": {
+   "sources": [
+    "https://www.exploreminnesota.com/profile/quarry-park/26498",
+    "https://macrostrat.org/api/v2/geologic_units/map?lat=46.75229&lng=-92.17159"
+   ]
+  }
+ },
+ "co_bihedral_upper_tier_the": {
+  "verdict": "unsure",
+  "why": "Parking pullout position (before vs after Riviera, 6.8-7.0 mi) not pinned by two sources; MP only (https://www.mountainproject.com/area/105746307/across-from-the-bihedral-aka-cascade-crag)"
+ },
+ "co_death_valley": {
+  "verdict": "unsure",
+  "why": "Only MP (https://www.mountainproject.com/area/114038395/death-valley) names Catslab lot and S aspect; no second domain; Tunnel 5 vs Catslab lot identity unconfirmed"
+ },
+ "co_mountain_rose": {
+  "verdict": "unsure",
+  "why": "NW vs N only on MP; no second domain stating facing"
+ },
+ "co_rincon_l_of_center_route": {
+  "verdict": "keep",
+  "why": "Macrostrat maps Fountain Formation (arkosic sandstone and conglomerate) at the point, so conglomerate is not wrong; south aspect only from MP"
+ },
+ "ct_bear_rock_climbs": {
+  "verdict": "unsure",
+  "why": "climbri.org says gneiss-quartz conglomerate cliff, macrostrat maps Collins Hill schist/gneiss; they disagree, nothing changes"
+ },
+ "ky_fortress_wall": {
+  "verdict": "unsure",
+  "why": "S vs stored E rests on MP only (https://mountainproject.com/area/105869125/fortress-wall); no second source"
+ },
+ "ky_fruit_wall": {
+  "verdict": "unsure",
+  "why": "MP says morning sun, shade afternoon (mountainproject.com/area/110356275/fruit-wall); no explicit facing from a second domain"
+ },
+ "ky_gold_coast": {
+  "verdict": "keep",
+  "why": "MP page cited is Solar Collector (east-facing), which does not include Gold Coast; stored S unchanged"
+ },
+ "ma_red_rock_main_area": {
+  "verdict": "unsure",
+  "why": "Cape Ann Trail Stewards (https://capeanntrailstewards.wildapricot.org/Red-Rocks) say park on Forest Lane north of reservoir; MP says lot north of 133 overpass; no coordinates for both lots"
+ },
+ "mn_louisville_swamp_boulder_s_w_twin_cities_metro_near_sha": {
+  "verdict": "keep",
+  "why": "Area has mixed granite boulder and sandstone zones; macrostrat maps Jordan Sandstone at the point; sandstone stands"
+ },
+ "nc_north_end": {
+  "verdict": "unsure",
+  "why": "No source states North End facing; only 'cool/shaded' general remarks"
+ },
+ "nh_7_the_slabs": {
+  "verdict": "unsure",
+  "why": "Parking naming rests on one page (newhampshireclimbing.com); no second source, lot coordinates not found"
+ },
+ "nm_miner_s_crag": {
+  "verdict": "keep",
+  "why": "MP Miner's page and macrostrat (basaltic to andesitic flows) say basalt; Taos page dacite remark is an inconsistent finer classification; stored basalt kept"
+ },
+ "ut_9th_street": {
+  "verdict": "unsure",
+  "why": "MP Ogden says majority quartzite but not 9th Street; macrostrat maps granitic gneiss at the point; rockclimbing.com said gneiss but unreachable; sources disagree"
+ },
+ "ut_underworld": {
+  "verdict": "unsure",
+  "why": "MP (https://www.mountainproject.com/area/106025053/underworld) says columnar basalt; macrostrat maps Iron Springs sandstone at the same point; summitpost 403"
+ },
+ "ut_zen_wall": {
+  "verdict": "keep",
+  "why": "Macrostrat maps Shinarump conglomerate member (pebbly sandstone) at the point and MP says sandstone; sources overlap, conglomerate stays"
+ }
+}
