@@ -1,0 +1,176 @@
+{
+  "area_id": "wa_primus_peak",
+  "routes": [
+    {
+      "route_id": "wa_east_slope",
+      "season": {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "window": "Jun-Aug (early season best for the glacier)",
+        "evidence": "Borealis Glacier logged ascents Jun 1, Jul 3; all-routes peak Jul 103, Jun 32, May 20; web: snow approach to Lucky Pass easiest early, late-summer glacier icy and broken (SummitPost, Mountaineers); stored Jun-Sep."
+      },
+      "track": {
+        "aid": "3213417",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "23 May 2026 (about a week before the window opens): report describes Thunder Creek trailhead, crossing near McAllister Camp, Lucky Ridge boot trail, Borealis Glacier to the east ridge and summit, matching our East Slope text; track starts 48 m from our trailhead pin, returns to it and peaks at our summit. Only complete round trip on this route."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3237284",
+          "verdict": "unsure",
+          "why": "20 Jun 2026 Borealis Glacier from Thunder Creek, an equally good match, but its start is 476 m from our trailhead pin so it fails the 300 m rule; no pin move proposed."
+        },
+        {
+          "aid": "2752930",
+          "verdict": "offseason",
+          "why": "January ascent."
+        },
+        {
+          "aid": "2331468",
+          "verdict": "different",
+          "why": "Inspiration Traverse from Thunder Creek ending at Eldorado, one-way and multi-peak."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "what_to_bring",
+          "month": 6,
+          "text": "rope for the Borealis Glacier (mid-June snow was still roped); crampons optional in good snow",
+          "aids": [
+            "3237284"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 6,
+          "text": "In mid-June the Borealis Glacier and the Lucky Pass snow were soft and continuous enough that crampons stayed in the pack.",
+          "aids": [
+            "3237284"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 5,
+          "text": "In late May the whole route is under snow; ice axe and rope are needed for the glacier and the ridge above it.",
+          "aids": [
+            "3213417"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 6,
+          "text": "Leave camp gear at Lucky Pass and go light for the final 1,500 ft to the summit.",
+          "aids": [
+            "3237284"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 5,
+          "text": "In late May a camp on the Lucky Ridge crest near 5,300 ft worked well; logs jammed across the deep Thunder Creek channels helped the crossing, but these shift year to year.",
+          "aids": [
+            "3213417"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_north_ridge_4",
+      "season": {
+        "months": [
+          7,
+          8
+        ],
+        "window": "Jul-Aug",
+        "evidence": "No logged ascent names the North Ridge; stored Jul-Sep; web found no separate guidebook season; treated like the East Slope window."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3213417",
+          "verdict": "different",
+          "why": "Goes via Borealis Glacier to the east ridge, not the north ridge."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_primus_peak_south_ridge",
+      "season": {
+        "months": [
+          7,
+          8
+        ],
+        "window": "Jul-Aug",
+        "evidence": "All-routes peak Jul 103; the Eldorado/Inspiration side is a July-through-September glacier objective per Mountaineers and trip pages; stored Jun-Aug."
+      },
+      "track": {
+        "aid": "2563057",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "5 Jul 2024 logged South Slopes from the Eldorado trailhead; report crosses the Klawatti-Austera col and North Klawatti Glacier and climbs the south slopes, matching our Eldorado-side route above the McAllister Glacier; track starts and ends 20 m and 13 m from our trailhead pin and reaches the summit."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3255475",
+          "verdict": "unsure",
+          "why": "4 Jul 2026 complete Eldorado round trip but no route name or report."
+        },
+        {
+          "aid": "430337",
+          "verdict": "unsure",
+          "why": "July 2014 Eldorado round trip logged SW face; line not clearly the same."
+        },
+        {
+          "aid": "3256754",
+          "verdict": "different",
+          "why": "One-way, ends at the trailhead but starts at camp."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "Early July: pre-dawn snow was breakable crust and only firmed on the Klawatti Glacier until the sun hit.",
+          "aids": [
+            "2563057"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "At the Klawatti-Austera col a rappel station of three pitons exists; an exposed class 4 to low 5th move onto the col snow on its northeast side avoids the chimney.",
+          "aids": [
+            "2563057"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "Running water crosses the rocks near 7,035 ft just after rounding the east ridge of Austera, and again on the lower slopes of Primus.",
+          "aids": [
+            "2563057"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 7,
+          "text": "In early July the North Klawatti crossing showed only small cracks needing no detour; the south slopes were a slog of snow-to-rock transitions with the final ~100 ft on class 1-2 rock.",
+          "aids": [
+            "2563057"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Two Peakbagger tracks from Thunder Creek start 476-677 m from our pin (3237284, 2752930); likely a different parking spot than the campground pin, not confirmed, so no move proposed."
+}

@@ -1,0 +1,85 @@
+{
+  "area_id": "wa_buckskin_mountain",
+  "routes": [
+    {
+      "route_id": "wa_buckskin_mountain_southwest_slopes",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep kept. Logged ascents cluster in May-June as snow climbs and one early October storm trip; summer scramble window needs the south gullies melted out, so July-September."
+      },
+      "track": {
+        "aid": "1939354",
+        "verdict": "same",
+        "kind": "oneway",
+        "inSeason": true,
+        "why": "Logged South Face, 2022-06-11 (within a month of the window); track starts 29 m from Entiat River trailhead pin, ends at Entiat Meadows camp, summit within 15 m; report climbs the south-face gully above the meadows and descends a dry rib back to the meadow, matching our south rib/gully line. Early June, so on snow."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "2242039",
+          "verdict": "different",
+          "why": "June 21 2023 summit, but the track begins ~21 km from our trailhead on a Wilson Creek traverse and is not our approach; not a complete round trip from our pin."
+        },
+        {
+          "aid": "1380540",
+          "verdict": "offseason",
+          "why": "May 16 2020 snow ascent via the east ridge, two months before the window; no track."
+        },
+        {
+          "aid": "879128",
+          "verdict": "different",
+          "why": "Early October 2017, crossed from Ice Lakes and climbed the east ridge; no usable track and a storm trip."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "monthBreakdown",
+          "month": 6,
+          "text": "In mid-June the broad south-face gully above the meadows can still be filled with stable snow that is climbed with an ice axe up to the summit ridge, which then has patchy rock and snow.",
+          "aids": [
+            "1939354"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 6,
+          "text": "Traverse the south face at about 7,000 ft to reach the foot of the main gully rather than tackling the gendarmes on the southeast ridge.",
+          "aids": [
+            "1939354"
+          ]
+        },
+        {
+          "field": "descent_note",
+          "month": 6,
+          "text": "In June a dry rib beside the snow gully leads back to the meadow, with only a short stretch of alder to push through.",
+          "aids": [
+            "1939354"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 6,
+          "text": "In late June the south-face gully is loose class 3 choss, and the burned valley below has many blowdowns but game trails help.",
+          "aids": [
+            "2242039"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 10,
+          "text": "An early-October storm can plaster everything above 6,000 ft with new snow and ice, with wet burned trail and windfall on the way out.",
+          "aids": [
+            "879128"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Track 1939354 is a combined Tinpan Mountain + Buckskin day and ends at the meadow camp, so only the one-way leg is claimed. Stored Jul-Sep may be late-biased since most recorded ascents are June snow climbs."
+}

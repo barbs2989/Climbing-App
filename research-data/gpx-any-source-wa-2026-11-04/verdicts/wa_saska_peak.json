@@ -1,0 +1,32 @@
+{
+  "area_id": "wa_saska_peak",
+  "routes": [
+    {
+      "route_id": "wa_saska_peak_emerald_saska_col",
+      "season": { "months": [7,8,9,10], "window": "Jul-Oct", "evidence": "Stored Jul-Sep with Oct larch colour; web: WTA class 3 hike, late-May trip found mushy snow slopes, late-August and September scrambles dry, larches in fall, spring road closures; log histogram peaks Jul and Sep." },
+      "track": { "aid": "2300001", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Only one route is stored on the peak. Logged South Slope; the track starts 5 m from our trailhead pin, ends 26 m away, summit 5 m; the report describes the basin camp, scree up the south slope and the exposed class 3 move to the summit; Sept 3 is in season." },
+      "otherTracksConsidered": [
+        { "aid": "3254837", "verdict": "same", "why": "Complete July 4 track but no report or route name; second choice." },
+        { "aid": "2630055", "verdict": "same", "why": "Sept 1 South route complete, started from a camp, no report text." },
+        { "aid": "2331211", "verdict": "unsure", "why": "Logged Saska Pass; may be a link-up." },
+        { "aid": "3237176", "verdict": "offseason", "why": "June 20, not a complete track." },
+        { "aid": "3214203", "verdict": "offseason", "why": "May 30, snow-season, not complete." },
+        { "aid": "3237689", "verdict": "offseason", "why": "June 20 S face ski/snow track, not complete." },
+        { "aid": "2059354", "verdict": "different", "why": "Multi-peak route via Saska Pass." },
+        { "aid": "1995006", "verdict": "different", "why": "Four-peak link-up." },
+        { "aid": "1041133", "verdict": "different", "why": "Four-peak link-up." },
+        { "aid": "670801", "verdict": "offseason", "why": "June 26 2016." },
+        { "aid": "1337215", "verdict": "offseason", "why": "February winter ascent." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 9, "text": "The summit cone is loose, shattered rock and dirt; the exposed class 3 step to the summit chimney is the one spot worth a careful look.", "aids": ["2300001", "1041133"] },
+        { "field": "pro_tips", "month": 9, "text": "A stable stair-like scree line in a dry gully at the bottom of the slope gives the easiest early footing.", "aids": ["2300001"] },
+        { "field": "approach_note", "month": 9, "text": "In early September the basin below the col has a camp with running water and dense larches; scree on the way down is fast to boot-ski.", "aids": ["2300001"] },
+        { "field": "monthBreakdown", "month": 9, "text": "In mid-September a fresh storm can plaster the upper rock with snow, so expect it slower and give it time to melt.", "aids": ["1041133"] }
+      ]
+    }
+  ],
+  "notes": "The packet has one catalog route, so I accepted the one-route rule for 2300001. The track appears to climb the south scree slope rather than strictly the col line; the stored title says via the Emerald-Saska col, which may be the Emerald traverse and not the normal south route."
+}

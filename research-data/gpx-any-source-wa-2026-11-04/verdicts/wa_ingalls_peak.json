@@ -1,0 +1,182 @@
+{
+  "area_id": "wa_ingalls_peak",
+  "routes": [
+    {
+      "route_id": "wa_east_ridge_9",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep (Oct tail)",
+        "evidence": "Mountaineers route listing gives Jun-Oct for the East Ridge; all-route histogram peaks Jun-Sep; East Ridge logged ascents cluster Jun-Sep with a few Oct; stored Jun-Sep agrees; an Oct 2023 party bailed on snow at pitch 2."
+      },
+      "track": {
+        "aid": "2285295",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Logged route is East Ridge; report describes six pitches with the 5.7 crux on pitch 6 and the S-face rappel descent, matching our route; track runs trailhead to summit (1 m from Peakbagger summit) and back to the same lot on 19 Aug 2023."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "1468918",
+          "verdict": "same",
+          "why": "Aug 2020 East Ridge, round trip, summited; equally valid backup but sparser (2058 pts vs 2941)."
+        },
+        {
+          "aid": "1504805",
+          "verdict": "same",
+          "why": "Sep 2020 East Ridge up / South Face down stats; no elevations in the track, so less usable than 2285295."
+        },
+        {
+          "aid": "2675479",
+          "verdict": "unsure",
+          "why": "Oct 13 2024 East Ridge report is detailed but the packet holds no track points."
+        },
+        {
+          "aid": "1473348",
+          "verdict": "unsure",
+          "why": "Aug 2020 East Ridge report but no track points harvested."
+        },
+        {
+          "aid": "3300764",
+          "verdict": "different",
+          "why": "Logged South Ridge (the other 2025/2026 tracks are South Ridge/South Face/unnamed); shared trailhead and summit prove nothing."
+        },
+        {
+          "aid": "661995",
+          "verdict": "different",
+          "why": "E Ridge then S Face on 4 Jun 2016 with a track that ends miles from the trailhead; not a clean round trip."
+        }
+      ],
+      "pins": [
+        {
+          "type": "Trailhead",
+          "action": "add",
+          "lat": 47.4367,
+          "lng": -120.9372,
+          "name": "Esmeralda Basin / Ingalls Way trailhead",
+          "evidence": "Route stores no waypoints. 13 harvested ascents start within about 60 m of 47.43629,-120.93715, and the route text names the Esmeralda Basin trailhead on FR 9737 and Ingalls Way trail #1390; the WTA hike page for this shared Esmeralda Basin/Ingalls Lake trailhead lists 47.4367, -120.9372.",
+          "confirmedBy": "https://www.wta.org/go-hiking/hikes/lake-ingalls"
+        }
+      ],
+      "facts": [
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "If the fist-jam move at the crux will not go, climbers have stepped left onto small crimps and smears to reach the ridge instead.",
+          "aids": [
+            "2285295",
+            "2675479"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "The opening pitch is easy enough that some parties scramble it, but its start is easy to misread; look for the slings at the first anchor.",
+          "aids": [
+            "2285295",
+            "551472"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 10,
+          "text": "On the mid-route knife edge the right-hand side has more holds; the left is more exposed.",
+          "aids": [
+            "551472"
+          ]
+        },
+        {
+          "field": "what_to_bring",
+          "month": 8,
+          "text": "Warm insulating layer (cold wind at belays in late August)",
+          "aids": [
+            "1473348"
+          ]
+        },
+        {
+          "field": "what_to_bring",
+          "month": 10,
+          "text": "A #4 cam for the final off-width (used on the crux crack in early autumn)",
+          "aids": [
+            "2675479",
+            "551472"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 6,
+          "text": "In early June the gully below the route still holds snow with an awkward moat at the rock, and some parties carried an axe and crampons for it.",
+          "aids": [
+            "661995"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 8,
+          "text": "By early August the moat in the gully has widened enough to step across without touching snow.",
+          "aids": [
+            "1468918"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 10,
+          "text": "On a mid-October weekend, cars lined the road up to about 1.5 miles below the lot while the larches were turning, so arrive before dawn.",
+          "aids": [
+            "2675479"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_ingalls_peak_friends_in_high_places",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Newly established 2024 variation on the East Ridge approach; no route-specific reports found; stored Jul-Sep matches the East Ridge window (Mountaineers lists Jun-Oct for the East Ridge)."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2285295",
+          "verdict": "unsure",
+          "why": "East Ridge-logged tracks share the approach; nothing names this southeast-face variation, so no assignment."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_ingalls_peak_north_peak_southwest_face",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Slab route reached from the notch above Ingalls Lake; peak-wide ascents Jun-Sep; no route-specific page found."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "576972",
+          "verdict": "unsure",
+          "why": "Logged only as SW Face (19 Sep 2015) with no report; our catalog also holds an East Peak Southwest Face, so the name is ambiguous."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Peak has many routes sharing one trailhead and summit. East Ridge, North Peak SW Face and Friends In High Places have no waypoints at all in the packet (no Summit pin either): a summit pin could be added at Peakbagger 47.472435,-120.946105 where nine harvested tracks top out, but only the trailhead add is proposed here. Most other shown tracks belong to South Ridge or South Face and were not assigned."
+}

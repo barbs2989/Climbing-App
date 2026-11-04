@@ -1,0 +1,39 @@
+{
+ "ok_05_sea_of_screams": {
+  "_expect": { "name": "Sea of Screams", "region": "Oklahoma" },
+  "blurb": "Sea of Screams is a granite face on Quartz Mountain in the Wichita range of southwest Oklahoma, sitting between the Headwall and the left flank of the South America formation. About two dozen lines are split evenly between bolted sport and gear-protected trad, plus a single boulder problem. Difficulty runs from easy fifth class through the 5.10s and into 5.11, so there is something for a mixed group, with plenty of moderate options. The wall can be seen from the parking lot and the walk to the first slab is short. Climbers on this mountain report that shade is scarce except early in the day, so plan around the heat.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105866044/sea-of-screams", "https://www.mountainproject.com/area/105854470/quartz-mountain"] }
+ },
+ "ok_07_atlantic": {
+  "_expect": { "name": "Atlantic", "region": "Oklahoma" },
+  "blurb": "Atlantic is a slab-focused granite wall at Quartz Mountain in southwest Oklahoma, just right of the South America formation. It holds roughly twenty routes, most of them trad with a handful of bolted lines, and is known for its traditional climbing on low-angle faces. Grades are concentrated between 5.7 and 5.10, with only a single 5.11, which makes it a good pick for climbers stepping up from moderate terrain. Several lines start from ledges that you reach by scrambling up ramps to the right, so expect a little easy third-class movement before roping up. Like the rest of the mountain, it sees sun for most of the day.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105866101/atlantic", "https://www.mountainproject.com/area/105854470/quartz-mountain"] }
+ },
+ "ok_lower_mount_scott": {
+  "_expect": { "name": "Lower Mount Scott", "region": "Oklahoma" },
+  "blurb": "Lower Mount Scott is a granite cliff band on the north side of Mount Scott in the Wichita Mountains, reached by a short downhill trail from the road. It is a varied crag: roughly half the lines are gear-protected, with the rest a mix of bolted faces, one top-rope and several boulder problems that run from V4 up to a very hard V10. Roped climbs range from 5.6 to the low 5.11s, including a dihedral, crack lines and sustained bolted faces. Walls are noticeably longer than at neighbouring Upper Mount Scott, and wind is usually gentler. Morning and midday sun give way to afternoon shade, and spring and fall are the favourite seasons.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105862446/lower-mount-scott", "https://www.mountainproject.com/area/105862428/mount-scott?print=1", "https://mountainproject.com/area/105858670/wichita-mountains-wildlife-refuge?print=1"] }
+ },
+ "ok_zen_pen_area": {
+  "_expect": { "name": "Zen Pen Area", "region": "Oklahoma" },
+  "blurb": "Zen Pen Area is a river-sandstone bouldering wall near Mannford, about twenty minutes west of Tulsa. It is purely bouldering, with around twenty-one problems that start at the easiest grades and climb to a single V10, with the bulk falling between V2 and V5. The terrain mixes friendly slabs with steeper overhanging lines, and most problems are concentrated on one main wall. The stone is softer than typical sandstone and breaks more readily, and the spot gets little sun and dries slowly, so go when conditions are dry. The walk in is short and the setting by the water is pleasant for a day or two of cragging.",
+  "review": { "sources": ["https://mountainproject.com/area/105988510/zen-pen-area", "https://mountainproject.com/area/105988507/zen-pen"] }
+ },
+ "ok_leaning_tower": {
+  "_expect": { "name": "Leaning Tower", "region": "Oklahoma" },
+  "blurb": "Leaning Tower is the centrepiece formation of The Narrows, a granite canyon of walls in the Wichita Mountains Wildlife Refuge. Its profile, topped by a diving-board shape, makes it easy to pick out. All twenty or so lines are trad, ranging from a 5.5 up to a single 5.11, with most clustered in the 5.7 to 5.10 band, and a couple of routes have two pitches. Several lines are well regarded, but climbers should be comfortable placing their own gear. A well-travelled path leads up from the creek, and at the fork you head left to reach the base.",
+  "review": { "sources": ["https://mountainproject.com/area/105862002/leaning-tower", "https://www.mountainproject.com/area/105860046/the-narrows"] }
+ },
+ "on_powerline_corridor": {
+  "_expect": { "name": "Powerline Corridor", "region": "Ontario" },
+  "blurb": "Powerline Corridor is the busiest stretch of cliff at The Bluffs, a city park on the north edge of Thunder Bay. It holds nearly thirty climbs, mostly trad and top-rope with a few bolted lines, one short aid route and a boulder problem, so it is a handy place to mix styles. Grades start at easy scrambling and work through a good spread of 5.5 to 5.10 climbs before reaching a few 5.12 leads. The cliff line gets morning and early-afternoon light. A trail at the right-hand end of the cliff curls down to a dirt road, and from there you walk back toward the walls. Expect some bushwhacking to the boulder area.",
+  "review": { "sources": ["https://www.mountainproject.com/area/126817508/powerline-corridor", "https://www.mountainproject.com/area/113416889/the-bluffs"] }
+ },
+ "_skipped": {
+  "ok_west_face": "no fetched page describes this West Face itself; only search snippets about Crab Eyes",
+  "ok_glasgow": "no fetched page describes Glasgow itself; only a route listing places it under Mount Scott"
+ },
+ "_conflicts": {
+  "on_powerline_corridor": "stored aspect W, but https://www.mountainproject.com/area/126817508/powerline-corridor says morning and early-afternoon sun (east-ish)"
+ }
+}

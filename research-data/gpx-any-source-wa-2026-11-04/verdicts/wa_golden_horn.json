@@ -1,0 +1,69 @@
+{
+  "area_id": "wa_golden_horn",
+  "routes": [
+    {
+      "route_id": "wa_golden_horn_east_face",
+      "season": { "months": [6, 7, 8, 9], "window": "Jun-Sep", "evidence": "Stored Jun-Sep (first ascent late June 2015). Web search for Golden Horn / Snowy Lakes (Mountaineers, WTA, Summitpost) gives a Jul-Oct window for the peak; a technical east face is plausible from late June through September. No logged ascents name this route." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2040093", "verdict": "different", "why": "Logged Snowy Lakes - NE Face but its highest point is on Tower Mountain, and the report describes the west-side crack onto the summit block, not the east face." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_golden_horn_north_face",
+      "season": { "months": [7, 8, 9, 10], "window": "Jul-Oct", "evidence": "Stored Jul-Oct. Web search: Snowy Lakes/Golden Horn climbed Jul-early Oct, larch peak late Sep-early Oct; a north wall holds snow later. No logged ascent names this route." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3371772", "verdict": "unsure", "why": "Tops out on Golden Horn but climbs the standard block via its north side; nothing ties it to the 1958 north face line." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_golden_horn_northeast_arete",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep. Web search found no route-specific page; peak window Jul-Oct. No logged ascent names the northeast arete." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2040093", "verdict": "different", "why": "'NE Face' logged, but track is a Tower Mountain summit and the report is the west-side summit crack." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_golden_horn_southwest_route",
+      "season": { "months": [7, 8, 9, 10], "window": "Jul-Oct", "evidence": "Stored Jul-Oct. Web search (Mountaineers Tower/Golden Horn pages, WTA, trip blogs): snow-free approach July onward, larch color late Sep-early Oct, early-Oct snow still passable. Histogram of all ascents peaks Jul-Oct (Sep highest)." },
+      "track": {
+        "aid": "3371772",
+        "verdict": "same",
+        "kind": "oneway",
+        "inSeason": true,
+        "why": "Oct 5 2026, summited, starts at the Rainy Pass trailhead (341 m from our pin), camps at Snowy Lakes, tops out on Golden Horn (4 m from our pin). Report: scree up from Snowy Lakes to the ridge, around to the summit block, two or three low-5th moves, rap station on top, scree descent back to the lakes; that is this route (the other three stored routes are multi-pitch technical lines and this party carried a 30 m rope only for the short rappel). Logged route is blank, so identity rests on the description. The track does not return to the trailhead (ends at camp), so it is a trailhead-to-summit one-way."
+      },
+      "otherTracksConsidered": [
+        { "aid": "2903601", "verdict": "same", "why": "Jul 12 2025 logged SE Ridge; same scree-to-ridge, wrap to the back of the block, rap ring; but it starts and ends at Snowy Lakes camp (no approach). Backup for the summit section." },
+        { "aid": "3376784", "verdict": "unsure", "why": "Oct 11 2026 round trip from the Swamp Creek pullout (a different approach, 5.7 km from our trailhead) and a Mount Hardy link-up." },
+        { "aid": "2417023", "verdict": "offseason", "why": "Jun 8 2023 from Cutthroat Lake TH; more than a month before Jul and not a round trip on our trailhead." },
+        { "aid": "1897401", "verdict": "offseason", "why": "Apr 17 2022 ski/snow ascent." },
+        { "aid": "2338982", "verdict": "different", "why": "Oct 2023 round trip from Rainy Pass, but the highest point is Tower Mountain (48.5886,-120.7040); it is a Tower and Golden Horn link-up." },
+        { "aid": "2339587", "verdict": "different", "why": "Oct 2023, Tower + Golden Horn link-up, highest point on Tower." },
+        { "aid": "3286448", "verdict": "different", "why": "Jul 2026 link-up with Tower Mountain." },
+        { "aid": "3282511", "verdict": "different", "why": "Jul 2026 Golden Horn, Tower and Mount Hardy trip, highest on Tower." },
+        { "aid": "1489653", "verdict": "different", "why": "Sep 2020 Tower/Golden Horn/Azurite multi-peak track." },
+        { "aid": "1248192", "verdict": "different", "why": "Sep 2019 logged SW Face, but track tops out on Tower (Golden Horn and Tower same trip)." },
+        { "aid": "3302586", "verdict": "different", "why": "Aug 2026 Azurite plus Golden Horn trip; highest point on Azurite." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 7, "text": "Mosquitoes are thick around Snowy Lakes in July; bring head netting or bug-free slabs to rest on.", "aids": ["2903601"] },
+        { "field": "watch_out", "month": 10, "text": "Early October storms can plaster the summit slab with snow, leaving the final low-5th moves wet and unprotectable.", "aids": ["3376784"] },
+        { "field": "watch_out", "month": 10, "text": "The south summit block's rappel anchor has been a single worn webbing loop; carry your own cord and back it up (Oct 2026).", "aids": ["3371772"] },
+        { "field": "pro_tips", "month": 9, "text": "The upper block has two nearly equal summits; the north one is reached from the ridge side and the south one needs slabby moves from the notch between them.", "aids": ["3371772", "3282511"] },
+        { "field": "what_to_bring", "month": 7, "text": "Short rope (20-30 m) for the quick rappel; a couple of cams for the final blocks (Jul-Oct)", "aids": ["2903601", "3371772"] },
+        { "field": "monthBreakdown", "month": 10, "text": "In early October, camps at Snowy Lakes are quiet midweek but larch weekends bring crowds, and fresh snow can already cover the north side of the summit block.", "aids": ["3371772", "3376784"] }
+      ]
+    }
+  ],
+  "notes": "IMPORTANT: ten of the thirteen harvested 'Golden Horn' tracks do NOT end on Golden Horn. Their highest point is 48.5886,-120.7040, which is Tower Mountain (8,444 ft), 2.7 km southeast; they are Tower/Golden Horn combo tracks attached to the Golden Horn ascent. Our Summit pin (48.60368,-120.732189) agrees with Peakbagger and with TopoQuest/Wikipedia (48.60348,-120.73205 / 48.6034769,-120.7327018), so it is correct; no pin move. Only five tracks truly top out on Golden Horn (3376784, 3371772, 2903601, 2417023, 1897401). No complete trailhead round trip on the standard line exists among them. Trailhead pin at Rainy Pass is fine (tracks start 170-340 m from it)."
+}

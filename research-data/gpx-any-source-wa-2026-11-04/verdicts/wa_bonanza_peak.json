@@ -1,0 +1,187 @@
+{
+  "area_id": "wa_bonanza_peak",
+  "routes": [
+    {
+      "route_id": "wa_bonanza_peak_northeast_buttress",
+      "season": {
+        "months": [
+          7,
+          8
+        ],
+        "window": "Jul-Aug",
+        "evidence": "Peak histogram Jul 173, Jun 19, Aug 18, Sep 5; the glacier is best while snow still bridges crevasses (early July) and the rock above is dry; the buttress is workable into August."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2580786",
+          "verdict": "different",
+          "why": "Logged Mary Green Glacier (standard route) from Holden Pass; not this buttress; no report text."
+        },
+        {
+          "aid": "2565560",
+          "verdict": "different",
+          "why": "Mary Green Glacier standard route, July 2024."
+        },
+        {
+          "aid": "2236407",
+          "verdict": "different",
+          "why": "Mary Green Glacier, July 2023."
+        },
+        {
+          "aid": "2917659",
+          "verdict": "different",
+          "why": "July 2025 one-way track to the main summit by the standard Mary Green line."
+        },
+        {
+          "aid": "1871516",
+          "verdict": "different",
+          "why": "Logged Southeast ridge from Holden Pass; a different line."
+        },
+        {
+          "aid": "3257492",
+          "verdict": "different",
+          "why": "July 2026 standard glacier route from Holden Pass."
+        },
+        {
+          "aid": "2922089",
+          "verdict": "different",
+          "why": "July 2025 standard Mary Green line."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 7,
+          "text": "Past Holden Lake the path can vanish into avalanche debris in early July; keeping to the right-hand (north) trail on the way to the pass avoids a swampy wade.",
+          "aids": [
+            "2565261",
+            "70880"
+          ]
+        },
+        {
+          "field": "descent_note",
+          "month": 7,
+          "text": "On the way down in July, the waterfall slabs below the glacier are slippery wherever wet and some steps have piton anchors for a short rappel; belaying across the moat at the glacier edge is common.",
+          "aids": [
+            "2565261",
+            "2922089",
+            "999989"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_bonanza_peak_cascadian_route",
+      "season": {
+        "months": [
+          8,
+          9
+        ],
+        "window": "Aug-Sep",
+        "evidence": "Stored Aug-Sep; the only ascent on record (Aug 2023); no logged ascents of the route in the packet."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3257492",
+          "verdict": "different",
+          "why": "All recordings go to the main summit by the Mary Green route; this route finishes on the Southwest Peak ~560 m away."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_bonanza_peak_oregonian_route",
+      "season": {
+        "months": [
+          8,
+          9
+        ],
+        "window": "Aug-Sep",
+        "evidence": "Stored Aug-Sep; FA early September 2013; no tracks on this wall."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3257492",
+          "verdict": "different",
+          "why": "All recordings go to the main summit by the Mary Green route; this route finishes on the Southwest Peak ~560 m away."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_soviet_route",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep with best late Aug-Sep; FA September 1975; no recordings of this route."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3257492",
+          "verdict": "different",
+          "why": "All recordings go to the main summit by the Mary Green route; this route finishes on the Southwest Peak ~560 m away."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_needle_peak_north_ridge",
+      "season": {
+        "months": [
+          7,
+          8
+        ],
+        "window": "Jul-Aug",
+        "evidence": "Stored Jul-Aug; the one in-packet traverse of the Dark Peak to Bonanza crest was late July (2023)."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2267709",
+          "verdict": "unsure",
+          "why": "Late July 2023 Dark Peak to Bonanza traverse, shared with the upper half of this route, but it started from Hemlock Camp and Dark Fin Col, not Needle Peak/Swamp Creek, and has no track."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "In late July the downclimb from the knife-edge off the West Summit to the summit block was very exposed with few holds, about 5.3, and the summit block took three roped low-5th pitches.",
+          "aids": [
+            "2267709"
+          ]
+        },
+        {
+          "field": "descent_note",
+          "month": 7,
+          "text": "In late July the Mary Green Glacier was broken but the entry had no moat; two crevasse crossings in evening soft snow, then the waterfall ledges downclimbed.",
+          "aids": [
+            "2267709"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 7,
+          "text": "One party reached the Dark Peak side from the PCT at Hemlock Camp instead, straight up the steep woods to Dark Fin Col, avoiding the Swamp Creek brush; flat bivy spots at the col are scarce.",
+          "aids": [
+            "2267709"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "The catalog has no standard Mary Green Glacier route (all recordings and ~170 July ascents follow it; main-summit pin on the NE Buttress route is within 0-10 m of every track). Summit pins on Soviet/Oregonian/Cascadian sit on the Southwest Peak (~560 m from the main summit), consistent with those routes finishing there. No track assigned because none is a recording of one of these five routes. NE Buttress facts cover only the Holden Pass approach and the shared glacier descent. July 2026 reports note Holden Village was inaccessible after storm damage, a one-off I left out."
+}

@@ -1,0 +1,52 @@
+{
+  "area_id": "wa_old_snowy_mountain",
+  "routes": [
+    {
+      "route_id": "wa_old_snowy_mountain_north_route",
+      "season": { "months": [7, 8, 9], "window": "mid-Jul to Sep", "evidence": "Web search: a regional guide lists the area as snow-free mid-July to mid-October, with snow lingering at Snowgrass Flat into late July some years; the all-routes histogram peaks Jul-Sep. No stored text or pins for this route." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2728488", "verdict": "different", "why": "Logged NW Ridge, which is the other stored route." },
+        { "aid": "3369202", "verdict": "unsure", "why": "Blank logged route on a peak with several routes." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_old_snowy_mountain_r1",
+      "season": { "months": [7, 8, 9], "window": "mid-Jul to Sep", "evidence": "Web search: a regional guide lists Snowgrass Flat as snow-free mid-July to mid-October and notes snow can linger through late July; a Mountaineers page covers the same hike; histogram Jul 181, Aug 223, Sep 159, Oct 42. Early October ascents are within a month of the season." },
+      "track": { "aid": "2728488", "verdict": "same", "kind": "complete", "inSeason": true, "why": "Logged route is NW Ridge, matching our Northwest Ridge / PCT approach; the 16-mile round trip goes out and back from the trailhead area to the summit block (closed loop within 3 m) on the PCT line, without visiting Ives Peak. It starts about 800 m west of our pin at the Berry Patch trailhead, a separate trailhead joined to Trail 96 by a connector." },
+      "otherTracksConsidered": [
+        { "aid": "3360949", "verdict": "different", "why": "Starts at our trailhead but its highest point is on Ives Peak; a two-peak outing, not a clean one-route track." },
+        { "aid": "3331051", "verdict": "different", "why": "Old Snowy on day one then Ives Peak on day two; loop, ends far from start." },
+        { "aid": "2988303", "verdict": "unsure", "why": "Logged as the Goat Ridge Trail and PCT approach, a different way in; summit reached in July, 22.6 miles; not clearly our line." },
+        { "aid": "3348867", "verdict": "different", "why": "Starts on the PCT mid-way, not at a trailhead, and its highest point is on Ives Peak." },
+        { "aid": "3369202", "verdict": "unsure", "why": "Blank logged route in early October, 19-mile overnight; not described well enough to pin to a route." },
+        { "aid": "2265929", "verdict": "different", "why": "One-way from Goat Lake camp to Cispus Basin as part of a backpacking trip." },
+        { "aid": "3196840", "verdict": "offseason", "why": "Ski ascent in mid-May." }
+      ],
+      "pins": [
+        { "type": "Trailhead", "action": "add", "lat": 46.4667806, "lng": -121.5277621, "name": "Berry Patch Trailhead (Trail #95, connects to Trail #96)", "evidence": "Four of the recorded round trips (including the chosen NW Ridge one) start here, at about 4,650 ft. WTA and the Forest Service describe Berry Patch as a separate trailhead on FR-2150 near Chambers Lake, a short distance past the Snowgrass turnoff, with a connector to Trail 96; OSM maps it 300 m from Chambers Lake Campground, which matches. Our existing Snowgrass Flats pin matches WTA's stated coordinate (46.4642, -121.5190), so it stays.", "confirmedBy": "https://nominatim.openstreetmap.org/search?format=json&q=Berry+Patch+Trailhead+Washington (OSM trailhead node); name and location relation also from https://www.fs.usda.gov/r06/giffordpinchot/recreation/berry-patch-trailhead and WTA's Snowgrass hike page" }
+      ],
+      "facts": [
+        { "field": "watch_out", "month": 7, "text": "Day hikers above the summit block can knock loose stones onto the scramble below (late July)", "aids": ["1007977"] },
+        { "field": "pro_tips", "month": 7, "text": "A high camp near the PCT meadows around 6,500 ft beside a small stream puts the summit about 1.4 miles and 1,100 ft away; the upper end of the meadows has fewer mosquitoes.", "aids": ["1007977"] },
+        { "field": "approach_note", "month": 8, "text": "After leaving US-12 the approach road is about 16 miles of unpaved washboard; no big potholes in late August, but higher clearance is more comfortable.", "aids": ["3331051"] },
+        { "field": "monthBreakdown", "month": 9, "text": "By mid-September only small snow patches sit near the summit and the scramble is straightforward class 2 talus with decent footing.", "aids": ["3348867"] },
+        { "field": "monthBreakdown", "month": 10, "text": "In early October the route was completely free of snow, with the berry bushes at peak colour in the meadows.", "aids": ["3369202"] }
+      ]
+    },
+    {
+      "route_id": "wa_old_snowy_mountain_west_route",
+      "season": { "months": [7, 8, 9], "window": "mid-Jul to Sep", "evidence": "Web search (same as the others): snow-free mid-July to mid-October at Snowgrass Flat; no stored text or pins for this route." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "1784446", "verdict": "offseason", "why": "Mid-October ridge-run link-up of six peaks." },
+        { "aid": "3369202", "verdict": "unsure", "why": "Blank logged route on a peak with several routes." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "North Route and West Route are empty shells (no grade, text or pins), so no track can be tied to them. Berry Patch tracks fail the 300 m rule only because our single trailhead pin is the Snowgrass one."
+}

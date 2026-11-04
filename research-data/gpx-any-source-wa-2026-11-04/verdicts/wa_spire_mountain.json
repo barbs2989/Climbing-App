@@ -1,0 +1,82 @@
+{
+  "area_id": "wa_spire_mountain",
+  "routes": [
+    {
+      "route_id": "wa_spire_mountain_scramble",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep (late July on). Web search (Mountaineers Spire Mountain page, summitpost) found no month guidance beyond a spring-to-fall remark; a May track met snow from about 4,400 ft and a moat, so May is offseason. Histogram: Aug 6, Jul 3, Sep 3."
+      },
+      "track": {
+        "aid": "1458598",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "We hold exactly one route on Spire Mountain and the Aug 15 2020 track follows its described line: from the FR-63 pullout, up the north side, across to the summit ridge and back to the same pullout, ending 4 m from our summit pin and 90 m from the trailhead pin."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3209140",
+          "verdict": "offseason",
+          "why": "May 27 with snow from about 4,400 ft; over a month before the stated late-July start."
+        },
+        {
+          "aid": "2855558",
+          "verdict": "offseason",
+          "why": "May 31."
+        },
+        {
+          "aid": "871988",
+          "verdict": "not-summited",
+          "why": "Turned back."
+        },
+        {
+          "aid": "2581936",
+          "verdict": "unsure",
+          "why": "Jul 20 2024 summit but no GPS track in the harvest; used for facts."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 7,
+          "text": "Straight off the parking pullout the first stretch is thick fern hiding deadfall, which is slow in the dark in July; after the first old logging road the going is easier.",
+          "aids": [
+            "2581936"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "On the summit block, the blocky left side with ramps was firmer than the mossy, dirty right side (July).",
+          "aids": [
+            "2581936"
+          ]
+        },
+        {
+          "field": "what_to_bring",
+          "month": 7,
+          "text": "30 m rope and a few slings for the rappel anchors above the crux (July)",
+          "aids": [
+            "2581936"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "Several false tops precede the true summit; a roughly 25 ft dirty notch must be downclimbed and re-climbed (July)",
+          "aids": [
+            "2581936"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Packet had one route. Report 2581936 (Jul 20 2024) has no harvested track but was used for in-season facts."
+}

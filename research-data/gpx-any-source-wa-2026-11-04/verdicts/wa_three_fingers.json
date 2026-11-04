@@ -1,0 +1,178 @@
+{
+  "area_id": "wa_three_fingers",
+  "routes": [
+    {
+      "route_id": "wa_three_fingers_r1",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Guides advise early-mid September for the best glacier conditions at Tin Can Gap, with July and high-snow years forcing detours; logged ascents of the mountain peak Aug-Sep. Stored late July-Sep kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3362393",
+          "verdict": "different",
+          "why": "Sep 27 summit track ends at the lookout South Peak (about 120 m from our Middle pin, 450 m from our North pin); no report, no logged route name. The lookout line is stored as its own route."
+        },
+        {
+          "aid": "3336445",
+          "verdict": "different",
+          "why": "Backdoor/Meadow Mountain approach to the lookout South Peak."
+        },
+        {
+          "aid": "3331129",
+          "verdict": "different",
+          "why": "Backdoor bushwhack to the lookout."
+        },
+        {
+          "aid": "2986940",
+          "verdict": "different",
+          "why": "SAR route to the lookout."
+        },
+        {
+          "aid": "2992695",
+          "verdict": "different",
+          "why": "Backdoor then standard trail to the lookout."
+        },
+        {
+          "aid": "2670084",
+          "verdict": "different",
+          "why": "Goat Flats trail to the lookout; report mentions ladders."
+        },
+        {
+          "aid": "2264436",
+          "verdict": "different",
+          "why": "Meadow Mountain approach to lookout ladders."
+        },
+        {
+          "aid": "865713",
+          "verdict": "different",
+          "why": "Report goes to the lookout via Tupso Pass."
+        },
+        {
+          "aid": "83317",
+          "verdict": "different",
+          "why": "Oct 2009 trail trip to the lookout, off-season too."
+        },
+        {
+          "aid": "3132817",
+          "verdict": "not-summited",
+          "why": "March turn-around."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "Black bears with cubs were seen on the trail near Goat Flats in mid-August; store food carefully.",
+          "aids": [
+            "3331844"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 8,
+          "text": "Water at Saddle Lake is poor; a better stream runs about halfway from there to Goat Flats, and melt streams are good beyond Tin Can Gap in late summer.",
+          "aids": [
+            "2264436",
+            "3331844",
+            "865713"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 9,
+          "text": "Late August into September is the usual window to dodge the moat and most glacier work below the Tin Can Gap shoulder.",
+          "aids": [
+            "865713"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_three_fingers_r2",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "No season stored; same approach and glacier as the North Peak, so the same Jul-Sep window (guides: early-mid September best on the glacier)."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3362393",
+          "verdict": "different",
+          "why": "Sep 27 summit track ends at the lookout South Peak (about 120 m from our Middle pin, 450 m from our North pin); no report, no logged route name. The lookout line is stored as its own route."
+        },
+        {
+          "aid": "3336445",
+          "verdict": "different",
+          "why": "Backdoor/Meadow Mountain approach to the lookout South Peak."
+        },
+        {
+          "aid": "3331129",
+          "verdict": "different",
+          "why": "Backdoor bushwhack to the lookout."
+        },
+        {
+          "aid": "2986940",
+          "verdict": "different",
+          "why": "SAR route to the lookout."
+        },
+        {
+          "aid": "2992695",
+          "verdict": "different",
+          "why": "Backdoor then standard trail to the lookout."
+        },
+        {
+          "aid": "2670084",
+          "verdict": "different",
+          "why": "Goat Flats trail to the lookout; report mentions ladders."
+        },
+        {
+          "aid": "2264436",
+          "verdict": "different",
+          "why": "Meadow Mountain approach to lookout ladders."
+        },
+        {
+          "aid": "865713",
+          "verdict": "different",
+          "why": "Report goes to the lookout via Tupso Pass."
+        },
+        {
+          "aid": "83317",
+          "verdict": "different",
+          "why": "Oct 2009 trail trip to the lookout, off-season too."
+        },
+        {
+          "aid": "3132817",
+          "verdict": "not-summited",
+          "why": "March turn-around."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 8,
+          "text": "Water at Saddle Lake is poor; a better stream runs about halfway from there to Goat Flats, and melt streams are good beyond Tin Can Gap in late summer.",
+          "aids": [
+            "2264436",
+            "3331844",
+            "865713"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Every harvested track ends at the fire-lookout South Peak (highest point 48.1699,-121.6879), not at the North or Middle summit, so no track is assigned. Our Middle Peak pin is about 170 m from the Peakbagger surveyed (lookout) coordinate; not moved because that coordinate is another summit. wa_three_fingers_south_peak_lookout is the route those tracks belong to."
+}

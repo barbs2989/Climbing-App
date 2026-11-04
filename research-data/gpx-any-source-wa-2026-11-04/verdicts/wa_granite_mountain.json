@@ -1,0 +1,49 @@
+{
+  "area_id": "wa_granite_mountain",
+  "routes": [
+    {
+      "route_id": "wa_granite_mountain_standard_scramble_route",
+      "season": {
+        "months": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jul-Oct",
+        "evidence": "Searched: trail to the lookout has avalanche chutes crossed under the summit; snow remains on upper slopes through June and returns by late November; extreme avalanche danger warnings late fall to late spring. Snow-free roughly July to October."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3183575",
+          "verdict": "offseason",
+          "why": "May 2: standard-line start at the trailhead and highest point at the lookout side, but snowbound season."
+        },
+        {
+          "aid": "3242464",
+          "verdict": "different",
+          "why": "June 25; summit is the west peak (Tusk O Granite) from a different start."
+        },
+        {
+          "aid": "3097134",
+          "verdict": "offseason",
+          "why": "Jan 15, west peak."
+        },
+        {
+          "aid": "2190363",
+          "verdict": "offseason",
+          "why": "May 13, NW ridge, west peak."
+        },
+        {
+          "aid": "1661373",
+          "verdict": "offseason",
+          "why": "May 22, west peak."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "WRONG PEAK MATCH: the Peakbagger peak matched to this area is Tusk O Granite (West Granite Mountain, 47.4236,-121.4920), not the lookout summit; four of five tracks end there, only 3183575 reaches the lookout summit region (47.4176,-121.4815, 1,039 m away). Our area coordinate is 329 m from Tusk, so the area pin may be on the wrong summit. Standard-scramble route has no waypoints. Tracks are out of season for a summer trail, so none assigned."
+}

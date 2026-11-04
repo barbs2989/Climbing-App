@@ -1,0 +1,107 @@
+{
+ "area_id": "wa_greenwood_mountain",
+ "routes": [
+  {
+   "route_id": "wa_greenwood_mountain_west_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored Jul-Sep; web results point to late July through mid-September, snow slopes persisting to mid-August; Peakbagger reports cluster Jul-Sep."
+   },
+   "track": {
+    "aid": "2313859",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Reviewer: only route on the peak; its own described line crosses the Dumbell ledge to the Dumbell-Greenwood col, so tagging Dumbell is on-route, not a link-up. Logged Phelps Creek trail; segments Phelps Creek -> Spider Meadow -> upper Phelps Basin; Sep 16, in season; start 29 m / end 16 m from the trailhead pin, summit 13 m."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "2581382",
+     "verdict": "different",
+     "why": "Jul 20, logged Southwest Shoulder; track also tops Dumbell: a link-up."
+    },
+    {
+     "aid": "2292066",
+     "verdict": "different",
+     "why": "Aug 26 logged South Slope; Greenwood then Dumbell in one trip: link-up."
+    },
+    {
+     "aid": "2629428",
+     "verdict": "different",
+     "why": "Greenwood/Dumbell trip, Dumbell the next day: link-up."
+    },
+    {
+     "aid": "2911094",
+     "verdict": "different",
+     "why": "Trip includes Genius and Dumbell."
+    },
+    {
+     "aid": "3265158",
+     "verdict": "different",
+     "why": "Track tops Dumbell as well."
+    },
+    {
+     "aid": "2011717",
+     "verdict": "different",
+     "why": "Phelps Basin camp trip also reaching Dumbell."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "Beyond the ledge, a snow or ice slope above a small glacial tarn must be crossed; carry crampons through late August and September, since a party without spikes turned back in early September.",
+     "aids": [
+      "2663255",
+      "2292066",
+      "2011717",
+      "867153"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 9,
+     "text": "Loose boulders and falling rock on the debris-covered ice beside the tarn in early September; cross quickly and one at a time.",
+     "aids": [
+      "2663255",
+      "2292066"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 8,
+     "text": "Black bears feed in upper Phelps Basin from July through September; keep food stored securely at the bivy.",
+     "aids": [
+      "2011717",
+      "2685377",
+      "867153"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 7,
+     "text": "In late July the connecting ledge can be free of snow and the Greenwood side may need no axe, though patches linger and boots beat approach shoes.",
+     "aids": [
+      "2685377"
+     ]
+    },
+    {
+     "field": "approach_note",
+     "month": 7,
+     "text": "In upper Phelps Basin the trail fades; in late July staying climbers-left to about 5,800 ft, then turning right toward the main drainage under Dumbell, worked well, and a bootpath beside that gully shows in early September. The access road is rocky, so bring some clearance.",
+     "aids": [
+      "2685377",
+      "2663255"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Every harvested ascent of Greenwood is a Dumbell + Greenwood trip (our route itself crosses the Dumbell ledge), so under the link-up rule none is assigned. If the owner allows Dumbell+Greenwood pairs for this route, best would be 2313859 (Sep 16 2023, complete round trip from Phelps Creek)."
+}

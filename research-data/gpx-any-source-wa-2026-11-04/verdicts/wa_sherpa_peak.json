@@ -1,0 +1,27 @@
+{
+  "area_id": "wa_sherpa_peak",
+  "routes": [
+    { "route_id": "wa_sherpa_balanced_rock_ne_couloir", "season": { "months": [5,6], "window": "May-Jun", "evidence": "Stored May-Jun for a snow/ice couloir; one logged NE couloir ascent is in June. Web search (Mountaineers, SummitPost) gave no couloir-specific dates." },
+      "track": null, "otherTracksConsidered": [ { "aid": "2004997", "verdict": "different", "why": "Starts at the Stuart Lake trailhead but its high point is Mount Stuart: a Stuart/Sherpa link-up, no assignment." }, { "aid": "862151", "verdict": "not-summited", "why": "Turned back, September 2017." } ], "pins": [], "facts": [] },
+    { "route_id": "wa_sherpa_peak_east_ridge", "season": { "months": [6,7,8,9], "window": "Jun-Sep", "evidence": "Stored Jun-Sep (mid-July on). Logged East Ridge ascents are in September (x2); a June NE couloir-to-east-ridge ascent is also logged. A February winter ascent exists but is offseason." },
+      "track": null, "otherTracksConsidered": [ { "aid": "3284623", "verdict": "different", "why": "Logged and described as the West Ridge, with pitches and a rappel descent." }, { "aid": "1853356", "verdict": "offseason", "why": "East Ridge winter ascent, Feb 2022; no track and out of season." } ], "pins": [], "facts": [] },
+    { "route_id": "wa_sherpa_peak_north_ridge", "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep; logged North Ridge ascents are July, August, September. Web results (SummitPost North Ridge page, climber blogs) show an August ascent." },
+      "track": null, "otherTracksConsidered": [ { "aid": "2004997", "verdict": "different", "why": "Starts at the Stuart Lake trailhead but reaches Mount Stuart's summit area (high point 2819 m): a link-up, so no assignment." }, { "aid": "862151", "verdict": "not-summited", "why": "North Ridge attempt, Sept 2017, turned back; not summited." } ], "pins": [], "facts": [] },
+    { "route_id": "wa_sherpa_peak_northeast_face", "season": { "months": [6,7,8], "window": "Jun-Aug", "evidence": "No stored season; one logged North Face ascent in June. Web search found no specific dates for this face." },
+      "track": null, "otherTracksConsidered": [], "pins": [], "facts": [] },
+    { "route_id": "wa_sherpa_peak_west_ridge", "season": { "months": [6,7,8,9], "window": "Jun-Sep", "evidence": "Logged West Ridge ascents: Jun 8, Jul 17, Aug 16, Sep 6 (peak Jul-Aug); stored Jun-Sep; club and Mountaineers listings show it climbed June through August. May 31 reports are within a month of the window." },
+      "track": { "aid": "3284623", "verdict": "same", "kind": "complete", "inSeason": true, "why": "Logged West Ridge; the report describes West Ridge from the Esmeralda trailhead with a col, pitches and rappels; the track is a clean round trip (start and end 10-14 m from our trailhead pin) via Longs Pass and the Ingalls Creek turnoff to the summit." },
+      "otherTracksConsidered": [ { "aid": "3248649", "verdict": "same", "why": "Also West Ridge (5.7), 30 Jun 2026, complete round trip; good second choice, older than the chosen one." }, { "aid": "3215142", "verdict": "same", "why": "West Ridge, 31 May 2026; complete, but a month before the window and snow-covered." }, { "aid": "2623047", "verdict": "unsure", "why": "Aug 2024 round trip from Esmeralda; unnamed, line matches but identity not stated." }, { "aid": "2004997", "verdict": "different", "why": "Mount Stuart link-up from the Stuart Lake trailhead." } ],
+      "pins": [],
+      "facts": [
+        { "field": "pro_tips", "month": 7, "text": "Water at camp depends on the date: the 7,400-ft bench has none in late May and late June, so melt snow there, while by late July and August the lower 6,200-6,400-ft basin camps have running water.", "aids": ["3215142","3248649","3284623","2937950"] },
+        { "field": "watch_out", "month": 6, "text": "In late June the side trail from Ingalls Creek up to the Sherpa basin is overgrown and blocked by fallen trees in places.", "aids": ["3248649"] },
+        { "field": "what_to_bring", "month": 5, "text": "Ice axe and crampons (late May, when the basin and col are snow-covered)", "aids": ["3215142"] },
+        { "field": "what_to_bring", "month": 6, "text": "Warm layer and wind shell (late June; the ridge stays in shade and windy until mid-morning)", "aids": ["3248649"] },
+        { "field": "pro_tips", "month": 8, "text": "The rock pitches are short, so a 50 m rope is enough; one set of nuts and small cams is plenty for them (July-August).", "aids": ["2623047","3284623"] },
+        { "field": "watch_out", "month": 7, "text": "Drifting off the easy line on the second pitch leads onto a crack around 5.6 (late July).", "aids": ["3284623"] },
+        { "field": "descent_note", "month": 5, "text": "In late May an extra short rappel was needed to reach the top of the second pitch before the last double-rope rappel; the sling there hung from a boulder that shifts under load, so back it up on solid blocks below.", "aids": ["3215142"] }
+      ] }
+  ],
+  "notes": "West Ridge is listed as needing a track although the stored route has points; the chosen aid is a fresh July 2026 round trip. Track 2004997 (Aug 2022) is a Stuart + Sherpa link-up and was not used for any route. No harvested track exists for East Ridge, North Ridge or the NE routes (only unsuccessful or link-up). Our summit pin matches Peakbagger's surveyed point (<10 m)."
+}
