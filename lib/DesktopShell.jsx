@@ -108,7 +108,8 @@ export function WideSearch({ onOpenRoute, onOpenArea, width }) {
    Best day to climb is NOT here (owner, 2026-10-21): it opens from the Menu's tile. Ads, when they
    come, take slots in this column (desktop only). */
 /* CHATS IN THE RAIL (desktop website, owner-approved 2026-10-21): your crews' chats and your direct
-   messages, newest first, always in reach the way Facebook's contacts column is. The same threads
+   messages, in two folding sections since 2026-11-04 (owner), newest first within each, always in
+   reach the way Facebook's contacts column is. The same threads
    the inbox shows — `shows(id)` is App's own test for a direct thread (blocked and restricted
    people stay out) — and a real account is named the way it chose (pubName), read the way the
    inbox reads it. */
@@ -130,14 +131,32 @@ function RailChats({ chats, onOpenDm, onOpenCrew }) {
     rows.push({ key: "cr" + cr.id, name: (p && p.kind !== "missing" && p.name) || "Crew", crew: true, unread: Number((crewUnread || {})[cr.id]) || 0, ts: (m && m.ts) || 0, open: () => onOpenCrew(cr) });
   });
   rows.sort((a, b) => b.ts - a.ts);
-  const shown = rows.slice(0, 8);
-  return <section aria-labelledby="rail-chats" style={CARD}>
-    <div id="rail-chats" style={{ ...SECTION, marginBottom: 6 }}>Chats</div>
-    {shown.length ? shown.map(r => <button key={r.key} onClick={r.open} aria-label={(r.crew ? r.name + " crew chat" : "Chat with " + r.name) + (r.unread ? ", " + r.unread + " unread" : "")} style={ROW}>
-      {r.crew ? <span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 12, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><ActionIcon name="crews" size={15} color={C.textSub} /></span> : <Av src={r.avatar} size={28} />}
-      <span style={{ flex: 1, minWidth: 0, fontSize: 13.5, fontWeight: r.unread ? 800 : 600, overflowWrap: "anywhere" }}>{r.name}</span>
-      {r.unread ? <span aria-hidden="true" style={{ minWidth: 18, height: 18, borderRadius: 9, background: C.redSolid, color:C.onSolid, fontSize: 11, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "0 5px", boxSizing: "border-box" }}>{r.unread}</span> : null}
-    </button>) : <div style={{ fontSize: 13, color: C.textMuted, padding: "2px 2px 4px" }}>No conversations yet.</div>}
+  /* TWO SECTIONS, EACH A DROPDOWN (owner 2026-11-04: "separate it by crew and individual chats with
+     dropdowns"): Crews, then Direct, each under a header that folds it — the Alerts card's header shape
+     (44px, chevron, aria-expanded) — carrying the section's unread count so a folded section still says
+     what waits. Newest first within each, five apiece; both start open. */
+  const [crewsOpen, setCrewsOpen] = useState(true);
+  const [dmOpen, setDmOpen] = useState(true);
+  const PER = 5;
+  const badge = n => n ? <span aria-hidden="true" style={{ minWidth: 18, height: 18, borderRadius: 9, background: C.redSolid, color: C.onSolid, fontSize: 11, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "0 5px", boxSizing: "border-box" }}>{n}</span> : null;
+  const row = r => <button key={r.key} onClick={r.open} aria-label={(r.crew ? r.name + " crew chat" : "Chat with " + r.name) + (r.unread ? ", " + r.unread + " unread" : "")} style={ROW}>
+    {r.crew ? <span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 12, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><ActionIcon name="crews" size={15} color={C.textSub} /></span> : <Av src={r.avatar} size={28} />}
+    <span style={{ flex: 1, minWidth: 0, fontSize: 13.5, fontWeight: r.unread ? 800 : 600, overflowWrap: "anywhere" }}>{r.name}</span>
+    {badge(r.unread)}
+  </button>;
+  const group = (id, title, list, open, toggle, empty, onSeeAll) => {
+    const unread = list.reduce((n, r) => n + r.unread, 0);
+    return <div>
+      <button id={id} onClick={toggle} aria-expanded={open} aria-label={title + (unread ? ", " + unread + " unread" : "")} style={{ minHeight: 44, width: "100%", display: "flex", alignItems: "center", gap: 8, padding: "0 2px", border: "none", background: "transparent", cursor: "pointer", textAlign: "left", color: C.text, fontSize: 13, fontWeight: 800 }}><span style={{ flex: 1 }}>{title}</span>{badge(unread)}<span aria-hidden="true" style={{ display: "flex" }}><Chevron open={open} size={14} color={C.blue} /></span></button>
+      {!open ? null : list.length ? <div style={{ marginBottom: 4 }}>{list.slice(0, PER).map(row)}{list.length > PER ? <button onClick={onSeeAll} style={{ padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"See all " + list.length + " ›"}</button> : null}</div> : <div style={{ fontSize: 13, color: C.textMuted, padding: "0 2px 8px" }}>{empty}</div>}
+    </div>;
+  };
+  const crewRows = rows.filter(r => r.crew), dmRows = rows.filter(r => !r.crew);
+  return <section aria-labelledby="rail-chats" style={{ ...CARD, paddingBottom: 6 }}>
+    <div id="rail-chats" style={{ ...SECTION, marginBottom: 2 }}>Chats</div>
+    {group("rail-chats-crews", "Crews", crewRows, crewsOpen, () => setCrewsOpen(o => !o), "No crew chats yet.", crewRows[0] && crewRows[0].open)}
+    <div aria-hidden="true" style={{ height: 1, background: C.border, margin: "2px 0" }} />
+    {group("rail-chats-direct", "Direct", dmRows, dmOpen, () => setDmOpen(o => !o), "No direct chats yet.", dmRows[0] && dmRows[0].open)}
   </section>;
 }
 
