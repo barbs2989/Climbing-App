@@ -122,11 +122,17 @@
          header carried the whole popup, ✕ and all, off the screen. */
       .cm-file-input { position: fixed; top: 0; left: 0; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
       label:has(.cm-file-input:focus-visible), .cm-file-input:focus-visible + label { outline: 2px solid #2f81f7; outline-offset: 2px; }
-      .cm-pop { animation: cm-pop .42s cubic-bezier(.2,.8,.2,1) both; }
+      /* `backwards`, never `both` or `forwards`, on anything that ends looking like itself (Windows,
+         2026-11-04: "is it just me or does the text look fuzzy on desktop?"). A fill that outlives the
+         animation keeps it ACTIVE, so Chrome keeps the element on its own GPU layer for good — and text on
+         a transparent layer loses ClearType and is drawn greyscale, which reads blurry on a 1x/1.25x PC
+         screen. A Mac's Retina screen hid it. #appscroll (every page) and every sheet were stuck that way.
+         These keyframes all END at the element's own look, so `backwards` changes nothing you see. */
+      .cm-pop { animation: cm-pop .42s cubic-bezier(.2,.8,.2,1) backwards; }
       .cm-burst { animation: cm-burst .85s ease-out forwards; }
       .cm-confetti { animation: cm-confetti 1.7s linear forwards; }
-      .cm-slideup { animation: cm-slideup .26s ease both; }
-      .cm-fadein { animation: cm-fadein .22s ease both; }
+      .cm-slideup { animation: cm-slideup .26s ease backwards; }
+      .cm-fadein { animation: cm-fadein .22s ease backwards; }
       .cm-pulse { animation: cm-pulse 2s ease-in-out infinite; }
       .cm-glow { animation: cm-glow 2.4s ease-in-out infinite; }
       .cm-ring { animation: cm-ring 2.4s ease-in-out infinite; transform-origin: 50% 10%; display: inline-block; }
