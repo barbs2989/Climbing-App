@@ -1,0 +1,27 @@
+{
+  "area_id": "wa_ives_peak",
+  "routes": [
+    {
+      "route_id": "wa_ives_peak_r1",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "All-routes histogram peaks Jul (63), Aug (58), Sep (42), with 20 in Oct and 11 in Jun. Web: Goat Rocks scramble pages list July to October; July reports still show patchy snow on the PCT and lake basin, mid-August reports have essentially no required snow. Stored Jul-Sep kept." },
+      "track": { "aid": "2580866", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Jul 21 2024, summited (Peakbagger summit 3 m from the track high point), round trip from the Snowgrass trailhead (68 m from our pin) over the PCT, then NE to the Old Snowy-Ives crest near the col (about 100 m from our col pin) and on to the summit by the same line our text describes. Logged as 'West Slopes and South Face'. The catalog holds exactly one route on this peak and the line follows its described approach, so the single-route rule applies. Note the report calls it class 2 with no exposure, easier than our Class 3 label." },
+      "otherTracksConsidered": [
+        { "aid": "3360948", "verdict": "unsure", "why": "Sep 19 2026, complete round trip, but the loop wanders north up toward Old Snowy before reaching the summit and the report only says 'the traverse has a boot path'; the line is not unambiguously our route." },
+        { "aid": "3348869", "verdict": "unsure", "why": "Sep 16 2026 traverse from Old Snowy; partial track starting well above the trailhead (5.1 km away)." },
+        { "aid": "3341874", "verdict": "unsure", "why": "Sep 9 2026, 23 mile loop through several peaks, start 759 m from our pin, no route text." },
+        { "aid": "3331056", "verdict": "different", "why": "Aug 31 2026, logged 'Snowgrass Trail' from a camp at Goat Lake as day 2 of an Old Snowy trip; starts 6.7 km from our trailhead pin." },
+        { "aid": "188536", "verdict": "not-summited", "why": "Turned back in 2011." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 8, "text": "Beyond the pavement the last stretch of the forest road to the trailhead is long, washboarded gravel; a high-clearance car is more comfortable.", "aids": ["3331056"] },
+        { "field": "pro_tips", "month": 9, "text": "Linking along the crest from Old Snowy means working over or around a string of gendarmes: over them is exposed class 3-4, around them is loose class 2 on the south side. Several parties prefer to approach from the PCT instead.", "aids": ["3348869", "3331056"] },
+        { "field": "monthBreakdown", "month": 7, "text": "In late July the climb from camp to the crest saddle can still cross steep snowfields between boulder and scree slopes before the exposed loose traverse around the summit block.", "aids": ["1007979"] },
+        { "field": "monthBreakdown", "month": 9, "text": "By mid-September only a few easy snow patches remain on the east side of the crest, and neither axe nor spikes was needed.", "aids": ["3348869"] },
+        { "field": "watch_out", "month": 9, "text": "Loose blocks on the crest bootpath roll easily; trampling the meadow below the scree is hard to avoid on the way down", "aids": ["3360948", "3348869"] }
+      ]
+    }
+  ],
+  "notes": "Single route on the peak. Several Sep 2026 tracks (3360948, 3341874) are likely the same climb but the lines wander through the Old Snowy side; 2580866 is the cleanest. Peakbagger's summit and our summit pin agree within 22 m; no pin changes proposed."
+}

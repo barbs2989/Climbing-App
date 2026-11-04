@@ -1,0 +1,46 @@
+{
+  "area_id": "wa_inner_constance",
+  "routes": [
+    {
+      "route_id": "wa_inner_constance_northwest_buttress",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored mid-July to mid-September kept. WebSearch found no page for this buttress; general Constance-massif pages: July-September most favourable, considerable snow on the upper mountain into June." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3259349", "verdict": "different", "why": "5 Jul 2026 solo day from Lake Constance: the report says it followed the ridge traverse from The Pyramid (route 1), not the northwest buttress." },
+        { "aid": "3121516", "verdict": "offseason", "why": "February." },
+        { "aid": "3074340", "verdict": "offseason", "why": "December." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_inner_constance_seans_route",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep kept. The only logged ascent was 9 Aug 2021 (Sean's Route, with Sean himself). WebSearch found no independent page for the route name." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "1729210", "verdict": "unsure", "why": "Aug 2021 ascent clearly describes this route (3 pitches in a crack system to a cave beneath a roof) but packet has no GPS track." },
+        { "aid": "3259349", "verdict": "different", "why": "Ridge traverse from The Pyramid, different line." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 8, "text": "In August, after a few warm weeks, the snowfield and small glacier at the top of the cirque gave intense, constant rockfall on the way down; cross it early.", "aids": ["1729210"] },
+        { "field": "what_to_bring", "month": 8, "text": "Ice axe and crampons for the small glacier at the top of the cirque (August)", "aids": ["1729210"] },
+        { "field": "approach_note", "month": 8, "text": "Base camp at the big boulders just south of Home Creek; go up the scree to the obvious ramp, follow it around the right side of the prominent dihedral to a steep class 3/4 gully, and rope up at the base of the crack system.", "aids": ["1729210"] },
+        { "field": "pro_tips", "month": 8, "text": "Look for natural pockets in the rock along the first pitches; they make belay spots out of the fall line of loose rock.", "aids": ["1729210"] }
+      ]
+    },
+    {
+      "route_id": "wa_inner_constance_standard",
+      "season": { "months": [6, 7, 8, 9], "window": "Jun-Sep, best late Jun-Jul", "evidence": "Stored late June-July kept. WebSearch: considerable snow on the upper Constance massif into June; July-September most favourable weather. Only in-season logged ascents (5 Jul 2026, 9 Aug 2021) took other lines." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3259349", "verdict": "different", "why": "Report says the author skipped the easier gully route 2 and kept to the ridge (route 1) after a ridge traverse from The Pyramid, so the line is not the South Gully / East Ridge route; track begins at Lake Constance area, 7 km from our washout pin." },
+        { "aid": "3121516", "verdict": "offseason", "why": "February ascent." },
+        { "aid": "3074340", "verdict": "offseason", "why": "December ascent." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Sean's Route/Second Wind is described by its own text as a variation finish on the Northwest Buttress; both rows share the face and pins and may overlap. No pins proposed."
+}

@@ -1,0 +1,357 @@
+{
+ "area_id": "wa_hibox_mountain",
+ "routes": [
+  {
+   "route_id": "wa_hibox_mountain_east_route",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jun-Oct",
+    "evidence": "Logged successful ascents run Jun-Oct (96/145/118/107/54 for Jun-Oct, only ~20 other months combined); guidebook-derived Mountaineers/WTA reports describe snow on the upper slopes and summit block early, snow-free by October in some years, best Aug-Oct."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3276237",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "3233971",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "3229075",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "2330029",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "2264672",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "358498",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "681349",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    }
+   ],
+   "pins": [
+    {
+     "type": "Trailhead",
+     "action": "add",
+     "lat": 47.4012,
+     "lng": -121.2848,
+     "name": "Rachel Lake Trailhead",
+     "evidence": "Route text starts at the Rachel Lake trailhead at the end of FR 4930; the harvested round-trip tracks all start/end within ~150 m of this point (about 47.4005,-121.2833).",
+     "confirmedBy": "https://www.wta.org/go-hiking/hikes/rachel-lake (WebFetch: trailhead coordinates 47.4012, -121.2848, end of FR 4930)"
+    }
+   ],
+   "facts": [
+    {
+     "field": "pro_tips",
+     "month": 7,
+     "text": "On summer weekends the trailhead lot fills early; leaving around 7 AM in July got one party ahead of the crowds on the Rachel Lake trail.",
+     "aids": [
+      "681349"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 10,
+     "text": "By mid-October patches of slushy snow start near 5,000 ft and two steep snowfields below the ridge call for an ice axe.",
+     "aids": [
+      "358498"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_hibox_mountain_northwest_ridge",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jun-Oct",
+    "evidence": "Logged successful ascents run Jun-Oct (96/145/118/107/54 for Jun-Oct, only ~20 other months combined); guidebook-derived Mountaineers/WTA reports describe snow on the upper slopes and summit block early, snow-free by October in some years, best Aug-Oct."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3276237",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "3233971",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "3229075",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "2330029",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "2264672",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "358498",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "681349",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_hibox_mountain_south_face",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jun-Oct",
+    "evidence": "Logged successful ascents run Jun-Oct (96/145/118/107/54 for Jun-Oct, only ~20 other months combined); guidebook-derived Mountaineers/WTA reports describe snow on the upper slopes and summit block early, snow-free by October in some years, best Aug-Oct."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3276237",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "3233971",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "3229075",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "2330029",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "2264672",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "358498",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "681349",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_hibox_mountain_south_route",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jun-Oct",
+    "evidence": "Logged successful ascents run Jun-Oct (96/145/118/107/54 for Jun-Oct, only ~20 other months combined); guidebook-derived Mountaineers/WTA reports describe snow on the upper slopes and summit block early, snow-free by October in some years, best Aug-Oct."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3276237",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "3233971",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "3229075",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "2330029",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "2264672",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "358498",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "681349",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_hibox_mountain_southeast_ridge",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jun-Oct",
+    "evidence": "Logged successful ascents run Jun-Oct (96/145/118/107/54 for Jun-Oct, only ~20 other months combined); guidebook-derived Mountaineers/WTA reports describe snow on the upper slopes and summit block early, snow-free by October in some years, best Aug-Oct."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3276237",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "3233971",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "3229075",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "2330029",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "2264672",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "358498",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "681349",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_hibox_mountain_southeast_shoulder",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jun-Oct",
+    "evidence": "Logged successful ascents run Jun-Oct (96/145/118/107/54 for Jun-Oct, only ~20 other months combined); guidebook-derived Mountaineers/WTA reports describe snow on the upper slopes and summit block early, snow-free by October in some years, best Aug-Oct."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3276237",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "3233971",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "3229075",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "2330029",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "2264672",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "358498",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    },
+    {
+     "aid": "681349",
+     "verdict": "unsure",
+     "why": "Round trip from the Rachel Lake trailhead along the climbers' path, but our catalog holds seven routes on this peak (Standard Scramble already has a track) and no logged route name or report text unmistakably matches this one; also no trailhead pin on this route so the 300 m rule cannot be met."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "Seven routes on this peak but every Peakbagger recording follows the single Rachel Lake climbers' path; East Route, Southeast Shoulder/Ridge, South Route, Northwest Ridge, South Face and Standard Scramble cannot be told apart by any logged name or report, so no track was assigned (Standard Scramble already has one). Several of these may be one line filed more than once. Trailhead is closed by a fire alert posted July 2026 per the trail page; not a catalog fact."
+}

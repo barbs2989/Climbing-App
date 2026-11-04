@@ -1,0 +1,22 @@
+{
+  "area_id": "wa_mount_mystery",
+  "routes": [
+    {
+      "route_id": "wa_mount_mystery_standard",
+      "season": { "months": [6,7,8,9], "window": "Jun-Sep", "evidence": "Mountaineers reports show early June climbs with snow helping the east col; a SummitPost-style page calls early July best with snow on the route and camps melted out; a general page says Jun-Sep; Peakbagger successful ascents peak in May (18) and Jul-Sep. Stored Jul-Sep widened to include June." },
+      "track": { "aid": "3200931", "verdict": "same", "kind": "complete", "inSeason": true, "why": "Our catalog holds exactly one route on Mystery. The recording starts and ends within 50 m of our Upper Dungeness pin, summits within 24 m of the summit, and travels via Royal Basin toward the Deception notch, matching the described line; 41.8 km and about 1,560 m gain agree with that approach. Dated May 22 2026, about a week before the widened window, with no report to confirm the exact line." },
+      "otherTracksConsidered": [
+        { "aid": "2989123", "verdict": "unsure", "why": "Jun 30 2025 north-peak attempt from the glacier side; starts mid-route, not a trailhead round trip." },
+        { "aid": "2573143", "verdict": "different", "why": "Starts 15 km from our trailhead, from the Dosewallips side." },
+        { "aid": "1764296", "verdict": "different", "why": "Sept 2021 via Del Monte ridge from Sunnybrook Meadows, a different approach." },
+        { "aid": "1163326", "verdict": "different", "why": "May 2019 via Del Monte ridge from Home Lake." },
+        { "aid": "1236802", "verdict": "different", "why": "Aug 2019 Del Monte ridge combined with Little Mystery." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 6, "text": "By late June the gully below the summit block can still be full of snow with a moat at the top, forcing a harder, exposed scramble on the rock to its left.", "aids": ["2989123"] }
+      ]
+    }
+  ],
+  "notes": "Track 3200931 has no trip report or logged route name; assignment rests on the sole-route rule and the line shape. The May 22 date is early for the stored Jul-Sep window. Several recorded ascents come from the Dosewallips side via Del Monte Ridge and Gunsight Pass; that is a different approach we do not hold as a route."
+}

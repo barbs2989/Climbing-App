@@ -88,11 +88,20 @@ if (stage === "tracks") {
   const harvest = loadHarvest(files);
   fs.mkdirSync(gpxDir, { recursive: true });
   const decisions = [];
+  // One GPS file logged as ascents of SEVERAL peaks (an Inspiration Traverse logged once per summit, found
+  // 2026-11-04 on Primus + Klawatti) is a multi-peak line: refuse it on every peak. Index each harvested
+  // track by its rounded first point so the geometry compare stays cheap.
+  const startKey = p => `${(+p[0]).toFixed(4)},${(+p[1]).toFixed(4)}`;
+  const byStart = new Map();
+  for (const [area, rec] of harvest) for (const x of rec.tracks || []) if (x.pts?.length >= 10) (byStart.get(startKey(x.pts[0])) || byStart.set(startKey(x.pts[0]), []).get(startKey(x.pts[0]))).push({ area, x });
+  const otherPeak = (area, tr) => (byStart.get(startKey(tr.pts[0])) || []).find(o => o.area !== area && sameTrack(tr.pts.map(p => [p[0], p[1]]), o.x.pts.map(p => [p[0], p[1]])));
   for (const r of routesV) {
     const t = r.track;
     if (!t || t.verdict !== "same" || t.inSeason !== true || held("tracks", r.route_id)) continue;
     const tr = (harvest.get(r.area_id)?.tracks || []).find(x => String(x.aid) === String(t.aid));
     if (!tr?.pts || tr.pts.length < 10) { console.log("SKIP no points", r.route_id, t.aid); continue; }
+    const op = otherPeak(r.area_id, tr);
+    if (op) { console.log(`REFUSE ${r.route_id}: ascent ${t.aid}'s GPS file is also logged on ${op.area} (ascent ${op.x.aid}) — a multi-peak line`); continue; }
     if (!/Successful Summit/i.test((tr.stats || []).find(s => s[1] === "Ascent Type")?.[2] || "")) { console.log("SKIP not a logged summit", r.route_id, t.aid); continue; }
     const slug = `pb-${t.aid}`;
     // no <time>: a party's elapsed time is never shown

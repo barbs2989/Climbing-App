@@ -1,0 +1,49 @@
+{
+  "area_id": "wa_mount_terror",
+  "routes": [
+    {
+      "route_id": "wa_mount_terror_southeast_face",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep. Mountaineers lists Jun-Sep for the Southern Pickets routes; SummitPost says August is best, most snow gone by late August, July buggier. Logged ascents of the peak are Jun 7, Jul 19, Aug 9." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2243540", "verdict": "different", "why": "Report links to a West Ridge write-up; ascends the Crescent Creek gully to the notch, not the saddle with Degenhardt." },
+        { "aid": "1685868", "verdict": "different", "why": "Logged West Ridge." },
+        { "aid": "1686708", "verdict": "different", "why": "Same party and day as 1685868, West Ridge." },
+        { "aid": "1695665", "verdict": "unsure", "why": "July 3 2021, one-way, report mentions the steep snow gully on descent (West Ridge gully) but never names the route." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_terror_stoddard_buttress",
+      "season": { "months": [7, 8], "window": "Jul-Aug", "evidence": "Stored late Jul-Aug. Logged ascents carry one North Face entry in August; Pickets season Jun-Sep (Mountaineers), August driest (SummitPost). A search result mentions a July 5 accident on the buttress, supporting early-July snow and rockfall caution." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "1695665", "verdict": "unsure", "why": "No evidence of the north buttress line; an approach and descent through the south gully." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_terror_west_ridge",
+      "season": { "months": [6, 7, 8, 9], "window": "Jun-Sep", "evidence": "Stored Jun-Sep. Logged West Ridge ascents Jun 20 (snow-filled gully, no moats) and Jul 9 and Jul 3; Mountaineers lists Jun-Sep for Pickets routes; SummitPost: August best, snow gone by late August, July buggy." },
+      "track": { "aid": "1685868", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged route is West Ridge; the report describes the Terror creek crossings, Chopping Block saddle camp, the snow gully to the notch, a 30 m low-fifth pitch, class 2-3 ridge, false summit and exposed step to the true summit, which matches our text. Round trip from the Goodell Creek trailhead (start and end 14 m apart, 473 m from our stored West Ridge pin but within 30 m of the Goodell Creek Trailhead pin stored on the East Ridge route), summit within 48 m. Mechanical flags say incomplete only because our West Ridge pin (Upper Goodell Group Camp, 48.68664,-121.27121) sits about 470 m from where every recording starts; I could not confirm a better coordinate from a fetched page, so no pin move is proposed." },
+      "otherTracksConsidered": [
+        { "aid": "1686708", "verdict": "unsure", "why": "Same party, same day and same line as 1685868 (duplicate record of the same ascent), unlabelled route; not assigned twice." },
+        { "aid": "2243540", "verdict": "same", "why": "Jul 9 2023, report points to a West Ridge write-up, complete round trip from Goodell Creek, also valid; the logged-route-named one was preferred." },
+        { "aid": "1695665", "verdict": "unsure", "why": "Jul 3 2021 one-way recording, route not named, ends 10 km from the start." },
+        { "aid": "2209130", "verdict": "different", "why": "June 3 solo climb after West McMillan and Degenhardt, no track." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "what_to_bring", "month": 6, "text": "ice axe and crampons (mid-June to mid-July: unbroken snow from about 4,800 ft to the saddle and up the gully)", "aids": ["1685868", "1686708", "2243540"] },
+        { "field": "watch_out", "month": 6, "text": "In mid-June the creek crossings on the approach run high and the Terror Creek log can be partly submerged; budget time to scout a crossing.", "aids": ["1685868", "1686708"] },
+        { "field": "pro_tips", "month": 6, "text": "The rappel slings on the upper ridge looked worn in June; carry spare cord to back them up.", "aids": ["1685868", "1686708"] },
+        { "field": "monthBreakdown", "month": 6, "text": "In mid-June the gully held firm snow nearly to the notch with no moats yet, but the lower snow went to soft slush over hard ice by the return, forcing a facing-in downclimb.", "aids": ["1685868", "1686708"] },
+        { "field": "watch_out", "month": 7, "text": "In early July loose rock on the scramble and descent has knocked climbers off their feet; stay out of the fall line below your partners.", "aids": ["1695665"] }
+      ]
+    }
+  ],
+  "notes": "West Ridge track fails the 300 m start rule only because the stored West Ridge/Stoddard trailhead pin (Upper Goodell Group Camp, 48.68664,-121.27121) is about 470 m from the Goodell Creek Trailhead pin stored on the East Ridge route (48.6828,-121.2693), where every recording starts. Nominatim, WTA and a web search returned no coordinate for it, so no pin change is proposed; the owner may want to reconcile the two. The East Ridge route's id is southeast_face and its text describes the East Ridge from Crescent Creek Basin. allRoutesOnPeak also holds North Face / North Buttress, which the packet does not need a track for."
+}

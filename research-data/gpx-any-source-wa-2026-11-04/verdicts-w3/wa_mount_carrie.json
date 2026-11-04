@@ -1,0 +1,18 @@
+{
+  "area_id": "wa_mount_carrie",
+  "routes": [
+    {"route_id":"wa_mount_carrie_se_route","season":{"months":[7,8,9],"window":"Jul-Sep","evidence":"Pages found say the Catwalk needs waiting until mid-July for snow and July-September is the favourable window; logged ascents peak in August (41), then September (21), July (26)."},
+     "track":{"aid":"2919579","verdict":"same","kind":"complete","inSeason":true,"why":"Only route on the peak; Jul 26 2025 solo climb from the Sol Duc trailhead via the Catwalk with a camp below Boston Charlie's and a 75 min summit push, summit 1 m from our pin, round trip back to the trailhead. Track start/end are 426/409 m from our trailhead pin (fails the 300 m rule); I could not confirm a better coordinate (WTA lists 47.9622,-123.8499, OSM puts the falls at 47.9518,-123.8199, which disagree), so no pin move is proposed."},
+     "otherTracksConsidered":[
+      {"aid":"3338175","verdict":"unsure","why":"Sep 7 2026, summited, but starts at Cat Basin camp, not the trailhead (one-way slice)."},
+      {"aid":"3244005","verdict":"unsure","why":"Jun 23 2026 from Swimming Bear Lake camp via the Catwalk; different start and just before the season."},
+      {"aid":"2570819","verdict":"different","why":"Bailey Range Traverse segment from the north, west-ridge variation."}],
+     "pins":[],
+     "facts":[
+      {"field":"pro_tips","month":7,"text":"Water is thin east of Heart Lake in July: fill there, then rely on the stagnant pond near Boston Charlie's (filter it) or leftover snow; by early September the Cat Basin camp had running water.","aids":["2919579","2570819","1187125","3338175"]},
+      {"field":"watch_out","month":9,"text":"The unmaintained Catwalk trail is overgrown with spruce and fir limbs, and the scree traverse above Boston Charlie's is hard-packed and slow (September).","aids":["3341854"]},
+      {"field":"approach_note","month":7,"text":"Just before the Catwalk the path turns steeply uphill for about 100 ft; it is easy to miss that turn and follow a track that ends in cliffs (early July).","aids":["1187125"]},
+      {"field":"descent_note","month":7,"text":"With lingering snow in mid-July you can scree-ski a gully southeast from about 6,300 ft back to the trail, but a washed-out chute near 5,150 ft needs careful routefinding.","aids":["2570819"]}]}
+  ],
+  "notes": "Trailhead pin (47.955249,-123.835839) sits 426 m from where the best round-trip track starts. The owner may want to check the true parking coordinate; I could not confirm one from fetched pages (WTA 47.9622,-123.8499 disagrees with OSM falls 47.9518,-123.8199). Summit pin fine."
+}

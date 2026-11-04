@@ -1,0 +1,54 @@
+{
+ "area_id": "wa_north_peak_2",
+ "routes": [
+  {
+   "route_id": "wa_mount_index_north_face",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9
+    ],
+    "window": "Jun-Sep",
+    "evidence": "Logged ascents May 1, Jun 5, Jul 7, Aug 5, Sep 2; web trip reports from late June to mid-August describe dry summer climbing; stored Jun-Sep and optimal Jul-Aug agree"
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3230677",
+     "verdict": "unsure",
+     "why": "13 Jun 2026, summited, report names the 5.6 pitch, the north bowl and the bail anchors (fits our single route), but the track starts about 3.4 km from the Lake Serene trailhead pin and is the summit-day section only (after a bivy), so neither complete nor one-way from the trailhead"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "pro_tips",
+     "month": 6,
+     "text": "In mid-June the large north bowl is mossy slab: climbers used slung shrubs for protection or moved unprotected.",
+     "aids": [
+      "3230677"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 6,
+     "text": "Bring a nut tool for the leader of the 5.6 pitch; cracks there need cleaning, and one party aided a couple of moves after drifting off the line (mid-June).",
+     "aids": [
+      "3230677"
+     ]
+    },
+    {
+     "field": "descent_note",
+     "month": 6,
+     "text": "Rappel anchors near the summit have been refreshed, and in mid-June they formed a clear path down the descent.",
+     "aids": [
+      "3230677"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Our catalog lists only this one route on the peak, but its beta mentions a separately catalogued Direct Northeast Face; I found no such second route in allRoutesOnPeak. The one summited track has a summit-day-only trace (bivy on top), so no round-trip track was assigned."
+}

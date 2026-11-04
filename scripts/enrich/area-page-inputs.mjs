@@ -23,9 +23,16 @@ if (max) q += `&route_count=lte.${max}`;
 if (opt("--from-region", null)) q += `&region=gte.${encodeURIComponent(opt("--from-region"))}`;
 // --region reads one region only: the cheapest read when a ranged one hits the statement timeout.
 if (opt("--region", null)) q += `&region=eq.${encodeURIComponent(opt("--region"))}`;
-const r = await fetch(`${SUPABASE_URL}/rest/v1/${q}`, { headers: headers(k) });
-if (!r.ok) { console.error("read failed", r.status, await r.text()); process.exit(1); }
-const rows = (await r.json()).filter(a => !skip.has(a.id));
+// --split reads one route_count value at a time (min..max) and merges them: a big region's
+// whole-tier read can hit the statement timeout when one value's read does not.
+const reads = args.includes("--split") && max ? Array.from({ length: Number(max) - min + 1 }, (_, i) => q.replace(`route_count=gte.${min}`, `route_count=eq.${Number(max) - i}`).replace(`&route_count=lte.${max}`, "")) : [q];
+const all = [];
+for (const rq of reads) {
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/${rq}`, { headers: headers(k) });
+  if (!r.ok) { console.error("read failed", r.status, await r.text()); process.exit(1); }
+  all.push(...await r.json());
+}
+const rows = all.filter(a => !skip.has(a.id));
 console.error(`${rows.length} area(s) to research`);
 const sleep = ms => new Promise(res => setTimeout(res, ms));
 for (const a of rows) {
