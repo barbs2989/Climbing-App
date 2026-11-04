@@ -1,0 +1,24 @@
+{
+  "area_id": "wa_cosho_peak",
+  "routes": [
+    {
+      "route_id": "wa_cosho_peak_scramble",
+      "season": {
+        "months": [7, 8, 9],
+        "window": "Jul-Sep",
+        "evidence": "Stored best Mid-Jul to Sep. Web search (Mountaineers Ragged Ridge via Easy Pass, Summitpost, Cascade Climbers, Lemke): SR-20 open late Apr-early Nov, snow routes in spring, summer scramble from mid-summer into early fall; the histogram of all logged ascents peaks in July. In season incl. one month either side: Jun-Oct."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2888305", "verdict": "different", "why": "Jun 28 2025 round trip from Easy Pass TH, but the line goes by the Mesahchie/Katsuk ridge (passes within ~130 m of that summit point) and near Kimtah: a Ragged Ridge link-up, not Cosho alone. No report." },
+        { "aid": "3284067", "verdict": "different", "why": "Jul 25 2026, the Ragged Ridge traverse: runs over the Mesahchie/Katsuk ridge and Kimtah and exits by a different gully (one-way)." },
+        { "aid": "3237144", "verdict": "different", "why": "Jun 20 2026 from the Fisher Creek side, Cosho and Kimtah same day: link-up, and the start is 9.6 km from Easy Pass TH." },
+        { "aid": "2857365", "verdict": "different", "why": "Jun 1 2025 traverse from Red Mountain: link-up and off-season by the stored window." },
+        { "aid": "2966471", "verdict": "not-summited", "why": "Turned back, Aug 30 2025." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Every summited Cosho track in the packet is a link-up with Kimtah and/or Mesahchie-Katsuk (the Ragged Ridge traverse), so none is assigned. The Jun 28 2025 round trip (2888305) shows a wandering line that skirts the Mesahchie/Katsuk summit area; it may be a full Ragged Ridge traverse. The Jul 23 2023 and Aug 2018/2020 reports (no tracks) all describe the same combined days. One in-season fact worth considering later (Jul 25 2026, aid 3284067, route note): at the broad gully below the gendarmes, rise across to about 7,600 ft and continue on ledges to ~7,800 ft rather than dropping to look for the lower ledge system; not added because the report is about the Ragged traverse as a whole."
+}

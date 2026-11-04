@@ -1,0 +1,208 @@
+{
+ "area_id": "wa_sloan_peak",
+ "routes": [
+  {
+   "route_id": "wa_diamond_in_the_rough",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Web search: a club route listing and a forecast site give Jul-Sep for the peak; none states a window for this exact line. Stored Jul-Sep kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2341866",
+     "verdict": "different",
+     "why": "Logged as Fire On the Mountain, not this line."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_fire_on_the_mountain",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Web search: a club route page for this SW-face route lists July, August, September. Stored Aug-Sep is narrower; Jul-Sep matches the guidebook-cited window."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2341866",
+     "verdict": "not-summited",
+     "why": "Logged as Fire On the Mountain on 2023-10-07 (within a month of Sep), but the recorded line ends at the base of the face; its highest point is ~480 m horizontally and ~370 m vertically below the summit, so it does not reach the summit and is not a complete trip."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_northwest_buttress",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Web search found no window for this line specifically; peak-wide Jul-Sep from route listings, stored Jul-Sep kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3317138",
+     "verdict": "unsure",
+     "why": "No logged route name and the peak holds several routes; a club glacier trip, most likely the walk-up, no positive evidence it climbed this buttress."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_sloan_peak_corkscrew",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9
+    ],
+    "window": "late Jun-Sep",
+    "evidence": "Web search: club route page and trip reports put the good window from late June (snow-free scramble in 2026 by Jun 19) through August; in late season the glacier gets harder to cross and to leave. Histogram: Jun 63, Jul 258, Aug 152, Sep 28. Stored Jul-Sep kept with late June allowed."
+   },
+   "track": {
+    "aid": "3233753",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Logged route reads \"Corkscrew via Bedal Cr\", report describes the Bedal Creek trail, glacier crossing and scramble to the summit; track starts and ends at the Bedal Creek trailhead (~200 m from our pin), passes within ~1 m of the summit pin, round trip. 2026-06-19 is within the season window (our window starts July)."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "3317138",
+     "verdict": "unsure",
+     "why": "Blank logged route on a peak holding several routes; club glacier trip, no description of the line."
+    },
+    {
+     "aid": "3290313",
+     "verdict": "unsure",
+     "why": "Blank logged route; report describes the glacier-and-scramble line but the peak has several routes and the logged field is empty."
+    },
+    {
+     "aid": "3369374",
+     "verdict": "unsure",
+     "why": "2026-10-04, blank logged route, track starts ~350 m from the trailhead pin (incomplete)."
+    },
+    {
+     "aid": "2580320",
+     "verdict": "unsure",
+     "why": "Logged Corkscrew Route, but the recorded line starts ~3.6 km from the trailhead (camp-to-summit only), not a complete trip; a good second choice for the line itself."
+    },
+    {
+     "aid": "2277428",
+     "verdict": "different",
+     "why": "Logged Cougar Creek: the North Fork Sauk approach, starting ~5 km from our Bedal Creek pin; not a complete trip."
+    },
+    {
+     "aid": "1974716",
+     "verdict": "not-summited",
+     "why": "Turned back."
+    },
+    {
+     "aid": "2341866",
+     "verdict": "different",
+     "why": "Logged Fire On the Mountain; the SW-face line."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "pro_tips",
+     "month": 6,
+     "text": "The climbers' turnoff is marked with pink flagging, roughly 1.5 miles up the valley trail; overshooting it ends at a creek crossing, so turn uphill early.",
+     "aids": [
+      "2893892",
+      "3233907"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 6,
+     "text": "In mid-June the lowest heather ledges had melted out while higher ones kept a steep snow ramp; the low line runs close to the cliff edge.",
+     "aids": [
+      "3233907",
+      "3233753"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "In early July two stretches of the high glacier line lie under rockfall chutes; loose blocks had already landed on the snow.",
+     "aids": [
+      "3257950"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "By late July the bergschrund is widening high on the glacier and moats are opening along the rock; choose the approach line to the saddle with care.",
+     "aids": [
+      "3290313"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 8,
+     "text": "Glacier condition swings by year: in mid-August 2026 it was easy enough to cross unroped, while another year in the same fortnight showed large open crevasses.",
+     "aids": [
+      "3385797",
+      "2605235"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 7,
+     "text": "Fill bottles at the meadow streams and the glacier edge: by late July nothing flows above the glacier, and 1-1.5 L covered the day for one party.",
+     "aids": [
+      "3290313",
+      "3233907"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 7,
+     "text": "The high camp near 5,900 ft above the pass has room for only about four tents in mid-July; arrive early or plan to share.",
+     "aids": [
+      "2580320"
+     ]
+    },
+    {
+     "field": "what_to_bring",
+     "month": 7,
+     "text": "Long trousers and sleeves for brush and blowdowns (June-July)",
+     "aids": [
+      "3257950",
+      "3233907"
+     ]
+    },
+    {
+     "field": "approach_note",
+     "text": "Most parties now come in by the Bedal Creek trail instead: the road up to it is potholed with one washed-out stretch near the top, so bring high clearance, and from the upper parking head straight into the forest rather than up the logging spur to the right (in early July the first mile is choked with blowdown and brush).",
+     "aids": [
+      "3233753"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Our stored Corkscrew approach text describes the North Fork Sauk / Cougar Creek approach from FR 49, but the stored trailhead pin and every complete recorded trip use the Bedal Creek trailhead; the approach text and pin disagree (most recent reports are Bedal Creek). The Corkscrew route already holds track points (153); tracks 3385797 (Aug 16 2026, logged Corkscrew Route) and 2605235 (Aug 10 2024) are equally good alternates. Fire on the Mountain, NW Buttress, Diamond in the Rough: no track qualifies."
+}

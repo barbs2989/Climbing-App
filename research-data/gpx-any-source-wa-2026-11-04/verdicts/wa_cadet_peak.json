@@ -1,0 +1,21 @@
+{
+  "area_id": "wa_cadet_peak",
+  "routes": [
+    {
+      "route_id": "wa_cadet_peak_ne_ridge",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep. Web (SummitPost NE Ridge pages, Mountaineers Sloan pages) gave no explicit season for this ridge traverse; high ridge with snow and small glacier segments, consistent with mid-to-late summer. Ascent histogram for the peak is the standard route: Jul 42, Aug 30, Sep 24." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3378870", "verdict": "different", "why": "Logged Glacier Basin standard, Oct 2026; standard route and off window." },
+        { "aid": "3313948", "verdict": "different", "why": "Aug 18 2026 from Barlow Pass by bike to Glacier Basin and the standard scramble; not the Bedal Creek / Sloan ridge traverse." },
+        { "aid": "3253694", "verdict": "different", "why": "Jul 4 2026 Glacier Basin standard line, report describes it." },
+        { "aid": "3237084", "verdict": "unsure", "why": "Jun 20 2026 track starting 47.9547,-121.3714 (far from the Bedal Creek trailhead area); no logged route or report, cannot say which line." },
+        { "aid": "2385394", "verdict": "different", "why": "Logged SW route, Nov 2023; off season." },
+        { "aid": "425734", "verdict": "not-summited", "why": "Turned back, W Ridge." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Route has no trailhead pin (text names the end of FR 4096 and Bedal Creek trail), and no harvested track follows the Sloan-Cadet ridge; all follow the Glacier Basin standard, which is the other route on the peak (it already has a track)."
+}

@@ -132,6 +132,7 @@ if (stage === "facts") {
         const sg = JSON.parse(JSON.stringify(cur("seasonal_guidance") || {}));
         const mb = sg.monthBreakdown && typeof sg.monthBreakdown === "object" && !Array.isArray(sg.monthBreakdown) ? sg.monthBreakdown : {};
         const key = Object.keys(mb).find(k => k.toLowerCase().startsWith(MON[m].toLowerCase().slice(0, 3))) || MON[m];
+        if (mb[key] && String(mb[key]).toLowerCase().includes(text.toLowerCase())) continue; // already written (a re-run)
         mb[key] = mb[key] ? `${String(mb[key]).trim()} ${text}` : text;
         sg.monthBreakdown = mb; after.seasonal_guidance = sg;
       } else if (f.field === "approach_note" || f.field === "descent_note") {

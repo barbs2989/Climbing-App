@@ -1,0 +1,69 @@
+{
+ "area_id": "wa_gunnshy_peak",
+ "routes": [
+  {
+   "route_id": "wa_gunnshy_peak_standard_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored Jul-Sep; hiking-guide pages say July to October with snow the main hazard; Mountaineers ran it late September. Few Peakbagger ascents."
+   },
+   "track": {
+    "aid": "2987452",
+    "verdict": "same",
+    "kind": "oneway",
+    "inSeason": true,
+    "why": "Only one route stored. Sep 13 2025 single-peak ascent from the climbers path to the summit; passes the ridge-junction pin and reaches the summit, report describes the Barclay path past Gunn Lake. Start is 310 m from the pin (WTA position matches our pin; the climbers path starts on the spur), so it misses the 300 m rule by a hair."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "3258797",
+     "verdict": "unsure",
+     "why": "July 7 link-up with Gunn, Gunn East, Peak 5763 and Tailgunner."
+    },
+    {
+     "aid": "2928510",
+     "verdict": "unsure",
+     "why": "Aug 2 link-up with Tailgunner."
+    },
+    {
+     "aid": "2982323",
+     "verdict": "unsure",
+     "why": "Sep 13 four-peak link-up (Tailgunner, 5763, Wing)."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "approach_note",
+     "month": 9,
+     "text": "Partway up the steep forested section the path can seem to stop at a gully; the continuing bootpath leaves to the climber's left, and the gully itself goes only at greater difficulty.",
+     "aids": [
+      "2987452"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 9,
+     "text": "Several parallel bootpaths lead to the summit; a short downclimb on the way is easy class 2 or a bit harder class 3, as you prefer.",
+     "aids": [
+      "2987452"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 7,
+     "text": "In early July the creek can be crossed by hopping closely spaced rocks, and drinking water above is only slow drips off snow patches in flat spots.",
+     "aids": [
+      "3258797"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Trailhead pin 47.7923,-121.4592 equals the position printed by the hiking-trail association; no move."
+}

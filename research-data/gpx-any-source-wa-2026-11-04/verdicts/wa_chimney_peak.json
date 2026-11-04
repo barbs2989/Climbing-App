@@ -1,0 +1,52 @@
+{
+  "area_id": "wa_chimney_peak",
+  "routes": [
+    {
+      "route_id": "wa_chimney_peak_standard",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep",
+        "evidence": "Stored Jun-Sep; Wikipedia gives June-September as the favorable weather window; histogram Jun-Sep; early-season snow at Anderson Pass."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2655287",
+          "verdict": "different",
+          "why": "Sep 24, Class 2+ via Pyrites Creek and Muncaster Basin to the south arm, not the SW ridge from Enchanted Valley; also a link-up with Bicentennial Peak."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_chimney_peak_the_chimney",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep",
+        "evidence": "Stored Jun-Sep; same general window found in web search."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2655287",
+          "verdict": "different",
+          "why": "Walk-up of the peak, not the 5.3 tower."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Only one harvested track and it is an off-route link-up."
+}

@@ -1,0 +1,38 @@
+{
+  "area_id": "wa_hagan_mountain",
+  "routes": [
+    {
+      "route_id": "wa_hagan_mountain_south",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Searched: no official season; accounts are ski traverses (Jan, Apr, May) and a Labor Day foot traverse; glacier route and brushy approach favor mid-July through September. Kept stored Jul-Sep."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3236575",
+          "verdict": "unsure",
+          "why": "Jun 19 2026, summited, round trip from Baker River trailhead, summit pin 4 m; but it goes in by the northern Blum Lakes side and also tags Mount Blum, while our route text describes a southern approach from Sulphide Creek past Hidden Lake and the glacier col. No report text. June is under a month before the window and stored text calls it snowbound."
+        },
+        {
+          "aid": "2824718",
+          "verdict": "offseason",
+          "why": "Apr 27 snow climb, exposed traverse, class 4."
+        },
+        {
+          "aid": "2263073",
+          "verdict": "unsure",
+          "why": "Jul 29 2023, part of a 39-mile Watson-Bacon-Hagan-Blum traverse starting elsewhere; ends at the trailhead but is not a round trip."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Our single route describes the southern approach, but all harvested tracks use the northern approach from Baker River trailhead via Blum Lakes (documented as a standard access). A separate north-approach variant may be worth adding. Packet shows hasTrackPts=386 for this route already."
+}

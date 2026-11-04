@@ -1,0 +1,244 @@
+{
+  "area_id": "wa_cutthroat_peak",
+  "routes": [
+    {
+      "route_id": "wa_complete_south_buttress",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep (late June onward)",
+        "evidence": "Stored Jul-Sep with best late June-September. Web search (Mountaineers route pages for the west ridge, southeast buttress and north ridge; summitpost listing as summer/fall) agrees; histogram for logged south buttress/west/north ridge ascents peaks Jul-Sep."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3264566",
+          "verdict": "unsure",
+          "why": "Logged plain South Buttress; every track leaves the same trailhead and nothing distinguishes the lower-ridge extension. Not positive evidence for the Complete variant."
+        },
+        {
+          "aid": "1212686",
+          "verdict": "unsure",
+          "why": "No evidence of the extension."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_cutthroat_south_buttress",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep (late June onward)",
+        "evidence": "Stored Jul-Sep with best late June-September. Web search (Mountaineers route pages for the west ridge, southeast buttress and north ridge; summitpost listing as summer/fall) agrees; histogram for logged south buttress/west/north ridge ascents peaks Jul-Sep."
+      },
+      "track": {
+        "aid": "3264566",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Logged route is South Buttress (our standard line); report describes simul-climbing to pitch 8, the summit ridge traverse and the west-side descent gully; line summits (1 m from pin). Caveat: track starts about 440 m from our trailhead pin while tracks cluster about 200 m from the Complete South Buttress pin, so the pin looks off by a few hundred metres; I could not confirm a coordinate from any fetched official page, so no pin move is proposed."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "2970844",
+          "verdict": "unsure",
+          "why": "Also logged South Buttress, Sep 3, summited and valid; not chosen only because 3264566 is denser and more recent."
+        },
+        {
+          "aid": "907300",
+          "verdict": "unsure",
+          "why": "Also logged South Buttress (Aug 2017); valid second choice."
+        },
+        {
+          "aid": "2210148",
+          "verdict": "offseason",
+          "why": "No logged route, Jun 4 is over a month before the late-June start."
+        },
+        {
+          "aid": "2211878",
+          "verdict": "offseason",
+          "why": "Same date, no logged route."
+        },
+        {
+          "aid": "2951694",
+          "verdict": "unsure",
+          "why": "No logged route or description."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "what_to_bring",
+          "month": 7,
+          "text": "Single rack of small to #3 cams is enough; the short summit offwidth needs no #4 (July)",
+          "aids": [
+            "3255127"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "Keep the pack small or tow it: three squeeze chimneys on a wandering line are awkward with a bulky bag (July).",
+          "aids": [
+            "3255127"
+          ]
+        },
+        {
+          "field": "descent_note",
+          "month": 9,
+          "text": "In early September the usual way down is the west ridge: a few rappels and down-scrambling along a narrow crest, then a loose gully of sand and rubble that runs fast underfoot.",
+          "aids": [
+            "2970844",
+            "3264566"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 9,
+          "text": "Sandy rubble in the lower west-side descent gully (early September) sends rocks down on partners below",
+          "aids": [
+            "2970844",
+            "3264566"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+      "season": {
+        "months": [
+          4,
+          5
+        ],
+        "window": "Apr-May",
+        "evidence": "Stored Apr-May, soon after the highway reopens (Mountain Project listing for Cauthorn-Wilson agrees). The only logged ascent by that name is in May; no harvested track climbs it."
+      },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_cutthroat_peak_northeast_face",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep; no route-specific web guidance found."
+      },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_cutthroat_the_swarm",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "First ascent was in July; Mountain Project lists it as an 8-pitch alpine route; no tracks name it."
+      },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_cutthroat_west_ridge",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep (late June onward)",
+        "evidence": "Stored Jul-Sep with best late June-September. Web search (Mountaineers route pages for the west ridge, southeast buttress and north ridge; summitpost listing as summer/fall) agrees; histogram for logged south buttress/west/north ridge ascents peaks Jul-Sep."
+      },
+      "track": {
+        "aid": "1509097",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Logged W Ridge; the report describes the notch gully, the two chained rap stations and the exposed crest to the summit block, and the line summits (9 m). Oct 3 is within a month of the season end. Same pin caveat as South Buttress: start 575 m from our trailhead pin, not confirmable here."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "1212686",
+          "verdict": "unsure",
+          "why": "Logged West Ridge, Aug 2019, but the track tops out about 150 m below the summit and has no report; second choice."
+        },
+        {
+          "aid": "1490456",
+          "verdict": "unsure",
+          "why": "Logged W ridge, Sep 2020 report agrees, but it has no GPS track."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 10,
+          "text": "Loose gully of sand over big blocks leads to the notch; rockfall is easy to trigger (early October)",
+          "aids": [
+            "1509097"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 9,
+          "text": "Rappel chains sit mid-route; a running belay across the exposed crest to the notch below the final pitch is enough (September).",
+          "aids": [
+            "1509097",
+            "1490456"
+          ]
+        },
+        {
+          "field": "descent_note",
+          "month": 9,
+          "text": "Rappelling from the summit: the second set of chains lands on poor ground, so use the boulder anchor below it to reach flat ground just west of the north-ridge notch ledge (September).",
+          "aids": [
+            "1490456"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_north_ridge_3",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep (late June onward)",
+        "evidence": "Stored Jul-Sep with best late June-September. Web search (Mountaineers route pages for the west ridge, southeast buttress and north ridge; summitpost listing as summer/fall) agrees; histogram for logged south buttress/west/north ridge ascents peaks Jul-Sep."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "1490456",
+          "verdict": "different",
+          "why": "West ridge that merely finishes up the north ridge top pitch."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Every harvested track starts roughly 200 m from the Complete South Buttress trailhead pin but 320-575 m from the pins on the other routes, so those pins are probably a few hundred metres off (tracks start near 48.5134,-120.6879). I tried OpenStreetMap and the summitpost page and could not confirm the coordinate, so no move is proposed. The Cauthorn-Wilson and East Face routes share identical pins and approach text and may be misfiled copies of each other. The South Buttress and West Ridge assignments would fail the 300 m start rule until a trailhead pin is confirmed."
+}

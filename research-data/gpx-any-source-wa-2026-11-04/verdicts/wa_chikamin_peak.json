@@ -1,0 +1,59 @@
+{
+  "area_id": "wa_chikamin_peak",
+  "routes": [
+    {
+      "route_id": "wa_chikamin_peak_southeast_slopes",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Web: Mountaineers lists the Chikamin route June-October; other pages say mid-summer to early fall once snow is minimal; peak logs peak Aug (100) and Sep (81). Stored Jul-Sep kept; Oct allowed as the one-month margin."
+      },
+      "track": {
+        "aid": "1505680",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Catalog holds exactly one route here (PCT start). Round trip from PCT North Trailhead (start/end 157 m from our pin), summited, logged Commonwealth Basin Trail -> PCT -> Boot Trail, about 27 mi and 8,750 ft; the line follows the PCT north and leaves it at our gully-turnoff waypoint (17 m away) before the summit. 1 Oct 2020 is within a month of Sep. Note: the line is thin (42 points)."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "2967152",
+          "verdict": "different",
+          "why": "Mineral Creek / Glacier Lake approach, a different route (not in our catalog); starts 13 km from our pin."
+        },
+        {
+          "aid": "2707646",
+          "verdict": "different",
+          "why": "Mineral Creek approach."
+        },
+        {
+          "aid": "841192",
+          "verdict": "different",
+          "why": "Glacier Lake route from Mineral Creek."
+        },
+        {
+          "aid": "1715036",
+          "verdict": "different",
+          "why": "Glacier Lake route."
+        },
+        {
+          "aid": "2138200",
+          "verdict": "offseason",
+          "why": "February winter ascent via Gold Creek."
+        },
+        {
+          "aid": "3252954",
+          "verdict": "unsure",
+          "why": "Starts 17 km from our pin, no route name, highest point elsewhere."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "The catalog lacks the Glacier Lake (Mineral Creek, Park Lakes) route, which most logged ascents use (about 15.5-16.6 mi round trip, 5,700-6,200 ft gain, Jul-Sep). Worth adding as its own route; no facts written for it since it is not stored."
+}

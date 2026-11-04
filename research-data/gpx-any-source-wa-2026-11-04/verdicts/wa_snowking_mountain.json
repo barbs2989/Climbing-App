@@ -1,0 +1,128 @@
+{
+ "area_id": "wa_snowking_mountain",
+ "routes": [
+  {
+   "route_id": "wa_east_ridge_2",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored May-Oct with best mid-July to early September; peak-wide successful ascents Jul 58, Aug 51, Sep 21, Jun 25; searches found July and August as the usual months for the Kindy Ridge approach, with early-summer snow the main variable."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3330398",
+     "verdict": "unsure",
+     "why": "Aug 31 2026, summited, complete (starts 162 m from our trailhead pin, same distance at the end). Report describes a Class 2-3 scramble on the northeast ridge to a notch below the summit block and avoiding the glacier, which fits the East Ridge, but no route name is logged and a report of the standard Kindy Ridge route (Jul 7 2024) mentions the same notch, so the two routes cannot be told apart. Best candidate if the owner accepts it."
+    },
+    {
+     "aid": "2522318",
+     "verdict": "different",
+     "why": "Oct 7 2023 logged Kindy Ridge, walked briefly on the glacier and climbed a loose gully: the glacier standard route."
+    },
+    {
+     "aid": "3227592",
+     "verdict": "unsure",
+     "why": "Jun 13 2026 logged Standard climbers trail/Kindy ridge; snow climb to the summit; standard, not East Ridge."
+    },
+    {
+     "aid": "3256963",
+     "verdict": "unsure",
+     "why": "Jul 5 2026 partial camp-based, no report."
+    },
+    {
+     "aid": "3266354",
+     "verdict": "unsure",
+     "why": "Jul 12 2026 traverse including the West Peak from a different start: not a trailhead round trip."
+    },
+    {
+     "aid": "255055",
+     "verdict": "unsure",
+     "why": "Jul 22 2012 logged Kindy Ridge, no route detail, start 356 m from our pin."
+    },
+    {
+     "aid": "2804069",
+     "verdict": "offseason",
+     "why": "April 6 2025, snowshoe ascent."
+    },
+    {
+     "aid": "2823455",
+     "verdict": "offseason",
+     "why": "April 26 2025."
+    },
+    {
+     "aid": "2749285",
+     "verdict": "offseason",
+     "why": "January 19 2025."
+    },
+    {
+     "aid": "2544511",
+     "verdict": "unsure",
+     "why": "Jun 19 2024, no logged route; approach by a different off-trail line."
+    },
+    {
+     "aid": "2564515",
+     "verdict": "unsure",
+     "why": "Jul 7 2024 logged Kindy ridge; no track harvested."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "approach_note",
+     "month": 6,
+     "text": "In mid-June the climbers path was patchy from about 4,600 ft and the forest snow stayed firm even in the afternoon; the road needed medium clearance for stream crossings.",
+     "aids": [
+      "3227592"
+     ]
+    },
+    {
+     "field": "approach_note",
+     "month": 7,
+     "text": "In early July snow patches began near 5,100 ft and became continuous around the tarns by Cyclone Lake; running meltwater was available but dries once the snow is gone.",
+     "aids": [
+      "2564515"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "In early July a moat was opening at the notch below the summit block and snow reached the rock there; the block itself was snow-free.",
+     "aids": [
+      "2564515"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 8,
+     "text": "Late August: the summit scramble was snow-free and most snow and the glacier could be avoided; the notch below the summit block is a short, slightly awkward downclimb.",
+     "aids": [
+      "3330398"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "In late August, flat camps sit beyond Cyclone Lake near the adjacent tarns, which are less crowded than the lakeshore.",
+     "aids": [
+      "3330398"
+     ]
+    },
+    {
+     "field": "approach_note",
+     "month": 6,
+     "text": "The approach is a roller-coaster of small ups and downs over Found Peak and the ridge, so the day totals much more climbing than the summit height suggests, roughly 8,500-9,000 ft round trip.",
+     "aids": [
+      "3330398",
+      "3227592"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "East Ridge is the only route needing a track; Standard Route/Snowking Glacier already has one (334 pts). Identity of the East Ridge could not be proven: the shared Kindy Ridge approach and the notch below the summit block appear in reports of both routes, and the harvested Peakbagger tracks all climb from the east. The Aug 31 2026 track (3330398) is the best candidate if you accept a non-glacier ridge description as enough. No pins proposed: our Kindy Creek trailhead pin is 162 m from the common track start."
+}

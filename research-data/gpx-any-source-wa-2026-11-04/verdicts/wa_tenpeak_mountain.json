@@ -1,0 +1,81 @@
+{
+  "area_id": "wa_tenpeak_mountain",
+  "routes": [
+    {
+      "route_id": "wa_tenpeak_mountain_north_couloir",
+      "season": {
+        "months": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "window": "Apr-Jul",
+        "evidence": "Stored note cites climbs mid-April to mid-July; web found no contradiction."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "1455059",
+          "verdict": "different",
+          "why": "Aug 2020 ascent via the West Ridge from Neyah Point, not the north couloir."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_tenpeak_mountain_southeast",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Peak logs Jul 4, Aug 5, Sep 2; web search found only late-summer/early-fall dated trips; stored Jul-Sep."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "1455059",
+          "verdict": "different",
+          "why": "12 Aug 2020 track is a multi-day traverse ascending Tenpeak by the west ridge from Neyah Point and starting at North Fork Sauk, 16 km from our White River pin."
+        },
+        {
+          "aid": "1768542",
+          "verdict": "unsure",
+          "why": "25 Sep 2021 White River day trip up the south-east gully to the notch, a good match for the line in our text, but it has no track points."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 9,
+          "text": "By late September the maintained White River trail beyond the Boulder Creek turnoff had been brushed, and the abandoned track toward Thunder Creek was mostly followable.",
+          "aids": [
+            "1768542"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 9,
+          "text": "Above a camp at about 4,200 ft by Thunder Creek, dense slide alder between roughly 4,200 and 5,000 ft is the hardest bushwhacking before Thunder Basin opens up.",
+          "aids": [
+            "1768542"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 9,
+          "text": "By late September the south-east gully below the notch is bare and loose, and large rocks release easily.",
+          "aids": [
+            "1768542"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Only the White River approach was a day trip in the harvest. No track qualifies."
+}
