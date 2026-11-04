@@ -45,13 +45,13 @@ export default class AppErrorBoundary extends Component {
       <div style={WRAP} role="alert">
         <div style={CARD}>
           <div style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>{chunk ? "This screen couldn’t be downloaded" : "This screen hit a bug"}</div>
-          <div style={{ fontSize: 13.5, color: "#99a3ad", lineHeight: 1.55 }}>
+          <div style={{ fontSize: 13.5, color: "#b8c0c8", lineHeight: 1.55 }}>
             {chunk ? "Either the connection dropped or ClimbMatch was just updated. Reload once you have signal. " : "Reloading usually clears it. "}
             Nothing you had saved to your account is affected — anything
             entered on this screen and not yet saved is lost.
           </div>
           <div style={{ marginTop: 12, padding: "9px 11px", background: "#0d1117", border: "1px solid #30363d",
-            borderRadius: 9, fontSize: 12, color: "#99a3ad", fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
+            borderRadius: 9, fontSize: 12, color: "#b8c0c8", fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
             wordBreak: "break-word", maxHeight: 120, overflowY: "auto" }}>{msg}</div>
           <button style={BTN} onClick={() => window.location.reload()}>Reload ClimbMatch</button>
         </div>
