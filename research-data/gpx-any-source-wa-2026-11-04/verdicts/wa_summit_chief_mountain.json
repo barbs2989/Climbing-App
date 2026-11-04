@@ -1,0 +1,20 @@
+{
+  "area_id": "wa_summit_chief_mountain",
+  "routes": [
+    { "route_id": "wa_summit_chief_mountain_south_route", "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Logged ascents Jul 40, Aug 29, Sep 21 (Jun 4, Oct 1, May 1); stored Jul-Sep with August best; web: Mountaineers, SummitPost and WTA reports show mid-summer to early fall, with snow and moat issues earlier." },
+      "track": { "aid": "2961556", "verdict": "same", "kind": "complete", "inSeason": true, "why": "27 Aug 2025 round trip from Pete Lake to the PCT, Vista Lakes area, the notch in the south ridge and the summit (end 59 m from the stored trailhead; summit within 17 m); the report describes the steep loose crux near 6,900 ft where our text places the moat, matching the South Route line. The peak's only other non-ice entry, Southeast Face, is an empty stub on the same face." },
+      "otherTracksConsidered": [ { "aid": "3252952", "verdict": "unsure", "why": "2 Jul 2026 round trip, but the track also wanders west toward the Lemah/Chikamin side (link-up), and early July." }, { "aid": "2966273", "verdict": "unsure", "why": "30 Aug 2025 round trip with no elevations; the party says its up-track included fifth-class moves, so the line departs from the standard one." }, { "aid": "2707651", "verdict": "different", "why": "Part of a multi-day Lemah traverse with Chikamin and Lemah; starts mid-route." } ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 8, "text": "Around 6,900 ft the slope is steep loose grit over packed dirt; it is much easier while snow still covers it earlier in summer.", "aids": ["2961556"] },
+        { "field": "pro_tips", "month": 8, "text": "After the notch in the south ridge, take the loose scree gully around the back toward the summit block; heading straight up the face in late August meant solo fifth-class moves.", "aids": ["2966273","2301585"] },
+        { "field": "what_to_bring", "month": 7, "text": "Crampons and ice axe (early to mid July, when snow still lies in the basin)", "aids": ["2707651","2243502"] },
+        { "field": "watch_out", "month": 8, "text": "From mid-July through early September the upper gullies are very loose and dirty; descending is slower than climbing and rocks released fall on parties below.", "aids": ["2277164","2301585","2243502"] }
+      ] },
+    { "route_id": "wa_summit_chief_mountain_southeast_face", "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "No stored season; the peak's logged ascents run mainly Jul-Sep." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "2961556", "verdict": "unsure", "why": "SE-face names appear in logs (Aug, Sep) but this entry has no text; the line is that of the South Route (stored face 'Southeast Face / Basin'), so it is assigned there only." } ],
+      "pins": [], "facts": [] }
+  ],
+  "notes": "Southeast Face looks like a duplicate of the South Route (that route's face is stored as 'Southeast Face / Basin'); consider merging. Summit pin and Peakbagger agree within ~30 m."
+}

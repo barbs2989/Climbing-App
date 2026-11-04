@@ -1,0 +1,125 @@
+{
+  "area_id": "wa_switchback_mountain",
+  "routes": [
+    {
+      "route_id": "wa_switchback_mountain_scramble",
+      "season": {
+        "months": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jul-Oct",
+        "evidence": "Searched: trails usually snow-free in early July, snow lingers at the pass and shaded lake edges into July; larch color late Sep-Oct with possible ice on the back side by mid-October. Peakbagger ascents Jun-Oct, October the heaviest. Matches stored Jul-Oct."
+      },
+      "track": {
+        "aid": "3283373",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "July 18, summited: round trip from our Foggy Dew trailhead (20 m), up the Foggy Dew and Martin Creek trails to Cooney Lake, onto the southeast ridge, summit within 4 m. Report: camped at the lake, scrambled Switchback then Martin. Caveat: the loop also tags Martin Peak and returns over the ridge into Merchants Basin; no route name logged. Switchback has only this southeast-ridge line from Cooney Lake plus the west-ridge variant from Boiling Lake, which this track does not use."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3253870",
+          "verdict": "unsure",
+          "why": "Jul 4, from Crater Creek side, Switchback plus Martin, descended Martin NE side; start is the other trailhead (4.7 km from our pin)."
+        },
+        {
+          "aid": "1994970",
+          "verdict": "unsure",
+          "why": "Aug 13, Cooney Lake/SE Ridge, Crater Creek start, part of a Switchback-Martin-Bigelow loop; not from our pinned trailhead."
+        },
+        {
+          "aid": "1232449",
+          "verdict": "unsure",
+          "why": "Aug 30 SE Ridge, Crater Creek start, three-peak loop."
+        },
+        {
+          "aid": "3229693",
+          "verdict": "different",
+          "why": "Long ridge traverse from Raven Ridge, June 14."
+        },
+        {
+          "aid": "2850121",
+          "verdict": "offseason",
+          "why": "May 25."
+        },
+        {
+          "aid": "2818420",
+          "verdict": "offseason",
+          "why": "April 19 snow traverse."
+        },
+        {
+          "aid": "3230708",
+          "verdict": "different",
+          "why": "Summer Blossom trail start, June 13, different line."
+        },
+        {
+          "aid": "1439076",
+          "verdict": "different",
+          "why": "Logged North Ridge, highest point on another peak."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "Mosquitoes were heavy at Cooney Lake in early July.",
+          "aids": [
+            "3253870"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "If you continue to Martin Peak in early July, expect snowfields on its northeast side that call for an ice axe and crampons.",
+          "aids": [
+            "3253870"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "Black bears were seen on the Crater Creek side approach in late August.",
+          "aids": [
+            "1232449"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 8,
+          "text": "The last stretch from the pass to the summit is short but leaves the path for loose rock; the Crater Creek trailhead lot can be full on summer weekend nights (August).",
+          "aids": [
+            "1994970"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_switchback_mountain_west_ridge",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Searched: a Mountaineers page describes the west face trail or class 2-3 west ridge but gives no season; surrounding accounts match the standard route (snow-free from July, ice by mid-October). Kept stored Jul-Sep."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3230708",
+          "verdict": "unsure",
+          "why": "Jun 13 from Summer Blossom trailhead; direction and month do not establish a Boiling Lake west-ridge line."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Our standard route names only the Foggy Dew trailhead, but most recordings start at the Crater Creek/Eagle Lakes trailhead (4.7 km away, 6 starts); a second trailhead pin could be considered after confirming that coordinate. Assigned track 3283373 also tags Martin Peak."
+}

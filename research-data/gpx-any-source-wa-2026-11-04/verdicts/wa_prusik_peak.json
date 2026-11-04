@@ -1,0 +1,79 @@
+{
+  "area_id": "wa_prusik_peak",
+  "routes": [
+    {
+      "route_id": "wa_prusik_peak_west_ridge",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Logged West Ridge ascents run Jun-Oct (Jul-Sep carry most; Oct 9, Jun 8+); web search: Mountaineers/SummitPost guidebook-derived pages give May-Sep with axe and crampons needed in the early shoulder, late October possible but short. Stored Jul-Sep kept; usable window with the one-month margin is Jun-Oct." },
+      "track": { "aid": "2653233", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged route is West Ridge, the report walks the same line (scramble past the balanced rock from Prusik Pass, slab pitch, summit cracks, north-side rappels), summited on Sep 21, round trip from the Colchuck/Stuart trailhead lot (start/end within ~55 m of our Trailhead pin), passes the 300 m rule, summit within 14 m of Peakbagger's coordinate." },
+      "otherTracksConsidered": [
+        { "aid": "2673422", "verdict": "same", "why": "Also West Ridge, complete, summited Oct 12 (within a month of the season); passed over only because Sep 21 is closer to the core season. Equally valid alternate." },
+        { "aid": "3352315", "verdict": "unsure", "why": "Logged West Ridge, Sep 19, but the recording starts at the Snow Lakes camp area (8 km from the trailhead pin), so it is a partial track." },
+        { "aid": "2991837", "verdict": "unsure", "why": "Blank logged route (report says West Ridge) but starts ~7 km from the trailhead pin at camp; partial, not a round trip from the road." },
+        { "aid": "3001841", "verdict": "unsure", "why": "Blank logged route (report says West Ridge) but camp-based partial track, ~7 km from the trailhead pin." },
+        { "aid": "3303777", "verdict": "unsure", "why": "Blank logged route and no report; on a formation with many routes this proves nothing; track also ends 5 km from the start." },
+        { "aid": "2209878", "verdict": "offseason", "why": "Jun 3 with a snow-covered approach, and a camp-based partial track." },
+        { "aid": "1007866", "verdict": "different", "why": "Logged Stanley-Burgner, a different route on this peak (stored separately)." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "descent_note", "month": 9, "text": "In late September and mid-October, parties made five rappels down the north side rather than four; the stations were easy to find, one worn station can be skipped for a newer one a few feet to the side, and loose rock above the lower raps is a real hazard.", "aids": ["2653233", "2673422"] },
+        { "field": "watch_out", "month": 9, "text": "Late September: only small patches of snow remain on the north side below the rappels; passable in rock shoes", "aids": ["3352315"] },
+        { "field": "pro_tips", "month": 9, "text": "Stash your pack and poles at the base of the short scramble below the balanced rock, and carry water from the last stream near Prusik Pass, since there is none on the climb.", "aids": ["2653233"] },
+        { "field": "pro_tips", "month": 10, "text": "On the final pitch you can choose the harder right-hand crack (about 5.8) or an easier chimney to its right that passes a fixed bolt; both reach the summit ledge.", "aids": ["2673422", "2991837"] },
+        { "field": "monthBreakdown", "month": 10, "text": "Mid-October can bring a calm, clear day with golden larches, but the rock is cold, there is a queue below the slab pitch, and the dusty, slippery top of Aasgard Pass makes the descent in the dark slow.", "aids": ["2673422"] }
+      ]
+    },
+    {
+      "route_id": "wa_prusik_peak_solid_gold",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep; two logged Solid Gold ascents are in September; guidebook-derived pages give the south face dry from July. Same web search as West Ridge." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "all", "verdict": "unsure", "why": "No harvested track carries a Solid Gold logged route; blank-route tracks reach the shared summit only, which proves nothing on a peak with many technical routes." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_prusik_peak_taylor_wood_route",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep; no logged ascents under this name; same web search (May-Sep guidebook window)." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "all", "verdict": "unsure", "why": "No logged route or report names Taylor-Wood." } ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_prusik_peak_alpine_craggers_delight",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep; no logged ascents under this name; same web search." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "all", "verdict": "unsure", "why": "No logged route or report names it." } ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_prusik_peak_prayer_for_a_friend",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep; no logged ascents; same web search." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "all", "verdict": "unsure", "why": "No logged route or report names it." } ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_prusik_peak_sail_away",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep; no logged ascents; same web search." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "all", "verdict": "unsure", "why": "No logged route or report names it." } ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_prusik_peak_east_face",
+      "season": { "months": [], "window": "", "evidence": "Stub record with no text, grade or waypoints; no logged route named East Face; same web search gave nothing specific." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "all", "verdict": "unsure", "why": "Nothing identifies this route; likely a misfiled stub (a South Face / Beckey-Davis style record, since a logged 'South Face' is Aug)." } ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "West Ridge is the only route with a qualifying track. Stub route wa_prusik_peak_east_face has no content. Stanley-Burgner and Beckey-Davis routes already stored are not in this packet (tracks exist or not needed). Tracks 1505083, 850879, 2287311, 1400206 had no mechanical checks and were not assigned (1400206 is mid-June, offseason)."
+}

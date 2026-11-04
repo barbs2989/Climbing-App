@@ -1,0 +1,50 @@
+{
+ "area_id": "wa_skookum_peak_twinsisters",
+ "routes": [
+  {
+   "route_id": "wa_skookum_peak_twinsisters_scramble",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Searched: range lists spring-fall; north-facing snow lingers into July. Stored Jul-Sep; logged Skookum-area ascents Jul-Sep."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2079183",
+     "verdict": "different",
+     "why": "Sep 5 long traverse of both Twins, Jaws Tooth and Skookum from the Weyerhaeuser bridge, bailing down South Twin; not this route"
+    },
+    {
+     "aid": "2268202",
+     "verdict": "unsure",
+     "why": "Aug 20 round trip from the Green Creek trailhead (6.8 km from our pin), no report"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 9,
+     "text": "In early September the glacier above Green Creek basin was icy and broken, a poor way down; the long west ridge of South Twin was a straightforward class 3 retreat.",
+     "aids": [
+      "2079183"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 9,
+     "text": "Jaws Tooth has fun layback moves; moving through the fifth-class ground past it on two simul-climbing rope teams took parties hours.",
+     "aids": [
+      "2079183"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "The packet lists only one route; the stored Jaws Tooth and Northwest Ridge route is not in routes[]. Tracks start from different trailheads than our FR 38 Elbow Lake pin and none is route-specific."
+}

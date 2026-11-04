@@ -1,0 +1,131 @@
+{
+  "area_id": "wa_argonaut_peak",
+  "routes": [
+    {
+      "route_id": "wa_argonaut_peak_northeast_couloir",
+      "season": {
+        "months": [
+          5,
+          6
+        ],
+        "window": "May-Jun",
+        "evidence": "Stored May-Jun; NE Couloir is a ~3,000 ft snow gully logged in May and June (2022-06-12 with snow from ~6,000 ft); later it melts out to loose rock and brush."
+      },
+      "track": {
+        "aid": "1940647",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Logged Northeast Couloir, 2022-06-12; track starts 47 m from Stuart Lake trailhead pin, passes within 7 m of our summit pin, returns to start; report describes Stuart Lake Trail to ~4,700 ft, Mountaineer Creek crossing, snow from ~6,000 ft, steeper ice near 7,600 ft, ridge, and a S/SE gully descent, matching our text."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3229984",
+          "verdict": "different",
+          "why": "June 2026, south route from Ingalls side (starts 13 km away), did not climb the couloir."
+        },
+        {
+          "aid": "3214423",
+          "verdict": "not-summited",
+          "why": "May 31 2026, starts far from our trailhead and its highest point is ~2 km from the summit."
+        },
+        {
+          "aid": "817093",
+          "verdict": "different",
+          "why": "NW Arete, rock route."
+        },
+        {
+          "aid": "546814",
+          "verdict": "different",
+          "why": "NW Arete, July."
+        },
+        {
+          "aid": "1407151",
+          "verdict": "different",
+          "why": "South Side standard, other approach."
+        },
+        {
+          "aid": "2581282",
+          "verdict": "different",
+          "why": "South route."
+        },
+        {
+          "aid": "1481621",
+          "verdict": "different",
+          "why": "South route, September, offseason."
+        },
+        {
+          "aid": "3385404",
+          "verdict": "offseason",
+          "why": "South route, October."
+        },
+        {
+          "aid": "2936500",
+          "verdict": "offseason",
+          "why": "South route, August."
+        },
+        {
+          "aid": "2583398",
+          "verdict": "offseason",
+          "why": "South route scramble, July."
+        },
+        {
+          "aid": "2032917",
+          "verdict": "offseason",
+          "why": "South, September."
+        },
+        {
+          "aid": "2033190",
+          "verdict": "offseason",
+          "why": "South slope, September."
+        },
+        {
+          "aid": "559011",
+          "verdict": "different",
+          "why": "Colchuck Pass line, July."
+        },
+        {
+          "aid": "266158",
+          "verdict": "offseason",
+          "why": "South, September."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 6,
+          "text": "After leaving the Stuart Lake Trail near 4,700 ft, follow the cairned boot path through the boulder field and avoid climbing too high there, or you drift toward the Sherpa and Stuart side.",
+          "aids": [
+            "1940647"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 6,
+          "text": "In mid-June the snow becomes consistent from about 6,000 ft, steepening above about 7,600 ft with patches of rock and ice, so one tool is workable but two are better.",
+          "aids": [
+            "1940647"
+          ]
+        },
+        {
+          "field": "what_to_bring",
+          "month": 6,
+          "text": "A 60 m rope for the rappels (a 48 m rope runs short on the gully descent in June)",
+          "aids": [
+            "1940647"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 6,
+          "text": "Once on the ridge in June, stay mostly on the north side of the crest until the final rock.",
+          "aids": [
+            "1940647"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Packet covers mostly the south-side scramble tracks, which belong to another route not in our list (a South Gully/South Route may be missing from this peak). Only the NE Couloir has a qualifying track."
+}

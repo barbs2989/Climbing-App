@@ -1,0 +1,81 @@
+{
+  "area_id": "wa_north_gardner_mountain",
+  "routes": [
+    {
+      "route_id": "wa_north_gardner_mountain_nw_couloir",
+      "season": {
+        "months": [
+          5,
+          6
+        ],
+        "window": "May-Jun",
+        "evidence": "Stored May-Jun. Search: a mountaineering club lists the NW route as May-Aug; couloir ski/snow ascents reported mid to late May; by mid-late summer the line is loose talus with no snow benefit. Histogram empty in packet."
+      },
+      "track": {
+        "aid": "2515753",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "May 20 2024: starts and ends at Cedar Creek Trailhead (16/18 m from our pin), crosses Cedar Creek on a log jam, stays west of the creek, climbs a steep snow/ice slope on the north side then steps right onto loose scree to the summit; matches our Cedar Creek / NW couloir text. Logged route \"North Ridge-ish\". Every other track on the peak starts at Wolf Creek (SW route)."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "67187",
+          "verdict": "unsure",
+          "why": "May 31 2009 NW Couloir via Cedar Creek, but the track is partial (starts 3.5 km from the trailhead pin)."
+        },
+        {
+          "aid": "2095413",
+          "verdict": "offseason",
+          "why": "Dec 17 NW gully, winter overnight."
+        },
+        {
+          "aid": "1577264",
+          "verdict": "offseason",
+          "why": "Jan winter, Wolf Creek."
+        },
+        {
+          "aid": "2856351",
+          "verdict": "different",
+          "why": "Wolf Creek approach via Gardner Meadows."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 5,
+          "text": "In mid-May the snow on the main climb can be hard, smooth ice; a steep committing section calls for crampons and ideally a second axe.",
+          "aids": [
+            "2515753"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 5,
+          "text": "By late May in warm weather the log over Cedar Creek can be submerged, and a thigh-deep wade is dangerous; one party was nearly swept off.",
+          "aids": [
+            "67187"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 5,
+          "text": "In mid-May, staying on the west side of Cedar Creek all the way up keeps bushwhacking light.",
+          "aids": [
+            "2515753"
+          ]
+        },
+        {
+          "field": "descent_note",
+          "month": 5,
+          "text": "In mid-May, loose scree beside the icy slope lets you boot-ski down and skip much of the steep hard snow; take crampons off before sliding the lower slope.",
+          "aids": [
+            "2515753"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Southwest route already has tracks. 2515753 is the only complete in-season Cedar Creek round trip."
+}

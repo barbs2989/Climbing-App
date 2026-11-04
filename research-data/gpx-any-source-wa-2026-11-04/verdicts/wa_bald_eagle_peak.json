@@ -1,0 +1,147 @@
+{
+  "area_id": "wa_bald_eagle_peak",
+  "routes": [
+    {
+      "route_id": "wa_bald_eagle_peak_scramble",
+      "season": {
+        "months": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jul-Oct",
+        "evidence": "Ascents spread Aug-Oct; stored optimal window Jul-Oct; snow lingers above ~4,500 ft into June and the first snow was settling on the heather benches by Oct 11 2026. Web: summit page lists spring-fall with snow patches in upper gullies; no firmer source."
+      },
+      "track": {
+        "aid": "3378156",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Start/end 125-130 m from our FR 6835 pin; leaves the road at the north ridge toe and follows the ridge; report describes the 5,360 ft leftward traverse, the gully and benches and the west-side ledge under the summit tower as our North Ridge text does; summit within 4 m. Same line as 863299."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "863299",
+          "verdict": "same",
+          "why": "Sep 3 2017, identical line, in season, complete; sparser than 3378156, otherwise equal."
+        },
+        {
+          "aid": "275448",
+          "verdict": "unsure",
+          "why": "Oct 6 2012 North Ridge, no track data (facts only)."
+        },
+        {
+          "aid": "48288",
+          "verdict": "unsure",
+          "why": "Aug 2006 report, no track data."
+        },
+        {
+          "aid": "1045463",
+          "verdict": "unsure",
+          "why": "Sep 2018 North ridge, no track data."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 10,
+          "text": "In mid-October heavy blowdown lay across the slope from about 2,200 to 4,200 ft, slowing both the climb and the descent.",
+          "aids": [
+            "3378156"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 10,
+          "text": "In mid-October a dusting of snow on the heather benches above 5,300 ft made footing slick.",
+          "aids": [
+            "3378156"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 10,
+          "text": "After the leftward traverse near 5,360 ft, stay low rather than high; climbing high there leads onto a steep slab.",
+          "aids": [
+            "3378156"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 10,
+          "text": "Near the top, keep to the west side of the ridge past the rock tower for longer; rejoining the crest early makes the final scramble harder.",
+          "aids": [
+            "3378156"
+          ]
+        },
+        {
+          "field": "what_to_bring",
+          "month": 9,
+          "text": "about 3 liters of water (none on the route in late September)",
+          "aids": [
+            "1045463"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_bald_eagle_peak_south_spur",
+      "season": {
+        "months": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jul-Oct",
+        "evidence": "Ascents spread Aug-Oct; stored optimal window Jul-Oct; snow lingers above ~4,500 ft into June and the first snow was settling on the heather benches by Oct 11 2026. Web: summit page lists spring-fall with snow patches in upper gullies; no firmer source."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3378156",
+          "verdict": "unsure",
+          "why": "Track follows the north ridge; this route has no text, grade, face or pins."
+        },
+        {
+          "aid": "863299",
+          "verdict": "unsure",
+          "why": "Track follows the north ridge; this route has no text, grade, face or pins."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_bald_eagle_peak_southwest_route",
+      "season": {
+        "months": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jul-Oct",
+        "evidence": "Ascents spread Aug-Oct; stored optimal window Jul-Oct; snow lingers above ~4,500 ft into June and the first snow was settling on the heather benches by Oct 11 2026. Web: summit page lists spring-fall with snow patches in upper gullies; no firmer source."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3378156",
+          "verdict": "unsure",
+          "why": "Track follows the north ridge; this route has no text, grade, face or pins."
+        },
+        {
+          "aid": "863299",
+          "verdict": "unsure",
+          "why": "Track follows the north ridge; this route has no text, grade, face or pins."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "South Spur and Southwest Route are empty shells (no grade, text or waypoints); confirm they are real routes before attaching anything. Our Trailhead pin (47.6525,-121.2879) is within 130 m of both tracks' start, so no move. Summit pin is 8 m from Peakbagger's surveyed point. Oct 11 is a mid-October ascent, one month past a Jul-Sep core; facts are worded with the month."
+}

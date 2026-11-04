@@ -1,0 +1,70 @@
+{
+  "area_id": "wa_alpine_lookout",
+  "routes": [
+    {
+      "route_id": "wa_alpine_lookout_round_mountain_trail",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jun-Oct",
+        "evidence": "Stored Jun-Oct matches the logged histogram (Jul 29, Aug 26, Sep 28, Oct 38; May 17 and Nov 13 are snow-shoulder trips)."
+      },
+      "track": {
+        "aid": "2935244",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "9 Aug 2025 summit, round trip from our Round Mountain trailhead pin (14 m), reaches the lookout within 72 m; the only trail route up this side."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3394375",
+          "verdict": "offseason",
+          "why": "1 Nov 2026, past the stored Oct end; likely snow-covered."
+        },
+        {
+          "aid": "2613047",
+          "verdict": "same",
+          "why": "Also a good Aug round trip; not chosen (same line, sparser)."
+        },
+        {
+          "aid": "1417256",
+          "verdict": "same",
+          "why": "July round trip; same line."
+        },
+        {
+          "aid": "276008",
+          "verdict": "same",
+          "why": "October round trip; same line."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "Mosquitoes can be thick along much of the trail in early July; by mid-August they are far fewer.",
+          "aids": [
+            "1417256",
+            "2935244"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": null,
+          "text": "Plan for about 10 to 11 miles round trip and roughly 3,000 feet of gain, more than a one-way reading of the figures suggests.",
+          "aids": [
+            "1417256",
+            "276008"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Our summit pin is 73 m from the surveyed point and tracks top out 28-86 m from ours: within tolerance, no move. All five tracks agree on one route."
+}
