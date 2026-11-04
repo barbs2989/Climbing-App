@@ -91,7 +91,7 @@ room for side-panel ads later. The phone app keeps its own look.
     pick opens to its right, the inbox staying open; *Choose a conversation* fills the right until then.
   - **The Climbs tab shows its regions as a grid** of cards with their climb counts (the countries
     as buttons when there are two or more) instead of two dropdowns; **Groups** lists its group
-    cards and your group rows two per row. Partner and crew cards are long, so they stay one per row.
+    cards three across, each under a cover band (App's `groupBand`: a colour chosen from the group's name, and its initial — groups have no cover photo), and *Your groups* on For you as the same banded tiles three across (owner 2026-11-04, after Meetup); the *Your groups* tab's rows stay two per row. Partner and crew cards are long, so they stay one per row.
   - **The Calendar has a month view** above its lists (`MonthGrid`): your crews' agreed climbing days and
     group events on a month grid with ‹ › and *Today*; each entry opens what the list would. Crew days and
     events only (owner).
