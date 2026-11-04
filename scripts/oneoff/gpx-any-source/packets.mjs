@@ -11,7 +11,11 @@ const cands = JSON.parse(fs.readFileSync(candFile, "utf8"));
 const all = JSON.parse(fs.readFileSync(allFile, "utf8"));
 const found = r => r.pb && !r.pb.skip && r.pb.dm <= 2000;
 const peaks = new Map();
-for (const f of files) for (const rec of JSON.parse(fs.readFileSync(f, "utf8"))) if (found(rec) || !peaks.has(rec.area_id)) peaks.set(rec.area_id, rec);
+// A SummitPost record (sp-to-harvest.mjs: it carries spSections) is kept APART: the Peakbagger record still gives
+// the peak and its logged ascents (season research); the SummitPost one gives the tracks and its page text.
+const spPeaks = new Map();
+for (const f of files) for (const rec of JSON.parse(fs.readFileSync(f, "utf8"))) { if (rec.spSections !== undefined) { spPeaks.set(rec.area_id, rec); continue; } if (found(rec) || !peaks.has(rec.area_id)) peaks.set(rec.area_id, rec); }
+for (const [a, sp] of spPeaks) if (!peaks.has(a)) peaks.set(a, { ...sp, tracks: [] });
 // one ascent once: a peak harvested twice, or a resumed worker, repeats ascents
 for (const rec of peaks.values()) if (Array.isArray(rec.tracks)) { const seen = new Set(); rec.tracks = rec.tracks.filter(t => !seen.has(String(t.aid)) && seen.add(String(t.aid))); }
 fs.mkdirSync(outDir, { recursive: true });
@@ -28,6 +32,9 @@ const monthOf = d => { const m = /^\(?\d{4}-(\d{2})/.exec(d || ""); return m ? +
 let n = 0;
 for (const [area, rs] of byArea) {
   const rec = peaks.get(area); if (!rec?.pb?.pid) continue;
+  const sp = spPeaks.get(area);
+  // a SummitPost run judges SummitPost tracks only: the Peakbagger ones were judged in their own waves
+  if (sp) rec.tracks = sp.tracks;
   const asc = (all[rec.pb.pid] || []).map(([date, ok, route, gain, mi, gps]) => ({ date, ok: !!ok, route, gain, mi, gps: !!gps }));
   const hist = {}; for (const a of asc) if (a.ok) { const m = monthOf(a.date); if (m) hist[m] = (hist[m] || 0) + 1; }
   const byRoute = {}; for (const a of asc) if (a.ok && a.route) { const k = a.route.trim(); const m = monthOf(a.date); (byRoute[k] ||= {}); if (m) byRoute[k][m] = (byRoute[k][m] || 0) + 1; }
@@ -38,6 +45,9 @@ for (const [area, rs] of byArea) {
     area_id: area, peak: rec.name,
     allRoutesOnPeak: allOnPeak.map(r => ({ id: r.id, name: r.name, discipline: r.discipline, grade: r.grade, hasTrackPts: Array.isArray(r.gpx) ? r.gpx.length : 0 })),
     peakbagger: { pid: rec.pb.pid, matchedName: rec.pb.nm, distFromOurAreaCoordM: rec.pb.dm, lat: rec.pb.lat, lng: rec.pb.lng, info: rec.pb.info || null },
+    summitpost: sp ? { pid: sp.pb.pid, page: sp.pb.nm, distFromOurAreaCoordM: sp.pb.dm, lat: sp.pb.lat, lng: sp.pb.lng,
+      sections: Object.fromEntries(Object.entries(sp.spSections || {}).map(([k, v]) => [k, cut(v, 1500)])),
+      routePages: (sp.spRoutes || []).map(r => ({ id: r.id, title: r.title, info: r.info, hasGpx: r.hasGpx, sections: Object.fromEntries(Object.entries(r.sections || {}).map(([k, v]) => [k, cut(v, 1200)])) })) } : null,
     ascentMonthsAllRoutes: hist, ascentMonthsByLoggedRoute: byRoute, ascentCount: asc.length,
     routes: rs.map(r => ({
       id: r.id, name: r.name, discipline: r.discipline, grade: r.grade, face: r.face, aspect: r.aspect,
@@ -57,7 +67,8 @@ for (const [area, rs] of byArea) {
       const hi = pts.reduce((a, p) => (p[2] ?? -1e9) > (a?.[2] ?? -1e9) ? p : a, null);
       return { aid: t.aid, date: t.date, loggedRoute: t.route, stats: t.stats || [], hasTrack: pts.length >= 10,
         points: pts.length, start: pts[0] || null, end: pts.at(-1) || null, highest: hi, shape: pts.length ? shape : null,
-        gpxWaypoints: t.wpts || [], tripReport: t.tr || "" };
+        gpxWaypoints: t.wpts || [], tripReport: t.tr || "",
+        ...(t.src === "summitpost" ? { source: "summitpost", spRouteId: t.spRouteId, closestToSummitM: t.closestToSummitM, gpsElevationNoise: t.eleReversals, creator: t.creator } : {}) };
     }),
   };
   // one coordinate per line would make a packet thousands of lines long: collapse point arrays
