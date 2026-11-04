@@ -13,6 +13,11 @@ export interface SwipeRowProps {
   action?: string;
   /** Swiping RIGHT fires this, when given: the opposite gesture to delete, as Mail and Gmail pair them (notifications archive this way). */
   onArchive?: () => void;
+  /** On the website, draw the actions as a hover-revealed column beside the row. ONLY for a row whose
+   *  content carries no other way to act (the inbox's threads): a Past crew card has its own Archive and
+   *  Clear buttons and a notification its ⋯ menu, and beside those the column said the same thing twice
+   *  and, in the narrow Notifications drop-down, squeezed the text to a sliver (owner 2026-11-04). */
+  hover?: boolean;
   children?: ReactNode;
 }
 
@@ -24,7 +29,7 @@ export interface SwipeRowProps {
  * back WITHOUT acting; touchAction pan-y leaves vertical scrolling to the browser and horizontal drags
  * to this. Reads core (`C`) at render time only.
  */
-export default function SwipeRow({ onDelete, radius, action, onArchive, children }: SwipeRowProps) {
+export default function SwipeRow({ onDelete, radius, action, onArchive, hover, children }: SwipeRowProps) {
   const [dx, setDx] = useState(0);
   const sx = useRef(0), sy = useRef(0), act = useRef(false), cur = useRef(0);
   const put = function (v: number) { cur.current = v; setDx(v); };
@@ -49,7 +54,7 @@ export default function SwipeRow({ onDelete, radius, action, onArchive, children
      as an overlay it landed on a Past crew card's own text and buttons (owner, later that day: "clear
      button needs fixing — it overlaps stuff ie on past crews"). */
   const wide = useWideScreen();
-  const acts = wide && !!(onDelete || onArchive);
+  const acts = wide && !!hover && !!(onDelete || onArchive);
   const Verb = verb.charAt(0).toUpperCase() + verb.slice(1);
   const actBtn = { ...BTN_SM, border: "1px solid " + C.border, background: C.card, color: C.text, whiteSpace: "nowrap" as const };
   return (

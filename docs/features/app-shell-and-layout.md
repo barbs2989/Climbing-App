@@ -125,12 +125,15 @@ room for side-panel ads later. The phone app keeps its own look.
     string built at module scope is read before App renders and stays phone wording, so a module-scope
     table (the Help tour's `HELP_FEATS`, Edit profile's setup cards, `AREA_EDIT_FIELDS` hints) is passed
     through `tx()` again where it renders.
-  - **A mouse cannot swipe:** every `SwipeRow` (conversations, notifications, past crews, Home's alerts)
-    shows its actions as **Archive / Delete** buttons at the row's right edge while the row is pointed at
-    or holds keyboard focus (`.cm-swipe` in `wideCss`). Until then they take no clicks either, and the
-    hover reveal sits inside `@media (hover:hover)`, so a touch screen 1024px+ wide (an iPad held sideways)
-    never hits a hidden Delete; it keeps the swipe. A float plan passes no hover Delete: its row's own
-    two-step Delete is the one on the website.
+  - **A mouse cannot swipe:** a `SwipeRow` whose content carries no other way to act — the inbox's
+    conversation rows (`hover` prop) — shows its **Delete** as a button in a column beside the row while
+    the row is pointed at or holds keyboard focus (`.cm-swipe` in `wideCss`); the column keeps its width
+    while hidden, so nothing moves and nothing is covered (owner 2026-11-04: drawn over the row, "Clear"
+    landed on a Past crew card's own buttons). Until pointed at they take no clicks either, and the hover
+    reveal sits inside `@media (hover:hover)`, so a touch screen 1024px+ wide (an iPad held sideways)
+    never hits a hidden Delete; it keeps the swipe. Rows that already act in-row get no column: a Past
+    crew card has its own Archive and Clear buttons, a notification its ⋯ menu, a float plan its
+    two-step Delete.
   - **Chip rows wrap** instead of scrolling sideways off the column (a `wideCss` rule for every
     `display:flex` + `overflow-x:auto` row in the page column or a page); a row holding photos (at any depth) and
     the hour picker keep scrolling.
