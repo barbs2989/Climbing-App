@@ -21,6 +21,8 @@ if (max) q += `&route_count=lte.${max}`;
 // PostgREST answers at most 1000 rows, so a long tier is built in passes: --from-region starts a pass
 // at a region (inclusive), after the last pass's final region.
 if (opt("--from-region", null)) q += `&region=gte.${encodeURIComponent(opt("--from-region"))}`;
+// --region reads one region only: the cheapest read when a ranged one hits the statement timeout.
+if (opt("--region", null)) q += `&region=eq.${encodeURIComponent(opt("--region"))}`;
 const r = await fetch(`${SUPABASE_URL}/rest/v1/${q}`, { headers: headers(k) });
 if (!r.ok) { console.error("read failed", r.status, await r.text()); process.exit(1); }
 const rows = (await r.json()).filter(a => !skip.has(a.id));
