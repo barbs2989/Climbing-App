@@ -1,0 +1,45 @@
+{
+ "nv_cannibal_crag": {
+  "_expect": {"name": "Cannibal Crag", "region": "Nevada"},
+  "blurb": "A large freestanding block of sandstone in Calico Basin, just outside Las Vegas, and one of the busiest roadside crags in the basin. Most of the 23 climbs are bolted sport lines, with a pair of trad routes and a single boulder problem. The grades start with an easy warm-up and run up to the low 5.13s, but the bulk sit in the 5.11 and 5.12 range, so it suits strong intermediates and up more than beginners. Because the rock is climbable on every side, you can usually follow the shade through the day, with the northwest side staying cool all day and the southeast side warm in the morning.",
+  "aspect": "varies",
+  "review": {"sources": ["https://mountainproject.com/area/105732024/cannibal-crag", "https://sendage.com/area/cannibal-crag-calico-basin-red-rocks-nv-usa"]}
+ },
+ "nv_cannibal_crag_climbs": {
+  "_expect": {"name": "Cannibal Crag Routes", "region": "Nevada"},
+  "blurb": "Sport-focused sandstone climbing on the big boulder-like block near the Red Springs area of Calico Basin, a short drive from Las Vegas. Twenty of the 22 routes here are bolted and two are trad. Difficulty starts at an easy beginner pitch and tops out in the low 5.13s, with the heaviest concentration between 5.11 and 5.12, so expect steep, demanding face and arete climbing. Walls point in several directions, which means shade or morning warmth is available depending on which side you choose. The short walk from the car and the spread of grades make it a favourite stop for a quick session.",
+  "aspect": "varies",
+  "review": {"sources": ["https://mountainproject.com/area/105732024/cannibal-crag", "https://sendage.com/area/cannibal-crag-calico-basin-red-rocks-nv-usa"]}
+ },
+ "nv_sonar_wall": {
+  "_expect": {"name": "Sonar Wall", "region": "Nevada"},
+  "blurb": "A sport wall on the lowest, right-hand end of North Echo Cliff, up in the Spring Mountains on the Mount Charleston side near Cathedral Rock. At roughly 8,100 feet it stays far cooler than the desert floor, and the wall turns away from the early sun and sits in shade for much of the day. All 23 routes are bolted. The grade spread leans hard: a large majority are 5.12, with a handful of 5.10 and 5.11 lines and a single easy route at the bottom, so it is mainly a destination for strong leaders. The rock is solid and the holds are varied, with blocky roofs on the wall. Allow a walk of around 20 minutes up the Cathedral Rock trail, then a short climbers' path.",
+  "review": {"sources": ["https://www.mountainproject.com/area/113626881/sonar-wall", "https://www.mountainproject.com/area/113626797/north-echo-cliff"]}
+ },
+ "nv_jungle_wall": {
+  "_expect": {"name": "Jungle Wall", "region": "Nevada"},
+  "blurb": "A dark, varnished sandstone wall high in Juniper Canyon, Red Rock, reached on foot from the Pine Creek lot by climbing a gully. It sits in shade nearly all day, which makes it a pleasant choice when the sunny walls are baking, and it sees few parties. Of the 23 climbs, most are traditional lines, with a few bolted routes and a couple of top-rope options. Grades run from 5.6 to 5.11, with the largest group at 5.10, so it works for a mixed party that likes gear climbing. The rock is hard and handsome, and the outlook from the base is fine. Avoid it after rain, since wet sandstone breaks easily.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106052594", "https://mountainproject.com/area/105731974/juniper-canyon"]}
+ },
+ "nv_running_man_wall": {
+  "_expect": {"name": "Running Man Wall", "region": "Nevada"},
+  "blurb": "A band of one-pitch sandstone cliff within the Sandstone Quarry zone of Red Rock, close to the Calico Hills trail. The climbing is mostly face work on slabs and gently overhanging walls, and the lines are long for this part of the Calico Hills. Fourteen of the 22 routes are bolted and eight are trad. Grades range from 5.7 to 5.12, but the weight is on 5.10 and 5.11, so it is best for climbers comfortable at the middle-to-hard end. The wall catches sun nearly all day, which is welcome in winter and punishing in summer. Expect a scrambly walk of around a quarter hour from the parking lot, including a slot with a move or two of fourth class.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105732069/running-man-wall", "https://mountainproject.com/area/105731956/sandstone-quarry"]}
+ },
+ "nv_area_51": {
+  "_expect": {"name": "Area 51", "region": "Nevada"},
+  "blurb": "A limestone cliff in the La Madre Mountains northwest of Las Vegas, the densest crag in the La Madre North sector. A steep cave dominates the middle and holds some of the hardest sport climbs in the region, while the walls flanking it are less severe. All 22 routes here are bolted and begin at 5.11, with most between 5.11 and 5.13 and a few harder lines above that. The stone is ordinary mid-grade limestone, with good stretches and some loose ground. Walls face west to northwest, so mornings are shaded and afternoons sunny, and winter shadow from nearby hills cuts the sun further. It is a committed desert hike of about half an hour to reach, not a roadside crag.",
+  "review": {"sources": ["https://www.mountainproject.com/area/124389898/area-51", "https://sendage.com/area/area-51-madre-range-nv-usa"]}
+ },
+ "nv_civilization_crag": {
+  "_expect": {"name": "Civilization Crag", "region": "Nevada"},
+  "blurb": "A varnished sandstone crag in the First Pullout zone of Red Rock's scenic loop, marked by a big dark corner that faces northwest. It is a friendly choice for moderate climbing, and it feels quieter than the popular walls nearby. Of 21 routes, 17 are bolted, three are trad and one is a top rope. Grades run from 4th-class up to 5.11, with plenty in the 5.6 to 5.9 range, so newer leaders will find enough to do and a few harder lines wait for those who want them. The routes go from slabby jug-hauling to slightly overhanging, and the rock is good. Allow ten to fifteen minutes on foot from the car.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106686385/civilization-crag", "https://mountainproject.com/area/105731953/first-pullout-calico-i"]}
+ },
+ "_skipped": {
+  "nv_red_springs_rock": "only one fetched page names the crag (no second page mentions Red Springs Rock; the other fetches failed or did not name it)"
+ },
+ "_conflicts": {
+  "nv_sonar_wall": "stored rock is limestone but https://www.mountainproject.com/area/113626881/sonar-wall describes chert"
+ }
+}
