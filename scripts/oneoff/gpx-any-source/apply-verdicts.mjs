@@ -10,6 +10,7 @@ import { fileURLToPath } from "url";
 import { patchRow, selectAll } from "../../lib/supabase-env.mjs";
 import { shoutedStrings } from "../../lib/shouted-prose.mjs";
 import { haversineM } from "../gpx-tracks-fkt/rule.mjs";
+import { duplicateIn, sameTrack, stackedPin } from "./dedupe.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const [stage, vDir, ...rest] = process.argv.slice(2);
@@ -34,6 +35,7 @@ function loadHarvest(files) {
   const found = r => r.pb && !r.pb.skip && r.pb.dm <= 2000;
   const m = new Map();
   for (const f of files) for (const rec of JSON.parse(fs.readFileSync(f, "utf8"))) if (found(rec) || !m.has(rec.area_id)) m.set(rec.area_id, rec);
+  for (const rec of m.values()) if (Array.isArray(rec.tracks)) { const seen = new Set(); rec.tracks = rec.tracks.filter(t => !seen.has(String(t.aid)) && seen.add(String(t.aid))); }
   return m;
 }
 const rollback = (name, rows) => { const f = path.join(REPO, "scripts", `rollback-gpx-any-source-${name}-${Date.now()}.json`); fs.writeFileSync(f, JSON.stringify({ at: new Date().toISOString(), note: "restore with patchRow(routes, id, before)", rows }, null, 1)); console.log("rollback saved", f); };
@@ -68,6 +70,8 @@ if (stage === "pins") {
         if (p.type === "Trailhead") wps.unshift(pin); else wps.push(pin);
       }
     }
+    const stacked = wps.map(w => [w, stackedPin(w, wps)]).find(([w, o]) => o && !before.some(b => b.lat === w.lat && b.lng === w.lng && b.type === w.type));
+    if (stacked) { console.log(`REFUSE ${id}: ${stacked[0].type} "${stacked[0].name}" would sit on "${stacked[1].name}" (${stacked[1].type}), a duplicate pin`); continue; }
     if (JSON.stringify(wps) !== JSON.stringify(before)) writes.push({ id, before, after: wps });
   }
   console.log(`pin writes planned: ${writes.length}`);
@@ -96,6 +100,17 @@ if (stage === "tracks") {
     fs.writeFileSync(path.join(gpxDir, slug + ".gpx"), xml);
     decisions.push({ id: r.route_id, slug, fktTitle: `peakbagger ascent ${t.aid}`, why: (t.why || "").slice(0, 300), ...(t.kind === "oneway" ? { tier: "oneway" } : {}) });
   }
+  const byAid = new Map(); for (const d of decisions) (byAid.get(d.slug) || byAid.set(d.slug, []).get(d.slug)).push(d.id);
+  for (const [slug, ids] of byAid) if (ids.length > 1) { console.log(`REFUSE ${slug}: one recording chosen for ${ids.join(", ")} — two routes cannot share one track (are they one route?)`); }
+  const kept = [];
+  for (const d of decisions.filter(d => byAid.get(d.slug).length === 1)) {
+    const v = routesV.find(r => r.route_id === d.id), pts = (harvest.get(v.area_id)?.tracks || []).find(x => `pb-${x.aid}` === d.slug).pts;
+    const sibs = await selectAll("routes", "id,gpx", `area_id=eq.${encodeURIComponent(v.area_id)}&id=neq.${encodeURIComponent(d.id)}&gpx=not.is.null`, { pageSize: 200 });
+    const twin = sibs.find(x => sameTrack(pts.map(p => [p[0], p[1]]), x.gpx));
+    if (twin) { console.log(`REFUSE ${d.id}: ${d.slug} is already the stored track of ${twin.id}`); continue; }
+    kept.push(d);
+  }
+  decisions.length = 0; decisions.push(...kept);
   fs.writeFileSync(path.join(gpxDir, "decisions.json"), JSON.stringify(decisions, null, 1));
   console.log(`decisions ${decisions.length} -> ${path.join(gpxDir, "decisions.json")}; next: FKT_GPX_DIR=${gpxDir} node scripts/oneoff/gpx-tracks-fkt/apply.mjs ${path.join(gpxDir, "decisions.json")} [--write]`);
 }
@@ -122,6 +137,8 @@ if (stage === "facts") {
       if (copied) { refused.push([r.route_id, "copied: " + copied]); continue; }
       if (shoutedStrings(text).length) { refused.push([r.route_id, "shouted"]); continue; }
       if (/\b(peakbagger|summitpost|trip report|according to|reported by)\b/i.test(text)) { refused.push([r.route_id, "names a source"]); continue; }
+      const dup = duplicateIn(text, [cur("watch_out"), cur("pro_tips"), cur("what_to_bring"), cur("approach"), cur("descent_text"), Object.values(cur("seasonal_guidance")?.monthBreakdown || {})]);
+      if (dup) { refused.push([r.route_id, `duplicate of "${String(dup).slice(0, 60)}"`]); continue; }
       if (LIST[f.field]) {
         if (text.length > 160) { refused.push([r.route_id, "list item too long"]); continue; }
         const list = Array.isArray(cur(f.field)) ? cur(f.field) : [];

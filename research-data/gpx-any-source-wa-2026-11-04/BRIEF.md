@@ -114,3 +114,12 @@ Write `research-data/gpx-any-source-wa-2026-11-04/verdicts/<area_id>.json`:
 Set `track` to null when no track qualifies. Choose the best qualifying track per route: same route,
 in season, summited, complete round trip over one-way, then the denser/more recent one. Include every
 route of the packet. Return a 3-line summary when done: peaks done, tracks assigned, pins proposed.
+
+## No duplicates (owner, 2026-11-04)
+- Never propose a fact that the route already says (in watch_out, pro_tips, what_to_bring, approach,
+  descent_text or seasonal_guidance), even in other words. Read the stored row in the packet first.
+- One Peakbagger ascent goes to ONE route. If the same ascent fits two of our routes, those routes may be
+  one line filed twice: say so in `notes` and pick neither.
+- A pin you add must not repeat a pin already stored (same type within 50 m, or same name).
+- A "missing route" is only missing after you checked every route in `allRoutesOnPeak` under every
+  spelling and alias.

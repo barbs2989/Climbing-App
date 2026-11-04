@@ -17,6 +17,14 @@ The owner holds a licence for Peakbagger and SummitPost and has allowed GPX trac
 5. **Trip-report facts** into the matching fields, in our OWN UNIQUE wording, month named for anything
    seasonal, no source named. Never a party's time as an estimate.
 6. A stored complete or trailhead->summit track is never replaced. No <time> is ever written.
+7. **No duplicates, anywhere** (owner, 2026-11-04). Every stage refuses one (`dedupe.mjs`, selftest
+   `--selftest`): an ascent harvested twice counts once; one recording goes to ONE route, never to a
+   route whose sibling already stores it; a pin may not land within 50 m of a same-type pin (200 m if
+   same name); a fact already on the row, reworded or not, is refused (75% of its content words in one
+   stored item or sentence); a shell sharing a name with a route on its peak is refused. Before ADDING a
+   route, `catalog_find_route(name, area_id)` + `catalog_find_area` on the whole state, every spelling.
+   After every write wave run `node scripts/oneoff/gpx-any-source/dup-audit-wa.mjs` (read-only; every
+   route the session's rollbacks touched + every route on those peaks).
 
 ## Steps (replace `wa` / `WA` with the state)
 

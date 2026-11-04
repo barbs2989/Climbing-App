@@ -55,6 +55,6 @@ within 300 m of the summit. Else `track_aid: null`.
   }
 }
 ```
-Omit any field you could not research. Leave out gpx/elev_pts/gain_ft/dist_km/grade_num/timing. A
+No list item twice, and none repeating what the row or another field already says. Omit any field you could not research. Leave out gpx/elev_pts/gain_ft/dist_km/grade_num/timing. A
 Summit pin already stored stays; add a Trailhead pin only with a confirmed coordinate. Return a 3-line
 summary per route.

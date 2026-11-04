@@ -14,6 +14,8 @@ const peaks = new Map();
 // replaces one that did
 const found = r => r.pb && !r.pb.skip && r.pb.dm <= 2000;
 for (const f of files) for (const rec of JSON.parse(fs.readFileSync(f, "utf8"))) if (found(rec) || !peaks.has(rec.area_id)) peaks.set(rec.area_id, rec);
+// one ascent once: a peak harvested twice, or a resumed worker, repeats ascents
+for (const rec of peaks.values()) if (Array.isArray(rec.tracks)) { const seen = new Set(); rec.tracks = rec.tracks.filter(t => !seen.has(String(t.aid)) && seen.add(String(t.aid))); }
 const ids = wl.filter(r => peaks.get(r.area_id)?.tracks?.some(t => t.pts)).map(r => r.id);
 const rows = [];
 for (let i = 0; i < ids.length; i += 80)

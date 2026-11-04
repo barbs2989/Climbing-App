@@ -12,6 +12,8 @@ const all = JSON.parse(fs.readFileSync(allFile, "utf8"));
 const found = r => r.pb && !r.pb.skip && r.pb.dm <= 2000;
 const peaks = new Map();
 for (const f of files) for (const rec of JSON.parse(fs.readFileSync(f, "utf8"))) if (found(rec) || !peaks.has(rec.area_id)) peaks.set(rec.area_id, rec);
+// one ascent once: a peak harvested twice, or a resumed worker, repeats ascents
+for (const rec of peaks.values()) if (Array.isArray(rec.tracks)) { const seen = new Set(); rec.tracks = rec.tracks.filter(t => !seen.has(String(t.aid)) && seen.add(String(t.aid))); }
 fs.mkdirSync(outDir, { recursive: true });
 
 const ids = cands.map(c => c.id);
