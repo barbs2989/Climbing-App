@@ -31,10 +31,16 @@ async function getRow(id, cols) {
   if (rows.length !== 1) throw new Error(`${id}: ${rows.length} rows`);
   return rows[0];
 }
+// a SummitPost file id is "sp<f>": its GPX is sp-<f>; a Peakbagger ascent is pb-<aid>
+const slugOf = aid => /^sp\d/.test(String(aid)) ? `sp-${String(aid).slice(2)}` : `pb-${aid}`;
 function loadHarvest(files) {
   const found = r => r.pb && !r.pb.skip && r.pb.dm <= 2000;
   const m = new Map();
-  for (const f of files) for (const rec of JSON.parse(fs.readFileSync(f, "utf8"))) if (found(rec) || !m.has(rec.area_id)) m.set(rec.area_id, rec);
+  // A SummitPost record (sp-to-harvest.mjs, carries spSections) is MERGED into the peak, never in place of it:
+  // the multi-peak check must still see every Peakbagger track, and the facts check every page it may copy.
+  const sp = [];
+  for (const f of files) for (const rec of JSON.parse(fs.readFileSync(f, "utf8"))) { if (rec.spSections !== undefined) { sp.push(rec); continue; } if (found(rec) || !m.has(rec.area_id)) m.set(rec.area_id, rec); }
+  for (const s of sp) { const rec = m.get(s.area_id); if (!rec) { m.set(s.area_id, s); continue; } rec.tracks = [...(rec.tracks || []), ...(s.tracks || [])]; rec.spSections = s.spSections; rec.spRoutes = s.spRoutes; }
   for (const rec of m.values()) if (Array.isArray(rec.tracks)) { const seen = new Set(); rec.tracks = rec.tracks.filter(t => !seen.has(String(t.aid)) && seen.add(String(t.aid))); }
   return m;
 }
@@ -103,17 +109,17 @@ if (stage === "tracks") {
     const op = otherPeak(r.area_id, tr);
     if (op) { console.log(`REFUSE ${r.route_id}: ascent ${t.aid}'s GPS file is also logged on ${op.area} (ascent ${op.x.aid}) — a multi-peak line`); continue; }
     if (!/Successful Summit/i.test((tr.stats || []).find(s => s[1] === "Ascent Type")?.[2] || "")) { console.log("SKIP not a logged summit", r.route_id, t.aid); continue; }
-    const slug = `pb-${t.aid}`;
+    const slug = slugOf(t.aid);
     // no <time>: a party's elapsed time is never shown
     const xml = `<?xml version="1.0"?>\n<gpx version="1.1" creator="climbmatch"><trk><trkseg>\n${tr.pts.map(p => `<trkpt lat="${p[0]}" lon="${p[1]}">${p[2] != null ? `<ele>${p[2]}</ele>` : ""}</trkpt>`).join("\n")}\n</trkseg></trk></gpx>\n`;
     fs.writeFileSync(path.join(gpxDir, slug + ".gpx"), xml);
-    decisions.push({ id: r.route_id, slug, fktTitle: `peakbagger ascent ${t.aid}`, why: (t.why || "").slice(0, 300), ...(t.kind === "oneway" ? { tier: "oneway" } : {}) });
+    decisions.push({ id: r.route_id, slug, fktTitle: /^sp/.test(String(t.aid)) ? `summitpost gpx ${String(t.aid).slice(2)}` : `peakbagger ascent ${t.aid}`, why: (t.why || "").slice(0, 300), ...(t.kind === "oneway" ? { tier: "oneway" } : {}) });
   }
   const byAid = new Map(); for (const d of decisions) (byAid.get(d.slug) || byAid.set(d.slug, []).get(d.slug)).push(d.id);
   for (const [slug, ids] of byAid) if (ids.length > 1) { console.log(`REFUSE ${slug}: one recording chosen for ${ids.join(", ")} — two routes cannot share one track (are they one route?)`); }
   const kept = [];
   for (const d of decisions.filter(d => byAid.get(d.slug).length === 1)) {
-    const v = routesV.find(r => r.route_id === d.id), pts = (harvest.get(v.area_id)?.tracks || []).find(x => `pb-${x.aid}` === d.slug).pts;
+    const v = routesV.find(r => r.route_id === d.id), pts = (harvest.get(v.area_id)?.tracks || []).find(x => slugOf(x.aid) === d.slug).pts;
     const sibs = await selectAll("routes", "id,gpx", `area_id=eq.${encodeURIComponent(v.area_id)}&id=neq.${encodeURIComponent(d.id)}&gpx=not.is.null`, { pageSize: 200 });
     const twin = sibs.find(x => sameTrack(pts.map(p => [p[0], p[1]]), x.gpx));
     if (twin) { console.log(`REFUSE ${d.id}: ${d.slug} is already the stored track of ${twin.id}`); continue; }
@@ -134,7 +140,9 @@ if (stage === "facts") {
   for (const r of routesV) {
     const facts = (r.facts || []).filter(f => f && typeof f.text === "string" && f.text.trim());
     if (!facts.length || held("facts", r.route_id)) continue;
-    const reports = (harvest.get(r.area_id)?.tracks || []).map(t => t.tr || "").join("\n");
+    const hv = harvest.get(r.area_id);
+    // every text a fact could have been copied from: the trip reports AND the SummitPost peak + route pages
+    const reports = [...(hv?.tracks || []).map(t => t.tr || ""), ...Object.values(hv?.spSections || {}), ...(hv?.spRoutes || []).flatMap(x => Object.values(x.sections || {}))].join("\n");
     const repGrams = grams(reports, 6);
     const row = await getRow(r.route_id, "id,area_id,watch_out,pro_tips,what_to_bring,seasonal_guidance,approach,descent_text");
     if (row.area_id !== r.area_id) { console.log(`REFUSE ${r.route_id}: area mismatch`); continue; }
