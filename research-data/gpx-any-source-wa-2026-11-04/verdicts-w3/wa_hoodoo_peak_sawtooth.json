@@ -1,0 +1,104 @@
+{
+ "area_id": "wa_hoodoo_peak_sawtooth",
+ "routes": [
+  {
+   "route_id": "wa_hoodoo_peak_sawtooth_raven_ridge_traverse",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "late Jun-Oct (best late Sep-early Oct)",
+    "evidence": "Web search (Mountaineers, SummitPost Raven Ridge, Lemke, climberkyle): Raven Ridge feasible May-Oct, late Sep/early Oct best for larches; logged traverse ascents are mostly Sep-Oct. Stored Jun-Oct kept."
+   },
+   "track": {
+    "aid": "2060092",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Logged route is Raven Ridge-Hoodoo Peak Traverse (16 Oct 2022, Successful Summit). Report climbs the right gully to Raven Ridge, crosses Libby Peak, the knife-edge class 4 and the 5.7 overhang to Hoodoo, matching our overview; track starts and ends at the Libby Lake trailhead (4 m loop) and passes within 19 m of our Hoodoo summit pin. Mid October is within the window."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "1038553",
+     "verdict": "unsure",
+     "why": "Sep 2018 multi-peak Bulger day, no usable track for this route; described the same ridge in the other direction, used only for a fact."
+    },
+    {
+     "aid": "3366197",
+     "verdict": "different",
+     "why": "3 Oct 2026, report says it went straight at the summit via the south ridge, not the traverse."
+    },
+    {
+     "aid": "3222716",
+     "verdict": "different",
+     "why": "Logged S Slope/Ridge, standard route."
+    },
+    {
+     "aid": "3222369",
+     "verdict": "different",
+     "why": "Libby Creek Trail standard line."
+    },
+    {
+     "aid": "2833448",
+     "verdict": "offseason",
+     "why": "Early May standard line."
+    },
+    {
+     "aid": "2824370",
+     "verdict": "offseason",
+     "why": "Late April standard line."
+    }
+   ],
+   "pins": [
+    {
+     "type": "Trailhead",
+     "action": "add",
+     "lat": 48.2759,
+     "lng": -120.29,
+     "name": "Libby Lake Trailhead",
+     "evidence": "Route stores no Trailhead pin (trailheadName only). Recording 2060092 starts and ends at 48.27605,-120.29005 (logged as Libby Lake TH, 4421 ft); the hike page for the Libby Lake trail (#415) lists its trailhead at 48.2759, -120.2900, within ~20 m of the recording start.",
+     "confirmedBy": "https://www.wta.org/go-hiking/hikes/libby-lake (fetched; Co-ordinates 48.2759, -120.2900); also https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/libby-lake-trailhead"
+    }
+   ],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 10,
+     "text": "In the Raven Ridge gully the line right of centre is steeper, crumbly class 3-4; veering left about two-thirds of the way up finds easier ground.",
+     "aids": [
+      "2060092"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 10,
+     "text": "Split the long day with a camp near the old cabin about five miles up the Libby Lake trail; a rope for simul-climbing the knife-edge works, and a sling is left at the 5.7 overhang for parties going the other way.",
+     "aids": [
+      "2060092"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 10,
+     "text": "By mid-October the larches are past peak with needles dropping, and mornings start freezing.",
+     "aids": [
+      "2060092"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 9,
+     "text": "In mid-September a rappel anchor was in place at the exposed class 4 section north of Libby Peak, though it was not needed in dry conditions.",
+     "aids": [
+      "1038553"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Standard Scramble on this peak already has tracks and is not in this packet. Direction Raven Ridge to Hoodoo matches the stored pro tip."
+}

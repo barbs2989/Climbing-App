@@ -1,0 +1,33 @@
+{
+ "area_id": "wa_mount_queets",
+ "routes": [
+  {
+   "route_id": "wa_mount_queets_south",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored mid-Jul to Sep; both Peakbagger summits are Aug/Sep (Aug 2, Sep 7). Web search: Bailey Range favourable Jul-Sep, Queets listed Jun-Sep, low river water in September; the old Dodwell-Rixon snow finger is a late-season concern."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "1479056",
+     "verdict": "unsure",
+     "why": "Sep 2 2020, summited, but a long point-to-point traverse (starts ~21 km and ends ~52 km from our Madison Falls pin), not a round trip or trailhead-to-summit one-way; the logged route is blank."
+    },
+    {
+     "aid": "2038762",
+     "verdict": "unsure",
+     "why": "Sep 24 2022, summited, but no GPS track (text only), a one-day 54-mile trip from another trailhead."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "The route id says south but it is named North Ridge. Existing watch_out already holds the cliffy-descent warning from the 2020 report, so no new facts."
+}

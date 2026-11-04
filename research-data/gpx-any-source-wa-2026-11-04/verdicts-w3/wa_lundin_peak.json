@@ -1,0 +1,84 @@
+{
+  "area_id": "wa_lundin_peak",
+  "routes": [
+    {
+      "route_id": "wa_lundin_peak_east_ridge",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep. Logged East Ridge ascents peak Jun-Oct (Jun 2, Jul 4, Aug 2, Sep 2, Oct 3; one March winter ascent dropped). Mountaineers route page describes early-season snow with a glissade off the east side and late-season gully scramble; SummitPost says the peak is climbed Mar-Oct. Kept Jul-Sep." },
+      "track": { "aid": "1996883", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged route is East Ridge (Aug 14 2022). Complete loop from the PCT-North/Snoqualmie Pass trailhead up Commonwealth Basin past Red Pass side (east side of the peak), ends at the summit coordinate (summit 2 m from ours) and returns by the same line; matches our East Ridge text (Commonwealth Creek trail, Red Pass, saddle with East Lundin). No trip report text, identity rests on the logged name plus the line. The track never goes near Alpental/Cave Ridge or the west ridge approach." },
+      "otherTracksConsidered": [
+        { "aid": "2225310", "verdict": "same", "why": "Also logged East Ridge, same Red Pass line, complete loop, but Jun 23 (snow season, just under a month before our Jul window); 1996883 is mid-season so preferred." },
+        { "aid": "1129339", "verdict": "offseason", "why": "East Ridge but a March snowshoe/crampon winter ascent." },
+        { "aid": "3350044", "verdict": "different", "why": "Loop up the west ridge and down the east ridge; the track is not packeted and the route logged is the west ridge." }
+      ],
+      "pins": [
+        { "type": "Trailhead", "action": "add", "lat": 47.4278, "lng": -121.4135, "name": "PCT North (Snoqualmie Pass) Trailhead",
+          "evidence": "Route has no pins at all. Both East Ridge round trips start within about 35 m of this point (47.42758,-121.41317 and 47.42754,-121.41329). The Washington trail association hike page for the PCT section from Snoqualmie Pass to Stevens Pass lists the trailhead coordinate 47.4278, -121.4135, and our route text names the PCT parking lot at I-90 Exit 52. Other Lundin routes already store a PCT North pin within 25 m.",
+          "confirmedBy": "https://www.wta.org/go-hiking/hikes/pacific-crest-trail-section-j-snoqualmie-pass-to-stevens-pass-east" }
+      ],
+      "facts": [
+        { "field": "descent_note", "month": 7, "text": "In June and July a rope of 35 to 40 m reaches easy scrambling ground from the east-ridge rappel; a 30 m rope falls short of it.", "aids": ["3234821", "2580964"] }
+      ]
+    },
+    {
+      "route_id": "wa_lundin_peak_northwest_face",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "No stored season and no logged ascents under this name; the peak as a whole is climbed Jun-Oct, mostly Jul-Aug (SummitPost: Mar-Oct; Mountaineers: late summer/early fall practical). Default Jul-Sep." },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_lundin_peak_south_face_left",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep; no logged ascents named South Face. Peak-wide histogram Jun-Oct, peak Jul-Aug; moat opens below the west-ridge base in spring (Mountaineers April report) so snow-free season is Jul-Sep." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2939544", "verdict": "unsure", "why": "Passes within 13 m of the summit only because every route tops out there; logged as a Snoqualmie-Lundin traverse. No evidence it climbed the south face." },
+        { "aid": "3234821", "verdict": "different", "why": "Logged West Ridge and descends the east side." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_lundin_peak_southeast_ridge",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "No stored season. Three logged SE Ridge ascents fall in Aug, Sep, Oct; the ridge is mainly the descent line for the south-face routes. Jul-Sep default." },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_lundin_peak_west_ridge",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Logged West Ridge ascents: Jun 5, Jul 9, Aug 5, Sep 5, Oct 4, plus Cave Ridge variants Aug-Oct. Mountaineers reports show successful ascents late July, August and October (near-perfect Oct 2024), April attempt turned back by a moat. SummitPost: Mar-Oct. Kept Jul-Sep with June and October as shoulder." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3234821", "verdict": "unsure", "why": "Logged West Ridge, complete loop from our trailhead, but it is a Guye-Snoqualmie-Lundin linkup that travels the Snoqualmie ridge and descends the east side; drawing it would put another peak's ridge on this route." },
+        { "aid": "2939544", "verdict": "unsure", "why": "Snoqualmie-Lundin traverse (Aug 2025); same objection, goes over Snoqualmie first." },
+        { "aid": "2241233", "verdict": "unsure", "why": "Logged W Ridge Jul 8 2023, clean out-and-back, but starts from the Alpental/Snoqualmie Mountain trail lot (47.445,-121.4234), about 2 km from our PCT-North pin; our route stores only the PCT pin, so it cannot be tied to our trailhead." },
+        { "aid": "3311387", "verdict": "unsure", "why": "Logged West Ridge Aug 16 2026, starts at the same Alpental-side lot, no report." },
+        { "aid": "3261769", "verdict": "unsure", "why": "Logged West Ridge Jul 10 2026, Alpental-side start, part of a Snoqualmie/Lundin/Snow Dome day." },
+        { "aid": "868100", "verdict": "different", "why": "West Ridge via Cave Ridge, Sep 2017, a different approach start (not our PCT pin) and one-way/loop not matching." },
+        { "aid": "2292730", "verdict": "different", "why": "West Ridge via Cave Ridge, Alpental-side approach, Aug 2023." },
+        { "aid": "1129339", "verdict": "different", "why": "East Ridge in March." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "pro_tips", "month": 9, "text": "After the crux slab the long upper stretch is mostly a dirt walk with a couple of class 3 moves; short-roping it avoids bad rope drag from pitching it (July, September).", "aids": ["3350044", "2580964", "2241233"] },
+        { "field": "pro_tips", "month": 9, "text": "Before the first pitch, stay on the flat blocky crest instead of dropping to the south side and climbing back up, which wastes time on steep dirty ground (September).", "aids": ["3350044"] },
+        { "field": "descent_note", "month": 8, "text": "To make a loop, descend the east ridge from July to September: a short class 2-3 walk leads to the rappel anchors (about 35 to 40 m to easy ground), then a boot path drops to the saddle with East Lundin and over to Red Pass.", "aids": ["3350044", "2580964", "3234821"] }
+      ]
+    },
+    {
+      "route_id": "wa_south_face_8",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep; no logged ascents under South Face. Moat and snow below the base in spring (Mountaineers April report), peak-wide ascents Jul-Aug dominate." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2939544", "verdict": "unsure", "why": "Starts at the right trailhead but is a traverse via Snoqualmie; summit proximity proves nothing since all Lundin routes finish there." },
+        { "aid": "1996883", "verdict": "different", "why": "Logged East Ridge; assigned to the East Ridge route." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "wa_lundin_peak_south_face_left and wa_south_face_8 are two different south-face lines by their text (center hand-crack 5.10 versus the original 1941 low-5th line) but share the same pins and approach; no ascent was assigned to either. The West Ridge route text approaches via Commonwealth Basin and the south couloir while nearly every logged West Ridge ascent comes via Cave Ridge/Alpental or the Snoqualmie ridge; a track for it would need an Alpental trailhead pin, which is a different trailhead from the stored pin."
+}

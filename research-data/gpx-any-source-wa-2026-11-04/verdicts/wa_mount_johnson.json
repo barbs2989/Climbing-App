@@ -1,0 +1,30 @@
+{
+  "area_id": "wa_mount_johnson",
+  "routes": [
+    {
+      "route_id": "wa_mount_johnson_standard",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep. Peakbagger successful ascents: Jul 15, Aug 6, Sep 10, Jun 3, May 1, Oct 1 (all routes; no route-name split). Web: encyclopedic peak page gives July-September as the favourable window; guidebook-style pages for the neighbouring Deception put snow-free access from May-June with loose rock favouring early July. Keep Jul-Sep." },
+      "track": { "aid": "2967710", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Sep 1 2025 summit, start 55 m / end 35 m from our Upper Dungeness Trailhead pin, high point 3 m from our summit pin. Report describes Surprise Basin, the Clark-Johnson col, a ramp trending climbers-left just below the col, a wrap-around line and a class 4 crack on the summit block with a class 3 bypass: all matches our Standard Route text (col, ramps, final class 4 push). Only Standard has a described line on this peak." },
+      "otherTracksConsidered": [
+        { "aid": "2968195", "verdict": "unsure", "why": "Same party, same day, same line as 2967710 (companion's log, 'Class 4'); one ascent goes to one route, keeping the report-bearing log." },
+        { "aid": "3311559", "verdict": "not-summited", "why": "Mid-August 2026 turn-back; summit 745 m away." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 9, "text": "Past the upper Royal Basin tarn, cross a small ridge west into Surprise Basin; in early September the glacier there had melted back to a deep blue lake, and from its shore the notch between Clark and Johnson is in direct view.", "aids": ["2967710"] },
+        { "field": "pro_tips", "month": 9, "text": "Just below the notch a natural ramp leads climbers' left, and the line then wraps around the peak; in early September cairns marked it well.", "aids": ["2967710"] },
+        { "field": "watch_out", "month": 9, "text": "Rock fall happens on its own in early September, and anything knocked loose sets off more; call out if others are below.", "aids": ["2967710"] },
+        { "field": "descent_note", "month": 9, "text": "The summit block has a solid class 4 crack for the direct finish, plus a cairned class 3 bypass that is the gentler way to come down.", "aids": ["2967710"] },
+        { "field": "watch_out", "month": 8, "text": "In mid-August 2026 the upper-basin tarn was boxed in by hard ice and low-fifth-class slab on one side and overhanging rotten rock on the other; scout before committing.", "aids": ["3311559"] }
+      ]
+    },
+    { "route_id": "wa_mount_johnson_deception_chimney", "season": { "months": [], "window": null, "evidence": "Empty catalog shell (no text, no pins). Peak search found nothing naming this line; no season asserted." }, "track": null, "otherTracksConsidered": [ { "aid": "2967710", "verdict": "unsure", "why": "Nothing in logs or reports names this route; reports describe the col/ramp line filed as Standard." } ], "pins": [], "facts": [] },
+    { "route_id": "wa_mount_johnson_northwest_face", "season": { "months": [], "window": null, "evidence": "Empty catalog shell. Web search for peak-level season found no route-specific data." }, "track": null, "otherTracksConsidered": [ { "aid": "2967710", "verdict": "different", "why": "Track climbs from the Clark-Johnson col, not a northwest face; not evidence for this route." } ], "pins": [], "facts": [] },
+    { "route_id": "wa_mount_johnson_rumble_gully", "season": { "months": [], "window": null, "evidence": "Empty catalog shell; no route-specific season found." }, "track": null, "otherTracksConsidered": [ { "aid": "2967710", "verdict": "unsure", "why": "No log or report names a gully route." } ], "pins": [], "facts": [] },
+    { "route_id": "wa_mount_johnson_south_terrace_route", "season": { "months": [], "window": null, "evidence": "Empty catalog shell; no route-specific season found." }, "track": null, "otherTracksConsidered": [ { "aid": "2967710", "verdict": "unsure", "why": "No log or report names this route." } ], "pins": [], "facts": [] },
+    { "route_id": "wa_mount_johnson_southwest_route", "season": { "months": [], "window": null, "evidence": "Empty catalog shell (Class 3 only); no route-specific season found." }, "track": null, "otherTracksConsidered": [ { "aid": "2967710", "verdict": "unsure", "why": "Class 3 bypass on the summit block is mentioned, but nothing identifies a separate southwest route." } ], "pins": [], "facts": [] },
+    { "route_id": "wa_mount_johnson_staircase_route", "season": { "months": [], "window": null, "evidence": "Empty catalog shell; Staircase approach is a different valley (North Fork Skokomish) and no data found." }, "track": null, "otherTracksConsidered": [ { "aid": "2967710", "verdict": "different", "why": "Track starts at Upper Dungeness (Royal Basin), not Staircase." } ], "pins": [], "facts": [] }
+  ],
+  "notes": "Six of the seven Johnson routes are empty shells with no text, pins or grade (Deception Chimney, Northwest Face, Rumble Gully, South Terrace, Southwest Route, Staircase Route); all but Standard have no way to be matched to a track. The Staircase Route name looks like an approach from the other side (Staircase trailhead), and Deception Chimney sounds like a neighbouring-peak line, possibly misfiled. Both Sept 1 2025 logs are one party; used one."
+}

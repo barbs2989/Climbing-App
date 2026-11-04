@@ -1,0 +1,29 @@
+{
+  "area_id": "wa_iron_cap_mountain",
+  "routes": [
+    {
+      "route_id": "wa_iron_cap_mountain_northeast_shoulder",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Peakbagger successful ascents: Jun 2, Jul 19, Aug 32, Sep 25, Oct 8, concentrated Jul-Sep; web search found a late-August trip report and a summer tag but no formal season page." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3281661", "verdict": "different", "why": "Jul 23 2026 high-route traverse that climbs the north side and descends the northeast shoulder; not a trailhead round trip." },
+        { "aid": "2292650", "verdict": "unsure", "why": "Aug 2023 one-way track starting at an unmarked spot with no trailhead pin or report." },
+        { "aid": "2601417", "verdict": "different", "why": "Aug 2024 26 mile trip from a distant trailhead, apparently a traverse." },
+        { "aid": "2264694", "verdict": "different", "why": "Logged as Traverse." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 7, "text": "In late July, the lower northeast shoulder has brush where the path is clear but sometimes hard to follow.", "aids": ["3281661"] }
+      ]
+    },
+    {
+      "route_id": "wa_iron_cap_mountain_south_route_2",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Same Peakbagger histogram; Class 3 summer scramble. No route-specific source found." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "3281661", "verdict": "different", "why": "Climbed from the north side and descended the northeast shoulder; not the south route." } ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "This peak already holds 'West Ridge / North Ridge via Chetwoot Lake' (id wa_iron_cap_mountain_south_route, which has a stored track); Northeast Shoulder and South Route (Class 3) have no text or pins and may duplicate each other or that route. No trailhead pins exist so no round trip can be validated."
+}

@@ -9,14 +9,17 @@ import SwipeRow from "../src/components/SwipeRow.tsx";
 import Av from "../src/components/Av.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import { POP_BACK } from "./popupChrome.js";
+import { ZOOM } from "./wideLayout.js";
 
 /* `pane` is the desktop website's placement (lib/wideLayout.js): "side" is the LEFT PANE of the
    two-pane Messages page — a 280px column at the page column's left edge, the open conversation
    drawn to its right — and "drop" is the drop-down under the top bar's chat icon, whose header
-   opens the two-pane page (onExpand). Absent on a phone: the full-screen view, as before. */
+   opens the two-pane page (onExpand). Absent on a phone: the full-screen view, as before.
+   Both are drawn at the website's ZOOM (owner 2026-11-04) like the page beside them; being fixed,
+   each zooms ITSELF, so its own top/left/width are written divided by ZOOM. */
 const PANE_STYLE={
-  side:{position:"fixed",top:64,bottom:0,left:"var(--cm-col-left)",width:280,background:C.bg,zIndex:35,overflowY:"auto",overscrollBehavior:"contain",borderRight:"1px solid "+C.border,borderLeft:"1px solid "+C.border,boxSizing:"border-box"},
-  drop:{position:"fixed",top:70,right:"var(--cm-shell-right)",width:400,maxHeight:"calc(100vh - 90px)",background:C.surface,zIndex:1450,overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderRadius:14,boxShadow:"0 18px 50px rgba(0,0,0,0.6)",boxSizing:"border-box"},
+  side:{zoom:ZOOM,position:"fixed",top:64/ZOOM,bottom:0,left:"calc(var(--cm-col-left) / "+ZOOM+")",width:280/ZOOM,background:C.bg,zIndex:35,overflowY:"auto",overscrollBehavior:"contain",borderRight:"1px solid "+C.border,borderLeft:"1px solid "+C.border,boxSizing:"border-box"},
+  drop:{zoom:ZOOM,position:"fixed",top:70/ZOOM,right:"calc(var(--cm-shell-right) / "+ZOOM+")",width:400/ZOOM,maxHeight:"calc((100vh - 90px) / "+ZOOM+")",background:C.surface,zIndex:1450,overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderRadius:14,boxShadow:"0 18px 50px rgba(0,0,0,0.6)",boxSizing:"border-box"},
 };
 export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoading,msgs,crews,crewMsgs,connections,onOpenDM,onOpenCrew,onClose,onDeleteDM,onDeleteCrew,msgFrom,onAcceptReq,crewUnread,dmUnread,placeOf,routeById,pane,onExpand,onDismiss}){
   /* The drop-down leaves on a click outside it or Esc, as a website's menus do. The chat icon that

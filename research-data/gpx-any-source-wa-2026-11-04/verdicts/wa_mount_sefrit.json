@@ -1,0 +1,113 @@
+{
+ "area_id": "wa_mount_sefrit",
+ "routes": [
+  {
+   "route_id": "wa_mount_sefrit_bloody_head_couloir",
+   "season": {
+    "months": [
+     5,
+     6,
+     7
+    ],
+    "window": "May-Jul",
+    "evidence": "Snow couloir climbed on firm snow in late spring/early summer; the only logged north-side ascent in a warm month was May ('Wallstreet and North Gulley'), the other in January. No route-specific page found. Rockfall rises as it warms."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2927979",
+     "verdict": "different",
+     "why": "Starts on the Nooksack Cirque side (~4.9 km from the Hannegan pin); not the couloir."
+    },
+    {
+     "aid": "1849769",
+     "verdict": "offseason",
+     "why": "January ascent, start ~7 km from our pin."
+    },
+    {
+     "aid": "2923338",
+     "verdict": "not-summited",
+     "why": "Turned back."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_sefrit_southeast_ridge",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9
+    ],
+    "window": "Jun-Sep",
+    "evidence": "Search: peak page lists best season Jun-Sep and warns winter/early season is avalanche and cornice prone; Nooksack Cirque trail page says fall is best for that trail. Logged ascents: Jul 10, Jun 8, Aug 5, May 2, Sep 2."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "1504057",
+     "verdict": "unsure",
+     "why": "Logged 'South slopes, SE ridge' from Nooksack Cirque in late Sep; its approach (south slopes) differs from our stored Wall Street / Northwest Glacier approach, though it finishes on the same SE ridge. Start 4.3 km from any pin."
+    },
+    {
+     "aid": "1849769",
+     "verdict": "offseason",
+     "why": "January."
+    },
+    {
+     "aid": "2927979",
+     "verdict": "unsure",
+     "why": "No logged route or report; start near Nooksack Cirque, not the Ruth Creek approach."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_sefrit_southwest_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Search: peak page lists best season Jun-Sep and warns winter/early season is avalanche and cornice prone; Nooksack Cirque trail page says fall is best for that trail. Logged ascents: Jul 10, Jun 8, Aug 5, May 2, Sep 2. Stored text: mid-July through September for the rock route."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2927979",
+     "verdict": "unsure",
+     "why": "Aug 2025 summit from Nooksack Cirque, 38 m from summit, but start is 323 m from our trailhead pin (fails the 300 m rule), and no logged route or report shows it climbs the west/southwest ridge rather than the south slopes line."
+    },
+    {
+     "aid": "3000159",
+     "verdict": "unsure",
+     "why": "Jul 2024; report describes 3000 ft of bushwhack from the cirque trail, a gully, then a Class 3/4 traverse west along the summit ridge: the south slopes line, not clearly our west/southwest ridge. Start/end not at a pin."
+    },
+    {
+     "aid": "1504057",
+     "verdict": "unsure",
+     "why": "Sep 2020 'South slopes, SE ridge'; different line from our stored text."
+    },
+    {
+     "aid": "2923338",
+     "verdict": "not-summited",
+     "why": "Turned back 100 ft below the summit."
+    },
+    {
+     "aid": "1849769",
+     "verdict": "offseason",
+     "why": "January."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "A south-slopes line from the Nooksack Cirque trail (leave trail near the log-bridged stream at about 2,550 ft, open basin near 5,800 ft with water, rockslide, then SE ridge Class 3) is logged repeatedly but matches no stored route text (our SE ridge is the Wall Street approach, our SW ridge is a west ridge gully). Possibly a missing route or a variant of the SW ridge; owner decision. The Nooksack Cirque trailhead pin is 323 m from where recorded tracks start (stored 48.89401,-121.65259 vs tracks ~48.8957,-121.6562); not confirmed from a fetched page, so no move proposed."
+}

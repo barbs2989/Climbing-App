@@ -1,0 +1,58 @@
+{
+ "area_id": "wa_mount_prophet",
+ "routes": [
+  {
+   "route_id": "wa_mount_prophet_southwest_rib",
+   "season": {
+    "months": [
+     5,
+     6,
+     7
+    ],
+    "window": "May-Jul",
+    "evidence": "Web: guide pages say do the Southwest Rib in spring or early summer while the snow ramp past the cirque cliff band is filled in, and the South Ridge in mid/late summer; matches stored May-Jul."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "195875",
+     "verdict": "not-summited",
+     "why": "Logged as SW Ridge from Ross Dam, Sep 2011, turned back; summit 1.5 km away."
+    },
+    {
+     "aid": "2009951",
+     "verdict": "different",
+     "why": "Starts at the Big Beaver Landing side and climbs the southeast/south ridge via the Thirtymile creek rib; does not use Luna Camp or the southwest cirque."
+    },
+    {
+     "aid": "1968118",
+     "verdict": "different",
+     "why": "Same Big Beaver Landing start, southeast side line; no southwest rib evidence."
+    },
+    {
+     "aid": "2893871",
+     "verdict": "different",
+     "why": "Logged South Ridge from the Thirtymile camp; this is the East route we already hold."
+    },
+    {
+     "aid": "2930956",
+     "verdict": "different",
+     "why": "Starts at Thirtymile camp; south ridge line."
+    },
+    {
+     "aid": "1730132",
+     "verdict": "different",
+     "why": "Report explicitly takes the southeast ridge and advises against the southwest route."
+    },
+    {
+     "aid": "2572895",
+     "verdict": "different",
+     "why": "Ascends the rib beside Thirtymile Creek (southeast side)."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "Every harvested summited track climbs the south/southeast ridge, which is wa_mount_prophet_east (already has a track). A Peakbagger entry logged as \"Jacob's Ladder - SW Rib\" (July) exists in the histogram but was not among the harvested tracks."
+}

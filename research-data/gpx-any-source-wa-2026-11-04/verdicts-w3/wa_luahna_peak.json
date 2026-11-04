@@ -1,0 +1,84 @@
+{
+ "area_id": "wa_luahna_peak",
+ "routes": [
+  {
+   "route_id": "wa_luahna_peak_southwest_slope_southeast_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Histogram Jul 64, Aug 54, Sep 40; web search: reports cluster early July to late August with a few in September; late-season glacier loss is the limit on neighbouring Clark. Stored Jul-Sep kept."
+   },
+   "track": {
+    "aid": "2645772",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Logged route Boulder Basin standard / S/SW traverse from Clark, from White River TH; track start/end 14-17 m from our trailhead pin, summit 8 m; report describes the Clark-to-Luahna ledges, class 3/4 finish and exposed ledges matching our SW slope - SE ridge text. Mid-September is inside Jul-Sep."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "3278617",
+     "verdict": "unsure",
+     "why": "No logged route or report text (3 days); cannot confirm which route."
+    },
+    {
+     "aid": "2915649",
+     "verdict": "unsure",
+     "why": "No route name; not a round trip from trailhead."
+    },
+    {
+     "aid": "2893461",
+     "verdict": "unsure",
+     "why": "No route name; start far from trailhead."
+    },
+    {
+     "aid": "2921886",
+     "verdict": "different",
+     "why": "Full 3-peak Clark traverse, not a complete round trip."
+    },
+    {
+     "aid": "1974395",
+     "verdict": "unsure",
+     "why": "Clark/SW Face but track not a round trip from the trailhead."
+    },
+    {
+     "aid": "1710245",
+     "verdict": "different",
+     "why": "Pilz Glacier route."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 9,
+     "text": "In mid-September the debris gully dropping from Clark sheds a lot of rock onto you; the higher traverse is safer.",
+     "aids": [
+      "2645772"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 9,
+     "text": "Ledges near the top are sandy and strewn with loose flakes; test every hold before weighting it.",
+     "aids": [
+      "2645772"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 9,
+     "text": "In mid-September the best low-impact camp is the saddle between Point 7970 and Clark, but water is scarce there, so carry some.",
+     "aids": [
+      "2645772"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "East Slopes already has a track, so not in this verdict."
+}

@@ -1,0 +1,29 @@
+{
+  "area_id": "wa_mcclellan_peak_climbs",
+  "routes": [
+    {
+      "route_id": "wa_mcclellan_peak_southwest_scramble",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep with October marginal. Logged ascents of the peak: Jun 74, Jul 61, Aug 66, Sep 68, Oct 44, May 26. Web: Mountaineers route page warns the approach gets icy late in the season; guidebook-style pages give July-October as prime for the Stuart Range peaks and snow gear needed in spring. Keep Jul-Sep; June and early October usable with axe and traction." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3328028", "verdict": "unsure", "why": "Aug 20 2026 summit; starts exactly at our 'leave the trail' pin between Leprechaun and Sprite Lakes, so it is a segment of our line only, 9.7 km from the trailhead pin, not a trailhead track. Report names the Prong scree, harder west finish and easy east descent, consistent with our route." },
+        { "aid": "3246551", "verdict": "different", "why": "Jun 28 2026 from Stuart Lake/Aasgard side, a different approach." },
+        { "aid": "3239983", "verdict": "different", "why": "Jun 22 2026 from the north (Stuart Lake side)." },
+        { "aid": "3200970", "verdict": "offseason", "why": "May 22 2026 traverse from Enchantment Peak." },
+        { "aid": "2543671", "verdict": "different", "why": "Jun 16 2024 Ingalls Creek approach." },
+        { "aid": "2193924", "verdict": "offseason", "why": "Apr 29 2023, Aasgard Pass." },
+        { "aid": "1886866", "verdict": "offseason", "why": "Apr 3 2022, south couloir." },
+        { "aid": "1769736", "verdict": "different", "why": "Sep 24 2021 via the Prong, partial and no elevation, different line." },
+        { "aid": "565909", "verdict": "different", "why": "Aug 22 2015 Colchuck / north slope approach." },
+        { "aid": "483552", "verdict": "different", "why": "Aug 17 2014 West Col from Lake Viviane, partial." },
+        { "aid": "3274048", "verdict": "offseason", "why": "Apr 25 2026 from the Snow Lakes trailhead, but April and no track points." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "monthBreakdown", "month": 6, "text": "Late June can still hold a short steep snow patch near 7,900 ft on the approach and snow on the north side of the ridge crossing; carry an axe, and crampons or microspikes for the descent slope.", "aids": ["3246551", "3239983"] },
+        { "field": "pro_tips", "month": 8, "text": "The steep sand-and-scree slope beside the Prong is the trickiest ground in August; hugging the rock ribs on either side gives better footing than the loose middle.", "aids": ["3328028"] }
+      ]
+    }
+  ],
+  "notes": "Only one route on this peak. Every harvested in-season track starts at another trailhead or mid-route; none starts at Snow Lakes Trailhead, so no track assigned. 3328028 (Aug 2026) could serve as a junction-to-summit segment if the owner wants partial tracks. Distance and gain figures were not recorded for it."
+}

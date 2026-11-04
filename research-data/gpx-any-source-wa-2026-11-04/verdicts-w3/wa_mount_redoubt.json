@@ -1,0 +1,27 @@
+{
+  "area_id": "wa_mount_redoubt",
+  "routes": [
+    {
+      "route_id": "wa_mount_redoubt_south_face",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Ascent histogram: Jul 77, Aug 36, May 9. WebSearch (NPS climbing blog, SummitPost, Cascade Climbers snippets): glacier straightforward with few open crevasses in July; July is a workable window. Stored Jul-Sep kept; May ascents dropped as off-season." },
+      "track": { "aid": "3275208", "verdict": "same", "kind": "camp-roundtrip", "inSeason": true,
+                 "why": "Peak has exactly one stored route; logged 'South Face (L5)' on 19 Jul 2026, summited (14 m from our summit pin), line goes up the south side from a camp near the Redoubt Glacier. It is a camp-to-summit-to-camp loop (about 3 mi, 2,000 ft), not trailhead-based, so it is neither a full round trip nor trailhead-to-summit; the apply script decides." },
+      "otherTracksConsidered": [
+        { "aid": "1063446", "verdict": "unsure", "why": "10 Jul 2018 summit, camp-based track near the high camp, no logged route or report." },
+        { "aid": "533356", "verdict": "offseason", "why": "29 May 2015, over a month before the season." },
+        { "aid": "2204396", "verdict": "offseason", "why": "28 May 2023, earlier than the season." },
+        { "aid": "2750797", "verdict": "offseason", "why": "January." },
+        { "aid": "547337", "verdict": "unsure", "why": "Early July 2015 summit with usable beta but no GPS track." },
+        { "aid": "1700147", "verdict": "unsure", "why": "July 2021, no GPS track in packet; report concerns other peaks." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 7, "text": "In early July the fast ford of Depot Creek near 5,100 ft is best crossed where the stream splits into several channels; one party lost a pole there.", "aids": ["547337"] },
+        { "field": "watch_out", "month": 7, "text": "In early July the lower Redoubt Glacier is broken up; the flatter upper part gives easier travel.", "aids": ["547337"] },
+        { "field": "watch_out", "month": 7, "text": "On the south side the first snow finger tempts parties onto slabby, loose rock; go past one more ridge to the real steep snow finger and the gully above it.", "aids": ["547337"] },
+        { "field": "pro_tips", "month": 7, "text": "Above the cannonhole turn left; the last 50 ft or so to the summit is steep enough that a handline was used.", "aids": ["547337"] }
+      ]
+    }
+  ],
+  "notes": "Only one stored route and it is the standard south route. No pins proposed (stored trailhead is the Depot Creek washout in BC; not re-confirmed this session). Most Redoubt ascents in the log are July Chilliwack-group trips."
+}
