@@ -1,0 +1,86 @@
+{
+ "route_id": "wa_big_chiwaukum_three_musketeers_ridge",
+ "verdict": "real",
+ "duplicate_of": null,
+ "searched": [
+  "\"Three Musketeers\" ridge Nada Lake Tamarack Meadows Toketie Creek Stuart Range: WTA and Listsofjohn list the ridge (7,680-7,700 ft) near Leavenworth; Mountaineers trip report places it between Tamarack Meadows and Toketie Creek above Nada Lake",
+  "Three Musketeers Ridge 7680 Leavenworth scramble Snow Lakes trailhead: found a May 2021 snow ascent write-up and a Feb 2020 winter report",
+  "Fetched WTA Snow Lakes hike page for the trailhead coordinate; Mountaineers pages return 403; Nominatim returned empty for two queries"
+ ],
+ "evidence": [
+  "https://www.wta.org/go-hiking/hikes/three-musketeers-ridge-7680 - the ridge exists as a Leavenworth-area hike entry (no description text)",
+  "https://onehikeaweek.com/2021/05/02/three-musketeers-ridge/ - Snow Lakes trail to Nada Lake, up a buttress ramp beside the falls, through open forest west to a gully, south ridge, true summit is east of the first tower",
+  "https://www.wta.org/go-hiking/hikes/snow-lakes - Snow Lakes Trailhead at 47.5441, -120.7097; Northwest Forest Pass or America the Beautiful Pass"
+ ],
+ "track_aid": null,
+ "track_why": "All three packet tracks are Feb-Apr snow ascents (2020-02-29, 2024-04-07), out of season for a Jul-Sep scramble. The only summer ascent (2020-09-04, 'south slopes') has no track.",
+ "fill": {
+  "discipline": "scrambling",
+  "disciplines": [
+   "scrambling"
+  ],
+  "season": "Jul-Sep",
+  "best_season": "Late July through September, once the slopes above Nada Lake are snow-free",
+  "overview": "A little-visited high ridge in the eastern Enchantments, rising north of the Nada Lake basin between Tamarack Meadows and Toketie Creek. The way in is the long Snow Lakes trail, then off-trail up a steep buttress and basin to the ridge crest, where a string of rocky knobs leads to the high point. Quiet, with no crowds and no trail past the lake.",
+  "beta": "From Nada Lake, leave the trail at the west shore and work up the slope beside the outlet falls to the upper basin. Continue to the saddle on the ridge, then follow the crest over a series of knobs. The first tower is not the highest; keep going along the crest to the true summit, passing a few boulder moves and a slot.",
+  "approach": "Start at the Snow Lakes Trailhead on Icicle Creek Road and hike the Snow Lakes trail past Lake Viviane to Nada Lake (roughly 5 to 6 miles). Beyond the end of the maintained trail, climb the buttress ramp above the lake outlet into the upper basin, then head to the ridge saddle.",
+  "descent_text": "Return the way you came along the crest and down to the basin, then drop back to Nada Lake and the Snow Lakes trail. In snow season the descent side can be poor, so a different line should be chosen with care.",
+  "turnaround": "Turn back if the slope above Nada Lake is still snow-covered and steep without axe and crampons, or if the afternoon sun is softening the snow.",
+  "bail": "Retreat down the buttress ramp to Nada Lake and the trail.",
+  "high_point_ft": 7690,
+  "outing_shape": "outback",
+  "gear": [
+   "Helmet",
+   "Hiking poles"
+  ],
+  "what_to_bring": [
+   "Helmet",
+   "Water filter (Jul-Sep, lake water only)",
+   "Ice axe and crampons (June or any early-season attempt)",
+   "Snowshoes (Nov-May)"
+  ],
+  "hazards": [
+   "Steep, loose ground and cliffs on the buttress above Nada Lake",
+   "Very long day with a large amount of gain",
+   "Rocky, exposed knobs along the crest"
+  ],
+  "obj_haz": [
+   "Rockfall in the gullies"
+  ],
+  "watch_out": [
+   "Wilderness overnight permits are required for camping in the core zone from mid-May to October",
+   "Hot, shadeless slopes in July and August"
+  ],
+  "pro_tips": [
+   "Camp near the lakes in Tamarack Meadows to turn the long hike into a short summit day (permit needed).",
+   "The trail ends at the west shore of Nada Lake, so be ready to find your own way from there."
+  ],
+  "features": [
+   "Rocky crest with several knobs",
+   "Views of The Temple and the Stuart Range"
+  ],
+  "road": {
+   "name": "Icicle Creek Road",
+   "status": "open",
+   "driveNote": "Icicle Creek Road runs from Leavenworth to the Snow Lakes trailhead."
+  },
+  "access": {
+   "land_manager": "Okanogan-Wenatchee National Forest, Alpine Lakes Wilderness",
+   "parking_pass": "Northwest Forest Pass or America the Beautiful Pass"
+  },
+  "waypoints": [
+   {
+    "type": "Trailhead",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.5441,
+    "lng": -120.7097
+   }
+  ],
+  "approach_logistics": {
+   "trailhead": "Snow Lakes Trailhead",
+   "trailheadLat": 47.5441,
+   "trailheadLng": -120.7097
+  }
+ },
+ "reviewer_note": "grade left empty: no source states one (class 3 was the researcher's judgement)"
+}

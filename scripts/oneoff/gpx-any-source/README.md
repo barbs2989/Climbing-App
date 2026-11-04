@@ -57,8 +57,10 @@ node -e "const p=require('./$D/peaks.json');console.log(JSON.stringify(p.filter(
 ## Then SummitPost
 
 Same rules. Its peak/route pages have "Download GPX" plus When To Climb / Getting There / Route Summary
-/ Camping. Its ADS HIJACK a rendered tab (Expedia, ad trackers): open an ad-free same-origin page such
-as `https://www.summitpost.org/robots.txt` and fetch() everything from it; never render its pages.
+/ Camping. Its ADS HIJACK a rendered tab (Expedia, ad trackers). WORKS (2026-11-04): navigate ONE real page
+(a search URL) so Cloudflare's check clears (~8 s), then navigate the tab to
+`https://www.summitpost.org/robots.txt` and fetch() everything from there. robots.txt alone does NOT
+clear the check (fetches return 403 "Just a moment..."). Routes of a peak: `/<slug>/routes/p-<id>`.
 Search: `/object_list.php?object_type=1&object_name_1=<name>&state_province_1=<State>`.
 
 ## Peakbagger traps already paid for
