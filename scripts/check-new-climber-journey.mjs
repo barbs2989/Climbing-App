@@ -528,6 +528,12 @@ try {
     await page.fill('[aria-label="Search climbers by name"]', fixture.mate.name);
     await settledText(page);
 
+    // WAIT FOR THE FILTER TO SETTLE: on a loaded box the people search answers after settledText
+    // returns, so the count read 0 (no rows yet) on a correct build. Only exactly-one is waited
+    // for, so a real duplicate still fails below after the timeout.
+    await page.waitForFunction(() =>
+      [...document.querySelectorAll("button")].filter((b) => (b.innerText || "").trim() === "Send").length === 1,
+    null, { timeout: 20000 }).catch(() => {});
     const sendCount = await page.evaluate(() =>
       [...document.querySelectorAll("button")].filter((b) => (b.innerText || "").trim() === "Send").length);
     if (sendCount !== 1) {
@@ -739,11 +745,11 @@ try {
     if (!(await tapByName(page, "Crews"))) dead(`no Crews sub-view on the Crew tab (${why})`);
     await settledText(page);
     // OPEN EVERY CREW CARD FIRST. Since #2531 (2026-10-21) each card starts COLLAPSED to a summary,
-    // and the roster -- the "Crew · N members" box this reads -- renders only behind "View plan ▾".
+    // and the roster -- the "Crew · N members" box this reads -- renders only behind "View plan" (its chevron is an SVG now, so the label no longer ends in a ▾ glyph and an exact match found no button).
     // The walk scanned collapsed cards and reported "found 0" two runs running (2026-10-24), which
     // reads exactly like a missing roster. Clicked once each; a card already open has no such button.
     const opened = await page.evaluate(() => {
-      const bs = [...document.querySelectorAll("button")].filter((b) => (b.innerText || "").trim() === "View plan ▾");
+      const bs = [...document.querySelectorAll("button")].filter((b) => (b.innerText || "").trim().startsWith("View plan"));
       bs.forEach((b) => b.click());
       return bs.length;
     });

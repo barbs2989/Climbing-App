@@ -38,7 +38,9 @@ const fail = (m) => { console.log("  FAIL  " + m); problems.push(m); };
 
 const start = src.indexOf("var _rosterIds=");
 if (start < 0) { console.error("ANCHOR LOST: `var _rosterIds=` is not in ClimbMatch.jsx — the group roster moved"); process.exit(1); }
-const end = src.indexOf("var mods=", start);
+// The roster expression used to end where `var mods=` began; that Moderators strip is gone (members see
+// a count, managers the roster), so the lift now ends where the posts list begins.
+const end = src.indexOf("var posts=groupPostsAll[", start);
 if (end < 0) { console.error("ANCHOR LOST: could not bound the _roster expression"); process.exit(1); }
 let block = src.slice(start, end);
 // comments out, so the explanatory prose cannot be executed or matched
