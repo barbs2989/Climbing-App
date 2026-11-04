@@ -5,8 +5,10 @@
 // (CVE-2024-27980) spawning a .cmd without `shell: true` throws EINVAL, and a shell would re-parse
 // the argument array: the SQL, JSON and paths the guards pass would be split and globbed.
 //
-// So on Windows we run npm's own JS entry point with the running node, which keeps the argument
-// array exactly as written. Use it as
+// So on Windows we run a JS entry point with the running node, which keeps the argument array
+// exactly as written: for `npx`, npx-shim.cjs (a tool installed here runs IN that process, so
+// `server.kill()` stops the dev server rather than orphaning it — see the shim); for `npm`, npm's
+// own npm-cli.js. Use it as
 //
 //   execFileSync(NPX, [...NPX_PRE, "esbuild", entry, ...], opts)
 //   spawn(NPM, [...NPM_PRE, "run", "check:outage"], opts)
@@ -14,6 +16,7 @@
 // Anywhere else it is the plain `npx` / `npm` it always was.
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const WIN = process.platform === "win32";
 
@@ -25,6 +28,6 @@ function cliOf(name) {
 }
 
 export const NPX = WIN ? process.execPath : "npx";
-export const NPX_PRE = WIN ? [cliOf("npx")] : [];
+export const NPX_PRE = WIN ? [fileURLToPath(new URL("./npx-shim.cjs", import.meta.url))] : [];
 export const NPM = WIN ? process.execPath : "npm";
 export const NPM_PRE = WIN ? [cliOf("npm")] : [];
