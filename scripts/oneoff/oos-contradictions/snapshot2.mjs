@@ -12,7 +12,7 @@ for (;;) {
    where not (a.path <@ 'usa.washington') and (r.approach is not null or r.descent is not null or r.descent_text is not null)
    and not (r.timing is not null or r.itinerary is not null or r.waypoints is not null or r.approach_variants is not null or r.climbing_route is not null or r.seasonal_guidance is not null or r.pitch_detail is not null)
    and r.id > '${last}' order by r.id limit 500`;
-  const raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "-o", "json", sql], { encoding: "utf8", maxBuffer: 1 << 28 });
+  const raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-o", "json", sql], { encoding: "utf8", maxBuffer: 1 << 28 });
   const page = JSON.parse(raw.slice(raw.indexOf("{"))).rows;
   rows.push(...page); console.log(rows.length);
   if (page.length < 500) break;

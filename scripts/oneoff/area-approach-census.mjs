@@ -11,7 +11,7 @@ const sql = `with a as (
 select st, count(*) as areas, count(*) filter (where alen >= 80) as with_walkin,
   sum(n) as routes, sum(n) filter (where alen < 80) as routes_without, count(*) filter (where alen < 80 and n >= 10) as bare_areas_10plus
 from a group by st order by routes_without desc nulls last`;
-const raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "-o", "json", sql], { encoding: "utf8", maxBuffer: 64 << 20 });
+const raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-o", "json", sql], { encoding: "utf8", maxBuffer: 64 << 20 });
 const rows = JSON.parse(raw.slice(raw.indexOf("{"))).rows;
 console.log("| state | areas with routes | with a walk-in | routes | routes without | bare areas with 10+ routes |\n|---|---|---|---|---|---|");
 const t = { a: 0, w: 0, r: 0, rw: 0, b: 0 };

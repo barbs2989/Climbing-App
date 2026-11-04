@@ -59,7 +59,7 @@ const tmp = path.join(process.env.CLAUDE_JOB_DIR || os.tmpdir(), "gen-supabase-s
 fs.writeFileSync(tmp, SQL);
 let raw;
 try {
-  raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "-o", "json", "-f", tmp],
+  raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-o", "json", "-f", tmp],
     { encoding: "utf8", timeout: 180000, maxBuffer: 64 * 1024 * 1024, cwd: ROOT });
 } catch (e) {
   console.error("FAIL: could not read the live catalog —", String(e.message).split("\n")[0].slice(0, 200));

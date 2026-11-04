@@ -63,7 +63,7 @@ for (const ord of [MP_DIR + "/_order", MP_FRESH + "/_order"].filter(existsSync))
 // from the books themselves). `guide_stars` has no index, so the one read goes over a direct connection
 // (`supabase db query`, no REST statement timeout) instead of PostgREST, once, and the writes are paced as below.
 if (process.argv.includes("--guidebook")) {
-  const out = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--output-format", "json", "select id from routes where guide_stars >= 3 and not classic order by id"], { encoding: "utf8", maxBuffer: 1 << 30 });
+  const out = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "--output-format", "json", "select id from routes where guide_stars >= 3 and not classic order by id"], { encoding: "utf8", maxBuffer: 1 << 30 });
   const j = JSON.parse(out.slice(Math.min(...[out.indexOf("{"), out.indexOf("[")].filter(i => i >= 0))));
   const todo = (Array.isArray(j) ? j : j.rows).map(r => r.id);
   console.log(`guidebook: ${todo.length} routes rated 3+ guidebook stars not yet classic`);

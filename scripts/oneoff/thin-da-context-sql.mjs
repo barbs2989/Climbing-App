@@ -28,7 +28,7 @@ where r.area_id like '${prefix.replace("_", "\\_")}%' and r.disciplines->>0 in (
   and (greatest(length(coalesce(r.descent,'')),length(coalesce(r.descent_text,''))) < 150
        or (length(coalesce(r.approach,'')) < 150 and r.approach_variants is null))
 order by r.area_id, r.id`;
-const raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "-o", "json", sql], { encoding: "utf8", maxBuffer: 64 << 20 });
+const raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-o", "json", sql], { encoding: "utf8", maxBuffer: 64 << 20 });
 const json = JSON.parse(raw.slice(raw.indexOf("{")));
 const targets = json.rows;
 const CHUNK = Number(process.env.CHUNK || 40);

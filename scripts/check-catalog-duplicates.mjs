@@ -56,7 +56,7 @@ fs.writeFileSync(tmp, `select tgname, tgenabled::text en, (tgtype & 4) > 0 ins, 
   from pg_trigger where tgname in ('trg_refuse_duplicate_area', 'trg_refuse_duplicate_route') and not tgisinternal;`);
 let trig;
 try {
-  const raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "-f", tmp], { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+  const raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-f", tmp], { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
   trig = JSON.parse(raw.slice(raw.indexOf("{"))).rows;
   if (!Array.isArray(trig)) throw new Error(raw.slice(0, 300));
 } catch (e) {

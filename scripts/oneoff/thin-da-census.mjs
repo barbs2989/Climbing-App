@@ -13,7 +13,7 @@ const sql = `select coalesce(r.disciplines->>0,'(none)') as discipline,
   count(*) filter (where ${thinD} or ${thinA}) as thin_either
 from routes r where r.area_id not like 'wa\\_%'
 group by 1, 2 order by thin_either desc`;
-const raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "-o", "json", sql], { encoding: "utf8", maxBuffer: 64 << 20 });
+const raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-o", "json", sql], { encoding: "utf8", maxBuffer: 64 << 20 });
 const rows = JSON.parse(raw.slice(raw.indexOf("{"))).rows;
 console.log("| primary discipline | alpine tag | routes | thin descent | thin approach | thin either |\n|---|---|---|---|---|---|");
 for (const r of rows) console.log(`| ${r.discipline} | ${r.alpine_tag ? "yes" : "no"} | ${r.routes} | ${r.thin_descent} | ${r.thin_approach} | ${r.thin_either} |`);

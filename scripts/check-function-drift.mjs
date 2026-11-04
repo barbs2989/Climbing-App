@@ -1,3 +1,4 @@
+import os from "node:os";
 import { NPX, NPX_PRE } from "./lib/npx.mjs";
 import { fileURLToPath } from "node:url";
 // check:function-drift — does the LIVE function catalog agree with the migrations?
@@ -83,11 +84,11 @@ join pg_language l on l.oid = p.prolang
 join pg_namespace n on n.oid = p.pronamespace
 where n.nspname = 'public' and l.lanname in ('plpgsql','sql');`;
 
-const tmp = path.join(process.env.CLAUDE_JOB_DIR || "/tmp", "fn-drift.sql");
+const tmp = path.join(process.env.CLAUDE_JOB_DIR || os.tmpdir(), "fn-drift.sql");
 fs.writeFileSync(tmp, SQL);
 let raw;
 try {
-  raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "-f", tmp],
+  raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-f", tmp],
     { encoding: "utf8", timeout: 180000 });
 } catch (e) {
   console.error("FAIL: could not read the live catalog —", String(e.message).split("\n")[0].slice(0, 200));

@@ -10,7 +10,7 @@ const OUT = fileURLToPath(new URL("../../../audits/oos-contradictions", import.m
 const sql = `select r.id, r.area_id from routes r join areas a on a.id = r.area_id
  where a.path is not null and not (a.path <@ 'usa.washington')
  and (r.timing is not null or r.itinerary is not null or r.waypoints is not null or r.approach_variants is not null or r.climbing_route is not null or r.seasonal_guidance is not null or r.pitch_detail is not null)`;
-const raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "-o", "json", sql], { encoding: "utf8", maxBuffer: 1 << 28 });
+const raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-o", "json", sql], { encoding: "utf8", maxBuffer: 1 << 28 });
 const ids = JSON.parse(raw.slice(raw.indexOf("{"))).rows;
 console.log("rich out-of-state routes", ids.length);
 const sleep = ms => new Promise(r => setTimeout(r, ms));
