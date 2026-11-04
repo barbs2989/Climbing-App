@@ -1,0 +1,84 @@
+{
+ "al_holiday_block": {
+  "_expect": {
+   "name": "Holiday Block",
+   "region": "Alabama"
+  },
+  "blurb": "A free-standing sandstone block in the county-run Sand Rock park in Cherokee County, just north of the neighbouring Pinnacle. Sport and trad lines cover every side, and many can be rigged as top ropes, so it suits a mixed group. This area has about two dozen climbs, split almost evenly between bolted and gear-protected, with a good spread from easy 5.5 to 5.8 warm-ups through a solid middle of 5.9 and 5.10 up to several 5.12s. The walk from the car is only a minute or two, which makes it an easy half-day stop. The stone is generally sound but holds can snap, so stay off it when wet.",
+  "parking_note": "Use the main parking lot on top of the ridge at the Sand Rock park; the block stands only a short stroll from the cars.",
+  "approach": "About a 100 foot walk from the parking lot to the block.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/105915396/holiday-block",
+    "https://www.mountainproject.com/area/105905184/sand-rock"
+   ]
+  }
+ },
+ "ak_eklutna_canyon_2": {
+  "_expect": {
+   "name": "Eklutna Canyon",
+   "region": "Alaska"
+  },
+  "blurb": "A popular winter ice and mixed area north of Anchorage, with climbs on both the north and south walls of the canyon cut by the Eklutna River. About two dozen lines are listed here, mostly mixed in the lower to middle M grades, with a smaller set of water-ice routes from WI2 to WI4. Expect a long, easy walk down to the river and then upstream.",
+  "parking_note": "Park in the Thunderbird Falls lot off Glenn Highway exit 25.",
+  "approach": "From the north side of the lot, drop down to the river (crampons may help on the descent), then follow the river upstream to the climbs. Usually 30 to 45 minutes.",
+  "approach_min": 40,
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/105909785/eklutna-canyon",
+    "https://alaskaiceclimbing.com/?p=1297"
+   ]
+  }
+ },
+ "ak_creekside_cliff": {
+  "_expect": {
+   "name": "Creekside Cliff",
+   "region": "Alaska"
+  },
+  "blurb": "A short-approach sandstone cliff beside Purinton Creek, off the Glenn Highway in the Mat-Su Valley. Most of our listed lines are trad or bolt-and-gear mixes that lead to fixed anchors, with a few pure sport routes. Grades concentrate in the 5.9 to 5.11 range, with just a couple of 5.12s, so it is a good place for intermediate climbers. The rock is mostly good, and the combination of quick access and decent stone is said to make this one of the busier parts of the Purinton crag.",
+  "parking_note": "Park beside Purinton Creek; the climbs farthest right rise from a gully just past where the lot ends.",
+  "approach": "Scramble along the base of the cliff for a few hundred yards to the belay ledges of your chosen route.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/109151163/creekside-cliff",
+    "https://mountainproject.com/area/109150185/purinton-creek"
+   ]
+  }
+ },
+ "ak_sunshine_ridge": {
+  "_expect": {
+   "name": "Sunshine Ridge",
+   "region": "Alaska"
+  },
+  "blurb": "A roadside crag along the Seward Highway beside Turnagain Arm, south of Anchorage. Most of our listed climbs are sport, with a good number of trad lines and two short ice routes. Grades mostly sit in the 5.8 to 5.10 range, with a few easier pitches and one 5.11, making it a moderate-friendly stop. The rock is crumbly, so wear a helmet, and the spot can be quite windy. Cars and trucks pass close by, so traffic noise makes communication hard. A planned highway project has threatened access here, so check its current status before you go.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106454168/sunshine-ridge",
+    "https://glaciercitygazette.net/rock-climbing-along-turnagain-arm-the-good-the-bad-and-the-ugly/",
+    "https://www.mountainproject.com/area/105991968/seward-highway"
+   ]
+  }
+ },
+ "ak_dino_head": {
+  "_expect": {
+   "name": "Dino Head",
+   "region": "Alaska"
+  },
+  "blurb": "A bolted sport crag beside the Seward Highway along Turnagain Arm, south of Anchorage. All of our listed climbs are sport, with a few easy lines and a strong core of 5.10 and 5.11 routes, plus one 5.12. Trad gear is rarely needed. The rock is typical of this stretch of highway, meaning loose pieces are common, so a helmet is a smart choice. It can be very windy, so bring a shell even on mild days. The setting is a bit quieter than the road below, with views and the occasional mountain goat. A highway-widening project has put access in question, so check its status.",
+  "approach": "Pick up a faint trail from the highway shoulder into the woods, join a maintenance trail, then head up and west through a clearing to a cable handrail that the route descriptions are measured from.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107137336/dino-head",
+    "https://www.mountainproject.com/area/105991968/seward-highway"
+   ]
+  }
+ },
+ "_skipped": {
+  "ak_valdez_glacier_campground": "Only one page (Mountain Project) describes the climbing; other results were campground listings, not a second climbing description.",
+  "ak_right_side_walls": "Only Mountain Project describes this sub-area; no second independent page confirms it or its location.",
+  "ak_byron_glacier_wall": "could not fetch two pages (only Mountain Project page fetched; others failed or did not describe the wall)"
+ },
+ "_conflicts": {
+  "ak_eklutna_canyon_2": "Access disagrees: mountainproject.com/area/105909785 says the landowner states climbing is not allowed; alaskaiceclimbing.com/?p=1297 says a land use permit is sold. Blurb says to check landowner rules."
+ }
+}

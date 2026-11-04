@@ -1,0 +1,77 @@
+{
+ "az_rupley_towers": {
+  "_expect": {
+   "name": "Rupley Towers",
+   "region": "Arizona"
+  },
+  "blurb": "A cluster of rock towers on the Windy Point East stretch of the Catalina Highway up Mount Lemmon, above Tucson. Most of the twenty-five climbs are trad, with a handful of bolted lines, and the grades run from easy fifth class up to a lone 5.12, with the bulk between 5.9 and 5.11. The towers are steep, exposed and varied, and several of the longer lines take two pitches. The walk in is short, about ten minutes, but the path is hard to spot the first time and pushes through manzanita in places, so go with directions in hand.",
+  "approach": "Leave the car at the small pullout below the main Windy Point lot, find the cairned trail beside the culvert, and follow it under the scree slope, down steeply, then left and along the base of the towers. Expect to push through manzanita.",
+  "approach_min": 10,
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105738140/rupley-towers",
+    "https://www.mountainproject.com/area/106824229/3-windy-point-east",
+    "https://www.climbaz.com/interviews/johnandila.html"
+   ]
+  }
+ },
+ "az_sunny_perch": {
+  "_expect": {
+   "name": "Sunny Perch",
+   "region": "Arizona"
+  },
+  "blurb": "A sub-area of the Skyline Boulders on the slopes of Mt. Elden, just north of Flagstaff. About twenty-five problems sit on dacite that climbs a lot like granite, with small edges and poor feet. Grades are mostly mid-range: a few easy problems, a big cluster at V3, and a harder group around V7 and V8. The hillside faces south and collects plenty of sun, so it is a good winter pick, drying out fast after storms. Expect a short, scrambly hike on a web of trails, with the Ice Nine boulder as the easiest landmark for finding your way.",
+  "parking_note": "Park at the Trinity Heights church trailhead at the top of Fourth Street in Flagstaff, then walk the trail network toward the base of Mt. Elden.",
+  "approach": "From the church lot, follow the trail network up and to the right toward the foot of Mt. Elden. The Ice Nine boulder is the easiest landmark for finding your bearings.",
+  "aspect": "S",
+  "season_months": [
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108648059/skyline-boulders",
+    "https://thetopo.com/crags/skyline-boulders-7409"
+   ]
+  }
+ },
+ "az_magma_gardens_the": {
+  "_expect": {
+   "name": "Magma Gardens, The",
+   "region": "Arizona"
+  },
+  "blurb": "A dense group of small pinnacles on a ridge in Queen Creek Canyon near Superior, east of Phoenix, inside the Mine Area. Almost all of the twenty-five climbs are bolted, with a few trad lines and a single boulder problem. Grades start at easy fifth class and run into the low 5.11s, so there is a good supply of moderates alongside a solid block of 5.9 to 5.11 routes. Check the local climbers' coalition for news of any mining-related access changes.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105902488/the-magma-gardens",
+    "https://www.mountainproject.com/area/105792122/the-mine-area",
+    "https://queencreekclimbing.com/"
+   ]
+  }
+ },
+ "az_atlantis_2": {
+  "_expect": {
+   "name": "Atlantis #2",
+   "region": "Arizona"
+  },
+  "blurb": "A small bouldering zone in Queen Creek Canyon near Superior, an hour or so east of Phoenix, part of the wider Oak Flat bouldering region. The twenty-six problems cover almost the whole scale, with easy problems at the bottom, a solid middle band, a cluster at V8, and a few harder ones above. The volcanic rock is abrasive and offers plenty of distinctive hold types. Drive carefully, since the last stretch of dirt road is rough.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106959022",
+    "https://queencreekclimbing.com/"
+   ]
+  }
+ },
+ "_skipped": {
+  "az_2_shallow_end": "could not fetch two pages that describe it; Shallow End is only mentioned in passing on a sibling page",
+  "az_steep_the": "only one fetched page describes it; the other results only mention it in passing",
+  "az_bob_ross_wall": "Wildlife Canyon is currently closed to climbing by the City of Phoenix; no independent second page",
+  "az_finktion_wall": "could not fetch two pages that describe it (second pages returned 403 or redirect)"
+ },
+ "_conflicts": {
+  "az_sunny_perch": "stored rock rhyolite, but https://www.mountainproject.com/area/108648059/skyline-boulders describes the rock as dacite (one source only)"
+ }
+}

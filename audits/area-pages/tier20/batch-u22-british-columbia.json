@@ -1,0 +1,30 @@
+{
+ "bc_parking_lot_wall": {
+  "_expect": { "name": "Parking Lot Wall", "region": "British Columbia" },
+  "blurb": "A small, low-lying wall on the edge of the Smoke Bluffs in Squamish, set right beside the climbers' lot. Most of the 28 climbs are trad, with a handful of bolted lines and a single hard boulder problem. Grades cluster between 5.6 and 5.10, with a couple of 5.11s, so it suits newer leaders learning to place gear on cracks as well as people after a quick warm-up. The cliff is open with little tree cover and catches the sun for much of the day, so it tends to dry fast after rain. Expect company on fine weekends.",
+  "parking_note": "Use the climbers' lot for the Smoke Bluffs; the wall is at the edge of the lot, only a few steps from the cars.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114369731/parking-lot-wall", "https://gripped.com/?p=24318", "https://gripped.com/?p=47515"] }
+ },
+ "bc_slesse_mountain": {
+  "_expect": { "name": "Slesse Mountain", "region": "British Columbia" },
+  "blurb": "A big granite peak in the Western Chilliwack Range of the Canadian Cascades, roughly two hours east of Vancouver and rising to about 2,389 m. The climbing is serious alpine trad on long, committing lines, some running to two dozen pitches or more. Of the 27 climbs here, nearly all are trad, with one aid line and one alpine objective. Grades run from 5.7 up to 5.12, with most between 5.8 and 5.10. The rock is largely good granite, though lightly travelled lines can carry lichen and loose sections. Summer is the usual window; plan for a long day and don't underestimate it.",
+  "rock": "granite",
+  "review": { "sources": ["https://www.mountainproject.com/area/106108442/mt-slesse", "https://colinhaley.com/?p=2516"] }
+ },
+ "bc_boulder_gully": {
+  "_expect": { "name": "Boulder Gully", "region": "British Columbia" },
+  "blurb": "A gully crag within the Smoke Bluffs in Squamish, close to the main climbers' lot. It holds 26 climbs: mostly trad, about eleven boulder problems and a couple of bolted lines. Trad grades sit mainly around 5.9 to 5.10, with a few at 5.7 and 5.11 and one at 5.12, while the problems are mostly easy, V0 to V2, plus one much harder test. The granite is solid but rugged, with thin cracks, seams and slabby sections that turn slick when wet. Expect no-frills crack and technique climbing rather than flowing movement.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105808584/the-smoke-bluffs", "https://app.advcollective.com/climbing/lust-at-boulder-gully-a-bold-single-pitch-trad-test-in-the-smoke-bluffs"] }
+ },
+ "bc_the_missing_boulders": {
+  "_expect": { "name": "The Missing Boulders", "region": "British Columbia" },
+  "blurb": "A bouldering zone inside Murrin Park, between Britannia Beach and Squamish, and the biggest boulder area in the park with 28 problems. The granite blocks offer a wide spread: a fair number of easy problems from VB to V2, a solid middle band around V3 to V5, and a handful of hard lines reaching well into double-digit grades. Typical problems start from a ledge and go through a bold first move to a lip jug, then a mantle. Most cliffs in the park face east, so afternoons are shadier, which helps on hot days.",
+  "review": { "sources": ["https://mountainproject.com/area/105910820/murrin-park", "https://thetopo.com/crags/murrin-park-squamish/topos/the-missing-boulders"] }
+ },
+ "_skipped": {
+  "bc_g_black_dyke": "area reported closed after Grand Wall rockfall; also could not fetch two pages",
+  "bc_cat_lake_bouldering": "could not fetch two pages that describe the crag itself (topo PDF unreadable, news page thin)",
+  "bc_nightmare_rock_boulders": "could not fetch two pages about this boulder area itself (only a one-line mention on the Murrin Park page)",
+  "bc_buffalo_tail": "could not fetch two pages (only one listing page readable)"
+ }
+}

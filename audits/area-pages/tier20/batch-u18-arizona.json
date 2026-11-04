@@ -1,0 +1,96 @@
+{
+ "az_fire_wall": {
+  "_expect": {
+   "name": "Fire Wall",
+   "region": "Arizona"
+  },
+  "blurb": "A small crag in Oak Creek Canyon near Sedona, perched above the Anvil Boulders at roughly 5,000 feet. Nearly all of the twenty routes are bolted sport lines, with a pair of trad or top-rope options, and they are short and pumpy rather than tall. Grades start around 5.8, but the bulk sit between 5.10 and 5.12, with a single route in the 5.13 range, so it suits climbers who are comfortable on harder terrain. The walls face west to southwest, and although scattered pines cast some shade, most lines catch sun through much of the day. Some bouldering is found on the walk in.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106167998/fire-wall",
+    "https://www.mountainproject.com/area/106171649/oak-creek-canyon"
+   ]
+  }
+ },
+ "az_southeast_face_2": {
+  "_expect": {
+   "name": "Southeast Face",
+   "region": "Arizona"
+  },
+  "blurb": "A big, sunny face on The Fortress, part of the Summit Crags high on Mount Lemmon above Tucson, at about 8,400 feet. The twenty climbs mix bolted sport lines with a handful of trad routes, many of them multi-pitch, and they count among the longest on the mountain. Grades run from 5.8 to 5.11, with most routes at 5.10 and 5.11 and a good number of 5.9s. The face points southeast and stays in sun until mid to late afternoon. Plan to walk off rather than rappel, and start early in monsoon season, when afternoon storms can arrive quickly.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/109256050/southeast-face",
+    "https://www.mountainproject.com/area/106822838/8-summit-crags"
+   ]
+  }
+ },
+ "az_miyazaki": {
+  "_expect": {
+   "name": "Miyazaki",
+   "region": "Arizona"
+  },
+  "blurb": "A granite crag in the Granite Dells outside Prescott, and the largest of the climbing zones along Boulder Creek. Rounded boulders and outcrops stack into odd, almost fantasy-like clusters at around 5,200 feet. Most of the twenty routes are trad, with a smaller number of bolted lines, and they run from about 5.6 to 5.12, with the heaviest concentration at 5.11. The east side holds steep trad and mixed lines roughly 50 to 80 feet tall, while the north side has two or so face climbs on small edges that turn into cracks, and either can be stretched to a second pitch.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/115378452/miyazaki",
+    "https://www.mountainproject.com/area/116496822/upper-boulder-creek"
+   ]
+  }
+ },
+ "az_mustang_the": {
+  "_expect": {
+   "name": "Mustang, The",
+   "region": "Arizona"
+  },
+  "blurb": "A long south-facing limestone cliff in the Mustang Mountains of southern Arizona, near Sonoita, at about 5,100 feet. The wall stretches nearly a mile and averages around 200 feet tall, with routes from roughly 90 to 200 feet. The rock is a bit off vertical, with chert edges and the odd pocket or hole. Most of the twenty routes are bolted sport lines, with a few that call for a light rack. Grades run from 5.9 to 5.12, but the bulk sit at 5.10 and 5.11, so it works well for solid intermediates. A 60 meter rope handles the longer lines.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/105918670",
+    "https://mountainproject.com/area/107447521/southern-arizona"
+   ]
+  }
+ },
+ "az_morrell_s_wall": {
+  "_expect": {
+   "name": "Morrell's Wall",
+   "region": "Arizona"
+  },
+  "blurb": "A granite crag partway up the slope in the McDowell Mountains near Scottsdale, tucked between the Sven Slab and Gardener's Wall in the Tom's Thumb area, at about 2,500 feet. It is mainly a trad wall with a few bolted routes, and some lines go up in two or three pitches. Grades run from 5.4 to 5.11, with the largest group at 5.10 and a scattering of easier lines from 5.6 to 5.9, so there is something for both moderate and harder gear climbers. The rock is the rough-grained desert granite typical of the range, and the walk in is a steep grunt with some scrambling.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/105831368/morrells-wall",
+    "https://www.mountainproject.com/v/106153712"
+   ]
+  }
+ },
+ "az_blasphemy_wall": {
+  "_expect": {
+   "name": "Blasphemy Wall",
+   "region": "Arizona"
+  },
+  "blurb": "A steep limestone sport wall on the shady south side of the Virgin River Gorge, in the far northwest corner of Arizona beside I-15. All twenty routes are bolted, and this is hard-climber territory: one route sits around 5.11, most fall in the 5.12 and 5.13 ranges, and a handful reach 5.14. Expect technical, sustained climbing on pockets, edges and small wrinkles. Bolts on older lines can be spaced generously, so falls may be long. Shade keeps it cooler than the opposite wall, and the busy highway means constant truck noise. Pack quickdraws and a rope of 60 to 70 meters.",
+  "season_months": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4
+  ],
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106062943/virgin-river-gorge",
+    "https://touchstoneclimbing.com/the-virgin-river-gorge-americas-best-rock-and-worst-crag/"
+   ]
+  }
+ },
+ "_skipped": {
+  "az_sweet_rock": "could not fetch two pages describing the crag itself (only a route page and a parent-area page that names it)",
+  "az_watering_hole_the": "could not fetch two pages describing the crag; only the Zoo area page covers it, the other pages were general Mount Lemmon"
+ },
+ "_conflicts": {
+  "az_mustang_the": "stored rock is sandstone, but https://www.mountainproject.com/v/105918670 describes a south facing limestone crag at the same coordinates (31.694, -110.4713) and https://mountainproject.com/area/107447521/southern-arizona describes Mustang Mountains limestone"
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "az_world_boulder": {
+  "_expect": {
+   "name": "World Boulder",
+   "region": "Arizona"
+  },
+  "blurb": "A small bouldering spot on the north side of Pima Canyon in Phoenix's South Mountain Park, just before the Amphitheater sub-area and a short scramble up the slope. The namesake block is about 30 feet tall, rare for this canyon, with clusters of smaller boulders below it. Most of the problems here are easy, with about a third at V0 and a scattering from V1 through V5, plus a few hard ones around V6 and V7 and one roped line. Rock quality in the canyon is mixed, so stick to well-traveled problems. The park is a city facility, so check its current rules on climbing before you visit.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/106673394/world-boulder",
+    "https://www.mountainproject.com/area/106671948/pima-canyon-area"
+   ]
+  }
+ },
+ "az_gold_wall_the": {
+  "_expect": {
+   "name": "Gold Wall, The",
+   "region": "Arizona"
+  },
+  "blurb": "One of the main walls at Paradise Forks, a columnar basalt crag in Sycamore Canyon about half an hour west of Flagstaff, sitting beside the Prow and the Wild Wall. Every route here is trad, mostly cracks on hard rock with stout ratings: a few at 5.8 and 5.9, a big group at 5.10 and 5.11, then 5.12 and one at 5.13. Some routes are runout. Climbs reach around 90 feet and are generally reached by rappelling in from the rim.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105787813/paradise-forks",
+    "https://www.mountainproject.com/area/105792038/davidson-wall",
+    "https://www.mountainproject.com/route/106442931/black-and-sassy"
+   ]
+  }
+ },
+ "az_ultimates_west": {
+  "_expect": {
+   "name": "Ultimates West",
+   "region": "Arizona"
+  },
+  "blurb": "A sandstone sector of The Ultimates in Upper Pumphouse Wash, a side canyon feeding Oak Creek Canyon south of Flagstaff. Gear routes dominate, roughly two thirds, with most of the rest bolted sport lines and a single aid climb. Grades are stiff: only a few climbs at 5.9 or below, then a cluster at 5.11 and 5.12 and a few at 5.13. Expect finger cracks and corners on one side and steeper bolted faces on the other, mostly short pitches. Access to the canyon has historically been awkward, with bushwhacking or rappelling, so read current directions before you commit.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/105815990/upper-pumphouse-wash",
+    "https://www.mountainproject.com/route/108161280/young-guns"
+   ]
+  }
+ },
+ "az_the_ozzy_cliff_bands_ocb": {
+  "_expect": {
+   "name": "The Ozzy Cliff Bands (OCB)",
+   "region": "Arizona"
+  },
+  "blurb": "A backcountry desert trad area on the Pusch Ridge side of the Santa Catalina Mountains near Tucson, reached by a long hike up Pima Canyon with a lightly marked final stretch. Nearly all the routes here take gear, with one sport line and one top-rope. Grades run from easy fifth class through a large group at 5.9 and 5.10, with some 5.11 and 5.12, and several routes take two pitches. The cliffs mostly face northwest, so mornings are shaded and cold in winter.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108434174/ocb",
+    "https://www.mountainproject.com/route/109710718/suicide-solution",
+    "https://www.mountainproject.com/route/116195788/sweet-leaf"
+   ]
+  }
+ },
+ "az_southern_wall": {
+  "_expect": {
+   "name": "Southern Wall",
+   "region": "Arizona"
+  },
+  "blurb": "A north-facing quartzite wall beside the creek in Christopher Creek Gorge, off Highway 260 east of Payson. It stays in shade all day, which makes it a favorite for hot weather, and the creek is handy for cooling off. The rock is mostly clean and solid, with some lichen. Routes are a mix of bolted and gear lines, about two thirds sport. Grades span 5.7 to 5.11, with the largest group at 5.10, so it suits climbers working through the moderates. Canyoneers finish their descents through the gorge, so expect company, and keep dogs under control.",
+  "parking_note": "Park in the old highway department lot off Highway 260 east of Payson; the approach trail begins at the southwest corner of the lot.",
+  "approach": "Follow the cairned trail from the southwest side of the lot down toward the creek, pass the Confluence Wall, and cross the creek to reach the wall.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/110803885/christopher-creek-gorge",
+    "https://www.mountainproject.com/area/111049558/southern-wall"
+   ]
+  }
+ },
+ "az_barnum_rock": {
+  "_expect": {
+   "name": "Barnum Rock",
+   "region": "Arizona"
+  },
+  "blurb": "A crag high on Mount Lemmon in the Santa Catalina Mountains near Tucson, at roughly 7,600 feet, where altitude and trees keep it comfortable when the valley is hot. The approach is short and follows a cairned trail up a drainage from the highway. Routes are mostly bolted with chain anchors, about two thirds sport and a third trad, with a few multi-pitch lines. The grades are friendly, nearly all 5.6 to 5.8, with a few 5.9 and 5.10, so beginners do well here.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105738188/barnum-rock",
+    "https://www.mountainproject.com/route/105738554/no-hope-without-dope",
+    "https://www.mountainproject.com/route/107321870/memorial-daze"
+   ]
+  }
+ },
+ "_skipped": {
+  "az_lonesome_pine": "could not fetch two pages",
+  "az_2_the_main_amphitheater_fall_wall": "could not fetch two pages"
+ },
+ "_conflicts": {
+  "az_barnum_rock": "Stored parking_name is San Pedro Vista; https://www.mountainproject.com/area/105738188/barnum-rock describes a roadside turnout on the Mount Lemmon highway about 0.1 mile before the 18-mile marker. Not changed."
+ }
+}
