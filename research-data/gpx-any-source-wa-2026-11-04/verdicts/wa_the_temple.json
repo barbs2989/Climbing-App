@@ -1,0 +1,123 @@
+{
+  "area_id": "wa_the_temple",
+  "routes": [
+    {
+      "route_id": "wa_the_temple_south_ridge",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep",
+        "evidence": "Logged ascents: May 4, Jun 16, Jul 10, Aug 4, Sep 11, Oct 1. June is the busiest month because the steep snow gully to the notch is climbable then (axe and crampons); stored Jul-Sep widened to Jun-Sep. May and October ascents are fringe."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2882388",
+          "verdict": "unsure",
+          "why": "Starts and ends at our Snow Lakes pin and reaches the summit (June 25, 2025), but it is a 37 km multi-peak wander through the Core Enchantments (52.8 mi logged), not a clean round trip on this route; no report to confirm the line."
+        },
+        {
+          "aid": "1206085",
+          "verdict": "different",
+          "why": "July 2019: track is the descent only, from the summit west to Prusik Pass and out; one-way and not near our trailhead."
+        },
+        {
+          "aid": "1179914",
+          "verdict": "different",
+          "why": "June 2019: starts at an Inspiration Lake camp, not our trailhead; same snow-gully/notch climb but not a trailhead round trip."
+        },
+        {
+          "aid": "483524",
+          "verdict": "not-summited",
+          "why": "Aug 2014 turned back about 20 ft below the top."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "monthBreakdown",
+          "month": 5,
+          "text": "In mid-May the Snow Lakes trail was snow-covered from about 4,100 ft, firm enough in the morning to go without snowshoes; the basin above Nada Lake was still deep in snow with frozen lakes.",
+          "aids": [
+            "1657375"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 6,
+          "text": "In late June the last approach to the base is steep snow that needs an ice axe and crampons, and the slopes below High Priest can be icy and brushy.",
+          "aids": [
+            "1179914"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 8,
+          "text": "By early August the snow in the access gully can be gone, exposing wet, gritty slabs below a large chockstone; one party roped up and squeezed behind the block to pass.",
+          "aids": [
+            "1215265"
+          ]
+        },
+        {
+          "field": "what_to_bring",
+          "month": 6,
+          "text": "ice axe and crampons (May-June, steep snow gully to the notch)",
+          "aids": [
+            "1657375",
+            "1179914"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 5,
+          "text": "A reported line leaves the trail just past the Nada Creek crossing, scrambles talus left of the big waterfall, takes a third-class ledge system back toward it, then follows the left side of the creek into the broad basin north of Black Pyramid; near 6,400 ft it turns up to the lower northeast ridge, passing a cliff band through a tunnel under a huge chockstone.",
+          "aids": [
+            "1657375"
+          ]
+        },
+        {
+          "field": "descent_note",
+          "month": 6,
+          "text": "In May-June the steep upper snow gully below the notch was rappelled from existing stations, then downclimbed or plunge-stepped; extra rap anchors already line the approach slabs.",
+          "aids": [
+            "1657375",
+            "1179914"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "The last 20 ft below the summit is nearly vertical and very exposed; an August party without a rope turned back there.",
+          "aids": [
+            "483524"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 9,
+          "text": "By early September the tarns near the base (e.g. Gnome Tarn) are low; water must be pumped and tastes poor.",
+          "aids": [
+            "1486687"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_big_chiwaukum_mount_temple_ridge",
+      "season": {
+        "months": [],
+        "window": "unknown",
+        "evidence": "Route has no stored data at all; no season can be determined."
+      },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "The route id wa_big_chiwaukum_mount_temple_ridge (\"Mount Temple Ridge\") is an empty stub (no grade, text or pins); its id points at Big Chiwaukum, so it looks misfiled on The Temple. The West Side route id says \"south_ridge\" while its name says West Side; its stored crux text matches the notch-and-slab line all recent ascents describe. The only clean-start Temple track (2882388) is a long multi-peak day, so no track is assigned; owner may wish to hand-pick. Summit pin is 84 m from the surveyed point: not moved (a 2021 report says the true summit is the SE point beyond the USGS 8292 sub-summit). No trailhead change: our Snow Lakes pin is within 31 m of the one clean start."
+}

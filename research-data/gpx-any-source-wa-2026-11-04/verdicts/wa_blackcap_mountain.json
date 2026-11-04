@@ -1,0 +1,101 @@
+{
+  "area_id": "wa_blackcap_mountain",
+  "routes": [
+    {
+      "route_id": "wa_blackcap_mountain_scramble",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Peak ascents Jun 14, Jul 37, Aug 49, Sep 31, Oct 15; stored Jul-Sep fits (late June still has rotten snow and a cornice near the summit cap, October risks early snow). Kept."
+      },
+      "track": {
+        "aid": "2970261",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "1 Sep 2025, summited, begins within 80 m of our Buckskin Ridge pin and returns to it; report describes Shellrock Pass, then the boulder gully below the peak, up to the ridge and along it to the summit, which is our NE ridge from the Shellrock col. It is a linked four-day trip with other peaks, as the route text says is normal."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3284060",
+          "verdict": "same",
+          "why": "16 Aug 2025 round trip from Buckskin Ridge reaching the summit from the Shellrock basin side along the NE ridge, but no report text and a linked multi-peak trip; second choice."
+        },
+        {
+          "aid": "3253271",
+          "verdict": "different",
+          "why": "Monument Creek trailhead, ice axe and crampons, 3 July; starts 14 km from our pin."
+        },
+        {
+          "aid": "2630331",
+          "verdict": "unsure",
+          "why": "Report names NE ridge and the choss gully, in season, but the track begins at a Shellrock basin camp (13 km from the trailhead pin), partial."
+        },
+        {
+          "aid": "2555572",
+          "verdict": "unsure",
+          "why": "NE ridge in late June, but starts from a camp in Shellrock basin and is not a trailhead round trip."
+        },
+        {
+          "aid": "1766434",
+          "verdict": "different",
+          "why": "Came from Lake Mountain and used the east ridge from a different start."
+        },
+        {
+          "aid": "2239802",
+          "verdict": "unsure",
+          "why": "Survey trip, 32 mile day, no route detail."
+        },
+        {
+          "aid": "2429682",
+          "verdict": "offseason",
+          "why": "January winter ascent."
+        },
+        {
+          "aid": "2312271",
+          "verdict": "unsure",
+          "why": "Linked trip from Monument trailhead; used for facts only."
+        },
+        {
+          "aid": "434860",
+          "verdict": "unsure",
+          "why": "2008 camp-based trip; no track."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "The north-side gully below the peak is a shifting pile of loose rock; go one at a time and expect rockfall in late summer.",
+          "aids": [
+            "2630331",
+            "2312271",
+            "2970261"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "In late August, from the col climb the grey and orange ridge on the left, then cross to the right onto the black crest.",
+          "aids": [
+            "2630331"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 6,
+          "text": "In late June the Shellrock slopes hold rotten snow and a small cornice can sit near the black cap; an axe helps, and the crest is the safer way down.",
+          "aids": [
+            "2555572"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Both tracks are linked multi-peak trips, not this peak alone. Pins agree: our summit is 13 m from the surveyed coordinate and the trailhead pin is within 80 m of the track starts, so no moves."
+}

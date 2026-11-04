@@ -1,0 +1,25 @@
+{
+ "area_id": "wa_three_musketeers_ridge",
+ "routes": [
+  {
+   "route_id":"wa_big_chiwaukum_three_musketeers_ridge",
+   "season":{"months":[6,7,8,9],"window":"Jun-Sep","evidence":"Only 32 logged ascents, spread Feb-Oct with the summer months fullest (Jun 6, Jul 5, Sep 5, Aug 3, Oct 3); the two harvested tracks are winter snowshoe trips. No guidebook or agency page found for this unofficial peak, so low confidence."},
+   "track":null,
+   "otherTracksConsidered":[
+    {"aid":"2486785","verdict":"offseason","why":"7 Apr 2024, snowshoes, rope and a 20 ft ice step; winter."},
+    {"aid":"1342400","verdict":"offseason","why":"29 Feb 2020, winter snowshoe ascent."},
+    {"aid":"1342576","verdict":"offseason","why":"29 Feb 2020, winter; same trip."},
+    {"aid":"1505135","verdict":"unsure","why":"4 Sep 2020 in season, but a camp-based scramble from the Tamarack Meadows lake with no track points and no logged route."}
+   ],
+   "pins":[
+    {"type":"Trailhead","action":"add","lat":47.5441,"lng":-120.7097,"name":"Snow Lakes Trailhead","evidence":"Both winter tracks and the Apr 2024 track start within about 20 m of this spot, and the Mountaineers report for the climb starts at the Snow Lakes trailhead and goes via Nada Lake. The route has no trailhead pin. Tracks are off-season, so they only nominate the location.","confirmedBy":"https://www.wta.org/go-hiking/hikes/snow-lakes (WTA hike page lists Snow Lakes Trailhead at 47.5441, -120.7097, Icicle Creek Road)"},
+    {"type":"Summit","action":"add","lat":47.501905,"lng":-120.753065,"name":"Three Musketeers Ridge","evidence":"Route has no summit pin. Peakbagger's surveyed summit (lidar, 7690 ft) is 7 m from the highest point of one track and 19 m from the other.","confirmedBy":"Peakbagger peak 21423 surveyed coordinate plus tracks 1342400 and 1342576"}
+   ],
+   "facts":[
+    {"field":"approach_note","month":9,"text":"One early-September party camped at the unnamed lake in Tamarack Meadows and reached the ridge saddle by climbing steep but easy ground from the end of the lake; the slopes are hot and shadeless, so carry plenty of water.","aids":["1505135"]},
+    {"field":"pro_tips","month":9,"text":"From the saddle the high point is a scramble over a series of knobs, with a few boulder moves including a slot.","aids":["1505135"]}
+   ]
+  }
+ ],
+ "notes":"The route is an empty shell (no grade, text, season or pins) and is filed under id wa_big_chiwaukum_three_musketeers_ridge; it may have been created under Big Chiwaukum. The only in-season report approaches from the Tamarack Meadows side (after climbing The Temple), while the winter tracks come from Snow Lakes trailhead via Nada Lake; the pin add assumes the Snow Lakes approach is the primary one, and both pin adds are optional if the owner prefers the other. A winter report states that in summer the basin above Nada Lake is reached by small ledges and slabs rather than a gully; it was not used because it is an off-season report. Season is low confidence."
+}

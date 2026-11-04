@@ -1,0 +1,145 @@
+{
+ "area_id": "wa_goat_mountain",
+ "routes": [
+  {
+   "route_id": "wa_goat_mountain_south_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Mid-Jul-Oct",
+    "evidence": "Web: Mountaineers/SummitPost - trail snow-free by late spring but upper ridge snowfield needs an ice axe, hardest late in season; Jul-Oct usual. Stored mid-July to October."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3290636",
+     "verdict": "unsure",
+     "why": "31 Jul 2026 round trip from trailhead, summit 15 m; logged route blank, report gives no description, and the peak has five stored routes, so it is only \"probably the standard line\"."
+    },
+    {
+     "aid": "3249497",
+     "verdict": "unsure",
+     "why": "1 Jul 2026, same reasoning, no report."
+    },
+    {
+     "aid": "3289581",
+     "verdict": "unsure",
+     "why": "Same."
+    },
+    {
+     "aid": "3156593",
+     "verdict": "offseason",
+     "why": "April SW slope."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "what_to_bring",
+     "month": 7,
+     "text": "Ice axe (late July - snow still crossed on the upper ridge)",
+     "aids": [
+      "3290636"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_goat_mountain_eastern_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Mid-Jul-Oct",
+    "evidence": "Web: Mountaineers/SummitPost - trail snow-free by late spring but upper ridge snowfield needs an ice axe, hardest late in season; Jul-Oct usual. Stored mid-July to October. Stub route with no stored text."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3290636",
+     "verdict": "unsure",
+     "why": "Cannot tell which of the stub routes it follows."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_goat_mountain_southeast_face",
+   "season": {
+    "months": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Mid-Jul-Oct",
+    "evidence": "Web: Mountaineers/SummitPost - trail snow-free by late spring but upper ridge snowfield needs an ice axe, hardest late in season; Jul-Oct usual. Stored mid-July to October. Stub route."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3290636",
+     "verdict": "unsure",
+     "why": "No identity evidence."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_goat_mountain_southeast_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Mid-Jul-Oct",
+    "evidence": "Web: Mountaineers/SummitPost - trail snow-free by late spring but upper ridge snowfield needs an ice axe, hardest late in season; Jul-Oct usual. Stored mid-July to October. Stub route."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3290636",
+     "verdict": "unsure",
+     "why": "No identity evidence."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_goat_mountain_southwest_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Mid-Jul-Oct",
+    "evidence": "Web: Mountaineers/SummitPost - trail snow-free by late spring but upper ridge snowfield needs an ice axe, hardest late in season; Jul-Oct usual. Stored mid-July to October. Stub route."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3156593",
+     "verdict": "offseason",
+     "why": "April SW slope, winter snow climb, out of season."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "Four of five routes are empty stubs (no text, grade or pins). All July tracks follow the Goat Mountain Trail to the East Peak; held back as unsure because no logged route name or description distinguishes them. The April track climbs the SW slope in snow. Owner may want to approve the standard track for South Ridge manually."
+}

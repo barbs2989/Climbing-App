@@ -1,0 +1,47 @@
+{
+  "area_id": "wa_burnt_boot_peak",
+  "routes": [
+    {
+      "route_id": "wa_burnt_boot_peak_north_ridge",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Logged ascents of the peak are Jul 3, Aug 2, Sep 5 (plus 2 in April, 1 in November); a rock ridge above a river ford that runs cold and high in July, so Aug-Sep is easier. No stored season; Jul-Sep matches the standard line."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "554234",
+          "verdict": "different",
+          "why": "Logged as West notch from Hardscrabble (Aug 2015); climbs the west notch with an east-face scramble down, not the north ridge; starts at the horse camp, not our gate pin."
+        },
+        {
+          "aid": "2244622",
+          "verdict": "different",
+          "why": "July 2023 ascent by the northwest slopes from Hardscrabble; no north-ridge climbing, no logged route."
+        },
+        {
+          "aid": "2384639",
+          "verdict": "different",
+          "why": "Sept 2023 west couloir (three class 4 steps) then NE face descent; a different line, and not harvested as a track."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 9,
+          "text": "In early September the Middle Fork ford, found about a mile upstream where a wash meets the river near 3,100 ft, was a careful rock-hop on slippery stones rather than a deep wade; the far bank opens with head-high huckleberry before easing into open forest.",
+          "aids": [
+            "2384639"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "The only route here, North Ridge (1971, low class 5), has no matching recording: every harvested ascent used the west notch/couloir or northwest slopes from Hardscrabble. Our summit pin is 119 m from the surveyed summit, but the peak has two near-equal summits 100+ m apart (northwest and southeast; a 2023 report puts the register on the southeast) and the tracks pass within ~3 m of our pin, so no summit move is proposed. The Trailhead pin is the Dingford Creek gate (~8 km before the horse camp); recordings start at Hardscrabble, already a Campsite pin; no trailhead move is warranted. A separate standard route (west notch/couloir, class 4) is absent from the catalog and has three summited tracks."
+}

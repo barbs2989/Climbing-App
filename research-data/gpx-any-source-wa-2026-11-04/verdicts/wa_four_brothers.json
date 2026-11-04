@@ -1,0 +1,23 @@
+{
+  "area_id": "wa_four_brothers",
+  "routes": [
+    {
+      "route_id": "wa_four_brothers_southwest_route",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Web search found no stated season for Four Brothers itself; Chikamin Ridge scramble reports from the same trailhead run July through late September, and the stored best month is August. Histogram Jun-Oct low counts; early-June ascents were on steep snow." },
+      "track": { "aid": "2019686", "verdict": "same", "kind": "complete", "inSeason": true, "why": "Single stored route on the peak. The September 4 report describes leaving the Glacier Lake trail at its high saddle, class 2 ledges up the ridge to class 3 final 100 ft; the track runs Mineral Creek trailhead, Park Lakes basin, ridge, summit pin (10 m), and back; 109 m from the trailhead pin both ends. The report calls it a side objective on a Chikamin trip, but this track never reaches Chikamin Peak (highest point is the saddle at 47.475 N)." },
+      "otherTracksConsidered": [
+        { "aid": "2047090", "verdict": "different", "why": "Track climbs to Chikamin Peak (47.4865 N) as well: a link-up, no assignment." },
+        { "aid": "2873507", "verdict": "different", "why": "June 15 multi-peak Lemah/Chikamin link-up with no track." },
+        { "aid": "2873262", "verdict": "different", "why": "June 15 report coming from the Chikamin saddle by a snow gully from the north-east side; different line, no track." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 9, "text": "From the high saddle on the Glacier Lake trail, follow the ridge and bear right after about 300 ft of climbing onto class 2 ledges that lead to the crest.", "aids": ["2019686"] },
+        { "field": "watch_out", "month": 9, "text": "Loose rock sits at the head of the long gully that drops toward Glacier Lake; take care on the ridge above it (early September)", "aids": ["2019686"] },
+        { "field": "pro_tips", "month": 9, "text": "The last 100 ft is class 3: start in the gully on the right, then cross left onto blocky ground near the ridge.", "aids": ["2019686"] },
+        { "field": "descent_note", "month": 9, "text": "Dropping directly toward Glacier Lake works at class 2, but heather and boulders slow the bottom; it saves little over reversing to the saddle.", "aids": ["2019686"] }
+      ]
+    }
+  ],
+  "notes": "2019686 is a single-report assignment; the owner should treat it as medium confidence because the author framed Four Brothers as part of a Chikamin trip (the track itself is a Four Brothers round trip). Peakbagger's summit coordinate is 151 m from ours; the track passes within 10 m of ours, so no summit move proposed."
+}

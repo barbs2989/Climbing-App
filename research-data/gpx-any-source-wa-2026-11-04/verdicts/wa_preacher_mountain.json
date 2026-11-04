@@ -1,0 +1,202 @@
+{
+  "area_id": "wa_preacher_mountain",
+  "routes": [
+    {
+      "route_id": "wa_preacher_mountain_scramble",
+      "season": {
+        "months": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Apr-Oct",
+        "evidence": "Mountaineers list the Rainy Lake route year-round with a winter-scramble version; harvested ascents are mostly Jan-May snow ascents; July reports show brushy, wet summer travel; stored Apr-Oct kept. Jan/Feb ascents dropped as offseason."
+      },
+      "track": {
+        "aid": "2830196",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Logged route Rainy Lake; report describes the trail to Rainy Lake then the faint boot path up the ridge to the upper lake and the final ridge above it, matching our standard route; track starts and ends within 23 m of the Middle Fork pin and tops out 3 m from our summit on 1 May 2025. The standard scramble is the only route of ours with a route description."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "2807814",
+          "verdict": "same",
+          "why": "13 Apr 2025 Rainy Lake, round trip, but only 808 points and no report."
+        },
+        {
+          "aid": "2488416",
+          "verdict": "same",
+          "why": "13 Apr 2024 Rainy Lake, round trip; no report."
+        },
+        {
+          "aid": "1886447",
+          "verdict": "unsure",
+          "why": "3 Apr 2022 Rainy Lake to N. Ridge; ends 5.5 km from trailhead (one-way)."
+        },
+        {
+          "aid": "3110805",
+          "verdict": "offseason",
+          "why": "31 Jan 2026"
+        },
+        {
+          "aid": "2946717",
+          "verdict": "offseason",
+          "why": "15 Feb 2025 ski trip by a different line"
+        },
+        {
+          "aid": "2489872",
+          "verdict": "unsure",
+          "why": "Apr 2024 unnamed, no report; round trip but 778 points."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "monthBreakdown",
+          "month": 4,
+          "text": "In early April snow begins near 2,000 ft with poor consistency up to the lake, and the ridge above is mostly side-hilling, easily a whiteout day.",
+          "aids": [
+            "1886447"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 4,
+          "text": "In late April the final steep push needed an axe and snowshoes; a small slide had run recently, and starting early keeps the snow firm.",
+          "aids": [
+            "2825097"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 5,
+          "text": "In early May snow is patchy just below Rainy Lake and continuous halfway up the ridge, the climbers' path above the lake is hard to hold, and gaining the last ridge above the upper lake is the crux.",
+          "aids": [
+            "2830196"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "Wet brush above Rainy Lake soaks you by early July; the worst thickets lie nearest the outlet crossing.",
+          "aids": [
+            "1957545"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "Stay on the ridge crest to about 4,600 ft, then contour southeast under the cliff band toward the heather and talus gullies to the upper lake.",
+          "aids": [
+            "686818"
+          ]
+        },
+        {
+          "field": "what_to_bring",
+          "month": 7,
+          "text": "Rain pants and gaiters (wet brush, early July)",
+          "aids": [
+            "1957545"
+          ]
+        },
+        {
+          "field": "descent_note",
+          "month": 7,
+          "text": "Coming down, parties have drifted onto the wrong ridge between 4,400 and 4,600 ft; watch the line closely there.",
+          "aids": [
+            "686818"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 7,
+          "text": "The trail to Rainy Lake had so much blowdown in late July that it was easy to lose the path.",
+          "aids": [
+            "686818"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "The bowl above the upper lake makes a quiet camp with strong views and shortens the summit morning to under an hour.",
+          "aids": [
+            "686818"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_preacher_mountain_east_gully",
+      "season": {
+        "months": null,
+        "window": null,
+        "evidence": "No route-specific reports; a gully likely a snow objective; Mountaineers list the peak year-round."
+      },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_preacher_mountain_north_route",
+      "season": {
+        "months": null,
+        "window": null,
+        "evidence": "No route-specific reports."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "1886447",
+          "verdict": "unsure",
+          "why": "Logged \"Rainy Lake to N. Ridge\" (Apr 2022) but the line is not shown to be our North Route."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_preacher_mountain_south_gully_south_spur",
+      "season": {
+        "months": null,
+        "window": null,
+        "evidence": "No route-specific reports."
+      },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_preacher_mountain_south_rib",
+      "season": {
+        "months": null,
+        "window": null,
+        "evidence": "No route-specific reports."
+      },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_preacher_mountain_west_face",
+      "season": {
+        "months": null,
+        "window": null,
+        "evidence": "No route-specific reports."
+      },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Five of the six routes have no text, grade or pins and no report names them, so nothing is assigned. Most Peakbagger ascents are Jan-May snow/ski; only the Apr-May tracks were used."
+}

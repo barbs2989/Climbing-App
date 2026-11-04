@@ -1,0 +1,117 @@
+{
+ "at": "2026-11-04T17:46:17.525Z",
+ "note": "restore with patchRow(routes, id, before)",
+ "rows": [
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.6746,
+      "lng": -121.6147,
+      "elev": 4300,
+      "name": "Watson Lakes Trailhead",
+      "note": "This is the Anderson and Watson Lakes trailhead, the start of the long cross-country line past the Watson Lakes and Diobsud Lakes to the Diobsud Creek Glacier.",
+      "type": "Trailhead",
+      "elevFt": 4300,
+      "directions": "From SR-20 near milepost 82, turn north on Baker Lake Road (FS Road 11) and drive about 14 mi to the Baker Dam turnoff. Cross the dam on FS Road 1106, turn left on FS Road 1107 and follow it 8 to 9 mi to a signed spur on the left, which ends at the Anderson and Watson Lakes Trailhead in about 1 mi. The road is long and rough; high clearance helps. A Northwest Forest Pass is required."
+     },
+     {
+      "lat": 48.66527,
+      "lng": -121.597939,
+      "elev": 4700,
+      "name": "Wilderness-boundary saddle",
+      "note": "Below this saddle the trail forks: right drops 0.5 mi to Lower Anderson Lake, left climbs here into the Noisy-Diobsud Wilderness. Leave the trail at the saddle for the boot path south along the ridge.",
+      "type": "Junction",
+      "distMi": 1.5,
+      "directions": "Follow the Anderson-Watson Lakes Trail #611 through forest to the Anderson Butte Trail junction and stay left. Continue to the next junction, where the right fork drops to Lower Anderson Lake; bear left and climb to the saddle, which is where the trail crosses into the Noisy-Diobsud Wilderness."
+     },
+     {
+      "lat": 48.655038,
+      "lng": -121.558583,
+      "elev": 4900,
+      "name": "Diobsud basin",
+      "note": "The Diobsud Lakes basin, reached through heather below the 5,300 ft saddle on Mt. Watson's north side; the last dependable camp and water below the peak.",
+      "type": "Campsite",
+      "distMi": 5,
+      "directions": "From the saddle, follow the boot path south along the ridge high above Lower Anderson Lake to Upper Anderson Lake, the last easy water. Angle northeast up a short wooded gully, cross the slabs, scree and snowfields on Mt. Watson's north side, go over a saddle near 5,300 ft and descend heather to the Diobsud Lakes."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 5800,
+      "name": "Access gully to Diobsud Creek Glacier",
+      "note": "Loose rock and slick dirt in the chute leading to the glacier's toe once snow has melted out — expect to claw up steep, loose dirt gullies here.",
+      "type": "Hazard",
+      "distMi": 7,
+      "directions": "From the basin, sidehill across slippery vegetation, brush and cedar thickets, then climb mossy slabs toward the steep, loose dirt-and-scree gullies that lead up to Bacon's south ridge."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 6400,
+      "name": "Diobsud Creek Glacier crossing",
+      "note": "Rope up here — crevasses open on the icecap by mid-to-late season; probe and stay roped through to the saddle below the summit block.",
+      "type": "Hazard",
+      "distMi": 8,
+      "directions": "Climb the steep, loose gully onto Bacon's south ridge, where broad snow slopes lead onto the toe of the Diobsud Creek Glacier. Rope up here. When snow-filled the gully is avalanche terrain, and it goes far more easily on firm morning snow."
+     },
+     {
+      "lat": 48.66405856310623,
+      "lng": -121.51918961272673,
+      "elev": 7070,
+      "name": "Bacon Peak",
+      "type": "Summit",
+      "elevFt": 7070,
+      "directions": "Stay roped and probe across the glacier toward the summit block, then follow the flat, often windy summit ridge over a short snow arete and scramble the dry rocks to the summit."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_big_snagtooth_west_ridge",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.548,
+      "lng": -120.6306,
+      "elev": 4320,
+      "name": "SR-20 Pullout / Willow Creek approach start",
+      "type": "Trailhead",
+      "distMi": 0,
+      "elevFt": 4320,
+      "directions": "From the summit of Washington Pass, drive SR-20 east about 3.5 miles and park in the long pullout at about 4,320 ft, on the road's right-hand side, where the Willow Creek valley opens up toward Big Snagtooth."
+     },
+     {
+      "lat": 48.534263,
+      "lng": -120.588409,
+      "elev": 8374,
+      "name": "Big Snagtooth Summit",
+      "type": "Summit",
+      "distMi": 3.75,
+      "elevFt": 8379,
+      "directions": "Drop southeast through trees about 120 ft to Early Winters Creek and cross on a log near the mouth of Willow Creek. Climb steeply up the north side of Willow Creek, often brushy, until the slope eases near 5,000 ft, then continue into the upper basin near 7,000 ft. Turn south up about 400 ft of loose scree or snow to the west-ridge saddle, scramble the crest to the summit block, and climb the short chimney and friction slab to the top."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_bryant_peak_north_route",
+   "before": {
+    "waypoints": []
+   }
+  },
+  {
+   "id": "wa_bryant_peak_west_face",
+   "before": {
+    "waypoints": []
+   }
+  },
+  {
+   "id": "wa_big_chiwaukum_three_musketeers_ridge",
+   "before": {
+    "waypoints": []
+   }
+  }
+ ]
+}
