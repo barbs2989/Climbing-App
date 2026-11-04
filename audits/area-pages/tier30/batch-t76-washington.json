@@ -1,0 +1,30 @@
+{
+ "wa_main_face": {
+  "_expect": { "name": "Main Face", "region": "Washington" },
+  "blurb": "The Main Face is the biggest wall of the Royal Columns, the long-time heart of Tieton River climbing west of Yakima, across the river from the Oak Creek wildlife headquarters. It is almost all traditional climbing on basalt, with a few bolted lines, and sits mostly in the easy-to-moderate range: a good dozen routes around 5.6, plenty of 5.7 to 5.9, and a thin top end into the low 5.11s. Expect steady crack climbing with horizontal edges for the feet, in a columnar setting where some blocks are loose and the slopes above shed rock. Rattlesnakes live on the hillside. Eagle nesting and rockfall have led to posted closures, so read the signs before racking up.",
+  "approach": "Cross the Tieton River from the wildlife headquarters side and walk up the hillside; the signed crag trail leaves the nature trail on the left a few hundred yards along and climbs to the base. Use that trail in both directions.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105922165/royal-columns", "https://alpinedave.com/royal_columns/royal_columns.htm"] }
+ },
+ "wa_main_wall_8": {
+  "_expect": { "name": "Main Wall", "region": "Washington" },
+  "blurb": "The Main Wall is the core of Dishman, a granite sport crag in the Dishman Hills on Spokane's east side. The face is vertical to a touch overhanging and rewards small crimps and careful footwork. Nearly everything here is bolted, and the bulk of the climbs fall between 5.11 and 5.13, with a few 5.8 to 5.10 routes for warming up and a pair of boulder problems. It is a short drive from town and a very short walk from the car, which makes it a popular after-work stop for strong sport climbers. Park only in the main Natural Area lot off Appleway; roadside pull-outs and the gate there put access at risk.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106277774/dishman", "https://thetopo.com/crags/dishman-hills", "https://outthereoutdoors.com/?p=20161"] }
+ },
+ "wa_x_world_wall_ii": {
+  "_expect": { "name": "World Wall II", "region": "Washington" },
+  "blurb": "World Wall II is a steep arch of overhanging rock on Little Si above North Bend, set apart from the main World Wall in its own stretch of forest. It is a pure sport venue for the very strong: our records show climbs from 5.12 up through 5.14, with the bulk at 5.13, and nothing easy to fall back on. Routes are long and sustained, so bring a 70 m rope and sticky shoes, since the stone is solid but can feel slick. Overhangs keep some lines dry in drizzle. Expect a walk of roughly half an hour on the Little Si trail, and a crowded lot on weekends.",
+  "parking_note": "Use the Little Si trailhead lot on Mt Si Road, just past the river bridge off I-90 exit 32. It has toilets, fills early on weekends, and needs a Discover Pass; an overflow lot lies a bit further down the road.",
+  "approach": "Hike the Little Si trail from the trailhead, then branch off on the climbers' path to the wall. Allow roughly half an hour; World Wall II is the part of the crag farthest from the parking lot.",
+  "review": { "sources": ["https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/world-wall-ii/s15255", "https://www.waymarking.com/waymarks/wm16QKF_World_Wall_on_Little_Si_North_Bend_Washington_USA", "https://mountainproject.com/area/105789876/exit-32-little-si", "https://mountainproject.com/area/105789885/world-wall"] }
+ },
+ "_skipped": {
+  "wa_dikes_the": "Could not find two pages describing a Southeast Corner sector of The Dikes; only a one-line mention of the area near Bluewood (season April-October) was readable.",
+  "wa_ice_box": "Only one readable page (Mountain Project) describes this Tieton crag; a second source could not be fetched.",
+  "wa_dwarf_tossing_to_narrow_arrow": "A route-list label spanning part of Lower Town Wall at Index, not a distinct place; guidebook pages were blocked or only route-level.",
+  "wa_main_wall_3": "Only one readable page (Mountain Project) for Coal Mt Crag; no second independent page, and stored rock (schist) is unconfirmed.",
+  "wa_b_central_area": "No readable page describes the Central Area of Lookout Point itself; only search summaries of route listings and a blocked Mountaineers page."
+ },
+ "_conflicts": {
+  "wa_x_world_wall_ii": "Stored rock is gabbro; sources describe it as slick but solid igneous rock and as volcanic metamorphic: https://www.waymarking.com/waymarks/wm16QKF_World_Wall_on_Little_Si_North_Bend_Washington_USA , https://mountainproject.com/area/105789876/exit-32-little-si"
+ }
+}
