@@ -36328,3 +36328,40 @@ bug.
 
 Next batch will continue id-ascending from `wa_huckleberry_mountain_west_route` (see progress
 file).
+
+## Batch 500 (pass 8) — 2026-11-04
+
+Checked 8 routes across six peaks: `wa_hurry_up_peak_south_ridge`, both Icy Peak routes
+(`ruth_icy_traverse`, `southwest_route`), `wa_indian_head_peak_southwest_slopes`,
+`wa_indian_mountain_baker_scramble`, both Ingalls Peak East Peak routes (`east_ne_ridge_route`,
+`east_route`), and the main Ingalls Peak's 2024 route `wa_ingalls_peak_friends_in_high_places`.
+
+All eight check out clean — 0 fixes, 0 flagged, 8 clean. Hurry-up Peak's `high_point_ft: 7821`
+matches Wikipedia/PeakVisor exactly, and its stored position "between Magic Mountain and Spider
+Mountain" matches Wikipedia's parent/child peak relationships precisely. Both Icy Peak routes'
+shared `high_point_ft: 7073` matches Wikipedia/ListsOfJohn LiDAR (7,074 ft); the "Hannegan Caldera"
+geology claim in the overview is consistent with Wikipedia and the governing USGS/GSA source
+(a minor technical nuance — intrusive pluton on the caldera's margin rather than literal caldera
+fill — not worth flagging); the Ruth Mountain summit-camp waypoint (7,100 ft) sits plausibly just
+below Ruth's own summit (7,115 ft per Wikipedia), consistent with being a camp, not the summit pin.
+Indian Head Peak's `high_point_ft: 7447` is within 1 ft of Wikipedia/PeakVisor's 7,448 ft LiDAR
+figure, its coordinates match Wikipedia's within normal source variance, and its FA credit
+("D.C. Linsley and John A. Tennant, railroad survey party, July 2, 1870") is confirmed verbatim.
+Indian Mountain's `high_point_ft: 7133` and coordinates both match Wikipedia exactly; the row's own
+pre-existing `corrections` field flags ambiguity over the "_baker" suffix (multiple WA peaks named
+"Indian Mountain") — confirmed this is the Whatcom Pass/Chilliwack River peak Wikipedia describes
+(not literally near Mt. Baker, ~30 mi away), so the suffix is an odd naming choice but the
+underlying data is correct; left as-is, no SQL warranted for a naming curiosity. Ingalls Peak East
+Peak's `high_point_ft: 7480` (shared by both its routes) matches Wikipedia/Mountaineers.org; its
+1952 FA credit (Gene Prater, Bill Prater & Stan Butchart) is confirmed via Wikipedia/SummitPost
+(our stored "Butchart" spelling is correct against a likely Wikipedia typo "Butcharc"). Main
+Ingalls Peak's `high_point_ft: 7662` matches Wikipedia/a University of Oregon climbing reference
+(TopoQuest's 7,237 ft is a minority outlier, not a contradiction); "Friends In High Places"'s 2024
+FA credit (Justin Sackett, Haigh Angell, Mitchell Everly) is confirmed via Mountain Project's route
+page, one of whose comments is from FA party member Haigh Angell directly — MP's route coordinates
+also closely match the stored peak coordinate, confirming correct peak placement.
+
+No SQL file this batch — nothing to fix.
+
+Next batch will continue id-ascending from `wa_ingalls_peak_friends_in_high_places` (see progress
+file).
