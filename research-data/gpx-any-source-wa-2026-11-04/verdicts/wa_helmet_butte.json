@@ -1,0 +1,18 @@
+{
+  "area_id": "wa_helmet_butte",
+  "routes": [
+    {
+      "route_id": "wa_helmet_butte_standard_route",
+      "season": { "months": [7,8,9,10], "window": "Jul-Oct", "evidence": "Histogram Jul 13, Aug 8, Sep 2, Oct 6, Jun 1; stored Jul-Sep with Oct marginal. Web search found no formal season; an early-October report had snow on trail near High Pass, so October is a shoulder." },
+      "track": { "aid": "1507862", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "4 Oct 2020 summit, about 19 mi round trip from Trinity (97 m from our pin), summit 14 m from our pin. Our catalog holds one route on this peak and the line follows the Buck Creek trail to the Buck Creek Pass area and the summit block as described. October is one shoulder month beyond Sep." },
+      "otherTracksConsidered": [
+        { "aid": "2312372", "verdict": "unsure", "why": "15 Sep 2023, complete round trip but a longer multi-peak wander well beyond this route." },
+        { "aid": "1873950", "verdict": "different", "why": "2 Oct 2021, track starts at a high camp, not complete." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "No trip report text for the chosen track. Only one route on the peak."
+}

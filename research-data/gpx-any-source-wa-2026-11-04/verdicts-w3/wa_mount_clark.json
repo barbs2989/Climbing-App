@@ -1,0 +1,75 @@
+{
+  "area_id": "wa_mount_clark",
+  "routes": [
+    {
+      "route_id": "wa_mount_clark_standard",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Peakbagger successful ascents: Jun 9, Jul 28, Aug 28, Sep 17, Oct 4. A search found the NPS Royal Basin season of early July to mid-October, a climbing guide preferring early July when snow still covers the ledges, and a late-June report mostly snow-free. Stored Jul-Sep kept."
+      },
+      "track": {
+        "aid": "2967711",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "The catalog holds one route on Clark (the corkscrew). This Sep 1 2025 round trip leaves from and returns to the Upper Dungeness trailhead (55 m / 35 m from our pin), passes Upper Royal Basin and Surprise Basin to the Clark-Johnson col, and its report follows the ledges to the summit (3 m from our pin). The party also climbed Johnson from the same col first, so the track includes a short Johnson side trip; 3246311 (Jun 28 2026, up only, Clark alone) is the fallback."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3246311",
+          "verdict": "unsure",
+          "why": "Jun 28 2026 corkscrew, one way, a month before the season; no descent."
+        },
+        {
+          "aid": "3311563",
+          "verdict": "not-summited",
+          "why": "Turned back Aug 2026."
+        },
+        {
+          "aid": "2972186",
+          "verdict": "unsure",
+          "why": "Sep 2 2025 corkscrew report with no track points; used only for facts."
+        },
+        {
+          "aid": "1000353",
+          "verdict": "unsure",
+          "why": "Jul 2018 corkscrew report with no track points; used only for facts."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "pro_tips",
+          "month": 9,
+          "text": "By early September the Surprise Basin glacier is rock-covered and needs no axe or crampons; approach shoes cross it and the other small snowfield.",
+          "aids": [
+            "2972186",
+            "2967711"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 9,
+          "text": "A snowfield just below the col may call for microspikes in early September; skirt it on the boulders beside it, since the choss higher up slides.",
+          "aids": [
+            "2972186"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "In mid-July morning snow in Surprise Basin is soft enough to climb without crampons, but the steeper slope to the col goes hard; put them on there.",
+          "aids": [
+            "1000353"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Single route on peak; Peakbagger summit coordinate equals our pin."
+}

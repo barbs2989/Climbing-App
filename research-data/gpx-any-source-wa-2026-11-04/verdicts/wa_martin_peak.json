@@ -1,0 +1,27 @@
+{
+  "area_id": "wa_martin_peak",
+  "routes": [
+    {
+      "route_id": "wa_martin_peak_west_ridge",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Logged successful ascents: Jul 86 of 125, Jun 14, Aug 14, Sep 4, Oct 6. Late June 2022 party needed axe and crampons for steep snow; a web route description gives mid-summer as the main window with early-season snow. Stored Jul-Sep kept (July is the busiest month, more than the stored 'August' best)." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2629122", "verdict": "unsure", "why": "Logged West Ridge, 31 Aug, summit within 5 m and a closed loop, but it starts and ends at Holden Ballpark Campground 1.2 km from our Holden Village trailhead pin: a camp-start loop rather than a trailhead round trip, so not assigned. Owner may accept it." },
+        { "aid": "2921527", "verdict": "unsure", "why": "26 Jul closed loop from Ballpark Camp, summit within 8 m, report describes the white-rock gully and ridge line, but start is 1.4 km from the pin (campground, not trailhead)." },
+        { "aid": "2565569", "verdict": "different", "why": "Complete round trip but the track also climbs Bonanza (highest point 2,894 m), two peaks in one track." },
+        { "aid": "2922090", "verdict": "different", "why": "25 Jul track is camp-based at Holden Pass with a camp overnight and a Bonanza plan next day." },
+        { "aid": "3257493", "verdict": "different", "why": "Starts at Holden Pass (6.8 km from pin), a partial track." },
+        { "aid": "2236409", "verdict": "different", "why": "Starts at Holden Pass, 21.6 mi trip, not a trailhead round trip." },
+        { "aid": "1958165", "verdict": "different", "why": "Late June one-way ending at the pass; partial." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 7, "text": "The white-rock gully near the top is smooth and crumbles under hands, so give it a wide berth; one party downclimbed a granite corner beside it and found two webbing anchors for walking down the gully.", "aids": ["2921527", "2922090"] },
+        { "field": "pro_tips", "month": 7, "text": "Where a gendarme blocks the crest, cross to the right side of the ridge early; carrying on up forced a sketchy downclimb later. Taking the apparently easiest line works better than clever ridge-spine choices.", "aids": ["2922090", "2921527"] },
+        { "field": "pro_tips", "month": 7, "text": "In late July the pass has water, but above it the only supply was a small snow patch near the summit pyramid that will be gone later in summer, so carry water from the pass.", "aids": ["2921527", "2922090"] },
+        { "field": "monthBreakdown", "month": 6, "text": "In late June steep snow remained on the route and a party used an axe and crampons; the narrow gullies back up with waiting parties on busy days.", "aids": ["1958165"] }
+      ]
+    }
+  ],
+  "notes": "Holden Village is a trailhead only in name; every round-trip loop starts at Ballpark Campground (1.2-1.4 km away, matching our Campsite pin) or at Holden Pass. Two closed day loops (2629122 and 2921527) would qualify if the owner treats the campground as the start. Existing text already mentions the rappel anchor."
+}

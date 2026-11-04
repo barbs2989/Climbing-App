@@ -1,0 +1,159 @@
+{
+  "area_id": "wa_mount_formidable",
+  "routes": [
+    {
+      "route_id": "wa_mount_formidable_south_face",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Peakbagger ascents of Formidable: Jul 69, Aug 53, Sep 13, Oct 5, Jun 2. Mountaineers South Route notes say the approach trails are usable from July and Cache Col can moat out late; a forecast site lists Jul-Aug. Stored Jul-Sep kept; Oct ascents dropped."
+      },
+      "track": {
+        "aid": "3289900",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Logged as the climb 'from the Ptarmigan Traverse' (the standard south-side line), a complete round trip from the Cascade Pass trailhead (51 m from our pin, ends 7 m). The line runs Cache Col, Kool-Aid Lake, the Spider-Formidable col, then contours to the south side and up to the summit (20 m from our pin), Jul 31 2026. Our catalog has only the South Face and a technical NE face on glaciers, which this track clearly does not touch. The 42-point shape is coarse. 1202873 (logged South Face, 2019-07-21, one way) is the same line and a fallback."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "1202873",
+          "verdict": "unsure",
+          "why": "Logged South Face from the Cascade Pass trailhead and summited in July, but one-way only (ends at the summit); the complete round trip is preferred."
+        },
+        {
+          "aid": "3362072",
+          "verdict": "different",
+          "why": "South Cascade River / Drop Creek approach, starts 6 km from our trailhead pin; a different way in."
+        },
+        {
+          "aid": "2964167",
+          "verdict": "different",
+          "why": "Drop Creek approach, round trip from the South Fork Cascade River trailhead, 6 km from our pin."
+        },
+        {
+          "aid": "3286998",
+          "verdict": "different",
+          "why": "Drop Creek approach and a 5.4 direct variant up the south face."
+        },
+        {
+          "aid": "2896672",
+          "verdict": "different",
+          "why": "Drop Creek approach, 9 km from our pin."
+        },
+        {
+          "aid": "2313303",
+          "verdict": "different",
+          "why": "Drop Creek approach."
+        },
+        {
+          "aid": "2958640",
+          "verdict": "different",
+          "why": "Starts 9 km from our trailhead pin (Cascade River side)."
+        },
+        {
+          "aid": "2917245",
+          "verdict": "unsure",
+          "why": "Day trip from a camp below the col, logged East ridge; not clearly our South Face line."
+        },
+        {
+          "aid": "837486",
+          "verdict": "unsure",
+          "why": "Starts and ends at the col camp (7 km from pin), a Ptarmigan Traverse segment; not a round trip."
+        },
+        {
+          "aid": "1484600",
+          "verdict": "unsure",
+          "why": "Early July, no track points."
+        },
+        {
+          "aid": "2238569",
+          "verdict": "unsure",
+          "why": "Ptarmigan Traverse, no track points."
+        },
+        {
+          "aid": "837366",
+          "verdict": "unsure",
+          "why": "Ptarmigan Traverse, no track points."
+        },
+        {
+          "aid": "2330691",
+          "verdict": "offseason",
+          "why": "Oct 1 survey ascent, no track points."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "In early July the steep snow traverse onto Red Ledge can end in a moat runout, with a further snow patch to side-traverse above the chasm.",
+          "aids": [
+            "1484600"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "In early July a large cornice can span Cache Col; cross at its far right and scramble loose scree up to the col.",
+          "aids": [
+            "1484600"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "A permanent snowfield sits below the start of the rock scramble (about 7,500 to 7,700 ft): axe and light crampons in July, a few kicked steps by late August.",
+          "aids": [
+            "2896672",
+            "2964167",
+            "3286998"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 7,
+          "text": "In early July there is no reliable water between Cascade Pass and Kool-Aid Lake; camps at the foot of the Middle Cascade Glacier have plenty, while the sites just below the col have only snow.",
+          "aids": [
+            "2238569",
+            "2917245"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "Marmots and goats gnaw trekking-pole handles and other salty gear left at the base of the gully in July; stash it out of reach.",
+          "aids": [
+            "2917245"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_northeast_face_direct",
+      "season": {
+        "months": [
+          7,
+          8
+        ],
+        "window": "Jul-Aug",
+        "evidence": "Both known ascents were in July (2002, 2013); a Mountain Project listing found by search gives July-September, with the moat at the top of the Formidable Glacier needing to be open while the couloir still holds snow, so July to early August. No packet ascent climbed the northeast face."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3289900",
+          "verdict": "different",
+          "why": "Approaches from the south side, not the Formidable Glacier below the northeast face."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Most Peakbagger recordings are Drop Creek round trips from the South Fork Cascade River trailhead (48.4652,-121.1560), a legitimate but different approach from our Cascade Pass pin; I proposed no pin because our route text names Cascade Pass and mentions Drop Creek only as an alternate. No NE Face data exists on Peakbagger for this peak."
+}

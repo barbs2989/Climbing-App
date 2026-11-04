@@ -1,0 +1,125 @@
+{
+  "area_id": "wa_kangaroo_temple",
+  "routes": [
+    {
+      "route_id": "wa_koala_krack",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep",
+        "evidence": "Searched Mountain Project/SummitPost/Mazamas pages: highway 20 opens about mid-May, early-season snow covers the approach scree, summer is dry; no page for Koala Krack itself. Peak ascents concentrate Jul-Aug. Keeps stored Jun-Sep."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3294354",
+          "verdict": "unsure",
+          "why": "No logged route name, empty report; a round trip to the summit but nothing says it used the Koala Krack variation (a short crack to the rap station)."
+        },
+        {
+          "aid": "2958879",
+          "verdict": "unsure",
+          "why": "No route name or description."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_northwest_face_2",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep",
+        "evidence": "Searched Mountain Project/SummitPost/Mazamas: SR 20 reopens about mid-May, approach snow in early season, dry rock Jul-Sep; SummitPost calls North and Northwest faces the popular routes. Peak ascents concentrate Jul-Aug. Keeps stored Jun-Sep."
+      },
+      "track": {
+        "aid": "698339",
+        "verdict": "same",
+        "kind": "oneway",
+        "inSeason": true,
+        "why": "Logged route NW Face, grade III 5.7+ matches our 5.7+ Northwest Face; started within 25 m of the hairpin pin, track reaches within 40 m of our summit pin; ascended NW Face and descended the North Face (the track stops at the top). 2016-08-06, summited."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3294354",
+          "verdict": "unsure",
+          "why": "No route name or report."
+        },
+        {
+          "aid": "2958879",
+          "verdict": "unsure",
+          "why": "No route name or report."
+        },
+        {
+          "aid": "2929473",
+          "verdict": "different",
+          "why": "Logged North Face; belongs to the North Face route (already has a track)."
+        },
+        {
+          "aid": "845333",
+          "verdict": "unsure",
+          "why": "Report describes a first pitch via face or arete and a traverse, no route name; no track shape."
+        },
+        {
+          "aid": "2201675",
+          "verdict": "unsure",
+          "why": "No route name; also late May, before the Jun-Sep window."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 8,
+          "text": "In early August a small tarn near the base of the saddle was the only place to top up water before the gully, and it may dry out in dry years.",
+          "aids": [
+            "845333"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_south_face_4",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep",
+        "evidence": "Mountain Project South Face page (5.8 R, grade III, 2-4 hr approach) and Mazamas/SummitPost pages searched: no snow-free approach before summer; Highway 20 opens about mid-May. Keeps stored Jun-Sep."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "698339",
+          "verdict": "different",
+          "why": "NW Face."
+        },
+        {
+          "aid": "3294354",
+          "verdict": "unsure",
+          "why": "No route name."
+        },
+        {
+          "aid": "2958879",
+          "verdict": "unsure",
+          "why": "No route name."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "No track on this peak names the South Face or Koala Krack. Tracks 3294354 and 2958879 (complete round trips, no route name) could be any of the routes. North Face already has a track."
+}

@@ -1,0 +1,175 @@
+{
+ "area_id": "wa_lichtenberg_mountain",
+ "routes": [
+  {
+   "route_id": "wa_lichtenberg_mountain_se_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jul-Oct",
+    "evidence": "Search: Mountaineers scramble outings and trip reports Jul-Oct; fall colour in mid-Oct; a Jul 2017 report had lingering snowbanks near the lake. Peakbagger summer/fall counts: Jun 15, Jul 27, Aug 23, Sep 17, Oct 29. Stored Jun-Sep with best Jul-Oct kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "1784946",
+     "verdict": "unsure",
+     "why": "Oct 16 2021, logged SW Slope, complete round trip from the Smithbrook trailhead (63 m from our pin), but its line goes around the west side of the lake and up the southwest slope rather than to the southeast ridge saddle our text describes, so it is a different line."
+    },
+    {
+     "aid": "3376165",
+     "verdict": "unsure",
+     "why": "Oct 11 2026 from Stevens Pass PCT, long approach, not our trailhead."
+    },
+    {
+     "aid": "3373954",
+     "verdict": "unsure",
+     "why": "Oct 8 2026 from Stevens Pass, also climbs the West Peak."
+    },
+    {
+     "aid": "826589",
+     "verdict": "unsure",
+     "why": "Jul 8 2017 SW slopes starting at Yodelin, not our trailhead."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "In early July, snowbanks west of Lake Valhalla can bury the use paths around the shore, and the ground near the outlet is jumbled with big talus blocks.",
+     "aids": [
+      "826589"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "Mosquitoes in the forest on the trail are heavy in July; bring repellent.",
+     "aids": [
+      "826589"
+     ]
+    },
+    {
+     "field": "approach_note",
+     "month": 10,
+     "text": "On a fine mid-October Saturday the trailhead lot was full soon after 8 am and the overflow parked at wide pullouts a few hundred feet down the road; the Smithbrook trail was very muddy.",
+     "aids": [
+      "1784946"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_lichtenberg_mountain_southeast_ridge",
+   "season": {
+    "months": [
+     12,
+     1,
+     2,
+     3,
+     4
+    ],
+    "window": "Dec-Apr",
+    "evidence": "Peakbagger winter/early spring logged ascents: Jan 29, Feb 27, Mar 45, Apr 23. Search: Mountaineers winter scramble reports, a Jan 2018 road packed to boot-walk, a Feb 2026 frozen lake, a May 2018 attempt with the road still snow-covered and creek snow bridges gone; WTA lists it as a snowshoe."
+   },
+   "track": {
+    "aid": "1124999",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Logged SE Ridge, Mar 10 2019. Report: up Smithbrook road from US 2 to the summer-trail turnoff, to the lake, a bearing to the saddle on the southeast ridge, then the gentle southeast ridge to the summit. Matches our winter text. Round trip, summit within 1 m. It starts at the US 2 junction with Smith Brook Road (about 3.6 km from our pin at the first switchback), which is where our winter text says to park and where WTA places the start; no coordinate was found on a fetched page, so no pin is proposed."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "3179205",
+     "verdict": "unsure",
+     "why": "Apr 23 2026, logged Lichtenwasser Lake, same road and lake line, but the report describes a steep tree scramble from the north and a different final gully; a second candidate if the first is rejected."
+    },
+    {
+     "aid": "3175855",
+     "verdict": "unsure",
+     "why": "Apr 23 2026, same line as 3179205 but only links in the report."
+    },
+    {
+     "aid": "3104758",
+     "verdict": "different",
+     "why": "Winter SW Face from the Yodelin side."
+    },
+    {
+     "aid": "373674",
+     "verdict": "different",
+     "why": "Dec 2013 NE ridge, ends far from start."
+    },
+    {
+     "aid": "966331",
+     "verdict": "not-summited",
+     "why": "May 2018 turnaround."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "pro_tips",
+     "month": 3,
+     "text": "In March, descending the summer fishing trail from the lake in warming sun meant deep postholing; going back down your own ascent tracks was faster.",
+     "aids": [
+      "1124999"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 3,
+     "text": "In March the steep bowl below the east top gave onto a corniced ridge; the party found a gap between cornices to reach it.",
+     "aids": [
+      "1124999"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_lichtenberg_mountain_west_face",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Search turned up only an older climbing-journal note of a west-face route (II, 5.8) and a log of a party turned around by the wall; no seasonal source. Stored Jul-Sep kept, with lake approach snow-free by mid-July."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_lichtenberg_mountain_west_face_west_rib",
+   "season": {
+    "months": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jul-Oct",
+    "evidence": "No route source found (searched West Rib/west peak); stored mid-Jul to Oct kept. Fall reports on the nearby SW slopes show October scrambling is feasible."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3373954",
+     "verdict": "unsure",
+     "why": "Oct 8 2026 climbed the main summit then the West Peak by its left-hand class 4/5 line, but from Stevens Pass (14.7 mi) and combining two summits."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "SE-route track 1784946 goes by the lake west shore and the southwest slope, apparently a different line from the SE ridge we describe; owner may want that slope as its own route. Winter 1124999 is a complete round trip but starts at US 2, not at our first-switchback pin."
+}
