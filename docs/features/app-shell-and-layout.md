@@ -43,21 +43,41 @@ room for side-panel ads later. The phone app keeps its own look.
     second scroller that carried Log a climb off the screen. `check:pinned-dismiss` walks every popup.
 - **Desktop (1024px and wider) — the website shell:**
   - A full-width sticky **top bar** (64px): ☰ Menu at the far left, the ClimbMatch wordmark (→ Home), a
-    search box for every climb and place (`/` jumps to it; arrow keys and Enter pick a hit), then
-    Saved · Alerts · Calendar · Messages and your avatar (→ Profile).
+    search box for every climb and place **centred in the window** (owner 2026-11-04; `WideSearch` sits on
+    the 50vw midline out of the row's flow, 220–680px wide so it never reaches either end; `/` jumps to
+    it; arrow keys and Enter pick a hit), and at the right Saved · Alerts · Calendar · Messages and your
+    avatar (→ Profile).
+  - **Drawn ~10% larger** (owner 2026-11-04, `ZOOM` = 1.1 in `lib/wideLayout.js`): the page column
+    (`#appscroll`), the pages that open in it, the rail's cards, centred windows, the bell drop-down and
+    both Messages panes are CSS-`zoom`ed, so the phone's 13px type reads as ~14.3px beside Mountain
+    Project's 14 and Strava's 15. A fixed element zooms itself, so its own top/left/width are written
+    divided by `ZOOM`; a Leaflet map is zoomed back to exactly 1 (its drag and click maths are unchanged —
+    measured), but only one that sits inside a zoomed box: the fire map's full-window dialog is portalled
+    to the body and stays at 1. A bar pinned by JS (`lib/usePinnedBar.js`, the Climbs search) divides the
+    window pixels it measures by its wrapper's own zoom. The top bar and sidebar are not zoomed.
+  - **Every tab shows its title** (owner 2026-11-04): the `quiet` `ScreenHero` title, hidden on a phone,
+    is drawn as a 24px heading (`h1[data-cm-quiet-title]` in `wideCss`).
   - A fixed **left sidebar** under it: Home · Climbs · Partners · Crews · Groups · Logbook · Ranks
     (Profile is the avatar at the top right, not a sidebar row), then *Your crews* (up to five, a red dot for unread). No site links: those are the footer's.
   - The **page column**, and at **1280px and wider** a 300px **right rail** (`WideRail`): *Coming up*
-    (agreed crew days) and *Alerts*, which starts **collapsed**: just the header (*Alerts · N new*; an amber dot when
-    something waits on you, blue when only notifications are unread) until you click it. It is the **same list as
+    (agreed crew days) and *Alerts*, which starts **open on the newest three** (owner 2026-11-04; it started
+    collapsed from 2026-10-23, and a bare *ALERTS ›* header on every page read as empty) under its header
+    (*Alerts · N new*; an amber dot when something waits on you, blue when only notifications are unread), with
+    *See all alerts · N more ›*; the header still folds it. It is the **same list as
     Home's Alerts button** (`_alerts` in `ClimbMatch.jsx`, built once for both): what waits on you first (requests,
-    invites, unread chats, a day or a climb to confirm, up to five, amber), then unread notifications not already one
+    invites, unread chats, a day or a climb to confirm, amber), then unread notifications not already one
     of those, and the SAME count. A guest is told to sign in. *Best day to climb* is not here; it opens from the Menu. Ads, when they come, take slots in this rail
     (desktop only).
-  - Between 1024 and 1279px the sidebar shows **icons only** and there is no rail. The whole shell is
-    capped at 1228px and centred (a 640px page column), so a big monitor gets plain background either side.
-  - A site **footer** under every page: every state with climbs, ClimbMatch links, Legal links,
-    ©. It is the ONLY home of About, Help, Feedback, Privacy and Terms on desktop.
+  - Between 1024 and 1279px the sidebar shows **icons only** and there is no rail.
+  - **Facebook-style edges** (owner 2026-11-04; it was one 1288px block centred as a whole, so on a wide
+    monitor the sidebar floated ~300px in): the sidebar and ☰ Menu sit 12px from the window's left, the rail
+    and the avatar hold the right, and the 700px page column is centred in the WINDOW, sliding or narrowing
+    only where it would come within 24px of the sidebar or rail (`wideGeom`: 1280 → column 276–928, rail
+    952; 1920 → 610–1310, rail 1592). The empty space either side of the column on a big monitor is where
+    side ads can go later.
+  - A site **footer** under every page: ClimbMatch links, Legal links, ©. It is the ONLY home of About,
+    Help, Feedback, Privacy and Terms on desktop. The **directory of every state with climbs** heads it on
+    the Climbs tab and its route and area pages only (owner 2026-11-04, `showStates`).
   - **☰ Menu** fills the whole window, as on a phone, with its content centred in a 720px column.
   - **Full-screen views are pages.** Every view that covers the phone screen (Calendar, Messages, Edit
     profile, a group, an event, Settings' sub-pages, Best day, Manage areas, Terms…) is drawn in the
@@ -81,7 +101,8 @@ room for side-panel ads later. The phone app keeps its own look.
   - **Chats in the rail** (1280px+): under Coming up and Alerts, your direct messages and crew chats, newest
     first, unread counts on each; one opens the conversation. The same threads the inbox shows (`RailChats`,
     App's `_dmCounts` keeps blocked and restricted people out).
-  - **Nothing stretches across the page** (owner 2026-10-22): the page column is 640px (it was 720), and an
+  - **Nothing stretches across the page** (owner 2026-10-22): the page column is 700px (720 → 640 on
+    2026-10-22, → 700 with the zoom on 2026-11-04), and an
     action button sizes to its label instead of filling the column — `wideCss`' rule for a `width:100%`
     button (and a lone `flex:1` one) in the page column or a page-view. List rows (space-between,
     left-aligned, flex-start) still run edge to edge; dialogs keep full-width footer buttons; on the route
