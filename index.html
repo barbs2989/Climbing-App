@@ -127,7 +127,10 @@
          animation keeps it ACTIVE, so Chrome keeps the element on its own GPU layer for good — and text on
          a transparent layer loses ClearType and is drawn greyscale, which reads blurry on a 1x/1.25x PC
          screen. A Mac's Retina screen hid it. #appscroll (every page) and every sheet were stuck that way.
-         These keyframes all END at the element's own look, so `backwards` changes nothing you see. */
+         These keyframes all END at the element's own look, so `backwards` changes nothing you see.
+         The one thing the lingering fill DID do: it made #appscroll a stacking context, which kept a
+         map's panes (z-index 400-1000) under the header and tab bar. #appscroll now says so itself
+         (isolation:isolate, ClimbMatch.jsx), which makes no GPU layer. */
       .cm-pop { animation: cm-pop .42s cubic-bezier(.2,.8,.2,1) backwards; }
       .cm-burst { animation: cm-burst .85s ease-out forwards; }
       .cm-confetti { animation: cm-confetti 1.7s linear forwards; }
