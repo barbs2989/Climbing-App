@@ -1,0 +1,54 @@
+{
+  "area_id": "wa_raven_ridge",
+  "routes": [
+    {
+      "route_id": "wa_raven_ridge_southeast_ridge_crater_lake",
+      "season": { "months": [6, 7, 8, 9, 10], "window": "Jun-Oct", "evidence": "Stored Jun-Oct stands. Peakbagger successful ascents of this peak run May-Oct (Oct 79, Sep 55, Jun 47, Jul 40, Aug 27, May 26); Crater Creek-side logs cluster May-Oct. Web search: a Sawtooth guide page lists May-Oct as the window with late Sep/early Oct larch colour best, and a Mountaineers listing documents a Crater Creek line in Sep; winter ski ascents are documented but need a very long road approach (off-season)." },
+      "track": { "aid": "2065179", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged route is literally 'Crater Lake #416 to SE Ridge'; start 43 m from our Crater Creek TH pin, round trip back to it, high point 17 m from our summit pin; the report describes weaving up the south face toward the SE ridge past ~8,000 ft, which is our route's line. 23 Oct 2022 is inside the Jun-Oct window." },
+      "otherTracksConsidered": [
+        { "aid": "3388615", "verdict": "unsure", "why": "Crater Creek start, complete, summited (25 Oct 2026) but logged only as 'Crater Creek' and the line goes straight uphill from the lake; not named SE ridge. Same approach though." },
+        { "aid": "2528592", "verdict": "unsure", "why": "Crater Creek, 1 Jun 2024, but it is a Raven-Libby-Bigelow traverse day and the log does not name the SE ridge." },
+        { "aid": "3229687", "verdict": "unsure", "why": "Crater Creek 14 Jun 2026 ('S Slope/Ridge'), but the track is a long Raven-to-Switchback ridge traverse loop, not a clean round trip on this line." },
+        { "aid": "3205072", "verdict": "unsure", "why": "Crater Creek round trip 23 May 2026 'Crater Lake Trail'; summited, but no description of the line and late May is at the edge of the season." },
+        { "aid": "2292614", "verdict": "unsure", "why": "Aug 2023 'South Slope/East Ridge' from Crater Creek TH, summited, no report text; could be the same line but not named SE ridge." },
+        { "aid": "2232184", "verdict": "unsure", "why": "Crater Lake trail, 25 Jun 2022, one-way only (ends 5 km from the TH pin)." },
+        { "aid": "2339032", "verdict": "different", "why": "Libby Lake side (north), belongs to the standard route." },
+        { "aid": "3366299", "verdict": "different", "why": "Libby Lake side (north)." },
+        { "aid": "2060090", "verdict": "different", "why": "Libby Lake side and a Hoodoo traverse." },
+        { "aid": "2123120", "verdict": "different", "why": "North Gully from Libby Lake." },
+        { "aid": "561976", "verdict": "different", "why": "Libby Creek Trail." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 10, "text": "In late October the spur road to the trailhead was rough but an ordinary car got through; the first stretch of the trail is shared with dirt bikes and is loose and rutted before it turns pleasant.", "aids": ["3388615"] },
+        { "field": "pro_tips", "month": 10, "text": "Above the lake, aim straight uphill through open forest; trees thin to talus near 8,100 ft, so the whole south face is a low-angle boulder walk when dry.", "aids": ["3388615", "2065179"] },
+        { "field": "pro_tips", "month": 10, "text": "The summit blocks are steepest on their south and west sides; a short sheltered passage through the blocks leads to the easy east side.", "aids": ["3388615"] },
+        { "field": "watch_out", "month": 10, "text": "By late October a dusting of snow glazes the slabs and talus above the lake, making holds slick.", "aids": ["3388615", "2065179"] },
+        { "field": "watch_out", "month": 6, "text": "Around the start of June the lake basin still carries steep snowfields and the summit ridge a cornice; an ice axe and crampons were used.", "aids": ["2528592"] },
+        { "field": "watch_out", "month": 6, "text": "Rock on the summit blocks is mixed to poor; large flakes can pull out in your hands, so test every hold.", "aids": ["2528592"] }
+      ]
+    },
+    {
+      "route_id": "wa_raven_ridge_standard_route",
+      "season": { "months": [5, 6, 7, 8, 9, 10], "window": "late May-Oct", "evidence": "Stored late May-Oct stands. Libby Lake side logs fall Jun-Oct (Oct most). Web search: Sawtooth guide page says May-Oct with late Sep/early Oct best for larches; WTA reports show snow by the lake in mid-June and steep snow below the ridge in mid-July; a Mountaineers trip report from early Oct 2026 describes the lake among larches." },
+      "track": { "aid": "2339032", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged route 'Libby Lake trail'; start 13 m from our Libby Lake TH pin, back to it; summit 4 m from our pin. The report's segments (trail to the cabin at 7,170 ft, then the loose gully to the saddle, then the short walk to the summit) are exactly our route's line. 8 Oct 2023 is in season." },
+      "otherTracksConsidered": [
+        { "aid": "3366299", "verdict": "unsure", "why": "Libby Lake start, complete, summited 3 Oct 2026, report describes the gully descent, but the 13.6 mi/13 h track likely includes the ridge run to Hoodoo and the log names no route." },
+        { "aid": "2123120", "verdict": "unsure", "why": "Logged 'North Gully', Libby Lake trailhead, 2 Oct 2022, summited and complete, but there is no report text to confirm the line." },
+        { "aid": "2060090", "verdict": "different", "why": "Raven Ridge to Hoodoo Peak traverse with a rope section; not this route." },
+        { "aid": "561976", "verdict": "unsure", "why": "Aug 2015 'Libby Creek Trail' overnight, no text." },
+        { "aid": "1170785", "verdict": "unsure", "why": "Jun 2019 'Standard Route' but the track is not a complete trailhead round trip (823 m from our pin at start)." },
+        { "aid": "3388615", "verdict": "different", "why": "Crater Creek (south) side." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 10, "text": "In early October the rock in the lower gully is slick even for good soles; a helmet and gloves are warranted, and loose stuff sent down endangers anyone below.", "aids": ["3366299", "2339032"] },
+        { "field": "pro_tips", "month": 10, "text": "Near the top of the gully, drift to its left side; hugging the right edge pushes you onto crumbly class 3-4 terrain.", "aids": ["2060090"] },
+        { "field": "monthBreakdown", "month": 10, "text": "By mid-October the larches are shedding and nights at the cabin camps freeze, so pack winter layers even for a day trip.", "aids": ["2060090"] }
+      ]
+    }
+  ],
+  "notes": "Our two Raven Ridge routes are the Libby Lake (north) and Crater Creek (south) lines. No pin changes needed: both TH pins match recorded starts within a few metres and our summit pin equals Peakbagger's surveyed coordinate (east summit). 2060090 and 3366299 appear to include Hoodoo/Libby ridge running, so not used."
+}

@@ -1,0 +1,39 @@
+{
+  "area_id": "wa_north_star_mountain",
+  "routes": [
+    {
+      "route_id": "wa_north_star_mountain_cloudy_peak_traverse",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Pages give late June through early fall for the Lyman Lakes peaks with an axe useful early; logged ascents Jun-Oct (15 July, 17 Aug, 5 Sep); stored Jul-Sep. Oct 13 report is within a month of the end." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2675382", "verdict": "unsure", "why": "2024-10-13 report matches the traverse (Cloudy Pass, Cloudy Peak west ridge, south ridge, talus, North Star), summit 33 m from our pin, but the track is partial (245 points) starting at Cloudy Pass, not a trailhead." },
+        { "aid": "2630958", "verdict": "different", "why": "Direct cross-country from Lower Lyman Lake, the East Route line." },
+        { "aid": "2674092", "verdict": "different", "why": "Long Phelps-side loop that also visits Dark Peak." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "pro_tips", "month": 10, "text": "After Cloudy's summit, leave the south ridge near 7,640 ft and break northeast onto a ledge system that drops to the talus without exposure.", "aids": ["2675382"] },
+        { "field": "pro_tips", "month": 10, "text": "Do not follow the false summit southeast of the true top; take the obvious chossy gully (class 1) to the real summit.", "aids": ["2675382"] },
+        { "field": "pro_tips", "month": 10, "text": "Cloudy's summit block is passed on its east side by a very short class 3 chimney with good holds.", "aids": ["2675382"] },
+        { "field": "watch_out", "month": 10, "text": "Talus fields on the crossing between the two summits hold loose boulders that shift underfoot.", "aids": ["2675382"] }
+      ]
+    },
+    {
+      "route_id": "wa_north_star_mountain_east_route",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Pages say summer and fall with an ice axe early; July-Aug reports show lingering snow; stored Jul-Sep with August best." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2630958", "verdict": "unsure", "why": "2024-09-01 track from Lower Lyman Lake to the summit, partial (not from a trailhead) and the report names no route." },
+        { "aid": "2674092", "verdict": "different", "why": "Long loop, October, also reaches Dark Peak." },
+        { "aid": "2675382", "verdict": "different", "why": "Cloudy Peak traverse, partial." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "pro_tips", "month": 7, "text": "In early July the final steeper snow slope to the col below the summit block is where light crampons and an axe are useful; the talus below was soft and pleasant.", "aids": ["2897653"] },
+        { "field": "watch_out", "month": 8, "text": "In early August mosquitoes and no-see-ums are relentless at the Cloudy Pass camp; bring a bug shelter.", "aids": ["1014745"] },
+        { "field": "pro_tips", "month": 7, "text": "Water is plentiful in early July across the heather slopes below Cloudy Peak.", "aids": ["2897653"] }
+      ]
+    }
+  ],
+  "notes": "Packet lists East Route with 1158 existing track points. No qualifying complete track exists in the harvest for either route (all partial or from other trips)."
+}

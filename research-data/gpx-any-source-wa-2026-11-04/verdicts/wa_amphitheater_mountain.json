@@ -1,0 +1,525 @@
+{
+  "area_id": "wa_amphitheater_mountain",
+  "routes": [
+    {
+      "route_id": "wa_amphitheater_mountain_finger_of_fatwa",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Logged successful ascents peak Jul (82), Sep (61), Aug (38); stored Jul-Sep agrees; approach basin and north-facing gullies hold snow into late June/early July and Oct brings first snow. No web source gave a firmer window."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3375504",
+          "verdict": "different",
+          "why": "Oct 8 2026 ascent of a north couloir from Cathedral Pass; not any of our routes, partial track from the pass, no trailhead."
+        },
+        {
+          "aid": "3353493",
+          "verdict": "unsure",
+          "why": "No logged route or report; multi-peak day starting mid-trail (~16 km from our pin), not a trailhead round trip."
+        },
+        {
+          "aid": "3273532",
+          "verdict": "unsure",
+          "why": "No logged route/report; multi-day trip from the Chewuch trailhead, not our pin, track does not tie to a named line."
+        },
+        {
+          "aid": "3368518",
+          "verdict": "different",
+          "why": "Logged 'S Ridge (2)' inside a 3-day Remmel/Amphitheater/Cathedral/Windy bash ending at Thirtymile; south ridge is not our West Route text, Oct 3 is a month past season, not an Amphitheater-only round trip."
+        },
+        {
+          "aid": "2654844",
+          "verdict": "unsure",
+          "why": "Sep 21 2024 'Southwest route' day from an Airview Lake camp that also takes in Cathedral; plausibly our West Route line but the track starts at camp, not a trailhead, so neither complete nor oneway."
+        },
+        {
+          "aid": "2573808",
+          "verdict": "unsure",
+          "why": "Jul 3 2024 'Pilgrimage to Mecca', summited, but the track is a camp-based loop at Upper Cathedral Lake with no approach; no trailhead start. Usable only as a partial climb line."
+        },
+        {
+          "aid": "2041346",
+          "verdict": "different",
+          "why": "Sep 25 2022 walk-up via the Lesamiz Trail with a north-gully descent; camp-based track, not a trailhead round trip, not named to our routes."
+        },
+        {
+          "aid": "1418871",
+          "verdict": "unsure",
+          "why": "Jul 4 2020 'N Ridge' (summited, from the Boundary Trail at Cathedral Pass); name matches our North Ridge but the climber topped the North Peak then walked to the summit and the track neither starts at a trailhead nor loops; partial only."
+        },
+        {
+          "aid": "1381729",
+          "verdict": "offseason",
+          "why": "May 13 2020 snowy multi-day Thirtymile loop; two months before our window."
+        },
+        {
+          "aid": "1842839",
+          "verdict": "offseason",
+          "why": "Jan 2022 winter ski ascent, no track."
+        },
+        {
+          "aid": "978787",
+          "verdict": "unsure",
+          "why": "Jun 2018 car-to-car with Cathedral; no track data, June is a month before season."
+        },
+        {
+          "aid": "1799117",
+          "verdict": "offseason",
+          "why": "Nov 2021 ski ascent."
+        },
+        {
+          "aid": "1750160",
+          "verdict": "unsure",
+          "why": "Jul 7 2021 Thirtymile multi-day trip; no track data, route not named."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_amphitheater_mountain_middle_finger_buttress_left_side",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Logged successful ascents peak Jul (82), Sep (61), Aug (38); stored Jul-Sep agrees; approach basin and north-facing gullies hold snow into late June/early July and Oct brings first snow. No web source gave a firmer window."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3375504",
+          "verdict": "different",
+          "why": "Oct 8 2026 ascent of a north couloir from Cathedral Pass; not any of our routes, partial track from the pass, no trailhead."
+        },
+        {
+          "aid": "3353493",
+          "verdict": "unsure",
+          "why": "No logged route or report; multi-peak day starting mid-trail (~16 km from our pin), not a trailhead round trip."
+        },
+        {
+          "aid": "3273532",
+          "verdict": "unsure",
+          "why": "No logged route/report; multi-day trip from the Chewuch trailhead, not our pin, track does not tie to a named line."
+        },
+        {
+          "aid": "3368518",
+          "verdict": "different",
+          "why": "Logged 'S Ridge (2)' inside a 3-day Remmel/Amphitheater/Cathedral/Windy bash ending at Thirtymile; south ridge is not our West Route text, Oct 3 is a month past season, not an Amphitheater-only round trip."
+        },
+        {
+          "aid": "2654844",
+          "verdict": "unsure",
+          "why": "Sep 21 2024 'Southwest route' day from an Airview Lake camp that also takes in Cathedral; plausibly our West Route line but the track starts at camp, not a trailhead, so neither complete nor oneway."
+        },
+        {
+          "aid": "2573808",
+          "verdict": "unsure",
+          "why": "Jul 3 2024 'Pilgrimage to Mecca', summited, but the track is a camp-based loop at Upper Cathedral Lake with no approach; no trailhead start. Usable only as a partial climb line."
+        },
+        {
+          "aid": "2041346",
+          "verdict": "different",
+          "why": "Sep 25 2022 walk-up via the Lesamiz Trail with a north-gully descent; camp-based track, not a trailhead round trip, not named to our routes."
+        },
+        {
+          "aid": "1418871",
+          "verdict": "unsure",
+          "why": "Jul 4 2020 'N Ridge' (summited, from the Boundary Trail at Cathedral Pass); name matches our North Ridge but the climber topped the North Peak then walked to the summit and the track neither starts at a trailhead nor loops; partial only."
+        },
+        {
+          "aid": "1381729",
+          "verdict": "offseason",
+          "why": "May 13 2020 snowy multi-day Thirtymile loop; two months before our window."
+        },
+        {
+          "aid": "1842839",
+          "verdict": "offseason",
+          "why": "Jan 2022 winter ski ascent, no track."
+        },
+        {
+          "aid": "978787",
+          "verdict": "unsure",
+          "why": "Jun 2018 car-to-car with Cathedral; no track data, June is a month before season."
+        },
+        {
+          "aid": "1799117",
+          "verdict": "offseason",
+          "why": "Nov 2021 ski ascent."
+        },
+        {
+          "aid": "1750160",
+          "verdict": "unsure",
+          "why": "Jul 7 2021 Thirtymile multi-day trip; no track data, route not named."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Logged successful ascents peak Jul (82), Sep (61), Aug (38); stored Jul-Sep agrees; approach basin and north-facing gullies hold snow into late June/early July and Oct brings first snow. No web source gave a firmer window."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3375504",
+          "verdict": "different",
+          "why": "Oct 8 2026 ascent of a north couloir from Cathedral Pass; not any of our routes, partial track from the pass, no trailhead."
+        },
+        {
+          "aid": "3353493",
+          "verdict": "unsure",
+          "why": "No logged route or report; multi-peak day starting mid-trail (~16 km from our pin), not a trailhead round trip."
+        },
+        {
+          "aid": "3273532",
+          "verdict": "unsure",
+          "why": "No logged route/report; multi-day trip from the Chewuch trailhead, not our pin, track does not tie to a named line."
+        },
+        {
+          "aid": "3368518",
+          "verdict": "different",
+          "why": "Logged 'S Ridge (2)' inside a 3-day Remmel/Amphitheater/Cathedral/Windy bash ending at Thirtymile; south ridge is not our West Route text, Oct 3 is a month past season, not an Amphitheater-only round trip."
+        },
+        {
+          "aid": "2654844",
+          "verdict": "unsure",
+          "why": "Sep 21 2024 'Southwest route' day from an Airview Lake camp that also takes in Cathedral; plausibly our West Route line but the track starts at camp, not a trailhead, so neither complete nor oneway."
+        },
+        {
+          "aid": "2573808",
+          "verdict": "unsure",
+          "why": "Jul 3 2024 'Pilgrimage to Mecca', summited, but the track is a camp-based loop at Upper Cathedral Lake with no approach; no trailhead start. Usable only as a partial climb line."
+        },
+        {
+          "aid": "2041346",
+          "verdict": "different",
+          "why": "Sep 25 2022 walk-up via the Lesamiz Trail with a north-gully descent; camp-based track, not a trailhead round trip, not named to our routes."
+        },
+        {
+          "aid": "1418871",
+          "verdict": "unsure",
+          "why": "Jul 4 2020 'N Ridge' (summited, from the Boundary Trail at Cathedral Pass); name matches our North Ridge but the climber topped the North Peak then walked to the summit and the track neither starts at a trailhead nor loops; partial only."
+        },
+        {
+          "aid": "1381729",
+          "verdict": "offseason",
+          "why": "May 13 2020 snowy multi-day Thirtymile loop; two months before our window."
+        },
+        {
+          "aid": "1842839",
+          "verdict": "offseason",
+          "why": "Jan 2022 winter ski ascent, no track."
+        },
+        {
+          "aid": "978787",
+          "verdict": "unsure",
+          "why": "Jun 2018 car-to-car with Cathedral; no track data, June is a month before season."
+        },
+        {
+          "aid": "1799117",
+          "verdict": "offseason",
+          "why": "Nov 2021 ski ascent."
+        },
+        {
+          "aid": "1750160",
+          "verdict": "unsure",
+          "why": "Jul 7 2021 Thirtymile multi-day trip; no track data, route not named."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_amphitheater_mountain_north_ridge",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Logged successful ascents peak Jul (82), Sep (61), Aug (38); stored Jul-Sep agrees; approach basin and north-facing gullies hold snow into late June/early July and Oct brings first snow. No web source gave a firmer window."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3375504",
+          "verdict": "different",
+          "why": "Oct 8 2026 ascent of a north couloir from Cathedral Pass; not any of our routes, partial track from the pass, no trailhead."
+        },
+        {
+          "aid": "3353493",
+          "verdict": "unsure",
+          "why": "No logged route or report; multi-peak day starting mid-trail (~16 km from our pin), not a trailhead round trip."
+        },
+        {
+          "aid": "3273532",
+          "verdict": "unsure",
+          "why": "No logged route/report; multi-day trip from the Chewuch trailhead, not our pin, track does not tie to a named line."
+        },
+        {
+          "aid": "3368518",
+          "verdict": "different",
+          "why": "Logged 'S Ridge (2)' inside a 3-day Remmel/Amphitheater/Cathedral/Windy bash ending at Thirtymile; south ridge is not our West Route text, Oct 3 is a month past season, not an Amphitheater-only round trip."
+        },
+        {
+          "aid": "2654844",
+          "verdict": "unsure",
+          "why": "Sep 21 2024 'Southwest route' day from an Airview Lake camp that also takes in Cathedral; plausibly our West Route line but the track starts at camp, not a trailhead, so neither complete nor oneway."
+        },
+        {
+          "aid": "2573808",
+          "verdict": "unsure",
+          "why": "Jul 3 2024 'Pilgrimage to Mecca', summited, but the track is a camp-based loop at Upper Cathedral Lake with no approach; no trailhead start. Usable only as a partial climb line."
+        },
+        {
+          "aid": "2041346",
+          "verdict": "different",
+          "why": "Sep 25 2022 walk-up via the Lesamiz Trail with a north-gully descent; camp-based track, not a trailhead round trip, not named to our routes."
+        },
+        {
+          "aid": "1418871",
+          "verdict": "unsure",
+          "why": "Jul 4 2020 'N Ridge' (summited, from the Boundary Trail at Cathedral Pass); name matches our North Ridge but the climber topped the North Peak then walked to the summit and the track neither starts at a trailhead nor loops; partial only."
+        },
+        {
+          "aid": "1381729",
+          "verdict": "offseason",
+          "why": "May 13 2020 snowy multi-day Thirtymile loop; two months before our window."
+        },
+        {
+          "aid": "1842839",
+          "verdict": "offseason",
+          "why": "Jan 2022 winter ski ascent, no track."
+        },
+        {
+          "aid": "978787",
+          "verdict": "unsure",
+          "why": "Jun 2018 car-to-car with Cathedral; no track data, June is a month before season."
+        },
+        {
+          "aid": "1799117",
+          "verdict": "offseason",
+          "why": "Nov 2021 ski ascent."
+        },
+        {
+          "aid": "1750160",
+          "verdict": "unsure",
+          "why": "Jul 7 2021 Thirtymile multi-day trip; no track data, route not named."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "The crest from the north top across to the main summit is only a short class 2 walk, so the roped steps all lie below the north top.",
+          "aids": [
+            "1418871"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_amphitheater_mountain_pilgrimage_to_mecca",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Logged successful ascents peak Jul (82), Sep (61), Aug (38); stored Jul-Sep agrees; approach basin and north-facing gullies hold snow into late June/early July and Oct brings first snow. No web source gave a firmer window."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3375504",
+          "verdict": "different",
+          "why": "Oct 8 2026 ascent of a north couloir from Cathedral Pass; not any of our routes, partial track from the pass, no trailhead."
+        },
+        {
+          "aid": "3353493",
+          "verdict": "unsure",
+          "why": "No logged route or report; multi-peak day starting mid-trail (~16 km from our pin), not a trailhead round trip."
+        },
+        {
+          "aid": "3273532",
+          "verdict": "unsure",
+          "why": "No logged route/report; multi-day trip from the Chewuch trailhead, not our pin, track does not tie to a named line."
+        },
+        {
+          "aid": "3368518",
+          "verdict": "different",
+          "why": "Logged 'S Ridge (2)' inside a 3-day Remmel/Amphitheater/Cathedral/Windy bash ending at Thirtymile; south ridge is not our West Route text, Oct 3 is a month past season, not an Amphitheater-only round trip."
+        },
+        {
+          "aid": "2654844",
+          "verdict": "unsure",
+          "why": "Sep 21 2024 'Southwest route' day from an Airview Lake camp that also takes in Cathedral; plausibly our West Route line but the track starts at camp, not a trailhead, so neither complete nor oneway."
+        },
+        {
+          "aid": "2573808",
+          "verdict": "unsure",
+          "why": "Jul 3 2024 'Pilgrimage to Mecca', summited, but the track is a camp-based loop at Upper Cathedral Lake with no approach; no trailhead start. Usable only as a partial climb line."
+        },
+        {
+          "aid": "2041346",
+          "verdict": "different",
+          "why": "Sep 25 2022 walk-up via the Lesamiz Trail with a north-gully descent; camp-based track, not a trailhead round trip, not named to our routes."
+        },
+        {
+          "aid": "1418871",
+          "verdict": "unsure",
+          "why": "Jul 4 2020 'N Ridge' (summited, from the Boundary Trail at Cathedral Pass); name matches our North Ridge but the climber topped the North Peak then walked to the summit and the track neither starts at a trailhead nor loops; partial only."
+        },
+        {
+          "aid": "1381729",
+          "verdict": "offseason",
+          "why": "May 13 2020 snowy multi-day Thirtymile loop; two months before our window."
+        },
+        {
+          "aid": "1842839",
+          "verdict": "offseason",
+          "why": "Jan 2022 winter ski ascent, no track."
+        },
+        {
+          "aid": "978787",
+          "verdict": "unsure",
+          "why": "Jun 2018 car-to-car with Cathedral; no track data, June is a month before season."
+        },
+        {
+          "aid": "1799117",
+          "verdict": "offseason",
+          "why": "Nov 2021 ski ascent."
+        },
+        {
+          "aid": "1750160",
+          "verdict": "unsure",
+          "why": "Jul 7 2021 Thirtymile multi-day trip; no track data, route not named."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_amphitheater_mountain_west_route",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Logged successful ascents peak Jul (82), Sep (61), Aug (38); stored Jul-Sep agrees; approach basin and north-facing gullies hold snow into late June/early July and Oct brings first snow. No web source gave a firmer window."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3375504",
+          "verdict": "different",
+          "why": "Oct 8 2026 ascent of a north couloir from Cathedral Pass; not any of our routes, partial track from the pass, no trailhead."
+        },
+        {
+          "aid": "3353493",
+          "verdict": "unsure",
+          "why": "No logged route or report; multi-peak day starting mid-trail (~16 km from our pin), not a trailhead round trip."
+        },
+        {
+          "aid": "3273532",
+          "verdict": "unsure",
+          "why": "No logged route/report; multi-day trip from the Chewuch trailhead, not our pin, track does not tie to a named line."
+        },
+        {
+          "aid": "3368518",
+          "verdict": "different",
+          "why": "Logged 'S Ridge (2)' inside a 3-day Remmel/Amphitheater/Cathedral/Windy bash ending at Thirtymile; south ridge is not our West Route text, Oct 3 is a month past season, not an Amphitheater-only round trip."
+        },
+        {
+          "aid": "2654844",
+          "verdict": "unsure",
+          "why": "Sep 21 2024 'Southwest route' day from an Airview Lake camp that also takes in Cathedral; plausibly our West Route line but the track starts at camp, not a trailhead, so neither complete nor oneway."
+        },
+        {
+          "aid": "2573808",
+          "verdict": "unsure",
+          "why": "Jul 3 2024 'Pilgrimage to Mecca', summited, but the track is a camp-based loop at Upper Cathedral Lake with no approach; no trailhead start. Usable only as a partial climb line."
+        },
+        {
+          "aid": "2041346",
+          "verdict": "different",
+          "why": "Sep 25 2022 walk-up via the Lesamiz Trail with a north-gully descent; camp-based track, not a trailhead round trip, not named to our routes."
+        },
+        {
+          "aid": "1418871",
+          "verdict": "unsure",
+          "why": "Jul 4 2020 'N Ridge' (summited, from the Boundary Trail at Cathedral Pass); name matches our North Ridge but the climber topped the North Peak then walked to the summit and the track neither starts at a trailhead nor loops; partial only."
+        },
+        {
+          "aid": "1381729",
+          "verdict": "offseason",
+          "why": "May 13 2020 snowy multi-day Thirtymile loop; two months before our window."
+        },
+        {
+          "aid": "1842839",
+          "verdict": "offseason",
+          "why": "Jan 2022 winter ski ascent, no track."
+        },
+        {
+          "aid": "978787",
+          "verdict": "unsure",
+          "why": "Jun 2018 car-to-car with Cathedral; no track data, June is a month before season."
+        },
+        {
+          "aid": "1799117",
+          "verdict": "offseason",
+          "why": "Nov 2021 ski ascent."
+        },
+        {
+          "aid": "1750160",
+          "verdict": "unsure",
+          "why": "Jul 7 2021 Thirtymile multi-day trip; no track data, route not named."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 7,
+          "text": "From the Chewuch River trail, the Lesamiz Trail climbs to the Boundary Trail just short of Upper Cathedral Lake, a way in used on both a July and a September trip.",
+          "aids": [
+            "1750160",
+            "2041346"
+          ]
+        },
+        {
+          "field": "descent_note",
+          "month": 9,
+          "text": "In late September the north gully down to Cathedral Pass is loose scree over hard ground and slick enough to cause falls; descend it with care.",
+          "aids": [
+            "2041346"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "No track qualified: every Peakbagger ascent here is a multi-peak or camp-based trip (Cathedral/Remmel combined) or lacks track data, and none is a trailhead round trip tied to one of our routes. Candidates for partial climb lines if the owner wants them: 2573808 (Pilgrimage to Mecca, Jul 2024), 1418871 (North Ridge, Jul 2020), 2654844 (Southwest route, Sep 2024). Peak summit pin (48.9756,-120.1922) matches Peakbagger (48.97566,-120.192342). Andrews Creek TH pin not re-confirmed because no track nominated a move. Finger of Fatwa and both Middle Finger Buttress routes have no usable logs."
+}

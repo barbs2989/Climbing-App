@@ -1,0 +1,57 @@
+{
+  "area_id": "wa_mount_washington_olympic",
+  "routes": [
+    {
+      "route_id": "wa_mount_washington_olympic_winter_direct",
+      "season": { "months": [12, 1, 2, 3, 4], "window": "Dec-Apr", "evidence": "Stored Dec-Apr; two logged ascents both named Winter Direct on the same Feb day; web search (Mountaineers winter report from Jefferson Pass trail, SummitPost Winter Direct page) agrees it is a winter/spring snow route. The popular Sep-Oct ascents on the peak are the summer scramble, not this route." },
+      "track": { "aid": "1861815", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged route is literally Winter Direct (Feb 20 2022); report describes front-pointing the couloir to a melted-out rock pitch, then rappelling tree-anchored slopes down the standard route, which matches our text; track starts and ends at the same roadside point (~20 m apart), tops out 1 m from our summit pin. Caveat: our route has no Trailhead pin, the start is a winter snowline parking spot (~2,100 ft, 11 mi round trip), so no trailhead pin is proposed." },
+      "otherTracksConsidered": [
+        { "aid": "1861787", "verdict": "unsure", "why": "Also logged Winter Direct, same day, summited; but the track is admittedly off-route in places and the road walk in was not recorded (start is high at 47.5195,-123.229, end is the road), so it is a broken line. Kept as backup only." },
+        { "aid": "1871931", "verdict": "different", "why": "Jan 16 2021 'N face' from the north side (start 2.7 km from our pins); not our Jefferson Pass line." },
+        { "aid": "3160722", "verdict": "different", "why": "Apr 9 2026 'Route 1' on the standard south trail line (start ~300 m from standard TH), a snow ascent of the summer scramble, not Winter Direct." },
+        { "aid": "3376006", "verdict": "offseason", "why": "Oct 2026 standard-trail ascent; wrong route and off season." },
+        { "aid": "3360343", "verdict": "offseason", "why": "Sep 2026 standard trail line; wrong route and off season." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 2, "text": "In late February the technical step in the gully can be bare, loose rock that sheds stones; send climbers one at a time.", "aids": ["1861815", "1861787"] },
+        { "field": "descent_note", "month": 2, "text": "In late February the steep, hard snow below the summit ridge called for a pair of rope rappels, using trees or snow anchors, before the angle eased.", "aids": ["1861815", "1861787"] },
+        { "field": "approach_note", "month": 2, "text": "In late February one party parked about three miles short of the road end and walked a snowy roadbed, then took the Jefferson Pass trail and cut through snow-filled drainages into the upper basin; hard snow there needed no snowshoes.", "aids": ["1861787"] },
+        { "field": "what_to_bring", "month": 2, "text": "snow pickets (two were placed in late February)", "aids": ["1861787"] }
+      ]
+    },
+    {
+      "route_id": "wa_se_ridge_aka_shield_wall",
+      "season": { "months": [6, 7, 8, 9], "window": "Jun-Sep", "evidence": "Stored Jun-Sep; web (Mountaineers Shield Wall route page, mountain-forecast July-Sept, 2007 June ascent, 2021 July 31 Mountaineers ascent) agrees summer; one summited report on 2021-05-30 sits within a month of the window." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "1667630", "verdict": "unsure", "why": "Logged Shield Wall/Southwest Ridge, May 30 2021 and detailed pitch-by-pitch report names our route, summited, but Peakbagger holds NO GPS track for it (no start/end/shape), so there is nothing to attach." },
+        { "aid": "3376006", "verdict": "different", "why": "Standard south trail line; starts at the FR 2419 trailhead but follows the walk-up route, not the SE ridge." },
+        { "aid": "3266290", "verdict": "different", "why": "Mount Washington Trail (standard scramble); passing the shared trailhead and summit proves nothing for the 5th-class ridge." },
+        { "aid": "2653388", "verdict": "different", "why": "Standard walk-up line." },
+        { "aid": "2574296", "verdict": "different", "why": "Logged 'E Route Standard'." },
+        { "aid": "1999885", "verdict": "different", "why": "Logged standard route up the southern flank." },
+        { "aid": "1698840", "verdict": "different", "why": "Route 1 standard trail line." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 5, "text": "In late May a steep snow slope sat between the basin and the first bolted pitch; the way trail up to that basin climbs roughly 1,600 ft and is easier to follow than the standard route's trail.", "aids": ["1667630"] },
+        { "field": "descent_note", "month": 5, "text": "In late May the standard-route descent still had steep snow; one party made a tree rappel onto it and then faced rooty third-class scrambling lower down.", "aids": ["1667630"] },
+        { "field": "what_to_bring", "month": 5, "text": "ice axe and crampons (late May snow below the wall and on the descent)", "aids": ["1667630"] }
+      ]
+    },
+    {
+      "route_id": "wa_washington_ellinor_traverse_ridge",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jun-Sep with July-Sep best. Web (Summitpost log, Mazamas/Ellinor pages): traverse is dicey bare in October, and most use summer/snow-covered; the one track is Aug 24 2020, in season." },
+      "track": { "aid": "1467622", "verdict": "same", "kind": "oneway", "inSeason": true,
+                 "why": "Logged 'b Traverse from Ellinor', Aug 24 2020, summited; track starts 20 m from our Mount Ellinor Upper Trailhead pin, goes over the Washington summit (1 m from our pin) and ends 214 m from the FR 2419 Washington trailhead pin, i.e. the Ellinor-to-Washington traverse our route describes. Only the ridge route that links these two trailheads can produce that line." },
+      "otherTracksConsidered": [
+        { "aid": "3266290", "verdict": "different", "why": "Jul 2026 solo hiker turned back from the traverse attempt and returned by the standard trail; the line is the standard route." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Peak has 5 routes in allRoutesOnPeak; standard scramble already has a track. Winter Direct has no Trailhead pin; its recorded starts (snowline parking near 47.5117,-123.2271 and the Jefferson Pass trail) vary by winter road conditions, so no pin is proposed. The Shield Wall ascent report (aid 1667630) is detailed and named but has no GPS track."
+}

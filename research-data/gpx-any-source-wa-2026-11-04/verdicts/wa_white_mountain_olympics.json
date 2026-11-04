@@ -1,0 +1,45 @@
+{
+ "area_id": "wa_white_mountain_olympics",
+ "routes": [
+  {
+   "route_id": "wa_white_mountain_olympics_scramble",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Only 7 logged successful ascents (Jun 3, Jul 2, Aug 1, Sep 1). The web search returned only generic Olympic NP seasons (Jul-Aug driest); stored mid-Jul-Sep kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3326370",
+     "verdict": "unsure",
+     "why": "15 Aug 2026 summited (summit 8 m), but starts 26.6 km and ends 27.4 km from our trailhead pin (a segment from an unknown start on the valley floor); not complete or trailhead-to-summit"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 8,
+     "text": "Mid-August: many black bears around the cirque below the peak; keep food in a canister at camp.",
+     "aids": [
+      "3326370"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "The massif has several tops of similar height; check against a map which is the named one before assuming a summit.",
+     "aids": [
+      "3326370"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Track starts at 615 m elevation far from our Dosewallips pin; likely a partial. No trailhead pin proposed (no confirmed page)."
+}

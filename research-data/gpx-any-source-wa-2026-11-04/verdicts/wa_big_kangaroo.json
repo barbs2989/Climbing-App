@@ -1,0 +1,39 @@
+{
+ "area_id": "wa_big_kangaroo",
+ "routes": [
+  {
+   "route_id":"wa_beckey_tate",
+   "season":{"months":[7,8,9],"window":"Jul-Sep","evidence":"Stored Jun-Sep with a best window mid-July to September (gully snow into July, SR-20 opens about mid-May); logged Big Kangaroo ascents peak Jun-Jul but none name this line."},
+   "track":null,
+   "otherTracksConsidered":[
+    {"aid":"2028948","verdict":"different","why":"Chockstone, three short pitches and the unprotected 5.6 summit slab with the creek crossed into the west gully: that is the West Face line. Beckey-Tate is a 5.9+ six-pitch south-face route reached by a different approach."},
+    {"aid":"2028924","verdict":"different","why":"Same day and line as 2028948 (West Face); report only."},
+    {"aid":"2570990","verdict":"different","why":"Logged West Slopes and West Face; report only."}
+   ],
+   "pins":[],"facts":[]
+  },
+  {"route_id":"wa_big_kangaroo_going_down_under","season":{"months":[7,8,9],"window":"Jul-Sep","evidence":"Stored mid-July to mid-September; no track."},"track":null,"otherTracksConsidered":[],"pins":[],"facts":[]},
+  {"route_id":"wa_big_kangaroo_kearney_thomas","season":{"months":[7,8,9],"window":"Jul-Sep","evidence":"Stored mid-July to mid-September; no track."},"track":null,"otherTracksConsidered":[],"pins":[],"facts":[]},
+  {"route_id":"wa_big_kangaroo_skinny_start","season":{"months":[7,8,9],"window":"Jul-Sep","evidence":"Stored July to early September; no track."},"track":null,"otherTracksConsidered":[],"pins":[],"facts":[]},
+  {"route_id":"wa_big_kangaroo_walkabout","season":{"months":[7,8],"window":"Jul-Aug","evidence":"Stored mid-July to late August for the roofs and aid; no track."},"track":null,"otherTracksConsidered":[],"pins":[],"facts":[]},
+  {
+   "route_id":"wa_big_kangaroo_west_face",
+   "season":{"months":[6,7,8,9],"window":"Jun-Sep","evidence":"Logged Big Kangaroo ascents: Jun 11, Jul 9, Aug 6, Sep 5, May 7, Apr 3 (early-season snow-filled gully ascents are popular); the Mountaineers route page says the west gullies are often snow-filled into July. Stored Jun-Sep kept; best mid-July to September for bare scree."},
+   "track":{"aid":"2028948","verdict":"same","kind":"complete","inSeason":true,"why":"15 Sep 2022, summited; the track and its waypoints (register box, creek crossing, left gully) follow the West Face approach, and the report's chockstone first pitch, ledge traverse and balancy summit slab with a rusty bolt are this route's pitches. Start 63 m and end 49 m from the hairpin pin, summit 3 m from our pin."},
+   "otherTracksConsidered":[
+    {"aid":"2028924","verdict":"same","why":"Same party and day (15 Sep 2022); report only, no track points."},
+    {"aid":"2570990","verdict":"same","why":"Logged West Slopes and West Face, 13 Jul 2024; report only, no track points. Used for facts."}
+   ],
+   "pins":[],
+   "facts":[
+    {"field":"approach_note","month":9,"text":"From the hairpin a short slide-alder bushwhack starts at a cairn and reaches a signed register box; the climbers' trail then follows the valley until the open talus and scree, where you cut left. Early Winters Creek was an easy crossing in mid-September, and the gully below the peak starts near 6,000 ft with open scree up to a cliff band, where you traverse left over a ridge.","aids":["2028924"]},
+    {"field":"pro_tips","month":9,"text":"Stash packs at the chockstone and climb the three short pitches light; pitch 1 passes behind the chockstone to a rappel anchor, and rapping from the top of it returns you to your packs.","aids":["2028948","2028924"]},
+    {"field":"watch_out","month":9,"text":"The anchors below the summit block are poor: a loose flake and a slung boulder too small to trust. Build the belay from cams in the foot-level crack.","aids":["2028948","2028924"]},
+    {"field":"watch_out","month":9,"text":"The summit slab must be dry. After mid-September rain one party waited for sun and would have turned back if it stayed wet.","aids":["2028924"]},
+    {"field":"what_to_bring","month":7,"text":"Small cams (0.3 to 0.75) for the short pitches; a rap ring and webbing to replace the worn first anchor (July)","aids":["2028948","2570990"]},
+    {"field":"pro_tips","month":7,"text":"Do not lower or rappel from the rusty summit bolt; the leader down-climbs on a belay from the block anchor below. Linking the second and third pitches is a reasonable option.","aids":["2570990"]}
+   ]
+  }
+ ],
+ "notes":"Only West Face has a trailhead pin; the other routes carry just a summit pin (the south-face routes would share the hairpin trailhead at 48.51454,-120.64332 but I did not propose adds because no track climbs them). Track 2028948 does the West Face, not Beckey-Tate, despite both sharing the summit slab; its start (48.51428,-120.64256) is 63 m from the pin, so no trailhead move. Our summit pin equals the surveyed Peakbagger coordinate; the track's highest point is 32 m away, so no summit move."
+}

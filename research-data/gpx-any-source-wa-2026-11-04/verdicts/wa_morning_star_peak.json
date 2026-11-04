@@ -1,0 +1,80 @@
+{
+  "area_id": "wa_morning_star_peak",
+  "routes": [
+    {
+      "route_id": "wa_beyond_redlining",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jun-Sep; rock route, snow lingers at base into late spring; logged Mile High Club (same wall) ascents are Jul/Sep."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3231000",
+          "verdict": "different",
+          "why": "All tracks climb the Morning Star Peak summit hike, not the Vega North Tower west-face route."
+        },
+        {
+          "aid": "1935634",
+          "verdict": "different",
+          "why": "Peak summit hike, not this tower route."
+        },
+        {
+          "aid": "1684905",
+          "verdict": "different",
+          "why": "Peak summit hike."
+        },
+        {
+          "aid": "1427086",
+          "verdict": "different",
+          "why": "Peak summit hike."
+        },
+        {
+          "aid": "1893457",
+          "verdict": "different",
+          "why": "Peak summit hike (Standard route)."
+        },
+        {
+          "aid": "678349",
+          "verdict": "different",
+          "why": "Peak summit via NW route; not this tower route."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_marvin_s_ear",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jun-Sep; same Vega tower approach as neighbours; early-season snow at base."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3231000",
+          "verdict": "different",
+          "why": "Peak summit hike, not Vega Tower."
+        },
+        {
+          "aid": "678349",
+          "verdict": "different",
+          "why": "Peak summit NW route, not this route."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Both routes are multipitch rock climbs on Vega North/Vega Tower (shared Mile High Club approach), not on Morning Star Peak summit; neither has a Summit pin and the packet tracks all go to Morning Star Peak. Likely misfiled under this peak; they probably belong to a Vega Towers / Mile High Club crag area. No track assigned, no facts used."
+}

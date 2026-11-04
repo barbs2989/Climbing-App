@@ -1,0 +1,57 @@
+{
+  "area_id": "wa_molar_tooth",
+  "routes": [
+    {
+      "route_id": "wa_north_ridge_west_side",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Search found route pages (west rib via PCT from Rainy Pass) but no season statement; logged ascents run May-Oct with June most common (7), Sep 2. Stored Jul-Sep kept; Jun 19 is within a month."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3034814",
+          "verdict": "unsure",
+          "why": "Sep 1, complete round trip from the Rainy Pass PCT start (4 m from pin) with summit, but no logged route name or report; its line enters from the north side near 48.541,-120.709 so it may be the north ridge, not the west rib."
+        },
+        {
+          "aid": "2875776",
+          "verdict": "unsure",
+          "why": "Jun 19 one-way from Rainy Pass arriving from the west; report only says class 3 near the top and a rappel down the upper gully; no route named, and other Molar Tooth routes exist (NE Arete, NE Chimney)."
+        },
+        {
+          "aid": "1964920",
+          "verdict": "not-summited",
+          "why": "Turned back below the top rock, too wet, Jun 11."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 7,
+          "text": "From the Rainy Pass PCT trailhead the round trip is roughly 4.5 miles with about 2,500 ft of gain.",
+          "aids": [
+            "3034814",
+            "2875776"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 6,
+          "text": "In mid-June the upper gully used for rappelling is loose, and rock near the top may be too wet to climb.",
+          "aids": [
+            "2875776",
+            "1964920"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Track identity is the issue: the Rainy Pass start fits our second approach but neither track names its route, so none is assigned. Trailhead pin already within 4 m of both recordings."
+}

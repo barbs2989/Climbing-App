@@ -1,0 +1,21 @@
+{
+  "area_id": "wa_juno_tower",
+  "routes": [
+    {
+      "route_id": "wa_clean_break",
+      "season": { "months": [6, 7, 8, 9], "window": "Jun-Sep", "evidence": "Stored Jun-Sep stands. Logged Clean Break ascents: Jun 2, Jul 2, Sep 1 (all peak ascents Jun 6, Jul 3, Aug 1, Sep 2). Web search: SR 20 (seasonal) gives access; a Mountain Project forum thread reports no snow on the Silver Star Creek approach apart from a steep patch at the base in summer; Mountaineers early-June Silver Star trips call that an early-season climb." },
+      "track": { "aid": "534687", "verdict": "same", "kind": "oneway", "inSeason": true,
+                 "why": "Logged route 'Clean Break' 10c; the track starts 186 m from our Silver Star Creek pullout pin, passes within 56 m of our summit pin, and continues down the Bench Camp/Burgundy Col trail to the Wine Spires pullout, which is exactly the descent our route text gives. 6 Jun 2015 falls inside Jun-Sep. Sparse (45 plotted points), so the line is coarse." },
+      "otherTracksConsidered": [
+        { "aid": "1436237", "verdict": "unsure", "why": "24 Jul 2020, logged Clean Break, dense and good, but the recorded track only goes from the pullout to the base of the buttress (ends ~240 m horizontally and ~400 m vertically from the summit); the owner's rule wants a track that reaches the summit." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 7, "text": "In late July a short steep snow patch can still sit at the base of the route; approach shoes and a trekking pole were enough to cross it.", "aids": ["1436237"] },
+        { "field": "watch_out", "month": 6, "text": "In early June snow covers parts of the approach and the talus below the east face, so expect slower travel.", "aids": ["534687"] },
+        { "field": "approach_note", "month": 7, "text": "Walking up the east side of Silver Star Creek from the pullout is mostly simple open cross-country to the base, with little bushwhacking if you pick your line.", "aids": ["1436237"] }
+      ]
+    }
+  ],
+  "notes": "Summit pin is 4 m from Peakbagger's surveyed coordinate. Both recorded tracks start about 185 m from our TH pin, inside tolerance, so no TH change. Our other route on this peak (wa_zool_patch) was not in the packet's needing-a-track list."
+}

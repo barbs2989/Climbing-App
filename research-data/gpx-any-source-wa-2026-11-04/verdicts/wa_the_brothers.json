@@ -1,0 +1,38 @@
+{
+  "area_id": "wa_the_brothers",
+  "routes": [
+    {
+      "route_id": "wa_the_brothers_traverse",
+      "season": {
+        "months": [
+          5,
+          6,
+          7
+        ],
+        "window": "May-Jul",
+        "evidence": "Stored May-Jul; Mountaineers route page treats it as an early-season snow traverse; logged Traverse ascents on Peakbagger fall in May and August only; web search found no later-season guidance."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3239121",
+          "verdict": "different",
+          "why": "Logged Lena Lake C2C, report describes the South Couloir via the standard approach; no North Peak visit."
+        },
+        {
+          "aid": "2027725",
+          "verdict": "different",
+          "why": "Valley of the Silent Men / South Ridge; report says the North Peak traverse looked too exposed and was skipped."
+        },
+        {
+          "aid": "1924036",
+          "verdict": "different",
+          "why": "Standard South Couloir snow climb, no traverse."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "No harvested track climbs the traverse: the logged Traverse ascents (May and August) are not among the harvested tracks, and every harvested track is a South Couloir style ascent. The South Couloir route already has a track."
+}

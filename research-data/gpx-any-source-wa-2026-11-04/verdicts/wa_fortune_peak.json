@@ -1,0 +1,139 @@
+{
+  "area_id": "wa_fortune_peak",
+  "routes": [
+    {
+      "route_id": "wa_fortune_peak_east_slope",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jun-Oct",
+        "evidence": "Web: Washington hike reports and guidebook pages describe snow lingering into early July and the best window as late summer into fall; peak ascents peak in Oct (larches) with spring ski ascents Apr-Jun. Stored Jun-Oct kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3382867",
+          "verdict": "unsure",
+          "why": "Oct 18 2026 loop up Ingalls Pass, Headlight Basin to South Ingalls summit first, then across to Fortune; no route name, so the Fortune line cannot be pinned to the east slope."
+        },
+        {
+          "aid": "3305284",
+          "verdict": "unsure",
+          "why": "Same loop as above, blank route name."
+        },
+        {
+          "aid": "587964",
+          "verdict": "unsure",
+          "why": "Oct 2015 via Headlight Basin to the ridge and Fortune then Ingalls; route name only Esmeralda TH."
+        },
+        {
+          "aid": "2840270",
+          "verdict": "unsure",
+          "why": "Logged Longs Pass; goes through Headlight Basin to Fortune then a west loop. May is one month before the window; name does not say east slope."
+        },
+        {
+          "aid": "3388472",
+          "verdict": "offseason",
+          "why": "April ski ascent, starts from mid-slope."
+        },
+        {
+          "aid": "320198",
+          "verdict": "offseason",
+          "why": "West Ridge, 31 May, descended south slope."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "In late July the basin below the final slope is snow-free, and a direct line over slabs and boulders just left of the sloping bench reaches the last low point of the summit ridge in about twenty minutes.",
+          "aids": [
+            "2589400"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "Mountain goats are common in the upper basin in late July, so give them room.",
+          "aids": [
+            "2589400"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 9,
+          "text": "Dogs are not permitted in Headlight Basin or at Ingalls Pass; parties with a dog use the Lake Ann route instead.",
+          "aids": [
+            "1766353"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_fortune_peak_standard_route",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jun-Oct",
+        "evidence": "Web: May reports describe a snow-covered, steep descent toward the pass above Lake Ann, July reports find snow on the route, and guidebook pages favor late summer to early fall; larch season in October draws many climbers. Stored Jun-Oct kept."
+      },
+      "track": {
+        "aid": "2293779",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Logged Fortune Creek Pass, the trail name the Lake Ann route goes by; the line leaves the Esmeralda Basin Trail westward, climbs to the saddle above Lake Ann and follows the west ridge to the summit (matches our text and a Sept 2021 report describing exactly that path). Summited, round trip 15 m from our trailhead pin, 28 Aug 2023. Note it also continues to South Ingalls and returns by Ingalls Pass."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3382867",
+          "verdict": "unsure",
+          "why": "Headlight Basin / Ingalls Peak loop, not the Lake Ann line."
+        },
+        {
+          "aid": "3305284",
+          "verdict": "unsure",
+          "why": "Same loop."
+        },
+        {
+          "aid": "587964",
+          "verdict": "unsure",
+          "why": "Headlight Basin line, only Esmeralda TH as route."
+        },
+        {
+          "aid": "2840270",
+          "verdict": "unsure",
+          "why": "Logged Longs Pass, May; route unclear."
+        },
+        {
+          "aid": "320198",
+          "verdict": "offseason",
+          "why": "Logged West Ridge, 31 May; two months before the Jul best-season start."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 9,
+          "text": "By late September the tarn near Lake Ann and the lake itself can be almost dry, so carry the water you need.",
+          "aids": [
+            "1766353"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Several summit tracks climb Ingalls Peak first; they were not assigned. The east-slope route has no unambiguous recorded track."
+}
