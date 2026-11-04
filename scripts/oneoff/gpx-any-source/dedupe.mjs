@@ -9,7 +9,7 @@ const norm = s => String(s ?? "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim
 const content = s => new Set(norm(s).split(" ").filter(w => w.length >= 4 && !STOP.has(w)));
 
 /** The text of a list item that may be a string or an object ({text}, {name}, ...). */
-export const itemText = x => typeof x === "string" ? x : x && typeof x === "object" ? (x.text ?? x.name ?? x.item ?? x.note ?? JSON.stringify(x)) : String(x ?? "");
+export const itemText = x => typeof x === "string" ? x : x && typeof x === "object" ? (x.text ?? x.reason ?? x.name ?? x.item ?? x.note ?? JSON.stringify(x)) : String(x ?? "");
 
 /** Two facts are the same when equal once punctuation goes, one holds the other, or they share most of their content words. */
 export function sameFact(a, b) {

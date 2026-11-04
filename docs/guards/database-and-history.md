@@ -448,6 +448,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     and length. 0271 merged 10 (higher grade kept); listed as READ: Discord 5.8 trad / WI4+ ice,
     Headless Horseman 5.10b / V7, "Unknown Left" 5.10c/d / 5.10b (placeholder, different grades). A
     future fold should expect this guard to name its leftovers.
+  - **Three placeholder names the exclusion misses (2026-11-04), READ and listed.** "Unnamed DWS"
+    (Black Rocks MI, V2 / V3), "Unknown (5.12)" (Cape Pond Head NL, two Mountain Project ids) and
+    "Unnamed (Oct 25)" (Bottle Glass ON, two Mountain Project ids, walls 5 and 10 apart). A
+    placeholder with a qualifier in brackets or a trailing word is still a placeholder; widening
+    PLACEHOLDER would retire these from the list.
+  - **On Windows** the trigger read needs `shell` + `--read-only` (the CLI now refuses an agent's
+    unmarked query, `HostedMutationConsentRequiredError`), and ROOT goes through `fileURLToPath`
+    (`URL.pathname` gives `/C:/...`, which `path.resolve` turns into `C:C:...`).
   - **catalog_key is recomputed in JS** (`lib/search.js` `searchCanon` + 0214's stoplist). In SQL
     it does not finish over 211k routes: measured `57014` at the default timeout, then a gateway
     **524** with `statement_timeout = 300s`. `check:search-norm` keeps the JS and SQL tables one.

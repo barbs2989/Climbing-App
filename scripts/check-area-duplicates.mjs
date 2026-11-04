@@ -41,10 +41,11 @@
 
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import { selectAll } from "./lib/supabase-env.mjs";
 import { searchCanon } from "../lib/search.js";
 
-const ROOT = path.resolve(new URL("..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const BASELINE = path.join(ROOT, "scripts/data/area-duplicates-baseline.json");
 const WRITE = process.argv.includes("--write-baseline");
 

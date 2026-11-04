@@ -137,7 +137,7 @@ if (stage === "facts") {
       if (copied) { refused.push([r.route_id, "copied: " + copied]); continue; }
       if (shoutedStrings(text).length) { refused.push([r.route_id, "shouted"]); continue; }
       if (/\b(peakbagger|summitpost|trip report|according to|reported by)\b/i.test(text)) { refused.push([r.route_id, "names a source"]); continue; }
-      const dup = duplicateIn(text, [cur("watch_out"), cur("pro_tips"), cur("what_to_bring"), cur("approach"), cur("descent_text"), Object.values(cur("seasonal_guidance")?.monthBreakdown || {})]);
+      const dup = duplicateIn(text, [cur("watch_out"), cur("pro_tips"), cur("what_to_bring"), cur("approach"), cur("descent_text"), Object.values(cur("seasonal_guidance")?.monthBreakdown || {}).map(m => m && typeof m === "object" ? m.reason : m)]);
       if (dup) { refused.push([r.route_id, `duplicate of "${String(dup).slice(0, 60)}"`]); continue; }
       if (LIST[f.field]) {
         if (text.length > 160) { refused.push([r.route_id, "list item too long"]); continue; }
@@ -149,8 +149,12 @@ if (stage === "facts") {
         const sg = JSON.parse(JSON.stringify(cur("seasonal_guidance") || {}));
         const mb = sg.monthBreakdown && typeof sg.monthBreakdown === "object" && !Array.isArray(sg.monthBreakdown) ? sg.monthBreakdown : {};
         const key = Object.keys(mb).find(k => k.toLowerCase().startsWith(MON[m].toLowerCase().slice(0, 3))) || MON[m];
-        if (mb[key] && String(mb[key]).toLowerCase().includes(text.toLowerCase())) continue; // already written (a re-run)
-        mb[key] = mb[key] ? `${String(mb[key]).trim()} ${text}` : text;
+        // the panel reads a month as {status, reason}: append to the REASON, never String() the object
+        // (that wrote "[object Object]" over 44 months' status and reason; repair-month-objects.mjs)
+        const m0 = mb[key], why = m0 && typeof m0 === "object" ? String(m0.reason || "") : String(m0 || "");
+        if (why.toLowerCase().includes(text.toLowerCase())) continue; // already written (a re-run)
+        const reason = why ? `${why.trim().replace(/[.;,]?$/, ".")} ${text}` : text;
+        mb[key] = m0 && typeof m0 === "object" ? { ...m0, reason } : { reason };
         sg.monthBreakdown = mb; after.seasonal_guidance = sg;
       } else if (f.field === "approach_note" || f.field === "descent_note") {
         const col = f.field === "approach_note" ? "approach" : "descent_text";
