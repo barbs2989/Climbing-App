@@ -1,0 +1,44 @@
+{
+ "co_spearhead": {
+  "_expect": { "name": "Spearhead", "region": "Colorado" },
+  "blurb": "A pale granite wall tucked into the upper cirque of Glacier Gorge in Rocky Mountain National Park, sitting above 12,500 feet with taller peaks all around it. Nearly everything here is a long alpine-style trad line, with several of the routes running seven to nine pitches. The slab at the base steepens to vertical higher up, with sharp flakes and cracks and some face climbing on the harder lines. Grades range from 5.6 up to 5.12, with the bulk between 5.10 and 5.12. The face looks north and northeast and picks up sun through the morning and early afternoon. Expect a committing day, or a night out, on a remote wall.",
+  "review": { "sources": ["https://www.mountainproject.com/v/spearhead/105744832", "https://mountainproject.com/area/106575635/glacier-gorge"] }
+ },
+ "co_south_face_of_arthur_s_rock": {
+  "_expect": { "name": "South Face of Arthur's Rock", "region": "Colorado" },
+  "blurb": "A steep south-facing dome in Lory State Park, west of Fort Collins, standing about 150 to 200 feet with overhanging stretches. Most lines follow obvious cracks and take natural gear, though nine bolted routes and a single top-rope line round things out. The grades lean hard: the biggest cluster is in the 5.11 range, with a few at 5.12 and one 5.13, while a handful of easier lines from 5.5 to 5.10 give moderate climbers something to do. It is reached on foot from the park trails. With little midday shade, early or late sessions and the cooler months are the comfortable choice.",
+  "aspect": "S",
+  "review": { "sources": ["https://mountainproject.com/area/108009991/south-face-of-arthurs-rock", "https://app.advcollective.com/climbing/blackish-blobs-a-playful-introduction-to-sport-climbing-on-arthurs-rock"] }
+ },
+ "co_supremacy_rock": {
+  "_expect": { "name": "Supremacy Rock", "region": "Colorado" },
+  "blurb": "A roadside formation in Eldorado Canyon State Park near Boulder, made of smooth quartzite rather than the rock that dominates the rest of the canyon. Most of its twenty routes are trad or top-rope, with two sport lines and a lone boulder problem. Grades start at easy terrain and mostly stay at 5.9 or below, with a few harder lines up to 5.13 on the overhanging side. The north side is slabby and polished, while the south side leans back around a short crack classic. Short, close to the car and good for beginners learning the ropes, so it fills up quickly; arrive early.",
+  "approach": "Only a short stroll, roughly 50 to 200 feet, from the parking area to the base.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105745220/supremacy-rock", "https://theoutbound.com/colorado/rock-climbing/rock-climb-supremacy-rock-in-eldorado-canyon"] }
+ },
+ "co_slick_rock_gardens_bouldering_area": {
+  "_expect": { "name": "Slick Rock Gardens Bouldering Area", "region": "Colorado" },
+  "blurb": "A small cluster of granite boulders within Buckskin Crags, near Canon City. Twenty problems are listed, all on the gentle end: nine at VB-to-V0 level, six V1, four V2 and a single V3. The stone is mostly smooth and slick, so good footwork matters and a crash pad is worth carrying. The area soaks up sun for most of the day, which is welcome in colder months and punishing in summer heat. A friendly spot for newer boulderers and anyone wanting an easy-grade circuit.",
+  "review": { "sources": ["https://www.mountainproject.com/area/118603559/slick-rock-gardens-bouldering-area", "https://mountainproject.com/area/118563417/buckskin-crags"] }
+ },
+ "co_dome_the_4": {
+  "_expect": { "name": "Dome, The", "region": "Colorado" },
+  "blurb": "A granite face in the Cathedral Spires area of the South Platte region, southwest of Denver. Nearly all of the twenty routes are trad, with a single sport line, and the grades cluster heavily at 5.10 with some 5.8 to 5.9 and a few 5.11 and 5.12 lines. The face is known for friction climbing on slabs, and the style is old-school: runouts are common and many of the bolts were placed by hand, so expect to climb with care and bring a trad rack. Two big roofs, a main one in the middle and a smaller one on the left, mark the wall from below.",
+  "review": { "sources": ["https://www.mountainproject.com/v/105746218", "https://www.mountainproject.com/route/108393927/resurrection"] }
+ },
+ "co_skillet_the": {
+  "_expect": { "name": "Skillet, The", "region": "Colorado" },
+  "blurb": "A steep hillside crag above the Frying Pan River valley, between Basalt and Carbondale. Mostly bolted single pitches of roughly 40 to 60 feet, with a few gear lines mixed in. Grades run from 5.9 into the low 5.13s but concentrate at 5.11 and 5.12, so it suits climbers who have moved past the beginner stage. The rock is textured and technical, rewarding careful footwork, with cruxes that call for strength. The wall faces south, which works well on cool days, and the flanks on either side pick up shade when it is warm. The walk in is steep.",
+  "parking_note": "Drive Frying Pan Road east of Basalt for about twelve miles and use the shaded pullout just before the turn toward the Ruedi dam. Walk back along the road a short distance to find the rough trail up the hillside.",
+  "approach": "A steep, rough trail climbs the hillside through talus, taking roughly 20 to 25 minutes.",
+  "approach_min": 20,
+  "review": { "sources": ["https://www.mountainproject.com/area/106308591/the-skillet", "https://app.advcollective.com/climbing/technical-climbing-at-the-skillet-colorados-frying-pan-crag", "https://www.mountainproject.com/area/106304629/the-frying-pan"] }
+ },
+ "_skipped": {
+  "co_river_chamber_the": "could not fetch two pages: only one page about the crag (the other Buena Vista pages fetched do not mention it)",
+  "co_cafe_wonderland": "could not fetch two pages: no fetched page describes the crag itself, only a parent listing naming it"
+ },
+ "_conflicts": {
+  "co_south_face_of_arthur_s_rock": "Stored rock is pegmatite; the area page (https://mountainproject.com/area/108009991/south-face-of-arthurs-rock) says granite dome, and https://app.advcollective.com/climbing/blackish-blobs-a-playful-introduction-to-sport-climbing-on-arthurs-rock says sandstone. Left unchanged."
+ }
+}
