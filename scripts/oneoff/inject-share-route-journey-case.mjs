@@ -28,8 +28,8 @@ const sum = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 
 
 // Matched EXACTLY and asserted unique: this file packs whole components onto one physical line,
 // so a loose match edits a different, correct control.
-const LIVE = `with "+c.name.split(" ")[0]);sendMsg(c.id,`;
-const BROKEN = `with "+c.name.split(" ")[0]);false&&sendMsg(c.id,`;
+const LIVE = `way to it. */sendMsg(c.id,"Check out this route: "`;
+const BROKEN = `way to it. */false&&sendMsg(c.id,"Check out this route: "`;
 
 const read = () => fs.readFileSync(APP, "utf8");
 

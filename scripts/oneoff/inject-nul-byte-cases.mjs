@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // Injection harness for check:no-nul.
 //
 // Each case proves its edit LANDED BY CHECKSUM before the guard is judged — the trap this repo has
@@ -11,7 +12,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 const GUARD = "scripts/check-no-nul-bytes.mjs";
 const TARGET = "scripts/oneoff/measure-waypoint-finding-overlap.mjs";
 const NUL_CH = String.fromCharCode(0);   // named, never embedded — this harness obeys the rule too

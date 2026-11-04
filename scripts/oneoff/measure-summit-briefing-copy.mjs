@@ -1,3 +1,4 @@
+import { fileHref } from "../lib/file-href.mjs";
 // Render the peak-page briefing over EVERY WA area that gets one, and read what it says.
 //
 // #1672 swept the ROUTE page catalog-wide for broken rendered copy and found it clean. The
@@ -20,7 +21,7 @@ import { build } from "esbuild";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
-const { SUPABASE_URL, headers, requireServiceKey } = await import(join(ROOT, "scripts/lib/supabase-env.mjs"));
+const { SUPABASE_URL, headers, requireServiceKey } = await import(fileHref(join(ROOT, "scripts/lib/supabase-env.mjs")));
 // Service key because the anon role's 3s statement timeout cannot complete a `like` scan of
 // the 200k-row routes table. Read-only: this issues no write.
 const h = headers(requireServiceKey());

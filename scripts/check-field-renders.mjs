@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "./lib/file-href.mjs";
 // check:field-renders — for every enriched route column, does its value actually reach a
 // screen? A column can be mapped in dbRouteToCamel, offered in the fix form, and still be
 // displayed nowhere. `routes.descent_text` was exactly that: populated on 1,021 routes,
@@ -34,8 +35,8 @@ import path from "path";
 const ROOT = process.cwd();          // never hardcode a worktree — the predecessor did, and
                                      // measured a different branch's code than the one you ran it in
 const require_ = createRequire(import.meta.url);
-const { SUPABASE_URL, headers, anonKey } = await import(path.join(ROOT, "scripts/lib/supabase-env.mjs"));
-const { assertDbReachable } = await import(path.join(ROOT, "scripts/lib/db-preflight.mjs"));
+const { SUPABASE_URL, headers, anonKey } = await import(fileHref(path.join(ROOT, "scripts/lib/supabase-env.mjs")));
+const { assertDbReachable } = await import(fileHref(path.join(ROOT, "scripts/lib/db-preflight.mjs")));
 const KEY = process.env.SUPABASE_SERVICE_KEY || anonKey();
 const TABS = ["overview", "forecast", "conditions", "planner", "safety", "photos", "partners"];
 

@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Batch 1 of the WA multi-approach worklist (audits/wa-multi-approach): the 3 FINISH routes and the
 // 46 routes the research marked MULTI_TRAILHEAD with high confidence.
 //
@@ -149,7 +150,7 @@ const PLAN = {
   wa_north_ridge_2: { t: { 1: { th: "ROSSDAM", distMi: 16, camps: ["Little Beaver", "Twin Rocks"] } } },
 };
 
-const W = new URL("../../", import.meta.url).pathname;
+const W = fileURLToPath(new URL("../../", import.meta.url));
 const BEFORE = new URL("./link-multi-approach-batch1.before.json", import.meta.url);
 const key = requireServiceKey();
 const ids = Object.keys(PLAN);

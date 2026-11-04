@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // One-off: prove a keyboard can actually open a climb.
 //
 // check:clickable is static — it proves role/tabIndex/onKeyDown are present, not that
@@ -21,7 +22,7 @@ const port = await claimPort();
 // are load-bearing and were the reason my first two attempts timed out in Chrome while
 // Node's fetch to the same URL succeeded: --host pins the interface, and the prewarm
 // below compiles the ~1.5MB entry module BEFORE the browser asks for it.
-const server = URL_ARG ? null : spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], {
+const server = URL_ARG ? null : spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], {
   stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" },
 });
 const base = URL_ARG || `http://127.0.0.1:${port}/Climbing-App/`;

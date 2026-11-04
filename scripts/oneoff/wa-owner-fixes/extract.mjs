@@ -1,6 +1,7 @@
+import { fileURLToPath } from "node:url";
 // research/out/<f>.json -> research/patches-<f>.json, keeping only fixes with enough sources.
 import fs from "node:fs";
-const T = new URL("../../../audits/wa-owner-fixes", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/wa-owner-fixes", import.meta.url));
 for (const f of process.argv.slice(2)) {
   const j = JSON.parse(fs.readFileSync(`${T}/research/out/${f}.json`));
   const ok = r => (r.verdict === "fixed" && (r.sources || []).length >= 2) || (r.verdict === "fixed_internal_plus_one" && (r.sources || []).length >= 1);

@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // probe-dynamic-only-names — controls whose ONLY possible name is a dynamic expression.
 //
 // check:control-names treats any non-element expression as a possible name. That is deliberate and
@@ -17,7 +18,7 @@ import _traverse from "@babel/traverse";
 import { appSources } from "../lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 
 const attr = (open, name) => open.attributes.find(
   (a) => a.type === "JSXAttribute" && a.name && a.name.name === name);

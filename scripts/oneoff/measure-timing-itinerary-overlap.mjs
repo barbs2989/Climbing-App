@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 import { renderToStaticMarkup } from "react-dom/server";
 import React from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -11,11 +13,11 @@ const entry = path.join(dir, "e.js"), out = path.join(dir, "b.mjs");
 fs.writeFileSync(entry, [
   `export { default as RouteDetail } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};`,
   `export { dbRouteToCamel } from ${JSON.stringify(path.join(ROOT, "lib/db.js"))};`].join("\n"));
-execFileSync("npx", ["esbuild", entry, "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
+execFileSync(NPX, [...NPX_PRE, "esbuild", entry, "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
   "--define:import.meta.env={}", "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
   "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 if (typeof globalThis.WebSocket === "undefined") globalThis.WebSocket = class { constructor() { throw new Error("x"); } };
-const { RouteDetail, dbRouteToCamel } = await import(out);
+const { RouteDetail, dbRouteToCamel } = await import(fileHref(out));
 
 // ── how big is the class? two columns holding the SAME string, catalog-wide ─────────────
 const rows = await selectAll("routes", "id,timing,itinerary", "timing=not.is.null&itinerary=not.is.null", { pageSize: 1000 });

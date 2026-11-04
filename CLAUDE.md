@@ -35,6 +35,7 @@ npm run check:ci-cancel # can a guard running on main be cancelled by the next m
 npm run check:quiet-box-wiring # every BROWSER probe refuses an oversubscribed box BEFORE launching one (in build)
 npm run check:guard-wiring # every guard RUNS, is named here, and this file agrees about its CREDENTIAL (in build)
 npm run check:action-versions # no workflow pins an action below the version we moved to (in build)
+npm run check:portable-scripts # no script uses a spelling that breaks on WINDOWS: a URL's .pathname as a path, npx/npm spawned by name, import() of a bare path (in build)
 npm run check:types # every TypeScript file under src/ type-checks, strict — Vite strips types and checks nothing (in build)
 npm run type-check # the same as check:types, under the name the owner asked for
 npm run lint # ESLint, every rule an error: unused variables, `any`, rules-of-hooks + hook dependency arrays; ZERO findings, no baseline file, every disable names its rule and a reason (in build)

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Do any labels CLIP inside an overlay? The last surface the clipping sweep had not
 // reached (#1510/#1517/#1524 covered the seven tabs and the route page).
 //
@@ -45,8 +46,8 @@ const port = await freePort(5500, 5539);
 if (port === null) { console.error("no free port"); process.exit(1); }
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
 
-const server = spawn("npx",
-  ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "pipe", "pipe"], detached: true });
 server.stdout.on("data", () => {});
 server.stderr.on("data", (d) => { const s = String(d); if (/ANCHOR LOST|Error/.test(s)) process.stderr.write(s); });

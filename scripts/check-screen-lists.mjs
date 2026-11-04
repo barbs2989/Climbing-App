@@ -45,7 +45,7 @@ import _traverse from "@babel/traverse";
 const traverse = _traverse.default || _traverse;
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const rel = (f) => path.relative(ROOT, f);
+const rel = (f) => path.relative(ROOT, f).replace(/\\/g, "/");
 
 // A subset that is CORRECT, each with the reason it is a subset. Keyed by file, vocabulary and
 // the exact values in source order: an exemption is a claim about one particular list, so a

@@ -1,3 +1,5 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // probe-discover-mode-bar — why does check:selected-state not classify Discover's
 // [Find partners | Join a crew | Hire a guide] bar as stateful?
 //
@@ -19,7 +21,7 @@ import { settledText } from "../lib/render-settle.mjs";
 // runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
 assertQuietBox("probe-discover-mode-bar.mjs");
 
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 
 async function claimPort(start) {
   for (let p = start; p < start + 40; p++) {
@@ -35,8 +37,8 @@ async function claimPort(start) {
 }
 const port = await claimPort(5430);
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
-const server = spawn("npx",
-  ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "pipe", "pipe"], detached: true });
 server.stdout.on("data", () => {});
 let stopped = false;

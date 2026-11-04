@@ -1,9 +1,10 @@
+import { fileHref } from "../../lib/file-href.mjs";
 // validate.mjs bNN — checks audits/copied-prose-live/out/bNN.json against queue/bNN.json and writes apply/bNN.json
 // (the rewrite-copied-prose.mjs edits shape). Refuses an item whose splice is not unique, whose numbers change,
 // or whose new text still shares a run of 8+ words (not name/number-dominated) with a cited page.
 import fs from "node:fs"; import path from "node:path"; import crypto from "node:crypto";
 const WT = process.cwd();
-const { sourceIndex, copiedRuns } = await import(`${WT}/scripts/lib/source-overlap.mjs`);
+const { sourceIndex, copiedRuns } = await import(fileHref(`${WT}/scripts/lib/source-overlap.mjs`));
 const b = process.argv[2], D = "audits/copied-prose-live", CACHE = process.env.PAGE_CACHE || "/tmp/copied-prose-pages";
 const queue = JSON.parse(fs.readFileSync(`${D}/queue/${b}.json`, "utf8"));
 const out = JSON.parse(fs.readFileSync(`${D}/out/${b}.json`, "utf8"));

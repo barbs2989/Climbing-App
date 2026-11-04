@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Verify the shipped permit link against the simulation, through the REAL render.
 // The simulation replayed a copy of the branch logic; this asserts the app itself now emits
 // the expected href — a copy that has drifted from the component proves nothing.
@@ -6,7 +7,7 @@ import { createRequire } from "module";
 import fs from "fs"; import os from "os"; import path from "path";
 import { SUPABASE_URL, anonKey, headers } from "../lib/supabase-env.mjs";
 
-const ROOT = new URL("../..", import.meta.url).pathname.replace(/\/$/, "");
+const ROOT = fileURLToPath(new URL("../..", import.meta.url)).replace(/\/$/, "");
 const require_ = createRequire(import.meta.url);
 const ENTRY = `
 import React from "react";

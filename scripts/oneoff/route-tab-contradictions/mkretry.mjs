@@ -1,9 +1,10 @@
+import { fileURLToPath } from "node:url";
 // Retry inputs for this half's UNRESOLVED results: research/in/uNNN.json, ~10 facts per file, each carrying what the
 // first pass found (evidence + sources already tried) and the route's LIVE row (rows have changed since the snapshot).
 import fs from "node:fs";
 import { SUPABASE_URL, headers, requireServiceKey } from "../../lib/supabase-env.mjs";
 const key = requireServiceKey();
-const T = new URL("../../../audits/route-tab-contradictions", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/route-tab-contradictions", import.meta.url));
 const byId = {};
 for (const f of fs.readdirSync(`${T}/research/out`).filter(f => /^r\d+\.json$/.test(f))) {
   for (const r of JSON.parse(fs.readFileSync(`${T}/research/out/${f}`)).results || [])

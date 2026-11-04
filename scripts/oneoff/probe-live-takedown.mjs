@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // One-off probe for 0380 + lib/live.js onTakedown: does a moderator's take-down REACH another
 // reader at once, and does the broadcast carry nothing but the row's id?
 //
@@ -18,7 +19,7 @@ import { liveChangeTouches } from "../../lib/liveMatch.js";
 
 const log = (...a) => console.log(...a);
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-const sql = (q) => execFileSync("npx", ["supabase", "db", "query", "--linked", q], { encoding: "utf8" });
+const sql = (q) => execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", q], { encoding: "utf8" });
 const fx = await createFixture(log);
 const fails = [];
 const clients = [];

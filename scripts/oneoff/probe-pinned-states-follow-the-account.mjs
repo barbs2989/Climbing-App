@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 /* DOES A PINNED STATE FOLLOW THE ACCOUNT TO A SECOND BROWSER? (0187)
  *
  * The report: "My pinned Washington didn't show up when I signed out and back in on a different
@@ -47,7 +48,7 @@ async function browser(tag) {
     external: ["react", "react-dom", "@tanstack/react-query"],
     define: { "import.meta.env": JSON.stringify({ VITE_SUPABASE_URL: SUPABASE_URL, VITE_SUPABASE_ANON_KEY: ANON, VITE_USE_DB: "true" }) },
   });
-  return import(out);
+  return import(fileHref(out));
 }
 
 const made = [];

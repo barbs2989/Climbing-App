@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Does the guides copy claim more than the app enforces?
 //
 // The screen pitched "Hire a vetted, certified guide", the apply screen said "ClimbMatch lists
@@ -23,14 +25,14 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", ".
 const out = path.join(ROOT, `.guideclaims-${process.pid}.mjs`);
 const clean = () => fs.rmSync(out, { force: true });
 
-execFileSync("npx", ["esbuild", path.join(ROOT, "lib", "db.js"),
+execFileSync(NPX, [...NPX_PRE, "esbuild", path.join(ROOT, "lib", "db.js"),
   "--bundle", "--format=esm", "--platform=node",
   "--define:import.meta.env={}",
   "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
   "--external:@supabase/supabase-js",
   "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 
-const { isGuideVerified } = await import(out + "?t=" + Date.now());
+const { isGuideVerified } = await import(fileHref(out + "?t=" + Date.now()));
 if (typeof isGuideVerified !== "function") { console.error("ANCHOR LOST — lib/db.js no longer exports isGuideVerified."); process.exit(1); }
 
 let bad = 0;

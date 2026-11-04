@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // Rewrite every literal NUL byte in a source file as the two-character escape \x00.
 //
 // VERIFIED EQUIVALENT RATHER THAN ASSUMED, which for a mechanical byte swap across live scripts is
@@ -10,7 +11,7 @@ import { execFileSync } from "node:child_process";
 import { parse } from "@babel/parser";
 import traverse from "@babel/traverse";
 
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 const APPLY = process.argv.includes("--apply");
 const NUL = 0;
 const NUL_CH = String.fromCharCode(0);   // named, never embedded - see check:no-nul

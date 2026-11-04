@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Somebody asks to join your crew. What does the organiser actually see?
 //
 // #1554 made "Join a crew" write a real `crew_members` row at status `pending`, which is the right
@@ -81,7 +82,7 @@ try {
   const port = await claimPort(PORT);
   const base = `http://127.0.0.1:${port}/`;
   log(`starting dev server on ${port}...`);
-  server = spawn("npx", ["vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   let died = false;
   server.on("exit", () => { died = true; });

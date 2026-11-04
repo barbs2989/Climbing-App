@@ -52,6 +52,26 @@ function check(label, pass, detail) {
   );
 }
 
+// Distinct trailheads that the DISTANCE gate on summits would not separate. Since SINGLETON gained
+// couldBeSameSummit (400 m, or no coordinate), putting `trailhead` back in SINGLETON no longer merges
+// Remmel's two pins 7.8 km apart -- so the assertion above stopped telling a revert from the fix, and
+// inject-waypoint-dedupe-cases went MISSED. The revert still merges these two kinds: a pin with no
+// coordinate, and a second start a few hundred metres off (a lot and its winter gate).
+{
+  const noCoord = dedupeWaypoints([
+    { type: "Trailhead", name: "Thirtymile Trailhead" },
+    { type: "Trailhead", name: "Andrews Creek Trailhead", lat: 48.7837, lng: -120.1086 },
+  ]);
+  check("two DIFFERENT trailheads survive when one has no coordinate", noCoord.length === 2,
+    noCoord.length === 2 ? "" : `merged to ${noCoord.length}`);
+  const near = dedupeWaypoints([
+    th("Hannegan Pass Trailhead", 48.9000, -121.8700),
+    th("Hannegan Winter Gate", 48.9020, -121.8700), // ~220 m: past sameSpot, inside the summit radius
+  ]);
+  check("two DIFFERENT trailheads a few hundred metres apart survive", near.length === 2,
+    near.length === 2 ? "" : `merged to ${near.length}`);
+}
+
 // ---------------------------------------------------------------- what the rule was FOR
 // Removing `trailhead` from SINGLETON must not stop two pins for ONE start merging. Both of the
 // paths that do it are asserted, because they are independent: coordinate, and name.

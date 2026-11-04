@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Log a climb, reload the page, and see whether it is still there.
 //
 // EVERY BROWSER GUARD IN THIS REPO READS ONE PAGE LOAD. check:ui, check:zero, check:signed-in and
@@ -101,12 +103,12 @@ const bundle = path.join(ROOT, `.flowroute-${process.pid}.mjs`);
 let ROUTE_NAME = null, ROUTE_ID = null;
 try {
   const { execFileSync } = await import("node:child_process");
-  execFileSync("npx", ["esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
+  execFileSync(NPX, [...NPX_PRE, "esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     "--define:import.meta.env={}",
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
     "--log-level=error", "--outfile=" + bundle], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
-  const mod = await import(bundle + "?t=" + Date.now());
+  const mod = await import(fileHref(bundle + "?t=" + Date.now()));
   ROUTE_NAME = mod.ROUTES && mod.ROUTES[0] && mod.ROUTES[0].name;
   ROUTE_ID = mod.ROUTES && mod.ROUTES[0] && mod.ROUTES[0].id;
 } catch {} finally { fs.rmSync(bundle, { force: true }); }
@@ -121,7 +123,7 @@ try {
   const port = await claimPort(PORT);
   const base = `http://127.0.0.1:${port}/`;
   log(`starting dev server on ${port}...`);
-  server = spawn("npx", ["vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   let died = false;
   server.on("exit", () => { died = true; });

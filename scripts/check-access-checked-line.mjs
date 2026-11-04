@@ -1,3 +1,5 @@
+import { fileHref } from "./lib/file-href.mjs";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Does the road/access CHECKED DATE reach a screen, and does it stay silent when there is none?
 //
 // 0172 adds routes.access_checked_at — the first date column on a table with 94 others, and the
@@ -63,7 +65,7 @@ try {
   ].join("\n"));
   // Bundle INSIDE the project: node resolves `react` from the nearest node_modules, so a bundle in
   // the OS temp dir throws ERR_MODULE_NOT_FOUND.
-  execFileSync("npx", ["esbuild", entry,
+  execFileSync(NPX, [...NPX_PRE, "esbuild", entry,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     "--define:import.meta.env={}",
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
@@ -79,7 +81,7 @@ if (typeof globalThis.WebSocket === "undefined") {
   globalThis.WebSocket = class { constructor() { throw new Error("probe: no realtime"); } };
 }
 
-const mod = await import(out + "?t=" + Date.now());
+const mod = await import(fileHref(out + "?t=" + Date.now()));
 const { RouteDetail, accessCheckedLine, accessCheckedDate } = mod;
 if (typeof RouteDetail !== "function") dead("RouteDetail.jsx has no default export — ANCHOR LOST");
 if (typeof accessCheckedLine !== "function") dead("lib/road.js does not export accessCheckedLine — ANCHOR LOST");

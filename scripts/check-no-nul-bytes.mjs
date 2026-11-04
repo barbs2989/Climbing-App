@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // check:no-nul — no source file may hold a LITERAL NUL byte.
 //
 // Git classifies a file containing NUL as BINARY. The whole file then renders in a pull request as
@@ -20,7 +21,7 @@
 import { readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const EXTS = /\.(jsx?|mjs|cjs|tsx?|json|md|sql|ya?ml|html|css|txt|sh)$/;
 
 /* --cached --others --exclude-standard, NOT a bare `ls-files`, AND THE DIFFERENCE COST A CI CYCLE.

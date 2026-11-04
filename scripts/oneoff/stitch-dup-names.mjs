@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Does every stitched parent (readParentSource) still PARSE? Two moved files that each declare the same
 // top-level name (a `type Gesture`, an `interface Climate`, a helper) parse alone and fail stitched, and
 // every guard that parses the stitched page then dies. Lists the clashes per parent.
@@ -6,7 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { parse } from "@babel/parser";
 import { MOVED, movedAsParentText } from "../lib/guard-sources.mjs";
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "..", "..");
 let bad = 0;
 for (const [parent, files] of Object.entries(MOVED)) {
   const seen = new Map();

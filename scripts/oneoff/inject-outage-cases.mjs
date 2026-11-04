@@ -1,3 +1,4 @@
+import { NPM, NPM_PRE } from "../lib/npx.mjs";
 // Injection cases for check:outage.
 //
 // The expected result of that guard is "no findings", which is exactly what a BROKEN guard
@@ -26,8 +27,8 @@
 //   6. invites   — revert the crew-invites heading.                                MUST FAIL,
 //                  naming Crew:Requests. It expected a PASS until the fixture gained a
 //                  pending invite; that PASS was a stale-bookkeeping alarm and it fired.
-//   7. ranks     — revert the Leaderboards fix.                                   MUST FAIL,
-//                  naming Ranks. This one is in ClimbMatchCore.jsx, not ClimbMatch.jsx.
+//   7. (ranks    — removed; see the note beside the cases. A caveat visible only in failure cannot be
+//                  proved by a guard that judges lies.)
 //   8. nothing   — no edit at all.                                                 MUST PASS.
 //                  Without this the others are satisfied by a guard that always fails.
 //
@@ -59,8 +60,13 @@ const CASES = {
     file: "src/components/DiscoverTab.tsx",
     from: "objectivesUnavailable={objectivesUnavailable} meListed={",
     to: "meListed={",
+    // Isolated to ONE table (ONLY=). Under a blanket outage the Partners screen already says
+    // "Couldn’t load climbers" from other sections, so rule 1 is satisfied whether or not this prop
+    // is wired -- the revert read as MISSED. Failing only `objectives` leaves that one sentence the
+    // only thing that can differ.
+    only: "objectives",
     expect: "fail",
-    names: /Partners/,
+    names: /^ {2}Partners — /m,
   },
   home: {
     file: "src/components/TodayTab.tsx",
@@ -80,17 +86,20 @@ const CASES = {
     // Logbook:Completed screen draws the LogbookTab one, so that is the one reverted.
     hits: 1,
     expect: "fail",
-    names: /Logbook:Completed/,
+    // The FINDING line, not the screen name: the table printed on every run names it regardless.
+    names: /^ {2}Logbook:Completed — /m,
   },
   // The three Crew sub-views. Each reverts ONE surface, because reverting all three at once
   // cannot tell "the guard sees this screen" from "the guard sees the Crew tab behind it".
   friends: {
-    file: "ClimbMatch.jsx",
+    // The Friends view moved to its own component (PR61). Anchored on ITS notice: the old bare
+    // anchor now also matches App's two share sheets, which are not what Crew:Friends draws.
+    file: "src/components/CrewFriendsView.tsx",
     // Neutralise the CONDITION rather than deleting a branch: cutting the ternary in half leaves
     // unbalanced JSX, and an injection that produces a SYNTAX ERROR is not a catch -- the guard
     // would fail on a blank app and read as though it had found the defect.
-    from: 'connectionsUnavailable?"Couldn’t load your friends',
-    to: 'false?"Couldn’t load your friends',
+    from: '{connectionsUnavailable?"Couldn’t load your friends — this is not an empty list.',
+    to: '{false?"Couldn’t load your friends — this is not an empty list.',
     expect: "fail",
     names: /Crew:Friends/,
   },
@@ -125,30 +134,25 @@ const CASES = {
     expect: "fail",
     names: /Crew:Requests/,
   },
-  // The Ranks tab, which was NEVER WALKED until the TABS list was corrected: it said "Me",
-  // and NAV's last two entries are "Ranks" and "Profile". So this case pins two things at once
-  // -- that the fix works, and that the walk reaches a tab it used to skip entirely.
-  ranks: {
-    // Leaderboards moved to lib/ (lazy-loaded); check:outage walks the rendered app, so it
-    // still sees this notice — only the file the injection edits changed.
-    file: "lib/Leaderboards.jsx",
-    // The short form of this anchor matches TWICE: #1155 already put a logsUnavailable notice
-    // with identical styling in MyAscents. The harness REFUSED the case and said so, which is
-    // exactly what it is for -- an injection that edits the wrong one of two identical lines
-    // reads as "guard missed" when the guard never saw a change.
-    from: 'logsUnavailable?<div style={{fontSize:12,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber,borderRadius:8,padding:"7px 10px",marginBottom:9,lineHeight:1.45}}>Couldn’t load your climbs, so your own',
-    to: 'false?<div style={{fontSize:12,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber,borderRadius:8,padding:"7px 10px",marginBottom:9,lineHeight:1.45}}>Couldn’t load your climbs, so your own',
-    expect: "fail",
-    names: /Ranks/,
-  },
+  // RANKS CASE REMOVED (2026-11): it reverted Leaderboards' `logsUnavailable` caveat ("your own
+  // standing here is understated"). That is no longer provable by check:outage. Under a blanket
+  // outage the board has since gained a rankings read whose own notice ("unread rather than empty")
+  // satisfies rule 1 with or without the caveat, so the revert read as MISSED. Isolating the climbs
+  // read (ONLY=climb_logs) does not help: Ranks then renders IDENTICAL with the caveat gone, and an
+  // IDENTICAL screen is by design "seed-backed, proves nothing" -- the guard only sees a screen
+  // that LIES, and removing a caveat that was visible only in failure leaves nothing to lie with.
+  // The walk still reaches Ranks (the rankings notice is judged by every other case's table).
   nothing: { expect: "pass" },
 };
 
-const wanted = process.argv.slice(2).filter((a) => CASES[a]);
-if (!wanted.length) {
-  console.log("name at least one case: " + Object.keys(CASES).join(" "));
+// Named cases run alone (each is a full ~4 min walk). With NONE named the whole suite runs, so
+// "run it and read the exit code" proves every case rather than exiting 1 on a usage message.
+const named = process.argv.slice(2);
+if (named.some((a) => !CASES[a])) {
+  console.log("unknown case. Cases: " + Object.keys(CASES).join(" "));
   process.exit(1);
 }
+const wanted = named.length ? named : Object.keys(CASES);
 
 // Every bad outcome prints the guard's own table and its verdict lines. A case that misbehaves
 // with no evidence cannot be acted on: "the guard did not catch it", "that screen did not settle
@@ -197,7 +201,8 @@ for (const name of wanted) {
       console.log(`\n[${name}] no edit — the guard must PASS on an unmodified tree`);
     }
 
-    const r = spawnSync("npm", ["run", "check:outage"], { encoding: "utf8", cwd: ROOT });
+    const r = spawnSync(NPM, [...NPM_PRE, "run", "check:outage"],
+      { encoding: "utf8", cwd: ROOT, env: c.only ? { ...process.env, ONLY: c.only } : process.env });
     const out = (r.stdout || "") + (r.stderr || "");
     const failed = r.status !== 0;
     const dead = /DID NOT RUN/.test(out);

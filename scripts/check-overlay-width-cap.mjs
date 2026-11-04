@@ -168,16 +168,19 @@ for (const f of FILES) {
 // check:refs, and it drops that file's views silently. Reformatting ClimbMatchCore alone takes
 // 24 -> 17 views, so the view floor trips on it.
 //
-// 20 sits just under today's 24: tight enough that losing one big file trips it, loose enough
-// that removing a view or two does not. It is a RATCHET -- if views are deliberately deleted
-// below it, move the floor in the same commit and say why.
+// The floor is 36 against today's 38 (it was 20 against 24 until the views moved out of core into
+// src/components/*.tsx). Injection-found blind spot: with the views spread over ~30 files, the
+// old floor of 20 let a whole-file reformat of ClimbMatch.jsx (-4 views) or of core (-2) pass
+// green. 36 trips on losing ClimbMatch.jsx's four; core's two are the residual below.
+// It is a RATCHET -- if views are deliberately deleted below it, move the floor in the same
+// commit and say why.
 //
 // RESIDUAL, stated rather than papered over: a file holding a SINGLE view (lib/DbGuides.jsx,
 // lib/DbAreaBrowser.jsx) can be reformatted without tripping either floor. A per-file expectation
 // would catch it and would be hand-maintained bookkeeping that rots, which this repo has been
 // burned by more than once; the floors are the cheaper trade.
-if (views < 20) {
-  console.error(`check:overlay-width-cap: found only ${views} opaque full-screen view(s) — expected at least 20.`);
+if (views < 36) {
+  console.error(`check:overlay-width-cap: found only ${views} opaque full-screen view(s) — expected at least 36.`);
   console.error("The scan is broken, the style shape moved, or views were deleted. NOT a clean result.");
   process.exit(1);
 }

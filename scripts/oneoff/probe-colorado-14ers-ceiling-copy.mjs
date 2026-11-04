@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // What does the Colorado 14ers card say about the peak it can never hold?
 //
 // `extra = L.total - inCat` is 53 - 52 = 1, and the card renders
@@ -45,7 +46,7 @@ const port = await claimPort(5460);
 if (port === null) { console.error("no free port"); process.exit(1); }
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
 log(`starting dev server on ${port}...`);
-const server = spawn("npx", ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
 let died = false;
 server.on("exit", () => { died = true; });

@@ -53,7 +53,7 @@ const LOCK = P("scripts/oneoff/.inject-offline-claims.lock");
 try {
   fs.writeFileSync(LOCK, String(process.pid), { flag: "wx" });
 } catch (e) {
-  console.error("REFUSING TO RUN: another injection run holds " + path.relative(ROOT, LOCK) + "\n"
+  console.error("REFUSING TO RUN: another injection run holds " + path.relative(ROOT, LOCK).replace(/\\/g, "/") + "\n"
     + "  (pid " + (fs.existsSync(LOCK) ? fs.readFileSync(LOCK, "utf8") : "?") + "). Two runs edit the same\n"
     + "  files in place, so overlapping them corrupts BOTH results and can leave an injected edit in\n"
     + "  the working tree. Wait for it, or delete the lock if that process is gone.");

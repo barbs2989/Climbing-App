@@ -121,7 +121,7 @@ const stamp = new Date().toISOString().replace(/[:.]/g, "-");
 const backup = path.join(ROOT, "scripts", "oneoff", `waypoint-order-backup-${stamp}.json`);
 fs.writeFileSync(backup, JSON.stringify(
   Object.fromEntries(todo.map(({ r }) => [r.id, r.waypoints])), null, 2));
-console.log(`\nbackup written: ${path.relative(ROOT, backup)}`);
+console.log(`\nbackup written: ${path.relative(ROOT, backup).replace(/\\/g, "/")}`);
 
 let wrote = 0;
 for (const { r, next } of todo) {

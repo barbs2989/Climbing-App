@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 // Every route with TWO OR MORE pitches must show a ROUTE BREAKDOWN section and a RAPPELS section, full or
 // empty, on the tab that holds its plan content: Overview on a crag route (trad/sport/toprope/aid/bouldering,
 // which has no Plan tab since #2223), Plan on everything else. An empty one is a headed card with a pencil
@@ -22,7 +23,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const require_ = createRequire(import.meta.url);
-const { selectAll, requireServiceKey, SUPABASE_URL, headers } = await import(path.join(ROOT, "scripts/lib/supabase-env.mjs"));
+const { selectAll, requireServiceKey, SUPABASE_URL, headers } = await import(fileHref(path.join(ROOT, "scripts/lib/supabase-env.mjs")));
 const LIMIT = +((process.argv.find((a) => a.startsWith("--limit=")) || "").split("=")[1] || 0);
 
 const ENTRY = `
