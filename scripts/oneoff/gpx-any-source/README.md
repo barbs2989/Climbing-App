@@ -23,6 +23,11 @@ The owner holds a licence for Peakbagger and SummitPost and has allowed GPX trac
    same name); a fact already on the row, reworded or not, is refused (75% of its content words in one
    stored item or sentence); a shell sharing a name with a route on its peak is refused. Before ADDING a
    route, `catalog_find_route(name, area_id)` + `catalog_find_area` on the whole state, every spelling.
+   One GPS file is often logged as an ascent of EACH peak it summits (an Inspiration Traverse logged on
+   Primus and on Klawatti, a Clark + Johnson day): the tracks stage refuses any recording whose file is
+   also logged on another peak (14 such recordings had slipped into WA waves 1-3; cleared 2026-11-04).
+   A traverse ROUTE whose line is exactly those peaks is the one exception, decided by the reviewer.
+   Season is the RESEARCHED window ±1 month, not the stored one ("May should be fine for some peaks").
    After every write wave run `node scripts/oneoff/gpx-any-source/dup-audit-wa.mjs` (read-only; every
    route the session's rollbacks touched + every route on those peaks).
 

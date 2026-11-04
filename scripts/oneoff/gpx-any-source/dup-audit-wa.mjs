@@ -1,7 +1,7 @@
 // Read-only: duplicates in everything the WA Peakbagger pass touched, and on those peaks.
 import fs from "fs";
 import { selectAll } from "../../lib/supabase-env.mjs";
-const RB = fs.readdirSync("scripts").filter(f => /^rollback-(gpx-any-source-[a-z-]+-|fkt-gpx-tracks-)17938(14|15|16)/.test(f));
+const RB = fs.readdirSync("scripts").filter(f => /^rollback-(gpx-any-source-[a-z-]+-|fkt-gpx-tracks-)17938[1-9][0-9]/.test(f));
 const touched = new Set(RB.flatMap(f => JSON.parse(fs.readFileSync("scripts/" + f, "utf8")).rows.map(r => r.id)));
 const ids = [...touched];
 const rows = [];

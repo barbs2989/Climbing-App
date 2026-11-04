@@ -1,0 +1,33 @@
+{
+  "area_id": "wa_kendall_peak",
+  "routes": [
+    {
+      "route_id": "wa_kendall_peak_standard",
+      "season": { "months": [6,7,8,9,10], "window": "Jun-Oct", "evidence": "Ascent histogram peaks Jul-Oct (Jul 212, Aug 180, Sep 152, Oct 122, Jun 97 across all routes); web search of club trip reports points to roughly mid-June through October for the PCT-based scramble, with spring snow lingering in some years and winter needing a separate snow route. Matches stored Jun-Oct." },
+      "track": { "aid": "3225864", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "11 Jun 2026, successful summit, round trip 10 mi / 2800 ft from the PCT north trailhead (17 m from our pin), summit 4 m from our pin. Report describes a cruiser PCT then a class 2 scree scramble to the summit, which is our stored line. The catalog holds only one scramble route on the peak (the other is a WI3+ ice route on the cliff) and the track follows this route's described PCT then boot-path line. June is the first month of the stored season." },
+      "otherTracksConsidered": [
+        { "aid": "2876590", "verdict": "unsure", "why": "19 Jun 2025 PCT round trip, summited, complete, no report; line not documented, 3225864 has a description." },
+        { "aid": "351579", "verdict": "different", "why": "Sep 2013 N Ridge scramble via the Katwalk, class 2/3 ridge; a different line from the boot-path standard." },
+        { "aid": "551002", "verdict": "different", "why": "Jul 2015 up the class 3 ridge and down the use trail; mixed line." },
+        { "aid": "3379832", "verdict": "different", "why": "Oct 2026 bushwhack to N ridge, track not complete." },
+        { "aid": "1445167", "verdict": "unsure", "why": "Aug 2020 via Commonwealth Creek and PCT, 13 mi round trip, no report; alternate approach." },
+        { "aid": "526508", "verdict": "offseason", "why": "May ascent, went straight up the SW face." },
+        { "aid": "3386350", "verdict": "unsure", "why": "Oct 2026 PCT round trip, summited, complete, no report; 3225864 preferred for its description." },
+        { "aid": "3380534", "verdict": "unsure", "why": "Oct 2026, 130 m from pin, no report." },
+        { "aid": "2376066", "verdict": "offseason", "why": "12 Nov 2023, deep snow; outside season." },
+        { "aid": "1656389", "verdict": "offseason", "why": "May 2021 winter route via Commonwealth." },
+        { "aid": "533972", "verdict": "offseason", "why": "June 2015 from Commonwealth, not complete; mixed line." },
+        { "aid": "269079", "verdict": "different", "why": "Direct approach from the Commonwealth Basin trail skipping the PCT; not complete." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "monthBreakdown", "month": 6, "text": "In mid-June, patches of snow begin around 4,800 ft on the PCT and the turnoff to the boot path may be buried; poles and microspikes help until the trees thin out, and a short snow traverse near the top can be skirted along the rocks.", "aids": ["1405833"] },
+        { "field": "what_to_bring", "month": 10, "text": "microspikes (late October, fresh snow on the summit trail and scree traverse)", "aids": ["3389576"] },
+        { "field": "watch_out", "month": 10, "text": "Late October snow on loose, chossy summit-trail rock; large groups wear helmets", "aids": ["3389576"] },
+        { "field": "watch_out", "month": 8, "text": "Leaving the PCT too early near the end of the ridge lands you on loose scree above the busy PCT; keep going to the true boot path", "aids": ["702685"] }
+      ]
+    }
+  ],
+  "notes": "The packet held one route (the scramble); the ice route Kendall Cliff North Face (WI3+) has no applicable tracks. Many ascents share the same PCT line; only one assigned. Trailhead pin already stored; no pin proposals."
+}

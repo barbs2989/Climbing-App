@@ -1,0 +1,90 @@
+{
+ "at": "2026-11-04T20:28:40.201Z",
+ "note": "restore with patchRow(routes, id, before)",
+ "rows": [
+  {
+   "id": "wa_hibox_mountain_east_route",
+   "before": {
+    "waypoints": []
+   }
+  },
+  {
+   "id": "wa_hoodoo_peak_sawtooth_raven_ridge_traverse",
+   "before": {
+    "waypoints": []
+   }
+  },
+  {
+   "id": "wa_icy_peak_ruth_icy_traverse",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.910208,
+      "lng": -121.591714,
+      "elev": 3100,
+      "name": "Hannegan trailhead, end of the Ruth Creek road",
+      "type": "Campsite"
+     },
+     {
+      "lat": 48.8598,
+      "lng": -121.5329,
+      "elev": 7100,
+      "name": "Ruth Mountain summit camp",
+      "type": "Campsite"
+     },
+     {
+      "lat": 48.835294,
+      "lng": -121.525779,
+      "elev": 7073,
+      "name": "Icy Peak Summit (Southeast/true summit)",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 7073
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_indian_head_peak_southwest_slopes",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.0579,
+      "lng": -121.2882,
+      "elev": 2070,
+      "name": "North Fork Sauk Trailhead",
+      "type": "Trailhead",
+      "elevFt": 2070,
+      "directions": "From Darrington, drive the Mountain Loop Highway south about 16 miles to Forest Road 49 (Sloan Creek Road). Turn east and drive about 6.4 miles to the North Fork Sauk Trailhead parking at the road's end. A Northwest Forest Pass or interagency pass is required to park."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_lundin_peak_east_ridge",
+   "before": {
+    "waypoints": []
+   }
+  },
+  {
+   "id": "wa_mount_hinman_west_ridge",
+   "before": {
+    "waypoints": []
+   }
+  },
+  {
+   "id": "wa_mount_pilchuck_east_ridge",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.055438,
+      "lng": -121.780481,
+      "elev": 4655,
+      "name": "Bathtub Lakes basin, east of Mount Pilchuck",
+      "type": "Campsite"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,129 @@
+{
+ "area_id": "wa_mount_howard",
+ "routes": [
+  {
+   "route_id": "wa_mount_howard_south_slope",
+   "season": {
+    "months": [
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "window": "May-Sep (snow-free Jul-Sep)",
+    "evidence": "WebSearch of Mountaineers/SummitPost/WTA reports: June to early September mostly snow-free, snow patches on the Nason Ridge approach into June, late-spring snow climbs; ascent histogram peaks Jun-Sep. Stored May-Sep kept."
+   },
+   "track": {
+    "aid": "2320374",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Catalog holds exactly one route on Howard. Logged route S Slope from Merritt Lake, 23 Sep 2023, solo, summit within 6 m of our pin, round trip starts 24 m and ends 50 m from our trailhead pin; report describes Crescent Lake, alder band, steep gully then grass/heather slopes to summit = our South Slope line."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "824589",
+     "verdict": "unsure",
+     "why": "South Slope, July 2017, complete, but combined with a Mastiff traverse loop; second-best choice."
+    },
+    {
+     "aid": "3352029",
+     "verdict": "unsure",
+     "why": "Sep 2026 complete round trip, no logged route or report to confirm line."
+    },
+    {
+     "aid": "3345819",
+     "verdict": "unsure",
+     "why": "Sep 2026 complete round trip, no logged route or report."
+    },
+    {
+     "aid": "2537291",
+     "verdict": "different",
+     "why": "Nason Ridge up, down via Mastiff ridge loop."
+    },
+    {
+     "aid": "2543862",
+     "verdict": "different",
+     "why": "Mastiff ridge ascent."
+    },
+    {
+     "aid": "2637850",
+     "verdict": "different",
+     "why": "Logged Northeast Ridge, descended south face."
+    },
+    {
+     "aid": "1496702",
+     "verdict": "different",
+     "why": "Loop with Mastiff."
+    },
+    {
+     "aid": "1466999",
+     "verdict": "different",
+     "why": "Traverse from Rock Mountain."
+    },
+    {
+     "aid": "1030770",
+     "verdict": "unsure",
+     "why": "Crescent Lake Trail Sep 2018, complete, but no route detail; backup only."
+    },
+    {
+     "aid": "3176882",
+     "verdict": "offseason",
+     "why": "April, from Rock Mountain TH."
+    },
+    {
+     "aid": "3176719",
+     "verdict": "offseason",
+     "why": "April."
+    },
+    {
+     "aid": "3162964",
+     "verdict": "offseason",
+     "why": "April snow ascent."
+    },
+    {
+     "aid": "2129488",
+     "verdict": "offseason",
+     "why": "February."
+    },
+    {
+     "aid": "2296818",
+     "verdict": "different",
+     "why": "Rock Mountain trailhead route, partial track not at a trailhead pin."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "pro_tips",
+     "month": 9,
+     "text": "Directly above Crescent Lake the first few hundred feet are the real crux: slide alder fills the slope, so weave between openings; heading up the boulders at the lake's far west end runs into cliffs and a short bushwhack.",
+     "aids": [
+      "2320374",
+      "824589"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "In June and early July mosquitoes are heavy at the trailhead and in the Royal Creek basin.",
+     "aids": [
+      "824589",
+      "2537291"
+     ]
+    },
+    {
+     "field": "what_to_bring",
+     "month": 7,
+     "text": "insect repellent (June-July)",
+     "aids": [
+      "824589",
+      "2537291"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Only one Howard route stored. Many other recordings are Mastiff/Nason Ridge loops. Merritt Lake trailhead pin matches all Merritt tracks (4-50 m); no pin change."
+}

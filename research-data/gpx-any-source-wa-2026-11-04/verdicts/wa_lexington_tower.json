@@ -1,0 +1,103 @@
+{
+ "area_id": "wa_lexington_tower",
+ "routes": [
+  {
+   "route_id": "wa_lexington_tower_east_face",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored late Jun-Sep. Peakbagger all-route histogram peaks Jul-Aug (28, 35). Search: Washington Pass climbing generally late May-Sep; a snowfield or snow in the east-side gully lingers into summer; a late-August ascent reported."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2970610",
+     "verdict": "unsure",
+     "why": "Starts at the Blue Lake trailhead (west side), not the pond pullout used by East Face; no logged route or report."
+    },
+    {
+     "aid": "2934944",
+     "verdict": "unsure",
+     "why": "Same Blue Lake start and only passes 167 m from the summit pin; no route named."
+    },
+    {
+     "aid": "1959734",
+     "verdict": "different",
+     "why": "Logged and described as the North Face from the Blue Lake trailhead."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_north_face_3",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Logged North Face ascents: Jul 6, Aug 12, Sep 2, Oct 1. Mountaineers route page and search: ice axe and crampons only early season, gullies hold snow early; best late Jul-Sep."
+   },
+   "track": {
+    "aid": "1959734",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Logged route North Face; the report describes the Blue Lake trailhead, a scramble to the notch where the route starts, three pitches, a final exposed 5th-class traverse and loose wet rock, all matching our text. Track is a round trip 58 m from our Blue Lake pin, summit within 11 m, July 7."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "2557405",
+     "verdict": "unsure",
+     "why": "Logged North Face 5.7, Jul 1 2024, but it has no GPS track."
+    },
+    {
+     "aid": "2970610",
+     "verdict": "unsure",
+     "why": "Aug 31 2025, same Blue Lake start and summit, but no logged route or report, so it could be any Lexington route."
+    },
+    {
+     "aid": "2934944",
+     "verdict": "unsure",
+     "why": "Aug 8 2025, no route named, ends 156 m from the summit."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_tooth_and_claw",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jun-Sep",
+    "evidence": "Stored Jun-Sep, best Jul-Sep. Search: route listing shows 8 pitches 5.12a; base snowfield and gullies are the early-season issue; gullies subject to rockfall."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2970610",
+     "verdict": "unsure",
+     "why": "No route named, and starts at the Blue Lake trailhead."
+    },
+    {
+     "aid": "2934944",
+     "verdict": "unsure",
+     "why": "No route named, 167 m from summit."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "Two unlabelled 2025 tracks (2970610, 2934944) start at the Blue Lake trailhead and could be the North Face, but nothing names the route, so they were not used."
+}

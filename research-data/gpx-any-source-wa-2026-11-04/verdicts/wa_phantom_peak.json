@@ -1,0 +1,70 @@
+{
+ "area_id": "wa_phantom_peak",
+ "routes": [
+  {
+   "route_id": "wa_luna_glacier",
+   "season": {
+    "months": [
+     6,
+     7
+    ],
+    "window": "Jun-early Aug",
+    "evidence": "Stored Jun-early Aug kept; web search: hanging glacier crux may be impassable late season."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2946690",
+     "verdict": "different",
+     "why": "Multi-day 4-night traverse over Little Beaver, Big Beaver, Challenger and its SW basin to the south side; not a round trip from the Ross Lake side, and approach is not the Luna Cirque route."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_phantom_peak_south_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "mid Jul-early Sep",
+    "evidence": "Stored mid-Jul to early Sep kept; histogram Jul 6, Aug 3."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2946690",
+     "verdict": "unsure",
+     "why": "Approaches from the Challenger SW basin and scrambles class 2-3 dirty ledges to the summit; a traverse starting at Big Beaver and ending at Hannegan, camp-based, so no qualifying round trip."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_phantom_peak_west_ridge",
+   "season": {
+    "months": [
+     7,
+     8
+    ],
+    "window": "Jul-Aug",
+    "evidence": "Only documented ascent July 30 (AAC journal found by web search); stored Jul-Aug kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2946690",
+     "verdict": "different",
+     "why": "Not a 10-pitch 5.7+ ridge climb; reports exposed class 3 scrambling from the south-west basin."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "Only one track; a through-traverse, so nothing assigned."
+}

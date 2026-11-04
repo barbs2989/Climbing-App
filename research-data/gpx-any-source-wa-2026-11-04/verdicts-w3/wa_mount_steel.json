@@ -1,0 +1,110 @@
+{
+ "area_id": "wa_mount_steel",
+ "routes": [
+  {
+   "route_id": "wa_mount_steel_first_divide",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Search: peak page gives early July to late September (cornices on the summit ridge until late June; Staircase road often closed after November). Logged ascents: Jul 14, Aug 4, Jun 1. Tracks used are Jul/Aug."
+   },
+   "track": {
+    "aid": "2276836",
+    "verdict": "same",
+    "kind": "oneway",
+    "inSeason": true,
+    "why": "Aug 11 2023 summit; starts and ends within 50 m of the Staircase pin, leaves trail just below First Divide, summit 7 m from our pin. Our catalog has exactly one route from Staircase and the track follows its described line. Flagged one-way by the mechanical check (not complete); the report calls it a single-day round trip of about 29 miles."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "2241820",
+     "verdict": "unsure",
+     "why": "Jul 8 2023, Staircase start and summit within 4 m, but distance 50.6 mi looks doubled and no report; second choice."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "approach_note",
+     "month": 8,
+     "text": "In August, the full day from Staircase to the summit and back is roughly 29 miles with around 7,000 ft of gain, so it is a very long single push or an overnight at the lower camps.",
+     "aids": [
+      "2276836"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "After First Divide the way drops about 500 ft to a meadow basin; cross it and work up through brush, then talus and scree, then a steep heather slope below the summit blocks.",
+     "aids": [
+      "2276836"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "Coming down in August, keeping well to the climber's left through the lower brush helped avoid the second steep, cliffy bushwhack.",
+     "aids": [
+      "2276836"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 8,
+     "text": "The upper heather slope is steep; a slip there could mean a long tumble, and it is far worse if wet.",
+     "aids": [
+      "2276836"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 8,
+     "text": "The south summit block is exposed with crumbly rock and felt closer to Class 4 than the rest of the route.",
+     "aids": [
+      "2276836"
+     ]
+    },
+    {
+     "field": "what_to_bring",
+     "month": 8,
+     "text": "Trekking poles or microspikes for the steep upper heather slope (late summer, dry)",
+     "aids": [
+      "2276836"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_mount_steel_standard",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Search: peak page gives early July to late September (cornices on the summit ridge until late June; Staircase road often closed after November). Logged ascents: Jul 14, Aug 4, Jun 1."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2276836",
+     "verdict": "different",
+     "why": "Starts at Staircase, 28.7 km from the Duckabush pin; it is the First Divide line."
+    },
+    {
+     "aid": "2241820",
+     "verdict": "different",
+     "why": "Staircase start; different approach."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "Both harvested tracks are Staircase / First Divide ascents; none from Duckabush. The Staircase pin (47.5155,-123.3295) is within 50 m of the recordings; no pin move needed."
+}
