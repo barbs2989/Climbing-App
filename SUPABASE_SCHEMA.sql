@@ -9,13 +9,14 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 86 tables, 860 columns, 447 keyed/checked constraints (156 foreign keys), 264 RLS policies.
+-- Counts: 87 tables, 870 columns, 456 keyed/checked constraints (157 foreign keys), 266 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
 -- accessibility_reports (accessibility_reports_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- account_standing (account_standing_set_by_fkey): FOREIGN KEY (set_by) REFERENCES auth.users(id) ON DELETE SET NULL
 -- account_standing (account_standing_user_id_fkey): FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
+-- app_errors (app_errors_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- app_feedback (app_feedback_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- areas (areas_parent_id_fkey): FOREIGN KEY (parent_id) REFERENCES areas(id)
 -- areas (areas_walkin_submission_id_fkey): FOREIGN KEY (walkin_submission_id) REFERENCES gps_submissions(id) ON DELETE SET NULL
@@ -209,6 +210,31 @@ CREATE TABLE public.account_standing (
 );
 ALTER TABLE public.account_standing ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "standing read own or admin" ON public.account_standing AS PERMISSIVE FOR SELECT TO public USING (((user_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
+
+CREATE TABLE public.app_errors (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid,
+  kind text NOT NULL,
+  message text NOT NULL,
+  stack text,
+  component_stack text,
+  path text,
+  build text,
+  user_agent text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT app_errors_pkey PRIMARY KEY (id),
+  CONSTRAINT app_errors_build_check CHECK (((build IS NULL) OR (char_length(build) <= 80))),
+  CONSTRAINT app_errors_component_stack_check CHECK (((component_stack IS NULL) OR (char_length(component_stack) <= 4000))),
+  CONSTRAINT app_errors_kind_check CHECK ((kind = ANY (ARRAY['render'::text, 'error'::text, 'rejection'::text]))),
+  CONSTRAINT app_errors_message_check CHECK (((char_length(message) >= 1) AND (char_length(message) <= 1000))),
+  CONSTRAINT app_errors_path_check CHECK (((path IS NULL) OR (char_length(path) <= 300))),
+  CONSTRAINT app_errors_stack_check CHECK (((stack IS NULL) OR (char_length(stack) <= 4000))),
+  CONSTRAINT app_errors_user_agent_check CHECK (((user_agent IS NULL) OR (char_length(user_agent) <= 300))),
+  CONSTRAINT app_errors_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
+);
+ALTER TABLE public.app_errors ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "admin deletes errors" ON public.app_errors AS PERMISSIVE FOR DELETE TO public USING (is_admin(auth.uid()));
+CREATE POLICY "admin reads errors" ON public.app_errors AS PERMISSIVE FOR SELECT TO public USING (is_admin(auth.uid()));
 
 CREATE TABLE public.app_feedback (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
