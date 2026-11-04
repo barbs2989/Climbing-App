@@ -1,0 +1,24 @@
+{
+ "qc_7_gully_walls": {
+  "_expect": {"name": "Gully Walls", "region": "Quebec"},
+  "blurb": "Gully Walls is a cluster of short granite faces around a central gully in the middle of the Mont Rigaud cliff line, in the Montérégie region west of Montreal. Most of the 21 routes are bolted sport lines, with a pair of top-rope routes and a couple of trad cracks. The grades cluster from 5.9 to 5.11, with a handful of 5.12s at the top end and a few easy options near the bottom. The routes are shorter than elsewhere on the hill, which suits quick laps and warm-ups. The gully gives a simple walk to the cliff top, handy for setting up top ropes, and one of its inner walls stays out of the sun.",
+  "review": {"sources": ["https://mountainproject.com/area/106884747/gully-walls?print=1", "https://mountainproject.com/area/106884635/mont-rigaud"]}
+ },
+ "qc_12_la_crois_e_des_chemins": {
+  "_expect": {"name": "12 La Croisée des Chemins", "region": "Quebec"},
+  "blurb": "La Croisée des Chemins is one of the busiest sectors of the Lac Long gneiss cliff in Portneuf, Quebec, northwest of Quebec City. It holds 24 routes, two thirds of them bolted and the rest trad, so it mixes well for a party with different racks. A lower tier of bolted lines in the 5.7 to 5.10 range leads to or links with trad upper pitches. Overall the grades run from 5.6 up to the low 5.13s, with the bulk between 5.9 and 5.11. Expect clean, crack-and-corner gneiss, and a short trail with a footbridge to reach the wall.",
+  "review": {"sources": ["https://rakkup.com/guidebook/quebec-lac-long-rock-climbing/la-croisée-des-chemins/s22263", "https://rockaroundtheworld.co.uk/2019/10/14/lac-long/", "https://www.mountainproject.com/area/108918476/lac-long"]}
+ },
+ "qc_05_l_ar_ne": {
+  "_expect": {"name": "05 l'Arène", "region": "Quebec"},
+  "blurb": "L'Arène is a trad-leaning sector on the gneiss walls at Lac Long, in the Portneuf region of Quebec. Of its 22 routes, 16 are traditional and 6 are bolted. Difficulty starts around 5.7 and reaches 5.12, though most lines fall between 5.8 and 5.11, so it suits climbers who are comfortable placing their own gear on moderate to hard single-pitch routes. It is reached by following the base of the cliff along the trail, and it counts among the popular sectors of the lake's cliff.",
+  "review": {"sources": ["https://rakkup.com/guidebook/quebec-lac-long-rock-climbing/l'arène/s22256", "https://www.mountainproject.com/area/108918476/lac-long"]}
+ },
+ "_skipped": {
+  "qc_c_north_ampitheatre_jedi_closed": "marked closed; could not fetch two pages about it",
+  "qc_les_fesses": "only one fetched page about the crag (second fetches returned nothing on it)",
+  "qc_proximus": "could not fetch two pages describing the crag (only a stub approach page and binary PDFs)",
+  "qc_crapaud_de_mer": "only one readable page fetched (second site unreachable)",
+  "qc_b_face_sud": "only one page about the Quebec Face Sud fetched; second candidate was a different Face Sud in France"
+ }
+}
