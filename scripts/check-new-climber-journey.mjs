@@ -140,6 +140,25 @@ try {
     log("  blanked the fixture's disciplines and grades — this walk is about a NEW climber");
   }
 
+  // A NAME ONLY THIS RUN'S MATE CARRIES. Phase 3 finds the mate by typing their name into the share
+  // sheet, whose search is `profiles.name ilike %q%` — and every fixture's mate is "Robin Belay".
+  // Any other walk alive at the same moment (check:signed-in, check:outage, another journey; the
+  // orphan sweep leaves accounts under 45 min alone on purpose) adds its own Robin Belay to the
+  // results, and the walk died on "expected exactly 1 Send control … found 5" with nothing wrong
+  // in the app (2026-11-04, five concurrent walks). The handle (@robinbelay) is untouched, so
+  // every later phase that reads it reads what it always did.
+  {
+    const unique = `${fixture.mate.name} ${fixture.mate.id.slice(0, 6)}`;
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${fixture.mate.id}`, {
+      method: "PATCH", headers: { ...H, Prefer: "return=representation" },
+      body: JSON.stringify({ name: unique }),
+    });
+    const rows = r.ok ? await r.json() : [];
+    if (!r.ok || rows.length !== 1) dead(`could not give the mate a per-run name: ${r.status} ${JSON.stringify(rows).slice(0, 200)}`);
+    fixture.mate.name = unique;
+    log(`  the mate is "${unique}" for this run, so a concurrent walk's Robin Belay cannot match the share search`);
+  }
+
   // THE BASELINE IS LOAD-BEARING. "the columns are populated after onboarding" proves nothing
   // unless they were empty before -- a fixture that seeds a profile would make every assertion
   // below pass whatever the app did.
