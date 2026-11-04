@@ -44,7 +44,7 @@ room for side-panel ads later. The phone app keeps its own look.
 - **Desktop (1024px and wider) — the website shell:**
   - A full-width sticky **top bar** (64px): ☰ Menu at the far left, the ClimbMatch wordmark (→ Home), a
     search box for every climb and place **centred in the window** (owner 2026-11-04; `WideSearch` sits on
-    the 50vw midline out of the row's flow, 220–520px wide so it never reaches either end; `/` jumps to
+    the 50vw midline out of the row's flow, 220–680px wide so it never reaches either end; `/` jumps to
     it; arrow keys and Enter pick a hit), and at the right Saved · Alerts · Calendar · Messages and your
     avatar (→ Profile).
   - **Drawn ~10% larger** (owner 2026-11-04, `ZOOM` = 1.1 in `lib/wideLayout.js`): the page column
@@ -66,8 +66,13 @@ room for side-panel ads later. The phone app keeps its own look.
     invites, unread chats, a day or a climb to confirm, amber), then unread notifications not already one
     of those, and the SAME count. A guest is told to sign in. *Best day to climb* is not here; it opens from the Menu. Ads, when they come, take slots in this rail
     (desktop only).
-  - Between 1024 and 1279px the sidebar shows **icons only** and there is no rail. The whole shell is
-    capped at 1288px and centred (a 700px page column), so a big monitor gets plain background either side.
+  - Between 1024 and 1279px the sidebar shows **icons only** and there is no rail.
+  - **Facebook-style edges** (owner 2026-11-04; it was one 1288px block centred as a whole, so on a wide
+    monitor the sidebar floated ~300px in): the sidebar and ☰ Menu sit 12px from the window's left, the rail
+    and the avatar hold the right, and the 700px page column is centred in the WINDOW, sliding or narrowing
+    only where it would come within 24px of the sidebar or rail (`wideGeom`: 1280 → column 276–928, rail
+    952; 1920 → 610–1310, rail 1592). The empty space either side of the column on a big monitor is where
+    side ads can go later.
   - A site **footer** under every page: ClimbMatch links, Legal links, ©. It is the ONLY home of About,
     Help, Feedback, Privacy and Terms on desktop. The **directory of every state with climbs** heads it on
     the Climbs tab and its route and area pages only (owner 2026-11-04, `showStates`).
