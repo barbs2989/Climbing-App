@@ -1,0 +1,5 @@
+Tier 20 = crags/walls/peaks with 20-29 climbs and no blurb (1,697 at the start, 2026-11-04).
+Inputs: node scripts/enrich/area-page-inputs.mjs --min 20 --max 29 --skip <done-ids.json> --per 8 --prefix u
+  (PostgREST caps a read at 1000 rows: the first build reached New Mexico; rebuild with --skip once those are written.)
+Research brief: BRIEF.md (fetched pages only; NO access/closure/fee text: access is route-level).
+Applied: none yet. Written, not yet applied: u01-u16.
