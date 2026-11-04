@@ -1,4 +1,4 @@
--- 0380: your row also says how many OTHER climbers the scope holds (stats.standing._others).
+-- 0401: your row also says how many OTHER climbers the scope holds (stats.standing._others).
 --
 -- Since 0379, leaderboard() returns only climbers in some board's top 100, so a climber with
 -- nothing on any board no longer comes back. The app decided "No climbing friends yet" and "No

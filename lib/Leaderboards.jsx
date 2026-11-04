@@ -105,7 +105,7 @@ export default function Leaderboards({meLive,onView,onClimb,logs,connections,cat
   // Empty means nobody BUT you. Real friends are uuids the demo pool never held, so the old
   // `connections.length` test called a board of one full and ranked you #1 of 1.
   // Since 0379 a climber with nothing on any board does not come back, so the scope's size comes
-  // from your row (0380's standing._others), not from the rows that did.
+  // from your row (0401's standing._others), not from the rows that did.
   const scopeOthers=real?((((lbRows.find(r=>r.is_me)||{}).stats||{}).standing||{})._others):undefined;
   const othersInScope=typeof scopeOthers==="number"?scopeOthers:scopePeople.filter(pp=>pp.id!==0).length;
   const friendsEmpty=scope==="friends"&&othersInScope===0;
