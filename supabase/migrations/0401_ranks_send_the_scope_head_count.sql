@@ -258,6 +258,6 @@ begin
 end $function$;
 
 comment on function public.leaderboard(text, text, integer) is
-  'Ranks rows (0379): every climber in the top 100 of any board, plus the caller, whose stats.standing holds their rank and each board''s size, and _others, the other climbers in the scope (0380).';
+  'Ranks rows (0379): every climber in the top 100 of any board, plus the caller, whose stats.standing holds their rank and each board''s size, and _others, the other climbers in the scope (0401).';
 
 commit;
