@@ -1,0 +1,88 @@
+{
+ "wy_hound_dog_crag": {
+  "_expect": {
+   "name": "Hound Dog Crag",
+   "region": "Wyoming"
+  },
+  "blurb": "Hound Dog is a small sport crag high up in the lower part of Ten Sleep Canyon, made up of two walls. It holds 23 routes, almost all bolted, plus a single trad line. The difficulty leans hard: about a third are 5.12, with a handful each of 5.9, 5.10 and 5.11, a few easy starters from 5.6 to 5.8, and one 5.13 at the top end. A leaning pile of big boulders forms a cave that marks the base, and many route names follow a dog-breed theme. It is a better pick for cool weather, or for the late hours of a warm day. The walk in takes roughly fifteen minutes.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/106501482",
+    "https://rakkup.com/guidebook/ten-sleep-rock-climbing/hound-dog/s18201"
+   ]
+  }
+ },
+ "wy_haystack_mountain": {
+  "_expect": {
+   "name": "Haystack Mountain",
+   "region": "Wyoming"
+  },
+  "blurb": "Haystack Mountain is a granite peak in the Deep Lake area of the Wind River Range, rising steeply above Clear Lake. Its faces carry about two dozen mostly alpine-style routes with a few trad lines, from a fourth-class scramble up the north shoulder to long multi-pitch climbs at 5.13 with aid. The middle of the range, 5.8 to 5.11, has the most lines, and many of them are on the north side. This is a serious backcountry day: a long hike in, a trail from the lake, then rough ground left by glaciers to reach the base. The terrain is committing, and a slip on the easier routes can still be costly.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105827762/haystack-mountain?print=1",
+    "https://en.wikipedia.org/wiki/Haystack_Mountain_(Wyoming)"
+   ]
+  }
+ },
+ "wy_single_malt_wall_the": {
+  "_expect": {
+   "name": "Single Malt Wall, The",
+   "region": "Wyoming"
+  },
+  "blurb": "The Single Malt Wall sits in the Lower Canyon Granite zone, a few miles west of Cody near the river at the bottom of Shoshone Canyon. It has 23 routes, nearly all bolted, with one trad dihedral among them. This is a wall for stronger climbers: there is nothing easier than 5.10, with six at that level, eight at 5.11, six at 5.12 and three at 5.13. The rock is blocky and featured, and the wall stayed unnoticed for years behind an old cable before the lines were developed. The wider canyon is comfortable in spring and fall and often pleasant through summer.",
+  "review": {
+   "sources": [
+    "https://thetopo.com/crags/cody-wy-single-malt-wall",
+    "https://www.mountainproject.com/area/106159177/lower-canyon-granite"
+   ]
+  }
+ },
+ "wy_4_rodeo_drive": {
+  "_expect": {
+   "name": "Rodeo Drive",
+   "region": "Wyoming"
+  },
+  "blurb": "Rodeo Drive is the far right wall of the OK Corral sector at Wild Iris, south of Lander. It has 22 routes, nearly all sport plus one trad crack. The spread is wide: a solid core of 5.9 and 5.10 lines, a few 5.11s, as many 5.12s as 5.10s, one 5.7 and a single 5.13 for climbers wanting a challenge. Mixed face and crack climbing gives it some variety. The OK Corral cliffs rise from dense pine, so the cooler, shaded feel suits warm days. From the camping road you simply keep going along it, or turn right once the wall comes into view.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/117760572/rodeo-drive",
+    "https://www.mountainproject.com/area/105840830/ok-corral"
+   ]
+  }
+ },
+ "wy_4_chainsaw_willy_area": {
+  "_expect": {
+   "name": "Chainsaw Willy Area",
+   "region": "Wyoming"
+  },
+  "blurb": "Chainsaw Willy Area is a sport zone on Fairfield Hill above Sinks Canyon near Lander, the fourth section of Fairfield Central. It suits a relaxed day on moderates: 22 bolted routes, with most at 5.10, two each at 5.8 and 5.9, and four at 5.11. Lines are mostly short, under a rope length, and they get taller toward the far end of the wall. Reaching it means a long traverse across the hillside from one of the two trails that serve the cliff, since heading straight up is an unpleasant scramble. The wider cliff is known for steep, longer lines, but this part is the gentler corner.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/123492526/chainsaw-willy-area",
+    "https://www.mountainproject.com/area/105827602/fairfield-central"
+   ]
+  }
+ },
+ "wy_island_the_climbs": {
+  "_expect": {
+   "name": "Island, The Routes",
+   "region": "Wyoming"
+  },
+  "blurb": "The Island is a free-standing pillar about 100 feet tall in Shoshone Canyon, west of Cody, with climbing on nearly every side. It holds 23 routes on a mix of short trad, sport and lines treated as alpine in style. Grades run from easy fifth class to 5.12, with a cluster at 5.8 and a healthy number of 5.10, 5.11 and 5.12 lines, so both newer leaders and strong ones will find something. Because the rock stands alone you can follow the sun or hide from it depending on the hour and season. The parking area sits right at the base, so the walk is almost nothing.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106157884/the-island",
+    "https://www.mountainproject.com/area/106157878/cody"
+   ]
+  }
+ },
+ "_skipped": {
+  "wy_durrance_approach": "no fetched page is about the Durrance Approach itself (the Devils Tower page has no area description)",
+  "wy_switchbax_power_tower_wall": "no page about the wall itself found (only Guernsey State Park and Area 5 classics list; the Power Tower Wall page found is a different place in Fremont Canyon)"
+ },
+ "_conflicts": {
+  "wy_island_the_climbs": "stored rock gneiss; fetched pages call it granite: https://www.mountainproject.com/area/106157884/the-island and https://www.mountainproject.com/area/106157878/cody",
+  "wy_single_malt_wall_the": "stored rock gneiss; fetched pages call it granite: https://thetopo.com/crags/cody-wy-single-malt-wall and https://www.mountainproject.com/area/106159177/lower-canyon-granite"
+ }
+}

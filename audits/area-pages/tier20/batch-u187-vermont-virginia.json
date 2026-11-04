@@ -1,0 +1,31 @@
+{
+ "vt_lasso_ledge": {
+  "_expect": { "name": "Lasso Ledge", "region": "Vermont" },
+  "blurb": "Lasso Ledge is a small cliff in Eagle Hollow in central Vermont, a short drive up a dirt road from the main hollow crag. It holds about two dozen routes, nearly all of them bolted, with a handful of trad lines mixed in. The cliff is modest in height, and the grades lean moderate: a big cluster sits around 5.7, with a smaller spread of 5.8 to 5.10 and a single 5.11. Climbs are generally low in angle with short, reachy cruxes. Leaf cover keeps the wall shaded and comfortable through summer, and more sun reaches it once the trees drop their leaves. Expect some lichen and dirt, and bring a few nuts and small cams for the trad leaning lines.",
+  "review": { "sources": ["https://www.mountainproject.com/area/116126977/lasso-ledge", "https://rakkup.com/guidebook/vermont-rock-climbing/lasso-ledge/s22429"] }
+ },
+ "vt_bolted_boulder": {
+  "_expect": { "name": "Bolted Boulder", "region": "Vermont" },
+  "blurb": "Bolted Boulder is the bigger of two neighbouring blocks that sit just above the road at the top of Smugglers' Notch, close to Stowe. It is a bouldering-only spot with around 22 problems and a wide spread: a few gentle slabs facing the road, a solid middle band of roughly V2 to V6, and some steep, slopey overhanging lines in the V8 to V10 range, plus a couple of harder outliers. Problem types include mantles, dynos, arêtes, traverses and crimpy faces. Landings are mostly decent, though a couple of pads help, and there are several easy ways to get back down. The boulder is only a few steps from the pavement, so it works for a quick session.",
+  "review": { "sources": ["https://mountainproject.com/area/121762111/bolted-boulder", "https://www.mountainproject.com/area/118969602/2020-landslide-boulders"] }
+ },
+ "vt_green_cave": {
+  "_expect": { "name": "Green Cave", "region": "Vermont" },
+  "blurb": "Green Cave is a cave-shaped boulder formation in the cluster of blocks behind the visitor center and main lot in Smugglers' Notch, Vermont. It holds about twenty bouldering problems, and the spread runs wide: a few easy lines near V1, a middle group between roughly V3 and V9, and a hard end that reaches V12 and V13. The overhanging, shaded cave keeps cool, so it can suit warmer days. Reaching it means following the uphill path past the roped-practice boulders until the cave comes into view on the right. The area around it is a dense maze of boulders, so first visits go easier with someone who knows the way.",
+  "review": { "sources": ["https://mountainproject.com/area/109500783/green-cave", "https://www.mountainproject.com/v/106558952"] }
+ },
+ "vt_red_light_district": {
+  "_expect": { "name": "Red Light District", "region": "Vermont" },
+  "blurb": "Red Light District is a roadside bouldering spot on Mount Hor in northern Vermont's Northeast Kingdom. It has about twenty problems, all bouldering, grouped on a few separate blocks: two sit beside the road and a couple more are down a gully to the left. Grades are friendly for the most part, with a broad middle of V2 to V5 and a few V0 warm-ups, then a handful of problems from V7 up to V9. The setting is quiet and wooded, and the walk from the car is tiny. Bring a couple of pads, since landings among the talus can be uneven.",
+  "review": { "sources": ["https://mountainproject.com/area/106915027/red-light-district", "https://www.mountainproject.com/area/106915015/mount-hor"] }
+ },
+ "_skipped": {
+  "vt_kettle_pond_boulders": "no fetched page about the crag itself (only parent Groton page and route/forum pages)",
+  "vt_backyard_boulder": "no fetched page about the crag itself (only parent Top of the Notch page and a route page)",
+  "va_reflector_oven": "no fetchable page about the crag itself (SummitPost 403; only parent Old Rag page and a club event page)",
+  "va_pavilion_the": "no fetched page about the crag itself (only the Breaks park page, which lists it without detail)"
+ },
+ "_conflicts": {
+  "va_pavilion_the": "stored rock is shale but the park page describes Breaks climbing as sandstone: https://mountainproject.com/area/111742350/breaks-interstate-park"
+ }
+}

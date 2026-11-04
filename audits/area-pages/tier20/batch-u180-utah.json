@@ -1,0 +1,44 @@
+{
+ "ut_b_crags_spotted_wolf_canyon": {
+  "_expect": {"name": "B Crags (Spotted Wolf Canyon)", "region": "Utah"},
+  "blurb": "A cluster of sandstone slabs and cracks on the San Rafael Reef, reached from a side canyon off the I-70 corridor. Most of the 23 climbs are trad, with a couple of sport lines and one boulder problem. Difficulty runs from easy fifth class up through the 5.12s, with the bulk of lines between 5.8 and 5.10. Some are one or two pitches and make a gentle first taste of Reef climbing; others stack up into long multi-pitch outings. Expect an adventurous feel: slab climbing here can be sparsely protected, so it suits climbers who are comfortable with runouts and route-finding and who are not simply chasing numbers.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106174446/b-crags-spotted-wolf-canyon", "https://www.mountainproject.com/v/105717146"]}
+ },
+ "ut_dylan_wall": {
+  "_expect": {"name": "Dylan Wall", "region": "Utah"},
+  "blurb": "The most popular wall along the Mexican Mountain Road in the northern San Rafael Swell, a stretch of Wingate sandstone cliffs above the desert floor. Around two dozen routes, nearly all trad single pitches of high quality, with a lone sport line. The grade range is tidy: a few 5.9s, a large group of 5.10s, a fair number of 5.11s, and a handful at 5.12. The wall faces south and takes sun all day, so it is a better pick when the air is cool. Getting to the base takes a real uphill hike, and the area sees far fewer climbers than Moab or Indian Creek.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105717075/dylan-wall", "https://mountainproject.com/area/108029621/mexican-mountain-road-area"]}
+ },
+ "ut_mouth_boulders": {
+  "_expect": {"name": "Mouth Boulders", "region": "Utah"},
+  "blurb": "A small collection of large boulders at the mouth of Rock Canyon, just east of Provo, on the canyon's south side. Almost all of the 23 lines are boulder problems, plus two short bolted routes. The problems are mostly easy to moderate, clustered between VB and V2 with a few up to V4, so it suits beginners and anyone wanting a quick session close to the trailhead. The bolted routes sit around 5.10 and 5.11. The canyon around it is uncrowded for a spot so near the city, and the walk from the parking area is short.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105959474/mouth-boulders", "https://mountainproject.com/area/105739292/rock-canyon"]}
+ },
+ "ut_rodent_ranch": {
+  "_expect": {"name": "Rodent Ranch", "region": "Utah"},
+  "blurb": "A sport crag in Logan Canyon, in the Cache Valley area of northern Utah. It holds 23 climbs, nearly all bolted, with a single top-rope line. There are two climbs in the high 5.8 to 5.10 range, then the bulk of the area between 5.11 and 5.12, finishing with a few hard routes in the 5.13 and low 5.14 range. That makes it a better fit for intermediate to strong climbers than for beginners. It is an enjoyable, compact crag a short walk up the road from the lot used for a neighboring crag. Logan Canyon is cold in winter, so plan for the warmer months.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106593859/rodent-ranch", "https://mountainproject.com/area/105739310/logan-canyon"]}
+ },
+ "ut_gorilla_cliffs": {
+  "_expect": {"name": "Gorilla Cliffs", "region": "Utah"},
+  "blurb": "A north-facing limestone cliff in the Utah Hills, west of St. George, directly across a wash from the Snake Pit. All 22 routes are sport. The rock is smooth gray limestone, and most lines are short, around 30 to 40 feet, though the right-hand side stretches taller and stays steep. Grades start near 5.9 and 5.10 but concentrate heavily in the 5.11 to 5.13 range, with a single 5.14. Because the face stays in shade nearly all day, it is a summer refuge; in winter it can be brutal, especially in wind. The drive in is rough and ends at a short walk to the base.",
+  "review": {"sources": ["https://mountainproject.com/area/108564268/gorilla-cliffs", "https://www.mountainproject.com/area/107377990/the-snakepit?print=1"]}
+ },
+ "ut_lake_point_crag": {
+  "_expect": {"name": "Lake Point Crag", "region": "Utah"},
+  "blurb": "A small roadside crag near the town of Lake Point, at the northern end of the Oquirrh Mountains west of Salt Lake City. Almost everything here is bouldering, with a top-rope line or two. Problems lean toward the easy end, mostly VB to V3, and many are highball, tall enough to ask for confidence from beginners. A few much harder problems exist for strong boulderers. The cliff is shaded in the morning and evening, wind can pick up hard, weeds can be a nuisance, and bugs are bad in the spring. A dirt pull-off sits right beside the rock.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107744686", "https://mountainproject.com/area/107696891/oquirrh-mountains"]}
+ },
+ "ut_hell_wall": {
+  "_expect": {"name": "Hell Wall", "region": "Utah"},
+  "blurb": "A steep limestone wall in the Hell Area of American Fork Canyon, along the Alpine Loop in the southern Wasatch. Of its 22 lines, nearly all are sport, with a single boulder problem. This is a place for strong climbers: just one route is near 5.9, two fall in the 5.11s, and the great majority are 5.12 and 5.13, topping out around 5.14a. The climbing is powerful and bouldery, demanding good technique and strong fingers. The area is regarded as the birthplace of limestone sport climbing in the country and remains a favorite training ground for Salt Lake climbers. The walk from the road is only a few minutes.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106518752/hell-wall", "https://www.mountainproject.com/area/110877775/hell-area"]}
+ },
+ "_skipped": {
+  "ut_mammoth_wall": "No fetched page is about Mammoth Wall itself: only the Dry Canyon parent page (which lists it as a sector with no description) and route pages; a second dedicated page could not be fetched."
+ },
+ "_conflicts": {
+  "ut_rodent_ranch": "Stored rock is quartzite, but https://www.mountainproject.com/area/106593859/rodent-ranch calls it a limestone crag (Logan Canyon page lists limestone and quartzite); rock left out of the blurb.",
+  "ut_mouth_boulders": "Stored rock is limestone and https://www.mountainproject.com/area/105959474/mouth-boulders agrees, but https://mountainproject.com/area/105739292/rock-canyon says quartzite dominates near the canyon mouth; rock left out of the blurb."
+ }
+}
