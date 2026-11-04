@@ -172,21 +172,25 @@ export function WideRail({ upcoming, alerts, waiting, guest, onSignIn, onOpenCal
   </aside>;
 }
 
-/* SITE FOOTER. A directory of every state the catalog holds, then the site's own links, the way
-   Mountain Project ends every page. The states list is a DB read: a failure says so. */
+/* SITE FOOTER. On the climbing pages a directory of every state the catalog holds (the way Mountain
+   Project ends a page), then a THIN bar of two lines: the site's links, then © and the legal links,
+   the way GitHub, Reddit and Google end theirs (owner 2026-11-04: "make it thinner on the bottom"; it
+   was two tall stacked lists). One line does not fit the 700px column; each line wraps, never clips. The states list
+   is a DB read: a failure says so. */
 /* `showStates` (owner 2026-11-04): the state directory is a way into the CATALOG, so it ends the
-   Climbs tab and its route and area pages only; Home, Crews, Logbook… end on the short footer. */
+   Climbs tab and its route and area pages only; Home, Crews, Logbook… end on the bar alone. */
 export function WideFooter({ onOpenState, links, legal, showStates }) {
   const statesQ = useStates(); // read always (hooks order); drawn only where showStates says
   const states = ((statesQ.data || []).filter(s => Number(s.route_count) > 0)).slice().sort((a, b) => a.name.localeCompare(b.name));
   const link = { padding: "4px 0", minHeight: 24, border: "none", background: "transparent", color: C.textSub, fontSize: 13, cursor: "pointer", textAlign: "left" };
-  const col = (title, items) => <div style={{ minWidth: 0 }}><div style={{ ...SECTION, marginBottom: 8 }}>{title}</div><div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>{items.map(([label, go]) => <button key={label} onClick={go} style={link}>{label}</button>)}</div></div>;
-  return <footer style={{ borderTop: "1px solid " + C.border, marginTop: 28, padding: "24px 4px 40px", color: C.textSub }}>
-    {USE_DB && showStates ? <div style={{ marginBottom: 22 }}><div style={{ ...SECTION, marginBottom: 8 }}>Explore climbs by state</div>
+  const dir = USE_DB && showStates;
+  const row = (label, items) => <nav aria-label={label} style={{ display: "flex", flexWrap: "wrap", alignItems: "center", columnGap: 18 }}>{items.map(([t, go]) => <button key={t} onClick={go} style={{ ...link, fontSize: 12.5, whiteSpace: "nowrap" }}>{t}</button>)}</nav>;
+  return <footer style={{ borderTop: "1px solid " + C.border, marginTop: 28, padding: "0 4px 14px", color: C.textSub }}>
+    {dir ? <div style={{ padding: "20px 0 16px", borderBottom: "1px solid " + C.border }}><div style={{ ...SECTION, marginBottom: 8 }}>Explore climbs by state</div>
       {statesQ.isError ? <div style={{ fontSize: 13, color: C.amber }}>The list of states couldn’t load right now.</div>
         : <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", columnGap: 16 }}>{states.map(s => <button key={s.id} onClick={() => onOpenState(s)} style={link}>{s.name}</button>)}</div>}
     </div> : null}
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 16, maxWidth: 480 }}>{col("ClimbMatch", links)}{col("Legal", legal)}</div>
-    <div style={{ marginTop: 22, fontSize: 12, color: C.textMuted }}>{"© " + new Date().getFullYear() + " ClimbMatch"}</div>
+    <div style={{ paddingTop: 10 }}>{row("ClimbMatch", links)}</div>
+    <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", columnGap: 18 }}><span style={{ fontSize: 12.5, color: C.textMuted, whiteSpace: "nowrap" }}>{"© " + new Date().getFullYear() + " ClimbMatch"}</span>{row("Legal", legal)}</div>
   </footer>;
 }
