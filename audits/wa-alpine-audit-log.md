@@ -36405,3 +36405,42 @@ on a rarely-climbed, little-documented Olympics summit.
 No SQL file this batch — nothing confirmed wrong enough to fix.
 
 Next batch will continue id-ascending from `wa_iron_cap_mountain_south_route_2` (see progress file).
+
+## Batch 502 (pass 8) — 2026-11-04
+
+Checked 8 routes across three peaks: `wa_iron_peak_teanaway_scramble`, five Jack Mountain routes
+(`east_ridge`, `nohokomeen_headwall`, `northeast_glacier`, `south_face`, `southeast_ridge_direct`),
+and two Johannesburg Mountain routes (`cj_couloir`, `northeast_buttress`).
+
+Seven clean, one flagged — no SQL this batch. Iron Peak (Teanaway)'s `high_point_ft: 6510` matches
+Mountaineers.org/SummitPost/Yellowleaf exactly (WTA's 6,160 ft and TopoQuest's 6,443 ft are minority
+outliers, not a contradiction). Jack Mountain East Ridge's FA ("Carl Skoog and Gordon Skoog, July 16,
+1984") is confirmed via Wikipedia and a Cascade Climbers forum post from Lowell Skoog, a relative of
+the pair. Jack Mountain Northeast Glacier's FA ("Fred Beckey, Dallas Kloke and Reed Tindall, July 19,
+1978") is confirmed via Wikipedia, which cites Beckey's own Cascade Alpine Guide. Jack Mountain
+Southeast Ridge (Direct)'s FA ("John Anderson and Alan Kearney, August 1977") is internally consistent
+with the South Face route's own description of a harder 1977 direct variation. Johannesburg
+Mountain's `high_point_ft: 8200` (both routes) matches SummitPost/Wikipedia (TopoZone/USGS give 8,100
+ft — minor datum variance, not flagged). The CJ Couloir's FA ("Calder Bressler, Bill Cox, Ray W.
+Clough, Tom Myers — July 26, 1938 (Ptarmigan Traverse party; also the peak's first ascent)") is
+confirmed via Wikipedia/SummitPost. The Northeast Buttress's stored FA ("1957, by the Western Rib
+start (party not recorded)") is consistent with an AAC source naming "the 1957 Northeast Rib" as a
+separate, older feature from a "Northeast Rib (1951 Route)" that other sources (Steph Abegg,
+Cascade Climbers) describe as a distinct line — no source names the 1957 party either, so "not
+recorded" stands.
+
+Flagged for human review: all five Jack Mountain routes store `high_point_ft: 9075`, but published
+sources genuinely disagree on Jack Mountain's elevation (9,032 ft TopoQuest/USGS quad, 9,066 ft
+SummitPost, 9,066–9,070 ft ListsOfJohn LiDAR, 9,075 ft Wikipedia/MyTopo) with no single resolved
+authoritative figure. `wa_jack_mountain_south_face` already carries a `data_quality.gaps` entry
+documenting this exact ambiguity and says the value was "left unchanged pending a clearer source" —
+but the other four routes on the same peak (`east_ridge`, `nohokomeen_headwall`, `northeast_glacier`,
+`southeast_ridge_direct`) store the identical 9,075 ft figure with no such caveat. This isn't a wrong
+number — 9,075 ft is itself a legitimately-sourced value (Wikipedia) — just an inconsistency in which
+rows disclose a known, real ambiguity and which don't. Left for a human to decide whether to
+propagate `south_face`'s `data_quality` caveat to its four siblings.
+
+No SQL file this batch — nothing confirmed wrong enough to fix.
+
+Next batch will continue id-ascending from `wa_johannesburg_mountain_northeast_buttress` (see
+progress file).
