@@ -19,7 +19,11 @@ import fs from "fs";
 import crypto from "crypto";
 import { execFileSync } from "child_process";
 
-const APP = "ClimbMatch.jsx", CORE = "ClimbMatchCore.jsx";
+// The Climbs tab's `{!USE_DB&&<>` seed branch and its `<DbAreaBrowser` live half moved out of App into
+// RoutesTab.tsx (PR61+), and the one `if(!USE_DB){` block into ReportUserSheet.tsx. The guard reads
+// those files as App (APP_FILES = MOVED["ClimbMatch.jsx"]), so each anchor is repointed to where it
+// lives now rather than the case being dropped.
+const APP = "src/components/RoutesTab.tsx", IF_FILE = "src/components/ReportUserSheet.tsx", CORE = "ClimbMatchCore.jsx";
 const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex").slice(0, 10);
 
 // anchors, each asserted to occur exactly once
@@ -51,7 +55,7 @@ const CASES = [
   { name: "7-undeclared-in-a-USE_DB-ternary-alternate", expect: "fail", want: /InjD/,
     edits: [[APP, LIVE_ANCHOR, "{USE_DB?null:<InjD/>}" + LIVE_ANCHOR], [CORE, null, CORE_TAIL]] },
   { name: "8-undeclared-in-an-if-not-USE_DB-block", expect: "fail", want: /InjE/,
-    edits: [[APP, IF_ANCHOR, IF_ANCHOR + "const _inj=<InjE/>;"], [CORE, null, CORE_TAIL]] },
+    edits: [[IF_FILE, IF_ANCHOR, IF_ANCHOR + "const _inj=<InjE/>;"], [CORE, null, CORE_TAIL]] },
   { name: "9-LIVE-half-of-a-ternary-must-stay-silent", expect: "pass", want: null,
     edits: [[APP, LIVE_ANCHOR, "{USE_DB?<InjF/>:null}" + LIVE_ANCHOR], [CORE, null, CORE_TAIL]] },
   { name: "10-a-newly-declared-guide-component-wired-live-goes-stale", expect: "fail",
