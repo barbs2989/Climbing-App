@@ -1,0 +1,60 @@
+[
+ {
+  "id": "wa_forbidden_peak_east_ledges",
+  "field": "timing",
+  "before": {
+   "totalHrs": 3,
+   "summitTimeHrs": null,
+   "descentTimeHrs": 3,
+   "approachTimeHrs": null,
+   "recommendedStart": "Immediately after summiting via another route",
+   "sectionBreakdown": [
+    {
+     "hrs": 3,
+     "note": "Five rappels (~400 ft) down the NE side, then an exposed, loose 3rd/4th-class ledge traverse across ~5 rock ribs back to the East Ridge crest, then down the standard East Ridge gully system to Boston Basin.",
+     "fromTo": "Summit to Boston Basin via East Ledges",
+     "section": "Descent"
+    }
+   ]
+  },
+  "after": {
+   "totalHrs": 4,
+   "summitTimeHrs": null,
+   "descentTimeHrs": 4,
+   "approachTimeHrs": null,
+   "recommendedStart": "Immediately after summiting via another route",
+   "sectionBreakdown": [
+    {
+     "hrs": 3,
+     "note": "Five rappels (~400 ft) down the NE side, then an exposed, loose 3rd/4th-class ledge traverse across ~5 rock ribs back to the East Ridge crest, then down the standard East Ridge gully system to Boston Basin.",
+     "fromTo": "Summit to Boston Basin via East Ledges",
+     "section": "Descent"
+    },
+    {
+     "hrs": 1,
+     "note": "Follow the climbers’ path down out of Boston Basin and through the forest to the trailhead.",
+     "fromTo": "Boston Basin to the trailhead",
+     "section": "Descent"
+    }
+   ]
+  }
+ },
+ {
+  "id": "wa_northwest_face_2",
+  "field": "timing",
+  "before": {
+   "totalHrs": 11,
+   "summitTimeHrs": 2.5,
+   "descentTimeHrs": null,
+   "approachTimeHrs": 2,
+   "recommendedStart": "Early (dawn) start recommended to beat afternoon thunderstorms and other parties to the rap stations"
+  },
+  "after": {
+   "totalHrs": 11,
+   "summitTimeHrs": 4,
+   "descentTimeHrs": 4,
+   "approachTimeHrs": 2,
+   "recommendedStart": "Early (dawn) start recommended to beat afternoon thunderstorms and other parties to the rap stations"
+  }
+ }
+]

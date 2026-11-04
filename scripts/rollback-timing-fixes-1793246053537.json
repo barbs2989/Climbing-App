@@ -1,0 +1,41 @@
+[
+ {
+  "id": "bc_bugaboo_spire_east_ridge",
+  "field": "timing",
+  "before": null,
+  "after": {
+   "approachTimeHrs": 3.5,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "totalHrs": null
+  }
+ },
+ {
+  "id": "co_south_face",
+  "field": "timing",
+  "before": null,
+  "after": {
+   "approachTimeHrs": 2.1,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "totalHrs": null
+  }
+ },
+ {
+  "id": "or_mt_hood_south_side_hogsback",
+  "field": "timing",
+  "before": {
+   "totalHrs": 12,
+   "summitTimeHrs": 7,
+   "descentTimeHrs": 4,
+   "recommendedStart": "1-3 AM"
+  },
+  "after": {
+   "approachTimeHrs": 0,
+   "totalHrs": 12,
+   "summitTimeHrs": 7,
+   "descentTimeHrs": 4,
+   "recommendedStart": "1-3 AM"
+  }
+ }
+]
