@@ -1,0 +1,75 @@
+{
+ "ny_snowy_mt": {
+  "_expect": {
+   "name": "Snowy Mt",
+   "region": "New York"
+  },
+  "blurb": "Snowy Mt is a bouldering-focused crag in the Indian Lake region of the Adirondacks, on a wooded hillside beneath the big mountain of the same name. Most of the 29 climbs are boulder problems, joined by a handful of sport routes plus one trad line and one aid line. Problems stretch from easy V2 up to V11, but the bulk sit between V5 and V8, so it is best suited to stronger boulderers. The boulders are pocketed, with crimps, fins and sloping topouts. Spring through early fall is when people visit, and the trees keep the blocks in a forested setting rather than an open field.",
+  "review": {
+   "sources": [
+    "https://weekendbouldering.blogspot.com/2011/04/adirondack-lowdown-snowy-mountain.html",
+    "https://southernadirondackclimber.blogspot.com/2012/04/you-guessed-itsnowy-mountain-again.html"
+   ]
+  }
+ },
+ "ny_chapel_pond_canyon": {
+  "_expect": {
+   "name": "Chapel Pond Canyon",
+   "region": "New York"
+  },
+  "blurb": "Chapel Pond Canyon is a winter ice venue tucked into a gully beside Route 73 near Chapel Pond, in the Keene Valley part of the Adirondacks. The 29 climbs are mostly water ice, with a few mixed lines. Grades centre on WI3 and WI4, with several at WI5 and a single WI6, and the mixed routes run from M3 to M6. The ice builds early in the season and is regarded as dependable, and the walk starts close to the road, across the pond. It is among the busiest ice areas in the region, so expect company on good weekends. A few spots have walk-offs for setting up top ropes.",
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/rock-climbing/chapel-pond",
+    "https://mountainproject.com/area/106373506/chapel-pond"
+   ]
+  }
+ },
+ "ny_cascade_pass": {
+  "_expect": {
+   "name": "Cascade Pass",
+   "region": "New York"
+  },
+  "blurb": "Cascade Pass is a roadside ice climbing area in the canyon between Pitchoff and Cascade mountains, along Route 73 between Lake Placid and Keene Valley, beside the Cascade Lakes. Nearly all of its 28 routes are water ice, with one mixed line. Grades cluster at WI3 and WI4, with a couple of easier flows and two at WI5. The best-known flows are a short walk from the car, and many can be set up for top roping, which makes it a good place for people learning the sport. Wind howls through the canyon, so bring extra layers. It is one of the busiest ice areas in the Adirondacks.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106633495/cascade-pass",
+    "https://www.lakeplacid.com/ice-climbing/cascade-pass-ice-climbing"
+   ]
+  }
+ },
+ "ny_lower_beer_wall": {
+  "_expect": {
+   "name": "Lower Beer Wall",
+   "region": "New York"
+  },
+  "blurb": "Lower Beer Wall is one half of the Beer Walls, a cliff beside Route 73 just north of Chapel Pond in the Adirondacks' Keene Valley area. It holds 26 routes, mostly traditional lines of one or two pitches, with a few bolted sport climbs. Difficulty runs from easy fifth class up to 5.12, with the largest group around 5.8 and a good number of 5.10s, so it suits intermediate climbers well. Reaching the base means scrambling down boulders and following a switchbacking path, and once there the setting feels fairly secluded.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/113579019/lower-beer-wall",
+    "https://adirondack.net/keene-valley/beer-walls"
+   ]
+  }
+ },
+ "ny_1_manayunk": {
+  "_expect": {
+   "name": "Manayunk",
+   "region": "New York"
+  },
+  "blurb": "Manayunk is a small cliff in the Picatinny group at Powerlinez, toward the far southwestern end of Harriman State Park, New York. It faces southeast and offers about two dozen top-rope and trad routes. Most are easy to moderate: a cluster from 5.3 to 5.5, several around 5.8, and only a few harder, topping out near 5.10. The right side is steep and vertical at roughly thirty to forty feet, while the left end is lower in angle and taller, around fifty to sixty feet. Natural anchors near the cliff top make setting up top ropes simple, so it works well for beginners and groups. Loose rock and vegetation call for helmets and care.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/1-manayunk/112232456",
+    "https://www.mountainproject.com/area/108193801/powerlinez"
+   ]
+  }
+ },
+ "_skipped": {
+  "ny_8_check_book": "no fetched page about the crag itself (only a route page and parent tier pages)",
+  "ny_main_wall_2": "no fetched page about Shelving Rock Main Wall itself (MP page fetched was a different Main Wall; only parent page and an ambiguous Ark Wall article)",
+  "ny_southeast_slopes": "could not fetch two pages (only the Mountain Project area page loaded; second source returned 429/404)"
+ },
+ "_conflicts": {
+  "ny_lower_beer_wall": "stored rock is gneiss, but https://adirondack.net/keene-valley/beer-walls calls the Beer Walls granite; left unchanged"
+ }
+}

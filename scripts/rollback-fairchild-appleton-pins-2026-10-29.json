@@ -1,0 +1,100 @@
+{
+ "id": "wa_mount_fairchild_standard",
+ "waypoints": [
+  {
+   "lat": 47.955249,
+   "lng": -123.835839,
+   "elev": 1950,
+   "name": "Sol Duc Trailhead",
+   "note": "Large trailhead parking lot at the end of Sol Duc Hot Springs Road; Olympic National Park entrance pass required; overnight trips need a wilderness permit reserved in advance, since none are issued at the trailhead.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Turn south off US 101 onto Sol Duc Hot Springs Road (about 29 miles west of Port Angeles) and follow it, paved the whole way, past the park entrance station, the Sol Duc Hot Springs Resort and the campground to the large lot at road's end — the trailhead is at the very end, beyond the resort."
+  },
+  {
+   "lat": 47.95064,
+   "lng": -123.8152,
+   "elev": 1980,
+   "name": "Sol Duc Falls",
+   "note": "Trail crosses a footbridge just below the falls; last easy, reliable water before the climb toward Appleton Pass begins in earnest.",
+   "type": "Water",
+   "distMi": 0.8,
+   "directions": "From the end of the lot take the Sol Duc River Trail up the valley: 0.8 mi of wide, near-level old-growth tread with essentially no elevation change (1,950 to 1,980 ft), ending at the footbridge just below the falls. This is the last easy, reliable water taken straight off the trail before the climbing starts."
+  },
+  {
+   "lat": 47.932375,
+   "lng": -123.75057,
+   "elev": 2900,
+   "name": "Appleton Pass Trail junction",
+   "note": "Leave the Sol Duc River Trail here and turn right/uphill onto the Appleton Pass Trail; elevation is a rough interpolation along the NPS-stated 2,000-5,100 ft climb.",
+   "type": "Junction",
+   "distMi": 4.9
+  },
+  {
+   "lat": 47.93842,
+   "lng": -123.72269,
+   "elev": 5114,
+   "name": "Appleton Pass",
+   "note": "Broad alpine pass on the Bailey Range crest with meadows and views into the Boulder Lake basin; leave the maintained trail here to begin cross-country travel into the Bailey Range proper.",
+   "type": "Junction",
+   "distMi": 7.3
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5500,
+   "name": "The Cat Walk (Cat Peak traverse)",
+   "note": "Old, narrow, exposed use-path sidehilling the steep flanks of Cat Peak; the steepest, most exposure-prone stretch of the whole approach, worse with a full pack.",
+   "type": "Hazard",
+   "distMi": 10.5
+  },
+  {
+   "lat": 47.890988,
+   "lng": -123.664591,
+   "elev": 5300,
+   "name": "Boston Charlie's Camp",
+   "note": "Small flat tent spot at the east end of the Cat Walk with a shallow melt-water sinkhole pond; water needs filtering and the site is exposed to wind/weather.",
+   "type": "Campsite",
+   "distMi": 11.5,
+   "directions": "Follow the sidehill path east to the far end of the Cat Walk arete, giving back roughly 200 ft. The camp is a single small flat tent spot at the east end with a shallow melt-water sinkhole pond beside it — filter that water, and expect the site to be fully exposed to wind and weather."
+  },
+  {
+   "lat": 47.894242,
+   "lng": -123.649295,
+   "elev": 6995,
+   "name": "Mount Carrie ridge/glacier gain",
+   "note": "Highest point in the Bailey Range (0.84 mi SW of Fairchild's summit); per the descent beta this is where the route regains the ridge/glacier system linking to the Fairchild Glacier.",
+   "type": "Junction",
+   "distMi": 14.5,
+   "directions": "Climb roughly 1,700 ft southeast from Boston Charlie's onto Mount Carrie (6,995 ft), the highest point in the Bailey Range. There is a real choice here: many parties sidehill the loose, exposed talus across Carrie's south face, but staying higher — up the ridge on Carrie's north side, over or just under the summit — avoids the worst of the sidehilling and sets up a cleaner entry onto the Fairchild Glacier. Where the crest becomes too sharp to walk, traverse up across the scree flanks. There is no reliable water on this stretch, so tank up at camp."
+  },
+  {
+   "lat": 47.8971915,
+   "lng": -123.64133100000001,
+   "elev": 6700,
+   "name": "Fairchild Glacier crossing",
+   "note": "Rope up and don crampons/axe here; follow the wind-formed ridge down-glacier toward the exit col on Ruth Peak's shoulder — crevasse hazard, especially late season when snow bridges are thin.",
+   "type": "Hazard",
+   "distMi": 15,
+   "directions": "Drop about 300 ft northeast off Carrie's ridge onto the upper Fairchild Glacier, which starts around 6,600-6,700 ft on the Bailey crest and falls away to the northeast. Rope up and put on crampons here; an ice axe is wanted most of the season. Rather than taking the direct line, follow the wind-formed snow ridge running down the glacier — the same idea as the Hogsback on Mount Hood — which keeps you clear of the crevasses. Late season the snow bridges thin and the surface goes to bare, hard ice, so this is full crampon technique, not microspikes."
+  },
+  {
+   "lat": 47.900458,
+   "lng": -123.633334,
+   "elev": 6899,
+   "name": "Mount Fairchild",
+   "note": "Second-highest peak in the Bailey Range; short final scramble on snow and rock from the glacier saddle to the true summit.",
+   "type": "Summit",
+   "distMi": 15.5,
+   "directions": "Leave the wind ridge and take the steeper exit section up onto Fairchild's summit ridge: roughly 35-40 degrees of snow past an icy patch, the steepest ground on the route. Stay roped and in crampons through it. From the summit ridge a short scramble on snow and rock gains the 6,899 ft true summit, second-highest in the Bailey Range. There is no rappel anywhere on this climb — the only way off is to reverse the entire line, and the glacier softens through the afternoon, so set an early turnaround."
+  },
+  {
+   "lat": 47.9067,
+   "lng": -123.6289,
+   "elev": 6600,
+   "name": "Fairchild Glacier",
+   "type": "Feature",
+   "elevFt": 6600
+  }
+ ]
+}

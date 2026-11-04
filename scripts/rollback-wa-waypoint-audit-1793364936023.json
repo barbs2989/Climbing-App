@@ -1,0 +1,583 @@
+[
+ {
+  "table": "routes",
+  "id": "wa_mount_cameron_standard",
+  "waypoints": [
+   {
+    "lat": 47.9183,
+    "lng": -123.3822,
+    "elev": 6135,
+    "name": "Obstruction Point Trailhead",
+    "note": "End of Obstruction Point Road (highest road in Olympic NP, gravel, no trailers), 8 mi east of Hurricane Ridge Visitor Center; Grand Pass Trail begins here.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Obstruction Point Road is the way in, and it is the highest road in Olympic National Park: from the Hurricane Ridge Visitor Center follow it 8 miles east to its end at the Obstruction Point trailhead, topping out around 6,135 ft. It is narrow, one-lane gravel the whole way and no place for trailers. The road is usually open only from early-to-mid July through mid-October, so it is not a road you can count on before July — confirm it is open before committing to the drive. The Grand Pass Trail starts at the road end, and an online wilderness camping permit plus a bear canister are required for the Cameron Basin camp zone."
+   },
+   {
+    "lat": 47.86565,
+    "lng": -123.35546,
+    "elev": 6450,
+    "name": "Grand Pass",
+    "note": "Grand Pass Trail crests the divide here between the Grand/Lillian River drainages and Cameron Creek; the descent to the Cameron side is steep and can be dangerously slick in wet weather or lingering snow.",
+    "type": "Junction",
+    "distMi": 6,
+    "directions": "From Obstruction Point follow the Grand Pass Trail south along the open crest of Lillian Ridge, descend into Grand Valley and follow the trail up the valley past Moose and Gladys Lakes to Grand Pass, about 6 miles from the trailhead."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6000,
+    "name": "Cameron Basin camp",
+    "note": "Established backcountry sites in the upper basin below Cameron Pass along Cameron Creek; bear canister required (no trees to hang food), no campfires above 3,500 ft, and an online wilderness camping permit is mandatory.",
+    "type": "Campsite",
+    "distMi": 8.3,
+    "directions": "Continue up along Cameron Creek into the upper basin below Cameron Pass to the established camp sites at about 6,000 ft. A bear canister is required and there are no fires."
+   },
+   {
+    "lat": 47.825718,
+    "lng": -123.358249,
+    "elev": 6448,
+    "name": "Cameron Pass snow slopes",
+    "note": "Steep snow can persist on the pass into late July or August; ice axe and self-arrest skills recommended, and the climbers' path is frequently obscured under snow here.",
+    "type": "Hazard",
+    "distMi": 9.3,
+    "directions": "Continue up the Cameron Pass Trail from the basin to Cameron Pass. Steep snow can cover the climbers' path on the final slopes into late July or August, so carry an ice axe."
+   },
+   {
+    "lat": 47.825825,
+    "lng": -123.33409,
+    "elev": 7190,
+    "name": "Mount Cameron summit",
+    "note": "True 7,190 ft highpoint of triple-summited Mount Cameron, reached from Cameron Basin/Pass by Class 2 scree and talus along the ridge that rises east from the pass.",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "From Cameron Pass leave the trail and follow the broad ridge crest east and up on Class 1-2 scree and talus. The ridge crosses many false summits, so do not stop at the first high point; the true top is still easy ground, and Class 3-4 steps mean you have passed it and started the traverse toward the Middle Peak."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_lundin_peak_west_ridge",
+  "waypoints": [
+   {
+    "lat": 47.44542,
+    "lng": -121.42353,
+    "elev": 3040,
+    "name": "PCT North (Snoqualmie Pass) Trailhead",
+    "note": "I-90 Exit 52 dirt-road trailhead; Northwest Forest Pass for parking plus a free self-issue Alpine Lakes Wilderness permit at the kiosk.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Take I-90 to Exit 52 and follow Alpental Road, a dirt road, to the PCT North / Commonwealth Basin trailhead at about 3,000 ft. A Northwest Forest Pass is required for parking, and there's a free self-issue Alpine Lakes Wilderness permit to fill out at the trailhead kiosk."
+   },
+   {
+    "lat": 47.439598,
+    "lng": -121.397241,
+    "elev": 3600,
+    "name": "Commonwealth Basin Trail junction",
+    "note": "Signed fork where the route leaves the PCT and drops left onto Commonwealth Basin Trail #1033 into the basin.",
+    "type": "Junction",
+    "distMi": 2.5,
+    "directions": "From the trailhead follow the Pacific Crest Trail northbound. It climbs at a gradual grade across forested slopes for about two and a half miles to the signed fork at the north end of the basin, where the old Commonwealth Basin trail drops away to the left. Turn off there and descend into the basin."
+   },
+   {
+    "lat": 47.44843376470588,
+    "lng": -121.40578176470588,
+    "elev": 3800,
+    "name": "Commonwealth Creek crossing",
+    "note": "Rock-hop/ford Commonwealth Creek in the basin bottom; the one reliable water source before the high, dry ridge.",
+    "type": "Water",
+    "distMi": 3,
+    "directions": "The basin trail loses a little height and then runs up the valley beside Commonwealth Creek through old-growth forest. Rock-hop or ford the creek where the tread crosses it. Fill up here — this is the last dependable water, and there is none in Lundin Basin or anywhere on the ridge above."
+   },
+   {
+    "lat": 47.453936101960785,
+    "lng": -121.40372356862746,
+    "elev": 4200,
+    "name": "Red Pass contour (~4,200 ft)",
+    "note": "Contour below Red Pass rather than topping it; this is where the route breaks off northwest toward Lundin Basin instead of following the main Red Pass trail.",
+    "type": "Junction",
+    "distMi": 3.8,
+    "directions": "Keep climbing as the trail starts switchbacking up out of the basin toward Red Pass, but do not follow it to the pass. A few hundred feet above the first right-turning switchback, somewhere around 4,200 to 4,300 ft, leave the tread and cut left and west, making a descending traverse into the valley that opens toward Lundin's south face."
+   },
+   {
+    "lat": 47.4573750627451,
+    "lng": -121.40243719607844,
+    "elev": 4700,
+    "name": "Lundin Basin",
+    "note": "Open basin beneath Lundin's south face; cross northwest here aiming for the base of the south couloir.",
+    "type": "Junction",
+    "distMi": 4.3,
+    "directions": "Cross northwest through the basin beneath Red Mountain's south side, aiming for the foot of Lundin's steep south face. Once the snow has gone this is slow boulder-hopping and brushy route-finding, so allow noticeably more time for it late in the season than early."
+   },
+   {
+    "lat": 47.45943843921569,
+    "lng": -121.40166537254902,
+    "elev": 5000,
+    "name": "South couloir base",
+    "note": "Broad snow/scree couloir below the steep south face; ascend it to gain the west ridge saddle above (avoid when icy — no rope-up option below).",
+    "type": "Junction",
+    "distMi": 4.6,
+    "directions": "Head for the broad couloir splitting the south face and gain its base. Judge the conditions before starting up: early in the season it is a snow climb wanting an axe and crampons if it is firm, and it sluffs and runs wet under afternoon sun; later it is loose scree and talus. There is nowhere to belay inside it, so the whole party has to be comfortable moving unroped on whatever it holds."
+   },
+   {
+    "lat": 47.461501815686276,
+    "lng": -121.40089354901961,
+    "elev": 5700,
+    "name": "West ridge saddle",
+    "note": "Obvious notch where the couloir tops out on the west ridge; from here the route follows exposed, blocky Class 4 terrain toward the summit block.",
+    "type": "Junction",
+    "distMi": 4.9,
+    "directions": "Climb the couloir the full way to where it tops out at the obvious notch on the ridge. Rope, harness and helmet go on here — the ground above is exposed Class 4 with a short low-fifth step — and this is the last flat ground for sorting a rack."
+   },
+   {
+    "lat": 47.46282,
+    "lng": -121.4004,
+    "elev": 6057,
+    "name": "Lundin Peak summit",
+    "note": "A short class 5.0 step gains the true summit, the westernmost of Lundin's three rock horns.",
+    "type": "Summit",
+    "distMi": 5.1,
+    "directions": "From the notch stay on the north side of the crest and contour up over large blocks and horns rather than forcing the crest itself, which is looser and dirtier. Higher up the line crosses onto exposed ledges on the south side for the last stretch, with a slabby depression of roughly a hundred feet as the technical crux and a short Class 5.0 step onto the true summit, the westernmost of the three horns. The moves stay easy but the exposure on that final section is serious and it is where this route's accidents have happened, so most parties belay it rather than solo on instinct."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_osceola_peak_scramble",
+  "waypoints": [
+   {
+    "lat": 48.737833,
+    "lng": -120.6785,
+    "elev": 6900,
+    "name": "Slate Pass / Buckskin Ridge Trailhead",
+    "note": "End of Harts Pass Road (FR-5400) near Slate Peak; self-issue Pasayten Wilderness permit at the kiosk, road typically open only July-Sept.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive Forest Road 5400 from Mazama up to Harts Pass, published at roughly 6,181-6,204 feet - trailers are prohibited past the 5400000/5400060 junction because the road is narrow and steep with few turnouts, and whether an ordinary car should attempt it is genuinely disputed, so judge it on the day. At the guard station turn right onto FR 5400-600; the Pacific Crest Trail trailhead is at the first switchback and Slate Pass, at about 6,900 feet, is at the second. Early in the season you may have to walk the last half mile or so if the road isn't yet clear, and the road itself typically doesn't open until early-to-mid July depending on snowpack. Self-issue a Pasayten Wilderness permit at the kiosk here."
+   },
+   {
+    "lat": 48.7697,
+    "lng": -120.6393,
+    "elev": 5280,
+    "name": "Middle Fork Pasayten (Robinson Creek) Trail junction",
+    "note": "Reached via Buckskin Ridge Trail (0.9 mi) then Whistler Cutoff Trail (3.1 mi), dropping ~1,900 ft off the pass before turning north down the Middle Fork Pasayten drainage.",
+    "type": "Junction",
+    "distMi": 4,
+    "directions": "This leg is all downhill: drop off the pass on the Buckskin Ridge tread, then swing onto the Whistler Cutoff for a well-graded cruise to the valley floor. The first pitch below the pass holds snow well into summer and some parties carry an axe for it. The Middle Fork is crossed unbridged, usually ankle to shin deep in normal summer flow, but it deserves respect during snowmelt or after heavy rain."
+   },
+   {
+    "lat": 48.803233,
+    "lng": -120.606433,
+    "name": "Eureka Creek Trail (#484) junction",
+    "note": "Leave the Middle Fork Pasayten Trail here and start climbing east up Eureka Creek toward Freds Lake; the way tread is brushy and blowdown-choked beyond this point.",
+    "type": "Junction",
+    "distMi": 10,
+    "directions": "Turn north and follow the Middle Fork Pasayten trail down the valley. Tread through here is generally good and brush-free, and it is the fastest walking of the trip. Watch for the signed turnoff, which is easy to stride past when the miles are going quickly."
+   },
+   {
+    "lat": 48.82287,
+    "lng": -120.59824,
+    "elev": 6507,
+    "name": "Freds Lake",
+    "note": "Larch-ringed lake with reliable water and informal camping, the usual overnight stop before pushing on to Freds Pass.",
+    "type": "Water",
+    "distMi": 12,
+    "directions": "Climb east up the Eureka Creek drainage. This is where the trip changes character: tread narrows, brush closes in and stepping over blowdown becomes routine, so expect the pace to drop noticeably. The grade is steady rather than steep, gaining roughly 1,200 ft to the lake basin."
+   },
+   {
+    "lat": 48.817206,
+    "lng": -120.592739,
+    "elev": 7110,
+    "name": "Freds Pass",
+    "note": "Trail contours Freds Lake's north shore then climbs the head of the basin to this saddle, the gateway into the upper Eureka Creek / Lake Doris basin.",
+    "type": "Junction",
+    "distMi": 12.5,
+    "directions": "Roughly 600 ft of climbing packed into half a mile, which makes this the steepest sustained trail section of the approach. The saddle is open and exposed with no water on it, so top off at the lake before starting up."
+   },
+   {
+    "lat": 48.82225,
+    "lng": -120.59164,
+    "elev": 6975,
+    "name": "Lake Doris",
+    "note": "Alpine lake basin serving as the standard base camp for Osceola's west slopes; the scramble route starts on the ridge north of the lake.",
+    "type": "Campsite",
+    "distMi": 13,
+    "directions": "Drop off the far side of the pass and contour down into the next basin, only a couple of hundred feet of loss over about half a mile. Snow can linger on this side early in the season. This is the last water and the standard camp, and everything above it is dry."
+   },
+   {
+    "lat": 48.825467,
+    "lng": -120.583323,
+    "elev": 7800,
+    "name": "Southwest talus/slab slope",
+    "note": "Loose, sharp talus mixed with slabs that get slick with wet lichen; stay on the faint use-trail through the least-bad line rather than the slabs.",
+    "type": "Hazard",
+    "distMi": 13.5,
+    "directions": "From the lake head northeast through open forest and onto the slope above, aiming for the southwest ridge rather than straight up the south-face boulder field. There is a faint use trail on the ridge and it is far better going than the slabs, which turn genuinely slick where lichen is wet. Figure about 800 ft of gain to reach this point."
+   },
+   {
+    "lat": 48.83066,
+    "lng": -120.57651,
+    "elev": 8584,
+    "name": "Osceola Peak",
+    "note": "True summit (8,587 ft); broad talus top with views to Mount Lago and Carru across upper Eureka Creek.",
+    "type": "Summit",
+    "distMi": 14,
+    "directions": "Continue up on big talus broken by short sections of scree, staying on the faint trail wherever it shows rather than drifting onto the slabs. It is Class 2 with occasional Class 3 steps and about another 800 ft of gain to the broad summit. Nothing here needs a rope, and the descent reverses the same line."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_baring_mountain_east_face",
+  "waypoints": [
+   {
+    "lat": 47.7954,
+    "lng": -121.46434,
+    "elev": 2280,
+    "name": "Barclay Lake Trailhead (end of FS Road 6024)",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 2280,
+    "directions": "In Baring, turn north off US 2 onto 635th Place NE, across from the store. Cross the railroad tracks, keep left at the junction just beyond, and follow the road as it becomes FS Road 6024, about 4.3 miles in all, to the Barclay Lake Trailhead at the road end, about 2,280 ft. A Northwest Forest Pass is required to park."
+   },
+   {
+    "lat": 47.779291,
+    "lng": -121.435814,
+    "elev": 6127,
+    "name": "Baring Mountain north (main) summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 6127
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_baring_mountain_northwest_ridge",
+  "waypoints": [
+   {
+    "lat": 47.7954,
+    "lng": -121.46434,
+    "elev": 2280,
+    "name": "Barclay Lake Trailhead (end of FS Road 6024)",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 2280,
+    "directions": "In Baring, turn north off US 2 onto 635th Place NE, across from the store. Cross the railroad tracks, keep left at the junction just beyond, and follow the road as it becomes FS Road 6024, about 4.3 miles in all, to the Barclay Lake Trailhead at the road end, about 2,280 ft. A Northwest Forest Pass is required to park."
+   },
+   {
+    "lat": 47.779291,
+    "lng": -121.435814,
+    "elev": 6127,
+    "name": "Baring Mountain north (main) summit",
+    "type": "Summit",
+    "distMi": 3.5,
+    "elevFt": 6127,
+    "directions": "Skip Trail 1055: walk the old logging road behind the toilet 0.3 mile to the first creek, where a cairn on the right marks a steep climbers' path that crosses the creek twice and climbs to the west ridge crest near 4,000 ft. Follow the crest east a mile, drop below the cliff bands on the south side, cross a wooded gully to the talus basin at 4,900 ft, climb the couloir to the 5,550 ft notch, then go north on easy Class 3 to the top."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_wing_peak_northwest_ridge",
+  "waypoints": [
+   {
+    "lat": 47.7954,
+    "lng": -121.4592,
+    "elev": 2300,
+    "name": "Barclay Lake Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 2300,
+    "directions": "From US-2 at Baring, near milepost 41, turn north onto 635th Place NE across from the convenience store and cross the railroad tracks. After 0.3 mile keep left on 635th Place NE; it becomes FR 6024, which you follow about 3.9 potholed miles to its end at the Barclay Lake Trailhead at about 2,300 ft. A Northwest Forest Pass is required to park."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 5320,
+    "name": "Tailgunner Pass",
+    "note": "The usual high camp: on or just below the crest a short way west of the pass, dropping slightly into upper Gunn Basin. Gunn Peak rises to the north, Tailgunner Peak to the west and Wing Peak to the southeast.",
+    "type": "Junction",
+    "distMi": null,
+    "directions": "Follow Barclay Creek Trail 1055, then bushwhack along Barclay Creek and up Tailgunner Creek to an old, overgrown logging road. A bootpath climbs forest to about 4,000 ft, crosses a Class 2-3 waterfall ravine, and follows the grass and snow of Tailgunner Couloir to Tailgunner Pass at about 5,320 ft."
+   },
+   {
+    "lat": 47.806713,
+    "lng": -121.443608,
+    "elev": 5761,
+    "name": "Wing Peak Summit",
+    "type": "Summit",
+    "distMi": 3.5,
+    "elevFt": 5761,
+    "directions": "From the pass, climb the northwest ridge's steep snow faces and rock benches to an exposed snowfinger below the summit horn, then a short rock step to the top."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_mount_sefrit_bloody_head_couloir",
+  "waypoints": [
+   {
+    "lat": 48.91049444,
+    "lng": -121.5894222,
+    "name": "Hannegan Pass Trailhead (Trail #674, FR-32)",
+    "type": "Trailhead",
+    "directions": "From Glacier, drive Mt. Baker Highway (SR-542) east about 13 miles and turn left onto Hannegan Pass Road (FR-32). Follow it about 5.3 miles to its end at the Hannegan Pass Trailhead beside Hannegan Campground, at about 3,120 ft. A Northwest Forest Pass is required to park, and a free self-issue Mount Baker Wilderness permit is available at the trailhead."
+   },
+   {
+    "lat": 48.910208,
+    "lng": -121.591714,
+    "elev": 3100,
+    "name": "Hannegan trailhead, end of the Ruth Creek road",
+    "type": "Campsite"
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 3450,
+    "name": "Leave the Hannegan Pass Trail",
+    "note": "Leave the trail here and drop southwest to Ruth Creek. There is no path from this point on.",
+    "type": "Junction",
+    "distMi": 1.5,
+    "directions": "Follow the Hannegan Pass Trail east up the Ruth Creek valley about 1.5 miles to around 3,450 ft."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 4000,
+    "name": "Base of Bloody Head Couloir",
+    "note": "Foot of the confined couloir on Sefrit's north side. If it is bare, mossy and wet rather than snow-filled, the route is not in condition.",
+    "type": "Junction",
+    "distMi": null,
+    "directions": "Drop southwest to Ruth Creek and cross it (no bridge, no established log), then climb talus on the far side to the foot of the couloir at about 4,000 ft."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_jack_mountain_northeast_glacier",
+  "waypoints": [
+   {
+    "lat": 48.706,
+    "lng": -120.925,
+    "elev": 1880,
+    "name": "Canyon Creek Trailhead (SR 20, near milepost 141)",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 1880,
+    "directions": "Drive SR 20 to the Canyon Creek Trailhead near milepost 141, about 32.8 miles east of Marblemount, at about 1,900 ft. A recreation pass is required to park, and a free self-issued permit is required to enter the Pasayten Wilderness."
+   },
+   {
+    "lat": 48.77284,
+    "lng": -120.95637,
+    "elev": 9075,
+    "name": "Jack Mountain summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 9075,
+    "directions": "Ford Canyon Creek and climb Trail #738 to the Crater Lake junction, then the Crater Mountain trail to about 6,700 ft. Traverse up to the pass near 7,000 ft between Crater Mountain's summits, descend the Jerry Glacier and work around to a camp near 6,000 ft east of Jack. From camp, traverse onto the north face, climb the broken Northeast Glacier until it forces you right onto the ridge, follow the ridge about 500 ft to a snow traverse, and scramble steep rock to the summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_jack_mountain_southeast_ridge_direct",
+  "waypoints": [
+   {
+    "lat": 48.706,
+    "lng": -120.925,
+    "elev": 1900,
+    "name": "Canyon Creek Trailhead (SR 20, near MP 141)",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 1900,
+    "directions": "Drive SR 20 to the Canyon Creek Trailhead near milepost 141, about 33 miles east of Marblemount, at about 1,900 ft. A Northwest Forest Pass or interagency pass is required to park, and a free self-issued permit is required to enter the Pasayten Wilderness."
+   },
+   {
+    "lat": 48.77284,
+    "lng": -120.95637,
+    "elev": 9075,
+    "name": "Jack Mountain summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 9075,
+    "directions": "Cross Canyon Creek, judging the crossing first, and climb Trail #738's switchbacks about 3.7 miles to the Crater Lake junction, carrying water. Leave the trail between 6,700 and 7,200 ft and traverse to the 7,200 ft saddle on Crater Mountain, descend steep snow and the crevassed Jerry Glacier, and cross the saddle above Jerry Lakes to camp. From camp climb to the level step on the southeast ridge at 7,000 to 7,200 ft and stay on the crest to the summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_the_brothers_south_couloir",
+  "waypoints": [
+   {
+    "lat": 47.5985,
+    "lng": -123.155,
+    "elev": 700,
+    "name": "Lena Lake Trailhead (Hamma Hamma Rd)",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 700,
+    "directions": "The trailhead sits on Forest Road 25, the Hamma Hamma Road, at about 700 ft, where the Lena Lake Trail #810 starts."
+   },
+   {
+    "lat": 47.62348,
+    "lng": -123.15723,
+    "elev": 1900,
+    "name": "Lena Lake",
+    "type": "Campsite",
+    "distMi": 3,
+    "elevFt": 1900,
+    "directions": "Follow the maintained Lena Lake Trail roughly 3 miles and about 1,100 ft of gain through second- and old-growth forest, crossing several creek drainages, to Lena Lake. There is a ranger station and established campsites here, and it is the last straightforward water and camping before the climbers' route begins."
+   },
+   {
+    "lat": 47.653799,
+    "lng": -123.140923,
+    "elev": 6868,
+    "name": "The Brothers - South Peak (Mount Edward)",
+    "type": "Summit",
+    "distMi": 8.5,
+    "elevFt": 6868,
+    "directions": "Skirt the lake's west shore and pick up the unmaintained but well-worn Brothers boot path, which runs up the East Fork Lena Creek drainage through the old-growth Valley of the Silent Men for another 2.5 to 3 miles to a climbers' camp marked by a fire ring. From camp a climbers' path follows the west fork about a mile across an avalanche debris field where slide alder and downed logs bury the line and a ford may be needed, then re-enters forest and climbs to the foot of the South Couloir. Go up the couloir a few hundred feet, step out its west side onto scree, traverse up and right beneath the cliff bands to a semi-open spur and the Hourglass constriction, then watch hard for a cairned notch on the right that is nearly invisible until you are in front of it — that notch is the key to the final gully, whose last 200 ft is exposed Class 4 to the south summit."
+   },
+   {
+    "lat": 47.619386,
+    "lng": -123.159505,
+    "elev": 1773,
+    "name": "Lower Lena Lake",
+    "type": "Campsite",
+    "distMi": 2.9
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_traverse_of_mount_index",
+  "waypoints": [
+   {
+    "lat": 47.8177,
+    "lng": -121.5514,
+    "elev": 600,
+    "name": "Lake Serene Trailhead (Bridal Veil Falls TH, US-2 near Index, WA)",
+    "note": "Traverse starts 'at the lake' (Lake Serene basin) and climbs the skyline right-to-left, summiting North Peak first then continuing over Middle and Main.",
+    "type": "Trailhead",
+    "elevFt": 600,
+    "directions": "Take US-2 to milepost 35.2 and turn south onto Mount Index Road, following it 0.3 miles to the Lake Serene trailhead, also signed for Bridal Veil Falls. The maintained Lake Serene Trail #1068 leaves from here. Expect to be starting by headlamp: parties commonly need 12 to 15 hours or more, and many bivy."
+   },
+   {
+    "lat": 47.78194,
+    "lng": -121.57028,
+    "elev": 2526,
+    "name": "Lake Serene (approach basin below North Peak)",
+    "type": "Junction",
+    "distMi": 4.1,
+    "elevFt": 2526,
+    "directions": "Follow Lake Serene Trail #1068, first on an old road bed and then into forest. At about 1.7 miles stay on the main trail where a signed spur goes right to Bridal Veil Falls; the trail crosses the creek and climbs steeply on stairs, roots and rock for the last 1.5 miles into the basin, reaching the lake's north end about 4 miles from the car."
+   },
+   {
+    "lat": 47.7827,
+    "lng": -121.5825,
+    "elev": 5337,
+    "name": "Mount Index - North Peak (first of three summits climbed on the traverse)",
+    "type": "Summit",
+    "elevFt": 5337,
+    "directions": "Traverse the west side of the lake over talus and very large boulders to its south end, then climb steep brush and a gully (snow into early summer) onto the bushy northeast spur. Climb the spur, the gully on the north face and the North Rib to a grassy bench, go left to heather and the crest, then follow the crest right over the false summit and a line of exposed gendarmes to the true North Peak summit."
+   },
+   {
+    "lat": 47.7797,
+    "lng": -121.5817,
+    "elev": 5521,
+    "name": "Mount Index - Middle Peak (second summit of the traverse)",
+    "note": "",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Work south from the North Peak around the gendarmes to the North–Middle notch, with three or four rappels and some downclimbing. Climb out of the notch (the 5.7 crux), follow the knife-edge crest over the Middle false summit, rappel into the notch beyond, then traverse onto the east face and climb broken slabs and heather to the Middle summit."
+   },
+   {
+    "lat": 47.77453,
+    "lng": -121.58093,
+    "elev": 5991,
+    "name": "Mount Index - Main Peak (third and highest summit)",
+    "note": "",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Descend to the Middle–Main notch, switching sides of the crest with short rappels and finishing with a rappel from a tree down a steep reddish gully. Leave the notch by a short chimney (about 5.5), climb the ridge past the Wedge gendarme, cross the big reddish gully on a loose bench, and take ledges through a notch to the west side, where heather slopes lead to the Main summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_ruby_mountain_south_ridge",
+  "waypoints": [
+   {
+    "lat": 48.68958,
+    "lng": -121.09606,
+    "elev": 1200,
+    "name": "Thunder Creek Trailhead, Colonial Creek Campground",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 1200,
+    "directions": "From Marblemount, drive SR 20 east about 24 miles. Just past milepost 130, before the highway crosses the Thunder Arm of Diablo Lake, turn into the south side of Colonial Creek Campground and park in the large lot above the boat ramp, at about 1,200 ft. Walk the length of the campground, following signs to the amphitheater, where the Thunder Creek Trail begins."
+   },
+   {
+    "lat": 48.694408,
+    "lng": -121.042952,
+    "elev": 7426,
+    "name": "Ruby Mountain summit",
+    "type": "Summit",
+    "distMi": 8.5,
+    "elevFt": 7426,
+    "directions": "Hike the Thunder Creek Trail about 2 miles; a third of a mile past the bridge, turn left on the Fourth of July Pass Trail and climb steeply to the pass. Near a tall broken stump with old flagging, take the abandoned way trail off the north side northeast through forest, go straight up through blowdown and a rocky rib to a cairn near 4,950 ft, then follow the path up the south ridge and heather benches to open talus and the summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_mount_rainier_edmunds_headwall",
+  "waypoints": [
+   {
+    "lat": 46.9387,
+    "lng": -121.8615,
+    "elev": 4930,
+    "name": "Mowich Lake Trailhead",
+    "note": "Approach through Spray Park and up lower Ptarmigan Ridge to a bivy near 9,600 ft between the North Mowich and Edmunds glaciers",
+    "type": "Trailhead",
+    "elevFt": 4930,
+    "directions": "There is no public road to Mowich Lake: the SR 165 Fairfax Bridge south of Carbonado is permanently closed to vehicles, bicycles and walkers, with no detour. The lake can only be reached on foot along the Wonderland Trail, about 27 miles from Westside Road; camping on the way needs a park wilderness permit."
+   },
+   {
+    "lat": 46.86298,
+    "lng": -121.77486,
+    "elev": 14112,
+    "name": "Liberty Cap (route tops out here, below/at the NW rim)",
+    "type": "Summit",
+    "elevFt": 14112,
+    "directions": "From Mowich Lake take the Spray Park Trail through Spray Park, then go cross-country up lower Ptarmigan Ridge to the bivy near 9,600 ft between the North Mowich and Edmunds glaciers. Cross the Edmunds Glacier to the headwall near 9,900 ft, pass the bergschrund on the left by the twin gendarmes, climb the headwall to about 13,400 ft, then join the bench atop Sunset Ridge and walk up to Liberty Cap."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_mount_rainier_mowich_face",
+  "waypoints": [
+   {
+    "lat": 46.9387,
+    "lng": -121.8615,
+    "elev": 4930,
+    "name": "Mowich Lake Trailhead (no road access)",
+    "note": "No public road reaches Mowich Lake: the SR 165 bridge on the only road to it is closed to cars, bikes and walkers. The nearest open start is the Westside Road trailhead near the Nisqually Entrance, about 27 miles of Wonderland Trail one way.",
+    "type": "Trailhead",
+    "elevFt": 4930,
+    "directions": "There is no public road to Mowich Lake: the SR 165 Fairfax Bridge south of Carbonado is permanently closed to vehicles, bicycles and walkers, with no detour. The lake can only be reached on foot along the Wonderland Trail, about 27 miles from Westside Road; camping on the way needs a park wilderness permit."
+   },
+   {
+    "lat": 46.86298,
+    "lng": -121.77486,
+    "elev": 14112,
+    "name": "Liberty Cap",
+    "type": "Summit",
+    "elevFt": 14112,
+    "directions": "Follow the Wonderland Trail about 0.3 mile to the Spray Park Trail and climb it through Spray Park past Spray Falls. Where it tops out, go cross-country southeast between Echo Rock and Observation Rock onto Ptarmigan Ridge, leave the ridge near 8,300 ft and drop about 1,000 ft to the North Mowich Glacier, and rope up to the camps at 9,600 to 10,200 ft. Turn the bergschrund, climb the face to the bench near 13,300 ft, and continue to Liberty Cap."
+   }
+  ]
+ }
+]

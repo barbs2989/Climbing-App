@@ -1,0 +1,116 @@
+[
+ {
+  "lu": "or_lu_three_sisters_traverse",
+  "leg": 0,
+  "peak": "North Sister",
+  "route": "Southeast ridge, crossing the Terrible Traverse and the Bowling Alley",
+  "pick": null,
+  "others": [
+   {
+    "id": "or_south_ridge",
+    "name": "South Ridge",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "North Sister",
+    "score": 0
+   },
+   {
+    "id": "or_west_face_right",
+    "name": "West Face- Right",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "North Sister",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "or_lu_three_sisters_traverse",
+  "leg": 1,
+  "peak": "Middle Sister",
+  "route": "North ridge, from the col south of North Sister",
+  "pick": {
+   "id": "or_middle_sister_north_ridge_hayden_glacier",
+   "name": "North Ridge (Hayden Glacier)",
+   "disc": "mountaineering",
+   "grade": "Grade II Snow",
+   "area": "Middle Sister",
+   "score": 0.25
+  },
+  "others": [
+   {
+    "id": "or_middle_sister_north_ridge_hayden_glacier",
+    "name": "North Ridge (Hayden Glacier)",
+    "disc": "mountaineering",
+    "grade": "Grade II Snow",
+    "area": "Middle Sister",
+    "score": 0.25
+   },
+   {
+    "id": "or_middle_sister_southeast_ridge",
+    "name": "Southeast Ridge",
+    "disc": "mountaineering",
+    "grade": "Mod. Snow",
+    "area": "Middle Sister",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "or_lu_three_sisters_traverse",
+  "leg": 2,
+  "peak": "South Sister",
+  "route": "Northwest ridge",
+  "pick": null,
+  "others": [
+   {
+    "id": "or_old_crater_route",
+    "name": "Old Crater Route",
+    "disc": "alpine",
+    "grade": "3rd",
+    "area": "South Sister",
+    "score": 0
+   },
+   {
+    "id": "or_north_ridge",
+    "name": "North Ridge",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "South Sister",
+    "score": 0
+   },
+   {
+    "id": "or_south_sister_prouty_glacier",
+    "name": "Prouty Glacier",
+    "disc": "mountaineering",
+    "grade": "Easy Snow",
+    "area": "South Sister",
+    "score": 0
+   },
+   {
+    "id": "or_south_sister_south_side_route",
+    "name": "South Side Route",
+    "disc": "mountaineering",
+    "grade": "Easy Snow",
+    "area": "South Sister",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "or_lu_matterhorn_sacajawea",
+  "leg": 0,
+  "peak": "Matterhorn",
+  "route": "Ice Lake climbers' path",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "or_lu_matterhorn_sacajawea",
+  "leg": 1,
+  "peak": "Sacajawea Peak",
+  "route": "Ridge from Matterhorn",
+  "pick": null,
+  "others": []
+ }
+]

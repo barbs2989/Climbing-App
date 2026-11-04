@@ -24,12 +24,13 @@ const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(P(f))).diges
 const CM = "ClimbMatch.jsx", DB = "lib/db.js", G = "scripts/check-visibility-switches-persist.mjs";
 
 const CASES = [
-  { name: "resume-write", file: CM, must: "fail", why: "the real pre-0177 toggle: no write at all",
-    find: 'setResumePublic(function(v){var next=!v;if(uid)saveProfile(uid,{resume_public:next}).then(function(r){if(r&&r.error){setResumePublic(v);showToast("Couldn’t save that — your résumé visibility is unchanged.");}});return next;})',
+  // since PR62 the resume/leaderboard switches live in SettingsPrivacySheet.tsx (var -> const)
+  { name: "resume-write", file: "src/components/SettingsPrivacySheet.tsx", must: "fail", why: "the real pre-0177 toggle: no write at all",
+    find: 'setResumePublic(function(v){const next=!v;if(uid)saveProfile(uid,{resume_public:next}).then(function(r){if(r&&r.error){setResumePublic(v);showToast("Couldn’t save that — your résumé visibility is unchanged.");}});return next;})',
     repl: 'setResumePublic(v=>!v)' },
 
-  { name: "ranks-write", file: CM, must: "fail", why: "the real pre-0177 leaderboard toggle",
-    find: 'setShowOnRanks(function(v){var next=!v;if(uid)saveProfile(uid,{show_on_ranks:next}).then(function(r){if(r&&r.error){setShowOnRanks(v);showToast("Couldn’t save that — your leaderboard setting is unchanged.");}});return next;})',
+  { name: "ranks-write", file: "src/components/SettingsPrivacySheet.tsx", must: "fail", why: "the real pre-0177 leaderboard toggle",
+    find: 'setShowOnRanks(function(v){const next=!v;if(uid)saveProfile(uid,{show_on_ranks:next}).then(function(r){if(r&&r.error){setShowOnRanks(v);showToast("Couldn’t save that — your leaderboard setting is unchanged.");}});return next;})',
     repl: 'setShowOnRanks(v=>!v)' },
 
   { name: "resume-hydrate", file: CM, must: "fail", why: "written but never read back — resets on reload",
@@ -85,7 +86,7 @@ const CASES = [
   /* An UNDECLARED flag inside a gated block. A gated control renders as `null`, so it promises
    * nothing and must not be required to persist — otherwise the guard would demand a column for
    * every control the app has deliberately withheld. */
-  { name: "gated-new", file: CM, must: "pass", why: "SILENT: an undeclared flag inside a gated block promises nothing",
+  { name: "gated-new", file: "src/components/SettingsPrivacySheet.tsx", must: "pass", why: "SILENT: an undeclared flag inside a gated block promises nothing",
     find: "aria-checked={locPrecise}", repl: "aria-checked={brandNewGatedFlag}" },
 ];
 

@@ -1,0 +1,98 @@
+{
+ "id": "wa_mount_larrabee_south_ridge",
+ "name": "South Ridge",
+ "discipline": "scrambling",
+ "area": {
+  "id": "wa_mount_larrabee",
+  "name": "Mount Larrabee",
+  "lat": 48.9791,
+  "lng": -121.6481,
+  "elevation_ft": 7865,
+  "parent_id": "wa_shuksan_baker_neighbors",
+  "ground_ft": 7857
+ },
+ "dist_km": 6.4,
+ "gain_ft": 3900,
+ "high_point_ft": 7865,
+ "approach_logistics": {
+  "peakLat": 48.9791,
+  "peakLng": -121.6481,
+  "trailhead": "Twin Lakes Trailhead",
+  "trailheadLat": 48.95176,
+  "trailheadLng": -121.6358
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.95176,
+   "lng": -121.6358,
+   "elev": 5200,
+   "name": "Twin Lakes Trailhead",
+   "note": "Self-issue Northwest Forest Pass/day-use fee kiosk at the road end beside Twin Lakes; the last ~2 miles of FS-3065 below it are rough and need a high-clearance vehicle.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive Twin Lakes Road (FS 3065) past the Yellow Aster Butte trailhead and up the final, roughly two-mile rough section to the road end at Twin Lakes, where a Northwest Forest Pass or the day-use fee is needed. The road is snow-gated through winter and spring. That last section is steep and rutted and needs a high-clearance vehicle, so many parties park at the Yellow Aster Butte trailhead and walk it.",
+   "ground_ft": 5175
+  },
+  {
+   "i": 1,
+   "lat": 48.9512,
+   "lng": -121.6384,
+   "elev": 5180,
+   "name": "Twin Lakes",
+   "note": "Established backcountry camp at the alpine lake basin between Winchester and Bear Mountains; last reliable water before the high traverse to Low and High Passes.",
+   "type": "Campsite",
+   "distMi": 0,
+   "directions": "The lakes lie at the road end, in the basin between Winchester and Bear Mountains. Fill water here. These lakes are the last reliable source before the high traverse to Low and High Passes, and there is nothing dependable past High Pass in late season.",
+   "ground_ft": 5154
+  },
+  {
+   "i": 2,
+   "lat": null,
+   "lng": null,
+   "elev": 5660,
+   "name": "Low Pass",
+   "note": "Trail contours Winchester Mountain's east shoulder and drops through Low Pass before climbing again toward High Pass; boot path is easy to lose here in fog or lingering snow.",
+   "type": "Junction",
+   "distMi": 1.7,
+   "directions": "From the lakes follow the Winchester Mountain Trail (#685) about half a mile to a signed junction. The left branch climbs to the Winchester lookout, so take the right fork onto the High Pass Trail (#676). It runs through meadows across Winchester Mountain's east shoulder and crosses an avalanche chute where steep, exposed snow can hang on into August, then reaches the notch of Low Pass. Carry an ice axe and know how to use it while that chute still holds snow, and expect to lose the boot path through the pass itself in fog or lingering snow.",
+   "ground_ft": null
+  },
+  {
+   "i": 3,
+   "lat": 48.97179,
+   "lng": -121.64903,
+   "elev": 5940,
+   "name": "High Pass",
+   "note": "Basin-facing pass with the first close views of Larrabee's south face; leave the maintained High Pass Trail here and traverse cross-country toward the peak.",
+   "type": "Junction",
+   "distMi": 2.3,
+   "directions": "Climb again out of Low Pass on the High Pass Trail, a little over half a mile and about 300 feet of gain, passing the tailings and ruins of the old Gargett Mine just below the pass. High Pass is a scenic but wind-exposed spot with the first close look at Larrabee's south face. It is also the end of the maintained trail.",
+   "ground_ft": 5748
+  },
+  {
+   "i": 4,
+   "lat": null,
+   "lng": null,
+   "elev": 6900,
+   "name": "South Ridge crossing / SW Face gullies",
+   "note": "Boot up ~40-degree scree/snow slopes to cross the south ridge onto the southwest-face gully system; Larrabee's rock is notoriously loose and crumbly, so a helmet is essential.",
+   "type": "Hazard",
+   "distMi": 3.3,
+   "directions": "Leave the maintained trail at the pass and follow the unmarked climbers' path as it contours and drops 100 to 200 feet northwest into the basin under Larrabee's south face, passing a small cliff band near 6,400 feet. Cross boulder fields and then scree and dirt, booting up steep ground to the southwest spur at about 6,900 feet. Cairns mark parts of this but they sit far apart and the way trail vanishes for long stretches, and boot paths here can pull you toward the East Ridge, so hold to the south and southwest side of the peak.",
+   "ground_ft": null
+  },
+  {
+   "i": 5,
+   "lat": 48.9791,
+   "lng": -121.6481,
+   "elev": 7865,
+   "name": "Mount Larrabee Summit",
+   "note": "True summit (7,865 ft), 1.4 mi south of the Canada–US border; descend by reversing the south ridge/gully system back through the scree basin to High Pass.",
+   "type": "Summit",
+   "distMi": 4,
+   "directions": "From the spur, find the gully system cut into the rock face: two narrow parallel channels about thirty feet apart, of which the right-hand one is the line. It starts tight and opens into broken rock, Class 3 to 4 on loose phyllite, and holds steep snow into July and sometimes August. Climb it one person at a time with helmets on, since anything knocked loose runs straight down onto whoever is below. It tops out on the crest of the south ridge; follow the crest to the summit, favoring the west side and the firmer rock of the rib over the gully floor, with a faint way trail and scattered cairns coming and going.",
+   "ground_ft": 7857
+  }
+ ]
+}

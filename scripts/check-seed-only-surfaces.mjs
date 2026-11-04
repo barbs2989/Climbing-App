@@ -48,7 +48,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
-import { componentFiles } from "./lib/guard-sources.mjs";
+import { componentFiles, MOVED } from "./lib/guard-sources.mjs";
+// App's render bodies lifted into src/components/ (PR61 on) are App for the `&&` anchor: the Climbs
+// tab's seed branch now sits in RoutesTab.tsx.
+const APP_FILES = new Set(["ClimbMatch.jsx", ...MOVED["ClimbMatch.jsx"]]);
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -159,7 +162,7 @@ for (const f of FILES) {
       if (n.operator === "&&" && l.type === "UnaryExpression" && l.operator === "!" &&
           l.argument.type === "Identifier" && l.argument.name === "USE_DB") {
         addRegion(f, n);
-        if (f === "ClimbMatch.jsx") andCount++;
+        if (APP_FILES.has(f)) andCount++;
       }
     },
     ConditionalExpression(p) {

@@ -1,0 +1,60 @@
+{
+ "ar_crackhouse_alley": {
+  "_expect": {
+   "name": "Crackhouse Alley",
+   "region": "Arkansas"
+  },
+  "blurb": "Crackhouse Alley is the far southwest end of the long west-side wall at Horseshoe Canyon Ranch, in the Arkansas Ozarks. About two dozen sandstone lines are split between bolted sport and gear routes, with grades running from easy 5.7 to the low 5.12s and the bulk sitting in the 5.10 to 5.11 range. Shade is plentiful here, and the wall sees far fewer people than the better-known walls elsewhere in the canyon, which makes it a good pick for a quiet day on moderate to hard routes.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105986608",
+    "https://www.mountainproject.com/area/120626208/west-side"
+   ]
+  }
+ },
+ "ar_confederate_cracks": {
+  "_expect": {
+   "name": "Confederate Cracks",
+   "region": "Arkansas"
+  },
+  "blurb": "Confederate Cracks sits on the west side of Horseshoe Canyon Ranch in the Arkansas Ozarks, second from the left along a long sandstone wall. It leans toward gear climbing, with crack and corner lines outnumbering the bolted routes, though sport lines are mixed in. Difficulty starts near 5.7 and tops out around 5.12, with most routes between 5.9 and 5.11. The trails through the woods below it are home to snakes, so watch your step. Rack up for cracks if you come here.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105986599/confederate-cracks",
+    "https://www.mountainproject.com/area/120626208/west-side"
+   ]
+  }
+ },
+ "ar_hobo_beach": {
+  "_expect": {
+   "name": "Hobo Beach",
+   "region": "Arkansas"
+  },
+  "blurb": "Hobo Beach is a small bouldering spot beside the White River at Batesville in northeast Arkansas. The stone is a fine-grained sandstone that feels hollow but holds up well and is gentle on skin. Problems are steep and powerful, with flat sandy landings, though broken glass and litter can turn up there. The spread runs from VB up to roughly V7, mostly V1 to V5. It suits a warm-up session, a strength circuit or local projecting, and river levels can leave the flats muddy or flooded.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/120287291/hobo-beach",
+    "https://thetopo.com/crags/hobo-beach"
+   ]
+  }
+ },
+ "bc_wall_area": {
+  "_expect": {
+   "name": "Wall Area",
+   "region": "British Columbia"
+  },
+  "blurb": "Wall Area sits at the northern edge of the Smoke Bluffs, the cluster of granite crags rising above Squamish. It holds some of the longest lines at the bluffs, mostly gear routes with a handful of bolted ones, and a few multi-pitch link-ups. Grades start at 5.7 and climb through the 5.10s to a few 5.13s, so there is room for moderate crack climbers and strong ones alike. Crack, face and roof climbing all appear, and the roof crack is a known local test piece.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105842810/wall-area",
+    "https://mountainproject.com/area/105808584/the-smoke-bluffs"
+   ]
+  }
+ },
+ "_skipped": {
+  "ar_land_of_the_lost": "could not fetch two pages describing it; only climb counts on the East Side page and route listings",
+  "ar_breakfast_wall": "only one fetched page (Mountain Project Mt. Magazine) describes it; SummitPost page returned 403 and the other page never mentions it",
+  "ar_mad_max_bouldering": "fetched pages give only problem counts and one classic; no real description of the boulders",
+  "bc_the_dark_side": "fetched pages give only counts; no page describing the Squamish Dark Side itself could be read (other results were different places with that name)"
+ }
+}

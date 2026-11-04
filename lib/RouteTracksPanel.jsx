@@ -46,7 +46,7 @@ export default function RouteTracksPanel({ rows, profiles, loading, failed, show
               <div key={r.id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 0", borderTop: "1px solid " + C.border }}>
                 <span aria-hidden="true" style={{ width: 14, height: 14, borderRadius: 7, flexShrink: 0, background: on && col ? col : "transparent", border: "2px solid " + (on && col ? col : C.border) }} />
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{nameOf(r)}<span style={{ fontWeight: 400, color: C.textMuted }}>{r.date ? " · " + shortDate(r.date) : ""}</span></div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: C.text, overflowWrap: "anywhere" }}>{nameOf(r)}<span style={{ fontWeight: 400, color: C.textMuted }}>{r.date ? " · " + shortDate(r.date) : ""}</span></div>
                   <div style={{ fontSize: 12, color: C.textSub }}>{facts.join(" · ")}</div>
                   {onOpenReport && canOpen(r.id) ? <button onClick={() => onOpenReport(r.id)} style={{ background: "none", border: "none", padding: "2px 0 0", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>Read the report</button> : null}
                 </div>

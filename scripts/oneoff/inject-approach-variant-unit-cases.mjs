@@ -14,7 +14,7 @@
 // renamed local and a reworded placeholder are both ordinary work, and a probe that fired on either
 // would tell an author to stop touching correct code.
 //
-// IT EDITS RouteDetail.jsx IN PLACE. Do not commit, and do not build, while it runs.
+// IT EDITS src/components/SuggestFix.tsx IN PLACE. Do not commit, and do not build, while it runs.
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
@@ -22,17 +22,18 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const abs = path.join(ROOT, "RouteDetail.jsx");
+// PR59 moved SuggestFix (the edit sheet) to src/components/SuggestFix.tsx, so every case edits that file.
+const abs = path.join(ROOT, "src", "components", "SuggestFix.tsx");
 const sum = () => crypto.createHash("sha1").update(fs.readFileSync(abs)).digest("hex");
 
-const STORE = 'var d=itinStoreVal(x,"distMi");if(d!=null&&isFinite(d))o.distMi=d;\n    var g=itinStoreVal(x,"gainFt");if(g!=null&&isFinite(g))o.gainFt=g;';
+const STORE = 'const d=itinStoreVal(x,"distMi");if(d!=null&&isFinite(d))o.distMi=d;\n    const g=itinStoreVal(x,"gainFt");if(g!=null&&isFinite(g))o.gainFt=g;';
 const SEED = 'distMi:itinDraftVal(v,"distMi"),gainFt:itinDraftVal(v,"gainFt"),';
 
 const CASES = [
   // THE REAL HISTORICAL DEFECT, both halves, restored verbatim.
   { name: "store-never-converts", expect: "fail",
     find: STORE,
-    repl: 'var d=parseFloat(x.distMi);if(isFinite(d))o.distMi=d;\n    var g=parseInt(x.gainFt,10);if(isFinite(g))o.gainFt=g;',
+    repl: 'const d=parseFloat(x.distMi);if(isFinite(d))o.distMi=d;\n    const g=parseInt(x.gainFt as string,10);if(isFinite(g))o.gainFt=g;',
     says: /the column is miles|the column is feet/ },
   { name: "seed-never-converts", expect: "fail",
     find: SEED,
@@ -63,7 +64,7 @@ const CASES = [
   // MUST STAY SILENT: a renamed local is not a change to what is stored.
   { name: "local-renamed", expect: "pass",
     find: STORE,
-    repl: 'var dm=itinStoreVal(x,"distMi");if(dm!=null&&isFinite(dm))o.distMi=dm;\n    var gf=itinStoreVal(x,"gainFt");if(gf!=null&&isFinite(gf))o.gainFt=gf;',
+    repl: 'const dm=itinStoreVal(x,"distMi");if(dm!=null&&isFinite(dm))o.distMi=dm;\n    const gf=itinStoreVal(x,"gainFt");if(gf!=null&&isFinite(gf))o.gainFt=gf;',
     says: null },
   // MUST STAY SILENT: a better placeholder is ordinary editorial work. It still consults the unit
   // helper, which is the property the probe asserts — pinning the exact string would forbid this.

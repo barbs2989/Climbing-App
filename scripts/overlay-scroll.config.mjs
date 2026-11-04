@@ -9,7 +9,7 @@
 // Does not ship. Only ever passed via `vite --config`.
 
 import base from "../vite.config.js";
-import { buildOpener, lazyChunks, routeDetailTransform } from "./lib/overlay-scaffold.mjs";
+import { buildOpener, lazyChunks, routeDetailTransform, ADMIN_GATE } from "./lib/overlay-scaffold.mjs";
 
 const ANCHOR = "  const prevUidRef=useRef(uid);";
 
@@ -35,7 +35,11 @@ function overlayScrollScaffold() {
       // Discovery + opener are shared with check:zero and check:signed-in, so the three
       // cannot drift on which modals exist. See scripts/lib/overlay-scaffold.mjs.
       const { inject } = buildOpener(code, ANCHOR, "check:overlay-scroll");
-      return code.replace(ANCHOR, ANCHOR + "\n  " + inject);
+      // The review queue's admin gate, so check:pinned-dismiss's `?zx=reviewQueue` can open it.
+      // Inert unless that opener sets window.__ovAdminGate; see ADMIN_GATE in overlay-scaffold.mjs.
+      const g = code.split(ADMIN_GATE.from).length - 1;
+      if (g !== 1) throw new Error(`ADMIN GATE LOST in ClimbMatch.jsx: expected exactly 1 occurrence of ${ADMIN_GATE.from} but found ${g} — update ADMIN_GATE in scripts/lib/overlay-scaffold.mjs`);
+      return code.replace(ADMIN_GATE.from, ADMIN_GATE.to).replace(ANCHOR, ANCHOR + "\n  " + inject);
     },
   };
 }

@@ -15,7 +15,11 @@
 //
 // What it cannot see: a source that would not load (SummitPost and theCrag refuse scripted fetches),
 // a close paraphrase that changes one word in every seven, and a copy from a page the batch did not
-// list. Unreadable sources are REPORTED, never counted as clean.
+// list. Unreadable sources are REPORTED, never counted as clean. A page a researcher read in a real
+// browser can be checked anyway: `review.source_texts` maps its URL to a saved copy of the page text
+// (a path from the repo root), and that copy is used instead of a scripted fetch.
+
+import fs from "fs";
 
 export const MIN_RUN = 8;
 
@@ -82,7 +86,13 @@ export async function fetchSourceText(url) {
 export async function checkEntry(spec) {
   const urls = Array.isArray(spec?.review?.sources) ? spec.review.sources.filter(u => /^https?:\/\//.test(u)) : [];
   const texts = [], unread = [];
-  for (const u of urls) { const t = await fetchSourceText(u); if (t) texts.push(t); else unread.push(u); }
+  const saved = spec?.review?.source_texts || {};
+  for (const u of urls) {
+    let t = null;
+    if (saved[u]) { try { t = fs.readFileSync(saved[u], "utf8"); } catch { t = null; } if (t && words(t).length < 40) t = null; }
+    if (!t) t = await fetchSourceText(u);
+    if (t) texts.push(t); else unread.push(u);
+  }
   const grams = sourceIndex(texts);
   const hits = [];
   for (const s of proseStrings(spec)) { const runs = copiedRuns(s.text, grams); if (runs.length) hits.push({ path: s.path, runs }); }

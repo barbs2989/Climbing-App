@@ -5,7 +5,7 @@
 import { useEffect, useState } from "react";
 import { BTN_SM, INPUT } from "./buttonStyles.js";
 import { createPortal } from "react-dom";
-import { useSession } from "./auth";
+import { useSession } from "../src/AuthContext.tsx";
 import {
   useGuideProfile, useGuideCredentials, useGuideInquiries, useGuideReviews,
   updateGuideProfile, addGuideCredential, resubmitGuideCredential,

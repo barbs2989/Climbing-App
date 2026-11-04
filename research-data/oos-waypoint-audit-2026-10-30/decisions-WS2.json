@@ -1,0 +1,316 @@
+[
+ {
+  "id": "wa_classic_route_2",
+  "i": 1,
+  "name": "Unicorn Peak Summit",
+  "from": [
+   46.74591,
+   -121.70119
+  ],
+  "op": "none",
+  "reason": "Pin 107 m from GNIS Summit (within 150 m); GNIS point is a 3DEP local max at 6910 ft vs published 6971. Left as is.",
+  "source": "GNIS 1527606"
+ },
+ {
+  "id": "wa_open_book_2",
+  "i": 1,
+  "name": "Unicorn Peak Summit",
+  "from": [
+   46.74591,
+   -121.70119
+  ],
+  "op": "none",
+  "reason": "Same pin as wa_classic_route_2: 107 m from GNIS Summit, within tolerance.",
+  "source": "GNIS 1527606"
+ },
+ {
+  "id": "wa_luna_peak_southeast_slopes",
+  "i": 7,
+  "name": "Luna Peak",
+  "from": [
+   48.83056,
+   -121.27306
+  ],
+  "op": "none",
+  "reason": "Pin 74 m from GNIS Summit (a 3DEP local max at 8296 ft vs stored 8311); within 150 m tolerance.",
+  "source": "GNIS 1522575"
+ },
+ {
+  "id": "wa_little_mac_spire_southwest_route",
+  "i": 7,
+  "name": "Little Mac Spire",
+  "from": [
+   48.7737,
+   -121.2762
+  ],
+  "op": "none",
+  "reason": "Peakbagger puts it at 48.773725,-121.274455 (7,735.6 ft; 3DEP there 7747 ft, not an exact local max), pin is 128 m west, within 150 m. Pin ground 7885 is on the neighbouring ridge; borderline, not moved.",
+  "source": "https://www.peakbagger.com/peak.aspx?pid=38259",
+  "quote": "coordinates of 48.773725, -121.274455 (search-result summary; page not fetched)"
+ },
+ {
+  "id": "wa_sherpa_balanced_rock_standard",
+  "i": 4,
+  "name": "Sherpa Balanced Rock summit block",
+  "from": [
+   47.4721,
+   -120.8887
+  ],
+  "op": "none",
+  "reason": "Pin about 40 m from GNIS Sherpa Peak Summit (3DEP max 8593 ft); it marks the balanced-rock block on the summit. Within tolerance.",
+  "source": "GNIS 1531559"
+ },
+ {
+  "id": "wa_around_the_cave_we_go",
+  "i": 1,
+  "name": "Concord Tower summit",
+  "from": [
+   48.514458,
+   -120.658133
+  ],
+  "op": "none",
+  "reason": "Within about 10 m of ListsOfJohn 48.51452,-120.65826 (7,612 ft; stored 7611).",
+  "source": "https://listsofjohn.com/peak/142379",
+  "quote": "48.51452N, 120.65826W and a LiDAR-based elevation of 7,612 ft (search-result summary)"
+ },
+ {
+  "id": "wa_up_in_arms",
+  "i": 1,
+  "name": "Concord Tower summit",
+  "from": [
+   48.514458,
+   -120.658133
+  ],
+  "op": "none",
+  "reason": "Within about 10 m of ListsOfJohn 48.51452,-120.65826 (7,612 ft; stored 7611).",
+  "source": "https://listsofjohn.com/peak/142379",
+  "quote": "48.51452N, 120.65826W and a LiDAR-based elevation of 7,612 ft (search-result summary)"
+ },
+ {
+  "id": "wa_north_face_var_right_directisimo",
+  "i": 1,
+  "name": "Concord Tower Summit",
+  "from": [
+   48.51465,
+   -120.65825
+  ],
+  "op": "none",
+  "reason": "About 15 m from ListsOfJohn 48.51452,-120.65826 (7,612 ft; stored 7611).",
+  "source": "https://listsofjohn.com/peak/142379",
+  "quote": "48.51452N, 120.65826W and a LiDAR-based elevation of 7,612 ft (search-result summary)"
+ },
+ {
+  "id": "wa_south_face_3",
+  "i": 1,
+  "name": "Concord Tower Summit",
+  "from": [
+   48.51465,
+   -120.65825
+  ],
+  "op": "none",
+  "reason": "About 15 m from ListsOfJohn 48.51452,-120.65826 (7,612 ft; stored 7611).",
+  "source": "https://listsofjohn.com/peak/142379",
+  "quote": "48.51452N, 120.65826W and a LiDAR-based elevation of 7,612 ft (search-result summary)"
+ },
+ {
+  "id": "wa_south_face_center",
+  "i": 1,
+  "name": "Concord Tower Summit",
+  "from": [
+   48.51465,
+   -120.65825
+  ],
+  "op": "none",
+  "reason": "About 15 m from ListsOfJohn 48.51452,-120.65826 (7,612 ft; stored 7611).",
+  "source": "https://listsofjohn.com/peak/142379",
+  "quote": "48.51452N, 120.65826W and a LiDAR-based elevation of 7,612 ft (search-result summary)"
+ },
+ {
+  "id": "wa_the_cave_route",
+  "i": 1,
+  "name": "Concord Tower Summit",
+  "from": [
+   48.51465,
+   -120.65825
+  ],
+  "op": "none",
+  "reason": "About 15 m from ListsOfJohn 48.51452,-120.65826 (7,612 ft; stored 7611).",
+  "source": "https://listsofjohn.com/peak/142379",
+  "quote": "48.51452N, 120.65826W and a LiDAR-based elevation of 7,612 ft (search-result summary)"
+ },
+ {
+  "id": "wa_west_craggy_peak_standard_route",
+  "i": 3,
+  "name": "West Craggy Peak summit",
+  "from": [
+   48.7625,
+   -120.3456
+  ],
+  "op": "none",
+  "reason": "Pin about 15 m from GNIS West Craggy Cliff; stored 8366 is the WTA figure, Peakbagger lidar 8372 (6 ft apart).",
+  "source": "GNIS 1527921"
+ },
+ {
+  "id": "wa_the_devils_club",
+  "i": 1,
+  "name": "Southeast Mox Peak (Hard Mox) summit / East Face high point",
+  "from": [
+   48.9475,
+   -121.2556
+  ],
+  "op": "none",
+  "reason": "Pin about 100 m from GNIS Mox Peaks Summit (3DEP max 8499 vs stored 8504); within tolerance, and the name says East Face high point.",
+  "source": "GNIS 1506852"
+ },
+ {
+  "id": "wa_narcos",
+  "i": 3,
+  "name": "Little Liberty Bell / Cutthroat Creek Wall (formation high point)",
+  "from": [
+   48.54975,
+   -120.6435
+  ],
+  "op": "none",
+  "reason": "A crag formation high point, not a named summit; no GNIS or published coordinate exists. Pin left as a deliberate formation marker."
+ },
+ {
+  "id": "wa_wright_pond",
+  "i": 3,
+  "name": "Little Liberty Bell / Cutthroat Creek Wall (formation high point)",
+  "from": [
+   48.54975,
+   -120.6435
+  ],
+  "op": "none",
+  "reason": "A crag formation high point, not a named summit; no GNIS or published coordinate exists. Pin left as a deliberate formation marker."
+ },
+ {
+  "id": "wa_greenwood_mountain_west_ridge",
+  "i": 2,
+  "name": "Greenwood Mountain summit",
+  "from": [
+   48.1853811,
+   -120.8506662
+  ],
+  "op": "none",
+  "reason": "Within about 10 m of SummitPost 48.18537,-120.85074 and ListsOfJohn 48.18523,-120.85083 (8,413 ft lidar; stored 8413).",
+  "source": "https://listsofjohn.com/peak/48732",
+  "quote": "48.18523N, 120.85083W, with an elevation of 8,413 feet (LiDAR) (search-result summary)"
+ },
+ {
+  "id": "wa_blue_s_buttress",
+  "i": 2,
+  "name": "Poster Peak - Summit",
+  "from": [
+   48.50271,
+   -120.63726
+  ],
+  "op": "none",
+  "reason": "Equals Mountain Project's coordinate for Poster Peak; 7,565 ft published matches stored.",
+  "source": "https://www.mountainproject.com/area/111086652/poster-peak",
+  "quote": "48.50271, -120.63726 (search-result summary)"
+ },
+ {
+  "id": "wa_mushroom_tower_standard",
+  "i": 6,
+  "name": "Mushroom Tower summit",
+  "from": [
+   48.519948,
+   -120.617208
+  ],
+  "op": "none",
+  "reason": "No GNIS or published coordinate found for Mushroom Tower; ground 8116 vs stored 8180 is within 64 ft. Unverified, left."
+ },
+ {
+  "id": "wa_chockstone_route",
+  "i": 3,
+  "name": "North Early Winters Spire",
+  "from": [
+   48.51291,
+   -120.65557
+  ],
+  "op": "none",
+  "reason": "Pin about 30 m from GNIS Early Winters Spires 48.51264,-120.65540; ground 7709 vs stored 7760.",
+  "source": "GNIS 1519068"
+ },
+ {
+  "id": "wa_flycatcher_buttress",
+  "i": 2,
+  "name": "North Early Winters Spire",
+  "from": [
+   48.51291,
+   -120.65557
+  ],
+  "op": "none",
+  "reason": "Pin about 30 m from GNIS Early Winters Spires 48.51264,-120.65540; ground 7709 vs stored 7760.",
+  "source": "GNIS 1519068"
+ },
+ {
+  "id": "wa_labor_pains",
+  "i": 2,
+  "name": "North Early Winters Spire",
+  "from": [
+   48.51291,
+   -120.65557
+  ],
+  "op": "none",
+  "reason": "Pin about 30 m from GNIS Early Winters Spires 48.51264,-120.65540; ground 7709 vs stored 7760.",
+  "source": "GNIS 1519068"
+ },
+ {
+  "id": "wa_news_nw_corner",
+  "i": 1,
+  "name": "North Early Winters Spire",
+  "from": [
+   48.51291,
+   -120.65557
+  ],
+  "op": "none",
+  "reason": "Pin about 30 m from GNIS Early Winters Spires 48.51264,-120.65540; ground 7709 vs stored 7760.",
+  "source": "GNIS 1519068"
+ },
+ {
+  "id": "wa_the_west_face",
+  "i": 2,
+  "name": "North Early Winters Spire",
+  "from": [
+   48.51291,
+   -120.65557
+  ],
+  "op": "none",
+  "reason": "Pin about 30 m from GNIS Early Winters Spires 48.51264,-120.65540; ground 7709 vs stored 7760.",
+  "source": "GNIS 1519068"
+ },
+ {
+  "id": "wa_east_face_3",
+  "i": 0,
+  "name": "Minuteman Spire - Summit",
+  "from": [
+   48.51229,
+   -120.65397
+  ],
+  "op": "none",
+  "reason": "Equals Mountain Project's coordinate and 6,969 ft elevation for Minuteman Spire.",
+  "source": "https://www.mountainproject.com/area/118994462/minuteman-spire",
+  "quote": "6,969 ft; GPS 48.51229, -120.65397 (search-result summary)"
+ },
+ {
+  "id": "wa_frenzel_spitz_south_route",
+  "i": 9,
+  "name": "Frenzel Spitz Summit",
+  "from": [
+   48.77638,
+   -121.31694
+  ],
+  "op": "move",
+  "to": [
+   48.77862,
+   -121.317086
+  ],
+  "ground_ft_at_to": 7464,
+  "source": "https://peakbagger.com/peak.aspx?pid=38253",
+  "quote": "Frenzel Spitz ... 7440+ feet ... coordinates 48.77862, -121.317086 (search-result summary; page 403s)",
+  "second_source": "GNIS 1530489 Frenzelspitz Pillar 48.77680,-121.31292 (3DEP 7429, not a max)",
+  "reason": "Pin is about 250 m SSW of Peakbagger's summit, and 3DEP shows higher ground (up to 7827 ft) beside the pin. Peakbagger's point is a 3DEP local max at 7464 ft vs published 7440+."
+ }
+]

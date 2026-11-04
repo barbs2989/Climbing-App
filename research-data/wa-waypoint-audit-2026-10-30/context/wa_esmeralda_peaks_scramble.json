@@ -1,0 +1,70 @@
+{
+ "id": "wa_esmeralda_peaks_scramble",
+ "name": "Southwest Slope (De Roux Creek)",
+ "discipline": "mountaineering",
+ "area": {
+  "id": "wa_esmeralda_peaks",
+  "name": "Esmeralda Peaks",
+  "lat": 47.441115,
+  "lng": -120.969755,
+  "elevation_ft": 6776,
+  "parent_id": "wa_teanaway",
+  "ground_ft": 6772
+ },
+ "dist_km": 5.6,
+ "gain_ft": 3100,
+ "high_point_ft": 6765,
+ "approach_logistics": {
+  "peakLat": 47.441115,
+  "peakLng": -120.969755,
+  "trailhead": "De Roux Trailhead (FR-9737)",
+  "trailheadLat": 47.41913,
+  "trailheadLng": -120.93902,
+  "trailheadDirection": "From the De Roux trailhead and campground on FR-9737, via the Boulder-De Roux Trail #1392 west up the valley to its last switchback"
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 47.41913,
+   "lng": -120.93902,
+   "elev": 3800,
+   "name": "De Roux Trailhead",
+   "note": "Small trailhead campground on FR-9737 below the road end. Self-issue the free wilderness permit at the kiosk and take the Boulder-De Roux Trail #1392 west up the valley.",
+   "type": "Trailhead",
+   "elevFt": 3800,
+   "directions": "From I-90 Exit 85, take SR 970 east about 7 miles and turn left onto Teanaway Road. Follow it north as it becomes the North Fork Teanaway Road to the end of pavement at 29 Pines Campground, then continue straight on gravel FR 9737 for about 8.5 miles and take the left fork into the De Roux campground and trailhead, about a mile short of the road end. A Northwest Forest Pass is required to park; self-issue the free wilderness permit at the kiosk.",
+   "ground_ft": 3805
+  },
+  {
+   "i": 1,
+   "lat": 47.41913,
+   "lng": -120.93901,
+   "elev": 3800,
+   "name": "De Roux trailhead campground",
+   "type": "Campsite",
+   "ground_ft": 3805
+  },
+  {
+   "i": 2,
+   "lat": 47.43523,
+   "lng": -120.97488,
+   "elev": 5450,
+   "name": "Last switchback (house-sized boulder)",
+   "note": "The trail's final switchback crosses a talus ridge beside a house-sized boulder. Leave the tread on the boulder's climber's left and head northeast up the scree; if the trail starts contouring toward the lake without climbing, you have passed it.",
+   "type": "Junction",
+   "directions": "Take the Boulder-De Roux Trail #1392 west, crossing the North Fork Teanaway and then De Roux Creek on bridges. About a mile in, keep right where the De Roux spur branches left, on the trail signed for Gallagher Head Lake, and climb the valley past several waterfalls and a rock-hop creek crossing to the trail's last switchback, where it crosses a talus ridge beside a house-sized boulder.",
+   "ground_ft": 5450
+  },
+  {
+   "i": 3,
+   "lat": 47.440662,
+   "lng": -120.968166,
+   "elev": 6776,
+   "name": "Esmeralda Peaks - West Summit (true/high summit)",
+   "type": "Summit",
+   "elevFt": 6776,
+   "directions": "Leave the trail on the boulder's climber's left and climb northeast up about 1,100 ft of sustained Class 2 scree and talus with no marked path; the line beneath the southwest ridge and the talus farther to climber's right both go. The top 100 to 150 ft is loose broken rock to the walk-up west summit.",
+   "ground_ft": 6734
+  }
+ ]
+}

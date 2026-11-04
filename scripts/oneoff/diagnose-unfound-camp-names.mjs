@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // IS IT THE SOURCE, OR THE QUERY? — asked of the camps the gazetteer "cannot find".
 //
 // solve-camp-elevations refuses 50 names with `no feature named "X" anywhere in WA`, and CLAUDE.md
@@ -25,7 +26,7 @@ const norm = (s) => s.toLowerCase().replace(/\s+/g, " ").trim();
 // Every name the solver refused as unfindable, read from its own proposals file rather than
 // retyped — a hand-copied sample is how you end up extrapolating from ten.
 import fs from "fs";
-const PROPOSALS = new URL("../../camp-elevation-proposals.json", import.meta.url).pathname;
+const PROPOSALS = fileURLToPath(new URL("../../camp-elevation-proposals.json", import.meta.url));
 if (!fs.existsSync(PROPOSALS)) {
   console.log("FAIL CLOSED: run solve-camp-elevations.mjs first to produce the refusal list");
   process.exit(1);

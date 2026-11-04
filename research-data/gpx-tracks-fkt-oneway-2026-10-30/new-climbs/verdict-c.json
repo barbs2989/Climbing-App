@@ -1,0 +1,374 @@
+[
+ {
+  "slug": "bandera-peak-wa",
+  "verdict": "walkup",
+  "reason": "Bandera Mountain is reached by a steep maintained trail followed by a rough boulder-field path to a forested top, a hike rather than a climb.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Ira Spring trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/bandera-peak-wa"
+  ]
+ },
+ {
+  "slug": "black-tusk-bc-canada",
+  "verdict": "add",
+  "reason": "The Black Tusk's usual route ends in a Class 3 chute scramble on a volcanic plug above a long trail approach, and the track climbs from the same Rubble Creek lot to the top.",
+  "aliases": [],
+  "area": {
+   "id": "bc_black_tusk",
+   "name": "Black Tusk",
+   "parent_id": "bc_garibaldi_park",
+   "area_type": "peak",
+   "lat": 49.9751,
+   "lng": -123.0427,
+   "elevation_ft": 7608,
+   "region": "British Columbia",
+   "blurb": "The Black Tusk is a dark volcanic spire that stands above Garibaldi Lake and is visible from the Whistler corridor. Hikers reach its base by a long trail, and the top is a short scramble."
+  },
+  "route": {
+   "id": "bc_black_tusk_standard_route",
+   "area_id": "bc_black_tusk",
+   "name": "Standard Route from Rubble Creek",
+   "discipline": "scrambling",
+   "grade": "3rd",
+   "grade_system": "class",
+   "rock_grade": "Class 3 chute on the Tusk's upper rock, then a narrow ridge of loose rock; the slightly higher true summit needs a short 5th-class gap crossing and is seldom climbed",
+   "season": "July-October",
+   "best_season": "Midsummer to early fall, once the approach slopes are free of snow. Wet or icy rock in the chute makes the climb much harder, and park staff discourage the final chute for those without scrambling experience.",
+   "overview": "A well-graded trail climbs from the Rubble Creek lot past the Taylor Meadows and Garibaldi Lake area, then leaves maintained tread on the ridge to reach the base of the Tusk. The long approach is the main effort; the climbing is a short but exposed Class 3 chute followed by a loose crest to the commonly reached top.",
+   "beta": "Follow the main trail up many switchbacks and across the Taylor Meadows plateau to the ridge below the Tusk, where the maintained route ends at a park sign. Continue on worn paths across loose shale that slides back with each step toward the foot of the spire. Climb the chute that splits the rock, keeping to the firmer sides and watching for loose blocks that parties below could be hit by. The chute tops out on an exposed crest of loose rock that leads to the usual summit. The marginally taller true summit lies beyond a gap that requires 5th-class moves and is rarely done.",
+   "approach": "The Rubble Creek parking lot sits about 3 km up a paved side road off the Sea to Sky Highway south of Whistler, at roughly 590 m. The trail begins here and gains about 1,700 m to the base of the scramble.",
+   "descent_text": "Reverse the chute carefully, ideally one party at a time to avoid dropping rock on those below, then follow the loose shale back to the park sign and the trail down to the lot.",
+   "turnaround": "Turn back if the chute is wet or snow-covered, or if you cannot be down the trail before dark; the day is long.",
+   "bail": "Retreat is down the same chute and shale slope, then the trail.",
+   "pitch_detail": [
+    {
+     "pitch": "Rubble Creek to the ridge",
+     "grade": "Class 1",
+     "notes": "Well-graded maintained trail with a lot of switchbacks and distance, to the park sign on the ridge."
+    },
+    {
+     "pitch": "Shale slope to the base",
+     "grade": "Class 2",
+     "notes": "Unmaintained path over loose shale that slides underfoot."
+    },
+    {
+     "pitch": "Upper chute",
+     "grade": "Class 3",
+     "notes": "Short chute on fairly solid rock to the crest; beware of rockfall."
+    },
+    {
+     "pitch": "Summit crest",
+     "grade": "Class 3",
+     "notes": "Exposed ridge of loose rock to the usual top."
+    }
+   ],
+   "gain_ft": 5700,
+   "high_point_ft": 7608,
+   "outing_shape": "outback",
+   "gear": [
+    "Helmet",
+    "Sturdy approach shoes or boots"
+   ],
+   "what_to_bring": [
+    "Plenty of water",
+    "Headlamp for the long return",
+    "Warm layer and wind shell",
+    "Sun protection"
+   ],
+   "hazards": [
+    "Class 3 scrambling with exposure",
+    "Loose shale and rock",
+    "Rockfall onto parties below",
+    "Very long day"
+   ],
+   "obj_haz": [
+    "Rockfall in the chute",
+    "Afternoon storms on an exposed spire"
+   ],
+   "watch_out": "Pulling rock loose in the chute endangers anyone beneath\nThe shale slope slides back with each step\nA long day: plan to be on the trail in daylight",
+   "pro_tips": [
+    "Start at first light",
+    "Climb the chute one party at a time"
+   ],
+   "features": [
+    "Scenic",
+    "Classic"
+   ],
+   "timing": {
+    "recommendedStart": "Early morning"
+   },
+   "grade_num": 3,
+   "pitches": 0,
+   "access": {
+    "land_manager": "BC Parks (Garibaldi Provincial Park)"
+   },
+   "dist_km": 24,
+   "approach_logistics": {
+    "trailhead": "Rubble Creek trailhead"
+   },
+   "auto_generated": true,
+   "classic": false
+  },
+  "parentNote": null,
+  "trailhead": "Rubble Creek trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/black-tusk-bc-canada",
+   "https://www.vancouvertrails.com/trails/black-tusk/"
+  ]
+ },
+ {
+  "slug": "box-elder-peak-ut",
+  "verdict": "walkup",
+  "reason": "Box Elder Peak is climbed by a Class 1-2 trail and scree finish from Granite Flats.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Granite Flats trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/box-elder-peak-ut"
+  ]
+ },
+ {
+  "slug": "breakneck-ridge-hudson-highlands-ny",
+  "verdict": "skip",
+  "reason": "The track links Breakneck Ridge with Mount Beacon, a multi-summit hiking traverse rather than one climb.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Breakneck Ridge trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/breakneck-ridge-hudson-highlands-ny"
+  ]
+ },
+ {
+  "slug": "byers-peak-co",
+  "verdict": "walkup",
+  "reason": "Byers Peak's standard trail is a hike with Class 2 rocky ground only on the final ridge.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": null,
+  "trailheadConfirmed": false,
+  "sources": []
+ },
+ {
+  "slug": "chinese-peak-id",
+  "verdict": "walkup",
+  "reason": "Chinese Peak above Pocatello is reached by a steep BLM trail or a drivable road; it is a hike.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": null,
+  "trailheadConfirmed": false,
+  "sources": []
+ },
+ {
+  "slug": "chisos-escalada-tx",
+  "verdict": "skip",
+  "reason": "The track is a long out-and-back to Emory Peak from Sam Nail Ranch, not the usual short trail from the Chisos Basin, and the summit scramble is only about 100 ft.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Sam Nail Ranch",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/chisos-escalada-tx"
+  ]
+ },
+ {
+  "slug": "downs-mountain-wy",
+  "verdict": "walkup",
+  "reason": "Downs Mountain is Class 2 (2+ by the east ramp); the difficulty is the long, partly off-trail distance from Trail Lake, not the climbing.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Trail Lake trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/downs-mountain-wy"
+  ]
+ },
+ {
+  "slug": "golden-hinde-bc-canada",
+  "verdict": "add",
+  "reason": "Vancouver Island's highest peak is reached by a multi-day route over Phillips Ridge to a steep snow-filled couloir and short scramble, which is mountaineering terrain beyond a walk-up.",
+  "aliases": [
+   "The Hinde"
+  ],
+  "area": {
+   "id": "bc_golden_hinde",
+   "name": "Golden Hinde",
+   "parent_id": "bc_strathcona_provincial_park",
+   "area_type": "peak",
+   "lat": 49.6627,
+   "lng": -125.747,
+   "elevation_ft": 7201,
+   "region": "British Columbia",
+   "blurb": "Golden Hinde is the highest peak on Vancouver Island, set deep in the centre of Strathcona Provincial Park far from any road. It is reached only by a multi-day trek."
+  },
+  "route": {
+   "id": "bc_golden_hinde_phillips_ridge_route",
+   "area_id": "bc_golden_hinde",
+   "name": "Phillips Ridge Route",
+   "discipline": "mountaineering",
+   "grade": "4th",
+   "grade_system": "class",
+   "rock_grade": "Class 3-4 scrambling on loose basalt and a steep snow couloir below the summit, with a Class 3 ledge on the approach ridge",
+   "season": "July-September",
+   "best_season": "Late summer, when the ridge and gully are largely free of snow. Early in the season the couloir holds firm snow and ice, and parties need axes and crampons.",
+   "overview": "A committing multi-day trek from the Westmin Mine trailhead climbs Phillips Ridge, traverses a string of rises past alpine lakes, and descends to the basin below the north end of the summit ridge. A scree slope and a steep couloir lead to a short scramble on the top.",
+   "beta": "From the Westmin lot, climb switchbacks to Arnica Lake and then follow the long ridge over several bumps; a roughly 6 m Class 3 ledge near Terror Peak is the main exposure there. Descend steeply to the Carter Lake area, continue past Opal Lake and over a col to the Schjelderup lakes, then drop into the gully between the Schjelderup and Burman drainages. Cross to Moraine Lake, climb the south and southeast scree slopes toward the north end of the summit ridge, and ascend the steep couloir (roughly 55 degrees in places, with a narrow line beside the snow). A short scramble of about 50 m finishes on the summit.",
+   "approach": "Drive to the Westmin Mine area at the south end of Buttle Lake in Strathcona Provincial Park; the trail begins from the lot next to the old mine.",
+   "descent_text": "Descend the couloir or the sunny bowl to its south, return over the scree to Moraine Lake and retrace the traverse to your camp.",
+   "turnaround": "Turn back if the couloir snow is not firm or if rockfall is active above you; a slip here is unprotected.",
+   "bail": "Retreat is the way you came, over the ridge to the trailhead; there is no quick exit.",
+   "pitch_detail": [
+    {
+     "pitch": "Westmin trailhead to Phillips Ridge",
+     "grade": "Class 1",
+     "notes": "Switchback trail up to the ridge."
+    },
+    {
+     "pitch": "Phillips Ridge traverse",
+     "grade": "Class 2-3",
+     "notes": "Many ups and downs; a short Class 3 ledge by Terror Peak."
+    },
+    {
+     "pitch": "Carter Lake to Moraine Lake",
+     "grade": "Class 2",
+     "notes": "Steep slippery descents and boot-path route-finding."
+    },
+    {
+     "pitch": "Scree to the couloir",
+     "grade": "Class 2",
+     "notes": "South and southeast scree slopes toward the north end of the summit ridge."
+    },
+    {
+     "pitch": "Summit couloir and scramble",
+     "grade": "Class 3-4",
+     "notes": "Steep snow in a couloir, then about 50 m of scrambling on loose basalt."
+    }
+   ],
+   "high_point_ft": 7201,
+   "outing_shape": "outback",
+   "gear": [
+    "Ice axe",
+    "Crampons",
+    "Helmet",
+    "Boots"
+   ],
+   "what_to_bring": [
+    "Overnight camping gear for several days",
+    "Navigation for a boot-path route",
+    "Warm layers"
+   ],
+   "hazards": [
+    "Steep snow couloir with a no-fall runout",
+    "Rockfall in the couloir",
+    "Loose basalt",
+    "Class 3 ledge on the approach ridge",
+    "Remote location, long route"
+   ],
+   "obj_haz": [
+    "Rockfall from above",
+    "Fog making the route hard to follow"
+   ],
+   "watch_out": "Wear a helmet in the couloir\nThe trail can vanish in fog\nThe trip is multi-day and far from help",
+   "pro_tips": [
+    "Carry an ice axe and crampons in early season",
+    "Plan for four or more days"
+   ],
+   "features": [
+    "Remote",
+    "Scenic"
+   ],
+   "timing": {
+    "recommendedStart": "Early morning on summit day"
+   },
+   "grade_num": 4,
+   "pitches": 0,
+   "access": {
+    "land_manager": "BC Parks (Strathcona Provincial Park)"
+   },
+   "dist_km": 82,
+   "approach_logistics": {
+    "trailhead": "Westmin Mine trailhead"
+   },
+   "auto_generated": true,
+   "classic": false
+  },
+  "parentNote": null,
+  "trailhead": "Westmin Mine trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/golden-hinde-bc-canada",
+   "https://www.ubc-voc.com/trip-reports/going-for-gold-the-golden-hinde-10756/"
+  ]
+ },
+ {
+  "slug": "he-devil-she-devil-id",
+  "verdict": "skip",
+  "reason": "The track is a link-up of two summits, He Devil and She Devil, rather than one peak.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Seven Devils Campground",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/he-devil-she-devil-id"
+  ]
+ },
+ {
+  "slug": "highwood-baldy-mt",
+  "verdict": "walkup",
+  "reason": "Highwood Baldy is a hike with a sandy scree finish, not a climb.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": null,
+  "trailheadConfirmed": false,
+  "sources": []
+ },
+ {
+  "slug": "hyndman-peak-id",
+  "verdict": "walkup",
+  "reason": "The standard Hyndman Creek route to the summit is rated Class 2.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Hyndman Creek trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/hyndman-peak-id"
+  ]
+ },
+ {
+  "slug": "kinport-peak-id",
+  "verdict": "walkup",
+  "reason": "Kinport Peak is a trail hike from Pocatello to a summit with towers.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": null,
+  "trailheadConfirmed": false,
+  "sources": []
+ }
+]

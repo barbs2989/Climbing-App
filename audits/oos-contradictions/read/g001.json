@@ -1,0 +1,987 @@
+{
+ "batches": [
+  "b001.json",
+  "b002.json"
+ ],
+ "routes_read": 103,
+ "routes": [
+  {
+   "id": "ab_mt_bourgeau_bourgeau_left_hand",
+   "name": "Bourgeau Left-Hand",
+   "area": "Mt. Bourgeau",
+   "contradictions": []
+  },
+  {
+   "id": "ab_professor_falls_area_the_professor_falls",
+   "name": "The Professor Falls",
+   "area": "Professor Falls Area",
+   "contradictions": [
+    {
+     "fact": "number of tiers/pitches",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "6"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "The eight steps allow multiple teams to work at once"
+      }
+     ],
+     "why": "Pitch count 6 vs eight steps in tips.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "ropes needed for descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[1]",
+       "says": "two ropes"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "Take two ropes for the descent, although a single 60 m can manage."
+      },
+      {
+       "field": "rappels",
+       "says": "one 60 m or 70 m rope is enough, though two ropes make it easier"
+      }
+     ],
+     "why": "Gear list says two ropes while rappels says one rope is enough; framed as optional but gear list states it flatly.",
+     "internal_resolution": "Rappels and rack agree one rope is enough; two is a convenience.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "ab_mount_athabasca_aa_col",
+   "name": "AA Col",
+   "area": "Mount Athabasca",
+   "contradictions": [
+    {
+     "fact": "starting point of the approach",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "From the highest point of the road, scramble up beyond the parking and loading area"
+      },
+      {
+       "field": "approach",
+       "says": "From the climbers' parking area beside the Icefields Discovery Centre, follow the service road used by the glacier tour vehicles"
+      }
+     ],
+     "why": "Overview starts at the highest point of the road, approach at the Discovery Centre climbers' parking and the tour-vehicle road.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "ab_weeping_wall_area_polar_circus",
+   "name": "Polar Circus",
+   "area": "Weeping Wall Area",
+   "contradictions": [
+    {
+     "fact": "route length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "roughly 700 m"
+      },
+      {
+       "field": "length_m",
+       "says": "503"
+      }
+     ],
+     "why": "Overview states about 700 m while the stored length is 503 m (about 30% off).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "bc_bugaboo_spire_east_ridge",
+   "name": "East Ridge",
+   "area": "Bugaboo Spire",
+   "contradictions": []
+  },
+  {
+   "id": "bc_mount_robson_emperor_ridge",
+   "name": "Emperor Ridge",
+   "area": "Mount Robson",
+   "contradictions": []
+  },
+  {
+   "id": "bc_mount_robson_patterson_couloir",
+   "name": "Patterson Couloir",
+   "area": "Mount Robson",
+   "contradictions": []
+  },
+  {
+   "id": "bc_mount_robson_south_face_schwartz_ledges",
+   "name": "South Face/Schwartz Ledges",
+   "area": "Mount Robson",
+   "contradictions": [
+    {
+     "fact": "route length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "3048"
+      },
+      {
+       "field": "waypoints[Mount Robson Summit].directions",
+       "says": "climb about 1,400 m of ledges and short walls"
+      }
+     ],
+     "why": "Stored length is 3048 m while prose gives about 1,400 m from the hut.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "bc_mount_robson_the_north_face",
+   "name": "The North Face",
+   "area": "Mount Robson",
+   "contradictions": []
+  },
+  {
+   "id": "bc_mount_robson_wishbone_arete",
+   "name": "Wishbone Arete",
+   "area": "Mount Robson",
+   "contradictions": []
+  },
+  {
+   "id": "bc_mount_robson_kain_face",
+   "name": "Kain Face",
+   "area": "Mount Robson",
+   "contradictions": []
+  },
+  {
+   "id": "bc_mount_robson_roof_glacier_hourglass_by_pass_couloir",
+   "name": "Roof Glacier Hourglass By-Pass Couloir",
+   "area": "Mount Robson",
+   "contradictions": []
+  },
+  {
+   "id": "bc_wedge_mountain_northeast_arete",
+   "name": "Northeast Arete",
+   "area": "Wedge Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "bc_mount_sir_donald_northwest_arete",
+   "name": "Northwest Arete",
+   "area": "Mount Sir Donald",
+   "contradictions": []
+  },
+  {
+   "id": "ak_redoubtable",
+   "name": "Redoubtable",
+   "area": "Sky Pilot Roadcut",
+   "contradictions": []
+  },
+  {
+   "id": "ak_moose_s_tooth_ham_eggs",
+   "name": "Ham & Eggs",
+   "area": "Moose's Tooth",
+   "contradictions": []
+  },
+  {
+   "id": "az_khaleesi",
+   "name": "Khaleesi",
+   "area": "Blue Goodness Sector",
+   "contradictions": []
+  },
+  {
+   "id": "az_vesper",
+   "name": "Vesper",
+   "area": "Blue Goodness Sector",
+   "contradictions": []
+  },
+  {
+   "id": "az_the_honeycomb",
+   "name": "The Honeycomb",
+   "area": "South Wall",
+   "contradictions": []
+  },
+  {
+   "id": "az_mantis",
+   "name": "Mantis",
+   "area": "South Wall",
+   "contradictions": []
+  },
+  {
+   "id": "az_black_and_tan",
+   "name": "Black and Tan",
+   "area": "The Main Amphitheater- Fall Wall",
+   "contradictions": []
+  },
+  {
+   "id": "az_cutthroat_trout",
+   "name": "Cutthroat Trout",
+   "area": "Fish Bowl",
+   "contradictions": [
+    {
+     "fact": "beta describes a different route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Grade II, 5.7 climbing. ... Quick alpine climb from Rainy Pass."
+      },
+      {
+       "field": "grade",
+       "says": "5.9+"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1.5"
+      }
+     ],
+     "why": "Beta text is copied from a Washington alpine ridge (Rainy Pass) and does not describe a trad route at Bill Williams Mountain, Arizona; it also gives 5.7 vs grade 5.9+ and a 'short approach' vs 1.5 h.",
+     "internal_resolution": "Contaminated text; grade and trad discipline are the row's own.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "az_abracadaver",
+   "name": "Abracadaver",
+   "area": "Rockfellow Dome",
+   "contradictions": [
+    {
+     "fact": "descent method",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "rappel in stages, with double ropes needed; the Jabberwock line down may be the best choice"
+      },
+      {
+       "field": "descent_text",
+       "says": "Rappel the route itself using two ropes."
+      },
+      {
+       "field": "rappels",
+       "says": "Rappel the line of ascent with two ropes."
+      }
+     ],
+     "why": "descent suggests rappelling the Jabberwock line while descent_text and rappels say rappel the route itself.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "az_moby_dick",
+   "name": "Moby Dick",
+   "area": "Whale Dome",
+   "contradictions": []
+  },
+  {
+   "id": "az_histoplasmosis",
+   "name": "Histoplasmosis",
+   "area": "North Fin",
+   "contradictions": []
+  },
+  {
+   "id": "ar_cutthroat",
+   "name": "Cutthroat",
+   "area": "City Rock Proper",
+   "contradictions": [
+    {
+     "fact": "beta describes a different route",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Grade II, 5.7 climbing. Short approach from highway. ... Quick alpine climb from Rainy Pass."
+      },
+      {
+       "field": "discipline",
+       "says": "sport"
+      },
+      {
+       "field": "grade",
+       "says": "5.11d"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1.5"
+      }
+     ],
+     "why": "Beta text is copied from a Washington alpine ridge (Rainy Pass); the row is a 5.11d sport route at City Rock, Arkansas. Grade 5.7, granite, alpine and highway approach all conflict.",
+     "internal_resolution": "Contaminated text; the row's grade and discipline are consistent with each other.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "ca_northwest_chute",
+   "name": "Northwest Chute",
+   "area": "Tower Peak",
+   "contradictions": []
+  },
+  {
+   "id": "ca_north_arete_6",
+   "name": "North Arete",
+   "area": "Matterhorn Peak",
+   "contradictions": []
+  },
+  {
+   "id": "ca_north_arete_4",
+   "name": "North Arete",
+   "area": "Bear Creek Spire",
+   "contradictions": [
+    {
+     "fact": "pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "0"
+      },
+      {
+       "field": "overview",
+       "says": "P1 ... P7 (easy 5th)"
+      }
+     ],
+     "why": "pitches is 0 but the overview describes seven numbered pitches plus a pitch or two of scrambling.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "ca_southeast_face_aka_the_waterfall_route",
+   "name": "Southeast Face (aka the Waterfall Route)",
+   "area": "Mt. Emerson",
+   "contradictions": []
+  },
+  {
+   "id": "ca_southwest_slope_and_northwest_face",
+   "name": "Southwest Slope and Northwest Face",
+   "area": "Mt. Humphreys",
+   "contradictions": []
+  },
+  {
+   "id": "ca_south_lake_peaks_traverse",
+   "name": "South Lake Peaks Traverse",
+   "area": "Hurd Peak",
+   "contradictions": []
+  },
+  {
+   "id": "ca_west_face_11",
+   "name": "West Face",
+   "area": "Mt. Williamson",
+   "contradictions": []
+  },
+  {
+   "id": "ca_aiguille_extra_east_buttress",
+   "name": "East Buttress",
+   "area": "Aiguille Extra",
+   "contradictions": [
+    {
+     "fact": "route length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "376"
+      },
+      {
+       "field": "pitch_detail[*].lengthM",
+       "says": "sum of ten pitches = 430"
+      }
+     ],
+     "why": "Stored length 376 m vs 430 m from summing pitch lengths (about 14%).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "ca_north_ridge_4",
+   "name": "North Ridge",
+   "area": "Lone Pine Peak",
+   "contradictions": []
+  },
+  {
+   "id": "ca_ne_ridge_full",
+   "name": "NE Ridge (full)",
+   "area": "Lone Pine Peak",
+   "contradictions": []
+  },
+  {
+   "id": "ca_mt_langley_standard_route_south_slopes",
+   "name": "Standard Route - south slopes",
+   "area": "Mt. Langley",
+   "contradictions": []
+  },
+  {
+   "id": "ca_north_east_couloir",
+   "name": "North east couloir",
+   "area": "Mt. Langley",
+   "contradictions": []
+  },
+  {
+   "id": "ca_east_arete_3",
+   "name": "East Arete",
+   "area": "Mt. Russell",
+   "contradictions": []
+  },
+  {
+   "id": "ca_mt_whitney_mount_whitney_trail_the",
+   "name": "Mount Whitney Trail, The",
+   "area": "Mt. Whitney",
+   "contradictions": []
+  },
+  {
+   "id": "ca_east_face_10",
+   "name": "East Face",
+   "area": "Mt. Whitney",
+   "contradictions": []
+  },
+  {
+   "id": "ca_the_mountaineer_s_route",
+   "name": "The Mountaineer's Route",
+   "area": "Mt. Whitney",
+   "contradictions": [
+    {
+     "fact": "grade vs described difficulty",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "3rd"
+      },
+      {
+       "field": "descent_text",
+       "says": "some fourth-class downclimbing is possible near the top"
+      }
+     ],
+     "why": "Class 3 grade while the text mentions fourth-class downclimbing.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "ca_right_on",
+   "name": "Right On",
+   "area": "Saddle Rocks - Skirt (West Face)",
+   "contradictions": []
+  },
+  {
+   "id": "ca_mount_tallac_trail_mount_tallac_trail",
+   "name": "Mount Tallac Trail",
+   "area": "Mount Tallac Trail",
+   "contradictions": []
+  },
+  {
+   "id": "ca_tinker_knob_via_the_pacific_crest_trail",
+   "name": "Via the Pacific Crest Trail",
+   "area": "Tinker Knob",
+   "contradictions": []
+  },
+  {
+   "id": "ca_castle_dome_4th_class_route",
+   "name": "Castle Dome - 4th class route",
+   "area": "Castle Dome",
+   "contradictions": [
+    {
+     "fact": "route class",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "name",
+       "says": "Castle Dome - 4th class route"
+      },
+      {
+       "field": "grade",
+       "says": "3rd"
+      }
+     ],
+     "why": "Name says 4th class route while the grade pill shows 3rd (and grade_system is yds with a class value).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "ca_cosmic_wall",
+   "name": "Cosmic Wall",
+   "area": "Ogre aka Mt. Hubris, The",
+   "contradictions": []
+  },
+  {
+   "id": "ca_casaval_ridge",
+   "name": "Casaval Ridge",
+   "area": "Mt. Shasta",
+   "contradictions": []
+  },
+  {
+   "id": "ca_mt_shasta_avalanche_gulch",
+   "name": "Avalanche Gulch",
+   "area": "Mt. Shasta",
+   "contradictions": []
+  },
+  {
+   "id": "ca_mt_shasta_west_face_gully",
+   "name": "West Face Gully",
+   "area": "Mt. Shasta",
+   "contradictions": []
+  },
+  {
+   "id": "ca_sierra_buttes_lookout_trail",
+   "name": "Lookout Trail",
+   "area": "Sierra Buttes",
+   "contradictions": []
+  },
+  {
+   "id": "ca_saber_ridge_traverse_south_to_north",
+   "name": "Saber Ridge traverse, south to north",
+   "area": "Saber Ridge",
+   "contradictions": []
+  },
+  {
+   "id": "ca_north_ar_te",
+   "name": "North Arête",
+   "area": "North Arete",
+   "contradictions": []
+  },
+  {
+   "id": "ca_fingertrip",
+   "name": "Fingertrip",
+   "area": "West Face - Right Side",
+   "contradictions": []
+  },
+  {
+   "id": "ca_white_mountain_peak_trail",
+   "name": "White Mountain Peak Trail",
+   "area": "White Mountain Peak",
+   "contradictions": []
+  },
+  {
+   "id": "ca_northwest_arete_2",
+   "name": "Northwest Arete",
+   "area": "Mt Clark",
+   "contradictions": []
+  },
+  {
+   "id": "ca_southeast_buttress_2",
+   "name": "Southeast Buttress",
+   "area": "Southeast Slopes",
+   "contradictions": [
+    {
+     "fact": "pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "0"
+      },
+      {
+       "field": "waypoints[Cathedral Peak].directions",
+       "says": "climb about five pitches to the summit"
+      }
+     ],
+     "why": "pitches 0 vs about five pitches in prose.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "ca_tenaya_matthes_cathedral_traverse",
+   "name": "Tenaya, Matthes, Cathedral Traverse",
+   "area": "Cathedral Range Enchainments",
+   "contradictions": []
+  },
+  {
+   "id": "ca_northwest_buttress_2",
+   "name": "Northwest Buttress",
+   "area": "Tenaya Peak",
+   "contradictions": []
+  },
+  {
+   "id": "ca_tuolumne_alpine_triple_crown",
+   "name": "Tuolumne Alpine Triple Crown",
+   "area": "Mt. Conness",
+   "contradictions": []
+  },
+  {
+   "id": "ca_west_ridge_5",
+   "name": "West Ridge",
+   "area": "Mt. Conness",
+   "contradictions": [
+    {
+     "fact": "pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "0"
+      },
+      {
+       "field": "waypoints[Mount Conness].directions",
+       "says": "about 12 pitches, mostly 4th class with moves to 5.6"
+      }
+     ],
+     "why": "pitches 0 vs about 12 pitches in prose.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "ca_a_clouds_rest_trail_clouds_rest_trail",
+   "name": "Clouds Rest Trail",
+   "area": "Clouds Rest Trail",
+   "contradictions": []
+  },
+  {
+   "id": "ca_regular_northwest_face_of_half_dome",
+   "name": "Regular Northwest Face of Half Dome",
+   "area": "Northwest Face",
+   "contradictions": []
+  },
+  {
+   "id": "ca_d_half_dome_cables_route_cables_route",
+   "name": "Cables Route",
+   "area": "Cables Route",
+   "contradictions": []
+  },
+  {
+   "id": "co_cutthroat",
+   "name": "Cutthroat",
+   "area": "Trout Rock",
+   "contradictions": []
+  },
+  {
+   "id": "co_ruper",
+   "name": "Ruper",
+   "area": "Redgarden - Tower One",
+   "contradictions": []
+  },
+  {
+   "id": "co_freeway_2",
+   "name": "Freeway",
+   "area": "Second Flatiron",
+   "contradictions": []
+  },
+  {
+   "id": "co_cutthroat_2",
+   "name": "Cutthroat",
+   "area": "Trout Climbing in America",
+   "contradictions": []
+  },
+  {
+   "id": "co_northeast_ridge_knife_edge",
+   "name": "Northeast Ridge (Knife-Edge)",
+   "area": "Capitol Peak",
+   "contradictions": []
+  },
+  {
+   "id": "co_castle_peak_northeast_ridge",
+   "name": "Northeast Ridge",
+   "area": "Castle Peak",
+   "contradictions": [
+    {
+     "fact": "elevation where route gains the northeast ridge",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "near 13,400 ft cut south onto the northeast ridge"
+      },
+      {
+       "field": "waypoints[Castle Peak].directions",
+       "says": "path to the northeast ridge crest near 13,700 ft"
+      }
+     ],
+     "why": "Ridge entry elevation differs by about 300 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "co_pyramid_peak_northeast_ridge",
+   "name": "Northeast Ridge",
+   "area": "Pyramid Peak",
+   "contradictions": []
+  },
+  {
+   "id": "co_east_ridge_the_citadel_clear_creek_co",
+   "name": "East Ridge - The Citadel (Clear Creek, CO)",
+   "area": "Citadel, The",
+   "contradictions": []
+  },
+  {
+   "id": "co_grays_peak_north_slopes",
+   "name": "North Slopes",
+   "area": "Grays Peak",
+   "contradictions": []
+  },
+  {
+   "id": "co_mount_silverheels_north_spur_from_hoosier_pass",
+   "name": "North Spur from Hoosier Pass",
+   "area": "Mount Silverheels",
+   "contradictions": []
+  },
+  {
+   "id": "co_mt_bierstadt_standard_route_west_slopes",
+   "name": "West Slopes",
+   "area": "Standard Route",
+   "contradictions": []
+  },
+  {
+   "id": "co_arapaho_peaks_traverse",
+   "name": "Arapaho Peaks Traverse",
+   "area": "Indian Peaks Traverses",
+   "contradictions": []
+  },
+  {
+   "id": "co_mount_democrat_east_slope",
+   "name": "East Slope",
+   "area": "Mount Democrat",
+   "contradictions": []
+  },
+  {
+   "id": "co_mount_sherman_southwest_ridge",
+   "name": "Southwest Ridge",
+   "area": "Mount Sherman",
+   "contradictions": []
+  },
+  {
+   "id": "co_a_walk_in_the_park",
+   "name": "A Walk In The Park",
+   "area": "A Walk in The Park",
+   "contradictions": [
+    {
+     "fact": "route length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "5"
+      },
+      {
+       "field": "overview",
+       "says": "An enjoyable ridge that starts out looking easy, then becomes varied and interesting, with a knife-edge section."
+      }
+     ],
+     "why": "A 5 m length is implausible for a ridge route with a knife-edge section.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "co_glacier_gorge_traverse",
+   "name": "Glacier Gorge Traverse",
+   "area": "Arrowhead",
+   "contradictions": []
+  },
+  {
+   "id": "co_south_ramp",
+   "name": "South Ramp",
+   "area": "Arrowhead",
+   "contradictions": []
+  },
+  {
+   "id": "co_longs_peak_keyhole_route",
+   "name": "Keyhole Route",
+   "area": "Long's Peak Other Climbs",
+   "contradictions": []
+  },
+  {
+   "id": "co_spiral_route",
+   "name": "Spiral Route",
+   "area": "Notchtop",
+   "contradictions": [
+    {
+     "fact": "pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "0"
+      },
+      {
+       "field": "overview",
+       "says": "About 5 pitches."
+      }
+     ],
+     "why": "pitches 0 vs about 5 pitches in overview.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "rappel anchors on the descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "rap stations exist"
+      },
+      {
+       "field": "descent_text",
+       "says": "You will pass rappel anchors on the traverse; ignore them, because cliffs drop below"
+      }
+     ],
+     "why": "Overview mentions rap stations as part of the descent while descent_text tells climbers to ignore them; also overview calls the gully third class vs third- to fourth-class.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "co_south_face",
+   "name": "South Face",
+   "area": "Petit Grepon",
+   "contradictions": []
+  },
+  {
+   "id": "co_blitzen_ridge",
+   "name": "Blitzen Ridge",
+   "area": "Ypsilon Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "co_wham_ridge",
+   "name": "Wham Ridge",
+   "area": "Vestal Peak",
+   "contradictions": [
+    {
+     "fact": "pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "0"
+      },
+      {
+       "field": "overview",
+       "says": "Pitches 1 to 4 ... Pitches 7 to 9"
+      }
+     ],
+     "why": "pitches 0 but overview numbers at least nine full-rope pitches.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "co_wilson_peak_southwest_ridge",
+   "name": "Southwest Ridge",
+   "area": "Wilson Peak",
+   "contradictions": []
+  },
+  {
+   "id": "co_rio_grande_pyramid_east_slope_ridge",
+   "name": "East Slope/Ridge",
+   "area": "Rio Grande Pyramid",
+   "contradictions": []
+  },
+  {
+   "id": "co_san_luis_peak_northeast_ridge",
+   "name": "Northeast Ridge",
+   "area": "San Luis Peak",
+   "contradictions": []
+  },
+  {
+   "id": "co_sunlight_peak_south_face",
+   "name": "South Face",
+   "area": "Sunlight Peak",
+   "contradictions": []
+  },
+  {
+   "id": "co_sunshine_peak_via_redcloud_peak",
+   "name": "Via Redcloud Peak",
+   "area": "Sunshine Peak",
+   "contradictions": []
+  },
+  {
+   "id": "co_uncompahgre_peak_south_ridge",
+   "name": "South Ridge",
+   "area": "Uncompahgre Peak",
+   "contradictions": []
+  },
+  {
+   "id": "co_wetterhorn_peak_southeast_ridge",
+   "name": "Southeast Ridge",
+   "area": "Wetterhorn Peak",
+   "contradictions": []
+  },
+  {
+   "id": "co_windom_peak_west_ridge",
+   "name": "West Ridge",
+   "area": "Windom Peak",
+   "contradictions": []
+  },
+  {
+   "id": "co_crestone_needle_south_face",
+   "name": "South Face",
+   "area": "Crestone Needle",
+   "contradictions": []
+  },
+  {
+   "id": "co_ellingwood_ledges",
+   "name": "Ellingwood Ledges",
+   "area": "Crestone Needle",
+   "contradictions": []
+  },
+  {
+   "id": "co_crestone_peak_south_face",
+   "name": "South Face",
+   "area": "Crestone Peak",
+   "contradictions": []
+  },
+  {
+   "id": "co_huron_peak_northwest_slopes",
+   "name": "Northwest Slopes",
+   "area": "Huron Peak",
+   "contradictions": []
+  },
+  {
+   "id": "co_mount_elbert_northeast_ridge",
+   "name": "Northeast Ridge",
+   "area": "Mount Elbert",
+   "contradictions": []
+  },
+  {
+   "id": "co_mount_harvard_south_slopes",
+   "name": "South Slopes",
+   "area": "Mount Harvard",
+   "contradictions": []
+  },
+  {
+   "id": "co_mount_hope_east_ridge",
+   "name": "East Ridge",
+   "area": "Mount Hope",
+   "contradictions": []
+  },
+  {
+   "id": "co_mount_oxford_via_mount_belford",
+   "name": "Via Mount Belford",
+   "area": "Mount Oxford",
+   "contradictions": []
+  },
+  {
+   "id": "co_mount_princeton_east_slopes",
+   "name": "East Slopes",
+   "area": "Mount Princeton",
+   "contradictions": []
+  }
+ ]
+}

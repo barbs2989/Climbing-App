@@ -21,6 +21,9 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
   objectives only), By Area (listing-based; the region dropdown plus a search box for any crag, canyon or range inside the chosen
   state), By Route (a crag route redirects to its area), Anyone. By Route can pick from a search, your saved objectives,
   recently opened routes (the 3 newest; up to 2 more behind a "Show N more" toggle), crew routes, or a country > state > crag drill-down.
+- **Free this weekend, in Find partners** (owner, Gora audit 2026-10-28): the section opens with your own *Free this weekend* switch (`freeWknd` / `onToggleFreeWknd` from App; the same `profiles.free_until` the Menu sets), and climbers who switched it on lead the real list in their existing order, under a line saying how many (`data-free-weekend-count`). Chosen instead of an expiring "climbing today" post.
+- **Join-a-crew cards say size and openings** (owner, Gora audit 2026-10-28): the chip reads "3 of 4 · 1 spot left", or "Full" (`lib/CrewFinder.jsx`).
+- **A crew shared by link** (0381, owner, Gora audit 2026-10-28): `?crew=<share token>` opens Find partners → Join a crew with that crew pinned on top (`CrewShareCard`, `src/components/CrewShareCard.tsx`; not a dialog). It shows the place, the day, "3 of 4 · 1 spot left", and FIRST NAMES ONLY of members who show their name (`crew_share_preview`, callable signed out; everyone else is counted). *Ask to join* files the ordinary pending request (`addCrewMember` as `dbAddCrewMember`); a guest gets *Sign up to join*, and the link is kept on the device (`cm_crew_share`) until joined or dismissed. A link whose crew date has passed, or that the organiser turned off, says so; a failed read never reads as a dead link.
 - **Climbers on ClimbMatch** (signed-in + DB): real, listed climbers (`profiles.discoverable`, on by default since 0195;
   opt out in Settings). Distance chips: Near my zip / Near me now (browser geolocation, rounded to 2 decimals) / Anywhere,
   with a 10-500 mi radius slider (steps of 5, debounced 400 ms). Others see a **distance only**, never a zip.
@@ -68,7 +71,8 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 |---|---|
 | `lib/PartnerSearch.jsx` | `PartnerSearch` (modes incl. Near my areas, Saved areas (`savedAreaIds`, `onOpenSaved`, `SAVED_SEARCH_LIM`) and listing-based By Area, filters, near/objective/area/browse lists, example cards, route picker, `initialArea` deep link) |
 | `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas screen (add/edit/remove a listing, `windowText`): a full-screen view in the 520px column, search first (pre-set to the home state via `useMyHomeStatePaths`), one-tap suggestions from the climber's own crag climbs and saved areas (`suggestIds`, a wall offered as its crag), date presets This weekend / Next weekend / Pick dates, an ended window flagged on its card |
-| `ClimbMatch.jsx` | `partnersMode` state and mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder`, `DbGuides`/`Guides`, `MyPartnerAreas`; `myAreasOpen`, `openMyAreas`, `onFindPartnersInArea`, `ME.matchObjectiveIds` |
+| `ClimbMatch.jsx` | `partnersMode` state, mounts `MyPartnerAreas`; `myAreasOpen`, `openMyAreas`, `onFindPartnersInArea`, `ME.matchObjectiveIds` |
+| `src/components/DiscoverTab.tsx` | `DiscoverTab`, the tab body (lifted from App, PR61): the mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder`, `DbGuides`/`Guides` |
 | `ClimbMatchCore.jsx` | `compat`, `compatParts`, `compatWhy`, `CMAX_*`/`COMPAT_*`, `CMAX_AREA`, `areaPathsOverlap`, `CRAG_CATS`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf`, `PARTNER_NUMBERS` (also read by `lib/Help.jsx`) |
 | `src/components/RealClimberRow.tsx` | `RealClimberRow` — the browse and name-search row for a REAL profile: match % or its refusal, ✓ Verified, the listed-areas line, pace and discipline chips |
 | `lib/partner-gender-pref.js` | `partnersMyGenderPref`, `savePartnersMyGender` |
@@ -78,7 +82,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 | `docs/codebase/algorithms.md` | `compat()` design history |
 
 ## 4. Data
-- **Supabase**: `profiles` (public read; `discoverable`, `level`, `avail_week`, `availability`, `hiking_speed_ft_hr`, grades), `profile_zips` (owner-only), `zip_centroids` (public Census gazetteer),
+- **Supabase**: `profiles` (public read; `discoverable`, `level`, `avail_week`, `availability`, `hiking_speed_ft_hr`, grades; `climb_grades` holds ice, mixed and aid -- `PARTNER_COLS` selects it, and rows from the partner RPCs, which do not return it, get it from `usePartnerClimbGrades` by id), `profile_zips` (owner-only), `zip_centroids` (public Census gazetteer),
   objectives per user, `verification_records` (owner-only; read via 0232).
 - **`partner_areas`** (0300): one row per climber and area (`disciplines text[]` within the crag family, one optional `free_from`/`free_to` window, `note`);
   owner-only RLS; a trigger refuses peak/world/country and caps 30 per climber. An expired window reads back as no window.

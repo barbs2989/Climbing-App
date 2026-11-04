@@ -4,7 +4,7 @@
 import { useState, useRef } from "react";
 import { createPortal } from "react-dom";
 import { clickable } from "./clickable";
-import { useSession } from "./auth";
+import { useSession } from "../src/AuthContext.tsx";
 import {
   useCertTrackDisciplines, useGuideProfile, useGuideCredentials,
   submitGuideApplication, addGuideCredential, uploadGuideDocument,

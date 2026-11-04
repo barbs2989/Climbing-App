@@ -1,0 +1,124 @@
+{
+ "file": "r002.json",
+ "results": [
+  {
+   "id": "ca_the_mountaineer_s_route",
+   "fact": "grade vs described difficulty",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Route is widely rated Class 3 overall; the descent text only says some fourth-class downclimbing is possible near the top, a hedged option (reports mention an optional class 4 spot), not a statement that the route is class 4.",
+   "sources": [
+    "https://www.hikingproject.com/trail/7017113/mountaineers-route",
+    "https://www.summitpost.org/route/155528/mountaineer-s.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_a_walk_in_the_park",
+   "fact": "route length",
+   "verdict": "unresolved",
+   "correct_value": "about 24-26 km (15-16 mi) traverse; 5 m is wrong",
+   "evidence": "Stored length_m 5 is clearly wrong: the route is a rim traverse of Glacier Gorge over eight summits, listed at 16.4 mi with 9,300 ft gain on one page and 'about fifteen miles' in trip reports. The sources do not agree on one figure (15 vs 16.4 mi), so no exact value was adopted and no patch was written.",
+   "sources": [
+    "https://fastestknowntime.com/route/walk-park-co",
+    "https://stephabegg.com/trip-reports/colorado/walk-in-the-park/",
+    "https://www.mountainproject.com/area/106563883/a-walk-in-the-park"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_castle_peak_northeast_ridge",
+   "fact": "elevation where route gains the northeast ridge",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Neither 13,400 ft nor 13,700 ft could be confirmed; the only external figure found puts the upper basin turn-off toward the northeast ridge near 13,300 ft. One loose source does not settle it.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Castle_Peak_(Colorado)",
+    "https://www.14ers.com/php14ers/tripreport.php?trip=23607"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_spiral_route",
+   "fact": "rappel anchors on the descent",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Route page confirms several rap stations exist along the descent traverse (kept for storms) but the cliffs below are long and the walking trail passes beneath, so ignoring them is the advice; overview and descent_text agree. The gully is third class with a reported sketchy fourth-class step, consistent with 'third- to fourth-class'.",
+   "sources": [
+    "https://www.mountainproject.com/route/105750622/spiral-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "id_diamond_peak_east_ridge",
+   "fact": "Highest grade of terrain on the route",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The standard East Ridge is Class 3; guide pages note a few class 4 moves and that terrain off the crest reaches Class 5. The rack line is hedged ('a handful ... maybe') and the hazards fields already say off-crest terrain is class 4-5, so the row is not self-contradictory.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Diamond_Peak_(Idaho)",
+    "https://www.idahoaclimbingguide.com/bookupdates/diamond-peak-12197"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ky_cutthroat",
+   "fact": "Name of the access road",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only Bald Mountain Rd is confirmed by a route-area page (Motherlode lot at the bottom of the hill on that road); no source confirms the name 'Bald Rock Fork Rd'. A single source is not enough to change either field.",
+   "sources": [
+    "https://www.mountainproject.com/area/112439039",
+    "https://theoutbound.com/kentucky/rock-climbing/climb-at-the-motherlode-in-red-river-gorge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "nh_thin_air",
+   "fact": "Anchor / fixed-gear type at the first belay and bolt count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Row disagrees with itself (pitons vs two bolts at first stance; three vs a pair of bolts on the big ledge) but external pages only confirm 5.6, 4 pitches and a mix of bolt and tree anchors, with no detail on the original stance or ledge. No two sources settle it.",
+   "sources": [
+    "https://www.summitpost.org/thin-air/157786",
+    "https://mountainproject.com/area/classics/105908823/cathedral-ledge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "nv_epinephrine",
+   "fact": "Number of pitches",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "pitch_detail is not a complete consecutive table (ends with a combined row '8-10' of about 400 ft in one crack, and the route continues well beyond), and published counts range 11-18 (13 pitches/1,600 ft on one listing, 16 on another, 11-12 with bolted anchors in the description). No agreed count, and the table is incomplete, so pitches (6) is left unchanged and flagged: it is certainly too low but the right number is not settled.",
+   "sources": [
+    "https://www.mountainproject.com/route/105732422/epinephrine",
+    "https://climbing-history.org/climb/2941"
+   ],
+   "patches": []
+  },
+  {
+   "id": "nv_prince_of_darkness",
+   "fact": "Whether any belay is a standing stance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The overview says every belay is hanging while the last pitch row says the top ledge is the one standing stance. The internal reading (top ledge is the finish, not a belay along the climb) is plausible but the external pages found describe only hanging belays on other pitches and say nothing about a top ledge, so no second source supports a patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/105732458/prince-of-darkness",
+    "https://summitpost.org/prince-of-darkness-5-10c-6-pitches/453109"
+   ],
+   "patches": []
+  },
+  {
+   "id": "nv_cat_in_the_hat",
+   "fact": "Number of pitches",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "pitch_detail is not a complete table (row '1-2' is combined and the last row is 6, noting that most parties go down from there), so it is not grounds to change pitches. Photo captions on the route page refer to a delicate final pitch above pitch 6 and a rappel from the top of pitch 6, consistent with 7 pitches where the short final pitch is simply unrecorded.",
+   "sources": [
+    "https://www.mountainproject.com/v/105823437"
+   ],
+   "patches": []
+  }
+ ]
+}

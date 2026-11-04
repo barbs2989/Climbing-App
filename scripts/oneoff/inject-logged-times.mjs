@@ -5,7 +5,8 @@
 import fs from "fs";
 import { execSync } from "child_process";
 
-const F = "RouteDetail.jsx";
+// PR57 moved Calculator to src/components/Calculator.tsx.
+const F = "src/components/Calculator.tsx";
 const orig = fs.readFileSync(F, "utf8");
 
 const CASES = [

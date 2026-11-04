@@ -18,7 +18,8 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
-const RD = path.join(ROOT, "RouteDetail.jsx");
+// PR57 moved the consensus panel (and its Temp chip) to src/components/ConsensusPanel.tsx.
+const RD = path.join(ROOT, "src/components/ConsensusPanel.tsx");
 const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex");
 
 const CASES = [
@@ -26,7 +27,8 @@ const CASES = [
     find: ':Math.round(mean),n:pool.length,', repl: ':Math.round(mean)+"°F",n:pool.length,',
     says: /buildConsensus stores tempF as string|chip reads|Fahrenheit figure survives/ },
   { name: "chip-does-not-convert", file: RD, expect: "fail",
-    find: '{p[0]==="tempF"?uTempU(cd.value):p[0]==="freezingFt"?uElev(cd.value):cd.value}</span>', repl: '{p[0]==="freezingFt"?uElev(cd.value):cd.value}</span>',
+    find: '{p[0]==="tempF"?uTempU(cd.value):p[0]==="freezingFt"?uElev(cd.value):cd.value}</span>', repl: '{p[0]==="tempF"?cd.value+"\u00b0F":p[0]==="freezingFt"?uElev(cd.value):cd.value}</span>',
+    // The old repl (drop the branch) now renders "Temp 55", which the guard's Temp-N-degree regex skips past to the ReportStats row; a chip that prints raw F is the same defect and is read first.
     says: /could not read the Temp chip|chip reads|metric chip/ },
   // ReportStats lives in src/components/ReportStats.tsx since PR32; check:units still reads it through the MOVED stitch.
   { name: "reportstats-bakes-F", file: path.join(ROOT, "src/components/ReportStats.tsx"), expect: "fail",

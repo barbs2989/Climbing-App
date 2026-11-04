@@ -1,0 +1,192 @@
+{
+  "area_id": "wa_forbidden_peak",
+  "routes": [
+    {
+      "route_id": "wa_forbidden_peak_east_ledges",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Searched East Ledges/East Ridge conditions: ranger and climber accounts have the approach gully and ledges snowy into late July, usually dry August to mid-September, couloir descent needs crampons late season. Peakbagger successful ascents peak Jul-Aug. Matches stored Jul-Sep."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2936994",
+          "verdict": "unsure",
+          "why": "Logged East Ledges, Aug 9, summited, but starts at Boston Basin high camp (about 2.6 km from our trailhead pin), so it is not a trailhead round trip or trailhead-to-summit track; report describes the ledges as the descent after the East Ridge."
+        },
+        {
+          "aid": "3329917",
+          "verdict": "not-summited",
+          "why": "East Ledges, trailhead round trip, but Turned Back."
+        },
+        {
+          "aid": "3357652",
+          "verdict": "different",
+          "why": "Logged East Ridge Direct; ledges used only as descent."
+        },
+        {
+          "aid": "2286943",
+          "verdict": "different",
+          "why": "Logged East Ridge Direct; camp-start."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "The sandy, steep gully dropping from the East Ridge saddle to the ledges is the hardest part for some parties; roping down it is reasonable (August).",
+          "aids": [
+            "2936994"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "After a late-August storm the entry gully and ledges can be snow-filled and wet, and shoe grip is poor; wait for them to dry (late August).",
+          "aids": [
+            "3329917"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_forbidden_peak_east_ridge",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Searched: rock ridge climbed through the summer; snow in the approach gully lingers into late July, rock dry by August, ledges descent couloir can be bad late season. Peakbagger East Ridge ascents are Jun-Sep, most in Jul-Aug. Matches stored mid-Jul to Sep."
+      },
+      "track": {
+        "aid": "2922305",
+        "verdict": "same",
+        "kind": "oneway",
+        "inSeason": true,
+        "why": "Logged route \"East ridge\" (July 28, summited); track leaves our Boston Basin trailhead, passes camp, reaches the summit pin (8 m) via the east-ridge base, and finishes at camp. Forbidden has a single East Ridge line. Trip report has no text, so identity rests on the logged name and line."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "857455",
+          "verdict": "unsure",
+          "why": "Logged East Ridge (descent East Ledges), Aug 26 2017, summited, trailhead round trip, but its start sits 307 m from our pin, just outside the 300 m rule, and the report is one line."
+        },
+        {
+          "aid": "3357652",
+          "verdict": "unsure",
+          "why": "East Ridge Direct, Sep 21, summited, but starts at Boston Basin high camp (about 2.6 km from our trailhead pin), so it is not a trailhead round trip or trailhead-to-summit track."
+        },
+        {
+          "aid": "2286943",
+          "verdict": "unsure",
+          "why": "East Ridge Direct, Aug 20, summited, but starts at Boston Basin high camp (about 2.6 km from our trailhead pin), so it is not a trailhead round trip or trailhead-to-summit track."
+        },
+        {
+          "aid": "2936994",
+          "verdict": "different",
+          "why": "Logged East Ledges."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "what_to_bring",
+          "month": 8,
+          "text": "One set of cams (skip the largest), a few medium nuts and 8-10 slings; approach shoes were enough with no snow (mid-August).",
+          "aids": [
+            "2286943"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "The final 5.8 tower has one hard move near its top, protected by a small cam in a horizontal crack (August).",
+          "aids": [
+            "2286943"
+          ]
+        },
+        {
+          "field": "descent_note",
+          "month": 9,
+          "text": "In August and September the West Ridge can be mostly downclimbed, needing at most one rappel.",
+          "aids": [
+            "2286943",
+            "3357652"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "In late August, running water was found up to about 7,800 ft, so little needs to be carried from high camp, though storm snow can sit above that line while the ridge stays dry.",
+          "aids": [
+            "3329917"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_forbidden_peak_north_ridge",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Searched: ranger reports have Sharkfin Col melted out by early July and snow-free by late July; late August glacier crossing still reasonable but crevasses and moats growing; guides run it late July to early September. Peakbagger North Ridge ascents Jul-Sep. Stored Jul-Sep (with Jun) is consistent; June is marginal."
+      },
+      "track": {
+        "aid": "2905696",
+        "verdict": "same",
+        "kind": "oneway",
+        "inSeason": true,
+        "why": "Logged route North Ridge, descent West Ridge (July 12, summited). Track runs trailhead, high camp, up the moraine to Sharkfin Col (48.5014,-121.0445), around the Boston Glacier side to the north ridge crest, summit within 3 m, then back down the west side to camp. Matches our route text step for step."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "2897295",
+          "verdict": "different",
+          "why": "Logged West Ridge."
+        },
+        {
+          "aid": "2922305",
+          "verdict": "different",
+          "why": "East ridge."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_forbidden_peak_northeast_face",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Searched for a Northeast Face ice route and found none: pages call the NE Ledge/Northeast Face a loose descent-type line with a 1975 fatality; the May-June ice season found is for the Northwest Face of the North Ridge. Kept stored Jul-Sep; the stored May/June best-season text could not be confirmed."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3329917",
+          "verdict": "not-summited",
+          "why": "Logged East Ledges, turned back."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Packet routes needing tracks were East Ledges, East Ridge Direct, North Ridge, Northeast Face. East Ridge Direct and East Ledges recordings mostly start at the Boston Basin high camp, so only 2922305 (and borderline 857455) start at the trailhead. The Northeast Face route (AI2, May-June best season) could not be corroborated as an ice route; it may be a misfiled NE Ledge. No pin changes: tracks start within 40 m of our Boston Basin trailhead pin and reach our summit pin."
+}

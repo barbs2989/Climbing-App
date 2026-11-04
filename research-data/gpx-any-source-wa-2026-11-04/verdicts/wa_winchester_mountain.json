@@ -1,0 +1,70 @@
+{
+  "area_id": "wa_winchester_mountain",
+  "routes": [
+    {
+      "route_id": "wa_winchester_mountain_south_trail",
+      "season": {
+        "months": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jul-Oct",
+        "evidence": "Web: Forest Service lists summer-fall; Mountaineers lists July-October; guidebook pages say steep snow lingers into August and most go August-October, lookout locked November-May. Peak logs peak Sep (100). Stored Jul-Oct kept."
+      },
+      "track": {
+        "aid": "2674182",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Only route on the peak; logged Winchester Mountain Trail, 13 Oct 2024, round trip 182 m from our trailhead pin, ends within 1 m of the lookout summit, about 3.6 mi and 1,470 ft."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3356243",
+          "verdict": "unsure",
+          "why": "Sept 2026 outing whose highest point is on a neighbouring summit (Yellow Aster area); a combined trip."
+        },
+        {
+          "aid": "3350726",
+          "verdict": "unsure",
+          "why": "Same combined trip."
+        },
+        {
+          "aid": "3018872",
+          "verdict": "unsure",
+          "why": "Oct 2025 ascent, track stops at the summit (not a round trip)."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 10,
+          "text": "In mid-October snow and ice can sit on the upper trail near the top even when the road below is bare.",
+          "aids": [
+            "3018872"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 10,
+          "text": "In mid-October two cross-ditches at the very end of the road kept a low-slung car from reaching the lot, so a short extra road walk may be needed.",
+          "aids": [
+            "2674182"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 11,
+          "text": "At the start of November about a foot of loose new snow can cover the trail above roughly 6,000 ft, with the road iced from the switchbacks, so the climb becomes a trail-breaking slog.",
+          "aids": [
+            "3394684"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Pin 0.18 km off the track start is within tolerance; no move proposed."
+}

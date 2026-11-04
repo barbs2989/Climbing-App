@@ -13,8 +13,12 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const APP = path.join(ROOT, "ClimbMatch.jsx");
-const sum = () => crypto.createHash("sha256").update(fs.readFileSync(APP)).digest("hex");
+// Home's list, gate and "View all" control live in TodayTab.tsx since PR61 (lifted out of App); the
+// past-crews control is in CrewListView.tsx. A case names its file; the default is Home's.
+const APP = path.join(ROOT, "src/components/TodayTab.tsx");
+const MAIN = path.join(ROOT, "ClimbMatch.jsx");   // the bell, the panel and the list builder stayed in App
+const CREWS = path.join(ROOT, "src/components/CrewListView.tsx");
+const sum = (f) => crypto.createHash("sha256").update(fs.readFileSync(f)).digest("hex");
 
 // The "View all N alerts" control exactly as it stood before the fix: the count is the notifs
 // array alone, over a panel that also renders the requests. Spliced back rather than paraphrased,
@@ -46,6 +50,7 @@ const CASES = [
   },
   {
     name: "bell-counts-what-the-panel-does-not-list",
+    file: MAIN,
     why: "REAL DEFECT 3: the badge counted crew invites and group requests the panel never renders",
     edit: (s) => s.replace("{(_notifRequests.length+mergedNotifs.filter(n=>!n.read).length)>0?",
       "{(friendReqIn.length+crewReqIn.length+groupReqs.length+mergedNotifs.filter(n=>!n.read).length)>0?")
@@ -55,6 +60,7 @@ const CASES = [
   },
   {
     name: "panel-list-inlined-again",
+    file: MAIN,
     why: "the panel's list goes back to an inline expression, so nothing else can count the same array",
     edit: (s) => s.replace("<NotifPanel requests={_notifRequests}",
       "<NotifPanel requests={friendReqIn.map(_reqClimber).filter(Boolean)}"),
@@ -62,6 +68,7 @@ const CASES = [
   },
   {
     name: "a-NEW-source-added-to-the-list-only",
+    file: MAIN,
     why: "the rule must generalise past the three known instances — a source nobody has thought of yet",
     edit: (s) => s.replace("var unfinished=[];",
       'var unfinished=[];pendingGearLoans.forEach(function(g){unfinished.push({icon:"crews",text:"Gear loan",go:function(){}});});'),
@@ -109,6 +116,7 @@ const CASES = [
   },
   {
     name: "SILENT-the-past-crews-control-changed",
+    file: CREWS,
     why: "MUST PASS — a sibling control sharing the words \"View all\" opens somewhere else entirely",
     edit: (s) => s.replace('"View all "+pastCrews.length+" past crews"', '"Show all "+pastCrews.length+" past crews"'),
     expect: null,
@@ -129,19 +137,20 @@ catch (e) { console.log("HARNESS BUG: the guard is not green on this tree, so no
 
 let pass = 0, fail = 0;
 for (const c of CASES) {
-  const before = fs.readFileSync(APP, "utf8");
-  const beforeSum = sum();
+  const F = c.file || APP;
+  const before = fs.readFileSync(F, "utf8");
+  const beforeSum = sum(F);
   const after = c.edit(before);
   if (after === before) { console.log(`HARNESS BUG  ${c.name}: the edit changed nothing`); fail++; continue; }
-  fs.writeFileSync(APP, after);
-  if (sum() === beforeSum) { console.log(`HARNESS BUG  ${c.name}: checksum unmoved`); fs.writeFileSync(APP, before); fail++; continue; }
+  fs.writeFileSync(F, after);
+  if (sum(F) === beforeSum) { console.log(`HARNESS BUG  ${c.name}: checksum unmoved`); fs.writeFileSync(F, before); fail++; continue; }
 
   let out = "", code = 0;
   try { out = execFileSync("node", [path.join(ROOT, "scripts", "check-count-matches-its-list.mjs")], { cwd: ROOT, encoding: "utf8" }); }
   catch (e) { out = (e.stdout || "") + (e.stderr || ""); code = e.status ?? 1; }
 
-  fs.writeFileSync(APP, before);
-  if (sum() !== beforeSum) { console.log(`HARNESS BUG  ${c.name}: file not restored byte-identically`); fail++; continue; }
+  fs.writeFileSync(F, before);
+  if (sum(F) !== beforeSum) { console.log(`HARNESS BUG  ${c.name}: file not restored byte-identically`); fail++; continue; }
 
   const fails = out.split("\n").filter((l) => l.startsWith("FAIL")).join("\n");
   if (c.expect === null) {

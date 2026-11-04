@@ -1,0 +1,43 @@
+{
+ "applied": [
+  {
+   "id": "ca_mammoth_crest_the_art_of_the_steal",
+   "column": "length_m",
+   "path": [],
+   "fact": "route length"
+  },
+  {
+   "id": "ca_north_face_17_cowardice",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitch count"
+  },
+  {
+   "id": "ca_royce_peak_north_ridge_direct",
+   "column": "length_m",
+   "path": [],
+   "fact": "route length"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "ca_mammoth_crest_the_art_of_the_steal",
+   "before": {
+    "length_m": 4
+   }
+  },
+  {
+   "id": "ca_north_face_17_cowardice",
+   "before": {
+    "pitches": 1
+   }
+  },
+  {
+   "id": "ca_royce_peak_north_ridge_direct",
+   "before": {
+    "length_m": 305
+   }
+  }
+ ]
+}

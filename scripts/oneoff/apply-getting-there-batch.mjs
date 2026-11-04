@@ -23,6 +23,8 @@
 //   * writes are paced at >= 1000 ms; any timeout backs off 60 s and stops the batch rather than
 //     retrying fast into a struggling database
 import fs from "fs";
+import path from "path";
+import crypto from "crypto";
 import { patchRow, requireServiceKey, SUPABASE_URL, anonKey } from "../lib/supabase-env.mjs";
 import { htmlToText, sourceIndex, copiedRuns } from "../lib/source-overlap.mjs";
 import { trailheadDirectionProblem } from "../../lib/trailheadDirectionShape.js";
@@ -49,11 +51,20 @@ const library = LIBRARY ? JSON.parse(fs.readFileSync(LIBRARY, "utf8")) : {};
 
 // Our own words only: every cited page is fetched and an 8-word run shared with it refuses the entry,
 // the same rule enrich:apply enforces. A batch whose sources could not be read at all is refused too.
+// --page-cache DIR: pages a researcher could read only in a BROWSER (SummitPost and mountaineers.org
+// answer 403 to fetch) are saved there as <sha1(url)>.txt, so the copy check still sees them. EVERY
+// cited page must be readable one way or the other: a source that silently dropped out of the check
+// is exactly the page the prose is most likely to have been copied from.
+const PAGE_CACHE = flag("--page-cache");
 const pageText = new Map();
 async function readSource(url) {
   if (pageText.has(url)) return pageText.get(url);
   let t = null;
   try { const res = await fetch(url, { headers: { "user-agent": "Mozilla/5.0" } }); if (res.ok) t = htmlToText(await res.text()); } catch { /* unreadable */ }
+  if (!t && PAGE_CACHE) {
+    const cp = path.join(PAGE_CACHE, crypto.createHash("sha1").update(url).digest("hex") + ".txt");
+    if (fs.existsSync(cp)) { const c = fs.readFileSync(cp, "utf8"); if (c.trim().split(/\s+/).length > 100) t = c; }
+  }
   pageText.set(url, t);
   return t;
 }
@@ -79,8 +90,10 @@ for (const e of research) {
   }
   const shape = trailheadDirectionProblem(e.trailheadDirection);
   if (shape) { skipped.push([e.id, "shape detector: " + shape]); continue; }
-  const texts = (await Promise.all((e.sourceUrls || []).map(readSource))).filter(Boolean);
+  const read = await Promise.all((e.sourceUrls || []).map(readSource));
+  const texts = read.filter(Boolean);
   if (!texts.length) { skipped.push([e.id, "no cited source could be read, so the copy check cannot run"]); continue; }
+  if (PAGE_CACHE && texts.length < read.length) { skipped.push([e.id, "a cited page could not be read (not fetchable, not in --page-cache): " + e.sourceUrls.filter((u, i) => !read[i]).join(" ")]); continue; }
   const grams = sourceIndex(texts);
   const runs = [...copiedRuns(e.approach, grams), ...copiedRuns(e.trailheadDirection, grams)];
   if (runs.length) { skipped.push([e.id, "copies its source word for word: \"" + runs[0] + "\""]); continue; }

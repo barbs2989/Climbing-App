@@ -34,7 +34,7 @@ export function AboutCard({ area, C, onEdit }) {
         <div style={long && !open ? { maxHeight: ABOUT_CLAMP_PX, overflow: "hidden", WebkitMaskImage: "linear-gradient(to bottom, #000 70%, transparent)", maskImage: "linear-gradient(to bottom, #000 70%, transparent)" } : null}>
           {blurb.split(/\n{2,}/).map((p, i) => <div key={i} style={{ fontSize: 13, color: C.textSub, lineHeight: 1.6, marginTop: i ? 8 : 0, overflowWrap: "anywhere" }}>{p}</div>)}
         </div>
-        {long ? <button onClick={() => setOpen(!open)} aria-expanded={open} style={{ background: "none", border: "none", padding: "6px 0 0", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{open ? "Show less" : "Read more"}</button> : null}
+        {long ? <button onClick={() => setOpen(!open)} aria-expanded={open} style={{minHeight:44, background: "none", border: "none", padding: "6px 0 0", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{open ? "Show less" : "Read more"}</button> : null}
       </>
       : <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>{"No description yet. Climbed here? "}{onEdit ? <button onClick={() => onEdit("blurb")} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Tell people what it is like</button> : "Tell people what it is like"}{"."}</div>}
   </div>;
@@ -93,7 +93,7 @@ export function ClimbsChart({ stats, loading, error, C, discOptions, onDisc, chi
     {rows.map(d => {
       const label = DS[d.disc] || DL[d.disc] || d.disc, n = Number(d.n), pct = max ? Math.max(2, Math.round(n / max * 100)) : 0, col = DISC_COLORS[d.disc] || C.blue;
       const inner = <>
-        <span style={{ width: 92, flexShrink: 0, fontSize: 12.5, fontWeight: 600, color: C.text, textAlign: "left", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{label}</span>
+        <span style={{ width: 92, flexShrink: 0, fontSize: 12.5, fontWeight: 600, color: C.text, textAlign: "left", overflowWrap: "anywhere" }}>{label}</span>
         <span aria-hidden="true" style={{ flex: 1, minWidth: 0, height: 12, display: "flex", alignItems: "center" }}><span style={{ width: pct + "%", height: 12, borderRadius: "0 4px 4px 0", background: col }} /></span>
         <span style={{ width: 54, flexShrink: 0, fontSize: 12.5, fontWeight: 700, color: C.textSub, textAlign: "right", fontVariantNumeric: "tabular-nums" }}>{n.toLocaleString()}</span>
       </>;

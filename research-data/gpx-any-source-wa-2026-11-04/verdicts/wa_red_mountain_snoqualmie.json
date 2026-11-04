@@ -1,0 +1,16 @@
+{
+  "area_id": "wa_red_mountain_snoqualmie",
+  "routes": [
+    { "route_id": "wa_red_mountain_snoqualmie_east_face", "season": { "months": [6,7,8,9,10], "window": "Jun-Oct", "evidence": "Peak-wide logged ascents peak Jun-Oct (July 161, Aug 153, Sep 134); Mountaineers scramble listings and WTA reports show snow-free scrambling roughly July-September. No ascent is logged under an east face name." },
+      "track": null, "otherTracksConsidered": [ { "aid": "3370341", "verdict": "different", "why": "Logged as the old Commonwealth Basin approach to the southwest slope (the standard scramble, already stored with a track), not the east face." } ], "pins": [], "facts": [] },
+    { "route_id": "wa_red_mountain_snoqualmie_east_ridge", "season": { "months": [6,7,8,9,10], "window": "Jun-Oct", "evidence": "Same peak-wide window; web search found no east-ridge-specific season beta. No ascent logged as east ridge." },
+      "track": null, "otherTracksConsidered": [ { "aid": "3288160", "verdict": "different", "why": "Unnamed July 2026 track that follows the Commonwealth Basin approach to the standard southwest slope; nothing shows an east-ridge line." } ], "pins": [], "facts": [] },
+    { "route_id": "wa_red_mountain_snoqualmie_southeast_face", "season": { "months": [6,7,8,9,10], "window": "Jun-Oct", "evidence": "Same peak-wide window. One logged 'SE face / ridge' ascent is in November (offseason) and has no harvested track." },
+      "track": null, "otherTracksConsidered": [ { "aid": "1286263", "verdict": "offseason", "why": "Logged South Ridge/SW Face on 29 Nov 2019: far outside the season, and it follows the standard southwest slope line." } ], "pins": [], "facts": [] },
+    { "route_id": "wa_red_mountain_snoqualmie_west_ridge", "season": { "months": [6,7,8,9,10], "window": "Jun-Oct", "evidence": "Same peak-wide window. Logged 'West face' (Jul, Sep) and 'West Slope' (May) have no tracks and are not the ridge." },
+      "track": null, "otherTracksConsidered": [ { "aid": "442577", "verdict": "different", "why": "Logged Commonwealth Trail - Northwest Gully (Aug 2014); a gully line, not a west ridge, and it has no usable shape." } ], "pins": [], "facts": [] },
+    { "route_id": "wa_south_face_7", "season": { "months": [6,7,8,9,10], "window": "Jun-Oct", "evidence": "Stored Jun-Oct matches the peak-wide logged histogram and guide-style listings (snow-free scramble roughly Jul-Sep)." },
+      "track": null, "otherTracksConsidered": [ { "aid": "1644796", "verdict": "offseason", "why": "Logged Old Commonwealth Trail on 1 Nov 2020: offseason, and the line is the standard southwest slope." }, { "aid": "3284415", "verdict": "different", "why": "Unnamed July 2026 track that follows the same standard route as the already-tracked Standard Scramble; no evidence of a south face line." } ], "pins": [], "facts": [] }
+  ],
+  "notes": "All 19 tracks follow the Commonwealth Basin approach to the southwest slope, which is the stored Standard Scramble (it already has a track). None can be assigned to the five listed routes without positive route evidence. East Face, East Ridge, Southeast Face and West Ridge are empty stubs (no text, no waypoints); South Face (wa_south_face_7) may duplicate another south-side line. Peakbagger summit and ours agree (tracks end within ~20 m)."
+}

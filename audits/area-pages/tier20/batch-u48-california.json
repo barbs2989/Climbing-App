@@ -1,0 +1,45 @@
+{
+ "ca_grotto_the_2": {
+  "_expect": { "name": "Grotto, The", "region": "California" },
+  "blurb": "The Grotto is the western end of Echo Cliffs in the Santa Monica Mountains above Malibu, and it is the first climbing you reach when walking in on the trail. All 22 routes are bolted sport lines. The grades start around 5.7 and run to the low 5.12s, with the bulk landing between 5.10 and 5.11 and a handful of 5.8 and 5.9 climbs for getting warm. A stand of big sycamores throws mixed shade across the wall through the day, which makes it a pleasant pick when the sunnier faces nearby are too hot. Plan on a real hike to get there, and bring plenty of water.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105923997/the-grotto", "https://www.mountainproject.com/area/105825729/echo-cliffs?print=1"] }
+ },
+ "ca_dmz": {
+  "_expect": { "name": "DMZ", "region": "California" },
+  "blurb": "DMZ is a small sport area in the Inner Gorge of the Owens River Gorge, near Bishop, on the west side of the river toward the southern end of that stretch. Most of its 21 routes are bolted, with a couple of trad lines, and the grades run from about 5.7 up to the 5.11s. Roughly half sit at 5.10, with a good number of 5.11s above them and only a stray 5.12. The wall faces southeast, so it catches early light and works well on cold mornings. It is quieter and less starred than the famous walls around it, but it makes a handy warm-up before heading to harder climbs close by.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105884929/dmz", "https://mountainproject.com/area/105843282/inner-gorge"] }
+ },
+ "ca_karen_rock": {
+  "_expect": { "name": "Karen Rock", "region": "California" },
+  "blurb": "Karen Rock is the tallest formation at Moonstone Beach, on the Humboldt coast just outside Trinidad. It rises straight from the sand, and routes are around 60 feet. Most of the 21 climbs are top-rope lines, with a few trad routes and a single boulder traverse, so it suits groups setting up a rope and working problems. Grades range from about 5.8 to the low 5.13s, but the sweet spot is 5.10 and 5.11. Its west face picks up afternoon sun, and on a nice weekend the cliff is often draped with ropes, so expect company.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105882050/karen-rock", "https://app.advcollective.com/climbing/karen-crack-at-karen-rock-a-classic-trad-climb-on-californias-redwood-coast"] }
+ },
+ "ca_harbison_canyon": {
+  "_expect": { "name": "Harbison Canyon", "region": "California" },
+  "blurb": "Harbison Canyon is a small granite crag in the hills east of San Diego, close to Alpine and about half an hour from the city. It mixes trad lines, a few sport routes and a handful of boulder problems on pale boulders near the trail. Routes run from about 5.7 to the low 5.13s, though most are 5.11, and the problems fall roughly between V1 and V4. The walk from the road is only a few minutes. Its main attraction is shade, which is rare among the county's crags, so it is a decent choice when the other areas are baking.",
+  "approach": "A faint trail leaves the road near a barbed-wire fence and reaches the base of the cliff in a few minutes.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119253697/harbison-canyon", "https://www.meetup.com/Rock-Climbers-Of-San-Diego/events/266592935/"] }
+ },
+ "ca_feudal_wall_right_side": {
+  "_expect": { "name": "Feudal Wall (Right Side)", "region": "California" },
+  "blurb": "This is the right-hand section of Feudal Wall at Indian Cove, on the north side of Joshua Tree National Park. It is mostly a trad crag, with some bolted lines and top-rope setups, and the cracks are the draw: plenty of easy and moderate ones, plus a few harder crack and face climbs. Grades go from about 5.4 to 5.12, with a cluster at 5.7 and another across 5.10 and 5.11. Some lines are long enough to take two pitches. The rock at Indian Cove can be grainy, so test holds, and the wall is popular with groups running top ropes.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106566345/feudal-wall-right-side", "https://www.mountainproject.com/area/105721551/feudal-wall"] }
+ },
+ "ca_8_moynier": {
+  "_expect": { "name": "Moynier", "region": "California" },
+  "blurb": "Moynier is sector 8 at Silver Lake on the June Lake Loop in the Eastern Sierra, around 7,400 feet. It is the biggest, tallest slab of the quartzite crags here, roughly 200 feet high. Routes are easy to moderate, running from about 5.3 to 5.8, with a split between bolted sport lines and top-rope setups. Some longer lines link up to reach the small summit above. The rock is generally good quartzite but not heavily climbed, so a few spots are loose and a helmet is wise. The area is lightly visited and is well suited to beginners and families.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112287930/8-moynier", "https://app.advcollective.com/climbing/silver-lake-quartzite-a-reliable-escape-for-easy-to-moderate-climbing"] }
+ },
+ "ca_pywiak_dome": {
+  "_expect": { "name": "Pywiack Dome", "region": "California" },
+  "blurb": "Pywiack Dome is a granite dome just east of Tenaya Lake in the Tuolumne Meadows area of Yosemite, set close to the road with a short, steep descent to its base. Routes are mostly trad, with a few bolted lines and an odd ice or mixed climb, and they run from one to several pitches. Grades span from the easy 5.6 range to the 5.14 range, and the biggest group sits at 5.11 to 5.13, though a few moderate classics at 5.7 and 5.9 draw many climbers. Expect knobby, sometimes runout climbing and a dike that cuts across the face.",
+  "review": { "sources": ["https://www.mountainproject.com/area/classics/105862954/pywiak-dome", "https://www.ucolick.org/~bolte/TmdsGuide/Tuolumne_Guide.html"] }
+ },
+ "_skipped": {
+  "ca_stoner_cave": "could not fetch two pages that describe it (only one route page placed it; the park overview pages do not mention it)"
+ },
+ "_conflicts": {
+  "ca_karen_rock": "aspect stored W agrees with https://www.mountainproject.com/area/105882050/karen-rock but https://app.advcollective.com/climbing/karen-crack-at-karen-rock-a-classic-trad-climb-on-californias-redwood-coast says south or northeast facing",
+  "ca_8_moynier": "https://www.mountainproject.com/area/112287930/8-moynier says faces ENE; the Silver Lake page at advcollective lists east-northeast in text but south in its metadata"
+ }
+}

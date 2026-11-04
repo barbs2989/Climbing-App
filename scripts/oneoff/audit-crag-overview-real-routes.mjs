@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Audit of #2223/#2225 against REAL catalog rows, not fixtures: crag routes put the Plan body on
 // Overview, show crag + parking coordinates with Google/Apple directions, and list every discipline
 // fact (missing ones as "Not on file yet"); empty sections are discipline-gated placeholders.
@@ -25,7 +27,7 @@ fs.writeFileSync(entry, [
   `export { trailheadPoint, catOf, enrichRoute } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};`,
   `export { SeasonalGuidancePanel, CrowdsPanel } from ${JSON.stringify(path.join(ROOT, "EnrichmentPanels.jsx"))};`,
 ].join("\n"));
-execFileSync("npx", ["esbuild", entry, "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
+execFileSync(NPX, [...NPX_PRE, "esbuild", entry, "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
   "--define:import.meta.env={}", "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
   "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 if (typeof globalThis.WebSocket === "undefined") globalThis.WebSocket = class { constructor() { throw new Error("no realtime"); } };
@@ -33,7 +35,7 @@ const _err = console.error; console.error = (...a) => { if (!String(a[0]).includ
 // SuggestFix portals into document.body. Stub the portal BEFORE the bundle's react-dom facade exists,
 // and give it a body only while the form renders, so RouteDetail itself still renders without a DOM.
 { const { createRequire } = await import("node:module"); const rd = createRequire(path.join(ROOT, "package.json"))("react-dom"); rd.createPortal = (c) => c; }
-const { RouteDetail, SuggestFix, dbRouteToCamel, trailheadPoint, catOf, enrichRoute, SeasonalGuidancePanel, CrowdsPanel } = await import(out);
+const { RouteDetail, SuggestFix, dbRouteToCamel, trailheadPoint, catOf, enrichRoute, SeasonalGuidancePanel, CrowdsPanel } = await import(fileHref(out));
 const SRC = ["ClimbMatch.jsx", "lib/db.js", "lib/offline.js", "RouteDetail.jsx"].map((f) => fs.readFileSync(path.join(ROOT, f), "utf8")).join("\n");
 // LOAD PATHS. A route reaches the page three ways, and each builds _dbArea itself: the area browser
 // (dbRouteToCamel over this file's SEL), a shared ?route= link / offline pack / other queries (dbRouteToCamel

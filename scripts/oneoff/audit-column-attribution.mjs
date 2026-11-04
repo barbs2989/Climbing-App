@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Does `audit-unread-route-columns.mjs` actually attribute a render to the column it claims?
 //
 // That script renders a FULLY-POPULATED real route and looks for the column's token anywhere
@@ -14,7 +15,7 @@ import { createRequire } from "module";
 import fs from "fs"; import os from "os"; import path from "path";
 import { SUPABASE_URL, anonKey, headers } from "../lib/supabase-env.mjs";
 
-const ROOT = new URL("../..", import.meta.url).pathname.replace(/\/$/, "");
+const ROOT = fileURLToPath(new URL("../..", import.meta.url)).replace(/\/$/, "");
 if (!fs.existsSync(path.join(ROOT, "RouteDetail.jsx"))) { console.error("ROOT wrong:", ROOT); process.exit(1); }
 const require_ = createRequire(import.meta.url);
 

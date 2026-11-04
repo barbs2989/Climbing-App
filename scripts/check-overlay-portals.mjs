@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // check:overlay-portals — every full-screen overlay reachable from inside #appscroll must
 // be portalled to document.body.
 //
@@ -26,7 +27,7 @@ import _traverse from "@babel/traverse";
 const traverse = _traverse.default || _traverse;
 import { assertCovered } from "./lib/guard-sources.mjs";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const SKIP = new Set(["node_modules", "dist", ".git", ".claude", "catalog", "scripts", "audits"]);
 // Walk the tree rather than naming files — a guard with a hardcoded list silently narrows
 // every time the code moves (that is how check:refs came to read 24% of the app for a week).
@@ -134,8 +135,8 @@ for (const file of files) {
   const src = readFileSync(file, "utf8");
   let ast;
   try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
-  catch (e) { console.error(`  parse error ${relative(ROOT, file)}: ${e.message}`); process.exit(1); }
-  const rel = relative(ROOT, file);
+  catch (e) { console.error(`  parse error ${relative(ROOT, file).replace(/\\/g, "/")}: ${e.message}`); process.exit(1); }
+  const rel = relative(ROOT, file).replace(/\\/g, "/");
 
   traverse(ast, {
     ExportDefaultDeclaration(path) {

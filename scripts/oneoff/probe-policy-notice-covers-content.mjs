@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Does the policy re-consent notice cover controls the user still needs?
 //
 // PolicyUpdateNotice is `position:fixed; left:0; right:0; bottom:0`, portalled to document.body
@@ -136,7 +137,7 @@ async function walk(configPath, label) {
   const base = `http://127.0.0.1:${port}/Climbing-App/`;
   const args = ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"];
   if (configPath) args.splice(1, 0, "--config", configPath);
-  const server = spawn("npx", args, {
+  const server = spawn(NPX, [...NPX_PRE, ...args], {
     cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true,
     env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" },
   });

@@ -325,15 +325,18 @@ for (const d of [...CRAG, "alpine"]) {
 //    as "Not on file yet" with an "Add what you know" link — a placeholder for climbers to fill, never
 //    an "unknown" that reads as a fact, and never a value the route does not have. Facts the
 //    discipline does not have (bolts on a boulder, landing on a sport line) and facts that are not
-//    a discipline question (Star rating, Also called, Variations, FFA/FWA, Sun, Descent) stay absent.
+//    a discipline question (Reputation, Also called, Variations, FFA/FWA, Sun, Descent) stay absent.
 //    Still: no "Season TBD", and a crag route's breakdown/climate render on Overview.
 {
-  const FACT_LABELS = ["Star rating", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent", "Sun", "Wet", "Rock quality", "Fixed gear"];
+  const FACT_LABELS = ["Reputation", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent", "Sun", "Wet", "Rock quality", "Fixed gear"];
   const segs = (h) => h.replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, "\n").split("\n").map((x) => x.trim()).filter(Boolean);
   for (const d of CRAG) {
     const html = cache.get(d + "/overview") || render(bare(d, "5.9"), "overview");
     const t = text(html), sg = segs(html);
-    if (!t.includes("ROUTE FACTS")) fail(`ANCHOR LOST: ${d} overview no longer titles its facts card ROUTE FACTS — this section checked nothing`);
+    // A boulder problem's card is PROBLEM FACTS (owner's note: "we call bouldering problems not routes").
+    const factsHead = d === "bouldering" ? "PROBLEM FACTS" : "ROUTE FACTS";
+    if (!t.includes(factsHead)) fail(`ANCHOR LOST: ${d} overview no longer titles its facts card ${factsHead} — this section checked nothing`);
+    if (d === "bouldering" && t.includes("ROUTE FACTS")) fail("bare bouldering problem: its facts card is titled ROUTE FACTS — a boulder line is a PROBLEM");
     const WANT = { bouldering: ["Location", "Landing", "Crash pads", "Start", "Aspect", "Season", "Rock quality", "Wet"],
       sport: ["Location", "Bolts", "Protection", "Anchor", "Aspect", "Season", "Rock quality", "Wet"],
       trad: ["Location", "Protection", "Anchor", "Aspect", "Season", "Rock quality", "Wet", "Fixed gear"],
@@ -360,7 +363,7 @@ for (const d of [...CRAG, "alpine"]) {
       altNames: ["ZZALTNAMEZZ"], variations: ["ZZVARIATIONZZ 5.11a"], fa: "A. Climber 1970", ffa: "B. Free 1980", fwa: "C. Winter 1990" };
     const html = render(r, "overview");
     const t = text(html), sg = segs(html);
-    const want = ["Star rating", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"].filter((l) => !sg.includes(l));
+    const want = ["Reputation", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"].filter((l) => !sg.includes(l));
     if (want.length) fail(`enriched ${d} route: ROUTE FACTS is missing ${want.join(", ")}`);
     else if (!t.includes("★★★☆") || !t.includes("ZZALTNAMEZZ") || !t.includes("ZZVARIATIONZZ 5.11a") || !t.includes("SW-facing") || !t.includes("B. Free 1980") || !t.includes("C. Winter 1990"))
       fail(`enriched ${d} route: a ROUTE FACTS label rendered without its value`);
@@ -370,9 +373,10 @@ for (const d of [...CRAG, "alpine"]) {
   // Season in the header strap for every crag discipline, the way bouldering always had it.
   for (const d of ["sport", "trad", "toprope", "aid"]) {
     const html = render({ ...bare(d, "5.9"), season: "ZZSEASONZZ" }, "overview");
-    const strap = (html.match(/WebkitLineClamp|-webkit-line-clamp/g) || []).length;
-    if (!strap) fail("ANCHOR LOST: the header strap's line-clamp style moved — update this guard");
-    if (!/-webkit-line-clamp:2[^>]*>[^<]*ZZSEASONZZ/.test(html)) fail(`${d}: season on file but not in the header strap`);
+    // Anchored on data-header-strap: the strap's 2-line clamp is gone (it wraps now, owner note 2026-10-29: text cut off).
+    const strap = (html.match(/data-header-strap="1"/g) || []).length;
+    if (!strap) fail("ANCHOR LOST: the header strap's data-header-strap marker moved — update this guard");
+    if (!/data-header-strap="1"[^>]*>[^<]*ZZSEASONZZ/.test(html)) fail(`${d}: season on file but not in the header strap`);
     else ok(`${d}: season shows in the header strap`);
   }
   // A crag route with a breakdown and a climate box but nothing that opens Plan: the breakdown on
@@ -405,6 +409,30 @@ for (const d of [...CRAG, "alpine"]) {
       else ok("aid (no Conditions tab): CLIMATE & SEASON stays on Overview");
     }
   }
+}
+
+// 7. A BOULDER line is a PROBLEM, never a "route" (owner's note, 2026-10-21: "we call bouldering
+//    problems not routes"). Every tab of a bare boulder problem, visible text AND the names a screen
+//    reader or a tooltip reads (aria-label, title, placeholder), must not call it a route. Words
+//    that are not the climb's noun stay: "route-finding", "Route finder" (the search tool).
+{
+  const ALLOWED = /\broute[- ]finding\b|\broute finder\b/gi;
+  const attrs = (html) => [...html.matchAll(/\b(?:aria-label|title|placeholder)="([^"]*)"/g)].map((m) => m[1]).join(" · ");
+  let bad = 0;
+  // ...and the same problem once it HAS a description, a season and a report, which opens the
+  // sections a bare row never reaches (the description card, the season note, the consensus).
+  const filled = { ...bare("bouldering", "V4"), overview: "Sit start on the low jug, top out right.", season: "Fall through spring",
+    activity: [{ date: new Date().toISOString().slice(0, 10), stars: 3, condTags: ["Dry"], user: "Probe climber" }] };
+  for (const tab of TABS) {
+    for (const [label, html] of [["bare", cache.get("bouldering/" + tab)], ["filled", (() => { try { return render(filled, tab); } catch (e) { fail(`filled bouldering/${tab} threw: ${e.message.split("\n")[0].slice(0, 120)}`); return ""; } })()]]) {
+    if (!html) continue;
+    const t = (text(html) + " · " + attrs(html)).replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(ALLOWED, "");
+    for (const m of t.matchAll(/[^.·]{0,50}\broutes?\b[^.·]{0,40}/gi)) { fail(`${label} bouldering/${tab}: calls the problem a route — "${m[0].trim()}"`); bad++; }
+    }
+  }
+  if (!text(render(filled, "overview")).includes("Problem description")) fail("ANCHOR LOST: a filled boulder problem's Overview has no \"Problem description\" card — section 7 never saw the description branch");
+  if (!cache.get("bouldering/overview")) fail("ANCHOR LOST: no bouldering/overview render — section 7 checked nothing");
+  else if (!bad) ok("bare boulder problem: no tab calls it a route");
 }
 
 fs.rmSync(path.dirname(out), { recursive: true, force: true });

@@ -1,3 +1,4 @@
+import { fileHref } from "../lib/file-href.mjs";
 // Three surfaces rendered a RAW ISO date — "2026-06-17" — straight to a climber.
 //
 // The app has a stored date-format preference (`lib/date-pref.js`: auto / US / international) and
@@ -100,7 +101,7 @@ await esbuild.build({
     b.onLoad({ filter: /.*/, namespace: "st" }, () => ({ contents: "export const supabase=null;export const USE_DB=false;" }));
   } }],
 });
-const { shortDate } = await import(out);
+const { shortDate } = await import(fileHref(out));
 if (typeof shortDate !== "function") { console.error("FAIL: shortDate did not bundle."); process.exit(1); }
 
 ok(shortDate("2026-06-17") !== "2026-06-17" && /2026/.test(shortDate("2026-06-17")),

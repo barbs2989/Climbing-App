@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Do the Challenges tick-list rows say anything true?
 //
 // THE FAILURE THIS EXISTS FOR, shipped by me across #849/#857/#866/#879 and found only by reading
@@ -53,7 +54,7 @@ const base = `http://127.0.0.1:${port}/Climbing-App/`;
 log(`starting dev server on ${port}...`);
 // Borrow the a11y-badges config: same populated demo, same opener, so this cannot drift on which
 // screens exist.
-const server = spawn("npx", ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
 let died = false;
 server.on("exit", () => { died = true; });

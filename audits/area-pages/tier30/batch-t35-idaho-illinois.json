@@ -1,0 +1,77 @@
+{
+ "id_kid_boulder_area": {
+  "_expect": {
+   "name": "Kid Boulder Area",
+   "region": "Idaho"
+  },
+  "blurb": "A cluster of basalt boulders along the north shore of Dierkes Lake, in the Snake River canyon near Twin Falls. The stone is heavily featured with huecos, pockets, jugs, crimps and slopers, and the problems lean friendly: roughly three quarters fall between V0 and V2, with a few V3 to V5 lines for stronger climbers. Center Crack (V3) and Holey Arete (V0) are the standouts.\n\nThe canyon holds sun, so this is a good winter and shoulder-season stop when higher parts of southern Idaho are too cold. Midsummer gets very hot here; plan on early mornings or cooler months.",
+  "approach": "A short trail along the north side of the lake leads to the boulders.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/110140802/dierkes-lake-bouldering",
+    "https://sendage.com/area/dierkes-lake-id-usa",
+    "https://visitsouthidaho.com/adventure/dierkes-lake-climbing/"
+   ]
+  }
+ },
+ "id_alcove_the": {
+  "_expect": {
+   "name": "Alcove, The",
+   "region": "Idaho"
+  },
+  "blurb": "The steepest and busiest wall at Dierkes Lake, a basalt amphitheater of big overhangs above the Snake River canyon near Twin Falls. Nearly all of it is bolted sport climbing on positive edges and holds, with plenty of exposure, and it rewards upper-body strength and tidy footwork. Harder lines rarely go on the first try.\n\nMost routes sit between 5.11 and 5.12, with a few easier lines at the 5.10 level and a handful of 5.13s. Ziplock (5.11a/b), Black Thing (5.11b/c) and Bedazzled (5.12d) are among the best-known. The left side offers some top-rope options for those who want a gentler introduction.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/111981017/dierkes-lake",
+    "https://mountainproject.com/area/112796374/twin-falls-and-the-snake-river-canyon",
+    "https://www.mountainproject.com/area/classics/112796374/twin-falls-and-the-snake-river-canyon",
+    "https://sendage.com/area/dierkes-lake-id-usa"
+   ]
+  }
+ },
+ "id_the_midway": {
+  "_expect": {
+   "name": "The Midway",
+   "region": "Idaho"
+  },
+  "blurb": "A friendly basalt sport wall on the cliff band beside Shoshone Falls, just outside Twin Falls. The routes run from easy 5.5s up to the low 5.11 range, but most land between 5.8 and 5.10, which makes it a fine place for newer leaders, groups and kids. Many lines carry carnival-themed names, from Giant Teddy Bear (5.8) and Funnel Cake (5.9) to Elephant Ear (5.10b).\n\nThe approach is only a few minutes on foot. Neighboring walls such as Picnic Crag are a short stroll along the same cliff, so it is easy to link several in one outing.",
+  "parking_note": "Pull in by the Shoshone Falls welcome sign just past the tight hairpin bend on the road down to the falls. A trail heads north from there to the wall.",
+  "approach": "A short trail north from the welcome-sign pullout leads along the cliff base to the routes.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/123316194/shoshone-falls-area",
+    "https://www.mountainproject.com/area/111981095/picnic-crag",
+    "https://www.mountainproject.com/area/classics/112796374/twin-falls-and-the-snake-river-canyon",
+    "https://mountainproject.com/area/112796374/twin-falls-and-the-snake-river-canyon"
+   ]
+  }
+ },
+ "id_head_wall_the": {
+  "_expect": {
+   "name": "Head Wall, The",
+   "region": "Idaho"
+  },
+  "blurb": "The first wall you meet when walking down from the upper parking at the Fins, a limestone sport area where the Lost River Range tapers out to the south. The rock is vertical to slightly overhanging, with positive edges and secure pockets, and the climbing is technical and sustained.\n\nIt holds a strong concentration of 5.12s, with a few 5.11s as a way in and a handful of 5.13s above. Ghost in the Shell (5.12a), Bean Fiddler (5.12c) and Al's Diner (5.13a) are among the best known. Walls here generally get morning sun and afternoon shade, so late-day sessions work even when it is warm. The last stretch of road is steep and loose, and a high-clearance 4WD is strongly recommended; there are no facilities on site.",
+  "parking_note": "Reach it from Highway 33 south of Howe by turning west up the gravel canyon road. The upper lot sits right by the wall, but the final steep, loose mile calls for 4WD. Smaller lower lots suit 2WD vehicles, with a longer walk.",
+  "approach": "The wall is the first one you reach on foot below the upper parking lot.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108134063/the-head-wall",
+    "https://www.mountainproject.com/area/108134051/the-fins",
+    "https://www.postregister.com/outdoors/spending-a-day-wearing-ourselves-out-on-vertical-limestone/article_5a1b53e9-2594-5eda-9c8f-3117bfe275b2.html",
+    "https://climb-idaho.vercel.app/areas/the-fins"
+   ]
+  }
+ },
+ "_skipped": {
+  "id_closed_to_climbing_4_all_star_wall": "could not confirm this wall by name in any page read; no second page describes it",
+  "id_4_all_star_wall": "same: no page describes a 4 All Star Wall; only the parent Massacre Rocks page read",
+  "id_midget_widget": "only one real page (area page) describes the crag; second page was only a route list",
+  "il_a_hagler_roof": "no page read mentions Hagler Roof; only parent Holy Boulders described",
+  "il_a_sentinel": "only one real page (Palisades area page) fetched; SummitPost and rockclimbing.com blocked",
+  "il_y_the_sinkhole": "pages only name Sinkhole as a sector of Holy Boulders; nothing describes the sector itself"
+ },
+ "_conflicts": {
+  "il_a_sentinel": "rock: stored dolomite, Mountain Project calls Mississippi Palisades limestone (skipped anyway)"
+ }
+}

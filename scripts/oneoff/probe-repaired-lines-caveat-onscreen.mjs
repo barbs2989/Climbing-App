@@ -1,3 +1,6 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // DOES THE CAVEAT COME BACK ON SCREEN, OR ONLY IN THE COLUMN?
 //
 // fix-stranded-track-vertices.mjs gates on `trackIsJustTheWaypoints(r.gpx, r.waypoints)` — the RAW
@@ -15,15 +18,15 @@ import { trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT } from "../../lib/track.j
 import { execFileSync } from "node:child_process";
 import { writeFileSync } from "node:fs";
 import path from "node:path";
-const ROOT = path.resolve(new URL(".", import.meta.url).pathname, "../..");
+const ROOT = path.resolve(fileURLToPath(new URL(".", import.meta.url)), "../..");
 const dir = path.join(ROOT, "node_modules", ".probe-caveat");
 execFileSync("mkdir", ["-p", dir]);
 const entry = path.join(dir, "entry.mjs");
 writeFileSync(entry, 'export { dbRouteToCamel } from "' + path.join(ROOT, "lib/db.js") + '";\n');
 const out = path.join(dir, "bundle.mjs");
-execFileSync("npx", ["esbuild", entry, "--bundle", "--format=esm", "--platform=node",
+execFileSync(NPX, [...NPX_PRE, "esbuild", entry, "--bundle", "--format=esm", "--platform=node",
   "--define:import.meta.env={}", "--outfile=" + out], { cwd: ROOT, stdio: "pipe" });
-const { dbRouteToCamel } = await import(out);
+const { dbRouteToCamel } = await import(fileHref(out));
 
 const all = await selectAll("routes", "id,gpx,waypoints", "", { pageSize: 1000 });
 if (!all.length) { console.log("FAIL CLOSED: zero routes read"); process.exit(1); }

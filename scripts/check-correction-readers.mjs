@@ -41,7 +41,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { appSources } from "./lib/guard-sources.mjs";
+import { appSources, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GUARD = "check:correction-readers";
@@ -60,9 +60,11 @@ appSources(ROOT, GUARD);
    Omitting it here would not have been a quiet miss — the rack rivalry's precedence function
    would have vanished from the scan and the fail-closed branch fires — but the same move made
    silently, one file at a time, is exactly the #547 shape this comment already warns about. */
-const FILES = ["RouteDetail.jsx", "lib/rappels.js", "lib/rack.js"];
+// lib/descentBeta.js, lib/rappelText.js and lib/rappelEdits.js hold readers and the rappel helper since PR59/PR60.
+const FILES = ["RouteDetail.jsx", "lib/rappels.js", "lib/rack.js", "lib/descentBeta.js", "lib/rappelText.js", "lib/rappelEdits.js"];
 const FILE = FILES.join(" + ");
-const SRC = FILES.map((f) => fs.readFileSync(path.join(ROOT, f), "utf8")).join("\n");
+// readAppFile: RouteDetail.jsx is read STITCHED, with the components moved out of it (PR52 on) back in.
+const SRC = FILES.map((f) => readAppFile(path.join(ROOT, f))).join("\n");
 const APP = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
 
 // ---------------------------------------------------------------------------------------
@@ -224,6 +226,13 @@ const EXEMPT = {
   // decided here. Delete this entry the moment that is settled.
   // Keyed on the rivalry's `key` (the FORM field, "rap"), not the column it rivals.
   "rap|RappelTable": true,
+  // RoutePlanTab (the Plan tab body, lifted out of RouteDetail in PR60) reads `.rappelDetail` once:
+  // `hasTable=!!(route.rappelDetail&&route.rappelDetail.length)`, which decides whether to mount
+  // RappelTable — the same presence check as above. The count it shows comes from
+  // rappelHeadingCount() and the note from rappelNoteText(), both gated readers. Before the lift
+  // this read sat inside RouteDetail's body, which passed only because that 150 KB function
+  // mentioned _rapEdited somewhere else — a coarser pass than this explicit one.
+  "rap|RoutePlanTab": true,
 };
 
 for (const r of RIVALRIES) {

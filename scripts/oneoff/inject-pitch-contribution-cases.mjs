@@ -8,7 +8,7 @@
 // narrows only the filter, which is enough to make a pitch carrying ONLY a length vanish — the
 // sharpest form of the defect, and invisible to any assertion that inspects a row it dropped.
 //
-// IT EDITS RouteDetail.jsx IN PLACE. Do not commit, and do not build, while it runs.
+// IT EDITS src/components/SuggestFix.tsx IN PLACE. Do not commit, and do not build, while it runs.
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
@@ -16,14 +16,15 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const FILE = "RouteDetail.jsx";
+// PR59 moved SuggestFix (the edit sheet) to src/components/SuggestFix.tsx, so every case edits that file.
+const FILE = "src/components/SuggestFix.tsx";
 const abs = path.join(ROOT, FILE);
 const sum = () => crypto.createHash("sha1").update(fs.readFileSync(abs)).digest("hex");
 
 const CASES = [
   // THE REAL HISTORICAL DEFECT, restored verbatim: a key no editor row carries.
   { name: "length-read-from-a-key-nothing-writes", expect: "fail",
-    find: "var _len=uLenIn(p.lengthM)", repl: "var _len=uLenIn(p.len)",
+    find: "const _len=uLenIn(p.lengthM)", repl: "const _len=uLenIn(p.len)",
     says: /length was typed and the submitted row carries/ },
 
   { name: "bolts-hardcoded", expect: "fail",

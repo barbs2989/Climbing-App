@@ -49,7 +49,7 @@ function stripComments(src) {
   }
   return out;
 }
-const read = (rel) => { const p = path.join(ROOT, rel); if (!fs.existsSync(p)) dead(`${rel} is missing`); return stripComments(rel === "ClimbMatchCore.jsx" ? readAppFile(p) : fs.readFileSync(p, "utf8")); };
+const read = (rel) => { const p = path.join(ROOT, rel); if (!fs.existsSync(p)) dead(`${rel} is missing`); return stripComments((rel === "ClimbMatchCore.jsx" || rel === "ClimbMatch.jsx") ? readAppFile(p) : fs.readFileSync(p, "utf8")); };
 
 const app = read("ClimbMatch.jsx"), core = read("ClimbMatchCore.jsx");
 const libs = { "lib/CrewCard.jsx": read("lib/CrewCard.jsx"), "lib/CrewFinder.jsx": read("lib/CrewFinder.jsx"), "lib/Inbox.jsx": read("lib/Inbox.jsx"), "lib/FloatPlans.jsx": read("lib/FloatPlans.jsx"), "lib/PartnerSearch.jsx": read("lib/PartnerSearch.jsx") };

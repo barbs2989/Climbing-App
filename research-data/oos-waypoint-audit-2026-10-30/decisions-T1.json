@@ -1,0 +1,130 @@
+[
+ {
+  "id": "ak_south_pioneer_peak_pioneer_ridge",
+  "i": 0,
+  "name": "Pioneer Ridge Trailhead",
+  "from": [
+   61.49433,
+   -148.92794
+  ],
+  "op": "none",
+  "coordinate_key": "61.49433,-148.92794",
+  "source": "https://www.openstreetmap.org/node/11703399780",
+  "reason": "verified: OSM node 11703399780 highway=trailhead 'Pioneer Ridge Trail' at 61.494367,-148.927832, 7 m from stored."
+ },
+ {
+  "id": "ab_mount_northover_south_ridge",
+  "i": 0,
+  "name": "Interlakes parking lot",
+  "from": [
+   50.60968,
+   -115.11895
+  ],
+  "op": "none",
+  "coordinate_key": "50.60968,-115.11895",
+  "reason": "unverified: Interlakes lot not published by name; OSM has only an unnamed parking way 262483234 at 50.612275,-115.119485 (291 m) and web search found no coordinate. No change."
+ },
+ {
+  "id": "ab_mount_birdwood_northwest_ridge",
+  "i": 0,
+  "name": "Smutwood Peak trailhead",
+  "from": [
+   50.83879,
+   -115.35099
+  ],
+  "op": "none",
+  "coordinate_key": "50.83879,-115.35099",
+  "source": "https://www.openstreetmap.org/way/431421697",
+  "reason": "verified: OSM parking way 431421697 'Tryst Lake and Mount Smutwood Route' at 50.839094,-115.350981, 34 m from stored."
+ },
+ {
+  "id": "ab_mount_smuts_south_ridge",
+  "i": 0,
+  "name": "Smutwood Peak trailhead",
+  "from": [
+   50.8389,
+   -115.35104
+  ],
+  "op": "none",
+  "coordinate_key": "50.8389,-115.35104",
+  "source": "https://www.openstreetmap.org/way/431421697",
+  "reason": "verified: same OSM parking way 431421697 at 50.839094,-115.350981, 22 m from stored."
+ },
+ {
+  "id": "ab_mount_lefroy_west_face",
+  "i": 0,
+  "name": "Lake O'Hara Road parking",
+  "from": [
+   51.44534,
+   -116.32918
+  ],
+  "op": "none",
+  "coordinate_key": "51.44534,-116.32918",
+  "source": "https://www.openstreetmap.org/way/298739416",
+  "reason": "verified: OSM parking way 298739416 'lake o'hara parking' at 51.444639,-116.329375, 79 m from stored."
+ },
+ {
+  "id": "ab_mount_cline_southwest_ridge",
+  "i": 0,
+  "name": "Thompson Creek trailhead",
+  "from": [
+   52.01368,
+   -116.62894
+  ],
+  "op": "none",
+  "coordinate_key": "52.01368,-116.62894",
+  "reason": "unverified: Thompson Creek trailhead; OSM has only the campground node (52.012317,-116.625761, 265 m) and rec-area polygon, no trailhead/parking node for the Cline route start. No change."
+ },
+ {
+  "id": "bc_brunswick_mountain_lions_bay_trail",
+  "i": 0,
+  "name": "Lions Bay trailhead",
+  "from": [
+   49.47063,
+   -123.2348
+  ],
+  "op": "none",
+  "coordinate_key": "49.47063,-123.2348",
+  "source": "https://www.openstreetmap.org/node/10861478410",
+  "reason": "verified: OSM node 10861478410 highway=trailhead 'Lions Trailhead' at 49.470878,-123.234769, 28 m from stored."
+ },
+ {
+  "id": "bc_mount_begbie_north_ridge",
+  "i": 0,
+  "name": "Begbie Creek trailhead",
+  "from": [
+   50.9222,
+   -118.21095
+  ],
+  "op": "none",
+  "coordinate_key": "50.9222,-118.21095",
+  "source": "https://www.openstreetmap.org/node/7776552702",
+  "reason": "verified: OSM node 7776552702 'Mt Begbie Trailhead' at 50.922310,-118.210607, 27 m from stored."
+ },
+ {
+  "id": "bc_mount_vaux_southwest_face",
+  "i": 0,
+  "name": "Highway 1 pull-out",
+  "from": [
+   51.23336,
+   -116.57824
+  ],
+  "op": "none",
+  "coordinate_key": "51.23336,-116.57824",
+  "source": "https://www.openstreetmap.org/way/1347172023",
+  "reason": "verified: OSM parking way 1347172023 'Mount Vaux Scramble' at 51.233194,-116.577092, 82 m from stored."
+ },
+ {
+  "id": "bc_mount_robson_emperor_ridge",
+  "i": 0,
+  "name": "Berg Lake Trailhead",
+  "from": [
+   53.04984,
+   -119.21545
+  ],
+  "op": "none",
+  "coordinate_key": "53.04984,-119.21545",
+  "source": "https://www.openstreetmap.org/way/1185166549",
+  "reason": "verified: OSM parking way 1185166549 on Kinney Lake Road (Berg Lake trail start) at 53.049821,-119.215427, 3 m from stored. Ground 2737 ft vs pin elev 2782 ft ok."
+ }
+]

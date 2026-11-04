@@ -21,12 +21,12 @@ import path from "node:path";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
 import { fileURLToPath } from "node:url";
-import { MOVED_FROM_CORE } from "../lib/guard-sources.mjs";
+import { MOVED_ALL } from "../lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 // Components moved out of ClimbMatchCore.jsx to load lazily are still app source (see guard-sources.mjs).
-const FILES = ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx", ...MOVED_FROM_CORE];
+const FILES = ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx", ...MOVED_ALL];
 const problems = [];
 
 // =======================================================================================
@@ -48,11 +48,19 @@ const BAD = new Map([
 let numbers = 0;
 for (const f of FILES) {
   const src = fs.readFileSync(path.join(ROOT, f), "utf8");
-  const ast = parse(src, { sourceType: "module", plugins: ["jsx"] });
+  const ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] });
   traverse(ast, {
     NumericLiteral(p) {
       numbers++;
       const why = BAD.get(p.node.value);
+      // 0.62 is also a plain icon-scale factor: `Math.round(sz*0.62)` sizes a GradeTag inside a pin
+      // (PinIcon, TopoLineOverlay) and converts nothing. A literal multiplied by a variable called
+      // sz/size is a pixel size, not a distance, so it is not a km->miles copy; anything else
+      // 0.62 still fails, and the other three constants have no such innocent use.
+      if (p.node.value === 0.62 && p.parent.type === "BinaryExpression" && p.parent.operator === "*") {
+        const other = p.parent.left === p.node ? p.parent.right : p.parent.left;
+        if (other.type === "Identifier" && /^(sz|size)$/.test(other.name)) return;
+      }
       if (why) problems.push(`${f} @${p.node.start}: ${p.node.value} — ${why}`);
     },
   });

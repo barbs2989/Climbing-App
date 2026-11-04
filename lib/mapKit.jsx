@@ -298,12 +298,13 @@ export function BaseLayerToggle({ baseLayer, setBaseLayer, C, snow, snowAt }) {
   const pick = snow ? snowPick(baseLayer) : null;
   const passes = useSnowPasses(snowAt, !!pick);
   const list = passes ? passes.list : null;
+  const hasPick = !!pick, pickP = pick ? pick.p : null;
   // Bare "snow" becomes a real pass as soon as the list is in.
   useEffect(() => {
-    if (!pick || pick.p || !list || !list.length) return;
+    if (!hasPick || pickP || !list || !list.length) return;
     const clear = list.find((x) => x.cloud != null && x.cloud <= SNOW_DEFAULT_MAX_CLOUD);
     setBaseLayer(snowKey(clear || list[0]));
-  }, [pick && pick.p, list, setBaseLayer]);
+  }, [hasPick, pickP, list, setBaseLayer]);
   // Stepping is by DATE, not by index, so a key chosen before a remount still steps correctly.
   const older = pick && pick.p && list ? list.find((x) => x.date < pick.date) : null;
   const newer = pick && pick.p && list ? list.filter((x) => x.date > pick.date).pop() : null;

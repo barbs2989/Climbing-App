@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Build the waypoint-pin correction batch for the SIX routes the pin triage found safely fixable.
 // See research-data/WAYPOINT-PIN-TRIAGE-2026-08-13.md for why the other ~130 findings are not here.
 //
@@ -19,7 +20,7 @@
 import fs from "fs";
 import { selectAll } from "../lib/supabase-env.mjs";
 
-const ROOT = new URL("../../", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../../", import.meta.url));
 const R = 6371000;
 const dist = (a, b) => {
   const p = x => x * Math.PI / 180, dLat = p(b.lat - a.lat), dLng = p(b.lng - a.lng);

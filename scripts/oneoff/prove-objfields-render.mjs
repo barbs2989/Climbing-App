@@ -1,3 +1,4 @@
+import { fileHref } from "../lib/file-href.mjs";
 // Renders the real SuggestFix form and asserts all three object-typed fields still draw one
 // labelled input per sub-key.
 //
@@ -75,7 +76,7 @@ export function render(route, section) {
     loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
     outfile: out, logLevel: "error", plugins: [portalShim],
   });
-  const { render } = await import(out);
+  const { render } = await import(fileHref(out));
 
   const ROUTE = {
     id: "objfields", name: "Guard Route", grade: "5.8", pitches: 4,

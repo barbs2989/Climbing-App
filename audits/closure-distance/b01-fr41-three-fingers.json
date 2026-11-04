@@ -1,0 +1,18 @@
+[
+ {"id":"wa_three_fingers_south_peak_lookout","walkMi":8,"walkGainFt":1400,"dayNotePrefix":"Walk or bike the 8 closed miles of FR 41 from the Canyon Creek bridge to Tupso Pass first.",
+  "roadPatch":{"status":"Closed to vehicles at the washed-out Canyon Creek bridge, about 8 miles below the Tupso Pass trailhead; no repair is scheduled. Foot and bike traffic may pass the barrier. From late September through at least December 31, 2026 the road is also closed to everyone, on foot and by bike, from the FS 4110 junction for timber work."},
+  "variantPatches":[
+   {"index":0,"unset":["longForm"],"set":{"whyThisWay":"Only if the Forest Service repairs the Canyon Creek bridge and reopens FR 41 to Tupso Pass: then it is a long day or an easy overnight instead of a 31-mile trip."}},
+   {"index":1,"set":{"season":"Jul-Sep"}}
+  ],
+  "timingAdd":{"approachTimeHrs":2,"totalHrs":4},
+  "why":"USFS Three Fingers Lookout page (updated 2026-08-26): closed past the Canyon Creek bridge, 8 miles from the trailhead; WTA hike page same. Hiking Washington: 31 mi / 5,600 ft RT from the bridge vs WTA 15 mi / 4,200 ft from the trailhead; Mountaineers trip-planning: the washout adds ~16 mi and 1,400 ft RT. Timber closure: Hiking Washington (Sep 29-Dec 31 2026), WTA (Sep 28 through winter)."},
+ {"id":"wa_three_fingers_r1","walkMi":8,"walkGainFt":1400,"dayNotePrefix":"Walk or bike the 8 closed miles of FR 41 from the Canyon Creek bridge to Tupso Pass first.",
+  "roadPatch":{"status":"Closed to vehicles at the washed-out Canyon Creek bridge, about 8 miles below the Tupso Pass trailhead; no repair is scheduled. Foot and bike traffic may pass the barrier. From late September through at least December 31, 2026 the road is also closed to everyone, on foot and by bike, from the FS 4110 junction for timber work."},
+  "timingAdd":{"approachTimeHrs":2,"totalHrs":4},
+  "why":"Same road and closure as the South Peak; itinerary day miles were trail-only (4.5 + 5.5 + 4.5 from Tupso Pass)."},
+ {"id":"wa_three_fingers_r2","walkMi":8,"walkGainFt":1400,"dayNotePrefix":"Walk or bike the 8 closed miles of FR 41 from the Canyon Creek bridge to Tupso Pass first.",
+  "roadPatch":{"status":"Closed to vehicles at the washed-out Canyon Creek bridge, about 8 miles below the Tupso Pass trailhead; no repair is scheduled. Foot and bike traffic may pass the barrier. From late September through at least December 31, 2026 the road is also closed to everyone, on foot and by bike, from the FS 4110 junction for timber work."},
+  "timingAdd":{"approachTimeHrs":2,"totalHrs":4},
+  "why":"Same road and closure as the South Peak; itinerary day miles were trail-only."}
+]

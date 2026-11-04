@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // check:disc-labels — one spelling per discipline, everywhere.
 //
 // There were eleven separate discipline lists across the app and no two were
@@ -19,7 +20,7 @@ import { join } from "node:path";
 import { DISC_LABELS, DISC_SHORT } from "../lib/discLabels.js";
 import { assertCovered } from "./lib/guard-sources.mjs";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const SKIP = new Set(["node_modules", "dist", ".git", ".claude", "catalog", "scripts", "supabase", "research", "audits"]);
 const EXEMPT = "disc-label-exempt"; // marks a label that means something OTHER than the discipline's name
 

@@ -1,0 +1,34 @@
+{
+  "area_id": "wa_vasiliki_ridge",
+  "routes": [
+    {
+      "route_id": "wa_vasiliki_ridge_standard",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep",
+        "evidence": "Search: Mountaineers lists Jul-Sep for the neighbouring Vasiliki Tower; stored window is late June to September, highway reopening gating access (May 2025 ascents were on snow). Logged ascents May 5, Jul 1, Aug 2, Sep 1."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2830370",
+          "verdict": "offseason",
+          "why": "Only one route on the peak and the line is the Burgundy Col approach to the summit (6 m from pin, summited), but it was May 2, over a month before the Jun window, with snow from 6,200 ft. Start is 295 m from our trailhead pin; no trailhead coordinate could be confirmed from a fetched page, so no pin move."
+        },
+        {
+          "aid": "2836786",
+          "verdict": "offseason",
+          "why": "May 10, off-season; no track points."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "If the owner accepts a May 2 ascent as within season, 2830370 would be the track (kind oneway, 295 m / 308 m from pin), but the trailhead pin is unconfirmed. Nominatim and SummitPost fetches returned nothing usable."
+}

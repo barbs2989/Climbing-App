@@ -1,0 +1,784 @@
+[
+ {
+  "lu": "wa_lu_torment_forbidden",
+  "leg": 0,
+  "peak": "Mount Torment",
+  "route": "South Ridge (4th/5th class)",
+  "pick": {
+   "id": "wa_mount_torment_south_ridge",
+   "name": "South Ridge",
+   "disc": "alpine",
+   "grade": "5.4",
+   "area": "Mount Torment",
+   "score": 0.25
+  },
+  "others": [
+   {
+    "id": "wa_mount_torment_south_ridge",
+    "name": "South Ridge",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Mount Torment",
+    "score": 0.25
+   },
+   {
+    "id": "wa_mount_torment_torment_forbidden_traverse",
+    "name": "Torment-Forbidden Traverse",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Mount Torment",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_torment_forbidden",
+  "leg": 1,
+  "peak": "Forbidden Peak",
+  "route": "West Ridge (5.7)",
+  "pick": {
+   "id": "wa_forbidden_peak_west_ridge",
+   "name": "West Ridge",
+   "disc": "alpine",
+   "grade": "5.6",
+   "area": "Forbidden Peak",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "wa_forbidden_peak_west_ridge",
+    "name": "West Ridge",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Forbidden Peak",
+    "score": 1
+   },
+   {
+    "id": "wa_forbidden_peak_northwest_face",
+    "name": "Northwest Face",
+    "disc": "alpine",
+    "grade": "5.8",
+    "area": "Forbidden Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_forbidden_peak_northeast_face",
+    "name": "Northeast Face",
+    "disc": "alpine",
+    "grade": "AI2",
+    "area": "Forbidden Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_forbidden_peak_east_ledges",
+    "name": "East Ledges",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Forbidden Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_forbidden_peak_north_ridge",
+    "name": "North Ridge",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Forbidden Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_forbidden_peak_east_ridge",
+    "name": "East Ridge Direct",
+    "disc": "alpine",
+    "grade": "5.8-",
+    "area": "Forbidden Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_sahale_boston",
+  "leg": 0,
+  "peak": "Sahale Peak",
+  "route": "Sahale Arm and Sahale Glacier, then the summit block (class 3)",
+  "pick": {
+   "id": "wa_sahale_mountain_sahale_glacier",
+   "name": "Sahale Arm / Sahale Glacier",
+   "disc": "mountaineering",
+   "grade": "Class 4",
+   "area": "Sahale Mountain",
+   "score": 0.3333333333333333
+  },
+  "others": [
+   {
+    "id": "wa_sahale_mountain_sahale_glacier",
+    "name": "Sahale Arm / Sahale Glacier",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Sahale Mountain",
+    "score": 0.3333333333333333
+   },
+   {
+    "id": "wa_sahale_mountain_r1",
+    "name": "Quien Sabe Glacier",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Sahale Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_sahale_boston",
+  "leg": 1,
+  "peak": "Boston Peak",
+  "route": "Ridge from the Sahale–Boston col, then the east face (class 3–4)",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_boston_peak_southeast_face",
+    "name": "Southeast Face",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Boston Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_northwest_ridge_2",
+    "name": "Northwest Ridge",
+    "disc": "alpine",
+    "grade": "5.5",
+    "area": "Boston Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_inspiration_traverse",
+  "leg": 0,
+  "peak": "Tricouni Peak",
+  "route": "West chute to the southwest ridge (snow and scramble)",
+  "pick": {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "name": "Southwest Slopes / Lucky Pass",
+   "disc": "scrambling",
+   "grade": "Class 3",
+   "area": "Tricouni Peak",
+   "score": 0.2
+  },
+  "others": [
+   {
+    "id": "wa_tricouni_peak_southwest_slopes",
+    "name": "Southwest Slopes / Lucky Pass",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Tricouni Peak",
+    "score": 0.2
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_inspiration_traverse",
+  "leg": 1,
+  "peak": "Primus Peak",
+  "route": "East slope (snow and scramble)",
+  "pick": {
+   "id": "wa_east_slope",
+   "name": "East Slope",
+   "disc": "mountaineering",
+   "grade": "Class 3",
+   "area": "Primus Peak",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "wa_east_slope",
+    "name": "East Slope",
+    "disc": "mountaineering",
+    "grade": "Class 3",
+    "area": "Primus Peak",
+    "score": 0.5
+   },
+   {
+    "id": "wa_north_ridge_4",
+    "name": "North Ridge",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Primus Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_primus_peak_south_ridge",
+    "name": "South Ridge / McAllister Glacier",
+    "disc": "mountaineering",
+    "grade": "Class 2",
+    "area": "Primus Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_inspiration_traverse",
+  "leg": 2,
+  "peak": "Austera Peak",
+  "route": "South slope to south ridge (snow and rock)",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_austera_peak",
+    "name": "Austera Peak",
+    "disc": "alpine",
+    "grade": "5.2",
+    "area": "Austera Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_austera_peak_southwest_ridge",
+    "name": "Southwest Ridge / McAllister Glacier",
+    "disc": "alpine",
+    "grade": "5.2",
+    "area": "Austera Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_inspiration_traverse",
+  "leg": 3,
+  "peak": "Klawatti Peak",
+  "route": "South face (short class 4–5 pitch over the bergschrund, then steep snow)",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_klawatti_peak_sw_buttress",
+    "name": "Klawatti Peak SW Buttress",
+    "disc": "alpine",
+    "grade": "5.3 Easy Snow",
+    "area": "Klawatti Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_klawatti_peak_north_ridge",
+    "name": "North Ridge",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Klawatti Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_klawatti_peak_southeast_face",
+    "name": "Southeast Face / Klawatti Glacier",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Klawatti Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_inspiration_traverse",
+  "leg": 4,
+  "peak": "Dorado Needle",
+  "route": "Northeast face and northwest ridge (class 5, snow and ice on the rock)",
+  "pick": {
+   "id": "wa_northwest_ridge",
+   "name": "Northwest Ridge",
+   "disc": "alpine",
+   "grade": "5.4",
+   "area": "Dorado Needle",
+   "score": 0.14285714285714285
+  },
+  "others": [
+   {
+    "id": "wa_northwest_ridge",
+    "name": "Northwest Ridge",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Dorado Needle",
+    "score": 0.14285714285714285
+   },
+   {
+    "id": "wa_dorado_needle_east_ridge",
+    "name": "East Ridge / Inspiration Glacier",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Dorado Needle",
+    "score": 0
+   },
+   {
+    "id": "wa_direct_southwest_buttress",
+    "name": "Direct Southwest Buttress",
+    "disc": "alpine",
+    "grade": "5.10a",
+    "area": "Dorado Needle",
+    "score": 0
+   },
+   {
+    "id": "wa_southwest_buttress",
+    "name": "Southwest Buttress",
+    "disc": "alpine",
+    "grade": "5.8",
+    "area": "Dorado Needle",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_isolation_traverse",
+  "leg": 0,
+  "peak": "Eldorado Peak",
+  "route": "Passed on the Eldorado climbers trail and Inspiration Glacier; summit is an optional detour (East Ridge or upper Inspiration Glacier)",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "wa_lu_isolation_traverse",
+  "leg": 1,
+  "peak": "Dorado Needle",
+  "route": "Passed at the col to its north; summit is optional (class 5)",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_dorado_needle_east_ridge",
+    "name": "East Ridge / Inspiration Glacier",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Dorado Needle",
+    "score": 0
+   },
+   {
+    "id": "wa_direct_southwest_buttress",
+    "name": "Direct Southwest Buttress",
+    "disc": "alpine",
+    "grade": "5.10a",
+    "area": "Dorado Needle",
+    "score": 0
+   },
+   {
+    "id": "wa_northwest_ridge",
+    "name": "Northwest Ridge",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Dorado Needle",
+    "score": 0
+   },
+   {
+    "id": "wa_southwest_buttress",
+    "name": "Southwest Buttress",
+    "disc": "alpine",
+    "grade": "5.8",
+    "area": "Dorado Needle",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_isolation_traverse",
+  "leg": 2,
+  "peak": "Isolation Peak",
+  "route": "Climbed by its ridge from the basin above the lakes; summit is optional",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "wa_lu_isolation_traverse",
+  "leg": 3,
+  "peak": "Snowfield Peak",
+  "route": "Passed by its shoulder via the Neve Glacier; summit is optional",
+  "pick": {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "name": "Neve Glacier / Standard Route",
+   "disc": "mountaineering",
+   "grade": "Class 4",
+   "area": "Snowfield Peak",
+   "score": 0.125
+  },
+  "others": [
+   {
+    "id": "wa_snowfield_peak_neve_glacier",
+    "name": "Neve Glacier / Standard Route",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Snowfield Peak",
+    "score": 0.125
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_ptarmigan_traverse",
+  "leg": 0,
+  "peak": "Mount Formidable",
+  "route": "Route from the Spider–Formidable col (optional, class 3–4)",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_northeast_face_direct",
+    "name": "Northeast Face Direct",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Mount Formidable",
+    "score": 0
+   },
+   {
+    "id": "wa_mount_formidable_south_face",
+    "name": "South Face / Southeast Ledges",
+    "disc": "alpine",
+    "grade": "Class 4",
+    "area": "Mount Formidable",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_ptarmigan_traverse",
+  "leg": 1,
+  "peak": "Spider Mountain",
+  "route": "Scramble from the col (optional)",
+  "pick": {
+   "id": "wa_spider_mountain_north_ridge",
+   "name": "Southeast Gully / East Ridge (Spider-Formidable Col)",
+   "disc": "mountaineering",
+   "grade": "Class 3",
+   "area": "Spider Mountain",
+   "score": 0.3333333333333333
+  },
+  "others": [
+   {
+    "id": "wa_spider_mountain_north_ridge",
+    "name": "Southeast Gully / East Ridge (Spider-Formidable Col)",
+    "disc": "mountaineering",
+    "grade": "Class 3",
+    "area": "Spider Mountain",
+    "score": 0.3333333333333333
+   },
+   {
+    "id": "wa_spider_mountain_north_face",
+    "name": "North Face (Kloke-Tindall Route)",
+    "disc": "mountaineering",
+    "grade": "Class 3",
+    "area": "Spider Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_ptarmigan_traverse",
+  "leg": 2,
+  "peak": "Le Conte Mountain",
+  "route": "North side (optional, mostly class 3 with a few class 4 moves)",
+  "pick": {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "name": "Northern Aspect",
+   "disc": "mountaineering",
+   "grade": "Class 4",
+   "area": "Le Conte Mountain",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "wa_le_conte_mountain_northern_aspect",
+    "name": "Northern Aspect",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Le Conte Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_ptarmigan_traverse",
+  "leg": 3,
+  "peak": "Dome Peak",
+  "route": "Dana Glacier and Dome Glacier to the Dome–One Eyed Bull col, then the exposed northwest ridge (optional, glaciated)",
+  "pick": {
+   "id": "wa_dome_peak_dome_glacier",
+   "name": "Dome Glacier",
+   "disc": "mountaineering",
+   "grade": "Class 3",
+   "area": "Dome Peak",
+   "score": 0.09090909090909091
+  },
+  "others": [
+   {
+    "id": "wa_dome_peak_dome_glacier",
+    "name": "Dome Glacier",
+    "disc": "mountaineering",
+    "grade": "Class 3",
+    "area": "Dome Peak",
+    "score": 0.09090909090909091
+   },
+   {
+    "id": "wa_dome_peak_indian_summer",
+    "name": "Indian Summer",
+    "disc": "alpine",
+    "grade": "5.10",
+    "area": "Dome Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_pickets_traverse",
+  "leg": 0,
+  "peak": "Whatcom Peak",
+  "route": "North Ridge (class 2–3)",
+  "pick": {
+   "id": "wa_north_ridge_2",
+   "name": "North Ridge",
+   "disc": "scrambling",
+   "grade": "Class 4",
+   "area": "Whatcom Peak",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "wa_north_ridge_2",
+    "name": "North Ridge",
+    "disc": "scrambling",
+    "grade": "Class 4",
+    "area": "Whatcom Peak",
+    "score": 0.5
+   },
+   {
+    "id": "wa_castle_in_the_sky",
+    "name": "Castle in the Sky",
+    "disc": "alpine",
+    "grade": "5.10b",
+    "area": "Whatcom Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_south_spur",
+    "name": "South Spur",
+    "disc": "scrambling",
+    "grade": "Class 4",
+    "area": "Whatcom Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_pickets_traverse",
+  "leg": 1,
+  "peak": "Mount Challenger",
+  "route": "Challenger Glacier and Challenger Arm (about 50 ft of 5.5 at the summit)",
+  "pick": {
+   "id": "wa_mount_challenger_challenger_glacier",
+   "name": "Challenger Glacier",
+   "disc": "alpine",
+   "grade": "5.5",
+   "area": "Mount Challenger",
+   "score": 0.14285714285714285
+  },
+  "others": [
+   {
+    "id": "wa_mount_challenger_challenger_glacier",
+    "name": "Challenger Glacier",
+    "disc": "alpine",
+    "grade": "5.5",
+    "area": "Mount Challenger",
+    "score": 0.14285714285714285
+   },
+   {
+    "id": "wa_poltergeist_pinnacle",
+    "name": "Poltergeist Pinnacle",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Mount Challenger",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_pickets_traverse",
+  "leg": 2,
+  "peak": "Mount Fury",
+  "route": "North Buttress (5.8)",
+  "pick": {
+   "id": "wa_mount_fury_east_north_buttress",
+   "name": "North Buttress",
+   "disc": "alpine",
+   "grade": "5.9",
+   "area": "Mount Fury (East Peak)",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "wa_mount_fury_east_north_buttress",
+    "name": "North Buttress",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Mount Fury (East Peak)",
+    "score": 1
+   },
+   {
+    "id": "wa_mount_fury_east_mongo_ridge",
+    "name": "Mongo Ridge (Southwest Buttress)",
+    "disc": "alpine",
+    "grade": "5.10",
+    "area": "Mount Fury (West Peak)",
+    "score": 0.5
+   },
+   {
+    "id": "wa_mount_fury_west_west_ridge",
+    "name": "West Ridge / Northwest Route",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Mount Fury (West Peak)",
+    "score": 0
+   },
+   {
+    "id": "wa_ridge_traverse_from_east_fury",
+    "name": "Ridge Traverse from East Fury",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Mount Fury (West Peak)",
+    "score": 0
+   },
+   {
+    "id": "wa_mount_fury_east_direct_east_ridge",
+    "name": "Direct East Ridge",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Mount Fury (East Peak)",
+    "score": 0
+   },
+   {
+    "id": "wa_mount_fury_east_southeast_glaciers",
+    "name": "Southeast Glaciers (Standard)",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Mount Fury (East Peak)",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_pickets_traverse",
+  "leg": 3,
+  "peak": "Outrigger Peak",
+  "route": "From the col north of the peak (class 3–4, low 5th)",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "wa_lu_tower_golden_horn",
+  "leg": 0,
+  "peak": "Golden Horn",
+  "route": "Southwest slope and southwest gully (class 3–4; a short low-fifth move at the summit block)",
+  "pick": {
+   "id": "wa_golden_horn_southwest_route",
+   "name": "Southwest Route",
+   "disc": "alpine",
+   "grade": "5.0",
+   "area": "Golden Horn",
+   "score": 0.09090909090909091
+  },
+  "others": [
+   {
+    "id": "wa_golden_horn_southwest_route",
+    "name": "Southwest Route",
+    "disc": "alpine",
+    "grade": "5.0",
+    "area": "Golden Horn",
+    "score": 0.09090909090909091
+   },
+   {
+    "id": "wa_golden_horn_northeast_arete",
+    "name": "Northeast Arête",
+    "disc": "alpine",
+    "grade": "5.8",
+    "area": "Golden Horn",
+    "score": 0
+   },
+   {
+    "id": "wa_golden_horn_east_face",
+    "name": "East Face",
+    "disc": "alpine",
+    "grade": "5.10+",
+    "area": "Golden Horn",
+    "score": 0
+   },
+   {
+    "id": "wa_golden_horn_north_face",
+    "name": "North Face",
+    "disc": "alpine",
+    "grade": null,
+    "area": "Golden Horn",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_tower_golden_horn",
+  "leg": 1,
+  "peak": "Tower Mountain",
+  "route": "West gully and west face (class 3, some fourth class)",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_east_gully",
+    "name": "East Gully",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Agathla Tower",
+    "score": 0.2
+   },
+   {
+    "id": "wa_witches_tower_west_buttress",
+    "name": "West Buttress",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Witches Tower",
+    "score": 0.2
+   },
+   {
+    "id": "wa_up_in_arms",
+    "name": "Up In Arms",
+    "disc": "alpine",
+    "grade": "5.11",
+    "area": "Concord Tower",
+    "score": 0
+   },
+   {
+    "id": "wa_north_face_3",
+    "name": "North Face",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Lexington Tower",
+    "score": 0
+   },
+   {
+    "id": "wa_lexington_tower_east_face",
+    "name": "East Face",
+    "disc": "alpine",
+    "grade": "5.9+",
+    "area": "Lexington Tower",
+    "score": 0
+   },
+   {
+    "id": "wa_tooth_and_claw",
+    "name": "Tooth and Claw",
+    "disc": "alpine",
+    "grade": "5.12a",
+    "area": "Lexington Tower",
+    "score": 0
+   },
+   {
+    "id": "wa_concord_tower_north_face",
+    "name": "North Face",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Concord Tower",
+    "score": 0
+   },
+   {
+    "id": "wa_vanishing_point",
+    "name": "Vanishing Point",
+    "disc": "alpine",
+    "grade": "5.12b",
+    "area": "Dolomite Tower",
+    "score": 0
+   }
+  ]
+ }
+]

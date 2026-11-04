@@ -23,14 +23,15 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { appSources } from "./lib/guard-sources.mjs";
+import { appSources, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SOURCES = appSources(ROOT, "check:contrib-field-columns");
 for (const f of ["RouteDetail.jsx", "ClimbMatch.jsx"]) {
   if (!SOURCES.includes(f)) { console.error(`ANCHOR LOST: ${f} is not in the app source list — nothing below was checked.`); process.exit(1); }
 }
-const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
+// readAppFile: RouteDetail.jsx with SuggestFix (src/components since PR59) and the other moved components stitched back in.
+const read = (f) => readAppFile(path.join(ROOT, f));
 const dead = (m) => { console.error(`check:contrib-field-columns FAILED — ${m}. Nothing was checked.`); process.exit(1); };
 
 // Rows for keys no form offers yet, each with the reason it is allowed to exist.

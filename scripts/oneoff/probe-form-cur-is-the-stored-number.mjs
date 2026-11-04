@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // THE CONTRIBUTE FORM'S "CURRENT VALUE" MUST BE THE NUMBER THE PAGE SHOWS.
 //
 // A climber taps the pencil to correct a figure and the sheet tells them what is on file. If
@@ -56,7 +57,7 @@ const entry = path.join(ROOT, "scripts", "oneoff", "_curbundle.mjs");
 fs.writeFileSync(entry,
   `export {uElev,routeAscentFt,uImp,uDist} from "../../ClimbMatchCore.jsx";\nexport {dbRouteToCamel} from "../../lib/db.js";\n`);
 const out = path.join(ROOT, "scripts", "oneoff", "_curbundle.cjs");
-execFileSync("npx", ["esbuild", entry, "--bundle", "--format=cjs", "--platform=node", "--jsx=automatic",
+execFileSync(NPX, [...NPX_PRE, "esbuild", entry, "--bundle", "--format=cjs", "--platform=node", "--jsx=automatic",
   "--loader:.jsx=jsx", "--define:import.meta.env={}", "--outfile=" + out, "--log-level=error"], { cwd: ROOT });
 const { uElev, routeAscentFt, uImp, uDist, dbRouteToCamel } = await import("file://" + out);
 // uImp/uDist are pulled in so the lifted expression can be evaluated even when it is an

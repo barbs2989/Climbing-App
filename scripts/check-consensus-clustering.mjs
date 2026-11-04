@@ -1,3 +1,5 @@
+import { fileHref } from "./lib/file-href.mjs";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Can three climbers who agree actually be COUNTED as agreeing?
 //
 // The merge gate is `win.n >= 3 || wasEmpty`: for a field that already holds a value, three
@@ -35,6 +37,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(ROOT, `.consensus-${process.pid}.mjs`);
@@ -52,21 +55,21 @@ const dead = (what) => {
 };
 
 try {
-  execFileSync("npx", ["esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
+  execFileSync(NPX, [...NPX_PRE, "esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     "--define:import.meta.env={}",
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
     "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 } catch { dead("esbuild could not bundle ClimbMatchCore.jsx"); }
 
-const mod = await import(out + "?t=" + Date.now());
+const mod = await import(fileHref(out + "?t=" + Date.now()));
 const { sameEditValue, normEditStr, SET_FIELDS } = mod;
 if (typeof sameEditValue !== "function") dead("ClimbMatchCore.jsx does not export sameEditValue — ANCHOR LOST");
 if (typeof normEditStr !== "function") dead("ClimbMatchCore.jsx does not export normEditStr — ANCHOR LOST");
 if (!SET_FIELDS || typeof SET_FIELDS !== "object") dead("ClimbMatchCore.jsx does not export SET_FIELDS — ANCHOR LOST");
 
 // ---- 1. every chip field must be a declared set, or its votes can never cluster ----
-const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx")) /* stitched: SuggestFix lives in src/components since PR59 */;
 const fi = rd.indexOf('const FIELDS=[{k:');
 if (fi < 0) dead("RouteDetail.jsx's FIELDS list moved — ANCHOR LOST");
 const seg = rd.slice(fi);

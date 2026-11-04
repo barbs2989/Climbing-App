@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Does ROUTE BREAKDOWN fit a 390px phone?
 //
 // check:overflow walks the route page with `?zr=1`, which opens ROUTES[0] — `kings_hf`, a scramble
@@ -35,11 +37,11 @@ const dir = fs.mkdtempSync(path.join(ROOT, ".cm-bdov-"));
 process.on("exit", () => { try { fs.rmSync(dir, { recursive: true, force: true }); } catch {} });
 const entry = path.join(dir, "e.js"), out = path.join(dir, "b.mjs");
 fs.writeFileSync(entry, `export { default as RouteDetail } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};\n`);
-execFileSync("npx", ["esbuild", entry, "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
+execFileSync(NPX, [...NPX_PRE, "esbuild", entry, "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
   "--define:import.meta.env={}", "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
   "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 if (typeof globalThis.WebSocket === "undefined") globalThis.WebSocket = class { constructor() { throw new Error("no realtime"); } };
-const { RouteDetail } = await import(out);
+const { RouteDetail } = await import(fileHref(out));
 
 /* THE STRESS FIXTURE IS THE MEASURED WORST CASE, not a plausible one: the 51-character terrain
    prose this file already records, a long descriptive pitch title, a compound grade, and a crux

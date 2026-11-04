@@ -17,7 +17,9 @@ const DB = path.join(ROOT, "lib/db.js");
 const GUARD = path.join(ROOT, "scripts/check-read-failures.mjs");
 const sum = () => crypto.createHash("sha1").update(fs.readFileSync(DB)).digest("hex").slice(0, 12);
 
-const ANCHOR = "  const { data: states } = useStates();";
+// Three call sites share the first line; the one inside useMyHomeStatePath is the one that forked,
+// and the comment under it is unique to it.
+const ANCHOR = "  const { data: states } = useStates();\n  // The same hook, and so the same cache entry and body, that partner search reads the zip with.";
 const FORKED = `  const { data: states } = useQuery({
     queryKey: ["area-children", "roots"], enabled: !!supabase && !!loc, staleTime: 60 * 60 * 1000,
     queryFn: async () => {

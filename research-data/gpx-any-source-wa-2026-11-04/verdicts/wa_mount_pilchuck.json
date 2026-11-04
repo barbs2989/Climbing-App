@@ -1,0 +1,85 @@
+{
+  "area_id": "wa_mount_pilchuck",
+  "routes": [
+    {
+      "route_id": "wa_mount_pilchuck_east_ridge",
+      "season": {
+        "months": [
+          8,
+          9,
+          10
+        ],
+        "window": "Aug-Oct",
+        "evidence": "Searched Mountaineers East Ridge route and trip reports: July and June parties met snow in Iodine Gulch or turned back, a September 2018 party turned back on wet slick rock above Pinnacle Lake, late summer into early fall is the practical window. Logged ascents named East Ridge/Bathtub Lakes are in Sep and Oct."
+      },
+      "track": {
+        "aid": "2663889",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Logged route \"East Ridge\", 3 Oct 2024; report calls it the less popular scramble through Bathtub Lakes with yellow blazes after Iodine Gulch; the line runs from the Pinnacle Lake trailhead area east along the Bathtub Lakes corridor to the summit and back by the same line (round trip). Our route has no Trailhead or Summit pin so mechanical checks were null; the track high point is 1 m from the surveyed summit coordinate. The trip sequence lists two other minor points that day but this track only visits Pilchuck."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "1780436",
+          "verdict": "not-summited",
+          "why": "Bathtub Lakes attempt in October 2021, turned back in weather."
+        },
+        {
+          "aid": "3302359",
+          "verdict": "different",
+          "why": "Starts at the Mountain Loop (Heather Meadows side) trailhead; standard trail."
+        },
+        {
+          "aid": "3263017",
+          "verdict": "different",
+          "why": "Standard trail start."
+        },
+        {
+          "aid": "3282506",
+          "verdict": "different",
+          "why": "Standard trail start."
+        }
+      ],
+      "pins": [
+        {
+          "type": "Trailhead",
+          "action": "add",
+          "lat": 48.0587,
+          "lng": -121.736,
+          "name": "Pinnacle Lake Trailhead",
+          "evidence": "Route text names the Pinnacle Lake Trailhead (FR 4021, ~2,700 ft, ~15-car lot). The East Ridge round-trip track starts and ends about 20 m from this coordinate at 832 m (2,730 ft). Route has no stored Trailhead pin.",
+          "confirmedBy": "https://www.wta.org/go-hiking/hikes/pinnacle-lake (Pinnacle Lake #703 trailhead 48.0587, -121.7360)"
+        }
+      ],
+      "facts": [
+        {
+          "field": "pro_tips",
+          "month": 10,
+          "text": "In early October, painted yellow circles and arrows mark the way once above Iodine Gulch; keep watching for them where the path is faint.",
+          "aids": [
+            "2663889",
+            "1780436"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 10,
+          "text": "At the top of Iodine Gulch the faint path that veers south of Bathtub Lakes leads into brush; stay between the lakes or along their north side, where a climbers path exists.",
+          "aids": [
+            "1780436"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 10,
+          "text": "In October the road to Pinnacle Lake trailhead is rough enough that high clearance is advisable; in a high-water year the lake trail itself can wash out.",
+          "aids": [
+            "1780436"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "East Ridge route has no Trailhead or Summit pin in the catalog; only the trailhead add is proposed."
+}

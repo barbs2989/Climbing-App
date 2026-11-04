@@ -1,0 +1,303 @@
+[
+ {
+  "id": "wa_rimrock_ridge_scramble",
+  "i": 3,
+  "name": "Rimrock Ridge summit",
+  "from": [
+   48.3720712,
+   -121.0001074
+  ],
+  "op": "areaMove",
+  "to": [
+   48.375572,
+   -120.978276
+  ],
+  "area_id": "wa_rimrock_ridge",
+  "source": "GNIS gaz_id 1525058 (Rimrock Ridge, Ridge)",
+  "quote": "gaz_id 1525058, gaz_name Rimrock Ridge, featureclass Ridge, point 48.375572210554914,-120.97827598681175",
+  "second_source": "USGS 3DEP (local max)",
+  "ground_ft_at_to": 7226,
+  "reason": "Area row (48.37207,-121.00011) is not a local max (ground 7032, a neighbour 7096 higher; 1,660 m from GNIS). The summit pin is on the GNIS Rimrock Ridge point, a 3DEP local max (7226, all 8 ring neighbours lower, 29 ft under the stated 7255). Pin right, area row wrong.",
+  "note_from": "from = the AREA row coordinate (the research gave the pin coordinate)"
+ },
+ {
+  "id": "wa_east_face",
+  "i": 2,
+  "name": "Middle Peak (Gunsight Range)",
+  "from": [
+   48.30571,
+   -120.99439
+  ],
+  "op": "move",
+  "to": [
+   48.30639,
+   -120.99403
+  ],
+  "source": "https://www.mountainproject.com/area/106325754/middle-peak",
+  "quote": "GPS: 48.30639, -120.99403; Elevation: 8,200 ft; 'The highest of the Gunsight peaks, the notch between the middle and north peaks forms the namesake V slot.'",
+  "second_source": "https://en.wikipedia.org/wiki/Gunsight_Peak (48.30667N 120.99389W, 8,198 ft); GNIS 1520417 Gunsight Peak Summit 48.306707,-120.994573",
+  "ground_ft_at_to": 8072,
+  "reason": "Pin sits on the area-row coordinate, which is not a summit (ground 7764, ring neighbours up to 8046). Middle Peak is Middle Gunsight, the highest of the Gunsights; Mountain Project publishes its summit at 48.30639,-120.99403, a 3DEP local max (8072), 60 m from GNIS Gunsight Peak Summit, and where sibling wa_sw_ridge's Middle Gunsight pin already is."
+ },
+ {
+  "id": "wa_east_face",
+  "i": 2,
+  "name": "Middle Peak (Gunsight Range)",
+  "from": [
+   48.30571,
+   -120.99439
+  ],
+  "op": "setElev",
+  "elev": 8200,
+  "source": "https://www.mountainproject.com/area/106325754/middle-peak",
+  "quote": "Elevation: 8,200 ft",
+  "second_source": "https://en.wikipedia.org/wiki/Gunsight_Peak (8,198 ft)",
+  "ground_ft_at_to": 8072,
+  "reason": "Stated 8,000 contradicts the published 8,200 (Wikipedia 8,198 for the same highest Gunsight summit); ground at the new coordinate is 8072, within the 250 ft margin."
+ },
+ {
+  "id": "wa_gunrunner",
+  "i": 2,
+  "name": "Middle Peak (Gunsight Range)",
+  "from": [
+   48.30571,
+   -120.99439
+  ],
+  "op": "move",
+  "to": [
+   48.30639,
+   -120.99403
+  ],
+  "source": "https://www.mountainproject.com/area/106325754/middle-peak",
+  "quote": "GPS: 48.30639, -120.99403; Elevation: 8,200 ft; 'The highest of the Gunsight peaks, the notch between the middle and north peaks forms the namesake V slot.'",
+  "second_source": "https://en.wikipedia.org/wiki/Gunsight_Peak (48.30667N 120.99389W, 8,198 ft); GNIS 1520417 Gunsight Peak Summit 48.306707,-120.994573",
+  "ground_ft_at_to": 8072,
+  "reason": "Same pin as wa_east_face: on the area-row coordinate, not a summit. Gunrunner traverses North, Middle and South (AAJ: 'we reached the Middle Peak via a 5.9 dihedral'), so the Middle Peak pin belongs on Middle Gunsight."
+ },
+ {
+  "id": "wa_gunrunner",
+  "i": 2,
+  "name": "Middle Peak (Gunsight Range)",
+  "from": [
+   48.30571,
+   -120.99439
+  ],
+  "op": "setElev",
+  "elev": 8200,
+  "source": "https://www.mountainproject.com/area/106325754/middle-peak",
+  "quote": "Elevation: 8,200 ft",
+  "second_source": "https://en.wikipedia.org/wiki/Gunsight_Peak (8,198 ft)",
+  "ground_ft_at_to": 8072,
+  "reason": "Stated 8,000 contradicts the published 8,200."
+ },
+ {
+  "id": "wa_east_face",
+  "i": 2,
+  "name": "Middle Peak (Gunsight Range)",
+  "from": [
+   48.30571,
+   -120.99439
+  ],
+  "op": "areaMove",
+  "to": [
+   48.30639,
+   -120.99403
+  ],
+  "area_id": "wa_middle_peak",
+  "source": "https://www.mountainproject.com/area/106325754/middle-peak",
+  "quote": "GPS: 48.30639, -120.99403; Elevation: 8,200 ft",
+  "second_source": "GNIS 1520417 Gunsight Peak Summit 48.306707,-120.994573 (60 m away); https://en.wikipedia.org/wiki/Gunsight_Peak",
+  "ground_ft_at_to": 8072,
+  "reason": "Area row is correctly NAMED (Middle Peak = Middle Gunsight) but misplaced: 48.30571,-120.99439 reads 7764 ft and is not a local max, while the published summit is a local max at 8072 (128 ft under the published 8,200; the area row's 8185 is also close to published 8,198-8,200)."
+ },
+ {
+  "id": "wa_sw_ridge",
+  "i": 1,
+  "name": "Middle Gunsight summit",
+  "from": [
+   48.30639,
+   -120.99403
+  ],
+  "op": "none",
+  "source": "https://www.mountainproject.com/area/106325754/middle-peak",
+  "quote": "GPS: 48.30639, -120.99403",
+  "reason": "Already on the published Middle Peak coordinate; correct. Its 8200 matches the published elevation. The 8072 ground is DEM smoothing of a spire."
+ },
+ {
+  "id": "wa_gunsight_peak_standard",
+  "i": 7,
+  "name": "Gunsight Peak summit",
+  "from": [
+   48.306555,
+   -120.994285
+  ],
+  "op": "none",
+  "source": "GNIS 1520417 Gunsight Peak Summit 48.306707,-120.994573",
+  "quote": "Gunsight Peak, 8,198 ft",
+  "reason": "This pin is 22 m from the published Middle Peak point and 25 m from GNIS Gunsight Peak Summit; the 'Gunsight Peak' summit and Middle Gunsight are the same highest summit (Wikipedia 8,198 vs MP 8,200). Not a defect: two pins ~90 m apart are one summit in two spellings, within DEM noise."
+ },
+ {
+  "id": "wa_spectre_peak_south_route",
+  "i": 7,
+  "name": "Spectre Peak",
+  "from": [
+   48.812,
+   -121.343
+  ],
+  "op": "none",
+  "source": "none found",
+  "quote": "GNIS layer 5 has no Spectre Peak; Wikipedia Picket Range table: Spectre Peak 7,880 ft, no coordinates; ListsOfJohn (Spectre Peak 7,940 ft, Mount Challenger quad) and Peakbagger answer 403",
+  "reason": "Area row (48.812,-121.343, 3-decimal, ground 6959, -993 ft) and the pin share an unsourced coarse coordinate; the other estimate (peakLat 48.823,-121.345) is also unsourced. No published Spectre coordinate reachable, so no areaMove/move. Published heights 7,880 / 7,940 vs stated 7,952 noted. Left for a source that can be fetched."
+ },
+ {
+  "id": "wa_spectre_peak_south_route",
+  "i": 3,
+  "name": "Bivy beyond Easy Peak",
+  "from": [
+   48.8474039,
+   -121.37145793750001
+  ],
+  "op": "none",
+  "source": "GNIS gaz_id 1519158 Easy Peak Summit 48.859571,-121.420412",
+  "quote": "route note: bivy near the summit of Easy Peak (6,613')",
+  "reason": "No pin named 'Perfect Pass' exists on this route; the only 6,600 ft pin is this bivy, whose ground (6367) is within the 250 ft margin of its stated 6,600, so the cross-route 'majority 6,278' is not a defect here. GNIS has no Pickle Pass either. No change."
+ },
+ {
+  "id": "wa_swiss_peak_standard_route",
+  "i": 0,
+  "name": "Ross Dam Trailhead (SR 20, MP 134)",
+  "from": [
+   48.7278,
+   -121.0628
+  ],
+  "op": "none",
+  "source": "none found",
+  "quote": "GNIS layer 5 has no Swiss Peak in WA; Wikipedia Picket Range lists Swiss Peak 7,993 ft (no coordinate); Peakbagger/ListsOfJohn 403",
+  "reason": "Area wa_swiss_peak has no coordinate and no published summit coordinate is retrievable (not in GNIS). The route has only a trailhead pin and NO summit pin. No areaMove without a source. Published heights 7,988 (stated) / 7,993 (Wikipedia)."
+ },
+ {
+  "id": "wa_cathedral_peak_pasayten_se_buttress",
+  "i": 3,
+  "name": "Andrews Pass",
+  "from": [
+   48.944476,
+   -120.228605
+  ],
+  "op": "move",
+  "to": [
+   48.926209,
+   -120.217534
+  ],
+  "source": "GNIS gaz_id 1515888 (Andrew Pass, Gap)",
+  "quote": "gaz_id 1515888, gaz_name Andrew Pass, featureclass Gap, point 48.926208986934654,-120.21753402243044",
+  "second_source": "nine other routes (e.g. wa_amphitheater_mountain_west_route) use 48.9262,-120.2175",
+  "ground_ft_at_to": 6676,
+  "reason": "GNIS Andrew Pass is at 48.92621,-120.21753, ground 6676 vs stated 6700. The stored pin sits 2.2 km north on 6321 ft ground. Stored distMi 12 remains >= the 11.0 mi chord from trailhead and 18 - 12 >= the 3.9 mi chord on to the camp, so no leg is made impossible."
+ },
+ {
+  "id": "wa_lane_peak_r1",
+  "i": 1,
+  "name": "Lane Peak - Zipper couloir",
+  "from": [
+   null,
+   null
+  ],
+  "op": "none",
+  "source": "https://www.summitpost.org/lane-peak/152503",
+  "quote": "continue straight up the broad couloir trending to the right to a notch in the west ridge",
+  "second_source": "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-lane-peak-zipper-winter ('topped out of The Zipper ... then went under the south of the summit to reach the summit gully')",
+  "reason": "The Zipper tops out at a notch on the west ridge and the party then continues to the summit separately; it does not finish on the summit. GNIS Lane Peak Summit (1521887, 46.757927,-121.753006) is therefore not the Topout. Leave the pin unplaced."
+ },
+ {
+  "id": "wa_lane_peak_r2",
+  "i": 1,
+  "name": "Lane Peak - The Fly couloir",
+  "from": [
+   null,
+   null
+  ],
+  "op": "none",
+  "source": "https://www.summitpost.org/lane-peak/152503",
+  "quote": "after topping out the couloir, traverse southwest over to the standard finish to the summit",
+  "reason": "The Fly exits at a notch in the west ridge, short of the summit (route's own note says the same). Not a summit finish; no move."
+ },
+ {
+  "id": "wa_tooth_and_claw",
+  "i": 2,
+  "name": "Lexington Tower East Shoulder (topout)",
+  "from": [
+   null,
+   null
+  ],
+  "op": "none",
+  "source": "route's own pin",
+  "quote": "Lexington Tower East Shoulder (topout)",
+  "reason": "The route is named as topping out on the East Shoulder, not the summit; no summit pin to add. GNIS has no Lexington Tower feature; the area row (48.514255,-120.657465, ground 7619 vs 7560) is the only coordinate and the track reaching the peak (12 m) is consistent with the shoulder being near the top."
+ },
+ {
+  "id": "wa_liberty_and_injustice_for_all",
+  "i": 1,
+  "name": "Top of pitch 5 (Thin Red Line pitch-7 anchor)",
+  "from": [
+   null,
+   null
+  ],
+  "op": "none",
+  "source": "GNIS gaz_id 1522053 Liberty Bell Mountain Summit 48.515202,-120.658226",
+  "quote": "The route ends here, about 650 ft up the East Face, where it joins Thin Red Line.",
+  "reason": "The route does not top out on the summit: it ends about 650 ft up the East Face and joins Thin Red Line. Published summit coordinate for reference only: GNIS 1522053 Liberty Bell Mountain, 48.515202,-120.658226 (area row 48.515435,-120.658365, 25 m away). No pin change."
+ },
+ {
+  "id": "wa_cannon_mountain_south_slopes",
+  "i": 0,
+  "name": "Snow Lakes Trailhead",
+  "from": [
+   47.5441,
+   -120.7096
+  ],
+  "op": "none",
+  "source": "GNIS gaz_id 1528403 Prusik Pass 47.487348,-120.790657",
+  "quote": "Standard approach: Snow Lakes Trail #1553 ... into the Enchantment Lakes basin, then via Perfection Lake to Prusik Pass, traverse NW to the Druid Plateau, then to the summit block (roughly 13-14 mi)",
+  "reason": "The pins are right and consistent with the route's own prose: Prusik Pass pin matches GNIS to 7 m (ground 7468 vs 7497), Perfection Lake ground 7100 = stated 7100, trailhead ground 1372 vs 1300. The 22.1 km (13.7 mi) distance fits the Snow Lakes approach. The recorded track (not in the context file) starting elsewhere (Stuart Lake / Colchuck / Aasgard) would be a different approach, so the pins are not wrong. No change."
+ },
+ {
+  "id": "wa_three_fingers_r1",
+  "i": 6,
+  "name": "North Peak, Three Fingers",
+  "from": [
+   48.174145,
+   -121.690045
+  ],
+  "op": "none",
+  "source": "GNIS gaz_id 1527144 Three Fingers Summit 48.169783,-121.687817",
+  "quote": "SummitPost: north summit is the lower of the two; elevation 'at least 6800+' (estimate)",
+  "reason": "GNIS holds only 'Three Fingers Summit' (the South Peak/lookout, at the area row, local max 6836). The pin is a 3DEP local max at 6725, 499 m N, plausibly the North Peak, but no published North Peak coordinate or elevation exists (SummitPost is an estimate), so neither move nor setElev can be sourced. Stated 6870 is unsupported and ground-contradicted by 145 ft; left for a sourced height."
+ },
+ {
+  "id": "wa_enchantment_peak_east_ridge",
+  "i": 0,
+  "name": "Enchantment Peak summit",
+  "from": [
+   47.489186,
+   -120.80277
+  ],
+  "op": "none",
+  "source": "https://en.wikipedia.org/wiki/Enchantment_Peak",
+  "quote": "47°29′15″N 120°48′23″W ... Elevation: 8,538 ft",
+  "second_source": "GNIS 1519346 Enchantment Peaks (Range) 47.487906,-120.802515 (not a summit; 3DEP not a local max)",
+  "reason": "Two valid local maxima 330 m apart: pin 47.489186,-120.80277 (ground 8542, matches stated 8538 to 4 ft) and the area row 47.4875,-120.806389 (ground 8465, matches Wikipedia's 47.487609,-120.806379 to second-rounding). They differ by 77 ft, inside the 3DEP noise bar (same as the Reynolds Peak refusal). Wikipedia's coordinate backs the area row, the DEM backs the pin; no source decides, so refused."
+ },
+ {
+  "id": "wa_enchantment_peak_southwest_scramble",
+  "i": 4,
+  "name": "Enchantment Peak summit",
+  "from": [
+   47.489186,
+   -120.80277
+  ],
+  "op": "none",
+  "source": "https://en.wikipedia.org/wiki/Enchantment_Peak",
+  "quote": "47°29′15″N 120°48′23″W ... Elevation: 8,538 ft",
+  "reason": "Same as wa_enchantment_peak_east_ridge: both coordinates are 3DEP local maxima 77 ft apart; Wikipedia supports the area row's position, the stated height matches the pin's ground. Undecidable from published evidence; no write."
+ }
+]

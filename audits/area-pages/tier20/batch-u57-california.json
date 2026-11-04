@@ -1,0 +1,45 @@
+{
+ "ca_cap_rock_north_face": {
+  "_expect": {"name": "Cap Rock - North Face", "region": "California"},
+  "blurb": "A trad-focused side of Cap Rock in Joshua Tree National Park, close to Sheep Pass. Almost all of the twenty climbs here are crack and corner lines taken on gear, with a lone bolted line and a pair of top-rope options mixed in. Difficulty runs from easy beginner terrain up to 5.11, though most routes land between 5.9 and 5.10, so it suits climbers who already lead cracks comfortably. The monzogranite is coarse and grippy. Compared with the park's headline formations this face tends to be quiet, and the walk from the road is a short scrub-brush stroll. Bring a full trad rack.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105721001/cap-rock?print=1", "https://app.advcollective.com/climbing/bush-eviction-at-cap-rock-north-face"]}
+ },
+ "ca_aq_knob_hill": {
+  "_expect": {"name": "Aq. Knob Hill", "region": "California"},
+  "blurb": "A compact granite crag beside upper Cascade Falls in the Lower Merced River Canyon, on the road into Yosemite Valley. Twenty routes mix trad (the larger share) with a handful of bolted lines, and the grades cluster between 5.7 and 5.10, with only one easier climb. The stone is knobby, which makes for friendly holds and a good setting for stepping up to leading. Canyon views open up from the base. A well-worn path leads up from the creek to the first climbs, and the descent is by rappel or a scrambly walk-off where route-finding can get fiddly.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105865681", "https://app.advcollective.com/climbing/just-for-starters-a-thoughtful-introduction-to-yosemites-lower-merced-river-canyon"]}
+ },
+ "ca_makunaima_amphitheater": {
+  "_expect": {"name": "Makunaima Amphitheater", "region": "California"},
+  "blurb": "A steep, single-pitch amphitheater on Cold Springs Dome in the Gibraltar area above Santa Barbara, home to some of the longest and most overhanging lines in the region. Ten sport routes and ten trad routes share the wall, and the difficulty is on the stiff side: a few climbs in the 5.8 to 5.10 range, then a strong core of 5.11 and 5.12, topping out near 5.13. The wall holds shade for much of the day and its steepness keeps light rain off many routes. Expect a backcountry feel, with a short but loose, steep trail down to the base.",
+  "parking_note": "Leave the car at the Gibraltar Rock turnoff and start from there on foot.",
+  "approach": "From the turnoff, hike up the ridge, pick up the cairned trail on your right and drop down a short, steep, loose path to the base of the cliff. Turn left at the bottom and follow the worn trail to the amphitheater. Slippery when wet.",
+  "review": {"sources": ["https://mountainproject.com/area/122087961/makunaima-amphitheater", "https://app.advcollective.com/climbing/makunaima-amphitheater-santa-barbaras-steep-climbing-powerhouse"]}
+ },
+ "ca_3_the_grack_area": {
+  "_expect": {"name": "The Grack Area", "region": "California"},
+  "blurb": "A slab and crack area at the far eastern end of the Glacier Point Apron in Yosemite Valley, in the direction of Half Dome. Nearly all of the twenty climbs are trad, with just two bolted lines, and many are multi-pitch. Grades begin at 5.6 and stack up mostly in the 5.10 and 5.11 range, with a few moderate lines and one 5.12. The older crack lines here are among the most popular moderates in the valley, so expect company on them. The granite is smooth and low-angle, and loose rock above is a genuine concern, so a helmet is wise.",
+  "review": {"sources": ["https://www.mountainproject.com/area/113584783/the-grack-area", "https://themtsarecalling.com/grack/"]}
+ },
+ "ca_right_sector": {
+  "_expect": {"name": "Right Sector", "region": "California"},
+  "blurb": "One of the three sectors of the Bachar Boulders, a small bouldering area by June Lake in the Eastern Sierra at roughly 7,600 feet. All twenty problems are boulder problems, and half of them are at the easiest end, so the lower, gentler walls suit a warm-up. Beyond those, a few V2 and V3 lines lead to a handful of harder problems that top out around V6. Landings are mostly flat and the rock is generally clean, though some problems elsewhere in the area are tall enough to want a spotter. Bring pads and enjoy the pine-lined setting.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106048571/right-sector", "https://www.mountainproject.com/area/106047133/bachar-boulders"]}
+ },
+ "ca_all_you_can_eat": {
+  "_expect": {"name": "All You Can Eat", "region": "California"},
+  "blurb": "A mostly bolted wall in the Upper Gorge of the Owens River Gorge, outside Bishop. Seventeen of the twenty routes are sport and three take gear, all single pitch and typically 40 to 60 feet on hard, pocketed volcanic tuff. Difficulty starts around 5.6 and builds through a solid block of 5.10 and 5.11, with a few climbs at 5.12 and one at 5.13, so it is a good stop for climbers working through the lower double digits. The upper gorge is narrow with walls facing various directions, which lets you hunt for shade as the day warms.",
+  "review": {"sources": ["https://app.advcollective.com/climbing/all-you-can-eat-owens-river-gorge-climbing-guide", "https://bishopvisitor.com/owens-river-gorge-climbing/"]}
+ },
+ "ca_klinghoffers": {
+  "_expect": {"name": "Klinghoffers", "region": "California"},
+  "blurb": "A secluded cluster of sandstone boulders in the Castle Rock area of the Santa Cruz Mountains, set apart from the busier blocks. All twenty problems are bouldering, and most fall between V0 and V4, with a middle band at V5 to V7 and two much harder lines up around V11. The sandstone is sculpted and rounded, and it is fragile when damp, so give it a few dry days after rain before pulling on it. Shade from the surrounding trees keeps things comfortable, and it makes a pleasant objective for a mixed-ability group.",
+  "review": {"sources": ["https://rakkup.com/guidebook/castle-rock-bouldering/the-klinghoffers/s11475", "https://mountainproject.com/area/107178880/castle-rock-area-bouldering", "https://fieldmag.com/articles/boulder-climbing-guide-castle-rock-state-park"]}
+ },
+ "_skipped": {
+  "ca_turtle_rock_east_face": "could not fetch two pages that describe the east face itself (SummitPost returned 403; only a route page and a general park page were readable)"
+ },
+ "_conflicts": {
+  "ca_makunaima_amphitheater": "stored aspect N; one page (https://app.advcollective.com/climbing/makunaima-amphitheater-santa-barbaras-steep-climbing-powerhouse) says south facing while https://mountainproject.com/area/122087961/makunaima-amphitheater only says shaded most of the day"
+ }
+}

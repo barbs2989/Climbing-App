@@ -1,0 +1,57 @@
+{
+ "or_krag_peak_traverse": {
+  "boxes": {
+   "Crest and descent to Crater Lake": {
+    "notes": "After the east summit the route keeps to the crest, then drops rubbly, loose slopes to Crater Lake. The lake is a dammed reservoir with campsites along its north shore; the trail is picked up near the outlet by the dam."
+   },
+   "Trail descent": {
+    "notes": "Little Kettle Creek Trail runs down a steep, open north-facing slope in more than 25 switchbacks, with little shade. It crosses rocky gullies and small creeks, passes a pika talus slope, is lightly used and can be overgrown or rough in places."
+   },
+   "Trail approach": {
+    "notes": "East Eagle Trail #1910 runs about 1.5 mi up the valley floor before the route leaves it to the right. Sign in at the wilderness permit box at the trailhead."
+   }
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": ["https://fastestknowntime.com/route/krag-peak-traverse-or", "https://www.oregonhikers.org/field_guide/Crater_Lake_via_Little_Kettle_Creek_Hike", "https://chossclimbers.com/testing/us/oregon/the-wallowas/krag-peak-and-red-mountain/"],
+   "changed": "Wrote all three thin boxes. Trail descent details come from the same trail described in the uphill direction (switchbacks, open slope, creeks, overgrowth). Crater Lake box adds only the dam/campsite facts; no crest distance or terrain was stated anywhere so none invented. No lengths given.",
+   "other_findings": "FKT page calls the return the Kettle Creek Trail; the stored Little Kettle Creek #1945 matches the Forest Service trail name."
+  }
+ },
+ "co_arapaho_peaks_traverse": {
+  "boxes": {
+   "Final slopes to North Arapaho": {
+    "notes": "Past the hard steps, work along the east side of the crest, then climb through large boulders to the broad, fairly flat summit with a big cairn. Cairns mark the last stretch and the line is easy to lose; backtrack rather than force it."
+   },
+   "Return traverse": {
+    "notes": "Retrace the ridge to South Arapaho, following the painted arrows and cairns. Allow roughly an hour. The ridge stays near 13,500 ft for a long stretch, so start early and watch for afternoon storms; the rock is mostly sound with some rotten sections."
+   },
+   "Descent to trailhead": {
+    "notes": "From South Arapaho return to the 12,700 ft saddle, then follow the Arapaho Glacier trail and Arapaho Pass trail down past the mine ruins. Old Baldy is an optional easy detour of about 15 minutes from the saddle."
+   }
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": ["https://www.climb13ers.com/colorado-13ers/north-arapaho-peak", "https://www.14ers.com/php14ers/tripreport.php?trip=4501", "https://sep.stanford.edu/sep/morgan/adventures/colorado/arapaho.html"],
+   "changed": "Wrote the three thin boxes from the three pages. Old Baldy is described on one page as a 15-min walk from the saddle east of South Arapaho. Left out lengths (none firm).",
+   "other_findings": "One page says orange paint arrows mark the ridge; stored beta says marks are sparse. One page puts the trailhead to mine ruins at ~1.6 mi, stored row says ~2 mi."
+  }
+ },
+ "rainier_central_mowich_face": {
+  "boxes": {
+   "Ice steps (variation)": {
+    "notes": "The harder variation breaks right above about 12,000 ft. One party found ice around 50-55 degrees with a roughly 60 degree water-ice gully as the crux, reached after a long up-and-right traverse. It eases to about 40 degrees and ends at a bench near 13,300 ft below the top of the face."
+   }
+  },
+  "review": {
+   "confidence": "low",
+   "sources": ["https://alpinedave.com/mt_rainier/mowich/mowich.htm"],
+   "changed": "Wrote the one thin box from a single trip report; angles and the ~13,300 ft bench are that party's figures, and conditions vary by year. Omitted pitch and ice-screw counts as too trip-specific. No lengthM or anchor stated.",
+   "other_findings": "That report puts the crux at ~60 degrees, steeper than the stored AI2-3 suggests; the stored Upper snow box says 50-60 degree snow while the report describes ice of 50-55 degrees. Check the stored grade."
+  }
+ },
+ "skip_reasons": {
+  "wa_hadley_peak_skyline_divide": "Boxes 1-3 are trail miles; the Mountaineers page returned 403 and no other fetched page gave new detail on them.",
+  "wa_tower_arete": "SummitPost and OpenBeta pages refused (403/404); no full-page source read for P1, P2 or P4, so nothing written."
+ }
+}

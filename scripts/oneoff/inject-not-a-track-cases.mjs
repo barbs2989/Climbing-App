@@ -4,10 +4,9 @@
 // has too few points to be a recording of anything — and both are one `if` away from silence. Its
 // healthy output says nothing, which is also what a deleted branch produces.
 //
-// The FLOOR is tested as hard as the findings. Four is `trackCoverage`'s own floor and the vertex
-// counts in this catalog run 2, 3, 4, 6, 7, 8, 10, 11 and then jump to 20 — so a widening reaches
-// real routes immediately, and the argument for captioning an eight-point line is exactly the
-// spacing argument the data does not support.
+// The FLOOR is tested as hard as the findings, from both sides. Since 2026-10-29 it is
+// `MIN_RECORDED_PTS` (10) in `recordedTrackPts`: drawn lines of 2-9 points sat ~1.4 km apart, the
+// counts break off between 9 and 13, and real recordings sit ~17 m apart.
 //
 // Each case proves its edit landed BY CHECKSUM, restores byte-identically, and is judged on its OWN
 // failure text: a case that fails for a different reason is not a catch.
@@ -27,15 +26,22 @@ const CASES = [
     says: /FAIL\s+predicate: a 7 m line is not reported as a placeholder/,
     from: "  if (ext < TRACK_STUB_M)\n", to: "  if (false)\n" },
 
-  { name: "drop-the-too-few-points-branch", expect: "fail",
-    why: "a two-point chord across kilometres goes back to being offered as a recording",
-    says: /FAIL\s+predicate: a two-point line across kilometres is not reported/,
-    from: "  if (line.length < 4)\n", to: "  if (false)\n" },
+  // THE POINT FLOOR (2026-10-29). The two-point sentence this suite used to guard was deleted when
+  // recordedTrackPts began refusing any line under MIN_RECORDED_PTS; these cases moved to that floor.
+  { name: "drop-the-points-floor", expect: "fail",
+    why: "a two-point chord across kilometres goes back to being drawn as a recording",
+    says: /FAIL\s+recordedTrackPts keeps a two-point chord across kilometres/,
+    from: "gpxPts.length < MIN_RECORDED_PTS) return null;", to: "!gpxPts.length) return null;" },
 
-  { name: "floor-widened-to-eight", expect: "fail",
-    why: "captioning an eight-point line needs the spacing argument, which the data does not support",
-    says: /FAIL\s+predicate: a four-point line is captioned/,
-    from: "  if (line.length < 4)\n", to: "  if (line.length < 8)\n" },
+  { name: "floor-lowered-to-four", expect: "fail",
+    why: "a nine-point line, ~1.4 km between points in the catalog, goes back to posing as a recording",
+    says: /FAIL\s+recordedTrackPts keeps a nine-point line/,
+    from: "export const MIN_RECORDED_PTS = 10;", to: "export const MIN_RECORDED_PTS = 4;" },
+
+  { name: "floor-raised-past-a-recording", expect: "fail",
+    why: "a dense recorded track stops being drawn",
+    says: /FAIL\s+recordedTrackPts dropped the dense fixture track/,
+    from: "export const MIN_RECORDED_PTS = 10;", to: "export const MIN_RECORDED_PTS = 40;" },
 
   { name: "exclusivity-dropped", expect: "fail",
     why: "a waypoint join gets a second caption stacked on it — one problem told twice",
@@ -43,11 +49,11 @@ const CASES = [
     from: "  if (trackIsJustTheWaypoints(gpxPts, waypoints)) return null;\n  if (trackCoverage(gpxPts, waypoints)) return null;",
     to: "  if (trackCoverage(gpxPts, waypoints)) return null;" },
 
-  // MUST STAY SILENT. The two branches describe different measurements, so writing the length test
-  // the other way round is the same rule and a guard that flagged it would forbid a tidy-up.
+  // MUST STAY SILENT. Writing the length test the other way round is the same rule, and a guard
+  // that flagged it would forbid a tidy-up.
   { name: "equivalent-rewrite", expect: "pass",
     why: "the same floor written the other way round is not a change",
-    from: "  if (line.length < 4)\n", to: "  if (!(line.length >= 4))\n" },
+    from: "gpxPts.length < MIN_RECORDED_PTS) return null;", to: "!(gpxPts.length >= MIN_RECORDED_PTS)) return null;" },
 ];
 
 let pass = 0, fail = 0;

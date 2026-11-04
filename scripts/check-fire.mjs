@@ -33,7 +33,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { assertCovered } from "./lib/guard-sources.mjs";
+import { assertCovered, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GUARD = "check:fire";
@@ -70,7 +70,7 @@ if (missing.length) {
 assertCovered(abs, ROOT, GUARD, FILES);
 const raw = {};
 for (const f of FILES) {
-  raw[f] = fs.readFileSync(path.join(ROOT, f), "utf8");
+  raw[f] = f === HOST ? readAppFile(path.join(ROOT, f)) : fs.readFileSync(path.join(ROOT, f), "utf8"); // the page STITCHED (PR52 on)
   if (raw[f].length < 500) fail(`${f} is only ${raw[f].length} bytes — that cannot be the real file`);
 }
 ok(`read ${FILES.length} fire source(s), ${Object.values(raw).reduce((n, s) => n + s.length, 0)} bytes`);

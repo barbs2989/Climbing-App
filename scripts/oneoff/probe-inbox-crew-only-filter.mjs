@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // "WHO CAN MESSAGE ME -> Friends & crew only" NAMES TWO CATEGORIES AND FILTERS ON ONE.
 //
 // Settings ships this control ungated (it is NOT behind PRIVACY_CONTROLS_LIVE, unlike four of its
@@ -38,7 +40,7 @@ fs.writeFileSync(entry,
   `export { CLIMBERS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};\n` +
   `export { default as Inbox } from ${JSON.stringify(path.join(ROOT, "lib", "Inbox.jsx"))};\n`);
 try {
-  execFileSync("npx", ["esbuild", entry,
+  execFileSync(NPX, [...NPX_PRE, "esbuild", entry,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     "--define:import.meta.env={}",
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
@@ -48,7 +50,7 @@ try {
 if (typeof globalThis.WebSocket === "undefined") {
   globalThis.WebSocket = class { constructor() { throw new Error("probe: no realtime"); } };
 }
-const { Inbox, CLIMBERS } = await import(out + "?t=" + Date.now());
+const { Inbox, CLIMBERS } = await import(fileHref(out + "?t=" + Date.now()));
 if (typeof Inbox !== "function") dead("ClimbMatchCore.jsx does not export Inbox — ANCHOR LOST");
 if (!Array.isArray(CLIMBERS) || CLIMBERS.length < 3) dead("CLIMBERS did not load — ANCHOR LOST");
 

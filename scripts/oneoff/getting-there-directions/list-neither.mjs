@@ -10,12 +10,36 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { selectAll, SUPABASE_URL, anonKey } from "../../lib/supabase-env.mjs";
+import { SUPABASE_URL, anonKey } from "../../lib/supabase-env.mjs";
 const here = path.dirname(fileURLToPath(import.meta.url));
+const chunks = (a, n) => Array.from({ length: Math.ceil(a.length / n) }, (_, i) => a.slice(i * n, i * n + n));
 const H = { apikey: anonKey(), Authorization: "Bearer " + anonKey() };
 
-const routes = await selectAll("routes", "id,name,area_id,discipline,approach,approach_logistics,waypoints",
-  "id=like.wa_*&discipline=in.(alpine,mountaineering,ice,mixed)&or=(approach.is.null,approach.eq.)", { pageSize: 500 });
+// Light columns first (the full jsonb at 500 a page answered HTTP 500 on 2026-10-29); the heavy
+// columns are then read by id for the candidates only.
+// ...and in small pages over the primary-key RANGE (gte wa_, lt wb), paced, a minute's back-off on any
+// 5xx, then stop: `like.wa_*` with selectAll's order, and one unordered read of the whole set, both
+// hit the statement timeout (57014) on 2026-10-29.
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const rangeRead = async (select, filter) => {
+  const out = [];
+  for (let last = "wa_", tries = 0; ;) {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=${select}&id=gt.${encodeURIComponent(last)}&id=lt.wb&${filter}&order=id.asc&limit=50`, { headers: H, signal: AbortSignal.timeout(30000) }).catch(e => ({ ok: false, status: String(e.message) }));
+    if (!res.ok) { if (tries++) throw new Error("routes page after " + last + ": " + res.status + " twice — STOPPED (throttle rule)"); console.error("  " + res.status + " — backing off 60 s"); await sleep(60000); continue; }
+    tries = 0;
+    const rows = await res.json();
+    if (!rows.length) return out;
+    out.push(...rows); last = rows[rows.length - 1].id;
+    await sleep(500);
+  }
+};
+const light = await rangeRead("id,th:approach_logistics->>trailhead", "discipline=in.(alpine,mountaineering,ice,mixed)&or=(approach.is.null,approach.eq.)");
+const routes = [];
+for (const ids of chunks(light.filter(r => !r.th).map(r => r.id), 50)) {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=id,name,area_id,discipline,approach_logistics,waypoints&id=in.(${ids.map(encodeURIComponent).join(",")})`, { headers: H });
+  if (!res.ok) throw new Error("routes " + res.status);
+  routes.push(...await res.json());
+}
 const hasCard = r => r.approach_logistics && (r.approach_logistics.trailhead || (r.waypoints || []).some(w => w.type === "Trailhead"));
 const gap = routes.filter(r => !hasCard(r));
 
@@ -42,8 +66,8 @@ const list = Object.values(groups).sort((x, y) => y.routes.length - x.routes.len
 fs.writeFileSync(path.join(here, "neither.json"), JSON.stringify(list, null, 1));
 
 // The coordinate library: only copies, only where they agree.
-const withCoord = await selectAll("routes", "id,th:approach_logistics->>trailhead,lat:approach_logistics->>trailheadLat,lng:approach_logistics->>trailheadLng",
-  "id=like.wa_*&approach_logistics->>trailheadLat=not.is.null", { pageSize: 1000 });
+const withCoord = await rangeRead("id,th:approach_logistics->>trailhead,lat:approach_logistics->>trailheadLat,lng:approach_logistics->>trailheadLng",
+  "discipline=in.(alpine,mountaineering,ice,mixed)&approach_logistics->>trailheadLat=not.is.null");
 const byName = {};
 for (const r of withCoord) if (r.th) (byName[r.th] = byName[r.th] || []).push({ id: r.id, lat: Number(r.lat), lng: Number(r.lng) });
 const km = (a, b) => { const R = 6371, d = Math.PI / 180, x = (b.lng - a.lng) * d * Math.cos((a.lat + b.lat) / 2 * d), y = (b.lat - a.lat) * d; return R * Math.hypot(x, y); };

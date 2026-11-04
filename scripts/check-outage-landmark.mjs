@@ -31,6 +31,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 // ONE level up, not two. This was promoted out of scripts/oneoff/, and its depth changed with it —
 // the trap check:pitch-discount records, where a promoted one-off resolved the wrong tree and
@@ -63,7 +64,7 @@ console.log("landmark: /" + lifted[1] + "/i  -> " + ALTS.length + " alternative(
 // template contents -- a brace inside a string would desynchronise the counter, and this file's
 // prose is full of them.
 function region(src, needle, what) {
-  const a = src.indexOf(needle);
+  const a = typeof needle === "number" ? needle : src.indexOf(needle);
   if (a < 0) throw new Error("ANCHOR LOST: " + what + " (" + needle + ")");
   const i = src.lastIndexOf("{", a);
   let j = i, depth = 0, started = false, q = null;
@@ -81,10 +82,14 @@ function region(src, needle, what) {
   return { start: i, end: j, text: src.slice(i, j + 1) };
 }
 
-const app = rd("ClimbMatch.jsx");
+const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
 let logbook, lists;
 try {
-  logbook = region(app, 'tab==="logbook"', "the Logbook tab");
+  // Since PR61 the tab body is LogbookTab (src/components/LogbookTab.tsx, stitched in by readAppFile):
+  // the region is that function's body, carved from the brace before its `return`.
+  const lb = app.indexOf("function LogbookTab(");
+  if (lb < 0) throw new Error("ANCHOR LOST: the Logbook tab (function LogbookTab)");
+  logbook = region(app, app.indexOf("\n  return ", lb), "the Logbook tab");
   // `?<div`, not the bare test: the header's title ternary tests logbookTab==="lists" first.
   lists = region(app, 'logbookTab==="lists"?<div', "the Logbook's Areas sub-view");
 } catch (e) {

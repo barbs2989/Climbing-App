@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Does one climb_logs row render the same on the two screens that show it?
 //
 // climb_logs is hydrated in TWO places:
@@ -18,7 +19,7 @@ import { readFileSync, mkdtempSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
-const ROOT = new URL("../../", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../../", import.meta.url));
 const read = (f) => readFileSync(join(ROOT, f), "utf8");
 
 let bad = 0;

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 /* Re-derive `routes.grade_num` under the "highest wins" rule.
  *
  * WHY A DATA PASS HAS TO FOLLOW THE PARSER CHANGE. `grade_num` is the sortable grade and both
@@ -40,7 +41,7 @@ const tmp = path.join(ROOT, "scripts", `_grade-ref-${process.pid}.mjs`);
 let OLD_FOR;
 try {
   fs.writeFileSync(tmp, execFileSync("git", ["show", `${REF}:lib/grade.js`], { cwd: ROOT, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 }));
-  ({ gradeNumFor: OLD_FOR } = await import(`file://${tmp}`));
+  ({ gradeNumFor: OLD_FOR } = await import(fileHref(`file://${tmp}`)));
 } finally { try { fs.unlinkSync(tmp); } catch {} }
 if (typeof OLD_FOR !== "function") { console.error(`FAIL — could not load the reference parser from ${REF}. Nothing was compared and nothing written.`); process.exit(1); }
 
@@ -56,6 +57,7 @@ async function readAll() {
     if (!rows.length) break;
     out.push(...rows); last = rows[rows.length - 1].id;
     if (rows.length < 1000) break;
+    await new Promise((r) => setTimeout(r, 200)); // paced: a whole-catalog read must not crowd the live app
   }
   return out;
 }
@@ -104,7 +106,7 @@ if (!APPLY) { console.log(`Dry run — nothing written. Re-run with --apply.`); 
 requireServiceKey();
 const roll = path.join(ROOT, "scripts", `grade-num-rollback-${Date.now()}.json`);
 fs.writeFileSync(roll, JSON.stringify(todo.map((t) => ({ id: t.id, grade_num: t.from })), null, 1));
-console.log(`  rollback written to ${path.relative(ROOT, roll)} (${todo.length} rows)\n`);
+console.log(`  rollback written to ${path.relative(ROOT, roll).replace(/\\/g, "/")} (${todo.length} rows)\n`);
 
 let ok = 0; const failed = [];
 for (let i = 0; i < todo.length; i += CONC) {
@@ -128,5 +130,5 @@ for (const r of after) {
 }
 console.log(`  read back: ${agree}/${todo.length} rows now store the highest grade`);
 for (const w of wrong.slice(0, 20)) console.error(`    NOT WRITTEN ${w.id}: stored ${w.got}, wanted ${w.want}`);
-if (wrong.length || failed.length) { console.error(`\nFAIL — ${wrong.length} row(s) did not take the write. Rollback: ${path.relative(ROOT, roll)}`); process.exit(1); }
+if (wrong.length || failed.length) { console.error(`\nFAIL — ${wrong.length} row(s) did not take the write. Rollback: ${path.relative(ROOT, roll).replace(/\\/g, "/")}`); process.exit(1); }
 console.log(`\nok — ${agree} rows re-derived to the highest grade, reconciled by read-back.`);

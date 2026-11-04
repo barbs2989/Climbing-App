@@ -1,0 +1,93 @@
+ALREADY or_krag_peak_traverse beta
+ALREADY wa_a_little_something approach
+ALREADY wa_bachelor_party approach
+ALREADY wa_cordwood approach
+ALREADY wa_face_farce approach
+ALREADY wa_incoming approach
+REFUSED wa_just_enough: ? rows
+REFUSED wa_lady_slipper: ? rows
+ALREADY wa_monkey_on_a_woodpile approach
+ALREADY wa_morning_thunder approach
+ALREADY wa_notta_slab approach
+ALREADY wa_red_zinger approach
+ALREADY wa_a_servant_to_liberty overview
+ALREADY wa_a_servant_to_liberty beta
+ALREADY wa_a_servant_to_liberty waypoints
+ALREADY wa_a_servant_to_liberty approach_variants
+ALREADY wa_abernathy_peak_north_ridge overview
+ALREADY wa_abernathy_peak_north_ridge approach_variants
+ALREADY wa_accendo_lunae_lib_west_face_var beta
+ALREADY wa_accendo_lunae_lib_west_face_var pitch_detail
+ALREADY wa_accendo_lunae_lib_west_face_var road
+ALREADY wa_leche_la_vaca road
+ALREADY wa_rikki_tikki_tavi road
+ALREADY wa_accidental_discharge_east_face overview
+ALREADY wa_accidental_discharge_east_face pitch_detail
+ALREADY wa_action_potential descent
+ALREADY wa_action_potential waypoints
+ALREADY wa_action_potential detailed_rack
+ALREADY wa_action_potential pro_tips
+ALREADY wa_action_potential pitch_detail
+ALREADY wa_action_potential rappel_detail
+ALREADY wa_agnes_mountain_south_ridge beta
+ALREADY wa_ahoot approach
+ALREADY wa_firearms approach
+ALREADY wa_henpecked approach
+ALREADY wa_internal_combustion approach
+ALREADY wa_joe_s_route approach
+ALREADY wa_just_for_fun approach
+ALREADY wa_american_border_peak_northeast_face beta
+ALREADY wa_american_border_peak_southeast_face waypoints
+ALREADY wa_american_border_peak_southeast_face rappel_count_note
+ALREADY wa_american_border_peak_southeast_face approach_variants
+ALREADY wa_amphitheater_mountain_middle_finger_buttress_left_side descent
+ALREADY wa_amphitheater_mountain_middle_finger_buttress_left_side detailed_rack
+ALREADY wa_amphitheater_mountain_middle_finger_buttress_left_side rope_note
+ALREADY wa_amphitheater_mountain_middle_finger_buttress_right_side beta
+ALREADY wa_amphitheater_mountain_middle_finger_buttress_right_side descent
+ALREADY wa_amphitheater_mountain_north_ridge descent
+ALREADY wa_amphitheater_mountain_pilgrimage_to_mecca approach
+ALREADY wa_amphitheater_mountain_pilgrimage_to_mecca pitch_detail
+ALREADY wa_amphitheater_mountain_pilgrimage_to_mecca approach_variants
+ALREADY wa_and_say pitch_detail
+ALREADY wa_andersons_thumb_standard approach
+ALREADY wa_argonaut_peak_northeast_couloir rappels
+ALREADY wa_argonaut_peak_northeast_couloir descent_text
+ALREADY wa_argonaut_peak_northeast_couloir rappel_detail
+ALREADY wa_around_the_cave_we_go waypoints
+ALREADY wa_austera_peak beta
+ALREADY wa_austera_peak waypoints
+ALREADY wa_austera_peak pitch_detail
+ALREADY wa_austera_peak approach_variants
+ALREADY wa_austera_peak_southwest_ridge waypoints
+ALREADY wa_azurite_peak_southeast approach
+ALREADY wa_azurite_peak_southeast approach_variants
+ALREADY wa_bacon_peak_diobsud waypoints
+ALREADY wa_bacon_peak_diobsud descent_text
+ALREADY wa_bacon_peak_diobsud approach_variants
+ALREADY wa_baring_mountain_r1 waypoints
+ALREADY wa_baring_mountain_r1 approach_logistics
+ALREADY wa_merchant_peak_south_route approach_logistics
+ALREADY wa_tailgunner_peak_w_route approach_logistics
+ALREADY wa_batskins pitch_detail
+ALREADY wa_bear_mountain_chilliwack_north_buttress waypoints
+
+wa_bear_mountain_chilliwack_north_buttress pitch_detail[6].notes
+  - Blocky climbing to the top of the buttress
+  + Climb blocky terrain up to the top of the buttress
+
+wa_bear_mountain_chilliwack_north_buttress itinerary.days[1].note
+  - then traverse below Points 6592 and 6822, crossing a rock rib,
+  + then cross beneath Points 6592 and 6822, passing a rock rib,
+
+wa_bears_breast_mountain_infinite_beauty beta
+  - for brief, unexposed low-5th moves up overlaps trending up and right to the SE shoulder; easy scrambling leads to the summit block
+  + for a few brief, unexposed low-5th moves over overlaps that trend up and to the right toward the SE shoulder; from there easy scrambling reaches the summit block
+
+wa_bears_breast_mountain_infinite_beauty pitch_detail[0].notes
+  - Begins at the lowest part of the slab on a shallow rib
+  + Starts from the slab's lowest point, on a shallow rib
+
+rollback: audits/copied-prose-live/rollback/rollback-1793284905111.json
+
+WRITTEN and re-read: 75 columns ok, 2 refused, 99 splices

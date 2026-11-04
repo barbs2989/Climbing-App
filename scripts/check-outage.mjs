@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // check:outage — when the database is down, does any screen quietly tell a signed-in climber
 // that they have nothing?
 //
@@ -337,6 +338,13 @@ const _NOUNS = ABSENCE_NOUNS.map(_plural).join("|");
 // could spell it, and a failed read of your groups behind that sentence would have walked past.
 const CLAIMS_NONE_RE = new RegExp(
   "no .* yet|nothing here|none yet|no results|haven[’']t joined" +
+  // A SEVENTH, found by check:outage's own injection suite (inject-outage-cases `logbook`): with
+  // MyAscents's logsUnavailable gate reverted, Logbook:Completed under an outage printed "Log your
+  // completed climbs here" -- the empty-state INVITATION, to somebody whose climbs merely failed
+  // to load -- and nothing flagged it, because the only other "couldn't load" line on that screen
+  // satisfied rule 1 and this sentence has no "no", no zero and no "yet". An invitation to start
+  // is how this app says "you have none" when it does not say it outright.
+  "|\\blog your (?:\\w+ ){0,3}here\\b" +
   `|\\bno(?: \\w+){0,2} (?:${_NOUNS})\\b` +
   `|\\b0 (?:${_NOUNS}|${ABSENCE_VERBS.join("|")})\\b`, "i");
 // EVERY PHRASING THIS GUARD HAS EVER MISSED, as an executable assertion rather than as the
@@ -344,7 +352,8 @@ const CLAIMS_NONE_RE = new RegExp(
 // somebody widened the pattern by hand; a comment recording them rots, and this repo has the
 // scar to prove it. A rewrite that drops one fails here, before a browser is started.
 const MUST_SPELL = ["0 routes", "0 crews", "0 climbs to go", "0 logged", "0 joined",
-  "No crew invites", "No custom lists", "no friends yet", "No groups yet", "You haven’t joined a group yet"];
+  "No crew invites", "No custom lists", "no friends yet", "No groups yet", "You haven’t joined a group yet",
+  "Log your completed climbs here"];
 for (const phrase of MUST_SPELL) {
   if (!CLAIMS_NONE_RE.test(phrase)) {
     console.error(`check:outage: rule 2's vocabulary can no longer spell ${JSON.stringify(phrase)},`
@@ -662,7 +671,7 @@ const base = `http://127.0.0.1:${port}/Climbing-App/`;
 // wrong app here). It calls buildOpener + routeDetailTransform, and both are inert without a
 // `?z=`/`?zr=` parameter, so every screen walked before the route page is measured exactly as
 // it was before this changed.
-const server = spawn("npx", ["vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "" } });
 const up = async () => { for (let i = 0; i < 90; i++) { try { if ((await fetch(base)).ok) return true; } catch {} await new Promise(r => setTimeout(r, 1000)); } return false; };
 if (!await up()) { server.kill(); throw new Error("dev server never came up"); }

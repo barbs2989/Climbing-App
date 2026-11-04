@@ -27,9 +27,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
 const mod = fs.readFileSync(path.join(ROOT, "lib", "notif-pref.js"), "utf8");
 
 let failures = 0, cases = 0;
@@ -96,7 +97,11 @@ cases++;
 {
   // BALANCED, never a character class: the handler body contains `Object.assign({},p)`, so a
   // `[^}]*` stops at the first brace INSIDE it and reports a correct toggle as unwired.
-  const at = app.indexOf("setNotifPrefs(function(p){");
+  // Inside Settings › Notifications (SettingsNotifsSheet.tsx since PR63): the stitched text also
+  // holds the ONBOARDING sheet's handler of the same shape, and it comes first.
+  const sheetAt = app.indexOf("function SettingsNotifsSheet(");
+  if (sheetAt < 0) dead("SettingsNotifsSheet is gone from the stitched App — the switches' wiring cannot be read");
+  const at = app.indexOf("setNotifPrefs(function(p){", sheetAt);
   if (at < 0) dead("the notification toggle handler moved — its wiring cannot be read");
   const from = app.indexOf("{", app.indexOf("(", at) + 1);
   let d = 0, body = null;

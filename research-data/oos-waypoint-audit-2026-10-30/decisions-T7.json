@@ -1,0 +1,142 @@
+[
+ {
+  "id": "id_diamond_peak_east_ridge",
+  "i": 0,
+  "name": "Pass Creek Road End",
+  "from": [
+   44.14738,
+   -113.03906
+  ],
+  "coordinate_key": "44.14738,-113.03906",
+  "op": "none",
+  "reason": "No published coordinate found: guides describe the gate on Pass Creek Road (FS-181) by mileage only; unverified."
+ },
+ {
+  "id": "id_thompson_peak_south_couloir",
+  "i": 0,
+  "name": "Redfish Trailhead",
+  "from": [
+   44.14842,
+   -114.91999
+  ],
+  "coordinate_key": "44.14842,-114.91999",
+  "op": "none",
+  "reason": "Unverified: the Redfish Lake trailhead pages found (fs.usda.gov Sawtooth) print no coordinate; third-party points (visitor center 44.1436,-114.9197, North Shore picnic area 44.143686,-114.915795) are different places."
+ },
+ {
+  "id": "mt_phantom_creek_trail",
+  "i": 0,
+  "name": "Mystic Lake (West Rosebud) Trailhead",
+  "from": [
+   45.24608,
+   -109.72982
+  ],
+  "coordinate_key": "45.24608,-109.72982",
+  "op": "none",
+  "reason": "Federal (USFS) dataset record WEST ROSEBUD trailhead, Primary Point 45.24560, -109.72978, about 53 m from stored. Within 150 m.",
+  "source": "https://montana.hometownlocator.com/maps/tnm-feature-map,n,west-rosebud-3339,fcode,82047.cfm",
+  "quote": "Name: WEST ROSEBUD Primary Point (PP): 45.24560, -109.72978 (seen in search-result text; the page itself lists only counts)"
+ },
+ {
+  "id": "mt_sacagawea_direct",
+  "i": 0,
+  "name": "Fairy Lake Trailhead",
+  "from": [
+   45.90674,
+   -110.9603
+  ],
+  "coordinate_key": "45.90674,-110.9603",
+  "op": "none",
+  "reason": "USFS Fairy Lake Trailhead page 45.90678,-110.96023 and OSM node 9322099723 at 45.9067854,-110.9605599; stored is about 6 m (USFS) / 14 m (OSM) away. Within 150 m.",
+  "source": "https://www.fs.usda.gov/r01/custergallatin/recreation/fairy-lake-trailhead",
+  "quote": "Latitude: \"45.90678\" Longitude: \"-110.96023\""
+ },
+ {
+  "id": "ny_mount_marcy_van_hoevenberg_trail",
+  "i": 0,
+  "name": "Adirondack Loj",
+  "from": [
+   44.17962,
+   -73.9671
+  ],
+  "op": "move",
+  "to": [
+   44.183016,
+   -73.964047
+  ],
+  "source": "https://www.ausableriver.org/explore/hiking/mount-jo",
+  "quote": "Parking coordinates: \"44.183016, -73.964047\" (ADK Heart Lake property parking, the Van Hoevenberg trailhead lot)",
+  "second_source": "https://myhikes.org/trails/heart-lake-loop-trail (Parking 44.18307, -73.963799)",
+  "ground_ft_at_to": 2194,
+  "reason": "Stored pin is about 445 m SSW of the Loj/High Peaks Info Center parking lots where the Van Hoevenberg Trail starts (adk.org: parking only in the lots next to the High Peaks Information Center). Two sources agree within 20 m. 3DEP 2194 ft vs 2181 at stored; pin elev is null."
+ },
+ {
+  "id": "or_west_ridge_2",
+  "i": 0,
+  "name": "Mt. Thielsen Trailhead",
+  "from": [
+   43.14636,
+   -122.12723
+  ],
+  "coordinate_key": "43.14636,-122.12723",
+  "op": "none",
+  "reason": "OSM way 550916942 (Mt Thielsen trailhead) at 43.1460862,-122.1275482, about 40 m from stored. Within 150 m.",
+  "source": "OSM way 550916942"
+ },
+ {
+  "id": "or_diamond_peak_south_ridge",
+  "i": 0,
+  "name": "Summit Lake Trailhead",
+  "from": [
+   43.46358,
+   -122.13479
+  ],
+  "coordinate_key": "43.46358,-122.13479",
+  "op": "none",
+  "reason": "Unverified: a USFS trailhead record (SUMMIT LAKE TRAILHEAD, 43.46673,-122.11227, seen in search text only) is about 1.8 km from stored and several Summit Lake trailheads (Emigrant Pass, PCT) exist here; no fetched page confirmed which one the route means."
+ },
+ {
+  "id": "or_mt_bachelor_trail",
+  "i": 0,
+  "name": "West Village Lodge",
+  "from": [
+   43.99402,
+   -121.66066
+  ],
+  "coordinate_key": "43.99402,-121.66066",
+  "op": "none",
+  "reason": "Unverified: only a TopoQuest point 44.00289,-121.67811 turned up, about 1.8 km away and not named West Village; no published coordinate confirmed."
+ },
+ {
+  "id": "or_northwest_ridge",
+  "i": 0,
+  "name": "Green Lakes Trailhead",
+  "from": [
+   44.03129,
+   -121.73589
+  ],
+  "coordinate_key": "44.03129,-121.73589",
+  "op": "none",
+  "reason": "OSM way 278226287 (Green Lakes trailhead) at 44.0310221,-121.7363720, about 49 m from stored. Within 150 m.",
+  "source": "OSM way 278226287"
+ },
+ {
+  "id": "or_three_sisters_traverse",
+  "i": 0,
+  "name": "Devils Lake Trailhead",
+  "from": [
+   44.0373,
+   -121.76426
+  ],
+  "op": "move",
+  "to": [
+   44.03499166,
+   -121.7656861
+  ],
+  "source": "https://fs.usda.gov/r06/deschutes/recreation/devils-lake-south-sister-trailhead",
+  "quote": "Latitude: \"44.03499166\" Longitude: \"-121.7656861\"",
+  "second_source": "https://www.oregonhikers.org/field_guide/Devils_Lake_Trailhead (44.03530, -121.76580, 5,460ft)",
+  "ground_ft_at_to": 5451,
+  "reason": "Stored pin is about 281 m NNE of the USFS-published Devils Lake/South Sister trailhead; Oregon Hikers agrees within 40 m. 3DEP 5451 ft vs pin elev 5455."
+ }
+]

@@ -1,0 +1,55 @@
+{
+ "applied": [
+  {
+   "id": "bc_bugaboo_spire_kain_route_south_ridge",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitch count"
+  },
+  {
+   "id": "bc_crescent_spire_surprisingly_subsevere",
+   "column": "overview",
+   "path": [],
+   "fact": "pitch count"
+  },
+  {
+   "id": "bc_mount_sir_donald_northwest_ridge",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitches = 1 on a 732 m multi-pitch ridge"
+  },
+  {
+   "id": "bc_mount_waddington_kiwi_route",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitch count"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "bc_bugaboo_spire_kain_route_south_ridge",
+   "before": {
+    "pitches": 4
+   }
+  },
+  {
+   "id": "bc_crescent_spire_surprisingly_subsevere",
+   "before": {
+    "overview": "Four trad pitches. Begin with Dunlops Dangle's opening 5.8 pitch. Pitch 2 moves sideways, then ascends a face crack system (5.10) via a shallow chimney to a natural belay ledge; a 70 m rope links pitches 1 and 2. Pitch 3 runs a few meters further sideways, follows a face crack to a roof, crosses beneath it along a sloping ledge, and belays at a chimney's foot. Pitch 4 is that chimney. A large chockstone sits near its top; step left there, use 5.8 cracks, and finish over easy fourth-class terrain."
+   }
+  },
+  {
+   "id": "bc_mount_sir_donald_northwest_ridge",
+   "before": {
+    "pitches": 1
+   }
+  },
+  {
+   "id": "bc_mount_waddington_kiwi_route",
+   "before": {
+    "pitches": 1
+   }
+  }
+ ]
+}

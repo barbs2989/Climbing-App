@@ -21,6 +21,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readParentSource } from "./lib/guard-sources.mjs";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const fails = [];
 const fail = (m) => { console.log("  FAIL  " + m); fails.push(m); };
@@ -43,7 +44,7 @@ function mustRead(rel) {
   }
   return body;
 }
-const db = mustRead("lib/db.js"), rd = mustRead("RouteDetail.jsx"), cm = mustRead("ClimbMatch.jsx");
+const db = mustRead("lib/db.js"), rd = (mustRead("RouteDetail.jsx"), readParentSource(ROOT, "RouteDetail.jsx", "check:photo-contract")), cm = mustRead("ClimbMatch.jsx");
 
 // Bodies come from balancing braces over RAW source. The comment/string blanker other guards use
 // desynchronises on JSX apostrophes (check:overlay-discovery records this), and these functions

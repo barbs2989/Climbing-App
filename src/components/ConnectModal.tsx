@@ -47,7 +47,7 @@ export default function ConnectModal({climber,onClose,onSend,routeById}: Connect
         <Av src={c.avatar} size={46} online={c.online}/>
         <div style={{flex:1,minWidth:0}}>
           <div style={{fontSize:16,fontWeight:700}}>Connect with {first}</div>
-          <div style={{fontSize:12,color:C.textMuted,marginTop:1,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{climberLine(c)}</div>
+          <div style={{fontSize:12,color:C.textMuted,marginTop:1,overflowWrap:"anywhere"}}>{climberLine(c)}</div>
         </div>
         <button onClick={onClose} aria-label="Close" style={POP_CLOSE}>✕</button>
       </div>

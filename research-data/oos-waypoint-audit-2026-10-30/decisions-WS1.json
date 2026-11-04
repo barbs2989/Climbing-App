@@ -1,0 +1,369 @@
+[
+ {
+  "id": "wa_spectre_peak_south_route",
+  "i": 7,
+  "name": "Spectre Peak",
+  "from": [
+   48.812,
+   -121.343
+  ],
+  "op": "none",
+  "reason": "No GNIS or published coordinate found (Wikipedia gives no coordinate; stated 7952 vs listed 7,880). Not moved; follow up."
+ },
+ {
+  "id": "wa_north_tower_ridge_route",
+  "i": 3,
+  "name": "Tiffany Mountain",
+  "from": [
+   48.67089,
+   -119.9321
+  ],
+  "op": "move",
+  "to": [
+   48.66936497024878,
+   -119.93251722731304
+  ],
+  "source": "GNIS gaz_id 1527211",
+  "quote": "GNIS layer 5 Summit gaz_id 1527211",
+  "ground_ft_at_to": 8234,
+  "reason": "Pin ground 7709 ft, 525 ft under stated 8245 and not a max; GNIS Tiffany Mountain Summit is a 3DEP local max (8234 ft) 172 m away."
+ },
+ {
+  "id": "wa_tower_arete",
+  "i": 3,
+  "name": "Tiffany Mountain",
+  "from": [
+   48.67089,
+   -119.9321
+  ],
+  "op": "move",
+  "to": [
+   48.66936497024878,
+   -119.93251722731304
+  ],
+  "source": "GNIS gaz_id 1527211",
+  "quote": "GNIS layer 5 Summit gaz_id 1527211",
+  "ground_ft_at_to": 8234,
+  "reason": "Pin ground 7709 ft, 525 ft under stated 8245 and not a max; GNIS Tiffany Mountain Summit is a 3DEP local max (8234 ft) 172 m away."
+ },
+ {
+  "id": "wa_mount_stuart_cascadian_couloir",
+  "i": 6,
+  "name": "Mount Stuart Summit",
+  "from": [
+   47.475,
+   -120.904
+  ],
+  "op": "move",
+  "to": [
+   47.47501637590171,
+   -120.90224317764522
+  ],
+  "source": "GNIS gaz_id 1526641",
+  "quote": "GNIS layer 5 Summit gaz_id 1526641",
+  "ground_ft_at_to": 9360,
+  "reason": "Pin ground 8890 ft vs stated 9415, on the slope; GNIS Mount Stuart Summit is the local max at 9360 ft, 132 m away."
+ },
+ {
+  "id": "wa_mount_stuart_west_ridge",
+  "i": 5,
+  "name": "Mount Stuart Summit",
+  "from": [
+   47.475,
+   -120.904
+  ],
+  "op": "move",
+  "to": [
+   47.47501637590171,
+   -120.90224317764522
+  ],
+  "source": "GNIS gaz_id 1526641",
+  "quote": "GNIS layer 5 Summit gaz_id 1526641",
+  "ground_ft_at_to": 9360,
+  "reason": "Pin ground 8890 ft vs stated 9415, on the slope; GNIS Mount Stuart Summit is the local max at 9360 ft, 132 m away."
+ },
+ {
+  "id": "wa_accidental_discharge_east_face",
+  "i": 2,
+  "name": "South Peak (Gunsight Range)",
+  "from": [
+   48.303,
+   -120.99439
+  ],
+  "op": "none",
+  "source": "https://www.peakbagger.com/peak.aspx?pid=1885",
+  "quote": "South Peak at 8,128 feet (search summary)",
+  "reason": "South Peak is a subpeak of Gunsight Peak (GNIS gaz_id 1520417 is the main top, 410 m north). No published coordinate for the subpeak found, so not moved."
+ },
+ {
+  "id": "wa_south_ridge",
+  "i": 2,
+  "name": "South Peak (Gunsight Range)",
+  "from": [
+   48.303,
+   -120.99439
+  ],
+  "op": "none",
+  "source": "https://www.peakbagger.com/peak.aspx?pid=1885",
+  "quote": "South Peak at 8,128 feet (search summary)",
+  "reason": "South Peak is a subpeak of Gunsight Peak (GNIS gaz_id 1520417 is the main top, 410 m north). No published coordinate for the subpeak found, so not moved."
+ },
+ {
+  "id": "wa_west_face",
+  "i": 4,
+  "name": "South Peak (Gunsight Range)",
+  "from": [
+   48.303,
+   -120.99439
+  ],
+  "op": "none",
+  "source": "https://www.peakbagger.com/peak.aspx?pid=1885",
+  "quote": "South Peak at 8,128 feet (search summary)",
+  "reason": "South Peak is a subpeak of Gunsight Peak (GNIS gaz_id 1520417 is the main top, 410 m north). No published coordinate for the subpeak found, so not moved."
+ },
+ {
+  "id": "wa_east_wilmans_spire",
+  "i": 4,
+  "name": "East Wilmans Spire",
+  "from": [
+   47.97249,
+   -121.36585
+  ],
+  "op": "move",
+  "to": [
+   47.97482,
+   -121.36894
+  ],
+  "source": "https://listsofjohn.com/peak/186104",
+  "quote": "\"East Wilmans Spire\" - 6,248' Washington; coordinates 47.97482 N, 121.36894 W (from search-result summary; page answers 403)",
+  "second_source": "https://peakvisor.com/peak/east-wilmans-spire.html (47.974164, -121.368407)",
+  "ground_ft_at_to": 6247,
+  "reason": "Pin (Mountain Project route point) grounds at 6653 ft, 405 ft over the 6248 ft summit; LoJ/PeakVisor/SummitPost coordinates agree within ~100 m and 3DEP at the LoJ point reads 6247 ft. Quote not from a fetched page."
+ },
+ {
+  "id": "wa_mount_hinman_hinman_glacier",
+  "i": 5,
+  "name": "Mount Hinman summit",
+  "from": [
+   47.568168,
+   -121.2114854
+  ],
+  "op": "move",
+  "to": [
+   47.568805017302886,
+   -121.21466113565211
+  ],
+  "source": "GNIS gaz_id 1520820",
+  "quote": "GNIS layer 5 Summit gaz_id 1520820",
+  "ground_ft_at_to": 7464,
+  "reason": "Pin ground 7390 ft, not a max; GNIS Mount Hinman Summit is the local max (7464 ft), 249 m away."
+ },
+ {
+  "id": "wa_booker_mountain_northeast_face",
+  "i": 5,
+  "name": "Booker Mountain summit",
+  "from": [
+   48.4753,
+   -120.9792
+  ],
+  "op": "move",
+  "to": [
+   48.476359377313265,
+   -120.98086536804179
+  ],
+  "source": "GNIS gaz_id 1516795",
+  "quote": "GNIS layer 5 Summit gaz_id 1516795",
+  "ground_ft_at_to": 8172,
+  "reason": "Pin ground 8136 ft on a ridge, not a max; GNIS Booker Mountain Summit is a local max (8172 ft), 170 m away."
+ },
+ {
+  "id": "wa_booker_mountain_northwest_route",
+  "i": 5,
+  "name": "Booker Mountain summit",
+  "from": [
+   48.4753,
+   -120.9792
+  ],
+  "op": "move",
+  "to": [
+   48.476359377313265,
+   -120.98086536804179
+  ],
+  "source": "GNIS gaz_id 1516795",
+  "quote": "GNIS layer 5 Summit gaz_id 1516795",
+  "ground_ft_at_to": 8172,
+  "reason": "Pin ground 8136 ft on a ridge, not a max; GNIS Booker Mountain Summit is a local max (8172 ft), 170 m away."
+ },
+ {
+  "id": "wa_booker_mountain_south_ridge",
+  "i": 3,
+  "name": "Booker Mountain summit",
+  "from": [
+   48.4753,
+   -120.9792
+  ],
+  "op": "move",
+  "to": [
+   48.476359377313265,
+   -120.98086536804179
+  ],
+  "source": "GNIS gaz_id 1516795",
+  "quote": "GNIS layer 5 Summit gaz_id 1516795",
+  "ground_ft_at_to": 8172,
+  "reason": "Pin ground 8136 ft on a ridge, not a max; GNIS Booker Mountain Summit is a local max (8172 ft), 170 m away."
+ },
+ {
+  "id": "wa_mount_goode_northeast_buttress",
+  "i": 3,
+  "name": "Goode Summit",
+  "from": [
+   48.4829,
+   -120.9109
+  ],
+  "op": "none",
+  "source": "GNIS gaz_id 1520128",
+  "quote": "Goode Mountain Summit 48.48323542884066 -120.91150059961738",
+  "ground_ft_at_to": 9147,
+  "reason": "Pin is ~60 m from GNIS Goode Mountain Summit (local max 9147 ft)."
+ },
+ {
+  "id": "wa_poltergeist_pinnacle_north_route",
+  "i": 7,
+  "name": "Poltergeist Pinnacle",
+  "from": [
+   48.83524,
+   -121.3419
+  ],
+  "op": "none",
+  "source": "https://en.wikipedia.org/wiki/Poltergeist_Pinnacle",
+  "quote": "is .09 mi (0.14 km) south of Mount Challenger",
+  "reason": "Pin is ~130 m south of GNIS Mount Challenger Summit (gaz_id 1517614), matching the stated 0.14 km offset. Wikipedia's coordinate for Poltergeist duplicates Ghost Peak's, so it was not used. DEM is smoothed on the spire."
+ },
+ {
+  "id": "wa_bacon_peak_diobsud",
+  "i": 5,
+  "name": "Bacon Peak",
+  "from": [
+   48.662665,
+   -121.520525
+  ],
+  "op": "move",
+  "to": [
+   48.66405856310623,
+   -121.51918961272673
+  ],
+  "source": "GNIS gaz_id 1516025",
+  "quote": "GNIS layer 5 Summit gaz_id 1516025",
+  "ground_ft_at_to": 7007,
+  "reason": "Pin ground 6974 ft, not a max; GNIS Bacon Peak Summit is a local max (7007 ft vs stated 7070), 183 m away."
+ },
+ {
+  "id": "wa_mount_ferry_standard",
+  "i": 7,
+  "name": "Mount Ferry",
+  "from": [
+   47.842435,
+   -123.570535
+  ],
+  "op": "move",
+  "to": [
+   47.84258026883591,
+   -123.56813646088986
+  ],
+  "source": "GNIS gaz_id 1519506",
+  "quote": "GNIS layer 5 Summit gaz_id 1519506",
+  "ground_ft_at_to": 6177,
+  "reason": "Pin ground 6122 ft, not a max; GNIS Mount Ferry Summit is a local max (6177 ft vs stated 6195), 180 m away."
+ },
+ {
+  "id": "wa_rampage",
+  "i": 3,
+  "name": "Paisano Pinnacle - Summit",
+  "from": [
+   48.5537,
+   -120.593
+  ],
+  "op": "none",
+  "reason": "No GNIS feature and no published coordinate found for this spire/pinnacle/top in the searches; not moved."
+ },
+ {
+  "id": "wa_west_ridge_2",
+  "i": 3,
+  "name": "Paisano Pinnacle - Summit",
+  "from": [
+   48.5537,
+   -120.593
+  ],
+  "op": "none",
+  "reason": "No GNIS feature and no published coordinate found for this spire/pinnacle/top in the searches; not moved."
+ },
+ {
+  "id": "wa_burgundy_spire_north_face",
+  "i": 3,
+  "name": "Burgundy Spire Summit",
+  "from": [
+   48.55186,
+   -120.59014
+  ],
+  "op": "none",
+  "reason": "No GNIS feature and no published coordinate found for this spire/pinnacle/top in the searches; not moved."
+ },
+ {
+  "id": "wa_chianti_spire_east_face",
+  "i": 4,
+  "name": "Chianti Spire Summit",
+  "from": [
+   48.55186,
+   -120.59014
+  ],
+  "op": "none",
+  "reason": "No GNIS feature and no published coordinate found for this spire/pinnacle/top in the searches; not moved."
+ },
+ {
+  "id": "wa_playing_not_spraying",
+  "i": 1,
+  "name": "The Silver Horn - Summit",
+  "from": [
+   48.55186,
+   -120.59014
+  ],
+  "op": "none",
+  "reason": "No GNIS feature and no published coordinate found for this spire/pinnacle/top in the searches; not moved."
+ },
+ {
+  "id": "wa_the_chalice",
+  "i": 1,
+  "name": "The Silver Horn - Summit",
+  "from": [
+   48.55186,
+   -120.59014
+  ],
+  "op": "none",
+  "reason": "No GNIS feature and no published coordinate found for this spire/pinnacle/top in the searches; not moved."
+ },
+ {
+  "id": "wa_north_ridge_west_side",
+  "i": 3,
+  "name": "Molar Tooth",
+  "from": [
+   48.5394,
+   -120.70807
+  ],
+  "op": "none",
+  "reason": "No GNIS feature and no published coordinate found for this spire/pinnacle/top in the searches; not moved."
+ },
+ {
+  "id": "wa_the_roof",
+  "i": 1,
+  "name": "Unicorn Peak Summit",
+  "from": [
+   46.746305,
+   -121.701215
+  ],
+  "op": "none",
+  "source": "GNIS gaz_id 1527606",
+  "quote": "Unicorn Peak Summit 46.7449512 -121.7010958",
+  "ground_ft_at_to": 6910,
+  "reason": "Pin 151 m from GNIS but grounds at 6901 ft vs 6910 at GNIS (stated 6971): same top, within tolerance."
+ }
+]

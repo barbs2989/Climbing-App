@@ -1,0 +1,32 @@
+{
+  "area_id": "wa_dark_peak",
+  "routes": [
+    {
+      "route_id": "wa_dark_peak_dark_glacier_route",
+      "season": { "months": [5, 6, 7], "window": "May-Jul", "evidence": "Mountaineers lists May-July; SummitPost-type page says May to October reasonable; reports advise going early so snow covers the Swamp Creek brush; histogram peaks May-Jul (21/30/30). Stored Jun-Jul." },
+      "track": { "aid": "1197484", "verdict": "same", "kind": "complete", "inSeason": true,
+        "why": "Only one route is stored on this peak. Track is a 2019-07-14 round trip from High Bridge (start 143 m, end 112 m from our trailhead pin) via Hemlock Camp and Dark Fin Col to the Dark Glacier and summit (16 m from our pin or less), matching the Hemlock/Dark Fin Col variant described in our approach text. Sparse (514 pts) but complete." },
+      "otherTracksConsidered": [
+        { "aid": "2331538", "verdict": "same", "why": "2023-05-28 Swamp Creek round trip, in season, but only 133 points." },
+        { "aid": "3178849", "verdict": "offseason", "why": "2026-04-25, dense and complete, but a snowy early-April-type ascent about 5 weeks before the May start; not chosen." },
+        { "aid": "2888382", "verdict": "same", "why": "2025-06-29 in season but one-way (ends at Cedar Camp area ~11.8 km from the trailhead); second choice." },
+        { "aid": "1408629", "verdict": "same", "why": "2020-06-23 Swamp Creek, one-way, sparse." },
+        { "aid": "673499", "verdict": "same", "why": "2016-07-04 Swamp Creek, one-way." },
+        { "aid": "3215391", "verdict": "unsure", "why": "Uphill only from Cedar Camp; not a trailhead start." },
+        { "aid": "3242478", "verdict": "not-summited", "why": "Turned back at the glacier toe." },
+        { "aid": "2677035", "verdict": "different", "why": "October SW route from Lyman Lakes, a different line and offseason." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 5, "text": "In early May the Agnes Creek section of the PCT was cleared by trail crews only as far as 1-2 miles short of Swamp Creek camp, after which about 30 trees lay across the tread; the camp itself was snow free that month in a low-snow year.", "aids": ["3242478"] },
+        { "field": "pro_tips", "month": 5, "text": "In early May the shuttle bus beyond Stehekin is not yet running on its regular schedule, so a private ride to High Bridge has to be arranged ahead.", "aids": ["3242478"] },
+        { "field": "pro_tips", "month": 6, "text": "In early June the key log over Swamp Creek sits lower than usually described, below the first talus field, and the old trail bed helps avoid the worst slide alder.", "aids": ["534389"] },
+        { "field": "monthBreakdown", "month": 7, "text": "By mid-July the glacier is soft and mushy; falling ice and debris from the cirque walls cross the traverse, so keep moving through that stretch.", "aids": ["1197484"] },
+        { "field": "pro_tips", "month": 7, "text": "Via Hemlock Camp, go straight uphill through forest, brush and deadfall to about 5,600 ft, then loose talus to 6,000 ft, then drop steep dirt to the glacier; the return through the forest is slow.", "aids": ["1197484", "2267705"] },
+        { "field": "pro_tips", "month": 7, "text": "Open bivouac sites at Dark Fin Col are scarce, and meltwater is found at the foot of the far side of the col.", "aids": ["2267705"] },
+        { "field": "watch_out", "month": 5, "text": "Early May slab avalanche risk on the deep snow slopes just below Dark Fin Col; one climber was swept 60 ft there.", "aids": ["2503959"] }
+      ]
+    }
+  ],
+  "notes": "Single-route peak. The 2025-06-29 'West Approach' log and the Lyman Lakes SW route (Oct) are alternate approaches not in our catalog. Camp name Cedar Camp is a stored pin elsewhere (Fivemile Camp) - not proposed."
+}

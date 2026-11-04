@@ -1,0 +1,586 @@
+[
+ {
+  "id": "wa_mount_st_helens_worm_flows",
+  "i": 0,
+  "name": "Marble Mountain Sno-Park",
+  "from": [
+   46.131,
+   -122.171
+  ],
+  "coordinate_key": "46.131,-122.171",
+  "op": "none",
+  "source": "https://parks.wa.gov/find-sno-parks/marble-mountain-sno-park",
+  "quote": "published coordinate 46.12982241, -122.1711745 (WA State Parks Marble Mountain Sno-Park)",
+  "reason": "Verified: 132 m from published 46.12982241, -122.1711745 (WA State Parks Marble Mountain Sno-Park); within 150 m."
+ },
+ {
+  "id": "wa_mount_adams_south_climb",
+  "i": 0,
+  "name": "South Climb / Cold Springs Trailhead",
+  "from": [
+   46.136024,
+   -121.495265
+  ],
+  "coordinate_key": "46.136024,-121.495265",
+  "op": "move",
+  "to": [
+   46.1359,
+   -121.4976
+  ],
+  "source": "https://www.wta.org/go-hiking/hikes/mount-adams-south-climb",
+  "quote": "Co-ordinates: 46.1359, -121.4976 (WTA Mount Adams South Climb hike page)",
+  "ground_ft_at_to": 5562,
+  "reason": "Stored pin is 180 m from the published trailhead coordinate; 3DEP ground 5562 ft agrees with stated elev 5600 within 300 ft."
+ },
+ {
+  "id": "wa_mount_adams_wilson_glacier_headwall",
+  "i": 0,
+  "name": "South Climb / Cold Springs Trailhead",
+  "from": [
+   46.136024,
+   -121.495265
+  ],
+  "coordinate_key": "46.136024,-121.495265",
+  "op": "move",
+  "to": [
+   46.1359,
+   -121.4976
+  ],
+  "source": "https://www.wta.org/go-hiking/hikes/mount-adams-south-climb",
+  "quote": "Co-ordinates: 46.1359, -121.4976 (WTA Mount Adams South Climb hike page)",
+  "ground_ft_at_to": 5562,
+  "reason": "Stored pin is 180 m from the published trailhead coordinate; 3DEP ground 5562 ft agrees with stated elev 5600 within 300 ft."
+ },
+ {
+  "id": "wa_mount_adams_mazama_glacier_headwall",
+  "i": 0,
+  "name": "Bird Creek Road Trailhead",
+  "from": [
+   46.1404,
+   -121.44
+  ],
+  "coordinate_key": "46.1404,-121.44",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/bird-creek-meadows",
+  "quote": "published coordinate 46.1404, -121.44 (WTA Bird Creek Meadows)",
+  "reason": "Verified: 0 m from published 46.1404, -121.44 (WTA Bird Creek Meadows); within 150 m."
+ },
+ {
+  "id": "wa_mount_st_helens_monitor_ridge",
+  "i": 0,
+  "name": "Climbers Bivouac Trailhead",
+  "from": [
+   46.14639,
+   -122.18324
+  ],
+  "coordinate_key": "46.14639,-122.18324",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/mount-st-helens-monitor-ridge",
+  "quote": "published coordinate 46.1461, -122.1835 (WTA Mount St. Helens Monitor Ridge)",
+  "reason": "Verified: 38 m from published 46.1461, -122.1835 (WTA Mount St. Helens Monitor Ridge); within 150 m."
+ },
+ {
+  "id": "wa_mount_adams_adams_glacier",
+  "i": 0,
+  "name": "Killen Creek Trailhead",
+  "from": [
+   46.2885,
+   -121.5525
+  ],
+  "coordinate_key": "46.2885,-121.5525",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/killen-creek",
+  "quote": "published coordinate 46.2885, -121.5525 (WTA Killen Creek)",
+  "reason": "Verified: 0 m from published 46.2885, -121.5525 (WTA Killen Creek); within 150 m."
+ },
+ {
+  "id": "wa_mount_adams_lava_glacier_headwall",
+  "i": 0,
+  "name": "Killen Creek Trailhead #113",
+  "from": [
+   46.288612,
+   -121.551532
+  ],
+  "coordinate_key": "46.288612,-121.551532",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/killen-creek",
+  "quote": "published coordinate 46.2885, -121.5525 (WTA Killen Creek)",
+  "reason": "Verified: 75 m from published 46.2885, -121.5525 (WTA Killen Creek); within 150 m."
+ },
+ {
+  "id": "wa_gilbert_peak_west_route",
+  "i": 1,
+  "name": "Snowgrass Flat Trailhead (Snowgrass Trail #96)",
+  "from": [
+   46.4642,
+   -121.519
+  ],
+  "coordinate_key": "46.4642,-121.519",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/snowgrass",
+  "quote": "published coordinate 46.4642, -121.519 (WTA Snowgrass Flat)",
+  "reason": "Verified: 0 m from published 46.4642, -121.519 (WTA Snowgrass Flat); within 150 m."
+ },
+ {
+  "id": "wa_old_snowy_mountain_r1",
+  "i": 1,
+  "name": "Snowgrass Flats Trailhead (#96)",
+  "from": [
+   46.4644,
+   -121.5178
+  ],
+  "coordinate_key": "46.4644,-121.5178",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/snowgrass",
+  "quote": "published coordinate 46.4642, -121.519 (WTA Snowgrass Flat)",
+  "reason": "Verified: 95 m from published 46.4642, -121.519 (WTA Snowgrass Flat); within 150 m."
+ },
+ {
+  "id": "wa_gilbert_peak_conrad_glacier",
+  "i": 0,
+  "name": "Conrad Meadows Trailhead (South Fork Tieton Trail #1120)",
+  "from": [
+   46.5087,
+   -121.2809
+  ],
+  "coordinate_key": "46.5087,-121.2809",
+  "op": "none",
+  "source": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/conrad-meadows-trailhead",
+  "quote": "published coordinate 46.508793, -121.280865 (USFS Conrad Meadows Trailhead)",
+  "reason": "Verified: 11 m from published 46.508793, -121.280865 (USFS Conrad Meadows Trailhead); within 150 m."
+ },
+ {
+  "id": "wa_gilbert_peak_meade_glacier",
+  "i": 0,
+  "name": "Conrad Meadows / South Fork Tieton Trailhead (#1120)",
+  "from": [
+   46.508793,
+   -121.280865
+  ],
+  "coordinate_key": "46.508793,-121.280865",
+  "op": "none",
+  "source": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/conrad-meadows-trailhead",
+  "quote": "published coordinate 46.508793, -121.280865 (USFS Conrad Meadows Trailhead)",
+  "reason": "Verified: 0 m from published 46.508793, -121.280865 (USFS Conrad Meadows Trailhead); within 150 m."
+ },
+ {
+  "id": "wa_scramble_route",
+  "i": 0,
+  "name": "Eagle Peak Trailhead (Longmire, Nisqually Suspension Bridge)",
+  "from": [
+   46.748383,
+   -121.8077866
+  ],
+  "coordinate_key": "46.748383,-121.8077866",
+  "op": "none",
+  "reason": "The route text puts the Eagle Peak trailhead across the Nisqually suspension bridge, about 300 ft from the Longmire lot. WTA Eagle Peak Saddle prints 46.7575,-121.8057, 1,026 m from the stored pin, which marks that hike, not the described spot. No published coordinate for the described spot."
+ },
+ {
+  "id": "wa_point_success_south_side",
+  "i": 0,
+  "name": "Longmire Wilderness Information Center (Wonderland Trail)",
+  "from": [
+   46.7502,
+   -121.8124
+  ],
+  "coordinate_key": "46.7502,-121.8124",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/trail-of-the-shadows",
+  "quote": "published coordinate 46.7501, -121.8132 (WTA Trail of the Shadows (Longmire))",
+  "reason": "Verified: 62 m from published 46.7501, -121.8132 (WTA Trail of the Shadows (Longmire)); within 150 m."
+ },
+ {
+  "id": "wa_classic_route_2",
+  "i": 0,
+  "name": "Snow Lake Trailhead",
+  "from": [
+   46.7678,
+   -121.7072
+  ],
+  "coordinate_key": "46.7678,-121.7072",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/bench-and-snow-lakes",
+  "quote": "published coordinate 46.7678, -121.7076 (WTA Bench and Snow Lakes)",
+  "reason": "Verified: 30 m from published 46.7678, -121.7076 (WTA Bench and Snow Lakes); within 150 m."
+ },
+ {
+  "id": "wa_east_ridge_8",
+  "i": 1,
+  "name": "Reflection Lakes Trailhead (Pinnacle Saddle Trail)",
+  "from": [
+   46.7682,
+   -121.7312
+  ],
+  "coordinate_key": "46.7682,-121.7312",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/plummer-peak",
+  "quote": "published coordinate 46.7682, -121.7311 (WTA Plummer Peak (Reflection Lakes))",
+  "reason": "Verified: 8 m from published 46.7682, -121.7311 (WTA Plummer Peak (Reflection Lakes)); within 150 m."
+ },
+ {
+  "id": "wa_castle_peak_tatoosh_southeast_face",
+  "i": 1,
+  "name": "Pinnacle Peak Trailhead (Reflection Lakes, Stevens Canyon Road)",
+  "from": [
+   46.7683,
+   -121.73111
+  ],
+  "coordinate_key": "46.7683,-121.73111",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/plummer-peak",
+  "quote": "published coordinate 46.7682, -121.7311 (WTA Plummer Peak (Reflection Lakes))",
+  "reason": "Verified: 11 m from published 46.7682, -121.7311 (WTA Plummer Peak (Reflection Lakes)); within 150 m."
+ },
+ {
+  "id": "wa_pinnacle_peak_tatoosh_r1",
+  "i": 1,
+  "name": "Reflection Lakes Trailhead",
+  "from": [
+   46.7683,
+   -121.7314
+  ],
+  "coordinate_key": "46.7683,-121.7314",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/plummer-peak",
+  "quote": "published coordinate 46.7682, -121.7311 (WTA Plummer Peak (Reflection Lakes))",
+  "reason": "Verified: 25 m from published 46.7682, -121.7311 (WTA Plummer Peak (Reflection Lakes)); within 150 m."
+ },
+ {
+  "id": "wa_plummer_peak_r1",
+  "i": 1,
+  "name": "Reflection Lakes / Pinnacle Peak Trailhead",
+  "from": [
+   46.7683,
+   -121.7311
+  ],
+  "coordinate_key": "46.7683,-121.7311",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/plummer-peak",
+  "quote": "published coordinate 46.7682, -121.7311 (WTA Plummer Peak (Reflection Lakes))",
+  "reason": "Verified: 11 m from published 46.7682, -121.7311 (WTA Plummer Peak (Reflection Lakes)); within 150 m."
+ },
+ {
+  "id": "wa_castle_peak_tatoosh_la_villa",
+  "i": 0,
+  "name": "Reflection Lakes trailhead area",
+  "from": [
+   46.7695191,
+   -121.7299897
+  ],
+  "coordinate_key": "46.7695191,-121.7299897",
+  "op": "move",
+  "to": [
+   46.7682,
+   -121.7311
+  ],
+  "source": "https://www.wta.org/go-hiking/hikes/plummer-peak",
+  "quote": "Co-ordinates: 46.7682, -121.7311 (WTA Plummer Peak (Reflection Lakes) hike page)",
+  "ground_ft_at_to": 4885,
+  "reason": "Stored pin is 169 m from the published trailhead coordinate; 3DEP ground 4885 ft agrees with stated elev 4859 within 300 ft."
+ },
+ {
+  "id": "wa_classic_route_3",
+  "i": 0,
+  "name": "Narada Falls Parking Lot",
+  "from": [
+   46.77501,
+   -121.74624
+  ],
+  "coordinate_key": "46.77501,-121.74624",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/narada-falls",
+  "quote": "published coordinate 46.7752, -121.746 (WTA Narada Falls)",
+  "reason": "Verified: 28 m from published 46.7752, -121.746 (WTA Narada Falls); within 150 m."
+ },
+ {
+  "id": "wa_mount_rainier_sunset_ridge",
+  "i": 0,
+  "name": "West Side Road gate / Dry Creek Trailhead",
+  "from": [
+   46.77857,
+   -121.88303
+  ],
+  "coordinate_key": "46.77857,-121.88303",
+  "op": "none",
+  "reason": "Dry Creek gate at the Westside Road barricade. WTA westside-road prints 46.7424,-121.8995, the road start near the Nisqually Entrance (several km away), not the barricade. No published coordinate for the gate."
+ },
+ {
+  "id": "wa_mount_rainier_tahoma_glacier",
+  "i": 0,
+  "name": "West Side Road gate / Dry Creek Trailhead",
+  "from": [
+   46.7786,
+   -121.883
+  ],
+  "coordinate_key": "46.7786,-121.883",
+  "op": "none",
+  "reason": "Dry Creek gate at the Westside Road barricade. WTA westside-road prints 46.7424,-121.8995, the road start near the entrance, not the barricade. No published coordinate for the gate."
+ },
+ {
+  "id": "wa_mount_rainier_ingraham_direct",
+  "i": 0,
+  "name": "Paradise",
+  "from": [
+   46.7858,
+   -121.7355
+  ],
+  "coordinate_key": "46.7858,-121.7355",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/skyline-trail-loop",
+  "quote": "published coordinate 46.786, -121.735 (WTA Skyline Trail Loop (Paradise))",
+  "reason": "Verified: 44 m from published 46.786, -121.735 (WTA Skyline Trail Loop (Paradise)); within 150 m."
+ },
+ {
+  "id": "wa_mount_rainier_fuhrer_finger",
+  "i": 0,
+  "name": "Paradise",
+  "from": [
+   46.78584,
+   -121.73554
+  ],
+  "coordinate_key": "46.78584,-121.73554",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/skyline-trail-loop",
+  "quote": "published coordinate 46.786, -121.735 (WTA Skyline Trail Loop (Paradise))",
+  "reason": "Verified: 45 m from published 46.786, -121.735 (WTA Skyline Trail Loop (Paradise)); within 150 m."
+ },
+ {
+  "id": "wa_mount_rainier_fuhrer_thumb",
+  "i": 0,
+  "name": "Paradise",
+  "from": [
+   46.78639,
+   -121.73444
+  ],
+  "coordinate_key": "46.78639,-121.73444",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/skyline-trail-loop",
+  "quote": "published coordinate 46.786, -121.735 (WTA Skyline Trail Loop (Paradise))",
+  "reason": "Verified: 61 m from published 46.786, -121.735 (WTA Skyline Trail Loop (Paradise)); within 150 m."
+ },
+ {
+  "id": "wa_mount_rainier_disappointment_cleaver",
+  "i": 0,
+  "name": "Paradise Parking Area",
+  "from": [
+   46.78669,
+   -121.73454
+  ],
+  "coordinate_key": "46.78669,-121.73454",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/skyline-trail-loop",
+  "quote": "published coordinate 46.786, -121.735 (WTA Skyline Trail Loop (Paradise))",
+  "reason": "Verified: 84 m from published 46.786, -121.735 (WTA Skyline Trail Loop (Paradise)); within 150 m."
+ },
+ {
+  "id": "wa_little_tahoma_east_shoulder",
+  "i": 0,
+  "name": "Fryingpan Creek / Summerland Trailhead",
+  "from": [
+   46.8884,
+   -121.611
+  ],
+  "coordinate_key": "46.8884,-121.611",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/summerland-panhandle-gap",
+  "quote": "published coordinate 46.8884, -121.611 (WTA Summerland / Panhandle Gap)",
+  "reason": "Verified: 0 m from published 46.8884, -121.611 (WTA Summerland / Panhandle Gap); within 150 m."
+ },
+ {
+  "id": "wa_liberty_cap_liberty_ridge_finish",
+  "i": 0,
+  "name": "White River Campground / Glacier Basin Trailhead",
+  "from": [
+   46.9021,
+   -121.6437
+  ],
+  "coordinate_key": "46.9021,-121.6437",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/glacier-basin",
+  "quote": "published coordinate 46.9021, -121.6437 (WTA Glacier Basin)",
+  "reason": "Verified: 0 m from published 46.9021, -121.6437 (WTA Glacier Basin); within 150 m."
+ },
+ {
+  "id": "wa_mount_rainier_curtis_ridge",
+  "i": 0,
+  "name": "White River Campground",
+  "from": [
+   46.9022,
+   -121.6442
+  ],
+  "coordinate_key": "46.9022,-121.6442",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/glacier-basin",
+  "quote": "published coordinate 46.9021, -121.6437 (WTA Glacier Basin)",
+  "reason": "Verified: 40 m from published 46.9021, -121.6437 (WTA Glacier Basin); within 150 m."
+ },
+ {
+  "id": "wa_mount_rainier_liberty_ridge",
+  "i": 0,
+  "name": "White River Campground (Glacier Basin Trailhead)",
+  "from": [
+   46.9024,
+   -121.6438
+  ],
+  "coordinate_key": "46.9024,-121.6438",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/glacier-basin",
+  "quote": "published coordinate 46.9021, -121.6437 (WTA Glacier Basin)",
+  "reason": "Verified: 34 m from published 46.9021, -121.6437 (WTA Glacier Basin); within 150 m."
+ },
+ {
+  "id": "wa_navaho_peak_south_slopes",
+  "i": 0,
+  "name": "Stafford Creek Trailhead",
+  "from": [
+   47.3663,
+   -120.8027
+  ],
+  "coordinate_key": "47.3663,-120.8027",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/navaho-peak",
+  "quote": "published coordinate 47.3662, -120.8028 (WTA Navaho Peak)",
+  "reason": "Verified: 13 m from published 47.3662, -120.8028 (WTA Navaho Peak); within 150 m."
+ },
+ {
+  "id": "wa_argonaut_peak_east_ridge",
+  "i": 0,
+  "name": "Beverly Turnpike Trailhead (#1391)",
+  "from": [
+   47.3892,
+   -120.8725
+  ],
+  "coordinate_key": "47.3892,-120.8725",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/beverly-turnpike",
+  "quote": "published coordinate 47.3892, -120.8725 (WTA Beverly Turnpike)",
+  "reason": "Verified: 0 m from published 47.3892, -120.8725 (WTA Beverly Turnpike); within 150 m."
+ },
+ {
+  "id": "wa_hibox_mountain_standard",
+  "i": 0,
+  "name": "Rachel Lake Trailhead",
+  "from": [
+   47.4007,
+   -121.2839
+  ],
+  "coordinate_key": "47.4007,-121.2839",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/rachel-lake",
+  "quote": "published coordinate 47.4012, -121.2848 (WTA Rachel Lake)",
+  "reason": "Verified: 88 m from published 47.4012, -121.2848 (WTA Rachel Lake); within 150 m."
+ },
+ {
+  "id": "wa_alta_mountain_scramble",
+  "i": 0,
+  "name": "Rachel Lake Trailhead",
+  "from": [
+   47.4009,
+   -121.2836
+  ],
+  "coordinate_key": "47.4009,-121.2836",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/rachel-lake",
+  "quote": "published coordinate 47.4012, -121.2848 (WTA Rachel Lake)",
+  "reason": "Verified: 96 m from published 47.4012, -121.2848 (WTA Rachel Lake); within 150 m."
+ },
+ {
+  "id": "wa_bears_breast_mountain_infinite_beauty",
+  "i": 0,
+  "name": "Salmon La Sac Trailhead",
+  "from": [
+   47.4092,
+   -121.1038
+  ],
+  "coordinate_key": "47.4092,-121.1038",
+  "op": "none",
+  "reason": "unverified: the only published coordinate found is WTA Cooper River 47.4093,-121.1067 (219 m east), a hike page for a trail sharing the lot, not a page naming the Salmon La Sac trailhead itself. Left alone."
+ },
+ {
+  "id": "wa_bryant_peak_southeast_slopes",
+  "i": 0,
+  "name": "Denny Creek Trailhead (I-90 Exit 47)",
+  "from": [
+   47.4152259,
+   -121.443374
+  ],
+  "coordinate_key": "47.4152259,-121.443374",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/melakwa-lake",
+  "quote": "published coordinate 47.4151, -121.4432 (WTA Melakwa Lake (Denny Creek))",
+  "reason": "Verified: 19 m from published 47.4151, -121.4432 (WTA Melakwa Lake (Denny Creek)); within 150 m."
+ },
+ {
+  "id": "wa_kaleetan_peak_south_ridge",
+  "i": 0,
+  "name": "Denny Creek Trailhead",
+  "from": [
+   47.41595,
+   -121.4411528
+  ],
+  "coordinate_key": "47.41595,-121.4411528",
+  "op": "move",
+  "to": [
+   47.4151,
+   -121.4432
+  ],
+  "source": "https://www.wta.org/go-hiking/hikes/melakwa-lake",
+  "quote": "Co-ordinates: 47.4151, -121.4432 (WTA Melakwa Lake (Denny Creek) hike page)",
+  "ground_ft_at_to": 2271,
+  "reason": "Stored pin is 181 m from the published trailhead coordinate; 3DEP ground 2271 ft agrees with stated elev 2280 within 300 ft."
+ },
+ {
+  "id": "wa_four_brothers_southwest_route",
+  "i": 0,
+  "name": "Mineral Creek Trailhead (Trail #1331)",
+  "from": [
+   47.4174,
+   -121.2385
+  ],
+  "coordinate_key": "47.4174,-121.2385",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/mineral-creek",
+  "quote": "published coordinate 47.4176, -121.2373 (WTA Mineral Creek)",
+  "reason": "Verified: 93 m from published 47.4176, -121.2373 (WTA Mineral Creek); within 150 m."
+ },
+ {
+  "id": "wa_three_queens_middle_peak",
+  "i": 0,
+  "name": "Mineral Creek Trailhead",
+  "from": [
+   47.4176,
+   -121.2373
+  ],
+  "coordinate_key": "47.4176,-121.2373",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/mineral-creek",
+  "quote": "published coordinate 47.4176, -121.2373 (WTA Mineral Creek)",
+  "reason": "Verified: 0 m from published 47.4176, -121.2373 (WTA Mineral Creek); within 150 m."
+ },
+ {
+  "id": "wa_esmeralda_peaks_scramble",
+  "i": 0,
+  "name": "De Roux Trailhead",
+  "from": [
+   47.41913,
+   -120.93902
+  ],
+  "coordinate_key": "47.41913,-120.93902",
+  "op": "none",
+  "reason": "De Roux campground trailhead on FR 9737 about 8.5 mi from 29 Pines; no source found that publishes its coordinate. WTA Esmeralda Basin prints 47.4361,-120.9372, the road-end trailhead about 2 km north, a different spot. No published coordinate."
+ },
+ {
+  "id": "wa_iron_peak_teanaway_scramble",
+  "i": 0,
+  "name": "Iron Peak Trailhead (Trail #1399)",
+  "from": [
+   47.421416,
+   -120.937261
+  ],
+  "coordinate_key": "47.421416,-120.937261",
+  "op": "none",
+  "source": "https://www.wta.org/go-hiking/hikes/iron-peak",
+  "quote": "published coordinate 47.4214, -120.9372 (WTA Iron Peak)",
+  "reason": "Verified: 5 m from published 47.4214, -120.9372 (WTA Iron Peak); within 150 m."
+ }
+]

@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // import-route-grades.mjs — bring Mountain Project's routes into the catalog, from the CSV exports
 // scripts/pipeline/fetch-ice-mixed-aid.mjs and fetch-rock-boulder.mjs cached under
 // catalog/_mp/ (fetched under the owner's licence from onX). ONLY FACTS are used: name, location path, grade, type,
@@ -79,7 +80,7 @@ function sql(text, tries = 8) {
     try {
       // --output-format json is explicit: run from a plain Terminal the CLI answers with a TEXT
       // table by default (the "empty answers" that stopped California from run-all.sh).
-      const out = execFileSync("npx", ["supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1024 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
+      const out = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1024 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
       // Two shapes: inside an agent session {"boundary", "rows": [...], "warning"}; from a plain
       // Terminal a BARE array of rows. Parse from whichever bracket comes first.
       const at = [out.indexOf("{"), out.indexOf("[")].filter(i => i >= 0);
@@ -98,7 +99,12 @@ function sql(text, tries = 8) {
 // Retries a NETWORK failure ("fetch failed" — seen on three states across two runs) and never an
 // HTTP error, which is a real answer. An insert that landed before the connection dropped fails its
 // retry on the primary key and the run stops loudly; a re-run then finds the row as existing.
+// Every WRITE (POST / PATCH) is followed by --pace-ms (default 1000, never less): production writes are throttled
+// to one a second at most (owner, 2026-10-29), and this importer sent its batches back to back.
+const PACE_MS = Math.max(1000, args.includes("--pace-ms") ? +args[args.indexOf("--pace-ms") + 1] || 0 : 0);
+let lastWrite = 0;
 async function fetchRetry(url, opts, tries = 4) {
+  if (opts && opts.method && opts.method !== "GET") { const wait = lastWrite + PACE_MS - Date.now(); if (wait > 0) await new Promise(r => setTimeout(r, wait)); lastWrite = Date.now(); }
   for (let i = 0; ; i++) {
     try { return await fetch(url, opts); }
     catch (e) { if (i >= tries - 1) throw e; await new Promise(r => setTimeout(r, 3000 * (i + 1))); }
@@ -616,6 +622,7 @@ async function runState(st) {
       commit;`, 1);
     const b = sql(`select (select count(*)::int from routes where area_id = ${q(x)}) as rest, (select count(*)::int from routes where area_id = ${q(c.id)}) as moved, (select parent_id from areas where id = ${q(c.id)}) as par, (select route_count from areas where id = ${q(c.id)}) as cc`)[0];
     if (b.rest !== 0 || b.moved !== n || b.par !== x || +b.cc !== n) throw new Error(`${st.name}: split ${x} did not land ${JSON.stringify(b)} (expected ${n} moved)`);
+    await new Promise(r => setTimeout(r, PACE_MS));
   }
 
   // Then new areas (skipping the _climbs children the splits already made), parents before children (planned order already is), one at a time so the path

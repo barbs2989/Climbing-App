@@ -1,0 +1,112 @@
+{
+  "area_id": "wa_whatcom_peak",
+  "routes": [
+    {
+      "route_id": "wa_castle_in_the_sky",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Web: guidebook and climbing pages list Whatcom as summer, July through early September; stored Jul-Sep kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2946691",
+          "verdict": "different",
+          "why": "Multi-day Picket traverse; no climb of the cirque route; not a trailhead-to-summit track."
+        },
+        {
+          "aid": "999627",
+          "verdict": "different",
+          "why": "Snow/scramble ascent from the south side, not the technical cirque route."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_north_ridge_2",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Web: Mountain Project and a 2014 log place the north ridge climbs in August; summer window per guidebook pages. Stored Jul-Sep kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2946691",
+          "verdict": "different",
+          "why": "Summits via Perfect Pass, not from Whatcom Pass."
+        },
+        {
+          "aid": "999627",
+          "verdict": "different",
+          "why": "Approaches from the south side."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_south_spur",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Web: reports of the Easy Ridge to Perfect Pass loop are July and August; summer window per guidebook pages. Stored Jul-Sep kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2946691",
+          "verdict": "unsure",
+          "why": "Aug 2025 summit via Perfect Pass (matches the line) but the recording is a five-day through-traverse starting 42 km away, not trailhead to summit."
+        },
+        {
+          "aid": "999627",
+          "verdict": "unsure",
+          "why": "Jul 2018 south-side ascent from a camp (starts 16 km from trailhead), no route name or text to prove it is the spur."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "In August the Impasse near 5,200 ft can look too sketchy to cross directly; a detour of about 1,000 ft lower, staying east, then regaining height was judged quicker.",
+          "aids": [
+            "2946691"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "From Perfect Pass the final summit ridge in August is a semi-exposed class 2 to 3 walk.",
+          "aids": [
+            "2946691"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 8,
+          "text": "In August the Chilliwack River ford is easy using a log for most of the width, and water is plentiful on Easy Peak up to about 6,000 ft.",
+          "aids": [
+            "2946691"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Neither harvested track qualifies as a trailhead-to-summit recording of a stored route."
+}

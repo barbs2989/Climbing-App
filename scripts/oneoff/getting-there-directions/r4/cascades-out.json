@@ -1,0 +1,400 @@
+[
+ {
+  "id": "wa_cascade_peak_east_ridge",
+  "field": "road.status",
+  "verdict": "fix",
+  "problem": "Only a 15 October 2026 alert dates the Eldorado gate closure; nothing opened supports 'late October'. (NPS road page, last updated July 3, still says the road is open: stale, disagrees.)",
+  "corrected": "Closed to vehicles at the Eldorado gate near mile 20 for maintenance since at least mid-October 2026, with no reopening date; walkers and bikes can pass, which adds about 3 miles each way to the Cascade Pass trailhead.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/news/signpost/hiker-headlines-tacoma-dambo-trolls-are-here-south-shore-road-reopens-cascade-river-road-closure-10-15-26",
+   "https://www.wta.org/go-hiking/hikes/cascade-pass",
+   "https://www.nps.gov/noca/planyourvisit/road-conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_castle_peak_pasayten_scramble",
+  "field": "road.driveNote",
+  "verdict": "fix",
+  "problem": "The park's fire-closure page now shows an update of 6 October 2026 (text says 14 September); Hozomeen, Border 2 Fire and border closures still stand with no end date. The Silver-Skagit km 6 sentence could not be re-verified (a DriveBC advisory dated 26 October 2026 reportedly says the road reopened, but that page would not open).",
+  "corrected": "SR-20 is paved and generally in good condition but closes seasonally over Washington Pass/Rainy Pass (typically mid-November through April/May depending on snowpack). Silver-Skagit Road is a rough ~39-mile gravel road from Hope, BC, but provides no legal access to Castle Peak: the Hozomeen border gate has been closed to crossing since 2020, with no end date given on the park's fire-closure listing updated 6 October 2026, and the road itself has been closed at km 6 for wildfire since 24 July 2026.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+  ]
+ },
+ {
+  "id": "wa_columbia_peak_scramble",
+  "field": "road.driveNote",
+  "verdict": "accurate",
+  "problem": "Forest Service alert (30 June 2026) still lists FSR 63 undrivable and FSR 65 closed past Jack's Pass; county lists Index-Galena closed MP 10 to 14 with no repair timeline.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/mbs/alerts/road-damages-closures-skykomish-district",
+   "https://snohomishcountywa.gov/518/Road-Closures"
+  ]
+ },
+ {
+  "id": "wa_davis_peak_nc_north_face",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "Entire Stetattle Creek Trail still listed as a long-term closure until further notice.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm",
+   "https://www.nps.gov/noca/planyourvisit/trail-conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_earl_peak_southwest_ridge",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "Forest alerts list (opened) no longer carries a Labor Mountain closure and the forest's road conditions show Teanaway open to Esmeralda Basin; order lift and washout rest on a trail crew report. WTA's hike page still shows a stale Labor Mountain warning (disagrees).",
+  "corrected": "",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts",
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/conditions"
+  ]
+ },
+ {
+  "id": "wa_horseshoe_peak_scramble",
+  "field": "road.status",
+  "verdict": "fix",
+  "problem": "Only a 15 October 2026 alert dates the Eldorado gate closure; nothing opened supports 'late October'. (NPS road page, last updated July 3, still says the road is open: stale, disagrees.)",
+  "corrected": "Closed to vehicles at the Eldorado gate near mile 20 for maintenance since at least mid-October 2026, with no reopening date; walkers and bikes can pass, which adds about 3 miles each way to the Cascade Pass trailhead.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/news/signpost/hiker-headlines-tacoma-dambo-trolls-are-here-south-shore-road-reopens-cascade-river-road-closure-10-15-26",
+   "https://www.wta.org/go-hiking/hikes/cascade-pass",
+   "https://www.nps.gov/noca/planyourvisit/road-conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_north_route",
+  "field": "road.seasonalGate",
+  "verdict": "accurate",
+  "problem": "Winter window is stated generically and matches the posted pattern; the border closure with no end date still stands.",
+  "corrected": "",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www2.gov.bc.ca/gov/content/transportation-projects/bc-highway-flood-recovery/2021-flood-road-recovery-projects-silver-skagit-road",
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_north_route",
+  "field": "access.closures",
+  "verdict": "unverifiable",
+  "problem": "Hozomeen area, campground, dock, Obelisk and cross-country closures are confirmed on the 6 October 2026 NPS listing, but the Silver-Skagit km 6 gate closure could not be confirmed either way (DriveBC advisory dated 26 October 2026 reportedly says reopened; page would not open).",
+  "corrected": "",
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_south_ridge",
+  "field": "access.closures",
+  "verdict": "fix",
+  "problem": "The park's fire-closure page now shows an update of 6 October 2026 (text says 14 September); Hozomeen, Border 2 Fire and border closures still stand with no end date. The Silver-Skagit km 6 sentence could not be re-verified (a DriveBC advisory dated 26 October 2026 reportedly says the road reopened, but that page would not open).",
+  "corrected": "The NPS gate at the international boundary at Hozomeen has been closed to both vehicle and foot traffic since 2020, and the park's fire-closure page, updated 14 September 2026, still lists it closed with no end date given \u2014 crossing there is prohibited and you must use a staffed port of entry. The Silver-Skagit Road has been closed to the public at the km 6 gate since 24 July 2026, when BC Parks closed Skagit Valley Provincial Park for wildfire; the B.C. Ministry of Transportation and Transit advisory, last updated 8 September 2026, gives no end date and keeps the road closed while the park is. On the US side, the park has also closed the entire Hozomeen area and the Hozomeen Cross-country Zone for the Border 2 Fire, with no end date given on the same 6 October 2026 listing. Verify all three before committing to a trip.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_northeast_buttress",
+  "field": "road.seasonalGate",
+  "verdict": "fix",
+  "problem": "Seasonal window cites the expired 2025-26 posting; fire-closure listing is now dated 6 October 2026.",
+  "corrected": "B.C. closes Silver-Skagit Road each winter, roughly 15 October to mid-April (the 2025-26 window ran 15 October to 14 April; no 2026-27 dates were posted where I could read them). Separately and more importantly, the NPS gate at the international boundary at Hozomeen has been closed since 2020, with vehicle and foot traffic across the border there prohibited and no end date given on the park's fire-closure listing updated 6 October 2026; the crossing has never been staffed and is camera-monitored.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www2.gov.bc.ca/gov/content/transportation-projects/bc-highway-flood-recovery/2021-flood-road-recovery-projects-silver-skagit-road",
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_northeast_buttress",
+  "field": "access.closures",
+  "verdict": "fix",
+  "problem": "The park's fire-closure page now shows an update of 6 October 2026 (text says 14 September); Hozomeen, Border 2 Fire and border closures still stand with no end date. The Silver-Skagit km 6 sentence could not be re-verified (a DriveBC advisory dated 26 October 2026 reportedly says the road reopened, but that page would not open).",
+  "corrected": "The NPS gate at the international boundary at Hozomeen has been closed since 2020, and the park's fire-closure page, updated 14 September 2026, still lists it closed with no end date given; vehicle and foot traffic across the US/Canada border there is prohibited and visitors must use a designated port of entry. Silver-Skagit Road itself has been closed to the public at the km 6 gate since 24 July 2026, when BC Parks closed Skagit Valley Provincial Park for wildfire; the B.C. Ministry of Transportation and Transit advisory, last updated 8 September 2026, gives no end date and keeps the road closed while the park is. The park has also closed the entire Hozomeen area and the Hozomeen Cross-country Zone for the Border 2 Fire, with no end date given on the same 6 October 2026 listing. Confirm all three with NPS and DriveBC before committing to the trip.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_south_peak_north_ridge",
+  "field": "access.closures",
+  "verdict": "fix",
+  "problem": "The park's fire-closure page now shows an update of 6 October 2026 (text says 14 September); Hozomeen, Border 2 Fire and border closures still stand with no end date. The Silver-Skagit km 6 sentence could not be re-verified (a DriveBC advisory dated 26 October 2026 reportedly says the road reopened, but that page would not open).",
+  "corrected": "The NPS gate at the international boundary at Hozomeen has been closed to both vehicle and foot traffic since 2020, and the park's fire-closure page, updated 14 September 2026, still lists it closed with no end date given \u2014 crossing there is prohibited and you must use a staffed port of entry. The Silver-Skagit Road has been closed to the public at the km 6 gate since 24 July 2026, when BC Parks closed Skagit Valley Provincial Park for wildfire; the B.C. Ministry of Transportation and Transit advisory, last updated 8 September 2026, gives no end date and keeps the road closed while the park is. On the US side, the park has also closed the entire Hozomeen area and the Hozomeen Cross-country Zone for the Border 2 Fire, with no end date given on the same 6 October 2026 listing. Verify all three before committing to a trip.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_south_peak_southeast_buttress",
+  "field": "road.status",
+  "verdict": "unverifiable",
+  "problem": "The km 6 closure and the 24 September 2026 notice could not be re-checked; DriveBC advisory page would not render (a search snippet says it reopened 26 October 2026). SR-20 wording is consistent with the park's road page.",
+  "corrected": "",
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/road-conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_south_peak_southeast_buttress",
+  "field": "access.closures",
+  "verdict": "fix",
+  "problem": "The park's fire-closure page now shows an update of 6 October 2026 (text says 14 September); Hozomeen, Border 2 Fire and border closures still stand with no end date. The Silver-Skagit km 6 sentence could not be re-verified (a DriveBC advisory dated 26 October 2026 reportedly says the road reopened, but that page would not open).",
+  "corrected": "The NPS gate at the international boundary at Hozomeen has been closed to both vehicle and foot traffic since 2020, and the park's fire-closure page, updated 14 September 2026, still lists it closed with no end date given \u2014 crossing there is prohibited and you must use a staffed port of entry. The Silver-Skagit Road has been closed to the public at the km 6 gate since 24 July 2026, when BC Parks closed Skagit Valley Provincial Park for wildfire; the B.C. Ministry of Transportation and Transit advisory, last updated 8 September 2026, gives no end date and keeps the road closed while the park is. On the US side, the park has also closed the entire Hozomeen area and the Hozomeen Cross-country Zone for the Border 2 Fire, with no end date given on the same 6 October 2026 listing. Verify all three before committing to a trip.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_south_peak_southwest_route",
+  "field": "road.seasonalGate",
+  "verdict": "fix",
+  "problem": "Seasonal window cites the expired 2025-26 posting; fire-closure listing is now dated 6 October 2026.",
+  "corrected": "B.C. closes Silver-Skagit Road each winter, roughly 15 October to mid-April (the 2025-26 window ran 15 October to 14 April; no 2026-27 dates were posted where I could read them). Separately and more importantly, the NPS gate at the international boundary at Hozomeen has been closed since 2020, with vehicle and foot traffic across the border there prohibited and no end date given on the park's fire-closure listing updated 6 October 2026; the crossing has never been staffed and is camera-monitored.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www2.gov.bc.ca/gov/content/transportation-projects/bc-highway-flood-recovery/2021-flood-road-recovery-projects-silver-skagit-road",
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_south_peak_southwest_route",
+  "field": "access.closures",
+  "verdict": "fix",
+  "problem": "The park's fire-closure page now shows an update of 6 October 2026 (text says 14 September); Hozomeen, Border 2 Fire and border closures still stand with no end date. The Silver-Skagit km 6 sentence could not be re-verified (a DriveBC advisory dated 26 October 2026 reportedly says the road reopened, but that page would not open).",
+  "corrected": "The NPS gate at the international boundary at Hozomeen has been closed to both vehicle and foot traffic since 2020, and the park's fire-closure page, updated 14 September 2026, still lists it closed with no end date given \u2014 crossing there is prohibited and you must use a staffed port of entry. The Silver-Skagit Road has been closed to the public at the km 6 gate since 24 July 2026, when BC Parks closed Skagit Valley Provincial Park for wildfire; the B.C. Ministry of Transportation and Transit advisory, last updated 8 September 2026, gives no end date and keeps the road closed while the park is. On the US side, the park has also closed the entire Hozomeen area and the Hozomeen Cross-country Zone for the Border 2 Fire, with no end date given on the same 6 October 2026 listing. Verify all three before committing to a trip.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_southwest_buttress",
+  "field": "access.closures",
+  "verdict": "fix",
+  "problem": "The park's fire-closure page now shows an update of 6 October 2026 (text says 14 September); Hozomeen, Border 2 Fire and border closures still stand with no end date. The Silver-Skagit km 6 sentence could not be re-verified (a DriveBC advisory dated 26 October 2026 reportedly says the road reopened, but that page would not open).",
+  "corrected": "The NPS gate at the international boundary at Hozomeen has been closed to both vehicle and foot traffic since 2020, and the park's fire-closure page, updated 14 September 2026, still lists it closed with no end date given \u2014 crossing there is prohibited and you must use a staffed port of entry. The Silver-Skagit Road has been closed to the public at the km 6 gate since 24 July 2026, when BC Parks closed Skagit Valley Provincial Park for wildfire; the B.C. Ministry of Transportation and Transit advisory, last updated 8 September 2026, gives no end date and keeps the road closed while the park is. On the US side, the park has also closed the entire Hozomeen area and the Hozomeen Cross-country Zone for the Border 2 Fire, with no end date given on the same 6 October 2026 listing. Verify all three before committing to a trip.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+  ]
+ },
+ {
+  "id": "wa_hurry_up_peak_south_ridge",
+  "field": "road.status",
+  "verdict": "fix",
+  "problem": "Only a 15 October 2026 alert dates the Eldorado gate closure; nothing opened supports 'late October'. (NPS road page, last updated July 3, still says the road is open: stale, disagrees.)",
+  "corrected": "Closed to vehicles at the Eldorado gate near mile 20 for maintenance since at least mid-October 2026, with no reopening date; walkers and bikes can pass, which adds about 3 miles each way to the Cascade Pass trailhead.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/news/signpost/hiker-headlines-tacoma-dambo-trolls-are-here-south-shore-road-reopens-cascade-river-road-closure-10-15-26",
+   "https://www.wta.org/go-hiking/hikes/cascade-pass",
+   "https://www.nps.gov/noca/planyourvisit/road-conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_indian_mountain_baker_scramble",
+  "field": "access.closures",
+  "verdict": "fix",
+  "problem": "Fire-closure listing now dated 6 October 2026 and trail conditions 29 October 2026; Graybeal and Whatcom camps still closed, Brush Creek open to hikers, Bear Creek Camp still closed. FR 32 bypass sentence could not be verified.",
+  "corrected": "Brush Creek Trail (the final approach corridor toward Whatcom Pass/Indian Mountain) reopened Sept. 2025 after a 3-year closure from the 2022 Brush Creek Fire; Graybeal, Graybeal Stock, and Whatcom Camps remain closed until further notice, with no end date given, as listed in the park's fire-closure listing updated October 6, 2026, and the trail is not fully stock-accessible. The Chilliwack River Trail has been cleared of down trees as far as Bear Creek Camp, as listed on the park's trail report of September 3, 2026, but is still brushy north of the Copper Ridge junction. Bear Creek Camp is closed from 2021 fire damage, as still listed in the park's trail conditions on October 29, 2026. A bypass has been built around a prior washout at the end of FR 32 to keep the Hannegan Trailhead reachable \u2014 check Mt. Baker Ranger District alerts before driving.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm",
+   "https://www.nps.gov/noca/planyourvisit/trail-conditions.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_berge_southwest_route",
+  "field": "road.status",
+  "verdict": "fix",
+  "problem": "Closure is real but the note omits the order's end date (31 December 2027); the fire closure on Chiwawa and Phelps Creek roads is still listed in October 2026.",
+  "corrected": "Decent gravel for roughly the first 11 miles from WA-207, then narrow, rough, and high-clearance-recommended for the final ~12 miles to Trinity Trailhead; sections beyond Goose Creek have been closed in some years by flood damage and wildfire activity. Storm damage has closed the road to vehicles beyond the Atkinson Flat Campground junction, with no reopening estimate (Forest Service order in effect 20 May 2026 to 31 December 2027), cutting off the Trinity and Phelps Creek trailheads. A wildfire closure (Little Giant Fire) also covers the Chiwawa River Road and Phelps Creek Road as of October 2026. Check with the Wenatchee River Ranger District, (509) 548-2550, before you go.",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/storm-damaged-roads-closure-wenatchee-river-district",
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/conditions"
+  ]
+ },
+ {
+  "id": "wa_mount_rahm_custer_traverse",
+  "field": "access.closures",
+  "verdict": "fix",
+  "problem": "Update date is now 6 October 2026; every listed closure still stands and Ross Lake / Silver Creek are still absent.",
+  "corrected": "North Cascades NP fire closures, listing last updated 6 October 2026: the Border 2 Fire closure is still in effect, but neither Ross Lake north of Lightning Creek nor the Silver Creek boat-in camp is closed by it any longer - both were on the August list and neither appears on the current one. Still closed: the entire Hozomeen area and the Hozomeen Cross-country Zone; the Willow Lake, Hozomeen Lake, Obelisk and Desolation Lookout trails; Lightning Creek from the Willow Lake Trail to Deerlick Camp; and the Boundary Bay, Nightmare, Willow Lake, Hozomeen Lake, Desolation and Deerlick camps. Depot Creek is not on the closure list. This is a dated snapshot - re-read the park's fire-closure listing before relying on it.",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+  ]
+ },
+ {
+  "id": "wa_north_ridge_2",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "Whatcom and Graybeal camps still closed until further notice; the FR 32 line is a hedged 'recent years' statement with nothing newer posted.",
+  "corrected": "",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+  ]
+ },
+ {
+  "id": "wa_the_triad_east_peak",
+  "field": "road.status",
+  "verdict": "accurate",
+  "problem": "Forest Service alert (start 8 July 2026, washout) still posted with no end date.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/mbs/alerts",
+   "https://www.fs.usda.gov/r06/mbs/newsroom/releases/current-and-upcoming-road-closures-mt-baker-snoqualmie-national-forest"
+  ]
+ },
+ {
+  "id": "wa_the_triad_traverse",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "Forest Service alert (8 July 2026, washout at MP 2.6) still posted.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/mbs/alerts"
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_ptarmigan_ridge",
+  "field": "approach_logistics.trailheadDirection",
+  "verdict": "accurate",
+  "problem": "Carbon River/Mowich access still closed at the SR 165 bridge per the park's road status page updated 29 October 2026.",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/mora/planyourvisit/road-status.htm"
+  ]
+ },
+ {
+  "id": "wa_bearpaw_mountain_scramble",
+  "field": "access.closures",
+  "verdict": "accurate",
+  "problem": "No FS 31 or 3160 closure appears on the forest's alerts page; the history clause is not time-bound.",
+  "corrected": "",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/mbs/alerts"
+  ]
+ },
+ {
+  "id": "wa_bonanza_peak_mary_green_glacier",
+  "field": "road.driveNote",
+  "verdict": "accurate",
+  "problem": "Order 06-17-05-26-04 on FSR 8301 confirmed effective 28 January 2026 through 31 December 2027; Holden Village says it is closed and the road impassable (page modified 15 October 2026).",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/railroad-and-preston-creek-road-closures-chelan-and-entiat-ranger",
+   "https://www.holdenvillage.org/road-to-recovery/"
+  ]
+ },
+ {
+  "id": "wa_bonanza_peak_northeast_buttress",
+  "field": "road.driveNote",
+  "verdict": "accurate",
+  "problem": "Order 06-17-05-26-04 on FSR 8301 confirmed effective 28 January 2026 through 31 December 2027; Holden Village says it is closed and the road impassable (page modified 15 October 2026).",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/railroad-and-preston-creek-road-closures-chelan-and-entiat-ranger",
+   "https://www.holdenvillage.org/road-to-recovery/"
+  ]
+ },
+ {
+  "id": "wa_guye_peak_improbable_traverse",
+  "field": "access.closures",
+  "verdict": "unverifiable",
+  "problem": "No opened page states the Alpental Community Club restriction (Mountaineers pages refused; a search snippet quotes it in an August 2026 trip report).",
+  "corrected": "",
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "id": "wa_guye_peak_r1",
+  "field": "access.closures",
+  "verdict": "unverifiable",
+  "problem": "No opened page states the Alpental Community Club restriction (Mountaineers pages refused; a search snippet quotes it in an August 2026 trip report).",
+  "corrected": "",
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "id": "wa_mount_stickney_scramble",
+  "field": "access.closures",
+  "verdict": "unverifiable",
+  "problem": "Only old trip reports describe the Olney Creek gate; no current owner or agency page found.",
+  "corrected": "",
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "id": "wa_north_twin_sister_west_ridge",
+  "field": "road.driveNote",
+  "verdict": "accurate",
+  "problem": "Hampton's recreation page still says North Cascades land needs a fee access permit and is open; it does not name North Twin Sister.",
+  "corrected": "",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.hamptonlumber.com/recreation/"
+  ]
+ },
+ {
+  "id": "wa_soviet_route",
+  "field": "road.driveNote",
+  "verdict": "accurate",
+  "problem": "Order 06-17-05-26-04 on FSR 8301 confirmed effective 28 January 2026 through 31 December 2027; Holden Village says it is closed and the road impassable (page modified 15 October 2026).",
+  "corrected": "",
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/railroad-and-preston-creek-road-closures-chelan-and-entiat-ranger",
+   "https://www.holdenvillage.org/road-to-recovery/"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_west_face",
+  "field": "road.seasonalGate",
+  "verdict": "fix",
+  "problem": "Seasonal window cites the expired 2025-26 posting; fire-closure listing is now dated 6 October 2026.",
+  "corrected": "B.C. winter shutdown runs roughly 15 October to mid-April each year (2025-26: 15 October to 14 April; 2026-27 dates not yet posted). The NPS gate at the international boundary at Hozomeen has been closed to vehicle and foot traffic since 2020, with no end date given on the park's fire-closure listing updated 6 October 2026.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www2.gov.bc.ca/gov/content/transportation-projects/bc-highway-flood-recovery/2021-flood-road-recovery-projects-silver-skagit-road",
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_west_face",
+  "field": "access.closures",
+  "verdict": "fix",
+  "problem": "The park's fire-closure page now shows an update of 6 October 2026 (text says 14 September); Hozomeen, Border 2 Fire and border closures still stand with no end date. The Silver-Skagit km 6 sentence could not be re-verified (a DriveBC advisory dated 26 October 2026 reportedly says the road reopened, but that page would not open).",
+  "corrected": "NPS border gate at Hozomeen closed to vehicle and foot traffic since 2020; still closed, with no end date given, on the park's fire-closure listing updated 6 October 2026. Silver-Skagit Road closed to the public at the km 6 gate since 24 July 2026 for wildfire; no end date given in the B.C. Ministry of Transportation and Transit advisory last updated 8 September 2026. NPS has also closed the entire Hozomeen area and the Hozomeen Cross-country Zone for the Border 2 Fire, no end date given as of that 6 October 2026 listing.",
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+  ]
+ }
+]

@@ -20,6 +20,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   "Watch out for on this type of climb" were the same canned lines on every route of a kind,
   advice about climbing in general rather than this climb — and section 3 pins that they stay
   gone on every discipline. The sport bolt-problem reporter survives: it acts on this route.
+  **Section 7 (2026-10-31): a boulder line is a PROBLEM.** Every tab of a bare boulder problem, and of the same
+  problem with a description, a season and one report (the branches a bare row never opens), must not say
+  "route" in visible text or in an aria-label / title / placeholder; "route-finding" and "Route finder" are
+  allowed. Its anchor is the filled problem's *Problem description* card. Injection: put "Route description"
+  back in `RouteOverviewTab` and it fails twice (the word, and the lost anchor). It cannot see a string that
+  renders only with data it does not seed (a photo, a topo, a crew), nor the forms (LogAscent, AddRoute,
+  SuggestFix), which were fixed by reading. A ConsensusPanel string is gated on `VOLATILE_DISC`, which has no
+  bouldering, so an injection there is correctly silent.
   Both were invisible to a guard that
   only renders a populated route. Gated by `npm run build`. Injection-tested: restoring the
   pre-#641 file trips 6 assertions, and renaming a UI anchor trips `ANCHOR LOST` rather than
@@ -83,6 +91,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   identifier is referenced. Only rendering can. It pulls a **real value from the live DB** per
   column, injects it onto a bare route, renders all six sub-tabs, and looks for it on screen.
   Runs on every PR via `render-guards.yml`; not a build gate (it reads the DB).
+  - **Every column in `FIELDS` needs a partial index `routes (id) where <col> is not null`**
+    (0387). The sample query is `<col>=not.is.null&order=id.asc&limit=8`; on a column filled on
+    under 6% of 315k routes, without that index the planner walks `routes_pkey` and discards rows
+    until it finds eight — 282,764 rows and ~1.8 GB of buffer reads for `climbing_route` alone,
+    61 times per run, on every PR push from every parallel session. That load was the likeliest
+    cause of the 2026-10-28 database stall. Adding a column to `FIELDS`? Add its index in a new
+    migration (`create index concurrently` by hand on production, then record the version).
   - It replaced `scripts/oneoff/measure-which-tab-renders-each-field.mjs`, which hardcoded
     `ROOT` to the `rappels-rack-filter-class-audit` worktree — so it silently measured a
     different branch's code than the one you ran it in.

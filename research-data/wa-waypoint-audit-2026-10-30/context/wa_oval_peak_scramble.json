@@ -1,0 +1,103 @@
+{
+ "id": "wa_oval_peak_scramble",
+ "name": "Standard Scramble",
+ "discipline": "mountaineering",
+ "area": {
+  "id": "wa_oval_peak",
+  "name": "Oval Peak",
+  "lat": 48.287176,
+  "lng": -120.425141,
+  "elevation_ft": 8800,
+  "parent_id": "wa_sawtooth_chelan",
+  "ground_ft": 8797
+ },
+ "dist_km": 18.5,
+ "gain_ft": 5800,
+ "high_point_ft": 8795,
+ "approach_logistics": {
+  "peakLat": 48.287176,
+  "peakLng": -120.425141,
+  "trailhead": "Oval Trailhead",
+  "trailheadDirection": "Park at the Eagle Creek/Oval trailhead (~3,000 ft) at the end of FR 4420-080, reached via Twisp River Road/FR 44 (~12.5 mi west of Twisp) and the West Buttermilk/FR 4420 spur."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.35256,
+   "lng": -120.407046,
+   "elev": 3036,
+   "name": "Eagle Creek/Oval Trailhead",
+   "note": "Self-issue Northwest Forest Pass / $5 day-use fee at the kiosk; trail enters Lake Chelan-Sawtooth Wilderness a short way in, vault toilet and stock ramp at the lot.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Park at the Eagle Creek/Oval trailhead at about 3,000 ft, at the end of FR 4420-080. Reach it on Twisp River Road/FR 44 roughly 12.5 miles west of Twisp, then turn up the West Buttermilk/FR 4420 spur and follow it to the road's end. There is a vault toilet and a stock ramp at the lot; self-issue a Northwest Forest Pass or pay the $5 day-use fee at the kiosk, and the trail enters the Lake Chelan-Sawtooth Wilderness a short way in. The access road and the lake basins are typically snow-free from early July into October.",
+   "ground_ft": 3018
+  },
+  {
+   "i": 1,
+   "lat": null,
+   "lng": null,
+   "elev": 3450,
+   "name": "Eagle Creek / Oval Creek Trail junction",
+   "note": "Ford the side stream here, then turn left off Eagle Creek Trail #410 onto Oval Creek Trail #410A toward the Oval Lakes basin.",
+   "type": "Junction",
+   "distMi": 1.9,
+   "ground_ft": null
+  },
+  {
+   "i": 2,
+   "lat": 48.250915,
+   "lng": -120.430899,
+   "elev": 6200,
+   "name": "Oval Creek / Oval Lakes Trail junction",
+   "note": "Bear onto Oval Lakes Trail #410B, which climbs past an old moraine below Gray Peak before dropping into the Oval Lakes basin — this section burned in the 2018 Crescent Fire and is dry/dusty with little shade.",
+   "type": "Junction",
+   "distMi": 7.9,
+   "ground_ft": 8424
+  },
+  {
+   "i": 3,
+   "lat": 48.261515,
+   "lng": -120.426635,
+   "elev": 6940,
+   "name": "Middle Oval Lake outflow",
+   "note": "Maintained trail ends at the lake outflow; established stock/backpacker camp with fishing (cutthroat) — this is where you leave the trail and start up open heather/talus toward the Sawtooth crest.",
+   "type": "Campsite",
+   "distMi": 9.5,
+   "ground_ft": 6805
+  },
+  {
+   "i": 4,
+   "lat": 48.272016,
+   "lng": -120.415184,
+   "elev": 7900,
+   "name": "Saddle on Oval Peak's south ridge",
+   "note": "Gain the Sawtooth crest via open heather and talus above the lake's outflow; no maintained tread here, easy to lose the line in fog or low visibility.",
+   "type": "Junction",
+   "distMi": 10.3,
+   "ground_ft": 6920
+  },
+  {
+   "i": 5,
+   "lat": 48.279412,
+   "lng": -120.422042,
+   "elev": 8400,
+   "name": "Talus/boulder field on the south ridge crest",
+   "note": "Broad ridge of loose, sometimes slick talus and large boulders — the crux annoyance of the route (twisted-ankle terrain, not technical).",
+   "type": "Hazard",
+   "distMi": 11,
+   "ground_ft": 7391
+  },
+  {
+   "i": 6,
+   "lat": 48.2870858,
+   "lng": -120.4245368,
+   "elev": 8800,
+   "name": "Oval Peak",
+   "note": "Highest point in the Lake Chelan-Sawtooth Wilderness and of the Methow Mountains; small rock glacier on the north slopes, views of Star, Courtney, and Gray Peaks.",
+   "type": "Summit",
+   "distMi": 11.5,
+   "ground_ft": 8756
+  }
+ ]
+}

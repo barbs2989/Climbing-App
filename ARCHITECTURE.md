@@ -2,7 +2,8 @@
 
 CLAUDE.md describes the files and the screens. This page describes **where state lives, who
 owns it, and how it reaches a component** — and records why there is deliberately no global
-client store (no app-wide React Context, no Zustand). Measured 2026-10-15 against `696f1a19`.
+client store for UI state (no Zustand; one app-wide React Context, for auth only). Measured
+2026-10-15 against `696f1a19`; the contexts re-checked 2026-10-29.
 
 ## The three homes for state
 
@@ -10,6 +11,7 @@ client store (no app-wide React Context, no Zustand). Measured 2026-10-15 agains
 |---|---|---|---|
 | **1. The react-query cache** (`QueryClientProvider` in `main.jsx`) | Everything the database holds: profile, crews, messages, logs, connections, groups, vouches, routes, areas, contributions, comments, trip reports, verification, trust counts | 112 `useQuery` call sites across `ClimbMatch.jsx`, `RouteDetail.jsx`, `ClimbMatchCore.jsx` and `lib/` | Calls the hook from `lib/db.js` **where it needs the data** — no props. A write calls `invalidateQueries` (11 sites) and every reader refreshes |
 | **2. `App`'s `useState`** (`ClimbMatch.jsx`, `export default function App`) | 248 hooks of session/UI state: which tab, which route, which modal is open, form drafts, optimistic local copies, settings | Mostly the screen branch that renders inside `App` itself | Inline JSX inside `App` closes over it directly; extracted components receive it as props |
+| **1b. `AuthContext`** (`AuthProvider` in `main.jsx`, `src/AuthContext.tsx`) | Who is signed in: the Supabase `session` (undefined until read, null signed out), `user`, `loading`, `login`/`logout` | `App`, the route page's topo and photo panels, the three guide screens | `useSession()` or `useAuth()`. ONE `onAuthStateChange` subscription for the whole app (each caller used to open its own) |
 | **3. Module globals in `ClimbMatchCore.jsx`** | `ME`, `UNITS`, `DLOCALE`, `RESPONSE_RATES`, `DB_UID`, toast/celebration timers | Any helper or component, without props | Read the import. `App` writes them through the `__set_*` shims (ESM bindings are read-only) |
 
 **Home 1 is already the global store.** Server state — the data that is genuinely shared across
@@ -77,6 +79,17 @@ without an app-wide store:
 
 A new value for those panels goes into `ClimberCtx`; a new comment action goes into `commentApi`.
 
+## The React contexts that exist
+
+| Context | Scope | Value | Why a context |
+|---|---|---|---|
+| `AuthContext` (`src/AuthContext.tsx`) | the whole app (`main.jsx`) | `{ session, user, loading, login, logout }` | the session is read by screens in five files; one listener instead of one per caller |
+| `ConfidenceCtx` (`lib/confidence.jsx`) | `App` provides it around `RouteDetail` only | `{ levels, routeId, onFlag }` | the section headings (`SL` in core) are drawn by many components; null off the route page |
+| `ClimberCtx` (`lib/DbAreaBrowser.jsx`) | the Climbs area browser | `{ wishlist, profile, completedIds, rankSuggested, discSlots }` | the one measured drilling cluster, above |
+
+`usePasswordRecovery()` (`lib/auth.js`) keeps a listener of its own on purpose: it waits for the
+`PASSWORD_RECOVERY` event, which can fire before React mounts, and latches it at import time.
+
 ## Why there is no global client store
 
 - **The shared data already has one.** Moving server state out of react-query into Context or
@@ -88,6 +101,9 @@ A new value for those panels goes into `ClimberCtx`; a new comment action goes i
   others) along with it. Nobody using the app would see a difference.
 - **A context re-renders every consumer on every change of its value.** Today an `App` render
   already re-renders its subtree, so a store would not make anything faster.
+- **Auth is the exception, and it is small.** The session is one value with many readers and one
+  writer (Supabase), and it is not database data react-query caches, so it got the app's one
+  app-wide context (#2811); its readers moved onto it on 2026-10-29.
 - **A local context is the ceiling.** When a cluster of values drills through components that
   never read them, give that subtree its own context, as `ClimberCtx` does, rather than promoting
   the values to an app-wide store.

@@ -1,0 +1,1011 @@
+[
+ {
+  "lu": "co_lu_shavano_tabeguache",
+  "leg": 0,
+  "peak": "Mount Shavano",
+  "route": "Standard Route",
+  "pick": {
+   "id": "co_mount_shavano_east_slopes",
+   "name": "East Slopes",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Mount Shavano",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_mount_shavano_east_slopes",
+    "name": "East Slopes",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Mount Shavano",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_shavano_tabeguache",
+  "leg": 1,
+  "peak": "Tabeguache Peak",
+  "route": "Standard Route (shared with Shavano)",
+  "pick": {
+   "id": "co_tabeguache_peak_via_mount_shavano",
+   "name": "Via Mt. Shavano",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Tabeguache Peak",
+   "score": 0.3333333333333333
+  },
+  "others": [
+   {
+    "id": "co_tabeguache_peak_via_mount_shavano",
+    "name": "Via Mt. Shavano",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Tabeguache Peak",
+    "score": 0.3333333333333333
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_massive_north_massive",
+  "leg": 0,
+  "peak": "North Massive",
+  "route": "South ridge from the Halfmoon Lakes basin",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_massive_north_massive",
+  "leg": 1,
+  "peak": "Mount Massive",
+  "route": "Southwest Slopes (used as the descent)",
+  "pick": {
+   "id": "co_mount_massive_east_slopes",
+   "name": "East Slopes",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Mount Massive",
+   "score": 0.2
+  },
+  "others": [
+   {
+    "id": "co_mount_massive_east_slopes",
+    "name": "East Slopes",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Mount Massive",
+    "score": 0.2
+   },
+   {
+    "id": "co_massive_problem",
+    "name": "Massive Problem",
+    "disc": "alpine",
+    "grade": "5.11b/c",
+    "area": "A Massive Pain in the ASS",
+    "score": 0
+   },
+   {
+    "id": "co_a_massive_disappointment",
+    "name": "A Massive Disappointment",
+    "disc": "alpine",
+    "grade": "5.5",
+    "area": "A Massive Pain in the ASS",
+    "score": 0
+   },
+   {
+    "id": "co_massive_cheater",
+    "name": "Massive Cheater",
+    "disc": "alpine",
+    "grade": "5.5",
+    "area": "A Massive Pain in the ASS",
+    "score": 0
+   },
+   {
+    "id": "co_massive_commitment_issues",
+    "name": "Massive Commitment Issues",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "A Massive Pain in the ASS",
+    "score": 0
+   },
+   {
+    "id": "co_massive_high",
+    "name": "Massive High",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "A Massive Pain in the ASS",
+    "score": 0
+   },
+   {
+    "id": "co_massive_hemorrhoid",
+    "name": "Massive Hemorrhoid",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "A Massive Pain in the ASS",
+    "score": 0
+   },
+   {
+    "id": "co_massive_penetration",
+    "name": "Massive Penetration",
+    "disc": "alpine",
+    "grade": "5.9-",
+    "area": "A Massive Pain in the ASS",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_kit_carson_challenger_columbia",
+  "leg": 0,
+  "peak": "Kit Carson Peak",
+  "route": "North Ridge",
+  "pick": {
+   "id": "co_north_ridge_of_kit_carson",
+   "name": "North Ridge of Kit Carson",
+   "disc": "alpine",
+   "grade": "4th",
+   "area": "Kit Carson Peak",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "co_north_ridge_of_kit_carson",
+    "name": "North Ridge of Kit Carson",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Kit Carson Peak",
+    "score": 1
+   },
+   {
+    "id": "co_kit_carson_peak_via_challenger",
+    "name": "Via Challenger Point",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Kit Carson Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_kit_carson_challenger_columbia",
+  "leg": 1,
+  "peak": "Columbia Point",
+  "route": "Ridge from the Kit Carson saddle",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_kit_carson_challenger_columbia",
+  "leg": 2,
+  "peak": "Challenger Point",
+  "route": "Kit Carson Avenue",
+  "pick": {
+   "id": "co_challenger_point_north_slope",
+   "name": "North Slope",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Challenger Point",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_challenger_point_north_slope",
+    "name": "North Slope",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Challenger Point",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_sherman_gemini_sheridan",
+  "leg": 0,
+  "peak": "Mount Sherman",
+  "route": "Standard Route",
+  "pick": {
+   "id": "co_mount_sherman_southwest_ridge",
+   "name": "Southwest Ridge",
+   "disc": "scrambling",
+   "grade": "Class 1",
+   "area": "Mount Sherman",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_mount_sherman_southwest_ridge",
+    "name": "Southwest Ridge",
+    "disc": "scrambling",
+    "grade": "Class 1",
+    "area": "Mount Sherman",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_sherman_gemini_sheridan",
+  "leg": 1,
+  "peak": "Gemini Peak",
+  "route": "Ridge from Sherman",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_sherman_gemini_sheridan",
+  "leg": 2,
+  "peak": "Dyer Mountain",
+  "route": "East ridge (optional)",
+  "pick": {
+   "id": "co_dyer_mountain_southeast_slopes",
+   "name": "Southeast Slopes",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Dyer Mountain",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_dyer_mountain_southeast_slopes",
+    "name": "Southeast Slopes",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Dyer Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_sherman_gemini_sheridan",
+  "leg": 3,
+  "peak": "Mount Sheridan",
+  "route": "Ridge from the Sherman-Sheridan saddle",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_culebra_red",
+  "leg": 0,
+  "peak": "Culebra Peak",
+  "route": "Northwest Ridge",
+  "pick": {
+   "id": "co_culebra_peak_northwest_ridge",
+   "name": "Northwest Ridge",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Culebra Peak",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "co_culebra_peak_northwest_ridge",
+    "name": "Northwest Ridge",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Culebra Peak",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_culebra_red",
+  "leg": 1,
+  "peak": "Red Mountain",
+  "route": "Saddle and north ridge",
+  "pick": {
+   "id": "co_red_mountain_north_ridge_from_culebra_peak",
+   "name": "North Ridge (from Culebra Peak)",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Red Mountain",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "co_red_mountain_north_ridge_from_culebra_peak",
+    "name": "North Ridge (from Culebra Peak)",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Red Mountain",
+    "score": 0.5
+   },
+   {
+    "id": "co_redcloud_peak_northeast_ridge",
+    "name": "Northeast Ridge",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Redcloud Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_lindsey_iron_nipple_huerfano",
+  "leg": 0,
+  "peak": "Mount Lindsey",
+  "route": "Standard gully route and northwest ridge",
+  "pick": {
+   "id": "co_mount_lindsey_northwest_gully",
+   "name": "Northwest Gully",
+   "disc": "scrambling",
+   "grade": "Class 3",
+   "area": "Mount Lindsey Routes",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "co_mount_lindsey_northwest_gully",
+    "name": "Northwest Gully",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Mount Lindsey Routes",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_lindsey_iron_nipple_huerfano",
+  "leg": 1,
+  "peak": "Iron Nipple",
+  "route": "Ridge from the Lindsey saddle",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_lindsey_iron_nipple_huerfano",
+  "leg": 2,
+  "peak": "Huerfano Peak",
+  "route": "Ridge from Iron Nipple",
+  "pick": {
+   "id": "co_huerfano_peak_south_slopes",
+   "name": "South Slopes",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Huerfano Peak",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_huerfano_peak_south_slopes",
+    "name": "South Slopes",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Huerfano Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_evans_spalding",
+  "leg": 0,
+  "peak": "Mount Spalding",
+  "route": "Ridge from Summit Lake",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_evans_spalding",
+  "leg": 1,
+  "peak": "Mount Evans",
+  "route": "West Ridge",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_north_face_snowfield",
+    "name": "North Face Snowfield",
+    "disc": "mountaineering",
+    "grade": "Mod. Snow",
+    "area": "Mt. Blue Sky (formerly Mount Evans)",
+    "score": 0
+   },
+   {
+    "id": "co_diamond_couloir",
+    "name": "Diamond Couloir",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Mt. Blue Sky (formerly Mount Evans)",
+    "score": 0
+   },
+   {
+    "id": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_crystal_couloir",
+    "name": "Crystal Couloir",
+    "disc": "mountaineering",
+    "grade": "Steep Snow",
+    "area": "Mt. Blue Sky (formerly Mount Evans)",
+    "score": 0
+   },
+   {
+    "id": "co_sawtooth_traverse",
+    "name": "Sawtooth Traverse",
+    "disc": "alpine",
+    "grade": "3rd",
+    "area": "Sawtooth Ridge, Mt. Bierstadt/Evans combo",
+    "score": 0
+   },
+   {
+    "id": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_bad_finger_couloir_the",
+    "name": "Bad Finger Couloir, The",
+    "disc": "mountaineering",
+    "grade": "Steep Snow",
+    "area": "Mt. Blue Sky (formerly Mount Evans)",
+    "score": 0
+   },
+   {
+    "id": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_goldfinger_couloir",
+    "name": "Goldfinger Couloir",
+    "disc": "mountaineering",
+    "grade": "Steep Snow PG13",
+    "area": "Mt. Blue Sky (formerly Mount Evans)",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_holy_cross_halo_ridge",
+  "leg": 0,
+  "peak": "Notch Mountain",
+  "route": "East slope from Half Moon Pass",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_direct_south_ridge",
+    "name": "Direct South Ridge",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Notchtop",
+    "score": 0
+   },
+   {
+    "id": "co_instant_clarification_aka_rap_route",
+    "name": "Instant Clarification (AKA Rap Route)",
+    "disc": "alpine",
+    "grade": "5.9+",
+    "area": "Notchtop",
+    "score": 0
+   },
+   {
+    "id": "co_mornin",
+    "name": "Mornin'",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Notchtop",
+    "score": 0
+   },
+   {
+    "id": "co_relief_train",
+    "name": "Relief Train",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Notchtop",
+    "score": 0
+   },
+   {
+    "id": "co_spiral_route",
+    "name": "Spiral Route",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Notchtop",
+    "score": 0
+   },
+   {
+    "id": "co_religion",
+    "name": "Religion",
+    "disc": "alpine",
+    "grade": "5.8",
+    "area": "Notchtop",
+    "score": 0
+   },
+   {
+    "id": "co_white_room",
+    "name": "White Room",
+    "disc": "alpine",
+    "grade": "5.11",
+    "area": "Notchtop",
+    "score": 0
+   },
+   {
+    "id": "co_laid_back_a_k_a_ne_ridge",
+    "name": "Laid Back (a.k.a. NE Ridge)",
+    "disc": "alpine",
+    "grade": "5.8",
+    "area": "Notchtop",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_holy_cross_halo_ridge",
+  "leg": 1,
+  "peak": "Mount of the Holy Cross",
+  "route": "Halo Ridge",
+  "pick": {
+   "id": "co_holy_cross_ridge_north_section_from_half_moon_creek",
+   "name": "North Section from Half Moon Creek",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Holy Cross Ridge",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_holy_cross_ridge_north_section_from_half_moon_creek",
+    "name": "North Section from Half Moon Creek",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Holy Cross Ridge",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_vestal_arrow",
+  "leg": 0,
+  "peak": "Vestal Peak",
+  "route": "Wham Ridge",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_wham_ridge",
+    "name": "Wham Ridge",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Vestal Peak",
+    "score": 1
+   },
+   {
+    "id": "co_center_shift_on_wham_ridge",
+    "name": "Center Shift on Wham Ridge",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Vestal Peak",
+    "score": 1
+   },
+   {
+    "id": "co_vestal_peak_south_face",
+    "name": "South Face",
+    "disc": "scrambling",
+    "grade": "Class 2+",
+    "area": "Vestal Peak",
+    "score": 0
+   },
+   {
+    "id": "co_east_face_2",
+    "name": "East Face",
+    "disc": "alpine",
+    "grade": "5.8",
+    "area": "Vestal Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_vestal_arrow",
+  "leg": 1,
+  "peak": "Arrow Peak",
+  "route": "Northeast Ramp",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_ripsaw_northeast_ridge",
+    "name": "Ripsaw/Northeast Ridge",
+    "disc": "alpine",
+    "grade": "5.10a",
+    "area": "Arrowhead",
+    "score": 0.5
+   },
+   {
+    "id": "co_south_ramp",
+    "name": "South Ramp",
+    "disc": "alpine",
+    "grade": "Easy 5th",
+    "area": "Arrowhead",
+    "score": 0.5
+   },
+   {
+    "id": "co_arrow_peak_east_ramp",
+    "name": "East Ramp",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Arrow Peak",
+    "score": 0.5
+   },
+   {
+    "id": "co_ramp_tramp",
+    "name": "Ramp Tramp",
+    "disc": "alpine",
+    "grade": "5.8+",
+    "area": "Arrowhead",
+    "score": 0.5
+   },
+   {
+    "id": "co_lower_ramp",
+    "name": "Lower Ramp",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Arrow Peak",
+    "score": 0.5
+   },
+   {
+    "id": "co_rain_dance",
+    "name": "Rain Dance",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Arrowhead",
+    "score": 0
+   },
+   {
+    "id": "co_arrow_spire_west_face",
+    "name": "Arrow Spire West Face",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Arrow Peak",
+    "score": 0
+   },
+   {
+    "id": "co_refugium",
+    "name": "Refugium",
+    "disc": "alpine",
+    "grade": "5.10a",
+    "area": "Arrowhead",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_grenadier_traverse",
+  "leg": 0,
+  "peak": "Arrow Peak",
+  "route": "Northeast Ramp",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_ripsaw_northeast_ridge",
+    "name": "Ripsaw/Northeast Ridge",
+    "disc": "alpine",
+    "grade": "5.10a",
+    "area": "Arrowhead",
+    "score": 0.5
+   },
+   {
+    "id": "co_south_ramp",
+    "name": "South Ramp",
+    "disc": "alpine",
+    "grade": "Easy 5th",
+    "area": "Arrowhead",
+    "score": 0.5
+   },
+   {
+    "id": "co_arrow_peak_east_ramp",
+    "name": "East Ramp",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Arrow Peak",
+    "score": 0.5
+   },
+   {
+    "id": "co_ramp_tramp",
+    "name": "Ramp Tramp",
+    "disc": "alpine",
+    "grade": "5.8+",
+    "area": "Arrowhead",
+    "score": 0.5
+   },
+   {
+    "id": "co_lower_ramp",
+    "name": "Lower Ramp",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Arrow Peak",
+    "score": 0.5
+   },
+   {
+    "id": "co_rain_dance",
+    "name": "Rain Dance",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Arrowhead",
+    "score": 0
+   },
+   {
+    "id": "co_arrow_spire_west_face",
+    "name": "Arrow Spire West Face",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Arrow Peak",
+    "score": 0
+   },
+   {
+    "id": "co_refugium",
+    "name": "Refugium",
+    "disc": "alpine",
+    "grade": "5.10a",
+    "area": "Arrowhead",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_grenadier_traverse",
+  "leg": 1,
+  "peak": "Vestal Peak",
+  "route": "South face",
+  "pick": {
+   "id": "co_vestal_peak_south_face",
+   "name": "South Face",
+   "disc": "scrambling",
+   "grade": "Class 2+",
+   "area": "Vestal Peak",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "co_vestal_peak_south_face",
+    "name": "South Face",
+    "disc": "scrambling",
+    "grade": "Class 2+",
+    "area": "Vestal Peak",
+    "score": 1
+   },
+   {
+    "id": "co_wham_ridge",
+    "name": "Wham Ridge",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Vestal Peak",
+    "score": 0
+   },
+   {
+    "id": "co_center_shift_on_wham_ridge",
+    "name": "Center Shift on Wham Ridge",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Vestal Peak",
+    "score": 0
+   },
+   {
+    "id": "co_east_face_2",
+    "name": "East Face",
+    "disc": "alpine",
+    "grade": "5.8",
+    "area": "Vestal Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_grenadier_traverse",
+  "leg": 2,
+  "peak": "West Trinity",
+  "route": "West ridge",
+  "pick": {
+   "id": "co_north_face_of_west_trinity_peak",
+   "name": "North Face of West Trinity Peak",
+   "disc": "alpine",
+   "grade": "Easy 5th",
+   "area": "West Trinity Peak",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "co_north_face_of_west_trinity_peak",
+    "name": "North Face of West Trinity Peak",
+    "disc": "alpine",
+    "grade": "Easy 5th",
+    "area": "West Trinity Peak",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_grenadier_traverse",
+  "leg": 3,
+  "peak": "Trinity Peak",
+  "route": "Ledge system and chimney",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_trinity_peak_west_ridge",
+    "name": "West Ridge",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Trinity Peak",
+    "score": 0
+   },
+   {
+    "id": "co_north_face_of_west_trinity_peak",
+    "name": "North Face of West Trinity Peak",
+    "disc": "alpine",
+    "grade": "Easy 5th",
+    "area": "West Trinity Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_grenadier_traverse",
+  "leg": 4,
+  "peak": "East Trinity",
+  "route": "West gully and south ridge",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_pigeon_turret",
+  "leg": 0,
+  "peak": "Turret Peak",
+  "route": "Ridge from the Pigeon-Turret saddle",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_turret_peak_northwest_slope",
+    "name": "Northwest Slope",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Turret Peak",
+    "score": 0
+   },
+   {
+    "id": "co_west_gully",
+    "name": "West Gully",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Turret Ridge",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_pigeon_turret",
+  "leg": 1,
+  "peak": "Pigeon Peak",
+  "route": "West gully and southwest slopes",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_pigeon_peak_northwest_couloir",
+    "name": "Northwest Couloir",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Pigeon Peak",
+    "score": 0
+   },
+   {
+    "id": "co_north_face_variation",
+    "name": "North Face Variation",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Pigeon Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_handies_whitecross",
+  "leg": 0,
+  "peak": "Whitecross Mountain",
+  "route": "South ridge",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_handies_whitecross",
+  "leg": 1,
+  "peak": "Handies Peak",
+  "route": "Ridge from Whitecross",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_handies_whitecross",
+  "leg": 2,
+  "peak": "Peak 13,795",
+  "route": "East ridge of Handies",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_jones_american_niagara",
+  "leg": 0,
+  "peak": "American Peak",
+  "route": "Slope to the American-Jones saddle",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_jones_american_niagara",
+  "leg": 1,
+  "peak": "Jones Mountain",
+  "route": "Ridge from the saddle",
+  "pick": {
+   "id": "co_jones_mountain_northeast_ridge",
+   "name": "Northeast Ridge",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Jones Mountain",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_jones_mountain_northeast_ridge",
+    "name": "Northeast Ridge",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Jones Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_jones_american_niagara",
+  "leg": 2,
+  "peak": "Niagara Peak",
+  "route": "Northwest ridge (optional class 3)",
+  "pick": {
+   "id": "co_niagara_peak_northeast_ridge",
+   "name": "Northeast Ridge",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Niagara Peak",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_niagara_peak_northeast_ridge",
+    "name": "Northeast Ridge",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Niagara Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_audubon_paiute",
+  "leg": 0,
+  "peak": "Mount Audubon",
+  "route": "Mount Audubon Trail",
+  "pick": {
+   "id": "co_mt_audubon_crooked_couloir",
+   "name": "Crooked Couloir",
+   "disc": "mountaineering",
+   "grade": "Mod. Snow",
+   "area": "Mt. Audubon",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_mt_audubon_crooked_couloir",
+    "name": "Crooked Couloir",
+    "disc": "mountaineering",
+    "grade": "Mod. Snow",
+    "area": "Mt. Audubon",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_audubon_paiute",
+  "leg": 1,
+  "peak": "Paiute Peak",
+  "route": "South ridge along the divide",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_paiute_peak_ghost_dancer_couloir",
+    "name": "Ghost Dancer Couloir",
+    "disc": "mountaineering",
+    "grade": "Mod. Snow",
+    "area": "Paiute Peak",
+    "score": 0
+   },
+   {
+    "id": "co_north_face_bypass",
+    "name": "North Face Bypass",
+    "disc": "alpine",
+    "grade": "5.5",
+    "area": "Paiute Peak",
+    "score": 0
+   }
+  ]
+ }
+]

@@ -1,0 +1,96 @@
+[
+ {
+  "id": "wa_cosho_peak_scramble",
+  "slug": "ragged-ridge-wa",
+  "verdict": "reject",
+  "reason": "The FKT is a 21-mile four-peak link-up (Mesachie, Katsuk, Kimtah, Cosho) from Easy Pass, not a Cosho-only scramble.",
+  "sources": []
+ },
+ {
+  "id": "wa_east_ridge_6",
+  "slug": "mt-thomson-west-ridge-wa",
+  "verdict": "reject",
+  "reason": "The FKT page is for Thomson's West Ridge (low-fifth technical), a different line from our East Ridge walk-up.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-thomson-west-ridge-wa"
+  ]
+ },
+ {
+  "id": "wa_gorillas_direct",
+  "slug": "mt-stuart",
+  "verdict": "reject",
+  "reason": "The FKT follows the Cascadian Couloir via Longs Pass, not the 5.10d West Face Wall Gorillas Direct.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-stuart"
+  ]
+ },
+ {
+  "id": "wa_kendall_peak_standard",
+  "slug": "mt-thomson-west-ridge-wa",
+  "verdict": "reject",
+  "reason": "The FKT is named for Mt Thomson's West Ridge, a different peak from Kendall Peak.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-thomson-west-ridge-wa"
+  ]
+ },
+ {
+  "id": "wa_king_kong_gorillas_direct_direct",
+  "slug": "mt-stuart",
+  "verdict": "reject",
+  "reason": "The FKT follows the Cascadian Couloir, not the 5.12a West Face Wall route.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-stuart"
+  ]
+ },
+ {
+  "id": "wa_mount_daniel_daniel_glacier",
+  "slug": "mt-daniel-wa",
+  "verdict": "accept",
+  "reason": "FKT describes Cathedral Pass, PCT, Peggy's Pond, SE ridge to the West Peak; WTA's Mount Daniel page describes the same Peggy's Pond ridge route ending in a few class 3 moves.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-daniel-wa",
+   "https://www.wta.org/go-hiking/hikes/mount-daniel"
+  ]
+ },
+ {
+  "id": "wa_mount_pilchuck_standard_route",
+  "slug": "mt-pilchuck",
+  "verdict": "accept",
+  "reason": "FKT goes trailhead to lookout and back; WTA describes the same trail to the summit lookout as the page's single main route.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-pilchuck",
+   "https://www.wta.org/go-hiking/hikes/mount-pilchuck"
+  ]
+ },
+ {
+  "id": "wa_mount_shuksan_sulphide_glacier",
+  "slug": "mt-shuksan-sulphide-glacier-wa",
+  "verdict": "accept",
+  "reason": "FKT is the Sulphide Glacier route car to car; WTA confirms the Shannon Ridge trail is the approach climbers use for the Sulphide Glacier.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-shuksan-sulphide-glacier-wa",
+   "https://www.wta.org/go-hiking/hikes/shannon-ridge"
+  ]
+ },
+ {
+  "id": "wa_mount_st_helens_monitor_ridge",
+  "slug": "mt-st-helens-wa",
+  "verdict": "accept",
+  "reason": "The page's GPS track is a Monitor Ridge file with a trailhead-summit-trailhead category, and WTA describes Ptarmigan Trail then Monitor Ridge to the rim from Climbers Bivouac.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-st-helens-wa",
+   "https://www.wta.org/go-hiking/hikes/mount-st-helens-monitor-ridge"
+  ]
+ },
+ {
+  "id": "wa_mount_stuart_cascadian_couloir",
+  "slug": "mt-stuart",
+  "verdict": "accept",
+  "reason": "FKT's primary route is Ingalls trailhead over Longs Pass up the Cascadian Couloir, and Wikipedia names the Cascadian Couloir as Stuart's standard route.",
+  "sources": [
+   "https://fastestknowntime.com/route/mt-stuart",
+   "https://en.wikipedia.org/wiki/Mount_Stuart",
+   "https://www.wta.org/go-hiking/hikes/longs-pass"
+  ]
+ }
+]

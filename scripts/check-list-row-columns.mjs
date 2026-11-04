@@ -25,6 +25,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const require_ = createRequire(import.meta.url);
 const { parse } = require_("@babel/parser");
@@ -38,6 +39,10 @@ const FILES = ["lib/db.js", "lib/DbAreaBrowser.jsx", "lib/grade.js", "lib/outing
 // route and `sibs` the thin list, so only `sibs` counts there.
 const ENTRIES = [
   { file: "lib/DbAreaBrowser.jsx", fn: "RouteRow", rows: ["r"] },
+  // The area page's CLASSIC CLIMBS HERE ranks the same thin rows (classic, classic_score, guide_stars, stars).
+  { file: "lib/DbAreaBrowser.jsx", fn: "isAreaClassic", rows: ["r"] },
+  { file: "lib/DbAreaBrowser.jsx", fn: "classicQuality", rows: ["r"] },
+  { file: "lib/DbAreaBrowser.jsx", fn: "areaClassics", rows: ["routes"] },
   { file: "lib/DbAreaBrowser.jsx", fn: "SummitBriefing", rows: ["routes"] },
   { file: "RouteDetail.jsx", fn: "approachFinishes" },
   { file: "RouteDetail.jsx", fn: "approachSibOpts" },
@@ -51,7 +56,8 @@ const problems = [];
 
 const asts = {}, fns = {}, consts = {};
 for (const rel of FILES) {
-  const src = fs.readFileSync(path.join(ROOT, rel), "utf8");
+  // Through readAppFile(): the stitched page, so WallNeighbours (moved to src/components/ in PR56) stays read.
+  const src = readAppFile(path.join(ROOT, rel));
   const ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: true });
   asts[rel] = ast;
   traverse(ast, {

@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // check:generic-area-names — is any area named only by DISCIPLINE, not by place?
 //
 // 2026-10-07, the owner: "I notice in many areas that an area will be just called bouldering, ice
@@ -33,7 +34,7 @@ import path from "path";
 import { selectAll } from "./lib/supabase-env.mjs";
 import { genericAreaName } from "./lib/generic-area-name.mjs";
 
-const ROOT = path.resolve(new URL("..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const EXEMPT = JSON.parse(fs.readFileSync(path.join(ROOT, "scripts/data/generic-area-names-exempt.json"), "utf8")).exempt;
 
 await selectAll("areas", "id", "id=eq.__warmup_no_such_area__", { pageSize: 1 });   // cold start: see check-area-counts.mjs

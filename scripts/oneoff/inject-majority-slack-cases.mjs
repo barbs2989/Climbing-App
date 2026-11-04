@@ -33,7 +33,9 @@ const CASES = [
 
   { name: "flat-two", expect: "fail",
     why: "a flat two of slack — a three-point line qualifies with ONE vertex on a pin",
-    says: /FAIL\s+predicate: a THREE-point line with one vertex on a pin qualified/,
+    // The guard's flat-two catch is now the four-point case (two is half the line there, not a
+    // minority); its three-point case is judged by the pin side of the predicate and stays ok.
+    says: /FAIL\s+predicate: TWO vertices off a FOUR-point line must not qualify/,
     from: RULE, to: "const slackFor = n => (n < 3 ? 0 : 2);" },
 
   { name: "slack-grows-with-length", expect: "fail",

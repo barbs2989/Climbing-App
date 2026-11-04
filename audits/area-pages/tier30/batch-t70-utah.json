@@ -1,0 +1,82 @@
+{
+ "ut_shady_side": {
+  "_expect": {
+   "name": "Shady Side",
+   "region": "Utah"
+  },
+  "blurb": "Shady Side is the cooler half of Black Rocks, a small gully of short, dark basalt walls on the edge of St. George. Nearly all of the climbing here is bolted sport, with a few trad lines mixed in. The rock is slick and low on friction, with sharp pockets and edges for holds, and the routes are brief, roughly 40 to 50 feet. Grades run from the 5.8s up into the low 5.12s, but the bulk sits in the 5.10 and 5.11 range. As the name suggests, this side sits in the shade for most of the day, which helps when the black rock heats up, though it picks up some sun in mid-afternoon. Quick to reach from town, so it suits a short session.",
+  "parking_note": "Pull off at an unmarked wide spot beside Highway 18, a couple of miles north of the Sunset Boulevard junction. A short walk along the fence line leads to the top of the shady wall, and a quick scramble drops into the gully.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/105717247/black-rocks",
+    "https://sendage.com/area/black-rocks-st-george-ut-usa"
+   ]
+  }
+ },
+ "ut_chris_castle_mountain": {
+  "_expect": {
+   "name": "Chris Castle Mountain",
+   "region": "Utah"
+  },
+  "blurb": "Chris Castle Mountain is a low granite knob poking out of the junipers on the Three Peaks flats west of Cedar City. It is a local, close-to-town spot rather than a destination. Bouldering makes up over half the climbing, mostly in the easy to moderate V range, with a handful of harder problems. Short trad lines are the next most common, mostly between 5.6 and 5.8 with a few harder ones, and there are a few sport routes plus the odd multi-pitch line. The rock faces every direction, so on most days you can find either sun or shade. Dirt roads and ATV tracks wind around the formation.",
+  "parking_note": "From Cedar City head west on Highway 56, then north on Lund Highway for about five miles. Turn west on Mid-Valley Road for roughly two miles, then take a dirt track just beyond a large house with a white fence and follow the best-worn road toward the rock. Drive up to the formation if your vehicle has some clearance.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/119272402/chris-castle-mountain",
+    "https://mountainproject.com/area/106776323/three-peaks"
+   ]
+  }
+ },
+ "ut_beckey_s_wall_area": {
+  "_expect": {
+   "name": "Beckey's Wall Area",
+   "region": "Utah"
+  },
+  "blurb": "This is the left-hand portion of Gate Buttress, a buttress just up Little Cottonwood Canyon. The climbing is almost entirely trad, in multi-pitch lines on dihedrals and slabs. Most routes fall between 5.7 and 5.10, which makes it a friendly place for climbers building up to longer outings, though a few 5.11 and 5.12 lines exist. Reaching the start of the climbs takes a trail past the Gate Boulders, a traverse along the base and a bit of slick third-class slab scrambling to the ledges. Several climbs can be strung together for long days.",
+  "approach": "From the lot, follow the main trail west past the Gate Boulders and take the right fork up toward the Dihedrals. Traverse along the base, then scramble up third-class slabs to the ledge system where the routes begin.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/111913367",
+    "https://www.mountainproject.com/v/gate-buttress/106002442"
+   ]
+  }
+ },
+ "ut_technicolor_wall": {
+  "_expect": {
+   "name": "Technicolor Wall",
+   "region": "Utah"
+  },
+  "blurb": "Technicolor Wall is a sandstone cliff in Indian Creek, the Utah desert's famous crack-climbing zone. Nearly all of the climbing is trad, on parallel-sided cracks, and the grades are concentrated tightly: almost every route is 5.10 or 5.11, with only a couple easier and one harder. That makes it a solid stop for climbers who are comfortable jamming and want to work on steady, sustained crack technique. Parts of the wall face south and east, so it soaks up sun, and a dirt road leads to a roadside camping area near its base.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105795277/technicolor-wall",
+    "https://en.wikipedia.org/wiki/Indian_Creek_(climbing_area)"
+   ]
+  }
+ },
+ "ut_area_51": {
+  "_expect": {
+   "name": "Area 51",
+   "region": "Utah"
+  },
+  "blurb": "Area 51 is a compact cluster of sandstone boulders in New Joe's, one of the main sectors of the Joe's Valley bouldering zone. It sits a short uphill walk from the parking area. The problems range from easy to very hard, with the largest group around V3, and a few of the valley's hardest lines mixed in alongside friendly classics. Landings are generally good. The classic problems pick up sun until late afternoon. Joe's sandstone loses much of its strength when wet, so give it time to dry after rain or snow before pulling on holds.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105880398/area-51",
+    "https://blm.gov/visit/new-joes-bouldering-area-cg",
+    "https://madboulder.org/joe-s-valley"
+   ]
+  }
+ },
+ "_skipped": {
+  "ut_broken_tooth": "only one fetched page (MP) actually described the wall; others did not mention it",
+  "ut_perimeter_the": "only one fetched page (MP) described it; other pages were generic Joe's Valley",
+  "ut_little_rock_canyon_boulders": "only Mountain Project, one page possibly a neighbouring canyon",
+  "ut_unknown_pleasures": "only one page described it",
+  "ut_9th_street": "neither page described the crag in any detail"
+ },
+ "_conflicts": {
+  "ut_9th_street": "rock: stored granite, sources say quartzite (https://www.mountainproject.com/area/107539662/ogden); rock left out of blurb",
+  "ut_beckey_s_wall_area": "rock: stored quartz monzonite, MP says granite (https://www.mountainproject.com/v/111913367); rock left out of blurb"
+ }
+}

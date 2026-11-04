@@ -1,0 +1,237 @@
+[
+ {
+  "id": "wa_mount_hinman_west_route",
+  "verdict": "rejected",
+  "trailhead": "",
+  "trailheadDirection": "",
+  "approach": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/necklace-valley"
+  ],
+  "note": "Only page opened calls La Bohn route the \"standard route\"; no opened page ties it to the West Route (mountaineers.org/SummitPost 403).",
+  "found": false,
+  "unverified": "rejected: Only page opened calls La Bohn route the \"standard route\"; no opened page ties it to the West Route (mountaineers.org/SummitPost 403)."
+ },
+ {
+  "id": "wa_old_snowy_mountain_west_route",
+  "verdict": "rejected",
+  "trailhead": "",
+  "trailheadDirection": "",
+  "approach": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/old-snowy-mountain-elk-pass"
+  ],
+  "note": "No opened page names a West Route on Old Snowy; searches attach the name \"West Route\" to Gilbert Peak instead.",
+  "found": false,
+  "unverified": "rejected: No opened page names a West Route on Old Snowy; searches attach the name \"West Route\" to Gilbert Peak instead."
+ },
+ {
+  "id": "wa_table_mountain_ice_death_picnic",
+  "verdict": "corrected",
+  "trailhead": "Mt. Baker Ski Area upper lot (Bagley Lakes Trailhead)",
+  "trailheadDirection": "From Glacier, drive Mount Baker Highway (SR 542) east to the upper Mt. Baker Ski Area parking lot at the Bagley Lakes Trailhead, milepost 54.6. The highway is gated here for the season and has been closed beyond since October 25, 2026, so this is where cars stop in winter; in summer the road continues to the Artist Point lot.",
+  "approach": "Reach this climb on skis from the Mt. Baker Ski Area upper lot (Bagley Lakes Trailhead). Skin up to Herman Saddle, then traverse out beneath the west face of Table Mountain across a steep slope that can slide. The climb starts about halfway along the face, in a shallow cleft where patches of ice link up.",
+  "numbersUsed": [
+   "542",
+   "54.6",
+   "25",
+   "2026"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.mountainproject.com/route/123073490/death-picnic",
+   "https://www.mountainproject.com/area/123073235/table-mountain-ice",
+   "https://www.wta.org/go-hiking/hikes/table-mountain",
+   "https://www.fs.usda.gov/r06/mbs/alerts"
+  ],
+  "note": "Winter climb: SR 542 gated at ski area lot since 25 Oct 2026 (agency alert), so Artist Point drive/24 miles dropped.",
+  "found": true,
+  "unverified": "corrected: Winter climb: SR 542 gated at ski area lot since 25 Oct 2026 (agency alert), so Artist Point drive/24 miles dropped."
+ },
+ {
+  "id": "wa_table_mountain_ice_east_face",
+  "verdict": "corrected",
+  "trailhead": "Mt. Baker Ski Area upper lot (Bagley Lakes Trailhead)",
+  "trailheadDirection": "From Glacier, drive Mount Baker Highway (SR 542) east to the upper Mt. Baker Ski Area parking lot at the Bagley Lakes Trailhead, milepost 54.6. The highway is gated here for the season and has been closed beyond since October 25, 2026, so this is where cars stop in winter; in summer the road continues to the Artist Point lot.",
+  "approach": "From the Mt. Baker Ski Area upper lot (Bagley Lakes Trailhead), ski across to the foot of the east face of Table Mountain, where an obvious cleft splits the face. The climb begins by entering that cleft on steep snow.",
+  "numbersUsed": [
+   "542",
+   "54.6",
+   "25",
+   "2026"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.mountainproject.com/route/123073336/east-face",
+   "https://www.mountainproject.com/area/123073235/table-mountain-ice",
+   "https://www.wta.org/go-hiking/hikes/table-mountain",
+   "https://www.fs.usda.gov/r06/mbs/alerts"
+  ],
+  "note": "Same winter-closure fix as Death Picnic; Artist Point lot replaced by ski area lot.",
+  "found": true,
+  "unverified": "corrected: Same winter-closure fix as Death Picnic; Artist Point lot replaced by ski area lot."
+ },
+ {
+  "id": "wa_lane_peak_fly_the",
+  "verdict": "corrected",
+  "trailhead": "Narada Falls trailhead/parking",
+  "trailheadDirection": "From the Nisqually entrance of Mount Rainier National Park, drive east on Paradise Road about 14.5 miles to the Narada Falls parking lot on the right. The road between Longmire and Paradise is gated overnight from late October through the winter.",
+  "approach": "From the Narada Falls trailhead/parking, in winter and spring cross the footbridge, then climb the slope to the closed Stevens Canyon Road. At the bend in the road, head southwest into the woods and drop to the Tatoosh Creek drainage, crossing the creek where it is safe. Continue toward the north face; The Fly is the westernmost and gentlest of its three couloirs, and it starts from the base of the face at roughly 5,000 ft.",
+  "numbersUsed": [
+   "14.5",
+   "5000"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.mountainproject.com/route/117755275/fly-the",
+   "https://www.wta.org/go-hiking/hikes/narada-falls",
+   "https://www.nps.gov/mora/planyourvisit/road-status.htm"
+  ],
+  "note": "Drive: 14.5 miles per WTA (not 14, and the '1 mile before Paradise' claim was unsupported); added dated winter gate from park road status. | hand: gate stated as the yearly pattern",
+  "found": true,
+  "unverified": "corrected: Drive: 14.5 miles per WTA (not 14, and the '1 mile before Paradise' claim was unsupported); added dated winter gate from park road status. | hand: gate stated as the yearly pattern"
+ },
+ {
+  "id": "wa_main_peak_northwest_ice_couloir",
+  "verdict": "confirmed",
+  "trailhead": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+  "trailheadDirection": "From Marblemount, go straight past the last gas station onto Cascade River Road, cross the bridge and drive to the Eldorado Creek trailhead at mile 20, on the right; the last 10 miles are gravel.",
+  "approach": "From the Eldorado Creek trailhead (Cascade River Road mile 20), cross the stream on logs and follow a faint trail through boulders to a talus field near 4,000 ft. Continue to an open basin at 5,400 ft, cross the left-hand ridge near 6,000 ft, and drop down a third-class gully into the Roush Creek basin. Climb the Eldorado Glacier to where it levels near 7,500 ft, then gain the East Ridge. Traverse at about 8,100 ft to the north side, to the notch before the first rock spire, rappel into the west-facing cirque and head south to the couloir, which starts at about 7,800 ft.",
+  "numbersUsed": [
+   "20",
+   "10",
+   "4000",
+   "5400",
+   "6000",
+   "7500",
+   "8100",
+   "7800"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.mountainproject.com/route/110444620/northwest-ice-couloir",
+   "https://www.mountainproject.com/route/108131635/east-ridge",
+   "https://www.wta.org/go-hiking/hikes/eldorado-peak",
+   "https://www.nps.gov/noca/planyourvisit/road-conditions.htm"
+  ],
+  "note": "Drive and approach backed by WTA and both MP pages; park road page lists Cascade River Road OPEN (no agency-dated closure found, so none added).",
+  "found": true,
+  "unverified": "confirmed: Drive and approach backed by WTA and both MP pages; park road page lists Cascade River Road OPEN (no agency-dated closure found, so none added)."
+ },
+ {
+  "id": "wa_mesahchie_peak_2_e_ridge_via_mesahchie_icefall_couloir_variation",
+  "verdict": "confirmed",
+  "trailhead": "Easy Pass (#741)",
+  "trailheadDirection": "From Marblemount, drive SR-20 east about 45 miles; between mileposts 151 and 152, take the signed Easy Pass road on the right a short way to the trailhead lot.",
+  "approach": "From the Easy Pass (#741) trailhead, follow the Easy Pass trail and traverse the slopes across to Mesahchie Col. Scramble down north onto the Mesahchie Glacier and traverse left across it to the base of the Icefall Couloir, where the climb begins.",
+  "numbersUsed": [
+   "20",
+   "45",
+   "151",
+   "152",
+   "741"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.mountainproject.com/route/116197005/e-ridge-via-mesahchie-icefall-couloir-variation",
+   "https://www.mountainproject.com/area/116196997/mesahchie-peak",
+   "https://www.wta.org/go-hiking/hikes/easy-pass"
+  ],
+  "note": "All facts match MP route/area pages and WTA.",
+  "found": true,
+  "unverified": "confirmed: All facts match MP route/area pages and WTA."
+ },
+ {
+  "id": "wa_mount_adams_pinnacle_glacier_headwall",
+  "verdict": "corrected",
+  "trailhead": "Riley Camp Trailhead",
+  "trailheadDirection": "From Trout Lake, drive Mt. Adams Road north about 1.3 miles, then turn left onto Forest Road 23 (Buck Creek Road) and follow it about 17.5 miles to the trailhead, which is easy to miss between mileposts 38 and 37.",
+  "approach": "A free wilderness permit is self-issued at the trailhead. From the Riley Camp Trailhead, hike the Riley Camp Trail, staying off the Riley Cut-Off at the first junction, until it meets the Pacific Crest Trail. Turn south on the Pacific Crest Trail for a few minutes to Riley Creek and follow the creek up through boulders to the moraines at the foot of the Pinnacle Glacier. The headwall route begins at the base of the glacier.",
+  "numbersUsed": [
+   "1.3",
+   "23",
+   "17.5",
+   "38",
+   "37"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.mountainproject.com/route/111999792/pinnacle-glacier-headwall",
+   "https://www.oregonhikers.org/forum/viewtopic.php?p=216291",
+   "https://www.wta.org/go-hiking/hikes/riley-camp",
+   "https://www.fs.usda.gov/r06/giffordpinchot/alerts"
+  ],
+  "note": "Drive and approach verified; added wilderness permit (forest alert page). No FR 23 closure alert found; Yakama Nation permit not verifiable, none stated.",
+  "found": true,
+  "unverified": "corrected: Drive and approach verified; added wilderness permit (forest alert page). No FR 23 closure alert found; Yakama Nation permit not verifiable, none stated."
+ },
+ {
+  "id": "wa_mount_roosevelt_southeast_route",
+  "verdict": "rejected",
+  "trailhead": "",
+  "trailheadDirection": "",
+  "approach": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.yellowleaf.org/scramble/g/r/2009-10-11-roosevelt.html",
+   "https://www.wta.org/go-hiking/hikes/mount-roosevelt",
+   "https://en.wikipedia.org/wiki/Mount_Roosevelt"
+  ],
+  "note": "Log never calls its line the Southeast Route (it goes up the NE ridge from Gem Lake); Wikipedia only names SE Route as easiest, with no route description. Tie unproven.",
+  "found": false,
+  "unverified": "rejected: Log never calls its line the Southeast Route (it goes up the NE ridge from Gem Lake); Wikipedia only names SE Route as easiest, with no route description. Tie unproven."
+ },
+ {
+  "id": "wa_mt_stuart_always_the_cowboy_never_the_cow",
+  "verdict": "corrected",
+  "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+  "trailheadDirection": "From Leavenworth, turn onto Icicle Creek Road at the western edge of town and drive 8.4 miles, then turn left onto FR 7601 and follow the bumpy dirt road 3.7 miles to the trailhead. FR 7601 closes in winter, typically November to May.",
+  "approach": "From the Stuart Lake Trailhead (Trail #1599), follow the main path until it forks and bear right for Stuart Lake. After about a quarter mile, drop to the creek and find the climbers path, then keep east of Mountaineers Ridge and ascend talus or steep snow to the upper valley and the campsites near 5,400 ft below the Sherpa Glacier. The Ice Cliff Glacier, which this route climbs, lies between the Sherpa Glacier and the North Ridge.",
+  "numbersUsed": [
+   "8.4",
+   "7601",
+   "3.7",
+   "1599",
+   "5400"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.mountainproject.com/route/202874271/always-the-cowboy-never-the-cow",
+   "https://www.mountainproject.com/route/108784980/ice-cliff-glacier",
+   "https://www.wta.org/go-hiking/hikes/lake-stuart"
+  ],
+  "note": "Route page says it climbs the ice cliff glacier, so approach holds; drive rewritten from WTA (draft's 0.8 mi / FR 7600 / 4 mi unsupported).",
+  "found": true,
+  "unverified": "corrected: Route page says it climbs the ice cliff glacier, so approach holds; drive rewritten from WTA (draft's 0.8 mi / FR 7600 / 4 mi unsupported)."
+ },
+ {
+  "id": "wa_nooksack_tower_beckey_schmidtke_route",
+  "verdict": "confirmed",
+  "trailhead": "Nooksack Cirque Trailhead (Trail #750)",
+  "trailheadDirection": "From Glacier, drive SR 542 east about 12.5 miles to Hannegan Pass Road (FR 32) and turn left. After a little over 1 mile, turn onto Nooksack Cirque Road (FR 34) and follow it about 1 mile to where it ends at the trailhead parking.",
+  "approach": "From the Nooksack Cirque Trailhead (Trail #750), follow the trail and an old railbed to the Nooksack River and ford it. Bushwhack for hours to the moraine, then climb steeply through brush to the ridge and traverse to rock slabs, a usual bivy spot. Continue to a notch near 5,900 ft, make a single rappel onto the glacier, cross it and end-run a crevasse to reach the foot of the steep snow gully where the route starts.",
+  "numbersUsed": [
+   "542",
+   "12.5",
+   "32",
+   "1",
+   "34",
+   "750",
+   "5900"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://lucasfng.blogspot.com/2024/08/nooksack-tower-beckey-schmidtke-8112024.html",
+   "https://www.wta.org/go-hiking/hikes/nooksack-cirque",
+   "https://www.fs.usda.gov/r06/mbs/alerts"
+  ],
+  "note": "Drive matches WTA; approach matches the trip report; no Hannegan/FR 32/34 closure in forest alerts.",
+  "found": true,
+  "unverified": "confirmed: Drive matches WTA; approach matches the trip report; no Hannegan/FR 32/34 closure in forest alerts."
+ }
+]

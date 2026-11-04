@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 /* Does giving V-Beginner a number do ONLY what it claims?
  *
  * The reference is the PREVIOUS gradeNumFrom loaded out of git, never a copy retyped here — a
@@ -38,7 +39,7 @@ const tmp = path.join(ROOT, "scripts", `_grade-vbref-${process.pid}.mjs`);
 let OLD;
 try {
   fs.writeFileSync(tmp, execFileSync("git", ["show", `${REF}:lib/grade.js`], { cwd: ROOT, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 }));
-  ({ gradeNumFrom: OLD } = await import(`file://${tmp}`));
+  ({ gradeNumFrom: OLD } = await import(fileHref(`file://${tmp}`)));
 } finally { try { fs.unlinkSync(tmp); } catch {} }
 if (typeof OLD !== "function") { console.error(`FAIL — could not load the reference parser from ${REF}. Nothing was compared.`); process.exit(1); }
 

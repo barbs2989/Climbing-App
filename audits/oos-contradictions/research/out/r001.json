@@ -1,0 +1,163 @@
+{
+ "file": "r001.json",
+ "results": [
+  {
+   "id": "ab_mount_athabasca_aa_col",
+   "fact": "starting point of the approach",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Overview picks up from the highest point of the road beyond the parking and loading area; approach starts at the climbers' parking and follows the service road. These describe the same walk from successive points (the parking, then up the road, then onto the moraine). Route reports confirm a climbers' lot reached via the glacier-vehicle road with the moraine trail above it.",
+   "sources": [
+    "https://www.summitpost.org/mount-athabasca/150332",
+    "https://mountainconditions.ca/node/141"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ab_professor_falls_area_the_professor_falls",
+   "fact": "number of tiers/pitches",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Published listings give about 6 pitches (some logs 7) over roughly 280 m; the 'eight steps' in the tip are the ice tiers/steps that teams spread across, which is a different count from rope-length pitches. No pitch_detail table exists to contradict 6.",
+   "sources": [
+    "https://www.mountainproject.com/area/107084345/professor-falls-area",
+    "https://avalanche.ca/resources/ice-climbing/atlas/professor-falls"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ab_professor_falls_area_the_professor_falls",
+   "fact": "ropes needed for descent",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Rappels and rack both state one 60/70 m rope is enough and two ropes are a convenience; the gear list simply lists the optional second rope. Row's own fields agree on the substance.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "ab_weeping_wall_area_polar_circus",
+   "fact": "route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Guidebook-derived pages give 700 m as the overall climb (700 m gain, of which about 500 m is waterfall ice); Mountain Project lists 1650 ft (500 m) and 9 pitches, which matches the stored 503 m. The two figures measure different things (total vs ice length), and guidebooks and the topo-style listing disagree, so no single value can be adopted without choosing a convention.",
+   "sources": [
+    "https://gripped.com/?p=37135",
+    "https://www.mountainproject.com/route/106935613/polar-circus"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ar_cutthroat",
+   "fact": "beta describes a different route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "beta null",
+   "evidence": "Beta cites Rainy Pass, granite, a highway approach and an alpine ridge at grade II 5.7 - a Washington alpine ridge; the row is a 5.11d sport route at City Rock Bluff. City Rock Bluff is a low-elevation (about 500 ft) bluff in northeast Arkansas near Calico Rock with routes like 5.5-5.9+, nowhere near an alpine pass. No source gives route-specific beta, so the contaminated text is removed.",
+   "sources": [
+    "https://mountainproject.com/area/121242770/city-rock-bluff",
+    "https://www.mountainproject.com/area/105901027/arkansas"
+   ],
+   "patches": [
+    {
+     "id": "ar_cutthroat",
+     "fact": "beta describes a different route",
+     "op": "set",
+     "column": "beta",
+     "path": [],
+     "expect": "Grade II, 5.7 climbing. Short approach from highway. Rock improves significantly higher on ridge. Fair granite in approach, improves on ridge. Moderate exposure. Quick alpine climb from Rainy Pass. Uncrowded route.",
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "az_cutthroat_trout",
+   "fact": "beta describes a different route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "beta null",
+   "evidence": "Beta text (Rainy Pass, granite ridge, highway approach, grade II 5.7) is Washington alpine-ridge copy. The route is a 90 ft trad finger-crack in a shallow dihedral in the Fish Bowl on Bill Williams Mountain near Williams, Arizona, with a tree rappel; nothing about an alpine ridge. No second source for route beta, so the text is removed.",
+   "sources": [
+    "https://www.mountainproject.com/route/113279236/cutthroat-trout"
+   ],
+   "patches": [
+    {
+     "id": "az_cutthroat_trout",
+     "fact": "beta describes a different route",
+     "op": "set",
+     "column": "beta",
+     "path": [],
+     "expect": "Grade II, 5.7 climbing. Short approach from highway. Rock improves significantly higher on ridge. Fair granite in approach, improves on ridge. Moderate exposure. Quick alpine climb from Rainy Pass. Uncrowded route.",
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "az_abracadaver",
+   "fact": "descent method",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "All three fields say rappel with two ropes; descent adds an optional alternative (the neighbouring route's descent line), which route listings also mention as an alternative way down. Offering a second option is not a contradiction.",
+   "sources": [
+    "https://www.mountainproject.com/area/106321179/rockfellow-group",
+    "https://chossclimbers.com/?p=17220"
+   ],
+   "patches": []
+  },
+  {
+   "id": "bc_mount_robson_south_face_schwartz_ledges",
+   "fact": "route length",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The 1,400 m in the summit waypoint is explicitly the climb from the hut; the stored length_m 3048 (10,000 ft) is the whole route from the valley trailhead (about 840 m) to the 3954 m summit, about 3,100 m. The two measure different stretches.",
+   "sources": [
+    "https://www.mountainproject.com/v/south-faceschwartz-ledges/106985821",
+    "https://gripped.com/news/mount-robson-access-opens-soon/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ca_aiguille_extra_east_buttress",
+   "fact": "route length",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Published figures are 1,230 ft (about 375 m) and 1,234 ft (374 m) for 10 pitches, matching stored 376 m. The per-pitch lengths are rope-run estimates (including traverses and 60 m full-rope pitches) and legitimately sum above the vertical height.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201216782",
+    "https://www.mountainproject.com/route/124832929/east-buttress"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ca_castle_dome_4th_class_route",
+   "fact": "route class",
+   "verdict": "fixed",
+   "correct_value": "4th",
+   "evidence": "Mountain Project lists this exact route as a 4th class route (named so, graded 4th); SummitPost's regular route is Class 4- with commenters calling it solid 4th class. Stored grade '3rd' is the outlier against the route's own name.",
+   "sources": [
+    "https://mountainproject.com/area/105734306/castle-dome",
+    "https://www.summitpost.org/castle-dome/150876"
+   ],
+   "patches": [
+    {
+     "id": "ca_castle_dome_4th_class_route",
+     "fact": "route class",
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "3rd",
+     "value": "4th"
+    }
+   ]
+  },
+  {
+   "id": "ca_castle_dome_4th_class_route",
+   "fact": "pitches 0 on a multi-pitch line",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project lists it as 5 pitches; SummitPost says only 'several pitches'. Only one source gives a count, so no patch.",
+   "sources": [
+    "https://mountainproject.com/area/105734306/castle-dome"
+   ],
+   "patches": []
+  }
+ ]
+}

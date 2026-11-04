@@ -1,3 +1,5 @@
+import { fileHref } from "./lib/file-href.mjs";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Do the overlays that assert absence tell a FAILED READ apart from an EMPTY ACCOUNT?
 //
 // Two surfaces were shipped saying the wrong thing when a read failed, and both are behind an
@@ -36,7 +38,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { coreModuleEntry } from "./lib/guard-sources.mjs";
+import { coreModuleEntry, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(ROOT, `.outage-copy-${process.pid}.mjs`);
@@ -61,13 +63,13 @@ try {
   // Bundle INSIDE the project: node resolves `react` from the nearest node_modules, so a bundle
   // in the OS temp dir throws ERR_MODULE_NOT_FOUND. `lib/supabase.js` reads import.meta.env at
   // module scope, so it must be defined or the import throws before anything renders.
-  execFileSync("npx", ["esbuild", __coreEntry.path,
+  execFileSync(NPX, [...NPX_PRE, "esbuild", __coreEntry.path,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     "--define:import.meta.env={}", "--external:react", "--external:react-dom",
     "--external:@tanstack/react-query", "--external:react-dom/server",
     "--outfile=" + out], { stdio: "pipe" });
 
-  const mod = await import(out);
+  const mod = await import(fileHref(out));
   const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
   const render = (Comp, props) => renderToStaticMarkup(
     React.createElement(QueryClientProvider, { client: qc },
@@ -254,12 +256,14 @@ try {
      "the Manage areas line no longer passes the loading flag to stateCatalogLine"],
     /* With the database on, a state's count is the DATABASE's or nothing: the seed tree holds four
        states, and Washington's one seed climb read as "1 climb in the catalog" during an outage. */
-    ["ClimbMatch.jsx", "var cnt=USE_DB?(dbSt?(dbSt.route_count||0):0):",
+    ["ClimbMatch.jsx", "cnt=USE_DB?(dbSt?(dbSt.route_count||0):0):",
      "Manage areas counts a state from the seed tree again while the database is on"],
   ];
   for (const [f, needle, why] of CHAIN) {
     ran++;
-    if (fs.readFileSync(path.join(ROOT, f), "utf8").includes(needle)) {
+    // App is read stitched: the Manage areas sheet is ManageAreasSheet.tsx since PR62.
+    const text = f === "ClimbMatch.jsx" ? readAppFile(path.join(ROOT, f)) : fs.readFileSync(path.join(ROOT, f), "utf8");
+    if (text.includes(needle)) {
       ok(`wiring: ${f} — ${why.replace("no longer ", "")}`);
     } else {
       fail(`wiring: ${why} (${f} no longer contains \`${needle}\`)`);
@@ -284,7 +288,7 @@ try {
      bundle above. lib/db.js is ~164kB against core's ~1.1MB, so the second esbuild is cheap. */
   const dbOut = path.join(ROOT, `.outage-db-${process.pid}.mjs`);
   try {
-    execFileSync("npx", ["esbuild", path.join(ROOT, "lib/db.js"),
+    execFileSync(NPX, [...NPX_PRE, "esbuild", path.join(ROOT, "lib/db.js"),
       "--bundle", "--format=esm", "--platform=node",
       `--define:import.meta.env=${JSON.stringify({ VITE_USE_DB: "true", VITE_SUPABASE_URL: "https://probe.invalid", VITE_SUPABASE_ANON_KEY: "probe" })}`,
       "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
@@ -296,7 +300,7 @@ try {
   if (typeof globalThis.WebSocket === "undefined") {
     globalThis.WebSocket = class { constructor() { throw new Error("probe: no realtime"); } };
   }
-  const dbMod = await import(dbOut + "?t=" + Date.now());
+  const dbMod = await import(fileHref(dbOut + "?t=" + Date.now()));
   fs.rmSync(dbOut, { force: true });
   const guideProfileMissingCopy = dbMod.guideProfileMissingCopy;
   if (typeof guideProfileMissingCopy !== "function") {

@@ -1,0 +1,96 @@
+{
+ "area_id": "wa_osceola_peak",
+ "routes": [
+  {
+   "route_id": "wa_osceola_peak_scramble",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Web: July through early October most reliable; June has snow on the trail above Slate Pass and slushy snow at Freds Pass; a late Sep/early Oct party met two feet of snow at Slate Pass. Ascent histogram peaks Jul-Sep."
+   },
+   "track": {
+    "aid": "2630332",
+    "verdict": "same",
+    "kind": "oneway",
+    "inSeason": true,
+    "why": "Only stored route; logged route S face to SW ridge from Slate Pass via Freds/Doris Lake on 29 Aug 2024; report describes rising traverse from Doris Lake, south-side talus, SW ridge class 2 and descent by that ridge, matching ours. Start 23 m from the Slate Pass pin, reaches summit 15 m. NOTE: the recorded line keeps going after the summit toward Eureka Creek (ends 13 km away), so use only trailhead-to-summit."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "2970242",
+     "verdict": "different",
+     "why": "Complete loop but a four-day six-peak slam; would draw far more than this route."
+    },
+    {
+     "aid": "2555561",
+     "verdict": "unsure",
+     "why": "Late June, 486 m start, in the snow shoulder season."
+    },
+    {
+     "aid": "2913800",
+     "verdict": "unsure",
+     "why": "Starts at Lake Doris."
+    },
+    {
+     "aid": "3085192",
+     "verdict": "offseason",
+     "why": "Dec-Jan winter ascent."
+    },
+    {
+     "aid": "1396367",
+     "verdict": "offseason",
+     "why": "May."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 6,
+     "text": "In late June the trail north of Slate Pass can be snow-covered down to about 6,400 ft and the pass above Freds Lake held slushy snow.",
+     "aids": [
+      "2555561"
+     ]
+    },
+    {
+     "field": "approach_note",
+     "month": 7,
+     "text": "In mid-July the trail to Lake Doris is in good shape, with a ford of the Middle Fork Pasayten and some blowdowns on the Eureka Creek trail.",
+     "aids": [
+      "2576629"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "Stash overnight packs near 7,300 ft; the direct south slope is heavy loose talus, the southwest ridge crest gives class 2 footing.",
+     "aids": [
+      "2630332"
+     ]
+    },
+    {
+     "field": "descent_note",
+     "month": 8,
+     "text": "Descend the southwest ridge to the saddle, then drop scree back to your packs; this is easier than reversing the boulder field.",
+     "aids": [
+      "2630332",
+      "2970242"
+     ]
+    },
+    {
+     "field": "what_to_bring",
+     "month": 7,
+     "text": "Gaiters (loose scree on the upper slopes in July)",
+     "aids": [
+      "2576629"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Track 2630332 oneway: truncate at the summit. 2970242 is a big multi-peak loop and should not be used."
+}

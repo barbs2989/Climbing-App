@@ -1,0 +1,60 @@
+{
+ "id": "wa_tooth_and_claw",
+ "name": "Tooth and Claw",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_lexington_tower",
+  "name": "Lexington Tower",
+  "lat": 48.514255,
+  "lng": -120.657465,
+  "elevation_ft": 7560,
+  "parent_id": "wa_liberty_bell_group",
+  "ground_ft": 7619
+ },
+ "dist_km": 10.14,
+ "gain_ft": 2200,
+ "high_point_ft": null,
+ "approach_logistics": {
+  "peakLat": 48.514255,
+  "peakLng": -120.657465,
+  "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+  "trailheadLat": 48.51454,
+  "trailheadLng": -120.64332,
+  "trailheadDirection": "From the hairpin-turn/pond pullout on SR-20 just east of Washington Pass (~5,100 ft), via the cairned climbers' paths"
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.51454,
+   "lng": -120.64332,
+   "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+   "type": "Trailhead",
+   "directions": "Park at the informal pullout on the north shoulder of SR-20, about 1.2 miles east of Washington Pass and a short walk east of the small roadside pond — the same start used for the East Face. No permit is needed here.",
+   "ground_ft": 5151
+  },
+  {
+   "i": 1,
+   "lat": null,
+   "lng": null,
+   "name": "Treed ledge (start of the route)",
+   "note": "Start on cracks and flakes from the left side of the treed ledge; the route moves right across slab toward the first bolt, often marked by a scrap of webbing, while the East Face exits left.",
+   "type": "Junction",
+   "distMi": null,
+   "elevFt": null,
+   "directions": "From the pond, follow the well-beaten climbers' trail steeply up through timber for about 30 minutes to the talus field under the Liberty Bell group, then work up and left across the talus to Lexington Tower's east side. Gain the treed ledge either by a roped pitch of about 5.8 around a protruding block or by one of the gullies on its north or south side; both gullies see frequent rockfall, and the snow and moat at the base decide which works.",
+   "ground_ft": null
+  },
+  {
+   "i": 2,
+   "lat": null,
+   "lng": null,
+   "elev": null,
+   "name": "Lexington Tower East Shoulder (topout)",
+   "note": "This route climbs the slabs right of the East Face route on Lexington Tower, Washington Pass.",
+   "type": "Topout",
+   "distMi": null,
+   "directions": "Climb seven pitches of slab and crack, with the 5.12a crux on the fifth, to the final bolted anchor, then scramble onto the East Shoulder. The climb ends here rather than on the main summit; walk off with the exposed fourth-class traverse west to the East Face descent gully, or rappel the route.",
+   "ground_ft": null
+  }
+ ]
+}

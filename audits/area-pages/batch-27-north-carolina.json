@@ -1,0 +1,36 @@
+{
+"nc_107_boulders": {
+ "_expect": {"name": "107 Boulders", "region": "North Carolina"},
+ "blurb": "A small cluster of boulders beside the highway in the Cashiers and Glenville stretch of the western mountains. The problems are tall and committing, with slabby lines up pebbly faces next to sharp crimps and slopers, and a few have unfriendly landings, so bring plenty of pads and spotters. Grades run from VB up to V10, with most problems between V1 and V5 and a handful of hard ones. The blocks sit fully in the sun with traffic noise close by, so fall through spring is the comfortable window, and summer growth can swallow the trails. It is easy to drive past, so watch the left side of the road heading north from Cashiers.",
+ "parking_note": "Pull off onto the gravel shoulder beside the highway, about seven miles north of Cashiers on the left. The turnout is easy to miss when driving past.",
+ "approach": "Only a few steps from the roadside to the first boulders.",
+ "review": {"sources": ["https://upstatebouldering.blogspot.com/2012/06/local-wnc-spot-107-boulders.html", "https://www.mountainproject.com/forum/message/111254159"]}
+},
+"nc_table_rock": {
+ "_expect": {"name": "Table Rock", "region": "North Carolina"},
+ "blurb": "Table Rock is the big cliff on the eastern rim of Linville Gorge, and its large east face can be seen from a long way off. Nearly all the climbing is traditional, mixing long moderate multi-pitch lines with harder single-pitch test pieces. Grades start at easy fifth class and reach 5.12, with the largest share in the 5.10 to 5.11 range. The road ends close to the cliff and the walk to the base is short, so the area is popular with newer climbers and gets crowded on weekends, with parties stacking up on the easier lines. Wear a helmet and do not assume anchors are fixed. Fall is the pleasant season; summer afternoons bring heat and thunderstorms.",
+ "parking_note": "Drive to the Table Rock picnic area at the end of Gingercake Road. The gravel road suits most cars but gets rough after heavy rain. Pit toilets are at the lot.",
+ "review": {"sources": ["https://www.mountainproject.com/area/105873288/table-rock", "https://eastcoasthiker.com/?p=1579"]}
+},
+"nc_stone_mountain_south_face": {
+ "_expect": {"name": "Stone Mountain South Face", "region": "North Carolina"},
+ "blurb": "The sunny front side of the big dome in Stone Mountain State Park, and the main place to climb on it. This is friction slab climbing with long runouts between protection, so it rewards a steady head more than strength, and following a pitch is far easier than leading it. A few moderate gear routes, several of them multi-pitch, are popular first leads. Most climbs fall around 5.9 and 5.10, with a few easier lines and some at 5.11 and 5.12. The face takes full sun and can feel like an oven in summer, so pick cool days from late fall to early spring. Bring two ropes so you can rappel. A short trail passes an old homestead on the way to the base.",
+ "review": {"sources": ["https://carolinaclimbers.org/climbing-areas/stone-mountain.html", "https://mountainproject.com/area/105887506/stone-mountain-south-face"]}
+},
+"nc_north_side": {
+ "_expect": {"name": "North Side", "region": "North Carolina"},
+ "blurb": "The shaded north side of Looking Glass Rock holds the most serious and demanding climbing on the dome. It is mostly long, steep multi-pitch trad, from well-protected moderates to runout test pieces, plus a good share of aid lines at every level of difficulty. The free climbs are mostly 5.10 to 5.13, so this is not a place for a first multi-pitch day. Most routes need two ropes to get down, and a rack heavy on small cams, tri-cams and long slings pays off. The walk to the base follows a forest footpath that is easy to miss, so read the directions carefully before heading in.",
+ "review": {"sources": ["https://mountainproject.com/area/106523674/north-side", "https://carolinaclimbers.org/climbing-areas/looking-glass-rock.html"]}
+},
+"_skipped": {
+ "nc_shortoff_mountain": "only one page readable (summitpost); mountainproject 403, climbing.com login wall",
+ "nc_hound_ears": "stored coordinate (35.60,-79.28) does not match the Hound Ears near Boone; area is on private land with restricted access; stored rock dacite unverified",
+ "nc_big_green": "only one page describing climbing readable (mountainproject); summitpost 403, other result was Little Green hiking",
+ "oh_downstream": "climbing not allowed under park rules per both pages read; could not write an honest area page without restriction claims"
+},
+"_conflicts": {
+ "nc_table_rock": "rock: stored quartzite, eastcoasthiker.com/?p=1579 says granite platform summit (search snippets also vary); left out of blurb",
+ "nc_stone_mountain_south_face": "aspect: stored S, mountainproject.com/area/105887506 says southwest; direction left out of blurb. rock: stored granodiorite, sources say granite; rock not named",
+ "nc_hound_ears": "coordinate: stored 35.60,-79.28 is in the central Piedmont, but Hound Ears is near Boone/Banner Elk (about 36.17,-81.8)"
+}
+}

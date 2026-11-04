@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // ROUTE BREAKDOWN's rows are DISCLOSURES, so they must announce `aria-expanded` — and the name
 // must not spell the state out as well, or a screen reader hears "collapsed" twice.
 //
@@ -32,12 +34,12 @@ process.on("exit", () => { try { fs.rmSync(dir, { recursive: true, force: true }
 const entry = path.join(dir, "e.js"), out = path.join(dir, "b.mjs");
 fs.writeFileSync(entry, `export { default as RouteDetail } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};\n`);
 try {
-  execFileSync("npx", ["esbuild", entry, "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
+  execFileSync(NPX, [...NPX_PRE, "esbuild", entry, "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     "--define:import.meta.env={}", "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
     "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 } catch { dead("esbuild could not bundle RouteDetail.jsx"); }
 if (typeof globalThis.WebSocket === "undefined") globalThis.WebSocket = class { constructor() { throw new Error("probe: no realtime"); } };
-const { RouteDetail } = await import(out);
+const { RouteDetail } = await import(fileHref(out));
 
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};

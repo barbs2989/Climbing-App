@@ -1,0 +1,59 @@
+{
+ "area_id": "wa_mount_hardy",
+ "routes": [
+  {
+   "route_id": "wa_mount_hardy_snow_scramble",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9
+    ],
+    "window": "Jun-Sep",
+    "evidence": "Stored Jun-Sep agrees with logged ascents (peak Jun-Oct) and web results (mountain-forecast July-Sep; Mountaineers/SummitPost snow lingers on upper slopes into June)."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3282513",
+     "verdict": "different",
+     "why": "Starts at Rainy Pass but is a Golden Horn/Tower/Hardy trifecta with a camp at Lower Snowy Lake and exit by Swamp Creek; not a round trip and visits other peaks."
+    },
+    {
+     "aid": "2339593",
+     "verdict": "different",
+     "why": "Methow Pass line from Rainy Pass but a tent-camp trip whose highest point is near Tower/Golden Horn, and Oct 8 is outside season."
+    },
+    {
+     "aid": "3376783",
+     "verdict": "different",
+     "why": "Swamp Creek approach, also Golden Horn; Oct 11 out of season."
+    },
+    {
+     "aid": "3282089",
+     "verdict": "different",
+     "why": "Day climb from a camp at 6,200 ft; camp-based."
+    },
+    {
+     "aid": "2053386",
+     "verdict": "offseason",
+     "why": "Oct, camp-based, no usable start."
+    },
+    {
+     "aid": "1496951",
+     "verdict": "offseason",
+     "why": "Sept 21 overnight loop with Tower Mountain; multi-peak."
+    },
+    {
+     "aid": "1489655",
+     "verdict": "different",
+     "why": "Multi-day trip also climbing Tower, Golden Horn, Azurite; Sept 13 camp-based."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "No tent-free Rainy Pass round trip of Hardy alone found; no pins proposed."
+}

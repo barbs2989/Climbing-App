@@ -46,6 +46,11 @@ const LOGIC = path.join(ROOT, "lib", "alpineConditions.js");
 const CARD = path.join(ROOT, "lib", "AlpineConditionsCard.jsx");
 const AVY = path.join(ROOT, "lib", "avalanche.js");
 const SNOTEL = path.join(ROOT, "lib", "snotel.js");
+// PR67: the card's sections moved to src/components, and its shared wording (flagText, recentOutcomes) to lib/.
+const SHARED = path.join(ROOT, "lib", "alpineConditionsShared.js");
+const FCBOX = path.join(ROOT, "src", "components", "ForecastBox.tsx");
+const AVYSEC = path.join(ROOT, "src", "components", "AvalancheSection.tsx");
+const SEASON = path.join(ROOT, "src", "components", "SeasonSection.tsx");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 const FORECAST = path.join(ROOT, "lib", "forecast.js");
 const sum = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 12);
@@ -71,15 +76,16 @@ const CASES = [
     expect: "fail", expectText: "the Conditions tab is offered and its card mounts" },
   /* Inverted 2026-10-24: the forecast now opens Safety on EVERY route (owner), so the defect is it leaving again. */
   { name: "7. the weather panel is gated off Safety for alpine routes again",
-    find: "*/}{wxEl()}{fireEl}", repl: "*/}{showScore||showAlpineCond?null:wxEl()}{fireEl}",
+    /* PR59: wxEl() is now rendered inside RouteSafetyTab (a prop), so the gate goes on the call site in RouteDetail.jsx, where showScore/showAlpineCond are in scope. */
+    find: "wxEl={wxEl}", repl: "wxEl={showScore||showAlpineCond?()=>null:wxEl}",
     expect: "fail", expectText: "the weather panel opens Safety on an alpine route" },
-  { name: "8. a flag hard-codes mph", file: CARD,
+  { name: "8. a flag hard-codes mph", file: SHARED,
     find: "case \"wind\": return \"Summit gusts to \" + uWind(v.gust) + \" in daylight\";", repl: "case \"wind\": return \"Summit gusts to \" + Math.round(v.gust) + \" mph in daylight\";",
     expect: "fail", expectText: "in metric units only" },
-  { name: "9. a failed forecast no longer says it is not a reading", file: CARD,
+  { name: "9. a failed forecast no longer says it is not a reading", file: FCBOX,
     find: "Couldn’t load the forecast, so no flags are shown. This is not a reading of the conditions.", repl: "Couldn’t load the forecast.",
     expect: "fail", expectText: "a failed forecast shows NO flags" },
-  { name: "10. SILENT: the glacier's blind-spot line is reworded, claim intact", file: CARD,
+  { name: "10. SILENT: the glacier's blind-spot line is reworded, claim intact", file: FCBOX,
     find: "glacier: \"A forecast can’t see whether bridges are open or a boot track is in — check recent reports.\",", repl: "glacier: \"A forecast can’t see whether bridges are open or a boot track is in — read the latest reports.\",",
     expect: "pass" },
   { name: "11. an off-season avalanche zone is read as Low", file: AVY,
@@ -88,13 +94,13 @@ const CASES = [
   { name: "12. a route in a zone's hole is read as inside it", file: AVY,
     find: "for (let k = 1; k < rings.length; k++) if (inRing(lng, lat, rings[k])) return false; ", repl: "",
     expect: "fail", expectText: "a point in a zone's HOLE is not" },
-  { name: "13. a failed avalanche read no longer says it is not a rating", file: CARD,
+  { name: "13. a failed avalanche read no longer says it is not a rating", file: AVYSEC,
     find: "Couldn’t load the avalanche forecast. This is not a rating.", repl: "Couldn’t load the avalanche forecast.",
     expect: "fail", expectText: "a failed avalanche read says it is not a rating" },
   { name: "14. a snow station from another range (no distance cap)", file: SNOTEL,
     find: "if (km <= (maxKm || 30) && (!best || km < best.km))", repl: "if (!best || km < best.km)",
     expect: "fail", expectText: "no station within 30 km gives none" },
-  { name: "15. outcomes from any date, not the last 60 days", file: CARD,
+  { name: "15. outcomes from any date, not the last 60 days", file: SHARED,
     find: ' && Date.parse(String(a.date).slice(0, 10) + "T12:00:00Z") >= cut', repl: "",
     expect: "fail", expectText: "from the last 60 days, newest first" },
   { name: "16. the alpine tick list loses Turned around", file: CORE,
@@ -106,7 +112,7 @@ const CASES = [
   { name: "18. the season is read at the grid cell's height, not the top", file: FORECAST,
     find: '(em != null ? "&elevation=" + em : "")', repl: '""',
     expect: "fail", expectText: "the season is read at the TOP of the climb" },
-  { name: "19. a failed climate read no longer says it says nothing about the season", file: CARD,
+  { name: "19. a failed climate read no longer says it says nothing about the season", file: SEASON,
     find: "Couldn’t load the climate. This says nothing about the season.", repl: "Couldn’t load the climate.",
     expect: "fail", expectText: "a failed climate read says it says nothing about the season" },
   { name: "20. a day the models disagree on goes unflagged", file: LOGIC,
@@ -118,7 +124,7 @@ const CASES = [
   { name: "22. a start counted back from 'softening' on a night that never froze", file: LOGIC,
     find: "if (snowLegs && softAt != null && !noFreeze) {", repl: "if (snowLegs && softAt != null) {",
     expect: "fail", expectText: "that day gets NO snow-anchored start" },
-  { name: "23. a start from a fit party's stored legs no longer says so", file: CARD,
+  { name: "23. a start from a fit party's stored legs no longer says so", file: FCBOX,
     find: "P.legsStored ? \". Times are this route\u2019s published times for a fit party (Plan tab), so a slower party should start earlier.\" : ", repl: "false ? \"\" : ",
     expect: "fail", expectText: "says they are a fit party's times" },
   { name: "24. a glacier given whole-day legs (a start with no sun deadline, later than the sun allows)", file: LOGIC,
@@ -127,18 +133,18 @@ const CASES = [
   { name: "25. the whole-day way up counted at half the day (a start too LATE for the storm)", file: LOGIC,
     find: "wholeDayUpShare: 0.8,", repl: "wholeDayUpShare: 0.5,",
     expect: "fail", expectText: "a scramble's whole-day 10 h is 8 h up + 2 h down" },
-  { name: "26. a multi-day whole-day row counted back as one push (the camp is not the car)", file: CARD,
+  { name: "26. a multi-day whole-day row counted back as one push (the camp is not the car)", file: FCBOX,
     find: "const wd = P.publishedIsWholeDay && !fromCamp ?", repl: "const wd = P.publishedIsWholeDay ?",
     expect: "fail", expectText: "the card counts a whole-day row back only on a single day" },
-  { name: "27. a whole-day row told its estimate is 'only a minimum' (it is a published total)", file: CARD,
+  { name: "27. a whole-day row told its estimate is 'only a minimum' (it is a published total)", file: FCBOX,
     find: "No start time: this climb’s published time is one whole-day figure, with no split between the walk in and the climb", repl: "No start time: the Plan tab’s estimate for this climb is only a minimum figure",
     expect: "fail", expectText: "a whole-day figure is not 'only a minimum'" },
-  { name: "28. a start from a whole-day total that stops saying the split is assumed", file: CARD,
+  { name: "28. a start from a whole-day total that stops saying the split is assumed", file: FCBOX,
     find: "with no split, so the way up is counted as ", repl: "so the way up is counted as ",
     expect: "fail", expectText: "says the split is ASSUMED" },
 ];
 
-const SNAP = new Map([FILE, LOGIC, CARD, AVY, SNOTEL, CORE, FORECAST].map((f) => [f, fs.readFileSync(f, "utf8")]));
+const SNAP = new Map([FILE, LOGIC, CARD, AVY, SNOTEL, CORE, FORECAST, SHARED, FCBOX, AVYSEC, SEASON].map((f) => [f, fs.readFileSync(f, "utf8")]));
 const restoreAll = () => { for (const pair of SNAP) fs.writeFileSync(pair[0], pair[1]); };
 const treeOk = () => [...SNAP].every((pair) => sum(fs.readFileSync(pair[0], "utf8")) === sum(pair[1]));
 let bad = 0;

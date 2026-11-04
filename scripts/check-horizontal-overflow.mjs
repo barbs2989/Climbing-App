@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // check:overflow — does the app still fit the phone it is built for?
 //
 // This app is mobile-first and has no CSS framework: every control is hand-positioned with
@@ -14,6 +15,11 @@
 //
 //   npm run check:overflow
 //   npm run check:overflow -- --selftest-only    # prove the detector, walk nothing
+//   npm run check:overflow -- --width 1280       # the DESKTOP website (>=1024px: sidebar, column, rail)
+//
+// THE DESKTOP RUN. At 1024px and wider the app is a different layout — top bar, sidebar, a
+// 640px column, a right rail from 1280 — built from the same inline styles, so it can overflow
+// in ways the phone walk never sees. render-guards.yml runs this walk twice: 390 and 1280.
 //
 // THE PRECISION RULE. A row of chips with `overflowX:auto` is a CORRECT pattern and is
 // supposed to scroll sideways; reporting those would bury a real finding under dozens of
@@ -42,7 +48,10 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argvSelfTestOnly = process.argv.slice(2).includes("--selftest-only");
-const WIDTH = 390, HEIGHT = 844;
+const widthArg = process.argv.indexOf("--width");
+const WIDTH = widthArg > 0 ? Number(process.argv[widthArg + 1]) : 390;
+if (!Number.isInteger(WIDTH) || WIDTH < 320) { console.error("--width takes a whole number of pixels, 320 or more"); process.exit(1); }
+const HEIGHT = WIDTH >= 1024 ? 900 : 844;
 const TABS = ["today", "routes", "discover", "crew", "logbook", "ranks", "me", "groups"];
 const log = (...a) => console.log(...a);
 
@@ -71,7 +80,7 @@ log(`starting dev server on ${port}...`);
 // The `?zt=`/`?z=` opener only exists when the scaffold is injected, which is a vite
 // config's job. Borrow the a11y-badges one: same populated demo, same opener, and reusing
 // it means this cannot drift on which overlays exist.
-const server = spawn("npx", ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
 // Did OUR server start, and is it still ours?
 //
@@ -231,9 +240,11 @@ const selftest = await page.evaluate((vw) => {
   // runs in the state the whole overlay walk is measured in. Without it the self-test proved
   // a detector that went blind the moment any overlay opened.
   document.documentElement.style.overflow = "hidden";
-  const a = mk("width:600px;height:20px;background:#f00");
-  const b = mk("min-width:520px;height:20px;background:#0f0");
-  const c = mk("width:900px;height:20px;background:#00f", "overflow-x:auto;width:200px");
+  // Sized FROM the viewport: fixed 600/520px boxes overflow a phone but sit inside a 1280px
+  // desktop, so the first --width 1280 run failed its own self-test (seen 0 of 2).
+  const a = mk(`width:${vw + 210}px;height:20px;background:#f00`);
+  const b = mk(`min-width:${vw + 130}px;height:20px;background:#0f0`);
+  const c = mk(`width:${vw + 510}px;height:20px;background:#00f`, "overflow-x:auto;width:200px");
   return { added: 3, vw };
 }, WIDTH);
 const st = await scan();
@@ -243,7 +254,7 @@ if (stTexts < 2) {
   console.error("A clean result below would mean nothing. Fix the detector before reading further.\n");
   await browser.close(); stopServer(); process.exit(1);
 }
-if (st.offenders.some((o) => o.style.includes("900px"))) {
+if (st.offenders.some((o) => o.style.includes(`${WIDTH + 510}px`))) {
   console.error("\nSELF-TEST FAILED — the element inside an overflow-x:auto parent was reported.");
   console.error("Intentional horizontal scrollers must be excluded or every chip row is a false positive.\n");
   await browser.close(); stopServer(); process.exit(1);

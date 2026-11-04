@@ -60,7 +60,8 @@ const CASES = [
     name: "4-a-unit-word-swapped-with-NO-conversion",
     why: "the dangerous near-miss: metric reads km while the NUMBER is still miles",
     file: CORE, find: HEADER,
-    repl: '<span style={{color:C.blue}}>{dist.toFixed(1)+(uImp()?" mi":" km")+" away"}</span>',
+    // uImp is a ClimbMatchCore local that FullProfile.tsx does not import, so the old edit threw at render and the probe never reached the number check; uApproxDist is already imported here and is not one of the guard's counted helpers.
+    repl: '<span style={{color:C.blue}}>{dist.toFixed(1)+(/km/.test(uApproxDist(5))?" km":" mi")+" away"}</span>',
     // The guard sees the helper count drop; only the RENDER can see that the number never moved.
     targets: { guard: /routes 1 distance readout|uDistMi 1 time/, probe: /number did not change between units/ },
   },

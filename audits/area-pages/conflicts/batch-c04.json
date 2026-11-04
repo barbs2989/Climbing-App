@@ -1,0 +1,104 @@
+{
+ "bc_rimrocks": {
+  "verdict": "unsure",
+  "why": "Only sendage.com (two pages, one domain) says basalt; no second site fetched. https://sendage.com/area/rimrocks-vernon-bc-canada"
+ },
+ "bc_the_belfry": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "The Belfry",
+   "region": "British Columbia"
+  },
+  "rock": "gneiss",
+  "review": {
+   "sources": [
+    "https://en.wikipedia.org/wiki/Skaha_Bluffs",
+    "https://www.mountainproject.com/area/105946462/skaha-bluffs"
+   ]
+  },
+  "why": "Skaha Bluffs rock is gneiss per Wikipedia and Mountain Project"
+ },
+ "bc_the_terraces": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "bc_tottering_pillar": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Tottering Pillar",
+   "region": "British Columbia"
+  },
+  "rock": "gneiss",
+  "review": {
+   "sources": [
+    "https://en.wikipedia.org/wiki/Skaha_Bluffs",
+    "https://www.mountainproject.com/area/105946462/skaha-bluffs"
+   ]
+  },
+  "why": "Skaha Bluffs rock is gneiss per Wikipedia and Mountain Project"
+ },
+ "ca_au_five_and_dime_cliff": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "ca_castle_rock_proper": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "ca_corpse_wall": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "ca_derrydale_cliff": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "ca_eldorado_roof": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "ca_grotto_the_3": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "ca_loading_zone_the": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "ca_planetarium_gecko_wall": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "ca_soul_power_wall_rename_approved_by_lco": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "ca_south_face_20": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "co_redgarden_below_lower_ramp": {
+  "verdict": "unsure",
+  "why": "Fountain Formation is arkosic sandstone/conglomerate; MP calls it sandstone, no second independent source fetched."
+ },
+ "nc_big_green": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "wa_carnival_crag": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "wy_aspen_grade_wall": {
+  "verdict": "unsure",
+  "why": "Stored dolomite vs MP granite section on Sinks Canyon shady side; single indirect source."
+ },
+ "wy_joint_the": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "wy_killer_cave": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ }
+}

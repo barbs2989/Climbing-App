@@ -1,0 +1,43 @@
+{
+ "co_dungeon_the": {
+  "_expect": { "name": "Dungeon, The", "region": "Colorado" },
+  "blurb": "A tight, maze-like cluster of short walls inside Castlewood Canyon State Park, southeast of Denver. A few of the corridors are only a few feet across, which keeps them cool when the canyon is baking. Of the 20 routes, most are bolted sport lines, with four top-ropes and a pair of trad climbs. Difficulty begins around 5.6, but the bulk of the climbing falls between 5.10 and 5.12, with one line a notch harder. Walls are well under 25 meters, the stone is the conglomerate typical of this canyon, and it suits a climber looking for steep, shaded single-pitch work rather than an easy beginner day.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105744608/the-dungeon", "https://mountainproject.com/area/105744319/castlewood-canyon-sp"] }
+ },
+ "co_lower_mother_s_buttress": {
+  "_expect": { "name": "Lower Mother's Buttress", "region": "Colorado" },
+  "blurb": "Lower Mother's Buttress is a traditional granite crag in Unaweep Canyon, a short drive from Grand Junction. All 20 climbs here are trad, mostly single-pitch cracks with some face moves, and a handful of longer lines. Grades run from about 5.7 up to 5.11, with the heaviest concentration between 5.8 and 5.10, so it suits a leader with a solid rack and crack technique, and the easier lines are popular with groups setting up top-ropes. Very little here is bolted, so expect to place your own protection. It is the lowest of three tiers on the Mother's Buttress complex, which also holds steeper 5.11 climbing higher up.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105745681/lower-mothers-buttress", "https://www.mountainproject.com/area/106571741/mothers-buttress"] }
+ },
+ "co_leftovers": {
+  "_expect": { "name": "Leftovers", "region": "Colorado" },
+  "blurb": "A small granite crag in the Turkey Rocks group of the South Platte, and one of five formations there. All 20 climbs are trad, mostly one or two pitches of crack climbing, with a few top-rope options. Most of the terrain faces south, so it picks up sun and stays comfortable on cold days. Grades start at about 5.6 and top out in the lower 5.11s, though the largest cluster sits around 5.8, which makes it a friendly place for newer trad leaders. The surrounding Turkey Rocks zone is known for one of the best concentrations of cracks in the state.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105797946/leftovers", "https://www.mountainproject.com/area/105797943/turkey-rocks"] }
+ },
+ "co_east_walls_bat_cave": {
+  "_expect": { "name": "East Walls/Bat Cave", "region": "Colorado" },
+  "blurb": "A sector on the far side of the big Fortress of Solitude limestone crag near New Castle, in the Main Elk Creek drainage. It holds 20 sport routes and nothing easy: the grades run from 5.11 to 5.14, with most of them in the 5.12 to 5.14 range. Walls range from vertical to deeply overhung, and the Bat Cave itself is a steep cavern with a roof. Lines are mostly 50 to 80 feet long, on pale stone streaked with blue and grey, and the movement is strong and fingery. Reaching it takes the long, steep uphill hike that serves the whole Fortress, and few people climb here.",
+  "review": { "sources": ["https://mountainproject.com/area/105746605/east-wallsbat-cave", "https://www.mountainproject.com/area/105744436/fortress-of-solitude"] }
+ },
+ "co_neglected_area": {
+  "_expect": { "name": "Neglected Area", "region": "Colorado" },
+  "blurb": "A small, quiet bouldering area just outside Buena Vista, on the west bank of the Arkansas River facing the Four Mile boulders, and cut from the same rock. About 20 problems are split among several little clusters of boulders, including Pleasant Avenue, Forgotten Boulder and a few single-problem blocks. The grades lean toward the middle and upper-middle: most problems are V3 to V5, with one easy problem, one V2 and a pair of V7s. It rarely gets busy, so it makes a calm alternative when the main Buena Vista venues are packed, and the pads-and-spotter style suits a short session.",
+  "review": { "sources": ["https://www.mountainproject.com/area/120989434/neglected-area", "https://thetopo.com/crags/neglected-area"] }
+ },
+ "co_sawmill_wall": {
+  "_expect": { "name": "Sawmill Wall", "region": "Colorado" },
+  "blurb": "The main wall on the southwest side of Sawmill Crag, in the Old Mill area of Staunton State Park in the South Platte region. It carries 20 routes, 18 of them bolted sport lines and two trad, on granite. Most grades fall between 5.10 and 5.11, with a smaller group at 5.9 and a few 5.12s, so it suits climbers working through the intermediate range. Some routes are two pitches. The walk from the old bunkhouse is only a couple of minutes uphill, which makes it an easy half-day objective at a relatively high elevation.",
+  "review": { "sources": ["https://www.mountainproject.com/area/121201064/sawmill-wall", "https://rakkup.com/guidebook/staunton-state-park-rock-climbing/sawmill-crag---south-face/s22411"] }
+ },
+ "co_tenmile_canyon_aka_officer_s_gulch": {
+  "_expect": { "name": "Tenmile Canyon aka Officer's Gulch", "region": "Colorado" },
+  "blurb": "A winter ice and mixed venue beside the interstate just west of Dillon. Of its 20 routes, 17 are ice and three are mixed. The ice runs from WI1 to WI5, with the bulk at WI3 and WI4, and there are a few short mixed lines between M4 and M7. Approaches are brief and the area is known for plentiful easy to moderate ice, which makes it a handy early-season warm-up. Many lines sit at the foot of avalanche paths, so choose your day with care, ideally in a dry stretch of winter before heavy snow builds up.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105746976/tenmile-canyon-aka-officers-gulch", "https://scottfoto.blogspot.com/2013/04/ice-in-officers-gulch.html"] }
+ },
+ "_skipped": {
+  "co_hurricane_sector": "no fetched page about the sector itself; only the parent Dry Creek Crag page mentions it (SummitPost returned 403)"
+ },
+ "_conflicts": {
+  "co_leftovers": "Leftovers page says the crag lies west of Turkey Rock (https://www.mountainproject.com/area/105797946/leftovers) while the Turkey Rocks page puts it south/right of Turkey Rock (https://www.mountainproject.com/area/105797943/turkey-rocks); direction left out of the blurb."
+ }
+}

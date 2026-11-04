@@ -1,0 +1,43 @@
+{
+ "mn_large_roof_area": {
+  "_expect": {"name": "Large Roof Area", "region": "Minnesota"},
+  "blurb": "Found at the far western end of the bluff above Red Wing, on the stretch climbers call the dark side, this wall is named for a big triangular roof formed by a fallen block. Most of the 27 lines are bolted sport climbs, with a few top-ropes and a handful of boulder problems. Sport grades cluster from 5.10 up through 5.12, with a smaller number of 5.8 and 5.9 lines, so it suits climbers past the beginner stage. Expect a mix of steep moves near the roof and vertical to slabby ground elsewhere. It sits at the end of the cliff-base trail, a good walk from the car.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105813088/large-roof-area", "https://www.mountainproject.com/route/105843552/dumpster-does-duffels?print=1"]}
+ },
+ "mn_perfect_crimb_area": {
+  "_expect": {"name": "Perfect Crimb Area", "region": "Minnesota"},
+  "blurb": "A stand-alone stretch of cliff on the Red Wing bluff, roughly midway between two neighbouring sectors, and easy to recognise by a pair of large roofs in the middle of the wall. Of the 23 climbs, most are bolted sport lines, with a few trad routes and top-ropes mixed in. Grades run from the 5.6 range to 5.13, but the bulk sit between 5.10 and 5.12, so it leans toward intermediate and advanced climbers; a few moderate classics are the exception. Many routes begin from sandy ground, and the steep roofs make for athletic climbing. Some of the lines stay climbable when the weather turns damp.",
+  "review": {"sources": ["https://mountainproject.com/area/105813079/perfect-crimb-area", "https://www.mountainproject.com/route/105826069/the-perfect-crimb"]}
+ },
+ "mn_jeff_s_world_proper": {
+  "_expect": {"name": "Jeff's World (Proper)", "region": "Minnesota"},
+  "blurb": "The main wall of a remote, wilderness-style climbing zone in the lake country along the Minnesota and Ontario line. Almost all of the 25 routes here are bolted sport lines, plus one trad line. Difficulty starts around 5.9 and builds quickly: the bulk fall between 5.10 and 5.12, and a handful reach 5.13 and 5.14, which makes this a place for solid intermediates and up rather than newcomers. The wider zone is known for slabs, overhangs and roofs, plus bouldering. Getting here takes real effort and planning by water, so treat it as a trip rather than an after-work session.",
+  "review": {"sources": ["https://www.mountainproject.com/area/classics/106040382/jeffs-world-proper", "https://gearjunkie.com/climbing/jeffs-world-rock-climbing-bwca-minnesota-canada"]}
+ },
+ "mn_shovel_point": {
+  "_expect": {"name": "Shovel Point", "region": "Minnesota"},
+  "blurb": "A lakeside headland in Tettegouche State Park on the North Shore, where the cliffs drop straight into Lake Superior. Of the two crags in the park, this is the gentler one, and it draws groups and top-rope climbers. The roughly two dozen routes are mostly top-rope and trad, with a couple of multi-pitch lines and one winter ice line. Grades range from 5.5 up to 5.12, with the greatest number around 5.9 to 5.11, so there is something for newer and experienced climbers alike. Walkers often stop to watch, and chalk is discouraged.",
+  "review": {"sources": ["https://mountainproject.com/area/105814860/shovel-point?print=1", "https://www.mountainproject.com/area/105812783/tettegouche-sp-north-shore"]}
+ },
+ "mn_gunflint_trail": {
+  "_expect": {"name": "Gunflint Trail", "region": "Minnesota"},
+  "blurb": "A far-flung bouldering zone strung along the Gunflint Trail in the boreal forest and lake country north of Grand Marais. The 23 problems and routes here are mostly boulders, with a few top-ropes. Difficulty is wide: plenty of V0 through V4, and a pair of very hard problems around V9 for the strongest climbers, plus a few top-rope lines at 5.8 to 5.10. Much of the terrain is still being explored, so expect some hunting around, little company and a wilderness feel. A good fit for a pad-and-friends trip combined with a North Shore getaway rather than a quick session.",
+  "review": {"sources": ["https://mountainproject.com/area/107216387/gunflint-trail", "https://www.mountainproject.com/route/107216412/magnetic-rock?print=1"]}
+ },
+ "mn_whopee_wall": {
+  "_expect": {"name": "Whopee Wall", "region": "Minnesota"},
+  "blurb": "An urban wall in Duluth's West End, right beside the street and visible from the freeway, so the walk from the car is almost nothing. Walls reach about 20 to 35 feet, which is why some call it highball bouldering. Of the 21 climbs, most are top-ropes, with some trad lines and a pair of boulder problems. Grades go from easy 5.3 and 5.4 up to about 5.12, with the most routes between 5.10 and 5.11. Cracks along the top make anchors easy to find. It is a classic first stop for local climbers and a regular for classes and courses. Watch for broken glass.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105988849/whopee-wall", "https://www.mountainproject.com/area/111642705/duluth-area"]}
+ },
+ "mn_enger_park": {
+  "_expect": {"name": "Enger Park", "region": "Minnesota"},
+  "blurb": "A cluster of low, slabby outcrops near the stone tower in Duluth's Enger Park, a short drive off Skyline Parkway, with a small climbers' trail leading up from the road cut. All 21 problems are bouldering, with a couple of cracks among mostly slab lines. The difficulty stays friendly: the bulk are V0 to V2, with a few V3 problems and one V4, and a couple of easy VB lines for beginners. It works well for a quick solo session with a pad, or a casual evening in the city.",
+  "review": {"sources": ["https://mountainproject.com/area/105988868/enger-park", "https://www.mountainproject.com/area/111642705/duluth-area", "https://duluthmn.gov/parks/parks-listing/enger-park/"]}
+ },
+ "_skipped": {
+  "mn_tuskrat_talus": "no page found about this crag; searches return nothing under that name"
+ },
+ "_conflicts": {
+  "mn_jeff_s_world_proper": "stored rock is arkose, but https://www.mountainproject.com/area/106038055/mncanada-border-areas and https://gearjunkie.com/climbing/jeffs-world-rock-climbing-bwca-minnesota-canada both describe granite; stored value left unchanged"
+ }
+}

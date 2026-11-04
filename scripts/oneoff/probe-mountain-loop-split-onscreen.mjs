@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // A WRITTEN COLUMN IS NOT A RENDERED ONE. fix-mountain-loop-camp-split.mjs verified its own write
 // by re-reading `routes.bivy`; that proves the table, not the page. CAMPING & BIVY renders through
 // dbRouteToCamel -> campSites(), which MERGES the bivy store with campsite waypoints and dedupes
@@ -67,7 +68,7 @@ fs.writeFileSync(out, [
   'process.exit(0);',
 ].join("\n"));
 
-execFileSync("npx", ["esbuild", out, "--bundle", "--platform=node", "--format=esm",
+execFileSync(NPX, [...NPX_PRE, "esbuild", out, "--bundle", "--platform=node", "--format=esm",
   "--jsx=automatic", "--loader:.jsx=jsx", "--external:react", "--external:react-dom",
   "--external:@tanstack/react-query", "--define:import.meta.env={}",
   `--outfile=${path.join(ROOT, ".probe-mountain-loop.bundle.mjs")}`], { cwd: ROOT, stdio: "pipe" });

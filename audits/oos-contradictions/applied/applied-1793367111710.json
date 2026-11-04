@@ -1,0 +1,44 @@
+{
+ "applied": [
+  {
+   "id": "ar_cutthroat",
+   "column": "beta",
+   "path": [],
+   "fact": "beta describes a different route"
+  },
+  {
+   "id": "az_cutthroat_trout",
+   "column": "beta",
+   "path": [],
+   "fact": "beta describes a different route"
+  },
+  {
+   "id": "ca_castle_dome_4th_class_route",
+   "column": "grade",
+   "path": [],
+   "fact": "route class"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "ar_cutthroat",
+   "before": {
+    "beta": "Grade II, 5.7 climbing. Short approach from highway. Rock improves significantly higher on ridge. Fair granite in approach, improves on ridge. Moderate exposure. Quick alpine climb from Rainy Pass. Uncrowded route."
+   }
+  },
+  {
+   "id": "az_cutthroat_trout",
+   "before": {
+    "beta": "Grade II, 5.7 climbing. Short approach from highway. Rock improves significantly higher on ridge. Fair granite in approach, improves on ridge. Moderate exposure. Quick alpine climb from Rainy Pass. Uncrowded route."
+   }
+  },
+  {
+   "id": "ca_castle_dome_4th_class_route",
+   "before": {
+    "grade": "3rd",
+    "grade_num": 3
+   }
+  }
+ ]
+}

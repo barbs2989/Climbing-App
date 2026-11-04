@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 // What text is UNIQUE to the Conditions sub-tab?
 //
 // check:outage's Conditions walk was attempted twice and reverted twice (#1405, #1411). The second
@@ -45,7 +46,7 @@ try {
     jsx: "automatic", loader: { ".jsx": "jsx" }, logLevel: "silent",
     define: { "import.meta.env": "{}" },
   });
-  const { render } = await import(out);
+  const { render } = await import(fileHref(out));
 
   const route = { id: "probe_r", name: "Probe Route", grade: "5.9", pitches: 6, discipline: "trad",
                   areaName: "Probe Area", lat: 47.5, lng: -121.5 };

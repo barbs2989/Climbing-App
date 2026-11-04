@@ -27,7 +27,7 @@
 // overlay. See dialogOverlays() for the two precision rules that keep it honest.
 
 import { readFileSync, existsSync } from "node:fs";
-import { readCoreSource } from "./guard-sources.mjs";
+import { readCoreSource, readParentSource, MOVED, movedAsParentText } from "./guard-sources.mjs";
 
 // Overlays whose RENDERER is gated on state beyond their own flag, so flipping the flag
 // alone cannot mount them. These are correct code, not bugs: the walk simply cannot reach
@@ -46,6 +46,29 @@ export const NEEDS_EXTRA_STATE = {
   // exemption naming it would be the stale bookkeeping this registry fails on. `editDraft` is
   // no longer here either: it is opened with a LIFTED literal, see `lift` in OVERLAY_PAYLOADS.
 };
+
+// OPT-IN OPENERS for three of the four above, reached with `?zx=<name>` rather than `?z=`.
+//
+// Every guard reading NEEDS_EXTRA_STATE skips these names before it loads anything, and that does
+// not change: a guard has to ask for `zx` by name, so widening check:pinned-dismiss (owner note,
+// 2026-10-24: the ✕ / Back must stay on screen in EVERY popup) cannot turn axe, overflow or the
+// zero-state walk red on a popup they were never pointed at. Each `open` runs inside App, after the
+// same 1200ms the `z` opener waits.
+//   areaTreeOpen: renders as `areaTreeOpen&&selArea`, so a seed STATE is selected first; the tree
+//     opens expanded at it, the longest list it can show.
+//   compareOpen: renders as `wide&&compareOpen`, so the GUARD must also widen the viewport to
+//     `viewport` before loading, or `wide` is false and nothing mounts.
+//   reviewQueue: renders as `reviewQueue&&isAdmin`, and isAdmin is a DB query on a signed-in admin.
+//     A config that serves `zx` applies ADMIN_GATE, which lets window.__ovAdminGate stand in for it;
+//     only this opener sets that. The queue's own reads fail without an admin, which leaves its
+//     header (the subject) exactly as an admin sees it.
+// crewListOpen has no entry: it is an inline disclosure in the crew finder's results, not a popup.
+export const EXTRA_STATE_OPENERS = {
+  areaTreeOpen: { open: 'setSelArea(MOUNTAINS.find(function(m){return m.areaType==="state";})||null);setAreaTreeOpen(true);' },
+  compareOpen: { viewport: { width: 1280, height: 900 }, open: "setCompareList(ROUTES.slice(0,3));setCompareOpen(true);" },
+  reviewQueue: { open: 'window.__ovAdminGate=true;setReviewQueue("fieldEdits");' },
+};
+export const ADMIN_GATE = { from: "{reviewQueue&&isAdmin&&", to: "{reviewQueue&&(isAdmin||window.__ovAdminGate)&&" };
 
 // ---------------------------------------------------------------------------------------
 // Payloads for the dialog-shaped overlays.
@@ -212,6 +235,11 @@ export function assertKnownOverlays(discovered, fail) {
       fail("scaffold", `NEEDS_EXTRA_STATE lists ${JSON.stringify(name)}, which is no longer an overlay state — remove it from scripts/lib/overlay-scaffold.mjs`);
     }
   }
+  for (const name of Object.keys(EXTRA_STATE_OPENERS)) {
+    if (!NEEDS_EXTRA_STATE[name]) {
+      fail("scaffold", `EXTRA_STATE_OPENERS lists ${JSON.stringify(name)}, which NEEDS_EXTRA_STATE no longer exempts — every guard opens it with ?z= now, so remove its ?zx= opener`);
+    }
+  }
   for (const name of Object.keys(OVERLAY_PAYLOADS)) {
     if (!discovered.includes(name)) {
       fail("scaffold", `OVERLAY_PAYLOADS lists ${JSON.stringify(name)}, which no longer renders a dialog — remove it from scripts/lib/overlay-scaffold.mjs`);
@@ -296,19 +324,43 @@ function firstRenderedTag(seg) {
 //     group view that contains a nested ReactionPicker: its `role="dialog"` sits 24,227
 //     characters in, behind 107 open tags. Counting that would classify every screen large
 //     enough to contain a modal as a modal.
+// App's render bodies live in src/components/ since PR61 (the tab bodies), so the EVIDENCE that a
+// state renders a dialog is read off App with them appended — `pastExpand`'s dialog is in
+// LogbookTab.tsx. The STATES and their offsets still come from `appCode` alone: the opener is
+// injected into App, and an offset into the appended text would place nothing.
+// The render of each lifted App body: `<GiveVouchSheet …/>` in App is what that file returns, so the
+// evidence test looks THROUGH it (once) as it looks through a <Suspense>, to the element it draws.
+function movedAppBodies() {
+  const out = new Map();
+  for (const f of MOVED["ClimbMatch.jsx"]) {
+    const src = readFileSync(new URL("../../" + f, import.meta.url), "utf8");
+    const m = /^export default function ([A-Z][\w$]*)\(/m.exec(src);
+    const at = m ? src.indexOf("\n  return ", m.index) : -1;
+    if (m && at >= 0) out.set(m[1], src.slice(at + "\n  return ".length));
+  }
+  return out;
+}
+function withMovedApp(appCode) {
+  let s = appCode;
+  for (const f of MOVED["ClimbMatch.jsx"]) s += "\n" + movedAsParentText(readFileSync(new URL("../../" + f, import.meta.url), "utf8"), f);
+  return s;
+}
 export function dialogOverlays(appCode, coreCode) {
-  const dlg = dialogComponents(coreCode, appCode);
+  const ev = withMovedApp(appCode);
+  const dlg = dialogComponents(coreCode, ev);
+  const bodies = movedAppBodies();
   const found = [];
   for (const m of appCode.matchAll(/\[([a-zA-Z][\w$]*),(set[A-Z][\w$]*)\]=useState\(([^)]{0,30})/g)) {
     const [name, setter, init] = [m[1], m[2], m[3].trim()];
     if (name.endsWith("Open") && init === "false") continue; // shape 1
     let evidence = null;
-    for (const r of appCode.matchAll(new RegExp("\\{\\s*" + name + "\\s*(?:&&|\\?)", "g"))) {
-      const end = matchBrace(appCode, r.index);
+    for (const r of ev.matchAll(new RegExp("\\{\\s*" + name + "\\s*(?:&&|\\?)", "g"))) {
+      const end = matchBrace(ev, r.index);
       if (end < 0) continue;
-      const seg = appCode.slice(r.index, end);
-      const t = firstRenderedTag(seg);
+      let seg = ev.slice(r.index, end);
+      let t = firstRenderedTag(seg);
       if (!t) continue;
+      if (bodies.has(t[1]) && !dlg.has(t[1])) { seg = bodies.get(t[1]); t = firstRenderedTag(seg); if (!t) continue; }
       if (dlg.has(t[1])) { evidence = "renders <" + t[1] + ">"; break; }
       const d = seg.indexOf('role="dialog"');
       if (d >= 0 && (seg.slice(0, d).match(/<[A-Za-z][\w$.]*/g) || []).length <= 1) {
@@ -425,7 +477,10 @@ export function routeDetailSource() {
 // "opened", rendered no dialog, and were reported as overlays that never mounted — noise that
 // looks exactly like a real finding. A name is not evidence; what it renders is.
 export function routeDetailOverlays(rdCode) {
-  const dlg = dialogComponents(rdCode);
+  // A dialog component the page renders may live in src/components/ now (SuggestFix, PR59): its
+  // role="dialog" is the evidence for the flag that opens it, so the evidence is read off the page
+  // STITCHED. The flags themselves, and the injection, stay on the raw page text.
+  const dlg = dialogComponents(rdCode, readParentSource(undefined, "RouteDetail.jsx", "overlay-scaffold"));
   const out = [];
   for (const m of rdCode.matchAll(/\[([a-zA-Z][\w$]*),(set[A-Z][\w$]*)\]=useState\(([^)]{0,30})/g)) {
     const [name, setter, init] = [m[1], m[2], m[3].trim()];
@@ -638,6 +693,9 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       // the route page as unreachable. Ready must mean "the thing that opens THIS screen has
       // run" — see the note below and #768.
       "var _zr=p.get('zr');" +
+      // `?zx=` opens an EXTRA_STATE_OPENERS entry, asked for by name (see that registry).
+      "var zx=p.get('zx');var __X={" + Object.entries(EXTRA_STATE_OPENERS).map(([n, e]) => JSON.stringify(n) + ":function(){" + e.open + "}").join(",") + "};" +
+      "if(zx&&__X[zx])setTimeout(function(){try{__X[zx]();}catch(e){(window.__overlayOpenErrors=window.__overlayOpenErrors||{})[zx]=String(e&&e.message||e);}window.__overlaysReady=true;},1200);" +
 "if(_zr){setTimeout(function(){openRoute(__zrPick());window.__routeOpen=true;window.__overlaysReady=true;},900);}" +
       // __overlaysReady means "the opener has RUN", not "the effect mounted". Every guard
       // waits on this flag and then asks what happened; setting it synchronously while the
@@ -660,7 +718,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       "if(z)setTimeout(function(){var _rd=__rdOv.indexOf(z)>=0;__ovOpen.current(z);" +
       "if(_rd)setTimeout(function(){window.__overlaysReady=true;},2500);" +
       "else window.__overlaysReady=true;},1200);" +
-      "else if(!_zr)window.__overlaysReady=true;},[]);",
+      "else if(!_zr&&!zx)window.__overlaysReady=true;},[]);",
   };
 }
 
@@ -676,7 +734,9 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
 // Discovered from the source for the same reason the overlay list is: a hardcoded file list
 // silently narrows every time the code moves.
 export function lazyChunks(label) {
-  const files = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "main.jsx"];
+  // lib/lazyScreens.js holds App's lazy screens since PR61 of the component extraction; its
+  // specifiers are relative to lib/, so each is resolved against the directory of its own file.
+  const files = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "main.jsx", "lib/lazyScreens.js"];
   const out = new Set();
   for (const f of files) {
     let src;
@@ -686,10 +746,12 @@ export function lazyChunks(label) {
       // written extensionless ("./lib/DbAreaBrowser") and would warm NOTHING if passed
       // through. Resolve against disk and say so if one does not exist, rather than
       // shipping a warm list that quietly covers one file out of six.
+      const dir = f.includes("/") ? f.slice(0, f.lastIndexOf("/") + 1) : "";
       const spec = m[1];
       const cand = [spec, spec + ".jsx", spec + ".js", spec + "/index.jsx", spec + "/index.js"];
-      const hit = cand.find((c) => existsSync(new URL("../../" + c.replace(/^\.\//, ""), import.meta.url)));
-      if (hit) out.add(hit);
+      const rootRel = (c) => new URL(c, new URL("../../" + dir, import.meta.url)).href.slice(new URL("../../", import.meta.url).href.length);
+      const hit = cand.map(rootRel).find((c) => existsSync(new URL("../../" + c, import.meta.url)));
+      if (hit) out.add("./" + hit);
       else console.error(`${label} — lazy import ${JSON.stringify(spec)} did not resolve to a file; it will not be warmed.`);
     }
   }

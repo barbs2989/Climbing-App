@@ -1,0 +1,226 @@
+[
+ {
+  "lu": "wa_lu_bonanza_martin",
+  "leg": 0,
+  "peak": "Bonanza Peak",
+  "route": "Mary Green Glacier to the northeast ridge",
+  "pick": {
+   "id": "wa_bonanza_peak_mary_green_glacier",
+   "name": "Mary Green Glacier (Standard Route)",
+   "disc": "mountaineering",
+   "grade": "Class 4",
+   "area": "Bonanza Peak",
+   "score": 0.6666666666666666
+  },
+  "others": [
+   {
+    "id": "wa_bonanza_peak_mary_green_glacier",
+    "name": "Mary Green Glacier (Standard Route)",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Bonanza Peak",
+    "score": 0.6666666666666666
+   },
+   {
+    "id": "wa_bonanza_peak_northeast_buttress",
+    "name": "Northeast Buttress",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Bonanza Peak",
+    "score": 0.3333333333333333
+   },
+   {
+    "id": "wa_bonanza_peak_oregonian_route",
+    "name": "Oregonian Route",
+    "disc": "alpine",
+    "grade": "5.9+",
+    "area": "Bonanza Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_needle_peak_north_ridge",
+    "name": "Northwest Ridge (from Needle Peak)",
+    "disc": "alpine",
+    "grade": "5.8",
+    "area": "Bonanza Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_bonanza_peak_cascadian_route",
+    "name": "Cascadian Route",
+    "disc": "alpine",
+    "grade": "5.10+",
+    "area": "Bonanza Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_soviet_route",
+    "name": "Soviet Route",
+    "disc": "alpine",
+    "grade": "5.10a",
+    "area": "Bonanza Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_bonanza_martin",
+  "leg": 1,
+  "peak": "Martin Peak",
+  "route": "West ridge from Holden Pass",
+  "pick": {
+   "id": "wa_martin_peak_west_ridge",
+   "name": "West Ridge",
+   "disc": "mountaineering",
+   "grade": "Class 4",
+   "area": "Martin Peak",
+   "score": 0.3333333333333333
+  },
+  "others": [
+   {
+    "id": "wa_martin_peak_west_ridge",
+    "name": "West Ridge",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Martin Peak",
+    "score": 0.3333333333333333
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_glacier_peak_kololo",
+  "leg": 0,
+  "peak": "Kololo Peak",
+  "route": "Across the glacier to the south face and south ridge (snow and rock)",
+  "pick": {
+   "id": "wa_kololo_peaks_standard",
+   "name": "Standard Route",
+   "disc": "mountaineering",
+   "grade": "Class 2",
+   "area": "Kololo Peaks",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "wa_kololo_peaks_standard",
+    "name": "Standard Route",
+    "disc": "mountaineering",
+    "grade": "Class 2",
+    "area": "Kololo Peaks",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_glacier_peak_kololo",
+  "leg": 1,
+  "peak": "Glacier Peak",
+  "route": "Gerdine / South Ridge via the Disappointment Peak col",
+  "pick": {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "name": "Disappointment Peak Cleaver (Gerdine Ridge / Cool Glacier)",
+   "disc": "mountaineering",
+   "grade": "Class 2",
+   "area": "Glacier Peak",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "wa_glacier_peak_cool_glacier_gerdine",
+    "name": "Disappointment Peak Cleaver (Gerdine Ridge / Cool Glacier)",
+    "disc": "mountaineering",
+    "grade": "Class 2",
+    "area": "Glacier Peak",
+    "score": 0.5
+   },
+   {
+    "id": "wa_painted_traverse",
+    "name": "Painted Traverse",
+    "disc": "scrambling",
+    "grade": "Class 4",
+    "area": "Glacier Peak Wilderness Traverses",
+    "score": 0
+   },
+   {
+    "id": "wa_glacier_peak_sitkum_glacier",
+    "name": "Sitkum Glacier",
+    "disc": "mountaineering",
+    "grade": "Class 2",
+    "area": "Glacier Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_glacier_peak_frostbite_ridge",
+    "name": "Frostbite Ridge",
+    "disc": "alpine",
+    "grade": "AI2",
+    "area": "Glacier Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_glacier_peak_kennedy_glacier",
+    "name": "Kennedy Glacier",
+    "disc": "mountaineering",
+    "grade": "Class 3",
+    "area": "Glacier Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_mystery_hal_foss_fricaba",
+  "leg": 0,
+  "peak": "Mount Mystery",
+  "route": "Snow and rock from Deception Basin, loose class 3 to class 4 finish",
+  "pick": {
+   "id": "wa_mount_mystery_standard",
+   "name": "Standard Scramble (Deception Creek / Royal Basin)",
+   "disc": "mountaineering",
+   "grade": "Class 4",
+   "area": "Mount Mystery",
+   "score": 0.2857142857142857
+  },
+  "others": [
+   {
+    "id": "wa_mount_mystery_standard",
+    "name": "Standard Scramble (Deception Creek / Royal Basin)",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Mount Mystery",
+    "score": 0.2857142857142857
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_mystery_hal_foss_fricaba",
+  "leg": 1,
+  "peak": "Hal Foss Peak",
+  "route": "Snow slopes or small glacier, then a short ridge scramble (mostly class 2)",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "wa_lu_mystery_hal_foss_fricaba",
+  "leg": 2,
+  "peak": "Fricaba",
+  "route": "Ridge from the Hal Foss saddle",
+  "pick": {
+   "id": "wa_mount_fricaba_standard",
+   "name": "Standard Scramble (Constance Pass / Home Lake)",
+   "disc": "mountaineering",
+   "grade": "Class 2",
+   "area": "Mount Fricaba",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "wa_mount_fricaba_standard",
+    "name": "Standard Scramble (Constance Pass / Home Lake)",
+    "disc": "mountaineering",
+    "grade": "Class 2",
+    "area": "Mount Fricaba",
+    "score": 0
+   }
+  ]
+ }
+]

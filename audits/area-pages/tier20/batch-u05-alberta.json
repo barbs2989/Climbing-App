@@ -1,0 +1,37 @@
+{
+ "ab_haffner_creek": {
+  "_expect": {
+   "name": "Haffner Creek",
+   "region": "Alberta"
+  },
+  "blurb": "Haffner Creek is a small winter crag beside Highway 93 South in Kootenay National Park, a short drive from the Stanley Glacier lot and roughly forty minutes from Canmore. It is a compact canyon where short icefalls sit beside steep limestone, and some lines pass from one to the other. This area has mostly mixed routes, from moderate M5 up to M9, plus a handful of WI3 to WI4 ice lines. Walls are short, so it suits a quick day with tools and a rock rack. Expect company on weekends; getting there early helps, since the roadside lot is small. Conditions change year to year, so check ice before driving out.",
+  "parking_note": "Take Highway 93 South from the Trans-Canada and use the small lot beside the solar panels; it is a few minutes past the Stanley Glacier lot. Roadside space is tight, so arrive early.",
+  "approach": "A forest trail from the lot leads to the base of the first icefall in about 15 to 20 minutes.",
+  "approach_min": 20,
+  "season_months": [
+   12,
+   1,
+   2,
+   3
+  ],
+  "review": {
+   "sources": [
+    "https://app.advcollective.com/climbing/haffner-creek-accessible-mixed-climbing-in-kootenay-national-park",
+    "https://www.explore-share.com/trip/haffner-creek-ice-climbing-mixed-climbing-in-kootenay-national-park",
+    "https://mountainproject.com/area/118015045/radium-highway-93-south"
+   ]
+  }
+ },
+ "_skipped": {
+  "ab_roadside": "could not read two pages describing this sector (only search snippets)",
+  "ab_crowbar_wall": "pages for Cougar Canyon unreadable (403/503); only unreliable route listings",
+  "ab_the_dark_side_2": "only one readable page (Mountain Project); second returned 403",
+  "ab_the_hideaway": "Mountain Project Hideaway page is a Utah crag; no second Echo Canyon page readable",
+  "ab_casino_wall": "Cougar Canyon pages unreadable (403/503)",
+  "ab_6_eyes_of_bataan": "only one readable page, and it contradicts stored rock (granite vs limestone)",
+  "ab_blind_man_s_bluff": "Mountain Project Blind Man's Bluff page is a California crag; no readable Alberta page"
+ },
+ "_conflicts": {
+  "ab_6_eyes_of_bataan": "https://app.advcollective.com/climbing/bataan-bow-valleys-rugged-rock-escape says granite; stored rock is limestone (low-reliability page)"
+ }
+}

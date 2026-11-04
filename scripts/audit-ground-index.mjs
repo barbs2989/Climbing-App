@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Is `lib/ground-checked-pins.js` still describing THIS catalog?
 //
 // That file is a measurement of the ground under 3,947 waypoints, shipped so the route page can
@@ -33,7 +34,7 @@ import { groundDisagreements } from "../lib/track.js";
 import { GROUND_DISAGREEMENTS, GROUND_TOLERANCE_FT, GROUND_PINS_MEASURED,
          GROUND_ROUTES_MEASURED } from "../lib/ground-checked-pins.js";
 
-const root = new URL("..", import.meta.url).pathname;
+const root = fileURLToPath(new URL("..", import.meta.url));
 const env = {};
 for (const f of [".env.local", ".env"]) {
   try { for (const l of readFileSync(root + f, "utf8").split("\n")) {

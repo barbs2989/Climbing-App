@@ -19,11 +19,13 @@ import { fileURLToPath } from "url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const F = path.join(ROOT, "ClimbMatch.jsx");
 const GUARD = path.join(ROOT, "scripts/check-preview-claims.mjs");
-const sum = () => crypto.createHash("sha1").update(fs.readFileSync(F)).digest("hex");
+// Since PR61 two of the strings live in Crew views lifted out of App; such a case names its file.
+const FRIENDS = path.join(ROOT, "src/components/CrewFriendsView.tsx"), REQUESTS = path.join(ROOT, "src/components/CrewRequestsView.tsx");
+const sum = (f = F) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex");
 
 // Real historical strings (as they stood before 2026-09-30), restored one at a time.
 const CASES = [
-  { name: "kudos",
+  { name: "kudos", file: FRIENDS,
     why: "the friends-feed kudos toast as it stood: 'this preview doesn’t deliver it'",
     find: 'onKudos={it=>showToast("Kudos sent to "+pubFirst(it.f))}',
     repl: 'onKudos={it=>showToast("Kudos noted — this preview doesn’t deliver it to "+it.f.name.split(" ")[0]+".")}',
@@ -43,7 +45,7 @@ const CASES = [
     find: 'onExport={(t,h)=>printSheet(t,h,showToast)}',
     repl: 'onExport={()=>showToast("Résumé exported as PDF (simulated in this preview).")}',
     expect: /simulated/ },
-  { name: "heading",
+  { name: "heading", file: REQUESTS,
     why: "a heading promising an outcome of approving, true of only half the rows it covers",
     find: '"Climbers asking to join a group you moderate."',
     repl: '"Climbers asking to join a group you moderate — approving adds them."',
@@ -71,7 +73,10 @@ for (const c of CASES) {
 }
 
 let bad = 0;
+const origOf = Object.fromEntries([F, FRIENDS, REQUESTS].map((f) => [f, fs.readFileSync(f, "utf8")]));
+const beforeOf = Object.fromEntries([F, FRIENDS, REQUESTS].map((f) => [f, sum(f)]));
 for (const c of CASES) {
+  const T = c.file || F, orig = origOf[T];
   let next;
   if (c.all) next = c.all(orig);
   else {
@@ -79,14 +84,14 @@ for (const c of CASES) {
     if (n !== 1) { console.log(`${c.name}: HARNESS — find matched ${n} times, not 1\n`); bad++; continue; }
     next = orig.replace(c.find, c.repl);
   }
-  fs.writeFileSync(F, next, "utf8");
-  const landed = sum() !== before;
+  fs.writeFileSync(T, next, "utf8");
+  const landed = sum(T) !== beforeOf[T];
 
   let out = "", code = 0;
   try { out = execFileSync("node", [GUARD], { encoding: "utf8" }); }
   catch (e) { out = (e.stdout || "") + (e.stderr || ""); code = e.status; }
-  fs.writeFileSync(F, orig, "utf8");
-  const restored = sum() === before;
+  fs.writeFileSync(T, orig, "utf8");
+  const restored = sum(T) === beforeOf[T];
 
   let verdict;
   if (c.dead) verdict = (code === 2 && /BROKEN/.test(out)) ? "FAILED CLOSED (correct)" : "did NOT fail closed";
@@ -98,6 +103,6 @@ for (const c of CASES) {
   console.log(`   ${c.why}\n`);
 }
 
-if (sum() !== before) { console.error("ClimbMatch.jsx was NOT restored"); process.exit(2); }
+if (sum() !== before || sum(FRIENDS) !== beforeOf[FRIENDS] || sum(REQUESTS) !== beforeOf[REQUESTS]) { console.error("ClimbMatch.jsx or a Crew view was NOT restored"); process.exit(2); }
 console.log(bad ? `FAILED — ${bad} case(s) wrong` : `ok — ${CASES.length}/${CASES.length}`);
 process.exit(bad ? 1 : 0);

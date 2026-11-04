@@ -1,0 +1,152 @@
+{
+ "file": "r004.json",
+ "results": [
+  {
+   "id": "ut_fine_jade",
+   "fact": "Number of pitches",
+   "verdict": "fixed",
+   "correct_value": "5",
+   "evidence": "Mountain Project lists Fine Jade as a 5-pitch Grade III trad route and SummitPost/Abegg report it as 5 pitches (4 only if two are linked); pitch_detail has five consecutive pitch rows with two finishes on pitch 5, so the column is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/105717322/fine-jade",
+    "https://www.summitpost.org/route/191973/fine-jade.html",
+    "https://stephabegg.com/?p=5528"
+   ],
+   "patches": [
+    {
+     "id": "ut_fine_jade",
+     "fact": "Number of pitches",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 4,
+     "value": 5
+    }
+   ]
+  },
+  {
+   "id": "ut_fine_jade",
+   "fact": "Location of the crux",
+   "verdict": "fixed",
+   "correct_value": "finger crack on pitch 3 (5.11a)",
+   "evidence": "Mountain Project's description gives P3 as the 5.11a sustained finger and hand crack, the hardest graded pitch; Abegg's report captions the 5.11 crux as pitch 3. Pitch 2 is 5.10. Commenters call P1 the physical crux, which the pitch_detail crux flag already reflects as the physical one; the crux text field should name the 5.11a pitch.",
+   "sources": [
+    "https://www.mountainproject.com/route/105717322/fine-jade",
+    "https://stephabegg.com/?p=5528"
+   ],
+   "patches": [
+    {
+     "id": "ut_fine_jade",
+     "fact": "Location of the crux",
+     "op": "replace_text",
+     "column": "crux",
+     "path": [],
+     "find": "pitch 2 (5.11a)",
+     "replace": "pitch 3 (5.11a)"
+    }
+   ]
+  },
+  {
+   "id": "ut_fine_jade",
+   "fact": "Grade of the roof on the regular finish",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project calls the leftward traverse of the original finish 5.7 but gives no grade for a roof section and no 5.9+ figure; no second source breaks the finish down. The 5.9+ may belong to the whole pitch rather than the roof traverse, so nothing was changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/105717322/fine-jade"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ut_finger_of_fate",
+   "fact": "Route grade vs free alternative on a pitch",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route grade 5.8 C2+ is the aid line; pitch 5 offers C1 aid or about 5.10 free as an alternative, which is a genuine option.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "ut_finger_of_fate",
+   "fact": "Aid grade of pitch 8",
+   "verdict": "fixed",
+   "correct_value": "5.8 C2",
+   "evidence": "SummitPost gives the final aid pitch (arete with spaced bolts, mixed free and aid) as 5.8 C2, and Mountain Project's own pitch 8 body text describes C2 aid with long reaches though its header says A0. The row's notes already say C2, so the grade is aligned with them.",
+   "sources": [
+    "https://www.summitpost.org/finger-of-fate/917147",
+    "https://www.mountainproject.com/v/105719897"
+   ],
+   "patches": [
+    {
+     "id": "ut_finger_of_fate",
+     "fact": "Aid grade of pitch 8",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      7,
+      "grade"
+     ],
+     "expect": "5.8 A0",
+     "value": "5.8 C2"
+    }
+   ]
+  },
+  {
+   "id": "ut_finger_of_fate",
+   "fact": "Pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Pitch 9 is a fourth-class scramble; Mountain Project and Climbing list 8 roped pitches (Grade V), while Wikipedia counts 9 including the scramble. 8 is defensible.",
+   "sources": [
+    "https://www.mountainproject.com/v/105719897",
+    "https://en.wikipedia.org/wiki/Finger_of_Fate_(Fisher_Towers)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ut_finger_of_fate",
+   "fact": "Climb length",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "270 m (900 ft) is the published climb height of the route (Wikipedia, and the classic-list figure); the lengthM values are aid-pitch estimates that exclude the unmeasured summit scramble and rope-stretch, and Mountain Project's own pitch lengths sum to about 675 ft. No source gives a different overall height, so nothing is changed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Finger_of_Fate_(Fisher_Towers)",
+    "https://www.mountainproject.com/v/105719897"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wy_irene_s_arete",
+   "fact": "Pitch layout in the overview vs pitch_detail",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The overview's numbering (hard fourth pitch, overhang-and-layback seventh) disagrees with the detailed breakdown (crux on pitch 2, easy seventh), but the SummitPost and Abegg pages could not be fetched, and no second source was found to say which numbering is right. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/105804852/irenes-arete"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wy_irene_s_arete",
+   "fact": "Bail options",
+   "verdict": "fixed",
+   "correct_value": "a two-rappel escape right from the pitch 2 ledge exists",
+   "evidence": "Mountain Project's route text says it is possible to escape right from the pitch 2 ledge with two 60 m rappels, and a separate trip report describes a party bailing on pitch 2 by rappel. The 'no bail stations' remark is therefore qualified.",
+   "sources": [
+    "https://www.mountainproject.com/route/105804852/irenes-arete",
+    "https://tenthousandtoofar.com/2023/08/20/tetons-finest-irenes-arete-5-8-iii-disappointment-peak-gtnp-wy-07-30-23/"
+   ],
+   "patches": [
+    {
+     "id": "wy_irene_s_arete",
+     "fact": "Bail options",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "The party saw no bail stations along the route.",
+     "replace": "Apart from the two-rappel escape to the right from the pitch 2 ledge, there are no bail stations along the route."
+    }
+   ]
+  }
+ ]
+}

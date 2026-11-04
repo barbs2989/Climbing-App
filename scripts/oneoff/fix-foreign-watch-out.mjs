@@ -49,7 +49,7 @@ if (!todo.length) process.exit(0);
 
 const backup = path.join(here, `foreign-watch-out-backup-${new Date().toISOString().replace(/[:.]/g, "-")}.json`);
 fs.writeFileSync(backup, JSON.stringify(todo.map(id => ({ id, watch_out: live.get(id).watch_out })), null, 1));
-console.log(`backup: ${path.relative(process.cwd(), backup)}`);
+console.log(`backup: ${path.relative(process.cwd(), backup).replace(/\\/g, "/")}`);
 for (const id of todo) await patchRow("routes", id, { watch_out: null });
 
 const after = await read();

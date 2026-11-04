@@ -1,0 +1,95 @@
+{
+ "nl_bakers_brook_pond_psycho_killer": {
+  "area": "nl_bakers_brook_pond",
+  "skip_reason": "no source found that states the approach or descent for this line"
+ },
+ "nl_barrens_wall_between_wind_and_water": {
+  "area": "nl_barrens_wall",
+  "skip_reason": "no page found for this route; area information only says long snowmobile or ski travel"
+ },
+ "nl_cholesterol_wall_apocalypse_now": {
+  "area": "nl_cholesterol_wall",
+  "set": {
+   "approach": "Ten Mile Pond lies inside Gros Morne National Park, and the Cholesterol Wall is the big cliff rising over it. The way in follows the frozen pond from the western trail entrance, and the wall faces the South Wall across the ice.",
+   "descent_text": "Rappel the route. Take V-threads down the top two pitches. Then, starting at the fifth belay, rappel directly to the snow slope, drop the ice shield to the second belay, and finish with a last rappel to the base. Descending this way keeps you out from under the icicles that hang over the line."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/121401636/south-wall",
+    "https://www.mountainproject.com/area/121401609/east-end",
+    "https://publications.americanalpineclub.org/articles/13201214276"
+   ],
+   "confidence": "medium",
+   "notes": "Approach: area pages (wall above Ten Mile Pond, South Wall across, trail entrance). Descent: single article on the first ascent, non-numeric."
+  }
+ },
+ "nl_cholesterol_wall_apocalypse_now_direct": {
+  "area": "nl_cholesterol_wall",
+  "skip_reason": "no source says where the Direct departs from Apocalypse Now or how it is descended"
+ },
+ "nl_cholesterol_wall_the_lion_the_witch_and_the_wardrobe": {
+  "area": "nl_cholesterol_wall",
+  "set": {
+   "approach": "Ten Mile Pond lies inside Gros Morne National Park, and the Cholesterol Wall is the big cliff rising over it. The way in follows the frozen pond from the western trail entrance, and the wall faces the South Wall across the ice.",
+   "descent_text": "Parties get down by rappelling the route."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/121401636/south-wall",
+    "https://www.mountainproject.com/area/121401609/east-end",
+    "https://publications.americanalpineclub.org/articles/13201214276"
+   ],
+   "confidence": "medium",
+   "notes": "Approach as Apocalypse Now. Descent: the article states only that the line is descended by rappel; no counts."
+  }
+ },
+ "nl_northwest_wall_he_speaks_for_rain": {
+  "area": "nl_northwest_wall",
+  "skip_reason": "no source found for this route"
+ },
+ "nl_northwest_wall_spirit_of_beotuk": {
+  "area": "nl_northwest_wall",
+  "skip_reason": "no source found for this route"
+ },
+ "nl_northwest_wall_weather_vein": {
+  "area": "nl_northwest_wall",
+  "skip_reason": "no source found for this route"
+ },
+ "nl_south_east_hills_unnamed": {
+  "area": "nl_south_east_hills",
+  "skip_reason": "unnamed one-pitch row; no source found"
+ },
+ "nl_south_wall_unnamed": {
+  "area": "nl_south_wall",
+  "skip_reason": "unnamed row; the only page for the wall lists no routes and gives no descent"
+ },
+ "nl_western_brook_gulch_beluga": {
+  "area": "nl_western_brook_gulch",
+  "skip_reason": "no page found for this route; sources give only general area access"
+ },
+ "nl_western_brook_gulch_grauple_fest": {
+  "area": "nl_western_brook_gulch",
+  "skip_reason": "no page found for this route"
+ },
+ "nl_western_brook_gulch_newfinized": {
+  "area": "nl_western_brook_gulch",
+  "skip_reason": "only a passing mention in an article; no approach or descent for the line"
+ },
+ "nl_western_brook_pond_captains_courageous": {
+  "area": "nl_western_brook_pond",
+  "skip_reason": "first-ascent article says the line is reached from above by rappels but gives no descent; not enough to write safely"
+ },
+ "nl_western_brook_pond_dreamline": {
+  "area": "nl_western_brook_pond",
+  "set": {
+   "approach": "The fjord at Western Brook Pond rarely freezes, so the base is not reached across the pond. The line is reached from the cliff top instead: a snow gully leads down to the shore, then an approach gully, exposed to falling ice, leads to a long ramp that rises to the main icefall."
+  },
+  "review": {
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201214688"
+   ],
+   "confidence": "medium",
+   "notes": "Single article on the first ascent; approach only, no descent stated, no numbers used."
+  }
+ }
+}

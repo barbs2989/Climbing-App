@@ -1,3 +1,6 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // Does the checked date survive the LIVE read and the real mapper?
 //
 // check:access-checked-line proves the render path with a fixture, and check:schema proves lib/db.js
@@ -46,7 +49,7 @@ if (!v) { console.error(`\nStamped rows should carry a date. Either the stamp di
 const { execFileSync } = await import("node:child_process");
 const fsm = await import("node:fs");
 const pathm = await import("node:path");
-const ROOT = pathm.resolve(pathm.dirname(new URL(import.meta.url).pathname), "../..");
+const ROOT = pathm.resolve(pathm.dirname(fileURLToPath(new URL(import.meta.url))), "../..");
 const entry = pathm.join(ROOT, `.checked-entry-${process.pid}.mjs`);
 const bundle = pathm.join(ROOT, `.checked-bundle-${process.pid}.mjs`);
 const cleanup = () => { fsm.rmSync(entry, { force: true }); fsm.rmSync(bundle, { force: true }); };
@@ -56,11 +59,11 @@ try {
     `export { dbRouteToCamel } from ${JSON.stringify(pathm.join(ROOT, "lib/db.js"))};`,
     `export { accessCheckedLine } from ${JSON.stringify(pathm.join(ROOT, "lib/road.js"))};`,
   ].join("\n"));
-  execFileSync("npx", ["esbuild", entry, "--bundle", "--format=esm", "--platform=node",
+  execFileSync(NPX, [...NPX_PRE, "esbuild", entry, "--bundle", "--format=esm", "--platform=node",
     "--define:import.meta.env={}", "--external:react", "--external:@tanstack/react-query",
     "--log-level=error", "--outfile=" + bundle], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 } catch { cleanup(); console.error("FAIL — esbuild could not bundle lib/db.js"); process.exit(1); }
-const mod = await import(bundle + "?t=" + Date.now());
+const mod = await import(fileHref(bundle + "?t=" + Date.now()));
 const { dbRouteToCamel, accessCheckedLine } = mod;
 cleanup();
 const camel = dbRouteToCamel(row);

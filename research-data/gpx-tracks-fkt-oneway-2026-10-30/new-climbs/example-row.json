@@ -1,0 +1,112 @@
+{
+ "area": {
+  "id": "id_thompson_peak",
+  "name": "Thompson Peak",
+  "parent_id": "id_sawtooth_range_the",
+  "area_type": "peak",
+  "lat": 44.14153,
+  "lng": -115.01003,
+  "elevation_ft": 10751,
+  "prominence_ft": 2431,
+  "region": "Idaho",
+  "blurb": "Thompson Peak is the highest summit in Idaho's Sawtooth Range, a granite high point rising above the Redfish Lake area near Stanley in the Sawtooth Wilderness. Its standard route is a long but non-technical day, with trail, off-trail travel past a high alpine lake and only a short Class 3 finish."
+ },
+ "route": {
+  "id": "id_diamond_peak_east_ridge",
+  "area_id": "id_diamond_peak",
+  "name": "East Ridge",
+  "discipline": "scrambling",
+  "grade": "3rd",
+  "grade_system": "class",
+  "rock_grade": "Sustained Class 3 on the upper ridge crest",
+  "season": "July-September",
+  "best_season": "Mid-summer to early fall, once the ridge is snow-free and the rough road has dried out. Early-season snow lingers on the upper ridge, and fall storms can coat the rock in snow and ice.",
+  "overview": "The East Ridge is the standard way up Diamond Peak, the highest summit in the Lemhi Range and one of Idaho's few ultra-prominent peaks. From a high trailhead reached by a rough dirt road, a short, steep climbers' path leads onto a long ridge that rises about 3,000 ft from treeline to the top. The upper half is a sustained Class 3 scramble with big views over the Birch Creek Valley far below.",
+  "beta": "From the parking area, follow the remains of an old jeep track and then a worn climbers' path up grassy slopes to a saddle on the ridge at about 9,300-9,400 ft. Climb steeply up the ridge to around 10,200 ft, where it bends northwest, and continue up to about 10,800 ft. From here the ridge narrows and the scrambling becomes sustained: a series of short rock steps, roughly 10-30 ft high, around 11,000 ft form the crux, followed by long stretches of easier Class 2-3 scrambling to the summit. Stay on or very close to the crest, dropping just left of it when needed; the faces on either side quickly turn into Class 4-5 terrain.",
+  "approach": "From Idaho Highway 28 in the Birch Creek Valley on the east side of the Lemhi Range, turn west on the signed Pass Creek Road (north of the old Blue Dome site). Beyond the first couple of miles the road fords Pass Creek and becomes rough; stay on the main track through a gate and into the national forest. The road finishes as rough jeep tracks to a small saddle with a fire ring at about 8,000 ft, where parties park.",
+  "descent_text": "Descend the same way along the East Ridge, staying on the crest through the Class 3 steps, then follow the climbers' path back down the grassy slopes to the parking area.",
+  "turnaround": "Turn back if you have not reached the start of the sustained scrambling around 10,800 ft by late morning, or if storms are building over the range.",
+  "bail": "Retreat is back down the ridge the way you came; do not try to shortcut off either side of the crest, which quickly becomes cliffy Class 4-5 terrain.",
+  "pitch_detail": [
+   {
+    "pitch": "Trailhead to ridge saddle",
+    "grade": "Class 1-2",
+    "notes": "Old jeep track and worn climbers' path up grassy slopes from about 8,000 ft to a saddle near 9,300-9,400 ft."
+   },
+   {
+    "pitch": "Lower East Ridge",
+    "grade": "Class 2",
+    "notes": "Steep ridge climbing to about 10,200 ft, where the ridge bends northwest, then on to about 10,800 ft."
+   },
+   {
+    "pitch": "Crux rock steps",
+    "grade": "Class 3",
+    "notes": "A series of short rock steps, roughly 10-30 ft high, around 11,000 ft. Stay close to the crest."
+   },
+   {
+    "pitch": "Upper ridge to summit",
+    "grade": "Class 2-3",
+    "notes": "Long stretch of mixed Class 2 and 3 scrambling on or just left of the crest to the summit at 12,197 ft."
+   }
+  ],
+  "gain_ft": 4200,
+  "high_point_ft": 12197,
+  "outing_shape": "outback",
+  "gear": [
+   "Sturdy approach shoes or boots",
+   "Helmet"
+  ],
+  "what_to_bring": [
+   "Plenty of water - there is none on the ridge",
+   "Warm layer and wind shell",
+   "Sun protection",
+   "Map and navigation for the ridge",
+   "Spare tire and recovery gear for the road"
+  ],
+  "hazards": [
+   "Class 3 scrambling on the upper ridge",
+   "Cliffy Class 4-5 terrain just off the crest",
+   "Loose rock",
+   "Lightning on an exposed ridge"
+  ],
+  "obj_haz": [
+   "Afternoon thunderstorms",
+   "Early- or late-season snow and ice on the ridge",
+   "Rockfall from parties above"
+  ],
+  "watch_out": "Straying off the crest leads quickly into harder, exposed terrain\nThe road becomes rough jeep tracks near the end\nSteep, relentless gain from the car - about 4,200 ft in under 3 miles",
+  "pro_tips": [
+   "Start early to be off the ridge before afternoon storms",
+   "When in doubt on the upper ridge, return to the crest",
+   "Carry all your water from the car",
+   "Watch for the saddle with a fire ring to know you have reached parking"
+  ],
+  "features": [
+   "Scenic",
+   "Classic",
+   "Remote"
+  ],
+  "road": {
+   "name": "Pass Creek Road",
+   "status": "Rough dirt road; high-clearance 4WD recommended",
+   "driveNote": "Leaves Idaho Highway 28 westward north of the old Blue Dome site. The road fords Pass Creek early on, passes a gate, and enters the national forest; the last stretch is rough jeep tracks. Cars are unlikely to get far past the first couple of miles."
+  },
+  "timing": {
+   "recommendedStart": "Early morning"
+  },
+  "grade_num": 3,
+  "pitches": 0,
+  "access": {
+   "land_manager": "Caribou-Targhee National Forest",
+   "permit": "None"
+  },
+  "dist_km": 4.5,
+  "approach_logistics": {
+   "trailhead": "Pass Creek Road End",
+   "trailheadLat": 44.14738,
+   "trailheadLng": -113.03906
+  },
+  "auto_generated": true,
+  "classic": false
+ }
+}

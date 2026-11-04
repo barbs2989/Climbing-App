@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Build the rope-capacity correction batch for the 8 routes the rule-3 triage confirmed.
 // See research-data/RAPPEL-RULE3-TRIAGE-2026-08-13.md for the evidence behind each one.
 //
@@ -12,7 +13,7 @@
 import fs from "fs";
 import { selectAll } from "../lib/supabase-env.mjs";
 
-const ROOT = new URL("../../", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../../", import.meta.url));
 
 // station is 1-BASED, matching how the tables read on screen and in the triage.
 // `to: null` is the correct value for a distance no source publishes. Halving a rope's capacity

@@ -1,0 +1,58 @@
+{
+ "wy_trailside_wall": {
+  "_expect": {
+   "name": "Trailside Wall",
+   "region": "Wyoming"
+  },
+  "blurb": "Trailside Wall is the first cliff you meet in Piney Creek Canyon, in the Eastern Big Horns between Story, Sheridan and Buffalo. It sits right beside the creek-side trail, a short flat stroll in. Nearly all of the 21 routes are bolted sport lines, with a pair on trad gear and a few set up for top-rope. Grades run from 5.6 to 5.13, but the bulk fall in the 5.9 to 5.11 range, with 5.10 the most common. The wall slips into shade in the late afternoon of summer days, so it works well for after-work sessions and hot weather. It is one of the most visited crags for locals.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106078456/trailside-wall",
+    "https://www.mountainproject.com/area/106078451/piney-creek-canyon"
+   ]
+  }
+ },
+ "wy_ark_the": {
+  "_expect": {
+   "name": "Ark, The",
+   "region": "Wyoming"
+  },
+  "blurb": "The Ark is a detached fin of dolomite standing apart from the main cliff in the Mecca zone of Ten Sleep Canyon, Wyoming. It is a hard-sport destination: all 20 routes are bolted, with seven around 5.11, eleven at 5.12 and a couple reaching 5.13. There is nothing here for beginners. It is reached by a trail that passes the Heaven's Gate wall before the boulder field, and the upper part of that trail is steep and exposed. Two smaller formations, Noah's Castle and Radha-Krishna Pillar, sit nearby in the same sub-area.",
+  "review": {
+   "sources": [
+    "https://rakkup.com/guidebook/ten-sleep-rock-climbing/the-ark-area/s21769",
+    "https://app.advcollective.com/climbing/heavens-gate-a-scenic-adventure-on-the-ark-wall"
+   ]
+  }
+ },
+ "wy_cirque_of_the_moon": {
+  "_expect": {
+   "name": "Cirque of the Moon",
+   "region": "Wyoming"
+  },
+  "blurb": "Cirque of the Moon is a remote horseshoe of walls and buttresses high in the Wind River Range, between Papoose Lake and Long Lake, on the southern side of the Popo Agie's North Fork. Reaching it takes a long backpack, and few parties visit. Most of the 20 routes are long alpine-style or traditional lines, mainly 5.8 to 5.11 with a couple of 5.12s, plus a few aid pitches and a handful of boulder problems on the rubble floor. The granite varies a lot: some sections are loose and crumbly while the best cracks are on the lower part of the Green Cheese Buttress. Expect adventure climbing, not a roadside crag.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107419549/cirque-of-the-moon",
+    "https://publications.americanalpineclub.org/articles/13201215280"
+   ]
+  }
+ },
+ "wy_meadow_mound_the": {
+  "_expect": {
+   "name": "Meadow Mound, The",
+   "region": "Wyoming"
+  },
+  "blurb": "The Meadow Mound is the largest outcrop in the Kennedy Ranch Rocks group, in the Laramie Range of southeast Wyoming at roughly 7,100 feet. Of its 20 routes, 16 are sport and four are trad. Steep slab face climbing is found at the west end, gear-protected lines in the middle, and about ten bolted routes on the east end by a dark intrusion. Grades start around 5.8 and are densest at 5.11, with only one route harder than that. It suits climbers who like a quiet, open meadow setting and moderate-to-hard slab and face moves.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107477161/the-meadow-mound",
+    "https://www.mountainproject.com/area/107472186/kennedy-ranch-rocks"
+   ]
+  }
+ },
+ "_skipped": {},
+ "_conflicts": {
+  "wy_meadow_mound_the": "Stored rock is gneiss, but the parent page https://www.mountainproject.com/area/107472186/kennedy-ranch-rocks calls the Kennedy Ranch Rocks granite domes; the area page https://www.mountainproject.com/area/107477161/the-meadow-mound mentions a black amphibole intrusion only. Rock left unchanged and unnamed in blurb."
+ }
+}

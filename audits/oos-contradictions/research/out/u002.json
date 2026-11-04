@@ -1,0 +1,61 @@
+{
+ "file": "u002.json",
+ "results": [
+  {
+   "id": "ut_fine_jade",
+   "fact": "Grade of the roof on the regular finish",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "roof on the original finish carries no separate 5.9+ grade (pitch as a whole is 5.9+)",
+   "evidence": "Mountain Project gives the original finish no roof grade (traverse left, top out a corner crack); rockclimbing.com calls the traditional finish 5.7; the row's pitch note already says 'about 5.7 and airy'. The stray 5.9+ tied to the roof in variations is the pitch-level grade, so it is removed from the roof.",
+   "sources": [
+    "https://www.mountainproject.com/route/105717322/fine-jade",
+    "https://thrillseekersanonymous.com/2015/02/20/fine-jade/",
+    "http://www.rockclimbing.com/routes/North_America/United_States/Utah/Moab/Castle_Valley/The_Rectory/Fine_Jade_5469.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "variations",
+     "path": [
+      0
+     ],
+     "find": "then left under a roof (5.9+)",
+     "replace": "then left under a roof",
+     "id": "ut_fine_jade",
+     "fact": "Grade of the roof on the regular finish"
+    }
+   ]
+  },
+  {
+   "id": "wy_irene_s_arete",
+   "fact": "Pitch layout in the overview vs pitch_detail",
+   "verdict": "fixed",
+   "correct_value": "overview should not number pitches that disagree with pitch_detail",
+   "evidence": "Mountain Project's pitch-by-pitch (also the row's pitch_detail) puts the crux on pitch 2, the traverse on 4 and an easy pitch 7; a 2023 trip report numbers the knife-edge arete as pitch 4 and describes pitch 5 variations, so numbering varies by guide. The overview's 'fourth pitch is hard' and 'seventh pitch ... overhang' conflict with the table; ordinals removed.",
+   "sources": [
+    "https://www.mountainproject.com/route/105804852/irenes-arete",
+    "https://tenthousandtoofar.com/2023/08/20/tetons-finest-irenes-arete-5-8-iii-disappointment-peak-gtnp-wy-07-30-23/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "the fourth pitch is hard",
+     "replace": "the middle pitches get harder",
+     "id": "wy_irene_s_arete",
+     "fact": "Pitch layout in the overview vs pitch_detail"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "The seventh pitch traverses left",
+     "replace": "Higher up, the line traverses left",
+     "id": "wy_irene_s_arete",
+     "fact": "Pitch layout in the overview vs pitch_detail"
+    }
+   ]
+  }
+ ]
+}

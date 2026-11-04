@@ -58,13 +58,13 @@ const fail = [];
 const note = [];
 
 if (!fs.existsSync(DIR)) {
-  console.error(`FAIL — no ${path.relative(ROOT, DIR)} directory; nothing was checked`);
+  console.error(`FAIL — no ${path.relative(ROOT, DIR).replace(/\\/g, "/")} directory; nothing was checked`);
   process.exit(1);
 }
 
 const files = fs.readdirSync(DIR).filter((f) => /\.ya?ml$/.test(f));
 if (!files.length) {
-  console.error(`FAIL — ${path.relative(ROOT, DIR)} holds no workflow files; the scan broke`);
+  console.error(`FAIL — ${path.relative(ROOT, DIR).replace(/\\/g, "/")} holds no workflow files; the scan broke`);
   process.exit(1);
 }
 

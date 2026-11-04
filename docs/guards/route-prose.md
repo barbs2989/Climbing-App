@@ -1221,10 +1221,41 @@ the correction knows the screen is wrong, and they have no way to report it.
     cheap to reword. Normalised for case, punctuation and hyphens, so "right-facing" ≡ "right facing".
   - **What it cannot see.** A source it could not load (SummitPost and theCrag 403 to scripts;
     some `review.sources` entries carry notes after the URL and fail to fetch) — named in the
-    output, never counted as clean. A copy from a page the batch did not list. A paraphrase that
+    output, never counted as clean. Since 2026-10-29 a researcher who read such a page in the real
+    browser saves the text it drew on and maps it in `review.source_texts` (URL → repo path); the
+    check then reads that copy instead of fetching, so a SummitPost-sourced entry is checked too. A copy from a page the batch did not list. A paraphrase that
     swaps one word in every seven. Prose already in the catalog with no batch file behind it — that
     is the #2142 audit's ground, measured then at ~1 verbatim lift per 160 sampled phrases, and
     deliberately NOT re-run here.
+  - **`--live` (2026-10-29): the catalog's side, not the batch's.** A batch check sees the text as
+    written; everything applied before the gate existed, and anything edited since, was never compared.
+    `--live` walks EVERY JSON file under `audits/` (2,601 files), credits each route id with every URL
+    anywhere beneath the object that names it (an `id` field, or the id as a key — the shapes differ
+    by wave: contradiction `results[]`, grade arrays, `{id: spec}` batches), then reads that route's
+    LIVE row (public key) and runs the same 8-word test over every string in it of 8+ words, except
+    ids, names and provenance columns. 1,469 routes, ~7,700 cited pages. Pages are fetched one at a
+    time per site, 1 s apart, eight sites at once (`--cache DIR` keeps them for a re-run;
+    `--fetch-only` warms the cache without touching the database). `review.source_texts` copies are
+    used when a research file carries them. Cannot see: a route whose research cited no URL, and the
+    sites that refuse scripts — the same blind spots as the batch check.
+  - **First run, 2026-10-29: 841 of 1,469 routes, 3,067 runs.** 6,355 of the 7,730 cited pages
+    were readable. 1,061 of the runs were names, not prose: an agency and ranger district, an
+    address, a road number, a first-ascent party and date (60%+ of the run's non-function words
+    capitalised or numeric — `scripts/oneoff/copied-prose-live/prepare.mjs`). Those were left as
+    they are. The rest were 1,657 distinct strings (1,754 placements on 690 routes), heaviest in
+    `access`, `approach_variants`, `pitch_detail`, `waypoints`, `approach` and `beta`: the waves
+    before the gate, including the contradiction and leftover passes. Every one was reworded clause
+    by clause, with the same facts and the same digits. Each was re-checked against the same cached
+    pages and written through `scripts/oneoff/rewrite-copied-prose.mjs` (an exact splice that refuses
+    a drifted row; re-read after each write; rollback files in `audits/copied-prose-live/rollback/`).
+    The writes go through `scripts/oneoff/copied-prose-live/apply-batches.mjs`. It probes a one-row
+    read before every batch and waits out an outage (10 min after a stop, giving up after 6 stops). A
+    re-run is safe: a row already rewritten reads back as ALREADY. 114 columns landed on 2026-10-29
+    before the database stopped taking writes; the rest resumes with
+    `node scripts/oneoff/copied-prose-live/apply-batches.mjs b01 b02 … b24` (delete `applied.txt` first
+    for a full pass that also catches rows refused on a failed read).
+    A few rewrites also dropped a sentence that credited a source by name. The rule is
+    [no-sources](../codebase/enrichment-prose.md).
   - **Selftest:** `--selftest` needs no network: the Dark Shadows sentence as applied is flagged,
     the same facts reworded are not, a short shared phrase is not, and `review`/`area`/labels are
     never walked.
@@ -1242,8 +1273,30 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **ABOVE** (more than one step over the route's highest 5.x), **BELOW** (highest named grade
     under the crux), **NONE** (no 5.x on the route, a 5.x lead above 5.6 asked). A clause that
     names an aided, French-freed, optional or variation section does not count as asked —
-    "Solid 5.10 leader; the 5.11a crux can be aided" is honest, not BELOW. `--selftest` holds 17 cases.
-  - **Not yet run against the catalog** — written 2026-10-28 while the database was answering
-    one-row reads in 30-180 s, so the census waited. The repo's enrichment files hold ~317
-    distinct `experienceLevel` strings, 49 naming a 5.x grade: expect a small class.
+    "Solid 5.10 leader; the 5.11a crux can be aided" is honest, not BELOW. `--selftest` holds 32 cases.
+  - **The route's crux is the highest 5.x in `rock_grade`, `grade` AND its own `pitch_detail[].grade`**
+    (2026-10-30). Headers lag their pitches: Spire Point's SW Face reads 5.4 with two 5.6 pitches,
+    Mox's standard 5.5 with a 5.7 pitch, Lundin's south face 5.0 with a 5.6 last pitch. A partner
+    text asking for that 5.6 is RIGHT; the header is a different audit's question (not changed here —
+    no outside source settled those three).
+  - **A bare letter grade is its whole range** ("a solid 5.11 leader" asks for 5.11a and promises up
+    to 5.11d). Read as the b/c middle, it flagged "Solid 5.11 trad leader" on a 5.11a route.
+  - A "+" is half a step: "Solid 5.9" on a 5.9+ crux is not BELOW; BELOW needs a full step.
+  - In a GRADE string, a parenthesis with no grade of its own qualifies the grade before it
+    ("5.7 (unprotectable, usually bypassed)" is not the line); one WITH a grade qualifies that
+    grade ("5.4 (5.6 on the variation)"). `off-route`, `variant`, `bypassed` count as not asked.
+  - **Census and outcome, 2026-10-30** (service key): **470** routes carry partner requirements,
+    **109** name a 5.x grade, all in WA. First run (old parser): 18 ABOVE, 13 BELOW, 0 NONE;
+    7 ABOVE were the bare-grade misreading. Every remaining row was researched (two Sonnet batches,
+    `audits/partner-grade/proposals{A,B}.json`) and **20 rows rewritten** in our own words by
+    `scripts/oneoff/fix-partner-grade.mjs` (16) and `fix-partner-grade-2.mjs` (4, the rows the
+    pitch-grade crux surfaced); rollbacks `scripts/rollback-partner-grade-*.json`. Now:
+    **0 ABOVE, 1 BELOW, 0 NONE**.
+  - **The one accepted row:** `wa_ingalls_peak_south_ridge` — pitch 2's grade field reads 5.6, but
+    its own note says that is the harder crack and the left line goes at 5.4; the partner text names
+    both. The audit reads pitch GRADES, not pitch notes, so it will keep listing it. Not a finding.
+  - Stored grades kept despite a lower outside listing, by the keep-the-higher rule: Terror's East
+    Ridge 5.8 (one listing 5.6), Stuart's West Ridge 5.6 (older listings 5.4), Burgner-Stanley 5.10a
+    (5.9+ to 5.10b). Sharkfin Tower stays 5.0 (near-universal) with its text naming "a couple of
+    harder moves near 5.4".
   - Service key, `partner_requirements=not.is.null` in 100-row pages. Not a build gate.

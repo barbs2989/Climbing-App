@@ -1,0 +1,102 @@
+[
+ {
+  "batch": "T3",
+  "id": "ca_northwest_arete_2",
+  "i": 0,
+  "name": "Happy Isles Trailhead",
+  "from": [
+   37.73539,
+   -119.56629
+  ],
+  "state": "California",
+  "ground_ft": 3995,
+  "pins": [
+   {
+    "id": "ca_northwest_arete_2",
+    "i": 0,
+    "name": "Happy Isles Trailhead",
+    "elev": 4009
+   }
+  ],
+  "route_names": [
+   "Northwest Arete"
+  ],
+  "text": "",
+  "first_pass": "not moved: stored point is 45 m from OSM parking way 24601910 'Valley Trailhead Parking' (37.735011,-119.566464), 801 m from the Happy Isles node; the route text is unavailable here, so this may be the valley parking lot rather than Happy Isles. Ground 3995 ft agrees with pin elev 4009 ft. Unverified which spot is meant."
+ },
+ {
+  "batch": "T3",
+  "id": "ca_northwest_buttress_2",
+  "i": 0,
+  "name": "Tenaya Lake Northeast Shore Pullout",
+  "from": [
+   37.83642,
+   -119.45423
+  ],
+  "state": "California",
+  "ground_ft": 8159,
+  "pins": [
+   {
+    "id": "ca_northwest_buttress_2",
+    "i": 0,
+    "name": "Tenaya Lake Northeast Shore Pullout",
+    "elev": 8151
+   }
+  ],
+  "route_names": [
+   "Northwest Buttress"
+  ],
+  "text": "",
+  "first_pass": "no published coordinate: 'Tenaya Lake Northeast Shore Pullout' is a roadside pullout; OSM/Photon list no such node (nearest named lot is Sunrise Lakes 1.9 km away, a different place)."
+ },
+ {
+  "batch": "T3",
+  "id": "ca_tenaya_matthes_cathedral_traverse",
+  "i": 0,
+  "name": "Tenaya Lake North Parking",
+  "from": [
+   37.83769,
+   -119.45173
+  ],
+  "state": "California",
+  "ground_ft": 8161,
+  "pins": [
+   {
+    "id": "ca_tenaya_matthes_cathedral_traverse",
+    "i": 0,
+    "name": "Tenaya Lake North Parking",
+    "elev": 8192
+   }
+  ],
+  "route_names": [
+   "Tenaya, Matthes, Cathedral Traverse"
+  ],
+  "text": "",
+  "first_pass": "no published coordinate: 'Tenaya Lake North Parking' is a roadside pullout; no OSM node for it (nearest named lot Sunrise Lakes 2.1 km away, a different place)."
+ },
+ {
+  "batch": "T3",
+  "id": "ca_north_arete_6",
+  "i": 0,
+  "name": "Twin Lakes (Mono Village) Trailhead",
+  "from": [
+   38.14573,
+   -119.37867
+  ],
+  "state": "California",
+  "ground_ft": 7100,
+  "pins": [
+   {
+    "id": "ca_north_arete_6",
+    "i": 0,
+    "name": "Twin Lakes (Mono Village) Trailhead",
+    "elev": 7133
+   }
+  ],
+  "route_names": [
+   "North Arete"
+  ],
+  "text": "",
+  "first_pass": "no published coordinate: OSM lists only the Mono Village marina (38.147507,-119.377186, 236 m), restaurant and store, no trailhead node. Unverified; no change."
+ }
+]

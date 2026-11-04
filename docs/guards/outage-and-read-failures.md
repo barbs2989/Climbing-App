@@ -495,6 +495,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       `catch(cmFail)` and `_restore(setCondReports, …)`. **A too-narrow proxy manufactures
       findings here rather than hiding them** — it would have sent somebody to "fix" five correct
       handlers.
+  - **2026-10-29, the OPTIMISTIC-UI census (`scripts/oneoff/measure-pessimistic-writes.mjs`, report-only).** It asks the other half: does the screen move BEFORE the server answers? 218 sites across the three app files, `lib/*.jsx` and `src/components/`. **Two traps in building it**: a local wrapper (`var _put=function(v){setMyStars(...)}; _put(n)`) is a setter no name test sees, so the binding is resolved and its body read; and a setter written just AFTER an un-awaited call still runs in the same tick (`leaveGroupRow`). Its last section lists optimistic sites whose catch only refetches or toasts; **most are noise** (try/catch blocks and conditional-call `.catch`es it cannot attribute), but two were real and are fixed: `toggleWish` kept a failed objective lit, and `onUpdateList` relied on a refetch that returns the SAME structurally-shared array, so the effect copying `myListsQ.data` into `userLists` never re-ran. **Rule: when the guess lives in local state copied from a query, a refetch is not a rollback** — restore the row, or patch the query cache itself with `patchQueries()` so the undo restores the cache.
   - **AND THE THIRD DIRECTION IS EMPTY TOO, so the write side is closed: a write that SUCCEEDS
     whose result never reaches the screen.** That is the mirror of the two above — the climber's
     change vanishes until reload, so a successful write reads as a failure. Of 43 write call sites
@@ -1472,3 +1473,14 @@ that they had none — on the one screen whose whole subject is who you climb wi
     `check:read-failures` for why this repo refuses those). The helper is the fix; the probe is the
     measurement to re-run if the fan-out is ever in question. Every other table the app reads holds
     under ten rows pre-launch, so nothing else can approach the cap before the catalog does.
+
+- **`check:overlay-absence` comment floor and the six CHECKED reasons (2026-10-30, PR #2879).** The lib
+  floor was 1 comment for every lib file, so the terse `lib/condRows.jsx` (4 lines, no comments) failed as
+  a "broken parse". The floor now applies to files of 4 kB and over; smaller files keep the parse check.
+  Clearing the guard then meant reading the copy behind seven overlays that had no recorded reason:
+  settingsOpen, feedbackOpen, privacyOpen, rateOpen, contribOpen, eventForm, dataReq. Each now has a
+  CHECKED entry naming where its copy lives. Verdicts came from a read-only review: the "No crew invites"
+  empty state is CrewRequestsView, which shows the error copy first; "No areas" is AreaTree's in-memory
+  seed search; "no route carries one yet" and "no longer message" are static Help/Legal prose; the
+  SharedListView and ListsManager empty copy sit after their error branches. The stale `reviewQueue`
+  entry was removed because that overlay no longer asserts absence.

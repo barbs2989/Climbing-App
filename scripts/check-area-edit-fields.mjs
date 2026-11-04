@@ -23,6 +23,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (rel) => fs.readFileSync(path.join(ROOT, rel), "utf8");
@@ -88,7 +89,7 @@ if (jsKeys.length && written.length) {
 const editor = read("lib/AreaSuggestFix.jsx");
 if (/import \{[^}]*\bAREA_EDIT_FIELDS\b[^}]*\} from "\.\/areaFields"/.test(editor) && /AREA_EDIT_FIELDS\.map\(/.test(editor)) ok("lib/AreaSuggestFix.jsx renders its rows from AREA_EDIT_FIELDS");
 else fail("lib/AreaSuggestFix.jsx does not render its rows from AREA_EDIT_FIELDS — a field could be editable in one place and not the other");
-const page = read("lib/DbAreaBrowser.jsx") + "\n" + read("lib/AreaPageSections.jsx");
+const page = readAppFile(path.join(ROOT, "lib/DbAreaBrowser.jsx")) + "\n" + read("lib/AreaPageSections.jsx");
 for (const k of jsKeys) {
   const col = MULTI[k] ? MULTI[k][0] : k;
   if (!new RegExp("area\\." + col + "\\b").test(page)) fail(`no screen reads area.${k} — the field would be editable and shown nowhere (lib/DbAreaBrowser.jsx, lib/AreaPageSections.jsx)`);

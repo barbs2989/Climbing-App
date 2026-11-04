@@ -1,0 +1,37 @@
+{
+ "wa_colchuck_peak_north_buttress_couloir": {
+  "area": "wa_colchuck_peak",
+  "pitch_detail": [
+   {
+    "grade": "Talus/moraine",
+    "notes": "From the far side of Colchuck Lake, hike up and gain the moraine, follow it right to the couloir entrance at the glacier's edge.",
+    "pitch": "Approach"
+   },
+   {
+    "grade": "Steep snow",
+    "notes": "Steep snow fills the gully, continuous in winter and early season, averaging about 40 degrees with stretches near 50. It may be hard snow or ice in cold weather and deep and soft in places. Avalanche debris can litter the foot and wind slab can build near the top; rock walls hem in both sides.",
+    "pitch": "Lower couloir"
+   },
+   {
+    "grade": "Class 3-4 late season / mixed",
+    "notes": "As snow thins later in the season, a few short Class 4 rock steps are exposed.",
+    "pitch": "Rock steps"
+   },
+   {
+    "grade": "Variable",
+    "notes": "Top-out can be guarded by a cornice that has required over an hour to breach in some reported conditions.",
+    "pitch": "Cornice/exit"
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/january-23-25-2004-colchuck-peak-n-buttresscouloir",
+    "https://sverdina.com/colchuck1.asp"
+   ],
+   "changed": "Wrote Lower couloir only (angle, snow variability, debris and wind-slab hazard). Left out Rock steps: the pages I could read (several were 403 or blank) did not describe them; search snippets alone were not used.",
+   "other_findings": "One fetched report puts the couloir top at a narrow col near 7,900 ft with traverse onto the NW face; stored row has the exit as a cornice only."
+  }
+ }
+}

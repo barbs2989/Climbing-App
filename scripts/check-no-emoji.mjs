@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // check:no-emoji — the app draws no emoji. Owner, 2026-10-25: "i dont want emojis".
 //
 // Every icon the app shows is a line icon (`ActionIcon`, src/components/ActionIcon.tsx) or no icon
@@ -24,7 +25,7 @@
 import { readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const APP = /^(ClimbMatch\.jsx|ClimbMatchCore\.jsx|RouteDetail\.jsx|EnrichmentPanels\.jsx|main\.jsx|lib\/.*\.(jsx?|tsx?)|src\/.*\.(jsx?|tsx?))$/;
 const EXEMPT = new Set(["src/components/Lbl.tsx"]);
 const EMOJI = /[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{23E9}-\u{23FA}\u{231A}\u{231B}]/gu;

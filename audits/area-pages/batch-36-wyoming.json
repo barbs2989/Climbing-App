@@ -1,0 +1,85 @@
+{
+ "wy_2_fairfield_central": {
+  "_expect": {
+   "name": "Fairfield Central",
+   "region": "Wyoming"
+  },
+  "blurb": "Fairfield Central is the middle section of Fairfield Hill, a limestone sport cliff band east of the main Sinks Canyon wall near Lander. The rock here is more vertical and crimpy than the steeper lower-canyon crags, with plenty of pocketed faces, and the grades cluster from 5.10 through 5.12. The cliff faces south and catches strong sun, which makes it a good call on cold winter days when the valley sits in an inversion, and a poor one in midsummer heat. It sees fewer people than the canyon's headline walls, and reaching it takes a proper hike.",
+  "rock": "limestone",
+  "aspect": "S",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105827594/fairfield-hill",
+    "https://jeremy-rowan.squarespace.com/blog/jakes-takes-the-curious-case-of-fairfield-hill1242022"
+   ]
+  }
+ },
+ "wy_island_the": {
+  "_expect": {
+   "name": "Island, The",
+   "region": "Wyoming"
+  },
+  "blurb": "The Island is a free-standing granite pillar rising roughly 100 feet beside the highway in Shoshone Canyon, west of Cody. Climbs wrap around most of its sides, so you can follow the sun or hide from it as the day moves. Most lines are single-pitch sport routes, with a handful of trad cracks, and the grades cover everything from easy to hard, with the bulk in the 5.9 to 5.12 range. The walk from the car is under a minute, which makes it a favorite with locals and a convenient place for families or short after-work sessions.",
+  "parking_note": "Head west out of Cody through Shoshone Canyon on the highway. After the first two short tunnels and before the long one, a pullout for climbers sits on the north side of the road.",
+  "approach": "Under a minute on flat ground from the pullout.",
+  "approach_min": 1,
+  "rock": "granite",
+  "aspect": "varies",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106157884/the-island",
+    "https://lemkeclimbs.com/?p=2559",
+    "https://rakkup.com/guidebook/cody-rock-climbing/the-island-area/s15232"
+   ]
+  }
+ },
+ "wy_aspen_grade_wall": {
+  "_expect": {
+   "name": "Aspen Grade Wall",
+   "region": "Wyoming"
+  },
+  "blurb": "Aspen Grade Wall is a tucked-away cliff on the shady side of Sinks Canyon near Lander. It is mostly bolted single-pitch sport climbing, with a few longer multi-pitch lines mixed in, and the grades run mainly through the 5.10s and 5.11s with some harder lines above. The shade makes it a sensible choice in warm weather, and it is chilly in winter. On most routes a 60 m rope gets you down from the anchors, but the longest lines need two rappels or a longer rope. Expect a solid uphill walk, and be alert for wildlife on the trail.",
+  "approach": "Start from the canyon campground, cross the river, turn left and follow the trail toward Moose Gulch, then branch onto the Aspen Grade trail. Just before a stand of big aspens, a small cairn marks a faint track that leads over game trails to the base. Count on 20 to 30 minutes.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/116520560/aspen-grade-wall",
+    "https://www.mountainproject.com/area/105827053/sinks-canyon"
+   ]
+  }
+ },
+ "wy_west_face": {
+  "_expect": {
+   "name": "West Face",
+   "region": "Wyoming"
+  },
+  "blurb": "The West Face is one of the most approachable sides of Devils Tower, a mostly traditional crack-climbing wall with a few bolted lines. The best climbing is on the lower two-thirds of the tower, and most routes sit in the 5.10 to 5.12 range. Cracks run from fingers to wide, so bring a full rack of cams; routes are long, sustained and protected by gear rather than bolts. Descents are typically by rappel, and many need two ropes, so check anchors yourself and know your line down before leaving the ground.",
+  "approach": "Leave the main loop trail shortly after it turns south alongside the tower, then climb the boulder field to the base. Most routes lie left of an obvious stemming box with two wide dihedrals.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105714441/west-face",
+    "https://www.nps.gov/deto/planyourvisit/climbing.htm"
+   ]
+  }
+ },
+ "wy_reynolds_hill": {
+  "_expect": {
+   "name": "Reynolds Hill",
+   "region": "Wyoming"
+  },
+  "blurb": "Reynolds Hill is a quieter corner of Vedauwoo, reached by a longer walk than the roadside crags and noticeably less crowded than the central area. The climbing is mostly traditional granite cracks, from fingers and hands to off-width, with some face climbing and a few boulder problems. Grades spread from easy to 5.12, with the greatest share in the 5.9 to 5.11 range. Aspen groves and meadows at the base make for a pleasant setting away from highway noise.",
+  "parking_note": "Drive east past the main Vedauwoo turnoff about 2.5 miles to Road 700D, turn left, and park soon after at the gate.",
+  "approach": "Walk to the junction with 700CD and turn right, follow the old road down to the stream, then pick up a trail toward the rock.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105745376/reynolds-hill",
+    "https://www.cheyenne.org/blog/post/best-places-to-rockclimb-vedauwoo/"
+   ]
+  }
+ },
+ "_skipped": {
+  "wy_killer_cave": "only one fetchable page (Mountain Project Sinks Canyon); rockclimbing.com and gearx failed"
+ },
+ "_conflicts": {
+  "wy_aspen_grade_wall": "rock: stored dolomite, but Mountain Project Sinks Canyon page lists the Shady Side as the granite section (https://www.mountainproject.com/area/105827053/sinks-canyon); wall page itself does not state rock"
+ }
+}

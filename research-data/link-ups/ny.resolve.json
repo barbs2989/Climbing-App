@@ -1,0 +1,346 @@
+[
+ {
+  "lu": "ny_lu_great_range_traverse",
+  "leg": 0,
+  "peak": "Hedgehog",
+  "route": "Range Trail from the Rooster Comb trailhead (Rooster Comb is a short optional spur)",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "ny_lu_great_range_traverse",
+  "leg": 1,
+  "peak": "Lower Wolfjaw",
+  "route": "Range Trail",
+  "pick": {
+   "id": "ny_lower_wolfjaw_wedge_brook_and_range_trail_from_st_huberts",
+   "name": "Wedge Brook and Range Trail from St. Huberts",
+   "disc": "scrambling",
+   "grade": "Class 1",
+   "area": "Lower Wolfjaw",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "ny_lower_wolfjaw_wedge_brook_and_range_trail_from_st_huberts",
+    "name": "Wedge Brook and Range Trail from St. Huberts",
+    "disc": "scrambling",
+    "grade": "Class 1",
+    "area": "Lower Wolfjaw",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_great_range_traverse",
+  "leg": 2,
+  "peak": "Upper Wolfjaw",
+  "route": "Range Trail",
+  "pick": {
+   "id": "ny_upper_wolfjaw_mountain_wedge_brook_trail",
+   "name": "Wedge Brook Trail",
+   "disc": "scrambling",
+   "grade": "Class 1",
+   "area": "Upper Wolfjaw Mountain",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "ny_upper_wolfjaw_mountain_wedge_brook_trail",
+    "name": "Wedge Brook Trail",
+    "disc": "scrambling",
+    "grade": "Class 1",
+    "area": "Upper Wolfjaw Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_great_range_traverse",
+  "leg": 3,
+  "peak": "Armstrong",
+  "route": "Range Trail",
+  "pick": {
+   "id": "ny_armstrong_mountain_great_range_trail_from_the_lake_road",
+   "name": "Great Range Trail from the Lake Road",
+   "disc": "scrambling",
+   "grade": "Class 1",
+   "area": "Armstrong Mountain",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "ny_armstrong_mountain_great_range_trail_from_the_lake_road",
+    "name": "Great Range Trail from the Lake Road",
+    "disc": "scrambling",
+    "grade": "Class 1",
+    "area": "Armstrong Mountain",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_great_range_traverse",
+  "leg": 4,
+  "peak": "Gothics",
+  "route": "Range Trail, with a steep cabled face",
+  "pick": {
+   "id": "ny_gothics_beaver_meadow_falls_trail_to_the_range_trail",
+   "name": "Beaver Meadow Falls Trail to the Range Trail",
+   "disc": "scrambling",
+   "grade": "Class 1",
+   "area": "Gothics",
+   "score": 0.25
+  },
+  "others": [
+   {
+    "id": "ny_gothics_beaver_meadow_falls_trail_to_the_range_trail",
+    "name": "Beaver Meadow Falls Trail to the Range Trail",
+    "disc": "scrambling",
+    "grade": "Class 1",
+    "area": "Gothics",
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_great_range_traverse",
+  "leg": 5,
+  "peak": "Saddleback",
+  "route": "Range Trail",
+  "pick": {
+   "id": "ny_saddleback_mountain_ore_bed_trail",
+   "name": "Ore Bed Trail",
+   "disc": "scrambling",
+   "grade": "Class 1",
+   "area": "Saddleback Mountain",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "ny_saddleback_mountain_ore_bed_trail",
+    "name": "Ore Bed Trail",
+    "disc": "scrambling",
+    "grade": "Class 1",
+    "area": "Saddleback Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_great_range_traverse",
+  "leg": 6,
+  "peak": "Basin",
+  "route": "Range Trail",
+  "pick": {
+   "id": "ny_basin_mountain_shoreys_shortcut",
+   "name": "Shorey's Shortcut",
+   "disc": "scrambling",
+   "grade": "Class 1",
+   "area": "Basin Mountain",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "ny_basin_mountain_shoreys_shortcut",
+    "name": "Shorey's Shortcut",
+    "disc": "scrambling",
+    "grade": "Class 1",
+    "area": "Basin Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_great_range_traverse",
+  "leg": 7,
+  "peak": "Haystack",
+  "route": "Range Trail, then a spur to the summit",
+  "pick": {
+   "id": "ny_mount_haystack_phelps_trail_from_the_garden",
+   "name": "Phelps Trail from the Garden",
+   "disc": "scrambling",
+   "grade": "Class 1",
+   "area": "Mount Haystack",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "ny_mount_haystack_phelps_trail_from_the_garden",
+    "name": "Phelps Trail from the Garden",
+    "disc": "scrambling",
+    "grade": "Class 1",
+    "area": "Mount Haystack",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_great_range_traverse",
+  "leg": 8,
+  "peak": "Mount Marcy",
+  "route": "Range Trail to the Phelps Trail junction and the summit",
+  "pick": {
+   "id": "ny_mount_marcy_van_hoevenberg_trail",
+   "name": "Van Hoevenberg Trail",
+   "disc": "scrambling",
+   "grade": "Class 1",
+   "area": "Mount Marcy",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "ny_mount_marcy_van_hoevenberg_trail",
+    "name": "Van Hoevenberg Trail",
+    "disc": "scrambling",
+    "grade": "Class 1",
+    "area": "Mount Marcy",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_gothics_armstrong_upper_wolfjaw",
+  "leg": 0,
+  "peak": "Gothics",
+  "route": "Orebed Brook Trail to the Range Trail, with a steep cabled section",
+  "pick": {
+   "id": "ny_gothics_beaver_meadow_falls_trail_to_the_range_trail",
+   "name": "Beaver Meadow Falls Trail to the Range Trail",
+   "disc": "scrambling",
+   "grade": "Class 1",
+   "area": "Gothics",
+   "score": 0.14285714285714285
+  },
+  "others": [
+   {
+    "id": "ny_gothics_beaver_meadow_falls_trail_to_the_range_trail",
+    "name": "Beaver Meadow Falls Trail to the Range Trail",
+    "disc": "scrambling",
+    "grade": "Class 1",
+    "area": "Gothics",
+    "score": 0.14285714285714285
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_gothics_armstrong_upper_wolfjaw",
+  "leg": 1,
+  "peak": "Armstrong",
+  "route": "Range Trail",
+  "pick": {
+   "id": "ny_armstrong_mountain_great_range_trail_from_the_lake_road",
+   "name": "Great Range Trail from the Lake Road",
+   "disc": "scrambling",
+   "grade": "Class 1",
+   "area": "Armstrong Mountain",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "ny_armstrong_mountain_great_range_trail_from_the_lake_road",
+    "name": "Great Range Trail from the Lake Road",
+    "disc": "scrambling",
+    "grade": "Class 1",
+    "area": "Armstrong Mountain",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_gothics_armstrong_upper_wolfjaw",
+  "leg": 2,
+  "peak": "Upper Wolfjaw",
+  "route": "Range Trail",
+  "pick": {
+   "id": "ny_upper_wolfjaw_mountain_wedge_brook_trail",
+   "name": "Wedge Brook Trail",
+   "disc": "scrambling",
+   "grade": "Class 1",
+   "area": "Upper Wolfjaw Mountain",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "ny_upper_wolfjaw_mountain_wedge_brook_trail",
+    "name": "Wedge Brook Trail",
+    "disc": "scrambling",
+    "grade": "Class 1",
+    "area": "Upper Wolfjaw Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_santanoni_range",
+  "leg": 0,
+  "peak": "Santanoni Peak",
+  "route": "Express herd path from the Bradley Pond approach",
+  "pick": {
+   "id": "ny_santanoni_peak_santanoni_express",
+   "name": "Santanoni Express",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Santanoni Peak",
+   "score": 0.2
+  },
+  "others": [
+   {
+    "id": "ny_santanoni_peak_santanoni_express",
+    "name": "Santanoni Express",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Santanoni Peak",
+    "score": 0.2
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_santanoni_range",
+  "leg": 1,
+  "peak": "Couchsachraga",
+  "route": "Herd path from the Times Square col",
+  "pick": {
+   "id": "ny_couchsachraga_peak_via_santanoni_ridge",
+   "name": "Via Santanoni ridge",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Couchsachraga Peak",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "ny_couchsachraga_peak_via_santanoni_ridge",
+    "name": "Via Santanoni ridge",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Couchsachraga Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_santanoni_range",
+  "leg": 2,
+  "peak": "Panther Peak",
+  "route": "Ridge path to Herald Square, then a short spur",
+  "pick": {
+   "id": "ny_panther_peak_panther_brook_herd_path",
+   "name": "Panther Brook herd path",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Panther Peak",
+   "score": 0.16666666666666666
+  },
+  "others": [
+   {
+    "id": "ny_panther_peak_panther_brook_herd_path",
+    "name": "Panther Brook herd path",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Panther Peak",
+    "score": 0.16666666666666666
+   }
+  ]
+ }
+]

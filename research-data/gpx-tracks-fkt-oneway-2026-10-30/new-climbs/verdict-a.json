@@ -1,0 +1,859 @@
+[
+ {
+  "slug": "mt-lefroy-ab-canada",
+  "verdict": "add",
+  "reason": "The West Face above Abbot Pass needs a crevassed glacier crossing and steep snow, so it is a mountaineering objective; the track ends on the summit.",
+  "aliases": [],
+  "area": {
+   "id": "ab_mount_lefroy",
+   "name": "Mount Lefroy",
+   "parent_id": "ab_lake_louise",
+   "area_type": "peak",
+   "lat": 51.36222,
+   "lng": -116.27972,
+   "elevation_ft": 11230,
+   "prominence_ft": 1368,
+   "region": "Alberta",
+   "blurb": "Mount Lefroy is a glaciated summit of the Bow Range on the Alberta-British Columbia line, rising directly above Abbot Pass between Lake Louise and Lake O'Hara. Its usual route climbs snow slopes on the west side from the pass."
+  },
+  "route": {
+   "id": "ab_mount_lefroy_west_face",
+   "area_id": "ab_mount_lefroy",
+   "name": "West Face via Abbot Pass",
+   "discipline": "mountaineering",
+   "grade": "3rd",
+   "grade_system": "class",
+   "rock_grade": "Steep snow and firm ice on the face, with a short scrambly rock section near the pass; no true fifth-class climbing",
+   "season": "July-September",
+   "best_season": "Summer, when the face holds firm snow in the early morning. Afternoon sun softens the slopes and sets off wet slides, so an early start matters.",
+   "overview": "The West Face is the easiest way up Lefroy, a high snow climb that starts at Abbot Pass on the Continental Divide. From Lake O'Hara the approach climbs steep scree and scrambly ground to the pass, then crosses a crevassed glacier basin before the snow slopes of the face lead to the summit ridge. Cornices overhang the east side of the top.",
+   "beta": "From the pass, drop onto the glacier on the north side and pick a safe line across to the base of the west face, roping up for the crevasses. Which of the gullies on the face is best depends on snow conditions; early in the day the snow is hard and crampons and an axe are enough. Climb the steep snow to the summit ridge and follow it to the top, staying well back from the cornices overhanging the drop to the east.",
+   "approach": "Bus or walk the Lake O'Hara road from the Trans-Canada Highway to the lake, pass Lake Oesa, and climb the steep scree and scrambling trail to Abbot Pass at about 2,925 m. The old hut at the pass has been demolished, so plan a long day or carry your own shelter. The alternative from Lake Louise goes through the Death Trap gorge and is exposed to avalanches and serac fall.",
+   "descent_text": "Reverse the route down the snow slopes while the snow is still firm, downclimbing with crampons and axes, then recross the glacier to Abbot Pass and return to Lake O'Hara.",
+   "turnaround": "Turn back if the snow on the face has gone soft and wet, or if rockfall and slides are starting on the west side.",
+   "bail": "Retreat the way you came across the glacier to Abbot Pass; the Death Trap gorge toward Lake Louise is a poor escape in afternoon heat.",
+   "pitch_detail": [
+    {
+     "pitch": "Lake O'Hara to Abbot Pass",
+     "grade": "Class 2-3",
+     "notes": "Past Lake Oesa, then steep scree and scrambling that is exposed to rockfall and often holds snow or ice."
+    },
+    {
+     "pitch": "Glacier crossing",
+     "grade": "Glacier travel",
+     "notes": "Rope up for crevasses on the glacier north of the pass and cross to the base of the face."
+    },
+    {
+     "pitch": "West Face",
+     "grade": "Steep snow",
+     "notes": "Firm snow in the early morning, climbed with crampons and an axe, up one of the gullies to the summit ridge."
+    },
+    {
+     "pitch": "Summit ridge",
+     "grade": "Snow",
+     "notes": "Short ridge to the top, with cornices on the east side."
+    }
+   ],
+   "gain_ft": 5985,
+   "high_point_ft": 11230,
+   "outing_shape": "outback",
+   "gear": [
+    "Crampons",
+    "Ice axe",
+    "Rope and glacier gear",
+    "Helmet",
+    "Snow protection"
+   ],
+   "what_to_bring": [
+    "Extra warm layers",
+    "Sun protection",
+    "Headlamp",
+    "Bus reservation for the Lake O'Hara road if not walking"
+   ],
+   "hazards": [
+    "Crevasses on the glacier",
+    "Cornices on the summit ridge",
+    "Wet slides on the face in afternoon sun",
+    "Rockfall near Abbot Pass",
+    "Steep icy slope near the top"
+   ],
+   "obj_haz": [
+    "Rockfall near the pass",
+    "Afternoon avalanches on the west face"
+   ],
+   "watch_out": "Soft afternoon snow turns the face dangerous\nThe Death Trap gorge on the Lake Louise side is avalanche and serac terrain",
+   "pro_tips": [
+    "Start early so the face is frozen and you are down before it warms",
+    "Cross the glacier roped and test the snow bridges",
+    "Stay back from the cornices on the east side"
+   ],
+   "features": [
+    "Scenic",
+    "Classic",
+    "Glacier"
+   ],
+   "timing": {
+    "recommendedStart": "Very early morning"
+   },
+   "grade_num": 3,
+   "pitches": 0,
+   "access": {
+    "land_manager": "Banff National Park and Yoho National Park (Parks Canada)",
+    "permit": "Lake O'Hara bus reservation if not walking"
+   },
+   "dist_km": 33,
+   "approach_logistics": {
+    "trailhead": "Lake O'Hara Road parking, Trans-Canada Highway",
+    "trailheadLat": 51.4453,
+    "trailheadLng": -116.3292
+   },
+   "auto_generated": true,
+   "classic": true
+  },
+  "parentNote": "Filed under Lake Louise (Banff) since the peak is on the Banff side of the divide; Lake O'Hara/Yoho has no matching region.",
+  "trailhead": "Lake O'Hara Road parking",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/mt-lefroy-ab-canada",
+   "https://en.wikipedia.org/wiki/Mount_Lefroy",
+   "https://en.wikipedia.org/wiki/Abbot_Pass_hut",
+   "http://frontrange.ca/blog/2009/09/lefroy-july-2009/index.html",
+   "https://peakery.com/mount-lefroy-alberta/"
+  ],
+  "trailheadNote": "Lake O'Hara Road parking at the Trans-Canada Highway"
+ },
+ {
+  "slug": "mt-birdwood-nw-ridge-ab-canada",
+  "verdict": "add",
+  "reason": "The northwest ridge is a rated 5.4-5.5 alpine ridge climb with loose rock and exposure, reached from the Smuts Pass trail; the track ends on the summit.",
+  "aliases": [],
+  "area": {
+   "id": "ab_mount_birdwood",
+   "name": "Mount Birdwood",
+   "parent_id": "ab_kananaskis",
+   "area_type": "peak",
+   "lat": 50.78528,
+   "lng": -115.36806,
+   "elevation_ft": 10161,
+   "prominence_ft": 2411,
+   "region": "Alberta",
+   "blurb": "Mount Birdwood is the highest peak of the Spray Mountains, on the east edge of Banff National Park above the Birdwood Lakes. Its ridges give long rock climbs well beyond the reach of ordinary scrambles."
+  },
+  "route": {
+   "id": "ab_mount_birdwood_northwest_ridge",
+   "area_id": "ab_mount_birdwood",
+   "name": "Northwest Ridge",
+   "discipline": "alpine",
+   "grade": "5.5",
+   "grade_system": "yds",
+   "rock_grade": "Loose, exposed ridge climbing; a lower half of Class 3 scrambling and a few moves of 5.4-5.5",
+   "season": "July-September",
+   "best_season": "Mid-summer to early fall once the ridge is dry. The crest is very windy and exposed, and snow or verglass on the rock makes it much harder.",
+   "overview": "The Northwest Ridge is the more commonly used route up Birdwood, ahead of the harder Lizzie's Ridge on the southeast side. It starts from the long Commonwealth Creek trail to Smuts Pass and then follows a narrow, airy crest of loose limestone to the summit.",
+   "beta": "From the high pass south of the Birdwood Lakes, turn onto the northwest ridge and follow it up. The lower half is a loose, exposed scramble that most parties find stays near Class 3. Higher up the ridge steepens and narrows, with a short knife-edge and a few harder moves in the 5.4-5.5 range; rock quality is poor, so test every hold. Many parties carry a rope, a small rack and slings for the harder steps.",
+   "approach": "Park at the road end near Mount Engadine Lodge off the Smith-Dorrien Trail, then follow the Commonwealth Creek trail through forest and meadow to Smuts Pass. Bears are common in the valley, and the trail is hard to follow where an avalanche brought down trees.",
+   "descent_text": "Descend the northwest ridge the way you came, then return along the pass and valley trail to the road.",
+   "turnaround": "Turn back if wind is strong on the crest or if the rock is wet, icy or snow-covered.",
+   "bail": "Retreat down the ridge the same way; the faces on either side are loose and cliffy.",
+   "pitch_detail": [
+    {
+     "pitch": "Trail to Smuts Pass",
+     "grade": "Class 1-2",
+     "notes": "Commonwealth Creek trail through forest and meadow, about 9 km to the high pass."
+    },
+    {
+     "pitch": "Lower ridge",
+     "grade": "Class 3",
+     "notes": "Loose and exposed scrambling on the lower half of the northwest ridge."
+    },
+    {
+     "pitch": "Upper ridge",
+     "grade": "5.4-5.5",
+     "notes": "Narrow crest with a short knife-edge and a few harder moves on poor rock."
+    }
+   ],
+   "gain_ft": 4240,
+   "high_point_ft": 10161,
+   "outing_shape": "outback",
+   "gear": [
+    "Helmet",
+    "Rope",
+    "Small rack and slings",
+    "Approach shoes or light boots"
+   ],
+   "what_to_bring": [
+    "Wind shell",
+    "Plenty of water",
+    "Bear spray",
+    "Navigation"
+   ],
+   "hazards": [
+    "Loose, chossy rock",
+    "Exposure on a narrow crest",
+    "Strong wind on the ridge",
+    "Bears in the approach valley",
+    "Verglass or snow on the rock"
+   ],
+   "obj_haz": [
+    "Rockfall from parties above",
+    "Afternoon thunderstorms"
+   ],
+   "watch_out": "Loose rock throughout the ridge\nStrong wind can push you around the crest",
+   "pro_tips": [
+    "Start early for a long approach and a loose ridge",
+    "Carry bear spray for the Commonwealth Creek valley",
+    "Move one at a time on loose sections"
+   ],
+   "features": [
+    "Scenic",
+    "Remote"
+   ],
+   "timing": {
+    "recommendedStart": "Early morning"
+   },
+   "grade_num": 5.5,
+   "pitches": 0,
+   "access": {
+    "land_manager": "Peter Lougheed Provincial Park and Banff National Park",
+    "permit": "None"
+   },
+   "dist_km": 19.2,
+   "approach_logistics": {
+    "trailhead": "Smutwood Peak trailhead off Mount Shark Road",
+    "trailheadLat": 50.8388,
+    "trailheadLng": -115.351
+   },
+   "auto_generated": true,
+   "classic": false
+  },
+  "parentNote": "No Kananaskis region row in the tree; ab_kananaskis (a top-level group in area-tree.txt) is used. Peak straddles Banff NP / Peter Lougheed PP. Gain and distance are the FKT page's stated figures for the round trip. The batch trackTop equals the summit (Wikipedia 50.78528, -115.36806).",
+  "trailhead": "Smutwood Peak trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/mt-birdwood-nw-ridge-ab-canada",
+   "https://www.ubc-voc.com/trip-reports/38-years-in-the-making-mt-birdwood-via-lizzies-ridge-10155/",
+   "https://en.wikipedia.org/wiki/Mount_Birdwood",
+   "https://giantsgate.com/destinations/mount-smuts/"
+  ],
+  "trailheadNote": "Smutwood Peak trailhead (Mount Shark Road end)"
+ },
+ {
+  "slug": "mt-smuts-ab-canada",
+  "verdict": "add",
+  "reason": "The south ridge is the hardest scramble in Kane's book, with sustained fifth-class climbing on a steep chimney and cliff bands; the FKT track (a double ascent) follows that route.",
+  "aliases": [],
+  "area": {
+   "id": "ab_mount_smuts",
+   "name": "Mount Smuts",
+   "parent_id": "ab_kananaskis",
+   "area_type": "peak",
+   "lat": 50.80778,
+   "lng": -115.38694,
+   "elevation_ft": 9639,
+   "prominence_ft": 1939,
+   "region": "Alberta",
+   "blurb": "Mount Smuts is a limestone peak in the Spray Mountains on the boundary of Peter Lougheed Provincial Park and Banff National Park. It is known as one of the most serious scrambles in the Kananaskis area, with very few parties summiting each year."
+  },
+  "route": {
+   "id": "ab_mount_smuts_south_ridge",
+   "area_id": "ab_mount_smuts",
+   "name": "South Ridge",
+   "discipline": "alpine",
+   "grade": "5.2",
+   "grade_system": "yds",
+   "rock_grade": "Exposed limestone slabs and a chimney at about 5.2, with a harder 5.5 line on the crest",
+   "season": "July-September",
+   "best_season": "Summer, when the rock is bone dry. Do not attempt it when the rock is wet or snowy.",
+   "overview": "The south ridge is a long, committing route up steep limestone above Smuts Pass. A scree gully leads to three cliff bands and then a ridge walk to the summit. Many people call it a scramble but it climbs like low fifth class, and most parties rope up unless conditions are perfect.",
+   "beta": "From Smuts Pass, go up a scree gully to the ridge, passing the ledge system known as the Staircase. Three cliff bands follow. At the first the harder crest line goes at about 5.5, while the usual way takes a chimney to the right at around 5.2. Above, a ridge walk leads to the summit.",
+   "approach": "Park near Mount Engadine Lodge off the Smith-Dorrien Trail on the Mount Shark road, then follow the trail up Commonwealth Creek to the meadow between The Fist and Commonwealth Peak and on to Smuts Pass. Bears are common, and fallen trees hide the trail in places.",
+   "descent_text": "Descend the ridge until it drops steeply toward the col with Mount Shark, then down a west-side gully with short downclimbs and loose rock, followed by a ledge traverse to steep scree.",
+   "turnaround": "Turn back if the rock is wet or has snow, or if you lose the line on the cliff bands.",
+   "bail": "Retreat the way you came; the gully and descent drop away on loose rock, so rope up to descend if needed.",
+   "pitch_detail": [
+    {
+     "pitch": "Commonwealth Creek trail to Smuts Pass",
+     "grade": "Class 1-2",
+     "notes": "Trail through forest and meadow to the pass."
+    },
+    {
+     "pitch": "Scree gully to the ridge",
+     "grade": "Class 2-3",
+     "notes": "Long gully up the Staircase ledge system and scree to the ridge."
+    },
+    {
+     "pitch": "Cliff bands",
+     "grade": "5.2",
+     "notes": "Three cliff bands; a chimney on the right is the usual way, a harder line on the crest goes at about 5.5."
+    },
+    {
+     "pitch": "Summit ridge",
+     "grade": "Class 2",
+     "notes": "Ridge walk to the top."
+    }
+   ],
+   "gain_ft": 4918,
+   "high_point_ft": 9639,
+   "outing_shape": "outback",
+   "gear": [
+    "Helmet",
+    "Rope and a few slings",
+    "Approach shoes or light boots"
+   ],
+   "what_to_bring": [
+    "Water",
+    "Bear spray",
+    "Navigation"
+   ],
+   "hazards": [
+    "Sustained fifth-class climbing",
+    "Loose rock and rockfall in the gullies",
+    "Long fall exposure",
+    "Bears in the valley",
+    "Route-finding errors"
+   ],
+   "obj_haz": [
+    "Rockfall on the descent gully",
+    "Wet rock making the cliff bands unsafe"
+   ],
+   "watch_out": "A solo fatal fall occurred here in 2018\nThe descent is harder than the ascent",
+   "pro_tips": [
+    "Go with a partner and carry a rope",
+    "Spread out in the gully to avoid rockfall on each other",
+    "Start early; it is a long day"
+   ],
+   "features": [
+    "Scenic",
+    "Remote"
+   ],
+   "timing": {
+    "recommendedStart": "Early morning"
+   },
+   "grade_num": 5.2,
+   "pitches": 0,
+   "access": {
+    "land_manager": "Peter Lougheed Provincial Park and Banff National Park",
+    "permit": "None"
+   },
+   "dist_km": 18.9,
+   "approach_logistics": {
+    "trailhead": "Mount Shark Road end near Mount Engadine Lodge",
+    "trailheadLat": 50.8389,
+    "trailheadLng": -115.351
+   },
+   "auto_generated": true,
+   "classic": false
+  },
+  "parentNote": "No Kananaskis region row in the tree; ab_kananaskis (top-level group in area-tree.txt) is used. The FKT track is a double ascent (x2) but follows the same line. The batch trackTop (50.797, -115.388) is about 1.2 km south of the summit; the GPX high point is at 50.8078, -115.3867, matching Wikipedia's coordinates.",
+  "trailhead": "Smutwood Peak trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/mt-smuts-ab-canada",
+   "https://giantsgate.com/destinations/mount-smuts/",
+   "https://en.wikipedia.org/wiki/Mount_Smuts",
+   "https://publications.americanalpineclub.org/articles/13201215252"
+  ],
+  "trailheadNote": "Mount Shark Road end near Mount Engadine Lodge (same trailhead as Birdwood)"
+ },
+ {
+  "slug": "mt-cline-ab-canada",
+  "verdict": "add",
+  "reason": "The Southwest Ridge needs snow-slope travel, a glacier-type plateau and two 5.4 notches that sometimes call for a rope, so it is an alpine route; the track follows it from Thompson Creek.",
+  "aliases": [],
+  "area": {
+   "id": "ab_mount_cline",
+   "name": "Mount Cline",
+   "parent_id": "ab_rockies",
+   "area_type": "peak",
+   "lat": 52.0699,
+   "lng": -116.68295,
+   "elevation_ft": 11027,
+   "prominence_ft": 3924,
+   "region": "Alberta",
+   "blurb": "Mount Cline is the highest peak in Clearwater County, a remote summit of the Cline Range north of Saskatchewan Crossing along the David Thompson Highway. It is a big alpine day or an overnight with a bivy at the tarns."
+  },
+  "route": {
+   "id": "ab_mount_cline_southwest_ridge",
+   "area_id": "ab_mount_cline",
+   "name": "Southwest Ridge",
+   "discipline": "alpine",
+   "grade": "5.4",
+   "grade_system": "yds",
+   "rock_grade": "Two exposed U-shaped notches at 5.4, with bolted anchors; otherwise scree, snow and easy scrambling",
+   "season": "July-September",
+   "best_season": "Mid to late summer once the snow slope below the ridge has softened and the notches are dry.",
+   "overview": "The Southwest Ridge is the main route up Cline, a long approach with a small bivy site at alpine tarns and a ridge with two deep notches as the technical highlight. After the notches the summit is a straightforward walk.",
+   "beta": "Above the tarns, cross a faint headwall right to left, follow the glacial stream to a shallow col, and cross the snowy plateau to the ridge. The crux is two narrow notches in the ridge, each downclimbed and then climbed out of the far side at about 5.4. Fixed anchors and large boulders allow a rappel station if you want to protect them. Past the notches, a plain hike leads to the top.",
+   "approach": "Park on the grassy area across the David Thompson Highway from Thompson Creek Campground. Follow the creek trail about 4 km, crossing twice on logs, then climb the west moraine gully, a flagged route over a cliff band on a treed ridge, and a long scree slope past twin waterfalls to the tarns.",
+   "descent_text": "Return by the ridge, downclimbing or rappelling the notches, then retrace the approach to the highway.",
+   "turnaround": "Turn back if the notches are wet or icy or the snow slope is too hard without crampons.",
+   "bail": "Retreat along the ridge and down the approach; rappel the notches if needed.",
+   "pitch_detail": [
+    {
+     "pitch": "Creek trail to tarns",
+     "grade": "Class 2",
+     "notes": "Creek trail, moraine gully, flagged cliff-band route and scree to the alpine tarns."
+    },
+    {
+     "pitch": "Headwall and plateau",
+     "grade": "Snow",
+     "notes": "Faint route across the headwall to a col and snowy plateau; ice axe and crampons for the snow slope."
+    },
+    {
+     "pitch": "The notches",
+     "grade": "5.4",
+     "notes": "Two narrow U-shaped notches on the ridge, each downclimbed and climbed out."
+    },
+    {
+     "pitch": "Summit",
+     "grade": "Class 2",
+     "notes": "Straightforward walk to the top."
+    }
+   ],
+   "gain_ft": 6535,
+   "high_point_ft": 11027,
+   "outing_shape": "outback",
+   "gear": [
+    "Ice axe",
+    "Crampons",
+    "Helmet",
+    "Rope and slings for the notches"
+   ],
+   "what_to_bring": [
+    "Bivy gear if staying overnight",
+    "Navigation for the faint headwall route",
+    "Water filter"
+   ],
+   "hazards": [
+    "Exposed notches",
+    "Snow slope needing axe and crampons",
+    "Glacier and snowfield travel",
+    "Route-finding on faint sections",
+    "Log river crossings",
+    "Steep loose moraine and scree"
+   ],
+   "obj_haz": [
+    "Rockfall",
+    "Weather exposure on the ridge"
+   ],
+   "watch_out": "Notch conditions vary and the exposure is real",
+   "pro_tips": [
+    "Consider a bivy at the tarns to split the day",
+    "Carry slings and a rope for the notches"
+   ],
+   "features": [
+    "Remote",
+    "Scenic"
+   ],
+   "timing": {
+    "recommendedStart": "Very early morning"
+   },
+   "grade_num": 5.4,
+   "pitches": 0,
+   "access": {
+    "land_manager": "Alberta Crown land, David Thompson Highway corridor",
+    "permit": "None"
+   },
+   "dist_km": 23.4,
+   "approach_logistics": {
+    "trailhead": "Thompson Creek (across from the campground), David Thompson Highway",
+    "trailheadLat": 52.0137,
+    "trailheadLng": -116.6289
+   },
+   "auto_generated": true,
+   "classic": false
+  },
+  "parentNote": "No area in the tree fits well (ab_david_thompson_highway is a leaf crag); ab_rockies (top-level Rockies group) used. Summit coordinate is the GPX high point, not a source's stated coordinate; Wikipedia gave no coordinates. Elevation and prominence from Wikipedia.",
+  "trailhead": "Thompson Creek trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/mt-cline-ab-canada",
+   "https://www.theoutbound.com/canada/backpacking/hike-mount-cline",
+   "https://en.wikipedia.org/wiki/Mount_Cline"
+  ],
+  "trailheadNote": "Thompson Creek, across the David Thompson Highway from Thompson Creek Campground"
+ },
+ {
+  "slug": "sunwapta-peak-ab-canada",
+  "verdict": "walkup",
+  "reason": "The normal route is an easy scramble up the southwest slopes with no glacier or technical climbing.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Icefields Parkway roadside (track starts near 52.328, -117.330)",
+  "trailheadConfirmed": false,
+  "sources": [
+   "https://fastestknowntime.com/route/sunwapta-peak-ab-canada",
+   "https://en.wikipedia.org/wiki/Sunwapta_Peak"
+  ]
+ },
+ {
+  "slug": "mt-vaux-bc-canada",
+  "verdict": "add",
+  "reason": "The southwest gully is a difficult hands-on scramble with a steep ledge-wall crux and a snow ridge, roped by some parties; the track tops out on the summit.",
+  "aliases": [],
+  "area": {
+   "id": "bc_mount_vaux",
+   "name": "Mount Vaux",
+   "parent_id": "bc_yoho",
+   "area_type": "peak",
+   "lat": 51.25861,
+   "lng": -116.53,
+   "elevation_ft": 10860,
+   "prominence_ft": 2720,
+   "region": "British Columbia",
+   "blurb": "Mount Vaux is the northernmost big peak of the Ottertail Range in Yoho National Park, rising above the Trans-Canada Highway and the Hanbury Glacier. It was first climbed in 1901 and is still lightly visited."
+  },
+  "route": {
+   "id": "bc_mount_vaux_southwest_face",
+   "area_id": "bc_mount_vaux",
+   "name": "Southwest Face",
+   "discipline": "scrambling",
+   "grade": "4th",
+   "grade_system": "class",
+   "rock_grade": "Steep ledge wall about 15 m high below the summit block; difficult scrambling, with loose rubble throughout",
+   "season": "July-September",
+   "best_season": "Late summer, once the lower gully is snow-free and the upper snow ridge is passable. The lower drainage is a hot west-facing gully with little water.",
+   "overview": "The southwest face route follows a single long drainage straight up from the highway, with no trail. Loose rubble and a steep wall of small ledges below the summit block make it harder than most scrambles. It is a big day with over 2,000 m of gain.",
+   "beta": "Cross the logged area from the roadside, enter a shallow canyon and follow it up onto the wide avalanche slope. Continue up the long drainage, which becomes steep, loose rubble. Reach a snow ridge and then the crux wall of small ledges below the summit block; some parties roped here. Above it, traverse steep rubble diagonally, following cairns, to a short rubbly ridge and the top.",
+   "approach": "Park at the tiny roadside pull-out off the Trans-Canada Highway below the southwest face. There is no trail; begin through shrubs and rubble on the lower avalanche slopes.",
+   "descent_text": "Descend the same route, downclimbing the crux wall carefully, then glissade or plunge-step snow patches and descend the long loose rubble of the lower gully.",
+   "turnaround": "Turn back if snow on the ridge is too hard to cross safely or if water and daylight are running low in the heat.",
+   "bail": "Retreat down the drainage, spreading out horizontally to limit rockfall on partners.",
+   "pitch_detail": [
+    {
+     "pitch": "Lower drainage",
+     "grade": "Class 2",
+     "notes": "Logged area, shallow canyon and avalanche slope; fill water here."
+    },
+    {
+     "pitch": "Upper drainage",
+     "grade": "Class 2-3",
+     "notes": "Steep, very loose rubble slopes to a snow ridge."
+    },
+    {
+     "pitch": "Crux wall",
+     "grade": "Class 4",
+     "notes": "Wall of small ledges, about 15 m, with exposure and loose rock; some parties rope up."
+    },
+    {
+     "pitch": "Summit rubble ridge",
+     "grade": "Class 2-3",
+     "notes": "Diagonal traverse on steep rubble to a short ridge and the top."
+    }
+   ],
+   "gain_ft": 7218,
+   "high_point_ft": 10860,
+   "outing_shape": "outback",
+   "gear": [
+    "Helmet",
+    "Gloves",
+    "Crampons for the snow ridge",
+    "Rope for the crux wall"
+   ],
+   "what_to_bring": [
+    "Lots of water",
+    "Sun protection"
+   ],
+   "hazards": [
+    "Rockfall from loose rubble",
+    "Exposure at the crux wall",
+    "Hard snow ridge",
+    "Heat in the west-facing drainage",
+    "Bears near the lower slopes"
+   ],
+   "obj_haz": [
+    "Rockfall from parties above",
+    "Hard old snow patches"
+   ],
+   "watch_out": "Never stay directly above or below partners\nWater is scarce above the lower drainage",
+   "pro_tips": [
+    "Start early to beat the heat on the west-facing gully",
+    "Fill water at the last reliable flow low on the route"
+   ],
+   "features": [
+    "Remote",
+    "Scenic"
+   ],
+   "timing": {
+    "recommendedStart": "Very early morning"
+   },
+   "grade_num": 4,
+   "pitches": 0,
+   "access": {
+    "land_manager": "Yoho National Park (Parks Canada)",
+    "permit": "None"
+   },
+   "dist_km": 10.1,
+   "approach_logistics": {
+    "trailhead": "Trans-Canada Highway roadside pull-out below the southwest face",
+    "trailheadLat": 51.2334,
+    "trailheadLng": -116.5782
+   },
+   "auto_generated": true,
+   "classic": false
+  },
+  "parentNote": "Elevation 3,310 m per Wikipedia (the FKT page and one trip report state 3,319 m). Grade is mixed in sources: Kane 'difficult' and one climber log at 5.4; 4th chosen.",
+  "trailhead": "Highway 1 pull-out",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/mt-vaux-bc-canada",
+   "https://en.wikipedia.org/wiki/Mount_Vaux",
+   "https://sonnybou.ca/ssbou2011/vaux.html",
+   "https://www.spectacularmountains.com/?p=15418"
+  ],
+  "trailheadNote": "Trans-Canada Highway roadside pull-out (no formal trailhead); sources say highway, track start at 1,102 m elevation"
+ },
+ {
+  "slug": "mt-begbie-bc-canada",
+  "verdict": "add",
+  "reason": "The North Glacier and North Ridge involve a crevassed glacier, an exposed ledge with a fourth-class step and a scramble to the top, so it is a mountaineering route; the track matches.",
+  "aliases": [],
+  "area": {
+   "id": "bc_mount_begbie",
+   "name": "Mount Begbie",
+   "parent_id": "bc_revelstoke",
+   "area_type": "peak",
+   "lat": 50.88494,
+   "lng": -118.25565,
+   "elevation_ft": 8957,
+   "region": "British Columbia",
+   "blurb": "Mount Begbie is the landmark peak of the Gold Range in the Monashee Mountains, rising above Revelstoke on the Columbia River. A steep forest trail leads to a small glacier below its north ridge."
+  },
+  "route": {
+   "id": "bc_mount_begbie_north_ridge",
+   "area_id": "bc_mount_begbie",
+   "name": "North Ridge via North Glacier",
+   "discipline": "mountaineering",
+   "grade": "4th",
+   "grade_system": "class",
+   "rock_grade": "Fourth-class step on loose rock to reach the ledge; ledge is narrow and exposed; the north ridge is easy on quartzite",
+   "season": "July-September",
+   "best_season": "Mid-July to mid-September, when the lower slabs are dry. As the glacier has shrunk, the ledge access has become harder.",
+   "overview": "A steep forest trail leads to a campsite at tree line, then the route crosses a small crevassed glacier to an exposed ledge that gives onto the easy north ridge. The ridge ends at a snow wall with a cornice near the top.",
+   "beta": "From the campsite, go up alpine slabs to the glacier and cross it, watching for crevasses. Reach the ledge on the east side of the glacier; the step up to it is fourth class on loose rock, and the ledge is narrow and exposed, with bolt anchors that allow a handline. Beyond the ledge the north ridge is easy scrambling on solid quartzite to a final snow wall and cornice below the summit.",
+   "approach": "Drive south from Revelstoke on Highway 23 about 10 km to the gravel parking lot just south of the Begbie Creek bridge. A steep trail climbs through old forest to a treeline camp with tent platforms and a toilet; the glacier starts about a kilometre beyond it.",
+   "descent_text": "The usual descent goes down the east ridge on rock and steep snow to the col, then a steep north couloir to the glacier. Parties also rappel from the ledge anchors.",
+   "turnaround": "Turn back if you cannot protect the glacier crossing or the ledge, or if the weather turns.",
+   "bail": "Retreat the way you came: back across the ledge (rappel from the bolts) and down the glacier.",
+   "pitch_detail": [
+    {
+     "pitch": "Trail to campsite",
+     "grade": "Hiking",
+     "notes": "Steep switchbacks through forest to tree line, about 1,830 m."
+    },
+    {
+     "pitch": "Slabs and glacier",
+     "grade": "Glacier travel",
+     "notes": "Alpine slabs then a small crevassed glacier."
+    },
+    {
+     "pitch": "Ledge",
+     "grade": "Class 4",
+     "notes": "Fourth-class step on loose rock to a narrow, exposed ledge; handline or rappel anchors."
+    },
+    {
+     "pitch": "North ridge",
+     "grade": "Class 3",
+     "notes": "Easy ridge to a snow wall and cornice below the summit."
+    }
+   ],
+   "gain_ft": 5757,
+   "high_point_ft": 8957,
+   "outing_shape": "outback",
+   "gear": [
+    "Crampons",
+    "Ice axe",
+    "Rope",
+    "Slings and carabiners",
+    "Helmet",
+    "Glacier rescue gear"
+   ],
+   "what_to_bring": [
+    "Camping gear if staying at tree line",
+    "Water",
+    "Warm layers"
+   ],
+   "hazards": [
+    "Crevasses on a heavily crevassed small glacier",
+    "Exposed ledge",
+    "Loose rock below the ledge",
+    "Moat or bergschrund at the glacier edge",
+    "Cornice near the summit"
+   ],
+   "obj_haz": [
+    "Rockfall on the lower slabs",
+    "Weather exposure on the ridge"
+   ],
+   "watch_out": "The glacier has shrunk, making the ledge access harder than older descriptions",
+   "pro_tips": [
+    "Bring full crampons rather than microspikes",
+    "Consider camping at tree line to split the day"
+   ],
+   "features": [
+    "Scenic",
+    "Classic"
+   ],
+   "timing": {
+    "recommendedStart": "Early morning"
+   },
+   "grade_num": 4,
+   "pitches": 0,
+   "access": {
+    "land_manager": "BC Parks and Recreation Sites and Trails BC",
+    "permit": "None"
+   },
+   "dist_km": 16.2,
+   "approach_logistics": {
+    "trailhead": "Mount Begbie trailhead, Highway 23 south of Revelstoke",
+    "trailheadLat": 50.9222,
+    "trailheadLng": -118.211
+   },
+   "auto_generated": true,
+   "classic": true
+  },
+  "parentNote": "Summit coordinate is the GPX high point (no stated coordinate opened); elevation and gain from Ron Perrier's account (2,730 m), distance from the FKT page.",
+  "trailhead": "Begbie Creek trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/mt-begbie-bc-canada",
+   "https://www.ronperrier.net/2017/11/26/mount-begbie",
+   "https://scramblegs.blogspot.com/2012/11/mt-begbie.html"
+  ],
+  "trailheadNote": "Begbie trailhead, gravel lot just south of Begbie Creek bridge off Highway 23"
+ },
+ {
+  "slug": "brunswick-mountain-bc-canada",
+  "verdict": "add",
+  "reason": "The last kilometre to the summit is very steep and exposed with Class 3 sections, so the route needs scrambling beyond a trail hike; the track starts at the Lions Bay trailhead.",
+  "aliases": [
+   "Mount Brunswick"
+  ],
+  "area": {
+   "id": "bc_brunswick_mountain",
+   "name": "Brunswick Mountain",
+   "parent_id": "bc_north_shore_mountains",
+   "area_type": "peak",
+   "lat": 49.48778,
+   "lng": -123.20139,
+   "elevation_ft": 5866,
+   "prominence_ft": 4245,
+   "region": "British Columbia",
+   "blurb": "Brunswick Mountain tops every other summit in the North Shore Mountains, standing above Lions Bay on Howe Sound. It is a strenuous day from the village and is also reached from the Howe Sound Crest Trail."
+  },
+  "route": {
+   "id": "bc_brunswick_mountain_lions_bay_trail",
+   "area_id": "bc_brunswick_mountain",
+   "name": "Lions Bay Trail",
+   "discipline": "scrambling",
+   "grade": "3rd",
+   "grade_system": "class",
+   "rock_grade": "Steep, loose ground with Class 3 sections on the last kilometre",
+   "season": "July-October",
+   "best_season": "Summer to early fall. In snow or ice the exposed upper ridge needs crampons and an axe, and the guidance is not to continue without them.",
+   "overview": "A steep route from Lions Bay that climbs old service roads and forest to a vista point, then a very steep final ridge with Class 3 scrambling to the summit. The last stretch near the top is narrow and exposed.",
+   "beta": "Follow the gravel service road, go left at the Mt. Brunswick sign, cross Magnesia Creek and keep right, then climb switchbacks to the end of the road at a viewpoint. From there the route climbs the steep ridge; the final kilometre has Class 3 sections, and about half a kilometre below the top is exposed and steep. The true summit lies beyond a saddle.",
+   "approach": "Drive to the end of Sunset Drive North, off the Lions Bay exit of the Sea to Sky Highway.",
+   "descent_text": "Return by the same route down the ridge and service roads.",
+   "turnaround": "Turn back in bad weather or if the upper ridge holds snow or ice and you lack crampons.",
+   "bail": "Retreat the way you came; the upper ridge is steep and loose.",
+   "pitch_detail": [
+    {
+     "pitch": "Service roads to vista point",
+     "grade": "Hiking",
+     "notes": "Roads and switchbacks through forest."
+    },
+    {
+     "pitch": "Upper ridge",
+     "grade": "Class 3",
+     "notes": "Very steep final kilometre with Class 3 sections, loose rock, and an exposed narrow stretch."
+    }
+   ],
+   "gain_ft": 5100,
+   "high_point_ft": 5866,
+   "outing_shape": "outback",
+   "gear": [
+    "Sturdy boots",
+    "Helmet if climbing in a group",
+    "Crampons and axe in snow"
+   ],
+   "what_to_bring": [
+    "Plenty of water",
+    "Warm layers",
+    "Headlamp"
+   ],
+   "hazards": [
+    "Steep exposed ridge near the top",
+    "Loose rock",
+    "Snow and ice in the cold months",
+    "Weather that changes quickly"
+   ],
+   "obj_haz": [
+    "Rockfall on the upper ridge"
+   ],
+   "watch_out": "A slip on the narrow summit ridge could be serious",
+   "pro_tips": [
+    "Start early; it is a big day",
+    "Skip the summit push in poor weather"
+   ],
+   "features": [
+    "Scenic"
+   ],
+   "timing": {
+    "recommendedStart": "Early morning"
+   },
+   "grade_num": 3,
+   "pitches": 0,
+   "access": {
+    "land_manager": "Crown land near Lions Bay",
+    "permit": "None"
+   },
+   "dist_km": 14.1,
+   "approach_logistics": {
+    "trailhead": "Lions Bay, end of Sunset Drive North",
+    "trailheadLat": 49.47065,
+    "trailheadLng": -123.23479
+   },
+   "auto_generated": true,
+   "classic": false
+  },
+  "parentNote": "Wikipedia's coordinate is about 300 m west of the GPX high point (49.48736, -123.19725), which the FKT file labels the true summit; one search snippet (not an opened page) said the true summit lies past a saddle. Scramble class rests on one opened page; another search snippet called it easy scrambling.",
+  "trailhead": "Lions Bay trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/brunswick-mountain-bc-canada",
+   "https://www.theoutbound.com/canada/hiking/hike-mt-brunswick",
+   "https://en.wikipedia.org/wiki/Brunswick_Mountain"
+  ],
+  "trailheadNote": "Lions Bay, end of Sunset Drive North"
+ },
+ {
+  "slug": "williams-peak-bc-canada",
+  "verdict": "walkup",
+  "reason": "The usual route is a long ridge and a grassy gully, with only an optional Class 3 ridge alternative; no glacier or technical climbing.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Chilliwack Lake Road logging roads",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/williams-peak-bc-canada"
+  ]
+ },
+ {
+  "slug": "coquihalla-mountain-sweep-bc-canada",
+  "verdict": "skip",
+  "reason": "The track is a six-peak traverse of Coquihalla Mountain's sub-peaks, not a single-summit route.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Coquihalla Summit recreation area",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/coquihalla-mountain-sweep-bc-canada"
+  ]
+ }
+]

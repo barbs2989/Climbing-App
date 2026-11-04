@@ -15,20 +15,22 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
+// RouteRow is src/components/RouteRow.tsx since PR65 (lifted from lib/DbAreaBrowser.jsx).
+const ROW = "src/components/RouteRow.tsx";
 const DB = "lib/db.js", BROWSER = "lib/DbAreaBrowser.jsx", GUARD = "scripts/check-list-row-columns.mjs";
 const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex");
 
 const CASES = [
   // The shape this guard exists for: a list row gains a read of a column the select never carried —
   // PostgREST hands back undefined, and every database route renders it as nothing.
-  { name: "reader-gains-a-column", file: BROWSER, expect: "fail",
+  { name: "reader-gains-a-column", file: ROW, expect: "fail",
     find: "  const stars = r.stars ? Math.round(r.stars) : 0;\n",
     repl: "  const stars = r.stars ? Math.round(r.stars) : 0;\n  const _injLen = r.length_m;\n",
     says: /column "length_m" is read but useAreaRoutes' thin select does not include it/ },
   // The select loses a column a reader still reads.
   { name: "select-drops-a-column", file: DB, expect: "fail",
-    find: ",stars,sort_order,",
-    repl: ",sort_order,",
+    find: ",stars,guide_stars,",
+    repl: ",guide_stars,",
     says: /column "stars" is read but useAreaRoutes' thin select does not include it/ },
   // The select carries a column nobody renders — the bytes the trim exists to stop.
   { name: "select-carries-dead-weight", file: DB, expect: "fail",
@@ -41,12 +43,12 @@ const CASES = [
     repl: "areas(name)\");",
     says: /embed lacks "area_type"/ },
   // An entry reader renamed out from under the guard must fail closed, not pass on fewer readers.
-  { name: "entry-renamed", file: BROWSER, expect: "fail",
-    find: "function RouteRow({ r, onOpen, C, areaName }) {",
-    repl: "function RouteRow_({ r, onOpen, C, areaName }) {",
+  { name: "entry-renamed", file: ROW, expect: "fail",
+    find: "function RouteRow({ r, onOpen, C, areaName }: RouteRowProps) {",
+    repl: "function RouteRow_({ r, onOpen, C, areaName }: RouteRowProps) {",
     says: /entry lib\/DbAreaBrowser\.jsx RouteRow not found/ },
   // MUST STAY SILENT — a camelCase read that dbRouteToCamel maps onto a selected column.
-  { name: "camel-read-of-a-selected-column", file: BROWSER, expect: "pass",
+  { name: "camel-read-of-a-selected-column", file: ROW, expect: "pass",
     find: "  const stars = r.stars ? Math.round(r.stars) : 0;\n",
     repl: "  const stars = r.stars ? Math.round(r.stars) : 0;\n  const _injGain = r.gainFt;\n",
     says: null },

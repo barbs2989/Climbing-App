@@ -15,9 +15,15 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   a fact that is not stored is not printed), **CLIMBS HERE** (`ClimbsChart`: one bar per discipline over the whole subtree via the
   `area_climb_stats` RPC, headline = the sum of its bars; a bar opens the Route finder preset to that discipline) with **GRADE SPREAD**
   (`GradeSpread`: columns over the area's main grading scale, saying how many climbs it left out), **GETTING THERE** (`AreaGettingThere`:
-  `parking_note` + the parking pin, `approach` + `approach_min`, Google/Apple Maps links — the page's ONE drive control; *Add the parking pin* where none is
-  on file and *Move the pin* under one open the sheet at the pin), **TOP RATED HERE**
-  (up to five routes by `stars`), and **Suggest an edit** (`lib/AreaSuggestFix.jsx`: eight fields from `AREA_EDIT_FIELDS` in `lib/areaFields.js`, one of them the crag-wide
+  `parking_note` + the parking pin, `approach` + `approach_min`, Google/Apple Maps links — the page's ONE drive control; and, when the crag has an approved walk in (`areas.walkin_gpx`, 0397), *Trail to the crag* with its length and a `WalkInMap` of the line over P and C; *Add the parking pin* where none is
+  on file and *Move the pin* under one open the sheet at the pin), **CLASSIC CLIMBS HERE**
+  (EVERY classic, drawn by `ClassicsList`: the count in the heading, five rows, then a *Show all N classic climbs* dropdown with the rest
+  (owner, 2026-10-29). On a wall, `areaClassics` over its loaded rows: climbs that carry the `classic` flag, 3+ guidebook stars (`guide_stars`)
+  or a 3.5+ climber rating (`stars`), best first (0393 `classic_score`, a vote-weighted star average flag-classics writes, else guidebook stars, else ours — a sort key that renders nowhere); with none, **TOP RATED HERE**, up to five routes by `stars`. On every area ABOVE a
+  wall — a crag of walls, a region, a state — `useAreaClassics` (0391 `area_classics`, up to 500 rows plus the full `total`; the open list
+  says "The first 500 of N" when capped) lists the `classic` routes from the whole subtree — on a STATE's page only its top list
+  (`state_classics`, at most 100) — every row opening its route page, state classics first, then `classic_score`, guidebook stars, climber stars and name, each row naming its wall; a failed read says
+  *Couldn't load the classic climbs here*. Nothing on screen names where a classic came from), and **Suggest an edit** (`lib/AreaSuggestFix.jsx`: eight fields from `AREA_EDIT_FIELDS` in `lib/areaFields.js`, one of them the crag-wide
   **Parking pin** (0378, `parking_pin`: tap `WaypointMapPicker` or type lat/lng, an optional name; one value `{lat, lng, name?}` written to
   `parking_lat`/`parking_lng`/`parking_name`, the name on file kept when none is sent; a pin over 15 km from the crag is flagged before sending),
   each one a `contributions` row with `area_id`, HELD for the owner like a route edit (0319) and written to the `areas` column by `apply_approved_area_field` on approval;
@@ -32,6 +38,9 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Sorting a crag's own climb list** (`AREA_LIST_SORTS` / `sortAreaRoutes`, leaf areas only): chips over the list read **Left → right**
   (default, as Mountain Project and theCrag list a wall), **Right → left**, **A → Z**, **Z → A**. The wall orders read `routes.sort_order` and are
   offered only when at least one climb in the list has one; climbs without a position go last, by name, under a line counting them.
+  A **boulder problem** is never part of the wall order (owner's note, 2026-10-21: "there's no left to right or right to left order ... with
+  bouldering"): its stored `sort_order` (MP's) does not make a list offer Left → right, a problem sorts with the unplaced, by name, is not
+  counted as "no position on the wall yet", and its row prints no "#n in this area" (`RouteRow`). A list of problems sorts A → Z by default.
   Neither import kept a position (the OpenBeta ETL dropped `metadata.leftRightIndex`; MP's route-finder CSV has none), so on 2026-10-21
   **1 of 314,360 routes** had one.
 - **Filters on a wall's list** (owner note, 2026-10-25): **Filters** over a leaf area's climb list narrows it by discipline (the disciplines the wall holds, plus All) and a star minimum (Any / 2+ / 3+ stars; a climb nobody has rated stays in). It filters the rows `useAreaRoutes` already loaded, so it costs no query. The sort adds **By discipline** (one heading per discipline, in `DISCIPLINES` order, A → Z under each). Grade is deliberately NOT a sort key: `grade_num` is only comparable within one scale.
@@ -45,6 +54,12 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   Ours that MP does not list are **ANCHORED** right of their nearest left-hand neighbour in OpenBeta's older copy of MP's order, else
   **UNPLACED** (empty, listed last). Positions are renumbered 1..n. Dry run by default; `--apply` writes and reads back.
   First run, 2026-10-21: The Uberfall – left (Gunks), 45 matched, 3 added, 3 anchored, 1 for review, 6 unplaced (MP places 45 of 51).
+  Since 2026-10-29 a **boulder problem** (tagged Boulder, never roped, a V grade) is ordered and added too, as `bouldering` with
+  `grade_system` `v` (owner: "add new routes when you see we have a gap, even if it's not a classic"); ice, mixed, alpine and snow gaps
+  stay with `import-route-grades.mjs`. The re-check run reads freshly saved wall tables from `MP_DIR=~/dev/mp-fresh`.
+- **Which climbs are classics** (`routes.classic`, `scripts/pipeline/flag-classics.mjs`): a climb on a wall's MP classics page at 3+ of
+  4 stars from 5+ votes (matched by MP id, else by name on our wall; the rest written to a gaps file for the importer), and with
+  `--guidebook` every climb a guidebook rates 3 or 4 stars (`guide_stars`). Only the flag is stored; nothing on screen names where it came from.
   - **Whole state** (`--state <slug>`, resumable through `catalog/_mp/_order/<state>.jsonl`): every MP wall with a rock route
     (roped, not tagged Ice/Mixed/Snow — MP keeps a parallel "Ice & Mixed" tree under the same crag names) is matched to the area of
     ours its routes vote for (MP-id map, else a name unique in the state; ≥60% of votes). Two MP walls voting for one area: the one
@@ -55,7 +70,8 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   - **Added climbs get full details**: `--state <slug> --facts --apply` reads each added climb's route page and stores length,
     pitches, GPS and the star average where empty; `extract-route-details.mjs <state> --adds` batches the description, protection,
     location and first ascent for REWRITING (under `_details/<state>/adds/`), and `apply-route-details.mjs` refuses any field that
-    repeats four words of the page. Nothing is stored as fetched.
+    repeats four words of the page (proper names, the walls, features, neighbouring climbs and people its source names, are
+    masked first: they are facts, not prose). Nothing is stored as fetched.
   - New York, 2026-10-21: 406 walls ordered (3,780 matched, 68 anchored, 102 unplaced), 25 climbs added, 11 adds refused by the
     duplicate trigger (all on near-duplicate walls of ours, e.g. "The Guides' Wall" beside "The Guides' Wall (Madame G's)"),
     21 for review, 6 walls skipped (2 shared, 3 with no area of ours, 1 split).
@@ -77,7 +93,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi, gain, trip, elev, prom, near, within }`). Active filters show as chips.
   *Save search* writes the account's `saved_searches` (see `docs/features/logbook-crews-home.md`); a saved one reopens the finder through `jumpToFinderReq` with its `initial` words and filters.
-  **Since 0369 (2026-10-24)** it also filters by **Distance away** (first in the sheet: *Use my location* or a town / zip through
+  **Since 0369 (2026-10-24)** it also filters by **Distance away** (second in the sheet, under Discipline: *Use my location* or a town / zip through
   `searchPlaces`, then Within 10/25/50/100 mi or 15/40/80/150 km, plus a *Nearest first* sort grouped by wall), **Elevation gain**
   and **Round trip** (ranges), **Peak elevation** and **Prominence** (minimums), as AllTrails does gain, length and Distance
   away and Peakbagger does elevation and prominence. Buckets are round numbers in BOTH unit systems (`GAIN_BUCKETS`,
@@ -102,6 +118,12 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
     The search box is debounced 250 ms. With no name typed, both RPCs now read the subtree's areas first and each area's routes
     through `routes_area_idx`: Sport + Trad 5.6–5.10a in Central-East Cascades used to walk the grade index across every state and hit
     the 3 s anon timeout. A name search keeps 0244/0245's name-index plan.
+    **That held only for a role that bypasses RLS** (postgres, 19 ms). The app's `anon` role does not, and under RLS the planner
+    will not apply a non-leakproof `numeric >=`/`<=` ahead of the policy, so with a grade range it went back to `routes_grade_idx`
+    once per area: every region of WA, CA, CO and UT still timed out (measured 2026-11-04). **0398** compares `grade_num + 0`,
+    which no index matches, in both branches of both RPCs; the 12 largest regions now answer in 0.1–0.8 s (list) and ~0.1 s (count).
+    `grade_num` is the only finder filter column with a btree index on `routes`. **Time any change to these RPCs as `anon`**
+    (`set local role anon` in `supabase db query`, or the REST endpoint), never only as postgres.
   - **Pinned search bar** (`usePinnedBar`): Routes | Areas, the box, Filters and the chips pin under the app's top bar once you scroll
     past them. Fixed-position with a placeholder, not CSS sticky: on a phone the document scrolls while `#appscroll` (overflow:auto) only grows.
   - **Save from the list**: a ☆ beside each row opens a save sheet: My Objectives (`toggleWish`), your own lists (`toggleListRoute` in
@@ -109,6 +131,8 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   Mirrors Mountain Project's set, nothing extra (standing decision), except the sort, which offers **Left → right** / **Right → left**
   in place of *By area* (owner, 2026-10-21): `routes_in_subtree` `sort_by` `lr` / `rl` (0332) group the climbs by wall and order each wall
   by `sort_order`, no position last; `area` is still accepted. The offline twin is `subtreeComparer` in `lib/offline.js`.
+  With **Bouldering the only type picked** (`boulderOnly` / `sortsFor` / `sortFor` in `RouteFinderPanel.tsx`) the two wall orders become
+  **By boulder** (`sort_by` `area`: each boulder's problems together, by name) and the counts read *problems* (`finderNoun`).
 - **Near me / area map** (`NearMePanel`): Leaflet map of peak/crag area bubbles with route counts, list/map toggle (`ViewToggle`),
   Street / Satellite / Topo / snow base layers (`BaseLayerToggle`), a live location dot, and a place search box
   ("Go to a town, county or zip/postal code") covering the US and Canada (provinces, towns, US zip, Canadian postal codes).
@@ -121,7 +145,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   list is the answer: the zoomed view refetches and re-clusters, and areas on one spot never separate. A single pin's card over the
   map is gone (owner note 2026-10-24: "I would prefer if the climbs showed up in list view below the map"). It keeps the SAME Leaflet map: the map renders through a portal into a host div the panel owns, and only
   that div moves, into `document.body` and back into the inline slot, so markers, zoom, pan and the dot survive the round trip (2026-10-23).
-- **Fire map** (`FireMap`, `lib/FireMap.jsx`; data in `lib/fire.js`): opens from an area page below the state (a range, peak, crag or wall — never a country or state page, the first screen after the picker) and a route's Safety tab. Layers, each a chip:
+- **Fire map** (`FireMap`, `lib/FireMap.jsx`; data in `lib/fire.js`): opens from an area page below the state (a range, peak, crag or wall — never a world, country or state page, the first screen after the picker; the seed-path card in `ClimbMatch.jsx` follows the same rule) and a route's Safety tab. Layers, each a chip:
   Fires (WFIGS incident points — the point of ORIGIN, coloured by containment, sized by acres), Perimeters, Red flag (NWS fire-weather
   zones) and **Heat** (`useHeat`: VIIRS satellite detections from the last 48 h, newer brighter, drawn at their real ~375 m footprint
   when zoomed in; queried only from zoom 7, `HEAT_MIN_ZOOM`) and **Smoke** (2026-10-28: the national surface-smoke FORECAST, an hour's average of fine smoke, painted as tiles in the EPA PM2.5 colour bands from 9 µg/m³ up — `smokeTileUrl`, `SMOKE_BANDS`; nothing painted under 9, so a clear day leaves the map clear). Under the legend, **‹ ›** step the smoke hour 3 h at a time through the hours the service holds (`useSmokeWindow`, `smokeHours`; about two days), named *Smoke forecast, now* / *Fri 3:00 PM*; a failed window read or tile says the smoke was not loaded and is not a clean-air reading. A **legend** under the map names every colour, grey (contained) included.
@@ -137,6 +161,10 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   drawn between waypoints carries a "sketch" caveat rather than posing as GPS. A point the app worked out rather than one somebody
   pinned — the crag/peak coordinate (the orange ▲ on a crag map) and a derived trailhead — draws hollow and DASHED (`wpDivIcon`'s
   `derived`), on an opaque dark disc with a 3px type-colour ring and a white halo so it stays visible over any base layer.
+  **Water pins** (blue): every water source a route's own text names (`scripts/lib/water-sources.mjs`) should be a Water pin —
+  `npm run audit:water-pins` lists the ones that are not. The Water pins `scripts/oneoff/add-water-pins.mjs` adds are measured from
+  OpenStreetMap geometry (where the named creek crosses the RECORDED track or a mapped trail; a lake's shore nearest the track), never
+  placed on our own lines; water named without a place ("snowmelt at camp") is never pinned.
 
 ## 2. How it works
 1. `App` mounts `DbAreaBrowser` (props include `onOpenRoute`, `bookmarks`, `wishlist`, `completedIds`, `jumpToState`) when `USE_DB`; otherwise the seed tree.
@@ -144,6 +172,9 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
    Routes for one area: `useAreaRoutes(areaId, { full })` (thin row by default; `check:list-row-columns` guards the columns).
 3. Subtree queries use RPCs: `routes_in_subtree` (`useSubtreeRoutes`, paged, 40 per page), `routes_in_subtree_count` (`useSubtreeRouteCount`),
    `areas_in_subtree` (`useAreaSearch(rootId, q, lim)`). Subtree membership rides the `areas.path` ltree.
+   Its ranking normalises each hit's name ONCE (a materialized `canon` CTE, 0389); before that it ran
+   `search_canon` per rung of the score ladder and timed out (57014, *Couldn't search areas*) on "rock" in
+   California / Colorado. Keep any new rung reading `lname` / `bname`, never calling `search_canon` again.
 4. Map bubbles: `useNearbyAreas(bounds)` selects `areas` where lat/lng fall in the live bounds box, `area_type` in (peak, crag),
    ordered by `route_count` desc, limit 500, and returns `{ rows, total }` so the UI can say it is capped. Refetches on pan/zoom. `useNearbyPeaks(bounds)` backs `NearbyPeaks`.
 5. Search spelling: `lib/search.js` (`SEARCH_FORMS`, `SEARCH_COMPOUND`, `searchNorm`, `searchCanon`, `searchMatches`, `searchBare`) is the JS twin of SQL `search_norm()`
@@ -162,9 +193,28 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 ## 3. Files
 | File | Key symbols |
 |---|---|
-| `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, `AreaPage`, `PartnersHereCard`, `PARTNER_CARD_TYPES`, `StatePicker`, `DbSearchSplit`, `RouteFinderPanel`, `NearMePanel`, `NearbyPeaks`, `ObjectivesPanel`, `DbAreaTree`, `DbSuggestedClimbs`, `SummitBriefing`, `nearbyPeaksBounds` |
+| `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, the browser shell (its components moved to `src/components/` in PR65 and PR66, below) |
+| `src/components/AreaPage.tsx` | `AreaPage`, an area's page; `PARTNER_CARD_TYPES` |
+| `src/components/RouteFinderPanel.tsx` | `RouteFinderPanel`, the route finder and its filters |
+| `src/components/PartnersHereCard.tsx` | `PartnersHereCard`, the area page's partners card |
+| `src/components/StatePicker.tsx` | `StatePicker`, Pick a state |
+| `src/components/DbSearchSplit.tsx` | `DbSearchSplit`, area search results split into areas and climbs |
+| `src/components/NearMePanel.tsx` | `NearMePanel`, Near me, the live map |
+| `src/components/NearbyPeaks.tsx` | `NearbyPeaks`, nearby peaks on an area page |
+| `src/components/ObjectivesPanel.tsx` | `ObjectivesPanel`, Saved objectives in the browser |
+| `src/components/DbAreaTree.tsx` | `DbAreaTree`, the area tree |
+| `src/components/DbSuggestedClimbs.tsx` | `DbSuggestedClimbs`, More climbs in this area |
+| `src/components/SummitBriefing.tsx` | `SummitBriefing`, the peak summary above an area's route list |
+| `src/components/RouteRow.tsx` | `RouteRow`, one climb row in an area list |
+| `src/components/ClassicsList.tsx` | `ClassicsList`, Classic climbs here |
+| `src/components/AreaGettingThere.tsx` | `AreaGettingThere`, an area's Getting there card |
+| `src/components/AddHereFooter.tsx` | `AddHereFooter`, the add-a-climb footer |
+| `lib/nearbyPeaks.js` | `nearbyPeaksBounds`, `nearbyPeaksRows`, `nearbyPeaksLive` |
+| `lib/areaBrowserShared.js` | `rowGrade`, `placeOf`, `haversineMi`, `ATYPE`, `DISCIPLINES` (shared by the area browser's components) |
 | `lib/mapKit.jsx` | `MAP_TILE_URLS`, `TILE_CREDIT`, `loadLeaflet`, `baseTileLayer`, `applyBaseLayer`, `BaseLayerToggle`, `ViewToggle`, `pinHtml`, `useFollowMe`, `acceptFix`, `searchPlaces` |
 | `lib/AreaPageSections.jsx` | `AboutCard`, `AreaFactsCard`, `ClimbsChart`, `GradeSpread`, `MonthStrip`, `PendingAreaEdits`, `bucketLabel` |
+| `src/components/ManageAreasSheet.tsx` | `ManageAreasSheet`, Manage areas (pin and download a state; lifted from App, PR62) |
+| `src/components/RoutesTab.tsx` | `RoutesTab`, the Climbs tab body (the live `DbAreaBrowser` and the seed-path browser), lifted from App in PR61 |
 | `lib/AddArea.jsx` | default export `AddArea` (mounted by App from its addAreaParent state in `ClimbMatch.jsx`) |
 | `lib/AreaSuggestFix.jsx` | default export `AreaSuggestFix` (mounted by App from its areaFixOpen / areaFixArea / areaFixField state in `ClimbMatch.jsx`) |
 | `lib/areaFields.js` | `AREA_EDIT_FIELDS`, `AREA_EDIT_KEYS`, `ASPECTS`, `MONTH_ABBR`, `monthsLabel`, `myPendingAreaEdits` |
@@ -177,7 +227,8 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `lib/fire.js` | `useActiveFires`, `useFirePerimeters`, `useFireWeather`, `useHeat`, `useSmokeWindow`, `smokeHours`, `smokeTileUrl`, `SMOKE_BANDS`, `useFireAlert`, `nwsPointPage`, `fireLevel` |
 | `src/components/GPXMap.tsx` | `GPXMap` — the route page map (extracted from core, PR13) |
 | `ClimbMatchCore.jsx` | `OverviewMap` (seed/overview map), lazy `DbAreaBrowser` import |
-| `RouteDetail.jsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`, `BaseLayerToggle`) for the route and waypoint-picker maps |
+| `src/components/GPXMap.tsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`, `BaseLayerToggle`) for the route map |
+| `src/components/WaypointMapPicker.tsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`) for the waypoint-picker map |
 
 ## 4. Data
 - Supabase tables `areas` (parent_id, `path` ltree set by trigger, `area_type`, lat/lng, `route_count`; 0001; `blurb`; `approach`, `approach_min` (0247); `rock`, `rock_basis` (0248);
@@ -210,7 +261,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 `check:area-duplicates`, `check:area-sort-labels`, `check:generic-area-names`, `check:wp-styles`, `check:waypoint-placement`, `check:waypoint-dedupe`,
 `check:track-caveat`, `check:gpx-caveats`, `check:waypoint-caveat`, `check:bottom-panels`, `check:overlays`, `check:overflow`, `check:ui`, `check:zero`,
 `check:area-edit-fields` (the seven editable fields are one list), `check:area-page-honest` (gated facts, chart headline = its bars, one drive control), `check:write-readers`.
-A place filed twice is refused at insert by `refuse_duplicate_area` (0216/0218, a same-named area within 1.5 km) and `refuse_bucket_copy_area` (0340/0341, an area NAMED by a list of two or more places the state already files, spacing variants included — MP's "Cascade River Drainage (Eldorado, Forbidden, …)" beside North Cascades Core); `check:area-duplicates` sweeps for both daily, and also for names listing NEARBY places without brackets ("Devils Den, Gettysburg").
+A place filed twice is refused at insert by `refuse_duplicate_area` (0216/0218, a same-named area within 1.5 km; since 0385 also a same-named SIBLING under one parent, coordinate or not, by `catalog_sibling_key` — "Pine River" beside "Pine River Area", "X Ice" beside "X") and `refuse_bucket_copy_area` (0340/0341, an area NAMED by a list of two or more places the state already files, spacing variants included — MP's "Cascade River Drainage (Eldorado, Forbidden, …)" beside North Cascades Core); `check:area-duplicates` sweeps for both daily, and also for names listing NEARBY places without brackets ("Devils Den, Gettysburg").
 Notes: `docs/guards/README.md`.
 
 ## 7. Last significant change
@@ -222,5 +273,6 @@ Area pages (0304): ABOUT, AREA FACTS, CLIMBS HERE + GRADE SPREAD, GETTING THERE,
 - The area bubbles query is capped at 500 rows (`limit(500)`), so a zoomed-out view shows only the highest route counts; the UI is told via `total`.
 - Place search is restricted to `us,ca`; anywhere else returns nothing.
 - 462 of 67,276 areas carry a `blurb`, 529 an `approach`, 9,637 a parking pin (2026-10-15); the sections invite the edit on the rest, and a research pass fills the busiest areas first.
+  By 2026-10-31, 268 of the 279 crags, peaks and walls with 50+ climbs carry a researched `blurb` (batches in `audits/area-pages/`). The rest were skipped: either the place could not be confirmed from two pages, or it is closed to climbing. By 2026-11-04 the 30–49-climb tier is done too: 688 of its 848 areas carry one (`audits/area-pages/tier30/`), so 957 of the 1,127 crags, peaks and walls with 30+ climbs have an ABOUT text, and every one without it was researched and skipped for a recorded reason (`_skipped` in its batch). Below 30 climbs the section invites the edit. `scripts/enrich/area-page-inputs.mjs` builds a tier's research inputs (what each area holds, plus its `area_climb_stats`); `scripts/enrich/area-page-apply.mjs` writes these batches. Each entry must list `review.sources`, an entry repeating 8+ words of one is refused, and writes are paced 1 s apart. The stored-value disagreements those batches noted (`_conflicts`, 235 of them) were settled on 2026-11-04 in `audits/area-pages/conflicts/`: `scripts/enrich/area-conflict-inputs.mjs` gathers them with each area's current values, each got a fix / keep / unsure verdict, and only a fix backed by two different sites was written: 26 `rock` corrections through `area-page-apply.mjs --overwrite`, and one area coordinate through `scripts/enrich/area-pin-apply.mjs` (which writes a parking pin or an area's own lat/lng, paced, re-read, with a rollback file). A second pass (`audits/area-pages/conflicts/batch-u1.json` and `batch-u2.json`) re-researched the 41 left unsure, with the mapped bedrock at each crag's own point as one source: 1 more rock fix, 14 kept, 26 still single-source.
 - The chart runs on the area's stored `discipline`; a route filed with none is counted in the headline's "+N filed with no type" line, not in a bar.
 - Only 5-digit values are sent as `postalcode=`; Canadian postal codes go through the free-text `q=` path.

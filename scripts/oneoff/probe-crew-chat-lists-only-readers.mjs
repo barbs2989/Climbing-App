@@ -21,7 +21,9 @@ import { readFileSync } from "node:fs";
 
 const ROOT = new URL("../../", import.meta.url);
 const CORE = readFileSync(new URL("ClimbMatchCore.jsx", ROOT), "utf8");
-const APP_RAW = readFileSync(new URL("ClimbMatch.jsx", ROOT), "utf8");
+// The chat header moved into src/components/CrewChatScreen.tsx (it renders the participant line);
+// the arrays it is handed are still built in ClimbMatch.jsx. The wiring spans both, so read both.
+const APP_RAW = readFileSync(new URL("ClimbMatch.jsx", ROOT), "utf8") + "\n" + readFileSync(new URL("src/components/CrewChatScreen.tsx", ROOT), "utf8");
 
 let pass = 0;
 const fails = [];

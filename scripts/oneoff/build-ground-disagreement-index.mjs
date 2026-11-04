@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Precompute the GROUND's verdict on every waypoint, so the route page can disclose the pins
 // that no coordinate-only test can see.
 //
@@ -38,7 +39,7 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { elevationAt, selfTest } from "../lib/terrain.mjs";
 
-const root = new URL("../..", import.meta.url).pathname;
+const root = fileURLToPath(new URL("../..", import.meta.url));
 const env = {};
 for (const f of [".env.local", ".env"]) {
   try { for (const l of readFileSync(root + f, "utf8").split("\n")) {
@@ -49,7 +50,7 @@ if (!URL_ || !KEY) { console.error("no Supabase url/anon key — failing closed"
 
 const DRY = process.argv.includes("--dry");
 const CACHED = process.argv.includes("--cached");
-const CACHE = new URL("../../.ground-readings-cache.json", import.meta.url).pathname;
+const CACHE = fileURLToPath(new URL("../../.ground-readings-cache.json", import.meta.url));
 // Same 2,000 ft as `audit:waypoint-elevations`, and for the same measured reason: at 400 ft that
 // audit reported 1,080 pins, most of them the data's own precision. A round-number estimate plus
 // ~150 m of positional slop on steep ground reaches 400-600 ft with nothing wrong; it does not

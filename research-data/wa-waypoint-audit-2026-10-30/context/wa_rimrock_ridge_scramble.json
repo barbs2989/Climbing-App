@@ -1,0 +1,75 @@
+{
+ "id": "wa_rimrock_ridge_scramble",
+ "name": "Standard Scramble",
+ "discipline": "scrambling",
+ "area": {
+  "id": "wa_rimrock_ridge",
+  "name": "Rimrock Ridge",
+  "lat": 48.3720712,
+  "lng": -121.0001074,
+  "elevation_ft": 7255,
+  "parent_id": "wa_glacier_peak_region",
+  "ground_ft": 7032
+ },
+ "dist_km": null,
+ "gain_ft": null,
+ "high_point_ft": 7255,
+ "approach_logistics": {
+  "peakLat": 48.37557,
+  "peakLng": -120.97826,
+  "trailhead": "Cascade Pass trailhead (end of Cascade River Road)",
+  "trailheadLat": 48.4754,
+  "trailheadLng": -121.0751,
+  "trailheadDirection": "From State Route 20 at Marblemount, go straight onto the Cascade River Road where the highway turns, and drive it about 23 miles to its end at the Cascade Pass parking lot. The first third is paved, then gravel; the last few miles are narrow and steep."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.4754,
+   "lng": -121.0751,
+   "elev": 3600,
+   "name": "Cascade Pass Trailhead",
+   "note": "Large parking lot at the end of the Cascade River Road, about 23 miles from State Route 20 at Marblemount. The Ptarmigan Traverse starts up the Cascade Pass trail from here.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From State Route 20 at Marblemount, go straight onto the Cascade River Road where the highway turns, and drive it about 23 miles to its end at the large Cascade Pass parking lot at about 3,600 ft. The first third is paved, then gravel; the last few miles are narrow and steep. Camps on the traverse need an overnight backcountry permit.",
+   "ground_ft": 3648
+  },
+  {
+   "i": 1,
+   "lat": 48.438716,
+   "lng": -121.045848,
+   "elev": 6120,
+   "name": "Kool-Aid Lake",
+   "note": "Usual first camp on the traverse, south of Cache Col; the lake and its outlet stream supply water.",
+   "type": "Campsite",
+   "distMi": null,
+   "directions": "Climb the Cascade Pass trail's switchbacks to Cascade Pass. From the pass, follow the traverse's climbers' path south on a rising traverse across the east slopes of Mixup Peak to the base of the Cache Glacier, climb its moderate snow to Cache Col, then make a descending traverse south-southeast to Kool-Aid Lake.",
+   "ground_ft": 6119
+  },
+  {
+   "i": 2,
+   "lat": 48.392597,
+   "lng": -121.056932,
+   "elev": 5830,
+   "name": "Yang Yang Lakes",
+   "note": "Usual second camp, below the Spider–Formidable col.",
+   "type": "Campsite",
+   "distMi": null,
+   "directions": "Head south from Kool-Aid Lake across the exposed Red Ledge below Arts Knoll, then rope up for the crevassed Middle Cascade Glacier and climb it to the Spider–Formidable col. Drop down the far side to Yang Yang Lakes.",
+   "ground_ft": 5839
+  },
+  {
+   "i": 3,
+   "lat": 48.37557,
+   "lng": -120.97826,
+   "elev": 7255,
+   "name": "Rimrock Ridge summit",
+   "note": "True summit of the ridge crest (listed 7,255-7,260 ft); descent reverses the crest, downclimbing rock steps and bypassing gendarme towers on the same side used on ascent.",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "Climb from the lakes back to the Le Conte ridge and up the Le Conte Glacier to the col between Le Conte and Sentinel at its head. Leave the traverse there, pass north of Sentinel Peak and follow the ridge east along its crest, the divide between Flat Creek and the West Fork of Agnes Creek, to the summit. The ground is pathless cross-country alpine terrain.",
+   "ground_ft": 7226
+  }
+ ]
+}

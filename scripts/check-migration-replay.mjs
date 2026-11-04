@@ -1,3 +1,5 @@
+import os from "node:os";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Does the migrations folder rebuild the database from EMPTY — and is what it builds the live schema?
 //
 // This is what a Supabase preview branch does on every PR that touches supabase/migrations/ (the
@@ -124,12 +126,12 @@ const SCHEMA_SQL = `select json_build_object(
 ) as schema`;
 
 const rebuilt = (await db.query(SCHEMA_SQL)).rows[0].schema;
-const tmp = fs.mkdtempSync(path.join(fs.realpathSync(process.env.TMPDIR || "/tmp"), "migration-replay-"));
+const tmp = fs.mkdtempSync(path.join(fs.realpathSync(os.tmpdir()), "migration-replay-"));
 const qfile = path.join(tmp, "schema.sql");
 fs.writeFileSync(qfile, SCHEMA_SQL);
 let live;
 try {
-  const out = execFileSync("npx", ["supabase", "db", "query", "--linked", "-f", qfile, "-o", "json"], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"], maxBuffer: 64 << 20 });
+  const out = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-f", qfile, "-o", "json"], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"], maxBuffer: 64 << 20 });
   const parsed = JSON.parse(out.slice(out.indexOf("{")));
   const rows = Array.isArray(parsed) ? parsed : parsed.rows;
   live = typeof rows[0].schema === "string" ? JSON.parse(rows[0].schema) : rows[0].schema;

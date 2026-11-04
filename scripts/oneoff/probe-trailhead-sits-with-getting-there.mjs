@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Does the trailhead now render beside GETTING THERE, and did anything leave the screen?
 //
 // RENDERED, never read off the source: the request is about POSITION and about what survives,
@@ -32,7 +34,7 @@ const dead = (what) => {
 
 fs.writeFileSync(entry, `export { default as RouteDetail } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};`);
 try {
-  execFileSync("npx", ["esbuild", entry, "--bundle", "--format=esm", "--platform=node",
+  execFileSync(NPX, [...NPX_PRE, "esbuild", entry, "--bundle", "--format=esm", "--platform=node",
     "--jsx=automatic", "--define:import.meta.env={}",
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
     "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
@@ -40,7 +42,7 @@ try {
 
 if (typeof globalThis.WebSocket === "undefined") globalThis.WebSocket = class { constructor() { throw new Error("probe: no realtime"); } };
 
-const { RouteDetail } = await import(out + "?t=" + Date.now());
+const { RouteDetail } = await import(fileHref(out + "?t=" + Date.now()));
 if (typeof RouteDetail !== "function") dead("RouteDetail.jsx has no default export — ANCHOR LOST");
 
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false, refetchOnMount: false } } });

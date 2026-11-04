@@ -1,3 +1,5 @@
+import { fileHref } from "./lib/file-href.mjs";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // A LEGAL SURFACE MUST NOT CLAIM A CONTROL OR A CAPABILITY THE APP DOES NOT HAVE — and the
 // version a reader SEES must be the version recorded against their account.
 //
@@ -27,7 +29,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { readCoreSource, coreModuleEntry } from "./lib/guard-sources.mjs";
+import { readCoreSource, coreModuleEntry, readAppFile } from "./lib/guard-sources.mjs";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { parse } from "@babel/parser";
@@ -44,7 +46,7 @@ const bad = (m) => { failed++; console.log("  FAIL  " + m); };
 const dead = (m) => { console.error("\ncheck:policy-claims BROKEN: " + m + "\n(reporting nothing is not a pass.)"); process.exit(2); };
 
 const core = readCoreSource();
-const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
 
 // ── 1. NO LEGAL SURFACE PROMISES A CONTROL THE APP WITHHOLDS ────────────────────────────────
 // The durable half: it catches the NEXT instance, not just the one that was fixed.
@@ -220,7 +222,7 @@ const cacheDir = path.join(ROOT, "node_modules", ".cache");
 fs.mkdirSync(cacheDir, { recursive: true });
 const out = path.join(cacheDir, `policy-claims-${process.pid}.mjs`);
 try {
-  execFileSync("npx", ["esbuild", __coreEntry.path,
+  execFileSync(NPX, [...NPX_PRE, "esbuild", __coreEntry.path,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic", "--loader:.jsx=jsx",
     `--define:import.meta.env=${JSON.stringify({ VITE_USE_DB: "false" })}`,
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
@@ -234,7 +236,7 @@ try {
 if (typeof globalThis.WebSocket === "undefined") {
   globalThis.WebSocket = class { constructor() { throw new Error("guard: no realtime"); } };
 }
-const mod = await import(out + "?t=" + Date.now());
+const mod = await import(fileHref(out + "?t=" + Date.now()));
 fs.rmSync(out, { force: true });
 if (typeof mod.LegalView !== "function") dead("LegalView is not exported from ClimbMatchCore.jsx — ANCHOR LOST");
 
@@ -305,7 +307,7 @@ for (const [gone, why] of [
 // recorded against their account cannot drift" -- and NOTHING asserted it. A semantic invariant
 // in a comment is the shape this repo keeps finding rotted.
 console.log("\n--- shown and recorded cannot drift ---");
-const { POLICY_VERSION, policyVersionLabel } = await import(path.join(ROOT, "lib/policy.js"));
+const { POLICY_VERSION, policyVersionLabel } = await import(fileHref(path.join(ROOT, "lib/policy.js")));
 if (!/^\d{4}-\d{2}-\d{2}$/.test(String(POLICY_VERSION))) bad(`POLICY_VERSION is "${POLICY_VERSION}", not a date policyVersionLabel can render`);
 else ok(`POLICY_VERSION is ${POLICY_VERSION}`);
 const label = policyVersionLabel(POLICY_VERSION);

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // check:anniversary — the climb-anniversary notification still reaches a screen.
 //
 // #713 revived this feature. It used to map over MY_CLIMBS, a constant DEMO_FILLERS empties,
@@ -121,9 +122,8 @@ if (port === null) { console.error(`no free port in ${PORT}-${PORT + 39}`); proc
 if (port !== PORT) log(`port ${PORT} is in use by another process — using ${port} instead`);
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
 log(`starting dev server on ${port}, with a log dated ${oneYearAgoISO()}...`);
-const server = spawn(
-  "npx",
-  ["vite", "--config", "scripts/anniversary.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/anniversary.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } }
 );
 let died = false;

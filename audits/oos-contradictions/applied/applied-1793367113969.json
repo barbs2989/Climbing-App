@@ -1,0 +1,41 @@
+{
+ "applied": [
+  {
+   "id": "or_mt_hood_south_side_hogsback",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Climbing permit: free or paid"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "or_mt_hood_south_side_hogsback",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 45.33177,
+      "lng": -121.7077,
+      "elev": 5905,
+      "name": "Timberline Lodge",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From US 26 just east of Government Camp, turn north on Timberline Road and drive about 6 miles to the parking lots at Timberline Lodge. Fill out the free self-issued climbing permit at the climbers' register in the Wy'east Day Lodge before starting. An Oregon Sno-Park permit is required to park from November through April."
+     },
+     {
+      "lat": 45.37344,
+      "lng": -121.69583,
+      "elev": 11229,
+      "name": "Mount Hood",
+      "type": "Summit",
+      "distMi": 3.2,
+      "directions": "Take the climbers' trail on the east edge of the ski runs past the Silcox Hut and the top of the Palmer lift at about 8,500 ft. Continue up the snowfield toward Crater Rock, past Devil's Kitchen and the Hot Rocks, and swing around its east side to the base of the Hogsback. Follow the snow ridge to the bergschrund, climb the Old Chute to the summit ridge, and walk east to the top."
+     }
+    ]
+   }
+  }
+ ]
+}

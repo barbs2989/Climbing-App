@@ -26,6 +26,7 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { POP_CLOSE, POP_CLOSE_MEDIA } from "./popupChrome.js";
+import { TEXT_TAP } from "./buttonStyles.js";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, useFollowMe, locateLabel } from "./mapKit";
 import { useActiveFires, useFirePerimeters, useFireWeather, useHeat, useFireAlert, nwsPointPage, HEAT_MIN_ZOOM, HEAT_HOURS, fmtHoursAgo, useSmokeWindow, smokeHours, smokeTileUrl, fmtSmokeHour, SMOKE_BANDS, SMOKE_MAX_NATIVE_ZOOM, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi } from "./fire";
 import LoadingRows from "../src/components/LoadingRows.tsx";
@@ -109,6 +110,7 @@ function bboxForView(el, lat, lng, zoom) {
 // in miles: a climber with metric selected was shown "mi" on every row, and the km
 // branch was unreachable. The default here is a formatter, not `true`, so a caller
 // that forgets to pass it degrades to imperial rather than crashing.
+const NO_ITEMS = [];
 export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.round(mi) + " mi", focus = null, locale = undefined }) {
   const mapDiv = useRef(null), mapRef = useRef(null), tileRef = useRef(null);
   const perimRef = useRef(null), wxRef = useRef(null), fireRef = useRef(null), heatRef = useRef(null), smokeRef = useRef(null);
@@ -135,7 +137,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
     const [vLat, vLng, vZoom] = viewFor(focus);
     const seed = bboxForView(mapDiv.current, vLat, vLng, vZoom);
     if (seed) setBbox(b => b || seed);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- seeds the viewport once on mount; later focus changes must not reset the bbox
 
   const firesQ = useActiveFires(bbox, show.fires);
   const perimQ = useFirePerimeters(bbox, show.perims);
@@ -151,9 +153,9 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
   const smokeAt = hours.length ? hours[Math.min(hourIx, hours.length - 1)] : null;
   const [smokeErr, setSmokeErr] = useState(false);
 
-  const fires = (firesQ.data && firesQ.data.fires) || [];
-  const perims = (perimQ.data && perimQ.data.perims) || [];
-  const zones = (wxQ.data && wxQ.data.zones) || [];
+  const fires = (firesQ.data && firesQ.data.fires) || NO_ITEMS;
+  const perims = (perimQ.data && perimQ.data.perims) || NO_ITEMS;
+  const zones = (wxQ.data && wxQ.data.zones) || NO_ITEMS;
   const heatData = heatQ.data;
   const heat = useMemo(() => (heatOn && heatData && heatData.heat) || [], [heatOn, heatData]);
 
@@ -208,7 +210,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
       if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} }
       mapRef.current = null; tileRef.current = null; perimRef.current = null; wxRef.current = null; fireRef.current = null; heatRef.current = null; smokeRef.current = null;
     };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- builds the Leaflet map once; baseLayer, focus and theme are applied by their own effects, and re-running would destroy the map
 
   useEffect(() => { if (mapRef.current) applyBaseLayer(mapRef.current, tileRef, baseLayer); }, [baseLayer]);
   // The map div changes size when the list steps aside; Leaflet only measures on resize.
@@ -398,7 +400,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
 
   const chip = (key, label, color, n) => (
     <button onClick={() => setShow(s => ({ ...s, [key]: !s[key] }))} aria-pressed={show[key]}
-      style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 9px", borderRadius: 8, cursor: "pointer", fontSize: 11, fontWeight: 700, background: show[key] ? C.card : C.surface, color: show[key] ? C.text : C.textMuted, border: "1px solid " + (show[key] ? color : C.border), boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
+      style={{ display: "flex", alignItems: "center", gap: 5, padding: "9px 11px", minHeight: 36, borderRadius: 8, cursor: "pointer", fontSize: 11.5, fontWeight: 700, background: show[key] ? C.card : C.surface, color: show[key] ? C.text : C.textMuted, border: "1px solid " + (show[key] ? color : C.border), boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
       <span style={{ width: 9, height: 9, borderRadius: 2, background: show[key] ? color : "transparent", border: "1.5px solid " + color, flexShrink: 0 }} />
       {label}{n != null && show[key] ? " " + n : ""}
     </button>
@@ -415,7 +417,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
         <ActionIcon name="fire" size={19} color={C.red} />
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontSize: 15, fontWeight: 800, lineHeight: 1.2 }}>Fire map</div>
-          <div style={{ fontSize: 11, color: C.textMuted, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          <div style={{ fontSize: 11, color: C.textMuted, marginTop: 2, overflowWrap: "anywhere" }}>
             Active wildfires, smoke &amp; fire weather
           </div>
         </div>
@@ -620,7 +622,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
                 style={{ textAlign: "left", border: "1px solid " + (open ? color : C.border), background: open ? C.card : C.surface, borderRadius: 10, padding: "10px 12px", cursor: "pointer", display: "flex", flexDirection: "column", gap: 4, width: "100%" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
                   <span style={{ width: 9, height: 9, borderRadius: "50%", background: color, flexShrink: 0 }} />
-                  <span style={{ fontSize: 13.5, fontWeight: 700, color: C.text, flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{f.name}</span>
+                  <span style={{ fontSize: 13.5, fontWeight: 700, color: C.text, flex: 1, minWidth: 0, overflowWrap: "anywhere" }}>{f.name}</span>
                   {/* Formatted by the app's unit-aware formatter, and never suppressed:
                       the old `mi >= 1` guard hid the distance for the very nearest
                       fires, which is the one case where the number matters most. */}
@@ -655,9 +657,9 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
               national feed for them. A fire far from your route can still close its access road. Check
               the managing agency before you drive.
               <div style={{ marginTop: 7, display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <a href="https://www.fs.usda.gov/alerts" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700 }}>Forest Service alerts →</a>
-                <a href="https://www.nps.gov/planyourvisit/alerts.htm" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700 }}>National Park alerts →</a>
-                <a href="https://inciweb.wildfire.gov/" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700 }}>InciWeb →</a>
+                <a href="https://www.fs.usda.gov/alerts" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700, ...TEXT_TAP }}>Forest Service alerts →</a>
+                <a href="https://www.nps.gov/planyourvisit/alerts.htm" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700, ...TEXT_TAP }}>National Park alerts →</a>
+                <a href="https://inciweb.wildfire.gov/" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700, ...TEXT_TAP }}>InciWeb →</a>
               </div>
             </div>
           </div>

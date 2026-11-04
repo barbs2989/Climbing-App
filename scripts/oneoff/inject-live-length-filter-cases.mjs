@@ -14,7 +14,8 @@ import { execSync } from "node:child_process";
 import crypto from "node:crypto";
 import fs from "node:fs";
 
-const FILE = "lib/DbAreaBrowser.jsx";
+// The live filter is src/components/RouteFinderPanel.tsx since PR66 (lifted from lib/DbAreaBrowser.jsx, typed).
+const FILE = "src/components/RouteFinderPanel.tsx";
 const sum = (s) => crypto.createHash("sha1").update(s).digest("hex").slice(0, 12);
 
 const CASES = [
@@ -56,6 +57,7 @@ const CASES = [
   },
   {
     name: "props-dropped-at-the-panel",
+    file: "lib/DbAreaBrowser.jsx", // the call site stayed in the browser
     why: "the formatter still converts and the call site stops handing it the helpers, so " +
          "`uElevUnit()` is undefined and the panel throws. NEITHER DIRECTION of check:dead-props " +
          "sees this — the component reads the prop, and the call site passes nothing unread",
@@ -76,8 +78,8 @@ const CASES = [
     name: "SILENT-comment-naming-the-literal",
     why: "MUST STAY SILENT — a comment quoting the forbidden string is documentation, and a guard " +
          "that failed on it would forbid explaining itself. Pins the comment masking",
-    edit: (s) => s.replace("const lenLabel = (o, uElevN, uElevUnit) => {",
-      '// was baked as "200–600 ft" and "1500+ ft" until the live filter learned the setting\nconst lenLabel = (o, uElevN, uElevUnit) => {'),
+    edit: (s) => s.replace("const lenLabel = (o: RouteFinderPanelLen, uElevN: RouteFinderPanelProps[\"uElevN\"], uElevUnit: RouteFinderPanelProps[\"uElevUnit\"]) => {",
+      '// was baked as "200–600 ft" and "1500+ ft" until the live filter learned the setting\nconst lenLabel = (o: RouteFinderPanelLen, uElevN: RouteFinderPanelProps["uElevN"], uElevUnit: RouteFinderPanelProps["uElevUnit"]) => {'),
     expect: "pass",
   },
   {
@@ -85,7 +87,7 @@ const CASES = [
     why: "MUST STAY SILENT — renaming the bucket parameter is cosmetic, and a guard pinned to a " +
          "local's name would refuse ordinary work",
     edit: (s) => s
-      .replace("const lenLabel = (o, uElevN, uElevUnit) => {", "const lenLabel = (bk, uElevN, uElevUnit) => {")
+      .replace("const lenLabel = (o: RouteFinderPanelLen, uElevN: RouteFinderPanelProps[\"uElevN\"], uElevUnit: RouteFinderPanelProps[\"uElevUnit\"]) => {", "const lenLabel = (bk: RouteFinderPanelLen, uElevN: RouteFinderPanelProps[\"uElevN\"], uElevUnit: RouteFinderPanelProps[\"uElevUnit\"]) => {")
       .replace('  if (o[0] === "any") return "Any";', '  if (bk[0] === "any") return "Any";')
       .replace("  if (o[1] == null) return \"< \" + uElevN(o[2]) + \" \" + u;", "  if (bk[1] == null) return \"< \" + uElevN(bk[2]) + \" \" + u;")
       .replace('  if (o[2] == null) return uElevN(o[1]) + "+ " + u;', '  if (bk[2] == null) return uElevN(bk[1]) + "+ " + u;')
@@ -95,22 +97,24 @@ const CASES = [
   },
 ];
 
-const original = fs.readFileSync(FILE, "utf8");
-const before = sum(original);
+const PRISTINE = Object.fromEntries([...new Set([FILE, ...CASES.map((c) => c.file).filter(Boolean)])].map((f) => [f, sum(fs.readFileSync(f, "utf8"))]));
 let bad = 0;
 
 for (const c of CASES) {
+  const F = c.file || FILE;
+  const original = fs.readFileSync(F, "utf8");
+  const before = sum(original);
   const mutated = c.edit(original);
   const landed = sum(mutated) !== before;
   let out = "", code = 0;
   try {
-    fs.writeFileSync(FILE, mutated);
+    fs.writeFileSync(F, mutated);
     try { out = execSync("node scripts/check-units.mjs --only=filters 2>&1", { encoding: "utf8" }); }
     catch (e) { out = String(e.stdout || "") + String(e.stderr || ""); code = e.status || 1; }
   } finally {
-    fs.writeFileSync(FILE, original);
+    fs.writeFileSync(F, original);
   }
-  const restored = sum(fs.readFileSync(FILE, "utf8")) === before;
+  const restored = sum(fs.readFileSync(F, "utf8")) === before;
   const failed = code !== 0;
   const wanted = c.expect === "fail";
   let verdict;
@@ -124,5 +128,5 @@ for (const c of CASES) {
 }
 
 console.log(`\n${CASES.length - bad}/${CASES.length} cases behaved as specified.`);
-if (sum(fs.readFileSync(FILE, "utf8")) !== before) { console.error("BROKEN: " + FILE + " was not restored."); process.exit(1); }
+for (const [f, h] of Object.entries(PRISTINE)) if (sum(fs.readFileSync(f, "utf8")) !== h) { console.error("BROKEN: " + f + " was not restored."); process.exit(1); }
 if (bad) process.exit(1);

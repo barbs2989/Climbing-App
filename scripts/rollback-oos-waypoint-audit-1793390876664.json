@@ -1,0 +1,907 @@
+[
+ {
+  "table": "routes",
+  "id": "wa_north_tower_ridge_route",
+  "waypoints": [
+   {
+    "lat": 48.7004,
+    "lng": -119.954,
+    "elev": 6760,
+    "name": "Tiffany Springs Campground",
+    "note": "Follow Trail #373 east past Tiffany Lake to Honeymoon Pass (~45 min), then traverse south to the base of the North Face.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Winthrop, take the East Chewuch River Road north about 6.5 miles and, before it crosses the Chewuch River, turn right onto FR 37. Follow FR 37 about 13 miles, turn left onto FR 39 and drive about 7.5 miles, past Freezeout Pass, to Tiffany Springs Campground at about 6,760 ft. FR 37 from Conconully reaches the same junction. The gravel is rough, closed to trailers and usually snowbound until late June. Northwest Forest Pass required."
+   },
+   {
+    "lat": 48.70054,
+    "lng": -119.954387,
+    "elev": 6760,
+    "name": "Tiffany Springs Campground",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.678644,
+    "lng": -119.927381,
+    "elev": 7150,
+    "name": "Honeymoon Pass",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.67089,
+    "lng": -119.9321,
+    "elev": 8245,
+    "name": "Tiffany Mountain",
+    "note": "6-pitch 5.8 line up the tower's ridge crest; final pitches are 4th/3rd class walking to Tiffany's main summit slope.",
+    "type": "Summit",
+    "distMi": 3,
+    "directions": "Take Trail #373 from across the road past Tiffany Lake to Honeymoon Pass at about 7,150 ft, then traverse south on the grassy east slope into the small cirque under the north face (about 7,360 ft) and climb the boulder field to the foot of the rock at about 7,600 ft. Climb the lower rock on the right side of the face onto the ridge, go straight up the North Tower by its flaring chimney, and walk the crest to Tiffany's summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_tower_arete",
+  "waypoints": [
+   {
+    "lat": 48.7004,
+    "lng": -119.954,
+    "elev": 6760,
+    "name": "Tiffany Springs Campground",
+    "note": "Follow Trail #373 east past Tiffany Lake to Honeymoon Pass (~45 min), then traverse south to the base of the North Face.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Winthrop, drive north on East Chewuch Road about 6.5 miles and, before it crosses the Chewuch River, turn right onto FR 37. Follow it about 13 miles, then turn left onto FR 39 for about 7.5 miles to Tiffany Springs Campground at about 6,760 ft. From Conconully, take County Road 2017 about 3 miles to FR 37, follow it about 21 miles, and turn right onto FR 39 for 8 miles. Long gravel either way; display a Northwest Forest Pass."
+   },
+   {
+    "lat": 48.70054,
+    "lng": -119.954387,
+    "elev": 6760,
+    "name": "Tiffany Springs Campground",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.678644,
+    "lng": -119.927381,
+    "elev": 7150,
+    "name": "Honeymoon Pass",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.67089,
+    "lng": -119.9321,
+    "elev": 8245,
+    "name": "Tiffany Mountain",
+    "note": "Easier 4th-class arete alternative to the North Tower Ridge Route, joining the same upper ridge to the summit slope.",
+    "type": "Summit",
+    "distMi": 3,
+    "directions": "Cross FR 39 to Tiffany Lake Trail #373, pass Tiffany Lake and climb to Honeymoon Pass at about 7,150 ft, then leave the trail and traverse south across open grassy slopes into the small cirque under the North Face. Scramble the rocky ridge onto the arete, follow the exposed crest, bypass the vertical step on its left at fourth class, then go over the top of the tower and along the crest onto the summit slope, which leads to the top."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_mount_stuart_cascadian_couloir",
+  "waypoints": [
+   {
+    "lat": 47.43656,
+    "lng": -120.93697,
+    "elev": 4243,
+    "name": "Esmeralda Basin Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive to the Esmeralda Basin trailhead at the end of the North Fork Teanaway River Road, Forest Road 9737: from I-90 take exit 85 near Cle Elum onto SR 970 heading northeast, then follow the Teanaway River Road roughly 23 miles to the road-end parking at about 4,243 feet. The road is gravel and is not maintained through winter, typically staying snowed in until late June in a heavy year, so check conditions before an early-season trip."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": null,
+    "name": "Ingalls Way Trail Junction",
+    "type": "Junction",
+    "distMi": 0.3,
+    "directions": "Walk the old road from the trailhead about 0.3 mile to the fork and bear right onto the Ingalls Way Trail, leaving the Esmeralda Basin Trail."
+   },
+   {
+    "lat": 47.4492902,
+    "lng": -120.9251031,
+    "elev": 6300,
+    "name": "Longs Pass",
+    "type": "Pass",
+    "distMi": 3.5,
+    "directions": "Climb the Ingalls Way Trail to the signed Longs Pass junction near 5,440 ft and turn right, then switchback up the open, shadeless hillside to the pass, where Mount Stuart and the Cascadian Couloir first come into view. Start before dawn in summer."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": null,
+    "name": "Long's Pass Trail Junction",
+    "type": "Junction",
+    "distMi": 4.5,
+    "directions": "Descend the steep, loose trail down the north side of the pass, losing about 1,300 ft to Ingalls Creek, and cross the creek on the log to meet the Ingalls Creek Trail on the far bank. The slope can hold firm snow early in the season."
+   },
+   {
+    "lat": 47.459,
+    "lng": -120.911,
+    "elev": null,
+    "name": "Cascadian Couloir Base",
+    "type": "Junction",
+    "distMi": 5,
+    "directions": "Turn right (east, downstream) on the Ingalls Creek Trail and follow it a short way to an unmarked climbers' path on the left. Take it north through the meadow and camps to the toe of the couloir. Fill water here; none is reliable higher up."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 9200,
+    "name": "False Summit Notch",
+    "type": "Junction",
+    "distMi": 5.8
+   },
+   {
+    "lat": 47.475,
+    "lng": -120.904,
+    "elev": 9415,
+    "name": "Mount Stuart Summit",
+    "type": "Summit",
+    "distMi": 6
+   },
+   {
+    "lat": 47.456341,
+    "lng": -120.910977,
+    "elev": 4886,
+    "name": "Ingalls Creek crossing",
+    "type": "Water",
+    "distMi": 3.5
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_mount_stuart_west_ridge",
+  "waypoints": [
+   {
+    "lat": 47.43656,
+    "lng": -120.93697,
+    "elev": 4243,
+    "name": "Esmeralda Basin Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive the North Fork Teanaway Road (FR-9737) to its end at the Esmeralda trailhead, about 4,243 ft, and start on the Ingalls Way Trail. At about 0.3 mile stay right onto Ingalls Way where it leaves the Esmeralda Basin Trail, and at about 1.7 miles turn right at the Longs Pass junction rather than carrying on toward Ingalls Basin. There is a longer northern approach to this ridge from the Stuart Lake Trailhead over Stuart Pass, but it adds significant mileage and is not the standard line, so Esmeralda is the lot you want."
+   },
+   {
+    "lat": 47.4492902,
+    "lng": -120.9251031,
+    "elev": 6300,
+    "name": "Longs Pass",
+    "type": "Pass",
+    "distMi": 2.9,
+    "directions": "From the signed Longs Pass junction on the Ingalls Way Trail, near 5,440 ft, turn right and climb steep, rocky, sparsely switchbacked trail about 1.2 miles to the pass, which gives the first clear view of Stuart's west side."
+   },
+   {
+    "lat": 47.45704,
+    "lng": -120.90957,
+    "elev": 4919,
+    "name": "Ingalls Creek crossing",
+    "note": "Last reliable water before the ridge; fill up here.",
+    "type": "Water",
+    "distMi": 4,
+    "directions": "Descend the steep, dusty north side of the pass about a mile, losing about 1,300 ft, to Ingalls Creek in the timber and cross it. In normal summer flow it is a rock-hop; early in the season the slope above can hold snow and be icy at dawn."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": null,
+    "name": "Talus Approach to West Ridge",
+    "type": "Junction",
+    "distMi": 4.5,
+    "directions": "After the creek, head west up the Ingalls Creek valley on the climbers' path toward Stuart Pass. Well short of the pass, in the upper meadows, leave the path and traverse north across talus and heather benches toward the foot of the West Ridge. There is no tread on this traverse, and several minor gullies look alike."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7200,
+    "name": "West Ridge Crest",
+    "type": "Junction",
+    "distMi": 5,
+    "directions": "Aim for the deep middle gully of the three parallel gullies on the lower ridge, the one with a house-sized boulder at its foot. Push through scrub into it and scramble sandy class 3 granite up and rightward, with short class 4 steps, to the notch at its head where Long John Tower stands directly ahead. Snow can linger in the gully into midsummer and is often icy early in the day."
+   },
+   {
+    "lat": 47.475,
+    "lng": -120.904,
+    "elev": 9415,
+    "name": "Mount Stuart Summit",
+    "type": "Summit",
+    "distMi": 6,
+    "directions": "From the notch at the top of the approach gully, Long John Tower is directly ahead; pass it by the chimney on its left, or by the short dihedral with a fixed piton or the layback farther along the ledge, then regain the crest. Cross the exposed West Ridge Notch traverse, and higher up climb the 5.4 dihedral or 5.6 layback below the summit to easier fifth-class ground and the top."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_east_wilmans_spire",
+  "waypoints": [
+   {
+    "lat": 48.027,
+    "lng": -121.4447,
+    "elev": 2360,
+    "name": "Barlow Pass Trailhead",
+    "note": "Mountain Loop Highway trailhead; hike/bike the closed road toward Monte Cristo.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Granite Falls, drive the Mountain Loop Highway east about 30 miles, past the Verlot Public Service Center, to Barlow Pass at about 2,360 ft, where the pavement ends and the Monte Cristo road is gated to vehicles. Park at the Barlow Pass lot; a Northwest Forest Pass is required, and a free self-issued wilderness permit is filled out at the trailhead."
+   },
+   {
+    "lat": 48.028536,
+    "lng": -121.445021,
+    "elev": 2361,
+    "name": "Barlow Pass roadhead",
+    "type": "Campsite"
+   },
+   {
+    "lat": 47.9847,
+    "lng": -121.3897,
+    "elev": 2750,
+    "name": "Monte Cristo Townsite",
+    "note": "Old mining townsite; pick up the Glacier Basin Trail here toward the Wilmans Spires.",
+    "type": "Junction",
+    "distMi": 4,
+    "directions": "Walk or bike the gated, nearly flat Monte Cristo road about 4 miles along the South Fork Sauk River to the old townsite. Where the road washed out near the old Twin Bridges site, the river has to be forded or crossed on logs."
+   },
+   {
+    "lat": 47.98556,
+    "lng": -121.39389,
+    "elev": 2800,
+    "name": "Monte Cristo townsite campground, four miles up the closed road",
+    "type": "Campsite"
+   },
+   {
+    "lat": 47.97249,
+    "lng": -121.36585,
+    "elev": 6248,
+    "name": "East Wilmans Spire",
+    "note": "Most-climbed of the three Wilmans Spires above Glacier Basin; best climbed early season while the approach gully still holds snow.",
+    "type": "Summit",
+    "distMi": 5,
+    "directions": "Take the Glacier Basin Trail out of the townsite for less than a mile, then leave it and head up toward the spire: snow early in the season, loose talus once it melts out, up a narrowing gully of 35 to 45 degrees to the lower col. Avoid the left-hand branch where the gully narrows. From the col, scramble around the south face to the upper east notch and climb three short pitches (to 5.6) to the tiny table-top summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_mount_hinman_hinman_glacier",
+  "waypoints": [
+   {
+    "lat": 47.66471,
+    "lng": -121.28798,
+    "elev": 1650,
+    "name": "Necklace Valley Trailhead",
+    "note": "End of FR 68, 4.1 mi from US Hwy 2 at Skykomish; self-issue Alpine Lakes Wilderness permit and Northwest Forest Pass required at the kiosk.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "The trailhead sits at the end of Forest Road 68, about 4.1 miles from US Highway 2 at Skykomish, at roughly 1,650 feet. A self-issue Alpine Lakes Wilderness permit and a Northwest Forest Pass are required at the trailhead kiosk."
+   },
+   {
+    "lat": 47.61214,
+    "lng": -121.24393,
+    "elev": 2183,
+    "name": "East Fork Foss River crossing",
+    "note": "Footlog crossing, with a handwire, of the East Fork Foss near an established camp; the first 5 miles gain only ~600 ft but this crossing can be tricky during high runoff.",
+    "type": "Water",
+    "distMi": 5,
+    "directions": "From the trailhead follow Necklace Valley Trail #1062 up the East Fork Foss River. The first 5 miles are nearly flat, gaining only about 600 ft and entering the Alpine Lakes Wilderness at about 1.5 miles, to the crossing of the East Fork Foss near an established camp. There is no bridge: cross on the footlog, holding the handwire, ideally in the morning when early-season runoff is lowest."
+   },
+   {
+    "lat": 47.5848223,
+    "lng": -121.2578166,
+    "elev": 4613,
+    "name": "Jade Lake",
+    "note": "First of the Necklace Valley lakes and the common base camp for Hinman climbs; trail steepens sharply above the river crossing, gaining roughly 2,400 ft in about 3 miles to reach it.",
+    "type": "Campsite",
+    "distMi": 8,
+    "directions": "Across the river the trail turns steeply uphill, climbing roughly 2,400 ft in about 3 miles on rooty switchbacks into Necklace Valley. The grade eases at Jade Lake, the first of the valley's lakes."
+   },
+   {
+    "lat": 47.5623345,
+    "lng": -121.237319,
+    "elev": 5856,
+    "name": "La Bohn Gap",
+    "note": "Cairned climbers' path through boulder fields and heather gains this notch on the ridge crest above La Bohn Lakes; avoid the waterfall drainage to the left, routefinding is poor in fog.",
+    "type": "Junction",
+    "distMi": 10,
+    "directions": "Continue on the trail past Emerald and Opal Lakes through the swampy Necklace Basin to its head, where the maintained trail ends. From there a cairned climbers' path climbs through meadow, heather and boulder talus, roughly 1,000 ft, to La Bohn Gap on the ridge crest above the La Bohn Lakes. Stay out of the waterfall drainage to the left; routefinding is poor in fog."
+   },
+   {
+    "lat": 47.570449,
+    "lng": -121.217418,
+    "elev": 7300,
+    "name": "Hinman/Foss Glacier remnant snowfield",
+    "note": "Traverse of the shrinking glacier remnant below the west ridge; carry ice axe and crampons/microspikes for firm morning snow, and watch for isolated moats or crevasses late season.",
+    "type": "Hazard",
+    "distMi": 11,
+    "directions": "From La Bohn Gap head north-northeast into the basin above the gap, then swing east-northeast up the snowfield and glacier remnant below the summit ridge. Carry ice axe and crampons for firm morning snow, and watch for moats or crevasses early in the season."
+   },
+   {
+    "lat": 47.568168,
+    "lng": -121.2114854,
+    "elev": 7492,
+    "name": "Mount Hinman summit",
+    "note": "Broad, multi-humped summit ridge where the true high point is ambiguous; final approach involves a short loose scramble near the east end.",
+    "type": "Summit",
+    "distMi": 11.5,
+    "directions": "From the top of the snowfield scramble east up loose scree and broken ridge ground to the broad, multi-humped summit ridge, then follow the crest east to the true high point near its east end."
+   },
+   {
+    "lat": 47.580691,
+    "lng": -121.256038,
+    "elev": 4695,
+    "name": "Emerald Lake",
+    "type": "Water",
+    "distMi": 7.6
+   },
+   {
+    "lat": 47.576481,
+    "lng": -121.253191,
+    "elev": 4773,
+    "name": "Opal Lake",
+    "type": "Water",
+    "distMi": 8.1
+   },
+   {
+    "lat": 47.560637,
+    "lng": -121.240328,
+    "elev": 5547,
+    "name": "Chain Lakes",
+    "type": "Water",
+    "distMi": 9.2
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_booker_mountain_northeast_face",
+  "waypoints": [
+   {
+    "lat": 48.665993,
+    "lng": -121.069073,
+    "elev": 1350,
+    "name": "Neve Camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.542986,
+    "lng": -121.015344,
+    "elev": 3093,
+    "name": "Skagit Queen Camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.583646,
+    "lng": -121.01939,
+    "elev": 3200,
+    "name": "Junction Camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.471143,
+    "lng": -120.945133,
+    "elev": 3921,
+    "name": "Five Mile Camp, Park Creek trail",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.506144,
+    "lng": -120.972185,
+    "elev": 5108,
+    "name": "Thunder Basin Hiker Camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.4753,
+    "lng": -120.9792,
+    "elev": 8284,
+    "name": "Booker Mountain summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 8284
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_booker_mountain_northwest_route",
+  "waypoints": [
+   {
+    "lat": 48.665993,
+    "lng": -121.069073,
+    "elev": 1350,
+    "name": "Neve Camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.542986,
+    "lng": -121.015344,
+    "elev": 3093,
+    "name": "Skagit Queen Camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.583646,
+    "lng": -121.01939,
+    "elev": 3200,
+    "name": "Junction Camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.471143,
+    "lng": -120.945133,
+    "elev": 3921,
+    "name": "Five Mile Camp, Park Creek trail",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.506144,
+    "lng": -120.972185,
+    "elev": 5108,
+    "name": "Thunder Basin Hiker Camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.4753,
+    "lng": -120.9792,
+    "elev": 8284,
+    "name": "Booker Mountain summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 8284
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_booker_mountain_south_ridge",
+  "waypoints": [
+   {
+    "lat": 48.47544,
+    "lng": -121.07503,
+    "elev": 3600,
+    "name": "Cascade Pass Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 3600,
+    "directions": "Drive Cascade River Road 23.1 miles from Marblemount to the Cascade Pass Trailhead at about 3,600 ft; it is paved to start and gravel the rest of the way. The season here runs July through September and depends on Cascade River Road being open, so check that before you make the drive. Most parties climb this as one very long day from the lot, leaving the car around 2-3 am; if you would rather split it, the overnights at Pelton Basin and Sahale Glacier Camp are permitted camps, so sort the permit out before you drive."
+   },
+   {
+    "lat": 48.4683,
+    "lng": -121.06,
+    "elev": 5392,
+    "name": "Cascade Pass",
+    "type": "pass",
+    "distMi": 3.7,
+    "elevFt": 5392,
+    "directions": "Follow the Cascade Pass Trail up long switchbacks through forest and then across open slopes, 3.7 miles and about 1,700 ft of gain, to Cascade Pass at 5,392 ft."
+   },
+   {
+    "lat": 48.485148,
+    "lng": -121.045182,
+    "elev": 7600,
+    "name": "Sahale Camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.4753,
+    "lng": -120.9792,
+    "elev": 8284,
+    "name": "Booker Mountain summit",
+    "type": "Summit",
+    "distMi": 11,
+    "elevFt": 8284,
+    "directions": "Continue up the Sahale Arm trail toward Sahale Glacier Camp. Near the camp leave the trail and descend Sahale's south side by a snow-free gully near 6,600 ft into Horseshoe Basin, then traverse the basin at 6,400-6,600 ft past the Buckner buttress to a permanent snowfield and north-facing gully at 7,000-7,200 ft. Above, talus and slabs on the south ridge lead to a short, exposed 3rd-class gully and the summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_bacon_peak_diobsud",
+  "waypoints": [
+   {
+    "lat": 48.6746,
+    "lng": -121.6147,
+    "elev": 4300,
+    "name": "Watson Lakes Trailhead",
+    "note": "This is the Anderson and Watson Lakes trailhead, the start of the long cross-country line past the Watson Lakes and Diobsud Lakes to the Diobsud Creek Glacier.",
+    "type": "Trailhead",
+    "elevFt": 4300,
+    "directions": "From SR-20 near milepost 82, turn north on Baker Lake Road (FS Road 11) and drive about 14 mi to the Baker Dam turnoff. Cross the dam on FS Road 1106, turn left on FS Road 1107 and follow it 8 to 9 mi to a signed spur on the left, which ends at the Anderson and Watson Lakes Trailhead in about 1 mi. The road is long and rough; high clearance helps. A Northwest Forest Pass is required."
+   },
+   {
+    "lat": 48.66527,
+    "lng": -121.597939,
+    "elev": 4700,
+    "name": "Wilderness-boundary saddle",
+    "note": "Below this saddle the trail forks: right drops 0.5 mi to Lower Anderson Lake, left climbs here into the Noisy-Diobsud Wilderness. Leave the trail at the saddle for the boot path south along the ridge.",
+    "type": "Junction",
+    "distMi": 1.5,
+    "directions": "Follow the Anderson-Watson Lakes Trail #611 through forest to the Anderson Butte Trail junction and stay left. Continue to the next junction, where the right fork drops to Lower Anderson Lake; bear left and climb to the saddle, which is where the trail crosses into the Noisy-Diobsud Wilderness."
+   },
+   {
+    "lat": 48.655038,
+    "lng": -121.558583,
+    "elev": 4900,
+    "name": "Diobsud basin",
+    "note": "The Diobsud Lakes basin, reached through heather below the 5,300 ft saddle on Mt. Watson's north side; the last dependable camp and water below the peak.",
+    "type": "Campsite",
+    "distMi": 5,
+    "directions": "From the saddle, follow the boot path south along the ridge high above Lower Anderson Lake to Upper Anderson Lake, the last easy water. Angle northeast up a short wooded gully, cross the slabs, scree and snowfields on Mt. Watson's north side, go over a saddle near 5,300 ft and descend heather to the Diobsud Lakes."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 5800,
+    "name": "Access gully to Diobsud Creek Glacier",
+    "note": "Loose rock and slick dirt in the chute leading to the glacier's toe once snow has melted out — expect to claw up steep, loose dirt gullies here.",
+    "type": "Hazard",
+    "distMi": 7,
+    "directions": "From the basin, sidehill across slippery vegetation, brush and cedar thickets, then climb mossy slabs toward the steep, loose dirt-and-scree gullies that lead up to Bacon's south ridge."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6400,
+    "name": "Diobsud Creek Glacier crossing",
+    "note": "Rope up here — crevasses open on the icecap by mid-to-late season; probe and stay roped through to the saddle below the summit block.",
+    "type": "Hazard",
+    "distMi": 8,
+    "directions": "Climb the steep, loose gully onto Bacon's south ridge, where broad snow slopes lead onto the toe of the Diobsud Creek Glacier. Rope up here. When snow-filled the gully is avalanche terrain, and it goes far more easily on firm morning snow."
+   },
+   {
+    "lat": 48.662665,
+    "lng": -121.520525,
+    "elev": 7070,
+    "name": "Bacon Peak",
+    "type": "Summit",
+    "elevFt": 7070,
+    "directions": "Stay roped and probe across the glacier toward the summit block, then follow the flat, often windy summit ridge over a short snow arete and scramble the dry rocks to the summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_mount_ferry_standard",
+  "waypoints": [
+   {
+    "lat": 47.955249,
+    "lng": -123.835839,
+    "elev": 1900,
+    "name": "Sol Duc Trailhead (Olympic NP)",
+    "note": "Olympic National Park entrance pass required for parking; wilderness permits (recreation.gov) needed for overnight camps on the Sol Duc/High Divide corridor.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Port Angeles drive US-101 west about 28 miles; just past Lake Crescent turn left on Sol Duc Hot Springs Road at the park sign, pay at the entrance station, and drive about 12 miles past the resort to the trailhead at the road end. An Olympic National Park entrance pass is required to park, and overnight camps need a wilderness permit."
+   },
+   {
+    "lat": 47.95144,
+    "lng": -123.81905,
+    "elev": 1927,
+    "name": "Sol Duc Falls",
+    "note": "Boardwalk viewpoint over the falls and junction with the Lover's Lane Trail; stay on the Deer Lake/High Divide Trail.",
+    "type": "Junction",
+    "distMi": 0.8,
+    "directions": "Follow the Sol Duc Falls Trail about 0.8 mile through old-growth forest to the bridge overlooking Sol Duc Falls."
+   },
+   {
+    "lat": 47.9277,
+    "lng": -123.824,
+    "elev": 3550,
+    "name": "Deer Lake",
+    "note": "Established backcountry camp with bear wires; last easy water and flat tent sites before the steep climb to High Divide.",
+    "type": "Campsite",
+    "distMi": 3.4,
+    "directions": "Cross the bridge and bear right, pass the Lover's Lane Trail junction, and climb the Deer Lake Trail about 3 miles alongside Canyon Creek and its waterfalls to Deer Lake."
+   },
+   {
+    "lat": 47.90981,
+    "lng": -123.73438,
+    "elev": 4744,
+    "name": "Heart Lake",
+    "note": "Last reliable water before the dry, exposed Cat Peak-Mt. Carrie ridge section - top off here.",
+    "type": "Water",
+    "distMi": 10,
+    "directions": "From Deer Lake continue south on the High Divide Trail, climbing through subalpine meadow onto the divide, then follow it east past Bogachiel Peak to the junction with the Sol Duc River Trail and drop a short way north to Heart Lake."
+   },
+   {
+    "lat": 47.90782,
+    "lng": -123.7380134,
+    "elev": 5081,
+    "name": "High Divide - Cat Basin Trail Junction",
+    "note": "The Cat Basin primitive trail branches east off High Divide here toward Cat Peak; it is the start of the Bailey Range route, and off-trail routefinding begins where its tread fades beyond Cat Basin.",
+    "type": "Junction",
+    "distMi": 10.3,
+    "directions": "From Heart Lake climb back up to the High Divide Trail, about a third of a mile, to where the Cat Basin primitive trail branches east."
+   },
+   {
+    "lat": 47.89104,
+    "lng": -123.661054,
+    "elev": 5900,
+    "name": "The Catwalk (Cat Peak-Mt. Carrie arete)",
+    "note": "Narrow, exposed ridge traverse on loose rock linking Cat Peak and Mount Carrie; a slip on the steep side-hill sections could mean a long uncontrolled fall.",
+    "type": "Hazard",
+    "distMi": null,
+    "directions": "Follow the Cat Basin primitive trail east about 2.5 miles, through Cat Basin to where its tread fades, then continue on the faint route, traversing the slopes of Cat Peak to the start of the Catwalk, the narrow exposed ridge linking Cat Peak to Mount Carrie."
+   },
+   {
+    "lat": 47.83948,
+    "lng": -123.57676,
+    "elev": 5565,
+    "name": "Ferry Basin",
+    "note": "Open meadow basin below Mount Ferry's south slopes with glacial tarns for camping/swimming, reached via a col just south of Stephen Peak (~5,900 ft).",
+    "type": "Campsite",
+    "distMi": null,
+    "directions": "Cross the Catwalk to Mount Carrie's shoulder, then continue along the Bailey Range crest past Stephen Peak: steep heather benches with Class 3-4 moves lead into a second, brushier catwalk with awkward gully crossings. Drop through the col just south of Stephen Peak into Ferry Basin and its tarns."
+   },
+   {
+    "lat": 47.842435,
+    "lng": -123.570535,
+    "elev": 6195,
+    "name": "Mount Ferry",
+    "note": "Class 2-3 scramble off the main Bailey Range traverse near the Ferry-Pulitzer col; broad summit with views across Queets Basin to Mount Olympus.",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "From camp in Ferry Basin, climb to the broad bench east of the true summit, then up the slope of loose, sharp, shifting scree to the summit. It is sustained class 2-3 scrambling with no technical climbing; watch for the elk trails in the basin, which contour convincingly but do not lead to the summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_frenzel_spitz_south_route",
+  "waypoints": [
+   {
+    "lat": 48.673235,
+    "lng": -121.267375,
+    "elev": 500,
+    "name": "Goodell Creek Campground, roadhead staging",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.68664,
+    "lng": -121.27121,
+    "elev": 600,
+    "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+    "note": "Park off SR-20 near Newhalem at Goodell Creek Campground/road; NPS wilderness permit required for overnight camping in Terror/Crescent Creek Basins.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive Highway 20 to Newhalem and park at the Goodell Creek Campground and trailhead just off the highway. An NPS wilderness permit is required for overnight camping in the Terror and Crescent Creek Basins, so arrange that before you head in."
+   },
+   {
+    "lat": 48.7257,
+    "lng": -121.29488,
+    "elev": 1700,
+    "name": "Cairn - Old Roadbed / Terror Basin Fork",
+    "note": "Old logging roadbed ends here; a cairn (replacing an older rock arrow) marks the unmaintained boot path climbing steeply south of Terror Creek toward Terror Basin.",
+    "type": "Junction",
+    "distMi": 4,
+    "directions": "Follow the old roadbed and climbers' path up the Goodell Creek valley for about four miles, gaining only around 1,000 ft. Fill water at the junction: this is the last easy, reliable source before the climb steepens."
+   },
+   {
+    "lat": 48.724699,
+    "lng": -121.289851,
+    "elev": 2100,
+    "name": "Terror Creek Log Jam Crossing",
+    "note": "Cross Terror Creek on a log jam; the exact crossing point shifts year to year and can require wading or bushwhacking upstream in high water.",
+    "type": "Hazard",
+    "distMi": 4.3,
+    "directions": "Leave the roadbed at the cairn on the unmaintained path cutting uphill and to the right; it reaches Terror Creek within a few hundred yards, before any of the real climbing begins."
+   },
+   {
+    "lat": 48.764392,
+    "lng": -121.28099,
+    "elev": 5800,
+    "name": "Terror Basin camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.7528,
+    "lng": -121.2672,
+    "elev": 5860,
+    "name": "Terror Basin",
+    "note": "Gravelly, wildflower basin with established tent sites and multiple streams; the standard base camp for Southern Pickets objectives, roughly a 7-hour day in.",
+    "type": "Campsite",
+    "distMi": 6,
+    "directions": "Past the creek the boot path turns relentlessly steep, gaining roughly 4,000-4,700 ft in well under three horizontal miles through old-growth and brush; expect head-high slide alder and devil's club depending on the season and snow year. It breaks out of timber near 5,000-5,200 ft onto heather benches, slabs and snowfields. The path is boot-beaten but often faint, and there is no dependable water between the creek and the basin."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6400,
+    "name": "The Barrier",
+    "note": "Loose, exposed low-5th-class ridge crossing over a moat divides Terror Basin from Crescent Creek Basin; classic unstable 'Pickets Class 3' terrain, harder late season.",
+    "type": "Hazard",
+    "distMi": 7,
+    "directions": "From the tent sites, climb up-basin roughly 700 ft to the north-northwest to reach the crest of the divide. The ground is grassy ledges and loose blocks, and it is the one stretch of the approach where a slip has real consequences."
+   },
+   {
+    "lat": 48.766899,
+    "lng": -121.301569,
+    "elev": 5900,
+    "name": "Crescent Creek Basin Camp",
+    "note": "Flat camping area below Mount Terror used as the high camp for Ottohorn, Himmelhorn, and Frenzel Spitz objectives.",
+    "type": "Campsite",
+    "distMi": 7.5,
+    "directions": "Drop about 500 ft off the far side on mixed snow and talus, steeply at first, then traverse for roughly an hour into the basin under the Ottohorn-Himmelhorn massif to reach the flat ground used for camping."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7280,
+    "name": "Ottohorn-Himmelhorn Col",
+    "note": "Gain the col from Crescent Creek Basin (snow-filled and straightforward early season, loose tricky 5th class if melted out); the descent toward Frenzel Spitz's South Route drops off its north side from here.",
+    "type": "Junction",
+    "distMi": 8.5,
+    "directions": "From the basin camp it is about 1,400 ft and roughly an hour of climbing up to the crest. This Crescent Creek side is the friendly side of the col, loose but moderate 3rd and 4th class; the north side, which drops toward Frenzel Spitz, is sustained loose 5th class, with a steep step that is usually rappelled on the way down and has to be reclimbed on the way back."
+   },
+   {
+    "lat": 48.77638,
+    "lng": -121.31694,
+    "elev": 7440,
+    "name": "Frenzel Spitz Summit",
+    "note": "True summit gained via 5.6 rock on the south side after descending about 500 ft from the col; return the same way, reclimbing to the col.",
+    "type": "Summit",
+    "distMi": 9,
+    "directions": "Do not try to follow the crest across. From the col, downclimb roughly 500 ft of broken, frequently snow- or ice-covered ground onto the Frenzel Spitz side to reach the foot of the South Route, then climb its rock at about 5.6 back up to the top. The small net height difference between col and summit hides a full descent and re-ascent, so budget the time for it; the step below the col is commonly rappelled from natural anchors on the way in and reclimbed on the way back."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_inspiration_traverse",
+  "waypoints": [
+   {
+    "lat": 48.49274,
+    "lng": -121.12222,
+    "elev": 2175,
+    "name": "Eldorado Creek Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From SR 20 at Marblemount, cross the Skagit River bridge onto the Cascade River Road and drive about 20 miles east, paved for the first 10 then rough gravel, to the Eldorado parking area on the right near milepost 20. The climbers' trail leaves the road a short walk west of the lot. A park wilderness permit, picked up in person at the Wilderness Information Center in Marblemount, is required for any overnight stay."
+   },
+   {
+    "lat": 48.53522,
+    "lng": -121.12334,
+    "elev": 7630,
+    "name": "Inspiration Glacier high camp",
+    "note": "Camp on rock at the edge of the glacier just below the base of Eldorado's East Ridge, around 7,600 ft.",
+    "type": "Campsite",
+    "distMi": null,
+    "directions": "Cross the Cascade River on the log and climb the steep climbers' trail about 1,800 ft to the boulder field. Cross it and Eldorado Creek into the basin, climb to the notch and drop into the Roush Creek basin, then rope up and climb the Eldorado Glacier north onto the flat Inspiration Glacier to camp on rock at its edge."
+   },
+   {
+    "lat": 48.53755,
+    "lng": -121.13426,
+    "elev": 8856,
+    "name": "Eldorado Peak",
+    "type": "Summit",
+    "distMi": 4.1,
+    "directions": "From camp, climb the snow of the East Ridge to the exposed knife-edge snow crest at the summit, then return to camp."
+   },
+   {
+    "lat": 48.56867,
+    "lng": -121.10151,
+    "elev": 8238,
+    "name": "Austera Peak",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Cross the Inspiration Glacier east to the rock col on the south side of Klawatti, the usual second camp, then continue onto the Klawatti Glacier to Austera. A snowy ridge links its false and true summits, then a short chimney with 4th-class to low-5th mantle moves; most parties belay it and rappel once."
+   },
+   {
+    "lat": 48.58185,
+    "lng": -121.09192,
+    "elev": 8380,
+    "name": "Primus Peak",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Continue across the North Klawatti Glacier, passing near icefalls, to the south side of Primus. Easy snow, slabs and mostly stable talus reach the south ridge a short way below the top."
+   },
+   {
+    "lat": 48.55449,
+    "lng": -121.10473,
+    "elev": 8364,
+    "name": "Klawatti Peak",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Return across the North Klawatti and Klawatti glaciers to the col on Klawatti's south side. Cross the moat and climb a steep gully with several 4th-class moves, or two or three short low-5th pitches, then scramble loose rock to the long summit; rappel back over the moat."
+   },
+   {
+    "lat": 48.54981,
+    "lng": -121.13867,
+    "elev": 8320,
+    "name": "Dorado Needle",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Cross toward the McAllister Glacier and gain the ridge north of Dorado Needle; crevasses here are often the worst of the trip. Cross the exposed knife-edge ridge au cheval to the tiny summit and its short, awkward 5.7 move, and descend by rappel rather than re-crossing the ridge."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_spectre_peak_south_route",
+  "waypoints": [
+   {
+    "lat": 48.9102,
+    "lng": -121.5941,
+    "elev": 3120,
+    "name": "Hannegan Pass Trailhead",
+    "note": "Start point for the 2-day approach (Hannegan Pass -> Easy Ridge -> Pickell Pass) used on this route's first ascent.",
+    "type": "Trailhead",
+    "elevFt": 3120,
+    "directions": "Drive Forest Road 32, the Hannegan Pass Road, to its end at the Hannegan Pass Trailhead at about 3,120 ft. The road is normally open to the trailhead through summer and early fall but has a documented history of washout damage needing bypass construction, so confirm current status with the Glacier Public Service Center before driving in. Park with a Northwest Forest or interagency pass displayed; the overnight wilderness permit for everything past Hannegan Pass is a separate Park Service permit picked up in Glacier or Marblemount."
+   },
+   {
+    "lat": 48.88374,
+    "lng": -121.53347,
+    "elev": 5100,
+    "name": "Hannegan Pass",
+    "note": "High point of the maintained Hannegan Pass Trail (#674); stay on the maintained trail here and descend into the Chilliwack valley; the cross-country toward Easy Ridge starts far below, after the river ford, and the Copper Ridge trail branches down in the valley rather than at the pass.",
+    "type": "Junction",
+    "distMi": 4,
+    "directions": "Follow the maintained Hannegan Pass Trail #674 up the Ruth Creek valley, about 4 miles and roughly 2,000 ft of gain to the 5,050 ft pass, with Mount Sefrit and Nooksack Ridge across the valley. The grade is gentle and the tread is good the whole way, and the Ruth Creek crossings in the first couple of miles carry reliable water."
+   },
+   {
+    "lat": 48.8727739,
+    "lng": -121.487756125,
+    "elev": 2750,
+    "name": "Chilliwack River ford",
+    "note": "Ford the Chilliwack River below Easy Ridge on the climbers' path past Copper Creek before switchbacking back up; can be a cold, thigh-deep crossing in early season.",
+    "type": "Water",
+    "distMi": 9,
+    "directions": "From the pass the maintained trail keeps going, and this is the stretch people get wrong: do not leave it here. Descend the switchbacks north-east into the Chilliwack valley, losing about 1,500 ft over roughly three miles to the Copper Creek area at a little over 3,000 ft, where the Copper Ridge trail branches away and is not your turn. Continue past it on the climbers' path and drop to the Chilliwack River ford below Easy Ridge. The crossing is cold and can run thigh-deep in early season, so pick a braided section, unclip your hipbelt, and cross before the afternoon melt comes down. The climbers' path switchbacks straight back up the far side, so this low point at about 2,750 ft is the bottom of the whole approach."
+   },
+   {
+    "lat": 48.8474039,
+    "lng": -121.37145793750001,
+    "elev": 6600,
+    "name": "Bivy beyond Easy Peak",
+    "note": "Established climbers' bivy near the summit of Easy Peak (6,613'), reached via the Easy Ridge climbers' path that climbs from the Chilliwack River ford; typical end of day one.",
+    "type": "Campsite",
+    "distMi": 14.5,
+    "directions": "From the river, switchback steeply back up onto Easy Ridge and then follow the crest itself. This is a hot, dry, open, south-facing ridge with almost no shade; flowing water shows up relatively early along it, but the first-ascent party warned this stretch would be brutal later in the season and in dry years, so fill up while you can. Continue along and over Easy Peak to the established bivy beyond it, roughly a ten-hour day with a full pack from the trailhead."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 5200,
+    "name": "Imperfect Impasse",
+    "note": "A notch on Easy Ridge that must be downclimbed and re-ascended to continue toward the Pickets proper; exposed and slower than it looks from a distance.",
+    "type": "Hazard",
+    "distMi": 15.5,
+    "directions": "Leave camp and keep going along the ridge off-trail toward the Pickets, dropping to the cleft known as the Imperfect Impasse. This leg is route-finding and exposed scrambling rather than walking, and the notch has to be downclimbed and then re-ascended on the far side; parties consistently find it slower than it looks from a distance."
+   },
+   {
+    "lat": 48.837497425,
+    "lng": -121.347398725,
+    "elev": 8000,
+    "name": "Challenger Col",
+    "note": "Snow/glacier col that gains the western slope of the range; parties have noted a bergschrund forming near its top by mid-to-late season.",
+    "type": "Junction",
+    "distMi": 16.5,
+    "directions": "Out of the notch, regain elevation onto the flank of Mount Challenger and climb through Challenger Col. This is snow and glacier ground rather than rock, so rope up and treat it as crevassed terrain; parties have reported a bergschrund opening near the top of the col by mid to late season."
+   },
+   {
+    "lat": 48.827832475,
+    "lng": -121.345799575,
+    "elev": 7300,
+    "name": "Pickle Pass",
+    "note": "Gap below Spectre's serrated south ridge of hoodoos, visible from Frenzel Camp, where the technical climbing on the route begins.",
+    "type": "Junction",
+    "distMi": 17.5,
+    "directions": "From the col, traverse the southern Challenger cirque toward the west ridge of Phantom Peak, staying roped near the pocket glacier. Phantom's west and south ridge is the usual second bivy and where most parties stop for the night. Pickle Pass itself can hold snow well into the season, and the first-ascent party found it snowed over and skirted it rather than crossing."
+   },
+   {
+    "lat": 48.812,
+    "lng": -121.343,
+    "elev": 7952,
+    "name": "Spectre Peak",
+    "type": "Summit",
+    "elevFt": 7952,
+    "directions": "From the base of the south ridge, start up right of the entry notch: about 100 ft of fourth class leads into blocky 5.7 climbing, then low-fifth ground to a large tree-dotted ledge and a traverse left onto the crest proper. The crest gives sustained 5.4 to 5.8 climbing past the crux third pitch, a short overhanging band of 5.9 choss above sparse gear on the face right of a mossy gully, and past a shattered gendarme at pitch 7 where a 25 m rappel into the gap is followed by a self-belayed ascent of the far wall. The last pitch weaves through narrow, chalky hoodoo towers to a 30 m rappel off the final tower onto a big grassy ledge, from which about 600 ft of third and fourth class with a couple of low-fifth moves leads to the top."
+   }
+  ]
+ }
+]

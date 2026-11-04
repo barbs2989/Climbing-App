@@ -1,0 +1,327 @@
+[
+ {
+  "lu": "wa_lu_ruth_icy",
+  "leg": 0,
+  "peak": "Ruth Mountain",
+  "route": "Hannegan Pass to the glacier and up the snow to the summit",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_ruth_mountain_south_slopes",
+    "name": "North Face / Ruth Glacier",
+    "disc": "mountaineering",
+    "grade": "Class 2",
+    "area": "Ruth Mountain",
+    "score": 0
+   },
+   {
+    "id": "wa_ruth_peak_olympics_scramble",
+    "name": "Ruth Peak Scramble",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Ruth Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_ruth_icy_traverse",
+    "name": "Ruth-Icy Traverse",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Ruth Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_ruth_icy",
+  "leg": 1,
+  "peak": "Icy Peak",
+  "route": "Ruth–Icy ridge to the saddle below Icy, then the snow and final rock gully to the northwest summit",
+  "pick": {
+   "id": "wa_icy_peak_ruth_icy_traverse",
+   "name": "Ruth-Icy Traverse (Northwest Ridge, via Ruth Mountain)",
+   "disc": "mountaineering",
+   "grade": "Class 4",
+   "area": "Icy Peak",
+   "score": 0.2727272727272727
+  },
+  "others": [
+   {
+    "id": "wa_icy_peak_ruth_icy_traverse",
+    "name": "Ruth-Icy Traverse (Northwest Ridge, via Ruth Mountain)",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Icy Peak",
+    "score": 0.2727272727272727
+   },
+   {
+    "id": "wa_icy_peak_southwest_route",
+    "name": "Southwest Route / Icy Glacier",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Icy Peak",
+    "score": 0.09090909090909091
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_snowfield_neve_colonial",
+  "leg": 0,
+  "peak": "Snowfield Peak",
+  "route": "Neve Glacier and the west ridge",
+  "pick": {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "name": "Neve Glacier / Standard Route",
+   "disc": "mountaineering",
+   "grade": "Class 4",
+   "area": "Snowfield Peak",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "wa_snowfield_peak_neve_glacier",
+    "name": "Neve Glacier / Standard Route",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Snowfield Peak",
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_snowfield_neve_colonial",
+  "leg": 1,
+  "peak": "Neve Peak",
+  "route": "Short climb from the Neve Col camp",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "wa_lu_snowfield_neve_colonial",
+  "leg": 2,
+  "peak": "Colonial Peak",
+  "route": "Colonial Glacier to the west or east summit",
+  "pick": {
+   "id": "wa_colonial_peak_west_ridge",
+   "name": "West Ridge / Colonial Glacier",
+   "disc": "mountaineering",
+   "grade": "Class 3",
+   "area": "Colonial Peak",
+   "score": 0.4
+  },
+  "others": [
+   {
+    "id": "wa_colonial_peak_west_ridge",
+    "name": "West Ridge / Colonial Glacier",
+    "disc": "mountaineering",
+    "grade": "Class 3",
+    "area": "Colonial Peak",
+    "score": 0.4
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_saska_emerald_cardinal",
+  "leg": 0,
+  "peak": "Saska Peak",
+  "route": "Snow slopes to the south ridge, then class 3 along the crest",
+  "pick": {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "name": "South Slopes via Emerald-Saska Col",
+   "disc": "scrambling",
+   "grade": "Class 3",
+   "area": "Saska Peak",
+   "score": 0.2857142857142857
+  },
+  "others": [
+   {
+    "id": "wa_saska_peak_emerald_saska_col",
+    "name": "South Slopes via Emerald-Saska Col",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Saska Peak",
+    "score": 0.2857142857142857
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_saska_emerald_cardinal",
+  "leg": 1,
+  "peak": "Emerald Peak",
+  "route": "Gully and ribs, mostly easy scrambling",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_emerald_peak_se_ridge",
+    "name": "Southeast Ridge",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Emerald Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_emerald_peak_west_route",
+    "name": "West Route",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Emerald Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_saska_emerald_cardinal",
+  "leg": 2,
+  "peak": "Cardinal Peak",
+  "route": "Snowfield and slabs from the basin",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_cardinal_peak_nw_couloir_north_ridge",
+    "name": "Northwest Couloir–North Ridge",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Cardinal Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_cardinal_peak_se_slopes",
+    "name": "Southeast Slopes",
+    "disc": "alpine",
+    "grade": "5.0",
+    "area": "Cardinal Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_spickard_redoubt",
+  "leg": 0,
+  "peak": "Mount Spickard",
+  "route": "South ridge via the small glacier and the 8000 ft col",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_mount_spickard_silver_glacier",
+    "name": "Silver Glacier",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Mount Spickard",
+    "score": 0
+   },
+   {
+    "id": "wa_mount_spickard_southwest",
+    "name": "Southwest Route / Silver Lake",
+    "disc": "mountaineering",
+    "grade": "Class 3",
+    "area": "Mount Spickard",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_spickard_redoubt",
+  "leg": 1,
+  "peak": "Mount Redoubt",
+  "route": "Redoubt Glacier and the south face",
+  "pick": {
+   "id": "wa_mount_redoubt_south_face",
+   "name": "South Face / Redoubt Glacier",
+   "disc": "alpine",
+   "grade": "5.0",
+   "area": "Mount Redoubt",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "wa_mount_redoubt_south_face",
+    "name": "South Face / Redoubt Glacier",
+    "disc": "alpine",
+    "grade": "5.0",
+    "area": "Mount Redoubt",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_maude_7fj_fernow",
+  "leg": 0,
+  "peak": "Mount Maude",
+  "route": "From the col below the summit up talus and scree",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_mount_maude_r2",
+    "name": "Entiat Ice Fall",
+    "disc": "alpine",
+    "grade": "AI3",
+    "area": "Mount Maude",
+    "score": 0
+   },
+   {
+    "id": "wa_mount_maude_r3",
+    "name": "Nothing Couloir",
+    "disc": "scrambling",
+    "grade": "Class 4",
+    "area": "Mount Maude",
+    "score": 0
+   },
+   {
+    "id": "wa_mount_maude_r1",
+    "name": "North Face",
+    "disc": "mountaineering",
+    "grade": "AI2",
+    "area": "Mount Maude",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_maude_7fj_fernow",
+  "leg": 1,
+  "peak": "Seven Fingered Jack",
+  "route": "Climbers' path from Leroy Basin then talus to the summit",
+  "pick": {
+   "id": "wa_seven_fingered_jack_southwest_slopes",
+   "name": "Southwest Slopes",
+   "disc": "scrambling",
+   "grade": "Class 3",
+   "area": "Seven Fingered Jack",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "wa_seven_fingered_jack_southwest_slopes",
+    "name": "Southwest Slopes",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Seven Fingered Jack",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_maude_7fj_fernow",
+  "leg": 2,
+  "peak": "Mount Fernow",
+  "route": "Southwest slope from the pass west of Seven Fingered Jack",
+  "pick": {
+   "id": "wa_mount_fernow_southeast_face",
+   "name": "Southeast Face / Leroy Basin",
+   "disc": "mountaineering",
+   "grade": "Class 4",
+   "area": "Mount Fernow",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "wa_mount_fernow_southeast_face",
+    "name": "Southeast Face / Leroy Basin",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Mount Fernow",
+    "score": 0
+   }
+  ]
+ }
+]

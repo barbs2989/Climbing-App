@@ -24,6 +24,7 @@ const PROBE = path.join(ROOT, "scripts/oneoff/probe-a-notification-that-goes-som
 const FILES = {
   core: path.join(ROOT, "ClimbMatchCore.jsx"),
   app: path.join(ROOT, "ClimbMatch.jsx"),
+  today: path.join(ROOT, "src/components/TodayTab.tsx"), // Home's body, lifted out of App in PR61
   NotifPanel: path.join(ROOT, "lib/NotifPanel.jsx"),
 };
 const LOCK = path.join(ROOT, ".inject-notif-target.lock");
@@ -70,7 +71,7 @@ const CASES = [
     repl: "  return {kind:\"go\",to:{tab:n.tab||\"today\",lbtab:n.lbtab}};" },
 
   // Home's fallback is what makes ITS unconditional clickable honest.
-  { name: "home-loses-its-fallback", file: "app", expect: "Home's fallback is gone",
+  { name: "home-loses-its-fallback", file: "today", expect: "Home's fallback is gone",
     find: "if(n.lbtab)setLogbookTab(n.lbtab);return;}setNotifOpen(true);}", repl: "if(n.lbtab)setLogbookTab(n.lbtab);return;}" },
 
   // SILENT: documentation naming the old list is not the old list.

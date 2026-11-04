@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "./lib/file-href.mjs";
 // A CLIMBER WHO HAS NOT ONBOARDED IS OFFERED ONBOARDING, AND ONE WHO HAS IS LEFT ALONE.
 //
 // Both halves matter and they fail in opposite directions. Before this, the effect written to
@@ -22,6 +23,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse } from "@babel/parser";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 // ROOT-ANCHORED, never cwd: this repo records a script that pinned another worktree's tree and
 // silently measured a different branch's code for weeks.
@@ -32,7 +34,7 @@ const ok = (m) => console.log("  ok    " + m);
 const bad = (m) => { console.log("  FAIL  " + m); fails++; };
 const dead = (m) => { console.error("FAIL-CLOSED: " + m); process.exit(1); };
 
-const raw = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+const raw = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
 if (raw.length < 100000) dead(`ClimbMatch.jsx read as ${raw.length} chars — too short to be the app.`);
 
 /* COMMENTS ARE MASKED BEFORE ANYTHING IS MATCHED, and this guard would fail on its own
@@ -83,7 +85,7 @@ else ok("no `!onboarded`-gated card remains");
 // this file packs a whole screen onto one physical line, so "near" is not a scope.
 const greet = app.indexOf('{greetLine}');
 const card = app.indexOf('(accountNeedsOnboarding&&!homeDismiss.includes("climbsetup"))');
-const gaps = app.indexOf('{(()=>{const noGrades=(!ME.sportGrade||ME.sportGrade==="N/A")');
+const gaps = app.indexOf('{(()=>{const noGrades=');
 if (greet < 0 || gaps < 0) dead("ANCHOR LOST: Home's greeting or its setup checklist moved — this run proved nothing about placement.");
 if (greet < card && card < gaps) ok("the card renders on HOME, between the greeting and the setup checklist");
 else bad(`the card is not in Home's own region (greeting @${greet}, card @${card}, checklist @${gaps})`);
@@ -145,7 +147,7 @@ globalThis.localStorage = {
   getItem: (k) => (store.has(k) ? store.get(k) : null),
   setItem: (k, v) => { store.set(k, String(v)); },
 };
-const pref = await import(path.join(ROOT, "lib/onboard-pref.js"));
+const pref = await import(fileHref(path.join(ROOT, "lib/onboard-pref.js")));
 if (typeof pref.onboardPrompted !== "function" || typeof pref.markOnboardPrompted !== "function")
   dead("lib/onboard-pref.js does not export the pair this guard exists to check.");
 

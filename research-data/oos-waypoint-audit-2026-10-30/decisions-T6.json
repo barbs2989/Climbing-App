@@ -1,0 +1,166 @@
+[
+ {
+  "id": "co_arapaho_peaks_traverse",
+  "i": 0,
+  "name": "Fourth of July Trailhead",
+  "from": [
+   39.99524,
+   -105.63426
+  ],
+  "coordinate_key": "39.99524,-105.63426",
+  "op": "none",
+  "source": "https://www.fs.usda.gov/r02/arp/recreation/fourth-july-trailhead",
+  "quote": "Latitude: 39.995, Longitude: -105.6342",
+  "reason": "About 27 m from stored; Mountain Project 39°59'41\"N 105°38'03\"W agrees. Verified."
+ },
+ {
+  "id": "co_freeway_2",
+  "i": 0,
+  "name": "Chautauqua Trailhead",
+  "from": [
+   39.99915,
+   -105.28293
+  ],
+  "coordinate_key": "39.99915,-105.28293",
+  "op": "none",
+  "source": "https://www.summitpost.org/chautauqua-park/171453",
+  "quote": "Location Lat/Lon: 39.99960°N / 105.2833°W",
+  "reason": "About 60 m from stored; verified within 150 m (single source)."
+ },
+ {
+  "id": "co_solo_flight",
+  "i": 0,
+  "name": "Monarch Trailhead",
+  "from": [
+   40.11137,
+   -105.74722
+  ],
+  "coordinate_key": "40.11137,-105.74722",
+  "op": "none",
+  "source": "https://trails.colorado.gov/trailheads/monarch-lake-988",
+  "quote": "40.111378°N 105.747°W (TopoQuest also N40.11193° W105.74723°)",
+  "reason": "Monarch Lake trailhead, within about 60 m of stored. Verified."
+ },
+ {
+  "id": "co_longs_peak_keyhole_route",
+  "i": 0,
+  "name": "Longs Peak Trailhead",
+  "from": [
+   40.27225,
+   -105.5566
+  ],
+  "coordinate_key": "40.27225,-105.5566",
+  "op": "none",
+  "source": "https://colorado.hometownlocator.com/maps/tnm-feature-map,n,longs-peak-th-7003,fcode,82047.cfm",
+  "quote": "Primary Point (PP): 40.27205, -105.55661",
+  "reason": "About 22 m from stored; SummitPost 40.27215,-105.55682 agrees. Verified."
+ },
+ {
+  "id": "co_a_walk_in_the_park",
+  "i": 0,
+  "name": "Glacier Gorge Trailhead",
+  "from": [
+   40.3103,
+   -105.64049
+  ],
+  "coordinate_key": "40.3103,-105.64049",
+  "op": "none",
+  "source": "https://www.climb13ers.com/colorado-13ers/trailhead/glacier-gorge---rmnp",
+  "quote": "N 40° 18' 37.86\", W 105° 38' 25.00\"",
+  "reason": "Published 40.31052,-105.64028 is about 28 m from stored. Verified."
+ },
+ {
+  "id": "co_glacier_gorge_traverse",
+  "i": 0,
+  "name": "Glacier Gorge Trailhead",
+  "from": [
+   40.31053,
+   -105.64035
+  ],
+  "coordinate_key": "40.31053,-105.64035",
+  "op": "none",
+  "source": "https://www.climb13ers.com/colorado-13ers/trailhead/glacier-gorge---rmnp",
+  "quote": "N 40° 18' 37.86\", W 105° 38' 25.00\"",
+  "reason": "Published point is the stored point (about 5 m). Verified; elevation 9,185 ft equals pin elev."
+ },
+ {
+  "id": "co_south_ramp",
+  "i": 0,
+  "name": "Bear Lake Trailhead",
+  "from": [
+   40.31109,
+   -105.64364
+  ],
+  "coordinate_key": "40.31109,-105.64364",
+  "op": "move",
+  "to": [
+   40.31195,
+   -105.6457
+  ],
+  "source": "https://www.hikespeak.com/trails/bear-lake-rocky-mountain-np/",
+  "quote": "40.31195, -105.6457 (40° 18′ 43.02″N 105° 38′ 44.52″W)",
+  "second_source": "https://www.openstreetmap.org/node/50823841 (highway=trailhead, name=Bear Lake Trailhead, 40.3119597,-105.6459460; 20 m from to)",
+  "ground_ft_at_to": 9471,
+  "distance_moved_m": 199,
+  "reason": "Stored pin is 200 m south-east of the published Bear Lake trailhead and sits at 9,386 ft ground, 90 ft below the 9,475 ft lot; published point is 9,471 ft on 3DEP, within 300 ft of pin elev 9,375 (pin elev left; setElev would be 9475)."
+ },
+ {
+  "id": "co_south_ramp",
+  "i": 0,
+  "name": "Bear Lake Trailhead",
+  "from": [
+   40.31109,
+   -105.64364
+  ],
+  "coordinate_key": "40.31109,-105.64364",
+  "op": "setElev",
+  "elev": 9475,
+  "source": "https://www.coloradounited.com/blog/bear-lake-trailhead-rocky-mountain-national-park",
+  "quote": "It sits at 9,475 feet at the very end of Bear Lake Road.",
+  "second_source": "https://www.hikespeak.com/trails/bear-lake-rocky-mountain-np/ (lake 9,475 ft)",
+  "ground_ft_at_to": 9471,
+  "reason": "Optional, paired with the move: pin elev 9,375 is 100 ft under the published trailhead height."
+ },
+ {
+  "id": "co_spiral_route",
+  "i": 0,
+  "name": "Bear Lake Trailhead",
+  "from": [
+   40.31177,
+   -105.64533
+  ],
+  "coordinate_key": "40.31177,-105.64533",
+  "op": "none",
+  "source": "https://www.hikespeak.com/trails/bear-lake-rocky-mountain-np/",
+  "quote": "40.31195, -105.6457",
+  "reason": "About 30 m from stored. Verified."
+ },
+ {
+  "id": "co_blitzen_ridge",
+  "i": 0,
+  "name": "Lawn Lake Trailhead",
+  "from": [
+   40.40736,
+   -105.62603
+  ],
+  "coordinate_key": "40.40736,-105.62603",
+  "op": "none",
+  "source": "https://www.backpacker.com/trips/rocky-mountain-national-park-lawn-lake-trail/?scope=anon",
+  "quote": "40.407383, -105.626213 (trailhead); Trailforks 40.40713, -105.62622",
+  "reason": "About 15-25 m from stored. Verified."
+ },
+ {
+  "id": "id_southwest_ridge",
+  "i": 0,
+  "name": "Borah Peak Trailhead",
+  "from": [
+   44.13256,
+   -113.83448
+  ],
+  "coordinate_key": "44.13256,-113.83448",
+  "op": "none",
+  "source": "https://advcollective.com/idaho/Climbing/conquer-the-heights-of-borah-peak",
+  "quote": "Coordinates: 44.1325, -113.8345",
+  "reason": "Single weak listing matches stored to a few metres, so it may echo the same data; ground 7,407 ft vs pin 7,392 ft and the usual 7,200-7,400 ft trailhead height is consistent. Unverified independently; left."
+ }
+]

@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // CAN A REAL CLIMBER'S CREW BE FOUND BY ANOTHER REAL CLIMBER?
 //
 // "Join a crew" (CrewFinder) read the seed OPEN_CREWS array and nothing else, so the answer was no
@@ -19,13 +21,13 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const OUT = path.join(process.cwd(), ".probe-crewfinder.mjs");
-execFileSync("npx", ["esbuild", "ClimbMatchCore.jsx", "--bundle", "--format=esm",
+execFileSync(NPX, [...NPX_PRE, "esbuild", "ClimbMatchCore.jsx", "--bundle", "--format=esm",
   "--jsx=automatic", "--loader:.jsx=jsx", "--platform=node",
   // external, or esbuild inlines its OWN react-query and the provider below is a different
   // module instance with a different context -- "No QueryClient set" with a provider in place.
   "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
   "--define:import.meta.env={}", "--outfile=" + OUT], { stdio: ["ignore", "ignore", "inherit"] });
-const core = await import(OUT + "?t=" + Date.now());
+const core = await import(fileHref(OUT + "?t=" + Date.now()));
 fs.unlinkSync(OUT);
 
 const { CrewFinder, ROUTES } = core;
