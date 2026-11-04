@@ -36515,3 +36515,41 @@ Hwy/FR-49 landslide closure "was repaired and reopened mid-May 2026" has no 2026
 — too recent/narrow to verify from search.
 
 Next batch will continue id-ascending from `wa_lane_peak_r3` (see progress file).
+
+## Batch 505 (pass 8) — 2026-11-04
+
+Checked 8 routes: `wa_le_conte_mountain_northern_aspect`, two Colchuck Balanced Rock routes
+(`wa_leche_la_vaca`, `wa_let_it_burn`), `wa_lemah_mountain_east_route`,
+`wa_lemah_two_goatshead_spire`, `wa_lexington_tower_east_face`, and two Liberty Bell routes
+(`wa_liberty_and_injustice_for_all`, `wa_liberty_bell_beckey_route`).
+
+One confirmed error, fixed: Le Conte Mountain Northern Aspect's `fa` names the 1938 first-ascent
+party's third member "Ray W. Clough". Every independent copy of the Wikipedia article on Le Conte
+Mountain (and its mirrors) names him "Ralph W. Clough" — Calder T. Bressler, Ralph W. Clough, Bill
+Cox and Tom Myers, July 23, 1938. SQL above fixes the name; the rest of the FA credit and the
+7,762 ft elevation were already correct.
+
+Everything else checked out: Leche La Vaca's grade/pitch count (5.10a/b, 5 pitches) and approach
+match Mountain Project's own page closely; Let it Burn's grade/pitch count (5.12-, 9p) match
+stephabegg.com exactly. Neither route's named FA party (Ramier/Traven/Rankin; Holsten/Hasson) could
+be independently corroborated from this session's search results, but neither was contradicted
+either — left as stored. Lemah Mountain East Route's FA (Wallace Burr and party, July 7, 1923) is
+confirmed exactly by SummitPost/Wikipedia-derived sources; its own prose already states the
+7,512-7,520 ft range those same sources disagree on, so the row is already honest about the spread
+and needs no fix. Lemah Two's Goatshead Spire — easy to get backwards — checks out exactly: it's
+the *upper* of the two east-spur towers (~7,000 ft), the lower one is the more massive, and the FA
+(Donald Goodman and John Mason, August 8, 1982) matches a full Wikipedia-derived source precisely;
+an earlier, thinner SummitPost snippet looked like it had upper/lower swapped, but a fuller source
+settled it in the DB's favor. Liberty Bell Beckey Route's FA (Fred Beckey, Jerry O'Neil, Charles
+Welsh, September 27, 1946) and 7,720 ft summit elevation are both exact. Liberty and Injustice for
+All's FA (Mikey Schaefer, 2014, established rope-solo) and ~200m route length are confirmed by a
+contemporaneous trip report.
+
+Flagged for human review, no SQL: Lexington Tower East Face's pitch count and grade are stated
+differently across the sources themselves — Mountain Project gives 6 pitches/500 ft at Grade II,
+SummitPost gives 8 pitches at Grade IV 5.9/A3, and the DB stores 10 pitches at Grade IV 5.9+. The
+FA credit (Steve Marts and Don McPherson, June 1966) is solid and matches every source, but with
+three different pitch counts in circulation there's no single authoritative figure to fix toward
+without a current topo.
+
+Next batch will continue id-ascending from `wa_liberty_bell_beckey_route` (see progress file).
