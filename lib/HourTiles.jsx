@@ -10,6 +10,7 @@
 // `spanEnding(T)` and never share a time.
 import { useRef, useEffect } from "react";
 import { C } from "../ClimbMatchCore.jsx";
+import { boxZoom } from "./wideLayout.js";
 
 const COMPASS = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
 // The direction the wind blows FROM, as 16-point compass text; null when there is no direction.
@@ -75,7 +76,7 @@ export function HourStepper({ index, count, onPick, label, children }) {
     const first = seen.current !== count; seen.current = count;
     const rr = row.getBoundingClientRect(), br = b.getBoundingClientRect(), pad = b.offsetWidth + 5;
     if (!first && br.left - pad >= rr.left && br.right + pad <= rr.right) return;
-    const left = row.scrollLeft + br.left - rr.left - (row.clientWidth - b.offsetWidth) / 2;
+    const left = row.scrollLeft + (br.left - rr.left) / boxZoom(row) - (row.clientWidth - b.offsetWidth) / 2;
     if (first || !row.scrollTo) row.scrollLeft = left; else row.scrollTo({ left: left, behavior: "smooth" });
   }, [index, count]);
   const step = function (d) { const j = index + d; if (j >= 0 && j < count) onPick(j); };
