@@ -3,7 +3,7 @@
 // each with what it already holds and its climb stats (area_climb_stats: disciplines, grade
 // spread) so the researcher writes only what is missing and describes the grades we actually list.
 //
-//   node scripts/enrich/area-page-inputs.mjs --min 30 [--max 49] --skip done-ids.json --per 8 --out DIR --prefix t
+//   node scripts/enrich/area-page-inputs.mjs --min 30 [--max 49] --skip done-ids.json --per 8 --out DIR --prefix t [--from-region "New Mexico" --limit 400]
 //
 // Read-only; anon key. Areas already handled (written or skipped in an audits/area-pages batch)
 // are left out through --skip, a JSON array of ids.
@@ -16,8 +16,11 @@ const min = Number(opt("--min", 30)), max = opt("--max", null), per = Number(opt
 const out = opt("--out", "."), prefix = opt("--prefix", "t"), start = Number(opt("--start", 1));
 const skip = new Set(opt("--skip", null) ? JSON.parse(fs.readFileSync(opt("--skip"), "utf8")) : []);
 const k = anonKey();
-let q = `areas?select=id,name,region,area_type,route_count,lat,lng,approach,approach_min,parking_name,parking_note,rock,aspect,season_months,disciplines,path&area_type=in.(crag,peak,wall)&route_count=gte.${min}&blurb=is.null&order=region.asc,route_count.desc&limit=2000`;
+let q = `areas?select=id,name,region,area_type,route_count,lat,lng,approach,approach_min,parking_name,parking_note,rock,aspect,season_months,disciplines,path&area_type=in.(crag,peak,wall)&route_count=gte.${min}&blurb=is.null&order=region.asc,route_count.desc&limit=${Number(opt("--limit", 2000))}`;
 if (max) q += `&route_count=lte.${max}`;
+// PostgREST answers at most 1000 rows, so a long tier is built in passes: --from-region starts a pass
+// at a region (inclusive), after the last pass's final region.
+if (opt("--from-region", null)) q += `&region=gte.${encodeURIComponent(opt("--from-region"))}`;
 const r = await fetch(`${SUPABASE_URL}/rest/v1/${q}`, { headers: headers(k) });
 if (!r.ok) { console.error("read failed", r.status, await r.text()); process.exit(1); }
 const rows = (await r.json()).filter(a => !skip.has(a.id));

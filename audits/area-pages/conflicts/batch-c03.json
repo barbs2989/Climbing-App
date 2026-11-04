@@ -1,0 +1,171 @@
+{
+ "ab_6_eyes_of_bataan": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "ab_cat_s_eye_wall": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "ab_painted_wall_far_right": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "ak_eklutna_canyon_2": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "al_blevins_gap": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "al_cherokee_bluffs": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "al_harvest_wall": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Harvest Wall",
+   "region": "Alabama"
+  },
+  "rock": "sandstone",
+  "review": {
+   "sources": [
+    "https://seclimbers.org/?p=224",
+    "https://www.mountainproject.com/area/105905660/jamestown"
+   ]
+  },
+  "why": "Harvest Wall is part of Jamestown, a sandstone cliff, at the same coordinates."
+ },
+ "az_3_south_end": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "South End",
+   "region": "Arizona"
+  },
+  "rock": "dacite",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/110519740/south-end",
+    "https://www.flagstaffarizona.org/blog/climb-your-way-through-flagstaff/"
+   ]
+  },
+  "why": "Peaks Crag is dacite, not rhyolite."
+ },
+ "az_atlantis_north_side": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Atlantis North Side",
+   "region": "Arizona"
+  },
+  "rock": "tuff",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105788089/queen-creek-canyon",
+    "https://www.commonclimber.com/queen-creek-canyon.html"
+   ]
+  },
+  "why": "Queen Creek Canyon is welded volcanic tuff, not basalt."
+ },
+ "az_barnum_rock": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "az_bowling_alley_main_wall": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Bowling Alley Main Wall",
+   "region": "Arizona"
+  },
+  "rock": "limestone",
+  "review": {
+   "sources": [
+    "https://sendage.com/area/farmhouse-az-usa",
+    "https://mountainproject.com/area/107447521/southern-arizona"
+   ]
+  },
+  "why": "The Farmhouse (home of the Bowling Alley) is a limestone crag."
+ },
+ "az_egg_the": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "az_hackberry_creek": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Hackberry Creek",
+   "region": "Arizona"
+  },
+  "rock": "tuff",
+  "review": {
+   "sources": [
+    "https://bighornmountainguides.squarespace.com/blog/2023/12/28/lower-devils-canyon-with-friends",
+    "https://www.mountainproject.com/area/105788089/queen-creek-canyon",
+    "https://www.commonclimber.com/queen-creek-canyon.html"
+   ]
+  },
+  "why": "Lower Devils Canyon spires are volcanic tuff, not basalt."
+ },
+ "az_lower_looner_land": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Lower Looner Land",
+   "region": "Arizona"
+  },
+  "rock": "tuff",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105788089/queen-creek-canyon",
+    "https://www.commonclimber.com/queen-creek-canyon.html"
+   ]
+  },
+  "why": "Queen Creek Canyon is welded volcanic tuff, not basalt."
+ },
+ "az_mustang_the": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Mustang, The",
+   "region": "Arizona"
+  },
+  "rock": "limestone",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/105918670",
+    "https://sendage.com/area/farmhouse-az-usa"
+   ]
+  },
+  "why": "The Mustang is a south-facing limestone crag; Mustang Mountains are limestone."
+ },
+ "az_south_fin": {
+  "verdict": "unsure",
+  "why": "Gneiss claim is zone-wide only; South Fin page names no rock."
+ },
+ "az_sunny_perch": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Sunny Perch",
+   "region": "Arizona"
+  },
+  "rock": "dacite",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108648059/skyline-boulders",
+    "https://en.wikipedia.org/wiki/Mount_Elden"
+   ]
+  },
+  "why": "Skyline boulders on Mt Elden are dacite, not rhyolite."
+ },
+ "az_wall_of_the_marching_munchkins": {
+  "verdict": "unsure",
+  "why": "Only https://www.mountainproject.com/area/106124399/wall-of-the-marching-munchkins says north-facing with western late sun; stored W."
+ },
+ "bc_bulletheads_south": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "bc_foreplay_left": {
+  "verdict": "unsure",
+  "why": "MP foreplay-cliff and gripped.com put the access at the Evergreen Drive lot, but no lot coordinates verified; changing the name without coordinates would leave them inconsistent."
+ }
+}
