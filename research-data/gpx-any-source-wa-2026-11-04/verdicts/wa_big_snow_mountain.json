@@ -1,0 +1,72 @@
+{
+ "area_id": "wa_big_snow_mountain",
+ "routes": [
+  {
+   "route_id":"wa_big_snow_mountain_east_buttress",
+   "season":{"months":[7,8,9],"window":"Jul-Sep","evidence":"Stored Jul-Sep (dry rock, rock bands above Hardscrabble Lake snow-free); no logged ascent names a buttress climb."},
+   "track":null,
+   "otherTracksConsidered":[{"aid":"1445086","verdict":"different","why":"Walk-up via Hardscrabble, not a technical buttress climb."}],
+   "pins":[],"facts":[]
+  },
+  {
+   "route_id":"wa_big_snow_mountain_east_ridge_hardscrabble_route",
+   "season":{"months":[6,7,8,9],"window":"Jun-Sep","evidence":"Logged Hardscrabble ascents run May-Oct (peak Jun-Aug); the stored text itself says snow-free travel is most reliable June-September. Stored Jul-Sep is slightly narrow; May and October are shoulder months with snow or short days."},
+   "track":{"aid":"2555854","verdict":"same","kind":"complete","inSeason":true,"why":"Logged Hardscrabble Lakes, 29 Jun 2024, bicycle road hike from the Dingford trailhead (start 126 m, end 114 m from the pin), summit 5 m from our pin. Report is only a video link, so the line rests on the logged name and the track."},
+   "otherTracksConsidered":[
+    {"aid":"1445086","verdict":"same","why":"Hardscrabble Lake Trail, 2 Aug 2020, complete, report matches the lakes, notch and snow fin; equally valid and used for facts."},
+    {"aid":"3190896","verdict":"same","why":"No logged route but the report is the Hardscrabble route with a bike-less road walk; 10 May 2026 is in the one-month shoulder."},
+    {"aid":"3379932","verdict":"same","why":"Hardscrabble standard, 15 Oct 2026, but the recording starts at the old horse camp 7.4 km from the pin (bike left at the road), so not a full round trip."},
+    {"aid":"3189231","verdict":"unsure","why":"9 May 2026, starts 7.4 km from the pin; not a full trip and shoulder month."},
+    {"aid":"667226","verdict":"same","why":"hard scrabble, 19 Jun 2016, complete, no report text."},
+    {"aid":"807373","verdict":"same","why":"Hardscrabble Lakes, 27 May 2017, report only."},
+    {"aid":"3055444","verdict":"offseason","why":"29 Nov 2025."},
+    {"aid":"2535367","verdict":"different","why":"Via Myrtle Lake (north slope)."},
+    {"aid":"2509538","verdict":"different","why":"Myrtle Lake."},
+    {"aid":"352842","verdict":"different","why":"Myrtle Lake."}
+   ],
+   "pins":[],
+   "facts":[
+    {"field":"approach_note","month":8,"text":"The path from the old road to the lower lake is overgrown but cairned across the talus; fallen trees at each end of the talus make it easy to lose. Above the upper lake expect a brush bash to reach the talus gully, in both directions.","aids":["1445086"]},
+    {"field":"watch_out","month":8,"text":"In early August snow can still cover the ground above about 5,600 ft; a short, moderately steep snow fin near 6,300 ft is the one place an axe is welcome.","aids":["1445086"]},
+    {"field":"what_to_bring","month":8,"text":"Poles and microspikes for the snow above 5,600 ft (early August)","aids":["1445086"]},
+    {"field":"monthBreakdown","month":5,"text":"In mid-May snow becomes continuous from about 4,500 ft, burying the boulder fields so that legs punch through the gaps; a short class 3 step near 4,800 ft above the upper lake leads to snow slopes that run to a notch around 5,800 ft.","aids":["3190896"]},
+    {"field":"monthBreakdown","month":5,"text":"In late May the lower lake can still be mostly frozen, and the ridge narrows to a snow fin near 6,400 ft; the summit area itself is bare.","aids":["807373"]},
+    {"field":"watch_out","month":10,"text":"In mid-October the boulder fields are bare with open gaps between blocks, and the cairns above the lakes point in conflicting directions.","aids":["3379932"]},
+    {"field":"pro_tips","month":10,"text":"A day trip by bike should be off the rough, cobbled road before dark; riding it at night caused crashes.","aids":["3379932"]}
+   ]
+  },
+  {
+   "route_id":"wa_big_snow_mountain_north_slope_dingford_route",
+   "season":{"months":[6,7,8,9],"window":"Jun-Sep","evidence":"Logged Myrtle Lake/Dingford ascents fall in Jun-Oct; stored text says roughly June-September, with the NW couloir holding snow into July. Stored Jul-Sep is slightly narrow."},
+   "track":{"aid":"2535367","verdict":"same","kind":"complete","inSeason":true,"why":"Logged via Myrtle Lake, 9 Jun 2024; report camps at Myrtle Lake, goes up the drainage gully to Big Snow Lake and on to the summit, which is this route's line; start 120 m and end 110 m from the Dingford pin, summit 15 m from our pin."},
+   "otherTracksConsidered":[
+    {"aid":"352842","verdict":"same","kind":"complete","why":"Myrtle Lake, 14 Sep 2013, complete round trip via the Big Snow Lake outlet and Snowflake Lake; equally valid, older."},
+    {"aid":"2509538","verdict":"unsure","why":"Myrtle Lake, 12 May 2024; starts at the lake (camp) so not a round trip from the pin, and May is a shoulder month."},
+    {"aid":"2566418","verdict":"same","why":"Myrtle lake, 7 Jul 2024; report only, no track points. Used for facts."},
+    {"aid":"2294373","verdict":"same","why":"Dingford, 26 Aug 2023; report only, no track points. Used for facts."},
+    {"aid":"1445086","verdict":"different","why":"Hardscrabble route."},
+    {"aid":"2555854","verdict":"different","why":"Hardscrabble route."},
+    {"aid":"3055444","verdict":"offseason","why":"29 Nov 2025."}
+   ],
+   "pins":[],
+   "facts":[
+    {"field":"monthBreakdown","month":6,"text":"In early June the Dingford and Myrtle Lake trail is clear except thin snow patches near the lake, but side streams run high.","aids":["2535367"]},
+    {"field":"pro_tips","month":6,"text":"The gully up to Big Snow Lake is dry until a waterfall near its top that runs hard in early June; exit climber's left by a steep dirt ramp around 4,800 ft to stay off the wet rock.","aids":["2535367"]},
+    {"field":"monthBreakdown","month":6,"text":"In early June snow is continuous from Big Snow Lake to the summit and soft enough that crampons stayed in the pack; the descent can be plunge-stepped or glissaded.","aids":["2535367"]},
+    {"field":"monthBreakdown","month":7,"text":"In early July the snow above the lakes was hard and steep with poor runouts, so an axe is essential and crampons were wished for; mosquitoes and gnats swarm the Myrtle Lake camps.","aids":["2566418"]},
+    {"field":"pro_tips","month":7,"text":"Going up through the boulder field and then turning right onto the ridge beats the second waterfall chute, which has crumbly rock.","aids":["2566418"]},
+    {"field":"watch_out","month":8,"text":"Dropping straight down the fall line below the Big Snow Lake outlet lands in extremely thick brush; keep to the north side of the bowl for lighter bushwhacking.","aids":["2294373"]},
+    {"field":"pro_tips","month":8,"text":"The narrow gully directly above Snowflake Lake has a short steep stretch of loose kitty-litter rock; the main gully farther west is longer but easier.","aids":["2294373"]},
+    {"field":"monthBreakdown","month":9,"text":"In a dry September the route was snow-free and axes stayed packed, but extra brush and route-finding made the day longer.","aids":["352842"]}
+   ]
+  },
+  {
+   "route_id":"wa_big_snow_mountain_southwest_ridge",
+   "season":{"months":null,"window":null,"evidence":"Route has no stored text, grade, season or waypoints; no logged ascent names a southwest ridge. Cannot determine."},
+   "track":null,
+   "otherTracksConsidered":[],
+   "pins":[],"facts":[]
+  }
+ ],
+ "notes":"All harvested tracks are walk-up ascents by either the Hardscrabble Lakes (east ridge) or the Myrtle Lake/Dingford (north slope) line; none climb the East Buttress and none name a southwest ridge. wa_big_snow_mountain_southwest_ridge is an empty shell (no grade, text or pins) and may be a stray or duplicate; its discipline is stored as alpine. The Dingford Creek trailhead pin (47.51744,-121.45276) is about 105 m from where tracks start (47.5172,-121.4543); no move needed. Our summit pin is within 21 m of the surveyed coordinate. Proposed season change for both walk-up routes: Jun-Sep rather than Jul-Sep."
+}

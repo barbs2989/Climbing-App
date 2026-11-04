@@ -1,0 +1,43 @@
+{
+  "area_id": "wa_big_snagtooth",
+  "routes": [
+    {
+      "route_id": "wa_big_snagtooth_west_ridge",
+      "season": { "months": [5, 6, 7], "window": "May-Jul", "evidence": "149 of 193 logged summits fall in May-Jul (59/59/31); ascent reports agree the sweet spot is snow-firmed spring and early summer, with Aug-Oct a loose-scree slog and winter needing a snowmobile approach." },
+      "track": { "aid": "2417030", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged Willow Creek to SW Ridge on 2023-06-22: Willow Creek drainage to the SW/west ridge saddle and the summit block is our West Ridge standard line. Summited, tops out 4 m from our summit pin, round trip from the SR-20 pullout (start/end 134 m and 121 m from our current pin; about 100 m from the WTA-confirmed pullout)." },
+      "otherTracksConsidered": [
+        { "aid": "1173740", "verdict": "unsure", "why": "2019-06-14 West Ridge, summited, in season, same line, but the start is 368 m from our current pin (fails 300 m only because of the pin). Equivalent runner-up; 2417030 chosen because it is complete under the present pin." },
+        { "aid": "1157536", "verdict": "unsure", "why": "2019-05-18 West Ridge, summited, but the track end is 3.4 km from the pullout (does not return as recorded)." },
+        { "aid": "2857707", "verdict": "unsure", "why": "2025-05-31 summit, same Willow Creek line, no route name; start 314 m from pin (pin issue). Not chosen." },
+        { "aid": "1951345", "verdict": "unsure", "why": "2022-06-27 SW Ridge, same line; start 374 m from pin (pin issue). Not chosen." },
+        { "aid": "967965", "verdict": "unsure", "why": "2018-05-27 W Ridge; start 401 m from pin; reporter says the track does not show the real line well. Not chosen." },
+        { "aid": "2196758", "verdict": "unsure", "why": "2023-05-21; same line, start 364 m from pin. Used for facts." },
+        { "aid": "3341918", "verdict": "offseason", "why": "2026-09-11 West Ridge (5.5): September is more than a month outside May-Jul." },
+        { "aid": "2990586", "verdict": "offseason", "why": "2025-09-20: September, outside the season." },
+        { "aid": "3242150", "verdict": "not-summited", "why": "2026-06-24: turned back by thunderstorms." },
+        { "aid": "2357161", "verdict": "offseason", "why": "2023-10-22 survey trip, October; no track." },
+        { "aid": "1599136", "verdict": "offseason", "why": "2021-02-20 winter ascent; no track." }
+      ],
+      "pins": [
+        { "type": "Trailhead", "action": "move", "lat": 48.5500, "lng": -120.6306, "name": "SR-20 pullout (Silver Star / Willow Creek approach)",
+          "evidence": "Our route text starts at a SR-20 pullout about 3.5 mi east of Washington Pass (~4,320 ft) and drops to Early Winters Creek. Nine harvested tracks start in a cluster at 48.551,-120.6309 (334 m from our pin at 48.548) at 4,300-4,311 ft per the loggers' own start-trailhead stats: the Silver Star climbers' pullout. WTA places that trailhead at the first pullout past the Cutthroat Creek turnout near the milepost 165 marker, at 48.5500,-120.6306 (about 100 m from the track cluster).",
+          "confirmedBy": "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan (GPS 48.5500, -120.6306; first pullout after the Cutthroat Creek turnout, near mile marker 165)" }
+      ],
+      "facts": [
+        { "field": "watch_out", "month": 5, "text": "In mid-May, rime and verglas on the summit block can make the first low moves far harder than in dry conditions.", "aids": ["1157568"] },
+        { "field": "watch_out", "month": 5, "text": "Boulders on the upper slope shift easily underfoot; keep the party close together and avoid climbing beneath each other.", "aids": ["2196758"] },
+        { "field": "watch_out", "month": 6, "text": "A bear was met on the lower approach in late June; make noise in the brush.", "aids": ["1951345"] },
+        { "field": "pro_tips", "month": 6, "text": "Pack at least one cam for the lower chimney; slings alone give poor protection there.", "aids": ["2549950", "2196758"] },
+        { "field": "pro_tips", "month": 6, "text": "Bring rock shoes for the chimney and the summit slab; boots make both moves awkward.", "aids": ["2196758", "1951345"] },
+        { "field": "pro_tips", "month": 5, "text": "Carry a long sling and a ring or two for the summit bolt, which had no rappel hardware in late May.", "aids": ["2196758"] },
+        { "field": "pro_tips", "month": 5, "text": "Pull the rope from the left (south) rappel station of the lower pitch; the rope can lodge in a crack above the other line.", "aids": ["2196758"] },
+        { "field": "approach_note", "month": 5, "text": "Stay left of the waterfall cliff band in the Willow Creek valley; angling right of the creek runs into cliffs. A higher log crossing a few hundred feet upstream of the lowest one keeps your feet drier on Early Winters Creek.", "aids": ["2196758", "2549950"] },
+        { "field": "monthBreakdown", "month": 5, "text": "Mid-to-late May: snow is continuous from roughly 6,500-6,800 ft and firm in the morning, good with crampons to about 7,200 ft, but it turns punchy by afternoon.", "aids": ["1157536", "967965", "2196758"] },
+        { "field": "monthBreakdown", "month": 6, "text": "Late June: the basin is still snow-filled up to the ridge slope, leaving only 50-100 ft of loose scree at the top; an axe and crampons are useful there.", "aids": ["2549950", "1951345"] },
+        { "field": "descent_note", "month": 5, "text": "When afternoon snow turns punchy in May, descend the narrow gully east of your ascent gully rather than the one you climbed.", "aids": ["2196758"] }
+      ]
+    }
+  ],
+  "notes": "Single route on the peak, so every West/SW Ridge/Willow Creek/Standard ascent is the same line (runner-ups marked unsure only because their mechanical start check fails on the pin, not on route identity). Our trailhead pin sits about 220 m south of the Silver Star pullout where nine of ten tracks start; the proposed move would let most good tracks pass the 300 m rule. Our summit pin is fine (within 12 m of Peakbagger). Stored season Apr-Oct is wider than the evidence; proposed May-Jul."
+}

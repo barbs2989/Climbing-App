@@ -1,0 +1,27 @@
+{
+  "area_id": "wa_gothic_peak",
+  "routes": [
+    {
+      "route_id": "wa_gothic_peak_standard",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Web search: guidebook-derived and Mountaineers/WTA pages say late July through September once the basin melts out; snow and a frozen Foggy Lake persist into July; October ascents are possible but snow returns. Stored Jul-Sep kept; usable window with margin is Jun-Oct." },
+      "track": { "aid": "3311675", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Our catalog holds exactly one route on this peak (the standard scramble from Foggy Lake); Aug 16 round trip from the Barlow Pass trailhead (start/end ~83 m from our pin), summited within 6 m of our summit pin, report describes the normal route and class 3 summit block." },
+      "otherTracksConsidered": [
+        { "aid": "3326934", "verdict": "same", "why": "Aug 28, complete, summit within 3 m, single route on peak; equally valid alternate." },
+        { "aid": "3256868", "verdict": "different", "why": "Jul 6 link-up with Del Campo Peak: highest point is 921 m from Gothic's summit, so it is not a Gothic-only track." },
+        { "aid": "848375", "verdict": "unsure", "why": "Aug 2017 SE Ridge, complete, but no elevation data or report to confirm summit proximity." },
+        { "aid": "491866", "verdict": "offseason", "why": "January winter ascent on snowshoes." },
+        { "aid": "873286", "verdict": "unsure", "why": "Sep 2017 East Face logged; not a complete round trip (ends 5 km from the trailhead pin)." },
+        { "aid": "466579", "verdict": "offseason", "why": "Oct 9 start from Foggy Pass, partial track." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 7, "text": "In early July, snow patches remain at the saddle above Foggy Lake, and a moat can open along the rock above the snowfields", "aids": ["3256868", "1008648"] },
+        { "field": "what_to_bring", "month": 7, "text": "ice axe (early to mid July; snow-free by mid-August)", "aids": ["3256868", "1695605", "3311675"] },
+        { "field": "descent_note", "month": 7, "text": "In early July, an easier but chossy class 2 alternative leaves the base of the summit block and drops to climber's left below the ridge; it crosses a moderate-angle snow traverse that month.", "aids": ["3256868"] },
+        { "field": "pro_tips", "month": 8, "text": "A hidden notch gives the easy way onto the summit block, with only one or two class 3 moves; the rock there is solid.", "aids": ["3326934", "3311675"] }
+      ]
+    }
+  ],
+  "notes": "Single route on the peak, so blank logged routes are acceptable where the track follows the Foggy Lake line and the summit block. Our trailhead pin is 60 m from the track starts; no pin change needed."
+}

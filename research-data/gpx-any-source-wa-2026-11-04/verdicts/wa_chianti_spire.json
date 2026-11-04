@@ -1,0 +1,33 @@
+{
+  "area_id": "wa_chianti_spire",
+  "routes": [
+    {
+      "route_id": "wa_chianti_spire_east_face",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep stands. All 18 logged ascents of the 'Rebel Yell' line fall Jun-Sep (Jul 11, Sep 4, Jun 2, Aug 1). Web search: the Wine Spires sit on the east side behind Washington Pass, usable only while SR 20 is open (roughly May-Nov), with the col gully holding snow into July. Searches for the route name mainly returned unrelated wine pages." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "574353", "verdict": "not-summited", "why": "13 Sep 2015 turned back after the first pitch of the alternate start (a trailhead-to-base track only)." },
+        { "aid": "3282640", "verdict": "unsure", "why": "25 Jul 2026 logged 'Rebell Yell 5.10b', summited, but there is no GPS track to assign." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_chianti_spire_lichen_bouquet",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep stands; same cirque and road access as Rebel Yell (see that route). No logged ascent or track names it." },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_chianti_spire_north_face",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep stands; same cirque and road access. No logged ascent or track names it (rarely repeated)." },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "No summited track exists for this peak in the packet, so nothing is assigned. The East Face route's Summit pin (48.55186,-120.59014) is 168 m south of Peakbagger's surveyed coordinate (48.553355,-120.590487) while the other two routes' pins are 18 m from it; there are no recorded high points to adjudicate (rule needs tracks and Peakbagger to agree within 100 m), so no move is proposed. The 2015 report says the base was reached without snow in mid-September, which conflicts with the stored 'snow persists year-round' line; one low-snow year, so no change proposed."
+}

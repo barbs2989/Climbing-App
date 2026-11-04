@@ -42,6 +42,7 @@ import { fileURLToPath } from "node:url";
 
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import { selectAll } from "./lib/supabase-env.mjs";
 import { searchCanon } from "../lib/search.js";
 

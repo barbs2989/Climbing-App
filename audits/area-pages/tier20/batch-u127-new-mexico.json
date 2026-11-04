@@ -1,0 +1,49 @@
+{
+ "nm_hole_in_the_wall": {
+  "_expect": { "name": "Hole in the Wall", "region": "New Mexico" },
+  "blurb": "A high-altitude cliff tucked into the upper part of La Cueva Canyon on the Sandia Mountains' west flank above Albuquerque, close to the La Luz Trail. Roughly 25 climbs, mostly gear-protected lines with some bolted and top-rope options, on thin, technical faces. Grades start around 5.7 and reach 5.13, but the bulk sit between 5.10 and 5.11, so it suits solid intermediates and up more than beginners. The wall points west and catches the afternoon sun, so hard attempts go best earlier in the day. Expect a quiet, mountain-top feel and a hike that takes real effort.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105994493/hole-in-the-wall", "https://www.mountainproject.com/area/105789241/la-cueva-canyon-upper?print=1"] }
+ },
+ "nm_bat_cave": {
+  "_expect": { "name": "Bat Cave", "region": "New Mexico" },
+  "blurb": "A limestone sport crag in the Caballo Mountains, within an hour or so of Truth or Consequences, reached by a rough desert road. All 25 routes are bolted, and nearly all are steep and hard: the grades run from the 5.9 range up past 5.14, with the biggest cluster around 5.12 to 5.13. Cave sections, overhangs and longer lines give it a rugged, athletic character. It is a destination for experienced sport climbers rather than a beginner spot, and it is generally quiet. Spring and fall are the comfortable times; summer heat in the desert is severe.",
+  "rock": "limestone",
+  "review": { "sources": ["https://advcollective.com/new_mexico/Climbing/climbing-adventures-at-bat-cave", "https://sierracountynewmexico.info/things-to-do/rock-climbing/"] }
+ },
+ "nm_eagle_canyon": {
+  "_expect": { "name": "Eagle Canyon", "region": "New Mexico" },
+  "blurb": "A canyon crag in the Cochiti area of the Jemez, around 6,800 feet up. Of the 25 routes here, almost all are bolted, with a couple of trad lines and one top-rope. Grades run from 5.9 to 5.13, with the largest group at 5.11, which makes it a good fit for climbers working through the intermediate range. The canyon holds shade for most of the day, so it is the Cochiti spot people choose when other cliffs there are too hot. Lines run longer than on the nearby mesa, and cooler spring and fall days suit the harder routes best.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105891780/eagle-canyon", "https://www.mountainproject.com/area/105891772/capulin-canyon-and-cochiti-mesa-area-crags"] }
+ },
+ "nm_carnuel_crag": {
+  "_expect": { "name": "Carnuel Crag", "region": "New Mexico" },
+  "blurb": "A small cluster of granite outcrops at the edge of the Sandia foothills, a short drive from Albuquerque off the interstate. About 25 climbs of single-pitch height, split between gear-protected cracks, top-rope lines and a handful of bolted routes. Most are between 5.7 and 5.10, with a few easier scrambles and one route in the 5.12 range, so it is friendly to newer leaders and top-rope parties. The rock is coarse and can be hard on ropes, and the walls face east, giving morning sun and cool evenings in summer. A handy after-work alternative to a gym, but watch for rattlesnakes in warm weather.",
+  "parking_note": "Leave the car in the wide open median on the north side of I-40 at exit 170, set well back from the roadways.",
+  "approach": "Cross the on-ramp heading north and climb the large concrete drainage channel. The trail begins near the top of it on the left and is easy to lose where it crosses rocks.",
+  "aspect": "E",
+  "review": { "sources": ["https://www.mountainproject.com/area/113929222/carnuel-crag", "https://app.advcollective.com/climbing/carnuel-crag-urban-climbing-escape-near-albuquerque"] }
+ },
+ "nm_grotto_right_west_side": {
+  "_expect": { "name": "Grotto Right (West Side)", "region": "New Mexico" },
+  "blurb": "The west-side wall of the Grotto, a slot-like canyon in the Diablo Canyon area near Santa Fe. Around 25 routes, mostly bolted with some gear lines, running from about 5.8 to 5.14. The heart of the wall is 5.11 and 5.12, so it is a place for strong intermediates and harder climbers. The rock is solid and monolithic, with pockets and sharp, positive crimps and long, technical reaches between holds. The wall gets morning sun and then falls into shade in the afternoon, and the canyon around it stays cool for much of the day. It sees light traffic, so some lines are a little less polished and cleaned.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105803248/grotto-right-west-side", "https://www.mountainproject.com/area/105803240/the-grotto-aka-the-notch?print=1"] }
+ },
+ "nm_new_petroglyphs_bouldering": {
+  "_expect": { "name": "New Petroglyphs Bouldering", "region": "New Mexico" },
+  "blurb": "A low band of basalt in the Taos Gorge near the John Dunn Bridge, holding about 25 boulder problems. The blocks are roughly 10 to 20 feet tall and sit in shade, which keeps them pleasant through hot summer days. Most problems fall between V0 and V5, with the biggest group around V4 and a single V6 at the top end; a few tall unfinished lines remain for projectors. Easier warm-ups come first, with more to the west along the cliffs, making it a relaxed place for mixed-ability groups.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108655558/new-petroglyphs-bouldering", "https://www.mountainproject.com/area/106076750/john-dunn-bridge-area"] }
+ },
+ "nm_old_new_place": {
+  "_expect": { "name": "Old New Place", "region": "New Mexico" },
+  "blurb": "A basalt cliff roughly 60 feet high in White Rock Canyon, tucked behind a quiet residential area of White Rock near Los Alamos. It has about 24 routes, mostly cracks climbed on gear, with some set up for top-rope. Grades span 5.9 to 5.13, but the majority are 5.10 and 5.11, so it suits climbers comfortable placing their own protection. Crowds are thin and the crack lines are the draw. The wall catches morning light and loses it later in the day, which helps in warm months.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106033590/old-new-place?print=1", "https://www.mountainproject.com/area/105788289/white-rock"] }
+ },
+ "_skipped": {
+  "nm_monster_wall": "no fetched page is about the Monster Wall itself (only the parent Upper East Fork page, a neighbouring-wall page and a one-route news item)"
+ },
+ "_conflicts": {
+  "nm_eagle_canyon": "stored aspect W; https://www.mountainproject.com/area/105891780/eagle-canyon says the main cliff faces south (a few routes on the north side)",
+  "nm_bat_cave": "stored aspect S; https://sierracountynewmexico.info/things-to-do/rock-climbing/ says mostly west-facing cliffs",
+  "nm_old_new_place": "stored aspect SE; https://www.mountainproject.com/area/106033590/old-new-place?print=1 says east-facing"
+ }
+}

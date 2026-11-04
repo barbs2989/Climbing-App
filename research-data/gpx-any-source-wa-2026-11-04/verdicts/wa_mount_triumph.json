@@ -1,0 +1,37 @@
+{
+  "area_id": "wa_mount_triumph",
+  "routes": [
+    {
+      "route_id": "wa_mount_triumph_northeast_ridge",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep. Web: Skyward Mountaineering gives early July through end of August; Mazamas and Mountaineers route pages discuss early-season snow downclimb vs late-season moat; a mid-September 2020 and Sep 20 2026 ascent show September is workable." },
+      "track": { "aid": "3354008", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged Northeast Ridge (Sep 20 2026), summited 39 m from our summit pin; report describes the notch start, knife edge, grand notch, heather and choss to the top and the long rappel descent, matching our text. Start and end are 83 m and 88 m from our Thornton Lakes trailhead pin and it holds 3,000 points. In window (Sep)." },
+      "otherTracksConsidered": [
+        { "aid": "434941", "verdict": "same", "why": "Also logged Northeast Ridge, Jul 8 2014, round trip within 10 m of the trailhead, summit 45 m away; sparser (500 points) and older, so second choice." },
+        { "aid": "2970066", "verdict": "unsure", "why": "Aug 31 2025 round trip from the trailhead with no logged route or text; the ridge is the only common line but identity is not stated, and the West Route also shares the summit." },
+        { "aid": "2896699", "verdict": "unsure", "why": "Jul 5 2025, starts 4.8 km from our trailhead pin at about 5,650 ft toward the Triumph Pass side; no logged route or text; could be the West Route." },
+        { "aid": "2573855", "verdict": "not-summited", "why": "Turned back Jul 2024." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "pro_tips", "month": 7, "text": "In July a trickle from the permanent snowfield runs beside the col camp spots, and snow remains on the north side of the notch to melt, so water is easier than the stored note suggests.", "aids": ["2581766", "434941"] },
+        { "field": "pro_tips", "month": 7, "text": "By late July the ramp up to the notch can be melted out while the glacier crossing still needs crampons, so expect to take them off at the snow-to-rock change.", "aids": ["2581766"] },
+        { "field": "descent_note", "month": 9, "text": "On a late-September descent the third rappel used nearly all of a 60 m rope (a 57 m rope fell short), and some of the older anchors needed to be cut away and replaced; carry spare cord and full-length ropes.", "aids": ["3354008"] },
+        { "field": "watch_out", "month": 7, "text": "In late July the loose gully from the middle lake to the col is a slog with slick grass and swarms of mosquitoes.", "aids": ["2581766"] }
+      ]
+    },
+    {
+      "route_id": "wa_mount_triumph_west_route",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep dry rock only. Web search found no season guidance for the West Route (only that it is class 4, dangerous when wet, reached via Triumph Pass)." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2896699", "verdict": "unsure", "why": "Jul 5 2025 summited, track begins at the high Triumph Pass side (48.695,-121.342), passes 51 m from our summit pin, but no logged route or report names the West Route, and it is neither a round trip nor from a trailhead." },
+        { "aid": "3354008", "verdict": "different", "why": "NE Ridge." },
+        { "aid": "434941", "verdict": "different", "why": "NE Ridge." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Stored dist_km 11.3 on the NE Ridge looks short: the tracks measure about 25 km round trip from the Thornton Lakes trailhead (434941 stats 16 mi; a 2020 party recorded 15.6 mi). Owner may want to review. No trailhead pin changes needed; both best tracks start within 10-90 m of our pin."
+}

@@ -1,0 +1,174 @@
+{
+  "area_id": "wa_colchuck_peak",
+  "routes": [
+    {
+      "route_id": "wa_colchuck_peak_holsten_hilden",
+      "season": {
+        "months": [
+          12,
+          1,
+          2,
+          3
+        ],
+        "window": "Dec-Mar",
+        "evidence": "Stored window (ice-and-mixed, first climbed in late January); web search for Colchuck northeast-face winter routes (American Alpine Club note on Hilden-Holsten, SummitPost) agrees it is a winter ice route. All harvested tracks are June-July glacier-route ascents, so off season."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3244919",
+          "verdict": "offseason",
+          "why": "June-July recordings, far outside a Dec-Mar ice route, and the line is the glacier standard"
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_colchuck_peak_northeast_couloir",
+      "season": {
+        "months": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "window": "Feb-May",
+        "evidence": "Web search: SummitPost and a Wenatchee club report call it a winter / early-spring couloir (lake still frozen mid-May); stored text offers a late-May alternative. Harvested tracks are late June-July recordings with blank route names whose lines follow the glacier to the col."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3244919",
+          "verdict": "unsure",
+          "why": "Blank logged route on a peak with eight stored routes; the line is the glacier-and-col standard route, which already has its own track"
+        },
+        {
+          "aid": "3249849",
+          "verdict": "unsure",
+          "why": "Blank logged route on a peak with eight stored routes; the line is the glacier-and-col standard route, which already has its own track; also a Dragontail link-up"
+        },
+        {
+          "aid": "3245064",
+          "verdict": "unsure",
+          "why": "Dragontail link-up, no route named"
+        },
+        {
+          "aid": "3263553",
+          "verdict": "unsure",
+          "why": "Blank logged route on a peak with eight stored routes; the line is the glacier-and-col standard route, which already has its own track"
+        },
+        {
+          "aid": "2876013",
+          "verdict": "different",
+          "why": "Logged as the Colchuck Glacier route, a different stored route that already has a track"
+        },
+        {
+          "aid": "1672747",
+          "verdict": "different",
+          "why": "Logged as the North Buttress Couloir, which already has a track"
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_colchuck_peak_northeast_gully",
+      "season": {
+        "months": [],
+        "window": "unknown",
+        "evidence": "No source describes this route separately from the couloirs; no season could be established. No named in-season ascent exists."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3244919",
+          "verdict": "unsure",
+          "why": "Blank logged route on a peak with eight stored routes; the line is the glacier-and-col standard route, which already has its own track"
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_colchuck_peak_south_face",
+      "season": {
+        "months": [],
+        "window": "unknown",
+        "evidence": "No documentation of this route found in web search; only one December 2020 logged \"South Face Porcupine Creek\" ascent, no track. Season unknown."
+      },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_colchuck_peak_south_route",
+      "season": {
+        "months": [],
+        "window": "unknown",
+        "evidence": "Class 2 route; no separate documentation found in web search. Season not established."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3244919",
+          "verdict": "unsure",
+          "why": "Blank logged route on a peak with eight stored routes; the line is the glacier-and-col standard route, which already has its own track"
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_colchuck_peak_west_ridge",
+      "season": {
+        "months": [],
+        "window": "unknown",
+        "evidence": "No separate documentation found in web search; season not established."
+      },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_northeast_buttress_4",
+      "season": {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "window": "Jun-Aug",
+        "evidence": "Stored Jun-Aug and July-August best; web search (SummitPost, Mountain Project listings) gave no contradicting window. No logged ascent names this buttress."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3244919",
+          "verdict": "unsure",
+          "why": "Blank logged route on a peak with eight stored routes; the line is the glacier-and-col standard route, which already has its own track"
+        },
+        {
+          "aid": "3249849",
+          "verdict": "unsure",
+          "why": "Blank logged route on a peak with eight stored routes; the line is the glacier-and-col standard route, which already has its own track; also a Dragontail link-up"
+        },
+        {
+          "aid": "3245064",
+          "verdict": "unsure",
+          "why": "Dragontail link-up, no route named"
+        },
+        {
+          "aid": "3263553",
+          "verdict": "unsure",
+          "why": "Blank logged route on a peak with eight stored routes; the line is the glacier-and-col standard route, which already has its own track"
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Peak has nine stored routes; all harvested blank-name tracks follow the Colchuck Glacier / Banshee Pass line, which is a different stored route that already has a track. Several routes (northeast gully, south face, west ridge) have no pins, text or season and look like unfilled stubs; northeast gully and northeast couloir may be the same line."
+}

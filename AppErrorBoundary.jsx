@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { reportError } from "./lib/errorReport.js";
 
 // The app had no error boundary, so any throw during render unmounted the whole tree and
 // left the black `#root` — the exact blank screen `check:refs`, `check:hooks` and the
@@ -13,7 +14,7 @@ import { Component } from "react";
 // core module into the entry chunk and undo the startup-size work, so the few colours here
 // are the same literals the boot shell in index.html already hardcodes.
 //
-// It says only what it knows. No "we've been notified" (nothing is), no invented error
+// It says only what it knows. No "we've been notified" (delivery is not confirmed), no invented error
 // code. The message is shown because a climber standing at a trailhead needs to know
 // whether to retry or give up, and the text is what they would paste into a bug report.
 const WRAP = { minHeight: "100vh", background: "#0d1117", color: "#e6edf3", display: "flex",
@@ -28,9 +29,10 @@ export default class AppErrorBoundary extends Component {
   constructor(props) { super(props); this.state = { err: null }; }
   static getDerivedStateFromError(err) { return { err }; }
   componentDidCatch(err, info) {
-    // Keep it in the console for anyone with devtools open; there is no reporting endpoint,
-    // so claiming it was sent anywhere would be a lie.
+    // Kept in the console for anyone with devtools open, and filed to app_errors (0399). The screen
+    // below still does not say "we've been notified": the report is best effort, and may not arrive.
     console.error("[ClimbMatch] render error:", err, info && info.componentStack);
+    reportError("render", err, info && info.componentStack);
   }
   render() {
     if (!this.state.err) return this.props.children;
@@ -43,13 +45,13 @@ export default class AppErrorBoundary extends Component {
       <div style={WRAP} role="alert">
         <div style={CARD}>
           <div style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>{chunk ? "This screen couldn’t be downloaded" : "This screen hit a bug"}</div>
-          <div style={{ fontSize: 13.5, color: "#99a3ad", lineHeight: 1.55 }}>
+          <div style={{ fontSize: 13.5, color: "#b8c0c8", lineHeight: 1.55 }}>
             {chunk ? "Either the connection dropped or ClimbMatch was just updated. Reload once you have signal. " : "Reloading usually clears it. "}
             Nothing you had saved to your account is affected — anything
             entered on this screen and not yet saved is lost.
           </div>
           <div style={{ marginTop: 12, padding: "9px 11px", background: "#0d1117", border: "1px solid #30363d",
-            borderRadius: 9, fontSize: 12, color: "#99a3ad", fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
+            borderRadius: 9, fontSize: 12, color: "#b8c0c8", fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
             wordBreak: "break-word", maxHeight: 120, overflowY: "auto" }}>{msg}</div>
           <button style={BTN} onClick={() => window.location.reload()}>Reload ClimbMatch</button>
         </div>

@@ -1,0 +1,66 @@
+{
+ "area_id": "wa_south_early_winters_spire",
+ "routes": [
+  {"route_id":"wa_boving_roofs","season":{"months":[6,7,8,9],"window":"Jun-Sep","evidence":"Stored season plus the peak histogram (rock ascents cluster Jun-Sep); no harvested track names or climbs this line."},"track":null,"otherTracksConsidered":[],"pins":[],"facts":[]},
+  {"route_id":"wa_dolphin_chimney","season":{"months":[6,7,8,9],"window":"Jun-Sep","evidence":"Stored season plus the peak histogram; no harvested track names this line."},"track":null,"otherTracksConsidered":[],"pins":[],"facts":[]},
+  {"route_id":"wa_free_mojo","season":{"months":[6,7,8,9],"window":"Jun-Sep","evidence":"Stored season plus the peak histogram; no harvested track names this line."},"track":null,"otherTracksConsidered":[],"pins":[],"facts":[]},
+  {"route_id":"wa_mojo_rising","season":{"months":[6,7,8,9],"window":"Jun-Sep","evidence":"Stored season plus the peak histogram; no harvested track names this line."},"track":null,"otherTracksConsidered":[],"pins":[],"facts":[]},
+  {"route_id":"wa_northwest_face_boving_pollock","season":{"months":[6,7,8,9],"window":"Jun-Sep","evidence":"Stored season plus the peak histogram; no harvested track names this line."},"track":null,"otherTracksConsidered":[],"pins":[],"facts":[]},
+  {
+   "route_id":"wa_south_arete",
+   "season":{"months":[6,7,8,9],"window":"Jun-Sep","evidence":"Logged South Arete ascents peak Jun-Sep (Jun 29, Jul 21, Aug 20, Sep 16) with May 10 and Oct 2 as snowy shoulders; stored Jun-Sep and the sunny SSW aspect agree."},
+   "track":{"aid":"3360726","verdict":"same","kind":"complete","inSeason":true,"why":"Logged route is South Arete; the report walks the crux first pitch, chimney, sandy ledges, fin and summit gully; track starts and ends within 10 m of the trailhead pin and tops out 1 m from our summit pin. Late September is in season."},
+   "otherTracksConsidered":[
+    {"aid":"3263643","verdict":"unsure","why":"Logged as Blue Lake Trail but the report is a South Arete climb with three rappels; complete round trip 23 Jun 2026. Valid alternative; not preferred because the logged name is the trail."},
+    {"aid":"2197198","verdict":"unsure","why":"S Arete, 20 May 2023, complete; in the shoulder month before June, so not preferred over a core-season track."},
+    {"aid":"1228119","verdict":"unsure","why":"S Arete, 14 Jul 2019, complete but older, no route detail."},
+    {"aid":"3290940","verdict":"unsure","why":"South Arete, 1 Aug 2026, but not a round trip (ends 1.6 km from the trailhead pin)."},
+    {"aid":"2938947","verdict":"unsure","why":"South Arete, Aug 2025, starts 967 m from the trailhead pin; not a clean round trip."},
+    {"aid":"3381655","verdict":"unsure","why":"No logged route and no report; passing the pins proves nothing on this shared approach."},
+    {"aid":"3308346","verdict":"unsure","why":"No logged route; report does not name a line."},
+    {"aid":"3337754","verdict":"not-summited","why":"Turned back."},
+    {"aid":"2937059","verdict":"different","why":"SW Rib."},
+    {"aid":"2535569","verdict":"different","why":"SW Rib."},
+    {"aid":"2823768","verdict":"different","why":"Southwest Couloir."},
+    {"aid":"1923554","verdict":"different","why":"Southwest Couloir."},
+    {"aid":"1146809","verdict":"different","why":"Southwest Couloir."},
+    {"aid":"1920517","verdict":"different","why":"SW Couloir."},
+    {"aid":"1921067","verdict":"different","why":"SW Couloir."},
+    {"aid":"1150890","verdict":"different","why":"SW Couloir."}
+   ],
+   "pins":[],
+   "facts":[
+    {"field":"watch_out","month":9,"text":"After a late-September storm the first-pitch crux can be wet and iced, with snow and verglas on the summit ramp and gully.","aids":["3360726"]},
+    {"field":"monthBreakdown","month":5,"text":"In mid-to-late May expect thin snow through the forest, firm snow near the base, a damp first pitch, and snow on the sandy ledges and below the fin; axe and crampons are carried.","aids":["2197198","2515348"]},
+    {"field":"approach_note","month":7,"text":"At the fork higher on the trail, the right branch heads for the Early Winter Spires and the left one for Liberty Bell.","aids":["1228119"]},
+    {"field":"pro_tips","month":7,"text":"Cams from about 0.5 to 2 cover almost everything, most of it on pitch 1; a handline on the final traverse helps newer climbers.","aids":["1183441"]},
+    {"field":"watch_out","month":7,"text":"Near the top stay in the gully; the east side of the last traverse drops away steeply.","aids":["1183441"]},
+    {"field":"pro_tips","month":9,"text":"Thin ice can hide on holds of the final scramble after a cold snap; rope the summit ramp.","aids":["3360726"]}
+   ]
+  },
+  {"route_id":"wa_south_early_winter_spire_direct_east_buttress","season":{"months":[7,8,9],"window":"Jul-Sep","evidence":"Stored Jul-Sep; loggers name it Jul-Aug (3 logs). No track for it."},"track":null,"otherTracksConsidered":[],"pins":[],"facts":[]},
+  {"route_id":"wa_south_early_winter_spire_passenger","season":{"months":[7,8,9],"window":"Jul-Sep","evidence":"Stored Jul-Sep; no track names it."},"track":null,"otherTracksConsidered":[],"pins":[],"facts":[]},
+  {
+   "route_id":"wa_south_early_winter_spire_southwest_couloir",
+   "season":{"months":[4,5],"window":"Apr-May","evidence":"Logged SW Couloir ascents: Apr 6, May 19, Jun 1, Sep 1. Club trip reports and guide pages put the snow climb shortly after SR-20 opens in spring, melting to rockfall-prone scree by late May-June. Stored May-Jun is about a month late."},
+   "track":{"aid":"2823768","verdict":"same","kind":"complete","inSeason":true,"why":"Logged Southwest Couloir, 26 Apr 2025, summited; starts 12 m and ends 13 m from the trailhead pin and passes 1 m from the summit pin. All couloir-logged tracks are consistent."},
+   "otherTracksConsidered":[
+    {"aid":"1923554","verdict":"same","why":"Southwest Couloir, 22 May 2022, complete; equally valid."},
+    {"aid":"1920517","verdict":"same","why":"SW Couloir, 17 May 2022, complete, snow-climb gear."},
+    {"aid":"1921067","verdict":"same","why":"SW Couloir, 17 May 2022, complete."},
+    {"aid":"1146809","verdict":"same","why":"Southwest Couloir, 28 Apr 2019, complete, older."},
+    {"aid":"1150890","verdict":"same","why":"SW Couloir, 5 May 2019, complete, detailed report used for facts."}
+   ],
+   "pins":[],
+   "facts":[
+    {"field":"monthBreakdown","month":5,"text":"In mid-May of a good snow year the couloir is continuous snow; parties run the rope with several pickets and a tree sling, and the final 20-30 ft is the steepest bit.","aids":["1920517"]},
+    {"field":"monthBreakdown","month":5,"text":"In early May the right fork is snow except one short band of mixed scree, ice and wet rock that is the crux; snow resumes above it to the ridge, where a tree with old slings marks the top.","aids":["1150890"]},
+    {"field":"descent_note","month":5,"text":"The rappels are easy to miss: from the slung tree go to climber's-left trees, then a rock horn, then into the couloir to an anchor on climber's right (about 60 m), then down to the right fork where a tree below the left fork gives one more.","aids":["1150890"]},
+    {"field":"what_to_bring","month":5,"text":"A few pickets plus a couple of nuts or cams for the mixed band (May)","aids":["1150890","1920517"]}
+   ]
+  },
+  {"route_id":"wa_southern_man","season":{"months":[6,7,8,9],"window":"Jun-Sep","evidence":"Stored Jun-Sep; no track names it."},"track":null,"otherTracksConsidered":[],"pins":[],"facts":[]},
+  {"route_id":"wa_the_hitchhiker","season":{"months":[6,7,8,9],"window":"Jun-Sep","evidence":"Stored Jun-Sep; logged in June (2 logs) but no harvested track names it."},"track":null,"otherTracksConsidered":[],"pins":[],"facts":[]}
+ ],
+ "notes":"Packet trackChecks are identical for every route since all share the Blue Lake approach and one summit; only logged route names separate them, so tracks were assigned only to South Arete and Southwest Couloir. Southwest Rib is logged ~35 times (Jun-Sep) but is not one of our routes; Boving Roofs shares its first three pitches. Direct East Buttress and Southern Man carry a trailhead pin at 48.5143,-120.6425 (Washington Pass hairpin) rather than Blue Lake; plausible for east-side lines but not verified. Summit pins are within ~30 m of the surveyed 48.512275,-120.655395, so no summit move. Proposed season change: Southwest Couloir Apr-May rather than May-Jun."
+}

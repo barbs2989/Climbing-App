@@ -1,0 +1,24 @@
+{
+  "area_id": "wa_plummer_peak",
+  "routes": [
+    {
+      "route_id": "wa_plummer_peak_r1",
+      "season": { "months": [7,8,9,10], "window": "Jul-Oct", "evidence": "Stored Jul-Oct; trail database lists Jun-Oct snow-free; SummitPost/WTA mention lingering snow into early summer; log histogram peaks Jul-Sep with Oct still busy; a late-May 2026 report exists but is out of season." },
+      "track": { "aid": "2246390", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Only one route is stored on the peak. Logged route Pinnacle Peak TH; track starts 9 m from our trailhead pin and ends 25 m away, summit 8 m, 3.4 mi round trip and about 1,480 ft gain matching our description; July 13 is in season." },
+      "otherTracksConsidered": [
+        { "aid": "3273607", "verdict": "unsure", "why": "July 19 2026 but report says it was peak 3 of a day with Lane and Denman, so possibly a link-up." },
+        { "aid": "3353127", "verdict": "same", "why": "Sept 20 2026, complete, no report; second choice." },
+        { "aid": "3276177", "verdict": "same", "why": "July 19 2026, complete, no report." },
+        { "aid": "1778243", "verdict": "different", "why": "Oct 9 2021 four-peak outing." },
+        { "aid": "1690996", "verdict": "different", "why": "Traverse from Pinnacle over three peaks in late June; link-up." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 7, "text": "Biting flies can be bad on the summit in mid-July; stepping to the wind side of the top keeps them off.", "aids": ["3273607"] },
+        { "field": "pro_tips", "month": 10, "text": "Beyond the end of the maintained trail a worn climbers' path leads most of the way up, with little true scrambling.", "aids": ["1778243", "3273607"] }
+      ]
+    }
+  ],
+  "notes": "Report-based facts are thin. Dense cloud in early October (one report) can remove views entirely."
+}

@@ -1,0 +1,22 @@
+{
+ "note": "Alpine pairs from same-climb-census.mjs READ on 2026-11-04. 'merged' went into migration 0400; 'distinct' are different climbs (different first ascents, or a named variant/extension) and need no re-research. Shared TRACKS on distinct routes were cleared by clear-shared-tracks.mjs.",
+ "merged": [["wa_dragontail_peak_east_ridge_aasgard_pass","wa_dragontail_peak_east_route"],["wa_dragontail_peak_r3","wa_dragontail_peak_west_route"]],
+ "distinct": [
+  ["wa_liberty_crack","wa_liberty_crack_free","the 1965 aid line vs its later all-free variation"],
+  ["wa_complete_south_buttress","wa_cutthroat_south_buttress","Complete starts far lower on the buttress, then joins it"],
+  ["wa_jack_mountain_east_ridge","wa_jack_mountain_north_ridge","different FAs (1984 / 1971); text is templated, not copied"],
+  ["wa_jack_mountain_east_ridge","wa_jack_mountain_south_face","different lines; templated text"],
+  ["wa_jack_mountain_east_ridge","wa_jack_mountain_southwest_ridge","different lines; templated text"],
+  ["wa_jack_mountain_north_ridge","wa_jack_mountain_south_face","different lines"],
+  ["wa_jack_mountain_north_ridge","wa_jack_mountain_southwest_ridge","different lines"],
+  ["wa_mount_seattle_noyes_basin","wa_mount_seattle_seattle_creek","two different basins; templated text"],
+  ["wa_witches_tower_northwest_buttress","wa_witches_tower_west_buttress","different FAs (1975 / 1971)"],
+  ["wa_hozomeen_mountain_south_peak_southeast_buttress","wa_hozomeen_mountain_southwest_buttress","different aspects"],
+  ["wa_dorado_needle:wa_direct_southwest_buttress","wa_southwest_buttress","Direct is its own line"],
+  ["wa_bear_mountain_chilliwack_north_buttress","wa_direct_north_buttress","Direct North Buttress is its own line"],
+  ["wa_gorillas_direct","wa_king_kong_gorillas_direct_direct","different lines on Stuart"],
+  ["wa_the_temple_south_ridge","wa_the_temple_west_face","different FAs (1942 / 1946)"],
+  ["wa_summit_chief_mountain_south_route","wa_summit_chief_mountain_southeast_face","Class 4 vs Class 2; SE Face is an empty shell (owner question)"]
+ ],
+ "misfiled": [["wa_big_chiwaukum_mount_temple_ridge","filed on The Temple (Enchantments); its id and name are the Chiwaukum ridge — empty shell, owner question"]]
+}

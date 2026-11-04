@@ -1,0 +1,54 @@
+{
+  "area_id": "wa_black_peak",
+  "routes": [
+    {
+      "route_id": "wa_black_peak_east_buttress",
+      "season": { "months": [7,8,9,10], "window": "Jul-Oct", "evidence": "Stored season is empty. It shares the Wing Lake approach, which is snowbound into late June/early July and gets snow again in October; guide pages give the peak a late-spring-to-early-fall season, and all 16 successful logged ascents fall in Jul-Oct except one March ski trip. A snow-free class 3-4 scramble is a Jul-Oct objective." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "all", "verdict": "different", "why": "No harvested ascent is logged as the East Buttress, and every track's line goes either by the NE-ridge notch (north-east of Wing Lake) or by the south col and ridge; none works the east side of the Wing Lake basin." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_black_peak_northeast_ridge",
+      "season": { "months": [5,6,7,8,9,10], "window": "May-Oct", "evidence": "Stored May-Oct matches the Mountaineers' listing for this route. Logged NE Ridge ascents run July (2025) and October (2026, 2024), a June 2021 attempt turned back, and all-route ascents spread Jul-Oct with a March ski ascent that is irrelevant to the ridge. Stored Jul-mid-Sep optimum stands." },
+      "track": { "aid": "2897177", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Jul 7 2025, logged NE Ridge, summited (18 m from our summit pin). Report: camped at Wing Lake, reached the ridge via the right-hand ledges, simul-climbed 5 pitches, scrambled the last bit unroped, descended the south route. The line leaves Wing Lake north-east to about 48.5269,-120.8112 (the NE-ridge notch) before turning to the summit, unlike the south-route tracks. Round trip from the Rainy Pass lot: start 72 m, end 61 m from our trailhead pin." },
+      "otherTracksConsidered": [
+        { "aid": "3366751", "verdict": "same", "why": "Oct 3 2026 NE Ridge, summited, round trip, same notch line and ridge description. Valid and in season; 2897177 chosen as the July (peak-season) and more clearly described recording." },
+        { "aid": "2674321", "verdict": "same", "why": "Oct 12 2024 North East Ridge, summited, same line, but the track ends at Wing Lake rather than the trailhead (one-way by the 300 m rule); no report text." },
+        { "aid": "1685395", "verdict": "not-summited", "why": "Jun 20 2021 NE Ridge, turned back." },
+        { "aid": "2673826", "verdict": "different", "why": "Logged South Ridge; its line goes by the south col." },
+        { "aid": "2673411", "verdict": "different", "why": "Logged South Ridge, and the track does not mechanically complete the round trip." },
+        { "aid": "3369583", "verdict": "different", "why": "South Ridge line." },
+        { "aid": "3370310", "verdict": "different", "why": "South Route via Wing Lake; the report also describes a class 4-5 variation but the track goes by the south col." },
+        { "aid": "2998128", "verdict": "different", "why": "South route." },
+        { "aid": "2938020", "verdict": "different", "why": "Logged SW Ridge; track goes by the south col / west side." },
+        { "aid": "3254054", "verdict": "different", "why": "Logged the Maple Pass to Wing Lake trail only; line follows the south route." },
+        { "aid": "3077499", "verdict": "different", "why": "Black Peak via Wing Lake: south route line." },
+        { "aid": "3370605", "verdict": "different", "why": "Unlabeled; report describes the standard scree and scramble route and the track does not complete mechanically." },
+        { "aid": "3373398", "verdict": "different", "why": "Unlabeled, does not complete mechanically, no usable text." },
+        { "aid": "3377304", "verdict": "not-summited", "why": "Oct 12 2026 turned back at the summit pinnacle." },
+        { "aid": "2146128", "verdict": "offseason", "why": "Mar 7 2023 ski ascent in deep winter via the south side; no track." },
+        { "aid": "1670088", "verdict": "unsure", "why": "Jul 19 2019, no logged route and no track; the report is a south-route ascent (saddle then the summit block). Used for July snow and approach facts only, which are shared with the NE ridge approach." },
+        { "aid": "2663410", "verdict": "unsure", "why": "Sep 2 2018 south-side ascent, no track; used for approach facts only." },
+        { "aid": "1023222", "verdict": "unsure", "why": "Aug 24 2018 south-side ascent, no track; used for approach facts only." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "what_to_bring", "month": 7, "text": "Ice axe (early to mid July: the snow slope under the ridge can be steep; crampons depend on your boots)", "aids": ["2897177","1670088","3254054"] },
+        { "field": "what_to_bring", "month": 7, "text": "Light rack of cams about 0.3-2 in, nuts and slings (five simul pitches on the ridge)", "aids": ["2897177"] },
+        { "field": "watch_out", "month": 7, "text": "Mosquitoes are thick along the approach and at the lakes in early to mid July", "aids": ["2897177","1670088"] },
+        { "field": "pro_tips", "month": 7, "text": "Two ways reach the ridge from the basin: low-angle ledges on the right, or steep snow under undercut cliffs on the left. The ledges went in early July but carry loose gravel.", "aids": ["2897177"] },
+        { "field": "descent_note", "month": 7, "text": "In July parties leaving the south ridge either pick down steep dirt or take the snow; dirt to lower-angle snow, then a glissade, worked, and the scree beside the snow sheds rock.", "aids": ["2897177","1670088"] },
+        { "field": "pro_tips", "month": 10, "text": "Protection is poor and sparse in places; early-October parties ran pitches out and threaded the rope around ridge features.", "aids": ["3366751"] },
+        { "field": "watch_out", "month": 10, "text": "Shaded slopes below the scree can be icy and slick in the early-October morning until the sun softens them", "aids": ["3370605"] },
+        { "field": "pro_tips", "month": 10, "text": "In early October, fill bottles at Wing Lake; no reliable water higher on the climb.", "aids": ["3366751"] },
+        { "field": "approach_note", "month": 10, "text": "On fine early-October weekends, larch-season crowds fill the Rainy Pass lots and line the highway shoulder; start early to secure parking.", "aids": ["3370605","2673411"] }
+      ]
+    }
+  ],
+  "notes": "Neither the East Buttress nor any other route has a track unique to it; the East Buttress has no ascent evidence at all (the only mention found online is that it starts from Wing Lake). Our trailhead and summit pins are fine (trailhead 143 m from where nine tracks start, summit within 25 m of every track's high point and 0 m from Peakbagger's lidar summit). The East Buttress waypoint list gives the Heather Pass/Lewis Lake route as its approach, which is correct. Several 2026 October tracks show snow on the ground and a turn-back on Oct 12, so October is genuinely marginal. A month histogram was not supplied in the packet (dates were blank), so I counted from each report's own Date field: Jul 4, Jul 7 2025, Jul 19 2019, Aug 8 2025, Aug 24 2018, Sep 2 2018, Sep 28 2025, Oct x13 (several seasons), June 20 turn-back, March 7 ski."
+}
