@@ -1,0 +1,26 @@
+{
+  "area_id": "wa_the_chopping_block",
+  "routes": [
+    {
+      "route_id": "wa_the_chopping_block_northeast_ridge",
+      "season": { "months": [7, 8, 9, 10], "window": "Jul-Oct", "evidence": "Stored Jul-Oct. Web search (Mountaineers Chopping Block page and NE ridge trip reports, Cascade Climbers): ascents in Jul 2021, Aug 2025, and a late Oct 4 2020 trip; the logged ascents on the peak are Jun-Aug." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2939305", "verdict": "unsure", "why": "Aug 10 2025, summited, but the logged route is blank and there is no report text; the peak has three routes (northeast ridge, northwest route, southeast face) that share the Goodell Creek approach, and the packet cannot show which line it climbed." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_the_chopping_block_northwest_route",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep. Web search: a mid-July 2008 report found snow still on the route; Summitpost describes the north-face traverse in summer; first ascent Sep 1961." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2939305", "verdict": "unsure", "why": "Same as the northeast ridge: no logged route, no report; cannot tell which of the three routes it follows." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "The single harvested track (2939305) is a trailhead-to-summit-and-back line from about 48.683,-121.269 (Goodell Creek side) with no elevations, logged route blank. A blank logged route on a peak with several routes is unsure, so it is assigned to none. The southeast face route (already holding a track) is not part of this packet."
+}

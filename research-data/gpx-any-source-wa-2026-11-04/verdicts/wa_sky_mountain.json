@@ -1,0 +1,87 @@
+{
+  "area_id": "wa_sky_mountain",
+  "routes": [
+    {
+      "route_id": "wa_sky_mountain_s_route",
+      "season": {
+        "months": [
+          12,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jun-Oct snow-free; Dec-May on snow",
+        "evidence": "Stored Jun-Oct with winter/spring snowshoe and ski ascents Dec-Apr. Web search (Mountaineers snow and winter scramble trips incl. an April 2026 one, summitpost logs) confirms it is mostly done on snow; histogram is heavily Dec-May. No source states a summer window explicitly."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3178813",
+          "verdict": "different",
+          "why": "Apr 26 track continues to a second summit north (about 47.7667,-121.1077) after Sky: a link-up."
+        },
+        {
+          "aid": "2850296",
+          "verdict": "different",
+          "why": "Same Sky plus second-summit link-up."
+        },
+        {
+          "aid": "2667855",
+          "verdict": "different",
+          "why": "Oct 7: the track also visits the northern neighbour summit; link-up, so no assignment."
+        },
+        {
+          "aid": "2767661",
+          "verdict": "different",
+          "why": "Feb South Ridge track also goes on to the neighbour summit."
+        },
+        {
+          "aid": "306891",
+          "verdict": "unsure",
+          "why": "Mar 2013, only 2.3 mi, starts 1.6 km from the trailhead pin (not a complete round trip)."
+        },
+        {
+          "aid": "3157598",
+          "verdict": "unsure",
+          "why": "No GPS track."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 4,
+          "text": "In April the north-facing slopes crossed between the Heather Ridge saddle and Sky are avalanche-prone; check danger first",
+          "aids": [
+            "3178813",
+            "3157598"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 4,
+          "text": "In April the boulder garden past the lake holds soft snow that is easy to posthole; some parties drop north to avoid it",
+          "aids": [
+            "3178813"
+          ]
+        },
+        {
+          "field": "what_to_bring",
+          "month": 4,
+          "text": "Snowshoes up to the summit ridge, ice axe (April); crampons not needed in early April",
+          "aids": [
+            "3157598"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "All harvested tracks except 306891 combine Sky with the neighbouring summit to the north (about 47.7667,-121.1077), so none was assigned. 306891 is a partial track."
+}

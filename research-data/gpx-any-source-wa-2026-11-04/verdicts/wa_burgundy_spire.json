@@ -1,0 +1,34 @@
+{
+  "area_id": "wa_burgundy_spire",
+  "routes": [
+    {
+      "route_id": "wa_action_potential",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep; all-route successful ascents on this spire run Jun-Oct but peak Jul-Sep (20/16/12 of 60), and the col approach is snowy in June. Stored season stands." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "1799029", "verdict": "different", "why": "No logged route name. Report describes 6 pitches with only the last at 5.8 and 4 double-rope plus 1 single rappel; that matches the North Face (5.8+), not a 5.10c sustained East Face line. Track is a clean round trip from the pullout (summit within 2 m) but cannot be tied to Action Potential." },
+        { "aid": "1027278", "verdict": "different", "why": "Report names the North Face (linked the first two pitches above Burgundy Ledge)." },
+        { "aid": "1024365", "verdict": "different", "why": "Logged route North Face, 5.8+; it begins at the pullout and ends at the summit, so it is one-way and not our route." },
+        { "aid": "1434350", "verdict": "different", "why": "Climbed Paisano Pinnacle's West Ridge, then the North Face of Burgundy Spire; track ends at Paisano, not at our summit." },
+        { "aid": "432827", "verdict": "different", "why": "Logged North Face 5.8+; track ends at the col (about 133 m from the summit pin) with a bivouac and ice axe." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_ultramega_ok",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep; same shared col approach and the same all-route histogram. Stored season stands." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "1799029", "verdict": "different", "why": "Pitch count, grade feel and rappels match the North Face, not an 5.11a northeast-buttress route with a thin-corner crux." },
+        { "aid": "1027278", "verdict": "different", "why": "Names the North Face." },
+        { "aid": "1024365", "verdict": "different", "why": "Names the North Face." },
+        { "aid": "1434350", "verdict": "different", "why": "Paisano Pinnacle West Ridge linked to the North Face." },
+        { "aid": "432827", "verdict": "different", "why": "Names the North Face; ends at the col." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "All five harvested tracks are North Face (5.8+) ascents; none can be assigned to Action Potential (East Face) or Ultramega OK (NE Buttress). The North Face is the peak's standard route and is not among the packet's routes, so it may be missing from our catalog, and its tracks (1799029, 1024365, 1027278) would fit it. Pin oddities noticed but not fixed: the 'Burgundy Col' pin differs between the two routes (48.5527,-120.5992 vs 48.5544,-120.5922; the tracks' col is near 48.5530,-120.5941 on the Paisano/col line), and Ultramega's 'Early Winters Creek Crossing' water pin (48.56803,-120.6298) is about 2 km north of Action Potential's (48.5502,-120.6282) and of the trailhead, which looks wrong. Our trailhead pin is 92 m from the cluster where four tracks start, so it is fine."
+}

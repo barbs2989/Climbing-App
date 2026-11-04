@@ -1,0 +1,40 @@
+{
+  "area_id": "wa_storm_king",
+  "routes": [
+    {
+      "route_id": "wa_storm_king_north_face",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "No stored season. A glaciated, bivy-based alpine line on the north side; summit ascents on this peak are Jul 57, Aug 43, Sep 10, Oct 2 (all routes). Web search found no modern beta for this line, only the standard southwest route, which Mountaineers lists for Jul-Sep; the north glacier approach is best after snow has consolidated, so Jul-Sep." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3255971", "verdict": "different", "why": "Climbs the usual southwest-basin line to the notch and ledge, not the north rib." },
+        { "aid": "2938173", "verdict": "different", "why": "Southwest basin, partial track from the high camp." },
+        { "aid": "2929599", "verdict": "different", "why": "Southwest route; highest point is near Goode." },
+        { "aid": "343608", "verdict": "not-summited", "why": "Turned back." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_storm_king_southwest_scramble",
+      "season": { "months": [7, 8, 9, 10], "window": "Jul-Oct", "evidence": "Stored Jul-Oct stands. Logged ascents: Jul 57, Aug 43, Sep 10, Oct 2. Web search: Mountaineers lists the Storm King southwest route for Jul-Sep; guide pages give mid-August as the typical date; early July still has deep snow in the basin." },
+      "track": { "aid": "3255971", "verdict": "same", "kind": "oneway", "inSeason": true,
+                 "why": "3 Jul 2026 summited track (4 m from our summit pin). The report describes the usual climber's traverse to the correct notch below the summit, the exposed ledge catwalk and a roped step up the summit crack, matching our route's Hazard pins (north-side ledge traverse, summit crux crack). The track starts at High Bridge, runs over Park Creek Pass and out Thunder Creek to end 39 m from our Colonial Creek pin, so it is a through-trip; all three approaches are named in our text. Mechanical oneway test is false (start is 30 km from our pin) and the report says half of day one is missing; owner/script should decide if a through-trip is acceptable. 3 Jul is in season." },
+      "otherTracksConsidered": [
+        { "aid": "2938173", "verdict": "unsure", "why": "9 Aug 2025 from the Goode high camp at ~2,250 m, partial, double-peak trip; no trailhead." },
+        { "aid": "2929599", "verdict": "different", "why": "2 Aug 2025 42-mile trip whose highest point is on Goode, 1.2 km from this summit." },
+        { "aid": "343608", "verdict": "not-summited", "why": "Turned back 11 Aug 2013." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 7, "text": "In early July the Park Creek trail and the climber's path above it pass through a burn with hundreds of blowdowns; allow far longer than normal for the approach.", "aids": ["3255971"] },
+        { "field": "monthBreakdown", "month": 7, "text": "In early July the high bench near 7,400 ft is still under snow with no running water; melt snow, and expect soft snow on the traverse to the notch.", "aids": ["3255971"] },
+        { "field": "watch_out", "month": 7, "text": "Snow can fill the moat along the ledge past the catwalk in early July; one party stemmed between snow and rock, then climbed a steep, roughly 100 ft class 4+ pitch that needed protection.", "aids": ["3255971"] },
+        { "field": "watch_out", "month": 7, "text": "Rappel slings were found chewed by animals in late July; inspect or replace all tat, and do not trust the second anchor, a loose boulder resting on other loose rocks.", "aids": ["2258454"] },
+        { "field": "pro_tips", "month": 8, "text": "Take the right-hand gully to the summit ledges; the horn-topped gully to its left is a dead end with loose rock. Late-August parties found downclimbing the northeast ledges easier than rappelling.", "aids": ["1228942"] },
+        { "field": "what_to_bring", "month": 7, "text": "60 m rope (a 70 m avoids a short downclimb after the last rappel), small cams, and slings for anchors (Jul-Aug)", "aids": ["3255971"] },
+        { "field": "pro_tips", "month": 8, "text": "Camp water is available at about 6,300 ft where waterfalls drain, if the drainage near 5,600 ft is dry; the traverse from the 7,400 ft bench to the notch is half talus, half snow in late July.", "aids": ["1228942", "2258454"] }
+      ]
+    }
+  ],
+  "notes": "The summit pin matches Peakbagger's surveyed coordinate (22 m). No pin changes needed. The track 3255971 is a through-trip; use only if the owner accepts oneway-through-trip recordings (the mechanical oneway test was false). A 2017 report warns a guidebook photo mislabels the summit, which can send parties up a wrong gully."
+}

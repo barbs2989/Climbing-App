@@ -1,0 +1,135 @@
+{
+  "area_id": "wa_le_petit_cheval",
+  "routes": [
+    {
+      "route_id": "wa_first_amendment",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Washington Pass guides give late June into September for the area; stored Jul-Sep."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "1454103",
+          "verdict": "different",
+          "why": "Logged Spontaneity Arete."
+        },
+        {
+          "aid": "700175",
+          "verdict": "unsure",
+          "why": "Aug 2016 unnamed; starts 536 m from the pin on the east side; no route named."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_spontaneity_arete",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jun-Oct",
+        "evidence": "Guide pages: best weather late June into September, snow lingering early; histogram Jun-Sep with an Oct tail; SR 20 open to about Nov."
+      },
+      "track": {
+        "aid": "1454103",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Logged route is Spontaneity Arete; track starts and ends about 130 m from the SR-20 turnout pin and tops out 11 m from our summit on 30 Jul 2020."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "700175",
+          "verdict": "unsure",
+          "why": "Unnamed route; starts 536 m east of the pin."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "Pitch 1 starts from a distinctive dead, U-shaped snag; the hand crack trends left from it.",
+          "aids": [
+            "863621",
+            "1506018"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 6,
+          "text": "In mid-June a patch of avalanche debris lies across the path, and the steeper climbers' trail above has three fixed hand-lines.",
+          "aids": [
+            "1945255"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 6,
+          "text": "Several tree rappel anchors have shifted in the loose soil and carry old tat; back them up or replace them.",
+          "aids": [
+            "1945255"
+          ]
+        },
+        {
+          "field": "descent_note",
+          "month": 10,
+          "text": "From the summit anchor drop into the gully on the descent-right side, then walk its loose floor, staying right first and left once it narrows.",
+          "aids": [
+            "1506018"
+          ]
+        },
+        {
+          "field": "what_to_bring",
+          "month": 10,
+          "text": "Cams from 0.1 to 3 and a full set of nuts (all used in early October)",
+          "aids": [
+            "1506018"
+          ]
+        },
+        {
+          "field": "what_to_bring",
+          "month": 8,
+          "text": "Tape for the pitch-1 hand crack (August)",
+          "aids": [
+            "863621"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_spontaneous_distraction",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep; same area window; no route-specific reports."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "1454103",
+          "verdict": "different",
+          "why": "Logged Spontaneity Arete."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Only Spontaneity Arete is named by any logged ascent."
+}

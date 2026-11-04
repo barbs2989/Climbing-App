@@ -1,0 +1,243 @@
+{
+ "area_id": "wa_fortress_mountain",
+ "routes": [
+  {
+   "route_id": "wa_fortress_mountain_east_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Logged ascents of the peak run Jun-Oct, peak Aug (74) and Jul (56). Searches: Chiwawa/Fortress reports describe the snow slope to the col needing axe+crampons into late Aug; a Jun 26-27 trip was fully on snow from 4,900 ft. Stored Jun-Oct; Jul-Sep is the reliable window."
+   },
+   "track": {
+    "aid": "1962149",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Logged East, 10 Jul 2022; report goes up the Chiwawa River trail to the 4,800 ft meadow camp, over the col from Chiwawa onto Fortress and along the ridge past loose scramble and snow to the summit. Track starts 111 m from our Trinity pin, ends 67 m, summit 5 m."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "1190402",
+     "verdict": "unsure",
+     "why": "Logged East Route, Jul 2019, complete, but no report text to confirm the line"
+    },
+    {
+     "aid": "2611978",
+     "verdict": "different",
+     "why": "Southwest route via Pass No Pass"
+    },
+    {
+     "aid": "2306147",
+     "verdict": "different",
+     "why": "Buck Creek / Pass No Pass line"
+    },
+    {
+     "aid": "2615246",
+     "verdict": "unsure",
+     "why": "Starts at the col (traverse from Chiwawa), not a trailhead round trip; Aug 2024; good for facts"
+    },
+    {
+     "aid": "3264980",
+     "verdict": "unsure",
+     "why": "Jul 2026 logged NE Ridge; recorded from the road gate 5.5 mi before Trinity so not complete; ascends from the west notch at 8,440 ft"
+    },
+    {
+     "aid": "563965",
+     "verdict": "unsure",
+     "why": "Logged N/E ridge 2015, no report; ambiguous vs our Northeast Face"
+    },
+    {
+     "aid": "1977418",
+     "verdict": "different",
+     "why": "West ridge/slopes, track far from pins"
+    },
+    {
+     "aid": "462544",
+     "verdict": "different",
+     "why": "South Ridge, Sep 2014; return leg off our pin"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 6,
+     "text": "In late June the Chiwawa valley holds continuous snow from about 4,900 ft; the waterfall slopes need crampons and an axe.",
+     "aids": [
+      "1694867"
+     ]
+    },
+    {
+     "field": "approach_note",
+     "month": 7,
+     "text": "The Chiwawa River has no usable bridge at the 4,800 ft meadow camp; in July parties wade it barefoot or in camp shoes, then bushwhack briefly before snow.",
+     "aids": [
+      "1962149",
+      "1694867"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "Reach the 7,000 ft bench by the easier trail through the meadows instead of the steep brushy slope.",
+     "aids": [
+      "2615246",
+      "3264980"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 8,
+     "text": "The 15-ft chimney is easy to overshoot; if you land in a left-facing dihedral with dirty ledges above, back down about 50 ft and find the narrow slot on the right.",
+     "aids": [
+      "2615246"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 7,
+     "text": "From the notch near 8,440 ft, work the ridge crest and look just left around the corner for a broad broken chimney.",
+     "aids": [
+      "3264980"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 8,
+     "text": "Do not drop off the crest toward the col after the chimney; a big loose slab there gave one climber a slide on scree.",
+     "aids": [
+      "2607927"
+     ]
+    },
+    {
+     "field": "what_to_bring",
+     "month": 7,
+     "text": "steel crampons and axe (early-to-mid July snow on the col slope)",
+     "aids": [
+      "3264980",
+      "1962149"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "Early July: steep snow near 8,200 ft below the ridge carries old slide debris and rockfall from the scramble above.",
+     "aids": [
+      "1962149"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_fortress_mountain_northeast_face",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored Jul-Sep; searches show the ridge/chimney line is climbed mid-summer once snow thins; winter ascent reports exist but are outside this verdict."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "563965",
+     "verdict": "unsure",
+     "why": "Logged N/E ridge Aug 2015, complete, summited, but no report; cannot tell it is this face rather than the East Ridge"
+    },
+    {
+     "aid": "3264980",
+     "verdict": "unsure",
+     "why": "Logged NE Ridge Jul 2026 but starts at the road gate (not complete) and the described line is the west notch/ridge, not our face"
+    },
+    {
+     "aid": "2615246",
+     "verdict": "unsure",
+     "why": "Starts at the col, no trailhead"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_fortress_mountain_southwest_face",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored Jun-Oct, best Jul-Sep; the all-routes histogram peaks Aug/Sep. Searches: Pass No Pass trail is buried in early season; reports are mostly Aug/Sep."
+   },
+   "track": {
+    "aid": "2611978",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Logged SW route, 17 Aug 2024; report goes over Pass No Pass, up steep heather to the scree gully between cliff bands, then left on cairns to the summit. Track starts 73 m from our Trinity pin, ends 75 m, passes 29 m from summit."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "2306147",
+     "verdict": "unsure",
+     "why": "Logged Buck Creek, Sep 2023, also via Pass No Pass; backup, not the logged SW name"
+    },
+    {
+     "aid": "1857261",
+     "verdict": "offseason",
+     "why": "Feb 2022"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 8,
+     "text": "The trail between Buck Creek and Pass No Pass fades near the stream source but is easy to pick up again.",
+     "aids": [
+      "2611978"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "After the cliff bands, angle left and follow cairns; the rest is class 2 with one short class 3 section near the summit block.",
+     "aids": [
+      "2611978"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 9,
+     "text": "In September there is water at the foot of the summit gully near 7,600 ft, a useful top-up before the upper climb.",
+     "aids": [
+      "2306147"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 9,
+     "text": "Route-finding is trickiest between Pass No Pass and the upper basin; the final gully looks worse than it climbs.",
+     "aids": [
+      "2306147"
+     ]
+    },
+    {
+     "field": "descent_note",
+     "month": 7,
+     "text": "Descending the southwest face to Pass No Pass is easy until the burned forest on Buck Creek, where blowdowns and a high-log river crossing near 3,300 ft slow the walk out.",
+     "aids": [
+      "3264980"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Pins fine (tracks start 70-110 m from Trinity pin, highs 5-40 m from our summit). A Jul 2026 report says the road was gated 5.5 miles before Trinity (washout) - transient, not written as a fact. East Ridge and NE Face tracks are not distinguishable by line."
+}

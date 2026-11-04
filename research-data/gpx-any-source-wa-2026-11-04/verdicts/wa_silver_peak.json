@@ -1,0 +1,64 @@
+{
+  "area_id": "wa_silver_peak",
+  "routes": [
+    {
+      "route_id": "wa_silver_peak_standard_scramble_route",
+      "season": { "months": [6,7,8,9,10], "window": "Jun-Oct", "evidence": "Histogram of the PCT / Silver Peak Trail logged names peaks Jun-Oct; a mountain-forecast listing gives Jun-Oct; Mountaineers notes describe the snow-free scramble in summer and crampons/ice in Nov-Mar; our route is a scramble with no stored season." },
+      "track": { "aid": "986645", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged route is PCT then the Silver Peak Trail; starts at the Windy Pass trailhead pin area, leaves the PCT at about 1.75 mi at the tarn exactly as our approach text says, summit 3 m from our pin; 5.8 mi round trip, June 23 is in season. Several other routes are stored on the peak but this logged name and report describe our standard line unmistakably." },
+      "otherTracksConsidered": [
+        { "aid": "3231581", "verdict": "same", "why": "Same line (PCT & Silver Peak Trail, 2026-06-16) but no trip report; 986645 chosen for its report." },
+        { "aid": "2255139", "verdict": "unsure", "why": "Logged PCT to South Ridge, no report; ridge not distinguishable from the PCT/side-trail line." },
+        { "aid": "2246727", "verdict": "same", "why": "PCT to a rock-pile turnoff then side trail to ridge; July, in season; no logged route name, so second choice." },
+        { "aid": "3366504", "verdict": "unsure", "why": "Tinkham, Abiel and Silver multi-peak trip; link-up." },
+        { "aid": "2320100", "verdict": "different", "why": "Link-up of Tinkham, Silver and Abiel." },
+        { "aid": "2654832", "verdict": "different", "why": "Loop over Silver-Abiel-Tinkham; link-up." },
+        { "aid": "1005157", "verdict": "different", "why": "Also visits South Silver, Abiel and Tinkham; link-up." },
+        { "aid": "1174538", "verdict": "different", "why": "North ridge ascent with south ridge descent loop; not our line." },
+        { "aid": "36553", "verdict": "different", "why": "South ridge up, NW ridge and north basin down; loop." },
+        { "aid": "3013254", "verdict": "offseason", "why": "Silver Peak Trail but 2025-10-12 with 4-6 in. of new snow, turned back partway then summit; Oct is in season for dates but conditions were winter-like; kept only as a note." },
+        { "aid": "1807718", "verdict": "unsure", "why": "Logged South side, Nov 21 (one month past season) from Windy Pass with microspikes; no named route; no assignment but month facts used." },
+        { "aid": "2302839", "verdict": "different", "why": "East face via PCT, multi-peak." },
+        { "aid": "2104730", "verdict": "different", "why": "Annette Lake west face winter snowshoe, a different approach." },
+        { "aid": "1799", "verdict": "offseason", "why": "February snowshoe from Asahel Curtis; winter route." },
+        { "aid": "3394702", "verdict": "unsure", "why": "No logged route, no report; Oct 12." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 6, "text": "In late June, patches of old snow and ice can cover the PCT about three-quarters of a mile in, and the side-trail junction past them is easy to miss.", "aids": ["986645"] },
+        { "field": "pro_tips", "month": 7, "text": "The turnoff from the PCT is a rock cairn pile with no sign; if you reach a small pond you have gone about 0.05 mile too far.", "aids": ["986645", "2246727"] },
+        { "field": "approach_note", "month": 11, "text": "By late November the dirt road to the trailhead can be snow-packed and icy and suit only four-wheel-drive vehicles, so you may walk further than the summer distance.", "aids": ["1807718"] },
+        { "field": "what_to_bring", "month": 11, "text": "Microspikes and an ice axe (late November, after fresh snow)", "aids": ["1807718"] }
+      ]
+    },
+    {
+      "route_id": "wa_silver_peak_northwest_ridge",
+      "season": { "months": [12,1,2,3,4], "window": "Dec-Apr", "evidence": "Stored text calls it usually a winter route; Mountaineers winter scramble listings use Annette Lake approach in Jan-Mar; crampons needed in January." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2104730", "verdict": "unsure", "why": "Jan 2 2023 snowshoe from Annette Lake, logged 'W Face': climbs a west bowl through trees, not named NW Ridge; ridge reached at a mini col. Could be our route but identity is not positive." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_silver_peak_northeast_route",
+      "season": { "months": [6,7,8,9,10], "window": "Jun-Oct", "evidence": "No stored text; only one NE-named log (NE snow gully, Jan) and NE Ridge (Jun) in histogram. Searched Mountaineers/Mountain-Forecast results found no NE-route season; used the peak's general Jun-Oct window." },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_silver_peak_south_spur",
+      "season": { "months": [6,7,8,9,10], "window": "Jun-Oct", "evidence": "No stored text; South Ridge / PCT logs peak Jun-Oct per histogram and Mountain-Forecast lists Jun-Oct." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2255139", "verdict": "unsure", "why": "PCT to South Ridge; our South Spur has no text or pins and the standard route stored here follows the same approach, so I cannot say which route this is." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Four routes share one peak and three have no text, no pins. South Spur may duplicate the Standard scramble route (PCT from Windy Pass then south side); owner may want to merge. All PCT tracks start at the Windy Pass trailhead, which has no Trailhead pin on any route."
+}

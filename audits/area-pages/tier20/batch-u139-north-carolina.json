@@ -1,0 +1,65 @@
+{
+ "nc_lower_tier": {
+  "_expect": {
+   "name": "Lower Tier",
+   "region": "North Carolina"
+  },
+  "blurb": "Lower Tier is the taller, steeper section of Eagle Rock, the cliff complex overlooking Lake Lure in the Hickory Nut Gorge country. The Henderson gneiss matches nearby Rumbling Bald. Most routes are traditional lines on varied faces and cracks, with a few bolted lines and a couple of boulder problems. Grades run from about 5.7 to 5.12, with the bulk between 5.9 and 5.11. Many climbs top out on a broad ledge fitted with a bolted anchor, which also holds a rare plant, so step carefully there. Several lines go with a top rope, and some routes date back decades while a few spots still hold potential for new lines.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/114312117/lower-tier",
+    "https://www.mountainproject.com/area/106037528/eagle-rock"
+   ]
+  }
+ },
+ "nc_hidden_wall_2": {
+  "_expect": {
+   "name": "Hidden Wall",
+   "region": "North Carolina"
+  },
+  "blurb": "Hidden Wall is a steep, compact, tucked-away cliff in Crowders Mountain State Park, west of Charlotte, and a good alternative when the busier main crags are crowded. The rock is quartzite. Nearly all of the twenty-one routes are bolted sport lines, with just a couple of trad options. It is a hard-leaning wall: only a few routes sit at 5.8 to 5.10, a handful at 5.11, and the largest group falls in the 5.12 range, with some reaching 5.13. Strong sport climbers will find it rewarding, while beginners will find little to lead here.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/106876119/hidden-wall",
+    "https://mountainproject.com/area/106099514/crowders-mountain"
+   ]
+  }
+ },
+ "nc_linville_river_crag": {
+  "_expect": {
+   "name": "Linville River Crag",
+   "region": "North Carolina"
+  },
+  "blurb": "Linville River Crag is a small backcountry cliff on the riverbank in Linville Gorge, set in quartzite like that of nearby Hawksbill. Almost every one of its twenty-one routes is traditional, mostly following cracks and other natural features, including a freestanding pinnacle separated from the wall by a chimney. Grades cluster at 5.10 and 5.11, with a single 5.9 and a couple of harder lines. The wall is fairly protected from wind. The hike down is long enough that many parties make it an overnight trip, with riverside camping and swimming holes nearby. A boulder field lies below the cliff.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/106092221/linville-river-crag",
+    "https://mountainproject.com/area/105873285/linville-gorge"
+   ]
+  }
+ },
+ "nc_whiteside_ice": {
+  "_expect": {
+   "name": "Whiteside (ice)",
+   "region": "North Carolina"
+  },
+  "blurb": "These are the winter ice lines on Whiteside Mountain, a big granite dome between Cashiers and Highlands in the southern Blue Ridge. The ice forms on the shaded north side and in gullies, and conditions vary a lot from season to season, so check the local weather before driving out. Twenty ice routes run from WI2 up to WI5, but most sit in the WI3 to WI4 range, with only two at the top end. The best-known line is a long, often thin two-pitch climb. On a cold day you can ice climb in the shade while the sunny south side is warm enough for rock.",
+  "aspect": "N",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/108655233/whiteside-ice",
+    "https://carolinaclimbers.org/climbing-areas/whiteside.html"
+   ]
+  }
+ },
+ "_skipped": {
+  "nc_screamweaver_area": "could not fetch two distinct pages: only one page describes it (the second fetch for the parent failed and the classics URL is the same page)",
+  "nc_bradley_falls": "sits in a temporary restricted zone; only one page describes the crag and the second says nothing about the climbing itself",
+  "nc_upper_tier": "identity unclear: pages describe Eagle Rock at Lake Lure (gneiss), our row has Uwharrie-area coordinates and dacite",
+  "nc_black_bear_buttress": "identity unclear: pages describe Eagle Rock at Lake Lure (gneiss), our row has Uwharrie-area coordinates and dacite"
+ },
+ "_conflicts": {
+  "nc_upper_tier": "Stored rock is dacite and coordinates point at the Uwharrie area, but https://www.mountainproject.com/area/114312114/upper-tier says Henderson gneiss above Lake Lure (Chimney Rock State Park). Coordinates look mis-sited; stored values left unchanged.",
+  "nc_black_bear_buttress": "Stored rock is dacite and coordinates are near Uwharrie, but https://www.mountainproject.com/area/106037533/black-bear-buttress and https://www.mountainproject.com/area/106037528/eagle-rock place it at Eagle Rock by Lake Lure (Henderson gneiss area); the coordinates look mis-sited."
+ }
+}

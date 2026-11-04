@@ -7,14 +7,14 @@
 // draws no recorded track today; anything else must be a complete round trip.
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const { assessTrack, haversineM } = await import("./rule.mjs");
-const { recordedTrackPts } = await import(`${REPO}/lib/track.js`);
+const { recordedTrackPts } = await import(pathToFileURL(path.join(REPO, "lib/track.js")).href);
 const GPX_DIR = process.env.FKT_GPX_DIR || null;
-const { SUPABASE_URL, anonKey, headers, patchRow } = await import(`${REPO}/scripts/lib/supabase-env.mjs`);
+const { SUPABASE_URL, anonKey, headers, patchRow } = await import(pathToFileURL(path.join(REPO, "scripts/lib/supabase-env.mjs")).href);
 
-const here = path.dirname(new URL(import.meta.url).pathname);
+const here = path.dirname(fileURLToPath(import.meta.url));
 const decisions = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
 const WRITE = process.argv.includes("--write");
 const PACE_MS = 1000;

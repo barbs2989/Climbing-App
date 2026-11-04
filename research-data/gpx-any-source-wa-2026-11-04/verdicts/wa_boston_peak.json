@@ -1,0 +1,157 @@
+{
+  "area_id": "wa_boston_peak",
+  "routes": [
+    {
+      "route_id": "wa_boston_peak_southeast_face",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Logged ascents Jul 113, Aug 68, Sep 28, Jun 11, Oct 6; glacier and bergschrund are workable from July and open up through September. Stored Jun-Sep narrowed to Jul-Sep core; June is fringe."
+      },
+      "track": {
+        "aid": "1982293",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Logged route is the Quien Sabe Glacier (July 30, 2022); the line goes through Boston Basin, up the Quien Sabe Glacier to the col and the summit (within 8-14 m of both pins) and back the same way; report names the glacier, bergschrund crossing and rap stations. Caveat: the recording starts ~3.4 km down Cascade River Road from our trailhead pin (a road hike), so it fails the 300 m start rule though it passes the Boston Basin trailhead area; trim the road walk or accept."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3355023",
+          "verdict": "different",
+          "why": "Sept 2026 via Sahale Peak and the connecting ridge from Cascade Pass, not the Quien Sabe Glacier."
+        },
+        {
+          "aid": "3289723",
+          "verdict": "different",
+          "why": "July 2026 ridge from Sahale; Cascade Pass start."
+        },
+        {
+          "aid": "3348345",
+          "verdict": "different",
+          "why": "Sept 2026 Sahale Glacier then Sahale ridge, east-face finish; Cascade Pass start."
+        },
+        {
+          "aid": "3323337",
+          "verdict": "different",
+          "why": "Aug 2026 via Sahale Peak and the ridge; Cascade Pass start."
+        },
+        {
+          "aid": "2652412",
+          "verdict": "different",
+          "why": "Sept 2024 logged South Ridge, from Sahale; Cascade Pass start."
+        },
+        {
+          "aid": "2255723",
+          "verdict": "different",
+          "why": "July 2023 Sahale Arm; Cascade Pass start."
+        },
+        {
+          "aid": "1012714",
+          "verdict": "unsure",
+          "why": "Aug 2018 logged SE Face from Cascade Pass TH, 14 mi round trip; the finish is the same SE ledges but the approach is Sahale Arm, not Boston Basin."
+        },
+        {
+          "aid": "857442",
+          "verdict": "different",
+          "why": "Aug 2017 Cascade Pass car-to-car via Sahale."
+        },
+        {
+          "aid": "3355034",
+          "verdict": "different",
+          "why": "Sept 2026: track continues far east (2.6 km from the summit at its highest point), not a clean Boston line."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "monthBreakdown",
+          "month": 7,
+          "text": "By the end of July the snow bridge over the Quien Sabe bergschrund can collapse; a sturdier bridge was found a little farther climber's right.",
+          "aids": [
+            "1982293"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 8,
+          "text": "In late August the snow at the head of the Boston Glacier was hard enough to need crampons, with a large bergschrund below the crossing; one party instead scrambled on the rock above the snow.",
+          "aids": [
+            "1469257",
+            "1024158"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 6,
+          "text": "In early June the glacier approach was roped from about 6,300 ft, and the party biked the road from the lower gate before reaching the basin.",
+          "aids": [
+            "2212583"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "Wet or snowy rock in a late-August storm made the ledges and the class 4 move slick; the leader placed a few pieces and belayed.",
+          "aids": [
+            "1024158"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 9,
+          "text": "A microwave-sized block near the base of the summit chimney looks solid but shifts; use the other holds.",
+          "aids": [
+            "3355023"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 6,
+          "text": "The upper rappel stations carried worn, sun-baked webbing in early June; bring spare tat to back them up.",
+          "aids": [
+            "2212583",
+            "1469257"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "At the summit block, follow the wide ledge counterclockwise around the east face to a leftward chimney; above it, skip the bigger crack and take ledges right to the top.",
+          "aids": [
+            "3323337",
+            "3355023",
+            "1469257"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_northwest_ridge_2",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Only known ascent was July 2018 (Boston Marathon enchainment); peak-wide histogram is Jul-Sep; stored Jul-Sep kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3355023",
+          "verdict": "different",
+          "why": "Follows the Sahale connecting ridge, not the northwest ridge; the same applies to every harvested track."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Our Boston Basin trailhead pin (48.48055,-121.07979) is not where most recordings start: 9 of 14 tracks start at Cascade Pass trailhead (48.4755,-121.0755, ~620 m away) and climb Sahale then the Sahale-Boston ridge, a route the catalog lacks; consider adding it as its own route. No trailhead move proposed because our route text names the Boston Basin trailhead, not Cascade Pass. Summit pins: SE Face is 1 m from the surveyed point; Northwest Ridge pin is 52 m off, not clearly wrong."
+}

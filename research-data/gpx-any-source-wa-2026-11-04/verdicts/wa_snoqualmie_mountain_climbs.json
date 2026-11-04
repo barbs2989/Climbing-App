@@ -1,0 +1,26 @@
+{
+  "area_id": "wa_snoqualmie_mountain_climbs",
+  "routes": [
+    {
+      "route_id": "wa_snoqualmie_mountain_south_face",
+      "season": { "months": [6, 7, 8, 9, 10], "window": "Jun-Oct", "evidence": "Web search (WTA, Mountaineers scramble listings, trip reports): no source names a best season for a South Face; the summer scramble is snow-free roughly Jun-Oct and the peak is also done on snow in winter and spring. Ascents peak in July (241 all routes)." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "all", "verdict": "unsure", "why": "No logged route is a South Face; the peak has a stored Standard Route (Southwest Slopes) that already has track points, and 'South Ridge/shoulder' loggings are the standard line, not a face. Stub record with no text beyond an approach." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_snoqualmie_mountain_west_ridge",
+      "season": { "months": [6, 7, 8, 9, 10], "window": "Jun-Oct", "evidence": "Same web search as South Face; no West Ridge season found." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "all", "verdict": "unsure", "why": "Only a 'West face'/'West Slope' logging (Feb/Apr, offseason) and no West Ridge; no track or report identifies this route. Stub record." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Both packet routes are empty stubs; every harvested track follows the stored Standard Route (south ridge via Cave Ridge/Commonwealth Basin), which is already stored with track points. Possibly these two stubs are misfiled or duplicates of the standard line; owner should review. No pins proposed."
+}

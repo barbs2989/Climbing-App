@@ -1,0 +1,95 @@
+{
+  "area_id": "wa_copper_peak",
+  "routes": [
+    {
+      "route_id": "wa_copper_peak_south_route",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep",
+        "evidence": "A club route listing gives June-September; stored Jul-Sep, best August. Logged ascents 52 in July and 35 in August."
+      },
+      "track": {
+        "aid": "2958986",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Only route stored on the peak; 2025-08-23 summited round trip from Holden (starts 128 m from our pin), climbs the Copper Creek basin to the south-east snow then the ridge, and the report says it avoids the fourth-class step by joining the ridge higher."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "2917661",
+          "verdict": "different",
+          "why": "Track wanders far south of the peak toward another summit; not a clean line"
+        },
+        {
+          "aid": "2958489",
+          "verdict": "unsure",
+          "why": "Does not meet the round-trip rule (ends 1.4 km from pin)"
+        },
+        {
+          "aid": "2234366",
+          "verdict": "different",
+          "why": "Track also continues far north-west to another peak (link-up)"
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "monthBreakdown",
+          "month": 8,
+          "text": "By late August the route is free of snow and ice, and parties have climbed it without an axe or crampons.",
+          "aids": [
+            "2958986"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 7,
+          "text": "In mid-July a snow ramp between slabs on the southeast face leads above 7,600 ft and needs an axe and crampons.",
+          "aids": [
+            "1196252"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "Aim for the cairned notch on the east ridge; going too high on the snow forces a descending traverse back to it.",
+          "aids": [
+            "1196252"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "Joining the ridge higher up skips the fourth-class step.",
+          "aids": [
+            "2958986",
+            "1196252"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 6,
+          "text": "Late June: the last scramble from the final snow patch to the ridge is exposed Class 3; downclimbing to skier's right is closer to Class 4.",
+          "aids": [
+            "2234366"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 8,
+          "text": "The high camp near 6,500 ft has running water beside it and flat room for about one two-person tent (late August).",
+          "aids": [
+            "2958986"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Holden Village access has had closures from storm damage and fire; owner may want to check before surfacing."
+}

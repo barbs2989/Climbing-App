@@ -1,0 +1,33 @@
+{
+  "area_id": "wa_hadley_peak",
+  "routes": [
+    {
+      "route_id": "wa_hadley_peak_cougar_divide",
+      "season": { "months": [8, 9, 10], "window": "Aug-Oct", "evidence": "Web pages put the best window at mid-August to early October (bugs fade, road gate open from July 1, early-October fall color); stored Aug-Oct." },
+      "track": { "aid": "3336124", "verdict": "same", "kind": "complete", "inSeason": true,
+        "why": "2026-09-06 round trip starting 18 m and ending 7 m from our Cougar Divide trailhead pin, summit 3 m from our pin; the line follows Cougar Divide then Chowder Ridge, the only way up from this trailhead (the Skyline Divide route starts elsewhere). No logged route name, but a single route starts at this trailhead." },
+      "otherTracksConsidered": [
+        { "aid": "3309341", "verdict": "same", "why": "2026-08-15 round trip, in season, also complete; second choice." },
+        { "aid": "3382478", "verdict": "same", "why": "2026-10-18 complete but the track continues south past the summit, highest point 2397 m, so it is not a clean line to Hadley." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 8, "text": "In August one rough, eroded stretch of the forest road about ten minutes below the trailhead needs care; one party in mid-August parked 2.7 miles short and walked, but a spot roughly half a mile closer was available.", "aids": ["2617367", "3313834"] },
+        { "field": "watch_out", "month": 8, "text": "Mosquitoes and biting flies swarm at the trailhead in August; start walking at once.", "aids": ["2617367", "3313834"] },
+        { "field": "watch_out", "month": 8, "text": "In August about 20 trees lay across the trail; the way past the Cougar Divide high point is faint and hard to follow where it climbs rock and sand toward Chowder Ridge.", "aids": ["2617367"] },
+        { "field": "pro_tips", "month": 8, "text": "Small streams on the ridge give better water than the stagnant ponds passed on the way up in August.", "aids": ["2617367"] },
+        { "field": "watch_out", "month": 8, "text": "Loose choss and scree on the final scramble make a helmet worthwhile, and a big group risks rockfall because there is little room to spread out.", "aids": ["2617367", "3313834"] },
+        { "field": "pro_tips", "month": 10, "text": "In mid-October the exposed rock tooth near the summit block can be bypassed on its lower side, which keeps the scramble at about class 2 but over loose rock.", "aids": ["2672327"] },
+        { "field": "pro_tips", "month": 8, "text": "Wild blueberries are ripening by mid-August along the first stretch of trail.", "aids": ["3313834"] }
+      ]
+    },
+    {
+      "route_id": "wa_hadley_peak_skyline_divide",
+      "season": { "months": [7, 8, 9, 10], "window": "Jul-Oct", "evidence": "Web pages: Skyline Divide a popular mid-summer to fall hike; route already has a track so no scope here." },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [], "facts": []
+    }
+  ],
+  "notes": "Skyline Divide already has 743 track points; it is listed in allRoutesOnPeak only. Peakbagger summit 7521.7 ft."
+}
