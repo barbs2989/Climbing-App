@@ -1,0 +1,86 @@
+{
+  "area_id": "wa_colonial_peak",
+  "routes": [
+    {
+      "route_id": "wa_colonial_peak_west_ridge",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "late Jun-Sep",
+        "evidence": "Mountaineers glacier trips run late June through late August; mountain-forecast lists May-Sep; stored Jul-Sep with late June in best_season; ascents peak July."
+      },
+      "track": {
+        "aid": "2535939",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Our catalog holds exactly one route on this peak, and this 9 Jun 2024 track follows its described line: Pyramid Lake trailhead, Pyramid Ridge, the glacier basin to the summit (6 m from our pin) and back to the lot (34 m start, 81 m end)."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "2534867",
+          "verdict": "same",
+          "why": "8 Jun 2024 same line but includes an attempt on a neighbouring peak; kept 2535939 for the cleaner summit track."
+        },
+        {
+          "aid": "2667594",
+          "verdict": "unsure",
+          "why": "5 Oct 2024 same line, round trip, no report; within a month of the season edge, but snow and glacier travel in October."
+        },
+        {
+          "aid": "1437741",
+          "verdict": "unsure",
+          "why": "Starts from high camp, partial track."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "monthBreakdown",
+          "month": 6,
+          "text": "In early June snow begins near 4,800 ft and is continuous above 5,200 ft; wet, unconsolidated and knee-deep postholing in the heat.",
+          "aids": [
+            "2534867"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 6,
+          "text": "Cornices released onto the ridge path beneath Pyramid and Pinnacle in early June; cross the exposed section early before the sun softens it.",
+          "aids": [
+            "2534867"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 6,
+          "text": "The steepest snow of the day, about 60 degrees near 7,500 ft, takes kick-stepping in early June.",
+          "aids": [
+            "2534867"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "In mid-July the ridge from the saddle beside Neve ends at a gendarme with steep drops on both sides; use the snowfield below the notch instead.",
+          "aids": [
+            "1963510"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 8,
+          "text": "In late August the snow near Colonial Lake has melted; follow the northwest ridge past tarns, then the snow finger and a short class-2 notch to the north face, where the upper snowfield has a bad runout.",
+          "aids": [
+            "2013163"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Single route on the peak, so identity rests on the line. The stored route text says there is no public GPS track."
+}

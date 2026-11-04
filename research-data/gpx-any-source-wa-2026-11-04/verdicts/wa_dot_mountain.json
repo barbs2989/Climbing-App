@@ -1,0 +1,96 @@
+{
+ "area_id": "wa_dot_mountain",
+ "routes": [
+  {
+   "route_id": "wa_dot_mountain_scramble",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored Jul-Sep, best mid-July to September; peak-wide ascents Jun 7, Jul 26, Aug 31, Sep 22, Oct 15; searches found no source naming a window, logs cluster July and September, Harts Pass road and snow are the limits."
+   },
+   "track": {
+    "aid": "2904990",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Only one route is stored on Dot Mountain. The Jul 13 2025 track starts at Slate Pass (39 m from our pin), passes the Whistler cutoff junction (25 m), skirts the Lago-Carru area and Point 8165, reaches our Dot summit pin within 94 m and returns to the same trailhead; the line follows the stored description."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "2335602",
+     "verdict": "unsure",
+     "why": "Oct 6 2023, summited, complete from Slate Pass (5 m); a week past the window and older; also line only loosely at Dot (324 m on the sparse shape). Second choice."
+    },
+    {
+     "aid": "2970247",
+     "verdict": "unsure",
+     "why": "Aug 31 2025 four-day multi-peak trip (Osceola, Carru, Lago, Ptarmigan, Dot ...); complete mechanically but not a clean single-route line."
+    },
+    {
+     "aid": "2630334",
+     "verdict": "different",
+     "why": "Sep 1 2024 logged NE ridge from Ptarmigan Peak, starts at the Dot Lake basin, not our Slate Pass line."
+    },
+    {
+     "aid": "789662",
+     "verdict": "unsure",
+     "why": "Aug 2008 report only, no track; ridge traverse from a Shellrock Pass camp."
+    },
+    {
+     "aid": "448391",
+     "verdict": "unsure",
+     "why": "Aug 2014 report matches our route description, but no track harvested."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "approach_note",
+     "month": 8,
+     "text": "In late August a party left the Eureka Creek trail near 5,950 ft and climbed open, lightly wooded slopes (partly on a faint climbers path) toward the Carru-Lago area, dropping packs near 7,300 ft.",
+     "aids": [
+      "2970247"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 8,
+     "text": "Late August: the north side of the Carru-Lago col and the talus below Lago needed almost no snow travel, and the small glacier under Lago has mostly melted away, leaving loose rock.",
+     "aids": [
+      "448391"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "From the 7,400 ft tarn camp, the early-morning ridge to Dot (west-side ramp around Point 8165) is quick; the register at the top is only a small canister with few entries.",
+     "aids": [
+      "448391"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 9,
+     "text": "In early September the south approach to Dot was straightforward scrambling with perhaps a class 3 move near the end, and Ptarmigan Peak lies a short stroll along the northeast ridge.",
+     "aids": [
+      "2630334",
+      "448391"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 8,
+     "text": "In late August Lago was judged the loosest, rottenest peak of the cluster; test every block on its slopes.",
+     "aids": [
+      "2970247"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Single route on the peak. Slate Pass trailhead agrees with every Slate Pass track (5-82 m), so no pin move. The 2023-10-06 Dot track (2335602) is 74 miles by its own stats, likely a multi-peak trip."
+}

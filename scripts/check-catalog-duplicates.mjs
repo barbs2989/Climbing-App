@@ -37,11 +37,12 @@
 import fs from "fs";
 import os from "os";
 import path from "path";
+import { fileURLToPath } from "url";
 import { execFileSync } from "child_process";
 import { selectAll } from "./lib/supabase-env.mjs";
 import { searchCanon } from "../lib/search.js";
 
-const ROOT = path.resolve(new URL("..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const BASELINE = path.join(ROOT, "scripts/data/catalog-duplicates-baseline.json");
 const WRITE = process.argv.includes("--write-baseline");
 const ROWS_ONLY = process.argv.includes("--rows-only");   // CI: no management token, so half 2 only
@@ -54,7 +55,7 @@ fs.writeFileSync(tmp, `select tgname, tgenabled::text en, (tgtype & 4) > 0 ins, 
   from pg_trigger where tgname in ('trg_refuse_duplicate_area', 'trg_refuse_duplicate_route') and not tgisinternal;`);
 let trig;
 try {
-  const raw = execFileSync("npx", ["supabase", "db", "query", "--linked", "-f", tmp], { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+  const raw = execFileSync("npx", ["supabase", "db", "query", "--linked", "--read-only", "-f", process.platform === "win32" ? `"${tmp}"` : tmp], { shell: process.platform === "win32", cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
   trig = JSON.parse(raw.slice(raw.indexOf("{"))).rows;
   if (!Array.isArray(trig)) throw new Error(raw.slice(0, 300));
 } catch (e) {

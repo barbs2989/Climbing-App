@@ -1,0 +1,108 @@
+{
+ "area_id": "wa_philadelphia_mountain",
+ "routes": [
+  {
+   "route_id": "wa_philadelphia_mountain_scramble",
+   "season": {
+    "months": [
+     11,
+     12,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "window": "Nov-Jun",
+    "evidence": "Search (Mountaineers winter/early-spring scramble pages, scramble site): a winter to early-spring snow scramble; Peakbagger ascents Dec-May; summer ascents are rare (1 in July)."
+   },
+   "track": {
+    "aid": "3146005",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Only route in catalog; logged \"W Ridge\" Mar 21 round trip of 11.6 mi from the Lake Serene trailhead (start 13 m, end 14 m from our pin), summit within 2 m; the standard west ridge above the lake."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "3168900",
+     "verdict": "different",
+     "why": "ascent via Index saddle, west ridge only on the way down"
+    },
+    {
+     "aid": "2824646",
+     "verdict": "same",
+     "why": "good second choice, no route name logged but report matches"
+    },
+    {
+     "aid": "2820477",
+     "verdict": "same",
+     "why": "same line, April"
+    },
+    {
+     "aid": "3142358",
+     "verdict": "not-summited",
+     "why": "turned back"
+    },
+    {
+     "aid": "484462",
+     "verdict": "not-summited",
+     "why": "turned back"
+    },
+    {
+     "aid": "803778",
+     "verdict": "unsure",
+     "why": "one-way, May"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "approach_note",
+     "month": 4,
+     "text": "In April the bootpath leaves the main trail just before the outhouse at the lake outlet and is easy to miss; without it the brush on the slope above is thick with devils club.",
+     "aids": [
+      "2824646",
+      "2820477"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 4,
+     "text": "Cliff bands lie in the forest above the boulder field, so route-finding matters until you gain the ridge; in April snow then makes the ridge easy walking.",
+     "aids": [
+      "2824646"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 4,
+     "text": "At least a foot of settled snow at the lake makes the lower brush and boulders passable; in late April snow is continuous above roughly 3,400 ft.",
+     "aids": [
+      "2820477",
+      "2824646"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 4,
+     "text": "From the lake in April, slides and rockfall can be heard and seen coming off the Index gullies across the water; the ridge itself has no avalanche terrain.",
+     "aids": [
+      "2824646",
+      "1900748"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 3,
+     "text": "In late March snow is thin below about 3,000 ft with a brushy stretch near the start, but above that snowshoes or skis work well.",
+     "aids": [
+      "3146005"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": ""
+}

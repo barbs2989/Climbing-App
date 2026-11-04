@@ -1,0 +1,60 @@
+{
+  "area_id": "wa_silver_star_mountain_okanogan",
+  "routes": [
+    {
+      "route_id": "wa_east_ridge_3",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep. Web search found the ridge was first completed in mid-September and is a long rock ridge reached from the Cedar Creek side, so it wants dry rock; no route-specific month guidance exists (summitpost Silver Star Mountain Okanogan page, openbeta listing). Peak-wide logged ascents peak in May-June but those are snow/glacier trips on the other side."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3308219",
+          "verdict": "different",
+          "why": "Burgundy Col then glacier to the saddle then scramble, from the Highway 20 side; not the Cedar Creek east ridge. Belongs to the Silver Star Glacier route."
+        },
+        {
+          "aid": "3292837",
+          "verdict": "different",
+          "why": "Logged as the South Route (south gully to the main saddle); a different line from the east ridge, and it matches no route we hold on this peak."
+        },
+        {
+          "aid": "3263708",
+          "verdict": "different",
+          "why": "Bench camp, glacier traverse and the col below the summit scramble: glacier route."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_silver_star_ne_ridge",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep; the rock line is reached via the glacier, so it needs the snow to have receded. Web search (summitpost, Mountaineers Silver Star Creek page) gave only general late-spring-through-fall peak guidance, nothing specific to this ridge."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3308219",
+          "verdict": "different",
+          "why": "Glacier-to-saddle standard route; none of the harvested tracks name or describe the northeast ridge rock line."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "No harvested track climbs either of these two routes. All summit tracks follow Burgundy Col or Silver Star Creek to the glacier (the route that already holds a track), or the south gully (aid 3292837, a South Route we do not hold). The South Route might be worth a catalog entry if the owner wants it; its Aug 2 2026 report approaches via the Big Snagtooth trail into the Willow Creek basin. Other routes on the peak (Northwest Face, West Face Couloir) were not in this packet."
+}

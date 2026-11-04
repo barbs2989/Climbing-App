@@ -1,0 +1,24 @@
+{
+  "area_id": "wa_devore_peak",
+  "routes": [
+    {
+      "route_id": "wa_devore_peak_west_ridge",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Web search: guidebook-derived SummitPost says the peak is reasonably climbed May-Oct, with spring snow burying lower Bird Creek brush; Mountaineers page covers it with Tupshin in summer. Peak ascents histogram peaks in July (35), Aug 15, Sep 17. Stored late Jul-Sep kept." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2985939", "verdict": "different", "why": "Sep 13 link-up: report climbs Tupshin the same day and the line runs from near Weaver Point out to Harlequin; not a Devore-only track." },
+        { "aid": "2020743", "verdict": "unsure", "why": "Sep 4 2022, summited (14 m from our summit pin), but the track is a partial loop starting and ending at Bird Creek Camp, not at the trailhead, and there is no report or logged route; does not pass the complete/one-way rule." },
+        { "aid": "1991106", "verdict": "unsure", "why": "Aug 6 2022, summited within 19 m but partial from the high camp, report says nothing of the line, and the same-day Tupshin report from the same area suggests a combined trip." },
+        { "aid": "1863173", "verdict": "offseason", "why": "February winter ascent." },
+        { "aid": "673512", "verdict": "different", "why": "Report is Tupshin day; no track checks." },
+        { "aid": "1991718", "verdict": "different", "why": "Tupshin-focused report; no track checks." },
+        { "aid": "2631353", "verdict": "different", "why": "Tupshin/Devore/Flora trip; link-up, no track checks." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 9, "text": "In August and September, parties found the thick slide-alder jungle above the lower camp avoidable by contouring high from the camp in the forest toward the open meadows near 5,800 ft instead of following the faint low path.", "aids": ["1991106", "2985939"] }
+      ]
+    }
+  ],
+  "notes": "Our Trailhead pin is at the Harlequin Bridge shuttle stop, but our route text starts at Weaver Point; recordings start both at Weaver Point and at Bird Creek Camp. No trailhead move proposed because I did not confirm a Weaver Point coordinate from a fetched page. Only a camp-based partial track exists for the standard line; a full trailhead round trip with a Devore-only line is not in the harvest."
+}
