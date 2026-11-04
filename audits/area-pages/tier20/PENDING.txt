@@ -1,9 +1,15 @@
-Tier 20 = crags/walls/peaks with 20-29 climbs and no blurb (1,697 at the start, 2026-11-04).
-Inputs: node scripts/enrich/area-page-inputs.mjs --min 20 --max 29 --skip <done-ids.json> --per 8 --prefix u
-  (PostgREST caps a read at 1000 rows: the first build reached New Mexico (u01-u125); rebuild with --skip
-  listing every id already in an audits/area-pages batch once those are done.)
-Research brief: BRIEF.md (fetched pages only, one about the crag itself; NO access/closure/fee text:
-  access is route-level; no "our catalog").
-Applied and verified live: u01-u40 (240 areas written, 80 skipped).
-Written, not yet applied: u41-u48.
-Next: u49 onward (California).
+Tier 20 (areas with 20-29 climbs, no blurb) — resume note.
+
+Applied and verified live: u01-u64 (395 areas written, 117 skipped).
+  u01-u40 in PR #3123; u41-u64 in the next PR.
+Researching / not yet applied: u65-u72 (Colorado).
+Next: u73 onward through u125 (New Mexico), then rebuild inputs with
+area-page-inputs.mjs --skip <every handled id> for the states after
+New Mexico (the first build hit PostgREST's 1000-row cap).
+
+Source standard: two different fetched pages, at least one about the
+crag itself; a parent-area or route page that mentions the crag is fine
+as the second. Snippets don't count. No access/closure/fee/permit text.
+Pipeline per wave: research -> fix_catalog/lint/scan_access -> hand
+rewording of copy-check refusals -> dry run -> paced apply -> re-read
+from prod and compare.
