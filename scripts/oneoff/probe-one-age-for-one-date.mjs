@@ -55,11 +55,9 @@ const problems = [];
 
 // A producer that is not ago() must be declared here WITH A REASON, and a declaration that
 // stops matching fails as stale -- the standard KNOWN/NEEDS_EXTRA_STATE are held to.
-const DECLARED = {
-  "ClimbMatchCore.jsx| mo ago":
-    "the belay-catch ledger's recLbl, whose input is already a count of MONTHS (lastM) rather " +
-    "than days -- a different question from ago(), and it renders with a leading space",
-};
+// (Empty now: the one entry, the belay-catch ledger's recLbl with its " mo ago" literal, no longer
+// exists anywhere in the app, so it failed as stale on a CLEAN tree. ago() is the only producer.)
+const DECLARED = {};
 
 const seen = new Set();
 let strings = 0;

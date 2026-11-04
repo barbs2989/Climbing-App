@@ -53,6 +53,14 @@ for (const f of FILES) {
     NumericLiteral(p) {
       numbers++;
       const why = BAD.get(p.node.value);
+      // 0.62 is also a plain icon-scale factor: `Math.round(sz*0.62)` sizes a GradeTag inside a pin
+      // (PinIcon, TopoLineOverlay) and converts nothing. A literal multiplied by a variable called
+      // sz/size is a pixel size, not a distance, so it is not a km->miles copy; anything else
+      // 0.62 still fails, and the other three constants have no such innocent use.
+      if (p.node.value === 0.62 && p.parent.type === "BinaryExpression" && p.parent.operator === "*") {
+        const other = p.parent.left === p.node ? p.parent.right : p.parent.left;
+        if (other.type === "Identifier" && /^(sz|size)$/.test(other.name)) return;
+      }
       if (why) problems.push(`${f} @${p.node.start}: ${p.node.value} — ${why}`);
     },
   });
