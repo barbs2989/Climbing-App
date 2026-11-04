@@ -27,6 +27,7 @@ npm install        # install deps (React 18 + Vite)
 npm run dev        # local dev server with HMR
 npm run build      # production build to dist/ — runs every guard in build:guards first (concurrently), then vite
 npm run preview    # serve the built dist/ locally
+npm run clean:worktrees # list worktrees + local branches whose PR merged (idle 24h, nothing untracked or precious); -- --apply removes them
 
 # ── Guard infrastructure — notes: docs/guards/infrastructure.md ──
 npm run check:drift# does the live site actually serve the current tip of main?

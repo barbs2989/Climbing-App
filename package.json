@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "node scripts/run-build-guards.mjs && vite build",
     "preview": "vite preview",
+    "clean:worktrees": "node scripts/clean-worktrees.mjs",
     "check:jsx-comments": "node scripts/check-jsx-comments.mjs",
     "check:screen-lists": "node scripts/check-screen-lists.mjs",
     "check:refs": "node scripts/check-undefined-refs.mjs",
