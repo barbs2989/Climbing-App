@@ -1,9 +1,9 @@
 Tier 20 (areas with 20-29 climbs, no blurb) — resume note.
 
-Applied and verified live: u01-u64 (395 areas written, 117 skipped).
-  u01-u40 in PR #3123; u41-u64 in the next PR.
-Researching / not yet applied: u65-u72 (Colorado).
-Next: u73 onward through u125 (New Mexico), then rebuild inputs with
+Applied and verified live: u01-u88 (539 areas written).
+  u01-u40 in PR #3123; u41-u64 in #3124; u65-u88 in the next PR.
+Researching / not yet applied: u89-u96 (Idaho to Kentucky).
+Next: u97 onward through u125 (New Mexico), then rebuild inputs with
 area-page-inputs.mjs --skip <every handled id> for the states after
 New Mexico (the first build hit PostgREST's 1000-row cap).
 
