@@ -21,7 +21,8 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 
 const GUARD = "scripts/check-a11y-badge-names.mjs";
-const RD = "RouteDetail.jsx";
+// The "Recently climbed" rows moved from RouteDetail.jsx into the Overview tab component.
+const RD = "src/components/RouteOverviewTab.tsx";
 const CORE = "ClimbMatchCore.jsx";
 const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex").slice(0, 12);
 
@@ -76,7 +77,8 @@ const CASES = {
     // MUST FAIL, and must not pass over an unmeasured screen.
     expect: "fail",
     want: /route detail|__routeOpen/,
-    edits: [[GUARD, 'window.__routeOpen === true', 'window.__routeOpenXX === true']],
+    // The flag is waited on twice in the guard now (the route walk and the pitched-route walk), so anchor on the first, which names routeOpen.
+    edits: [[GUARD, 'const routeOpen = await page.waitForFunction(() => window.__routeOpen === true', 'const routeOpen = await page.waitForFunction(() => window.__routeOpenXX === true']],
   },
 };
 
