@@ -43,23 +43,27 @@ export default function SwipeRow({ onDelete, radius, action, onArchive, children
   const verb = action || "delete";
   const hot = dx < -140, hotR = dx > 140;
   /* A MOUSE CANNOT SWIPE (owner 2026-11-04, desktop audit): on the website the same two actions are
-     buttons at the row's right edge, shown while the row is pointed at or holds keyboard focus
-     (wideCss: .cm-swipe / .cm-swipe-acts). Real buttons with names, unlike the swipe's picture. */
+     buttons in a column at the row's right edge, shown while the row is pointed at or holds keyboard
+     focus (wideCss: .cm-swipe / .cm-swipe-acts). Real buttons with names, unlike the swipe's picture.
+     The column KEEPS ITS WIDTH while hidden and the row's content sits beside it, never under it: drawn
+     as an overlay it landed on a Past crew card's own text and buttons (owner, later that day: "clear
+     button needs fixing — it overlaps stuff ie on past crews"). */
   const wide = useWideScreen();
+  const acts = wide && !!(onDelete || onArchive);
   const Verb = verb.charAt(0).toUpperCase() + verb.slice(1);
-  const actBtn = { ...BTN_SM, border: "1px solid " + C.border, background: C.card, color: C.text, boxShadow: "0 4px 14px rgba(0,0,0,0.45)" };
+  const actBtn = { ...BTN_SM, border: "1px solid " + C.border, background: C.card, color: C.text, whiteSpace: "nowrap" as const };
   return (
-    <div className={wide ? "cm-swipe" : undefined} style={{ position: "relative", overflow: "hidden", borderRadius: radius || 13, marginBottom: 8 }}>
+    <div className={wide ? "cm-swipe" : undefined} style={{ position: "relative", overflow: "hidden", borderRadius: radius || 13, marginBottom: 8, display: acts ? "flex" : undefined, alignItems: acts ? "center" : undefined }}>
       <div aria-hidden="true" style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, background: hot ? C.redSolid : C.redBg, display: "flex", alignItems: "center", justifyContent: "flex-end", paddingRight: 18, color: hot ? C.onSolid : C.red, fontWeight: 800, fontSize: 13, opacity: dx < -6 ? 1 : 0, transition: "background .12s" }}>
         {hot ? "Release to " + verb : tx("← Swipe further to ") + verb}
       </div>
       {onArchive ? <div aria-hidden="true" style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, background: hotR ? C.blueSolid : C.blueBg, display: "flex", alignItems: "center", justifyContent: "flex-start", paddingLeft: 18, color: hotR ? C.onSolid : "#fff", fontWeight: 800, fontSize: 13, opacity: dx > 6 ? 1 : 0, transition: "background .12s" }}>
         {hotR ? "Release to archive" : tx("Swipe further to archive →")}
       </div> : null}
-      <div onTouchStart={start} onTouchMove={move} onTouchEnd={end} onTouchCancel={cancel} style={{ transform: "translateX(" + dx + "px)", transition: dx ? "none" : "transform .2s ease", position: "relative", touchAction: "pan-y" }}>
+      <div onTouchStart={start} onTouchMove={move} onTouchEnd={end} onTouchCancel={cancel} style={{ transform: "translateX(" + dx + "px)", transition: dx ? "none" : "transform .2s ease", position: "relative", touchAction: "pan-y", flex: acts ? "1 1 0" : undefined, minWidth: 0 }}>
         {children}
       </div>
-      {wide && (onDelete || onArchive) ? <div className="cm-swipe-acts" style={{ position: "absolute", top: 0, bottom: 0, right: 44, display: "flex", alignItems: "center", gap: 6 }}>
+      {acts ? <div className="cm-swipe-acts" style={{ display: "flex", alignItems: "center", gap: 6, paddingLeft: 8, flexShrink: 0 }}>
         {onArchive ? <button onClick={function () { onArchive(); }} style={actBtn}>Archive</button> : null}
         {onDelete ? <button onClick={function () { onDelete(); }} style={{ ...actBtn, color: C.red }}>{Verb}</button> : null}
       </div> : null}
