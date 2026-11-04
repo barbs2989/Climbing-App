@@ -41,7 +41,10 @@ const CASES = [
   { name: "4. a healthy tree reports every carrying column as declared (must PASS)",
     file: AUDIT,
     edit: s => s,
-    want: out => /all declared: true/.test(out) && !/UNDECLARED/.test(out) && !/STALE/.test(out) },
+    // STALE is NOT asserted here: it is a property of the live data sample (a declared column that
+    // happens to carry no snow word in 400 rows), not of the tree under test, and it flips as the
+    // catalog is edited. Case 2 is what proves STALE is detected.
+    want: out => /all declared: true/.test(out) && !/UNDECLARED/.test(out) },
 ];
 
 let pass = 0;

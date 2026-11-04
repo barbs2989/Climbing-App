@@ -152,6 +152,10 @@ const NOT_TERRAIN_EVIDENCE = {
   alpine_grade: "commitment grade, consumed structurally. It also conflates Roman numerals with YDS class — see CLAUDE.md.",
   ice_grade: "ice difficulty. `ice` and `mixed` are already treated as frozen disciplines by name.",
 
+  // Found carrying glacier/snow words in the live sample once the DB drifted past this list.
+  name_search: "the normalised search text derived from the route's NAME (\"Eldorado Glacier\" -> \"eldorado glacier glac gl\"). A glacier in a proper noun is not a terrain report, and name is not read as prose either.",
+  aspect: "the wall's facing. One WA row writes a sentence here (\"North-facing ridge traverses and glaciers\"); a facing is an orientation, and the sentence is a label, not a terrain report.",
+
   fa: "first-ascent history. A first WINTER ascent in 1963 says nothing about the terrain a party crosses today.",
 };
 
