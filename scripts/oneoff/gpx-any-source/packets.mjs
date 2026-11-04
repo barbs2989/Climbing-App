@@ -29,8 +29,12 @@ for (const [area, rs] of byArea) {
   const asc = (all[rec.pb.pid] || []).map(([date, ok, route, gain, mi, gps]) => ({ date, ok: !!ok, route, gain, mi, gps: !!gps }));
   const hist = {}; for (const a of asc) if (a.ok) { const m = monthOf(a.date); if (m) hist[m] = (hist[m] || 0) + 1; }
   const byRoute = {}; for (const a of asc) if (a.ok && a.route) { const k = a.route.trim(); const m = monthOf(a.date); (byRoute[k] ||= {}); if (m) byRoute[k][m] = (byRoute[k][m] || 0) + 1; }
+  // EVERY route on the peak, not just the worklist ones: a route that already has a complete track is
+  // not on the worklist, and agents seeing only the worklist reported five stored routes as "missing"
+  const allOnPeak = await selectAll("routes", "id,name,discipline,grade,gpx", `area_id=eq.${encodeURIComponent(area)}`, { pageSize: 500 });
   const packet = {
     area_id: area, peak: rec.name,
+    allRoutesOnPeak: allOnPeak.map(r => ({ id: r.id, name: r.name, discipline: r.discipline, grade: r.grade, hasTrackPts: Array.isArray(r.gpx) ? r.gpx.length : 0 })),
     peakbagger: { pid: rec.pb.pid, matchedName: rec.pb.nm, distFromOurAreaCoordM: rec.pb.dm, lat: rec.pb.lat, lng: rec.pb.lng, info: rec.pb.info || null },
     ascentMonthsAllRoutes: hist, ascentMonthsByLoggedRoute: byRoute, ascentCount: asc.length,
     routes: rs.map(r => ({

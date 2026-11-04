@@ -64,6 +64,12 @@ Packets have long lines; if Read truncates, use `node -e` to print what you need
      Keep list items short (under ~120 characters). Do not repeat what the route already says.
    - Never use a party's elapsed time as a time estimate.
 
+## Missing routes
+
+`routes[]` holds only the routes that still NEED a track. `allRoutesOnPeak` lists every route we hold
+on the peak. Before you call a route "missing", check it is not in `allRoutesOnPeak` under any name
+(wave 1 reported five "missing" standard routes that were all stored, with tracks).
+
 ## Files
 
 Write ONLY your own peaks' verdict files. Other agents run at the same time: never run, reuse or
