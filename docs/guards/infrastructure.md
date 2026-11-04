@@ -650,3 +650,17 @@ running after it exited. Five causes, all fixed in scripts only (behaviour on ma
   alone reported 1/7 while a second batch of browser walks ran beside it (its subprocess timed out,
   so the failure carried no SELF-TEST text and read as a pass). Run suites one at a time, and re-run
   any batch failure alone before diagnosing it.
+- **`"/tmp"` is `C:\tmp` on Windows**, which does not exist. Temp files come from `os.tmpdir()`.
+  `check:migration-replay` did `realpathSync(TMPDIR || "/tmp")`; a probe that created it left a
+  stray `C:\tmp` behind. Hard-coded `/tmp/...` paths remain only in one-off scripts.
+- **Supabase CLI 3.0 asks before ANY `db query` when it detects an agent** (`AI_AGENT` /
+  `CLAUDECODE` in the environment): `HostedMutationConsentRequiredError … Nothing was changed`.
+  npx fetches the latest CLI, so this arrived without a lockfile change and is not Windows-specific.
+  Every guard that only READS passes `--read-only`, which the CLI accepts without confirmation.
+  Scripts that WRITE (`apply-*`, pipeline imports, write probes) were left alone on purpose: the
+  confirmation is the point, and `--yes` is the owner's call per run.
+- **The shared UI fixture's mate is "Robin Belay" in every run**, and the orphan sweep leaves any
+  account under 45 minutes alone, so concurrent walks see each other's mates. The share sheet's
+  search is `profiles.name ilike`, so `check:new-climber-journey` found 5 Send rows and died in
+  phase 3. It now renames its own mate to `Robin Belay <id6>` before searching; the handle is
+  unchanged, so every later phase reads what it always did.
