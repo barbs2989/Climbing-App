@@ -1,0 +1,35 @@
+{
+ "co_batman_rock": {
+  "_expect": {"name": "Batman Rock", "region": "Colorado"},
+  "blurb": "Batman Rock is a granite dome high on Lumpy Ridge, above Estes Park. Most of the routes here are traditional lines of around two pitches, with a single bolted line, a top-rope problem and one aid route mixed in. The grades cluster between 5.7 and 5.9, with a handful of 5.10 and 5.11 climbs for stronger parties. Lumpy granite demands solid footwork and careful gear placement, and the walk in is long, with unmarked path splits, so expect to spend close to an hour reaching the rock. Weekends on the ridge draw crowds; weekdays are calmer. It suits climbers comfortable on moderate multi-pitch trad.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105744811/batman-rock", "https://www.mountainproject.com/v/105964422"]}
+ },
+ "co_lobby_the": {
+  "_expect": {"name": "Lobby, The", "region": "Colorado"},
+  "blurb": "The Lobby is a bouldering wall on the hillside north of Morrison, a short scramble below the better-known Black Hole. It is a long, low, gently overhanging face of sandstone, a little wider and less steep than its neighbour. About twenty problems cover nearly the full range, from V0 up to the V8 to V9 level, with the bulk of them in the V3 to V5 band and a few easier ones on bigger holds that work as a warm-up. Expect polished, greasy slopers with the odd sharp crimp, a highball on the left side, and plenty of company, since Morrison sees heavy traffic.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105745157/the-lobby", "https://www.mountainproject.com/area/105744288/morrison-boulders"]}
+ },
+ "co_main_crag": {
+  "_expect": {"name": "Main Crag", "region": "Colorado"},
+  "blurb": "Main Crag is a recently developed granite wall in the Bowling Alley zone of Boulder Canyon, just beyond Practice Rock. It centres on a steep dihedral, with a solid slab on the east side and rougher, crumblier rock on the west. Of its twenty or so routes, thirteen are bolted and seven are trad. The grades lean hard: most sit around 5.11, with a good number at 5.12 and only a few easy outings in the 5.7 to 5.10 range, so it is better for experienced leaders than newcomers. The longest lines run roughly 105 feet, which makes a 60 m rope worth bringing.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105744638/main-crag", "https://app.advcollective.com/climbing/bowling-ball-and-chain-at-boulder-canyons-main-crag"]}
+ },
+ "co_clay_creek_crag": {
+  "_expect": {"name": "Clay Creek Crag", "region": "Colorado"},
+  "blurb": "Clay Creek Crag is a sandstone cliff in the hills above Norwood, within easy reach of Telluride. Most of the twenty routes are bolted, with a few trad lines. Grades run from 5.8 to 5.12, but the middle is where the crag shines: eight routes sit around 5.10, with a half-dozen at 5.8 and a few at 5.9 for warming up. The stone is clean and solid, though the ground at the base can be loose dirt. Bring a standard rack of quickdraws, plus nuts and cams for the gear routes. The crag sees far fewer visitors than the nearby Telluride venues.",
+  "review": {"sources": ["https://mountainproject.com/area/105969858/clay-creek-crag", "https://app.advcollective.com/climbing/lucky-charms-at-clay-creek-crag"]}
+ },
+ "co_morrison_routes": {
+  "_expect": {"name": "Morrison Routes", "region": "Colorado"},
+  "blurb": "Morrison Routes is the long sandstone cliff on the north side of Morrison, the roped counterpart to the town's famous bouldering. Its twenty climbs are a trad-heavy mix, with sport lines, a few top-rope routes and a single boulder problem. Grades range from 5.6 up to 5.13, with a core of moderates around 5.7 to 5.9 and a surprising cluster of hard 5.12 lines. The cliff faces southwest, so it catches the afternoon sun. The rock is hard, the walk from the roadside is steep but very short, and its position at the edge of town makes it a quick, convenient stop.",
+  "review": {"sources": ["https://mountainproject.com/area/106853866/morrison-routes", "https://www.mountainproject.com/area/classics/105802697/morrisonevergreen"]}
+ },
+ "_skipped": {
+  "co_08_lesser_of_two_evils": "no fetched page is about this wall itself; only the parent Bank page lists it",
+  "co_titanic": "no fetched page about the Titanic crag itself (only the Hardscrabble Pass parent page)",
+  "co_quarry_proper": "only one fetched page names Quarry Proper; parent and canyon pages do not mention it"
+ },
+ "_conflicts": {
+  "co_morrison_routes": "Stored parking_name is Mount Falcon Park Morrison Trailhead, but https://mountainproject.com/area/106853866/morrison-routes places parking at the roadside where the road splits into a one-way street in town."
+ }
+}

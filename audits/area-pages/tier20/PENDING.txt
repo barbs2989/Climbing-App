@@ -1,11 +1,12 @@
 Tier 20 (areas with 20-29 climbs, no blurb) — resume note.
 
-Applied and verified live: u01-u64 (395 areas written, 117 skipped).
-  u01-u40 in PR #3123; u41-u64 in the next PR.
-Researching / not yet applied: u65-u72 (Colorado).
-Next: u73 onward through u125 (New Mexico), then rebuild inputs with
-area-page-inputs.mjs --skip <every handled id> for the states after
-New Mexico (the first build hit PostgREST's 1000-row cap).
+Applied and verified live: u01-u125 (751 areas written) - the whole first input build.
+  u01-u40 #3123; u41-u64 #3124; u65-u88 #3125; u89-u112 #3126; u113-u125 in the next PR.
+Next: second input build, New Mexico onward, in passes of 400 rows:
+  area-page-inputs.mjs --min 20 --max 29 --skip <every handled id>
+  --from-region "New Mexico" --limit 400 --start 126 --prefix u
+(PostgREST caps a read at 1000 rows, and the unpaged read timed out).
+The skip list comes from every batch here, written and _skipped.
 
 Source standard: two different fetched pages, at least one about the
 crag itself; a parent-area or route page that mentions the crag is fine
