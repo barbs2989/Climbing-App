@@ -36365,3 +36365,43 @@ No SQL file this batch — nothing to fix.
 
 Next batch will continue id-ascending from `wa_ingalls_peak_friends_in_high_places` (see progress
 file).
+
+## Batch 501 (pass 8) — 2026-11-04
+
+Checked 8 routes across four peaks: both Ingalls Peak North Peak routes (`north_peak_southwest_face`,
+`south_ridge`), all three Inner Constance routes (`northwest_buttress`, `seans_route`, `standard`),
+`wa_inspiration_peak_west_ridge`, and both Iron Cap Mountain routes (`northeast_shoulder`,
+`south_route_2`).
+
+Seven clean, one flagged — no SQL this batch. `wa_ingalls_peak_north_peak_southwest_face` is a bare
+row (only `approach`/`approach_logistics` populated); its trailhead and approach description are
+consistent with its South Ridge sibling route. `wa_ingalls_peak_south_ridge`'s `high_point_ft: 7662`
+matches Wikipedia/PeakVisor/SummitPost exactly, and its FA ("Keith Rankin & Ken Solberg, May 30,
+1941") is confirmed via SummitPost and an OpenBeta route page — Wikipedia's own "Keith Lankin" spelling
+looks like Wikipedia's typo, not ours. `wa_inspiration_peak_west_ridge`'s `high_point_ft: 7891`
+matches Wikipedia/PeakVisor (one Lemke Climbs trip report gives 7880, a minor variant, not a real
+contradiction); its FA ("Fred Beckey and Helmy Beckey, August 29, 1940") is confirmed verbatim via
+Wikipedia, PeakVisor, and Mountain Project. Both `wa_iron_cap_mountain_northeast_shoulder` and
+`wa_iron_cap_mountain_south_route_2` are fully bare rows (only name/discipline/grade populated) —
+nothing stored to check against a source.
+
+Flagged for human review: `wa_inner_constance_standard`'s `high_point_ft: 7672` (and its own overview
+text's "7,672 ft by LiDAR" claim) disagrees with its two sibling routes on the same peak —
+`wa_inner_constance_northwest_buttress` and `wa_inner_constance_seans_route` both store
+`high_point_ft: 7670`, the figure Wikipedia cites (attributed to Peakbagger) and the one most
+consistently repeated across independent sources. A separate search surfaced what appears to be
+Peakbagger's own detail page giving a more precise 7672.1 ft NAVD88 reading at this peak's exact
+stored coordinates, so both numbers have some real sourcing behind them — most likely an older
+rounded figure vs. a newer precise/datum-adjusted one, the same kind of split seen on other peaks in
+this catalog — rather than one of the three rows being a clean mistake. Not confident enough to pick a
+winner and write SQL; left for a human to adjudicate (and to decide whether all three routes on this
+peak should be forced to agree). Also surfaced but left unflagged, since nothing contradicts them,
+only nothing corroborates them: `wa_inner_constance_northwest_buttress`'s FA (Eric Hardee & Dan
+Coffey, 1983), `wa_inner_constance_seans_route`'s FA (Sean Allen & Peter Darragh, August 2021), and
+`wa_inner_constance_standard`'s peak FA ("Unknown; first ascent of peak 1939 by David Harrah party") —
+all too obscure for Wikipedia/AAC/SummitPost to confirm or contradict a first-ascent claim this minor
+on a rarely-climbed, little-documented Olympics summit.
+
+No SQL file this batch — nothing confirmed wrong enough to fix.
+
+Next batch will continue id-ascending from `wa_iron_cap_mountain_south_route_2` (see progress file).

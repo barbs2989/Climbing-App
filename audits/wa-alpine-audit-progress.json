@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_ingalls_peak_friends_in_high_places",
+  "last_processed_id": "wa_iron_cap_mountain_south_route_2",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 500 complete. Continuing id-ascending scope from wa_ingalls_peak_friends_in_high_places (next batch starts after it).",
+  "pass_note": "Pass 8 in progress, batch 501 complete. Continuing id-ascending scope from wa_iron_cap_mountain_south_route_2 (next batch starts after it).",
   "batches": [
     {
       "batch_number": 1,
@@ -9945,6 +9945,26 @@
       "clean": 8,
       "sql_file": null,
       "note": "All eight routes clean. Hurry-up Peak high_point_ft=7821 and its position between Magic Mountain and Spider Mountain confirmed via Wikipedia/PeakVisor. Both Icy Peak routes' high_point_ft=7073 matches Wikipedia/ListsOfJohn LiDAR; Hannegan Caldera geology claim consistent with USGS source (minor nuance, not flagged); Ruth Mountain summit-camp waypoint (7100 ft) plausibly below Ruth's own 7115 ft summit. Indian Head Peak high_point_ft=7447 within 1 ft of Wikipedia/PeakVisor's 7448 ft LiDAR figure; FA (D.C. Linsley and John A. Tennant, railroad survey party, July 2 1870) confirmed verbatim. Indian Mountain high_point_ft=7133 and coordinates match Wikipedia exactly; confirmed this is the Whatcom Pass/Chilliwack River peak (not literally near Mt. Baker) despite the row's own '_baker' suffix and pre-existing corrections-field caution -- underlying data is correct, a naming curiosity only, no SQL warranted. Ingalls Peak East Peak high_point_ft=7480 (both routes) matches Wikipedia/Mountaineers.org; 1952 FA (Gene Prater, Bill Prater, Stan Butchart) confirmed, our 'Butchart' spelling correct against a Wikipedia typo. Main Ingalls Peak high_point_ft=7662 matches Wikipedia/UO reference; 'Friends In High Places' 2024 FA (Sackett/Angell/Everly) confirmed via Mountain Project, including a comment from FA member Haigh Angell himself; MP route coordinates match stored peak coordinate. 0 fixes, 0 flagged, 8 clean."
+    },
+    {
+      "batch_number": 501,
+      "date": "2026-11-04",
+      "pass": 8,
+      "route_ids": [
+        "wa_ingalls_peak_north_peak_southwest_face",
+        "wa_ingalls_peak_south_ridge",
+        "wa_inner_constance_northwest_buttress",
+        "wa_inner_constance_seans_route",
+        "wa_inner_constance_standard",
+        "wa_inspiration_peak_west_ridge",
+        "wa_iron_cap_mountain_northeast_shoulder",
+        "wa_iron_cap_mountain_south_route_2"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 1,
+      "clean": 7,
+      "sql_file": null,
+      "note": "Seven clean, one flagged (no SQL -- genuine ambiguity, not a confident fix). wa_ingalls_peak_north_peak_southwest_face is a bare row (only approach/approach_logistics); its approach text and trailhead coords are consistent with its South Ridge sibling. wa_ingalls_peak_south_ridge: high_point_ft=7662 confirmed via Wikipedia/PeakVisor/SummitPost; FA (Keith Rankin & Ken Solberg, May 30 1941) confirmed via SummitPost and an OpenBeta route page (Wikipedia's 'Keith Lankin' looks like Wikipedia's own typo, not ours). wa_inspiration_peak_west_ridge: high_point_ft=7891 matches Wikipedia/PeakVisor (one trip report gives 7880, a minor variant, not a contradiction); FA (Fred & Helmy Beckey, Aug 29 1940) confirmed via Wikipedia/PeakVisor/Mountain Project. wa_iron_cap_mountain_northeast_shoulder and wa_iron_cap_mountain_south_route_2 are both fully bare rows (no fields populated beyond name/discipline/grade) -- nothing stored to check. Flagged: wa_inner_constance_standard's high_point_ft=7672 (and its own overview text's '7,672 ft by LiDAR' claim) disagrees with its two sibling routes on the same peak, wa_inner_constance_northwest_buttress and wa_inner_constance_seans_route, which both store high_point_ft=7670 -- the figure Wikipedia cites (attributed to Peakbagger) and the one most consistently repeated across sources. A separate search surfaced Peakbagger's own detail page apparently giving a more precise 7672.1 ft NAVD88 reading at this peak's exact stored coordinates, so both numbers have some sourcing behind them (likely an older rounded figure vs a newer precise/datum-adjusted one, the same kind of split seen on other peaks in this catalog) -- not confident enough to pick one and write SQL, left for human judgment rather than guessed. Also unconfirmable either way and left unflagged (no contradicting source, just no corroborating one): wa_inner_constance_northwest_buttress's FA (Eric Hardee & Dan Coffey, 1983), wa_inner_constance_seans_route's FA (Sean Allen & Peter Darragh, Aug 2021), and wa_inner_constance_standard's peak FA (unknown climber, 'David Harrah party', 1939) -- all too obscure for Wikipedia/AAC/SummitPost to confirm or contradict a specific route-level or peak-level first-ascent claim this minor."
     }
   ]
 }
