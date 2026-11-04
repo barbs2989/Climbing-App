@@ -118,6 +118,12 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
     The search box is debounced 250 ms. With no name typed, both RPCs now read the subtree's areas first and each area's routes
     through `routes_area_idx`: Sport + Trad 5.6–5.10a in Central-East Cascades used to walk the grade index across every state and hit
     the 3 s anon timeout. A name search keeps 0244/0245's name-index plan.
+    **That held only for a role that bypasses RLS** (postgres, 19 ms). The app's `anon` role does not, and under RLS the planner
+    will not apply a non-leakproof `numeric >=`/`<=` ahead of the policy, so with a grade range it went back to `routes_grade_idx`
+    once per area: every region of WA, CA, CO and UT still timed out (measured 2026-11-04). **0398** compares `grade_num + 0`,
+    which no index matches, in both branches of both RPCs; the 12 largest regions now answer in 0.1–0.8 s (list) and ~0.1 s (count).
+    `grade_num` is the only finder filter column with a btree index on `routes`. **Time any change to these RPCs as `anon`**
+    (`set local role anon` in `supabase db query`, or the REST endpoint), never only as postgres.
   - **Pinned search bar** (`usePinnedBar`): Routes | Areas, the box, Filters and the chips pin under the app's top bar once you scroll
     past them. Fixed-position with a placeholder, not CSS sticky: on a phone the document scrolls while `#appscroll` (overflow:auto) only grows.
   - **Save from the list**: a ☆ beside each row opens a save sheet: My Objectives (`toggleWish`), your own lists (`toggleListRoute` in
