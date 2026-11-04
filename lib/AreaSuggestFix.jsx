@@ -10,6 +10,7 @@
 // sheet never claims a write it could not make (check:claims). It resolves to true when the
 // rows were written. `area` may be null while a guard walks the overlay by name; the sheet
 // then renders its fields with nothing to submit to.
+import { tx } from "./tapWords.js";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { AREA_EDIT_FIELDS, ASPECTS, MONTH_ABBR, PIN_NAME_MAX, myPendingAreaEdits, monthsLabel, pinLabel, pinProblem } from "./areaFields";
@@ -125,7 +126,7 @@ export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, on
             {f.type === "aspect" ? <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>{f.opts.map(o => <button key={o} onClick={() => set(f.k, v === o ? "" : o)} aria-pressed={v === o} style={{ ...CHIP, border: "1px solid " + (v === o ? C.blue : C.border), background: v === o ? C.blueBg : C.card, color: v === o ? C.onSolid : C.textSub }}>{o === "varies" ? "Varies" : o}</button>)}</div> : null}
             {f.type === "months" ? <div style={{ display: "flex", gap: 3 }}>{MONTH_ABBR.map((m, i) => { const on = Array.isArray(v) && v.includes(i + 1); return <button key={m} onClick={() => set(f.k, on ? (v || []).filter(x => x !== i + 1) : [...(v || []), i + 1])} aria-pressed={on} aria-label={m} style={{ flex: 1, minWidth: 0, minHeight: 36, padding: 0, borderRadius: 7, border: "1px solid " + (on ? C.green : C.border), background: on ? C.greenBg : C.card, color: on ? C.green : C.textSub, fontSize: 10.5, fontWeight: 700, cursor: "pointer" }}>{m[0]}</button>; })}</div> : null}
             {f.type === "pin" ? <div>
-              <WaypointMapPicker waypoints={pinWps} activeIdx={0} peakCoord={crag} tapHint={pinWps.length ? "Tap the map to move the parking pin" : "Tap the map where climbers park"} onPick={(la, ln) => setPin({ lat: la.toFixed(6), lng: ln.toFixed(6) })} />
+              <WaypointMapPicker waypoints={pinWps} activeIdx={0} peakCoord={crag} tapHint={pinWps.length ? tx("Tap the map to move the parking pin") : tx("Tap the map where climbers park")} onPick={(la, ln) => setPin({ lat: la.toFixed(6), lng: ln.toFixed(6) })} />
               <div style={{ display: "flex", gap: 6, marginBottom: 6 }}>
                 <input value={pin.lat} onChange={e => setPin({ lat: e.target.value })} inputMode="decimal" placeholder="Latitude" aria-label="Parking latitude" style={{ ...input, flex: 1, minWidth: 0 }} />
                 <input value={pin.lng} onChange={e => setPin({ lng: e.target.value })} inputMode="decimal" placeholder="Longitude" aria-label="Parking longitude" style={{ ...input, flex: 1, minWidth: 0 }} />
