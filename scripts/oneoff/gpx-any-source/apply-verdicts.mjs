@@ -16,7 +16,14 @@ const [stage, vDir, ...rest] = process.argv.slice(2);
 const WRITE = rest.includes("--write");
 const args = rest.filter(a => a !== "--write");
 const verdicts = fs.readdirSync(vDir).filter(f => f.endsWith(".json")).map(f => JSON.parse(fs.readFileSync(path.join(vDir, f), "utf8")));
+// holds.json (beside the verdicts dir): { "tracks": { route_id: why }, "pins": {...}, "facts": {...} } —
+// the reviewer's overrides. A held item is never applied.
+const holdFile = path.join(path.dirname(path.resolve(vDir)), "holds.json");
+const HOLD = fs.existsSync(holdFile) ? JSON.parse(fs.readFileSync(holdFile, "utf8")) : {};
+const held = (kind, id) => { const why = HOLD[kind]?.[id]; if (why) console.log(`HELD ${kind} ${id}: ${why}`); return !!why; };
 const routesV = verdicts.flatMap(v => (v.routes || []).map(r => ({ ...r, area_id: v.area_id })));
+// JSONB reorders object keys, so compare stored values by CONTENT, never by JSON text
+const canon = v => JSON.stringify(v, (k, x) => x && typeof x === "object" && !Array.isArray(x) ? Object.keys(x).sort().reduce((o, kk) => (o[kk] = x[kk], o), {}) : x);
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 async function getRow(id, cols) {
   const rows = await selectAll("routes", cols, `id=eq.${encodeURIComponent(id)}`, { pageSize: 10 });
@@ -34,6 +41,7 @@ const rollback = (name, rows) => { const f = path.join(REPO, "scripts", `rollbac
 if (stage === "pins") {
   const plan = [];
   for (const r of routesV) for (const p of r.pins || []) {
+    if (held("pins", r.route_id)) continue;
     if (!["Summit", "Trailhead"].includes(p.type) || !["move", "add"].includes(p.action) || !Number.isFinite(p.lat) || !Number.isFinite(p.lng)) { console.log("SKIP malformed pin", r.route_id, JSON.stringify(p)); continue; }
     if (p.type === "Trailhead" && !p.confirmedBy) { console.log("SKIP trailhead without a confirming source", r.route_id); continue; }
     plan.push({ id: r.route_id, area: r.area_id, p });
@@ -67,7 +75,7 @@ if (stage === "pins") {
   rollback("pins", writes.map(w => ({ id: w.id, before: { waypoints: w.before } })));
   let bad = 0;
   for (const w of writes) { await patchRow("routes", w.id, { waypoints: w.after }); await sleep(1000); }
-  for (const w of writes) { const now = await getRow(w.id, "id,waypoints"); if (JSON.stringify(now.waypoints) !== JSON.stringify(w.after)) { bad++; console.log("RECONCILE", w.id); } }
+  for (const w of writes) { const now = await getRow(w.id, "id,waypoints"); if (canon(now.waypoints) !== canon(w.after)) { bad++; console.log("RECONCILE", w.id); } }
   console.log(`pins written ${writes.length}, reconcile problems ${bad}`);
 }
 
@@ -78,7 +86,7 @@ if (stage === "tracks") {
   const decisions = [];
   for (const r of routesV) {
     const t = r.track;
-    if (!t || t.verdict !== "same" || t.inSeason !== true) continue;
+    if (!t || t.verdict !== "same" || t.inSeason !== true || held("tracks", r.route_id)) continue;
     const tr = (harvest.get(r.area_id)?.tracks || []).find(x => String(x.aid) === String(t.aid));
     if (!tr?.pts || tr.pts.length < 10) { console.log("SKIP no points", r.route_id, t.aid); continue; }
     if (!/Successful Summit/i.test((tr.stats || []).find(s => s[1] === "Ascent Type")?.[2] || "")) { console.log("SKIP not a logged summit", r.route_id, t.aid); continue; }
@@ -101,7 +109,7 @@ if (stage === "facts") {
   const writes = [], refused = [];
   for (const r of routesV) {
     const facts = (r.facts || []).filter(f => f && typeof f.text === "string" && f.text.trim());
-    if (!facts.length) continue;
+    if (!facts.length || held("facts", r.route_id)) continue;
     const reports = (harvest.get(r.area_id)?.tracks || []).map(t => t.tr || "").join("\n");
     const repGrams = grams(reports, 6);
     const row = await getRow(r.route_id, "id,area_id,watch_out,pro_tips,what_to_bring,seasonal_guidance,approach,descent_text");
@@ -109,6 +117,7 @@ if (stage === "facts") {
     const after = {}, cur = k => after[k] ?? row[k];
     for (const f of facts) {
       const text = f.text.trim().replace(/\s+/g, " ");
+      if ((HOLD.factText || []).some(x => text.includes(x))) { refused.push([r.route_id, "held by reviewer: " + text.slice(0, 50)]); continue; }
       const copied = [...grams(text, 6)].find(g => repGrams.has(g));
       if (copied) { refused.push([r.route_id, "copied: " + copied]); continue; }
       if (shoutedStrings(text).length) { refused.push([r.route_id, "shouted"]); continue; }
@@ -142,6 +151,6 @@ if (stage === "facts") {
   rollback("facts", writes.map(w => ({ id: w.id, before: w.before })));
   let bad = 0;
   for (const w of writes) { await patchRow("routes", w.id, w.after); await sleep(1000); }
-  for (const w of writes) { const now = await getRow(w.id, "id," + Object.keys(w.after).join(",")); for (const k of Object.keys(w.after)) if (JSON.stringify(now[k]) !== JSON.stringify(w.after[k])) { bad++; console.log("RECONCILE", w.id, k); } }
+  for (const w of writes) { const now = await getRow(w.id, "id," + Object.keys(w.after).join(",")); for (const k of Object.keys(w.after)) if (canon(now[k]) !== canon(w.after[k])) { bad++; console.log("RECONCILE", w.id, k); } }
   console.log(`fact rows written ${writes.length}, reconcile problems ${bad}`);
 }
