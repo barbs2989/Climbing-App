@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Capture each tab at phone size so a HUMAN (or a model that can see) can look at it.
 // Every browser guard in this repo reads text or geometry; none of them can tell whether
 // a screen looks right. This exists to be looked at, not to assert.
@@ -31,8 +32,8 @@ const port = await freePort(5420, 5459);
 if (port === null) { console.error("no free port"); process.exit(1); }
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
 
-const server = spawn("npx",
-  ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "pipe", "pipe"], detached: true });
 server.stdout.on("data", () => {});
 server.stderr.on("data", (d) => { const s = String(d); if (/ANCHOR LOST|Error/.test(s)) process.stderr.write(s); });

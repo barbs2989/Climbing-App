@@ -59,7 +59,7 @@ const fail = (m) => { console.log(`  FAIL  ${m}`); failures++; };
 const ok = (m) => console.log(`  ok    ${m}`);
 const dead = (m) => { console.error(`\ncheck:action-versions DIED — ${m}\n`); process.exit(1); };
 
-if (!fs.existsSync(WF)) dead(`${path.relative(ROOT, WF)} does not exist — nothing was scanned`);
+if (!fs.existsSync(WF)) dead(`${path.relative(ROOT, WF).replace(/\\/g, "/")} does not exist — nothing was scanned`);
 const files = fs.readdirSync(WF).filter((f) => /\.ya?ml$/.test(f));
 if (!files.length) dead("no workflow files found — the scan is broken, not the CI clean");
 

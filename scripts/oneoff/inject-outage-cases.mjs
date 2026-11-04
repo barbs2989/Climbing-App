@@ -1,3 +1,4 @@
+import { NPM, NPM_PRE } from "../lib/npx.mjs";
 // Injection cases for check:outage.
 //
 // The expected result of that guard is "no findings", which is exactly what a BROKEN guard
@@ -197,7 +198,7 @@ for (const name of wanted) {
       console.log(`\n[${name}] no edit — the guard must PASS on an unmodified tree`);
     }
 
-    const r = spawnSync("npm", ["run", "check:outage"], { encoding: "utf8", cwd: ROOT });
+    const r = spawnSync(NPM, [...NPM_PRE, "run", "check:outage"], { encoding: "utf8", cwd: ROOT });
     const out = (r.stdout || "") + (r.stderr || "");
     const failed = r.status !== 0;
     const dead = /DID NOT RUN/.test(out);

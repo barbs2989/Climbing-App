@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Two "sort by distance" controls did nothing, and said nothing about it.
 //
 // `haveMyLoc`'s own comment states the rule for FILTERS:
@@ -28,13 +30,13 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", ".
 const out = path.join(ROOT, `.distsort-${process.pid}.mjs`);
 const clean = () => fs.rmSync(out, { force: true });
 
-execFileSync("npx", ["esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
+execFileSync(NPX, [...NPX_PRE, "esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
   "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
   "--define:import.meta.env={}",
   "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
   "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 
-const { distMiles, ME } = await import(out + "?t=" + Date.now());
+const { distMiles, ME } = await import(fileHref(out + "?t=" + Date.now()));
 if (typeof distMiles !== "function" || !ME) { console.error("ANCHOR LOST — core no longer exports distMiles/ME."); process.exit(1); }
 
 let bad = 0;

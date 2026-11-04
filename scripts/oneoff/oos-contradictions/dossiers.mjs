@@ -1,7 +1,8 @@
+import { fileURLToPath } from "node:url";
 // Build one compact dossier file per research batch: every rich out-of-state route, grouped by area,
 // batches of ~4-6 routes (whole areas kept together), with the detector's hints attached.
 import fs from "node:fs";
-const T = new URL("../../../audits/oos-contradictions", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/oos-contradictions", import.meta.url));
 const R = JSON.parse(fs.readFileSync(`${T}/oos-routes.json`));
 const A = Object.fromEntries(JSON.parse(fs.readFileSync(`${T}/oos-areas.json`)).map(a => [a.id, a]));
 const F = JSON.parse(fs.readFileSync(`${T}/findings.json`));

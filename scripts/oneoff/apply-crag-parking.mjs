@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Writes researched crag PARKING (areas.parking_*, 0255) from per-destination research files, after
 // checking each spot mechanically. Usage: node scripts/oneoff/apply-crag-parking.mjs <dir> [--apply]
 // <dir>/*.json: [{ area_id, lat, lng, name, confidence: "high"|"medium", basis }]
@@ -62,4 +63,4 @@ const out = path.join(dir, "apply.sql"); fs.writeFileSync(out, sql + "\n");
 for (const it of ok) console.log(`OK   ${it.confidence.padEnd(6)} ${it.area_id} (${it.areaName}) ← ${it.name} ${it.lat},${it.lng} ${it.km != null ? it.km.toFixed(2) + " km" : ""} [${it.lots[0]}]`);
 for (const it of refused) console.log(`SKIP ${it.area_id}: ${it.why.join("; ")}`);
 console.log(`${ok.length} accepted, ${refused.length} refused → ${out}`);
-if (APPLY && ok.length) { execFileSync("npx", ["supabase", "db", "query", "--linked", "-f", out], { stdio: "inherit" }); console.log("applied — re-read to reconcile"); }
+if (APPLY && ok.length) { execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "-f", out], { stdio: "inherit" }); console.log("applied — re-read to reconcile"); }

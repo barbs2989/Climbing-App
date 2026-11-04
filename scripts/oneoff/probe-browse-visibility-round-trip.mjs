@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 /* Does the "show my name while browsing" switch actually keep its promise?
  *
  * check:visibility-switches proves the WIRING — that the value is stored through the guarded
@@ -30,7 +31,7 @@ globalThis.localStorage = {
   setItem: (k, v) => { if (mode === "throw") throw new Error("QuotaExceededError"); store[k] = String(v); },
 };
 
-const mod = await import(path.join(ROOT, "lib", "browse-visibility-pref.js"));
+const mod = await import(fileHref(path.join(ROOT, "lib", "browse-visibility-pref.js")));
 const { visibleWhileBrowsingPref, saveVisibleWhileBrowsing } = mod;
 if (typeof visibleWhileBrowsingPref !== "function" || typeof saveVisibleWhileBrowsing !== "function")
   dead("lib/browse-visibility-pref.js does not export the loader and saver — ANCHOR LOST");

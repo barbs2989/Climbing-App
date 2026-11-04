@@ -65,5 +65,5 @@ fs.writeFileSync(file, JSON.stringify(rollback, null, 1));
 // A 200 is not evidence the data changed: re-read and reconcile.
 const after = await selectAll("routes", "id,season", `id=in.(${FIXES.map((f) => f.id).join(",")})`, { key });
 const wrong = FIXES.filter((f) => (after.find((a) => a.id === f.id) || {}).season !== f.season);
-console.log(`\nAPPLIED ${done}/${FIXES.length}; re-read mismatches: ${wrong.length}; rollback: ${path.relative(ROOT, file)}`);
+console.log(`\nAPPLIED ${done}/${FIXES.length}; re-read mismatches: ${wrong.length}; rollback: ${path.relative(ROOT, file).replace(/\\/g, "/")}`);
 if (wrong.length) process.exit(1);

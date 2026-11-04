@@ -1,3 +1,4 @@
+import { fileHref } from "../lib/file-href.mjs";
 // Proof for the `beta` clobber. Renders the real RouteDetail with `beta` held as an array
 // (what dbRouteToCamel and the seed both produce) and as a string (what the contribute form
 // produces today, since CONV has no `beta` entry).
@@ -38,7 +39,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render } = await import(out);
+const { render } = await import(fileHref(out));
 
 const BASE = {
   id: "prove_beta", name: "Guard Route", grade: "5.8", pitches: 4,

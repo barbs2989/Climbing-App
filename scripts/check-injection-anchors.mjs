@@ -122,6 +122,9 @@ for (const f of files) {
       return r;
     }
     if (n.type === "MemberExpression" && !n.computed && n.property.name === "pathname") return resolve(n.object);
+    // fileURLToPath(new URL(rel, import.meta.url)) — the spelling that also works on Windows, where
+    // `.pathname` yields "/C:/…" — names the same file as the `.pathname` form above.
+    if (n.type === "CallExpression" && n.callee.type === "Identifier" && n.callee.name === "fileURLToPath") return resolve(n.arguments[0]);
     if (n.type === "NewExpression" && n.callee.type === "Identifier" && n.callee.name === "URL") {
       const rel = lit(n.arguments[0]);
       return rel === null ? null : path.posix.normalize(path.posix.join("scripts/oneoff", rel));

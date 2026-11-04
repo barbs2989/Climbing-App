@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // check:field-renders reports access.land_manager as reaching no screen, but RouteDetail
 // plainly builds a ["Land manager", landMgrVal] row from it. One of the two is wrong. Render
 // the guard's own sample route on every sub-tab and look.
@@ -6,7 +7,7 @@ import { createRequire } from "module";
 import fs from "fs"; import os from "os"; import path from "path";
 import { SUPABASE_URL, anonKey, headers } from "../lib/supabase-env.mjs";
 
-const ROOT = new URL("../..", import.meta.url).pathname.replace(/\/$/, "");
+const ROOT = fileURLToPath(new URL("../..", import.meta.url)).replace(/\/$/, "");
 const require_ = createRequire(import.meta.url);
 const ENTRY = `
 import React from "react";

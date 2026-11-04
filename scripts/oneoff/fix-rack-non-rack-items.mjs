@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // The RACK card showed an ice axe. Re-home every non-rack item out of the rack columns — every state
 // (the first three passes were WA; the fourth ran the same rewrite over the rest of the catalog).
 //
@@ -28,7 +29,7 @@ import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../lib/supab
 import { rackFromText, isRackEntry, isNonRackGear } from "../../lib/rack.js";
 
 const APPLY = process.argv.includes("--apply");
-const here = path.dirname(new URL(import.meta.url).pathname);
+const here = path.dirname(fileURLToPath(new URL(import.meta.url)));
 const REWRITES = JSON.parse(fs.readFileSync(path.join(here, "rack-rewrites.json"), "utf8"));
 
 /* pro_needs is a protection STATEMENT; the clause advising non-rack kit moves out of it. */

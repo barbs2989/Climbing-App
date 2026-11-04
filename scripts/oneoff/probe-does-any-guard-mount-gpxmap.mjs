@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Do the browser guards actually RUN GPXMap, or do they only visit the tab it lives on?
 //
 // GPXMap is ~200 dense lines that draw the track, every waypoint marker, the endpoint dots, the
@@ -52,9 +53,8 @@ const port = await claimPort(PORT);
 if (port === null) { console.error(`no free port in ${PORT}-${PORT + 39}`); process.exit(1); }
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
 console.log(`driving the SHARED scaffold (overlay-scroll.config.mjs) on ${port}...`);
-const server = spawn(
-  "npx",
-  ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } },
 );
 let died = false;

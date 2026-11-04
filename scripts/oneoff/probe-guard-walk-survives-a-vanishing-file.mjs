@@ -51,7 +51,7 @@ const walk = (dir) => {
     const p = path.join(dir, name);
     let st; try { st = fs.statSync(p); } catch { continue; }
     if (st.isDirectory()) walk(p);
-    else if (/\.(jsx?|mjs)$/.test(name) && name.startsWith(".")) dotSource.push(path.relative(ROOT, p));
+    else if (/\.(jsx?|mjs)$/.test(name) && name.startsWith(".")) dotSource.push(path.relative(ROOT, p).replace(/\\/g, "/"));
   }
 };
 walk(ROOT);

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // One-off: apply REVIEWED corrections to a handful of routes' `approach` and `approach_variants`.
 //
 //   node scripts/oneoff/apply-approach-fixes.mjs <fixes.json> [--apply]
@@ -62,7 +63,7 @@ console.log(`\n${plan.length} to write, ${refused} refused.`);
 if (!APPLY) { console.log("dry run — pass --apply to write."); process.exit(refused ? 1 : 0); }
 if (!plan.length) process.exit(refused ? 1 : 0);
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "..", "..");
 const rb = path.join(ROOT, "audits", "approach-primary", `rollback-approach-fixes-${Date.now()}.json`);
 fs.writeFileSync(rb, JSON.stringify(plan.map((p) => ({ id: p.id, area_id: p.area_id, ...p.before })), null, 1));
 console.log(`rollback written: ${rb}`);

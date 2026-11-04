@@ -129,7 +129,7 @@ if (!APPLY) { console.log(`  DRY RUN - pass --apply to write.\n`); process.exit(
 const svc = requireServiceKey();
 const rb = path.join(ROOT, "scripts", `rollback-grade-num-corroborated-${Date.now()}.json`);
 fs.writeFileSync(rb, JSON.stringify(writes.map((w) => ({ id: w.id, grade_num: w.from })), null, 2));
-console.log(`  rollback written: ${path.relative(ROOT, rb)}\n`);
+console.log(`  rollback written: ${path.relative(ROOT, rb).replace(/\\/g, "/")}\n`);
 
 let bad = 0;
 for (const w of writes) {

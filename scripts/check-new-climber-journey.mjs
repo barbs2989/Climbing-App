@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // check:new-climber-journey — does what a NEW climber enters actually survive?
 //
 // WHY THIS EXISTS. Four static censuses found six defects that a real account hits in its first
@@ -114,7 +115,7 @@ try {
   await sweepOrphans(log);
   const port = await freePort();
   const base = `http://127.0.0.1:${port}/`;
-  server = spawn("npx", ["vite", "--config", "scripts/journey.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/journey.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   let died = false;
   server.on("exit", () => { died = true; });

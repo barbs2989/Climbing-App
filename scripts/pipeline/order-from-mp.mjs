@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // order-from-mp.mjs — fill `routes.sort_order` (left-to-right on the wall) from Mountain Project's area
 // pages, and add the sport / trad / top-rope climbs a wall is missing so the order has no gaps. Run under
 // the owner's written permission from onX to crawl mountainproject.com (2026-09-24), paced by
@@ -102,7 +103,7 @@ async function retrying(fn) {
 // due to connection timeout" (status 544) while the database was busy, and the loop moved on without it.
 function sql(text) {
   for (let t = 0; ; t++) {
-    try { const out = execFileSync("npx", ["supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1 << 30, stdio: ["ignore", "pipe", "pipe"] }); const at = [out.indexOf("{"), out.indexOf("[")].filter(i => i >= 0); const j = JSON.parse(out.slice(Math.min(...at))); if (j._tag === "Error") throw new Error(JSON.stringify(j.error)); const rows = Array.isArray(j) ? j : j.rows; if (!Array.isArray(rows)) throw new Error("unexpected output " + out.slice(0, 200)); return rows; }
+    try { const out = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1 << 30, stdio: ["ignore", "pipe", "pipe"] }); const at = [out.indexOf("{"), out.indexOf("[")].filter(i => i >= 0); const j = JSON.parse(out.slice(Math.min(...at))); if (j._tag === "Error") throw new Error(JSON.stringify(j.error)); const rows = Array.isArray(j) ? j : j.rows; if (!Array.isArray(rows)) throw new Error("unexpected output " + out.slice(0, 200)); return rows; }
     catch (e) { if (t >= 7) throw e; execFileSync("sleep", [String(Math.min(60, 5 * 2 ** t))]); }
   }
 }

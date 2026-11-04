@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // probe:tap-targets (hand-run) — how big is every control a finger can reach, and how far does a
 // touch BESIDE it still reach it? Owner note 2026-10-28, "Some clicks links are small".
 //
@@ -24,7 +26,7 @@ import { MENU_SCREENS, openFromMenu } from "../lib/menu-screens.mjs";
 import { assertQuietBox } from "../lib/quiet-box.mjs";
 
 const box = assertQuietBox("probe-tap-targets.mjs"); void box;
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 const argv = process.argv.slice(2);
 const ONLY = argv.includes("--only") ? argv[argv.indexOf("--only") + 1] : null;
 const want = (part) => !ONLY || ONLY === part;
@@ -58,7 +60,7 @@ async function startServer(autologin, from) {
   const port = await claimPort(from);
   if (port === null) { console.error(`probe:tap-targets: no free port in ${from}-${from + 39}`); process.exit(1); }
   const base = `http://127.0.0.1:${port}/Climbing-App/`;
-  const srv = spawn("npx", ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  const srv = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: autologin ? "true" : "false" } });
   servers.push(srv);
   let died = false;

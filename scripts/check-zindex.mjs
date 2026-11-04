@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // check:zindex — keeps the toast above every overlay in the app.
 //
 // A toast is how the app reports that something went wrong, and the moment you
@@ -18,7 +19,7 @@ import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { assertCovered } from "./lib/guard-sources.mjs";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const SKIP = new Set(["node_modules", "dist", ".git", ".claude", "catalog", "scripts"]);
 
 const walk = (dir, out = []) => {

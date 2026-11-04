@@ -1,3 +1,4 @@
+import { fileHref } from "../../lib/file-href.mjs";
 // Write chosen complete tracks into routes.gpx (and elev_pts), throttled, with rollback and re-read.
 // Usage:
 //   node apply.mjs decisions.json            dry run: preflight + summary, writes nothing
@@ -10,11 +11,11 @@ import path from "path";
 import { fileURLToPath } from "url";
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const { assessTrack, haversineM } = await import("./rule.mjs");
-const { recordedTrackPts } = await import(`${REPO}/lib/track.js`);
+const { recordedTrackPts } = await import(fileHref(`${REPO}/lib/track.js`));
 const GPX_DIR = process.env.FKT_GPX_DIR || null;
-const { SUPABASE_URL, anonKey, headers, patchRow } = await import(`${REPO}/scripts/lib/supabase-env.mjs`);
+const { SUPABASE_URL, anonKey, headers, patchRow } = await import(fileHref(`${REPO}/scripts/lib/supabase-env.mjs`));
 
-const here = path.dirname(new URL(import.meta.url).pathname);
+const here = path.dirname(fileURLToPath(new URL(import.meta.url)));
 const decisions = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
 const WRITE = process.argv.includes("--write");
 const PACE_MS = 1000;

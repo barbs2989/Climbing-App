@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Can another climber's first-ascent claim reach the route page?
 //
 // #843 established that climb_logs is hydrated TWICE. This asks the mirror question, the
@@ -25,7 +26,7 @@ import { readFileSync, mkdtempSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
-const ROOT = new URL("../../", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../../", import.meta.url));
 const read = (f) => readFileSync(join(ROOT, f), "utf8");
 let bad = 0;
 const say = (ok, msg) => { if (!ok) bad++; console.log((ok ? "  ok   " : "  FAIL ") + msg); };

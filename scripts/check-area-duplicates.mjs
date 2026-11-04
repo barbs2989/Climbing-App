@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // check:area-duplicates — is any PLACE in the catalog filed twice?
 //
 // 2026-09-25..30: Mountain Project imports filed MP's `North Cascades › Mt. Baker` beside our
@@ -44,7 +45,7 @@ import path from "path";
 import { selectAll } from "./lib/supabase-env.mjs";
 import { searchCanon } from "../lib/search.js";
 
-const ROOT = path.resolve(new URL("..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const BASELINE = path.join(ROOT, "scripts/data/area-duplicates-baseline.json");
 const WRITE = process.argv.includes("--write-baseline");
 
@@ -165,7 +166,7 @@ const found = Object.fromEntries([...pairs].sort());
 if (WRITE) {
   fs.mkdirSync(path.dirname(BASELINE), { recursive: true });
   fs.writeFileSync(BASELINE, JSON.stringify({ written: new Date().toISOString().slice(0, 10), pairs: found }, null, 1) + "\n");
-  console.log(`wrote ${Object.keys(found).length} READ pairs to ${path.relative(ROOT, BASELINE)}`);
+  console.log(`wrote ${Object.keys(found).length} READ pairs to ${path.relative(ROOT, BASELINE).replace(/\\/g, "/")}`);
   process.exit(0);
 }
 const base = JSON.parse(fs.readFileSync(BASELINE, "utf8")).pairs;

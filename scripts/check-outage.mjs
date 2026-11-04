@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // check:outage — when the database is down, does any screen quietly tell a signed-in climber
 // that they have nothing?
 //
@@ -662,7 +663,7 @@ const base = `http://127.0.0.1:${port}/Climbing-App/`;
 // wrong app here). It calls buildOpener + routeDetailTransform, and both are inert without a
 // `?z=`/`?zr=` parameter, so every screen walked before the route page is measured exactly as
 // it was before this changed.
-const server = spawn("npx", ["vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "" } });
 const up = async () => { for (let i = 0; i < 90; i++) { try { if ((await fetch(base)).ok) return true; } catch {} await new Promise(r => setTimeout(r, 1000)); } return false; };
 if (!await up()) { server.kill(); throw new Error("dev server never came up"); }

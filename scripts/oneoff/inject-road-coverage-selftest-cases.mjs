@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Injection harness for audit:road-coverage's self-test. The audit's headline COPY number is ZERO,
 // which is exactly what a broken finder prints — so the self-test is the only thing standing
 // between "nothing is copyable" and "nothing was measured". A self-test that has never gone red is
@@ -12,8 +13,8 @@ import { readFileSync, writeFileSync, unlinkSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 
-const SRC = new URL("../audit-road-coverage.mjs", import.meta.url).pathname;
-const TMP = new URL("../audit-road-coverage.__inject.mjs", import.meta.url).pathname;
+const SRC = fileURLToPath(new URL("../audit-road-coverage.mjs", import.meta.url));
+const TMP = fileURLToPath(new URL("../audit-road-coverage.__inject.mjs", import.meta.url));
 const original = readFileSync(SRC, "utf8");
 const sum = (s) => createHash("sha1").update(s).digest("hex").slice(0, 12);
 

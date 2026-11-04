@@ -1,9 +1,10 @@
+import { fileURLToPath } from "node:url";
 // Injection cases for check:area-edit-fields and check:area-page-honest: prove each goes RED on
 // the defect it names and GREEN untouched. Each edit is proven landed by checksum, and every
 // file is restored byte-identically even if a case throws.
 //   node scripts/oneoff/inject-area-edit-fields-cases.mjs
 import fs from "fs"; import { spawnSync } from "child_process"; import crypto from "crypto";
-const W = new URL("../../", import.meta.url).pathname;
+const W = fileURLToPath(new URL("../../", import.meta.url));
 const sha = s => crypto.createHash("sha1").update(s).digest("hex");
 const mig = re => W + fs.readdirSync(W + "supabase/migrations").filter(f => re.test(f)).map(f => "supabase/migrations/" + f)[0];
 const FILES = { js: W + "lib/areaFields.js", sql: mig(/area_pages_season_edits_and_stats\.sql$/), sql18: mig(/area_edits_are_held_for_review\.sql$/), sql78: mig(/area_parking_pin_is_editable\.sql$/), sections: W + "lib/AreaPageSections.jsx", browser: W + "lib/DbAreaBrowser.jsx" };
