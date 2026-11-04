@@ -6,6 +6,7 @@ import { discLabel } from "./discLabels";
 import { usePlaceSearch, useProfilesByIds, useRouteSearch, useStates } from "./db.js";
 import { USE_DB } from "./supabase";
 import Chevron from "../src/components/Chevron.tsx";
+import BrandMark from "../src/components/BrandMark.tsx";
 
 /* THE WEBSITE'S OWN PIECES (lib/wideLayout.js). Everything here renders only at 1024px and up — the
    phone app never mounts it. The top bar's search, the right rail's widgets and the site footer. */
@@ -172,25 +173,38 @@ export function WideRail({ upcoming, alerts, waiting, guest, onSignIn, onOpenCal
   </aside>;
 }
 
-/* SITE FOOTER. On the climbing pages a directory of every state the catalog holds (the way Mountain
-   Project ends a page), then a THIN bar of two lines: the site's links, then © and the legal links,
-   the way GitHub, Reddit and Google end theirs (owner 2026-11-04: "make it thinner on the bottom"; it
-   was two tall stacked lists). One line does not fit the 700px column; each line wraps, never clips. The states list
-   is a DB read: a failure says so. */
+/* SITE FOOTER, Strava-style (owner 2026-11-04: "look how strava does it … better ui, more branding"):
+   a panel of its own shade with the BRAND on the left (mark, wordmark, what the app is for) and short
+   link columns on the right (Explore · ClimbMatch · Legal), then one thin © row with Back to top.
+   On the climbing pages a directory of every state the catalog holds heads it (the way Mountain
+   Project ends a page). The states list is a DB read: a failure says so. */
 /* `showStates` (owner 2026-11-04): the state directory is a way into the CATALOG, so it ends the
-   Climbs tab and its route and area pages only; Home, Crews, Logbook… end on the bar alone. */
-export function WideFooter({ onOpenState, links, legal, showStates }) {
+   Climbs tab and its route and area pages only; Home, Crews, Logbook… end on the panel alone. */
+export function WideFooter({ onOpenState, explore, links, legal, showStates }) {
   const statesQ = useStates(); // read always (hooks order); drawn only where showStates says
   const states = ((statesQ.data || []).filter(s => Number(s.route_count) > 0)).slice().sort((a, b) => a.name.localeCompare(b.name));
   const link = { padding: "4px 0", minHeight: 24, border: "none", background: "transparent", color: C.textSub, fontSize: 13, cursor: "pointer", textAlign: "left" };
   const dir = USE_DB && showStates;
-  const row = (label, items) => <nav aria-label={label} style={{ display: "flex", flexWrap: "wrap", alignItems: "center", columnGap: 18 }}>{items.map(([t, go]) => <button key={t} onClick={go} style={{ ...link, fontSize: 12.5, whiteSpace: "nowrap" }}>{t}</button>)}</nav>;
-  return <footer style={{ borderTop: "1px solid " + C.border, marginTop: 28, padding: "0 4px 14px", color: C.textSub }}>
-    {dir ? <div style={{ padding: "20px 0 16px", borderBottom: "1px solid " + C.border }}><div style={{ ...SECTION, marginBottom: 8 }}>Explore climbs by state</div>
+  const col = (title, items) => <nav aria-label={title} style={{ minWidth: 0 }}><div style={{ ...SECTION, marginBottom: 8 }}>{title}</div><div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>{items.map(([t, go]) => <button key={t} onClick={go} className="cm-foot-link" style={{ ...link, fontSize: 13.5 }}>{t}</button>)}</div></nav>;
+  const toTop = () => { try { window.scrollTo({ top: 0, behavior: "smooth" }); const s = document.getElementById("appscroll"); if (s) s.scrollTo({ top: 0, behavior: "smooth" }); } catch (_e) { /* old browser: nothing to do */ } };
+  return <footer style={{ marginTop: 32, padding: "0 0 20px", color: C.textSub }}>
+    <style>{".cm-foot-link:hover{color:" + C.text + " !important;text-decoration:underline;}"}</style>
+    {dir ? <div style={{ padding: "20px 4px 22px", borderTop: "1px solid " + C.border }}><div style={{ ...SECTION, marginBottom: 8 }}>Explore climbs by state</div>
       {statesQ.isError ? <div style={{ fontSize: 13, color: C.amber }}>The list of states couldn’t load right now.</div>
-        : <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", columnGap: 16 }}>{states.map(s => <button key={s.id} onClick={() => onOpenState(s)} style={link}>{s.name}</button>)}</div>}
+        : <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", columnGap: 16 }}>{states.map(s => <button key={s.id} onClick={() => onOpenState(s)} className="cm-foot-link" style={link}>{s.name}</button>)}</div>}
     </div> : null}
-    <div style={{ paddingTop: 10 }}>{row("ClimbMatch", links)}</div>
-    <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", columnGap: 18 }}><span style={{ fontSize: 12.5, color: C.textMuted, whiteSpace: "nowrap" }}>{"© " + new Date().getFullYear() + " ClimbMatch"}</span>{row("Legal", legal)}</div>
+    <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 16, padding: "26px 26px 14px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "minmax(170px, 1.3fr) repeat(3, minmax(0, 1fr))", columnGap: 20, rowGap: 18 }}>
+        <div style={{ minWidth: 0 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}><BrandMark size={32}/><span style={{ fontSize: 21, fontWeight: 800, letterSpacing: -0.5, color: C.text, whiteSpace: "nowrap" }}>Climb<span style={{ color: C.blue }}>Match</span></span></div>
+          <div style={{ fontSize: 13, lineHeight: 1.45, color: C.textSub, marginTop: 10, maxWidth: 220 }}>Find climbing partners, plan your next objective, and see current conditions.</div>
+        </div>
+        {col("Explore", explore || [])}{col("ClimbMatch", links)}{col("Legal", legal)}
+      </div>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, marginTop: 20, paddingTop: 12, borderTop: "1px solid " + C.border }}>
+        <span style={{ fontSize: 12.5, color: C.textMuted }}>{"© " + new Date().getFullYear() + " ClimbMatch"}</span>
+        <button onClick={toTop} className="cm-foot-link" style={{ ...link, fontSize: 12.5, display: "flex", alignItems: "center", gap: 4 }}>Back to top<span style={{ display: "inline-flex", transform: "rotate(-90deg)" }}><Chevron size={15} color={C.textSub}/></span></button>
+      </div>
+    </div>
   </footer>;
 }
