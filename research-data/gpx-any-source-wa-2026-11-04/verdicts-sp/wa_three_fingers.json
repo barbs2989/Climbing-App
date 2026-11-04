@@ -1,0 +1,50 @@
+{
+ "area_id": "wa_three_fingers",
+ "routes": [
+  {
+   "route_id": "wa_three_fingers_r1",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "SummitPost: July-October, glacier gear before September, easiest mid-Sep to late Oct; North Peak climber logs include July ascents; ascent histogram peaks Aug-Sep."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "sp150549",
+     "verdict": "different",
+     "why": "Ends at the South Peak (lookout) summit, which is Peakbagger/SummitPost coordinate; our North Peak summit pin is ~500 m away and the line never crosses the glacier to the Middle/North col. Undated."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_three_fingers_r2",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Same approach and glacier as the North Peak; SummitPost July-October, Mazamas/climber logs summer ascents; late Jul-Sep kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "sp150549",
+     "verdict": "different",
+     "why": "Track tops out ~170-200 m from our Middle pin but at the surveyed South Peak summit via the Tin Can Gap trail/ridge, not a Middle Peak south-face line; undated."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "The file is the South Peak lookout line (which already has a track). Our North Peak summit pin sits ~494 m from the surveyed coordinate and Middle pin ~183 m; both look off but I did not propose moves (no tracks reach them)."
+}
