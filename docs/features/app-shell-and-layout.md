@@ -52,7 +52,9 @@ room for side-panel ads later. The phone app keeps its own look.
     both Messages panes are CSS-`zoom`ed, so the phone's 13px type reads as ~14.3px beside Mountain
     Project's 14 and Strava's 15. A fixed element zooms itself, so its own top/left/width are written
     divided by `ZOOM`; a Leaflet map is zoomed back to exactly 1 (its drag and click maths are unchanged —
-    measured). The top bar and sidebar are not zoomed.
+    measured), but only one that sits inside a zoomed box: the fire map's full-window dialog is portalled
+    to the body and stays at 1. A bar pinned by JS (`lib/usePinnedBar.js`, the Climbs search) divides the
+    window pixels it measures by its wrapper's own zoom. The top bar and sidebar are not zoomed.
   - **Every tab shows its title** (owner 2026-11-04): the `quiet` `ScreenHero` title, hidden on a phone,
     is drawn as a 24px heading (`h1[data-cm-quiet-title]` in `wideCss`).
   - A fixed **left sidebar** under it: Home · Climbs · Partners · Crews · Groups · Logbook · Ranks
