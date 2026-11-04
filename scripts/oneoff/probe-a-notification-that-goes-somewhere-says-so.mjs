@@ -20,7 +20,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { readCoreSource } from "../lib/guard-sources.mjs";
+import { readCoreSource, readParentSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 let bad = 0;
@@ -29,7 +29,8 @@ const fail = (m) => { bad++; console.log("  FAIL " + m); };
 const dead = (m) => { console.error("\nBROKEN PROBE: " + m); process.exit(2); };
 
 const core = readCoreSource(ROOT);
-const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+// Home's body moved to src/components/TodayTab.tsx (PR61), so App's text is stitched from its parts.
+const app = readParentSource(ROOT, "ClimbMatch.jsx", "probe-a-notification");
 
 // Balance braces from the declaration, so a comment written beside the helper cannot read as
 // ANCHOR LOST -- a probe refusing to run because somebody documented the thing it checks.
@@ -89,7 +90,7 @@ const SITES = [
   ["...and the OLD hand-written list is gone",
     "const tappable=n.climberId!=null||!!n.tab||!!n.route||!!n.group;", true],
   ["the click dispatches from the same value",
-    'if(_t.kind==="profile"){const c=CLIMBERS.find(x=>x.id===_t.climberId);if(c)onOpenProfile(c);}else{onGo(_t.to);}'],
+    'if(_t.kind==="profile"){const c=who(_t.climberId);if(c)onOpenProfile(c);}else{onGo(_t.to);}'],
   ["the spread is CONDITIONAL, so a target-less row is not announced as a control",
     "{...(_t?clickable("],
 ];
