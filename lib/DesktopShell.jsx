@@ -206,20 +206,36 @@ export function WideRail({ upcoming, alerts, waiting, guest, onSignIn, onOpenCal
    tab's own ROOT (the state picker) ends on the short footer too (owner 2026-11-04): the picker
    above already lays out every state as a card under the country buttons (United States, Canada),
    so the same list again at the bottom of that page was redundant. */
+/* THE FOOTER SPANS THE WHOLE WINDOW (owner 2026-11-05: "needs to fit the whole bottom screen"). It is
+   rendered inside the page column, so it pulls itself back to the window's left edge by the column's
+   own offset (--cm-col-left, lib/wideLayout.js) and is drawn as wide as the window's CLIENT width —
+   measured, not 100vw, because 100vw counts a classic (Windows) scrollbar and a 100vw box would run
+   16px off the right edge (check:overflow). The sidebar and rail are fixed panels pinned to the
+   window's bottom, so the band sits above them (z-index 31 > 30 / 20) once the page is scrolled to
+   its end; scrolling back up uncovers them. The content inside is centred and capped at FOOT_MAX. */
+const FOOT_MAX = 1320;
+function useClientWidth() {
+  const read = () => (typeof document !== "undefined" ? document.documentElement.clientWidth : 0);
+  const [w, setW] = useState(read);
+  useEffect(() => { const sync = () => setW(read()); sync(); window.addEventListener("resize", sync); return () => window.removeEventListener("resize", sync); }, []);
+  return w;
+}
 export function WideFooter({ onOpenState, explore, links, legal, showStates }) {
   const statesQ = useStates(); // read always (hooks order); drawn only where showStates says
+  const vw = useClientWidth();
   const states = ((statesQ.data || []).filter(s => Number(s.route_count) > 0)).slice().sort((a, b) => a.name.localeCompare(b.name));
   const link = { padding: "4px 0", minHeight: 24, border: "none", background: "transparent", color: C.textSub, fontSize: 13, cursor: "pointer", textAlign: "left" };
   const dir = USE_DB && showStates;
   const col = (title, items) => <nav aria-label={title} style={{ minWidth: 0 }}><div style={{ ...SECTION, marginBottom: 8 }}>{title}</div><div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>{items.map(([t, go]) => <button key={t} onClick={go} className="cm-foot-link" style={{ ...link, fontSize: 13.5 }}>{t}</button>)}</div></nav>;
   const toTop = () => { try { window.scrollTo({ top: 0, behavior: "smooth" }); const s = document.getElementById("appscroll"); if (s) s.scrollTo({ top: 0, behavior: "smooth" }); } catch (_e) { /* old browser: nothing to do */ } };
-  return <footer style={{ marginTop: 32, padding: "0 0 20px", color: C.textSub }}>
+  const inner = { maxWidth: FOOT_MAX, margin: "0 auto", padding: "0 24px", boxSizing: "border-box" };
+  return <footer style={{ position: "relative", zIndex: 31, marginTop: 32, marginLeft: "calc(-1 * var(--cm-col-left))", width: vw || "100vw", boxSizing: "border-box", background: C.card, borderTop: "1px solid " + C.border, color: C.textSub }}>
     <style>{".cm-foot-link:hover{color:" + C.text + " !important;text-decoration:underline;}"}</style>
-    {dir ? <div style={{ padding: "20px 4px 22px", borderTop: "1px solid " + C.border }}><div style={{ ...SECTION, marginBottom: 8 }}>Explore climbs by state</div>
+    {dir ? <div style={{ ...inner, padding: "20px 24px 22px", borderBottom: "1px solid " + C.border }}><div style={{ ...SECTION, marginBottom: 8 }}>Explore climbs by state</div>
       {statesQ.isError ? <div style={{ fontSize: 13, color: C.amber }}>The list of states couldn’t load right now.</div>
         : <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", columnGap: 16 }}>{states.map(s => <button key={s.id} onClick={() => onOpenState(s)} className="cm-foot-link" style={link}>{s.name}</button>)}</div>}
     </div> : null}
-    <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 16, padding: "26px 26px 14px" }}>
+    <div style={{ ...inner, padding: "28px 24px 14px" }}>
       <div style={{ display: "grid", gridTemplateColumns: "minmax(170px, 1.3fr) repeat(3, minmax(0, 1fr))", columnGap: 20, rowGap: 18 }}>
         <div style={{ minWidth: 0 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}><BrandMark size={32}/><span style={{ fontSize: 21, fontWeight: 800, letterSpacing: -0.5, color: C.text, whiteSpace: "nowrap" }}>Climb<span style={{ color: C.blue }}>Match</span></span></div>
