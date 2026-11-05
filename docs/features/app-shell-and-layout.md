@@ -138,6 +138,16 @@ room for side-panel ads later. The phone app keeps its own look.
     never hits a hidden Delete; it keeps the swipe. Rows that already act in-row get no column: a Past
     crew card has its own Archive and Clear buttons, a notification its ⋯ menu, a float plan its
     two-step Delete.
+  - **Controls are website-height** (owner 2026-11-04, "are buttons and things too large on the desktop
+    view?" — "do what you recommend"): a census at 1440px put the text at a median 13.8px rendered, level
+    with Mountain Project and Strava, but the controls at a median 44–48px against their 35–43: the phone's
+    44px touch minimum times the 1.1 zoom. The zoom stays and one `wideCss` block trims the controls,
+    matched on the serialised inline style like the rules around it: the two floors index.html sets
+    (every select 44px, every box-shaped button 40px) become 38 / 34, an inline `minHeight` of 44–46 or 48
+    becomes 38 / 40 where the box rule does not reach (flex rows), a fixed 48px tile 40, and the unified
+    `BTN` / `BTN_LG` paddings lose 2–3px. Buttons and selects only; popupChrome's ✕ / Back keep their 48px
+    (told apart by their 24px radius). After: Home's median control 53 → 42px rendered, Crews 45 → 41,
+    Logbook 44 → 39; the phone measures the same as before.
   - **Chip rows wrap** instead of scrolling sideways off the column (a `wideCss` rule for every
     `display:flex` + `overflow-x:auto` row in the page column or a page); a row holding photos (at any depth) and
     the hour picker keep scrolling.
