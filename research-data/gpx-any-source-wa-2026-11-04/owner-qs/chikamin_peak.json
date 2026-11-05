@@ -1,0 +1,81 @@
+{
+  "key": "chikamin_peak",
+  "question": "Is the Glacier Lake route to Chikamin Peak real and distinct from our single row (Southeast Slopes)?",
+  "answer": "Real, and distinct enough to be its own row. Our one row, Southeast Slopes, is written as the PCT route: leave the Pacific Crest Trail at about 5,500 ft near Chikamin Pass and climb the south/southeast gully system (its stored trailhead is the PCT North Trailhead at Snoqualmie Pass; its one clean tracked log, aid 1505680, is the Commonwealth Basin - PCT - boot trail line). The Glacier Lake route is a different approach and lower line: from Mineral Creek (east side) via Park Lakes to the PCT, then a boot path down to Glacier Lake, up past a tall standing rock and a boulder field to a tarn near 5,360 ft, over a small col, up the southeast slopes to the south ridge, and a short solid Class 3 chimney (about 10 ft, one low-4th move by some) on the summit horn. It has its own guidebook-style name and ten Peakbagger logs (five named 'Glacier Lake'); it shares only the summit chimney with our row, and our row mentions Glacier Lake only as an 'alternate approach' in its beta. Under the owner's rule (a named variant that leaves the line) it is distinct.",
+  "recommendation": "ADD a second Chikamin row 'Glacier Lake' (alias Mineral Creek) after catalog_find_route('Glacier Lake','wa_chikamin_peak'). Fill per 'proposed'. Keep Southeast Slopes, trimming the Glacier Lake sentence in its beta to point at the new row; its trailhead pin stays the PCT North Trailhead. Attach track 2967152 (31 Aug 2025, 'Glacier Lake'): starts and ends 62-66 m from the Mineral Creek trailhead and passes within 14 m of the summit; aid 2983644 (13 Sep 2025) is a second in-season candidate. 2707646 (Lemah traverse, ends 9 km away) and 3252954 are not this route. Check closure status first: WTA's Mineral Creek page carried a Three Queens Fire trail-closed alert dated 30 Jul 2026.",
+  "confidence": "medium",
+  "proposed": {
+    "name": "Glacier Lake",
+    "discipline": "scrambling",
+    "disciplines": [
+      "scrambling"
+    ],
+    "grade": "Class 3",
+    "grade_system": "class",
+    "season": "Jul-Sep",
+    "best_season": "August; late July and September are also good when the high basin is snow-free",
+    "high_point_ft": 6992,
+    "outing_shape": "outback",
+    "overview": "The east-side scramble to Chikamin Peak. A rough trail climbs Mineral Creek past the Park Lakes to the Pacific Crest Trail. A boot path then drops to Glacier Lake, the usual camp, and the route climbs the basin above it to the southeast slopes and south ridge, finishing with a short Class 3 chimney on the summit horn. Most parties camp at Park Lakes or Glacier Lake; strong parties do it in one very long day.",
+    "approach": "Park at the Mineral Creek trailhead at the end of the Cooper Lake road. Follow the Mineral Creek trail through old-growth, an old mining road and brushy avalanche clearings, steeply up to Upper Park Lake at about 4 miles, and on to the Pacific Crest Trail at about 5.4 miles (about 2,600 ft of gain). Go west on the PCT to the last switchback before the climb to Chikamin Pass and take the boot path down roughly 600 ft to Glacier Lake.",
+    "beta": "Skirt Glacier Lake, aim for the tall thin rock above it, and climb through the boulder field (the most common place to lose the way). Bear left toward the largest pond, keep to the right side of the creek on the faint boot path to a tarn near 5,360 ft, then go southwest to a small col. Climb the southeast slopes to the south ridge, follow it to the summit horn, and finish up a short Class 3 chimney (solid, with big holds) and about 75 ft of easy scrambling.",
+    "descent_text": "Reverse the route. The chimney is short enough to downclimb; the boulder field is where the line back to the lake is hardest to see from above. Allow energy for the 600 ft climb out of the Glacier Lake basin to the PCT at the end of the day.",
+    "hazards": [
+      "Overgrown, brushy trail on Mineral Creek",
+      "Stinging insects reported in the creek section",
+      "Easy-to-lose boot path in the boulder field",
+      "Loose scree and steep heather on the upper slopes"
+    ],
+    "watch_out": [
+      "The Mineral Creek trail was posted closed for the Three Queens Fire in July 2026; check current status",
+      "The route is very long for a day trip"
+    ],
+    "gear": [
+      "Helmet",
+      "Trekking poles for the brushy approach"
+    ],
+    "what_to_bring": [
+      "Map and GPS track for the boulder field",
+      "Headlamp",
+      "Wilderness permit (self-issue at the trailhead)"
+    ],
+    "road": {
+      "name": "Cooper Lake Road to Mineral Creek",
+      "status": "open",
+      "driveNote": "Paved to Cooper Lake, then gravel; the trailhead is about 3 miles past Cooper Pass at the valley bottom."
+    },
+    "waypoints": [
+      {
+        "type": "Trailhead",
+        "name": "Mineral Creek Trailhead",
+        "lat": 47.4176,
+        "lng": -121.2373
+      }
+    ],
+    "approach_logistics": {
+      "trailhead": "Mineral Creek Trailhead",
+      "trailheadLat": 47.4176,
+      "trailheadLng": -121.2373
+    },
+    "track_aid": "2967152",
+    "track_alt": [
+      "2983644"
+    ]
+  },
+  "evidence": [
+    "https://www.yellowleaf.org/scramble/g/r/2004-07-31--2004-08-01-Chikamin-Peak-via-Mineral-Creek.html - PCT west below pt 5,402, col, boot path to Glacier Lake; then standing rock, tarn near 5,360 ft, col, SE slopes to south ridge, short Class 3 chimney; 11.3 mi, 3,160 ft from camp",
+    "https://hippohamster.vercel.app/posts/chikamin-peak - boulder field step list (tall thin rock, pond, right side of creek, gully, chimney)",
+    "https://Theoutbound.com/washington/hiking/chikamin-peak-scramble - Mineral Creek trailhead 47.4176,-121.2373; 15.34 mi, 5,771 ft; summit 47.47533,-121.31086",
+    "https://www.wta.org/go-hiking/hikes/mineral-creek - trailhead 47.4176,-121.2373, 5.4 mi to the PCT via Park Lakes, road directions; closure alert dated 7.30.26",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Mineral+Creek+trailhead+Kittitas+County+Washington - OSM Mineral Creek Trailhead 47.4192992,-121.2391363 (within 300 m of the WTA point)",
+    "packets-all/wa_chikamin_peak.json - tracks 2967152/2983644 start 62-92 m from 47.4176,-121.2373 and pass within 10-14 m of the summit",
+    "Search snippets: Mountaineers Chikamin route page ('from the small unnamed lake above Glacier Lake ... saddle near 6,200 ft'), SummitPost 'Chikamin Peak - Glacier Lake Route', Mountaineers trip reports (steep rough trail down to Glacier Lake; bee nest on Mineral Creek)"
+  ],
+  "searched": [
+    "Chikamin Peak Glacier Lake route Mineral Creek scramble - SummitPost route page, Mountaineers pages, yellowleaf, theoutbound",
+    "Fetch refused with HTTP 403 (not worked around): summitpost chikamin-peak-glacier-lake-route/197212 and mountaineers.org Chikamin pages (snippets only)",
+    "WTA mineral-creek; Nominatim Mineral Creek trailhead",
+    "Judgment call: the upper mountain (south ridge, chimney) is shared with our row, so a reviewer who splits rows strictly by upper line could call this an approach variant. I rate it distinct because the lower route and the camp differ and every log names it separately.",
+    "Elevation: Peakbagger lidar 6,992 ft is the most recent figure; our rows store 6,994."
+  ]
+}
