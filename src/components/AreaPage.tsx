@@ -311,7 +311,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
                 const wallChip = (on: boolean) => ({ ...CHIP, flexShrink: 0, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" });
                 return <>
                   {routes.length > 1 ? <div style={{ marginBottom: 8 }}>
-                    <button onClick={() => setWallFilterOpen(o => !o)} aria-expanded={wallFilterOpen} style={{ ...wallChip(filtersOn > 0), minHeight: 44 }}>{"Filters" + (filtersOn ? " (" + filtersOn + ")" : "")}</button>
+                    {/* Drawn as the Route finder draws its own Filters button (BTN_LG, the text colour, a
+                        turning chevron), not as one more chip: as a chip in the muted colour it was the same
+                        size and shade as the sort chips under it, and the owner could not find it (2026-11-05). */}
+                    <button onClick={() => setWallFilterOpen(o => !o)} aria-expanded={wallFilterOpen} style={{ ...BTN_LG, width: "100%", minHeight: 44, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, border: "1px solid " + (filtersOn ? C.blue : C.border), background: filtersOn ? C.blueBg : C.surface, color: filtersOn ? C.onSolid : C.text }}>{"Filters" + (filtersOn ? " (" + filtersOn + ")" : "")}<span aria-hidden="true" style={{ display: "flex", flexShrink: 0 }}><Chevron open={wallFilterOpen} size={16} color={"currentColor"} /></span></button>
                     {wallFilterOpen ? <div style={{ marginTop: 8, padding: "10px 11px", background: C.card, borderRadius: 10, border: "1px solid " + C.border }}>
                       <div id="wall-filter-disc" style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6 }}>Discipline</div>
                       <div role="group" aria-labelledby="wall-filter-disc" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 10 }}>{[["", "All"], ...discsHere.map(d => [d, discLabel(d)])].map(o => <button key={o[0] || "all"} onClick={() => setWallDisc(o[0])} aria-pressed={wallDisc === o[0]} style={wallChip(wallDisc === o[0])}>{o[1]}</button>)}</div>
