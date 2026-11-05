@@ -11,7 +11,7 @@ database tables · connections to other areas · the guards that protect it · k
 | Area | Doc | Covers |
 |---|---|---|
 | Partners | [docs/features/partners.md](docs/features/partners.md) | Discover tab: partner search (zip + radius), filters, availability, match %, crews/guides modes |
-| Conditions | [docs/features/conditions.md](docs/features/conditions.md) | Route page "Conditions" tab: crag score, alpine flags + start time, "Your conditions", Best day to climb |
+| Conditions | [docs/features/conditions.md](docs/features/conditions.md) | Route page "Conditions" tab: crag score, alpine flags + start time, "Your conditions" |
 | Route page | [docs/features/route-page.md](docs/features/route-page.md) | `RouteDetail.jsx`: loading a route, sub-tabs, stars/ratings, crowd counts, contributions, photos, Planner |
 | Maps & area browser | [docs/features/maps-and-area-browser.md](docs/features/maps-and-area-browser.md) | Climbs tab: area tree, area map, place search, filters, search normalisation, route map |
 | Profile & settings | [docs/features/profile-and-settings.md](docs/features/profile-and-settings.md) | Profile, résumé, verification, photos, units/date/visibility/notification settings |
@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **Best day to climb removed** (owner 2026-11-05): the Home tile under Jump back in, the Menu's Plan & log tile and the full-screen overlay are gone, with `lib/BestDayTile.jsx`, the `bestDayOpen` state, the one-shot day handoff into the Conditions card and the per-area discipline-count hook only it read. The crag conditions score stays on every route's Conditions tab and in Compare routes. See `docs/features/conditions.md`.
 - **Footer: Install ClimbMatch** (competitor review batch A, item 10, owner 2026-11-04): the desktop footer ends its ClimbMatch column with an Install link while the browser has offered to install the app (Chrome and Edge on the built site; never on Safari or Firefox, never once installed); a click opens the browser's own install prompt. `lib/installPrompt.js`; see `docs/features/app-shell-and-layout.md`.
 - **Your groups in the desktop sidebar** (owner's picks from the competitor review, 2026-11-04, batch A item 2): under *Your crews*, up to five of your groups with a red dot when one has posts you have not seen (the Groups tab's own count), and "See all N groups" past five. Same data the Menu's Groups tile already holds. Desktop only. See `docs/features/app-shell-and-layout.md`.
 - **Area page, website arrangement** (competitor review batch B, item 15, owner 2026-11-04, built 2026-11-05): at 1024px+ CLIMBS HERE and GRADE SPREAD sit side by side, the Route finder's form sits inline under them (type, grade range with its top preset to your own profile grade, sort; *Find climbs* opens the finder with those filters — `RouteFinderInline`), classic climbs are one-line rows, and AREA FACTS gains **Most logged here** beside Season: twelve bars of what climbers logged under the area by month (`area_logged_months`, 0403: every visible log, counts only). Phone page unchanged.
