@@ -35,7 +35,7 @@
 // sentence that also carries the road, the mileage or the fact, and sentence deletion writes
 // gibberish onto route pages. Read-only, anon key, fails closed on an empty read. NOT a build gate:
 // a property of the DB, not the checkout, so no code change can cause or fix it.
-import { selectAll } from "./lib/supabase-env.mjs";
+import { selectAll, stateIdFilter } from "./lib/supabase-env.mjs";
 
 const args = process.argv.slice(2);
 const flag = n => { const i = args.indexOf("--" + n); if (i >= 0 && args[i + 1] && !args[i + 1].startsWith("--")) return args[i + 1]; const eq = args.find(a => a.startsWith("--" + n + "=")); return eq ? eq.slice(n.length + 3) : null; };
@@ -202,7 +202,7 @@ const EXEMPT = [
      usually survives the cut, because the reason not to trust it is the part doing the work. */
 ];
 
-const rows = await selectAll("routes", "id,name,road,access,waypoints", `id=like.${STATE}_*`, { pageSize: 1000 });
+const rows = await selectAll("routes", "id,name,road,access,waypoints", stateIdFilter(STATE), { pageSize: 300 });
 if (!rows.length) { console.error(`FAIL — read 0 ${STATE} routes. Refusing to report a clean result about data this never saw.`); process.exit(1); }
 
 const values = [];
@@ -266,7 +266,7 @@ function leaves(v, out = []) {
 let proseCols = 0;
 for (const col of PROSE_COLS) {
   let got;
-  try { got = await selectAll("routes", `id,${col}`, `id=like.${STATE}_*&${col}=not.is.null`, { pageSize: 1000 }); }
+  try { got = await selectAll("routes", `id,${col}`, `${stateIdFilter(STATE)}&${col}=not.is.null`, { pageSize: 1000 }); }
   catch (e) { console.error(`FAIL — ${col} read threw (${String(e.message || e)}). Refusing to report a clean result about a column this never read.`); process.exit(1); }
   proseCols++;
   for (const r of got) for (const [i, s] of leaves(r[col]).entries()) {
