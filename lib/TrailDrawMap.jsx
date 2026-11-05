@@ -5,7 +5,7 @@ import { loadLeaflet, applyBaseLayer } from "./mapKit";
 import { loadUnits } from "./units-pref";
 import { MIN_RECORDED_PTS } from "./track";
 import { POP_CLOSE, POP_CLOSE_MEDIA } from "./popupChrome.js";
-import { distM, routeLeg } from "./trailRouting.js";
+import { pathLenM, routeLeg } from "./trailRouting.js";
 
 // TRACE THE WALK IN ON THE MAP. A crag's trail used to be addable only as a recorded GPX, so the
 // line reached a crag only after someone had walked it with a watch running AND thought to export
@@ -27,11 +27,7 @@ import { distM, routeLeg } from "./trailRouting.js";
 // anchor the climber placed and `via` the routed points between the PREVIOUS anchor and this one
 // (empty for a straight leg). `pts` is always the flattening of `nodes`, so what is drawn is what
 // is submitted.
-function lenM(pts) {
-  let m = 0;
-  for (let i = 1; i < pts.length; i++) m += distM(pts[i - 1], pts[i]);
-  return m;
-}
+const lenM = pathLenM;
 // In the climber's units (check:units): feet/miles or metres/kilometres.
 export function fmtTrailLen(m) {
   if (loadUnits() === "metric") return m < 1000 ? Math.round(m / 10) * 10 + " m" : (m / 1000).toFixed(2) + " km";
@@ -122,7 +118,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const next = now.slice();
       next[j] = Object.assign({}, next[j], { via: via || [], pending: false });
       setBoth(next);
-      if (via === false) say(tx("The trail router didn't answer (offline, or busy), so that leg is a straight line for now. Tap the point again later, or trace it by hand."));
+      if (via === false) say(tx("The trail router didn't answer (offline, or busy), so that leg is a straight line for now. Switch Follow trails off and on to ask again, or trace it by hand."));
       else if (!via) say(tx("Couldn't follow a mapped trail here, so that leg is a straight line. Drag the point, or tap the hollow dot to add one between."));
     });
   };
@@ -164,7 +160,18 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]), via: [], pending: false }); commit(next, withLegs(next, [i, i + 1], routed(cur[i]) || routed(cur[i + 1]))); };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); setSelectedId(null); commit(next, withLegs(next, [i], routed(cur[i]) || routed(cur[i + 1]))); };
   const clearAll = () => { if (!nodesRef.current.length) return; setSelectedId(null); commit([], []); };
-  const toggleFollow = () => { followDefault = !follow; setFollow(!follow); };
+  // Switching Follow trails ON routes every leg that is still straight (the help says it bends each
+  // leg, so it does), as one undoable step; OFF leaves what is drawn alone.
+  const toggleFollow = () => {
+    const on = !follow;
+    followDefault = on; setFollow(on); propsRef.current.follow = on;
+    if (!on) return;
+    const cur = nodesRef.current, idxs = [];
+    cur.forEach((x, i) => { if (i > 0 && !routed(x) && !x.pending && !sameP(cur[i - 1].a, x.a)) idxs.push(i); });
+    if (!idxs.length) return;
+    const next = cur.slice();
+    commit(next, withLegs(next, idxs, true));
+  };
   const api = useRef(null);
   api.current = { append, insertAt, moveAnchor, select: (id) => setSelectedId((s) => (s === id ? null : id)), flushRedraw: () => { if (redrawAfterDrag.current) { redrawAfterDrag.current = false; setZoomN((z) => z + 1); } } };
 
@@ -241,10 +248,16 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       keep(L.polyline(leg, { color: "#000", weight: 18, opacity: 0, bubblingMouseEvents: false })).on("click", (e) => { L.DomEvent.stop(e); api.current.insertAt(i, e.latlng.lat, e.latlng.lng); });
       // The hollow dot: drag it out (or tap it) to add an anchor on this leg. Not on a leg shorter
       // than its own hit box on screen, where it would sit on the anchors and steal their taps.
-      const pa = map.latLngToContainerPoint(nodes[i - 1].a), pb = map.latLngToContainerPoint(n.a);
-      if (Math.hypot(pa.x - pb.x, pa.y - pb.y) < HIT + 12) continue;
-      const mid = leg[Math.floor((leg.length - 1) / 2)], mid2 = leg[Math.ceil((leg.length - 1) / 2)];
-      const h = keep(L.marker([(mid[0] + mid2[0]) / 2, (mid[1] + mid2[1]) / 2], { draggable: true, keyboard: false, bubblingMouseEvents: false, icon: dot(14, "rgba(0,0,0,0.45)", C.warning) }));
+      // Measured along the leg as drawn (a routed leg can loop far from two close anchors), and the
+      // handle sits halfway along it, not at the median point of an unevenly sampled path.
+      const px = leg.map((p) => map.latLngToContainerPoint(p));
+      const seg = []; let tot = 0;
+      for (let k = 1; k < px.length; k++) { const d = Math.hypot(px[k].x - px[k - 1].x, px[k].y - px[k - 1].y); seg.push(d); tot += d; }
+      if (tot < HIT + 12) continue;
+      let want = tot / 2, k = 0;
+      while (k < seg.length - 1 && want > seg[k]) { want -= seg[k]; k++; }
+      const f = seg[k] ? Math.min(1, want / seg[k]) : 0, m0 = leg[k], m1 = leg[k + 1];
+      const h = keep(L.marker([m0[0] + (m1[0] - m0[0]) * f, m0[1] + (m1[1] - m0[1]) * f], { draggable: true, keyboard: false, bubblingMouseEvents: false, icon: dot(14, "rgba(0,0,0,0.45)", C.warning) }));
       h.on("dragstart", () => { dragging.current = true; });
       h.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); api.current.flushRedraw(); });
       h.on("click", (e) => { L.DomEvent.stop(e); const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); });
@@ -290,7 +303,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       {note ? <div role="status" style={{ fontSize: 12, color: C.warning, margin: "8px 0 0", lineHeight: 1.45 }}>{note}</div> : null}
       <p style={{ fontSize: 12, color: C.text70, margin: "8px 0 0", lineHeight: 1.45 }}>
         <b style={{ color: C.accent }}>{mk.start}</b>{" is " + mk.startName + " and "}<b style={{ color: C.warning }}>{mk.end}</b>{" " + mk.endName + ". "}
-        {tx("Tap along the trail the way you walk it. Drag a point to move it, drag or tap the hollow dot between two points to add one, tap a point and Delete to remove it.")} <b>Follow trails</b> bends each leg along the mapped footpaths between your points, so a switchbacking path takes two taps. Zoom in: Topo shows mapped paths, Satellite shows the ones that aren't.
+        {tx("Tap along the trail the way you walk it. Drag a point to move it, drag or tap the hollow dot between two points to add one, tap a point and Delete to remove it.")} <b>Follow trails</b> {tx("bends each leg along the mapped footpaths between your points, so a switchbacking path takes two taps.")} Zoom in: Topo shows mapped paths, Satellite shows the ones that aren't.
       </p>
     </>
   );
