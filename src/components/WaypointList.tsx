@@ -1,3 +1,4 @@
+import { tx } from "../../lib/tapWords.js";
 import { C, wpPlaced, wpType, wpColor, wpIs, wpGlyph, legMi, ROUTE_GAP, uDistMi, uElev, cumMi } from "../../ClimbMatchCore.jsx";
 import ActionIcon from "./ActionIcon.tsx";
 import { clickable } from "../../lib/clickable";
@@ -37,7 +38,7 @@ export default function WaypointList({waypoints,onFocus,emptyCopy,onAdd}: Waypoi
      is no hover to reveal that — but eight identical hints is the clutter the row hint was
      trying to avoid. One line above the list says it for all of them. */
   const anyPlaced=waypoints.some(wpPlaced);
-  return <>{(onFocus&&anyPlaced)?<div style={{fontSize:11.5,color:C.textMuted,marginBottom:8,lineHeight:1.45}}>Tap a waypoint to find it on the map.</div>:null}{waypoints.map((wp: WaypointListItem,i: number)=>{
+  return <>{(onFocus&&anyPlaced)?<div style={{fontSize:11.5,color:C.textMuted,marginBottom:8,lineHeight:1.45}}>{tx("Tap a waypoint to find it on the map.")}</div>:null}{waypoints.map((wp: WaypointListItem,i: number)=>{
     const _wt=wpType(wp),col=wpColor(_wt),ic=wpIs(wp,"Hazard")?<ActionIcon name="alert" size={16} color={col}/>:wpGlyph(_wt);
     const prevWp=i>0?waypoints[i-1]:null;
     const _samePt=!!(prevWp&&prevWp.lat!=null&&prevWp.lng!=null&&wp.lat!=null&&wp.lng!=null&&Number(prevWp.lat)===Number(wp.lat)&&Number(prevWp.lng)===Number(wp.lng));

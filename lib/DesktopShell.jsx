@@ -87,7 +87,10 @@ export function WideSearch({ onOpenRoute, onOpenArea, width }) {
     return <button key={h.kind + (h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={() => pick(h)} style={{ ...ROW, background: on ? C.card : "transparent" }}><ActionIcon name={h.kind === "place" ? "pin" : "mountain"} size={17} color={C.textMuted}/><span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{sub ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{sub}</span> : null}</span></button>;
   };
   const showList = open && !!qq;
-  return <div ref={box} style={{ position: "absolute", top: 12, left: "50vw", transform: "translateX(-50%)", width: width || 460 }}>
+  /* Placed by `left`, not transform:translateX(-50%) — a transform can land the box on a half pixel,
+     and text there renders soft on a Windows screen. */
+  const w = width || "460px";
+  return <div ref={box} style={{ position: "absolute", top: 12, left: "calc(50vw - (" + w + ") / 2)", width: w }}>
     <span aria-hidden="true" style={{ position: "absolute", left: 12, top: 0, bottom: 0, display: "flex", alignItems: "center", pointerEvents: "none" }}><ActionIcon name="search" size={18} color={C.textMuted}/></span>
     <input ref={input} value={q} onChange={e => { setQ(e.target.value); setOpen(true); }} onFocus={() => setOpen(true)} onKeyDown={onKey} aria-label="Search climbs and places" role="combobox" aria-expanded={showList} aria-controls="wide-search-list" aria-activedescendant={showList && hits.length ? "wide-search-" + Math.min(hi, hits.length - 1) : undefined} aria-autocomplete="list" placeholder="Search climbs & crags" style={{ width: "100%", height: 40, boxSizing: "border-box", padding: "0 38px 0 38px", borderRadius: 20, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 14.5, outline: "none" }}/>
     {!q ? <kbd aria-hidden="true" title="Press / to search" style={{ position: "absolute", right: 12, top: 10, fontSize: 11.5, fontFamily: "inherit", color: C.textMuted, border: "1px solid " + C.border, borderRadius: 5, padding: "1px 6px", pointerEvents: "none" }}>/</kbd> : null}

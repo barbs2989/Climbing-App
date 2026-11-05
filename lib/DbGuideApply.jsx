@@ -1,6 +1,7 @@
 // Real guide application/intake — replaces the old GuideApply's legal-agreement-only
 // screen with an actual application: cert track + docs + mandatory attestations,
 // all persisted to Supabase. Rendered only when USE_DB (see ClimbMatch.jsx's swap).
+import { tx } from "./tapWords.js";
 import { useState, useRef } from "react";
 import { createPortal } from "react-dom";
 import { clickable } from "./clickable";
@@ -118,7 +119,7 @@ export default function DbGuideApply({ onClose, notify, C }) {
     } catch (e) {
       const why = (e && e.message) || "please try again.";
       notify && notify(d.profile
-        ? "Your application was sent, but " + STEP[step] + " didn't save — " + why + " Tap Submit again to finish."
+        ? "Your application was sent, but " + STEP[step] + " didn't save — " + why + tx(" Tap Submit again to finish.")
         : "Couldn't submit your application — " + why);
     } finally {
       setSubmitting(false);

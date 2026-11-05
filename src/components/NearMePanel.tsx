@@ -1,3 +1,4 @@
+import { tx } from "../../lib/tapWords.js";
 import { useRef, useState, useLayoutEffect, useEffect, useMemo } from "react";
 import type { FormEvent } from "react";
 import { useNearbyAreas } from "../../lib/db";
@@ -200,7 +201,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
         const sz = Math.min(22 + n, 44);
         const html = "<div style='width:" + sz + "px;height:" + sz + "px;border-radius:50%;background:" + C.blueSolid + ";border:2px solid #fff;color:#fff;font-weight:700;font-size:" + (n > 99 ? 10 : 12) + "px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,0.55);'>" + n + "</div>";
         const mk = L.marker([avgLat, avgLng], { icon: L.divIcon({ html, className: "", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2] }) });
-        mk.bindTooltip(n + " areas · " + climbs + (climbs === 1 ? " climb" : " climbs") + " — tap to zoom in", { direction: "top" });
+        mk.bindTooltip(n + " areas · " + climbs + (climbs === 1 ? " climb" : " climbs") + tx(" — tap to zoom in"), { direction: "top" });
         mk.on("click", () => {
           setPick({ areas, cluster: true });
           try { map.fitBounds(L.latLngBounds(areas.map(a => [a.lat, a.lng])), { padding: [50, 50], maxZoom: 15 }); } catch (e) { /* the map is gone or not laid out yet; nothing to update */ }
@@ -293,10 +294,10 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   const pickRows = pick ? pick.areas.map(a => ({ ...a, _mi: viewCenter ? haversineMi(viewCenter, a) : null })).sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)) : [];
   const pickClimbs = pickRows.reduce((n, a) => n + (a.route_count || 0), 0);
   const pickUI = pick ? (
-    <section aria-label="Areas you tapped on the map" style={{ marginTop: 8, flexShrink: 0, maxHeight: fullscreen ? "42%" : "none", display: "flex", flexDirection: "column", minHeight: 0, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12 }}>
+    <section aria-label={tx("Areas you tapped on the map")} style={{ marginTop: 8, flexShrink: 0, maxHeight: fullscreen ? "42%" : "none", display: "flex", flexDirection: "column", minHeight: 0, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 8px 8px 12px", borderBottom: "1px solid " + C.border }}>
         <div style={{ flex: 1, minWidth: 0, fontSize: 13.5, fontWeight: 700, color: C.text }}>{(pickRows.length === 1 ? "1 area" : pickRows.length + " areas") + " · " + pickClimbs + " climb" + (pickClimbs !== 1 ? "s" : "")}</div>
-        <button onClick={() => setPick(null)} title="Close" aria-label="Close the list of tapped areas" style={POP_CLOSE}>✕</button>
+        <button onClick={() => setPick(null)} title="Close" aria-label={tx("Close the list of tapped areas")} style={POP_CLOSE}>✕</button>
       </div>
       <div style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", padding: "6px 8px 0" }}>
         {pickRows.map(a => (
@@ -339,7 +340,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
       {!fullscreen ? (
         <>
           <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8 }}>{"Pan or zoom the map, or type a town above, to see areas anywhere else." + (me.acc != null ? " The green dot is you." : "")}</div>
-          {!center && !bounds ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{'Tap "Me" on the map to find climbs near you.'}</div> : null}
+          {!center && !bounds ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{tx('Tap "Me" on the map to find climbs near you.')}</div> : null}
           {error && !sorted.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load nearby areas — check your connection and try again.</div> : null}
           {error && sorted.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the areas from your last load.</div> : null}
           {isLoading && bounds ? <LoadingRows C={C} label="Loading nearby climbs…"/> : null}
@@ -360,7 +361,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
               <span style={{ color: C.textMuted, fontSize: 12 }}>{a._mi != null ? (uDistMi ? uDistMi(a._mi) : a._mi.toFixed(1) + " mi") + " · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
             </div>
           ))}
-          {!isLoading && bounds && !sorted.length && !error ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>{disc && nearbyAll && nearbyAll.length ? "No " + (DL[disc] || disc).toLowerCase() + " areas in view — pan, zoom out, or tap All." : "No climbs in view — pan or zoom out to see more."}</div> : null}
+          {!isLoading && bounds && !sorted.length && !error ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>{disc && nearbyAll && nearbyAll.length ? "No " + (DL[disc] || disc).toLowerCase() + tx(" areas in view — pan, zoom out, or tap All.") : "No climbs in view — pan or zoom out to see more."}</div> : null}
         </>
       ) : null}
     </div>

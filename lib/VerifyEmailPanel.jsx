@@ -7,6 +7,7 @@
 // Inline, not an overlay: the open/closed state lives here, so App holds no modal flag. `nudge` is a
 // counter App bumps when "Verify" is tapped elsewhere (the Home checklist, the trust card); each bump
 // opens the panel and scrolls it into view.
+import { tx } from "./tapWords.js";
 import { useEffect, useRef, useState } from "react";
 import { C } from "../ClimbMatchCore.jsx";
 import { sendEmailCode, confirmEmailCode } from "./auth";
@@ -67,7 +68,7 @@ export default function VerifyEmailPanel({ email, nudge, onVerified }) {
     setBusy(true); setErr("");
     const { error } = await confirmEmailCode(email, c);
     if (error) { setBusy(false); setErr("That code didn’t work. Check it, or send a new one."); return; }
-    try { await verifyMyEmail(); } catch (e) { setBusy(false); setErr("Your code worked, but saving the ✓ failed — tap Verify again."); return; }
+    try { await verifyMyEmail(); } catch (e) { setBusy(false); setErr(tx("Your code worked, but saving the ✓ failed — tap Verify again.")); return; }
     setBusy(false); setOpen(false); setSent(false); setCode("");
     onVerified && onVerified();
   };
@@ -90,7 +91,7 @@ export default function VerifyEmailPanel({ email, nudge, onVerified }) {
           <button onClick={() => { setOpen(false); setErr(""); }} style={link}>Not now</button>
         </div>
       </div> : <div>
-        <div style={{ fontSize: 12.5, color: C.textSub, marginBottom: 10 }}>Enter the code we sent to <b>{email}</b>, or tap the link in that email on this device.</div>
+        <div style={{ fontSize: 12.5, color: C.textSub, marginBottom: 10 }}>Enter the code we sent to <b>{email}</b>{tx(", or tap the link in that email on this device.")}</div>
         <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
           <input aria-label="Code from the email" value={code} onChange={(e) => setCode(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") confirm(); }} inputMode="numeric" autoComplete="one-time-code" maxLength={12} placeholder="123456" style={{ width: 130, padding: "9px 10px", borderRadius: 9, border: "1px solid " + C.border, background: C.bg, color: C.text, fontSize: 16, letterSpacing: 2 }} />
           <button onClick={confirm} disabled={busy} style={btn}>{busy ? "Checking…" : "Verify"}</button>

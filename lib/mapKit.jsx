@@ -317,10 +317,14 @@ export function BaseLayerToggle({ baseLayer, setBaseLayer, C, snow, snowAt }) {
   const fmt = (d) => new Date(d + "T12:00:00Z").toLocaleDateString(currentDateLocale(), { month: "short", day: "numeric", timeZone: "UTC" });
   return (
     <>
-      <div style={{ position: "absolute", top: 10, left: 10, zIndex: 1000, display: "flex", gap: 4 }}>
+      {/* The row stops 66px short of the right edge, where the map's ⤢ Full screen sits: in the desktop
+          rail's 276px map the four buttons ran under it and "Snow" could not be pressed (owner's audit,
+          2026-11-04). It is a CONTAINER, so when what is left is narrow, index.html's @container rule
+          shortens "Satellite" to "Sat" rather than letting a button disappear. */}
+      <div style={{ position: "absolute", top: 10, left: 10, right: 66, zIndex: 1000, display: "flex", gap: 4, containerType: "inline-size", pointerEvents: "none" }}>
         {opts.map(([k, lbl]) => {
           const on = k === "snow" ? pick != null : baseLayer === k;
-          return <button key={k} onClick={() => { if (!(k === "snow" && on)) setBaseLayer(k); }} aria-current={on ? "true" : undefined} style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{lbl}</button>;
+          return <button key={k} onClick={() => { if (!(k === "snow" && on)) setBaseLayer(k); }} aria-current={on ? "true" : undefined} style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)", pointerEvents: "auto" }}>{k === "sat" ? <><span className="cm-lyr-long">{lbl}</span><span className="cm-lyr-short">Sat</span></> : lbl}</button>;
         })}
       </div>
       {pick ? (
