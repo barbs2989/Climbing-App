@@ -3,7 +3,7 @@ import { clickable } from "../../lib/clickable";
 import type { routeTags } from "../../lib/routeTags.js";
 import ActionIcon from "./ActionIcon.tsx";
 
-/** One tag as routeTags() builds it (a list the route is on, or a style). */
+/** One tag as routeTags() builds it: a list the route is on (lists are the only chips since 2026-11-05). */
 export type RouteTag = ReturnType<typeof routeTags>[number];
 export interface TagChipProps {
   t: RouteTag;
