@@ -126,6 +126,11 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           VITE_USE_DB: "true"
+          # Ads on desktop route pages (lib/Ads.jsx). Repository VARIABLES, not secrets: a
+          # publisher id is public in the page. All three unset = no ad, no placeholder.
+          VITE_ADSENSE_CLIENT: ${{ vars.VITE_ADSENSE_CLIENT }}
+          VITE_ADSENSE_SLOT_SIDE: ${{ vars.VITE_ADSENSE_SLOT_SIDE }}
+          VITE_ADSENSE_SLOT_RAIL: ${{ vars.VITE_ADSENSE_SLOT_RAIL }}
           # Keep the deployed app browsable without an account. #584 made the demo
           # gate opt-IN (VITE_DEMO_AUTOLOGIN) and left it unset here, which silently
           # turned production into signup-required: a first-time visitor got a
