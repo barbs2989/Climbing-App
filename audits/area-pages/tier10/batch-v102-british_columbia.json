@@ -1,0 +1,29 @@
+{
+ "bc_sasq_ets_boulder": {
+  "_expect": {"name": "Sasq’ets Boulder", "region": "British Columbia"},
+  "blurb": "Sasq’ets Boulder is a single block in the Sasquatch Boulders zone of the Elbow Lake bouldering area, in the Fraser Valley. It is the first block a climber meets when coming in along the Left Fork side. The block is tall at one end and tapers to a short face at the other. Ten problems range from easy V0 warm-ups up to V5, with a cluster around V4, so beginners and stronger boulderers each find something. It makes a natural first stop before moving uphill to the neighbouring blocks, such as Quick and Nimble.",
+  "review": {"sources": ["https://www.mountainproject.com/area/126601602/sasqets-boulder", "https://www.mountainproject.com/area/126602199/quick-and-nimble-boulder"]}
+ },
+ "bc_quick_and_nimble_boulder": {
+  "_expect": {"name": "Quick and Nimble Boulder", "region": "British Columbia"},
+  "blurb": "Quick and Nimble Boulder sits in the Left Fork group of the Sasquatch Boulders, part of the Elbow Lake bouldering area in the Fraser Valley. It is a long, low block: the top has good texture, while the face carries some brittle, flaky holds. Ten problems run from V0 to V6. Four are V0, a handful sit in the V2 to V4 range, and one stands out at V6, so it suits a mixed group. It lies uphill from Sasq’ets Boulder and next to Sweet ’n Sour Boulder, and the tall cube-shaped Hoax Boulder is a few steps further up.",
+  "review": {"sources": ["https://www.mountainproject.com/area/126602199/quick-and-nimble-boulder", "https://mountainproject.com/area/126607890/hoax-boulder"]}
+ },
+ "bc_dennett_lake_bluffs": {
+  "_expect": {"name": "Dennett Lake Bluffs", "region": "British Columbia"},
+  "blurb": "Dennett Lake Bluffs is a small forest crag in the Tri-Cities part of Metro Vancouver, reached from the Munro Lake trailhead in Coquitlam. About ten short routes, a mix of bolted sport lines, a few trad lines and top-rope problems, run from easy fifth class to 5.10. Walking around either side to the top makes it simple to set up a top-rope, so it is popular for teaching belaying and for casual practice. Dry-tooling groups also use it. The wall gets a mix of sun and shade, and with many trees close by it can be mossy and dirty, so expect some cleaning before climbing.",
+  "review": {"sources": ["https://www.mountainproject.com/area/117368452/dennett-lake-bluffs?print=1", "https://accvancouver.ca/?p=75493"]}
+ },
+ "bc_the_old_settler": {
+  "_expect": {"name": "The Old Settler", "region": "British Columbia"},
+  "blurb": "The Old Settler is a 2,132 m peak in the southern Lillooet Ranges of the Coast Mountains, between Harrison Lake and the Fraser Canyon, north-east of Agassiz. It is an alpine rock objective rather than a roadside crag: routes are mostly traditional, up to about twelve pitches, with some scrambles and alpine lines. Faces look south, west, north and east, and the south side holds the better rock. Grades here run from 5.6 to 5.10, most of them around 5.8. There is no glacier travel, the camping is good, and other parties are seldom seen, though the approach through logging roads, bush and talus is long.",
+  "review": {"sources": ["https://mountainproject.com/area/106377996/the-old-settler", "https://en.wikipedia.org/wiki/The_Old_Settler"]}
+ },
+ "_skipped": {
+  "bc_main_wall_14": "No fetched page describes this Main Wall at Ellison Park; the only Main Wall area page found (John's Family Nature, Okanagan) is a different place, and the Ellison park page and BC Parks page are parent-level only.",
+  "bc_first_contact": "Could not fetch any page about First Contact itself; forum threads returned 503, and the Lumberjack Wall, Watchtower and sendage Porteau pages do not mention it."
+ },
+ "_conflicts": {
+  "bc_the_old_settler": "Stored rock 'diorite' vs Wikipedia (https://en.wikipedia.org/wiki/The_Old_Settler) 'granodiorite' and the area page (https://mountainproject.com/area/106377996/the-old-settler) calling the south side ultramafic; stored aspect S while the page lists S, W, N and E faces."
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "bc_lonely_boy": {
+  "_expect": {"name": "Lonely Boy", "region": "British Columbia"},
+  "blurb": "Lonely Boy is a small face crag in the Lonely Crags group on the hillside above Kelowna, in the Okanagan. Eleven routes are listed, almost all of them bolted, with one trad line. Grades run from about 5.7 up to 5.12, with the bulk of the climbing in the 5.11 range, so it suits people past the beginner stage. The rock is gneiss, mostly vertical and crimpy, with edges and ledges breaking up the faces. A fire opened up the surroundings, so the wall takes a lot of sun, mostly in the afternoon and evening on its west-leaning faces. Midsummer midday is hot; mornings work in summer and afternoons in spring and fall. The walk from the car is only a few minutes, and the view over Okanagan Lake is a bonus.",
+  "parking_note": "From Kelowna, drive up Chute Lake Road through the new housing, turn sharply left just after the helipad on your left, and follow the access road up to the parking area at the top of the helipad.",
+  "review": {"sources": ["https://www.mountainproject.com/area/111826576/lonely-boy", "https://www.mountainproject.com/area/111826568/lonely-crags", "https://sendage.com/area/lonely-boy-lonely-boy-crags-kelowna-bc-canada"]}
+ },
+ "bc_highlander": {
+  "_expect": {"name": "Highlander", "region": "British Columbia"},
+  "blurb": "Highlander is a small, quiet trad crag in the Garibaldi Highlands neighbourhood of Squamish. All eleven routes are protected by natural gear, and they are mostly crack lines on vertical to overhanging walls. Difficulty starts around 5.10 and climbs to 5.12, with the largest cluster at 5.11, so this is not a place for first-time leaders. The granular rock has coarse crystals, noticeably grainier than most Squamish stone. Shade lasts most of the day, which makes it a pleasant option when other crags are baking. The base is only a couple of minutes from the road end, though it feels secluded and rarely sees a crowd.",
+  "review": {"sources": ["https://www.mountainproject.com/area/113306413/highlander", "https://app.advcollective.com/climbing/crossroads-a-focused-trad-challenge-in-highlander-squamish"]}
+ },
+ "bc_isengard": {
+  "_expect": {"name": "Isengard", "region": "British Columbia"},
+  "blurb": "Isengard is a cluster of steep walls tucked into the forest on the benches above Gonzales Creek, a short drive south of Squamish along the Sea to Sky Highway. It is all trad, eleven routes, with grades from the 5.10 range to the low 5.12s and the hardest lines being strong crack and roof problems. The shade is constant and the walls stay cool even in midsummer, which suits hot days but means some lines seep and take a long time to dry after rain. Expect a steep, committed walk through the trees from the highway pullout, with a fixed handline on a few approaches. It is a quiet spot for experienced gear leaders.",
+  "review": {"sources": ["https://www.mountainproject.com/area/117395366/isengard", "https://squamishclimbingmagazine.ca/new-topo-for-gonzales-heights-near-shannon-falls-development/"]}
+ },
+ "bc_mt_woodside": {
+  "_expect": {"name": "Mt. Woodside", "region": "British Columbia"},
+  "blurb": "Mt. Woodside is a northeast-facing bluff high on a forestry road above Highway 7 in the Fraser Valley, between Agassiz and Mission. Eleven routes mix bolted and gear-protected lines, seven sport and four trad, spanning roughly 5.8 to 5.13 with most in the 5.10 and 5.11 range. Most of the wall is in shade by late morning, so it works well on hot days, and the open position gives a wide view over the valley. The drive up is a long, rough gravel road and a high-clearance vehicle is recommended. A large gravel pullout beside the bluff gives room for several vehicles and weekend camping, and the base is a short hop from there.",
+  "parking_note": "Turn onto Woodside Mountain Road opposite the Woodside Mountain Inn off Highway 7 and drive up the gravel road for about 10 to 15 minutes until the bluff shows on your right. A wide gravel pullout there holds many vehicles; a high-clearance or 4x4 vehicle is recommended.",
+  "review": {"sources": ["https://www.mountainproject.com/area/123091171/mt-woodside", "https://sendage.com/area/mt-woodside-harrison-amp-agassiz-fraser-valley-bc-canada"]}
+ },
+ "bc_south_east_moss_mountain": {
+  "_expect": {"name": "South East Moss Mountain", "region": "British Columbia"},
+  "blurb": "South East Moss Mountain is a small, low-elevation crag in the Stillwater area near Powell River on the Sunshine Coast. The eleven routes are mainly set up for top-roping, with a few gear lines, and the grades sit mostly around 5.10 with a couple of easier climbs and one harder one. The walls are short, around 30 feet, and some features, such as a chimney-like line, tend to stay wet. That makes it a handy spot for practising anchors and gear placements or for a quick top-rope session rather than a destination for long pitches. It is a modest, low-key crag close to the coast.",
+  "review": {"sources": ["https://www.mountainproject.com/area/119829066/south-east-moss-mountain", "https://www.mountainproject.com/route/119844283/the-seeper"]}
+ },
+ "_skipped": {
+  "bc_south_beach": "no fetched page about the crag itself (only route pages and a search snippet for the area page)",
+  "bc_the_big_tree": "no fetched page about the crag itself (only one route page)",
+  "bc_squeeze_chimney_wall": "no fetched page describes the wall itself; thecrag fetch blocked, parent page does not mention it"
+ },
+ "_conflicts": {
+  "bc_mt_woodside": "stored rock andesite; a fetched guide-derived page (https://sendage.com/area/mt-woodside-harrison-amp-agassiz-fraser-valley-bc-canada) says basalt"
+ }
+}

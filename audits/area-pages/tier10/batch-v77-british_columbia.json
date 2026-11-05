@@ -1,0 +1,31 @@
+{
+ "bc_obsession_wall": {
+  "_expect": {"name": "Obsession Wall", "region": "British Columbia"},
+  "blurb": "A popular wall at Esler Bluffs, a bolted crag on the edge of Williams Lake in the Cariboo. Nearly all of its 15 lines are sport routes, with a single trad line, and the walk from the car is short. The grades run wide: a couple of easy lines around 5.6 and 5.7, a pair of 5.9s, then a solid block of 5.10 and 5.11 routes and a few 5.12s at the top end. That spread makes it a handy wall for a mixed party, with enough moderate leads to warm up on before trying the harder ones. It sits close to the fire pit area where the road ends, so it is easy to combine with neighbouring walls in the same bluffs.",
+  "review": {"sources": ["https://www.mountainproject.com/area/113281208/obsession-wall", "https://www.mountainproject.com/area/113280688/williams-lakes-esler-bluffs"]}
+ },
+ "bc_valleycliffe_heights": {
+  "_expect": {"name": "Valleycliffe Heights", "region": "British Columbia"},
+  "blurb": "A steep little sport crag in the forest above Squamish, in the Crumpit Woods zone off the Mamquam road system. All 15 routes are bolted single pitches, and the grade range suits stronger climbers: most routes fall in the 5.11 and 5.12 range, with a pair of harder lines at the top end. Expect crisp, technical edge climbing and stemming rather than juggy cruising. The way in is a short but steep uphill trail through the trees, so plan on a quick warm-up on the walk rather than a stroll. Bring a rope and a standard sport rack of quickdraws.",
+  "review": {"sources": ["https://www.mountainproject.com/area/114461497/valleycliffe-heights", "https://app.advcollective.com/climbing/stem-or-struggle-a-sharp-edged-sport-climb-at-valleycliffe-heights"]}
+ },
+ "bc_sfu_boulders": {
+  "_expect": {"name": "SFU Boulders", "region": "British Columbia"},
+  "blurb": "A small bouldering spot on Burnaby Mountain near Simon Fraser University, easy to reach from anywhere in Metro Vancouver. Most of the action is on one main block, with a couple of tiny boulders nearby that are mainly good for warm-ups. The 15 problems span V0 to V7, but the bulk of them sit between V0 and V3, so it suits beginners and anyone wanting a short session. The harder problems are on the road-facing side and the easier ones face the forest. Most moves are low to the ground with simple top-outs and a downclimb to finish. The holds grip well and the boulder dries quickly, and cooler months are the best time to visit.",
+  "review": {"sources": ["https://www.mountainproject.com/area/119830694/sfu-boulders", "https://madboulder.org/sfu-boulder"]}
+ },
+ "bc_tree_fort": {
+  "_expect": {"name": "Tree Fort", "region": "British Columbia"},
+  "blurb": "A bouldering sector at Grohman Narrows, close to Nelson in the West Kootenay. It sits just above the railway tracks, a couple of minutes' walk beyond the Cave Boulders along the main trail, with a pleasant outlook across the river toward town. The 14 problems cover a wide range: plenty of friendly V0 to V2 lines for warming up or climbing with newer boulderers, a handful of V3 and V4 problems in the middle, and then a V5 and a single V8 at the top end. The climbing includes slabs, aretes and steeper faces, and the short walk makes it an easy add-on to a day at the narrows.",
+  "review": {"sources": ["https://www.mountainproject.com/area/114801824/tree-fort", "https://thetopo.com/crags/grohman-narrows/topos/tree-fort-boulders"]}
+ },
+ "_skipped": {
+  "bc_night_and_day_wall": "could not fetch two pages (only one page about the wall was readable)",
+  "bc_hail_mary_wall": "no fetched page about the crag itself (only route pages and the parent area)",
+  "bc_main_wall_13": "could not fetch two pages that describe it (only one readable)",
+  "bc_mount_boucherie": "could not fetch two pages (one 503, other only a two-route video post)"
+ },
+ "_conflicts": {
+  "bc_sfu_boulders": "Stored rock is conglomerate; both https://www.mountainproject.com/area/119830694/sfu-boulders and https://madboulder.org/sfu-boulder say granite."
+ }
+}

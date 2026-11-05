@@ -1,0 +1,78 @@
+{
+ "az_train_station": {
+  "_expect": {
+   "name": "Train Station",
+   "region": "Arizona"
+  },
+  "blurb": "Train Station is a small sport crag on the lower stretch of the Mount Lemmon highway above Tucson, tucked just to the right of a neighbouring formation called Choo Choo Rock. Of its seventeen routes, nearly all are bolted with lower-off anchors and two are trad. Grades run from 5.7 to 5.11, with the bulk of the climbs split between 5.9 and 5.10 and a handful of 5.11s at the top end. The faces look west and northwest: the right side is cool early and warms by midday, while the corridor on the left holds its shade deep into the afternoon. Plan on a walk of around half an hour to reach the base.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/118613537/train-station",
+    "https://www.mountainproject.com/area/106822869/1-lower-highway"
+   ]
+  }
+ },
+ "az_lower_wall": {
+  "_expect": {
+   "name": "Lower Wall",
+   "region": "Arizona"
+  },
+  "blurb": "Lower Wall is the tallest of the three faces at Raycreation, a small cluster of cliffs high on Mount Lemmon near Tucson, sitting above a creek at roughly 7,500 feet. The face is about 70 feet tall and steep, split by a wide ledge-like break around two thirds of the way up, and it points west-northwest. Most of the seventeen routes are bolted sport lines, with four trad climbs mixed in. This is a place for strong climbers: the majority fall at 5.11 and 5.12, with a few 5.13s and only a couple of easier lines at 5.9 and 5.10. Expect some grainy rock and lichen in places.",
+  "parking_note": "Park at the Sunset Trail lot, which sits on the highway's left a little past the Butterfly trailhead.",
+  "approach": "From the Sunset Trail lot, take the dirt road that starts behind the trail sign, not the gated one. Where it meets the drainage, pick up the path and walk downstream alongside the creek to the wall.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106828883/lower-wall",
+    "https://mountainproject.com/area/106825893/raycreation-area"
+   ]
+  }
+ },
+ "az_havens_the": {
+  "_expect": {
+   "name": "Havens, The",
+   "region": "Arizona"
+  },
+  "blurb": "The Havens is a moderate sport wall at about 7,800 feet on Mount Lemmon, set in dense forest north of Tucson. It holds seventeen routes, sixteen of them bolted and one trad, running from 5.6 up to low 5.11, with most of the climbs between 5.7 and 5.10, which makes it a friendly spot for newer leaders. The wall breaks into three stretches: a short east side, a pair of lines in the middle, and a longer west side that begins with a freestanding pinnacle. The rock is solid. Sun reaches the face for most of the day once the morning is under way, but trees at the base give shade, and the east end stays cooler.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/109019585/the-havens",
+    "https://www.mountainproject.com/route/109019703/cozzetti-steps-out"
+   ]
+  }
+ },
+ "az_wave_crack_boulder": {
+  "_expect": {
+   "name": "Wave Crack Boulder",
+   "region": "Arizona"
+  },
+  "blurb": "Wave Crack Boulder is a compact cluster of blocks on a south-facing hillside in the Beardsley bouldering zone of north Phoenix, filed under the Frontier area. It has seventeen problems, all bouldering, and the grade spread leans toward the middle and upper-middle: a couple of easy warm-ups, a solid core from V2 to V4 with V4 the most common, a few at V5 and one V6. The rock is regarded as some of the soundest in Beardsley, and the star attraction is a hand crack beside a wave-shaped feature that offers little to hold on the way out. It is a short, simple walk from the road.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/123549410/wave-crack-boulder",
+    "https://www.mountainproject.com/area/classics/123529815/frontier-bouldering-area"
+   ]
+  }
+ },
+ "az_1_upper_wall": {
+  "_expect": {
+   "name": "Upper Wall",
+   "region": "Arizona"
+  },
+  "blurb": "Upper Wall is a southeast-facing crag in Palisade Park, a handful of small cliffs near the radio towers high on Mount Lemmon, well above 8,000 feet and noticeably cooler than Tucson in late spring. The wall stands 35 to 50 feet tall and carries seventeen routes: sixteen bolted and one trad crack. Climbs are mostly 5.10, with a few at 5.8 and 5.9 and a single 5.11. The face catches the morning sun and tends to fall into its own shade by mid-afternoon, and trees shade the right-hand side. The walk from the car takes only a few minutes, so it suits a short session.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/121622089/1-upper-wall",
+    "https://www.mountainproject.com/area/121622078/palisade-park"
+   ]
+  }
+ },
+ "_skipped": {
+  "az_river_boulder": "only one fetched page (the parent Aspen Trail Boulders page); no page about River Boulder itself",
+  "az_wild_horse_wall": "only one fetched page about the crag (and it lists 4 climbs, not 17); second page could not be fetched",
+  "az_shady_grove": "no fetched page about Shady Grove itself; only the parent Oasis page, which lists it without description"
+ },
+ "_conflicts": {
+  "az_havens_the": "stored parking_name says Marshall Gulch picnic area, but https://www.mountainproject.com/area/109019585/the-havens sends climbers to the Inspiration Rock south-side picnic area near milepost 23",
+  "az_wave_crack_boulder": "stored parking_name says Lone Cactus Road lot, but https://www.mountainproject.com/area/123549410/wave-crack-boulder starts the walk from the 16th Street parking"
+ }
+}

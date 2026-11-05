@@ -1,0 +1,32 @@
+{
+ "az_swamp_slabs": {
+  "_expect": {"name": "Swamp Slabs", "region": "Arizona"},
+  "blurb": "Swamp Slabs is the far-left section of Granite Mountain, a high-desert peak in the Prescott area of central Arizona at roughly 6,700 feet. It is a low-angle slab face with ten trad routes, mostly easy to moderate: a spread of beginner-level fifth-class lines up to about 5.8, plus a pair of harder pitches in the 5.10 and 5.11 range. Routes run from a single pitch to several, and the protection is generally good, though the gentle terrain can feel serious. Most lines start from a wide ledge partway up the face, so expect a long hike in, few other parties, and a scramble off the left end to get down.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105792392/swamp-slabs", "https://mountainproject.com/area/105787785/granite-mountain"]}
+ },
+ "az_wall_of_the_waltzing_witches": {
+  "_expect": {"name": "Wall of the Waltzing Witches", "region": "Arizona"},
+  "blurb": "This wall sits in the Munchkinland area of Mount Lemmon, in the Santa Catalina Mountains above Tucson, at about 6,500 feet. It holds ten bolted sport routes, all moderate: one at 5.7, a couple at 5.8, most at 5.9, and two at 5.10. The lines are friendly and somewhat slabby compared with the bigger walls nearby, and the wall goes into shade by early afternoon, which keeps it comfortable on warm days. It is a good choice for newer sport leaders, and it tends to be less crowded than its neighbours, though weekends can still bring a short wait.",
+  "approach": "From the lots at the end of the road, pick up the trail behind the old snack bar and ramada and follow it toward the ridgeline, following cairns and stepping over fallen trees. At the clearing, turn left to reach the wall.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106124402/wall-of-the-waltzing-witches", "https://www.mountainproject.com/area/105738203"]}
+ },
+ "az_solomon_area": {
+  "_expect": {"name": "Solomon Area", "region": "Arizona"},
+  "blurb": "Solomon Area is the first main cluster of routes you meet when walking down the Promised Land canyon, in the grassy plains northeast of Prescott near Chino Valley, at about 5,000 feet. It has ten bolted sport routes with a wide spread: a couple of easy warm-ups, a handful of 5.8 to 5.10 climbs, and a strong group at 5.11 topped by one 5.12 test piece on steep, sustained edges. Easier lines are on the left side of the streambed and a steep overhang is on the right. The rock is very hard and can be slick, and the spot can fill up when school groups visit.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105816974/solomon-area", "https://mountainproject.com/area/105788095/the-promised-land"]}
+ },
+ "az_lower_cathedral": {
+  "_expect": {"name": "Lower Cathedral", "region": "Arizona"},
+  "blurb": "Lower Cathedral is a trad crag in the Notch section of the Cathedral, part of the Granite Dells outside Prescott, at about 5,400 feet. It has ten routes, all in the middle-to-upper fifth-class range: a couple at 5.9, most at 5.10, and two at 5.11. The rock quality is excellent and the features are unusual, rewarding good crack and face technique. The base of the lower tier is reached by a fourth-class scramble with one committing move near the top, so it suits confident climbers more than first-timers.",
+  "review": {"sources": ["https://www.mountainproject.com/area/201860036/lower-cathedral", "https://www.mountainproject.com/area/classics/114503757/7-lower-cathedral-area"]}
+ },
+ "_skipped": {
+  "az_tollgate_pass_east": "no fetchable page about the East sector itself; only the parent Tollgate Pass page and a route page",
+  "az_coon_bluff": "could not fetch two different pages about it (only one Mountain Project page)",
+  "az_half_and_half_wall": "only one fetched page describes it; the parent Tom's Thumb page does not mention it",
+  "az_juniper_rock": "no page found describing this crag"
+ },
+ "_conflicts": {
+  "az_wall_of_the_waltzing_witches": "stored aspect E; crag page says faces roughly south (https://www.mountainproject.com/area/106124402/wall-of-the-waltzing-witches), parent page says about 20 degrees south of east (https://www.mountainproject.com/area/105738203)"
+ }
+}
