@@ -1,0 +1,1489 @@
+{
+ "note": "full rows before apply-owner-qs.mjs; restore a patch with patchRow, a delete by re-inserting `before`",
+ "at": "2026-11-05T16:05:45.366Z",
+ "steps": [
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_forbidden_peak_northeast_face",
+    "area_id": "wa_forbidden_peak",
+    "name": "Northeast Face",
+    "expect": {
+     "face": "Northeast Face (NE Ledge)"
+    },
+    "set": {
+     "face": "Northeast Face, climbed directly from the Boston Glacier"
+    }
+   },
+   "before": {
+    "id": "wa_forbidden_peak_northeast_face",
+    "area_id": "wa_forbidden_peak",
+    "name": "Northeast Face",
+    "discipline": "alpine",
+    "grade": "AI2",
+    "grade_system": "wi",
+    "grade_num": 2,
+    "pitches": null,
+    "length_m": 366,
+    "sort_order": null,
+    "stars": null,
+    "fa": "Ed Cooper and Stuart Ferguson — September 15, 1961",
+    "lat": null,
+    "lng": null,
+    "aspect": "NE",
+    "season": "Jul-Sep",
+    "description": null,
+    "gear": [
+     "Two ice tools and crampons",
+     "Ice screws for the 15 ft vertical wall out of the bergschrund and the 300 ft, 50 degree ice patch higher on the face",
+     "A light alpine rock rack — about 300 ft of the face is Grade III rock on the ground left of the ice patch, and it is not protectable with screws",
+     "A few pitons — the rock band takes pins better than nuts, and parties on the face have relied on them",
+     "Pickets for the moderate snow and ice runouts",
+     "Two ropes: the approach crosses Sharkfin Col on two rappels, and you rappel into the bergschrund to start",
+     "Full crevasse rescue kit — the approach crosses the Quien Sabe and then the Boston Glacier, the largest in the park",
+     "Helmet",
+     "North Cascades National Park backcountry permit"
+    ],
+    "hazards": [
+     "steep firm ice and mixed terrain",
+     "bergschrund at the base",
+     "shaded, cold aspect that holds hazard later in the season",
+     "remote position with a long, complex retreat",
+     "do not confuse this route with the East Ledges (wa_forbidden_peak_east_ledges), the loose ledge-traverse descent on the same aspect that carries a documented 1975 fatality"
+    ],
+    "verif": null,
+    "overview": "A steep face of rock and ice on the northeast side of Forbidden Peak: rock below and above a single steep ice patch (about 50°) in the middle of the face. Best in firm early-season conditions, it is a rarely climbed line in a shaded, remote North Cascades cirque.",
+    "beta": null,
+    "turnaround": "Top out before the afternoon warms the face.",
+    "auto_generated": true,
+    "alpine_grade": "D",
+    "rock_grade": "Class 3-4",
+    "ice_grade": "AI3",
+    "gain_ft": 4600,
+    "loss_ft": 5200,
+    "dist_km": 8.5,
+    "max_angle": 50,
+    "rappels": "~8 single-rope rappels down the West Ridge: about 3 on the ridge back to the notch, mixed with downclimbing, then about 5 down the Cat Scratch gullies to the snowfield below the south face. Late season, expect one or two more in the gullies. The East Ledges alternative takes about 5 single-rope rappels, roughly 400 ft in all, down the north side.",
+    "commitment": "III-IV",
+    "face": "Northeast Face (NE Ledge)",
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+    "comms": "No reliable cell coverage on the Boston Glacier or face; carry a satellite communicator.",
+    "descent": "Do not reverse the face: descend via the West Ridge notch and couloir, or by the East Ledges. Be aware of loose rock and snow bridge hazards. Maintain group cohesion on exposed sections.",
+    "obj_haz": [
+     "extremely loose, largely unprotectable rock",
+     "a documented fatal fall (1975) on the East Ledges descent traverse, if you descend that way",
+     "confusing route-finding across multiple rock ribs"
+    ],
+    "waypoints": [
+     {
+      "lat": 48.48055,
+      "lng": -121.07979,
+      "elev": 3200,
+      "name": "Boston Basin Trailhead",
+      "note": "Small pullout on Cascade River Road ~21.7 mi from Marblemount; NW Forest Pass to park, overnight stays need a park backcountry permit, picked up in person at the Marblemount Wilderness Information Center.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From SR-20 in Marblemount, take the Cascade River Road (FS Road 15) east about 22 miles. Pavement ends near mile 10; the gravel beyond is potholed and gets narrow and steep near the end. The Boston Basin trailhead is a small pullout at about 3,200 ft, just before the Cascade Pass road-end lot. A Northwest Forest Pass is needed to park, and camping in Boston Basin requires a park backcountry permit."
+     },
+     {
+      "lat": 48.494755,
+      "lng": -121.063487,
+      "elev": 5300,
+      "name": "Boston Basin lower camp",
+      "type": "Campsite",
+      "distMi": 1.2
+     },
+     {
+      "lat": 48.501315,
+      "lng": -121.062561,
+      "elev": 6400,
+      "name": "Boston Basin High Camp",
+      "note": "Base camp on flats below the glaciers; from here work northeast across glaciated terrain toward the peak's northeast side.",
+      "type": "Campsite",
+      "distMi": 3,
+      "directions": "From the pullout, follow the old Diamond Mine roadbed about a mile, then take the unsigned climbers' path that leaves it and climbs steeply through forest, crossing four streams, to treeline near 5,300 ft. Continue up heather and boulder slopes into Boston Basin to the high camps near 6,400 ft."
+     },
+     {
+      "lat": 48.5015,
+      "lng": -121.045,
+      "elev": 7725,
+      "name": "Sharkfin Col",
+      "note": "Notch just west of Sharkfin Tower, gained by about 10 ft of 5.7 rock and a class 3 gully. Committing: you rappel off its north side.",
+      "type": "Junction",
+      "distMi": null,
+      "directions": "From high camp, follow the moraine and the west edge of the Quien Sabe Glacier to about 7,500 ft, then climb roughly 10 ft of 5.7 rock and a class 3 gully to the notch beside Sharkfin Tower."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 7000,
+      "name": "Glacier approach below NE face",
+      "note": "Rope travel across the glacial basin toward the base of the northeast face, staying alert for hidden crevasses.",
+      "type": "Junction",
+      "distMi": 3.4,
+      "directions": "Rappel off the north side of the col into the bergschrund and climb a short vertical ice wall, about 15 ft, onto the Boston Glacier. Rope up and traverse west a short way toward the base of the face; this is not the long northward traverse of the North Ridge."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 7300,
+      "name": "Bergschrund crossing",
+      "note": "Cross the bergschrund guarding the base of the face; widens and can be tricky to negotiate by late spring.",
+      "type": "Hazard",
+      "distMi": 3.6,
+      "directions": "Head for the rock below and left (west) of the large ice patch on the lower face, and cross the moat or bergschrund at the glacier's margin, which widens through the season."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 8000,
+      "name": "Northeast Face snow/ice climb",
+      "note": "Sustained firm snow and ice up to ~55 degrees with little protection; best climbed early season while still well frozen.",
+      "type": "Hazard",
+      "distMi": 3.9,
+      "directions": "Climb about 300 ft of rock beside the ice patch, then about 300 ft of ice near 50 degrees. Check the ice is thick enough for screws before committing."
+     },
+     {
+      "lat": 48.51165,
+      "lng": -121.05841,
+      "elev": 8815,
+      "name": "Forbidden Peak",
+      "note": "True summit; descend the West Ridge couloir into Boston Basin.",
+      "type": "Summit",
+      "distMi": 4.2,
+      "directions": "Above the ice, about 600 ft of steep rock laid in upward-dipping slabs, easier than it looks from below, leads directly to the summit."
+     }
+    ],
+    "gpx": [
+     [
+      48.48055,
+      -121.07979
+     ],
+     [
+      48.51165,
+      -121.05841
+     ],
+     [
+      48.501315,
+      -121.062561
+     ],
+     [
+      48.50523333333333,
+      -121.06436666666667
+     ],
+     [
+      48.5068,
+      -121.06275000000001
+     ],
+     [
+      48.50915,
+      -121.060325
+     ]
+    ],
+    "elev_pts": null,
+    "disciplines": [
+     "alpine",
+     "ice",
+     "mountaineering"
+    ],
+    "timing": {
+     "totalHrs": 16,
+     "summitTimeHrs": 12,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 3.5,
+     "recommendedStart": "Alpine start from high camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 4,
+       "note": "Hike from the trailhead into Boston Basin and camp near 6,400 ft on the peak's east side.",
+       "fromTo": "Approach to Boston Basin camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 12,
+       "note": "A less-traveled, more remote line on Forbidden's east side; climb mixed snow and rock to gain the upper mountain and the summit, then descend the standard West Ridge notch and coul…",
+       "fromTo": "Northeast Face to summit, descend West Ridge couloir",
+       "section": "Climb"
+      }
+     ]
+    },
+    "detailed_rack": "A rack of ice screws, a couple of pickets, and a glacier rope; small rock rack for the exit if needed.",
+    "what_to_bring": [
+     "helmet",
+     "two tools",
+     "ice screws",
+     "pickets",
+     "glacier glasses"
+    ],
+    "pro_tips": [
+     "Early-season firmness gives the best ice and lowest hazard.",
+     "Cross the 'schrund early before it opens.",
+     "The shaded aspect stays winter-cold — protect against it."
+    ],
+    "watch_out": [
+     "steep firm ice",
+     "bergschrund crossing",
+     "icefall",
+     "crevasses on approach"
+    ],
+    "pro_needs": "Screws and pickets for the steep ice and snow; minimal rock pro.",
+    "best_season": "Late spring to early summer for the best face ice and snow.",
+    "high_point_ft": 8815,
+    "aid_grade": null,
+    "approach": "From Boston Basin Trailhead, hike ~3-4 mi via old mine road then a climbers' path (4 stream crossings) to high camp near 6,400 ft (3-4 hrs). Continue along the moraine and west edge of the Quien Sabe Glacier to Sharkfin Col (~7,720 ft) via ~10 ft of 5.7 rock and a Class 3 gully. Rappel into the bergschrund on the far side and climb a short ice wall to gain the Boston Glacier, then traverse west across the Boston Glacier to the base of the Northeast Face below a prominent ice patch.",
+    "descent_text": "Do not reverse the Northeast Face. Most parties descend by the West Ridge, as below; the East Ledges off the northeast side are the faster but looser, harder-to-follow alternative. From the true summit, downclimb back past the false summit to the crux tower, then work down the West Ridge crest with exposed 3rd/4th-class downclimbing and about 3 rappels off slung horns and blocks, back to the notch between Forbidden and Torment. From the notch, downclimb a short section of 3rd-class rock to the first station of the Cat Scratch gullies, the parallel rock chimneys immediately west of the snow couloir. About 5 single-rope rappels with a 60 m rope, off fixed anchors on the rib on the down-climber's left, bring you to the snowfield below the south face. Some stations are deliberately short, so do not skip one, and be ready to build an anchor if you cannot find the next. Early season, while the couloir still holds good snow, some parties descend it instead, rappelling the steepest snow to the moat and downclimbing the rest. From the base, cross back to Boston Basin camp and hike out the climbers' trail. This is a long day; budget extra time given the remote, less-travelled ascent line.",
+    "bail": "Down-climb or rappel off screws/pickets; the face is committing above the 'schrund.",
+    "pitch_detail": [
+     {
+      "grade": "Rock, a few pitons",
+      "notes": "Leave the Boston Glacier across the moat or bergschrund at the face's margin, which widens through the season, and climb the rock just below and to the left of the large ice patch on the lower face. The section is rated old-style grade III and was first protected with a few pitons; expect no fixed gear, and treat this outline with caution because the face sees very few ascents.",
+      "pitch": "Lower face",
+      "lengthM": null
+     },
+     {
+      "grade": "~50° ice",
+      "notes": "The technical centre of the route: a sustained ice patch at about 50°. It faces north and has thinned across the range since the first ascent, so check that it still holds enough ice for screws before committing. Everything on the upper face drains through this patch, making it the place most exposed to falling rock and ice from above.",
+      "pitch": "Ice patch",
+      "lengthM": null
+     },
+     {
+      "grade": "Steep upslab rock",
+      "notes": "Above the ice the face stays steep, but the rock is stacked in upward-dipping slabs that give holds and make it easier than it appears from below; it leads directly to the summit. Do not plan to reverse the face: the descent is by another route, and Forbidden has no easy way off by any line.",
+      "pitch": "Upper face",
+      "lengthM": null
+     }
+    ],
+    "itinerary": {
+     "cal": "Boston Basin camping requires an NPS early-access lottery permit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike from the trailhead into Boston Basin and camp near 6,400 ft on the peak's east side.",
+       "hours": 4,
+       "miles": 3.4,
+       "title": "Approach to Boston Basin camp",
+       "gainFt": 2700,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Establish camp below the peak"
+      },
+      {
+       "n": 2,
+       "note": "A less-traveled, more remote line on Forbidden's east side; climb mixed snow and rock to gain the upper mountain and the summit, then descend the standard West Ridge notch and couloir back into Boston Basin.",
+       "hours": 12,
+       "miles": 4.8,
+       "title": "Northeast Face to summit, descend West Ridge couloir",
+       "gainFt": 1800,
+       "lossFt": 5200,
+       "packLb": 20,
+       "schedule": [],
+       "objective": "Climb the face and descend the standard couloir"
+      }
+     ],
+     "totalNote": "A 2-day trip: camp in Boston Basin, then an estimated ~11-12 hr day up the Northeast Face and down the standard West Ridge couloir; this route sees little traffic and few published trip reports."
+    },
+    "access": {
+     "fees": "$10/person/night + a flat $6 nonrefundable reservation fee (charged mid-May–early Oct only; free the rest of the year). No separate climbing fee — North Cascades NP entrance itself is free.",
+     "notes": "Register at Marblemount Ranger Station. Seasonal: July-September (summer/early fall). Required skills: Crevasse rescue, glacier travel. Hazards: Glacier travel, crevasses, exposure on ridge.",
+     "rules": "National Park backcountry regulations: permits for camping, no campfires in alpine zones, Leave No Trace, group size limits.",
+     "permit": "Backcountry permit required for overnight camping (Boston Basin); obtain from the NPS Wilderness Information Center.",
+     "closures": "Boston Basin camping restricted to two designated hardened sites",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "group_limit": 12,
+     "landManager": "North Cascades National Park",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit, quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center up to a day ahead."
+     }
+    },
+    "road": {
+     "name": "Cascade River Road to Boston Basin Trailhead",
+     "status": "Open seasonally",
+     "driveNote": "From Marblemount via Cascade River Road to the Boston Basin/climber's trailhead.",
+     "seasonalGate": "Gated/snow-covered in winter and spring. Opening date varies year to year."
+    },
+    "climate": {
+     "fall": "Early snow and shortening days by late September",
+     "spring": "Heavy snowpack persists on the glacier and col into early summer",
+     "summer": "Primary window, though the face's ice/snow patch and glacier crossing remain condition-sensitive all season",
+     "typical": "Marine west-coast alpine climate; this shaded, north-facing aspect holds the most reliable snow/ice on the peak but is also the coldest and most avalanche-prone in shoulder season.",
+     "forecastZone": "NWAC West Slopes North zone (nwac.us) — check the avalanche/mountain weather forecast before a spring attempt."
+    },
+    "emergency": {
+     "notes": "No reliable cell coverage in the Boston Basin/Boston Glacier backcountry; dial 911 for NPS/Skagit County emergency response.",
+     "county": "Skagit",
+     "rangerStation": "North Cascades NP Wilderness Information Center (Marblemount) — (360) 854-7200",
+     "nearestHospital": "PeaceHealth United General Medical Center, Sedro-Woolley (~40 mi via SR-20)",
+     "sheriffDispatch": "911"
+    },
+    "lists": null,
+    "crowds": {
+     "peakTraffic": "Rarely climbed; the narrow spring/early-summer ice window limits attempts to a handful of parties per year.",
+     "solitudeRating": 5,
+     "estimatePerSeason": "Unknown - very low traffic; no published counts found, estimated at single digits of ascents per season given the narrow condition window."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very strenuous - glacier approach with a bergschrund crossing; the 02:00 recommended start implies a long, committing day.",
+      "packWeight": "Full technical ice rack (tools, screws, crampons), roughly 30-40 lb."
+     },
+     "approachTime": "Long, pre-dawn (02:00 start) glacier approach with a bergschrund crossing before technical climbing begins.",
+     "requiredSkills": [
+      "steep snow/ice climbing up to roughly 55 degrees",
+      "bergschrund crossing technique",
+      "roped glacier travel and crevasse rescue",
+      "narrow-window judgment as the face sheds rock/ice once it warms",
+      "endurance for a cold, shaded, remote route"
+     ],
+     "experienceLevel": "Advanced alpine/ice climber; this is the most technically serious of the routes on this peak."
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "Late spring to early summer, for the best face ice and snow.",
+     "monthBreakdown": {
+      "May": {
+       "reason": "Prime face-ice season, though lingering avalanche hazard remains a real concern.",
+       "status": "good"
+      },
+      "July": {
+       "reason": "The face melts and sheds rock later in summer, making it less recommended.",
+       "status": "marginal"
+      },
+      "June": {
+       "reason": "Best balance of firm snow/ice, with improving access.",
+       "status": "optimal"
+      },
+      "April": {
+       "reason": "Cold with firm ice potentially available, but road access to the trailhead may still be limited and avalanche hazard is at its seasonal peak.",
+       "status": "marginal"
+      }
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Cold, shaded northeast aspect holding firm ice into early summer.",
+      "probability": "Early storms are flagged for both fall and the tail end of the season."
+     },
+     "exposure": "Steep firm ice, icefall, and a remote position; a fall on the sustained ~55-degree ice or being caught crossing the bergschrund carries serious consequence.",
+     "avalanche": {
+      "zone": "West Slopes North (NWAC catchment); NWAC's daily forecast season runs roughly mid-Nov to mid-Apr, so only April falls within an active forecast window - later months are qualitative estimates",
+      "byMonth": {
+       "May": "Considerable",
+       "July": "N/A",
+       "June": "Moderate",
+       "April": "Considerable"
+      }
+     },
+     "crevasses": "Approach involves glacier travel with a bergschrund crossing at the base of the face; the schrund widens and becomes more difficult to cross as the season progresses."
+    },
+    "data_quality": {
+     "gaps": [
+      "Confirmed via 1961 AAJ report (Cooper/Ferguson FA) that this is a genuine, distinct ice/mixed route, separate from the East Ledges (wa_forbidden_peak_east_ledges), which was split into its own record on 2026-07-15. Grade/ice_grade are still not cross-checked against a current print guidebook.",
+      "No public GPS track found for this route as of this research pass.",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+     ],
+     "confidence": "MEDIUM",
+     "lastVerified": "2026-07-15"
+    },
+    "difficulty": {
+     "exposure": 4,
+     "physical": 4,
+     "technical": 4,
+     "commitment": 4,
+     "routefinding": 4
+    },
+    "approach_logistics": {
+     "peakLat": 48.5114,
+     "peakLng": -121.0578,
+     "trailhead": "Boston Basin Trailhead",
+     "trailheadLat": 48.48,
+     "trailheadLng": -121.08,
+     "trailheadDirection": "From Marblemount, leave SR-20 onto Cascade River Road (FR-15) and drive to milepost 22.5, where a small pullout is on the left opposite Johannesburg Mountain. The first 10 miles are paved and the rest is rough gravel; the road can close at the Eldorado parking area at milepost 20."
+    },
+    "sling_rack": null,
+    "alpine_draws": null,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": null,
+    "ascender": null,
+    "corrections": "Restored 2026-07-28 after a data-corruption bug in PR #324: a superseded SQL file (alpine_trailhead_enrichment.sql) used ambiguous WHERE id LIKE clauses that matched this row unintentionally and overwrote its approach/access fields with a different, unrelated Washington-state alpine route's data. Distinct from the Northwest Face and North Ridge approaches -- this route stops on the Boston Glacier (east side) rather than continuing to the Forbidden Glacier. Camp-to-base distance/gain figures are composite estimates (trailhead-to-camp leg is well sourced; camp-to-face-base mileage is interpolated from glacier-traverse descriptions, not a single sourced figure) -- researched 2026-07-28. FA corrected 2026-07-29: previously credited Beckey/Burgner/Nephew 1972, which is actually Dragontail Peak Northeast Buttress FA party -- this route is the 1961 AAJ-reported line by Ed Cooper and Stuart Ferguson (September 15, 1961 per the AAC Publications account), whose pitch-by-pitch description matches this row exactly. grade_num (7 = the misattributed Dragontail route YDS 5.7) cleared for the same reason; rock here is Class 3-4, no 5th class.",
+    "gear_confidence": null,
+    "rappel_detail": [
+     {
+      "n": 1,
+      "pull": "Set the knot well clear of the lip and check the pull before committing.",
+      "notes": "Ridge rappel 1 of about 3. Downclimb from the summit back past the false summit to reach it.",
+      "anchor": "natural horn/block, top of the crux tower",
+      "hazards": [
+       "The pull angles here are awkward and a rope that is not weighted cleanly off the horn can hang up. Watch the rope over the edge before the last person goes."
+      ],
+      "lengthM": null,
+      "station": "On the crux tower at the top of the steep section, roughly 175 ft below the summit. Slings and cord are usually in place; it is the first station most parties use rather than downclimbing."
+     },
+     {
+      "n": 2,
+      "notes": "Ridge rappel 2 of about 3, landing on north-side snow.",
+      "anchor": "natural horn/block",
+      "hazards": [
+       "The landing is on snow, and the step from rock to snow is where parties come off the rappel awkwardly. Have crampons and an axe ready before you start down."
+      ],
+      "lengthM": null,
+      "station": "Below the crux tower, dropping onto snow on the north side of the ridge. Natural anchors: slung horns and blocks with accumulated tat, not a bolted station."
+     },
+     {
+      "n": 3,
+      "notes": "Ridge rappel 3 of about 3, back down to the notch between Forbidden and Torment. How many of the ridge steps you rappel rather than downclimb is up to the party.",
+      "anchor": "natural horn/block",
+      "hazards": [
+       "Exposed downclimbing between stations. Stay roped on wet rock."
+      ],
+      "lengthM": null,
+      "station": "On the lower ridge above the notch. Slung horn or block with tat; the 3rd/4th-class steps between here and the stations above are usually downclimbed."
+     },
+     {
+      "n": 4,
+      "notes": "Cat Scratch rappel 1 of about 5. Three parallel chimneys all go; parties most often use the one nearest the snow couloir.",
+      "anchor": "fixed anchor on the rib",
+      "hazards": [
+       "Loose rock throughout. Rappel one at a time, and let each climber move out of the fall line before the next one pulls the rope."
+      ],
+      "lengthM": null,
+      "station": "Top of the Cat Scratch gullies, the rock chimneys immediately west of the snow couloir. From the notch, downclimb a short section of 3rd-class rock to reach it."
+     },
+     {
+      "n": 5,
+      "notes": "Cat Scratch rappel 2 of about 5.",
+      "anchor": "fixed anchor on the rib",
+      "hazards": [
+       "The rappel line follows fixed anchors on the small rib on the down-climber's left of the gullies. Parties that drift into the right-hand gully end up on loose ground with no stations, which is the descent error reported most often here."
+      ],
+      "lengthM": null,
+      "station": "Next station down the same chimney, on the rib on the down-climber's left."
+     },
+     {
+      "n": 6,
+      "notes": "Cat Scratch rappel 3 of about 5.",
+      "anchor": "fixed anchor on the rib",
+      "hazards": [
+       "Some stations are deliberately short and easy to rappel straight past. Do not skip an anchor because you cannot yet see the next one."
+      ],
+      "lengthM": null,
+      "station": "Mid-gully, on the rib on the down-climber's left."
+     },
+     {
+      "n": 7,
+      "pull": "Carry enough cord to build an extra station if you cannot find the next one.",
+      "notes": "Cat Scratch rappel 4 of about 5.",
+      "anchor": "fixed anchor on the rib",
+      "hazards": [
+       "Loose rock throughout. Rappel one at a time, and let each climber move out of the fall line before the next one pulls the rope."
+      ],
+      "lengthM": null,
+      "station": "Lower gully, on the rib on the down-climber's left. This is the station most often reported as hard to find: if you cannot see it, stop and look on the rib before continuing."
+     },
+     {
+      "n": 8,
+      "notes": "Cat Scratch rappel 5 of about 5, landing on the snowfield. From here, reverse the glacier-remnant and talus traverse back to Boston Basin.",
+      "anchor": "fixed anchor on the rib",
+      "hazards": [
+       "The moat where the snow pulls away from the rock reappears at the bottom and can need a step across or a short downclimb. Have crampons and an axe ready for the snow."
+      ],
+      "lengthM": null,
+      "station": "Bottom of the gullies, above the snowfield below Forbidden's south face."
+     }
+    ],
+    "rappel_count_note": "Counted for one 60 m rope, which is what most parties carry: about 3 rappels on the ridge and about 5 in the Cat Scratch gullies. The gully count varies by party, from 5 to 7, depending on which chimney you take and how much you downclimb. Early season, while the snow couloir beside the gullies is still filled in, some parties descend the couloir instead, rappelling the steepest snow to the moat and downclimbing the rest. The stations below are the ridge and then the rock rib beside the couloir, the line, which works all season. Do not skip stations, and be ready to build one if you cannot find the next.",
+    "rack": null,
+    "features": null,
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": [
+     {
+      "name": "Sharkfin Col, the schrund rappel and an ice wall, then west across the Boston Glacier to the ice patch",
+      "notes": "From the Boston Basin trailhead, three to four miles by the old mine road and the climbers' path with four stream crossings to high camp near 6,400 ft. Continue along the moraine and the west edge of the Quien Sabe Glacier to Sharkfin Col at about 7,720 ft, gained by roughly 10 ft of 5.7 rock and a class 3 gully.\n\nThe first-ascent party rappelled from the col into the bergschrund and climbed a 15 ft vertical ice wall to get out of it onto the Boston Glacier. Expect the schrund to be the awkward part of the day before the climbing starts.\n\nFrom the glacier, traverse west — a short traverse, not the long northward one the North Ridge makes — to the base of the face.\n\nThis line is climbed rarely enough that no fixed gear should be assumed and modern first-hand descriptions are scarce; treat any description of it, including this one, as an outline.",
+      "season": "Late spring to early summer, when the face still holds the best ice and snow",
+      "hazards": [
+       "A rappel into a bergschrund and a 15 ft vertical ice wall to get out of it onto the glacier",
+       "A north-facing ice feature that has thinned over recent decades — verify there is ice deep enough to take a screw rather than assuming it",
+       "Everything on the face funnels through the ice patch, so it is the exposed spot for anything released from above",
+       "A remote position with a long, complex retreat and a descent by the West Ridge on the far side of the peak",
+       "So few ascents that conditions cannot be inferred from recent traffic"
+      ],
+      "baseFinding": "The ice patch is the landmark and your position relative to it is the whole test. From the Boston Glacier a large, conspicuous patch of ice sits on the lower face — about 300 ft tall. You start on rock below and to the left (west) of it, not on it and not to its right.\n\nSo the first-move test is: rock first, ice second. About 300 ft of rock, protected by a few pitons on the first ascent, comes before you reach the ice at all. If you are swinging tools within a rope-length of leaving the glacier, you have started too far right — you are on the patch itself rather than the rock beside it.\n\nCount the three sections in order: 300 ft of rock, then 300 ft of ice at about 50 degrees, then about 600 ft of steep-looking but upward-dipping slabs to the top. A route that stays on one medium the whole way is not this one.\n\nTell it from the North Ridge by how far you walked. Both cross Sharkfin Col and use the same schrund rappel. The North Ridge then traverses a long way north to the far end of the Boston Glacier and starts at a col with ground falling away on both sides. This route turns west after a short traverse and starts under a face. If you walked past a rock buttress and kept going, you have gone to the North Ridge.\n\nA genuine naming trap, worth knowing before you leave camp: Forbidden's 'northeast face route' is sometimes used loosely to mean a high traverse below the east ridge that skirts the gendarmes — an easier, quite different line, and the one some descent descriptions mean. This route is the technical ice-patch face above the Boston Glacier. If the description you are following has you traversing under a ridge crest rather than climbing a face, you are reading about the other thing."
+     }
+    ],
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Lower face rock below the ice patch",
+      "notes": "From the Boston Glacier, start up the rock immediately below and left of the conspicuous ice patch on the lower face. This first section runs about 300 ft and was recorded on the first ascent as grade III climbing protected with a few pitons. Getting off the glacier and onto the rock involves the usual moat or bergschrund at the margin, which grows through the season. Note that this face is climbed rarely enough that no maintained fixed gear should be assumed and modern first-hand descriptions are scarce, so treat this outline as an outline."
+     },
+     {
+      "n": 2,
+      "label": "The ice patch",
+      "notes": "The route's technical centrepiece: roughly 300 ft of ice at about 50 degrees. It is a north-facing feature that has thinned across the range over recent decades, so the depth of ice available for screws should be verified on the day rather than assumed. Everything on the face above funnels through this section, making it the exposed spot for rock and ice released from higher up."
+     },
+     {
+      "n": 3,
+      "label": "Upper face to the summit",
+      "notes": "About 600 ft remain above the ice patch. The angle is steep, but the rock is laid in upward-dipping slabs which makes the climbing easier than it looks from below. Above this the face merges into the summit. Descent is not by reversing the face — descend by the West Ridge notch and its couloir, or by the East Ledges off the northeast side; either is a long, committing exit in its own right; the peak has a reputation for having no easy way down by any route."
+     }
+    ],
+    "bivy": [
+     {
+      "elev": 6400,
+      "name": "Boston Basin upper (high) camp",
+      "role": "main",
+      "type": "camp",
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the published guidance worth knowing before you go: park zone rules describe camping on durable surfaces such as snow, rock or bare ground, while much of the practical guidance for Boston Basin says to use only the two established camps. In practice rangers direct climbers to the hardened sites, so plan on them and ask at Marblemount if you intend otherwise.",
+      "water": "Snowmelt runnels and glacier outflow are usually running nearby, but this is the less certain of the two camps late in the season — parties arriving in September should be ready to melt snow or carry it up from below.",
+      "permit": "Same NPS wilderness permit as the lower camp, collected in person at Marblemount; reservable portion on Recreation.gov, remainder held for walk-ups.",
+      "capacity": "Shares the same 6-party, 12-person Boston Basin zone quota as the lower camp; a handful of hardened tent platforms."
+     },
+     {
+      "elev": 5300,
+      "name": "Boston Basin lower camp",
+      "role": "route",
+      "type": "camp",
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the Torment-Forbidden traverse, and it stays snow-covered well into early summer. accounts differ on the exact elevation of the two Boston Basin camps — figures between roughly 5,300 and 5,700 ft are quoted for this one — so treat the number as approximate rather than a waypoint. Bear-resistant food storage is required.",
+      "water": "Meltwater creeks braid through the basin below the Quien Sabe and Boston glaciers and are normally reliable through the climbing season, though flow drops noticeably by late August and September in a light snow year.",
+      "permit": "NPS wilderness permit required for any overnight stay, and for all Cascade River Road trailheads it must be collected in person at the Marblemount Wilderness Information Center. Roughly 60% of capacity is reservable in advance through Recreation.gov, about 40% held for walk-ups the day of or day before. These permits are no longer free — older write-ups still say they are, which is out of date; confirm current pricing when you book.",
+      "capacity": "Zone quota is 6 parties per night for the whole Boston Basin cross-country zone, shared with the upper camp; maximum party size 12. Weekend permits go early."
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "role": "route",
+      "type": "bivy",
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col area, or in a notch on route. Treat these as unplanned or emergency shelter rather than as an itinerary: they are exposed, they have no water once the snow goes, and the surrounding terrain is glaciated. Human waste must be packed out, and food still needs bear-resistant storage.",
+      "water": "Entirely snowmelt and therefore seasonal. Early in the summer there is running water almost everywhere; by late season the high ground can be bare rock with nothing running, so plan to carry water up or melt snow.",
+      "permit": "Still requires an NPS wilderness permit for the relevant cross-country zone, from Marblemount. Whether an unestablished high bivouac is acceptable in Boston Basin is genuinely contested — the general zone regulation allows camping on durable surfaces such as snow, rock or bare ground, while the site-specific guidance for Boston Basin says to use the two designated camps. Ask when you collect the permit rather than assuming.",
+      "capacity": "Party-sized ledges and snow platforms only; no facilities, no toilet, and no reliable flat ground once the snow has melted out."
+     },
+     {
+      "name": "Boston Basin High Camp",
+      "role": "hidden"
+     }
+    ],
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "northeast ne face",
+    "ice_grade_num": 2,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  },
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_mount_shuksan_hanging_glacier",
+    "area_id": "wa_mount_shuksan_climbs",
+    "name": "Hanging Glacier",
+    "expect": {
+     "best_season": "May to June"
+    },
+    "set": {
+     "best_season": "Mid-July through August is when parties tackle this line: the approach valley has lost most of its snow, the summit-pyramid rock has dried, and the glacier still has usable ice. Spring belongs to ski descents of the glacier rather than the roped climb, and by September the ice turns harder and the crevasses open wider.",
+     "seasonal_guidance": {
+      "optimalWindow": "Mid-July through August",
+      "monthBreakdown": {
+       "July": {
+        "status": "optimal",
+        "reason": "The approach has melted out and the summit rock is drying while the glacier still holds usable ice."
+       },
+       "August": {
+        "status": "good",
+        "reason": "Still in condition, though the ice hardens and crevasses widen as the month goes on."
+       }
+      }
+     }
+    }
+   },
+   "before": {
+    "id": "wa_mount_shuksan_hanging_glacier",
+    "area_id": "wa_mount_shuksan_climbs",
+    "name": "Hanging Glacier",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "grade_system": "yds",
+    "grade_num": 6,
+    "pitches": null,
+    "length_m": null,
+    "sort_order": null,
+    "stars": null,
+    "fa": "Otto Trott and Andy Hennig, 1939",
+    "lat": null,
+    "lng": null,
+    "aspect": "N",
+    "season": "Jul-Aug",
+    "description": null,
+    "gear": [
+     "Ice screws for the steep (up to ~65 degree) ice section",
+     "A small rock rack for the 5.6 finish on the east ridge"
+    ],
+    "hazards": [
+     "Large crevasses high on the route",
+     "General north-side serac/icefall exposure shared with neighboring Price and North Face routes",
+     "The Hanging Glacier is retreating and its terminus is increasingly broken/rocky, which can add rockfall/icefall risk versus older route descriptions"
+    ],
+    "verif": null,
+    "overview": "One of Shuksan's original technical lines, historically known as the '1939 Route' - the Hanging Glacier carried the first technical ascent of the mountain in 1939. It climbs the Hanging Glacier on the peak's north side, between the Price Glacier and White Salmon Glacier cirques, and is currently retreating like most Cascade glaciers, which is changing its character over time.",
+    "beta": "Via North Face approach or from Fisher Chimneys route (drop down White Salmon Glacier approximately 1,000 feet). Cross the NW Rib route to gain Hanging Glacier. Features nice mix of glacier travel and ice climbing up to 65 degrees. Connected to Crystal Glacier at upper margins.",
+    "turnaround": "Be through the serac-threatened ground early",
+    "auto_generated": true,
+    "alpine_grade": "D",
+    "rock_grade": "5.6",
+    "ice_grade": "AI4 (up to 65 degrees)",
+    "gain_ft": 6000,
+    "loss_ft": 6000,
+    "dist_km": 20.12,
+    "max_angle": 65,
+    "rappels": "About 3: one to three short rappels down the summit pyramid gully, plus an optional rappel of about 30 m at Winnie's Slide if icy",
+    "commitment": "IV",
+    "face": "Hanging Glacier / east ridge of the Summit Pyramid",
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+    "comms": "No cell coverage",
+    "descent": "Rappel and downclimb the summit pyramid gully, descend Hell's Highway to the Upper Curtis Glacier, then go west down Winnie's Slide and the White Salmon Glacier.",
+    "obj_haz": [
+     "active icefall/serac release from the Hanging Glacier",
+     "crevasses",
+     "moat/gap hazard between rock wall and glacier"
+    ],
+    "waypoints": [
+     {
+      "lat": 48.8589,
+      "lng": -121.6591,
+      "elev": 3573,
+      "name": "White Salmon Road (hairpin) TH",
+      "note": "Hairpin turn onto NF-3075 off SR542 near mile 51-52, just before the White Salmon Day Lodge.",
+      "type": "Trailhead",
+      "directions": "Drive the Mount Baker Highway (SR-542) to the town of Glacier and stop at the Glacier Public Service Center for the backcountry permit — it's required, not optional. Continue up SR-542 to around mile 51-52 and take the hairpin turn onto NF-3075 (White Salmon Road), just before the White Salmon Day Lodge, to the small pull-off at the old White Salmon Lodge site."
+     },
+     {
+      "lat": 48.8353,
+      "lng": -121.6019,
+      "name": "Hanging Glacier",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": null,
+      "directions": "Walk around the gate and follow the old road past the lodge site about a mile to its end at an old clearcut. With good snow cover, drop northeast to White Salmon Creek and follow the valley to the toe of the White Salmon Glacier and climb glacier and moraine to a bivy at the rock outcrops on its eastern edge. Then traverse climber's left beneath the upper ice to the foot of the Hanging Glacier, staying right of the North Face's avalanche paths."
+     },
+     {
+      "lat": 48.831095,
+      "lng": -121.602955,
+      "elev": 9127,
+      "name": "Mount Shuksan summit pyramid",
+      "type": "Summit",
+      "elevFt": 9127,
+      "directions": "Climb the Hanging Glacier on roped glacier ground and ice steps up to about 65 degrees, outflanking a large crevasse high up; serac fall is a real hazard. Its top joins the Crystal Glacier, which leads onto the upper plateau beside the summit pyramid. Finish up the pyramid's east ridge, roped rock at about 5.3 to 5.6, to the summit."
+     }
+    ],
+    "gpx": [
+     [
+      48.8353,
+      -121.6019
+     ],
+     [
+      48.8353,
+      -121.6019
+     ],
+     [
+      48.8589,
+      -121.6591
+     ],
+     [
+      48.831095,
+      -121.602955
+     ]
+    ],
+    "elev_pts": null,
+    "disciplines": [
+     "alpine",
+     "ice"
+    ],
+    "timing": {
+     "totalHrs": 23,
+     "summitTimeHrs": 11,
+     "descentTimeHrs": 5,
+     "approachTimeHrs": 7,
+     "recommendedStart": "3:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 7,
+       "note": "The alternate Lake Ann / Fisher Chimneys approach, staging at a high camp near Winnie's Slide (~7,300 ft) on the White Salmon Glacier side of the mountain.",
+       "fromTo": "Approach to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 11,
+       "note": "Down-climb the White Salmon Glacier to the base of the NW Rib, then climb steep snow and ice steps up to about 65 degrees, and a short mixed rock band up onto the Hanging Glacier and the summit. Large a…",
+       "fromTo": "Summit day - climb the Hanging Glacier",
+       "section": "Climb"
+      },
+      {
+       "hrs": 5,
+       "note": "Reverse the Fisher Chimneys/Lake Ann approach back to the car.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "detailed_rack": "6-8 ice screws and picket(s).",
+    "what_to_bring": [
+     "helmet",
+     "two tools",
+     "ice screws",
+     "pickets",
+     "two ice axes",
+     "crampons",
+     "full crevasse rescue setup"
+    ],
+    "pro_tips": [
+     "Serac hazard is the defining risk - choose cold, stable conditions",
+     "Move efficiently beneath the hanging ice",
+     "Descend the Sulphide or Fisher Chimneys",
+     "The route finishes with 5.6 rock on the Summit Pyramid's east ridge after glacier travel and ice climbing up to about 65°."
+    ],
+    "watch_out": [
+     "Steep ice and crevasses",
+     "Approach avalanche slopes"
+    ],
+    "pro_needs": "Ice screws and pickets for steep ice and serac terrain",
+    "best_season": "May to June",
+    "high_point_ft": 9131,
+    "aid_grade": null,
+    "approach": "Note: the Hanging Glacier/North Face approach lies in the White Salmon Creek drainage, one valley west of Price Lake, rather than on the Nooksack/Ruth Creek side with which it is sometimes grouped. Drive the Mount Baker Highway to Glacier, WA and get a backcountry permit at the Glacier Public Service Center (required), then continue up the Salmon Ridge/Mount Baker Highway corridor to the small pull-off at the old White Salmon Lodge site. Walk around the gate and follow the old road past the lodge site roughly a mile to where it ends at an old clearcut. From there, with adequate snow cover, descend northeast off-trail to White Salmon Creek and follow the valley up toward the toe of the White Salmon Glacier — this is where roped glacier travel typically begins, with crevasse hazard increasing through the season. Ascend the glacier and moraine to a bivy around 6,000–6,500 ft, below the first rock/ice barrier. From the bivy, traverse climber's left, above and across the hanging glacier that sits over Price Lake (visible below to the north-east) and beneath the upper hanging glacier tucked under the first rock barrier, to reach the base of the shoulder dividing the White Salmon and Price Glacier cirques (roughly 7,500–8,000 ft), where the technical climbing begins. Key hazards: brush/alder low in the White Salmon valley when the snowline has receded; open crevasses on the White Salmon Glacier; and, especially in early season, frequent avalanches shedding off the true North Face — parties are advised to stay right of it during the traverse rather than drifting left onto the face itself. An alternate approach used by some parties climbs the Fisher Chimneys and Winnie's Slide to a bivy near the Upper Curtis Glacier, then descends about 1,000 ft down the White Salmon Glacier and traverses the NW Rib to reach the base of the Hanging Glacier — an option from the standard Lake Ann/Fisher Chimneys trailhead rather than the White Salmon side.",
+    "descent_text": "From the summit, most parties tie into the same descent used off Price Glacier and the standard Sulphide route: downclimb/rappel the summit pyramid's gully system (natural horn-and-sling anchors, occasionally pickets — typically 1–3 short rappels on a single 30–60 m rope, condition-dependent) down to Hell's Highway (a ~60 m steep snow/ice step) and onto the Sulphide/Upper Curtis Glacier. Because this route's trailhead (White Salmon Lodge) is on the same north side of the peak rather than at Baker Lake or Ruth Creek, many parties then reverse west from the Upper Curtis, dropping back over the shoulder and down through Winnie's Slide (occasionally a single ~30 m rappel if icy) toward the head of the White Salmon Glacier, then plunge-step the glacier back down past the bivy site and out the same valley to the White Salmon Lodge trailhead — avoiding the long Lake Ann/Baker Lake shuttle that Price Glacier and Fisher Chimneys parties face. Watch for opening crevasses on the White Salmon Glacier on the way down, weak snow bridges late in the season, and brush/alder in the lower valley once snow cover thins.",
+    "bail": "Retreat from beneath the hanging glacier promptly if hazard rises",
+    "pitch_detail": [
+     {
+      "grade": "Class 3-4, then glacier",
+      "notes": "From a camp above the Fisher Chimneys, descend about 1,000 ft down the White Salmon Glacier, then cross the Northwest Rib, the narrow rock spur that divides the White Salmon and Hanging Glaciers, to reach the foot of the Hanging Glacier. From the White Salmon valley instead, traverse left beneath the upper ice, staying well right of the North Face's avalanche paths.",
+      "pitch": "Section 1"
+     },
+     {
+      "grade": "Ice to 65°",
+      "notes": "Climb the Hanging Glacier, mixing roped glacier travel with ice steps up to about 65 degrees; steeper lines are there for those who want them. A large crevasse high on the glacier has to be outflanked. The glacier's top joins the Crystal Glacier, which leads onto the upper plateau beside the summit pyramid. Serac fall is a real hazard here, and the glacier is retreating, so conditions change from year to year.",
+      "pitch": "Section 2"
+     },
+     {
+      "grade": "5.6",
+      "notes": "Finish on the east ridge of the summit pyramid: roped rock climbing at about 5.3 to 5.6 to the summit. Descend the pyramid's central gully on its south side.",
+      "pitch": "Section 3"
+     }
+    ],
+    "itinerary": {
+     "cal": "A steep, avalanche-prone line off the very active Hanging Glacier - best done early season or after a hard overnight freeze; avoid it in warm or unstable conditions.",
+     "days": [
+      {
+       "n": 1,
+       "note": "The alternate Lake Ann / Fisher Chimneys approach, staging at a high camp near Winnie's Slide (~7,300 ft) on the White Salmon Glacier side of the mountain.",
+       "hours": 7,
+       "miles": 4.5,
+       "title": "Approach to high camp",
+       "gainFt": 3000,
+       "lossFt": 100,
+       "packLb": 50,
+       "schedule": [],
+       "objective": "Reach high camp near Winnie's Slide / the Upper Curtis Glacier"
+      },
+      {
+       "n": 2,
+       "note": "Down-climb the White Salmon Glacier to the base of the NW Rib, then climb steep snow and ice steps up to about 65 degrees, and a short mixed rock band up onto the Hanging Glacier and the summit. Large avalanches off the active glacier are a real hazard - move fast through the exposed sections. Descend back to camp via the Fisher Chimneys side.",
+       "hours": 11,
+       "miles": 4,
+       "title": "Summit day - climb the Hanging Glacier",
+       "gainFt": 3000,
+       "lossFt": 3000,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "3:00 AM",
+         "label": "Leave high camp",
+         "detail": "Down-climb the White Salmon Glacier."
+        },
+        {
+         "time": "5:00 AM",
+         "label": "Reach base of the NW Rib",
+         "detail": "Rope up for the glacier/mixed terrain above."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Back at high camp",
+         "detail": "Descend via the Fisher Chimneys side."
+        }
+       ],
+       "objective": "Descend into the White Salmon cirque, climb the Hanging Glacier/NW Rib to the summit, return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the Fisher Chimneys/Lake Ann approach back to the car.",
+       "hours": 5,
+       "miles": 4,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2900,
+       "packLb": 50,
+       "schedule": [],
+       "objective": "Break camp and hike back to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, 2-night trip similar in shape to the North Face - roughly 12-13 miles round trip with about 6,000 ft of total gain - but on steeper, more avalanche-exposed terrain on Shuksan's north side."
+    },
+    "access": {
+     "fees": "No climbing fee (Forest Service approach). An NPS permit is required if camping overnight past the park boundary, and it is not free: $10 per person plus a $6 fee, youth 15 and under free.",
+     "notes": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+     "rules": "Same MBS NF rules as Mount Baker (fire/camping setbacks near named trails/lakes, pack out human waste). Parties are limited to 12 people in the park's cross-country zones around Shuksan.",
+     "permit": "North Cascades Backcountry Permit",
+     "seasonal": "The Mount Baker Highway (SR 542) is plowed year-round to the Mt. Baker Ski Area, near where this approach starts; the road beyond to Artist Point is closed in winter.",
+     "group_limit": 12,
+     "landManager": "North Cascades National Park",
+     "land_manager": "National Park Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park backcountry permit for any camp inside the park - quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit at the Glacier Public Service Center (in season) or the Wilderness Information Center in Marblemount. Camps below the park boundary, such as Lake Ann and lower Shannon Ridge, are in the Mount Baker Wilderness and need only the free self-issue permit at the trailhead."
+     }
+    },
+    "road": {
+     "name": "Mount Baker Highway (SR 542) to White Salmon Road (FS 3075)",
+     "status": "Paved highway; spur/forest roads gravel and variable",
+     "driveNote": "Park at the small pull-off at the old White Salmon Lodge site; parking is very limited and not allowed on the highway. The alternate start is the Lake Ann trailhead.",
+     "seasonalGate": "Forest spur roads seasonal; SR 542 plowed to the ski area"
+    },
+    "climate": {
+     "typical": "Heavily glaciated alpine peak; maritime weather with rapid changes and frequent cloud",
+     "bySeason": {
+      "fall": "Dry glaciers, shorter days, early storms",
+      "spring": "Firm alpine ice/snow on the north-side glaciers; prime ice-line season",
+      "summer": "Glaciers open up, more crevasse and rockfall hazard; popular Sulphide/Fisher season",
+      "winter": "Severe maritime conditions, heavy snow, rare technical ascents"
+     },
+     "forecastZone": "NWS Seattle - North Cascades"
+    },
+    "emergency": {
+     "notes": "Call 911; rescues are coordinated by NPS / Whatcom County.",
+     "county": "Whatcom",
+     "rangerStation": "North Cascades National Park - Wilderness Information Center (Marblemount)",
+     "nearestHospital": "PeaceHealth St. Joseph Medical Center, Bellingham (Level II trauma center)",
+     "sheriffDispatch": "911"
+    },
+    "lists": null,
+    "crowds": {
+     "peakTraffic": "Rarely climbed",
+     "solitudeRating": 5,
+     "estimatePerSeason": "unknown - low-traffic; minimal dedicated trip-report presence was found for this specific line"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Demanding approach up the White Salmon Creek valley (or over the Fisher Chimneys), likely with a bivy",
+      "packWeight": "Full technical ice rack plus bivy gear, roughly 40-50 lb"
+     },
+     "approachTime": "Long approach with bivy on the north side",
+     "requiredSkills": [
+      "Steep ice climbing",
+      "Glacier travel & crevasse rescue in complex, broken terrain",
+      "Serac hazard timing and avoidance",
+      "Avalanche hazard assessment on the approach slopes",
+      "Self-rescue and bivy competence"
+     ],
+     "experienceLevel": "Advanced alpine ice climbers with serac/icefall judgment"
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "May to June",
+     "monthBreakdown": {
+      "May": {
+       "reason": "Best ice and snow coverage, matching the start of the best-season",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "Still climbable early in the month, becoming marginal later as the season progresses and hazards increase",
+       "status": "good"
+      }
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Consistent with on-file climate",
+      "probability": ""
+     },
+     "exposure": "Very high - hanging-glacier serac collapse is the defining risk; steep ice climbing with limited escape options if conditions deteriorate",
+     "avalanche": {
+      "zone": "West Slopes North (NWAC) - general-area coverage only",
+      "byMonth": {
+       "May": "Considerable",
+       "June": "Moderate"
+      }
+     },
+     "crevasses": "Complex crevasse navigation on the hanging glacier itself"
+    },
+    "data_quality": {
+     "gaps": [
+      "Modern route condition is uncertain given ongoing glacier retreat - confirm current beta/photos before attempting",
+      "No single authoritative modern topo was found; beta here is drawn from one documented ascent account rather than a guidebook",
+      "No public GPS track found for this route as of this research pass.",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+     ],
+     "confidence": "MEDIUM",
+     "lastVerified": "2026-07-02"
+    },
+    "difficulty": {
+     "exposure": 4,
+     "physical": 4,
+     "technical": 1,
+     "commitment": 4,
+     "routefinding": 4
+    },
+    "approach_logistics": {
+     "peakLat": 48.8315,
+     "peakLng": -121.6032,
+     "trailhead": "White Salmon Day-Lodge Area (FR-3075, Mt. Baker Ski Area)",
+     "trailheadLat": 48.8589,
+     "trailheadLng": -121.6591,
+     "trailheadDirection": "From the White Salmon day-lodge area on SR-542 (White Salmon Road, FR-3075), via the old roadbed into the White Salmon Creek drainage"
+    },
+    "sling_rack": {
+     "cams": "light rack to 2in for summit pyramid rock",
+     "nuts": "small set",
+     "pickets": "2-3",
+     "ice_screws": "4-6"
+    },
+    "alpine_draws": 4,
+    "rope_type": "single 60m dynamic",
+    "rope_length_m": 60,
+    "rope_note": "~3,000 ft of snow and glacial ice with steps up to about 65 deg to gain the upper Hanging Glacier, then 4th-5th class rock to the summit pyramid; used as an AMGA guide exam route for its sustained, moderate difficulty.",
+    "ascender": "Prusik cords (see rope_note)",
+    "corrections": "Distinguished from the standard North Face route it shares an approach with; no dedicated Hanging-Glacier-specific trip report with an itemized rack was found, so gear is extrapolated from North Face route profile.",
+    "gear_confidence": "inferred",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "notes": "First of one to three short gully rappels on a single 30-60 m rope; more rappelling later in the season as the snow melts out.",
+      "anchor": "slung rock horn or a fixed ring on webbing",
+      "hazards": [
+       "The gully is a rockfall corridor, especially with several parties in it."
+      ],
+      "lengthM": null,
+      "station": "The head of the central gully on the summit pyramid, below the short summit-block downclimb."
+     },
+     {
+      "n": 2,
+      "notes": "Down to the base of the summit pyramid; some parties make only one gully rappel and downclimb the rest, others need a third. Then descend Hell's Highway onto the Upper Curtis Glacier and traverse west.",
+      "anchor": "slung horn, fixed station or occasionally a picket",
+      "lengthM": null,
+      "station": "A lower station in the central gully."
+     },
+     {
+      "n": 3,
+      "notes": "Optional: a single rappel of about 30 m, rigged only when the slope is icy; otherwise downclimb facing in.",
+      "anchor": "picket in snow or ice (bring your own)",
+      "hazards": [
+       "Pickets left by earlier parties are often pulled by later ones."
+      ],
+      "lengthM": 30,
+      "station": "The top of Winnie's Slide, on the way back west toward the White Salmon Glacier."
+     }
+    ],
+    "rappel_count_note": "The summit pyramid gully takes one to three short rappels depending on snow cover, and Winnie's Slide needs one of about 30 m only when icy. The table lists two gully rappels and the Winnie's Slide rappel, a typical total of three. Gully rappel lengths are not published.",
+    "rack": [
+     "6-8 ice screws",
+     "2-3 pickets, full crevasse rescue kit",
+     "Light rack to 2in cams, small nut set for the 5.6 summit pyramid finish",
+     "4 alpine quickdraws",
+     "Single 60m dynamic rope"
+    ],
+    "features": [
+     "Sustained",
+     "Technical",
+     "Exposed",
+     "Committing"
+    ],
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": [
+     {
+      "name": "White Salmon Creek from the old lodge site, up the White Salmon Glacier to the dividing shoulder",
+      "camps": [
+       "North Face bivy, where the rib meets the face"
+      ],
+      "notes": "Get the backcountry permit at the Glacier Public Service Center on the way in — it is required, not advisory. Then continue up the Mount Baker Highway to the pull-off at the old White Salmon Lodge site, walk round the gate, and follow the old roadbed roughly a mile to where it ends at an old clearcut. From the road-end, with adequate snow cover, drop northeast off-trail to White Salmon Creek and follow the valley up toward the toe of the White Salmon Glacier. Roped travel usually begins at the toe, and the crevasse hazard grows through the season. Ascend glacier and moraine to a bivy below the first rock and ice barrier. Published bivy elevations for this route disagree by around a thousand feet — so the honest instruction is to camp at the rock outcrops on the eastern edge of the White Salmon, where the ridge meets the face, rather than at a number. The Hanging Glacier and North Face approach is in the White Salmon Creek drainage, one valley west of Price Lake — not on the Nooksack and Ruth Creek side of the mountain.",
+      "objHaz": [
+       "icefall",
+       "avalanche",
+       "crevasses",
+       "glacier travel",
+       "exposed climbing"
+      ],
+      "season": "Roughly Jul-Aug. Earlier the valley is snow-covered and simpler but the true North Face above you sheds avalanches; later the crevasses on the White Salmon are open and the lower valley is alder",
+      "hazards": [
+       "Frequent avalanches off the true North Face onto the traverse, worst in early season",
+       "Serac fall from the very active hanging glacier itself",
+       "Open crevasses on the White Salmon Glacier that grow through the season; roped travel from its toe",
+       "Brush and alder in the lower White Salmon valley once the snowline recedes",
+       "Traverse with no easy retreat once committed; moat between rock wall and glacier",
+       "Gate and old roadbed approach; bivy on the mountain"
+      ],
+      "primary": true,
+      "baseFinding": "Price Lake must stay below you and to your north-east, and that is the test. From the bivy the day is a traverse climber's left, above and across the hanging glacier that sits over Price Lake and beneath the upper hanging glacier tucked under the first rock barrier. In cloud you will not see the summit and you do not need to: the lake is the reference and it belongs on your left-hand side, downhill.\n\nArrival: you are at the base of the technical climbing when you reach the shoulder — the snow-and-ice rib that divides the White Salmon cirque from the Price Glacier cirque. It is the only place on this traverse where the ground stops being a sidehill and becomes a defined rib with a cirque falling away on each side. Stand on it and you should be able to look down into two separate basins.\n\nThe error that kills people here is drifting left, and it is worth stating as a hard rule: stay right during the traverse. Going further left puts you onto the true North Face, which sheds avalanches frequently, especially early season. Left feels like progress toward the mountain and is the wrong direction.\n\nAfter 500 ft of traverse the line goes up, on a firn-and-ice finger west of the upper hanging glacier. If you are still traversing horizontally after a long way, you have gone past the finger and are running out under the face."
+     },
+     {
+      "name": "Fisher Chimneys and Winnie's Slide, then down the White Salmon Glacier to the base",
+      "trip": {
+       "bivy": [
+        {
+         "elev": 6800,
+         "name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+         "role": "route",
+         "type": "bivy",
+         "notes": "Camping above the chimneys is what makes Fisher Chimneys a comfortable two- or three-day climb rather than a very long push, and it puts the party above the loose, route-finding-heavy section for summit day. The lower site near the top of the White Salmon is the more common choice and the more scenic; the higher one above Winnie's Slide costs you a steep snow or ice pitch with a full pack. Which is preferable depends on the party and on conditions in the chimneys, and reasonable people disagree. Both are small and exposed, so a party arriving to find them occupied needs a plan.",
+         "water": "Snowmelt only in practice. Runoff sometimes appears on the rock below the glaciers in warm conditions, but neither site should be planned around finding liquid water.",
+         "permit": "North Cascades National Park backcountry permit required — these camps are inside the park, past the signed boundary above Lake Ann. Reserve through Recreation.gov or take a walk-up at the Marblemount Wilderness Information Center within 24 hours; fees apply and the zone carries a small daily party quota. A Northwest Forest Pass covers only the parking at the Lake Ann trailhead.",
+         "capacity": "Small platforms for one or two parties at each of two levels — around 6,800 ft where the chimneys top out near the White Salmon, and higher near 7,300 ft above Winnie's Slide"
+        }
+       ],
+       "approachLogistics": {
+        "trailhead": "Lake Ann Trailhead (SR-542)",
+        "trailheadLat": 48.85002,
+        "trailheadLng": -121.68616
+       }
+      },
+      "notes": "The alternative used by parties who would rather start from the standard trailhead than from the White Salmon roadbed: from the Lake Ann Trailhead on SR-542, climb the Fisher Chimneys and Winnie's Slide to a bivy near the Upper Curtis Glacier, then descend about 1,000 ft down the White Salmon Glacier and traverse the northwest rib to reach the foot of the Hanging Glacier.\n\nIt is longer in vertical terms because it climbs to a camp and then gives back a thousand feet, and it commits you to regaining that thousand feet on the way out if you return the same way. Its advantage is a maintained trail to a known camp instead of a valley bushwhack, and it does not require the White Salmon roadbed to be walkable.\n\nNo trailhead-to-base time is given for this variant; published figures for it vary too much to quote one.",
+      "objHaz": [
+       "icefall",
+       "avalanche",
+       "crevasses",
+       "glacier travel",
+       "exposed climbing"
+      ],
+      "season": "Roughly Jul-Aug, once the Lake Ann trail is out from under snow",
+      "hazards": [
+       "About 1,000 ft descent to the base that must be regained on the return if reversed",
+       "Winnie's Slide, sometimes rappelled rather than downclimbed when icy",
+       "Crevasses on both the Lower Curtis and the White Salmon glaciers",
+       "Avalanche exposure from the true North Face during the traverse",
+       "Serac fall from the active hanging glacier; descent normally exits a different valley from the start",
+       "Maintained trail to the camp, but Fisher Chimneys are loose and route-finding-heavy"
+      ],
+      "whyThisWay": "For parties who would rather use the maintained Lake Ann trail and a known camp than the White Salmon valley bushwhack, accepting a climb then a loss of about a thousand feet.",
+      "baseFinding": "You arrive from above, so the test is inverted — you are looking for the bottom of a descent, not the top of a climb. From the Upper Curtis bivy you drop roughly 1,000 ft down the White Salmon Glacier. Stop descending when the ground lets you traverse northeast onto the northwest rib; if you keep going down the White Salmon you end up in the valley the other variant walked up, and you will have thrown away the whole approach.\n\nThe rib is the marker. The northwest rib is a defined feature between the White Salmon and the Hanging Glacier, and once you are on it the foot of the Hanging Glacier is the next thing you meet.\n\nConfirm with the same test the other variant uses: from the base of the climbing, Price Lake should be below you and to the north-east, and you should be standing on the shoulder that separates the White Salmon cirque from the Price cirque, with a basin on each side of you.\n\nAnd the same hard rule applies: do not drift left onto the true North Face. It avalanches, and arriving from this side does not change that."
+     }
+    ],
+    "climbing_route": null,
+    "bivy": [
+     {
+      "elev": 5500,
+      "name": "North Face bivy, where the rib meets the face",
+      "role": "main",
+      "type": "bivy",
+      "notes": "North Face parties share the early approach with the White Salmon Glacier route through a brushy section before the two diverge, and the usual bivy sits near 5,500 ft where the rib abuts the face, above Price Lake. It is a working bivy chosen for position on a serious route rather than for comfort, and the point of it is an early start onto sustained steep snow and ice. Objective hazard governs everything here: the face is avalanche-prone, particularly early in the season and further left, so timing and a cold night matter more than the site itself. This is a spring-into-early-summer route in most years.",
+      "water": "Seasonal melt only. Late in the year expect nothing and carry or melt.",
+      "permit": "North Cascades National Park backcountry permit required — the approach leaves Forest Service ground shortly past Lake Ann and the bivy is inside the park. Through Recreation.gov or as a walk-up at the Marblemount Wilderness Information Center; fees apply and the zone quota is small. Do not assume the Lake Ann trailhead pass covers this.",
+      "capacity": "One party; rough ground with a couple of usable spots, not a camp"
+     },
+     {
+      "elev": 6800,
+      "name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+      "role": "route",
+      "type": "bivy",
+      "notes": "Camping above the chimneys is what makes Fisher Chimneys a comfortable two- or three-day climb rather than a very long push, and it puts the party above the loose, route-finding-heavy section for summit day. The lower site near the top of the White Salmon is the more common choice and the more scenic; the higher one above Winnie's Slide costs you a steep snow or ice pitch with a full pack. Which is preferable depends on the party and on conditions in the chimneys, and reasonable people disagree. Both are small and exposed, so a party arriving to find them occupied needs a plan.",
+      "water": "Snowmelt only in practice. Runoff sometimes appears on the rock below the glaciers in warm conditions, but neither site should be planned around finding liquid water.",
+      "permit": "North Cascades National Park backcountry permit required — these camps are inside the park, past the signed boundary above Lake Ann. Reserve through Recreation.gov or take a walk-up at the Marblemount Wilderness Information Center within 24 hours; fees apply and the zone carries a small daily party quota. A Northwest Forest Pass covers only the parking at the Lake Ann trailhead.",
+      "capacity": "Small platforms for one or two parties at each of two levels — around 6,800 ft where the chimneys top out near the White Salmon, and higher near 7,300 ft above Winnie's Slide"
+     }
+    ],
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "hanging glacier glac gl",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  },
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_inner_constance_northwest_buttress",
+    "area_id": "wa_inner_constance",
+    "name": "Northwest Buttress",
+    "expect": {
+     "grade": "5.0"
+    },
+    "set": {
+     "grade": null
+    }
+   },
+   "before": {
+    "id": "wa_inner_constance_northwest_buttress",
+    "area_id": "wa_inner_constance",
+    "name": "Northwest Buttress",
+    "discipline": "alpine",
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0,
+    "pitches": null,
+    "length_m": 366,
+    "sort_order": null,
+    "stars": null,
+    "fa": "Eric Hardee and Dan Coffey, 1983",
+    "lat": null,
+    "lng": null,
+    "aspect": "NW",
+    "season": "Jul-Sep",
+    "description": null,
+    "gear": [
+     "Rope for pitched climbing on poor rock",
+     "Trad rack emphasizing small-to-medium nuts (poor pro)",
+     "Helmet (loose/poor rock)",
+     "Sturdy mountaineering boots",
+     "Ice axe for approach snow gullies"
+    ],
+    "hazards": [
+     "Persistent loose-rock/rockfall hazard, described by climbers as among the worst rock quality in the Olympic Mountains."
+    ],
+    "verif": null,
+    "overview": "The original 1983 line up Inner Constance's northwest buttress; the 2021 route Sean's Route/Second Wind climbs a variation finish on this same buttress.",
+    "beta": "Documentation of this line is sparse, and there is no full route description. Climbers who have scouted it describe very poor rock overall — near the summit ridge, as bad as any in the Olympics — with a possible band of somewhat better rock on the north side, but caution that any existing description should be taken 'with a grain of salt' and the line ground-truthed in person.",
+    "turnaround": "Set a turnaround before you leave camp and honour it. Sensible triggers on this face: rising cloud that hides the ridgeline (you will not find the correct features), the first sustained rockfall from a party or from thaw, snow softening in the gully, or the point at which you have used more than half your remaining daylight to reach half the route. Because retreat requires building rappel stations on loose rock, budget descent time at roughly the same as ascent time, not less.",
+    "auto_generated": false,
+    "alpine_grade": "III",
+    "rock_grade": null,
+    "ice_grade": null,
+    "gain_ft": null,
+    "loss_ft": null,
+    "dist_km": 15,
+    "max_angle": null,
+    "rappels": "No fixed anchors anywhere on the route — any rappel is off gear you build and leave. Plan on carrying enough tat/nuts to leave several stations if you have to come down the face.",
+    "commitment": "III",
+    "face": "Northwest Buttress (northwest side, above the Home Creek basin)",
+    "permit": "Olympic National Park: no permit for day climbs; all overnight wilderness stays require a wilderness camping permit via Recreation.gov.",
+    "comms": "No reliable cell coverage on the approach beyond the lower Dungeness valley, and none expected at Home Lake or on the face — you are deep in Olympic National Park wilderness surrounded by 7,000-foot ridges. Carry a satellite messenger or PLB. Olympic National Park's 24-hour dispatch is (360) 565-3000; in Jefferson County, search and rescue is directed by the Sheriff's Office using Jefferson Search and Rescue and Olympic Mountain Rescue as resources, so a 911 call routed to Jeffcom will reach the right people.",
+    "descent": "No fixed anchors — downclimb the low-angle upper terrain and rappel the steep buttress off gear you leave, returning to the Home Creek boulder camp.",
+    "obj_haz": [
+     "rockfall",
+     "loose rock",
+     "poor protection",
+     "runout climbing",
+     "route-finding in cloud",
+     "remote wilderness",
+     "long approach",
+     "late-season snow and moats"
+    ],
+    "waypoints": [
+     {
+      "lat": 47.877572,
+      "lng": -123.136927,
+      "name": "Upper Dungeness Trailhead (Trail #833.2, FR-2870)",
+      "type": "Trailhead",
+      "directions": "From US 101 across from Sequim Bay State Park, turn onto Louella Road, go about a mile and turn left on Palo Alto Road, which becomes FS Road 28 at the forest boundary. Turn right on FS 2880 past Dungeness Forks Campground, then stay left on FS 2870 for 8.7 miles to the trailhead just across the Dungeness River bridge. Large lot and vault toilet, no water; a Northwest Forest Pass or Interagency pass is required."
+     },
+     {
+      "lat": 47.808789,
+      "lng": -123.150326,
+      "elev": 4950,
+      "name": "Boulder Shelter — the last camp outside the national park",
+      "type": "Campsite"
+     },
+     {
+      "lat": 47.7717,
+      "lng": -123.163,
+      "elev": 5325,
+      "name": "Home Lake",
+      "note": "Lake about 500 ft below Constance Pass, inside Olympic National Park. The boulder camp for the buttress is higher, in the Home Creek basin.",
+      "type": "Campsite",
+      "distMi": 9.3,
+      "directions": "Hike the Upper Dungeness Trail up the river past Camp Handy, about 3.4 miles, to Boulder Camp near 6.2 miles, then follow the Constance Pass trail out of the timber, into Olympic National Park, and up to the lake."
+     },
+     {
+      "lat": 47.76984,
+      "lng": -123.14643,
+      "elev": 7670,
+      "name": "Inner Constance summit",
+      "note": "The buttress finishes on a long, low-angle pitch to the summit. Most of the upper mountain can be reversed on foot; the steeper buttress below needs rappels from anchors you build.",
+      "type": "Summit",
+      "distMi": null,
+      "directions": "From the lake, work up the Home Creek basin to the large boulders northwest of the summit, just south of Home Creek. Climb the scree field to the ramp right of the big dihedral, step left onto the green-lichen ledge after the first pitch, and follow the gully and low-angle rock to the top."
+     }
+    ],
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": [
+     "alpine"
+    ],
+    "timing": {
+     "totalHrs": null,
+     "summitTimeHrs": null,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "Leave the boulder camp at first light. The route is 1,200 ft of loose rock with a retreat that depends on building anchors, so you want the whole day in hand and you want to be off the face before afternoon warming loosens the northwest aspect."
+    },
+    "detailed_rack": "A single 60m rope and a trad rack emphasizing small-to-medium nuts (poor rock limits cam placements) covers pitched climbing on this notoriously poor pillow-basalt rock; extra slings help manage rope drag on wandering buttress terrain.",
+    "what_to_bring": [
+     "Northwest Forest Pass or Interagency pass for the trailhead",
+     "Olympic National Park wilderness permit (printed)",
+     "Bear canister — required in all ONP wilderness camps",
+     "Satellite messenger or PLB",
+     "Water filter or treatment",
+     "Map and compass plus GPS with the Home Creek basin loaded",
+     "Headlamp with spare batteries",
+     "Approach shoes plus climbing shoes",
+     "Warm layers and hardshell for coastal-range weather",
+     "Sun protection for the open Constance Pass traverse",
+     "3+ litres water capacity — the Home Creek basin can be dry late season"
+    ],
+    "pro_tips": [
+     "Study the face from the walk-in and from the boulder camp in evening light; on this peak you will very likely be climbing in or under cloud and the ramp/dihedral/green-lichen-ledge features are hard to identify from close range.",
+     "After the first pitch the true Northwest Buttress goes left onto the obvious ledge along the green-lichen face. Continuing straight up the crack system puts you on the 2021 Second Wind variation, which is significantly harder at 5.8+.",
+     "Base camp at the large boulders directly northwest of the summit, just south of Home Creek, rather than at Home Lake — it cuts a meaningful chunk off summit day and gives you the view of the face.",
+     "Carry rappel material as a primary item, not an afterthought. With no fixed gear on the route, your retreat plan is entirely made of things you brought and are willing to leave.",
+     "The Upper Dungeness approach is the sane side of this mountain. The Dosewallips/Lake Constance side is shorter on paper but adds 6.5 miles of washed-out road plus a brutally steep scramble trail, and it deposits you in Avalanche Canyon on the wrong aspect for this route.",
+     "This is a rare route. Treat any description of it as a sketch, expect to make your own decisions on the ground, and be honest about whether the party is comfortable with poor rock and long runouts before committing."
+    ],
+    "watch_out": [
+     "Rock quality is reported as very bad, worse than typical Olympic basalt near the summit ridge, by climbers who have attempted this line."
+    ],
+    "pro_needs": "Protection is sparse and the rock is poor. Suitable placements come only every 20 to 100 feet, so long runouts on mediocre stone are the defining character of this climb rather than an occasional surprise. Lead it as a route where the gear is a formality between real stances: build anchors at whatever features you can actually trust, keep pitches short enough to manage rope drag through the ledge traverse, and belay out of the fall line.",
+    "best_season": "Mid-July through mid-September is the realistic window. Earlier and the long Constance Pass approach still holds snow and the buttress ledges are iced or verglassed; later and autumn Pacific fronts return, which on this range means days of low cloud that make route-finding on the face impractical. The most stable spell is usually late July into August, when the Pacific high suppresses precipitation over the Olympics. Even then, plan around cloud rather than around rain — cloud cover, as always in the Olympics, makes viewing the route very difficult.",
+    "high_point_ft": 7670,
+    "aid_grade": null,
+    "approach": "Drive to the Upper Dungeness Trailhead (Trail #833.2) in Olympic National Forest: from US 101 near Sequim Bay State Park turn onto Louella Road, continue about a mile to Palo Alto Road and turn left for roughly 1.1 miles to the forest boundary, where Palo Alto becomes Forest Service Road 28. Turn right on FS 2880, pass Dungeness Forks Campground, then stay left on FS 2870 for 8.7 miles to the trailhead just across the Dungeness River bridge (47.877572, -123.136927). There is a large parking area and a vault toilet but no potable water; a Northwest Forest Pass or Interagency pass is required. Hike Upper Dungeness Trail #833 up the river — an easy, shaded, river-grade trail past good swimming holes — reaching Camp Handy at about 3.4 miles and Boulder Camp / Boulder Shelter at roughly 6.1-6.4 miles (~4,890 ft). Continue on the Constance Pass trail as it climbs out of the timber into rocky, flowery terrain beneath Warrior Peak and Inner Constance, crossing into Olympic National Park, and climb to Home Lake at about 9.3 miles (~5,308-5,330 ft, ~500 ft below Constance Pass). From the lake, work up the Home Creek basin toward the peak and camp at the large boulders directly northwest of the summit, just south of Home Creek; the face is in full view from there and from below, which is the only reliable chance you get to pick out the ramp and the green-lichen ledge.",
+    "descent_text": "There is no maintained or fixed descent on this face. Because the route finishes with low-angle terrain, most of the upper mountain can be reversed on foot with care; the steeper buttress below the Class 3/4 gully is where you will need to rappel, and every station has to be built and abandoned since there is no fixed gear on the route. Carry cord, tat and spare nuts specifically for this. Rappelling loose Olympic basalt is its own hazard: pull ropes deliberately, keep the party out of the fall line, and expect the ropes to knock blocks off on every pull. Once back at the boulder camp, retrace the Home Creek basin to Home Lake and reverse the Constance Pass / Upper Dungeness trail to the car. The walk out does not cross Constance Pass — Home Lake sits below it on the Dungeness side — but it is still more than nine miles back to the car, so budget time for it.",
+    "bail": "Bailing is easiest low on the route, before the buttress steepens — the scree field and ramp can be reversed on foot. Above that you are committed to building and leaving rappel anchors on rock that does not always accept them, so make the go/no-go call at the base of the ledge traverse rather than higher. If weather closes in mid-route, retreating down the line you came up is safer than continuing to the summit in cloud, because the summit-side descent options are unrecorded and route-finding on this peak in fog is genuinely difficult.",
+    "pitch_detail": [
+     {
+      "grade": "3rd-4th class",
+      "notes": "From the boulder camp, up the scree field to an obvious ramp; follow the ramp around climbers' right of the prominent dihedral.",
+      "pitch": "P1",
+      "lengthM": null
+     },
+     {
+      "grade": "Low 5th",
+      "notes": "Turn left onto the obvious ledge that runs along the green-lichen-covered face. This is the move that distinguishes the original buttress from the Second Wind variation, which instead continues into the crack system.",
+      "pitch": "P2",
+      "lengthM": 60
+     },
+     {
+      "grade": "3rd-4th class",
+      "notes": "Steep Class 3/4 gully above the ledge system. Loose; keep the party close together or fully out of the fall line.",
+      "pitch": "P3",
+      "lengthM": null
+     },
+     {
+      "grade": "4th class",
+      "notes": "Final long, low-angle pitch to the summit proper — the pleasant part of the climb, on the more solid pillow basalt that caps the peak.",
+      "pitch": "P4",
+      "lengthM": null
+     }
+    ],
+    "itinerary": "Day 1: drive to the Upper Dungeness Trailhead and hike ~9.3 miles to Home Lake; if you still have daylight, push up into the Home Creek basin and camp at the boulders northwest of the summit so you can study the face in evening light. Day 2: climb the buttress, descend, and return to camp. Day 3: hike out to the trailhead. Strong parties sometimes compress this to two days by carrying to the boulder camp on day 1, but the approach mileage plus a 1,200-foot loose buttress makes three days the sane plan.",
+    "access": {
+     "fees": "Olympic NP wilderness camping $8 per person (16+) per night, free for 15 and under, plus a non-refundable $6 reservation fee per permit; an Annual Olympic National Park Wilderness Pass ($45/person) covers the nightly fee but not the reservation fee. Trailhead day use on the Forest Service side is $5/vehicle/day or $30/year.",
+     "permit": "An Olympic National Park wilderness permit is required for any overnight and must be reserved in advance on Recreation.gov — there are no same-day walk-ups. Summer-season (May 15 - Oct 15) reservations are released around April 15 at 7 a.m. PT. Bear canisters are required in all ONP wilderness camp areas and can be borrowed on a first-come basis.",
+     "closures": "Dogs are prohibited on the Olympic National Park portion of the trail. No campfires above 3,500 ft. Groups of seven or more must use designated group sites in quota areas. Check current conditions with the Port Angeles Wilderness Information Center at (360) 565-3100.",
+     "landManager": "Olympic National Park (summit, Home Lake and the Home Creek basin); Olympic National Forest — Hood Canal/Quilcene Ranger District, Buckhorn Wilderness — for the Upper Dungeness Trail approach",
+     "passRequired": "Northwest Forest Pass, Interagency Recreation Pass or Digital Pass displayed at the Upper Dungeness Trailhead",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — reservation and nightly fee required",
+      "where": "Reserve on Recreation.gov, by phone with the Port Angeles Wilderness Information Center, or in person at a Wilderness Information Center. Camps outside the park boundary need no permit."
+     }
+    },
+    "road": {
+     "name": "Forest Service Road 2870 (Upper Dungeness), via FS 28 / FS 2880 from Palo Alto Road",
+     "status": "Open, maintained gravel; passenger-car accessible to the Upper Dungeness Trailhead across the Dungeness River bridge",
+     "driveNote": "From US 101 opposite Sequim Bay State Park take Louella Road, then Palo Alto Road (which becomes FS 28 at the forest boundary), right on FS 2880 past Dungeness Forks Campground, then stay left on FS 2870 for 8.7 miles. Large parking area with vault toilet, no potable water. Day-use fee $5/vehicle/day or $30/year; Northwest Forest Pass, Interagency and Digital passes honoured.",
+     "seasonalGate": "No gate, but the road is snow-affected in winter and early spring; access is a summer/fall proposition"
+    },
+    "climate": {
+     "fall": "September can be superb — cold, stable, snow-free rock — but the first autumn fronts return unpredictably and the days shorten fast on a route with a long approach.",
+     "spring": "Deep, consolidating snow on the Constance Pass traverse and in the Home Creek basin; the buttress is verglassed and the approach is a snow-travel exercise. Not a practical season for the rock route.",
+     "summer": "Pacific high pressure gives the clearest and driest spell of the year, and this is the only realistic window for the buttress. Afternoon build-up and marine push can still bring cloud onto the face with little warning.",
+     "winter": "Heavy wet snow, high avalanche danger across the Constance massif, and a snowbound approach. The buttress is not a winter objective.",
+     "typical": "Marine west coast climate. Pacific fronts stall against the eastern Olympic wall and produce orographic precipitation, but the Constance massif sits toward the drier eastern rain shadow, so it is noticeably less wet than the Hoh side. Persistent low cloud is the defining nuisance rather than rain.",
+     "forecastZone": "NWAC Olympics avalanche and mountain-weather zone; point forecast for Mount Constance (2,360 m), the adjacent higher summit"
+    },
+    "emergency": {
+     "notes": "Mount Rainier, North Cascades and Olympic national parks share a contracted short-haul rescue helicopter during the summer season, which is what would most likely be used here — but Olympic cloud frequently makes the Constance massif unflyable, so plan for a self-rescue or a long ground carry. Olympic Mountain Rescue is mobilised by the Washington Department of Emergency Management, the County Sheriff or the National Park Service. Leave a written trip plan with a contact who knows your route and return time.",
+     "county": "Jefferson County, Washington",
+     "rangerStation": "Olympic National Park Wilderness Information Center, 600 E. Park Avenue, Port Angeles, WA 98362 — (360) 565-3100. Olympic National Park 24-hour dispatch: (360) 565-3000. Forest Service side: Hood Canal Ranger District, Quilcene.",
+     "nearestHospital": "Jefferson Healthcare, Port Townsend, WA — the only hospital in Jefferson County; a 25-bed critical access hospital with a Level IV trauma centre and 24-hour emergency department. Serious trauma is typically flown on to a higher-level trauma centre.",
+     "sheriffDispatch": "911 (Jeffcom 911). Jefferson County Sheriff's Office non-emergency: (360) 344-9779. SAR missions in the county are directed by the Sheriff's Office using Jefferson Search and Rescue (JSAR) and Olympic Mountain Rescue."
+    },
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": {
+     "optimalWindow": "Late July through August, when the Constance Pass approach is snow-free and the Pacific high keeps the Olympics driest",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Snow retreats from the approach and ledges through July; early in the month, snow-filled gullies still need an ice axe and crampons.",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Considerable snow remains on the upper mountain and the Constance Pass approach, and the buttress ledges are often iced or wet.",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "The driest, most stable spell in the Olympics, though low cloud can still hide the face and make route-finding on it very difficult.",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Autumn fronts bring prolonged low cloud and fresh snow to the loose ledges, and summer-season permit rules end in mid-October.",
+       "status": "risky"
+      },
+      "September": {
+       "reason": "Still climbable before autumn fronts return; days shorten and a single front can bring several days of cloud to the face.",
+       "status": "good"
+      }
+     }
+    },
+    "seasonal_hazards": null,
+    "data_quality": null,
+    "difficulty": null,
+    "approach_logistics": {
+     "trailhead": "Upper Dungeness Trailhead (Trail #833.2, FR-2870)",
+     "trailheadLat": 47.877572,
+     "trailheadLng": -123.136927,
+     "trailheadDirection": "From US-101 near Sequim Bay State Park, turn onto Louella Road, then Palo Alto Road, which becomes FR-28 at the forest boundary; turn right onto FR-2880, stay left onto FR-2870, and continue to the trailhead parking just past the Dungeness River bridge."
+    },
+    "sling_rack": null,
+    "alpine_draws": null,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": null,
+    "ascender": null,
+    "corrections": null,
+    "gear_confidence": "inferred",
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": null,
+    "features": null,
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": [
+     {
+      "name": "Upper Dungeness Trail to Home Lake, then the Home Creek basin to the boulder camp",
+      "notes": "From US 101 near Sequim Bay State Park turn onto Louella Road, go about a mile to Palo Alto Road and turn left for roughly 1.1 miles to the forest boundary, where Palo Alto becomes Forest Service Road 28. Turn right on FS 2880, pass Dungeness Forks Campground, then stay left on FS 2870 for 8.7 miles to the Upper Dungeness Trailhead just across the Dungeness River bridge. Large parking area, vault toilet, no potable water, Northwest Forest Pass or Interagency pass required.\n\nHike Upper Dungeness Trail #833 up the river — easy, shaded, river-grade — to Camp Handy at about 3.4 miles and Boulder Camp / Boulder Shelter at roughly 6.1-6.4 miles and about 4,890 ft. Continue on the Constance Pass trail as it climbs out of the timber into rocky flowery terrain beneath Warrior Peak and Inner Constance, crossing into Olympic National Park, and climb to Home Lake at about 9.3 miles and roughly 5,308-5,330 ft, some 500 ft below Constance Pass.\n\nFrom the lake, work up the Home Creek basin toward the peak. Camp at the large boulders directly northwest of the summit, just south of Home Creek. That boulder camp is the documented basecamp for this route and it is where the first-ascent party camped.",
+      "season": "Roughly Jul-Sep",
+      "hazards": [
+       "Rock quality described by climbers who have scouted it as among the worst in the Olympic Mountains, and as bad as anything in the range near the summit ridge",
+       "No fixed gear anywhere on the route — every rappel station on descent has to be built and left",
+       "Sparse protection with long runouts",
+       "The published description for this line is thin and climbers who know it advise ground-truthing it in person",
+       "A 9+ mile approach, and the same distance back out"
+      ],
+      "baseFinding": "The route starts at the top of a scree field where an obvious ramp begins, and the thing that identifies the ramp is the biggest corner on the face. From the boulder camp, climb the scree field to the base of the wall and pick up the obvious ramp. Follow it round climber's right of the prominent dihedral — the one large, unmistakable corner in that section of face — to a steep Class 3/4 gully. If the ramp you are on is taking you left of the big corner, you are on the wrong side of it. The second test is at the top of pitch one and it is a colour you can read at arm's length: after the first pitch this route turns climber's left onto an obvious ledge running along a green-lichen-covered face. Green lichen on rock is visible in cloud in a way a skyline feature is not. If your first pitch does not end at a ledge beneath a lichen-green face, you are not on the Northwest Buttress — and specifically, if you have carried straight on up a crack system instead of stepping left, you are on Sean's Route / Second Wind, which shares this start and diverges exactly here. What the route's own text already tells you, and it is the honest limit: the face is in full view from the boulder camp and from below, and that is described as the only reliable chance you get to pick out the ramp and the green-lichen ledge. Look at it, photograph it and fix the line in your head from camp. This is a route to identify in the evening and climb in the morning; there is no marker sequence that will find it for you if you walk up into the wall in cloud having never seen it."
+     }
+    ],
+    "climbing_route": null,
+    "bivy": [
+     {
+      "elev": 5330,
+      "name": "Home Lake, below Constance Pass — inside the park, and reached from the north",
+      "role": "main",
+      "type": "camp",
+      "notes": "The high camp for both Warrior Peak and the northwest side of Inner Constance, and the natural next step up from Boulder Shelter once you want to be closer to the peaks. Reach it from the Upper Dungeness trailhead by way of Camp Handy and Boulder Shelter — the approach from the Dosewallips over Constance Pass is technically the same lake but adds the long closed-road walk on that side and is not how anyone sensibly gets here. Do not confuse this basin with Lake Constance: they sit on opposite flanks of the massif, the twenty-person quota that governs Lake Constance does not apply here, and neither camp substitutes for the other. From Home Lake the usual line for Inner Constance works up the northwest side toward the 7,670 ft summit on loose alpine rock; the northeast summit by way of Crystal Pass at the head of Avalanche Canyon is a different climb from a different camp altogether. Camping lower at Boulder Shelter saves you the permit and the canister at the cost of two miles and 400 ft each way on summit morning, which on a long alpine day is a real price. Snow-free from roughly July; the basin is exposed and holds weather off Constance Pass.",
+      "water": "The lake, reliable through the season. It is the last dependable water before Constance Pass and before anything you climb from here, and the slopes above hold no running water once the snow has gone.",
+      "permit": "Olympic National Park, and everything changes at the boundary sign about a mile below the lake. An overnight wilderness permit is mandatory and is reserved in advance through the federal recreation booking site; the summer season runs roughly mid-May to mid-October with reservations opening in the spring. Bear canisters are required — hangs and wires are not accepted, and free loaners can be collected from the park wilderness office. No fires at this elevation. Dogs are prohibited. None of this applies at Boulder Shelter two miles back down the trail, and confusing the two is the standard way to arrive here without a legal place to sleep.",
+      "capacity": "A few small sites in an open subalpine basin; the park sets a maximum party size for the area, so check what your permit allows before assuming a big group fits"
+     },
+     {
+      "elev": 4950,
+      "name": "Boulder Shelter — the last camp outside the national park",
+      "role": "route",
+      "type": "camp",
+      "notes": "The working base for Warrior Peak, and the cheapest night in this zone by a wide margin because nothing has to be booked. It sits at about 4,950 ft and roughly 6.3 miles from the Upper Dungeness trailhead at 2,500 ft, past Camp Handy at 3,100 ft — an easy valley walk on maintained trail, which is why this and not the Dosewallips is how people actually get into this country. It is also 1.7 miles below Marmot Pass, so a Quilcene-side party can traverse in over the pass. For the Warrior Peak southeast summit the day runs south two-plus miles on the Dungeness trail, then up the prominent couloir north-northeast to a saddle near 7,000 ft; the couloir holds snow into late season and turns icy in cold weather, and the first twenty to fifty feet of rock above it is genuinely poor, low fifth class, and wants a rope. Camping higher in the cirque below the summit shortens that considerably and several parties recommend it, but it is a dry, unestablished bivy and you carry water for it. Best from July into September.",
+      "water": "A stream runs by the site and is dependable. This is the last water you can rely on without a park permit, and it is worth topping off here whichever direction you are heading.",
+      "permit": "This is the jurisdiction line and it is the most useful fact in this zone. Boulder Shelter is in the Buckhorn Wilderness on national forest ground: free self-issued trailhead permit, Northwest Forest Pass to park, group limit twelve, no fires above 3,500 ft, no reservation, no quota and no bear canister requirement. Walk a couple of miles further toward Home Lake and you cross into Olympic National Park, where every one of those rules changes. Dogs are legal up to the boundary and illegal past it.",
+      "capacity": "Established sites around a three-sided wooden shelter plus the boulders it is named for; several parties fit, and it is quiet by Olympic standards"
+     }
+    ],
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "northwest nw buttress",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  }
+ ]
+}
