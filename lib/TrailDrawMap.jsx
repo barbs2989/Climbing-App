@@ -88,16 +88,20 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
 
   // The caller cleared the line from outside (its own Clear, a new route): follow it, history and
   // all, or Undo would hand the old line back to a caller that just wiped it.
+  // Not on the first render, where a host may hand over a shape before it has derived the points.
+  const seenPts = useRef(false);
   useEffect(() => {
+    if (!seenPts.current) { seenPts.current = true; return; }
     if ((!pts || !pts.length) && nodesRef.current.length) {
       routing.current.forEach((c) => c.abort()); routing.current.clear();
       undoRef.current = []; redoRef.current = []; setHistN({ undo: 0, redo: 0 });
       nodesRef.current = []; setNodes([]); setSelectedId(null);
+      if (propsRef.current.onShape) propsRef.current.onShape([]); // the host's "a leg is pending" must clear too
     }
   }, [pts]);
   useEffect(() => () => { routing.current.forEach((c) => c.abort()); clearTimeout(noteT.current); clearTimeout(fails.current.t); }, []);
   // A line handed over while a leg was still being looked up: ask for that leg again here.
-  useEffect(() => { nodesRef.current.forEach((x, i) => { if (x.pending && i > 0) startRoute(x.id); }); }, []); // eslint-disable-line react-hooks/exhaustive-deps -- once, on mount, for the shape the host passed in
+  useEffect(() => { reask(nodesRef.current); }, []); // eslint-disable-line react-hooks/exhaustive-deps -- once, on mount, for the shape the host passed in
   // Hidden behind another tab of the host sheet (display:none) and shown again: Leaflet measured a
   // 0×0 box while hidden, so it is told the real size. The host keeps this mounted rather than
   // unmounting it, or a routed line would come back as one anchor per routed point.
@@ -197,11 +201,17 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   };
   // Undo/Redo. A snapshot taken while a leg was still being looked up keeps that leg pending and
   // asks again, so Redo across an in-flight route does not quietly leave a straight line.
+  // Legs a snapshot (or a handed-over shape) left pending: asked again with Follow trails on, left
+  // straight with it off, so a line never reshapes itself against the switch.
+  const reask = (list) => {
+    if (propsRef.current.follow) { list.forEach((n, i) => { if (n.pending && i > 0) startRoute(n.id); }); return; }
+    if (list.some((n) => n.pending)) setBoth(list.map((n) => (n.pending ? Object.assign({}, n, { pending: false }) : n)));
+  };
   const restore = (snap) => {
     routing.current.forEach((c) => c.abort()); routing.current.clear();
     setBoth(snap);
     setSelectedId(null);
-    snap.forEach((n, i) => { if (n.pending && i > 0) startRoute(n.id); });
+    reask(snap);
   };
   const undo = () => { if (!undoRef.current.length) return; redoRef.current.push(nodesRef.current); restore(undoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
   const redo = () => { if (!redoRef.current.length) return; undoRef.current.push(nodesRef.current); restore(redoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
@@ -217,9 +227,14 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     if (routed(cur[i])) {
       const via = cur[i].via;
       let best = 0, bd = Infinity;
-      via.forEach((p, k) => { const d = (p[0] - nn.a[0]) ** 2 + (p[1] - nn.a[1]) ** 2; if (d < bd) { bd = d; best = k; } });
-      nn.via = via.slice(0, best);
-      next[i] = Object.assign({}, cur[i], { via: via.slice(best + 1) });
+      // Nearest in metres (longitude degrees shrink with latitude); every routed point is kept, the
+      // new anchor simply sits between two of them.
+      const kx = Math.cos(nn.a[0] * Math.PI / 180);
+      via.forEach((p, k) => { const d = (p[0] - nn.a[0]) ** 2 + ((p[1] - nn.a[1]) * kx) ** 2; if (d < bd) { bd = d; best = k; } });
+      const prev = cur[i - 1].a, dPrev = (via[best][0] - prev[0]) ** 2 + ((via[best][1] - prev[1]) * kx) ** 2, dNew = (nn.a[0] - prev[0]) ** 2 + ((nn.a[1] - prev[1]) * kx) ** 2;
+      const cut = dNew < dPrev ? best : best + 1; // the anchor goes before or after its nearest routed point, by which side of it the drop lies
+      nn.via = via.slice(0, cut);
+      next[i] = Object.assign({}, cur[i], { via: via.slice(cut) });
       next.splice(i, 0, nn);
       commit(next, []);
       return;
