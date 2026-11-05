@@ -67,7 +67,7 @@ room for side-panel ads later. The phone app keeps its own look.
   - **Every tab shows its title** (owner 2026-11-04): the `quiet` `ScreenHero` title, hidden on a phone,
     is drawn as a 24px heading (`h1[data-cm-quiet-title]` in `wideCss`).
   - A fixed **left sidebar** under it: Home · Climbs · Partners · Crews · Groups · Logbook · Ranks
-    (Profile is the avatar at the top right, not a sidebar row), then *Your crews* (up to five, a red dot for unread). No site links: those are the footer's.
+    (Profile is the avatar at the top right, not a sidebar row), then *Your crews* (up to five, a red dot for unread), then *Your groups* (up to five, a red dot when a group has posts you have not seen — `groupUnreadN`, the Groups tab's own count; owner 2026-11-04, from the competitor review). No site links: those are the footer's.
   - The **page column**, and at **1280px and wider** a 300px **right rail** (`WideRail`): *Coming up*
     (agreed crew days) and *Alerts*, which starts **open on the newest three** (owner 2026-11-04; it started
     collapsed from 2026-10-23, and a bare *ALERTS ›* header on every page read as empty) under its header
