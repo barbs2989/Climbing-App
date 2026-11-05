@@ -11,7 +11,7 @@ database tables · connections to other areas · the guards that protect it · k
 | Area | Doc | Covers |
 |---|---|---|
 | Partners | [docs/features/partners.md](docs/features/partners.md) | Discover tab: partner search (zip + radius), filters, availability, match %, crews/guides modes |
-| Conditions | [docs/features/conditions.md](docs/features/conditions.md) | Route page "Conditions" tab: crag score, alpine flags + start time, "Your conditions", Best day to climb |
+| Conditions | [docs/features/conditions.md](docs/features/conditions.md) | Route page "Conditions" tab: crag score, alpine flags + start time, "Your conditions" |
 | Route page | [docs/features/route-page.md](docs/features/route-page.md) | `RouteDetail.jsx`: loading a route, sub-tabs, stars/ratings, crowd counts, contributions, photos, Planner |
 | Maps & area browser | [docs/features/maps-and-area-browser.md](docs/features/maps-and-area-browser.md) | Climbs tab: area tree, area map, place search, filters, search normalisation, route map |
 | Profile & settings | [docs/features/profile-and-settings.md](docs/features/profile-and-settings.md) | Profile, résumé, verification, photos, units/date/visibility/notification settings |
@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **Best day to climb removed** (owner 2026-11-05): the Home tile under Jump back in, the Menu's Plan & log tile and the full-screen overlay are gone, with `lib/BestDayTile.jsx`, the `bestDayOpen` state, the one-shot day handoff into the Conditions card and the per-area discipline-count hook only it read. The crag conditions score stays on every route's Conditions tab and in Compare routes. See `docs/features/conditions.md`.
 - **Wall cards carry a mini grade chart on the website** (competitor review batch B, item 13, owner 2026-11-04, built 2026-11-05): on an area page at 1024px+, each child's card draws five bars — its graded climbs banded on its main scale (rock ≤5.7 · 5.8–9 · 5.10 · 5.11 · 5.12+; V, ice, mixed, aid and class have their own bands) — so a crag's walls say at a glance which one suits your grade (`WallGradeBars`). One read for the whole list (`area_children_grade_counts`, 0402). Ungraded climbs are in no bar and the chart's name says "N of M graded". Phone cards unchanged.
 - **Forecast at key points: a point switch on the website** (competitor review batch B, item 14, owner 2026-11-04): instead of three or four stacked cards of seven tiles each, at 1024px+ a row of pills names the key points and the chosen one's week shows; the phone stacks them as before. The review's *On this wall* rail list is not built: it needs the wall-neighbour read, a database item. See `docs/features/route-page.md`.
 - **Group event cards show who is going** (competitor review batch A, item 7, owner 2026-11-04): an event row shows up to four faces of the climbers going with *N going*, a capped event an amber *N spots left* corner badge (*Full* at none), and Discover's title names the place picked (*Climbing groups near Index*). See `docs/features/groups.md`.
