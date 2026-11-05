@@ -127,7 +127,9 @@ const MUST_COVER = [
   // PROSE: the walk-in narrative the Planner renders. An approved contribution would have shown
   // "3to6" as its APPROACH section. Nothing read those keys back, so nothing was lost. A future
   // approach control has to write a SENTENCE, and then this name belongs here again.
-  "season", "commit", "descentText", "style", "haz", "gear", "beta",
+  "season", "commit", "descentText", "haz", "gear", "beta",
+  // `style` left on 2026-11-05 with the Style / character picker: routes.features reaches no
+  // screen since the character chips were removed, so the form no longer asks.
   // the eight #794 added; every one of these was a question the form asked and could not store
   "protRating", "fa", "crux", "landing", "startType", "rap", "comms",
 ];
@@ -519,7 +521,7 @@ console.log(`check:add-route-fields: ok — ${declared.size} fields across ${Obj
 // or the submit gate:
 //   1. add "banana" to alpine's FIELDS      -> "no input is gated on it"
 //   2. add `foo:1,` to the _prop literal    -> "SS cannot apply: foo"
-//   3. write `style:` twice in _prop        -> "repeats style"
+//   3. write `haz:` twice in _prop          -> "repeats haz"
 //   4. trim alpine's FIELDS below rock's    -> "the tailoring is inverted again"
 //   5. drop any one of the three signed-out surfaces -> "the signed-out path is not disclosed on <that surface>"
 //   6. (2026-10-22) remove "bolts" from FIELDS.sport   -> "sport: the route page's edit sheet takes bolts"

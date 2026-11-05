@@ -57,7 +57,7 @@ export default function RouteSocialRow({route,variant,presence,dbCrews,savedCoun
   if(ey)chips.push({n:ey,label:" crew"+(ey!==1?"s":"")+" eyeing"});
   if(activityN)chips.push({n:climberN,label:" climber"+(climberN!==1?"s":"")+" logged it",reports:true});
   if(recentN)chips.push({n:recentN,label:" in the last "+RECENT_DAYS+" days",reports:true});
-  if(lists>0)chips.push({n:lists,label:" list"+(lists!==1?"s":"")+" saved"});
+  if(lists>0)chips.push({n:lists,label:" climber"+(lists!==1?"s":"")+" saved it"});
   if(!(vw||viewers.length||chips.length))return null;
   /* "N climbers logged it" and "N in the last 45 days" are about the trip reports, not partners — they open them; the rest of the strip still goes to Partners. */
   const goFor=function(c: Chip){return c.plain?{}:c.reports?clickable(function(){setTab("conditions");setTimeout(function(){const el=document.getElementById("trip-reports-section");if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"start"});},60);}):clickable(()=>setTab("partners"));};

@@ -429,7 +429,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     closure) are gone from `routeTags()`; `FEATURE_TAGS`, `crossesGlacier`, `raptorClosure` and
     `derivedTags` were deleted with their guard cases. The guard's composition case now carries
     all three kinds of input and asserts the two list chips come back and nothing else. The
-    `features` column and SuggestFix's *Style / character* editor stay (data intact, reversible).
+    `features` column stays (data intact, reversible); the *Style / character* editor in SuggestFix and the Add-route picker went with the chips the same day, since they wrote a field nobody could see.
     The paragraphs below record the derived chips' audit as it stood when they were drawn.
   - **Both derived chips fired on a bare word, and both were mostly wrong.** Measured over all
     211,716 routes: *Glaciated* sat on 659 and **328 crossed no glacier** — 170 on a place name
