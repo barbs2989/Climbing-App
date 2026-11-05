@@ -323,7 +323,8 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
 
         {/* Tab Content */}
         <div style={{...styles.tabContent}}>
-          {tab === 'draw' && <TrailDrawMap start={parkAt} end={cragAt} pts={drawPts} setPts={setDrawPts} C={C} />}
+          {/* Kept MOUNTED behind the other tabs: unmounting it would turn a routed line back into one anchor per point and lose Undo. */}
+          {canDraw && <div style={{display: tab === 'draw' ? 'block' : 'none'}}><TrailDrawMap start={parkAt} end={cragAt} pts={drawPts} setPts={setDrawPts} C={C} active={tab === 'draw'} /></div>}
 
           {tab === 'paste' && (
             <div>

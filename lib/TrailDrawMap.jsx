@@ -58,10 +58,15 @@ let followDefault = false;
    T trailhead and S summit / B base on a route that is not a crag. */
 const CRAG_MARKS = { start: "P", end: "C", startName: "the parking pin", endName: "the crag" };
 const HIT = 32; // the whole hit box of an anchor or handle; the dot inside is smaller
-export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title }) {
+export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title, active }) {
   const mk = marks || CRAG_MARKS;
   const mapDiv = useRef(null), mapRef = useRef(null), tileRef = useRef(null), drawn = useRef([]);
-  const [ready, setReady] = useState(false), [mapFail, setMapFail] = useState(false);
+  // `ready` is a GENERATION, not a flag: the full-screen rebuild sets it to 0 in the cleanup and
+  // to the next number in init, and when Leaflet is already loaded both land in one React batch.
+  // A boolean would read true → true and the redraw effect would never run on the new map.
+  const [ready, setReady] = useState(0), [mapFail, setMapFail] = useState(false);
+  const genRef = useRef(0);
+  const dialogRef = useRef(null);
   const [baseLayer, setBaseLayer] = useState("topo");
   const [fullscreen, setFullscreen] = useState(false);
   const [zoomN, setZoomN] = useState(0);
@@ -79,9 +84,20 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title 
   const propsRef = useRef({ start, end, follow, setPts });
   propsRef.current = { start, end, follow, setPts };
 
-  // The caller cleared the line from outside (its own Clear, a new route): follow it.
-  useEffect(() => { if ((!pts || !pts.length) && nodesRef.current.length) { nodesRef.current = []; setNodes([]); } }, [pts]);
+  // The caller cleared the line from outside (its own Clear, a new route): follow it, history and
+  // all, or Undo would hand the old line back to a caller that just wiped it.
+  useEffect(() => {
+    if ((!pts || !pts.length) && nodesRef.current.length) {
+      routing.current.forEach((c) => c.abort()); routing.current.clear();
+      undoRef.current = []; redoRef.current = []; setHistN({ undo: 0, redo: 0 });
+      nodesRef.current = []; setNodes([]); setSelectedId(null);
+    }
+  }, [pts]);
   useEffect(() => () => { routing.current.forEach((c) => c.abort()); clearTimeout(noteT.current); }, []);
+  // Hidden behind another tab of the host sheet (display:none) and shown again: Leaflet measured a
+  // 0×0 box while hidden, so it is told the real size. The host keeps this mounted rather than
+  // unmounting it, or a routed line would come back as one anchor per routed point.
+  useEffect(() => { if (active !== false && mapRef.current) { const m = mapRef.current; setTimeout(() => { try { m.invalidateSize(); } catch (e) {} }, 60); } }, [active]);
 
   const setBoth = (next) => { nodesRef.current = next; setNodes(next); propsRef.current.setPts(flatten(next)); };
   const say = (s) => { setNote(s); clearTimeout(noteT.current); noteT.current = setTimeout(() => setNote(""), 6000); };
@@ -98,7 +114,10 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title 
       if (ctl.signal.aborted) return;
       routing.current.delete(id);
       const now = nodesRef.current, j = now.findIndex((n) => n.id === id);
-      if (j < 1 || !sameP(now[j].a, b) || !sameP(now[j - 1].a, a)) return;
+      if (j < 0) return;
+      // Meanwhile it became the first anchor (the one before it was deleted): no leg to route.
+      if (j === 0) { if (now[0].pending) { const next = now.slice(); next[0] = Object.assign({}, next[0], { via: [], pending: false }); setBoth(next); } return; }
+      if (!sameP(now[j].a, b) || !sameP(now[j - 1].a, a)) return;
       const next = now.slice();
       next[j] = Object.assign({}, next[j], { via: via || [], pending: false });
       setBoth(next);
@@ -108,7 +127,13 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title 
   // `idxs` are the legs this change touched: straight again, or routed when Follow trails is on.
   const withLegs = (next, idxs) => {
     const want = propsRef.current.follow, touched = [];
-    idxs.forEach((i) => { if (i > 0 && i < next.length) { next[i] = Object.assign({}, next[i], { via: [], pending: want }); if (want) touched.push(next[i].id); } });
+    idxs.forEach((i) => {
+      if (i < 0 || i >= next.length) return;
+      // The first anchor has no leg; a leg of no length (the same spot twice) is straight and silent.
+      const zero = i === 0 || sameP(next[i - 1].a, next[i].a);
+      next[i] = Object.assign({}, next[i], { via: [], pending: want && !zero });
+      if (want && !zero) touched.push(next[i].id);
+    });
     return touched;
   };
   const commit = (next, touched) => {
@@ -126,8 +151,9 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title 
   };
   const undo = () => { if (!undoRef.current.length) return; redoRef.current.push(nodesRef.current); restore(undoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
   const redo = () => { if (!redoRef.current.length) return; undoRef.current.push(nodesRef.current); restore(redoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
-  const append = (lat, lng) => { const next = nodesRef.current.concat([node([lat, lng])]); commit(next, withLegs(next, [next.length - 1])); };
-  const insertAt = (i, lat, lng) => { const next = nodesRef.current.slice(); next.splice(i, 0, node([lat, lng])); commit(next, withLegs(next, [i, i + 1])); };
+  // A tap on the spot the line already ends at (Finish at C twice, a slow double tap) adds nothing.
+  const append = (lat, lng) => { const cur = nodesRef.current, nn = node([lat, lng]); if (cur.length && sameP(cur[cur.length - 1].a, nn.a)) return; const next = cur.concat([nn]); commit(next, withLegs(next, [next.length - 1])); };
+  const insertAt = (i, lat, lng) => { const cur = nodesRef.current, nn = node([lat, lng]); if ((cur[i - 1] && sameP(cur[i - 1].a, nn.a)) || (cur[i] && sameP(cur[i].a, nn.a))) return; const next = cur.slice(); next.splice(i, 0, nn); commit(next, withLegs(next, [i, i + 1])); };
   const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next[i] = Object.assign({}, node([lat, lng]), { id: id }); commit(next, withLegs(next, [i, i + 1])); };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); setSelectedId(null); commit(next, withLegs(next, [i])); };
   const clearAll = () => { if (!nodesRef.current.length) return; setSelectedId(null); commit([], []); };
@@ -165,7 +191,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title 
       });
       // Which legs are long enough for a midpoint handle depends on the zoom, so a zoom redraws.
       map.on("zoomend", () => setZoomN((z) => z + 1));
-      mapRef.current = map; setReady(true);
+      mapRef.current = map; genRef.current += 1; setReady(genRef.current);
       setTimeout(() => { try { map.invalidateSize(); } catch (e) {} }, 220);
     };
     loadLeaflet(init, () => setMapFail(true));
@@ -174,15 +200,19 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title 
       cancelled = true; clearTimeout(ft);
       const m = mapRef.current;
       if (m) { try { viewRef.current = { center: m.getCenter(), zoom: m.getZoom() }; m.remove(); } catch (e) {} mapRef.current = null; tileRef.current = null; drawn.current = []; }
-      setReady(false);
+      setReady(0);
     };
   }, [fullscreen]); // eslint-disable-line react-hooks/exhaustive-deps -- rebuilt on `fullscreen` ONLY; the base layer is applied by its own effect below and the pins/line by the redraw effect
   useEffect(() => { if (mapRef.current) applyBaseLayer(mapRef.current, tileRef, baseLayer); }, [baseLayer]);
+  // Escape leaves full screen. Listened for on the dialog itself (focused when it opens), not the
+  // window, so a key pressed in the host sheet's inputs behind it is not ours.
   useEffect(() => {
-    if (!fullscreen) return undefined;
-    const onKey = (e) => { if (e.key === "Escape") setFullscreen(false); };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    const el = fullscreen ? dialogRef.current : null;
+    if (!el) return undefined;
+    try { el.focus({ preventScroll: true }); } catch (e) {}
+    const onKey = (e) => { if (e.key === "Escape") { e.stopPropagation(); setFullscreen(false); } };
+    el.addEventListener("keydown", onKey);
+    return () => el.removeEventListener("keydown", onKey);
   }, [fullscreen]);
 
   useEffect(() => {
@@ -219,6 +249,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title 
 
   const flat = flatten(nodes), n = flat.length, selected = selectedId != null && nodes.some((x) => x.id === selectedId);
   const anyPending = nodes.some((x) => x.pending);
+  const atEnd = !!(end && n && sameP(flat[n - 1], node([end.lat, end.lng]).a));
   const btn = { padding: "8px 11px", borderRadius: 8, border: "1px solid " + C.border, background: C.bg70, color: C.text, fontSize: 13, fontWeight: 600, cursor: "pointer" };
   const off = { opacity: 0.4, cursor: "default" };
   const b = (on) => (on ? btn : Object.assign({}, btn, off));
@@ -238,7 +269,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title 
     <>
       <div style={{ display: "flex", gap: 6, marginTop: 8, flexWrap: "wrap" }}>
         {start ? <button onClick={() => { if (!nodesRef.current.length) append(start.lat, start.lng); }} disabled={n > 0} style={b(!n)}>{"Start at " + mk.start}</button> : null}
-        {end ? <button onClick={() => append(end.lat, end.lng)} disabled={!n} style={b(n)}>{"Finish at " + mk.end}</button> : null}
+        {end ? <button onClick={() => append(end.lat, end.lng)} disabled={!n || atEnd} style={b(n && !atEnd)}>{"Finish at " + mk.end}</button> : null}
         <button onClick={undo} disabled={!histN.undo} style={b(histN.undo)}>Undo</button>
         <button onClick={redo} disabled={!histN.redo} style={b(histN.redo)}>Redo</button>
         {selected ? <button onClick={() => deleteAnchor(selectedId)} style={Object.assign({}, btn, { borderColor: C.error, color: C.error })}>Delete point</button> : null}
@@ -253,7 +284,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title 
     </>
   );
   if (fullscreen) {
-    return createPortal(<div role="dialog" aria-modal="true" aria-label={title || "Draw the trail"} style={{ position: "fixed", inset: 0, zIndex: 10000, background: C.bg, padding: 12, display: "flex", flexDirection: "column", boxSizing: "border-box", overscrollBehavior: "contain" }}>
+    return createPortal(<div ref={dialogRef} tabIndex={-1} role="dialog" aria-modal="true" aria-label={title || "Draw the trail"} style={{ position: "fixed", inset: 0, zIndex: 10000, background: C.bg, padding: 12, display: "flex", flexDirection: "column", boxSizing: "border-box", overscrollBehavior: "contain" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, marginBottom: 9 }}>
         <span style={{ fontSize: 14, fontWeight: 700, color: C.text, minWidth: 0, overflowWrap: "anywhere" }}>{title || "Draw the trail"}</span>
         <button onClick={() => setFullscreen(false)} aria-label="Close full-screen map" style={POP_CLOSE}>✕</button>
