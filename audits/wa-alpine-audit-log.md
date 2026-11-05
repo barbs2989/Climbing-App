@@ -36777,3 +36777,54 @@ could resolve items (4) and (5) above more conclusively.
 
 Next batch will continue id-ascending from `wa_luahna_peak_east_slopes`
 (see progress file).
+
+## Batch 510 (pass 8) — 2026-11-05
+
+Checked 8 routes across four peaks, continuing id-ascending past Luahna Peak:
+`wa_luna_glacier` (Phantom Peak), `wa_luna_peak_southeast_slopes`,
+`wa_luna_peak_southwest_ridge`, `wa_lundin_peak_east_ridge`,
+`wa_lundin_peak_northwest_face`, `wa_lundin_peak_south_face_left`,
+`wa_lundin_peak_southeast_ridge`, `wa_lundin_peak_west_ridge`.
+
+No confirmed errors this batch, no SQL file. Five clean: `wa_luna_glacier`'s FA ("Fred & Helmy
+Beckey, 1940") is uncorroborated beyond the OpenBeta listing — Wikipedia's Phantom Peak article
+names only Fred Beckey for the peak's 1940 first ascent — but that's an omission, not a conflict
+(Wikipedia's peak-level summary doesn't claim Helmy *wasn't* there), so left as-is; its stored
+8,016 ft high point sits within a few feet of ListsOfJohn's own split LiDAR (8,023 ft) vs. map
+(8,020 ft) figures for the same peak, close enough to read as ordinary survey noise rather than an
+error. `wa_lundin_peak_east_ridge` and `wa_lundin_peak_west_ridge` both check out: the shared 6,057
+ft Lundin Peak elevation matches Wikipedia/Peakery exactly, and West Ridge's overview — the peak's
+former name "Snoqualmie Little Sister," renamed in 1931 to honor district ranger John Lundin, plus
+neighboring Snoqualmie Mountain's 6,278 ft — is confirmed by Wikipedia and an original 1931 U.S.
+Board on Geographic Names record (Washington Historical Quarterly). `wa_lundin_peak_southeast_ridge`
+and `wa_luna_peak_southwest_ridge` are both bare rows (little beyond approach/descent prose, no
+FA or elevation stored) — nothing to check.
+
+Flagged for human review, no SQL: (1) `wa_luna_peak_southeast_slopes` stores the 1938 FA (Bill Cox
+& Will F. Thompson) and the 8,311 ft summit elevation, both confirmed exactly against
+Wikipedia/PeakVisor — but sources disagree on which named line is Luna Peak's standard/FA route:
+Wikipedia and PeakVisor call it the "Southwest Ridge," SummitPost calls it the "South Ridge," and
+none of them ties the 1938 ascent specifically to a "Southeast Slopes" line. The DB has a separate,
+nearly-bare `wa_luna_peak_southwest_ridge` row with no FA stored at all — raising the possibility
+the 1938 FA credit is sitting on the wrong one of the two route rows. No source read confirms or
+rules this out, so flagged for a human to adjudicate rather than guessed at. (2)
+`wa_lundin_peak_northwest_face`'s stored FA ("Dan Davis on September 29, 1968") couldn't be
+confirmed or contradicted: a Mountain Project route page for a "Northwest Face" on what reads as
+this same peak (898 ft, 6 pitches, described as the peak's first technical route, established
+"more than thirty years after" the first recorded ascent) looked like the right route, but
+mountainproject.com was DNS-blocked from this session's network, so the FA details on that page
+couldn't be read. (3) `wa_lundin_peak_south_face_left`'s stored FA ("Mike Preiss & Don Preiss,
+2004") matches an OpenBeta route — same hand-crack layback start, same center-of-south-face line,
+same approach via Commonwealth Creek/Red Mountain's flank — on climbers, but that route is itself
+titled "South Face (2001 Variation)," which points to 2001 rather than 2004, and OpenBeta's own
+climber credit carries a question mark. One secondary, self-flagged-uncertain source isn't enough
+to write a SQL fix against the DB's own fa field, so flagged for a human with a guidebook or a
+second source to settle the year.
+
+Network note: `mountainproject.com`, `en.wikipedia.org`, `stg.openbeta.io` and
+`www.listsofjohn.com` were all DNS-blocked from this session for direct page fetches this run —
+WebSearch snippets covered most of what was needed, but items (2) and (3) above would benefit from
+a future run with broader network access to read the primary pages directly.
+
+Next batch will continue id-ascending from `wa_lundin_peak_west_ridge`
+(see progress file).
