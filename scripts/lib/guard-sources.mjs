@@ -305,6 +305,7 @@ export const MOVED = {
     "src/components/VerifNote.tsx",
     "src/components/TagChip.tsx",
     "src/components/RouteTagRow.tsx",
+    "src/components/RouteSocialRow.tsx",
     "src/components/CragSafetyNotes.tsx",
     "src/components/RackBetaList.tsx",
     "src/components/PitchConsensus.tsx",

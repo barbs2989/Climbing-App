@@ -29,7 +29,7 @@ Grouped by domain; names are the `useState` variables. A new piece of UI state g
 group it belongs to, as a `useState` in `App`, per CLAUDE.md's "add a `useState` in `App`" rule.
 
 - **Navigation** — `tab`, `selRoute`, `routeFrom`, `routeStack`, `routeSubTab`, `pendingSubTab`, `routeView`, `selArea`, `dbAreaCtx`, `dbAreaJump`, `stateJumpReq`, `crewView`, `logbookTab`, `partnersMode`, `msgBack`, `chatFromInbox`
-- **Route browsing** — `filters`, `search`, `discSel`, `cragSort`, `cragFilter`, `areaTreeOpen`, `savedSearches`, `bookmarks`, `rankDisc`, `rankBoard`
+- **Route browsing** — `filters`, `search`, `discSel`, `cragSort`, `cragFilter`, `areaTreeOpen`, `bookmarks`, `rankDisc`, `rankBoard`
 - **Route-page local copies of contributions** — `localComments`, `hzVotes`, `diffRatings`, `myStars`, `routeRev`, `contribs`, `routeEdits`, `startLocEdits`, `waypointEdits`, `topoAnnotations`, `sunReports`, `condReports`, `cmLikes`, `cmReacts`
 - **The climber** — `profile`, `editDraft`, `myAvail`, `mySpeedFtHr`, `verified`, `profileLoaded`, `profileReadFailed`, `profilePhotos`, `profilePhotoAlts`, `onboarded`, `authed`
 - **The climber's climbs** — `logs`, `myItineraries`, `userLists`, `objDates`, `catches`, `givenVouches`, `kudosGiven`, `relLedger`
