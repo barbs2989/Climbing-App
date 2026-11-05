@@ -97,3 +97,32 @@ node scripts/oneoff/apply-owner-qs.mjs research-data/gpx-any-source-wa-2026-11-0
   - Inner Constance NW Buttress 5.0 grade: unsupported; keep both rows.
   - Sefrit: no new row.
   - Golden Horn: attach none of the 7 tracks that top out on Tower.
+
+## Applied 2026-11-05 (edits only; every row backed up, re-read)
+- **`owner-qs-ops-patches.json`, 11 of 12 applied:**
+  - White Salmon season.
+  - Hibox South Face changed to alpine.
+  - Iron Cap North Ridge via Northeast Shoulder.
+  - Jack East Ridge changed to alpine 5.0.
+  - Mutchler changed to alpine.
+  - Mowich Face changed to alpine, May-Jul.
+  - South Tahoma Headwall changed to alpine AI3.
+  - Tahoma Cleaver overview.
+  - Tinkham Southeast Spur fill.
+  - Granite's two ribs changed to alpine.
+  - **Not applied:** Dragontail r3 stays alpine. Trigger 0366 reverts it, because its `rock_grade` holds 5.6 for the true-summit pinnacle, and that is correct.
+- **`owner-qs-ops-5.json`:**
+  - Cameron Summit pin moved to the West Peak (the stored track passes within 10 m), the East-summit tip removed, and the face text fixed.
+  - Fury west line: face and aspect set to W, grade cleared, beta rewritten, the traverse descent cleared.
+  - Little Annapurna North Slopes set to scrambling Class 3 (no "south-facing" text was found in the row).
+  - Observation Rock: road note added for the closed Fairfax Bridge, and a sentence prefixed to the approach. Every other route starting at Mowich already carried the closure.
+- **`owner-qs-ops-6.json`:**
+  - Chianti East Face summit pin moved to the lidar point, and all three rows' high point set to 8,459 ft.
+  - Sloan approach now leads with Bedal Creek.
+  - Eagle Rock: descent, rappel, tip and gear now describe the lower cliff-band rappel.
+- **`owner-qs-ops-7.json`:** Ellinor Lower Trailhead pin (USFS coordinates) added to both rows, and the winter approach text written onto the Southeast Chute. The write landed; the script reported it as refused only because a trigger reordered the waypoint keys.
+- **Granite Mountain area pin** moved from the Tusk to the lookout summit at 47.4177,-121.4814.
+- **Held:**
+  - **Forbidden "Northeast Face":** our own East Ledges data cites a 1961 AAJ "Northeast Face" report, which contradicts the research's finding that no such route exists.
+  - **Reynolds:** the Williams Creek approach variant already exists. Making it primary would also need the approach paragraph rewritten.
+- **Still blocked by the permission check:** every merge and delete in batches 1-4.
