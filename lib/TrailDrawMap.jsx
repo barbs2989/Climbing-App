@@ -293,7 +293,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     // Only the RUN of routed points next to the old spot (the end of the leg into it, the start of the
     // leg out of it), never a bend elsewhere that merely passes within reach.
     const trim = (via, k) => dropNear(via, oldA, k === i ? "end" : "start", movedM); // a trim that takes most of a leg is said ("gone")
-    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { const kept = trim(next[k].via, k); next[k] = Object.assign({}, next[k], { via: kept, pending: on }); if (on) touched.push(next[k].id); else if (kept.length < next[k].via.length / 2) noteFailure("gone"); } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); } });
+    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { const kept = trim(next[k].via, k); next[k] = Object.assign({}, next[k], { via: kept, pending: on }); if (on) touched.push(next[k].id); else if (kept.length < cur[k].via.length / 2) noteFailure("gone"); } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); } });
     commit(next, touched); return true; };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null);
     // The merged leg keeps the routed points of both legs it joins (the deleted anchor is the one

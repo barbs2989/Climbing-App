@@ -65,7 +65,7 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
       }).catch(function () { if (live) setProf({ key: key, error: true }); });
     }, 600);
     return function () { live = false; clearTimeout(t); };
-  }, [key, shapePending]); // eslint-disable-line react-hooks/exhaustive-deps -- `key` is `pts` serialised; keying on it (not the array) stops a refetch on every render
+  }, [key, shapePending]); // eslint-disable-line react-hooks/exhaustive-deps -- `key` is `pts` serialised; keying on it (not the array) stops a refetch on every render, and `prof` is read only to skip a repeat for the same key, never to trigger one
   const lenM = trailLenM(pts);
   const canSuggest = pts.length >= MIN_RECORDED_PTS && !shapePending; // one answer for the button's state AND its look
   const p = prof && prof.key === key ? prof : null;
