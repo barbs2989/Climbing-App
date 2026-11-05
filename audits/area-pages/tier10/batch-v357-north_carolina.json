@@ -1,0 +1,25 @@
+{
+ "nc_eco_terrorism_boulder": {
+  "_expect": { "name": "Eco Terrorism Boulder", "region": "North Carolina" },
+  "blurb": "A single large boulder in the trailside boulderfield below Sentinel Buttress, on the Moore's Wall side of Hanging Rock State Park in the North Carolina Piedmont. It holds ten problems and is a stop for climbers who already have some strength: a couple of easy V2s, a cluster in the V4 to V5 range, then a few hard lines up to V8. Expect a short walk from the fire road along the Sentinel Buttress trail, and plan on a crash pad. It sits among a much larger collection of boulders, so it pairs well with other problems nearby for a full session.",
+  "review": { "sources": ["https://www.mountainproject.com/area/118302216/eco-terrorism-boulder", "https://www.mountainproject.com/area/118302176/moores-wall-bouldering"] }
+ },
+ "nc_y_axis_boulder": {
+  "_expect": { "name": "Y-Axis Boulder", "region": "North Carolina" },
+  "blurb": "A small boulder in the Lower Dixon section of Dixon School Boulders, within Crowders Mountain State Park near Kings Mountain and Gastonia. Ten problems here are low and friendly: mostly VB to V2, with a few V3s at the top end, which makes it a good place to warm up or bring newer boulderers. It is part of the Bethlehem sub-area, among the first boulders you meet from the trail after crossing the road, so it is easy to combine with neighbouring blocks. Bring pads; the sessions here are all bouldering.",
+  "review": { "sources": ["https://thetopo.com/crags/dixon-school-road-boulders-29530/routelist/y-axis", "https://www.mountainproject.com/area/201168513/lower-dixon"] }
+ },
+ "nc_road_north_face": {
+  "_expect": { "name": "Road (North) Face", "region": "North Carolina" },
+  "blurb": "The road-facing side of the Trestle, a small crag in the Triangle region of eastern North Carolina. It is a broad north-facing wall that stays shady most of the day. Of its ten climbs, most are short trad lines with a few sport and top-rope options, grading from 5.8 through 5.10. The routes are roughly 50 feet long; the rack is light, and some gear takes thought, so lead only if you are comfortable placing it. The ground at the base is rolling rock, so watch your ankles while setting up.",
+  "aspect": "N",
+  "review": { "sources": ["https://www.mountainproject.com/area/117236690/road-north-face", "https://www.mountainproject.com/route/117245969/hes-cold-spaghetti"] }
+ },
+ "_skipped": {
+  "nc_mushroom_boulder": "no fetched page about the boulder itself (only the parent Blowing Rock Boulders listing and a search snippet)",
+  "nc_river_south_face": "no fetched page about the face itself; only a route page and the Eastern Region parent list",
+  "nc_ncsu_traverse_wall": "only one page (Mountain Project campus listing) fetched with little detail; rockclimbing.com page refused connection",
+  "nc_west_side": "no page about the West side sub-area itself; only parent Northside Boulders and route pages",
+  "nc_lovers_boulder_cluster": "no page about the cluster itself; only the TMI parent listing"
+ }
+}

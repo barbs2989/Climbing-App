@@ -1,0 +1,32 @@
+{
+ "or_warrior_wall": {
+  "_expect": { "name": "Warrior Wall", "region": "Oregon" },
+  "blurb": "A small basalt wall on Rocky Butte, an urban cliff in northeast Portland beside the freeway. Warrior Wall holds eleven climbs that mix sport, top-rope and trad, and it runs harder than most of the butte: about half sit at 5.11, a few are 5.10, and one each reaches 5.12 and 5.13. Tree cover keeps the face mostly in shade, which helps on warm days but means it can stay damp through the wet months. The base is reached by a short downclimb or by rappelling in from the top, so it suits climbers who are comfortable with that style of arrival.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106107418/warrior-wall", "https://www.mountainproject.com/area/105788995/rocky-butte"] }
+ },
+ "or_2_rock_city_wall": {
+  "_expect": { "name": "(.2) Rock City Wall", "region": "Oregon" },
+  "blurb": "A bolted wall in the Terra Nova area of southwest Oregon's Rogue Valley, with eleven sport routes. Grades start around 5.8 and top out at 5.13, but most lines fall in the 5.10 to 5.11 range with a couple of 5.12s, so it is better suited to climbers past the beginner stage than to novices. The right-hand upper headwall carries some of Terra Nova's tougher pitches, mostly extensions and second pitches of lower routes. The wall comes into view on the walk down, shortly ahead of the bowl-shaped Boneyard, and it is known for one long-popular moderate line.",
+  "review": { "sources": ["https://mountainproject.com/area/121377299/rock-city-wall", "https://www.mountainproject.com/area/109532066/southwest-oregon"] }
+ },
+ "or_mckinley_rock": {
+  "_expect": { "name": "McKinley Rock", "region": "Oregon" },
+  "blurb": "A large south-facing dome of about 350 feet near the head of the Steamboat Creek watershed in the Umpqua National Forest. Most of the eleven routes are multi-pitch and bolted in an older, widely spaced style, with a few trad cracks, one of them a gear-protected opening pitch. Grades run from 5.6 up to a single 5.11, with the bulk at 5.10 and a couple of easier lines for warming up. The rock is coarse and grippy. The east end of the face can be mossy low down. Expect a remote day: a long drive from the nearest town and a walk of about a mile to the base.",
+  "approach": "About a mile of walking along the Long Ridge Trail from the trailhead to the base of the dome.",
+  "review": { "sources": ["https://mountainproject.com/area/113784993/mckinley-rock", "https://www.fs.usda.gov/r06/umpqua/recreation/mckinley-rock-climbing-area"] }
+ },
+ "or_5_little_three_finger_jack_aka_the_alex_reed_memorial_w": {
+  "_expect": { "name": "Little Three Finger Jack AKA The Alex Reed Memorial Wall", "region": "Oregon" },
+  "blurb": "A compact sport wall in the Monument Area of Smith Rock, just climbers' right of the Big Ben tower. All eleven routes are hard: roughly half are 5.12, most of the rest are 5.13, and one reaches 5.14. The rock is hard and largely red-patina, with juggy, slopey and crimpy climbing higher up. The right side is cut by a tiered roof system, while the left side has longer lines with punchy cruxes over bulges. The wall is in the sun for most of the day, which makes it a popular cool-season choice, and it is not a place for newcomers to the grade range.",
+  "review": { "sources": ["https://mountainproject.com/area/117667797/little-three-finger-jack-aka-the-alex-reed-memorial-wall", "https://www.smithrock.com/monument-area"] }
+ },
+ "_skipped": {
+  "or_sky_burial": "Page about the crag marks it closed (leased private logging land); only one page about the crag itself, plus the parent Lookout Point page",
+  "or_x_tasmanian_devil": "Only one fetched page about the crag (the area page); a second search found nothing else, and later search budget ran out",
+  "or_5_bird_rock": "No fetched page about Bird Rock itself, only the Terra Nova parent listing; search budget",
+  "or_3_the_aviary": "No page about The Aviary itself, only the Klinger Spring parent page and a guidebook listing with a different route count; search budget"
+ },
+ "_conflicts": {
+  "or_mckinley_rock": "Stored rock is tuff but https://mountainproject.com/area/113784993/mckinley-rock describes a dome-like andesitic dike; rock left unstated and stored value unchanged."
+ }
+}

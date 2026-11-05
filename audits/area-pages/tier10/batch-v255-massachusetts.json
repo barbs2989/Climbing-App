@@ -1,0 +1,23 @@
+{
+ "ma_3_fisherman_s_wall": {
+  "_expect": { "name": "Fisherman's Wall", "region": "Massachusetts" },
+  "blurb": "Fisherman's Wall is a tall, slightly steep gneiss face on the Crow Hill cliff in central Massachusetts, standing out from its neighbours mostly by sheer height. Thirteen routes are mapped, ten of them trad and the rest top-rope. The grades start around 5.8 and climb past 5.13, with a handful of 5.9s, a few 5.10s and 5.11s, and two 5.13s that need small gear and carry serious run-outs. The left side is stiff, slopey face climbing; the right side has cracks and steep horizontal features. This is not the place for easy mileage, since the gentler routes at Crow Hill lie elsewhere on the cliff. The hillside is east-southeast facing and can stay damp.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106126388/fishermans-wall", "https://www.mountainproject.com/area/105905492/crow-hill"] }
+ },
+ "ma_mark_s_wall": {
+  "_expect": { "name": "Mark's Wall", "region": "Massachusetts" },
+  "blurb": "Mark's Wall is a small cliff in the Far North section of Douglas State Forest, central Massachusetts, and it is the nearest climbing to the trailhead lot. Most of the thirteen climbs are boulder problems, mixed with a few short trad and top-rope lines of about 30 feet at the easy end of the 5th-class scale. The problems run from V0 warm-ups to a few hard V5 and V6 sit starts under a large roof on the left side. The main face looks east, with a lower band to its left facing south. It suits a quick session with several pads and a spotter, or a short stop beside the bigger roped walls nearby.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123860290/marks-wall", "https://www.mountainproject.com/area/123859850/far-north"] }
+ },
+ "_skipped": {
+  "ma_sleeping_wall": "no Massachusetts page found for a Sleeping Wall under Goat Rock after two searches; only unrelated areas",
+  "ma_warm_up_boulder_3": "only the Wilson Mountain Reservation parent page describes it; no page about the boulder itself (Warm-Up Boulder pages found were in CA and CO)",
+  "ma_split_boulder_the": "only route pages and the Lynn Woods parent page; no fetched page about the boulder itself",
+  "ma_left_cliff_band_y2k9_roof": "only one page about the crag, and its coordinates (42.397,-72.60) are about 20 km from the input's (42.5375,-72.4951)",
+  "ma_cemetery_the": "only route pages and search snippets; no fetched page about the boulders themselves",
+  "ma_pipeline_boulders": "only the Redrocks Bouldering parent page lists it, with no description; no page about the crag itself"
+ },
+ "_conflicts": {
+  "ma_mark_s_wall": "stored aspect S, but https://www.mountainproject.com/area/123860290/marks-wall says the main wall faces east and only the small band to its left faces south"
+ }
+}

@@ -42,11 +42,18 @@ room for side-panel ads later. The phone app keeps its own look.
     inputs (`.cm-file-input`) are `position:fixed`, so they no longer stretch a popup's backdrop into a
     second scroller that carried Log a climb off the screen. `check:pinned-dismiss` walks every popup.
 - **Desktop (1024px and wider) — the website shell:**
-  - A full-width sticky **top bar** (64px): ☰ Menu at the far left, the ClimbMatch wordmark (→ Home), a
+  - A full-width sticky **top bar** (64px): a bare ☰ at the far left (no box, no "Menu" label on
+    desktop — owner 2026-11-04; its accessible name is still "Menu"), the logo (the app mark beside a
+    26px ClimbMatch wordmark, → Home), a
     search box for every climb and place **centred in the window** (owner 2026-11-04; `WideSearch` sits on
     the 50vw midline out of the row's flow, 220–680px wide so it never reaches either end; `/` jumps to
     it; arrow keys and Enter pick a hit), and at the right Saved · Alerts · Calendar · Messages and your
-    avatar (→ Profile).
+    avatar (→ Profile). **Typed search** (competitor review item 12, built 2026-11-05): when the words
+    carry a grade or a discipline ("5.9 trad near Leavenworth", "WI4", "V4 in Squamish" —
+    `parseTypedSearch` in `lib/typedSearch.js`, grades read by the one parser in `lib/grade.js`), the
+    first row offers the Route finder with those filters, scoped to the place typed (top place hit),
+    else the home state, else the state with the most climbs; the row names the scope. Picking it
+    goes through App's saved-search opener (`openSavedSearch`, kind `finder`).
   - **Drawn ~10% larger** (owner 2026-11-04, `ZOOM` = 1.1 in `lib/wideLayout.js`): the page column
     (`#appscroll`), the pages that open in it, the rail's cards, centred windows, the bell drop-down and
     both Messages panes are CSS-`zoom`ed, so the phone's 13px type reads as ~14.3px beside Mountain
@@ -78,7 +85,10 @@ room for side-panel ads later. The phone app keeps its own look.
     952; 1920 → 610–1310, rail 1592). The empty space either side of the column on a big monitor is where
     side ads can go later.
   - A site **footer** under every page, Strava-style (owner 2026-11-04: "look how strava does it …
-    more branding"): a card with the mark, wordmark and one line on what the app is for, three link
+    more branding"), **spanning the whole window** (owner 2026-11-05): a band the width of the window's
+    client area (measured, not 100vw, so the Windows scrollbar never pushes it off the edge) that pulls
+    itself out of the page column by `--cm-col-left` and paints above the fixed sidebar and rail at the
+    page's end; its content is centred and capped at 1320px. In it: the mark, wordmark and one line on what the app is for, three link
     columns (Explore: the tabs; ClimbMatch: How it works, About us, Feedback, Rate the app, Settings;
     Legal: Terms, Privacy, Guidelines, Accessibility), then a thin © row with Back to top. It is the ONLY home of About,
     Help, Feedback, Privacy and Terms on desktop. The **directory of every state with climbs** heads it on
@@ -104,8 +114,9 @@ room for side-panel ads later. The phone app keeps its own look.
   - **No emoji in the Calendar** (owner, 2026-10-23): its rows read *Drive from you* and *Daylight* as
     plain labels, its two notes carry the app's line `info` icon, and the empty state a line `calendar` icon
     (`lib/Calendar.jsx`). The meeting place keeps its `pin` line icon through `Lbl`.
-  - **Chats in the rail** (1280px+): under Coming up and Alerts, your direct messages and crew chats, newest
-    first, unread counts on each; one opens the conversation. The same threads the inbox shows (`RailChats`,
+  - **Chats in the rail** (1280px+): under Coming up and Alerts, two folding sections — *Crews*, then
+    *Direct* (owner 2026-11-04) — each a 44px header with a chevron and the section's unread count, five
+    newest conversations apiece and "See all N" past that, both open by default; one opens the conversation. The same threads the inbox shows (`RailChats`,
     App's `_dmCounts` keeps blocked and restricted people out).
   - **Three button looks, and green** (owner 2026-11-04, phone too): `lib/buttonStyles.js`' `BTN_PRIMARY`
     (the app's navy — the one main action), `BTN_SECONDARY` (bordered, plain text), `BTN_LINK` (no box), and
@@ -204,6 +215,7 @@ taken focus from it by the time the hook looks.
 | `lib/wideLayout.js` | `useWideScreen`, `useFullWidth`, `wideGeom`, `wideColumn`, `wideSidebar`, `wideRail`, `wideTopBar`, `wideTopRow`, `wideCss`, `WIDE_MIN`, `FULL_MIN` |
 | `lib/MonthGrid.jsx` | `MonthGrid` |
 | `lib/DesktopShell.jsx` | `WideSearch`, `WideRail`, `WideFooter`, `DocTitle` |
+| `lib/Ads.jsx` | `ADS_ON`, `adsActive`, `SidebarAd`, `RailAd`, `useRailFollow`, `FollowColumn`, `SideWrap` |
 | `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers` |
 | `lib/tapSlop.js` | `installTapSlop`, `slopTarget`, `TAP_MIN` |
 | `ClimbMatch.jsx` | `NAV`, `goTab`, `navBadge`, `_inChat`, `_known`, `_openMe`, `_closePages`, `_pageView` |
@@ -215,6 +227,23 @@ taken focus from it by the time the hook looks.
 
 ## 4. Data
 Layout only. The footer reads the states list (`useStates`); the search reads the catalog.
+
+**Ads on route pages, desktop only** (owner 2026-11-04: "ads on route pages … as you scroll down, ads
+will be on the left panel and right panels"; shipped on "go"). `lib/Ads.jsx`: a 160×600 in the sidebar
+under Your crews (`SidebarAd`) and a 300×600 in the rail under the route map (`RailAd`), on a route page at
+1440px+ only; the phone never draws one. **Off until a publisher id is set**: the build reads
+`VITE_ADSENSE_CLIENT` and the two unit ids `VITE_ADSENSE_SLOT_SIDE` / `VITE_ADSENSE_SLOT_RAIL` from
+deploy.yml's repository variables (Google AdSense, the one network a static Pages site can carry); unset,
+nothing renders, not even a label. Turning them on adds a sentence to the Privacy Policy's *What we
+collect* (`ADS_ON` in `lib/LegalView.jsx`), so bump `POLICY_VERSION` in the same change. On the dev server
+`?ads=preview` draws labelled placeholder boxes in the two slots.
+
+**One scrollbar.** The side panels no longer scroll on their own (owner 2026-11-04: "it needs to be one
+consistent scroll bar"): `useRailFollow` slides a panel's column up with the page's scroll, by at most the
+distance to its ad's top (the widgets or the nav scroll away, the ad stays in view) or, with no ad, the amount
+the column overflows (its last card comes into view, then it stops), as Facebook's right column does. The
+rail's widgets (`WideRail`) and the route page's rail (`FollowColumn` around `#cm-route-rail`) always
+follow; the sidebar follows only on a route page carrying an ad (`SideWrap`).
 
 ## 5. Connections
 - **Menu** (`menuOpen`): the same Menu on both widths, full-screen on both.
