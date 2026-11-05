@@ -1,0 +1,48 @@
+{
+ "area_id": "or_south_side",
+ "routes": [
+  {
+   "route_id": "or_south_side_west_crater_rim_route_wcr",
+   "season": {
+    "months": [
+     4,
+     5,
+     6
+    ],
+    "window": "Apr-Jun",
+    "evidence": "web search: Mountain Project forum says WCR is best in mid spring; avalanche and rockfall off the crater rim grow as it warms; south side generally mid-Apr to mid-Jul. Only logged WCR ascent (262252) is August with no GPS points, so off-season."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3247306",
+     "verdict": "unsure",
+     "why": "Unnamed route, Timberline start, standard-looking south line; no evidence it is West Crater Rim"
+    },
+    {
+     "aid": "3203959",
+     "verdict": "unsure",
+     "why": "Unnamed route, Timberline start; no evidence it is West Crater Rim"
+    },
+    {
+     "aid": "3228175",
+     "verdict": "unsure",
+     "why": "Unnamed route, Timberline start; no evidence it is West Crater Rim"
+    },
+    {
+     "aid": "3201468",
+     "verdict": "different",
+     "why": "Logged and described as Old Chute (south side)"
+    },
+    {
+     "aid": "262252",
+     "verdict": "different",
+     "why": "Logged South route/West Crater Rim, no GPS points, August (off-season)"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "All three Mount Hood areas share one Peakbagger record; every harvested track is a Timberline south-side ascent. No track assigned to any of the three routes. Tracks 3247306/3203959/3228175 have no route name and could fit the existing South Side (Hogsback) route (which already has a track). 2850250 has corrupt elevations (3 m) and is not usable. Newton Clark Headwall, Sunshine and West Crater Rim have no trailhead pins; no trailhead proposed because no track nominates Cloud Cap/Tilly Jane/Meadows. Missing routes are listed in or_east_side_2.json only."
+}
