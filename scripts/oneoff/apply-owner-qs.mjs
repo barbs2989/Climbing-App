@@ -86,7 +86,7 @@ for (const o of ops) {
     keep = await get(o.into);
     if (!keep || keep.area_id !== o.area_id) { console.log(`  FAIL: ${o.into} missing or not on ${o.area_id}`); bad++; continue; }
     // move "*": every content column of the dropped row (identity, timestamps and derived columns excluded)
-    const SKIP = new Set(["id", "area_id", "name", "created_at", "updated_at", "sort_order", "path", "search_name", "name_norm", "fts", "grade_num"]);
+    const SKIP = new Set(["id", "area_id", "name", "created_at", "updated_at", "sort_order", "path", "search_name", "name_norm", "fts", "grade_num", "name_search", "auto_generated", "classic", "verif"]);
     const cols = o.move === "*" ? Object.keys(row).filter(c => !SKIP.has(c)) : (o.move || []);
     for (const c of cols) {
       if (empty(row[c])) continue;
