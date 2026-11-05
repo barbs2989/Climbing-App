@@ -91,7 +91,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const dragEndAt = useRef(0);
   const noteT = useRef(null);
   const lastTap = useRef(null); // the last tap on the map or a leg, to fold a double tap into one point
-  const fails = useRef({ far: 0, none: 0, down: 0, detour: 0, t: null }); // legs that came back straight, said once per burst
+  const fails = useRef({ far: 0, none: 0, down: 0, detour: 0, kept: 0, t: null }); // legs that came back straight, said once per burst
   // The pins by value, so a fresh-but-equal object from the host is not a change.
   const startKey = start ? start.lat + "," + start.lng : "", endKey = end ? end.lat + "," + end.lng : "";
   const propsRef = useRef({ start, end, follow, setPts, onShape });
@@ -137,7 +137,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   // many at once), with a count per reason, not one note overwriting the last.
   const noteFailure = (why) => {
     const f = fails.current;
-    if (why === "far") f.far++; else if (why === "detour") f.detour++; else if (why === false) f.down++; else f.none++;
+    if (why === "far") f.far++; else if (why === "detour") f.detour++; else if (why === "kept") f.kept++; else if (why === false) f.down++; else f.none++;
     clearTimeout(f.t);
     f.t = setTimeout(() => {
       const legs = (k) => k + (k === 1 ? " leg" : " legs");
@@ -145,10 +145,11 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       if (f.none) parts.push(legs(f.none) + " with no mapped trail to follow (drag the point, or tap the hollow dot to add one between)");
       if (f.detour) parts.push(legs(f.detour) + " where the mapped trail goes a long way round (tap a point where you cross)");
       if (f.far) parts.push(legs(f.far) + " too long for one leg (tap a point between)");
+      if (f.kept) parts.push(legs(f.kept) + " keeping the earlier path, which could not be re-followed from the moved point (drag it a little to ask again)");
       if (f.down) parts.push(legs(f.down) + " the trail router didn't answer for (offline, or busy: move the point a little, or switch Follow trails off and on, to ask again)");
-      const total = f.none + f.far + f.down + f.detour;
+      const total = f.none + f.far + f.down + f.detour + f.kept;
       say(tx((total === 1 ? "One leg could not be followed: " : total + " legs could not be followed: ") + parts.join("; ") + "."));
-      fails.current = { far: 0, none: 0, down: 0, detour: 0, t: null };
+      fails.current = { far: 0, none: 0, down: 0, detour: 0, kept: 0, t: null };
     }, 700);
   };
   const abortRoute = (id) => { const c = routing.current.get(id); if (c) { c.abort(); routing.current.delete(id); } };
@@ -178,7 +179,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       // ask again for a leg that had settled (or flatten it, with Follow off since).
       const settle = (snap) => snap.map((x, k) => (x.id === id && x.pending && k > 0 && sameP(x.a, b) && sameP(snap[k - 1].a, a) ? Object.assign({}, x, { via: next[j].via, pending: false }) : x));
       undoRef.current = undoRef.current.map(settle); redoRef.current = redoRef.current.map(settle);
-      if (!Array.isArray(via) && !next[j].via.length) noteFailure(via); // a leg that kept its split still follows the trail
+      if (!Array.isArray(via)) noteFailure(next[j].via.length ? "kept" : via); // a leg that kept its earlier points is said as that, not as straight
     });
   };
   // `idxs` are the legs this change touched: straight again, or routed when Follow trails is on
@@ -280,7 +281,11 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     // is honest). With Follow trails ON it is asked again and keeps them if the router cannot
     // answer; OFF asks nothing, as the switch promises. Other legs go straight, or route when ON.
     const touched = [], on = propsRef.current.follow;
-    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { if (on) { next[k] = Object.assign({}, next[k], { pending: true }); touched.push(next[k].id); } } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); } });
+    // With Follow off the routed points that sat within the moved distance of the anchor's OLD spot
+    // are dropped, or the line would run out to the old spot and back: the rest of the path stays.
+    const oldA = cur[i].a, movedM = distM(oldA, next[i].a);
+    const trim = (via) => via.filter((p) => distM(p, oldA) > movedM);
+    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { if (on) { next[k] = Object.assign({}, next[k], { pending: true }); touched.push(next[k].id); } else { next[k] = Object.assign({}, next[k], { via: trim(next[k].via) }); } } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); } });
     commit(next, touched); };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null);
     // The merged leg keeps the routed points of both legs it joins (the deleted anchor is the one
