@@ -185,9 +185,9 @@ if (clearedByReset.size < 10) fail(`the sign-in reset parsed as only ${clearedBy
 // A useState whose initialiser opens with a populated array or object literal is seed CONTENT.
 // NOT_SEED_CONTENT records the exceptions with a reason, and a stale entry fails in both directions
 // — the standard KNOWN and PARTIAL_ON_PURPOSE are held to elsewhere in this repo.
-const NOT_SEED_CONTENT = {
-  filters: "route-search defaults (gradeMin:\"any\", maxMi:500) — a UI starting position, not sample content, and it must survive sign-in like any other preference.",
-};
+// (Empty since 2026-11-05: `filters` was the one entry — route-search defaults, a UI starting position —
+// and it stopped parsing as a seeded declaration when its setter went with saved searches, the only writer.)
+const NOT_SEED_CONTENT = {};
 const seededDecls = [];
 for (const m of appSrc.matchAll(/\[(\w+),\s*set(\w+)\]\s*=\s*useState\(/g)) {
   const from = m.index + m[0].length;
