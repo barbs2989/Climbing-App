@@ -1,0 +1,45 @@
+{
+ "ca_toltec_boulder": {
+  "_expect": {"name": "Toltec Boulder", "region": "California"},
+  "blurb": "A single freestanding block in the Meyers area, a short drive from South Lake Tahoe at roughly 6,600 feet. The ten problems here are all bouldering, running from the low V3s up to V10, with a clear emphasis on the hard end: a handful sit at V7 and V9, and only a few are in the moderate range. It is a place for strong boulderers rather than a warm-up venue. Landings can be awkward on some lines, so bring several pads and a spotter.",
+  "approach": "Reach the end of Chiapa Drive, then follow the service road beyond it for about five minutes. Bear right onto a small dirt path, follow the ridge, and drop down its far side to arrive at the boulder.",
+  "review": {"sources": ["https://www.mountainproject.com/area/114090327/toltec-boulder", "https://app.advcollective.com/lake_tahoe/Climbing/bouldering-at-toltec-in-lake-tahoe"]}
+ },
+ "ca_rainbow_d": {
+  "_expect": {"name": "Rainbow D", "region": "California"},
+  "blurb": "One large block of granite in the Rainbow bouldering zone beside the I-80 corridor near Sugar Bowl, sitting downhill and a little northeast of the neighbouring Rainbow B boulder. Ten problems share it, spanning V2 up to V11, so it offers more range than most single blocks: three easy V2 lines at the bottom, a middle band around V4 to V5, and a cluster of serious testpieces from V7 to V11 above. The elevation is roughly 5,800 feet. Bring pads for the taller lines.",
+  "review": {"sources": ["https://www.mountainproject.com/area/112141519/rainbow-d", "https://www.mountainproject.com/route/120908288/mystery-pocket"]}
+ },
+ "ca_sector_e": {
+  "_expect": {"name": "Sector E", "region": "California"},
+  "blurb": "A wall inside the Ravine, a short walk up the gully above Mammoth Lakes in the Eastern Sierra at about 7,500 feet. It is taller than its neighbours and faces northeast, so it stays in shade for most of the day. Ten problems are listed, almost all easy: the bulk fall between VB and V2, with one hard outlier at V6. Starts are slick and undercut, so the easier grades can feel stiffer than the number suggests, and some landings are hard and rocky, which makes spotting worthwhile.",
+  "review": {"sources": ["https://www.mountainproject.com/area/110017504/sector-e", "https://www.mountainproject.com/route/110021731/problem-c?print=1"]}
+ },
+ "ca_the_dimmadome": {
+  "_expect": {"name": "The Dimmadome", "region": "California"},
+  "blurb": "The biggest boulder in the Dimmsdale cluster beside Eagle Lakes Road in the Donner and Truckee bouldering region, at about 5,500 feet. It runs roughly 50 to 60 feet along and stands 10 to 20 feet tall. The south and central faces are slabby, while the northwest end leans over slightly. Ten problems cover a friendly spread from the easiest grade up to V5, with most between V1 and V4, which suits a relaxed session. Other boulders in the group are located by reference to this one.",
+  "review": {"sources": ["https://www.mountainproject.com/area/122494540/the-dimmadome", "https://www.mountainproject.com/area/122494422/dimmsdale-dimmaboulders"]}
+ },
+ "ca_tanglewood_slab": {
+  "_expect": {"name": "Tanglewood Slab", "region": "California"},
+  "blurb": "A small south-facing slab in the Holcomb Valley country north of Big Bear Lake, around 7,500 feet. It is built for beginners: ten routes, seven of them trad and three bolted, nearly all between 5.2 and 5.6, with the majority at the easy end. That makes it a good spot for a first lead or for practising gear placement. The wall is visible from the road, rarely busy, and very sunny, with little shade for the belayer.",
+  "review": {"sources": ["https://mountainproject.com/area/107133027/tanglewood-slab", "https://www.mountainproject.com/area/108182000/tanglewood-slabs-area"]}
+ },
+ "ca_wally_world": {
+  "_expect": {"name": "Wally World", "region": "California"},
+  "blurb": "A short face crag in the Children's Forest cluster on Keller Peak above Running Springs, in the San Bernardino Mountains, at about 7,100 feet. It sits in an open spot with views west. Ten routes run from 5.10 into the low 5.12 range, mostly sport with a couple of trad lines and one top-rope. The left side is a gently overhanging face holding the best lines, while the right half is more vertical with sloping holds. Routes are short, around 40 feet, so it is quick to work through.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105971556/wally-world", "https://www.mountainproject.com/route/105971562/wild-discovery"]}
+ },
+ "ca_rubicon_formation": {
+  "_expect": {"name": "Rubicon Formation", "region": "California"},
+  "blurb": "A block of monzogranite roughly 80 feet high in the Split Rocks West zone of Joshua Tree's Pinto Basin, at around 4,300 feet. Ten routes are logged, nearly all trad with one bolted line, and the standard is firm: one easy 5.7, then a run of 5.10s and 5.11s with a single 5.12 at the top. Cracks and faces share the main east-facing side. The walk from the car is short, around five to ten minutes along a wash, and the sun reaches the wall early in the morning.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105720986/rubicon-formation", "https://mountainproject.com/area/120236433/split-rocks-west"]}
+ },
+ "_skipped": {
+  "ca_super_crack_spire": "no fetched page is about the spire itself: only the Indian Springs Canyon and Castle Crags parent pages could be fetched; thecrag returned 403 and no Mountain Project page for the spire turned up in search"
+ },
+ "_conflicts": {
+  "ca_tanglewood_slab": "Stored rock is limestone but https://mountainproject.com/area/107133027/tanglewood-slab and https://www.mountainproject.com/area/108182000/tanglewood-slabs-area both describe the slab as granite; blurb names no rock.",
+  "ca_rubicon_formation": "Stored aspect is E; https://www.mountainproject.com/area/105720986/rubicon-formation says the routes mostly face northeast. Stored value left unchanged."
+ }
+}

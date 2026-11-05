@@ -1,0 +1,39 @@
+{
+ "ny_5_2_top_shelf": {
+  "_expect": { "name": "5.2 Top Shelf", "region": "New York" },
+  "blurb": "A short, near-vertical wall about 20 to 30 feet tall in the Powerlinez cliffs, sitting on the Books Tier above the neighbouring Shelves and Good Book sectors. Of the 17 lines, most are top-ropes and two are trad leads, and the difficulty runs fairly evenly from easy fifth-class climbing up to low 5.11, so a mixed group can find something each. Ropes are normally rigged from above. The stone is still shedding loose pieces in places, and trees, grass, lichen and moss crowd many of the holds, so helmets are wise and belayers should stand well back from the base.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112890519/52-top-shelf", "https://www.mountainproject.com/area/111802946/books-tier"] }
+ },
+ "ny_beaver_brook": {
+  "_expect": { "name": "Beaver Brook", "region": "New York" },
+  "blurb": "One of the few sport crags in the Adirondacks, set above a bog on the Hardy Road side of Wilmington. Nearly all of the 17 routes are bolted, with a single trad line, and the grades cluster from 5.10 through 5.12 with only a couple of easier ones. Expect everything from vertical black rock with sharp edges to overhanging gray stone with big jugs, and some steep, well-protected climbing on the left end where a stick clip helps. Most of the lines are at the Pump Factory. The face points south to southeast and takes plenty of sun; autumn is the best season, and bugs, ticks and poison ivy are worth planning for.",
+  "review": { "sources": ["https://www.mountainproject.com/area/127254169/beaver-brook", "https://www.mountainproject.com/area/109476923/wilmington-region"] }
+ },
+ "ny_underwood_canyon": {
+  "_expect": { "name": "Underwood Canyon", "region": "New York" },
+  "blurb": "A narrow slot canyon in the Adirondacks near Keene Valley and Chapel Pond, known above all as a winter destination. About half the lines are ice or mixed: a few dependable pure-ice routes, mostly around WI4, plus several mixed test pieces. A smaller set of dry routes, mostly bolted, runs from 5.9 up to the low 5.13s. The steep left wall faces northwest and carries most of the climbing, while the right wall faces southeast and gets far more sun. No trail leads in and deep snow is common, so snowshoes help. Pure ice needs only screws, but the mixed lines call for a full rock rack.",
+  "review": { "sources": ["https://www.mountainproject.com/area/113901374/underwood-canyon", "https://www.mountainproject.com/area/106444893/lake-champlain-region"] }
+ },
+ "ny_sugarloaf": {
+  "_expect": { "name": "Sugarloaf", "region": "New York" },
+  "blurb": "A huge, southeast-facing friction slab near Indian Lake, roughly 500 feet high and nearly half a mile across, above the Cedar River in the middle of the Adirondack Park. Nearly all of the 17 climbs are multi-pitch trad, with a few bolted lines, and the grades bunch around 5.8 and 5.10 with a few 5.7s and 5.9s between. The lower slab is vegetated, so routes can start mossy and dirty, but the rock firms up and becomes clean and well featured above the trees. The base is hard to pin down and the walk in is a bushwhack, so carry a GPS track and expect a committing, remote day.",
+  "review": { "sources": ["https://www.mountainproject.com/area/109473079/sugarloaf", "https://www.mountainproject.com/area/109476768/indian-lake-region", "https://benjaminadk.blogspot.com/2014/12/the-loaf-middle-of-middle-of-nowhere.html"] }
+ },
+ "ny_second_set_boulder": {
+  "_expect": { "name": "Second Set Boulder", "region": "New York" },
+  "blurb": "The first rocks you meet after walking over from the First Set at the McKenzie Pond Boulders, between Lake Placid and Saranac Lake. It is really a tight cluster of rocks rather than a single boulder, holding 17 problems. Most are V0 to V2, with a handful from V3 to V6 and one very hard V9 at the top end, so there is something for beginners and strong boulderers alike. Expect a mix of slabs and roofs; a couple of the taller, more committing lines deserve a second pad. The stone around the area is generally sharp and clean, and the walk from the neighbouring set takes only a few minutes.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107455687/second-set-boulder", "https://www.mountainproject.com/area/107414199/second-set", "https://mountainproject.com/area/107414193/mckenzie-pond-boulders"] }
+ },
+ "ny_t_mya_to_the_east_end": {
+  "_expect": { "name": "Mya to the East End", "region": "New York" },
+  "blurb": "The eastern stretch of the main cliff at Peterskill, a one-pitch conglomerate edge in Minnewaska that resembles a small version of the Gunks, with similar roofs and horizontal cracks. This section has big features and tends to stay cool and shady. Of the 17 lines, most are trad leads and five are top-ropes, running from easy fifth-class chimneys and cracks through the middle grades to a few hard roof and face lines around 5.10 to 5.12. A free-standing pillar and a very triangular roof mark the area. Getting in means following the blue and yellow trail past the bouldering beneath the large roofs.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107202423/mya-to-the-east-end", "https://mountainproject.com/area/105896719/peterskill"] }
+ },
+ "_skipped": {
+  "ny_e_breaker_very_blocky_walls": "no fetched page is about this wall itself; only the Peterskill parent listing (route count, no description) and route pages",
+  "ny_andrew_area": "could not fetch a page about Andrew Area itself; only the Trapps Bouldering parent page, a Nameless area page and one route page mention it"
+ },
+ "_conflicts": {
+  "ny_sugarloaf": "stored rock is metasedimentary rock, but https://www.mountainproject.com/area/109473079/sugarloaf calls it a granite friction slab and https://benjaminadk.blogspot.com/2014/12/the-loaf-middle-of-middle-of-nowhere.html describes pink granite"
+ }
+}

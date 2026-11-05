@@ -1,0 +1,20 @@
+{
+ "ca_wine_boulder": {
+  "_expect": { "name": "Wine Boulder", "region": "California" },
+  "blurb": "A bouldering spot in the Camp 4 area on the north side of Yosemite Valley, reached by a short walk through the trees from the campground. It holds a dozen problems with an unusual spread: about half sit at the very easy end around V0, a few land in the V2 to V4 middle, and a small handful are serious hard tests reaching to roughly V12. The boulders here are polished and friction-dependent, so expect smooth holds rather than sharp ones. It suits a short session next to the better-known Camp 4 blocks.",
+  "review": { "sources": ["https://thetopo.com/crags/camp-4/cragmap/wine-boulder", "https://www.mountainproject.com/area/105833471/camp-4-boulders"] }
+ },
+ "ca_upper_biddles_rock": {
+  "_expect": { "name": "Upper Biddles Rock", "region": "California" },
+  "blurb": "A small bouldering zone in Castle Rock State Park in the Santa Cruz Mountains, and the first cluster of blocks you meet when walking in along the Biddles trail. The twelve problems are on sandstone and run from V0 up to about V7, with the bulk in the V0 to V4 range and a couple of harder lines at the top end. The rock is fragile and holds moisture for days after a storm, so choose a dry stretch of weather. Quieter than the main Castle Rock boulders, and the walk in is roughly ten minutes through forest.",
+  "review": { "sources": ["https://www.mountainproject.com/area/116644989/upper-biddles-rock", "https://rakkup.com/guidebook/castle-rock-bouldering/upper-biddles/s10318", "https://www.mountainproject.com/area/116644927/biddles?print=1"] }
+ },
+ "_skipped": {
+  "ca_southeast_wall": "only one page about the crag itself; second fetched page (Access Fund) does not describe it",
+  "ca_c_vagmarken_buttress_right": "only one fetched page about the crag (Mountain Project); other pages returned 403",
+  "ca_slab_boulder_4": "no fetched page about this boulder itself, only the parent Ice Cream Boulders page",
+  "ca_summit_the": "no fetched page about The Summit itself, only the Eagle Peak parent page and a general article",
+  "ca_rapunzel_s_tower": "no fetched page about the tower itself, only Potter's Point parent pages",
+  "ca_south_slope_the": "no fetched page about the South Slope itself, only the Mount Woodson parent page"
+ }
+}

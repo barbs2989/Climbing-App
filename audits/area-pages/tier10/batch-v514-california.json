@@ -1,0 +1,66 @@
+{
+ "ca_cleavage_rock": {
+  "_expect": {
+   "name": "Cleavage Rock",
+   "region": "California"
+  },
+  "blurb": "Cleavage Rock is a cleaver-shaped block of basalt at the southwest edge of the Indian Joe Caves area, in the East Bay hills southeast of Pleasanton. It is a small mixed venue with fourteen climbs: mostly top-rope lines, a few bolted sport routes, a few trad leads and a pair of V4 boulder problems. Grades cluster at two ends, around 5.8 for the easier lines and 5.11 for the harder ones, with little in between. The dark rock soaks up heat, so summer sun can be punishing and cooler months are kinder. Reaching the caves means a steady hike of about 1.3 miles with roughly 600 feet of gain.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/111683107/cleavage-rock",
+    "https://www.mountainproject.com/area/105734087/indian-joe-caves?print=1"
+   ]
+  }
+ },
+ "ca_super_heroes_wall": {
+  "_expect": {
+   "name": "Super Heroes Wall",
+   "region": "California"
+  },
+  "blurb": "Super Heroes Wall is a compact face in the Lost Horse area of Joshua Tree National Park, part of the Super Creeps cluster. Its fourteen climbs are almost all traditional leads plus one top-rope line, ranging from 5.4 to a single 5.11, with a solid middle band of 5.6 through 5.10. The wall points south and west, so it sits in shade early and picks up sun later in the day. Guided groups use it often, and it works well as a relaxed stop for a few decent pitches rather than a full-day objective. The walk is short and mostly flat, ending with some boulder hopping and a small talus scramble.",
+  "parking_note": "Use the dirt pullout at the end of the public stretch of Lost Horse Road; it is shared with the Atlantis and Super Creeps Wall climbers, so park tightly to leave space for other cars.",
+  "approach": "From the pullout, head southwest along the road for about 350 yards, then pick up the social trail on the right. Finish with roughly 100 feet of boulder hopping and a short scramble up a small talus slope to the base.",
+  "approach_min": 10,
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/106296159/super-heros-wall",
+    "https://app.advcollective.com/climbing/super-heros-wall-joshua-trees-inviting-mid-elevation-playground"
+   ]
+  }
+ },
+ "ca_c_le_dent_pinnacle": {
+  "_expect": {
+   "name": "Le Dent Pinnacle",
+   "region": "California"
+  },
+  "blurb": "Le Dent Pinnacle sits at the far left end of Suicide Rock near Idyllwild. It is mostly a traditional venue: a dozen trad routes, one top-rope line and one aid route. Grades start around 5.6 but the bulk fall between 5.10 and 5.12, so it suits experienced leaders, and some lines are steep and sparsely protected. The rock is sun-exposed and dries quickly, so snow clears after a few clear days and it can be a decent pick in cold weather, while midday summer heat is a factor. The approach is the long part of the day, involving a hike and scramble around neighbouring formations or a walk to the summit followed by a short chimney descent.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105793059/le-dent-pinnacle?print=1",
+    "https://app.advcollective.com/climbing/holiday-at-le-dent-pinnacle-a-bold-trad-climb-on-suicide-rock"
+   ]
+  }
+ },
+ "ca_wonder_valley": {
+  "_expect": {
+   "name": "Wonder Valley",
+   "region": "California"
+  },
+  "blurb": "Wonder Valley is a low-key roadside stop in the California high desert, roughly 30 miles east of Twentynine Palms on Amboy Road. The climbing is on a rocky hillside rather than a true cliff, with fourteen short routes, mostly set up as top ropes plus a few trad leads. Grades are easy to moderate, running from about 5.3 to 5.9 with most between 5.5 and 5.8, which suits beginners or anyone stretching their legs on the back road between Joshua Tree and Las Vegas. Dirt roads let you drive close to the formations, and the walk to the rock is only a few minutes.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/106792020/wonder-valley",
+    "https://www.mountainproject.com/v/high-desert/105865039"
+   ]
+  }
+ },
+ "_skipped": {
+  "ca_clump_canyon": "no page about Clump Canyon itself could be fetched (only route pages; the Indian Cove campground area page and NPS page do not mention it)",
+  "ca_5_main_tower": "no page about Main Tower itself found; only the Marble Caves parent page (with a Main Tower section) and route listings",
+  "ca_classic_rock_crag": "no page about Classic Rock Crag itself found; the only 'Classic Rock' page is an Idaho limestone crag, and the Silver Lake parent page has no description for it",
+  "ca_3_north_face_apron": "no page about the North Face Apron itself found; only the Calaveras Dome parent page and single route pages"
+ },
+ "_conflicts": {
+  "ca_super_heroes_wall": "One page (https://app.advcollective.com/climbing/super-heros-wall-joshua-trees-inviting-mid-elevation-playground) calls it a single-pitch sport crag; the other (https://mountainproject.com/area/106296159/super-heros-wall) lists mostly trad and top-rope. Stored disciplines left unchanged."
+ }
+}

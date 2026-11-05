@@ -1,0 +1,63 @@
+{
+ "ca_big_top": {
+  "_expect": {
+   "name": "Big Top",
+   "region": "California"
+  },
+  "blurb": "Big Top is a small, dark-varnished, pointed formation in the Indian Cove corner of Joshua Tree National Park, a short walk northwest of the turnaround at the end of the Group Campsites road. Thirteen routes split about evenly between bolted and gear-protected lines, plus a single top-rope. Grades start near 5.3 and cluster between 5.8 and 5.10, with one 5.11. The rock is monzogranite and most of the lines sit on the south-facing side, so expect warmth in winter and heat in summer. Getting down means rappelling, and the walk in crosses a dry wash roughly halfway.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105872889/big-top",
+    "https://www.mountainproject.com/area/106762075/boy-scout-trail-area"
+   ]
+  }
+ },
+ "ca_north_face_9": {
+  "_expect": {
+   "name": "North Face",
+   "region": "California"
+  },
+  "blurb": "The north face of Mount Morrison rises above Convict Lake near Mammoth Lakes in the Eastern Sierra, and is nicknamed the Eiger of the Sierra. This is a steep, serious alpine wall close to 2,000 feet tall, split by a long buttress. The rock is variable and often loose, and protection can be sparse, so it suits experienced parties who are comfortable with run-outs. The thirteen lines mix alpine rock from low fifth class to 5.10, winter mixed climbing from M2 to M5, and a couple of ice routes, one around WI4. Winter is the standout season for the ice and mixed lines, and the approach from the lake climbs a long scree slope to a hanging valley.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108421851/north-face",
+    "https://app.advcollective.com/climbing/mount-morrison-challenging-north-face-and-rugged-alpine-routes-in-the-high-sierra"
+   ]
+  }
+ },
+ "ca_latigo_wall": {
+  "_expect": {
+   "name": "Latigo Wall",
+   "region": "California"
+  },
+  "blurb": "Latigo Wall is a small sandstone sport wall on the Saddle Peak flank of the Santa Monicas, inland from Malibu, reached from the trailhead lot at Stunt and Schueren roads. All thirteen routes are bolted, running from 5.6 into the 5.10 range, with the biggest group at 5.10 and a spread of 5.7 to 5.9 below. It was developed only recently, so the hardware is fresh. The sandstone is fragile and is easily damaged when wet, so save it for dry days. There is no formed trail at the base: climbers reach the lines from the top and descend by rappel from an anchor on a bench to the right.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/203819173/latigo-wall",
+    "https://www.mountainproject.com/area/106396557/saddle-peak"
+   ]
+  }
+ },
+ "ca_doggy_dome": {
+  "_expect": {
+   "name": "Doggy Dome",
+   "region": "California"
+  },
+  "blurb": "Doggy Dome is a dome in the Shuteye Ridge climbing area on the western slope of the Sierra, in the cluster of crags reached from Beasore Road near Bass Lake, south of Yosemite. Seven trad and six sport routes run from about 5.6 to 5.11, centered on 5.8 with a handful at 5.10 and 5.11. Pitches are long, so bring a 70 m rope. The walk from the end of the logging road takes around 25 minutes uphill and under 15 on the way down. This is a good place for solitude, and it stays more usable in winter than most of the ridge.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/117845191/doggy-dome",
+    "https://mountainproject.com/area/108046101/shuteye-ridge"
+   ]
+  }
+ },
+ "_skipped": {
+  "ca_motherlode_rock_north_face": "no fetched page about the North Face itself; only the parent Motherlode Rock page covers it",
+  "ca_crack_crag_ne_face": "only the parent Crack Crag page and one route page fetched; no page about the NE Face itself",
+  "ca_fish_and_games": "only the parent Rodeo Flat page describes it; no page about the crag itself",
+  "ca_demonology_cliff_band": "only a low-reliability page about the crag"
+ },
+ "_conflicts": {
+  "ca_demonology_cliff_band": "stored aspect W; one page (https://app.advcollective.com/climbing/demonology-cliff-band-cracking-the-eastern-sierras-hidden-lines) says south facing; unverified by a second page"
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "ca_short_wall_left_side": {
+  "_expect": {"name": "Short Wall - Left Side", "region": "California"},
+  "blurb": "The left half of the Short Wall sits in Indian Cove, the northern pocket of Joshua Tree National Park. It holds sixteen routes, mostly trad with a few top-rope lines and one bolted sport route. A handful of easy lines run from about 5.4 to 5.8, but the bulk of the climbing is in the 5.10s, with a few 5.11s, so it suits climbers comfortable on steeper cracks and faces more than true beginners. The walls are short, roughly 40 to 60 feet, and the setting is open and sunny; the stone warms fast by midday, so early starts or cooler days work best. It is a quick walk from the road, which makes it a handy spot for warm-ups and top-rope laps.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106636959/short-wall-left-side", "https://www.mountainproject.com/route/106345582/left-arete", "https://app.advcollective.com/climbing/calcutta-at-short-wall-a-steep-trad-challenge-in-joshua-tree"]}
+ },
+ "ca_moby_dick_and_pterodactyl_terrace": {
+  "_expect": {"name": "Moby Dick and Pterodactyl Terrace", "region": "California"},
+  "blurb": "Two formations at the foot of El Capitan's southwest side in Yosemite Valley share this page. Sixteen routes are listed, nearly all of them trad cracks plus a couple of bolted lines. Difficulty starts around 5.7 and runs through the 5.9 to 5.11 range, with a single harder line, so it is better for confident crack climbers than for first-timers. The best-known lines are splitters that change from fingertip locks to off-width, and Ahab is a wide-crack test needing big cams. Ground below the routes is loose talus and uneven, so watch your footing on the way up. Expect a quieter feel than the main Valley walls.",
+  "review": {"sources": ["https://www.mountainproject.com/area/119319388/moby-dick-and-pterodactyl-terrace", "https://www.mountainproject.com/route/105872907/ahab", "https://app.advcollective.com/climbing/moby-dick-a-raw-and-rewarding-crack-on-el-capitans-north-side"]}
+ },
+ "ca_spire_the": {
+  "_expect": {"name": "Spire, The", "region": "California"},
+  "blurb": "A bolted sport wall on the high ridge at Cold Springs in northwest California, east of the coast near Eureka. It sits on the downhill side of a big split in Split Rock, facing The Dome across the gap. Fifteen of its sixteen climbs are sport routes, the other being a V4 boulder problem. Grades spread from an easy 5.5 through a solid block of 5.8 to 5.11, with a few 5.12s on top, so there is something for beginners and for stronger leaders. Climbs tend to start steep and ease into slabbier ground higher up, and the setting feels quiet and tucked away among redwoods.",
+  "review": {"sources": ["https://www.mountainproject.com/area/113581987/split-rock", "https://www.mountainproject.com/route/113532301/why-go-left", "https://app.advcollective.com/climbing/foxtrot-at-the-spire-a-compact-sport-climb-on-redwood-coast"]}
+ },
+ "ca_upper_indian_rock_i_block": {
+  "_expect": {"name": "Upper Indian Rock(I-block)", "region": "California"},
+  "blurb": "The upper tier of Indian Rock Park in the Berkeley hills, above the East Bay with views over the city and the bay when fog allows. It has sixteen climbs, mostly boulder problems plus a few top-rope lines set from anchors on the summit. The boulder grades cover a wide span, from very easy up to a few extremely hard problems, with a block traverse around V4 as a favorite, while the top-rope lines sit around 5.11. This is an urban crag in a residential neighborhood, shaded through much of the day on the main rock, and it fills up on weekday evenings and weekends.",
+  "review": {"sources": ["https://www.mountainproject.com/area/120537754/upper-indian-rocki-block", "https://www.mountainproject.com/area/105734111/indian-rock"]}
+ },
+ "ca_aspen_boulder_the": {
+  "_expect": {"name": "Aspen Boulder, The", "region": "California"},
+  "blurb": "A single freestanding block just off Mammoth Creek Road south of Mammoth Lakes, in the Eastern Sierra. Fifteen boulder problems cover its faces, from easy slabs and vertical warm-ups through a middle group around V2 and V3, up to a few V6 and V7 tests. The stone is smooth but solid with small crimps, and the steep south side holds the standout line. Walls are only about 12 to 15 feet tall, and landings can be sloped, so bring extra pads and spotters. Setup is easy because the car is close, and it tends to be quieter than the bigger Eastern Sierra bouldering areas.",
+  "parking_note": "Drive down Mammoth Creek Road from its junction with Old Mammoth Road for about eight tenths of a mile. The boulder appears on your left, and a small pullout for parking is a short distance beyond it, also on the left.",
+  "review": {"sources": ["https://www.mountainproject.com/area/109613195/the-aspen-boulder?print=1", "https://app.advcollective.com/climbing/aspen-boulder-volcanic-bouldering-high-above-mammoth-lakes"]}
+ },
+ "_skipped": {
+  "ca_summit_blocks_east_main": "no fetched page about the crag itself; only route pages (Sunnyside, Eaks it Out, Across the Universe) were fetchable",
+  "ca_rich_valdez_memorial_boulder": "only one fetched page names it (sendage); the Putah Creek page does not mention this boulder",
+  "ca_upper_walt_s_rocks": "no fetched page about Upper Walt's Rocks itself; only parent Walt's Rocks page and a route page (SummitPost returned 403)"
+ },
+ "_conflicts": {
+  "ca_spire_the": "stored aspect E; route page https://www.mountainproject.com/route/113532301/why-go-left gives north face and https://app.advcollective.com/climbing/foxtrot-at-the-spire-a-compact-sport-climb-on-redwood-coast says south-facing"
+ }
+}

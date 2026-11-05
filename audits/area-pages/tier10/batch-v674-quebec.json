@@ -1,0 +1,28 @@
+{
+ "qc_main_wall": {
+  "_expect": {"name": "Main wall", "region": "Quebec"},
+  "blurb": "The largest of three sectors at the Sanatorium crag, in the Bras-du-Nord valley of Portneuf, and the first cliff you meet on the trail up from the parking area. This is a hard wall: 13 sport routes and 4 trad lines, with a lone 5.9 and the bulk of the climbing between 5.11 and 5.13, plus one line at the very top of the scale. The right-hand side overhangs steeply, roughly 20 degrees, while the left side is a harder face that still holds unfinished projects. Lines mostly face southeast and south. Across the crag the anchors allow lowering or rappelling, and a 60 m rope covers it. Not a place for newcomers to the sport grades.",
+  "review": {"sources": ["https://www.mountainproject.com/area/118893636/main-wall", "https://www.mountainproject.com/area/118893628/sanatorium"]}
+ },
+ "qc_b_secteur_multi_pitch": {
+  "_expect": {"name": "Secteur multi-pitch", "region": "Quebec"},
+  "blurb": "A multi-pitch wall at Lac Gervais in the Laurentides, with climbs of up to four pitches. Of the 17 routes, 13 are bolted sport lines and 4 are trad, and the difficulty stays friendly, running from the easy 5.5 range up to about 5.9. Expect a varied mix on one wall: slab, vertical face, a small roof, and cracks from finger-size to offwidth, several of them fitted with bolts. Belays sit on ledges with a pleasant outlook, and the stations are bolted. A good pick for a party stepping up to longer routes at a moderate grade.",
+  "review": {"sources": ["https://www.mountainproject.com/area/109386318/secteur-multi-pitch", "https://www.mountainproject.com/route/112931231/crack-boltee-3"]}
+ },
+ "qc_f_le_petit_mur": {
+  "_expect": {"name": "Le petit mur", "region": "Quebec"},
+  "blurb": "A face-climbing section on the Pic aux Corbeaux cliff in Mont-Orford park, in the Eastern Townships, sitting just to the right of the Les surplombs sector. Sixteen of its 17 routes are sport, plus one trad line, ranging from 5.7 to 5.12 with the better-known ones in the 5.9 to 5.11 band; a few easier 5.7s are found at the far right end. The gneiss is solid but can be sharp on the small holds, and the landing below is unforgiving. Reaching it means a steep uphill hike of roughly 30 minutes from the car park, so plan on carrying everything in one trip.",
+  "review": {"sources": ["https://www.mountainproject.com/area/110863359/le-petit-mur", "https://www.mountainproject.com/area/109701709/mount-orford-pic-aux-corbeaux"]}
+ },
+ "qc_1_amphitheatre": {
+  "_expect": {"name": "Amphitheatre", "region": "Quebec"},
+  "blurb": "The first and busiest cliff within Mont-King, above Val-David in the Laurentides. Most of its 16 routes are trad (14), with two sport lines, and the grades are broad: a handful at moderate levels, several in the 5.10s and 5.11s, a cluster around 5.12, and a few at the hard end. The cliff has a strongly overhanging bowl, and it includes a three-pitch classic that finishes with rappels. Reach it by following the main trail uphill from the Mont-King car park, taking the branch toward the climber's left. Mont-King as a whole is known for its trad and gets crowded on fine days.",
+  "review": {"sources": ["https://www.mountainproject.com/area/108199766/amphitheatre", "https://www.mountainproject.com/area/108199756/mont-king", "https://www.mountainproject.com/route/108199771/lamphitheatre"]}
+ },
+ "_skipped": {
+  "qc_secteur_nord_ouest": "Parent is Val-Bélair (Closed): the fetched pages say the municipality closed the site and banned climbing there; Nord-Ouest has no page of its own beyond the sibling Main wall page.",
+  "qc_secteur_latin": "Val-Bélair is flagged closed by the city (recreational activities including climbing outlawed, protection to be removed); not an area to promote.",
+  "qc_a_main_wall": "Parent is Vieux-Stoneham (Closed): search results say the town closed the site to climbing; the guide PDF could not be read and no readable page about this wall was fetched, so only one page.",
+  "qc_h_folles": "The only page at these coordinates (Secteur des folles) describes an ice and mixed sector with 6 climbs, which contradicts the stored 17 rock routes; the rock 'H. Folles' classics page gives no description. Could not confirm the same place."
+ }
+}

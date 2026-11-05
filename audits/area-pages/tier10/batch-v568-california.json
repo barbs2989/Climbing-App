@@ -1,0 +1,36 @@
+{
+ "ca_g_slander_sector": {
+  "_expect": { "name": "Slander Sector", "region": "California" },
+  "blurb": "A compact sport sector inside Riverside Quarry in the Inland Empire, tucked between two neighbouring sectors a short stroll from the more popular walls. Eleven bolted single-pitch lines run up to roughly a hundred feet, with the bulk of them sitting in the 5.11 and 5.12 range, a few 5.10s, and one 5.9 to start on. The quarry stone is gritty and the climbing leans technical, rewarding precise feet over raw power. It tends to be quiet compared with the busier sectors nearby. Spring through early fall is when most people visit.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105903889/slander-sector", "https://app.advcollective.com/climbing/exploring-slander-sector-riverside-quarrys-rugged-climbing-haven"] }
+ },
+ "ca_hero_roof_boulder": {
+  "_expect": { "name": "Hero Roof Boulder", "region": "California" },
+  "blurb": "A friendly boulder in the Buttermilk Country outside Bishop, in the Iron Man Area at about 6,400 feet. Eleven problems mix slab and a juggy overhanging prow: a handful of easy V0 and V1 lines make it a popular warm-up and a fine place for newer boulderers, while a few much harder problems, from V5 up to V8, give stronger climbers something to chase. Holds range from jugs on the steep face to slopers on the grainy sections, and the landing under the overhang calls for careful pad placement. Fall through spring is the comfortable window.",
+  "parking_note": "Leave the car at the west (Birthday Boulders) lot; the boulder is a short walk east of it.",
+  "review": { "sources": ["https://app.advcollective.com/climbing/hero-roof-boulder-the-perfect-warm-up-in-bishops-buttermilks", "https://www.mountainproject.com/area/105936760/iron-man-area"] }
+ },
+ "ca_lonesome_boulder": {
+  "_expect": { "name": "Lonesome Boulder", "region": "California" },
+  "blurb": "A free-standing boulder on the far side of the valley at Santee Boulders in east San Diego County, part of the Synchronicity Area. It holds eleven lines, mostly low-grade bouldering from very easy up to V3 with a mix of shelf mantles, a corner and a face, plus a couple of trad or top-rope cracks around 5.10 and 5.11 and a hard top-rope face that can also be bouldered at the V4 level. To find it, keep heading north on the path past the Synchronicity Boulder. Good for a quick low-key session.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105929545/lonesome-boulder", "https://www.mountainproject.com/area/105928272/synchronicity-area"] }
+ },
+ "ca_mr_lees_greater_hong_kong": {
+  "_expect": { "name": "Mr. Lees Greater Hong Kong", "region": "California" },
+  "blurb": "The steepest and most varied wall at the Silly Rock cluster along Highway 166 on the San Luis Obispo and Santa Barbara county line. Eleven sport routes climb a very overhanging, cobbled face, and nearly all of them are hard: one route around 5.10, then a steady run of 5.12d to 5.13b with the top end at 5.14a, and a couple of unclimbed projects. This is a destination for strong sport climbers rather than beginners. The cobbled wall sits roughly two and a half miles down the dirt road, a few minutes on foot from where you stop the car.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105737237/mr-lees-greater-hong-kong", "https://www.mountainproject.com/v/105737123"] }
+ },
+ "ca_main_wall_10": {
+  "_expect": { "name": "Main Wall", "region": "California" },
+  "blurb": "The biggest wall at Wrights Lake, a high-elevation Sierra crag above Highway 50 west of Lover's Leap, at about 7,300 feet. The rock is clean, compact granite, with cracks and technical faces up to about 130 feet tall. Of the eleven routes, most are trad and a few are sport, running from 5.10 through the 5.11s and 5.12s to a single 5.13; the top-ropes are easy to set up. The wall catches the sun in the morning, and the base has shady boulders. Fall is a good time, since summer heat makes hard face climbing sweaty.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105734462/main-wall", "https://www.mountainproject.com/area/105734013/wrights-lake"] }
+ },
+ "_skipped": {
+  "ca_mondo_boulder": "no page about Mondo Boulder itself found (only the Dreamers parent page and individual route pages); two searches, parent + route pages only",
+  "ca_odds_ends_area": "two searches found no page naming Odds & Ends at Morgan Pass; no fetched page about the crag",
+  "ca_fire_lookout_boulder": "two searches found no Fire Lookout Boulder page; the Summit Area page found is at Lake Ramona (33.03,-116.99), a different place from the input's 34.196,-117.049"
+ },
+ "_conflicts": {
+  "ca_hero_roof_boulder": "stored aspect N; https://app.advcollective.com/climbing/hero-roof-boulder-the-perfect-warm-up-in-bishops-buttermilks says north-facing in text but south in its metadata; not changed"
+ }
+}

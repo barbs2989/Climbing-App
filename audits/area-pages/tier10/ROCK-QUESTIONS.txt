@@ -1,0 +1,18 @@
+# Stored rock that one fetched page contradicts (needs a second agreeing page before any change)
+nj_benes            stored: syenite    page: granite / granitic gneiss   (batch-v636)
+nj_cedar_grove_reservoir  stored: basalt  page: gabbro trap rock (basalt-family; likely fine)  (batch-v636)
+nj_franklin_lakes_nature_preserve  stored: sandstone  page (Wikipedia): basalt traprock  (batch-v636, skipped)
+nv_hinkey_summit / nv_cobre  stored rock differs from pages  (batch-v633; blurbs name no rock)
+ny_witches_circle_the  stored: shale  page: sandstone overhangs  (batch-v639; blurb names no rock)
+nj syenite (Practice Wall, Prudden, Clifford, Benes)  stored: syenite  parent pages: granite/gneiss — likely a regional default in the import; check NJ syenite rows as a class (batch-v636/v638)
+ny sugarloaf (v641)  stored: metasedimentary rock  TWO pages (crag page + blog): granite — strongest fix candidate
+ny Gunks class (v643): Area 2 Cream Cheese (Trapps) + Quarantine (Peterskill) stored 'shale'; pages say quartz conglomerate — Shawangunk rows stored as shale look like a CLASS error, check all ny Gunks rows; ny_fern_cliff stored amphibolite, Powerlinez page says granitic gneiss
+ny phoenicia sportsmans wall (v648) stored shale, two pages say sandstone (Catskills rows stored shale — same class as Gunks?)
+ny good luck mountain (v647) stored gneiss, MP page granite
+ny clamshell (v653, Peterskill) stored sandstone, page quartzite conglomerate — Gunks class
+pa powercut central (v660, Hunter's Rocks) stored shale, two pages sandstone
+pa 'Private Property - do not use' (v660) is an AREA NAME in the catalog — junk placeholder row, check
+REDO v669 pa deer rock (one search only)
+qc 'Lonestar (closed)' (v672) — area name carries an access status; owner rule: no area-level access — rename candidate
+REDO v674 qc_a_main_wall (Vieux-Stoneham closure from snippet only); qc_h_folles stored 17 rock routes vs page 6 ice/mixed — catalog check
+qc 'Cap des Pères (closed)' (v684) — access status in area name, rename candidate

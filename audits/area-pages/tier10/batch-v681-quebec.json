@@ -1,0 +1,36 @@
+{
+ "qc_d_alpha": {
+  "_expect": { "name": "Alpha", "region": "Quebec" },
+  "blurb": "Alpha is a small sector on Île Sainte-Hélène in Montréal, in the park by the Jacques-Cartier bridge, part of an urban cliff whose walls stand roughly 3 to 12 metres tall. Expect a short session rather than a full day: about a dozen lines and problems, with boulder problems mostly between V1 and V5, a few top-rope lines, and a few short trad routes from easy fifth-class up to 5.10. The wider wall has fixed anchors and works well for beginners practising rope handling, and it is a convenient city outing. Bring a rope for anything beyond the boulders.",
+  "review": { "sources": ["https://www.mountainproject.com/area/117308612/alpha", "https://www.mountainproject.com/area/117303594/ile-ste-helene"] }
+ },
+ "qc_c_dalle_d_honneur": {
+  "_expect": { "name": "Dalle d'honneur", "region": "Quebec" },
+  "blurb": "Dalle d'honneur is a broad slab in the Les Contreforts region of Lanaudière, one of the faces within the Les grandes falaises zone. It holds a dozen routes, mostly bolted with a few trad lines, and several of them run more than one pitch. Grades start at 5.6 and climb through the 5.10s, with a single 5.11; most lines sit around 5.8 and 5.10. Slab climbing rewards footwork over strength, and the multi-pitch options suit climbers after a longer outing. It is the second cliff you reach along the trail from the road, so the walk in is a modest hike.",
+  "review": { "sources": ["https://www.mountainproject.com/area/117585262/c-dalle-dhonneur", "https://www.mountainproject.com/area/117585230/les-grandes-falaises"] }
+ },
+ "qc_3_imp_riale": {
+  "_expect": { "name": "Impériale", "region": "Quebec" },
+  "blurb": "Impériale is a south-facing sector on Mont-King in Val-David, in the Laurentians north of Montréal, inside the regional park. It has a dozen trad and sport routes, a few of them two pitches, and the grade spread is stiff: only a couple at 5.9, a handful of 5.10s, then a cluster of 5.11 and 5.12 with one 5.13 at the top. It is not a beginner sector. The wall catches plenty of sun, while trees below give some shade at its base. Mont-King as a whole is popular and can fill up on nice days, and the uphill walk in takes roughly twenty minutes.",
+  "review": { "sources": ["https://www.mountainproject.com/area/109005947/imperiale", "https://www.mountainproject.com/area/108199756/mont-king"] }
+ },
+ "qc_tranchant_left_ice_cliff": {
+  "_expect": { "name": "Tranchant - Left ice cliff", "region": "Quebec" },
+  "blurb": "The left ice cliff is the busiest ice sector on Montagne du Tranchant in Lanaudière, a cliff described as the most popular in the region. About a dozen winter lines are found here, nearly all water ice from WI2 up to a single WI5, with the bulk around WI3, plus one mixed route near M7. A footpath through the woods on the left side leads to the top of several routes, which makes building top-rope anchors straightforward and suits climbers developing their ice skills. Expect company on good days, and wear a helmet at the base.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107335710/tranchant-left-ice-cliff?print=1", "https://www.mountainproject.com/area/108437379/montagne-du-tranchant"] }
+ },
+ "qc_5_right_wall": {
+  "_expect": { "name": "Right Wall", "region": "Quebec" },
+  "blurb": "Right Wall is the right-hand sector of La Bleue, a mostly single-pitch crag in Val-David in the Laurentians, inside the regional park. Its dozen climbs mix trad and bolted lines with a single aid route. This is the harder end of the crag: a couple of lines at 5.8 and 5.9, two at 5.10, two at 5.11, and the largest group at 5.12. La Bleue's cliffs face south and west, though trees shade them in summer. Reach the wall by following the side trail beyond the Left Wall, or by traversing across from the Center Wall.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108332341/right-wall", "https://www.mountainproject.com/area/108332248/la-bleue"] }
+ },
+ "qc_04_prestation": {
+  "_expect": { "name": "Prestation", "region": "Quebec" },
+  "blurb": "Prestation is a sector of L'Amphithéâtre at Saint-André-de-Kamouraska in Bas-Saint-Laurent, a sport-only cliff of quartzite. It has a dozen bolted routes with a wide spread: two easy 5.5 to 5.6 lines, a few in the 5.7 to 5.9 range, a single 5.10, and four at 5.11. The sector is known for one very popular 5.9+ line, and the cliff as a whole can get crowded on weekends. Because it sits among several nearby sectors, it makes a good stop on a day working along the wall. The view from the top is described as superb.",
+  "review": { "sources": ["https://www.mountainproject.com/area/109431715/prestation", "https://www.mountainproject.com/area/107704715/lamphitheatre", "https://thetopo.com/crags/kamouraska/routelist/prestation"] }
+ },
+ "_skipped": {
+  "qc_monts_et_mar_es": "no fetched page is about the crag itself: only route-breadcrumb listings under the Chicoutimi and Roussel Est pages, no description",
+  "qc_1_gauche": "could not fetch a page about the Gauche sector itself: the parent Gros Bonnet page only lists it, the FQME topo PDFs were unreadable, theCrag returned 403, and the Mountain Project classics page for 'Gauche' was a different place in Mauricie"
+ }
+}

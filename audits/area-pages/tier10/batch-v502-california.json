@@ -1,0 +1,36 @@
+{
+ "ca_main_wall_the_2": {
+  "_expect": { "name": "Main Wall, The", "region": "California" },
+  "blurb": "The Main Wall is the steep, overhanging centerpiece of a small forest sport cliff roughly 26 miles east of Redding along Highway 299. It holds sixteen routes, nearly all bolted: ten sit around 5.12, with a few 5.11s, a single 5.13 and a couple of easy lines for warming up. That makes it a spot for strong climbers who want hard, steep pulling rather than a beginner outing. The walk in climbs through trees, past a slabby wall and a taller steeper one, then reaches the face either through a gap or by an around route. Some of the rock is dusty or mossy from light traffic, and poison oak grows nearby.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107305101", "https://www.mountainproject.com/area/107305069/burney-limestone-aka-the-shredding"] }
+ },
+ "ca_3_east_wall": {
+  "_expect": { "name": "East Wall", "region": "California" },
+  "blurb": "East Wall is the first wall you meet at the foot of the descent trail on Pigeon Cliff, a small roadside columnar cliff on the west side of Susanville off Highway 36. Twelve of its sixteen routes are trad and four are bolted. Difficulty skews high: eight routes sit around 5.12, four more are 5.11, and there is one 5.13, with a few easier lines from 5.6 to 5.10. Most are simple to top-rope, and leads generally have decent gear or fair bolt spacing. The base soaks up sun and can feel hot even in midwinter, though a small mountain mahogany at the base offers a patch of shade.",
+  "review": { "sources": ["https://www.mountainproject.com/area/118692583/east-wall", "https://www.mountainproject.com/area/106940043/pigeon-cliff"] }
+ },
+ "ca_ranger_station_rock_climbs": {
+  "_expect": { "name": "Ranger Station Rock Routes", "region": "California" },
+  "blurb": "A compact trad crag at the dead end of Lost Horse Road in Joshua Tree National Park, perched above the ranger residences at about 4,200 feet. Of its sixteen routes, fifteen are gear-protected and one is a top-rope. Grades run from the easy 5.4s up to a lone 5.11, with six routes around 5.10, so it suits climbers across the middle of the range. Crack climbing is the main attraction. The walk is short: follow the dirt road to the station buildings, go around them, and pick up a use trail climbing through the boulders to the base.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105720951/ranger-station-rock", "https://www.mountainproject.com/area/105720588/lost-horse-area"] }
+ },
+ "ca_goat_rock_2": {
+  "_expect": { "name": "Goat Rock", "region": "California" },
+  "blurb": "Goat Rock is a sandstone outcrop about 110 feet tall in Castle Rock State Park, high in the Santa Cruz Mountains. Its face mixes slabs with steep, cave-like overhangs and is dotted with pockets and honeycomb pitting. Routes reach around 80 feet. Top-roping is the most common style here, backed by some trad lines, a few boulder problems and two bolted climbs. Grades range from the easy 5.4 end to around 5.12, with a thick cluster in the 5.8 to 5.11 zone. Reaching it takes a hike of about a mile and a quarter or more from the main lot, with some steady uphill. The sandstone is delicate when wet, so it needs a few dry days after rain.",
+  "review": { "sources": ["https://mountainproject.com/area/105734054/goat-rock", "https://www.parks.ca.gov/?page_id=29739"] }
+ },
+ "ca_sentinel_east_face_the": {
+  "_expect": { "name": "Sentinel - East Face, The", "region": "California" },
+  "blurb": "The east face of the Sentinel, the largest and tallest formation in Real Hidden Valley at Joshua Tree National Park, is reached by a short walk on the nature trail from the valley entrance. The rock is generally solid and clean, and this is one of the few formations in the park that suits multi-pitch climbing. All sixteen routes are trad and mostly moderate: a cluster around 5.7, four at 5.9, four at 5.10, and a single 5.11, with a couple of easy options near the bottom of the range. The face picks up morning sun, while the opposite side is shaded in the afternoon, and the trail below keeps it in view of passing visitors.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106621114/the-sentinel-east-face", "https://mountainproject.com/area/105720693/the-sentinel"] }
+ },
+ "_skipped": {
+  "ca_spicer_reservoir_climbs": "only one page about the crag found; the second (Timber Terror route page) is in The Between, a different spot ~4 km away",
+  "ca_spring_dome": "no fetched page about Spring Dome itself; parent Courtright Reservoir page covers it in one line and a route page gives no description",
+  "ca_voice_s_crag": "only one fetchable page about the crag (MP); other pages (Lost Horse area) do not mention it, thecrag/summitpost blocked"
+ },
+ "_conflicts": {
+  "ca_main_wall_the_2": "stored rock siltstone; pages say limestone: https://www.mountainproject.com/area/107305101 and https://www.mountainproject.com/area/107305069/burney-limestone-aka-the-shredding",
+  "ca_3_east_wall": "stored rock andesite; page says Pigeon Cliff is columnar basalt: https://www.mountainproject.com/area/106940043/pigeon-cliff"
+ }
+}

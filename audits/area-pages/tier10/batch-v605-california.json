@@ -1,0 +1,23 @@
+{
+ "ca_shady_rock": {
+  "_expect": { "name": "Shady Rock", "region": "California" },
+  "blurb": "A small, forest-shrouded sandstone outcrop perched on the lip of Stevens Creek Canyon in the Santa Cruz Mountains above Los Gatos, with open views toward the south and west. Ten climbs wrap around the formation, mostly sport routes plus a pair of trad lines and one traverse problem. Most of the roped climbing sits around 5.10, with a couple of easier 5.8 options and a few 5.11 lines on the harder side. The west face is the friendlier half, with clean, near-vertical pocketed rock, while the east face is steeper, dirtier and more crumbly. Routes are short, so it suits a quick session more than a full day.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105734078/shady-rock", "https://www.mountainproject.com/route/105735062/dog-breath"] }
+ },
+ "ca_touch_and_go_face": {
+  "_expect": { "name": "Touch and Go Face", "region": "California" },
+  "blurb": "A compact cliff in the Echo Rock area of central Joshua Tree, tucked into the wash opposite Echo Cove. Ten climbs are listed, mostly traditional crack and face lines with a lone bolted route and a couple of top-rope options. Grades run from 5.8 up to the low 5.12s, with the bulk of the lines at 5.9 and 5.11. One three-star 5.9 crack gets nearly all the traffic, so the other routes are much quieter. Early sun can make that crack feel noticeably harder, while later in the day, in warm months, the wall picks up shade. The base is reached over loose scattered boulders, so wear sturdy shoes.",
+  "approach": "From the Echo Tee junction, where the road splits toward Barker Dam and Hidden Valley Campground, walk north up the wash between Echo Rock and Echo Cove for roughly ten minutes. The face rises on your left; scramble across loose boulders to reach its base.",
+  "approach_min": 10,
+  "review": { "sources": ["https://www.mountainproject.com/area/105720735/touch-and-go-face", "https://app.advcollective.com/climbing/touch-and-go-face-classic-joshua-tree-climbing-with-practical-beta"] }
+ },
+ "_skipped": {
+  "ca_stonewall_rock": "no fetched page about Stonewall Rock itself (only parent Woodcrest Ridge Boulders page and a general Woodcrest article)",
+  "ca_right_of_the_regular_route": "no page about this sub-area itself; only The Plug parent and Left of the Regular Route sibling pages",
+  "ca_roadside_hide_aka_cardiac_cliff": "search budget not exceeded but no page found for Roadside Hide / Cardiac Cliff after two searches; only HWY 44 parent list fetched",
+  "ca_still_waters_run_deep": "Mountain Project page states climbing is no longer permitted in the canyon; only one page about it"
+ },
+ "_conflicts": {
+  "ca_touch_and_go_face": "aspect: https://www.mountainproject.com/area/105720735/touch-and-go-face says mostly northeast; https://app.advcollective.com/climbing/touch-and-go-face-classic-joshua-tree-climbing-with-practical-beta says west-facing (and south in its details); aspect left unfilled"
+ }
+}

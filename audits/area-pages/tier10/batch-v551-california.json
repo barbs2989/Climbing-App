@@ -1,0 +1,44 @@
+{
+ "ca_fifi_buttress": {
+  "_expect": { "name": "Fifi Buttress", "region": "California" },
+  "blurb": "A big granite buttress on the south side of Yosemite Valley, immediately west of the Leaning Tower. Lines here are long, typically seven to ten pitches, split between free climbing and aid. Of the dozen routes, most are traditional, with a pair of aid lines and a single sport route, and the free grades cluster around 5.11 to 5.12 with a couple reaching 5.13. A few short one or two pitch routes sit near the base. The wall stays in shade through late fall and winter, and for much of the rest of the year the afternoon sun arrives early in the afternoon. Expect a long uphill walk from the valley road, with a mostly third class ramp slanting across the face.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108513613/fifi-buttress", "https://www.mountainproject.com/route/111928132/center-of-the-universe"] }
+ },
+ "ca_headwaters_the": {
+  "_expect": { "name": "Headwaters, The", "region": "California" },
+  "blurb": "A small, shady bouldering spot in the Santa Monica Mountains, in the canyon below Topanga Canyon Boulevard and the upstream part of the Purple Stones. Twelve problems are scattered over a handful of boulders, running from very easy up to V5, with the heaviest concentration at V4 and V5 and a few friendly warm-ups in the V0 to V2 range. It suits a short, low-key session rather than a full day. Rock in this range can turn soft and brittle after rain, so give it a few dry days before pulling on holds.",
+  "approach": "From the use trail off the highway, go through the culvert under the road into the canyon floor, then walk down the creek bed until you reach boulders with clear signs of climbing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106484305/the-headwaters", "https://mountainproject.com/area/106484294/purple-stones"] }
+ },
+ "ca_molly_area": {
+  "_expect": { "name": "Molly Area", "region": "California" },
+  "blurb": "A compact bouldering zone in the Sad Boulders, on the Volcanic Tablelands north of Bishop. Just a couple of boulders hold the twelve problems, which run from V0 to V6, with plenty at V0 to V2 and a handful of tougher ones including the namesake classic at V5. The main face is close to vertical with pockets and edges, and its best side faces west. The canyon here is narrow, with cave-like channels typical of the surrounding tuff boulders, and the area sits down-canyon from Pow Pow.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106094739/molly-area", "https://www.mountainproject.com/area/106068462/sad-boulders"] }
+ },
+ "ca_igloo_the": {
+  "_expect": { "name": "Igloo, The", "region": "California" },
+  "blurb": "The biggest cluster in the bouldering around the BMX track at the Horsemen's Center near Apple Valley, in the high desert. Twelve problems cover the full range from very easy to a single V10, though most land between V0 and V5. There are lines on every side of the boulder: the west side holds the hardest, and the east face has the easiest. The rock quality is good, traffic is light, and the boulder is a handy place for warm-up laps. It sits just west of Carousel Rock.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107453180/the-igloo", "https://www.mountainproject.com/area/118709126/bmx-area-bouldering"] }
+ },
+ "ca_center_headwall": {
+  "_expect": { "name": "Center/Headwall", "region": "California" },
+  "blurb": "A south-facing section of The Wedge on El Cajon Mountain, in San Diego County. It holds twelve climbs, eight sport and four trad, graded from 5.9 through 5.12, with the bulk at 5.10 and 5.11. Several routes are multi-pitch, with a few running to five pitches, and one classic is a four pitch trad line up the middle. The wall catches sun for most of the day and runs hotter than the valley floor in summer, so carry extra water. Loose rock knocked down by other parties is a real concern, so wear a helmet. The walk in is long and steep.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105793294/centerheadwall", "https://www.mountainproject.com/area/114105119/the-wedge"] }
+ },
+ "ca_outer_wall": {
+  "_expect": { "name": "Outer Wall", "region": "California" },
+  "blurb": "The first prominent wall you meet on the trail up to the main overhang at The Shredding, a crag roughly 26 miles east of Redding along Highway 299. The wall sits at the foot of a small rockfall, so the start involves a short scramble across the debris, and the first line is a low angle white slab. Twelve routes run from 5.6 to low 5.12, mostly sport with a pair of trad lines, and four of them are 5.10. A crevice leads through to the wall opposite the Main Wall. Poison oak is common in the area, and the surroundings can get hot.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107312681/outer-wall", "https://www.mountainproject.com/area/107305069/burney-limestone-aka-the-shredding"] }
+ },
+ "ca_lake_angela_cliffs": {
+  "_expect": { "name": "Lake Angela Cliffs", "region": "California" },
+  "blurb": "A broken, sprawling cliff band above Lake Angela on Donner Summit, about 7,300 feet up in the I-80 corridor near Lake Tahoe. About a dozen routes, nearly all sport with a single trad line, range from 5.10 to 5.13, with the largest group at 5.11. The steep, well-featured upper wall running from Big Fish to Angela's Overhang is the main attraction, with roofs, overhangs, faces and some cracks. The cliffs get little traffic. The walk is around half an hour from the lodge area past the lake, and reaching the upper wall means a fourth class scramble up a ramp, with a rappel to return.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119240263/lake-angela-cliffs", "https://mountainproject.com/area/105733935/donner-summit"] }
+ },
+ "_skipped": {
+  "ca_hammer_dome": "No fetched page about Hammer Dome itself (only the Calaveras Domes parent page, a route page and a sparse Calaveras Dome page); the Mountain Project Hammer Dome area page found is a different Yosemite dome."
+ },
+ "_conflicts": {
+  "ca_outer_wall": "Stored rock is 'volcanic rock' but both pages describe the rock as limestone: https://www.mountainproject.com/area/107305069/burney-limestone-aka-the-shredding and https://www.mountainproject.com/area/107312681/outer-wall (area named Burney Limestone)."
+ }
+}

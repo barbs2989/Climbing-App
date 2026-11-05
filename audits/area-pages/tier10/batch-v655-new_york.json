@@ -1,0 +1,40 @@
+{
+ "ny_slot_machine_boulder": {
+  "_expect": {"name": "Slot Machine Boulder", "region": "New York"},
+  "blurb": "One big boulder on the Long Island shore near Duck Pond Point, the largest and tallest in a small cluster of rocks. It holds ten bouldering problems with a wide spread: most are easy to moderate, from V0 to V2, then a few around V4 and V5, and a pair of very hard lines near V7 and V9 that include the hardest problem at Duck Pond. The rock is of average quality, so this suits a relaxed session with a mix of abilities more than a destination day.",
+  "approach": "From the end of the road, walk roughly half a mile west along the beach to reach the boulder.",
+  "review": {"sources": ["https://www.mountainproject.com/area/122332894/slot-machine-boulder", "https://www.mountainproject.com/area/118095286/the-halfway-cluster"]}
+ },
+ "ny_trapps_cabin": {
+  "_expect": {"name": "Trapps Cabin", "region": "New York"},
+  "blurb": "A small bouldering sector within the Trapps section of the Gunks, on the Shawangunk Ridge. Ten problems climb hard quartz conglomerate. The spot is mostly shaded and seldom busy, which makes it a handy fallback when the main Trapps boulders are packed on a summer weekend. Grades run from an easy V1 through a solid middle of V2 to V5, then a few strong problems at V7 and V8 and one near the top of the scale around V11.",
+  "review": {"sources": ["https://www.mountainproject.com/area/125790695/trapps-cabin", "https://mountainproject.com/area/106510895/trapps-bouldering"]}
+ },
+ "ny_5_1_the_shelves": {
+  "_expect": {"name": "5.1 The Shelves", "region": "New York"},
+  "blurb": "A low cliff in the Books Tier at Powerlinez, in the southwest corner of Harriman State Park. The wall is built as three stacked steps, each around 7 to 15 feet tall, and faces mostly south-southwest. Ten lines range from 5.3 to about 5.8, nearly all top-rope with two that also take gear, so it suits beginners and anyone building basic skills. The rock is loose in places and little climbed, with plenty of vegetation, so keep the belayer and bystanders well back. Reaching the anchors means a scrambly traverse along an exposed ledge.",
+  "review": {"sources": ["https://www.mountainproject.com/area/112890385/1-the-shelves?print=1", "https://www.mountainproject.com/area/108193801/powerlinez"]}
+ },
+ "ny_little_cathead_mt": {
+  "_expect": {"name": "Little Cathead Mt", "region": "New York"},
+  "blurb": "A modest Adirondack hill, about 2,100 feet high, northeast of Upper Benson in Hamilton County, used for winter climbing. Around ten lines, nearly all water ice from moderate WI3 up through steep WI5, plus one mixed line. The terrain is a blend of short vertical walls and a taller slab on the north side, where the longest ice line runs roughly 95 feet. Some lines are set up for top-roping, and ice can be thin on the opening moves of certain routes.",
+  "review": {"sources": ["https://en.wikipedia.org/wiki/Little_Cathead_Mountain", "https://www.mountainproject.com/route/112471160"]}
+ },
+ "ny_gothics": {
+  "_expect": {"name": "Gothics", "region": "New York"},
+  "blurb": "Gothics is a 4,700-foot peak in the Great Range of the Adirondack High Peaks, with climbing on several large faces; the North Face is the biggest at close to 1,000 feet. In summer it offers mostly moderate slab and trad lines, around 5.4 to 5.7, with one much harder route. In winter the faces hold ice from WI2 to WI5. This is committing, remote terrain: a long hike in, runout slabs, some bushwhacking and route-finding, and a hike out over the east ridge.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106057854/gothics", "https://www.lakeplacid.com/rock-climbing/gothics-north-face"]}
+ },
+ "ny_chess_rock": {
+  "_expect": {"name": "Chess Rock", "region": "New York"},
+  "blurb": "A long, low boulder in the middle of Central Park near 64th Street, southwest of the Chess & Checkers House and between Cat Rock and Rat Rock. It has ten short bouldering problems, nearly all easy: mostly V0, a couple of V1s and a single V2. The west face can be traversed along its whole length, and the top is a pleasant spot to sit in the sun. A friendly place for beginners and quick city sessions.",
+  "review": {"sources": ["https://mountainproject.com/area/107072776/chess-rock", "https://57hours.com/blog/rock-climbing-nyc-where-to-start/"]}
+ },
+ "_skipped": {
+  "ny_b_bunkbed_wall": "no fetched page about the wall itself (Peterskill parent page and Bunk Arete route page only; wall not described)",
+  "ny_bikeway_block_french_mountain": "only one fetched page about the crag; no second page could be fetched (thecrag 403)"
+ },
+ "_conflicts": {
+  "ny_gothics": "stored rock anorthosite; https://www.lakeplacid.com/rock-climbing/gothics-north-face calls the faces granite slabs"
+ }
+}

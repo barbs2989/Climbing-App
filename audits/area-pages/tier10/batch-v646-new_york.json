@@ -1,0 +1,40 @@
+{
+ "ny_cat_rock": {
+  "_expect": { "name": "Cat Rock", "region": "New York" },
+  "blurb": "Cat Rock is a small schist outcrop in Central Park, Manhattan, a short walk from the Wollman Rink. It is a bouldering-only spot with 14 problems, most of them easy to moderate (VB through V2) but with a handful of much harder lines up into the double digits. Terrain is varied enough to suit a mix of abilities, which makes it a handy second stop after the busier outcrops in the park. Landings are not forgiving, so bring a crash pad and a spotter. Expect city-park conditions: passers-by, dogs and other boulderers sharing the rock, with sessions best kept short and friendly.",
+  "review": { "sources": ["https://www.mountainproject.com/area/classics/106602575/cat-rock", "https://www.centralpark.com/things-to-do/sports/bouldering"] }
+ },
+ "ny_north_face": {
+  "_expect": { "name": "North Face", "region": "New York" },
+  "blurb": "The North Face is one side of Rat Rock, the best-known boulder in Central Park, Manhattan. Rat Rock is a schist outcrop roughly 25 feet tall and 150 feet across, and the north side holds 13 problems. Most are easy, from VB up to about V3, with a few steeper ones reaching V6, so it works well for newcomers and for quick warm-ups. Expect company: the rock is popular and can see dozens of climbers on a good day. Bring a crash pad and a spotter, and keep sessions courteous in the shared park setting.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106044528", "https://en.wikipedia.org/wiki/Rat_Rock_(Central_Park)"] }
+ },
+ "ny_height_of_land_walls": {
+  "_expect": { "name": "Height Of Land Walls", "region": "New York" },
+  "blurb": "These walls sit on Crane Mountain in the Adirondack foothills near Johnsburg, right beside the trail where it reaches its high point. Climbs are short, around 40 to 60 feet, with the odd second pitch. The 13 routes are almost all traditional, with one bolted line, and range from easy 5.4 to 5.7 up to a couple of 5.11 testpieces, with a cluster in the mid-5.7 range. It is a quiet, lightly developed spot on a mountain known for dirty rock and brutal bugs in late spring, so a brush and some patience help.",
+  "parking_note": "Park at the Crane Mountain trailhead lot at the end of Sky High Road, then hike in from there.",
+  "approach": "From the trailhead, hike east past the boulder woods and the Measles Walls along the BAW Trail; the walls sit right on the trail at its high point.",
+  "approach_min": 25,
+  "review": { "sources": ["https://www.mountainproject.com/area/106910741/height-of-land-walls", "https://www.mountainproject.com/area/106172924/crane-mountain"] }
+ },
+ "ny_k_oops_wall": {
+  "_expect": { "name": "Oops Wall", "region": "New York" },
+  "blurb": "Oops Wall is a section of Peterskill, the small, miniature-Gunks cliff in Minnewaska State Park. The rock is conglomerate with the roofs and horizontal cracks that style implies. It may be the tallest wall at Peterskill, with lines of about 70 to 80 feet, and it has a big dihedral, a chimney and smaller corners. The 13 routes are mostly traditional with a few top-rope lines, running from 5.4 to 5.11, with a good concentration of 5.10s. Belay ledges are fairly shaded. Most routes need gear anchors, so bring a standard rack.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105910251/oops-wall", "https://www.mountainproject.com/area/105896719/peterskill"] }
+ },
+ "ny_high_heel_boulder": {
+  "_expect": { "name": "High Heel Boulder", "region": "New York" },
+  "blurb": "High Heel Boulder is a standalone boulder in the Rock Dojo section of Powerlinez, a bouldering area in New York. It is the landmark stone of the zone and carries 13 problems, with a wide spread: a few easy ones near V0 to V4, then a good run of V6 to V9 and a couple of lines above that. The surrounding Rock Dojo is quiet and compact, mixing highballs, slabs and overhangs, so bring pads and spotters for the taller lines.",
+  "review": { "sources": ["https://rakkup.com/guidebook/powerlinez-rock-climbing/high-heel-boulder/s14704", "https://www.mountainproject.com/area/111788865/rock-dojo"] }
+ },
+ "ny_main_face_2": {
+  "_expect": { "name": "Main Face", "region": "New York" },
+  "blurb": "Main Face is the biggest and steadiest cliff on Azure Mountain, a small peak in the northern Adirondacks. It is mainly a winter objective: six ice and mixed lines, mostly WI4 with some easier WI2 to WI3, sit beside seven rock routes that range from moderate to about 5.12. It is seldom visited, so expect quiet and good-quality climbing, but also a long, poorly kept trail and a nasty talus field below the face. Allow roughly 45 to 55 minutes in total from the lot, and keep to the contour so you avoid sketchy bushwhacking on the way down.",
+  "parking_note": "Reach the trailhead by the dirt-and-paved Blue Mountain Road; park in the maintained hikers' lot.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107494612/main-face", "https://www.mountainproject.com/area/123099101/azure-mountain"] }
+ },
+ "_skipped": {
+  "ny_ragged_mountain": "no fetched page about the crag itself (only the High Peaks Region parent page; Adirondack Explorer article returned 429 on all attempts)",
+  "ny_unsorted_boulders_to_be_placed_in_their_appropriate_sub": "a placeholder holding area, not a place; no page describes it"
+ }
+}

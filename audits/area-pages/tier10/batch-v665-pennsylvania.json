@@ -1,0 +1,43 @@
+{
+ "pa_gladiator": {
+  "_expect": { "name": "Gladiator", "region": "Pennsylvania" },
+  "blurb": "Gladiator is a compact bouldering cluster of roughly eight blocks in Governor Dick Park near Mount Gretna, filed under the Highball Area. Thirteen problems here cover a wide spread: a handful of easy V0 to V1 lines that suit beginners, a few moderate V2 and V3 problems, and a short run of serious hard ones in the V7 to V9 range. The setting is wooded forest bouldering reached on foot from the Highball boulder, so expect a trail walk, a stream nearby and faint paths marked by cairns. A good stop for a mixed group, since both newer boulderers and strong climbers find something.",
+  "review": { "sources": ["https://www.mountainproject.com/area/118091593/gladiator", "https://www.mountainproject.com/area/107023704/highball-area"] }
+ },
+ "pa_area_3": {
+  "_expect": { "name": "Area 3", "region": "Pennsylvania" },
+  "blurb": "Area 3 is the third of the boulder groups at the 56 Boulders site in the Southwestern Highlands of Pennsylvania, beside Route 56 in Galitzen State Forest. It is a scattering of small sandstone boulders plus a wall of about 35 feet that can be top-roped from tree anchors. Most of the 13 climbs are bouldering problems, with a good share at V1 to V2 and a few stepping up to V4 and V5, plus a couple of top-rope lines. Good for an easy, quiet outing; it tends to be uncrowded, and it pairs naturally with the neighbouring groups.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119134640/area-3", "https://www.mountainproject.com/area/110829872/56-boulders"] }
+ },
+ "pa_uptown_area": {
+  "_expect": { "name": "Uptown Area", "region": "Pennsylvania" },
+  "blurb": "Uptown Area is a small bouldering zone inside the Tower Area of Governor Dick Park, near Mount Gretna in south-central Pennsylvania. It holds 13 problems on diabase blocks in the woods, running from easy V0 lines up through the V3 range and on to some seriously hard problems around V7 to V9, including the area's headline line. The boulders sit on the right-hand side after the trail splits, only a minute or two of walking from the junction, though the best-known block can be tricky to locate on a first visit. It has a good spread for mixed groups.",
+  "review": { "sources": ["https://www.mountainproject.com/area/124962299/uptown-area", "https://www.mountainproject.com/area/124962157/tower-area"] }
+ },
+ "pa_2_pixel_wall": {
+  "_expect": { "name": "Pixel Wall", "region": "Pennsylvania" },
+  "blurb": "Pixel Wall is a tall cliff section at the Main Overlook end of the Gibraltar area in Susquehanna Riverlands State Park, in south-central Pennsylvania. Its face is speckled with patches of differently coloured rock, and ledges break the wall so you can belay or reposition. All 13 routes here are trad, mostly 5.8 and 5.9 with some easier lines and a single 5.10. This is a lead-access wall that has seen little traffic, so loose rock is likely: wear a helmet and consider top-rope inspecting a line first. Routes on the left of the far gully top out at the overlook.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123198292/pixel-wall", "https://www.mountainproject.com/area/123198223/gibraltar-main-overlook"] }
+ },
+ "pa_tucked_away_playground": {
+  "_expect": { "name": "Tucked Away Playground", "region": "Pennsylvania" },
+  "blurb": "Tucked Away Playground is a small, quiet cluster of conglomerate boulders in Rocky Ridge County Park near York, in south-central Pennsylvania. The 13 problems are well suited to beginners and intermediate boulderers: most are V0 or V1, with a few V2s and one V3 as the hardest. The pebbles here are smaller than at the park's other zones and tend to pop out a bit more. The blocks sit off the main trail, which gives the spot a hidden, uncrowded feel, though mountain bikers use the paths nearby. Allow roughly 5 to 10 minutes of hiking from the car.",
+  "review": { "sources": ["https://www.mountainproject.com/area/126390073/tucked-away-playground", "https://mountainproject.com/area/118837671/rocky-ridge"] }
+ },
+ "pa_4_49_cemetery_wall_fine_line_area": {
+  "_expect": { "name": "4.49 Cemetery Wall - Fine Line Area", "region": "Pennsylvania" },
+  "blurb": "The Fine Line Area is the taller cliff section just north of the main Cemetery Wall at Safe Harbor North, along the Susquehanna rail trail in south-central Pennsylvania. It holds 13 climbs, nearly all sport (12) with one aid line, spanning roughly 5.6 to 5.13 with the bulk of routes in the 5.9 to 5.10 range. It's a Fine Line at 5.9 and Sagaba are the most popular. Safe Harbor North has a steeper, more spread-out feel than its southern neighbour, and the walls are strung along the trail, so expect a walk or bike ride in.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108832226/449-cemetery-wall-fine-line-area", "https://www.mountainproject.com/area/108805095/safe-harbor-north"] }
+ },
+ "pa_main_area": {
+  "_expect": { "name": "Main Area", "region": "Pennsylvania" },
+  "blurb": "Main Area is the largest bouldering group at Sunfish Pond County Park in Bradford County, central Pennsylvania, with 13 problems on good-quality blocks. Grades run from V1 up to V9, with the bulk in the V2 to V4 band and a couple of V7 testpieces, so there is something for most abilities. A forest road leads in, then a cairn marks a short herd path to the rocks, about five minutes on foot. The park is ringed by game lands, and the Annex, Southside and Carbon Run groups lie nearby if you want more.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108413006/main-area", "https://www.mountainproject.com/area/116753819/sunfish-pond-county-park"] }
+ },
+ "_skipped": {
+  "pa_rear_wall": "closed to climbing: the Library (Mocanaqua) sits on land where climbing is not permitted; also stored rock sandstone vs quartzite on one page"
+ },
+ "_conflicts": {
+  "pa_gladiator": "stored rock basalt; the Highball Area page (https://www.mountainproject.com/area/107023704/highball-area) calls its boulder diabase, as does the Governor Dick area; stored value left unchanged and no rock named in the blurb"
+ }
+}

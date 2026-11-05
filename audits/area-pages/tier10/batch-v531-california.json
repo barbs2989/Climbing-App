@@ -1,0 +1,41 @@
+{
+ "ca_nabisco_canyon": {
+  "_expect": { "name": "Nabisco Canyon", "region": "California" },
+  "blurb": "Nabisco Canyon is the tightest of the northern gullies at Stoney Point, a city park in the San Fernando Valley. Almost everything here is top-roped on fine-grained, compact sandstone, with two boulder problems and a single trad line mixed in. One wall holds the gentler lines and the opposite wall the harder ones. Most routes sit in the 5.7 to 5.9 range, which makes it a handy spot for newer climbers setting up ropes, while a few 5.11 and 5.12 lines give stronger climbers something to work on. The stone is brittle when damp, so it is best visited after a long dry spell.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105894024/nabisco-canyon", "https://mountainproject.com/v/stoney-point/105870979"] }
+ },
+ "ca_pile_ups": {
+  "_expect": { "name": "Pile Ups", "region": "California" },
+  "blurb": "Pile Ups is a small cluster of boulders at Stoney Point, the historic bouldering park in the San Fernando Valley, reached by a trail on the south side of the park. All 13 problems are bouldering on fine-grained sandstone that snaps easily when wet. The spread is wide: a handful of very easy problems, a solid middle of moderate lines through about V6, and a couple of serious high-end tests. One boulder has short, steep overhanging problems on its south face plus a lip traverse. The rock gets a lot of sun, so it can dry quickly, but give it plenty of time after rain.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105873681/pile-ups", "https://mountainproject.com/v/stoney-point/105870979"] }
+ },
+ "ca_north_side_boulders_from_outhouse_to_the_meadow": {
+  "_expect": { "name": "North Side Boulders (From Outhouse to the Meadow)", "region": "California" },
+  "blurb": "These boulders run along the north side of Pine Mountain near Ojai, from the outhouse by the campground down toward an open meadow, at roughly 7,000 feet. All 13 problems are bouldering, and the grades lean friendly: about half are V0 or V1, with a few V3 and V4 problems and a single V5. Tall pines shade the rock, which helps on warm days, and traffic is light. Many problems land on downhill slopes, so bring pads and a spotter. Holds can grow lichen and may need a brushing first. Expect afternoon wind on the hillside.",
+  "review": { "sources": ["https://app.advcollective.com/climbing/exploring-north-side-boulders-from-outhouse-to-the-meadow", "https://mountainproject.com/area/classics/109112500/the-north-side-boulders-the-meadow"] }
+ },
+ "ca_hodgepodge_rock_west_face": {
+  "_expect": { "name": "Hodgepodge Rock - West Face", "region": "California" },
+  "blurb": "A small wall on the back side of Hodgepodge Rock in the Indian Cove part of Joshua Tree National Park, close to the group campsites. It holds 13 short single-pitch routes, eight trad and five sport, from about 5.4 up to 5.10, with most falling between 5.6 and 5.8. That puts it in beginner and warm-up territory, and one trad line is a popular gear-practice pitch of about 40 feet. The wall gets plenty of sun, which makes it a useful choice when the shadier parts of the park are cold. The climbing is pleasant rather than memorable.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106636908/hodgepodge-rock-west-face", "https://app.advcollective.com/climbing/hogback-at-hodgepodge-rock-a-classic-joshua-tree-trad-challenge"] }
+ },
+ "ca_mount_grossvogel": {
+  "_expect": { "name": "Mount Grossvogel", "region": "California" },
+  "blurb": "Mount Grossvogel is a lumpy pile of rock in Joshua Tree National Park's Lost Horse area, just southwest of Jimmy Cliff at about 4,100 feet. Of its 13 routes, 12 are trad and one is a top rope, mostly single pitches of 40 to 60 feet. Grades range from easy scrambling-level lines around 5.4 up to a 5.11, with a strong cluster of 5.10s for experienced leaders. You will want a full rack with cams and nuts. It sees few visitors compared with the nearby crags, and the desert walk in has little shade, so carry water.",
+  "approach": "Park where you would for Atlantis or Jimmy Cliff and hike south past the Atlantis turnoff and along Jimmy Cliff, then swing right past its southern end to reach the formation.",
+  "review": { "sources": ["https://mountainproject.com/area/105797041/mount-grossvogel", "https://app.advcollective.com/climbing/exploring-mount-grossvogel-quiet-trad-boulder-adventures-in-joshua-tree"] }
+ },
+ "ca_girlfriend_rock": {
+  "_expect": { "name": "Girlfriend Rock", "region": "California" },
+  "blurb": "Girlfriend Rock is a modest boulder in the Savannah Area of the Happy Boulders, in the Volcanic Tablelands north of Bishop at about 4,500 feet. It is the first boulder on the left as you head up the canyon, and larger blocks nearby make it easy to overlook. The 13 problems are short but steep on rough, textured rock, with flat landings. Grades stay low, from V0 to V3, so it suits warming up or climbers working through moderates. It is quick to visit on the way to bigger objectives deeper in the canyon.",
+  "approach": "Walk up the canyon beyond the Central Happiness Area; the boulder is the first one beside the path on your left.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106132878/girlfriend-rock", "https://www.mountainproject.com/area/106132852/savannah-area"] }
+ },
+ "_skipped": {
+  "ca_nordic_base_boulder": "only one fetched page about the boulder (the other candidates did not mention it or returned 403)",
+  "ca_cap_rocks": "search budget not hit, but no fetched page is about Cap Rocks itself (only the Tollhouse Rock parent page and a route page); summitpost returned 403"
+ },
+ "_conflicts": {
+  "ca_north_side_boulders_from_outhouse_to_the_meadow": "https://mountainproject.com/area/classics/109112500/the-north-side-boulders-the-meadow lists V6-V10 classics under a North Side Boulders (The Meadow) heading, above the stored V0-V5 spread; https://app.advcollective.com/climbing/exploring-north-side-boulders-from-outhouse-to-the-meadow says V3-V4 and south facing. Blurb uses the stored spread only; aspect not written."
+ }
+}

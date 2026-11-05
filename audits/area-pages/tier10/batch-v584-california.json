@@ -1,0 +1,50 @@
+{
+ "ca_carmel_meadows": {
+  "_expect": {"name": "Carmel Meadows", "region": "California"},
+  "blurb": "A small cluster of ten boulders on the shore beside Carmel Bay, on California's Central Coast. The problems are friendly: one very easy line, then mostly V1 to V3, with a single V4 on top. The rock is coarse and abrasive, so expect tired fingertips, and a few pieces feel loose. Landings are sand but uneven, so bring a couple of pads. The base of the boulders sits only a few feet above the sea, which makes the tide worth checking before you head down. Spring and fall feel comfortable, and early or late in the day keeps the rock from baking. Relaxed and good for a casual session.",
+  "parking_note": "Leave the car at the Carmel Meadows trailhead on Ribera Road; the stairs down to the beach start there.",
+  "approach": "From the trailhead, take the maintained stairs down to the beach, then follow the shoreline path to the boulders.",
+  "review": {"sources": ["https://app.advcollective.com/climbing/carmel-meadows-beach-boulders-coastal-boulder-adventure-in-california", "https://mountainproject.com/route/124479297/nullity"]}
+ },
+ "ca_loaf_the_2": {
+  "_expect": {"name": "Loaf, The", "region": "California"},
+  "blurb": "A single boulder group in the Buttermilks, the famous boulder-strewn hillside west of Bishop in the eastern Sierra. Ten problems are recorded here. Most fall between V0 and V4, with a couple of much harder lines at V7 and V8, so there is something for a warm-up and something for a project. The face looks west, which brings afternoon sun. The wider hillside is known for flat, sandy landings and roadside access along Buttermilk Road, and you can start from the parking area below the main boulders.",
+  "review": {"sources": ["https://thetopo.com/crags/buttermilks/routelist/the-loaf", "https://www.mountainproject.com/area/106132808"]}
+ },
+ "ca_woods_lake": {
+  "_expect": {"name": "Woods Lake", "region": "California"},
+  "blurb": "A bouldering spot by Woods Lake, just off the Carson Pass Highway in the Sierra, a short way before Caples Lake when coming from the west. Ten problems are recorded, and the grade spread leans hard: a handful of problems between V1 and V5, then a cluster of V7 and V8 lines, several of them on one well-known boulder. That makes it more of a destination for strong boulderers than for beginners. It is a quiet forest and lakeside setting at high elevation, so mountain weather matters when planning a visit.",
+  "review": {"sources": ["https://mountainproject.com/area/120335459/woods-lake?print=1", "https://www.mountainproject.com/area/classics/113524488/carson-pass-highway-88"]}
+ },
+ "ca_area_13_center": {
+  "_expect": {"name": "Area 13 - Center", "region": "California"},
+  "blurb": "The middle section of Area 13 in Clark Canyon, near Mammoth Lakes in the eastern Sierra. It holds ten routes, mostly sport with two trad lines, and the grades stay friendly: most sit around 5.8, with a few at 5.7, 5.9, 5.10 and one 5.11. The cliff here is broken in places but has some taller faces that give enjoyable moderate face climbing. Because Area 13 is known for good routes below 5.10, this is a handy stop for newer leaders. At roughly 7,900 feet, afternoon thunderstorms can roll in during summer.",
+  "approach": "Follow the trail up the canyon from the parking lot and take the first turn to the right, then climb the steep pumice hill to the start of the cliff.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106173671/area-13-center", "https://www.mountainproject.com/area/105843721/area-13"]}
+ },
+ "ca_4_5_south": {
+  "_expect": {"name": "4&5 South", "region": "California"},
+  "blurb": "A ridge of boulders south of group campsite 4 in the Groupsites area on Black Mountain, in the San Jacinto Mountains near Idyllwild. Ten problems are recorded, running from the easiest grades through V1 to V3 up to a single V4 and one V7, so it works for mixed-ability groups. It sits at around 7,500 feet and the climbing is spread over several boulders close to the trail. The Groupsites are a favored camp for climbers, and the problems here are reached on foot from the sites.",
+  "approach": "Walk south-southeast from campsite 4 toward the ridge of boulders; if you find yourself climbing a very large hill, you have gone too far.",
+  "review": {"sources": ["https://www.mountainproject.com/area/110362338/45-south", "https://www.mountainproject.com/area/110292175/groupsites-45"]}
+ },
+ "ca_cathedral_peak": {
+  "_expect": {"name": "Cathedral Peak", "region": "California"},
+  "blurb": "A ridge-top crag in the Santa Barbara backcountry, roughly a mile south of La Cumbre Peak, with a handful of multi-pitch trad lines and ten recorded climbs overall. Most are trad, from easy to moderate lines up to 5.7 plus four 5.10 face routes, along with one boulder problem and one sport route. The line most often suggested for moderate leaders is a three-pitch route on the south face, which is low angle and well protected. It faces south, so the sun hits for most of the day. Bring a full rack; the approach is a steep, tiring scramble and the crag is quiet and adventurous.",
+  "approach": "Strenuous hike of about 45 minutes from the Camino Cielo road near La Cumbre Peak, with some class 3 and 4 scrambling, to the base of the south face.",
+  "approach_min": 45,
+  "review": {"sources": ["https://mountainproject.com/area/105976193/cathedral-peak", "https://app.advcollective.com/climbing/cathedral-peak-santa-barbaras-untamed-multi-pitch-trad-playground"]}
+ },
+ "ca_green_wall_boulder": {
+  "_expect": {"name": "Green Wall Boulder", "region": "California"},
+  "blurb": "A lichen-covered boulder in the Buttermilks near Bishop, found uphill and to the left of the Peabody Boulders. It holds ten problems on a wall roughly 30 to 40 feet tall. The grades start at V0 and climb through V1 to V3, then end with a few harder lines from V4 up to V6, so it suits a mixed group. The good lines face northwest and stay cool; some edges near the harder problems are sharp. The walk from the Peabody parking area is short but climbs a little with some loose ground. Bring several pads.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105936139/green-wall-boulder?print=1", "https://app.advcollective.com/climbing/climbing-green-wall-boulder-in-californias-buttermilks"]}
+ },
+ "_skipped": {
+  "ca_trashcan_boulders": "no fetched page is about the crag itself (only a route page and the parent Quail Springs page)"
+ },
+ "_conflicts": {
+  "ca_cathedral_peak": "stored rock is sandstone but https://app.advcollective.com/climbing/cathedral-peak-santa-barbaras-untamed-multi-pitch-trad-playground says granite (one page only; left unchanged, rock not named)",
+  "ca_green_wall_boulder": "stored aspect N; https://www.mountainproject.com/area/105936139/green-wall-boulder?print=1 says northwest for the classics while https://app.advcollective.com/climbing/climbing-green-wall-boulder-in-californias-buttermilks lists south facing; left unchanged"
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "ca_apron": {
+  "_expect": { "name": "Apron", "region": "California" },
+  "blurb": "The Apron is a slab on Shuteye Ridge in the Lost Eagle area, on the Sierra Nevada's western slope off Highway 41 near Fresno Dome. It holds ten climbs, split between trad and bolted lines with one top-rope option. Grades are friendly: a couple of 5.7s, a 5.8, a cluster of 5.9s, a few 5.10s and a single 5.11. The granodiorite is low-angle and slabby, with knobs and small runnels, and the lower pitch of the longest line here is protected by a row of bolts. It suits parties who want moderate slab climbing, including a multi-pitch day, in a quiet setting.",
+  "review": { "sources": ["https://www.mountainproject.com/area/110909872/apron", "https://mountainproject.com/route/110912736/funnel-runnel"] }
+ },
+ "ca_detox_wall": {
+  "_expect": { "name": "Detox Wall", "region": "California" },
+  "blurb": "Detox Wall is a compact sport wall on Luther Rock, on the hillside above Highway 89 south of Lake Tahoe. All ten climbs are bolted. One sits near 5.9, four are in the 5.10s, four in the 5.11s and one reaches the 5.12 range, so it suits a moderate-to-hard day. Lines are short, roughly 50 feet, but tend to stay sustained from bottom to top, following weathered cracks and small features up a vertical face. Climbers describe the movement as pumpy and fun. Expect a steep uphill hike to reach the base.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105734198/detox-wall", "https://mountainproject.com/area/105733980/luther-rock"] }
+ },
+ "ca_mt_shasta": {
+  "_expect": { "name": "Mt. Shasta", "region": "California" },
+  "blurb": "Mt. Shasta is a 14,179-foot Cascade volcano rising beside Interstate 5 in northern California. The climbing here is snow, glacier and ice rather than rock: the ten listed lines are a mix of mountaineering, alpine and ice, from easy-angled snow and walking up to steeper water-ice pitches around WI2 to WI4. Summit days are long, often 14 to 16 hours, and crampons, an ice axe and sometimes a rope are standard. It is a popular place to learn alpine skills, and the trailheads and the spring season draw the biggest crowds, so an early start helps.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106464248/mt-shasta", "https://shastaguides.com/articles/choosingaroute"] }
+ },
+ "ca_wild_wild_western_pinnacles_aka_orange_rocks": {
+  "_expect": { "name": "Wild, Wild Western Pinnacles (aka Orange Rocks)", "region": "California" },
+  "blurb": "A small outcrop on Bishop Peak, the volcanic plug above San Luis Obispo, sitting right beside the summit trail with views toward town. It packs in a bit of everything: a handful of boulder problems from V3 to V5, bolted sport lines, a couple of top-rope options and a trad line, with ropes running from an easy 5.7 to 5.11. The dacite is hard and clean, with a grain some climbers liken to desert granite. Short, quick to reach and good for a brief session.",
+  "approach": "Follow the Hikers Summit Trail up Bishop Peak from the Felsman Loop trailhead; the crag sits right beside the trail.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105737175/wild-wild-western-pinnacles-aka-orange-rocks", "https://www.newtimesslo.com/local-outdoor-rock-climbing-spots-15559281/"] }
+ },
+ "ca_bilbo_buttresses_the": {
+  "_expect": { "name": "Bilbo Buttresses, The", "region": "California" },
+  "blurb": "A long, mostly west-facing wall in the Indian Cove section of Joshua Tree National Park, the first formation east of Billboard Buttress along the road. Ten short crack and face climbs mix trad, bolted lines and one top-rope. The grades split in two: easy leads from 5.5 to 5.8, then a harder group from 5.11 into the 5.12 range, with nothing between. The rock is gritty and a few of the busier routes are getting polished. Reports suggest shade through the morning depending on season, and the walk from the car is only a few minutes.",
+  "review": { "sources": ["https://www.mountainproject.com/v/the-bilbo-buttresses/105721286", "https://www.mountainproject.com/route/111536541/sean-penn", "https://www.mountainproject.com/forum/message/119648113"] }
+ },
+ "ca_magnus_pillar": {
+  "_expect": { "name": "Magnus Pillar", "region": "California" },
+  "blurb": "Magnus Pillar is a granite pillar at about 9,300 feet in the Rock Creek drainage above Mammoth Lakes, in the Eastern Sierra. Nine of its ten routes are trad and one is bolted. Most are single-pitch crack climbs in the 5.10 to low 5.11 range, with a few easier lines from 5.7 to 5.9. The rock is solid, with clean splitter cracks, and the face looks southeast so it warms early. Anchors are stainless hardware and a single 70-metre rope covers the pitches. Thin air and quick weather changes at this elevation add to the effort.",
+  "parking_note": "Small paved pullout on the Rock Creek road roughly 0.4 miles past Big Meadow Campground, the same spot used for the nearby Gong Show wall.",
+  "approach": "Cross the meadow into the trees toward Rock Creek and cross at the fallen tree a short way upstream. Then follow cairns up and left toward Juniper Wall, staying to its right, to reach the pillar. Water shoes help at higher flows.",
+  "approach_min": 20,
+  "review": { "sources": ["https://www.mountainproject.com/area/114076452/magnus-pillar", "https://app.advcollective.com/climbing/magnus-pillar-classic-granite-trad-climbing-in-eastern-sierra"] }
+ },
+ "_skipped": {
+  "ca_middle_tier": "only one fetched page about the crag itself (Mountain Project area page); parent and sibling pages fetched do not mention it; thecrag and summitpost returned 403",
+  "ca_south_face_3": "no fetched page about this South Face itself; Granite Basin parent pages list a 3-route South Face that does not match 10 routes at 5.6-5.11, and the Mountain Project South Face pages found are Red Rocks and Half Dome"
+ },
+ "_conflicts": {}
+}

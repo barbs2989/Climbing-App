@@ -1,0 +1,22 @@
+{
+ "me_ladybug_wall": {
+  "_expect": { "name": "Ladybug Wall", "region": "Maine" },
+  "blurb": "A small bolted crag tucked just left of Bald Bluff in Maine's Western Mountains, near the Mount Abram ski hill. All twelve climbs are sport routes, with about half sitting at 5.10 and the rest spread between 5.8, 5.9 and a single 5.11. The wall mixes slabby faces, a couple of dihedrals and a steeper overhanging stretch, and it catches good sun. A short walk of roughly ten minutes through the boulders gets you to its left side, making it a relaxed, popular stop for climbers who want moderate leads without a long hike.",
+  "approach_min": 10,
+  "review": { "sources": ["https://www.mountainproject.com/area/126603337/ladybug-wall", "https://mountainproject.com/area/119751185/bald-bluff"] }
+ },
+ "me_3_critter_wall": {
+  "_expect": { "name": "Critter Wall", "region": "Maine" },
+  "blurb": "One of the main faces on the Square Dock cliff band in Maine's Western Mountains, with eleven routes: nine bolted and two on gear. Grades start with a single easy line, then cluster through 5.10 and 5.11, finishing with a couple of 5.12s. The left half is a tall, slightly overhanging panel of swirled schist, while the right half is darker, steep-but-not-vertical rock with crimps and smears. A chimney divides the two halves. Both sides get plenty of sun, belay ledges are roomy, and longer lines on the left favor a 70 m rope. Gold Wall lies a bit further left.",
+  "aspect": "S",
+  "review": { "sources": ["https://www.mountainproject.com/area/200667480/critter-wall", "https://www.mountainproject.com/area/124090570/square-dock-rock-climbing", "https://www.mountainproject.com/forum/message/110720472"] }
+ },
+ "_skipped": {
+  "me_pismire_bluff": "no climbing page found; pages describe Pismire Bluff only as a hiking trail in Raymond",
+  "me_central_wall": "only Main Wall (parent) page and a classics list fetched, no page about the crag itself; other Central Wall pages are NC and Ontario",
+  "me_land_of_overhangs_the": "only rockclimbing.com page describes the Maine one and it could not be fetched; Mountain Project's Land of Overhangs is in New Hampshire",
+  "me_2_gold_wall": "no page about Gold Wall itself; only parent Square Dock pages",
+  "me_whale_boulder_the": "no page about the Whale Boulder itself fetched; only the parent Two and a Half Bouldermen page",
+  "me_end_of_the_line": "no page found for End of the Line; searches returned nothing (search budget not hit, no pages exist in results)"
+ }
+}

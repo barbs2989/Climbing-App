@@ -1,0 +1,36 @@
+{
+ "ca_simpson_park": {
+  "_expect": {"name": "Simpson Park", "region": "California"},
+  "blurb": "Simpson Park is a hillside wilderness park on the southern edge of Hemet, at around 2,500 feet, and the climbing clusters in Warrior Valley. Fourteen lines are recorded: eleven boulder problems, mostly V0 and V1 with a few harder ones up to V6, plus three top-rope climbs between 5.10 and 5.12. Expect steep aretes, technical faces and the occasional highball, roughly 10 to 40 feet tall. Most faces look east, so mornings are the time to go and afternoons slip into shade. Summers are very hot and rattlesnakes are about, so cooler months suit it best. It has the feel of a local's spot with a compact layout and short walks between the rocks.",
+  "review": {"sources": ["https://www.mountainproject.com/v/109317645", "https://app.advcollective.com/climbing/sensuous-rocks-dynamic-climbing-on-californias-bold-aretes-and-faces"]}
+ },
+ "ca_arroyo_boulders": {
+  "_expect": {"name": "Arroyo Boulders", "region": "California"},
+  "blurb": "Arroyo Boulders is a small group of boulders scattered in and beside a dry streambed in Culp Valley, a desert bouldering zone in San Diego County sitting near 3,800 feet. Of the fourteen lines recorded, twelve are boulder problems and two are trad routes. The problems start around V1 and climb to a pair of V8s, with most falling between V2 and V5 and one V6 in the mix; the two trad lines are both 5.11. It is a quiet corner that few people visit. The dirt road in needs a vehicle with some ground clearance.",
+  "review": {"sources": ["https://www.mountainproject.com/area/110353532/arroyo-boulders", "https://www.mountainproject.com/area/106116317/culp-valley"]}
+ },
+ "ca_coyote_crag": {
+  "_expect": {"name": "Coyote Crag", "region": "California"},
+  "blurb": "Coyote Crag anchors the southern end of the Central Pinnacles in the Holcomb Valley Pinnacles above Big Bear, at about 7,500 feet, and is among the most visited walls there. Fourteen lines are recorded, mainly sport and trad with a single top-rope and one V0 problem. Routes are mostly vertical and well featured, running from 5.7 up to 5.10, with the bulk at 5.8 and 5.9, which makes it a friendly place for newer leaders. The southeast-facing wall catches the sun first and falls into shade by mid to late afternoon in summer, handy when it is hot.",
+  "parking_note": "Two lots serve the crag: a northern one at the edge of the Central Pinnacles and a southern one beside Parking Lot Rock. Either puts you within roughly ten minutes of the base.",
+  "approach": "From the southern lot, follow the trail north from Parking Lot Rock for about ten minutes, passing beneath the east face of Lost Orbit Rock. From the northern lot it is a five to ten minute walk.",
+  "review": {"sources": ["https://mountainproject.com/area/105805460/coyote-crag", "https://www.mountainproject.com/area/105931166/central-pinnacles"]}
+ },
+ "ca_lost_orbit_rock_east_face_right_lost_orbit_wall": {
+  "_expect": {"name": "Lost Orbit Rock - East Face Right (Lost Orbit Wall)", "region": "California"},
+  "blurb": "This is the right-hand portion of the east side of Lost Orbit Rock in the Holcomb Valley Pinnacles near Big Bear, at about 7,400 feet. The east side stands taller and steeper than the broken west side. Fourteen lines are recorded, mostly sport with a few trad lines and a top-rope. Grades run from 5.7 to 5.12, but the heart of it is solid 5.10 and 5.11, with seven routes at 5.10 and four at 5.11, so it suits climbers ready to move past the moderates found on neighboring walls.",
+  "parking_note": "Use the southern parking area, beside Parking Lot Rock.",
+  "approach": "From the southern lot, walk north along the west side of Parking Lot Rock, then veer northeast on a faint trail to the south end of the formation, about five minutes. From the north, near Coyote Crag, a trail leads around Camp Rock and south through the trees in five to ten minutes.",
+  "review": {"sources": ["https://www.mountainproject.com/area/117335295/lost-orbit-rock-east-face-right-lost-orbit-wall", "https://www.mountainproject.com/area/105810670/lost-orbit-rock-east-face?print=1"]}
+ },
+ "ca_hitman_rock": {
+  "_expect": {"name": "Hitman Rock", "region": "California"},
+  "blurb": "Hitman Rock is a small formation in the Outback section of Joshua Tree National Park's Hidden Valley area, tucked a short way past the Steve Canyon routes. Fourteen lines are recorded, eleven trad and three top-rope, mostly around 50 feet tall. Grades spread from 5.6 to 5.11 with the heaviest clusters at 5.8 and at 5.10 and 5.11, so it works for a mixed party. The west face looks onto Park Boulevard and is easy to pick out by the flared brown corner on its main line. It is the sort of crag with pleasant but unremarkable routes rather than headline classics. The descent is a walk-off on the right side, and a 60 meter rope covers it.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105721370/hitman-rock?print=1", "https://www.mountainproject.com/area/121316556/hitman-rock-west-face"]}
+ },
+ "_skipped": {
+  "ca_lost_eye_to_the_moon": "no fetched page is about the crag itself (SummitPost returned 403; Mountain Project pages fetched were route pages and the parent zone, neither describing the crag)",
+  "ca_hill_street_blues": "only one fetched page about the crag (Mountain Project); SummitPost 403, others do not mention it",
+  "ca_lower_dinosaur_rock_n_face": "no fetched page about the north face itself; only a route page and a sibling corridor page"
+ }
+}

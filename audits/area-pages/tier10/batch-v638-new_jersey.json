@@ -1,0 +1,39 @@
+{
+ "nj_i_triumverate_wall": {
+  "_expect": {"name": "Triumverate Wall", "region": "New Jersey"},
+  "blurb": "A cliff on the New Jersey side of the Delaware Water Gap, on Mt. Tammany, close to the interstate. It is widely treated as the busiest section of the mountain because its easiest lines are the most reachable ones. The ten listed climbs are almost all traditional, mostly two-pitch lines, with grades starting at 5.3 and the bulk of them at 5.6 or easier, plus one 5.8, one 5.10, a single aid line and one boulder problem. That makes it a sensible first stop for newer trad leaders, who can get by with an ordinary Gunks-style rack. Plan on a rappel to get back down, and expect company on a good weekend.",
+  "review": {"sources": ["https://mountainproject.com/area/106359944/triumverate-wall", "https://mountainproject.com/area/106359937/mttammany"]}
+ },
+ "nj_m_the_great_arch": {
+  "_expect": {"name": "The Great Arch", "region": "New Jersey"},
+  "blurb": "A section of Mt. Tammany in the Delaware Water Gap, just beyond the double-overhang stretch of the cliff, which is its steepest and most dramatic part. Ten climbs are recorded here, nine of them traditional and one aid line, in a range running from 5.3 up to the low 5.11s, with most of the weight in the 5.6 to 5.8 band. Many of the best-known lines are two pitches long. Gear is placed from the ground up in the area's traditional style, and the quartzite takes protection well. Descending can be involved, with a rappel that hangs free under a big roof, so bring two ropes and care.",
+  "rock": "quartzite",
+  "review": {"sources": ["https://www.mountainproject.com/area/108124413/the-great-arch", "https://mountainproject.com/area/106359937/mttammany"]}
+ },
+ "nj_practice_wall": {
+  "_expect": {"name": "Practice Wall", "region": "New Jersey"},
+  "blurb": "A small low-angle slab in Allamuchy State Park, Warren County, sitting a short distance left of Tic Tac Toe Wall and reached by a walk of roughly ten minutes. The face is only about 25 feet tall, so this is a place for short leads, top-roping and drilling rope skills rather than big days out. Ten climbs are recorded, mainly trad with a few top-rope lines and one aid route, with free grades from 5.1 to 5.9 and most in the easy to middle range. The wider park cliffs are shaded in summer, which helps on hot days.",
+  "approach_min": 10,
+  "review": {"sources": ["https://www.mountainproject.com/area/106368132/practice-wall", "https://mountainproject.com/area/106368092/allamuchy-state-park"]}
+ },
+ "nj_l_prudden": {
+  "_expect": {"name": "Prudden", "region": "New Jersey"},
+  "blurb": "One of the small crags in Cranberry Hollow, within Allamuchy Mountain State Park near Cranberry Lake. The cliff runs about 45 to 55 feet high, and the ten recorded routes are overwhelmingly top-rope, with a single trad line, spanning 5.7 to 5.10. The wall is steep and featured, but the rock is loose in places and holds can be dirty or mossy, so inspect before you trust anything and keep bystanders out from under the climber. Mature trees shade much of it, which keeps it comfortable on warm afternoons. Reaching the top for anchors takes some effort, and the walk in involves a short bushwhack.",
+  "review": {"sources": ["https://www.mountainproject.com/area/114382637/prudden", "https://www.mountainproject.com/area/114382124/cranberry-hollow"]}
+ },
+ "nj_t_clifford": {
+  "_expect": {"name": "Clifford", "region": "New Jersey"},
+  "blurb": "A small cliff in Cranberry Hollow, part of Allamuchy Mountain State Park country in northwest New Jersey. All ten recorded routes are top-rope, from 5.6 through the 5.11 range, with the largest group at 5.6, so beginners and strong climbers can both find something. Like the rest of the hollow, the rock is lightly climbed, can be loose or breakable, and holds may be covered in moss, grass and dirt, so scrub and test as you go. Setting up top anchors can mean scrambling over unmarked ground. Expect a quiet, rough-edged outing rather than a polished crag.",
+  "review": {"sources": ["https://openbeta.io/area/e3dea5ec-f3a7-5b15-86ea-0ada71f69b27/t-clifford", "https://www.mountainproject.com/area/114382124/cranberry-hollow", "https://www.mountainproject.com/route/115460401/left-ridge"]}
+ },
+ "nj_turtle_back_rock": {
+  "_expect": {"name": "Turtle Back Rock", "region": "New Jersey"},
+  "blurb": "A cluster of boulders and outcrops in South Mountain Reservation, in the Essex County hills near South Orange and West Orange. The dark basalt carries a raised hexagonal pattern across its faces, which gives the formation its shell-like look. Ten bouldering problems are recorded, running from V0 into the V6 to V7 range, with a handful of easy ones, a few around V4 and a couple of hard ones, so it suits a short session for a range of abilities. Bring a pad, since the landings and rock quality are uneven, and watch your footing near the drops by the rocks.",
+  "review": {"sources": ["https://mountainproject.com/area/113542324/turtle-back-rock", "https://waymarking.com/waymarks/wm2BPK_A_Turtles_Back_Rock_Formation"]}
+ },
+ "_conflicts": {
+  "nj_practice_wall": "Stored rock is syenite; the Allamuchy State Park page (https://mountainproject.com/area/106368092/allamuchy-state-park) calls the park's cliffs crystalline granite.",
+  "nj_l_prudden": "Stored rock is syenite; the Cranberry Hollow page (https://www.mountainproject.com/area/114382124/cranberry-hollow) says granite or granitic gneiss.",
+  "nj_t_clifford": "Stored rock is syenite; the Cranberry Hollow page (https://www.mountainproject.com/area/114382124/cranberry-hollow) says granite or granitic gneiss."
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "ny_otter_lake_cliff": {
+  "_expect": { "name": "Otter Lake Cliff", "region": "New York" },
+  "blurb": "A small, quiet crag on the north side of Otter Lake near Caroga Lake in the southern Adirondacks. Nearly all of its 16 climbs are bolted sport lines, plus a single boulder problem, and the tallest reaches only about 45 feet. The moves feel bouldery and the middle of the cliff is cut by roofs. Grades start around 5.9, bunch up in the 5.10s and 5.11s, and top out at one 5.12. The face looks south, so it catches sun, but it stays wet for a while after rain. Reaching it takes a lakeside hike, which keeps crowds away; it suits climbers looking for short, hard sport pitches rather than a destination day.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107020105/otter-lake-cliff", "https://southernadirondackclimber.blogspot.com/2012/05/otter-lake-cliff-caroga-lake-ny.html"] }
+ },
+ "ny_s_the_golden_wall": {
+  "_expect": { "name": "The Golden Wall", "region": "New York" },
+  "blurb": "A single-pitch wall in the Peterskill section of the Shawangunks, near the Gunks' Trapps, made of conglomerate that gives roofs, horizontal cracks and the occasional finger crack. The wall holds 16 climbs, mainly trad lines with a handful of top-rope routes and a few boulder problems. Free climbing runs from about 5.6 up through the 5.9 and 5.10 range, with one or two harder leads above that. Because the cliff is only one pitch tall and the walk from the car is short, it works well for leading practice, setting top-ropes and building gear anchors, with fewer people than the main Gunks cliffs.",
+  "review": { "sources": ["https://www.thetopo.com/crags/the-golden-wall-peterskill-the-gunks-new-york/topos", "https://www.mountainproject.com/area/105896719/peterskill"] }
+ },
+ "ny_moss_cliff": {
+  "_expect": { "name": "Moss Cliff", "region": "New York" },
+  "blurb": "A tall anorthosite face of roughly 500 feet in Wilmington Notch, rising above Route 86 and the Ausable River east of Lake Placid. All 16 climbs are trad, many of them multi-pitch, following crack systems and long free lines. Difficulty starts at 5.9 and climbs through the 5.10s and 5.11s into the 5.12s, 5.13s and 5.14, so this is mainly a cliff for strong, experienced parties. Getting to the base means crossing the river and then following a steep, faint path uphill, and the routes are committing. Start early, and expect a serious day despite the short distance from the road.",
+  "parking_note": "Use the pull-off beside Route 86 below the cliff, marked with a sign for climbers.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105871061/moss-cliff", "https://www.lakeplacid.com/do/activities/moss-cliff"] }
+ },
+ "ny_halfway_cluster_the": {
+  "_expect": { "name": "Halfway Cluster, The", "region": "New York" },
+  "blurb": "A handful of small boulders sitting on the beach at Duck Pond Point, near Cutchogue on Long Island's North Fork. The cluster holds 16 problems, and most are friendly: the bulk sit between V0 and V2, with a few at V4 and V5 and one or two much harder. The hardest line in the wider Duck Pond area is found on the Slot Machine boulder here. It is a scenic seaside session that suits casual bouldering and easier grades, reached by a walk along the sand rather than a trail through woods.",
+  "parking_note": "Drive Route 48 in Cutchogue, turn onto Depot Road, which becomes Duck Pond Road, and continue to where the street dead-ends.",
+  "approach": "From the end of Duck Pond Road, walk west along the beach for roughly half a mile to reach the cluster.",
+  "review": { "sources": ["https://www.mountainproject.com/area/118095286/the-halfway-cluster", "https://www.mountainproject.com/area/116124857/duck-pond-point-boulders"] }
+ },
+ "ny_south_colton": {
+  "_expect": { "name": "South Colton", "region": "New York" },
+  "blurb": "A small, easily reached crag just south of South Colton in St. Lawrence County, at the northern edge of the Adirondacks. It holds 16 climbs, mostly trad with three sport lines, and many can also be top-roped, which makes it handy for a quick session or for introducing newer climbers. Grades run from the easy 5.4 range through plenty of 5.8 and 5.9 to a couple of 5.11 leads. Expect short routes, little traffic, and a short walk down an ATV track and a climbers' path. Rock can be wet or snowy outside the warmer months.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107123406/south-colton", "https://peakvisor.com/climbing/usa/adirondack-mountains.html"] }
+ },
+ "ny_upper_beer_wall": {
+  "_expect": { "name": "Upper Beer Wall", "region": "New York" },
+  "blurb": "The first wall you meet at the Beer Walls, a small canyon beside Route 73 near Chapel Pond in the Keene Valley area of the Adirondacks. Its 16 climbs are almost all trad, with a few top-rope options. Difficulty runs from 5.4 to 5.12, but the weight sits in the 5.10 range, with only a few easier leads and a couple of harder ones. From the top of the pass you scramble down boulders to reach the base. Route names follow a beer theme, and the short walk and moderate grades make it a popular stop for climbers of mixed ability.",
+  "review": { "sources": ["https://mountainproject.com/area/113579005/upper-beer-wall", "https://adirondack.net/keene-valley/beer-walls"] }
+ },
+ "_skipped": {
+  "ny_main_area": "no fetched page is about the Main Area itself; only the parent Canada Lake Boulders pages (Mountain Project, Access Fund) mention it",
+  "ny_keyhole_cliff_area": "no fetched page about the Keyhole Cliff area itself; only the parent Trapps Bouldering page and search snippets"
+ },
+ "_conflicts": {
+  "ny_moss_cliff": "stored rock anorthosite (agrees with https://www.mountainproject.com/area/105871061/moss-cliff) but https://www.lakeplacid.com/do/activities/moss-cliff calls it granite",
+  "ny_upper_beer_wall": "stored rock gneiss; https://adirondack.net/keene-valley/beer-walls calls the Beer Walls granite"
+ }
+}

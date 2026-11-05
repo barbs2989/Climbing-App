@@ -1,0 +1,91 @@
+{
+ "ca_spirit_rock_2": {
+  "_expect": {
+   "name": "Spirit Rock",
+   "region": "California"
+  },
+  "blurb": "Spirit Rock is a small granite dome in the Brush Creek drainage below Sherman Pass, in the Kern River part of the southern Sierra, around 7,500 feet. Its eleven routes are mostly traditional with a couple of bolted lines, and most sit in the 5.10 range, with a few easier and a pair of 5.11s. Some lines run more than one pitch, and new routes have been going up on several sides. The elevation makes it a summer destination, and the surrounding slopes are brushy and open after an old burn, so expect a quiet day out with views rather than crowds.",
+  "review": {
+   "sources": [
+    "https://kernriversierra.com/climb/Spirit_Rock.html",
+    "https://www.snwburd.com/bob/trip_reports/cherry_hill_n1_1.html"
+   ]
+  }
+ },
+ "ca_b_metro_sector": {
+  "_expect": {
+   "name": "Metro Sector",
+   "region": "California"
+  },
+  "blurb": "Metro Sector is a compact sport wall inside Riverside Quarry, in Riverside, at roughly 1,000 feet. All eleven routes are bolted, and most are on the shorter side. The difficulty starts at the low end of 5.10 and mostly lands in the 5.11 range, with a handful of 5.12s and one 5.13, so it suits climbers already comfortable on steep, technical face climbing. Expect balance and precise footwork over long endurance pitches. It can get busy on good days, so manage rope space around the neighbouring sectors.",
+  "approach": "Reach the wall by scrambling up the talus slope from the right-hand end of Slab City, or by following the base of the cliff leftward from the Left of the Roof sector. Footing on the talus needs care.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/105903877",
+    "https://app.advcollective.com/climbing/exploring-the-metro-sector-californias-compact-crag-with-sharp-routes"
+   ]
+  }
+ },
+ "ca_panther_peak": {
+  "_expect": {
+   "name": "Panther Peak",
+   "region": "California"
+  },
+  "blurb": "Panther Peak is a summit of orange towers at about 9,000 feet in Sequoia National Park, on the ridge between Moro Rock and Alta Peak. The routes are long multipitch lines of five or six pitches on the peak's buttresses, mixing cracks with bolt-protected faces, in a steep, featured style. The eleven routes sit between 5.10 and 5.12, mostly 5.11 and 5.12, so this is a serious objective for strong parties. Expect lots of sun, wide views, a long hike in, and a descent by rappel or an easy walk off.",
+  "parking_note": "Leave the car at the Wolverton trailhead in Sequoia National Park, where the hike toward Alta Peak and Panther Gap begins.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/113588201/panther-peak",
+    "https://publications.americanalpineclub.org/articles/13201216052"
+   ]
+  }
+ },
+ "ca_buttress_of_cracks_right_side": {
+  "_expect": {
+   "name": "Buttress of Cracks - Right Side",
+   "region": "California"
+  },
+  "blurb": "This is the right-hand part of the Buttress of Cracks on Suicide Rock, in the Tahquitz and Suicide Rocks area above Idyllwild, at about 6,000 feet. All eleven routes are traditional, and the range is wide: an easy gully line, several 5.8 and 5.9 cracks, a few 5.10 face climbs, and harder tests up to 5.12 on a tricky arete. It is a good mix for a party wanting moderate crack practice beside something steeper. Climbs are mostly single pitches, with walk-off or rappel descents.",
+  "approach": "The approach trail meets the rock close to the right side of the Buttress of Cracks. Routes are on the face directly in front of the trail junction and on the face above and to the right.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107169706/buttress-of-cracks-right-side",
+    "https://www.mountainproject.com/area/105788073/buttress-of-cracks"
+   ]
+  }
+ },
+ "ca_central_gully": {
+  "_expect": {
+   "name": "Central Gully",
+   "region": "California"
+  },
+  "blurb": "Central Gully is one of two gullies at The Fortress, a set of triangular sandstone formations above Sespe Creek off Highway 33 near Ojai, at about 3,600 feet. Its eleven routes are mostly bolted, with a few trad lines, and they are low-angle, comfortable and moderate: mostly easy to mid-grade with a couple of 5.10s at the top end. It feels pleasantly airy and exposed for this part of the coast, and the longest link-ups run several pitches. The neighbouring gully is steeper and looser.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106094658/central-gully",
+    "https://www.mountainproject.com/area/105892652/the-fortress"
+   ]
+  }
+ },
+ "ca_clock_rock": {
+  "_expect": {
+   "name": "Clock Rock",
+   "region": "California"
+  },
+  "blurb": "Clock Rock sits on the eastern edge of Southern Benton Crags in the high desert of the Eastern Sierra, near Bishop, at nearly 8,000 feet. Most of the eleven routes are traditional, with one bolted line, and they cluster around 5.10 with a few easier and three in the 5.11 range. The climbing is slab and featured face, with good friction that rewards balance and footwork over power. Pitches are roughly 60 to 95 feet. It is a quiet, isolated spot without big walls, so bring water and warm layers.",
+  "review": {
+   "sources": [
+    "https://app.advcollective.com/climbing/clock-rock-climbing-guide-eastern-californias-south-facing-challenge",
+    "https://app.advcollective.com/climbing/high-noon-climb-at-clock-rock"
+   ]
+  }
+ },
+ "_skipped": {
+  "ca_camarillo_grove_park_bouldering": "parent area listed as closed to climbing",
+  "ca_bighorn_buttress": "low-reliability pages that contradict stored rock and aspect"
+ },
+ "_conflicts": {
+  "ca_spirit_rock_2": "Stored aspect W; one fetched page (https://app.advcollective.com/climbing/hocus-pocus-a-two-pitch-trad-climb-on-spirit-rock) says south-facing; not used as a source.",
+  "ca_bighorn_buttress": "Stored rock volcanic rock but https://app.advcollective.com/climbing/climbing-bighorn-buttress-high-deserts-ridge-top-challenge says granite; stored aspect E, but https://www.mountainproject.com/area/111683015/bighorn-buttress says east-facing in text and mostly west in sun/shade panel."
+ }
+}

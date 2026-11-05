@@ -1,0 +1,39 @@
+{
+ "ny_suzie_a_boulders": {
+  "_expect": {"name": "Suzie A Boulders", "region": "New York"},
+  "blurb": "A small cluster of ten boulder problems in the Trapps section of the Gunks, a short stroll along the Undercliff road from the Uberfall. Most of the lines are friendly: several easy traverses and a few V0 to V1 classics, then a steady step up through V3 and V4 and a handful of hard, committing problems from V5 to V7. The rock is conglomerate. Landings are poor on most problems, so this is best for climbers who are solid at the grade, with sharp spotters or a big pad.",
+  "approach": "From the Trapps bridge, follow the carriage road toward Skytop and take the Undercliff road north, passing Doug's Roof and the Uberfall problems. The boulders sit close to the Uberfall outhouse and kiosk.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106529580/suzie-a-boulders", "https://mountainproject.com/area/106510895/trapps-bouldering"]}
+ },
+ "ny_6_d_j_e_a": {
+  "_expect": {"name": "D J E A", "region": "New York"},
+  "blurb": "A low-cliff sector on the northwest end of Yankee Ramparts at Powerlinez. It is mostly trad and top-rope, with one aid line, on steep faces split by a prominent crack. Ten climbs run from easy fifth class through the mid-5.10s to a pair of 5.11s, and several have a short, much harder crux section. The rock has seen few ascents and can still be loose or breakable, so keep belayers and bystanders well back from the base. Top-rope anchors come from trees and boulders after a scramble up the left side.",
+  "approach": "Walk the usual trails to the Basilisk wall, then continue west-northwest along the foot of the low cliffs, passing the Army Strong sector.",
+  "review": {"sources": ["https://www.mountainproject.com/area/111436122/d-j-e-a", "https://mountainproject.com/area/111436006/yankee-ramparts"]}
+ },
+ "ny_upper_measles_wall": {
+  "_expect": {"name": "Upper Measles Wall", "region": "New York"},
+  "blurb": "A short crag on Crane Mountain in the Adirondacks, the highest of the small Measles Walls cliffs, found in the woods a walk up from the trailhead. Ten climbs, mostly trad with a couple of sport lines, run from very easy terrain through moderate leads of about 5.6 to 5.9. The faces are low-angle to steep slab, pockmarked gneiss, and the group of walls is rarely busy. A good pick for a short day or a last route before heading down.",
+  "approach": "Walk past the Lower Measles Wall along the Black Arches Wall path and continue a short way east; the trail runs right along the foot of this cliff.",
+  "review": {"sources": ["https://www.mountainproject.com/v/106594361", "https://www.mountainproject.com/area/106594262"]}
+ },
+ "ny_7_sunny_picnics": {
+  "_expect": {"name": "Sunny Picnics", "region": "New York"},
+  "blurb": "A small, possibly multi-level crag at Powerlinez, just east of the Tower Wall and perched above the Stockade wall. It mixes boulder problems in the easy range (VB to V2), a few trad leads and a top-rope, plus a couple of scrambles. The trad climbs are around 5.7 to 5.8. Reaching the lower tier takes a scramble around the east end, which feels exposed and has at least one thoughtful move. Good for a relaxed, mixed-bag outing near the bigger wall.",
+  "approach": "Hike from the Powerlinez trailhead to the foot of the Tower Wall, then head east past the arete at the right-hand end of the wall.",
+  "review": {"sources": ["https://www.mountainproject.com/v/111279235", "https://www.mountainproject.com/area/112412670/tower-wall-area"]}
+ },
+ "ny_stonehenge": {
+  "_expect": {"name": "Stonehenge", "region": "New York"},
+  "blurb": "A quieter bouldering sub-area at Nine Corner Lake in the southern Adirondacks, set a short walk along the shoreline past the dam and east of the main boulder fields. Ten problems range from very easy up to a single V9, with a couple at V6 and a spread of V0 to V4 in between. Traffic is light compared with the bigger blocks near the lake trail, a few boulders are still unclimbed, and several have room for more moderate lines.",
+  "review": {"sources": ["https://southernadirondackclimber.blogspot.com/2012/12/stonehenge-area-at-nine-corners-lake.html", "https://mountainproject.com/area/106229917/nine-corner-lake"]}
+ },
+ "_skipped": {
+  "ny_7_career_guides": "no fetched page about the crag itself; only the parent Books Tier page lists it",
+  "ny_sunkist_boulder": "only one fetched page (the area page); no second page mentions it",
+  "ny_chalked_hold_boulder": "only one fetched page (the area page); no second page mentions it"
+ },
+ "_conflicts": {
+  "ny_upper_measles_wall": "Stored aspect S; https://www.mountainproject.com/v/106594361 calls the wall shaded, while https://www.mountainproject.com/area/106594262 says the Measles Walls get a lot of sun."
+ }
+}

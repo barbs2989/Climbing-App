@@ -1,0 +1,40 @@
+{
+ "ca_indian_cracks": {
+  "_expect": { "name": "Indian Cracks", "region": "California" },
+  "blurb": "Indian Cracks is a small sandstone bouldering spot inside Sanborn County Park, close to Castle Rock in the South Bay part of the Bay Area, at around 3,000 feet. Twelve problems cover cracks, slopers and a few traverses. Most are easy to moderate, V0 to V2, with a handful harder lines topping out around V7. The standout feature is a splitter crack up the front of the main block, and the landings are generally good. The sandstone turns fragile when damp, so it is worth staying off it for days after a storm.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106647627/indian-cracks", "https://www.gaiagps.com/hike/poi/united-states/california/sanborn-county-park/indian-crack-boulders/"] }
+ },
+ "ca_stream_wall_2": {
+  "_expect": { "name": "Stream Wall", "region": "California" },
+  "blurb": "Stream Wall is a compact sport wall on Williamson Rock, beside the Angeles Crest Highway in the Angeles National Forest above the Los Angeles basin. It sits a short way downstream of the Mushroom Boulder and just left of London Wall, and the walk in follows the creek bed. Twelve bolted lines run from an easy scramble-grade start through mostly 5.6 to 5.10, with one 5.11. Routes are shorter toward the left end and taller to the right. The easier grades make it a friendly warm-up wall, and it has a reputation for drawing crowds.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105933506/stream-wall", "https://app.advcollective.com/climbing/butterfingers-a-stream-wall-classic-in-angeles-national-forest"] }
+ },
+ "ca_sky_perch": {
+  "_expect": { "name": "Sky Perch", "region": "California" },
+  "blurb": "Sky Perch is a high sport cliff, around 10,100 feet, perched above the TJ Lake basin near the Mammoth Lakes basin in the Eastern Sierra. Eleven of its twelve routes are bolted and one is trad, and every line falls between 5.10 and 5.12, with most of them in the 5.12 range. The face looks east, so it is in shade from about noon in summer, which lets you pick morning on a cold day or afternoon on a hot one. Expect a long uphill walk of an hour or more to reach it.",
+  "review": { "sources": ["https://www.mountainproject.com/area/126702512/sky-perch", "https://www.mountainproject.com/area/classics/126702512/sky-perch"] }
+ },
+ "ca_resort_point": {
+  "_expect": { "name": "Resort Point", "region": "California" },
+  "blurb": "Resort Point is a small beach bouldering area on the Palos Verdes Peninsula, south of Lunada Bay in the Los Angeles area. The twelve problems are short and easy: mostly beginner-level VB, a few V0 and a pair of V1. The boulders sit right at the waterline below the cliff path, in a sunny, secluded spot, so you scramble down to reach them and should check the tides first. Much of the stone breaks off readily, so test holds gently, and bring a pad and ideally a partner.",
+  "review": { "sources": ["https://mountainproject.com/area/118978907/resort-point", "https://www.mountainproject.com/route/118978919/piglin"] }
+ },
+ "ca_tehipite_dome": {
+  "_expect": { "name": "Tehipite Dome", "region": "California" },
+  "blurb": "Tehipite Dome is a huge, remote dome in Kings Canyon National Park, topping out near 7,700 feet and rising thousands of feet above Tehipite Valley in the Sierra Nevada. Its big south face holds long free and aid routes, some running to two dozen pitches, mostly traditional with a few aid lines. Grades range from an easy ridge walk to a 5.13 line, but most routes sit in the 5.10 to 5.11 range. Expect a committing, wilderness-style outing with a long approach and sparse published beta.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107880765/tehipite-dome?print=1", "https://publications.americanalpineclub.org/articles/13201216325"] }
+ },
+ "ca_puff_boulder": {
+  "_expect": { "name": "Puff Boulder", "region": "California" },
+  "blurb": "Puff Boulder is a large sandstone block on the Promontory coastline near Crescent City, in Del Norte County on the north coast, once part of the neighbouring cliff. A narrow slot through it holds some fun, steep sport routes, while the back side carries some very hard lines. The twelve bolted routes run from easy 5.6 and 5.7 up through 5.10 and 5.11, with several at 5.12 and 5.13 and one 5.14. Climbing is on pockets and edges next to the ocean, with some routes facing the sea.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106069570/puff-boulder", "https://www.mountainproject.com/area/106024808", "https://touchstoneclimbing.com/promontory/"] }
+ },
+ "_skipped": {
+  "ca_the_chicken_coop": "no page found about this crag; the only 'Chicken Coop' bouldering page found is in Colorado, and several searches for Morgan Pass and Chicken Coop found nothing in the Eastern Sierra",
+  "ca_se_boulders": "no fetched page about SE Boulders itself; only a route page naming it and the Split Rocks West and Split Rocks pages, which do not describe it"
+ },
+ "_conflicts": {
+  "ca_resort_point": "stored rock is shale; https://mountainproject.com/area/118978907/resort-point calls it sandstone bouldering at a basalt vista, and https://mountainproject.com/area/118978720/palos-verdes-peninsula mentions soft sandstone and basalt boulders",
+  "ca_stream_wall_2": "stored rock is monzogranite; https://app.advcollective.com/climbing/butterfingers-a-stream-wall-classic-in-angeles-national-forest says limestone"
+ }
+}

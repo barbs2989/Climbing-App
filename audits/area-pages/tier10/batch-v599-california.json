@@ -1,0 +1,47 @@
+{
+ "ca_secret_cliffs": {
+  "_expect": { "name": "Secret Cliffs", "region": "California" },
+  "blurb": "A small single-pitch cliff in the lower part of Pine Creek Canyon above Bishop, sitting at roughly 7,200 feet. Ten routes, nearly all trad with one bolted line, run from 5.9 into the 5.12 range, and the bulk of them sit around 5.11. A big overhanging roof dominates the wall, and the lines are around 60 to 80 feet tall. Because it faces south it catches plenty of sun, which makes it a comfortable pick outside midsummer. The walk-in is short but includes some easy scrambling, and few parties come this way, so it is quiet. Better suited to confident leaders than to beginners.",
+  "parking_note": "Drive 7.7 miles up Pine Creek Road and turn right onto a dirt track opposite the campground. Keep left at the fork and park in the small dirt lot a couple of hundred yards along.",
+  "approach": "The routes lie up and to the right of the lot. A short hike with some easy scrambling leads to the base of the cliff.",
+  "aspect": "S",
+  "review": { "sources": ["https://www.mountainproject.com/area/108915158/secret-cliffs", "https://app.advcollective.com/climbing/secret-cliffs-hidden-california-climbing-with-a-south-facing-roof"] }
+ },
+ "ca_skye_stone": {
+  "_expect": { "name": "Skye Stone", "region": "California" },
+  "blurb": "One big, steeply overhanging block in the Druid Stones group of the Bishop bouldering zone in the Eastern Sierra. The stone is undercut on nearly every side and holds ten problems, most of them between V6 and V8, plus three much harder lines in the V10 to V12 range. Expect powerful, hard-moving climbing on slopers, crimps and undercuts rather than anything for newcomers. Landings are good, but bring a couple of pads and a spotter. It sits well along the trail past the Thunder Wall boulder, so the walk is longer than at most spots in the neighbourhood and it tends to be peaceful.",
+  "approach": "Follow the trail that continues past the Thunder Wall boulder; the stone is a short distance farther east.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108538763/skye-stone-area", "https://www.mountainproject.com/route/106079071/skye-dance?print=1"] }
+ },
+ "ca_six_toe_rock": {
+  "_expect": { "name": "Six Toe Rock", "region": "California" },
+  "blurb": "A smaller formation beside the Castle Dome Trail in Castle Crags, northern California, at about 4,500 feet. Ten routes, mostly trad with two bolted lines, cover 5.8 up to 5.12, clustering at 5.10 and 5.12 with a few easier options. The rock is good quality and the lines follow crack systems that take solid protection, which sets it apart from much of the rest of the park. Most climbs end at a notch just below the summit. The lower rock can grow slick moss and lichen when damp, so pick a dry day. It sees little traffic.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105734408/six-toe-rock", "https://app.advcollective.com/climbing/chocksucker-at-six-toe-rock-a-rugged-trad-challenge"] }
+ },
+ "ca_ba_the_rostrum": {
+  "_expect": { "name": "Ba. The Rostrum", "region": "California" },
+  "blurb": "A tall granite pillar in the Lower Merced River Canyon, just outside Yosemite Valley. Ten climbs, almost all multi-pitch trad plus one aid line, mostly run from 5.10 to 5.12, with one far harder route and a single easy line near 5.6. The face points north, so it stays shady in summer. Expect crack systems, flakes, chimneys and wide finishes on solid rock with plenty of knobs, and a long day with rappels to get down. This is serious terrain for experienced trad parties rather than a beginner outing.",
+  "aspect": "N",
+  "review": { "sources": ["https://mountainproject.com/area/105863819/ba-the-rostrum", "https://gripped.com/profiles/the-north-face-of-the-rostrum-is-one-of-yosemites-best-rock-climbs/"] }
+ },
+ "ca_southwest_face": {
+  "_expect": { "name": "Southwest Face", "region": "California" },
+  "blurb": "A small wall tucked around the left side of Grouse Slab at Donner Summit, off the I-80 corridor near Lake Tahoe. Ten short single-pitch routes, mostly trad with a couple of bolted lines, range from an easy 5.3 up to 5.10, though most fall at 5.8 and 5.9. The climbing is arete-style with balancy moves and decent hands, and the bolted lines are only about 40 feet tall. A brief uphill walk gets you there, so it works well as a quick add-on or a mellow moderate session.",
+  "approach": "From the parking area go uphill and left around Grouse Slab. Once the routes are visible, a thin trail through manzanita climbs for a few minutes to the base.",
+  "approach_min": 5,
+  "review": { "sources": ["https://www.mountainproject.com/v/110538805", "https://app.advcollective.com/climbing/desire-precision-and-poise-on-grouse-slabs-southwest-face"] }
+ },
+ "ca_temple_crag": {
+  "_expect": { "name": "Temple Crag", "region": "California" },
+  "blurb": "A huge alpine formation in the Palisades above Big Pine, reached on foot from the Big Pine Creek trailhead. Ten long routes run from fourth class through 5.6 to 5.10, with four of them at 5.10. The lines follow aretes and buttresses and can stretch past a dozen pitches, so this is full-day, committing terrain. Expect loose scree on the approach and descent, a double rack, and a need for stable summer weather to avoid afternoon storms. Many parties camp near Second Lake to shorten the day. Remote and serious, aimed at experienced alpine trad climbers.",
+  "approach": "Start at the signed trailhead near Glacier Lodge, about 10 miles from town, and follow the North Fork of Big Pine Creek past First Lake to Second Lake, roughly 4.3 miles with 2,300 feet of gain. Above Second Lake, a scree slope on the west side leads up to the foot of the crag.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105804351/temple-crag", "https://app.advcollective.com/climbing/temple-crag-premier-high-sierra-granite-climbing"] }
+ },
+ "_skipped": {
+  "ca_psychedelic_hideaway_the": "only one fetched page is about this alcove (Mountain Project); the Catacombs pages fetched (sendage, Sad Boulders) never mention it",
+  "ca_triangle_boulders": "no fetched page is about the crag itself: only the Beach Area parent page and single-problem route pages describe it, and neither gives rock, approach or character for the Triangle Boulders"
+ },
+ "_conflicts": {
+  "ca_six_toe_rock": "stored rock is diorite; the Chocksucker route page (https://app.advcollective.com/climbing/chocksucker-at-six-toe-rock-a-rugged-trad-challenge) calls the rock granite; the area page (https://www.mountainproject.com/area/105734408/six-toe-rock) names no rock. That page also lists aspect as south in one place and northeast in the text."
+ }
+}
