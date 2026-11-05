@@ -97,7 +97,7 @@ room for side-panel ads later. The phone app keeps its own look.
     pick opens to its right, the inbox staying open; *Choose a conversation* fills the right until then.
   - **The Climbs tab shows its regions as a grid** of cards with their climb counts (the countries
     as buttons when there are two or more) instead of two dropdowns; **Groups** lists its group
-    cards and your group rows two per row. Partner and crew cards are long, so they stay one per row.
+    cards three across, each under a cover band (App's `groupBand`: a colour chosen from the group's name, and its initial — groups have no cover photo), and *Your groups* on For you as the same banded tiles three across (owner 2026-11-04, after Meetup); the *Your groups* tab's rows stay two per row. Partner and crew cards are long, so they stay one per row.
   - **The Calendar has a month view** above its lists (`MonthGrid`): your crews' agreed climbing days and
     group events on a month grid with ‹ › and *Today*; each entry opens what the list would. Crew days and
     events only (owner).
@@ -111,7 +111,7 @@ room for side-panel ads later. The phone app keeps its own look.
     (the app's navy — the one main action), `BTN_SECONDARY` (bordered, plain text), `BTN_LINK` (no box), and
     `BTN_GO` (green, only Accept and Log). Applied to crew join requests, the partner card's Form crew / +
     Invite to crew, the Logbook list's actions and the profile's actions; the profile's four actions sit in
-    ONE row on the website (Edit primary). The ✕ and ← Back stay popupChrome's (owner's look).
+    ONE row on the website (Edit primary). The ✕ and ← Back stay popupChrome's, and are COMPACT (owner 2026-11-04, "way too large on phone and desktop"): `POP_CLOSE` a 36px circle, `POP_BACK` a 36px pill with 14px type, down from 48px; `lib/tapSlop.js` still lands a near touch on them. Groups' header is `quiet` like the other tabs.
   - **Nothing stretches across the page** (owner 2026-10-22): the page column is 700px (720 → 640 on
     2026-10-22, → 700 with the zoom on 2026-11-04), and an
     action button sizes to its label instead of filling the column — `wideCss`' rule for a `width:100%`
