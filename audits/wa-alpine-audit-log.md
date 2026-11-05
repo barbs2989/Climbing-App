@@ -36553,3 +36553,50 @@ three different pitch counts in circulation there's no single authoritative figu
 without a current topo.
 
 Next batch will continue id-ascending from `wa_liberty_bell_beckey_route` (see progress file).
+
+## Batch 506 (pass 8) — 2026-11-05
+
+Checked 8 routes, all on Liberty Bell Mountain: `wa_liberty_bell_freedom_or_death`,
+`wa_liberty_bell_freedom_rider`, `wa_liberty_bell_girl_next_door`,
+`wa_liberty_bell_independence_route`, `wa_liberty_bell_nw_face`,
+`wa_liberty_bell_overexposure`, `wa_liberty_bell_serpentine_crack`,
+`wa_liberty_bell_sidewinder`.
+
+Three confirmed errors, fixed. Overexposure's `pitches` was stored as 4, but Mountain
+Project's route page gives "200 ft (61 m), 2 pitches, Grade II" — and the route's own
+stored waypoint directions already describe "two sustained 30 m pitches of finger cracks
+and liebacking," so the structured field was contradicting the DB's own prose. Freedom
+Rider's `fa` spelled the second ascensionist "Brian Burdo," where Mountain Project and
+OpenBeta both give "Bryan Burdo" — the same spelling the DB already uses correctly on
+Sidewinder's 1991 variation credit, so "Brian" was the one-off inconsistency. Freedom or
+Death's `overview` names a route sharing its first three pitches, "A Servant To Liberty,"
+which does not exist anywhere in the record; the real route is Mikey Schaefer's 2016 "A
+Slave to Liberty" (5.13-, confirmed via AAC Publications), which explicitly "starts up
+the first three pitches of Freedom or Death and then moves right to join Thin Red Line" —
+an exact match for the shared-pitches claim with the wrong name attached.
+
+Clean, nothing to fix: The Girl Next Door's grade/pitches/approach match Mountain
+Project/Wikipedia closely (its FA "Goldie & Butler, 2011" is only single-sourced via
+OpenBeta, but not contradicted by anything found). Northwest Face's FA (Hans Kraus & John
+Rupley, 1956) and free-FA (Sandy Bill, Ron Burgner, Ian Martin & Frank Tarver, 1966) are
+both confirmed via Mountain Project/SuperTopo/The Mountaineers, distinct from Beckey's own
+1946 original route on the same peak. Sidewinder's FA (Pete Doorish & Leigh Nason, 1969)
+and its Bryan Burdo variation credit are both confirmed via Mountain Project, which is what
+settled the Burdo spelling question above.
+
+Flagged for human review, no SQL: (1) Independence Route's FFA year — stored as 1991, but
+a 1992 AAJ first-person trip account implies the free ascent happened in August of that
+report's year, i.e. 1992, while OpenBeta/guide sources say 1991; (2) Independence Route's
+grade — stored 5.12a matches AAJ and a 2014 account, but Mountain Project's current listing
+and a 2009 Jens Holsten post both give 5.12b; sources genuinely disagree on both the year
+and the grade. (3) Independence Route's "Hercan Roofs" named feature could not be
+corroborated against any source and may be fabricated or a misspelling of something else —
+needs a human with a current topo or Beckey's guide in hand. (4) Serpentine Crack's 5.11+
+is on the high end of what Mountain Project/SummitPost give (plain 5.11); only one
+first-hand trip-report blog explicitly says "5.11+". (5) Freedom or Death's own pitch-grade
+breakdown (P2 5.11c, P3 5.12a crux) conflicts with an AAC account of the shared "A Slave to
+Liberty" climb, which describes those same three pitches as 5.10/5.11/5.11 — but OpenBeta
+independently matches the DB's existing P1–P4 breakdown almost verbatim, so this reads as a
+genuine conflict between sources rather than a clear DB error, and wasn't acted on.
+
+Next batch will continue id-ascending from `wa_liberty_bell_sidewinder` (see progress file).

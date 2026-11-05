@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_liberty_bell_beckey_route",
+  "last_processed_id": "wa_liberty_bell_sidewinder",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 505 complete. Continuing id-ascending scope from wa_liberty_bell_beckey_route (next batch starts after it).",
+  "pass_note": "Pass 8 in progress, batch 506 complete. Continuing id-ascending scope from wa_liberty_bell_sidewinder (next batch starts after it).",
   "batches": [
     {
       "batch_number": 1,
@@ -10045,6 +10045,26 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-11-04-batch-505.sql",
       "note": "Le Conte Mountain Northern Aspect's fa misnamed the 1938 FA party's third member 'Ray W. Clough' -- every independent copy of the Wikipedia article (and its mirrors) names him 'Ralph W. Clough'; fixed. Lemah Two's Goatshead Spire checks out exactly against Wikipedia/Beckey (upper of two east-spur towers ~7,000 ft, lower more massive, FA Goodman & Mason Aug 8 1982) -- an early, thin SummitPost snippet looked like it swapped upper/lower but a second, fuller source confirmed the DB's framing instead. Lemah Mountain East Route's FA (Wallace Burr party, July 7 1923) is exact, and its own prose already states the 7,512-7,520 ft elevation range sources disagree on, so no fix needed. Leche La Vaca and Let it Burn (both on Colchuck Balanced Rock) check out on grade/pitches/approach against Mountain Project and stephabegg.com; neither route's named FA party could be independently corroborated, but neither was contradicted either. Liberty Bell Beckey Route's FA (Beckey/O'Neil/Welsh, Sept 27 1946) and 7,720 ft elevation are both exact. Liberty and Injustice for All's FA (Mikey Schaefer, 2014, rope-solo) and ~200m length are confirmed. Flagged for human review, no SQL: Lexington Tower East Face's pitch count and grade are stated differently across the sources themselves (6p from Mountain Project vs 8p/IV from SummitPost vs the DB's 10p/IV), so there is no single authoritative figure to fix toward."
+    },
+    {
+      "batch_number": 506,
+      "date": "2026-11-05",
+      "pass": 8,
+      "route_ids": [
+        "wa_liberty_bell_freedom_or_death",
+        "wa_liberty_bell_freedom_rider",
+        "wa_liberty_bell_girl_next_door",
+        "wa_liberty_bell_independence_route",
+        "wa_liberty_bell_nw_face",
+        "wa_liberty_bell_overexposure",
+        "wa_liberty_bell_serpentine_crack",
+        "wa_liberty_bell_sidewinder"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 5,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-11-05-batch-506.sql",
+      "note": "Three confirmed errors fixed: Overexposure's pitches=4 contradicted by Mountain Project (2 pitches, 200 ft) and by the route's own stored waypoint prose describing \"two sustained 30 m pitches\"; Freedom Rider's fa misspells \"Brian Burdo\" where MP/OpenBeta give \"Bryan Burdo\" (the same spelling the DB already uses correctly on Sidewinder's 1991 variation credit); Freedom or Death's overview names a nonexistent shared route \"A Servant To Liberty\" -- the real route is Mikey Schaefer's 2016 \"A Slave to Liberty\", confirmed via AAC Publications as sharing exactly FoD's first 3 pitches before joining Thin Red Line. Clean/confirmed with no changes: Girl Next Door (grade/pitches/approach match MP/Wikipedia; FA \"Goldie & Butler, 2011\" single-sourced via OpenBeta but not contradicted), Northwest Face (FA Kraus & Rupley 1956 and free-FA credit both confirmed via Mountain Project/SuperTopo/Mountaineers, distinct from Beckey's 1946 original route), Sidewinder (FA Doorish & Nason 1969 and the Bryan Burdo variation both confirmed via MP, settling the Burdo spelling question). Flagged for human review, no SQL: Independence Route's FFA year (1991 stored vs AAJ's trip account implying 1992) and grade (5.12a stored vs MP/a 2009 account giving 5.12b) are both disputed across sources, and its \"Hercan Roofs\" named feature could not be corroborated anywhere and may be fabricated or misspelled; Serpentine Crack's 5.11+ grade is on the high end of what MP/SummitPost give (plain 5.11) with only one trip-report blog supporting the + ; Freedom or Death's own pitch-grade breakdown (P2 5.11c, P3 5.12a crux) conflicts with an AAC account of the shared \"A Slave to Liberty\" climb describing those same three pitches as 5.10/5.11/5.11, though OpenBeta independently matches the DB's own breakdown almost verbatim so this is a genuine source conflict, not a clear DB error."
     }
   ]
 }
