@@ -126,3 +126,27 @@ node scripts/oneoff/apply-owner-qs.mjs research-data/gpx-any-source-wa-2026-11-0
   - **Forbidden "Northeast Face":** our own East Ledges data cites a 1961 AAJ "Northeast Face" report, which contradicts the research's finding that no such route exists.
   - **Reynolds:** the Williams Creek approach variant already exists. Making it primary would also need the approach paragraph rewritten.
 - **Still blocked by the permission check:** every merge and delete in batches 1-4.
+
+## Applied 2026-11-05, second pass
+- **7 new routes** (`owner-qs-new-routes.json`, `scripts/oneoff/insert-owner-qs-routes.mjs`). None was in the catalog: `catalog_find_route` found only same-named routes on OTHER peaks.
+  - Gilbert: Klickton Divide via Warm Lake.
+  - Chikamin: Glacier Lake.
+  - Hagan: North Slopes via Blum Lakes. It is alpine because the glacier crossing is roped.
+  - Cannon: Northwest Ridge.
+  - Ballard: East Face.
+  - Whistler (Okanogan): North Ridge, 5.4.
+  - Price: Northwest Route.
+  - **Pins:** trailhead pins only where an OSM, WTA or USFS page confirms them, or copied from a route already on the peak. Summit pins are copied from a sibling route.
+- **Tracks** (apply.mjs, GPX written from the harvest's points, no `<time>`):
+  - Gilbert 2259534, written. A clean out-and-back, Jul 2023.
+  - Chikamin 2967152, written. A clean out-and-back, Aug 2025.
+  - **Cannon: none.** 3346626 descends by Prusik Pass and Aasgard. 3355753 was written and then ROLLED BACK: its return leg strays 2.1 km from the outbound line, and its far point is 5.7 km out, south of the summit. Both are loops, not the NW Ridge line.
+  - Ballard, Whistler and Price have no confirmed trailhead pin, so their tracks cannot pass the rule.
+  - Greenwood already holds a complete track.
+  - Remmel already holds a complete track.
+- **The Monk** (`scripts/oneoff/add-the-monk-pasayten.mjs`):
+  - New sibling peak `wa_the_monk_pasayten` under the Pasayten. Its coordinate is an area-level point, so `coords_approx` is set.
+  - Its 5 climbs moved there from Cathedral. Each area now holds 5.
+  - "Odine" and "Scabo" corrected to Ondine and Scarbo. The tower's route names come from Ravel's Gaspard de la nuit.
+- **Hagan South Slopes:** the approach now opens by saying it is the traverse approach, and points to the Blum Lakes route for the peak alone.
+- **Held:** Reynolds. Making Williams Creek the primary approach also needs the trailhead pin and paragraph moved together.
