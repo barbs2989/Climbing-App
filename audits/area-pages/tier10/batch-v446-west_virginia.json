@@ -1,0 +1,39 @@
+{
+ "wv_ambassador_buttress": {
+  "_expect": { "name": "Ambassador Buttress", "region": "West Virginia" },
+  "blurb": "A lightly visited trad crag in the New River Gorge, set a little upstream of Bridge Buttress and downslope of the road. It holds around fourteen routes, nearly all placed-gear lines, and the bulk of them fall in the 5.10 to 5.11 range, with a handful of 5.12s at the top end and a couple of 5.7s plus one 5.9 for a gentler start. At least one line is described as runout, so bring a full rack and a steady head. The sandstone and the one-pitch format make it a good change of pace from the crowded gorge walls, if you want company-free climbing at a moderate to hard standard.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105966337/ambassador-buttress", "https://rakkup.com/guidebook/new-river-gorge-rock-climbing/ambassador-buttress/s10499"] }
+ },
+ "wv_burnwood": {
+  "_expect": { "name": "Burnwood", "region": "West Virginia" },
+  "blurb": "A compact roadside boulder circuit tucked beside the Burnwood campsite, facing the park visitor center on the far side of the highway near Fayetteville. The blocks sit just downhill from the picnic shelter, so the walk is about a minute and the landings are mostly flat. Fourteen problems here lean friendly: the majority run from V1 to V3, a few reach V5 or V6, and a single V10 caps the grade range. It suits a short after-work session or a solo outing, and the sandstone blocks are close enough to the shelter that you can mix climbing with a picnic. Broken glass has turned up on the ground, so check your landing before dropping pads.",
+  "review": { "sources": ["https://www.mountainproject.com/area/124337671/burnwood", "https://thetopo.com/crags/burnwood-boulders/description"] }
+ },
+ "wv_sunshine_buttress": {
+  "_expect": { "name": "Sunshine Buttress", "region": "West Virginia" },
+  "blurb": "A small orange sandstone prow on the river-left side of the New River Gorge, easy to spot from the bridge and reached with a short scramble from a roadside pullout. Fourteen routes, mostly sport with three trad lines, concentrate around the prow. The grades skew hard: a single 5.9, one 5.10 and one 5.11 sit beneath a stack of 5.12s and 5.13s, with one route near the 5.14 mark, so it rewards strong climbers far more than newcomers. One side of the prow catches morning light while the other gets the afternoon, and with so few easy lines the wall rarely feels busy. A scramble leads to the top, where the views over the gorge are excellent.",
+  "review": { "sources": ["https://mountainproject.com/area/105944414/sunshine-buttress", "https://www.cordee.co.uk/new-river-rock-vol-1-cca835.html"] }
+ },
+ "wv_upper_teay_s_boulders": {
+  "_expect": { "name": "Upper Teay's Boulders", "region": "West Virginia" },
+  "blurb": "Smooth gray sandstone boulders strung in a line down a hillside on the rim side of the New River Gorge, close to the road and only a few minutes from a pullout. Fourteen problems range from V0 up to V7: the Cloud and King Bolete blocks make an easy-to-moderate warm-up circuit, while the harder lines, including a well-regarded V6, sit lower on the slope. The blocks pick up plenty of direct sun and run warm in summer, with tree cover offering some shade in early fall, and moss and drips from plants on top mean they can need a day or two to dry after rain. Cool, clear winter days are the sweet spot.",
+  "review": { "sources": ["https://mountainproject.com/area/124969916/upper-teays-boulders", "https://thetopo.com/crags/upper-teay-s-boulders/description"] }
+ },
+ "wv_gun_wall": {
+  "_expect": { "name": "Gun Wall", "region": "West Virginia" },
+  "blurb": "A sport wall at Summersville Lake, found by taking the right-hand branch of the trail at the foot of the metal staircase, in the same direction as the Coliseum and Pirate's Cove. All thirteen routes are bolted single pitches and sit in a tight band of difficulty: eight in the 5.10 range and five at 5.11, which makes it a good place to settle in if you are comfortable on moderate sandstone and want a string of consistent leads. The lake rock is more featured and more tightly bolted than the gorge. Watch for copperheads on the trails in summer.",
+  "review": { "sources": ["https://rakkup.com/guidebook/meadow-river-summersville-lake-gauley-river-rock-climbing/gun-wall/s10859", "https://mountainproject.com/area/108468798/summersville-lake-main"] }
+ },
+ "wv_ship_s_prow": {
+  "_expect": { "name": "Ship's Prow", "region": "West Virginia" },
+  "blurb": "A low, overhanging boulder in the Tomb Raider area of Upper Rock City at Coopers Rock State Forest. The approach follows the Rattlesnake Trail from the main lot, passes the big Tomb Raider block, and finds the prow on the right. Thirteen climbs mix mostly boulder problems, from V2 into the V7 range, including a lip traverse and a fingery roof, with a few top-rope and one trad line on the taller right side that run from very easy up to about 5.10. Forest shade and bugs are typical for the park. Keep off wet rock, and brush your holds when you finish.",
+  "review": { "sources": ["https://www.mountainproject.com/area/124874667/ships-prow", "https://www.sportrock.com/post/first-timer-s-guide-to-cooper-s-rock"] }
+ },
+ "_skipped": {
+  "wv_9_dam_good_boulders": "no fetched page about this sub-area itself; only a one-line count (14 problems) on the Camp 70 parent page, and searches found nothing else",
+  "wv_allusionist_boulder": "no fetched page about this boulder itself; pages only list it as a sector or a waypoint under Death Block"
+ },
+ "_conflicts": {
+  "wv_ship_s_prow": "stored rock is sandstone but https://www.sportrock.com/post/first-timer-s-guide-to-cooper-s-rock describes Coopers Rock bouldering as gritstone; stored value left unchanged"
+ }
+}
