@@ -36950,3 +36950,58 @@ latter is at least corroborated by a Mountain Project listing crediting Faulkes/
 on firmer footing than the former); left as-is per audit rules against flagging what can't be verified.
 
 Next batch will continue id-ascending from `wa_mount_adams_south_climb` (see progress file).
+
+## Batch 514 (pass 8) — 2026-11-05
+
+Checked 8 routes, continuing id-ascending past Mount Adams and crossing onto Mount Baker (with a
+one-off stop at Mount Anderson in the Olympics, in between alphabetically): `wa_mount_adams_wilson_glacier_headwall`,
+`wa_mount_anderson_eel_glacier`, `wa_mount_baker_boulder_glacier`, `wa_mount_baker_boulder_park_cleaver`,
+`wa_mount_baker_cockscomb_ridge`, `wa_mount_baker_coleman_deming`, `wa_mount_baker_coleman_headwall`,
+`wa_mount_baker_coleman_ski_descent`.
+
+No confirmed errors, no SQL file. Six clean: Coleman-Deming's `fa` ("Edmund Coleman and party, August
+17, 1868, first ascent of Mount Baker") is strongly confirmed by HistoryLink, the USGS CVO historical
+account and Wikipedia — our value correctly names only Coleman rather than the full party, whose
+individual membership varies by source (Tennant/Stratton/Ogilvy vs. Eldridge/Bennett depending on the
+account). Boulder-Park Cleaver's `fa` ("Joe Morovits and party, July 2, 1894") matches a Mountain
+Project listing for the same route exactly. Cockscomb Ridge's `fa` ("Chuck Murley, John Musser, and
+Klindt Vielbig, July 4, 1961") is confirmed on both climbers and year by a Mountain Project listing for
+the same route; a SummitPost photo caption's conflicting, unattributed "July 4, 1960" names no climbers
+and is treated as an uncorroborated outlier, not grounds for a fix, the same way this audit has treated
+single-source elevation outliers in prior batches. The Coleman Headwall's waypoints correctly state
+that Glacier Creek Road (FR 39) washed out in December 2025 and reopened to vehicles in August 2026 —
+confirmed by a Cascadia Daily News report dated August 20, 2026 — and its `fa` ("Ed Cooper, Phil
+Bartow, Donald Grimlund, David Nicholson, August 1957") could not be confirmed or refuted by any source
+found, though Cooper is independently documented as an active Cascades climber in exactly this era
+(a 1959 AAJ report has him on a nearby Black Butte ice wall). Mount Anderson's Eel Glacier `fa` ("1920
+by Fairman B. Lee and party of 13") is confirmed by Wikipedia and a Mountaineers history talk (both
+give a party of 13; one dates it August 4-5, 1920), its West Peak elevation (~7,365 ft, the massif's
+true high point) and East Peak elevation (~7,323-7,330 ft) both match current sources, and its claim
+that the Dosewallips Road has been closed to vehicles since 2002 is confirmed. The nearly-bare Coleman
+Ski Descent's one substantial fact — passing the former Kulshan Cabin site at "about two miles and
+4,700 ft" — matches WTA and TopoQuest almost verbatim (4,645-4,700 ft, ~2 mi). Wilson Glacier Headwall
+has no `fa` stored (null, nothing to check there); its overview's naming history (Rusk naming the
+glacier, and Roosevelt Cliff, after Woodrow Wilson/WWI) and the glacier's ~10,800 ft origin both match
+Wikipedia-family sources, though the overview's specific claim that Rusk named them in 1919 rests only
+on weak kids'-encyclopedia mirrors giving 1918 instead — not solid enough either way to flag or fix.
+
+Flagged for human review, no SQL (neither has a confirmed replacement value): (1)
+`wa_mount_baker_boulder_glacier`'s `fa` ("LaConnor Expedition, 1891") has its year independently
+confirmed — Wikipedia dates Boulder Glacier's first climb to August 24, 1891 — but no source found
+names a "LaConnor" party on Mount Baker at all; the only documented 1891 Baker expedition found
+(Valentine V. Lowe's party of eight, via Glacier Creek/the north fork Nooksack) explicitly used a
+different route and is elsewhere called the mountain's second ascent, so it doesn't corroborate the
+Boulder Glacier claim either. (2) `wa_mount_anderson_eel_glacier`'s overview states that the Anderson
+massif's three glaciers (Eel, Anderson, Hanging) each drain to a different body of water, naming Puget
+Sound via the Dosewallips, the Pacific via the Quinault, and the Strait of Juan de Fuca via the Hayes.
+One source corroborates a three-way hydrographic divide for the massif in general terms, without tying
+it to specific glaciers, but a different source's specific per-glacier breakdown has both the Eel and
+Hanging glaciers draining via the Dosewallips and makes no mention of the Hayes River or the Strait of
+Juan de Fuca at all — not enough agreement either way to call the specific glacier-to-river mapping
+confirmed or wrong.
+
+Network note: `en.wikipedia.org`, `www.summitpost.org`, `www.historylink.org`, `gethighonaltitude.com`
+and `mountainproject.com` were all DNS-blocked from this session for direct page fetches this run
+(consistent with prior batches); WebSearch snippets covered everything needed this batch.
+
+Next batch will continue id-ascending from `wa_mount_baker_coleman_ski_descent` (see progress file).
