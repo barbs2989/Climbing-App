@@ -1,0 +1,75 @@
+{
+ "co_unicorn_valley": {
+  "_expect": {
+   "name": "Unicorn Valley",
+   "region": "Colorado"
+  },
+  "blurb": "Unicorn Valley is a compact pocket of the Devil's Head climbing zone in the Rampart Range of the South Platte, west of Sedalia. It holds 14 routes, nine bolted and five trad, mostly between 5.6 and 5.9 with a single route in the 5.11 range. The terrain is slabby, and the granite here tends to be of lesser quality than the best walls nearby, so expect it to appeal more to climbers filling out a day at Devil's Head or looking for easier mileage than to those chasing hard, high-end lines. Helmets are sensible given how lightly the area is traveled.",
+  "review": {
+   "sources": [
+    "https://rakkup.com/guidebook/south-platte-devils-head-rock-climbing/unicorn-valley/s21519",
+    "https://www.mountainproject.com/area/105744261"
+   ]
+  }
+ },
+ "co_shadowboxing_boulder": {
+  "_expect": {
+   "name": "Shadowboxing Boulder",
+   "region": "Colorado"
+  },
+  "blurb": "Shadowboxing Boulder is a single large block, and the biggest cluster of problems in the Emanon bouldering zone of the Rampart Range, reached from Rampart Range Road in the South Platte. It carries 14 problems on granite, with the lines running from slab to overhanging. Difficulty runs from V0 up to V7: a good handful of easy to moderate problems between V0 and V3, a few in the V5 range and one standout much harder. It is the first boulder met on the usual walk in, so it works well as a warm-up stop or a main objective for a short session.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/112006510/shadowboxing-boulder",
+    "https://www.mountainproject.com/area/112006463/emanon"
+   ]
+  }
+ },
+ "co_rifleman_phillips_bouldering": {
+  "_expect": {
+   "name": "Rifleman Phillips Bouldering",
+   "region": "Colorado"
+  },
+  "blurb": "Rifleman Phillips Bouldering is a quiet patch of forested boulders inside Golden Gate Canyon State Park, in the foothills west of Golden at roughly 9,100 feet. The walk in is short, around five minutes, and the landings are flat. There are 14 problems, with the weight in the V4 to V5 range, a pair of easier ones near V1, and a few harder sit starts reaching V8. Locals suggest the area holds more problems than are currently listed. The setting is peaceful and shady under trees, so it is best suited to climbers who like moderate to hard problems away from crowds.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/117636408/rifleman-phillips-bouldering",
+    "https://mountainproject.com/area/105744472/golden-gate-canyon-sp"
+   ]
+  }
+ },
+ "co_the_wind_tunnel": {
+  "_expect": {
+   "name": "The Wind Tunnel",
+   "region": "Colorado"
+  },
+  "blurb": "The Wind Tunnel is a steep, committing crag high above US 34 in Big Thompson Canyon, about 4 miles down-canyon from Estes Park at nearly 8,000 feet. It shares its hillside with a neighboring crag called Conehead. The 14 routes are a mix of bolted lines and trad, mostly needing a little gear, and every one of them is 5.10 or harder: three at 5.10, three at 5.11, and four each at 5.12 and 5.13. The walls face southwest and west. Allow roughly half an hour to three-quarters of an hour of steep, cairned uphill hiking to reach it, so it suits strong, fit climbers.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/122568865/the-wind-tunnel",
+    "https://www.mountainproject.com/area/105744364/big-thompson-canyon"
+   ]
+  }
+ },
+ "co_x_rock_2": {
+  "_expect": {
+   "name": "X Rock",
+   "region": "Colorado"
+  },
+  "blurb": "X Rock is a sandstone cliff just north of Durango, close enough to town that it is the busiest and most convenient crag locally, with a short, flat walk in. It is named for a natural X on its face. The climbing covers slab, crack, sport, trad, top rope and a little bouldering, with routes mostly from 5.8 to 5.12, some easier ones, and a V7 problem. The soft stone takes gear well, which makes it a popular place for guides to teach beginners and for climbers moving up to leading.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/105820409/x-rock",
+    "https://www.durangotrails.org/trails/animas-mountain-trail-system/x-rock-climbing-area/"
+   ]
+  }
+ },
+ "_skipped": {
+  "co_south_of_heaven": "no fetched page describes a South of Heaven wall at The Bank; the only page found is a Joshua Tree route of the same name",
+  "co_redpoint_ridge_bouldering_wall": "page describes an artificial playground wall, not a crag",
+  "co_zuma_rock": "second page never names Zuma Rock itself"
+ },
+ "_conflicts": {
+  "co_redpoint_ridge_bouldering_wall": "stored rock is sandstone but https://www.mountainproject.com/area/121099699/redpoint-ridge-bouldering-wall describes an artificial playground-structure wall"
+ }
+}

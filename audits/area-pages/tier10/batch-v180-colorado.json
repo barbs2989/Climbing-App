@@ -1,0 +1,44 @@
+{
+ "co_cactus_cliff_climbs": {
+  "_expect": { "name": "Cactus Cliff Routes", "region": "Colorado" },
+  "blurb": "A sun-soaked limestone face above the hairpin on Shelf Road near Canon City, this stretch of Cactus Cliff holds ten routes: eight bolted lines and two trad climbs. The grades cluster in the 5.11 range, with one easier 5.7 and 5.8 at the low end and a single 5.12 and 5.13 at the top, so it suits climbers already comfortable on steeper, sustained sport pitches. Its southern exposure makes it a good pick on cold days and a poor one in summer heat. The cliff as a whole is known for a wide spread of difficulty, and the walk in follows a trail beneath the wall.",
+  "parking_note": "Leave the car in the large day-use lot at The Bank on Shelf Road. Do not park along the road itself.",
+  "approach": "A trail leaves the Bank lot, drops across the canyon floor, passes under a neighboring wall and then runs along the base of the cliff.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105745349/cactus-cliff", "https://climbinghouse.com/shelf-road-rock-guide/"] }
+ },
+ "co_d_right_of_wizard_s_gate": {
+  "_expect": { "name": "Right of Wizard's Gate", "region": "Colorado" },
+  "blurb": "This section of the Lower Great Face sits high above Estes Park Valley, reached from the Twin Sisters trail off Highway 7. It holds ten routes, seven bolted and three trad, mostly two to four pitches long. Grades run from 5.7 to 5.11, with the bulk falling between 5.8 and 5.10, so it is a fair choice for a mid-grade party wanting a longer day. At roughly 10,000 feet the rock sheds loose pieces now and then, as alpine faces do, so helmets are a good idea and care is needed below the wall. Expect a forested uphill hike to reach the base.",
+  "parking_note": "Drive south from Estes Park on Highway 7 past Lily Lake, then turn onto the gravel road with switchbacks and leave the car near its upper end at the Twin Sisters trailhead.",
+  "approach": "Follow the Twin Sisters trail to about the third switchback, then take a climbers' path northeast up through the woods and wooded talus toward the Central Buttress and across to the routes.",
+  "review": { "sources": ["https://mountainproject.com/area/122624164/right-of-wizards-gate", "https://www.mountainproject.com/area/105746119/lower-great-face"] }
+ },
+ "co_amphitheater_the_2": {
+  "_expect": { "name": "The Amphitheater", "region": "Colorado" },
+  "blurb": "A shaded, tree-cooled bowl on the steep north side of Mt. Cutler in North Cheyenne Canyon, above Colorado Springs. Ten routes are listed, mostly bolted sport lines with one aid route and one top-rope. Grades run from 5.8 to 5.13, with the largest group around 5.11, and the climbing is known for edges and arete moves. Because it stays cool, summer is an appealing time to visit. The hike up is short but steep and loose, and stones can fall from the slope above, so a helmet is wise. Some lines are rappel descents that need two ropes.",
+  "parking_note": "Park roughly 0.85 miles up the canyon road, in a pullout a short distance past the bridge, then cross the road on foot.",
+  "approach": "Pick up the trail on the east side of the road, climb the steep scree slope, take the right-hand branch into the first side canyon and follow it to its end beneath the cliffs.",
+  "aspect": "N",
+  "review": { "sources": ["https://www.cheyennecanon.org/collections/the-amphitheater", "https://www.mountainproject.com/v/105783210"] }
+ },
+ "co_swan_mountain_wall": {
+  "_expect": { "name": "Swan Mountain Wall", "region": "Colorado" },
+  "blurb": "A small bouldering and top-rope wall beside Swan Mountain Road near Dillon, at about 9,300 feet. Of the ten listed lines, six are boulder problems, three are top-ropes and one is trad. The problems are mostly easy, from VB to V2, with a lone V7 standing out, while the short roped lines run from 5.3 to 5.10. The wall is about 100 feet long and good for traversing and endurance laps. It sits in shade and stays cool in summer, making it a pleasant escape from heat. A short trail leads to it, and other scattered boulders nearby reward exploring.",
+  "parking_note": "Park just before the gate at the Prospector and Windy Point campground entrance on Swan Mountain Road, a little over two miles from the Dillon end.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105925264/swan-mountain-wall", "https://www.cmc.org/education-adventure/trips/routes-places/prospector-bouldering-trail"] }
+ },
+ "co_the_crestones": {
+  "_expect": { "name": "The Crestones", "region": "Colorado" },
+  "blurb": "A cluster of jagged high peaks in the Sangre de Cristo Range of south-central Colorado, including Crestone Peak and Crestone Needle, two of the state's tougher fourteeners. Ten routes are listed, mostly alpine lines with a few trad climbs and a single ice route. The terrain spans Class 3 to Class 5 scrambling and 5.7 to 5.8 roped climbing, plus one WI4. This is serious, remote country: a long approach, a high camp for most parties, rockfall on the faces and a helmet advised throughout. Summer is the usual window, and the traverse between the two summits is a famous, committing linkup.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105744744/the-crestones", "https://www.14ers.com/php14ers/14er.php?peakid=10007"] }
+ },
+ "_skipped": {
+  "co_warm_up_boulder_13": "no fetched page about this boulder; searches only returned Horsetooth Rotary Park pages for other boulders",
+  "co_the_pot_holes_area": "only the Minnesota Pot Holes page was fetchable; no fetched page about the Escalante Canyon crag (thecrag 403)",
+  "co_lyons_rock_submitted_as_glacier_view_dome": "no page found for Lyons Rock or Glacier View Dome; searches returned only general St. Vrain canyon pages"
+ },
+ "_conflicts": {
+  "co_amphitheater_the_2": "Stored rock is granite; https://www.cheyennecanon.org/collections/the-amphitheater says granite but https://www.mountainproject.com/v/105783210 says sandstone. Rock not named in blurb.",
+  "co_d_right_of_wizard_s_gate": "Stored rock is metamorphic rock; https://mountainproject.com/area/122624164/right-of-wizards-gate describes a granite face. Rock not named in blurb."
+ }
+}

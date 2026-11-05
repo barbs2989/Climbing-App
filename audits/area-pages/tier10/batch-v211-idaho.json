@@ -1,0 +1,28 @@
+{
+ "id_06_rock_of_ages": {
+  "_expect": { "name": "Rock of Ages", "region": "Idaho" },
+  "blurb": "Rock of Ages is a steep limestone face of roughly 160 feet in the Mortal Earth zone of the Fins, in central Idaho. All twelve climbs are bolted, and the style is technical and sustained, with runnels, pockets, pinches and small edges, plus chert knobs on the second pitches of several lines. Single pitches usually take 10 to 17 bolts. The grades lean toward the middle: a handful of easier lines from 5.7 to 5.9, six at 5.10, and two at 5.11. It is a short walk beyond Psychedelic Rock, so it pairs well with that neighbour for a day of moderate sport climbing.",
+  "review": { "sources": ["https://mountainproject.com/area/113267872/rock-of-ages", "https://www.mountainproject.com/area/113384606/mortal-earth"] }
+ },
+ "id_13_wonderwall": {
+  "_expect": { "name": "Wonderwall", "region": "Idaho" },
+  "blurb": "Wonderwall sits on the north side of Stone Temple in the Mortal Earth zone of the Fins, central Idaho. It offers twelve sport lines on limestone: a prominent grey slab at the left end that climbs technically on thin rock, steeper chert-knob terrain in the middle and right, and a tall pillar at the far right. Most routes fall in the 5.10 range, with one easy warm-up, a 5.8, one 5.11 and one 5.12. Be aware of a long water groove between the wall and Stone Temple, where loose rock can drop and debris collects at the bottom, so keep packs and belayers away from it.",
+  "review": { "sources": ["https://www.mountainproject.com/area/115137637/wonderwall", "https://www.mountainproject.com/area/113384606/mortal-earth"] }
+ },
+ "id_myrtle_2_aka_turtle_arches": {
+  "_expect": { "name": "Myrtle 2 aka \"Turtle Arches\"", "region": "Idaho" },
+  "blurb": "Turtle Arches is a big dome of 500 to 700 feet in the Selkirk Mountains of Boundary County, North Idaho, just north of the neighbouring Myrtle's Turtle. Most lines face east to southeast. The twelve routes are mainly multi-pitch affairs of two to four pitches, mixing gear climbing with bolted slab sections and a few top-rope or sport options. Four climbs sit around 5.8, six around 5.10, and two reach 5.11. The approach is a real expedition, with a long road drive and a trail followed by a bushwhack across a creek, so this is a commitment day suited to parties comfortable on mountain terrain.",
+  "review": { "sources": ["https://mountainproject.com/area/110781075/myrtle-2-aka-turtle-arches", "https://www.mountainproject.com/v/in-over-my-head/110782124"] }
+ },
+ "id_crack_house_the": {
+  "_expect": { "name": "Crack House, The", "region": "Idaho" },
+  "blurb": "The Crack House is a heavily featured wall off the northern tip of Castle Rock in south Idaho, facing northwest and staying shaded until early afternoon. Cracks dominate, but face holds and horns between them add variety, and the abundance of lines can make it tricky to match a specific route to the rock. Ten of the twelve climbs are gear routes, with just two bolted lines. Eight are moderate, from 5.7 to 5.8, and four are 5.10. Expect a good place for crack practice and a good option on warm days, while the shaded face is less suited to cold weather.",
+  "review": { "sources": ["https://mountainproject.com/area/105817261/the-crack-house", "https://rakkup.com/guidebook/castle-rocks-idaho-climbing/north-spur---northwest/s14416"] }
+ },
+ "_skipped": {
+  "id_lower_central": "only one fetched page (the parent Projects bouldering area); nothing about this sub-area itself, so could not fetch two pages",
+  "id_global_tetrahedron": "no fetched page about the sector itself (only a single-problem page and the parent bouldering page with a sector name), could not fetch two pages",
+  "id_roadside_rock": "only one fetchable page (Mountain Project); the second guide page returned 403, could not fetch two pages",
+  "id_presidential_pin": "parent Northern Pins page only gives a route count; no fetched page about the pin itself (guide PDF unreadable), could not fetch two pages"
+ }
+}

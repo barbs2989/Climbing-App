@@ -38,8 +38,44 @@ name: Render guards
 on:
   pull_request:
     branches: [main, master]
+    paths-ignore:
+      # Files no walk reads and the built app does not contain. A PR or merge touching ONLY
+      # these cannot change what any screen renders, so walking it costs ~16 browser jobs
+      # against the PRODUCTION database for no new evidence. Measured 2026-11-04/05: about a
+      # third of PRs were data/audit/doc-only, and the walks are the load that stalled the
+      # project (pg_stat_statements: the signed-in boot RPCs ran ~1,760 times in 3.6 h, all
+      # CI). Verified then: no walk script, nor anything it imports, reads these paths or any
+      # .md file; the app names them only in comments. Everything else (app code, lib/, src/,
+      # other scripts/, supabase/, package*.json, .github/) still runs every walk. Branch
+      # protection requires only `build`, so a skipped walk blocks nothing. The push list
+      # below is the SAME list: keep them identical.
+      - "audits/**"
+      - "research-data/**"
+      - "research/**"
+      - "catalog/**"
+      - "enrichment-wip/**"
+      - "gear-research/**"
+      - "docs/**"
+      - "**.md"
+      - "scripts/oneoff/**"
+      - "scripts/pipeline/**"
+      - "scripts/enrich/**"
+      - "scripts/audit-*.mjs"
   push:
     branches: [main, master]
+    paths-ignore:
+      - "audits/**"
+      - "research-data/**"
+      - "research/**"
+      - "catalog/**"
+      - "enrichment-wip/**"
+      - "gear-research/**"
+      - "docs/**"
+      - "**.md"
+      - "scripts/oneoff/**"
+      - "scripts/pipeline/**"
+      - "scripts/enrich/**"
+      - "scripts/audit-*.mjs"
 
 concurrency:
   # On a PR, group by branch so a new push supersedes the run it replaces. On a push,

@@ -1,0 +1,87 @@
+{
+ "md_dan_s_rock": {
+  "_expect": {
+   "name": "Dan's Rock",
+   "region": "Maryland"
+  },
+  "blurb": "A small bouldering area under the cliffs of the Dan's Rock overlook, high on Dan's Mountain in far western Maryland, close to the highest ground in Allegany County. The rock is a sandstone outcrop. Eighteen problems are on record, running from very easy up to about V3, with most of them sitting in the low to middle part of that range. Much of the climbing is directly beneath the fire tower. Expect a beginner-friendly spread rather than a hard-test venue. Broken glass, sharp debris and slick spray paint are common underfoot, so watch your landings and bring a pad you trust.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/118798220/dans-rock",
+    "https://www.mgs.md.gov/geology/geology_tour/dans_rock.html"
+   ]
+  }
+ },
+ "md_outlook_rocks": {
+  "_expect": {
+   "name": "Outlook Rocks",
+   "region": "Maryland"
+  },
+  "blurb": "A quiet corner at the upstream end of Carderock, where four separate schist outcrops stand along the Potomac on a bend in the river. The faces are blunt and fairly compact. It is mostly adventurous top-roping and bouldering on short lines, with a few trad leads such as Jackknife and Guillotine. Grades run from easy beginner routes through the middle 5.x range, with one or two much harder pitches, plus boulder problems from easy to difficult. It sees far fewer people than the main Carderock cliffs, which makes it a decent place to escape a crowd. As the water rises, some of the outcrops become harder to reach.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/116716610/outlook-rocks",
+    "https://rakkup.com/guidebook/carderock-climbing/outlook-rocks/s18021"
+   ]
+  }
+ },
+ "md_bulges_the": {
+  "_expect": {
+   "name": "Bulges, The",
+   "region": "Maryland"
+  },
+  "blurb": "A small cliff of roughly sixty feet on the Maryland bank of the Potomac at Great Falls, split into two parts called the Little Bulge and the Great Falls Bulge. It can be spotted from the Virginia side of the river but rarely has climbers on it. Seventeen routes are recorded, nearly all of them trad or top-rope, with a couple of scrambles. The grades span easy fourth-class terrain up through the 5.9 to 5.10 range, with a single route in the 5.11s. The walk in follows the canal towpath and then the Billy Goat Trail, so allow some time and expect uneven footing.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106890491/the-bulges",
+    "https://mountainproject.com/area/106890457/great-falls-maryland-side"
+   ]
+  }
+ },
+ "md_south_bank_dirty_ernie": {
+  "_expect": {
+   "name": "South Bank - Dirty Ernie",
+   "region": "Maryland"
+  },
+  "blurb": "A boulder cluster on the south side of the creek at Northwest Branch, in the wooded park just north of Washington, DC. Seventeen problems are recorded, from a few easy warm-ups through a mid-grade block to a strong top end reaching about V11, so it suits strong boulderers more than beginners. The harder lines gather around the namesake Dirty Ernie's boulder, where several problems sit in the upper V8 to V10 range. Families walk the trails here on weekends, and some holds are starting to polish from traffic, so brush off chalk and keep shoes clean.",
+  "review": {
+   "sources": [
+    "https://thetopo.com/crags/northwest-branch/routelist/dirty-ernie-s",
+    "https://www.mountainproject.com/area/107891974/northwest-branch"
+   ]
+  }
+ },
+ "md_overlook_the": {
+  "_expect": {
+   "name": "Overlook, The",
+   "region": "Maryland"
+  },
+  "blurb": "North of Baltimore, this little crag sits on the Gunpowder River's southern bank, in the Hereford part of Gunpowder Falls State Park. Sixteen easy to moderate routes are recorded, nearly all trad with a couple of top-ropes, running from about 5.3 to 5.9 with the bulk around 5.7 and 5.8. The main wall faces north and stays shady, which keeps it pleasant in warm weather. The setting is undeveloped and adventurous with no bolts, and some of the nearby rock is loose, so wear a helmet. It is a roughly twenty minute walk along the river trail.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/114078015/the-overlook?print=1",
+    "https://mountainproject.com/area/114077995/gunpowder-falls-hereford-area"
+   ]
+  }
+ },
+ "md_secret_garden": {
+  "_expect": {
+   "name": "Secret Garden",
+   "region": "Maryland"
+  },
+  "blurb": "A compact vertical boulder along the south bank trail at Northwest Branch, just before the large blue pipeline, in the park north of Washington, DC. Fifteen problems wrap around it, running from a gentle V0 to a hard V7 or V8, with many variations, eliminates and contrived lines in the usual style of the area. The landing is flat and the height moderate, which makes it a good place to try hard moves without the commitment of the taller boulders nearby. The easier problems are friendly for newer boulderers, while the harder ones take real power.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/125569342/secret-garden",
+    "https://www.mountainproject.com/route/116772218/public-garden"
+   ]
+  }
+ },
+ "_skipped": {
+  "md_union_walls": "no fetched page about the crag itself (only the parent Maryland Heights page; thecrag fetch 403)",
+  "md_skink_rock": "only one fetchable page about the crag (Mountain Project); thecrag, summitpost and guide pages returned 403 or had no description"
+ },
+ "_conflicts": {
+  "md_outlook_rocks": "Stored grades include boulder problems in the V11 and V12 buckets, but https://www.mountainproject.com/area/116716610/outlook-rocks lists the hardest boulder at V7."
+ }
+}
