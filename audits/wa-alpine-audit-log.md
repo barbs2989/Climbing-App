@@ -36562,18 +36562,25 @@ Checked 8 routes, all on Liberty Bell Mountain: `wa_liberty_bell_freedom_or_deat
 `wa_liberty_bell_overexposure`, `wa_liberty_bell_serpentine_crack`,
 `wa_liberty_bell_sidewinder`.
 
-Three confirmed errors, fixed. Overexposure's `pitches` was stored as 4, but Mountain
+Two confirmed errors, fixed. Overexposure's `pitches` was stored as 4, but Mountain
 Project's route page gives "200 ft (61 m), 2 pitches, Grade II" — and the route's own
 stored waypoint directions already describe "two sustained 30 m pitches of finger cracks
 and liebacking," so the structured field was contradicting the DB's own prose. Freedom
 Rider's `fa` spelled the second ascensionist "Brian Burdo," where Mountain Project and
 OpenBeta both give "Bryan Burdo" — the same spelling the DB already uses correctly on
-Sidewinder's 1991 variation credit, so "Brian" was the one-off inconsistency. Freedom or
-Death's `overview` names a route sharing its first three pitches, "A Servant To Liberty,"
-which does not exist anywhere in the record; the real route is Mikey Schaefer's 2016 "A
-Slave to Liberty" (5.13-, confirmed via AAC Publications), which explicitly "starts up
-the first three pitches of Freedom or Death and then moves right to join Thin Red Line" —
-an exact match for the shared-pitches claim with the wrong name attached.
+Sidewinder's 1991 variation credit, so "Brian" was the one-off inconsistency.
+
+A third fix was drafted and then discarded before committing, worth recording as a
+near-miss: Freedom or Death's `overview` names a route sharing its first three pitches,
+"A Servant To Liberty." Web research for that route name turned up nothing and found a
+real 2016 Mikey Schaefer route called "A Slave to Liberty" matching the description
+almost exactly, so the draft fix renamed it. Before committing, a check of this DB's own
+`routes` table for "servant"/"slave" found `wa_a_servant_to_liberty` already sitting in
+it — grade 5.13-, FA Mikey Schaefer with Shanjean Lee, August 6 2016 — with its own
+`overview` already stating "Also published as 'A Slave to Liberty'." The DB's chosen name
+was correct all along; the research just hadn't found the sibling row. Lesson for future
+batches: check this DB's own tables for a name before trusting a web search's absence of
+it. That row's `beta` text does surface a real, still-open discrepancy, flagged below.
 
 Clean, nothing to fix: The Girl Next Door's grade/pitches/approach match Mountain
 Project/Wikipedia closely (its FA "Goldie & Butler, 2011" is only single-sourced via
@@ -36597,6 +36604,10 @@ first-hand trip-report blog explicitly says "5.11+". (5) Freedom or Death's own 
 breakdown (P2 5.11c, P3 5.12a crux) conflicts with an AAC account of the shared "A Slave to
 Liberty" climb, which describes those same three pitches as 5.10/5.11/5.11 — but OpenBeta
 independently matches the DB's existing P1–P4 breakdown almost verbatim, so this reads as a
-genuine conflict between sources rather than a clear DB error, and wasn't acted on.
+genuine conflict between sources rather than a clear DB error, and wasn't acted on. (6) This
+DB's own `wa_a_servant_to_liberty` row states the same shared P1–P3 as 5.10/5.11/5.11 in its
+`beta` text, directly disagreeing with Freedom or Death's own P2/P3 fields (5.11c/5.12a) —
+an internal cross-route contradiction, not just a source-vs-DB one; a human with a current
+topo should settle which row's pitch grades are right before either is touched.
 
 Next batch will continue id-ascending from `wa_liberty_bell_sidewinder` (see progress file).

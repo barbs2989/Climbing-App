@@ -13,13 +13,3 @@ WHERE id = 'wa_liberty_bell_overexposure';
 UPDATE routes
 SET fa = replace(fa, 'Brian Burdo', 'Bryan Burdo')
 WHERE id = 'wa_liberty_bell_freedom_rider';
-
--- wa_liberty_bell_freedom_or_death: overview names the route sharing its first 3
--- pitches "A Servant To Liberty" -- no such route exists in any source. The real route
--- is Mikey Schaefer's "A Slave to Liberty" (2016, 5.13-, per AAC Publications), which
--- "starts up the first three pitches of Freedom or Death and then moves right to join
--- Thin Red Line near that route's third-pitch anchor" -- an exact match for the shared-
--- pitches claim, just with the wrong route name.
-UPDATE routes
-SET overview = replace(overview, 'A Servant To Liberty', 'A Slave to Liberty')
-WHERE id = 'wa_liberty_bell_freedom_or_death';
