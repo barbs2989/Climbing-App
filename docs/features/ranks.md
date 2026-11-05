@@ -11,6 +11,7 @@
   and **Ranking**, grouped Performance · Lists · Reliability · Community. Which boards a type offers is the `ids`
   list in `Leaderboards`: Send points on every graded type (not Mountaineering/Scrambling, whose class grades weigh
   nothing), Onsight points on sport/trad/bouldering, Peaks on the three peak types.
+- **Row height**: ~42px on the website (1024px+, tighter line heights), 56px on a phone (competitor review batch A, item 8, owner 2026-11-04; Mountain Project's tables run ~40px).
 - **The table**: a header row (`#` · Climber · the board's unit), one row per climber with the rank, avatar, name,
   location and "N of M backed", the value in a fixed right-hand column, and a ⚑ Report column on real rows.
   Rows alternate shading; yours is tinted with a blue edge. Only climbers with a score above 0 on that board are

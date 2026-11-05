@@ -1,0 +1,24 @@
+{
+ "oh_overpass_wall": {
+  "_expect": { "name": "Overpass Wall", "region": "Ohio" },
+  "blurb": "A short, tree-covered wall in the Overpass Area of Mad River Gorge, just beside the Route 68 bridge in the southwest part of the state. The 14 lines are mostly bolted, with a couple of trad cracks and one V3 problem. Difficulty runs from an easy 5.5 up through a cluster of 5.11s, with a few 5.10s and 5.12s, so it suits people who already lead steeper face climbing. The dolomite is roughly 30 feet tall, and the canopy keeps it in shade all day. That makes for cool summer climbing but also seepage, so give it time to dry after rain. Helmets are smart for belayers.",
+  "approach": "From the main stairs, follow the old railroad-bed trail with the river on your left. The wall sits on your right just before the road bridge overhead; if you walk beneath the bridge you have gone too far.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114387523/overpass-wall", "https://app.advcollective.com/climbing/overpass-area-climbing-guide-mad-river-gorge-ohio"] }
+ },
+ "oh_cady_run_north_boulders": {
+  "_expect": { "name": "Cady Run North Boulders", "region": "Ohio" },
+  "blurb": "A small cluster of sandstone boulders in the Marietta Unit of Wayne National Forest, north of Marietta in southeast Ohio. It holds 13 problems, from an easy V1 through a middle band of V4 and V5 with a few harder lines, and one very hard V10 project-level test at the top. A short uphill path leads from the parking spot to the blocks. The stone here is more porous than at better-known Ohio sandstone areas, so wait a day or two after heavy rain. There is no cell service in the forest, so download maps and photos first, and expect a quiet, undeveloped feel.",
+  "review": { "sources": ["https://www.mountainproject.com/approach-trail/123069301/approach-to-cady-run-north-boulders", "https://www.mountainproject.com/area/116370636/marietta"] }
+ },
+ "_skipped": {
+  "oh_grey_paint": "climbing stated as not allowed by the park district on the crag's own pages",
+  "oh_frathouse_rock": "no fetched page about the crag itself separate from the parent Veterans Park pages; second page does not mention it",
+  "oh_b_wave_wall": "only the parent Marne Road page describes it; other Wave Wall pages are in Australia and Idaho",
+  "oh_4_front_wall": "only parent Big Cliffs/Logtown pages; no page about the Front Wall itself (rockclimbing.com unreachable)",
+  "oh_viaduct_park_bouldering": "climbing listed as prohibited by the park system on both pages",
+  "oh_squid_wall": "only the parent Bears Den Cabin page covers it; no second page"
+ },
+ "_conflicts": {
+  "oh_overpass_wall": "Stored aspect N; https://app.advcollective.com/climbing/overpass-area-climbing-guide-mad-river-gorge-ohio lists the Overpass Area as south-facing (shaded by canopy)."
+ }
+}

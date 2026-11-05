@@ -1,0 +1,37 @@
+{
+ "sd_sniper_wall": {
+  "_expect": { "name": "Sniper Wall", "region": "South Dakota" },
+  "blurb": "A small, steep sport wall in the VC, the narrow limestone canyon outside Rapid City. It faces the larger main wall from across the canyon and sees far fewer visitors. The ten bolted lines are all hard, clustered right around 5.12, so this is a stop for climbers already comfortable on difficult sport. The face is roofy and blocky, and some lines climb better than they look from the ground. Morning sun reaches it, and it falls into shade in the afternoon while the opposite wall still bakes, which makes it a useful choice on a warm day. Reach it by following the main canyon trail down and passing the Duck Wall.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119264770/sniper-wall", "https://www.mountainproject.com/area/106286034/the-vc"] }
+ },
+ "sd_booze_wall_the": {
+  "_expect": { "name": "Booze Wall, The", "region": "South Dakota" },
+  "blurb": "The leftmost wall of The Danks, a limestone sport crag in Spearfish Canyon in the Black Hills. Ten bolted routes run from the low 5.10s through the 5.12s and into 5.13, so it suits climbers who want hard, sustained lines rather than a place to warm up. The limestone is heavily featured and the climbing tends to be long and pumpy. The wall catches morning sun and goes into shade by afternoon. The walk from the road is short, and the other Danks walls sit just along the same hillside if you want more options.",
+  "approach": "A short hike of roughly five minutes from the road, following the trail and then turning left at the wall.",
+  "approach_min": 5,
+  "review": { "sources": ["https://www.mountainproject.com/area/117135843/the-booze-wall", "https://mountainproject.com/area/107559658/the-danks"] }
+ },
+ "sd_grotto": {
+  "_expect": { "name": "Grotto", "region": "South Dakota" },
+  "blurb": "The main rock in West World, a small box canyon in the Needles near Breezy Point on the Mount Rushmore side of the Black Hills. Ten routes mix gear climbs and bolted lines, with most of them trad. Grades start around 5.7 and 5.8, run through a handful of 5.10s and 5.11s, and top out with one 5.13. The canyon walls face east, so the routes fall into shade in the late afternoon and the pocket of rock gives some shelter from wind. Routes are around 80 to 100 feet and feel sustained for their grade. Road noise from the nearby highway carries into the canyon.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105714591/grotto?print=1", "https://www.mountainproject.com/area/105714300/west-world"] }
+ },
+ "sd_sanitarium": {
+  "_expect": { "name": "Sanitarium", "region": "South Dakota" },
+  "blurb": "A quiet, out-of-the-way spot in the Needles near Mount Rushmore, set along Camp Judson Road. It holds ten problems and routes split evenly between bouldering and trad. The boulders run from very easy to a few hard problems, while the trad lines sit mostly in the 5.9 to 5.10 range, including a well-known slot climb. Expect a low-key visit rather than a crowded one. The walk in is described as not bad but easy to get turned around on, so go with a partner who has been or follow trail markers carefully. The boulders show up first along the route, with the formation past them.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108074086/sanitarium", "https://www.mountainproject.com/area/108660744/camp-judson-road"] }
+ },
+ "sd_aquarium_rock": {
+  "_expect": { "name": "Aquarium Rock", "region": "South Dakota" },
+  "blurb": "One of the main formations of the Photographers' Peak area in Custer State Park, near Sylvan Lake. It holds ten routes, mostly trad with a few bolted lines, and the grade range is unusually wide: a very easy multi-pitch line at the low end, a good number of climbs in the 5.7 to 5.11 range, and a few hard 5.12s and a 5.13 above. That mix suits mixed-ability parties. The rock is granite, and the formation stands close to the roadside parking, so the walk is brief: head left around the base of the neighbouring Photographers' Peak and it is the next rock along.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105714468/aquarium-rock", "https://www.mountainproject.com/area/105714276/photographers-peak-area"] }
+ },
+ "_skipped": {
+  "sd_chop_stick_wall_the": "no fetched page is about this wall itself; only a sub-area listing line on the VC page (fetched The VC, theTopo VC, Rapid City Area, Main Wall)",
+  "sd_breezy_point_main_wall_upper": "no page about the Upper section found; only Breezy Point and Breezy Point Main Wall (a different section) fetched",
+  "sd_the_chertch_wall_far_left_side": "only the Babylon parent page mentions this wall; no second page found"
+ },
+ "_conflicts": {
+  "sd_grotto": "stored rock is shale, but the West World page (https://www.mountainproject.com/area/105714300/west-world) says fine-grained granite; the Grotto page itself names no rock. Blurb names no rock."
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "id_main_wall_the": {
+  "_expect": {"name": "Main Wall, The", "region": "Idaho"},
+  "blurb": "The Main Wall is one section of Bear Creek Wall, a limestone cliff high in the Lost River Range of central Idaho, reached from the Leslie side of the range. It holds eleven traditional lines, nearly all of them 5.11 or 5.12 with a single 5.10, so this is a place for strong, experienced leaders. The face is about two pitches tall and grows steeper as you go up, with a rough gully on its left and a deep unclimbed chimney on its right. A couple of the routes carry a run-out rating. Expect serious adventure climbing and a long, remote day rather than a quick crag session.",
+  "review": {"sources": ["https://www.mountainproject.com/area/114622395/the-main-wall", "https://www.mountainproject.com/area/114622135/bear-creek-wall"]}
+ },
+ "id_upper_breadloaves_east": {
+  "_expect": {"name": "Upper Breadloaves - East", "region": "Idaho"},
+  "blurb": "Upper Breadloaves - East is a small wall in the Upper Breadloaves section of City of Rocks in southern Idaho. It has eleven routes, mostly trad with a couple of bolted lines, running from easy 5.7 and 5.8 terrain up to a handful of 5.11s. The wall faces east, so it catches morning sun and falls into shade by afternoon, which suits warm days. Several of the lines see little traffic, but a few moderate routes are well liked and make good objectives for a mixed party. The base can be reached by short trails from several nearby lots.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105795538/upper-breadloaves-east", "https://rakkup.com/guidebook/city-of-rocks-climbing/upper-breadloaf/s14100"]}
+ },
+ "id_weeping_cave": {
+  "_expect": {"name": "Weeping Cave", "region": "Idaho"},
+  "blurb": "Weeping Cave is a sport crag in the Palisades Creek drainage of eastern Idaho, roughly two miles up the canyon trail from the trailhead. It is the larger of two crags there and is easy to spot from the path. The eleven bolted routes span from a single 5.9 through a cluster of 5.10s and 5.11s to several 5.13s, so it rewards climbers aiming for hard, steep lines more than beginners. The setting is quiet and scenic, and the long walk-in keeps crowds thin. Plan on a proper hike rather than a roadside stop.",
+  "review": {"sources": ["https://www.mountainproject.com/area/115191055/weeping-cave", "https://mountainproject.com/area/107755051/palisades-creek"]}
+ },
+ "_conflicts": {
+  "id_weeping_cave": "Stored rock is volcanic rock; the parent area page (https://mountainproject.com/area/107755051/palisades-creek) calls the rock limestone."
+ },
+ "_skipped": {
+  "id_northeast_wall": "closed, private property per its page; no second page",
+  "id_roman_wall": "only one Dierkes Lake parent page mentions it; the Roman Wall area page found is a different place in Arkansas",
+  "id_towers_at_202_the": "could not fetch a second page about the crag (parent listing only gives counts)",
+  "id_blasted_wall": "no fetched page about the crag itself (only parent Table Rock page and a route page)",
+  "id_parking_lot_boulders": "no fetched page about this Idaho crag; same-named pages found were in Alabama, South Carolina and Texas"
+ }
+}

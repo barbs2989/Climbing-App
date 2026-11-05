@@ -1,0 +1,35 @@
+{
+ "nc_brackish_boulder": {
+  "_expect": {"name": "Brackish Boulder", "region": "North Carolina"},
+  "blurb": "Brackish Boulder is a bouldering-only spot on the east side of Rumbling Bald, in the forested Hickory Nut Gorge near Chimney Rock. It holds twelve problems on gneiss, running from V3 to V11, and the spread leans hard: a few problems in the V3 to V4 range, a cluster between V7 and V9, and several V10 and V11 lines at the top end. A couple of the lower problems are well-liked classics. Rumbling Bald is best known as a cool-season destination, so expect it to shine in winter. Bring pads for the whole session.",
+  "review": {"sources": ["https://www.mountainproject.com/area/113828574/brackish-boulder", "https://www.mountainproject.com/area/113828546/east-side-boulders", "https://www.mountainproject.com/area/113828500/rumbling-bald-bouldering"]}
+ },
+ "nc_better_late_than_never_wall": {
+  "_expect": {"name": "Better Late Than Never Wall", "region": "North Carolina"},
+  "blurb": "A compact wall within Ship Rock, off the Blue Ridge Parkway near the Rough Ridge pullout in the northern mountains. It has a dozen climbs, nearly all of them traditional, ranging from 5.6 into the 5.11 and 5.12 range, with the bulk in the 5.9 to 5.10 band. Few routes, but the wall is prized for exposure and quality. Protection is mostly small to medium: bring plenty of nuts, TCUs and cams from finger size to hands, since nothing bigger than a number 2 is wanted. The walk in through a gully and a small rock tunnel makes the day feel adventurous.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106918296/better-late-than-never-wall", "https://www.mountainproject.com/area/105887629/ship-rock"]}
+ },
+ "nc_zeus_eye_boulder": {
+  "_expect": {"name": "Zeus Eye Boulder", "region": "North Carolina"},
+  "blurb": "Zeus Eye Boulder is one of the bouldering stops in Lower Dixon, part of the Dixon School Boulders at Crowders Mountain State Park in the Piedmont. It is the first boulder on the left as you leave the trail, and it is easy to recognise by the deep socket feature that gives it its name. Eleven problems cover a wide range, from V0 up to V10; most are in the V0 to V2 band, with a few middle grades and one big hard line. It is the most physically demanding boulder in its neighbourhood, and the namesake problem is roughly fifteen feet tall, so bring a pad.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107704862/zeus-eye-boulder", "https://www.mountainproject.com/area/201168522/bethlehem", "https://www.mountainproject.com/route/107704871/zeus-eye?print=1"]}
+ },
+ "nc_08_nuke_the_whales_wall": {
+  "_expect": {"name": "Nuke the Whales Wall", "region": "North Carolina"},
+  "blurb": "Nuke the Whales Wall is part of the main climbing zone at Crowders Mountain, in the North Carolina Piedmont. Eleven mostly traditional routes, with a few suited to top-roping, run from easy fifth-class climbing around 5.5 to a single 5.10, and most sit at 5.7 or below. That puts it in beginner and moderate territory. The wall stays shady, so it is a good pick for hot summer mornings. Cracks and horizontal seams take nuts and tricams well, so a standard trad rack is the tool, and the flagship line follows an arete up toward a double roof.",
+  "review": {"sources": ["https://www.mountainproject.com/v/nuke-the-whales-wall-/107265255", "https://www.mountainproject.com/route/107657019/nuke-the-whales"]}
+ },
+ "nc_section_2": {
+  "_expect": {"name": "Section 2", "region": "North Carolina"},
+  "blurb": "Section 2 is a stretch of the old quarry face at Rocky Face Recreational Area, near Hiddenite in the Piedmont. It is a little taller than the neighbouring Section 1 and the climbing is a little harder. Eleven routes run from 5.5 to 5.10, mostly bolted sport lines plus a couple of top-ropes and one trad line, with the middle grades (5.8 to 5.10) making up most of the choices. The face is sunny, and the rock quality is variable with flakes that shed now and then, so a helmet is wise for climbers and belayers alike.",
+  "review": {"sources": ["https://www.mountainproject.com/area/111615167/section-2", "https://mountainproject.com/area/108538640/rocky-face-recreational-area"]}
+ },
+ "_skipped": {
+  "nc_13_ground_up_aka_big_gully": "no fetched page is about this crag itself; the Pilot Mountain area page only lists the name and route count",
+  "nc_wave_boulder": "only Wave Boulder pages found were in California; 107 Boulders page does not mention a Wave Boulder; no page about the crag",
+  "nc_the_storm_wall": "no page found for a Storm Wall at Jump Off Rock after two searches; nothing to fetch"
+ },
+ "_conflicts": {
+  "nc_better_late_than_never_wall": "Stored rock is greywacke but the wall page describes solid quartzite (https://www.mountainproject.com/area/106918296/better-late-than-never-wall, https://www.mountainproject.com/area/105887629/ship-rock). Page lists grades 5.6 to 5.11d while stats show a 5.12 bucket."
+ }
+}

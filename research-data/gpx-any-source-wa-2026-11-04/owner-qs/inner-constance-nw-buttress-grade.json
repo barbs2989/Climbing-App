@@ -1,0 +1,19 @@
+{
+  "key": "inner-constance-nw-buttress-grade",
+  "question": "What is the real grade of Inner Constance 'Northwest Buttress' (1983), which our row grades 5.0 unsupported?",
+  "answer": "No documented grade exists online. The only page mentioning the route is the 2021 variation's page, which gives its own grade (5.8+, grade III, about 1,200 ft, poor rock/protection) and says only that the original line turns left onto a ledge after pitch one; it states no difficulty for the original. Searches of the AAJ, SummitPost (lists Inner Constance South Chute class 3, West Arete and Red Dike 5.5 III, North Chute 3+; no NW Buttress) and general web found nothing. The 1983 route's grade is presumably in the Olympic climbing guide (print, not online). The stored 5.0 is not a recognisable grade for a roped alpine buttress (a 5.0 figure is a placeholder), and the variation that rejoins it for a final low-angle pitch implies the original is easier than 5.8+ but beyond that is unknown.",
+  "recommendation": "Set grade to null (blank) rather than 5.0; keep the Grade III overall rating only if the row has such a field (the variation page rates the shared line grade III). If the owner insists on a number, 'low 5th class' is a guess, not a documented value.",
+  "confidence": "medium",
+  "proposed": {
+    "grade": null,
+    "note": "Overview may say, in our words: the original line leaves the variation's crack system by turning left onto a ledge above the first pitch; the rock is loose and protection is poor."
+  },
+  "evidence": [
+    "https://www.mountainproject.com/route/122778214/seans-routesecond-wind - re-fetched: grades listed (5.8+, grade III) belong to the variation; no grade given for the Northwest Buttress"
+  ],
+  "searched": [
+    "Inner Constance Northwest Buttress grade Hardee Coffey 1983 Olympic guide - Wikipedia, AAJ 1963 pinnacles article (different feature), SummitPost Constance pages; no NW Buttress entry",
+    "Re-fetched the Mountain Project variation page - no original-route grade",
+    "Packet wa_inner_constance: row grade 5.0, no track points"
+  ]
+}

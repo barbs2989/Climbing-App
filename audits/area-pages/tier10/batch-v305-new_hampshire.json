@@ -1,0 +1,41 @@
+{
+ "nh_the_ruin": {
+  "_expect": { "name": "The Ruin", "region": "New Hampshire" },
+  "blurb": "A small cliff in the Merriam Woods section of the Russell Crags group, in the Woodstock and Lincoln corner of the White Mountains. It holds sixteen climbs, nearly all of them bolted sport routes plus a pair of trad lines. Most of the grades sit between 5.10 and 5.12, with a few easier lines and a couple of 5.13s at the top end. The wall is a patchwork of faces, grooves, corners and slabs, and the newer lines cluster toward its left end. Expect a woodland walk of roughly ten minutes along a stream before a cairned gully leads up to the base.",
+  "review": { "sources": ["https://mountainproject.com/area/120732599/the-ruin", "https://mountainproject.com/area/120706547/russell-crags-in-merriam-woods"] }
+ },
+ "nh_lost_horizon": {
+  "_expect": { "name": "Lost Horizon", "region": "New Hampshire" },
+  "blurb": "A compact cliff at Sundown Ledge in the eastern Kancamagus area, perched above and left of the Main Cliff. Of its sixteen climbs, almost all are traditional leads, with a single sport route, and the range runs from a few easy climbs up through 5.11. The rock quality is rated excellent, though a few spots can seep. The wall catches a mix of sun and shade, tends to be breezier than the Main Cliff below, and rarely fills up with people. It is one of the two most visited cliffs at Sundown.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106573964/lost-horizon", "https://www.mountainproject.com/area/107756087/sundown-ledge?print=1"] }
+ },
+ "nh_main_face": {
+  "_expect": { "name": "Main Face", "region": "New Hampshire" },
+  "blurb": "The main wall at Marlow Profile, a quiet crag in the Monadnock Region that also goes by the name Sunny Face. Sixteen climbs are mostly traditional cracks, corners and slabs, with a handful of bolted sport and top-rope lines and one short winter ice route. The bulk of the grades fall between 5.6 and 5.9, a few are easier, and a lone sport route reaches 5.12, which makes it a friendly spot for newer leaders. It sits just a few minutes uphill from the trailhead and is not a destination crag, so crowds are rare.",
+  "parking_note": "Leave the car in the small dirt lot on the right of Route 123 about a mile north of Marlow village; it holds around ten cars, with extra roadside space farther along.",
+  "review": { "sources": ["https://www.mountainproject.com/area/200380519/main-face", "https://www.mountainproject.com/area/110859632/marlow-profile", "https://myhikes.org/trails/mcintire-sands-gage-loop"] }
+ },
+ "nh_triple_corners_left": {
+  "_expect": { "name": "Triple Corners Left", "region": "New Hampshire" },
+  "blurb": "The left-hand end of the Triple Corners cliff band at Rumney. The wall is large and sprawling, with sixteen routes split evenly between sport and trad. Grades span a couple of very easy lines through the middle 5.8 to 5.10 range, and finish with several 5.12s and 5.13s that include a powerful boulder-style sport route and an off-width roof. A steep huecoed wall with a crack finish is a favored way to step up to 5.11. By Rumney standards this section sees little traffic, and most climbs earn a decent rating.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106724667/triple-corners-left", "https://rakkup.com/guidebook/rumney-rock-climbing/triple-corners,-left-side/s20803"] }
+ },
+ "nh_split_boulder_the": {
+  "_expect": { "name": "Split Boulder, The", "region": "New Hampshire" },
+  "blurb": "A cluster of boulders in the Boulder Natural area of Pawtuckaway State Park. Sixteen problems range from V0 warm-ups to a handful of V10 and harder lines. The tall main boulder, over 20 feet, draws the highball crowd, with committing lines such as an off-width and a dihedral where staying calm off the ground matters, while smaller neighbors hold shorter problems. A few projects remain open. From the lot, follow the trail across a stream and the big boulder appears on your right.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106523382/the-split-boulder?print=1", "https://www.mountainproject.com/books/106523382", "https://mountainproject.com/route/106104859/my-little-pony"] }
+ },
+ "nh_utopia_ledges_true_summit_ledges": {
+  "_expect": { "name": "Utopia Ledges (True Summit Ledges)", "region": "New Hampshire" },
+  "blurb": "A remote set of slabby ledges high on the mountain above Rumney, split into Central, Freedonia and East sections. The sixteen climbs are mostly low-angle trad in an alpine feel, ranging from fourth-class scrambles through 5.5 and 5.6 up to a single 5.7, with lines of roughly 150 to 200 feet in the Central part. This is no quick stop: the way in is a long, overgrown bushwhack of about an hour through burned regrowth, downed trees and thorns. Weather can shift fast, and help would be slow to arrive.",
+  "review": { "sources": ["https://mountainproject.com/area/106733366/utopia-ledges-true-summit-ledges", "https://www.mountainproject.com/area/107954389/true-summit-ledges-utopia-area"] }
+ },
+ "_skipped": {
+  "nh_cone_head_ledge": "could not fetch two pages: no page about the crag itself (only a route page and a parent-area listing; openbeta mirror 404)",
+  "nh_profile_cliff": "no fetched page about the crag itself (only a route page and a parent listing with no description)"
+ },
+ "_conflicts": {
+  "nh_main_face": "Stored rock is tonalite; the Marlow Profile page (https://www.mountainproject.com/area/110859632/marlow-profile) describes coarse metamorphic schist/gneiss",
+  "nh_split_boulder_the": "Stored rock is diorite; the Pawtuckaway page (https://www.mountainproject.com/area/105929413/pawtuckaway) describes granite (does not mention Split Boulder itself)"
+ }
+}
