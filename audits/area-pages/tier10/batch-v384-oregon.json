@@ -1,0 +1,89 @@
+{
+ "or_video_bluff": {
+  "_expect": {
+   "name": "Video Bluff",
+   "region": "Oregon"
+  },
+  "blurb": "Video Bluff is a short basalt wall on Rocky Butte, an urban cliff band in northeast Portland, and one of the busier faces there. The wall is only about 30 to 40 feet tall, so it suits quick laps: roughly a dozen lines can be top-roped, with a handful of bolted leads and a few trad routes mixed in. Grades start with a single easy 5.4, bunch up between 5.8 and 5.11 with 5.10 the most common, and top out near 5.12. The stone can feel slick, particularly early and late in the climbing year. Expect a gritty city setting rather than a quiet backcountry crag.",
+  "parking_note": "Leave the car on the gravel shoulder along Rocky Butte Road, across from the wall; the wall is marked by a numbered red sign on a tree.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106046891/video-bluff",
+    "https://www.mountainproject.com/area/105788995/rocky-butte"
+   ]
+  }
+ },
+ "or_mesa_verde_wall": {
+  "_expect": {
+   "name": "Mesa Verde Wall",
+   "region": "Oregon"
+  },
+  "blurb": "Mesa Verde Wall sits on the west side of Smith Rock State Park, near Monkey Face, and is reached by crossing a pass or hiking over the ridge rather than by an easy flat walk. Routes run one to three pitches on tuff, with ten bolted lines, eight trad climbs and a single top-rope. Grades begin at 5.9 and concentrate in the 5.10 and 5.11 range, with a handful of 5.12s and one 5.13. It suits climbers who have outgrown the warm-up walls and want a quieter corner of the park. The side stays shaded on summer mornings.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/105832749",
+    "https://smithrock.com/west-side-crags/"
+   ]
+  }
+ },
+ "or_the_platform": {
+  "_expect": {
+   "name": "The Platform",
+   "region": "Oregon"
+  },
+  "blurb": "The Platform is a small sport area within the Zoo section of Smith Rock, set on a ledge a couple of dozen feet above the valley floor, with closely spaced bolted lines. All 19 climbs are sport routes, from one 5.9 up to a couple of 5.12s, with the bulk at 5.10 and 5.11. Most start with a few steep pulls on big holds, then ease off, so the first moves feel harder than the grade suggests. The ledge picks up sun from about midday into the evening, which makes it a pleasant pick on cooler days.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/123583676/the-platform",
+    "https://mountainproject.com/area/109707430/the-zoo"
+   ]
+  }
+ },
+ "or_4_star_wall": {
+  "_expect": {
+   "name": "Star Wall",
+   "region": "Oregon"
+  },
+  "blurb": "Star Wall is a west-side wall in the lower gorge of Smith Rock State Park, just upstream of the Catwalk cliff. It is known for steep, demanding cracks on its full-height left side, and the climbing is mostly traditional: sixteen trad lines beside three bolted ones. Grades run from 5.10 to the low 5.12s, split between a large group of 5.10s and another of 5.12s with a few 5.11s in between, so there is little here for beginners. Bring a full rack and expect to place gear on most routes.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105865366/star-wall",
+    "https://rakkup.com/guidebook/smith-rock-climbing/star-wall/s10033"
+   ]
+  }
+ },
+ "or_2_bluff_zone": {
+  "_expect": {
+   "name": "Bluff Zone",
+   "region": "Oregon"
+  },
+  "blurb": "Bluff Zone is part of the Main Area Boulders at Cline Falls, a little basalt venue beside the Deschutes, a short drive from Redmond. The problems line a tall bluff that faces downhill toward the river. There are 19 of them with a good spread: a handful of easy V0 and V1 lines, a solid middle of V2 to V4, and several hard problems up to about V7. It is a convenient stop for a short session with a crash pad and works for groups of mixed ability.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/121655644/bluff-zone",
+    "https://www.mountainproject.com/area/114380263/cline-falls"
+   ]
+  }
+ },
+ "or_coethedral_main": {
+  "_expect": {
+   "name": "Coethedral Main",
+   "region": "Oregon"
+  },
+  "blurb": "Coethedral Main is the principal cliff of the Coethedral sport area in Mt. Hood National Forest, southeast of Estacada. Nearly all of its 19 listed climbs are bolted, with one trad line, on knobby, cobbly rock that rewards face climbing. Grades are friendly: mostly 5.7 to 5.10, starting around 5.5 with just one 5.11. Many lines on the wider formation are multi-pitch and can be rappelled with a single 60 m rope. The rock can be crumbly, so wear a helmet. The area sits high and is often snowed in, so summer is the usual window.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/109506447/coethedral-main",
+    "https://www.mountainproject.com/area/106865073/coethedral"
+   ]
+  }
+ },
+ "_skipped": {
+  "or_main_smith_rock_area": "no fetched page is about this sub-area itself; only the Smith Rock Bouldering parent page and the official bouldering overview list it, with no description",
+  "or_right_side_2": "no fetched page about Right Side itself; only the whole Wall of Shadows page, and the rockclimbing.com page could not be fetched"
+ },
+ "_conflicts": {
+  "or_the_platform": "Stored parking is the Smith Rock main day-use lot, but the Zoo parent page (https://mountainproject.com/area/109707430/the-zoo) says to park at the top of the ridge reached by a Forest Service road from Skull Hollow, then hike the Gray Butte Trail; the Platform page (https://www.mountainproject.com/area/123583676/the-platform) also approaches from the road, not the main lot.",
+  "or_coethedral_main": "Stored rock is volcanic rock, but https://www.mountainproject.com/area/106865073/coethedral calls the rock sedimentary and cobbly and https://mountainproject.com/area/109506447/coethedral-main calls it knobby rock; blurb names no rock type."
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "mi_washroom_the": {
+  "_expect": {"name": "Washroom, The", "region": "Michigan"},
+  "blurb": "A short, steep band of gneiss perched on the South Ridge north of Marquette, in the Upper Peninsula. The wall runs roughly fifty feet and holds 14 boulder problems standing about ten to twelve feet tall, with good flat landings below. Most problems are easy to moderate, from the lowest grades up through V2, with a small handful of much harder lines topping out around V8. The overhanging profile favours powerful moves, and link-ups and traverses along the wall add extra variety. Reaching it takes a short uphill hike on trails, making it a reasonable stop for climbers working through the neighbouring boulders on the ridge.",
+  "review": {"sources": ["https://www.mountainproject.com/area/118773807/the-washroom", "https://www.mountainproject.com/area/118718451/south-ridge"]}
+ },
+ "mi_sand_lot_slab_the": {
+  "_expect": {"name": "Sand Lot Slab, The", "region": "Michigan"},
+  "blurb": "A gneiss slab on the Harlow Lake side of the road north of Marquette, in Michigan's Upper Peninsula, offering 15 boulder problems. The climbs are a mix of cracks and face moves between roughly ten and fifteen feet tall, and the grades lean gentle: a good number sit at V0 or easier, a few reach V3, and the hardest is around V4. Landings are uneven, so a spotter and a couple of pads are worth bringing for most lines. A short uphill hike through a gap between two low hills leads to it, which suits newer boulderers looking for moderate problems.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106429725/the-sand-lot-slab", "https://mountainproject.com/area/106429719/the-sand-lot"]}
+ },
+ "mi_mezzanine_the": {
+  "_expect": {"name": "Mezzanine, The", "region": "Michigan"},
+  "blurb": "A south-facing outcrop just under the summit of North Peak in the Motherlode, a boulder valley near Marquette in Michigan's Upper Peninsula. Two main walls, about twelve to fifteen feet high, are mostly vertical to slightly overhanging and covered in small edges, so footwork matters more than raw power. The 13 problems start with beginner-friendly lines and climb through a solid middle band of V2 to V5, with one hard line near V7. The aspect warms the rock quickly in sun, while cool mornings give better friction. Spring through early fall is the pleasant window, and a spotter and pads are wise near the terrace edge.",
+  "review": {"sources": ["https://www.mountainproject.com/area/120440972/the-mezzanine", "https://app.advcollective.com/climbing/the-mezzanine-crisp-limestone-climbing-in-michigans-upper-peninsula"]}
+ },
+ "mi_creekside_talus": {
+  "_expect": {"name": "Creekside Talus", "region": "Michigan"},
+  "blurb": "A modest talus field along Pine Creek in the canyon near Iron Mountain, in Michigan's Upper Peninsula, where the bulk of the area's bouldering has been found so far. It holds 13 problems, mostly easy to moderate: several in the V0 to V1 range, a few at V2 and V3, and a single V4 as the hardest. Reaching it means a short trail walk from the cul-de-sac and a creek crossing on a pair of wooden ladders. Development is still partial and the talus offers room for more exploration, so expect a quiet, low-key session rather than a polished circuit.",
+  "review": {"sources": ["https://mountainproject.com/area/119415748/creekside-talus", "https://mountainproject.com/area/119415710/pine-creek-bouldering"]}
+ },
+ "mi_norwich_ledge": {
+  "_expect": {"name": "Norwich Ledge", "region": "Michigan"},
+  "blurb": "A big, half-mile-wide cliff near Bergland in the western Upper Peninsula, about 100 to 300 feet tall and widely described as the largest in the state. It is mostly a trad venue with 13 listed climbs, running from easy scrambling-level terrain through the moderate 5.6 to 5.9 range, plus a single ice line. Expect adventure climbing: the rock is dirty from little traffic and loose in places, and it has little development, so route finding and gear skills matter. Descent is by bolted rappel stations on the cliff, and a long rope helps. Locals rank it low on quality, so treat it as an exploratory outing rather than a polished crag.",
+  "review": {"sources": ["https://www.mountainproject.com/v/108222103", "https://mountainproject.com/area/118171033/upper-peninsula", "https://www.mountainproject.com/forum/message/126334360"]}
+ },
+ "mi_sugar_cube": {
+  "_expect": {"name": "Sugar Cube", "region": "Michigan"},
+  "blurb": "A small outcrop and boulder cluster in the 550 zone north of Marquette, in Michigan's Upper Peninsula. The roped side is a single compact wall with a handful of lines, a few bolted and the rest trad or top-rope, spanning from about 5.7 to a hard 5.13 sport line. Nearby boulders add around eight problems, mostly easy to moderate with a couple of much harder outliers, V5 among the standouts. It works as a short stop to pair with the larger Wetmore Pond boulders and Sugarloaf crags, with only a short trail walk in from the parking loop.",
+  "review": {"sources": ["https://www.mountainproject.com/area/120752921/sugar-cube", "https://www.mountainproject.com/area/118208433/wetmore-pond-trailhead"]}
+ },
+ "_skipped": {
+  "mi_shawshank": "no fetched page about the crag itself; only a parent listing (no description) and one route page",
+  "mi_parking_area_boulder": "no page found describing this boulder or a Wetmore Peak area; only a route page and parent listings that do not mention it"
+ },
+ "_conflicts": {
+  "mi_washroom_the": "Stored rock gneiss; South Ridge page https://www.mountainproject.com/area/118718451/south-ridge calls the outcrops north-facing granite, while https://www.mountainproject.com/area/118773807/the-washroom says overhanging gneiss.",
+  "mi_mezzanine_the": "Stored rock gneiss; https://app.advcollective.com/climbing/the-mezzanine-crisp-limestone-climbing-in-michigans-upper-peninsula says limestone; Mountain Project pages state no rock."
+ }
+}

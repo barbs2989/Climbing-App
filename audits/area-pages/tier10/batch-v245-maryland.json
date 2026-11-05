@@ -1,0 +1,35 @@
+{
+ "md_abc_ramps": {
+  "_expect": {"name": "ABC Ramps", "region": "Maryland"},
+  "blurb": "Three low-angle ramps beside the railroad tunnel on the Maryland side of the Potomac, part of the Maryland Heights cliffs near Harpers Ferry. Thirteen routes, nearly all trad with a single sport line. Most are easy, roughly 5.1 to 5.5, with a handful in the 5.8 to 5.9 range and one 5.11 sport route. The middle ramp is the widest, the one on the right is the popular pick with close to 200 feet of low-level climbing, and the narrow ramp sits on the left. Gear placements can be awkward in a few spots. It is gentler and more approachable than the big cliff above, so it suits newer leaders.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107708983/abc-ramps", "https://mountainproject.com/area/105948160/maryland-heights-md"]}
+ },
+ "md_salamander": {
+  "_expect": {"name": "Salamander", "region": "Maryland"},
+  "blurb": "A small north-facing crag in the Frederick Watershed north of Frederick, set low in a wooded hollow. The rock comes in three short sections, none taller than about 42 feet, and all thirteen climbs are top-rope. Most lines are moderate, mainly 5.5 to 5.7, with three around 5.10. The clean main arete is the highlight. Being shaded it stays cool in warm weather. Expect a long, faint woods walk on old logging roads, and note that the lowest outcrop has loose rock and a leaning tree over a few lines.",
+  "review": {"sources": ["https://www.mountainproject.com/area/202517474/salamander", "https://www.mountainproject.com/area/112363125/frederick-watershed"]}
+ },
+ "md_down_range_rocks": {
+  "_expect": {"name": "Down Range Rocks", "region": "Maryland"},
+  "blurb": "A small hilltop crag in the Thurmont Watershed near Thurmont, perched on the crest well above the fire road. North-facing and shaded, it offers a few walls, pinnacles and plenty of large boulders. Thirteen routes, mostly top-rope with three trad lines, running from about 5.6 to 5.11 with the bulk at 5.8 and 5.9. Reaching it takes a steep climb up a washed-out road cut after a long fire-road walk, around half an hour in total, so it sees few visitors compared with the main cliffs of the watershed.",
+  "review": {"sources": ["https://www.mountainproject.com/area/120063166/down-range-rocks", "https://www.mountainproject.com/area/120062956/thurmont-watershed-area", "https://potomacmountainclub.org/climbing-crags-beta/maryland-crags/thurmont-watershed-rocktrboulder/"]}
+ },
+ "md_lake_roland": {
+  "_expect": {"name": "Lake Roland", "region": "Maryland"},
+  "blurb": "Bouldering scattered beside the trail along Jones Falls stream in Lake Roland park, Baltimore County. Most of the boulders can be seen within about a hundred yards of the path, so the walk is short, and the area is rarely crowded. Thirteen problems range from V1 up to a V10 project, with most falling between V5 and V7, so it leans toward experienced boulderers. A cave problem near the lake finishes in a roof close to the water. Bring pads for the less even landings.",
+  "review": {"sources": ["https://www.mountainproject.com/area/123648838/lake-roland", "https://www.mountainproject.com/route/124853902/trimming-the-hedges"]}
+ },
+ "md_blerda_boulder": {
+  "_expect": {"name": "Blerda Boulder", "region": "Maryland"},
+  "blurb": "A few boulders along the river just upstream of the former Bloede Dam site in Patapsco Valley State Park. The twelve problems are all bouldering, running from V0 to V6 and clustering around V2 to V4, so there is plenty for moderate climbers and a couple of harder lines. The setting is riverside, and a hike in from the nearest trailhead lot is needed. Expect a small, low-key session rather than a big circuit.",
+  "review": {"sources": ["https://www.mountainproject.com/area/125571237/bloede-dam-boulders", "https://www.mountainproject.com/area/106499348/patapsco-valley-state-park"]}
+ },
+ "_skipped": {
+  "md_venus_buttress": "no fetched page about this buttress itself; the Solar System area page is empty and the Cumberland Narrows page is only the parent",
+  "md_jam_boulder": "on private land with no permission to climb (club access alert), so closed to climbing",
+  "md_reservoir_wall_the": "only one fetched page about the crag itself; the Prettyboy and Bonus Wall pages do not describe it"
+ },
+ "_conflicts": {
+  "md_blerda_boulder": "stored rock gabbro, but https://www.mountainproject.com/area/125571237/bloede-dam-boulders says mostly quartzite"
+ }
+}
