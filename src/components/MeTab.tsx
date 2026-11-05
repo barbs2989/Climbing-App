@@ -31,7 +31,6 @@ interface MeTabProfile { gender?: string | null; [k: string]: unknown }
 interface MeTabLog { routeId: string | number; tickType?: string | null }
 /** A route, as a logged climb names one. */
 interface MeTabRoute { id: string | number; name: string; grade?: string | null; discipline?: string | null; style?: string | null }
-/** A belay catch, yours or a partner's. */
 /** A vouch you gave. */
 interface MeTabGivenVouch { _targetId: string | number; _dbId?: string | null; targetName?: string; targetAvatar?: string; route: string; date: string; [k: string]: unknown }
 /** The signed-in session; only the email is read. */

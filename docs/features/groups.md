@@ -60,6 +60,7 @@ against the posts already held. A post ClimbMatch Safety takes down leaves every
 stops that UPDATE reaching them, so a trigger broadcasts the bare id on the public `moderation` topic and `lib/live.js`
 treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 
+- **Reactions are emoji, in Facebook's bar (2026-11-05).** On a post, Like gives the thumbs-up; resting the mouse on it, holding it, right-clicking it, or tapping the reaction count pops a floating pill of the 21 emoji over that button (`ReactionPicker`, emoji only, your pick on a blue disc), and the count line stacks the top three emoji on small discs (`reactionEmoji`). The same bar serves every comment thread (`Comments`). Detail in `docs/guards/social-and-crews.md`.
 - **Optimistic taps (2026-10-29).** On a real group, a post's reaction, pin and edit, an event RSVP and declining an event invite change the cached rows (`group-feed`, `group-events`, `my-event-invites`) through `patchQueries()` before the write, and the returned undo restores them if it fails. Joining a group, accepting a group invite and *Approve all* still wait for the server, because the server decides the outcome (approval needed, invite withdrawn, how many were approved).
 
 ## 3. Files
