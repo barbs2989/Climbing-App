@@ -1,0 +1,24 @@
+{
+ "bc_whirlwind_wall": {
+  "_expect": {"name": "Whirlwind Wall", "region": "British Columbia"},
+  "blurb": "Whirlwind Wall is the highest cliff band at Kinnaird Bluffs, a long-established crag above Castlegar in the West Kootenays. Its ten routes mix crack climbs on natural gear with bolted lines, and every route finishes at chain anchors, so descents are simple. Difficulty is gentle for the most part: a spread of easy to moderate leads, from low fifth class up through the 5.8 and 5.9 range, with just a couple of 5.10 climbs at the top end. That makes it a sensible pick for newer leaders building trad experience or anyone wanting a quiet corner of the bluffs away from the busier lower walls.",
+  "review": {"sources": ["https://www.mountainproject.com/area/112819738/whirlwind-wall", "https://www.ronperrier.net/2024/03/28/kinnaird-bluffs-rock-climbing/"]}
+ },
+ "bc_right_center": {
+  "_expect": {"name": "Right Center", "region": "British Columbia"},
+  "blurb": "Right Center is one sector of The Beach, a roadside sport crag on Highway 1 west of Kamloops. Most of its ten climbs are bolted, with a couple of gear lines mixed in. The grades cluster firmly in the 5.10 range, with two 5.11 problems above that, so it suits climbers who already lead solid intermediate routes. The face starts with a few short pitches, while the taller sections carry lines of roughly a hundred feet, and a couple go in two pitches. You can walk around to the west and along the base, or rappel in from the top.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107290841/right-center", "https://www.mountainproject.com/area/119077247/beach"]}
+ },
+ "bc_moss_choss_wall": {
+  "_expect": {"name": "Moss & Choss Wall", "region": "British Columbia"},
+  "blurb": "Moss & Choss Wall is a small forest crag in the Electric Edge zone, along the highway corridor north of Whistler. It holds ten routes: mostly bolted lines, plus a couple of trad cracks and one top-rope. Grades run from easy fifth class through the 5.10 range, with the bulk in the moderate 5.7 to 5.9 band, which suits newer leaders and anyone warming up. The wall sits down among the trees and has been cleaned, though it can stay damp and mossy as the name hints. Roadside space for cars is tight, so plan to carpool.",
+  "review": {"sources": ["https://www.mountainproject.com/area/118866107/moss-choss-wall", "https://mountainproject.com/area/114505178/electric-edge"]}
+ },
+ "_skipped": {
+  "bc_summerland": "no fetchable page about Summerland crag itself; only a search snippet",
+  "bc_red_rocks_wall": "only one fetched page about the wall (second parent page does not mention it; thecrag returned 403)",
+  "bc_the_dog_wall": "no page found for a Dog Wall at Lillooet Edge; matches were other states",
+  "bc_the_arcade": "no fetched page about The Arcade at Lillooet Edge; only a search snippet",
+  "bc_chips_crag": "no page found naming Chips Crag at Arrow Lake; Arrow Lake page does not list it"
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "az_tom_s_thumb": {
+  "_expect": { "name": "Tom's Thumb", "region": "Arizona" },
+  "blurb": "Tom's Thumb is a granite pillar of roughly 140 feet perched on the McDowell Mountains ridge above Scottsdale, reached on foot from the trailhead at the end of 128th Street. Every one of the 18 routes here is traditional, a blend of single pitches and short multi-pitch lines. The grades lean demanding: a few moderate lines in the 5.7 to 5.9 range, then a solid block of 5.10 and 5.11 crack and face climbs, topped by one 5.12. The style of granite climbing here has fallen out of fashion locally, so the rock itself tends to be quiet, even though the trail below fills with hikers.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105798944/toms-thumb", "https://themtsarecalling.com/tomsthumb/"] }
+ },
+ "az_gargoyle_wall": {
+  "_expect": { "name": "Gargoyle Wall", "region": "Arizona" },
+  "blurb": "Gargoyle Wall sits on Camelback Mountain in the middle of Phoenix, a short way beyond the Praying Monk when approaching from Echo Canyon. It holds 18 routes, ten bolted and eight trad, many of them several pitches long. The grade spread is wide: a handful of easy lines, a core of 5.8 to 5.10 climbs, and a single route in the 5.12 range. Because Camelback is the nearest climbing to downtown, it is very convenient, but the routes can be serious, with sparse protection, loose rock in places and bees in the cracks, so a helmet and a careful head are wise. Parking near Echo Canyon is very tight.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106020994/gargoyle-wall", "https://www.mountainproject.com/area/105787836/camelback-mountain"] }
+ },
+ "az_whippersnapper_wall": {
+  "_expect": { "name": "Whippersnapper Wall", "region": "Arizona" },
+  "blurb": "Whippersnapper Wall is the broad central alcove of The Farmhouse, a bolted cliff in southern Arizona between Sonoita and Whetstone. All 18 routes are sport climbs, and most sit in the 5.11 range, with a few 5.9 and 5.10 lines to warm up on and a small number of 5.12s and one 5.13. Many lines run long, moving from slab to vertical wall. The wall is still being developed, so newer routes can feel gritty. Shade is uneven across the face: the far right stays cool until around midday, while the left half is shaded early, which lets you choose a side to match the temperature.",
+  "review": { "sources": ["https://www.mountainproject.com/area/116583116/5-whippersnapper-wall", "https://www.mountainproject.com/area/109590816/the-farmhouse"] }
+ },
+ "az_8_vineyard": {
+  "_expect": { "name": "Vineyard", "region": "Arizona" },
+  "blurb": "Vineyard is a tall alcove at the west end of The Farmhouse, a bolted cliff in southern Arizona off State Route 82 between Sonoita and Whetstone. Of its 18 routes, 17 are sport and one is trad. It is a good stop for a mixed group: a decent supply of routes from about 5.8 to 5.10, then a run of 5.11s and a cluster of 5.12s. The face offers slab, a roof and a tall chimney. Shade arrives by mid morning on most of the wall. The area is new, so expect some grainy rock on lower sections and wear a helmet.",
+  "parking_note": "Leave the car in the roadside turnout on the north side of the highway, just past the bridge east of the climbing, a few miles from the junction with Highway 90.",
+  "approach": "About 30 minutes on foot from the turnout. Cross the road and the wash, then follow the trail up the slope and bear west at the fork, continuing to the base of the wall.",
+  "approach_min": 30,
+  "review": { "sources": ["https://www.mountainproject.com/area/114285677/8-vineyard", "https://www.mountainproject.com/area/109590816/the-farmhouse"] }
+ },
+ "az_moonstone_leg_lock_rock_bolt_rock_area": {
+  "_expect": { "name": "Moonstone, Leg Lock Rock, Bolt Rock Area", "region": "Arizona" },
+  "blurb": "This is a cluster of boulders inside the Main Boulders section of Groom Creek, a pine-covered hillside south of Prescott. Besides the Moonstone Boulder, Leg Lock Rock and Bolt Rock, it includes the Fish Boulder. Eighteen problems are catalogued, from easy starter lines through a middle band of roughly V2 to V5, with a hard top end that reaches V10, so it rewards strong boulderers more than total beginners. The wider field has a calm, forested feel under tall ponderosas, and the layout is confusing enough that a few visits help in learning it.",
+  "review": { "sources": ["https://mountainproject.com/area/110492466/moonstone-leg-lock-rock-bolt-rock-area", "https://www.mountainproject.com/area/105905330/groom-creek"] }
+ },
+ "_skipped": {
+  "az_greevers_needle": "only one fetched page about the crag (blog trip report); second link redirected",
+  "az_gorilla_wall": "no fetched page about Gorilla Wall itself; only a route page and an unrelated Notch page",
+  "az_warm_up": "no fetched page about this Oak Flat Warm-up area itself; only the parent Oak Flat page"
+ },
+ "_conflicts": {
+  "az_gargoyle_wall": "Stored rock granite; the Camelback Mountain page (https://www.mountainproject.com/area/105787836/camelback-mountain) says the west 'head' side, where this wall lies, is sedimentary rock. Not changed.",
+  "az_whippersnapper_wall": "Stored rock limestone; the Farmhouse page (https://www.mountainproject.com/area/109590816/the-farmhouse) reads chert. Not changed."
+ }
+}
