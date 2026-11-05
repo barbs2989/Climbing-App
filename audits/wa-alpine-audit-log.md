@@ -36720,3 +36720,60 @@ agree only on the year and the Sherpa Climbing Club naming story, not the climbe
 
 Next batch will continue id-ascending from `wa_little_big_chief_mountain_southwest_face`
 (see progress file).
+
+## Batch 509 (pass 8) — 2026-11-05
+
+Checked 8 routes across six peaks, continuing id-ascending past Little Big Chief Mountain:
+`wa_little_mac_spire_southwest_route`, `wa_little_sister_north_face`,
+`wa_little_sister_southeast_ridge`, `wa_little_sister_west_face`,
+`wa_little_tahoma_east_shoulder`, `wa_live_free_or_die`,
+`wa_lizard_mountain_south_route`, `wa_luahna_peak_east_slopes`.
+
+No confirmed errors this batch, no SQL file. Three routes clean: `wa_little_tahoma_east_shoulder`'s
+summit elevation (11,138 ft), FA (J.B. Flett & Henry Garrison, Aug 29 1894 — the majority-held
+date against a couple of mirror sources saying 1895) and its December 1963 rockfall description
+all check out against USGS Bulletin 1221-A, which confirms ≥14 million cubic yards running roughly
+4 miles down the Emmons Glacier/White River valley in mid-December 1963. `wa_lizard_mountain_south_route`
+is clean in that its own existing `data_quality.gaps` note already correctly flags the elevation
+spread this audit independently reproduced (SummitPost 7,400 ft vs. TopoQuest 7,306 ft vs. the
+stored 7,420 ft, no authoritative benchmark found anywhere) — the existing caveat is accurate, so
+nothing to change. `wa_luahna_peak_east_slopes` is clean: summit elevation (8,445 ft) and the 1911
+Mazamas FA party (Rodney Glisan, H.H. Prouty, Winthrop Stone, C.W. Whittlesey, Aug 13 1911) both
+match Wikipedia/Peakbagger exactly, and the Dakobed/Chiwawa Range geography near Clark Mountain is
+consistent.
+
+Flagged for human review, no SQL: (1) `wa_little_mac_spire_southwest_route`'s own `data_quality.gaps`
+note says the 1969 first-ascent date "could not be independently verified" — an AAJ 1971 report
+titled "Little Mac Spire, Southwest Arete" actually confirms both the year and that the route went
+via the south face, better corroborated than the row's own note admits. Separately, its `corrections`
+field contains a stray line — "located near Mac Peak in the Deception Lakes area" — naming a real
+but entirely unrelated peak (Mac Peak, Alpine Lakes Wilderness near Stevens Pass, King/Chelan
+County) with no connection to the Southern Pickets/Terror Basin geography the rest of the row
+describes; reads as leftover text from unrelated research rather than a fact to patch, so flagged
+for a human to clean out rather than guessed at. (2)–(3) `wa_little_sister_north_face`,
+`wa_little_sister_southeast_ridge` and `wa_little_sister_west_face` all share one physical summit
+with no official USGS elevation, and the DB is internally inconsistent about it: 6,526 ft stored on
+North Face and West Face, but 6,600 ft on Southeast Ridge. The one external figure found (a 2015
+Yellowleaf trip report, 6,620 ft) matches neither stored value, and there's no Peakbagger page or
+USGS benchmark to adjudicate with — needs a human with a better source to pick one number for all
+three siblings, not this audit guessing. (4) `wa_little_sister_west_face`'s own stored FA ("Darin
+Berdinka, June 21, 2013") could not be cleanly confirmed: search snippets of two separate June 2013
+CascadeClimbers.com threads suggest Berdinka's own June 22 post actually describes the peak's
+Northwest Face as part of a "Green Creek Circuit," while a separate June 28 thread explicitly
+climbs "the W face... the spine to the right of the one Darin climbed" — implying two different
+people on two adjacent lines. cascadeclimbers.com itself was unreachable from this session's
+network (DNS-blocked), so the primary threads couldn't be read directly — flagged rather than
+guessed at. (5) `wa_live_free_or_die`'s own `data_quality.gaps` claims AAJ/Herrington's blog credit
+the FA to only two climbers (Herrington & Hadley), with Mountain Project "additionally" adding a
+third (Keena-Levin) — but Mountain Project's route page and Herrington's own blog
+(blakeclimbs.blogspot.com, describing all three building the route together over six weeks in
+summer 2017) both independently credit all three climbers, which contradicts the row's own gaps
+note rather than the stored `fa` field. publications.americanalpineclub.org was also unreachable
+this run, so this was flagged for a human with fuller network access rather than rewritten outright.
+
+Network note: `cascadeclimbers.com`, `publications.americanalpineclub.org` and `listsofjohn.com`
+were all DNS-blocked from this session for this run — a future run with broader network access
+could resolve items (4) and (5) above more conclusively.
+
+Next batch will continue id-ascending from `wa_luahna_peak_east_slopes`
+(see progress file).
