@@ -350,7 +350,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `extra` is the *Add to résumé* form — six free-text/select inputs, **no route id, no
     verification, no source marker**. Type "The Nose / El Capitan / 5.9 / Lead" and it sat there
     looking like a logged ascent.
-  - **THE MARK IS "added by hand", DELIBERATELY NOT "self-reported".** A logged climb is
+  - **2026-11-05: BOTH MARKS REMOVED by the owner** ("Remove self reported notice when someone
+    adds something ie certifications and same with routes"). The "added by hand" sub-line on a
+    hand-typed climb and the amber "self-reported" chip on a hand-added course are gone; sections
+    1 and 2 now assert the opposite — that NEITHER string renders on any row — so the marks cannot
+    creep back, while keeping what the marks were standing in for: a hand-typed row still renders,
+    and a self-added course never reads "✓ verified". The history below is kept because the
+    reasoning (a logged climb is self-reported too) still explains why the two never shared a word.
+    Same PR: the résumé's ✕ remove buttons became swipe rows (`SwipeRow`), because a long name or
+    role squeezed the ✕ off the end of the flex row and seed rows had no control at all.
+  - **THE MARK WAS "added by hand", DELIBERATELY NOT "self-reported" (2026-09-03 → 2026-11-05).** A logged climb is
     self-reported too, so reusing the courses vocabulary would imply `live` rows are corroborated
     — fixing one false claim by making another. It is tagged at **composition**
     (`...((extra)||[]).map(e=>({...e,selfAdded:true}))`) rather than in `addClimb`, because
