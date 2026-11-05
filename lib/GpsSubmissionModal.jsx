@@ -28,7 +28,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
   const [drawPts, setDrawPts] = useState(() => (canDraw && initialPts && initialPts.length ? initialPts : []))
   const drawing = tab === 'draw'
   // A leg still being routed: what is on screen is about to change, so it is not yet a line to submit.
-  const [drawPending, setDrawPending] = useState(() => !!(initialShape && initialShape.some((x) => x.pending)))
+  const [drawPending, setDrawPending] = useState(false) // a handed-over line never carries a pending leg: the desktop tool waits for routing before it hands over
   const [coordinates, setCoordinates] = useState('')
   const [deviceType, setDeviceType] = useState('Garmin')
   const [climbDate, setClimbDate] = useState('')

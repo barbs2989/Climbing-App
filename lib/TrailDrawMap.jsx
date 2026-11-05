@@ -88,7 +88,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const [follow, setFollow] = useState(followDefault);
   const [selectedId, setSelectedId] = useState(null);
   const [note, setNote] = useState("");
-  const [nodes, setNodes] = useState(() => (initialShape && initialShape.length ? initialShape.map((s) => Object.assign(node(s.a, (s.via || []).map(round)), { pending: !!s.pending })) : (pts || []).map((p) => node(p))));
+  const [nodes, setNodes] = useState(() => (initialShape && initialShape.length ? initialShape.map((s) => node(s.a, (s.via || []).map(round))) : (pts || []).map((p) => node(p))));
   const dragging = useRef(false), redrawAfterDrag = useRef(false);
   const nodesRef = useRef(nodes);
   const undoRef = useRef([]), redoRef = useRef([]);
@@ -107,8 +107,6 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   // The line is owned here (nodes); `pts` is written out, never read back after mount. A host that
   // wants the line cleared re-mounts the drawer (a new route) or uses its Clear.
   useEffect(() => () => { routing.current.forEach((c) => c.abort()); clearTimeout(noteT.current); clearTimeout(fails.current.t); }, []);
-  // A line handed over while a leg was still being looked up: ask for that leg again here.
-  useEffect(() => { const shown = reask(nodesRef.current); if (shown !== nodesRef.current) setBoth(shown); }, []); // eslint-disable-line react-hooks/exhaustive-deps -- once, on mount, for the shape the host passed in
   // Hidden behind another tab of the host sheet (display:none) and shown again: Leaflet measured a
   // 0×0 box while hidden, so it is told the real size. The host keeps this mounted rather than
   // unmounting it, or a routed line would come back as one anchor per routed point.
@@ -220,11 +218,8 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   // Legs a snapshot (or a handed-over shape) left pending: asked again with Follow trails on, left
   // straight with it off, so a line never reshapes itself against the switch.
   // Returns the list to show (pending legs cleared when Follow trails is off) and starts the asks.
-  const reask = (list, skip) => {
-    const mine = (n) => n.pending && !(skip && skip.has(n.id));
-    if (propsRef.current.follow) { list.forEach((n, i) => { if (mine(n) && i > 0) startRoute(n.id); }); return list; }
-    return list.some(mine) ? list.map((n) => (mine(n) ? Object.assign({}, n, { pending: false }) : n)) : list;
-  };
+  const clearPending = (list, skip) => list.map((n) => (n.pending && !(skip && skip.has(n.id)) ? Object.assign({}, n, { pending: false }) : n));
+  const startPending = (list, skip) => list.forEach((n, i) => { if (n.pending && i > 0 && !(skip && skip.has(n.id))) startRoute(n.id); });
   // Undo/Redo keeps a request on its way when the restored snapshot holds that same leg still
   // pending between the same two anchors; every other request is given up.
   const restore = (snap) => {
@@ -233,9 +228,9 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     routing.current.forEach((c, id) => { if (!keep.has(id)) { c.abort(); routing.current.delete(id); } });
     setSelectedId(null);
     // One write: the snapshot with its Follow-off legs already cleared, then the asks for the rest.
-    const shown = propsRef.current.follow ? snap : reask(snap, keep);
-    setBoth(shown);
-    if (propsRef.current.follow) reask(snap, keep);
+    const on = propsRef.current.follow;
+    setBoth(on ? snap : clearPending(snap, keep));
+    if (on) startPending(snap, keep);
   };
   const undo = () => { if (!undoRef.current.length) return; redoRef.current.push(nodesRef.current); restore(undoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
   const redo = () => { if (!redoRef.current.length) return; undoRef.current.push(nodesRef.current); restore(redoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
@@ -284,7 +279,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     commit(next, withLegs(next, [i, i + 1]));
     return true;
   };
-  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0 || sameP(cur[i].a, round([lat, lng]))) return; /* a press and release is not a move */ const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]) });
+  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0 || sameP(cur[i].a, round([lat, lng]))) return false; /* a press and release is not a move */ const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]) });
     // A routed leg beside the moved anchor keeps its points (they now end a few metres off, which
     // is honest). With Follow trails ON it is asked again and keeps them if the router cannot
     // answer; OFF asks nothing, as the switch promises. Other legs go straight, or route when ON.
@@ -294,11 +289,9 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     const oldA = cur[i].a, movedM = distM(oldA, next[i].a);
     // Only the RUN of routed points next to the old spot (the end of the leg into it, the start of the
     // leg out of it), never a bend elsewhere that merely passes within reach.
-    const trimEnd = (via) => { let e = via.length; while (e > 0 && distM(via[e - 1], oldA) <= movedM) e--; return via.slice(0, e); };
-    const trimStart = (via) => { let s = 0; while (s < via.length && distM(via[s], oldA) <= movedM) s++; return via.slice(s); };
-    const trim = (via, k) => (k === i ? trimEnd(via) : trimStart(via));
+    const trim = (via, k) => dropNear(via, oldA, k === i ? "end" : "start", movedM);
     [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { next[k] = Object.assign({}, next[k], { via: trim(next[k].via, k), pending: on }); if (on) touched.push(next[k].id); } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); } });
-    commit(next, touched); };
+    commit(next, touched); return true; };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null);
     // The merged leg keeps the routed points of both legs it joins (the deleted anchor is the one
     // point that goes); with Follow on it is asked again and keeps them if the router cannot answer.
@@ -410,7 +403,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const last = i === nodes.length - 1, sel = n.id === selectedId;
       const m = keep(L.marker(n.a, { draggable: true, keyboard: false, autoPan: true, bubblingMouseEvents: false, icon: dot(last ? 18 : 14, C.warning, "#fff", sel ? C.accent : null) }));
       m.on("dragstart", () => { dragging.current = true; });
-      m.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = m.getLatLng(); api.current.moveAnchor(n.id, q.lat, q.lng); api.current.flushRedraw(); });
+      m.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = m.getLatLng(); if (api.current.moveAnchor(n.id, q.lat, q.lng)) redrawAfterDrag.current = false; api.current.flushRedraw(); }); // a move redraws by itself; only a press-and-release needs the deferred one
       // The second half of a double tap on empty map lands on the anchor the first half just made.
       m.on("click", (e) => { if (Date.now() - (n.born || 0) < 350) return; if (tapOk(e, "anchor")) api.current.select(n.id); });
     });
@@ -420,7 +413,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
 
   const flat = flatten(nodes), n = flat.length, selected = selectedId != null && nodes.some((x) => x.id === selectedId);
   const anyPending = nodes.some((x) => x.pending);
-  const atEnd = !!(end && n && sameP(flat[n - 1], round([end.lat, end.lng])));
+  const atEnd = !!(end && n && distM(flat[n - 1], round([end.lat, end.lng])) < 3); // the same reach as append's "nothing to add"
   const btn = { padding: "8px 11px", borderRadius: 8, border: "1px solid " + C.border, background: C.bg70, color: C.text, fontSize: 13, fontWeight: 600, cursor: "pointer" };
   const off = { opacity: 0.4, cursor: "default" };
   const b = (on) => (on ? btn : Object.assign({}, btn, off));
