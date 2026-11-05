@@ -10247,5 +10247,14 @@
       "sql_file": "audits/sql/2026-11-05-batch-515.sql",
       "note": "Fixed the same alpine_grade schema-violation pattern found on wa_dragontail_peak_triple_couloirs back in batch 9: wa_mount_baker_easton_glacier and wa_mount_baker_squak_glacier both had alpine_grade stored as 'Grade II'/'Grade III' (a duplicate of each row's own commitment grade) instead of a French adjectival value (F/PD/AD/D/TD/ED per 0006_composite_grades.sql); both fixed to 'PD' by analogy to wa_mount_baker_coleman_deming, the audit's established comparable Class 2/commitment-II Baker glacier route (named directly in Easton's own overview as a popularity peer). wa_mount_blum_north_ridge's fa (Dave Hutchinson, Phil Leatherman, Mark Weigelt, Sept 16 1972) could not be confirmed or refuted by any source found -- flagged for human review, not fixed."
     }
+  ],
+  "outage_runs": [
+    {
+      "date": "2026-11-05",
+      "attempted_after": "wa_mount_blum_north_ridge",
+      "result": "no batch processed -- Supabase project (ofuofhojhbcrcahuotya) did not respond to any PostgREST table query (routes, areas) this run",
+      "detail": "apikey/auth gateway endpoints (GET /rest/v1/ root, GET /auth/v1/health) answered in under a second; every query touching an actual table (routes, areas) via /rest/v1/ timed out with zero bytes after 30-110s client-side, and once with an explicit 504 \"upstream request timeout\" from the proxy after ~137s. Six separate attempts over roughly 10 minutes, same result every time. This looks like a DB-side outage/pause on the Supabase project itself, not a network/proxy/credential problem on this side.",
+      "last_processed_id_unchanged": true
+    }
   ]
 }

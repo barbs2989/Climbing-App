@@ -37059,3 +37059,20 @@ Network note: `cascadeclimbers.com` was DNS-blocked from this session for a dire
 run; WebSearch snippets covered everything needed.
 
 Next batch will continue id-ascending from `wa_mount_blum_north_ridge` (see progress file).
+
+## Run skipped — 2026-11-05 (database unreachable)
+
+No batch processed this run. Every PostgREST query against an actual table (`routes`, `areas`)
+timed out — six attempts over ~10 minutes, mixing short (30s) and long (up to 110s client-side,
+and one explicit 504 "upstream request timeout" from the proxy after ~137s) timeouts, all with
+zero rows returned. By contrast, non-DB endpoints on the same project answered instantly: `GET
+/rest/v1/` (no table, just an API-key check) returned its expected 401 in under a second, and
+`GET /auth/v1/health` returned in under a second too. That split — gateway/auth layer healthy,
+every real table query hanging — points at an outage or pause on the Supabase project's database
+itself, not a credential, proxy, or network-allowlist problem on this side (the host is on this
+environment's allowlist and the TLS handshake completes every time).
+
+`last_processed_id` was left unchanged at `wa_mount_blum_north_ridge` so the next run resumes the
+same next batch rather than skipping ahead. Logged in `audits/wa-alpine-audit-progress.json` under
+`outage_runs`. A human should check the Supabase project dashboard (project `ofuofhojhbcrcahuotya`)
+before the next scheduled run.
