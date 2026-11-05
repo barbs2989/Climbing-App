@@ -1,0 +1,191 @@
+{
+ "area_id": "or_east_side_2",
+ "routes": [
+  {
+   "route_id": "or_east_side_2_newton_clark_headwall",
+   "season": {
+    "months": [
+     5,
+     6,
+     7
+    ],
+    "window": "May-Jul",
+    "evidence": "web search: turns-all-year/SummitPost style pages give a May-June window; popular Hood climbing/skiing May to mid-July; mostly skied, steep (about 50 deg) and rockfall/icefall debris in spring. Mt Hood overall histogram peaks May-Jun."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3247306",
+     "verdict": "unsure",
+     "why": "Unnamed route, Timberline start, standard-looking south line; no evidence it is Newton Clark Headwall"
+    },
+    {
+     "aid": "3203959",
+     "verdict": "unsure",
+     "why": "Unnamed route, Timberline start; no evidence it is Newton Clark Headwall"
+    },
+    {
+     "aid": "3228175",
+     "verdict": "unsure",
+     "why": "Unnamed route, Timberline start; no evidence it is Newton Clark Headwall"
+    },
+    {
+     "aid": "3201468",
+     "verdict": "different",
+     "why": "Logged and described as Old Chute (south side)"
+    },
+    {
+     "aid": "262252",
+     "verdict": "different",
+     "why": "Logged South route/West Crater Rim, no GPS points, August (off-season)"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "All three Mount Hood areas share one Peakbagger record; every harvested track is a Timberline south-side ascent. No track assigned to any of the three routes. Tracks 3247306/3203959/3228175 have no route name and could fit the existing South Side (Hogsback) route (which already has a track). 2850250 has corrupt elevations (3 m) and is not usable. Newton Clark Headwall, Sunshine and West Crater Rim have no trailhead pins; no trailhead proposed because no track nominates Cloud Cap/Tilly Jane/Meadows. This area carries the shared missing list.",
+ "missing": [
+  {
+   "kind": "route",
+   "peak": "Mount Hood",
+   "name": "Cooper Spur",
+   "alt_names": [
+    "Cooper Spur Route",
+    "Cooper Spur from Cloud Cap",
+    "Cooper Spur from Mt. Hood Meadows"
+   ],
+   "discipline": "mountaineering",
+   "grade": "Grade III, Mod. Snow (Mountain Project)",
+   "face": "NE",
+   "season": "May-Jul",
+   "overview": "The classic northeast-side route. Hike from Cloud Cap or Tilly Jane to the stone shelter and moraine near 6,600 ft, then climb the Spur's crest and snow above the Eliot Glacier to the summit ridge. Rockfall and early-day timing matter as the snow softens.",
+   "loggedAscents": 22,
+   "aids": [],
+   "evidence": [
+    "https://www.mountainproject.com/area/105789896/mt-hood - lists Cooper Spur under North Side, Mod. Snow",
+    "https://www.mountainproject.com/route/105796614/cooper-spur (search result: Grade III, 5300 ft)",
+    "web search: Mountaineers North Side page, season late May to early July; trailheads Cloud Cap 5,800 ft / Tilly Jane 5,760 ft (FR 3512)"
+   ]
+  },
+  {
+   "kind": "route",
+   "peak": "Mount Hood",
+   "name": "Leuthold Couloir",
+   "alt_names": [
+    "Leuthold's Couloir",
+    "Leuthold Coulior"
+   ],
+   "discipline": "mountaineering",
+   "grade": "AI1-2, Mod. Snow",
+   "face": "W",
+   "season": "Mar-Jun",
+   "overview": "A steep snow couloir on the west face reached from Illumination Saddle, crossing the Reid Glacier where crevasse skills are needed. Ascended mostly in spring.",
+   "loggedAscents": 40,
+   "aids": [],
+   "evidence": [
+    "https://www.mountainproject.com/area/105789896/mt-hood - West Side, AI1-2 Mod. Snow",
+    "web search: SummitPost Leuthold Couloir page and Mountaineers Illumination Saddle page describe the Reid Glacier crossing"
+   ]
+  },
+  {
+   "kind": "route",
+   "peak": "Mount Hood",
+   "name": "Reid Glacier Headwall",
+   "alt_names": [
+    "Reid Headwall",
+    "West Face (Reid Glacier Headwall)"
+   ],
+   "discipline": "mountaineering",
+   "grade": "AI3, Steep Snow",
+   "face": "W",
+   "season": "Feb-Jul",
+   "overview": "Steep snow and ice on the west face above the Reid Glacier, from the Illumination Saddle staging area.",
+   "loggedAscents": 12,
+   "aids": [],
+   "evidence": [
+    "https://www.mountainproject.com/area/105789896/mt-hood - West Side, AI3 Steep Snow",
+    "web search: Mountaineers Illumination Saddle routes"
+   ]
+  },
+  {
+   "kind": "route",
+   "peak": "Mount Hood",
+   "name": "Sandy Glacier Headwall",
+   "alt_names": [
+    "Sandy Headwall"
+   ],
+   "discipline": "mountaineering",
+   "grade": "AI2, Mod. Snow PG13",
+   "face": "NW",
+   "season": "Mar-Jun",
+   "overview": "An intermediate ice and snow climb on the northwest side from Illumination Saddle, separate from the Reid headwall.",
+   "loggedAscents": 4,
+   "aids": [],
+   "evidence": [
+    "https://www.mountainproject.com/area/105789896/mt-hood - West Side, AI2 Mod. Snow PG13",
+    "web search: Mountaineers describe it as Grade III, AI1-2"
+   ]
+  },
+  {
+   "kind": "route",
+   "peak": "Mount Hood",
+   "name": "Yocum Ridge",
+   "alt_names": [],
+   "discipline": "alpine",
+   "grade": "AI3 Steep Snow R / Class 5",
+   "face": "W",
+   "season": "Jun-Jul",
+   "overview": "The hardest of the west-side lines: a long ridge route between the Sandy and Reid sides. Rarely climbed.",
+   "loggedAscents": 1,
+   "aids": [],
+   "evidence": [
+    "https://www.mountainproject.com/area/105789896/mt-hood - West Side, AI3 Steep Snow R"
+   ]
+  },
+  {
+   "kind": "route",
+   "peak": "Mount Hood",
+   "name": "Old Chute",
+   "alt_names": [
+    "Mazama Chute",
+    "Old Mazama Chute"
+   ],
+   "discipline": "mountaineering",
+   "grade": "Mod. Snow",
+   "face": "S",
+   "season": "Apr-Jul",
+   "overview": "The most-logged variation of the south side: from the Hogsback, traverse to the crater rim and climb the chute left of Pearly Gates. Only add if the owner wants it separate from South Side (Hogsback); it shares the approach and may be a variation, not its own route.",
+   "loggedAscents": 80,
+   "aids": [
+    "3201468",
+    "3160523",
+    "3187273"
+   ],
+   "evidence": [
+    "peakbagger logged-route names in packets (Old Chute, South Side Old Chute)",
+    "https://www.mountainproject.com/route/107567616/west-crater-rim-route-wcr - describes the Old Chute as the final pitch"
+   ]
+  },
+  {
+   "kind": "route",
+   "peak": "Mount Hood",
+   "name": "Pearly Gates",
+   "alt_names": [
+    "Pearly Gates (Left/Right)",
+    "Perly Gates"
+   ],
+   "discipline": "mountaineering",
+   "grade": "Mod. Snow",
+   "face": "S",
+   "season": "Apr-Jun",
+   "overview": "The standard crater-rim chutes reached from the Hogsback; shares the approach with South Side (Hogsback), so it may be a variation rather than a separate route.",
+   "loggedAscents": 55,
+   "aids": [],
+   "evidence": [
+    "peakbagger logged-route names in packets",
+    "https://www.mountainproject.com/route/107567616/west-crater-rim-route-wcr - departs from the Pearly Gates/Hogsback line"
+   ]
+  }
+ ]
+}
