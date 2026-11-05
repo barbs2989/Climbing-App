@@ -318,7 +318,7 @@ for (const t of TABS) {
   log(`  tab:me:activity`.padEnd(24) + String(n).padStart(6) + " chars");
   if (n <= CHROME_ONLY) fail("tab:me:activity", `rendered only the nav bar (${n} chars) — the content area was empty`);
   if (lines.some((l) => /^Loading[\s.…]/i.test(l))) fail("tab:me:activity", `still showing a loading state after 45s: ${JSON.stringify(lines.find((l) => /^Loading[\s.…]/i.test(l)))}`);
-  if (!lines.some((l) => /BELAY & CATCH RECORD|Belay & Catch Record/.test(l))) fail("tab:me:activity", "the Activity tab did not render the Belay & Catch Record — the tab switch did not land, so the catch-record rules were never applied");
+  if (!lines.some((l) => /YOUR LOGBOOK|Your Logbook/.test(l))) fail("tab:me:activity", "the Activity tab did not render Your Logbook — the tab switch did not land, so the Activity rules were never applied");
   assertScreen("tab:me:activity", lines);
 }
 
