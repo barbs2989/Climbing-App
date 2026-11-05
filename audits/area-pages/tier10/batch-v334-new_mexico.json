@@ -1,0 +1,44 @@
+{
+ "nm_b_jungle_gym_area": {
+  "_expect": {"name": "Jungle Gym Area", "region": "New Mexico"},
+  "blurb": "A short stretch of cliff in the volcanic Rough and Ready Hills, west of Las Cruces, and the second group of routes you meet when walking south along the base. The spot is easy to recognise by a steep, roughly 30 foot wall where a few lines share one set of anchors. Thirteen routes, split about evenly between bolted sport lines and trad, run from easy 5.7 and 5.8 warm-ups through a handful of 5.10s to a cluster of 5.11 test pieces. Some bolted lines ask for a small rack up high, where the angle eases. The cliff is still being developed, so expect the occasional unmarked bolt line.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106379866/jungle-gym-area", "https://www.mountainproject.com/area/106379854/rough-and-ready-hills"]}
+ },
+ "nm_amphitheater_the": {
+  "_expect": {"name": "Amphitheater, The", "region": "New Mexico"},
+  "blurb": "A tall, steep wall in the Upper East Fork part of the Jemez Mountains, roughly 200 yards upstream of the Brier Patch crag and the first big wall you hit on that bench above the creek. All 13 routes are bolted, running from 5.8 into the low 5.12s, with most sitting in the 5.10 to 5.12 range. The wall looks southeast and takes sun until mid to late afternoon. It was busy when first developed but sees few visitors now, so the base and some lines can be overgrown and a few lower sections have doubtful rock. A fit for climbers after solitude and variety on steep ground.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106446813/the-amphitheater", "https://www.mountainproject.com/area/106382985/upper-east-fork-uef"]}
+ },
+ "nm_crow_feather_wall": {
+  "_expect": {"name": "Crow Feather Wall", "region": "New Mexico"},
+  "blurb": "The second wall you reach on the trail up Mud Mountain, a limestone crag overlooking Truth or Consequences. It sits right after the Winter Wall: follow the base of that cliff, then scramble down a short easy corner to arrive at the lower right end. A big dihedral separates it from its neighbours. All 13 routes are bolted, from 5.8 up to 5.12, with the bulk in the 5.10 to 5.11 range and a few easier lines to start on. Anchors are user friendly and each line has a plaque with its name and grade. The trail is loose scree, so stay on the switchbacks.",
+  "review": {"sources": ["https://www.mountainproject.com/area/116254442/crow-feather-wall", "https://www.mountainproject.com/area/116221880/mud-mountain"]}
+ },
+ "nm_leaning_tower": {
+  "_expect": {"name": "Leaning Tower", "region": "New Mexico"},
+  "blurb": "A big leaning rhyolite tower tucked a mile or so down the canyon from the Las Conchas parking area in the Jemez Mountains, standing out as the obvious wall on your right past the third wooden bridge, about 20 minutes' walk. The face overhangs and is split by a large crack. Thirteen routes mix bolted lines with a few trad cracks, and the grades lean hard: a couple of 5.9s and a 5.10 for warm-up, then mostly 5.11 and 5.12, with a lone 5.13 and a 5.14 at the top end. Not a place for beginners, but a rewarding stop for strong sport climbers already at Las Conchas.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106144517/leaning-tower", "https://www.mountainproject.com/area/105845941/las-conchas", "https://publications.americanalpineclub.org/articles/12199017603/United-States-New-Mexico-Leaning-Tower-Jemez-Mountains"]}
+ },
+ "nm_doughnut_shop_the": {
+  "_expect": {"name": "Doughnut Shop, The", "region": "New Mexico"},
+  "blurb": "A small, quiet basalt crag of about 50 feet at White Rock, in the Los Alamos area, facing southeast. Twelve routes, more trad than sport, run from a single easy line around 5.6 through some mid-grade lines to a hard core of 5.11 and 5.12, with one 5.13 on top. Several routes are cracks, and some mixed protection. The walk in goes down into the canyon along the lower hiking trail, then follows cairns up a talus slope to the base, so expect a bit of scrambling. Few climbers come here, and loose hangers and anchors have been replaced in recent years.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106058855/the-doughnut-shop", "https://www.mountainproject.com/area/105788289/white-rock"]}
+ },
+ "nm_questa_dome_2": {
+  "_expect": {"name": "Questa Dome", "region": "New Mexico"},
+  "blurb": "A large granite dome of about 600 feet in a forested canyon of northern New Mexico, reached from the village of Questa. The face looks south, so it can be hot on summer days. Most of the 12 routes here are trad, running from 5.9 up through 5.10 and 5.11 to a few 5.12s, mostly following crack systems linked by thin face moves, with one boulder problem near the trail. Climbs can run to several pitches. The way in passes through pine forest beside a creek, which can flood the path early in the season, and takes roughly three quarters of an hour.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106613543/questa-dome", "https://rockaroundtheworld.co.uk/2023/10/04/taos-part-two-red-river-john-dunn-bridge-and-tres-piedras/"]}
+ },
+ "nm_sunny_side_2": {
+  "_expect": {"name": "Sunny Side", "region": "New Mexico"},
+  "blurb": "A south-facing section of La Cueva in the Organ Mountains, outside Las Cruces, and the first wall you see on arriving. It stays warm even on cold winter days. Twelve routes on broad slabs include a few sport lines alongside trad, top-rope and one scramble, plus a single boulder problem. Grades cover easy 5.5 to 5.7 outings through a few 5.10s, so it works for beginners as well as those after something harder. The approach follows the trail from the picnic area. Rock and old anchors around La Cueva can be poor, so check gear before trusting it.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105826987/sunny-side", "https://www.mountainproject.com/area/105787856/la-cueva"]}
+ },
+ "_skipped": {
+  "nm_tsunami_boulders": "could not fetch a page about this crag: only a sub-area count on its parent's page; the only Tsunami page found is in West Virginia"
+ },
+ "_conflicts": {
+  "nm_b_jungle_gym_area": "Stored rock is rhyolite; the parent page https://www.mountainproject.com/area/106379854/rough-and-ready-hills calls the rock volcanic tuff. Left unchanged and no rock named in the blurb.",
+  "nm_leaning_tower": "Stored aspect S; https://www.mountainproject.com/area/106144517/leaning-tower says the overhanging south face is split by a crack while https://publications.americanalpineclub.org/articles/12199017603/United-States-New-Mexico-Leaning-Tower-Jemez-Mountains calls the overhang the east face. Left unchanged."
+ }
+}

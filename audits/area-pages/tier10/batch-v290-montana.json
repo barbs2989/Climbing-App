@@ -1,0 +1,31 @@
+{
+ "mt_momentum_wall": {
+  "_expect": { "name": "Momentum Wall", "region": "Montana" },
+  "blurb": "Momentum Wall is a limestone sport wall in the Maiden Rocks canyon between Butte and Dillon, a crag known for steep, difficult face climbing. All twelve routes here are bolted, and they start around 5.10 and climb through a solid block of 5.11s and 5.12s to a handful of 5.13s, so it suits strong sport climbers more than beginners. You reach it by walking uphill past the Iron Maiden line, and the routes sit on your right. Morning sun can hit you in the face, and the wall is pleasant on a hot summer day.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123469327/momentum-wall", "https://www.mountainproject.com/area/121794036/maiden-rocks"] }
+ },
+ "mt_tuckstop_boulder": {
+  "_expect": { "name": "Tuckstop Boulder", "region": "Montana" },
+  "blurb": "Tuckstop Boulder is one big freestanding block near Alberton in the Missoula area, so close to the interstate that traffic noise comes with the session. It holds a dozen problems spread from easy V1 through the V9 range, with plenty of hard linkups for the strong. Expect crimps, slopers, pinches and pockets on the tall middle of the stone, with very flat landings. With the trees bare it takes full sun all day, which makes it a good winter stop; once the leaves return the boulder is shaded and the road noise softens.",
+  "review": { "sources": ["https://www.mountainproject.com/area/200551607/tuckstop-boulder", "https://www.mountainproject.com/area/202073086/missoula-area"] }
+ },
+ "mt_crocodile_rock": {
+  "_expect": { "name": "Crocodile Rock", "region": "Montana" },
+  "blurb": "Crocodile Rock is a short, south-facing gneiss crag low in Hyalite Canyon near Bozeman. It holds eleven routes, nearly all trad with a few top-rope lines, running from easy 5.7 and 5.8 up to a 5.12 crack, with the 5.9 to 5.11 range most common. Crack climbing is the draw. The walk-in is only a few minutes up a scree slope, and a second small formation sits a short way to one side. Visitors will likely have the place to themselves.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112783003/crocodile-rock", "https://mountainproject.com/area/106291254/hyalite-canyon"] }
+ },
+ "mt_sparerib_area": {
+  "_expect": { "name": "Sparerib Area", "region": "Montana" },
+  "blurb": "The Sparerib Area is a group of gneiss buttresses on the east side of Gallatin Canyon, south of Bozeman. Of the eleven routes, nearly all are trad, with a lone sport line, and they range from an easy 5.5 up to roughly 5.11. The namesake two-pitch 5.8 crack up the tallest clean rib is the star and draws visitors. The hike is a real one, so the crowds stay modest by Montana standards, although it can still get busy. It pairs naturally with the neighbouring Skyline buttress.",
+  "parking_note": "Drive south on Highway 191 and leave the car in the big dirt area beside the river just beyond the 35 mph bridge.",
+  "approach": "Follow the riverside track, then take the right-hand trail branch marked by a climbers' sign. Switchback uphill past the lower buttresses, then cross the scree to the base of the Sparerib rib.",
+  "rock": "gneiss",
+  "review": { "sources": ["https://www.mountainproject.com/area/105961557/sparerib-area", "https://www.mountainproject.com/area/114100785/east-side", "https://outsidebozeman.com/places/cliffs-boulders/gallatin-canyon"] }
+ },
+ "_skipped": {
+  "mt_lambeau_field_rock": "no fetched page describes the crag itself (Glen Domes parent page and route breadcrumb only)",
+  "mt_little_fire_canyon": "no fetched page about the crag itself; only a sub-area listing on the Homestake Pass page",
+  "mt_south_buttress": "no page for the Blue Cloud South Buttress itself could be fetched; the only South Buttress area page is in Washington",
+  "mt_lava_pit": "only one page (Cascade Creek) covers it, as a junction of a larger bouldering area; could not fetch two pages"
+ }
+}

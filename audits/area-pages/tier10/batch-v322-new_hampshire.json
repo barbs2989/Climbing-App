@@ -1,0 +1,25 @@
+{
+ "nh_wild_river_crag": {
+  "_expect": { "name": "Wild River Crag", "region": "New Hampshire" },
+  "blurb": "A tall, remote wall in Evans Notch, northeast of the Presidential Range, set in a wilderness valley and reached on foot. Ten routes are catalogued: eight bolted lines and two trad. The grades are stiff, with one 5.10, one 5.11, six at 5.12 and two at 5.13, so this suits strong climbers and offers no easy warm-ups. The cliff rises well past a hundred feet and shows arêtes, faces and corners, with long pitches that tend to be pumpy. It is mostly a summer and fall destination, and you will likely have the place to yourself.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105973185/wild-river-crag", "https://www.mountainproject.com/area/105973180/wm-evans-notch"] }
+ },
+ "nh_4_middle_forist_area": {
+  "_expect": { "name": "Middle Forist Area", "region": "New Hampshire" },
+  "blurb": "A stretch of the big slab on Mount Forist that looks down on Berlin, lying just right of the Madigan climb. Ten routes, eight of them trad and two bolted. Difficulty is friendly: one 5.5, four at 5.7, four at 5.8 and a single 5.9, which makes it a handy spot for newer leaders and for moderate multi-pitch practice, including one five-pitch line. Most routes take some gear even where bolts are present. The walk from town is short.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112027465/middle-forist-area", "https://www.mountainproject.com/area/111983873/mount-forist"] }
+ },
+ "nh_pinnacle_block": {
+  "_expect": { "name": "Pinnacle Block", "region": "New Hampshire" },
+  "blurb": "A freestanding block at Hall's Ledge in Jackson, with lines on every side and a cave nicknamed the Mancave around the back. Ten routes, nine trad and one bolted, from an easy 5.4 up to a single 5.11, with most falling in the 5.7 to 5.8 range. The top anchors can only be reached by climbing one of the routes, so expect to lead. Hall's Ledge catches sun most of the day, and the base is mostly shaded in midsummer. Bring a standard rack.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107908192/pinnacle-block", "https://www.mountainproject.com/area/107908183/halls-ledge"] }
+ },
+ "_skipped": {
+  "nh_escape_from_reality_roof": "no fetched page about the roof itself (only the parent Right Side page and a Rumney bouldering overview); the other page places the problem in a different Rumney sector",
+  "nh_cloudbreak": "no fetched page about Cloudbreak itself; only the parent Exile Crag page lists it, and the 'Cloud break' area page found is in a different place",
+  "nh_cliff_boulders_the": "the only page about a 'Cliff Boulders' is at Pawtuckaway, a different location from the given Clough-area coordinates; the North End parent page is the only other page"
+ },
+ "_conflicts": {
+  "nh_wild_river_crag": "stored rock 'migmatite' but both pages call the cliff granite: https://www.mountainproject.com/area/105973185/wild-river-crag and https://www.mountainproject.com/area/105973180/wm-evans-notch"
+ }
+}

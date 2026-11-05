@@ -1,0 +1,59 @@
+{
+  "key": "hibox-routes",
+  "question": "Of Hibox Mountain's 7 catalog rows, which are real distinct climbs and which are the same Rachel Lake climb filed twice?",
+  "answer": "Every documented ascent leaves Rachel Lake Trail 1313 about 2.2-2.3 miles in, near the second brushy avalanche opening, and climbs the same unmarked climbers' path through two low cliff bands (first passed right and round an outcrop, second by a gully on the right) to open slopes near 6,250 ft below the summit block. Only the last 300-500 ft differ. At the block the reports describe: a right-hand traverse along the south side and east to a gully or cleft on the EAST side (low-exposure class 3 cleft, then mostly class 2; this is the standard finish in the Mountaineers and Willhite accounts, called the 'east ridge scramble' (class 3) in a 2019 log, with a crux class 3 chimney in a 2024 log); a left-hand gully, class 3 to high class 3-4 for the last 100 ft; the SOUTHEAST edge/ridge reached on talus near 6,300 ft and followed for a short class 3 scramble (2004, 2006, 2009 reports; the SummitPost winter line also finishes on the SE arete); and a first south-side gully that is a class 4/5 amphitheater scramblers are told to avoid (technical potential; Mountain Project lists one route here, 'South Face', T 5.2). The 2004 'South Route' trip report is the same bootpath (that party took the wrong gully). Genuinely different approaches that leave the Rachel Lake path: the 'Tom Cushing' approach round the Lobox flank to the SE ridge (Mountaineers 2019), the pathless Mineral Creek east-side approach (SummitPost), and Box Ridge from Alta (a 2018 attempt found the Hibox-Alta ridge steep and vertical; a commenter reported 4th class brush). No source describes a class 2 'Northwest Ridge'. Row verdicts: Standard Scramble = the climb. East Route = the standard's own east-side finish (its stored text says the East Route 'splits right around the south and east sides' at the same 6,250 ft spot): same climb. South Route = the standard (every standard description says 'south side of the summit block'). Southeast Shoulder = the lower part of the SE ridge; no source uses 'shoulder'. Southeast Ridge = a real, separately reported finish and, via the Cushing/Lobox approach, a separate approach. South Face = a technical roped line on the summit tower, distinct from the scramble. Northwest Ridge = unsupported, and the NW/W ridge that is reported is steep to vertical, not class 2.",
+  "recommendation": "Keep wa_hibox_mountain_standard (has the track, 1,228 pts). Merge wa_hibox_mountain_east_route into standard: move the East Route's detailed approach and descent prose into the standard row (best text we hold) and describe the finish as two choices. Merge wa_hibox_mountain_south_route into standard (a name for the same climbers' path). Merge wa_hibox_mountain_southeast_shoulder into wa_hibox_mountain_southeast_ridge and keep Southeast Ridge as the one distinct variant. Keep wa_hibox_mountain_south_face as a separate technical row but change discipline from trad to alpine (any roped 5.x = alpine) and mark it thinly sourced (the Mountain Project listing only); do not write the class 4/5 gully into it as a scramble. Remove wa_hibox_mountain_northwest_ridge as unsupported (hold if the owner wants Beckey checked first). Final catalog: Standard Scramble (with east finish), Southeast Ridge, South Face. Attach the Rachel Lake round-trip tracks to Standard only.",
+  "confidence": "medium",
+  "proposed": {
+    "merges": [
+      {
+        "drop": "wa_hibox_mountain_east_route",
+        "into": "wa_hibox_mountain_standard"
+      },
+      {
+        "drop": "wa_hibox_mountain_south_route",
+        "into": "wa_hibox_mountain_standard"
+      },
+      {
+        "drop": "wa_hibox_mountain_southeast_shoulder",
+        "into": "wa_hibox_mountain_southeast_ridge"
+      }
+    ],
+    "remove": [
+      "wa_hibox_mountain_northwest_ridge"
+    ],
+    "keep": [
+      "wa_hibox_mountain_standard",
+      "wa_hibox_mountain_southeast_ridge",
+      "wa_hibox_mountain_south_face"
+    ],
+    "south_face_discipline": "alpine",
+    "southeast_ridge_fill": {
+      "discipline": "scrambling",
+      "grade": "Class 3",
+      "beta": "Follow the same climbers' path to the open slopes below the summit block, then bear right over loose talus and scree to meet the summit ridge near 6,300 ft, just southeast of the block. Follow the southeast edge of the block up a short class 3 scramble. It is easy when dry; with wet rock many parties take the east gully instead. In snow the line is steeper and counts as class 4."
+    },
+    "standard_note": "Describe the finish as two choices: the right-hand wrap round the east side through a low-exposure class 3 cleft (the usual, safer one), or the left gully, class 3 rising to high class 3-4 for the last 100 ft."
+  },
+  "evidence": [
+    "https://www.summitpost.org/hibox-mountain/153409 and /southwest-route/163116 (read via local harvest summitpost/sp-wa.json) - one bootpath; first south gully is a class 4/5 amphitheater to avoid; second gully to the SE arete; summit tower's south and SW faces hold the rock potential; Mineral Creek east approach",
+    "http://www.willhiteweb.com/alpine_lakes_wilderness/hibox_mountain/rachel_lake_trail_339.htm - path from the first avalanche clearing; final approach right along the south side, east to a gully, class 3 near the top",
+    "http://ericsbasecamp.net/trips/Hibox/Hibox.htm - 'South Route' is the Rachel Lake climbers' path; wrong gully; traverse east near the cliff base to the crest; a bit of class 3",
+    "https://kuresman.com/2006/Trip_Reports/Hibox_Mt/Report_Hibox_Mt.html - the right-hand route up talus to the southeast ridge at about 6,300 ft",
+    "https://mountainflamingo.com/2019-06-30-hibox-mountain/ - east ridge scramble starts on the climbers path past the base of the summit pyramid, class 3",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-09-09.081229111143 (search snippet; page 403) - split near 6,250 ft: right wraps the east side via a class 3 cleft, left gully harder",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1136068 - Hibox-Alta ridge and west gullies steep and vertical; commenters: 4th class brush, loose 4th class direct finish that can be avoided",
+    "https://www.mountainproject.com/area/120322599/hibox-mountain (read earlier in-session) - one route listed: South Face, T 5.2",
+    "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-hibox-mountain-6 (search snippet; page 403) - Tom Cushing approach along the Lobox flank to the SE ridge, descent by the standard"
+  ],
+  "searched": [
+    "WebSearch: Hibox Mountain routes Rachel Lake climbers path southeast ridge Lobox east route south face",
+    "WebSearch: summitpost Hibox southwest route east route southeast ridge",
+    "WebSearch: Hibox trip report east ridge / southeast arete / south face; Mountaineers 'East Route' - no source names a formal East Route; the east side is the standard finish",
+    "WebSearch: Hibox Lobox Box Ridge traverse northwest ridge Alta - no NW ridge route, only a failed traverse and a ski traverse (climberkyle) that used the SW ridge",
+    "WebFetch stevensong.com/hibox-mountain - 230k chars of site chrome, report not reached; used the search snippet (east ridge, crux chimney)",
+    "WebFetch mountaineers.org, summitpost.org, wta.org 2019/2025 reports - HTTP 403 (not worked around); relied on search snippets and local sp-wa.json",
+    "Local packets-all/wa_hibox_mountain.json - 9+ logged ascents, all one Rachel Lake round trip; log names: 'Rachel Lake Trail', 'SW Side', 'SW Climbers Tr', 'Trail 1313 / Hibox Climber's Path', 'wrong way (5th class)'; none names a south, east or northwest route",
+    "Earlier dupes-read.json verdicts (both 'unsure') - this pass resolves East and South as the standard and keeps SE ridge as the distinct variant"
+  ]
+}

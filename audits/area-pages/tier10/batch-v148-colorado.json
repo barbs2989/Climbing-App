@@ -1,0 +1,39 @@
+{
+ "co_nook_s_rock": {
+  "_expect": {"name": "Nook's Rock", "region": "Colorado"},
+  "blurb": "Nook's Rock is a boulder at the foot of the Dark Side hillside on Flagstaff Mountain above Boulder, reached by a short social trail dropping down from Cloud Shadow Wall. It holds 13 problems, from an easy V0 warm-up on the south side to a handful of hard lines in the V8 to V11 range, with a solid middle band around V6 to V8. The northwest face carries tall, moderate slabs. Trees shade the slope well, so it can feel cool when other parts of the mountain are hot. Holds are often dirty with lichen, pine needles and grit, so bring a brush.",
+  "review": {"sources": ["https://www.mountainproject.com/area/classics/105745409/nooks-rock", "https://flagstaffmountainbouldering.blogspot.com/2008/01/north-edge-of-dark-side-miniguide.html?m=0", "https://mountainproject.com/area/107514858/the-dark-side"]}
+ },
+ "co_kloof_alcove": {
+  "_expect": {"name": "Kloof Alcove", "region": "Colorado"},
+  "blurb": "Kloof Alcove is a compact, steeply overhanging wall on the west side of the big gully below Yellow Spur in Eldorado Canyon State Park near Boulder. Its 13 trad lines are mostly steep, pumpy crack and face climbs on good holds and buckets, from a handful of 5.7 to 5.9 routes through a solid block of 5.10 to 5.12 to a couple of 5.13 and 5.14 test pieces. The wall faces west, so it stays shaded into the early afternoon on hot days. Anchors on the left side allow lowering, and some of the rock near the start of the climbs can feel suspect, so test holds.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105745367/kloof-alcove", "https://www.mountainproject.com/route/105752326/kloof"]}
+ },
+ "co_patio_the": {
+  "_expect": {"name": "Patio, The", "region": "Colorado"},
+  "blurb": "The Patio is a small section at the far right end of Bell Buttress in Boulder Canyon, starting from a ledge about 30 feet above the creek beneath a blocky, golden overhang. Of its 13 climbs, most are single-pitch sport routes with a few needing a little gear, plus three boulder problems from V1 to V4. Sport grades sit mostly between 5.11 and 5.12, with one easier 5.9 warm-up, so it suits climbers comfortable on steep, bouldery moves with overhangs, stemming and underclings. Several routes begin with a stick clip, and the walls are short, around 40 to 60 feet.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105864854/the-patio", "https://vainokodas.com/climbing/routes/bellbutt.html"]}
+ },
+ "co_dinosaur_s_foot": {
+  "_expect": {"name": "Dinosaur's Foot", "region": "Colorado"},
+  "blurb": "Dinosaur's Foot is an elongated granite formation in the Jurassic Park cliffs above Lily Lake, near Estes Park. Its 13 routes are split between bolted sport lines on the individual toes and a few trad or top-rope cracks. Grades run from 5.7 to about 5.12, with the bulk between 5.9 and 5.11, so beginners and intermediates both have plenty to do. The lower toe lines are moderate and well protected, while a detached fin nearby offers short, vertical single-pitch climbing. Routes are short enough that one rope reaches every anchor, and early starts help avoid afternoon heat and storms.",
+  "review": {"sources": ["https://mountainproject.com/area/105745915/dinosaurs-foot", "https://app.advcollective.com/climbing/joint-venture-sport-climbing-dinosaurs-foot-estes-park-valley"]}
+ },
+ "co_first_tier": {
+  "_expect": {"name": "First Tier", "region": "Colorado"},
+  "blurb": "First Tier is the lowest of the three levels at Avalon, a popular crag in the narrows of Boulder Canyon, sitting just above the creek. It has 13 routes, mostly bolted sport lines with a little trad, packed into a narrow grade window: the majority are 5.10, flanked by a few 5.9s and a couple of 5.11 and 5.12 lines. Faces, aretes, roofs and thin cracks make for varied movement. The tier is divided into a lower and an upper section reached by a short path, and it is a good place for a mixed-ability group wanting steady moderate sport climbing.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105810437/first-tier", "https://www.theoutbound.com/colorado/rock-climbing/climb-the-avalon-crag-in-boulder-canyon"]}
+ },
+ "co_ironsides": {
+  "_expect": {"name": "Ironsides", "region": "Colorado"},
+  "blurb": "Ironsides sits high in the Ironclads, a cluster of granite crags in forest south of Estes Park, at roughly 9,000 feet. The rock is solid, with a moderate slab in the lower half giving way to steeper climbing above. Nearly all of the 13 routes are bolted with rappel anchors, plus a couple of short cracks, running from easy 5.6 climbs up to 5.12, with a good cluster of 5.8 to 5.11. The wall catches morning shade in summer, the air is cool and breezy, and it feels quieter than the more trafficked parts of the Ironclads, especially midweek.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105746036/ironsides", "https://www.mountainproject.com/area/105744313/the-ironclads?print=1"]}
+ },
+ "_skipped": {
+  "co_orange_wall": "no fetched page about this crag itself (Orange Wall pages found were other states or provinces; only a route page mentions it under Boston Peak)",
+  "co_cartoon_crag": "the only page found titled Cartoon Crag describes a Utah sport crag; no fetched page about the Eldorado one"
+ },
+ "_conflicts": {
+  "co_kloof_alcove": "stored rock is conglomerate but https://www.mountainproject.com/area/105745367/kloof-alcove describes sandstone; rock left unchanged and not named in blurb"
+ }
+}

@@ -1,0 +1,731 @@
+{
+ "note": "full rows before apply-owner-qs.mjs; restore a patch with patchRow, a delete by re-inserting `before`",
+ "at": "2026-11-05T07:50:30.801Z",
+ "steps": [
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_the_monk_odine",
+    "area_id": "wa_the_monk_pasayten",
+    "name": "The Monk - Odine",
+    "set": {
+     "name": "The Monk - Ondine"
+    }
+   },
+   "before": {
+    "id": "wa_the_monk_odine",
+    "area_id": "wa_the_monk_pasayten",
+    "name": "The Monk - Odine",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "grade_system": "yds",
+    "grade_num": 9,
+    "pitches": 3,
+    "length_m": null,
+    "sort_order": 5,
+    "stars": null,
+    "fa": "September 1974 — the first-ascent party is not recorded",
+    "lat": null,
+    "lng": null,
+    "aspect": "S",
+    "season": "Jul-Sep",
+    "description": null,
+    "gear": [
+     "Wide range of nuts and cams",
+     "Single 60m rope (doubled for rappels)",
+     "Helmet",
+     "Rock shoes"
+    ],
+    "hazards": [
+     "Remote wilderness route far from rescue",
+     "Loose talus approach"
+    ],
+    "verif": null,
+    "overview": "A striking 3-pitch crack line left of center on The Monk's South Face, finishing on an admired splitter hand/finger crack.",
+    "beta": "Follows a prominent crack line left of center on The Monk's South Face. The first two pitches ascend a chimney/gully, and the route finishes with a splitter jam crack of noted rock quality.",
+    "turnaround": "Given the multi-day wilderness approach, set a hard weather/turnaround decision point before committing to the face.",
+    "auto_generated": false,
+    "alpine_grade": null,
+    "rock_grade": "5.9",
+    "ice_grade": null,
+    "gain_ft": 6000,
+    "loss_ft": 1300,
+    "dist_km": 27.4,
+    "max_angle": null,
+    "rappels": "Three rappels of about 75 ft (23 m) down the northeast gully of The Monk",
+    "commitment": null,
+    "face": "The Monk — South Face (prominent crack line left of centre)",
+    "permit": "Free self-issue Pasayten Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass at some trailheads.",
+    "comms": "No cell coverage in the Pasayten backcountry; carry a satellite communicator.",
+    "descent": "Descend via the NE gully, three 75-foot rappels.",
+    "obj_haz": [
+     "loose rock on the middle pitches",
+     "rockfall from the main wall above",
+     "afternoon thunderstorms",
+     "remote — long self-rescue"
+    ],
+    "waypoints": [
+     {
+      "lat": 48.7837,
+      "lng": -120.1086,
+      "elev": 3050,
+      "name": "Andrews Creek Trailhead",
+      "note": "",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The drive is easy and entirely paved: from Winthrop, head north up the Chewuch River valley on West Chewuch Road / FR-51, about 23 miles to the Andrews Creek Trailhead at roughly 3,040 ft, where Andrews Creek Trail #504 begins. Fill out the free self-issue wilderness permit at the trailhead and leave a trailhead parking pass on the car. Day one is a 17 to 20 mile hike to Upper Cathedral Lake, so get here early — this is the start of a two to four day backpack rather than a day approach."
+     },
+     {
+      "lat": 48.926203,
+      "lng": -120.217519,
+      "elev": 6700,
+      "name": "Andrews Pass",
+      "type": "Campsite"
+     },
+     {
+      "lat": 48.98166,
+      "lng": -120.20075,
+      "elev": 7369,
+      "name": "Upper Cathedral Lake",
+      "note": "The usual base camp for The Monk and Cathedral Peak; the climbing is done from here.",
+      "type": "Campsite",
+      "distMi": 18,
+      "directions": "Follow Andrews Creek Trail #504 up the valley, much of it through an old burn with little shade, about 12 miles to Andrews Pass above 6,680 ft. Drop into the meadow at Spanish Creek, cross the creek and join the Boundary Trail, following it east until a side trail climbs to Upper Cathedral Lake, about 18 miles from the car."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "name": "Base of The Monk",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": null,
+      "directions": "From camp, walk up through meadows and talus toward Cathedral Pass, then turn up into the deep gully between Cathedral Peak's south wall and The Monk, the small tower leaning against the wall's lower right side. The routes start on The Monk's own rock on the right side of the gully, 30 to 40 minutes from camp."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 8300,
+      "name": "The Monk (tower top)",
+      "type": "Topout",
+      "distMi": null,
+      "directions": "Climb the prominent crack line left of center on the south face: two pitches up a chimney and then a dirty, vegetated gully with loose rock, followed by the superb 4-inch splitter jam crack, to the top of the tower."
+     }
+    ],
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": null,
+    "timing": {
+     "totalHrs": null,
+     "summitTimeHrs": null,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 0.5,
+     "recommendedStart": null
+    },
+    "detailed_rack": "A wide range of nuts and cams for varied crack and chimney climbing.",
+    "what_to_bring": [
+     "Basecamp gear for the multi-day approach",
+     "Satellite communicator — no cell coverage expected"
+    ],
+    "pro_tips": [
+     "The final pitch is a 4-inch splitter jam crack on excellent rock — a highlight of the Monk's routes."
+    ],
+    "watch_out": "5.9 route in The Monk complex\nWeather exposure on extended climbing\nRoute-finding through multi-pitch terrain\nLoose rock hazard in mixed sections\nDescent rappel sequences",
+    "pro_needs": "Standard trad rack sized for the final splitter jam crack as well as the lower chimney.",
+    "best_season": "Climbable roughly July through the first snow of October.",
+    "high_point_ft": 8606,
+    "aid_grade": null,
+    "approach": "The drive itself is easy — paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek Trailhead, about 23 miles total — but the climb to Cathedral Peak is one of the longest wilderness approaches in the state. From the trailhead, the Andrews Creek Trail (#504) climbs roughly 12 miles to 6,680+ ft Andrews Pass, then descends into the Spanish Creek drainage before a side trail climbs to Upper Cathedral Lakes below the peak's southwest side, putting the one-way approach at around 18 miles with significant elevation gain and loss along the way. Most parties treat this as a 2-4 day backpack (roughly 40+ miles round trip), camping at or near Cathedral Lakes before making a summit push. A free self-issue wilderness permit is required at the trailhead, along with a trailhead parking pass; the first many miles are a hot, rocky, buggy uphill slog with little shade, so this is genuinely a remote, multi-day alpine objective rather than a day-approach crag. For this specific route: The Monk is a distinct, smaller detached tower/buttress leaning against Cathedral Peak's south/east flank, not part of the main South Face wall. From Cathedral Lakes camp, follow the same talus slope toward Cathedral Pass but hike up into the deep gully separating Cathedral Peak from The Monk, then start on The Monk's own faces (right side of the gully); most Monk routes descend via rappels down the NE gully.",
+    "descent_text": "Rappel the northeast gully in three rappels of about 75 feet (roughly 23 m) each; a doubled 60 m rope reaches between stations. Carry slings and rap rings to back up or build the stations. The gully drops to the talus at the foot of the Monk, from where a short walk down talus and slabs returns you to camp at Upper Cathedral Lake.",
+    "bail": "The NE gully rappel line can be reached to bail from most points on route if needed.",
+    "pitch_detail": [
+     {
+      "notes": "Start up the prominent crack line left of center on The Monk's South Face. The first two pitches go up a chimney, then a gully choked with dirt and vegetation. The climbing is decent, but loose rock and munge are common. Protect the belayer from anything dislodged.",
+      "pitch": "P1-P2"
+     },
+     {
+      "notes": "The payoff: a splitter jam crack of about 4 inches in superb rock, considered one of the best moderate wide cracks around. Adequate protection needs a double set of cams to #3 plus a single #4 to leapfrog; with less, expect long runouts.",
+      "pitch": "P3"
+     }
+    ],
+    "itinerary": "Day 1: hike 17–20 miles to Upper Cathedral Lake. Day 2: Odine and another Monk route as a half day. Day 3: the Southeast Buttress. Day 4: hike out.",
+    "access": {
+     "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 people / 18 head of stock.",
+     "permit": "Free, self-issue wilderness permit at the trailhead — no fee.",
+     "closures": "Close to the Canada-US border; crossing into Canada here is illegal and patrolled.",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District (Pasayten Wilderness).",
+     "land_manager": "Okanogan-Wenatchee National Forest — Pasayten Wilderness",
+     "parking_pass": "Northwest Forest Pass required at trailheads (e.g. Andrews Creek, Chewuch River) — $5/day or $30/annual.",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Interagency Pass",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+      "what": "Free self-issue Pasayten Wilderness permit",
+      "where": "Fill one out at the trailhead registration box. No reservation is needed."
+     }
+    },
+    "road": {
+     "name": "Forest Road 51 (Chewuch River Road) to Andrews Creek Trailhead",
+     "status": "paved the whole way: about 23 miles from Winthrop, the first ~6 on Okanogan County Rd 1213/West Chewuch Rd and the rest on Forest Road 51 to the trailhead, where the pavement ends",
+     "driveNote": "From Winthrop: WA-20 to West Chewuch Road (Okanogan County Rd 1213), follow it ~6 miles to Forest Road 51, then continue on pavement to the Andrews Creek Trailhead, about 23 miles from Winthrop in all (el. 3,050 ft); from there it is a 15+ mile wilderness trail approach to Cathedral Peak. No high clearance needed in normal summer conditions.",
+     "seasonalGate": "Upper FR 51 is typically snowed in through late spring; usually passable by early-mid summer -- confirm current conditions with the Methow Valley Ranger District before driving in."
+    },
+    "climate": {
+     "fall": "Season generally ends with first snow, typically October.",
+     "spring": "Trails/passes typically snowed in until around July.",
+     "summer": "Prime season; watch for afternoon thunderstorms.",
+     "winter": "Heavy snowpack; access not maintained for winter travel.",
+     "typical": "Interior North Cascades climate east of the crest — drier, hot summer days, cool nights, risk of afternoon thunderstorms.",
+     "forecastZone": null
+    },
+    "emergency": {
+     "notes": "Deep wilderness setting; no cell coverage should be assumed.",
+     "county": "Okanogan County, WA",
+     "rangerStation": "Methow Valley Ranger District, 24 W Chewuch Rd, Winthrop WA — (509) 996-4000",
+     "nearestHospital": "Mid-Valley Hospital, Omak WA (~29 mi from Winthrop); Three Rivers Hospital, Brewster WA also nearby",
+     "sheriffDispatch": "911 emergency; Okanogan County Sheriff non-emergency dispatch (509) 422-7232 / (800) 572-6604"
+    },
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": {
+     "optimalWindow": "August to mid-September, once Andrews Pass and the Cathedral Lakes basin are snow-free and before autumn storms",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Approach snow clears through the month; early on, the opening chimney-gully pitches can still carry meltwater. Bugs and storms peak.",
+       "status": "good"
+      },
+      "June": {
+       "reason": "The south face can be dry, but snow still covers Andrews Pass, the lakes basin and the descent gully; an ice axe helps.",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Driest month with the approach snow gone; the low, shadeless miles of Andrews Creek are hot, and wildfire smoke or closures recur.",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "First snow usually arrives this month; cold, short days on an 18-mile approach leave little margin, and larches peak early in the month.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Cool, dry conditions suit the finishing jam crack; the rifle hunt mid-to-late September puts hunters on the trails, and snow is possible late.",
+       "status": "optimal"
+      }
+     }
+    },
+    "seasonal_hazards": null,
+    "data_quality": {
+     "gaps": [
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+     ],
+     "confidence": "MEDIUM"
+    },
+    "difficulty": {
+     "exposure": 3,
+     "physical": 2,
+     "technical": 3,
+     "commitment": 2,
+     "routefinding": 4
+    },
+    "approach_logistics": {
+     "peakLat": 48.989089,
+     "peakLng": -120.18889,
+     "trailhead": "Andrews Creek Trailhead (Trail #504)",
+     "trailheadLat": 48.7842,
+     "trailheadLng": -120.1088,
+     "trailheadDirection": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51 north of Winthrop, via Andrews Creek Trail #504 — one of the longest wilderness approaches in the state"
+    },
+    "sling_rack": {
+     "cams": "0.3-3in single set",
+     "nuts": "wide range"
+    },
+    "alpine_draws": 9,
+    "rope_type": "single dynamic",
+    "rope_length_m": 60,
+    "rope_note": "Descend via the shared NE gully (three 75' rappels). Similar character to Scabo on the same face.",
+    "ascender": null,
+    "corrections": "Mountain Project lists this route at 5.9, not 5.8 as given in the route table — flagging for correction upstream.",
+    "gear_confidence": "inferred",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "notes": "First of three rappels down the NE gully, the standard descent for this route rather than the summit walk-off used by SE Buttress and other Cathedral Peak routes.",
+      "anchor": "NE gully rappel station (anchor type not documented)",
+      "lengthM": 23
+     },
+     {
+      "n": 2,
+      "notes": "Second rappel continuing down the NE gully.",
+      "anchor": "NE gully rappel station (anchor type not documented)",
+      "lengthM": 23
+     },
+     {
+      "n": 3,
+      "notes": "Final rappel of the NE gully descent, reaching easier ground below Scabo.",
+      "anchor": "NE gully rappel station (anchor type not documented)",
+      "lengthM": 23
+     }
+    ],
+    "rappel_count_note": "Three rappels of roughly 75 ft (about 23 m) each down Scabo’s northeast gully. The anchor at each station is not described.",
+    "rack": [
+     "Cams, single set 0.3-3\"",
+     "Nuts, wide range",
+     "9 alpine quickdraws",
+     "Single 60m dynamic rope (doubled for 75' rappels)"
+    ],
+    "features": [
+     "Exposed",
+     "Adventurous"
+    ],
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": [
+     {
+      "name": "Andrews Creek trail #504 to Upper Cathedral Lake, then the Cathedral-Monk gully",
+      "notes": "Winthrop to the Andrews Creek trailhead at about 3,050 ft is paved the whole way up the Chewuch River valley. On foot it is roughly twelve miles of trail #504 to Andrews Pass above 6,680 ft, largely across an old burn with no shade and brushy tread, then down into the next drainage and up a side trail to Upper Cathedral Lake at about 7,380 ft.\n\nPlan on a two-to-four day trip with the climbing done from camp. Free self-issue wilderness permit at the trailhead, parking pass as well, no cell coverage anywhere.\n\nThe other ways in are the gentle valley trail from the Thirtymile trailhead and the high trail from Loomis, which is the shortest walk but adds about two hours of driving and returns 1,300 ft of climbing on the way out.",
+      "season": "Roughly July through the first snow of October",
+      "hazards": [
+       "Five routes on one small tower with unmarked starts within a few minutes of each other",
+       "A chimney start means poor protection options if you are on the wrong line",
+       "Rappel anchors in the descent gully are not documented as fixed; carry webbing and rings",
+       "Loose rock in the gully between tower and mountain",
+       "Multi-day walk out from a remote basin with no cell coverage"
+      ],
+      "baseFinding": "This is a route on the small semi-detached tower, not on the mountain's big wall. From camp cross toward the deep gully separating the two, and get onto the tower's own south-facing rock on the right side of that gully. Climbing the left wall of the gully puts you on the mountain and on the buttress route.\n\nOn the tower's south face, this line is left of centre. The physical test at the bottom is not a position but a shape: the first two pitches go up a chimney and gully feature, so you should be climbing inside something with walls on both sides almost immediately. If your first pitch is open face or a corner rather than a chimney, you are not on this line.\n\nThe second confirmation comes at the top and is the reason people climb it: the route finishes on a splitter jam crack of noticeably better rock than anything below it. Three pitches, then that crack, then the top of the tower.\n\nNegative markers. If you started at the lowest point of the face and went straight up the middle, passing a prominent roof on its left, you are on the central five-pitch line. If you started from a large ledge on the right of the lowest rock and are zigzagging rightward, you are on the right-hand five-pitch line. If you started at a pair of parallel cracks on the lower left and were done in two pitches, you are on the short cracks. All three are on this same face and all three start within a few minutes' walk of each other.\n\nBe honest about the count as well: this route is three pitches. If you are still climbing on the fifth, you have linked into something else.\n\nDescent is the tower's north-east gully in three rappels of about seventy-five feet; a doubled sixty-metre rope covers each."
+     }
+    ],
+    "climbing_route": null,
+    "bivy": [
+     {
+      "elev": 7400,
+      "name": "Upper Cathedral Lake basin",
+      "role": "main",
+      "type": "camp",
+      "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits and camp on rock or bare dirt well back from the water. Check the posted signs on arrival rather than assuming last year's layout still applies — which sites are open has changed between seasons. Nights are cold and exposed at this elevation even in August.",
+      "water": "The most dependable water anywhere on this approach — the lake holds through the season and needs no rationing. The one place on the route where you can plan on filling without checking a report first.",
+      "permit": "Free self-issue wilderness permit from the kiosk at the Andrews Creek trailhead. No quota, no reservation, nothing to arrange in advance. Northwest Forest Pass, Interagency pass or a day fee to park.",
+      "capacity": "A handful of established sites on slabs and benches back from the water; realistically three or four small parties before it feels crowded, and it does fill on midsummer weekends and during larch season"
+     },
+     {
+      "elev": 6700,
+      "name": "Andrews Pass",
+      "role": "route",
+      "type": "camp",
+      "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, hot walking with little shade and standing dead timber that comes down in wind. Blowdown volume in the burn varies a lot year to year and is worth asking the Methow Valley district about before committing to a schedule. Breaking the walk here rather than pushing to the lakes makes a big difference to how the second day goes.",
+      "water": "Streams on both sides of the pass, and the trail below it runs genuinely boggy in places early in the season. This is the last stretch of the approach where water is easy; reliability drops off through August and September.",
+      "permit": "Free self-issue permit filled out at the trailhead kiosk. Northwest Forest Pass or Interagency pass to park at Andrews Creek.",
+      "capacity": "A pleasant site just off the trail at the pass plus dispersed spots on the bluff to the east; several parties can spread out without stacking up"
+     },
+     {
+      "elev": 7600,
+      "name": "Cathedral Pass benches and the tarn slabs",
+      "role": "route",
+      "type": "bivy",
+      "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hide behind. Most parties are better off dropping to the lake and accepting the extra few hundred feet of regain.",
+      "water": "A small tarn and lingering snowmelt only, and both are unreliable. By late summer the pass area can be dry and the trail east toward Tungsten is reported dry for its whole length, so treat this as a place you carry water TO, not one you collect at.",
+      "permit": "Same free self-issue trailhead permit; no quota and no reservation anywhere in this wilderness.",
+      "capacity": "One or two parties on flat rock; there is no established site and no shelter from wind"
+     }
+    ],
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "the monk odine",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  },
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_the_monk_scabo",
+    "area_id": "wa_the_monk_pasayten",
+    "name": "The Monk - Scabo",
+    "set": {
+     "name": "The Monk - Scarbo"
+    }
+   },
+   "before": {
+    "id": "wa_the_monk_scabo",
+    "area_id": "wa_the_monk_pasayten",
+    "name": "The Monk - Scabo",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "grade_system": "yds",
+    "grade_num": 9,
+    "pitches": 5,
+    "length_m": null,
+    "sort_order": 7,
+    "stars": null,
+    "fa": "August 1973 — the first-ascent party is not recorded",
+    "lat": null,
+    "lng": null,
+    "aspect": "S",
+    "season": "Jul-Sep",
+    "description": null,
+    "gear": [
+     "Wide range of nuts and cams",
+     "Single 60m rope (doubled for rappels)",
+     "Helmet",
+     "Rock shoes"
+    ],
+    "hazards": [
+     "Remote wilderness route far from rescue",
+     "Loose talus approach"
+    ],
+    "verif": null,
+    "overview": "A 5-pitch zigzag line up the right side of The Monk's South Face, beginning from a large ledge low on the face.",
+    "beta": "Zigzags up the right side of the face, starting at a large ledge on the lower South Face section.",
+    "turnaround": "Given the multi-day wilderness approach, set a hard weather/turnaround decision point before committing to the face.",
+    "auto_generated": false,
+    "alpine_grade": null,
+    "rock_grade": "5.9",
+    "ice_grade": null,
+    "gain_ft": 6000,
+    "loss_ft": 5450,
+    "dist_km": 27.4,
+    "max_angle": null,
+    "rappels": "Three 75-ft rappels down the northeast gully",
+    "commitment": null,
+    "face": "The Monk — South Face (right side)",
+    "permit": "Free self-issue Pasayten Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass at some trailheads.",
+    "comms": "No cell coverage in the Pasayten backcountry; carry a satellite communicator.",
+    "descent": "Standard descent from Scabo is via the NE gully -- three rappels of roughly 75 feet each -- rather than the main summit walk-off used by the SE Buttress and other routes.",
+    "obj_haz": [
+     "loose rock on mid-face sections",
+     "rockfall from the main wall above",
+     "afternoon thunderstorms",
+     "remote — long self-rescue"
+    ],
+    "waypoints": [
+     {
+      "lat": 48.7837,
+      "lng": -120.1086,
+      "elev": 3050,
+      "name": "Andrews Creek Trailhead",
+      "note": "",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Getting here is simple driving: from Winthrop, head north up the Chewuch River valley on West Chewuch Road / FR-51, paved the whole way, about 23 miles to the Andrews Creek Trailhead at roughly 3,040 ft. Andrews Creek Trail #504 starts from the lot. Sort the free self-issue wilderness permit at the trailhead before you leave the car, and display a trailhead parking pass. Day one is a 17 to 20 mile hike to Upper Cathedral Lake, so arrive with the whole day in front of you."
+     },
+     {
+      "lat": 48.926203,
+      "lng": -120.217519,
+      "elev": 6700,
+      "name": "Andrews Pass",
+      "type": "Campsite"
+     },
+     {
+      "lat": 48.98166,
+      "lng": -120.20075,
+      "elev": 7369,
+      "name": "Upper Cathedral Lake",
+      "note": "The usual base camp for The Monk and Cathedral Peak; the climbing is done from here.",
+      "type": "Campsite",
+      "distMi": 18,
+      "directions": "Follow Andrews Creek Trail #504 up the valley, much of it through an old burn with little shade, about 12 miles to Andrews Pass above 6,680 ft. Drop into the meadow at Spanish Creek, cross the creek and join the Boundary Trail, following it east until a side trail climbs to Upper Cathedral Lake, about 18 miles from the car."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "name": "Base of The Monk",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": null,
+      "directions": "From camp, walk up through meadows and talus toward Cathedral Pass, then turn up into the deep gully between Cathedral Peak's south wall and The Monk, the small tower leaning against the wall's lower right side. The routes start on The Monk's own rock on the right side of the gully, 30 to 40 minutes from camp."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 8300,
+      "name": "The Monk (tower top)",
+      "type": "Topout",
+      "distMi": null,
+      "directions": "From the large ledge near the right-hand side of the lowest part of the south face, climb five pitches that wander back and forth up the right side of the face to the top of the tower. Extend placements to keep the rope running straight."
+     }
+    ],
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": null,
+    "timing": {
+     "totalHrs": null,
+     "summitTimeHrs": null,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 0.5,
+     "recommendedStart": null
+    },
+    "detailed_rack": "A wide range of nuts and cams for protection throughout the zigzagging line.",
+    "what_to_bring": [
+     "Basecamp gear for the multi-day approach",
+     "Satellite communicator — no cell coverage expected"
+    ],
+    "pro_tips": [
+     "Bring more long slings than you think — the line zigzags and rope drag is the main enemy.",
+     "The large ledge near the right side of the lowest part of the face is the start; find it before you rope up.",
+     "Carry webbing and rings for the northeast-gully rappels rather than trusting whatever is there.",
+     "Pair it with Odine for a full half-day on The Monk from the same camp."
+    ],
+    "watch_out": [
+     "Sustained 5.9 climbing in The Monk area",
+     "High exposure on vertical terrain",
+     "Weather hazard - afternoon electrical activity",
+     "Route-finding complexity through Monk terrain",
+     "Loose rock hazard on mixed terrain"
+    ],
+    "pro_needs": "Standard trad rack; routefinding matters more than any single hard placement given the zigzag nature of the route.",
+    "best_season": "Climbable roughly July through the first snow of October.",
+    "high_point_ft": 8606,
+    "aid_grade": null,
+    "approach": "The drive itself is easy — paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek Trailhead, about 23 miles total — but the climb to Cathedral Peak is one of the longest wilderness approaches in the state. From the trailhead, the Andrews Creek Trail (#504) climbs roughly 12 miles to 6,680+ ft Andrews Pass, then descends into the Spanish Creek drainage before a side trail climbs to Upper Cathedral Lakes below the peak's southwest side, putting the one-way approach at around 18 miles with significant elevation gain and loss along the way. Most parties treat this as a 2-4 day backpack (roughly 40+ miles round trip), camping at or near Cathedral Lakes before making a summit push. A free self-issue wilderness permit is required at the trailhead, along with a trailhead parking pass; the first many miles are a hot, rocky, buggy uphill slog with little shade, so this is genuinely a remote, multi-day alpine objective rather than a day-approach crag. For this specific route: The Monk is a distinct, smaller detached tower/buttress leaning against Cathedral Peak's south/east flank, not part of the main South Face wall. From Cathedral Lakes camp, follow the same talus slope toward Cathedral Pass but hike up into the deep gully separating Cathedral Peak from The Monk, then start on The Monk's own faces (right side of the gully); most Monk routes descend via rappels down the NE gully.",
+    "descent_text": "Rappel the NE gully in three 75-foot (roughly 23m) rappels back to the base.",
+    "bail": "The NE gully rappel line can be reached to bail from most points on route if needed.",
+    "pitch_detail": [
+     {
+      "notes": "Begin from a large ledge near the right-hand side of the lowest part of The Monk's South Face. From here the line heads up the right side of the face. Protection is all natural, so bring a wide range of nuts and cams.",
+      "pitch": "Start ledge"
+     },
+     {
+      "notes": "Five pitches that wander back and forth up the right-hand side of the South Face to the top of The Monk. The line changes direction repeatedly, so extend placements to keep the rope running straight. The descent from the top is by rappel down the northeast gully.",
+      "pitch": "Right side of the face"
+     }
+    ],
+    "itinerary": "Day 1: hike 17–20 miles to Upper Cathedral Lake. Day 2: Scabo and a second Monk route as a half day. Day 3: the Southeast Buttress or South Face. Day 4: hike out.",
+    "access": {
+     "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 people / 18 head of stock.",
+     "permit": "Free, self-issue wilderness permit at the trailhead — no fee.",
+     "closures": "Close to the Canada-US border; crossing into Canada here is illegal and patrolled.",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District (Pasayten Wilderness).",
+     "land_manager": "Okanogan-Wenatchee National Forest — Pasayten Wilderness",
+     "parking_pass": "Northwest Forest Pass required at trailheads (e.g. Andrews Creek, Chewuch River) — $5/day or $30/annual.",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Interagency Pass",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+      "what": "Free self-issue Pasayten Wilderness permit",
+      "where": "Fill one out at the trailhead registration box. No reservation is needed."
+     }
+    },
+    "road": {
+     "name": "Forest Road 51 (Chewuch River Road) to Andrews Creek Trailhead",
+     "status": "paved the whole way: about 23 miles from Winthrop, the first ~6 on Okanogan County Rd 1213/West Chewuch Rd and the rest on Forest Road 51 to the trailhead, where the pavement ends",
+     "driveNote": "From Winthrop: WA-20 to West Chewuch Road (Okanogan County Rd 1213), follow it ~6 miles to Forest Road 51, then continue on pavement to the Andrews Creek Trailhead, about 23 miles from Winthrop in all (el. 3,050 ft); from there it is a 15+ mile wilderness trail approach to Cathedral Peak. No high clearance needed in normal summer conditions.",
+     "seasonalGate": "Upper FR 51 is typically snowed in through late spring; usually passable by early-mid summer -- confirm current conditions with the Methow Valley Ranger District before driving in."
+    },
+    "climate": {
+     "fall": "Season generally ends with first snow, typically October.",
+     "spring": "Trails/passes typically snowed in until around July.",
+     "summer": "Prime season; watch for afternoon thunderstorms.",
+     "winter": "Heavy snowpack; access not maintained for winter travel.",
+     "typical": "Interior North Cascades climate east of the crest — drier, hot summer days, cool nights, risk of afternoon thunderstorms.",
+     "forecastZone": null
+    },
+    "emergency": {
+     "notes": "Deep wilderness setting; no cell coverage should be assumed.",
+     "county": "Okanogan County, WA",
+     "rangerStation": "Methow Valley Ranger District, 24 W Chewuch Rd, Winthrop WA — (509) 996-4000",
+     "nearestHospital": "Mid-Valley Hospital, Omak WA (~29 mi from Winthrop); Three Rivers Hospital, Brewster WA also nearby",
+     "sheriffDispatch": "911 emergency; Okanogan County Sheriff non-emergency dispatch (509) 422-7232 / (800) 572-6604"
+    },
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": {
+     "optimalWindow": "August to mid-September, once Andrews Pass and the Cathedral Lakes basin are snow-free and before autumn storms",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Approach snow clears through the month and the large starting ledge melts out; mosquitoes and afternoon thunderstorms peak.",
+       "status": "good"
+      },
+      "June": {
+       "reason": "The south face can be dry, but snow still covers Andrews Pass, the lakes basin and the descent gully; an ice axe helps.",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Driest month with the approach snow gone; the low, shadeless miles of Andrews Creek are hot, and wildfire smoke or closures recur.",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "First snow usually arrives this month; cold, short days on an 18-mile approach leave little margin, and larches peak early in the month.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Cool, bug-free days for the zigzagging line up the right side; the rifle hunt mid-to-late September brings hunters, and snow is possible late.",
+       "status": "optimal"
+      }
+     }
+    },
+    "seasonal_hazards": null,
+    "data_quality": {
+     "gaps": [
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+     ],
+     "confidence": "MEDIUM"
+    },
+    "difficulty": {
+     "exposure": 3,
+     "physical": 2,
+     "technical": 3,
+     "commitment": 2,
+     "routefinding": 4
+    },
+    "approach_logistics": {
+     "peakLat": 48.989089,
+     "peakLng": -120.18889,
+     "trailhead": "Andrews Creek Trailhead (Trail #504)",
+     "trailheadLat": 48.7842,
+     "trailheadLng": -120.1088,
+     "trailheadDirection": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51 north of Winthrop, via Andrews Creek Trail #504 — one of the longest wilderness approaches in the state"
+    },
+    "sling_rack": {
+     "cams": "0.3-3in single set",
+     "nuts": "wide range"
+    },
+    "alpine_draws": 10,
+    "rope_type": "single dynamic",
+    "rope_length_m": 60,
+    "rope_note": "5 pitches, starts near the right side of the South Face's lowest ledge, zigzags up the right side. Descend via NE gully: three 75' rappels.",
+    "ascender": null,
+    "corrections": "None — fully confirmed on Mountain Project (grade, pitches, rack, descent, FA date Aug 1973).",
+    "gear_confidence": "verified",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "notes": "First of three rappels down the NE gully, the standard descent for this route rather than the summit walk-off used by SE Buttress and other Cathedral Peak routes.",
+      "anchor": "NE gully rappel station (anchor type not documented)",
+      "lengthM": 23
+     },
+     {
+      "n": 2,
+      "notes": "Second rappel continuing down the NE gully.",
+      "anchor": "NE gully rappel station (anchor type not documented)",
+      "lengthM": 23
+     },
+     {
+      "n": 3,
+      "notes": "Final rappel of the NE gully descent, reaching easier ground below Scabo.",
+      "anchor": "NE gully rappel station (anchor type not documented)",
+      "lengthM": 23
+     }
+    ],
+    "rappel_count_note": "Three rappels of roughly 75 ft (about 23 m) each down Scabo’s northeast gully. The anchor at each station is not described.",
+    "rack": [
+     "Cams, single set 0.3-3\"",
+     "Nuts, wide range",
+     "10 alpine quickdraws",
+     "Single 60m dynamic rope (doubled for 75' rappels)"
+    ],
+    "features": [
+     "Sustained",
+     "Vertical",
+     "Exposed",
+     "Adventurous"
+    ],
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": [
+     {
+      "name": "Andrews Creek trail #504 to Upper Cathedral Lake, then the Cathedral-Monk gully",
+      "notes": "Paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek trailhead at about 3,050 ft, then twelve miles of trail #504 to Andrews Pass above 6,680 ft, mostly through an old burn: hot, rocky, buggy and shadeless. Down into the next drainage, then a side trail up to Upper Cathedral Lake at about 7,380 ft.\n\nThis is a two-to-four day backpack for almost everyone, climbing from camp in the basin. Free self-issue wilderness permit and a parking pass at the trailhead.\n\nAlternatives are the valley trail from the Thirtymile trailhead, gentler and longer, and the high trail from Loomis, shortest on foot but two hours more driving and 1,300 ft of climbing on the way out.",
+      "season": "Roughly July through the first snow of October",
+      "hazards": [
+       "Five unmarked route starts within a few minutes' walk on one small tower",
+       "Zigzagging line makes rope drag a real hazard; long slings are essential",
+       "Its descent is the tower's rappel gully, not the mountain's walk-off; do not follow summit beta",
+       "Descent anchors are not documented as fixed; carry webbing and rings",
+       "Remote basin, multi-day walk out, no cell coverage"
+      ],
+      "baseFinding": "The objective is the small semi-detached tower at the lower right of the mountain's south wall, not the wall itself. Walk from camp toward the deep gully between the two and get onto the tower's own rock on the right side of that gully.\n\nThis line is the right-hand one on the tower's south face, and it has the only start on this face you can actually stand on and name: a large ledge low down, near the right side of the lowest part of the rock. Walk the base rightward until you can step up onto a ledge big enough to organise a rack on. That is the start. If you are standing on broken talus at the very bottom of the face with no ledge under you, keep walking right.\n\nThe route then confirms itself by behaviour rather than by a landmark: it zigzags. Five pitches that keep cutting back and forth across the right side of the face, which is why long slings are not optional here — rope drag is the thing people complain about, and drag is itself evidence you are on the correct line.\n\nNegative markers. If you started at the lowest point of the face and went straight up the middle past a prominent roof, you are on the central line. If your first two pitches were a chimney or gully left of centre, you are on the three-pitch crack line further left. If you started at a pair of parallel cracks on the lower left and were off after two pitches, you are on the short cracks.\n\nAlso worth knowing: this route's descent is not the mountain's summit walk-off. It comes off the tower by the north-east gully in three rappels of about seventy-five feet, each covered by a doubled sixty-metre rope. If somebody has told you to walk west off the summit, they were describing the mountain, not the tower."
+     }
+    ],
+    "climbing_route": null,
+    "bivy": [
+     {
+      "elev": 7400,
+      "name": "Upper Cathedral Lake basin",
+      "role": "main",
+      "type": "camp",
+      "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits and camp on rock or bare dirt well back from the water. Check the posted signs on arrival rather than assuming last year's layout still applies — which sites are open has changed between seasons. Nights are cold and exposed at this elevation even in August.",
+      "water": "The most dependable water anywhere on this approach — the lake holds through the season and needs no rationing. The one place on the route where you can plan on filling without checking a report first.",
+      "permit": "Free self-issue wilderness permit from the kiosk at the Andrews Creek trailhead. No quota, no reservation, nothing to arrange in advance. Northwest Forest Pass, Interagency pass or a day fee to park.",
+      "capacity": "A handful of established sites on slabs and benches back from the water; realistically three or four small parties before it feels crowded, and it does fill on midsummer weekends and during larch season"
+     },
+     {
+      "elev": 6700,
+      "name": "Andrews Pass",
+      "role": "route",
+      "type": "camp",
+      "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, hot walking with little shade and standing dead timber that comes down in wind. Blowdown volume in the burn varies a lot year to year and is worth asking the Methow Valley district about before committing to a schedule. Breaking the walk here rather than pushing to the lakes makes a big difference to how the second day goes.",
+      "water": "Streams on both sides of the pass, and the trail below it runs genuinely boggy in places early in the season. This is the last stretch of the approach where water is easy; reliability drops off through August and September.",
+      "permit": "Free self-issue permit filled out at the trailhead kiosk. Northwest Forest Pass or Interagency pass to park at Andrews Creek.",
+      "capacity": "A pleasant site just off the trail at the pass plus dispersed spots on the bluff to the east; several parties can spread out without stacking up"
+     },
+     {
+      "elev": 7600,
+      "name": "Cathedral Pass benches and the tarn slabs",
+      "role": "route",
+      "type": "bivy",
+      "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hide behind. Most parties are better off dropping to the lake and accepting the extra few hundred feet of regain.",
+      "water": "A small tarn and lingering snowmelt only, and both are unreliable. By late summer the pass area can be dry and the trail east toward Tungsten is reported dry for its whole length, so treat this as a place you carry water TO, not one you collect at.",
+      "permit": "Same free self-issue trailhead permit; no quota and no reservation anywhere in this wilderness.",
+      "capacity": "One or two parties on flat rock; there is no established site and no shelter from wind"
+     }
+    ],
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "the monk scabo",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  }
+ ]
+}
