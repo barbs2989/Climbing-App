@@ -1,0 +1,125 @@
+[
+ {
+  "op": "patch",
+  "id": "wa_mount_ellinor_standard",
+  "area_id": "wa_mount_ellinor",
+  "name": "Standard Trail (Upper Trailhead, NFR 24)",
+  "expect": {
+   "waypoints": [
+    {
+     "lat": 47.492392,
+     "lng": -123.210246,
+     "elev": 920,
+     "name": "Big Creek Campground, Lake Cushman",
+     "type": "Campsite"
+    },
+    {
+     "lat": 47.5103014,
+     "lng": -123.2477182,
+     "elev": 3500,
+     "name": "Mount Ellinor Upper Trailhead (NFR 24)",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 3500,
+     "directions": "From US-101 at Hoodsport, take SR 119 (Lake Cushman Road) 9.3 miles to its end, turn right on FS Road 24 for 1.6 miles, then left on FS Road 2419 for 4.9 miles to the lower trailhead. Continue 1.7 miles farther and turn left on FS Road 2419-014 to the upper trailhead lot at its end, about 3,500 ft. A Northwest Forest Pass is required."
+    },
+    {
+     "lat": 47.521635,
+     "lng": -123.260675,
+     "elev": 5944,
+     "name": "Mount Ellinor summit",
+     "type": "Summit",
+     "distMi": 1.6,
+     "elevFt": 5944,
+     "distFrom": "track",
+     "directions": "Climb Trail #812's stacked switchbacks 0.3 mile to where the lower-trailhead trail joins at about 3,900 ft, then continue up the south ridge to the signed junction at timberline, about 4,500 ft. In summer take the trail left, switchbacking across rocky slopes and meadows through a notch to the summit; when snow fills it, most parties climb the chute to the right instead, with ice axe and traction."
+    }
+   ]
+  },
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.492392,
+     "lng": -123.210246,
+     "elev": 920,
+     "name": "Big Creek Campground, Lake Cushman",
+     "type": "Campsite"
+    },
+    {
+     "lat": 47.5103014,
+     "lng": -123.2477182,
+     "elev": 3500,
+     "name": "Mount Ellinor Upper Trailhead (NFR 24)",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 3500,
+     "directions": "From US-101 at Hoodsport, take SR 119 (Lake Cushman Road) 9.3 miles to its end, turn right on FS Road 24 for 1.6 miles, then left on FS Road 2419 for 4.9 miles to the lower trailhead. Continue 1.7 miles farther and turn left on FS Road 2419-014 to the upper trailhead lot at its end, about 3,500 ft. A Northwest Forest Pass is required."
+    },
+    {
+     "type": "Trailhead",
+     "name": "Mount Ellinor Lower Trailhead",
+     "lat": 47.50709873,
+     "lng": -123.2317182,
+     "elev": 2600,
+     "note": "The winter and spring start: from about December into May snow usually blocks the road at or just past this lot. No pass needed. Its trail joins the one from the upper lot near 3,900 ft."
+    },
+    {
+     "lat": 47.521635,
+     "lng": -123.260675,
+     "elev": 5944,
+     "name": "Mount Ellinor summit",
+     "type": "Summit",
+     "distMi": 1.6,
+     "elevFt": 5944,
+     "distFrom": "track",
+     "directions": "Climb Trail #812's stacked switchbacks 0.3 mile to where the lower-trailhead trail joins at about 3,900 ft, then continue up the south ridge to the signed junction at timberline, about 4,500 ft. In summer take the trail left, switchbacking across rocky slopes and meadows through a notch to the summit; when snow fills it, most parties climb the chute to the right instead, with ice axe and traction."
+    }
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_mount_ellinor_southeast_chute",
+  "area_id": "wa_mount_ellinor",
+  "name": "Southeast Chute",
+  "expect": {
+   "waypoints": null,
+   "approach": "Start at the Upper Trailhead (about 3,500 ft) at the end of the spur off FS 24, which needs a Northwest Forest Pass. Trail 812 climbs at once, with stacked switchbacks for the first 0.3 mile before it merges with the lower-trailhead trail near 3,900 ft. Continue up through forest to the signed junction near timberline, about 4,500 ft, where the winter climbers' route leaves the summer trail and goes right. Follow the heavily used footpath along the north fork of Big Creek into the basin below the south-face chute, which is the base of the climb and a usual place for a first break. In early March, snow can cover the road about a mile below the lower trailhead, adding a road walk before the trail starts."
+  },
+  "set": {
+   "waypoints": [
+    {
+     "type": "Trailhead",
+     "name": "Mount Ellinor Lower Trailhead",
+     "lat": 47.50709873,
+     "lng": -123.2317182,
+     "elev": 2600,
+     "note": "The winter and spring start: from about December into May snow usually blocks the road at or just past this lot. No pass needed. Its trail joins the one from the upper lot near 3,900 ft."
+    },
+    {
+     "lat": 47.5103014,
+     "lng": -123.2477182,
+     "elev": 3500,
+     "name": "Mount Ellinor Upper Trailhead (NFR 24)",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 3500,
+     "directions": "From US-101 at Hoodsport, take SR 119 (Lake Cushman Road) 9.3 miles to its end, turn right on FS Road 24 for 1.6 miles, then left on FS Road 2419 for 4.9 miles to the lower trailhead. Continue 1.7 miles farther and turn left on FS Road 2419-014 to the upper trailhead lot at its end, about 3,500 ft. A Northwest Forest Pass is required.",
+     "note": "The usual start from about June to October, once the road has melted out; a Northwest Forest Pass is required."
+    },
+    {
+     "lat": 47.521635,
+     "lng": -123.260675,
+     "elev": 5944,
+     "name": "Mount Ellinor summit",
+     "type": "Summit",
+     "distMi": 1.6,
+     "elevFt": 5944,
+     "distFrom": "track",
+     "directions": "Climb Trail #812's stacked switchbacks 0.3 mile to where the lower-trailhead trail joins at about 3,900 ft, then continue up the south ridge to the signed junction at timberline, about 4,500 ft. In summer take the trail left, switchbacking across rocky slopes and meadows through a notch to the summit; when snow fills it, most parties climb the chute to the right instead, with ice axe and traction."
+    }
+   ],
+   "approach": "Two trailheads serve this climb. The Upper Trailhead (about 3,500 ft, at the end of the short spur off Forest Road 2419, pass required) is the usual start from roughly June through October, once the road has melted out. From about December into May the road is commonly blocked by snow at or just past the Lower Trailhead (about 2,600 ft, no pass needed), so winter and spring parties park there and add roughly 1,000 ft of climbing and a few miles to the day; in heavy snow even that lot can be out of reach and a party may have to begin at the Big Creek campground gate. The trail from the lower lot meets the one from the upper lot near 3,900 ft, so everything above is the same. Continue to the signed junction near 4,500 ft where the winter route leaves the summer trail and heads right into the basin below the chute."
+  }
+ }
+]
