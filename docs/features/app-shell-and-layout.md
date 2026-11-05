@@ -77,7 +77,10 @@ room for side-panel ads later. The phone app keeps its own look.
     only where it would come within 24px of the sidebar or rail (`wideGeom`: 1280 → column 276–928, rail
     952; 1920 → 610–1310, rail 1592). The empty space either side of the column on a big monitor is where
     side ads can go later.
-  - A site **footer** under every page: ClimbMatch links, Legal links, ©. It is the ONLY home of About,
+  - A site **footer** under every page, Strava-style (owner 2026-11-04: "look how strava does it …
+    more branding"): a card with the mark, wordmark and one line on what the app is for, three link
+    columns (Explore: the tabs; ClimbMatch: How it works, About us, Feedback, Rate the app, Settings;
+    Legal: Terms, Privacy, Guidelines, Accessibility), then a thin © row with Back to top. It is the ONLY home of About,
     Help, Feedback, Privacy and Terms on desktop. The **directory of every state with climbs** heads it on
     the Climbs tab's route and area pages only (owner 2026-11-04, `showStates`); not the tab's own
     root, where the state picker above already lists every state under the country buttons.
