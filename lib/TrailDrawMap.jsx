@@ -5,7 +5,7 @@ import { loadLeaflet, applyBaseLayer } from "./mapKit";
 import { loadUnits } from "./units-pref";
 import { MIN_RECORDED_PTS } from "./track";
 import { POP_CLOSE, POP_CLOSE_MEDIA } from "./popupChrome.js";
-import { pathLenM, routeLeg } from "./trailRouting.js";
+import { distM, pathLenM, routeLeg } from "./trailRouting.js";
 
 // TRACE THE WALK IN ON THE MAP. A crag's trail used to be addable only as a recorded GPX, so the
 // line reached a crag only after someone had walked it with a watch running AND thought to export
@@ -145,7 +145,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       if (f.none) parts.push(legs(f.none) + " with no mapped trail to follow (drag the point, or tap the hollow dot to add one between)");
       if (f.detour) parts.push(legs(f.detour) + " where the mapped trail goes a long way round (tap a point where you cross)");
       if (f.far) parts.push(legs(f.far) + " too long for one leg (tap a point between)");
-      if (f.down) parts.push(legs(f.down) + " the trail router didn't answer for (offline, or busy: switch Follow trails off and on to ask again)");
+      if (f.down) parts.push(legs(f.down) + " the trail router didn't answer for (offline, or busy: move the point a little to ask again, or switch Follow trails on, which asks for every straight leg)");
       const total = f.none + f.far + f.down + f.detour;
       say(tx((total === 1 ? "One leg stays a straight line: " : total + " legs stay straight lines: ") + parts.join("; ") + "."));
       fails.current = { far: 0, none: 0, down: 0, detour: 0, t: null };
@@ -226,15 +226,15 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     const cur = nodesRef.current, nn = node([lat, lng]);
     if ((cur[i - 1] && sameP(cur[i - 1].a, nn.a)) || (cur[i] && sameP(cur[i].a, nn.a))) return;
     const next = cur.slice();
-    if (routed(cur[i])) {
+    // On a routed leg with Follow trails OFF the routed points are split beside the nearest one
+    // (every point kept, nothing asked); with it ON both halves are routed afresh through the new
+    // anchor, since a point dragged off the path means "the way goes HERE", not a spike out and back.
+    if (routed(cur[i]) && !propsRef.current.follow) {
       const via = cur[i].via;
       let best = 0, bd = Infinity;
-      // Nearest in metres (longitude degrees shrink with latitude); every routed point is kept, the
-      // new anchor simply sits between two of them.
-      const kx = Math.cos(nn.a[0] * Math.PI / 180);
-      via.forEach((p, k) => { const d = (p[0] - nn.a[0]) ** 2 + ((p[1] - nn.a[1]) * kx) ** 2; if (d < bd) { bd = d; best = k; } });
-      const prev = cur[i - 1].a, dPrev = (via[best][0] - prev[0]) ** 2 + ((via[best][1] - prev[1]) * kx) ** 2, dNew = (nn.a[0] - prev[0]) ** 2 + ((nn.a[1] - prev[1]) * kx) ** 2;
-      const cut = dNew < dPrev ? best : best + 1; // the anchor goes before or after its nearest routed point, by which side of it the drop lies
+      via.forEach((p, k) => { const d = distM(p, nn.a); if (d < bd) { bd = d; best = k; } });
+      const prev = cur[i - 1].a;
+      const cut = distM(nn.a, prev) < distM(via[best], prev) ? best : best + 1; // before or after its nearest routed point, by which side the drop lies
       nn.via = via.slice(0, cut);
       next[i] = Object.assign({}, cur[i], { via: via.slice(cut) });
       next.splice(i, 0, nn);
@@ -242,7 +242,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       return;
     }
     next.splice(i, 0, nn);
-    commit(next, withLegs(next, [i, i + 1]));
+    commit(next, withLegs(next, [i, i + 1], routed(cur[i]) ? [i, i + 1] : []));
   };
   const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0 || sameP(cur[i].a, round([lat, lng]))) return; /* a press and release is not a move */ const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]), via: [], pending: false }); commit(next, withLegs(next, [i, i + 1], [routed(cur[i]) ? i : -1, routed(cur[i + 1]) ? i + 1 : -1])); };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null); commit(next, withLegs(next, [i], routed(cur[i]) || routed(cur[i + 1]) ? [i] : [])); };
