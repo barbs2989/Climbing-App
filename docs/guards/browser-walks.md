@@ -31,7 +31,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     so the dialog can be thousands of characters past the state name, and on a 428,000-char
     file there is no safe window size. And **the dialog must be the region's own first
     element**: `openGroupId` renders a full-screen group view whose nested `ReactionPicker`
-    puts `role="dialog"` **24,227 characters in, behind 107 open tags**. Counting that would
+    (a dialog until 2026-11-05) put `role="dialog"` **24,227 characters in, behind 107 open tags**. Counting that would
     classify every screen large enough to contain a modal as a modal.
   - Brace-matching runs over **raw source**, deliberately *not* the comment/string blanker
     that `check:seed-history` and `check:dead-flag-gates` use. That blanker treats every
@@ -399,7 +399,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       that only one mode sets is a permanent CI/local disagreement waiting for the first thing to
       read it. When adding a fixture property, ask which mode gets it.
     - **AND `check:outage`'s LANDING CHECK FOR THAT SUB-TAB WAS VACUOUS, so the red named the wrong
-      screen. FIXED — the landmark is `/saved searches/i` now.** It led with `saved
+      screen. FIXED — the landmark became `/saved searches/i`, and is `/my itineraries/i` since
+      2026-11-05, when saved searches were removed from the app (the `My itineraries` heading is
+      the other `<MeH>` rendered unconditionally in the All view, and is unique app-wide).** It led with `saved
       areas`, and the Logbook's **header** — which sits ABOVE the sub-tab bar and therefore renders
       on all four sub-tabs — reads *"Your objectives, completed climbs, challenges and saved areas
       — all in one place."* One alternative matching is enough, so a capture that never left the

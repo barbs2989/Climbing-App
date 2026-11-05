@@ -1,0 +1,103 @@
+{
+ "area_id": "or_broken_top",
+ "routes": [
+  {
+   "route_id": "or_northwest_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Mountain Project lists it T Easy/5th; a 2018 report found snow patches on the boot path; it is the no-glacier route and the snow-free summer choice. All-routes histogram peaks Jul-Aug. Todd Lake road is closed late Oct-early May."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3226387",
+     "verdict": "unsure",
+     "why": "Jun 12 from Green Lakes TH (236 m of our pin); report describes the SW ridge of the south summit, not the NW Ridge; June is before the route usually dries."
+    },
+    {
+     "aid": "2633411",
+     "verdict": "different",
+     "why": "SW ridgeline of the south peak from Cayuse Crater."
+    },
+    {
+     "aid": "1683440",
+     "verdict": "different",
+     "why": "South ridge from Todd Lake."
+    },
+    {
+     "aid": "1211840",
+     "verdict": "different",
+     "why": "South ridge from the Crater Ditch road."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "or_eleven_o_clock_gully",
+   "season": {
+    "months": [
+     12,
+     1,
+     2,
+     3,
+     4
+    ],
+    "window": "Dec-Apr",
+    "evidence": "Cascade Climbers reports (Feb 2006, Nov 2013) climb it on snow; guide text says about 500 ft of 50 degree snow; only with snow cover."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "or_broken_top_nine_o_clock_gully",
+   "season": {
+    "months": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "window": "Jan-Apr",
+    "evidence": "Mountain Project: needs a lot of snow to be in, may be corniced."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "missing": [
+  {
+   "kind": "route",
+   "peak": "Broken Top - South Peak",
+   "name": "South Ridge",
+   "alt_names": [
+    "South Peak South Ridge",
+    "Southwest Ridge (South Peak)",
+    "Broken Top South Peak via Todd Lake"
+   ],
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "face": "S",
+   "season": "Jun-Sep",
+   "overview": "A scree and gendarme ridge to the lower south summit of Broken Top, reached from the Todd Lake or Crater Ditch side along the Broken Top trail. Footing is steep loose scree between gendarmes; the gap between the two south tips is the exposed part.",
+   "loggedAscents": 6,
+   "aids": [
+    "1211840"
+   ],
+   "evidence": [
+    "https://turns-all-year.com/trip-reports/6-30-7-1-2011-broken-top-crater-bowl-and-sw-ridge - late-June south-ridge/SW-ridge ascent of the south (west) summit from Todd Lake",
+    "Peakbagger Broken Top - South Peak (pid 2421) ascents named South Ridge, S Ridge, Todd Lake Trail/South Ridge, South steep ridge, SW Ridgeline, South West Ridge"
+   ]
+  }
+ ],
+ "notes": "The Peakbagger match is Broken Top - South Peak (9,105 ft); our five routes climb the main (higher, north) summit or its cirque gullies, so no harvested track belongs to them. 3226387 (Jun 12) reached the main summit area (high point 554 m NE of the south peak) but its report is about the south summit SW ridge; left unassigned. No pins proposed."
+}
