@@ -36675,3 +36675,48 @@ AAC archive access would be the next place to check).
 
 Next batch will continue id-ascending from `wa_lichtenberg_mountain_west_face_west_rib`
 (see progress file).
+
+## Batch 508 (pass 8) — 2026-11-05
+
+Checked 8 routes across three peaks, continuing id-ascending past Lichtenberg Mountain
+onto Lincoln Peak and Little Annapurna: `wa_lincoln_peak_north_ridge`,
+`wa_lincoln_peak_standard`, `wa_little_annapurna_boola_boola_buttress`,
+`wa_little_annapurna_northeast_face`, `wa_little_annapurna_northwest_buttress`,
+`wa_little_annapurna_south_face`, `wa_little_annapurna_south_slopes`,
+`wa_little_big_chief_mountain_southwest_face`.
+
+No confirmed errors this batch, no SQL file. Seven routes clean. Lincoln Peak's
+`wa_lincoln_peak_north_ridge` (Wilkes-Booth, NW Face, WI4/IV) checks out in full against
+its own AAC Publications writeup and the Alpenglow NWMJ new-route inbox: FA (Daniel
+Coltrane & Michal Rynkiewicz, March 13 2015), the ~2,000 ft length, the crux pitch's
+shared start with Assassin Spire's "Shooting Gallery", and the southwest-face (X Couloir)
+descent all match. `wa_lincoln_peak_standard` (X Couloir)'s FA (Fred Beckey, Wesley
+Grande, John Rupley & Herb Staley, July 22 1956) is confirmed via a CascadeClimbers
+account of the peak's climbing history, and its summit coordinates (48.76833, -121.85861)
+match Wikipedia's Lincoln Peak infobox exactly. `wa_little_annapurna_boola_boola_buttress`,
+`wa_little_annapurna_northeast_face`, `wa_little_annapurna_northwest_buttress` and
+`wa_little_big_chief_mountain_southwest_face` are all bare rows (name/grade/discipline
+only, no enrichment) — nothing stored to check. `wa_little_annapurna_south_face`'s FA
+(Eiichi Fukushima & Laurence Campbell, Sept 6 1969) could not be corroborated or
+contradicted by any source found — too obscure a line to be indexed — left as-is.
+
+Flagged for human review, no SQL: `wa_little_annapurna_south_slopes` has two issues.
+(1) Its stored `high_point_ft`=8485 (matching Wikipedia/listsofjohn.com) conflicts with
+Beckey's Cascade Alpine Guide, which names this peak "8,440-foot, pyramid-shaped", and
+with SummitPost/Mountain-Forecast/GPTKB, which independently agree on 8,440 ft (2,573 m)
+— a genuine split between Wikipedia's figure and the climbing-guidebook tradition, not
+something to pick a winner on without a human checking a primary USGS source. (2) The
+row's own id says "south_slopes", but its `name` ("North Slopes"), `overview`,
+`approach` and `descent_text` all consistently describe the peak's standard north-facing
+scramble reached from Aasgard Pass/the Enchantments basin — the id and the content
+disagree about which side of the mountain this route is on. Querying every route under
+`wa_little_annapurna` confirms there is no separate `north_slopes` id this collides with,
+so it reads as a one-off naming mistake rather than a duplicate, but renaming an id needs
+a human decision (same category of issue as `wa_big_kangaroo_southwest_rib` back in batch
+1), not an UPDATE statement. The route's own FA claim (Melvin Marcus, Art Holben, Dick
+Merritt and a fourth climber, 1947) could not be corroborated or contradicted — sources
+agree only on the year and the Sherpa Climbing Club naming story, not the climbers' names
+— left as-is.
+
+Next batch will continue id-ascending from `wa_little_big_chief_mountain_southwest_face`
+(see progress file).

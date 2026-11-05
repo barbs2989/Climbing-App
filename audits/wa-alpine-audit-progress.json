@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_lichtenberg_mountain_west_face_west_rib",
+  "last_processed_id": "wa_little_big_chief_mountain_southwest_face",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 507 complete. Continuing id-ascending scope from wa_lichtenberg_mountain_west_face_west_rib (next batch starts after it).",
+  "pass_note": "Pass 8 in progress, batch 508 complete. Continuing id-ascending scope from wa_little_big_chief_mountain_southwest_face (next batch starts after it).",
   "batches": [
     {
       "batch_number": 1,
@@ -10087,6 +10087,26 @@
       "clean": 7,
       "sql_file": "audits/sql/2026-11-05-batch-507.sql",
       "note": "One confirmed error fixed: wa_liberty_crack's high_point_ft was stored as 7746, but Liberty Bell Mountain's summit is 7,720 ft per Mountain Project/Wikipedia/SummitPost, and this audit already confirmed 7,720 ft for the Beckey Route on the same peak (batch 506) -- Liberty Crack (Free) and Thin Red Line, both on the same East Face, already store 7720, so 7746 on the aid line alone was the outlier. Clean/confirmed with no changes: Thin Red Line's FA (Madsen & Schmitz, 1967, aid A3) and FFA (Kate Rutherford & Mikey Schaefer, Sept 2008, 5.12c) both confirmed exactly; Liberty Cap via Liberty Ridge's FA (Daiber, Campbell & Borrow, Sept 28-Oct 1 1935) confirmed exactly by an AAC article of that same title; Liberty Cap via Ptarmigan Ridge's FA (Bauer & Hossack, Sept 8 1935) confirmed by Mountain Project and a contemporaneous AAC account; Liberty Crack's own FA (Marts, McPherson & Stanley, July 1965) confirmed (Wikipedia gives the exact dates July 16-18, 1965, consistent with the DB's month-level claim); Liberty Crack (Free)'s FFA history (Sandahl 1991; current free variation by Schaefer/Lee/Herrington/Hadley) confirmed -- sources differ on the variation's year (OpenBeta says 2017, DB says 2016), but a contemporaneous blog post by participant Blake Herrington, dated July 2016, describes the same send from June 28, 2016, so the primary account backs the DB's 2016 over the secondary aggregator; Liberty Traverse's 26-pitch, 5-summit composition and 5.9/Grade V rating confirmed exactly via Mountain Project; Lichtenberg Mountain's 5,844 ft summit elevation (stored on both se_route and southeast_ridge) confirmed by Wikipedia; West Face's beta attributing a 5.9+ new route to James Nakagami, Dan 'Danimal' Capellini and an unnamed third partner matches a Mountain Project forum account of a summer-2001 II+ 5.9 route by Nakagami, Cappellini and Ray Borbon almost exactly (DB correctly leaves the third partner unnamed rather than guessing). Flagged for human review, no SQL: (1) Liberty Crack's overview names the Lithuanian Lip/Roof for Alex Bertulis' Lithuanian heritage -- found an AAC-indexed 1990s article titled 'Lithuanian-American Exchange' for the Washington Cascades that hints at a connection but nothing that directly confirms the naming story; (2) Southeast Ridge's claim that 'Jim Brisbine's party climbed it as a rock scramble over 20-21 September 1975' could not be independently corroborated -- no source found names Brisbine in connection with Lichtenberg; (3) West Face - West Rib (Lichtenhorn)'s approach/descent history (approached via Lichtenberg Pass, '1978 party' descending the Northeast Slope) is also uncorroborated -- this is an obscure, thinly-documented sub-summit line and no independent source was found either confirming or contradicting its details. None of the three flagged items were acted on, per audit rules, since nothing found actually contradicts what is stored."
+    },
+    {
+      "batch_number": 508,
+      "date": "2026-11-05",
+      "pass": 8,
+      "route_ids": [
+        "wa_lincoln_peak_north_ridge",
+        "wa_lincoln_peak_standard",
+        "wa_little_annapurna_boola_boola_buttress",
+        "wa_little_annapurna_northeast_face",
+        "wa_little_annapurna_northwest_buttress",
+        "wa_little_annapurna_south_face",
+        "wa_little_annapurna_south_slopes",
+        "wa_little_big_chief_mountain_southwest_face"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 1,
+      "clean": 7,
+      "sql_file": null,
+      "note": "Eight routes, three peaks (Lincoln Peak, Little Annapurna, Little Big Chief Mountain). Seven clean. wa_lincoln_peak_north_ridge (Wilkes-Booth, NW Face, WI4 IV): FA (Daniel Coltrane & Michal Rynkiewicz, March 13 2015), the ~2,000 ft length, the crux pitch shared with Assassin Spire's Shooting Gallery, and the southwest-face (X Couloir) descent are all confirmed against the AAC Publications writeup (Coltrane's own AAJ account) and the Alpenglow NWMJ new-route inbox. wa_lincoln_peak_standard (X Couloir): FA (Fred Beckey, Wesley Grande, John Rupley & Herb Staley, July 22 1956) confirmed via a CascadeClimbers account of the peak's climbing history; summit coordinates (48.76833, -121.85861) match Wikipedia's Lincoln Peak infobox exactly. wa_little_annapurna_boola_boola_buttress, wa_little_annapurna_northeast_face, wa_little_annapurna_northwest_buttress and wa_little_big_chief_mountain_southwest_face are all bare rows (name/grade/discipline only) -- nothing stored to check. wa_little_annapurna_south_face's FA (Eiichi Fukushima & Laurence Campbell, Sept 6 1969) could not be corroborated or contradicted by any source found -- too obscure a line to be indexed -- left as-is per the audit rules.\n\nFlagged, no SQL: wa_little_annapurna_south_slopes carries two issues. (1) Its stored high_point_ft=8485 (matching Wikipedia/listsofjohn.com) conflicts with Beckey's Cascade Alpine Guide, which names this peak '8,440-foot, pyramid-shaped', and with SummitPost/Mountain-Forecast/GPTKB, which independently agree on 8,440 ft (2,573 m) -- a genuine split between Wikipedia's LiDAR-era figure and the climbing-guidebook tradition, not something to pick a winner on without a human checking a primary USGS source. (2) The row's own id says 'south_slopes', but its name ('North Slopes'), overview, approach and descent_text all consistently describe the peak's standard north-facing scramble reached from Aasgard Pass/the Enchantments basin -- id and content disagree about which side of the mountain this route is on. Querying every route under wa_little_annapurna confirms there is no separate 'north_slopes' id this collides with, so it reads as a one-off naming mistake rather than a duplicate, but renaming an id needs a human decision (same category as wa_big_kangaroo_southwest_rib back in batch 1), not an UPDATE statement. The route's own FA claim (Melvin Marcus, Art Holben, Dick Merritt and a fourth climber, 1947) could not be corroborated or contradicted -- sources agree only on the year and the Sherpa Climbing Club naming story -- left as-is."
     }
   ]
 }
