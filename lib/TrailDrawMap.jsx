@@ -174,6 +174,10 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       // No answer: the leg keeps the routed points it was split from (a nudge with Follow on), else straight.
       next[j] = Object.assign({}, next[j], { via: Array.isArray(via) ? via : next[j].via, pending: false });
       setBoth(next);
+      // History froze this leg as still pending: give those snapshots the answer too, or an Undo would
+      // ask again for a leg that had settled (or flatten it, with Follow off since).
+      const settle = (snap) => snap.map((x, k) => (x.id === id && x.pending && k > 0 && sameP(x.a, b) && sameP(snap[k - 1].a, a) ? Object.assign({}, x, { via: next[j].via, pending: false }) : x));
+      undoRef.current = undoRef.current.map(settle); redoRef.current = redoRef.current.map(settle);
       if (!Array.isArray(via) && !next[j].via.length) noteFailure(via); // a leg that kept its split still follows the trail
     });
   };
@@ -226,7 +230,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   // two routed ones when Follow trails is on.
   const insertAt = (i, lat, lng) => {
     const cur = nodesRef.current, nn = node([lat, lng]);
-    if ((cur[i - 1] && sameP(cur[i - 1].a, nn.a)) || (cur[i] && sameP(cur[i].a, nn.a))) return;
+    if ((cur[i - 1] && sameP(cur[i - 1].a, nn.a)) || (cur[i] && sameP(cur[i].a, nn.a))) return false;
     const next = cur.slice();
     // On a routed leg the routed points are split beside the nearest one (every point kept). With
     // Follow trails ON both halves are then routed afresh through the new anchor, since a point
@@ -245,23 +249,29 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       nn.via = via.slice(0, cut);
       next[i] = Object.assign({}, cur[i], { via: via.slice(cut) });
       next.splice(i, 0, nn);
-      if (!propsRef.current.follow) { commit(next, []); return; }
+      if (!propsRef.current.follow) { commit(next, []); return true; }
       const touched = [];
       [i, i + 1].forEach((k) => { next[k] = Object.assign({}, next[k], { pending: true }); touched.push(next[k].id); });
       commit(next, touched);
-      return;
+      return true;
     }
     next.splice(i, 0, nn);
     commit(next, withLegs(next, [i, i + 1]));
+    return true;
   };
   const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0 || sameP(cur[i].a, round([lat, lng]))) return; /* a press and release is not a move */ const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]) });
-    // A routed leg beside the moved anchor keeps its points while the router is asked again (they
-    // now end a few metres off, which is honest) and keeps them if it cannot answer: a nudge in an
-    // outage must not flatten a switchback. Other legs go straight, or route when Follow is on.
-    const touched = [];
-    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { next[k] = Object.assign({}, next[k], { pending: true }); touched.push(next[k].id); } else { next[k] = Object.assign({}, next[k], { via: [], pending: propsRef.current.follow && !zero }); if (propsRef.current.follow && !zero) touched.push(next[k].id); } });
+    // A routed leg beside the moved anchor keeps its points (they now end a few metres off, which
+    // is honest). With Follow trails ON it is asked again and keeps them if the router cannot
+    // answer; OFF asks nothing, as the switch promises. Other legs go straight, or route when ON.
+    const touched = [], on = propsRef.current.follow;
+    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { if (on) { next[k] = Object.assign({}, next[k], { pending: true }); touched.push(next[k].id); } } else { next[k] = Object.assign({}, next[k], { via: [], pending: propsRef.current.follow && !zero }); if (propsRef.current.follow && !zero) touched.push(next[k].id); } });
     commit(next, touched); };
-  const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null); commit(next, withLegs(next, [i], routed(cur[i]) || routed(cur[i + 1]) ? [i] : [])); };
+  const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null);
+    // The merged leg keeps the routed points of both legs it joins (the deleted anchor is the one
+    // point that goes); with Follow on it is asked again and keeps them if the router cannot answer.
+    const wasRouted = routed(cur[i]) || routed(cur[i + 1]);
+    if (wasRouted && i > 0 && i < next.length) { next[i] = Object.assign({}, next[i], { via: (cur[i].via || []).concat(cur[i + 1].via || []), pending: !!propsRef.current.follow }); commit(next, propsRef.current.follow ? [next[i].id] : []); return; }
+    commit(next, withLegs(next, [i])); };
   // Clear gives up every answer still on its way, so a new line's legs do not queue behind dead ones.
   const clearAll = () => { if (!nodesRef.current.length) return; routing.current.forEach((c) => c.abort()); routing.current.clear(); setSelectedId(null); commit([], []); };
   // Switching Follow trails ON routes every leg that is still straight (the help says it bends each
@@ -346,7 +356,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     for (let i = 1; i < nodes.length; i++) {
       const leg = legPts(nodes, i), n = nodes[i];
       keep(L.polyline(leg, { color: C.warning, weight: 4, opacity: 0.95, dashArray: n.pending ? "6 8" : null, interactive: false }));
-      keep(L.polyline(leg, { color: "#000", weight: 18, opacity: 0, bubblingMouseEvents: false })).on("click", (e) => { if (!tapOk(e, "leg")) return; const q = onLeg(map, L, leg, e.latlng); api.current.insertAt(i, q.lat, q.lng); });
+      keep(L.polyline(leg, { color: C.border, weight: 18, opacity: 0, bubblingMouseEvents: false })).on("click", (e) => { if (!tapOk(e, "leg")) return; const q = onLeg(map, L, leg, e.latlng); api.current.insertAt(i, q.lat, q.lng); });
       // The hollow dot: drag it out (or tap it) to add an anchor on this leg. Not on a leg shorter
       // than its own hit box on screen, where it would sit on the anchors and steal their taps.
       // Measured along the leg as drawn (a routed leg can loop far from two close anchors), and the
@@ -358,9 +368,9 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       let want = tot / 2, k = 0;
       while (k < seg.length - 1 && want > seg[k]) { want -= seg[k]; k++; }
       const f = seg[k] ? Math.min(1, want / seg[k]) : 0, m0 = leg[k], m1 = leg[k + 1];
-      const h = keep(L.marker([m0[0] + (m1[0] - m0[0]) * f, m0[1] + (m1[1] - m0[1]) * f], { draggable: true, keyboard: false, bubblingMouseEvents: false, icon: dot(14, "rgba(0,0,0,0.45)", C.warning) }));
+      const h = keep(L.marker([m0[0] + (m1[0] - m0[0]) * f, m0[1] + (m1[1] - m0[1]) * f], { draggable: true, keyboard: false, bubblingMouseEvents: false, icon: dot(14, C.bg70, C.warning) }));
       h.on("dragstart", () => { dragging.current = true; });
-      h.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); redrawAfterDrag.current = true; api.current.flushRedraw(); }); // always redrawn: a drop ON an anchor adds nothing, and the handle must not stay where it was dropped
+      h.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = h.getLatLng(); if (!api.current.insertAt(i, q.lat, q.lng)) redrawAfterDrag.current = true; api.current.flushRedraw(); }); // a drop ON an anchor adds nothing, and the handle must not stay where it was dropped
       h.on("click", (e) => { if (!tapOk(e, "handle")) return; const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); });
     }
     nodes.forEach((n, i) => {
@@ -372,7 +382,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     });
   // The pins are read through propsRef and keyed by VALUE (startKey/endKey): the host builds fresh
   // {lat,lng} objects every render, and keying on the objects rebuilt every layer per tick.
-  }, [nodes, ready, zoomN, startKey, endKey, selectedId, C.accent, C.warning, mk.start, mk.end]);
+  }, [nodes, ready, zoomN, startKey, endKey, selectedId, C.accent, C.warning, C.bg70, C.border, mk.start, mk.end]);
 
   const flat = flatten(nodes), n = flat.length, selected = selectedId != null && nodes.some((x) => x.id === selectedId);
   const anyPending = nodes.some((x) => x.pending);

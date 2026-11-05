@@ -36,7 +36,9 @@ export default function RouteTracksPanel({ rows, profiles, loading, failed, show
   // ...and nothing while loading either: a loading row that then collapses would shift the cards under it.
   // ...unless the crag already HAS its trail: then the gap note is gone and this is the one line that
   // says a recording of the walk in is welcome.
-  if (crag && !failed && (loading || (!rows.length && !cragHasTrail))) return null;
+  // A crag that has its trail draws the section as any route does (loading rows, then the list or
+  // the one-line invitation), so nothing pops in under the climber; one without a trail draws nothing.
+  if (crag && !cragHasTrail) return null;
   if (crag && !failed && !loading && !rows.length) return <div style={{ marginTop: 12, fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>Walked in with a watch running? Attach the GPX when you log a climb here and it shows under the crag map for anyone who can read your report.{onLog ? <> <button onClick={onLog} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Log a climb</button></> : null}</div>;
   return (
     <section aria-label={title} style={{ marginTop: 12 }}>
