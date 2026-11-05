@@ -15,17 +15,19 @@ export interface ClassicsListProps {
   /** The whole count when the read was capped. */
   total?: number | null;
   withWall?: boolean;
+  /** One-line rows (website): Mountain Project's classics table. */
+  dense?: boolean;
   onOpen: (r: RouteRowRoute) => void;
   C: typeof Palette;
 }
-export default function ClassicsList({ rows, total, withWall, onOpen, C }: ClassicsListProps) {
+export default function ClassicsList({ rows, total, withWall, dense, onOpen, C }: ClassicsListProps) {
   const [open, setOpen] = useState(false);
   const all = Math.max(total || 0, rows.length), rest = rows.length - CLASSICS_SHOWN;
   const shown = open ? rows : rows.slice(0, CLASSICS_SHOWN);
   return (
     <>
       <SL C={C}>{"Classic climbs here · " + all.toLocaleString()}</SL>
-      {shown.map(r => <RouteRow key={"classic-" + r.id} r={r} areaName={withWall ? r.area_name : undefined} onOpen={onOpen} C={C} />)}
+      {shown.map(r => <RouteRow key={"classic-" + r.id} r={r} areaName={withWall ? r.area_name : undefined} dense={dense} onOpen={onOpen} C={C} />)}
       {open && all > rows.length ? <div style={{ fontSize: 12, color: C.textMuted, margin: "2px 2px 8px" }}>{"The first " + rows.length.toLocaleString() + " of " + all.toLocaleString() + " classic climbs here, best first."}</div> : null}
       {rest > 0 ? (
         <button onClick={() => setOpen(o => !o)} aria-expanded={open} style={{ minHeight: 44, width: "100%", display: "flex", alignItems: "center", gap: 9, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", cursor: "pointer", marginBottom: 8 }}>
