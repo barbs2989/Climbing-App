@@ -1,0 +1,21 @@
+{
+  "key": "shuksan-hanging-glacier",
+  "question": "Is our 'Hanging Glacier' route on Shuksan the same climb as our 'North Face' route, or a distinct route?",
+  "answer": "Distinct. The Hanging Glacier route is the 1939 line (first technical ascent of Shuksan, Hennig and Trott): it climbs through the Hanging Glacier itself with ice to about 65 degrees, then finishes on 5.6 rock of the summit pyramid's east ridge. The North Face is a separate, later route: 45-50 degree snow/ice on the face west of the hanging glacier, topping out on the shoulder between the Crystal Glacier and the Hanging Glacier (Mountain Project FA Fasset/Hanft/Thompson). They share the north-side approach valley and the summit-pyramid finish, which is why they blur, but the ski-history route index lists them separately (North Face 'NF' and Hanging Glacier 'HG', the latter with east and west exits and its own headwall variation), and North Face pages describe the Hanging Glacier only as an avalanche hazard beside the route. I could not read Beckey's entry text (not online), but every secondary source separates them.",
+  "recommendation": "Keep both rows; do not merge. Fix-ups on the Hanging Glacier row: its season fields disagree (season Jul-Aug vs best_season May to June) and should be reconciled; its beta describes reaching it via Fisher Chimneys / White Salmon / NW Rib while its approach text describes the White Salmon valley approach - two valid ways in, keep both only if the text says so. The 5.6 finish matches the 1939 report.",
+  "confidence": "medium",
+  "proposed": { "note": "No field writes proposed. I found no source that settles the Hanging Glacier season window; do not invent one." },
+  "evidence": [
+    "http://www.alpenglow.org/ski-history/topos/mt-shuksan.html - lists North Face (original climbing route, first ski 1981), North Face Center/West, and Hanging Glacier (HG, east and west exits, plus headwall variations) as separate routes",
+    "https://en.wikipedia.org/wiki/Hanging_Glacier_(Mount_Shuksan) - Hanging Glacier lies along the route of the first technical ascent, 1939 (cites Beckey's Cascade Alpine Guide); joins Crystal Glacier at its upper margin",
+    "https://kurthicks.com/2009/08/30/mt-shuksans-hanging-glacier/ - the '1939 Route' / Hanging Glacier route: glacier travel, ice to 65 degrees, 5.6 rock on the pyramid east ridge; approach Fisher Chimneys, White Salmon Glacier, NW Rib",
+    "https://www.mountainproject.com/route/107476295/north-face - North Face: 45-50 degree snow to the shoulder between Crystal and Hanging Glacier; FA Fasset, Hanft, Thompson; warns of avalanches off the active Hanging Glacier",
+    "https://cascadeclimbers.com/forum/topic/68730-tr-mt-shuksan-hanging-glacier-1939-872009/ - only seen in search snippets (page 403): 1939 route by Hennig and Trott on the northwest wall"
+  ],
+  "searched": [
+    "Mount Shuksan Hanging Glacier route 1939 Beckey North Face - found the sources above",
+    "Shuksan North Face route White Salmon Creek Hanging Glacier shoulder Crystal Glacier - North Face pages treat the Hanging Glacier as a neighbor/hazard, not the route",
+    "Mountaineers North Face page and SummitPost North Face page - both 403; snippets say Grade II-III, shoulder between the glaciers",
+    "alpenglow.org Beckey 1977 and v3 1995 notes - v3 p.65 says White Salmon Glacier has been skied; a 1920s Ben Thompson north-face ascent is mentioned; Beckey's route text itself is not available"
+  ]
+}

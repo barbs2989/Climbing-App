@@ -104,7 +104,9 @@ for (const d of decisions) {
   // not a recording (audit-recorded.mjs) — so an athlete's recorded round trip replaces it
   if (!d.replaceDrawn && drawn && assessTrack(drawn.map(p => [p[0], p[1]]), row.waypoints || []).complete) { console.log(`SKIP ${d.id}: stored track already complete`); continue; }
   // owner 2026-10-30: skip ONLY a stored track that is complete or already runs trailhead -> summit
-  if (drawn && oneWay(drawn.map(p => [p[0], p[1]]), row.waypoints || []).complete) { console.log(`SKIP ${d.id}: stored track already runs trailhead -> summit`); continue; }
+  // ...and replaceDrawn covers a one-way DRAWN line too (Old Snowy 2026-11-04: 976 points all on a zoom-16
+  // map's pixel grid, no elevations) — the route map line is a recorded track or nothing
+  if (!d.replaceDrawn && drawn && oneWay(drawn.map(p => [p[0], p[1]]), row.waypoints || []).complete) { console.log(`SKIP ${d.id}: stored track already runs trailhead -> summit`); continue; }
   const xml = fs.readFileSync(path.join(GPX_DIR || path.join(here, "gpx"), d.slug + ".gpx"), "utf8");
   const raw = parseGpx(xml);
   if (raw.length < 2) throw new Error(`${d.id}: ${d.slug} has no track points`);
