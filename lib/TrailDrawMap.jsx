@@ -77,6 +77,9 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const viewRef = useRef(null); // {center, zoom} kept across a full-screen rebuild
   const dragEndAt = useRef(0);
   const noteT = useRef(null);
+  const lastTap = useRef(null); // the last tap on the map or a leg, to fold a double tap into one point
+  const fails = useRef({ far: 0, none: 0, down: 0, t: null }); // legs that came back straight, said once per burst
+  const builtHidden = useRef(false); // the map was built inside a hidden tab (0×0 box): refit when shown
   const propsRef = useRef({ start, end, follow, setPts, onShape });
   propsRef.current = { start, end, follow, setPts, onShape };
 
@@ -89,16 +92,55 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       nodesRef.current = []; setNodes([]); setSelectedId(null);
     }
   }, [pts]);
-  useEffect(() => () => { routing.current.forEach((c) => c.abort()); clearTimeout(noteT.current); }, []);
+  useEffect(() => () => { routing.current.forEach((c) => c.abort()); clearTimeout(noteT.current); clearTimeout(fails.current.t); }, []);
   // A line handed over while a leg was still being looked up: ask for that leg again here.
   useEffect(() => { nodesRef.current.forEach((x, i) => { if (x.pending && i > 0) startRoute(x.id); }); }, []); // eslint-disable-line react-hooks/exhaustive-deps -- once, on mount, for the shape the host passed in
   // Hidden behind another tab of the host sheet (display:none) and shown again: Leaflet measured a
   // 0×0 box while hidden, so it is told the real size. The host keeps this mounted rather than
   // unmounting it, or a routed line would come back as one anchor per routed point.
-  useEffect(() => { if (active !== false && mapRef.current) { const m = mapRef.current; setTimeout(() => { try { m.invalidateSize(); } catch (e) {} }, 60); } }, [active]);
+  useEffect(() => {
+    if (active === false || !mapRef.current) return;
+    const m = mapRef.current;
+    setTimeout(() => { try { m.invalidateSize(); if (builtHidden.current) { builtHidden.current = false; fitView(m); } } catch (e) {} }, 60);
+  }, [active]);
 
+  // Pins and the line, or the whole country when there is nothing yet to show.
+  const fitView = (map) => {
+    const L = window.L, { start: s0, end: e0 } = propsRef.current;
+    const anchors = [s0, e0].filter(Boolean).map((p) => [p.lat, p.lng]).concat(nodesRef.current.map((x) => x.a));
+    if (anchors.length > 1) map.fitBounds(L.latLngBounds(anchors).pad(0.4), { maxZoom: 17 });
+    else if (anchors.length) map.setView(anchors[0], 16);
+    else map.setView([39.5, -98.5], 4);
+  };
+  // A tap counts once: not the click that ends a marker drag (Leaflet swallows it on most browsers;
+  // the 250 ms is for the rest), and not the second half of a double tap (within 300 ms and 10 px).
+  const tapOk = (e) => {
+    const now = Date.now();
+    if (now - dragEndAt.current < 250) return false;
+    const p = e && e.containerPoint, last = lastTap.current;
+    if (last && now - last.t < 300 && p && Math.hypot(p.x - last.x, p.y - last.y) < 10) return false;
+    lastTap.current = { t: now, x: p ? p.x : 0, y: p ? p.y : 0 };
+    return true;
+  };
   const setBoth = (next) => { nodesRef.current = next; setNodes(next); propsRef.current.setPts(flatten(next)); if (propsRef.current.onShape) propsRef.current.onShape(next.map((x) => ({ a: x.a, via: x.via, pending: !!x.pending }))); };
-  const say = (s) => { setNote(s); clearTimeout(noteT.current); noteT.current = setTimeout(() => setNote(""), 6000); };
+  const say = (s) => { setNote(s); clearTimeout(noteT.current); noteT.current = setTimeout(() => setNote(""), 8000); };
+  // Legs that came back straight are said ONCE per burst (Follow trails on over a long line answers
+  // many at once), with a count per reason, not one note overwriting the last.
+  const noteFailure = (why) => {
+    const f = fails.current;
+    if (why === "far") f.far++; else if (why === false) f.down++; else f.none++;
+    clearTimeout(f.t);
+    f.t = setTimeout(() => {
+      const legs = (k) => k + (k === 1 ? " leg" : " legs");
+      const parts = [];
+      if (f.none) parts.push(legs(f.none) + " with no mapped trail to follow (drag the point, or tap the hollow dot to add one between)");
+      if (f.far) parts.push(legs(f.far) + " too long for one leg (tap a point between)");
+      if (f.down) parts.push(legs(f.down) + " the trail router didn't answer for (offline, or busy: switch Follow trails off and on to ask again)");
+      const total = f.none + f.far + f.down;
+      say(tx((total === 1 ? "One leg stays a straight line: " : total + " legs stay straight lines: ") + parts.join("; ") + "."));
+      fails.current = { far: 0, none: 0, down: 0, t: null };
+    }, 700);
+  };
   const abortRoute = (id) => { const c = routing.current.get(id); if (c) { c.abort(); routing.current.delete(id); } };
   // Ask the trails for the leg that ends at node `id`; the answer lands only if both anchors still stand.
   const startRoute = (id) => {
@@ -119,9 +161,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const next = now.slice();
       next[j] = Object.assign({}, next[j], { via: Array.isArray(via) ? via : [], pending: false });
       setBoth(next);
-      if (via === "far") say(tx("That leg is longer than a walk in, so it is a straight line. Tap a point between to follow the trail in two legs."));
-      else if (via === false) say(tx("The trail router didn't answer (offline, or busy), so that leg is a straight line for now. Switch Follow trails off and on to ask again, or trace it by hand."));
-      else if (!via) say(tx("Couldn't follow a mapped trail here, so that leg is a straight line. Drag the point, or tap the hollow dot to add one between."));
+      if (!Array.isArray(via)) noteFailure(via);
     });
   };
   // `idxs` are the legs this change touched: straight again, or routed when Follow trails is on.
@@ -194,25 +234,13 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const L = window.L, map = L.map(mapDiv.current, { attributionControl: false, doubleClickZoom: false });
       applyBaseLayer(map, tileRef, baseLayer);
       const v = viewRef.current;
-      if (v) map.setView(v.center, v.zoom);
-      else {
-        const { start: s0, end: e0 } = propsRef.current;
-        const anchors = [s0, e0].filter(Boolean).map((p) => [p.lat, p.lng]).concat(nodesRef.current.map((n) => n.a));
-        if (anchors.length > 1) map.fitBounds(L.latLngBounds(anchors).pad(0.4), { maxZoom: 17 });
-        else if (anchors.length) map.setView(anchors[0], 16);
-        else map.setView([39.5, -98.5], 4);
-      }
+      if (v) map.setView(v.center, v.zoom); else fitView(map);
+      // Built while the host sheet showed another tab: the box is 0×0 and the fit above meant nothing.
+      builtHidden.current = !(mapDiv.current.clientWidth > 0 && mapDiv.current.clientHeight > 0);
       // Leaflet swallows the click that ends a marker drag; the guard is for the browsers where it does not.
       // A double tap is ONE point: with doubleClickZoom off Leaflet still fires click twice, and the
       // first version zoomed AND dropped two points on top of each other.
-      let lastTap = null;
-      map.on("click", (e) => {
-        if (Date.now() - dragEndAt.current < 250) return;
-        const now = Date.now(), p = e.containerPoint;
-        if (lastTap && now - lastTap.t < 300 && p && Math.hypot(p.x - lastTap.x, p.y - lastTap.y) < 10) return;
-        lastTap = { t: now, x: p ? p.x : 0, y: p ? p.y : 0 };
-        api.current.append(e.latlng.lat, e.latlng.lng);
-      });
+      map.on("click", (e) => { if (tapOk(e)) api.current.append(e.latlng.lat, e.latlng.lng); });
       // Which legs are long enough for a midpoint handle depends on the zoom, so a zoom redraws.
       map.on("zoomend", () => setZoomN((z) => z + 1));
       mapRef.current = map; genRef.current += 1; setReady(genRef.current);
@@ -255,7 +283,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     for (let i = 1; i < nodes.length; i++) {
       const leg = legPts(nodes, i), n = nodes[i];
       keep(L.polyline(leg, { color: C.warning, weight: 4, opacity: 0.95, dashArray: n.pending ? "6 8" : null, interactive: false }));
-      keep(L.polyline(leg, { color: "#000", weight: 18, opacity: 0, bubblingMouseEvents: false })).on("click", (e) => { L.DomEvent.stop(e); api.current.insertAt(i, e.latlng.lat, e.latlng.lng); });
+      keep(L.polyline(leg, { color: "#000", weight: 18, opacity: 0, bubblingMouseEvents: false })).on("click", (e) => { L.DomEvent.stop(e); if (tapOk(e)) api.current.insertAt(i, e.latlng.lat, e.latlng.lng); });
       // The hollow dot: drag it out (or tap it) to add an anchor on this leg. Not on a leg shorter
       // than its own hit box on screen, where it would sit on the anchors and steal their taps.
       // Measured along the leg as drawn (a routed leg can loop far from two close anchors), and the
@@ -277,7 +305,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const m = keep(L.marker(n.a, { draggable: true, keyboard: false, autoPan: true, bubblingMouseEvents: false, icon: dot(last ? 18 : 14, C.warning, "#fff", sel ? C.accent : null) }));
       m.on("dragstart", () => { dragging.current = true; });
       m.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = m.getLatLng(); api.current.moveAnchor(n.id, q.lat, q.lng); api.current.flushRedraw(); });
-      m.on("click", (e) => { L.DomEvent.stop(e); api.current.select(n.id); });
+      m.on("click", (e) => { L.DomEvent.stop(e); if (Date.now() - dragEndAt.current >= 250) api.current.select(n.id); });
     });
   }, [nodes, ready, zoomN, start, end, selectedId, C.accent, C.warning, mk.start, mk.end]);
 
