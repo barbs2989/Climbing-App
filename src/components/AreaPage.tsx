@@ -1,6 +1,9 @@
 import { DISCIPLINES, ATYPE } from "../../lib/areaBrowserShared.js";
 import { useState, useRef } from "react";
-import { useArea, useAreaClimbStats, useAreaContributions, useAreaChildren, useAreaRoutes, useAreaClassics, useAreaNamesByIds, submitAreaPlacementClaim } from "../../lib/db";
+import { useArea, useAreaClimbStats, useAreaContributions, useAreaChildren, useAreaChildrenGradeCounts, useAreaRoutes, useAreaClassics, useAreaNamesByIds, submitAreaPlacementClaim } from "../../lib/db";
+import { useWideScreen } from "../../lib/wideLayout.js";
+import WallGradeBars from "./WallGradeBars.tsx";
+import type { WallGradeRow } from "./WallGradeBars.tsx";
 import { DISC_LABELS as DL } from "../../lib/discLabels";
 import { ScreenHero } from "../../lib/ScreenHero";
 import { Pill, SL } from "../../lib/areaBrowserParts.jsx";
@@ -164,6 +167,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const { data: children, isLoading: lc, error: ec }: AreaPageQuery<AreaPageArea[]> = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er }: AreaPageQuery<AreaPageRoute[]> = useAreaRoutes(area.id);
   const isLeaf = Array.isArray(children) && children.length === 0;
+  // The mini grade chart on each child's card (item 13, 2026-11-04) is a website thing: one call for
+  // the whole list, only where there is a list to draw it on. The phone card is unchanged.
+  const wide = useWideScreen();
+  const kidGrades: AreaPageQuery<Record<string, WallGradeRow[]>> = useAreaChildrenGradeCounts(wide && chartable && isLeaf === false ? area.id : null);
   // Above a wall the classics come from the whole subtree (0390); a wall ranks its own loaded rows (areaClassics).
   const classicsUp: AreaPageQuery<AreaPageClassic[]> = useAreaClassics(area.id, isLeaf === false && chartable);
   const loading = lc || (isLeaf && lr);
@@ -275,8 +282,9 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
           {children.map(a => (
             <div key={a.id} {...clickable(() => onDrill(a))} style={{ background: C.card, borderRadius: 12, padding: "12px 14px", marginBottom: 11, border: "1px solid " + C.borderHi, cursor: "pointer" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontWeight: 700, fontSize: 15, color: C.text }}>{a.name}</span>
-                <span style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 12, color: C.textMuted, fontWeight: 600, flexShrink: 0, marginLeft: 8 }}>{a.route_count.toLocaleString() + " climb" + (a.route_count !== 1 ? "s" : "")}<Chevron size={16} color={C.textMuted} /></span>
+                <span style={{ fontWeight: 700, fontSize: 15, color: C.text, minWidth: 0, flex: 1 }}>{a.name}</span>
+                {wide && kidGrades.data ? <WallGradeBars rows={kidGrades.data[String(a.id)]} name={a.name} total={a.route_count} C={C} /> : null}
+                <span style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 12, color: C.textMuted, fontWeight: 600, flexShrink: 0, marginLeft: 12 }}>{a.route_count.toLocaleString() + " climb" + (a.route_count !== 1 ? "s" : "")}<Chevron size={16} color={C.textMuted} /></span>
               </div>
             </div>
           ))}
