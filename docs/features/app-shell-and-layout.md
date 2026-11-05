@@ -53,7 +53,7 @@ room for side-panel ads later. The phone app keeps its own look.
     `parseTypedSearch` in `lib/typedSearch.js`, grades read by the one parser in `lib/grade.js`), the
     first row offers the Route finder with those filters, scoped to the place typed (top place hit),
     else the home state, else the state with the most climbs; the row names the scope. Picking it
-    goes through App's saved-search opener (`openSavedSearch`, kind `finder`).
+    goes through App's finder opener (`openFinderAt`), which sets `finderJump` for `DbAreaBrowser`.
   - **Drawn ~10% larger** (owner 2026-11-04, `ZOOM` = 1.1 in `lib/wideLayout.js`): the page column
     (`#appscroll`), the pages that open in it, the rail's cards, centred windows, the bell drop-down and
     both Messages panes are CSS-`zoom`ed, so the phone's 13px type reads as ~14.3px beside Mountain
