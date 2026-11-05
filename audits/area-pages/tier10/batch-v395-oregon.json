@@ -1,0 +1,35 @@
+{
+ "or_strings": {
+  "_expect": { "name": "Strings", "region": "Oregon" },
+  "blurb": "Strings is a section of the Fiddlers Hell cliff band in northeast Oregon, high on a ridge above La Grande at roughly 6,300 feet. It holds a dozen routes, ten of them bolted and two traditional, and it is a mid-grade-and-up sport crag: a handful of 5.10 lines, mostly 5.11, and one 5.12, with a few easier warm-ups mixed in. The dark andesite wall runs 20 to 30 metres along the band and is the second zone you reach walking the cliff from one end. The whole band faces southwest, so summer afternoons are hot; expect it to suit cooler months or mornings best.",
+  "parking_note": "Drive north from La Grande on Fox Hill Road, then turn onto Crampton Road. A small pullout roughly a mile and a quarter past the next fork is where cars are left; a trail drops from there toward the cliff band.",
+  "aspect": "SW",
+  "review": { "sources": ["https://www.mountainproject.com/area/109342569/strings", "https://www.mountainproject.com/area/109378074/fiddlers-hell"] }
+ },
+ "or_double_chocolate": {
+  "_expect": { "name": "Double Chocolate", "region": "Oregon" },
+  "blurb": "Double Chocolate is a small crag in the Callahans, the sandstone ridge west of Roseburg, sitting just above Turtle Rock. Twelve routes, mostly bolted sport with a couple of trad lines, run from easy 5.6 territory through the 5.7 to 5.9 range up to a few at 5.10 and low 5.11. A few can also be top-roped from the ledge across the middle of the wall. The patinated Tyee sandstone faces generally south, which gives the ridge its reputation for sunny winter days above the valley fog. It is a good stop for moderate climbers who want a short day on quality rock.",
+  "aspect": "S",
+  "review": { "sources": ["https://www.mountainproject.com/area/111746658/3-double-chocolate", "https://www.mountainproject.com/area/106279271/the-callahans"] }
+ },
+ "or_e_western_ship_river_face": {
+  "_expect": { "name": "Western Ship - River Face", "region": "Oregon" },
+  "blurb": "The river face of the West Ship sits at Smith Rock in central Oregon, on the next formation along the river trail beyond the East Ship. It is a prow-shaped feature climbed on several sides, and this face has about a dozen routes, nearly all single-pitch sport. The grades split into two camps: a short run of friendly 5.6 to 5.9 lines, and a tougher cluster in the low 5.13s with one 5.14 on top. A few moderate 5.10 and 5.11 lines fill the gap, plus a single trad route. Shady refuge is limited, so check the sun before committing in summer.",
+  "approach": "Cross the footbridge, follow the river trail beyond the neighbouring ship formations, then take a path climbing uphill to the base of the formation.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105803915/western-ship-river-face", "https://www.smithrock.com/ships-gullies"] }
+ },
+ "or_bandon": {
+  "_expect": { "name": "Bandon", "region": "Oregon" },
+  "blurb": "Bandon is a beach bouldering spot on the southern Oregon coast, with boulders scattered along the sand near the town's south jetty and the Face Rock scenic area. The dozen listed lines are almost all problems, mainly V1 and V2 with one V3, plus a single easy 5.6 on a boulder near Face Rock. It is a relaxed place for beginners and warm-ups rather than a project destination, and the boulders sit at sea level a short walk from parking. Tides decide how much of the beach is walkable, so check them before heading out, and expect wind and salt air.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114109687/bandon", "https://openbeta.io/climb/7290f574-5120-559e-8dfe-a8675e20a591/hang-ten"] }
+ },
+ "_skipped": {
+  "or_the_tin_aretes": "no fetched page about the crag itself (only a sub-area listing on the Lost World page)",
+  "or_south_face_2": "no page about this South Face itself; the MP South Face fetched is Beacon Rock, WA; Wolf Rock page is parent only",
+  "or_bear_creek_boulders": "only one page about the crag fetched (second OpenBeta page 404, classics page is same MP area)",
+  "or_fire_dome": "no fetched page about Fire Dome itself, only a parent area page and one route page"
+ },
+ "_conflicts": {
+  "or_bandon": "Stored rock greywacke; Mountain Project (https://www.mountainproject.com/area/114109687/bandon) says variable quartz-injected sandstone and greenschist."
+ }
+}

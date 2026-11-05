@@ -1,0 +1,43 @@
+{
+ "co_boxcar_boulder": {
+  "_expect": {
+   "name": "Boxcar Boulder",
+   "region": "Colorado"
+  },
+  "blurb": "A single large granite block in Wild Basin, on the quiet southern side of Rocky Mountain National Park near Estes Park, sitting around 8,400 feet. It holds 13 problems with a wide spread: a handful of easy V0 to V2 lines, a middle band from V3 to V5, and a steep side carrying the hard problems from V8 up into double digits. The short walk from the car makes it a good stop for a quick session, and the landings vary, so bring more than one pad. Weather turns fast at this elevation, so early or late in the day tends to be cooler.",
+  "parking_note": "Leave the car in the winter parking lot on the dirt road roughly 1.5 miles beyond the Wild Basin entrance gate. It is the only lot with room on both sides of the road. Do not continue past the creek bridge.",
+  "approach": "From the end of the lot nearest the entrance station, walk up the road past the green metal gate for about a minute. The boulder is just off to your left.",
+  "approach_min": 1,
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/114971067/boxcar-boulder",
+    "https://app.advcollective.com/climbing/boxcar-boulder-boulder-climbing-in-wild-basin-colorado"
+   ]
+  }
+ },
+ "co_red_rocks_boulder": {
+  "_expect": {
+   "name": "Red Rocks (Boulder)",
+   "region": "Colorado"
+  },
+  "blurb": "These few leaning red fins sit high over downtown Boulder, under Flagstaff Mountain where Boulder Canyon opens out. The 13 climbs are mostly bouldering, with a few short trad leads and low-angle scrambles; the problems run from V0 to V2 with a few much harder lines, and the roped routes sit mainly in the 5.4 to 5.8 range. The rock is soft and fragile in spots, so top-roping from the rim is a common choice over leading. Trails loop around and between the fins, the walk in is short and easy, and the top of the biggest face has a nice view over town.",
+  "approach": "A short, easy hike on the trail network from the trailheads on either side of the fins; the rocks sit between them.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105746418/red-rocks-boulder",
+    "https://takemytrip.com/2015/11/the-red-rocks-in-boulder"
+   ]
+  }
+ },
+ "_skipped": {
+  "co_greg_s_cliff": "only one fetched page covers it (parent area page, no crag-specific details)",
+  "co_chair_rock": "could not fetch two pages about this crag",
+  "co_house_of_x": "only the parent canyon page lists it; no page about the crag itself",
+  "co_dr_c_s_classroom": "only the parent area page lists it; no page about the crag itself",
+  "co_dragon_s_head": "only one fetched page about the crag; no second page found",
+  "co_morph_dusseldorf": "no fetched page is about the boulder itself (parent and a route page only)"
+ },
+ "_conflicts": {
+  "co_red_rocks_boulder": "stored rock is conglomerate but both pages (https://www.mountainproject.com/area/105746418/red-rocks-boulder, https://takemytrip.com/2015/11/the-red-rocks-in-boulder) describe sandstone"
+ }
+}

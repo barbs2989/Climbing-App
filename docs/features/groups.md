@@ -11,6 +11,7 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   `groups update by manager` (0090) admits `is_group_manager()` only, and `setGroupVisibility` /
   `updateGroupSettings` report a zero-row update as a refusal rather than a success. Deleting a group is the
   owner's alone.
+- **Event cards** (`groupEventRow` in `ClimbMatch.jsx`; competitor review batch A, item 7, owner 2026-11-04, Meetup's pattern): under the title, the first four faces of who is going (`_groupPerson`, so a real member's photo shows) with *N going*; a capped event wears an amber *N spots left* badge at its top-right corner and says *Full* at none; the row's name for a screen reader carries both. The Discover view's title names the place once one is picked: *Climbing groups near Index*.
 - **Who may host events** is the group's own setting, *Who can create events?* — *Any member* or *Moderators only*
   (`groups.event_policy`), enforced by the `group events created per the group's event policy` insert policy (0230).
   **New groups default to Moderators only** (2026-10-16), as Meetup (organizer team), Strava clubs (admins) and

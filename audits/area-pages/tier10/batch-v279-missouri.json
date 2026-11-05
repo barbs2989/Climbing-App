@@ -1,0 +1,27 @@
+{
+ "mo_1_rune_boulders": {
+  "_expect": {"name": "Rune Boulders", "region": "Missouri"},
+  "blurb": "Rune Boulders is a compact bouldering spot of 13 problems on the Mountain Right side of Sage Mountain Recreation Area, a privately run climbing property near Berger in east-central Missouri. The problems are short and friendly, running from V0 up to about V5, with most of them landing between V1 and V4. That spread makes it a good place for newer boulderers and for anyone wanting a few warm-up circuits. Other boulders and a handful of sport and top-rope lines sit nearby on the same hillside, so it combines easily into a longer day.",
+  "review": {"sources": ["https://www.mountainproject.com/area/121575845/rune-boulders", "https://www.mountainproject.com/area/127092253/mountain-right", "https://terrain-mag.com/sage-mountain-recreation-area-opens-in-berger-missouri/"]}
+ },
+ "mo_paddlefish_wall": {
+  "_expect": {"name": "Paddlefish Wall", "region": "Missouri"},
+  "blurb": "Paddlefish Wall is the busiest section of Reed's Bluff, a limestone crag near Osceola in west-central Missouri, with 13 routes that are almost all sport. Grades start around 5.9, bunch in the 5.10s, and top out in the low 5.12s, with a few 5.11 lines in between, so it favors climbers who already lead moderate to hard sport. The wall starts just right of the big cave at the end of the neighbouring Long Dog Wall. The bluff faces west and collects afternoon sun, and brush, poison ivy, bugs and ticks are part of the deal in season.",
+  "review": {"sources": ["https://mountainproject.com/area/105901197/paddlefish-wall", "https://www.mountainproject.com/area/105901187/wm-reeds-bluff"]}
+ },
+ "mo_warm_up_alley": {
+  "_expect": {"name": "Warm Up Alley", "region": "Missouri"},
+  "blurb": "Warm Up Alley is a sandstone bouldering corner of Peter's Branch, a remote crag in Mark Twain National Forest outside Sparta in southwest Missouri. It holds 13 problems spread over boulders and a short cliff, from V0 up to V5, with the majority between V2 and V4. It sits in the northwest part of the crag, a short walk along the trail from the neighbouring cliff, and the wider area is known as a friendly place to practise, with a cave, a turtle-head feature and an alley to explore. Expect a quiet, wooded feel rather than a roadside crag.",
+  "review": {"sources": ["https://www.mountainproject.com/v/warm-up-alley/111424760", "https://www.mountainproject.com/area/111424625/sw-peters-branch", "https://www.417mag.com/outdoors/four-spots-go-rock-climbing/"]}
+ },
+ "_skipped": {
+  "mo_cm_bald_ridge_boulders": "could not fetch two pages: only the one area page describes it",
+  "mo_a_lily_wall": "no fetched page about this Lily Wall itself; the page found is the Illinois one (Pere Marquette), and the parent page only lists it",
+  "mo_the_stronghold_area": "only the parent Little Piney Caves page mentions it; no second page about the crag",
+  "mo_main_wall_2": "only the parent Boogaboo page covers it; no second page about the crag",
+  "mo_music_wall": "the Music Wall page found is in Wyoming; only the Astral Valley parent page lists this one"
+ },
+ "_conflicts": {
+  "mo_1_rune_boulders": "stored rock dolomite, but pages describe Sage Mountain as sandstone / sandstone-limestone mix: https://mountainproject.com/area/121568608/em-sage-mountain-recreation-area and https://terrain-mag.com/sage-mountain-recreation-area-opens-in-berger-missouri/"
+ }
+}

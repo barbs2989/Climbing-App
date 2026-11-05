@@ -1,0 +1,32 @@
+{
+ "nm_north_end_the": {
+  "_expect": { "name": "North End, The", "region": "New Mexico" },
+  "blurb": "A short run of east-facing cliffs at the northern end of Box Canyon near Socorro, across the canyon from Corner Block. Nearly everything is bolted sport, with a single trad line, and the grades climb from the 5.7 range to 5.12, with the biggest cluster at 5.11. A few 5.9 and 5.10 lines give a moderate warm-up. The routes are short and technical, holds can be hidden or directional, and a stick clip is handy for the first bolts on several lines. Top-roping from above is possible if you bring gear or use a tree. Small caves mark the cliffs on the left as you walk up the wash from the lot.",
+  "review": { "sources": ["https://www.mountainproject.com/v/the-north-end/107464054", "https://www.mountainproject.com/area/classics/105791881/northern-box-areas", "https://www.mountainproject.com/area/105791039/the-box-climbing-areas"] }
+ },
+ "nm_super_hero_wall_grey_wall": {
+  "_expect": { "name": "Super Hero Wall (Grey Wall)", "region": "New Mexico" },
+  "blurb": "The big grey face in the Bat Cave Area above Caballo Lake, west of Truth or Consequences. It holds mostly bolted sport lines plus two trad routes, spanning the 5.6 range up to 5.12 with most of the weight between 5.9 and 5.11. From below the wall looks slabby, yet it is steeper than it seems, stands at least 200 feet tall, and many routes go in two or three pitches. The main face is hit by sun in the early afternoon, while a south-facing section on the right is lit all day. It is the doorway to the neighbouring Bat Cave, Villain Wall and Trojan Wall.",
+  "approach": "From the parking areas, scramble up a short third-class rock band, then follow a steep trail up the gully and talus to the foot of the wall.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106527547/super-hero-wall-grey-wall", "https://www.mountainproject.com/area/106527523/bat-cave-area", "https://www.mountainproject.com/area/106527528"] }
+ },
+ "nm_retirement_wall": {
+  "_expect": { "name": "Retirement Wall", "region": "New Mexico" },
+  "blurb": "Sector N of Las Conchas, in the Jemez Mountains at roughly 8,400 feet, just left of the Leaning Tower crag. All sixteen routes are bolted sport, running from 5.10 to 5.13 with an even split between 5.10 and 5.11 and a handful of harder lines above; there is nothing easy here. The wall is sunny and sheltered from wind, which makes it a pleasant choice on calm winter days, and the altitude keeps it comfortable when lower areas bake. Expect a short walk past the Leaning Tower, then a path into the trees to the base.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108733885/retirement-wall", "https://www.mountainproject.com/area/105845941/las-conchas"] }
+ },
+ "nm_harmonica_convention_aka_below_edges": {
+  "_expect": { "name": "Harmonica Convention (AKA Below Edges)", "region": "New Mexico" },
+  "blurb": "A boulder cluster in the southern part of Box Canyon near Socorro, tucked in a gully that collects plenty of sun and blocks the wind. The boulders face assorted directions, so shade is easy to find. Sixteen problems run from V0 to V10; most are moderate, with a few V4 to V7 tests and a couple of V10 lines. Rock quality is uneven, as is common in the Box, and the rock is rhyolite. Well-worn trails lead in, starting near the south end of the parking area and dropping along the gully past Unbeatable Boulder.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106639699/harmonica-convention-aka-below-edges", "https://www.mountainproject.com/area/105791039/the-box-climbing-areas"] }
+ },
+ "_skipped": {
+  "nm_worst_of_friends": "no page found for this crag after several searches; coordinates and name could not be matched to any fetched page",
+  "nm_l1_john_nichol_s_wall": "only listed as a sub-wall on the Utopian Vistas and Taos Area pages; no page about the wall itself could be fetched",
+  "nm_tie_dye_wall": "no page found naming this crag after several searches",
+  "nm_south_beach": "only the parent Big River Wall page describes it; no page about the crag itself"
+ },
+ "_conflicts": {
+  "nm_north_end_the": "stored rock is basalt, but the Box Canyon area page (https://www.mountainproject.com/area/105791039/the-box-climbing-areas) says the Box cliffs and boulders are rhyolite; stored value left unchanged and no rock named in the blurb"
+ }
+}

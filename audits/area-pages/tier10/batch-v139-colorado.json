@@ -1,0 +1,88 @@
+{
+ "co_macv_wall": {
+  "_expect": {
+   "name": "MACV Wall",
+   "region": "Colorado"
+  },
+  "blurb": "A steep granite wall in the Crystal Fortress, a hillside in the South Platte country about an hour from Colorado Springs, just north of Eleven Mile Canyon. It holds 14 climbs, almost all bolted sport lines with a pair of trad routes, and the grades are for strong climbers: a single 5.11, then mostly 5.12 and 5.13 with a couple at 5.14. The stone is polished and sculpted, with pegmatite bands that carry crystal pockets, and some pockets are sharp. The wall faces southeast, so it warms up in the morning and shades over by early afternoon, which suits spring and summer afternoons. Routes run about a rope-length, so bring a 60 m rope and knot the ends. Views reach toward Pikes Peak.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/119086022/macv-wall",
+    "https://mountainproject.com/area/119079427/crystal-fortress"
+   ]
+  }
+ },
+ "co_little_five_the": {
+  "_expect": {
+   "name": "Little Five, The",
+   "region": "Colorado"
+  },
+  "blurb": "The lower slab of The Safari in Clear Creek Canyon, west of Golden, and a friendly place to start roped climbing. Of its 14 climbs, nearly all are bolted slab routes, with one gear line and one top rope. Grades sit mostly in the 5.2 to 5.5 range, with a handful of harder outliers up to 5.9. Pitches are single and short, roughly 30 to 100 feet, and each tops out on a wide terrace called Sun Tan Ledge that separates this slab from the steeper cliff above. This part of the canyon is one of the sunniest and the rock clears of snow quickly. Watch for cactus around the base.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/111359556/the-little-five",
+    "https://mountainproject.com/area/111359459/the-safari"
+   ]
+  }
+ },
+ "co_cats_vs_dogs_wall": {
+  "_expect": {
+   "name": "Cats vs. Dogs Wall",
+   "region": "Colorado"
+  },
+  "blurb": "A sport crag in Clear Creek Canyon west of Golden, beside Tunnel 5 and the Catslab. All 14 routes are bolted, one or two pitches, mostly 50 to 100 feet. The grades lean moderate, with the bulk between 5.7 and 5.9, a smaller group of 5.10s, and a single 5.11. The wall is a bit broken rather than a clean face and the rock is the typical gneiss of the canyon. It sees morning shade and afternoon sun. The short approach follows the trail to the Catslab, crosses a wooden bridge and then climbs the slope to the east.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108198385/cats-vs-dogs-wall",
+    "https://rakkup.com/guidebook/clear-creek-canyon-rock-climbing/cats-vs-dogs-wall/s11486"
+   ]
+  }
+ },
+ "co_lower_capitalist_crag": {
+  "_expect": {
+   "name": "Lower Capitalist Crag",
+   "region": "Colorado"
+  },
+  "blurb": "A small east-facing crag in Clear Creek Canyon, a short walk along the road from the east side of Tunnel 3 west of Golden. It is the lower of the two Capitalist walls and offers 14 climbs, mostly single-pitch bolted lines around 100 feet, with a few trad routes mixed in. Grades start at 5.8 and cluster in the 5.10 to 5.11 range, so it suits climbers stepping up from moderates. The east aspect keeps it shady for much of the day. The path ends at a level spot beside a big boulder. Several routes link up, stepping across between neighbouring anchors.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105745118/capitalist-crag",
+    "https://www.vainokodas.com/climbing/coroutes/capitalist.html"
+   ]
+  }
+ },
+ "co_painstake": {
+  "_expect": {
+   "name": "Painstake",
+   "region": "Colorado"
+  },
+  "blurb": "A small cliff band up Homestake Road, south of Red Cliff near Minturn, at roughly 8,900 feet. It holds 14 climbs here, all bolted, short enough for an after-work session, with a good supply of moderates for newer leaders. Grades run from 5.7 up through 5.11, with the largest share at 5.10 and 5.11. The cliff is described as a place to climb in the shade or catch early sun. Most cragging around Eagle, Vail, Minturn and Red Cliff is limited to roughly April through October because of elevation. From the road, a community trail leads to the base.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/126837764/painstake",
+    "https://www.mountainproject.com/area/105802428/eaglevailminturnred-cliff"
+   ]
+  }
+ },
+ "co_mcgregor_slab": {
+  "_expect": {
+   "name": "McGregor Slab",
+   "region": "Colorado"
+  },
+  "blurb": "A large granite dome above US 34 on the Fall River Road side of Estes Park, about 700 feet tall. Climbing here is multi-pitch trad, with all 14 climbs protected by gear, running five or six pitches on easy to moderate ground. Most grades sit around 5.7, with a few easier and a few up to 5.9. The face is less than vertical, textured and split by many dihedrals, and the views take in Rocky Mountain National Park. The walk up from the valley takes around half an hour. Ticks can be a nuisance in spring, and the line of each route is easy to lose, so route-finding takes attention.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105744941/mcgregor-slab",
+    "https://www.mountainproject.com/area/105802022/fall-river-road-us-34-west"
+   ]
+  }
+ },
+ "_skipped": {
+  "co_poudre_face_the": "no fetched page about the wall itself (only a single route page; thetopo palace page lists no Poudre Face sector)",
+  "co_black_wall_the_3": "no page found for this Eltuck Bay boulder wall; the only fetched Black Wall page is a different place near Grand Junction"
+ },
+ "_conflicts": {
+  "co_painstake": "stored rock is gneiss but https://www.mountainproject.com/area/126837764/painstake says granite",
+  "co_poudre_face_the": "stored aspect W but https://app.advcollective.com/climbing/bah-at-the-poudre-face-a-crisp-sport-climb-in-colorados-poudre-canyon says south-facing"
+ }
+}

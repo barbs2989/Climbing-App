@@ -1,0 +1,28 @@
+{
+ "nm_solstice_cave": {
+  "_expect": { "name": "Solstice Cave", "region": "New Mexico" },
+  "blurb": "Solstice Cave is a steep wall in Last Chance Canyon, a desert sport-climbing canyon in the southeastern corner of New Mexico. It holds 14 bolted routes, and it sits right across the canyon from where the approach trail finishes, so it is easy to spot from the car. The grades lean hard: most lines fall in the 5.12 and 5.13 range, with a handful of 5.10 and 5.11 routes to warm up on and a single route harder than the rest. This is a place for strong sport climbers rather than beginners, and the cave shape makes for overhanging, powerful climbing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106094138/solstice-cave", "https://rakkup.com/guidebook/last-chance-canyon-rock-climbing/solstice-cave/s23466"] }
+ },
+ "nm_tornado_alley": {
+  "_expect": { "name": "Tornado Alley", "region": "New Mexico" },
+  "blurb": "Tornado Alley is one of the main sport walls in Last Chance Canyon, in the desert of southeastern New Mexico. Its 14 bolted routes run from 5.10 into 5.13, with the bulk of them at 5.12, so it suits climbers who already lead hard. The wall mixes steep swells with some technical slab and has one of the few crack lines in the canyon. It faces east, which means morning sun and shade by evening. Heavy rain can flood the base of at least one line, so check the weather before committing to a day here.",
+  "review": { "sources": ["https://www.mountainproject.com/v/106094192", "https://rakkup.com/guidebook/last-chance-canyon-rock-climbing/tornado-alley/s23464"] }
+ },
+ "nm_sewer_crag_the": {
+  "_expect": { "name": "Sewer Crag, The", "region": "New Mexico" },
+  "blurb": "The Sewer Crag is a small, quiet cliff in the White Rock area near Los Alamos, across a canyon from The Overlook. It holds 13 routes, eight sport and five trad, from the high 5.8 range up to 5.12, with the bulk of the climbing at 5.11 and 5.12. The rock is pocketed basalt that is described as dirty, and lines often begin with a crumbly band before the wall steepens. Faces look south, east and southeast. Expect solitude rather than polish, and a short descent through brush and talus to reach the base.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105943047/the-sewer-crag", "https://www.mountainproject.com/area/105788289/white-rock"] }
+ },
+ "nm_tunnel_springs": {
+  "_expect": { "name": "Tunnel Springs", "region": "New Mexico" },
+  "blurb": "Tunnel Springs is a limestone crag above Placitas, a short drive from north Albuquerque. Its 14 routes are mostly traditional, with one bolted sport line and one top-rope; grades run from the mid 5.6 range to 5.11, concentrated around 5.9 and 5.10. The climbs are short, roughly 35 to 45 feet, sustained and on sharp rock, with small to medium gear that can be fiddly and bolted anchors on top. The wall faces northwest, so it stays shaded through summer mornings. Bring a half rack and some quickdraws; this is a good half-day outing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106145589/tunnel-springs", "https://www.vainokodas.com/climbing/newmexicoroutes2/tunnelspringsroutes/tunnelsprings.html"] }
+ },
+ "_skipped": {
+  "nm_main_sector": "no fetched page about Main Sector itself; only the parent Ice Cream Parlor page lists it",
+  "nm_wu_wall": "only one page found describing Wu Wall (Mountain Project); other Mentmore pages do not mention it",
+  "nm_the_cockpit": "only the parent Cockscomb Crag page lists The Cockpit sector, with no description; no second page found",
+  "nm_middle_rock_2": "could not fetch a page about this Middle Rock itself (Mountain Project Tres Piedras page is parent-level; SummitPost returned 403)"
+ }
+}
