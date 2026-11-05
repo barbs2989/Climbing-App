@@ -136,7 +136,7 @@ const findB = <T extends [string, ...unknown[]]>(list: T[], k: string | undefine
    convention). A bare "5.10" stores 10, so 5.10a as the MINIMUM uses 10 — otherwise a route
    written without a letter falls out of the 5.10 band it belongs to. The one collision is in the
    DATA, not here: 5.10d and a bare 5.11 are both stored as 11, so they travel together there. */
-const GRADE_SCALES: Record<string, RouteFinderPanelGrade[]> = (() => {
+export const GRADE_SCALES: Record<string, RouteFinderPanelGrade[]> = (() => {
   const yds: RouteFinderPanelGrade[] = [];
   for (let i = 0; i <= 9; i++) yds.push(["5." + i, i, i]);
   for (let b = 10; b <= 15; b++) for (let k = 0; k < 4; k++) yds.push(["5." + b + "abcd"[k], k === 0 ? b : b + (k + 1) / 4, b + (k + 1) / 4]);
@@ -159,7 +159,7 @@ const SCALE_NAMES: Record<string, string> = { yds: "5.x rock", v: "V", class: "C
 //     (an ice final also fills ice_grade_num, which the WI range reads). Both also offer Snow:
 //     Mountain Project's Easy / Mod. / Steep Snow, read from snow_grade_num (0246), which a route
 //     carries BESIDE its Class or 5.x grade — the owner wanted both (2026-10-04).
-const DISC_GRADE_SCALES: Record<string, string[]> = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "snow", "yds", "wi"], alpine: ["yds", "class", "wi", "snow"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
+export const DISC_GRADE_SCALES: Record<string, string[]> = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "snow", "yds", "wi"], alpine: ["yds", "class", "wi", "snow"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
 // The disciplines whose grade_system says which scale grade_num is on, so a range there passes it
 // as grade_sys: ice/mixed/aid since 0196, and the three mountain disciplines since their labels
 // were corrected (above). The rock disciplines keep #1811's behaviour — one scale each, no label
