@@ -17,12 +17,18 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   `DbAreaTree` / `DbAreaTreeNode` / `DbAreaTreeRoots` give an expandable tree to jump around.
 - **Area page sections** (0304, `lib/AreaPageSections.jsx`): on a crag, peak or wall — **ABOUT** (`areas.blurb`, or an invitation to write one; past 600 characters it opens at about nine lines with *Read more* / *Show less*, like the route page's comment clamp),
   **AREA FACTS** (rock, which way it faces, elevation, walk-in minutes, parking name, and a 12-month **Season** strip from `areas.season_months`;
-  a fact that is not stored is not printed), **CLIMBS HERE** (`ClimbsChart`: one bar per discipline over the whole subtree via the
+  a fact that is not stored is not printed; on the website a **MOST LOGGED HERE** strip beside Season — `LoggedMonthStrip`, twelve bars from
+  `useAreaLoggedMonths` / `area_logged_months` (0403): every visible log under the area by calendar month, counts only, nobody named, its label
+  naming the months at half the peak or more (`loggedTopMonths`) and the total), **CLIMBS HERE** (`ClimbsChart`: one bar per discipline over the whole subtree via the
   `area_climb_stats` RPC, headline = the sum of its bars; a bar opens the Route finder preset to that discipline) with **GRADE SPREAD**
-  (`GradeSpread`: columns over the area's main grading scale, saying how many climbs it left out), **GETTING THERE** (`AreaGettingThere`:
+  (`GradeSpread`: columns over the area's main grading scale, saying how many climbs it left out; on the website the two sit **side by side**,
+  the spread as its own card (`standalone`, when `hasGradeSpread`), and under them the finder's form sits **inline** (`RouteFinderInline`:
+  type, a grade range on that type's scale with its top preset to the climber's own profile grade, sort; *Find climbs* opens the Route finder
+  with exactly those filters through `onFinder`, the way a saved search opens — the phone keeps the Route finder button; competitor review
+  item 15, 2026-11-05), **GETTING THERE** (`AreaGettingThere`:
   `parking_note` + the parking pin, `approach` + `approach_min`, Google/Apple Maps links — the page's ONE drive control; and, when the crag has an approved walk in (`areas.walkin_gpx`, 0397), *Trail to the crag* with its length and a `WalkInMap` of the line over P and C; *Add the parking pin* where none is
   on file and *Move the pin* under one open the sheet at the pin), **CLASSIC CLIMBS HERE**
-  (EVERY classic, drawn by `ClassicsList`: the count in the heading, five rows, then a *Show all N classic climbs* dropdown with the rest
+  (EVERY classic, drawn by `ClassicsList`: the count in the heading, five rows — one-line rows on the website (`RouteRow` `dense`) — then a *Show all N classic climbs* dropdown with the rest
   (owner, 2026-10-29). On a wall, `areaClassics` over its loaded rows: climbs that carry the `classic` flag, 3+ guidebook stars (`guide_stars`)
   or a 3.5+ climber rating (`stars`), best first (0393 `classic_score`, a vote-weighted star average flag-classics writes, else guidebook stars, else ours — a sort key that renders nowhere); with none, **TOP RATED HERE**, up to five routes by `stars`. On every area ABOVE a
   wall — a crag of walls, a region, a state — `useAreaClassics` (0391 `area_classics`, up to 500 rows plus the full `total`; the open list

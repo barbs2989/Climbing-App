@@ -44,8 +44,8 @@ const CASES = [
     says: /embed lacks "area_type"/ },
   // An entry reader renamed out from under the guard must fail closed, not pass on fewer readers.
   { name: "entry-renamed", file: ROW, expect: "fail",
-    find: "function RouteRow({ r, onOpen, C, areaName }: RouteRowProps) {",
-    repl: "function RouteRow_({ r, onOpen, C, areaName }: RouteRowProps) {",
+    find: "function RouteRow({ r, onOpen, C, areaName, dense }: RouteRowProps) {",
+    repl: "function RouteRow_({ r, onOpen, C, areaName, dense }: RouteRowProps) {",
     says: /entry lib\/DbAreaBrowser\.jsx RouteRow not found/ },
   // MUST STAY SILENT — a camelCase read that dbRouteToCamel maps onto a selected column.
   { name: "camel-read-of-a-selected-column", file: ROW, expect: "pass",
