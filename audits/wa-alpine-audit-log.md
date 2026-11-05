@@ -37076,3 +37076,56 @@ environment's allowlist and the TLS handshake completes every time).
 same next batch rather than skipping ahead. Logged in `audits/wa-alpine-audit-progress.json` under
 `outage_runs`. A human should check the Supabase project dashboard (project `ofuofhojhbcrcahuotya`)
 before the next scheduled run.
+
+## Batch 516 (pass 8) — 2026-11-05
+
+Checked 8 routes across 8 peaks, continuing id-ascending past Mount Blum onto the next alpine/
+mountaineering objectives: `wa_mount_buckindy_scramble`, `wa_mount_cameron_standard`,
+`wa_mount_challenger_challenger_glacier`, `wa_mount_chaval_north_ridge`, `wa_mount_christie_west`,
+`wa_mount_claywood_standard`, `wa_mount_constance_west_arete`, `wa_mount_crowder_northeast_ridge`.
+Database access was intermittently very slow this run (individual queries with a wide column list
+timed out repeatedly before succeeding on retry; a `routes` scan filtered only by `id` sometimes hit
+the server's own statement timeout) but never fully down — unlike the prior run's genuine outage,
+this one just needed persistent retrying.
+
+One confirmed fix, in `audits/sql/2026-11-05-batch-516.sql`: `wa_mount_chaval_north_ridge`'s
+`approach` field claimed to share "the West Route"'s approach drainage, naming it "(Jug Creek/Bluff
+Lake/Cliff Lake benches)" — but the actual West Route row (`wa_mount_chaval_scramble`) stores a
+completely different approach (Arrow Creek off Illabot Creek Road/FR-16), with no mention of Jug
+Creek, Bluff Lake or Cliff Lake anywhere in its own text. The parenthetical looks like contamination
+from elsewhere in the catalog rather than a description of the route its own sibling actually
+documents, so it was corrected to name the drainage the West Route row itself uses, leaving the rest
+of the sentence (correctly describing the divergence to the north ridge rather than the west-ridge
+saddle system) unchanged.
+
+Six clean. Mount Buckindy's elevation (7,320 ft) and FA (Don Grimlund, Dave Nicholson, Win
+Trueblood, August 28, 1955) are both confirmed by Wikipedia/SummitPost-family sources. Mount
+Cameron's elevation (7,190 ft) and its naming for 1890s homesteader Amos Benson Cameron both match.
+Mount Challenger's elevation (8,207 ft) and FA (Philip Dickert, Jack Hossack, George MacGowan,
+September 7, 1936) both match independent sources — note the 8,207 ft figure was itself a deliberate
+fix landed back in batch 24 (from a stale 8,238 ft), so this run is confirming that earlier
+correction still holds, not re-deriving it. Mount Christie's elevation (6,181/6,182 ft, route vs.
+area row) sits within the same ~1-2 ft cross-source rounding noise this audit has left alone before,
+and its naming for Seattle Press Expedition leader James Halbold Christie is confirmed (careful not
+to confuse with neighboring Mount Seattle, which a different source names for the same expedition).
+Mount Claywood's elevation (6,836 ft) matches exactly. Mount Constance West Arête's `alpine_grade`
+("III") looks at first glance like the same alpine_grade/commitment duplication bug this audit fixed
+twice on Mount Baker's glacier routes (batches 9 and 515) — but batch 24's own notes record that this
+exact value was already examined and relied on as the correct reference to fix two sibling Constance
+routes' mismatched `grade` fields, and every external source found (Mountaineers, SummitPost, a
+guidebook quoted on Cascade Climbers) describes the route only in the Grade III / 5.4-5.5 commitment
+system, never a French adjectival grade — so there is no basis to reverse that prior call here, and
+no confirmable replacement value either way. Mount Crowder's Northeast Ridge is documented elsewhere
+only as a descent off a Pickets traverse, never a recommended way up — matching its own overview —
+and a 2020 trip report found independently corroborates the general character this row's own
+hazards/watch_out already describe (loose rock, a forced detour around a chasm, a line climbers have
+called vague/unpleasant to follow).
+
+Flagged for human review, no SQL: `wa_mount_claywood_standard`'s `fa` ("Mountaineers Club outing
+party including Philip Rogers and Winona Bailey, August 3, 1920") is only partially corroborated —
+the Mountaineers' 1920 summer outing did camp in Dosewallips Basin in early August 1920, and Winona
+Bailey is independently documented as the author of that outing's account in *The Mountaineer* — but
+no source found names Philip Rogers as a participant or confirms the specific August 3 summit date.
+Not contradicted either, just short of confirmable.
+
+Next batch will continue id-ascending from `wa_mount_crowder_northeast_ridge` (see progress file).

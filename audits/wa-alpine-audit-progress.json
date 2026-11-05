@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_mount_blum_north_ridge",
+  "last_processed_id": "wa_mount_crowder_northeast_ridge",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 515 complete. Continuing id-ascending scope from wa_mount_blum_north_ridge (next batch starts after it).",
+  "pass_note": "Pass 8 in progress, batch 516 complete. Continuing id-ascending scope from wa_mount_crowder_northeast_ridge (next batch starts after it).",
   "batches": [
     {
       "batch_number": 1,
@@ -10246,6 +10246,25 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-11-05-batch-515.sql",
       "note": "Fixed the same alpine_grade schema-violation pattern found on wa_dragontail_peak_triple_couloirs back in batch 9: wa_mount_baker_easton_glacier and wa_mount_baker_squak_glacier both had alpine_grade stored as 'Grade II'/'Grade III' (a duplicate of each row's own commitment grade) instead of a French adjectival value (F/PD/AD/D/TD/ED per 0006_composite_grades.sql); both fixed to 'PD' by analogy to wa_mount_baker_coleman_deming, the audit's established comparable Class 2/commitment-II Baker glacier route (named directly in Easton's own overview as a popularity peer). wa_mount_blum_north_ridge's fa (Dave Hutchinson, Phil Leatherman, Mark Weigelt, Sept 16 1972) could not be confirmed or refuted by any source found -- flagged for human review, not fixed."
+    },
+    {
+      "batch_number": 516,
+      "date": "2026-11-05",
+      "route_ids": [
+        "wa_mount_buckindy_scramble",
+        "wa_mount_cameron_standard",
+        "wa_mount_challenger_challenger_glacier",
+        "wa_mount_chaval_north_ridge",
+        "wa_mount_christie_west",
+        "wa_mount_claywood_standard",
+        "wa_mount_constance_west_arete",
+        "wa_mount_crowder_northeast_ridge"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 1,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-11-05-batch-516.sql",
+      "note": "wa_mount_chaval_north_ridge's approach field claimed to share the West Route's approach drainage, naming it '(Jug Creek/Bluff Lake/Cliff Lake benches)' -- but the actual West Route row (wa_mount_chaval_scramble) stores a completely different approach (Arrow Creek off Illabot Creek Road/FR-16), with no mention of those place names at all. Fixed the parenthetical to name the drainage the sibling row itself documents. wa_mount_claywood_standard's fa (Mountaineers Club outing party incl. Philip Rogers and Winona Bailey, Aug 3 1920) is partially corroborated -- the Mountaineers' 1920 summer outing did camp in Dosewallips Basin in early August 1920 and Winona Bailey wrote the Mountaineer account of that outing -- but no source found confirms Philip Rogers' presence or the specific Aug 3 summit date; flagged for human review, not changed."
     }
   ],
   "outage_runs": [
