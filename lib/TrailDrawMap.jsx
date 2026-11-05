@@ -62,6 +62,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const [ready, setReady] = useState(0), [mapFail, setMapFail] = useState(false);
   const genRef = useRef(0);
   const dialogRef = useRef(null);
+  const expandBtn = useRef(null); // focus returns here when full screen closes
   const [baseLayer, setBaseLayer] = useState("topo");
   const [fullscreen, setFullscreen] = useState(false);
   const [zoomN, setZoomN] = useState(0);
@@ -153,7 +154,8 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     abortRoute(id);
     const ctl = new AbortController();
     routing.current.set(id, ctl);
-    routeLeg(a, b, ctl.signal).then((via) => {
+    // routeLeg never rejects; the catch is so that no future change can leave a leg pending for good.
+    routeLeg(a, b, ctl.signal).catch(() => false).then((via) => {
       if (ctl.signal.aborted) return;
       routing.current.delete(id);
       const now = nodesRef.current, j = now.findIndex((n) => n.id === id);
@@ -229,6 +231,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   };
   const api = useRef(null);
   api.current = { append, insertAt, moveAnchor, select: (id) => setSelectedId((s) => (s === id ? null : id)), flushRedraw: () => { if (redrawAfterDrag.current) { redrawAfterDrag.current = false; setZoomN((z) => z + 1); } } };
+  const exitFullscreen = () => { setFullscreen(false); setTimeout(() => { try { expandBtn.current && expandBtn.current.focus({ preventScroll: true }); } catch (e) {} }, 0); };
 
   // The Leaflet map is rebuilt when the drawer goes full screen or comes back (the box it lives in
   // changes), keeping its centre and zoom, as the route map does (GPXMap).
@@ -267,7 +270,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     const el = fullscreen ? dialogRef.current : null;
     if (!el) return undefined;
     try { el.focus({ preventScroll: true }); } catch (e) {}
-    const onKey = (e) => { if (e.key === "Escape") { e.stopPropagation(); setFullscreen(false); } };
+    const onKey = (e) => { if (e.key === "Escape") { e.stopPropagation(); exitFullscreen(); } };
     el.addEventListener("keydown", onKey);
     return () => el.removeEventListener("keydown", onKey);
   }, [fullscreen]);
@@ -303,7 +306,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const f = seg[k] ? Math.min(1, want / seg[k]) : 0, m0 = leg[k], m1 = leg[k + 1];
       const h = keep(L.marker([m0[0] + (m1[0] - m0[0]) * f, m0[1] + (m1[1] - m0[1]) * f], { draggable: true, keyboard: false, bubblingMouseEvents: false, icon: dot(14, "rgba(0,0,0,0.45)", C.warning) }));
       h.on("dragstart", () => { dragging.current = true; });
-      h.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); api.current.flushRedraw(); });
+      h.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); redrawAfterDrag.current = true; api.current.flushRedraw(); }); // always redrawn: a drop ON an anchor adds nothing, and the handle must not stay where it was dropped
       h.on("click", (e) => { L.DomEvent.stop(e); if (!tapOk(e)) return; const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); });
     }
     nodes.forEach((n, i) => {
@@ -311,7 +314,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const m = keep(L.marker(n.a, { draggable: true, keyboard: false, autoPan: true, bubblingMouseEvents: false, icon: dot(last ? 18 : 14, C.warning, "#fff", sel ? C.accent : null) }));
       m.on("dragstart", () => { dragging.current = true; });
       m.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = m.getLatLng(); api.current.moveAnchor(n.id, q.lat, q.lng); api.current.flushRedraw(); });
-      m.on("click", (e) => { L.DomEvent.stop(e); if (Date.now() - dragEndAt.current >= 250) api.current.select(n.id); });
+      m.on("click", (e) => { L.DomEvent.stop(e); if (tapOk(e)) api.current.select(n.id); });
     });
   // The pins are read through propsRef and keyed by VALUE (startKey/endKey): the host builds fresh
   // {lat,lng} objects every render, and keying on the objects rebuilt every layer per tick.
@@ -331,7 +334,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.text70, fontSize: 13, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "The map couldn't load. Upload or paste a recorded track instead." : "Loading map…"}</div> : null}
       {layerBtns}
       {/* ⤢ to go full screen and ✕ to leave it, in the SAME spot on the map, as the area map has it. */}
-      <button onClick={() => setFullscreen((f) => !f)} aria-label={fullscreen ? "Exit full screen" : "Full screen"} title={fullscreen ? "Exit full screen" : "Full screen"} style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 7, right: 7, zIndex: 1000, background: C.bg, boxShadow: "0 2px 8px rgba(0,0,0,0.5)" })}>{fullscreen ? "✕" : "⤢"}</button>
+      <button ref={expandBtn} onClick={() => (fullscreen ? exitFullscreen() : setFullscreen(true))} aria-label={fullscreen ? "Exit full screen" : "Full screen"} title={fullscreen ? "Exit full screen" : "Full screen"} style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 7, right: 7, zIndex: 1000, background: C.bg, boxShadow: "0 2px 8px rgba(0,0,0,0.5)" })}>{fullscreen ? "✕" : "⤢"}</button>
       {ready ? <div style={{ position: "absolute", bottom: 7, left: 7, right: 7, zIndex: 1000, background: "rgba(13,17,23,0.85)", borderRadius: 7, padding: "4px 8px", fontSize: 12, color: "#fff", textAlign: "center", pointerEvents: "none" }}>{status}</div> : null}
     </div>
   );
@@ -357,7 +360,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     return createPortal(<div ref={dialogRef} tabIndex={-1} role="dialog" aria-modal="true" aria-label={title || "Draw the trail"} style={{ position: "fixed", inset: 0, zIndex: 10000, background: C.bg, padding: 12, display: "flex", flexDirection: "column", boxSizing: "border-box", overscrollBehavior: "contain" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, marginBottom: 9 }}>
         <span style={{ fontSize: 14, fontWeight: 700, color: C.text, minWidth: 0, overflowWrap: "anywhere" }}>{title || "Draw the trail"}</span>
-        <button onClick={() => setFullscreen(false)} aria-label="Close full-screen map" style={POP_CLOSE}>✕</button>
+        <button onClick={exitFullscreen} aria-label="Close full-screen map" style={POP_CLOSE}>✕</button>
       </div>
       {mapBox}
       <div style={{ flexShrink: 0 }}>{tools}</div>
