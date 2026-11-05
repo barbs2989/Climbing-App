@@ -173,7 +173,6 @@ export const OVERLAY_PAYLOADS = {
   // A climber object. Every call site passes a CLIMBERS-shaped record (`c`, `fr`, `host`).
   connectModal: { expr: "CLIMBERS[0]" },
   giveVouchWith: { expr: "CLIMBERS[0]" },
-  logCatchWith: { expr: "CLIMBERS[0]" },
   mutualModal: { expr: "CLIMBERS[0]" },
   profileModal: { expr: "CLIMBERS[0]" },
   // The `?list=<uuid>` link viewer (0199). Its one setter passes the uuid read from the address bar.
