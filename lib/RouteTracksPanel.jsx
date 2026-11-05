@@ -33,17 +33,19 @@ export default function RouteTracksPanel({ rows, profiles, loading, failed, show
   // A walk-in time is not a send time, so a crag offers no Fastest.
   const sorts = crag ? TRACK_SORTS.filter((s) => s.id === "latest") : TRACK_SORTS;
   const title = crag ? "Climbers' walk-in recordings" : "Climbers' tracks";
-  // ...and nothing while loading either: a loading row that then collapses would shift the cards under it.
-  // ...unless the crag already HAS its trail: then the gap note is gone and this is the one line that
-  // says a recording of the walk in is welcome.
-  // A crag that has its trail draws the section as any route does (loading rows, then the list or
-  // the one-line invitation), so nothing pops in under the climber; one without a trail draws nothing.
-  if (crag && !cragHasTrail) return null;
-  if (crag && !failed && !loading && !rows.length) return <div style={{ marginTop: 12, fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>Walked in with a watch running? Attach the GPX when you log a climb here and it shows under the crag map for anyone who can read your report.{onLog ? <> <button onClick={onLog} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Log a climb</button></> : null}</div>;
+  // A crag WITHOUT its trail draws nothing while loading and nothing when there is nothing to list:
+  // the crag map's own "No trail to the crag yet → Add the trail" is the one invitation, and a
+  // loading row that then collapsed would shift the cards under it. Recordings that DO exist, and a
+  // failed read, are shown as on any route. A crag WITH its trail draws the section as any route
+  // does (loading rows, then the list), and with nothing to list the one line that says a recording
+  // of the walk in is welcome, since the gap note is gone.
+  if (crag && !cragHasTrail && !failed && (loading || !rows.length)) return null;
+  const invite = crag && !failed && !loading && !rows.length;
   return (
     <section aria-label={title} style={{ marginTop: 12 }}>
       <div style={SH}>{title}{rows.length ? " · " + rows.length : ""}</div>
-      {failed ? <div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>{title} couldn’t load. Pull to refresh, or try again later.</div>
+      {invite ? <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>Walked in with a watch running? Attach the GPX when you log a climb here and it shows under the crag map for anyone who can read your report.{onLog ? <> <button onClick={onLog} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Log a climb</button></> : null}</div>
+        : failed ? <div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>{title} couldn’t load. Pull to refresh, or try again later.</div>
         : loading ? <LoadingRows C={C} label={"Loading " + title.toLowerCase() + "…"}/>
         : !rows.length ? <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>No climber has shared a GPS track of this route yet. Attach your GPX when you log it, and it shows here for anyone who can read your report.{onLog ? <> <button onClick={onLog} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Log this climb</button></> : null}</div>
         : <>

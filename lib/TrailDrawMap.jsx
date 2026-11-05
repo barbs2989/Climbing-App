@@ -181,15 +181,15 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       if (!Array.isArray(via) && !next[j].via.length) noteFailure(via); // a leg that kept its split still follows the trail
     });
   };
-  // `idxs` are the legs this change touched: straight again, or routed when Follow trails is on.
-  // `keep` lists the legs (by index) that WERE routed before this change, or `true` for all: those
-  // stay routed even with the toggle off, or a nudge of the hollow dot on a switchbacking path would
-  // flatten it. Only those: a straight leg drawn on purpose beside a routed one stays straight.
-  const withLegs = (next, idxs, keep) => {
+  // `idxs` are the legs this change touched: straight again, or routed when Follow trails is on
+  // (`all` routes them whatever the switch says: Follow trails being switched on). A leg that was
+  // itself routed is handled by its caller (insertAt splits it, moveAnchor and deleteAnchor keep its
+  // points), never here.
+  const withLegs = (next, idxs, all) => {
     const touched = [];
     idxs.forEach((i) => {
       if (i < 0 || i >= next.length) return;
-      const want = propsRef.current.follow || keep === true || (Array.isArray(keep) && keep.includes(i));
+      const want = propsRef.current.follow || !!all;
       // The first anchor has no leg; a leg of no length (the same spot twice) is straight and silent.
       const zero = i === 0 || sameP(next[i - 1].a, next[i].a);
       // A leg going straight gives up the answer it was waiting for, so the slot goes to a live leg.
@@ -211,15 +211,19 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   // asks again, so Redo across an in-flight route does not quietly leave a straight line.
   // Legs a snapshot (or a handed-over shape) left pending: asked again with Follow trails on, left
   // straight with it off, so a line never reshapes itself against the switch.
-  const reask = (list) => {
-    if (propsRef.current.follow) { list.forEach((n, i) => { if (n.pending && i > 0) startRoute(n.id); }); return; }
-    if (list.some((n) => n.pending)) setBoth(list.map((n) => (n.pending ? Object.assign({}, n, { pending: false }) : n)));
+  const reask = (list, skip) => {
+    if (propsRef.current.follow) { list.forEach((n, i) => { if (n.pending && i > 0 && !(skip && skip.has(n.id))) startRoute(n.id); }); return; }
+    if (list.some((n) => n.pending && !(skip && skip.has(n.id)))) setBoth(list.map((n) => (n.pending && !(skip && skip.has(n.id)) ? Object.assign({}, n, { pending: false }) : n)));
   };
+  // Undo/Redo keeps a request on its way when the restored snapshot holds that same leg still
+  // pending between the same two anchors; every other request is given up.
   const restore = (snap) => {
-    routing.current.forEach((c) => c.abort()); routing.current.clear();
+    const cur = nodesRef.current, keep = new Set();
+    snap.forEach((n, i) => { if (!n.pending || i < 1 || !routing.current.has(n.id)) return; const k = cur.findIndex((x) => x.id === n.id); if (k > 0 && sameP(cur[k].a, n.a) && sameP(cur[k - 1].a, snap[i - 1].a)) keep.add(n.id); });
+    routing.current.forEach((c, id) => { if (!keep.has(id)) { c.abort(); routing.current.delete(id); } });
     setBoth(snap);
     setSelectedId(null);
-    reask(snap);
+    reask(snap, keep);
   };
   const undo = () => { if (!undoRef.current.length) return; redoRef.current.push(nodesRef.current); restore(undoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
   const redo = () => { if (!redoRef.current.length) return; undoRef.current.push(nodesRef.current); restore(redoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
@@ -264,7 +268,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     // is honest). With Follow trails ON it is asked again and keeps them if the router cannot
     // answer; OFF asks nothing, as the switch promises. Other legs go straight, or route when ON.
     const touched = [], on = propsRef.current.follow;
-    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { if (on) { next[k] = Object.assign({}, next[k], { pending: true }); touched.push(next[k].id); } } else { next[k] = Object.assign({}, next[k], { via: [], pending: propsRef.current.follow && !zero }); if (propsRef.current.follow && !zero) touched.push(next[k].id); } });
+    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { if (on) { next[k] = Object.assign({}, next[k], { pending: true }); touched.push(next[k].id); } } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); } });
     commit(next, touched); };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null);
     // The merged leg keeps the routed points of both legs it joins (the deleted anchor is the one
