@@ -1,3 +1,5 @@
+import os from "node:os";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Which of the 143 migration files are ACTUALLY applied to the live database?
 //
 // Why this exists: supabase_migrations.schema_migrations does not exist on this project —
@@ -113,11 +115,11 @@ select json_build_object(
   'policynames',(select coalesce(json_agg(tablename||'|'||lower(cmd)||'|'||policyname),'[]') from pg_policies where schemaname in ('public','storage'))
 ) as cat;`;
 
-const tmp = path.join(process.env.CLAUDE_JOB_DIR || "/tmp", "cat.sql");
+const tmp = path.join(process.env.CLAUDE_JOB_DIR || os.tmpdir(), "cat.sql");
 fs.writeFileSync(tmp, CAT);
 let raw;
 try {
-  raw = execFileSync("npx", ["supabase", "db", "query", "--linked", "-f", tmp], { encoding: "utf8", timeout: 120000 });
+  raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-f", tmp], { encoding: "utf8", timeout: 120000 });
 } catch (e) { console.error("FAIL: could not read the live catalog —", e.message); process.exit(1); }
 
 const jm = raw.match(/\{[\s\S]*\}/);

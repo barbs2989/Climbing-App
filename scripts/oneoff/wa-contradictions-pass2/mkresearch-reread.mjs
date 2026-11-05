@@ -1,7 +1,8 @@
+import { fileURLToPath } from "node:url";
 // RE-READ variant: reader outputs reread/rg_NN.json -> research/in/tNNN.json (same grouping as mkresearch.mjs).
 // ~10 contradictions per file, each carrying the full current row. Also prints coverage.
 import fs from "node:fs";
-const T = new URL("../../../audits/wa-contradictions-pass2", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/wa-contradictions-pass2", import.meta.url));
 const R = Object.fromEntries(JSON.parse(fs.readFileSync(`${T}/wa-routes.json`)).map(r => [r.id, r]));
 const only = process.argv[2] ? new RegExp(process.argv[2]) : null;
 // --skip <ids.json>: routes whose contradictions a finished research file already handled

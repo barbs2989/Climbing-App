@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // probe-label-vs-visible-text — does any control's aria-label CONTRADICT what it visibly says?
 //
 // CLAUDE.md's rule is "name a control from the expression the row ALREADY renders, never a
@@ -28,7 +29,7 @@ import _traverse from "@babel/traverse";
 import { appSources } from "../lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 
 const attr = (open, name) => open.attributes.find(
   (a) => a.type === "JSXAttribute" && a.name && a.name.name === name);

@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Distinguish "no converted controls on this tab" from "present but Tab cannot reach them".
 //
 // The tab walk reported ZERO on `today` and `routes`, and those are opposite problems with
@@ -20,7 +21,7 @@ const claim = async (start) => {
 };
 const port = await claim(5490);
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
-const server = spawn("npx", ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
 const stop = () => { try { process.kill(-server.pid, "SIGTERM"); } catch {} };
 process.on("exit", stop);

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // check:new-climber-journey — does what a NEW climber enters actually survive?
 //
 // WHY THIS EXISTS. Four static censuses found six defects that a real account hits in its first
@@ -114,7 +115,7 @@ try {
   await sweepOrphans(log);
   const port = await freePort();
   const base = `http://127.0.0.1:${port}/`;
-  server = spawn("npx", ["vite", "--config", "scripts/journey.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/journey.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   let died = false;
   server.on("exit", () => { died = true; });
@@ -137,6 +138,25 @@ try {
     });
     if (!r.ok) dead(`could not blank the fixture profile: ${r.status} ${await r.text()}`);
     log("  blanked the fixture's disciplines and grades — this walk is about a NEW climber");
+  }
+
+  // A NAME ONLY THIS RUN'S MATE CARRIES. Phase 3 finds the mate by typing their name into the share
+  // sheet, whose search is `profiles.name ilike %q%` — and every fixture's mate is "Robin Belay".
+  // Any other walk alive at the same moment (check:signed-in, check:outage, another journey; the
+  // orphan sweep leaves accounts under 45 min alone on purpose) adds its own Robin Belay to the
+  // results, and the walk died on "expected exactly 1 Send control … found 5" with nothing wrong
+  // in the app (2026-11-04, five concurrent walks). The handle (@robinbelay) is untouched, so
+  // every later phase that reads it reads what it always did.
+  {
+    const unique = `${fixture.mate.name} ${fixture.mate.id.slice(0, 6)}`;
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${fixture.mate.id}`, {
+      method: "PATCH", headers: { ...H, Prefer: "return=representation" },
+      body: JSON.stringify({ name: unique }),
+    });
+    const rows = r.ok ? await r.json() : [];
+    if (!r.ok || rows.length !== 1) dead(`could not give the mate a per-run name: ${r.status} ${JSON.stringify(rows).slice(0, 200)}`);
+    fixture.mate.name = unique;
+    log(`  the mate is "${unique}" for this run, so a concurrent walk's Robin Belay cannot match the share search`);
   }
 
   // THE BASELINE IS LOAD-BEARING. "the columns are populated after onboarding" proves nothing
@@ -527,6 +547,12 @@ try {
     await page.fill('[aria-label="Search climbers by name"]', fixture.mate.name);
     await settledText(page);
 
+    // WAIT FOR THE FILTER TO SETTLE: on a loaded box the people search answers after settledText
+    // returns, so the count read 0 (no rows yet) on a correct build. Only exactly-one is waited
+    // for, so a real duplicate still fails below after the timeout.
+    await page.waitForFunction(() =>
+      [...document.querySelectorAll("button")].filter((b) => (b.innerText || "").trim() === "Send").length === 1,
+    null, { timeout: 20000 }).catch(() => {});
     const sendCount = await page.evaluate(() =>
       [...document.querySelectorAll("button")].filter((b) => (b.innerText || "").trim() === "Send").length);
     if (sendCount !== 1) {
@@ -738,11 +764,11 @@ try {
     if (!(await tapByName(page, "Crews"))) dead(`no Crews sub-view on the Crew tab (${why})`);
     await settledText(page);
     // OPEN EVERY CREW CARD FIRST. Since #2531 (2026-10-21) each card starts COLLAPSED to a summary,
-    // and the roster -- the "Crew · N members" box this reads -- renders only behind "View plan ▾".
+    // and the roster -- the "Crew · N members" box this reads -- renders only behind "View plan" (its chevron is an SVG now, so the label no longer ends in a ▾ glyph and an exact match found no button).
     // The walk scanned collapsed cards and reported "found 0" two runs running (2026-10-24), which
     // reads exactly like a missing roster. Clicked once each; a card already open has no such button.
     const opened = await page.evaluate(() => {
-      const bs = [...document.querySelectorAll("button")].filter((b) => (b.innerText || "").trim() === "View plan ▾");
+      const bs = [...document.querySelectorAll("button")].filter((b) => (b.innerText || "").trim().startsWith("View plan"));
       bs.forEach((b) => b.click());
       return bs.length;
     });

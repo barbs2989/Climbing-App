@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Mechanical half of a component extraction (docs/refactor-progress.md, PR57 on).
 //
 //   node scripts/oneoff/extract-from-parent.mjs component <Name> [--with h1,h2] [--parent RouteDetail.jsx]
@@ -16,7 +17,7 @@ import path from "node:path";
 import { parse } from "@babel/parser";
 import traverseM from "@babel/traverse";
 const traverse = traverseM.default || traverseM;
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "..", "..");
 
 const argv = process.argv.slice(2);
 const opt = k => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : null; };
@@ -24,7 +25,7 @@ const mode = argv[0];
 const parent = opt("--parent") || "RouteDetail.jsx";
 const parentP = path.join(ROOT, parent);
 // An import written INTO the parent, relative to the parent's own directory (a parent may live in lib/).
-const fromParent = rel => { let r = path.relative(path.dirname(parentP), path.join(ROOT, rel)); if (!r.startsWith(".")) r = "./" + r; return r; };
+const fromParent = rel => { let r = path.relative(path.dirname(parentP), path.join(ROOT, rel)).replace(/\\/g, "/"); if (!r.startsWith(".")) r = "./" + r; return r; };
 const die = m => { console.error("REFUSED: " + m); process.exit(1); };
 
 function analyse(src) {
@@ -86,7 +87,7 @@ function importSpec(an, name) {
 }
 function relFrom(fromDir, source) {
   if (!source.startsWith(".")) return source;
-  let r = path.relative(fromDir, path.resolve(path.dirname(parentP), source));
+  let r = path.relative(fromDir, path.resolve(path.dirname(parentP), source)).replace(/\\/g, "/");
   if (!r.startsWith(".")) r = "./" + r;
   return r;
 }

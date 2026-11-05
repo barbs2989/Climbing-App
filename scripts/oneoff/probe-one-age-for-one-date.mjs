@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // ONE DATE, ONE AGE -- and a count is not "verified" unless it counts verified things.
 //
 // The route page's Reports tab prints the route's LATEST REPORT DATE twice and used to give
@@ -54,11 +55,9 @@ const problems = [];
 
 // A producer that is not ago() must be declared here WITH A REASON, and a declaration that
 // stops matching fails as stale -- the standard KNOWN/NEEDS_EXTRA_STATE are held to.
-const DECLARED = {
-  "ClimbMatchCore.jsx| mo ago":
-    "the belay-catch ledger's recLbl, whose input is already a count of MONTHS (lastM) rather " +
-    "than days -- a different question from ago(), and it renders with a leading space",
-};
+// (Empty now: the one entry, the belay-catch ledger's recLbl with its " mo ago" literal, no longer
+// exists anywhere in the app, so it failed as stale on a CLEAN tree. ago() is the only producer.)
+const DECLARED = {};
 
 const seen = new Set();
 let strings = 0;
@@ -115,8 +114,8 @@ const port = await freePort(5600, 5639);
 if (port === null) { console.error("no free port"); process.exit(1); }
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
 
-const server = spawn("npx",
-  ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "pipe", "pipe"], detached: true });
 server.stdout.on("data", () => {});
 server.stderr.on("data", (d) => { const s = String(d); if (/ANCHOR LOST|Error/.test(s)) process.stderr.write(s); });

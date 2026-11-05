@@ -1,3 +1,4 @@
+import { fileHref } from "../../lib/file-href.mjs";
 // Write researched FKT tracks onto routes matched by their PEAK's coordinate (routes with no
 // trailhead/summit pins), and add a Summit pin at the peak's coordinate when the route has none
 // (owner, 2026-10-29: "if we already have the coordinates for the summit, add that pin").
@@ -14,8 +15,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const { haversineM } = await import("./rule.mjs");
-const { recordedTrackPts, reachesTheSummit } = await import(`${REPO}/lib/track.js`);
-const { SUPABASE_URL, anonKey, headers, patchRow } = await import(`${REPO}/scripts/lib/supabase-env.mjs`);
+const { recordedTrackPts, reachesTheSummit } = await import(fileHref(`${REPO}/lib/track.js`));
+const { SUPABASE_URL, anonKey, headers, patchRow } = await import(fileHref(`${REPO}/scripts/lib/supabase-env.mjs`));
 const decisions = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
 const WRITE = process.argv.includes("--write");
 const GPX_DIR = process.env.FKT_GPX_DIR;

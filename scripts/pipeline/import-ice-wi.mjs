@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // import-ice-wi.mjs — add the WI-graded ice climbs the original state import DROPPED.
 //
 // etl-state.mjs asks OpenBeta for `grades{yds vscale}` only and drops any climb with neither
@@ -45,7 +46,7 @@ const norm = s => String(s || "").trim().toLowerCase();
 function sql(q, tries = 4) {
   for (let i = 0; ; i++) {
     try {
-      const out = execFileSync("npx", ["supabase", "db", "query", "--linked", q], { encoding: "utf8", maxBuffer: 512 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
+      const out = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", q], { encoding: "utf8", maxBuffer: 512 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
       const j = JSON.parse(out.slice(out.indexOf("{")));
       if (!Array.isArray(j.rows)) throw new Error("unexpected db query output: " + out.slice(0, 200));
       return j.rows;

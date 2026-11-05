@@ -1,0 +1,46 @@
+{
+ "va_a_v_p_boulder": {
+  "_expect": { "name": "A.V.P. Boulder", "region": "Virginia" },
+  "blurb": "This is the main block of a small boulder cluster in the Grayson Highlands of southwest Virginia, set in forest at roughly 3,800 feet. About two dozen problems are recorded here, and the bulk of them fall between V2 and V5, with a short run of much harder lines reaching V9. Expect steep, powerful moves on small holds, and good landings. The boulders sit very close to the road, so this is an easy place to squeeze in a short session or to start a day before heading to the other blocks nearby.",
+  "approach": "Very short: the boulders are right beside the parking area.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106479888/avp-boulders", "https://www.accessfund.org/latest-news/news-and-events/news/central-appalachia-climbers-coalition-acquire-the-avp-boulders"] }
+ },
+ "va_pinnacle_left": {
+  "_expect": { "name": "Pinnacle Left", "region": "Virginia" },
+  "blurb": "Pinnacle Left is a wall on the left-hand side of the entry gully at the Pinnacle Rock cliff line in Breaks Interstate Park, on the Virginia side of the state line. Nearly all of the 25 routes are bolted sport lines, with just two trad lines. The grade spread is unusually wide: a few easy routes in the 5.5 to 5.8 range, a solid middle at 5.9 to 5.11, then a strong cluster of 5.12s plus several 5.13 lines and one 5.14 project. It is a good stop for strong sport climbers, with a few warm-ups for everyone else.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114344281/pinnacle-left", "https://www.mountainproject.com/area/111792002/pinnacle-rock-area"] }
+ },
+ "va_pinnacle_overlook": {
+  "_expect": { "name": "Pinnacle Overlook", "region": "Virginia" },
+  "blurb": "Pinnacle Overlook is a wall at the bottom of the entry gully below Pinnacle Rock, in Breaks Interstate Park in southwest Virginia, and it sits on the opposite side of that gully from Pinnacle Left. The 25 routes are mostly sport (19) with six trad lines, and the grading is steep from the start: nothing easier than 5.10, a handful of 5.10s and 5.11s, and a big block of 5.12s topped by a couple of 5.13 lines. It suits experienced climbers who want hard, well-protected lines in a scenic gorge setting rather than a place to learn.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114344296/pinnacle-overlook", "https://www.mountainproject.com/area/111792002/pinnacle-rock-area"] }
+ },
+ "va_greenstonia_ridgeline": {
+  "_expect": { "name": "Greenstonia (Ridgeline)", "region": "Virginia" },
+  "blurb": "Greenstonia is a quiet corner of the Ridgeline section in The Forest, a bouldering zone along the Blue Ridge Parkway an hour or so from Charlottesville. The boulders are greenstone, and the area is reached by walking along the ridge past a pair of large blocks, with some off-trail travel. There are about 25 problems, running from V1 up to V10, with most of the weight in the V4 to V7 range and a few hard tests above that. Expect solitude, and room for further exploration, rather than a polished crowd scene.",
+  "review": { "sources": ["https://www.mountainproject.com/v/109846509", "https://www.mountainproject.com/area/107264568/the-forest"] }
+ },
+ "va_train_station_the": {
+  "_expect": { "name": "Train Station, The", "region": "Virginia" },
+  "blurb": "The Train Station is a modest cliff of around fifty feet that overlooks the old railway tunnel in Guest River Gorge, in far southwest Virginia. Of its 25 routes, 23 are sport and two are trad cracks. Grades start at 5.7 and top out around 5.12, with the greatest numbers at 5.9 and 5.10, so it works well for a mixed group. A few lines stay dry when it rains, and the wall picks up fairly steady sun once the leaves have fallen. Expect short, quality lines rather than long pitches.",
+  "review": { "sources": ["https://www.mountainproject.com/area/116192397/the-train-station", "https://www.mountainproject.com/route/116192409/steam-engine"] }
+ },
+ "va_gulf_branch": {
+  "_expect": { "name": "Gulf Branch", "region": "Virginia" },
+  "blurb": "Gulf Branch is a small creekside bouldering spot in Arlington, close to Washington, DC, where the stream meets the Potomac River next to the Potomac Heritage Trail. About two dozen problems are recorded, and they stay on the gentle side: roughly V0 to V4, with most in the V0 to V3 range. It is a handy urban option for an after-work session with a pad or two, and a pleasant spot for beginners and kids. Do not expect big walls or high lines here; this is low, short bouldering among trees and cascades.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108466670/gulf-branch", "https://en.wikipedia.org/wiki/Gulf_Branch"] }
+ },
+ "va_dihedrals": {
+  "_expect": { "name": "Dihedrals", "region": "Virginia" },
+  "blurb": "The Dihedrals are a stretch of cliff up to about 60 feet high in Mather Gorge, rising straight from the Potomac River in Great Falls Park, a short drive upriver from Washington, DC. Climbing here is mostly top rope off trees at the cliff top, with about ten trad lines and one scramble. The grade range is wide, from easy fourth-class and 5.1 up to 5.12, with plenty of options in the 5.3 to 5.11 range, so it works for both newcomers and strong climbers. It is sunny and busy with hikers, and the rock quality draws mixed opinions.",
+  "review": { "sources": ["https://mountainproject.com/area/106163226/great-falls", "https://rakkup.com/guidebook/great-falls-rock-climbing/dihedrals/s23185"] }
+ },
+ "_skipped": {
+  "va_mausoleum_boulder": "no fetched page about the boulder area itself (only a route page and parent listings); sources disagree on parent (Jay's Creek vs Jaybird Gorge)"
+ },
+ "_conflicts": {
+  "va_dihedrals": "stored rock greywacke; https://mountainproject.com/area/106163226/great-falls says mica schist",
+  "va_pinnacle_left": "stored rock shale; https://www.mountainproject.com/area/111742350/breaks-interstate-park says sandstone",
+  "va_pinnacle_overlook": "stored rock shale; https://www.mountainproject.com/area/111742350/breaks-interstate-park says sandstone"
+ }
+}

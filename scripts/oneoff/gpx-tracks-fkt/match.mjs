@@ -1,3 +1,4 @@
+import { fileHref } from "../../lib/file-href.mjs";
 // Match cached FKT tracks to incomplete catalog routes by GEOMETRY (same rule as audit-track-completeness).
 // Read-only. Output: candidates.json, one row per (route, FKT track) that passes the rule.
 import fs from "fs";
@@ -5,9 +6,9 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { assessTrack } from "./rule.mjs";
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
-const { SUPABASE_URL, anonKey, headers } = await import(`${REPO}/scripts/lib/supabase-env.mjs`);
+const { SUPABASE_URL, anonKey, headers } = await import(fileHref(`${REPO}/scripts/lib/supabase-env.mjs`));
 
-const here = path.dirname(new URL(import.meta.url).pathname);
+const here = path.dirname(fileURLToPath(new URL(import.meta.url)));
 const comp = JSON.parse(fs.readFileSync(path.join(here, "../comp.json")));
 const incompleteIds = comp.routes.filter(r => !r.complete).map(r => r.id);
 const rows = [];

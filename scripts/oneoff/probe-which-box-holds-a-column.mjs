@@ -1,3 +1,4 @@
+import { fileHref } from "../lib/file-href.mjs";
 // WHICH BOX does a column's value land in — a token, or a prose row?
 //
 // CLAUDE.md's standing rule is "before writing a researched string into an existing column, look at
@@ -68,7 +69,7 @@ try {
 const React = (await import("react")).default;
 const { renderToStaticMarkup } = await import("react-dom/server");
 const { QueryClient, QueryClientProvider } = await import("@tanstack/react-query");
-const { RouteDetail, dbRouteToCamel } = await import(bundle);
+const { RouteDetail, dbRouteToCamel } = await import(fileHref(bundle));
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 // One shape test, used for the verdict AND for the census below, so they cannot disagree.

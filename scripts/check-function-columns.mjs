@@ -1,3 +1,5 @@
+import os from "node:os";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // check:function-columns — does every column a stored FUNCTION writes still exist?
 //
 // This exists because of #1020 / 0155, which dropped `routes.source`. That migration's header
@@ -86,11 +88,11 @@ select json_build_object(
   )
 ) as cat;`;
 
-const tmp = path.join(process.env.CLAUDE_JOB_DIR || "/tmp", "fn-cols.sql");
+const tmp = path.join(process.env.CLAUDE_JOB_DIR || os.tmpdir(), "fn-cols.sql");
 fs.writeFileSync(tmp, SQL);
 let raw;
 try {
-  raw = execFileSync("npx", ["supabase", "db", "query", "--linked", "-f", tmp],
+  raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-f", tmp],
     { encoding: "utf8", timeout: 180000 });
 } catch (e) {
   // The CLI dumps its whole help block on a bad flag, which buries the one line that matters.

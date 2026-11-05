@@ -1,0 +1,19 @@
+{
+ "area_id": "wa_mount_pilchuck",
+ "routes": [
+  {
+   "route_id": "wa_mount_pilchuck_east_ridge",
+   "pins": [
+    {
+     "type": "Summit",
+     "action": "add",
+     "lat": 48.057965,
+     "lng": -121.797805,
+     "name": "Mount Pilchuck summit",
+     "evidence": "Peakbagger surveyed coordinate; the in-season recording's highest point is 1 m from it",
+     "confirmedBy": "Peakbagger surveyed coordinate + recorded high point"
+    }
+   ]
+  }
+ ]
+}

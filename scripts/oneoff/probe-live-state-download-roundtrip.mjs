@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 /* Does "Download" on Manage areas actually put a whole state on the device — against the LIVE
  * catalog, not a fixture?
  *
@@ -51,7 +52,7 @@ try {
       "import.meta.env": JSON.stringify({ VITE_SUPABASE_URL: SUPABASE_URL, VITE_SUPABASE_ANON_KEY: anonKey(), VITE_USE_DB: "true" }),
     },
   });
-  mod = await import(out);
+  mod = await import(fileHref(out));
 } catch (e) {
   console.error("FAIL: could not bundle lib/offline.js — nothing was checked. " + (e.stack || e.message));
   process.exit(1);

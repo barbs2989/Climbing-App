@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Walks the app as a BRAND-NEW ACCOUNT sees it: every count zero, every list empty.
 //
 // Why this exists. check:ui walks the seeded demo -- bookmarks are pre-saved, a crew
@@ -160,9 +161,8 @@ log(`starting dev server on ${port} with the zero-state config...`);
 // detached puts vite in its own process group. `npx` spawns vite as a CHILD, so killing
 // only the npx pid leaves the real server listening -- a leaked dev server then squats the
 // port for every later run, and (worse) can answer for a DIFFERENT checkout. Kill the group.
-const server = spawn(
-  "npx",
-  ["vite", "--config", "scripts/zero-state.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/zero-state.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } }
 );
 let died = false;

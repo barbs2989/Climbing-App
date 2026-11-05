@@ -1,0 +1,46 @@
+{
+ "az_batline_dome": {
+  "_expect": { "name": "Batline Dome", "region": "Arizona" },
+  "blurb": "Batline Dome is a roughly 200-foot dome on one flank of a canyon in the East Stronghold of Cochise Stronghold, in southeast Arizona. All 13 climbs here are trad, with a handful of top-rope options. Most are one or two pitches and cluster between 5.8 and 5.10, with a couple of 5.11 lines and a few very easy ones at the bottom end. The south-facing wall takes sun for much of the day, and the walk to the base is short by Stronghold standards, which suits a quick half-day on moderate gear-protected routes. Nearby domes hold more climbing if you want variety.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105879361/batline-dome", "https://www.mountainproject.com/area/107476321/east-stronghold"] }
+ },
+ "az_swiss_tower": {
+  "_expect": { "name": "Swiss Tower", "region": "Arizona" },
+  "blurb": "Swiss Tower is a small detached block of pocketed limestone at The Pit, a short drive south of Flagstaff, and it is the first wall you meet on the hike in. The 13 routes are all bolted sport lines in the 5.10 to 5.12 range, weighted toward 5.11 with a handful of 5.12s and a single 5.10. The lower section is heavily featured. The face sees sun until about early afternoon, can be breezy, and tends to fill up on weekends. A good pick for intermediate to hard sport climbers wanting a quick, steep session.",
+  "rock": "limestone",
+  "review": { "sources": ["https://www.mountainproject.com/area/105810908/swiss-tower", "https://www.mountainproject.com/area/105787831/the-pit-aka-le-petit-verdon"] }
+ },
+ "az_acropolis_the_2": {
+  "_expect": { "name": "Acropolis, The", "region": "Arizona" },
+  "blurb": "The Acropolis is a big formation in the Midgley Bridge zone of Sedona, sitting just north of the Steamboat Rock and spire cluster. It holds 13 climbs, all of them trad, mostly 5.9 to 5.11 with one easier line and a single 5.12. Several are multi-pitch, including a long north-face crack line and a ridge route. Expect a committed day: the walk in is long, route-finding is part of the challenge, and most of the effort goes into getting to the base. Bring a full trad rack and an early start.",
+  "parking_note": "Leave the car at the Midgley Bridge parking area on the Sedona side of the bridge; the trail to the formation starts from that lot.",
+  "approach": "From the Midgley Bridge lot, take the Wilson Canyon Trail to the junction with the Jim Thompson Trail, follow that for roughly five minutes, then head uphill to a ridge. Follow the ridge toward Steamboat Rock and cross the saddle to reach the south face of The Acropolis.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105817022/the-acropolis", "https://www.mountainproject.com/area/105808423/midgley-bridge-area"] }
+ },
+ "az_first_area": {
+  "_expect": { "name": "First Area", "region": "Arizona" },
+  "blurb": "First Area is the nearest cluster of boulders along the creekside trail below Grasshopper Point, just outside Sedona. It holds 13 problems on sandstone, many of them arete lines. The spread is wide: a few easy and moderate problems around V1 to V4, a solid middle of V5s, and several hard problems up into the V9 to V12 range. Shade covers most of the boulders through the day, with some sun on the creek-facing sides, which helps in warmer months. You reach it after a short stroll from the day-use lot.",
+  "parking_note": "Park at the Grasshopper Point day-use lot, then follow the creek trail south toward the boulders.",
+  "approach": "From the lot, walk south on the trail beside the creek. The first boulder cluster sits off the path on your right.",
+  "approach_min": 15,
+  "review": { "sources": ["https://www.mountainproject.com/area/106550543/first-area", "https://www.mountainproject.com/area/106550089/grasshopper-point-boulders", "https://sendage.com/area/grasshopper-point"] }
+ },
+ "az_gerdame_alien_baby_boulder": {
+  "_expect": { "name": "Gerdame/Alien Baby Boulder", "region": "Arizona" },
+  "blurb": "This is the largest single boulder in the Anvil Boulders, on the north edge of Sedona near Oak Creek. Its 13 problems span a wide range, from an easy V2 up to a V10, with most clustered between V4 and V9, so it suits strong boulderers more than beginners. The surrounding Anvils offer solid sandstone, a short approach and a low elevation that makes it workable in the cooler shoulder seasons. The boulder is tall and substantial, so bring pads and a spotter, and expect to link up with other problems in the Anvils.",
+  "review": { "sources": ["https://mountainproject.com/area/116817243/gerdamealien-baby-boulder", "https://www.mountainproject.com/area/105825188/the-anvil-boulders"] }
+ },
+ "az_sky_cave": {
+  "_expect": { "name": "Sky Cave", "region": "Arizona" },
+  "blurb": "Sky Cave is a bouldering cave about a third of the way up Mount Elden, north of Flagstaff, reached by continuing past the Skyline Boulders. It has water-polished stone and several free-standing blocks, with mostly steep problems. All 13 are graded between V3 and V10, with the bulk in the V5 to V7 band and two at the top end. The hike is steep and demanding, so most people carry a single pad and follow cairns; a fall or injury this far up would make evacuation hard. Best for fit, strong boulderers who want a quiet, steep cave.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114807166/sky-cave", "https://www.mountainproject.com/area/108648059/skyline-boulders"] }
+ },
+ "_skipped": {
+  "az_second_area": "no fetched page about Second Area itself (only parent area page and a route list mention it)",
+  "az_saguaro_hotel_area": "could not fetch a page about the crag itself; only the parent Cholla Mountain page, which says nothing about it"
+ },
+ "_conflicts": {
+  "az_acropolis_the_2": "Stored rock is limestone; the parent Midgley Bridge Area page (https://www.mountainproject.com/area/105808423/midgley-bridge-area) calls the area sandstone. Rock not named in blurb.",
+  "az_sky_cave": "Stored rock is rhyolite; the parent page (https://www.mountainproject.com/area/108648059/skyline-boulders) says dacite. Rock not named in blurb."
+ }
+}

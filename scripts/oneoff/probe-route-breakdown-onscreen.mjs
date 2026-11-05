@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Eyeball the Plan tab's ROUTE BREAKDOWN for the three shapes pitch_detail actually takes:
 // pitches only, stages only, and both interleaved. check:pitch-split asserts the classification
 // and the order; this prints what a climber reads, which is the half an assertion cannot show.
@@ -17,11 +19,11 @@ const dir = fs.mkdtempSync(path.join(ROOT, ".cm-bd-"));
 process.on("exit", () => { try { fs.rmSync(dir, { recursive: true, force: true }); } catch {} });
 const entry = path.join(dir, "e.js"), out = path.join(dir, "b.mjs");
 fs.writeFileSync(entry, `export { default as RouteDetail } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};\n`);
-execFileSync("npx", ["esbuild", entry, "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
+execFileSync(NPX, [...NPX_PRE, "esbuild", entry, "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
   "--define:import.meta.env={}", "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
   "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 if (typeof globalThis.WebSocket === "undefined") globalThis.WebSocket = class { constructor() { throw new Error("no realtime"); } };
-const { RouteDetail } = await import(out);
+const { RouteDetail } = await import(fileHref(out));
 
 const PD = {
   mixed: [

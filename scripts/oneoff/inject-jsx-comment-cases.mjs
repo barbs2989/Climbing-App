@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Injection cases for `check:jsx-comments`. Its healthy output is "no comment is rendered as
 // copy", which is also what a guard whose traversal silently stopped visiting JSXText prints.
 //
@@ -10,7 +11,7 @@ import { execFileSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 const sum = s => createHash("sha1").update(s).digest("hex").slice(0, 10);
 const run = () => {
   try { return { out: execFileSync("node", [ROOT + "scripts/check-jsx-comments.mjs"], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }), code: 0 }; }

@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // What does the verification effect actually SEE at runtime, healthy and under an outage?
 //
 // `check:outage ONLY=verification_records` reports the outage INTRODUCING "Verify to boost your
@@ -44,8 +45,8 @@ const freePort = () => new Promise((res, rej) => {
 
 const port = await freePort();
 const base = `http://127.0.0.1:${port}/`;
-const server = spawn("npx",
-  ["vite", "--config", "scripts/oneoff/verif-debug.config.mjs", "--host", "127.0.0.1",
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/oneoff/verif-debug.config.mjs", "--host", "127.0.0.1",
     "--port", String(port), "--strictPort"],
   { stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "" } });
 

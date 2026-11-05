@@ -1,0 +1,34 @@
+{
+ "az_rosetta_stone": {
+  "_expect": {"name": "Rosetta Stone", "region": "Arizona"},
+  "blurb": "A small, low granite wall on the east side of a ridge in the McDowell Mountains, northeast of Phoenix, facing out toward the regional park below. Ten routes, mostly traditional lines plus a couple of bolted ones, and almost all of them easy, topping out around 5.6. The rough desert granite is solid, so it suits newer leaders who want gentle practice placing their own gear. Far fewer parties come here than to the better-known formations nearby, so it is often quiet. It is reached on foot from the Tom's Thumb trailhead on the north side of the range.",
+  "parking_note": "Park at the Tom's Thumb trailhead on the north side of the McDowell Mountains, reached by driving in from Happy Valley Road and Ranch Gate Road.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106622769/rosetta-stone", "https://www.mountainproject.com/v/106153712"]}
+ },
+ "az_north_wall_3": {
+  "_expect": {"name": "North Wall", "region": "Arizona"},
+  "blurb": "One of the two main walls at Water Wheel Falls, a creek-side granite spot near Payson in central Arizona. Ten short routes on gray granite, about two-thirds trad and the rest bolted, with grades running from the mid-5.6 range up to a handful of 5.10s and a good number at 5.9 and below. Most lines have anchors, and a few share one. The base sits a short stroll up the creek path, so the walk is almost nothing, though this is a popular swimming and hiking spot and the lot can be busy. A handy stop for a relaxed half-day of moderate climbing.",
+  "approach": "Follow the creek path upstream from the lot for about five minutes. The wall starts on your left near the tall trees, and the first few routes are tucked among them.",
+  "approach_min": 5,
+  "review": {"sources": ["https://www.mountainproject.com/area/122965512/north-wall", "https://mountainproject.com/area/122965466/water-wheel-falls"]}
+ },
+ "az_john_rae_dome": {
+  "_expect": {"name": "John Rae Dome", "region": "Arizona"},
+  "blurb": "A lonely granite dome complex in the Stewart Pocket climbing zone, close to Payson in central Arizona, at roughly 4,900 feet. Most of the ten routes are traditional, with a pair of bolted lines and a single top-rope. Difficulty centers on 5.9 and on 5.11, with one 5.12 and a few easier pitches. A tall dihedral shows on the west side as you walk in, while the south face is steep and overhung and has been eyed for future projects. This is a committed outing: the dome is well off the road and far less developed than the rest of Stewart Pocket.",
+  "review": {"sources": ["https://www.mountainproject.com/v/john-raegenre-dome/111839845", "https://www.mountainproject.com/area/105874747/stewart-pocket"]}
+ },
+ "az_y_crack_boulder": {
+  "_expect": {"name": "Y-Crack Boulder", "region": "Arizona"},
+  "blurb": "A granite formation just northeast of the main peak at Pinnacle Peak in northeast Scottsdale, around 2,000 feet. Ten climbs, mostly trad with a couple of bolted lines and one aid route. Grades are mostly between 5.6 and 5.10, with 5.9 the most common. The Y-shaped cleft that gives the boulder its name faces south and holds the wide crack that draws most visitors, while the north side has easier face climbing and the top has rappel bolts for the descent. A short climbers' trail branches off the main hiking path to reach it.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105792623/y-crack-boulder", "https://mountainproject.com/area/105787822/pinnacle-peak"]}
+ },
+ "_skipped": {
+  "az_oasis": "no page about the Oasis crag itself could be fetched (only the La Milagrosa parent page lists it; theCrag returned 403)",
+  "az_the_cloak": "only one fetched page covers it (a Whetstone area listing); no separate crag page",
+  "az_killer_wall": "no fetched page dedicated to Killer Wall; only the parent Parking Area Bouldering page describes it",
+  "az_natural_spring": "the parent page only lists it with a climb count; no page about the crag itself"
+ },
+ "_conflicts": {
+  "az_the_cloak": "stored rock sandstone, but the one page read (https://www.mountainproject.com/climbing-near-me/whetstone-az) says limestone"
+ }
+}

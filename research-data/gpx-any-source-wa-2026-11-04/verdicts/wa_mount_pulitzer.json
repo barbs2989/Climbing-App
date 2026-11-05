@@ -1,0 +1,22 @@
+{
+  "area_id": "wa_mount_pulitzer",
+  "routes": [
+    {
+      "route_id": "wa_mount_pulitzer_standard",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Only 10 logged ascents: Jul 1, Aug 7, Sep 2. Searches (Mountaineers Bailey Range pages, WTA/other Bailey traverse reports, guide trip listings) put the traverse in July to early August once the snowfields are passable. Stored Jul-Sep, mid-Jul to mid-Aug prime, confirmed." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2958647", "verdict": "unsure", "why": "11 Aug 2025 summited, but it is a camp-based day (starts at a high camp 47.8371,-123.5697, ends 5 km south), not a trailhead round trip or trailhead-to-summit, and the report says the climber took a west-side line to the summit and came back down the east ridge. Not our stored east-ridge line end to end." },
+        { "aid": "2280260", "verdict": "not-summited", "why": "Aug 2023, turned back at the false summit." },
+        { "aid": "3263539", "verdict": "unsure", "why": "4 Jul 2026 summited per the report, but no track in the packet; used only for facts." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 7, "text": "On the traverse to the true summit, one downclimb of a 5-6 ft wall just before the deepest notch is the hardest move (about mid class 4); most else is class 3+ ledges loaded with loose rock.", "aids": ["3263539"] },
+        { "field": "pro_tips", "month": 7, "text": "Near the top the north side of the ridge held slightly better rock than the south side.", "aids": ["3263539"] },
+        { "field": "pro_tips", "month": 8, "text": "In August a western line up the broken ridge cliffed out in a gully and cost far more time than the east approach to the summit; stay on the east.", "aids": ["2958647"] }
+      ]
+    }
+  ],
+  "notes": "Single route on the peak, so identity is not the question; the harvested tracks just are not trailhead round trips. The Trailhead pin (47.9548,-123.8349) is some 24 km from the recordings' start; the route is a multi-day Bailey traverse so this is expected, not verified. No pin change proposed."
+}

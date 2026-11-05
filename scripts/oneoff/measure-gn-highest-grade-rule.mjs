@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 /* What would "the grade is the highest grade" cost if applied to gn(), the CLIMBING-TIME parser?
  *
  * gn() is NOT a fifth dialect of grade_num. It maps every system onto one axis for techHrs()
@@ -39,7 +41,7 @@ const entry = path.join(outdir, "entry.js");
 fs.writeFileSync(entry, `export { gn, techHrs, pitchedFraction, scarfHrs } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};\n`);
 const bundle = path.join(outdir, "core.mjs");
 try {
-  execFileSync("npx", ["esbuild", entry, "--bundle", "--format=esm", "--platform=node",
+  execFileSync(NPX, [...NPX_PRE, "esbuild", entry, "--bundle", "--format=esm", "--platform=node",
     "--jsx=automatic", "--loader:.jsx=jsx", "--external:react", "--external:react-dom",
     "--external:@tanstack/react-query", "--define:import.meta.env={}", `--outfile=${bundle}`],
     { cwd: ROOT, stdio: ["ignore", "ignore", "pipe"] });
@@ -49,7 +51,7 @@ try {
   fs.rmSync(outdir, { recursive: true, force: true });
   process.exit(1);
 }
-const core = await import(`file://${bundle}`);
+const core = await import(fileHref(`file://${bundle}`));
 fs.rmSync(outdir, { recursive: true, force: true });
 for (const k of ["gn", "techHrs", "pitchedFraction", "scarfHrs"]) {
   if (typeof core[k] !== "function") { console.error(`FAIL — ${k} is not exported from ClimbMatchCore.jsx. ANCHOR LOST.`); process.exit(1); }

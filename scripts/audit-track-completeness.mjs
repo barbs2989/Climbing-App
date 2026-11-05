@@ -60,7 +60,7 @@ async function main() {
   const out = path.join(ROOT, "research-data", `track-completeness-${date}.json`);
   fs.writeFileSync(out, JSON.stringify({ measuredAt: date, tracks: results.length, complete, incomplete: results.length - complete, routes: results }, null, 1));
   console.log(`tracks ${results.length}  complete ${complete}  incomplete ${results.length - complete}`);
-  console.log(`written ${path.relative(ROOT, out)}`);
+  console.log(`written ${path.relative(ROOT, out).replace(/\\/g, "/")}`);
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) await main();

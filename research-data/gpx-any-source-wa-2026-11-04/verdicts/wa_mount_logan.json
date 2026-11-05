@@ -1,0 +1,44 @@
+{
+  "area_id": "wa_mount_logan",
+  "routes": [
+    {
+      "route_id": "wa_mount_logan_r1",
+      "season": { "months": [6,7,8], "window": "Jun-Aug", "evidence": "Logged Banded Glacier ascents: Jun 5, Jul 10, Aug 1; all-routes histogram peaks July (118), Aug 46, Jun 22, Sep 15. Web results (Mountaineers and guide pages) give July through September, wait until late July after a snowy year, and one late-season Banded report said a month earlier would have been better. Stored Jun-Aug kept, best July." },
+      "track": { "aid": "1202667", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "20 Jul 2019, logged route Banded Glacier, start trailhead Easy Pass (24 m from our pin), summit 52 m from our pin and 2 m from the surveyed coordinate, round trip, summited, glacier climb gear. Logged route name and approach match our route." },
+      "otherTracksConsidered": [
+        { "aid": "425753", "verdict": "unsure", "why": "21 Jun 2014 Banded/Easy Pass, complete round trip; report describes the col, lake and Banded Glacier, but June; 1202667 is in the core season." },
+        { "aid": "1956039", "verdict": "different", "why": "Banded glacier logged but approached from Thunder Creek; not our Easy Pass approach, track ends at summit." },
+        { "aid": "2556006", "verdict": "different", "why": "Banded Glacier logged but from Thunder Creek side, not complete." },
+        { "aid": "3298434", "verdict": "different", "why": "Fremont Glacier route, has its own route." },
+        { "aid": "2905774", "verdict": "different", "why": "Fremont Glacier route." },
+        { "aid": "2250502", "verdict": "different", "why": "Fremont Glacier route." },
+        { "aid": "2928108", "verdict": "different", "why": "Thunder Creek approach, Fremont side." },
+        { "aid": "2911559", "verdict": "different", "why": "Thunder Creek approach, Fremont side." },
+        { "aid": "2911060", "verdict": "different", "why": "Thunder Creek approach, Fremont side." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 6, "text": "In late June the Easy Pass trail can vanish under snow near the top; keep traversing west at pass level before picking up the switchbacks down to Fisher Creek.", "aids": ["425753"] },
+        { "field": "pro_tips", "month": 6, "text": "At the col above the lake camp, the narrow eastern notch gave an easier downclimb on snow-free scree than the wider western one in late June.", "aids": ["425753"] },
+        { "field": "monthBreakdown", "month": 6, "text": "Late June can work: the glacier was low-angle with no open cracks, easy snow on the climber's left leads to a roped finish near the Banded-Douglas col, then an exposed class 4 summit block.", "aids": ["425753"] }
+      ]
+    },
+    {
+      "route_id": "wa_mount_logan_r2",
+      "season": { "months": [6,7,8,9], "window": "Jun-Sep", "evidence": "Only two logged Douglas ascents (Jun, Sep); guide pages say July through September and note slide alder in the upper Douglas Creek in summer. Stored Jun-Sep kept." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "425800", "verdict": "unsure", "why": "21 Jun 2014 Douglas Glacier ascent, summited, but no GPS track harvested." },
+        { "aid": "1616681", "verdict": "offseason", "why": "March winter ascent, no track." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 6, "text": "In late June, old slide debris and a cornice sit on the traverse to the Banded-Douglas col, and afternoon warmth set off a soft-snow slide near the east ridge above the lower basin.", "aids": ["425800"] },
+        { "field": "approach_note", "month": 6, "text": "In late June the Easy Pass trail is mostly clear for the first mile or two, then lost under snow; past the pass the trail continues west at pass level.", "aids": ["425800"] },
+        { "field": "descent_note", "month": 6, "text": "A short rappel from the false summit drops to the saddle before the final class 4 summit block.", "aids": ["425800"] }
+      ]
+    }
+  ],
+  "notes": "Fremont Glacier (wa_mount_logan_fremont_glacier) already has a track and is the Thunder Creek route; all Thunder Creek tracks belong there. Easy Pass trailhead pin is stored for both routes; no pins proposed."
+}

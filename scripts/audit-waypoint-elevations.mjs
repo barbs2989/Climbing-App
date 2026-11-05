@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Does each waypoint sit at the height it says it does?
 //
 // THE THREE EXISTING WAYPOINT AUDITS ARE ALL TRACK-RELATIVE. `audit:waypoints` and
@@ -67,7 +68,7 @@ import { readFileSync } from "node:fs";
 import { elevationAt, selfTest } from "./lib/terrain.mjs";
 import { boxGrid } from "./lib/ground-box.mjs";
 
-const root = new URL("..", import.meta.url).pathname;
+const root = fileURLToPath(new URL("..", import.meta.url));
 const env = {};
 for (const f of [".env.local", ".env"]) {
   try { for (const l of readFileSync(root + f, "utf8").split("\n")) {

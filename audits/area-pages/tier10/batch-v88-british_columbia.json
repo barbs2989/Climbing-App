@@ -1,0 +1,32 @@
+{
+ "bc_lost_in_obscurity": {
+  "_expect": {"name": "Lost in Obscurity", "region": "British Columbia"},
+  "blurb": "A small slab wall on the upper tier of Quercus Cliff in Murrin Park, just outside Squamish, with a view over Howe Sound. It holds a dozen routes, mostly bolted sport lines on technical, featured slab, plus a couple of trad lines and one top-rope. Difficulty runs from about 5.8 into the low 5.10s, with a single route reaching 5.11, so it suits climbers comfortable on delicate footwork. The wall is short and feels like a private perch, and the base is a sunny flat that catches afternoon sun and goes shady in the evening, which makes it a pleasant spot for a late session.",
+  "review": {"sources": ["https://sendage.com/area/lost-in-obscurity-murrin-park-squamish-bc-canada", "https://www.mountainproject.com/area/124770650/lost-in-obscurity"]}
+ },
+ "bc_chatsworth_edge": {
+  "_expect": {"name": "Chatsworth Edge", "region": "British Columbia"},
+  "blurb": "A short crag at the north end of Skaha Bluffs, above Shady Valley, in the Northern Crags group near Penticton. It is mostly a trad venue: eleven of the twelve climbs are gear-protected, many following clean, short cracks, with one bolted line. Grades start around 5.6 and most sit between 5.8 and 5.10, with a pair of 5.11s at the top end. That mix of moderate difficulty and good protection makes it a favoured place to learn to place gear, and guides bring students here. The wall faces east and gets morning sun, with open forest on the bench throwing patchy shade on the base.",
+  "review": {"sources": ["https://sendage.com/area/chatsworth-edge-skaha-bc-canada", "https://www.mountainproject.com/area/111627299/chatsworth-edge"]}
+ },
+ "bc_main_wall_10": {
+  "_expect": {"name": "Main Wall", "region": "British Columbia"},
+  "blurb": "The largest and best-known wall at Nordic Rock, a local crag on the Nordic side of Whistler. It carries twelve routes, nine of them bolted sport and three trad. Climbing is mainly on edges and crimps, and the grades range widely: a couple of easy-to-moderate lines around 5.8 and 5.9, a solid run of 5.10s and 5.11s, and a few 5.12s and 5.13s for strong climbers. The wall is visible from below, sits uphill of Swiss Cheese and beside Midway Wall, and faces west, so it picks up afternoon and evening light.",
+  "review": {"sources": ["https://sendage.com/area/main-wall-nordic-rock-whistler-bc-canada", "https://www.mountainproject.com/v/nordic-rock/106691250"]}
+ },
+ "bc_cookie_monster_wall": {
+  "_expect": {"name": "Cookie Monster Wall", "region": "British Columbia"},
+  "blurb": "A north-facing wall in Cougar Canyon on the east side of Kalamalka Lake, in the Okanagan near Vernon. The dozen or so routes are mostly bolted sport with a few trad lines, and they are shorter than elsewhere in the canyon but well regarded. Expect powerful moves low down and slabbier finishes above. Grades span roughly 5.8 to 5.12, with the bulk in the 5.9 and 5.10 range and a handful of harder lines. The rock is the grainy, textured gneiss typical of the canyon, and the north-facing wall stays cool, which can help on hot days.",
+  "review": {"sources": ["https://sendage.com/area/cookie-monster-cougar-canyon-arrow-lakes-west-kootenay-bc-canada", "https://www.mountainproject.com/area/105953176/cougar-canyon"]}
+ },
+ "_skipped": {
+  "bc_the_big_wall": "no fetched page about this crag itself",
+  "bc_the_distillery": "only one fetched page about the crag itself (second page lists it with no detail)",
+  "bc_ochre_wall": "no fetched page about this crag itself",
+  "bc_daycare": "no fetched page about this crag itself"
+ },
+ "_conflicts": {
+  "bc_lost_in_obscurity": "stored aspect W; both pages say south-facing toward Howe Sound (https://sendage.com/area/lost-in-obscurity-murrin-park-squamish-bc-canada, https://www.mountainproject.com/area/124770650/lost-in-obscurity)",
+  "bc_main_wall_10": "stored aspect S; both pages say west-facing (https://sendage.com/area/main-wall-nordic-rock-whistler-bc-canada, https://www.mountainproject.com/v/nordic-rock/106691250)"
+ }
+}

@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // check:selected-state — a control that LOOKS selected must SAY it is selected.
 //
 // Until #1041 the primary nav was the only control in this app that did:
@@ -51,7 +53,7 @@ import { assertDbReachable } from "./lib/db-preflight.mjs";
 import { overlayStates, NEEDS_EXTRA_STATE } from "./lib/overlay-scaffold.mjs";
 import { MENU_SCREENS, openFromMenu } from "./lib/menu-screens.mjs";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const arg = (n, d) => { const a = process.argv.find((x) => x.startsWith(`--${n}=`)); return a ? a.slice(n.length + 3) : d; };
 // THE LABELS NAV ACTUALLY CARRIES. This list used to say "Discover", which is the tab's ID and
 // NOT its label -- NAV renders it as "Partners" -- and it omitted "Ranks" altogether. tap()
@@ -135,8 +137,8 @@ const base = `http://127.0.0.1:${port}/Climbing-App/`;
 // the shared `?z=` opener and rewrites nothing about app state, which is exactly what is
 // needed to reach onboardOpen on the populated demo.
 log(`starting dev server on ${port} with the overlay scaffold...`);
-const server = spawn("npx",
-  ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "pipe", "pipe"], detached: true });
 server.stdout.on("data", () => {});
 server.stderr.on("data", (d) => { const s = String(d); if (/ANCHOR LOST|Error/.test(s)) process.stderr.write(s); });

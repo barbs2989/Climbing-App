@@ -1,0 +1,240 @@
+{
+  "area_id": "wa_magic_mountain",
+  "routes": [
+    {
+      "route_id": "wa_magic_mountain_north_face",
+      "season": {
+        "months": [
+          7,
+          8
+        ],
+        "window": "Jul-Aug",
+        "evidence": "Stored Jun-Aug; the road opens only at the end of June and the glacier/couloir gets rockier by September. A search found no seasonal page for this face beyond the shared Cascade Pass guidance; no ascent names the north face."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2938932",
+          "verdict": "unsure",
+          "why": "Climbs via Kool-Aid Lake, the Magic-Hurry-up col and the ridge, i.e. the South Ridge line. Peakbagger ascents here do not name a face or ridge; the track passes the shared approach and summit, which proves nothing for this route."
+        },
+        {
+          "aid": "2254825",
+          "verdict": "unsure",
+          "why": "A 52-mile multi-day traverse through the area that merely touches the summit; no route named, no report."
+        },
+        {
+          "aid": "1874811",
+          "verdict": "unsure",
+          "why": "Round trip from Kool-Aid Lake (not from the trailhead), logged only as a Ptarmigan Traverse side trip, Class 3; fits the south side but has no trailhead end, so kept only as a South Ridge fallback."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_magic_mountain_northeast_couloir",
+      "season": {
+        "months": [
+          6,
+          7
+        ],
+        "window": "Jun-Jul",
+        "evidence": "Snow line: stored Apr-Jul, optimal late May-June; the road opens about the end of June, so late June to early July is the practical window. A search of ski-touring pages and the Mountaineers listing found only winter/spring skiing for this couloir, no summer dates; no ascent names it."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2938932",
+          "verdict": "unsure",
+          "why": "Climbs via Kool-Aid Lake, the Magic-Hurry-up col and the ridge, i.e. the South Ridge line. Peakbagger ascents here do not name a face or ridge; the track passes the shared approach and summit, which proves nothing for this route."
+        },
+        {
+          "aid": "2254825",
+          "verdict": "unsure",
+          "why": "A 52-mile multi-day traverse through the area that merely touches the summit; no route named, no report."
+        },
+        {
+          "aid": "1874811",
+          "verdict": "unsure",
+          "why": "Round trip from Kool-Aid Lake (not from the trailhead), logged only as a Ptarmigan Traverse side trip, Class 3; fits the south side but has no trailhead end, so kept only as a South Ridge fallback."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_magic_mountain_northwest_ridge",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep; Peakbagger Magic ascents run Jul-Sep and the shared Cascade Pass search found nothing contradicting it. No ascent names this ridge."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2938932",
+          "verdict": "unsure",
+          "why": "Climbs via Kool-Aid Lake, the Magic-Hurry-up col and the ridge, i.e. the South Ridge line. Peakbagger ascents here do not name a face or ridge; the track passes the shared approach and summit, which proves nothing for this route."
+        },
+        {
+          "aid": "2254825",
+          "verdict": "unsure",
+          "why": "A 52-mile multi-day traverse through the area that merely touches the summit; no route named, no report."
+        },
+        {
+          "aid": "1874811",
+          "verdict": "unsure",
+          "why": "Round trip from Kool-Aid Lake (not from the trailhead), logged only as a Ptarmigan Traverse side trip, Class 3; fits the south side but has no trailhead end, so kept only as a South Ridge fallback."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_magic_mountain_south_ridge",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Peakbagger successful ascents of Magic: Jun 1, Jul 27, Aug 17, Sep 3 (none later). A search of the Mountaineers route listing (open Apr-Oct, no best month) and a forecast site (Jun-Oct) agrees with Jul-Sep; stored Jul-Sep kept. South Ridge is the route logged in Sep (S Ridge)."
+      },
+      "track": {
+        "aid": "2938932",
+        "verdict": "same",
+        "kind": "oneway",
+        "inSeason": true,
+        "why": "Trip report describes the camp at Kool-Aid Lake, the col between Magic and Hurry-up, the steep meadow, the ridge scramble and a class 4 summit tower - exactly the stored South Ridge line - and the track follows it from the Cascade Pass trailhead (9 m from our pin) to the camp and the summit (43 m from our pin), summited Aug 8. Ends at camp, hence oneway."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "2254825",
+          "verdict": "unsure",
+          "why": "A 52-mile multi-day traverse through the area that merely touches the summit; no route named, no report."
+        },
+        {
+          "aid": "1874811",
+          "verdict": "unsure",
+          "why": "Round trip from Kool-Aid Lake (not from the trailhead), logged only as a Ptarmigan Traverse side trip, Class 3; fits the south side but has no trailhead end, so kept only as a South Ridge fallback."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "Steep, icy snow finger on the traverse below the Cache Glacier in early August: kick steps or drop to lower-angle scree beneath it.",
+          "aids": [
+            "2938932"
+          ]
+        },
+        {
+          "field": "what_to_bring",
+          "month": 7,
+          "text": "crampons (icy snow patch on the approach traverse, July to early August)",
+          "aids": [
+            "2938932",
+            "1874811"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "Above the col, the ridge scramble sometimes drops off the crest and climbs back on; if it gets harder than class 3, you have wandered off-route.",
+          "aids": [
+            "2938932"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "The summit tower has one or two class 4 moves on far sounder rock than the loose ground leading to it.",
+          "aids": [
+            "2938932",
+            "1874811"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 8,
+          "text": "Water at Kool-Aid Lake is plentiful in early August but tastes stale, so treat it.",
+          "aids": [
+            "2938932"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_magic_mountain_southwest_cirque",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep; same shared approach as the South Ridge and the ascent histogram. No ascent names the cirque gullies."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2938932",
+          "verdict": "unsure",
+          "why": "Climbs via Kool-Aid Lake, the Magic-Hurry-up col and the ridge, i.e. the South Ridge line. Peakbagger ascents here do not name a face or ridge; the track passes the shared approach and summit, which proves nothing for this route."
+        },
+        {
+          "aid": "2254825",
+          "verdict": "unsure",
+          "why": "A 52-mile multi-day traverse through the area that merely touches the summit; no route named, no report."
+        },
+        {
+          "aid": "1874811",
+          "verdict": "unsure",
+          "why": "Round trip from Kool-Aid Lake (not from the trailhead), logged only as a Ptarmigan Traverse side trip, Class 3; fits the south side but has no trailhead end, so kept only as a South Ridge fallback."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_magic_mountain_west_ridge",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep; the pocket-glacier schrund and Cache Col snow are best late July-September. A search found only the route description (5.6 open book), no season; no ascent names the west ridge."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2938932",
+          "verdict": "unsure",
+          "why": "Climbs via Kool-Aid Lake, the Magic-Hurry-up col and the ridge, i.e. the South Ridge line. Peakbagger ascents here do not name a face or ridge; the track passes the shared approach and summit, which proves nothing for this route."
+        },
+        {
+          "aid": "2254825",
+          "verdict": "unsure",
+          "why": "A 52-mile multi-day traverse through the area that merely touches the summit; no route named, no report."
+        },
+        {
+          "aid": "1874811",
+          "verdict": "unsure",
+          "why": "Round trip from Kool-Aid Lake (not from the trailhead), logged only as a Ptarmigan Traverse side trip, Class 3; fits the south side but has no trailhead end, so kept only as a South Ridge fallback."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "The one assigned track (2938932) is the South Ridge only; it passes the shared Cascade Pass approach, so it is deliberately not given to the Northwest Ridge, Southwest Cirque, North Face, NE Couloir or West Ridge. No pins changed: the track starts 9 m from our Cascade Pass pin. Peakbagger summit (48.445605,-121.041105) is within 100 m of ours."
+}

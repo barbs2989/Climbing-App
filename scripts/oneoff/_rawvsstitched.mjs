@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // node scripts/oneoff/_rawvsstitched.mjs — for each guard below, run it as is and again with its raw
 // read of ClimbMatch.jsx swapped for the stitched one (readAppFile), and print whether the output differs.
 // A guard whose output changes was reading code that moved into src/components/ (PR61).
@@ -22,7 +23,7 @@ for (const [g, expr] of CASES) {
   if (!src.includes(expr)) { console.log(`${g}: expression not found`); continue; }
   const a = run(p);
   const tmp = "scripts/.__stitched_" + g;
-  let s = src.split(expr).join('readAppFile(new URL("../ClimbMatch.jsx", import.meta.url).pathname)');
+  let s = src.split(expr).join('readAppFile(fileURLToPath(new URL("../ClimbMatch.jsx", import.meta.url)))');
   s = s.replace(/^import \{([^}]*)\breadAppFile\b,?([^}]*)\} from "\.\/lib\/guard-sources\.mjs";\n/m, (m, x, y) => (x + y).trim() ? `import {${x}${y}} from "./lib/guard-sources.mjs";\n` : "");
   { const sb = s.startsWith("#!") ? s.indexOf("\n") + 1 : 0; s = s.slice(0, sb) + `import { readAppFile } from "./lib/guard-sources.mjs";\n` + s.slice(sb); }
   fs.writeFileSync(tmp, s);

@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // check:blue-on-blue — no blue TEXT is drawn on a blue BOX (owner note, 2026-10: "I don't like the blue
 // text on blue boxes, change text to white").
 //
@@ -31,7 +33,7 @@ import { MENU_SCREENS, openFromMenu } from "./lib/menu-screens.mjs";
 import { assertQuietBox } from "./lib/quiet-box.mjs";
 
 const box = assertQuietBox("check:blue-on-blue");
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const argv = process.argv.slice(2);
 const ONLY = argv.includes("--only") ? argv[argv.indexOf("--only") + 1] : null;
 const want = (part) => !ONLY || ONLY === part;
@@ -59,7 +61,7 @@ async function startServer(from) {
   const port = await claimPort(from);
   if (port === null) { console.error(`check:blue-on-blue: no free port in ${from}-${from + 39}`); process.exit(1); }
   const base = `http://127.0.0.1:${port}/Climbing-App/`;
-  const srv = spawn("npx", ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  const srv = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
   servers.push(srv);
   let died = false;

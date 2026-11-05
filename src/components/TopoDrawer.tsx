@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { useImgAspect, PIN_CATEGORIES, zoomTopoView, ZOOM_MAX, clampTopoView, TAP_SLOP, pinNums, pinLabel, TOPO_RED, TOPO_VAR, TOPO_IMG, pinColor, LOUPE_Z } from "../../lib/topoMarks.jsx";
 import { askConfirm } from "../../lib/ConfirmSheet.jsx";
 import { CHIP } from "../../lib/buttonStyles.js";
+import { boxZoom } from "../../lib/wideLayout.js";
 import { C } from "../../ClimbMatchCore.jsx";
 import type { KeyboardEvent, ChangeEvent, PointerEvent } from "react";
 import GradeTag from "./GradeTag.tsx";
@@ -87,8 +88,8 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef}: TopoDra
     const el=vpRef.current;if(!el)return undefined;
     const onWheel=function(e: WheelEvent){
       e.preventDefault();
-      const r=el.getBoundingClientRect();const b=viewRef.current;
-      const v=zoomTopoView(b,b.z*Math.exp(-e.deltaY*0.0015),e.clientX-r.left-el.clientLeft,e.clientY-r.top-el.clientTop,el.clientWidth,el.clientHeight);
+      const r=el.getBoundingClientRect();const b=viewRef.current;const q=boxZoom(el);
+      const v=zoomTopoView(b,b.z*Math.exp(-e.deltaY*0.0015),(e.clientX-r.left)/q-el.clientLeft,(e.clientY-r.top)/q-el.clientTop,el.clientWidth,el.clientHeight);
       viewRef.current=v;setViewState(v);
     };
     el.addEventListener("wheel",onWheel,{passive:false});
@@ -102,7 +103,7 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef}: TopoDra
     const c=(v: number,size: number)=>Math.min(100,Math.max(0,Math.round((v/size)*1000)/10));
     return {x:c(cx-r.left,r.width),y:c(cy-r.top,r.height)};
   };
-  const local=function(cx: number,cy: number){const el=vpRef.current as HTMLDivElement;const r=el.getBoundingClientRect();return {x:cx-r.left-el.clientLeft,y:cy-r.top-el.clientTop};};
+  const local=function(cx: number,cy: number){const el=vpRef.current as HTMLDivElement;const r=el.getBoundingClientRect();const q=boxZoom(el);return {x:(cx-r.left)/q-el.clientLeft,y:(cy-r.top)/q-el.clientTop};};
   const zoomBy=function(f: number){const el=vpRef.current;if(!el)return;const b=viewRef.current;setView(zoomTopoView(b,b.z*f,el.clientWidth/2,el.clientHeight/2,el.clientWidth,el.clientHeight));};
   const two=function(){const a=Array.from(ptrs.current.values());return {d:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)||1,m:local((a[0].x+a[1].x)/2,(a[0].y+a[1].y)/2)};};
   const setLine=function(l: number,fn: (q: TopoPoint[])=>TopoPoint[]){setLines(function(ls){return ls.map(function(q,qi){return qi===l?fn(q):q;});});};
@@ -153,7 +154,7 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef}: TopoDra
       const dx=e.clientX-g.sx,dy=e.clientY-g.sy;
       if(!g.moved&&Math.hypot(dx,dy)<TAP_SLOP)return;
       g.moved=true;
-      setView(clampTopoView({z:g.base.z,tx:g.base.tx+dx,ty:g.base.ty+dy},el.clientWidth,el.clientHeight));
+      const q=boxZoom(el);setView(clampTopoView({z:g.base.z,tx:g.base.tx+dx/q,ty:g.base.ty+dy/q},el.clientWidth,el.clientHeight));
       return;
     }
     const p=at(e.clientX,e.clientY);setLoupe(p);moveTo(g,p);

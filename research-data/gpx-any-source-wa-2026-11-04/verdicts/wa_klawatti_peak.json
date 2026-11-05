@@ -1,0 +1,163 @@
+{
+ "area_id": "wa_klawatti_peak",
+ "routes": [
+  {
+   "route_id": "wa_klawatti_peak_north_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored Jul-Sep kept. Web search (SummitPost, Mountaineers, Wikipedia, mountain-forecast): Jul-Sep best weather for the peak; the Klawatti-Austera col moat gets harder late summer/fall (rappels or low 5th). No logged ascent names this ridge."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2563059",
+     "verdict": "different",
+     "why": "Names SW Buttress, climbs from Klawatti Col camp; not the north ridge."
+    },
+    {
+     "aid": "3282832",
+     "verdict": "unsure",
+     "why": "Unnamed traverse report; snow to rock and a led pitch with anchor describes the SW buttress, not the ridge from Austera col."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_klawatti_peak_southeast_face",
+   "season": {
+    "months": [
+     7,
+     8
+    ],
+    "window": "Jul-Aug",
+    "evidence": "Stored late Jul-Aug kept. Web search: SummitPost says the south face is a snow climb best earlier in the season and turns slabby once the snow is gone; Jul-Sep favourable. Peakbagger S/South face logs: Mar, May, Jul (1 in Jul, none harvested in season)."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "959176",
+     "verdict": "offseason",
+     "why": "Logged South Face but on 8 May 2018 on skis; outside Jul-Aug window."
+    },
+    {
+     "aid": "430335",
+     "verdict": "different",
+     "why": "Report says moat on the south face looked bad, so they did the SW ridge instead."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_klawatti_peak_sw_buttress",
+   "season": {
+    "months": [
+     6,
+     7,
+     8
+    ],
+    "window": "Jun-Aug (best Jul-Aug)",
+    "evidence": "Logged SW Buttress ascents: Jun 1, Jul 7+, Aug 1. Web search (Wikipedia, mountain-forecast, SummitPost, Mountaineers): Jul-Sep weather, May-Aug rated best; early/mid-Jul to mid-Aug most reliable for glacier approach. Stored Jul-Sep consistent."
+   },
+   "track": {
+    "aid": "2563059",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Logged route SW Buttress, report describes two short low-5th slab pitches with anchors, then class 3-4 blocky crest, forking gully and class 2 to the summit, matching our overview; 6 Jul 2024, summited, track starts and ends at the Eldorado trailhead pin (10 m), summit within 18 m."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "3258101",
+     "verdict": "unsure",
+     "why": "Logged SW Buttress 5 Jul 2026 but track is a camp-to-camp piece (starts 6 km from trailhead), not a round trip."
+    },
+    {
+     "aid": "3256714",
+     "verdict": "unsure",
+     "why": "SW Buttress, one-way from trailhead only (ends 7 km away); the complete 2024 track is better."
+    },
+    {
+     "aid": "2290091",
+     "verdict": "unsure",
+     "why": "SW Buttress Aug 2023 but camp-to-summit only."
+    },
+    {
+     "aid": "430335",
+     "verdict": "unsure",
+     "why": "Logged SW ridge, 4 Jul 2014, complete round trip; synonym likely but weaker evidence than 2563059."
+    },
+    {
+     "aid": "3253722",
+     "verdict": "unsure",
+     "why": "Unnamed Inspiration traverse report with no description of the line."
+    },
+    {
+     "aid": "3255472",
+     "verdict": "unsure",
+     "why": "Unnamed, no report text."
+    },
+    {
+     "aid": "2745025",
+     "verdict": "offseason",
+     "why": "January winter ascent."
+    },
+    {
+     "aid": "528857",
+     "verdict": "offseason",
+     "why": "Mid-May ski trip."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "Midway up the buttress the rock splits at a gully: the left branch is more exposed with class 4 moves and looser rock, the right branch is simpler class 3 on scree.",
+     "aids": [
+      "2563059"
+     ]
+    },
+    {
+     "field": "descent_note",
+     "month": 7,
+     "text": "Fixed anchors on the lower buttress allow three short rappels on the way down, though only the last one, onto the snow, is really needed. One 60 m single-rope rappel joins the upper two stations; a 50 m rope falls a few feet short.",
+     "aids": [
+      "2563059"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 7,
+     "text": "In early July snow runs right to the first rock, and a waterfall beside the col camp runs in the afternoon (it may fade later in summer).",
+     "aids": [
+      "2563059"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 7,
+     "text": "The summit crest has three bumps; tag the northern and middle ones, since parties disagree which is highest.",
+     "aids": [
+      "2563059"
+     ]
+    },
+    {
+     "field": "approach_note",
+     "month": 7,
+     "text": "On the way out in early July the river runs higher after hot days and snow is slushy with some postholing; the muddy slabs and root path into the lower basin are the slickest part of the descent.",
+     "aids": [
+      "2563059"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "North Ridge and Southeast Face have no qualifying in-season track (nothing logged names them). North Ridge has no Trailhead pin stored; if a track is later assigned, the Eldorado trailhead pin used by the other two routes (48.4926,-121.1222) would be the one to add, but I did not propose it without a track. Peakbagger summit coordinate (48.554512,-121.104563) agrees with SW Buttress pin within ~15 m."
+}

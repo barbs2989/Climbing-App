@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // One-off: write per-approach `hazards` / `objHaz` onto each switchable approach_variants entry.
 //
 // Input: the batch outputs written by the research agents, one JSON file per batch, shaped
@@ -81,7 +82,7 @@ console.log(`merged: ${Object.keys(merged).length} rows; unsure entries (written
 if (!apply) { console.log("DRY RUN — nothing written. Re-run with --apply."); process.exit(0); }
 
 // 3. rollback snapshot first
-const rb = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", `rollback-approach-hazards-${Date.now()}.json`);
+const rb = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "..", `rollback-approach-hazards-${Date.now()}.json`);
 fs.writeFileSync(rb, JSON.stringify(before, null, 1));
 console.log("rollback saved: " + rb);
 

@@ -89,8 +89,24 @@ const EXEMPT = new Map([]);
 // comment, but on its own it CANNOT MATCH AT POSITION 0, so a comment starting a line survived
 // the strip. Injection case 3 caught it — the guard failed on its own documentation.
 const strip = (s) => s
-  .replace(/\/\*[\s\S]*?\*\//g, " ")
+  .replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")) // keep the newlines, so a reported line IS the file's line
   .split("\n").map((l) => l.replace(/(^|[^:])\/\/.*$/, "$1")).join("\n");
+
+// Every `areas(…)` embed with its FULL argument list, found by counting parentheses. It was a regex
+// that allowed ONE level of nesting, and the two widest embeds in lib/db.js (the route page's and
+// the list's) nest `parent:parent_id(…)` FOUR deep — so the regex never matched them and this guard
+// never read them. inject-area-name-cases.mjs case 1 edits exactly that embed and found the guard
+// passing. Returns `{ index, 1: inner }` so the loop below reads it as it read a match.
+function embedsIn(code) {
+  const out = [];
+  for (const m of code.matchAll(/\bareas\s*(?:!inner)?\s*\(/g)) {
+    let depth = 1, j = m.index + m[0].length;
+    for (; j < code.length && depth; j++) { if (code[j] === "(") depth++; else if (code[j] === ")") depth--; }
+    if (depth) continue; // unbalanced to end of file: not an embed
+    out.push({ index: m.index, 1: code.slice(m.index + m[0].length, j - 1) });
+  }
+  return out;
+}
 
 let selects = 0, embeds = 0;
 const exemptUsed = new Set();
@@ -98,7 +114,7 @@ for (const rel of FILES) {
   const code = strip(fs.readFileSync(path.join(ROOT, rel), "utf8"));
   selects++;
   {
-    for (const em of code.matchAll(/\bareas\s*(?:!inner)?\s*\(([^()]*(?:\([^()]*\)[^()]*)*)\)/g)) {
+    for (const em of embedsIn(code)) {
       embeds++;
       const inner = em[1];
       // `parent:parent_id(name)` is a NESTED embed; its `name` says nothing about the area's own.

@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // A climber sets their hiking pace. Does anything that MATCHES on pace ever see it?
 //
 // The pace a climber types lands in App state as `mySpeedFtHr` (useState(null)). Two surfaces read
@@ -30,13 +32,13 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", ".
 const out = path.join(ROOT, `.pace-${process.pid}.mjs`);
 const clean = () => fs.rmSync(out, { force: true });
 
-execFileSync("npx", ["esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
+execFileSync(NPX, [...NPX_PRE, "esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
   "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
   "--define:import.meta.env={}",
   "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
   "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 
-const { compat, __set_MY_PACE, paceOf } = await import(out + "?t=" + Date.now());
+const { compat, __set_MY_PACE, paceOf } = await import(fileHref(out + "?t=" + Date.now()));
 if (typeof __set_MY_PACE !== "function" || typeof paceOf !== "function") {
   console.error("ANCHOR LOST — core no longer exports the pace bridge."); process.exit(1);
 }

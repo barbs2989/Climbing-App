@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Drives the PARTNERSHIP LOOP as two real accounts: crew → invite by name → accept →
 // agree a day. That is the product's core promise, and nothing verifies it end to end.
 //
@@ -118,7 +119,7 @@ try {
   const port = await claimPort(5390);
   const base = `http://127.0.0.1:${port}/Climbing-App/`;
   log(`dev server on ${port}...`);
-  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   let died = false;
   server.on("exit", () => { died = true; });

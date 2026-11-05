@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // probe-switch-controls — every iOS-style switch in the app, and what it announces.
 //
 // The shape is a <button> 46x26 with borderRadius 13 holding one absolutely-positioned knob div
@@ -16,7 +17,7 @@ import _traverse from "@babel/traverse";
 import { appSources } from "../lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 
 const attr = (open, name) => open.attributes.find(
   (a) => a.type === "JSXAttribute" && a.name && a.name.name === name);

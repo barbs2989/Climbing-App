@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 /* Triage what audit:gain still reports, BEFORE anyone researches 34 routes one at a time.
  *
  * The audit's own header records three narrowings that were built and rejected, and none of them
@@ -21,7 +22,7 @@ import { SUPABASE_URL, anonKey, headers } from "../lib/supabase-env.mjs";
 import { execFileSync } from "node:child_process";
 import path from "node:path";
 
-const ROOT = path.resolve(new URL("../..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("../..", import.meta.url)));
 const AUDIT = path.join(ROOT, "scripts", "audit-gain-vs-waypoints.mjs");
 
 /* Run the audit rather than restating its rule. A second copy of the comparison would agree with

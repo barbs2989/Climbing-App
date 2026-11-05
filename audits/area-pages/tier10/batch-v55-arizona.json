@@ -1,0 +1,95 @@
+{
+ "az_pavilion_wall": {
+  "_expect": {
+   "name": "Pavilion Wall",
+   "region": "Arizona"
+  },
+  "blurb": "A small granite wall on the west shore of Watson Lake, in the Granite Dells just north of Prescott. All eleven climbs are crack and face routes protected with your own gear, and several double as top-rope lines, so it suits a relaxed day with a beginner as well as a leader. Grades start around 5.3 and run to 5.10, with most of the lines in the moderate middle. The wall looks north, so it stays cool and shaded for most of the day, and big boulders at the base add more shade. Bring a standard rack and some extra slings for building anchors. Expect a very short walk from the car.",
+  "approach": "A short walk of under five minutes from the pavilion parking area. Either scramble down to the base or set an anchor on top and rappel in.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105990830/pavilion-wall",
+    "https://www.mountainproject.com/forum/message/119975033"
+   ]
+  }
+ },
+ "az_bobby_s_rock": {
+  "_expect": {
+   "name": "Bobby's Rock",
+   "region": "Arizona"
+  },
+  "blurb": "A compact crag on Camelback Mountain in central Phoenix, reached from the Echo Canyon side. It holds eleven climbs, a mix of bolted leads, a few gear routes, some top-rope setups and one aid line. Grades run from very easy up to the low 5.11 range, with the largest group around 5.10. Routes are short with widely spaced bolts, and the rock is flaky in places and can break, so a helmet is wise. The climbing faces south, which makes it sunny, and descents are a simple walk-off. It is a convenient city-edge outing rather than a destination for long, sustained pitches.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/111591694/bobbys-rock",
+    "https://www.mountainproject.com/area/105787836/camelback-mountain"
+   ]
+  }
+ },
+ "az_space_station": {
+  "_expect": {
+   "name": "Space Station",
+   "region": "Arizona"
+  },
+  "blurb": "A small ridge-top sport crag in the Mine Area of Queen Creek Canyon, near Superior. The eleven routes are almost all bolted, with a couple of gear lines, and the grade spread is wide: a few easy 5.4 to 5.7 climbs, a solid block of 5.8 to 5.10, and one route at the 5.11 level. Perched over Lower Looner Land on the small valley's west-southwest flank, the ridge bakes in sun well into the afternoon, which makes the cooler months the time to go. Moderate climbers will find plenty to do, and it pairs easily with the neighbouring formations in the Mine Area.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/127350615/space-station",
+    "https://www.mountainproject.com/area/105792122/the-mine-area"
+   ]
+  }
+ },
+ "az_motherlode_the": {
+  "_expect": {
+   "name": "Motherlode, The",
+   "region": "Arizona"
+  },
+  "blurb": "A traditional climbing wall in the Superstition Mountains east of Phoenix, off the First Water Road side near Apache Junction. All eleven routes are gear-protected, from about 5.6 to 5.11, with the bulk at 5.9 and 5.10, and several are multipitch on a wall of roughly 300 feet. The face is shaded and enclosed, so it sees sun only briefly each day; winters are cool and the season stretches into early summer for early starters. Expect a long, cairned hike in, pockets and varied cracks, and a remote, committing feel. Bolting is not an option in this wilderness, so bring a full rack including offset cams.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/118714315/the-motherlode",
+    "https://www.mountainproject.com/area/105787978/superstition-mountains"
+   ]
+  }
+ },
+ "az_workman_falls": {
+  "_expect": {
+   "name": "Workman Falls",
+   "region": "Arizona"
+  },
+  "blurb": "Climbing gathered around Workman Creek's waterfall in Gila County, bordering the Sierra Ancha Wilderness on its western side, with Roosevelt Lake lying to the south. The rock curves around the falls in a horseshoe that opens westward, and it is very hard, smooth and slick, especially when wet. The bulk of the routes lie on the falls' southern side, on walls that look north, which keeps them cooler and makes this a summer destination. The eleven routes are mostly bolted with a couple of gear lines, spanning about 5.6 to 5.12, with a good number at 5.11. Parking is at a pull-off near the head of the falls; reaching the base involves a scree slope.",
+  "season_months": [
+   6,
+   7,
+   8
+  ],
+  "review": {
+   "sources": [
+    "https://www.discovergilacounty.com/rock-climbing-workman-creek",
+    "https://discovergilacounty.com/?p=8456"
+   ]
+  }
+ },
+ "az_south_face_2": {
+  "_expect": {
+   "name": "South Face",
+   "region": "Arizona"
+  },
+  "blurb": "The south side of Castle Rock, a tall fin above the Village of Oak Creek, just south of Sedona. All eleven routes are traditional, running from an easy chimney near 5.6 up to a single 5.12, with the heaviest concentration at 5.10. The wall is sun-baked and gets hot in summer, so it is best outside the warmest months. Reaching it means a trail from the Bell Rock side that climbs to the saddle, then a climber's path around the base, with a little scrambling to a few starts. Several of the cracks here are among the area's most sought-after lines for experienced gear climbers.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/201938955/south-face",
+    "https://mountainproject.com/area/110315213/castle-rock"
+   ]
+  }
+ },
+ "_skipped": {
+  "az_canyon_wren_wall": "no page found naming this crag; could not fetch two pages",
+  "az_arena_area_foo_the": "only one page about the crag; second fetched page (South Mountain) does not mention it"
+ },
+ "_conflicts": {
+  "az_bobby_s_rock": "stored rock conglomerate; https://www.mountainproject.com/area/111591694/bobbys-rock says sandstone, and https://www.mountainproject.com/area/105787836/camelback-mountain says west side is sedimentary",
+  "az_south_face_2": "stored rock limestone; https://www.mountainproject.com/area/201938955/south-face and https://mountainproject.com/area/110315213/castle-rock say Coconino sandstone",
+  "az_workman_falls": "stored rock sandstone; https://www.discovergilacounty.com/rock-climbing-workman-creek and https://discovergilacounty.com/?p=8456 say quartzite"
+ }
+}
