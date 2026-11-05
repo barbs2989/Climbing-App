@@ -1,0 +1,47 @@
+{
+  "key": "rainier-misfiled",
+  "question": "Are 'South Tahoma Headwall' and 'Tahoma Cleaver' (ids wa_glacier_peak_*) real Mount Rainier routes and what should they hold; and is Mowich Face's season Jun-Aug or May-Jun?",
+  "answer": "Both are real features on Rainier's Tahoma (southwest/west) side, so the wa_glacier_peak_ ids are a mis-prefix; the rows already list under the Mount Rainier packet. SOUTH TAHOMA HEADWALL: the steep headwall at the head of the South Tahoma Glacier below Point Success. A SummitPost route table (seen via search, page 403) lists it Grade III, 2-4 days, about 11,500 ft gain, max slope ~55 deg, with a 'Cleaver Exit' variant at 65 deg, season Jan-Jul; a 2004 CascadeClimbers thread gives about 12 miles in via the Westside Road and late April-June with a cold snap for firm snow, with rock and icefall. First ski descent Andy Bond, 4 May 2011 (fetched), from Point Success with two rappels (a 45-60 deg ice and rock step, then a 25 ft vertical ice step). No first-ascent record found. TAHOMA CLEAVER: a real mapped ridge (OSM peak 46.8428,-121.7849 and bare-rock node 46.8373,-121.7945; topo listing about 9,436 ft) between the Tahoma and South Tahoma Glaciers, used as a camp and as a climbing/ski line from camp (May 2009 Paradise traverse report, fetched). No grade or first ascent found for it as a standalone route. The stored Tahoma Cleaver approach (Dry Creek, Tahoma Creek Trail, Wonderland, Mirror Lakes, Success Cleaver to ~8,000 ft, roped crossing of the South Tahoma Glacier at ~8,100 ft) is plausible but not confirmed by any fetched source, and the Tahoma Creek Trail is closed per the Tahoma Glacier row. MOWICH FACE SEASON: 'Jun-Aug' vs 'May-Jun' conflict. Evidence: park rangers patrolled it 25-28 Jul 2017 (firm neve, penitentes, bergschrund no longer passable, rockfall); a party climbed the headwall on 7 Jul 2012 on front points; general guidance says steep Rainier ice routes are in shape from April/May to mid-June before rockfall rises and the face bares out. August is poor. Sibling Ptarmigan Ridge says May-Jun and the Liberty Cap rows May-Jul. Also pre-2025 the Mowich Lake road usually opened only in early July, so a May-June window was never reachable by car from the lake; with the Fairfax Bridge closed (see observation-rock-road) the walk-in is long in any month.",
+  "recommendation": "1) Re-file both rows under area wa_mount_rainier with Rainier-style ids (e.g. wa_mount_rainier_south_tahoma_headwall, wa_mount_rainier_tahoma_cleaver) via the route-identity procedure (assert area_id; no DB writes made here). 2) South Tahoma Headwall: discipline alpine (steep ice, rappels), grade AI3 like the sibling Rainier ice rows (medium confidence), season Apr-Jun, gain about 11,500 ft, trailhead Westside Road Dry Creek gate (46.7786,-121.883 as on the Tahoma Glacier row), no new pins. 3) Tahoma Cleaver: fill only the facts above (location, ridge between the two glaciers); leave grade null and do not invent a route description; no pins (the ridge itself 46.8428,-121.7849 could be a Landmark pin). 4) Mowich Face: set season 'May-Jul', keep best_season 'May to June' (season is the practical window, best is the sweet spot); remove August; optionally note that from July the face bares out, rockfall rises and the bergschrund opens.",
+  "confidence": "medium",
+  "proposed": {
+    "south_tahoma_headwall": {
+      "area_id": "wa_mount_rainier",
+      "discipline": "alpine",
+      "grade": "AI3",
+      "season": "Apr-Jun",
+      "aspect": "SW",
+      "overview": "A steep, rimed headwall of snow and ice with short rock and ice steps at the head of the South Tahoma Glacier, dropping from Point Success. Slopes reach about 55 degrees, and an icy step high on the face has been rappelled by skiers. Rockfall and icefall are the main hazards.",
+      "approach": "Reached from the closed Westside Road beyond the Dry Creek gate on a long walk in of about 12 miles, then across the Tahoma Glacier or round Success Cleaver to the foot of the headwall.",
+      "gain_ft": 11500
+    },
+    "tahoma_cleaver": {
+      "area_id": "wa_mount_rainier",
+      "overview": "A rocky cleaver between the Tahoma Glacier and the South Tahoma Glacier on Rainier's southwest side, near 9,400 ft. Parties camp on it and use it as a climbing and ski line from the west side."
+    },
+    "mowich_face": {
+      "season": "May-Jul",
+      "best_season": "May to June"
+    }
+  },
+  "evidence": [
+    "https://www.summitpost.org/mount-rainier/150291 - (403 on fetch; table via search) South Tahoma Headwall Grade III, 2-4 days, ~11,500 ft, 55 deg, Jan-Jul; Cleaver Exit 65 deg.",
+    "https://cascadeclimbers.com/forum/topic/29572-south-tahoma-headwall-inquiry-11162004/ - (403; snippet) ~12 mi approach; late April-June; rock and icefall.",
+    "https://turns-all-year.com/trip-reports/may-2010-11-new-ski-descents-on-mount-rainier - fetched: Andy Bond ski descent of the headwall 4 May 2011, two rappels.",
+    "https://turns-all-year.com/trip-reports/may-22-25-laps-on-tahoma-gl-traverse-from-paradise - fetched: camp on Tahoma Cleaver between Tahoma and South Tahoma glaciers.",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Tahoma+Cleaver - fetched: peak 46.8428198,-121.7849386; bare_rock 46.8373120,-121.7945173.",
+    "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html - fetched: ranger patrol 25-28 Jul 2017 on the Mowich Face; firm neve, penitentes, bergschrund bypass, rockfall.",
+    "https://scottrinck.com/blogs/news/there-i-was-the-mowich-face-on-mt-rainier - fetched: Edmunds Headwall / Mowich Face climbed 7 July 2012 on front points; rock and ice fall.",
+    "packets-all/wa_mount_rainier.json - Ptarmigan Ridge row season May-Jun (Mowich road typically opened early July); Tahoma Glacier row: Tahoma Creek Trail closed."
+  ],
+  "searched": [
+    "South Tahoma Headwall route grade first ascent approach - SummitPost table, CascadeClimbers thread, Alpenglow ski history",
+    "Tahoma Cleaver route grade first ascent - nothing standalone; Success Cleaver pages only",
+    "\"Tahoma Cleaver\" Rainier - topozone (~9,436 ft), turns-all-year 2009 report",
+    "Nominatim Tahoma Cleaver - two OSM features",
+    "South Tahoma Headwall AAJ / Mountain Project - no entry found; no first ascent found",
+    "Mowich Face best season - mixed: ranger July 2017, July 2012 climb, April-mid-June general guidance",
+    "alpenglow.org topo page - SSL certificate error, not fetched",
+    "Beckey Cascade Alpine Guide not located; headwall and cleaver first ascents and grades unverified (an archive.org search would be the next step)"
+  ]
+}
