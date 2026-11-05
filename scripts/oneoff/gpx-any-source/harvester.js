@@ -20,7 +20,9 @@ const PEAKS = [/* [[area_id, name, lat, lng], ...] */];
 const sleep = ms => new Promise(r => setTimeout(r, ms)); const P = new DOMParser();
 async function get(u) { for (let t = 0; t < 3; t++) { try { const r = await fetch(u, { credentials: "include" }); if (r.ok) { const x = await r.text(); if (/<title>Just a moment/i.test(x.slice(0, 3000))) { await sleep(6000); continue; } return x; } } catch (e) {} await sleep(2500); } return null; }
 const hav = (a, b, c, d) => { const R = 6371000, r = x => x * Math.PI / 180; const h = Math.sin(r(c - a) / 2) ** 2 + Math.cos(r(a)) * Math.cos(r(c)) * Math.sin(r(d - b) / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
-function names(n) { const s = new Set([n]); s.add(n.replace(/\s*\(.*\)/, "")); s.add(n.replace(/ (Routes|Climbs)$/, "")); s.add(n.replace(/^(.*), The( Routes)?$/, "The $1")); s.add(n.replace(/^The /, "")); s.add(n.replace(/^Mount /, "Mt. ")); return [...s].filter(Boolean); }
+function names(n) { const s = new Set([n]); s.add(n.replace(/\s*\(.*\)/, "")); s.add(n.replace(/ (Routes|Climbs)$/, "")); s.add(n.replace(/^(.*), The( Routes)?$/, "The $1")); s.add(n.replace(/^The /, "")); s.add(n.replace(/^Mount /, "Mt. ")); s.add(n.replace(/^Mt\.? /, "Mount ")); for (const v of [...s]) s.add(v.replace(/['’]/g, "")); return [...s].filter(Boolean); }
+// 2026-11-05 (OR): Peakbagger's search is literal: "Mt. Washington" and "Pete's Point" return nothing,
+// "Mount Washington" and "Petes Point" match. Try Mount for Mt., and every variant without apostrophes.
 // STATE_RE: which Peakbagger location strings count (WA also takes BC border peaks)
 const STATE_RE = /USA-WA|Canada-BC/;
 async function findPid(name, lat, lng) {
