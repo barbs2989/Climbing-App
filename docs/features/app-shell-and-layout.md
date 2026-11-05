@@ -78,7 +78,10 @@ room for side-panel ads later. The phone app keeps its own look.
     952; 1920 → 610–1310, rail 1592). The empty space either side of the column on a big monitor is where
     side ads can go later.
   - A site **footer** under every page, Strava-style (owner 2026-11-04: "look how strava does it …
-    more branding"): a card with the mark, wordmark and one line on what the app is for, three link
+    more branding"), **spanning the whole window** (owner 2026-11-05): a band the width of the window's
+    client area (measured, not 100vw, so the Windows scrollbar never pushes it off the edge) that pulls
+    itself out of the page column by `--cm-col-left` and paints above the fixed sidebar and rail at the
+    page's end; its content is centred and capped at 1320px. In it: the mark, wordmark and one line on what the app is for, three link
     columns (Explore: the tabs; ClimbMatch: How it works, About us, Feedback, Rate the app, Settings;
     Legal: Terms, Privacy, Guidelines, Accessibility), then a thin © row with Back to top. It is the ONLY home of About,
     Help, Feedback, Privacy and Terms on desktop. The **directory of every state with climbs** heads it on
