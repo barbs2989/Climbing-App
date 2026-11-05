@@ -525,7 +525,8 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
           <button
             onClick={handleSubmit}
             style={{...styles.button, ...styles.buttonPrimary}}
-            disabled={submitting || (drawing ? drawPts.length < 3 : !coordinates.trim()) || !climbDate}
+            disabled={submitting || (drawing ? drawPts.length < MIN_RECORDED_PTS : !coordinates.trim()) || !climbDate}
+            title={drawing && drawPts.length < MIN_RECORDED_PTS ? 'Tap at least ' + MIN_RECORDED_PTS + ' points along the trail' : undefined}
           >
             {submitting ? 'Submitting...' : crag ? 'Submit Trail' : 'Submit Track'}
           </button>
