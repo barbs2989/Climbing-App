@@ -108,6 +108,11 @@ table — the default 60 means ~3,400 round trips and takes over ten minutes.
 - `requireServiceKey()` throws instead of degrading to the anon key. Use it for anything that writes.
 - `patchRow(table, id, body)` throws unless exactly one row came back, so a wrong id or an RLS rejection can't read as success.
 - `selectAll(table, select, filter)` paginates by keyset. Offset paging over a filtered, unindexed column times out on the 200k-row `routes` table, and an unordered `.range()` silently skips/duplicates rows.
+- `stateIdFilter("wa")` is the filter for one state's ids. Use it, not `id=like.wa_*`. A LIKE
+  prefix cannot use the id index under this collation, so with a wide column in the select (waypoints,
+  prose) page 1 is a 205k-row scan that the anon role's ~3 s timeout cancels: HTTP 500 `57014` on a
+  healthy database. The same holds for a wide select filtered on an unindexed column (`bivy=not.is.null`).
+  Read the ids alone, then the wide columns by `id=in.(…)` in chunks of about 100.
 
 After any batch write, re-read the affected ids and reconcile counts. A 200 is not evidence the data changed.
 
