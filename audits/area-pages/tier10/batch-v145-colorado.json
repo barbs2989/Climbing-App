@@ -1,0 +1,36 @@
+{
+ "co_north_quarry": {
+  "_expect": {"name": "North Quarry", "region": "Colorado"},
+  "blurb": "North Quarry is a quiet sandstone pocket in Satanka Cove, on the northwest side of Horsetooth Reservoir above Fort Collins. It is mainly a bouldering venue: eleven of its thirteen climbs are problems, spread from V1 up to V10 with most landing in the middle grades, plus one hard trad line and one very hard sport line in the 5.12 to 5.13 range. The stone is the sandy, soft Horsetooth style, so expect textured face climbing and a few highballs where pads matter, even under a rope. Visitors are few and the setting is scenic. The walk in is short, roughly a quarter hour from the car.",
+  "review": {"sources": ["https://www.mountainproject.com/area/112480389", "https://www.mountainproject.com/route/112480440/physical-graffiti?print=1"]}
+ },
+ "co_pinnacle_the_3": {
+  "_expect": {"name": "Pinnacle, The", "region": "Colorado"},
+  "blurb": "The Pinnacle is a small tower beside the road in North Cheyenne Canyon, a few minutes from downtown Colorado Springs. Its thirteen climbs are mostly bolted sport lines, with two trad routes, running from easy fifth class up to the 5.12 range; the bulk of the sport climbing sits in the 5.10 to 5.11 band. Rock quality is generally good with some crumbly patches near the top. Many lines can be rappelled, though walking down the back is simpler. The west face adds a long trad outing, and the roadside setting makes for a short day with very little hiking.",
+  "parking_note": "Use the roadside pullout on the west side of North Cheyenne Canyon Road, a little under a mile up from the park gate at the start of the canyon road.",
+  "review": {"sources": ["https://mountainproject.com/area/105745609/the-pinnacle", "https://www.mountainproject.com/area/105745630/west-face-the-pinnacle-west-face"]}
+ },
+ "co_autumn_s_traverse_boulder_area": {
+  "_expect": {"name": "Autumn's Traverse Boulder Area", "region": "Colorado"},
+  "blurb": "This is a small cluster of boulders in the Buffalo Creek section of the South Platte, at about 8,000 feet, reached from Da Butts. The boulders sit fairly close together and the quality is high for the size. All thirteen climbs are boulder problems, from a warm-up VB through a good run of V1 to V6, with a couple of far harder problems at the top end. The namesake traverse is a balancy, crimpy 20-footer on a flat landing. The walk in follows a forest road and a short stretch of mountain bike trail. Bring pads and a spotter.",
+  "review": {"sources": ["https://www.mountainproject.com/area/119708441/autumns-traverse-boulder-area", "https://mountainproject.com/route/119708468/autumns-traverse"]}
+ },
+ "co_apache_peak": {
+  "_expect": {"name": "Apache Peak", "region": "Colorado"},
+  "blurb": "Apache Peak is a 13,441-foot granite summit on the Continental Divide in the Indian Peaks, above a high basin west of Brainard Lake. The thirteen climbs here are mostly alpine rock lines, with a trad route, a mountaineering route and an ice option, plus classic snow couloirs and a glacier route. Rock difficulty is modest, from scrambling through easy fifth class to a handful at 5.9. Towers along the north ridge, reached from Pawnee Pass, give the more technical traverses. Expect a long, committed day at altitude, with afternoon storms a real concern in summer.",
+  "review": {"sources": ["https://mountainproject.com/area/105745995/apache-peak", "https://en.wikipedia.org/wiki/Apache_Peak"]}
+ },
+ "co_springer_gulch_wall": {
+  "_expect": {"name": "Springer Gulch Wall", "region": "Colorado"},
+  "blurb": "Springer Gulch Wall is a south-facing granite wall in Elevenmile Canyon near Lake George, perched above the campground. Most of its thirteen climbs are bolted sport routes, with a few trad lines and a single V7 boulder problem. Grades run from 5.7 to the low 5.13s, with the largest group in the 5.12 range and a handful of 5.9 and 5.10 routes for warming up. The rock is firm and the wall sees little traffic. The short approach is rocky and gets steep near the end. Early in the day the wall is shaded, which helps in warm months.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107151936/springer-gulch-wall", "https://app.advcollective.com/climbing/bill-and-britt-two-a-focused-sport-climb-on-springer-gulch-wall"]}
+ },
+ "_skipped": {
+  "co_g_kipper_cove": "no fetched page about the crag itself; only a route page that merely names it",
+  "co_beginner_s_slab": "only route pages fetched (Bajorn, Cardassian); no page about the crag itself readable",
+  "co_bay_of_pigs": "only the whole Pool Wall page and a route page; no page about the sector itself"
+ },
+ "_conflicts": {
+  "co_pinnacle_the_3": "stored rock granite, but https://mountainproject.com/area/105745609/the-pinnacle describes sandstone cliffs"
+ }
+}

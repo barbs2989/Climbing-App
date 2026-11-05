@@ -1,0 +1,52 @@
+{
+ "or_7_dominator_wall": {
+  "_expect": {
+   "name": "Dominator Wall",
+   "region": "Oregon"
+  },
+  "blurb": "Dominator Wall is the tallest cliff at Rattlesnake, a bolted sport crag in southwest Oregon near Medford, with single-pitch lines reaching about 100 feet. All 15 climbs here are sport routes on welded tuff, starting at 5.10 and concentrating in the 5.11 and 5.12 range, with one 5.13 at the top end. Expect sustained, pumpy climbing that mixes endurance with some power, not a warm-up wall. The first few bolts of the longer lines cross loose, fractured rock before the stone firms up, so wear a helmet, and bring a 60 m rope to be lowered all the way down. A shorter, steeper section faces west further along the trail.",
+  "approach": "Follow the main trail through the Cathedral, past Jane's Buttress and the Rainy Day Cave and Horizon Wall. The base of the main wall sits right beside the path.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106557590/dominator-wall",
+    "https://app.advcollective.com/climbing/dominator-wall-climbing-guide-at-rattlesnake-oregon"
+   ]
+  }
+ },
+ "or_5_southern_tip": {
+  "_expect": {
+   "name": "Southern Tip",
+   "region": "Oregon"
+  },
+  "blurb": "Southern Tip is the far end of the climbing at Smith Rock in central Oregon, where the river trail swings around in a near U-turn. Most of the 15 routes are bolted sport lines, with a few trad climbs, one aid line and a top-rope. The grades run wide: easier routes from 5.6 into the 5.9s are found around the corner on a slab, while the harder climbing, mostly 5.10 to 5.12, sits on the stretch before the bend. A cave-like feature at the tip offers cover from rain and shade in summer heat. The slab section stays shaded in the morning, and the harder walls lose the sun by mid-afternoon.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105806881/southern-tip",
+    "https://thetopo.com/crags/smith-rocks/topos/the-southern-tip"
+   ]
+  }
+ },
+ "or_easy_listening": {
+  "_expect": {
+   "name": "Easy Listening",
+   "region": "Oregon"
+  },
+  "blurb": "Easy Listening is the first wall you reach at Bear Springs, also known as The Dance Hall, a young sport crag in Mount Hood National Forest off Highway 35, partway from Hood River up toward the Mount Hood Meadows ski area. It holds 15 bolted routes, mostly 35 to 50 feet tall, running from about 5.6 to 5.11 with the bulk in the 5.9 and 5.10 range. That makes it one of the friendlier walls in the area for newer leaders, with a handful of harder lines too. The crag is still being developed and the rock can be thinly featured, so a helmet is a good idea and loose bits are possible.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/125444931/easy-listening",
+    "https://mountainproject.com/area/125442640/bear-springs-aka-the-dance-hall"
+   ]
+  }
+ },
+ "_skipped": {
+  "or_breakfast_cracks": "no fetched page about the wall itself: the Rocky Butte parent page only lists it, thetopo shows 0 routes, SummitPost 403, rockclimbing.com refused connection",
+  "or_the_fourth_area": "no fetched page about the Fourth Area itself; only The Zoo parent page and a neighbouring wall's page mention it",
+  "or_salmon_river": "no climbing page found for a coastal Salmon River boulder area; the only Salmon River climbing hit is Salmon River Slab in Mt. Hood National Forest, a different place",
+  "or_5_jane_s_buttress": "no fetched page about Jane's Buttress itself; only the Rattlesnake parent page and a landmark mention elsewhere; rockclimbing.com and advcollective routes gave no description",
+  "or_chickenhead_wall": "no fetched page about the Oregon Chickenhead Wall itself; the Mountain Project wall page found is the Arkansas one, and the Oregon Chickenhead Ranch parent page barely describes it"
+ },
+ "_conflicts": {
+  "or_the_fourth_area": "Stored parking_name says the Smith Rock State Park main day-use lot, but https://mountainproject.com/area/109707430/the-zoo places The Zoo (including the Fourth Area, coordinates 44.38) outside the park, reached from Skull Hollow Campground via NF-5710 and a seasonal gate."
+ }
+}

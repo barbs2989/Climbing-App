@@ -1,0 +1,65 @@
+{
+ "mo_pontoon_wall": {
+  "_expect": {
+   "name": "Pontoon Wall",
+   "region": "Missouri"
+  },
+  "blurb": "Pontoon Wall is a limestone sport wall within the Trapper's Camp group of riverside bluffs outside Osceola, in west-central Missouri. It holds 19 routes, most of them bolted and a handful on gear, and it is regarded as the cleanest, steepest stone in the area, running from vertical to overhanging with pockets and rails and a big cave at either end. The grades start around 5.7 but pile up between 5.10 and 5.12, so this is a wall for climbers already comfortable on steep, pocketed lines rather than a first-timer's crag. From the main trail down, walk north beyond the first wall and a brushy gully to reach it. Check every anchor before trusting it.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105899157/pontoon-wall",
+    "https://www.mountainproject.com/area/105899028/wm-trappers-camp"
+   ]
+  }
+ },
+ "mo_e_picasso_wall": {
+  "_expect": {
+   "name": "Picasso Wall",
+   "region": "Missouri"
+  },
+  "blurb": "Picasso Wall is a sport face of about 60 feet on the north side of Robinson Bluff, a dolomite cliff above the Big River near Tiff in eastern Missouri. All 18 routes are bolted. A few easy 5.7 and 5.8 lines sit alongside a small group of 5.10s, then the numbers climb steadily: the largest share is 5.12, with a single 5.13 at the top end. The wall is multicolored and rust-toned, with crystal-lined pockets; the gentler lines follow deep pockets with fun movement, while the harder ones tackle a bulging roof, and many of those carry permanent draws. Climbs below the roof are mostly 5.9 or easier, making it a good place to warm up before a hard lead.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/114060998/picasso-wall",
+    "https://www.mountainproject.com/area/114211459/north-climbers-right-of-stairs",
+    "https://terrain-mag.com/robinson-bluff-game-changer-for-st-louis-climbers/"
+   ]
+  }
+ },
+ "mo_bluff_two": {
+  "_expect": {
+   "name": "Bluff Two",
+   "region": "Missouri"
+  },
+  "blurb": "Bluff Two is the next bluff north of Bluff One at Scheuler's Ferry, a steep sport destination above the Osage River in central Missouri. It has 19 routes, nearly all bolted with a single trad line. Compared with its busier neighbor, the grade range is wider: a couple of easy 5.6 and 5.7 climbs, a good handful of 5.8s and 5.9s, a solid block of 5.10s, and a few 5.12s at the upper end. Routes at the ferry generally run 40 to 70 feet, so one rope and a set of quickdraws handle most of them. Go past the far end of Bluff One into a broad wooded draw, stay level, and traverse to the bluff's south end.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/115354395/bluff-two",
+    "https://www.mountainproject.com/area/107896109/cm-scheulers-ferry"
+   ]
+  }
+ },
+ "mo_bluff_one_dihedral_area": {
+  "_expect": {
+   "name": "Bluff One \"Dihedral Area\"",
+   "region": "Missouri"
+  },
+  "blurb": "The Dihedral Area is the main section of Bluff One at Scheuler's Ferry, on the Osage River in central Missouri. Of its 19 routes nearly every one is bolted; the exception is a gear line up the corner that gives the area its name, a right-facing dihedral under a big roof amid steep faces. The climbing leans hard. One easy 5.8 and a few 5.9s and 5.10s make up the lower end, while 5.11 is the biggest group and a handful of 5.12s finish the range. Climbs here run roughly 40 to 70 feet, so a single rope, quickdraws and a light rack are all that most people need. The route in is a steep hike beyond the Amphitheater section, along the face.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/bluff-one-dihedral-area/110956447",
+    "https://www.mountainproject.com/area/107896109/cm-scheulers-ferry"
+   ]
+  }
+ },
+ "_skipped": {
+  "mo_wm_berkley_riverfront": "Only pages about a single installed urban boulder were found; they cannot support 19 problems from V1 to V8, and no independent page about a multi-problem bouldering area at this location",
+  "mo_d_the_porch": "No fetched page is about The Porch itself; only the parent Elephant Rocks pages list it",
+  "mo_dystopia": "No fetched page is about Dystopia itself; only a route page and the Robinson Bluff parent pages mention it",
+  "mo_6_west_end": "No fetched page is about the West End of Monegaw Springs itself; only the parent area page lists it"
+ },
+ "_conflicts": {
+  "mo_bluff_two": "Stored rock is dolomite but the parent area page (https://www.mountainproject.com/area/107896109/cm-scheulers-ferry) calls Scheuler's Ferry limestone",
+  "mo_bluff_one_dihedral_area": "Stored rock is dolomite but https://www.mountainproject.com/area/107896109/cm-scheulers-ferry and https://www.mountainproject.com/area/108305051/bluff-one-the-amphitheater call the rock limestone"
+ }
+}

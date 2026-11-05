@@ -1,0 +1,51 @@
+{
+  "key": "cannon_mountain",
+  "question": "Most Cannon Mountain tracks climb a NW/West Ridge route we do not hold: is it real and distinct from Northeast Ridge and South Slopes?",
+  "answer": "Real and distinct. Eight or more summited ascents from the Stuart Lake trailhead (47.528,-120.8205) take one line, logged variously as NW ridge, W ridge, SW ridge and standard: leave the trail about 1.25 mi in (just before the Mountaineer Creek footbridge), go west and up a rocky gully past a waterfall and boulder field to a cliff band near 5,200 ft, up a gully to a flat basin near 6,100 ft, turn NE up grass and rock to meet the west/northwest ridge near 7,400 ft, follow vegetated ledges on the ridge (class 3, class 4 if off line) to a flat shoulder near 8,250 ft and a roughly 15 ft class 3 friction slab to the summit block. Track geometry is the same in all of them (reaching the crest from the west along 47.504-47.505,-120.82 to -120.805 at 2,300-2,500 m; summit 47.5025,-120.8026). The stored Northeast Ridge row is a different line: it climbs the north-facing burn slopes toward Coney Lake and the NE crest, and the winter 'North ridge' track (2153010, starting from the Eightmile road end at -120.7917) is on that side. The Mountaineers material itself lists a North Couloir variation off the Northwest Ridge, so the NW ridge is a recognised line. One climber noted that the 'official descriptions' cover only the NE ridge and the long Prusik Pass approach, which is why we lack it.",
+  "recommendation": "Add a new row 'Northwest Ridge' (scrambling, Class 3) under wa_cannon_mountain. Track candidates: 3346626 (Sep 14 2026, logged NW ridge, summited, start 47.52777,-120.82107) and 3355753 (Sep 22 2026, NW ridge / standard, out-and-back style, start 47.5277,-120.82098). Skip 1951173 (W ridge, a report of an attempt) and 3200968 (four-peak link-up).",
+  "confidence": "medium",
+  "proposed": {
+    "name": "Northwest Ridge",
+    "id_suggestion": "wa_cannon_mountain_northwest_ridge",
+    "discipline": "scrambling",
+    "disciplines": [
+      "scrambling"
+    ],
+    "grade": "Class 3",
+    "grade_system": "class",
+    "season": "Jul-Sep",
+    "best_season": "Mid-July to September, once the snow has left the upper ridge; May to June trips meet snow above about 6,000-7,000 ft.",
+    "overview": "A pathless climb from the Stuart Lake trailhead up the west side of Cannon: brush and boulders to a high basin, then the northwest ridge, finishing with a short friction slab onto the summit block.",
+    "approach": "From the Stuart Lake trailhead (about 3,400 ft; Northwest Forest Pass) take the Stuart Lake trail about 1.25 miles to just before the Mountaineer Creek bridge, then leave the trail and go up west and south through open forest.",
+    "beta": "Boulder field and waterfall gully near 4,400 ft, a cliff band near 5,200 ft scrambled on grass and trees, a flat basin near 6,100 ft, then northeast on rock and grass to the ridge near 7,400 ft. The upper ridge follows vegetated ledges at class 3; boulder-only lines are usually off route. The summit block is a friction slab of roughly 15 ft.",
+    "descent_text": "Most parties retrace the route; a longer alternative heads east across the Druid Plateau, over Prusik Pass, through the Enchantments and down Aasgard Pass.",
+    "hazards": [
+      "steep brush and slide alder low on the mountain",
+      "snow and ice on the upper ridge into July",
+      "exposed friction slab at the summit, dangerous when wet or icy"
+    ],
+    "gear": [
+      "ice axe in early season"
+    ],
+    "waypoints": [
+      {
+        "type": "Trailhead",
+        "name": "Stuart Lake Trailhead",
+        "lat": 47.5277,
+        "lng": -120.821
+      }
+    ],
+    "track_aid": "3346626"
+  },
+  "evidence": [
+    "packets-all/wa_cannon_mountain.json - tracks 3346626, 3355753, 3328748, 3200968, 2527834, 2193926, 1951173 share this line",
+    "https://wenatcheeoutdoors.org/2016/07/12/cannon-mountain-nw-face/ - Stuart Lake / Mountaineer Creek approach from the trailhead (a winter ski version on the north-west slopes)",
+    "https://www.wta.org/go-hiking/hikes/cannon-mountain - Stuart Lake trailhead, no trail to the summit"
+  ],
+  "searched": [
+    "WebSearch Cannon Mountain NW ridge / Prusik Pass / west ridge - SummitPost log calls the NW ridge an alternative to the Prusik Pass route; Mountaineers pages name a North Couloir variation off the NW ridge",
+    "WebFetch mountaineers.org and summitpost.org Cannon pages, a WTA trip report - HTTP 403, unreadable",
+    "Read the trip report of aid 1951173: official descriptions cover the NE ridge or the Prusik Pass approach only",
+    "Node comparison of track shapes: NW/W/SW labelled tracks share one line; the winter North ridge track starts at a different trailhead"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "key": "gilbert_peak",
+  "question": "Is a Warm Lake / southeast ridge (Klickton Divide) route to Gilbert Peak real and distinct from our three Gilbert rows (Conrad Glacier, Meade Glacier, West Route)?",
+  "answer": "Yes. The Warm Lake / Klickton Divide line is a long-established, separately named route. It starts at the Conrad Meadows (South Fork Tieton) trailhead on the EAST side, passes Surprise Lake, leaves the trail for Warm Lake, climbs a short steep snow patch or loose talus to the Klickton Divide crest, then follows the divide to the summit block and finishes by a notch in Class 3 rock. Peakbagger ascent logs call the same line 'Klickton divide', 'Southeast Ridge', 'SFT 1120 - Warm Lake/Klickton Ridge', 'Warm Lake SW to Klickton Divide' and 'South Fork Tieton Trail/Southeast Ridge', so 'southeast ridge' and 'Klickton Divide' are two names for ONE row. It is none of ours: West Route (our only Gilbert row with a track) is the Snowgrass / Cispus Basin approach from the WEST (its tracks start near 46.46,-121.52 or 46.50,-121.47); the Conrad and Meade Glacier rows are glacier lines. Every summited log that starts at Conrad Meadows (about a dozen, 2017-2026) is on this line, so it is the most-climbed route on the peak and the gap is real. Separate Mountaineers and SummitPost route pages exist for it.",
+  "recommendation": "ADD one new row on wa_gilbert_peak (name e.g. 'Klickton Divide (via Warm Lake)', alias 'Southeast Ridge'), after catalog_find_route('Klickton','wa_gilbert_peak') and a look across the whole Goat Rocks area for a Klickton / Warm Lake row filed on Tieton Peak or the Goats area. Use the fill in 'proposed'. Attach ONE track: aid 2259534 (26 Jul 2023, 'SFT 1120 - Warm Lake/Klickton Ridge'), a clean out-and-back from the trailhead, summited, in season; aid 1950216 (26 Jun 2022 'Klickton divide') is a second in-season candidate. Do not use 3366743 (also climbs Tieton Peak: a link-up) or the Nov 2018/2019 logs (out of season).",
+  "confidence": "high",
+  "proposed": {
+    "name": "Klickton Divide (via Warm Lake)",
+    "discipline": "mountaineering",
+    "disciplines": [
+      "mountaineering"
+    ],
+    "grade": "Class 3",
+    "grade_system": "class",
+    "season": "Jul-Sep",
+    "best_season": "Mid-July through September, once the snow patch above Warm Lake has softened or melted; October and November ascents exist but need snow travel.",
+    "high_point_ft": 8201,
+    "outing_shape": "outback",
+    "overview": "The east-side way up the highest peak of the Goat Rocks. A long forest and meadow walk up the South Fork Tieton valley leads to Warm Lake, then a short climb gains the Klickton Divide, a broad ridge you follow west to the summit block. The finish is a short Class 3 scramble through a notch in the rock. It is usually done as a long day or an overnight at Warm Lake.",
+    "approach": "Start at the Conrad Meadows trailhead at the end of the South Fork Tieton road (about 4,100 ft). Take the South Fork Tieton trail past Surprise Lake and on up the valley to the upper meadows near 5,900-6,000 ft where trails cross. Take the west branch and then the faint, unofficial path that reaches Warm Lake. Expect roughly 9-10 miles each way with about 4,200-4,600 ft of gain for the whole climb.",
+    "beta": "From Warm Lake, gain the divide either by a steep but short snow patch above the lake (early season) or by talus about a quarter mile south of the lake. Turn onto the crest and follow the ridge toward Gilbert, which stays in view most of the way. A plateau-like stretch leads to the base of the summit block. Skirt the cliffs, cross a moderately steep snowfield and a short boulder field, then reach the top through a notch in the buttress by Class 3 rock.",
+    "descent_text": "Reverse the route. Note landmarks on the way up, because the broad divide is easy to lose in cloud on the return. Cross the snowfield below the summit block with the same care as on the way up.",
+    "hazards": [
+      "Loose rock on the divide and the upper scramble",
+      "Snowfield below the summit block, steeper and icier early and late in the season",
+      "Brushy, unmarked ground between the trail and Warm Lake",
+      "Route-finding on the broad divide in poor visibility"
+    ],
+    "watch_out": [
+      "The road to the trailhead has been closed for long spells in past years; confirm it is open",
+      "The turn-off from the maintained trail to Warm Lake is unsigned"
+    ],
+    "gear": [
+      "Ice axe in June and early July or after fresh snow",
+      "Microspikes or light crampons early and late in the season",
+      "Helmet for the summit block"
+    ],
+    "what_to_bring": [
+      "Map, GPS track or compass",
+      "Headlamp",
+      "Water treatment"
+    ],
+    "road": {
+      "name": "South Fork Tieton / Conrad Meadows road",
+      "status": "seasonal",
+      "driveNote": "Paved but rough, with unannounced bumps near the end; closed for repairs for long periods in past years."
+    },
+    "waypoints": [
+      {
+        "type": "Trailhead",
+        "name": "Conrad Meadows Trailhead",
+        "lat": 46.50876,
+        "lng": -121.28095
+      }
+    ],
+    "approach_logistics": {
+      "trailhead": "Conrad Meadows Trailhead",
+      "trailheadLat": 46.50876,
+      "trailheadLng": -121.28095
+    },
+    "track_aid": "2259534",
+    "track_alt": [
+      "1950216"
+    ]
+  },
+  "evidence": [
+    "https://nominatim.openstreetmap.org/search?format=json&q=South+Fork+Tieton+trailhead - OSM 'Conrad Meadows Trailhead, South Fork Tieton Road' at 46.5087619,-121.2809461; every Klickton/Warm Lake track in the packet starts within ~10 m of it",
+    "https://www.wta.org/go-hiking/hikes/gilbert-peak - 'head for the Klickton Divide', follow the ridge, snowfield traverse, short boulder field, notch in the buttress, Class 3; 20 mi RT, 4,600 ft gain, 8,184 ft",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1254037 - Conrad Meadows, Surprise Lake, bushwhack to Warm Lake, short steep snow patch above the lake to Klickton Ridge, loose rock to the summit (July 2023)",
+    "https://www.countryhighpoints.com/gilbert-peak-goat-citadel-north-gilbert/ - Nov 2019: leave the trail at a 6,000 ft pass, SW to Warm Lake, heather then frozen scree to the southeast ridge, short third-class finish: 'southeast ridge' is this line",
+    "Search snippets only: Mountaineers 'Gilbert Peak/Klickton Divide' route page; SummitPost 'Klickton Divide' route page (talus a quarter mile south of Warm Lake gives access to the divide crest; loose Class 3 final slope)",
+    "packets-all/wa_gilbert_peak.json - logged routes 'Klickton divide', 'Southeast Ridge', 'SFT 1120 - Warm Lake/Klickton Ridge', 'Warm Lake SW to Klickton Divide', 'Klickton Ridge Traverse'; West Route logs start near 46.46,-121.52 (Snowgrass) or 46.50,-121.47"
+  ],
+  "searched": [
+    "Gilbert Peak Goat Rocks Warm Lake Klickton Divide southeast ridge route - Mountaineers, SummitPost, countryhighpoints, Oregon Hikers pages listed",
+    "\"Gilbert Peak\" \"Klickton Divide\" scramble ... - WTA hike page, NWHikers 7/9/23, SummitPost Klickton Divide, yellowleaf, AllTrails",
+    "\"Gilbert Peak\" \"Warm Lake\" Goat Rocks climb route South Fork Tieton Trail 1120 - trailhead 4,100 ft at end of FR 1000; Warm Lake via an unofficial user trail",
+    "Fetch refused with HTTP 403 (not worked around): mountaineers.org gilbert-peak-klickton-divide and gilbert-peak-conrad-glacier; summitpost gilbert-peak/151173 and klickton-divide/264521; alltrails (used search snippets only)",
+    "Nominatim 'South Fork Tieton trailhead' - Conrad Meadows Trailhead coordinate",
+    "Not established: whether the divide or summit block touches Yakama reservation land (Peakbagger lists Yakama among land managers; a SummitPost comment says the Cispus Basin approach enters the reservation and the Conrad Meadows approach avoids it). Check once before writing an access line."
+  ]
+}
