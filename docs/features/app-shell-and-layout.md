@@ -46,7 +46,12 @@ room for side-panel ads later. The phone app keeps its own look.
     search box for every climb and place **centred in the window** (owner 2026-11-04; `WideSearch` sits on
     the 50vw midline out of the row's flow, 220–680px wide so it never reaches either end; `/` jumps to
     it; arrow keys and Enter pick a hit), and at the right Saved · Alerts · Calendar · Messages and your
-    avatar (→ Profile).
+    avatar (→ Profile). **Typed search** (competitor review item 12, built 2026-11-05): when the words
+    carry a grade or a discipline ("5.9 trad near Leavenworth", "WI4", "V4 in Squamish" —
+    `parseTypedSearch` in `lib/typedSearch.js`, grades read by the one parser in `lib/grade.js`), the
+    first row offers the Route finder with those filters, scoped to the place typed (top place hit),
+    else the home state, else the state with the most climbs; the row names the scope. Picking it
+    goes through App's saved-search opener (`openSavedSearch`, kind `finder`).
   - **Drawn ~10% larger** (owner 2026-11-04, `ZOOM` = 1.1 in `lib/wideLayout.js`): the page column
     (`#appscroll`), the pages that open in it, the rail's cards, centred windows, the bell drop-down and
     both Messages panes are CSS-`zoom`ed, so the phone's 13px type reads as ~14.3px beside Mountain
