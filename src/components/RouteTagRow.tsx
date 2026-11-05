@@ -4,7 +4,7 @@ import { routeTags } from "../../lib/routeTags.js";
 import TagChip from "./TagChip.tsx";
 
 export interface RouteTagRowProps {
-  /** The route; routeTags() reads the lists it is on and its style tags. */
+  /** The route; routeTags() reads the lists it is on. */
   route: Parameters<typeof routeTags>[0];
 }
 
