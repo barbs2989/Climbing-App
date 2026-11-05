@@ -207,8 +207,27 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const redo = () => { if (!redoRef.current.length) return; undoRef.current.push(nodesRef.current); restore(redoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
   // A tap on the spot the line already ends at (Finish at C twice, a slow double tap) adds nothing.
   const append = (lat, lng) => { const cur = nodesRef.current, nn = node([lat, lng]); if (cur.length && sameP(cur[cur.length - 1].a, nn.a)) return; const next = cur.concat([nn]); commit(next, withLegs(next, [next.length - 1])); };
-  const insertAt = (i, lat, lng) => { const cur = nodesRef.current, nn = node([lat, lng]); if ((cur[i - 1] && sameP(cur[i - 1].a, nn.a)) || (cur[i] && sameP(cur[i].a, nn.a))) return; const next = cur.slice(); next.splice(i, 0, nn); commit(next, withLegs(next, [i, i + 1], routed(cur[i]) ? [i, i + 1] : [])); };
-  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]), via: [], pending: false }); commit(next, withLegs(next, [i, i + 1], [routed(cur[i]) ? i : -1, routed(cur[i + 1]) ? i + 1 : -1])); };
+  // A point added ON a routed leg splits the routed points at the nearest one (nothing is asked of
+  // the router, so nothing can come back straight); on a straight leg it is two straight legs, or
+  // two routed ones when Follow trails is on.
+  const insertAt = (i, lat, lng) => {
+    const cur = nodesRef.current, nn = node([lat, lng]);
+    if ((cur[i - 1] && sameP(cur[i - 1].a, nn.a)) || (cur[i] && sameP(cur[i].a, nn.a))) return;
+    const next = cur.slice();
+    if (routed(cur[i])) {
+      const via = cur[i].via;
+      let best = 0, bd = Infinity;
+      via.forEach((p, k) => { const d = (p[0] - nn.a[0]) ** 2 + (p[1] - nn.a[1]) ** 2; if (d < bd) { bd = d; best = k; } });
+      nn.via = via.slice(0, best);
+      next[i] = Object.assign({}, cur[i], { via: via.slice(best + 1) });
+      next.splice(i, 0, nn);
+      commit(next, []);
+      return;
+    }
+    next.splice(i, 0, nn);
+    commit(next, withLegs(next, [i, i + 1]));
+  };
+  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0 || sameP(cur[i].a, round([lat, lng]))) return; /* a press and release is not a move */ const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]), via: [], pending: false }); commit(next, withLegs(next, [i, i + 1], [routed(cur[i]) ? i : -1, routed(cur[i + 1]) ? i + 1 : -1])); };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null); commit(next, withLegs(next, [i], routed(cur[i]) || routed(cur[i + 1]) ? [i] : [])); };
   const clearAll = () => { if (!nodesRef.current.length) return; setSelectedId(null); commit([], []); };
   // Switching Follow trails ON routes every leg that is still straight (the help says it bends each

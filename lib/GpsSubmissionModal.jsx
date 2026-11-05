@@ -535,6 +535,8 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
             {submitting ? 'Submitting...' : crag ? 'Submit Trail' : 'Submit Track'}
           </button>
         </div>
+        {/* WHY Submit is off, in words on the sheet: a tooltip on a disabled button is shown by no phone and read by no screen reader. */}
+        {drawing && !submitting && (drawPts.length < MIN_RECORDED_PTS || drawPending) ? <div role="status" style={{...styles.textSmall, color: C.text70, marginTop: '8px', textAlign: 'right'}}>{drawPts.length < MIN_RECORDED_PTS ? tx('Tap at least ' + MIN_RECORDED_PTS + ' points along the trail to submit it (you have ' + drawPts.length + ').') : 'Still following the trail for a leg.'}</div> : null}
       </div>
     </div>
   )
