@@ -81,7 +81,8 @@ export function AreaFactsCard({ area, C, uElev, onEdit, loggedMonths }) {
   if (area.approach_min != null && area.approach_min > 0) facts.push(["Walk-in", "about " + area.approach_min + " min", "approach_min"]);
   if (area.parking_name && area.parking_name !== "Trailhead") facts.push(["Parking", area.parking_name, null]);
   const season = Array.isArray(area.season_months) && area.season_months.length ? area.season_months : null;
-  if (!facts.length && !season && !logged) {
+  // Nothing stored and nothing logged: the invitation, never an empty grid (check:area-page-honest reads this gate).
+  if (!facts.length && !season) if (!logged) {
     return <div style={card(C)}>
       <div style={headRow}><Head C={C}>Area facts</Head>{onEdit ? <EditIconButton C={C} onClick={() => onEdit("rock")} title={"Add facts about " + area.name} /> : null}</div>
       <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>{"Nothing on file yet — rock, which way it faces, the walk-in, the season. Know it? Add it."}</div>
