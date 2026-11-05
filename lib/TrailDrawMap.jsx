@@ -43,6 +43,13 @@ const flatten = (nodes) => { const out = []; nodes.forEach((n, i) => { if (i > 0
 const legPts = (nodes, i) => [nodes[i - 1].a].concat(nodes[i].via, [nodes[i].a]);
 const sameP = (p, q) => !!p && !!q && p[0] === q[0] && p[1] === q[1];
 const HISTORY_CAP = 50;
+// The run of routed points at one end of a leg that sit within `m` metres of `at` (the anchor being
+// removed): dropped, so the joined leg no longer visits that spot, while a bend elsewhere that
+// merely passes near it is kept.
+function dropNear(via, at, end, m = 40) {
+  if (end === "end") { let e = via.length; while (e > 0 && distM(via[e - 1], at) <= m) e--; return via.slice(0, e); }
+  let s = 0; while (s < via.length && distM(via[s], at) <= m) s++; return via.slice(s);
+}
 // Remembered for the session, not across them: a climber tracing two crags in one sitting keeps the mode.
 let followDefault = false;
 
@@ -233,7 +240,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const undo = () => { if (!undoRef.current.length) return; redoRef.current.push(nodesRef.current); restore(undoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
   const redo = () => { if (!redoRef.current.length) return; undoRef.current.push(nodesRef.current); restore(redoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
   // A tap on the spot the line already ends at (Finish at C twice, a slow double tap) adds nothing.
-  const append = (lat, lng) => { const cur = nodesRef.current, nn = node([lat, lng]); if (cur.length && sameP(cur[cur.length - 1].a, nn.a)) return; const next = cur.concat([nn]); commit(next, withLegs(next, [next.length - 1])); };
+  const append = (lat, lng) => { const cur = nodesRef.current, nn = node([lat, lng]); if (cur.length && distM(cur[cur.length - 1].a, nn.a) < 3) return; const next = cur.concat([nn]); commit(next, withLegs(next, [next.length - 1])); };
   // A point added ON a routed leg splits the routed points at the nearest one (nothing is asked of
   // the router, so nothing can come back straight); on a straight leg it is two straight legs, or
   // two routed ones when Follow trails is on.
@@ -285,14 +292,18 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     // With Follow off the routed points that sat within the moved distance of the anchor's OLD spot
     // are dropped, or the line would run out to the old spot and back: the rest of the path stays.
     const oldA = cur[i].a, movedM = distM(oldA, next[i].a);
-    const trim = (via) => via.filter((p) => distM(p, oldA) > movedM);
-    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { next[k] = Object.assign({}, next[k], { via: trim(next[k].via), pending: on }); if (on) touched.push(next[k].id); } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); } });
+    // Only the RUN of routed points next to the old spot (the end of the leg into it, the start of the
+    // leg out of it), never a bend elsewhere that merely passes within reach.
+    const trimEnd = (via) => { let e = via.length; while (e > 0 && distM(via[e - 1], oldA) <= movedM) e--; return via.slice(0, e); };
+    const trimStart = (via) => { let s = 0; while (s < via.length && distM(via[s], oldA) <= movedM) s++; return via.slice(s); };
+    const trim = (via, k) => (k === i ? trimEnd(via) : trimStart(via));
+    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { next[k] = Object.assign({}, next[k], { via: trim(next[k].via, k), pending: on }); if (on) touched.push(next[k].id); } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); } });
     commit(next, touched); };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null);
     // The merged leg keeps the routed points of both legs it joins (the deleted anchor is the one
     // point that goes); with Follow on it is asked again and keeps them if the router cannot answer.
     const wasRouted = routed(cur[i]) || routed(cur[i + 1]);
-    if (wasRouted && i > 0 && i < next.length) { next[i] = Object.assign({}, next[i], { via: (cur[i].via || []).concat(cur[i + 1].via || []).filter((p) => distM(p, cur[i].a) > 40), pending: !!propsRef.current.follow }); commit(next, propsRef.current.follow ? [next[i].id] : []); return; }
+    if (wasRouted && i > 0 && i < next.length) { next[i] = Object.assign({}, next[i], { via: dropNear(cur[i].via || [], cur[i].a, "end").concat(dropNear(cur[i + 1].via || [], cur[i].a, "start")), pending: !!propsRef.current.follow }); commit(next, propsRef.current.follow ? [next[i].id] : []); return; }
     commit(next, withLegs(next, [i])); };
   // Clear gives up every answer still on its way, so a new line's legs do not queue behind dead ones.
   const clearAll = () => { if (!nodesRef.current.length) return; routing.current.forEach((c) => c.abort()); routing.current.clear(); setSelectedId(null); commit([], []); };
