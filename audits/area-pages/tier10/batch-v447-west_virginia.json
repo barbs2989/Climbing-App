@@ -1,0 +1,30 @@
+{
+ "wv_tuggin_shack": {
+  "_expect": { "name": "Tuggin' Shack", "region": "West Virginia" },
+  "blurb": "A small bouldering cliffline tucked in the trees beside the American Alpine Club campground, the first stop in the Interp group of the New River Gorge. Thirteen sandstone problems, most of them between V0 and V3, with a lone V4 and a single V8 for the strong. Many lines reward good footwork and balance more than raw power, which makes it a friendly place to warm up or to hang out between sessions on the harder boulders nearby. The setting is wooded and low-key, and the walk from the car is short.",
+  "parking_note": "Leave the car in the lot at the lower end of the campground loop road, directly opposite campsite 23.",
+  "approach": "From the fire pit, follow the trail signed for Burnwood, climb a small rise toward the gorge, then descend; the cliffline sits on your right.",
+  "review": { "sources": ["https://www.mountainproject.com/area/115172892/tuggin-shack", "https://www.mountainproject.com/area/110536397/interp-boulders"] }
+ },
+ "wv_5_wild_seed_area": {
+  "_expect": { "name": "Wild Seed Area", "region": "West Virginia" },
+  "blurb": "A sport-focused section in the middle of Fern Buttress, the downstream stretch of Endless Wall in the New River Gorge. A dozen routes on sandstone, nearly all of them bolted, with one trad line. Grades start at 5.10 and climb steadily: half the routes are 5.12, a third are 5.11, and only a couple are 5.10. It suits strong climbers looking for steady, well-bolted projects rather than a place to ease into the grade, and it makes a good day alongside the neighbouring numbered sections of the buttress.",
+  "review": { "sources": ["https://rakkup.com/guidebook/new-river-gorge-rock-climbing/wild-seed-area/s10551", "https://www.mountainproject.com/area/105944132/fern-buttress"] }
+ },
+ "wv_taper_point_boulder": {
+  "_expect": { "name": "Taper Point Boulder", "region": "West Virginia" },
+  "blurb": "One boulder within Cotton Top, a hillside scattered with big sandstone blocks close to the road in the Cotton Hill part of the New River Gorge. The thirteen problems here run mostly from VB-level up to V4, with one V6 and one V8 at the top end, so it is a gentler stop than the tall, proud lines Cotton Top is known for; the quality is described as more moderate here. The wider area sits a short drive from Fayetteville, and reaching the blocks means a walk of roughly 5 to 15 minutes, part of it steeply uphill.",
+  "review": { "sources": ["https://thetopo.com/crags/cotton-top-boulders/routelist/taper-point", "https://thetopo.com/crags/cotton-top-boulders/description"] }
+ },
+ "wv_romulus_and_remus_area": {
+  "_expect": { "name": "Romulus and Remus Area", "region": "West Virginia" },
+  "blurb": "A cluster of sandstone boulders inside Upper Rock City, the farthest-along of the main bouldering zones in Coopers Rock State Forest near Morgantown. Most of the thirteen problems are easy to moderate, from V0 up to about V5, but the area also holds a few serious test pieces in the double digits, plus a single easy trad line. Upper Rock City as a whole sees more foot traffic than the forest's other main areas, partly from non-climbing hikers. The rock is fragile and marks easily when wet, so wait for dry conditions.",
+  "review": { "sources": ["https://thetopo.com/crags/coopers-rock-upper-rock-city/topos/romulus-and-remus", "https://mountainproject.com/area/107495144/upper-rock-city"] }
+ },
+ "_skipped": {
+  "wv_font_boulders": "no fetched page about Font Boulders itself; only route pages and the Upper Rock City parent page name it",
+  "wv_07_necro_wall": "no fetched page about Necro Wall itself; only the Bozoo parent page names it",
+  "wv_a_4": "no fetched page about A-4 itself; Long Mountain parent pages only list it as a section",
+  "wv_creekside_boulders": "no page found for Creekside Boulders at Coopers Rock after multiple searches"
+ }
+}
