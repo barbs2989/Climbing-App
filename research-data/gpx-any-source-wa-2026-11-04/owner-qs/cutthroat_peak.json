@@ -1,0 +1,24 @@
+{
+  "key": "cutthroat_peak",
+  "question": "Where is the 'SR 20 pullout' for Cutthroat really, given our pins at 48.5162,-120.6836 but every track starts near 48.5134,-120.6879?",
+  "answer": "The pullout is at about 48.5134,-120.6882 on SR-20, where the tracks start, not where our pins are. Three independent lines agree. (1) A geocache listing placed at the climbers' trailhead gives parking at N48 30.802 W120 41.295 = 48.51337,-120.68825, an extra-wide, long pull-off with the climbers' trail starting down the embankment about 175 paces past the end of the guard rail. (2) Twelve or more logged ascents of Cutthroat, and the Whistler North Ridge ascent, start within about 40 m of 48.5128-48.5134,-120.6879 to -120.6889. (3) The Whistler North Ridge route page describes the same spot as a double-wide paved shoulder without guard rail, a short walk west of the marked Blue Lake lot, with the climbers' trail visible from the car. The official Blue Lake Trailhead is a separate signed lot at 48.51899,-120.67435 (OSM node; WTA gives 48.5191,-120.6742), about 1.2 km east, and is not the climbers' pullout. OSM reverse geocoding puts both 48.5132,-120.6881 and our stored 48.5162,-120.6836 on the highway centreline; OSM has no parking feature at either spot and the Overpass servers were down (502), so no official or mapped parking feature exists to confirm it. The strict 'official/mapped source' standard cannot be met; the geocache plus tracks plus route description is the best available. Our stored pin is about 450 m east of the real pullout, which is why two tracks fail the 300 m rule.",
+  "recommendation": "Move the 'SR 20 pullout' Trailhead pins on the Cutthroat rows from 48.5162,-120.6836 to 48.5134,-120.6882. Because no official or mapped page confirms it, the owner may prefer to keep the pin and label it an informal pullout; the 12+ track starts within 40 m are the evidence the 300 m rule needs. Do not substitute the Blue Lake Trailhead pin.",
+  "confidence": "medium",
+  "proposed": {
+    "trailhead_pin": {"name": "SR 20 climbers' pullout (west of the Blue Lake trailhead)", "lat": 48.5134, "lng": -120.6882},
+    "not_this": {"name": "Blue Lake Trailhead (signed lot, separate)", "lat": 48.51899, "lng": -120.67435}
+  },
+  "evidence": [
+    "https://www.geocaching.com/geocache/GC1VM77 — parking at N48 30.802 W120 41.295, extra wide and long pull-off, climbers' trail down the embankment, ~175 paces from end of guard rail",
+    "https://www.summitpost.org/north-ridge/331172 — same start as Cutthroat, wide double shoulder without guard rail, short distance west of the Blue Lake lot",
+    "https://nominatim.openstreetmap.org/reverse?lat=48.5189941&lon=-120.6743456 — OSM Blue Lake Trailhead node, distinct from the pullout",
+    "https://www.wta.org/go-hiking/hikes/blue-lake — Blue Lake trailhead 48.5191,-120.6742 (via search snippet)",
+    "Peakbagger tracks in the packets of cutthroat_peak and whistler_mountain_okanogan — 12+ starts at 48.5128-48.5134,-120.6879 to -120.6889"
+  ],
+  "searched": [
+    "Cutthroat Peak SR 20 parking pullout coordinates trailhead south buttress — Mountain Project, Alpine Institute and Mountaineers say a long pullout on the north side about 1.5 mi west of Washington Pass; only the geocache gives coordinates",
+    "Overpass API on four mirrors around 48.5134,-120.6879 for parking/trailhead — 502s and timeouts throughout",
+    "Nominatim reverse at 48.5134,-120.6882 and 48.5162,-120.6836 — both on North Cascades Highway centreline; no parking feature",
+    "USFS Blue Lake trailhead page and WTA/MyHikes (via search) — signed lot near milepost 162 at 48.519,-120.674; a separate place"
+  ]
+}
