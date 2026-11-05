@@ -56,7 +56,9 @@ async function del(id) {
     if (!r.ok || !Array.isArray(gone) || gone.length !== 1) throw new Error(`DELETE ${id} -> ${r.status}, ${Array.isArray(gone) ? gone.length : "?"} rows`);
   });
 }
-const same = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+// key order is not content: a trigger may rebuild a waypoint object with its keys in another order
+const canon = v => Array.isArray(v) ? v.map(canon) : v && typeof v === "object" ? Object.fromEntries(Object.keys(v).sort().map(k => [k, canon(v[k])])) : v;
+const same = (a, b) => JSON.stringify(canon(a ?? null)) === JSON.stringify(canon(b ?? null));
 
 const STAMP = Date.now();
 const backups = [];
