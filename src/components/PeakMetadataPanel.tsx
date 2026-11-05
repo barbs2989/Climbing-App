@@ -9,7 +9,7 @@ export interface PeakMetadataPanelProps {
 }
 
 export default function PeakMetadataPanel({route, C, ActionIcon}: PeakMetadataPanelProps) {
-  const LBL={fontSize:10,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.6}; /* = core's SUB_LABEL, from this panel's own C prop */
+  const LBL={fontSize:10,fontWeight:800,color:C.label,textTransform:"uppercase",letterSpacing:0.6}; /* = core's SUB_LABEL, from this panel's own C prop */
   if (!route.peakMetadata) return null;
   const {county, range, firstAscent} = route.peakMetadata;
   // Only surface facts that actually have data — county in particular is populated

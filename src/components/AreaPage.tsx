@@ -1,5 +1,5 @@
 import { DISCIPLINES, ATYPE } from "../../lib/areaBrowserShared.js";
-import { useState, useRef } from "react";
+import { useState, useRef, type CSSProperties } from "react";
 import { useArea, useAreaClimbStats, useAreaContributions, useAreaChildren, useAreaChildrenGradeCounts, useAreaRoutes, useAreaClassics, useAreaNamesByIds, submitAreaPlacementClaim } from "../../lib/db";
 import { useWideScreen } from "../../lib/wideLayout.js";
 import WallGradeBars from "./WallGradeBars.tsx";
@@ -170,6 +170,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // The mini grade chart on each child's card (item 13, 2026-11-04) is a website thing: one call for
   // the whole list, only where there is a list to draw it on. The phone card is unchanged.
   const wide = useWideScreen();
+  // The desktop "add / edit / wrong place" row's cells (see the row under the climb list).
+  const cellBox: CSSProperties = { flex: "1 1 180px", minWidth: 0, display: "flex", flexDirection: "column", justifyContent: "space-between" };
+  const cellQ: CSSProperties = { fontSize: 13.5, fontWeight: 700, color: C.text, marginBottom: 8 };
+  const cellBtn: CSSProperties = { ...BTN_LG, background: C.surface, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 };
   const kidGrades: AreaPageQuery<Record<string, WallGradeRow[]>> = useAreaChildrenGradeCounts(wide && chartable && isLeaf === false ? area.id : null);
   // Above a wall the classics come from the whole subtree (0390); a wall ranks its own loaded rows (areaClassics).
   const classicsUp: AreaPageQuery<AreaPageClassic[]> = useAreaClassics(area.id, isLeaf === false && chartable);
@@ -311,7 +315,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
                 const wallChip = (on: boolean) => ({ ...CHIP, flexShrink: 0, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" });
                 return <>
                   {routes.length > 1 ? <div style={{ marginBottom: 8 }}>
-                    <button onClick={() => setWallFilterOpen(o => !o)} aria-expanded={wallFilterOpen} style={{ ...wallChip(filtersOn > 0), minHeight: 44 }}>{"Filters" + (filtersOn ? " (" + filtersOn + ")" : "")}</button>
+                    <button onClick={() => setWallFilterOpen(o => !o)} aria-expanded={wallFilterOpen} style={{ ...BTN_LG, minWidth: 160, minHeight: 48, padding: "13px 28px", border: "1px solid " + (filtersOn ? C.blue : C.border), background: filtersOn ? C.blueBg : C.surface, color: filtersOn ? "#fff" : C.text, whiteSpace: "nowrap" }}>{"Filters" + (filtersOn ? " (" + filtersOn + ")" : "")}</button>
                     {wallFilterOpen ? <div style={{ marginTop: 8, padding: "10px 11px", background: C.card, borderRadius: 10, border: "1px solid " + C.border }}>
                       <div id="wall-filter-disc" style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6 }}>Discipline</div>
                       <div role="group" aria-labelledby="wall-filter-disc" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 10 }}>{[["", "All"], ...discsHere.map(d => [d, discLabel(d)])].map(o => <button key={o[0] || "all"} onClick={() => setWallDisc(o[0])} aria-pressed={wallDisc === o[0]} style={wallChip(wallDisc === o[0])}>{o[1]}</button>)}</div>
@@ -347,18 +351,33 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
           their climb — or their crag — is the one who adds it. It is NOT gated on the list
           rendering — an empty crag is exactly where a missing route is likeliest. */}
       <div ref={listEndRef} />
-      <AddHereFooter area={area} onAddClimb={onAddClimb} onAddArea={onAddArea} C={C} />
+      {/* DESKTOP: ONE ROW, NOT A STACK (owner 2026-11-05). On a monitor the three prompts sat one under another
+          as label-wide buttons down the left of the column; side by side, each is its question with its button
+          under it. The phone keeps the stack: a 360px screen has no room for three. */}
+      {wide ? <div style={{ display: "flex", flexWrap: "wrap", alignItems: "stretch", gap: "12px 14px", marginTop: 10, marginBottom: 16 }}>
+        <AddHereFooter area={area} onAddClimb={onAddClimb} onAddArea={onAddArea} cell C={C} />
+        {editOn ? <div style={cellBox}>
+          <div style={cellQ}>{"Know " + area.name + "?"}</div>
+          <button onClick={() => editOn(null)} aria-label={"Suggest an edit to " + area.name} style={{ ...cellBtn, border: "1px dashed " + C.border, color: C.blue }}>{"Suggest an edit"}<span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={14} color={"currentColor"}/></span></button>
+        </div> : null}
+        <div style={cellBox}>
+          <div style={cellQ}>{"Wrong place?"}</div>
+          <button onClick={() => setWrongOpen(true)} aria-label={"Wrong place? Tell us where " + area.name + " belongs"} style={{ ...cellBtn, border: "1px solid " + C.border, color: C.textSub }}>{"Tell us where"}</button>
+        </div>
+      </div> : <>
+        <AddHereFooter area={area} onAddClimb={onAddClimb} onAddArea={onAddArea} C={C} />
 
-      {editOn ? (
-        <button onClick={() => editOn(null)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
-          {"Know " + area.name + "? Suggest an edit"}<span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={14} color={"currentColor"}/></span>
+        {editOn ? (
+          <button onClick={() => editOn(null)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
+            {"Know " + area.name + "? Suggest an edit"}<span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={14} color={"currentColor"}/></span>
+          </button>
+        ) : null}
+
+        {/* WRONG PLACE (0372): a claim only. The page does not change; the owner moves the area and resolves it. */}
+        <button onClick={() => setWrongOpen(true)} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.border, background: C.surface, color: C.textSub, marginBottom: 14 }}>
+          {"Wrong place? Tell us where " + area.name + " belongs"}
         </button>
-      ) : null}
-
-      {/* WRONG PLACE (0372): a claim only. The page does not change; the owner moves the area and resolves it. */}
-      <button onClick={() => setWrongOpen(true)} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.border, background: C.surface, color: C.textSub, marginBottom: 14 }}>
-        {"Wrong place? Tell us where " + area.name + " belongs"}
-      </button>
+      </>}
       {wrongOpen ? <AreaWrongSpot area={area} C={C} onClose={() => setWrongOpen(false)} onSubmit={(note: string, place: string) => submitAreaPlacementClaim(area.id, note, place)} onSignIn={onSignIn} /> : null}
 
       {/* CLASSIC CLIMBS HERE (areaClassics, every one: five, then a dropdown); with none, TOP RATED HERE — the rows

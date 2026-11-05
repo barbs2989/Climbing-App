@@ -14,16 +14,20 @@ export interface AddHereFooterProps {
   onAddClimb?: ((area: AddHereFooterArea) => void) | null;
   /** Absent hides "Add an area". */
   onAddArea?: ((area: AddHereFooterArea) => void) | null;
+  /** Desktop: drawn as one cell of AreaPage's "add / edit / wrong place" row — question on top, buttons at
+   *  the cell's foot — instead of a full-width block of its own. */
+  cell?: boolean;
   C: typeof Palette;
 }
-export default function AddHereFooter({ area, onAddClimb, onAddArea, C }: AddHereFooterProps) {
+export default function AddHereFooter({ area, onAddClimb, onAddArea, cell, C }: AddHereFooterProps) {
   const { data: kids } = useAreaChildren(onAddArea && area ? area.id : null);
   if (!area || (!onAddClimb && !onAddArea)) return null;
   const holdsClimbs = Array.isArray(kids) && kids.length === 0 && area.route_count > 0;
   const canArea = !!onAddArea && Array.isArray(kids) && !holdsClimbs && !["world", "country"].includes(area.area_type);
-  const btn = { ...BTN_LG, flex: 1, minWidth: 0, border: "1px dashed " + C.border, background: C.surface, color: C.blue, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 };
+  // In a cell, flexGrow/flexBasis rather than `flex: 1`: wideLayout shrinks a lone `flex: 1` button to its label.
+  const btn = { ...BTN_LG, ...(cell ? { flexGrow: 1, flexBasis: 0 } : { flex: 1 }), minWidth: 0, border: "1px dashed " + C.border, background: C.surface, color: C.blue, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 };
   return (
-    <div style={{ marginTop: 10, marginBottom: 14 }}>
+    <div style={cell ? { flex: (canArea && onAddClimb ? "2 1 260px" : "1 1 180px"), minWidth: 0, display: "flex", flexDirection: "column", justifyContent: "space-between" } : { marginTop: 10, marginBottom: 14 }}>
       <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, marginBottom: 8 }}>{canArea && onAddClimb ? "Don’t see a climb or area here?" : canArea ? "Don’t see an area here?" : "Don’t see a climb here?"}</div>
       <div style={{ display: "flex", gap: 8 }}>
         {onAddClimb ? <button onClick={() => onAddClimb(area)} aria-label={"Add a climb to " + area.name} style={btn}>{"Add a climb"}<span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={14} color={"currentColor"}/></span></button> : null}
