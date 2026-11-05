@@ -1,0 +1,41 @@
+{
+ "ca_middle_earth_corridor": {
+  "_expect": { "name": "Middle Earth Corridor", "region": "California" },
+  "blurb": "A tight, canyon-like slot of short rock walls in the Mission Gorge climbing zone of San Diego, with 16 routes packed close together. Trad leads the mix, followed by top-rope lines and a handful of sport routes, and the grades run from the easy 5.6 range up to about 5.11, with the bulk in the 5.8 to 5.10 band. Routes are brief, so it suits quick laps rather than long days. The bolts are fresher and more numerous than at some neighbouring walls, and the narrow setting tends to hold shade. Popular lines include a 5.7 and a couple of 5.8s, making it a reasonable spot for climbers stepping up to trad.",
+  "review": { "sources": ["https://www.mountainproject.com/area/201172223/middle-earth-corridor", "https://app.advcollective.com/climbing/dwarrowdelf-trad-climb-in-mission-gorge"] }
+ },
+ "ca_alcove_the_2": {
+  "_expect": { "name": "Alcove, The", "region": "California" },
+  "blurb": "A small sport-climbing pocket on the Main Island formation at Clark Canyon, close to Mammoth Lakes in the Eastern Sierra. Its 16 routes are nearly all bolted, short single pitches of roughly 20 to 40 feet, and the grades cluster at 5.10 with a few easier ones around 5.9 and a couple of harder lines above 5.11. Climbing is pocket-pulling and fairly steep. The curve of the alcove throws shade on it in the afternoon, and one side stays cool for most of the day, so it works in warmer months. Expect a moderately steep, exposed hike to reach the base. Bring a standard rack of quickdraws only.",
+  "review": { "sources": ["https://app.advcollective.com/climbing/the-alcove-focused-climbing-in-shady-eastern-sierra", "https://www.mountainproject.com/area/106196932/main-island"] }
+ },
+ "ca_slack_to_west_buttress_the": {
+  "_expect": { "name": "The Slack to West Buttress", "region": "California" },
+  "blurb": "A stretch of base routes along the southwest foot of El Capitan in Yosemite Valley, running from the Slack over to the West Buttress. Of its 16 climbs, 14 are trad and two are aid lines. Free grades start around 5.5 and reach about 5.11, with most routes sitting in the 5.9 to 5.11 range, so it mostly suits climbers comfortable on sustained granite crack and face climbing. Several routes run to multiple pitches, and a few of the well-liked ones, such as Sacherer Cracker and Mark of Art, draw repeat visits. It is a handy place to warm up or to climb when you are not committing to the big wall above.",
+  "review": { "sources": ["https://mountainproject.com/area/119319385/the-slack-to-west-buttress", "https://www.mountainproject.com/area/116970915/southwest-base"] }
+ },
+ "ca_thin_wall_the": {
+  "_expect": { "name": "Thin Wall, The", "region": "California" },
+  "blurb": "A slim freestanding formation in Real Hidden Valley, Joshua Tree, close to the nature loop and a short hike from the lot. Sixteen climbs here are almost all trad, plus a single top-rope line, spread over an east and a west side. Grades run from easy fourth-class up to about 5.11, with the largest group around 5.8 and several more at 5.9 and 5.10. The east side is the busy one, with plentiful crack and face routes that suit beginners who want a first taste of Joshua Tree trad, so arrive early or late to beat the crowds. Shade is scarce, and grades have a reputation for running stiff.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105720750/the-thin-wall", "https://app.advcollective.com/climbing/no-calculators-allowed-a-sharp-trad-climb-on-joshua-trees-thin-wall", "https://app.advcollective.com/climbing/count-on-your-fingers-a-bold-traditional-climb-in-joshua-trees-thin-wall"] }
+ },
+ "ca_conan_s_corridor": {
+  "_expect": { "name": "Conan's Corridor", "region": "California" },
+  "blurb": "A sheltered amphitheater of walls tucked away across the road from the campground in the Jumbo Rocks part of Joshua Tree. Sixteen routes, nearly all trad with one sport line and one top rope, range from 5.7 to about 5.11, and the 5.10 grade holds the largest share. The Corridor Face is the centrepiece, home to the area's best-known crack climbs, including a long hand-and-finger crack and a shorter hand crack that serves as a warm-up. Rock here is smoother and better than the notoriously rough stone nearby. The walk in follows a wash and passes through a short slot, so allow a few minutes to find it.",
+  "review": { "sources": ["https://mountainproject.com/area/105720585/jumbo-rock-area", "https://mountainproject.com/route/105724777/colorado-crack"] }
+ },
+ "ca_barrett_stoddard_boulders": {
+  "_expect": { "name": "Barrett-Stoddard Boulders", "region": "California" },
+  "blurb": "A cluster of boulders in forest beside Barrett-Stoddard Road, off Mt Baldy Road in the Angeles National Forest above the San Gabriel Valley. The 16 problems range from V0 warm-ups to a few hard ones around V6 and V7, with most falling between V0 and V5. Bring one or two pads. The stone is mostly good but can turn chossy in places, and the quality is middling, which makes it more a local evening option than a destination trip. Boulders sit among trees close to the road; an upper group a short way further up the road is easier to reach.",
+  "review": { "sources": ["https://mountainproject.com/area/113885045/barrett-stoddard-boulders", "https://www.mountainproject.com/route/113885058/straightforward"] }
+ },
+ "_skipped": {
+  "ca_east_face_left": "no fetched page about this crag itself; Mountain Project's Snowshed Wall East Face lists no 'East Face - Left' section, and coordinates could not be matched to a page",
+  "ca_boulder_in_the_woods": "only the parent Bishop Peak pages were fetched; neither describes Boulder In The Woods itself (topo page empty)"
+ },
+ "_conflicts": {
+  "ca_alcove_the_2": "Approach fork disagrees: https://www.mountainproject.com/area/106196932/main-island says take the left trail at the split, https://app.advcollective.com/climbing/the-alcove-focused-climbing-in-shady-eastern-sierra says right fork. Aspect south (advcollective) is a single page.",
+  "ca_middle_earth_corridor": "Stored rock granodiorite; https://app.advcollective.com/climbing/dwarrowdelf-trad-climb-in-mission-gorge calls it sandstone and south facing (single route page).",
+  "ca_conan_s_corridor": "Stored aspect E; https://app.advcollective.com/climbing/gem-a-compact-hand-crack-adventure-in-joshua-tree says the Corridor Face is south facing."
+ }
+}
