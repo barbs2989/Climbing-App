@@ -178,7 +178,10 @@ export function WideRail({ upcoming, alerts, waiting, guest, onSignIn, onOpenCal
 /* SITE FOOTER. A directory of every state the catalog holds, then the site's own links, the way
    Mountain Project ends every page. The states list is a DB read: a failure says so. */
 /* `showStates` (owner 2026-11-04): the state directory is a way into the CATALOG, so it ends the
-   Climbs tab and its route and area pages only; Home, Crews, Logbook… end on the short footer. */
+   Climbs tab's route and area pages only; Home, Crews, Logbook… end on the short footer. The Climbs
+   tab's own ROOT (the state picker) ends on the short footer too (owner 2026-11-04): the picker
+   above already lays out every state as a card under the country buttons (United States, Canada),
+   so the same list again at the bottom of that page was redundant. */
 export function WideFooter({ onOpenState, links, legal, showStates }) {
   const statesQ = useStates(); // read always (hooks order); drawn only where showStates says
   const states = ((statesQ.data || []).filter(s => Number(s.route_count) > 0)).slice().sort((a, b) => a.name.localeCompare(b.name));
