@@ -40,6 +40,13 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   *Your grades*: Sport, Trad and Boulder always, plus **Ice, Mixed and Aid once that discipline is tapped** (or a grade
   is already on file), on the profile editor's `PROFILE_GRADES` ladders. Those three are saved to `climb_grades`, merged
   with any lead/follow role already there, by the same `saveProfile` call as the rest.
+- **Lead vs follow grades** (competitor review batch C, item 20, 2026-11-05 — Mountain Project's "Lead 5.7 / Follow 5.9"): in
+  *Grades you climb* every roped discipline (sport, trad, ice, mixed, aid) has two pickers — the hardest you climb (the
+  discipline's own column, or `climb_grades.<k>.grade` for ice, mixed and aid) and **Leads**, the hardest you lead
+  (`climb_grades.<k>.lead`, migration 0405; *Follows only* when empty). `role` is still written beside it (`lead` when a lead
+  grade is set, else `follow`) so older readers keep working, and an older row flagged *Lead* at its one grade reads as leading
+  that grade (`profileGradeRows` → `lead`). The profile's HARDEST GRADES tiles say *leads 5.9* (or *leads it*) under the grade; the
+  Partners filters offer **Leads ▾** for the picked discipline. The match % (`compat`) still scores the hardest grade, not the lead grade.
 - **Every surface that prints a climber's grades reads all six** through `profileGradeRows` / `profileDiscGrades`
   (`ClimbMatchCore.jsx`): the profile, the résumé (`src/components/Resume.tsx`), the share card (`lib/ShareCard.jsx`),
   the Home *Add your climbing grades* gap and its bell reminder (an ice, mixed or aid grade alone now counts as having
