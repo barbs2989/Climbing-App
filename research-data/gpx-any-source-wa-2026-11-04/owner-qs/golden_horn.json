@@ -1,0 +1,40 @@
+{
+  "key": "golden_horn",
+  "question": "Do the harvested 'Golden Horn' tracks actually climb Golden Horn, or Tower Mountain (the claim: 10 of 13 top out on Tower)?",
+  "answer": "Confirmed in substance, with the count refined. Golden Horn (summit 48.60368,-120.732189, 8,422.7 ft lidar) and Tower Mountain (about 48.5886,-120.7040, 8,444 ft, 2.66 km SE of it) are two separate peaks climbed from the same Snowy Lakes basin, and many parties do both on one trip. Measured on the 13 packet tracks that carry geometry, 7 have their highest point on Tower (within 24-33 m of Tower's summit): aids 3286448, 3282511, 2338982, 2339587, 2040093, 1489653, 1248192. Tower is about 20 ft higher than Golden Horn, so any combination trip peaks on Tower, not Golden Horn. Of those 7, five also pass within roughly 40 m of Golden Horn (a link-up); 3286448 passes 386 m from it. Five tracks have their highest point on Golden Horn (3376784, 3371772, 2903601, 2417023, 1897401), one (3302586, Azurite combo) peaks 6 km away, and four older tracks have no geometry in the packet (1121026, 998883, 1771321, 459832; the 2018 and 2014 reports name both peaks). Counting those four as Tower-involved gives the quoted 10 of 13 (my geometry-only count is 7 firm). No track here is a complete trailhead-summit-trailhead recording of Golden Horn alone: 3371772 ends at the lakes, 2417023 is a one-way walk in from Cutthroat Lake, 2903601 begins at Upper Snowy Lake, and 3376784 is a Golden Horn plus Mount Hardy day. 1897401 (April 2022) is the NE face 'new route' line from a different approach, not the standard.",
+  "recommendation": "Never attach any of the seven Tower-high tracks to a Golden Horn row (they draw another peak's line). Of the five Golden-Horn-high tracks only 3376784 and 3371772 follow the standard Snowy Lakes route and both are partial; hold for a complete one. 1897401 belongs, if anywhere, to a Northeast Face row, not the Southwest Route. No change to rows.",
+  "confidence": "high",
+  "proposed": {
+    "tower_high_tracks": [
+      "3286448",
+      "3282511",
+      "2338982",
+      "2339587",
+      "2040093",
+      "1489653",
+      "1248192"
+    ],
+    "golden_horn_high_tracks": [
+      "3376784",
+      "3371772",
+      "2903601",
+      "2417023",
+      "1897401"
+    ],
+    "other": [
+      "3302586 (Azurite combo, high point 6 km away)"
+    ],
+    "tower_summit_from_tracks": "48.5886,-120.7040 (peakbagger track highs 2570-2580 m)"
+  },
+  "evidence": [
+    "packets-all/wa_golden_horn.json - per-track highest point, distances computed to both summits (Golden Horn 48.60368,-120.732189; Tower 48.58856,-120.70401)",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Tower+Mountain+Washington - Tower Mountain, Skagit County peak at 48.5887807,-120.7038573",
+    "https://www.mountaineers.org/explore/routes-places/tower-mountain-golden-horn - search snippet: the two peaks are climbed in either order from the Snowy Lakes basin as one outing",
+    "https://countryhighpoints.com/golden-horn-tower-mountain-and-azurite-peak - 2018 report: Golden Horn then Tower the same day (8,366 ft vs 8,444 ft in older numbers)"
+  ],
+  "searched": [
+    "WebSearch 'Golden Horn Tower Mountain Snowy Lakes climb same trip' - Mountaineers combined route page, SummitPost Tower page says it can be done in the same trip, several combo reports",
+    "WebFetch nominatim 'Tower Mountain Washington' - two hits; the Skagit County one is right",
+    "Computed in node: distance of each packet track highest point and nearest shape point to both summits; shape is a 42-point resample so minimum distances are coarse (+/- ~100 m)"
+  ]
+}

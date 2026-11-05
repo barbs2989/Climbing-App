@@ -78,9 +78,13 @@ room for side-panel ads later. The phone app keeps its own look.
     952; 1920 → 610–1310, rail 1592). The empty space either side of the column on a big monitor is where
     side ads can go later.
   - **Help & FAQ is a page on the website** (competitor review batch B, item 19, owner 2026-11-04): the footer's *Help & FAQ* link (and the Menu's *How ClimbMatch works* on a phone) opens the same `Help` (`lib/Help.jsx`) — the tour, the FAQ, and a CONTACT line — drawn in the column with ← Back (`page` prop, `_vHelp` in `_pageView`) at 1024px+ and as the dialog on a phone. The contact address is `CONTACT_EMAIL` in `lib/contact.js`, a placeholder on the reserved `.example` domain until the owner replaces it ("put a placeholder email for now i will do that later").
-  - A site **footer** under every page: ClimbMatch links, Legal links, ©. It is the ONLY home of About,
+  - A site **footer** under every page, Strava-style (owner 2026-11-04: "look how strava does it …
+    more branding"): a card with the mark, wordmark and one line on what the app is for, three link
+    columns (Explore: the tabs; ClimbMatch: Help & FAQ, About us, Feedback, Rate the app, Settings;
+    Legal: Terms, Privacy, Guidelines, Accessibility), then a thin © row with Back to top. It is the ONLY home of About,
     Help, Feedback, Privacy and Terms on desktop. The **directory of every state with climbs** heads it on
-    the Climbs tab and its route and area pages only (owner 2026-11-04, `showStates`).
+    the Climbs tab's route and area pages only (owner 2026-11-04, `showStates`); not the tab's own
+    root, where the state picker above already lists every state under the country buttons.
   - **☰ Menu** fills the whole window, as on a phone, with its content centred in a 720px column.
   - **Full-screen views are pages.** Every view that covers the phone screen (Calendar, Messages, Edit
     profile, a group, an event, Settings' sub-pages, Best day, Manage areas, Terms…) is drawn in the
@@ -94,7 +98,7 @@ room for side-panel ads later. The phone app keeps its own look.
     pick opens to its right, the inbox staying open; *Choose a conversation* fills the right until then.
   - **The Climbs tab shows its regions as a grid** of cards with their climb counts (the countries
     as buttons when there are two or more) instead of two dropdowns; **Groups** lists its group
-    cards and your group rows two per row. Partner and crew cards are long, so they stay one per row.
+    cards three across, each under a cover band (App's `groupBand`: a colour chosen from the group's name, and its initial — groups have no cover photo), and *Your groups* on For you as the same banded tiles three across (owner 2026-11-04, after Meetup); the *Your groups* tab's rows stay two per row. Partner and crew cards are long, so they stay one per row.
   - **The Calendar has a month view** above its lists (`MonthGrid`): your crews' agreed climbing days and
     group events on a month grid with ‹ › and *Today*; each entry opens what the list would. Crew days and
     events only (owner).
@@ -108,7 +112,7 @@ room for side-panel ads later. The phone app keeps its own look.
     (the app's navy — the one main action), `BTN_SECONDARY` (bordered, plain text), `BTN_LINK` (no box), and
     `BTN_GO` (green, only Accept and Log). Applied to crew join requests, the partner card's Form crew / +
     Invite to crew, the Logbook list's actions and the profile's actions; the profile's four actions sit in
-    ONE row on the website (Edit primary). The ✕ and ← Back stay popupChrome's (owner's look).
+    ONE row on the website (Edit primary). The ✕ and ← Back stay popupChrome's, and are COMPACT (owner 2026-11-04, "way too large on phone and desktop"): `POP_CLOSE` a 36px circle, `POP_BACK` a 36px pill with 14px type, down from 48px; `lib/tapSlop.js` still lands a near touch on them. Groups' header is `quiet` like the other tabs.
   - **Nothing stretches across the page** (owner 2026-10-22): the page column is 700px (720 → 640 on
     2026-10-22, → 700 with the zoom on 2026-11-04), and an
     action button sizes to its label instead of filling the column — `wideCss`' rule for a `width:100%`
@@ -135,6 +139,16 @@ room for side-panel ads later. The phone app keeps its own look.
     never hits a hidden Delete; it keeps the swipe. Rows that already act in-row get no column: a Past
     crew card has its own Archive and Clear buttons, a notification its ⋯ menu, a float plan its
     two-step Delete.
+  - **Controls are website-height** (owner 2026-11-04, "are buttons and things too large on the desktop
+    view?" — "do what you recommend"): a census at 1440px put the text at a median 13.8px rendered, level
+    with Mountain Project and Strava, but the controls at a median 44–48px against their 35–43: the phone's
+    44px touch minimum times the 1.1 zoom. The zoom stays and one `wideCss` block trims the controls,
+    matched on the serialised inline style like the rules around it: the two floors index.html sets
+    (every select 44px, every box-shaped button 40px) become 38 / 34, an inline `minHeight` of 44–46 or 48
+    becomes 38 / 40 where the box rule does not reach (flex rows), a fixed 48px tile 40, and the unified
+    `BTN` / `BTN_LG` paddings lose 2–3px. Buttons and selects only; popupChrome's ✕ / Back keep their 48px
+    (told apart by their 24px radius). After: Home's median control 53 → 42px rendered, Crews 45 → 41,
+    Logbook 44 → 39; the phone measures the same as before.
   - **Chip rows wrap** instead of scrolling sideways off the column (a `wideCss` rule for every
     `display:flex` + `overflow-x:auto` row in the page column or a page); a row holding photos (at any depth) and
     the hour picker keep scrolling.

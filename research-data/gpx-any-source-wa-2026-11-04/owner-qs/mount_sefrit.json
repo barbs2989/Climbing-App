@@ -1,0 +1,20 @@
+{
+  "key": "mount_sefrit",
+  "question": "Is there a south-slopes route to Mount Sefrit from the Nooksack Cirque trail, and do we lack it?",
+  "answer": "It is real but we already hold it under another name. The wa_mount_sefrit_southwest_ridge row (Class 4) starts at the Nooksack Cirque Trailhead (Trail #750, FR 34, Ruth Creek ford), leaves the trail after roughly 2 miles, bushwhacks about 3,000 ft of forest to the 5,800 ft meadows, then goes up a summit gully system. The logged tracks and reports for 'South Slopes / Southeast Ridge' (1504057, 2923338, 3000159, 2927979) do the same thing: leave the Nooksack Cirque trail at a log-bridged stream near 2,550 ft, climb forest to a basin near 5,800 ft, a prominent gully, class 3 rock to the SE ridge, then class 3/4 along the ridge to the summit. Trailhead (48.894,-121.6526), 5,800 ft meadows and the class 3/4 finish all agree with the stored row. The north-side Wall Street couloir to SE ridge line from the Hannegan side is the other route and is already held as Southeast Ridge.",
+  "recommendation": "No new row. Rename wa_mount_sefrit_southwest_ridge to 'South Slopes' (or keep the name and say 'also logged as South Slopes' in beta), since trackers call it that and its ridge finish is the SE ridge reached from the south. Class 3/4 supports keeping Class 4 (one party turned back below the top at a knife-edge). Tracks: 2927979 (3 Aug 2025, summited, start 48.8957,-121.6562, about 325 m from the trailhead pin) and 1504057 (30 Sep 2020, logged South slopes, but starts mid-trail at 48.8753,-121.6192) are the only complete ones; neither starts within 300 m of the trailhead, so attach none under the current test. A 2023 report says the true summit is at least 10 ft beyond the 7,191 ft point.",
+  "confidence": "high",
+  "proposed": {
+    "rename_to": "South Slopes",
+    "row": "wa_mount_sefrit_southwest_ridge",
+    "note": "no new row"
+  },
+  "evidence": [
+    "packets-all/wa_mount_sefrit.json - stored Southwest Ridge row text (Nooksack Cirque Trailhead, FR 34, 5800' meadows, Class 4 gully) and tracks 1504057, 2923338, 3000159, 2927979",
+    "https://www.summitpost.org/mount-sefrit/climbers-log/151613 - from search summary: 2+ miles up the Nooksack Cirque trail, bushwhack the south slopes to a basin SE of the peak, gully to the SE ridge, fractured class 3/4 ridge (page itself 403)"
+  ],
+  "searched": [
+    "WebSearch 'Mount Sefrit south side route Nooksack Cirque Andy Boos' - SummitPost log, Turns All Year S/SW face report, CascadeClimbers 2017 Nooksack Ridge ascent and SW slopes descent",
+    "Read trip reports of tracks 1504057 (south slopes from Nooksack Cirque), 2923338, 3000159, 2384301"
+  ]
+}

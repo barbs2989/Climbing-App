@@ -144,6 +144,9 @@
       /* A map's layer buttons in a narrow map (lib/mapKit.jsx BaseLayerToggle): "Sat" for "Satellite". */
       .cm-lyr-short { display: none; }
       @container (max-width: 240px) { .cm-lyr-long { display: none; } .cm-lyr-short { display: inline; } }
+      /* ...and in the desktop rail's 276px map even "Street · Sat · Topo · Snow" ran under ⤢ Full screen
+         (owner's desktop audit 2026-11-04, "Snow" half hidden): the buttons lose 4px of side padding there. */
+      @container (max-width: 240px) { .cm-lyr-btn { padding-left: 7px !important; padding-right: 7px !important; } }
       /* Scrollbars you can SEE, everywhere. Nothing styled them, so the browser drew its default
          dark thumb on the app's #0d1117 background: a black bar on a near-black page, invisible
          in the feed and in every popup (Add a climb was the report). One rule on :root reaches
