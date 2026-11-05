@@ -38,7 +38,10 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   (`route_field_level`) unless the owner set it by hand (`route_field_confidence`). **High = locked**:
   the database refuses an edit to it ("This detail is locked at high confidence; flag it instead").
   Identity fields, crag-discipline grades and guidebook-verified fields start high; empty fields,
-  inferred gear and auto-written prose start low; everything else medium. Discipline stays
+  inferred gear and auto-written prose start low; everything else medium. **Discipline is always
+  high** (0406, owner 2026-11-05: "locked and not allowed to be edited; they can only flag it for
+  review") — `discipline` and `rockStyle` answer high even when empty, so no climber edit to them
+  is accepted; the one exception is the owner's own hand-set level. Until 0406 discipline stayed
   medium on scrambling / mountaineering / alpine / trad routes (the owner's stated ambiguity).
 - **Rejection is a strike.** The owner rejects with a reason (≥10 characters); the climber is
   told the reason. Strikes drive `contribution_standing`: 1 → warned, 3 → restricted for 90 days
@@ -71,7 +74,11 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   Low, with a ⚑ Flag button — the only place it renders); `ConfidenceLegend` explains the three levels once under the
   verification note. Every pencil on the page goes through `openFix` in `RouteDetail.jsx`: a HIGH
   field's pencil opens the flag sheet instead of the editor. In `SuggestFix` each field row shows its
-  chip (no ⚑ Flag button there, owner 2026-10-15) and a HIGH row cannot be opened.
+  chip (no ⚑ Flag button there, owner 2026-10-15) and a HIGH row cannot be opened. The sheet's
+  **Discipline card** is the one exception: since 2026-11-05 it is not a chip picker but the route's
+  own discipline, a High · locked chip and a *Flag it* button (through `openFlag`, field
+  `discipline`) — discipline has no pencil or heading chip on the page, so without that button a
+  climber could not flag it at all. The sheet never sends a `discipline` or `rockStyle` edit.
 - **The flag sheet** (`lib/FlagRouteInfo.jsx`, `FlagRouteSheet`, mounted by App beside the appeal
   sheet): a note of 5–1000 characters on one field or the whole route → `fileRouteFlag`; refusals show
   the database's sentence.
@@ -206,6 +213,7 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `supabase/migrations/0307_route_quality_control_tables.sql` | `contribution_fields`, `route_field_confidence`, `contribution_standing`, `route_flags`, `user_notices`, `applied_value` |
 | `supabase/migrations/0351_a_removal_waits_for_the_owner.sql` | `contributions.reason`, `route_field_page_value`, `_edit_removes`, `contribution_consensus` with the removal exit |
 | `supabase/migrations/0308_field_confidence_and_edit_guards.sql` | `route_field_level`, `route_field_confidence_map`, `can_contribute_fields`, `can_flag`, `guard_field_contribution` |
+| `supabase/migrations/0406_discipline_is_locked.sql` | `_route_field_level_for` with `discipline` / `rockStyle` always high |
 | `scripts/check-editable-coverage.mjs` | the guard that keeps every rendered column editable or explained |
 | `supabase/migrations/0317_seven_more_editable_fields.sql` | the seven field rows |
 | `supabase/migrations/0382_every_route_edit_waits_for_the_owner.sql` | `contribution_consensus` reduced to the removal mark, `guard_contribution_status` without the consensus exit, the insert-time grade write-back dropped |
