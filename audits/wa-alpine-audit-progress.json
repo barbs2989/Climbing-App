@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_lundin_peak_west_ridge",
+  "last_processed_id": "wa_middle_peak_north_face",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 510 complete. Continuing id-ascending scope from wa_lundin_peak_west_ridge (next batch starts after it).",
+  "pass_note": "Pass 8 in progress, batch 511 complete. Continuing id-ascending scope from wa_middle_peak_north_face (next batch starts after it).",
   "batches": [
     {
       "batch_number": 1,
@@ -10147,6 +10147,28 @@
       "clean": 5,
       "sql_file": null,
       "note": "Eight routes across four peaks (Phantom Peak's Luna Glacier, Luna Peak x2, Lundin Peak x5). Five clean: wa_luna_glacier's FA (Fred & Helmy Beckey, 1940) is uncorroborated beyond OpenBeta (Wikipedia names only Fred Beckey for Phantom Peak's 1940 FA, an omission not a conflict) and its 8,016 ft high point sits within a few feet of ListsOfJohn's own split LiDAR (8,023 ft) vs map (8,020 ft) figures -- survey noise, not an error. wa_lundin_peak_east_ridge and wa_lundin_peak_west_ridge: shared 6,057 ft Lundin Peak elevation matches Wikipedia/Peakery exactly; West Ridge's naming history (Snoqualmie Little Sister, renamed 1931 for ranger John Lundin) and neighboring Snoqualmie Mountain's 6,278 ft both confirmed via Wikipedia and an original 1931 US Board on Geographic Names record. wa_lundin_peak_southeast_ridge and wa_luna_peak_southwest_ridge are bare rows -- nothing to check.\n\nFlagged, no SQL: (1) wa_luna_peak_southeast_slopes's 1938 FA (Cox & Thompson) and 8,311 ft elevation confirmed exactly, but sources disagree on which named line is Luna Peak's standard/FA route (Wikipedia/PeakVisor say Southwest Ridge, SummitPost says South Ridge; none ties the 1938 ascent to a 'Southeast Slopes' line specifically) -- the DB's separate, nearly-bare wa_luna_peak_southwest_ridge row has no FA at all, raising the possibility the FA credit sits on the wrong route row; no source read settles it. (2) wa_lundin_peak_northwest_face's stored FA (Dan Davis, Sept 29 1968) couldn't be confirmed or contradicted -- a Mountain Project page for a Northwest Face route on what reads as the same peak (898ft, 6 pitches, described as the peak's first technical route) looked like the right page, but mountainproject.com was DNS-blocked this run. (3) wa_lundin_peak_south_face_left's stored FA (Mike Preiss & Don Preiss, 2004) matches an OpenBeta route on climbers and description, but that route is itself titled 'South Face (2001 Variation)' -- pointing to 2001 not 2004 -- and OpenBeta's own climber credit carries a question mark; one self-flagged-uncertain secondary source isn't enough to write a SQL fix, flagged for a human with a second source. Network note: mountainproject.com, en.wikipedia.org, stg.openbeta.io and www.listsofjohn.com were all DNS-blocked from this session for direct page fetches this run."
+    },
+    {
+      "batch_number": 511,
+      "date": "2026-11-05",
+      "pass": 8,
+      "route_ids": [
+        "wa_magic_mountain_north_face",
+        "wa_magic_mountain_northeast_couloir",
+        "wa_magic_mountain_south_ridge",
+        "wa_magic_mountain_west_ridge",
+        "wa_martin_peak_west_ridge",
+        "wa_marvin_s_ear",
+        "wa_mcmillan_spire_west_southwest_ridge",
+        "wa_mcmillan_spire_west_west_ridge",
+        "wa_mesahchie_peak_west_ridge",
+        "wa_middle_peak_north_face"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 1,
+      "clean": 9,
+      "sql_file": null,
+      "note": "Ten routes across six peaks (Magic Mountain x4, Martin Peak, Morning Star Peak's Marvin's Ear, West McMillan Spire x2, Mesahchie Peak, Middle Peak). Nine clean: Magic Mountain's 7,610 ft summit matches Wikipedia/Peakbagger exactly across all four of its routes (GNIS's older 7,539 ft is a known superseded figure, not used here); Martin Peak's West Ridge checks out in full -- 8,509 ft matches Wikipedia/ListsOfJohn's LiDAR figure, and the stored FA ('Ida Zacher Darr (solo), July 1936') is confirmed by both Wikipedia and a Mazama Bulletin profile describing her solo ascent while scouting Bonanza Peak; its access note (FSR 8301 and the Lucerne dock closed since the December 2025 mudslides, bus not running) is still accurate -- Holden Village's own July 2026 release and Forest Service closure order keep the road closed through at least December 2027. Marvin's Ear's FA (Morgan & Sheila Zentler, September 16 2017) is confirmed by the AAJ report itself (OpenBeta's '2016' is the outlier, not our DB). West McMillan Spire's Southwest Ridge and West Ridge routes check out -- the West Ridge row already self-documents the one real elevation spread (8,000/8,004/8,041 ft across MP/Wikipedia/ListsOfJohn) in its own corrections field, and Fred Beckey's August 1940 FA credit is confirmed (Helmy Beckey's co-credit is a one-source addition, same uncorroborated-but-not-conflicting shape as prior batches' Beckey-family FAs). Mesahchie Peak's 8,795 ft matches Wikipedia exactly (ListsOfJohn's 8,809 ft LiDAR figure is the same kind of minor survey spread seen all audit) and its 1966 FA by four climbers is confirmed by Wikipedia; its trailhead/pass elevations (~3,600-3,700 ft / 6,500-6,560 ft) all sit inside the range other sources (WTA, USFS, SummitPost, Trailforks) give for the same points.\n\nFlagged, no SQL: wa_middle_peak_north_face is otherwise a bare row (no grade, coordinates, waypoints or description stored) carrying only a first-ascent claim -- 'Doug Klewin and Dan McNerthney, December 1978.' No source found ties either climber to Middle Peak: Mountain Project's own Middle Peak area page lists only an East Face and the Gunrunner traverse's Southwest Ridge, with no North Face at all, while a 'North Face of [the]North Peak' route title turned up for Gunsight Range's separate North Peak summit -- suggestive that this FA may belong on a different peak in the same range, but not enough to write a fix against. Klewin and McNerthney's one confirmed joint climb ('Big Balls', with Dean Geiselman, 1979, Snow Creek-area) doesn't match this route's name, peak, or year either. Flagged for a human with a Beckey guide or AAJ archive access to confirm, correct, or retract. Network note: summitpost.org was DNS-blocked from this session for direct page fetches this run; www.mountainproject.com and stg.openbeta.io answered WebSearch snippets but not direct fetches."
     }
   ]
 }

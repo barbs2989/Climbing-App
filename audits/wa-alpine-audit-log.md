@@ -36828,3 +36828,48 @@ a future run with broader network access to read the primary pages directly.
 
 Next batch will continue id-ascending from `wa_lundin_peak_west_ridge`
 (see progress file).
+
+## Batch 511 (pass 8) — 2026-11-05
+
+Checked 10 routes across six peaks, continuing id-ascending past Lundin Peak: `wa_magic_mountain_north_face`,
+`wa_magic_mountain_northeast_couloir`, `wa_magic_mountain_south_ridge`, `wa_magic_mountain_west_ridge`,
+`wa_martin_peak_west_ridge`, `wa_marvin_s_ear` (Vega Tower, filed under Morning Star Peak),
+`wa_mcmillan_spire_west_southwest_ridge`, `wa_mcmillan_spire_west_west_ridge`, `wa_mesahchie_peak_west_ridge`,
+`wa_middle_peak_north_face`.
+
+No confirmed errors this batch, no SQL file. Nine clean: Magic Mountain's stored 7,610 ft summit elevation
+matches Wikipedia and Peakbagger exactly across all four of its routes (GNIS's older 7,539 ft figure is
+superseded and correctly not used here). Martin Peak's West Ridge checks out in full — 8,509 ft matches
+Wikipedia and ListsOfJohn's LiDAR figure, and the stored FA ("Ida Zacher Darr (solo), July 1936") is
+confirmed by both Wikipedia and a Mazama Bulletin profile describing her solo ascent while scouting Bonanza
+Peak; its access note (FSR 8301 and the Lucerne dock closed since the December 2025 mudslides, Holden
+Village bus not running) is still accurate today — Holden's own July 2026 release and a Forest Service
+closure order keep the road shut through at least December 2027. Marvin's Ear's FA (Morgan and Sheila
+Zentler, September 16, 2017) is confirmed directly by the AAJ report that documents the climb (OpenBeta's
+"2016" is the outlier, not our stored date). West McMillan Spire's Southwest Ridge and West Ridge both check
+out — the West Ridge row already self-documents the one real elevation spread (8,000/8,004/8,041 ft across
+Mountain Project/Wikipedia/ListsOfJohn) in its own `corrections` field, and Fred Beckey's August 1940 FA
+credit is confirmed (Helmy Beckey's co-credit is a one-source addition, the same uncorroborated-but-not-
+conflicting shape seen on prior batches' other Beckey-family FAs). Mesahchie Peak's 8,795 ft matches
+Wikipedia exactly (ListsOfJohn's 8,809 ft LiDAR figure is the same minor survey spread seen throughout this
+audit, not an error), its 1966 first-ascent-by-four-climbers claim is confirmed by Wikipedia, and its
+trailhead/pass elevations (~3,600–3,700 ft / 6,500–6,560 ft) all sit inside the range other sources (WTA,
+USFS, SummitPost, Trailforks) give for the same points.
+
+Flagged for human review, no SQL: `wa_middle_peak_north_face` is otherwise a bare row — no grade,
+coordinates, waypoints or description stored — carrying only a first-ascent claim: "Doug Klewin and Dan
+McNerthney in December 1978 (climbing the entire route on snow and ice)." No source found ties either
+climber to Middle Peak: Mountain Project's own Middle Peak area page in the Gunsight Range lists only an
+East Face and the Gunrunner traverse's Southwest Ridge, with no North Face at all, while a route titled
+"North Face of North Peak" turned up for the range's separate North Peak summit — suggestive that this FA
+may actually belong on a different peak in the same range, but not strong enough evidence to write a fix
+against. Klewin and McNerthney's one confirmed joint climb ("Big Balls," with Dean Geiselman, 1979, in the
+Snow Creek area) doesn't match this route's name, peak, or year either, so it doesn't settle the question.
+Flagged for a human with access to a Beckey guide or the AAJ archive to confirm, correct, or retract.
+
+Network note: `summitpost.org` was DNS-blocked from this session for direct page fetches this run;
+`mountainproject.com` and `stg.openbeta.io` answered via WebSearch snippets but refused direct `WebFetch`
+fetches.
+
+Next batch will continue id-ascending from `wa_middle_peak_north_face`
+(see progress file).
