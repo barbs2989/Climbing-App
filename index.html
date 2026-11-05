@@ -141,6 +141,9 @@
       .cm-ring { animation: cm-ring 2.4s ease-in-out infinite; transform-origin: 50% 10%; display: inline-block; }
       .cm-puff { animation: cm-puff .6s ease-out forwards; }
       .cm-newitem { animation: cm-glow 1.6s ease-in-out 2; }
+      /* A map's layer buttons in a narrow map (lib/mapKit.jsx BaseLayerToggle): "Sat" for "Satellite". */
+      .cm-lyr-short { display: none; }
+      @container (max-width: 240px) { .cm-lyr-long { display: none; } .cm-lyr-short { display: inline; } }
       /* Scrollbars you can SEE, everywhere. Nothing styled them, so the browser drew its default
          dark thumb on the app's #0d1117 background: a black bar on a near-black page, invisible
          in the feed and in every popup (Add a climb was the report). One rule on :root reaches

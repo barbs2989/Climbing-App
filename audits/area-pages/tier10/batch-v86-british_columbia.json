@@ -1,0 +1,29 @@
+{
+ "bc_mount_gimli": {
+  "_expect": {"name": "Mount Gimli", "region": "British Columbia"},
+  "blurb": "Gimli is a big summit of nearly 2,800 metres in the Valhalla Ranges of the Selkirks, inside Valhalla Provincial Park in the Kootenays. It is a remote, rugged alpine objective best treated as a summer mountain day rather than a roadside crag. The 13 routes here are almost all traditional lines, plus a single aid route, with free climbing running from about 5.9 up through the low 5.12s and the bulk sitting in the 5.10 and 5.11 range. Expect long, committing days, a hike in from the parking area, loose and blocky patches on some faces, and a scramble up the east side as the usual way down. The west side catches afternoon sun, and storms can build late in the day.",
+  "review": {"sources": ["https://en.wikipedia.org/wiki/Gimli_Peak", "https://app.advcollective.com/climbing/another-dimension-tackling-gimlis-west-face"]}
+ },
+ "bc_nicolum_knob": {
+  "_expect": {"name": "Nicolum Knob", "region": "British Columbia"},
+  "blurb": "Nicolum Knob is a tall buttress just east of Hope in the Fraser Valley, rising close to the highway junction beside Nicolum Creek. Its smooth face is split by cracks and broken by ledges, which makes comfortable multi-pitch climbing with fixed rappel stations on each pitch. Most of the 13 routes here are traditional, with a few bolted lines and a single boulder problem. Grades are mostly 5.10, with a handful of easier climbs in the 5.6 to 5.8 range and a few harder ones into the low 5.12s. The formation is large and not very suited to top roping. Expect a short forest hike to the base, which can be slippery with roots after rain.",
+  "review": {"sources": ["https://www.mountainproject.com/v/106262072", "https://app.advcollective.com/climbing/kemosabe-a-bold-trad-challenge-in-nicolum-knobs-fraser-valley"]}
+ },
+ "bc_mount_athelstan": {
+  "_expect": {"name": "Mount Athelstan", "region": "British Columbia"},
+  "blurb": "Athelstan is a large, glaciated peak roughly 50 km northwest of Pemberton, above the meeting of Salal Creek and the Lillooet River in the Sea to Sky region. Steep walls, buttresses and towers on its west side hold long alpine trad routes, most graded from about 5.7 to 5.11, with the largest cluster around 5.9. There is also a winter ice line, a mixed route and a mountaineering objective. This is a serious, committing mountain: expect a long drive on rough forest roads, an approach through forest and alder to bivouac sites, blocky rock higher up, glacier or snow travel, and afternoon storms. It suits experienced parties looking for big days away from the crowds.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106420264/mount-athelstan", "https://publications.americanalpineclub.org/articles/13201212700", "https://app.advcollective.com/climbing/standing-wave-on-mount-athelstan-a-challenging-alpine-trad-climb"]}
+ },
+ "bc_anchor_crag": {
+  "_expect": {"name": "Anchor Crag", "region": "British Columbia"},
+  "blurb": "Anchor Crag is a small granite outcrop tucked into the middle of Sechelt on the Sunshine Coast. A short trail from where the road ends leads to the base, so it makes an easy after-work or low-commitment outing. The 13 routes are mostly short traditional lines, along with a handful of top-rope climbs and one bolted route. Grades run from about 5.8 to 5.11, with the largest group at 5.10. The climbing is dominated by cracks and fairly blank faces, so jamming and layback moves are common. Views across the surrounding area and out to the ocean add to the appeal, and the east-facing wall suits mornings.",
+  "rock": "granite",
+  "review": {"sources": ["https://sendage.com/area/anchor-crag-sunshine-coast-bc-canada", "https://www.sunshinecoastcanada.com/blog/post/rock-climbing-on-the-sunshine-coast/"]}
+ },
+ "_skipped": {
+  "bc_the_redd": "only one fetched page (Mountain Project) describes The Redd; topo PDF unreadable, other pages do not mention it",
+  "bc_the_watchtower": "could not fetch two pages about this Porteau Cove crag; the Mountain Project Watchtower hit is a Utah crag",
+  "bc_lumberjack_wall": "only one fetched page (Mountain Project) describes it; other pages blocked or empty",
+  "bc_river_view_crag": "no fetched page found describing a River View Crag in the Gilpin Grasslands"
+ }
+}

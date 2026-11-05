@@ -62,8 +62,14 @@ const CASES = [
     /* The fallback is GUTTED rather than the wrapper removed. Deleting `orOffline(` leaves
      * its second argument dangling, so the file does not parse and the probe dies on the
      * BUNDLE — a different failure, which this repo has twice read as a catch. */
-    find: `    const rows = await offlineAreasByIds(ids);`,
-    repl: `    const rows = [];`,
+    // Anchored on the lines around it: `useAreaCardsByIds` has the same call, one level deeper, and a
+    // bare match is not unique (it was 2x). This is the ancestors read the breadcrumb uses.
+    find: `  }, async () => {
+    const rows = await offlineAreasByIds(ids);
+    const byId`,
+    repl: `  }, async () => {
+    const rows = [];
+    const byId`,
     expect: "the breadcrumb is wrong",
   },
   {

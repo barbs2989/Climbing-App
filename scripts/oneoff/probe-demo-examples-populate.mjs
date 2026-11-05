@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Does DEMO_FILLERS=true actually POPULATE the sample constants, and do the two new
 // useState seeds parse and hold the shape their readers need?
 //
@@ -31,7 +33,7 @@ const bad = (m) => { console.log("  FAIL  " + m); fail++; };
 
 // ---- half 1: the bundled constants -------------------------------------------------
 try {
-  execFileSync("npx", ["esbuild", "ClimbMatchCore.jsx",
+  execFileSync(NPX, [...NPX_PRE, "esbuild", "ClimbMatchCore.jsx",
     "--bundle", "--format=esm", "--platform=node",
     "--jsx=automatic", "--loader:.jsx=jsx",
     // lib/supabase.js reads import.meta.env at MODULE SCOPE, so without this the import
@@ -44,7 +46,7 @@ try {
   process.exit(1);
 }
 
-const core = await import(OUT + "?t=" + Date.now());
+const core = await import(fileHref(OUT + "?t=" + Date.now()));
 // `ME` is in scope for the seeds below: they build example rows out of the signed-in
 // climber's own name and avatar, exactly as the seed `logs` beside them do. Without this
 // the eval fails with "ME is not defined" and reads as a defect in the app.

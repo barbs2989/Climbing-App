@@ -1,3 +1,6 @@
+import os from "node:os";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // check:function-drift — does the LIVE function catalog agree with the migrations?
 //
 // Sibling of check:function-columns, and a different question. That one asks whether a function
@@ -42,7 +45,7 @@ import path from "path";
 import { execFileSync } from "child_process";
 
 const WANT_DIFF = process.argv.includes("--diff");
-const ROOT = path.resolve(new URL("..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const MIG = path.join(ROOT, "supabase", "migrations");
 const fail = [];
 
@@ -81,11 +84,11 @@ join pg_language l on l.oid = p.prolang
 join pg_namespace n on n.oid = p.pronamespace
 where n.nspname = 'public' and l.lanname in ('plpgsql','sql');`;
 
-const tmp = path.join(process.env.CLAUDE_JOB_DIR || "/tmp", "fn-drift.sql");
+const tmp = path.join(process.env.CLAUDE_JOB_DIR || os.tmpdir(), "fn-drift.sql");
 fs.writeFileSync(tmp, SQL);
 let raw;
 try {
-  raw = execFileSync("npx", ["supabase", "db", "query", "--linked", "-f", tmp],
+  raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-f", tmp],
     { encoding: "utf8", timeout: 180000 });
 } catch (e) {
   console.error("FAIL: could not read the live catalog —", String(e.message).split("\n")[0].slice(0, 200));

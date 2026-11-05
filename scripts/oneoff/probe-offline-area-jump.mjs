@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 /* CAN YOU OPEN AN AREA-SEARCH HIT WITH NO SIGNAL?
  *
  * #1673 made the area filter box searchable offline. It did NOT make the thing you do with a
@@ -95,7 +96,7 @@ try {
       },
     }],
   });
-  db = await import(out);
+  db = await import(fileHref(out));
 } catch (e) {
   console.error("FAIL: could not bundle lib/db.js — nothing was checked. " + (e.stack || e.message));
   fs.rmSync(tmp, { recursive: true, force: true });

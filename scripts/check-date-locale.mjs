@@ -55,7 +55,7 @@ if (files.length < 20) dead(`only ${files.length} app source files found — the
 let calls = 0;
 const describe = (a) => !a ? "no argument" : a.type === "Identifier" ? a.name : a.type === "StringLiteral" ? JSON.stringify(a.value) : a.type === "NullLiteral" ? "null" : a.type;
 for (const f of files) {
-  const rel = path.relative(ROOT, f);
+  const rel = path.relative(ROOT, f).replace(/\\/g, "/");
   const code = fs.readFileSync(f, "utf8");
   let ast;
   try { ast = parse(code, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: true }); }

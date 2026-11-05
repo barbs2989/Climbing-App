@@ -38,7 +38,7 @@ function sources(dir, acc = []) {
     if (e.name === "node_modules" || e.name === "dist" || e.name.startsWith(".")) continue;
     const p = path.join(dir, e.name);
     if (e.isDirectory()) { if (!/^(scripts|catalog|supabase|enrichment-wip|docs|research)$/.test(e.name)) sources(p, acc); }
-    else if (/\.[jt]sx?$/.test(e.name)) acc.push(path.relative(ROOT, p));
+    else if (/\.[jt]sx?$/.test(e.name)) acc.push(path.relative(ROOT, p).replace(/\\/g, "/"));
   }
   return acc;
 }

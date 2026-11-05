@@ -1,0 +1,78 @@
+{
+ "bc_canoe_wall": {
+  "_expect": {
+   "name": "Canoe Wall",
+   "region": "British Columbia"
+  },
+  "blurb": "Canoe Wall is one of the walls strung along the Canoe Trail at the northern end of Skaha Bluffs, above Penticton in the Okanagan. All eleven climbs are bolted sport lines, running from the high 5.8s up to 5.11, with the bulk of them sitting in the 5.10 range, so it suits a confident leader more than a first-timer. The wall catches the morning sun and is somewhat protected from a southerly breeze, and the neighbouring crags pick up shade later in the day, which makes the spot workable on both cool and warm days. It is a short walk in, handy for a quick session. Lines include slabby corners with cracks and face finishes up to roughly 75 feet.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/201996374/canoe-wall",
+    "https://www.mountainproject.com/area/117851004/canoe-trail-crags",
+    "https://www.mountainproject.com/route/126519657/river-dinghy?print=1"
+   ]
+  }
+ },
+ "bc_east_face": {
+  "_expect": {
+   "name": "East Face",
+   "region": "British Columbia"
+  },
+  "blurb": "East Face is one of two faces on Retardant Wall, in the Gillies Creek part of Skaha Bluffs near Penticton. It holds eleven routes, eight of them bolted sport lines and three traditional, ranging from an easy 5.7 up to 5.11 with most of the grades clustered around 5.9. That makes it a good fit for climbers looking for moderate lines. Retardant Wall as a whole has a reputation as a quieter corner of the bluffs, offering slabby, technical climbing in the sun without the busy lineups found at the main walls. Reaching it means continuing on beyond Routopia, so expect a bit more walking than at the roadside crags.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/202861828/east-face",
+    "https://www.mountainproject.com/area/122449087/retardant-wall"
+   ]
+  }
+ },
+ "bc_road_rage_sector": {
+  "_expect": {
+   "name": "Road Rage Sector",
+   "region": "British Columbia"
+  },
+  "blurb": "Road Rage Sector is a small cluster of boulders near Hope in the Fraser Valley, part of the Hunter Creek bouldering zone. Eleven problems are recorded, spanning the full range from easy slabs around V0 through the middle grades to a handful of hard lines near V8 and V9, so there is something for most levels. Boulders are packed closely together under forest cover, which makes moving between them a little awkward, though a few standout lines such as Big Boss at V4 are worth seeking out. It sits right beside the forest road where the walk up begins, so it makes an easy first stop.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/119077845/road-rage-sector",
+    "https://mountainproject.com/area/106328842/hunter-creek-bouldering?print=1"
+   ]
+  }
+ },
+ "bc_penthouse": {
+  "_expect": {
+   "name": "Penthouse",
+   "region": "British Columbia"
+  },
+  "blurb": "Penthouse is a bouldering sector in the Hunter Creek zone near Hope, in the Fraser Valley. A newer zone, its problems spread along where the upper slide meets the trees; carry on beyond the Balcony and the Falconer boulder to find it. The walk is longer than to most sectors here, but the problems are good quality. Of the eleven recorded problems, most fall between V2 and V6, with a few easier ones at the low end and one very hard line near V10. Expect a quieter day than at the lower, more visited boulders.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/119077896/penthouse",
+    "https://www.mountainproject.com/area/106328842/hunter-creek-bouldering"
+   ]
+  }
+ },
+ "bc_sugar_cube": {
+  "_expect": {
+   "name": "Sugar Cube",
+   "region": "British Columbia"
+  },
+  "blurb": "Sugar Cube is a single tall, clean block in the forest at Pemberton Boulders, north of Whistler in the Sea to Sky corridor. All eleven problems are at the easy end, around V0, and they run all the way around the boulder: arêtes, faces, a mantel and a traverse. That makes it a friendly place for beginners and a handy warm-up before heading to harder boulders nearby. Because it sits under the trees it stays shaded all day, so it is pleasant when it is hot. The approach is a short walk into the woods from the railway side.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106473500/sugar-cube",
+    "https://www.mountainproject.com/area/106219182/pemberton-boulders"
+   ]
+  }
+ },
+ "_skipped": {
+  "bc_eaglet_bluff": "no fetched page about Eaglet Bluff itself (only the Roadside and Giscome parent pages, which name it in a sub-area list; local guide site unreachable)",
+  "bc_hip_hop_wall_closed": "wall is on Mt Maxwell, Salt Spring Island, and is closed to climbing (park ban since 2021)",
+  "bc_ride_the_lightning": "no fetched page about the Ride the Lightning boulder area itself; only the Grand Wall Boulders parent page mentions it, and the rockclimbing.com area page was unreachable"
+ },
+ "_conflicts": {
+  "bc_canoe_wall": "stored parking is the Skaha main lot at Smythe Road, but https://www.mountainproject.com/area/201996374/canoe-wall and https://www.mountainproject.com/area/117851004/canoe-trail-crags say to use the Evergreen Drive lot, about 2 minutes via the North Lot lower trail",
+  "bc_sugar_cube": "stored rock is diorite; https://www.mountainproject.com/area/106219182/pemberton-boulders calls the Pemberton boulders granite",
+  "bc_road_rage_sector": "stored rock is quartz diorite; https://mountainproject.com/area/106328842/hunter-creek-bouldering?print=1 calls the Hunter Creek boulders granite"
+ }
+}

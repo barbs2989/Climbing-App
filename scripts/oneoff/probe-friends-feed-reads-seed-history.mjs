@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Can a REAL friend's logged climb ever appear in FRIENDS' RECENT ACTIVITY?
 //
 // The discovery-surface census filed FriendsFeed as healthy because its `connections` prop is
@@ -28,7 +30,7 @@ const fail = (m) => { bad++; console.log("  FAIL " + m); };
 const dead = (m) => { console.error("\nBROKEN PROBE: " + m); process.exit(2); };
 
 try {
-  execFileSync("npx", ["esbuild", entry,
+  execFileSync(NPX, [...NPX_PRE, "esbuild", entry,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     "--loader:.jsx=jsx", "--loader:.tsx=tsx",
     `--define:import.meta.env=${JSON.stringify({})}`,
@@ -36,7 +38,7 @@ try {
     "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 } catch { fs.rmSync(out, { force: true }); fs.rmSync(entry, { force: true }); dead("esbuild could not bundle ClimbMatchCore.jsx"); }
 
-const core = await import(out + "?t=" + Date.now());
+const core = await import(fileHref(out + "?t=" + Date.now()));
 fs.rmSync(out, { force: true });
 fs.rmSync(entry, { force: true });
 const { FriendsFeed, CLIMBERS } = core;

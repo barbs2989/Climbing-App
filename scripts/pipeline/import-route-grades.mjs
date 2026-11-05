@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // import-route-grades.mjs — bring Mountain Project's routes into the catalog, from the CSV exports
 // scripts/pipeline/fetch-ice-mixed-aid.mjs and fetch-rock-boulder.mjs cached under
 // catalog/_mp/ (fetched under the owner's licence from onX). ONLY FACTS are used: name, location path, grade, type,
@@ -79,7 +80,7 @@ function sql(text, tries = 8) {
     try {
       // --output-format json is explicit: run from a plain Terminal the CLI answers with a TEXT
       // table by default (the "empty answers" that stopped California from run-all.sh).
-      const out = execFileSync("npx", ["supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1024 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
+      const out = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1024 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
       // Two shapes: inside an agent session {"boundary", "rows": [...], "warning"}; from a plain
       // Terminal a BARE array of rows. Parse from whichever bracket comes first.
       const at = [out.indexOf("{"), out.indexOf("[")].filter(i => i >= 0);

@@ -67,7 +67,7 @@ const SKIP = /(^|\/)(node_modules|dist|scripts|enrichment-wip|catalog|supabase|a
 const appFiles = [];
 const walk = d => { for (const e of fs.readdirSync(d, { withFileTypes: true })) {
   if (e.name.startsWith(".")) continue;
-  const p = path.join(d, e.name), rel = path.relative(ROOT, p);
+  const p = path.join(d, e.name), rel = path.relative(ROOT, p).replace(/\\/g, "/");
   if (SKIP.test(rel)) continue;
   if (e.isDirectory()) walk(p); else if (/\.(jsx?|mjs|html)$/.test(e.name)) appFiles.push(rel);
 } };

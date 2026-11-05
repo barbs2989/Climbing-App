@@ -1,3 +1,5 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // Do the onboarding discipline chips respond to a tap?
 //
 // probe-dead-controls-overlays reported 9 of them (Rock, Scrambling, Alpine, Mountaineering,
@@ -19,7 +21,7 @@ import { spawn } from "node:child_process";
 // runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
 assertQuietBox("probe-onboarding-discipline-chips.mjs");
 
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 async function claimPort(start) {
   for (let p = start; p < start + 40; p++) {
     const free = await new Promise((res) => { const s = net.createServer(); s.once("error", () => res(false)); s.once("listening", () => s.close(() => res(true))); s.listen(p, "127.0.0.1"); });
@@ -29,7 +31,7 @@ async function claimPort(start) {
 }
 const port = await claimPort(5390);
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
-const server = spawn("npx", ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "pipe", "pipe"], detached: true });
 server.stdout.on("data", () => {});
 const stop = () => { try { process.kill(-server.pid, "SIGTERM"); } catch {} };

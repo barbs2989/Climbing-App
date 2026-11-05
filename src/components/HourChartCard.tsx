@@ -1,3 +1,4 @@
+import { tx } from "../../lib/tapWords.js";
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { C } from "../../ClimbMatchCore.jsx";
 import { clockHr, TileGrid } from "../../lib/HourTiles.jsx";
@@ -112,7 +113,7 @@ export default function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bar
       <div style={{display:"flex",alignItems:"center",gap:8,minHeight:44,marginBottom:3}}><div style={{flex:1,minWidth:0,fontSize:12.5,fontWeight:700,color:C.textSub,overflowWrap:"anywhere"}}>{clockHr(a.hr)}{a.past?<span style={{color:C.textMuted,fontWeight:600}}>{"  ·  already past"}</span>:null}</div>{at!==selIdx&&selIdx>=0?<button onClick={function(){setPin(null);setHv(null);}} style={{flexShrink:0,minHeight:44,padding:"0 12px",borderRadius:22,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.onSolid,fontSize:11.5,fontWeight:700,cursor:"pointer"}}>{"Back to "+clockHr(all[selIdx].hr)}</button>:null}</div>
       <div ref={readRef}><TileGrid min={104}>{readout(a)}</TileGrid></div>
     </div>
-    <div ref={wrapRef} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={cancel} onPointerLeave={function(e: PointerEvent<HTMLDivElement>){if(e.pointerType==="mouse")unread();}} onContextMenu={function(e: MouseEvent<HTMLDivElement>){e.preventDefault();}} style={{marginTop:8,touchAction:"pan-y",userSelect:"none",WebkitUserSelect:"none",WebkitTouchCallout:"none",WebkitTapHighlightColor:"transparent",cursor:"ew-resize"}}><svg width="100%" viewBox={"0 0 "+W+" "+(PH+20)} style={{display:"block"}} role="img" aria-label={title+" through the day; tap an hour, or slide along it, to read each hour"}>
+    <div ref={wrapRef} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={cancel} onPointerLeave={function(e: PointerEvent<HTMLDivElement>){if(e.pointerType==="mouse")unread();}} onContextMenu={function(e: MouseEvent<HTMLDivElement>){e.preventDefault();}} style={{marginTop:8,touchAction:"pan-y",userSelect:"none",WebkitUserSelect:"none",WebkitTouchCallout:"none",WebkitTapHighlightColor:"transparent",cursor:"ew-resize"}}><svg width="100%" viewBox={"0 0 "+W+" "+(PH+20)} style={{display:"block"}} role="img" aria-label={title+tx(" through the day; tap an hour, or slide along it, to read each hour")}>
       {lastPast>=0?<rect x={L} y={0} width={Math.max(0,x(lastPast)-L)} height={PH} fill={C.borderHi} opacity={0.35}/>:null}
       {lastPast>=0&&x(lastPast)-L>40?<text x={L+4} y={PH-4} fontSize="10.5" fill={C.textMuted}>already past</text>:null}
       <line x1={L} x2={W-R} y1={y(lo)} y2={y(lo)} stroke={C.borderLight}/><line x1={L} x2={W-R} y1={y(hi)} y2={y(hi)} stroke={C.borderLight}/>

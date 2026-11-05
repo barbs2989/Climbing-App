@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Drives the real app in a real browser and asserts things that must be true on
 // every screen. Complements scripts/check-undefined-refs.mjs: that one catches
 // unbound identifiers at build time, this one catches what only shows up once
@@ -237,7 +238,7 @@ if (!base) {
   log(`starting dev server on ${port}...`);
   // VITE_DEMO_AUTOLOGIN keeps the demo gate open for this harness. Without it the real
   // account gate blocks every screen and the check can only ever report the login form.
-  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
   // --strictPort means vite exits rather than sliding to another port. If it dies,
   // whatever answers our URL is not ours, so treat its exit as fatal instead of

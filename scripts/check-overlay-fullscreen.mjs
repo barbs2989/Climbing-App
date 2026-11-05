@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // check:overlay-fullscreen — on a phone, a popup is a PAGE: it covers the whole screen, the app
 // behind it does not show through anywhere, and scrolling the popup never scrolls the app behind.
 //
@@ -34,7 +36,7 @@ import { assertQuietBox } from "./lib/quiet-box.mjs";
 import { overlayStates, NEEDS_EXTRA_STATE, assertKnownOverlays, buildRouteDetailOpener, routeDetailSource } from "./lib/overlay-scaffold.mjs";
 
 assertQuietBox("check:overlay-fullscreen");
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const PORT = 5250;
 const log = (s) => console.log(s);
 const fails = [];
@@ -78,9 +80,8 @@ const base = `http://127.0.0.1:${port}/Climbing-App/`;
 log(`starting dev server on ${port} with the overlay-scroll config...`);
 // detached so the whole process group can be killed: npx spawns vite as a CHILD, and killing
 // only the npx pid leaves a server squatting the port for every later run.
-const server = spawn(
-  "npx",
-  ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } }
 );
 let died = false;

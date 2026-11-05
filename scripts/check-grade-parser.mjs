@@ -63,7 +63,7 @@ const DECL = [
 
 const offenders = [];
 for (const f of files) {
-  const rel = path.relative(ROOT, f);
+  const rel = path.relative(ROOT, f).replace(/\\/g, "/");
   if (rel === SOURCE_OF_TRUTH) continue;
   // The equivalence checker holds a verbatim copy ON PURPOSE — its whole job is to be a
   // second opinion, and importing the function under test would make it vacuous. It is named

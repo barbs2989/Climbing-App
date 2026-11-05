@@ -126,7 +126,7 @@ const READERS = [
   ["app", "the crew-tab quick list denominator",
     'const otherMem=crewInCrew(cr).filter((m: CrewListViewMember)=>m.climberId!==0);'], // CrewListView.tsx since PR61, typed
   ["app", "“Invite X to one of your crews” counts the crew",
-    'count:crewSize(cr),max:crewMax(r)'],
+    'count:crewSize(cr),max:placeCap(_p)'],
   ["app", "the invite prompt's size",
     'const roster=ex?crewSize(ex):0;'],
   ["app", "...and its sentence distinguishes a request from a membership",
@@ -156,7 +156,7 @@ const DELIBERATE = [
   ["core", "the invite sheet still refuses to offer somebody who has already asked",
     'const inCrew=id=>crew.members.some(m=>m.climberId===id);'],
   ["core", "...and so does the connections pool beside it",
-    'const addable=(connections||[]).filter(c=>!crew.members.some(m=>m.climberId===c.id));'],
+    '(connections||[]).filter(c=>!inCrew(c.id)).map(c=>realProfileId('],
   ["app", "the crew's own profile lookups still resolve every roster row",
     '(c.members||[]).forEach(function(m){var id=m&&m.climberId;'],
   ["app", "a join request still surfaces to the organiser",

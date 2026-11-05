@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // check:a11y-names — every form control a screen reader can reach must have a name.
 //
 // 55 controls were named across #588/#606/#609 (and more in #582/#599/#600/#608).
@@ -31,7 +32,7 @@ import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from "
 import { join } from "node:path";
 import { assertCovered } from "./lib/guard-sources.mjs";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const BASELINE = join(ROOT, "scripts", "a11y-names-baseline.json");
 const SKIP = new Set(["node_modules", "dist", ".git", ".claude", "catalog", "scripts", "supabase", "research", "audits"]);
 const UPDATE = process.argv.includes("--update");

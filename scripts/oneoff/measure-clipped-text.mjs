@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // ONE-OFF census for the owner's note "text would go on but it stops" (2026-10-28): every element
 // whose text is CLIPPED on screen (an ellipsis or a line clamp actually cutting something off) and
 // whether it sits inside a control a climber can tap to read the rest. Walks the tabs, the route
@@ -27,7 +28,7 @@ async function claimPort(start, span = 40) {
 }
 const port = await claimPort(5370);
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
-const server = spawn("npx", ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
 let died = false; server.on("exit", () => { died = true; });
 const stopServer = () => { try { process.kill(-server.pid, "SIGTERM"); } catch { /* gone */ } };

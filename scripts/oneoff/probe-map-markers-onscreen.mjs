@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Do the new waypoint markers actually REACH THE MAP in a real browser?
 //
 // The build, check:wp-styles, check:ui and the icon unit-probe all pass, and none of them can see
@@ -36,7 +37,7 @@ for (let i = src.indexOf("{", st); i < src.length; i++) { if (src[i] === "{") d+
 const GLYPHS = [...src.slice(st, en).matchAll(/glyph:"([^"]+)"/g)].map(m => m[1]);
 if (GLYPHS.length < 13) throw new Error(`expected 13 glyphs, lifted ${GLYPHS.length}`);
 
-const server = spawn("npx", ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(PORT), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(PORT), "--strictPort"],
   { cwd: ROOT, detached: true, stdio: "ignore" });
 const stop = () => { try { process.kill(-server.pid, "SIGKILL"); } catch (e) {} };
 process.on("exit", stop);

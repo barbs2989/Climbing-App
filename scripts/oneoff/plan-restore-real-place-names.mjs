@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Owner, 2026-10-07, after 0259: "if it actually names a place then keep it". 0259's rule read a name
 // made only of generic words as a bucket — but "The Crags" or "The Boulders" can be the real name of a
 // crag cluster or a sector. Each such name 0259 removed was researched (audits/generic-area-names-2026-10-07/
@@ -14,7 +15,7 @@ import fs from "fs";
 import path from "path";
 import { selectAll, requireServiceKey } from "../lib/supabase-env.mjs";
 
-const ROOT = path.resolve(new URL("../..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("../..", import.meta.url)));
 const DIR = path.join(ROOT, "audits/generic-area-names-2026-10-07");
 const NUM = process.argv[2]; if (!/^\d{4}$/.test(NUM || "")) throw new Error("usage: plan-restore-real-place-names.mjs <migration number> [--write]");
 const WRITE = process.argv.includes("--write");
@@ -123,4 +124,4 @@ const exFile = path.join(ROOT, "scripts/data/generic-area-names-exempt.json");
 const ex = JSON.parse(fs.readFileSync(exFile, "utf8"));
 Object.assign(ex.exempt, exempt);
 fs.writeFileSync(exFile, JSON.stringify(ex, null, 1) + "\n");
-console.log(`wrote ${path.relative(ROOT, file)} and ${Object.keys(exempt).length} exemptions`);
+console.log(`wrote ${path.relative(ROOT, file).replace(/\\/g, "/")} and ${Object.keys(exempt).length} exemptions`);

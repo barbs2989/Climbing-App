@@ -23,6 +23,7 @@
 // Portalled to document.body: #appscroll is a permanent stacking context beneath
 // the header's zIndex 30, so a position:fixed overlay rendered inside it paints
 // under the chrome no matter what z-index it asks for (see check:overlay-portals).
+import { tx } from "./tapWords.js";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { POP_CLOSE, POP_CLOSE_MEDIA } from "./popupChrome.js";
@@ -558,7 +559,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
           {!show.fires ? (
             <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55 }}>
               The Fires layer is turned off.
-              <div style={{ color: C.textMuted, fontSize: 11.5, marginTop: 4 }}>Tap “Fires” on the map to list active wildfires again.</div>
+              <div style={{ color: C.textMuted, fontSize: 11.5, marginTop: 4 }}>{tx("Tap “Fires” on the map to list active wildfires again.")}</div>
             </div>
           ) : null}
 

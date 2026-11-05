@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Does AreaLatest render AT ALL for a seed area? No browser, no dev server.
 //
 // Four attempts to reach it through the app have failed (a ?za=1 setSelArea opener; three
@@ -13,7 +14,7 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 
 const out = path.join("scripts", "oneoff", `.arealatest-ssr-${process.pid}.mjs`);
-execFileSync("npx", ["esbuild", "ClimbMatchCore.jsx", "--bundle", "--format=esm", "--loader:.jsx=jsx",
+execFileSync(NPX, [...NPX_PRE, "esbuild", "ClimbMatchCore.jsx", "--bundle", "--format=esm", "--loader:.jsx=jsx",
   "--jsx=automatic", "--platform=node", "--external:react", "--external:react-dom",
   "--external:react-dom/server", "--external:@tanstack/react-query", "--external:react/jsx-runtime",
   "--define:import.meta.env={}", `--outfile=${out}`], { stdio: ["ignore", "pipe", "inherit"] });

@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Does an open dialog stop the page BEHIND it from scrolling? Opens the notifications panel
 // (the reported case) through the overlay scaffold's ?z= opener, wheels over it, and asserts the
 // document did not move, the root is locked while open, and the lock is released on close.
@@ -15,7 +16,7 @@ assertQuietBox("probe-dialog-locks-page-scroll.mjs");
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const port = await new Promise(r => { const s = net.createServer(); s.listen(0, () => { const p = s.address().port; s.close(() => r(p)); }); });
-const vite = process.env.PROBE_URL ? null : spawn("npx", ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { cwd: ROOT, env: { ...process.env, VITE_USE_DB: "false" }, stdio: "ignore" });
+const vite = process.env.PROBE_URL ? null : spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { cwd: ROOT, env: { ...process.env, VITE_USE_DB: "false" }, stdio: "ignore" });
 let fails = 0; const ok = (c, m) => { console.log((c ? "ok    " : "FAIL  ") + m); if (!c) fails++; };
 let browser;
 try {

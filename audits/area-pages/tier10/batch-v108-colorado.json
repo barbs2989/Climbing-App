@@ -1,0 +1,35 @@
+{
+ "co_g_pumphouse_right": {
+  "_expect": {"name": "Pumphouse Right", "region": "Colorado"},
+  "blurb": "Pumphouse Right is a group of sandstone buttresses in the Dolores River Canyon, a remote canyon outside Dove Creek in the southwest corner of the state. The 18 climbs here lean heavily toward traditional protection, with a handful of bolted lines and one aid route. Grades start around 5.7 and the bulk sit at 5.10, with a few 5.11 pitches for a push. Routes are short, usually one or two pitches, and walk-ins are brief. The canyon is quiet, and a few of the buttresses are especially well liked. Expect a ground-up, traditional feel rather than a polished sport venue; the rock gets noticeably better as you drive past the boat ramp.",
+  "review": {"sources": ["https://www.mountainproject.com/area/121840916/pumphouse-right", "https://mountainproject.com/area/105896428/dolores-river-canyon-dove-creek"]}
+ },
+ "co_beach_the": {
+  "_expect": {"name": "Beach, The", "region": "Colorado"},
+  "blurb": "The Beach is a bouldering sector in Hartman Rocks, the open recreation area just south of Gunnison. The 18 problems here are mostly on the easier side: about half fall at VB to V1, then a smaller group climbs from V2 up through V5, topped by a single hard problem near V8. Several lines are sit starts, and a couple are tall enough to feel like highballs, with overhanging arete lines that finish on easy top-outs. It makes a relaxed stop for a mixed-ability group, and it fits easily into a day of exploring the wider boulder and crag scattering across the Hartman hillsides.",
+  "review": {"sources": ["https://thetopo.com/crags/hartman-rocks/topos/the-beach-35103", "https://www.mountainproject.com/area/105744394/hartman-rocks"]}
+ },
+ "co_spray_wall": {
+  "_expect": {"name": "Spray Wall", "region": "Colorado"},
+  "blurb": "Spray Wall is the canyon's power-and-projecting venue in Elevenmile Canyon, set close to the river on steep, sun-exposed granite. Most of the 18 lines are bolted sport routes, and nearly all of them sit at the hard end of the scale: a few in the low 5.11s, then a solid cluster of 5.13 and 5.14 grades, with a small boulder section of high-end problems tucked in beside them. It is a poor choice for a warm-up day or for newcomers, but a fine place to work a tough route or try the area's testpieces. The wall is a short walk from the road.",
+  "review": {"sources": ["https://mountainproject.com/area/105816996/spray-wall", "https://cmc.org/education-adventure/trips/routes-places/elevenmile-canyon"]}
+ },
+ "co_6_the_lower_east_side": {
+  "_expect": {"name": "The Lower East Side", "region": "Colorado"},
+  "blurb": "The Lower East Side is the far right end of Dines Cliff, a single-pitch wall among the trees in Staunton State Park, west of Denver. Its 18 routes are mostly traditional lines, with six bolted ones mixed in. Grades range from an easy 5.5 up through the 5.8 to 5.10 band that makes up most of the wall, finishing with several 5.11 pitches. The sun stays on this section until mid-afternoon, which makes it more comfortable on cool days than a shaded cliff. Getting to the base means following the trail to the cliff and bearing right.",
+  "review": {"sources": ["https://www.mountainproject.com/area/119619284/the-lower-east-side", "https://mountainproject.com/area/110664971/dines-cliff"]}
+ },
+ "co_alligator_lounge_the": {
+  "_expect": {"name": "Alligator Lounge, The", "region": "Colorado"},
+  "blurb": "The Alligator Lounge is a compact, steep wall within Thunder Ridge in the West Creek part of the South Platte climbing region, with a bulbous top that makes it easy to spot. Nearly all of its 18 climbs are traditional, with just two bolted lines. Grades run from 5.8 into 5.12, and the heart of the wall sits in the 5.10 and 5.11 range, though a few easier routes make it a classic first stop for gear climbers working up the grades. The face catches winter sun, so it bakes on cold days, while Thunder Ridge as a whole sees little traffic and rewards a quiet day out.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106128392/the-alligator-lounge", "https://www.mountainproject.com/area/105744279/thunder-ridge"]}
+ },
+ "_skipped": {
+  "co_bermuda_triangle": "only one fetched page about the crag (Ophir/Telluride Dark Side); no second page, search budget exhausted",
+  "co_kubrick_s": "only one page about the sector (guidebook listing); the second page does not mention it; search budget exhausted",
+  "co_cinema_wall": "the only Cinema found is in Moab, Utah (38.66, -109.50), not near the input coordinates in Colorado; no page about this crag"
+ },
+ "_conflicts": {
+  "co_beach_the": "stored rock gneiss, but https://www.mountainproject.com/area/105744394/hartman-rocks calls Hartman Rocks granite"
+ }
+}

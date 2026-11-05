@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // strip-area-sort-prefixes.mjs — take the source site's SORT LABEL off area names (2026-10-07).
 //
 // The owner: "In New York, in the Trapps area, those areas within have letters before it … We
@@ -24,7 +25,7 @@ import { stripSortPrefix } from "../lib/area-sort-prefix.mjs";
 
 const APPLY = process.argv.includes("--apply"), HELD = process.argv.includes("--held");
 const KEY = requireServiceKey();
-const ROOT = path.resolve(new URL("../..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("../..", import.meta.url)));
 
 const areas = await selectAll("areas", "id,name,parent_id,path,route_count", "", { pageSize: 1000, key: KEY });
 if (areas.length < 40000) { console.error(`read only ${areas.length} areas — refusing to act on a partial read`); process.exit(2); }
@@ -46,7 +47,7 @@ if (!APPLY) { console.log("dry run — pass --apply to write"); process.exit(0);
 
 const rollbackFile = path.join(ROOT, `scripts/rollback-area-sort-prefixes-${Date.now()}.json`);
 fs.writeFileSync(rollbackFile, JSON.stringify(todo.map(({ id, from }) => ({ id, name: from })), null, 1));
-console.log("rollback:", path.relative(ROOT, rollbackFile));
+console.log("rollback:", path.relative(ROOT, rollbackFile).replace(/\\/g, "/"));
 
 const failed = [];
 let done = 0;

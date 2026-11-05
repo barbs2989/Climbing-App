@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Does the catch ledger tell an outage apart from an empty record?
 //
 // `meLedger` is built from `catches`, which is hydrated from useBelajCatches. A failed read
@@ -14,7 +15,7 @@
 import { build } from "esbuild";
 import path from "path"; import os from "os"; import fs from "fs";
 import { createRequire } from "module";
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "../..");
 const require_ = createRequire(import.meta.url);
 const ENTRY = `
 import React from "react";

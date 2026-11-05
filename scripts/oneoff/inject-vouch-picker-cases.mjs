@@ -45,14 +45,24 @@ if (clean.code !== 0) { console.error("BASELINE NOT GREEN — fix the guard firs
 console.log("baseline green\n");
 const cleanText = clean.out;
 
-const SEED = "var seedMs=USE_DB?[]:ROUTES.filter(";
+const SEED = "var seedMs=USE_DB||!q?[]:ROUTES.filter(";
+// The suggest loop's DB gate, the part of the picker a static render CAN see (it never types).
+const SUGGEST = "!(USE_DB&&ROUTES.some(function(x){return x.id===s.route.id;}))";
 const PROMPT = ':!q?"Search for the climb you did together":"No climbs match."';
 
 const cases = [
   {
+    // The render reaches only the unsearched (suggest) path; this is the gate it can see.
     name: "THE REAL DEFECT: the picker offers the seed demo catalog to a real climber",
-    edits: [[SEED, "var seedMs=ROUTES.filter("]],
+    edits: [[SUGGEST, "!(ROUTES.some(function(x){return false&&x.id===s.route.id;}))"]],
     expect: "offers DEMO climbs to a real climber",
+  },
+  {
+    // The typed-search gate is invisible to a static render (q is always empty), so the guard
+    // reads it from the source.
+    name: "THE REAL DEFECT, typed-search path: seedMs stops being gated on USE_DB",
+    edits: [[SEED, "var seedMs=!q?[]:ROUTES.filter("]],
+    expect: "typed search offers the seed demo catalog",
   },
   {
     name: 'the empty picker goes back to claiming "No climbs match." before anything was searched',
@@ -68,7 +78,7 @@ const cases = [
     // Withholding seed climbs from EVERYONE would satisfy a rule that only ever suppresses, and
     // would empty the picker on the seed demo where those routes ARE the catalog.
     name: "seed climbs are withheld on the seed path too — the control must catch it",
-    edits: [[SEED, "var seedMs=[]||ROUTES.filter("]],
+    edits: [[SUGGEST, "!(true||ROUTES.some(function(x){return x.id===s.route.id;}))"]],
     expect: "the seed build offered no routes either",
   },
   {
@@ -78,7 +88,7 @@ const cases = [
   },
   {
     name: "SILENT: a comment naming the forbidden shape",
-    edits: [["export default function GiveVouch({friend,onClose,onSave}){", "/* the list was once ROUTES.filter for everyone */\nexport default function GiveVouch({friend,onClose,onSave}){"]],
+    edits: [["export default function GiveVouch({friend,onClose,onSave,suggest,initial,routeById}){", "/* the list was once ROUTES.filter for everyone */\nexport default function GiveVouch({friend,onClose,onSave,suggest,initial,routeById}){"]],
     expect: null,
   },
 ];

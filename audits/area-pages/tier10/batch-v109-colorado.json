@@ -1,0 +1,35 @@
+{
+ "co_fish_wall": {
+  "_expect": {"name": "Fish Wall", "region": "Colorado"},
+  "blurb": "Fish Wall is a small limestone cliff at the northern end of the Mural Wall in The Gallery, a Shelf Road area west of Sand Gulch Campground near Canon City. All 18 routes are bolted sport lines from 5.9 to 5.12, with most between 5.10 and 5.11. Two big left-facing dihedrals define the wall and keep it in shade until late afternoon, so it works well on hot days. The bolting is older in style and some lines are runout, which gives it a more traditional feel than its neighbours. Expect a maintained trail of roughly 20 to 30 minutes from the campground.",
+  "review": {"sources": ["https://www.mountainproject.com/v/fish-wall/105973056", "https://www.mountainproject.com/area/105744983/the-gallery"]}
+ },
+ "co_red_wall_the_2": {
+  "_expect": {"name": "Red Wall, The", "region": "Colorado"},
+  "blurb": "The Red Wall is a steep granite crag at Devil's Head in the South Platte region, with all 18 routes bolted sport lines on its east-facing side. The rock is textured and the climbing is technical and powerful, with corners, roofs, edges and flakes. Grades lean hard: most lines sit around 5.12, with a few 5.11s and only a couple of easier options at 5.9 and below. Routes are mostly single pitch and under 100 feet, so a 60 m rope covers them. The wall is split into upper and lower tiers, and the aspect suits summer days. Getting there means descending through forest below the overlook.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105744885/the-red-wall", "https://rakkup.com/guidebook/south-platte-devils-head-rock-climbing/red-wall/s10816"]}
+ },
+ "co_four_blocks_crag": {
+  "_expect": {"name": "Four Blocks Crag Routes", "region": "Colorado"},
+  "blurb": "Four Blocks Crag is a small sandstone cliff in the Unaweep Canyon area beside Highway 141 south of Whitewater, near Grand Junction, roughly midway between the Ice Cubes and Bone Park. Most of its 18 routes are short bolted lines, with two trad routes and one top rope, and grades run from 5.5 to 5.10, so it suits beginners and anyone after warm-ups. The face is shaded in the morning and sunny in the afternoon, which keeps it usable through much of the year. There is no formal trail, but a cairned path of about a fifth of a mile climbs from the road to the base.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107147618/four-blocks-crag", "https://www.mountainproject.com/approach-trail/118914030/approach-to-four-blocks-crag"]}
+ },
+ "co_narrows_proper": {
+  "_expect": {"name": "Narrows Proper", "region": "Colorado"},
+  "blurb": "Narrows Proper is the central corridor of the Narrows, a cliff band just south of Carbondale along Highway 133. It is a shadowy slot about twenty feet wide between water-polished walls, and it holds the cleanest stone and the longest pitches in the area. Of its 18 routes, ten are trad and eight are sport, spanning 5.8 to 5.13 with the bulk in the 5.10s and low 5.11s. Shade and a steady breeze make it a good summer choice. Plan on roughly a 20-minute walk on the approach trail, and wear a helmet since loose rock turns up nearby.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105746542/narrows-proper", "https://www.mountainproject.com/area/105744427/the-narrows"]}
+ },
+ "co_no_thoroughfare_canyon": {
+  "_expect": {"name": "No Thoroughfare Canyon", "region": "Colorado"},
+  "blurb": "No Thoroughfare Canyon lies inside Colorado National Monument near Grand Junction. The lower canyon builds ice in winter, while farther in there is summer cragging and a few free-standing towers. Of the 18 climbs, 14 are traditional, with two aid lines, one sport route and one top rope, running from 5.7 to 5.11 and mostly 5.9 to 5.10. It is high desert and the walls hold heat, so cooler hours are better. Reaching the climbing takes commitment: either a long hike of over four miles from below, or a route-finding descent with rappels from the upper trailhead.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107064081/no-thoroughfare-canyon", "https://app.advcollective.com/climbing/ceramic-tower-a-brief-but-adventurous-ascent-in-colorado-national-monument"]}
+ },
+ "_skipped": {
+  "co_plethora_boulder_right_gonad": "only one page about this boulder itself fetched; sibling Left Gonad page and Unaweep/Bone Park pages do not describe it (search budget exhausted)",
+  "co_main_wall_left_side": "no fetchable page found for this Poudre Canyon Sheep Mountain wall (MP/kaya returned 404/403/wrong place; search budget exhausted)",
+  "co_halloween_town": "only a Utah (Joe's Valley) Halloween Town found; no Colorado Bell Park page located, coordinates do not match"
+ },
+ "_conflicts": {
+  "co_narrows_proper": "stored rock is siltstone but https://www.mountainproject.com/area/105746542/narrows-proper and https://www.mountainproject.com/area/105744427/the-narrows both describe granite"
+ }
+}

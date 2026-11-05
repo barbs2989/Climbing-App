@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // strip-route-topo-labels.mjs — take the guidebook TOPO NUMBER off climb names (2026-10-07).
 //
 // The owner, after the area labels came off (#2224, 0251): "ok do all of those" — including the 1,184
@@ -21,7 +22,7 @@ import { requireServiceKey, selectAll, patchRow } from "../lib/supabase-env.mjs"
 import { stripRouteTopoLabel, letterSeriesAreas } from "../lib/route-topo-label.mjs";
 const APPLY = process.argv.includes("--apply"), HELD = process.argv.includes("--held");
 const KEY = requireServiceKey();
-const ROOT = path.resolve(new URL("../..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("../..", import.meta.url)));
 const routes = await selectAll("routes", "id,name,area_id,grade", "", { pageSize: 1000, key: KEY });
 if (routes.length < 300000) { console.error(`read only ${routes.length} routes — refusing to act on a partial read`); process.exit(2); }
 const series = letterSeriesAreas(routes);
@@ -39,7 +40,7 @@ for (const x of todo.filter((_, i) => i % Math.ceil(todo.length / 30) === 0)) co
 if (!APPLY) { console.log("dry run — pass --apply to write"); process.exit(0); }
 const rollbackFile = path.join(ROOT, `scripts/rollback-route-topo-labels-${Date.now()}.json`);
 fs.writeFileSync(rollbackFile, JSON.stringify(todo.map(({ id, from }) => ({ id, name: from })), null, 1));
-console.log("rollback:", path.relative(ROOT, rollbackFile));
+console.log("rollback:", path.relative(ROOT, rollbackFile).replace(/\\/g, "/"));
 const failed = [];
 let done = 0;
 for (const x of todo) {

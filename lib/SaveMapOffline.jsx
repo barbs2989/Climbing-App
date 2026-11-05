@@ -1,3 +1,4 @@
+import { tx } from "./tapWords.js";
 import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { C } from "../ClimbMatchCore.jsx";
@@ -50,7 +51,7 @@ export function SaveMapOffline({ routeId, notify }) {
       const m = res && res.map;
       if (!m || !m.total) { say("This climb has no location on file, so there is no map to save."); return unpackRouteOffline(routeId); }
       if (!m.ok) { say(m.reason === "quota" ? "The map didn’t fit on this device — free some space and try again." : "Couldn’t download the map — try again with a better signal."); return unpackRouteOffline(routeId); }
-      say(m.missing ? "Saved " + Math.round(100 * m.saved / m.total) + "% of the map — tap Retry with a better signal for the rest." : "Map saved on this device — the way in and this page open with no signal.");
+      say(m.missing ? "Saved " + Math.round(100 * m.saved / m.total) + tx("% of the map — tap Retry with a better signal for the rest.") : "Map saved on this device — the way in and this page open with no signal.");
     }).catch(function (e) { say("Couldn’t save the map — " + ((e && e.message) || "check your connection")); })
       .finally(function () { setBusy(false); setProg(null); reload(); qc.invalidateQueries({ queryKey: ["pack-meta"] }); });
   };

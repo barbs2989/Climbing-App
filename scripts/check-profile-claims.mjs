@@ -189,7 +189,13 @@ if (!pyr) fail("ANCHOR LOST: could not read the sends-by-grade caption beside <A
 else {
   const otherCap = un(pyr[2]);
   const tag = pyr[4];
-  const pyramidFed = /logs=\{climber\.__selfLogs\}/.test(tag) && /pyramid=\{climber\.pyramid\}/.test(tag);
+  // The premise is that the pyramid can be fed the STORED summary. The old test also demanded
+  // `logs={climber.__selfLogs}`; when FullProfile began passing `logs={_lg}` (own logs OR another
+  // real climber's __theirLogs) that clause stopped matching and this whole section went vacuous
+  // ("premise has moved") while `pyramid={climber.pyramid}` was still the fallback for a climber
+  // with no hydrated logs -- found by scripts/oneoff/inject-pyramid-caption-cases.mjs. Only
+  // removing the stored-summary prop genuinely retires the premise.
+  const pyramidFed = /pyramid=\{climber\.pyramid\}/.test(tag);
 
   if (!pyramidFed) {
     ok("the non-self pyramid is no longer fed by `climber.pyramid` -- this section's premise has moved, so it asserts nothing");

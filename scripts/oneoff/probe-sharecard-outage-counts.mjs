@@ -1,3 +1,4 @@
+import { fileHref } from "../lib/file-href.mjs";
 // Does the SHARE CARD stop exporting a count it could not read?
 //
 // This is the #674 family and the worst member of it: `summary` is copied to the clipboard,
@@ -28,7 +29,7 @@ await esbuild.build({
   external: ["react", "react-dom", "react/jsx-runtime", "@tanstack/react-query", "@supabase/supabase-js"],
   logLevel: "silent",
 });
-const mod = await import(OUT + "?t=" + Date.now());
+const mod = await import(fileHref(OUT + "?t=" + Date.now()));
 const ShareCard = mod.ShareCard;
 if (typeof ShareCard !== "function") { console.error("ANCHOR LOST: ShareCard is not exported"); process.exit(1); }
 

@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Undo the Primus trailhead move (p07) and line clear: a retry pass found Thunder Creek is the most-used approach,
 // so moving the start to Eldorado Creek was a judgement call the evidence does not settle. Restores waypoints,
 // approach_logistics and gpx from the full-row backup taken before p07, guarded on the live row still holding
@@ -6,7 +7,7 @@ import fs from "node:fs";
 import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../../lib/supabase-env.mjs";
 const key = requireServiceKey();
 const id = "wa_primus_peak_south_ridge";
-const D = new URL("../../../audits/route-tab-contradictions/decisions/structural-_route_leftovers_pins_out_p07_json-1790777596178.json", import.meta.url).pathname;
+const D = fileURLToPath(new URL("../../../audits/route-tab-contradictions/decisions/structural-_route_leftovers_pins_out_p07_json-1790777596178.json", import.meta.url));
 const b = JSON.parse(fs.readFileSync(D)).backups.find(r => r.id === id);
 const get = async () => (await (await fetch(`${SUPABASE_URL}/rest/v1/routes?select=waypoints,approach_logistics,gpx&id=eq.${id}`, { headers: headers(key) })).json())[0];
 const live = await get();

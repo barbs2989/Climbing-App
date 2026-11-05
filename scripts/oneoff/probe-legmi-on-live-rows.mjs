@@ -1,3 +1,4 @@
+import { fileHref } from "../lib/file-href.mjs";
 // The guard proves legMi on a fixture. This proves it on the REAL rows, through the REAL
 // hydration — dbRouteToCamel and normalizeWaypoints both sit between the column and the screen,
 // and either could have made the suppression reach nothing while every fixture assertion stayed
@@ -27,7 +28,7 @@ await build({ stdin: { contents: ENTRY, resolveDir: ROOT, loader: "js" }, bundle
   platform: "node", jsx: "automatic", loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error" });
 const { render, dbRouteToCamel } = require_(out);
-const { SUPABASE_URL, anonKey, headers } = await import(path.join(ROOT, "scripts/lib/supabase-env.mjs"));
+const { SUPABASE_URL, anonKey, headers } = await import(fileHref(path.join(ROOT, "scripts/lib/supabase-env.mjs")));
 const k = anonKey();
 const text = (h) => h.replace(/<style[\s\S]*?<\/style>/g," ").replace(/<[^>]+>/g," ").replace(/&#x27;/g,"'").replace(/&amp;/g,"&").replace(/\s+/g," ");
 const IDS = ["wa_luna_glacier", "wa_lizard_mountain_south_route", "wa_mount_rainier_liberty_ridge", "wa_mount_baker_coleman_deming"];

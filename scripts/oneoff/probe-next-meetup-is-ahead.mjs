@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Is the "next meetup" actually ahead of you?
 //
 // Both group surfaces took `events.sort(byDate)[0]` and called it "Next meet", with no test for
@@ -25,13 +27,13 @@ const dead = (m) => { console.error("\nBROKEN PROBE: " + m); process.exit(2); };
 
 const out = path.join(ROOT, `.next-meetup-probe-${process.pid}.mjs`);
 try {
-  execFileSync("npx", ["esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
+  execFileSync(NPX, [...NPX_PRE, "esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic", "--loader:.jsx=jsx",
     `--define:import.meta.env=${JSON.stringify({})}`,
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
     "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 } catch { fs.rmSync(out, { force: true }); dead("esbuild could not bundle ClimbMatchCore.jsx"); }
-const core = await import(out + "?t=" + Date.now());
+const core = await import(fileHref(out + "?t=" + Date.now()));
 fs.rmSync(out, { force: true });
 
 const { nextMeetup } = core;

@@ -122,6 +122,28 @@ room for side-panel ads later. The phone app keeps its own look.
   - **Popups that slide up from the bottom** on a phone open as **centred windows** (rounded, at most
     85% of the window tall).
   - Controls brighten under the mouse; the browser tab names the page (*Coleman-Deming – ClimbMatch*).
+  - **"Click", not "tap"** (owner 2026-11-04): the app's own sentences that say *tap…* go through `tx()`
+    (`lib/tapWords.js`), which says *click* while the app is wide (App calls `__setTapWide(wide)` at the
+    top of its render) and rewrites the three *Swipe…* hints. Climbers' own text never goes through it. A
+    string built at module scope is read before App renders and stays phone wording, so a module-scope
+    table (the Help tour's `HELP_FEATS`, Edit profile's setup cards, `AREA_EDIT_FIELDS` hints) is passed
+    through `tx()` again where it renders.
+  - **A mouse cannot swipe:** a `SwipeRow` whose content carries no other way to act — the inbox's
+    conversation rows (`hover` prop) — shows its **Delete** as a button in a column beside the row while
+    the row is pointed at or holds keyboard focus (`.cm-swipe` in `wideCss`); the column keeps its width
+    while hidden, so nothing moves and nothing is covered (owner 2026-11-04: drawn over the row, "Clear"
+    landed on a Past crew card's own buttons). Until pointed at they take no clicks either, and the hover
+    reveal sits inside `@media (hover:hover)`, so a touch screen 1024px+ wide (an iPad held sideways)
+    never hits a hidden Delete; it keeps the swipe. Rows that already act in-row get no column: a Past
+    crew card has its own Archive and Clear buttons, a notification its ⋯ menu, a float plan its
+    two-step Delete.
+  - **Chip rows wrap** instead of scrolling sideways off the column (a `wideCss` rule for every
+    `display:flex` + `overflow-x:auto` row in the page column or a page); a row holding photos (at any depth) and
+    the hour picker keep scrolling.
+  - **Maps:** the layer buttons stop short of the ⤢ Full screen button, and in a narrow map (the rail's)
+    *Satellite* reads *Sat* (an `@container` rule in index.html), so none is hidden under it.
+  - **The Climbs tab opens on the United States' regions** (`StatePicker`: an untouched country pick
+    means the US on desktop); a phone still asks for the country.
 
 - **Loading screen and the sign-in screen.** While the bundle downloads, `index.html` paints a branded splash (`#cm-splash`: the app mark, wordmark and a moving bar; still under reduced motion) over the boot shell; while App restores the session it draws the same splash (`BootSplash`, `lib/BootSplash.jsx`) instead of a blank page. As the app's first screen (the real gate, or `LOGIN_FIRST`), the sign-in screen (`lib/AuthModal.jsx`) fills the screen under a branded header (the mark, the wordmark and what the app is for) instead of drawing a modal over a black page; opened from inside the app it is still the modal.
 - **The sign-in look carries into the app.** Every screen header (`ScreenHero`, `lib/ScreenHero.jsx`) wears the sign-in screen's blue top glow (`HERO_BG`, `HERO_SHEEN`), as do the Me card, a climber's profile header and an area without a cover photo. Home's banner has the sign-in background itself (`HOME_GLOW`) and the mark (`BrandMark`, `src/components/BrandMark.tsx`) beside the wordmark; the Menu's header is the mark and wordmark too. The four icon squares at the top right are one plain dark style; their count badges carry the colour. Disclosure rows end in one chevron (`Chevron`, `src/components/Chevron.tsx`) instead of ▸/▾ text glyphs. Each header's line under the title is one short line. **The five top tabs have no boxed header** (owner, 2026-10-25): Climbs, Partners, Crew, Logbook and Ranks render `ScreenHero` with `quiet`, which drops the box and the big title (the title stays as a visually hidden `<h1>` for screen readers) and keeps the one-line caption as plain muted text, with Ranks' "?" beside it. The sub-tab bar names the view; the Logbook's unreadable-count warning stays in the caption.

@@ -1,9 +1,10 @@
+import { fileURLToPath } from "node:url";
 // Write a clear_line op file for routes whose drawn line follows the WRONG approach, taking expect_gpx from the
 // live row so apply-pins still compare-and-sets. usage: node mk-clear-line.mjs <out name> <id>=<why> [...]
 import fs from "node:fs";
 import { SUPABASE_URL, headers, requireServiceKey } from "../../lib/supabase-env.mjs";
 const key = requireServiceKey();
-const A = new URL("../../../audits/route-leftovers/pins/out", import.meta.url).pathname;
+const A = fileURLToPath(new URL("../../../audits/route-leftovers/pins/out", import.meta.url));
 const [name, ...pairs] = process.argv.slice(2);
 const results = [];
 for (const p of pairs) {

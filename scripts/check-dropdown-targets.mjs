@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // check:dropdown-targets — every DROPDOWN toggle in the app is drawn at least 44px tall.
 //
 // Owner note (2026-10-29): "On route beta, it's difficult to click the dropdown to view more
@@ -23,7 +24,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { appSources, assertCovered } from "./lib/guard-sources.mjs";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const G = "check:dropdown-targets";
 const MIN = 44;
 // file → a substring of the opening tag → why it needs no minHeight of its own.

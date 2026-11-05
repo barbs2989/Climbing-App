@@ -1,10 +1,11 @@
+import { fileURLToPath } from "node:url";
 // Injection cases for check:no-module-scope-core-reads: prove it goes RED on the defect that took
 // the live site down on 2026-10-23 (#2678 → #2679), and GREEN on the four shapes that look like it
 // and are safe. Each edit is proven landed by checksum, and every file is restored byte-identically
 // even if a case throws.
 //   node scripts/oneoff/inject-module-scope-core-read-cases.mjs
 import fs from "fs"; import { spawnSync } from "child_process"; import crypto from "crypto";
-const W = new URL("../../", import.meta.url).pathname;
+const W = fileURLToPath(new URL("../../", import.meta.url));
 const sha = s => crypto.createHash("sha1").update(s).digest("hex");
 // Av: core imports it back (its chat and crew rows render it) — the cycle the outage ran on. (VouchCard carried these
 // cases until PR50 moved FullProfile, its only core renderer, out of core.)

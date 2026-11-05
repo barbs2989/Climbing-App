@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Do the two screens #778 fixed actually name a REAL crew member?
 //
 // #778 fixed three seed-lookup defects and only one — the float plan — was ever driven with
@@ -60,7 +61,7 @@ try {
   const port = await claimPort(5470);
   const base = `http://127.0.0.1:${port}/Climbing-App/`;
   log(`dev server on ${port}...`);
-  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   if (!(await waitForServer(base))) { console.error("dev server never came up"); process.exit(1); }
   browser = await chromium.launch({ channel: "chrome", headless: true, timeout: 180000 });

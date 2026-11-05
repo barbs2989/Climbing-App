@@ -1,7 +1,8 @@
+import { fileURLToPath } from "node:url";
 // Cross-field contradiction detector over the WA snapshot. Reads wa-routes.json / wa-areas.json,
 // writes findings.json. Every check compares TWO records of ONE fact on the same row.
 import fs from "node:fs";
-const T = new URL("../../../audits/route-tab-contradictions", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/route-tab-contradictions", import.meta.url));
 const R = JSON.parse(fs.readFileSync(`${T}/wa-routes.json`));
 const A = Object.fromEntries(JSON.parse(fs.readFileSync(`${T}/wa-areas.json`)).map(a => [a.id, a]));
 

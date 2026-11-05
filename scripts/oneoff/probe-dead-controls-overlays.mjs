@@ -1,3 +1,5 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // The dead-control question, asked INSIDE the app's overlays.
 //
 // Three guards already open every overlay -- check:zero, check:signed-in, check:overlay-scroll
@@ -40,7 +42,7 @@ import { overlayStates, NEEDS_EXTRA_STATE } from "../lib/overlay-scaffold.mjs";
 // runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
 assertQuietBox("probe-dead-controls-overlays.mjs");
 
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 const ONLY = (process.argv.find((a) => a.startsWith("--only=")) || "").slice(7);
 const MAX_PER_OVERLAY = Number((process.argv.find((a) => a.startsWith("--max=")) || "--max=14").slice(6));
 
@@ -63,7 +65,7 @@ async function claimPort(start) {
 const port = await claimPort(5320);
 if (port === null) { console.error("no free port"); process.exit(1); }
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
-const server = spawn("npx", ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "pipe", "pipe"], detached: true });
 server.stdout.on("data", () => {});
 server.stderr.on("data", (d) => { const s = String(d); if (/ANCHOR LOST|Error/.test(s)) process.stderr.write(s); });

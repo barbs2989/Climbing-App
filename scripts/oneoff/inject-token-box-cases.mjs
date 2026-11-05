@@ -34,17 +34,14 @@ const CASES = [
       '{b.water?<span style={chip(C.textMuted,C.border)}>{b.water}</span>:null}'),
     want: /box\(es\) hold text too long for their shape/,
   },
-  {
-    file: "RouteDetail.jsx",
-    // THE HISTORICAL DEFECT, verbatim. Not a synthetic edit: RouteDetail.jsx exactly as it stood
-    // at 6f82fc0, the commit before the camping collapse, when capacity/water/permit rendered as
-    // chips holding up to 1,386 characters. This is the case both earlier designs of this guard
-    // FAILED — the route-rooted static version reported "ok" against this very tree — so it is
-    // the one that decides whether the guard is worth having.
-    name: "0. RouteDetail as it stood at 6f82fc0, before the camping collapse (the real #3)",
-    edit: () => execSync("git show 6f82fc0:RouteDetail.jsx", { encoding: "utf8", maxBuffer: 1 << 28 }),
-    want: /box\(es\) hold text too long for their shape/,
-  },
+  // CASE 0 WAS REMOVED (it replayed `git show 6f82fc0:RouteDetail.jsx`, the file verbatim before the
+  // camping collapse, where capacity/water/permit rendered as chips of up to 1,386 characters, and
+  // it was the case both earlier designs of this guard failed). It cannot be replayed any more:
+  // that file imports modules the app has since deleted (lib/feedbackLoop, lib/provenance, #2546 and
+  // #2207) and db/auth exports that no longer exist, so the bundle does not build and the guard
+  // crashes rather than judging it -- a crash read as a MISS. The same shape, prose rendered as a
+  // chip in the camping panel, is injected into the CURRENT CampSite.tsx by case 2 above, which is
+  // what remains provable.
   {
     file: "src/components/ApproachVariants.tsx",
     // MUST PASS. A box that explicitly accommodates long text has been thought about. The STAGES

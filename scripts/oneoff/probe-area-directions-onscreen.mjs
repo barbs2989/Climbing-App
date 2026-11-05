@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Can a real climber get DIRECTIONS to an area?
 //
 // Until now: no. The only area-level directions link in the app is inside `GettingThere`, which is
@@ -46,7 +47,7 @@ const port = await claimPort(PORT);
 if (port === null) { console.error("no free port"); process.exit(1); }
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
 log(`starting dev server on ${port}...`);
-const server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
 let died = false; server.on("exit", () => { died = true; });
 let stopped = false;

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Does the Help modal's tour actually RENDER an entry for every tab?
 //
 // check:boot's section 2 proves the `feats` ARRAY covers NAV. That is not the same
@@ -49,7 +50,7 @@ process.exit(0);
 // the bundle MUST live inside the project: node resolves `react` from the nearest
 // node_modules, and a bundle in the OS temp dir throws ERR_MODULE_NOT_FOUND.
 const bundle = path.join(OUT, "entry.cjs");
-execFileSync("npx", ["esbuild", "--bundle", "--format=cjs", "--platform=node",
+execFileSync(NPX, [...NPX_PRE, "esbuild", "--bundle", "--format=cjs", "--platform=node",
   "--jsx=automatic", "--loader:.jsx=jsx", "--define:import.meta.env={}",
   "--outfile=" + bundle], { input: entry, cwd: ROOT, stdio: ["pipe", "pipe", "inherit"] });
 execFileSync("node", [bundle], { cwd: ROOT, stdio: "inherit" });
