@@ -11,7 +11,7 @@ interface LogClimbSheetArea { lat?: number | null; lng?: number | null; name?: s
 /** A route as the log form opens it: a catalog row or a thin database one. */
 interface LogClimbSheetRoute { id: string | number; name?: string; mountainId?: string; _dbArea?: LogClimbSheetArea | null; [k: string]: unknown }
 /** A logged climb or a conditions report. */
-interface LogClimbSheetEntry { _dbId?: string | number | null; gpxTrack?: unknown; sunVote?: unknown; caughtBy?: unknown; [k: string]: unknown }
+interface LogClimbSheetEntry { _dbId?: string | number | null; gpxTrack?: unknown; sunVote?: unknown; [k: string]: unknown }
 /** What the log form hands back on save. */
 interface LogClimbSheetSaved { editIndex?: number | null; scoutOnly?: boolean; routeId: string | number; sunVote?: string; sunNote?: string; vouchFor: Array<string | number>; crewId?: string | number; fa?: boolean; user?: unknown; date?: string; tickType: string; visibility?: string; gpxTrack?: unknown; [k: string]: unknown }
 interface LogClimbSheetPerson { id: string | number; name?: string; avatar?: string }
