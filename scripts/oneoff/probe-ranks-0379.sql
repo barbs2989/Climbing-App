@@ -48,7 +48,7 @@ begin
     'others_with_logs', (select count(*) from lb l where not l.is_me and not (l.user_id = any(ids)) and l.user_id <> v_id),
     'all|all|active', sd -> 'all|all|active', 'all|sport|points', sd -> 'all|sport|points',
     'all|all|vouched', sd -> 'all|all|vouched', 'backed|all|active', sd -> 'backed|all|active',
-    'n_keys', (select count(*) from jsonb_object_keys(sd)));
+    'n_keys', (select count(*) from jsonb_object_keys(sd)), 'others', sd -> '_others');
   raise exception 'PROBE %', out::text;
 end $probe$;
 rollback;
