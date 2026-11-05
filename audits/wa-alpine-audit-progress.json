@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_mount_adams_adams_glacier",
+  "last_processed_id": "wa_mount_adams_south_climb",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 512 complete. Continuing id-ascending scope from wa_mount_adams_adams_glacier (next batch starts after it).",
+  "pass_note": "Pass 8 in progress, batch 513 complete. Continuing id-ascending scope from wa_mount_adams_south_climb (next batch starts after it).",
   "batches": [
     {
       "batch_number": 1,
@@ -10187,6 +10187,26 @@
       "clean": 4,
       "sql_file": null,
       "note": "Six routes across four peaks (Middle Peak's Traverse Route, Colchuck Balanced Rock's Milk n' Honey, Mixup Peak's East Face/East Buttress, South Early Winters Spire's Mojo Rising, Monte Cristo Peak's North Col, Mount Adams' Adams Glacier). wa_middle_peak_traverse_route is a bare stub (id/name/area/discipline only, no enrichment yet) -- nothing to check, trivially clean.\n\nFour clean: Milk n' Honey's FA (Thomas Ramier, Craig Rankin, Abe Traven, August 24 2010) is confirmed directly by their own Cascade Climbers trip report dated 8/24/2010, and its climate field's claim of a first winter ascent of the West Face in 'late January 2012' is corroborated by Blake Herrington's own blog post (dated 1/13/2012) and a second climber's 1/17/2012 post about the same climb. Mixup Peak's East Face/East Buttress FA ('Wesley Grande and Jack Kendrick, 1947') matches Wikipedia exactly, its 7,440 ft summit is the best-supported figure across sources (TopoQuest's 7,450 ft and TopoZone's lower 7,231 ft are both minor outliers, not corrections), and its NPS permit description (free day-use, backcountry permit required only for overnight) is correct for the North Cascades NP complex; the row's own data_quality field already discloses the 4-vs-5-rappel spread between trip reports, so that wasn't re-flagged here. Mojo Rising's FA (Mark Allen, Joel Kauffman, Tom Smith, October 13-14 2006) is confirmed by Allen's own Cascade Climbers trip report and an OpenBeta route record, and its 7,807 ft summit matches SummitPost and ListsOfJohn's map figure. Mount Adams' Adams Glacier FA (Fred Beckey, Dave Lind, Robert Mulhall, July 1945) matches Wikipedia, its description as the mountain's largest glacier matches Wikipedia, and its stored climbing-pass window (required above 7,000 ft, May 1-Sep 30) matches the Gifford Pinchot NF's own current (2025) Mt. Adams Climbing Conditions Report -- older GPNF pages and SummitPost give different windows (June 1 or April 1 starts), but the current official page is the one that should govern and it's what our row already stores.\n\nFlagged for human review, no SQL (neither is a sourced-fact error -- both are the row's own identity disagreeing with its own content, outside what a source citation can fix): (1) wa_monte_cristo_peak_scramble's id and name ('North Col') both imply a Class 3 scramble, but the row's own overview explicitly says the opposite -- 'Monte Cristo has no scramble-only line to the true summit... it's properly a Basic Alpine Climb rather than a Class 3 scramble' -- and that overview is itself correct (its FA, 7,136 ft elevation, and the chimney's 5.6/5.2/5.6 grading and recently-bolted protection are all confirmed by Wikipedia and a 2022 SummitPost trip note). A rename needs a human id-identity decision per docs/codebase/route-identity.md, not a content patch. (2) wa_mojo_rising's watch_out field is stored as one string with embedded line breaks, unlike every other row checked this batch (and most of the catalog), which store watch_out as a JSON array of separate strings -- a data-shape anomaly, not a factual one; out of scope for a content fix here."
+    },
+    {
+      "batch_number": 513,
+      "date": "2026-11-05",
+      "pass": 8,
+      "route_ids": [
+        "wa_mount_adams_avalanche_white_salmon_glaciers",
+        "wa_mount_adams_lava_glacier_headwall",
+        "wa_mount_adams_lyman_glacier",
+        "wa_mount_adams_mazama_glacier_headwall",
+        "wa_mount_adams_north_ridge",
+        "wa_mount_adams_northwest_ridge",
+        "wa_mount_adams_pinnacle_glacier_headwall",
+        "wa_mount_adams_south_climb"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 1,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-11-05-batch-513.sql",
+      "note": "Eight Mount Adams routes. Confirmed error: wa_mount_adams_lava_glacier_headwall's fa year was off by one (stored 1961, two independent sources agree on 1960) -- SQL fix written. Flagged, no SQL: wa_mount_adams_lyman_glacier's fa (\"Cornelius Molenaar and Robert W. Craig, September 1948\") appears misattached from Mount Rainier's Nisqually Icefall climb (same two climbers, same year, wrong mountain and route) -- no source found naming the actual Lyman Glacier first ascent, so no replacement value to write. Six clean: Mount Adams summit elevation and climbing-pass terms (both checked across multiple routes this batch) match current USFS/Recreation.gov listings; North Ridge's FA for the mountain's first ascent (1854, Aiken/Allen/Burge) matches the USGS CVO historical account; North Ridge (West Face)'s FA and length/pitch count match a Mountain Project listing for the same route name. Avalanche-White Salmon Glaciers' and Pinnacle Glacier Headwall's FAs could not be confirmed or refuted and were left as-is per audit rules."
     }
   ]
 }

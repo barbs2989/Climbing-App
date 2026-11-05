@@ -36914,3 +36914,39 @@ anomaly, not a factual one, so out of scope for a content fix here.
 
 Next batch will continue id-ascending from `wa_mount_adams_adams_glacier`
 (see progress file).
+
+## Batch 513 (pass 8) — 2026-11-05
+
+Checked 8 Mount Adams routes, continuing id-ascending past the Adams Glacier: `wa_mount_adams_avalanche_white_salmon_glaciers`,
+`wa_mount_adams_lava_glacier_headwall`, `wa_mount_adams_lyman_glacier`, `wa_mount_adams_mazama_glacier_headwall`,
+`wa_mount_adams_north_ridge`, `wa_mount_adams_northwest_ridge`, `wa_mount_adams_pinnacle_glacier_headwall`,
+`wa_mount_adams_south_climb`.
+
+One confirmed error, SQL written: Lava Glacier Headwall's `fa` was stored as "Edward Cooper and Mike Swayne,
+July 3, 1961". Two independent sources — Swayne's own climbing-history list and a separate climbing-club
+route list — agree the climb was July 2-3, **1960**, not 1961; no source supports 1961 (the Cooper/Swayne
+1962 AAJ report covers a different Adams line, the East Face, and their actual 1962 climb together was the
+East Willis Wall on Rainier). See `audits/sql/2026-11-05-batch-513.sql`.
+
+Three clean: Mount Adams' summit elevation (12,276 ft) and its climbing-pass terms ($20/person 16+, required
+above 7,000 ft May 1-Sep 30, sold per trip on Recreation.gov) both match the current USFS/Recreation.gov
+listings exactly on every route checked this batch. North Ridge's FA attribution for the mountain's first
+ascent (A.G. Aiken, Edward J. Allen, Andrew J. Burge, 1854) matches the USGS CVO historical account, which
+places the climb on this same ridge/cleaver feature. North Ridge (West Face)'s FA ("Molenaar, Johnson, Ostro,
+and Startzell, September 1960") and its ~2,000 ft / 5-pitch Grade III length match a Mountain Project listing
+for the same route name, consistent with the row's stored `length_m: 610` and `pitches: 5`.
+
+Flagged for human review, no SQL (source material doesn't support fabricating a specific replacement):
+Lyman Glacier's `fa` is stored as "Cornelius Molenaar and Robert W. Craig, September 1948" — searches turned
+up no record of a 1948 Molenaar/Craig climb on Mount Adams at all; the only documented 1948 Molenaar/Craig
+climb found is Dee Molenaar and Bob Craig's July 15, 1948 ascent of the Nisqually Icefall on Mount **Rainier**,
+a different mountain and a different route. This looks like a misattached fact rather than a typo (wrong
+person, wrong mountain, wrong feature all at once), but no source was found naming who actually made the
+first ascent of the Lyman Glacier route, so there's no verified value to write in its place.
+
+Avalanche-White Salmon Glaciers' `fa` ("Angus, Moreau, 1957") and Pinnacle Glacier Headwall's `fa` ("Gary
+Faulkes, Phil Lizee, 1965") were checked but could not be confirmed or refuted from available sources (the
+latter is at least corroborated by a Mountain Project listing crediting Faulkes/Lizee in June 1965, so it's
+on firmer footing than the former); left as-is per audit rules against flagging what can't be verified.
+
+Next batch will continue id-ascending from `wa_mount_adams_south_climb` (see progress file).
