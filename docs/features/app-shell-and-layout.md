@@ -104,7 +104,11 @@ room for side-panel ads later. The phone app keeps its own look.
     Legal: Terms, Privacy, Guidelines, Accessibility), then a thin © row with Back to top. It is the ONLY home of About,
     Help, Feedback, Privacy and Terms on desktop. The **directory of every state with climbs** heads it on
     the Climbs tab's route and area pages only (owner 2026-11-04, `showStates`); not the tab's own
-    root, where the state picker above already lists every state under the country buttons.
+    root, where the state picker above already lists every state under the country buttons. An **Install
+    ClimbMatch** link ends the ClimbMatch column while the browser has offered an install
+    (`beforeinstallprompt`, kept by `useInstallPrompt` in `lib/installPrompt.js`); Chrome and Edge offer
+    one on the built site, Safari and Firefox never do, and an installed app is not offered again, so the
+    link shows only when a click can really install (competitor review batch A, item 10).
   - **☰ Menu** fills the whole window, as on a phone, with its content centred in a 720px column.
   - **Full-screen views are pages.** Every view that covers the phone screen (Calendar, Messages, Edit
     profile, a group, an event, Settings' sub-pages, Best day, Manage areas, Terms…) is drawn in the
@@ -226,6 +230,7 @@ taken focus from it by the time the hook looks.
 | `lib/wideLayout.js` | `useWideScreen`, `useFullWidth`, `wideGeom`, `wideColumn`, `wideSidebar`, `wideRail`, `wideTopBar`, `wideTopRow`, `wideCss`, `WIDE_MIN`, `FULL_MIN` |
 | `lib/MonthGrid.jsx` | `MonthGrid` |
 | `lib/DesktopShell.jsx` | `WideSearch`, `WideRail`, `WideFooter`, `DocTitle` |
+| `lib/installPrompt.js` | `useInstallPrompt` |
 | `lib/Ads.jsx` | `ADS_ON`, `adsActive`, `SidebarAd`, `RailAd`, `useRailFollow`, `FollowColumn`, `SideWrap` |
 | `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers` |
 | `lib/tapSlop.js` | `installTapSlop`, `slopTarget`, `TAP_MIN` |
