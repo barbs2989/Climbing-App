@@ -44,7 +44,7 @@
 // Camps carry no coordinates (4 of 5,083), but a camp that NAMES a peak inherits that peak's
 // coordinate from the catalog's own `areas` table — so the distance is measurable without
 // inventing anything.
-import { SUPABASE_URL, anonKey, headers } from "./lib/supabase-env.mjs";
+import { SUPABASE_URL, anonKey, headers, selectAll } from "./lib/supabase-env.mjs";
 
 const H = headers(anonKey());
 const q = async (p) => {
@@ -53,11 +53,23 @@ const q = async (p) => {
   return r.json();
 };
 
-const rows = await q("routes?select=id,name,area_id,high_point_ft,bivy,overview,approach,beta,climbing_route,approach_logistics&bivy=not.is.null&limit=1000");
+// Ids FIRST, then the wide columns by id. One request carrying all eight prose columns across a
+// 205k-row scan for `bivy` hit the anon role's ~3 s statement timeout on a HEALTHY database (HTTP
+// 500 57014, 2026-11-04); the id-only scan answers in 0.2 s and each id chunk is a primary-key
+// lookup. The id read is keyset-paged, so no row cap applies — the old `limit=1000` would have truncated silently.
+const bivyIds = (await selectAll("routes", "id", "bivy=not.is.null", { pageSize: 1000 })).map((x) => x.id);
+const rows = [];
+for (let i = 0; i < bivyIds.length; i += 100) {
+  const chunk = bivyIds.slice(i, i + 100).map((x) => `"${x}"`).join(",");
+  rows.push(...await q(`routes?select=id,name,area_id,high_point_ft,bivy,overview,approach,beta,climbing_route,approach_logistics&id=in.(${chunk})`));
+}
+if (rows.length !== bivyIds.length) { console.log(`FAIL: read ${rows.length} of ${bivyIds.length} bivy routes`); process.exit(1); }
 if (!rows.length) { console.log("FAIL: read no routes carrying bivy"); process.exit(1); }
 // Every PEAK the catalog knows, as a name -> coordinate index. Peaks only: a camp named after a
 // creek or a lake tells us nothing about which summit it serves.
-const peaks = await q("areas?select=id,name,lat,lng,area_type&area_type=eq.peak&limit=1000");
+// Through selectAll (ordered by id): the same read UNORDERED timed out (3.3 s, 57014) while the
+// ordered one answers in 0.3 s, and keyset paging lifts the old silent 1000-row cap.
+const peaks = await selectAll("areas", "id,name,lat,lng,area_type", "area_type=eq.peak", { pageSize: 1000 });
 if (!peaks.length) { console.log("FAIL: read no peak areas — every camp would look unnamed"); process.exit(1); }
 const areaIds = [...new Set(rows.map((x) => x.area_id).filter(Boolean))];
 const areaOf = new Map();

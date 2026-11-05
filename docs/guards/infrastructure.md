@@ -646,6 +646,12 @@ running after it exited. Five causes, all fixed in scripts only (behaviour on ma
   sweep missed one real site, `return import(out)` in `probe-pinned-states-follow-the-account.mjs`,
   because it only matched `await import(`; the guard's first run found it. Not checked: `\`
   separators. They have no single spelling, and the coverage floors already catch them.
+  **Rule 4 (added 2026-11-04): a literal `"/Users/<name>/"` or `"/home/<name>/"` path.** The first
+  full audit run on Windows found `audit:summit-pins` reading its credentials from
+  `/Users/nathanbarber/dev/Climbing-App/.env.local` (ENOENT before any check), and
+  `pipeline/flag-classics.mjs` defaulting three data dirs there. The build guards never saw it,
+  because no build guard imports either file. `scripts/oneoff/` is exempt from this rule only:
+  15 one-offs name job folders from finished Mac runs, and they are history, not tools.
 - **Running injection suites concurrently on one box gives false MISSes.** A suite that passes 7/7
   alone reported 1/7 while a second batch of browser walks ran beside it (its subprocess timed out,
   so the failure carried no SELF-TEST text and read as a pass). Run suites one at a time, and re-run

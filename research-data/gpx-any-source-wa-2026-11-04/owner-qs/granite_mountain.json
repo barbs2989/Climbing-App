@@ -1,0 +1,38 @@
+{
+  "key": "granite_mountain",
+  "question": "Which summit do our Granite Mountain routes mean, Tusk O'Granite (west peak) or the main Granite Mountain? Our area coordinate is 329 m from the Tusk.",
+  "answer": "The main summit, the one with the fire lookout. Our stored standard scramble route is the Granite Mountain Trail (#1016) off the Pratt Lake trail at I-90 exit 47 to the lookout: it names the junction at 1.2 miles, the avalanche chute, the meadow and the summit lookout, and quotes about 8.6 miles and 3,800 ft round trip, which is the main-peak hike. Tusk O'Granite (also West Granite Mountain) is a different, unofficial-name summit: 5,566-5,571 ft, 406 ft of prominence, about 0.5-0.7 miles WNW of the main summit, with its own routes (south slopes and southwest ridge from the Pratt Lake trail, NW ridge, links with Granite). So the packet's Peakbagger match is wrong: it took the nearest peak to our AREA coordinate, and our area coordinate (47.42216,-121.49579) sits on the Tusk, not the main summit. The main summit is at about 47.4177,-121.4814 (four independent coordinates agree within ~100 m: 47.41778,-121.48139; 47.41773,-121.48152; 47.41712,-121.48132; 47.41761,-121.48121), 5,629-5,633 ft. The area coordinate is about 1191 m from the true summit and 329 m from the Tusk; the Tusk is 1032 m from the main summit. The three June 2026 / May 2026 / Jan 2026 tracks and the 2023 'NW Ridge' and 2021 'South direct' logs that the packet offered are all Tusk summits, not Granite Mountain, so none can be attached to our row.",
+  "recommendation": "(1) MOVE the area pin wa_granite_mountain to 47.4177,-121.4814 and set elevation to 5,633 ft (NAVD88; the lookout sign says 5,629), so the Peakbagger match (pid 2119) and the summit pin agree. (2) Do not attach any Tusk track to wa_granite_mountain_standard_scramble_route; re-run the track search against the main peak (Peakbagger pid 2119) for a trailhead-to-lookout log. (3) If the owner wants the Tusk covered, add it as its own sibling peak area 'Tusk O'Granite (West Granite Mountain)' at 47.4236,-121.4920 with its own scramble row (the 2005 and 2014 south-slope / southwest-ridge logs and the 2021-2026 Pratt Lake logs describe it); look it up with catalog_find_area first. (4) Side flags on the same area: 'Beargrass Rib' and 'Winter Route First South Rib' are stored as discipline trad with grade 5.0; under the owner's rule roped rock or 5.x is 'alpine', and a 5.0 grade for a roped route is suspect on its face. Not researched further.",
+  "confidence": "high",
+  "proposed": {
+    "granite_area_pin": {
+      "lat": 47.4177,
+      "lng": -121.4814,
+      "elev_ft": 5633
+    },
+    "optional_new_area": {
+      "name": "Tusk O'Granite (West Granite Mountain)",
+      "lat": 47.423615,
+      "lng": -121.491975,
+      "elev_ft": 5571,
+      "parent": "same parent as Granite Mountain",
+      "note": "unofficial name; look up with catalog_find_area before inserting"
+    },
+    "attach_no_tusk_tracks_to": "wa_granite_mountain_standard_scramble_route"
+  },
+  "evidence": [
+    "https://en.wikipedia.org/wiki/Granite_Mountain_(King_County,_Washington) - summit 5,633 ft NAVD88, 47 25 04 N 121 28 53 W; fire lookout on the summit reached by trail",
+    "https://www.yellowleaf.org/scramble/g/l/West-Granite-Mountain.html - West Granite Mountain = Tusk O'Granite, 5,566 ft, prominence 406 ft, 'rises like a tooth from the side of Granite Mountain'; unofficial name",
+    "https://www.yellowleaf.org/scramble/g/r/2005-03-26-West-Granite.html - Tusk reached by leaving the Pratt Lake trail past the Granite junction, cross-country N, SW ridge; 3,870 ft gain (a different, trail-less route)",
+    "Search snippets (Mountaineers 'Granite Mountain Trail' and 'West Granite' pages; TopoZone 47.4176118,-121.4812054; trailchick 47.41712,-121.48132 at 5,629 ft; SummitPost 47.41773,-121.48152) - main summit coordinates and the lookout",
+    "packets-all/wa_granite_mountain.json - Peakbagger match 'Tusk O'Granite [West Granite Mountain]' pid 24533 at 47.423615,-121.491975, distFromOurAreaCoordM 329; all five packet tracks are logged on that peak",
+    "peaks.json - our area coordinate 47.42216,-121.49579, elev null"
+  ],
+  "searched": [
+    "Tusk O'Granite West Granite Mountain Snoqualmie scramble route - Mountaineers x7, yellowleaf x3, WTA x3",
+    "Peakbagger Granite Mountain Washington King County 5629 Snoqualmie lookout latitude longitude - Wikipedia, TopoZone, trailchick, SummitPost",
+    "Nominatim 'Granite Mountain Washington peak' and 'Granite Mountain trailhead Snoqualmie' - empty results",
+    "Fetch refused with HTTP 403 (not worked around): peakbagger pid 24533 (data taken from the packet instead)",
+    "Not established: a PB pid-2119 track list; main-peak coordinates above are from four non-Peakbagger sources."
+  ]
+}

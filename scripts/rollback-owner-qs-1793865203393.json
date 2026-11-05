@@ -1,0 +1,2159 @@
+{
+ "note": "full rows before apply-owner-qs.mjs; restore a patch with patchRow, a delete by re-inserting `before`",
+ "at": "2026-11-05T07:53:23.707Z",
+ "steps": [
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_hagan_mountain_south",
+    "area_id": "wa_hagan_mountain",
+    "name": "South Slopes",
+    "replaceText": {
+     "approach": [
+      [
+       "Park at the Baker River Trailhead, the end of FR 11",
+       "This is the southern way onto Hagan, used mostly by parties on a longer traverse with Bacon Peak and Mount Blum; for the peak alone, the usual line is the North Slopes route by the Blum Lakes. Park at the Baker River Trailhead, the end of FR 11"
+      ]
+     ]
+    }
+   },
+   "before": {
+    "id": "wa_hagan_mountain_south",
+    "area_id": "wa_hagan_mountain",
+    "name": "South Slopes",
+    "discipline": "mountaineering",
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3,
+    "pitches": null,
+    "length_m": 91,
+    "sort_order": null,
+    "stars": null,
+    "fa": null,
+    "lat": null,
+    "lng": null,
+    "aspect": "S",
+    "season": "Jul-Sep",
+    "description": null,
+    "gear": [
+     "ice axe (early season)",
+     "helmet",
+     "trekking poles",
+     "map and compass or GPS (route is mostly cross-country and unmarked past Diobsud Lakes)",
+     "insect repellent/head net (blackflies and mosquitoes reported in mid-to-late summer)"
+    ],
+    "hazards": [
+     "routefinding among Hagan's several summits",
+     "afternoon thunderstorms",
+     "steep, trail-less bushwhacking through two forest cliff bands on the approach",
+     "loose rock in the summit scree/talus couloir",
+     "biting insects (blackflies, mosquitoes) in mid-summer",
+     "crevasse and moat hazard on the short Hagan Glacier crossing below the twin-summit col"
+    ],
+    "verif": null,
+    "overview": "Hagan Mountain is a multi-summited peak in the Lower Skagit/Bacon Peak group of the North Cascades, between Mount Blum (about 1.8 mi north) and Bacon Peak (about 4.5 mi south) in the Baker Lake backcountry. It straddles the boundary between the Noisy-Diobsud Wilderness (Mount Baker-Snoqualmie National Forest) and North Cascades National Park, and is built of phyllite. The mountain carries its own Hagan Glacier plus the smaller Hidden Creek Glacier, whose meltwater feeds tributaries of the Skagit River. There is no maintained trail to the summit; most parties approach cross-country and climb it as part of a longer Bacon-Hagan-Blum or Watson-Blum traverse rather than as a standalone day objective.",
+    "beta": "The mountain's easiest route is listed simply as scrambling class 3 with glacier travel. The only detailed published account (a Labor Day 2020 Watson–Bacon–Hagan–Blum traverse trip report) describes climbing a shoulder toward Hagan from a tarn near 5,360 ft, crossing the upper part of the Hagan Glacier unroped to a high col/pass, then dropping packs and scrambling a few hundred vertical feet of class 3 terrain to the true summit. The southeast side below the peak is described as 'a moraine wasteland' of unstable footing.",
+    "turnaround": "Because the return route recrosses glaciated terrain and loose class-3 rock, and the nearest trail is many cross-country hours away, set a firm turnaround time that leaves ample daylight margin for slower-than-expected glacier and scramble travel back to camp or the trailhead.",
+    "auto_generated": true,
+    "alpine_grade": null,
+    "rock_grade": "Class 2-3",
+    "ice_grade": null,
+    "gain_ft": 6600,
+    "loss_ft": 6600,
+    "dist_km": 31.38,
+    "max_angle": null,
+    "rappels": "0",
+    "commitment": "II",
+    "face": "South Slopes (Hagan Glacier / southeast moraine basin)",
+    "permit": null,
+    "comms": null,
+    "descent": "Reverse the south slopes toward the Blum/Bacon approach basin.",
+    "obj_haz": [
+     "glacier/crevasse hazard",
+     "loose rock",
+     "unstable moraine footing",
+     "remote/trail-less terrain far from help"
+    ],
+    "waypoints": [
+     {
+      "lat": 48.7507,
+      "lng": -121.556,
+      "elev": 800,
+      "name": "Baker River Trailhead",
+      "note": "End of FR 1107022; Northwest Forest Pass required for day parking and a self-issue Noisy-Diobsud Wilderness permit is at the kiosk (confirm current FR 1107 access - a 2025 washout has intermittently closed the road at mile 4).",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Sedro-Woolley, follow SR 20 east 16 miles to milepost 82, turn north on Baker Lake Road (FR 11) for 14 miles to Baker Dam Road, cross the Upper Baker Dam, continue 8 miles on FR 1107, then turn onto spur FR 1107022 and follow it to the road-end trailhead. Pavement ends at Baker Dam Road; everything beyond it is gravel Forest Service road."
+     },
+     {
+      "lat": 48.666193,
+      "lng": -121.590559,
+      "elev": 4415,
+      "name": "Upper Watson Lake",
+      "note": "This pin is the lake itself, not the Hagan Mountain summit. Designated backcountry campsites on rock outcroppings along the upper lake with a privy; no campfires allowed - last reliable, easy water before the route goes cross-country.",
+      "type": "Campsite",
+      "distMi": 3,
+      "directions": "Start on the maintained Anderson-Watson Lakes Trail 611 from the road end. Where the tread splits at about 4,700 ft, take the left (Watson) branch - the right fork drops half a mile to lower Anderson Lake - then climb roughly another half mile to the saddle near 4,800 ft where the trail crosses into the Noisy-Diobsud Wilderness, and descend from it to the lakes at about 4,400 ft. This is the last graded trail on the route; everything above the upper lake is cross-country."
+     },
+     {
+      "elev": 5300,
+      "name": "~5,300-ft saddle below Mt. Watson",
+      "note": "Cross-country gain point beyond the maintained trail: traverse rock slabs, scree and lingering snowfields beneath Mt. Watson to top this saddle, then drop through heather toward the Diobsud basin.",
+      "type": "Junction",
+      "directions": "Leave the maintained trail at the upper lake and go cross-country, climbing toward the terminal moraine below Mt. Watson. Traverse rock slabs, scree and lingering snowfields beneath the peak to top the roughly 5,300 ft saddle. There is no tread, no signage and no marked line from here on, so navigate deliberately with map and compass or GPS rather than expecting to follow anything."
+     },
+     {
+      "name": "Uppermost Diobsud Lake",
+      "note": "Established rough camp in the upper Diobsud Lakes basin used as a staging point before continuing north toward the Bacon-Hagan saddle; roughly 6 hours of travel from the trailhead.",
+      "type": "Campsite",
+      "directions": "Drop off the saddle through open heather and easy slopes into the Diobsud basin, aiming for the uppermost pair of the four Diobsud Lakes. Heather and open ground with route-finding required, but no technical terrain. On-file timing puts this camp at roughly 6 to 6.5 hours and about 7.4 miles from the trailhead, with around 3,600 ft of gain and 500 ft of loss, and it is the standard base for the south-slopes climb."
+     },
+     {
+      "elev": 4553,
+      "name": "Hidden Lake (Bacon-Hagan saddle)",
+      "note": "Small unofficial-name tarn in the low saddle between Bacon Peak and Hagan Mountain, draining to Hidden Creek; reliable water and a flat-enough bivy if needed.",
+      "type": "Water"
+     },
+     {
+      "lat": 48.74893,
+      "lng": -121.496492,
+      "elev": 5024,
+      "name": "Blum Lakes",
+      "type": "Water"
+     },
+     {
+      "name": "Cliff-band forest slopes, south flank of Hagan",
+      "note": "Steep bushwhack north through timber past two cliff bands to break out onto open heather and grass on Hagan's south side - the most sustained brush/route-finding crux of the approach.",
+      "type": "Hazard",
+      "directions": "From the tarn, bushwhack north up steep forest, working through two distinct rock cliff bands - this is the sustained route-finding crux of the whole approach. Pick brushy ramps and weaknesses through each band to keep the ground climbable; above them the timber breaks out onto open heather and grass benches on Hagan's south flank around 6,000-6,400 ft, with seasonal snowmelt water and rough camps. Mark your line through the bands with photos, cairns or a GPS track before going higher: the descent reverses this exact ground, the weaknesses you threaded coming up are hard to spot from above, and the descent is consistently reported as slower and more error-prone than the climb."
+     },
+     {
+      "name": "Scree/talus couloir col, SW end of Hagan",
+      "note": "Ascend a broad, loose scree-and-talus couloir to a col near the southwest end of the summit crags; this is the same col the descent down-climbs back to the heather benches - watch for rockfall onto parties below.",
+      "type": "Hazard",
+      "directions": "From the heather benches, ascend a broad talus-and-scree couloir to a col near the southwest end of the Hagan summit crags, around 7,000 ft. The couloir is loose the whole way - helmets on, and keep the party either tight together or well spread out rather than stacked, since anything kicked here runs straight onto whoever is below. This is the same col the descent downclimbs back to the benches."
+     },
+     {
+      "lat": 48.724455,
+      "lng": -121.492005,
+      "elev": 7067,
+      "name": "Hagan Mountain summit",
+      "note": "Class 2-3 scrambling up slabs from the col to the summit ridge; several rocky bumps along the crest, so identify the true high point before topping out.",
+      "type": "Summit",
+      "directions": "From the col at the southwest end of the crags, make a rising, crevasse- and moat-aware traverse around the ice apron of the Hagan Glacier to reach the second col, the one between Hagan's twin summits. This short glacier section is the technical crux of the route despite the Class 2-3 billing: carry rope, harness and a crevasse-rescue kit, and put crampons on - both are recommended even in midsummer. The moat is the same hazard in both directions on the way back. From the twin-summit col a short Class 2-3 scramble on slabs gains the summit ridge. Hagan carries several rocky bumps of similar height along that crest, so identify the true high point (7,067-7,080 ft) before committing to the last moves."
+     }
+    ],
+    "gpx": [
+     [
+      48.748535,
+      -121.499991
+     ],
+     [
+      48.748563,
+      -121.499863
+     ],
+     [
+      48.74862,
+      -121.499777
+     ],
+     [
+      48.748677,
+      -121.499648
+     ],
+     [
+      48.748733,
+      -121.499562
+     ],
+     [
+      48.74879,
+      -121.499434
+     ],
+     [
+      48.748818,
+      -121.499305
+     ],
+     [
+      48.748875,
+      -121.499176
+     ],
+     [
+      48.748875,
+      -121.499047
+     ],
+     [
+      48.748931,
+      -121.498919
+     ],
+     [
+      48.748959,
+      -121.49879
+     ],
+     [
+      48.748959,
+      -121.498661
+     ],
+     [
+      48.748988,
+      -121.498489
+     ],
+     [
+      48.748988,
+      -121.498361
+     ],
+     [
+      48.748988,
+      -121.498232
+     ],
+     [
+      48.748988,
+      -121.498103
+     ],
+     [
+      48.748988,
+      -121.497974
+     ],
+     [
+      48.748988,
+      -121.497846
+     ],
+     [
+      48.748988,
+      -121.497717
+     ],
+     [
+      48.748988,
+      -121.497588
+     ],
+     [
+      48.748988,
+      -121.497459
+     ],
+     [
+      48.748988,
+      -121.497331
+     ],
+     [
+      48.748988,
+      -121.497159
+     ],
+     [
+      48.748988,
+      -121.49703
+     ],
+     [
+      48.748988,
+      -121.496902
+     ],
+     [
+      48.748988,
+      -121.496773
+     ],
+     [
+      48.748988,
+      -121.496644
+     ],
+     [
+      48.748959,
+      -121.496515
+     ],
+     [
+      48.748931,
+      -121.496387
+     ],
+     [
+      48.748875,
+      -121.496301
+     ],
+     [
+      48.74879,
+      -121.496172
+     ],
+     [
+      48.748733,
+      -121.496043
+     ],
+     [
+      48.748677,
+      -121.495957
+     ],
+     [
+      48.748592,
+      -121.495829
+     ],
+     [
+      48.748535,
+      -121.4957
+     ],
+     [
+      48.748478,
+      -121.495614
+     ],
+     [
+      48.748422,
+      -121.495485
+     ],
+     [
+      48.748394,
+      -121.495357
+     ],
+     [
+      48.748337,
+      -121.495271
+     ],
+     [
+      48.748309,
+      -121.495142
+     ],
+     [
+      48.74828,
+      -121.495013
+     ],
+     [
+      48.748252,
+      -121.494884
+     ],
+     [
+      48.748224,
+      -121.494756
+     ],
+     [
+      48.748224,
+      -121.494627
+     ],
+     [
+      48.748224,
+      -121.494498
+     ],
+     [
+      48.748224,
+      -121.49437
+     ],
+     [
+      48.748195,
+      -121.494241
+     ],
+     [
+      48.748195,
+      -121.494112
+     ],
+     [
+      48.748195,
+      -121.493983
+     ],
+     [
+      48.748167,
+      -121.493855
+     ],
+     [
+      48.748167,
+      -121.493726
+     ],
+     [
+      48.748139,
+      -121.493597
+     ],
+     [
+      48.748111,
+      -121.493468
+     ],
+     [
+      48.748026,
+      -121.493382
+     ],
+     [
+      48.747969,
+      -121.493297
+     ],
+     [
+      48.747884,
+      -121.493254
+     ],
+     [
+      48.747828,
+      -121.493168
+     ],
+     [
+      48.747743,
+      -121.493125
+     ],
+     [
+      48.747658,
+      -121.493082
+     ],
+     [
+      48.747573,
+      -121.493039
+     ],
+     [
+      48.747488,
+      -121.492996
+     ],
+     [
+      48.747403,
+      -121.492953
+     ],
+     [
+      48.747318,
+      -121.49291
+     ],
+     [
+      48.747233,
+      -121.49291
+     ],
+     [
+      48.747148,
+      -121.492867
+     ],
+     [
+      48.747064,
+      -121.492867
+     ],
+     [
+      48.746979,
+      -121.492867
+     ],
+     [
+      48.746894,
+      -121.492825
+     ],
+     [
+      48.746809,
+      -121.492825
+     ],
+     [
+      48.746724,
+      -121.492782
+     ],
+     [
+      48.746639,
+      -121.492782
+     ],
+     [
+      48.746554,
+      -121.492782
+     ],
+     [
+      48.746469,
+      -121.492782
+     ],
+     [
+      48.746384,
+      -121.492782
+     ],
+     [
+      48.7463,
+      -121.492739
+     ],
+     [
+      48.746215,
+      -121.492739
+     ],
+     [
+      48.746158,
+      -121.492653
+     ],
+     [
+      48.746073,
+      -121.49261
+     ],
+     [
+      48.746017,
+      -121.492524
+     ],
+     [
+      48.745932,
+      -121.492481
+     ],
+     [
+      48.745875,
+      -121.492395
+     ],
+     [
+      48.74579,
+      -121.49231
+     ],
+     [
+      48.745705,
+      -121.49231
+     ],
+     [
+      48.745649,
+      -121.492224
+     ],
+     [
+      48.745564,
+      -121.492224
+     ],
+     [
+      48.745479,
+      -121.492181
+     ],
+     [
+      48.745394,
+      -121.492181
+     ],
+     [
+      48.745309,
+      -121.492138
+     ],
+     [
+      48.745224,
+      -121.492095
+     ],
+     [
+      48.745139,
+      -121.492052
+     ],
+     [
+      48.745054,
+      -121.492009
+     ],
+     [
+      48.74497,
+      -121.491966
+     ],
+     [
+      48.744885,
+      -121.491966
+     ],
+     [
+      48.7448,
+      -121.491923
+     ],
+     [
+      48.744715,
+      -121.49188
+     ],
+     [
+      48.74463,
+      -121.491838
+     ],
+     [
+      48.744545,
+      -121.491795
+     ],
+     [
+      48.74446,
+      -121.491752
+     ],
+     [
+      48.744404,
+      -121.491709
+     ],
+     [
+      48.741743,
+      -121.488447
+     ],
+     [
+      48.741411,
+      -121.487138
+     ],
+     [
+      48.740208,
+      -121.48407
+     ],
+     [
+      48.739592,
+      -121.484027
+     ],
+     [
+      48.739508,
+      -121.483984
+     ],
+     [
+      48.739423,
+      -121.483941
+     ],
+     [
+      48.739366,
+      -121.483855
+     ],
+     [
+      48.739281,
+      -121.483812
+     ],
+     [
+      48.739225,
+      -121.483727
+     ],
+     [
+      48.73914,
+      -121.483727
+     ],
+     [
+      48.739055,
+      -121.483684
+     ],
+     [
+      48.73897,
+      -121.483641
+     ],
+     [
+      48.738885,
+      -121.483598
+     ],
+     [
+      48.7388,
+      -121.483598
+     ],
+     [
+      48.738715,
+      -121.483555
+     ],
+     [
+      48.73863,
+      -121.483555
+     ],
+     [
+      48.738574,
+      -121.483469
+     ],
+     [
+      48.738489,
+      -121.483426
+     ],
+     [
+      48.738404,
+      -121.483383
+     ],
+     [
+      48.738347,
+      -121.483297
+     ],
+     [
+      48.738262,
+      -121.483254
+     ],
+     [
+      48.738206,
+      -121.483169
+     ],
+     [
+      48.738121,
+      -121.483126
+     ],
+     [
+      48.738064,
+      -121.48304
+     ],
+     [
+      48.737979,
+      -121.482997
+     ],
+     [
+      48.737923,
+      -121.482911
+     ],
+     [
+      48.737838,
+      -121.482868
+     ],
+     [
+      48.737753,
+      -121.482825
+     ],
+     [
+      48.737668,
+      -121.482825
+     ],
+     [
+      48.737583,
+      -121.482825
+     ],
+     [
+      48.737498,
+      -121.482825
+     ],
+     [
+      48.737413,
+      -121.482825
+     ],
+     [
+      48.737328,
+      -121.482825
+     ],
+     [
+      48.737243,
+      -121.482825
+     ],
+     [
+      48.737158,
+      -121.482825
+     ],
+     [
+      48.737073,
+      -121.482782
+     ],
+     [
+      48.736989,
+      -121.482782
+     ],
+     [
+      48.736904,
+      -121.482868
+     ],
+     [
+      48.736847,
+      -121.482954
+     ],
+     [
+      48.73679,
+      -121.483083
+     ],
+     [
+      48.736734,
+      -121.483169
+     ],
+     [
+      48.736677,
+      -121.483297
+     ],
+     [
+      48.736592,
+      -121.483383
+     ],
+     [
+      48.736536,
+      -121.483469
+     ],
+     [
+      48.736451,
+      -121.483555
+     ],
+     [
+      48.736394,
+      -121.483641
+     ],
+     [
+      48.736338,
+      -121.483727
+     ],
+     [
+      48.736281,
+      -121.483855
+     ],
+     [
+      48.736196,
+      -121.483941
+     ],
+     [
+      48.736139,
+      -121.484027
+     ],
+     [
+      48.736083,
+      -121.484113
+     ],
+     [
+      48.736026,
+      -121.484241
+     ],
+     [
+      48.735998,
+      -121.48437
+     ],
+     [
+      48.735941,
+      -121.484456
+     ],
+     [
+      48.735913,
+      -121.484585
+     ],
+     [
+      48.735856,
+      -121.484671
+     ],
+     [
+      48.735828,
+      -121.484799
+     ],
+     [
+      48.735772,
+      -121.484928
+     ],
+     [
+      48.735715,
+      -121.485057
+     ],
+     [
+      48.735658,
+      -121.485143
+     ],
+     [
+      48.73563,
+      -121.485271
+     ],
+     [
+      48.735573,
+      -121.485357
+     ],
+     [
+      48.735545,
+      -121.485486
+     ],
+     [
+      48.735488,
+      -121.485572
+     ],
+     [
+      48.73546,
+      -121.485701
+     ],
+     [
+      48.735404,
+      -121.485829
+     ],
+     [
+      48.735375,
+      -121.485958
+     ],
+     [
+      48.735347,
+      -121.486087
+     ],
+     [
+      48.735319,
+      -121.486216
+     ],
+     [
+      48.73529,
+      -121.486344
+     ],
+     [
+      48.735262,
+      -121.486473
+     ],
+     [
+      48.735205,
+      -121.486602
+     ],
+     [
+      48.735177,
+      -121.486731
+     ],
+     [
+      48.735121,
+      -121.486816
+     ],
+     [
+      48.735092,
+      -121.486945
+     ],
+     [
+      48.735036,
+      -121.487031
+     ],
+     [
+      48.735007,
+      -121.487074
+     ],
+     [
+      48.734661,
+      -121.487739
+     ],
+     [
+      48.734618,
+      -121.487761
+     ],
+     [
+      48.734576,
+      -121.487782
+     ],
+     [
+      48.734533,
+      -121.487846
+     ],
+     [
+      48.734505,
+      -121.487911
+     ],
+     [
+      48.734477,
+      -121.487954
+     ],
+     [
+      48.734434,
+      -121.487997
+     ],
+     [
+      48.734392,
+      -121.488039
+     ],
+     [
+      48.734363,
+      -121.488082
+     ],
+     [
+      48.734321,
+      -121.488125
+     ],
+     [
+      48.734293,
+      -121.488168
+     ],
+     [
+      48.734264,
+      -121.488211
+     ],
+     [
+      48.734222,
+      -121.488233
+     ],
+     [
+      48.734194,
+      -121.488276
+     ],
+     [
+      48.734165,
+      -121.488318
+     ],
+     [
+      48.734123,
+      -121.48834
+     ],
+     [
+      48.73408,
+      -121.488361
+     ],
+     [
+      48.734038,
+      -121.488383
+     ],
+     [
+      48.733995,
+      -121.488426
+     ],
+     [
+      48.733953,
+      -121.488447
+     ],
+     [
+      48.733911,
+      -121.488447
+     ],
+     [
+      48.733868,
+      -121.488447
+     ],
+     [
+      48.733826,
+      -121.488447
+     ],
+     [
+      48.733783,
+      -121.488469
+     ],
+     [
+      48.733741,
+      -121.488469
+     ],
+     [
+      48.733698,
+      -121.488469
+     ],
+     [
+      48.733656,
+      -121.488469
+     ],
+     [
+      48.733613,
+      -121.488469
+     ],
+     [
+      48.733571,
+      -121.488469
+     ],
+     [
+      48.733528,
+      -121.488469
+     ],
+     [
+      48.733486,
+      -121.488426
+     ],
+     [
+      48.733443,
+      -121.488426
+     ],
+     [
+      48.733401,
+      -121.488426
+     ],
+     [
+      48.733359,
+      -121.488426
+     ],
+     [
+      48.733316,
+      -121.488404
+     ],
+     [
+      48.732948,
+      -121.488383
+     ],
+     [
+      48.732906,
+      -121.488383
+     ],
+     [
+      48.732863,
+      -121.488404
+     ],
+     [
+      48.732821,
+      -121.488426
+     ],
+     [
+      48.732778,
+      -121.488447
+     ],
+     [
+      48.732736,
+      -121.488447
+     ],
+     [
+      48.732693,
+      -121.488447
+     ],
+     [
+      48.732651,
+      -121.488447
+     ],
+     [
+      48.732608,
+      -121.488447
+     ],
+     [
+      48.732566,
+      -121.488426
+     ],
+     [
+      48.732524,
+      -121.488404
+     ],
+     [
+      48.732481,
+      -121.488383
+     ],
+     [
+      48.732439,
+      -121.488318
+     ],
+     [
+      48.732396,
+      -121.488318
+     ],
+     [
+      48.732354,
+      -121.488297
+     ],
+     [
+      48.732311,
+      -121.488276
+     ],
+     [
+      48.732269,
+      -121.488254
+     ],
+     [
+      48.732226,
+      -121.488211
+     ],
+     [
+      48.732184,
+      -121.48819
+     ],
+     [
+      48.732156,
+      -121.488147
+     ],
+     [
+      48.732113,
+      -121.488125
+     ],
+     [
+      48.732071,
+      -121.488104
+     ],
+     [
+      48.732042,
+      -121.488061
+     ],
+     [
+      48.732014,
+      -121.488018
+     ],
+     [
+      48.731972,
+      -121.487975
+     ],
+     [
+      48.731929,
+      -121.487954
+     ],
+     [
+      48.731901,
+      -121.487911
+     ],
+     [
+      48.731858,
+      -121.487868
+     ],
+     [
+      48.731816,
+      -121.487803
+     ],
+     [
+      48.731788,
+      -121.487761
+     ],
+     [
+      48.731745,
+      -121.487718
+     ],
+     [
+      48.731717,
+      -121.487675
+     ],
+     [
+      48.731689,
+      -121.487632
+     ],
+     [
+      48.730967,
+      -121.487138
+     ],
+     [
+      48.730217,
+      -121.486795
+     ],
+     [
+      48.729367,
+      -121.486537
+     ],
+     [
+      48.728419,
+      -121.48701
+     ],
+     [
+      48.727966,
+      -121.48716
+     ],
+     [
+      48.727952,
+      -121.487224
+     ],
+     [
+      48.727924,
+      -121.487267
+     ],
+     [
+      48.727924,
+      -121.487331
+     ],
+     [
+      48.727909,
+      -121.487396
+     ],
+     [
+      48.727881,
+      -121.487439
+     ],
+     [
+      48.727853,
+      -121.487503
+     ],
+     [
+      48.727825,
+      -121.487546
+     ],
+     [
+      48.727782,
+      -121.487589
+     ],
+     [
+      48.72774,
+      -121.48761
+     ],
+     [
+      48.727711,
+      -121.487653
+     ],
+     [
+      48.727669,
+      -121.487675
+     ],
+     [
+      48.727626,
+      -121.487718
+     ],
+     [
+      48.727598,
+      -121.487761
+     ],
+     [
+      48.72757,
+      -121.487803
+     ],
+     [
+      48.727527,
+      -121.487825
+     ],
+     [
+      48.727485,
+      -121.487868
+     ],
+     [
+      48.727442,
+      -121.487889
+     ],
+     [
+      48.7274,
+      -121.487911
+     ],
+     [
+      48.727357,
+      -121.487932
+     ],
+     [
+      48.727329,
+      -121.487975
+     ],
+     [
+      48.727301,
+      -121.488018
+     ],
+     [
+      48.727258,
+      -121.488018
+     ],
+     [
+      48.727216,
+      -121.488039
+     ],
+     [
+      48.727173,
+      -121.488039
+     ],
+     [
+      48.727131,
+      -121.488039
+     ],
+     [
+      48.727089,
+      -121.488039
+     ],
+     [
+      48.727046,
+      -121.488039
+     ],
+     [
+      48.727004,
+      -121.488039
+     ],
+     [
+      48.726961,
+      -121.488039
+     ],
+     [
+      48.726919,
+      -121.488018
+     ],
+     [
+      48.726876,
+      -121.488018
+     ],
+     [
+      48.726834,
+      -121.487997
+     ],
+     [
+      48.726791,
+      -121.487997
+     ],
+     [
+      48.726749,
+      -121.487975
+     ],
+     [
+      48.726706,
+      -121.487975
+     ],
+     [
+      48.726678,
+      -121.487911
+     ],
+     [
+      48.726636,
+      -121.487911
+     ],
+     [
+      48.726593,
+      -121.487889
+     ],
+     [
+      48.726551,
+      -121.487889
+     ],
+     [
+      48.726508,
+      -121.487868
+     ],
+     [
+      48.726494,
+      -121.487868
+     ],
+     [
+      48.726367,
+      -121.487889
+     ],
+     [
+      48.726324,
+      -121.487932
+     ],
+     [
+      48.726296,
+      -121.487975
+     ],
+     [
+      48.726253,
+      -121.487997
+     ],
+     [
+      48.726211,
+      -121.488039
+     ],
+     [
+      48.726168,
+      -121.488039
+     ],
+     [
+      48.726126,
+      -121.488039
+     ],
+     [
+      48.726084,
+      -121.488039
+     ],
+     [
+      48.726041,
+      -121.488039
+     ],
+     [
+      48.725999,
+      -121.488039
+     ],
+     [
+      48.725956,
+      -121.488039
+     ],
+     [
+      48.725914,
+      -121.488039
+     ],
+     [
+      48.725871,
+      -121.488061
+     ],
+     [
+      48.725829,
+      -121.488061
+     ],
+     [
+      48.725786,
+      -121.488061
+     ],
+     [
+      48.725758,
+      -121.488104
+     ],
+     [
+      48.725716,
+      -121.488104
+     ],
+     [
+      48.725673,
+      -121.488125
+     ],
+     [
+      48.725631,
+      -121.488125
+     ],
+     [
+      48.725588,
+      -121.488125
+     ],
+     [
+      48.725546,
+      -121.488125
+     ],
+     [
+      48.725503,
+      -121.488125
+     ],
+     [
+      48.725461,
+      -121.488125
+     ],
+     [
+      48.725418,
+      -121.488125
+     ],
+     [
+      48.725376,
+      -121.488125
+     ],
+     [
+      48.725333,
+      -121.488125
+     ],
+     [
+      48.725291,
+      -121.488147
+     ],
+     [
+      48.725248,
+      -121.48819
+     ],
+     [
+      48.725206,
+      -121.488211
+     ],
+     [
+      48.725178,
+      -121.488254
+     ],
+     [
+      48.725149,
+      -121.488297
+     ],
+     [
+      48.725121,
+      -121.48834
+     ],
+     [
+      48.725093,
+      -121.488404
+     ],
+     [
+      48.725064,
+      -121.488469
+     ],
+     [
+      48.72505,
+      -121.488533
+     ],
+     [
+      48.725036,
+      -121.488597
+     ],
+     [
+      48.725008,
+      -121.488662
+     ],
+     [
+      48.724979,
+      -121.488705
+     ],
+     [
+      48.724965,
+      -121.488791
+     ],
+     [
+      48.724937,
+      -121.488833
+     ],
+     [
+      48.724909,
+      -121.488876
+     ],
+     [
+      48.724895,
+      -121.488941
+     ],
+     [
+      48.724866,
+      -121.488984
+     ],
+     [
+      48.724824,
+      -121.489027
+     ],
+     [
+      48.724795,
+      -121.489091
+     ],
+     [
+      48.724753,
+      -121.489134
+     ],
+     [
+      48.724725,
+      -121.489177
+     ],
+     [
+      48.724696,
+      -121.48922
+     ],
+     [
+      48.724654,
+      -121.489241
+     ],
+     [
+      48.724611,
+      -121.489284
+     ],
+     [
+      48.724583,
+      -121.489327
+     ],
+     [
+      48.724555,
+      -121.48937
+     ],
+     [
+      48.724526,
+      -121.489456
+     ],
+     [
+      48.724498,
+      -121.489499
+     ],
+     [
+      48.724442,
+      -121.489649
+     ],
+     [
+      48.724427,
+      -121.489713
+     ],
+     [
+      48.724399,
+      -121.489778
+     ],
+     [
+      48.724371,
+      -121.489842
+     ],
+     [
+      48.724357,
+      -121.489906
+     ],
+     [
+      48.724328,
+      -121.489949
+     ],
+     [
+      48.7243,
+      -121.490014
+     ],
+     [
+      48.724272,
+      -121.490057
+     ],
+     [
+      48.724243,
+      -121.490121
+     ],
+     [
+      48.724201,
+      -121.490142
+     ],
+     [
+      48.724158,
+      -121.490164
+     ],
+     [
+      48.724116,
+      -121.490164
+     ],
+     [
+      48.724074,
+      -121.490164
+     ],
+     [
+      48.724031,
+      -121.490164
+     ],
+     [
+      48.723989,
+      -121.490164
+     ],
+     [
+      48.723946,
+      -121.490164
+     ],
+     [
+      48.723904,
+      -121.490185
+     ],
+     [
+      48.723861,
+      -121.490207
+     ],
+     [
+      48.723819,
+      -121.490228
+     ],
+     [
+      48.72379,
+      -121.490271
+     ],
+     [
+      48.723748,
+      -121.490314
+     ],
+     [
+      48.72372,
+      -121.490378
+     ],
+     [
+      48.723677,
+      -121.4904
+     ],
+     [
+      48.723649,
+      -121.490464
+     ],
+     [
+      48.723621,
+      -121.490507
+     ],
+     [
+      48.723578,
+      -121.490529
+     ],
+     [
+      48.72355,
+      -121.490571
+     ],
+     [
+      48.723521,
+      -121.490614
+     ],
+     [
+      48.723493,
+      -121.490657
+     ],
+     [
+      48.723521,
+      -121.4907
+     ],
+     [
+      48.723564,
+      -121.490722
+     ],
+     [
+      48.723606,
+      -121.490743
+     ],
+     [
+      48.723649,
+      -121.490786
+     ],
+     [
+      48.723691,
+      -121.49085
+     ],
+     [
+      48.723705,
+      -121.490936
+     ],
+     [
+      48.723748,
+      -121.490958
+     ],
+     [
+      48.72379,
+      -121.490958
+     ],
+     [
+      48.723819,
+      -121.491001
+     ],
+     [
+      48.723861,
+      -121.491001
+     ],
+     [
+      48.723904,
+      -121.491022
+     ],
+     [
+      48.723946,
+      -121.491044
+     ],
+     [
+      48.723989,
+      -121.491044
+     ]
+    ],
+    "elev_pts": null,
+    "disciplines": [
+     "mountaineering",
+     "scrambling"
+    ],
+    "timing": {
+     "totalHrs": 21.5,
+     "summitTimeHrs": 9,
+     "descentTimeHrs": 6,
+     "approachTimeHrs": 6.5,
+     "recommendedStart": "5:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6.5,
+       "note": "Trail hiking gives way to off-trail travel at Watson Lakes; parties climb to the terminal moraine below Mt. Watson, cross the saddle into the Noisy-Diobsud Wilderness, then drop to…",
+       "fromTo": "Approach to Diobsud Lakes camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 9,
+       "note": "From camp, bushwhack north up steep forest past two cliffbands to open heather and grass on Hagan's south side, then climb a talus/scree couloir to the SW end of the Hagan crags. A…",
+       "fromTo": "Climb Hagan's south slopes",
+       "section": "Climb"
+      },
+      {
+       "hrs": 6,
+       "note": "Reverse Day 1: climb back over the Mt. Watson saddle and descend on trail from Watson/Anderson Lakes to the trailhead.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "detailed_rack": null,
+    "what_to_bring": [
+     "map and compass/GPS",
+     "extra layers",
+     "sun protection",
+     "ample water",
+     "harness — glacier travel on the Hagan Glacier crossing",
+     "crevasse-rescue kit — basic kit for the Hagan Glacier crossing"
+    ],
+    "pro_tips": [
+     "Most parties combine Hagan with Mount Blum (1.8 mi north) and/or Bacon Peak (4.5 mi south) into a multi-day traverse rather than climbing it alone, since the approach effort is large relative to the summit itself.",
+     "Diobsud Lakes (southern approach, this route) or Blum Lakes (northern approach via Baker River Trailhead) make the best established base camps depending on which side you're coming from.",
+     "Hagan has several summit bumps of similar height - confirm you're on the true high point before committing to the final scramble."
+    ],
+    "watch_out": [
+     "multiple summits/routefinding",
+     "early-season snow",
+     "loose rock",
+     "dense approach brush"
+    ],
+    "pro_needs": "Not a roped rock route; parties carry a rope for the Hagan Glacier crossing rather than rock protection.",
+    "best_season": "Mid-July through September",
+    "high_point_ft": 7080,
+    "aid_grade": null,
+    "approach": "Park at the Baker River Trailhead, the end of FR 11 (Baker Lake Highway), elevation roughly 800 ft. Start on Baker River Trail #606, which follows the true-right bank of the Baker River upstream through mossy old-growth forest — mostly flat, easy tread. At about 0.6 mile the trail crosses the river on a suspension bridge. Shortly after, a rerouted section drops steeply down a bank to ford a side creek and climbs back out through deadfall; this crossing gets wet and can be genuinely difficult or impassable during high runoff (spring snowmelt or after heavy rain) — plan around low-water conditions. The trail then enters North Cascades National Park and continues roughly another mile to Sulphide Creek Camp near the Sulphide Creek/Baker River confluence, about 2.6 miles and only ~170 ft of gain from the trailhead — this is the last maintained tread, the last reliable easy water, and a common bivy for a two-day trip. From near Sulphide Creek Camp, leave the trail and begin a steep, unmarked, use-path-at-best bushwhack climbing north/northeast up the valley wall through old growth and brush toward a small unnamed tarn at roughly 4550-4600 ft informally called 'Hidden Lake' (not the maintained, signed Hidden Lake Trail #745 near Marblemount, which is a different area entirely) — this gains close to 3,700 ft in a little over a mile with no tread. From the tarn, continue bushwhacking north up steep forest, working through two distinct rock cliffbands that form the route-finding crux of the approach; parties pick brushy ramps and weaknesses to keep the grade climbable. Above the cliffbands the forest breaks into open heather and grass benches on Hagan's south flank around 6000-6400 ft, with seasonal snowmelt water and rough camps. From the benches, ascend a broad talus-and-scree couloir to the southwest end of the Hagan Mountain crags, then make a rising, crevasse/moat-aware traverse around the ice apron of the Hagan Glacier (rope and crampons recommended even in summer) to reach the col between Hagan's twin summits, finishing with a short Class 2-3 scramble on slabs to the summit (listed 7067-7080 ft). Overall this is one of the more sustained, taxing approaches in the North Cascades — heavy old-growth/slide-alder bushwhacking, two cliffband route-finding sections, loose scree, and a glacier crossing — which is why it is very commonly combined with Mount Blum (and sometimes Bacon Peak) into a multi-day traverse rather than done as a single out-and-back day.",
+    "descent_text": "There is no rappelling on this route — it is a walk-off/downclimb, reversing the ascent line. From the summit, downclimb the slabs back to the col/notch between Hagan's twin summits, re-cross the moat, and retrace the rising traverse around the Hagan Glacier's ice apron (rope up again if you did on the way in — moat and crevasse hazard is the same in both directions). Continue down the broad scree/talus couloir to the heather benches on the south flank, then descend back through the two cliffbands — this is the trickiest part to reverse cleanly since the weaknesses threaded on the way up are easy to lose from above; take note of your ascent line (photos, cairns, or a GPS track) before committing. From below the cliffbands, continue the steep bushwhack descent past the small tarn ('Hidden Lake') back down to the Baker River valley floor, rejoin Baker River Trail #606 near Sulphide Creek Camp, and hike the remaining ~2.6 miles out to the trailhead. Parties who combine Hagan with Mount Blum or a longer Blum-Hagan-Bacon traverse typically continue over connecting ridges/cols instead of reversing this line, but for a standalone South Slopes ascent, downclimbing the ascent route is the standard descent. Because of the loose rock in the couloir and the brushy, unmarked cliffband sections, the descent is commonly reported as slower and more error-prone than the climb — budget extra daylight.",
+    "bail": "Reverse the scramble; no fixed anchors required.",
+    "pitch_detail": [
+     {
+      "grade": "Class 3",
+      "notes": "Final loose class-3 scramble from the high col/pass to the true summit, a few hundred feet. Preceded by unroped glacier travel across the upper Hagan Glacier, which is not pitch-graded but is part of the technical crux of the route.",
+      "pitch": "Summit scramble",
+      "lengthM": null
+     }
+    ],
+    "itinerary": {
+     "cal": "Requires a North Cascades NP cross-country/backcountry permit (party size capped at 6); the Diobsud/Watson-saddle approach and Hagan's south-slope couloir hold snow into summer, so most parties go July–September.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Trail hiking gives way to off-trail travel at Watson Lakes; parties climb to the terminal moraine below Mt. Watson, cross the saddle into the Noisy-Diobsud Wilderness, then drop to open benches above Diobsud Lakes to camp. Mostly heather and open slopes with some route-finding, no technical terrain.",
+       "hours": 6.5,
+       "miles": 7.4,
+       "title": "Approach to Diobsud Lakes camp",
+       "gainFt": 3600,
+       "lossFt": 500,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "Early AM",
+         "label": "Leave Anderson/Watson Lakes trailhead",
+         "detail": "Follow maintained trail past Anderson Lakes to Watson Lakes before leaving trail."
+        },
+        {
+         "time": "+3 hr",
+         "label": "Cross Mt. Watson saddle",
+         "detail": "Cross-country climb up toward the moraine below Mt. Watson, then over the saddle into the Diobsud drainage."
+        },
+        {
+         "time": "+6.5 hr",
+         "label": "Reach benches above Diobsud Lakes",
+         "detail": "Make camp on the open benches; this is the standard base for the Hagan south-slope climb."
+        }
+       ],
+       "objective": "Cross-country from the Anderson/Watson Lakes trailhead over the Mt. Watson saddle to a benched camp above Diobsud Lakes"
+      },
+      {
+       "n": 2,
+       "note": "From camp, bushwhack north up steep forest past two cliffbands to open heather and grass on Hagan's south side, then climb a talus/scree couloir to the SW end of the Hagan crags. A short traverse near the Hagan Glacier's ice apron leads to slabs that are scrambled to the summit; reverse the same line back to camp. Small rack and glacier gear (axe/crampons) are commonly carried for the glacier apron.",
+       "hours": 9,
+       "miles": 4.7,
+       "title": "Climb Hagan's south slopes",
+       "gainFt": 2600,
+       "lossFt": 2600,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave camp",
+         "detail": "Early start to clear the forest/cliffband section and couloir before the day heats up."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Top of cliffbands into heather",
+         "detail": "Steep forest and two cliffbands give way to open heather and grass on Hagan's south side."
+        },
+        {
+         "time": "+4 hr",
+         "label": "Top of scree/talus couloir",
+         "detail": "Couloir tops out near the SW end of the Hagan Mountain crags."
+        },
+        {
+         "time": "+5.5 hr",
+         "label": "Skirt Hagan Glacier ice apron",
+         "detail": "Short glacier-adjacent traverse; rope/crampons if the apron is icy."
+        },
+        {
+         "time": "~12:00 PM (+7 hr)",
+         "label": "Summit",
+         "detail": "Final scramble up south-side slabs to the 7,067 ft summit."
+        },
+        {
+         "time": "~2:00 PM (+9 hr)",
+         "label": "Back at camp",
+         "detail": "Reverse the route to camp for the night."
+        }
+       ],
+       "objective": "Round-trip summit of Hagan Mountain (7,067 ft) from Diobsud Lakes camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse Day 1: climb back over the Mt. Watson saddle and descend on trail from Watson/Anderson Lakes to the trailhead.",
+       "hours": 6,
+       "miles": 7.4,
+       "title": "Hike out",
+       "gainFt": 400,
+       "lossFt": 3800,
+       "packLb": 25,
+       "schedule": [],
+       "objective": "Return to the Anderson/Watson Lakes trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, ~19.5-mile round trip with roughly 6,600 ft of cumulative gain: two long cross-country travel days bracketing one long, steep summit day. A very fit party can compress it into two long days, but three is the standard, more enjoyable pace."
+    },
+    "access": {
+     "fees": "A Northwest Forest Pass or other interagency pass is required to park at Watson Lakes Trailhead. NPS backcountry permits (if camping in the park) carry a $6 non-refundable reservation fee plus a $10 per-person, per-night recreation fee.",
+     "rules": "Pack out human waste (blue bags) — no burial or glacier deposition. The route crosses into North Cascades National Park land at the Diobsud Lakes and on the upper mountain, where a NPS backcountry permit is required only if camping overnight past the boundary.",
+     "permit": "No permit needed for day use or camping within the Noisy-Diobsud Wilderness (Forest Service land). If camping within the North Cascades National Park boundary (the Diobsud Lakes camps and the benches near the summit), a backcountry wilderness permit reserved through recreation.gov is required.",
+     "closures": "FR 1107 and connecting spur roads in this corridor have been affected by washouts and downed timber in past seasons (in 2021 the nearby Baker River Trailhead access road was reportedly blocked by a fallen tree) — check Mt. Baker Ranger District road/trail conditions before driving.",
+     "landManager": "The trail and the Watson Lakes camps are on Mount Baker-Snoqualmie National Forest land within the Noisy-Diobsud Wilderness (Mt. Baker Ranger District); the Diobsud Lakes camps lie just inside North Cascades National Park; the summit sits on the southwest boundary of North Cascades National Park.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Noisy-Diobsud Wilderness, with some upper routes crossing into North Cascades National Park",
+     "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit, fee per person",
+      "where": "Reserve on Recreation.gov, or pick up a walk-up permit in person at the Marblemount Wilderness Information Center or the Glacier Public Service Center."
+     }
+    },
+    "road": {
+     "name": "Baker Lake Road (FR 11) to FR 1107 to FR 1107022, Watson Lakes Trailhead",
+     "status": "Paved to Baker Dam Road; gravel Forest Service road beyond, subject to washout/downed-tree closures — check current conditions",
+     "driveNote": "From Sedro-Woolley: SR 20 east 16 mi to milepost 82, north on Baker Lake Rd (FR 11) 14 mi to Baker Dam Rd, cross the Upper Baker Dam, continue on FR 1107 for 8 mi, then turn onto FR 1107022 to the Watson Lakes Trailhead."
+    },
+    "climate": {
+     "typical": "Wet, maritime North Cascades climate with heavy winter snowpack; snow can linger in the summit couloir and on the Mount Watson saddle crossing into July.",
+     "bySeason": {
+      "summer": "Warmest, driest window (Jul-Sep); afternoon thunderstorms and wildfire smoke are possible, and blackflies/mosquitoes are heaviest in July."
+     },
+     "forecastZone": "NWAC West Slopes North (Mount Baker) zone"
+    },
+    "emergency": {
+     "rangerStation": "Mt. Baker Ranger District, Sedro-Woolley, WA (360-854-2553) for trailhead/road status; North Cascades National Park Wilderness Information Center, Marblemount, for in-park backcountry permits.",
+     "nearestHospital": "PeaceHealth United General Medical Center, 2000 Hospital Dr, Sedro-Woolley, WA — 24-hr ER, (360) 856-6021 — nearest full-service hospital to the Baker Lake corridor."
+    },
+    "lists": null,
+    "crowds": {
+     "peakTraffic": "rarely climbed; mostly seen as a leg of the Watson-Bacon-Hagan-Blum traverse rather than a standalone objective",
+     "solitudeRating": 5,
+     "estimatePerSeason": "unknown - low-traffic; likely well under 10 parties/season"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Long, sustained off-trail approach through dense brush and steep forest with significant elevation gain from the Baker Lake basin; multi-day backcountry fitness expected",
+      "packWeight": "Overnight/multi-day pack (backcountry camping permit required for overnight stays), likely 30-40+ lbs including camp gear"
+     },
+     "approachTime": "Multi-day approach typical (same rugged Baker Lake / Blum Lakes country used for neighboring Bacon Peak and Mount Blum); no single-day trailhead-to-summit norm documented",
+     "requiredSkills": [
+      "Off-trail navigation/routefinding among Hagan's several summits",
+      "Bushwhacking through dense approach vegetation",
+      "Class 2-3 scrambling on loose rock",
+      "Backcountry camping and Leave No Trace in a National Park setting",
+      "Self-sufficiency: remote location with no cell coverage and long evacuation times"
+     ],
+     "experienceLevel": "Experienced off-trail scrambler comfortable with unmaintained, trail-less North Cascades terrain and multi-summit routefinding"
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Primary season begins; early July can still have residual snow and wet brush, improving through the month",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Route is typically snowbound with wet, heavy brush; not the intended season",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Brush dried out, most stable weather window, though afternoon thunderstorms are possible",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Stable spells and cooler temps, but early-season snow becomes possible later in the month",
+       "status": "good"
+      }
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Wet maritime west-side climate with dense approach vegetation; full winter conditions outside the summer window",
+      "probability": "Afternoon thunderstorms possible during summer season"
+     },
+     "exposure": "Loose rock scrambling and routefinding among multiple summits are the primary consequence drivers; fall exposure is typical of Class 2-3 terrain rather than extreme, but remoteness and lack of cell coverage raise the stakes of any injury or wrong-turn epic",
+     "avalanche": {
+      "zone": "N/A - summer scramble route with a short Hagan Glacier crossing",
+      "byMonth": {
+       "July": "N/A",
+       "June": "Moderate",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "The standard route makes a crevasse/moat-aware traverse around the ice apron of the Hagan Glacier to reach the col between Hagan's twin summits - rope and crampons are recommended even in summer, not just for parties extending toward Mount Blum or Bacon Peak."
+    },
+    "data_quality": {
+     "gaps": [
+      "Exact elevation/location of the SW col and couloir not documented in available sources",
+      "Current post-2024 permit/self-issue requirements for Noisy-Diobsud Wilderness not independently confirmed",
+      "GPS track sourced from https://caltopo.com/m/KHJ9",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+     ],
+     "confidence": "MEDIUM",
+     "lastVerified": "2026-07-01"
+    },
+    "difficulty": {
+     "exposure": 4,
+     "physical": 4,
+     "technical": 1,
+     "commitment": 2,
+     "routefinding": 5
+    },
+    "approach_logistics": {
+     "peakLat": 48.724455,
+     "peakLng": -121.492005,
+     "trailhead": "Baker River Trailhead",
+     "trailheadLat": 48.7507,
+     "trailheadLng": -121.556,
+     "trailheadDirection": "Turn north off SR 20 at milepost 82 onto the Baker Lake Highway (Forest Road 11) and drive 25.5 miles to its end at the Baker River trailhead."
+    },
+    "sling_rack": {
+     "cams": "small set to ~2in",
+     "nuts": "small stopper set",
+     "runners": "2-3 shoulder-length slings"
+    },
+    "alpine_draws": 2,
+    "rope_type": "single dynamic",
+    "rope_length_m": 30,
+    "rope_note": "Standard glacier gear is called for, plus a small rock climbing rack for the final Class 3 slabs to the summit after the glacier approach.",
+    "ascender": null,
+    "corrections": null,
+    "gear_confidence": "verified",
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": [
+     "Glacier travel gear (rope, harness, crevasse rescue kit)",
+     "Small rock climbing rack for final Class 3 summit slabs"
+    ],
+    "features": [
+     "Slab",
+     "Exposed",
+     "Adventurous"
+    ],
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": [
+     {
+      "name": "Bacon-Hagan saddle and the southwest couloir",
+      "trip": {
+       "bivy": [
+        {
+         "elev": 4550,
+         "name": "Hidden Lake, below the Blum-Hagan divide",
+         "role": "main",
+         "type": "camp",
+         "notes": "A small lake in the saddle country between Hagan and Bacon, reached from the Blum Lakes by crossing the ridge southeast of them and dropping to it. It matters here as the reliable water on Hagan's far side and as the standard second night for parties traversing east. It is a considerable drop below the Hagan bench, so it is a poor choice if Hagan is your only objective — you give back four hundred feet you will re-climb in the morning. Reaching it involves snow into midsummer and steep heather afterwards. Do not treat this as an approach camp for Bacon Peak from the Baker River side; the practical way to Bacon is from a different road entirely.",
+         "water": "The lake. Treat it. Reliable all season, which is not true of the benches above",
+         "permit": "North Cascades National Park backcountry permit. This lake sits toward the Bacon Peak side of the divide, so check which cross-country zone the ranger writes your permit for. No fires, six-person limit, camp a hundred feet back from the water",
+         "capacity": "Two or three tents on the flats near the shore"
+        },
+        {
+         "name": "Upper Watson Lake",
+         "role": "hidden"
+        },
+        {
+         "name": "Uppermost Diobsud Lake",
+         "role": "hidden"
+        }
+       ],
+       "approachLogistics": {
+        "trailhead": "Watson Lakes Trailhead (FR-1107)",
+        "trailheadLat": 48.6746,
+        "trailheadLng": -121.6147
+       }
+      },
+      "notes": "This is the line used by parties arriving on the traverse from the Watson and Bacon side: descend north off the glacier and past several tarns, then follow a heathered ridge to the saddle between Hagan Mountain and Bacon Peak, where a small tarn sits with reliable water. From the tarn, bushwhack north up steep forest, working through two distinct rock cliffbands — the sustained route-finding crux of the whole approach — picking brushy ramps and weaknesses through each band to keep the ground climbable. Above them the timber breaks out onto open heather and grass on Hagan's south flank around 6,000 to 6,400 ft, with seasonal snowmelt water and rough camps. Mark your line through the cliffbands with photos, cairns or a track before going higher: the weaknesses you threaded are hard to spot from above, and the descent is consistently slower and more error-prone than the climb.",
+      "objHaz": [
+       "glacier/crevasse hazard",
+       "loose rock",
+       "route-finding",
+       "weather",
+       "remote"
+      ],
+      "season": "Late Jul-Sep",
+      "hazards": [
+       "Steep, trail-less forest with two cliffbands and no marked line; the weaknesses are hard to spot from above on the way down",
+       "Loose rock the whole length of the scree-and-talus couloir to the col: helmets and a tight party",
+       "Crevasse and moat hazard on the Hagan Glacier ice apron, even in summer; rope and crampons",
+       "Snow into midsummer and steep heather around the Hidden Lake tarn camp",
+       "Several summits on one massif: route-finding errors and wrong-col mistakes are easy",
+       "Afternoon thunderstorms",
+       "Remote, trail-less ground far from help"
+      ],
+      "longForm": true,
+      "whyThisWay": "When arriving on the Watson, Blum and Bacon traverse, since that party is already on the Bacon side and reaches the saddle from there instead of dropping back to the Blum Lakes basin.",
+      "baseFinding": "A broad scree-and-talus couloir, topping out at a col at the southwest end of the crags. From the open heather and grass benches on Hagan's south flank, one broad couloir of loose scree and talus leads up to a col near the southwest end of the line of Hagan summit crags, around 7,000 ft. That col is the base of the climbing, and the slabs above it on the south side go at Class 3 to the top. Hagan is a massif of several crags rather than a single peak, so which col you reach matters: if the notch you have gained sits in the middle of the crags with towers rising on both sides of you, it is not this one — keep working to the southwest end of the line. Note carefully where the couloir meets the heather benches before you leave them, because it is also the way down and it is far harder to identify from above."
+     },
+     {
+      "name": "Lower Blum Lake and the 6,831 ft pass",
+      "camps": [
+       "South Hagan bench",
+       "Hidden Lake, below the Blum-Hagan divide",
+       "Sulphide Camp, end of the Baker River trail"
+      ],
+      "notes": "The approach from the north, out of the Blum Lakes basin rather than off the Bacon side. From lower Blum Lake, traverse south and rope up for glacier travel to a pass at 6,831 ft that sits between the south and middle Hagan peaks. This is glacier ground and the rope goes on before the traverse, not at the pass. Parties reaching the Blum Lakes come up the climbers' path off the Baker River Trail near Blum Creek, a faint path in brush marked with flagging tape that climbs the ridge to about 4,000 ft before veering south and traversing toward the lakes.",
+      "objHaz": [
+       "glacier/crevasse hazard",
+       "loose rock",
+       "route-finding",
+       "exposed climbing",
+       "weather",
+       "remote"
+      ],
+      "season": "Late Jul-Sep",
+      "hazards": [
+       "Glacier travel with crevasse hazard from lower Blum Lake to the 6,831 ft pass; the rope goes on before the traverse",
+       "The Blum climbers' path off the Baker River Trail is faint and brushy, marked only with flagging tape",
+       "Loose rock and exposure on the spur and summit ridge above the notch",
+       "Several named crags on one massif: easy to commit to the wrong gap or summit",
+       "Loose scree and talus on the south-side slabs and couloir",
+       "Afternoon thunderstorms",
+       "Remote, trail-less ground far from help"
+      ],
+      "primary": true,
+      "baseFinding": "The pass sits between the south and middle peaks, and it is the south peak you climb. Arriving at 6,831 ft, you should have a summit on either hand: this is a pass between two of Hagan's own peaks, not a col on the outside of the massif, and if only one side of you rises to rock you are in the wrong gap. The climbing then goes up the south peak's north side to a notch on its upper east side — that notch is high on the peak, not at the pass, and it is on the east flank, so a notch you can walk into from the west is the wrong one. From the notch, traverse onto the south face and gain the summit ridge, work up a spur on the east, then bear around to the south, where slabs lead to the summit at Class 3. The finish is south-facing slab, not a gully: if you are grovelling up a loose gully at the top you have missed the traverse around to the south side."
+     }
+    ],
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Talus-and-scree couloir to the Hagan crags",
+      "notes": "From the open heather and grass benches on Hagan's south flank around 6000-6400 ft, ascend a broad talus-and-scree couloir to the southwest end of the Hagan Mountain crags. Loose scree."
+     },
+     {
+      "n": 2,
+      "label": "Hagan Glacier traverse to the col",
+      "notes": "Rising, crevasse/moat-aware traverse around the ice apron of the Hagan Glacier to reach the col between Hagan's twin summits. Rope and crampons recommended even in summer."
+     },
+     {
+      "n": 3,
+      "class": "2-3",
+      "label": "Summit slabs",
+      "notes": "Short Class 2-3 scramble on slabs from the col to the summit, listed 7067-7080 ft."
+     }
+    ],
+    "bivy": [
+     {
+      "elev": 5800,
+      "name": "South Hagan bench",
+      "role": "main",
+      "type": "bivy",
+      "notes": "Open benches on the south side of Hagan Mountain, reached from the Blum Lakes by climbing to the ridge crest near 5,600 ft and traversing south. This is where parties stage for Hagan's south slopes: from the bench, talus and a scree couloir lead to the southwest end of the Hagan crags, and slabs on the south side give the final scramble to the summit. It is also the natural stop for anyone continuing east toward Hidden Lake and Bacon. The bench is comfortable and the position is superb, but it is fully exposed and the water is seasonal, which is the reason most parties still base at the lakes and do Hagan in a long day.",
+      "water": "Snowmelt runnels and small pools that shrink through the season; late summer parties should plan to carry water up from the Blum Lakes or from Hidden Lake below",
+      "permit": "North Cascades National Park backcountry permit. This ground sits on the boundary between the Blum and Bacon Peak cross-country zones, so confirm which zone your permit is written for when you pick it up. Six-person party limit either way, no fires, no camping in meadow",
+      "capacity": "Two tents on heather and gravel benches; informal, with no fixed site"
+     },
+     {
+      "elev": 4550,
+      "name": "Hidden Lake, below the Blum-Hagan divide",
+      "role": "main",
+      "type": "camp",
+      "notes": "A small lake in the saddle country between Hagan and Bacon, reached from the Blum Lakes by crossing the ridge southeast of them and dropping to it. It matters here as the reliable water on Hagan's far side and as the standard second night for parties traversing east. It is a considerable drop below the Hagan bench, so it is a poor choice if Hagan is your only objective — you give back four hundred feet you will re-climb in the morning. Reaching it involves snow into midsummer and steep heather afterwards. Do not treat this as an approach camp for Bacon Peak from the Baker River side; the practical way to Bacon is from a different road entirely.",
+      "water": "The lake. Treat it. Reliable all season, which is not true of the benches above",
+      "permit": "North Cascades National Park backcountry permit. This lake sits toward the Bacon Peak side of the divide, so check which cross-country zone the ranger writes your permit for. No fires, six-person limit, camp a hundred feet back from the water",
+      "capacity": "Two or three tents on the flats near the shore"
+     },
+     {
+      "name": "Sulphide Camp, end of the Baker River trail",
+      "role": "route",
+      "type": "camp",
+      "notes": "This is the only designated, built camp anywhere near this trailhead: flat sites and a toilet at the end of trail 606, a couple of easy valley miles past the suspension bridge. It is not on the way to Blum or Hagan. The climbers' path for both peaks leaves the trail near Blum Creek, well before this, and heading up-valley to Sulphide takes you in the wrong direction. It is listed because it is the legal, comfortable option for a party that arrives late, wants a short first evening, or is waiting out weather at the bottom, and because low-elevation valley ground here is otherwise wet, brushy and off-limits. Elevation is valley-bottom, only a little above the trailhead.",
+      "water": "Sulphide Creek and the Baker River, both close by. Treat the water; the river runs silty in high melt",
+      "permit": "North Cascades National Park backcountry permit for a designated camp, which is a different reservation than a cross-country zone — book it or ask for it at the permit office rather than assuming a zone permit covers it. No fires",
+      "capacity": "Two established sites and a backcountry toilet; a small party each"
+     },
+     {
+      "name": "Upper Watson Lake",
+      "role": "hidden"
+     },
+     {
+      "name": "Uppermost Diobsud Lake",
+      "role": "hidden"
+     }
+    ],
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "south slopes",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  }
+ ]
+}
