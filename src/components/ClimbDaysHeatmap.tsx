@@ -37,7 +37,9 @@ export default function ClimbDaysHeatmap({ dates, C, whose }: ClimbDaysHeatmapPr
   const name = (whose || "Your") + " climbing days in the last year: " + days + (days === 1 ? " day" : " days") + (climbs > days ? ", " + climbs + " climbs" : "");
   const cell = 11, gap = 2;
   return <div>
-    <div role="img" aria-label={name} style={{ overflowX: "auto", paddingBottom: 2 }}>
+    {/* 52 weeks are wider than the column, so the grid scrolls sideways; a scrollable region must take keyboard
+        focus (axe scrollable-region-focusable) so the arrow keys can reach the far end without a mouse. */}
+    <div role="img" aria-label={name} tabIndex={0} style={{ overflowX: "auto", paddingBottom: 2 }}>
       <div style={{ display: "flex", gap, marginLeft: 0, marginBottom: 3, minWidth: 52 * (cell + gap) }}>{labels.map((l, i) => <div key={i} style={{ width: cell, flexShrink: 0, fontSize: 9.5, color: C.textMuted, whiteSpace: "nowrap", overflow: "visible" }}>{l}</div>)}</div>
       <div style={{ display: "flex", gap, minWidth: 52 * (cell + gap) }}>{weeks.map((col, i) => <div key={i} style={{ display: "flex", flexDirection: "column", gap }}>{col.map(d => { const n = counts[key(d)] || 0; const future = d.getTime() > todayUtc.getTime(); return <div key={key(d)} title={future ? undefined : dayLabel(d) + (n ? ": " + n + (n === 1 ? " climb" : " climbs") : "")} style={{ width: cell, height: cell, borderRadius: 2, background: future ? "transparent" : shade(n), border: future ? "1px dashed " + C.border : "1px solid " + (n ? "transparent" : C.border), boxSizing: "border-box" }} /> })}</div>)}</div>
     </div>
