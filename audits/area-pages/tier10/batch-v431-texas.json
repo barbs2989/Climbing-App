@@ -1,0 +1,31 @@
+{
+ "tx_morgue_the": {
+  "_expect": {"name": "Morgue, The", "region": "Texas"},
+  "blurb": "A compact bouldering pocket on North Mountain at Hueco Tanks, set above the Warm Up Boulder area. Fifteen problems cover the full range: easy V0 and V1 lines make up the bulk, a handful sit between V2 and V5, and one lone V8 stands well apart from the rest. A striking roof crack is the area's signature. Reaching it means scrambling up low-angle slabs and a bit of searching, and landings below some lines are uneven and pointy, so bring pads and a spotter. Best suited to a short session tacked onto a larger day on the mountain.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106102675/the-morgue", "https://www.mountainproject.com/route/106104321/t-bone-shuffle"]}
+ },
+ "tx_elm_hollow_point": {
+  "_expect": {"name": "Elm Hollow Point", "region": "Texas"},
+  "blurb": "A prominent point overlooking Elm Hollow in Hamm Creek Park, in the Brazos River country of north-central Texas. Most of the fifteen lines are bolted, with a few trad options; the grades cluster at 5.10 and 5.11, with a few easier lines from 5.7 to 5.9 and two at 5.12. The walk in is long and needs some route-finding, finishing with a fixed rope up a steep slope to the base. Many lines have no anchors, so expect to build one from trees above. Bring a stick-clip and a machete for brush, and watch for snakes. Quiet, with river views.",
+  "review": {"sources": ["https://www.mountainproject.com/area/123282992/elm-hollow-point", "https://www.mountainproject.com/area/114512587/elm-hollow"]}
+ },
+ "tx_butt_the": {
+  "_expect": {"name": "Butt, The", "region": "Texas"},
+  "blurb": "A pocketed limestone overhang in the Emerald Pools sector of Continental Ranch, in west Texas. Almost all of its fourteen lines are bolted, with one trad or top-rope crack. Beyond a 5.9 and a 5.10 at the left end, the wall is steep and strenuous: seven routes at 5.12, a couple at 5.13, and a pair at 5.11. The wall sits in shade through the morning. Anchors on most lines can be reached from the top, and the approach is the shortest of any wall on the ranch, ending in a canyon below the obvious butt-shaped feature.",
+  "review": {"sources": ["https://www.mountainproject.com/area/120293429/the-butt", "https://mountainproject.com/route/120436307/half-monty?print=1"]}
+ },
+ "tx_little_cave": {
+  "_expect": {"name": "Little Cave", "region": "Texas"},
+  "blurb": "The first wall you reach in Rogers Park, a limestone bouldering area overlooking Lake Belton north of Austin. It is a short walk, under five minutes, from the gate. A big right-leaning crack beneath a roof makes it easy to spot. Of fourteen problems, most are V0 and V1, with a few at V2 and V3 and a single V4, so it suits beginners and a warm-up before the steeper walls beyond. The wall catches some morning sun in winter and is otherwise fairly shaded. Jaws is the standout line here.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106084036/little-cave", "https://mountainproject.com/area/106084033/rogers-park"]}
+ },
+ "_skipped": {
+  "tx_dr_seuss_prototype_wall": "wall destroyed by a large rockfall in 2019 and routes gone; not a place to describe",
+  "tx_cub_cave": "closed to climbing; no usable open description",
+  "tx_injury_wall_2": "no fetched page about the Injury Wall itself (park page and a route page only name it)",
+  "tx_mushroom_boulder": "boulder closed to climbing"
+ },
+ "_conflicts": {
+  "tx_elm_hollow_point": "stored rock is mudstone but the parent page https://www.mountainproject.com/area/114512587/elm-hollow says limestone for the canyon; rock not named in blurb"
+ }
+}

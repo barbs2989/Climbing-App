@@ -1,0 +1,33 @@
+{
+ "id_02_classic_rock": {
+  "_expect": {"name": "Classic Rock", "region": "Idaho"},
+  "blurb": "Classic Rock is a steep limestone slab in the Mortal Earth zone of the Fins, central Idaho, at roughly 6,700 feet. All twelve climbs are bolted sport lines, about 75 to 80 feet tall with around ten bolts each, so a 60 m rope gets you down from any of them. The wall is heavily featured with runnels, pockets, pinches and small edges, and the climbing is technical and sustained rather than burly. Most lines sit around 5.10, with a couple of easier routes and one 5.11, so it suits climbers who are comfortable on moderate grades and enjoy careful footwork. Burning Spear lies directly behind it.",
+  "review": {"sources": ["https://www.mountainproject.com/area/113185115/classic-rock", "https://www.mountainproject.com/area/113384606/mortal-earth"]}
+ },
+ "id_bath_rock_west": {
+  "_expect": {"name": "Bath Rock - West", "region": "Idaho"},
+  "blurb": "The west side of Bath Rock in City of Rocks, southern Idaho, is a short walk from the main lot and carries a dozen routes: mostly bolted sport lines plus a few crack climbs. Locals call this face the Rollercoaster Wall. Grades start around 5.8 and reach into the low 5.13s, but the bulk of the lines are 5.10 and 5.11, so it favours climbers already leading in that range. Plenty of good-quality lines make it busy, and it can feel crowded. Bring a 60 m rope, a single rack and about eight to ten quickdraws; most routes finish at their own fixed anchors.",
+  "approach": "From the big parking lot by the restrooms, cross the road and follow the trail along the right-hand side of Bath Rock to the west face.",
+  "approach_min": 2,
+  "review": {"sources": ["https://www.mountainproject.com/v/bath-rock---west/107577289", "https://rakkup.com/guidebook/city-of-rocks-climbing/bath-rock---west-1/s14624"]}
+ },
+ "id_checkered_demon": {
+  "_expect": {"name": "Checkered Demon Routes", "region": "Idaho"},
+  "blurb": "Checkered Demon is a formation in City of Rocks, southern Idaho, just south of Elephant Rock and west of The Gallstone. The climbing is on its west face, where trad and sport lines share the wall with a handful of boulder problems. Grades run from an easy 5.8 up past 5.13, with the weight of the wall in the 5.10 to 5.11 range and several hard sport lines for strong climbers. It is a pleasant place to hang out, and the boulders nearby are worth a look. Seven of the twelve routes here need a trad rack; five are bolted.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106015691/checkered-demon", "https://rakkup.com/guidebook/city-of-rocks-climbing/checkered-demon/s15646"]}
+ },
+ "id_propeller_area": {
+  "_expect": {"name": "Propeller Area", "region": "Idaho"},
+  "blurb": "The Propeller Area is a small corner of Table Rock, the mesa above Boise, a couple of hundred yards right of the Blasted Wall. It mixes short boulder problems, top-rope lines and a few trad routes. The boulders are friendly, running from V0 to about V3, with the Peanut Butter problems the best known. Several of the taller lines are set up for top-roping and range from about 5.7 up to 5.12, with the best-known top-rope climb around 5.11d. Shade is scarce on the mesa, so start early in summer. Check any old anchors and hangers before trusting them.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107401647/propeller-area", "https://www.mountainproject.com/area/107207153/table-rock"]}
+ },
+ "_skipped": {
+  "id_scary_canyon": "no fetched page about the crag itself (only parent Black Cliffs page and a route page)",
+  "id_comp_rock_east_face": "could not fetch two pages about this crag (SummitPost 403, rakkup page lists one route only)",
+  "id_death_fall_wall": "only the parent Q'Emiln Park page fetched; no page about the wall itself",
+  "id_hips_wall": "no page found for this crag after two searches"
+ },
+ "_conflicts": {
+  "id_propeller_area": "Stored rock is basalt but Table Rock is described as a sandstone mesa: https://www.mountainproject.com/area/107207153/table-rock"
+ }
+}

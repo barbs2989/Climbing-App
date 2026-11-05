@@ -1,0 +1,41 @@
+{
+ "nh_01_jelly_rock": {
+  "_expect": { "name": "Jelly Rock", "region": "New Hampshire" },
+  "blurb": "Jelly Rock is a bouldering spot in the Round Pond zone of Pawtuckaway State Park, tucked inside the loop of the main boulder path. It holds about a dozen problems, the bulk of them easy to moderate, from V0 up to V2, with a few V3s and one much harder line near the top end. That spread makes it a friendly place for newer boulderers and for warming up before heading to the harder boulders nearby. It is the largest cluster in Round Pond and sits close to the pond, which makes a pleasant place to rest after a session; fall is the favoured time to visit.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123539234/jelly-rock", "https://www.mountainproject.com/area/105944309/round-pond"] }
+ },
+ "nh_miscellaneous": {
+  "_expect": { "name": "Lone Wolf Area Bouldering", "region": "New Hampshire" },
+  "blurb": "The Lone Wolf Area is the first sizeable group of boulders you meet when heading south along the hillside on the South Side of Clough State Park in Weare. A short, faint trail leads from the gazebo, across a marsh, to a handful of separate boulders. Problems run from V0 to V6, clustering in the V2 to V3 range with a few V4 and harder lines for stronger climbers. Many lines remain unscrubbed or unclimbed, so expect some cleaning. The park is busy with walkers, and bugs can be bad in warm months.",
+  "review": { "sources": ["https://mountainproject.com/area/116144964/lone-wolf-area", "https://mountainproject.com/area/111507599/clough-state-park"] }
+ },
+ "nh_cathedral_ledge_ice_climbs": {
+  "_expect": { "name": "Cathedral Ledge Ice Climbs", "region": "New Hampshire" },
+  "blurb": "Cathedral Ledge towers above North Conway and is one of the White Mountains' best-known winter venues. This part of the cliff offers about a dozen ice lines, with a smattering of mixed climbing, in a spread from WI2 up to WI5. Most of the routes fall at WI4, so it suits climbers who have moved past the beginner flows, while a couple of easier lines and a few harder pillars give variety on either side. Ice here forms in winter only, and the road up the cliff is shut, so plan on walking in.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106099668/cathedral-ledge-ice-climbs", "https://www.mountainproject.com/area/105908823"] }
+ },
+ "nh_captain_the": {
+  "_expect": { "name": "Captain, The", "region": "New Hampshire" },
+  "blurb": "The Captain is a big, remote backcountry cliff in the central Kancamagus region of the White Mountains, known for steep slabs and sweeping views. Getting there means a long bike or walk along a river valley and a climb up a gully, so budget a few hours each way. About a dozen routes are mostly traditional lines, from 5.6 up to 5.11, with the majority between 5.9 and 5.10, plus a single bolted line. It is a committing day out with the quiet that comes from distance, and black flies can be a nuisance in warm months.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106171938/the-captain", "https://www.mountainproject.com/area/110932127/wm-kancamagus-central"] }
+ },
+ "nh_block_the": {
+  "_expect": { "name": "Block, The", "region": "New Hampshire" },
+  "blurb": "The Block is the most recognisable boulder in the Block Area of Rumney's bouldering, a cluster of rocks above the Entrance Boulders. A trail past the Umbrella Boulder leads uphill to it, and it is usually well chalked. The thirteen problems here are on the hard side: nothing easy, mostly V5 to V6, with a handful of harder lines topping out around V9 and one standout old-school eliminate. The neighbouring Rift Boulder, a long overhanging block beside it, adds more steep lines. A good stop for climbers who are comfortable in the mid-to-upper grades.",
+  "review": { "sources": ["https://www.mountainproject.com/area/120041884/block-area", "https://www.mountainproject.com/area/120041918/the-rift-boulder?print=1"] }
+ },
+ "nh_temple_the": {
+  "_expect": { "name": "Temple, The", "region": "New Hampshire" },
+  "blurb": "The Temple is a small cliff band hidden in the woods just below the Sweet Trail, north of Colby Marsh in Durham. The ledge is roughly 75 feet long and 16 feet high, with a few satellite boulders close by, and it is rated the best of the northern Sweet Trail stretch. There are thirteen problems, nearly all easy to moderate, running from V0 to V3, with decent landings. A mellow, low-pressure spot for beginners, families and anyone after a short woodland walk.",
+  "parking_note": "Leave the car at the lot at the end of Longmarsh Road in Durham, where the Sweet Trail begins.",
+  "review": { "sources": ["https://www.mountainproject.com/area/121808672/the-temple", "https://www.mountainproject.com/area/121803560/sweet-trail-boulders"] }
+ },
+ "_skipped": {
+  "nh_canal_zone": "no page found about this crag after several searches and fetches; Lakes Region ice flows not documented on any page fetched",
+  "nh_2_more_on_the_left": "only a parent page (White Ledge) fetched, which lists the boulders without describing this one; no page about the crag itself"
+ },
+ "_conflicts": {
+  "nh_captain_the": "Stored rock is syenite, but the Kancamagus Central parent page states all its crags are granite: https://www.mountainproject.com/area/110932127/wm-kancamagus-central",
+  "nh_miscellaneous": "Stored rock is granodiorite; the Clough State Park page calls the rock granite: https://mountainproject.com/area/111507599/clough-state-park"
+ }
+}

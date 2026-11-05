@@ -1,0 +1,33 @@
+{
+  "key": "eagle_rock",
+  "question": "Reports describe a 15-30 m cliff band that parties rappel or rope, but our text says no rappels; is the Beckler spur gate locked?",
+  "answer": "The text is wrong. Five logged ascents (2018-2024) describe the same lower cliff band on the north side. One (Sep 29 2024) measured it at about 15 m of slabby rock with loose dirt, class 3 dry and class 4 wet, and rappelled 15 m from a tree above it. A Sep 2019 party belayed and both rappelled it with a 30 m rope (30 m is the rope length, not the band height; the band is a short step, 15 m is the only measured figure). A Jul 2022 party used its rope for the full length on the descent and found a black rope left in the gully. A Dec 2023 party rappelled the crux. A Aug 2018 party managed it with a hand rope and blue ribbons at class 3. So the band is real and short; a rope and single rappel is the normal descent when wet or when the party is not confident, and dry it is class 3. The gate: reports conflict. Sep 29 2024: the gate down low (Bolt Creek) was locked, forcing about ten extra miles of road by e-bike. Oct 6 2024: the gate was closed but NOT locked and the road drivable after moving boulders, with a note that the area may be semi-closed on weekdays for logging. 2018-2022 reports drove to the road end with no gate mentioned (rough 4WD road, brush, failing creek crossings). A Jun 2026 logged ascent used an e-bike on the road. Crowd-sourced map notes show flood damage (Dec 2025) and a 'temporarily closed' status (Jul 2026) on the Beckler River road; no official Forest Service notice could be read. Conclusion: a gate exists and is sometimes locked; its status varies with season and logging, so the text should say it 'may be locked' and name the months reported, not 'locked'.",
+  "recommendation": "Replace the 'no rappels / no technical anchors' descent text and the '50 ft handline' tip with the wording in proposed; add a 30 m rope, sling and ring to gear; add the gate/road-status line to the approach. Owner call on discipline: the row is 'mountaineering' Class 3, but a rope or short rappel is advised when wet. Under the owner rule (roped rock = alpine; scrambling never roped) either keep it a class 3 walk-up with the rope as an optional safeguard, or move it to alpine. Research leans keep as is with honest text: dry it is a class 3 scramble and the rope is optional.",
+  "confidence": "high",
+  "proposed": {
+    "descent_text": "Reverse the ascent line. The one place that is not a plain walk-off is the lower cliff band on the north side, roughly 15 m of slabby rock and loose dirt. In dry weather it downclimbs at class 3; wet, mossy or snowy it is closer to class 4 and most parties rope it. Walk the steep forest above it, belay off a tree just above the band, and make a single rappel of about 15 m (a 30 m rope with a sling and a rappel ring covers it). Do not rely on rope or webbing left on the slope by earlier parties. Below the band, continue the talus traverse back to treeline and the road end.",
+    "pro_tip_replacement": "Bring a 30 m rope, a sling and a rappel ring for the lower cliff band on the north side; it is class 3 dry but class 4 when wet, and a short rappel from a tree above it is the usual way down.",
+    "pro_tip_to_remove": "Carry a 50 ft handline for the exposed Class 3 downclimb on the north side rather than downclimbing it unroped",
+    "gear_add": ["30 m rope", "sling and rappel ring", "helmet", "microspikes for the steep duff above the band"],
+    "approach_road_note": "A gate low on the Beckler River road network was found locked in late September 2024 and only shut a week later, and flood damage to the road was reported in winter 2025-26, so check with the Skykomish ranger district before driving. If the gate is locked, the road adds roughly ten miles each way; it is rough, needs high clearance and 4WD past the creek washouts, and is brushy. The road end sits about half a mile east of the summit at roughly 4,150 ft.",
+    "hazards_add": ["Wet or mossy slabs in the lower cliff band turn a class 3 move into class 4", "Rope or tat found on the slope is of unknown age; do not trust it"],
+    "discipline_note": "Dry: class 3 walk-up. Wet: class 4 with a short rappel. Owner to decide mountaineering vs alpine."
+  },
+  "evidence": [
+    "Peakbagger ascent 2660562 (2024-09-29, in packet) — 15 m cliff band, class 4 when wet, 15 m rappel from a tree above it, Bolt Creek gate locked",
+    "Peakbagger ascent 2666428 (2024-10-06, in packet) — gate closed but not locked, boulders moved off road, possible weekday logging closure, roped section found",
+    "Peakbagger ascent 1247792 (2019-09-21, in packet) — cliff band class 3 dry / 4 wet, belayed and rappelled with a 30 m rope",
+    "Peakbagger ascents 1972107 (2022-07-23) and 2403474 (2023-12-23) in packet — rope used for the full descent; crux rappelled",
+    "Peakbagger ascent 1016532 (2018-08-12, in packet) — same band done with a hand rope and blue ribbons, class 3",
+    "https://www.summitpost.org/eagle-rock/805280 — original route text: about 50 ft of exposed class 3 with the rope as handline, road end N47 46.610 W121 20.678 (47.7768,-121.3446), no parking pass",
+    "Axios Seattle 2026-06-17 (search snippet) — Beckler River Road closed June 2026; not an official notice",
+    "Lynnwood Times ?p=49729 (search snippet) — Beckler River Rd flood damage Dec 2025"
+  ],
+  "searched": [
+    "Eagle Rock Washington Skykomish Beckler scramble rappel cliff band trip report — only the Mountaineers/SummitPost/yellowleaf pages came back, none mention a rappel; the evidence is in the packet's logged ascents",
+    "https://www.mountaineers.org/activities/routes-places/eagle-rock — HTTP 403 via fetch tool",
+    "https://www.summitpost.org/eagle-rock/805280 — read with curl: original route, no rappel mentioned",
+    "Beckler River Road FR65 gate locked Bolt Creek Eagle Rock 2025 — no official notice; crowd reports of flood damage / temporarily closed",
+    "https://fs.usda.gov/r06/mbs/alerts — could not be read"
+  ]
+}

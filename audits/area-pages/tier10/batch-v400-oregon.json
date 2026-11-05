@@ -1,0 +1,39 @@
+{
+ "or_youtlkut_pillars": {
+  "_expect": {
+   "name": "Youtlkut Pillars",
+   "region": "Oregon"
+  },
+  "blurb": "A tall formation of rock columns, roughly 180 feet high, in the Umpqua country of southwest Oregon, reached by forest roads on the Glide side. Of its ten routes, nine are trad and one is bolted, running from 5.7 up into the low 5.10s, with the bulk in the 5.7 to 5.9 range. Expect edgy face moves mixed with cracks, and bring a full set of cams if you plan to lead. Fixed anchors sit well back from the lip, so setting a top rope is common. The pillars catch afternoon sun, and at about 4,400 feet the snow can linger into early summer.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/113991218/youtlkut-pillars",
+    "https://www.fs.usda.gov/r06/umpqua/recreation/youtlkut-pilars-climbing-area"
+   ]
+  }
+ },
+ "or_hole_little_wing_the": {
+  "_expect": {
+   "name": "Hole/Little Wing, The",
+   "region": "Oregon"
+  },
+  "blurb": "A small cluster of boulders in the Bend area, found a few steps downstream from the Classic Corner boulders and sitting in front of a set of cliff walls. Ten problems here run from the very easiest up to a single V5, but most fall between VB and V3, so it suits climbers looking for warm-ups and mid-grade problems more than hard projects. The set includes some slab climbing alongside short, steeper lines, and a couple of the problems are among the more popular in the wider boulder zone. The walk in from town is roughly a quarter of an hour on a trail along the river.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/117035951/the-holelittle-wing",
+    "https://www.mountainproject.com/area/117032084/the-mbv-boulders"
+   ]
+  }
+ },
+ "_skipped": {
+  "or_pascal_s_walk": "only one fetched page (Humbug Cliff parent); no second page about the crag",
+  "or_concert_hall": "only a classics list page fetched; no page about Concert Hall itself",
+  "or_aqua_wall": "no fetched page about Aqua Wall itself (parent and route pages only; rockclimbing.com and thecrag unreachable)",
+  "or_shepard_s_tower": "one MP page; forum page contradicts the location, so not confirmed",
+  "or_sprague_river": "no climbing page found for a Sprague River crag",
+  "or_left_side_classic_corner": "no fetched page about the sub-area itself"
+ },
+ "_conflicts": {
+  "or_youtlkut_pillars": "stored rock 'tuff'; both pages say columnar dacite (https://www.mountainproject.com/area/113991218/youtlkut-pillars, https://www.fs.usda.gov/r06/umpqua/recreation/youtlkut-pilars-climbing-area); rock left out of blurb"
+ }
+}
