@@ -36873,3 +36873,44 @@ fetches.
 
 Next batch will continue id-ascending from `wa_middle_peak_north_face`
 (see progress file).
+
+## Batch 512 (pass 8) — 2026-11-05
+
+Checked 6 routes across four peaks, continuing id-ascending past Middle Peak: `wa_middle_peak_traverse_route`,
+`wa_milk_n_honey` (Colchuck Balanced Rock), `wa_mix_up_peak_east_face`, `wa_mojo_rising` (South Early Winters
+Spire), `wa_monte_cristo_peak_scramble` (North Col), `wa_mount_adams_adams_glacier`.
+
+`wa_middle_peak_traverse_route` is a bare stub — id/name/area/discipline only, no enrichment yet — nothing to
+check, trivially clean.
+
+No confirmed errors, no SQL file. Four clean: Milk n' Honey's FA ("Thomas Ramier, Craig Rankin and Abe
+Traven, August 24, 2010") is confirmed directly by their own Cascade Climbers trip report dated 8/24/2010,
+and its claim of a first winter ascent of the West Face in "late January 2012" is corroborated by Blake
+Herrington's own blog post (1/13/2012) plus a second climber's 1/17/2012 post about the same climb. Mixup
+Peak's East Face/East Buttress FA ("Wesley Grande and Jack Kendrick, 1947") matches Wikipedia exactly, its
+7,440 ft summit is the best-supported figure across sources (TopoQuest's 7,450 ft and TopoZone's 7,231 ft
+are minor outliers, not corrections), and its permit description (free day-use, backcountry permit only for
+overnight) is correct for the North Cascades NP complex — the row's own data_quality field already discloses
+the 4-vs-5-rappel spread between trip reports, so that wasn't re-flagged. Mojo Rising's FA ("Mark Allen, Tom
+Smith, Joel Kauffman, 2006") is confirmed by Allen's own Cascade Climbers trip report (Oct 13-14, 2006) and
+an OpenBeta route record, and its 7,807 ft summit matches SummitPost and ListsOfJohn's map figure. Mount
+Adams' Adams Glacier FA (Fred Beckey, Dave Lind, Robert Mulhall, July 1945) matches Wikipedia, its
+description as the mountain's largest glacier matches Wikipedia, and its stored climbing-pass window
+(required above 7,000 ft, May 1-Sep 30) matches the Gifford Pinchot NF's own current (2025) Mt. Adams
+Climbing Conditions Report — older GPNF pages and SummitPost give different windows (June 1 or April 1
+starts), but the current official page is the one that should govern, and it's what our row already stores.
+
+Flagged for human review, no SQL — neither is a sourced-fact error; both are the row's own identity
+disagreeing with its own content, which a source citation can't fix: (1) `wa_monte_cristo_peak_scramble`'s
+id and name ("North Col") both imply a Class 3 scramble, but the row's own overview explicitly says the
+opposite — "Monte Cristo has no scramble-only line to the true summit... it's properly a Basic Alpine Climb
+rather than a Class 3 scramble" — and that overview is itself the correct one (its FA, 7,136 ft elevation,
+and the chimney's 5.6/5.2/5.6 grading and recently-bolted protection are all confirmed by Wikipedia and a
+2022 SummitPost trip note). A rename needs a human id-identity decision per
+[route-identity.md](../docs/codebase/route-identity.md), not a content patch. (2) `wa_mojo_rising`'s
+`watch_out` field is stored as one string with embedded line breaks, unlike every other row checked this
+batch (and most of the catalog), which store `watch_out` as a JSON array of separate strings — a data-shape
+anomaly, not a factual one, so out of scope for a content fix here.
+
+Next batch will continue id-ascending from `wa_mount_adams_adams_glacier`
+(see progress file).
