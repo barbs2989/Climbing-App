@@ -36,7 +36,7 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
   const [finderDisc, setFinderDisc] = useState(""); // a chart bar presets the finder's discipline
-  const [finderInit, setFinderInit] = useState(null); // a saved search being reopened: { id, q, filters }
+  const [finderInit, setFinderInit] = useState(null); // a search handed in from outside: { id, q, filters }
   const [treeOpen, setTreeOpen] = useState(false);
   const climber = useMemo(() => ({ wishlist, profile, completedIds, rankSuggested, discSlots }), [wishlist, profile, completedIds, rankSuggested, discSlots]);
   const handledJumpId = useRef(null);
@@ -116,13 +116,13 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
     handledAreaJump.current = jumpToAreaReq.id;
     jumpToArea(jumpAreaRowQ.data);
   }, [jumpToAreaReq, jumpAreaRowQ.data]);
-  // A SAVED SEARCH reopened from Logbook › Saved or the Menu: go to the area it was saved in, then
-  // open the finder there with its words and filters, as the climber left it.
+  // A search handed in from outside (the website header's typed search): go to the area it was
+  // scoped to, then open the finder there with its words and filters.
   const handledFinderJump = useRef(null);
   const finderLocQ = useArea(jumpToFinderReq && jumpToFinderReq.search.loc ? jumpToFinderReq.search.loc.id : null);
   useEffect(() => {
     if (!jumpToFinderReq || handledFinderJump.current === jumpToFinderReq.id) return;
-    if (finderLocQ.isError) { handledFinderJump.current = jumpToFinderReq.id; if (notify) notify("Couldn’t open that saved search — check your connection and try again."); return; }
+    if (finderLocQ.isError) { handledFinderJump.current = jumpToFinderReq.id; if (notify) notify("Couldn’t open the Route finder there — check your connection and try again."); return; }
     if (!finderLocQ.data) return;
     handledFinderJump.current = jumpToFinderReq.id;
     const req = jumpToFinderReq;
@@ -181,7 +181,7 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
       {!stateNode ? (
         <>{rootHeader || null}<StatePicker onPick={pickState} C={C} /></>
       ) : screen === "finder" ? (
-        <RouteFinderPanel key={current.id + (finderInit ? ":" + finderInit.id : "")} initial={finderInit} uid={uid} notify={notify} onSignIn={onSignIn} scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} bookmarks={bookmarks} onToggleBookmark={onToggleBookmark} onToggleWish={onToggleWish} userLists={userLists} onToggleListRoute={onToggleListRoute} onAddClimb={onAddClimb} onAddArea={onAddArea} />
+        <RouteFinderPanel key={current.id + (finderInit ? ":" + finderInit.id : "")} initial={finderInit} scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} bookmarks={bookmarks} onToggleBookmark={onToggleBookmark} onToggleWish={onToggleWish} userLists={userLists} onToggleListRoute={onToggleListRoute} onAddClimb={onAddClimb} onAddArea={onAddArea} />
       ) : screen === "objectives" ? (
         <ObjectivesPanel area={current} onOpen={onOpenRoute} C={C} />
       ) : screen === "near" ? (
