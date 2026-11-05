@@ -1,0 +1,36 @@
+{
+ "mn_willie_wall": {
+  "_expect": { "name": "Willie Wall", "region": "Minnesota" },
+  "blurb": "Willie Wall is the southern end of the M&M Hill cliff line near Crane Lake, on the U.S. side of the water, and it was the first stretch of the hill to be bolted. Of its 16 climbs, most are sport routes, with a few trad lines and a single aid route. Grades run from 5.8 through the 5.10s, with a pair of 5.12s for those who want a project. The rock is granite, and the hill's lines are generally 30 to 60 feet tall. Expect a quiet, backwoods feel rather than a busy crag.",
+  "parking_note": "Leave the car in the gravel pit roughly 0.8 miles along Nelson Road after turning off Crane Lake Road, rather than on the road itself.",
+  "review": { "sources": ["https://www.mountainproject.com/area/110534048/willie-wall", "https://mountainproject.com/area/110529722/mm-hill"] }
+ },
+ "mn_wolf_lake_set_johnson_lake_set": {
+  "_expect": { "name": "Wolf Lake Set / Johnson Lake Set", "region": "Minnesota" },
+  "blurb": "These are the crags that face you across Wolf Lake on the grounds of the Wolf Ridge environmental learning center, on Minnesota's North Shore. All 16 climbs are traditional lines, and a number of them can also be toproped. The difficulty is friendly: a handful of easy fives, a cluster of 5.7 to 5.9 climbs that form the core, and a couple at 5.10. A trail leads in from the center toward the neighbouring Mystical Mountain cliffs. The spot sees few climbers, so it suits a quiet day of moderate trad.",
+  "review": { "sources": ["https://mountainproject.com/area/105991603/wolf-lake-set-johnson-lake-set", "https://www.mountainproject.com/area/105814870/wolf-ridge-elc-area-north-shore"] }
+ },
+ "mn_boneyards_the": {
+  "_expect": { "name": "Boneyards, The", "region": "Minnesota" },
+  "blurb": "The Boneyards is a pure bouldering pocket inside Interstate State Park at Taylors Falls, above the St. Croix River. The rock is basalt, smooth and polished, so expect slopers, small crimps and thin feet, plus a few short crack problems. Most of the 16 problems fall between V0 and V3, which makes it a decent warm-up zone, but the hard end is serious: a small group of problems from V8 up to V12 sits on one steep wall, a serious test for strong boulderers. Sun-facing rock can be buzzing with bees late in summer.",
+  "review": { "sources": ["https://mountainproject.com/area/106385662/the-boneyards", "https://mountainproject.com/area/110040689/interstate-state-park-bouldering"] }
+ },
+ "mn_mystical_mountain_west": {
+  "_expect": { "name": "Mystical Mountain West", "region": "Minnesota" },
+  "blurb": "Mystical Mountain West is a trad-focused cliff on the Wolf Ridge learning center grounds, on Minnesota's North Shore, and is often overlooked next to better-known Minnesota crags. Of its 15 climbs, most are traditional, with three that are toprope only. Lines reach as tall as 120 feet, so bring full-length ropes for rappelling and plan on a top belay if you want to toprope. Grades range from the mid 5.6s up through several 5.10s and 5.11s, with one 5.12, so there are moderates to cut your teeth on as well as sustained harder pitches.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105991608/mystical-mountain-zone", "https://www.mountainproject.com/area/105814870/wolf-ridge-elc-area-north-shore"] }
+ },
+ "mn_first_street_boulder": {
+  "_expect": { "name": "First Street Boulder", "region": "Minnesota" },
+  "blurb": "First Street Boulder is a free-standing glacial erratic in Duluth's West End, a short stroll from the famous Whoopee Wall. It packs 15 problems onto one block, with a spread from V0 up to about V7: plenty of easy and mid-grade lines for newcomers, and a few hard traverses and sit starts for stronger boulderers. Landings are easy to cover with pads, and the walk-off is gentle. As with other city spots in Duluth, watch for broken glass underfoot. It works well as a first stop or a quick afternoon session in town.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105988852/first-street-boulder?print=1", "https://mountainproject.com/area/111642705/duluth-area"] }
+ },
+ "_skipped": {
+  "mn_laurentian_divide_climbing_area": "only one fetched page describes the crag itself (second page, a hiking blog, does not mention climbing)",
+  "mn_piedmont_boulders": "no fetched page about Piedmont Boulders itself; Duluth area page only lists it",
+  "mn_lonely_boulder_the": "only one fetched page about the boulder; second page does not mention climbing"
+ },
+ "_conflicts": {
+  "mn_lonely_boulder_the": "stored rock sandstone, but https://www.mountainproject.com/area/106146017/the-lonely-boulder calls it granite/quartzite"
+ }
+}

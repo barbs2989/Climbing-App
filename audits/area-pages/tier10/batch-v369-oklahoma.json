@@ -1,0 +1,45 @@
+{
+ "ok_03_snakes_head_s_wall": {
+  "_expect": { "name": "Snakes Head / S Wall", "region": "Oklahoma" },
+  "blurb": "A granite face on Quartz Mountain (Baldy Point) in southwest Oklahoma, easy to pick out from the lot by the pale S-shaped streak in its middle. Nineteen climbs, mostly traditional with a handful of bolted lines and two top-ropes, span roughly 5.5 up to the low 5.12s, with the bulk between 5.7 and 5.11. Expect smooth, friction-dependent climbing where footwork and nerve count as much as strength; bolted lines can be sparse, so runouts are normal. Reaching the base means some scrambling over boulders. The wall is a good objective for a moderate trad day, with a couple of long, mellow classics at the easy end.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105866107/snakes-head-s-wall", "https://www.theoutbound.com/oklahoma/rock-climbing/climb-at-quartz-mountain-baldy-point", "https://www.mountainproject.com/area/105854470/quartz-mountain"] }
+ },
+ "ok_elk_slabs": {
+  "_expect": { "name": "Elk Slabs", "region": "Oklahoma" },
+  "blurb": "Low-angle slabs on the western flank of Elk Mountain in Charon's Gardens, a remote corner of the Wichita Mountains Wildlife Refuge. Nineteen climbs, mostly traditional with a couple of top-ropes and two aid lines, run from easy fifth class into the 5.10 range, with plenty in the 5.7 to 5.9 band. Protection on the better-known lines is decent, while others are thin or absent. The walk in is longer than at most Wichita crags but pleasant, and the base can take some searching. Crowds are light, and the slabs are a popular step up for newer trad leaders who want quiet moderates.",
+  "parking_note": "Leave the car at the south Treasure Lake lot, reached from the Indiahoma Road side of the refuge. Break-ins have been reported there, so keep valuables with you.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105883937/elk-slabs", "https://www.mountainproject.com/area/106426609/charons-gardens"] }
+ },
+ "ok_45_wall": {
+  "_expect": { "name": "45 Wall", "region": "Oklahoma" },
+  "blurb": "A bouldering wall in Osage Hills State Park, in northeast Oklahoma near the Tulsa area. The sandstone here is featured and in places cave-like, and the eighteen problems cover a very wide range: a few easy and moderate lines, a solid middle of V4 to V7, and a top end that reaches into double digits. That makes it a better fit for strong, experienced boulderers than for beginners, though the north end has some friendlier moderates. Sandstone in this region needs time to dry after rain, so pick a dry spell.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106088702/45-wall", "https://www.mountainproject.com/area/106088693/osage-hills-state-park"] }
+ },
+ "ok_02_backside": {
+  "_expect": { "name": "Backside", "region": "Oklahoma" },
+  "blurb": "The west side of Quartz Mountain, reached by following the trail around the end of the granite formation. It is rougher and more broken than the main face, with a few short lines and some loose rock. Seventeen climbs mix boulder problems (mostly easy to moderate), trad lines, a few aid routes and a single bolted line; roped grades range from easy fifth class to the low 5.12s, with a smattering at 5.9 and 5.11. The wall sits in shade early in the day and bakes later on, so it suits a morning start in warm weather.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107644419/backside", "https://www.mountainproject.com/area/105854470/quartz-mountain"] }
+ },
+ "ok_lost_city": {
+  "_expect": { "name": "Lost City", "region": "Oklahoma" },
+  "blurb": "A roped-climbing outcrop on Avery Drive in the Tulsa area, part of the biggest cluster of rope routes in the region. Seventeen climbs, mainly bolted with a few top-ropes, two boulder problems and a couple of trad lines, range from about 5.6 to 5.11, with most of the weight in the 5.8 to 5.11 range. Several features are named, such as an overhanging wall and a wasp-themed section, and the approach heads uphill from the road. A slackline has even been strung between two of the cliffs. Bolts have largely been replaced with stainless glue-ins.",
+  "review": { "sources": ["https://www.mountainproject.com/v/lost-city/107286190", "https://www.mountainproject.com/area/119566788/lost-city-area", "https://www.mountainproject.com/area/107286155/avery-drive"] }
+ },
+ "ok_john_s_wall": {
+  "_expect": { "name": "John's Wall", "region": "Oklahoma" },
+  "blurb": "The long wall that sits right along the road at the Lost City area on Avery Drive, outside Tulsa. Seventeen climbs, mostly bolted with a good number of trad lines and one top-rope, run from about 5.7 to a 5.13 at the top, but the bulk is 5.9 to 5.12, so it leans toward intermediate and strong climbers. Crack and dihedral lines mix with face climbing. The base is shaded and the wall picks up afternoon sun. From the shared approach, go immediately left and follow the wall along its length.",
+  "review": { "sources": ["https://mountainproject.com/area/107872590/johns-wall", "https://www.mountainproject.com/area/119566788/lost-city-area"] }
+ },
+ "ok_crucible_the": {
+  "_expect": { "name": "Crucible, The", "region": "Oklahoma" },
+  "blurb": "A small crag near the top of Mount Scott in the Wichita Mountains Wildlife Refuge, with views over Lake Lawtonka. Its south- and east-facing walls are ringed by a hedge of trees that gives shade and breaks the wind. Sixteen climbs: eleven trad lines, five boulder problems including highball ones, from an easy scramble-grade start through the 5.7 to 5.9 range up to a few 5.11s. Open crack and offwidth lines remain unclimbed. The walk from the road is short, a matter of minutes down talus to a bald dome with large huecos.",
+  "review": { "sources": ["https://www.mountainproject.com/area/120543180/the-crucible", "https://www.mountainproject.com/area/105862428/mount-scott"] }
+ },
+ "_skipped": {
+  "ok_m_c_escher_boulders": "no fetched page about this boulder area exists (searches and MP only surface one route referencing the Escher wall); could not fetch two pages"
+ },
+ "_conflicts": {
+  "ok_lost_city": "stored rock is sandstone; https://www.mountainproject.com/area/107286155/avery-drive describes the Avery Drive cliffs as short limestone",
+  "ok_john_s_wall": "stored rock is sandstone; https://www.mountainproject.com/area/107286155/avery-drive describes the Avery Drive cliffs as short limestone"
+ }
+}

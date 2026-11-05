@@ -1,0 +1,35 @@
+{
+ "co_astronomy_wall": {
+  "_expect": {"name": "Astronomy Wall", "region": "Colorado"},
+  "blurb": "A compact bolted wall in Poudre Canyon, a short uphill hike from the road near Poudre Falls and west of Rustic. All twelve lines are sport climbs, and the grades lean toward the middle: one at 5.9, three in the 5.10s, five at 5.11, two at 5.12 and a single 5.13. The wall faces west, so it stays shaded through the morning and into early afternoon, and the belay spots cool off later in the day, though midsummer afternoons can still turn hot once the sun swings around. It suits a climber working through 5.10 and 5.11 who wants a quick walk and a lighter crowd than the bigger canyon cliffs.",
+  "review": {"sources": ["https://www.mountainproject.com/area/117136568/astronomy-wall", "https://www.mountainproject.com/area/109527097/poudre-falls"]}
+ },
+ "co_amphitheater_area": {
+  "_expect": {"name": "Amphitheater Area", "region": "Colorado"},
+  "blurb": "A steep, airy hollow roofed by a big overhang, tucked just east of the Main Slab among the Juniper Pass crags off Squaw Pass Road. Twelve lines mix trad and bolted sport, from a 5.9 crack through the 5.10s and 5.11s up to a few 5.12 and 5.13 test pieces. Climbs run from roughly 70 to 200 feet, a couple of them in two pitches, and some blend bolts with gear. The crags sit high in the mountains, a cooler escape from summer heat on the Front Range, and see few visitors. Expect lichen and the odd loose block, so wear a helmet. Room remains for more development.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106869184/amphitheater-area", "https://www.mountainproject.com/v/106870107"]}
+ },
+ "co_1_king_s_landing": {
+  "_expect": {"name": "King's Landing", "region": "Colorado"},
+  "blurb": "A short wall on the left end of the Pooka buttress in Staunton State Park, southwest of Denver. Of its twelve climbs, six are sport lines, three are trad, two are top-rope and one is a low boulder problem. Most grades fall between roughly 5.4 and 5.9, which makes it one of the friendlier spots in the park for newer climbers and for anyone building mileage. The area was developed recently, so small loose pieces may remain and helmets are wise. To set up top ropes, lead the easiest line to reach the ledge above. Shorter than neighboring walls, with a quick walk in from the Pooka trail.",
+  "review": {"sources": ["https://www.mountainproject.com/area/115679604/kings-landing", "https://www.mountainproject.com/area/113532004/the-pooka"]}
+ },
+ "co_a_little_piece_of_south_dakota": {
+  "_expect": {"name": "A Little Piece of South Dakota", "region": "Colorado"},
+  "blurb": "A fairly large wall on the south side of Clear Creek Canyon, west of Golden, reached by hiking downstream from the High Profile Wall parking and approaching from uphill on the right. Twelve routes, mostly trad with some bolted face lines and a lone top-rope, run from about 5.5 up to a hard 5.12, with plenty of climbing in the 5.8 to 5.9 range. Lines are around 50 to 150 feet. The wall faces west. It is rarely climbed and the stone is rough and clean, a decent choice for a quiet, off-beat day away from the busy canyon walls.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105745873/a-little-piece-of-south-dakota", "https://rakkup.com/guidebook/clear-creek-canyon-rock-climbing/a-little-piece-of-south-dakota/s11479"]}
+ },
+ "co_north_face_of_pike_s_peak": {
+  "_expect": {"name": "North Face of Pike's Peak", "region": "Colorado"},
+  "blurb": "A big north-facing alpine cirque on Pikes Peak, the Bottomless Pit basin ringed by pink granite buttresses and gullies. Of the twelve routes here, nine are ice, two are mixed and one is mountaineering, with ice grades from WI2 to WI5 and a few harder mixed or rock lines. Most climbs run three to five pitches. Some ice forms only occasionally in fall, spring brings steep snow and avalanche concern, and a long snow climb up the face gains about 2,000 feet to the summit. Cold, windy and committing, it is a serious winter objective rather than a casual outing.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105745355/north-face-of-pikes-peak", "https://themountainworld.blogspot.com/2009/10/total-abandon.html?m=1"]}
+ },
+ "_skipped": {
+  "co_09_ethics_what_ethics": "only one fetched page describes it (Mountain Project, no rock/grades); thecrag blocked; no second page about the crag",
+  "co_2_blazing_saddles": "only the parent Dines Cliff page lists it; no fetched page about the sector itself, second guidebook page does not mention it",
+  "co_promontory_ridge_the_bear": "only a thin parent-area listing; no fetched page about the crag itself"
+ },
+ "_conflicts": {
+  "co_a_little_piece_of_south_dakota": "Stored rock is gneiss; https://www.mountainproject.com/area/105745873/a-little-piece-of-south-dakota calls it granitic. Left unchanged."
+ }
+}
