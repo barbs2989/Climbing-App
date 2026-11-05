@@ -1,0 +1,25 @@
+{
+  "key": "observation-rock-road",
+  "question": "Is the Fairfax Bridge on SR 165 (Carbon River / Mowich Lake road) closed, since when, and how does one reach Mowich Lake now?",
+  "answer": "Yes. WSDOT permanently closed the 103-year-old SR 165 Carbon River (Fairfax) Bridge on 22 April 2025 after inspections found steel deterioration. It is closed to vehicles, bicycles and pedestrians, with no alternate public route. NPS (Carbon River and Mowich page) says there is no public access via SR 165 to the Carbon River entrance and Mowich Lake and that when or if it reopens is unknown. WSDOT's planning study finished in January 2026 with two alternatives moving to design and environmental review: build a replacement just north of the current bridge (about $160 million cited by the Mountaineers; a news headline cites up to $785 million) or keep SR 165 closed and remove the bridge; $7 million was allocated. No reopening date. A gated logging-road bypass is for emergency crews, landowners and some residents only; it crosses private land and is closed to the public. Walking access to Mowich Lake is long and the figures differ by source: NPS says about 27 miles on the Wonderland Trail from the Westside Road; Hiking Tahoma gives 23 mi from Sunrise, 34 from Longmire, about 28 from the Westside Road (partly bikeable), and 22.4 mi from Carbonado via the Melmont ghost-town route (first ~17 mi bikeable but rough and muddy). Mowich now operates as a backcountry camp (toilets, no trash service, no food cache). The stored Observation Rock approach begins 'From the Mowich Lake trailhead' and says nothing of this.",
+  "recommendation": "Add a road/access note to wa_observation_rock_standard_scramble_route and the other Mowich-based Observation Rock rows (North Face). Leave the Mowich Lake pin (46.9329,-121.8653; nearby fetched coordinates 46.9336,-121.8654 are the same place) but state no road access. Phrase it as true now and name the month: closed since April 2025. Check the Mowich Face and Ptarmigan Ridge wording matches.",
+  "confidence": "high",
+  "proposed": {
+    "road_access": "The state road that normally leads to Mowich Lake (SR 165 over the Carbon River at Fairfax) has had its bridge permanently closed since April 2025, with no public vehicle, bike or foot crossing and no date for reopening. The lake can still be reached on foot only by a long walk in, roughly 20 to 30 miles depending on where you start (from the Sunrise, Longmire or Westside Road ends, or up the Carbon River from Carbonado). Treat Observation Rock as a backpacking trip rather than a day outing, and carry the overnight permit the park requires.",
+    "approach_prefix": "Mowich Lake is no longer a drive-up trailhead (see road access). Once there, take the Spray Park Trail about 3.5 miles to Spray Park..."
+  },
+  "evidence": [
+    "https://www.nps.gov/mora/planyourvisit/carbon-river-and-mowich.htm - NPS: Fairfax Bridge permanently closed per WSDOT release 4/22/25, closed to pedestrians, bicycles and vehicles; no public alternate; reopening unknown; ~27 mi on the Wonderland Trail from Westside Road; overnight permit needed.",
+    "https://hikingtahoma.com/FairfaxBridge.html - closed April 2025; Mowich Lake distances from Sunrise 23, Longmire 34, Westside Road 28, Carbonado 22.4 via Melmont; Mowich as backcountry camp.",
+    "https://wsdot.wa.gov/about/news/2025/103-year-old-sr-165-carbon-river-fairfax-bridge-permanently-closed - (search listing) WSDOT release on the permanent closure.",
+    "https://wsdot.wa.gov/about/news/2026/next-steps-sr-165-carbon-river-fairfax-bridge - (search listing; 8 Jan 2026) final planning study; replace north of the existing bridge or remove; $7M for design and environmental review.",
+    "https://www.mountaineers.org/blog/access-update-fairfax-bridge-closure-and-the-future-of-the-carbon-river-corridor - (403 on fetch; snippet) build option about $160 million."
+  ],
+  "searched": [
+    "Fairfax Bridge Carbon River Road SR 165 closed Mowich Lake access 2025 2026 - NPS, Hiking Tahoma, Visit Rainier, Mountaineers, WSDOT, Pierce County",
+    "nps.gov mowich-lake.htm - 404; carbon-river-and-mowich.htm worked",
+    "Fairfax Bridge WSDOT planning study 2026 update - Jan 2026 final study; no schedule or reopening date",
+    "NPS (27 mi) and Hiking Tahoma (23-34 mi) disagree; recommended text uses a range",
+    "Normal Mowich Lake road season (mid-July to mid-October) came from a search summary, not a fetched official page; not relied on"
+  ]
+}

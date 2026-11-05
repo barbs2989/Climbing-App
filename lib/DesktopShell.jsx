@@ -1,11 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { parseTypedSearch } from "./typedSearch.js";
 import { C, CLIMBERS, ROUTES, catOf, gradeLabel, routeLocText, shortDate, daysUntil, pubName } from "../ClimbMatchCore.jsx";
 import Av from "../src/components/Av.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import { discLabel } from "./discLabels";
-import { usePlaceSearch, useProfilesByIds, useRouteSearch, useStates } from "./db.js";
+import { useMyHomeStatePaths, usePlaceSearch, useProfilesByIds, useRouteSearch, useStates } from "./db.js";
 import { USE_DB } from "./supabase";
 import Chevron from "../src/components/Chevron.tsx";
+import BrandMark from "../src/components/BrandMark.tsx";
 
 /* THE WEBSITE'S OWN PIECES (lib/wideLayout.js). Everything here renders only at 1024px and up — the
    phone app never mounts it. The top bar's search, the right rail's widgets and the site footer. */
@@ -49,7 +51,14 @@ const editable = el => !!el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT
    midline the shell is centred on, out of the row's flow, so Menu + logo on the left and the icons on
    the right do not push it off centre. `width` is App's: it shrinks the box before it could reach
    either side (the row's ends need ~270px each). */
-export function WideSearch({ onOpenRoute, onOpenArea, width }) {
+/* TYPED SEARCH (item 12 of the competitor review, owner 2026-11-04): "5.9 trad near Leavenworth",
+   "WI4", "V4 in Squamish" describe a FILTER, and the name search finds nothing for them. When
+   lib/typedSearch.js reads a grade or a discipline out of the words, the FIRST row offers the Route
+   finder with those filters, scoped to the place typed (the top place hit for the remaining words),
+   else to the climber's home state, else to the state with the most climbs — and the row NAMES the
+   scope, so nothing is picked silently. A place that was typed but not found offers no row: the
+   plain hits (and "no matches") answer that. */
+export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width }) {
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
   const [hi, setHi] = useState(0);
@@ -57,6 +66,14 @@ export function WideSearch({ onOpenRoute, onOpenArea, width }) {
   const qq = q.trim();
   const routesQ = useRouteSearch(USE_DB ? qq : "", 6);
   const placesQ = usePlaceSearch(USE_DB ? qq : "", 4);
+  const typed = useMemo(() => (USE_DB && onOpenFinder ? parseTypedSearch(qq) : null), [qq, onOpenFinder]);
+  const typedPlaceQ = usePlaceSearch(typed && typed.place ? typed.place : "", 1);
+  const homePaths = useMyHomeStatePaths();
+  const { data: allStates } = useStates();
+  const scope = !typed ? null
+    : typed.place ? ((typedPlaceQ.data && typedPlaceQ.data.rows[0]) || null)
+    : (() => { const sts = (allStates || []).filter(s => Number(s.route_count) > 0); return sts.find(s => homePaths.includes(s.path)) || sts.slice().sort((a, b) => Number(b.route_count) - Number(a.route_count))[0] || null; })();
+  const finderHit = typed && scope ? { kind: "finder", t: typed, scope } : null;
   useEffect(() => {
     const key = e => {
       const slash = e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey && !editable(e.target);
@@ -70,10 +87,14 @@ export function WideSearch({ onOpenRoute, onOpenArea, width }) {
   const seedHits = !USE_DB && qq ? ROUTES.filter(r => r.name.toLowerCase().includes(qq.toLowerCase())).slice(0, 6) : [];
   const places = USE_DB ? ((placesQ.data && placesQ.data.rows) || []) : [];
   const routes = USE_DB ? (routesQ.data || []) : seedHits;
-  const hits = places.map(a => ({ kind: "place", a })).concat(routes.map(r => ({ kind: "route", r })));
+  const hits = (finderHit ? [finderHit] : []).concat(places.map(a => ({ kind: "place", a })), routes.map(r => ({ kind: "route", r })));
   const failed = USE_DB && (routesQ.isError || placesQ.isError) && !hits.length;
   const busy = USE_DB && (routesQ.isLoading || placesQ.isLoading) && !hits.length;
-  const pick = h => { setOpen(false); setQ(""); if (input.current) input.current.blur(); if (h.kind === "place") onOpenArea(h.a); else onOpenRoute(h.r); };
+  const pick = h => {
+    setOpen(false); setQ(""); if (input.current) input.current.blur();
+    if (h.kind === "finder") onOpenFinder({ loc: { id: h.scope.id, name: h.scope.name, area_type: h.scope.area_type }, filters: { discs: h.t.discs, gSys: h.t.gSys, gLo: h.t.gLo, gHi: h.t.gHi } });
+    else if (h.kind === "place") onOpenArea(h.a); else onOpenRoute(h.r);
+  };
   const onKey = e => {
     if (e.key === "Escape") { setOpen(false); e.currentTarget.blur(); }
     else if (hits.length && e.key === "ArrowDown") { e.preventDefault(); setOpen(true); setHi(i => (i + 1) % hits.length); }
@@ -82,9 +103,9 @@ export function WideSearch({ onOpenRoute, onOpenArea, width }) {
   };
   const row = (h, i) => {
     const on = i === hi;
-    const name = h.kind === "place" ? h.a.name : h.r.name;
-    const sub = h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : [h.r.grade, h.r._dbArea && h.r._dbArea.name].filter(Boolean).join(" · ");
-    return <button key={h.kind + (h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={() => pick(h)} style={{ ...ROW, background: on ? C.card : "transparent" }}><ActionIcon name={h.kind === "place" ? "pin" : "mountain"} size={17} color={C.textMuted}/><span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{sub ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{sub}</span> : null}</span></button>;
+    const name = h.kind === "finder" ? h.t.label + " in " + h.scope.name : h.kind === "place" ? h.a.name : h.r.name;
+    const sub = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : [h.r.grade, h.r._dbArea && h.r._dbArea.name].filter(Boolean).join(" · ");
+    return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={() => pick(h)} style={{ ...ROW, background: on ? C.card : "transparent" }}><ActionIcon name={h.kind === "finder" ? "explore" : h.kind === "place" ? "pin" : "mountain"} size={17} color={C.textMuted}/><span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{sub ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{sub}</span> : null}</span></button>;
   };
   const showList = open && !!qq;
   /* Placed by `left`, not transform:translateX(-50%) — a transform can land the box on a half pixel,
@@ -161,7 +182,7 @@ export function WideRail({ upcoming, alerts, waiting, guest, onSignIn, onOpenCal
       <div id="rail-upcoming" style={{ ...SECTION, marginBottom: 6 }}>Coming up</div>
       {upcoming.length ? upcoming.slice(0, 3).map(x => {
         const n = daysUntil(x.date);
-        return <button key={x.crew.id} onClick={onOpenCal} style={ROW}><span style={{ width: 44, flexShrink: 0, fontSize: 12, fontWeight: 800, color: n <= 3 ? C.teal : C.textSub }}>{n === 0 ? "Today" : n === 1 ? "Tmrw" : shortDate(x.date)}</span><span style={{ minWidth: 0, fontSize: 13.5, fontWeight: 700, overflowWrap: "anywhere" }}>{x.route.name}</span></button>;
+        return <button key={x.crew.id} onClick={onOpenCal} style={ROW}><span style={{ minWidth: 44, flexShrink: 0, whiteSpace: "nowrap", fontSize: 12, fontWeight: 800, color: n <= 3 ? C.teal : C.textSub }}>{n === 0 ? "Today" : n === 1 ? "Tmrw" : shortDate(x.date)}</span><span style={{ minWidth: 0, fontSize: 13.5, fontWeight: 700, overflowWrap: "anywhere" }}>{x.route.name}</span></button>;
       }) : <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "2px 2px 4px" }}>No crew days agreed yet.<button onClick={onFindPartners} style={{ display: "block", marginTop: 8, padding: 0, border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Find partners ›</button></div>}
     </section>
     <section aria-labelledby="rail-alerts" style={CARD}>
@@ -175,21 +196,57 @@ export function WideRail({ upcoming, alerts, waiting, guest, onSignIn, onOpenCal
   </aside>;
 }
 
-/* SITE FOOTER. A directory of every state the catalog holds, then the site's own links, the way
-   Mountain Project ends every page. The states list is a DB read: a failure says so. */
+/* SITE FOOTER, Strava-style (owner 2026-11-04: "look how strava does it … better ui, more branding"):
+   a panel of its own shade with the BRAND on the left (mark, wordmark, what the app is for) and short
+   link columns on the right (Explore · ClimbMatch · Legal), then one thin © row with Back to top.
+   On the climbing pages a directory of every state the catalog holds heads it (the way Mountain
+   Project ends a page). The states list is a DB read: a failure says so. */
 /* `showStates` (owner 2026-11-04): the state directory is a way into the CATALOG, so it ends the
-   Climbs tab and its route and area pages only; Home, Crews, Logbook… end on the short footer. */
-export function WideFooter({ onOpenState, links, legal, showStates }) {
+   Climbs tab's route and area pages only; Home, Crews, Logbook… end on the short footer. The Climbs
+   tab's own ROOT (the state picker) ends on the short footer too (owner 2026-11-04): the picker
+   above already lays out every state as a card under the country buttons (United States, Canada),
+   so the same list again at the bottom of that page was redundant. */
+/* THE FOOTER SPANS THE WHOLE WINDOW (owner 2026-11-05: "needs to fit the whole bottom screen"). It is
+   rendered inside the page column, so it pulls itself back to the window's left edge by the column's
+   own offset (--cm-col-left, lib/wideLayout.js) and is drawn as wide as the window's CLIENT width —
+   measured, not 100vw, because 100vw counts a classic (Windows) scrollbar and a 100vw box would run
+   16px off the right edge (check:overflow). The sidebar and rail are fixed panels pinned to the
+   window's bottom, so the band sits above them (z-index 31 > 30 / 20) once the page is scrolled to
+   its end; scrolling back up uncovers them. The content inside is centred and capped at FOOT_MAX. */
+const FOOT_MAX = 1320;
+function useClientWidth() {
+  const read = () => (typeof document !== "undefined" ? document.documentElement.clientWidth : 0);
+  const [w, setW] = useState(read);
+  useEffect(() => { const sync = () => setW(read()); sync(); window.addEventListener("resize", sync); return () => window.removeEventListener("resize", sync); }, []);
+  return w;
+}
+export function WideFooter({ onOpenState, explore, links, legal, showStates }) {
   const statesQ = useStates(); // read always (hooks order); drawn only where showStates says
+  const vw = useClientWidth();
   const states = ((statesQ.data || []).filter(s => Number(s.route_count) > 0)).slice().sort((a, b) => a.name.localeCompare(b.name));
   const link = { padding: "4px 0", minHeight: 24, border: "none", background: "transparent", color: C.textSub, fontSize: 13, cursor: "pointer", textAlign: "left" };
-  const col = (title, items) => <div style={{ minWidth: 0 }}><div style={{ ...SECTION, marginBottom: 8 }}>{title}</div><div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>{items.map(([label, go]) => <button key={label} onClick={go} style={link}>{label}</button>)}</div></div>;
-  return <footer style={{ borderTop: "1px solid " + C.border, marginTop: 28, padding: "24px 4px 40px", color: C.textSub }}>
-    {USE_DB && showStates ? <div style={{ marginBottom: 22 }}><div style={{ ...SECTION, marginBottom: 8 }}>Explore climbs by state</div>
+  const dir = USE_DB && showStates;
+  const col = (title, items) => <nav aria-label={title} style={{ minWidth: 0 }}><div style={{ ...SECTION, marginBottom: 8 }}>{title}</div><div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>{items.map(([t, go]) => <button key={t} onClick={go} className="cm-foot-link" style={{ ...link, fontSize: 13.5 }}>{t}</button>)}</div></nav>;
+  const toTop = () => { try { window.scrollTo({ top: 0, behavior: "smooth" }); const s = document.getElementById("appscroll"); if (s) s.scrollTo({ top: 0, behavior: "smooth" }); } catch (_e) { /* old browser: nothing to do */ } };
+  const inner = { maxWidth: FOOT_MAX, margin: "0 auto", padding: "0 24px", boxSizing: "border-box" };
+  return <footer style={{ position: "relative", zIndex: 31, marginTop: 32, marginLeft: "calc(-1 * var(--cm-col-left))", width: vw || "100vw", boxSizing: "border-box", background: C.card, borderTop: "1px solid " + C.border, color: C.textSub }}>
+    <style>{".cm-foot-link:hover{color:" + C.text + " !important;text-decoration:underline;}"}</style>
+    {dir ? <div style={{ ...inner, padding: "20px 24px 22px", borderBottom: "1px solid " + C.border }}><div style={{ ...SECTION, marginBottom: 8 }}>Explore climbs by state</div>
       {statesQ.isError ? <div style={{ fontSize: 13, color: C.amber }}>The list of states couldn’t load right now.</div>
-        : <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", columnGap: 16 }}>{states.map(s => <button key={s.id} onClick={() => onOpenState(s)} style={link}>{s.name}</button>)}</div>}
+        : <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", columnGap: 16 }}>{states.map(s => <button key={s.id} onClick={() => onOpenState(s)} className="cm-foot-link" style={link}>{s.name}</button>)}</div>}
     </div> : null}
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 16, maxWidth: 480 }}>{col("ClimbMatch", links)}{col("Legal", legal)}</div>
-    <div style={{ marginTop: 22, fontSize: 12, color: C.textMuted }}>{"© " + new Date().getFullYear() + " ClimbMatch"}</div>
+    <div style={{ ...inner, padding: "28px 24px 14px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "minmax(170px, 1.3fr) repeat(3, minmax(0, 1fr))", columnGap: 20, rowGap: 18 }}>
+        <div style={{ minWidth: 0 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}><BrandMark size={32}/><span style={{ fontSize: 21, fontWeight: 800, letterSpacing: -0.5, color: C.text, whiteSpace: "nowrap" }}>Climb<span style={{ color: C.blue }}>Match</span></span></div>
+          <div style={{ fontSize: 13, lineHeight: 1.45, color: C.textSub, marginTop: 10, maxWidth: 220 }}>Find climbing partners, plan your next objective, and see current conditions.</div>
+        </div>
+        {col("Explore", explore || [])}{col("ClimbMatch", links)}{col("Legal", legal)}
+      </div>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, marginTop: 20, paddingTop: 12, borderTop: "1px solid " + C.border }}>
+        <span style={{ fontSize: 12.5, color: C.textMuted }}>{"© " + new Date().getFullYear() + " ClimbMatch"}</span>
+        <button onClick={toTop} className="cm-foot-link" style={{ ...link, fontSize: 12.5, display: "flex", alignItems: "center", gap: 4 }}>Back to top<span style={{ display: "inline-flex", transform: "rotate(-90deg)" }}><Chevron size={15} color={C.textSub}/></span></button>
+      </div>
+    </div>
   </footer>;
 }
