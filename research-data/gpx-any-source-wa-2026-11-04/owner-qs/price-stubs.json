@@ -1,0 +1,55 @@
+{
+  "key": "price-stubs",
+  "question": "Mount Price holds four stub routes (Lower Ramp Route 5.8, Northeast Route, Prominent Dihedral 5.10, South Ridge) beside the filled Hester Lake Route; which are real distinct climbs, and what to do with each?",
+  "answer": "The peak is a non-technical scramble (class 3 at most) and every source documents exactly three ways up: the Hester Lake route (trail to Hester Lake, then Little Hester Lake, the saddle NW of it, then the north/northeast ridge), a Northwest route (Dingford trail 2.2 mi to Goat Creek, across the valley into the Price Lake basin, four cliff bands at about 2,800/3,200/3,600/4,500 ft), and a Southeast route (from the closed road near the Goldmyer spur, up a N-S spur ridge and talus to the east-west crest, then west along the crest, class 3, outside the wilderness). Peakbagger's 61 ascents carry route names that collapse to two of these: 'Hester Lakes', 'Via Hester Lake, north ridge', 'North side from Dingford Creek Trail' and 'Hester Lake to NE Ridge' (all Hester), and 'Price Lake' (Northwest). So: (1) Northeast Route is the Hester Lake route. Hester Lake sits on the peak's northeast side and the climbers who took it call the finish the 'NE ridge' (log 2330502) or the 'north ridge' (the guidebook-derived write-ups): one climb with two names. (2) South Ridge matches nothing by that name. The only south-side climb anyone documents is the Southeast route; a SummitPost page for Big Snow also mentions a 'south ridge' shared with Price, which is the Price-Big Snow connecting ridge, not a Price route. (3) Lower Ramp Route 5.8 and Prominent Dihedral 5.10 appear nowhere: no page, trip report, Mountain Project area, or Peakbagger log for Price mentions rock climbing, a ramp, or a dihedral, and the peak is described everywhere as a routefinding scramble. They look like technical routes attached to the wrong peak (the 5.8 'The Ramp' search hit is Icicle Buttress, Leavenworth). Limit: Beckey's Cascade Alpine Guide vol 1 is lending-only on archive.org and the Mountaineers, SummitPost and Peakbagger pages returned 403 to direct fetch, so Beckey's Price entry was NOT read; SummitPost text came from the local harvest. The real second route, the Northwest (Price Lake) route, is missing from the catalog and has a logged ascent (Peakbagger 2780554, Mar 2025, Dingford trailhead to summit).",
+  "recommendation": "(a) Merge wa_mount_price_northeast_route into wa_mount_price_hester_lake_route (keep Hester: it has the text, pins and trackChecks). (b) Do not keep South Ridge as is: repurpose it as 'Southeast Route' (fill below) or delete it; nothing supports a route called South Ridge. (c) Remove wa_mount_price_lower_ramp_route and wa_mount_price_prominent_dihedral as unsupported (no source for either; wrong character for the peak); hold rather than delete if the owner wants Beckey checked first. (d) Add a Northwest Route row (Price Lake) with the fill below. Discipline: every real Price route is unroped, so scrambling; Hester is stored as 'mountaineering' with Class 3, which breaks the walk-up-only rule if class 3 hand-on rock is involved.",
+  "confidence": "medium",
+  "proposed": {
+    "merge": [
+      {
+        "drop": "wa_mount_price_northeast_route",
+        "into": "wa_mount_price_hester_lake_route"
+      }
+    ],
+    "remove": [
+      "wa_mount_price_lower_ramp_route",
+      "wa_mount_price_prominent_dihedral"
+    ],
+    "repurpose_or_delete": {
+      "id": "wa_mount_price_south_ridge",
+      "as": "Southeast Route",
+      "discipline": "scrambling",
+      "grade": "Class 3",
+      "approach": "From the Dingford Creek gate, follow the closed continuation of the Middle Fork road east for roughly 4 miles to the short spur toward the hot-springs parking area (about 1,800 ft). Leave the road and head north, then north-northwest, onto the north-south spur ridge.",
+      "beta": "Climb the spur to about 4,400 ft, where the forest opens onto a talus slope. Go up the talus, or along its west edge, to the east-west crest at about 5,100 ft, taking the easiest line. Turn west and follow the crest, keeping to its steep forested north side, past rock steps and gendarmes to the summit. Class 3 in places on steep ground.",
+      "stats": "About 3,700 ft of gain, 2-3 miles of off-trail travel, 3 to 5 hours up. This line stays outside the Alpine Lakes Wilderness; the other two Price routes are inside it.",
+      "season": "Climbable much of the year; snow buries the brush in winter and spring but slows the road walk. Mid-July to October is the easiest window.",
+      "confidence_note": "Single-source geometry (one route page, one 2001 report); matching it to the label 'South Ridge' is an inference."
+    },
+    "add_route": {
+      "name": "Northwest Route",
+      "discipline": "scrambling",
+      "approach": "Take the Dingford Creek trail about 2.2 miles to its crossing of Goat Creek (about 2,600 ft). Leave the trail, cross the valley southward, and enter the basin that holds Price Lake.",
+      "beta": "Four cliff bands cross the way, near 2,800, 3,200, 3,600 and 4,500 ft; each goes with careful map reading, and the slopes between are talus or forest. Keep east of the creek draining Price Lake. In snow the gully above the lake is wide and steady. Roughly 4,100 ft of gain over about 4 miles, 4 to 6 hours up. Inside the Alpine Lakes Wilderness.",
+      "track_candidate": "Peakbagger ascent 2780554 (logged 'Price Lake', 2025-03-09, summited, 265 points, starts at the Dingford trailhead)"
+    }
+  },
+  "evidence": [
+    "https://www.summitpost.org/mount-price/153442 (read via local harvest summitpost/sp-wa.json) - only three ways up: Hester Lake (most used, NE side), Southeast slope, Northwest basin; no rock routes; Southeast route outside the wilderness",
+    "https://www.mountaineers.org/activities/routes-places/mount-price (search snippets plus the cnmtstuartclimbproject summary) - standard via the saddle NW of Little Hester Lake then the ridge south; NW slope in winter; cliff bands; strenuous technical-4 scramble",
+    "https://cnmtstuartclimbproject.blogspot.com/2017/10/route-mount-price-middle-fork-snoqualmie.html - Hester Lake, Northwest (about an hour shorter, 4 cliff bands) and Southeast routes; no ramp, dihedral or south ridge",
+    "https://apps.yellowleaf.org/scramble/g/r/2013-10-24-mt-price.html - Hester Lake route reaches the east ridge; hard going, traverse the north side to a 5,400 ft col",
+    "https://www.wta.org/go-hiking/hikes/mount-price - 'routefinding scramble', no named faces or technical routes",
+    "Peakbagger Mount Price (pid 2088) logged route names, local packet packets-all/wa_mount_price.json - Hester Lakes / via Hester Lake north ridge / North side from Dingford / Hester Lake to NE Ridge / Price Lake; nothing else"
+  ],
+  "searched": [
+    "WebSearch: Mount Price Middle Fork Snoqualmie 'Prominent Dihedral' OR 'Lower Ramp' - nothing on Price",
+    "WebSearch: Beckey Cascade Alpine Guide Mt. Price ramp dihedral 5.10 south ridge northeast - no hit; archive.org Beckey vol 1 is lending-only (djvu text 401)",
+    "WebSearch: 'Prominent Dihedral' 5.10 alpine Washington Beckey - nothing in WA",
+    "WebSearch: 'Lower Ramp Route' 5.8 Price - nothing; only The Ramp 5.8 at Icicle Buttress",
+    "WebSearch: mountainproject Mount Price Middle Fork rock routes - no MP page for Price; Middle Fork crags are Garfield and Fee Demo Wall",
+    "WebSearch: Mount Price Hester Lake cliffs technical 5.10 - only scrambles; a different Mount Price in California excluded",
+    "WebFetch mountaineers.org, summitpost.org, peakbagger.com - HTTP 403 (not worked around); used local harvest and search snippets",
+    "Local dupes-read.json entry for wa_mount_price - earlier pass was 'unsure'; this pass adds the Peakbagger route-name collapse and the missing Northwest route"
+  ]
+}

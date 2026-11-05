@@ -1,0 +1,26 @@
+{
+  "key": "reynolds_peak",
+  "question": "Is the Williams Creek / Williams Lake approach a distinct route we don't hold?",
+  "answer": "It is a real, well-used different way in, but not a different climb. Both the Reynolds Creek approach (the stored 'Standard Scramble') and the Williams approach finish on the same upper line: the south-east basin, snow or scree to a notch in the east ridge, then a class 2-3 scramble to the south summit. The Williams approach starts at the Williams (Creek) trailhead at about 2,850 ft, 48.3979,-120.4689 (OSM 'Williams Trailhead' node; WTA lists 48.3972,-120.4672) on road 4430 across the Twisp River from Mystery Campground. It follows Williams Creek trail about 7 mi and 3,600 ft through a burned valley to Williams Lake (about 6,500 ft), climbs to Williams Pass (about 7,300 ft), traverses to a saddle (about 6,950 ft) in War Creek Ridge near Williams Butte, follows the crest west over Point 7225, takes a snow ramp or exit gully down into the South Reynolds basin, and joins the SE slope. It is about 22-24 mi round trip with 7,500-8,250 ft of gain, versus about 11 mi and 5,300 ft from Reynolds Creek, but the Reynolds Creek trail has been largely lost to burn blowdown and brush since the 2018 fire (reports 2017-2024: 'essentially gone'). In the packet, 5 of the 8 logged 2026 ascents used Williams (Sep and Oct reports call it well maintained to the lake); the rest used Reynolds Creek or exited via Williams. Because the climb is identical above South Reynolds basin, this is an approach variant (the audit:multi-approach situation), not a separate route row.",
+  "recommendation": "Do not create a new row. Add a second approach to wa_reynolds_peak_scramble ('Williams Creek and War Creek Ridge') with the text and Trailhead pin below, and edit the current approach to say the Reynolds Creek trail is overgrown by blowdown and brush after the 2018 fire. Williams-origin tracks (3265036, 3252864, 3223086, 3384620, and 3005409) can serve that variant. If the owner prefers a separate row, name it 'Williams Creek-War Creek Ridge' with the same summit and descent. Confidence: facts high; 'variant not route' medium.",
+  "confidence": "medium",
+  "proposed": {
+    "approach_variant": {
+      "name": "Williams Creek and War Creek Ridge",
+      "trailhead": {"name": "Williams Creek Trailhead", "lat": 48.3979, "lng": -120.4689, "elev": 2850},
+      "approach": "From the Williams Creek trailhead across the river from Mystery Campground, follow the Williams Creek trail up burned slopes by switchbacks for about seven miles to Williams Lake at roughly 6,500 ft; the trail fades above the lake. Climb open slopes to Williams Pass at about 7,300 ft, drop to the saddle near 6,950 ft on War Creek Ridge, and follow the crest west over the 7,225 ft bump to a broad snow ramp or gully that drops into the south basin of Reynolds Creek. Cross the basin and join the southeast slope below the east ridge. Expect 22 to 24 miles round trip with 7,500 to 8,250 ft of gain; most parties camp on the ridge or at the lake. Water is scarce between the trailhead and the lake in late summer, and after the lake. Best June to early October, with snow on the basin and ramp into early July.",
+      "notes": ["Not practical in winter: the nearest plowed point is far down the Twisp River road", "The valley burned in 2018, so expect loose rock and fallen trees on the trail"]
+    },
+    "existing_approach_edit": "The Reynolds Creek trail is overgrown by blowdown and brush after the 2018 fire and is often lost; allow extra time and consider the Williams approach."
+  },
+  "evidence": [
+    "https://trailcatjim.com/reynolds-peak-via-war-creek-ridge/ — Jun 2018 route: Williams Creek trailhead 2,800 ft, lake 6,500 ft at 4.7 h, Williams Pass 7,300 ft, saddle 6,950 ft, Point 7225, snow ramp to the South Reynolds basin, SE slope and east ridge class 2-3",
+    "https://www.wta.org/go-hiking/hikes/williams-creek — 7 mi and 3,600 ft to Williams Lake, 2018 Crescent Mountain Fire, trailhead 48.3972,-120.4672, directions via road 4430",
+    "https://nominatim.openstreetmap.org/reverse?lat=48.3978&lon=-120.4688 — OSM node 'Williams Trailhead' 48.39791,-120.46885",
+    "Peakbagger packet wa_reynolds_peak — 2026 ascents 3384620, 3350395, 3265036, 3252864, 3223086 via Williams; Reynolds Creek reports 2520555 and 2534940 say the trail is essentially gone"
+  ],
+  "searched": [
+    "Reynolds Peak Williams Lake trail Williams Butte route Twisp River Bulger approach — SummitPost, Mountaineers, Wenatchee Outdoors, trailcatjim",
+    "Nominatim search 'Williams Creek Trailhead Twisp' — no hit; reverse geocode at the track start returned the trailhead node"
+  ]
+}

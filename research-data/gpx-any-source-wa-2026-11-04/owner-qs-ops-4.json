@@ -1,0 +1,73 @@
+[
+ {
+  "op": "patch",
+  "id": "wa_tinkham_peak_southeast_spur",
+  "area_id": "wa_tinkham_peak",
+  "name": "Southeast Spur",
+  "fill": {
+   "season": "Jun-Oct",
+   "best_season": "July through October; the boot path is often snow-covered into June",
+   "outing_shape": "outback",
+   "overview": "The easy way onto Tinkham: a short, steep boot path from the south end of Mirror Lake straight up the southeast spur to the lower east summit. The true high point, the west summit, is a few minutes along an easy ridge. Often combined with the Northwest Ridge for a loop.",
+   "approach": "Start at the Mirror Lake trailhead at the end of Forest Road 5480 (about 3,600 ft). Hike the Mirror Lake trail to the lake, mostly level, then follow the PCT to the lake's south end and find the boot path.",
+   "beta": "The path climbs about 1,200 ft in just over a mile through grass and talus on the southeast spur, with no exposure. From the east summit continue west along the ridge to the true high point; the ridge is easy and takes a few minutes. Return the same way or drop to the PCT by the Northwest Ridge boot path."
+  }
+ },
+ {
+  "op": "merge",
+  "id": "wa_tinkham_peak_east_route",
+  "into": "wa_tinkham_peak_southeast_spur",
+  "area_id": "wa_tinkham_peak",
+  "name": "East Route",
+  "move": "*",
+  "set": {
+   "name": "Southeast Spur (East Peak)",
+   "discipline": "scrambling",
+   "grade": "Class 2"
+  }
+ },
+ {
+  "op": "merge",
+  "id": "wa_tinkham_peak_north_route",
+  "into": "wa_tinkham_peak_northwest_ridge",
+  "area_id": "wa_tinkham_peak",
+  "name": "North Route",
+  "move": "*",
+  "set": {
+   "discipline": "scrambling"
+  }
+ },
+ {
+  "op": "delete",
+  "id": "wa_tinkham_peak_west_route",
+  "area_id": "wa_tinkham_peak",
+  "name": "West Route"
+ },
+ {
+  "op": "patch",
+  "id": "wa_dragontail_peak_r3",
+  "area_id": "wa_dragontail_peak",
+  "name": "Pandora's Box (W Couloir)",
+  "set": {
+   "discipline": "mountaineering"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_granite_mountain_beargrass_rib",
+  "area_id": "wa_granite_mountain",
+  "name": "Beargrass Rib",
+  "set": {
+   "discipline": "alpine"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_granite_mountain_winter_route_first_south_rib",
+  "area_id": "wa_granite_mountain",
+  "name": "Winter Route First South Rib",
+  "set": {
+   "discipline": "alpine"
+  }
+ }
+]
