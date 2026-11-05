@@ -38,7 +38,7 @@ jobs:
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
         run: node scripts/build-state-snapshots.mjs --out state-snapshots
       # A unique key per run; deploy.yml restores by the prefix, which picks the newest.
-      - uses: actions/cache/save@v4
+      - uses: actions/cache/save@v6
         with:
           path: state-snapshots
           key: state-snapshots-${{ github.run_id }}
