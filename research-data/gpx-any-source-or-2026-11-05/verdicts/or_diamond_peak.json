@@ -1,0 +1,124 @@
+{
+ "area_id": "or_diamond_peak",
+ "routes": [
+  {
+   "route_id": "or_diamond_peak_southwest_ridge",
+   "season": {
+    "months": [
+     4,
+     5,
+     6
+    ],
+    "window": "Apr-Jun",
+    "evidence": "Snow route from Pioneer Gulch: logged SW Ridge / Pioneer Gulch ascents fall in Apr-Jun (May 14, May 24, Apr 20, Jun). Guide pages (SummitPost Pioneer Gulch/SW Ridge, uoregon peak page, a 2021 April ski report) call spring the preferred window with snow on the upper ridge into June; in summer and fall the Summit Lake south-ridge trail is the usual way. Route text itself pitches it for when snow closes the Summit Lake road."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2849246",
+     "verdict": "unsure",
+     "why": "24 May 2025, summited, line looks like the same SW ridge but starts at a different spur (43.49497,-122.1845) and no route name is logged or described."
+    },
+    {
+     "aid": "2818795",
+     "verdict": "unsure",
+     "why": "20 Apr 2025 ski ascent; starts near the same snowline as 2191040 but no route name logged or described; start/end 1.6 km apart."
+    },
+    {
+     "aid": "3251559",
+     "verdict": "different",
+     "why": "July, Summit Lake PCT climbers trail (south ridge)."
+    },
+    {
+     "aid": "1050128",
+     "verdict": "different",
+     "why": "Rockpile trail / Marie Lake to the south ridge climbers trail, July."
+    },
+    {
+     "aid": "1961044",
+     "verdict": "different",
+     "why": "Logged South Ridge."
+    },
+    {
+     "aid": "843373",
+     "verdict": "different",
+     "why": "Logged South Ridge."
+    },
+    {
+     "aid": "161092",
+     "verdict": "different",
+     "why": "Corrigan Lake Trail / West Ridge, a different line, July."
+    },
+    {
+     "aid": "2191040",
+     "verdict": "unsure",
+     "why": "parent review: no confirmable Pioneer Gulch trailhead coordinate, and the May recording starts on the snowed-in road below it"
+    }
+   ],
+   "pins": [
+    {
+     "type": "Summit",
+     "action": "add",
+     "lat": 43.52072,
+     "lng": -122.14963,
+     "name": "Diamond Peak summit",
+     "evidence": "Route stores no waypoints. Peakbagger lidar summit coordinate; nine harvested ascents top out within 2-15 m of it.",
+     "confirmedBy": "https://www.peakbagger.com/peak.aspx?pid=2430"
+    }
+   ],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 5,
+     "text": "In mid-May the forest between about 6,000 and 7,000 ft is confusing, and a snowshoe track there can melt out.",
+     "aids": [
+      "2191040"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 5,
+     "text": "In mid-May the snow on the final summit ridge swings between firm and postholing; safe but unforgiving off line.",
+     "aids": [
+      "2191040"
+     ]
+    },
+    {
+     "field": "approach_note",
+     "month": 5,
+     "text": "In mid-May snow can still cover the forest road from about 4,900 ft, adding road miles on snowshoes, while the first mile of trail is often already bare.",
+     "aids": [
+      "2191040"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 4,
+     "text": "In late April an early start finds snow firm enough to climb in boots, with crampons needed only for the upper third.",
+     "aids": [
+      "2818795"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 5,
+     "text": "By late May the snow is consolidated from about 6,000 ft to the top, crampons are optional, and a glissade drops roughly 1,500 ft from the summit.",
+     "aids": [
+      "2849246"
+     ]
+    },
+    {
+     "field": "what_to_bring",
+     "month": 5,
+     "text": "snowshoes (April-May, road and forest snow)",
+     "aids": [
+      "2191040",
+      "2849246"
+     ]
+    }
+   ]
+  }
+ ],
+ "missing": [],
+ "notes": "Pioneer Gulch trailhead coordinate NOT confirmed (USFS page gives directions and 5,600 ft but no lat/lng; SummitPost and Trailforks returned 403; tracks start at 4,900-5,000 ft where snow stopped the car), so no trailhead pin proposed. South Ridge route already has its track. Peakbagger ascents logged 'Rockpile Trail + Marie Lake' are an approach to the south-ridge climbers trail, not a separate route."
+}
