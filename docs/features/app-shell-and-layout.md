@@ -90,7 +90,11 @@ room for side-panel ads later. The phone app keeps its own look.
     placeholder). It is the frame X's feed and Strava's *activity* page draw; Strava's dashboard,
     Mountain Project, AllTrails and The Topo frame nothing and let cards carry the edges, and theCrag
     frames sidebar + content + rail as one sheet, which the edge-pinned layout above has no block for.
-    A full-screen page placed in the column already drew these two lines, so it lands on them exactly.
+    A full-screen page placed in the column draws no edge of its own (it used to draw the same two
+    lines; inside its 1.1 zoom a second stroke could land a device pixel beside the column's), the
+    column's lines lie just outside it. The boot placeholder's copy of the column style in `index.html`
+    is a hand copy with no guard (`check:boot` compares nav labels only): change `COL_W`, `GAP`,
+    `EDGE_R` or `COL_EDGES` and change that `@media` block in step.
   - A site **footer** under every page, Strava-style (owner 2026-11-04: "look how strava does it …
     more branding"), **spanning the whole window** (owner 2026-11-05): a band the width of the window's
     client area (measured, not 100vw, so the Windows scrollbar never pushes it off the edge) that pulls
