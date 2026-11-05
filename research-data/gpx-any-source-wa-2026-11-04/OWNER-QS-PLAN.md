@@ -150,3 +150,22 @@ node scripts/oneoff/apply-owner-qs.mjs research-data/gpx-any-source-wa-2026-11-0
   - "Odine" and "Scabo" corrected to Ondine and Scarbo. The tower's route names come from Ravel's Gaspard de la nuit.
 - **Hagan South Slopes:** the approach now opens by saying it is the traverse approach, and points to the Blum Lakes route for the peak alone.
 - **Held:** Reynolds. Making Williams Creek the primary approach also needs the trailhead pin and paragraph moved together.
+
+## Merges and deletes applied 2026-11-05 (the owner ran `--write`)
+- **Batches 1-4:** 29 steps applied. Two were refused as expected:
+  - The Iron Cap rename had already landed.
+  - Dragontail r3 stays alpine; trigger 0366 keeps it there because of its 5.6 rock grade.
+- **Rows merged or deleted:**
+  - Luna Southeast Slopes, folded into Southwest Ridge.
+  - The empty duplicates: Summit Chief SE Face, Temple "Mount Temple Ridge", Bald Eagle x2, Bryant x2, Old Snowy x2.
+  - Price Northeast Route.
+  - Hibox East, South, SE Shoulder and NW Ridge.
+  - Iron Cap South Route 2.
+  - Castle "North Face (Left Buttress)".
+  - Tinkham East, North and West.
+- **`owner-qs-ops-10.json`:** Liberty Ridge and Ptarmigan Ridge were each filed twice. The Liberty Cap copies were folded into the Rainier rows and deleted.
+  - Liberty Ridge took the fuller text, the 8 pins and a recorded track: 3,000 points, only 4% on the zoom-16 grid, so not a drawn line.
+  - Ptarmigan took only approach-neutral text. Its season and climate stay unchanged, because the Liberty Cap versions describe the Mowich approach.
+  - `wa_liberty_cap` now holds 0 routes.
+- **`owner-qs-ops-11.json`:** Luna's face text now describes the Southwest Ridge.
+- **Area counts after the run:** Bald Eagle 1, Bryant 3, Hibox 3, Luna 1, Price 5, Old Snowy 1, Tinkham 2.
