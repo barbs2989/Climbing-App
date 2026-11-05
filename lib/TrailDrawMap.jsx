@@ -37,7 +37,7 @@ export function trailLenM(pts) { return pathLenM(pts || []); }
 
 let nextId = 1;
 const round = (p) => [+(+p[0]).toFixed(6), +(+p[1]).toFixed(6)];
-const node = (a, via) => ({ id: nextId++, a: round(a), via: via || [], pending: false });
+const node = (a, via) => ({ id: nextId++, a: round(a), via: via || [], pending: false, born: Date.now() });
 const routed = (n) => !!(n && n.via && n.via.length);
 const flatten = (nodes) => { const out = []; nodes.forEach((n, i) => { if (i > 0) out.push(...n.via); out.push(n.a); }); return out; };
 const legPts = (nodes, i) => [nodes[i - 1].a].concat(nodes[i].via, [nodes[i].a]);
@@ -101,7 +101,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   // wants the line cleared re-mounts the drawer (a new route) or uses its Clear.
   useEffect(() => () => { routing.current.forEach((c) => c.abort()); clearTimeout(noteT.current); clearTimeout(fails.current.t); }, []);
   // A line handed over while a leg was still being looked up: ask for that leg again here.
-  useEffect(() => { reask(nodesRef.current); }, []); // eslint-disable-line react-hooks/exhaustive-deps -- once, on mount, for the shape the host passed in
+  useEffect(() => { const shown = reask(nodesRef.current); if (shown !== nodesRef.current) setBoth(shown); }, []); // eslint-disable-line react-hooks/exhaustive-deps -- once, on mount, for the shape the host passed in
   // Hidden behind another tab of the host sheet (display:none) and shown again: Leaflet measured a
   // 0×0 box while hidden, so it is told the real size. The host keeps this mounted rather than
   // unmounting it, or a routed line would come back as one anchor per routed point.
@@ -211,9 +211,11 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   // asks again, so Redo across an in-flight route does not quietly leave a straight line.
   // Legs a snapshot (or a handed-over shape) left pending: asked again with Follow trails on, left
   // straight with it off, so a line never reshapes itself against the switch.
+  // Returns the list to show (pending legs cleared when Follow trails is off) and starts the asks.
   const reask = (list, skip) => {
-    if (propsRef.current.follow) { list.forEach((n, i) => { if (n.pending && i > 0 && !(skip && skip.has(n.id))) startRoute(n.id); }); return; }
-    if (list.some((n) => n.pending && !(skip && skip.has(n.id)))) setBoth(list.map((n) => (n.pending && !(skip && skip.has(n.id)) ? Object.assign({}, n, { pending: false }) : n)));
+    const mine = (n) => n.pending && !(skip && skip.has(n.id));
+    if (propsRef.current.follow) { list.forEach((n, i) => { if (mine(n) && i > 0) startRoute(n.id); }); return list; }
+    return list.some(mine) ? list.map((n) => (mine(n) ? Object.assign({}, n, { pending: false }) : n)) : list;
   };
   // Undo/Redo keeps a request on its way when the restored snapshot holds that same leg still
   // pending between the same two anchors; every other request is given up.
@@ -221,9 +223,11 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     const cur = nodesRef.current, keep = new Set();
     snap.forEach((n, i) => { if (!n.pending || i < 1 || !routing.current.has(n.id)) return; const k = cur.findIndex((x) => x.id === n.id); if (k > 0 && sameP(cur[k].a, n.a) && sameP(cur[k - 1].a, snap[i - 1].a)) keep.add(n.id); });
     routing.current.forEach((c, id) => { if (!keep.has(id)) { c.abort(); routing.current.delete(id); } });
-    setBoth(snap);
     setSelectedId(null);
-    reask(snap, keep);
+    // One write: the snapshot with its Follow-off legs already cleared, then the asks for the rest.
+    const shown = propsRef.current.follow ? snap : reask(snap, keep);
+    setBoth(shown);
+    if (propsRef.current.follow) reask(snap, keep);
   };
   const undo = () => { if (!undoRef.current.length) return; redoRef.current.push(nodesRef.current); restore(undoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
   const redo = () => { if (!redoRef.current.length) return; undoRef.current.push(nodesRef.current); restore(redoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
@@ -256,11 +260,12 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       // A point placed ON the path (a tap on the hollow dot, a drop a few metres from a routed point)
       // is an exact split: nothing to ask, even with Follow trails on.
       // How far the drop is from the leg AS DRAWN (metres, to the nearest segment), not from its nearest point: routed points can be 50 m apart.
+      if (!propsRef.current.follow) { commit(next, []); return true; }
       const kx = Math.cos(nn.a[0] * Math.PI / 180) * 111320, ky = 110540, P = [nn.a[0] * ky, nn.a[1] * kx];
       const full = [cur[i - 1].a].concat(via, [cur[i].a]);
       let offM = Infinity;
       for (let k = 1; k < full.length; k++) { const A = [full[k - 1][0] * ky, full[k - 1][1] * kx], B = [full[k][0] * ky, full[k][1] * kx]; const dx = B[0] - A[0], dy = B[1] - A[1], l2 = dx * dx + dy * dy; const t = l2 ? Math.max(0, Math.min(1, ((P[0] - A[0]) * dx + (P[1] - A[1]) * dy) / l2)) : 0; offM = Math.min(offM, Math.hypot(P[0] - (A[0] + t * dx), P[1] - (A[1] + t * dy))); }
-      if (!propsRef.current.follow || offM < 15) { commit(next, []); return true; }
+      if (offM < 15) { commit(next, []); return true; }
       const touched = [];
       [i, i + 1].forEach((k) => { next[k] = Object.assign({}, next[k], { pending: true }); touched.push(next[k].id); });
       commit(next, touched);
@@ -389,7 +394,8 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const m = keep(L.marker(n.a, { draggable: true, keyboard: false, autoPan: true, bubblingMouseEvents: false, icon: dot(last ? 18 : 14, C.warning, "#fff", sel ? C.accent : null) }));
       m.on("dragstart", () => { dragging.current = true; });
       m.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = m.getLatLng(); api.current.moveAnchor(n.id, q.lat, q.lng); api.current.flushRedraw(); });
-      m.on("click", (e) => { if (tapOk(e, "anchor")) api.current.select(n.id); });
+      // The second half of a double tap on empty map lands on the anchor the first half just made.
+      m.on("click", (e) => { if (Date.now() - (n.born || 0) < 350) return; if (tapOk(e, "anchor")) api.current.select(n.id); });
     });
   // The pins are read through propsRef and keyed by VALUE (startKey/endKey): the host builds fresh
   // {lat,lng} objects every render, and keying on the objects rebuilt every layer per tick.
