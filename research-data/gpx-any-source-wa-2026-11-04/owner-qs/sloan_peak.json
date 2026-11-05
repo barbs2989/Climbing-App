@@ -1,0 +1,21 @@
+{
+  "key": "sloan_peak",
+  "question": "The Corkscrew: is Bedal Creek or N Fork Sauk / Cougar Creek the standard approach now?",
+  "answer": "Bedal Creek is now the standard approach by a wide margin. About 17 of 19 recent logged ascents in the packet used the Bedal Creek trailhead (WTA Bedal Basin trailhead 48.0701,-121.3753, Forest Road 4096; tracks start at 48.0717-48.0731,-121.3758 to -121.3768), including every 2024-2026 report. Only two (Jul 2022, Aug 2023) used Cougar Creek / North Fork Sauk (trailhead near 48.0863 on Sloan Creek Road, FR 49), and one of those said Cougar Creek was the better approach for that time of season (easy log crossings of the Sauk). The Bedal road is rough and needs high clearance, but an Oct 2026 report found it in relatively good shape; the Bedal Creek trail has a large washout to scramble. The Cougar approach fords the North Fork Sauk River and Cougar Creek, which is dangerous in high water and early season. Both reach the same Corkscrew above the lower basin. The stored approach text (N Fork Sauk / Cougar first) is therefore the alternative, and the Bedal note should lead.",
+  "recommendation": "Rewrite the approach so the Bedal Creek route leads and the N Fork Sauk / Cougar Creek route is the alternative. The Bedal pin and tracks are already consistent (pin 48.0701,-121.3753 matches WTA). Keep the Cougar waypoints only if the page can show both approaches; otherwise drop them. Mention the high-clearance road and the washout scramble.",
+  "confidence": "high",
+  "proposed": {
+    "approach": "Most parties start from the Bedal Creek trailhead at about 2,800 ft, at the end of a rough high-clearance spur (Forest Road 4096) off the Mountain Loop Highway a mile or so past the Bedal campground. Follow the Bedal Creek trail through old-growth forest and along the creek to where a large washout has taken the tread; scramble the washout to a cairned exit, then climb the climbers' path through forest and onto talus and meadow to the saddle near 5,300 ft, the last dependable water. From there bear toward the moraine and the lower glacier. A second, less used approach starts from the pullout on Sloan Creek Road and fords the North Fork Sauk River, then follows Cougar Creek; it avoids the Bedal road, but the crossings are dangerous in high water, mainly May through July.",
+    "trailhead_pin": {"name": "Bedal Creek Trailhead", "lat": 48.0701, "lng": -121.3753, "elev": 2800},
+    "alt_approach_pin": {"name": "Sloan Peak trailhead, FR 49 (Cougar Creek approach)", "lat": 48.0863, "lng": null, "note": "WTA longitude not retrieved; re-fetch before pinning"}
+  },
+  "evidence": [
+    "https://www.wta.org/go-hiking/hikes/bedal-creek — Bedal Basin trailhead 48.0701,-121.3753, FR 4096 two miles from the Mountain Loop Highway",
+    "https://www.wta.org/go-hiking/hikes/sloan-peak — north side approach: river ford, Cougar Creek crossing near a large falls, trailhead latitude 48.0863",
+    "Peakbagger packet wa_sloan_peak — about 17 Bedal Creek ascents vs 2 Cougar Creek (2277428, 1974716); start clusters 7 at 346 m from our trailhead vs 2 at 3.6 km"
+  ],
+  "searched": [
+    "https://www.mountaineers.org/activities/routes-places/sloan-peak — returned nothing usable",
+    "WTA Sloan Peak and Bedal Basin pages — fetched; confirmed trailhead coordinates and access"
+  ]
+}
