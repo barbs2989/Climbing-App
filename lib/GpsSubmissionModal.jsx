@@ -26,6 +26,10 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
   // A line already drawn in the desktop drawing tool (lib/DrawRoute.jsx) arrives here to be submitted.
   const [drawPts, setDrawPts] = useState(() => (canDraw && initialPts && initialPts.length ? initialPts : []))
   const drawing = tab === 'draw'
+  // The drawer mounts on the first visit to Draw on map and stays mounted after (so a routed line and
+  // its Undo survive a look at the other tabs), but costs nothing for a climber who only uploads.
+  const [drawSeen, setDrawSeen] = useState(canDraw && tab === 'draw')
+  if (drawing && !drawSeen) setDrawSeen(true)
   // A leg still being routed: what is on screen is about to change, so it is not yet a line to submit.
   const [drawPending, setDrawPending] = useState(() => !!(initialShape && initialShape.some((x) => x.pending)))
   const [coordinates, setCoordinates] = useState('')
@@ -327,7 +331,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
         {/* Tab Content */}
         <div style={{...styles.tabContent}}>
           {/* Kept MOUNTED behind the other tabs: unmounting it would turn a routed line back into one anchor per point and lose Undo. */}
-          {canDraw && <div style={{display: tab === 'draw' ? 'block' : 'none'}}><TrailDrawMap start={parkAt} end={cragAt} pts={drawPts} setPts={setDrawPts} C={C} active={tab === 'draw'} onShape={(s) => setDrawPending(s.some((x) => x.pending))} initialShape={initialShape && initialShape.length ? initialShape : null} /></div>}
+          {canDraw && drawSeen && <div style={{display: tab === 'draw' ? 'block' : 'none'}}><TrailDrawMap start={parkAt} end={cragAt} pts={drawPts} setPts={setDrawPts} C={C} active={tab === 'draw'} onShape={(s) => setDrawPending(s.some((x) => x.pending))} initialShape={initialShape && initialShape.length ? initialShape : null} /></div>}
 
           {tab === 'paste' && (
             <div>

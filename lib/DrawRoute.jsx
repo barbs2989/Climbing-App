@@ -50,7 +50,7 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
   const [prof, setProf] = useState(null); // {key, gain, loss, eles} | {key, error}
   const key = pts.map(function (p) { return p[0] + "," + p[1]; }).join(";");
   useEffect(function () {
-    if (pts.length < 2) return undefined;
+    if (pts.length < 2 || shapePending) return undefined; // measured once the line has settled, not per routed leg
     let live = true;
     const sp = samples(pts);
     const t = setTimeout(function () {
@@ -64,7 +64,7 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
       }).catch(function () { if (live) setProf({ key: key, error: true }); });
     }, 600);
     return function () { live = false; clearTimeout(t); };
-  }, [key]); // eslint-disable-line react-hooks/exhaustive-deps -- `key` is `pts` serialised; keying on it (not the array) stops a refetch on every render
+  }, [key, shapePending]); // eslint-disable-line react-hooks/exhaustive-deps -- `key` is `pts` serialised; keying on it (not the array) stops a refetch on every render
   const lenM = trailLenM(pts);
   const canSuggest = pts.length >= MIN_RECORDED_PTS && !shapePending; // one answer for the button's state AND its look
   const p = prof && prof.key === key ? prof : null;

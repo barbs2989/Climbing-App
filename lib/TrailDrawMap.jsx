@@ -233,8 +233,12 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const via = cur[i].via;
       let best = 0, bd = Infinity;
       via.forEach((p, k) => { const d = distM(p, nn.a); if (d < bd) { bd = d; best = k; } });
-      const prev = cur[i - 1].a;
-      const cut = distM(nn.a, prev) < distM(via[best], prev) ? best : best + 1; // before or after its nearest routed point, by which side the drop lies
+      // Before or after its nearest routed point: whichever of the two path segments beside that
+      // point the drop is closer to (a switchback doubles back, so distance to the previous anchor
+      // would pick the wrong side and draw a tiny out-and-back).
+      const segD = (p, q) => { if (!p || !q) return Infinity; const m = [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2]; return Math.min(distM(nn.a, m), distM(nn.a, p), distM(nn.a, q)); };
+      const before = via[best - 1] || cur[i - 1].a, after = via[best + 1] || cur[i].a;
+      const cut = segD(before, via[best]) <= segD(via[best], after) ? best : best + 1;
       nn.via = via.slice(0, cut);
       next[i] = Object.assign({}, cur[i], { via: via.slice(cut) });
       next.splice(i, 0, nn);
@@ -329,7 +333,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     for (let i = 1; i < nodes.length; i++) {
       const leg = legPts(nodes, i), n = nodes[i];
       keep(L.polyline(leg, { color: C.warning, weight: 4, opacity: 0.95, dashArray: n.pending ? "6 8" : null, interactive: false }));
-      keep(L.polyline(leg, { color: "#000", weight: 18, opacity: 0, bubblingMouseEvents: false })).on("click", (e) => { L.DomEvent.stop(e); if (tapOk(e, "leg")) api.current.insertAt(i, e.latlng.lat, e.latlng.lng); });
+      keep(L.polyline(leg, { color: "#000", weight: 18, opacity: 0, bubblingMouseEvents: false })).on("click", (e) => { if (tapOk(e, "leg")) api.current.insertAt(i, e.latlng.lat, e.latlng.lng); });
       // The hollow dot: drag it out (or tap it) to add an anchor on this leg. Not on a leg shorter
       // than its own hit box on screen, where it would sit on the anchors and steal their taps.
       // Measured along the leg as drawn (a routed leg can loop far from two close anchors), and the
@@ -344,14 +348,14 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const h = keep(L.marker([m0[0] + (m1[0] - m0[0]) * f, m0[1] + (m1[1] - m0[1]) * f], { draggable: true, keyboard: false, bubblingMouseEvents: false, icon: dot(14, "rgba(0,0,0,0.45)", C.warning) }));
       h.on("dragstart", () => { dragging.current = true; });
       h.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); redrawAfterDrag.current = true; api.current.flushRedraw(); }); // always redrawn: a drop ON an anchor adds nothing, and the handle must not stay where it was dropped
-      h.on("click", (e) => { L.DomEvent.stop(e); if (!tapOk(e, "handle")) return; const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); });
+      h.on("click", (e) => { if (!tapOk(e, "handle")) return; const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); });
     }
     nodes.forEach((n, i) => {
       const last = i === nodes.length - 1, sel = n.id === selectedId;
       const m = keep(L.marker(n.a, { draggable: true, keyboard: false, autoPan: true, bubblingMouseEvents: false, icon: dot(last ? 18 : 14, C.warning, "#fff", sel ? C.accent : null) }));
       m.on("dragstart", () => { dragging.current = true; });
       m.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = m.getLatLng(); api.current.moveAnchor(n.id, q.lat, q.lng); api.current.flushRedraw(); });
-      m.on("click", (e) => { L.DomEvent.stop(e); if (tapOk(e, "anchor")) api.current.select(n.id); });
+      m.on("click", (e) => { if (tapOk(e, "anchor")) api.current.select(n.id); });
     });
   // The pins are read through propsRef and keyed by VALUE (startKey/endKey): the host builds fresh
   // {lat,lng} objects every render, and keying on the objects rebuilt every layer per tick.
