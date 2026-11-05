@@ -240,6 +240,7 @@ Notes: `docs/guards/social-and-crews.md`, `contributions-and-logbook.md`, `hones
 (Matched by name; not re-run.)
 
 ## 7. Last significant change
+Chat bubbles hold a long message (owner, 2026-11-05: "long ones sometimes escape the blue message box"): `MessageRow`'s column caps the bubble at 74% of the thread and lets it shrink (`minWidth:0`), and the bubble breaks an unbreakable word (`overflowWrap:"anywhere"`), so a pasted URL wraps inside the blue box instead of pushing the box aside and spilling past it. The quick replies under a DM or crew thread (`ChatComposer`) wrap to the screen's width instead of running off its right edge as a hidden-scrollbar strip whose last chip a phone cut in half.
 Friends’ recent activity: the Kudos / Message / Vouch buttons are amber / blue / green instead of grey, and fill solid once given.
 All friends search: the *Search friends* box shows for any friends list, clears with ✕, and the activity feed steps aside while searching.
 Saved areas sync (0322): an area or peak unsaved in Logbook › Saved on one device is unsaved on its area page everywhere.
