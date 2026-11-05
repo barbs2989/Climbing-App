@@ -121,12 +121,14 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   };
   // A tap counts once: not the click that ends a marker drag (Leaflet swallows it on most browsers;
   // the 250 ms is for the rest), and not the second half of a double tap (within 300 ms and 10 px).
-  const tapOk = (e) => {
+  // `kind` names the target (map, leg, handle, anchor): only two taps of ONE kind fold, so the tap
+  // that selects an anchor just made by tapping a handle in the same spot still counts.
+  const tapOk = (e, kind) => {
     const now = Date.now();
     if (now - dragEndAt.current < 250) return false;
     const p = e && e.containerPoint, last = lastTap.current;
-    if (last && now - last.t < 300 && p && Math.hypot(p.x - last.x, p.y - last.y) < 10) return false;
-    lastTap.current = { t: now, x: p ? p.x : 0, y: p ? p.y : 0 };
+    if (last && last.kind === kind && now - last.t < 300 && p && Math.hypot(p.x - last.x, p.y - last.y) < 10) return false;
+    lastTap.current = { t: now, kind, x: p ? p.x : 0, y: p ? p.y : 0 };
     return true;
   };
   const setBoth = (next) => { nodesRef.current = next; setNodes(next); propsRef.current.setPts(flatten(next)); if (propsRef.current.onShape) propsRef.current.onShape(next.map((x) => ({ a: x.a, via: x.via, pending: !!x.pending }))); };
@@ -244,7 +246,8 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   };
   const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0 || sameP(cur[i].a, round([lat, lng]))) return; /* a press and release is not a move */ const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]), via: [], pending: false }); commit(next, withLegs(next, [i, i + 1], [routed(cur[i]) ? i : -1, routed(cur[i + 1]) ? i + 1 : -1])); };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null); commit(next, withLegs(next, [i], routed(cur[i]) || routed(cur[i + 1]) ? [i] : [])); };
-  const clearAll = () => { if (!nodesRef.current.length) return; setSelectedId(null); commit([], []); };
+  // Clear gives up every answer still on its way, so a new line's legs do not queue behind dead ones.
+  const clearAll = () => { if (!nodesRef.current.length) return; routing.current.forEach((c) => c.abort()); routing.current.clear(); setSelectedId(null); commit([], []); };
   // Switching Follow trails ON routes every leg that is still straight (the help says it bends each
   // leg, so it does), as one undoable step; OFF leaves what is drawn alone, and stops asking for
   // the legs still being looked up, so the line does not reshape itself after the switch.
@@ -282,7 +285,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       // Leaflet swallows the click that ends a marker drag; the guard is for the browsers where it does not.
       // A double tap is ONE point: with doubleClickZoom off Leaflet still fires click twice, and the
       // first version zoomed AND dropped two points on top of each other.
-      map.on("click", (e) => { if (tapOk(e)) api.current.append(e.latlng.lat, e.latlng.lng); });
+      map.on("click", (e) => { if (tapOk(e, "map")) api.current.append(e.latlng.lat, e.latlng.lng); });
       // Which legs are long enough for a midpoint handle depends on the zoom, so a zoom redraws.
       map.on("zoomend", () => setZoomN((z) => z + 1));
       mapRef.current = map; genRef.current += 1; setReady(genRef.current);
@@ -326,7 +329,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     for (let i = 1; i < nodes.length; i++) {
       const leg = legPts(nodes, i), n = nodes[i];
       keep(L.polyline(leg, { color: C.warning, weight: 4, opacity: 0.95, dashArray: n.pending ? "6 8" : null, interactive: false }));
-      keep(L.polyline(leg, { color: "#000", weight: 18, opacity: 0, bubblingMouseEvents: false })).on("click", (e) => { L.DomEvent.stop(e); if (tapOk(e)) api.current.insertAt(i, e.latlng.lat, e.latlng.lng); });
+      keep(L.polyline(leg, { color: "#000", weight: 18, opacity: 0, bubblingMouseEvents: false })).on("click", (e) => { L.DomEvent.stop(e); if (tapOk(e, "leg")) api.current.insertAt(i, e.latlng.lat, e.latlng.lng); });
       // The hollow dot: drag it out (or tap it) to add an anchor on this leg. Not on a leg shorter
       // than its own hit box on screen, where it would sit on the anchors and steal their taps.
       // Measured along the leg as drawn (a routed leg can loop far from two close anchors), and the
@@ -341,14 +344,14 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const h = keep(L.marker([m0[0] + (m1[0] - m0[0]) * f, m0[1] + (m1[1] - m0[1]) * f], { draggable: true, keyboard: false, bubblingMouseEvents: false, icon: dot(14, "rgba(0,0,0,0.45)", C.warning) }));
       h.on("dragstart", () => { dragging.current = true; });
       h.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); redrawAfterDrag.current = true; api.current.flushRedraw(); }); // always redrawn: a drop ON an anchor adds nothing, and the handle must not stay where it was dropped
-      h.on("click", (e) => { L.DomEvent.stop(e); if (!tapOk(e)) return; const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); });
+      h.on("click", (e) => { L.DomEvent.stop(e); if (!tapOk(e, "handle")) return; const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); });
     }
     nodes.forEach((n, i) => {
       const last = i === nodes.length - 1, sel = n.id === selectedId;
       const m = keep(L.marker(n.a, { draggable: true, keyboard: false, autoPan: true, bubblingMouseEvents: false, icon: dot(last ? 18 : 14, C.warning, "#fff", sel ? C.accent : null) }));
       m.on("dragstart", () => { dragging.current = true; });
       m.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = m.getLatLng(); api.current.moveAnchor(n.id, q.lat, q.lng); api.current.flushRedraw(); });
-      m.on("click", (e) => { L.DomEvent.stop(e); if (tapOk(e)) api.current.select(n.id); });
+      m.on("click", (e) => { L.DomEvent.stop(e); if (tapOk(e, "anchor")) api.current.select(n.id); });
     });
   // The pins are read through propsRef and keyed by VALUE (startKey/endKey): the host builds fresh
   // {lat,lng} objects every render, and keying on the objects rebuilt every layer per tick.
