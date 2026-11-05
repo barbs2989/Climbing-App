@@ -51,6 +51,7 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
   const key = pts.map(function (p) { return p[0] + "," + p[1]; }).join(";");
   useEffect(function () {
     if (pts.length < 2 || shapePending) return undefined; // measured once the line has settled, not per routed leg
+    if (prof && prof.key === key && !prof.error) return undefined; // already measured for these very points
     let live = true;
     const sp = samples(pts);
     const t = setTimeout(function () {

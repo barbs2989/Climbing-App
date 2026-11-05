@@ -21,9 +21,9 @@ const SH = { fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "
  * @param {{ rows: Array<{id:string,user_id:string,date:string,stats:{km:number,gainFt:number|null,secs:number|null,timed:boolean}}>,
  *   profiles: Record<string, any>, loading: boolean, failed: boolean, shown: string[], colorOf: (id: string) => string|null,
  *   onToggle: (id: string) => void, onOpenReport?: ((id: string) => void) | null, canOpen: (id: string) => boolean, onLog?: (() => void) | null,
- *   crag?: boolean }} props
+ *   crag?: boolean, cragHasTrail?: boolean }} props
  */
-export default function RouteTracksPanel({ rows, profiles, loading, failed, shown, colorOf, onToggle, onOpenReport, canOpen, onLog, crag }) {
+export default function RouteTracksPanel({ rows, profiles, loading, failed, shown, colorOf, onToggle, onOpenReport, canOpen, onLog, crag, cragHasTrail }) {
   const [sort, setSort] = useState("latest");
   const [season, setSeason] = useState("all");
   const list = useMemo(() => sortTracks(rows.filter((r) => inSeason(r.date, season)), sort), [rows, season, sort]);
@@ -34,7 +34,10 @@ export default function RouteTracksPanel({ rows, profiles, loading, failed, show
   const sorts = crag ? TRACK_SORTS.filter((s) => s.id === "latest") : TRACK_SORTS;
   const title = crag ? "Climbers' walk-in recordings" : "Climbers' tracks";
   // ...and nothing while loading either: a loading row that then collapses would shift the cards under it.
-  if (crag && !failed && (loading || !rows.length)) return null;
+  // ...unless the crag already HAS its trail: then the gap note is gone and this is the one line that
+  // says a recording of the walk in is welcome.
+  if (crag && !failed && (loading || (!rows.length && !cragHasTrail))) return null;
+  if (crag && !failed && !loading && !rows.length) return <div style={{ marginTop: 12, fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>Walked in with a watch running? Attach the GPX when you log a climb here and it shows under the crag map for anyone who can read your report.{onLog ? <> <button onClick={onLog} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Log a climb</button></> : null}</div>;
   return (
     <section aria-label={title} style={{ marginTop: 12 }}>
       <div style={SH}>{title}{rows.length ? " · " + rows.length : ""}</div>

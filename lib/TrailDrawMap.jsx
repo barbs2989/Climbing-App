@@ -73,6 +73,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const [ready, setReady] = useState(0), [mapFail, setMapFail] = useState(false);
   const genRef = useRef(0);
   const dialogRef = useRef(null);
+  const builtHidden = useRef(false); // built behind another tab (0×0 box): refit when shown
   const expandBtn = useRef(null); // focus returns here when full screen closes
   const [baseLayer, setBaseLayer] = useState("topo");
   const [fullscreen, setFullscreen] = useState(false);
@@ -96,19 +97,8 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const propsRef = useRef({ start, end, follow, setPts, onShape });
   propsRef.current = { start, end, follow, setPts, onShape };
 
-  // The caller cleared the line from outside (its own Clear, a new route): follow it, history and
-  // all, or Undo would hand the old line back to a caller that just wiped it.
-  // Not on the first render, where a host may hand over a shape before it has derived the points.
-  const seenPts = useRef(false);
-  useEffect(() => {
-    if (!seenPts.current) { seenPts.current = true; return; }
-    if ((!pts || !pts.length) && nodesRef.current.length) {
-      routing.current.forEach((c) => c.abort()); routing.current.clear();
-      undoRef.current = []; redoRef.current = []; setHistN({ undo: 0, redo: 0 });
-      nodesRef.current = []; setNodes([]); setSelectedId(null);
-      if (propsRef.current.onShape) propsRef.current.onShape([]); // the host's "a leg is pending" must clear too
-    }
-  }, [pts]);
+  // The line is owned here (nodes); `pts` is written out, never read back after mount. A host that
+  // wants the line cleared re-mounts the drawer (a new route) or uses its Clear.
   useEffect(() => () => { routing.current.forEach((c) => c.abort()); clearTimeout(noteT.current); clearTimeout(fails.current.t); }, []);
   // A line handed over while a leg was still being looked up: ask for that leg again here.
   useEffect(() => { reask(nodesRef.current); }, []); // eslint-disable-line react-hooks/exhaustive-deps -- once, on mount, for the shape the host passed in
@@ -118,7 +108,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   useEffect(() => {
     if (active === false || !mapRef.current) return;
     const m = mapRef.current;
-    setTimeout(() => { try { m.invalidateSize(); } catch (e) {} }, 60);
+    setTimeout(() => { try { m.invalidateSize(); if (builtHidden.current) { builtHidden.current = false; fitView(m); } } catch (e) {} }, 60);
   }, [active]);
 
   // Pins and the line, or the whole country when there is nothing yet to show.
@@ -179,12 +169,12 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       // Meanwhile it became the first anchor (the one before it was deleted): no leg to route.
       if (j === 0) { if (now[0].pending) { const next = now.slice(); next[0] = Object.assign({}, next[0], { via: [], pending: false }); setBoth(next); } return; }
       // The anchors moved on meanwhile: whoever moved them asked again, but never leave a leg dashed.
-      if (!sameP(now[j].a, b) || !sameP(now[j - 1].a, a)) { if (now[j].pending && !routing.current.has(id)) { const nx = now.slice(); nx[j] = Object.assign({}, nx[j], { pending: false }); setBoth(nx); } return; }
+      if (!sameP(now[j].a, b) || !sameP(now[j - 1].a, a)) { if (now[j].pending) { const nx = now.slice(); nx[j] = Object.assign({}, nx[j], { pending: false }); setBoth(nx); } return; }
       const next = now.slice();
       // No answer: the leg keeps the routed points it was split from (a nudge with Follow on), else straight.
       next[j] = Object.assign({}, next[j], { via: Array.isArray(via) ? via : next[j].via, pending: false });
       setBoth(next);
-      if (!Array.isArray(via)) noteFailure(via);
+      if (!Array.isArray(via) && !next[j].via.length) noteFailure(via); // a leg that kept its split still follows the trail
     });
   };
   // `idxs` are the legs this change touched: straight again, or routed when Follow trails is on.
@@ -262,9 +252,15 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       return;
     }
     next.splice(i, 0, nn);
-    commit(next, withLegs(next, [i, i + 1], routed(cur[i]) ? [i, i + 1] : []));
+    commit(next, withLegs(next, [i, i + 1]));
   };
-  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0 || sameP(cur[i].a, round([lat, lng]))) return; /* a press and release is not a move */ const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]), via: [], pending: false }); commit(next, withLegs(next, [i, i + 1], [routed(cur[i]) ? i : -1, routed(cur[i + 1]) ? i + 1 : -1])); };
+  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0 || sameP(cur[i].a, round([lat, lng]))) return; /* a press and release is not a move */ const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]) });
+    // A routed leg beside the moved anchor keeps its points while the router is asked again (they
+    // now end a few metres off, which is honest) and keeps them if it cannot answer: a nudge in an
+    // outage must not flatten a switchback. Other legs go straight, or route when Follow is on.
+    const touched = [];
+    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { next[k] = Object.assign({}, next[k], { pending: true }); touched.push(next[k].id); } else { next[k] = Object.assign({}, next[k], { via: [], pending: propsRef.current.follow && !zero }); if (propsRef.current.follow && !zero) touched.push(next[k].id); } });
+    commit(next, touched); };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null); commit(next, withLegs(next, [i], routed(cur[i]) || routed(cur[i + 1]) ? [i] : [])); };
   // Clear gives up every answer still on its way, so a new line's legs do not queue behind dead ones.
   const clearAll = () => { if (!nodesRef.current.length) return; routing.current.forEach((c) => c.abort()); routing.current.clear(); setSelectedId(null); commit([], []); };
@@ -300,6 +296,9 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       applyBaseLayer(map, tileRef, baseLayer);
       const v = viewRef.current;
       if (v) map.setView(v.center, v.zoom); else fitView(map);
+      // The climber switched to Paste or Upload before Leaflet had loaded: the box is 0×0 and the fit
+      // above collapsed to zoom 0, so it is done again when the Draw tab returns.
+      builtHidden.current = !(mapDiv.current.clientWidth > 0 && mapDiv.current.clientHeight > 0);
       // Leaflet swallows the click that ends a marker drag; the guard is for the browsers where it does not.
       // A double tap is ONE point: with doubleClickZoom off Leaflet still fires click twice, and the
       // first version zoomed AND dropped two points on top of each other.
