@@ -26,13 +26,15 @@ import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // area's routes are paced the same way. A STOPPED error is not caught: re-run once the database answers.
 import { existsSync, readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import { execFileSync } from "node:child_process";
+import os from "node:os";
+import path from "node:path";
 import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../lib/supabase-env.mjs";
 import { stripRouteTopoLabel } from "../lib/route-topo-label.mjs";
 
 const arg = k => { const i = process.argv.indexOf("--" + k); return i > 0 ? process.argv[i + 1] : null; };
 const APPLY = process.argv.includes("--apply"), ALL = process.argv.includes("--all"), STATE = arg("state");
-const MP_DIR = process.env.MP_DIR || "/Users/nathanbarber/dev/mp-data/_mp";
-const CL_DIR = process.env.CLASSICS_DIR || "/Users/nathanbarber/dev/classics-run";
+const MP_DIR = process.env.MP_DIR || path.join(os.homedir(), "dev", "mp-data", "_mp");
+const CL_DIR = process.env.CLASSICS_DIR || path.join(os.homedir(), "dev", "classics-run");
 const OUT = CL_DIR + "/out";
 const MP_MIN_STARS = 3, MP_MIN_VOTES = 5;
 if (!ALL && !STATE && !process.argv.includes("--guidebook")) { console.error("usage: --state <slug> | --all  [--apply]"); process.exit(1); }
@@ -50,7 +52,7 @@ const stateSlug = name => SLUG[slugOf(name)] || slugOf(name);
 
 // The wall-order re-check (MP_FRESH, run first, state by state) knows boulder walls the 2026-10-25 run never
 // touched; its maps and wall→area lines are read after the old ones, so they win.
-const MP_FRESH = process.env.MP_FRESH || "/Users/nathanbarber/dev/mp-fresh";
+const MP_FRESH = process.env.MP_FRESH || path.join(os.homedir(), "dev", "mp-fresh");
 const mp2ours = new Map();
 for (const f of readdirSync(MP_DIR + "/_map")) for (const [m, o] of Object.entries(JSON.parse(readFileSync(MP_DIR + "/_map/" + f, "utf8")))) mp2ours.set(m, o);
 const wall2area = new Map();
