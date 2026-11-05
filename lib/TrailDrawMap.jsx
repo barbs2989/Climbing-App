@@ -253,7 +253,14 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       nn.via = via.slice(0, cut);
       next[i] = Object.assign({}, cur[i], { via: via.slice(cut) });
       next.splice(i, 0, nn);
-      if (!propsRef.current.follow) { commit(next, []); return true; }
+      // A point placed ON the path (a tap on the hollow dot, a drop a few metres from a routed point)
+      // is an exact split: nothing to ask, even with Follow trails on.
+      // How far the drop is from the leg AS DRAWN (metres, to the nearest segment), not from its nearest point: routed points can be 50 m apart.
+      const kx = Math.cos(nn.a[0] * Math.PI / 180) * 111320, ky = 110540, P = [nn.a[0] * ky, nn.a[1] * kx];
+      const full = [cur[i - 1].a].concat(via, [cur[i].a]);
+      let offM = Infinity;
+      for (let k = 1; k < full.length; k++) { const A = [full[k - 1][0] * ky, full[k - 1][1] * kx], B = [full[k][0] * ky, full[k][1] * kx]; const dx = B[0] - A[0], dy = B[1] - A[1], l2 = dx * dx + dy * dy; const t = l2 ? Math.max(0, Math.min(1, ((P[0] - A[0]) * dx + (P[1] - A[1]) * dy) / l2)) : 0; offM = Math.min(offM, Math.hypot(P[0] - (A[0] + t * dx), P[1] - (A[1] + t * dy))); }
+      if (!propsRef.current.follow || offM < 15) { commit(next, []); return true; }
       const touched = [];
       [i, i + 1].forEach((k) => { next[k] = Object.assign({}, next[k], { pending: true }); touched.push(next[k].id); });
       commit(next, touched);
@@ -397,7 +404,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const layerBtns = ready ? <div style={{ position: "absolute", top: 7, left: 7, zIndex: 1000, display: "flex", gap: 3 }}>{[["topo", "Topo"], ["sat", "Satellite"], ["street", "Street"]].map(([k, lbl]) => <button key={k} onClick={() => setBaseLayer(k)} aria-current={baseLayer === k ? "true" : undefined} style={{ padding: "5px 8px", borderRadius: 6, border: "1px solid " + (baseLayer === k ? C.accent : C.border), background: C.bg, color: baseLayer === k ? C.accent : C.text70, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 6px rgba(0,0,0,0.4)" }}>{lbl}</button>)}</div> : null;
   const status = n ? (n < MIN_RECORDED_PTS ? n + " of at least " + MIN_RECORDED_PTS + " points" : n + " points") + " · " + fmtTrailLen(pathLenM(flat)) + (anyPending ? " · following the trail…" : tx(" · tap to keep going")) : start ? tx("Tap the map along the trail, starting at " + mk.start) : tx("Tap where you park, then along the trail to " + mk.endName);
   const mapBox = (
-    <div style={{ position: "relative", flex: fullscreen ? 1 : "none", minHeight: 0 }}>
+    <div style={{ position: "relative", flex: fullscreen ? 1 : "none", minHeight: fullscreen ? 160 : 0 }}>
       <div ref={mapDiv} role="application" aria-label={tx("Map: tap to add a point to the trail, drag a point to move it")} style={{ height: fullscreen ? "100%" : 300, borderRadius: 9, border: "1px solid " + C.border, overflow: "hidden", background: "#0a0f1a", cursor: "crosshair" }} />
       {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.text70, fontSize: 13, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "The map couldn't load. Upload or paste a recorded track instead." : "Loading map…"}</div> : null}
       {layerBtns}
@@ -431,7 +438,8 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
         <button onClick={exitFullscreen} aria-label="Close full-screen map" style={POP_CLOSE}>✕</button>
       </div>
       {mapBox}
-      <div style={{ flexShrink: 0 }}>{tools}</div>
+      {/* On a short screen (a phone on its side) the tools scroll under a map that keeps at least 160px. */}
+      <div style={{ flexShrink: 1, minHeight: 0, maxHeight: "45%", overflowY: "auto", overscrollBehavior: "contain" }}>{tools}</div>
     </div>, document.body);
   }
   return <div>{mapBox}{tools}</div>;
