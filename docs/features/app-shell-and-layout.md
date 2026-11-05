@@ -42,11 +42,18 @@ room for side-panel ads later. The phone app keeps its own look.
     inputs (`.cm-file-input`) are `position:fixed`, so they no longer stretch a popup's backdrop into a
     second scroller that carried Log a climb off the screen. `check:pinned-dismiss` walks every popup.
 - **Desktop (1024px and wider) — the website shell:**
-  - A full-width sticky **top bar** (64px): ☰ Menu at the far left, the ClimbMatch wordmark (→ Home), a
+  - A full-width sticky **top bar** (64px): a bare ☰ at the far left (no box, no "Menu" label on
+    desktop — owner 2026-11-04; its accessible name is still "Menu"), the logo (the app mark beside a
+    26px ClimbMatch wordmark, → Home), a
     search box for every climb and place **centred in the window** (owner 2026-11-04; `WideSearch` sits on
     the 50vw midline out of the row's flow, 220–680px wide so it never reaches either end; `/` jumps to
     it; arrow keys and Enter pick a hit), and at the right Saved · Alerts · Calendar · Messages and your
-    avatar (→ Profile). Each climb hit carries its discipline's glyph (`DiscIcon`) with the grade in that
+    avatar (→ Profile). **Typed search** (competitor review item 12, built 2026-11-05): when the words
+    carry a grade or a discipline ("5.9 trad near Leavenworth", "WI4", "V4 in Squamish" —
+    `parseTypedSearch` in `lib/typedSearch.js`, grades read by the one parser in `lib/grade.js`), the
+    first row offers the Route finder with those filters, scoped to the place typed (top place hit),
+    else the home state, else the state with the most climbs; the row names the scope. Picking it
+    goes through App's saved-search opener (`openSavedSearch`, kind `finder`). Each climb hit carries its discipline's glyph (`DiscIcon`) with the grade in that
     discipline's colour, so a boulder, a trad route and an ice route read apart before the name does; the
     EMPTY box, focused, offers *Near me* (the Climbs map at your position, `nearJump` → `jumpToNearReq`)
     and the last five things typed (*Recent*, on this device only — `localStorage` `cm_recent_search`,

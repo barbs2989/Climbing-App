@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { parseTypedSearch } from "./typedSearch.js";
 import { C, CAT, CLIMBERS, ROUTES, catOf, gradeLabel, routeLocText, shortDate, daysUntil, pubName } from "../ClimbMatchCore.jsx";
 import Av from "../src/components/Av.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import { discLabel } from "./discLabels";
-import { usePlaceSearch, useProfilesByIds, useRouteSearch, useStates } from "./db.js";
+import { useMyHomeStatePaths, usePlaceSearch, useProfilesByIds, useRouteSearch, useStates } from "./db.js";
 import { USE_DB } from "./supabase";
 import Chevron from "../src/components/Chevron.tsx";
 import BrandMark from "../src/components/BrandMark.tsx";
@@ -61,7 +62,14 @@ const editable = el => !!el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT
    so there is nothing to refetch and nothing to go stale. */
 const RECENT_KEY = "cm_recent_search";
 const readRecent = () => { try { const v = JSON.parse(localStorage.getItem(RECENT_KEY) || "[]"); return Array.isArray(v) ? v.filter(s => typeof s === "string").slice(0, 5) : []; } catch (_e) { return []; } };
-export function WideSearch({ onOpenRoute, onOpenArea, width, inline, onNearMe }) {
+/* TYPED SEARCH (item 12 of the competitor review, owner 2026-11-04): "5.9 trad near Leavenworth",
+   "WI4", "V4 in Squamish" describe a FILTER, and the name search finds nothing for them. When
+   lib/typedSearch.js reads a grade or a discipline out of the words, the FIRST row offers the Route
+   finder with those filters, scoped to the place typed (the top place hit for the remaining words),
+   else to the climber's home state, else to the state with the most climbs — and the row NAMES the
+   scope, so nothing is picked silently. A place that was typed but not found offers no row: the
+   plain hits (and "no matches") answer that. */
+export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, inline, onNearMe }) {
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
   const [hi, setHi] = useState(0);
@@ -72,6 +80,14 @@ export function WideSearch({ onOpenRoute, onOpenArea, width, inline, onNearMe })
   const forget = () => { setRecent([]); try { localStorage.removeItem(RECENT_KEY); } catch (_e) { /* nothing stored */ } };
   const routesQ = useRouteSearch(USE_DB ? qq : "", 6);
   const placesQ = usePlaceSearch(USE_DB ? qq : "", 4);
+  const typed = useMemo(() => (USE_DB && onOpenFinder ? parseTypedSearch(qq) : null), [qq, onOpenFinder]);
+  const typedPlaceQ = usePlaceSearch(typed && typed.place ? typed.place : "", 1);
+  const homePaths = useMyHomeStatePaths();
+  const { data: allStates } = useStates();
+  const scope = !typed ? null
+    : typed.place ? ((typedPlaceQ.data && typedPlaceQ.data.rows[0]) || null)
+    : (() => { const sts = (allStates || []).filter(s => Number(s.route_count) > 0); return sts.find(s => homePaths.includes(s.path)) || sts.slice().sort((a, b) => Number(b.route_count) - Number(a.route_count))[0] || null; })();
+  const finderHit = typed && scope ? { kind: "finder", t: typed, scope } : null;
   useEffect(() => {
     const key = e => {
       const slash = e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey && !editable(e.target);
@@ -85,10 +101,15 @@ export function WideSearch({ onOpenRoute, onOpenArea, width, inline, onNearMe })
   const seedHits = !USE_DB && qq ? ROUTES.filter(r => r.name.toLowerCase().includes(qq.toLowerCase())).slice(0, 6) : [];
   const places = USE_DB ? ((placesQ.data && placesQ.data.rows) || []) : [];
   const routes = USE_DB ? (routesQ.data || []) : seedHits;
-  const hits = places.map(a => ({ kind: "place", a })).concat(routes.map(r => ({ kind: "route", r })));
+  const hits = (finderHit ? [finderHit] : []).concat(places.map(a => ({ kind: "place", a })), routes.map(r => ({ kind: "route", r })));
   const failed = USE_DB && (routesQ.isError || placesQ.isError) && !hits.length;
   const busy = USE_DB && (routesQ.isLoading || placesQ.isLoading) && !hits.length;
-  const pick = h => { if (qq) remember(qq); setOpen(false); setQ(""); if (input.current) input.current.blur(); if (h.kind === "place") onOpenArea(h.a); else onOpenRoute(h.r); };
+  const pick = h => {
+    if (qq) remember(qq);
+    setOpen(false); setQ(""); if (input.current) input.current.blur();
+    if (h.kind === "finder") onOpenFinder({ loc: { id: h.scope.id, name: h.scope.name, area_type: h.scope.area_type }, filters: { discs: h.t.discs, gSys: h.t.gSys, gLo: h.t.gLo, gHi: h.t.gHi } });
+    else if (h.kind === "place") onOpenArea(h.a); else onOpenRoute(h.r);
+  };
   const onKey = e => {
     if (e.key === "Escape") { setOpen(false); e.currentTarget.blur(); }
     else if (hits.length && e.key === "ArrowDown") { e.preventDefault(); setOpen(true); setHi(i => (i + 1) % hits.length); }
@@ -97,15 +118,15 @@ export function WideSearch({ onOpenRoute, onOpenArea, width, inline, onNearMe })
   };
   const row = (h, i) => {
     const on = i === hi;
-    const name = h.kind === "place" ? h.a.name : h.r.name;
+    const name = h.kind === "finder" ? h.t.label + " in " + h.scope.name : h.kind === "place" ? h.a.name : h.r.name;
     /* A climb row carries ITS discipline's glyph and colours its grade the same way (the competitor
        review, 2026-11-04: every climb drew one mountain glyph, so a V7 boulder, a 5.4 trad route and
-       an AI3 ice route looked alike before anyone read them). Places keep the pin. */
+       an AI3 ice route looked alike before anyone read them). Places keep the pin; the finder row the compass. */
     const disc = h.kind === "route" ? (h.r.discipline || catOf(h.r) || "") : "";
     const discColor = (CAT[disc] || {}).color || C.textMuted;
-    const where = h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : (h.r._dbArea && h.r._dbArea.name) || "";
+    const where = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : (h.r._dbArea && h.r._dbArea.name) || "";
     const grade = h.kind === "route" ? h.r.grade : "";
-    return <button key={h.kind + (h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={() => pick(h)} style={{ ...ROW, background: on ? C.card : "transparent" }}>{h.kind === "place" ? <ActionIcon name="pin" size={17} color={C.textMuted}/> : <DiscIcon d={disc} size={17}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span></button>;
+    return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={() => pick(h)} style={{ ...ROW, background: on ? C.card : "transparent" }}>{h.kind === "route" ? <DiscIcon d={disc} size={17}/> : <ActionIcon name={h.kind === "finder" ? "explore" : "pin"} size={17} color={C.textMuted}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span></button>;
   };
   const showList = open && !!qq;
   // The EMPTY box, focused: recent words and Near me (nothing when there is neither).
@@ -126,7 +147,7 @@ export function WideSearch({ onOpenRoute, onOpenArea, width, inline, onNearMe })
       {failed ? <div role="alert" style={{ padding: "12px 10px", fontSize: 13, color: C.amber }}>Search isn’t reachable right now — check your connection and try again.</div>
         : busy ? <div style={{ padding: "12px 10px", fontSize: 13, color: C.textMuted }}>Searching…</div>
         : !hits.length ? <div style={{ padding: "12px 10px", fontSize: 13, color: C.textMuted }}>{"No climbs or places match “" + qq + "”."}</div>
-        : <>{places.length ? <div style={{ ...SECTION, padding: "6px 10px 4px" }}>Places</div> : null}{hits.slice(0, places.length).map((h, i) => row(h, i))}{routes.length ? <div style={{ ...SECTION, padding: "8px 10px 4px" }}>Climbs</div> : null}{hits.slice(places.length).map((h, i) => row(h, i + places.length))}</>}
+        : <>{finderHit ? row(finderHit, 0) : null}{places.length ? <div style={{ ...SECTION, padding: "6px 10px 4px" }}>Places</div> : null}{hits.slice(finderHit ? 1 : 0, (finderHit ? 1 : 0) + places.length).map((h, i) => row(h, i + (finderHit ? 1 : 0)))}{routes.length ? <div style={{ ...SECTION, padding: "8px 10px 4px" }}>Climbs</div> : null}{hits.slice((finderHit ? 1 : 0) + places.length).map((h, i) => row(h, i + (finderHit ? 1 : 0) + places.length))}</>}
     </div> : showEmpty ? <div id="wide-search-list" role="listbox" aria-label="Search shortcuts" style={panel}>
       {onNearMe ? <button role="option" aria-selected={false} onMouseDown={e => e.preventDefault()} onClick={() => { setOpen(false); if (input.current) input.current.blur(); onNearMe(); }} style={plain}><ActionIcon name="pin" size={17} color={C.blue}/><span style={{ fontSize: 14, fontWeight: 700, color: C.blue }}>Near me</span><span style={{ fontSize: 12, color: C.textMuted }}>climbs around your position, on the map</span></button> : null}
       {recent.length ? <><div style={{ ...SECTION, padding: "8px 10px 4px", display: "flex", justifyContent: "space-between", alignItems: "center" }}><span>Recent</span><button onMouseDown={e => e.preventDefault()} onClick={forget} style={{ border: "none", background: "transparent", color: C.textMuted, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: "4px 0", textTransform: "none", letterSpacing: 0 }}>Clear</button></div>
