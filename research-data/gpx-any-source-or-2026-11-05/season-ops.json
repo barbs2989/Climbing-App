@@ -1,0 +1,390 @@
+[
+ {
+  "op": "patch",
+  "id": "or_broken_top_nine_o_clock_gully",
+  "area_id": "or_broken_top",
+  "name": "Nine O'clock Gully",
+  "fill": {
+   "season": "Jan-Apr"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_diamond_peak_southwest_ridge",
+  "area_id": "or_diamond_peak",
+  "name": "Southwest Ridge",
+  "fill": {
+   "season": "Apr-Jun"
+  },
+  "set": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "May": {
+      "reason": "By late May the snow is consolidated from about 6,000 ft to the top, crampons are optional, and a glissade drops roughly 1,500 ft from the summit.",
+      "status": "good"
+     }
+    }
+   }
+  },
+  "expect": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "May": {
+      "reason": "By late May the snow is consolidated from about 6,000 ft to the top, crampons are optional, and a glissade drops roughly 1,500 ft from the summit."
+     }
+    }
+   }
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_east_side_2_newton_clark_headwall",
+  "area_id": "or_east_side_2",
+  "name": "Newton Clark Headwall",
+  "fill": {
+   "season": "May-Jul"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_eleven_o_clock_gully",
+  "area_id": "or_broken_top",
+  "name": "Eleven O'clock Gully",
+  "fill": {
+   "season": "Dec-Apr"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_gardener_s_delight",
+  "area_id": "or_gunsight_mountain",
+  "name": "Gardener's Delight",
+  "fill": {
+   "season": "Jul-Oct"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_goat_peak_scramble_route",
+  "area_id": "or_goat_peak",
+  "name": "Goat Peak scramble route",
+  "fill": {
+   "season": "Jul-Oct"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_jefferson_park_glacier",
+  "area_id": "or_mt_jefferson",
+  "name": "Jefferson Park Glacier",
+  "fill": {
+   "season": "Jun-Aug"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_matterhorn_west_face_chimney",
+  "area_id": "or_ice_lake_peaks",
+  "name": "Matterhorn: West Face Chimney",
+  "fill": {
+   "season": "Jul-Sep"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_matterhorn_west_face_wall",
+  "area_id": "or_ice_lake_peaks",
+  "name": "Matterhorn: West Face Wall",
+  "fill": {
+   "season": "Jul-Sep"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_middle_sister_southeast_ridge",
+  "area_id": "or_middle_sister",
+  "name": "Southeast Ridge",
+  "fill": {
+   "season": "Jun-Aug"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_mt_bachelor_trail",
+  "area_id": "or_mt_bachelor",
+  "name": "Mt. Bachelor Trail",
+  "fill": {
+   "season": "Jul-Oct"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_mt_jefferson_north_ridge",
+  "area_id": "or_mt_jefferson",
+  "name": "North Ridge",
+  "fill": {
+   "season": "Jun-Jul"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_mt_mcloughlin_east_ridge",
+  "area_id": "or_mt_mcloughlin",
+  "name": "East Ridge",
+  "fill": {
+   "season": "Jun-Oct"
+  },
+  "set": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "October": {
+      "reason": "By late October snow can lie on the upper trail, though it stays a trail hike in good weather.",
+      "status": "good"
+     }
+    }
+   }
+  },
+  "expect": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "October": {
+      "reason": "By late October snow can lie on the upper trail, though it stays a trail hike in good weather."
+     }
+    }
+   }
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_north_face_jam_crack",
+  "area_id": "or_rooster_rock_2",
+  "name": "North Face Jam Crack",
+  "fill": {
+   "season": "Aug-Oct"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_north_milk_creek_glacier",
+  "area_id": "or_mt_jefferson",
+  "name": "North Milk Creek Glacier",
+  "fill": {
+   "season": "May-Jun"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_north_ridge",
+  "area_id": "or_south_sister",
+  "name": "North Ridge",
+  "fill": {
+   "season": "Jul-Sep"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_north_side_sunshine_route",
+  "area_id": "or_north_side",
+  "name": "Sunshine Route",
+  "fill": {
+   "season": "May-Jul"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_northwest_ridge",
+  "area_id": "or_broken_top",
+  "name": "Northwest Ridge",
+  "fill": {
+   "season": "Jul-Sep"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_old_crater_route",
+  "area_id": "or_south_sister",
+  "name": "Old Crater Route",
+  "fill": {
+   "season": "Jul-Sep"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_partly_void_mostly_stars",
+  "area_id": "or_mt_thielsen",
+  "name": "Partly Void, Mostly Stars",
+  "fill": {
+   "season": "Jul-Sep"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_razzberry_mt",
+  "area_id": "or_ice_lake_peaks",
+  "name": "Razzberry Mt.",
+  "fill": {
+   "season": "Jul-Sep"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_regular_north_face",
+  "area_id": "or_rooster_rock_2",
+  "name": "Regular North Face",
+  "fill": {
+   "season": "Aug-Oct"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_slab_route",
+  "area_id": "or_lake_s_lookout",
+  "name": "Slab Route",
+  "fill": {
+   "season": "Jul-Sep"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_south_ridge",
+  "area_id": "or_north_sister",
+  "name": "South Ridge",
+  "fill": {
+   "season": "Jul-Sep"
+  },
+  "set": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "July": {
+      "reason": "In late July the traverse toward the Bowling Alley can still be frozen snow at dawn; kicking steps works but gives no real protection.",
+      "status": "good"
+     }
+    }
+   }
+  },
+  "expect": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "July": {
+      "reason": "In late July the traverse toward the Bowling Alley can still be frozen snow at dawn; kicking steps works but gives no real protection."
+     }
+    }
+   }
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_south_ridge_2",
+  "area_id": "or_mt_jefferson",
+  "name": "South Ridge",
+  "fill": {
+   "season": "Jul-Sep"
+  },
+  "set": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "July": {
+      "reason": "In late July a long steep snow slope can still fill the Red Saddle traverse, steep enough that a self-arrest is unlikely to hold; parties placed pickets or ran a fixed line.",
+      "status": "good"
+     },
+     "September": {
+      "reason": "By early September the traverse can shrink to a small ice patch with a dirt line beside it, and Shale Lake is nearly dry.",
+      "status": "good"
+     }
+    }
+   }
+  },
+  "expect": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "July": {
+      "reason": "In late July a long steep snow slope can still fill the Red Saddle traverse, steep enough that a self-arrest is unlikely to hold; parties placed pickets or ran a fixed line."
+     },
+     "September": {
+      "reason": "By early September the traverse can shrink to a small ice patch with a dirt line beside it, and Shale Lake is nearly dry."
+     }
+    }
+   }
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_south_side_west_crater_rim_route_wcr",
+  "area_id": "or_south_side",
+  "name": "West Crater Rim Route (WCR)",
+  "fill": {
+   "season": "Apr-Jun"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_south_sister_prouty_glacier",
+  "area_id": "or_south_sister",
+  "name": "Prouty Glacier",
+  "fill": {
+   "season": "Jun-Jul"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_south_sister_south_side_route",
+  "area_id": "or_south_sister",
+  "name": "South Side Route",
+  "fill": {
+   "season": "Jul-Sep"
+  },
+  "set": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "June": {
+      "reason": "In early June the lower trail can still be dusted with fresh snow and the upper slope below the rim is icy enough that crampons and an axe get used.",
+      "status": "marginal"
+     },
+     "October": {
+      "reason": "By early October mornings at the trailhead freeze hard and frost coats the rocks, and the first dry flurries can arrive by afternoon, though the route is largely bare.",
+      "status": "marginal"
+     }
+    }
+   }
+  },
+  "expect": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "June": {
+      "reason": "In early June the lower trail can still be dusted with fresh snow and the upper slope below the rim is icy enough that crampons and an axe get used."
+     },
+     "October": {
+      "reason": "By early October mornings at the trailhead freeze hard and frost coats the rocks, and the first dry flurries can arrive by afternoon, though the route is largely bare."
+     }
+    }
+   }
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_southeast_spur",
+  "area_id": "or_mt_washington",
+  "name": "Southeast Spur",
+  "fill": {
+   "season": "Jun-Sep"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_the_callis_southeast_face",
+  "area_id": "or_rooster_rock_2",
+  "name": "The Callis Southeast face",
+  "fill": {
+   "season": "Jul-Oct"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_west_ridge",
+  "area_id": "or_mt_washington",
+  "name": "West Ridge",
+  "fill": {
+   "season": "Jul-Sep"
+  }
+ }
+]
