@@ -6,6 +6,7 @@ import { discLabel } from "./discLabels";
 import { usePlaceSearch, useProfilesByIds, useRouteSearch, useStates } from "./db.js";
 import { USE_DB } from "./supabase";
 import Chevron from "../src/components/Chevron.tsx";
+import { useRailFollow } from "./Ads.jsx";
 
 /* THE WEBSITE'S OWN PIECES (lib/wideLayout.js). Everything here renders only at 1024px and up — the
    phone app never mounts it. The top bar's search, the right rail's widgets and the site footer. */
@@ -152,11 +153,13 @@ export function WideRail({ upcoming, alerts, waiting, guest, onSignIn, onOpenCal
      closed"): closed, the card was a bare "ALERTS ›" header on every page, which read as empty. The
      header still folds it away. */
   const [alertsOpen, setAlertsOpen] = useState(true);
+  const asideRef = useRef(null);
+  useRailFollow(asideRef);
   const SHOW = 3;
   const waitShown = waiting.slice(0, SHOW);
   const unreadShown = unread.slice(0, Math.max(0, SHOW - waitShown.length));
   const moreN = waiting.length + unread.length - waitShown.length - unreadShown.length;
-  return <aside aria-label="Highlights" style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+  return <aside ref={asideRef} aria-label="Highlights" style={{ display: "flex", flexDirection: "column", gap: 14 }}>
     <section aria-labelledby="rail-upcoming" style={CARD}>
       <div id="rail-upcoming" style={{ ...SECTION, marginBottom: 6 }}>Coming up</div>
       {upcoming.length ? upcoming.slice(0, 3).map(x => {
