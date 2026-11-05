@@ -17,7 +17,7 @@ export default function PitchConsensus({p,onSuggestFix}: PitchConsensusProps){
   const anchor=String(p.anchor||"").trim();const gear=String(p.gear||"").trim();const belay=String(p.belay||"").trim();
   if(!anchor&&!gear&&!belay&&!onSuggestFix)return null;
   const box=function(label: string,text: string,empty: string){return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:8,padding:"8px 10px",marginBottom:6}}>
-    <div style={{fontSize:11,fontWeight:700,color:C.textMuted,letterSpacing:0.4,textTransform:"uppercase",marginBottom:3}}>{label}</div>
+    <div style={{fontSize:11,fontWeight:700,color:C.label,letterSpacing:0.4,textTransform:"uppercase",marginBottom:3}}>{label}</div>
     <div style={{fontSize:13,color:text?C.text:C.textMuted,lineHeight:1.5,whiteSpace:"pre-wrap",wordBreak:"break-word",overflowWrap:"anywhere"}}>{text||empty}</div>
   </div>;};
   return <div style={{background:C.surface,borderRadius:8,padding:"10px 11px",marginBottom:9,border:"1px solid "+C.border}}>

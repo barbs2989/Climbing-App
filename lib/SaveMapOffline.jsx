@@ -86,7 +86,7 @@ export function SavedRouteMaps({ onOpen, notify }) {
       .finally(function () { qc.invalidateQueries({ queryKey: ["pack-meta"] }); });
   };
   return <section aria-label="Saved route maps" style={{ marginTop: 18 }}>
-    <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.textMuted, marginBottom: 8 }}>{"Saved route maps · " + metas.length}</div>
+    <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.label, marginBottom: 8 }}>{"Saved route maps · " + metas.length}</div>
     {metas.map(function (m) {
       const r = byId[m.id];
       const name = r ? r.name : (rowsQ.isLoading ? "Loading…" : "A saved climb");

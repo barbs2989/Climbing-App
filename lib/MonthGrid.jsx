@@ -34,7 +34,7 @@ export default function MonthGrid({ climbs, events, onOpenCrew, onOpenEvent }) {
         <button onClick={() => step(1)} aria-label="Next month" style={navBtn}>›</button>
       </div>
       <div role="grid" aria-label={title} style={{ display: "grid", gridTemplateColumns: "repeat(7, minmax(0, 1fr))", border: "1px solid " + C.border, borderRadius: 12, overflow: "hidden", background: C.border, gap: 1 }}>
-        {weekdays.map(w => <div key={w} role="columnheader" style={{ background: C.surface, padding: "6px 4px", fontSize: 11, fontWeight: 800, color: C.textMuted, textAlign: "center", textTransform: "uppercase", letterSpacing: 0.3 }}>{w}</div>)}
+        {weekdays.map(w => <div key={w} role="columnheader" style={{ background: C.surface, padding: "6px 4px", fontSize: 11, fontWeight: 800, color: C.label, textAlign: "center", textTransform: "uppercase", letterSpacing: 0.3 }}>{w}</div>)}
         {shown.map(d => {
           const k = ymd(d), items = byDay[k] || [], inMonth = d.getMonth() === ym.m, isToday = k === today;
           return <div key={k} role="gridcell" aria-label={d.toLocaleDateString(DLOCALE, { weekday: "long", month: "long", day: "numeric" }) + (items.length ? ", " + items.length + (items.length === 1 ? " entry" : " entries") : "")} style={{ background: inMonth ? C.bg : C.surface, minHeight: 78, padding: 4, display: "flex", flexDirection: "column", gap: 3, minWidth: 0 }}>

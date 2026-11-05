@@ -51,7 +51,7 @@ export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, on
   const crag = a.lat != null && a.lng != null && isFinite(Number(a.lat)) && isFinite(Number(a.lng)) ? { lat: Number(a.lat), lng: Number(a.lng), name: a.name || "The crag" } : null;
   const pinWps = useMemo(() => { const la = Number(pin.lat), ln = Number(pin.lng); return pin.lat !== "" && pin.lng !== "" && isFinite(la) && isFinite(ln) ? [{ type: "Trailhead", name: pin.name || "Parking", lat: la, lng: ln }] : []; }, [pin.lat, pin.lng, pin.name]);
   const pinFar = crag && pinWps.length ? kmApart(crag, pinWps[0]) : 0;
-  const lbl = { fontSize: 11, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
+  const lbl = { fontSize: 11, fontWeight: 700, color: C.label, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
 
   // What changed, validated against each field's limits. Unchanged and blank rows are skipped.
   const edits = [];
