@@ -38,7 +38,7 @@ for (const src of rows) {
   if (hits.length) { problems.push(`${r.id}: catalog_find_route names ${hits.map(h => `${h.route_id} (${h.km} km)`).join(", ")} — read it first`); continue; }
   const wps = [...(r.waypoints || [])];
   if (copyTh) {
-    const all = await get(`routes?select=id,waypoints&area_id=like.wa_*&waypoints=not.is.null&limit=2000&name=not.is.null&or=(area_id.eq.${r.area_id})`);
+    const all = await get(`routes?select=id,waypoints&area_id=like.${r.area_id.split("_")[0]}_*&waypoints=not.is.null&limit=2000&name=not.is.null&or=(area_id.eq.${r.area_id})`);
     const th = all.flatMap(s => s.waypoints || []).find(w => /trailhead/i.test(w.type || "") && w.lat != null && new RegExp(copyTh, "i").test(w.name || ""));
     if (th) wps.unshift({ type: "Trailhead", name: th.name, lat: th.lat, lng: th.lng, ...(th.elev != null ? { elev: th.elev } : {}) });
   }
