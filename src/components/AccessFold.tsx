@@ -14,7 +14,8 @@ export interface AccessFoldProps {
   children?: ReactNode;
 }
 
-/** ACCESS & REGULATIONS is a DROPDOWN, closed by default (owner, 2026-10-21: "it's too large").
+/** ACCESS & REGULATIONS is a DROPDOWN, closed by default (owner, 2026-10-21: "it's too large"), and
+   SAYS so: the row ends in a "Show details" / "Hide" pill (owner, 2026-11-05: "isn't clear that it's a dropdown").
    With a permit, its details, fees, closures, rules, a group limit, the land manager, a pass, parking,
    how to apply and two permit links it ran to a full phone screen on most alpine routes, ahead of
    the approach a climber came to read. Closed, it is one row: the heading, then WHAT it holds (the
@@ -38,7 +39,10 @@ export default function AccessFold({summary,onEdit,children}: AccessFoldProps){c
       <div style={{flex:1,minWidth:0,minHeight:44,position:"relative",display:"flex",alignItems:"center",gap:8}}>
         <button onClick={function(){setOpen(!open);}} aria-expanded={open} aria-label={(open?"Hide":"Show")+" access & regulations"+(!open&&summary?": "+summary:"")} style={{minHeight:44,position:"absolute",left:0,top:0,width:"100%",height:"100%",padding:0,background:"transparent",border:"none",cursor:"pointer"}}/>
         <span style={{flex:1,minWidth:0,position:"relative",pointerEvents:"none"}}><CardHead style={{marginBottom:open?0:3}}>ACCESS & REGULATIONS</CardHead>{open?null:<span aria-hidden="true" style={{display:"block",fontSize:12,color:C.textMuted,overflowWrap:"anywhere"}}>{summary}</span>}</span>
-        <span aria-hidden="true" style={{position:"relative",pointerEvents:"none",display:"inline-flex"}}><Chevron open={open} size={16} color={C.blue}/></span>
+        {/* A LABELLED pill, not a bare chevron (owner, 2026-11-05: "isn't clear that it's a dropdown"):
+            a 16px chevron at the end of a heading-and-caption row read as decoration, so the row looked
+            like a short card. The word says what the tap does; the pill says it is a control. */}
+        <span aria-hidden="true" style={{position:"relative",pointerEvents:"none",display:"inline-flex",alignItems:"center",gap:3,flexShrink:0,padding:"5px 7px 5px 10px",borderRadius:999,border:`1px solid ${C.blue}66`,background:C.blue+"14",color:C.blue,fontSize:12.5,fontWeight:700,lineHeight:1}}>{open?"Hide":"Show details"}<Chevron open={open} size={14} color={C.blue}/></span>
       </div>
       <EditIconButton onClick={onEdit} title="Edit access & permit information"/>
     </div>

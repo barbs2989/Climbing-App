@@ -1,0 +1,43 @@
+{
+ "nm_04_showdown_wall": {
+  "_expect": { "name": "Showdown Wall", "region": "New Mexico" },
+  "blurb": "Showdown Wall is one stretch of the upper cliff band on Palomas Peak, on the Sandia massif east of Albuquerque. Fourteen routes, split between bolted sport lines and gear-protected trad, run from about 5.7 up to the low 5.12s, with the bulk sitting between 5.8 and 5.11. Expect clean limestone with sharp texture, so smearing, edging and small holds dominate and skin takes a beating. The faces are vertical or a touch shy of it, and the lines are roughly 50 to 60 feet. Some leads are bolted cracks that reward a few cams. It makes a good stop for a climber working through the 5.10s and 5.11s.",
+  "approach": "From the parking area, take the trail to the right of the concrete barriers, cross the burned section and forest to a dry creek bed, then turn sharply left uphill to a large clearing. Pick up the upper cliff band trail and follow it to the wall, a short way north of The Franks.",
+  "approach_min": 30,
+  "review": { "sources": ["https://www.cs.unm.edu/~moret/topo_crag.html", "https://www.mountainproject.com/area/105789978/palomas-peak"] }
+ },
+ "nm_05_the_open_face_wall": {
+  "_expect": { "name": "The Open Face Wall", "region": "New Mexico" },
+  "blurb": "The Open Face Wall is the shortest and most slabby of the five crags on the New Side at Mentmore, near Gallup. It is a gentle place to start: most of the fourteen routes fall between 5.4 and 5.8, with one lone steep line in the 5.11 range at the far end. The sandstone is sandy, and thin varnish gives the best holds on the face. Sport lines, a handful of gear routes and a top-rope make it handy for people learning to lead or building their first anchors. The wall catches sun all afternoon, and this end of the cliffs is rarely busy.",
+  "approach": "A short walk of about five minutes from the lot. Follow the road along the base of the cliffs past the neighbouring walls, leave it at the Balcony, and take a rough trail up and right to the wall.",
+  "approach_min": 5,
+  "review": { "sources": ["https://www.mountainproject.com/area/106056192/the-open-face-wall", "https://www.mountainproject.com/area/105805504/new-side"] }
+ },
+ "nm_aspen_alley": {
+  "_expect": { "name": "Aspen Alley", "region": "New Mexico" },
+  "blurb": "Aspen Alley is a small, tucked-away pocket of the Tres Piedras climbing area north of Taos, a few hundred yards west of the Mosaic Rock group. A stand of aspens gives it a quiet feel. It holds about fourteen lines, a blend of gear routes, bolted sport climbs and a few boulder problems, so it suits a short session. Roped climbs range from 5.7 to the low 5.11s, concentrated around 5.8 to 5.10, and the boulder problems run from V2 to V5. The walls face southwest, so they pick up afternoon light.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105998604/aspen-alley", "https://www.mountainproject.com/v/107534391"] }
+ },
+ "nm_6_wayne_manor": {
+  "_expect": { "name": "Wayne Manor", "region": "New Mexico" },
+  "blurb": "Wayne Manor is the southernmost wall of Vista Verde Crag, a long basalt cliff band above the Rio Grande Gorge southwest of Taos, and sits at the opposite end from the Bat Cave. Its fourteen routes mix technical sport lines with gear and mixed-protection climbs, in even numbers of sport and trad. Grades begin at 5.10 and reach the 5.12s, with most in the 5.10 to 5.12 range, so it is a wall for climbers already comfortable on steeper, harder terrain rather than beginners. A prominent black crack splits its centre.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105898171/wayne-manor", "https://www.mountainproject.com/area/105898135/vista-verde-crag"] }
+ },
+ "nm_hinterlands_the": {
+  "_expect": { "name": "Hinterlands, The", "region": "New Mexico" },
+  "blurb": "The Hinterlands is a compact cragging zone in remote Capulin Canyon in the Jemez Mountains, known for crack climbing in all sizes. All fourteen routes are gear-protected, with grades from 5.9 to the low 5.12s and most falling in the 5.10 to 5.11 range. Lines are short, around 70 feet or less, making it a friendly introduction to the canyon's cracks. It sits in a south-facing corner that bakes in the sun, with the right side shaded in the morning and the left side shaded in the afternoon, so summer days run hot. The walk in is long and the hike out at day's end is tiring.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108411701/the-hinterlands", "https://www.mountainproject.com/area/108406340/capulin-canyon"] }
+ },
+ "nm_rats_peak": {
+  "_expect": { "name": "Rats Peak", "region": "New Mexico" },
+  "blurb": "Rats Peak is a small roadside crag in the hills just outside Santa Fe, one of the closest places to town to rope up. Of its fourteen climbs, most are bolted sport leads, plus a few top-rope lines and a pair of short boulder problems. Roped grades run from about 5.6 to the low 5.12s, clustering around 5.7 and 5.8, so beginners and intermediate climbers both find something. Routes top out near 50 feet, and the cliff is partly shaded. Walking around the back to the top makes it easy to set up a top rope.",
+  "review": { "sources": ["https://www.mountainproject.com/area/122273775/rats-peak", "https://mountainproject.com/area/106297098/santa-fe-area"] }
+ },
+ "_skipped": {
+  "nm_pirate_s_wall": "no fetched page about the crag itself (only the El Rito sport area page and a route page); wall-specific pages returned 404/403 or a different Pirate Wall",
+  "nm_ranger_station": "only forum/Reddit threads fetched about this crag; the Mountain Project area pages named Ranger Station are in California, so no crag page, could not fetch two pages"
+ },
+ "_conflicts": {
+  "nm_rats_peak": "Stored rock is granite, but the area page describes conglomerate (felsic gneiss ortho-conglomerate): https://www.mountainproject.com/area/122273775/rats-peak and https://mountainproject.com/area/106297098/santa-fe-area"
+ }
+}
