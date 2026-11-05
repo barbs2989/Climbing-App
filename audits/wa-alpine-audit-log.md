@@ -37005,3 +37005,57 @@ and `mountainproject.com` were all DNS-blocked from this session for direct page
 (consistent with prior batches); WebSearch snippets covered everything needed this batch.
 
 Next batch will continue id-ascending from `wa_mount_baker_coleman_ski_descent` (see progress file).
+
+## Batch 515 (pass 8) — 2026-11-05
+
+Checked 8 routes, continuing id-ascending past Mount Blum and onto Mount Baker's remaining
+south-side glacier routes: `wa_mount_baker_easton_glacier`, `wa_mount_baker_north_ridge`,
+`wa_mount_baker_park_glacier_headwall`, `wa_mount_baker_squak_glacier`, `wa_mount_barnes_scramble`,
+`wa_mount_berge_east_ridge`, `wa_mount_bigelow_tribute_to_richard`, `wa_mount_blum_north_ridge`.
+
+Two confirmed fixes, both the same bug: `wa_mount_baker_easton_glacier` and
+`wa_mount_baker_squak_glacier` each had `alpine_grade` stored as "Grade II" / "Grade III" — not a
+valid value on that column's French adjectival scale (F/PD/AD/D/TD/ED per
+`supabase/migrations/0006_composite_grades.sql`), but a verbatim copy of each row's own `commitment`
+grade ("II" / "III") pasted into the wrong column. This is the identical pattern this audit's batch 9
+fixed on `wa_dragontail_peak_triple_couloirs`. External sources (American Alpine Institute,
+SummitPost, Mountain Project) for both routes all cite the same "Grade II"/"Grade III" commitment-style
+figure rather than a French grade, so they don't resolve what the correct `alpine_grade` should be —
+instead, both were set to `PD`, matching `wa_mount_baker_coleman_deming` (Baker's other Class 2 /
+commitment-II standard route, which already carries `alpine_grade = 'PD'` and is the one Easton's own
+overview names directly as a popularity peer: "rivals the Coleman–Deming in popularity"). Squak,
+climbing equally non-technical Class 2 slopes with no added hazards per its own `obj_haz` and
+overview, got the same value rather than a harder one. SQL: `audits/sql/2026-11-05-batch-515.sql`.
+
+Five clean. North Ridge's FA ("Fred Beckey, Ralph Widrig, Dick Widrig, August 7, 1948") is confirmed
+word-for-word by the American Alpine Club's own 1948 report. Park Glacier Headwall's FA ("Norm
+Bodine, Jim Friar, Tim Keliher — July 4-5, 1971 (headwall variation)") is corroborated by the AAC's
+1971 report filed by Keliher himself, describing a three-person team finishing "a new variation of
+the Cockscomb Route" on July 4-5 — matches closely enough to count as confirmed, and a conflicting,
+unattributed claim on a single trivia page (Joe Morovits soloing the headwall in 1892) is treated as
+an uncorroborated outlier, the same way this audit has handled lone conflicting claims in prior
+batches, not grounds to flag or fix. Mount Barnes' 5,987 ft elevation is confirmed by four independent
+sources (Wikipedia, PeakVisor, TopoQuest, ListsOfJohn) agreeing exactly. Mount Bigelow's `fa`
+("'wbk' and Tim, August 23, 2011") on `wa_mount_bigelow_tribute_to_richard` is corroborated by a
+Cascade Climbers forum thread titled as a first-ascent trip report for "Mt Bigelow - Tribute to
+Richard," 5.10c, dated 8/23/2011 — exact match on route name, grade and date; the direct fetch to read
+climber names from the thread body itself was blocked (cascadeclimbers.com not reachable from this
+session), but the title/date/grade match is strong enough secondary corroboration on its own. Mount
+Blum's 7,685 ft elevation (`wa_mount_blum_north_ridge`) is confirmed by Wikipedia.
+
+Flagged for human review, no SQL: `wa_mount_blum_north_ridge`'s `fa` ("Dave Hutchinson, Phil
+Leatherman, and Mark Weigelt, September 16, 1972") could not be confirmed by any source found — no
+AAC report, guidebook excerpt or route page named any of the three climbers or a 1972 date for this
+specific route. The closest lead, a 2015 Cascade Climbers trip report, guesses the route might be a
+"Beckey-Leatherman FA" but says the poster wasn't sure and hadn't checked their guidebook — not solid
+enough to either confirm the stored value or propose a replacement.
+
+Noted but not flagged: `wa_mount_berge_east_ridge`'s 7,948 ft elevation matches SummitPost exactly,
+but Wikipedia's current figure is 7,951 ft and an older Wikipedia mirror gives 7,960 ft — a ~12 ft
+three-way spread consistent with ordinary survey-source noise this audit has left alone before (e.g.
+batch 8's Dome Peak), not a confirmable error either way.
+
+Network note: `cascadeclimbers.com` was DNS-blocked from this session for a direct page fetch this
+run; WebSearch snippets covered everything needed.
+
+Next batch will continue id-ascending from `wa_mount_blum_north_ridge` (see progress file).
