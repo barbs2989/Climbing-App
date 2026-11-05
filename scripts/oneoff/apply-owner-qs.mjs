@@ -15,6 +15,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+const { gradeNumFrom, gradeSystemForDiscipline } = await import(pathToFileURL(path.join(REPO, "lib/grade.js")).href);
 const { requireServiceKey, selectAll, patchRow, SUPABASE_URL, headers } = await import(pathToFileURL(path.join(REPO, "scripts/lib/supabase-env.mjs")).href);
 
 const ops = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
@@ -86,7 +87,7 @@ for (const o of ops) {
     keep = await get(o.into);
     if (!keep || keep.area_id !== o.area_id) { console.log(`  FAIL: ${o.into} missing or not on ${o.area_id}`); bad++; continue; }
     // move "*": every content column of the dropped row (identity, timestamps and derived columns excluded)
-    const SKIP = new Set(["id", "area_id", "name", "created_at", "updated_at", "sort_order", "path", "search_name", "name_norm", "fts", "grade_num", "name_search", "auto_generated", "classic", "verif"]);
+    const SKIP = new Set(["id", "area_id", "name", "created_at", "updated_at", "sort_order", "path", "search_name", "name_norm", "fts", "grade_num", "name_search", "auto_generated", "classic", "verif", "snow_grade_num"]);
     const cols = o.move === "*" ? Object.keys(row).filter(c => !SKIP.has(c)) : (o.move || []);
     for (const c of cols) {
       if (empty(row[c])) continue;
@@ -98,6 +99,16 @@ for (const o of ops) {
   { const t = o.op === "merge" ? keep : row;
     if (o.op !== "delete" && set.discipline && set.discipline !== t.discipline && !(o.set && "disciplines" in o.set))
       set.disciplines = [set.discipline, ...((set.disciplines || t.disciplines) || []).filter(d => d !== set.discipline && d !== t.discipline)]; }
+  // a changed grade or discipline re-derives the sortable grade_num and grade_system through the ONE parser
+  { const t = o.op === "merge" ? keep : row;
+    // only when the GRADE changes; the system follows the grade's own shape (an alpine row graded AI3 is "wi",
+    // one graded Class 3 is "class"), the discipline's system only for a shape it does not name
+    if (o.op !== "delete" && "grade" in set) {
+      const g = set.grade, d = set.discipline || t.discipline;
+      const sys = !g ? null : /^class\b|^\d(st|nd|rd|th)\b/i.test(g) ? "class" : /^(W|A)I\d/.test(g) ? "wi" : /^5\./.test(g) ? "yds" : gradeSystemForDiscipline(d);
+      const n = g ? gradeNumFrom(g, sys) : null;
+      set.grade_num = Number.isFinite(n) ? n : null; set.grade_system = sys;
+    } }
   if (o.op !== "patch") { const n = await refs(o.id); if (n) { console.log(`  FAIL: ${n} reference(s) to ${o.id} — not deleting`); bad++; continue; } }
   const target = o.op === "merge" ? keep : row;
   const change = Object.fromEntries(Object.entries(o.op === "delete" ? {} : set).filter(([c, v]) => !same(target[c], v)));
