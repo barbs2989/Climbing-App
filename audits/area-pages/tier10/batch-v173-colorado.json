@@ -1,0 +1,42 @@
+{
+ "co_chuting_gallery": {
+  "_expect": {"name": "Chuting Gallery", "region": "Colorado"},
+  "blurb": "A narrow slot canyon tucked onto the far east edge of the Halidome, high above Empire at close to 10,000 feet. Its eleven one- and two-pitch lines are mostly bolted with a few trad lines, and the grades are firmly in the hard range: a couple of low 5.10s, a cluster of 5.11s, then a handful of 5.12s and one 5.13. The main wall looks east, so it loses the sun by early afternoon in summer, a handy partner to the sunnier Ra wall nearby. The gully below sheds loose debris and shifts every spring, so keep time at the base short while others climb above.",
+  "review": {"sources": ["https://mountainproject.com/area/112125746/chuting-gallery", "https://www.mountainproject.com/area/112125737/the-halidome"]}
+ },
+ "co_north_wall": {
+  "_expect": {"name": "North Wall", "region": "Colorado"},
+  "blurb": "A cool, quiet sport wall in the Lime Creek canyon above the Eagle valley, sitting around 9,200 feet among big pines. The gray limestone is clean and vertical, with bolted single-pitch lines of roughly 50 to 90 feet. All eleven routes are sport; most land in the 5.11 range, with a few 5.10s and a couple of 5.12s. Shade lasts the whole day, which makes it a good pick when the sun-baked crags lower down are too hot.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105852210/north-wall", "https://www.mountainproject.com/area/105744451/lime-park-aka-lime-creek"]}
+ },
+ "co_pi_phi_mu_sigma_boulders": {
+  "_expect": {"name": "Pi, Phi, Mu & Sigma Boulders", "region": "Colorado"},
+  "blurb": "A small cluster of free-standing sandstone blocks below Kappa Cliff in Ute Valley Park, on the northwest side of Colorado Springs. Eleven short problems are logged here, all at the easy end of the scale around V0. This is a casual stop rather than a destination: the blocks are modest, some landings are poor, and the stone can be questionable, so test holds and pull down rather than out. It suits a quick wander, trying new rock, or climbing with kids, and wildlife such as snakes and lizards is common.",
+  "review": {"sources": ["https://mountainproject.com/area/106931404/pi-phi-mu-sigma-boulders", "https://mountainproject.com/area/106931327/v-naughts"]}
+ },
+ "co_napoleon_wall": {
+  "_expect": {"name": "Napoleon Wall", "region": "Colorado"},
+  "blurb": "A small crag in Gilman Canyon, just outside Red Cliff and not far from Vail, at about 8,750 feet. It is the first crag on the right as you walk in beside the railroad tracks. The eleven routes are mainly bolted with three trad lines, running from easy 5.8 up to about 5.11a, with plenty in the 5.9 and 5.10 range. Walls face west and collect afternoon sun, and the lines see little traffic apart from locals strolling the tracks below. Canyon climbing typically opens up around mid-April.",
+  "parking_note": "Leave the car on Water Street or along the road into Red Cliff, then walk down to the tracks.",
+  "approach": "Walk down into the canyon beside the railroad tracks. This is the first crag on the right; the first routes sit on separate rocks near the track split, and the rest lie a little further along beside a talus slope.",
+  "aspect": "W",
+  "review": {"sources": ["https://www.mountainproject.com/v/113111904", "https://www.mountainproject.com/v/gilman-canyon/105744370"]}
+ },
+ "co_plebian_wall_the": {
+  "_expect": {"name": "Plebian Wall, The", "region": "Colorado"},
+  "blurb": "A black-and-green streaked wall in the Heaven's Gate zone south of Elevenmile Canyon, at roughly 8,900 feet. All eleven routes are bolted sport lines, spanning one easy outing, a few 5.10s and 5.11s, and a block of 5.12s with a pair of 5.13s. Getting onto most of them takes a scramble: four lines are reached through a hole at the back of a cave using a fixed line, and belay ledges are cramped. A short walk from the cul-de-sac keeps it secluded and uncrowded.",
+  "review": {"sources": ["https://www.mountainproject.com/v/107170862", "https://www.mountainproject.com/area/107170045/heavens-gate"]}
+ },
+ "co_upper_wall_the": {
+  "_expect": {"name": "Upper Wall, The", "region": "Colorado"},
+  "blurb": "A steeper sector set above the Bay of Pigs on the Pool Wall, just north of Ouray. Reaching it means scrambling the gully behind the Alcove and following fixed lines up and right to the wall. Eleven routes mix bolted lines with gear climbs, from the 5.8 range to 5.12, with most sitting in the 5.10 to 5.12 band. It gets morning shade and afternoon sun, and is seen as a way to escape the busier lower sections of the cliff. The terrain is steep and loose, so move carefully.",
+  "review": {"sources": ["https://www.mountainproject.com/area/110012674/the-upper-wall", "https://rakkup.com/guidebook/million-dollar-highway-rock-climbing/the-upper-wall/s22792"]}
+ },
+ "_skipped": {
+  "co_pod_the": "no fetched page about The Pod itself; only the parent East bouldering listing, whose Pod entry gives no description",
+  "co_upper_ice_caves_feline_area": "no fetched page about this section itself; only the Ice Cave Walls parent page, no second page found"
+ },
+ "_conflicts": {
+  "co_napoleon_wall": "Stored rock is gneiss; the Gilman Canyon page describes the canyon's rock as black granite (https://www.mountainproject.com/v/gilman-canyon/105744370). Blurb names no rock."
+ }
+}

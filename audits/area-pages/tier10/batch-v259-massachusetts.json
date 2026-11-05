@@ -1,0 +1,43 @@
+{
+ "ma_cliff_1": {
+  "_expect": {"name": "Cliff 1", "region": "Massachusetts"},
+  "blurb": "A small bouldering wall in the Red Cross Cliffs pocket of Middlesex Fells, and the first cliff on the right as you walk into the pocket. It stands roughly eight to twelve feet tall, so falls are short and the landings are easy to judge. The twelve problems are friendly: most sit between V0 and V2, with a couple of V3s at the top end, which makes it a good place for beginners or a quick warm-up circuit. Expect a blend of slab and arete lines, a short dihedral and a hand crack. A second boulder sits at the far end of the wall, and a similar cliff lies a little deeper in.",
+  "review": {"sources": ["https://www.mountainproject.com/area/111276229/cliff-1", "https://www.mountainproject.com/area/111276115/red-cross-cliffs"]}
+ },
+ "ma_ames_boulder": {
+  "_expect": {"name": "Ames Boulder", "region": "Massachusetts"},
+  "blurb": "One large granite boulder inside Borderland State Park in Easton, reached along a short boulder trail only a minute or so from the field beside the park buildings. Around a dozen problems wrap the block, all bouldering, and the grade spread is unusually wide for a single rock: easy slab problems at V0 and V1, a handful in the V2 to V4 range, and several hard lines from V5 up to V7. It is a pad-and-spotter kind of place, popular for its steeper, harder problems, and it makes a convenient stop for anyone exploring the other boulder groups scattered around the park.",
+  "review": {"sources": ["https://www.mountainproject.com/area/109710722/ames-boulder", "https://mountainproject.com/area/106111354/borderland-state-park-easton"]}
+ },
+ "ma_gem_boulder": {
+  "_expect": {"name": "Gem Boulder", "region": "Massachusetts"},
+  "blurb": "The tallest block in the State Line group, set in the woods of West Townsend. One face is steeply overhung and split by a crack, while the other sides are mellower, so the dozen problems offer something for several levels. Most climbs fall between VB and V2, a few reach V5, and one standout goes all the way to V10. The overhang gets its name from the smoky quartz, garnet and mica visible in the granite. Since the problems tend to start low under the roof, bring a few pads and a spotter, and plan on a short bushwhack through the trees to reach it.",
+  "review": {"sources": ["https://www.mountainproject.com/area/113795598/gem-boulder", "https://mountainproject.com/area/113789077/state-line-boulders"]}
+ },
+ "ma_arrowhead_crag": {
+  "_expect": {"name": "Arrowhead Crag", "region": "Massachusetts"},
+  "blurb": "A small cluster of blocks within the Overlook Area on the north side of Lynn Woods, a short climb uphill from another boulder in the group. Eleven problems are spread across a broad range: a couple of easy V0 and V1 warm-ups, a middle band from V2 to V5 that holds several of the area's best-rated lines, and a few serious tests at V6 and V7. It is a good stop for a mixed party because the easy and hard problems sit close together, and it can be linked with the many other boulders nearby on the same hillside.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107711251/arrowhead-crag", "https://www.mountainproject.com/area/107227418/overlook-area"]}
+ },
+ "ma_halfway_boulder": {
+  "_expect": {"name": "Halfway Boulder", "region": "Massachusetts"},
+  "blurb": "A big block perched on the ridge in the Lynn Woods boulder zone, close to a few houses and roughly midway along the ridge line. Eleven problems circle it, from an easy V0 up to V6. The grade mix leans toward the middle and upper end: a few V2 and V3 lines, one V4 and one V5, and a cluster of four V6 problems that make it more appealing to stronger boulderers than to novices. Several lines pick up good star ratings. The ridge is dotted with other blocks, so it fits well into a longer day walking from boulder to boulder.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107185695/halfway-boulder", "https://www.mountainproject.com/area/107080716/ridge-boulders"]}
+ },
+ "ma_sharma_boulders": {
+  "_expect": {"name": "Sharma Boulders", "region": "Massachusetts"},
+  "blurb": "A hidden wall and a few related blocks in Sector One, the first group of boulders in the Promised Land section of Lynn Woods. They sit off the power line road, a few minutes beyond the better-known Split and Evil boulders, tucked back in the trees. Eleven problems are recorded, mostly between V3 and V4, with an easy V1 and V2 for balance and a few hard ones reaching V6 to V8. Some of the rock was still described as needing cleaning, so expect moss and a bit of scrubbing, and bring pads for the uneven ground.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107262091/sharma-boulders", "https://www.mountainproject.com/area/111967605/sector-one"]}
+ },
+ "ma_hangover_the": {
+  "_expect": {"name": "Hangover, The", "region": "Massachusetts"},
+  "blurb": "A cluster of large rocks in the Hemlock Pool section of Middlesex Fells, topped by a big overhang that gives the spot its name. One boulder carries a clean face with several lines, and the taller problems here are known for good movement. A smaller roof nearby, the Kitchen Table Roof, holds shorter climbs. Of the eleven problems, about half are easy V1 lines, with a few V2 to V4 and two V5s as the top end, so it works for a casual session as well as for projecting. Bring a crash pad for the taller faces.",
+  "review": {"sources": ["https://www.mountainproject.com/area/111384015/hangover", "https://www.mountainproject.com/area/108358050/hemlock-pool-at-middlesex-fells"]}
+ },
+ "_skipped": {
+  "ma_dpw_boulder": "location mismatch: the only DPW Boulder found is on Cape Ann (Cape Pond Boulders, Rockport), far from the input's coordinates near Martha's Vineyard; no page found for a boulder at those coordinates"
+ },
+ "_conflicts": {
+  "ma_halfway_boulder": "stored rock is rhyolite but the parent Ridge Boulders page (https://www.mountainproject.com/area/107080716/ridge-boulders) describes granite boulders"
+ }
+}

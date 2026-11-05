@@ -1,0 +1,75 @@
+{
+ "co_roundabout_boulder": {
+  "_expect": {
+   "name": "Roundabout Boulder",
+   "region": "Colorado"
+  },
+  "blurb": "Roundabout Boulder is a single large block in Unaweep Canyon, in the bouldering zone on Nine Mile Hill east of Grand Junction. About ten problems circle it, mostly between V0 and V3 with one V4 at the top end, so it suits newer boulderers and a quick warm-up stop more than a destination session. The block has an overhanging side as well as vertical faces, and several lines finish on the same mantel and slab topout. It can be a bit dusty until it has been brushed, and at least one landing has a rock in the middle of it, so bring a pad or two and a spotter. It sits right beside the parking area, which makes it an easy first stop.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107824402/roundabout-boulder",
+    "https://www.mountainproject.com/v/zone-of-silence/112776472"
+   ]
+  }
+ },
+ "co_warrior_s_wall": {
+  "_expect": {
+   "name": "Warrior's Wall",
+   "region": "Colorado"
+  },
+  "blurb": "Warrior's Wall is a small sport cliff in the Camp Hale valley near Leadville, at roughly 9,300 feet. It holds about ten routes, from the 5.9s through a handful of 5.10s to a few 5.11 and 5.12 lines, plus one top-rope line, which makes it one of the harder panels in the valley. It is a short uphill hike above the old road, up and left of the neighbouring Mule Train Wall, and the two are easily combined in a day. The cliff can be spotted from the highway, and reports from early season visitors describe good conditions on it.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107650669/warriors-wall",
+    "https://mountainproject.com/forum/topic/112938241/camp-hale-leadville"
+   ]
+  }
+ },
+ "co_sobo": {
+  "_expect": {
+   "name": "Sobo",
+   "region": "Colorado"
+  },
+  "blurb": "Sobo is a remote, seldom-visited crag in the hills above Eldorado Canyon near Boulder, west of Diamond Head and below the cliff band of South Boulder Peak. The ten routes are single-pitch trad lines, mostly clean crack climbs with a couple of runout face routes, ranging from 5.8 to 5.11. It faces south and takes sun all day. The way in is long rather than technically hard, with little trail, loose talus and brush to dodge, so plan on well over an hour and bring a full rack. Top-roping is awkward because getting to the anchors is not simple. It rewards climbers who want solitude away from the canyon crowds.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105745723/sobo",
+    "https://www.mountainproject.com/route/105755218/marsupial"
+   ]
+  }
+ },
+ "co_tick_rock": {
+  "_expect": {
+   "name": "Tick Rock",
+   "region": "Colorado"
+  },
+  "blurb": "Tick Rock is a small crag tucked just left of the Mary's Bust cliff in Big Thompson Canyon, east of Estes Park. It has ten routes, mostly bolted sport lines with a couple of gear and top-rope options, from an easy 5.5 up to 5.10. Most land in the 5.8 to 5.9 range, so it works well for moderate leaders, and a few lines run to two pitches. The short walk from the roadside pullout is steep, loose and prickly. The rock can be dirty or crumbly in places, so wear a helmet. The exposure is sunny, which makes the cooler months the pleasant time to visit.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/107013878",
+    "https://www.mountainproject.com/area/106811702/marys-bust-area"
+   ]
+  }
+ },
+ "co_southern_goose_egg": {
+  "_expect": {
+   "name": "Southern Goose Egg",
+   "region": "Colorado"
+  },
+  "blurb": "Southern Goose Egg is a small, flatiron-shaped formation guarding the mouth of Fern Canyon in the Boulder Flatirons. A moderate class 4 gully separates its higher northern summit from the lower southern one. Ten routes mix trad, sport and top-rope: several easy low-fifth-class trad lines on the main faces, then a cluster of harder sport and mixed routes between 5.9 and 5.11, plus one boulder problem. The walk from any of the trailheads to the Fern Canyon Trail is long, and the final stretch is a small path up to the base from the slab overlook. Expect a quiet, out-of-the-way outing rather than a roadside crag.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105745421/southern-goose-egg",
+    "https://www.mountainproject.com/area/105874737/fern-canyon"
+   ]
+  }
+ },
+ "_skipped": {
+  "co_water_tower_sector": "could not fetch a page about the sector itself; only the parent Homestead page and Glenwood Canyon page mention it",
+  "co_twin_owls": "only the parent Sun Tower Complex page found about this formation; summitpost pages returned 403 and the other Twin Owls pages were different places",
+  "co_river_bridge_crag": "no page found describing a River Bridge Crag at these coordinates; the only Bridge Crag page is in California"
+ },
+ "_conflicts": {
+  "co_sobo": "stored rock is conglomerate but a route page says Colorado granite: https://www.mountainproject.com/route/105755218/marsupial and https://app.advcollective.com/climbing/marsupial-a-bold-trad-challenge-on-sobos-south-face"
+ }
+}

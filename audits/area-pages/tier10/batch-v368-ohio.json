@@ -1,0 +1,22 @@
+{
+ "oh_sunshine_valley": {
+  "_expect": { "name": "Sunshine Valley", "region": "Ohio" },
+  "blurb": "Sunshine Valley is a small, wooded boulder field in Hocking Hills State Forest near Logan, strung along a creek bed. It holds ten problems, all bouldering, centered on the V3 range with a handful of harder lines up to V6 and almost nothing easier. Tree cover keeps the blocks cool and shaded, but the damp setting means the stone can feel slick, so it pays to wait for dry weather and bring shoes with good friction. Landings sit over uneven creek rocks, so several crash pads are worth carrying. The walk in is short on an easy trail, and the place tends to be quiet.",
+  "review": { "sources": ["https://app.advcollective.com/climbing/exploring-sunshine-valley-ohios-quiet-boulder-escape", "https://www.mountainproject.com/area/105995005/hocking-hills-state-forest"] }
+ },
+ "oh_rock_the": {
+  "_expect": { "name": "Rock, The", "region": "Ohio" },
+  "blurb": "The Rock is one of the climbing sections at Lake Vesuvius in the Wayne National Forest near Ironton. It is a small face right on the lake edge, with roughly ten lines of mixed style: a few trad climbs, some bolted sport lines, a top-rope and a couple of boulder problems. Roped climbs run from about 5.5 up to 5.9, and the boulders range from moderate to fairly stout. Walls here are short, and the cleanest stone is found on the lakeside face. It is a relaxed place for a mellow day rather than a hard-testing destination.",
+  "parking_note": "Leave the car in the lot at the foot of the dam by the spillway, then walk to the lakeside face.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108007949/the-rock", "https://www.mountainproject.com/area/108007898/lake-vesuvius"] }
+ },
+ "_skipped": {
+  "oh_fern_buttress_adjacent": "no fetched page about this crag itself; only the sibling Fern Buttress page and parent pages",
+  "oh_5_the_amphitheater": "only the parent Flat Rocks page lists it; no page about the Amphitheater itself found",
+  "oh_east_wall": "no fetched page about Sawyer Quarry East Wall itself (Mountain Project hit was a Kentucky East Wall)",
+  "oh_bat_cave_the": "only the parent Bears Den Cabin page covers it; the other Bat Cave page is a different crag"
+ },
+ "_conflicts": {
+  "oh_sunshine_valley": "stored rock sandstone; https://www.mountainproject.com/area/105995005/hocking-hills-state-forest says Blackhand sandstone (agrees) but https://app.advcollective.com/climbing/exploring-sunshine-valley-ohios-quiet-boulder-escape says limestone"
+ }
+}

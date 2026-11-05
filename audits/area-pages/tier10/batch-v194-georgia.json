@@ -1,0 +1,39 @@
+{
+ "ga_back_street_boulders": {
+  "_expect": { "name": "Back Street Boulders", "region": "Georgia" },
+  "blurb": "Back Street Boulders is a small pocket of sixteen boulder problems tucked toward the rear of Rocktown, the sandstone boulder field on Pigeon Mountain in northwest Georgia. It is reached by continuing along the main path past the Orb area and the warm-up boulders near Hueco Simulator. Grades run from V0 easy ones up through the mid range, with the bulk falling around V3 to V6, plus a handful of hard problems up to V8 and a single V12 for the very strong. The area has a reputation for being one of the friendlier, more relaxed corners of a big field, so it suits a mixed group with pads and spotters.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106036761/back-street-boulders", "https://www.mountainproject.com/area/106036120/rocktown"] }
+ },
+ "ga_dugout_the": {
+  "_expect": { "name": "Dugout, The", "region": "Georgia" },
+  "blurb": "The Dugout is a bouldering pocket inside Rocktown, the sandstone boulder field in northwest Georgia near LaFayette. You find it by dropping down a short but steep slope from the Hueco Simulator boulders, with the main wall on your left. It holds fourteen problems, and its calling card is steep roof climbing. The spread is wide: a couple of easy lines, a cluster around V3, then a hard end of V6 to V8 problems and one traverse in the V10 range. Expect strenuous, powerful moves rather than a place for a gentle warm-up, and bring plenty of pads for the uneven ground.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108043101/the-dugout", "https://www.mountainproject.com/area/106036120/rocktown"] }
+ },
+ "ga_lost_wall_south": {
+  "_expect": { "name": "Lost Wall South", "region": "Georgia" },
+  "blurb": "Lost Wall South is one of four sections of Lost Wall, a traditional-climbing cliff on Pigeon Mountain near LaFayette in northwest Georgia. This section has fifteen routes, almost all of them trad, with a single aid line. Most climbs sit in the 5.6 to 5.10 range, with a good number around 5.9 and 5.10, and two harder ones at 5.12. Lines on the wall as a whole are single pitch and roughly 40 to 120 feet tall. A rack of cams and nuts is needed, since this is not a bolted sport crag, and the moderate grades make it a reasonable stop for a trad-minded party.",
+  "review": { "sources": ["https://www.mountainproject.com/area/200605912/lost-wall-south", "https://www.mountainproject.com/area/105900335/lost-wall"] }
+ },
+ "ga_front_line": {
+  "_expect": { "name": "Front Line", "region": "Georgia" },
+  "blurb": "Front Line is the first group of boulders you meet when walking in from the parking area at Shaking Rock, a small bouldering park near Lexington, about twenty minutes from Athens in Georgia. The fifteen problems here lean easy and moderate: several V0 to V2 slabs and traverses that work well for warming up, a solid block of V4 problems, and a few harder ones topping out around V7. The rock is rounded granite, and mantels are a common theme. It is a low-key, convenient spot for a short session, especially for newer boulderers or anyone starting a day at the park.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107088734/front-line", "https://www.mountainproject.com/area/107088730/shaking-rock"] }
+ },
+ "ga_climax_boulder": {
+  "_expect": { "name": "Climax Boulder", "region": "Georgia" },
+  "blurb": "Climax Boulder sits on the trail system at Morgan Falls in the Atlanta suburbs of Sandy Springs. It is a shaded boulder set in the forest with an overhanging face, and it carries fifteen problems. Climbing is mostly crimpy and steep, with smaller holds low and bigger ones higher up, and a wet streak can run down one side. Grades start around V1 and reach V8, with most of the problems landing in the V3 to V7 range, so it rewards climbers who already boulder in the middle grades. The tree cover keeps it cooler than open sites nearby.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123726940/climax-boulder", "https://mountainproject.com/area/123726807/morgan-falls"] }
+ },
+ "ga_spider_man_area": {
+  "_expect": { "name": "Spider Man Area", "region": "Georgia" },
+  "blurb": "Spider Man Area is a group of fifteen granite boulder problems at Boat Rock, a well-used bouldering site on the southwest side of Atlanta. The climbing mixes slabs, cracks, mantels and arêtes, and the rock at Boat Rock is sharp, so skin takes a beating. Difficulty runs from very easy V0 problems through a good cluster of V1 to V3, then a handful from V4 to V6 at the top end. That spread makes it friendly to groups with mixed ability. Boulders here are mostly moderate in height, though the surrounding site includes some taller problems that call for spotters.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112774861/spider-man-area", "https://www.mountainproject.com/area/106080767/boat-rock"] }
+ },
+ "_skipped": {
+  "ga_panola_area_2": "page coordinates (about 33.63, -84.15, Panola Mountain) do not match the input coordinates (33.7152, -84.386); only one page about the crag found",
+  "ga_45_bunker_boulder": "no fetched page about the boulder itself; only parent area pages (Parking Lot Boulders, Mount Yonah) mention it"
+ },
+ "_conflicts": {
+  "ga_lost_wall_south": "Stored rock is limestone but fetched pages describe Lost Wall as sandstone: https://www.mountainproject.com/area/105900335/lost-wall and https://www.seclimbers.org/project/lost-wall/ (blurb names no rock)"
+ }
+}
