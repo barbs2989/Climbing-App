@@ -3,6 +3,7 @@ import { parseGpxXml, parseCoordinateList, validateGpxQuality, calculateQualityS
 import { POP_CLOSE } from "./popupChrome.js";
 import TrailDrawMap from './TrailDrawMap'
 import { MIN_RECORDED_PTS } from './track'
+import { tx } from './tapWords.js'
 import ActionIcon from '../src/components/ActionIcon.tsx'
 
 const C = {
@@ -138,7 +139,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
     // MIN_RECORDED_PTS: the map draws no line under 10 points (lib/track.js), and review_gps_submission
     // (0397) refuses one, so a shorter trace is stopped here rather than approved into nothing.
     if (drawing ? drawPts.length < MIN_RECORDED_PTS : coordinates.trim().length === 0) {
-      setError(drawing ? 'Tap at least ' + MIN_RECORDED_PTS + ' points along the trail, one at every bend and fork (you have ' + drawPts.length + ')' : 'Please paste or upload GPS coordinates')
+      setError(drawing ? tx('Tap at least ' + MIN_RECORDED_PTS + ' points along the trail, one at every bend and fork (you have ' + drawPts.length + ')') : 'Please paste or upload GPS coordinates')
       return
     }
 
@@ -324,7 +325,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
         {/* Tab Content */}
         <div style={{...styles.tabContent}}>
           {/* Kept MOUNTED behind the other tabs: unmounting it would turn a routed line back into one anchor per point and lose Undo. */}
-          {canDraw && <div style={{display: tab === 'draw' ? 'block' : 'none'}}><TrailDrawMap start={parkAt} end={cragAt} pts={drawPts} setPts={setDrawPts} C={C} active={tab === 'draw'} initialShape={canDraw && initialShape && initialShape.length ? initialShape : null} /></div>}
+          {canDraw && <div style={{display: tab === 'draw' ? 'block' : 'none'}}><TrailDrawMap start={parkAt} end={cragAt} pts={drawPts} setPts={setDrawPts} C={C} active={tab === 'draw'} initialShape={initialShape && initialShape.length ? initialShape : null} /></div>}
 
           {tab === 'paste' && (
             <div>
@@ -527,7 +528,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
             onClick={handleSubmit}
             style={{...styles.button, ...styles.buttonPrimary}}
             disabled={submitting || (drawing ? drawPts.length < MIN_RECORDED_PTS : !coordinates.trim()) || !climbDate}
-            title={drawing && drawPts.length < MIN_RECORDED_PTS ? 'Tap at least ' + MIN_RECORDED_PTS + ' points along the trail' : undefined}
+            title={drawing && drawPts.length < MIN_RECORDED_PTS ? tx('Tap at least ' + MIN_RECORDED_PTS + ' points along the trail') : undefined}
           >
             {submitting ? 'Submitting...' : crag ? 'Submit Trail' : 'Submit Track'}
           </button>

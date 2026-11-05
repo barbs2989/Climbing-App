@@ -27,14 +27,13 @@ import { pathLenM, routeLeg } from "./trailRouting.js";
 // anchor the climber placed and `via` the routed points between the PREVIOUS anchor and this one
 // (empty for a straight leg). `pts` is always the flattening of `nodes`, so what is drawn is what
 // is submitted.
-const lenM = pathLenM;
 // In the climber's units (check:units): feet/miles or metres/kilometres.
 export function fmtTrailLen(m) {
   if (loadUnits() === "metric") return m < 1000 ? Math.round(m / 10) * 10 + " m" : (m / 1000).toFixed(2) + " km";
   const ft = m * 3.28084;
   return ft < 1000 ? Math.round(ft / 10) * 10 + " ft" : (ft / 5280).toFixed(2) + " mi";
 }
-export function trailLenM(pts) { return lenM(pts || []); }
+export function trailLenM(pts) { return pathLenM(pts || []); }
 
 let nextId = 1;
 const round = (p) => [+(+p[0]).toFixed(6), +(+p[1]).toFixed(6)];
@@ -69,7 +68,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const [follow, setFollow] = useState(followDefault);
   const [selectedId, setSelectedId] = useState(null);
   const [note, setNote] = useState("");
-  const [nodes, setNodes] = useState(() => (initialShape && initialShape.length ? initialShape.map((s) => node(s.a, (s.via || []).map(round))) : (pts || []).map((p) => node(p))));
+  const [nodes, setNodes] = useState(() => (initialShape && initialShape.length ? initialShape.map((s) => Object.assign(node(s.a, (s.via || []).map(round)), { pending: !!s.pending })) : (pts || []).map((p) => node(p))));
   const dragging = useRef(false), redrawAfterDrag = useRef(false);
   const nodesRef = useRef(nodes);
   const undoRef = useRef([]), redoRef = useRef([]);
@@ -91,12 +90,14 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     }
   }, [pts]);
   useEffect(() => () => { routing.current.forEach((c) => c.abort()); clearTimeout(noteT.current); }, []);
+  // A line handed over while a leg was still being looked up: ask for that leg again here.
+  useEffect(() => { nodesRef.current.forEach((x, i) => { if (x.pending && i > 0) startRoute(x.id); }); }, []); // eslint-disable-line react-hooks/exhaustive-deps -- once, on mount, for the shape the host passed in
   // Hidden behind another tab of the host sheet (display:none) and shown again: Leaflet measured a
   // 0×0 box while hidden, so it is told the real size. The host keeps this mounted rather than
   // unmounting it, or a routed line would come back as one anchor per routed point.
   useEffect(() => { if (active !== false && mapRef.current) { const m = mapRef.current; setTimeout(() => { try { m.invalidateSize(); } catch (e) {} }, 60); } }, [active]);
 
-  const setBoth = (next) => { nodesRef.current = next; setNodes(next); propsRef.current.setPts(flatten(next)); if (propsRef.current.onShape) propsRef.current.onShape(next.map((x) => ({ a: x.a, via: x.via }))); };
+  const setBoth = (next) => { nodesRef.current = next; setNodes(next); propsRef.current.setPts(flatten(next)); if (propsRef.current.onShape) propsRef.current.onShape(next.map((x) => ({ a: x.a, via: x.via, pending: !!x.pending }))); };
   const say = (s) => { setNote(s); clearTimeout(noteT.current); noteT.current = setTimeout(() => setNote(""), 6000); };
   const abortRoute = (id) => { const c = routing.current.get(id); if (c) { c.abort(); routing.current.delete(id); } };
   // Ask the trails for the leg that ends at node `id`; the answer lands only if both anchors still stand.
@@ -116,19 +117,22 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       if (j === 0) { if (now[0].pending) { const next = now.slice(); next[0] = Object.assign({}, next[0], { via: [], pending: false }); setBoth(next); } return; }
       if (!sameP(now[j].a, b) || !sameP(now[j - 1].a, a)) return;
       const next = now.slice();
-      next[j] = Object.assign({}, next[j], { via: via || [], pending: false });
+      next[j] = Object.assign({}, next[j], { via: Array.isArray(via) ? via : [], pending: false });
       setBoth(next);
-      if (via === false) say(tx("The trail router didn't answer (offline, or busy), so that leg is a straight line for now. Switch Follow trails off and on to ask again, or trace it by hand."));
+      if (via === "far") say(tx("That leg is longer than a walk in, so it is a straight line. Tap a point between to follow the trail in two legs."));
+      else if (via === false) say(tx("The trail router didn't answer (offline, or busy), so that leg is a straight line for now. Switch Follow trails off and on to ask again, or trace it by hand."));
       else if (!via) say(tx("Couldn't follow a mapped trail here, so that leg is a straight line. Drag the point, or tap the hollow dot to add one between."));
     });
   };
   // `idxs` are the legs this change touched: straight again, or routed when Follow trails is on.
-  // `keepRouted` is set when the change cut into a leg that WAS routed: that leg stays routed even
-  // with the toggle off, or a nudge of the hollow dot on a switchbacking path would flatten it.
-  const withLegs = (next, idxs, keepRouted) => {
-    const want = propsRef.current.follow || !!keepRouted, touched = [];
+  // `keep` lists the legs (by index) that WERE routed before this change, or `true` for all: those
+  // stay routed even with the toggle off, or a nudge of the hollow dot on a switchbacking path would
+  // flatten it. Only those: a straight leg drawn on purpose beside a routed one stays straight.
+  const withLegs = (next, idxs, keep) => {
+    const touched = [];
     idxs.forEach((i) => {
       if (i < 0 || i >= next.length) return;
+      const want = propsRef.current.follow || keep === true || (Array.isArray(keep) && keep.includes(i));
       // The first anchor has no leg; a leg of no length (the same spot twice) is straight and silent.
       const zero = i === 0 || sameP(next[i - 1].a, next[i].a);
       next[i] = Object.assign({}, next[i], { via: [], pending: want && !zero });
@@ -156,16 +160,22 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const redo = () => { if (!redoRef.current.length) return; undoRef.current.push(nodesRef.current); restore(redoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
   // A tap on the spot the line already ends at (Finish at C twice, a slow double tap) adds nothing.
   const append = (lat, lng) => { const cur = nodesRef.current, nn = node([lat, lng]); if (cur.length && sameP(cur[cur.length - 1].a, nn.a)) return; const next = cur.concat([nn]); commit(next, withLegs(next, [next.length - 1])); };
-  const insertAt = (i, lat, lng) => { const cur = nodesRef.current, nn = node([lat, lng]); if ((cur[i - 1] && sameP(cur[i - 1].a, nn.a)) || (cur[i] && sameP(cur[i].a, nn.a))) return; const next = cur.slice(); next.splice(i, 0, nn); commit(next, withLegs(next, [i, i + 1], routed(cur[i]))); };
-  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]), via: [], pending: false }); commit(next, withLegs(next, [i, i + 1], routed(cur[i]) || routed(cur[i + 1]))); };
-  const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); setSelectedId(null); commit(next, withLegs(next, [i], routed(cur[i]) || routed(cur[i + 1]))); };
+  const insertAt = (i, lat, lng) => { const cur = nodesRef.current, nn = node([lat, lng]); if ((cur[i - 1] && sameP(cur[i - 1].a, nn.a)) || (cur[i] && sameP(cur[i].a, nn.a))) return; const next = cur.slice(); next.splice(i, 0, nn); commit(next, withLegs(next, [i, i + 1], routed(cur[i]) ? [i, i + 1] : [])); };
+  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]), via: [], pending: false }); commit(next, withLegs(next, [i, i + 1], [routed(cur[i]) ? i : -1, routed(cur[i + 1]) ? i + 1 : -1])); };
+  const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); setSelectedId(null); commit(next, withLegs(next, [i], routed(cur[i]) || routed(cur[i + 1]) ? [i] : [])); };
   const clearAll = () => { if (!nodesRef.current.length) return; setSelectedId(null); commit([], []); };
   // Switching Follow trails ON routes every leg that is still straight (the help says it bends each
-  // leg, so it does), as one undoable step; OFF leaves what is drawn alone.
+  // leg, so it does), as one undoable step; OFF leaves what is drawn alone, and stops asking for
+  // the legs still being looked up, so the line does not reshape itself after the switch.
   const toggleFollow = () => {
     const on = !follow;
     followDefault = on; setFollow(on); propsRef.current.follow = on;
-    if (!on) return;
+    if (!on) {
+      routing.current.forEach((c) => c.abort()); routing.current.clear();
+      const cur = nodesRef.current;
+      if (cur.some((x) => x.pending)) setBoth(cur.map((x) => (x.pending ? Object.assign({}, x, { pending: false }) : x)));
+      return;
+    }
     const cur = nodesRef.current, idxs = [];
     cur.forEach((x, i) => { if (i > 0 && !routed(x) && !x.pending && !sameP(cur[i - 1].a, x.a)) idxs.push(i); });
     if (!idxs.length) return;
@@ -278,7 +288,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const off = { opacity: 0.4, cursor: "default" };
   const b = (on) => (on ? btn : Object.assign({}, btn, off));
   const layerBtns = ready ? <div style={{ position: "absolute", top: 7, left: 7, zIndex: 1000, display: "flex", gap: 3 }}>{[["topo", "Topo"], ["sat", "Satellite"], ["street", "Street"]].map(([k, lbl]) => <button key={k} onClick={() => setBaseLayer(k)} aria-current={baseLayer === k ? "true" : undefined} style={{ padding: "5px 8px", borderRadius: 6, border: "1px solid " + (baseLayer === k ? C.accent : C.border), background: C.bg, color: baseLayer === k ? C.accent : C.text70, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 6px rgba(0,0,0,0.4)" }}>{lbl}</button>)}</div> : null;
-  const status = n ? (n < MIN_RECORDED_PTS ? n + " of at least " + MIN_RECORDED_PTS + " points" : n + " points") + " · " + fmtTrailLen(lenM(flat)) + (anyPending ? " · following the trail…" : tx(" · tap to keep going")) : start ? tx("Tap the map along the trail, starting at " + mk.start) : tx("Tap where you park, then along the trail to " + mk.endName);
+  const status = n ? (n < MIN_RECORDED_PTS ? n + " of at least " + MIN_RECORDED_PTS + " points" : n + " points") + " · " + fmtTrailLen(pathLenM(flat)) + (anyPending ? " · following the trail…" : tx(" · tap to keep going")) : start ? tx("Tap the map along the trail, starting at " + mk.start) : tx("Tap where you park, then along the trail to " + mk.endName);
   const mapBox = (
     <div style={{ position: "relative", flex: fullscreen ? 1 : "none", minHeight: 0 }}>
       <div ref={mapDiv} role="application" aria-label={tx("Map: tap to add a point to the trail, drag a point to move it")} style={{ height: fullscreen ? "100%" : 300, borderRadius: 9, border: "1px solid " + C.border, overflow: "hidden", background: "#0a0f1a", cursor: "crosshair" }} />

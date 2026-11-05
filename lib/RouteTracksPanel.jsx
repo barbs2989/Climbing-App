@@ -51,7 +51,8 @@ export default function RouteTracksPanel({ rows, profiles, loading, failed, show
           {!list.length ? <div style={{ fontSize: 12.5, color: C.textSub }}>No tracks from {(SEASONS.find((s) => s.id === season) || {}).label.toLowerCase()} yet.</div> : null}
           {list.map((r) => {
             const on = shown.includes(r.id), col = colorOf(r.id), st = r.stats;
-            const facts = [st.secs != null ? fmtDuration(st.secs) + (st.timed ? "" : " car to car") : null, uDistMi(st.km * 0.621371), st.gainFt != null ? uElev(st.gainFt) + " up" : null].filter(Boolean);
+            // A walk-in's time is not a fact worth a headline ("car to car" is a route-day idiom), so a crag row leaves it out.
+            const facts = [st.secs != null && !crag ? fmtDuration(st.secs) + (st.timed ? "" : " car to car") : null, uDistMi(st.km * 0.621371), st.gainFt != null ? uElev(st.gainFt) + " up" : null].filter(Boolean);
             return (
               <div key={r.id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 0", borderTop: "1px solid " + C.border }}>
                 <span aria-hidden="true" style={{ width: 14, height: 14, borderRadius: 7, flexShrink: 0, background: on && col ? col : "transparent", border: "2px solid " + (on && col ? col : C.border) }} />
