@@ -1,0 +1,24 @@
+{
+ "ky_curbside": {
+  "_expect": {"name": "Curbside", "region": "Kentucky"},
+  "blurb": "Curbside is a sport-only sector inside the Pendergrass-Murray preserve in the southern Red River Gorge. It is a modest wall of bolted lines aimed at stronger leaders: the grades start at 5.10 and are split between the 5.10s, the 5.11s and a good handful of 5.12s, with nothing easy to warm up on. Expect a short, focused session rather than a full-day destination, best paired with other sectors of the preserve. Routes here have seen only a few logged ascents, so it tends to be a quiet corner where you are unlikely to wait for a line.",
+  "review": {"sources": ["https://thetopo.com/crags/pendergrass-murray-recreational-preserve/routelist/curbside", "https://thetopo.com/crags/pendergrass-murray-recreational-preserve"]}
+ },
+ "ky_sunnyside": {
+  "_expect": {"name": "Sunnyside", "region": "Kentucky"},
+  "blurb": "Sunnyside is one of the many walls in Muir Valley, in the Red River Gorge near Rogers. It holds a pleasant mix of bolted and gear-protected lines, with the sport routes outnumbering trad by roughly two to one. Grades lean toward the 5.10s through low 5.12s, with a few easier lines in the 5.5 to 5.9 range for newer leaders. Despite the cheerful name, the wall does not catch much sun, which helps on warm days. It tends to be a calmer choice than the busier, better-known walls nearby, so it suits climbers who want some elbow room.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106061912/sunnyside", "https://www.mountainproject.com/area/105869138/muir-valley"]}
+ },
+ "ky_sunbeam_buttress": {
+  "_expect": {"name": "Sunbeam Buttress", "region": "Kentucky"},
+  "blurb": "Sunbeam Buttress is a wall in Muir Valley, Red River Gorge. Most of its lines are bolted, with a handful of trad routes and a couple of top-rope problems. The sweet spot is the 5.10s and 5.11s, with a few 5.9s to start on and a couple of 5.12s for the top end. Climbers report that most of the routes stay shaded on hot days, though the buttress picks up sun in winter, and a big roof keeps several lines dry during a downpour. That makes it a handy backup when the weather is unsettled.",
+  "review": {"sources": ["https://www.mountainproject.com/area/classics/106915626/sunbeam-buttress", "https://rrcarchives.com/forums/viewtopic.php?p=94902"]}
+ },
+ "_skipped": {
+  "ky_green_acres": "no fetched page about this crag itself (search found only the Foxtown parent page, which does not name it)",
+  "ky_main_wall_east": "only one fetched page names this crag; the parent Moon Sector page does not mention it",
+  "ky_rally_point": "only one fetched page names this crag; the preserve page does not mention it",
+  "ky_secondhand_smoke_bouldering": "only page found describes a 7-route sport/trad crag with no bouldering, contradicting the stored discipline; could not fetch two pages",
+  "ky_rock_creek": "could not fetch two pages (second page returned 503)"
+ }
+}

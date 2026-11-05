@@ -1,0 +1,37 @@
+{
+ "on_mccrae_lake": {
+  "_expect": { "name": "McCrae Lake", "region": "Ontario" },
+  "blurb": "McCrae Lake is a lakeside climbing area on the Georgian Bay side of Ontario, north of Barrie, where wooded trails link several small cliffs. Most of the roped climbing is concentrated at one main buttress, with boulders scattered through the surrounding forest. The 18 climbs are mostly bolted sport lines, plus a smaller group of trad routes and a single short ice line. Grades run from the 5.6 range up to 5.12, with the bulk sitting at 5.10 and 5.11, so it suits climbers already comfortable on steeper, more committing lines. Expect a quiet, natural setting shared with hikers and paddlers, and take care when you are near the water.",
+  "review": { "sources": ["https://www.ontarioallianceofclimbers.ca/crags/mccrae-lake/", "https://sendage.com/area/mccrae-lake-on-canada"] }
+ },
+ "on_sun_worshipper_wall": {
+  "_expect": { "name": "Sun Worshipper Wall", "region": "Ontario" },
+  "blurb": "A tall, streaked wall in Devil's Glen, in the Beaver Valley, a short stroll beyond the Old School Wall. Seventeen routes are mostly bolted sport lines, with two trad climbs. The grade spread is wide: a couple of easy 5.6 and 5.7 routes, a few at 5.10 and 5.11, and nearly half the wall at 5.12 and 5.13, so it is best known as a place for strong sport climbers. As the name suggests it catches light through the day, and it is usually among the first stretches of the cliff to dry after rain, which makes it a good pick on cooler days.",
+  "review": { "sources": ["https://rakkup.com/guidebook/devils-glen-ontario-rock-climbing/sun-worshipper-wall/s19123", "https://www.mountainproject.com/area/112401052/sun-worshipper-wall"] }
+ },
+ "on_diamond_lake_ice": {
+  "_expect": { "name": "Diamond Lake (ICE)", "region": "Ontario" },
+  "blurb": "Diamond Lake is the centrepiece of winter climbing in the Bancroft and Madawaska region of eastern Ontario. The ice faces rise above a flat lake, and the walk in is across the frozen surface, so check the thickness first. Seventeen routes are listed, nearly all water ice and most of them around WI4, with a few easier lines at WI1 to WI3 and a small number of mixed routes ranging from easy to very hard. The setting is scenic, and the variety of lines is what keeps climbers returning. Sunny days can warm the crag noticeably, and how many lines form depends heavily on the winter.",
+  "review": { "sources": ["https://www.commonclimber.com/ice-climbing-ontario.html", "https://gripped.com/?p=46834"] }
+ },
+ "on_i_white_trash": {
+  "_expect": { "name": "White Trash", "region": "Ontario" },
+  "blurb": "White Trash is a mid-sized sector of Mount Nemo, on the Niagara Escarpment near Burlington, lying between the Iguana Wall and the Castle Wall and reached by way of the gullies at the cliff base. It holds 17 routes, split between about ten bolted sport lines and seven trad climbs. Grades start at easy 5.2 and 5.3 scrambles and climb to the low 5.12 range, with the heart of the wall at 5.10, which makes it a better fit for intermediate climbers than for beginners. Several of the lines here are among the better-rated at the crag, so expect company on good days.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108285999/white-trash", "https://mountainproject.com/area/106358863/mount-nemo"] }
+ },
+ "on_makynen_east": {
+  "_expect": { "name": "Makynen East", "region": "Ontario" },
+  "blurb": "Makynen East is a roadside bouldering spot about twenty minutes south of Sudbury, on the old highway. The boulders sit along an overhanging band of rock that stretches a few hundred metres beside Makynen Road, and the stone is unusually solid by local standards. It has 17 problems from V1 to V9: a good cluster of V2 to V4 problems, a few in the V5 to V6 range, and a handful of very hard lines at the top end. The fine crystalline texture gives plenty of friction on slopers, but it is abrasive, so tired skin can limit a session.",
+  "approach": "A short walk of roughly twenty metres along the highway, then left to the overhanging cliff.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114500802/makynen-east", "https://gripped.com/?p=35938"] }
+ },
+ "on_9_latvian_ledge_area": {
+  "_expect": { "name": "Latvian Ledge Area", "region": "Ontario" },
+  "blurb": "Latvian Ledge is one of the busier sections of the Lion's Head cliffs on the Bruce Peninsula, above Georgian Bay. Its 17 routes are nearly all bolted sport lines that start from the ground, with two trad climbs. The grades spread wide: a few easy routes in the 5.7 to 5.9 range, a solid group at 5.10, and a heavy concentration at 5.12 and 5.13 for strong climbers. Lion's Head overall is not a beginner crag, with a complicated first visit and a lot of rappel-in terrain, so allow extra time to get oriented on your first trip.",
+  "review": { "sources": ["https://www.mountainproject.com/area/109087784/latvian-ledge-area", "https://mountainproject.com/area/109084447/lions-head"] }
+ },
+ "_skipped": {
+  "on_4_lady_slipper_wall": "no fetchable page about the crag itself (thecrag and rakkup returned 403/refused; only the Lion's Head parent page and a route page)",
+  "on_into_the_shade": "no fetchable page about the crag itself (thecrag 403; rakkup and Mountain Project pages only cover the parent or neighbouring sector and a route)"
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "sd_1880_wall_east": {
+  "_expect": {
+   "name": "1880 Wall East",
+   "region": "South Dakota"
+  },
+  "blurb": "A short, south-facing roadside wall in the Black Hills between Keystone and Hill City, set low in the valley where the sun lands and the wind mostly does not. Fourteen bolted routes run from easy 5.7 terrain through 5.8 and 5.9, with a single 5.10, so it suits newer leaders and anyone wanting a quick session. Routes are short, around 60 to 75 feet, and the walk from the road is almost nothing. The south exposure makes it a sensible pick for a mild winter or shoulder-season day when higher crags are cold.",
+  "review": {
+   "sources": [
+    "https://www.theoutbound.com/south-dakota/rock-climbing/rock-climb-at-1880-wall",
+    "https://www.mountainproject.com/area/108368646/old-hill-city-road"
+   ]
+  }
+ },
+ "sd_photographer_s_peak": {
+  "_expect": {
+   "name": "Photographer's Peak",
+   "region": "South Dakota"
+  },
+  "blurb": "The biggest of the formations in the Photographers' Peak group near Sylvan Lake in Custer State Park, and the one closest to the car, so the walk is about a minute. Routes wrap around the rock, so the approach depends on the line. Most lines are bolted, with a handful needing gear: roughly five sport lines and nine trad, from very easy terrain to a few 5.11s, with the bulk around 5.8. Expect typical Needles-style face climbing with fixed rappel anchors, and a good place to pair with the neighbouring formations.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105714471/photographers-peak",
+    "https://www.mountainproject.com/area/105714276/photographers-peak-area"
+   ]
+  }
+ },
+ "sd_dam_back_side": {
+  "_expect": {
+   "name": "Dam - Back Side",
+   "region": "South Dakota"
+  },
+  "blurb": "A cluster of granite spires on the far side of the Sylvan Lake dam in Custer State Park, within the Outlets zone. Thirteen routes, mostly bolted sport with some trad, and one boulder problem. Grades start near 5.2 and top out around 5.10, with a good number of easy to moderate lines in the 5.5 to 5.9 range, so it works for newer climbers as well as those after something steadier. Many summits run east to west and most are unnamed. Anchors are usually fixed but not guaranteed, and some formations need careful descents.",
+  "approach": "Follow the trail around Sylvan Lake toward the rocks and pass through the tunnel; routes are on both sides once through.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/105714420/dam-back-side",
+    "https://mountainproject.com/area/105714243/outlets"
+   ]
+  }
+ },
+ "sd_bethlehem": {
+  "_expect": {
+   "name": "Bethlehem",
+   "region": "South Dakota"
+  },
+  "blurb": "A small black limestone crag north of Rapid City, mostly sport climbing with a single boulder problem. The thirteen routes lean hard: a few at 5.9 and 5.10, then a core of 5.11 and 5.12, and one line in the mid-5.14 range. Some faces are fairly smooth, which makes the face climbing tricky. The wall is shaded in the morning and the face routes catch sun around early afternoon, and the Divinations cave stays usable at any hour, even in the rain. Uncrowded, and best for strong sport climbers.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/106866433/bethlehem",
+    "https://thetopo.com/crags/bethlehem-sd/routelist/noahs-ark"
+   ]
+  }
+ },
+ "_skipped": {
+  "sd_pheromone_wall": "search budget",
+  "sd_geezer_world": "search budget",
+  "sd_new_domentions": "search budget",
+  "sd_the_creekside_crag_at_split_rock": "search budget"
+ },
+ "_conflicts": {
+  "sd_1880_wall_east": "Stored rock is greywacke, but https://www.theoutbound.com/south-dakota/rock-climbing/rock-climb-at-1880-wall calls it granite; https://www.mountainproject.com/area/108368646/old-hill-city-road also says granite walls (Indian Rocks)."
+ }
+}

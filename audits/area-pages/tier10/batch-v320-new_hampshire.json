@@ -1,0 +1,30 @@
+{
+ "nh_the_summer_wall": {
+  "_expect": { "name": "The Summer Wall", "region": "New Hampshire" },
+  "blurb": "The Summer Wall is a small sport crag in the Russell Crags group, tucked into Merriam Woods near Woodstock. Ten routes share a buttress between two gullies, nine of them bolted and one trad. Grades stretch widely, from 5.4 on up through several 5.12s and a single 5.13, with a handful of moderate 5.9s in the middle. Many of the lines are short. The far left end is dominated by an overhanging roof with permanent draws hung on it. A switchback path climbs the slope alongside the lower cliff to reach the routes. The wall is shaded in the afternoon, which makes it a decent pick on warm days.",
+  "review": { "sources": ["https://www.mountainproject.com/area/120780807/the-summer-wall", "https://mountainproject.com/area/120706547/russell-crags-in-merriam-woods"] }
+ },
+ "nh_05_the_dark_passenger": {
+  "_expect": { "name": "The Dark Passenger", "region": "New Hampshire" },
+  "blurb": "The Dark Passenger is a small trad wall on Dickey Ledge, high on the east-facing granite above the Welch-Dickey loop near Waterville Valley. Ten routes are listed, all protected by natural gear, running from easy 5.5 climbing through the 5.8 range to a couple of hard 5.12 lines. Several climbs start from a tree ledge well above the ground, and one classic runs two pitches. There is no obvious approach: a trail leaves from the foot of the lower routes, skirts the cliff on the left and ascends a gully. Walk off by trail or rappel Say Nothing. Views are good and the rock is pleasant.",
+  "review": { "sources": ["https://mountainproject.com/area/113526026/the-dark-passenger", "https://mountainproject.com/area/107346411/dickey-ledge"] }
+ },
+ "nh_3_dedication_area": {
+  "_expect": { "name": "Dedication Area", "region": "New Hampshire" },
+  "blurb": "Dedication Area is the third sector along the main cliff at Humphrey's Ledge, a quieter alternative to its busier neighbour Cathedral Ledge outside North Conway. Ten routes are mostly traditional, with two sport lines, and the grades run from 5.8 up to 5.11, with roughly equal numbers of 5.9s, 5.10s and 5.11s. Some pitches are longer than usual for the cliff, and one of the best-liked lines goes up in three pitches. From the parking lot it is the second cliff section to the left; when you arrive at the wall, turn left. The ledge as a whole gets southern exposure, so it stays usable on cold fall and spring days.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107856264/dedication-area", "https://mountainproject.com/v/humphreys-ledge/107856255"] }
+ },
+ "nh_8_hanging_gardens": {
+  "_expect": { "name": "Hanging Gardens", "region": "New Hampshire" },
+  "blurb": "Hanging Gardens is the northernmost sector of the Frankenstein ice cliffs in Crawford Notch. It is a very steep wall that grows rows of icicles reaching the ground when conditions are good. Ten ice lines are listed, mostly WI4 and WI5 with a few easier WI2 and WI3 options, plus a steep dry-tooling line. All the routes are short and steep, and the ice is touchy: a warm spell can wreck it, so go when it is formed. The sector sits about a hundred feet right of Dracula, and the cliffs here face north and stay shaded. Ice generally comes in from December through March.",
+  "aspect": "N",
+  "season_months": [12, 1, 2, 3],
+  "review": { "sources": ["https://www.mountainproject.com/area/106109442", "https://www.mountainproject.com/area/105890751/frankenstein-ice"] }
+ },
+ "_skipped": {
+  "nh_woodchunk_boulder": "no fetched page about this boulder; only a single route listing under Woodchuck Ledge, Kancamagus (fetched Woodchuck page was an Oregon area)",
+  "nh_03_big_tall": "no page about the Big & Tall sector itself; only parent Round Pond and Pawtuckaway pages mention it",
+  "nh_henderson_s_buttress": "no fetched page about Henderson's Buttress; Cannon Cliff pages do not mention it",
+  "nh_upper_bowl": "NH Upper Bowl has no own fetched page; the search hit was a different Upper Bowl in Washington state, and only the parent Welch and Dickie Boulders page mentions it"
+ }
+}

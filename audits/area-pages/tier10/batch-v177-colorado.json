@@ -1,0 +1,46 @@
+{
+ "co_should_ve_stopped_boulder": {
+  "_expect": { "name": "Should've Stopped Boulder", "region": "Colorado" },
+  "blurb": "A single large, steep boulder on the Bench, a bouldering zone on the slopes of Animas Mountain above Durango. It is the first block you meet when following the flat trail along the Bench, and it holds 11 problems that cover nearly the whole difficulty range, from V1 up to a pair of V9s, with a cluster around V6. Expect conglomerate-style sandstone, a hike of roughly a quarter hour or a little more from town, and some afternoon shade that makes it a decent pick on warm days. Bring pads, since several lines are tall.",
+  "review": { "sources": ["https://mountainproject.com/area/110245367/shouldve-stopped-boulder", "https://www.mountainproject.com/v/the-bench/110245342"] }
+ },
+ "co_yellow_dog_rock": {
+  "_expect": { "name": "Yellow Dog Rock", "region": "Colorado" },
+  "blurb": "A roadside sport crag in the Dog Rocks cluster of the Tarryall area, in Colorado's South Platte country. The rock is a prominent formation you can spot from the dirt road, and it sits a short stroll south of its neighbor, Black Dog Rock, with a marked trail between the two. All 11 routes are bolted. Most sit in the 5.10 range, with a couple of 5.11s and a few easier lines at the low end, so it suits climbers who already lead moderate sport. Short lines, granite, and a quiet backcountry feel.",
+  "review": { "sources": ["https://www.mountainproject.com/area/113615258/yellow-dog-rock", "https://www.mountainproject.com/area/113615248/black-dog-rock"] }
+ },
+ "co_sunshine_dome": {
+  "_expect": { "name": "Sunshine Dome", "region": "Colorado" },
+  "blurb": "A big, clean granite dome in the interior South Platte, near Deckers and the old Goose Creek campground. Nearly all of its 11 routes are traditional, with one bolted line, and the grades stretch from easy 5.7 terrain to a few 5.12s. The best-known lines run several pitches, so plan for a full day with a rack and a rope. Getting to the base takes longer than the map suggests, with a creek crossing, a valley and a ridge to cover, so start early. It sees few visitors and feels remote.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105746868/sunshine-dome", "https://www.mountainproject.com/area/105797917/goose-creekmolly-gulch-campground"] }
+ },
+ "co_universal_crag": {
+  "_expect": { "name": "Universal Crag", "region": "Colorado" },
+  "blurb": "A small, steep wall in Upper Dream Canyon, southwest of Boulder, reached by a brief walk downriver from the Lost Angel crag after crossing the creek. Routes here are short, so a single rope and a dozen draws cover most of them. Six are sport climbs mostly in the 5.11 to 5.14 range, there is one trad line, and three boulder problems run from about V6 to V10, so this is a place for strong climbers rather than beginners. Granite, with sun arriving in the morning and lingering into early afternoon.",
+  "review": { "sources": ["https://mountainproject.com/area/105746498/universal-crag", "https://mountainproject.com/area/105744234/upper-dream-canyon"] }
+ },
+ "co_short_cliff_w_three_cracks": {
+  "_expect": { "name": "Short Cliff w/ Three Cracks", "region": "Colorado" },
+  "blurb": "A modest crack-and-face cliff on the north side of Boulder Canyon, roughly mile 6.7 from the canyon mouth, tucked beside the Blob Rock massif. The ten routes are all trad, single pitch and around 90 to 95 feet, running from 5.6 to 5.10a, with most in the 5.7 to 5.9 band. That makes it a fair spot for newer gear leaders and for a quick session when time is tight. The granite is not the prettiest in the canyon, and shaded, cold-fingered conditions are common, so pick a mild day.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105744611/short-cliff-w-three-cracks", "https://www.mountainproject.com/area/105744222/boulder-canyon"] }
+ },
+ "co_canyon_block": {
+  "_expect": { "name": "Canyon Block", "region": "Colorado" },
+  "blurb": "A house-sized granite block high above the north side of Boulder Canyon, around mile 4.8 from the canyon entrance and also known as Milk Dud. It stands about 35 feet tall and its walls look south, which helps on cold or overcast days. Nine of the ten routes are trad and one is bolted. Grades start near 5.9 and 5.10, but the bulk are hard, 5.12 to 5.13, and a few are runout, so this is aimed at experienced crack and face climbers. Expect a hidden, quiet spot with trees around the base and a walk-off to set up top ropes.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106014126/canyon-block", "https://www.mountainproject.com/area/105744222/boulder-canyon"] }
+ },
+ "co_mill_creek_block": {
+  "_expect": { "name": "Mill Creek Block", "region": "Colorado" },
+  "blurb": "A small outcrop hidden among trees above Mill Creek Road near Dumont, in Clear Creek County, just upstream from where people park for the main Mill Creek crag. The walk is barely a minute. It holds seven sport routes, mostly in the 5.12 range with a few 5.10 and 5.11 lines, plus three boulder problems from about V3 to V6, some of them inside a small cave. One shared anchor high on the ledge makes top-roping simple. Parking nearby is tight, so carpool where possible.",
+  "review": { "sources": ["https://www.mountainproject.com/v/107706774", "https://www.mountainproject.com/area/107316644"] }
+ },
+ "co_play_pen": {
+  "_expect": { "name": "Play Pen", "region": "Colorado" },
+  "blurb": "A compact crag in Clear Creek Canyon west of Golden, in the Tunnel 5 sector, and probably the quickest walk of any wall in the canyon: a few minutes along an old railbed from the pullout by Tunnel 6. Ten routes, six trad and four sport, run roughly 65 to 95 feet on steeper-than-they-look gneiss with plenty of holds. Grades go from 5.7 up to 5.11, but 5.10 dominates, so it fits a leader who is comfortable on moderates. Many lines start with a gear placement before the bolts begin.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108435850/play-pen", "https://rakkup.com/guidebook/clear-creek-canyon-rock-climbing/play-pen/s11491"] }
+ },
+ "_skipped": {},
+ "_conflicts": {
+  "co_universal_crag": "Stored aspect is W, but https://mountainproject.com/area/105746498/universal-crag says the crag gets morning to early-afternoon sun (not a west-facing pattern)."
+ }
+}

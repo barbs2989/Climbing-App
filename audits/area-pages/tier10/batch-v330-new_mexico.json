@@ -1,0 +1,44 @@
+{
+ "nm_upper_mound_main_upper_cluster_of_boulders": {
+  "_expect": {"name": "Upper Mound (main upper cluster of boulders)", "region": "New Mexico"},
+  "blurb": "The biggest group of boulders at U-Mound, a small hill in the Sandia foothills along Albuquerque's eastern edge. Fifteen bouldering problems are spread across several blocks just north of the hill, from a few easy lines up to a couple of hard ones, with most falling between V0 and V3. The granite is textured, with knobs, cracks, edges and crystals, and it can be rough on skin. Some problems have awkward or tall landings, so bring a pad and a spotter. A short walk from the end of the road makes it a handy after-work stop, and the blocks to the north tend to stay cooler on warm days.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105789950/u-mound", "https://www.cs.unm.edu/~moret/u-mound.html"]}
+ },
+ "nm_1_bat_cave": {
+  "_expect": {"name": "Bat Cave", "region": "New Mexico"},
+  "blurb": "The northernmost wall of Vista Verde Crag, a basalt cliff band in the Rio Grande Gorge southwest of Taos. Bat Cave is a steep, overhanging amphitheater with fourteen sport routes on positive holds, mostly in the low-to-mid 5.12 range with a handful at 5.11 and a couple harder. The basalt looks loose at first glance but climbs better than expected. Routes are pumpy and powerful, a stick clip is handy for the first bolt, and a helmet is a good idea. It is a place for strong sport climbers rather than beginners.",
+  "review": {"sources": ["https://mountainproject.com/area/105898150/bat-cave", "https://www.mountainproject.com/area/105898135/vista-verde-crag"]}
+ },
+ "nm_alcohol_wall_south": {
+  "_expect": {"name": "Alcohol Wall South", "region": "New Mexico"},
+  "blurb": "A mostly south-facing wall in the southern part of The Box, a rhyolite canyon near Socorro. Fourteen routes, mainly bolted sport with a few trad lines, run from the 5.7s through the 5.12s, with the bulk sitting at 5.9 to 5.10, a good spot for moderate climbers. The sun hits it for most of the day, which makes it a pleasant winter choice, though it can be warm in summer. A short trail leads up from the southern parking, and Pocket Change Wall is just around the corner. Rock quality in The Box varies, but much of it is solid.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105958273/alcohol-wall-south", "https://www.mountainproject.com/area/105791039/the-box-climbing-areas", "https://www.mountainproject.com/route/106659455/barfly-blues"]}
+ },
+ "nm_the_outback_2": {
+  "_expect": {"name": "The Outback", "region": "New Mexico"},
+  "blurb": "The farthest up-canyon crag in Capulin Canyon, in the Jemez Mountains. It holds fourteen routes, mostly traditional moderates on thin-hand and hand cracks with some varied features, plus two bolted sport lines, graded roughly 5.7 to 5.10. The walls are shorter and less sustained than elsewhere in the canyon, so it works as an introduction to Capulin or a place to tick many pitches in a day. The face points south and has no trees, so expect sun through most of the day and little shade. Some routes can be top-roped from above, and the stone is on the soft side.",
+  "review": {"sources": ["https://www.mountainproject.com/area/123396475/the-outback", "https://www.mountainproject.com/area/108406340/capulin-canyon"]}
+ },
+ "nm_l5_good_craic_wall": {
+  "_expect": {"name": "Good Craic Wall", "region": "New Mexico"},
+  "blurb": "A short, recessed northeast-facing wall in the Utopian Vistas area above the Rio Grande Gorge near Taos. Fourteen routes, split evenly between sport and trad, cover 5.7 up to 5.11-, with most in the 5.10 range, so there is a mix of moderate gear lines and steeper, pumpy bolted climbs. The area's basalt is hard and pocketed, and traffic is light. A helmet is wise because many routes are young, and freeze-thaw can loosen rock. The relaxed, Irish-flavoured atmosphere suits a low-key day.",
+  "review": {"sources": ["https://mountainproject.com/area/106568096/good-craic-wall", "https://mountainproject.com/area/106568028/utopian-vistas"]}
+ },
+ "nm_southern_comfort_wall": {
+  "_expect": {"name": "Southern Comfort Wall", "region": "New Mexico"},
+  "blurb": "A south-facing trad wall in the western foothills below the Rabbit Ears, in the Organ Mountains east of Las Cruces. All fourteen climbs are traditional, from about 5.5 to 5.10, most of them at 5.7 to 5.10, and several run to two or three pitches. The rock is generally good. Three rappel routes make getting down straightforward, but bring two ropes. A couple of lines have thin protection and are better as top-ropes. It is a good objective for climbers comfortable placing gear who want moderate multi-pitch without a long commitment.",
+  "approach": "Walk up Topp Hut Road, keep right at the fork toward the foothills, and follow it to where it ends. A worn climbers' trail on the left climbs straight up the slope to the base of the wall.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105789451/southern-comfort-wall", "https://mountainproject.com/area/108254584/rabbit-ears-area"]}
+ },
+ "nm_violince_wall": {
+  "_expect": {"name": "Violince Wall", "region": "New Mexico"},
+  "blurb": "Sometimes called the Warmup Wall, this is one of the most popular sections of Last Chance Canyon near Carlsbad. It has fourteen sport routes on streaked limestone, mostly 5.10 to 5.11 with a few easier lines and a couple of hard ones. The climbing is technical: thin pockets and edges on faces from slabby to just past vertical, with the odd roof or bulge, so footwork counts. The wall catches morning sun, which makes it a favourite on cold winter days. A trail drops from the rim with a couple of short downclimbs before it runs along the base.",
+  "review": {"sources": ["https://mountainproject.com/area/106094089/violince-wall", "https://www.mountainproject.com/area/105920274/last-chance-canyon", "https://sendage.com/area/last-chance-canyon-nm-usa"]}
+ },
+ "_skipped": {
+  "nm_water_wall": "no fetchable page about Water Wall itself (OpenBeta page 404, other Water Wall MP page is in Alberta); only parent canyon page and a route page"
+ },
+ "_conflicts": {
+  "nm_violince_wall": "stored aspect E; fetched page https://mountainproject.com/area/106094089/violince-wall says northeast"
+ }
+}
