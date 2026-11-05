@@ -87,7 +87,7 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
     </div>
     <div style={{ padding: "14px 16px 40px", color: C.text }}>
       <p style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5, margin: "0 0 12px" }}>{crag ? "Click along the way in, from where you park to the base of the crag. Download it as GPX, or suggest it as this crag’s trail." : "Click along the way in, from the trailhead toward the climb. Download it as GPX to plan with or load on your watch."}</p>
-      <TrailDrawMap start={start} end={endPt} pts={pts} setPts={setPts} C={TOOL_C} marks={marks} title={"Draw the approach · " + route.name} onShape={function (s) { shapeRef.current = s; setShapePending(s.some(function (x) { return x.pending; })); }} />
+      <TrailDrawMap start={start} end={endPt} pts={pts} setPts={setPts} C={TOOL_C} marks={marks} title={"Draw the approach · " + route.name} minPts={crag ? MIN_RECORDED_PTS : 2} onShape={function (s) { shapeRef.current = s; setShapePending(s.some(function (x) { return x.pending; })); }} />
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12 }}>
         <div style={stat}><div style={lbl}>Length</div><div style={{ fontSize: 16, fontWeight: 800, marginTop: 2 }}>{pts.length > 1 ? fmtTrailLen(lenM) : "—"}</div></div>
         <div style={stat}><div style={lbl}>Gain · loss</div><div style={{ fontSize: 16, fontWeight: 800, marginTop: 2 }}>{pts.length < 2 ? "—" : !p ? <span style={{ fontSize: 13, color: C.textMuted, fontWeight: 600 }}>Measuring…</span> : p.error ? <span style={{ fontSize: 13, color: C.amber, fontWeight: 600 }}>Couldn’t read the terrain</span> : "↑" + uElev(p.gain) + " · ↓" + uElev(p.loss)}</div></div>

@@ -71,7 +71,8 @@ function onLeg(map, L, leg, latlng) {
 // `initialShape` / `onShape` carry the line as anchors + routed points between two drawers (the
 // desktop tool hands its line to the submission sheet): flat `pts` alone would come back as one
 // anchor per routed point.
-export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title, active, initialShape, onShape }) {
+export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title, active, initialShape, onShape, minPts }) {
+  const need = minPts || MIN_RECORDED_PTS; // what the host can do with the line needs this many points
   const mk = marks || CRAG_MARKS;
   const mapDiv = useRef(null), mapRef = useRef(null), tileRef = useRef(null), drawn = useRef([]);
   // `ready` is a GENERATION, not a flag: the full-screen rebuild sets it to 0 in the cleanup and
@@ -98,7 +99,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const dragEndAt = useRef(0);
   const noteT = useRef(null);
   const lastTap = useRef(null); // the last tap on the map or a leg, to fold a double tap into one point
-  const fails = useRef({ far: 0, none: 0, down: 0, detour: 0, kept: 0, t: null }); // legs that came back straight, said once per burst
+  const fails = useRef({ far: 0, none: 0, down: 0, detour: 0, kept: 0, gone: 0, t: null }); // legs that came back straight, said once per burst
   // The pins by value, so a fresh-but-equal object from the host is not a change.
   const startKey = start ? start.lat + "," + start.lng : "", endKey = end ? end.lat + "," + end.lng : "";
   const propsRef = useRef({ start, end, follow, setPts, onShape });
@@ -131,6 +132,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const tapOk = (e, kind) => {
     const now = Date.now();
     if (now - dragEndAt.current < 250) return false;
+    if (e && e.originalEvent && e.originalEvent.detail > 1) return false; // the second click of a double click, as the browser counts it
     const p = e && e.containerPoint, last = lastTap.current;
     if (last && last.kind === kind && now - last.t < 300 && p && Math.hypot(p.x - last.x, p.y - last.y) < 10) return false;
     lastTap.current = { t: now, kind, x: p ? p.x : 0, y: p ? p.y : 0 };
@@ -142,7 +144,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   // many at once), with a count per reason, not one note overwriting the last.
   const noteFailure = (why) => {
     const f = fails.current;
-    if (why === "far") f.far++; else if (why === "detour") f.detour++; else if (why === "kept") f.kept++; else if (why === false) f.down++; else f.none++;
+    if (why === "far") f.far++; else if (why === "detour") f.detour++; else if (why === "kept") f.kept++; else if (why === "gone") f.gone++; else if (why === false) f.down++; else f.none++;
     clearTimeout(f.t);
     f.t = setTimeout(() => {
       const legs = (k) => k + (k === 1 ? " leg" : " legs");
@@ -150,11 +152,12 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       if (f.none) parts.push(legs(f.none) + " with no mapped trail to follow (drag the point, or tap the hollow dot to add one between)");
       if (f.detour) parts.push(legs(f.detour) + " where the mapped trail goes a long way round (tap a point where you cross)");
       if (f.far) parts.push(legs(f.far) + " too long for one leg (tap a point between)");
-      if (f.kept) parts.push(legs(f.kept) + " keeping the earlier path, which could not be re-followed from the moved point (drag it a little to ask again)");
+      if (f.gone) parts.push(legs(f.gone) + " straightened: the point moved further than the trail they followed (switch Follow trails on to ask again)");
+      if (f.kept) parts.push(legs(f.kept) + " keeping the earlier path, which could not be re-followed from the new point (nudge it to ask again)");
       if (f.down) parts.push(legs(f.down) + " the trail router didn't answer for (offline, or busy: move the point a little, or switch Follow trails off and on, to ask again)");
-      const total = f.none + f.far + f.down + f.detour + f.kept;
+      const total = f.none + f.far + f.down + f.detour + f.kept + f.gone;
       say(tx((total === 1 ? "One leg could not be followed: " : total + " legs could not be followed: ") + parts.join("; ") + "."));
-      fails.current = { far: 0, none: 0, down: 0, detour: 0, kept: 0, t: null };
+      fails.current = { far: 0, none: 0, down: 0, detour: 0, kept: 0, gone: 0, t: null };
     }, 700);
   };
   const abortRoute = (id) => { const c = routing.current.get(id); if (c) { c.abort(); routing.current.delete(id); } };
@@ -290,7 +293,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     // Only the RUN of routed points next to the old spot (the end of the leg into it, the start of the
     // leg out of it), never a bend elsewhere that merely passes within reach.
     const trim = (via, k) => dropNear(via, oldA, k === i ? "end" : "start", movedM);
-    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { next[k] = Object.assign({}, next[k], { via: trim(next[k].via, k), pending: on }); if (on) touched.push(next[k].id); } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); } });
+    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { const kept = trim(next[k].via, k); next[k] = Object.assign({}, next[k], { via: kept, pending: on }); if (on) touched.push(next[k].id); else if (!kept.length) noteFailure("gone"); } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); } });
     commit(next, touched); return true; };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null);
     // The merged leg keeps the routed points of both legs it joins (the deleted anchor is the one
@@ -418,7 +421,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const off = { opacity: 0.4, cursor: "default" };
   const b = (on) => (on ? btn : Object.assign({}, btn, off));
   const layerBtns = ready ? <div style={{ position: "absolute", top: 7, left: 7, zIndex: 1000, display: "flex", gap: 3 }}>{[["topo", "Topo"], ["sat", "Satellite"], ["street", "Street"]].map(([k, lbl]) => <button key={k} onClick={() => setBaseLayer(k)} aria-current={baseLayer === k ? "true" : undefined} style={{ padding: "5px 8px", borderRadius: 6, border: "1px solid " + (baseLayer === k ? C.accent : C.border), background: C.bg, color: baseLayer === k ? C.accent : C.text70, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 6px rgba(0,0,0,0.4)" }}>{lbl}</button>)}</div> : null;
-  const status = n ? (n < MIN_RECORDED_PTS ? n + " of at least " + MIN_RECORDED_PTS + " points" : n + " points") + " · " + fmtTrailLen(pathLenM(flat)) + (anyPending ? " · following the trail…" : tx(" · tap to keep going")) : start ? tx("Tap the map along the trail, starting at " + mk.start) : tx("Tap where you park, then along the trail to " + mk.endName);
+  const status = n ? (n < need ? n + " of at least " + need + " points" : n + " points") + " · " + fmtTrailLen(pathLenM(flat)) + (anyPending ? " · following the trail…" : tx(" · tap to keep going")) : start ? tx("Tap the map along the trail, starting at " + mk.start) : tx("Tap where you park, then along the trail to " + mk.endName);
   const mapBox = (
     <div style={{ position: "relative", flex: fullscreen ? 1 : "none", minHeight: fullscreen ? 160 : 0 }}>
       <div ref={mapDiv} role="application" aria-label={tx("Map: tap to add a point to the trail, drag a point to move it")} style={{ height: fullscreen ? "100%" : 300, borderRadius: 9, border: "1px solid " + C.border, overflow: "hidden", background: "#0a0f1a", cursor: "crosshair" }} />
