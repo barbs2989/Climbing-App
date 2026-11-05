@@ -38,10 +38,12 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   (`route_field_level`) unless the owner set it by hand (`route_field_confidence`). **High = locked**:
   the database refuses an edit to it ("This detail is locked at high confidence; flag it instead").
   Identity fields, crag-discipline grades and guidebook-verified fields start high; empty fields,
-  inferred gear and auto-written prose start low; everything else medium. **Discipline is always
-  high** (0406, owner 2026-11-05: "locked and not allowed to be edited; they can only flag it for
-  review") — `discipline` and `rockStyle` answer high even when empty, so no climber edit to them
-  is accepted; the one exception is the owner's own hand-set level. Until 0406 discipline stayed
+  inferred gear and auto-written prose start low; everything else medium. **Discipline is high once
+  it is on file** (0406, owner 2026-11-05: "locked and not allowed to be edited; they can only flag it
+  for review") — `discipline` and `rockStyle` answer high on every route that holds one, so no climber
+  edit to them is accepted; an EMPTY discipline takes the ordinary empty → low branch and can be
+  filled in ("when there's no information they should be able to edit it"), and the owner's
+  approval of that edit locks it. The owner's hand-set level still wins. Until 0406 discipline stayed
   medium on scrambling / mountaineering / alpine / trad routes (the owner's stated ambiguity).
 - **Rejection is a strike.** The owner rejects with a reason (≥10 characters); the climber is
   told the reason. Strikes drive `contribution_standing`: 1 → warned, 3 → restricted for 90 days
@@ -75,10 +77,11 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   verification note. Every pencil on the page goes through `openFix` in `RouteDetail.jsx`: a HIGH
   field's pencil opens the flag sheet instead of the editor. In `SuggestFix` each field row shows its
   chip (no ⚑ Flag button there, owner 2026-10-15) and a HIGH row cannot be opened. The sheet's
-  **Discipline card** is the one exception: since 2026-11-05 it is not a chip picker but the route's
-  own discipline, a High · locked chip and a *Flag it* button (through `openFlag`, field
-  `discipline`) — discipline has no pencil or heading chip on the page, so without that button a
-  climber could not flag it at all. The sheet never sends a `discipline` or `rockStyle` edit.
+  **Discipline card** is the one exception: since 2026-11-05, on a route with a discipline on file it
+  is not a chip picker but the route's own discipline, a High · locked chip and a *Flag it* button
+  (through `openFlag`, field `discipline`) — discipline has no pencil or heading chip on the page, so
+  without that button a climber could not flag it at all. Only a route with NO discipline keeps the
+  chip picker (`discLocked` false), and only then does the sheet send a `discipline` / `rockStyle` edit.
 - **The flag sheet** (`lib/FlagRouteInfo.jsx`, `FlagRouteSheet`, mounted by App beside the appeal
   sheet): a note of 5–1000 characters on one field or the whole route → `fileRouteFlag`; refusals show
   the database's sentence.

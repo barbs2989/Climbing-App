@@ -4,10 +4,13 @@
 -- 0308 made discipline HIGH except on scrambling / mountaineering / alpine / trad routes, where it
 -- stayed MEDIUM for the owner's stated ambiguity between those four. That exception is withdrawn:
 -- `discipline` and `rockStyle` (the trad/sport split the same chip row sends) now answer 'high'
--- whatever the row holds — an EMPTY value included, so the "empty → low" branch cannot reopen
--- them. The owner's explicit route_field_confidence row still wins, as it does for every field,
--- so the Review queue's hand lock/unlock keeps working. A climber who thinks the discipline is
--- wrong files a route_flag on `discipline` (the edit sheet's Discipline card carries the button).
+-- whenever the row holds one. An EMPTY discipline is the one opening (owner, same day: "when
+-- there's no information they should be able to edit it though"): it takes the ordinary
+-- "empty → low" branch, so a climber can fill it in, and once the owner approves that edit the
+-- approval's own upsert (0309) sets the field high. The owner's explicit route_field_confidence
+-- row still wins, as it does for every field, so the Review queue's hand lock/unlock keeps working.
+-- A climber who thinks a filed discipline is wrong files a route_flag on `discipline` (the edit
+-- sheet's Discipline card carries the button).
 --
 -- Same body as 0325 otherwise. The insert guard (0308) and the page's confidence map both ask this
 -- function, so the chips lock and the database refuses in the same breath.
@@ -24,9 +27,6 @@ declare
 begin
   select level into explicit from route_field_confidence where route_id = r.id and field = p_field;
   if explicit is not null then return explicit; end if;
-
-  -- Discipline is locked, empty or not (0406).
-  if p_field in ('discipline', 'rockStyle') then return 'high'; end if;
 
   select * into f from contribution_fields where form_key = p_field;
   if not found then return 'medium'; end if;
@@ -47,6 +47,8 @@ begin
   if v_empty then return 'low'; end if;
 
   if p_field in ('name') then return 'high'; end if;
+  -- Discipline is locked once it is on file (0406); an EMPTY one returned 'low' above and stays editable.
+  if p_field in ('discipline', 'rockStyle') then return 'high'; end if;
   if p_field = 'grade' and r.discipline in ('sport', 'trad', 'toprope', 'bouldering', 'ice', 'aid', 'mixed') then
     return 'high';
   end if;
