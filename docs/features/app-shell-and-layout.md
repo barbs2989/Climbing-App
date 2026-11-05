@@ -107,7 +107,7 @@ room for side-panel ads later. The phone app keeps its own look.
     (the app's navy — the one main action), `BTN_SECONDARY` (bordered, plain text), `BTN_LINK` (no box), and
     `BTN_GO` (green, only Accept and Log). Applied to crew join requests, the partner card's Form crew / +
     Invite to crew, the Logbook list's actions and the profile's actions; the profile's four actions sit in
-    ONE row on the website (Edit primary). The ✕ and ← Back stay popupChrome's (owner's look).
+    ONE row on the website (Edit primary). The ✕ and ← Back stay popupChrome's, and are COMPACT (owner 2026-11-04, "way too large on phone and desktop"): `POP_CLOSE` a 36px circle, `POP_BACK` a 36px pill with 14px type, down from 48px; `lib/tapSlop.js` still lands a near touch on them. Groups' header is `quiet` like the other tabs.
   - **Nothing stretches across the page** (owner 2026-10-22): the page column is 700px (720 → 640 on
     2026-10-22, → 700 with the zoom on 2026-11-04), and an
     action button sizes to its label instead of filling the column — `wideCss`' rule for a `width:100%`
