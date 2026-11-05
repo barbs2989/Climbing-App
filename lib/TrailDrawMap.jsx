@@ -292,14 +292,16 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     const oldA = cur[i].a, movedM = distM(oldA, next[i].a);
     // Only the RUN of routed points next to the old spot (the end of the leg into it, the start of the
     // leg out of it), never a bend elsewhere that merely passes within reach.
-    const trim = (via, k) => dropNear(via, oldA, k === i ? "end" : "start", movedM);
-    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { const kept = trim(next[k].via, k); next[k] = Object.assign({}, next[k], { via: kept, pending: on }); if (on) touched.push(next[k].id); else if (!kept.length) noteFailure("gone"); } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); } });
+    const trim = (via, k) => dropNear(via, oldA, k === i ? "end" : "start", movedM); // a trim that takes most of a leg is said ("gone")
+    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { const kept = trim(next[k].via, k); next[k] = Object.assign({}, next[k], { via: kept, pending: on }); if (on) touched.push(next[k].id); else if (kept.length < next[k].via.length / 2) noteFailure("gone"); } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); } });
     commit(next, touched); return true; };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null);
     // The merged leg keeps the routed points of both legs it joins (the deleted anchor is the one
     // point that goes); with Follow on it is asked again and keeps them if the router cannot answer.
     const wasRouted = routed(cur[i]) || routed(cur[i + 1]);
-    if (wasRouted && i > 0 && i < next.length) { next[i] = Object.assign({}, next[i], { via: dropNear(cur[i].via || [], cur[i].a, "end").concat(dropNear(cur[i + 1].via || [], cur[i].a, "start")), pending: !!propsRef.current.follow }); commit(next, propsRef.current.follow ? [next[i].id] : []); return; }
+    if (wasRouted && i > 0 && i < next.length) {
+      if (sameP(next[i - 1].a, next[i].a)) { next[i] = Object.assign({}, next[i], { via: [], pending: false }); commit(next, []); return; } // the two it joins are one spot: no leg
+      next[i] = Object.assign({}, next[i], { via: dropNear(cur[i].via || [], cur[i].a, "end").concat(dropNear(cur[i + 1].via || [], cur[i].a, "start")), pending: !!propsRef.current.follow }); commit(next, propsRef.current.follow ? [next[i].id] : []); return; }
     commit(next, withLegs(next, [i])); };
   // Clear gives up every answer still on its way, so a new line's legs do not queue behind dead ones.
   const clearAll = () => { if (!nodesRef.current.length) return; routing.current.forEach((c) => c.abort()); routing.current.clear(); setSelectedId(null); commit([], []); };
@@ -363,7 +365,17 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     const el = fullscreen ? dialogRef.current : null;
     if (!el) return undefined;
     try { el.focus({ preventScroll: true }); } catch (e) {}
-    const onKey = (e) => { if (e.key === "Escape") { e.stopPropagation(); exitFullscreen(); } };
+    const onKey = (e) => {
+      if (e.key === "Escape") { e.stopPropagation(); exitFullscreen(); return; }
+      // A modal keeps Tab inside it: the sheet behind (its date box, its Submit) must not take focus.
+      if (e.key === "Tab") {
+        const f = Array.from(el.querySelectorAll("button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])")).filter((x) => !x.disabled && x.offsetParent !== null);
+        if (!f.length) return;
+        const first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && (document.activeElement === first || document.activeElement === el)) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    };
     el.addEventListener("keydown", onKey);
     return () => el.removeEventListener("keydown", onKey);
   }, [fullscreen]);
