@@ -1,0 +1,57 @@
+-- WA alpine route audit — batch 136 (2026-08-20)
+-- Pass 3. Routes audited:
+--   wa_lane_peak_r3, wa_le_conte_mountain_northern_aspect, wa_lemah_mountain_east_route,
+--   wa_lemah_two_goatshead_spire, wa_lena_lake_to_mt_stone_traverse, wa_lewis_creek_route,
+--   wa_lexington_tower_east_face, wa_liberty_and_injustice_for_all
+--
+-- NO CONFIRMED AUTO-FIXABLE ERRORS THIS BATCH.
+--
+-- Every hard, source-verifiable fact checked out against authoritative sources:
+--   * Elevations (match Wikipedia/SummitPost/Peakbagger within tolerance):
+--       Lane Peak 6,012 ft; Le Conte Mountain 7,762 ft; Lemah Mountain (main) ~7,512 ft
+--       (stored 7,519, within the row's own documented 7,463-7,520 source range — data_quality
+--       already flags this pending a LiDAR source, so left unchanged); Lemah Two / Goatshead
+--       Spire ~7,000 ft; Mount Stone 6,612 ft; Gunn Peak 6,244 ft (highest in Wild Sky);
+--       Lexington Tower 7,560 ft; Liberty Bell 7,720 ft.
+--   * Summit coordinates fall on the named peaks and match the parent area:
+--       Le Conte 48.3794,-121.062 == Wikipedia 48.37943,-121.06178 (exact); Lemah main
+--       47.4907,-121.3012 == area 47.4910,-121.3013; Mount Stone 47.6063,-123.2666 == area;
+--       Gunn 47.8162,-121.4477 == area; all others within metres.
+--   * First ascents plausible / source-consistent: Le Conte (Bressler/Clough/Cox/Myers,
+--       Jul 23 1938 — the 1938 Ptarmigan Traverse party); Lemah main (Wallace Burr party,
+--       Jul 7 1923); Goatshead Spire (Goodman/Mason, Aug 8 1982); Gunn Peak / Lewis Creek
+--       (Hinman/Eriksen/Lesh, Jul 18 1915 — "Eriksen" spelling already corrected in a prior
+--       pass); Lexington Tower East Face (Marts/McPherson, 1966); Liberty and Injustice for
+--       All (Mikey Schaefer, 2014, rope-solo — well documented).
+--   * Access roads / permits each name the correct trailhead and drainage for their own
+--       approach — no cross-drainage contamination in the road/access blocks this batch:
+--       Narada Falls / Stevens Canyon Rd (Lane), Cascade River Rd (Le Conte), Pete Lake /
+--       FR-46-4616 from the Cle Elum side (both Lemah routes), Lena Lake / Hamma Hamma FR-25
+--       (Mount Stone traverse), Barclay Lake / FR-6024 (Gunn), SR-20 Washington Pass pullouts
+--       (Lexington, Liberty Bell). All plausible and source-consistent.
+--   * Le Conte's parent-area placement under wa_glacier_peak_region is CORRECT, not a
+--       misfile: Wikipedia places the peak in the Glacier Peak Wilderness.
+--
+-- FLAGGED FOR HUMAN REVIEW (not auto-fixed — see log):
+--   * wa_lane_peak_r3 (Lover's Lane couloir): the `bivy` array's first entry is "Snow Lake
+--       Camp", whose note is written about UNICORN PEAK ("the only established camp close
+--       enough to matter for Unicorn Peak ... the one Tatoosh objective where an overnight is
+--       genuinely worth the trouble"). Lane Peak is approached from Narada Falls / the closed
+--       Reflection Lakes road on the NORTH side of the Tatoosh (confirmed: the route's own
+--       approach, waypoints and authoritative TRs all use Narada Falls), whereas Snow Lake
+--       Camp sits on the SOUTH side off Stevens Canyon Rd east of Reflection Lakes and serves
+--       Unicorn/Foss/Boundary. This looks like a Tatoosh-neighbour bivy note contaminating a
+--       Lane Peak route. Not auto-fixed: it is a soft descriptive field, a hand-SQL edit of a
+--       jsonb array element is the truncation-prone edit check:sql warns against, and there is
+--       no authoritative "correct camp for a Lane Peak north-couloir day" to substitute (the
+--       route is a car-to-car objective from Narada Falls carrying no bivy of its own).
+--   * wa_lexington_tower_east_face: the summit waypoint is named "Lexington Tower notch"
+--       (type Summit) with elev 7,621 ft — but the true summit is 7,560 ft (confirmed
+--       Wikipedia/SummitPost, and the row's own high_point_ft) and the route explicitly tops
+--       out at a NOTCH BELOW the true summit ("You do not tag the true summit"). A notch below
+--       the summit cannot be higher than the 7,560 ft summit, so 7,621 is wrong. Left as a
+--       flag rather than a fix: no authoritative elevation for the notch itself was found, so
+--       substituting one (or the 7,560 summit figure) would be inventing/mislabelling a value.
+--
+-- (No UPDATE statements — nothing met the "confirmed error, verified against >=1 authoritative
+--  source" bar for an auto-fix this batch.)

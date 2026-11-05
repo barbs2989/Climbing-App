@@ -1,0 +1,16 @@
+-- wa_bonanza_peak_north_ridge (Bonanza Peak, North Ridge)
+-- gain_ft stores 3800, but the route's own two waypoints are the Holden Village/Ballpark
+-- Campground trailhead at 3,300 ft and the Bonanza Peak summit at 9,511 ft -- a net gain of
+-- 6,211 ft from the route's own stored elevations, not 3,800. The route's own `itinerary`
+-- text explains the discrepancy: "Day 2: ... climb the glacier and upper rock to the
+-- summit" describes only the SUMMIT-DAY leg from high camp, not the full trailhead-to-summit
+-- gain that `gain_ft` represents everywhere else in this catalog (routeAscentFt/suggGainFt
+-- in ClimbMatchCore.jsx feed it straight into the Planner's Naismith-style time estimate as
+-- the total approach+climb gain). This is confirmed by the two sibling routes on this same
+-- peak sharing nearly the identical trailhead: wa_bonanza_peak_mary_green_glacier and
+-- wa_bonanza_peak_northeast_buttress both store gain_ft 6300 against a trailhead of 3,262 ft
+-- and summit of 9,516 ft (diff 6,254, rounded to 6,300) -- i.e. both measure the FULL
+-- trailhead-to-summit gain, not a single day's leg. Corrected to match the route's own
+-- waypoints and the sibling routes' convention (6,211 rounded to 6,200); a value of 3,800
+-- would understate this route's total elevation gain in the Planner by roughly 2,400 ft.
+UPDATE routes SET gain_ft = 6200 WHERE id = 'wa_bonanza_peak_north_ridge' AND gain_ft = 3800;

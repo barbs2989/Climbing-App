@@ -1,0 +1,42 @@
+-- WA alpine route audit — batch 135 (2026-08-20)
+-- Pass 3. Routes audited:
+--   wa_klawatti_peak_sw_buttress, wa_koala_krack, wa_kololo_peaks_standard,
+--   wa_kyes_peak_glaciated_scramble, wa_kyes_peak_northeast_ridge, wa_labor_pains,
+--   wa_lane_peak_r1, wa_lane_peak_r2
+--
+-- NO CONFIRMED AUTO-FIXABLE ERRORS THIS BATCH.
+--
+-- Every hard, source-verifiable fact checked out against authoritative sources:
+--   * Elevations (all match Wikipedia/SummitPost/PeakVisor within tolerance):
+--       Klawatti Peak 8,485 ft; Kangaroo Temple 7,572 ft; Kololo Peaks 8,200-8,240 ft
+--       (high_point_ft 8240 OK); Kyes Peak 7,280+ ft; North Early Winters Spire 7,760 ft;
+--       Lane Peak 6,012 ft.
+--   * Summit coordinates fall on the named peaks and match the parent area (Kololo peak
+--       48.0646,-121.0953 matches Wikipedia exactly; all others within a few metres of the
+--       summit waypoint).
+--   * First ascents: Klawatti (Anderson/Boyer/Gorton, Jul 7 1940); Labor Pains
+--       (Steve Risse & Donna McBain, Sep 1988 — SuperTopo/AAC verbatim); Kyes NE Ridge
+--       (Sep 14 1968, "most direct of three approaches", Quartz Creek->Curry Gap, Class 3 —
+--       AAC FA report matches the row's date and route detail exactly).
+--   * Access roads / permits: each route's road + access block names the correct trailhead
+--       and drainage for its own approach (no cross-drainage contamination this batch —
+--       Cascade River Rd for Klawatti, SR-20 for the Washington Pass routes, NF Sauk/FR-49
+--       for Kololo, Blanca Lake/Index-Galena for Kyes scramble, Quartz Creek for Kyes NE,
+--       Stevens Canyon/Narada Falls for Lane Peak). All plausible and source-consistent.
+--
+-- FLAGGED FOR HUMAN REVIEW (not auto-fixed — see log):
+--   * wa_kololo_peaks_standard: the gpx track (1063 pts) is genuine from index 257 onward
+--       (passes through the real North Fork Sauk trailhead at 48.0583,-121.2872, 0.08 km off,
+--       and ends on the summit), but the first ~257 points are a SPURIOUS PREFIX SEGMENT that
+--       begins 42.7 km away at 48.2497,-121.6002 — a completely different drainage
+--       (Suiattle/White Chuck side), not any of this route's three stated approaches. Looks
+--       like an unrelated track fragment concatenated onto the front. Left for human review:
+--       a hand-SQL rewrite of a 1000+ element array is exactly the truncation-prone edit
+--       check:sql warns against, and this is a track-cleanliness issue rather than a fact error.
+--   * wa_kyes_peak_northeast_ridge: FA is stored as "Mike Heath, September 14, 1968". The AAC
+--       FA report confirms the DATE and every route detail, but the climber's NAME could not be
+--       confirmed from search snippets (WebFetch to AAC/SummitPost is blocked by the egress
+--       proxy). Nothing contradicts it, so no change — noted for a future run with full fetch.
+--
+-- (No UPDATE statements — nothing met the "confirmed error, verified against >=1 authoritative
+--  source" bar for an auto-fix this batch.)
